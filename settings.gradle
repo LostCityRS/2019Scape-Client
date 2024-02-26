@@ -1,4 +1,4 @@
-rootProject.name = "rt7-client"
+rootProject.name = "RT7-Client"
 
 dependencyResolutionManagement {
     repositories {
