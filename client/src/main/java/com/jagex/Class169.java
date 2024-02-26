@@ -1,12 +1,13 @@
 package com.jagex;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.util.Random;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.util.Random;
 
 @OriginalClass("client!ar")
 public final class Class169 {

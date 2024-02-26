@@ -1,10 +1,11 @@
 package com.jagex.twitchtv;
 
-import java.util.LinkedList;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.util.LinkedList;
 
 @OriginalClass("client!com/jagex/twitchtv/TwitchWebcamDevice")
 public final class TwitchWebcamDevice {

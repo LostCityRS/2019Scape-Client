@@ -1,10 +1,6 @@
 package com.jagex;
 
-import jagdx.IDirect3DDevice;
-import jagdx.IDirect3DSurface;
-import jagdx.IDirect3DTexture;
-import jagdx.IUnknown;
-import jagdx.t;
+import jagdx.*;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;

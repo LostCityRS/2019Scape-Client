@@ -1,10 +1,11 @@
 package com.jagex;
 
-import java.net.URL;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.net.URL;
 
 @OriginalClass("client!py")
 public final class Class498 implements Interface6 {

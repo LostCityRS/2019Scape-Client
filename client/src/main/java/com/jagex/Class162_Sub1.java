@@ -1,14 +1,15 @@
 package com.jagex;
 
-import java.awt.Desktop;
-import java.awt.Desktop.Action;
-import java.net.URI;
-import java.util.LinkedList;
-import java.util.Queue;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.awt.*;
+import java.awt.Desktop.Action;
+import java.net.URI;
+import java.util.LinkedList;
+import java.util.Queue;
 
 @OriginalClass("client!alv")
 public final class Class162_Sub1 extends Class162 {

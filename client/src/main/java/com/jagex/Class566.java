@@ -1,12 +1,13 @@
 package com.jagex;
 
 import jaclib.ping.Ping;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 @OriginalClass("client!t")
 public final class Class566 implements Runnable {

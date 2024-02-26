@@ -1,11 +1,12 @@
 package com.jagex;
 
 import com.jagex.twitchtv.TwitchWebcamDevice;
-import java.io.IOException;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.io.IOException;
 
 @OriginalClass("client!sx")
 public final class Class563 {

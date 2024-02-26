@@ -1,13 +1,14 @@
 package com.jagex;
 
-import java.io.EOFException;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.io.EOFException;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
 @OriginalClass("client!afv")
 public final class Class110_Sub1 extends Class110 {

@@ -1,10 +1,11 @@
 package com.jagex;
 
-import java.awt.datatransfer.Clipboard;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.awt.datatransfer.Clipboard;
 
 @OriginalClass("client!alt")
 public final class Class80_Sub42 extends Class80 {

@@ -1,12 +1,13 @@
 package com.jagex;
 
-import java.io.IOException;
-import java.io.OutputStream;
-import java.util.Date;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.Date;
 
 @OriginalClass("client!ul")
 public final class Class596 implements Runnable {

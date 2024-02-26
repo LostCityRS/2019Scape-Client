@@ -1,9 +1,10 @@
 package com.jagex;
 
-import java.awt.Canvas;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
+
+import java.awt.*;
 
 @OriginalClass("client!apw")
 public abstract class Class108_Sub2_Sub3 extends Class108_Sub2 {

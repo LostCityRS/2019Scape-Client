@@ -1,10 +1,11 @@
 package com.jagex;
 
-import java.awt.Point;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.awt.*;
 
 @OriginalClass("client!asz")
 public final class Class80_Sub17_Sub2 extends Class80_Sub17 {

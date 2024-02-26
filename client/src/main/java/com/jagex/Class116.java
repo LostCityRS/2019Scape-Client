@@ -1,10 +1,11 @@
 package com.jagex;
 
-import java.net.Socket;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.net.Socket;
 
 @OriginalClass("client!ik")
 public abstract class Class116 implements Interface3 {

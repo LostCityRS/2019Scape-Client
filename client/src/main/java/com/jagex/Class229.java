@@ -3,12 +3,13 @@ package com.jagex;
 import com.jagex.twitchtv.TwitchEvent;
 import com.jagex.twitchtv.TwitchEventLiveStreams;
 import com.jagex.twitchtv.TwitchEventResult;
-import java.util.Arrays;
-import java.util.LinkedList;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.util.Arrays;
+import java.util.LinkedList;
 
 @OriginalClass("client!dp")
 public final class Class229 {

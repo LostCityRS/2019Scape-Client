@@ -1,10 +1,11 @@
 package com.jagex;
 
-import java.applet.Applet;
-import java.awt.Graphics;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
+
+import java.applet.Applet;
+import java.awt.*;
 
 @OriginalClass("client!sh")
 public interface Interface61 {

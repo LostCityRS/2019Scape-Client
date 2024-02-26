@@ -1,11 +1,12 @@
 package com.jagex;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 @OriginalClass("client!amo")
 public final class Class165_Sub15 extends Class165 {

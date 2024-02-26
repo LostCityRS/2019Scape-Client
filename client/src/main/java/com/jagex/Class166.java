@@ -1,9 +1,10 @@
 package com.jagex;
 
-import java.awt.EventQueue;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
+
+import java.awt.*;
 
 @OriginalClass("client!ao")
 public final class Class166 {

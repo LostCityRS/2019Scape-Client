@@ -1,15 +1,12 @@
 package com.jagex;
 
-import java.awt.Component;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
-import java.awt.event.MouseWheelEvent;
-import java.awt.event.MouseWheelListener;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.awt.*;
+import java.awt.event.*;
 
 @OriginalClass("client!alb")
 public final class Class152_Sub1 extends Class152 implements MouseListener, MouseMotionListener, MouseWheelListener {

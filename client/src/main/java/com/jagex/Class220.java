@@ -1,5 +1,10 @@
 package com.jagex;
 
+import org.openrs2.deob.annotation.OriginalArg;
+import org.openrs2.deob.annotation.OriginalClass;
+import org.openrs2.deob.annotation.OriginalMember;
+import org.openrs2.deob.annotation.Pc;
+
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.URL;
@@ -7,10 +12,6 @@ import java.net.URLConnection;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.Queue;
-import org.openrs2.deob.annotation.OriginalArg;
-import org.openrs2.deob.annotation.OriginalClass;
-import org.openrs2.deob.annotation.OriginalMember;
-import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!d")
 public final class Class220 implements Runnable {

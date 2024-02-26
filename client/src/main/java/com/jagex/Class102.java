@@ -1,14 +1,14 @@
 package com.jagex;
 
-import java.awt.Canvas;
-import java.awt.Dimension;
-import java.lang.reflect.Method;
-import java.util.Enumeration;
-import java.util.Hashtable;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.awt.*;
+import java.lang.reflect.Method;
+import java.util.Enumeration;
+import java.util.Hashtable;
 
 @OriginalClass("client!di")
 public abstract class Class102 {

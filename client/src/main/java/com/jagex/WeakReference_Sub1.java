@@ -1,10 +1,11 @@
 package com.jagex;
 
-import java.lang.ref.ReferenceQueue;
-import java.lang.ref.WeakReference;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
+
+import java.lang.ref.ReferenceQueue;
+import java.lang.ref.WeakReference;
 
 @OriginalClass("client!atn")
 public final class WeakReference_Sub1 extends WeakReference {

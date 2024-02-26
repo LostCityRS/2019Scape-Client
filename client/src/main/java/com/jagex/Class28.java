@@ -1,11 +1,12 @@
 package com.jagex;
 
-import java.io.IOException;
-import java.net.InetAddress;
-import java.net.Socket;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
+
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.Socket;
 
 @OriginalClass("client!abb")
 public final class Class28 {

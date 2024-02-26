@@ -1,11 +1,11 @@
 package com.jagex;
 
-import com.jagex.twitchtv.TwitchEvent;
-import com.jagex.twitchtv.TwitchEventLiveStreams;
-import com.jagex.twitchtv.TwitchEventResult;
-import com.jagex.twitchtv.TwitchTV;
-import com.jagex.twitchtv.TwitchWebcamDevice;
-import com.jagex.twitchtv.TwitchWebcamFrameData;
+import com.jagex.twitchtv.*;
+import org.openrs2.deob.annotation.OriginalArg;
+import org.openrs2.deob.annotation.OriginalClass;
+import org.openrs2.deob.annotation.OriginalMember;
+import org.openrs2.deob.annotation.Pc;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
@@ -13,10 +13,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
-import org.openrs2.deob.annotation.OriginalArg;
-import org.openrs2.deob.annotation.OriginalClass;
-import org.openrs2.deob.annotation.OriginalMember;
-import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!vs")
 public final class Class622 {

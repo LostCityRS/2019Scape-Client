@@ -1,10 +1,11 @@
 package com.jagex;
 
-import java.io.FileOutputStream;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.io.FileOutputStream;
 
 @OriginalClass("client!ya")
 final class Class677 implements Runnable {

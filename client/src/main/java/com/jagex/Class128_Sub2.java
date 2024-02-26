@@ -2,11 +2,12 @@ package com.jagex;
 
 import jagdx.IDirect3DDevice;
 import jagdx.IDirect3DTexture;
-import java.nio.ByteBuffer;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.nio.ByteBuffer;
 
 @OriginalClass("client!aiy")
 public class Class128_Sub2 extends Class128 implements Interface34 {

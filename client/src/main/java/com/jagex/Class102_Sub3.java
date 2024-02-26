@@ -4,13 +4,14 @@ import jaclib.memory.Buffer;
 import jaclib.memory.Stream;
 import jaclib.memory.heap.NativeHeap;
 import jaggl.OpenGL;
-import java.awt.Canvas;
-import java.lang.reflect.Field;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 import sun.misc.Unsafe;
+
+import java.awt.*;
+import java.lang.reflect.Field;
 
 @OriginalClass("client!afm")
 public final class Class102_Sub3 extends Class102 {

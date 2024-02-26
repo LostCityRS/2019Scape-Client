@@ -1,13 +1,14 @@
 package com.jagex;
 
-import java.lang.management.GarbageCollectorMXBean;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.lang.management.GarbageCollectorMXBean;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 @OriginalClass("client!mt")
 public final class Class425 {

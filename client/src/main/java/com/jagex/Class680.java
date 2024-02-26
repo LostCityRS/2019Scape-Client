@@ -1,18 +1,16 @@
 package com.jagex;
 
 import jaclib.ping.Ping;
-import java.awt.Container;
-import java.awt.Image;
-import java.awt.MediaTracker;
-import java.awt.Toolkit;
-import java.awt.image.PixelGrabber;
-import java.net.InetAddress;
-import java.util.LinkedList;
-import java.util.Queue;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.awt.*;
+import java.awt.image.PixelGrabber;
+import java.net.InetAddress;
+import java.util.LinkedList;
+import java.util.Queue;
 
 @OriginalClass("client!ye")
 public final class Class680 implements Runnable {

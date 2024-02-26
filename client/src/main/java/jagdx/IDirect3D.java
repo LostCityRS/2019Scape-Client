@@ -1,9 +1,10 @@
 package jagdx;
 
-import java.awt.Component;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
+
+import java.awt.*;
 
 @OriginalClass("client!jagdx/IDirect3D")
 public final class IDirect3D extends IUnknown {

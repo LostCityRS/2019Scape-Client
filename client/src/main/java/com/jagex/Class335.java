@@ -1,10 +1,11 @@
 package com.jagex;
 
-import java.util.Arrays;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.util.Arrays;
 
 @OriginalClass("client!ie")
 public final class Class335 implements Interface11 {

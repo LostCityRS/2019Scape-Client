@@ -1,12 +1,13 @@
 package com.jagex;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
 @OriginalClass("client!xe")
 public final class Class658 {

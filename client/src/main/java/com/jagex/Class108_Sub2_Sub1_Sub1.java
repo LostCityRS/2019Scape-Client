@@ -1,15 +1,12 @@
 package com.jagex;
 
-import jagdx.D3DPRESENT_PARAMETERS;
-import jagdx.IDirect3DDevice;
-import jagdx.IDirect3DSwapChain;
-import jagdx.IUnknown;
-import jagdx.t;
-import java.awt.Canvas;
+import jagdx.*;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.awt.*;
 
 @OriginalClass("client!ail")
 public final class Class108_Sub2_Sub1_Sub1 extends Class108_Sub2_Sub1 implements Interface51 {

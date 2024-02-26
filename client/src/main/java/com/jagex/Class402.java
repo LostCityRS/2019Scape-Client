@@ -1,10 +1,11 @@
 package com.jagex;
 
-import java.nio.ByteBuffer;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.nio.ByteBuffer;
 
 @OriginalClass("client!lq")
 public final class Class402 {

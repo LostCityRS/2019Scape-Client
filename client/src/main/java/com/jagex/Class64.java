@@ -1,10 +1,11 @@
 package com.jagex;
 
-import java.applet.Applet;
 import netscape.javascript.JSObject;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
+
+import java.applet.Applet;
 
 @OriginalClass("client!aco")
 public final class Class64 {

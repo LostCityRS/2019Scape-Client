@@ -3,11 +3,12 @@ package com.jagex;
 import jaclib.memory.Stream;
 import jaggl.MapBuffer;
 import jaggl.OpenGL;
-import java.awt.Canvas;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.awt.*;
 
 @OriginalClass("client!aqi")
 public final class Class102_Sub1_Sub1 extends Class102_Sub1 {

@@ -1,11 +1,12 @@
 package com.jagex;
 
 import jaclib.hardware_info.HardwareInfo;
-import java.util.HashMap;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.util.HashMap;
 
 @OriginalClass("client!ali")
 public final class Class80_Sub39 extends Class80 {

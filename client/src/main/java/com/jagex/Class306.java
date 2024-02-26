@@ -1,13 +1,14 @@
 package com.jagex;
 
-import java.applet.Applet;
-import java.io.IOException;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.applet.Applet;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 @OriginalClass("client!h")
 public final class Class306 implements Runnable {

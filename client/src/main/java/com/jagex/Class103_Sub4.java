@@ -1,10 +1,11 @@
 package com.jagex;
 
-import java.util.HashMap;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.util.HashMap;
 
 @OriginalClass("client!afx")
 public final class Class103_Sub4 extends Class103 {

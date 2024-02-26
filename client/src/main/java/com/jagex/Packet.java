@@ -1,19 +1,20 @@
 package com.jagex;
 
-import java.math.BigInteger;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
+import java.math.BigInteger;
+
 @OriginalClass("client!ald")
 public class Packet extends Class80 {
 
 	@OriginalMember(owner = "client!ald", name = "m", descriptor = "[I")
-	static int[] crctable = new int[256];
+	public static final int[] crctable = new int[256];
 
 	@OriginalMember(owner = "client!ald", name = "j", descriptor = "[J")
-	public static long[] crc64table = new long[256];
+	public static final long[] crc64table = new long[256];
 
 	@OriginalMember(owner = "client!ald", name = "g", descriptor = "[B")
 	public byte[] data;
@@ -69,7 +70,7 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!et", name = "t", descriptor = "([BIII)I")
-	static int getcrc(@OriginalArg(0) byte[] src, @OriginalArg(1) int off, @OriginalArg(2) int len) {
+	public static int getcrc(@OriginalArg(0) byte[] src, @OriginalArg(1) int off, @OriginalArg(2) int len) {
 		@Pc(1) int checksum = -1;
 		for (@Pc(3) int i = off; i < len; i++) {
 			checksum = checksum >>> 8 ^ crctable[(checksum ^ src[i]) & 0xFF];
@@ -88,30 +89,30 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "u", descriptor = "(II)V")
-	public final void p1(@OriginalArg(0) int value) {
+	public void p1(@OriginalArg(0) int value) {
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) value;
 	}
 
 	@OriginalMember(owner = "client!ald", name = "l", descriptor = "(IB)V")
-	public final void p2(@OriginalArg(0) int value) {
+	public void p2(@OriginalArg(0) int value) {
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 8);
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) value;
 	}
 
 	@OriginalMember(owner = "client!ald", name = "i", descriptor = "(II)V")
-	public final void p3(@OriginalArg(0) int value) {
+	public void p3(@OriginalArg(0) int value) {
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 16);
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 8);
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) value;
 	}
 
 	@OriginalMember(owner = "client!ald", name = "ax", descriptor = "(Lclient!ald;I)V")
-	public final void pdata(@OriginalArg(0) Packet src) {
+	public void pdata(@OriginalArg(0) Packet src) {
 		this.pdata(src.data, 0, src.pos * -1380987821);
 	}
 
 	@OriginalMember(owner = "client!ald", name = "a", descriptor = "(J)V")
-	public final void p6(@OriginalArg(0) long value) {
+	public void p6(@OriginalArg(0) long value) {
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 40);
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 32);
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 24);
@@ -121,7 +122,7 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "s", descriptor = "(J)V")
-	public final void p8(@OriginalArg(0) long value) {
+	public void p8(@OriginalArg(0) long value) {
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 56);
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 48);
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 40);
@@ -133,7 +134,7 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "x", descriptor = "(JIB)V")
-	public final void pVarLong(@OriginalArg(0) long arg0, @OriginalArg(1) int bytes) {
+	public void pVarLong(@OriginalArg(0) long arg0, @OriginalArg(1) int bytes) {
 		@Pc(0) int read = bytes - 1;
 		if (read < 0 || read > 7) {
 			throw new IllegalArgumentException();
@@ -144,12 +145,12 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "z", descriptor = "(ZB)V")
-	public final void pbool(@OriginalArg(0) boolean value) {
+	public void pbool(@OriginalArg(0) boolean value) {
 		this.p1(value ? 1 : 0);
 	}
 
 	@OriginalMember(owner = "client!ald", name = "v", descriptor = "(Ljava/lang/String;I)V")
-	public final void pjstr(@OriginalArg(0) String value) {
+	public void pjstr(@OriginalArg(0) String value) {
 		@Pc(3) int nulIndex = value.indexOf(0);
 		if (nulIndex >= 0) {
 			throw new IllegalArgumentException("");
@@ -159,7 +160,7 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "n", descriptor = "(Ljava/lang/String;I)V")
-	public final void pjstr2(@OriginalArg(0) String value) {
+	public void pjstr2(@OriginalArg(0) String value) {
 		@Pc(3) int nulIndex = value.indexOf(0);
 		if (nulIndex >= 0) {
 			throw new IllegalArgumentException("");
@@ -170,7 +171,7 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "c", descriptor = "(Ljava/lang/CharSequence;I)V")
-	public final void pUTF8(@OriginalArg(0) CharSequence arg0) {
+	public void pUTF8(@OriginalArg(0) CharSequence arg0) {
 		@Pc(3) int local3 = Class445.method29239(arg0, -2002308536);
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = 0;
 		this.pVarInt(local3);
@@ -178,14 +179,14 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "b", descriptor = "([BIIB)V")
-	public final void pdata(@OriginalArg(0) byte[] src, @OriginalArg(1) int off, @OriginalArg(2) int len) {
+	public void pdata(@OriginalArg(0) byte[] src, @OriginalArg(1) int off, @OriginalArg(2) int len) {
 		for (@Pc(1) int i = off; i < off + len; i++) {
 			this.data[(this.pos += 1034180571) * -1380987821 - 1] = src[i];
 		}
 	}
 
 	@OriginalMember(owner = "client!ald", name = "ay", descriptor = "(II)V")
-	public final void p2check(@OriginalArg(0) int value) {
+	public void p2check(@OriginalArg(0) int value) {
 		if (value < 0 || value > 65535) {
 			throw new IllegalArgumentException();
 		}
@@ -194,7 +195,7 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "ai", descriptor = "(IB)V")
-	public final void p1check(@OriginalArg(0) int value) {
+	public void p1check(@OriginalArg(0) int value) {
 		if (value < 0 || value > 255) {
 			throw new IllegalArgumentException();
 		}
@@ -202,7 +203,7 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "cr", descriptor = "(B)I")
-	public final int g4_alt3() {
+	public int g4_alt3() {
 		this.pos += -158245012;
 		return ((this.data[this.pos * -1380987821 - 3] & 0xFF) << 24) +
 				((this.data[this.pos * -1380987821 - 4] & 0xFF) << 16) +
@@ -211,7 +212,7 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "ao", descriptor = "(IS)V")
-	public final void pSmart1or2(@OriginalArg(0) int value) {
+	public void pSmart1or2(@OriginalArg(0) int value) {
 		if (value >= 0 && value < 128) {
 			this.p1(value);
 		} else if (value >= 0 && value < 32768) {
@@ -222,7 +223,7 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "aj", descriptor = "(IB)V")
-	public final void pSmart2or4null(@OriginalArg(0) int value) {
+	public void pSmart2or4null(@OriginalArg(0) int value) {
 		if (value < -1) {
 			throw new IllegalArgumentException();
 		} else if (value == -1) {
@@ -236,7 +237,7 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "cn", descriptor = "(I)I")
-	public final int g2s_alt2() {
+	public int g2s_alt2() {
 		this.pos += 2068361142;
 		@Pc(33) int value = ((this.data[this.pos * -1380987821 - 2] & 0xFF) << 8) + (this.data[this.pos * -1380987821 - 1] - 128 & 0xFF);
 		if (value > 32767) {
@@ -246,18 +247,18 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "ab", descriptor = "(B)B")
-	public final byte g1b() {
+	public byte g1b() {
 		return this.data[(this.pos += 1034180571) * -1380987821 - 1];
 	}
 
 	@OriginalMember(owner = "client!ald", name = "al", descriptor = "(B)I")
-	public final int g2() {
+	public int g2() {
 		this.pos += 2068361142;
 		return (this.data[this.pos * -1380987821 - 1] & 0xFF) + ((this.data[this.pos * -1380987821 - 2] & 0xFF) << 8);
 	}
 
 	@OriginalMember(owner = "client!ald", name = "ah", descriptor = "(I)I")
-	public final int g2s() {
+	public int g2s() {
 		this.pos += 2068361142;
 		@Pc(31) int value = (this.data[this.pos * -1380987821 - 1] & 0xFF) + ((this.data[this.pos * -1380987821 - 2] & 0xFF) << 8);
 		if (value > 32767) {
@@ -267,13 +268,13 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "af", descriptor = "(I)I")
-	public final int g3() {
+	public int g3() {
 		this.pos += -1192425583;
 		return ((this.data[this.pos * -1380987821 - 3] & 0xFF) << 16) + ((this.data[this.pos * -1380987821 - 2] & 0xFF) << 8) + (this.data[this.pos * -1380987821 - 1] & 0xFF);
 	}
 
 	@OriginalMember(owner = "client!ald", name = "am", descriptor = "(B)I")
-	public final int g3s() {
+	public int g3s() {
 		this.pos += -1192425583;
 		@Pc(45) int value = ((this.data[this.pos * -1380987821 - 2] & 0xFF) << 8) + ((this.data[this.pos * -1380987821 - 3] & 0xFF) << 16) + (this.data[this.pos * -1380987821 - 1] & 0xFF);
 		if (value > 8388607) {
@@ -283,13 +284,13 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "ak", descriptor = "(I)I")
-	public final int g4() {
+	public int g4() {
 		this.pos += -158245012;
 		return ((this.data[this.pos * -1380987821 - 4] & 0xFF) << 24) + ((this.data[this.pos * -1380987821 - 3] & 0xFF) << 16) + ((this.data[this.pos * -1380987821 - 2] & 0xFF) << 8) + (this.data[this.pos * -1380987821 - 1] & 0xFF);
 	}
 
 	@OriginalMember(owner = "client!ald", name = "at", descriptor = "(I)I")
-	public final int ip4() {
+	public int ip4() {
 		this.pos += -158245012;
 		return ((this.data[this.pos * -1380987821 - 1] & 0xFF) << 24) +
 				((this.data[this.pos * -1380987821 - 2] & 0xFF) << 16) +
@@ -298,14 +299,14 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "ad", descriptor = "(B)J")
-	public final long g5() {
+	public long g5() {
 		@Pc(6) long high = (long) this.g1() & 0xFFFFFFFFL;
 		@Pc(13) long low = (long) this.g4() & 0xFFFFFFFFL;
 		return (high << 32) + low;
 	}
 
 	@OriginalMember(owner = "client!ald", name = "au", descriptor = "(B)Ljava/lang/String;")
-	public final String gjstr2() {
+	public String gjstr2() {
 		@Pc(14) byte version = this.data[(this.pos += 1034180571) * -1380987821 - 1];
 		if (version != 0) {
 			throw new IllegalStateException("");
@@ -318,7 +319,7 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "aa", descriptor = "(IB)J")
-	public final long gVarLong(@OriginalArg(0) int bytes) {
+	public long gVarLong(@OriginalArg(0) int bytes) {
 		@Pc(0) int read = bytes - 1;
 		if (read < 0 || read > 7) {
 			throw new IllegalArgumentException();
@@ -333,12 +334,12 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "ae", descriptor = "(I)F")
-	public final float gFloat() {
+	public float gFloat() {
 		return Float.intBitsToFloat(this.g4());
 	}
 
 	@OriginalMember(owner = "client!ald", name = "ap", descriptor = "(I)Ljava/lang/String;")
-	public final String fastgstr() {
+	public String fastgstr() {
 		if (this.data[this.pos * -1380987821] == 0) {
 			this.pos += 1034180571;
 			return null;
@@ -348,7 +349,7 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "bk", descriptor = "([IIIB)V")
-	public final void tinyenc(@OriginalArg(0) int[] key, @OriginalArg(1) int off, @OriginalArg(2) int len) {
+	public void tinyenc(@OriginalArg(0) int[] key, @OriginalArg(1) int off, @OriginalArg(2) int len) {
 		@Pc(4) int start = this.pos * -1380987821;
 		this.pos = off * 1034180571;
 		@Pc(15) int blocks = (len - off) / 8;
@@ -371,7 +372,7 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "az", descriptor = "(B)Ljava/lang/String;")
-	public final String gUTF8() {
+	public String gUTF8() {
 		@Pc(14) byte local14 = this.data[(this.pos += 1034180571) * -1380987821 - 1];
 		if (local14 != 0) {
 			throw new IllegalStateException("");
@@ -386,25 +387,25 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "aw", descriptor = "(I)I")
-	public final int gSmart1or2s() {
+	public int gSmart1or2s() {
 		@Pc(9) int value = this.data[this.pos * -1380987821] & 0xFF;
 		return value < 128 ? this.g1() - 64 : this.g2() - 49152;
 	}
 
 	@OriginalMember(owner = "client!ald", name = "bg", descriptor = "(I)I")
-	public final int gSmart1or2() {
+	public int gSmart1or2() {
 		@Pc(9) int value = this.data[this.pos * -1380987821] & 0xFF;
 		return value < 128 ? this.g1() : this.g2() - 32768;
 	}
 
 	@OriginalMember(owner = "client!ald", name = "bl", descriptor = "(I)I")
-	public final int gSmart1or2null() {
+	public int gSmart1or2null() {
 		@Pc(9) int value = this.data[this.pos * -1380987821] & 0xFF;
 		return value < 128 ? this.g1() - 1 : this.g2() - 32769;
 	}
 
 	@OriginalMember(owner = "client!ald", name = "e", descriptor = "(B)V")
-	public final void release() {
+	public void release() {
 		if (this.data != null) {
 			ByteArrayPool.release(this.data, 1201638897);
 		}
@@ -412,7 +413,7 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "aq", descriptor = "(IB)V")
-	public final void pSmart1or2s(@OriginalArg(0) int value) {
+	public void pSmart1or2s(@OriginalArg(0) int value) {
 		if (value < 64 && value >= -64) {
 			this.p1(value + 64);
 		} else if (value < 16384 && value >= -16384) {
@@ -423,7 +424,7 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "bs", descriptor = "(I)I")
-	public final int gVarInt2() {
+	public int gVarInt2() {
 		@Pc(1) int value = 0;
 		@Pc(3) int acc = 0;
 		@Pc(7) int next;
@@ -436,7 +437,7 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "bj", descriptor = "([II)V")
-	public final void tinyenc(@OriginalArg(0) int[] key) {
+	public void tinyenc(@OriginalArg(0) int[] key) {
 		@Pc(6) int blocks = this.pos * -1380987821 / 8;
 		this.pos = 0;
 		for (@Pc(11) int i = 0; i < blocks; i++) {
@@ -457,7 +458,7 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "by", descriptor = "([II)V")
-	public final void tinydec(@OriginalArg(0) int[] key) {
+	public void tinydec(@OriginalArg(0) int[] key) {
 		@Pc(6) int blocks = this.pos * -1380987821 / 8;
 		this.pos = 0;
 		for (@Pc(11) int i = 0; i < blocks; i++) {
@@ -478,14 +479,14 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "av", descriptor = "(B)J")
-	public final long g6() {
+	public long g6() {
 		@Pc(6) long high = (long) this.g2() & 0xFFFFFFFFL;
 		@Pc(13) long low = (long) this.g4() & 0xFFFFFFFFL;
 		return low + (high << 32);
 	}
 
 	@OriginalMember(owner = "client!ald", name = "be", descriptor = "(Ljava/math/BigInteger;Ljava/math/BigInteger;B)V")
-	public final void rsaenc(@OriginalArg(0) BigInteger exponent, @OriginalArg(1) BigInteger modulus) {
+	public void rsaenc(@OriginalArg(0) BigInteger exponent, @OriginalArg(1) BigInteger modulus) {
 		@Pc(4) int length = this.pos * -1380987821;
 		this.pos = 0;
 		@Pc(10) byte[] temp = new byte[length];
@@ -499,14 +500,14 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "bh", descriptor = "(IB)I")
-	public final int addcrc(@OriginalArg(0) int off) {
+	public int addcrc(@OriginalArg(0) int off) {
 		@Pc(9) int crc = getcrc(this.data, off, this.pos * -1380987821);
 		this.p4(crc);
 		return crc;
 	}
 
 	@OriginalMember(owner = "client!ald", name = "bv", descriptor = "(I)Z")
-	public final boolean checkcrc() {
+	public boolean checkcrc() {
 		this.pos -= -158245012;
 		@Pc(15) int crc = getcrc(this.data, 0, this.pos * -1380987821);
 		@Pc(19) int expected = this.g4();
@@ -514,12 +515,12 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "bp", descriptor = "(II)V")
-	public final void p1_alt1(@OriginalArg(0) int value) {
+	public void p1_alt1(@OriginalArg(0) int value) {
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value + 128);
 	}
 
 	@OriginalMember(owner = "client!ald", name = "ba", descriptor = "(B)I")
-	public final int gSmart2or4null() {
+	public int gSmart2or4null() {
 		if (this.data[this.pos * -1380987821] < 0) {
 			return this.g4() & Integer.MAX_VALUE;
 		} else {
@@ -529,78 +530,78 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "bo", descriptor = "(II)V")
-	public final void p1_alt3(@OriginalArg(0) int value) {
+	public void p1_alt3(@OriginalArg(0) int value) {
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (128 - value);
 	}
 
 	@OriginalMember(owner = "client!ald", name = "bc", descriptor = "(I)I")
-	public final int g1_alt1() {
+	public int g1_alt1() {
 		return this.data[(this.pos += 1034180571) * -1380987821 - 1] - 128 & 0xFF;
 	}
 
 	@OriginalMember(owner = "client!ald", name = "bf", descriptor = "(I)I")
-	public final int g1_alt2() {
+	public int g1_alt2() {
 		return -this.data[(this.pos += 1034180571) * -1380987821 - 1] & 0xFF;
 	}
 
 	@OriginalMember(owner = "client!ald", name = "bi", descriptor = "(I)B")
-	public final byte g1b_alt2() {
+	public byte g1b_alt2() {
 		return (byte) -this.data[(this.pos += 1034180571) * -1380987821 - 1];
 	}
 
 	@OriginalMember(owner = "client!ald", name = "bu", descriptor = "(I)B")
-	public final byte g1b_alt3() {
+	public byte g1b_alt3() {
 		return (byte) (128 - this.data[(this.pos += 1034180571) * -1380987821 - 1]);
 	}
 
 	@OriginalMember(owner = "client!ald", name = "bm", descriptor = "(II)V")
-	public final void p2_alt1(@OriginalArg(0) int value) {
+	public void p2_alt1(@OriginalArg(0) int value) {
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) value;
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 8);
 	}
 
 	@OriginalMember(owner = "client!ald", name = "bq", descriptor = "(II)V")
-	public final void p2_alt2(@OriginalArg(0) int value) {
+	public void p2_alt2(@OriginalArg(0) int value) {
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 8);
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value + 128);
 	}
 
 	@OriginalMember(owner = "client!ald", name = "bd", descriptor = "(II)V")
-	public final void p2_alt3(@OriginalArg(0) int value) {
+	public void p2_alt3(@OriginalArg(0) int value) {
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value + 128);
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 8);
 	}
 
 	@OriginalMember(owner = "client!ald", name = "cd", descriptor = "(I)I")
-	public final int g2_alt1() {
+	public int g2_alt1() {
 		this.pos += 2068361142;
 		return ((this.data[this.pos * -1380987821 - 1] & 0xFF) << 8) +
 				(this.data[this.pos * -1380987821 - 2] & 0xFF);
 	}
 
 	@OriginalMember(owner = "client!ald", name = "cv", descriptor = "(I)I")
-	public final int g2_alt2() {
+	public int g2_alt2() {
 		this.pos += 2068361142;
 		return ((this.data[this.pos * -1380987821 - 2] & 0xFF) << 8) +
 				(this.data[this.pos * -1380987821 - 1] - 128 & 0xFF);
 	}
 
 	@OriginalMember(owner = "client!ald", name = "ct", descriptor = "(I)I")
-	public final int g2_alt3() {
+	public int g2_alt3() {
 		this.pos += 2068361142;
 		return ((this.data[this.pos * -1380987821 - 1] & 0xFF) << 8) +
 				(this.data[this.pos * -1380987821 - 2] - 128 & 0xFF);
 	}
 
 	@OriginalMember(owner = "client!ald", name = "ch", descriptor = "(IB)V")
-	public final void ip3(@OriginalArg(0) int value) {
+	public void ip3(@OriginalArg(0) int value) {
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) value;
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 8);
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 16);
 	}
 
 	@OriginalMember(owner = "client!ald", name = "cu", descriptor = "(I)I")
-	public final int g3_alt1() {
+	public int g3_alt1() {
 		this.pos += -1192425583;
 		return ((this.data[this.pos * -1380987821 - 3] & 0xFF) << 16) +
 				((this.data[this.pos * -1380987821 - 1] & 0xFF) << 8) +
@@ -608,7 +609,7 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "ce", descriptor = "(II)V")
-	public final void p4_alt1(@OriginalArg(0) int value) {
+	public void p4_alt1(@OriginalArg(0) int value) {
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) value;
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 8);
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 16);
@@ -616,24 +617,24 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "ci", descriptor = "([BIIB)V")
-	public final void gdata_alt2(@OriginalArg(0) byte[] dest, @OriginalArg(1) int off, @OriginalArg(2) int len) {
+	public void gdata_alt2(@OriginalArg(0) byte[] dest, @OriginalArg(1) int off, @OriginalArg(2) int len) {
 		for (@Pc(1) int i = off; i < len + off; i++) {
 			dest[i] = (byte) (this.data[(this.pos += 1034180571) * -1380987821 - 1] - 128);
 		}
 	}
 
 	@OriginalMember(owner = "client!ald", name = "bx", descriptor = "(I)B")
-	public final byte g1b_alt1() {
+	public byte g1b_alt1() {
 		return (byte) (this.data[(this.pos += 1034180571) * -1380987821 - 1] - 128);
 	}
 
 	@OriginalMember(owner = "client!ald", name = "bw", descriptor = "(I)I")
-	public final int g1_alt3() {
+	public int g1_alt3() {
 		return 128 - this.data[(this.pos += 1034180571) * -1380987821 - 1] & 0xFF;
 	}
 
 	@OriginalMember(owner = "client!ald", name = "cj", descriptor = "(II)V")
-	public final void p4_alt3(@OriginalArg(0) int value) {
+	public void p4_alt3(@OriginalArg(0) int value) {
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 16);
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 24);
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) value;
@@ -641,7 +642,7 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "bz", descriptor = "([IIII)V")
-	public final void tinydec(@OriginalArg(0) int[] key, @OriginalArg(1) int off, @OriginalArg(2) int len) {
+	public void tinydec(@OriginalArg(0) int[] key, @OriginalArg(1) int off, @OriginalArg(2) int len) {
 		@Pc(4) int start = this.pos * -1380987821;
 		this.pos = off * 1034180571;
 		@Pc(15) int blocks = (len - off) / 8;
@@ -664,7 +665,7 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "br", descriptor = "(B)I")
-	public final int gExtended1or2() {
+	public int gExtended1or2() {
 		@Pc(1) int acc = 0;
 		@Pc(5) int next;
 		for (next = this.gSmart1or2(); next == 32767; next = this.gSmart1or2()) {
@@ -674,7 +675,7 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "ca", descriptor = "(I)I")
-	public final int g4_alt2() {
+	public int g4_alt2() {
 		this.pos += -158245012;
 		return ((this.data[this.pos * -1380987821 - 2] & 0xFF) << 24) +
 				((this.data[this.pos * -1380987821 - 1] & 0xFF) << 16) +
@@ -683,21 +684,21 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "cc", descriptor = "(II)V")
-	public final void p3_alt2(@OriginalArg(0) int value) {
+	public void p3_alt2(@OriginalArg(0) int value) {
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 16);
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) value;
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 8);
 	}
 
 	@OriginalMember(owner = "client!ald", name = "an", descriptor = "(B)J")
-	public final long g8() {
+	public long g8() {
 		@Pc(6) long high = (long) this.g4() & 0xFFFFFFFFL;
 		@Pc(13) long low = (long) this.g4() & 0xFFFFFFFFL;
 		return (high << 32) + low;
 	}
 
 	@OriginalMember(owner = "client!ald", name = "j", descriptor = "(J)V")
-	public final void p5(@OriginalArg(0) long value) {
+	public void p5(@OriginalArg(0) long value) {
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 32);
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 24);
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 16);
@@ -706,7 +707,7 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "cy", descriptor = "(I)I")
-	public final int g2s_alt3() {
+	public int g2s_alt3() {
 		this.pos += 2068361142;
 		@Pc(33) int value = ((this.data[this.pos * -1380987821 - 1] & 0xFF) << 8) + (this.data[this.pos * -1380987821 - 2] - 128 & 0xFF);
 		if (value > 32767) {
@@ -716,7 +717,7 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "ck", descriptor = "(I)I")
-	public final int g4_alt1() {
+	public int g4_alt1() {
 		this.pos += -158245012;
 		return ((this.data[this.pos * -1380987821 - 1] & 0xFF) << 24) +
 				((this.data[this.pos * -1380987821 - 2] & 0xFF) << 16) +
@@ -725,7 +726,7 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "o", descriptor = "(II)V")
-	public final void ip4(@OriginalArg(0) int value) {
+	public void ip4(@OriginalArg(0) int value) {
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) value;
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 8);
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 16);
@@ -733,12 +734,12 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "bn", descriptor = "(I)I")
-	public final int gSmart2or4() {
+	public int gSmart2or4() {
 		return this.data[this.pos * -1380987821] < 0 ? this.g4() & Integer.MAX_VALUE : this.g2();
 	}
 
 	@OriginalMember(owner = "client!ald", name = "bt", descriptor = "(I)I")
-	final int gVarInt() {
+	int gVarInt() {
 		@Pc(14) byte next = this.data[(this.pos += 1034180571) * -1380987821 - 1];
 		@Pc(16) int acc = 0;
 		while (next < 0) {
@@ -749,7 +750,7 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "m", descriptor = "(IB)V")
-	public final void p4(@OriginalArg(0) int value) {
+	public void p4(@OriginalArg(0) int value) {
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 24);
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 16);
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 8);
@@ -757,17 +758,17 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "bb", descriptor = "(II)V")
-	public final void p1_alt2(@OriginalArg(0) int arg0) {
+	public void p1_alt2(@OriginalArg(0) int arg0) {
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) -arg0;
 	}
 
 	@OriginalMember(owner = "client!ald", name = "ag", descriptor = "(I)I")
-	public final int g1() {
+	public int g1() {
 		return this.data[(this.pos += 1034180571) * -1380987821 - 1] & 0xFF;
 	}
 
 	@OriginalMember(owner = "client!ald", name = "ar", descriptor = "(S)Ljava/lang/String;")
-	public final String gjstr() {
+	public String gjstr() {
 		@Pc(4) int start = this.pos * -1380987821;
 		while (this.data[(this.pos += 1034180571) * -1380987821 - 1] != 0) {
 		}
@@ -776,13 +777,13 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "g", descriptor = "(II)V")
-	public final void ip2(@OriginalArg(0) int value) {
+	public void ip2(@OriginalArg(0) int value) {
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) value;
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 8);
 	}
 
 	@OriginalMember(owner = "client!ald", name = "ac", descriptor = "(II)V")
-	final void pVarInt(@OriginalArg(0) int value) {
+	void pVarInt(@OriginalArg(0) int value) {
 		if ((value & 0xFFFFFF80) != 0) {
 			if ((value & 0xFFFFC000) != 0) {
 				if ((value & 0xFFE00000) != 0) {
@@ -799,14 +800,14 @@ public class Packet extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ald", name = "as", descriptor = "([BIII)V")
-	public final void gdata(@OriginalArg(0) byte[] dest, @OriginalArg(1) int off, @OriginalArg(2) int len) {
+	public void gdata(@OriginalArg(0) byte[] dest, @OriginalArg(1) int off, @OriginalArg(2) int len) {
 		for (@Pc(1) int i = off; i < len + off; i++) {
 			dest[i] = this.data[(this.pos += 1034180571) * -1380987821 - 1];
 		}
 	}
 
 	@OriginalMember(owner = "client!ald", name = "cs", descriptor = "(IB)V")
-	public final void p4_alt2(@OriginalArg(0) int value) {
+	public void p4_alt2(@OriginalArg(0) int value) {
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 8);
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) value;
 		this.data[(this.pos += 1034180571) * -1380987821 - 1] = (byte) (value >> 24);

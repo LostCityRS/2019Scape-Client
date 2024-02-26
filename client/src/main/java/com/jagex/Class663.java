@@ -1,10 +1,11 @@
 package com.jagex;
 
-import java.util.Queue;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.util.Queue;
 
 @OriginalClass("client!xk")
 final class Class663 implements Interface73 {

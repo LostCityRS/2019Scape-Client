@@ -1,11 +1,12 @@
 package com.jagex;
 
-import java.awt.Point;
-import java.io.File;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.awt.*;
+import java.io.File;
 
 @OriginalClass("client!gj")
 public final class Class289 implements Interface75 {

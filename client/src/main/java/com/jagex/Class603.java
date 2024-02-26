@@ -1,12 +1,13 @@
 package com.jagex;
 
 import com.jagex.twitchtv.TwitchWebcamDevice;
-import java.io.DataInputStream;
-import java.net.URL;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.io.DataInputStream;
+import java.net.URL;
 
 @OriginalClass("client!uw")
 public final class Class603 implements Interface66 {

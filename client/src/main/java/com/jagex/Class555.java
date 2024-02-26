@@ -1,14 +1,12 @@
 package com.jagex;
 
-import java.awt.Component;
-import java.awt.Cursor;
-import java.awt.Point;
-import java.awt.Robot;
-import java.awt.image.BufferedImage;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.awt.*;
+import java.awt.image.BufferedImage;
 
 @OriginalClass("client!sn")
 public final class Class555 {

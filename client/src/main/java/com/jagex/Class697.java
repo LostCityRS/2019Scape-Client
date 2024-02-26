@@ -1,11 +1,12 @@
 package com.jagex;
 
-import java.util.HashSet;
-import java.util.Set;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @OriginalClass("client!yy")
 public final class Class697 implements Interface75 {

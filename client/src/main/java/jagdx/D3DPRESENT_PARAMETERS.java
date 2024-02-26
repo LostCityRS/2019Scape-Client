@@ -1,9 +1,10 @@
 package jagdx;
 
-import java.awt.Component;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
+
+import java.awt.*;
 
 @OriginalClass("client!jagdx/D3DPRESENT_PARAMETERS")
 public final class D3DPRESENT_PARAMETERS {

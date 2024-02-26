@@ -1,10 +1,11 @@
 package com.jagex;
 
-import java.util.zip.CRC32;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.util.zip.CRC32;
 
 @OriginalClass("client!aih")
 public final class Class141_Sub1 extends Class141 {

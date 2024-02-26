@@ -1,12 +1,13 @@
 package com.jagex;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 @OriginalClass("client!abs")
 public final class Class43 implements Interface11 {

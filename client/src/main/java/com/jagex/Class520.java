@@ -1,12 +1,13 @@
 package com.jagex;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.InputStreamReader;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.InputStreamReader;
 
 @OriginalClass("client!qw")
 final class Class520 implements Interface9 {

@@ -1,9 +1,10 @@
 package com.jagex;
 
-import java.lang.ref.SoftReference;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
+
+import java.lang.ref.SoftReference;
 
 @OriginalClass("client!auo")
 public final class Class80_Sub1_Sub18_Sub2 extends Class80_Sub1_Sub18 {

@@ -1,10 +1,11 @@
 package com.jagex;
 
-import java.io.IOException;
-import java.io.OutputStream;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
+
+import java.io.IOException;
+import java.io.OutputStream;
 
 @OriginalClass("client!apu")
 public final class OutputStream_Sub1 extends OutputStream {

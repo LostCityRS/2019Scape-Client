@@ -1,13 +1,14 @@
 package com.jagex;
 
-import java.io.IOException;
-import java.net.URL;
-import java.net.URLConnection;
-import java.util.concurrent.Callable;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.io.IOException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.concurrent.Callable;
 
 @OriginalClass("client!pa")
 public final class Class475 implements Callable {

@@ -1,10 +1,11 @@
 package com.jagex;
 
-import java.io.File;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.io.File;
 
 @OriginalClass("client!aqk")
 public final class Class123_Sub2_Sub2 extends Class123_Sub2 {

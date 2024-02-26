@@ -1,11 +1,12 @@
 package com.jagex;
 
-import java.awt.Font;
-import java.util.LinkedList;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.awt.*;
+import java.util.LinkedList;
 
 @OriginalClass("client!rx")
 public final class Class540 implements Runnable {

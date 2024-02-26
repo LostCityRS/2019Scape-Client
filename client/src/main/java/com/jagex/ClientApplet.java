@@ -1,14 +1,12 @@
 package com.jagex;
 
-import java.applet.*;
-import java.awt.*;
-import java.io.*;
-import java.math.*;
-import java.net.*;
-import java.nio.*;
-import java.util.*;
-
 import javax.swing.*;
+import java.applet.Applet;
+import java.applet.AppletStub;
+import java.awt.*;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Properties;
 
 // ideally you'd use JagexAppletViewer, but this is handy for quick testing
 public class ClientApplet extends Applet implements AppletStub {

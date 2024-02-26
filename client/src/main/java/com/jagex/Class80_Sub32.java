@@ -1,10 +1,11 @@
 package com.jagex;
 
-import java.util.BitSet;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.util.BitSet;
 
 @OriginalClass("client!akv")
 public final class Class80_Sub32 extends Class80 {

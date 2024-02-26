@@ -1,11 +1,12 @@
 package com.jagex;
 
-import java.io.File;
-import java.io.IOException;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.io.File;
+import java.io.IOException;
 
 @OriginalClass("client!pf")
 public final class Class480 {

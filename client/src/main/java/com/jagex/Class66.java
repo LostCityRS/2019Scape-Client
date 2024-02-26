@@ -1,11 +1,12 @@
 package com.jagex;
 
-import java.security.SecureRandom;
-import java.util.Iterator;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.security.SecureRandom;
+import java.util.Iterator;
 
 @OriginalClass("client!acq")
 final class Class66 implements Iterator {

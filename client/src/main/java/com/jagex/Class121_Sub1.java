@@ -1,10 +1,11 @@
 package com.jagex;
 
-import java.util.Iterator;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.util.Iterator;
 
 @OriginalClass("client!ahd")
 public final class Class121_Sub1 extends Class121 {

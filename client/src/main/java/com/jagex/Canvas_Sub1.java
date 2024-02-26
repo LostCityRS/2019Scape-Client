@@ -1,11 +1,10 @@
 package com.jagex;
 
-import java.awt.Canvas;
-import java.awt.Component;
-import java.awt.Graphics;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
+
+import java.awt.*;
 
 @OriginalClass("client!atf")
 public final class Canvas_Sub1 extends Canvas {

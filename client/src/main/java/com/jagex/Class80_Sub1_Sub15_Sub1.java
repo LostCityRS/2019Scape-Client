@@ -1,11 +1,12 @@
 package com.jagex;
 
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 @OriginalClass("client!atl")
 public final class Class80_Sub1_Sub15_Sub1 extends Class80_Sub1_Sub15 {

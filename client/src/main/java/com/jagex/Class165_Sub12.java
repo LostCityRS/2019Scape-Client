@@ -1,11 +1,12 @@
 package com.jagex;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 @OriginalClass("client!aml")
 public final class Class165_Sub12 extends Class165 {

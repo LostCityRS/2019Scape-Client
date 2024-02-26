@@ -1,11 +1,12 @@
 package jaggl;
 
-import java.awt.Canvas;
-import java.util.Hashtable;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.awt.*;
+import java.util.Hashtable;
 
 @OriginalClass("client!jaggl/OpenGL")
 public final class OpenGL {

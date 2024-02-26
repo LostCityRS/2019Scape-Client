@@ -1,12 +1,13 @@
 package com.jagex;
 
 import jaggl.OpenGL;
-import java.util.HashMap;
-import java.util.Map;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @OriginalClass("client!agq")
 public final class Class114_Sub1 extends Class114 {

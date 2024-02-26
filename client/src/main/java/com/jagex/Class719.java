@@ -1,10 +1,11 @@
 package com.jagex;
 
-import java.util.Locale;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.util.Locale;
 
 @OriginalClass("client!zv")
 public final class Class719 implements Interface75 {

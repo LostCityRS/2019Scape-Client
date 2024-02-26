@@ -1,8 +1,9 @@
 package com.jagex;
 
-import java.io.InputStream;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
+
+import java.io.InputStream;
 
 @OriginalClass("client!apa")
 public final class InputStream_Sub1 extends InputStream {

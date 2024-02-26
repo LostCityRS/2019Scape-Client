@@ -1,12 +1,13 @@
 package com.jagex;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 
 @OriginalClass("client!alu")
 public final class Class161_Sub1 extends Class161 implements Interface3 {

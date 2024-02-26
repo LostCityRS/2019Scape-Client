@@ -1,9 +1,10 @@
 package com.jagex;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 @OriginalClass("client!all")
 public final class Class80_Sub41 extends Class80 {

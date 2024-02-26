@@ -1,10 +1,11 @@
 package com.jagex;
 
-import java.util.Random;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.util.Random;
 
 @OriginalClass("client!alc")
 public final class Class153_Sub1 extends Class153 {
