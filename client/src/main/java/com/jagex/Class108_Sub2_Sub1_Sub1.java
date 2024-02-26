@@ -173,7 +173,7 @@ public final class Class108_Sub2_Sub1_Sub1 extends Class108_Sub2_Sub1 implements
 
 	@OriginalMember(owner = "client!ail", name = "finalize", descriptor = "()V")
 	@Override
-	void finalize() throws Throwable {
+	protected void finalize() throws Throwable {
 		this.method11175();
 		super.finalize();
 	}

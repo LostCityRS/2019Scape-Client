@@ -107,7 +107,7 @@ public final class Class80_Sub1_Sub3 extends Class80_Sub1 implements Interface16
 
 	@OriginalMember(owner = "client!aen", name = "finalize", descriptor = "()V")
 	@Override
-	void finalize() throws Throwable {
+	protected void finalize() throws Throwable {
 		this.method2380();
 		super.finalize();
 	}

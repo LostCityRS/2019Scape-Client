@@ -659,7 +659,7 @@ public abstract class Class84 {
 
 	@OriginalMember(owner = "client!bz", name = "finalize", descriptor = "()V")
 	@Override
-	final void finalize() throws Throwable {
+	protected void finalize() throws Throwable {
 		this.method18322();
 		super.finalize();
 	}

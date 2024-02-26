@@ -79,7 +79,7 @@ public final class Class160_Sub1 extends Class160 {
 
 	@OriginalMember(owner = "client!alr", name = "finalize", descriptor = "()V")
 	@Override
-	void finalize() {
+	protected void finalize() {
 		this.method15549((short) 9381);
 	}
 

@@ -107,7 +107,7 @@ public final class Class179 {
 
 	@OriginalMember(owner = "client!bb", name = "finalize", descriptor = "()V")
 	@Override
-	void finalize() throws Throwable {
+	protected void finalize() throws Throwable {
 		this.aClass102_Sub3_39.method6438(this.anInt3312);
 		super.finalize();
 	}

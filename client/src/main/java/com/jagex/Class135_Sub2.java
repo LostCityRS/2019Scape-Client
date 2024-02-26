@@ -92,7 +92,7 @@ public final class Class135_Sub2 extends Class135 {
 
 	@OriginalMember(owner = "client!aik", name = "finalize", descriptor = "()V")
 	@Override
-	void finalize() {
+	protected void finalize() {
 		this.method11111();
 	}
 

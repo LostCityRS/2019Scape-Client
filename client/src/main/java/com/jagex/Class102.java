@@ -313,7 +313,7 @@ public abstract class Class102 {
 
 	@OriginalMember(owner = "client!di", name = "finalize", descriptor = "()V")
 	@Override
-	void finalize() {
+	protected void finalize() {
 		this.method20660(-747489011);
 	}
 

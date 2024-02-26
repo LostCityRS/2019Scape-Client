@@ -131,7 +131,7 @@ public final class Class113_Sub2 extends Class113 {
 
 	@OriginalMember(owner = "client!ago", name = "finalize", descriptor = "()V")
 	@Override
-	void finalize() throws Throwable {
+	protected void finalize() throws Throwable {
 		this.method8325();
 		super.finalize();
 	}

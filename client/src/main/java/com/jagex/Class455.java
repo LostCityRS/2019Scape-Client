@@ -137,7 +137,7 @@ public final class Class455 implements Interface38 {
 
 	@OriginalMember(owner = "client!oa", name = "finalize", descriptor = "()V")
 	@Override
-	void finalize() {
+	protected void finalize() {
 		this.method29328();
 	}
 

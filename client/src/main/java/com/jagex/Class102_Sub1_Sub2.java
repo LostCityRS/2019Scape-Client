@@ -1115,7 +1115,7 @@ public final class Class102_Sub1_Sub2 extends Class102_Sub1 {
 
 	@OriginalMember(owner = "client!aqw", name = "finalize", descriptor = "()V")
 	@Override
-	void finalize() {
+	protected void finalize() {
 		super.finalize();
 	}
 

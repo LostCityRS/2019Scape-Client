@@ -41,7 +41,7 @@ public final class Class465 implements Interface52 {
 
 	@OriginalMember(owner = "client!op", name = "finalize", descriptor = "()V")
 	@Override
-	void finalize() {
+	protected void finalize() {
 		this.method29752();
 	}
 

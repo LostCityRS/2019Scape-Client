@@ -67,7 +67,7 @@ public abstract class Class95 {
 
 	@OriginalMember(owner = "client!bd", name = "finalize", descriptor = "()V")
 	@Override
-	final void finalize() throws Throwable {
+	protected void finalize() throws Throwable {
 		if (!this.aBoolean78) {
 			this.aClass102_Sub3_22.method6422(this.anInt405, this.anInt406);
 			this.aBoolean78 = true;

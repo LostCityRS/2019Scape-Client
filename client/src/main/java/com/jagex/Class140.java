@@ -395,7 +395,7 @@ public abstract class Class140 implements Interface39 {
 
 	@OriginalMember(owner = "client!rg", name = "finalize", descriptor = "()V")
 	@Override
-	final void finalize() throws Throwable {
+	protected void finalize() throws Throwable {
 		this.method11719();
 		super.finalize();
 	}
