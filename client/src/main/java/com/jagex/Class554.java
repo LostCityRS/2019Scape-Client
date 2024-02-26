@@ -793,6 +793,10 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 
 	@OriginalMember(owner = "client!sm", name = "r", descriptor = "(I)Z")
 	final boolean method25191(@OriginalArg(0) int arg0) {
+		if (ClientConfig.SKIP_HOST_CHECK) {
+			return true;
+		}
+
 		@Pc(4) String local4 = Class306.anApplet1.getDocumentBase().getHost().toLowerCase();
 		if (local4.equals("jagex.com") || local4.endsWith(".jagex.com")) {
 			return true;
@@ -1894,6 +1898,10 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 
 	@OriginalMember(owner = "client!sm", name = "cy", descriptor = "()Z")
 	final boolean method25251() {
+		if (ClientConfig.SKIP_HOST_CHECK) {
+			return true;
+		}
+
 		@Pc(4) String local4 = Class306.anApplet1.getDocumentBase().getHost().toLowerCase();
 		if (local4.equals("jagex.com") || local4.endsWith(".jagex.com")) {
 			return true;
