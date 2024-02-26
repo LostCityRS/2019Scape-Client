@@ -8,6 +8,10 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("client!ac")
 public final class Class51 {
 
+	// $FF: synthetic field
+	@OriginalMember(owner = "client!ac", name = "$assertionsDisabled", descriptor = "Z")
+	static final boolean aBoolean30 = !Class51.class.desiredAssertionStatus();
+
 	@OriginalMember(owner = "client!ac", name = "f", descriptor = "I")
 	static final int anInt190 = 1;
 
