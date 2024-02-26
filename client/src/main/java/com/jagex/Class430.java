@@ -689,25 +689,26 @@ public final class Class430 {
 								break;
 							case 3:
 								Class80.method24400(Class68.aClass68_13, (byte) 68);
+								break;
 						}
-					}
-					if (local181 instanceof RuntimeException_Sub3) {
-						Class703.aClass80_Sub37_49.aClass165_Sub43_2.method16952(0, 1413385158);
-						Class703.aClass80_Sub37_49.aClass165_Sub43_1.method16952(0, 1413385158);
-					}
-					@Pc(208) int local208 = Class703.aClass80_Sub37_49.aClass165_Sub1_2.method15834(-1558765792);
-					Class703.aClass80_Sub37_49.method14943(Class703.aClass80_Sub37_49.aClass165_Sub1_2, 0, (byte) 55);
-					if (local57 != null) {
-						try {
-							local57.method20660(-1318530958);
-							local57 = null;
-						} catch (@Pc(224) Throwable local224) {
+						if (local181 instanceof RuntimeException_Sub3) {
+							Class703.aClass80_Sub37_49.aClass165_Sub43_2.method16952(0, 1413385158);
+							Class703.aClass80_Sub37_49.aClass165_Sub43_1.method16952(0, 1413385158);
 						}
+						@Pc(208) int local208 = Class703.aClass80_Sub37_49.aClass165_Sub1_2.method15834(-1558765792);
+						Class703.aClass80_Sub37_49.method14943(Class703.aClass80_Sub37_49.aClass165_Sub1_2, 0, (byte) 55);
+						if (local57 != null) {
+							try {
+								local57.method20660(-1318530958);
+								local57 = null;
+							} catch (@Pc(224) Throwable local224) {
+							}
+						}
+						Class230.method26005(-672164049);
+						System.gc();
+						method29085(local208, arg1, arg2, (byte) 0);
+						var18 = false;
 					}
-					Class230.method26005(-672164049);
-					System.gc();
-					method29085(local208, arg1, arg2, (byte) 0);
-					var18 = false;
 				} finally {
 					if (var18 && local57 != null) {
 						try {
