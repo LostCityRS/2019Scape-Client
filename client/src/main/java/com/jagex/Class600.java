@@ -397,7 +397,7 @@ public final class Class600 {
 					if (local354 < 0.0F) {
 						local354 *= -1.0F;
 					}
-					if (!local354 < (float) this.anInt5378 && (this.method32062(arg1, 0) && (this.method32062(arg1, 1) && (this.method32062(arg1, 2) && this.method32062(arg1, 3))))) {
+					if (!(local354 < (float) this.anInt5378) && (this.method32062(arg1, 0) && (this.method32062(arg1, 1) && (this.method32062(arg1, 2) && this.method32062(arg1, 3))))) {
 						this.aClass593Array3[this.anInt5374++] = arg1;
 					}
 				}
@@ -1139,7 +1139,7 @@ public final class Class600 {
 					if (local354 < 0.0F) {
 						local354 *= -1.0F;
 					}
-					if (!local354 < (float) this.anInt5378 && (this.method32062(arg1, 0) && (this.method32062(arg1, 1) && (this.method32062(arg1, 2) && this.method32062(arg1, 3))))) {
+					if (!(local354 < (float) this.anInt5378) && (this.method32062(arg1, 0) && (this.method32062(arg1, 1) && (this.method32062(arg1, 2) && this.method32062(arg1, 3))))) {
 						this.aClass593Array3[this.anInt5374++] = arg1;
 					}
 				}
@@ -1279,7 +1279,7 @@ public final class Class600 {
 					if (local354 < 0.0F) {
 						local354 *= -1.0F;
 					}
-					if (!local354 < (float) this.anInt5378 && (this.method32062(arg1, 0) && (this.method32062(arg1, 1) && (this.method32062(arg1, 2) && this.method32062(arg1, 3))))) {
+					if (!(local354 < (float) this.anInt5378) && (this.method32062(arg1, 0) && (this.method32062(arg1, 1) && (this.method32062(arg1, 2) && this.method32062(arg1, 3))))) {
 						this.aClass593Array3[this.anInt5374++] = arg1;
 					}
 				}
