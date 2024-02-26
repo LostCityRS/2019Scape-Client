@@ -47,7 +47,7 @@ public final class Class80_Sub32 extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!akv", name = "<init>", descriptor = "(Lclient!ald;)V")
-	public Class80_Sub32(@OriginalArg(0) Class80_Sub36 arg0) {
+	public Class80_Sub32(@OriginalArg(0) Packet arg0) {
 		this.method14437(arg0, -1535942276);
 	}
 
@@ -132,8 +132,8 @@ public final class Class80_Sub32 extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!akv", name = "g", descriptor = "(Lclient!ald;I)V")
-	void method14437(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) int local3 = arg0.method23362(-685998016);
+	void method14437(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) int local3 = arg0.g1();
 		if ((local3 & 0x1) != 0) {
 			this.aBoolean382 = true;
 		}
@@ -142,15 +142,15 @@ public final class Class80_Sub32 extends Class80 {
 		}
 		@Pc(21) int local21 = 2;
 		if ((local3 & 0x4) != 0) {
-			local21 = arg0.method23362(-1308397126);
+			local21 = arg0.g1();
 		}
-		this.aLong338 = arg0.method23273((byte) 14) * 6850079459805481791L;
-		this.aLong126 = arg0.method23273((byte) -67) * 175499899195935747L;
-		this.aString52 = arg0.method23376((short) 12823);
-		arg0.method23362(798605574);
-		this.aByte56 = arg0.method23177((byte) -106);
-		this.aByte55 = arg0.method23177((byte) -9);
-		this.anInt1650 = arg0.method23178((byte) -69) * 19703383;
+		this.aLong338 = arg0.g8() * 6850079459805481791L;
+		this.aLong126 = arg0.g8() * 175499899195935747L;
+		this.aString52 = arg0.gjstr();
+		arg0.g1();
+		this.aByte56 = arg0.g1b();
+		this.aByte55 = arg0.g1b();
+		this.anInt1650 = arg0.g2() * 19703383;
 		if (this.anInt1650 * 753247591 <= 0) {
 			return;
 		}
@@ -158,15 +158,15 @@ public final class Class80_Sub32 extends Class80 {
 		for (@Pc(83) int local83 = 0; local83 < this.anInt1650 * 753247591; local83++) {
 			@Pc(93) Class382 local93 = new Class382();
 			if (this.aBoolean382) {
-				arg0.method23273((byte) 66);
+				arg0.g8();
 			}
 			if (this.aBoolean381) {
-				local93.aString204 = arg0.method23376((short) 6418);
+				local93.aString204 = arg0.gjstr();
 			}
-			local93.aByte146 = arg0.method23177((byte) -95);
-			local93.anInt4538 = arg0.method23178((byte) -2) * -477853141;
+			local93.aByte146 = arg0.g1b();
+			local93.anInt4538 = arg0.g2() * -477853141;
 			if (local21 >= 3) {
-				arg0.method23362(-226298803);
+				arg0.g1();
 			}
 			this.aClass382Array1[local83] = local93;
 		}
@@ -221,8 +221,8 @@ public final class Class80_Sub32 extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!akv", name = "z", descriptor = "(Lclient!ald;)V")
-	void method14443(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(3) int local3 = arg0.method23362(67666095);
+	void method14443(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1();
 		if ((local3 & 0x1) != 0) {
 			this.aBoolean382 = true;
 		}
@@ -231,15 +231,15 @@ public final class Class80_Sub32 extends Class80 {
 		}
 		@Pc(21) int local21 = 2;
 		if ((local3 & 0x4) != 0) {
-			local21 = arg0.method23362(-1507625279);
+			local21 = arg0.g1();
 		}
-		this.aLong338 = arg0.method23273((byte) 26) * 6850079459805481791L;
-		this.aLong126 = arg0.method23273((byte) 7) * 175499899195935747L;
-		this.aString52 = arg0.method23376((short) 1626);
-		arg0.method23362(-1528611140);
-		this.aByte56 = arg0.method23177((byte) -40);
-		this.aByte55 = arg0.method23177((byte) -53);
-		this.anInt1650 = arg0.method23178((byte) -71) * 19703383;
+		this.aLong338 = arg0.g8() * 6850079459805481791L;
+		this.aLong126 = arg0.g8() * 175499899195935747L;
+		this.aString52 = arg0.gjstr();
+		arg0.g1();
+		this.aByte56 = arg0.g1b();
+		this.aByte55 = arg0.g1b();
+		this.anInt1650 = arg0.g2() * 19703383;
 		if (this.anInt1650 * 753247591 <= 0) {
 			return;
 		}
@@ -247,23 +247,23 @@ public final class Class80_Sub32 extends Class80 {
 		for (@Pc(83) int local83 = 0; local83 < this.anInt1650 * 753247591; local83++) {
 			@Pc(93) Class382 local93 = new Class382();
 			if (this.aBoolean382) {
-				arg0.method23273((byte) -19);
+				arg0.g8();
 			}
 			if (this.aBoolean381) {
-				local93.aString204 = arg0.method23376((short) 825);
+				local93.aString204 = arg0.gjstr();
 			}
-			local93.aByte146 = arg0.method23177((byte) -110);
-			local93.anInt4538 = arg0.method23178((byte) -62) * -477853141;
+			local93.aByte146 = arg0.g1b();
+			local93.anInt4538 = arg0.g2() * -477853141;
 			if (local21 >= 3) {
-				arg0.method23362(-1420148049);
+				arg0.g1();
 			}
 			this.aClass382Array1[local83] = local93;
 		}
 	}
 
 	@OriginalMember(owner = "client!akv", name = "p", descriptor = "(Lclient!ald;)V")
-	void method14444(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(3) int local3 = arg0.method23362(632200857);
+	void method14444(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1();
 		if ((local3 & 0x1) != 0) {
 			this.aBoolean382 = true;
 		}
@@ -272,15 +272,15 @@ public final class Class80_Sub32 extends Class80 {
 		}
 		@Pc(21) int local21 = 2;
 		if ((local3 & 0x4) != 0) {
-			local21 = arg0.method23362(158704000);
+			local21 = arg0.g1();
 		}
-		this.aLong338 = arg0.method23273((byte) -1) * 6850079459805481791L;
-		this.aLong126 = arg0.method23273((byte) 5) * 175499899195935747L;
-		this.aString52 = arg0.method23376((short) 3617);
-		arg0.method23362(-472536899);
-		this.aByte56 = arg0.method23177((byte) -124);
-		this.aByte55 = arg0.method23177((byte) -75);
-		this.anInt1650 = arg0.method23178((byte) -91) * 19703383;
+		this.aLong338 = arg0.g8() * 6850079459805481791L;
+		this.aLong126 = arg0.g8() * 175499899195935747L;
+		this.aString52 = arg0.gjstr();
+		arg0.g1();
+		this.aByte56 = arg0.g1b();
+		this.aByte55 = arg0.g1b();
+		this.anInt1650 = arg0.g2() * 19703383;
 		if (this.anInt1650 * 753247591 <= 0) {
 			return;
 		}
@@ -288,23 +288,23 @@ public final class Class80_Sub32 extends Class80 {
 		for (@Pc(83) int local83 = 0; local83 < this.anInt1650 * 753247591; local83++) {
 			@Pc(93) Class382 local93 = new Class382();
 			if (this.aBoolean382) {
-				arg0.method23273((byte) -14);
+				arg0.g8();
 			}
 			if (this.aBoolean381) {
-				local93.aString204 = arg0.method23376((short) 6730);
+				local93.aString204 = arg0.gjstr();
 			}
-			local93.aByte146 = arg0.method23177((byte) 11);
-			local93.anInt4538 = arg0.method23178((byte) -54) * -477853141;
+			local93.aByte146 = arg0.g1b();
+			local93.anInt4538 = arg0.g2() * -477853141;
 			if (local21 >= 3) {
-				arg0.method23362(-944268994);
+				arg0.g1();
 			}
 			this.aClass382Array1[local83] = local93;
 		}
 	}
 
 	@OriginalMember(owner = "client!akv", name = "v", descriptor = "(Lclient!ald;)V")
-	void method14445(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(3) int local3 = arg0.method23362(870970949);
+	void method14445(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1();
 		if ((local3 & 0x1) != 0) {
 			this.aBoolean382 = true;
 		}
@@ -313,15 +313,15 @@ public final class Class80_Sub32 extends Class80 {
 		}
 		@Pc(21) int local21 = 2;
 		if ((local3 & 0x4) != 0) {
-			local21 = arg0.method23362(-209186313);
+			local21 = arg0.g1();
 		}
-		this.aLong338 = arg0.method23273((byte) -14) * 6850079459805481791L;
-		this.aLong126 = arg0.method23273((byte) 24) * 175499899195935747L;
-		this.aString52 = arg0.method23376((short) 22782);
-		arg0.method23362(-207931111);
-		this.aByte56 = arg0.method23177((byte) -39);
-		this.aByte55 = arg0.method23177((byte) -86);
-		this.anInt1650 = arg0.method23178((byte) -63) * 19703383;
+		this.aLong338 = arg0.g8() * 6850079459805481791L;
+		this.aLong126 = arg0.g8() * 175499899195935747L;
+		this.aString52 = arg0.gjstr();
+		arg0.g1();
+		this.aByte56 = arg0.g1b();
+		this.aByte55 = arg0.g1b();
+		this.anInt1650 = arg0.g2() * 19703383;
 		if (this.anInt1650 * 753247591 <= 0) {
 			return;
 		}
@@ -329,15 +329,15 @@ public final class Class80_Sub32 extends Class80 {
 		for (@Pc(83) int local83 = 0; local83 < this.anInt1650 * 753247591; local83++) {
 			@Pc(93) Class382 local93 = new Class382();
 			if (this.aBoolean382) {
-				arg0.method23273((byte) -78);
+				arg0.g8();
 			}
 			if (this.aBoolean381) {
-				local93.aString204 = arg0.method23376((short) 5336);
+				local93.aString204 = arg0.gjstr();
 			}
-			local93.aByte146 = arg0.method23177((byte) -41);
-			local93.anInt4538 = arg0.method23178((byte) -87) * -477853141;
+			local93.aByte146 = arg0.g1b();
+			local93.anInt4538 = arg0.g2() * -477853141;
 			if (local21 >= 3) {
-				arg0.method23362(-1315523905);
+				arg0.g1();
 			}
 			this.aClass382Array1[local83] = local93;
 		}

@@ -48,12 +48,12 @@ public final class Class288 {
 	}
 
 	@OriginalMember(owner = "client!gi", name = "<init>", descriptor = "(Lclient!ald;ZZ)V")
-	Class288(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) {
+	Class288(@OriginalArg(0) Packet arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) {
 		if (arg1) {
-			arg0.method23273((byte) 30);
+			arg0.g8();
 		}
 		if (arg2) {
-			this.aString167 = arg0.method23189(-761473881);
+			this.aString167 = arg0.fastgstr();
 		} else {
 			this.aString167 = null;
 		}

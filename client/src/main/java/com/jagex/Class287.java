@@ -41,11 +41,11 @@ public final class Class287 implements Interface25 {
 	}
 
 	@OriginalMember(owner = "client!gg", name = "<init>", descriptor = "(Lclient!gc;Lclient!ald;)V")
-	Class287(@OriginalArg(0) Class284 arg0, @OriginalArg(1) Class80_Sub36 arg1) {
+	Class287(@OriginalArg(0) Class284 arg0, @OriginalArg(1) Packet arg1) {
 		this.aClass284_8 = arg0;
-		@Pc(13) boolean local13 = arg1.method23362(987272222) != 255;
+		@Pc(13) boolean local13 = arg1.g1() != 255;
 		if (local13) {
-			arg1.anInt3152 -= 1034180571;
+			arg1.pos -= 1034180571;
 		}
 		this.aClass288_1 = new Class288(arg1, local13, true);
 	}

@@ -33,20 +33,20 @@ public final class Class533 {
 	public int anInt5073;
 
 	@OriginalMember(owner = "client!rl", name = "u", descriptor = "(Lclient!ald;Lclient!add;)Lclient!abg;")
-	static Class33 method30823(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class2_Sub1 arg1) {
+	static Class33 method30823(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class2_Sub1 arg1) {
 		@Pc(4) Class33 local4 = new Class33(arg1);
 		while (true) {
-			@Pc(8) int local8 = arg0.method23362(470569763);
+			@Pc(8) int local8 = arg0.g1();
 			if (local8 == 255) {
 				return local4;
 			}
 			@Pc(18) Class519 local18 = (Class519) Class622.method32436(Class519.class, local8, -320790979);
 			while (true) {
-				@Pc(22) int local22 = arg0.method23362(-181699633);
+				@Pc(22) int local22 = arg0.g1();
 				if (local22 == 255) {
 					break;
 				}
-				arg0.anInt3152 -= 1034180571;
+				arg0.pos -= 1034180571;
 				@Pc(38) Class460 local38 = arg1.method1828(arg0, local18, -1530590283);
 				if (local38 != null) {
 					local4.method719(local38.anInt4907 * -38979583, local38.anObject19, -2019449857);
@@ -56,20 +56,20 @@ public final class Class533 {
 	}
 
 	@OriginalMember(owner = "client!rl", name = "l", descriptor = "(Lclient!ald;Lclient!add;)Lclient!abg;")
-	static Class33 method30826(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class2_Sub1 arg1) {
+	static Class33 method30826(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class2_Sub1 arg1) {
 		@Pc(4) Class33 local4 = new Class33(arg1);
 		while (true) {
-			@Pc(8) int local8 = arg0.method23362(-1613557462);
+			@Pc(8) int local8 = arg0.g1();
 			if (local8 == 255) {
 				return local4;
 			}
 			@Pc(18) Class519 local18 = (Class519) Class622.method32436(Class519.class, local8, -1740482794);
 			while (true) {
-				@Pc(22) int local22 = arg0.method23362(-2069182456);
+				@Pc(22) int local22 = arg0.g1();
 				if (local22 == 255) {
 					break;
 				}
-				arg0.anInt3152 -= 1034180571;
+				arg0.pos -= 1034180571;
 				@Pc(38) Class460 local38 = arg1.method1828(arg0, local18, -1615742430);
 				if (local38 != null) {
 					local4.method719(local38.anInt4907 * -38979583, local38.anObject19, -1720378366);
@@ -339,23 +339,23 @@ public final class Class533 {
 		}
 		@Pc(654) Class75 local654 = Class52.method1074(16777215);
 		@Pc(660) Class80_Sub31 local660 = Class623.method32440(Class443.aClass443_96, local654.aClass22_1, -191270971);
-		local660.aClass80_Sub36_Sub1_2.method23154(0, 1275868335);
-		@Pc(671) int local671 = local660.aClass80_Sub36_Sub1_2.anInt3152 * -1380987821;
-		local660.aClass80_Sub36_Sub1_2.method23154(local30, 1275868335);
-		local660.aClass80_Sub36_Sub1_2.method23154(local469, 1275868335);
-		Class120_Sub1_Sub3_Sub2.method13850(local660.aClass80_Sub36_Sub1_2, local13, (short) 27600);
-		local660.aClass80_Sub36_Sub1_2.method23171(local660.aClass80_Sub36_Sub1_2.anInt3152 * -1380987821 - local671, (byte) 48);
+		local660.aPacketBit_2.p1(0);
+		@Pc(671) int local671 = local660.aPacketBit_2.pos * -1380987821;
+		local660.aPacketBit_2.p1(local30);
+		local660.aPacketBit_2.p1(local469);
+		Class120_Sub1_Sub3_Sub2.method13850(local660.aPacketBit_2, local13, (short) 27600);
+		local660.aPacketBit_2.p1check(local660.aPacketBit_2.pos * -1380987821 - local671);
 		local654.method1325(local660, (byte) -104);
 	}
 
 	@OriginalMember(owner = "client!rl", name = "<init>", descriptor = "(Lclient!ald;Lclient!add;)V")
-	public Class533(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class2_Sub1 arg1) {
-		this.aByte148 = arg0.method23177((byte) 1);
-		this.anInt5070 = arg0.method23178((byte) -94) * -1933331193;
-		this.anInt5071 = arg0.method23182(83185860) * -418791663;
-		this.anInt5069 = arg0.method23182(-1478409473) * -1995451429;
-		this.anInt5072 = arg0.method23182(-213617603) * -1156256375;
-		this.anInt5073 = arg0.method23182(421333920) * -1476181311;
+	public Class533(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class2_Sub1 arg1) {
+		this.aByte148 = arg0.g1b();
+		this.anInt5070 = arg0.g2() * -1933331193;
+		this.anInt5071 = arg0.g4() * -418791663;
+		this.anInt5069 = arg0.g4() * -1995451429;
+		this.anInt5072 = arg0.g4() * -1156256375;
+		this.anInt5073 = arg0.g4() * -1476181311;
 		if (arg1 != null) {
 			Class164.method15803(arg0, arg1, -2053128479);
 		}

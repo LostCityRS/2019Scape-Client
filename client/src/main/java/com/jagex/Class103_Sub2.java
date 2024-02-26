@@ -20,10 +20,10 @@ public final class Class103_Sub2 extends Class103 {
 	final int anInt576;
 
 	@OriginalMember(owner = "client!afc", name = "<init>", descriptor = "(Lclient!ald;)V")
-	Class103_Sub2(@OriginalArg(0) Class80_Sub36 arg0) {
+	Class103_Sub2(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.anInt575 = arg0.method23178((byte) -124) * 1787863131;
-		this.anInt576 = arg0.method23178((byte) -61) * -40500783;
+		this.anInt575 = arg0.g2() * 1787863131;
+		this.anInt576 = arg0.g2() * -40500783;
 	}
 
 	@OriginalMember(owner = "client!afc", name = "g", descriptor = "()V")

@@ -49,26 +49,26 @@ public final class Class88 {
 	@OriginalMember(owner = "client!adt", name = "<init>", descriptor = "(Lclient!pf;I)V")
 	public Class88(@OriginalArg(0) Class480 arg0, @OriginalArg(1) int arg1) {
 		@Pc(7) byte[] local7 = arg0.method29918(arg1, 0, 1896589581);
-		this.method1782(new Class80_Sub36(local7), (byte) 81);
+		this.method1782(new Packet(local7), (byte) 81);
 	}
 
 	@OriginalMember(owner = "client!adt", name = "<init>", descriptor = "(Lclient!pf;II)V")
 	public Class88(@OriginalArg(0) Class480 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		@Pc(9) byte[] local9 = arg0.method29918(arg1, arg2 + 1, 1896589581);
-		this.method1782(new Class80_Sub36(local9), (byte) 98);
+		this.method1782(new Packet(local9), (byte) 98);
 	}
 
 	@OriginalMember(owner = "client!adt", name = "e", descriptor = "(Lclient!ald;)V")
-	void method1781(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.aClass519_1 = (Class519) Class80_Sub39.method15030(Class519.method30602(1255229366), arg0.method23362(-339424804), -1009473959);
-		@Pc(13) int local13 = arg0.method23201(-1556606006);
+	void method1781(@OriginalArg(0) Packet arg0) {
+		this.aClass519_1 = (Class519) Class80_Sub39.method15030(Class519.method30602(1255229366), arg0.g1(), -1009473959);
+		@Pc(13) int local13 = arg0.gVarInt2();
 		this.aMap4 = new HashMap(local13);
 		while (local13-- > 0) {
 			@Pc(28) Object local28 = this.aClass519_1.method30595(arg0, 16711935);
-			@Pc(32) int local32 = arg0.method23201(-1665994675);
+			@Pc(32) int local32 = arg0.gVarInt2();
 			@Pc(36) ArrayList local36 = new ArrayList();
 			while (local32-- > 0) {
-				@Pc(43) int local43 = arg0.method23201(-1068994119);
+				@Pc(43) int local43 = arg0.gVarInt2();
 				local36.add(local43);
 			}
 			this.aMap4.put(local28, local36);
@@ -76,16 +76,16 @@ public final class Class88 {
 	}
 
 	@OriginalMember(owner = "client!adt", name = "t", descriptor = "(Lclient!ald;B)V")
-	void method1782(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
-		this.aClass519_1 = (Class519) Class80_Sub39.method15030(Class519.method30602(1255229366), arg0.method23362(875888845), -448178244);
-		@Pc(13) int local13 = arg0.method23201(-698038340);
+	void method1782(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
+		this.aClass519_1 = (Class519) Class80_Sub39.method15030(Class519.method30602(1255229366), arg0.g1(), -448178244);
+		@Pc(13) int local13 = arg0.gVarInt2();
 		this.aMap4 = new HashMap(local13);
 		while (local13-- > 0) {
 			@Pc(28) Object local28 = this.aClass519_1.method30595(arg0, 16711935);
-			@Pc(32) int local32 = arg0.method23201(-440971067);
+			@Pc(32) int local32 = arg0.gVarInt2();
 			@Pc(36) ArrayList local36 = new ArrayList();
 			while (local32-- > 0) {
-				@Pc(43) int local43 = arg0.method23201(-1126282654);
+				@Pc(43) int local43 = arg0.gVarInt2();
 				local36.add(local43);
 			}
 			this.aMap4.put(local28, local36);
@@ -103,16 +103,16 @@ public final class Class88 {
 	}
 
 	@OriginalMember(owner = "client!adt", name = "u", descriptor = "(Lclient!ald;)V")
-	void method1785(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.aClass519_1 = (Class519) Class80_Sub39.method15030(Class519.method30602(1255229366), arg0.method23362(20042586), -374940707);
-		@Pc(13) int local13 = arg0.method23201(199718757);
+	void method1785(@OriginalArg(0) Packet arg0) {
+		this.aClass519_1 = (Class519) Class80_Sub39.method15030(Class519.method30602(1255229366), arg0.g1(), -374940707);
+		@Pc(13) int local13 = arg0.gVarInt2();
 		this.aMap4 = new HashMap(local13);
 		while (local13-- > 0) {
 			@Pc(28) Object local28 = this.aClass519_1.method30595(arg0, 16711935);
-			@Pc(32) int local32 = arg0.method23201(-67614366);
+			@Pc(32) int local32 = arg0.gVarInt2();
 			@Pc(36) ArrayList local36 = new ArrayList();
 			while (local32-- > 0) {
-				@Pc(43) int local43 = arg0.method23201(-267864720);
+				@Pc(43) int local43 = arg0.gVarInt2();
 				local36.add(local43);
 			}
 			this.aMap4.put(local28, local36);
@@ -120,16 +120,16 @@ public final class Class88 {
 	}
 
 	@OriginalMember(owner = "client!adt", name = "l", descriptor = "(Lclient!ald;)V")
-	void method1786(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.aClass519_1 = (Class519) Class80_Sub39.method15030(Class519.method30602(1255229366), arg0.method23362(-265643701), -1970983136);
-		@Pc(13) int local13 = arg0.method23201(640368385);
+	void method1786(@OriginalArg(0) Packet arg0) {
+		this.aClass519_1 = (Class519) Class80_Sub39.method15030(Class519.method30602(1255229366), arg0.g1(), -1970983136);
+		@Pc(13) int local13 = arg0.gVarInt2();
 		this.aMap4 = new HashMap(local13);
 		while (local13-- > 0) {
 			@Pc(28) Object local28 = this.aClass519_1.method30595(arg0, 16711935);
-			@Pc(32) int local32 = arg0.method23201(-186471840);
+			@Pc(32) int local32 = arg0.gVarInt2();
 			@Pc(36) ArrayList local36 = new ArrayList();
 			while (local32-- > 0) {
-				@Pc(43) int local43 = arg0.method23201(-2036020693);
+				@Pc(43) int local43 = arg0.gVarInt2();
 				local36.add(local43);
 			}
 			this.aMap4.put(local28, local36);
@@ -137,16 +137,16 @@ public final class Class88 {
 	}
 
 	@OriginalMember(owner = "client!adt", name = "g", descriptor = "(Lclient!ald;)V")
-	void method1787(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.aClass519_1 = (Class519) Class80_Sub39.method15030(Class519.method30602(1255229366), arg0.method23362(-1057597475), -1703101840);
-		@Pc(13) int local13 = arg0.method23201(25176419);
+	void method1787(@OriginalArg(0) Packet arg0) {
+		this.aClass519_1 = (Class519) Class80_Sub39.method15030(Class519.method30602(1255229366), arg0.g1(), -1703101840);
+		@Pc(13) int local13 = arg0.gVarInt2();
 		this.aMap4 = new HashMap(local13);
 		while (local13-- > 0) {
 			@Pc(28) Object local28 = this.aClass519_1.method30595(arg0, 16711935);
-			@Pc(32) int local32 = arg0.method23201(699051194);
+			@Pc(32) int local32 = arg0.gVarInt2();
 			@Pc(36) ArrayList local36 = new ArrayList();
 			while (local32-- > 0) {
-				@Pc(43) int local43 = arg0.method23201(735108339);
+				@Pc(43) int local43 = arg0.gVarInt2();
 				local36.add(local43);
 			}
 			this.aMap4.put(local28, local36);

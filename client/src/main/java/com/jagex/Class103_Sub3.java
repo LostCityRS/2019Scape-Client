@@ -41,14 +41,14 @@ public final class Class103_Sub3 extends Class103 {
 	}
 
 	@OriginalMember(owner = "client!afu", name = "<init>", descriptor = "(Lclient!ald;)V")
-	Class103_Sub3(@OriginalArg(0) Class80_Sub36 arg0) {
+	Class103_Sub3(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.anInt871 = arg0.method23178((byte) -60) * 1197114595;
-		@Pc(13) int local13 = arg0.method23182(1451855435);
+		this.anInt871 = arg0.g2() * 1197114595;
+		@Pc(13) int local13 = arg0.g4();
 		this.anInt868 = (local13 >>> 16) * -56377339;
 		this.anInt869 = (local13 & 0xFFFF) * -1107228731;
-		this.anInt867 = arg0.method23362(-538938126) * -2064002775;
-		this.anInt870 = arg0.method23194(35000) * -1165530193;
+		this.anInt867 = arg0.g1() * -2064002775;
+		this.anInt870 = arg0.gSmart1or2s() * -1165530193;
 	}
 
 	@OriginalMember(owner = "client!afu", name = "l", descriptor = "()V")

@@ -14,11 +14,11 @@ public final class Class165_Sub11 extends Class165 {
 	}
 
 	@OriginalMember(owner = "client!amk", name = "i", descriptor = "(Lclient!ald;II)Lclient!asb;")
-	static Class80_Sub1_Sub12 method16048(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(30) Class80_Sub1_Sub12 local30 = new Class80_Sub1_Sub12(arg1, arg0.method23376((short) 11255), arg0.method23376((short) 4012), arg0.method23182(-831308286), arg0.method23182(873711021), arg0.method23362(615944196) == 1, arg0.method23362(-1330603613), arg0.method23362(185926497));
-		@Pc(34) int local34 = arg0.method23362(1032192776);
+	static Class80_Sub1_Sub12 method16048(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+		@Pc(30) Class80_Sub1_Sub12 local30 = new Class80_Sub1_Sub12(arg1, arg0.gjstr(), arg0.gjstr(), arg0.g4(), arg0.g4(), arg0.g1() == 1, arg0.g1(), arg0.g1());
+		@Pc(34) int local34 = arg0.g1();
 		for (@Pc(36) int local36 = 0; local36 < local34; local36++) {
-			local30.aClass8_42.method232(new Class80_Sub16(arg0.method23362(-1862914170), arg0.method23178((byte) -21), arg0.method23178((byte) -62), arg0.method23178((byte) -84), arg0.method23178((byte) -109), arg0.method23178((byte) -52), arg0.method23178((byte) -35), arg0.method23178((byte) -99), arg0.method23178((byte) -48)), 330126519);
+			local30.aClass8_42.method232(new Class80_Sub16(arg0.g1(), arg0.g2(), arg0.g2(), arg0.g2(), arg0.g2(), arg0.g2(), arg0.g2(), arg0.g2(), arg0.g2()), 330126519);
 		}
 		local30.method22597(18717591);
 		return local30;

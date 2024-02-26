@@ -314,9 +314,9 @@ public final class Class599 implements Interface11, Interface5 {
 
 	@OriginalMember(owner = "client!ur", name = "t", descriptor = "(Lclient!ald;I)V")
 	@Override
-	public void method37006(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	public void method37006(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(898893703);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -335,22 +335,22 @@ public final class Class599 implements Interface11, Interface5 {
 	}
 
 	@OriginalMember(owner = "client!ur", name = "k", descriptor = "(Lclient!ald;I)V")
-	void method32038(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method32038(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.anInt5367 = arg0.method23178((byte) -66) * -1834239995;
+			this.anInt5367 = arg0.g2() * -1834239995;
 		} else if (arg1 == 2) {
-			this.anIntArray485 = new int[arg0.method23362(368786592)];
+			this.anIntArray485 = new int[arg0.g1()];
 			for (@Pc(21) int local21 = 0; local21 < this.anIntArray485.length; local21++) {
-				this.anIntArray485[local21] = arg0.method23178((byte) -8);
+				this.anIntArray485[local21] = arg0.g2();
 			}
 		} else if (arg1 == 3) {
-			this.anInt5366 = arg0.method23362(-1890418393) * 217726385;
+			this.anInt5366 = arg0.g1() * 217726385;
 		} else if (arg1 == 4) {
-			this.aClass590_4 = (Class590) Class80_Sub39.method15030(Class314.method27493(-507551326), arg0.method23362(-398898406), -952542126);
+			this.aClass590_4 = (Class590) Class80_Sub39.method15030(Class314.method27493(-507551326), arg0.g1(), -952542126);
 		} else if (arg1 == 5) {
-			this.anInt5368 = arg0.method23210((byte) 107) * -369089243;
+			this.anInt5368 = arg0.gSmart2or4null() * -369089243;
 		} else if (arg1 == 6) {
-			arg0.method23210((byte) 104);
+			arg0.gSmart2or4null();
 		}
 	}
 
@@ -360,22 +360,22 @@ public final class Class599 implements Interface11, Interface5 {
 	}
 
 	@OriginalMember(owner = "client!ur", name = "l", descriptor = "(Lclient!ald;IS)V")
-	void method32039(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) short arg2) {
+	void method32039(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) short arg2) {
 		if (arg1 == 1) {
-			this.anInt5367 = arg0.method23178((byte) -123) * -1834239995;
+			this.anInt5367 = arg0.g2() * -1834239995;
 		} else if (arg1 == 2) {
-			this.anIntArray485 = new int[arg0.method23362(793668919)];
+			this.anIntArray485 = new int[arg0.g1()];
 			for (@Pc(21) int local21 = 0; local21 < this.anIntArray485.length; local21++) {
-				this.anIntArray485[local21] = arg0.method23178((byte) -63);
+				this.anIntArray485[local21] = arg0.g2();
 			}
 		} else if (arg1 == 3) {
-			this.anInt5366 = arg0.method23362(963625322) * 217726385;
+			this.anInt5366 = arg0.g1() * 217726385;
 		} else if (arg1 == 4) {
-			this.aClass590_4 = (Class590) Class80_Sub39.method15030(Class314.method27493(722406207), arg0.method23362(992838950), -1583998286);
+			this.aClass590_4 = (Class590) Class80_Sub39.method15030(Class314.method27493(722406207), arg0.g1(), -1583998286);
 		} else if (arg1 == 5) {
-			this.anInt5368 = arg0.method23210((byte) 88) * -369089243;
+			this.anInt5368 = arg0.gSmart2or4null() * -369089243;
 		} else if (arg1 == 6) {
-			arg0.method23210((byte) 38);
+			arg0.gSmart2or4null();
 		}
 	}
 
@@ -395,30 +395,30 @@ public final class Class599 implements Interface11, Interface5 {
 	}
 
 	@OriginalMember(owner = "client!ur", name = "m", descriptor = "(Lclient!ald;I)V")
-	void method32040(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method32040(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.anInt5367 = arg0.method23178((byte) -124) * -1834239995;
+			this.anInt5367 = arg0.g2() * -1834239995;
 		} else if (arg1 == 2) {
-			this.anIntArray485 = new int[arg0.method23362(-1314443039)];
+			this.anIntArray485 = new int[arg0.g1()];
 			for (@Pc(21) int local21 = 0; local21 < this.anIntArray485.length; local21++) {
-				this.anIntArray485[local21] = arg0.method23178((byte) -71);
+				this.anIntArray485[local21] = arg0.g2();
 			}
 		} else if (arg1 == 3) {
-			this.anInt5366 = arg0.method23362(-882950581) * 217726385;
+			this.anInt5366 = arg0.g1() * 217726385;
 		} else if (arg1 == 4) {
-			this.aClass590_4 = (Class590) Class80_Sub39.method15030(Class314.method27493(1694390709), arg0.method23362(394075460), -1741212926);
+			this.aClass590_4 = (Class590) Class80_Sub39.method15030(Class314.method27493(1694390709), arg0.g1(), -1741212926);
 		} else if (arg1 == 5) {
-			this.anInt5368 = arg0.method23210((byte) 74) * -369089243;
+			this.anInt5368 = arg0.gSmart2or4null() * -369089243;
 		} else if (arg1 == 6) {
-			arg0.method23210((byte) 80);
+			arg0.gSmart2or4null();
 		}
 	}
 
 	@OriginalMember(owner = "client!ur", name = "u", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method37009(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method37009(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-1345467719);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}

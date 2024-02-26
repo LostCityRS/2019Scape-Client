@@ -115,17 +115,17 @@ public final class Class355 {
 	}
 
 	@OriginalMember(owner = "client!j", name = "i", descriptor = "(Lclient!asa;B)V")
-	static void method28098(@OriginalArg(0) Class80_Sub36_Sub1 arg0, @OriginalArg(1) byte arg1) {
+	static void method28098(@OriginalArg(0) PacketBit arg0, @OriginalArg(1) byte arg1) {
 		for (@Pc(1) int local1 = 0; local1 < Class51.anInt194 * -1414067589; local1++) {
-			arg0.method23178((byte) -27);
+			arg0.g2();
 			@Pc(14) int local14 = Class51.anIntArray22[local1];
 			@Pc(18) Class120_Sub1_Sub1_Sub1_Sub2 local18 = client.aClass120_Sub1_Sub1_Sub1_Sub2Array1[local14];
-			@Pc(22) int local22 = arg0.method23362(1126553178);
+			@Pc(22) int local22 = arg0.g1();
 			if ((local22 & 0x40) != 0) {
-				local22 += arg0.method23362(-1368516664) << 8;
+				local22 += arg0.g1() << 8;
 			}
 			if ((local22 & 0x1000) != 0) {
-				local22 += arg0.method23362(-50876959) << 16;
+				local22 += arg0.g1() << 16;
 			}
 			Class124_Sub1.method9831(arg0, local14, local18, local22, 548973800);
 		}

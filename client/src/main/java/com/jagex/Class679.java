@@ -179,24 +179,24 @@ public final class Class679 {
 			return;
 		}
 		@Pc(7) Class80_Sub31 local7 = Class623.method32440(Class443.aClass443_109, client.aClass75_1.aClass22_1, -191270971);
-		local7.aClass80_Sub36_Sub1_2.method23155(Class55.method1114(arg1, (byte) -82) + 1 + Class55.method1114(arg2, (byte) -73), (byte) -77);
-		local7.aClass80_Sub36_Sub1_2.method23166(arg2, 204863771);
-		local7.aClass80_Sub36_Sub1_2.method23166(arg1, 1452452504);
-		local7.aClass80_Sub36_Sub1_2.method23211(arg0, -183466620);
+		local7.aPacketBit_2.p2(Packet.calculatePjstr2(arg1) + 1 + Packet.calculatePjstr2(arg2));
+		local7.aPacketBit_2.pjstr2(arg2);
+		local7.aPacketBit_2.pjstr2(arg1);
+		local7.aPacketBit_2.p1_alt3(arg0);
 		client.aClass75_1.method1325(local7, (byte) -2);
 	}
 
 	@OriginalMember(owner = "client!yd", name = "ax", descriptor = "(Lclient!asa;I)V")
-	static void method33623(@OriginalArg(0) Class80_Sub36_Sub1 arg0, @OriginalArg(1) int arg1) {
+	static void method33623(@OriginalArg(0) PacketBit arg0, @OriginalArg(1) int arg1) {
 		@Pc(2) Class32[] local2 = Class337.method27878(1165208272);
 		for (@Pc(4) int local4 = 0; local4 < local2.length; local4++) {
 			@Pc(12) Class32 local12 = local2[local4];
 			if (Class32.aClass32_27 != local12) {
 				@Pc(21) Class480 local21 = (Class480) Class673.aMap22.get(local12);
 				if (local21 == null) {
-					arg0.method23345(0, (byte) 95);
+					arg0.p4(0);
 				} else {
-					arg0.method23345(local21.method29969(-673507668), (byte) 114);
+					arg0.p4(local21.method29969(-673507668));
 				}
 			}
 		}

@@ -133,14 +133,14 @@ final class Class245 implements Interface24 {
 
 	@OriginalMember(owner = "client!en", name = "a", descriptor = "([BS)V")
 	static void method26320(@OriginalArg(0) byte[] arg0, @OriginalArg(1) short arg1) {
-		@Pc(4) Class80_Sub36 local4 = new Class80_Sub36(arg0);
+		@Pc(4) Packet local4 = new Packet(arg0);
 		while (true) {
-			@Pc(8) int local8 = local4.method23362(-1622716313);
+			@Pc(8) int local8 = local4.g1();
 			if (local8 == 0) {
 				return;
 			}
 			if (local8 == 1) {
-				@Pc(19) int local19 = local4.method23178((byte) -20);
+				@Pc(19) int local19 = local4.g2();
 				Class490.aClass263_13.method26540(local19, (byte) 50);
 			}
 		}

@@ -97,7 +97,7 @@ public final class Class591 implements Interface66 {
 	@Override
 	public void method32127(@OriginalArg(0) int arg0) {
 		@Pc(5) Class80_Sub31 local5 = Class623.method32440(Class443.aClass443_57, client.aClass75_1.aClass22_1, -191270971);
-		local5.aClass80_Sub36_Sub1_2.method23219(this.anInt5316 * -215532309, 1735563340);
+		local5.aPacketBit_2.p2_alt2(this.anInt5316 * -215532309);
 		client.aClass75_1.method1325(local5, (byte) -10);
 	}
 
@@ -105,7 +105,7 @@ public final class Class591 implements Interface66 {
 	@Override
 	public void method32128() {
 		@Pc(5) Class80_Sub31 local5 = Class623.method32440(Class443.aClass443_57, client.aClass75_1.aClass22_1, -191270971);
-		local5.aClass80_Sub36_Sub1_2.method23219(this.anInt5316 * -215532309, 136578615);
+		local5.aPacketBit_2.p2_alt2(this.anInt5316 * -215532309);
 		client.aClass75_1.method1325(local5, (byte) -76);
 	}
 
@@ -113,7 +113,7 @@ public final class Class591 implements Interface66 {
 	@Override
 	public void method32126() {
 		@Pc(5) Class80_Sub31 local5 = Class623.method32440(Class443.aClass443_57, client.aClass75_1.aClass22_1, -191270971);
-		local5.aClass80_Sub36_Sub1_2.method23219(this.anInt5316 * -215532309, 534943251);
+		local5.aPacketBit_2.p2_alt2(this.anInt5316 * -215532309);
 		client.aClass75_1.method1325(local5, (byte) -9);
 	}
 }

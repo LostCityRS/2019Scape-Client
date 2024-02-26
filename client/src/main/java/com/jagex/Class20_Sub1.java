@@ -102,7 +102,7 @@ public final class Class20_Sub1 extends Class20 {
 
 	@OriginalMember(owner = "client!ana", name = "g", descriptor = "(Lclient!ald;I)V")
 	@Override
-	public void method23094(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	public void method23094(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		this.aClass485_1 = new Class485(arg0);
 	}
 
@@ -178,13 +178,13 @@ public final class Class20_Sub1 extends Class20 {
 
 	@OriginalMember(owner = "client!ana", name = "q", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method23090(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method23090(@OriginalArg(0) Packet arg0) {
 		this.aClass485_1 = new Class485(arg0);
 	}
 
 	@OriginalMember(owner = "client!ana", name = "h", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method23091(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method23091(@OriginalArg(0) Packet arg0) {
 		this.aClass485_1 = new Class485(arg0);
 	}
 

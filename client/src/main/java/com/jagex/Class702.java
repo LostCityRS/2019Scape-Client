@@ -101,23 +101,23 @@ public final class Class702 {
 	}
 
 	@OriginalMember(owner = "client!zc", name = "j", descriptor = "(Ljava/lang/Iterable;Lclient!ald;)V")
-	public static void method37105(@OriginalArg(0) Iterable arg0, @OriginalArg(1) Class80_Sub36 arg1) {
+	public static void method37105(@OriginalArg(0) Iterable arg0, @OriginalArg(1) Packet arg1) {
 		@Pc(3) int local3 = Class437.method29138(arg0, (short) -6061);
-		arg1.method23173(local3, (short) -2561);
+		arg1.pSmart1or2(local3);
 		if (local3 == 0) {
 			return;
 		}
 		for (@Pc(13) int local13 = 0; local13 < local3; local13++) {
-			arg1.aByteArray61[arg1.anInt3152 * -1380987821 + local13] = 0;
+			arg1.data[arg1.pos * -1380987821 + local13] = 0;
 		}
 		@Pc(31) Iterator local31 = arg0.iterator();
 		while (local31.hasNext()) {
 			@Pc(38) Interface75 local38 = (Interface75) local31.next();
 			@Pc(41) int local41 = local38.method37268();
 			@Pc(45) int local45 = local41 / 8;
-			arg1.aByteArray61[local45 + arg1.anInt3152 * -1380987821] = (byte) (arg1.aByteArray61[local45 + arg1.anInt3152 * -1380987821] | 0x1 << (local41 & 0x7));
+			arg1.data[local45 + arg1.pos * -1380987821] = (byte) (arg1.data[local45 + arg1.pos * -1380987821] | 0x1 << (local41 & 0x7));
 		}
-		arg1.anInt3152 += local3 * 1034180571;
+		arg1.pos += local3 * 1034180571;
 	}
 
 	@OriginalMember(owner = "client!zc", name = "o", descriptor = "([Lclient!zg;I)Lclient!zg;")

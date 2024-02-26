@@ -96,15 +96,15 @@ public final class Class239 {
 	}
 
 	@OriginalMember(owner = "client!eb", name = "<init>", descriptor = "(Lclient!ald;)V")
-	Class239(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(5) int local5 = arg0.method23195(1837109654);
+	Class239(@OriginalArg(0) Packet arg0) {
+		@Pc(5) int local5 = arg0.gSmart1or2();
 		this.anIntArray355 = new int[local5];
 		this.anIntArray356 = new int[local5];
 		for (@Pc(15) int local15 = 0; local15 < local5; local15++) {
-			@Pc(22) int local22 = arg0.method23362(148340612);
+			@Pc(22) int local22 = arg0.g1();
 			this.anIntArray355[local15] = local22;
-			@Pc(31) int local31 = arg0.method23178((byte) -14);
-			@Pc(35) int local35 = arg0.method23178((byte) -107);
+			@Pc(31) int local31 = arg0.g2();
+			@Pc(35) int local35 = arg0.g2();
 			this.anIntArray356[local15] = local35 + (local31 << 16);
 		}
 	}

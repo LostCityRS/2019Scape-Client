@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class650 {
 
 	@OriginalMember(owner = "client!ww", name = "a", descriptor = "Lclient!ald;")
-	static Class80_Sub36 aClass80_Sub36_17;
+	static Packet aPacket_17;
 
 	@OriginalMember(owner = "client!ww", name = "j", descriptor = "I")
 	static int anInt5656;
@@ -49,14 +49,14 @@ public final class Class650 {
 	public Class650(@OriginalArg(0) Class480 arg0) {
 		@Pc(9) byte[] local9 = arg0.method29926(Class639.aClass639_1.anInt5637 * 1101033235, 1472047355);
 		if (local9 != null) {
-			this.method33118(new Class80_Sub36(local9), (short) -11012);
+			this.method33118(new Packet(local9), (short) -11012);
 		}
 	}
 
 	@OriginalMember(owner = "client!ww", name = "t", descriptor = "(Lclient!ald;S)V")
-	void method33118(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) short arg1) {
+	void method33118(@OriginalArg(0) Packet arg0, @OriginalArg(1) short arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-2026003286);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -67,9 +67,9 @@ public final class Class650 {
 	}
 
 	@OriginalMember(owner = "client!ww", name = "e", descriptor = "(Lclient!ald;)V")
-	void method33119(@OriginalArg(0) Class80_Sub36 arg0) {
+	void method33119(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-1059673178);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -80,9 +80,9 @@ public final class Class650 {
 	}
 
 	@OriginalMember(owner = "client!ww", name = "f", descriptor = "(Lclient!ald;)V")
-	void method33120(@OriginalArg(0) Class80_Sub36 arg0) {
+	void method33120(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-835320365);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}

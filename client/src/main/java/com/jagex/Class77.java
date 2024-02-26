@@ -12,8 +12,8 @@ public final class Class77 {
 	static int anInt251;
 
 	@OriginalMember(owner = "client!adb", name = "g", descriptor = "(Lclient!ald;[Lclient!qy;)[Ljava/lang/Object;")
-	public static Object[] method1365(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class521[] arg1) {
-		@Pc(3) int local3 = arg0.method23195(1644288188);
+	public static Object[] method1365(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class521[] arg1) {
+		@Pc(3) int local3 = arg0.gSmart1or2();
 		@Pc(9) Object[] local9 = new Object[local3 * arg1.length];
 		for (@Pc(11) int local11 = 0; local11 < local3; local11++) {
 			for (@Pc(16) int local16 = 0; local16 < arg1.length; local16++) {
@@ -30,8 +30,8 @@ public final class Class77 {
 	}
 
 	@OriginalMember(owner = "client!adb", name = "l", descriptor = "(Lclient!ald;[Lclient!qy;)[Ljava/lang/Object;")
-	public static Object[] method1367(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class521[] arg1) {
-		@Pc(3) int local3 = arg0.method23195(1646376474);
+	public static Object[] method1367(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class521[] arg1) {
+		@Pc(3) int local3 = arg0.gSmart1or2();
 		@Pc(9) Object[] local9 = new Object[local3 * arg1.length];
 		for (@Pc(11) int local11 = 0; local11 < local3; local11++) {
 			for (@Pc(16) int local16 = 0; local16 < arg1.length; local16++) {
@@ -43,8 +43,8 @@ public final class Class77 {
 	}
 
 	@OriginalMember(owner = "client!adb", name = "i", descriptor = "(Lclient!ald;[Lclient!qy;)[Ljava/lang/Object;")
-	public static Object[] method1368(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class521[] arg1) {
-		@Pc(3) int local3 = arg0.method23195(2108626154);
+	public static Object[] method1368(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class521[] arg1) {
+		@Pc(3) int local3 = arg0.gSmart1or2();
 		@Pc(9) Object[] local9 = new Object[local3 * arg1.length];
 		for (@Pc(11) int local11 = 0; local11 < local3; local11++) {
 			for (@Pc(16) int local16 = 0; local16 < arg1.length; local16++) {

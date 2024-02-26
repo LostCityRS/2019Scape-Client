@@ -65,19 +65,19 @@ public final class Class647 {
 	@OriginalMember(owner = "client!wt", name = "<init>", descriptor = "(Lclient!pf;)V")
 	public Class647(@OriginalArg(0) Class480 arg0) {
 		@Pc(15) byte[] local15 = arg0.method29926(Class639.aClass639_10.anInt5637 * 1101033235, 1472047355);
-		this.method33050(new Class80_Sub36(local15), -242725907);
+		this.method33050(new Packet(local15), -242725907);
 	}
 
 	@OriginalMember(owner = "client!wt", name = "t", descriptor = "(Lclient!ald;I)V")
-	void method33050(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method33050(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-1374175117);
+			@Pc(3) int local3 = arg0.g1();
 			switch(local3) {
 				case 0:
 					return;
 				case 1:
-					this.anInt5647 = arg0.method23210((byte) 49) * -1384520609;
-					this.anInt5648 = arg0.method23210((byte) 127) * 1027266189;
+					this.anInt5647 = arg0.gSmart2or4null() * -1384520609;
+					this.anInt5648 = arg0.gSmart2or4null() * 1027266189;
 					break;
 				default:
 					return;
@@ -86,15 +86,15 @@ public final class Class647 {
 	}
 
 	@OriginalMember(owner = "client!wt", name = "f", descriptor = "(Lclient!ald;)V")
-	void method33051(@OriginalArg(0) Class80_Sub36 arg0) {
+	void method33051(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-1769321172);
+			@Pc(3) int local3 = arg0.g1();
 			switch(local3) {
 				case 0:
 					return;
 				case 1:
-					this.anInt5647 = arg0.method23210((byte) 21) * -1384520609;
-					this.anInt5648 = arg0.method23210((byte) 97) * 1027266189;
+					this.anInt5647 = arg0.gSmart2or4null() * -1384520609;
+					this.anInt5648 = arg0.gSmart2or4null() * 1027266189;
 					break;
 				default:
 					return;

@@ -24,16 +24,16 @@ public abstract class Class80_Sub28 extends Class80 {
 	abstract void method22222(@OriginalArg(0) Class378 arg0, @OriginalArg(1) int arg1);
 
 	@OriginalMember(owner = "client!akr", name = "t", descriptor = "(Lclient!ald;B)V")
-	abstract void method22223(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1);
+	abstract void method22223(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1);
 
 	@OriginalMember(owner = "client!akr", name = "l", descriptor = "(Lclient!ald;)V")
-	abstract void method22224(@OriginalArg(0) Class80_Sub36 arg0);
+	abstract void method22224(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!akr", name = "e", descriptor = "(Lclient!ald;)V")
-	abstract void method22225(@OriginalArg(0) Class80_Sub36 arg0);
+	abstract void method22225(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!akr", name = "u", descriptor = "(Lclient!ald;)V")
-	abstract void method22226(@OriginalArg(0) Class80_Sub36 arg0);
+	abstract void method22226(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!akr", name = "g", descriptor = "(Lclient!kf;)V")
 	abstract void method22227(@OriginalArg(0) Class378 arg0);

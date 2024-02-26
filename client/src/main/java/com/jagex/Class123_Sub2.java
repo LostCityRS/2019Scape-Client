@@ -192,22 +192,22 @@ public abstract class Class123_Sub2 extends Class123 {
 
 	@OriginalMember(owner = "client!ahk", name = "m", descriptor = "(Lclient!ald;I)V")
 	@Override
-	public final void method20506(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	public final void method20506(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		this.aFloat198 = 0.0F;
 		this.aFloat199 = 0.0F;
 		this.anInt2881 = 0;
-		@Pc(12) int local12 = arg0.method23362(-19671994);
+		@Pc(12) int local12 = arg0.g1();
 		this.aClass485Array5 = new Class485[local12];
 		this.aFloatArray62 = new float[local12];
 		for (@Pc(22) int local22 = 0; local22 < local12; local22++) {
 			this.aClass485Array5[local22] = new Class485(arg0);
-			this.aFloatArray62[local22] = arg0.method23188(274821408);
+			this.aFloatArray62[local22] = arg0.gFloat();
 		}
 		this.method20534(arg0, local12, (byte) -109);
 	}
 
 	@OriginalMember(owner = "client!ahk", name = "aj", descriptor = "(Lclient!ald;IB)V")
-	abstract void method20534(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2);
+	abstract void method20534(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2);
 
 	@OriginalMember(owner = "client!ahk", name = "ac", descriptor = "(FFF)F")
 	abstract float method20535(@OriginalArg(0) float arg0, @OriginalArg(1) float arg1, @OriginalArg(2) float arg2);
@@ -222,23 +222,23 @@ public abstract class Class123_Sub2 extends Class123 {
 	abstract void method20538();
 
 	@OriginalMember(owner = "client!ahk", name = "af", descriptor = "(Lclient!ald;I)V")
-	abstract void method20539(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1);
+	abstract void method20539(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1);
 
 	@OriginalMember(owner = "client!ahk", name = "am", descriptor = "(Lclient!ald;I)V")
-	abstract void method20540(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1);
+	abstract void method20540(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1);
 
 	@OriginalMember(owner = "client!ahk", name = "y", descriptor = "(Lclient!ald;)V")
 	@Override
-	public final void method20517(@OriginalArg(0) Class80_Sub36 arg0) {
+	public final void method20517(@OriginalArg(0) Packet arg0) {
 		this.aFloat198 = 0.0F;
 		this.aFloat199 = 0.0F;
 		this.anInt2881 = 0;
-		@Pc(12) int local12 = arg0.method23362(-1006062855);
+		@Pc(12) int local12 = arg0.g1();
 		this.aClass485Array5 = new Class485[local12];
 		this.aFloatArray62 = new float[local12];
 		for (@Pc(22) int local22 = 0; local22 < local12; local22++) {
 			this.aClass485Array5[local22] = new Class485(arg0);
-			this.aFloatArray62[local22] = arg0.method23188(1928884974);
+			this.aFloatArray62[local22] = arg0.gFloat();
 		}
 		this.method20534(arg0, local12, (byte) -60);
 	}
@@ -428,32 +428,32 @@ public abstract class Class123_Sub2 extends Class123 {
 
 	@OriginalMember(owner = "client!ahk", name = "n", descriptor = "(Lclient!ald;)V")
 	@Override
-	public final void method20521(@OriginalArg(0) Class80_Sub36 arg0) {
+	public final void method20521(@OriginalArg(0) Packet arg0) {
 		this.aFloat198 = 0.0F;
 		this.aFloat199 = 0.0F;
 		this.anInt2881 = 0;
-		@Pc(12) int local12 = arg0.method23362(-1952726562);
+		@Pc(12) int local12 = arg0.g1();
 		this.aClass485Array5 = new Class485[local12];
 		this.aFloatArray62 = new float[local12];
 		for (@Pc(22) int local22 = 0; local22 < local12; local22++) {
 			this.aClass485Array5[local22] = new Class485(arg0);
-			this.aFloatArray62[local22] = arg0.method23188(-1550674614);
+			this.aFloatArray62[local22] = arg0.gFloat();
 		}
 		this.method20534(arg0, local12, (byte) -61);
 	}
 
 	@OriginalMember(owner = "client!ahk", name = "c", descriptor = "(Lclient!ald;)V")
 	@Override
-	public final void method20522(@OriginalArg(0) Class80_Sub36 arg0) {
+	public final void method20522(@OriginalArg(0) Packet arg0) {
 		this.aFloat198 = 0.0F;
 		this.aFloat199 = 0.0F;
 		this.anInt2881 = 0;
-		@Pc(12) int local12 = arg0.method23362(608143455);
+		@Pc(12) int local12 = arg0.g1();
 		this.aClass485Array5 = new Class485[local12];
 		this.aFloatArray62 = new float[local12];
 		for (@Pc(22) int local22 = 0; local22 < local12; local22++) {
 			this.aClass485Array5[local22] = new Class485(arg0);
-			this.aFloatArray62[local22] = arg0.method23188(-737938716);
+			this.aFloatArray62[local22] = arg0.gFloat();
 		}
 		this.method20534(arg0, local12, (byte) -38);
 	}
@@ -503,7 +503,7 @@ public abstract class Class123_Sub2 extends Class123 {
 	}
 
 	@OriginalMember(owner = "client!ahk", name = "ak", descriptor = "(Lclient!ald;I)V")
-	abstract void method20546(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1);
+	abstract void method20546(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1);
 
 	@OriginalMember(owner = "client!ahk", name = "aa", descriptor = "(Lclient!pk;IF)V")
 	public final void method20547(@OriginalArg(0) Class485 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) float arg2) {

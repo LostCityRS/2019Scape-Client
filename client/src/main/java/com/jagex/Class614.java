@@ -168,13 +168,13 @@ public final class Class614 {
 	}
 
 	@OriginalMember(owner = "client!vj", name = "f", descriptor = "(Lclient!ald;B)V")
-	static void method32274(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
+	static void method32274(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(697264910);
+			@Pc(3) int local3 = arg0.g1();
 			switch(local3) {
 				case 0:
-					Class251.anInt3877 = arg0.method23178((byte) -75) * 2099092997;
-					Class251.anInt3878 = arg0.method23178((byte) -66) * -3670491;
+					Class251.anInt3877 = arg0.g2() * 2099092997;
+					Class251.anInt3878 = arg0.g2() * -3670491;
 					break;
 				case 255:
 					return;

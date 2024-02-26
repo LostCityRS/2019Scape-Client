@@ -29,10 +29,10 @@ public final class Class295 implements Interface26 {
 	}
 
 	@OriginalMember(owner = "client!gp", name = "<init>", descriptor = "(Lclient!gc;Lclient!ald;)V")
-	Class295(@OriginalArg(0) Class284 arg0, @OriginalArg(1) Class80_Sub36 arg1) {
+	Class295(@OriginalArg(0) Class284 arg0, @OriginalArg(1) Packet arg1) {
 		this.aClass284_11 = arg0;
-		this.anInt3953 = arg1.method23178((byte) -91) * 767574621;
-		this.anInt3952 = arg1.method23362(-1875038013) * -1078688013;
+		this.anInt3953 = arg1.g2() * 767574621;
+		this.anInt3952 = arg1.g1() * -1078688013;
 	}
 
 	@OriginalMember(owner = "client!gp", name = "f", descriptor = "(Lclient!gz;)V")

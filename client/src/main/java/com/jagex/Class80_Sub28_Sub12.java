@@ -30,24 +30,24 @@ public final class Class80_Sub28_Sub12 extends Class80_Sub28 {
 
 	@OriginalMember(owner = "client!aru", name = "t", descriptor = "(Lclient!ald;B)V")
 	@Override
-	void method22223(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
-		if (arg0.method23362(212659390) != 255) {
-			arg0.anInt3152 -= 1034180571;
-			this.aLong235 = arg0.method23273((byte) 59) * -337630654457545291L;
+	void method22223(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
+		if (arg0.g1() != 255) {
+			arg0.pos -= 1034180571;
+			this.aLong235 = arg0.g8() * -337630654457545291L;
 		}
-		this.aString103 = arg0.method23189(-761473881);
-		this.anInt3070 = arg0.method23178((byte) -39) * -1402547767;
+		this.aString103 = arg0.fastgstr();
+		this.anInt3070 = arg0.g2() * -1402547767;
 	}
 
 	@OriginalMember(owner = "client!aru", name = "l", descriptor = "(Lclient!ald;)V")
 	@Override
-	void method22224(@OriginalArg(0) Class80_Sub36 arg0) {
-		if (arg0.method23362(-645654476) != 255) {
-			arg0.anInt3152 -= 1034180571;
-			this.aLong235 = arg0.method23273((byte) -15) * -337630654457545291L;
+	void method22224(@OriginalArg(0) Packet arg0) {
+		if (arg0.g1() != 255) {
+			arg0.pos -= 1034180571;
+			this.aLong235 = arg0.g8() * -337630654457545291L;
 		}
-		this.aString103 = arg0.method23189(-761473881);
-		this.anInt3070 = arg0.method23178((byte) -42) * -1402547767;
+		this.aString103 = arg0.fastgstr();
+		this.anInt3070 = arg0.g2() * -1402547767;
 	}
 
 	@OriginalMember(owner = "client!aru", name = "f", descriptor = "(Lclient!kf;I)V")
@@ -58,24 +58,24 @@ public final class Class80_Sub28_Sub12 extends Class80_Sub28 {
 
 	@OriginalMember(owner = "client!aru", name = "e", descriptor = "(Lclient!ald;)V")
 	@Override
-	void method22225(@OriginalArg(0) Class80_Sub36 arg0) {
-		if (arg0.method23362(741005535) != 255) {
-			arg0.anInt3152 -= 1034180571;
-			this.aLong235 = arg0.method23273((byte) -63) * -337630654457545291L;
+	void method22225(@OriginalArg(0) Packet arg0) {
+		if (arg0.g1() != 255) {
+			arg0.pos -= 1034180571;
+			this.aLong235 = arg0.g8() * -337630654457545291L;
 		}
-		this.aString103 = arg0.method23189(-761473881);
-		this.anInt3070 = arg0.method23178((byte) -93) * -1402547767;
+		this.aString103 = arg0.fastgstr();
+		this.anInt3070 = arg0.g2() * -1402547767;
 	}
 
 	@OriginalMember(owner = "client!aru", name = "u", descriptor = "(Lclient!ald;)V")
 	@Override
-	void method22226(@OriginalArg(0) Class80_Sub36 arg0) {
-		if (arg0.method23362(-1039281187) != 255) {
-			arg0.anInt3152 -= 1034180571;
-			this.aLong235 = arg0.method23273((byte) -47) * -337630654457545291L;
+	void method22226(@OriginalArg(0) Packet arg0) {
+		if (arg0.g1() != 255) {
+			arg0.pos -= 1034180571;
+			this.aLong235 = arg0.g8() * -337630654457545291L;
 		}
-		this.aString103 = arg0.method23189(-761473881);
-		this.anInt3070 = arg0.method23178((byte) -83) * -1402547767;
+		this.aString103 = arg0.fastgstr();
+		this.anInt3070 = arg0.g2() * -1402547767;
 	}
 
 	@OriginalMember(owner = "client!aru", name = "g", descriptor = "(Lclient!kf;)V")

@@ -915,14 +915,14 @@ public final class Class365 {
 
 	@OriginalMember(owner = "client!jn", name = "ab", descriptor = "([B)V")
 	static void method28244(@OriginalArg(0) byte[] arg0) {
-		@Pc(4) Class80_Sub36 local4 = new Class80_Sub36(arg0);
+		@Pc(4) Packet local4 = new Packet(arg0);
 		while (true) {
-			@Pc(8) int local8 = local4.method23362(-361217805);
+			@Pc(8) int local8 = local4.g1();
 			if (local8 == 0) {
 				return;
 			}
 			if (local8 == 1) {
-				@Pc(19) int local19 = local4.method23178((byte) -82);
+				@Pc(19) int local19 = local4.g2();
 				Class490.aClass263_13.method26540(local19, (byte) -70);
 			}
 		}

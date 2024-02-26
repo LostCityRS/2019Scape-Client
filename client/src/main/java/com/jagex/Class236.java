@@ -45,20 +45,20 @@ public final class Class236 {
 	public final int anInt3804;
 
 	@OriginalMember(owner = "client!dy", name = "t", descriptor = "(Lclient!ald;B)Lclient!lv;")
-	public static Class407 method26128(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
-		@Pc(3) String local3 = arg0.method23376((short) 21610);
-		@Pc(10) Class391 local10 = Class58_Sub1.method15727((byte) -74)[arg0.method23362(-195783066)];
-		@Pc(17) Class383 local17 = Class646.method33047(-1097781758)[arg0.method23362(352531913)];
-		@Pc(21) int local21 = arg0.method23179(1320687263);
-		@Pc(25) int local25 = arg0.method23179(48646497);
-		@Pc(29) int local29 = arg0.method23362(-805127636);
-		@Pc(33) int local33 = arg0.method23362(-782760649);
-		@Pc(37) int local37 = arg0.method23362(-1825557066);
-		@Pc(41) int local41 = arg0.method23178((byte) -42);
-		@Pc(45) int local45 = arg0.method23178((byte) -34);
-		@Pc(49) int local49 = arg0.method23210((byte) 73);
-		@Pc(53) int local53 = arg0.method23182(1653103969);
-		@Pc(57) int local57 = arg0.method23182(-1975176106);
+	public static Class407 method26128(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
+		@Pc(3) String local3 = arg0.gjstr();
+		@Pc(10) Class391 local10 = Class58_Sub1.method15727((byte) -74)[arg0.g1()];
+		@Pc(17) Class383 local17 = Class646.method33047(-1097781758)[arg0.g1()];
+		@Pc(21) int local21 = arg0.g2s();
+		@Pc(25) int local25 = arg0.g2s();
+		@Pc(29) int local29 = arg0.g1();
+		@Pc(33) int local33 = arg0.g1();
+		@Pc(37) int local37 = arg0.g1();
+		@Pc(41) int local41 = arg0.g2();
+		@Pc(45) int local45 = arg0.g2();
+		@Pc(49) int local49 = arg0.gSmart2or4null();
+		@Pc(53) int local53 = arg0.g4();
+		@Pc(57) int local57 = arg0.g4();
 		return new Class407(local3, local10, local17, local21, local25, local29, local33, local37, local41, local45, local49, local53, local57);
 	}
 

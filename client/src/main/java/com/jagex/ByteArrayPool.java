@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!zb")
-public final class Class701 {
+public final class ByteArrayPool {
 
 	@OriginalMember(owner = "client!zb", name = "m", descriptor = "[I")
 	static int[] anIntArray529;
@@ -55,16 +55,16 @@ public final class Class701 {
 
 	@OriginalMember(owner = "client!zb", name = "j", descriptor = "(I)[B")
 	public static synchronized byte[] method37084(@OriginalArg(0) int arg0) {
-		return method37088(arg0, false, (byte) -65);
+		return create(arg0, false);
 	}
 
 	@OriginalMember(owner = "client!zb", name = "e", descriptor = "(II)[B")
-	public static synchronized byte[] method37085(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		return method37088(arg0, false, (byte) -109);
+	public static synchronized byte[] create(@OriginalArg(0) int arg0) {
+		return create(arg0, false);
 	}
 
 	@OriginalMember(owner = "client!zb", name = "u", descriptor = "([BI)V")
-	public static synchronized void method37086(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1) {
+	public static synchronized void release(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1) {
 		if (arg0.length == 100 && anInt5814 * 441721855 < 1000) {
 			aByteArrayArray28[(anInt5814 += 10214399) * 441721855 - 1] = arg0;
 		} else if (arg0.length == 5000 && anInt5815 * -1433369011 < 250) {
@@ -98,7 +98,7 @@ public final class Class701 {
 	}
 
 	@OriginalMember(owner = "client!zb", name = "f", descriptor = "(IZB)[B")
-	public static synchronized byte[] method37088(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) byte arg2) {
+	public static synchronized byte[] create(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1) {
 		@Pc(21) byte[] local21;
 		if ((arg0 == 100 || arg0 < 100 && arg1) && anInt5814 * 441721855 > 0) {
 			local21 = aByteArrayArray28[(anInt5814 -= 10214399) * 441721855];
@@ -173,12 +173,12 @@ public final class Class701 {
 
 	@OriginalMember(owner = "client!zb", name = "m", descriptor = "(I)[B")
 	public static synchronized byte[] method37090(@OriginalArg(0) int arg0) {
-		return method37088(arg0, false, (byte) 118);
+		return create(arg0, false);
 	}
 
 	@OriginalMember(owner = "client!zb", name = "o", descriptor = "(I)[B")
 	public static synchronized byte[] method37091(@OriginalArg(0) int arg0) {
-		return method37088(arg0, false, (byte) 79);
+		return create(arg0, false);
 	}
 
 	@OriginalMember(owner = "client!zb", name = "s", descriptor = "([B)V")
@@ -259,7 +259,7 @@ public final class Class701 {
 	}
 
 	@OriginalMember(owner = "client!zb", name = "<init>", descriptor = "()V")
-	Class701() throws Throwable {
+	ByteArrayPool() throws Throwable {
 		throw new Error();
 	}
 }

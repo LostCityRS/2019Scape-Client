@@ -27,8 +27,8 @@ public final class Class80_Sub28_Sub9 extends Class80_Sub28 {
 
 	@OriginalMember(owner = "client!aro", name = "t", descriptor = "(Lclient!ald;B)V")
 	@Override
-	void method22223(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
-		this.anInt3040 = arg0.method23178((byte) -68) * -2142529843;
+	void method22223(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
+		this.anInt3040 = arg0.g2() * -2142529843;
 	}
 
 	@OriginalMember(owner = "client!aro", name = "f", descriptor = "(Lclient!kf;I)V")
@@ -39,20 +39,20 @@ public final class Class80_Sub28_Sub9 extends Class80_Sub28 {
 
 	@OriginalMember(owner = "client!aro", name = "e", descriptor = "(Lclient!ald;)V")
 	@Override
-	void method22225(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.anInt3040 = arg0.method23178((byte) -99) * -2142529843;
+	void method22225(@OriginalArg(0) Packet arg0) {
+		this.anInt3040 = arg0.g2() * -2142529843;
 	}
 
 	@OriginalMember(owner = "client!aro", name = "u", descriptor = "(Lclient!ald;)V")
 	@Override
-	void method22226(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.anInt3040 = arg0.method23178((byte) -73) * -2142529843;
+	void method22226(@OriginalArg(0) Packet arg0) {
+		this.anInt3040 = arg0.g2() * -2142529843;
 	}
 
 	@OriginalMember(owner = "client!aro", name = "l", descriptor = "(Lclient!ald;)V")
 	@Override
-	void method22224(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.anInt3040 = arg0.method23178((byte) -123) * -2142529843;
+	void method22224(@OriginalArg(0) Packet arg0) {
+		this.anInt3040 = arg0.g2() * -2142529843;
 	}
 
 	@OriginalMember(owner = "client!aro", name = "g", descriptor = "(Lclient!kf;)V")

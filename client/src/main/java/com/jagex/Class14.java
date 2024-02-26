@@ -23,8 +23,8 @@ public final class Class14 {
 	GraphicsDevice aGraphicsDevice1;
 
 	@OriginalMember(owner = "client!aam", name = "n", descriptor = "(I)Lclient!ald;")
-	static Class80_Sub36 method366(@OriginalArg(0) int arg0) {
-		@Pc(2) Class80_Sub36 local2 = Class41_Sub7.method17258(-844083283);
+	static Packet method366(@OriginalArg(0) int arg0) {
+		@Pc(2) Packet local2 = Class41_Sub7.method17258(-844083283);
 		if (client.anInt3433 * 1994758437 != 14) {
 			@Pc(17) long local17;
 			if (-2038590069 * Class238.anInt3815 != -1) {
@@ -36,12 +36,12 @@ public final class Class14 {
 			}
 			Class325.aLong368 = local17 * 8373392856619530517L;
 			Class420.method29011(local2, local17);
-			local2.method23164(false, (byte) 35);
-			local2.method23165(Class238.aString155, 1689388704);
-			local2.method23162(Class238.aLong358 * 860650659264272831L);
-			local2.method23162(client.aLong350 * 1066294735814990989L);
+			local2.pbool(false);
+			local2.pjstr(Class238.aString155);
+			local2.p8(Class238.aLong358 * 860650659264272831L);
+			local2.p8(client.aLong350 * 1066294735814990989L);
 		}
-		local2.method23206(Class174.aBigInteger1, Class174.aBigInteger2, (byte) 0);
+		local2.rsaenc(Class174.aBigInteger1, Class174.aBigInteger2);
 		return local2;
 	}
 

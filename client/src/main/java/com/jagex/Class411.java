@@ -53,7 +53,7 @@ public final class Class411 {
 				if (local61 != null) {
 					@Pc(73) Class327 local73 = arg2.aClass327Array2[local45] = new Class327();
 					local73.anInt4087 = ((arg0 << 16) + local45) * 837863195;
-					local73.method27653(new Class80_Sub36(local61), 909570795);
+					local73.method27653(new Packet(local61), 909570795);
 				}
 			}
 		}

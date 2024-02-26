@@ -11,7 +11,7 @@ public final class Class129_Sub1 extends Class129 {
 	@OriginalMember(owner = "client!aho", name = "ao", descriptor = "(I)V")
 	static void method10141(@OriginalArg(0) int arg0) {
 		Class238.aClass75_3.method1314(1587586714);
-		Class238.aClass75_3.aClass80_Sub36_Sub1_1.anInt3152 = 0;
+		Class238.aClass75_3.aPacketBit_1.pos = 0;
 		Class238.aClass75_3.aClass448_2 = null;
 		Class238.aClass75_3.aClass448_3 = null;
 		Class238.aClass75_3.aClass448_4 = null;

@@ -68,9 +68,9 @@ public abstract class Class107 implements Interface13 {
 
 	@OriginalMember(owner = "client!ea", name = "t", descriptor = "(Lclient!ald;I)V")
 	@Override
-	public final void method37006(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	public final void method37006(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(1080101020);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -80,16 +80,16 @@ public abstract class Class107 implements Interface13 {
 			} else {
 				switch(local14.anInt3862 * -1270493543) {
 					case 1:
-						this.aClass512_3 = (Class512) Class80_Sub39.method15030(Class217.method25865(-1832288224), arg0.method23362(-701495492), -1874444948);
+						this.aClass512_3 = (Class512) Class80_Sub39.method15030(Class217.method25865(-1832288224), arg0.g1(), -1874444948);
 						break;
 					case 2:
-						arg0.method23186((byte) 12);
+						arg0.gjstr2();
 						break;
 					case 3:
 						this.aBoolean170 = false;
 						break;
 					case 4:
-						@Pc(30) int local30 = arg0.method23362(-585810452);
+						@Pc(30) int local30 = arg0.g1();
 						this.aClass521_6 = (Class521) Class80_Sub39.method15030(Class521.method30628(2050322046), local30, -1343025271);
 						if (this.aClass521_6 == null) {
 							throw new IllegalStateException("");
@@ -97,7 +97,7 @@ public abstract class Class107 implements Interface13 {
 					case 5:
 						break;
 					case 6:
-						Class80_Sub39.method15030(Class433.method29104(-568512511), arg0.method23362(987455966), -587014535);
+						Class80_Sub39.method15030(Class433.method29104(-568512511), arg0.g1(), -587014535);
 						break;
 					default:
 						throw new IllegalStateException("");
@@ -118,9 +118,9 @@ public abstract class Class107 implements Interface13 {
 
 	@OriginalMember(owner = "client!ea", name = "u", descriptor = "(Lclient!ald;)V")
 	@Override
-	public final void method37009(@OriginalArg(0) Class80_Sub36 arg0) {
+	public final void method37009(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(757792584);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -130,16 +130,16 @@ public abstract class Class107 implements Interface13 {
 			} else {
 				switch(local14.anInt3862 * -1270493543) {
 					case 1:
-						this.aClass512_3 = (Class512) Class80_Sub39.method15030(Class217.method25865(1316406206), arg0.method23362(-88490066), -1890817414);
+						this.aClass512_3 = (Class512) Class80_Sub39.method15030(Class217.method25865(1316406206), arg0.g1(), -1890817414);
 						break;
 					case 2:
-						arg0.method23186((byte) 12);
+						arg0.gjstr2();
 						break;
 					case 3:
 						this.aBoolean170 = false;
 						break;
 					case 4:
-						@Pc(30) int local30 = arg0.method23362(-458404732);
+						@Pc(30) int local30 = arg0.g1();
 						this.aClass521_6 = (Class521) Class80_Sub39.method15030(Class521.method30628(1343032044), local30, -1831085660);
 						if (this.aClass521_6 == null) {
 							throw new IllegalStateException("");
@@ -147,7 +147,7 @@ public abstract class Class107 implements Interface13 {
 					case 5:
 						break;
 					case 6:
-						Class80_Sub39.method15030(Class433.method29104(651836638), arg0.method23362(432656826), -1636086755);
+						Class80_Sub39.method15030(Class433.method29104(651836638), arg0.g1(), -1636086755);
 						break;
 					default:
 						throw new IllegalStateException("");
@@ -157,13 +157,13 @@ public abstract class Class107 implements Interface13 {
 	}
 
 	@OriginalMember(owner = "client!ea", name = "l", descriptor = "(Lclient!ald;IB)V")
-	abstract void method7186(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2);
+	abstract void method7186(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2);
 
 	@OriginalMember(owner = "client!ea", name = "m", descriptor = "(Lclient!ald;I)V")
-	abstract void method7187(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1);
+	abstract void method7187(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1);
 
 	@OriginalMember(owner = "client!ea", name = "o", descriptor = "(Lclient!ald;I)V")
-	abstract void method7188(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1);
+	abstract void method7188(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1);
 
 	@OriginalMember(owner = "client!ea", name = "j", descriptor = "()Z")
 	final boolean method7189() {

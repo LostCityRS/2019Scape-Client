@@ -104,7 +104,7 @@ public final class Class420 {
 	}
 
 	@OriginalMember(owner = "client!mm", name = "y", descriptor = "(Lclient!ald;J)V")
-	static void method29011(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) long arg1) {
+	static void method29011(@OriginalArg(0) Packet arg0, @OriginalArg(1) long arg1) {
 		@Pc(10) Class31 local10;
 		if (Class238.aString153 != null && Class238.aString153.length() == 6) {
 			if (Class238.aBoolean770) {
@@ -117,18 +117,18 @@ public final class Class420 {
 		} else {
 			local10 = Class31.aClass31_2;
 		}
-		arg0.method23154(local10.method37268(), 1275868335);
+		arg0.p1(local10.method37268());
 		switch(local10.anInt104 * -1971508353) {
 			case 0:
-				arg0.anInt3152 += -158245012;
+				arg0.pos += -158245012;
 				break;
 			case 1:
-				arg0.method23345(Class587.aClass474_1.method29863(arg1), (byte) 17);
+				arg0.p4(Class587.aClass474_1.method29863(arg1));
 				break;
 			case 2:
 			case 3:
-				arg0.method23157(Integer.parseInt(Class238.aString153), 249711383);
-				arg0.anInt3152 += 1034180571;
+				arg0.p3(Integer.parseInt(Class238.aString153));
+				arg0.pos += 1034180571;
 		}
 	}
 

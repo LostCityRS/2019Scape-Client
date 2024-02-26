@@ -101,7 +101,7 @@ public final class Class668 implements Interface75 {
 		@Pc(2) Class80_Sub31 local2 = Class5.method115(16711935);
 		local2.aClass443_1 = null;
 		local2.anInt1648 = 0;
-		local2.aClass80_Sub36_Sub1_2 = new Class80_Sub36_Sub1(5000);
+		local2.aPacketBit_2 = new PacketBit(5000);
 		return local2;
 	}
 

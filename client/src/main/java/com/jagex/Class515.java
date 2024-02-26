@@ -71,7 +71,7 @@ public final class Class515 {
 		@Pc(12) int local12 = arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581];
 		@Pc(15) Class75 local15 = Class52.method1074(16777215);
 		@Pc(21) Class80_Sub31 local21 = Class623.method32440(Class443.aClass443_46, local15.aClass22_1, -191270971);
-		local21.aClass80_Sub36_Sub1_2.method23154(local12, 1275868335);
+		local21.aPacketBit_2.p1(local12);
 		local15.method1325(local21, (byte) -92);
 	}
 

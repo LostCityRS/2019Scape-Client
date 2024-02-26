@@ -15,7 +15,7 @@ public final class Class338 {
 	static int anInt4231;
 
 	@OriginalMember(owner = "client!ih", name = "m", descriptor = "(Lclient!ald;)Ljava/lang/String;")
-	public static String method27880(@OriginalArg(0) Class80_Sub36 arg0) {
+	public static String method27880(@OriginalArg(0) Packet arg0) {
 		return Class445.method29238(arg0, 32767, (byte) -24);
 	}
 
@@ -30,12 +30,12 @@ public final class Class338 {
 	}
 
 	@OriginalMember(owner = "client!ih", name = "i", descriptor = "(Lclient!ald;Ljava/lang/String;)I")
-	public static int method27883(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) String arg1) {
-		@Pc(4) int local4 = arg0.anInt3152 * -1380987821;
+	public static int method27883(@OriginalArg(0) Packet arg0, @OriginalArg(1) String arg1) {
+		@Pc(4) int local4 = arg0.pos * -1380987821;
 		@Pc(8) byte[] local8 = Class623.method32438(arg1, -2113522262);
-		arg0.method23173(local8.length, (short) -15627);
-		arg0.anInt3152 += aClass336_1.method27862(local8, 0, local8.length, arg0.aByteArray61, arg0.anInt3152 * -1380987821, 1751577917) * 1034180571;
-		return arg0.anInt3152 * -1380987821 - local4;
+		arg0.pSmart1or2(local8.length);
+		arg0.pos += aClass336_1.method27862(local8, 0, local8.length, arg0.data, arg0.pos * -1380987821, 1751577917) * 1034180571;
+		return arg0.pos * -1380987821 - local4;
 	}
 
 	@OriginalMember(owner = "client!ih", name = "v", descriptor = "(Lclient!sc;III)J")

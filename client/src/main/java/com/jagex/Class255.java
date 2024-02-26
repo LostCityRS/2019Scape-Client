@@ -29,9 +29,9 @@ final class Class255 implements Runnable {
 
 	@OriginalMember(owner = "client!ez", name = "ks", descriptor = "(Lclient!aku;IIIB)V")
 	static void method26408(@OriginalArg(0) Class80_Sub31 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) byte arg4) {
-		arg0.aClass80_Sub36_Sub1_2.method23218(arg2, 1673014664);
-		arg0.aClass80_Sub36_Sub1_2.method23219(arg3, 597702703);
-		arg0.aClass80_Sub36_Sub1_2.method23229(arg1, 1293592604);
+		arg0.aPacketBit_2.p2_alt1(arg2);
+		arg0.aPacketBit_2.p2_alt2(arg3);
+		arg0.aPacketBit_2.p4_alt1(arg1);
 	}
 
 	@OriginalMember(owner = "client!ez", name = "<init>", descriptor = "(Lclient!aiq;)V")

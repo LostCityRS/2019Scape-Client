@@ -17,12 +17,12 @@ public abstract class Class98 {
 			return;
 		}
 		@Pc(10) Class80_Sub31 local10 = Class623.method32440(Class443.aClass443_38, client.aClass75_2.aClass22_1, -191270971);
-		local10.aClass80_Sub36_Sub1_2.method23154(0, 1275868335);
-		@Pc(21) int local21 = local10.aClass80_Sub36_Sub1_2.anInt3152 * -1380987821;
-		local10.aClass80_Sub36_Sub1_2.method23165(arg0, 2099651031);
-		local10.aClass80_Sub36_Sub1_2.anInt3152 += -1350670595;
-		local10.aClass80_Sub36_Sub1_2.method23190(Class499.anIntArray464, local21, local10.aClass80_Sub36_Sub1_2.anInt3152 * -1380987821, (byte) 8);
-		local10.aClass80_Sub36_Sub1_2.method23171(local10.aClass80_Sub36_Sub1_2.anInt3152 * -1380987821 - local21, (byte) 68);
+		local10.aPacketBit_2.p1(0);
+		@Pc(21) int local21 = local10.aPacketBit_2.pos * -1380987821;
+		local10.aPacketBit_2.pjstr(arg0);
+		local10.aPacketBit_2.pos += -1350670595;
+		local10.aPacketBit_2.tinyenc(Class499.anIntArray464, local21, local10.aPacketBit_2.pos * -1380987821);
+		local10.aPacketBit_2.p1check(local10.aPacketBit_2.pos * -1380987821 - local21);
 		client.aClass75_2.method1325(local10, (byte) -54);
 		Class499.aClass713_1 = Class713.aClass713_3;
 	}
@@ -38,8 +38,8 @@ public abstract class Class98 {
 	}
 
 	@OriginalMember(owner = "client!cg", name = "t", descriptor = "(Lclient!ald;B)Lclient!eg;")
-	static Class103 method2707(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
-		@Pc(3) int local3 = arg0.method23362(222389890);
+	static Class103 method2707(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
+		@Pc(3) int local3 = arg0.g1();
 		@Pc(7) Class82 local7 = Class62.method1210(local3, 677643756);
 		@Pc(9) Class103 local9 = null;
 		switch(local7.anInt257 * 2117806001) {

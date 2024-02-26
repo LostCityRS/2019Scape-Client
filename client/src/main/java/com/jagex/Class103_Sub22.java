@@ -26,13 +26,13 @@ public final class Class103_Sub22 extends Class103 {
 	final int anInt1019;
 
 	@OriginalMember(owner = "client!agw", name = "<init>", descriptor = "(Lclient!ald;)V")
-	Class103_Sub22(@OriginalArg(0) Class80_Sub36 arg0) {
+	Class103_Sub22(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.anInt1020 = arg0.method23178((byte) -12) * -413259903;
-		this.anInt1018 = arg0.method23178((byte) -69) * -1051847969;
-		this.aString43 = arg0.method23376((short) 5002);
-		this.anInt1017 = arg0.method23182(-1177864632) * 65752757;
-		this.anInt1019 = arg0.method23178((byte) -37) * -325802555;
+		this.anInt1020 = arg0.g2() * -413259903;
+		this.anInt1018 = arg0.g2() * -1051847969;
+		this.aString43 = arg0.gjstr();
+		this.anInt1017 = arg0.g4() * 65752757;
+		this.anInt1019 = arg0.g2() * -325802555;
 	}
 
 	@OriginalMember(owner = "client!agw", name = "l", descriptor = "()V")

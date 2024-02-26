@@ -45,7 +45,7 @@ public abstract class Class139 {
 	Class3 aClass3_8 = new Class3();
 
 	@OriginalMember(owner = "client!pz", name = "k", descriptor = "Lclient!ald;")
-	Class80_Sub36 aClass80_Sub36_6 = new Class80_Sub36(6);
+	Packet aPacket_6 = new Packet(6);
 
 	@OriginalMember(owner = "client!pz", name = "x", descriptor = "B")
 	byte aByte19 = 0;
@@ -63,10 +63,10 @@ public abstract class Class139 {
 	public volatile int anInt1253 = -975887797;
 
 	@OriginalMember(owner = "client!pz", name = "d", descriptor = "Lclient!ald;")
-	Class80_Sub36 aClass80_Sub36_7 = new Class80_Sub36(5);
+	Packet aPacket_7 = new Packet(5);
 
 	@OriginalMember(owner = "client!pz", name = "z", descriptor = "Lclient!ald;")
-	Class80_Sub36 aClass80_Sub36_5 = new Class80_Sub36(5);
+	Packet aPacket_5 = new Packet(5);
 
 	@OriginalMember(owner = "client!pz", name = "p", descriptor = "I")
 	int anInt1243 = 0;

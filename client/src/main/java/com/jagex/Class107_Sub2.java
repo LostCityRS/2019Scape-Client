@@ -29,10 +29,10 @@ public final class Class107_Sub2 extends Class107 {
 
 	@OriginalMember(owner = "client!aft", name = "m", descriptor = "(Lclient!ald;I)V")
 	@Override
-	void method7187(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method7187(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		@Pc(6) Class292 local6 = (Class292) Class80_Sub39.method15030(Class261.method26500(1193057497), arg1, -1170148496);
 		if (Class292.aClass292_10 == local6) {
-			this.anInt863 = arg0.method23178((byte) -69) * 1383237743;
+			this.anInt863 = arg0.g2() * 1383237743;
 		}
 	}
 
@@ -48,19 +48,19 @@ public final class Class107_Sub2 extends Class107 {
 
 	@OriginalMember(owner = "client!aft", name = "o", descriptor = "(Lclient!ald;I)V")
 	@Override
-	void method7188(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method7188(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		@Pc(6) Class292 local6 = (Class292) Class80_Sub39.method15030(Class261.method26500(1193057497), arg1, -435001969);
 		if (Class292.aClass292_10 == local6) {
-			this.anInt863 = arg0.method23178((byte) -57) * 1383237743;
+			this.anInt863 = arg0.g2() * 1383237743;
 		}
 	}
 
 	@OriginalMember(owner = "client!aft", name = "l", descriptor = "(Lclient!ald;IB)V")
 	@Override
-	void method7186(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
+	void method7186(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
 		@Pc(6) Class292 local6 = (Class292) Class80_Sub39.method15030(Class261.method26500(1193057497), arg1, -799877529);
 		if (Class292.aClass292_10 == local6) {
-			this.anInt863 = arg0.method23178((byte) -19) * 1383237743;
+			this.anInt863 = arg0.g2() * 1383237743;
 		}
 	}
 }

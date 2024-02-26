@@ -47,25 +47,25 @@ final class Class504 implements Interface9 {
 
 	@OriginalMember(owner = "client!qf", name = "u", descriptor = "(Lclient!ald;)Ljava/lang/Object;")
 	@Override
-	public Object method30636(@OriginalArg(0) Class80_Sub36 arg0) {
-		return arg0.method23376((short) 20153);
+	public Object method30636(@OriginalArg(0) Packet arg0) {
+		return arg0.gjstr();
 	}
 
 	@OriginalMember(owner = "client!qf", name = "t", descriptor = "(Lclient!ald;S)Ljava/lang/Object;")
 	@Override
-	public Object method30638(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) short arg1) {
-		return arg0.method23376((short) 16581);
+	public Object method30638(@OriginalArg(0) Packet arg0, @OriginalArg(1) short arg1) {
+		return arg0.gjstr();
 	}
 
 	@OriginalMember(owner = "client!qf", name = "f", descriptor = "(Lclient!ald;)Ljava/lang/Object;")
 	@Override
-	public Object method30635(@OriginalArg(0) Class80_Sub36 arg0) {
-		return arg0.method23376((short) 16017);
+	public Object method30635(@OriginalArg(0) Packet arg0) {
+		return arg0.gjstr();
 	}
 
 	@OriginalMember(owner = "client!qf", name = "e", descriptor = "(Lclient!ald;)Ljava/lang/Object;")
 	@Override
-	public Object method30637(@OriginalArg(0) Class80_Sub36 arg0) {
-		return arg0.method23376((short) 11646);
+	public Object method30637(@OriginalArg(0) Packet arg0) {
+		return arg0.gjstr();
 	}
 }

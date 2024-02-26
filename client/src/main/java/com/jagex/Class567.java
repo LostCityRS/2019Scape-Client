@@ -188,8 +188,8 @@ public final class Class567 {
 	}
 
 	@OriginalMember(owner = "client!ta", name = "t", descriptor = "(Lclient!ald;B)Lclient!ve;")
-	public static Interface67 method31521(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
-		@Pc(5) Class609 local5 = Class523.method30649(arg0.method23362(47138121), -1607011722);
+	public static Interface67 method31521(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
+		@Pc(5) Class609 local5 = Class523.method30649(arg0.g1(), -1607011722);
 		if (Class609.aClass609_1 == local5) {
 			return Class505.method30470(arg0, (byte) 42);
 		} else if (local5 == Class609.aClass609_2) {
@@ -233,8 +233,8 @@ public final class Class567 {
 				}
 				if (local34 != null) {
 					@Pc(101) Class80_Sub31 local101 = Class623.method32440(local34, client.aClass75_1.aClass22_1, -191270971);
-					local101.aClass80_Sub36_Sub1_2.method23218(local5[local9], 1673014664);
-					local101.aClass80_Sub36_Sub1_2.method23211(0, -183466620);
+					local101.aPacketBit_2.p2_alt1(local5[local9]);
+					local101.aPacketBit_2.p1_alt3(0);
 					client.aClass75_1.method1325(local101, (byte) -110);
 				}
 				local7 = true;

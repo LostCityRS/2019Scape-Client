@@ -46,10 +46,10 @@ public final class Class75 {
 	public int anInt249 = 0;
 
 	@OriginalMember(owner = "client!ad", name = "u", descriptor = "Lclient!ald;")
-	Class80_Sub36 aClass80_Sub36_1 = new Class80_Sub36(1700);
+	Packet aPacket_1 = new Packet(1700);
 
 	@OriginalMember(owner = "client!ad", name = "g", descriptor = "Lclient!asa;")
-	Class80_Sub36_Sub1 aClass80_Sub36_Sub1_1 = new Class80_Sub36_Sub1(40000);
+	PacketBit aPacketBit_1 = new PacketBit(40000);
 
 	@OriginalMember(owner = "client!ad", name = "m", descriptor = "Lclient!nu;")
 	Class448 aClass448_2 = null;
@@ -142,19 +142,19 @@ public final class Class75 {
 		if (this.aClass160_1 == null || this.anInt249 * 982154633 <= 0) {
 			return;
 		}
-		this.aClass80_Sub36_1.anInt3152 = 0;
+		this.aPacket_1.pos = 0;
 		while (true) {
 			@Pc(18) Class80_Sub31 local18 = (Class80_Sub31) this.aClass8_4.method247(129206984);
-			if (local18 == null || local18.anInt1647 * -883470063 > this.aClass80_Sub36_1.aByteArray61.length - this.aClass80_Sub36_1.anInt3152 * -1380987821) {
-				this.aClass160_1.method15548(this.aClass80_Sub36_1.aByteArray61, 0, this.aClass80_Sub36_1.anInt3152 * -1380987821, 779552044);
-				this.anInt246 += this.aClass80_Sub36_1.anInt3152 * 2145693327;
+			if (local18 == null || local18.anInt1647 * -883470063 > this.aPacket_1.data.length - this.aPacket_1.pos * -1380987821) {
+				this.aClass160_1.method15548(this.aPacket_1.data, 0, this.aPacket_1.pos * -1380987821, 779552044);
+				this.anInt246 += this.aPacket_1.pos * 2145693327;
 				this.anInt243 = 0;
 				break;
 			}
-			this.aClass80_Sub36_1.method23168(local18.aClass80_Sub36_Sub1_2.aByteArray61, 0, local18.anInt1647 * -883470063, (byte) 71);
+			this.aPacket_1.pdata(local18.aPacketBit_2.data, 0, local18.anInt1647 * -883470063);
 			this.anInt249 -= local18.anInt1647 * 1566121289;
 			local18.method24395((byte) 47);
-			local18.aClass80_Sub36_Sub1_2.method23197((byte) 94);
+			local18.aPacketBit_2.release();
 			local18.method14403(-2050484493);
 		}
 	}
@@ -170,19 +170,19 @@ public final class Class75 {
 		if (this.aClass160_1 == null || this.anInt249 * 982154633 <= 0) {
 			return;
 		}
-		this.aClass80_Sub36_1.anInt3152 = 0;
+		this.aPacket_1.pos = 0;
 		while (true) {
 			@Pc(18) Class80_Sub31 local18 = (Class80_Sub31) this.aClass8_4.method247(129206984);
-			if (local18 == null || local18.anInt1647 * -883470063 > this.aClass80_Sub36_1.aByteArray61.length - this.aClass80_Sub36_1.anInt3152 * -1380987821) {
-				this.aClass160_1.method15548(this.aClass80_Sub36_1.aByteArray61, 0, this.aClass80_Sub36_1.anInt3152 * -1380987821, 779552044);
-				this.anInt246 += this.aClass80_Sub36_1.anInt3152 * 2145693327;
+			if (local18 == null || local18.anInt1647 * -883470063 > this.aPacket_1.data.length - this.aPacket_1.pos * -1380987821) {
+				this.aClass160_1.method15548(this.aPacket_1.data, 0, this.aPacket_1.pos * -1380987821, 779552044);
+				this.anInt246 += this.aPacket_1.pos * 2145693327;
 				this.anInt243 = 0;
 				break;
 			}
-			this.aClass80_Sub36_1.method23168(local18.aClass80_Sub36_Sub1_2.aByteArray61, 0, local18.anInt1647 * -883470063, (byte) 77);
+			this.aPacket_1.pdata(local18.aPacketBit_2.data, 0, local18.anInt1647 * -883470063);
 			this.anInt249 -= local18.anInt1647 * 1566121289;
 			local18.method24395((byte) 48);
-			local18.aClass80_Sub36_Sub1_2.method23197((byte) -12);
+			local18.aPacketBit_2.release();
 			local18.method14403(-1963133313);
 		}
 	}
@@ -241,8 +241,8 @@ public final class Class75 {
 	@OriginalMember(owner = "client!ad", name = "w", descriptor = "(Lclient!aku;)V")
 	public void method1323(@OriginalArg(0) Class80_Sub31 arg0) {
 		this.aClass8_4.method232(arg0, 248656428);
-		arg0.anInt1647 = arg0.aClass80_Sub36_Sub1_2.anInt3152 * 352601891;
-		arg0.aClass80_Sub36_Sub1_2.anInt3152 = 0;
+		arg0.anInt1647 = arg0.aPacketBit_2.pos * 352601891;
+		arg0.aPacketBit_2.pos = 0;
 		this.anInt249 += arg0.anInt1647 * 1566121289;
 	}
 
@@ -255,8 +255,8 @@ public final class Class75 {
 	@OriginalMember(owner = "client!ad", name = "e", descriptor = "(Lclient!aku;B)V")
 	public void method1325(@OriginalArg(0) Class80_Sub31 arg0, @OriginalArg(1) byte arg1) {
 		this.aClass8_4.method232(arg0, 2123943193);
-		arg0.anInt1647 = arg0.aClass80_Sub36_Sub1_2.anInt3152 * 352601891;
-		arg0.aClass80_Sub36_Sub1_2.anInt3152 = 0;
+		arg0.anInt1647 = arg0.aPacketBit_2.pos * 352601891;
+		arg0.aPacketBit_2.pos = 0;
 		this.anInt249 += arg0.anInt1647 * 1566121289;
 	}
 
@@ -265,19 +265,19 @@ public final class Class75 {
 		if (this.aClass160_1 == null || this.anInt249 * 982154633 <= 0) {
 			return;
 		}
-		this.aClass80_Sub36_1.anInt3152 = 0;
+		this.aPacket_1.pos = 0;
 		while (true) {
 			@Pc(18) Class80_Sub31 local18 = (Class80_Sub31) this.aClass8_4.method247(129206984);
-			if (local18 == null || local18.anInt1647 * -883470063 > this.aClass80_Sub36_1.aByteArray61.length - this.aClass80_Sub36_1.anInt3152 * -1380987821) {
-				this.aClass160_1.method15548(this.aClass80_Sub36_1.aByteArray61, 0, this.aClass80_Sub36_1.anInt3152 * -1380987821, 779552044);
-				this.anInt246 += this.aClass80_Sub36_1.anInt3152 * 2145693327;
+			if (local18 == null || local18.anInt1647 * -883470063 > this.aPacket_1.data.length - this.aPacket_1.pos * -1380987821) {
+				this.aClass160_1.method15548(this.aPacket_1.data, 0, this.aPacket_1.pos * -1380987821, 779552044);
+				this.anInt246 += this.aPacket_1.pos * 2145693327;
 				this.anInt243 = 0;
 				break;
 			}
-			this.aClass80_Sub36_1.method23168(local18.aClass80_Sub36_Sub1_2.aByteArray61, 0, local18.anInt1647 * -883470063, (byte) 25);
+			this.aPacket_1.pdata(local18.aPacketBit_2.data, 0, local18.anInt1647 * -883470063);
 			this.anInt249 -= local18.anInt1647 * 1566121289;
 			local18.method24395((byte) 22);
-			local18.aClass80_Sub36_Sub1_2.method23197((byte) 28);
+			local18.aPacketBit_2.release();
 			local18.method14403(1519504256);
 		}
 	}
@@ -285,24 +285,24 @@ public final class Class75 {
 	@OriginalMember(owner = "client!ad", name = "x", descriptor = "(Lclient!aku;)V")
 	public void method1327(@OriginalArg(0) Class80_Sub31 arg0) {
 		this.aClass8_4.method232(arg0, -59718997);
-		arg0.anInt1647 = arg0.aClass80_Sub36_Sub1_2.anInt3152 * 352601891;
-		arg0.aClass80_Sub36_Sub1_2.anInt3152 = 0;
+		arg0.anInt1647 = arg0.aPacketBit_2.pos * 352601891;
+		arg0.aPacketBit_2.pos = 0;
 		this.anInt249 += arg0.anInt1647 * 1566121289;
 	}
 
 	@OriginalMember(owner = "client!ad", name = "r", descriptor = "(Lclient!aku;)V")
 	public void method1328(@OriginalArg(0) Class80_Sub31 arg0) {
 		this.aClass8_4.method232(arg0, 474819907);
-		arg0.anInt1647 = arg0.aClass80_Sub36_Sub1_2.anInt3152 * 352601891;
-		arg0.aClass80_Sub36_Sub1_2.anInt3152 = 0;
+		arg0.anInt1647 = arg0.aPacketBit_2.pos * 352601891;
+		arg0.aPacketBit_2.pos = 0;
 		this.anInt249 += arg0.anInt1647 * 1566121289;
 	}
 
 	@OriginalMember(owner = "client!ad", name = "q", descriptor = "(Lclient!aku;)V")
 	public void method1329(@OriginalArg(0) Class80_Sub31 arg0) {
 		this.aClass8_4.method232(arg0, 2024533934);
-		arg0.anInt1647 = arg0.aClass80_Sub36_Sub1_2.anInt3152 * 352601891;
-		arg0.aClass80_Sub36_Sub1_2.anInt3152 = 0;
+		arg0.anInt1647 = arg0.aPacketBit_2.pos * 352601891;
+		arg0.aPacketBit_2.pos = 0;
 		this.anInt249 += arg0.anInt1647 * 1566121289;
 	}
 

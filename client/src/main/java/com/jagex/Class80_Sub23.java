@@ -68,45 +68,45 @@ public final class Class80_Sub23 extends Class80 {
 	@OriginalMember(owner = "client!akm", name = "<init>", descriptor = "(I[B)V")
 	Class80_Sub23(@OriginalArg(0) int arg0, @OriginalArg(1) byte[] arg1) {
 		this.anInt1618 = arg0 * -450281439;
-		@Pc(11) Class80_Sub36 local11 = new Class80_Sub36(arg1);
-		this.anInt1619 = local11.method23178((byte) -76) * 967488945;
+		@Pc(11) Packet local11 = new Packet(arg1);
+		this.anInt1619 = local11.g2() * 967488945;
 		this.anIntArray188 = new int[this.anInt1619 * -1195478191];
 		this.anIntArrayArray41 = new int[this.anInt1619 * -1195478191][];
 		this.aBooleanArray8 = new boolean[this.anInt1619 * -1195478191];
 		this.anIntArray187 = new int[this.anInt1619 * -1195478191];
 		@Pc(48) int local48;
 		for (local48 = 0; local48 < this.anInt1619 * -1195478191; local48++) {
-			this.anIntArray188[local48] = local11.method23362(-1901200286);
+			this.anIntArray188[local48] = local11.g1();
 			if (this.anIntArray188[local48] == 6) {
 				this.anIntArray188[local48] = 2;
 			}
 		}
 		for (local48 = 0; local48 < this.anInt1619 * -1195478191; local48++) {
-			this.aBooleanArray8[local48] = local11.method23362(-975397359) == 1;
+			this.aBooleanArray8[local48] = local11.g1() == 1;
 		}
 		for (local48 = 0; local48 < this.anInt1619 * -1195478191; local48++) {
-			this.anIntArray187[local48] = local11.method23178((byte) -103);
+			this.anIntArray187[local48] = local11.g2();
 		}
 		for (local48 = 0; local48 < this.anInt1619 * -1195478191; local48++) {
-			this.anIntArrayArray41[local48] = new int[local11.method23195(1349986048)];
+			this.anIntArrayArray41[local48] = new int[local11.gSmart1or2()];
 		}
 		@Pc(141) int local141;
 		for (local48 = 0; local48 < this.anInt1619 * -1195478191; local48++) {
 			for (local141 = 0; local141 < this.anIntArrayArray41[local48].length; local141++) {
-				this.anIntArrayArray41[local48][local141] = local11.method23195(1692369954);
+				this.anIntArrayArray41[local48][local141] = local11.gSmart1or2();
 			}
 		}
-		local48 = local11.method23178((byte) -120);
+		local48 = local11.g2();
 		this.aClass217Array1 = new Class217[local48];
-		local141 = local11.method23362(897956408);
+		local141 = local11.g1();
 		@Pc(175) int local175;
 		for (local175 = 0; local175 < local48; local175++) {
 			this.aClass217Array1[local175] = new Class217(local141, local11, false);
 		}
-		local175 = local11.method23179(128142442);
+		local175 = local11.g2s();
 		this.anIntArray189 = new int[local175];
 		for (@Pc(200) int local200 = 0; local200 < this.anIntArray189.length; local200++) {
-			this.anIntArray189[local200] = local11.method23179(1256643397);
+			this.anIntArray189[local200] = local11.g2s();
 		}
 		this.method14243(-848568447);
 	}

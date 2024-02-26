@@ -435,9 +435,9 @@ public final class Class317 {
 		if (arg1.length() > 30) {
 			arg1 = arg1.substring(0, 30);
 		}
-		local8.aClass80_Sub36_Sub1_2.method23154(Class350.method28013(arg0, (short) 16383) + Class350.method28013(arg1, (short) 16383), 1275868335);
-		local8.aClass80_Sub36_Sub1_2.method23165(arg0, 2127730851);
-		local8.aClass80_Sub36_Sub1_2.method23165(arg1, 1887299239);
+		local8.aPacketBit_2.p1(Class350.method28013(arg0, (short) 16383) + Class350.method28013(arg1, (short) 16383));
+		local8.aPacketBit_2.pjstr(arg0);
+		local8.aPacketBit_2.pjstr(arg1);
 		local2.method1325(local8, (byte) -43);
 	}
 

@@ -112,16 +112,16 @@ public abstract class Class2_Sub1 extends Class2 implements Interface53 {
 	}
 
 	@OriginalMember(owner = "client!add", name = "af", descriptor = "(Lclient!ald;Lclient!qv;)Lclient!og;")
-	public final Class460 method1819(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class519 arg1) {
-		@Pc(3) int local3 = arg0.method23178((byte) -88);
+	public final Class460 method1819(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class519 arg1) {
+		@Pc(3) int local3 = arg0.g2();
 		@Pc(8) Class460 local8 = new Class460(local3);
 		@Pc(11) Class local11 = arg1.aClass2;
 		if (Integer.class == local11) {
-			local8.anObject19 = arg0.method23182(1250616231);
+			local8.anObject19 = arg0.g4();
 		} else if (local11 == Long.class) {
-			local8.anObject19 = arg0.method23273((byte) 5);
+			local8.anObject19 = arg0.g8();
 		} else if (local11 == String.class) {
-			local8.anObject19 = arg0.method23186((byte) 12);
+			local8.anObject19 = arg0.gjstr2();
 		} else if (Interface7.class.isAssignableFrom(local11)) {
 			try {
 				@Pc(48) Interface7 local48 = (Interface7) local11.getDeclaredConstructor().newInstance();
@@ -140,8 +140,8 @@ public abstract class Class2_Sub1 extends Class2 implements Interface53 {
 	}
 
 	@OriginalMember(owner = "client!add", name = "n", descriptor = "(Lclient!ald;I)Lclient!og;")
-	public final Class460 method1820(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) int local3 = arg0.method23178((byte) -9);
+	public final Class460 method1820(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) int local3 = arg0.g2();
 		@Pc(9) Class107 local9 = (Class107) this.method18054(local3, -309234792);
 		if (!local9.method7185(-64307015)) {
 			throw new IllegalStateException("");
@@ -149,11 +149,11 @@ public abstract class Class2_Sub1 extends Class2 implements Interface53 {
 		@Pc(23) Class460 local23 = new Class460(local3);
 		@Pc(29) Class local29 = local9.aClass521_6.method30623(-666678663).aClass2;
 		if (Integer.class == local29) {
-			local23.anObject19 = arg0.method23182(137788236);
+			local23.anObject19 = arg0.g4();
 		} else if (local29 == Long.class) {
-			local23.anObject19 = arg0.method23273((byte) 75);
+			local23.anObject19 = arg0.g8();
 		} else if (String.class == local29) {
-			local23.anObject19 = arg0.method23186((byte) 12);
+			local23.anObject19 = arg0.gjstr2();
 		} else if (Interface7.class.isAssignableFrom(local29)) {
 			try {
 				@Pc(66) Interface7 local66 = (Interface7) local29.getDeclaredConstructor().newInstance();
@@ -192,7 +192,7 @@ public abstract class Class2_Sub1 extends Class2 implements Interface53 {
 		} else if (arg0.anObject19 instanceof Long) {
 			local6 = local1 + 8;
 		} else if (arg0.anObject19 instanceof String) {
-			local6 = local1 + Class55.method1114((String) arg0.anObject19, (byte) 16);
+			local6 = local1 + Packet.calculatePjstr2((String) arg0.anObject19);
 		} else if (arg0.anObject19 instanceof Interface7) {
 			local6 = local1 + ((Interface7) arg0.anObject19).method14463(-608646231);
 		} else {
@@ -202,14 +202,14 @@ public abstract class Class2_Sub1 extends Class2 implements Interface53 {
 	}
 
 	@OriginalMember(owner = "client!add", name = "y", descriptor = "(Lclient!ald;Lclient!og;I)V")
-	public final void method1822(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class460 arg1, @OriginalArg(2) int arg2) {
-		arg0.method23155(arg1.anInt4907 * -38979583, (byte) -26);
+	public final void method1822(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class460 arg1, @OriginalArg(2) int arg2) {
+		arg0.p2(arg1.anInt4907 * -38979583);
 		if (arg1.anObject19 instanceof Integer) {
-			arg0.method23345((Integer) arg1.anObject19, (byte) 74);
+			arg0.p4((Integer) arg1.anObject19);
 		} else if (arg1.anObject19 instanceof Long) {
-			arg0.method23162((Long) arg1.anObject19);
+			arg0.p8((Long) arg1.anObject19);
 		} else if (arg1.anObject19 instanceof String) {
-			arg0.method23166((String) arg1.anObject19, 1283974551);
+			arg0.pjstr2((String) arg1.anObject19);
 		} else if (arg1.anObject19 instanceof Interface7) {
 			((Interface7) arg1.anObject19).method14459(arg0, (byte) -57);
 		} else {
@@ -218,16 +218,16 @@ public abstract class Class2_Sub1 extends Class2 implements Interface53 {
 	}
 
 	@OriginalMember(owner = "client!add", name = "ah", descriptor = "(Lclient!ald;Lclient!qv;)Lclient!og;")
-	public final Class460 method1823(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class519 arg1) {
-		@Pc(3) int local3 = arg0.method23178((byte) -123);
+	public final Class460 method1823(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class519 arg1) {
+		@Pc(3) int local3 = arg0.g2();
 		@Pc(8) Class460 local8 = new Class460(local3);
 		@Pc(11) Class local11 = arg1.aClass2;
 		if (Integer.class == local11) {
-			local8.anObject19 = arg0.method23182(-1234814216);
+			local8.anObject19 = arg0.g4();
 		} else if (local11 == Long.class) {
-			local8.anObject19 = arg0.method23273((byte) 13);
+			local8.anObject19 = arg0.g8();
 		} else if (local11 == String.class) {
-			local8.anObject19 = arg0.method23186((byte) 12);
+			local8.anObject19 = arg0.gjstr2();
 		} else if (Interface7.class.isAssignableFrom(local11)) {
 			try {
 				@Pc(48) Interface7 local48 = (Interface7) local11.getDeclaredConstructor().newInstance();
@@ -265,8 +265,8 @@ public abstract class Class2_Sub1 extends Class2 implements Interface53 {
 	}
 
 	@OriginalMember(owner = "client!add", name = "aj", descriptor = "(Lclient!ald;)Lclient!og;")
-	public final Class460 method1824(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(3) int local3 = arg0.method23178((byte) -32);
+	public final Class460 method1824(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g2();
 		@Pc(9) Class107 local9 = (Class107) this.method18054(local3, 1029676181);
 		if (!local9.method7185(-64307015)) {
 			throw new IllegalStateException("");
@@ -274,11 +274,11 @@ public abstract class Class2_Sub1 extends Class2 implements Interface53 {
 		@Pc(23) Class460 local23 = new Class460(local3);
 		@Pc(29) Class local29 = local9.aClass521_6.method30623(-666678663).aClass2;
 		if (Integer.class == local29) {
-			local23.anObject19 = arg0.method23182(-567467765);
+			local23.anObject19 = arg0.g4();
 		} else if (local29 == Long.class) {
-			local23.anObject19 = arg0.method23273((byte) 26);
+			local23.anObject19 = arg0.g8();
 		} else if (String.class == local29) {
-			local23.anObject19 = arg0.method23186((byte) 12);
+			local23.anObject19 = arg0.gjstr2();
 		} else if (Interface7.class.isAssignableFrom(local29)) {
 			try {
 				@Pc(66) Interface7 local66 = (Interface7) local29.getDeclaredConstructor().newInstance();
@@ -303,16 +303,16 @@ public abstract class Class2_Sub1 extends Class2 implements Interface53 {
 	}
 
 	@OriginalMember(owner = "client!add", name = "c", descriptor = "(Lclient!ald;Lclient!qv;I)Lclient!og;")
-	public final Class460 method1828(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class519 arg1, @OriginalArg(2) int arg2) {
-		@Pc(3) int local3 = arg0.method23178((byte) -58);
+	public final Class460 method1828(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class519 arg1, @OriginalArg(2) int arg2) {
+		@Pc(3) int local3 = arg0.g2();
 		@Pc(8) Class460 local8 = new Class460(local3);
 		@Pc(11) Class local11 = arg1.aClass2;
 		if (Integer.class == local11) {
-			local8.anObject19 = arg0.method23182(1437018460);
+			local8.anObject19 = arg0.g4();
 		} else if (local11 == Long.class) {
-			local8.anObject19 = arg0.method23273((byte) -23);
+			local8.anObject19 = arg0.g8();
 		} else if (local11 == String.class) {
-			local8.anObject19 = arg0.method23186((byte) 12);
+			local8.anObject19 = arg0.gjstr2();
 		} else if (Interface7.class.isAssignableFrom(local11)) {
 			try {
 				@Pc(48) Interface7 local48 = (Interface7) local11.getDeclaredConstructor().newInstance();
@@ -331,14 +331,14 @@ public abstract class Class2_Sub1 extends Class2 implements Interface53 {
 	}
 
 	@OriginalMember(owner = "client!add", name = "aq", descriptor = "(Lclient!ald;Lclient!og;)V")
-	public final void method1829(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class460 arg1) {
-		arg0.method23155(arg1.anInt4907 * -38979583, (byte) -32);
+	public final void method1829(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class460 arg1) {
+		arg0.p2(arg1.anInt4907 * -38979583);
 		if (arg1.anObject19 instanceof Integer) {
-			arg0.method23345((Integer) arg1.anObject19, (byte) 122);
+			arg0.p4((Integer) arg1.anObject19);
 		} else if (arg1.anObject19 instanceof Long) {
-			arg0.method23162((Long) arg1.anObject19);
+			arg0.p8((Long) arg1.anObject19);
 		} else if (arg1.anObject19 instanceof String) {
-			arg0.method23166((String) arg1.anObject19, -844322405);
+			arg0.pjstr2((String) arg1.anObject19);
 		} else if (arg1.anObject19 instanceof Interface7) {
 			((Interface7) arg1.anObject19).method14459(arg0, (byte) -115);
 		} else {
@@ -350,14 +350,14 @@ public abstract class Class2_Sub1 extends Class2 implements Interface53 {
 	public abstract Interface11 method18054(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1);
 
 	@OriginalMember(owner = "client!add", name = "ao", descriptor = "(Lclient!ald;Lclient!og;)V")
-	public final void method1830(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class460 arg1) {
-		arg0.method23155(arg1.anInt4907 * -38979583, (byte) -87);
+	public final void method1830(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class460 arg1) {
+		arg0.p2(arg1.anInt4907 * -38979583);
 		if (arg1.anObject19 instanceof Integer) {
-			arg0.method23345((Integer) arg1.anObject19, (byte) 39);
+			arg0.p4((Integer) arg1.anObject19);
 		} else if (arg1.anObject19 instanceof Long) {
-			arg0.method23162((Long) arg1.anObject19);
+			arg0.p8((Long) arg1.anObject19);
 		} else if (arg1.anObject19 instanceof String) {
-			arg0.method23166((String) arg1.anObject19, -1734232239);
+			arg0.pjstr2((String) arg1.anObject19);
 		} else if (arg1.anObject19 instanceof Interface7) {
 			((Interface7) arg1.anObject19).method14459(arg0, (byte) -23);
 		} else {
@@ -366,8 +366,8 @@ public abstract class Class2_Sub1 extends Class2 implements Interface53 {
 	}
 
 	@OriginalMember(owner = "client!add", name = "ac", descriptor = "(Lclient!ald;)Lclient!og;")
-	public final Class460 method1831(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(3) int local3 = arg0.method23178((byte) -12);
+	public final Class460 method1831(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g2();
 		@Pc(9) Class107 local9 = (Class107) this.method18054(local3, 40244144);
 		if (!local9.method7185(-64307015)) {
 			throw new IllegalStateException("");
@@ -375,11 +375,11 @@ public abstract class Class2_Sub1 extends Class2 implements Interface53 {
 		@Pc(23) Class460 local23 = new Class460(local3);
 		@Pc(29) Class local29 = local9.aClass521_6.method30623(-666678663).aClass2;
 		if (Integer.class == local29) {
-			local23.anObject19 = arg0.method23182(267027596);
+			local23.anObject19 = arg0.g4();
 		} else if (local29 == Long.class) {
-			local23.anObject19 = arg0.method23273((byte) -7);
+			local23.anObject19 = arg0.g8();
 		} else if (String.class == local29) {
-			local23.anObject19 = arg0.method23186((byte) 12);
+			local23.anObject19 = arg0.gjstr2();
 		} else if (Interface7.class.isAssignableFrom(local29)) {
 			try {
 				@Pc(66) Interface7 local66 = (Interface7) local29.getDeclaredConstructor().newInstance();
@@ -397,16 +397,16 @@ public abstract class Class2_Sub1 extends Class2 implements Interface53 {
 	}
 
 	@OriginalMember(owner = "client!add", name = "ag", descriptor = "(Lclient!ald;Lclient!qv;)Lclient!og;")
-	public final Class460 method1832(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class519 arg1) {
-		@Pc(3) int local3 = arg0.method23178((byte) -14);
+	public final Class460 method1832(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class519 arg1) {
+		@Pc(3) int local3 = arg0.g2();
 		@Pc(8) Class460 local8 = new Class460(local3);
 		@Pc(11) Class local11 = arg1.aClass2;
 		if (Integer.class == local11) {
-			local8.anObject19 = arg0.method23182(-2092827257);
+			local8.anObject19 = arg0.g4();
 		} else if (local11 == Long.class) {
-			local8.anObject19 = arg0.method23273((byte) 8);
+			local8.anObject19 = arg0.g8();
 		} else if (local11 == String.class) {
-			local8.anObject19 = arg0.method23186((byte) 12);
+			local8.anObject19 = arg0.gjstr2();
 		} else if (Interface7.class.isAssignableFrom(local11)) {
 			try {
 				@Pc(48) Interface7 local48 = (Interface7) local11.getDeclaredConstructor().newInstance();
@@ -425,16 +425,16 @@ public abstract class Class2_Sub1 extends Class2 implements Interface53 {
 	}
 
 	@OriginalMember(owner = "client!add", name = "al", descriptor = "(Lclient!ald;Lclient!qv;)Lclient!og;")
-	public final Class460 method1834(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class519 arg1) {
-		@Pc(3) int local3 = arg0.method23178((byte) -64);
+	public final Class460 method1834(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class519 arg1) {
+		@Pc(3) int local3 = arg0.g2();
 		@Pc(8) Class460 local8 = new Class460(local3);
 		@Pc(11) Class local11 = arg1.aClass2;
 		if (Integer.class == local11) {
-			local8.anObject19 = arg0.method23182(-242014286);
+			local8.anObject19 = arg0.g4();
 		} else if (local11 == Long.class) {
-			local8.anObject19 = arg0.method23273((byte) -9);
+			local8.anObject19 = arg0.g8();
 		} else if (local11 == String.class) {
-			local8.anObject19 = arg0.method23186((byte) 12);
+			local8.anObject19 = arg0.gjstr2();
 		} else if (Interface7.class.isAssignableFrom(local11)) {
 			try {
 				@Pc(48) Interface7 local48 = (Interface7) local11.getDeclaredConstructor().newInstance();
@@ -453,16 +453,16 @@ public abstract class Class2_Sub1 extends Class2 implements Interface53 {
 	}
 
 	@OriginalMember(owner = "client!add", name = "ab", descriptor = "(Lclient!ald;Lclient!qv;)Lclient!og;")
-	public final Class460 method1835(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class519 arg1) {
-		@Pc(3) int local3 = arg0.method23178((byte) -83);
+	public final Class460 method1835(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class519 arg1) {
+		@Pc(3) int local3 = arg0.g2();
 		@Pc(8) Class460 local8 = new Class460(local3);
 		@Pc(11) Class local11 = arg1.aClass2;
 		if (Integer.class == local11) {
-			local8.anObject19 = arg0.method23182(-2029609578);
+			local8.anObject19 = arg0.g4();
 		} else if (local11 == Long.class) {
-			local8.anObject19 = arg0.method23273((byte) -64);
+			local8.anObject19 = arg0.g8();
 		} else if (local11 == String.class) {
-			local8.anObject19 = arg0.method23186((byte) 12);
+			local8.anObject19 = arg0.gjstr2();
 		} else if (Interface7.class.isAssignableFrom(local11)) {
 			try {
 				@Pc(48) Interface7 local48 = (Interface7) local11.getDeclaredConstructor().newInstance();

@@ -38,7 +38,7 @@ public interface Interface45 {
 	int method27278();
 
 	@OriginalMember(owner = "client!mx", name = "m", descriptor = "(I)Lclient!ald;")
-	Class80_Sub36 method27279(@OriginalArg(0) int arg0);
+	Packet method27279(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!mx", name = "w", descriptor = "(ILclient!nv;Lclient!mm;I)V")
 	void method27280(@OriginalArg(0) int arg0, @OriginalArg(1) Class449 arg1, @OriginalArg(2) Class420 arg2, @OriginalArg(3) int arg3);
@@ -65,7 +65,7 @@ public interface Interface45 {
 	void method27287();
 
 	@OriginalMember(owner = "client!mx", name = "be", descriptor = "(Lclient!ald;)V")
-	void method27288(@OriginalArg(0) Class80_Sub36 arg0);
+	void method27288(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!mx", name = "bn", descriptor = "()Lclient!mk;")
 	Class419 method27289();
@@ -74,19 +74,19 @@ public interface Interface45 {
 	Class449 method27290();
 
 	@OriginalMember(owner = "client!mx", name = "bz", descriptor = "(Lclient!ald;)V")
-	void method27291(@OriginalArg(0) Class80_Sub36 arg0);
+	void method27291(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!mx", name = "bo", descriptor = "()I")
 	int method27292();
 
 	@OriginalMember(owner = "client!mx", name = "g", descriptor = "(Lclient!ald;)V")
-	void method27293(@OriginalArg(0) Class80_Sub36 arg0);
+	void method27293(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!mx", name = "f", descriptor = "()V")
 	void method27294();
 
 	@OriginalMember(owner = "client!mx", name = "bp", descriptor = "(I)Lclient!ald;")
-	Class80_Sub36 method27295(@OriginalArg(0) int arg0);
+	Packet method27295(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!mx", name = "br", descriptor = "()V")
 	void method27296();
@@ -158,7 +158,7 @@ public interface Interface45 {
 	void method27318(@OriginalArg(0) boolean arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3);
 
 	@OriginalMember(owner = "client!mx", name = "bb", descriptor = "(I)Lclient!ald;")
-	Class80_Sub36 method27319(@OriginalArg(0) int arg0);
+	Packet method27319(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!mx", name = "fz", descriptor = "()Z")
 	boolean method27320();

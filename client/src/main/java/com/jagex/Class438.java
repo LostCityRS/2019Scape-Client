@@ -73,7 +73,7 @@ public final class Class438 {
 
 	@OriginalMember(owner = "client!ni", name = "jc", descriptor = "(II)V")
 	static void method29146(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(2) Class80_Sub36_Sub1 local2 = client.aClass75_1.aClass80_Sub36_Sub1_1;
+		@Pc(2) PacketBit local2 = client.aClass75_1.aPacketBit_1;
 		while (local2.method22561(client.aClass75_1.anInt248 * 460106407, (byte) 12) >= 15) {
 			@Pc(17) int local17 = local2.method22559(15, -325783685);
 			if (local17 == 32767) {
@@ -129,7 +129,7 @@ public final class Class438 {
 	}
 
 	@OriginalMember(owner = "client!ni", name = "g", descriptor = "(Lclient!asa;IB)Z")
-	static boolean method29147(@OriginalArg(0) Class80_Sub36_Sub1 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
+	static boolean method29147(@OriginalArg(0) PacketBit arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
 		@Pc(4) int local4 = arg0.method22559(2, -325783685);
 		@Pc(21) int local21;
 		@Pc(26) int local26;
@@ -153,11 +153,11 @@ public final class Class438 {
 			@Pc(63) Class543 local63 = Class51.aClass543Array1[arg1];
 			@Pc(74) Class120_Sub1_Sub1_Sub1_Sub2 local74 = client.aClass120_Sub1_Sub1_Sub1_Sub2Array1[arg1] = new Class120_Sub1_Sub1_Sub1_Sub2(client.aClass539_1.method30932(-1638462787));
 			local74.anInt2671 = arg1 * -486069653;
-			if (Class51.aClass80_Sub36Array1[arg1] != null) {
-				local74.method19053(Class51.aClass80_Sub36Array1[arg1], 1767040723);
+			if (Class51.aPacketArray1[arg1] != null) {
+				local74.method19053(Class51.aPacketArray1[arg1], 1767040723);
 			}
-			if (Class51.aClass80_Sub36Array2[arg1] != null) {
-				local74.method19054(Class51.aClass80_Sub36Array2[arg1], 2015216348);
+			if (Class51.aPacketArray2[arg1] != null) {
+				local74.method19054(Class51.aPacketArray2[arg1], 2015216348);
 			}
 			local74.method18986(local63.anInt5123 * 36827447, true, (byte) -27);
 			local74.anInt2683 = local63.anInt5124 * 434134087;

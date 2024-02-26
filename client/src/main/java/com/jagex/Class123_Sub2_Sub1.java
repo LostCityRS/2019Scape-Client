@@ -77,15 +77,15 @@ public final class Class123_Sub2_Sub1 extends Class123_Sub2 {
 
 	@OriginalMember(owner = "client!aqe", name = "am", descriptor = "(Lclient!ald;I)V")
 	@Override
-	void method20540(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method20540(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		this.aFloatArray46 = new float[arg1];
 		this.aFloatArray47 = new float[arg1];
 		this.aFloatArray48 = new float[arg1];
 		this.anInt2723 = 0;
 		for (@Pc(16) int local16 = 0; local16 < arg1; local16++) {
-			this.aFloatArray46[local16] = arg0.method23188(-1225368309);
-			this.aFloatArray47[local16] = arg0.method23188(1347678726);
-			this.aFloatArray48[local16] = arg0.method23188(-1006770694);
+			this.aFloatArray46[local16] = arg0.gFloat();
+			this.aFloatArray47[local16] = arg0.gFloat();
+			this.aFloatArray48[local16] = arg0.gFloat();
 		}
 	}
 
@@ -97,43 +97,43 @@ public final class Class123_Sub2_Sub1 extends Class123_Sub2 {
 
 	@OriginalMember(owner = "client!aqe", name = "af", descriptor = "(Lclient!ald;I)V")
 	@Override
-	void method20539(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method20539(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		this.aFloatArray46 = new float[arg1];
 		this.aFloatArray47 = new float[arg1];
 		this.aFloatArray48 = new float[arg1];
 		this.anInt2723 = 0;
 		for (@Pc(16) int local16 = 0; local16 < arg1; local16++) {
-			this.aFloatArray46[local16] = arg0.method23188(-705236138);
-			this.aFloatArray47[local16] = arg0.method23188(-241172844);
-			this.aFloatArray48[local16] = arg0.method23188(1995704139);
+			this.aFloatArray46[local16] = arg0.gFloat();
+			this.aFloatArray47[local16] = arg0.gFloat();
+			this.aFloatArray48[local16] = arg0.gFloat();
 		}
 	}
 
 	@OriginalMember(owner = "client!aqe", name = "ak", descriptor = "(Lclient!ald;I)V")
 	@Override
-	void method20546(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method20546(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		this.aFloatArray46 = new float[arg1];
 		this.aFloatArray47 = new float[arg1];
 		this.aFloatArray48 = new float[arg1];
 		this.anInt2723 = 0;
 		for (@Pc(16) int local16 = 0; local16 < arg1; local16++) {
-			this.aFloatArray46[local16] = arg0.method23188(-924232176);
-			this.aFloatArray47[local16] = arg0.method23188(743089004);
-			this.aFloatArray48[local16] = arg0.method23188(-258553093);
+			this.aFloatArray46[local16] = arg0.gFloat();
+			this.aFloatArray47[local16] = arg0.gFloat();
+			this.aFloatArray48[local16] = arg0.gFloat();
 		}
 	}
 
 	@OriginalMember(owner = "client!aqe", name = "aj", descriptor = "(Lclient!ald;IB)V")
 	@Override
-	void method20534(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
+	void method20534(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
 		this.aFloatArray46 = new float[arg1];
 		this.aFloatArray47 = new float[arg1];
 		this.aFloatArray48 = new float[arg1];
 		this.anInt2723 = 0;
 		for (@Pc(16) int local16 = 0; local16 < arg1; local16++) {
-			this.aFloatArray46[local16] = arg0.method23188(107428082);
-			this.aFloatArray47[local16] = arg0.method23188(1658632725);
-			this.aFloatArray48[local16] = arg0.method23188(-97664471);
+			this.aFloatArray46[local16] = arg0.gFloat();
+			this.aFloatArray47[local16] = arg0.gFloat();
+			this.aFloatArray48[local16] = arg0.gFloat();
 		}
 	}
 }

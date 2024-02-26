@@ -93,8 +93,8 @@ public final class Class235 {
 		aBoolean763 = false;
 		this.aClass227Array1 = new Class227[this.anInt3803 * 683408717];
 		for (@Pc(13) int local13 = 0; local13 < this.anInt3803 * 683408717; local13++) {
-			@Pc(29) Class80_Sub36 local29 = new Class80_Sub36(this.aClass480_87.method29918(0, local13, 1896589581));
-			if (local29.aByteArray61 == null) {
+			@Pc(29) Packet local29 = new Packet(this.aClass480_87.method29918(0, local13, 1896589581));
+			if (local29.data == null) {
 				this.aClass227Array1[local13] = null;
 			} else {
 				try {
@@ -134,8 +134,8 @@ public final class Class235 {
 		aBoolean763 = false;
 		this.aClass227Array1 = new Class227[this.anInt3803 * 683408717];
 		for (@Pc(13) int local13 = 0; local13 < this.anInt3803 * 683408717; local13++) {
-			@Pc(29) Class80_Sub36 local29 = new Class80_Sub36(this.aClass480_87.method29918(0, local13, 1896589581));
-			if (local29.aByteArray61 == null) {
+			@Pc(29) Packet local29 = new Packet(this.aClass480_87.method29918(0, local13, 1896589581));
+			if (local29.data == null) {
 				this.aClass227Array1[local13] = null;
 			} else {
 				try {
@@ -157,8 +157,8 @@ public final class Class235 {
 		aBoolean763 = false;
 		this.aClass227Array1 = new Class227[this.anInt3803 * 683408717];
 		for (@Pc(13) int local13 = 0; local13 < this.anInt3803 * 683408717; local13++) {
-			@Pc(29) Class80_Sub36 local29 = new Class80_Sub36(this.aClass480_87.method29918(0, local13, 1896589581));
-			if (local29.aByteArray61 == null) {
+			@Pc(29) Packet local29 = new Packet(this.aClass480_87.method29918(0, local13, 1896589581));
+			if (local29.data == null) {
 				this.aClass227Array1[local13] = null;
 			} else {
 				try {

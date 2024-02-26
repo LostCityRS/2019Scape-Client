@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class548 {
 
 	@OriginalMember(owner = "client!sf", name = "kv", descriptor = "Lclient!ald;")
-	public static Class80_Sub36 aClass80_Sub36_16;
+	public static Packet aPacket_16;
 
 	@OriginalMember(owner = "client!sf", name = "r", descriptor = "Lclient!arx;")
 	Class80_Sub1_Sub10 aClass80_Sub1_Sub10_5;

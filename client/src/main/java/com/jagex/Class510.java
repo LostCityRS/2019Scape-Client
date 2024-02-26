@@ -81,7 +81,7 @@ public final class Class510 {
 		}
 		local6 = new Class80_Sub1_Sub17();
 		if (local23 != null) {
-			local6.method22898(new Class80_Sub36(local23), (byte) -41);
+			local6.method22898(new Packet(local23), (byte) -41);
 		}
 		if (arg0 >= 32768) {
 			local6.method22897((byte) 0);
@@ -104,7 +104,7 @@ public final class Class510 {
 		}
 		local6 = new Class80_Sub1_Sub17();
 		if (local23 != null) {
-			local6.method22898(new Class80_Sub36(local23), (byte) -58);
+			local6.method22898(new Packet(local23), (byte) -58);
 		}
 		if (arg0 >= 32768) {
 			local6.method22897((byte) 0);
@@ -127,7 +127,7 @@ public final class Class510 {
 		}
 		local6 = new Class80_Sub1_Sub17();
 		if (local23 != null) {
-			local6.method22898(new Class80_Sub36(local23), (byte) -94);
+			local6.method22898(new Packet(local23), (byte) -94);
 		}
 		if (arg0 >= 32768) {
 			local6.method22897((byte) 0);

@@ -165,7 +165,7 @@ public final class Class491 {
 		if (this.aClass80_Sub1_Sub15_Sub3_3.aBoolean661) {
 			return false;
 		}
-		@Pc(39) Class80_Sub36 local39 = new Class80_Sub36(this.aClass80_Sub1_Sub15_Sub3_3.method24390(-2133825886));
+		@Pc(39) Packet local39 = new Packet(this.aClass80_Sub1_Sub15_Sub3_3.method24390(-2133825886));
 		this.aClass518_2 = new Class518(local39, this.aBigInteger7, this.aBigInteger8);
 		if (this.aClass141_Sub1Array1 == null) {
 			this.aClass141_Sub1Array1 = new Class141_Sub1[this.aClass518_2.aClass493Array1.length];
@@ -223,7 +223,7 @@ public final class Class491 {
 		if (this.aClass80_Sub1_Sub15_Sub3_3.aBoolean661) {
 			return false;
 		}
-		@Pc(39) Class80_Sub36 local39 = new Class80_Sub36(this.aClass80_Sub1_Sub15_Sub3_3.method24390(-2133825886));
+		@Pc(39) Packet local39 = new Packet(this.aClass80_Sub1_Sub15_Sub3_3.method24390(-2133825886));
 		this.aClass518_2 = new Class518(local39, this.aBigInteger7, this.aBigInteger8);
 		if (this.aClass141_Sub1Array1 == null) {
 			this.aClass141_Sub1Array1 = new Class141_Sub1[this.aClass518_2.aClass493Array1.length];
@@ -266,7 +266,7 @@ public final class Class491 {
 			} else if (!this.aClass80_Sub1_Sub15_Sub1_2.aBoolean661) {
 				@Pc(77) byte[] local77 = this.aClass80_Sub1_Sub15_Sub1_2.method24390(-2133825886);
 				try {
-					this.aClass518_1 = new Class518(new Class80_Sub36(local77), this.aBigInteger7, this.aBigInteger8);
+					this.aClass518_1 = new Class518(new Packet(local77), this.aBigInteger7, this.aBigInteger8);
 					for (@Pc(92) int local92 = 0; local92 < this.aClass141_Sub1Array1.length; local92++) {
 						if (this.aClass141_Sub1Array1[local92] != null && this.aClass141_Sub1Array1[local92].method10920((byte) 9)) {
 							@Pc(116) Class493 local116 = this.aClass518_1.aClass493Array1[local92];
@@ -325,7 +325,7 @@ public final class Class491 {
 			} else if (!this.aClass80_Sub1_Sub15_Sub1_2.aBoolean661) {
 				@Pc(77) byte[] local77 = this.aClass80_Sub1_Sub15_Sub1_2.method24390(-2133825886);
 				try {
-					this.aClass518_1 = new Class518(new Class80_Sub36(local77), this.aBigInteger7, this.aBigInteger8);
+					this.aClass518_1 = new Class518(new Packet(local77), this.aBigInteger7, this.aBigInteger8);
 					for (@Pc(92) int local92 = 0; local92 < this.aClass141_Sub1Array1.length; local92++) {
 						if (this.aClass141_Sub1Array1[local92] != null && this.aClass141_Sub1Array1[local92].method10920((byte) -3)) {
 							@Pc(116) Class493 local116 = this.aClass518_1.aClass493Array1[local92];

@@ -233,8 +233,8 @@ public final class Class250 {
 	}
 
 	@OriginalMember(owner = "client!es", name = "<init>", descriptor = "(Lclient!ald;)V")
-	Class250(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(5) int local5 = arg0.method23195(1503374978);
+	Class250(@OriginalArg(0) Packet arg0) {
+		@Pc(5) int local5 = arg0.gSmart1or2();
 		this.anIntArray364 = new int[local5];
 		this.anIntArray361 = new int[local5];
 		this.anIntArray360 = new int[local5];
@@ -243,13 +243,13 @@ public final class Class250 {
 		this.anIntArray365 = new int[local5];
 		this.anIntArray366 = new int[local5];
 		for (@Pc(35) int local35 = 0; local35 < local5; local35++) {
-			this.anIntArray364[local35] = arg0.method23178((byte) -24) - 5120;
-			this.anIntArray360[local35] = arg0.method23178((byte) -106) - 5120;
-			this.anIntArray361[local35] = arg0.method23179(753297712);
-			this.anIntArray362[local35] = arg0.method23178((byte) -45) - 5120;
-			this.anIntArray366[local35] = arg0.method23178((byte) -86) - 5120;
-			this.anIntArray365[local35] = arg0.method23179(1654111573);
-			this.anIntArray363[local35] = arg0.method23179(843738506);
+			this.anIntArray364[local35] = arg0.g2() - 5120;
+			this.anIntArray360[local35] = arg0.g2() - 5120;
+			this.anIntArray361[local35] = arg0.g2s();
+			this.anIntArray362[local35] = arg0.g2() - 5120;
+			this.anIntArray366[local35] = arg0.g2() - 5120;
+			this.anIntArray365[local35] = arg0.g2s();
+			this.anIntArray363[local35] = arg0.g2s();
 		}
 	}
 

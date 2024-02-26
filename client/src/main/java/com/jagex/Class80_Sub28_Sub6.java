@@ -47,12 +47,12 @@ public final class Class80_Sub28_Sub6 extends Class80_Sub28 {
 
 	@OriginalMember(owner = "client!ark", name = "t", descriptor = "(Lclient!ald;B)V")
 	@Override
-	void method22223(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
-		this.aBoolean570 = arg0.method23362(362659308) == 1;
-		this.aByte81 = arg0.method23177((byte) 23);
-		this.aByte84 = arg0.method23177((byte) -116);
-		this.aByte82 = arg0.method23177((byte) -1);
-		this.aByte83 = arg0.method23177((byte) -43);
+	void method22223(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
+		this.aBoolean570 = arg0.g1() == 1;
+		this.aByte81 = arg0.g1b();
+		this.aByte84 = arg0.g1b();
+		this.aByte82 = arg0.g1b();
+		this.aByte83 = arg0.g1b();
 	}
 
 	@OriginalMember(owner = "client!ark", name = "f", descriptor = "(Lclient!kf;I)V")
@@ -67,32 +67,32 @@ public final class Class80_Sub28_Sub6 extends Class80_Sub28 {
 
 	@OriginalMember(owner = "client!ark", name = "l", descriptor = "(Lclient!ald;)V")
 	@Override
-	void method22224(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.aBoolean570 = arg0.method23362(85422821) == 1;
-		this.aByte81 = arg0.method23177((byte) -66);
-		this.aByte84 = arg0.method23177((byte) -3);
-		this.aByte82 = arg0.method23177((byte) -120);
-		this.aByte83 = arg0.method23177((byte) -12);
+	void method22224(@OriginalArg(0) Packet arg0) {
+		this.aBoolean570 = arg0.g1() == 1;
+		this.aByte81 = arg0.g1b();
+		this.aByte84 = arg0.g1b();
+		this.aByte82 = arg0.g1b();
+		this.aByte83 = arg0.g1b();
 	}
 
 	@OriginalMember(owner = "client!ark", name = "u", descriptor = "(Lclient!ald;)V")
 	@Override
-	void method22226(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.aBoolean570 = arg0.method23362(-719787837) == 1;
-		this.aByte81 = arg0.method23177((byte) -17);
-		this.aByte84 = arg0.method23177((byte) -24);
-		this.aByte82 = arg0.method23177((byte) -99);
-		this.aByte83 = arg0.method23177((byte) -84);
+	void method22226(@OriginalArg(0) Packet arg0) {
+		this.aBoolean570 = arg0.g1() == 1;
+		this.aByte81 = arg0.g1b();
+		this.aByte84 = arg0.g1b();
+		this.aByte82 = arg0.g1b();
+		this.aByte83 = arg0.g1b();
 	}
 
 	@OriginalMember(owner = "client!ark", name = "e", descriptor = "(Lclient!ald;)V")
 	@Override
-	void method22225(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.aBoolean570 = arg0.method23362(1118770705) == 1;
-		this.aByte81 = arg0.method23177((byte) -94);
-		this.aByte84 = arg0.method23177((byte) -125);
-		this.aByte82 = arg0.method23177((byte) -63);
-		this.aByte83 = arg0.method23177((byte) -16);
+	void method22225(@OriginalArg(0) Packet arg0) {
+		this.aBoolean570 = arg0.g1() == 1;
+		this.aByte81 = arg0.g1b();
+		this.aByte84 = arg0.g1b();
+		this.aByte82 = arg0.g1b();
+		this.aByte83 = arg0.g1b();
 	}
 
 	@OriginalMember(owner = "client!ark", name = "g", descriptor = "(Lclient!kf;)V")

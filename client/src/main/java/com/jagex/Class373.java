@@ -15,14 +15,14 @@ public final class Class373 implements Interface33 {
 	public final int anInt4507;
 
 	@OriginalMember(owner = "client!ka", name = "e", descriptor = "(Lclient!ald;)Lclient!ka;")
-	public static Class373 method28411(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(3) int local3 = arg0.method23182(-188755917);
+	public static Class373 method28411(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g4();
 		return new Class373(local3);
 	}
 
 	@OriginalMember(owner = "client!ka", name = "u", descriptor = "(Lclient!ald;)Lclient!ka;")
-	public static Class373 method28412(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(3) int local3 = arg0.method23182(-336100419);
+	public static Class373 method28412(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g4();
 		return new Class373(local3);
 	}
 

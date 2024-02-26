@@ -26,7 +26,7 @@ public final class Class2_Sub1_Sub2 extends Class2_Sub1 implements Interface12 {
 	public static void method1853(@OriginalArg(0) byte arg0) {
 		@Pc(2) Class75 local2 = Class52.method1074(16777215);
 		@Pc(8) Class80_Sub31 local8 = Class623.method32440(Class443.aClass443_94, local2.aClass22_1, -191270971);
-		local8.aClass80_Sub36_Sub1_2.method23154(0, 1275868335);
+		local8.aPacketBit_2.p1(0);
 		local2.method1325(local8, (byte) -87);
 	}
 
@@ -63,7 +63,7 @@ public final class Class2_Sub1_Sub2 extends Class2_Sub1 implements Interface12 {
 		@Pc(12) byte[] local12 = this.aClass480_13.method29918(this.aClass143_3.method11823((byte) -128).anInt5690 * -1975739137, arg0, 1896589581);
 		@Pc(19) Class107_Sub1 local19 = new Class107_Sub1(this.aClass143_3, arg0);
 		if (local12 != null) {
-			local19.method37006(new Class80_Sub36(local12), 1896589581);
+			local19.method37006(new Packet(local12), 1896589581);
 		}
 		return local19;
 	}
@@ -101,7 +101,7 @@ public final class Class2_Sub1_Sub2 extends Class2_Sub1 implements Interface12 {
 		@Pc(12) byte[] local12 = this.aClass480_13.method29918(this.aClass143_3.method11823((byte) -72).anInt5690 * -1975739137, arg0, 1896589581);
 		@Pc(19) Class107_Sub1 local19 = new Class107_Sub1(this.aClass143_3, arg0);
 		if (local12 != null) {
-			local19.method37006(new Class80_Sub36(local12), 1896589581);
+			local19.method37006(new Packet(local12), 1896589581);
 		}
 		return local19;
 	}
@@ -111,7 +111,7 @@ public final class Class2_Sub1_Sub2 extends Class2_Sub1 implements Interface12 {
 		@Pc(12) byte[] local12 = this.aClass480_13.method29918(this.aClass143_3.method11823((byte) -70).anInt5690 * -1975739137, arg0, 1896589581);
 		@Pc(19) Class107_Sub1 local19 = new Class107_Sub1(this.aClass143_3, arg0);
 		if (local12 != null) {
-			local19.method37006(new Class80_Sub36(local12), 1896589581);
+			local19.method37006(new Packet(local12), 1896589581);
 		}
 		return local19;
 	}

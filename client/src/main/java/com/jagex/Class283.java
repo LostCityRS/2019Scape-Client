@@ -108,9 +108,9 @@ public final class Class283 implements Interface26 {
 	}
 
 	@OriginalMember(owner = "client!gb", name = "<init>", descriptor = "(Lclient!gc;Lclient!ald;)V")
-	Class283(@OriginalArg(0) Class284 arg0, @OriginalArg(1) Class80_Sub36 arg1) {
+	Class283(@OriginalArg(0) Class284 arg0, @OriginalArg(1) Packet arg1) {
 		this.aClass284_5 = arg0;
-		this.anInt3936 = arg1.method23178((byte) -86) * 1073576003;
+		this.anInt3936 = arg1.g2() * 1073576003;
 		this.aClass302_1 = new Class302(arg1, false, false, arg0.anInterface27_2);
 	}
 

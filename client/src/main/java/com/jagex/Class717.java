@@ -152,15 +152,15 @@ public final class Class717 {
 			local36.write("data1=req");
 			local36.flush();
 			@Pc(44) InputStream local44 = local17.getInputStream();
-			@Pc(50) Class80_Sub36 local50 = new Class80_Sub36(new byte[1000]);
+			@Pc(50) Packet local50 = new Packet(new byte[1000]);
 			do {
-				@Pc(65) int local65 = local44.read(local50.aByteArray61, local50.anInt3152 * -1380987821, 1000 - local50.anInt3152 * -1380987821);
+				@Pc(65) int local65 = local44.read(local50.data, local50.pos * -1380987821, 1000 - local50.pos * -1380987821);
 				if (local65 == -1) {
-					local50.anInt3152 = 0;
-					return local50.method23273((byte) 31);
+					local50.pos = 0;
+					return local50.g8();
 				}
-				local50.anInt3152 += local65 * 1034180571;
-			} while (local50.anInt3152 * -1380987821 < 1000);
+				local50.pos += local65 * 1034180571;
+			} while (local50.pos * -1380987821 < 1000);
 			return 0L;
 		} catch (@Pc(96) Exception local96) {
 			return 0L;

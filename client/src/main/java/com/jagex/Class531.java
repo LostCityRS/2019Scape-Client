@@ -128,16 +128,16 @@ public final class Class531 {
 			return;
 		}
 		@Pc(10) Class80_Sub31 local10 = Class623.method32440(Class443.aClass443_24, client.aClass75_2.aClass22_1, -191270971);
-		local10.aClass80_Sub36_Sub1_2.method23155(0, (byte) -63);
-		@Pc(21) int local21 = local10.aClass80_Sub36_Sub1_2.anInt3152 * -1380987821;
-		local10.aClass80_Sub36_Sub1_2.method23165(arg0, 2011395901);
-		local10.aClass80_Sub36_Sub1_2.method23165(arg1, 1835673290);
-		local10.aClass80_Sub36_Sub1_2.method23154(arg2, 1275868335);
-		local10.aClass80_Sub36_Sub1_2.method23154(arg3 ? 1 : 0, 1275868335);
-		local10.aClass80_Sub36_Sub1_2.method23165(arg4, 1932976782);
-		local10.aClass80_Sub36_Sub1_2.anInt3152 += -1350670595;
-		local10.aClass80_Sub36_Sub1_2.method23190(Class499.anIntArray464, local21, local10.aClass80_Sub36_Sub1_2.anInt3152 * -1380987821, (byte) 8);
-		local10.aClass80_Sub36_Sub1_2.method23170(local10.aClass80_Sub36_Sub1_2.anInt3152 * -1380987821 - local21, -377880512);
+		local10.aPacketBit_2.p2(0);
+		@Pc(21) int local21 = local10.aPacketBit_2.pos * -1380987821;
+		local10.aPacketBit_2.pjstr(arg0);
+		local10.aPacketBit_2.pjstr(arg1);
+		local10.aPacketBit_2.p1(arg2);
+		local10.aPacketBit_2.p1(arg3 ? 1 : 0);
+		local10.aPacketBit_2.pjstr(arg4);
+		local10.aPacketBit_2.pos += -1350670595;
+		local10.aPacketBit_2.tinyenc(Class499.anIntArray464, local21, local10.aPacketBit_2.pos * -1380987821);
+		local10.aPacketBit_2.p2check(local10.aPacketBit_2.pos * -1380987821 - local21);
 		client.aClass75_2.method1325(local10, (byte) -55);
 		if (arg2 < 13) {
 			client.aBoolean747 = true;

@@ -69,13 +69,13 @@ public final class Class20_Sub4_Sub1 extends Class20_Sub4 {
 
 	@OriginalMember(owner = "client!ask", name = "ay", descriptor = "(Lclient!ald;IB)V")
 	@Override
-	void method23107(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
+	void method23107(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
 		this.aFloatArray84 = new float[arg1];
 		this.aFloatArray83 = new float[arg1];
 		this.anInt3107 = 0;
 		for (@Pc(12) int local12 = 0; local12 < arg1; local12++) {
-			this.aFloatArray84[local12] = arg0.method23188(837712415);
-			this.aFloatArray83[local12] = arg0.method23188(1237878002);
+			this.aFloatArray84[local12] = arg0.gFloat();
+			this.aFloatArray83[local12] = arg0.gFloat();
 		}
 	}
 
@@ -124,25 +124,25 @@ public final class Class20_Sub4_Sub1 extends Class20_Sub4 {
 
 	@OriginalMember(owner = "client!ask", name = "ab", descriptor = "(Lclient!ald;I)V")
 	@Override
-	void method23105(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method23105(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		this.aFloatArray84 = new float[arg1];
 		this.aFloatArray83 = new float[arg1];
 		this.anInt3107 = 0;
 		for (@Pc(12) int local12 = 0; local12 < arg1; local12++) {
-			this.aFloatArray84[local12] = arg0.method23188(-1091927149);
-			this.aFloatArray83[local12] = arg0.method23188(209118539);
+			this.aFloatArray84[local12] = arg0.gFloat();
+			this.aFloatArray83[local12] = arg0.gFloat();
 		}
 	}
 
 	@OriginalMember(owner = "client!ask", name = "al", descriptor = "(Lclient!ald;I)V")
 	@Override
-	void method23106(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method23106(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		this.aFloatArray84 = new float[arg1];
 		this.aFloatArray83 = new float[arg1];
 		this.anInt3107 = 0;
 		for (@Pc(12) int local12 = 0; local12 < arg1; local12++) {
-			this.aFloatArray84[local12] = arg0.method23188(1893857555);
-			this.aFloatArray83[local12] = arg0.method23188(1438090259);
+			this.aFloatArray84[local12] = arg0.gFloat();
+			this.aFloatArray83[local12] = arg0.gFloat();
 		}
 	}
 

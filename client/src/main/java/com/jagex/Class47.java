@@ -195,14 +195,14 @@ public final class Class47 {
 
 	@OriginalMember(owner = "client!abw", name = "ax", descriptor = "(Z[B)V")
 	public static void method967(@OriginalArg(0) boolean arg0, @OriginalArg(1) byte[] arg1) {
-		if (Class650.aClass80_Sub36_17 == null) {
-			Class650.aClass80_Sub36_17 = new Class80_Sub36(20000);
+		if (Class650.aPacket_17 == null) {
+			Class650.aPacket_17 = new Packet(20000);
 		}
-		Class650.aClass80_Sub36_17.method23168(arg1, 0, arg1.length, (byte) 18);
+		Class650.aPacket_17.pdata(arg1, 0, arg1.length);
 		if (!arg0) {
 			return;
 		}
-		Class352.method28062(Class650.aClass80_Sub36_17.aByteArray61, (byte) -48);
+		Class352.method28062(Class650.aPacket_17.data, (byte) -48);
 		aClass163_Sub1Array1 = new Class163_Sub1[Class635.anInt5597 * 1584731201];
 		@Pc(28) int local28 = 0;
 		for (@Pc(32) int local32 = Class635.anInt5596 * 828983813; local32 <= Class635.anInt5600 * 1540152885; local32++) {
@@ -213,7 +213,7 @@ public final class Class47 {
 		}
 		aBoolean28 = false;
 		aLong10 = Class303.method27111((byte) 29) * 6116256794156162355L;
-		Class650.aClass80_Sub36_17 = null;
+		Class650.aPacket_17 = null;
 	}
 
 	@OriginalMember(owner = "client!abw", name = "b", descriptor = "()V")
@@ -236,14 +236,14 @@ public final class Class47 {
 
 	@OriginalMember(owner = "client!abw", name = "ay", descriptor = "(Z[B)V")
 	public static void method970(@OriginalArg(0) boolean arg0, @OriginalArg(1) byte[] arg1) {
-		if (Class650.aClass80_Sub36_17 == null) {
-			Class650.aClass80_Sub36_17 = new Class80_Sub36(20000);
+		if (Class650.aPacket_17 == null) {
+			Class650.aPacket_17 = new Packet(20000);
 		}
-		Class650.aClass80_Sub36_17.method23168(arg1, 0, arg1.length, (byte) 51);
+		Class650.aPacket_17.pdata(arg1, 0, arg1.length);
 		if (!arg0) {
 			return;
 		}
-		Class352.method28062(Class650.aClass80_Sub36_17.aByteArray61, (byte) -24);
+		Class352.method28062(Class650.aPacket_17.data, (byte) -24);
 		aClass163_Sub1Array1 = new Class163_Sub1[Class635.anInt5597 * 1584731201];
 		@Pc(28) int local28 = 0;
 		for (@Pc(32) int local32 = Class635.anInt5596 * 828983813; local32 <= Class635.anInt5600 * 1540152885; local32++) {
@@ -254,7 +254,7 @@ public final class Class47 {
 		}
 		aBoolean28 = false;
 		aLong10 = Class303.method27111((byte) 84) * 6116256794156162355L;
-		Class650.aClass80_Sub36_17 = null;
+		Class650.aPacket_17 = null;
 	}
 
 	@OriginalMember(owner = "client!abw", name = "c", descriptor = "()V")

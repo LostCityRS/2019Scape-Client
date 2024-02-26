@@ -88,7 +88,7 @@ public class Class73 implements Interface12 {
 		@Pc(23) Object local23 = null;
 		@Pc(31) byte[] local31 = Class349.method27998(this.aClass480_75, this.aClass664_32, arg0, (byte) 21);
 		if (local31 != null) {
-			this.anInterface11Array3[arg0].method37006(new Class80_Sub36(local31), 1896589581);
+			this.anInterface11Array3[arg0].method37006(new Packet(local31), 1896589581);
 		}
 		this.anInterface11Array3[arg0].method37007((byte) -87);
 	}

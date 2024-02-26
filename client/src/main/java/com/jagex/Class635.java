@@ -34,12 +34,12 @@ public final class Class635 {
 
 	@OriginalMember(owner = "client!wf", name = "g", descriptor = "([B)Z")
 	public static boolean method32810(@OriginalArg(0) byte[] arg0) {
-		@Pc(4) Class80_Sub36 local4 = new Class80_Sub36(arg0);
-		@Pc(8) int local8 = local4.method23362(-1626601769);
+		@Pc(4) Packet local4 = new Packet(arg0);
+		@Pc(8) int local8 = local4.g1();
 		if (local8 != 2) {
 			return false;
 		}
-		@Pc(22) boolean local22 = local4.method23362(-704287976) == 1;
+		@Pc(22) boolean local22 = local4.g1() == 1;
 		if (local22) {
 			Class499.method30401(local4, (byte) 0);
 		}
@@ -53,10 +53,10 @@ public final class Class635 {
 	}
 
 	@OriginalMember(owner = "client!wf", name = "j", descriptor = "(Lclient!ald;)V")
-	static void method32812(@OriginalArg(0) Class80_Sub36 arg0) {
+	static void method32812(@OriginalArg(0) Packet arg0) {
 		for (@Pc(1) int local1 = 0; local1 < anInt5597 * 1584731201; local1++) {
-			@Pc(10) int local10 = arg0.method23195(2139800636);
-			@Pc(14) int local14 = arg0.method23178((byte) -58);
+			@Pc(10) int local10 = arg0.gSmart1or2();
+			@Pc(14) int local14 = arg0.g2();
 			if (local14 == 65535) {
 				local14 = -1;
 			}
@@ -68,12 +68,12 @@ public final class Class635 {
 
 	@OriginalMember(owner = "client!wf", name = "m", descriptor = "([B)Z")
 	public static boolean method32813(@OriginalArg(0) byte[] arg0) {
-		@Pc(4) Class80_Sub36 local4 = new Class80_Sub36(arg0);
-		@Pc(8) int local8 = local4.method23362(-1749058255);
+		@Pc(4) Packet local4 = new Packet(arg0);
+		@Pc(8) int local8 = local4.g1();
 		if (local8 != 2) {
 			return false;
 		}
-		@Pc(22) boolean local22 = local4.method23362(-1216616926) == 1;
+		@Pc(22) boolean local22 = local4.g1() == 1;
 		if (local22) {
 			Class499.method30401(local4, (byte) -54);
 		}
@@ -82,44 +82,44 @@ public final class Class635 {
 	}
 
 	@OriginalMember(owner = "client!wf", name = "o", descriptor = "(Lclient!ald;)V")
-	static void method32814(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(3) int local3 = arg0.method23195(1975172467);
+	static void method32814(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.gSmart1or2();
 		Class90.aClass644Array1 = new Class644[local3];
 		@Pc(8) int local8;
 		for (local8 = 0; local8 < local3; local8++) {
 			Class90.aClass644Array1[local8] = new Class644();
-			Class90.aClass644Array1[local8].anInt5644 = arg0.method23195(1480701271) * -57965287;
-			Class90.aClass644Array1[local8].aString234 = arg0.method23186((byte) 12);
+			Class90.aClass644Array1[local8].anInt5644 = arg0.gSmart1or2() * -57965287;
+			Class90.aClass644Array1[local8].aString234 = arg0.gjstr2();
 		}
-		anInt5596 = arg0.method23195(2008487728) * -1098124595;
-		anInt5600 = arg0.method23195(1921472348) * -548797411;
-		anInt5597 = arg0.method23195(1672462455) * -958334015;
+		anInt5596 = arg0.gSmart1or2() * -1098124595;
+		anInt5600 = arg0.gSmart1or2() * -548797411;
+		anInt5597 = arg0.gSmart1or2() * -958334015;
 		aClass163_Sub1Array2 = new Class163_Sub1[anInt5600 * 1540152885 - anInt5596 * 828983813 + 1];
 		for (local8 = 0; local8 < anInt5597 * 1584731201; local8++) {
-			@Pc(75) int local75 = arg0.method23195(1911938255);
+			@Pc(75) int local75 = arg0.gSmart1or2();
 			@Pc(83) Class163_Sub1 local83 = aClass163_Sub1Array2[local75] = new Class163_Sub1();
-			local83.anInt2080 = arg0.method23362(-1254715258) * -1087879865;
-			local83.anInt2081 = arg0.method23182(-804527428) * -1255476189;
-			local83.anInt2085 = arg0.method23195(2087317573) * 183586725;
+			local83.anInt2080 = arg0.g1() * -1087879865;
+			local83.anInt2081 = arg0.g4() * -1255476189;
+			local83.anInt2085 = arg0.gSmart1or2() * 183586725;
 			if (local83.anInt2085 * 1899036717 != 0) {
-				local83.aString62 = arg0.method23186((byte) 12);
+				local83.aString62 = arg0.gjstr2();
 			}
 			local83.anInt2086 = (local75 + anInt5596 * 828983813) * 34241443;
-			local83.aString63 = arg0.method23186((byte) 12);
-			local83.aString61 = arg0.method23186((byte) 12);
+			local83.aString63 = arg0.gjstr2();
+			local83.aString61 = arg0.gjstr2();
 		}
-		RuntimeException_Sub1.anInt3204 = arg0.method23182(83080898) * -1854384973;
+		RuntimeException_Sub1.anInt3204 = arg0.g4() * -1854384973;
 		aBoolean959 = true;
 	}
 
 	@OriginalMember(owner = "client!wf", name = "i", descriptor = "([B)Z")
 	public static boolean method32815(@OriginalArg(0) byte[] arg0) {
-		@Pc(4) Class80_Sub36 local4 = new Class80_Sub36(arg0);
-		@Pc(8) int local8 = local4.method23362(48358684);
+		@Pc(4) Packet local4 = new Packet(arg0);
+		@Pc(8) int local8 = local4.g1();
 		if (local8 != 2) {
 			return false;
 		}
-		@Pc(22) boolean local22 = local4.method23362(-1105377186) == 1;
+		@Pc(22) boolean local22 = local4.g1() == 1;
 		if (local22) {
 			Class499.method30401(local4, (byte) -30);
 		}
@@ -128,10 +128,10 @@ public final class Class635 {
 	}
 
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(Lclient!ald;)V")
-	static void method32816(@OriginalArg(0) Class80_Sub36 arg0) {
+	static void method32816(@OriginalArg(0) Packet arg0) {
 		for (@Pc(1) int local1 = 0; local1 < anInt5597 * 1584731201; local1++) {
-			@Pc(10) int local10 = arg0.method23195(1677893977);
-			@Pc(14) int local14 = arg0.method23178((byte) -6);
+			@Pc(10) int local10 = arg0.gSmart1or2();
+			@Pc(14) int local14 = arg0.g2();
 			if (local14 == 65535) {
 				local14 = -1;
 			}

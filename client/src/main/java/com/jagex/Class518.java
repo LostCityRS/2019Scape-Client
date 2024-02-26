@@ -249,12 +249,12 @@ public final class Class518 {
 	}
 
 	@OriginalMember(owner = "client!qu", name = "<init>", descriptor = "(Lclient!ald;Ljava/math/BigInteger;Ljava/math/BigInteger;)V")
-	Class518(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) BigInteger arg1, @OriginalArg(2) BigInteger arg2) {
-		arg0.anInt3152 = 875935559;
-		@Pc(8) int local8 = arg0.method23362(-1186587808);
-		arg0.anInt3152 += local8 * 1130067056;
-		@Pc(26) byte[] local26 = new byte[arg0.aByteArray61.length - arg0.anInt3152 * -1380987821];
-		arg0.method23399(local26, 0, local26.length, -2103219044);
+	Class518(@OriginalArg(0) Packet arg0, @OriginalArg(1) BigInteger arg1, @OriginalArg(2) BigInteger arg2) {
+		arg0.pos = 875935559;
+		@Pc(8) int local8 = arg0.g1();
+		arg0.pos += local8 * 1130067056;
+		@Pc(26) byte[] local26 = new byte[arg0.data.length - arg0.pos * -1380987821];
+		arg0.gdata(local26, 0, local26.length);
 		@Pc(40) byte[] local40;
 		if (arg1 == null || arg2 == null) {
 			local40 = local26;
@@ -266,7 +266,7 @@ public final class Class518 {
 		if (local40.length != 65) {
 			throw new RuntimeException();
 		}
-		@Pc(77) byte[] local77 = Class130_Sub1.method10206(arg0.aByteArray61, 5, arg0.anInt3152 * -1380987821 - local26.length - 5, 304928847);
+		@Pc(77) byte[] local77 = Class130_Sub1.method10206(arg0.data, 5, arg0.pos * -1380987821 - local26.length - 5, 304928847);
 		@Pc(79) int local79;
 		for (local79 = 0; local79 < 64; local79++) {
 			if (local77[local79] != local40[local79 + 1]) {
@@ -275,13 +275,13 @@ public final class Class518 {
 		}
 		this.aClass493Array1 = new Class493[local8];
 		for (local79 = 0; local79 < local8; local79++) {
-			arg0.anInt3152 = local79 * 1130067056 + 1910116130;
-			@Pc(117) int local117 = arg0.method23182(2127312924);
-			@Pc(121) int local121 = arg0.method23182(-887999987);
-			@Pc(125) int local125 = arg0.method23182(1950293025);
-			@Pc(129) int local129 = arg0.method23182(1665260481);
+			arg0.pos = local79 * 1130067056 + 1910116130;
+			@Pc(117) int local117 = arg0.g4();
+			@Pc(121) int local121 = arg0.g4();
+			@Pc(125) int local125 = arg0.g4();
+			@Pc(129) int local129 = arg0.g4();
 			@Pc(132) byte[] local132 = new byte[64];
-			arg0.method23399(local132, 0, 64, -1716679874);
+			arg0.gdata(local132, 0, 64);
 			this.aClass493Array1[local79] = new Class493(local117, local125, local121, local129, local132);
 		}
 	}

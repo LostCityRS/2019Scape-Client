@@ -73,11 +73,11 @@ public final class Class103_Sub11 extends Class103 {
 				client.anInt3514 = -813124122;
 				client.anInt3485 = 0;
 				local121 = Class623.method32440(Class443.aClass443_114, client.aClass75_1.aClass22_1, -191270971);
-				local121.aClass80_Sub36_Sub1_2.method23155(client.anInt3527 * 206551609, (byte) -1);
-				local121.aClass80_Sub36_Sub1_2.method23345(Class86.anInt284 * 531357219, (byte) 21);
-				local121.aClass80_Sub36_Sub1_2.method23219(local28, 1878436097);
-				local121.aClass80_Sub36_Sub1_2.method23155(client.anInt3526 * 1831183447, (byte) -35);
-				local121.aClass80_Sub36_Sub1_2.method23351(Class519.method30604(886292528) ? 1 : 0, -711109028);
+				local121.aPacketBit_2.p2(client.anInt3527 * 206551609);
+				local121.aPacketBit_2.p4(Class86.anInt284 * 531357219);
+				local121.aPacketBit_2.p2_alt2(local28);
+				local121.aPacketBit_2.p2(client.anInt3526 * 1831183447);
+				local121.aPacketBit_2.p1_alt2(Class519.method30604(886292528) ? 1 : 0);
 				client.aClass75_1.method1325(local121, (byte) -92);
 				Class103_Sub13.method7939(local103.anIntArray234[0], local103.anIntArray242[0], 1596974813);
 			}
@@ -105,8 +105,8 @@ public final class Class103_Sub11 extends Class103 {
 				client.anInt3514 = -813124122;
 				client.anInt3485 = 0;
 				@Pc(242) Class80_Sub31 local242 = Class623.method32440(local173, client.aClass75_1.aClass22_1, -191270971);
-				local242.aClass80_Sub36_Sub1_2.method23209(Class519.method30604(-304432671) ? 1 : 0, 78345922);
-				local242.aClass80_Sub36_Sub1_2.method23218(local28, 1673014664);
+				local242.aPacketBit_2.p1_alt1(Class519.method30604(-304432671) ? 1 : 0);
+				local242.aPacketBit_2.p2_alt1(local28);
 				client.aClass75_1.method1325(local242, (byte) -120);
 				Class103_Sub13.method7939(local224.anIntArray234[0], local224.anIntArray242[0], 1213687268);
 			}
@@ -117,11 +117,11 @@ public final class Class103_Sub11 extends Class103 {
 			client.anInt3514 = 1740921587;
 			client.anInt3485 = 0;
 			@Pc(292) Class80_Sub31 local292 = Class623.method32440(Class443.aClass443_61, client.aClass75_1.aClass22_1, -191270971);
-			local292.aClass80_Sub36_Sub1_2.method23155(client.anInt3527 * 206551609, (byte) -93);
-			local292.aClass80_Sub36_Sub1_2.method23155(local41.anInt5537 * -894305615 + local17, (byte) -127);
-			local292.aClass80_Sub36_Sub1_2.method23410(Class86.anInt284 * 531357219, (byte) -123);
-			local292.aClass80_Sub36_Sub1_2.method23219(local12 + local41.anInt5540 * -390642507, 1989014734);
-			local292.aClass80_Sub36_Sub1_2.method23218(client.anInt3526 * 1831183447, 1673014664);
+			local292.aPacketBit_2.p2(client.anInt3527 * 206551609);
+			local292.aPacketBit_2.p2(local41.anInt5537 * -894305615 + local17);
+			local292.aPacketBit_2.p4_alt2(Class86.anInt284 * 531357219);
+			local292.aPacketBit_2.p2_alt2(local12 + local41.anInt5540 * -390642507);
+			local292.aPacketBit_2.p2_alt1(client.anInt3526 * 1831183447);
 			client.aClass75_1.method1325(local292, (byte) -51);
 			Class103_Sub13.method7939(local12, local17, 684920064);
 		}
@@ -140,11 +140,11 @@ public final class Class103_Sub11 extends Class103 {
 				client.anInt3514 = -813124122;
 				client.anInt3485 = 0;
 				local121 = Class623.method32440(Class443.aClass443_80, client.aClass75_1.aClass22_1, -191270971);
-				local121.aClass80_Sub36_Sub1_2.method23219(local28, 475032891);
-				local121.aClass80_Sub36_Sub1_2.method23154(Class519.method30604(-1070458772) ? 1 : 0, 1275868335);
-				local121.aClass80_Sub36_Sub1_2.method23219(client.anInt3527 * 206551609, 171950379);
-				local121.aClass80_Sub36_Sub1_2.method23218(client.anInt3526 * 1831183447, 1673014664);
-				local121.aClass80_Sub36_Sub1_2.method23229(Class86.anInt284 * 531357219, 1476678554);
+				local121.aPacketBit_2.p2_alt2(local28);
+				local121.aPacketBit_2.p1(Class519.method30604(-1070458772) ? 1 : 0);
+				local121.aPacketBit_2.p2_alt2(client.anInt3527 * 206551609);
+				local121.aPacketBit_2.p2_alt1(client.anInt3526 * 1831183447);
+				local121.aPacketBit_2.p4_alt1(Class86.anInt284 * 531357219);
 				client.aClass75_1.method1325(local121, (byte) -31);
 				Class103_Sub13.method7939(local368.anIntArray234[0], local368.anIntArray242[0], 1577177480);
 			}
@@ -169,10 +169,10 @@ public final class Class103_Sub11 extends Class103 {
 			client.anInt3514 = -813124122;
 			client.anInt3485 = 0;
 			local121 = Class623.method32440(local441, client.aClass75_1.aClass22_1, -191270971);
-			local121.aClass80_Sub36_Sub1_2.method23218(local28, 1673014664);
-			local121.aClass80_Sub36_Sub1_2.method23220(local41.anInt5537 * -894305615 + local17, 2036747717);
-			local121.aClass80_Sub36_Sub1_2.method23218(local41.anInt5540 * -390642507 + local12, 1673014664);
-			local121.aClass80_Sub36_Sub1_2.method23351((arg3 ? 2 : 0) | (Class519.method30604(-1896887984) ? 1 : 0), -711109028);
+			local121.aPacketBit_2.p2_alt1(local28);
+			local121.aPacketBit_2.p2_alt3(local41.anInt5537 * -894305615 + local17);
+			local121.aPacketBit_2.p2_alt1(local41.anInt5540 * -390642507 + local12);
+			local121.aPacketBit_2.p1_alt2((arg3 ? 2 : 0) | (Class519.method30604(-1896887984) ? 1 : 0));
 			client.aClass75_1.method1325(local121, (byte) -13);
 			Class103_Sub13.method7939(local12, local17, 789990746);
 		}
@@ -185,8 +185,8 @@ public final class Class103_Sub11 extends Class103 {
 				client.anInt3514 = 1740921587;
 				client.anInt3485 = 0;
 				local121 = Class623.method32440(Class443.aClass443_108, client.aClass75_1.aClass22_1, -191270971);
-				local121.aClass80_Sub36_Sub1_2.method23219(local41.anInt5537 * -894305615 + local17, 657587080);
-				local121.aClass80_Sub36_Sub1_2.method23218(local12 + local41.anInt5540 * -390642507, 1673014664);
+				local121.aPacketBit_2.p2_alt2(local41.anInt5537 * -894305615 + local17);
+				local121.aPacketBit_2.p2_alt1(local12 + local41.anInt5540 * -390642507);
 				client.aClass75_1.method1325(local121, (byte) -66);
 			}
 		}
@@ -202,13 +202,13 @@ public final class Class103_Sub11 extends Class103 {
 			client.anInt3514 = -813124122;
 			client.anInt3485 = 0;
 			local121 = Class623.method32440(Class443.aClass443_23, client.aClass75_1.aClass22_1, -191270971);
-			local121.aClass80_Sub36_Sub1_2.method23155(client.anInt3526 * 1831183447, (byte) -72);
-			local121.aClass80_Sub36_Sub1_2.method23218(client.anInt3527 * 206551609, 1673014664);
-			local121.aClass80_Sub36_Sub1_2.method23220(local41.anInt5540 * -390642507 + local12, 2036747717);
-			local121.aClass80_Sub36_Sub1_2.method23154(Class519.method30604(503549013) ? 1 : 0, 1275868335);
-			local121.aClass80_Sub36_Sub1_2.method23229(Class86.anInt284 * 531357219, 262810863);
-			local121.aClass80_Sub36_Sub1_2.method23219(local41.anInt5537 * -894305615 + local17, 2068080198);
-			local121.aClass80_Sub36_Sub1_2.method23410((int) (local33 >>> 32) & Integer.MAX_VALUE, (byte) -124);
+			local121.aPacketBit_2.p2(client.anInt3526 * 1831183447);
+			local121.aPacketBit_2.p2_alt1(client.anInt3527 * 206551609);
+			local121.aPacketBit_2.p2_alt3(local41.anInt5540 * -390642507 + local12);
+			local121.aPacketBit_2.p1(Class519.method30604(503549013) ? 1 : 0);
+			local121.aPacketBit_2.p4_alt1(Class86.anInt284 * 531357219);
+			local121.aPacketBit_2.p2_alt2(local41.anInt5537 * -894305615 + local17);
+			local121.aPacketBit_2.p4_alt2((int) (local33 >>> 32) & Integer.MAX_VALUE);
 			client.aClass75_1.method1325(local121, (byte) -46);
 			Class103_Sub13.method7939(local12, local17, 1085551723);
 		}
@@ -218,11 +218,11 @@ public final class Class103_Sub11 extends Class103 {
 			client.anInt3514 = -813124122;
 			client.anInt3485 = 0;
 			local121 = Class623.method32440(Class443.aClass443_80, client.aClass75_1.aClass22_1, -191270971);
-			local121.aClass80_Sub36_Sub1_2.method23219(Class641.aClass120_Sub1_Sub1_Sub1_Sub2_3.anInt2671 * 1078276675, 1129330003);
-			local121.aClass80_Sub36_Sub1_2.method23154(Class519.method30604(-1749746593) ? 1 : 0, 1275868335);
-			local121.aClass80_Sub36_Sub1_2.method23219(client.anInt3527 * 206551609, 2091175856);
-			local121.aClass80_Sub36_Sub1_2.method23218(client.anInt3526 * 1831183447, 1673014664);
-			local121.aClass80_Sub36_Sub1_2.method23229(Class86.anInt284 * 531357219, 378705456);
+			local121.aPacketBit_2.p2_alt2(Class641.aClass120_Sub1_Sub1_Sub1_Sub2_3.anInt2671 * 1078276675);
+			local121.aPacketBit_2.p1(Class519.method30604(-1749746593) ? 1 : 0);
+			local121.aPacketBit_2.p2_alt2(client.anInt3527 * 206551609);
+			local121.aPacketBit_2.p2_alt1(client.anInt3526 * 1831183447);
+			local121.aPacketBit_2.p4_alt1(Class86.anInt284 * 531357219);
 			client.aClass75_1.method1325(local121, (byte) -86);
 		}
 		if (local22 == 23) {
@@ -231,17 +231,17 @@ public final class Class103_Sub11 extends Class103 {
 			} else {
 				local121 = Class681.method36701(local12, local17, local28, (byte) 1);
 				if (local28 == 1) {
-					local121.aClass80_Sub36_Sub1_2.method23154(-1, 1275868335);
-					local121.aClass80_Sub36_Sub1_2.method23154(-1, 1275868335);
-					local121.aClass80_Sub36_Sub1_2.method23155((int) client.aFloat255, (byte) -1);
-					local121.aClass80_Sub36_Sub1_2.method23154(57, 1275868335);
-					local121.aClass80_Sub36_Sub1_2.method23154(client.anInt3474 * -1918431893, 1275868335);
-					local121.aClass80_Sub36_Sub1_2.method23154(client.anInt3476 * -692320695, 1275868335);
-					local121.aClass80_Sub36_Sub1_2.method23154(89, 1275868335);
+					local121.aPacketBit_2.p1(-1);
+					local121.aPacketBit_2.p1(-1);
+					local121.aPacketBit_2.p2((int) client.aFloat255);
+					local121.aPacketBit_2.p1(57);
+					local121.aPacketBit_2.p1(client.anInt3474 * -1918431893);
+					local121.aPacketBit_2.p1(client.anInt3476 * -692320695);
+					local121.aPacketBit_2.p1(89);
 					@Pc(863) Class463 local863 = Class641.aClass120_Sub1_Sub1_Sub1_Sub2_3.method24552().aClass463_61;
-					local121.aClass80_Sub36_Sub1_2.method23155((int) local863.aFloat297, (byte) -3);
-					local121.aClass80_Sub36_Sub1_2.method23155((int) local863.aFloat296, (byte) -118);
-					local121.aClass80_Sub36_Sub1_2.method23154(63, 1275868335);
+					local121.aPacketBit_2.p2((int) local863.aFloat297);
+					local121.aPacketBit_2.p2((int) local863.aFloat296);
+					local121.aPacketBit_2.p1(63);
 				} else {
 					client.anInt3500 = arg1 * -819515597;
 					client.anInt3501 = arg2 * 380483957;
@@ -286,8 +286,8 @@ public final class Class103_Sub11 extends Class103 {
 				client.anInt3514 = -813124122;
 				client.anInt3485 = 0;
 				local1004 = Class623.method32440(local918, client.aClass75_1.aClass22_1, -191270971);
-				local1004.aClass80_Sub36_Sub1_2.method23218(local28, 1673014664);
-				local1004.aClass80_Sub36_Sub1_2.method23211(Class519.method30604(-1484650279) ? 1 : 0, -183466620);
+				local1004.aPacketBit_2.p2_alt1(local28);
+				local1004.aPacketBit_2.p1_alt3(Class519.method30604(-1484650279) ? 1 : 0);
 				client.aClass75_1.method1325(local1004, (byte) -13);
 				Class103_Sub13.method7939(local984.anIntArray234[0], local984.anIntArray242[0], 1538815780);
 			}
@@ -312,10 +312,10 @@ public final class Class103_Sub11 extends Class103 {
 			client.anInt3514 = -813124122;
 			client.anInt3485 = 0;
 			local1004 = Class623.method32440(local1035, client.aClass75_1.aClass22_1, -191270971);
-			local1004.aClass80_Sub36_Sub1_2.method23155(local12 + local41.anInt5540 * -390642507, (byte) -80);
-			local1004.aClass80_Sub36_Sub1_2.method23250((int) (local33 >>> 32) & Integer.MAX_VALUE, -713073138);
-			local1004.aClass80_Sub36_Sub1_2.method23209(Class519.method30604(234403495) ? 1 : 0, -793392349);
-			local1004.aClass80_Sub36_Sub1_2.method23219(local41.anInt5537 * -894305615 + local17, 2091236934);
+			local1004.aPacketBit_2.p2(local12 + local41.anInt5540 * -390642507);
+			local1004.aPacketBit_2.p4_alt3((int) (local33 >>> 32) & Integer.MAX_VALUE);
+			local1004.aPacketBit_2.p1_alt1(Class519.method30604(234403495) ? 1 : 0);
+			local1004.aPacketBit_2.p2_alt2(local41.anInt5537 * -894305615 + local17);
 			client.aClass75_1.method1325(local1004, (byte) -105);
 			Class103_Sub13.method7939(local12, local17, 961670380);
 		}
@@ -325,13 +325,13 @@ public final class Class103_Sub11 extends Class103 {
 			client.anInt3514 = -813124122;
 			client.anInt3485 = 0;
 			local1004 = Class623.method32440(Class443.aClass443_75, client.aClass75_1.aClass22_1, -191270971);
-			local1004.aClass80_Sub36_Sub1_2.method23229(Class86.anInt284 * 531357219, 366850130);
-			local1004.aClass80_Sub36_Sub1_2.method23220(client.anInt3527 * 206551609, 2036747717);
-			local1004.aClass80_Sub36_Sub1_2.method23154(Class519.method30604(1332110199) ? 1 : 0, 1275868335);
-			local1004.aClass80_Sub36_Sub1_2.method23218(local28, 1673014664);
-			local1004.aClass80_Sub36_Sub1_2.method23155(local41.anInt5537 * -894305615 + local17, (byte) -6);
-			local1004.aClass80_Sub36_Sub1_2.method23218(local41.anInt5540 * -390642507 + local12, 1673014664);
-			local1004.aClass80_Sub36_Sub1_2.method23218(client.anInt3526 * 1831183447, 1673014664);
+			local1004.aPacketBit_2.p4_alt1(Class86.anInt284 * 531357219);
+			local1004.aPacketBit_2.p2_alt3(client.anInt3527 * 206551609);
+			local1004.aPacketBit_2.p1(Class519.method30604(1332110199) ? 1 : 0);
+			local1004.aPacketBit_2.p2_alt1(local28);
+			local1004.aPacketBit_2.p2(local41.anInt5537 * -894305615 + local17);
+			local1004.aPacketBit_2.p2_alt1(local41.anInt5540 * -390642507 + local12);
+			local1004.aPacketBit_2.p2_alt1(client.anInt3526 * 1831183447);
 			client.aClass75_1.method1325(local1004, (byte) -84);
 			Class103_Sub13.method7939(local12, local17, 839014315);
 		}
@@ -347,12 +347,12 @@ public final class Class103_Sub11 extends Class103 {
 	}
 
 	@OriginalMember(owner = "client!agg", name = "<init>", descriptor = "(Lclient!ald;)V")
-	Class103_Sub11(@OriginalArg(0) Class80_Sub36 arg0) {
+	Class103_Sub11(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.anInt948 = arg0.method23178((byte) -84) * 1403006543;
-		this.aString28 = arg0.method23376((short) 21207);
-		this.anInt949 = arg0.method23182(1538503459) * -900351105;
-		this.anInt950 = arg0.method23178((byte) -37) * -1523910417;
+		this.anInt948 = arg0.g2() * 1403006543;
+		this.aString28 = arg0.gjstr();
+		this.anInt949 = arg0.g4() * -900351105;
+		this.anInt950 = arg0.g2() * -1523910417;
 	}
 
 	@OriginalMember(owner = "client!agg", name = "f", descriptor = "(I)V")

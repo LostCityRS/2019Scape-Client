@@ -196,7 +196,7 @@ public final class Class463 {
 	}
 
 	@OriginalMember(owner = "client!on", name = "aa", descriptor = "(Lclient!ald;)Lclient!on;")
-	public static Class463 method29515(@OriginalArg(0) Class80_Sub36 arg0) {
+	public static Class463 method29515(@OriginalArg(0) Packet arg0) {
 		@Pc(2) Class463[] local2 = aClass463Array1;
 		synchronized (aClass463Array1) {
 			if (anInt4936 == 0) {
@@ -269,7 +269,7 @@ public final class Class463 {
 	}
 
 	@OriginalMember(owner = "client!on", name = "an", descriptor = "(Lclient!ald;)Lclient!on;")
-	public static Class463 method29542(@OriginalArg(0) Class80_Sub36 arg0) {
+	public static Class463 method29542(@OriginalArg(0) Packet arg0) {
 		@Pc(2) Class463[] local2 = aClass463Array1;
 		synchronized (aClass463Array1) {
 			if (anInt4936 == 0) {
@@ -315,7 +315,7 @@ public final class Class463 {
 	}
 
 	@OriginalMember(owner = "client!on", name = "l", descriptor = "(Lclient!ald;)Lclient!on;")
-	public static Class463 method29552(@OriginalArg(0) Class80_Sub36 arg0) {
+	public static Class463 method29552(@OriginalArg(0) Packet arg0) {
 		@Pc(2) Class463[] local2 = aClass463Array1;
 		synchronized (aClass463Array1) {
 			if (anInt4936 == 0) {
@@ -395,10 +395,10 @@ public final class Class463 {
 	}
 
 	@OriginalMember(owner = "client!on", name = "<init>", descriptor = "(Lclient!ald;)V")
-	public Class463(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.aFloat297 = arg0.method23188(566696232);
-		this.aFloat295 = arg0.method23188(1626874862);
-		this.aFloat296 = arg0.method23188(1415203855);
+	public Class463(@OriginalArg(0) Packet arg0) {
+		this.aFloat297 = arg0.gFloat();
+		this.aFloat295 = arg0.gFloat();
+		this.aFloat296 = arg0.gFloat();
 	}
 
 	@OriginalMember(owner = "client!on", name = "aw", descriptor = "()V")
@@ -428,10 +428,10 @@ public final class Class463 {
 	}
 
 	@OriginalMember(owner = "client!on", name = "i", descriptor = "(Lclient!ald;)V")
-	public void method29476(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.aFloat297 = arg0.method23188(1433921415);
-		this.aFloat295 = arg0.method23188(-1414407778);
-		this.aFloat296 = arg0.method23188(-409742545);
+	public void method29476(@OriginalArg(0) Packet arg0) {
+		this.aFloat297 = arg0.gFloat();
+		this.aFloat295 = arg0.gFloat();
+		this.aFloat296 = arg0.gFloat();
 	}
 
 	@OriginalMember(owner = "client!on", name = "m", descriptor = "(FFF)V")

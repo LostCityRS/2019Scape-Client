@@ -50,10 +50,10 @@ public final class Class144_Sub1 extends Class144 {
 	@OriginalMember(owner = "client!aiz", name = "cb", descriptor = "(Lclient!aod;[BIIIILclient!xs;Lclient!xs;)I")
 	public static int method12000(@OriginalArg(0) Class41_Sub3 arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) Class669 arg6, @OriginalArg(7) Class669 arg7) {
 		@Pc(1) int local1 = 0;
-		@Pc(6) Class80_Sub36 local6 = new Class80_Sub36(arg1);
+		@Pc(6) Packet local6 = new Packet(arg1);
 		@Pc(8) int local8 = -1;
 		label73: while (true) {
-			@Pc(12) int local12 = local6.method23261((byte) 60);
+			@Pc(12) int local12 = local6.gExtended1or2();
 			if (local12 == 0) {
 				return local1;
 			}
@@ -74,7 +74,7 @@ public final class Class144_Sub1 extends Class144 {
 								do {
 									@Pc(28) int local28;
 									do {
-										local28 = local6.method23195(1511083067);
+										local28 = local6.gSmart1or2();
 										if (local28 == 0) {
 											continue label73;
 										}
@@ -110,10 +110,10 @@ public final class Class144_Sub1 extends Class144 {
 	@OriginalMember(owner = "client!aiz", name = "cw", descriptor = "(Lclient!aod;[BIIIILclient!xs;Lclient!xs;)I")
 	public static int method12013(@OriginalArg(0) Class41_Sub3 arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) Class669 arg6, @OriginalArg(7) Class669 arg7) {
 		@Pc(1) int local1 = 0;
-		@Pc(6) Class80_Sub36 local6 = new Class80_Sub36(arg1);
+		@Pc(6) Packet local6 = new Packet(arg1);
 		@Pc(8) int local8 = -1;
 		label73: while (true) {
-			@Pc(12) int local12 = local6.method23261((byte) -5);
+			@Pc(12) int local12 = local6.gExtended1or2();
 			if (local12 == 0) {
 				return local1;
 			}
@@ -134,7 +134,7 @@ public final class Class144_Sub1 extends Class144 {
 								do {
 									@Pc(28) int local28;
 									do {
-										local28 = local6.method23195(1365115961);
+										local28 = local6.gSmart1or2();
 										if (local28 == 0) {
 											continue label73;
 										}
@@ -206,10 +206,10 @@ public final class Class144_Sub1 extends Class144 {
 	@OriginalMember(owner = "client!aiz", name = "cg", descriptor = "(Lclient!aod;[BIIIILclient!xs;Lclient!xs;)I")
 	public static int method12017(@OriginalArg(0) Class41_Sub3 arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) Class669 arg6, @OriginalArg(7) Class669 arg7) {
 		@Pc(1) int local1 = 0;
-		@Pc(6) Class80_Sub36 local6 = new Class80_Sub36(arg1);
+		@Pc(6) Packet local6 = new Packet(arg1);
 		@Pc(8) int local8 = -1;
 		label73: while (true) {
-			@Pc(12) int local12 = local6.method23261((byte) 12);
+			@Pc(12) int local12 = local6.gExtended1or2();
 			if (local12 == 0) {
 				return local1;
 			}
@@ -230,7 +230,7 @@ public final class Class144_Sub1 extends Class144 {
 								do {
 									@Pc(28) int local28;
 									do {
-										local28 = local6.method23195(1677163924);
+										local28 = local6.gSmart1or2();
 										if (local28 == 0) {
 											continue label73;
 										}
@@ -340,11 +340,11 @@ public final class Class144_Sub1 extends Class144 {
 	}
 
 	@OriginalMember(owner = "client!aiz", name = "cv", descriptor = "(Lclient!di;Lclient!ald;III)V")
-	public void method11998(@OriginalArg(0) Class102 arg0, @OriginalArg(1) Class80_Sub36 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
+	public void method11998(@OriginalArg(0) Class102 arg0, @OriginalArg(1) Packet arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		if (this.aBoolean260) {
 			return;
 		}
-		arg1.anInt3152 += -316490024;
+		arg1.pos += -316490024;
 		@Pc(11) boolean local11 = false;
 		@Pc(13) Class655 local13 = null;
 		@Pc(15) boolean local15 = false;
@@ -354,19 +354,19 @@ public final class Class144_Sub1 extends Class144 {
 			@Pc(255) int local255;
 			@Pc(259) int local259;
 			@Pc(58) int local58;
-			while (arg1.anInt3152 * -1380987821 < arg1.aByteArray61.length) {
-				local27 = arg1.method23362(-187882039);
+			while (arg1.pos * -1380987821 < arg1.data.length) {
+				local27 = arg1.g1();
 				if (local27 != 0) {
 					@Pc(120) int local120;
 					@Pc(128) int local128;
 					@Pc(132) int local132;
 					if (local27 == 1) {
-						local54 = arg1.method23362(196176899);
+						local54 = arg1.g1();
 						if (local54 > 0) {
 							for (local58 = 0; local58 < local54; local58++) {
 								@Pc(73) Class595 local73 = new Class595(arg0, this.aClass570_5.anInt5258 * 1479624119, arg1, 2);
 								if (local73.anInt5349 * -619633025 == 31) {
-									@Pc(87) Class89 local87 = (Class89) Class332.aClass41_Sub5_1.method18054(arg1.method23178((byte) -82), -1372402142);
+									@Pc(87) Class89 local87 = (Class89) Class332.aClass41_Sub5_1.method18054(arg1.g2(), -1372402142);
 									local73.method31964(local87.anInt318 * 2073639953, local87.anInt315 * 1157207965, local87.anInt317 * 586892451, local87.anInt316 * 1197747641, 1928226857);
 								}
 								if (arg0.method20768() > 0) {
@@ -402,7 +402,7 @@ public final class Class144_Sub1 extends Class144 {
 							this.aByteArrayArrayArray8 = new byte[4][][];
 						}
 						for (local54 = 0; local54 < 4; local54++) {
-							@Pc(245) byte local245 = arg1.method23177((byte) -126);
+							@Pc(245) byte local245 = arg1.g1b();
 							if (local245 == 0 && this.aByteArrayArrayArray8[local54] != null) {
 								local255 = arg2;
 								local259 = arg2 + 64;
@@ -441,7 +441,7 @@ public final class Class144_Sub1 extends Class144 {
 								}
 								for (local255 = 0; local255 < 64; local255 += 4) {
 									for (local259 = 0; local259 < 64; local259 += 4) {
-										@Pc(388) byte local388 = arg1.method23177((byte) -59);
+										@Pc(388) byte local388 = arg1.g1b();
 										for (local128 = local255 + arg2; local128 < local255 + 4 + arg2; local128++) {
 											for (local132 = local259 + arg3; local132 < local259 + 4 + arg3; local132++) {
 												if (local128 >= 0 && local128 < this.anInt1396 * -967539287 && local132 >= 0 && local132 < this.anInt1380 * -1218727185) {
@@ -534,11 +534,11 @@ public final class Class144_Sub1 extends Class144 {
 	}
 
 	@OriginalMember(owner = "client!aiz", name = "ct", descriptor = "(Lclient!di;Lclient!ald;IIIIIIII)V")
-	public void method11999(@OriginalArg(0) Class102 arg0, @OriginalArg(1) Class80_Sub36 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9) {
+	public void method11999(@OriginalArg(0) Class102 arg0, @OriginalArg(1) Packet arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9) {
 		if (this.aBoolean260) {
 			return;
 		}
-		arg1.anInt3152 += -316490024;
+		arg1.pos += -316490024;
 		@Pc(11) boolean local11 = false;
 		@Pc(13) Class655 local13 = null;
 		@Pc(15) boolean local15 = false;
@@ -549,20 +549,20 @@ public final class Class144_Sub1 extends Class144 {
 			@Pc(65) int local65;
 			@Pc(328) int local328;
 			@Pc(69) int local69;
-			while (arg1.anInt3152 * -1380987821 < arg1.aByteArray61.length) {
-				local39 = arg1.method23362(1046052204);
+			while (arg1.pos * -1380987821 < arg1.data.length) {
+				local39 = arg1.g1();
 				if (local39 != 0) {
 					@Pc(135) int local135;
 					@Pc(175) int local175;
 					@Pc(193) int local193;
 					@Pc(129) int local129;
 					if (local39 == 1) {
-						local65 = arg1.method23362(617751331);
+						local65 = arg1.g1();
 						if (local65 > 0) {
 							for (local69 = 0; local69 < local65; local69++) {
 								@Pc(84) Class595 local84 = new Class595(arg0, this.aClass570_5.anInt5258 * 1479624119, arg1, 2);
 								if (local84.anInt5349 * -619633025 == 31) {
-									@Pc(98) Class89 local98 = (Class89) Class332.aClass41_Sub5_1.method18054(arg1.method23178((byte) -21), 1167376157);
+									@Pc(98) Class89 local98 = (Class89) Class332.aClass41_Sub5_1.method18054(arg1.g2(), 1167376157);
 									local84.method31964(local98.anInt318 * 2073639953, local98.anInt315 * 1157207965, local98.anInt317 * 586892451, local98.anInt316 * 1197747641, 1928226857);
 								}
 								if (arg0.method20768() > 0) {
@@ -603,7 +603,7 @@ public final class Class144_Sub1 extends Class144 {
 							this.aByteArrayArrayArray8 = new byte[4][][];
 						}
 						for (local65 = 0; local65 < 4; local65++) {
-							@Pc(315) byte local315 = arg1.method23177((byte) -52);
+							@Pc(315) byte local315 = arg1.g1b();
 							@Pc(332) int local332;
 							if (local315 == 0 && this.aByteArrayArrayArray8[arg2] != null) {
 								if (local65 <= arg5) {
@@ -645,7 +645,7 @@ public final class Class144_Sub1 extends Class144 {
 								}
 								for (local328 = 0; local328 < 64; local328 += 4) {
 									for (local332 = 0; local332 < 64; local332 += 4) {
-										@Pc(462) byte local462 = arg1.method23177((byte) -82);
+										@Pc(462) byte local462 = arg1.g1b();
 										if (local65 <= arg5) {
 											for (local135 = local328; local135 < local328 + 4; local135++) {
 												for (local175 = local332; local175 < local332 + 4; local175++) {
@@ -1313,11 +1313,11 @@ public final class Class144_Sub1 extends Class144 {
 	}
 
 	@OriginalMember(owner = "client!aiz", name = "cr", descriptor = "(Lclient!di;Lclient!ald;II)V")
-	public void method12007(@OriginalArg(0) Class102 arg0, @OriginalArg(1) Class80_Sub36 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+	public void method12007(@OriginalArg(0) Class102 arg0, @OriginalArg(1) Packet arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		if (this.aBoolean260) {
 			return;
 		}
-		arg1.anInt3152 += -316490024;
+		arg1.pos += -316490024;
 		@Pc(11) boolean local11 = false;
 		@Pc(13) Class655 local13 = null;
 		@Pc(15) boolean local15 = false;
@@ -1327,19 +1327,19 @@ public final class Class144_Sub1 extends Class144 {
 			@Pc(255) int local255;
 			@Pc(259) int local259;
 			@Pc(58) int local58;
-			while (arg1.anInt3152 * -1380987821 < arg1.aByteArray61.length) {
-				local27 = arg1.method23362(558463540);
+			while (arg1.pos * -1380987821 < arg1.data.length) {
+				local27 = arg1.g1();
 				if (local27 != 0) {
 					@Pc(120) int local120;
 					@Pc(128) int local128;
 					@Pc(132) int local132;
 					if (local27 == 1) {
-						local54 = arg1.method23362(985715085);
+						local54 = arg1.g1();
 						if (local54 > 0) {
 							for (local58 = 0; local58 < local54; local58++) {
 								@Pc(73) Class595 local73 = new Class595(arg0, this.aClass570_5.anInt5258 * 1479624119, arg1, 2);
 								if (local73.anInt5349 * -619633025 == 31) {
-									@Pc(87) Class89 local87 = (Class89) Class332.aClass41_Sub5_1.method18054(arg1.method23178((byte) -22), 151716171);
+									@Pc(87) Class89 local87 = (Class89) Class332.aClass41_Sub5_1.method18054(arg1.g2(), 151716171);
 									local73.method31964(local87.anInt318 * 2073639953, local87.anInt315 * 1157207965, local87.anInt317 * 586892451, local87.anInt316 * 1197747641, 1928226857);
 								}
 								if (arg0.method20768() > 0) {
@@ -1375,7 +1375,7 @@ public final class Class144_Sub1 extends Class144 {
 							this.aByteArrayArrayArray8 = new byte[4][][];
 						}
 						for (local54 = 0; local54 < 4; local54++) {
-							@Pc(245) byte local245 = arg1.method23177((byte) -90);
+							@Pc(245) byte local245 = arg1.g1b();
 							if (local245 == 0 && this.aByteArrayArrayArray8[local54] != null) {
 								local255 = arg2;
 								local259 = arg2 + 64;
@@ -1414,7 +1414,7 @@ public final class Class144_Sub1 extends Class144 {
 								}
 								for (local255 = 0; local255 < 64; local255 += 4) {
 									for (local259 = 0; local259 < 64; local259 += 4) {
-										@Pc(388) byte local388 = arg1.method23177((byte) -96);
+										@Pc(388) byte local388 = arg1.g1b();
 										for (local128 = local255 + arg2; local128 < local255 + 4 + arg2; local128++) {
 											for (local132 = local259 + arg3; local132 < local259 + 4 + arg3; local132++) {
 												if (local128 >= 0 && local128 < this.anInt1396 * -967539287 && local132 >= 0 && local132 < this.anInt1380 * -1218727185) {
@@ -1507,11 +1507,11 @@ public final class Class144_Sub1 extends Class144 {
 	}
 
 	@OriginalMember(owner = "client!aiz", name = "ci", descriptor = "(Lclient!di;Lclient!ald;II)V")
-	public void method12008(@OriginalArg(0) Class102 arg0, @OriginalArg(1) Class80_Sub36 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+	public void method12008(@OriginalArg(0) Class102 arg0, @OriginalArg(1) Packet arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		if (this.aBoolean260) {
 			return;
 		}
-		arg1.anInt3152 += -316490024;
+		arg1.pos += -316490024;
 		@Pc(11) boolean local11 = false;
 		@Pc(13) Class655 local13 = null;
 		@Pc(15) boolean local15 = false;
@@ -1521,19 +1521,19 @@ public final class Class144_Sub1 extends Class144 {
 			@Pc(255) int local255;
 			@Pc(259) int local259;
 			@Pc(58) int local58;
-			while (arg1.anInt3152 * -1380987821 < arg1.aByteArray61.length) {
-				local27 = arg1.method23362(-316436243);
+			while (arg1.pos * -1380987821 < arg1.data.length) {
+				local27 = arg1.g1();
 				if (local27 != 0) {
 					@Pc(120) int local120;
 					@Pc(128) int local128;
 					@Pc(132) int local132;
 					if (local27 == 1) {
-						local54 = arg1.method23362(-954673493);
+						local54 = arg1.g1();
 						if (local54 > 0) {
 							for (local58 = 0; local58 < local54; local58++) {
 								@Pc(73) Class595 local73 = new Class595(arg0, this.aClass570_5.anInt5258 * 1479624119, arg1, 2);
 								if (local73.anInt5349 * -619633025 == 31) {
-									@Pc(87) Class89 local87 = (Class89) Class332.aClass41_Sub5_1.method18054(arg1.method23178((byte) -42), -1865262586);
+									@Pc(87) Class89 local87 = (Class89) Class332.aClass41_Sub5_1.method18054(arg1.g2(), -1865262586);
 									local73.method31964(local87.anInt318 * 2073639953, local87.anInt315 * 1157207965, local87.anInt317 * 586892451, local87.anInt316 * 1197747641, 1928226857);
 								}
 								if (arg0.method20768() > 0) {
@@ -1569,7 +1569,7 @@ public final class Class144_Sub1 extends Class144 {
 							this.aByteArrayArrayArray8 = new byte[4][][];
 						}
 						for (local54 = 0; local54 < 4; local54++) {
-							@Pc(245) byte local245 = arg1.method23177((byte) -29);
+							@Pc(245) byte local245 = arg1.g1b();
 							if (local245 == 0 && this.aByteArrayArrayArray8[local54] != null) {
 								local255 = arg2;
 								local259 = arg2 + 64;
@@ -1608,7 +1608,7 @@ public final class Class144_Sub1 extends Class144 {
 								}
 								for (local255 = 0; local255 < 64; local255 += 4) {
 									for (local259 = 0; local259 < 64; local259 += 4) {
-										@Pc(388) byte local388 = arg1.method23177((byte) -65);
+										@Pc(388) byte local388 = arg1.g1b();
 										for (local128 = local255 + arg2; local128 < local255 + 4 + arg2; local128++) {
 											for (local132 = local259 + arg3; local132 < local259 + 4 + arg3; local132++) {
 												if (local128 >= 0 && local128 < this.anInt1396 * -967539287 && local132 >= 0 && local132 < this.anInt1380 * -1218727185) {
@@ -1701,11 +1701,11 @@ public final class Class144_Sub1 extends Class144 {
 	}
 
 	@OriginalMember(owner = "client!aiz", name = "cm", descriptor = "(Lclient!di;Lclient!ald;IIIIIII)V")
-	public void method12009(@OriginalArg(0) Class102 arg0, @OriginalArg(1) Class80_Sub36 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8) {
+	public void method12009(@OriginalArg(0) Class102 arg0, @OriginalArg(1) Packet arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8) {
 		if (this.aBoolean260) {
 			return;
 		}
-		arg1.anInt3152 += -316490024;
+		arg1.pos += -316490024;
 		@Pc(11) boolean local11 = false;
 		@Pc(13) Class655 local13 = null;
 		@Pc(15) boolean local15 = false;
@@ -1716,20 +1716,20 @@ public final class Class144_Sub1 extends Class144 {
 			@Pc(65) int local65;
 			@Pc(328) int local328;
 			@Pc(69) int local69;
-			while (arg1.anInt3152 * -1380987821 < arg1.aByteArray61.length) {
-				local39 = arg1.method23362(-1697050426);
+			while (arg1.pos * -1380987821 < arg1.data.length) {
+				local39 = arg1.g1();
 				if (local39 != 0) {
 					@Pc(135) int local135;
 					@Pc(175) int local175;
 					@Pc(193) int local193;
 					@Pc(129) int local129;
 					if (local39 == 1) {
-						local65 = arg1.method23362(-773221029);
+						local65 = arg1.g1();
 						if (local65 > 0) {
 							for (local69 = 0; local69 < local65; local69++) {
 								@Pc(84) Class595 local84 = new Class595(arg0, this.aClass570_5.anInt5258 * 1479624119, arg1, 2);
 								if (local84.anInt5349 * -619633025 == 31) {
-									@Pc(98) Class89 local98 = (Class89) Class332.aClass41_Sub5_1.method18054(arg1.method23178((byte) -14), -1539264710);
+									@Pc(98) Class89 local98 = (Class89) Class332.aClass41_Sub5_1.method18054(arg1.g2(), -1539264710);
 									local84.method31964(local98.anInt318 * 2073639953, local98.anInt315 * 1157207965, local98.anInt317 * 586892451, local98.anInt316 * 1197747641, 1928226857);
 								}
 								if (arg0.method20768() > 0) {
@@ -1770,7 +1770,7 @@ public final class Class144_Sub1 extends Class144 {
 							this.aByteArrayArrayArray8 = new byte[4][][];
 						}
 						for (local65 = 0; local65 < 4; local65++) {
-							@Pc(315) byte local315 = arg1.method23177((byte) -40);
+							@Pc(315) byte local315 = arg1.g1b();
 							@Pc(332) int local332;
 							if (local315 == 0 && this.aByteArrayArrayArray8[arg2] != null) {
 								if (local65 <= arg5) {
@@ -1812,7 +1812,7 @@ public final class Class144_Sub1 extends Class144 {
 								}
 								for (local328 = 0; local328 < 64; local328 += 4) {
 									for (local332 = 0; local332 < 64; local332 += 4) {
-										@Pc(462) byte local462 = arg1.method23177((byte) 20);
+										@Pc(462) byte local462 = arg1.g1b();
 										if (local65 <= arg5) {
 											for (local135 = local328; local135 < local328 + 4; local135++) {
 												for (local175 = local332; local175 < local332 + 4; local175++) {
@@ -1990,10 +1990,10 @@ public final class Class144_Sub1 extends Class144 {
 
 	@OriginalMember(owner = "client!aiz", name = "cz", descriptor = "(Lclient!di;[BIIIIIII)V")
 	public void method12018(@OriginalArg(0) Class102 arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8) {
-		@Pc(4) Class80_Sub36 local4 = new Class80_Sub36(arg1);
+		@Pc(4) Packet local4 = new Packet(arg1);
 		@Pc(6) int local6 = -1;
 		label91: while (true) {
-			@Pc(10) int local10 = local4.method23261((byte) -60);
+			@Pc(10) int local10 = local4.gExtended1or2();
 			if (local10 == 0) {
 				return;
 			}
@@ -2018,7 +2018,7 @@ public final class Class144_Sub1 extends Class144 {
 												@Pc(46) int local46;
 												do {
 													do {
-														@Pc(23) int local23 = local4.method23195(1654660171);
+														@Pc(23) int local23 = local4.gSmart1or2();
 														if (local23 == 0) {
 															continue label91;
 														}
@@ -2510,10 +2510,10 @@ public final class Class144_Sub1 extends Class144 {
 
 	@OriginalMember(owner = "client!aiz", name = "cc", descriptor = "(Lclient!di;[BIIIIIIII)V")
 	public void method12023(@OriginalArg(0) Class102 arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9) {
-		@Pc(4) Class80_Sub36 local4 = new Class80_Sub36(arg1);
+		@Pc(4) Packet local4 = new Packet(arg1);
 		@Pc(6) int local6 = -1;
 		label91: while (true) {
-			@Pc(10) int local10 = local4.method23261((byte) 71);
+			@Pc(10) int local10 = local4.gExtended1or2();
 			if (local10 == 0) {
 				return;
 			}
@@ -2538,7 +2538,7 @@ public final class Class144_Sub1 extends Class144 {
 												@Pc(46) int local46;
 												do {
 													do {
-														@Pc(23) int local23 = local4.method23195(1881767045);
+														@Pc(23) int local23 = local4.gSmart1or2();
 														if (local23 == 0) {
 															continue label91;
 														}
@@ -2724,10 +2724,10 @@ public final class Class144_Sub1 extends Class144 {
 
 	@OriginalMember(owner = "client!aiz", name = "ch", descriptor = "(Lclient!di;[BIIS)V")
 	public void method12028(@OriginalArg(0) Class102 arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) short arg4) {
-		@Pc(4) Class80_Sub36 local4 = new Class80_Sub36(arg1);
+		@Pc(4) Packet local4 = new Packet(arg1);
 		@Pc(6) int local6 = -1;
 		label66: while (true) {
-			@Pc(10) int local10 = local4.method23261((byte) -70);
+			@Pc(10) int local10 = local4.gExtended1or2();
 			if (local10 == 0) {
 				return;
 			}
@@ -2745,7 +2745,7 @@ public final class Class144_Sub1 extends Class144 {
 						do {
 							do {
 								do {
-									@Pc(23) int local23 = local4.method23195(1343089198);
+									@Pc(23) int local23 = local4.gSmart1or2();
 									if (local23 == 0) {
 										continue label66;
 									}
@@ -2780,10 +2780,10 @@ public final class Class144_Sub1 extends Class144 {
 
 	@OriginalMember(owner = "client!aiz", name = "co", descriptor = "(Lclient!di;[BIIIIIII)V")
 	public void method12029(@OriginalArg(0) Class102 arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8) {
-		@Pc(4) Class80_Sub36 local4 = new Class80_Sub36(arg1);
+		@Pc(4) Packet local4 = new Packet(arg1);
 		@Pc(6) int local6 = -1;
 		label91: while (true) {
-			@Pc(10) int local10 = local4.method23261((byte) -29);
+			@Pc(10) int local10 = local4.gExtended1or2();
 			if (local10 == 0) {
 				return;
 			}
@@ -2808,7 +2808,7 @@ public final class Class144_Sub1 extends Class144 {
 												@Pc(46) int local46;
 												do {
 													do {
-														@Pc(23) int local23 = local4.method23195(1669218298);
+														@Pc(23) int local23 = local4.gSmart1or2();
 														if (local23 == 0) {
 															continue label91;
 														}
@@ -2911,11 +2911,11 @@ public final class Class144_Sub1 extends Class144 {
 	}
 
 	@OriginalMember(owner = "client!aiz", name = "cp", descriptor = "(Lclient!di;Lclient!ald;IIIIIII)V")
-	public void method12031(@OriginalArg(0) Class102 arg0, @OriginalArg(1) Class80_Sub36 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8) {
+	public void method12031(@OriginalArg(0) Class102 arg0, @OriginalArg(1) Packet arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8) {
 		if (this.aBoolean260) {
 			return;
 		}
-		arg1.anInt3152 += -316490024;
+		arg1.pos += -316490024;
 		@Pc(11) boolean local11 = false;
 		@Pc(13) Class655 local13 = null;
 		@Pc(15) boolean local15 = false;
@@ -2926,20 +2926,20 @@ public final class Class144_Sub1 extends Class144 {
 			@Pc(65) int local65;
 			@Pc(328) int local328;
 			@Pc(69) int local69;
-			while (arg1.anInt3152 * -1380987821 < arg1.aByteArray61.length) {
-				local39 = arg1.method23362(-2031038456);
+			while (arg1.pos * -1380987821 < arg1.data.length) {
+				local39 = arg1.g1();
 				if (local39 != 0) {
 					@Pc(135) int local135;
 					@Pc(175) int local175;
 					@Pc(193) int local193;
 					@Pc(129) int local129;
 					if (local39 == 1) {
-						local65 = arg1.method23362(992938857);
+						local65 = arg1.g1();
 						if (local65 > 0) {
 							for (local69 = 0; local69 < local65; local69++) {
 								@Pc(84) Class595 local84 = new Class595(arg0, this.aClass570_5.anInt5258 * 1479624119, arg1, 2);
 								if (local84.anInt5349 * -619633025 == 31) {
-									@Pc(98) Class89 local98 = (Class89) Class332.aClass41_Sub5_1.method18054(arg1.method23178((byte) -41), 1720395123);
+									@Pc(98) Class89 local98 = (Class89) Class332.aClass41_Sub5_1.method18054(arg1.g2(), 1720395123);
 									local84.method31964(local98.anInt318 * 2073639953, local98.anInt315 * 1157207965, local98.anInt317 * 586892451, local98.anInt316 * 1197747641, 1928226857);
 								}
 								if (arg0.method20768() > 0) {
@@ -2980,7 +2980,7 @@ public final class Class144_Sub1 extends Class144 {
 							this.aByteArrayArrayArray8 = new byte[4][][];
 						}
 						for (local65 = 0; local65 < 4; local65++) {
-							@Pc(315) byte local315 = arg1.method23177((byte) -10);
+							@Pc(315) byte local315 = arg1.g1b();
 							@Pc(332) int local332;
 							if (local315 == 0 && this.aByteArrayArrayArray8[arg2] != null) {
 								if (local65 <= arg5) {
@@ -3022,7 +3022,7 @@ public final class Class144_Sub1 extends Class144 {
 								}
 								for (local328 = 0; local328 < 64; local328 += 4) {
 									for (local332 = 0; local332 < 64; local332 += 4) {
-										@Pc(462) byte local462 = arg1.method23177((byte) 11);
+										@Pc(462) byte local462 = arg1.g1b();
 										if (local65 <= arg5) {
 											for (local135 = local328; local135 < local328 + 4; local135++) {
 												for (local175 = local332; local175 < local332 + 4; local175++) {

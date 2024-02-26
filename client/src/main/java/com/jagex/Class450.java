@@ -93,8 +93,8 @@ public final class Class450 implements Interface47 {
 				local142.method16939(120598405);
 			}
 		}
-		if (client.aClass75_1.aClass80_Sub36_Sub1_1.anInt3152 * -1380987821 != client.aClass75_1.anInt248 * 460106407) {
-			throw new RuntimeException(client.aClass75_1.aClass80_Sub36_Sub1_1.anInt3152 * -1380987821 + " " + client.aClass75_1.anInt248 * 460106407);
+		if (client.aClass75_1.aPacketBit_1.pos * -1380987821 != client.aClass75_1.anInt248 * 460106407) {
+			throw new RuntimeException(client.aClass75_1.aPacketBit_1.pos * -1380987821 + " " + client.aClass75_1.anInt248 * 460106407);
 		}
 		for (local18 = 0; local18 < client.anInt3453 * -1702559601; local18++) {
 			if (client.aClass24_18.method560((long) client.anIntArray304[local18]) == null) {
@@ -151,7 +151,7 @@ public final class Class450 implements Interface47 {
 		@Pc(18) byte[] local18 = this.aClass480_115.method29918(0, arg0, 1896589581);
 		local6 = new Class441();
 		if (local18 != null) {
-			local6.method29173(new Class80_Sub36(local18), -671688375);
+			local6.method29173(new Packet(local18), -671688375);
 		}
 		local6.method29182((byte) 110);
 		this.aClass243_84.method26253(local6, (long) arg0);
@@ -173,7 +173,7 @@ public final class Class450 implements Interface47 {
 		@Pc(18) byte[] local18 = this.aClass480_115.method29918(0, arg0, 1896589581);
 		local6 = new Class441();
 		if (local18 != null) {
-			local6.method29173(new Class80_Sub36(local18), -1687761399);
+			local6.method29173(new Packet(local18), -1687761399);
 		}
 		local6.method29182((byte) 108);
 		this.aClass243_84.method26253(local6, (long) arg0);

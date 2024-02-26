@@ -63,7 +63,7 @@ public final class Class437 {
 						throw new EOFException();
 					}
 				}
-				var20 = new Class474(new Class80_Sub36(local16));
+				var20 = new Class474(new Packet(local16));
 				var13 = false;
 				break label114;
 			} catch (@Pc(60) Exception local60) {

@@ -21,7 +21,7 @@ public final class Class80_Sub31 extends Class80 {
 	Class443 aClass443_1;
 
 	@OriginalMember(owner = "client!aku", name = "g", descriptor = "Lclient!asa;")
-	public Class80_Sub36_Sub1 aClass80_Sub36_Sub1_2;
+	public PacketBit aPacketBit_2;
 
 	@OriginalMember(owner = "client!aku", name = "i", descriptor = "I")
 	public int anInt1647;
@@ -35,18 +35,18 @@ public final class Class80_Sub31 extends Class80 {
 		local2.aClass443_1 = arg0;
 		local2.anInt1648 = arg0.anInt4879 * 1348369397;
 		if (local2.anInt1648 * -1051134449 == -1) {
-			local2.aClass80_Sub36_Sub1_2 = new Class80_Sub36_Sub1(260);
+			local2.aPacketBit_2 = new PacketBit(260);
 		} else if (local2.anInt1648 * -1051134449 == -2) {
-			local2.aClass80_Sub36_Sub1_2 = new Class80_Sub36_Sub1(10000);
+			local2.aPacketBit_2 = new PacketBit(10000);
 		} else if (local2.anInt1648 * -1051134449 <= 18) {
-			local2.aClass80_Sub36_Sub1_2 = new Class80_Sub36_Sub1(20);
+			local2.aPacketBit_2 = new PacketBit(20);
 		} else if (local2.anInt1648 * -1051134449 <= 98) {
-			local2.aClass80_Sub36_Sub1_2 = new Class80_Sub36_Sub1(100);
+			local2.aPacketBit_2 = new PacketBit(100);
 		} else {
-			local2.aClass80_Sub36_Sub1_2 = new Class80_Sub36_Sub1(260);
+			local2.aPacketBit_2 = new PacketBit(260);
 		}
-		local2.aClass80_Sub36_Sub1_2.method22564(arg1, -919213842);
-		local2.aClass80_Sub36_Sub1_2.method22553(local2.aClass443_1.anInt4880 * 1861237215, -724096896);
+		local2.aPacketBit_2.method22564(arg1, -919213842);
+		local2.aPacketBit_2.method22553(local2.aClass443_1.anInt4880 * 1861237215, -724096896);
 		local2.anInt1647 = 0;
 		return local2;
 	}
@@ -71,7 +71,7 @@ public final class Class80_Sub31 extends Class80 {
 		@Pc(2) Class80_Sub31 local2 = Class5.method115(16711935);
 		local2.aClass443_1 = null;
 		local2.anInt1648 = 0;
-		local2.aClass80_Sub36_Sub1_2 = new Class80_Sub36_Sub1(5000);
+		local2.aPacketBit_2 = new PacketBit(5000);
 		return local2;
 	}
 
@@ -81,18 +81,18 @@ public final class Class80_Sub31 extends Class80 {
 		local2.aClass443_1 = arg0;
 		local2.anInt1648 = arg0.anInt4879 * 1348369397;
 		if (local2.anInt1648 * -1051134449 == -1) {
-			local2.aClass80_Sub36_Sub1_2 = new Class80_Sub36_Sub1(260);
+			local2.aPacketBit_2 = new PacketBit(260);
 		} else if (local2.anInt1648 * -1051134449 == -2) {
-			local2.aClass80_Sub36_Sub1_2 = new Class80_Sub36_Sub1(10000);
+			local2.aPacketBit_2 = new PacketBit(10000);
 		} else if (local2.anInt1648 * -1051134449 <= 18) {
-			local2.aClass80_Sub36_Sub1_2 = new Class80_Sub36_Sub1(20);
+			local2.aPacketBit_2 = new PacketBit(20);
 		} else if (local2.anInt1648 * -1051134449 <= 98) {
-			local2.aClass80_Sub36_Sub1_2 = new Class80_Sub36_Sub1(100);
+			local2.aPacketBit_2 = new PacketBit(100);
 		} else {
-			local2.aClass80_Sub36_Sub1_2 = new Class80_Sub36_Sub1(260);
+			local2.aPacketBit_2 = new PacketBit(260);
 		}
-		local2.aClass80_Sub36_Sub1_2.method22564(arg1, 1273338797);
-		local2.aClass80_Sub36_Sub1_2.method22553(local2.aClass443_1.anInt4880 * 1861237215, 47198087);
+		local2.aPacketBit_2.method22564(arg1, 1273338797);
+		local2.aPacketBit_2.method22553(local2.aClass443_1.anInt4880 * 1861237215, 47198087);
 		local2.anInt1647 = 0;
 		return local2;
 	}
@@ -108,18 +108,18 @@ public final class Class80_Sub31 extends Class80 {
 		local2.aClass443_1 = arg0;
 		local2.anInt1648 = arg0.anInt4879 * 1348369397;
 		if (local2.anInt1648 * -1051134449 == -1) {
-			local2.aClass80_Sub36_Sub1_2 = new Class80_Sub36_Sub1(260);
+			local2.aPacketBit_2 = new PacketBit(260);
 		} else if (local2.anInt1648 * -1051134449 == -2) {
-			local2.aClass80_Sub36_Sub1_2 = new Class80_Sub36_Sub1(10000);
+			local2.aPacketBit_2 = new PacketBit(10000);
 		} else if (local2.anInt1648 * -1051134449 <= 18) {
-			local2.aClass80_Sub36_Sub1_2 = new Class80_Sub36_Sub1(20);
+			local2.aPacketBit_2 = new PacketBit(20);
 		} else if (local2.anInt1648 * -1051134449 <= 98) {
-			local2.aClass80_Sub36_Sub1_2 = new Class80_Sub36_Sub1(100);
+			local2.aPacketBit_2 = new PacketBit(100);
 		} else {
-			local2.aClass80_Sub36_Sub1_2 = new Class80_Sub36_Sub1(260);
+			local2.aPacketBit_2 = new PacketBit(260);
 		}
-		local2.aClass80_Sub36_Sub1_2.method22564(arg1, -329950161);
-		local2.aClass80_Sub36_Sub1_2.method22553(local2.aClass443_1.anInt4880 * 1861237215, 1017131780);
+		local2.aPacketBit_2.method22564(arg1, -329950161);
+		local2.aPacketBit_2.method22553(local2.aClass443_1.anInt4880 * 1861237215, 1017131780);
 		local2.anInt1647 = 0;
 		return local2;
 	}
@@ -129,7 +129,7 @@ public final class Class80_Sub31 extends Class80 {
 		@Pc(2) Class80_Sub31 local2 = Class5.method115(16711935);
 		local2.aClass443_1 = null;
 		local2.anInt1648 = 0;
-		local2.aClass80_Sub36_Sub1_2 = new Class80_Sub36_Sub1(5000);
+		local2.aPacketBit_2 = new PacketBit(5000);
 		return local2;
 	}
 
@@ -138,7 +138,7 @@ public final class Class80_Sub31 extends Class80 {
 		@Pc(2) Class80_Sub31 local2 = Class5.method115(16711935);
 		local2.aClass443_1 = null;
 		local2.anInt1648 = 0;
-		local2.aClass80_Sub36_Sub1_2 = new Class80_Sub36_Sub1(5000);
+		local2.aPacketBit_2 = new PacketBit(5000);
 		return local2;
 	}
 
@@ -239,12 +239,12 @@ public final class Class80_Sub31 extends Class80 {
 			return;
 		}
 		@Pc(10) Class80_Sub31 local10 = Class623.method32440(Class443.aClass443_97, client.aClass75_2.aClass22_1, -191270971);
-		local10.aClass80_Sub36_Sub1_2.method23155(0, (byte) -108);
-		@Pc(21) int local21 = local10.aClass80_Sub36_Sub1_2.anInt3152 * -1380987821;
-		local10.aClass80_Sub36_Sub1_2.method23165(arg0, 2084968844);
-		local10.aClass80_Sub36_Sub1_2.anInt3152 += -1350670595;
-		local10.aClass80_Sub36_Sub1_2.method23190(Class499.anIntArray464, local21, local10.aClass80_Sub36_Sub1_2.anInt3152 * -1380987821, (byte) 8);
-		local10.aClass80_Sub36_Sub1_2.method23170(local10.aClass80_Sub36_Sub1_2.anInt3152 * -1380987821 - local21, -377880512);
+		local10.aPacketBit_2.p2(0);
+		@Pc(21) int local21 = local10.aPacketBit_2.pos * -1380987821;
+		local10.aPacketBit_2.pjstr(arg0);
+		local10.aPacketBit_2.pos += -1350670595;
+		local10.aPacketBit_2.tinyenc(Class499.anIntArray464, local21, local10.aPacketBit_2.pos * -1380987821);
+		local10.aPacketBit_2.p2check(local10.aPacketBit_2.pos * -1380987821 - local21);
 		client.aClass75_2.method1325(local10, (byte) -112);
 		Class323.aClass711_1 = Class711.aClass711_3;
 	}

@@ -113,46 +113,46 @@ public final class Class305 {
 	}
 
 	@OriginalMember(owner = "client!gz", name = "<init>", descriptor = "(JLclient!ald;ZLclient!gh;)V")
-	public Class305(@OriginalArg(0) long arg0, @OriginalArg(1) Class80_Sub36 arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) Interface27 arg3) {
+	public Class305(@OriginalArg(0) long arg0, @OriginalArg(1) Packet arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) Interface27 arg3) {
 		this.aLong367 = arg0 * -7383207353273137369L;
-		@Pc(13) int local13 = arg1.method23362(-1547245116);
+		@Pc(13) int local13 = arg1.g1();
 		if (local13 <= 0 || local13 > 1) {
 			throw new IllegalStateException("");
 		}
-		@Pc(27) int local27 = arg1.method23362(-256182107);
+		@Pc(27) int local27 = arg1.g1();
 		this.aBoolean785 = (local27 & 0x1) != 0;
 		this.aBoolean787 = (local27 & 0x2) != 0;
 		this.aBoolean786 = (local27 & 0x4) != 0;
-		this.anInt3982 = arg1.method23182(1760595243) * 467808111;
-		this.aLong366 = arg1.method23273((byte) 1) * -8078292710442647141L;
-		this.aString169 = arg1.method23376((short) 8020);
-		this.anInt3980 = arg1.method23179(-32537448) * -1575338219;
-		arg1.method23182(982295647);
-		arg1.method23273((byte) -77);
-		@Pc(94) int local94 = arg1.method23178((byte) -36);
+		this.anInt3982 = arg1.g4() * 467808111;
+		this.aLong366 = arg1.g8() * -8078292710442647141L;
+		this.aString169 = arg1.gjstr();
+		this.anInt3980 = arg1.g2s() * -1575338219;
+		arg1.g4();
+		arg1.g8();
+		@Pc(94) int local94 = arg1.g2();
 		this.anArrayList4 = new ArrayList(local94);
 		@Pc(102) int local102;
 		for (local102 = 0; local102 < local94; local102++) {
 			this.anArrayList4.add(new Class302(arg1, this.aBoolean787, this.aBoolean786, arg3));
 		}
-		local102 = arg1.method23178((byte) -24);
+		local102 = arg1.g2();
 		this.anArrayList3 = new ArrayList(local102);
 		@Pc(132) int local132;
 		for (local132 = 0; local132 < local102; local132++) {
 			this.anArrayList3.add(new Class288(arg1, this.aBoolean787, this.aBoolean786));
 		}
 		this.aClass33_3 = new Class33(arg3.method13(2109575621));
-		local132 = arg1.method23178((byte) -94);
+		local132 = arg1.g2();
 		for (@Pc(163) int local163 = 0; local163 < local132; local163++) {
 			@Pc(173) Class460 local173 = arg3.method13(1901632936).method1820(arg1, -68082719);
 			this.aClass33_3.method719(local173.anInt4907 * -38979583, local173.anObject19, -2120454017);
 		}
 		if (!arg2) {
-			arg1.method23178((byte) -105);
-			arg1.method23178((byte) -98);
-			arg1.method23178((byte) -13);
-			arg1.method23178((byte) -36);
-			arg1.method23178((byte) -54);
+			arg1.g2();
+			arg1.g2();
+			arg1.g2();
+			arg1.g2();
+			arg1.g2();
 		}
 		this.method27149((byte) -6);
 	}

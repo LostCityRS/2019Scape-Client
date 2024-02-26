@@ -82,12 +82,12 @@ public final class Class254 {
 	}
 
 	@OriginalMember(owner = "client!ex", name = "<init>", descriptor = "(Lclient!ald;I)V")
-	Class254(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	Class254(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		this.anInt3882 = arg1 * 983242283;
-		@Pc(19) int local19 = arg0.method23362(149455832);
+		@Pc(19) int local19 = arg0.g1();
 		switch(local19) {
 			case 0:
-				this.anInt3883 = arg0.method23210((byte) 38) * -1986175849;
+				this.anInt3883 = arg0.gSmart2or4null() * -1986175849;
 				break;
 			case 1:
 				this.anInt3883 = 1986175849;
@@ -95,7 +95,7 @@ public final class Class254 {
 			default:
 				this.anInt3883 = 1986175849;
 		}
-		arg0.method23376((short) 15548);
+		arg0.gjstr();
 	}
 
 	@OriginalMember(owner = "client!ex", name = "r", descriptor = "()Z")
@@ -131,7 +131,7 @@ public final class Class254 {
 				this.aClass120_Sub1_Sub1_Sub1_Sub1_2.anInt2673 = ((Class251.anInt3876 += -878712665) * -38322409 - 1) * -1242583405;
 			} else {
 				this.aClass120_Sub1_Sub1_Sub1_Sub2_2 = new Class120_Sub1_Sub1_Sub1_Sub2(client.aClass539_1.method30932(-1638462787), 25);
-				this.aClass120_Sub1_Sub1_Sub1_Sub2_2.method19053(Class548.aClass80_Sub36_16, 2119648537);
+				this.aClass120_Sub1_Sub1_Sub1_Sub2_2.method19053(Class548.aPacket_16, 2119648537);
 				this.aClass120_Sub1_Sub1_Sub1_Sub2_2.anInt2671 = this.anInt3882 * -630432575;
 				this.aClass120_Sub1_Sub1_Sub1_Sub2_2.anInt2694 = client.anInt3436 * -265248265;
 				this.aClass120_Sub1_Sub1_Sub1_Sub2_2.anInt2673 = ((Class251.anInt3876 += -878712665) * -38322409 - 1) * -1242583405;
@@ -216,7 +216,7 @@ public final class Class254 {
 				this.aClass120_Sub1_Sub1_Sub1_Sub1_2.anInt2673 = ((Class251.anInt3876 += -878712665) * -38322409 - 1) * -1242583405;
 			} else {
 				this.aClass120_Sub1_Sub1_Sub1_Sub2_2 = new Class120_Sub1_Sub1_Sub1_Sub2(client.aClass539_1.method30932(-1638462787), 25);
-				this.aClass120_Sub1_Sub1_Sub1_Sub2_2.method19053(Class548.aClass80_Sub36_16, 2039008165);
+				this.aClass120_Sub1_Sub1_Sub1_Sub2_2.method19053(Class548.aPacket_16, 2039008165);
 				this.aClass120_Sub1_Sub1_Sub1_Sub2_2.anInt2671 = this.anInt3882 * -630432575;
 				this.aClass120_Sub1_Sub1_Sub1_Sub2_2.anInt2694 = client.anInt3436 * -265248265;
 				this.aClass120_Sub1_Sub1_Sub1_Sub2_2.anInt2673 = ((Class251.anInt3876 += -878712665) * -38322409 - 1) * -1242583405;
@@ -251,7 +251,7 @@ public final class Class254 {
 				this.aClass120_Sub1_Sub1_Sub1_Sub1_2.anInt2673 = ((Class251.anInt3876 += -878712665) * -38322409 - 1) * -1242583405;
 			} else {
 				this.aClass120_Sub1_Sub1_Sub1_Sub2_2 = new Class120_Sub1_Sub1_Sub1_Sub2(client.aClass539_1.method30932(-1638462787), 25);
-				this.aClass120_Sub1_Sub1_Sub1_Sub2_2.method19053(Class548.aClass80_Sub36_16, 1871825370);
+				this.aClass120_Sub1_Sub1_Sub1_Sub2_2.method19053(Class548.aPacket_16, 1871825370);
 				this.aClass120_Sub1_Sub1_Sub1_Sub2_2.anInt2671 = this.anInt3882 * -630432575;
 				this.aClass120_Sub1_Sub1_Sub1_Sub2_2.anInt2694 = client.anInt3436 * -265248265;
 				this.aClass120_Sub1_Sub1_Sub1_Sub2_2.anInt2673 = ((Class251.anInt3876 += -878712665) * -38322409 - 1) * -1242583405;
@@ -303,7 +303,7 @@ public final class Class254 {
 				this.aClass120_Sub1_Sub1_Sub1_Sub1_2.anInt2673 = ((Class251.anInt3876 += -878712665) * -38322409 - 1) * -1242583405;
 			} else {
 				this.aClass120_Sub1_Sub1_Sub1_Sub2_2 = new Class120_Sub1_Sub1_Sub1_Sub2(client.aClass539_1.method30932(-1638462787), 25);
-				this.aClass120_Sub1_Sub1_Sub1_Sub2_2.method19053(Class548.aClass80_Sub36_16, 1798968436);
+				this.aClass120_Sub1_Sub1_Sub1_Sub2_2.method19053(Class548.aPacket_16, 1798968436);
 				this.aClass120_Sub1_Sub1_Sub1_Sub2_2.anInt2671 = this.anInt3882 * -630432575;
 				this.aClass120_Sub1_Sub1_Sub1_Sub2_2.anInt2694 = client.anInt3436 * -265248265;
 				this.aClass120_Sub1_Sub1_Sub1_Sub2_2.anInt2673 = ((Class251.anInt3876 += -878712665) * -38322409 - 1) * -1242583405;

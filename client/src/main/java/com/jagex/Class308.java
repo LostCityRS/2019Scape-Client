@@ -9,17 +9,17 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class308 {
 
 	@OriginalMember(owner = "client!hc", name = "u", descriptor = "(Lclient!ald;)Lclient!hc;")
-	public static Class308 method27435(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(3) int local3 = arg0.method23362(703072557);
+	public static Class308 method27435(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1();
 		if (local3 == 0) {
 			return null;
 		}
 		local3--;
-		arg0.anInt3152 += 1034180571;
-		@Pc(19) int local19 = arg0.method23182(-2054329860);
+		arg0.pos += 1034180571;
+		@Pc(19) int local19 = arg0.g4();
 		@Pc(22) Object[] local22 = new Object[local3];
 		for (@Pc(24) int local24 = 0; local24 < local3; local24++) {
-			@Pc(31) int local31 = arg0.method23362(774429200);
+			@Pc(31) int local31 = arg0.g1();
 			if (local31 == 0) {
 				local22[local24] = Class519.method30594(Integer.class, (byte) 0).method30638(arg0, (short) 961);
 			} else if (local31 == 1) {
@@ -32,17 +32,17 @@ public final class Class308 {
 	}
 
 	@OriginalMember(owner = "client!hc", name = "e", descriptor = "(Lclient!ald;)Lclient!hc;")
-	public static Class308 method27436(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(3) int local3 = arg0.method23362(-45635121);
+	public static Class308 method27436(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1();
 		if (local3 == 0) {
 			return null;
 		}
 		local3--;
-		arg0.anInt3152 += 1034180571;
-		@Pc(19) int local19 = arg0.method23182(936059012);
+		arg0.pos += 1034180571;
+		@Pc(19) int local19 = arg0.g4();
 		@Pc(22) Object[] local22 = new Object[local3];
 		for (@Pc(24) int local24 = 0; local24 < local3; local24++) {
-			@Pc(31) int local31 = arg0.method23362(1029212048);
+			@Pc(31) int local31 = arg0.g1();
 			if (local31 == 0) {
 				local22[local24] = Class519.method30594(Integer.class, (byte) 0).method30638(arg0, (short) 961);
 			} else if (local31 == 1) {
@@ -55,17 +55,17 @@ public final class Class308 {
 	}
 
 	@OriginalMember(owner = "client!hc", name = "f", descriptor = "(Lclient!ald;)Lclient!hc;")
-	public static Class308 method27437(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(3) int local3 = arg0.method23362(-1572965893);
+	public static Class308 method27437(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1();
 		if (local3 == 0) {
 			return null;
 		}
 		local3--;
-		arg0.anInt3152 += 1034180571;
-		@Pc(19) int local19 = arg0.method23182(2112197299);
+		arg0.pos += 1034180571;
+		@Pc(19) int local19 = arg0.g4();
 		@Pc(22) Object[] local22 = new Object[local3];
 		for (@Pc(24) int local24 = 0; local24 < local3; local24++) {
-			@Pc(31) int local31 = arg0.method23362(614759752);
+			@Pc(31) int local31 = arg0.g1();
 			if (local31 == 0) {
 				local22[local24] = Class519.method30594(Integer.class, (byte) 0).method30638(arg0, (short) 961);
 			} else if (local31 == 1) {
@@ -78,17 +78,17 @@ public final class Class308 {
 	}
 
 	@OriginalMember(owner = "client!hc", name = "l", descriptor = "(Lclient!ald;)Lclient!hc;")
-	public static Class308 method27438(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(3) int local3 = arg0.method23362(-725588677);
+	public static Class308 method27438(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1();
 		if (local3 == 0) {
 			return null;
 		}
 		local3--;
-		arg0.anInt3152 += 1034180571;
-		@Pc(19) int local19 = arg0.method23182(1088501543);
+		arg0.pos += 1034180571;
+		@Pc(19) int local19 = arg0.g4();
 		@Pc(22) Object[] local22 = new Object[local3];
 		for (@Pc(24) int local24 = 0; local24 < local3; local24++) {
-			@Pc(31) int local31 = arg0.method23362(-701255417);
+			@Pc(31) int local31 = arg0.g1();
 			if (local31 == 0) {
 				local22[local24] = Class519.method30594(Integer.class, (byte) 0).method30638(arg0, (short) 961);
 			} else if (local31 == 1) {
@@ -130,9 +130,9 @@ public final class Class308 {
 		client.anInt3513 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2] * -1571748591;
 		@Pc(47) Class75 local47 = Class52.method1074(16777215);
 		@Pc(53) Class80_Sub31 local53 = Class623.method32440(Class443.aClass443_112, local47.aClass22_1, -191270971);
-		local53.aClass80_Sub36_Sub1_2.method23154(client.anInt3566 * 788343467, 1275868335);
-		local53.aClass80_Sub36_Sub1_2.method23154(Class125_Sub2.aClass11_5.anInt42 * 468896967, 1275868335);
-		local53.aClass80_Sub36_Sub1_2.method23154(client.anInt3513 * -1403352079, 1275868335);
+		local53.aPacketBit_2.p1(client.anInt3566 * 788343467);
+		local53.aPacketBit_2.p1(Class125_Sub2.aClass11_5.anInt42 * 468896967);
+		local53.aPacketBit_2.p1(client.anInt3513 * -1403352079);
 		local47.method1325(local53, (byte) -90);
 	}
 

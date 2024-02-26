@@ -59,12 +59,12 @@ public final class Class482 {
 		@Pc(13) String local13 = (String) arg0.anObjectArray46[(arg0.anInt5776 -= -825189621) * -2070619997];
 		@Pc(16) Class75 local16 = Class52.method1074(16777215);
 		@Pc(22) Class80_Sub31 local22 = Class623.method32440(Class443.aClass443_116, local16.aClass22_1, -191270971);
-		local22.aClass80_Sub36_Sub1_2.method23154(0, 1275868335);
-		@Pc(33) int local33 = local22.aClass80_Sub36_Sub1_2.anInt3152 * -1380987821;
-		local22.aClass80_Sub36_Sub1_2.method23165(local13, 1977175175);
-		local22.aClass80_Sub36_Sub1_2.method23155(arg0.aClass453_1.anInt4894 * 221296175, (byte) -32);
-		arg0.aClass453_1.aClass80_Sub1_Sub19_1.method23050(local22.aClass80_Sub36_Sub1_2, arg0.aClass453_1.anIntArray451, (byte) -17);
-		local22.aClass80_Sub36_Sub1_2.method23171(local22.aClass80_Sub36_Sub1_2.anInt3152 * -1380987821 - local33, (byte) 106);
+		local22.aPacketBit_2.p1(0);
+		@Pc(33) int local33 = local22.aPacketBit_2.pos * -1380987821;
+		local22.aPacketBit_2.pjstr(local13);
+		local22.aPacketBit_2.p2(arg0.aClass453_1.anInt4894 * 221296175);
+		arg0.aClass453_1.aClass80_Sub1_Sub19_1.method23050(local22.aPacketBit_2, arg0.aClass453_1.anIntArray451, (byte) -17);
+		local22.aPacketBit_2.p1check(local22.aPacketBit_2.pos * -1380987821 - local33);
 		local16.method1325(local22, (byte) -125);
 	}
 

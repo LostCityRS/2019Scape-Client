@@ -96,11 +96,11 @@ public final class Class680 implements Runnable {
 		}
 		@Pc(66) Class75 local66 = Class52.method1074(16777215);
 		@Pc(72) Class80_Sub31 local72 = Class623.method32440(Class443.aClass443_13, local66.aClass22_1, -191270971);
-		local72.aClass80_Sub36_Sub1_2.method23154(Class350.method28013(local14, (short) 16383) + 2 + Class350.method28013(local25, (short) 16383), 1275868335);
-		local72.aClass80_Sub36_Sub1_2.method23165(local14, 1815207365);
-		local72.aClass80_Sub36_Sub1_2.method23154(local39 - 1, 1275868335);
-		local72.aClass80_Sub36_Sub1_2.method23154(local49, 1275868335);
-		local72.aClass80_Sub36_Sub1_2.method23165(local25, 1649745773);
+		local72.aPacketBit_2.p1(Class350.method28013(local14, (short) 16383) + 2 + Class350.method28013(local25, (short) 16383));
+		local72.aPacketBit_2.pjstr(local14);
+		local72.aPacketBit_2.p1(local39 - 1);
+		local72.aPacketBit_2.p1(local49);
+		local72.aPacketBit_2.pjstr(local25);
 		local66.method1325(local72, (byte) -97);
 	}
 

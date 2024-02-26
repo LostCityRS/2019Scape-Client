@@ -17,8 +17,8 @@ public abstract class Class108 {
 	}
 
 	@OriginalMember(owner = "client!dh", name = "z", descriptor = "(Lclient!asa;I)V")
-	static void method24050(@OriginalArg(0) Class80_Sub36_Sub1 arg0, @OriginalArg(1) int arg1) {
-		@Pc(8) boolean local8 = arg0.method23362(-1402194033) == 1;
+	static void method24050(@OriginalArg(0) PacketBit arg0, @OriginalArg(1) int arg1) {
+		@Pc(8) boolean local8 = arg0.g1() == 1;
 		if (!local8) {
 			return;
 		}

@@ -20,11 +20,11 @@ public final class Class103_Sub17_Sub2 extends Class103_Sub17 {
 	final int anInt2754;
 
 	@OriginalMember(owner = "client!aqh", name = "<init>", descriptor = "(Lclient!ald;)V")
-	Class103_Sub17_Sub2(@OriginalArg(0) Class80_Sub36 arg0) {
+	Class103_Sub17_Sub2(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.anInt2753 = arg0.method23178((byte) -74) * -1047384719;
-		this.anInt2752 = arg0.method23362(-628027145) * -605190997;
-		this.anInt2754 = arg0.method23178((byte) -65) * 1916188747;
+		this.anInt2753 = arg0.g2() * -1047384719;
+		this.anInt2752 = arg0.g1() * -605190997;
+		this.anInt2754 = arg0.g2() * 1916188747;
 	}
 
 	@OriginalMember(owner = "client!aqh", name = "f", descriptor = "(I)V")

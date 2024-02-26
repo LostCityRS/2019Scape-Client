@@ -74,9 +74,9 @@ public final class Class366 implements Interface11 {
 
 	@OriginalMember(owner = "client!jq", name = "u", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method37009(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method37009(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(570973842);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -86,9 +86,9 @@ public final class Class366 implements Interface11 {
 
 	@OriginalMember(owner = "client!jq", name = "t", descriptor = "(Lclient!ald;I)V")
 	@Override
-	public void method37006(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	public void method37006(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-1760646614);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -229,42 +229,42 @@ public final class Class366 implements Interface11 {
 	}
 
 	@OriginalMember(owner = "client!jq", name = "l", descriptor = "(Lclient!ald;II)V")
-	void method28259(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	void method28259(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (arg1 == 1) {
-			arg0.method23362(851106757);
+			arg0.g1();
 			return;
 		}
 		@Pc(14) int local14;
 		@Pc(20) int local20;
 		if (arg1 == 2) {
-			local14 = arg0.method23362(-654566179);
+			local14 = arg0.g1();
 			this.anIntArray434 = new int[local14];
 			for (local20 = 0; local20 < local14; local20++) {
-				this.anIntArray434[local20] = arg0.method23210((byte) 116);
+				this.anIntArray434[local20] = arg0.gSmart2or4null();
 			}
 		} else if (arg1 != 3) {
 			if (arg1 == 40) {
-				local14 = arg0.method23362(-1760784083);
+				local14 = arg0.g1();
 				this.aShortArray123 = new short[local14];
 				this.aShortArray124 = new short[local14];
 				for (local20 = 0; local20 < local14; local20++) {
-					this.aShortArray123[local20] = (short) arg0.method23178((byte) -112);
-					this.aShortArray124[local20] = (short) arg0.method23178((byte) -56);
+					this.aShortArray123[local20] = (short) arg0.g2();
+					this.aShortArray124[local20] = (short) arg0.g2();
 				}
 			} else if (arg1 == 41) {
-				local14 = arg0.method23362(183268629);
+				local14 = arg0.g1();
 				this.aShortArray126 = new short[local14];
 				this.aShortArray125 = new short[local14];
 				for (local20 = 0; local20 < local14; local20++) {
-					this.aShortArray126[local20] = (short) arg0.method23178((byte) -60);
-					this.aShortArray125[local20] = (short) arg0.method23178((byte) -41);
+					this.aShortArray126[local20] = (short) arg0.g2();
+					this.aShortArray125[local20] = (short) arg0.g2();
 				}
 			} else {
 				@Pc(126) int local126;
 				@Pc(142) int local142;
 				@Pc(140) byte local140;
 				if (arg1 == 44) {
-					local14 = arg0.method23178((byte) -80);
+					local14 = arg0.g2();
 					local20 = 0;
 					for (local126 = local14; local126 > 0; local126 >>= 0x1) {
 						local20++;
@@ -279,7 +279,7 @@ public final class Class366 implements Interface11 {
 						}
 					}
 				} else if (arg1 == 45) {
-					local14 = arg0.method23178((byte) -113);
+					local14 = arg0.g2();
 					local20 = 0;
 					for (local126 = local14; local126 > 0; local126 >>= 0x1) {
 						local20++;
@@ -294,49 +294,49 @@ public final class Class366 implements Interface11 {
 						}
 					}
 				} else if (arg1 >= 60 && arg1 < 70) {
-					this.anIntArray436[arg1 - 60] = arg0.method23210((byte) 116);
+					this.anIntArray436[arg1 - 60] = arg0.gSmart2or4null();
 				}
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!jq", name = "j", descriptor = "(Lclient!ald;I)V")
-	void method28260(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method28260(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			arg0.method23362(538501286);
+			arg0.g1();
 			return;
 		}
 		@Pc(14) int local14;
 		@Pc(20) int local20;
 		if (arg1 == 2) {
-			local14 = arg0.method23362(37006395);
+			local14 = arg0.g1();
 			this.anIntArray434 = new int[local14];
 			for (local20 = 0; local20 < local14; local20++) {
-				this.anIntArray434[local20] = arg0.method23210((byte) 22);
+				this.anIntArray434[local20] = arg0.gSmart2or4null();
 			}
 		} else if (arg1 != 3) {
 			if (arg1 == 40) {
-				local14 = arg0.method23362(-1990299879);
+				local14 = arg0.g1();
 				this.aShortArray123 = new short[local14];
 				this.aShortArray124 = new short[local14];
 				for (local20 = 0; local20 < local14; local20++) {
-					this.aShortArray123[local20] = (short) arg0.method23178((byte) -36);
-					this.aShortArray124[local20] = (short) arg0.method23178((byte) -75);
+					this.aShortArray123[local20] = (short) arg0.g2();
+					this.aShortArray124[local20] = (short) arg0.g2();
 				}
 			} else if (arg1 == 41) {
-				local14 = arg0.method23362(292826274);
+				local14 = arg0.g1();
 				this.aShortArray126 = new short[local14];
 				this.aShortArray125 = new short[local14];
 				for (local20 = 0; local20 < local14; local20++) {
-					this.aShortArray126[local20] = (short) arg0.method23178((byte) -24);
-					this.aShortArray125[local20] = (short) arg0.method23178((byte) -73);
+					this.aShortArray126[local20] = (short) arg0.g2();
+					this.aShortArray125[local20] = (short) arg0.g2();
 				}
 			} else {
 				@Pc(126) int local126;
 				@Pc(142) int local142;
 				@Pc(140) byte local140;
 				if (arg1 == 44) {
-					local14 = arg0.method23178((byte) -94);
+					local14 = arg0.g2();
 					local20 = 0;
 					for (local126 = local14; local126 > 0; local126 >>= 0x1) {
 						local20++;
@@ -351,7 +351,7 @@ public final class Class366 implements Interface11 {
 						}
 					}
 				} else if (arg1 == 45) {
-					local14 = arg0.method23178((byte) -58);
+					local14 = arg0.g2();
 					local20 = 0;
 					for (local126 = local14; local126 > 0; local126 >>= 0x1) {
 						local20++;
@@ -366,49 +366,49 @@ public final class Class366 implements Interface11 {
 						}
 					}
 				} else if (arg1 >= 60 && arg1 < 70) {
-					this.anIntArray436[arg1 - 60] = arg0.method23210((byte) 60);
+					this.anIntArray436[arg1 - 60] = arg0.gSmart2or4null();
 				}
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!jq", name = "a", descriptor = "(Lclient!ald;I)V")
-	void method28261(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method28261(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			arg0.method23362(1032750948);
+			arg0.g1();
 			return;
 		}
 		@Pc(14) int local14;
 		@Pc(20) int local20;
 		if (arg1 == 2) {
-			local14 = arg0.method23362(486619655);
+			local14 = arg0.g1();
 			this.anIntArray434 = new int[local14];
 			for (local20 = 0; local20 < local14; local20++) {
-				this.anIntArray434[local20] = arg0.method23210((byte) 97);
+				this.anIntArray434[local20] = arg0.gSmart2or4null();
 			}
 		} else if (arg1 != 3) {
 			if (arg1 == 40) {
-				local14 = arg0.method23362(-380934673);
+				local14 = arg0.g1();
 				this.aShortArray123 = new short[local14];
 				this.aShortArray124 = new short[local14];
 				for (local20 = 0; local20 < local14; local20++) {
-					this.aShortArray123[local20] = (short) arg0.method23178((byte) -128);
-					this.aShortArray124[local20] = (short) arg0.method23178((byte) -40);
+					this.aShortArray123[local20] = (short) arg0.g2();
+					this.aShortArray124[local20] = (short) arg0.g2();
 				}
 			} else if (arg1 == 41) {
-				local14 = arg0.method23362(-1067823676);
+				local14 = arg0.g1();
 				this.aShortArray126 = new short[local14];
 				this.aShortArray125 = new short[local14];
 				for (local20 = 0; local20 < local14; local20++) {
-					this.aShortArray126[local20] = (short) arg0.method23178((byte) -106);
-					this.aShortArray125[local20] = (short) arg0.method23178((byte) -119);
+					this.aShortArray126[local20] = (short) arg0.g2();
+					this.aShortArray125[local20] = (short) arg0.g2();
 				}
 			} else {
 				@Pc(126) int local126;
 				@Pc(142) int local142;
 				@Pc(140) byte local140;
 				if (arg1 == 44) {
-					local14 = arg0.method23178((byte) -33);
+					local14 = arg0.g2();
 					local20 = 0;
 					for (local126 = local14; local126 > 0; local126 >>= 0x1) {
 						local20++;
@@ -423,7 +423,7 @@ public final class Class366 implements Interface11 {
 						}
 					}
 				} else if (arg1 == 45) {
-					local14 = arg0.method23178((byte) -124);
+					local14 = arg0.g2();
 					local20 = 0;
 					for (local126 = local14; local126 > 0; local126 >>= 0x1) {
 						local20++;
@@ -438,49 +438,49 @@ public final class Class366 implements Interface11 {
 						}
 					}
 				} else if (arg1 >= 60 && arg1 < 70) {
-					this.anIntArray436[arg1 - 60] = arg0.method23210((byte) 73);
+					this.anIntArray436[arg1 - 60] = arg0.gSmart2or4null();
 				}
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!jq", name = "s", descriptor = "(Lclient!ald;I)V")
-	void method28262(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method28262(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			arg0.method23362(-26824682);
+			arg0.g1();
 			return;
 		}
 		@Pc(14) int local14;
 		@Pc(20) int local20;
 		if (arg1 == 2) {
-			local14 = arg0.method23362(-1050684479);
+			local14 = arg0.g1();
 			this.anIntArray434 = new int[local14];
 			for (local20 = 0; local20 < local14; local20++) {
-				this.anIntArray434[local20] = arg0.method23210((byte) 71);
+				this.anIntArray434[local20] = arg0.gSmart2or4null();
 			}
 		} else if (arg1 != 3) {
 			if (arg1 == 40) {
-				local14 = arg0.method23362(399731278);
+				local14 = arg0.g1();
 				this.aShortArray123 = new short[local14];
 				this.aShortArray124 = new short[local14];
 				for (local20 = 0; local20 < local14; local20++) {
-					this.aShortArray123[local20] = (short) arg0.method23178((byte) -37);
-					this.aShortArray124[local20] = (short) arg0.method23178((byte) -6);
+					this.aShortArray123[local20] = (short) arg0.g2();
+					this.aShortArray124[local20] = (short) arg0.g2();
 				}
 			} else if (arg1 == 41) {
-				local14 = arg0.method23362(-151966399);
+				local14 = arg0.g1();
 				this.aShortArray126 = new short[local14];
 				this.aShortArray125 = new short[local14];
 				for (local20 = 0; local20 < local14; local20++) {
-					this.aShortArray126[local20] = (short) arg0.method23178((byte) -13);
-					this.aShortArray125[local20] = (short) arg0.method23178((byte) -27);
+					this.aShortArray126[local20] = (short) arg0.g2();
+					this.aShortArray125[local20] = (short) arg0.g2();
 				}
 			} else {
 				@Pc(126) int local126;
 				@Pc(142) int local142;
 				@Pc(140) byte local140;
 				if (arg1 == 44) {
-					local14 = arg0.method23178((byte) -40);
+					local14 = arg0.g2();
 					local20 = 0;
 					for (local126 = local14; local126 > 0; local126 >>= 0x1) {
 						local20++;
@@ -495,7 +495,7 @@ public final class Class366 implements Interface11 {
 						}
 					}
 				} else if (arg1 == 45) {
-					local14 = arg0.method23178((byte) -47);
+					local14 = arg0.g2();
 					local20 = 0;
 					for (local126 = local14; local126 > 0; local126 >>= 0x1) {
 						local20++;
@@ -510,7 +510,7 @@ public final class Class366 implements Interface11 {
 						}
 					}
 				} else if (arg1 >= 60 && arg1 < 70) {
-					this.anIntArray436[arg1 - 60] = arg0.method23210((byte) 72);
+					this.anIntArray436[arg1 - 60] = arg0.gSmart2or4null();
 				}
 			}
 		}
@@ -522,42 +522,42 @@ public final class Class366 implements Interface11 {
 	}
 
 	@OriginalMember(owner = "client!jq", name = "k", descriptor = "(Lclient!ald;I)V")
-	void method28263(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method28263(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			arg0.method23362(-906896621);
+			arg0.g1();
 			return;
 		}
 		@Pc(14) int local14;
 		@Pc(20) int local20;
 		if (arg1 == 2) {
-			local14 = arg0.method23362(-956278108);
+			local14 = arg0.g1();
 			this.anIntArray434 = new int[local14];
 			for (local20 = 0; local20 < local14; local20++) {
-				this.anIntArray434[local20] = arg0.method23210((byte) 42);
+				this.anIntArray434[local20] = arg0.gSmart2or4null();
 			}
 		} else if (arg1 != 3) {
 			if (arg1 == 40) {
-				local14 = arg0.method23362(-430373523);
+				local14 = arg0.g1();
 				this.aShortArray123 = new short[local14];
 				this.aShortArray124 = new short[local14];
 				for (local20 = 0; local20 < local14; local20++) {
-					this.aShortArray123[local20] = (short) arg0.method23178((byte) -7);
-					this.aShortArray124[local20] = (short) arg0.method23178((byte) -71);
+					this.aShortArray123[local20] = (short) arg0.g2();
+					this.aShortArray124[local20] = (short) arg0.g2();
 				}
 			} else if (arg1 == 41) {
-				local14 = arg0.method23362(-171705281);
+				local14 = arg0.g1();
 				this.aShortArray126 = new short[local14];
 				this.aShortArray125 = new short[local14];
 				for (local20 = 0; local20 < local14; local20++) {
-					this.aShortArray126[local20] = (short) arg0.method23178((byte) -81);
-					this.aShortArray125[local20] = (short) arg0.method23178((byte) -96);
+					this.aShortArray126[local20] = (short) arg0.g2();
+					this.aShortArray125[local20] = (short) arg0.g2();
 				}
 			} else {
 				@Pc(126) int local126;
 				@Pc(142) int local142;
 				@Pc(140) byte local140;
 				if (arg1 == 44) {
-					local14 = arg0.method23178((byte) -120);
+					local14 = arg0.g2();
 					local20 = 0;
 					for (local126 = local14; local126 > 0; local126 >>= 0x1) {
 						local20++;
@@ -572,7 +572,7 @@ public final class Class366 implements Interface11 {
 						}
 					}
 				} else if (arg1 == 45) {
-					local14 = arg0.method23178((byte) -89);
+					local14 = arg0.g2();
 					local20 = 0;
 					for (local126 = local14; local126 > 0; local126 >>= 0x1) {
 						local20++;
@@ -587,7 +587,7 @@ public final class Class366 implements Interface11 {
 						}
 					}
 				} else if (arg1 >= 60 && arg1 < 70) {
-					this.anIntArray436[arg1 - 60] = arg0.method23210((byte) 70);
+					this.anIntArray436[arg1 - 60] = arg0.gSmart2or4null();
 				}
 			}
 		}

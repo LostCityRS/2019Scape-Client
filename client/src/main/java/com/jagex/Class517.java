@@ -14,7 +14,7 @@ public final class Class517 {
 	final Class541 aClass541_1;
 
 	@OriginalMember(owner = "client!qs", name = "t", descriptor = "Lclient!ald;")
-	Class80_Sub36 aClass80_Sub36_15;
+	Packet aPacket_15;
 
 	@OriginalMember(owner = "client!qs", name = "f", descriptor = "Z")
 	boolean aBoolean887;
@@ -118,9 +118,9 @@ public final class Class517 {
 	}
 
 	@OriginalMember(owner = "client!qs", name = "<init>", descriptor = "(Lclient!ry;Lclient!ald;Z)V")
-	Class517(@OriginalArg(0) Class541 arg0, @OriginalArg(1) Class80_Sub36 arg1, @OriginalArg(2) boolean arg2) {
+	Class517(@OriginalArg(0) Class541 arg0, @OriginalArg(1) Packet arg1, @OriginalArg(2) boolean arg2) {
 		this.aClass541_1 = arg0;
-		this.aClass80_Sub36_15 = arg1;
+		this.aPacket_15 = arg1;
 		this.aBoolean887 = arg2;
 		this.anInt5055 = -754724709;
 		this.anInt5054 = -92498009;
@@ -128,8 +128,8 @@ public final class Class517 {
 
 	@OriginalMember(owner = "client!qs", name = "e", descriptor = "()V")
 	void method30576() {
-		if (this.aClass80_Sub36_15 != null && !this.aBoolean887) {
-			this.aClass80_Sub36_15.method23197((byte) 13);
+		if (this.aPacket_15 != null && !this.aBoolean887) {
+			this.aPacket_15.release();
 		}
 		this.anInt5055 = -754724709;
 		this.anInt5054 = -92498009;
@@ -137,8 +137,8 @@ public final class Class517 {
 
 	@OriginalMember(owner = "client!qs", name = "t", descriptor = "(I)V")
 	void method30577(@OriginalArg(0) int arg0) {
-		if (this.aClass80_Sub36_15 != null && !this.aBoolean887) {
-			this.aClass80_Sub36_15.method23197((byte) -7);
+		if (this.aPacket_15 != null && !this.aBoolean887) {
+			this.aPacket_15.release();
 		}
 		this.anInt5055 = -754724709;
 		this.anInt5054 = -92498009;
@@ -146,8 +146,8 @@ public final class Class517 {
 
 	@OriginalMember(owner = "client!qs", name = "f", descriptor = "()V")
 	void method30578() {
-		if (this.aClass80_Sub36_15 != null && !this.aBoolean887) {
-			this.aClass80_Sub36_15.method23197((byte) -2);
+		if (this.aPacket_15 != null && !this.aBoolean887) {
+			this.aPacket_15.release();
 		}
 		this.anInt5055 = -754724709;
 		this.anInt5054 = -92498009;

@@ -336,14 +336,14 @@ public final class Class80_Sub3 extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!aje", name = "t", descriptor = "(Lclient!ald;B)Lclient!kc;")
-	public static Class375 method12782(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
-		@Pc(6) Class391 local6 = Class58_Sub1.method15727((byte) -110)[arg0.method23362(-506609858)];
-		@Pc(13) Class383 local13 = Class646.method33047(-1097781758)[arg0.method23362(-1490217013)];
-		@Pc(17) int local17 = arg0.method23179(-782332098);
-		@Pc(21) int local21 = arg0.method23179(245838300);
-		@Pc(25) int local25 = arg0.method23210((byte) 115);
-		@Pc(29) int local29 = arg0.method23182(726258230);
-		@Pc(33) int local33 = arg0.method23362(-15227989);
+	public static Class375 method12782(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
+		@Pc(6) Class391 local6 = Class58_Sub1.method15727((byte) -110)[arg0.g1()];
+		@Pc(13) Class383 local13 = Class646.method33047(-1097781758)[arg0.g1()];
+		@Pc(17) int local17 = arg0.g2s();
+		@Pc(21) int local21 = arg0.g2s();
+		@Pc(25) int local25 = arg0.gSmart2or4null();
+		@Pc(29) int local29 = arg0.g4();
+		@Pc(33) int local33 = arg0.g1();
 		return new Class375(local6, local13, local17, local21, local25, local29, local33);
 	}
 
@@ -389,7 +389,7 @@ public final class Class80_Sub3 extends Class80 {
 
 	@OriginalMember(owner = "client!aje", name = "x", descriptor = "([II[IZB)J")
 	long method12757(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) boolean arg3, @OriginalArg(4) byte arg4) {
-		@Pc(1) long[] local1 = Class80_Sub36.aLongArray18;
+		@Pc(1) long[] local1 = Packet.crc64table;
 		@Pc(3) long local3 = -1L;
 		@Pc(19) long local19 = local3 >>> 8 ^ local1[(int) ((local3 ^ (long) (arg1 >> 8)) & 0xFFL)];
 		local3 = local19 >>> 8 ^ local1[(int) ((local19 ^ (long) arg1) & 0xFFL)];
@@ -522,7 +522,7 @@ public final class Class80_Sub3 extends Class80 {
 
 	@OriginalMember(owner = "client!aje", name = "at", descriptor = "([II[IZ)J")
 	long method12776(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) boolean arg3) {
-		@Pc(1) long[] local1 = Class80_Sub36.aLongArray18;
+		@Pc(1) long[] local1 = Packet.crc64table;
 		@Pc(3) long local3 = -1L;
 		@Pc(19) long local19 = local3 >>> 8 ^ local1[(int) ((local3 ^ (long) (arg1 >> 8)) & 0xFFL)];
 		local3 = local19 >>> 8 ^ local1[(int) ((local19 ^ (long) arg1) & 0xFFL)];
@@ -543,7 +543,7 @@ public final class Class80_Sub3 extends Class80 {
 
 	@OriginalMember(owner = "client!aje", name = "ad", descriptor = "([II[IZ)J")
 	long method12777(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) boolean arg3) {
-		@Pc(1) long[] local1 = Class80_Sub36.aLongArray18;
+		@Pc(1) long[] local1 = Packet.crc64table;
 		@Pc(3) long local3 = -1L;
 		@Pc(19) long local19 = local3 >>> 8 ^ local1[(int) ((local3 ^ (long) (arg1 >> 8)) & 0xFFL)];
 		local3 = local19 >>> 8 ^ local1[(int) ((local19 ^ (long) arg1) & 0xFFL)];

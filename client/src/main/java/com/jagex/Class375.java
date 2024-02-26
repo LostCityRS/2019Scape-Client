@@ -42,26 +42,26 @@ public final class Class375 implements Interface33 {
 	public final int anInt4519;
 
 	@OriginalMember(owner = "client!kc", name = "e", descriptor = "(Lclient!ald;)Lclient!kc;")
-	public static Class375 method28446(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(6) Class391 local6 = Class58_Sub1.method15727((byte) -115)[arg0.method23362(16182529)];
-		@Pc(13) Class383 local13 = Class646.method33047(-1097781758)[arg0.method23362(-1379487647)];
-		@Pc(17) int local17 = arg0.method23179(1685993792);
-		@Pc(21) int local21 = arg0.method23179(608021025);
-		@Pc(25) int local25 = arg0.method23210((byte) 85);
-		@Pc(29) int local29 = arg0.method23182(-457708469);
-		@Pc(33) int local33 = arg0.method23362(625929322);
+	public static Class375 method28446(@OriginalArg(0) Packet arg0) {
+		@Pc(6) Class391 local6 = Class58_Sub1.method15727((byte) -115)[arg0.g1()];
+		@Pc(13) Class383 local13 = Class646.method33047(-1097781758)[arg0.g1()];
+		@Pc(17) int local17 = arg0.g2s();
+		@Pc(21) int local21 = arg0.g2s();
+		@Pc(25) int local25 = arg0.gSmart2or4null();
+		@Pc(29) int local29 = arg0.g4();
+		@Pc(33) int local33 = arg0.g1();
 		return new Class375(local6, local13, local17, local21, local25, local29, local33);
 	}
 
 	@OriginalMember(owner = "client!kc", name = "u", descriptor = "(Lclient!ald;)Lclient!kc;")
-	public static Class375 method28447(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(6) Class391 local6 = Class58_Sub1.method15727((byte) -121)[arg0.method23362(-1478484509)];
-		@Pc(13) Class383 local13 = Class646.method33047(-1097781758)[arg0.method23362(1124847787)];
-		@Pc(17) int local17 = arg0.method23179(-370250033);
-		@Pc(21) int local21 = arg0.method23179(-680893293);
-		@Pc(25) int local25 = arg0.method23210((byte) 44);
-		@Pc(29) int local29 = arg0.method23182(2102306367);
-		@Pc(33) int local33 = arg0.method23362(-1373247896);
+	public static Class375 method28447(@OriginalArg(0) Packet arg0) {
+		@Pc(6) Class391 local6 = Class58_Sub1.method15727((byte) -121)[arg0.g1()];
+		@Pc(13) Class383 local13 = Class646.method33047(-1097781758)[arg0.g1()];
+		@Pc(17) int local17 = arg0.g2s();
+		@Pc(21) int local21 = arg0.g2s();
+		@Pc(25) int local25 = arg0.gSmart2or4null();
+		@Pc(29) int local29 = arg0.g4();
+		@Pc(33) int local33 = arg0.g1();
 		return new Class375(local6, local13, local17, local21, local25, local29, local33);
 	}
 

@@ -95,15 +95,15 @@ public final class Class385 {
 	}
 
 	@OriginalMember(owner = "client!kq", name = "<init>", descriptor = "(Lclient!ald;)V")
-	public Class385(@OriginalArg(0) Class80_Sub36 arg0) {
+	public Class385(@OriginalArg(0) Packet arg0) {
 		this.method28595(arg0, (byte) 1);
 	}
 
 	@OriginalMember(owner = "client!kq", name = "t", descriptor = "(Lclient!ald;B)V")
-	void method28595(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
-		this.aLong376 = arg0.method23273((byte) 56) * -4092708191415607897L;
-		this.aLong375 = arg0.method23273((byte) -21) * 1601448189942946873L;
-		for (@Pc(17) int local17 = arg0.method23362(-459052643); local17 != 0; local17 = arg0.method23362(-227653602)) {
+	void method28595(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
+		this.aLong376 = arg0.g8() * -4092708191415607897L;
+		this.aLong375 = arg0.g8() * 1601448189942946873L;
+		for (@Pc(17) int local17 = arg0.g1(); local17 != 0; local17 = arg0.g1()) {
 			@Pc(27) Class80_Sub26 local27;
 			if (local17 == 1) {
 				local27 = new Class80_Sub26_Sub2(this);
@@ -146,10 +146,10 @@ public final class Class385 {
 	}
 
 	@OriginalMember(owner = "client!kq", name = "e", descriptor = "(Lclient!ald;)V")
-	void method28598(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.aLong376 = arg0.method23273((byte) 12) * -4092708191415607897L;
-		this.aLong375 = arg0.method23273((byte) 75) * 1601448189942946873L;
-		for (@Pc(17) int local17 = arg0.method23362(-1088745535); local17 != 0; local17 = arg0.method23362(113495104)) {
+	void method28598(@OriginalArg(0) Packet arg0) {
+		this.aLong376 = arg0.g8() * -4092708191415607897L;
+		this.aLong375 = arg0.g8() * 1601448189942946873L;
+		for (@Pc(17) int local17 = arg0.g1(); local17 != 0; local17 = arg0.g1()) {
 			@Pc(27) Class80_Sub26 local27;
 			if (local17 == 1) {
 				local27 = new Class80_Sub26_Sub2(this);

@@ -22,15 +22,15 @@ public final class Class58_Sub1 extends Class58 implements Interface66 {
 	@Override
 	public void method32126() {
 		@Pc(5) Class80_Sub31 local5 = Class623.method32440(Class443.aClass443_17, client.aClass75_1.aClass22_1, -191270971);
-		local5.aClass80_Sub36_Sub1_2.method23209(this.anInt2062 * 1536605899, 2016964439);
-		local5.aClass80_Sub36_Sub1_2.method23209(this.anInt2063 * 330793525, -1102588056);
-		local5.aClass80_Sub36_Sub1_2.method23250(this.anInt2068 * 788342471, 2067998452);
-		local5.aClass80_Sub36_Sub1_2.method23211(this.anInt2067 * -768944687, -183466620);
+		local5.aPacketBit_2.p1_alt1(this.anInt2062 * 1536605899);
+		local5.aPacketBit_2.p1_alt1(this.anInt2063 * 330793525);
+		local5.aPacketBit_2.p4_alt3(this.anInt2068 * 788342471);
+		local5.aPacketBit_2.p1_alt3(this.anInt2067 * -768944687);
 		@Pc(51) int local51 = (this.aBoolean414 ? 2 : 0) | (this.aBoolean415 ? 1 : 0);
-		local5.aClass80_Sub36_Sub1_2.method23351(local51, -711109028);
-		local5.aClass80_Sub36_Sub1_2.method23155(this.anInt2064 * 994954725, (byte) -105);
-		local5.aClass80_Sub36_Sub1_2.method23410(this.anInt2065 * 1673997263, (byte) -46);
-		local5.aClass80_Sub36_Sub1_2.method23209(this.anInt2066 * 1781315403, -586168661);
+		local5.aPacketBit_2.p1_alt2(local51);
+		local5.aPacketBit_2.p2(this.anInt2064 * 994954725);
+		local5.aPacketBit_2.p4_alt2(this.anInt2065 * 1673997263);
+		local5.aPacketBit_2.p1_alt1(this.anInt2066 * 1781315403);
 		client.aClass75_1.method1325(local5, (byte) -112);
 	}
 
@@ -38,15 +38,15 @@ public final class Class58_Sub1 extends Class58 implements Interface66 {
 	@Override
 	public void method32127(@OriginalArg(0) int arg0) {
 		@Pc(5) Class80_Sub31 local5 = Class623.method32440(Class443.aClass443_17, client.aClass75_1.aClass22_1, -191270971);
-		local5.aClass80_Sub36_Sub1_2.method23209(this.anInt2062 * 1536605899, -1476390233);
-		local5.aClass80_Sub36_Sub1_2.method23209(this.anInt2063 * 330793525, 1883686317);
-		local5.aClass80_Sub36_Sub1_2.method23250(this.anInt2068 * 788342471, 471409834);
-		local5.aClass80_Sub36_Sub1_2.method23211(this.anInt2067 * -768944687, -183466620);
+		local5.aPacketBit_2.p1_alt1(this.anInt2062 * 1536605899);
+		local5.aPacketBit_2.p1_alt1(this.anInt2063 * 330793525);
+		local5.aPacketBit_2.p4_alt3(this.anInt2068 * 788342471);
+		local5.aPacketBit_2.p1_alt3(this.anInt2067 * -768944687);
 		@Pc(51) int local51 = (this.aBoolean414 ? 2 : 0) | (this.aBoolean415 ? 1 : 0);
-		local5.aClass80_Sub36_Sub1_2.method23351(local51, -711109028);
-		local5.aClass80_Sub36_Sub1_2.method23155(this.anInt2064 * 994954725, (byte) -81);
-		local5.aClass80_Sub36_Sub1_2.method23410(this.anInt2065 * 1673997263, (byte) -106);
-		local5.aClass80_Sub36_Sub1_2.method23209(this.anInt2066 * 1781315403, -120667921);
+		local5.aPacketBit_2.p1_alt2(local51);
+		local5.aPacketBit_2.p2(this.anInt2064 * 994954725);
+		local5.aPacketBit_2.p4_alt2(this.anInt2065 * 1673997263);
+		local5.aPacketBit_2.p1_alt1(this.anInt2066 * 1781315403);
 		client.aClass75_1.method1325(local5, (byte) -45);
 	}
 
@@ -54,15 +54,15 @@ public final class Class58_Sub1 extends Class58 implements Interface66 {
 	@Override
 	public void method32128() {
 		@Pc(5) Class80_Sub31 local5 = Class623.method32440(Class443.aClass443_17, client.aClass75_1.aClass22_1, -191270971);
-		local5.aClass80_Sub36_Sub1_2.method23209(this.anInt2062 * 1536605899, -293262824);
-		local5.aClass80_Sub36_Sub1_2.method23209(this.anInt2063 * 330793525, 485265755);
-		local5.aClass80_Sub36_Sub1_2.method23250(this.anInt2068 * 788342471, 1711252937);
-		local5.aClass80_Sub36_Sub1_2.method23211(this.anInt2067 * -768944687, -183466620);
+		local5.aPacketBit_2.p1_alt1(this.anInt2062 * 1536605899);
+		local5.aPacketBit_2.p1_alt1(this.anInt2063 * 330793525);
+		local5.aPacketBit_2.p4_alt3(this.anInt2068 * 788342471);
+		local5.aPacketBit_2.p1_alt3(this.anInt2067 * -768944687);
 		@Pc(51) int local51 = (this.aBoolean414 ? 2 : 0) | (this.aBoolean415 ? 1 : 0);
-		local5.aClass80_Sub36_Sub1_2.method23351(local51, -711109028);
-		local5.aClass80_Sub36_Sub1_2.method23155(this.anInt2064 * 994954725, (byte) -69);
-		local5.aClass80_Sub36_Sub1_2.method23410(this.anInt2065 * 1673997263, (byte) -119);
-		local5.aClass80_Sub36_Sub1_2.method23209(this.anInt2066 * 1781315403, -764730869);
+		local5.aPacketBit_2.p1_alt2(local51);
+		local5.aPacketBit_2.p2(this.anInt2064 * 994954725);
+		local5.aPacketBit_2.p4_alt2(this.anInt2065 * 1673997263);
+		local5.aPacketBit_2.p1_alt1(this.anInt2066 * 1781315403);
 		client.aClass75_1.method1325(local5, (byte) -11);
 	}
 }

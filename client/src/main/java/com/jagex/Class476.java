@@ -38,7 +38,7 @@ public final class Class476 implements Interface6 {
 					throw new IOException();
 				}
 			}
-			local7 = new Class80_Sub37(new Class80_Sub36(local20), client.aClass722_4, 0);
+			local7 = new Class80_Sub37(new Packet(local20), client.aClass722_4, 0);
 		} catch (@Pc(60) Exception local60) {
 		}
 		try {

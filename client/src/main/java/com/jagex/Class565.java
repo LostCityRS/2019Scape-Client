@@ -93,8 +93,8 @@ public final class Class565 {
 	@OriginalMember(owner = "client!sz", name = "kp", descriptor = "(III)V")
 	public static void method31481(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		@Pc(5) Class80_Sub31 local5 = Class623.method32440(Class443.aClass443_99, client.aClass75_1.aClass22_1, -191270971);
-		local5.aClass80_Sub36_Sub1_2.method23155(arg1, (byte) -120);
-		local5.aClass80_Sub36_Sub1_2.method23345(arg0, (byte) 66);
+		local5.aPacketBit_2.p2(arg1);
+		local5.aPacketBit_2.p4(arg0);
 		client.aClass75_1.method1325(local5, (byte) -74);
 	}
 

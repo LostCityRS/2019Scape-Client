@@ -36,7 +36,7 @@ public final class Class30 implements Interface69 {
 	@OriginalMember(owner = "client!abd", name = "t", descriptor = "()J")
 	@Override
 	public long method674() {
-		@Pc(1) long[] local1 = Class80_Sub36.aLongArray18;
+		@Pc(1) long[] local1 = Packet.crc64table;
 		@Pc(3) long local3 = -1L;
 		@Pc(20) long local20 = local3 >>> 8 ^ local1[(int) ((local3 ^ (long) (this.anInt100 * -2027337575)) & 0xFFL)];
 		@Pc(39) long local39 = local20 >>> 8 ^ local1[(int) ((local20 ^ (long) (this.anInt98 * -971921325 >> 8)) & 0xFFL)];
@@ -57,7 +57,7 @@ public final class Class30 implements Interface69 {
 	@OriginalMember(owner = "client!abd", name = "e", descriptor = "()J")
 	@Override
 	public long method673() {
-		@Pc(1) long[] local1 = Class80_Sub36.aLongArray18;
+		@Pc(1) long[] local1 = Packet.crc64table;
 		@Pc(3) long local3 = -1L;
 		@Pc(20) long local20 = local3 >>> 8 ^ local1[(int) ((local3 ^ (long) (this.anInt100 * -2027337575)) & 0xFFL)];
 		@Pc(39) long local39 = local20 >>> 8 ^ local1[(int) ((local20 ^ (long) (this.anInt98 * -971921325 >> 8)) & 0xFFL)];

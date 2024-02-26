@@ -27,15 +27,15 @@ public final class Class103_Sub21 extends Class103 {
 	}
 
 	@OriginalMember(owner = "client!agt", name = "<init>", descriptor = "(Lclient!ald;Z)V")
-	Class103_Sub21(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) boolean arg1) {
+	Class103_Sub21(@OriginalArg(0) Packet arg0, @OriginalArg(1) boolean arg1) {
 		super(arg0);
-		@Pc(6) int local6 = arg0.method23178((byte) -94);
+		@Pc(6) int local6 = arg0.g2();
 		if (arg1) {
 			this.aLong30 = ((long) local6 | 0x100000000L) * -4912055674270598055L;
 		} else {
 			this.aLong30 = (long) local6 * -4912055674270598055L;
 		}
-		this.anInt1011 = arg0.method23182(610672319) * 327107067;
+		this.anInt1011 = arg0.g4() * 327107067;
 	}
 
 	@OriginalMember(owner = "client!agt", name = "l", descriptor = "()V")

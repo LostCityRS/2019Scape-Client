@@ -21,11 +21,11 @@ public final class Class80_Sub1_Sub13_Sub2 extends Class80_Sub1_Sub13 {
 	float aFloat242;
 
 	@OriginalMember(owner = "client!ati", name = "<init>", descriptor = "(ILclient!ald;)V")
-	Class80_Sub1_Sub13_Sub2(@OriginalArg(0) int arg0, @OriginalArg(1) Class80_Sub36 arg1) {
+	Class80_Sub1_Sub13_Sub2(@OriginalArg(0) int arg0, @OriginalArg(1) Packet arg1) {
 		super(arg0);
-		this.aClass337_1 = Class643.method33028(arg1.method23362(-632429728), (byte) -98);
-		this.aFloat241 = arg1.method23188(-1824430835);
-		this.aFloat242 = arg1.method23188(573258820);
+		this.aClass337_1 = Class643.method33028(arg1.g1(), (byte) -98);
+		this.aFloat241 = arg1.gFloat();
+		this.aFloat242 = arg1.gFloat();
 	}
 
 	@OriginalMember(owner = "client!ati", name = "<init>", descriptor = "(ILclient!ig;FF)V")
@@ -84,18 +84,18 @@ public final class Class80_Sub1_Sub13_Sub2 extends Class80_Sub1_Sub13 {
 
 	@OriginalMember(owner = "client!ati", name = "a", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method23756(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.aClass337_1 = Class643.method33028(arg0.method23362(-1509950417), (byte) -52);
-		this.aFloat241 = arg0.method23188(1865884212);
-		this.aFloat242 = arg0.method23188(1827583993);
+	public void method23756(@OriginalArg(0) Packet arg0) {
+		this.aClass337_1 = Class643.method33028(arg0.g1(), (byte) -52);
+		this.aFloat241 = arg0.gFloat();
+		this.aFloat242 = arg0.gFloat();
 	}
 
 	@OriginalMember(owner = "client!ati", name = "u", descriptor = "(Lclient!ald;I)V")
 	@Override
-	public void method23749(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		this.aClass337_1 = Class643.method33028(arg0.method23362(-227979758), (byte) 8);
-		this.aFloat241 = arg0.method23188(513762966);
-		this.aFloat242 = arg0.method23188(-649131774);
+	public void method23749(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		this.aClass337_1 = Class643.method33028(arg0.g1(), (byte) 8);
+		this.aFloat241 = arg0.gFloat();
+		this.aFloat242 = arg0.gFloat();
 	}
 
 	@OriginalMember(owner = "client!ati", name = "g", descriptor = "(F)V")
@@ -135,18 +135,18 @@ public final class Class80_Sub1_Sub13_Sub2 extends Class80_Sub1_Sub13 {
 
 	@OriginalMember(owner = "client!ati", name = "o", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method23754(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.aClass337_1 = Class643.method33028(arg0.method23362(1054238212), (byte) -67);
-		this.aFloat241 = arg0.method23188(-1679293459);
-		this.aFloat242 = arg0.method23188(-1197928138);
+	public void method23754(@OriginalArg(0) Packet arg0) {
+		this.aClass337_1 = Class643.method33028(arg0.g1(), (byte) -67);
+		this.aFloat241 = arg0.gFloat();
+		this.aFloat242 = arg0.gFloat();
 	}
 
 	@OriginalMember(owner = "client!ati", name = "j", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method23747(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.aClass337_1 = Class643.method33028(arg0.method23362(209133707), (byte) -96);
-		this.aFloat241 = arg0.method23188(719256696);
-		this.aFloat242 = arg0.method23188(-942474240);
+	public void method23747(@OriginalArg(0) Packet arg0) {
+		this.aClass337_1 = Class643.method33028(arg0.g1(), (byte) -96);
+		this.aFloat241 = arg0.gFloat();
+		this.aFloat242 = arg0.gFloat();
 	}
 
 	@OriginalMember(owner = "client!ati", name = "l", descriptor = "(F)V")

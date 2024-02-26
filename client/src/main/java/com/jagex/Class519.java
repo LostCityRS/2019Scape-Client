@@ -210,7 +210,7 @@ public final class Class519 implements Interface75 {
 	}
 
 	@OriginalMember(owner = "client!qv", name = "l", descriptor = "(Lclient!ald;I)Ljava/lang/Object;")
-	public Object method30595(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	public Object method30595(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		return this.anInterface9_1.method30638(arg0, (short) 961);
 	}
 

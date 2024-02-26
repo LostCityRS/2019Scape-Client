@@ -83,9 +83,9 @@ public final class Class483 {
 		this.aByteArray93 = null;
 		if (arg1 != null) {
 			@Pc(11) short local11 = 10240;
-			@Pc(17) Class80_Sub36 local17 = new Class80_Sub36(local11, true);
+			@Pc(17) Packet local17 = new Packet(local11, true);
 			@Pc(19) int local19 = 0;
-			@Pc(23) byte[] local23 = Class701.method37085(1024, 1334334435);
+			@Pc(23) byte[] local23 = ByteArrayPool.create(1024);
 			@Pc(53) int local53;
 			while (local19 >= 0) {
 				try {
@@ -95,24 +95,24 @@ public final class Class483 {
 					local19 = -1;
 				}
 				if (local19 > 0) {
-					if (local19 + local17.anInt3152 * -1380987821 >= local17.aByteArray61.length) {
-						local53 = local17.aByteArray61.length + 10240;
-						@Pc(58) byte[] local58 = Class701.method37088(local53, true, (byte) -25);
-						System.arraycopy(local17.aByteArray61, 0, local58, 0, local17.anInt3152 * -1380987821);
-						Class701.method37086(local17.aByteArray61, -2081608905);
-						local17.aByteArray61 = local58;
+					if (local19 + local17.pos * -1380987821 >= local17.data.length) {
+						local53 = local17.data.length + 10240;
+						@Pc(58) byte[] local58 = ByteArrayPool.create(local53, true);
+						System.arraycopy(local17.data, 0, local58, 0, local17.pos * -1380987821);
+						ByteArrayPool.release(local17.data, -2081608905);
+						local17.data = local58;
 					}
-					local17.method23168(local23, 0, local19, (byte) 39);
+					local17.pdata(local23, 0, local19);
 				}
 			}
 			for (local53 = 0; local53 < arg2.anInt3234 * -190580633; local53++) {
-				local17.method23154(0, 1275868335);
+				local17.p1(0);
 			}
-			@Pc(102) byte[] local102 = new byte[local17.anInt3152 * -1380987821];
-			System.arraycopy(local17.aByteArray61, 0, local102, 0, local17.anInt3152 * -1380987821);
-			local17.method23197((byte) 44);
+			@Pc(102) byte[] local102 = new byte[local17.pos * -1380987821];
+			System.arraycopy(local17.data, 0, local102, 0, local17.pos * -1380987821);
+			local17.release();
 			local17 = null;
-			Class701.method37086(local23, -569137688);
+			ByteArrayPool.release(local23, -569137688);
 			@Pc(122) Object local122 = null;
 			this.aByteArray93 = local102;
 			try {

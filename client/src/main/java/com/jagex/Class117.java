@@ -37,13 +37,13 @@ public abstract class Class117 implements Interface3 {
 	}
 
 	@OriginalMember(owner = "client!fm", name = "e", descriptor = "(Lclient!asa;B)V")
-	public static void method8817(@OriginalArg(0) Class80_Sub36_Sub1 arg0, @OriginalArg(1) byte arg1) {
+	public static void method8817(@OriginalArg(0) PacketBit arg0, @OriginalArg(1) byte arg1) {
 		@Pc(4) Class80_Sub41 local4 = (Class80_Sub41) Class56.aClass8_3.method247(129206984);
 		if (local4 == null) {
 			return;
 		}
-		@Pc(12) int local12 = arg0.anInt3152 * -1380987821;
-		arg0.method23345(local4.anInt1944 * 1541484113, (byte) 107);
+		@Pc(12) int local12 = arg0.pos * -1380987821;
+		arg0.p4(local4.anInt1944 * 1541484113);
 		for (@Pc(21) int local21 = 0; local21 < local4.anInt1945 * -743322597; local21++) {
 			if (local4.anIntArray197[local21] == 0) {
 				try {
@@ -53,17 +53,17 @@ public abstract class Class117 implements Interface3 {
 					if (local45 == 0) {
 						local53 = local4.aFieldArray1[local21];
 						local57 = local53.getInt(null);
-						arg0.method23154(0, 1275868335);
-						arg0.method23345(local57, (byte) 60);
+						arg0.p1(0);
+						arg0.p4(local57);
 					} else if (local45 == 1) {
 						local53 = local4.aFieldArray1[local21];
 						local53.setInt(null, local4.anIntArray199[local21]);
-						arg0.method23154(0, 1275868335);
+						arg0.p1(0);
 					} else if (local45 == 2) {
 						local53 = local4.aFieldArray1[local21];
 						local57 = local53.getModifiers();
-						arg0.method23154(0, 1275868335);
-						arg0.method23345(local57, (byte) 42);
+						arg0.p1(0);
+						arg0.p4(local57);
 					}
 					@Pc(113) Method local113;
 					if (local45 == 3) {
@@ -76,52 +76,52 @@ public abstract class Class117 implements Interface3 {
 						}
 						@Pc(150) Object local150 = local113.invoke(null, local122);
 						if (local150 == null) {
-							arg0.method23154(0, 1275868335);
+							arg0.p1(0);
 						} else if (local150 instanceof Number) {
-							arg0.method23154(1, 1275868335);
-							arg0.method23162(((Number) local150).longValue());
+							arg0.p1(1);
+							arg0.p8(((Number) local150).longValue());
 						} else if (local150 instanceof String) {
-							arg0.method23154(2, 1275868335);
-							arg0.method23165((String) local150, 1755954114);
+							arg0.p1(2);
+							arg0.pjstr((String) local150);
 						} else {
-							arg0.method23154(4, 1275868335);
+							arg0.p1(4);
 						}
 					} else if (local45 == 4) {
 						local113 = local4.aMethodArray1[local21];
 						local57 = local113.getModifiers();
-						arg0.method23154(0, 1275868335);
-						arg0.method23345(local57, (byte) 78);
+						arg0.p1(0);
+						arg0.p4(local57);
 					}
 				} catch (@Pc(210) ClassNotFoundException local210) {
-					arg0.method23154(-10, 1275868335);
+					arg0.p1(-10);
 				} catch (@Pc(216) InvalidClassException local216) {
-					arg0.method23154(-11, 1275868335);
+					arg0.p1(-11);
 				} catch (@Pc(222) StreamCorruptedException local222) {
-					arg0.method23154(-12, 1275868335);
+					arg0.p1(-12);
 				} catch (@Pc(228) OptionalDataException local228) {
-					arg0.method23154(-13, 1275868335);
+					arg0.p1(-13);
 				} catch (@Pc(234) IllegalAccessException local234) {
-					arg0.method23154(-14, 1275868335);
+					arg0.p1(-14);
 				} catch (@Pc(240) IllegalArgumentException local240) {
-					arg0.method23154(-15, 1275868335);
+					arg0.p1(-15);
 				} catch (@Pc(246) InvocationTargetException local246) {
-					arg0.method23154(-16, 1275868335);
+					arg0.p1(-16);
 				} catch (@Pc(252) SecurityException local252) {
-					arg0.method23154(-17, 1275868335);
+					arg0.p1(-17);
 				} catch (@Pc(258) IOException local258) {
-					arg0.method23154(-18, 1275868335);
+					arg0.p1(-18);
 				} catch (@Pc(264) NullPointerException local264) {
-					arg0.method23154(-19, 1275868335);
+					arg0.p1(-19);
 				} catch (@Pc(270) Exception local270) {
-					arg0.method23154(-20, 1275868335);
+					arg0.p1(-20);
 				} catch (@Pc(276) Throwable local276) {
-					arg0.method23154(-21, 1275868335);
+					arg0.p1(-21);
 				}
 			} else {
-				arg0.method23154(local4.anIntArray197[local21], 1275868335);
+				arg0.p1(local4.anIntArray197[local21]);
 			}
 		}
-		arg0.method23207(local12, (byte) 101);
+		arg0.addcrc(local12);
 		local4.method24395((byte) 27);
 	}
 

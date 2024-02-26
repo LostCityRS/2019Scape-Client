@@ -282,9 +282,9 @@ public final class Class89 implements Interface11, Interface5 {
 
 	@OriginalMember(owner = "client!adu", name = "u", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method37009(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method37009(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-37161470);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -294,9 +294,9 @@ public final class Class89 implements Interface11, Interface5 {
 
 	@OriginalMember(owner = "client!adu", name = "t", descriptor = "(Lclient!ald;I)V")
 	@Override
-	public void method37006(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	public void method37006(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-201444020);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -305,15 +305,15 @@ public final class Class89 implements Interface11, Interface5 {
 	}
 
 	@OriginalMember(owner = "client!adu", name = "l", descriptor = "(Lclient!ald;II)V")
-	void method1801(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	void method1801(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (arg1 == 1) {
-			this.anInt318 = arg0.method23362(-1243155296) * 47920369;
+			this.anInt318 = arg0.g1() * 47920369;
 		} else if (arg1 == 2) {
-			this.anInt315 = arg0.method23178((byte) -37) * 1989715637;
+			this.anInt315 = arg0.g2() * 1989715637;
 		} else if (arg1 == 3) {
-			this.anInt317 = arg0.method23178((byte) -63) * -41971957;
+			this.anInt317 = arg0.g2() * -41971957;
 		} else if (arg1 == 4) {
-			this.anInt316 = arg0.method23179(1907243800) * 847497353;
+			this.anInt316 = arg0.g2s() * 847497353;
 		}
 	}
 
@@ -328,15 +328,15 @@ public final class Class89 implements Interface11, Interface5 {
 	}
 
 	@OriginalMember(owner = "client!adu", name = "m", descriptor = "(Lclient!ald;I)V")
-	void method1802(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method1802(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.anInt318 = arg0.method23362(663368001) * 47920369;
+			this.anInt318 = arg0.g1() * 47920369;
 		} else if (arg1 == 2) {
-			this.anInt315 = arg0.method23178((byte) -117) * 1989715637;
+			this.anInt315 = arg0.g2() * 1989715637;
 		} else if (arg1 == 3) {
-			this.anInt317 = arg0.method23178((byte) -95) * -41971957;
+			this.anInt317 = arg0.g2() * -41971957;
 		} else if (arg1 == 4) {
-			this.anInt316 = arg0.method23179(758137927) * 847497353;
+			this.anInt316 = arg0.g2s() * 847497353;
 		}
 	}
 
@@ -361,15 +361,15 @@ public final class Class89 implements Interface11, Interface5 {
 	}
 
 	@OriginalMember(owner = "client!adu", name = "i", descriptor = "(Lclient!ald;I)V")
-	void method1803(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method1803(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.anInt318 = arg0.method23362(-1824400871) * 47920369;
+			this.anInt318 = arg0.g1() * 47920369;
 		} else if (arg1 == 2) {
-			this.anInt315 = arg0.method23178((byte) -32) * 1989715637;
+			this.anInt315 = arg0.g2() * 1989715637;
 		} else if (arg1 == 3) {
-			this.anInt317 = arg0.method23178((byte) -45) * -41971957;
+			this.anInt317 = arg0.g2() * -41971957;
 		} else if (arg1 == 4) {
-			this.anInt316 = arg0.method23179(-336579063) * 847497353;
+			this.anInt316 = arg0.g2s() * 847497353;
 		}
 	}
 

@@ -43,7 +43,7 @@ public final class Class444 implements Interface48 {
 		local6 = new Class433();
 		local6.anInt4727 = arg0 * -1583789171;
 		if (local18 != null) {
-			local6.method29097(new Class80_Sub36(local18), -521900089);
+			local6.method29097(new Packet(local18), -521900089);
 		}
 		local6.method29096(-2028072152);
 		this.aClass243_82.method26253(local6, (long) arg0);
@@ -66,7 +66,7 @@ public final class Class444 implements Interface48 {
 		local6 = new Class433();
 		local6.anInt4727 = arg0 * -1583789171;
 		if (local18 != null) {
-			local6.method29097(new Class80_Sub36(local18), -685727451);
+			local6.method29097(new Packet(local18), -685727451);
 		}
 		local6.method29096(-2028072152);
 		this.aClass243_82.method26253(local6, (long) arg0);
@@ -89,7 +89,7 @@ public final class Class444 implements Interface48 {
 		local6 = new Class433();
 		local6.anInt4727 = arg0 * -1583789171;
 		if (local18 != null) {
-			local6.method29097(new Class80_Sub36(local18), -1488565853);
+			local6.method29097(new Packet(local18), -1488565853);
 		}
 		local6.method29096(-2028072152);
 		this.aClass243_82.method26253(local6, (long) arg0);
@@ -112,7 +112,7 @@ public final class Class444 implements Interface48 {
 		local6 = new Class433();
 		local6.anInt4727 = arg0 * -1583789171;
 		if (local18 != null) {
-			local6.method29097(new Class80_Sub36(local18), -100357809);
+			local6.method29097(new Packet(local18), -100357809);
 		}
 		local6.method29096(-2028072152);
 		this.aClass243_82.method26253(local6, (long) arg0);

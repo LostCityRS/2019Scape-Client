@@ -18,7 +18,7 @@ public final class Class282 implements Interface26 {
 	@OriginalMember(owner = "client!ga", name = "ay", descriptor = "(I)V")
 	static void method26867(@OriginalArg(0) int arg0) {
 		Class238.aClass75_3.method1314(1587586714);
-		Class238.aClass75_3.aClass80_Sub36_Sub1_1.anInt3152 = 0;
+		Class238.aClass75_3.aPacketBit_1.pos = 0;
 		Class238.aClass75_3.aClass448_3 = null;
 		Class238.aClass75_3.aClass448_4 = null;
 		Class238.aClass75_3.aClass448_1 = null;
@@ -119,12 +119,12 @@ public final class Class282 implements Interface26 {
 	}
 
 	@OriginalMember(owner = "client!ga", name = "<init>", descriptor = "(Lclient!gc;Lclient!ald;)V")
-	Class282(@OriginalArg(0) Class284 arg0, @OriginalArg(1) Class80_Sub36 arg1) {
+	Class282(@OriginalArg(0) Class284 arg0, @OriginalArg(1) Packet arg1) {
 		this.aClass284_4 = arg0;
-		if (arg1.method23178((byte) -83) == 65535) {
+		if (arg1.g2() == 65535) {
 			this.aClass460_1 = null;
 		} else {
-			arg1.anInt3152 -= 2068361142;
+			arg1.pos -= 2068361142;
 			this.aClass460_1 = arg0.anInterface27_2.method13(2018730667).method1820(arg1, 341178500);
 		}
 	}

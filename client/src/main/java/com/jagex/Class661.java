@@ -59,9 +59,9 @@ public final class Class661 {
 	}
 
 	@OriginalMember(owner = "client!xi", name = "e", descriptor = "(Lclient!ald;I)Lclient!lk;")
-	public static Class130 method33320(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	public static Class130 method33320(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		@Pc(3) Class130 local3 = Class364.method28214(arg0, (byte) 0);
-		@Pc(7) int local7 = arg0.method23181((byte) 9);
+		@Pc(7) int local7 = arg0.g3s();
 		return new Class130_Sub1(local3.anInt1171 * -534993123, local3.aClass391_6, local3.aClass383_6, local3.anInt1172 * -1094014189, local3.anInt1173 * -23088371, local7);
 	}
 

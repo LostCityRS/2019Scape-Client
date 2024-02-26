@@ -27,11 +27,11 @@ public abstract class Class103_Sub17 extends Class103 {
 	}
 
 	@OriginalMember(owner = "client!agn", name = "<init>", descriptor = "(Lclient!ald;)V")
-	Class103_Sub17(@OriginalArg(0) Class80_Sub36 arg0) {
+	Class103_Sub17(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.anInt2750 = arg0.method23178((byte) -128) * -1879043199;
-		this.anInt2749 = arg0.method23178((byte) -124) * 1471593521;
-		this.anInt2751 = arg0.method23362(-766492564) * -1047450427;
+		this.anInt2750 = arg0.g2() * -1879043199;
+		this.anInt2749 = arg0.g2() * 1471593521;
+		this.anInt2751 = arg0.g1() * -1047450427;
 	}
 
 	@OriginalMember(owner = "client!agn", name = "u", descriptor = "(I)Z")

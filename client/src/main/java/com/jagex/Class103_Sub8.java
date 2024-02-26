@@ -58,27 +58,27 @@ public final class Class103_Sub8 extends Class103 {
 	}
 
 	@OriginalMember(owner = "client!agd", name = "<init>", descriptor = "(Lclient!ald;)V")
-	Class103_Sub8(@OriginalArg(0) Class80_Sub36 arg0) {
+	Class103_Sub8(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.anInt934 = arg0.method23178((byte) -70) * -936819157;
-		@Pc(13) int local13 = arg0.method23362(-148257754);
+		this.anInt934 = arg0.g2() * -936819157;
+		@Pc(13) int local13 = arg0.g1();
 		if ((local13 & 0x1) == 0) {
 			this.anInt931 = -1586483179;
 			this.anInt933 = 661220959;
 		} else {
-			this.anInt931 = arg0.method23178((byte) -41) * 1586483179;
-			this.anInt933 = arg0.method23178((byte) -11) * -661220959;
+			this.anInt931 = arg0.g2() * 1586483179;
+			this.anInt933 = arg0.g2() * -661220959;
 		}
 		if ((local13 & 0x2) == 0) {
 			this.anInt932 = 1700990027;
 			this.anInt935 = -1989316981;
 		} else {
-			this.anInt932 = arg0.method23178((byte) -47) * -1700990027;
-			this.anInt935 = arg0.method23178((byte) -115) * 1989316981;
+			this.anInt932 = arg0.g2() * -1700990027;
+			this.anInt935 = arg0.g2() * 1989316981;
 		}
 		if ((local13 & 0x4) != 0) {
-			@Pc(73) int local73 = arg0.method23178((byte) -94);
-			@Pc(77) int local77 = arg0.method23178((byte) -3);
+			@Pc(73) int local73 = arg0.g2();
+			@Pc(77) int local77 = arg0.g2();
 			@Pc(83) int local83 = local73 * 255 / local77;
 			if (local73 > 0 && local83 < 1) {
 				@Pc(90) boolean local90 = true;

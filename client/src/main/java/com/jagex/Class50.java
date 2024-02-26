@@ -102,59 +102,59 @@ public final class Class50 implements Interface11, Interface5 {
 	}
 
 	@OriginalMember(owner = "client!abz", name = "d", descriptor = "(Lclient!ald;I)V")
-	void method1013(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method1013(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		@Pc(8) char local8;
 		if (arg1 == 1) {
-			local8 = Class284.method26887(arg0.method23177((byte) 7), 1896589581);
+			local8 = Class284.method26887(arg0.g1b(), 1896589581);
 			this.aClass521_2 = Class521.method30626(local8, -2015931105);
 		} else if (arg1 == 2) {
-			local8 = Class284.method26887(arg0.method23177((byte) -120), 1896589581);
+			local8 = Class284.method26887(arg0.g1b(), 1896589581);
 			this.aClass521_1 = Class521.method30626(local8, -2015931105);
 		} else if (arg1 == 3) {
-			this.aString9 = arg0.method23376((short) 25069);
+			this.aString9 = arg0.gjstr();
 		} else if (arg1 == 4) {
-			this.anInt188 = arg0.method23182(2026500903) * 147862363;
+			this.anInt188 = arg0.g4() * 147862363;
 		} else {
 			@Pc(83) int local83;
 			@Pc(73) int local73;
 			if (arg1 == 5 || arg1 == 6) {
-				this.anInt189 = arg0.method23178((byte) -72) * -861961745;
+				this.anInt189 = arg0.g2() * -861961745;
 				this.aMap2 = new HashMap(this.anInt189 * 1360383247);
 				for (local73 = 0; local73 < this.anInt189 * 1360383247; local73++) {
-					local83 = arg0.method23182(-1594952963);
+					local83 = arg0.g4();
 					@Pc(90) Object local90;
 					if (arg1 == 5) {
-						local90 = arg0.method23376((short) 11117);
+						local90 = arg0.gjstr();
 					} else {
-						local90 = Integer.valueOf(arg0.method23182(2002646821));
+						local90 = Integer.valueOf(arg0.g4());
 					}
 					this.aMap2.put(Integer.valueOf(local83), local90);
 				}
 			} else if (arg1 == 7 || arg1 == 8) {
-				local73 = arg0.method23178((byte) -35);
-				this.anInt189 = arg0.method23178((byte) -14) * -861961745;
+				local73 = arg0.g2();
+				this.anInt189 = arg0.g2() * -861961745;
 				this.anObjectArray1 = new Object[local73];
 				for (local83 = 0; local83 < this.anInt189 * 1360383247; local83++) {
-					@Pc(143) int local143 = arg0.method23178((byte) -93);
+					@Pc(143) int local143 = arg0.g2();
 					if (arg1 == 7) {
-						this.anObjectArray1[local143] = arg0.method23376((short) 10794);
+						this.anObjectArray1[local143] = arg0.gjstr();
 					} else {
-						this.anObjectArray1[local143] = Integer.valueOf(arg0.method23182(-685378564));
+						this.anObjectArray1[local143] = Integer.valueOf(arg0.g4());
 					}
 				}
 			} else if (arg1 == 101) {
-				this.aClass521_2 = (Class521) Class80_Sub39.method15030(Class521.method30628(1333296275), arg0.method23195(1864865011), -958640959);
+				this.aClass521_2 = (Class521) Class80_Sub39.method15030(Class521.method30628(1333296275), arg0.gSmart1or2(), -958640959);
 			} else if (arg1 == 102) {
-				this.aClass521_1 = (Class521) Class80_Sub39.method15030(Class521.method30628(1571051127), arg0.method23195(1658753245), -1051961921);
+				this.aClass521_1 = (Class521) Class80_Sub39.method15030(Class521.method30628(1571051127), arg0.gSmart1or2(), -1051961921);
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!abz", name = "t", descriptor = "(Lclient!ald;I)V")
 	@Override
-	public void method37006(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	public void method37006(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-1530703978);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -296,9 +296,9 @@ public final class Class50 implements Interface11, Interface5 {
 
 	@OriginalMember(owner = "client!abz", name = "u", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method37009(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method37009(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-1211165477);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -375,50 +375,50 @@ public final class Class50 implements Interface11, Interface5 {
 	}
 
 	@OriginalMember(owner = "client!abz", name = "h", descriptor = "(Lclient!ald;I)V")
-	void method1023(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method1023(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		@Pc(8) char local8;
 		if (arg1 == 1) {
-			local8 = Class284.method26887(arg0.method23177((byte) -15), 1896589581);
+			local8 = Class284.method26887(arg0.g1b(), 1896589581);
 			this.aClass521_2 = Class521.method30626(local8, -2015931105);
 		} else if (arg1 == 2) {
-			local8 = Class284.method26887(arg0.method23177((byte) -57), 1896589581);
+			local8 = Class284.method26887(arg0.g1b(), 1896589581);
 			this.aClass521_1 = Class521.method30626(local8, -2015931105);
 		} else if (arg1 == 3) {
-			this.aString9 = arg0.method23376((short) 17679);
+			this.aString9 = arg0.gjstr();
 		} else if (arg1 == 4) {
-			this.anInt188 = arg0.method23182(-743312642) * 147862363;
+			this.anInt188 = arg0.g4() * 147862363;
 		} else {
 			@Pc(83) int local83;
 			@Pc(73) int local73;
 			if (arg1 == 5 || arg1 == 6) {
-				this.anInt189 = arg0.method23178((byte) -106) * -861961745;
+				this.anInt189 = arg0.g2() * -861961745;
 				this.aMap2 = new HashMap(this.anInt189 * 1360383247);
 				for (local73 = 0; local73 < this.anInt189 * 1360383247; local73++) {
-					local83 = arg0.method23182(-1052439057);
+					local83 = arg0.g4();
 					@Pc(90) Object local90;
 					if (arg1 == 5) {
-						local90 = arg0.method23376((short) 12200);
+						local90 = arg0.gjstr();
 					} else {
-						local90 = Integer.valueOf(arg0.method23182(670818824));
+						local90 = Integer.valueOf(arg0.g4());
 					}
 					this.aMap2.put(Integer.valueOf(local83), local90);
 				}
 			} else if (arg1 == 7 || arg1 == 8) {
-				local73 = arg0.method23178((byte) -119);
-				this.anInt189 = arg0.method23178((byte) -5) * -861961745;
+				local73 = arg0.g2();
+				this.anInt189 = arg0.g2() * -861961745;
 				this.anObjectArray1 = new Object[local73];
 				for (local83 = 0; local83 < this.anInt189 * 1360383247; local83++) {
-					@Pc(143) int local143 = arg0.method23178((byte) -102);
+					@Pc(143) int local143 = arg0.g2();
 					if (arg1 == 7) {
-						this.anObjectArray1[local143] = arg0.method23376((short) 14529);
+						this.anObjectArray1[local143] = arg0.gjstr();
 					} else {
-						this.anObjectArray1[local143] = Integer.valueOf(arg0.method23182(385886193));
+						this.anObjectArray1[local143] = Integer.valueOf(arg0.g4());
 					}
 				}
 			} else if (arg1 == 101) {
-				this.aClass521_2 = (Class521) Class80_Sub39.method15030(Class521.method30628(1967978399), arg0.method23195(2075730483), -1653818763);
+				this.aClass521_2 = (Class521) Class80_Sub39.method15030(Class521.method30628(1967978399), arg0.gSmart1or2(), -1653818763);
 			} else if (arg1 == 102) {
-				this.aClass521_1 = (Class521) Class80_Sub39.method15030(Class521.method30628(1957019721), arg0.method23195(1395339208), -1978348100);
+				this.aClass521_1 = (Class521) Class80_Sub39.method15030(Class521.method30628(1957019721), arg0.gSmart1or2(), -1978348100);
 			}
 		}
 	}
@@ -447,50 +447,50 @@ public final class Class50 implements Interface11, Interface5 {
 	}
 
 	@OriginalMember(owner = "client!abz", name = "l", descriptor = "(Lclient!ald;II)V")
-	void method1028(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	void method1028(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		@Pc(8) char local8;
 		if (arg1 == 1) {
-			local8 = Class284.method26887(arg0.method23177((byte) -48), 1896589581);
+			local8 = Class284.method26887(arg0.g1b(), 1896589581);
 			this.aClass521_2 = Class521.method30626(local8, -2015931105);
 		} else if (arg1 == 2) {
-			local8 = Class284.method26887(arg0.method23177((byte) -25), 1896589581);
+			local8 = Class284.method26887(arg0.g1b(), 1896589581);
 			this.aClass521_1 = Class521.method30626(local8, -2015931105);
 		} else if (arg1 == 3) {
-			this.aString9 = arg0.method23376((short) 4341);
+			this.aString9 = arg0.gjstr();
 		} else if (arg1 == 4) {
-			this.anInt188 = arg0.method23182(-1813075931) * 147862363;
+			this.anInt188 = arg0.g4() * 147862363;
 		} else {
 			@Pc(83) int local83;
 			@Pc(73) int local73;
 			if (arg1 == 5 || arg1 == 6) {
-				this.anInt189 = arg0.method23178((byte) -47) * -861961745;
+				this.anInt189 = arg0.g2() * -861961745;
 				this.aMap2 = new HashMap(this.anInt189 * 1360383247);
 				for (local73 = 0; local73 < this.anInt189 * 1360383247; local73++) {
-					local83 = arg0.method23182(466231553);
+					local83 = arg0.g4();
 					@Pc(90) Object local90;
 					if (arg1 == 5) {
-						local90 = arg0.method23376((short) 31245);
+						local90 = arg0.gjstr();
 					} else {
-						local90 = Integer.valueOf(arg0.method23182(-1760148675));
+						local90 = Integer.valueOf(arg0.g4());
 					}
 					this.aMap2.put(Integer.valueOf(local83), local90);
 				}
 			} else if (arg1 == 7 || arg1 == 8) {
-				local73 = arg0.method23178((byte) -120);
-				this.anInt189 = arg0.method23178((byte) -122) * -861961745;
+				local73 = arg0.g2();
+				this.anInt189 = arg0.g2() * -861961745;
 				this.anObjectArray1 = new Object[local73];
 				for (local83 = 0; local83 < this.anInt189 * 1360383247; local83++) {
-					@Pc(143) int local143 = arg0.method23178((byte) -20);
+					@Pc(143) int local143 = arg0.g2();
 					if (arg1 == 7) {
-						this.anObjectArray1[local143] = arg0.method23376((short) 24884);
+						this.anObjectArray1[local143] = arg0.gjstr();
 					} else {
-						this.anObjectArray1[local143] = Integer.valueOf(arg0.method23182(1511628505));
+						this.anObjectArray1[local143] = Integer.valueOf(arg0.g4());
 					}
 				}
 			} else if (arg1 == 101) {
-				this.aClass521_2 = (Class521) Class80_Sub39.method15030(Class521.method30628(1191280726), arg0.method23195(1958066403), -1794825555);
+				this.aClass521_2 = (Class521) Class80_Sub39.method15030(Class521.method30628(1191280726), arg0.gSmart1or2(), -1794825555);
 			} else if (arg1 == 102) {
-				this.aClass521_1 = (Class521) Class80_Sub39.method15030(Class521.method30628(1923490397), arg0.method23195(1680788807), -800170730);
+				this.aClass521_1 = (Class521) Class80_Sub39.method15030(Class521.method30628(1923490397), arg0.gSmart1or2(), -800170730);
 			}
 		}
 	}

@@ -34,9 +34,9 @@ public final class Class80_Sub28_Sub8 extends Class80_Sub28 {
 
 	@OriginalMember(owner = "client!arm", name = "t", descriptor = "(Lclient!ald;B)V")
 	@Override
-	void method22223(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
-		this.anInt3038 = arg0.method23178((byte) -21) * 253308501;
-		this.aByte85 = arg0.method23177((byte) -52);
+	void method22223(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
+		this.anInt3038 = arg0.g2() * 253308501;
+		this.aByte85 = arg0.g1b();
 	}
 
 	@OriginalMember(owner = "client!arm", name = "f", descriptor = "(Lclient!kf;I)V")
@@ -47,22 +47,22 @@ public final class Class80_Sub28_Sub8 extends Class80_Sub28 {
 
 	@OriginalMember(owner = "client!arm", name = "u", descriptor = "(Lclient!ald;)V")
 	@Override
-	void method22226(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.anInt3038 = arg0.method23178((byte) -127) * 253308501;
-		this.aByte85 = arg0.method23177((byte) -31);
+	void method22226(@OriginalArg(0) Packet arg0) {
+		this.anInt3038 = arg0.g2() * 253308501;
+		this.aByte85 = arg0.g1b();
 	}
 
 	@OriginalMember(owner = "client!arm", name = "l", descriptor = "(Lclient!ald;)V")
 	@Override
-	void method22224(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.anInt3038 = arg0.method23178((byte) -110) * 253308501;
-		this.aByte85 = arg0.method23177((byte) -79);
+	void method22224(@OriginalArg(0) Packet arg0) {
+		this.anInt3038 = arg0.g2() * 253308501;
+		this.aByte85 = arg0.g1b();
 	}
 
 	@OriginalMember(owner = "client!arm", name = "e", descriptor = "(Lclient!ald;)V")
 	@Override
-	void method22225(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.anInt3038 = arg0.method23178((byte) -15) * 253308501;
-		this.aByte85 = arg0.method23177((byte) -72);
+	void method22225(@OriginalArg(0) Packet arg0) {
+		this.anInt3038 = arg0.g2() * 253308501;
+		this.aByte85 = arg0.g1b();
 	}
 }

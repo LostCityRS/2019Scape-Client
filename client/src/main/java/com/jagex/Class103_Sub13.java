@@ -122,10 +122,10 @@ public final class Class103_Sub13 extends Class103 {
 	}
 
 	@OriginalMember(owner = "client!agi", name = "<init>", descriptor = "(Lclient!ald;)V")
-	Class103_Sub13(@OriginalArg(0) Class80_Sub36 arg0) {
+	Class103_Sub13(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.anInt956 = arg0.method23178((byte) -60) * -845206159;
-		this.anInt955 = arg0.method23182(874354044) * -1296310217;
+		this.anInt956 = arg0.g2() * -845206159;
+		this.anInt955 = arg0.g4() * -1296310217;
 	}
 
 	@OriginalMember(owner = "client!agi", name = "l", descriptor = "()V")

@@ -25,9 +25,9 @@ public final class Class559 {
 	}
 
 	@OriginalMember(owner = "client!ss", name = "e", descriptor = "(Lclient!ald;I)[B")
-	public static byte[] method31404(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) throws IOException {
-		@Pc(5) ByteArrayInputStream local5 = new ByteArrayInputStream(arg0.aByteArray61);
-		local5.skip((long) (arg0.anInt3152 * -1380987821));
+	public static byte[] method31404(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) throws IOException {
+		@Pc(5) ByteArrayInputStream local5 = new ByteArrayInputStream(arg0.data);
+		local5.skip((long) (arg0.pos * -1380987821));
 		return Class278.method26838(local5, arg1, -1762075568);
 	}
 

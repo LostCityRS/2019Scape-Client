@@ -51,9 +51,9 @@ public final class Class80_Sub1_Sub17 extends Class80_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!asn", name = "t", descriptor = "(Lclient!ald;B)V")
-	void method22898(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
+	void method22898(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-1406385055);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -62,30 +62,30 @@ public final class Class80_Sub1_Sub17 extends Class80_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!asn", name = "f", descriptor = "(Lclient!ald;II)V")
-	void method22899(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	void method22899(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (arg1 == 1) {
-			this.aString115 = arg0.method23376((short) 8349);
+			this.aString115 = arg0.gjstr();
 			return;
 		}
 		@Pc(15) int local15;
 		@Pc(25) int local25;
 		@Pc(39) byte local39;
 		if (arg1 == 2) {
-			local15 = arg0.method23362(-444123271);
+			local15 = arg0.g1();
 			this.anIntArray277 = new int[local15];
 			this.aCharArray3 = new char[local15];
 			for (local25 = 0; local25 < local15; local25++) {
-				this.anIntArray277[local25] = arg0.method23178((byte) -123);
-				local39 = arg0.method23177((byte) -42);
+				this.anIntArray277[local25] = arg0.g2();
+				local39 = arg0.g1b();
 				this.aCharArray3[local25] = local39 == 0 ? 0 : Class284.method26887(local39, 1896589581);
 			}
 		} else if (arg1 == 3) {
-			local15 = arg0.method23362(-225197635);
+			local15 = arg0.g1();
 			this.anIntArray278 = new int[local15];
 			this.aCharArray4 = new char[local15];
 			for (local25 = 0; local25 < local15; local25++) {
-				this.anIntArray278[local25] = arg0.method23178((byte) -113);
-				local39 = arg0.method23177((byte) -23);
+				this.anIntArray278[local25] = arg0.g2();
+				local39 = arg0.g1b();
 				this.aCharArray4[local25] = local39 == 0 ? 0 : Class284.method26887(local39, 1896589581);
 			}
 		} else if (arg1 == 4) {
@@ -132,9 +132,9 @@ public final class Class80_Sub1_Sub17 extends Class80_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!asn", name = "g", descriptor = "(Lclient!ald;)V")
-	void method22903(@OriginalArg(0) Class80_Sub36 arg0) {
+	void method22903(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(656041117);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -143,9 +143,9 @@ public final class Class80_Sub1_Sub17 extends Class80_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!asn", name = "i", descriptor = "(Lclient!ald;)V")
-	void method22904(@OriginalArg(0) Class80_Sub36 arg0) {
+	void method22904(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-1086502446);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}

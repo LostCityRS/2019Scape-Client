@@ -82,9 +82,9 @@ public final class Class80_Sub1_Sub5 extends Class80_Sub1 {
 			}
 		}
 		@Pc(38) boolean local38 = true;
-		@Pc(44) Class80_Sub36 local44 = new Class80_Sub36(this.aByteArray58);
-		@Pc(48) int local48 = local44.method23362(339056831);
-		@Pc(52) int local52 = local44.method23178((byte) -110);
+		@Pc(44) Packet local44 = new Packet(this.aByteArray58);
+		@Pc(48) int local48 = local44.g1();
+		@Pc(52) int local52 = local44.g2();
 		@Pc(55) Class480 local55 = aClass480_81;
 		synchronized (aClass480_81) {
 			local38 &= aClass480_81.method29945(local52, (byte) 1);
@@ -102,16 +102,16 @@ public final class Class80_Sub1_Sub5 extends Class80_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!are", name = "e", descriptor = "(Lclient!ald;IB)V")
-	void method21783(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
-		this.anInt3026 = arg0.method23178((byte) -88) * -1721883587;
-		this.anInt3028 = arg0.method23178((byte) -92) * -1846040425;
-		this.anInt3029 = arg0.method23362(432787117) * 1312954443;
-		@Pc(24) int local24 = arg0.method23178((byte) -56);
+	void method21783(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
+		this.anInt3026 = arg0.g2() * -1721883587;
+		this.anInt3028 = arg0.g2() * -1846040425;
+		this.anInt3029 = arg0.g1() * 1312954443;
+		@Pc(24) int local24 = arg0.g2();
 		this.aClass231ArrayArray1 = new Class231[this.aClass80_Sub23_1.anInt1619 * -1195478191][];
 		for (@Pc(34) int local34 = 0; local34 < local24; local34++) {
-			@Pc(43) Class222 local43 = Class220.method25902(arg0.method23362(-2051071498), 1911123765);
-			@Pc(47) int local47 = arg0.method23194(35000);
-			@Pc(53) Class205 local53 = Class17.method438(arg0.method23362(41562509), (byte) 0);
+			@Pc(43) Class222 local43 = Class220.method25902(arg0.g1(), 1911123765);
+			@Pc(47) int local47 = arg0.gSmart1or2s();
+			@Pc(53) Class205 local53 = Class17.method438(arg0.g1(), (byte) 0);
 			@Pc(57) Class231 local57 = new Class231();
 			local57.method26010(arg0, arg1, 1943688457);
 			@Pc(67) int local67 = local43.method25915((byte) 1);
@@ -179,9 +179,9 @@ public final class Class80_Sub1_Sub5 extends Class80_Sub1 {
 			}
 		}
 		@Pc(38) boolean local38 = true;
-		@Pc(44) Class80_Sub36 local44 = new Class80_Sub36(this.aByteArray58);
-		@Pc(48) int local48 = local44.method23362(120977332);
-		@Pc(52) int local52 = local44.method23178((byte) -59);
+		@Pc(44) Packet local44 = new Packet(this.aByteArray58);
+		@Pc(48) int local48 = local44.g1();
+		@Pc(52) int local52 = local44.g2();
 		@Pc(55) Class480 local55 = aClass480_81;
 		synchronized (aClass480_81) {
 			local38 &= aClass480_81.method29945(local52, (byte) 1);
@@ -209,16 +209,16 @@ public final class Class80_Sub1_Sub5 extends Class80_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!are", name = "z", descriptor = "(Lclient!ald;I)V")
-	void method21794(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		this.anInt3026 = arg0.method23178((byte) -7) * -1721883587;
-		this.anInt3028 = arg0.method23178((byte) -40) * -1846040425;
-		this.anInt3029 = arg0.method23362(-857898767) * 1312954443;
-		@Pc(24) int local24 = arg0.method23178((byte) -113);
+	void method21794(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		this.anInt3026 = arg0.g2() * -1721883587;
+		this.anInt3028 = arg0.g2() * -1846040425;
+		this.anInt3029 = arg0.g1() * 1312954443;
+		@Pc(24) int local24 = arg0.g2();
 		this.aClass231ArrayArray1 = new Class231[this.aClass80_Sub23_1.anInt1619 * -1195478191][];
 		for (@Pc(34) int local34 = 0; local34 < local24; local34++) {
-			@Pc(43) Class222 local43 = Class220.method25902(arg0.method23362(39876862), 1185308769);
-			@Pc(47) int local47 = arg0.method23194(35000);
-			@Pc(53) Class205 local53 = Class17.method438(arg0.method23362(-1551298699), (byte) 0);
+			@Pc(43) Class222 local43 = Class220.method25902(arg0.g1(), 1185308769);
+			@Pc(47) int local47 = arg0.gSmart1or2s();
+			@Pc(53) Class205 local53 = Class17.method438(arg0.g1(), (byte) 0);
 			@Pc(57) Class231 local57 = new Class231();
 			local57.method26010(arg0, arg1, 1893270243);
 			@Pc(67) int local67 = local43.method25915((byte) 1);
@@ -266,9 +266,9 @@ public final class Class80_Sub1_Sub5 extends Class80_Sub1 {
 			}
 		}
 		@Pc(38) boolean local38 = true;
-		@Pc(44) Class80_Sub36 local44 = new Class80_Sub36(this.aByteArray58);
-		@Pc(48) int local48 = local44.method23362(-922982329);
-		@Pc(52) int local52 = local44.method23178((byte) -27);
+		@Pc(44) Packet local44 = new Packet(this.aByteArray58);
+		@Pc(48) int local48 = local44.g1();
+		@Pc(52) int local52 = local44.g2();
 		@Pc(55) Class480 local55 = aClass480_81;
 		synchronized (aClass480_81) {
 			local38 &= aClass480_81.method29945(local52, (byte) 1);

@@ -23,12 +23,12 @@ public final class Class103_Sub17_Sub1 extends Class103_Sub17 {
 	}
 
 	@OriginalMember(owner = "client!aqa", name = "<init>", descriptor = "(Lclient!ald;)V")
-	Class103_Sub17_Sub1(@OriginalArg(0) Class80_Sub36 arg0) {
+	Class103_Sub17_Sub1(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		@Pc(6) int local6 = arg0.method23182(2066569480);
+		@Pc(6) int local6 = arg0.g4();
 		this.anInt2620 = (local6 >>> 16) * 1029508745;
 		this.anInt2619 = (local6 & 0xFFFF) * 526265061;
-		this.anInt2618 = arg0.method23362(986715989) * -1844766941;
+		this.anInt2618 = arg0.g1() * -1844766941;
 	}
 
 	@OriginalMember(owner = "client!aqa", name = "l", descriptor = "()V")

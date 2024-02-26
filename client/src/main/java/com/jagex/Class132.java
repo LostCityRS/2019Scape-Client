@@ -30,14 +30,14 @@ public abstract class Class132 implements Interface3 {
 			}
 		}
 		client.anInt3541 = -158780252;
-		Class548.aClass80_Sub36_16 = null;
+		Class548.aPacket_16 = null;
 		client.aBoolean722 = false;
 		if (Class251.anInt3880 * -1561586921 > 0) {
 			Class107.method7196(Class158.aClass158_56, Class251.anInt3880 * -1561586921, -1, -1503454530);
 		}
 		Class662.method33334(-82594458);
 		@Pc(68) Class80_Sub31 local68 = Class623.method32440(Class443.aClass443_42, client.aClass75_1.aClass22_1, -191270971);
-		local68.aClass80_Sub36_Sub1_2.method23154(arg0 ? 1 : 0, 1275868335);
+		local68.aPacketBit_2.p1(arg0 ? 1 : 0);
 		client.aClass75_1.method1325(local68, (byte) -121);
 	}
 

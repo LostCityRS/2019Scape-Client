@@ -269,7 +269,7 @@ public final class Class374 implements Interface13 {
 
 	@OriginalMember(owner = "client!kb", name = "t", descriptor = "(Lclient!ald;I)V")
 	@Override
-	public void method37006(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	public void method37006(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		this.method28426(arg0, false, 542052388);
 	}
 
@@ -279,19 +279,19 @@ public final class Class374 implements Interface13 {
 	}
 
 	@OriginalMember(owner = "client!kb", name = "s", descriptor = "(Lclient!ald;IZ)V")
-	void method28419(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2) {
+	void method28419(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2) {
 		@Pc(6) Class379 local6 = (Class379) Class80_Sub39.method15030(Class158.method15517(-1822446262), arg1, -1337116974);
 		switch(local6.anInt4536 * 1135533479) {
 			case 1:
 			default:
 				break;
 			case 5:
-				@Pc(16) int local16 = arg0.method23362(-193014297);
+				@Pc(16) int local16 = arg0.g1();
 				this.aClass143_73 = (Class143) Class80_Sub39.method15030(Class143.method11832(790887826), local16, -1807234839);
 				if (this.aClass143_73 == null) {
 					throw new IllegalStateException("");
 				}
-				this.anInt4511 = arg0.method23210((byte) 115) * 1662385315;
+				this.anInt4511 = arg0.gSmart2or4null() * 1662385315;
 				if (this.aClass132_1 != null) {
 					@Pc(52) Interface12 local52 = (Interface12) this.aClass132_1.aMap11.get(this.aClass143_73);
 					if (local52 != null) {
@@ -302,25 +302,25 @@ public final class Class374 implements Interface13 {
 				}
 				break;
 			case 13:
-				this.anInt4510 = arg0.method23362(-1933853930) * 630163893;
-				this.anInt4509 = arg0.method23362(-943785951) * 633283739;
+				this.anInt4510 = arg0.g1() * 630163893;
+				this.anInt4509 = arg0.g1() * 633283739;
 		}
 	}
 
 	@OriginalMember(owner = "client!kb", name = "g", descriptor = "(Lclient!ald;IZI)V")
-	void method28420(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) int arg3) {
+	void method28420(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) int arg3) {
 		@Pc(6) Class379 local6 = (Class379) Class80_Sub39.method15030(Class158.method15517(-1102034548), arg1, -530459811);
 		switch(local6.anInt4536 * 1135533479) {
 			case 1:
 			default:
 				break;
 			case 5:
-				@Pc(16) int local16 = arg0.method23362(1052662397);
+				@Pc(16) int local16 = arg0.g1();
 				this.aClass143_73 = (Class143) Class80_Sub39.method15030(Class143.method11832(1372366996), local16, -1591828467);
 				if (this.aClass143_73 == null) {
 					throw new IllegalStateException("");
 				}
-				this.anInt4511 = arg0.method23210((byte) 98) * 1662385315;
+				this.anInt4511 = arg0.gSmart2or4null() * 1662385315;
 				if (this.aClass132_1 != null) {
 					@Pc(52) Interface12 local52 = (Interface12) this.aClass132_1.aMap11.get(this.aClass143_73);
 					if (local52 != null) {
@@ -331,8 +331,8 @@ public final class Class374 implements Interface13 {
 				}
 				break;
 			case 13:
-				this.anInt4510 = arg0.method23362(192235341) * 630163893;
-				this.anInt4509 = arg0.method23362(372399654) * 633283739;
+				this.anInt4510 = arg0.g1() * 630163893;
+				this.anInt4509 = arg0.g1() * 633283739;
 		}
 	}
 
@@ -353,9 +353,9 @@ public final class Class374 implements Interface13 {
 	}
 
 	@OriginalMember(owner = "client!kb", name = "j", descriptor = "(Lclient!ald;Z)V")
-	void method28423(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) boolean arg1) {
+	void method28423(@OriginalArg(0) Packet arg0, @OriginalArg(1) boolean arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-621212211);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -365,14 +365,14 @@ public final class Class374 implements Interface13 {
 
 	@OriginalMember(owner = "client!kb", name = "u", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method37009(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method37009(@OriginalArg(0) Packet arg0) {
 		this.method28426(arg0, false, 542052388);
 	}
 
 	@OriginalMember(owner = "client!kb", name = "o", descriptor = "(Lclient!ald;Z)V")
-	void method28424(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) boolean arg1) {
+	void method28424(@OriginalArg(0) Packet arg0, @OriginalArg(1) boolean arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-1625288224);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -386,9 +386,9 @@ public final class Class374 implements Interface13 {
 	}
 
 	@OriginalMember(owner = "client!kb", name = "a", descriptor = "(Lclient!ald;Z)V")
-	void method28425(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) boolean arg1) {
+	void method28425(@OriginalArg(0) Packet arg0, @OriginalArg(1) boolean arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-208393098);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -397,9 +397,9 @@ public final class Class374 implements Interface13 {
 	}
 
 	@OriginalMember(owner = "client!kb", name = "l", descriptor = "(Lclient!ald;ZI)V")
-	void method28426(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2) {
+	void method28426(@OriginalArg(0) Packet arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-342968503);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -408,19 +408,19 @@ public final class Class374 implements Interface13 {
 	}
 
 	@OriginalMember(owner = "client!kb", name = "k", descriptor = "(Lclient!ald;IZ)V")
-	void method28427(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2) {
+	void method28427(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2) {
 		@Pc(6) Class379 local6 = (Class379) Class80_Sub39.method15030(Class158.method15517(-1870080521), arg1, -1778736409);
 		switch(local6.anInt4536 * 1135533479) {
 			case 1:
 			default:
 				break;
 			case 5:
-				@Pc(16) int local16 = arg0.method23362(-1827267796);
+				@Pc(16) int local16 = arg0.g1();
 				this.aClass143_73 = (Class143) Class80_Sub39.method15030(Class143.method11832(1863217701), local16, -1589666177);
 				if (this.aClass143_73 == null) {
 					throw new IllegalStateException("");
 				}
-				this.anInt4511 = arg0.method23210((byte) 36) * 1662385315;
+				this.anInt4511 = arg0.gSmart2or4null() * 1662385315;
 				if (this.aClass132_1 != null) {
 					@Pc(52) Interface12 local52 = (Interface12) this.aClass132_1.aMap11.get(this.aClass143_73);
 					if (local52 != null) {
@@ -431,8 +431,8 @@ public final class Class374 implements Interface13 {
 				}
 				break;
 			case 13:
-				this.anInt4510 = arg0.method23362(197131740) * 630163893;
-				this.anInt4509 = arg0.method23362(-854502407) * 633283739;
+				this.anInt4510 = arg0.g1() * 630163893;
+				this.anInt4509 = arg0.g1() * 633283739;
 		}
 	}
 

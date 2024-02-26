@@ -93,9 +93,9 @@ public final class Class222 implements Interface75 {
 	public static void method25923(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		@Pc(2) Class75 local2 = Class52.method1074(16777215);
 		@Pc(8) Class80_Sub31 local8 = Class623.method32440(Class443.aClass443_49, local2.aClass22_1, -191270971);
-		local8.aClass80_Sub36_Sub1_2.method23154(Class350.method28013(arg0, (short) 16383) + 1, 1275868335);
-		local8.aClass80_Sub36_Sub1_2.method23165(arg0, 1679717673);
-		local8.aClass80_Sub36_Sub1_2.method23154(arg1, 1275868335);
+		local8.aPacketBit_2.p1(Class350.method28013(arg0, (short) 16383) + 1);
+		local8.aPacketBit_2.pjstr(arg0);
+		local8.aPacketBit_2.p1(arg1);
 		local2.method1325(local8, (byte) -120);
 	}
 

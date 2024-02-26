@@ -61,7 +61,7 @@ public final class Class228 {
 
 	@OriginalMember(owner = "client!dm", name = "u", descriptor = "([BI)Lclient!asw;")
 	static Class80_Sub1_Sub20 method25994(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1) {
-		return new Class80_Sub1_Sub20(new Class80_Sub36(arg0), Class297.anInterface21_4);
+		return new Class80_Sub1_Sub20(new Packet(arg0), Class297.anInterface21_4);
 	}
 
 	@OriginalMember(owner = "client!dm", name = "xr", descriptor = "(Lclient!yp;I)V")

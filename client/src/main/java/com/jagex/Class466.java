@@ -267,11 +267,11 @@ public final class Class466 {
 	}
 
 	@OriginalMember(owner = "client!oq", name = "<init>", descriptor = "(Lclient!ald;)V")
-	Class466(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.aFloat301 = arg0.method23188(256210006);
-		this.aFloat299 = arg0.method23188(-1256339708);
-		this.aFloat300 = arg0.method23188(731661616);
-		this.aFloat298 = arg0.method23188(-1246470372);
+	Class466(@OriginalArg(0) Packet arg0) {
+		this.aFloat301 = arg0.gFloat();
+		this.aFloat299 = arg0.gFloat();
+		this.aFloat300 = arg0.gFloat();
+		this.aFloat298 = arg0.gFloat();
 	}
 
 	@OriginalMember(owner = "client!oq", name = "<init>", descriptor = "()V")
@@ -295,11 +295,11 @@ public final class Class466 {
 	}
 
 	@OriginalMember(owner = "client!oq", name = "g", descriptor = "(Lclient!ald;)V")
-	public void method29644(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.aFloat301 = arg0.method23188(1972988709);
-		this.aFloat299 = arg0.method23188(1473725493);
-		this.aFloat300 = arg0.method23188(-1844734444);
-		this.aFloat298 = arg0.method23188(2060543039);
+	public void method29644(@OriginalArg(0) Packet arg0) {
+		this.aFloat301 = arg0.gFloat();
+		this.aFloat299 = arg0.gFloat();
+		this.aFloat300 = arg0.gFloat();
+		this.aFloat298 = arg0.gFloat();
 	}
 
 	@OriginalMember(owner = "client!oq", name = "j", descriptor = "(FFFF)V")
@@ -451,35 +451,35 @@ public final class Class466 {
 	}
 
 	@OriginalMember(owner = "client!oq", name = "ab", descriptor = "(Lclient!ald;)V")
-	public void method29677(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.aFloat301 = arg0.method23188(-1357924127);
-		this.aFloat299 = arg0.method23188(839201427);
-		this.aFloat300 = arg0.method23188(520001663);
-		this.aFloat298 = arg0.method23188(2113074563);
+	public void method29677(@OriginalArg(0) Packet arg0) {
+		this.aFloat301 = arg0.gFloat();
+		this.aFloat299 = arg0.gFloat();
+		this.aFloat300 = arg0.gFloat();
+		this.aFloat298 = arg0.gFloat();
 	}
 
 	@OriginalMember(owner = "client!oq", name = "al", descriptor = "(Lclient!ald;)V")
-	public void method29678(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.aFloat301 = arg0.method23188(-787858431);
-		this.aFloat299 = arg0.method23188(824990952);
-		this.aFloat300 = arg0.method23188(1929924012);
-		this.aFloat298 = arg0.method23188(1512108470);
+	public void method29678(@OriginalArg(0) Packet arg0) {
+		this.aFloat301 = arg0.gFloat();
+		this.aFloat299 = arg0.gFloat();
+		this.aFloat300 = arg0.gFloat();
+		this.aFloat298 = arg0.gFloat();
 	}
 
 	@OriginalMember(owner = "client!oq", name = "ah", descriptor = "(Lclient!ald;)V")
-	public void method29679(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.aFloat301 = arg0.method23188(-391676665);
-		this.aFloat299 = arg0.method23188(1138224779);
-		this.aFloat300 = arg0.method23188(1344205287);
-		this.aFloat298 = arg0.method23188(-1570434757);
+	public void method29679(@OriginalArg(0) Packet arg0) {
+		this.aFloat301 = arg0.gFloat();
+		this.aFloat299 = arg0.gFloat();
+		this.aFloat300 = arg0.gFloat();
+		this.aFloat298 = arg0.gFloat();
 	}
 
 	@OriginalMember(owner = "client!oq", name = "af", descriptor = "(Lclient!ald;)V")
-	public void method29680(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.aFloat301 = arg0.method23188(-1538793336);
-		this.aFloat299 = arg0.method23188(-718342811);
-		this.aFloat300 = arg0.method23188(-519942513);
-		this.aFloat298 = arg0.method23188(-369719296);
+	public void method29680(@OriginalArg(0) Packet arg0) {
+		this.aFloat301 = arg0.gFloat();
+		this.aFloat299 = arg0.gFloat();
+		this.aFloat300 = arg0.gFloat();
+		this.aFloat298 = arg0.gFloat();
 	}
 
 	@OriginalMember(owner = "client!oq", name = "ak", descriptor = "(FFFF)V")

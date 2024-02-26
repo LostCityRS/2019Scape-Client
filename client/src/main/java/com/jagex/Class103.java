@@ -12,8 +12,8 @@ public abstract class Class103 {
 	public final int anInt2748;
 
 	@OriginalMember(owner = "client!eg", name = "o", descriptor = "(Lclient!ald;)Lclient!eg;")
-	static Class103 method19205(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(3) int local3 = arg0.method23362(-379607252);
+	static Class103 method19205(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1();
 		@Pc(7) Class82 local7 = Class62.method1210(local3, 715728793);
 		@Pc(9) Class103 local9 = null;
 		switch(local7.anInt257 * 2117806001) {
@@ -134,8 +134,8 @@ public abstract class Class103 {
 	}
 
 	@OriginalMember(owner = "client!eg", name = "<init>", descriptor = "(Lclient!ald;)V")
-	Class103(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.anInt2748 = arg0.method23178((byte) -70) * 2058426303;
+	Class103(@OriginalArg(0) Packet arg0) {
+		this.anInt2748 = arg0.g2() * 2058426303;
 	}
 
 	@OriginalMember(owner = "client!eg", name = "l", descriptor = "()V")

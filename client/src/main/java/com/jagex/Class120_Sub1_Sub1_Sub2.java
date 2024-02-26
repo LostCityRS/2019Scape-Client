@@ -59,8 +59,8 @@ public final class Class120_Sub1_Sub1_Sub2 extends Class120_Sub1_Sub1 implements
 		@Pc(48) boolean local48 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1] == 1;
 		@Pc(63) boolean local63 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2] == 1;
 		@Pc(69) Class80_Sub31 local69 = Class623.method32440(Class443.aClass443_66, client.aClass75_2.aClass22_1, -191270971);
-		local69.aClass80_Sub36_Sub1_2.method23155(Class350.method28013(local20, (short) 16383) + 1, (byte) -88);
-		local69.aClass80_Sub36_Sub1_2.method23165(local20, 1790972910);
+		local69.aPacketBit_2.p2(Class350.method28013(local20, (short) 16383) + 1);
+		local69.aPacketBit_2.pjstr(local20);
 		@Pc(85) int local85 = 0;
 		if (local33) {
 			local85 |= 0x1;
@@ -71,7 +71,7 @@ public final class Class120_Sub1_Sub1_Sub2 extends Class120_Sub1_Sub1 implements
 		if (local63) {
 			local85 |= 0x4;
 		}
-		local69.aClass80_Sub36_Sub1_2.method23154(local85, 1275868335);
+		local69.aPacketBit_2.p1(local85);
 		client.aClass75_2.method1325(local69, (byte) -25);
 	}
 

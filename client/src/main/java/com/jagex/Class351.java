@@ -24,10 +24,10 @@ public final class Class351 {
 			return;
 		}
 		@Pc(12) Class80_Sub31 local12 = Class623.method32440(Class443.aClass443_32, local2.aClass22_1, -191270971);
-		local12.aClass80_Sub36_Sub1_2.method23155(Class350.method28013(arg0, (short) 16383) + Class350.method28013(arg1, (short) 16383) + Class350.method28013(arg2, (short) 16383) + 1, (byte) -118);
-		local12.aClass80_Sub36_Sub1_2.method23165(arg0, 1900964394);
-		local12.aClass80_Sub36_Sub1_2.method23165(arg1, 1843798950);
-		local12.aClass80_Sub36_Sub1_2.method23165(arg2, 2141191469);
+		local12.aPacketBit_2.p2(Class350.method28013(arg0, (short) 16383) + Class350.method28013(arg1, (short) 16383) + Class350.method28013(arg2, (short) 16383) + 1);
+		local12.aPacketBit_2.pjstr(arg0);
+		local12.aPacketBit_2.pjstr(arg1);
+		local12.aPacketBit_2.pjstr(arg2);
 		@Pc(46) int local46 = 0;
 		if (arg3) {
 			local46 |= 0x1;
@@ -35,7 +35,7 @@ public final class Class351 {
 		if (arg4) {
 			local46 |= 0x2;
 		}
-		local12.aClass80_Sub36_Sub1_2.method23154(local46, 1275868335);
+		local12.aPacketBit_2.p1(local46);
 		local2.method1325(local12, (byte) -19);
 	}
 
@@ -67,7 +67,7 @@ public final class Class351 {
 	}
 
 	@OriginalMember(owner = "client!iw", name = "u", descriptor = "(Lclient!asa;I)I")
-	static int method28022(@OriginalArg(0) Class80_Sub36_Sub1 arg0, @OriginalArg(1) int arg1) {
+	static int method28022(@OriginalArg(0) PacketBit arg0, @OriginalArg(1) int arg1) {
 		@Pc(4) int local4 = arg0.method22559(2, -325783685);
 		@Pc(8) int local8;
 		if (local4 == 0) {

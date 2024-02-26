@@ -181,12 +181,12 @@ public final class Class606 {
 			}
 		}
 		@Pc(40) Class80_Sub31 local40 = Class623.method32440(Class443.aClass443_60, client.aClass75_1.aClass22_1, -191270971);
-		local40.aClass80_Sub36_Sub1_2.method23410(arg0.anInt4087 * -2053489901, (byte) 0);
-		local40.aClass80_Sub36_Sub1_2.method23219(arg0.anInt4167 * 1052460537, 1315677461);
-		local40.aClass80_Sub36_Sub1_2.method23220(arg0.anInt4094 * 2071556223, 2036747717);
-		local40.aClass80_Sub36_Sub1_2.method23220(client.anInt3526 * 1831183447, 2036747717);
-		local40.aClass80_Sub36_Sub1_2.method23229(Class86.anInt284 * 531357219, 1462172025);
-		local40.aClass80_Sub36_Sub1_2.method23155(client.anInt3527 * 206551609, (byte) -17);
+		local40.aPacketBit_2.p4_alt2(arg0.anInt4087 * -2053489901);
+		local40.aPacketBit_2.p2_alt2(arg0.anInt4167 * 1052460537);
+		local40.aPacketBit_2.p2_alt3(arg0.anInt4094 * 2071556223);
+		local40.aPacketBit_2.p2_alt3(client.anInt3526 * 1831183447);
+		local40.aPacketBit_2.p4_alt1(Class86.anInt284 * 531357219);
+		local40.aPacketBit_2.p2(client.anInt3527 * 206551609);
 		client.aClass75_1.method1325(local40, (byte) -127);
 	}
 

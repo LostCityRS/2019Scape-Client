@@ -66,10 +66,10 @@ public final class Class299 implements Interface26 {
 	}
 
 	@OriginalMember(owner = "client!gt", name = "<init>", descriptor = "(Lclient!gc;Lclient!ald;)V")
-	Class299(@OriginalArg(0) Class284 arg0, @OriginalArg(1) Class80_Sub36 arg1) {
+	Class299(@OriginalArg(0) Class284 arg0, @OriginalArg(1) Packet arg1) {
 		this.aClass284_13 = arg0;
-		this.anInt3962 = arg1.method23178((byte) -19) * 926518499;
-		this.anInt3961 = arg1.method23362(-642214330) * 1481246163;
+		this.anInt3962 = arg1.g2() * 926518499;
+		this.anInt3961 = arg1.g1() * 1481246163;
 	}
 
 	@OriginalMember(owner = "client!gt", name = "t", descriptor = "(Lclient!gz;I)V")

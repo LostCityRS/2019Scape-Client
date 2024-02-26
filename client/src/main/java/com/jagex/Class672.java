@@ -982,7 +982,7 @@ public final class Class672 {
 
 	@OriginalMember(owner = "client!xw", name = "ay", descriptor = "()V")
 	void method33545() {
-		@Pc(1) long[] local1 = Class80_Sub36.aLongArray18;
+		@Pc(1) long[] local1 = Packet.crc64table;
 		this.aLong412 = 7732899208677606993L;
 		this.aLong412 = (-249964855565894321L * this.aLong412 >>> 8 ^ local1[(int) ((this.aLong412 * -249964855565894321L ^ (long) (-2129029845 * this.anInt5719 >> 8)) & 0xFFL)]) * -7732899208677606993L;
 		this.aLong412 = (-249964855565894321L * this.aLong412 >>> 8 ^ local1[(int) ((-249964855565894321L * this.aLong412 ^ (long) (this.anInt5719 * -2129029845)) & 0xFFL)]) * -7732899208677606993L;
@@ -1044,7 +1044,7 @@ public final class Class672 {
 
 	@OriginalMember(owner = "client!xw", name = "aq", descriptor = "()V")
 	void method33547() {
-		@Pc(1) long[] local1 = Class80_Sub36.aLongArray18;
+		@Pc(1) long[] local1 = Packet.crc64table;
 		this.aLong412 = 7732899208677606993L;
 		this.aLong412 = (-249964855565894321L * this.aLong412 >>> 8 ^ local1[(int) ((this.aLong412 * -249964855565894321L ^ (long) (-2129029845 * this.anInt5719 >> 8)) & 0xFFL)]) * -7732899208677606993L;
 		this.aLong412 = (-249964855565894321L * this.aLong412 >>> 8 ^ local1[(int) ((-249964855565894321L * this.aLong412 ^ (long) (this.anInt5719 * -2129029845)) & 0xFFL)]) * -7732899208677606993L;
@@ -1106,7 +1106,7 @@ public final class Class672 {
 
 	@OriginalMember(owner = "client!xw", name = "ao", descriptor = "()V")
 	void method33548() {
-		@Pc(1) long[] local1 = Class80_Sub36.aLongArray18;
+		@Pc(1) long[] local1 = Packet.crc64table;
 		this.aLong412 = 7732899208677606993L;
 		this.aLong412 = (-249964855565894321L * this.aLong412 >>> 8 ^ local1[(int) ((this.aLong412 * -249964855565894321L ^ (long) (-2129029845 * this.anInt5719 >> 8)) & 0xFFL)]) * -7732899208677606993L;
 		this.aLong412 = (-249964855565894321L * this.aLong412 >>> 8 ^ local1[(int) ((-249964855565894321L * this.aLong412 ^ (long) (this.anInt5719 * -2129029845)) & 0xFFL)]) * -7732899208677606993L;
@@ -1827,7 +1827,7 @@ public final class Class672 {
 
 	@OriginalMember(owner = "client!xw", name = "ai", descriptor = "()V")
 	void method33554() {
-		@Pc(1) long[] local1 = Class80_Sub36.aLongArray18;
+		@Pc(1) long[] local1 = Packet.crc64table;
 		this.aLong412 = 7732899208677606993L;
 		this.aLong412 = (-249964855565894321L * this.aLong412 >>> 8 ^ local1[(int) ((this.aLong412 * -249964855565894321L ^ (long) (-2129029845 * this.anInt5719 >> 8)) & 0xFFL)]) * -7732899208677606993L;
 		this.aLong412 = (-249964855565894321L * this.aLong412 >>> 8 ^ local1[(int) ((-249964855565894321L * this.aLong412 ^ (long) (this.anInt5719 * -2129029845)) & 0xFFL)]) * -7732899208677606993L;
@@ -1898,7 +1898,7 @@ public final class Class672 {
 
 	@OriginalMember(owner = "client!xw", name = "i", descriptor = "(B)V")
 	void method33562(@OriginalArg(0) byte arg0) {
-		@Pc(1) long[] local1 = Class80_Sub36.aLongArray18;
+		@Pc(1) long[] local1 = Packet.crc64table;
 		this.aLong412 = 7732899208677606993L;
 		this.aLong412 = (-249964855565894321L * this.aLong412 >>> 8 ^ local1[(int) ((this.aLong412 * -249964855565894321L ^ (long) (-2129029845 * this.anInt5719 >> 8)) & 0xFFL)]) * -7732899208677606993L;
 		this.aLong412 = (-249964855565894321L * this.aLong412 >>> 8 ^ local1[(int) ((-249964855565894321L * this.aLong412 ^ (long) (this.anInt5719 * -2129029845)) & 0xFFL)]) * -7732899208677606993L;

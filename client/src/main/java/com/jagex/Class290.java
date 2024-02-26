@@ -66,15 +66,15 @@ public final class Class290 implements Interface26 {
 	}
 
 	@OriginalMember(owner = "client!gk", name = "<init>", descriptor = "(Lclient!gc;Lclient!ald;)V")
-	Class290(@OriginalArg(0) Class284 arg0, @OriginalArg(1) Class80_Sub36 arg1) {
+	Class290(@OriginalArg(0) Class284 arg0, @OriginalArg(1) Packet arg1) {
 		this.aClass284_9 = arg0;
-		@Pc(8) int local8 = arg1.method23178((byte) -50);
+		@Pc(8) int local8 = arg1.g2();
 		if (local8 == 65535) {
 			this.anInt3945 = -1240517037;
 			this.anInt3946 = 0;
 		} else {
 			this.anInt3945 = local8 * 1240517037;
-			this.anInt3946 = arg1.method23182(-1919404867) * -1132816627;
+			this.anInt3946 = arg1.g4() * -1132816627;
 		}
 	}
 

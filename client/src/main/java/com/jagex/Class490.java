@@ -53,7 +53,7 @@ public final class Class490 {
 	final int anInt5016;
 
 	@OriginalMember(owner = "client!pq", name = "e", descriptor = "(Lclient!asa;B)V")
-	static void method30234(@OriginalArg(0) Class80_Sub36_Sub1 arg0, @OriginalArg(1) byte arg1) {
+	static void method30234(@OriginalArg(0) PacketBit arg0, @OriginalArg(1) byte arg1) {
 		@Pc(1) int local1 = 0;
 		arg0.method22560(1668075746);
 		@Pc(6) int local6;

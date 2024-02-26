@@ -27,12 +27,12 @@ public final class Class80_Sub26_Sub3 extends Class80_Sub26 {
 
 	@OriginalMember(owner = "client!arf", name = "t", descriptor = "(Lclient!ald;B)V")
 	@Override
-	void method22253(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
-		this.aString99 = arg0.method23189(-761473881);
+	void method22253(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
+		this.aString99 = arg0.fastgstr();
 		if (this.aString99 != null) {
-			arg0.method23362(-1907622892);
-			this.aByte79 = arg0.method23177((byte) -27);
-			this.aByte80 = arg0.method23177((byte) 21);
+			arg0.g1();
+			this.aByte79 = arg0.g1b();
+			this.aByte80 = arg0.g1b();
 		}
 	}
 
@@ -58,12 +58,12 @@ public final class Class80_Sub26_Sub3 extends Class80_Sub26 {
 
 	@OriginalMember(owner = "client!arf", name = "e", descriptor = "(Lclient!ald;)V")
 	@Override
-	void method22255(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.aString99 = arg0.method23189(-761473881);
+	void method22255(@OriginalArg(0) Packet arg0) {
+		this.aString99 = arg0.fastgstr();
 		if (this.aString99 != null) {
-			arg0.method23362(-554610569);
-			this.aByte79 = arg0.method23177((byte) -77);
-			this.aByte80 = arg0.method23177((byte) 1);
+			arg0.g1();
+			this.aByte79 = arg0.g1b();
+			this.aByte80 = arg0.g1b();
 		}
 	}
 

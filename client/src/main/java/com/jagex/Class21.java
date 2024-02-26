@@ -76,9 +76,9 @@ public final class Class21 implements Interface11, Interface5 {
 
 	@OriginalMember(owner = "client!aau", name = "u", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method37009(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method37009(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-913430609);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -88,9 +88,9 @@ public final class Class21 implements Interface11, Interface5 {
 
 	@OriginalMember(owner = "client!aau", name = "t", descriptor = "(Lclient!ald;I)V")
 	@Override
-	public void method37006(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	public void method37006(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-1907684230);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -99,17 +99,17 @@ public final class Class21 implements Interface11, Interface5 {
 	}
 
 	@OriginalMember(owner = "client!aau", name = "l", descriptor = "(Lclient!ald;IB)V")
-	void method526(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
+	void method526(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
 		if (arg1 == 1) {
-			this.anInt65 = arg0.method23180(1710327153) * -958920001;
+			this.anInt65 = arg0.g3() * -958920001;
 			this.method527(this.anInt65 * 1231578431, -1816592727);
 		} else if (arg1 == 2) {
-			this.anInt68 = arg0.method23178((byte) -75) * 967429703;
+			this.anInt68 = arg0.g2() * 967429703;
 			if (this.anInt68 * 904100727 == 65535) {
 				this.anInt68 = -967429703;
 			}
 		} else if (arg1 == 3) {
-			this.anInt66 = (arg0.method23178((byte) -100) << 2) * 1495694335;
+			this.anInt66 = (arg0.g2() << 2) * 1495694335;
 		} else if (arg1 == 4) {
 			this.aBoolean9 = false;
 		} else if (arg1 == 5) {

@@ -16,13 +16,13 @@ public abstract class Class80_Sub1_Sub13 extends Class80_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!asd", name = "j", descriptor = "(Lclient!ald;)V")
-	public abstract void method23747(@OriginalArg(0) Class80_Sub36 arg0);
+	public abstract void method23747(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!asd", name = "g", descriptor = "(F)V")
 	public abstract void method23748(@OriginalArg(0) float arg0);
 
 	@OriginalMember(owner = "client!asd", name = "u", descriptor = "(Lclient!ald;I)V")
-	public abstract void method23749(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1);
+	public abstract void method23749(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1);
 
 	@OriginalMember(owner = "client!asd", name = "l", descriptor = "(F)V")
 	public abstract void method23750(@OriginalArg(0) float arg0);
@@ -37,11 +37,11 @@ public abstract class Class80_Sub1_Sub13 extends Class80_Sub1 {
 	public abstract void method23753(@OriginalArg(0) float arg0, @OriginalArg(1) int arg1);
 
 	@OriginalMember(owner = "client!asd", name = "o", descriptor = "(Lclient!ald;)V")
-	public abstract void method23754(@OriginalArg(0) Class80_Sub36 arg0);
+	public abstract void method23754(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!asd", name = "m", descriptor = "(Lclient!jl;Lclient!ov;Lclient!pm;)V")
 	public abstract void method23755(@OriginalArg(0) Class363 arg0, @OriginalArg(1) Class471 arg1, @OriginalArg(2) Class487 arg2);
 
 	@OriginalMember(owner = "client!asd", name = "a", descriptor = "(Lclient!ald;)V")
-	public abstract void method23756(@OriginalArg(0) Class80_Sub36 arg0);
+	public abstract void method23756(@OriginalArg(0) Packet arg0);
 }

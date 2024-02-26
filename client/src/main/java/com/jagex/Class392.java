@@ -92,8 +92,8 @@ public final class Class392 {
 		}
 		@Pc(6) Class75 local6 = Class52.method1074(16777215);
 		@Pc(12) Class80_Sub31 local12 = Class623.method32440(Class443.aClass443_30, local6.aClass22_1, -191270971);
-		local12.aClass80_Sub36_Sub1_2.method23154(Class350.method28013(arg0, (short) 16383), 1275868335);
-		local12.aClass80_Sub36_Sub1_2.method23165(arg0, 1749142642);
+		local12.aPacketBit_2.p1(Class350.method28013(arg0, (short) 16383));
+		local12.aPacketBit_2.pjstr(arg0);
 		local6.method1325(local12, (byte) -74);
 	}
 

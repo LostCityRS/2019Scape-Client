@@ -15,41 +15,41 @@ public final class Class615 implements Interface67 {
 	final int[] anIntArray496;
 
 	@OriginalMember(owner = "client!vk", name = "m", descriptor = "(Lclient!ald;)Lclient!vk;")
-	public static Class615 method32279(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(3) int local3 = arg0.method23362(-668567075);
+	public static Class615 method32279(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1();
 		@Pc(6) int[] local6 = new int[local3];
 		for (@Pc(8) int local8 = 0; local8 < local3; local8++) {
-			local6[local8] = arg0.method23362(1115356515);
+			local6[local8] = arg0.g1();
 		}
 		return new Class615(local6);
 	}
 
 	@OriginalMember(owner = "client!vk", name = "i", descriptor = "(Lclient!ald;)Lclient!vk;")
-	public static Class615 method32280(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(3) int local3 = arg0.method23362(-1243514486);
+	public static Class615 method32280(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1();
 		@Pc(6) int[] local6 = new int[local3];
 		for (@Pc(8) int local8 = 0; local8 < local3; local8++) {
-			local6[local8] = arg0.method23362(-742156073);
+			local6[local8] = arg0.g1();
 		}
 		return new Class615(local6);
 	}
 
 	@OriginalMember(owner = "client!vk", name = "g", descriptor = "(Lclient!ald;)Lclient!vk;")
-	public static Class615 method32281(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(3) int local3 = arg0.method23362(73105692);
+	public static Class615 method32281(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1();
 		@Pc(6) int[] local6 = new int[local3];
 		for (@Pc(8) int local8 = 0; local8 < local3; local8++) {
-			local6[local8] = arg0.method23362(735949531);
+			local6[local8] = arg0.g1();
 		}
 		return new Class615(local6);
 	}
 
 	@OriginalMember(owner = "client!vk", name = "o", descriptor = "(Lclient!ald;)Lclient!vk;")
-	public static Class615 method32282(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(3) int local3 = arg0.method23362(-710558208);
+	public static Class615 method32282(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1();
 		@Pc(6) int[] local6 = new int[local3];
 		for (@Pc(8) int local8 = 0; local8 < local3; local8++) {
-			local6[local8] = arg0.method23362(-652119909);
+			local6[local8] = arg0.g1();
 		}
 		return new Class615(local6);
 	}
@@ -68,7 +68,7 @@ public final class Class615 implements Interface67 {
 	static void method32284(@OriginalArg(0) byte arg0) {
 		@Pc(2) Class75 local2 = Class52.method1074(16777215);
 		@Pc(8) Class80_Sub31 local8 = Class623.method32440(Class443.aClass443_125, local2.aClass22_1, -191270971);
-		local8.aClass80_Sub36_Sub1_2.method23345(client.anInt3459 * -1828596627, (byte) 69);
+		local8.aPacketBit_2.p4(client.anInt3459 * -1828596627);
 		local2.method1325(local8, (byte) -93);
 	}
 

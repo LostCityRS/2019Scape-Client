@@ -44,9 +44,9 @@ public final class Class80_Sub1_Sub1 extends Class80_Sub1 implements Interface11
 
 	@OriginalMember(owner = "client!adg", name = "t", descriptor = "(Lclient!ald;I)V")
 	@Override
-	public void method37006(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	public void method37006(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-1561815072);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -86,9 +86,9 @@ public final class Class80_Sub1_Sub1 extends Class80_Sub1 implements Interface11
 
 	@OriginalMember(owner = "client!adg", name = "u", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method37009(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method37009(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-1116892484);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -97,24 +97,24 @@ public final class Class80_Sub1_Sub1 extends Class80_Sub1 implements Interface11
 	}
 
 	@OriginalMember(owner = "client!adg", name = "l", descriptor = "(Lclient!ald;II)V")
-	void method1484(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	void method1484(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (arg1 != 249) {
 			return;
 		}
-		@Pc(6) int local6 = arg0.method23362(772440296);
+		@Pc(6) int local6 = arg0.g1();
 		@Pc(14) int local14;
 		if (this.aClass24_3 == null) {
 			local14 = Class700.method37081(local6, (byte) 9);
 			this.aClass24_3 = new Class24(local14);
 		}
 		for (local14 = 0; local14 < local6; local14++) {
-			@Pc(34) boolean local34 = arg0.method23362(743362467) == 1;
-			@Pc(38) int local38 = arg0.method23180(1710327153);
+			@Pc(34) boolean local34 = arg0.g1() == 1;
+			@Pc(38) int local38 = arg0.g3();
 			@Pc(47) Class80 local47;
 			if (local34) {
-				local47 = new Class80_Sub19(arg0.method23376((short) 27224));
+				local47 = new Class80_Sub19(arg0.gjstr());
 			} else {
-				local47 = new Class80_Sub20(arg0.method23182(1180069025));
+				local47 = new Class80_Sub20(arg0.g4());
 			}
 			this.aClass24_3.method563(local47, (long) local38);
 		}
@@ -141,24 +141,24 @@ public final class Class80_Sub1_Sub1 extends Class80_Sub1 implements Interface11
 	}
 
 	@OriginalMember(owner = "client!adg", name = "x", descriptor = "(Lclient!ald;I)V")
-	void method1486(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method1486(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 != 249) {
 			return;
 		}
-		@Pc(6) int local6 = arg0.method23362(-995613845);
+		@Pc(6) int local6 = arg0.g1();
 		@Pc(14) int local14;
 		if (this.aClass24_3 == null) {
 			local14 = Class700.method37081(local6, (byte) 9);
 			this.aClass24_3 = new Class24(local14);
 		}
 		for (local14 = 0; local14 < local6; local14++) {
-			@Pc(34) boolean local34 = arg0.method23362(-1830587250) == 1;
-			@Pc(38) int local38 = arg0.method23180(1710327153);
+			@Pc(34) boolean local34 = arg0.g1() == 1;
+			@Pc(38) int local38 = arg0.g3();
 			@Pc(47) Class80 local47;
 			if (local34) {
-				local47 = new Class80_Sub19(arg0.method23376((short) 11350));
+				local47 = new Class80_Sub19(arg0.gjstr());
 			} else {
-				local47 = new Class80_Sub20(arg0.method23182(1059203199));
+				local47 = new Class80_Sub20(arg0.g4());
 			}
 			this.aClass24_3.method563(local47, (long) local38);
 		}

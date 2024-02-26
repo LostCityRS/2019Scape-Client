@@ -53,13 +53,13 @@ public final class Class103_Sub4 extends Class103 {
 	}
 
 	@OriginalMember(owner = "client!afx", name = "<init>", descriptor = "(Lclient!ald;)V")
-	Class103_Sub4(@OriginalArg(0) Class80_Sub36 arg0) {
+	Class103_Sub4(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.anInt900 = arg0.method23178((byte) -60) * 852427461;
-		this.anInt898 = arg0.method23178((byte) -82) * 1850198037;
-		this.anInt897 = arg0.method23178((byte) -102) * -2036824353;
-		this.anInt901 = arg0.method23178((byte) -94) * -1925203285;
-		this.anInt899 = arg0.method23178((byte) -17) * 154804975;
+		this.anInt900 = arg0.g2() * 852427461;
+		this.anInt898 = arg0.g2() * 1850198037;
+		this.anInt897 = arg0.g2() * -2036824353;
+		this.anInt901 = arg0.g2() * -1925203285;
+		this.anInt899 = arg0.g2() * 154804975;
 	}
 
 	@OriginalMember(owner = "client!afx", name = "g", descriptor = "()V")

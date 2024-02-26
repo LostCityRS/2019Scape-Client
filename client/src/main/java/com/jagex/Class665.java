@@ -150,12 +150,12 @@ public final class Class665 {
 			return;
 		}
 		@Pc(75) Class80_Sub31 local75 = Class623.method32440(Class443.aClass443_105, local45.aClass22_1, -191270971);
-		local75.aClass80_Sub36_Sub1_2.method23154(Class350.method28013(local4.aString187, (short) 16383) + 7 + 1, 1275868335);
-		local75.aClass80_Sub36_Sub1_2.method23211(arg0, -183466620);
-		local75.aClass80_Sub36_Sub1_2.method23229(arg1, 1878885631);
-		local75.aClass80_Sub36_Sub1_2.method23154(local4.aClass322_7.method37268(), 1275868335);
-		local75.aClass80_Sub36_Sub1_2.method23165(local4.aString187, 2138320890);
-		local75.aClass80_Sub36_Sub1_2.method23218(arg2, 1673014664);
+		local75.aPacketBit_2.p1(Class350.method28013(local4.aString187, (short) 16383) + 7 + 1);
+		local75.aPacketBit_2.p1_alt3(arg0);
+		local75.aPacketBit_2.p4_alt1(arg1);
+		local75.aPacketBit_2.p1(local4.aClass322_7.method37268());
+		local75.aPacketBit_2.pjstr(local4.aString187);
+		local75.aPacketBit_2.p2_alt1(arg2);
 		local45.method1325(local75, (byte) -112);
 	}
 

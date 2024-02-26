@@ -49,15 +49,15 @@ public final class Class262 implements Interface26 {
 	}
 
 	@OriginalMember(owner = "client!ff", name = "t", descriptor = "(Lclient!ald;I)Lclient!ka;")
-	public static Class373 method26511(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) int local3 = arg0.method23182(-1845462788);
+	public static Class373 method26511(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) int local3 = arg0.g4();
 		return new Class373(local3);
 	}
 
 	@OriginalMember(owner = "client!ff", name = "<init>", descriptor = "(Lclient!gc;Lclient!ald;)V")
-	Class262(@OriginalArg(0) Class284 arg0, @OriginalArg(1) Class80_Sub36 arg1) {
+	Class262(@OriginalArg(0) Class284 arg0, @OriginalArg(1) Packet arg1) {
 		this.aClass284_1 = arg0;
-		this.anInt3901 = arg1.method23178((byte) -87) * 734320303;
+		this.anInt3901 = arg1.g2() * 734320303;
 	}
 
 	@OriginalMember(owner = "client!ff", name = "t", descriptor = "(Lclient!gz;I)V")

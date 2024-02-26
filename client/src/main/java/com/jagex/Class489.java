@@ -17,7 +17,7 @@ public final class Class489 {
 	final int anInt5013;
 
 	@OriginalMember(owner = "client!pp", name = "t", descriptor = "(Lclient!abs;Lclient!ald;I)Lclient!aby;")
-	public static Class49 method30218(@OriginalArg(0) Class43 arg0, @OriginalArg(1) Class80_Sub36 arg1, @OriginalArg(2) int arg2) {
+	public static Class49 method30218(@OriginalArg(0) Class43 arg0, @OriginalArg(1) Packet arg1, @OriginalArg(2) int arg2) {
 		return Class710.method37158(arg0, arg1, 2, 868299037);
 	}
 
@@ -29,13 +29,13 @@ public final class Class489 {
 	}
 
 	@OriginalMember(owner = "client!pp", name = "<init>", descriptor = "(Lclient!ald;)V")
-	Class489(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.aClass486_5 = (Class486) Class80_Sub39.method15030(Class486.method30060(-835819538), arg0.method23362(366745473), -1498480699);
-		this.anInt5014 = arg0.method23182(98712365) * 956051035;
+	Class489(@OriginalArg(0) Packet arg0) {
+		this.aClass486_5 = (Class486) Class80_Sub39.method15030(Class486.method30060(-835819538), arg0.g1(), -1498480699);
+		this.anInt5014 = arg0.g4() * 956051035;
 		if (Class486.aClass486_4 == this.aClass486_5) {
 			this.anInt5013 = this.anInt5014 * 319576311;
 		} else {
-			this.anInt5013 = arg0.method23182(311629481) * -1736179251;
+			this.anInt5013 = arg0.g4() * -1736179251;
 		}
 	}
 

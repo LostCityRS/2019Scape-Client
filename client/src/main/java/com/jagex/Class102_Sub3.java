@@ -562,7 +562,7 @@ public final class Class102_Sub3 extends Class102 {
 	Class105_Sub2[] aClass105_Sub2Array2 = new Class105_Sub2[8];
 
 	@OriginalMember(owner = "client!afm", name = "il", descriptor = "Lclient!asx;")
-	Class80_Sub36_Sub2 aClass80_Sub36_Sub2_1 = new Class80_Sub36_Sub2(8192);
+	PacketGl aPacketGl_1 = new PacketGl(8192);
 
 	@OriginalMember(owner = "client!afm", name = "in", descriptor = "[I")
 	int[] anIntArray66 = new int[1];
@@ -3379,7 +3379,7 @@ public final class Class102_Sub3 extends Class102 {
 		if (this.anInterface14_3 != null) {
 			return;
 		}
-		@Pc(12) Class80_Sub36_Sub2 local12 = new Class80_Sub36_Sub2(80);
+		@Pc(12) PacketGl local12 = new PacketGl(80);
 		if (this.aBoolean129) {
 			local12.method23420(-1.0F);
 			local12.method23420(-1.0F);
@@ -3423,7 +3423,7 @@ public final class Class102_Sub3 extends Class102 {
 			local12.method23418(1.0F);
 			local12.method23418(0.0F);
 		}
-		this.anInterface14_3 = this.method6375(20, local12.aByteArray61, local12.anInt3152 * -1380987821, false);
+		this.anInterface14_3 = this.method6375(20, local12.data, local12.pos * -1380987821, false);
 		this.aClass189_5 = new Class189(this.anInterface14_3, 5126, 3, 0);
 		this.aClass189_6 = new Class189(this.anInterface14_3, 5126, 2, 12);
 		this.aClass209_1.method25789(this);
@@ -5407,7 +5407,7 @@ public final class Class102_Sub3 extends Class102 {
 		if (this.anInterface14_3 != null) {
 			return;
 		}
-		@Pc(12) Class80_Sub36_Sub2 local12 = new Class80_Sub36_Sub2(80);
+		@Pc(12) PacketGl local12 = new PacketGl(80);
 		if (this.aBoolean129) {
 			local12.method23420(-1.0F);
 			local12.method23420(-1.0F);
@@ -5451,7 +5451,7 @@ public final class Class102_Sub3 extends Class102 {
 			local12.method23418(1.0F);
 			local12.method23418(0.0F);
 		}
-		this.anInterface14_3 = this.method6375(20, local12.aByteArray61, local12.anInt3152 * -1380987821, false);
+		this.anInterface14_3 = this.method6375(20, local12.data, local12.pos * -1380987821, false);
 		this.aClass189_5 = new Class189(this.anInterface14_3, 5126, 3, 0);
 		this.aClass189_6 = new Class189(this.anInterface14_3, 5126, 2, 12);
 		this.aClass209_1.method25789(this);
@@ -5464,7 +5464,7 @@ public final class Class102_Sub3 extends Class102 {
 		if (this.anInterface14_3 != null) {
 			return;
 		}
-		@Pc(12) Class80_Sub36_Sub2 local12 = new Class80_Sub36_Sub2(80);
+		@Pc(12) PacketGl local12 = new PacketGl(80);
 		if (this.aBoolean129) {
 			local12.method23420(-1.0F);
 			local12.method23420(-1.0F);
@@ -5508,7 +5508,7 @@ public final class Class102_Sub3 extends Class102 {
 			local12.method23418(1.0F);
 			local12.method23418(0.0F);
 		}
-		this.anInterface14_3 = this.method6375(20, local12.aByteArray61, local12.anInt3152 * -1380987821, false);
+		this.anInterface14_3 = this.method6375(20, local12.data, local12.pos * -1380987821, false);
 		this.aClass189_5 = new Class189(this.anInterface14_3, 5126, 3, 0);
 		this.aClass189_6 = new Class189(this.anInterface14_3, 5126, 2, 12);
 		this.aClass209_1.method25789(this);
@@ -8052,7 +8052,7 @@ public final class Class102_Sub3 extends Class102 {
 		if (this.anInterface14_3 != null) {
 			return;
 		}
-		@Pc(12) Class80_Sub36_Sub2 local12 = new Class80_Sub36_Sub2(80);
+		@Pc(12) PacketGl local12 = new PacketGl(80);
 		if (this.aBoolean129) {
 			local12.method23420(-1.0F);
 			local12.method23420(-1.0F);
@@ -8096,7 +8096,7 @@ public final class Class102_Sub3 extends Class102 {
 			local12.method23418(1.0F);
 			local12.method23418(0.0F);
 		}
-		this.anInterface14_3 = this.method6375(20, local12.aByteArray61, local12.anInt3152 * -1380987821, false);
+		this.anInterface14_3 = this.method6375(20, local12.data, local12.pos * -1380987821, false);
 		this.aClass189_5 = new Class189(this.anInterface14_3, 5126, 3, 0);
 		this.aClass189_6 = new Class189(this.anInterface14_3, 5126, 2, 12);
 		this.aClass209_1.method25789(this);
@@ -8798,7 +8798,7 @@ public final class Class102_Sub3 extends Class102 {
 		if (this.anInterface14_3 != null) {
 			return;
 		}
-		@Pc(12) Class80_Sub36_Sub2 local12 = new Class80_Sub36_Sub2(80);
+		@Pc(12) PacketGl local12 = new PacketGl(80);
 		if (this.aBoolean129) {
 			local12.method23420(-1.0F);
 			local12.method23420(-1.0F);
@@ -8842,7 +8842,7 @@ public final class Class102_Sub3 extends Class102 {
 			local12.method23418(1.0F);
 			local12.method23418(0.0F);
 		}
-		this.anInterface14_3 = this.method6375(20, local12.aByteArray61, local12.anInt3152 * -1380987821, false);
+		this.anInterface14_3 = this.method6375(20, local12.data, local12.pos * -1380987821, false);
 		this.aClass189_5 = new Class189(this.anInterface14_3, 5126, 3, 0);
 		this.aClass189_6 = new Class189(this.anInterface14_3, 5126, 2, 12);
 		this.aClass209_1.method25789(this);

@@ -57,17 +57,17 @@ public final class Class601 implements Interface75, Interface65 {
 	}
 
 	@OriginalMember(owner = "client!ut", name = "t", descriptor = "(Lclient!ald;B)Lclient!hc;")
-	public static Class308 method32103(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
-		@Pc(3) int local3 = arg0.method23362(-1378907714);
+	public static Class308 method32103(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
+		@Pc(3) int local3 = arg0.g1();
 		if (local3 == 0) {
 			return null;
 		}
 		local3--;
-		arg0.anInt3152 += 1034180571;
-		@Pc(19) int local19 = arg0.method23182(1920476052);
+		arg0.pos += 1034180571;
+		@Pc(19) int local19 = arg0.g4();
 		@Pc(22) Object[] local22 = new Object[local3];
 		for (@Pc(24) int local24 = 0; local24 < local3; local24++) {
-			@Pc(31) int local31 = arg0.method23362(-1710561823);
+			@Pc(31) int local31 = arg0.g1();
 			if (local31 == 0) {
 				local22[local24] = Class519.method30594(Integer.class, (byte) 0).method30638(arg0, (short) 961);
 			} else if (local31 == 1) {
@@ -113,7 +113,7 @@ public final class Class601 implements Interface75, Interface65 {
 	@OriginalMember(owner = "client!ut", name = "z", descriptor = "(Lclient!arz;Lclient!yp;B)V")
 	static void method32105(@OriginalArg(0) Class80_Sub1_Sub11 arg0, @OriginalArg(1) Class690 arg1, @OriginalArg(2) byte arg2) {
 		arg1.anIntArray525[(arg1.anInt5778 += 2036747717) * 1896589581 - 1] = Class123_Sub2_Sub3.method20550(arg0, (byte) 83);
-		arg1.anObjectArray46[(arg1.anInt5776 += -825189621) * -2070619997 - 1] = Class701.method37098(arg0, 936881599);
+		arg1.anObjectArray46[(arg1.anInt5776 += -825189621) * -2070619997 - 1] = ByteArrayPool.method37098(arg0, 936881599);
 		arg1.anObjectArray46[(arg1.anInt5776 += -825189621) * -2070619997 - 1] = Class374.method28443(arg0, 729686478);
 		arg1.anObjectArray46[(arg1.anInt5776 += -825189621) * -2070619997 - 1] = Class627.method32543(arg0, -482200724);
 	}

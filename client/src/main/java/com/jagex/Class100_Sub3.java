@@ -1049,13 +1049,13 @@ public final class Class100_Sub3 extends Class100 {
 			this.aClass102_Sub3_25.method6367();
 		}
 		this.aClass102_Sub3_25.method6550(this.aClass189_2, this.aClass189_1, this.aClass189_3, this.aClass189_4);
-		if (this.aClass102_Sub3_25.aClass80_Sub36_Sub2_1.aByteArray61.length < this.anInt453 * 2) {
-			this.aClass102_Sub3_25.aClass80_Sub36_Sub2_1 = new Class80_Sub36_Sub2(this.anInt453 * 2);
+		if (this.aClass102_Sub3_25.aPacketGl_1.data.length < this.anInt453 * 2) {
+			this.aClass102_Sub3_25.aPacketGl_1 = new PacketGl(this.anInt453 * 2);
 		} else {
-			this.aClass102_Sub3_25.aClass80_Sub36_Sub2_1.anInt3152 = 0;
+			this.aClass102_Sub3_25.aPacketGl_1.pos = 0;
 		}
 		@Pc(293) int local293 = 0;
-		@Pc(297) Class80_Sub36_Sub2 local297 = this.aClass102_Sub3_25.aClass80_Sub36_Sub2_1;
+		@Pc(297) PacketGl local297 = this.aClass102_Sub3_25.aPacketGl_1;
 		@Pc(303) int local303;
 		@Pc(315) int local315;
 		@Pc(317) int local317;
@@ -1069,7 +1069,7 @@ public final class Class100_Sub3 extends Class100 {
 						local335 = this.aShortArrayArray3[local315];
 						if (local335 != null) {
 							for (local339 = 0; local339 < local335.length; local339++) {
-								local297.method23155(local335[local339] & 0xFFFF, (byte) -108);
+								local297.p2(local335[local339] & 0xFFFF);
 								local293++;
 							}
 						}
@@ -1085,7 +1085,7 @@ public final class Class100_Sub3 extends Class100 {
 						local335 = this.aShortArrayArray3[local315];
 						if (local335 != null) {
 							for (local339 = 0; local339 < local335.length; local339++) {
-								local297.method23385(local335[local339] & 0xFFFF, 1060557734);
+								local297.ip2(local335[local339] & 0xFFFF);
 								local293++;
 							}
 						}
@@ -1095,7 +1095,7 @@ public final class Class100_Sub3 extends Class100 {
 			}
 		}
 		if (local293 > 0) {
-			@Pc(433) Class94_Sub2 local433 = new Class94_Sub2(this.aClass102_Sub3_25, 5123, local297.aByteArray61, local297.anInt3152 * -1380987821);
+			@Pc(433) Class94_Sub2 local433 = new Class94_Sub2(this.aClass102_Sub3_25, 5123, local297.data, local297.pos * -1380987821);
 			this.aClass102_Sub3_25.method6379(local433, 4, 0, local293);
 		}
 	}
@@ -1494,13 +1494,13 @@ public final class Class100_Sub3 extends Class100 {
 			this.aClass102_Sub3_25.method6367();
 		}
 		this.aClass102_Sub3_25.method6550(this.aClass189_2, this.aClass189_1, this.aClass189_3, this.aClass189_4);
-		if (this.aClass102_Sub3_25.aClass80_Sub36_Sub2_1.aByteArray61.length < this.anInt453 * 2) {
-			this.aClass102_Sub3_25.aClass80_Sub36_Sub2_1 = new Class80_Sub36_Sub2(this.anInt453 * 2);
+		if (this.aClass102_Sub3_25.aPacketGl_1.data.length < this.anInt453 * 2) {
+			this.aClass102_Sub3_25.aPacketGl_1 = new PacketGl(this.anInt453 * 2);
 		} else {
-			this.aClass102_Sub3_25.aClass80_Sub36_Sub2_1.anInt3152 = 0;
+			this.aClass102_Sub3_25.aPacketGl_1.pos = 0;
 		}
 		@Pc(293) int local293 = 0;
-		@Pc(297) Class80_Sub36_Sub2 local297 = this.aClass102_Sub3_25.aClass80_Sub36_Sub2_1;
+		@Pc(297) PacketGl local297 = this.aClass102_Sub3_25.aPacketGl_1;
 		@Pc(303) int local303;
 		@Pc(315) int local315;
 		@Pc(317) int local317;
@@ -1514,7 +1514,7 @@ public final class Class100_Sub3 extends Class100 {
 						local335 = this.aShortArrayArray3[local315];
 						if (local335 != null) {
 							for (local339 = 0; local339 < local335.length; local339++) {
-								local297.method23155(local335[local339] & 0xFFFF, (byte) -10);
+								local297.p2(local335[local339] & 0xFFFF);
 								local293++;
 							}
 						}
@@ -1530,7 +1530,7 @@ public final class Class100_Sub3 extends Class100 {
 						local335 = this.aShortArrayArray3[local315];
 						if (local335 != null) {
 							for (local339 = 0; local339 < local335.length; local339++) {
-								local297.method23385(local335[local339] & 0xFFFF, 1060557734);
+								local297.ip2(local335[local339] & 0xFFFF);
 								local293++;
 							}
 						}
@@ -1540,7 +1540,7 @@ public final class Class100_Sub3 extends Class100 {
 			}
 		}
 		if (local293 > 0) {
-			@Pc(433) Class94_Sub2 local433 = new Class94_Sub2(this.aClass102_Sub3_25, 5123, local297.aByteArray61, local297.anInt3152 * -1380987821);
+			@Pc(433) Class94_Sub2 local433 = new Class94_Sub2(this.aClass102_Sub3_25, 5123, local297.data, local297.pos * -1380987821);
 			this.aClass102_Sub3_25.method6379(local433, 4, 0, local293);
 		}
 	}
@@ -1603,13 +1603,13 @@ public final class Class100_Sub3 extends Class100 {
 			this.aClass102_Sub3_25.method6367();
 		}
 		this.aClass102_Sub3_25.method6550(this.aClass189_2, this.aClass189_1, this.aClass189_3, this.aClass189_4);
-		if (this.aClass102_Sub3_25.aClass80_Sub36_Sub2_1.aByteArray61.length < this.anInt453 * 2) {
-			this.aClass102_Sub3_25.aClass80_Sub36_Sub2_1 = new Class80_Sub36_Sub2(this.anInt453 * 2);
+		if (this.aClass102_Sub3_25.aPacketGl_1.data.length < this.anInt453 * 2) {
+			this.aClass102_Sub3_25.aPacketGl_1 = new PacketGl(this.anInt453 * 2);
 		} else {
-			this.aClass102_Sub3_25.aClass80_Sub36_Sub2_1.anInt3152 = 0;
+			this.aClass102_Sub3_25.aPacketGl_1.pos = 0;
 		}
 		@Pc(293) int local293 = 0;
-		@Pc(297) Class80_Sub36_Sub2 local297 = this.aClass102_Sub3_25.aClass80_Sub36_Sub2_1;
+		@Pc(297) PacketGl local297 = this.aClass102_Sub3_25.aPacketGl_1;
 		@Pc(303) int local303;
 		@Pc(315) int local315;
 		@Pc(317) int local317;
@@ -1623,7 +1623,7 @@ public final class Class100_Sub3 extends Class100 {
 						local335 = this.aShortArrayArray3[local315];
 						if (local335 != null) {
 							for (local339 = 0; local339 < local335.length; local339++) {
-								local297.method23155(local335[local339] & 0xFFFF, (byte) -51);
+								local297.p2(local335[local339] & 0xFFFF);
 								local293++;
 							}
 						}
@@ -1639,7 +1639,7 @@ public final class Class100_Sub3 extends Class100 {
 						local335 = this.aShortArrayArray3[local315];
 						if (local335 != null) {
 							for (local339 = 0; local339 < local335.length; local339++) {
-								local297.method23385(local335[local339] & 0xFFFF, 1060557734);
+								local297.ip2(local335[local339] & 0xFFFF);
 								local293++;
 							}
 						}
@@ -1649,7 +1649,7 @@ public final class Class100_Sub3 extends Class100 {
 			}
 		}
 		if (local293 > 0) {
-			@Pc(433) Class94_Sub2 local433 = new Class94_Sub2(this.aClass102_Sub3_25, 5123, local297.aByteArray61, local297.anInt3152 * -1380987821);
+			@Pc(433) Class94_Sub2 local433 = new Class94_Sub2(this.aClass102_Sub3_25, 5123, local297.data, local297.pos * -1380987821);
 			this.aClass102_Sub3_25.method6379(local433, 4, 0, local293);
 		}
 	}
@@ -1664,8 +1664,8 @@ public final class Class100_Sub3 extends Class100 {
 		if (this.aClass102_Sub3_25.anIntArray67.length < local12) {
 			this.aClass102_Sub3_25.anIntArray67 = new int[local12];
 		}
-		if (this.aClass102_Sub3_25.aClass80_Sub36_Sub2_1.aByteArray61.length < this.anInt453 * 2) {
-			this.aClass102_Sub3_25.aClass80_Sub36_Sub2_1 = new Class80_Sub36_Sub2(this.anInt453 * 2);
+		if (this.aClass102_Sub3_25.aPacketGl_1.data.length < this.anInt453 * 2) {
+			this.aClass102_Sub3_25.aPacketGl_1 = new PacketGl(this.anInt453 * 2);
 		}
 		@Pc(47) int local47 = arg0 - arg2;
 		@Pc(49) int local49 = local47;
@@ -1876,8 +1876,8 @@ public final class Class100_Sub3 extends Class100 {
 		if (this.aClass102_Sub3_25.anIntArray67.length < local12) {
 			this.aClass102_Sub3_25.anIntArray67 = new int[local12];
 		}
-		if (this.aClass102_Sub3_25.aClass80_Sub36_Sub2_1.aByteArray61.length < this.anInt453 * 2) {
-			this.aClass102_Sub3_25.aClass80_Sub36_Sub2_1 = new Class80_Sub36_Sub2(this.anInt453 * 2);
+		if (this.aClass102_Sub3_25.aPacketGl_1.data.length < this.anInt453 * 2) {
+			this.aClass102_Sub3_25.aPacketGl_1 = new PacketGl(this.anInt453 * 2);
 		}
 		@Pc(47) int local47 = arg0 - arg2;
 		@Pc(49) int local49 = local47;
@@ -1954,8 +1954,8 @@ public final class Class100_Sub3 extends Class100 {
 		if (this.aClass102_Sub3_25.anIntArray67.length < local12) {
 			this.aClass102_Sub3_25.anIntArray67 = new int[local12];
 		}
-		if (this.aClass102_Sub3_25.aClass80_Sub36_Sub2_1.aByteArray61.length < this.anInt453 * 2) {
-			this.aClass102_Sub3_25.aClass80_Sub36_Sub2_1 = new Class80_Sub36_Sub2(this.anInt453 * 2);
+		if (this.aClass102_Sub3_25.aPacketGl_1.data.length < this.anInt453 * 2) {
+			this.aClass102_Sub3_25.aPacketGl_1 = new PacketGl(this.anInt453 * 2);
 		}
 		@Pc(47) int local47 = arg0 - arg2;
 		@Pc(49) int local49 = local47;
@@ -2160,8 +2160,8 @@ public final class Class100_Sub3 extends Class100 {
 		if (this.aClass102_Sub3_25.anIntArray67.length < local12) {
 			this.aClass102_Sub3_25.anIntArray67 = new int[local12];
 		}
-		if (this.aClass102_Sub3_25.aClass80_Sub36_Sub2_1.aByteArray61.length < this.anInt453 * 2) {
-			this.aClass102_Sub3_25.aClass80_Sub36_Sub2_1 = new Class80_Sub36_Sub2(this.anInt453 * 2);
+		if (this.aClass102_Sub3_25.aPacketGl_1.data.length < this.anInt453 * 2) {
+			this.aClass102_Sub3_25.aPacketGl_1 = new PacketGl(this.anInt453 * 2);
 		}
 		@Pc(47) int local47 = arg0 - arg2;
 		@Pc(49) int local49 = local47;

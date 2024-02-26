@@ -51,33 +51,33 @@ public final class Class339 implements Interface11, Interface5 {
 	}
 
 	@OriginalMember(owner = "client!ii", name = "k", descriptor = "(Lclient!ald;I)V")
-	void method27895(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method27895(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.anInt4232 = arg0.method23178((byte) -99) * 236106247;
+			this.anInt4232 = arg0.g2() * 236106247;
 		} else if (arg1 == 2) {
 			this.aBoolean830 = true;
 		} else if (arg1 == 3) {
-			this.anInt4233 = arg0.method23179(352093361) * 187795767;
-			this.anInt4234 = arg0.method23179(1174445619) * 1265635789;
-			this.anInt4241 = arg0.method23179(486130215) * -529318841;
+			this.anInt4233 = arg0.g2s() * 187795767;
+			this.anInt4234 = arg0.g2s() * 1265635789;
+			this.anInt4241 = arg0.g2s() * -529318841;
 		} else if (arg1 == 4) {
-			this.anInt4238 = arg0.method23362(-1950698615) * -22874481;
+			this.anInt4238 = arg0.g1() * -22874481;
 		} else if (arg1 == 5) {
-			this.anInt4235 = arg0.method23210((byte) 32) * -1062054093;
+			this.anInt4235 = arg0.gSmart2or4null() * -1062054093;
 		} else if (arg1 == 6) {
-			this.anInt4236 = arg0.method23180(1710327153) * -1942174607;
+			this.anInt4236 = arg0.g3() * -1942174607;
 		} else if (arg1 == 7) {
-			this.anInt4239 = arg0.method23179(-759239470) * 485627631;
-			this.anInt4237 = arg0.method23179(-129438440) * -982205175;
-			this.anInt4240 = arg0.method23179(-134696213) * -779596223;
+			this.anInt4239 = arg0.g2s() * 485627631;
+			this.anInt4237 = arg0.g2s() * -982205175;
+			this.anInt4240 = arg0.g2s() * -779596223;
 		}
 	}
 
 	@OriginalMember(owner = "client!ii", name = "t", descriptor = "(Lclient!ald;I)V")
 	@Override
-	public void method37006(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	public void method37006(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(268080720);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -86,25 +86,25 @@ public final class Class339 implements Interface11, Interface5 {
 	}
 
 	@OriginalMember(owner = "client!ii", name = "l", descriptor = "(Lclient!ald;IB)V")
-	void method27896(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
+	void method27896(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
 		if (arg1 == 1) {
-			this.anInt4232 = arg0.method23178((byte) -105) * 236106247;
+			this.anInt4232 = arg0.g2() * 236106247;
 		} else if (arg1 == 2) {
 			this.aBoolean830 = true;
 		} else if (arg1 == 3) {
-			this.anInt4233 = arg0.method23179(47267435) * 187795767;
-			this.anInt4234 = arg0.method23179(850992718) * 1265635789;
-			this.anInt4241 = arg0.method23179(-220101187) * -529318841;
+			this.anInt4233 = arg0.g2s() * 187795767;
+			this.anInt4234 = arg0.g2s() * 1265635789;
+			this.anInt4241 = arg0.g2s() * -529318841;
 		} else if (arg1 == 4) {
-			this.anInt4238 = arg0.method23362(254178116) * -22874481;
+			this.anInt4238 = arg0.g1() * -22874481;
 		} else if (arg1 == 5) {
-			this.anInt4235 = arg0.method23210((byte) 80) * -1062054093;
+			this.anInt4235 = arg0.gSmart2or4null() * -1062054093;
 		} else if (arg1 == 6) {
-			this.anInt4236 = arg0.method23180(1710327153) * -1942174607;
+			this.anInt4236 = arg0.g3() * -1942174607;
 		} else if (arg1 == 7) {
-			this.anInt4239 = arg0.method23179(2054987999) * 485627631;
-			this.anInt4237 = arg0.method23179(1769802326) * -982205175;
-			this.anInt4240 = arg0.method23179(-122310322) * -779596223;
+			this.anInt4239 = arg0.g2s() * 485627631;
+			this.anInt4237 = arg0.g2s() * -982205175;
+			this.anInt4240 = arg0.g2s() * -779596223;
 		}
 	}
 
@@ -125,9 +125,9 @@ public final class Class339 implements Interface11, Interface5 {
 
 	@OriginalMember(owner = "client!ii", name = "u", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method37009(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method37009(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(247601384);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -151,48 +151,48 @@ public final class Class339 implements Interface11, Interface5 {
 	}
 
 	@OriginalMember(owner = "client!ii", name = "i", descriptor = "(Lclient!ald;I)V")
-	void method27897(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method27897(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.anInt4232 = arg0.method23178((byte) -57) * 236106247;
+			this.anInt4232 = arg0.g2() * 236106247;
 		} else if (arg1 == 2) {
 			this.aBoolean830 = true;
 		} else if (arg1 == 3) {
-			this.anInt4233 = arg0.method23179(1604567898) * 187795767;
-			this.anInt4234 = arg0.method23179(265993978) * 1265635789;
-			this.anInt4241 = arg0.method23179(1916372395) * -529318841;
+			this.anInt4233 = arg0.g2s() * 187795767;
+			this.anInt4234 = arg0.g2s() * 1265635789;
+			this.anInt4241 = arg0.g2s() * -529318841;
 		} else if (arg1 == 4) {
-			this.anInt4238 = arg0.method23362(-840217583) * -22874481;
+			this.anInt4238 = arg0.g1() * -22874481;
 		} else if (arg1 == 5) {
-			this.anInt4235 = arg0.method23210((byte) 107) * -1062054093;
+			this.anInt4235 = arg0.gSmart2or4null() * -1062054093;
 		} else if (arg1 == 6) {
-			this.anInt4236 = arg0.method23180(1710327153) * -1942174607;
+			this.anInt4236 = arg0.g3() * -1942174607;
 		} else if (arg1 == 7) {
-			this.anInt4239 = arg0.method23179(1870774371) * 485627631;
-			this.anInt4237 = arg0.method23179(160811482) * -982205175;
-			this.anInt4240 = arg0.method23179(1158130874) * -779596223;
+			this.anInt4239 = arg0.g2s() * 485627631;
+			this.anInt4237 = arg0.g2s() * -982205175;
+			this.anInt4240 = arg0.g2s() * -779596223;
 		}
 	}
 
 	@OriginalMember(owner = "client!ii", name = "m", descriptor = "(Lclient!ald;I)V")
-	void method27898(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method27898(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.anInt4232 = arg0.method23178((byte) -73) * 236106247;
+			this.anInt4232 = arg0.g2() * 236106247;
 		} else if (arg1 == 2) {
 			this.aBoolean830 = true;
 		} else if (arg1 == 3) {
-			this.anInt4233 = arg0.method23179(1370227338) * 187795767;
-			this.anInt4234 = arg0.method23179(1098518792) * 1265635789;
-			this.anInt4241 = arg0.method23179(788944481) * -529318841;
+			this.anInt4233 = arg0.g2s() * 187795767;
+			this.anInt4234 = arg0.g2s() * 1265635789;
+			this.anInt4241 = arg0.g2s() * -529318841;
 		} else if (arg1 == 4) {
-			this.anInt4238 = arg0.method23362(97738259) * -22874481;
+			this.anInt4238 = arg0.g1() * -22874481;
 		} else if (arg1 == 5) {
-			this.anInt4235 = arg0.method23210((byte) 21) * -1062054093;
+			this.anInt4235 = arg0.gSmart2or4null() * -1062054093;
 		} else if (arg1 == 6) {
-			this.anInt4236 = arg0.method23180(1710327153) * -1942174607;
+			this.anInt4236 = arg0.g3() * -1942174607;
 		} else if (arg1 == 7) {
-			this.anInt4239 = arg0.method23179(1473254934) * 485627631;
-			this.anInt4237 = arg0.method23179(1852327724) * -982205175;
-			this.anInt4240 = arg0.method23179(1230734591) * -779596223;
+			this.anInt4239 = arg0.g2s() * 485627631;
+			this.anInt4237 = arg0.g2s() * -982205175;
+			this.anInt4240 = arg0.g2s() * -779596223;
 		}
 	}
 

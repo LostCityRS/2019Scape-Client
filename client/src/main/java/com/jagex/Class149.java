@@ -1,6 +1,5 @@
 package com.jagex;
 
-import java.awt.datatransfer.ClipboardOwner;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
@@ -1154,10 +1153,10 @@ public final class Class149 {
 				if (client.anInt3433 * 1994758437 == 18 || client.anInt3433 * 1994758437 == 13) {
 					@Pc(1076) Class75 local1076 = Class52.method1074(16777215);
 					local570 = Class623.method32440(Class443.aClass443_106, local1076.aClass22_1, -191270971);
-					local570.aClass80_Sub36_Sub1_2.method23154(arg0.length() + 3, 1275868335);
-					local570.aClass80_Sub36_Sub1_2.method23154(arg1 ? 1 : 0, 1275868335);
-					local570.aClass80_Sub36_Sub1_2.method23154(arg2 ? 1 : 0, 1275868335);
-					local570.aClass80_Sub36_Sub1_2.method23165(arg0, 1795327183);
+					local570.aPacketBit_2.p1(arg0.length() + 3);
+					local570.aPacketBit_2.p1(arg1 ? 1 : 0);
+					local570.aPacketBit_2.p1(arg2 ? 1 : 0);
+					local570.aPacketBit_2.pjstr(arg0);
 					local1076.method1325(local570, (byte) -89);
 				}
 			} catch (@Pc(1119) Exception local1119) {

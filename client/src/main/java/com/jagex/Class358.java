@@ -65,7 +65,7 @@ public final class Class358 {
 	static void method28130(@OriginalArg(0) Class690 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(12) int local12 = arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581];
 		@Pc(18) Class80_Sub31 local18 = Class623.method32440(Class443.aClass443_93, client.aClass75_1.aClass22_1, -191270971);
-		local18.aClass80_Sub36_Sub1_2.method23155(local12, (byte) -17);
+		local18.aPacketBit_2.p2(local12);
 		client.aClass75_1.method1325(local18, (byte) -63);
 	}
 

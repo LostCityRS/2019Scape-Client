@@ -52,7 +52,7 @@ public final class Class389 implements Interface32 {
 			local15 = Class679.method33621(local13, -827792231);
 		}
 		@Pc(29) Class80_Sub31 local29 = Class623.method32440(Class443.aClass443_8, client.aClass75_1.aClass22_1, -191270971);
-		local29.aClass80_Sub36_Sub1_2.method23345(local15, (byte) 10);
+		local29.aPacketBit_2.p4(local15);
 		client.aClass75_1.method1325(local29, (byte) -87);
 	}
 

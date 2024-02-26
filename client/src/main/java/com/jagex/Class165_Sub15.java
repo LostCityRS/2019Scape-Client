@@ -43,10 +43,10 @@ public final class Class165_Sub15 extends Class165 {
 	}
 
 	@OriginalMember(owner = "client!amo", name = "u", descriptor = "(Lclient!ald;II)V")
-	public static void method16125(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	public static void method16125(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		@Pc(3) Class80_Sub41 local3 = new Class80_Sub41();
-		local3.anInt1945 = arg0.method23362(-1564657481) * 1702047251;
-		local3.anInt1944 = arg0.method23182(-135172198) * 746511025;
+		local3.anInt1945 = arg0.g1() * 1702047251;
+		local3.anInt1944 = arg0.g4() * 746511025;
 		local3.anIntArray198 = new int[local3.anInt1945 * -743322597];
 		local3.anIntArray197 = new int[local3.anInt1945 * -743322597];
 		local3.aFieldArray1 = new Field[local3.anInt1945 * -743322597];
@@ -55,16 +55,16 @@ public final class Class165_Sub15 extends Class165 {
 		local3.aByteArrayArrayArray9 = new byte[local3.anInt1945 * -743322597][][];
 		for (@Pc(61) int local61 = 0; local61 < local3.anInt1945 * -743322597; local61++) {
 			try {
-				@Pc(71) int local71 = arg0.method23362(-693403562);
+				@Pc(71) int local71 = arg0.g1();
 				@Pc(83) String local83;
 				@Pc(87) String local87;
 				@Pc(89) int local89;
 				if (local71 == 0 || local71 == 1 || local71 == 2) {
-					local83 = arg0.method23376((short) 10305);
-					local87 = arg0.method23376((short) 26427);
+					local83 = arg0.gjstr();
+					local87 = arg0.gjstr();
 					local89 = 0;
 					if (local71 == 1) {
-						local89 = arg0.method23182(-1491520025);
+						local89 = arg0.g4();
 					}
 					local3.anIntArray198[local61] = local71;
 					local3.anIntArray199[local61] = local89;
@@ -73,21 +73,21 @@ public final class Class165_Sub15 extends Class165 {
 					}
 					local3.aFieldArray1[local61] = Class269.method26686(local83, -1291585275).getDeclaredField(local87);
 				} else if (local71 == 3 || local71 == 4) {
-					local83 = arg0.method23376((short) 25112);
-					local87 = arg0.method23376((short) 12315);
-					local89 = arg0.method23362(-1204356993);
+					local83 = arg0.gjstr();
+					local87 = arg0.gjstr();
+					local89 = arg0.g1();
 					@Pc(146) String[] local146 = new String[local89];
 					for (@Pc(148) int local148 = 0; local148 < local89; local148++) {
-						local146[local148] = arg0.method23376((short) 23310);
+						local146[local148] = arg0.gjstr();
 					}
-					@Pc(163) String local163 = arg0.method23376((short) 16918);
+					@Pc(163) String local163 = arg0.gjstr();
 					@Pc(166) byte[][] local166 = new byte[local89][];
 					@Pc(178) int local178;
 					if (local71 == 3) {
 						for (@Pc(171) int local171 = 0; local171 < local89; local171++) {
-							local178 = arg0.method23182(-1173836103);
+							local178 = arg0.g4();
 							local166[local171] = new byte[local178];
-							arg0.method23399(local166[local171], 0, local178, -1660211281);
+							arg0.gdata(local166[local171], 0, local178);
 						}
 					}
 					local3.anIntArray198[local61] = local71;

@@ -48,10 +48,10 @@ public final class Class619 {
 	}
 
 	@OriginalMember(owner = "client!vp", name = "<init>", descriptor = "(Lclient!ald;IZZ)V")
-	Class619(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) boolean arg3) {
+	Class619(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) boolean arg3) {
 		@Pc(9) boolean local9 = (arg1 & 0x80) != 0;
 		if (arg2) {
-			@Pc(32) int local32 = arg0.method23362(396367307);
+			@Pc(32) int local32 = arg0.g1();
 			this.anInt5434 = (arg1 & 0x7F) * -1565526897;
 			this.anInt5435 = local32 * -650192397;
 		} else {
@@ -65,22 +65,22 @@ public final class Class619 {
 	}
 
 	@OriginalMember(owner = "client!vp", name = "<init>", descriptor = "(Lclient!ald;Z)V")
-	Class619(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) boolean arg1) {
+	Class619(@OriginalArg(0) Packet arg0, @OriginalArg(1) boolean arg1) {
 		this(arg0, arg1, true);
 	}
 
 	@OriginalMember(owner = "client!vp", name = "<init>", descriptor = "(Lclient!ald;IZ)V")
-	public Class619(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2) {
+	public Class619(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2) {
 		this(arg0, arg1, arg2, true);
 	}
 
 	@OriginalMember(owner = "client!vp", name = "<init>", descriptor = "(Lclient!ald;ZZ)V")
-	Class619(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) {
-		this(arg0, arg0.method23362(-1502509808), arg1, arg2);
+	Class619(@OriginalArg(0) Packet arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) {
+		this(arg0, arg0.g1(), arg1, arg2);
 	}
 
 	@OriginalMember(owner = "client!vp", name = "<init>", descriptor = "(Lclient!ald;)V")
-	public Class619(@OriginalArg(0) Class80_Sub36 arg0) {
+	public Class619(@OriginalArg(0) Packet arg0) {
 		this(arg0, false);
 	}
 }

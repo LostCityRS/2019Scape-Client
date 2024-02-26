@@ -8,7 +8,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 public final class Class103_Sub1 extends Class103 {
 
 	@OriginalMember(owner = "client!afb", name = "<init>", descriptor = "(Lclient!ald;)V")
-	Class103_Sub1(@OriginalArg(0) Class80_Sub36 arg0) {
+	Class103_Sub1(@OriginalArg(0) Packet arg0) {
 		super(arg0);
 	}
 

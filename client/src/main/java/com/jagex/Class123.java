@@ -78,7 +78,7 @@ public abstract class Class123 {
 	public abstract Class463 method20505();
 
 	@OriginalMember(owner = "client!kl", name = "m", descriptor = "(Lclient!ald;I)V")
-	public abstract void method20506(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1);
+	public abstract void method20506(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1);
 
 	@OriginalMember(owner = "client!kl", name = "p", descriptor = "()Lclient!akx;")
 	public abstract Class80_Sub33 method20507();
@@ -111,7 +111,7 @@ public abstract class Class123 {
 	public abstract Class463 method20516(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!kl", name = "y", descriptor = "(Lclient!ald;)V")
-	public abstract void method20517(@OriginalArg(0) Class80_Sub36 arg0);
+	public abstract void method20517(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!kl", name = "i", descriptor = "(Lclient!jl;IIB)V")
 	public abstract void method20518(@OriginalArg(0) Class363 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) byte arg3);
@@ -123,10 +123,10 @@ public abstract class Class123 {
 	public abstract double[] method20520();
 
 	@OriginalMember(owner = "client!kl", name = "n", descriptor = "(Lclient!ald;)V")
-	public abstract void method20521(@OriginalArg(0) Class80_Sub36 arg0);
+	public abstract void method20521(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!kl", name = "c", descriptor = "(Lclient!ald;)V")
-	public abstract void method20522(@OriginalArg(0) Class80_Sub36 arg0);
+	public abstract void method20522(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!kl", name = "b", descriptor = "(Lclient!jl;II)V")
 	public abstract void method20523(@OriginalArg(0) Class363 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2);

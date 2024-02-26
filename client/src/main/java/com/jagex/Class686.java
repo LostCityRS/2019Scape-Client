@@ -113,7 +113,7 @@ public final class Class686 {
 
 	@OriginalMember(owner = "client!yk", name = "s", descriptor = "([B)Lclient!asw;")
 	static Class80_Sub1_Sub20 method36798(@OriginalArg(0) byte[] arg0) {
-		return new Class80_Sub1_Sub20(new Class80_Sub36(arg0), Class297.anInterface21_4);
+		return new Class80_Sub1_Sub20(new Packet(arg0), Class297.anInterface21_4);
 	}
 
 	@OriginalMember(owner = "client!yk", name = "g", descriptor = "()V")

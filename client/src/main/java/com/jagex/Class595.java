@@ -180,23 +180,23 @@ public final class Class595 {
 	}
 
 	@OriginalMember(owner = "client!uk", name = "<init>", descriptor = "(Lclient!di;ILclient!ald;I)V")
-	public Class595(@OriginalArg(0) Class102 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class80_Sub36 arg2, @OriginalArg(3) int arg3) {
+	public Class595(@OriginalArg(0) Class102 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Packet arg2, @OriginalArg(3) int arg3) {
 		if (anIntArray484 == null) {
 			Class133.method10403(-862631020);
 		}
-		this.anInt5347 = arg2.method23362(-890313904) * 823158455;
+		this.anInt5347 = arg2.g1() * 823158455;
 		this.aBoolean924 = (this.anInt5347 * -1434233081 & 0x8) != 0;
 		this.aBoolean923 = (this.anInt5347 * -1434233081 & 0x10) != 0;
 		this.anInt5347 = (this.anInt5347 * -1434233081 & 0x7) * 823158455;
-		@Pc(57) int local57 = arg2.method23178((byte) -43) << arg3;
-		@Pc(63) int local63 = arg2.method23178((byte) -104) << arg3;
-		@Pc(69) int local69 = arg2.method23178((byte) -59) << arg3;
-		@Pc(73) int local73 = arg2.method23362(-637368005);
+		@Pc(57) int local57 = arg2.g2() << arg3;
+		@Pc(63) int local63 = arg2.g2() << arg3;
+		@Pc(69) int local69 = arg2.g2() << arg3;
+		@Pc(73) int local73 = arg2.g1();
 		@Pc(79) int local79 = local73 * 2 + 1;
 		this.aShortArray142 = new short[local79];
 		@Pc(85) int local85;
 		for (local85 = 0; local85 < this.aShortArray142.length; local85++) {
-			@Pc(95) short local95 = (short) arg2.method23178((byte) -116);
+			@Pc(95) short local95 = (short) arg2.g2();
 			@Pc(99) int local99 = local95 >>> 8;
 			@Pc(103) int local103 = local95 & 0xFF;
 			if (local99 >= local79) {
@@ -208,14 +208,14 @@ public final class Class595 {
 			this.aShortArray142[local85] = (short) (local99 << 8 | local103);
 		}
 		local73 = (0x1 << arg1 >> 1) + (local73 << arg1);
-		local85 = Class687.anIntArray524 == null ? Class325.anIntArray400[Class80_Sub22.method21675(arg2.method23178((byte) -126), 1350716704) & 0xFFFF] : Class687.anIntArray524[arg2.method23178((byte) -80)];
-		@Pc(164) int local164 = arg2.method23362(406913426);
+		local85 = Class687.anIntArray524 == null ? Class325.anIntArray400[Class80_Sub22.method21675(arg2.g2(), 1350716704) & 0xFFFF] : Class687.anIntArray524[arg2.g2()];
+		@Pc(164) int local164 = arg2.g1();
 		this.anInt5349 = (local164 & 0x1F) * 1199872383;
 		this.anInt5352 = ((local164 & 0xE0) << 3) * 946426405;
 		if (this.anInt5349 * -619633025 != 31) {
 			this.method31960(-2146449935);
 		}
-		this.anInt5355 = arg2.method23179(514516641) * 1973216781;
+		this.anInt5355 = arg2.g2s() * 1973216781;
 		this.method31959(arg0, local57, local69, local63, local73, local85, 250230170);
 	}
 

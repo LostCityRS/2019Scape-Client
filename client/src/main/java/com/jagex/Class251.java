@@ -68,25 +68,25 @@ public final class Class251 {
 			}
 		}
 		client.anInt3541 = -158780252;
-		Class548.aClass80_Sub36_16 = null;
+		Class548.aPacket_16 = null;
 		client.aBoolean722 = false;
 		if (anInt3880 * -1561586921 > 0) {
 			Class107.method7196(Class158.aClass158_56, anInt3880 * -1561586921, -1, 30180256);
 		}
 		Class662.method33334(2891271);
 		@Pc(68) Class80_Sub31 local68 = Class623.method32440(Class443.aClass443_42, client.aClass75_1.aClass22_1, -191270971);
-		local68.aClass80_Sub36_Sub1_2.method23154(arg0 ? 1 : 0, 1275868335);
+		local68.aPacketBit_2.p1(arg0 ? 1 : 0);
 		client.aClass75_1.method1325(local68, (byte) -79);
 	}
 
 	@OriginalMember(owner = "client!et", name = "i", descriptor = "(Lclient!ald;)V")
-	static void method26359(@OriginalArg(0) Class80_Sub36 arg0) {
+	static void method26359(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-2124893809);
+			@Pc(3) int local3 = arg0.g1();
 			switch(local3) {
 				case 0:
-					anInt3877 = arg0.method23178((byte) -91) * 2099092997;
-					anInt3878 = arg0.method23178((byte) -4) * -3670491;
+					anInt3877 = arg0.g2() * 2099092997;
+					anInt3878 = arg0.g2() * -3670491;
 					break;
 				case 255:
 					return;
@@ -107,38 +107,38 @@ public final class Class251 {
 			if (local23 == null) {
 				return false;
 			}
-			@Pc(32) Class80_Sub36 local32 = new Class80_Sub36(local23);
+			@Pc(32) Packet local32 = new Packet(local23);
 			Class614.method32274(local32, (byte) 123);
-			local39 = local32.method23362(-1636462244);
+			local39 = local32.g1();
 			@Pc(41) int local41;
 			for (local41 = 0; local41 < local39; local41++) {
 				aClass8_50.method232(new Class80_Sub30(local32), -33056083);
 			}
-			local41 = local32.method23195(1384273915);
+			local41 = local32.gSmart1or2();
 			aClass250Array1 = new Class250[local41];
 			@Pc(62) int local62;
 			for (local62 = 0; local62 < local41; local62++) {
 				aClass250Array1[local62] = new Class250(local32);
 			}
-			local62 = local32.method23195(1311805176);
+			local62 = local32.gSmart1or2();
 			aClass254Array1 = new Class254[local62];
 			@Pc(83) int local83;
 			for (local83 = 0; local83 < local62; local83++) {
 				aClass254Array1[local83] = new Class254(local32, local83);
 			}
-			local83 = local32.method23195(1575276158);
+			local83 = local32.gSmart1or2();
 			Class700.aClass249Array1 = new Class249[local83];
 			@Pc(105) int local105;
 			for (local105 = 0; local105 < local83; local105++) {
 				Class700.aClass249Array1[local105] = new Class249(local32);
 			}
-			local105 = local32.method23195(1724175637);
+			local105 = local32.gSmart1or2();
 			aClass239Array1 = new Class239[local105];
 			@Pc(126) int local126;
 			for (local126 = 0; local126 < local105; local126++) {
 				aClass239Array1[local126] = new Class239(local32);
 			}
-			local126 = local32.method23195(1836819053);
+			local126 = local32.gSmart1or2();
 			aClass103Array1 = new Class103[local126];
 			for (@Pc(147) int local147 = 0; local147 < local126; local147++) {
 				aClass103Array1[local147] = Class98.method2707(local32, (byte) 14);
@@ -177,13 +177,13 @@ public final class Class251 {
 	}
 
 	@OriginalMember(owner = "client!et", name = "m", descriptor = "(Lclient!ald;)V")
-	static void method26361(@OriginalArg(0) Class80_Sub36 arg0) {
+	static void method26361(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-1085483461);
+			@Pc(3) int local3 = arg0.g1();
 			switch(local3) {
 				case 0:
-					anInt3877 = arg0.method23178((byte) -21) * 2099092997;
-					anInt3878 = arg0.method23178((byte) -57) * -3670491;
+					anInt3877 = arg0.g2() * 2099092997;
+					anInt3878 = arg0.g2() * -3670491;
 					break;
 				case 255:
 					return;
@@ -192,13 +192,13 @@ public final class Class251 {
 	}
 
 	@OriginalMember(owner = "client!et", name = "o", descriptor = "(Lclient!ald;)V")
-	static void method26362(@OriginalArg(0) Class80_Sub36 arg0) {
+	static void method26362(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-1726429209);
+			@Pc(3) int local3 = arg0.g1();
 			switch(local3) {
 				case 0:
-					anInt3877 = arg0.method23178((byte) -18) * 2099092997;
-					anInt3878 = arg0.method23178((byte) -49) * -3670491;
+					anInt3877 = arg0.g2() * 2099092997;
+					anInt3878 = arg0.g2() * -3670491;
 					break;
 				case 255:
 					return;
@@ -239,14 +239,14 @@ public final class Class251 {
 			}
 		}
 		client.anInt3541 = -158780252;
-		Class548.aClass80_Sub36_16 = null;
+		Class548.aPacket_16 = null;
 		client.aBoolean722 = false;
 		if (anInt3880 * -1561586921 > 0) {
 			Class107.method7196(Class158.aClass158_56, anInt3880 * -1561586921, -1, -1442670886);
 		}
 		Class662.method33334(-934303873);
 		@Pc(68) Class80_Sub31 local68 = Class623.method32440(Class443.aClass443_42, client.aClass75_1.aClass22_1, -191270971);
-		local68.aClass80_Sub36_Sub1_2.method23154(arg0 ? 1 : 0, 1275868335);
+		local68.aPacketBit_2.p1(arg0 ? 1 : 0);
 		client.aClass75_1.method1325(local68, (byte) -98);
 	}
 
@@ -326,15 +326,6 @@ public final class Class251 {
 				local4.aBoolean337 = true;
 			}
 		}
-	}
-
-	@OriginalMember(owner = "client!et", name = "t", descriptor = "([BIII)I")
-	static int method26373(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		@Pc(1) int local1 = -1;
-		for (@Pc(3) int local3 = arg1; local3 < arg2; local3++) {
-			local1 = local1 >>> 8 ^ Class80_Sub36.anIntArray284[(local1 ^ arg0[local3]) & 0xFF];
-		}
-		return ~local1;
 	}
 
 	@OriginalMember(owner = "client!et", name = "ajw", descriptor = "(Lclient!yp;I)V")

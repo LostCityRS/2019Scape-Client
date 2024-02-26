@@ -25,7 +25,7 @@ public final class Class165_Sub30 extends Class165 {
 
 	@OriginalMember(owner = "client!ane", name = "g", descriptor = "(Lclient!pf;II)Lclient!asb;")
 	static Class80_Sub1_Sub12 method16462(@OriginalArg(0) Class480 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(8) Class80_Sub36 local8 = new Class80_Sub36(arg0.method29918(0, arg1, 1896589581));
+		@Pc(8) Packet local8 = new Packet(arg0.method29918(0, arg1, 1896589581));
 		return Class165_Sub11.method16048(local8, arg1, -1116075224);
 	}
 

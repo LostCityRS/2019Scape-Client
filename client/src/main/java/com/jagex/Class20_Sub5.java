@@ -109,12 +109,12 @@ public final class Class20_Sub5 extends Class20 {
 
 	@OriginalMember(owner = "client!any", name = "g", descriptor = "(Lclient!ald;I)V")
 	@Override
-	public void method23094(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		@Pc(5) Class362 local5 = Class384.method28588(arg0.method23362(-1334613118), (byte) 33);
-		@Pc(9) int local9 = arg0.method23178((byte) -105);
+	public void method23094(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(5) Class362 local5 = Class384.method28588(arg0.g1(), (byte) 33);
+		@Pc(9) int local9 = arg0.g2();
 		this.anInterface31_2 = this.aClass121_16.method9605(959375167).method29301(local5, local9, 1992309029);
 		this.aClass463_52.method29476(arg0);
-		if (arg0.method23362(-1856698258) == 1) {
+		if (arg0.g1() == 1) {
 			this.aBoolean418 = true;
 		} else {
 			this.aBoolean418 = false;
@@ -247,12 +247,12 @@ public final class Class20_Sub5 extends Class20 {
 
 	@OriginalMember(owner = "client!any", name = "q", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method23090(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(5) Class362 local5 = Class384.method28588(arg0.method23362(607920369), (byte) -38);
-		@Pc(9) int local9 = arg0.method23178((byte) -72);
+	public void method23090(@OriginalArg(0) Packet arg0) {
+		@Pc(5) Class362 local5 = Class384.method28588(arg0.g1(), (byte) -38);
+		@Pc(9) int local9 = arg0.g2();
 		this.anInterface31_2 = this.aClass121_16.method9605(959375167).method29301(local5, local9, 2095065286);
 		this.aClass463_52.method29476(arg0);
-		if (arg0.method23362(-586893695) == 1) {
+		if (arg0.g1() == 1) {
 			this.aBoolean418 = true;
 		} else {
 			this.aBoolean418 = false;
@@ -261,12 +261,12 @@ public final class Class20_Sub5 extends Class20 {
 
 	@OriginalMember(owner = "client!any", name = "h", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method23091(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(5) Class362 local5 = Class384.method28588(arg0.method23362(841261343), (byte) 35);
-		@Pc(9) int local9 = arg0.method23178((byte) -26);
+	public void method23091(@OriginalArg(0) Packet arg0) {
+		@Pc(5) Class362 local5 = Class384.method28588(arg0.g1(), (byte) 35);
+		@Pc(9) int local9 = arg0.g2();
 		this.anInterface31_2 = this.aClass121_16.method9605(959375167).method29301(local5, local9, 2012736278);
 		this.aClass463_52.method29476(arg0);
-		if (arg0.method23362(594318543) == 1) {
+		if (arg0.g1() == 1) {
 			this.aBoolean418 = true;
 		} else {
 			this.aBoolean418 = false;

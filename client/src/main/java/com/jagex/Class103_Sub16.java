@@ -54,40 +54,40 @@ public final class Class103_Sub16 extends Class103 {
 	final int anInt986;
 
 	@OriginalMember(owner = "client!agm", name = "<init>", descriptor = "(Lclient!ald;II)V")
-	Class103_Sub16(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	Class103_Sub16(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		super(arg0);
 		@Pc(8) int local8;
 		if (arg1 == 0) {
-			local8 = arg0.method23182(-1111874328);
+			local8 = arg0.g4();
 			this.anInt972 = (local8 >>> 16) * 2017956127;
 			this.anInt982 = (local8 & 0xFFFF) * -1212266899;
 			this.anInt983 = 442471813;
 		} else {
 			this.anInt972 = -2017956127;
 			this.anInt982 = 1212266899;
-			this.anInt983 = arg0.method23178((byte) -121) * -442471813;
+			this.anInt983 = arg0.g2() * -442471813;
 		}
 		if (arg2 == 0) {
-			local8 = arg0.method23182(547266708);
+			local8 = arg0.g4();
 			this.anInt980 = (local8 >>> 16) * -262104243;
 			this.anInt981 = (local8 & 0xFFFF) * 359743959;
 			this.anInt979 = 1506510667;
 		} else {
 			this.anInt980 = 262104243;
 			this.anInt981 = -359743959;
-			this.anInt979 = arg0.method23178((byte) -4) * -1506510667;
+			this.anInt979 = arg0.g2() * -1506510667;
 		}
 		if (arg1 == 0 && arg2 == 0) {
-			this.anInt974 = arg0.method23362(-646522830) * 632313999;
+			this.anInt974 = arg0.g1() * 632313999;
 		} else {
 			this.anInt974 = -632313999;
 		}
-		this.anInt975 = arg0.method23178((byte) -15) * 2063479091;
-		this.anInt978 = arg0.method23362(-1848021133) * -2089706313;
-		this.anInt976 = arg0.method23362(121664524) * 1815983345;
-		this.anInt977 = arg0.method23180(1710327153) * 1957820963;
-		this.anInt985 = arg0.method23178((byte) -97) * -907579529;
-		this.anInt986 = arg0.method23362(-99074495) * 1387033951;
+		this.anInt975 = arg0.g2() * 2063479091;
+		this.anInt978 = arg0.g1() * -2089706313;
+		this.anInt976 = arg0.g1() * 1815983345;
+		this.anInt977 = arg0.g3() * 1957820963;
+		this.anInt985 = arg0.g2() * -907579529;
+		this.anInt986 = arg0.g1() * 1387033951;
 	}
 
 	@OriginalMember(owner = "client!agm", name = "f", descriptor = "(I)V")

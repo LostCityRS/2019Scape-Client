@@ -39,9 +39,9 @@ public final class Class285 implements Interface26 {
 	}
 
 	@OriginalMember(owner = "client!gd", name = "<init>", descriptor = "(Lclient!gc;Lclient!ald;)V")
-	Class285(@OriginalArg(0) Class284 arg0, @OriginalArg(1) Class80_Sub36 arg1) {
+	Class285(@OriginalArg(0) Class284 arg0, @OriginalArg(1) Packet arg1) {
 		this.aClass284_6 = arg0;
-		this.anInt3940 = arg1.method23178((byte) -10) * 807069221;
+		this.anInt3940 = arg1.g2() * 807069221;
 	}
 
 	@OriginalMember(owner = "client!gd", name = "t", descriptor = "(Lclient!gz;I)V")

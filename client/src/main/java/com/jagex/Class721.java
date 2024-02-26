@@ -700,12 +700,12 @@ public final class Class721 {
 	}
 
 	@OriginalMember(owner = "client!zx", name = "f", descriptor = "(Lclient!asa;II)V")
-	static void method37336(@OriginalArg(0) Class80_Sub36_Sub1 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	static void method37336(@OriginalArg(0) PacketBit arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		Class51.anInt194 = 0;
 		Class490.method30234(arg0, (byte) -4);
 		Class355.method28098(arg0, (byte) -28);
-		if (arg1 != arg0.anInt3152 * -1380987821) {
-			throw new RuntimeException(arg0.anInt3152 * -1380987821 + " " + arg1);
+		if (arg1 != arg0.pos * -1380987821) {
+			throw new RuntimeException(arg0.pos * -1380987821 + " " + arg1);
 		}
 	}
 

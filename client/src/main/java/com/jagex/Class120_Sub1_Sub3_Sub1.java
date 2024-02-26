@@ -23,12 +23,12 @@ public final class Class120_Sub1_Sub3_Sub1 extends Class120_Sub1_Sub3 implements
 	@OriginalMember(owner = "client!ajd", name = "kk", descriptor = "(Lclient!hx;Lclient!hx;I)V")
 	static void method12744(@OriginalArg(0) Class327 arg0, @OriginalArg(1) Class327 arg1, @OriginalArg(2) int arg2) {
 		@Pc(5) Class80_Sub31 local5 = Class623.method32440(Class443.aClass443_58, client.aClass75_1.aClass22_1, -191270971);
-		local5.aClass80_Sub36_Sub1_2.method23219(arg0.anInt4167 * 1052460537, 899608325);
-		local5.aClass80_Sub36_Sub1_2.method23220(arg1.anInt4167 * 1052460537, 2036747717);
-		local5.aClass80_Sub36_Sub1_2.method23250(arg0.anInt4087 * -2053489901, 763641541);
-		local5.aClass80_Sub36_Sub1_2.method23155(arg1.anInt4094 * 2071556223, (byte) -76);
-		local5.aClass80_Sub36_Sub1_2.method23220(arg0.anInt4094 * 2071556223, 2036747717);
-		local5.aClass80_Sub36_Sub1_2.method23410(arg1.anInt4087 * -2053489901, (byte) -10);
+		local5.aPacketBit_2.p2_alt2(arg0.anInt4167 * 1052460537);
+		local5.aPacketBit_2.p2_alt3(arg1.anInt4167 * 1052460537);
+		local5.aPacketBit_2.p4_alt3(arg0.anInt4087 * -2053489901);
+		local5.aPacketBit_2.p2(arg1.anInt4094 * 2071556223);
+		local5.aPacketBit_2.p2_alt3(arg0.anInt4094 * 2071556223);
+		local5.aPacketBit_2.p4_alt2(arg1.anInt4087 * -2053489901);
 		client.aClass75_1.method1325(local5, (byte) -66);
 	}
 

@@ -64,10 +64,10 @@ public final class IcmpService_Sub1 extends IcmpService {
 		@Pc(52) Class80_Sub31 local52;
 		while (Class597.method32020(-1984189703)) {
 			local52 = Class623.method32440(Class443.aClass443_25, client.aClass75_1.aClass22_1, -191270971);
-			local52.aClass80_Sub36_Sub1_2.method23154(0, 1275868335);
-			local63 = local52.aClass80_Sub36_Sub1_2.anInt3152 * -1380987821;
-			Class117.method8817(local52.aClass80_Sub36_Sub1_2, (byte) 2);
-			local52.aClass80_Sub36_Sub1_2.method23171(local52.aClass80_Sub36_Sub1_2.anInt3152 * -1380987821 - local63, (byte) 25);
+			local52.aPacketBit_2.p1(0);
+			local63 = local52.aPacketBit_2.pos * -1380987821;
+			Class117.method8817(local52.aPacketBit_2, (byte) 2);
+			local52.aPacketBit_2.p1check(local52.aPacketBit_2.pos * -1380987821 - local63);
 			client.aClass75_1.method1325(local52, (byte) -80);
 		}
 		@Pc(129) int local129;
@@ -105,9 +105,9 @@ public final class IcmpService_Sub1 extends IcmpService {
 				client.aLong353 = local134 * 1649288692619019307L;
 				client.aLong354 = local127 * 6530137620220037185L;
 			}
-			local52.aClass80_Sub36_Sub1_2.method23218(Class533.aClass692_2.anInt5782 * -1361729949, 1673014664);
-			local52.aClass80_Sub36_Sub1_2.method23351(client.anInt3413 * -1936589983, -711109028);
-			local52.aClass80_Sub36_Sub1_2.method23209(local129, 1305633202);
+			local52.aPacketBit_2.p2_alt1(Class533.aClass692_2.anInt5782 * -1361729949);
+			local52.aPacketBit_2.p1_alt2(client.anInt3413 * -1936589983);
+			local52.aPacketBit_2.p1_alt1(local129);
 			client.aClass75_1.method1325(local52, (byte) -110);
 			Class533.aClass692_2 = null;
 			Class80.aLong339 = (local127 + 30000L) * -1925122248462573849L;
@@ -237,7 +237,7 @@ public final class IcmpService_Sub1 extends IcmpService {
 		@Pc(620) Class80_Sub31 local620;
 		if (client.aBoolean745) {
 			local620 = Class623.method32440(Class443.aClass443_115, client.aClass75_1.aClass22_1, -191270971);
-			local620.aClass80_Sub36_Sub1_2.method23345(Class644.anInt5645 * 1999363209 << 28 | Class103_Sub10.anInt946 * 1676196187 << 14 | Class258.anInt3887 * 898414461, (byte) 51);
+			local620.aPacketBit_2.p4(Class644.anInt5645 * 1999363209 << 28 | Class103_Sub10.anInt946 * 1676196187 << 14 | Class258.anInt3887 * 898414461);
 			client.aClass75_1.method1325(local620, (byte) -109);
 			client.aBoolean745 = false;
 		}

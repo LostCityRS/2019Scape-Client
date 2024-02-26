@@ -26,22 +26,22 @@ public final class Class80_Sub28_Sub1 extends Class80_Sub28 {
 
 	@OriginalMember(owner = "client!aqd", name = "e", descriptor = "(Lclient!ald;)V")
 	@Override
-	void method22225(@OriginalArg(0) Class80_Sub36 arg0) {
-		if (arg0.method23362(17578850) != 255) {
-			arg0.anInt3152 -= 1034180571;
-			this.aLong158 = arg0.method23273((byte) -55) * 5061050966568184749L;
+	void method22225(@OriginalArg(0) Packet arg0) {
+		if (arg0.g1() != 255) {
+			arg0.pos -= 1034180571;
+			this.aLong158 = arg0.g8() * 5061050966568184749L;
 		}
-		this.aString76 = arg0.method23189(-761473881);
+		this.aString76 = arg0.fastgstr();
 	}
 
 	@OriginalMember(owner = "client!aqd", name = "t", descriptor = "(Lclient!ald;B)V")
 	@Override
-	void method22223(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
-		if (arg0.method23362(-218945811) != 255) {
-			arg0.anInt3152 -= 1034180571;
-			this.aLong158 = arg0.method23273((byte) -64) * 5061050966568184749L;
+	void method22223(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
+		if (arg0.g1() != 255) {
+			arg0.pos -= 1034180571;
+			this.aLong158 = arg0.g8() * 5061050966568184749L;
 		}
-		this.aString76 = arg0.method23189(-761473881);
+		this.aString76 = arg0.fastgstr();
 	}
 
 	@OriginalMember(owner = "client!aqd", name = "f", descriptor = "(Lclient!kf;I)V")
@@ -58,21 +58,21 @@ public final class Class80_Sub28_Sub1 extends Class80_Sub28 {
 
 	@OriginalMember(owner = "client!aqd", name = "l", descriptor = "(Lclient!ald;)V")
 	@Override
-	void method22224(@OriginalArg(0) Class80_Sub36 arg0) {
-		if (arg0.method23362(-2080821892) != 255) {
-			arg0.anInt3152 -= 1034180571;
-			this.aLong158 = arg0.method23273((byte) -34) * 5061050966568184749L;
+	void method22224(@OriginalArg(0) Packet arg0) {
+		if (arg0.g1() != 255) {
+			arg0.pos -= 1034180571;
+			this.aLong158 = arg0.g8() * 5061050966568184749L;
 		}
-		this.aString76 = arg0.method23189(-761473881);
+		this.aString76 = arg0.fastgstr();
 	}
 
 	@OriginalMember(owner = "client!aqd", name = "u", descriptor = "(Lclient!ald;)V")
 	@Override
-	void method22226(@OriginalArg(0) Class80_Sub36 arg0) {
-		if (arg0.method23362(743991678) != 255) {
-			arg0.anInt3152 -= 1034180571;
-			this.aLong158 = arg0.method23273((byte) -19) * 5061050966568184749L;
+	void method22226(@OriginalArg(0) Packet arg0) {
+		if (arg0.g1() != 255) {
+			arg0.pos -= 1034180571;
+			this.aLong158 = arg0.g8() * 5061050966568184749L;
 		}
-		this.aString76 = arg0.method23189(-761473881);
+		this.aString76 = arg0.fastgstr();
 	}
 }

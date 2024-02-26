@@ -96,11 +96,11 @@ public final class Class284 {
 	}
 
 	@OriginalMember(owner = "client!gc", name = "<init>", descriptor = "(Lclient!ald;Lclient!gh;)V")
-	public Class284(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Interface27 arg1) {
+	public Class284(@OriginalArg(0) Packet arg0, @OriginalArg(1) Interface27 arg1) {
 		this.anInterface27_2 = arg1;
-		this.aLong359 = arg0.method23273((byte) 34) * 1212377931605653285L;
-		this.anInt3938 = arg0.method23182(-698944495) * -2035957275;
-		for (@Pc(30) int local30 = arg0.method23362(-1822434707); local30 != 0; local30 = arg0.method23362(259167163)) {
+		this.aLong359 = arg0.g8() * 1212377931605653285L;
+		this.anInt3938 = arg0.g4() * -2035957275;
+		for (@Pc(30) int local30 = arg0.g1(); local30 != 0; local30 = arg0.g1()) {
 			@Pc(40) Class301 local40 = (Class301) Class80_Sub39.method15030(Class301.method27036(1126249958), local30, -1003461753);
 			@Pc(51) Object local51;
 			switch(local40.anInt3966 * -1370387001) {

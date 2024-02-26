@@ -51,14 +51,14 @@ public final class Class103_Sub9 extends Class103 {
 	}
 
 	@OriginalMember(owner = "client!age", name = "<init>", descriptor = "(Lclient!ald;)V")
-	Class103_Sub9(@OriginalArg(0) Class80_Sub36 arg0) {
+	Class103_Sub9(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.anInt937 = arg0.method23178((byte) -30) * 281608073;
-		this.anInt938 = arg0.method23178((byte) -97) * 1324207501;
-		this.anInt942 = arg0.method23178((byte) -52) * 835776703;
-		this.anInt939 = arg0.method23178((byte) -46) * -1534810901;
-		this.anInt941 = arg0.method23178((byte) -111) * 431034319;
-		this.anInt940 = arg0.method23178((byte) -105) * 673075831;
+		this.anInt937 = arg0.g2() * 281608073;
+		this.anInt938 = arg0.g2() * 1324207501;
+		this.anInt942 = arg0.g2() * 835776703;
+		this.anInt939 = arg0.g2() * -1534810901;
+		this.anInt941 = arg0.g2() * 431034319;
+		this.anInt940 = arg0.g2() * 673075831;
 	}
 
 	@OriginalMember(owner = "client!age", name = "g", descriptor = "()V")

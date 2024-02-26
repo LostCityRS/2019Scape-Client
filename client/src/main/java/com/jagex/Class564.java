@@ -68,9 +68,9 @@ public final class Class564 {
 	}
 
 	@OriginalMember(owner = "client!sy", name = "l", descriptor = "(Lclient!ald;B)Lclient!vh;")
-	static Class612 method31478(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
-		@Pc(3) int local3 = arg0.method23362(-725161539);
-		@Pc(7) int local7 = arg0.method23362(-310112473);
+	static Class612 method31478(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
+		@Pc(3) int local3 = arg0.g1();
+		@Pc(7) int local7 = arg0.g1();
 		return new Class612(local3, local7);
 	}
 

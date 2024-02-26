@@ -92,9 +92,9 @@ public final class Class249 {
 	}
 
 	@OriginalMember(owner = "client!er", name = "<init>", descriptor = "(Lclient!ald;)V")
-	Class249(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.anInt3874 = arg0.method23210((byte) 91) * -102305937;
-		this.aClass607_1 = (Class607) Class80_Sub39.method15030(Class165_Sub22.method16274(-263280263), arg0.method23362(-2092284915), -524499933);
+	Class249(@OriginalArg(0) Packet arg0) {
+		this.anInt3874 = arg0.gSmart2or4null() * -102305937;
+		this.aClass607_1 = (Class607) Class80_Sub39.method15030(Class165_Sub22.method16274(-263280263), arg0.g1(), -524499933);
 	}
 
 	@OriginalMember(owner = "client!er", name = "m", descriptor = "()V")

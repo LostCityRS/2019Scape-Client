@@ -54,10 +54,10 @@ public class Class80 {
 		@Pc(17) Class382 local17 = Class477.aClass80_Sub32_3.aClass382Array1[arg0];
 		@Pc(20) Class75 local20 = Class52.method1074(16777215);
 		@Pc(26) Class80_Sub31 local26 = Class623.method32440(Class443.aClass443_54, local20.aClass22_1, -191270971);
-		local26.aClass80_Sub36_Sub1_2.method23154(Class350.method28013(local17.aString204, (short) 16383) + 3, 1275868335);
-		local26.aClass80_Sub36_Sub1_2.method23155(arg0, (byte) -48);
-		local26.aClass80_Sub36_Sub1_2.method23154(arg1 ? 1 : 0, 1275868335);
-		local26.aClass80_Sub36_Sub1_2.method23165(local17.aString204, 2073292404);
+		local26.aPacketBit_2.p1(Class350.method28013(local17.aString204, (short) 16383) + 3);
+		local26.aPacketBit_2.p2(arg0);
+		local26.aPacketBit_2.p1(arg1 ? 1 : 0);
+		local26.aPacketBit_2.pjstr(local17.aString204);
 		local20.method1325(local26, (byte) -111);
 	}
 

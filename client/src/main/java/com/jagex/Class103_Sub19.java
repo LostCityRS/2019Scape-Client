@@ -11,9 +11,9 @@ public final class Class103_Sub19 extends Class103 {
 	final int anInt1006;
 
 	@OriginalMember(owner = "client!agr", name = "<init>", descriptor = "(Lclient!ald;)V")
-	Class103_Sub19(@OriginalArg(0) Class80_Sub36 arg0) {
+	Class103_Sub19(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.anInt1006 = arg0.method23178((byte) -8) * 1214468155;
+		this.anInt1006 = arg0.g2() * 1214468155;
 	}
 
 	@OriginalMember(owner = "client!agr", name = "g", descriptor = "()V")

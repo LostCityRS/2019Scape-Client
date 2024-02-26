@@ -18,40 +18,40 @@ public final class Class125_Sub3 extends Class125 {
 	public final int anInt1184;
 
 	@OriginalMember(owner = "client!ahs", name = "m", descriptor = "(Lclient!ald;)Lclient!kn;")
-	public static Class125 method10216(@OriginalArg(0) Class80_Sub36 arg0) {
+	public static Class125 method10216(@OriginalArg(0) Packet arg0) {
 		@Pc(3) Class125 local3 = Class524.method30653(arg0, (byte) -70);
-		@Pc(7) int local7 = arg0.method23182(-1086836242);
-		@Pc(11) int local11 = arg0.method23182(-147719455);
+		@Pc(7) int local7 = arg0.g4();
+		@Pc(11) int local11 = arg0.g4();
 		return new Class125_Sub3(local3.aClass391_8, local3.aClass383_8, local3.anInt2899 * 808275465, local3.anInt2901 * 1789354437, local3.anInt2900 * 199320851, local3.anInt2903 * 1087492339, local3.anInt2902 * -173381277, local3.anInt2904 * -176628393, local3.anInt2905 * -1330014629, local7, local11);
 	}
 
 	@OriginalMember(owner = "client!ahs", name = "g", descriptor = "(Lclient!ald;)Lclient!kn;")
-	public static Class125 method10217(@OriginalArg(0) Class80_Sub36 arg0) {
+	public static Class125 method10217(@OriginalArg(0) Packet arg0) {
 		@Pc(3) Class125 local3 = Class524.method30653(arg0, (byte) -91);
-		@Pc(7) int local7 = arg0.method23182(77639089);
-		@Pc(11) int local11 = arg0.method23182(1479910332);
+		@Pc(7) int local7 = arg0.g4();
+		@Pc(11) int local11 = arg0.g4();
 		return new Class125_Sub3(local3.aClass391_8, local3.aClass383_8, local3.anInt2899 * 808275465, local3.anInt2901 * 1789354437, local3.anInt2900 * 199320851, local3.anInt2903 * 1087492339, local3.anInt2902 * -173381277, local3.anInt2904 * -176628393, local3.anInt2905 * -1330014629, local7, local11);
 	}
 
 	@OriginalMember(owner = "client!ahs", name = "i", descriptor = "(Lclient!ald;)Lclient!kn;")
-	public static Class125 method10218(@OriginalArg(0) Class80_Sub36 arg0) {
+	public static Class125 method10218(@OriginalArg(0) Packet arg0) {
 		@Pc(3) Class125 local3 = Class524.method30653(arg0, (byte) -87);
-		@Pc(7) int local7 = arg0.method23182(-1436551962);
-		@Pc(11) int local11 = arg0.method23182(-558901358);
+		@Pc(7) int local7 = arg0.g4();
+		@Pc(11) int local11 = arg0.g4();
 		return new Class125_Sub3(local3.aClass391_8, local3.aClass383_8, local3.anInt2899 * 808275465, local3.anInt2901 * 1789354437, local3.anInt2900 * 199320851, local3.anInt2903 * 1087492339, local3.anInt2902 * -173381277, local3.anInt2904 * -176628393, local3.anInt2905 * -1330014629, local7, local11);
 	}
 
 	@OriginalMember(owner = "client!ahs", name = "o", descriptor = "(Lclient!ald;)Lclient!kn;")
-	public static Class125 method10219(@OriginalArg(0) Class80_Sub36 arg0) {
+	public static Class125 method10219(@OriginalArg(0) Packet arg0) {
 		@Pc(3) Class125 local3 = Class524.method30653(arg0, (byte) -4);
-		@Pc(7) int local7 = arg0.method23182(-461883384);
-		@Pc(11) int local11 = arg0.method23182(-176213774);
+		@Pc(7) int local7 = arg0.g4();
+		@Pc(11) int local11 = arg0.g4();
 		return new Class125_Sub3(local3.aClass391_8, local3.aClass383_8, local3.anInt2899 * 808275465, local3.anInt2901 * 1789354437, local3.anInt2900 * 199320851, local3.anInt2903 * 1087492339, local3.anInt2902 * -173381277, local3.anInt2904 * -176628393, local3.anInt2905 * -1330014629, local7, local11);
 	}
 
 	@OriginalMember(owner = "client!ahs", name = "ji", descriptor = "(I)V")
 	static void method10220(@OriginalArg(0) int arg0) {
-		@Pc(2) Class80_Sub36_Sub1 local2 = client.aClass75_1.aClass80_Sub36_Sub1_1;
+		@Pc(2) PacketBit local2 = client.aClass75_1.aPacketBit_1;
 		local2.method22560(1668075746);
 		@Pc(10) int local10 = local2.method22559(8, -325783685);
 		@Pc(17) int local17;

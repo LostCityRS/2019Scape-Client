@@ -222,9 +222,9 @@ public abstract class Class102 {
 	}
 
 	@OriginalMember(owner = "client!di", name = "t", descriptor = "(Lclient!ald;I)Lclient!nz;")
-	public static Class453 method21129(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	public static Class453 method21129(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		@Pc(3) Class453 local3 = new Class453();
-		local3.anInt4894 = arg0.method23178((byte) -39) * -1867362097;
+		local3.anInt4894 = arg0.g2() * -1867362097;
 		local3.aClass80_Sub1_Sub19_1 = Class610.aClass52_2.method1073(local3.anInt4894 * 221296175, 2012800948);
 		return local3;
 	}

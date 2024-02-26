@@ -32,10 +32,10 @@ public interface Interface68 {
 	int method32974(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!wc", name = "j", descriptor = "(Lclient!ald;I)V")
-	void method32975(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1);
+	void method32975(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1);
 
 	@OriginalMember(owner = "client!wc", name = "a", descriptor = "(IB)Lclient!ald;")
-	Class80_Sub36 method32976(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1);
+	Packet method32976(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1);
 
 	@OriginalMember(owner = "client!wc", name = "k", descriptor = "(B)Z")
 	boolean method32977(@OriginalArg(0) byte arg0);
@@ -116,13 +116,13 @@ public interface Interface68 {
 	Class516 method33002();
 
 	@OriginalMember(owner = "client!wc", name = "av", descriptor = "(Lclient!ald;)V")
-	void method33003(@OriginalArg(0) Class80_Sub36 arg0);
+	void method33003(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!wc", name = "br", descriptor = "()Z")
 	boolean method33004();
 
 	@OriginalMember(owner = "client!wc", name = "aa", descriptor = "(I)Lclient!ald;")
-	Class80_Sub36 method33005(@OriginalArg(0) int arg0);
+	Packet method33005(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!wc", name = "ae", descriptor = "(I)Z")
 	boolean method33006(@OriginalArg(0) int arg0);
@@ -149,7 +149,7 @@ public interface Interface68 {
 	Class529 method33013(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!wc", name = "an", descriptor = "(I)Lclient!ald;")
-	Class80_Sub36 method33014(@OriginalArg(0) int arg0);
+	Packet method33014(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!wc", name = "n", descriptor = "()Lclient!rh;")
 	Class529 method33015();

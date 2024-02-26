@@ -36,8 +36,8 @@ public final class Class22 {
 	int[] anIntArray5 = new int[256];
 
 	@OriginalMember(owner = "client!aav", name = "t", descriptor = "(Lclient!ald;I)Lclient!lt;")
-	public static Class405 method542(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) int local3 = arg0.method23210((byte) 100);
+	public static Class405 method542(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) int local3 = arg0.gSmart2or4null();
 		return new Class405(local3);
 	}
 

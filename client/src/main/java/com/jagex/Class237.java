@@ -72,22 +72,22 @@ public final class Class237 {
 	Class237(@OriginalArg(0) byte[] arg0, @OriginalArg(1) Class80_Sub23 arg1) {
 		this.aClass80_Sub23_2 = arg1;
 		try {
-			@Pc(24) Class80_Sub36 local24 = new Class80_Sub36(arg0);
-			@Pc(29) Class80_Sub36 local29 = new Class80_Sub36(arg0);
-			@Pc(33) int local33 = local24.method23362(-1434654531);
-			local24.anInt3152 += 2068361142;
-			@Pc(43) int local43 = local24.method23178((byte) -96);
+			@Pc(24) Packet local24 = new Packet(arg0);
+			@Pc(29) Packet local29 = new Packet(arg0);
+			@Pc(33) int local33 = local24.g1();
+			local24.pos += 2068361142;
+			@Pc(43) int local43 = local24.g2();
 			@Pc(45) int local45 = 0;
 			@Pc(47) int local47 = -1;
 			@Pc(49) int local49 = -1;
-			local29.anInt3152 = (local24.anInt3152 * -1380987821 + local43) * 1034180571;
+			local29.pos = (local24.pos * -1380987821 + local43) * 1034180571;
 			@Pc(61) int local61;
 			for (local61 = 0; local61 < local43; local61++) {
 				@Pc(70) int local70 = this.aClass80_Sub23_2.anIntArray188[local61];
 				if (local70 == 0) {
 					local47 = local61;
 				}
-				@Pc(78) int local78 = local24.method23362(-624683873);
+				@Pc(78) int local78 = local24.g1();
 				if (local78 > 0) {
 					if (local70 == 0) {
 						local49 = local61;
@@ -101,36 +101,36 @@ public final class Class237 {
 						if ((local78 & 0x1) == 0) {
 							aShortArray100[local45] = local91;
 						} else {
-							aShortArray100[local45] = (short) local29.method23194(35000);
-							local29.method23194(35000);
+							aShortArray100[local45] = (short) local29.gSmart1or2s();
+							local29.gSmart1or2s();
 						}
 						if ((local78 & 0x2) == 0) {
 							aShortArray101[local45] = local91;
 						} else {
-							aShortArray101[local45] = (short) local29.method23194(35000);
-							local29.method23194(35000);
+							aShortArray101[local45] = (short) local29.gSmart1or2s();
+							local29.gSmart1or2s();
 						}
 						if ((local78 & 0x4) == 0) {
 							aShortArray102[local45] = local91;
 						} else {
-							aShortArray102[local45] = (short) local29.method23194(35000);
-							local29.method23194(35000);
+							aShortArray102[local45] = (short) local29.gSmart1or2s();
+							local29.gSmart1or2s();
 						}
 					} else {
 						if ((local78 & 0x1) == 0) {
 							aShortArray100[local45] = local91;
 						} else {
-							aShortArray100[local45] = (short) local29.method23194(35000);
+							aShortArray100[local45] = (short) local29.gSmart1or2s();
 						}
 						if ((local78 & 0x2) == 0) {
 							aShortArray101[local45] = local91;
 						} else {
-							aShortArray101[local45] = (short) local29.method23194(35000);
+							aShortArray101[local45] = (short) local29.gSmart1or2s();
 						}
 						if ((local78 & 0x4) == 0) {
 							aShortArray102[local45] = local91;
 						} else {
-							aShortArray102[local45] = (short) local29.method23194(35000);
+							aShortArray102[local45] = (short) local29.gSmart1or2s();
 						}
 					}
 					aByteArray77[local45] = (byte) (local78 >>> 3 & 0x3);
@@ -155,7 +155,7 @@ public final class Class237 {
 					local45++;
 				}
 			}
-			if (local29.anInt3152 * -1380987821 != arg0.length) {
+			if (local29.pos * -1380987821 != arg0.length) {
 				throw new RuntimeException();
 			}
 			this.anInt3807 = local45;

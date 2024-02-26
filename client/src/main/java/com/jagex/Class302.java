@@ -117,20 +117,20 @@ public final class Class302 {
 	}
 
 	@OriginalMember(owner = "client!gw", name = "<init>", descriptor = "(Lclient!ald;ZZLclient!gh;)V")
-	Class302(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) Interface27 arg3) {
+	Class302(@OriginalArg(0) Packet arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) Interface27 arg3) {
 		if (arg1) {
-			this.aLong363 = arg0.method23273((byte) 18) * 6306052351605621831L;
+			this.aLong363 = arg0.g8() * 6306052351605621831L;
 		} else {
 			this.aLong363 = -6306052351605621831L;
 		}
 		if (arg2) {
-			this.aString168 = arg0.method23189(-761473881);
+			this.aString168 = arg0.fastgstr();
 		}
-		@Pc(25) int local25 = arg0.method23362(-816661659);
+		@Pc(25) int local25 = arg0.g1();
 		this.aBoolean783 = (local25 & 0x1) != 0;
 		this.aBoolean784 = (local25 & 0x2) != 0;
 		this.aClass661Array2 = new Class661[arg3.method14(1020163795).method32799(-631871973)];
-		@Pc(57) int local57 = arg0.method23362(929967912);
+		@Pc(57) int local57 = arg0.g1();
 		if (local57 > this.aClass661Array2.length) {
 			throw new IllegalStateException("");
 		}
@@ -138,25 +138,25 @@ public final class Class302 {
 		for (local69 = 0; local69 < this.aClass661Array2.length; local69++) {
 			@Pc(90) Class661 local90 = this.aClass661Array2[local69] = new Class661(arg3.method14(1020163795).method32789(local69, 928794000), true);
 			if (local69 < local57) {
-				local90.method33313(arg0.method23182(303303196), -2111843084);
+				local90.method33313(arg0.g4(), -2111843084);
 			} else {
 				local90.method33313(0, -2099863900);
 			}
 			local90.method33299(local90.method33296(735825645), 796698358);
 		}
-		local69 = arg0.method23178((byte) -95);
+		local69 = arg0.g2();
 		this.aClass33_1 = new Class33(arg3.method11((short) 223));
 		for (@Pc(126) int local126 = 0; local126 < local69; local126++) {
 			@Pc(136) Class460 local136 = arg3.method11((short) 223).method1820(arg0, -225408383);
 			this.aClass33_1.method719(local136.anInt4907 * -38979583, local136.anObject19, -1989288817);
 		}
-		this.anInt3969 = arg0.method23178((byte) -78) * 223310837;
+		this.anInt3969 = arg0.g2() * 223310837;
 		if (this.anInt3969 * 44785757 == 65535) {
 			this.anInt3969 = -223310837;
 		}
-		this.anInt3970 = arg0.method23362(-1499917624) * 560066379;
-		this.aClass304_1 = (Class304) Class80_Sub39.method15030(Class304.method27121((byte) 1), arg0.method23362(-770119988), -1769619177);
-		this.anInt3971 = arg0.method23362(849111225) * -1347223755;
+		this.anInt3970 = arg0.g1() * 560066379;
+		this.aClass304_1 = (Class304) Class80_Sub39.method15030(Class304.method27121((byte) 1), arg0.g1(), -1769619177);
+		this.anInt3971 = arg0.g1() * -1347223755;
 	}
 
 	@OriginalMember(owner = "client!gw", name = "ab", descriptor = "()Z")

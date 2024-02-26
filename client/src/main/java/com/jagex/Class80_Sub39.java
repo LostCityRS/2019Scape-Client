@@ -336,12 +336,12 @@ public final class Class80_Sub39 extends Class80 {
 					}
 					@Pc(525) Class46 local525 = (Class46) local456.get(0);
 					if (local525 != null) {
-						@Pc(533) Class80_Sub36 local533 = new Class80_Sub36(13);
-						local533.method23321(local525.anInt177 * 462963017, -1739133107);
-						local533.method23321(local525.anInt175 * -1954493571, -219370098);
-						local533.method23321(local525.anInt178 * 1742578199, -1036344254);
-						local533.anInt3152 = 0;
-						this.aString57 = local533.method23376((short) 26877);
+						@Pc(533) Packet local533 = new Packet(13);
+						local533.ip4(local525.anInt177 * 462963017);
+						local533.ip4(local525.anInt175 * -1954493571);
+						local533.ip4(local525.anInt178 * 1742578199);
+						local533.pos = 0;
+						this.aString57 = local533.gjstr();
 					}
 					@Pc(568) Class46 local568 = (Class46) local456.get(1);
 					if (local568 != null) {
@@ -355,18 +355,18 @@ public final class Class80_Sub39 extends Class80 {
 					if (local612 != null) {
 						this.anIntArray195[2] = local612.anInt175 * -1954493571;
 					}
-					@Pc(627) Class80_Sub36 local627 = new Class80_Sub36(49);
+					@Pc(627) Packet local627 = new Packet(49);
 					for (local494 = -2147483646; local494 <= -2147483644; local494++) {
 						@Pc(638) Class46 local638 = (Class46) local456.get(local494);
 						if (local638 != null) {
-							local627.method23321(local638.anInt176 * 1555724869, -671618575);
-							local627.method23321(local638.anInt177 * 462963017, -510043617);
-							local627.method23321(local638.anInt178 * 1742578199, -1920986764);
-							local627.method23321(local638.anInt175 * -1954493571, -1949020109);
+							local627.ip4(local638.anInt176 * 1555724869);
+							local627.ip4(local638.anInt177 * 462963017);
+							local627.ip4(local638.anInt178 * 1742578199);
+							local627.ip4(local638.anInt175 * -1954493571);
 						}
 					}
-					local627.anInt3152 = 0;
-					this.aString58 = local627.method23376((short) 6724);
+					local627.pos = 0;
+					this.aString58 = local627.gjstr();
 				}
 				@Pc(680) String[][] local680 = HardwareInfo.getDXDiagDisplayDevicesProps();
 				@Pc(733) String local733;
@@ -450,111 +450,111 @@ public final class Class80_Sub39 extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ali", name = "g", descriptor = "(Lclient!ald;)V")
-	public void method15024(@OriginalArg(0) Class80_Sub36 arg0) {
-		arg0.method23154(8, 1275868335);
-		arg0.method23154(this.anInt1687 * 1844364213, 1275868335);
-		arg0.method23154(this.aBoolean392 ? 1 : 0, 1275868335);
-		arg0.method23155(this.anInt1706 * 1800739119, (byte) -29);
-		arg0.method23154(this.anInt1712 * 892242581, 1275868335);
-		arg0.method23154(this.anInt1723 * 1594169117, 1275868335);
-		arg0.method23154(this.anInt1714 * 2085353627, 1275868335);
-		arg0.method23154(this.anInt1682 * 75537641, 1275868335);
-		arg0.method23154(this.aBoolean393 ? 1 : 0, 1275868335);
-		arg0.method23155(this.anInt1705 * -1141561323, (byte) -83);
-		arg0.method23154(this.anInt1717 * 453647239, 1275868335);
-		arg0.method23157(this.anInt1719 * 625439365, 1829118327);
-		arg0.method23155(this.anInt1699 * 1399024635, (byte) -61);
-		arg0.method23166(this.aString54, -288996102);
-		arg0.method23166(this.aString55, -376667213);
-		arg0.method23166(this.aString56, -295842983);
-		arg0.method23166(this.aString53, 1394050964);
-		arg0.method23154(this.anInt1720 * 966290575, 1275868335);
-		arg0.method23155(this.anInt1722 * 862891861, (byte) -37);
-		arg0.method23166(this.aString57, -1547089154);
-		arg0.method23166(this.aString58, -780671430);
-		arg0.method23154(this.anInt1692 * 1327513637, 1275868335);
-		arg0.method23154(this.anInt1725 * -293429089, 1275868335);
+	public void method15024(@OriginalArg(0) Packet arg0) {
+		arg0.p1(8);
+		arg0.p1(this.anInt1687 * 1844364213);
+		arg0.p1(this.aBoolean392 ? 1 : 0);
+		arg0.p2(this.anInt1706 * 1800739119);
+		arg0.p1(this.anInt1712 * 892242581);
+		arg0.p1(this.anInt1723 * 1594169117);
+		arg0.p1(this.anInt1714 * 2085353627);
+		arg0.p1(this.anInt1682 * 75537641);
+		arg0.p1(this.aBoolean393 ? 1 : 0);
+		arg0.p2(this.anInt1705 * -1141561323);
+		arg0.p1(this.anInt1717 * 453647239);
+		arg0.p3(this.anInt1719 * 625439365);
+		arg0.p2(this.anInt1699 * 1399024635);
+		arg0.pjstr2(this.aString54);
+		arg0.pjstr2(this.aString55);
+		arg0.pjstr2(this.aString56);
+		arg0.pjstr2(this.aString53);
+		arg0.p1(this.anInt1720 * 966290575);
+		arg0.p2(this.anInt1722 * 862891861);
+		arg0.pjstr2(this.aString57);
+		arg0.pjstr2(this.aString58);
+		arg0.p1(this.anInt1692 * 1327513637);
+		arg0.p1(this.anInt1725 * -293429089);
 		for (@Pc(151) int local151 = 0; local151 < this.anIntArray195.length; local151++) {
-			arg0.method23345(this.anIntArray195[local151], (byte) 90);
+			arg0.p4(this.anIntArray195[local151]);
 		}
-		arg0.method23345(this.anInt1727 * 951365155, (byte) 105);
-		arg0.method23166(this.aString59, -1992423728);
+		arg0.p4(this.anInt1727 * 951365155);
+		arg0.pjstr2(this.aString59);
 	}
 
 	@OriginalMember(owner = "client!ali", name = "f", descriptor = "(Lclient!ald;B)V")
-	public void method15025(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
-		arg0.method23154(8, 1275868335);
-		arg0.method23154(this.anInt1687 * 1844364213, 1275868335);
-		arg0.method23154(this.aBoolean392 ? 1 : 0, 1275868335);
-		arg0.method23155(this.anInt1706 * 1800739119, (byte) -111);
-		arg0.method23154(this.anInt1712 * 892242581, 1275868335);
-		arg0.method23154(this.anInt1723 * 1594169117, 1275868335);
-		arg0.method23154(this.anInt1714 * 2085353627, 1275868335);
-		arg0.method23154(this.anInt1682 * 75537641, 1275868335);
-		arg0.method23154(this.aBoolean393 ? 1 : 0, 1275868335);
-		arg0.method23155(this.anInt1705 * -1141561323, (byte) -1);
-		arg0.method23154(this.anInt1717 * 453647239, 1275868335);
-		arg0.method23157(this.anInt1719 * 625439365, 465980121);
-		arg0.method23155(this.anInt1699 * 1399024635, (byte) -40);
-		arg0.method23166(this.aString54, -1943711506);
-		arg0.method23166(this.aString55, 369188936);
-		arg0.method23166(this.aString56, -1959544662);
-		arg0.method23166(this.aString53, 355870732);
-		arg0.method23154(this.anInt1720 * 966290575, 1275868335);
-		arg0.method23155(this.anInt1722 * 862891861, (byte) -119);
-		arg0.method23166(this.aString57, -1597187695);
-		arg0.method23166(this.aString58, 208985969);
-		arg0.method23154(this.anInt1692 * 1327513637, 1275868335);
-		arg0.method23154(this.anInt1725 * -293429089, 1275868335);
+	public void method15025(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
+		arg0.p1(8);
+		arg0.p1(this.anInt1687 * 1844364213);
+		arg0.p1(this.aBoolean392 ? 1 : 0);
+		arg0.p2(this.anInt1706 * 1800739119);
+		arg0.p1(this.anInt1712 * 892242581);
+		arg0.p1(this.anInt1723 * 1594169117);
+		arg0.p1(this.anInt1714 * 2085353627);
+		arg0.p1(this.anInt1682 * 75537641);
+		arg0.p1(this.aBoolean393 ? 1 : 0);
+		arg0.p2(this.anInt1705 * -1141561323);
+		arg0.p1(this.anInt1717 * 453647239);
+		arg0.p3(this.anInt1719 * 625439365);
+		arg0.p2(this.anInt1699 * 1399024635);
+		arg0.pjstr2(this.aString54);
+		arg0.pjstr2(this.aString55);
+		arg0.pjstr2(this.aString56);
+		arg0.pjstr2(this.aString53);
+		arg0.p1(this.anInt1720 * 966290575);
+		arg0.p2(this.anInt1722 * 862891861);
+		arg0.pjstr2(this.aString57);
+		arg0.pjstr2(this.aString58);
+		arg0.p1(this.anInt1692 * 1327513637);
+		arg0.p1(this.anInt1725 * -293429089);
 		for (@Pc(151) int local151 = 0; local151 < this.anIntArray195.length; local151++) {
-			arg0.method23345(this.anIntArray195[local151], (byte) 87);
+			arg0.p4(this.anIntArray195[local151]);
 		}
-		arg0.method23345(this.anInt1727 * 951365155, (byte) 30);
-		arg0.method23166(this.aString59, -845068413);
+		arg0.p4(this.anInt1727 * 951365155);
+		arg0.pjstr2(this.aString59);
 	}
 
 	@OriginalMember(owner = "client!ali", name = "e", descriptor = "(B)I")
 	public int method15026(@OriginalArg(0) byte arg0) {
 		@Pc(1) byte local1 = 39;
-		@Pc(8) int local8 = local1 + Class55.method1114(this.aString54, (byte) -74);
-		@Pc(15) int local15 = local8 + Class55.method1114(this.aString55, (byte) 28);
-		@Pc(22) int local22 = local15 + Class55.method1114(this.aString56, (byte) 80);
-		@Pc(29) int local29 = local22 + Class55.method1114(this.aString53, (byte) 38);
-		@Pc(36) int local36 = local29 + Class55.method1114(this.aString57, (byte) 9);
-		@Pc(43) int local43 = local36 + Class55.method1114(this.aString58, (byte) -49);
-		return local43 + Class55.method1114(this.aString59, (byte) 91);
+		@Pc(8) int local8 = local1 + Packet.calculatePjstr2(this.aString54);
+		@Pc(15) int local15 = local8 + Packet.calculatePjstr2(this.aString55);
+		@Pc(22) int local22 = local15 + Packet.calculatePjstr2(this.aString56);
+		@Pc(29) int local29 = local22 + Packet.calculatePjstr2(this.aString53);
+		@Pc(36) int local36 = local29 + Packet.calculatePjstr2(this.aString57);
+		@Pc(43) int local43 = local36 + Packet.calculatePjstr2(this.aString58);
+		return local43 + Packet.calculatePjstr2(this.aString59);
 	}
 
 	@OriginalMember(owner = "client!ali", name = "l", descriptor = "(Lclient!ald;)V")
-	public void method15027(@OriginalArg(0) Class80_Sub36 arg0) {
-		arg0.method23154(8, 1275868335);
-		arg0.method23154(this.anInt1687 * 1844364213, 1275868335);
-		arg0.method23154(this.aBoolean392 ? 1 : 0, 1275868335);
-		arg0.method23155(this.anInt1706 * 1800739119, (byte) -61);
-		arg0.method23154(this.anInt1712 * 892242581, 1275868335);
-		arg0.method23154(this.anInt1723 * 1594169117, 1275868335);
-		arg0.method23154(this.anInt1714 * 2085353627, 1275868335);
-		arg0.method23154(this.anInt1682 * 75537641, 1275868335);
-		arg0.method23154(this.aBoolean393 ? 1 : 0, 1275868335);
-		arg0.method23155(this.anInt1705 * -1141561323, (byte) -3);
-		arg0.method23154(this.anInt1717 * 453647239, 1275868335);
-		arg0.method23157(this.anInt1719 * 625439365, 1666850768);
-		arg0.method23155(this.anInt1699 * 1399024635, (byte) -120);
-		arg0.method23166(this.aString54, -1439884596);
-		arg0.method23166(this.aString55, 9710703);
-		arg0.method23166(this.aString56, -501036383);
-		arg0.method23166(this.aString53, -65805693);
-		arg0.method23154(this.anInt1720 * 966290575, 1275868335);
-		arg0.method23155(this.anInt1722 * 862891861, (byte) -118);
-		arg0.method23166(this.aString57, 1776590830);
-		arg0.method23166(this.aString58, -365158239);
-		arg0.method23154(this.anInt1692 * 1327513637, 1275868335);
-		arg0.method23154(this.anInt1725 * -293429089, 1275868335);
+	public void method15027(@OriginalArg(0) Packet arg0) {
+		arg0.p1(8);
+		arg0.p1(this.anInt1687 * 1844364213);
+		arg0.p1(this.aBoolean392 ? 1 : 0);
+		arg0.p2(this.anInt1706 * 1800739119);
+		arg0.p1(this.anInt1712 * 892242581);
+		arg0.p1(this.anInt1723 * 1594169117);
+		arg0.p1(this.anInt1714 * 2085353627);
+		arg0.p1(this.anInt1682 * 75537641);
+		arg0.p1(this.aBoolean393 ? 1 : 0);
+		arg0.p2(this.anInt1705 * -1141561323);
+		arg0.p1(this.anInt1717 * 453647239);
+		arg0.p3(this.anInt1719 * 625439365);
+		arg0.p2(this.anInt1699 * 1399024635);
+		arg0.pjstr2(this.aString54);
+		arg0.pjstr2(this.aString55);
+		arg0.pjstr2(this.aString56);
+		arg0.pjstr2(this.aString53);
+		arg0.p1(this.anInt1720 * 966290575);
+		arg0.p2(this.anInt1722 * 862891861);
+		arg0.pjstr2(this.aString57);
+		arg0.pjstr2(this.aString58);
+		arg0.p1(this.anInt1692 * 1327513637);
+		arg0.p1(this.anInt1725 * -293429089);
 		for (@Pc(151) int local151 = 0; local151 < this.anIntArray195.length; local151++) {
-			arg0.method23345(this.anIntArray195[local151], (byte) 85);
+			arg0.p4(this.anIntArray195[local151]);
 		}
-		arg0.method23345(this.anInt1727 * 951365155, (byte) 99);
-		arg0.method23166(this.aString59, 1404000544);
+		arg0.p4(this.anInt1727 * 951365155);
+		arg0.pjstr2(this.aString59);
 	}
 
 	@OriginalMember(owner = "client!ali", name = "t", descriptor = "(I)V")
@@ -579,12 +579,12 @@ public final class Class80_Sub39 extends Class80 {
 	@OriginalMember(owner = "client!ali", name = "i", descriptor = "()I")
 	public int method15029() {
 		@Pc(1) byte local1 = 39;
-		@Pc(8) int local8 = local1 + Class55.method1114(this.aString54, (byte) -16);
-		@Pc(15) int local15 = local8 + Class55.method1114(this.aString55, (byte) -84);
-		@Pc(22) int local22 = local15 + Class55.method1114(this.aString56, (byte) -67);
-		@Pc(29) int local29 = local22 + Class55.method1114(this.aString53, (byte) 19);
-		@Pc(36) int local36 = local29 + Class55.method1114(this.aString57, (byte) -33);
-		@Pc(43) int local43 = local36 + Class55.method1114(this.aString58, (byte) -67);
-		return local43 + Class55.method1114(this.aString59, (byte) -14);
+		@Pc(8) int local8 = local1 + Packet.calculatePjstr2(this.aString54);
+		@Pc(15) int local15 = local8 + Packet.calculatePjstr2(this.aString55);
+		@Pc(22) int local22 = local15 + Packet.calculatePjstr2(this.aString56);
+		@Pc(29) int local29 = local22 + Packet.calculatePjstr2(this.aString53);
+		@Pc(36) int local36 = local29 + Packet.calculatePjstr2(this.aString57);
+		@Pc(43) int local43 = local36 + Packet.calculatePjstr2(this.aString58);
+		return local43 + Packet.calculatePjstr2(this.aString59);
 	}
 }

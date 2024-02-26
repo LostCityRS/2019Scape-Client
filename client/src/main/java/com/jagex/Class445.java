@@ -145,14 +145,14 @@ public final class Class445 implements Interface46 {
 	}
 
 	@OriginalMember(owner = "client!nq", name = "u", descriptor = "(Lclient!ald;IB)Ljava/lang/String;")
-	static String method29238(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
+	static String method29238(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
 		try {
-			@Pc(3) int local3 = arg0.method23195(1628637487);
+			@Pc(3) int local3 = arg0.gSmart1or2();
 			if (local3 > arg1) {
 				local3 = arg1;
 			}
 			@Pc(11) byte[] local11 = new byte[local3];
-			arg0.anInt3152 += Class338.aClass336_1.method27860(arg0.aByteArray61, arg0.anInt3152 * -1380987821, local11, 0, local3, (byte) -13) * 1034180571;
+			arg0.pos += Class338.aClass336_1.method27860(arg0.data, arg0.pos * -1380987821, local11, 0, local3, (byte) -13) * 1034180571;
 			return Class2.method1814(local11, 0, local3, (byte) 114);
 		} catch (@Pc(39) Exception local39) {
 			return "Cabbage";
@@ -251,7 +251,7 @@ public final class Class445 implements Interface46 {
 		@Pc(18) byte[] local18 = this.aClass480_114.method29918(0, arg0, 1896589581);
 		local6 = new Class435();
 		if (local18 != null) {
-			local6.method29117(new Class80_Sub36(local18), arg0, -388330769);
+			local6.method29117(new Packet(local18), arg0, -388330769);
 		}
 		this.aClass243_83.method26253(local6, (long) arg0);
 		return local6;
@@ -267,7 +267,7 @@ public final class Class445 implements Interface46 {
 		@Pc(18) byte[] local18 = this.aClass480_114.method29918(0, arg0, 1896589581);
 		local6 = new Class435();
 		if (local18 != null) {
-			local6.method29117(new Class80_Sub36(local18), arg0, -388330769);
+			local6.method29117(new Packet(local18), arg0, -388330769);
 		}
 		this.aClass243_83.method26253(local6, (long) arg0);
 		return local6;

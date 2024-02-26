@@ -52,38 +52,38 @@ public final class Class407 implements Interface33 {
 	public final int anInt4608;
 
 	@OriginalMember(owner = "client!lv", name = "e", descriptor = "(Lclient!ald;)Lclient!lv;")
-	public static Class407 method28943(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(3) String local3 = arg0.method23376((short) 16058);
-		@Pc(10) Class391 local10 = Class58_Sub1.method15727((byte) -62)[arg0.method23362(-1375034440)];
-		@Pc(17) Class383 local17 = Class646.method33047(-1097781758)[arg0.method23362(-697274687)];
-		@Pc(21) int local21 = arg0.method23179(39973593);
-		@Pc(25) int local25 = arg0.method23179(303784221);
-		@Pc(29) int local29 = arg0.method23362(921200462);
-		@Pc(33) int local33 = arg0.method23362(120474023);
-		@Pc(37) int local37 = arg0.method23362(190758892);
-		@Pc(41) int local41 = arg0.method23178((byte) -103);
-		@Pc(45) int local45 = arg0.method23178((byte) -94);
-		@Pc(49) int local49 = arg0.method23210((byte) 112);
-		@Pc(53) int local53 = arg0.method23182(498501750);
-		@Pc(57) int local57 = arg0.method23182(-1531454621);
+	public static Class407 method28943(@OriginalArg(0) Packet arg0) {
+		@Pc(3) String local3 = arg0.gjstr();
+		@Pc(10) Class391 local10 = Class58_Sub1.method15727((byte) -62)[arg0.g1()];
+		@Pc(17) Class383 local17 = Class646.method33047(-1097781758)[arg0.g1()];
+		@Pc(21) int local21 = arg0.g2s();
+		@Pc(25) int local25 = arg0.g2s();
+		@Pc(29) int local29 = arg0.g1();
+		@Pc(33) int local33 = arg0.g1();
+		@Pc(37) int local37 = arg0.g1();
+		@Pc(41) int local41 = arg0.g2();
+		@Pc(45) int local45 = arg0.g2();
+		@Pc(49) int local49 = arg0.gSmart2or4null();
+		@Pc(53) int local53 = arg0.g4();
+		@Pc(57) int local57 = arg0.g4();
 		return new Class407(local3, local10, local17, local21, local25, local29, local33, local37, local41, local45, local49, local53, local57);
 	}
 
 	@OriginalMember(owner = "client!lv", name = "u", descriptor = "(Lclient!ald;)Lclient!lv;")
-	public static Class407 method28944(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(3) String local3 = arg0.method23376((short) 6193);
-		@Pc(10) Class391 local10 = Class58_Sub1.method15727((byte) -83)[arg0.method23362(1040227326)];
-		@Pc(17) Class383 local17 = Class646.method33047(-1097781758)[arg0.method23362(-1875207803)];
-		@Pc(21) int local21 = arg0.method23179(1468302086);
-		@Pc(25) int local25 = arg0.method23179(-574897894);
-		@Pc(29) int local29 = arg0.method23362(821538385);
-		@Pc(33) int local33 = arg0.method23362(-691653605);
-		@Pc(37) int local37 = arg0.method23362(306765120);
-		@Pc(41) int local41 = arg0.method23178((byte) -114);
-		@Pc(45) int local45 = arg0.method23178((byte) -75);
-		@Pc(49) int local49 = arg0.method23210((byte) 102);
-		@Pc(53) int local53 = arg0.method23182(1209429490);
-		@Pc(57) int local57 = arg0.method23182(1579998852);
+	public static Class407 method28944(@OriginalArg(0) Packet arg0) {
+		@Pc(3) String local3 = arg0.gjstr();
+		@Pc(10) Class391 local10 = Class58_Sub1.method15727((byte) -83)[arg0.g1()];
+		@Pc(17) Class383 local17 = Class646.method33047(-1097781758)[arg0.g1()];
+		@Pc(21) int local21 = arg0.g2s();
+		@Pc(25) int local25 = arg0.g2s();
+		@Pc(29) int local29 = arg0.g1();
+		@Pc(33) int local33 = arg0.g1();
+		@Pc(37) int local37 = arg0.g1();
+		@Pc(41) int local41 = arg0.g2();
+		@Pc(45) int local45 = arg0.g2();
+		@Pc(49) int local49 = arg0.gSmart2or4null();
+		@Pc(53) int local53 = arg0.g4();
+		@Pc(57) int local57 = arg0.g4();
 		return new Class407(local3, local10, local17, local21, local25, local29, local33, local37, local41, local45, local49, local53, local57);
 	}
 

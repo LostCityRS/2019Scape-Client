@@ -81,9 +81,9 @@ public final class Class80_Sub1_Sub7 extends Class80_Sub1 {
 		@Pc(92) int local92;
 		for (@Pc(70) int local70 = 0; local70 < this.aByteArrayArray13.length; local70++) {
 			@Pc(80) byte[] local80 = this.aByteArrayArray13[local70];
-			@Pc(85) Class80_Sub36 local85 = new Class80_Sub36(local80);
-			local85.anInt3152 = 1034180571;
-			local92 = local85.method23178((byte) -63);
+			@Pc(85) Packet local85 = new Packet(local80);
+			local85.pos = 1034180571;
+			local92 = local85.g2();
 			@Pc(95) Class480 local95 = Class337.aClass480_96;
 			synchronized (Class337.aClass480_96) {
 				local68 &= Class337.aClass480_96.method29945(local92, (byte) 1);
@@ -102,9 +102,9 @@ public final class Class80_Sub1_Sub7 extends Class80_Sub1 {
 		}
 		for (@Pc(155) int local155 = 0; local155 < local145.length; local155++) {
 			@Pc(164) byte[] local164 = this.aByteArrayArray13[local155];
-			@Pc(169) Class80_Sub36 local169 = new Class80_Sub36(local164);
-			local169.anInt3152 = 1034180571;
-			@Pc(176) int local176 = local169.method23178((byte) -118);
+			@Pc(169) Packet local169 = new Packet(local164);
+			local169.pos = 1034180571;
+			@Pc(176) int local176 = local169.g2();
 			@Pc(178) Class80_Sub23 local178 = null;
 			for (@Pc(183) Class80_Sub23 local183 = (Class80_Sub23) local121.method247(129206984); local183 != null; local183 = (Class80_Sub23) local121.method237(-489424900)) {
 				if (local176 == local183.anInt1618 * -1003076639) {
@@ -147,9 +147,9 @@ public final class Class80_Sub1_Sub7 extends Class80_Sub1 {
 		@Pc(92) int local92;
 		for (@Pc(70) int local70 = 0; local70 < this.aByteArrayArray13.length; local70++) {
 			@Pc(80) byte[] local80 = this.aByteArrayArray13[local70];
-			@Pc(85) Class80_Sub36 local85 = new Class80_Sub36(local80);
-			local85.anInt3152 = 1034180571;
-			local92 = local85.method23178((byte) -29);
+			@Pc(85) Packet local85 = new Packet(local80);
+			local85.pos = 1034180571;
+			local92 = local85.g2();
 			@Pc(95) Class480 local95 = Class337.aClass480_96;
 			synchronized (Class337.aClass480_96) {
 				local68 &= Class337.aClass480_96.method29945(local92, (byte) 1);
@@ -168,9 +168,9 @@ public final class Class80_Sub1_Sub7 extends Class80_Sub1 {
 		}
 		for (@Pc(155) int local155 = 0; local155 < local145.length; local155++) {
 			@Pc(164) byte[] local164 = this.aByteArrayArray13[local155];
-			@Pc(169) Class80_Sub36 local169 = new Class80_Sub36(local164);
-			local169.anInt3152 = 1034180571;
-			@Pc(176) int local176 = local169.method23178((byte) -52);
+			@Pc(169) Packet local169 = new Packet(local164);
+			local169.pos = 1034180571;
+			@Pc(176) int local176 = local169.g2();
 			@Pc(178) Class80_Sub23 local178 = null;
 			for (@Pc(183) Class80_Sub23 local183 = (Class80_Sub23) local121.method247(129206984); local183 != null; local183 = (Class80_Sub23) local121.method237(746198787)) {
 				if (local176 == local183.anInt1618 * -1003076639) {
@@ -218,9 +218,9 @@ public final class Class80_Sub1_Sub7 extends Class80_Sub1 {
 		@Pc(92) int local92;
 		for (@Pc(70) int local70 = 0; local70 < this.aByteArrayArray13.length; local70++) {
 			@Pc(80) byte[] local80 = this.aByteArrayArray13[local70];
-			@Pc(85) Class80_Sub36 local85 = new Class80_Sub36(local80);
-			local85.anInt3152 = 1034180571;
-			local92 = local85.method23178((byte) -62);
+			@Pc(85) Packet local85 = new Packet(local80);
+			local85.pos = 1034180571;
+			local92 = local85.g2();
 			@Pc(95) Class480 local95 = Class337.aClass480_96;
 			synchronized (Class337.aClass480_96) {
 				local68 &= Class337.aClass480_96.method29945(local92, (byte) 1);
@@ -239,9 +239,9 @@ public final class Class80_Sub1_Sub7 extends Class80_Sub1 {
 		}
 		for (@Pc(155) int local155 = 0; local155 < local145.length; local155++) {
 			@Pc(164) byte[] local164 = this.aByteArrayArray13[local155];
-			@Pc(169) Class80_Sub36 local169 = new Class80_Sub36(local164);
-			local169.anInt3152 = 1034180571;
-			@Pc(176) int local176 = local169.method23178((byte) -32);
+			@Pc(169) Packet local169 = new Packet(local164);
+			local169.pos = 1034180571;
+			@Pc(176) int local176 = local169.g2();
 			@Pc(178) Class80_Sub23 local178 = null;
 			for (@Pc(183) Class80_Sub23 local183 = (Class80_Sub23) local121.method247(129206984); local183 != null; local183 = (Class80_Sub23) local121.method237(-1188836221)) {
 				if (local176 == local183.anInt1618 * -1003076639) {

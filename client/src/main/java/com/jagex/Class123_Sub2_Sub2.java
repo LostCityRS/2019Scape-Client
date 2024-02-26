@@ -50,7 +50,7 @@ public final class Class123_Sub2_Sub2 extends Class123_Sub2 {
 
 	@OriginalMember(owner = "client!aqk", name = "aj", descriptor = "(Lclient!ald;IB)V")
 	@Override
-	void method20534(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
+	void method20534(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
 	}
 
 	@OriginalMember(owner = "client!aqk", name = "aq", descriptor = "(B)V")
@@ -99,16 +99,16 @@ public final class Class123_Sub2_Sub2 extends Class123_Sub2 {
 
 	@OriginalMember(owner = "client!aqk", name = "af", descriptor = "(Lclient!ald;I)V")
 	@Override
-	void method20539(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method20539(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 	}
 
 	@OriginalMember(owner = "client!aqk", name = "am", descriptor = "(Lclient!ald;I)V")
 	@Override
-	void method20540(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method20540(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 	}
 
 	@OriginalMember(owner = "client!aqk", name = "ak", descriptor = "(Lclient!ald;I)V")
 	@Override
-	void method20546(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method20546(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 	}
 }

@@ -183,12 +183,12 @@ public final class Class364 implements Interface30 {
 	}
 
 	@OriginalMember(owner = "client!jm", name = "t", descriptor = "(Lclient!ald;B)Lclient!lk;")
-	public static Class130 method28214(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
-		@Pc(3) int local3 = arg0.method23210((byte) 118);
-		@Pc(10) Class391 local10 = Class58_Sub1.method15727((byte) -48)[arg0.method23362(-708749397)];
-		@Pc(17) Class383 local17 = Class646.method33047(-1097781758)[arg0.method23362(147600618)];
-		@Pc(21) int local21 = arg0.method23179(-458001960);
-		@Pc(25) int local25 = arg0.method23179(-301975902);
+	public static Class130 method28214(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
+		@Pc(3) int local3 = arg0.gSmart2or4null();
+		@Pc(10) Class391 local10 = Class58_Sub1.method15727((byte) -48)[arg0.g1()];
+		@Pc(17) Class383 local17 = Class646.method33047(-1097781758)[arg0.g1()];
+		@Pc(21) int local21 = arg0.g2s();
+		@Pc(25) int local25 = arg0.g2s();
 		return new Class130(local3, local10, local17, local21, local25);
 	}
 

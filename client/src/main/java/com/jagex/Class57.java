@@ -102,11 +102,11 @@ public final class Class57 implements Interface11 {
 	}
 
 	@OriginalMember(owner = "client!acg", name = "l", descriptor = "(Lclient!ald;II)V")
-	void method1147(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	void method1147(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (arg1 == 1) {
-			this.anInt204 = arg0.method23210((byte) 84) * 1330230559;
+			this.anInt204 = arg0.gSmart2or4null() * 1330230559;
 		} else if (arg1 == 2) {
-			this.anInt203 = arg0.method23180(1710327153) * -610402213;
+			this.anInt203 = arg0.g3() * -610402213;
 		} else if (arg1 == 3) {
 			this.aBoolean31 = true;
 		} else if (arg1 == 4) {
@@ -195,9 +195,9 @@ public final class Class57 implements Interface11 {
 
 	@OriginalMember(owner = "client!acg", name = "t", descriptor = "(Lclient!ald;I)V")
 	@Override
-	public void method37006(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	public void method37006(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-374919480);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -217,11 +217,11 @@ public final class Class57 implements Interface11 {
 	}
 
 	@OriginalMember(owner = "client!acg", name = "j", descriptor = "(Lclient!ald;I)V")
-	void method1154(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method1154(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.anInt204 = arg0.method23210((byte) 30) * 1330230559;
+			this.anInt204 = arg0.gSmart2or4null() * 1330230559;
 		} else if (arg1 == 2) {
-			this.anInt203 = arg0.method23180(1710327153) * -610402213;
+			this.anInt203 = arg0.g3() * -610402213;
 		} else if (arg1 == 3) {
 			this.aBoolean31 = true;
 		} else if (arg1 == 4) {
@@ -231,11 +231,11 @@ public final class Class57 implements Interface11 {
 	}
 
 	@OriginalMember(owner = "client!acg", name = "a", descriptor = "(Lclient!ald;I)V")
-	void method1155(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method1155(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.anInt204 = arg0.method23210((byte) 52) * 1330230559;
+			this.anInt204 = arg0.gSmart2or4null() * 1330230559;
 		} else if (arg1 == 2) {
-			this.anInt203 = arg0.method23180(1710327153) * -610402213;
+			this.anInt203 = arg0.g3() * -610402213;
 		} else if (arg1 == 3) {
 			this.aBoolean31 = true;
 		} else if (arg1 == 4) {
@@ -311,9 +311,9 @@ public final class Class57 implements Interface11 {
 
 	@OriginalMember(owner = "client!acg", name = "u", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method37009(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method37009(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-1400953967);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}

@@ -72,17 +72,17 @@ public final class Class217 {
 	}
 
 	@OriginalMember(owner = "client!cw", name = "<init>", descriptor = "(ILclient!ald;Z)V")
-	Class217(@OriginalArg(0) int arg0, @OriginalArg(1) Class80_Sub36 arg1, @OriginalArg(2) boolean arg2) {
-		this.anInt3612 = arg1.method23179(1198740061) * 1361676069;
+	Class217(@OriginalArg(0) int arg0, @OriginalArg(1) Packet arg1, @OriginalArg(2) boolean arg2) {
+		this.anInt3612 = arg1.g2s() * 1361676069;
 		this.aClass487Array9 = new Class487[arg0];
 		this.aClass487Array8 = new Class487[this.aClass487Array9.length];
 		this.aClass487Array7 = new Class487[this.aClass487Array9.length];
 		this.aFloatArrayArray23 = new float[this.aClass487Array9.length][3];
 		for (@Pc(33) int local33 = 0; local33 < this.aClass487Array9.length; local33++) {
 			this.aClass487Array9[local33] = new Class487(arg1, arg2);
-			this.aFloatArrayArray23[local33][0] = arg1.method23188(1772558486);
-			this.aFloatArrayArray23[local33][1] = arg1.method23188(-920904372);
-			this.aFloatArrayArray23[local33][2] = arg1.method23188(-1993406769);
+			this.aFloatArrayArray23[local33][0] = arg1.gFloat();
+			this.aFloatArrayArray23[local33][1] = arg1.gFloat();
+			this.aFloatArrayArray23[local33][2] = arg1.gFloat();
 		}
 	}
 

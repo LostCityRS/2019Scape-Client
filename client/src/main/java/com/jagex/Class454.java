@@ -37,9 +37,9 @@ public final class Class454 implements Interface29 {
 		@Pc(13) String local13 = (String) arg0.anObjectArray46[(arg0.anInt5776 -= -825189621) * -2070619997];
 		@Pc(27) String local27 = (String) arg0.anObjectArray46[(arg0.anInt5776 -= -825189621) * -2070619997];
 		@Pc(33) Class80_Sub31 local33 = Class623.method32440(Class443.aClass443_98, client.aClass75_2.aClass22_1, -191270971);
-		local33.aClass80_Sub36_Sub1_2.method23155(Class350.method28013(local13, (short) 16383) + Class350.method28013(local27, (short) 16383), (byte) -48);
-		local33.aClass80_Sub36_Sub1_2.method23165(local13, 1684301764);
-		local33.aClass80_Sub36_Sub1_2.method23165(local27, 1951451411);
+		local33.aPacketBit_2.p2(Class350.method28013(local13, (short) 16383) + Class350.method28013(local27, (short) 16383));
+		local33.aPacketBit_2.pjstr(local13);
+		local33.aPacketBit_2.pjstr(local27);
 		client.aClass75_2.method1325(local33, (byte) -119);
 	}
 
@@ -56,38 +56,38 @@ public final class Class454 implements Interface29 {
 			if (local23 == null) {
 				return false;
 			}
-			@Pc(32) Class80_Sub36 local32 = new Class80_Sub36(local23);
+			@Pc(32) Packet local32 = new Packet(local23);
 			Class614.method32274(local32, (byte) 65);
-			local39 = local32.method23362(-1972610165);
+			local39 = local32.g1();
 			@Pc(41) int local41;
 			for (local41 = 0; local41 < local39; local41++) {
 				Class251.aClass8_50.method232(new Class80_Sub30(local32), 1235286495);
 			}
-			local41 = local32.method23195(1819265938);
+			local41 = local32.gSmart1or2();
 			Class251.aClass250Array1 = new Class250[local41];
 			@Pc(62) int local62;
 			for (local62 = 0; local62 < local41; local62++) {
 				Class251.aClass250Array1[local62] = new Class250(local32);
 			}
-			local62 = local32.method23195(1803527715);
+			local62 = local32.gSmart1or2();
 			Class251.aClass254Array1 = new Class254[local62];
 			@Pc(83) int local83;
 			for (local83 = 0; local83 < local62; local83++) {
 				Class251.aClass254Array1[local83] = new Class254(local32, local83);
 			}
-			local83 = local32.method23195(1911533844);
+			local83 = local32.gSmart1or2();
 			Class700.aClass249Array1 = new Class249[local83];
 			@Pc(105) int local105;
 			for (local105 = 0; local105 < local83; local105++) {
 				Class700.aClass249Array1[local105] = new Class249(local32);
 			}
-			local105 = local32.method23195(1708212627);
+			local105 = local32.gSmart1or2();
 			Class251.aClass239Array1 = new Class239[local105];
 			@Pc(126) int local126;
 			for (local126 = 0; local126 < local105; local126++) {
 				Class251.aClass239Array1[local126] = new Class239(local32);
 			}
-			local126 = local32.method23195(1755781538);
+			local126 = local32.gSmart1or2();
 			Class251.aClass103Array1 = new Class103[local126];
 			for (@Pc(147) int local147 = 0; local147 < local126; local147++) {
 				Class251.aClass103Array1[local147] = Class98.method2707(local32, (byte) 14);

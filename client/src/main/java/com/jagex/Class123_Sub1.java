@@ -159,7 +159,7 @@ public final class Class123_Sub1 extends Class123 {
 
 	@OriginalMember(owner = "client!ahf", name = "n", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method20521(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method20521(@OriginalArg(0) Packet arg0) {
 		this.aClass463_36.method29476(arg0);
 	}
 
@@ -178,7 +178,7 @@ public final class Class123_Sub1 extends Class123 {
 
 	@OriginalMember(owner = "client!ahf", name = "m", descriptor = "(Lclient!ald;I)V")
 	@Override
-	public void method20506(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	public void method20506(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		this.aClass463_36.method29476(arg0);
 	}
 
@@ -285,7 +285,7 @@ public final class Class123_Sub1 extends Class123 {
 
 	@OriginalMember(owner = "client!ahf", name = "y", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method20517(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method20517(@OriginalArg(0) Packet arg0) {
 		this.aClass463_36.method29476(arg0);
 	}
 
@@ -297,7 +297,7 @@ public final class Class123_Sub1 extends Class123 {
 
 	@OriginalMember(owner = "client!ahf", name = "c", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method20522(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method20522(@OriginalArg(0) Packet arg0) {
 		this.aClass463_36.method29476(arg0);
 	}
 

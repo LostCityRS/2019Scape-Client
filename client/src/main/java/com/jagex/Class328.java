@@ -27,8 +27,8 @@ final class Class328 implements Interface28 {
 	}
 
 	@OriginalMember(owner = "client!hy", name = "e", descriptor = "(Lclient!ald;[Lclient!qy;I)[Ljava/lang/Object;")
-	public static Object[] method27723(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class521[] arg1, @OriginalArg(2) int arg2) {
-		@Pc(3) int local3 = arg0.method23195(2008183503);
+	public static Object[] method27723(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class521[] arg1, @OriginalArg(2) int arg2) {
+		@Pc(3) int local3 = arg0.gSmart1or2();
 		@Pc(9) Object[] local9 = new Object[local3 * arg1.length];
 		for (@Pc(11) int local11 = 0; local11 < local3; local11++) {
 			for (@Pc(16) int local16 = 0; local16 < arg1.length; local16++) {

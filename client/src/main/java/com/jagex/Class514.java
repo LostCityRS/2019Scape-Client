@@ -41,7 +41,7 @@ public final class Class514 {
 	static void method30571(@OriginalArg(0) int arg0) {
 		client.anInt3461 = 2001457723;
 		client.anInt3541 = -119085189;
-		Class548.aClass80_Sub36_16 = null;
+		Class548.aPacket_16 = null;
 		Class662.method33334(-1701937687);
 	}
 

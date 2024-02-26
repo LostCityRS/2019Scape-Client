@@ -25,16 +25,16 @@ public final class Class692 {
 	@OriginalMember(owner = "client!yr", name = "t", descriptor = "([I[II)V")
 	public static void method36973(@OriginalArg(0) int[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2) {
 		if (arg0 == null || arg1 == null) {
-			Class701.anIntArray530 = null;
-			Class701.anIntArray529 = null;
-			Class701.aByteArrayArrayArray14 = null;
+			ByteArrayPool.anIntArray530 = null;
+			ByteArrayPool.anIntArray529 = null;
+			ByteArrayPool.aByteArrayArrayArray14 = null;
 			return;
 		}
-		Class701.anIntArray530 = arg0;
-		Class701.anIntArray529 = new int[arg0.length];
-		Class701.aByteArrayArrayArray14 = new byte[arg0.length][][];
-		for (@Pc(25) int local25 = 0; local25 < Class701.anIntArray530.length; local25++) {
-			Class701.aByteArrayArrayArray14[local25] = new byte[arg1[local25]][];
+		ByteArrayPool.anIntArray530 = arg0;
+		ByteArrayPool.anIntArray529 = new int[arg0.length];
+		ByteArrayPool.aByteArrayArrayArray14 = new byte[arg0.length][][];
+		for (@Pc(25) int local25 = 0; local25 < ByteArrayPool.anIntArray530.length; local25++) {
+			ByteArrayPool.aByteArrayArrayArray14[local25] = new byte[arg1[local25]][];
 		}
 	}
 

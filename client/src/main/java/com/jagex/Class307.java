@@ -175,7 +175,7 @@ public final class Class307 implements Interface45 {
 	List aList17 = new ArrayList();
 
 	@OriginalMember(owner = "client!ha", name = "af", descriptor = "Lclient!ald;")
-	Class80_Sub36 aClass80_Sub36_14 = null;
+	Packet aPacket_14 = null;
 
 	@OriginalMember(owner = "client!ha", name = "am", descriptor = "I")
 	int anInt3995 = 0;
@@ -530,8 +530,8 @@ public final class Class307 implements Interface45 {
 	}
 
 	@OriginalMember(owner = "client!ha", name = "ai", descriptor = "(Lclient!ald;)Z")
-	boolean method27337(@OriginalArg(0) Class80_Sub36 arg0) {
-		return arg0.method23362(31085541) == 79 && arg0.method23362(-798409504) == 103 && arg0.method23362(-583460675) == 103 && arg0.method23362(622544291) == 83;
+	boolean method27337(@OriginalArg(0) Packet arg0) {
+		return arg0.g1() == 79 && arg0.g1() == 103 && arg0.g1() == 103 && arg0.g1() == 83;
 	}
 
 	@OriginalMember(owner = "client!ha", name = "aq", descriptor = "([BII)Z")
@@ -1113,7 +1113,7 @@ public final class Class307 implements Interface45 {
 			return;
 		}
 		if (!this.method27336()) {
-			@Pc(41) Class80_Sub36 local41 = (Class80_Sub36) (this.aList15 == null || this.aList15.isEmpty() ? null : this.aList15.get(0));
+			@Pc(41) Packet local41 = (Packet) (this.aList15 == null || this.aList15.isEmpty() ? null : this.aList15.get(0));
 			if (local41 == null) {
 				if (!this.aBoolean790) {
 					this.method27321(Class419.aClass419_5);
@@ -1131,7 +1131,7 @@ public final class Class307 implements Interface45 {
 	}
 
 	@OriginalMember(owner = "client!ha", name = "av", descriptor = "(Lclient!ald;)V")
-	synchronized void method27348(@OriginalArg(0) Class80_Sub36 arg0) {
+	synchronized void method27348(@OriginalArg(0) Packet arg0) {
 		this.aList15.add(arg0);
 		this.method27321(Class419.aClass419_7);
 	}
@@ -1308,24 +1308,24 @@ public final class Class307 implements Interface45 {
 	}
 
 	@OriginalMember(owner = "client!ha", name = "au", descriptor = "(I)Lclient!ald;")
-	Class80_Sub36 method27353(@OriginalArg(0) int arg0) {
-		@Pc(5) Class80_Sub36 local5 = this.method27354(this.method27281(arg0));
+	Packet method27353(@OriginalArg(0) int arg0) {
+		@Pc(5) Packet local5 = this.method27354(this.method27281(arg0));
 		@Pc(7) int local7 = arg0;
 		@Pc(11) List local11 = this.aList18;
 		synchronized (this.aList18) {
 			while (!this.aList18.isEmpty()) {
-				@Pc(22) Class80_Sub36 local22 = (Class80_Sub36) this.aList18.remove(0);
-				this.anInt4008 -= this.method27302(local22.anInt3152 * -1380987821) / this.method27276();
+				@Pc(22) Packet local22 = (Packet) this.aList18.remove(0);
+				this.anInt4008 -= this.method27302(local22.pos * -1380987821) / this.method27276();
 				@Pc(40) int local40 = this.method27281(local7);
-				@Pc(53) int local53 = local22.anInt3152 * -1380987821 < local40 ? local22.anInt3152 * -1380987821 : local40;
-				local5.method23168(local22.aByteArray61, 0, local53, (byte) 40);
+				@Pc(53) int local53 = local22.pos * -1380987821 < local40 ? local22.pos * -1380987821 : local40;
+				local5.pdata(local22.data, 0, local53);
 				local7 -= this.method27302(local53);
-				@Pc(73) int local73 = local22.anInt3152 * -1380987821 - local53;
+				@Pc(73) int local73 = local22.pos * -1380987821 - local53;
 				if (local73 == 0) {
-					local22.method23197((byte) 69);
+					local22.release();
 				} else {
-					System.arraycopy(local22.aByteArray61, local53, local22.aByteArray61, 0, local73);
-					local22.anInt3152 = local73 * 1034180571;
+					System.arraycopy(local22.data, local53, local22.data, 0, local73);
+					local22.pos = local73 * 1034180571;
 					this.anInt4008 += this.method27302(local73) / this.method27276();
 					this.aList18.add(0, local22);
 				}
@@ -1341,8 +1341,8 @@ public final class Class307 implements Interface45 {
 	}
 
 	@OriginalMember(owner = "client!ha", name = "az", descriptor = "(I)Lclient!ald;")
-	Class80_Sub36 method27354(@OriginalArg(0) int arg0) {
-		return new Class80_Sub36(arg0, true);
+	Packet method27354(@OriginalArg(0) int arg0) {
+		return new Packet(arg0, true);
 	}
 
 	@OriginalMember(owner = "client!ha", name = "as", descriptor = "()I")
@@ -1428,10 +1428,10 @@ public final class Class307 implements Interface45 {
 
 	@OriginalMember(owner = "client!ha", name = "bz", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method27291(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method27291(@OriginalArg(0) Packet arg0) {
 		if (this.method27270() == Class419.aClass419_8 || this.method27270() == Class419.aClass419_6) {
 			if (arg0 != null) {
-				arg0.method23197((byte) 88);
+				arg0.release();
 			}
 		} else if (arg0 == null) {
 			@Pc(33) boolean local33 = this.aBoolean793 && (this.anInt4004 > 0 && this.anInt4005 < this.anInt4004 || this.anInt4004 < 0);
@@ -1616,13 +1616,13 @@ public final class Class307 implements Interface45 {
 
 	@OriginalMember(owner = "client!ha", name = "bp", descriptor = "(I)Lclient!ald;")
 	@Override
-	public Class80_Sub36 method27295(@OriginalArg(0) int arg0) {
+	public Packet method27295(@OriginalArg(0) int arg0) {
 		return this.method27353(arg0);
 	}
 
 	@OriginalMember(owner = "client!ha", name = "bb", descriptor = "(I)Lclient!ald;")
 	@Override
-	public Class80_Sub36 method27319(@OriginalArg(0) int arg0) {
+	public Packet method27319(@OriginalArg(0) int arg0) {
 		return this.method27353(arg0);
 	}
 
@@ -1646,10 +1646,10 @@ public final class Class307 implements Interface45 {
 
 	@OriginalMember(owner = "client!ha", name = "be", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method27288(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method27288(@OriginalArg(0) Packet arg0) {
 		if (this.method27270() == Class419.aClass419_8 || this.method27270() == Class419.aClass419_6) {
 			if (arg0 != null) {
-				arg0.method23197((byte) -84);
+				arg0.release();
 			}
 		} else if (arg0 == null) {
 			@Pc(33) boolean local33 = this.aBoolean793 && (this.anInt4004 > 0 && this.anInt4005 < this.anInt4004 || this.anInt4004 < 0);
@@ -1807,7 +1807,7 @@ public final class Class307 implements Interface45 {
 	}
 
 	@OriginalMember(owner = "client!ha", name = "ax", descriptor = "(Lclient!ald;)V")
-	void method27369(@OriginalArg(0) Class80_Sub36 arg0) {
+	void method27369(@OriginalArg(0) Packet arg0) {
 		this.aList17.add(arg0);
 	}
 
@@ -2062,46 +2062,46 @@ public final class Class307 implements Interface45 {
 
 	@OriginalMember(owner = "client!ha", name = "an", descriptor = "()V")
 	synchronized void method27384() {
-		@Pc(10) int local10 = this.aClass80_Sub36_14 == null ? 0 : this.aClass80_Sub36_14.anInt3152 * -1380987821;
+		@Pc(10) int local10 = this.aPacket_14 == null ? 0 : this.aPacket_14.pos * -1380987821;
 		@Pc(12) int local12 = 0;
 		@Pc(16) Iterator local16 = this.aList17.iterator();
-		@Pc(23) Class80_Sub36 local23;
+		@Pc(23) Packet local23;
 		while (local16.hasNext()) {
-			local23 = (Class80_Sub36) local16.next();
-			local12 += local23.anInt3152 * -1380987821;
+			local23 = (Packet) local16.next();
+			local12 += local23.pos * -1380987821;
 		}
-		if (this.aClass80_Sub36_14 == null) {
-			this.aClass80_Sub36_14 = this.method27354(local12);
+		if (this.aPacket_14 == null) {
+			this.aPacket_14 = this.method27354(local12);
 			this.anInt3995 = 0;
 			local10 = 0;
-		} else if (this.aClass80_Sub36_14.aByteArray61.length - this.aClass80_Sub36_14.anInt3152 * -1380987821 < local12) {
-			@Pc(53) Class80_Sub36 local53 = this.method27354(local12 + this.anInt3995);
-			local53.method23168(this.aClass80_Sub36_14.aByteArray61, this.aClass80_Sub36_14.anInt3152 * -1380987821 - this.anInt3996, this.anInt3995, (byte) 77);
-			this.aClass80_Sub36_14.method23197((byte) -79);
-			this.aClass80_Sub36_14 = local53;
+		} else if (this.aPacket_14.data.length - this.aPacket_14.pos * -1380987821 < local12) {
+			@Pc(53) Packet local53 = this.method27354(local12 + this.anInt3995);
+			local53.pdata(this.aPacket_14.data, this.aPacket_14.pos * -1380987821 - this.anInt3996, this.anInt3995);
+			this.aPacket_14.release();
+			this.aPacket_14 = local53;
 			local10 = this.anInt3996;
 		}
 		local16 = this.aList17.iterator();
 		while (local16.hasNext()) {
-			local23 = (Class80_Sub36) local16.next();
-			this.aClass80_Sub36_14.method23168(local23.aByteArray61, 0, local23.anInt3152 * -1380987821, (byte) 103);
-			this.anInt3995 += local23.anInt3152 * -1380987821;
-			local23.method23197((byte) -20);
+			local23 = (Packet) local16.next();
+			this.aPacket_14.pdata(local23.data, 0, local23.pos * -1380987821);
+			this.anInt3995 += local23.pos * -1380987821;
+			local23.release();
 		}
-		this.aClass80_Sub36_14.anInt3152 = (local10 - this.anInt3996) * 1034180571;
+		this.aPacket_14.pos = (local10 - this.anInt3996) * 1034180571;
 		this.anInt3996 = 0;
 		this.aList17.clear();
 		label286: while (true) {
 			if (this.aBoolean789) {
-				if (this.aClass80_Sub36_14.anInt3152 * -1380987821 < this.aClass80_Sub36_14.aByteArray61.length) {
+				if (this.aPacket_14.pos * -1380987821 < this.aPacket_14.data.length) {
 					if (this.aBoolean792 && (float) (this.anInt4008 / this.method27325()) > this.aFloat285) {
 						return;
 					}
-					if (this.aClass80_Sub36_14 != null && this.anInt3995 >= 27) {
-						@Pc(205) int local205 = this.aClass80_Sub36_14.anInt3152 * -1380987821;
+					if (this.aPacket_14 != null && this.anInt3995 >= 27) {
+						@Pc(205) int local205 = this.aPacket_14.pos * -1380987821;
 						@Pc(207) byte local207 = 0;
 						@Pc(209) int local209 = 0;
-						if (!this.method27337(this.aClass80_Sub36_14)) {
+						if (!this.method27337(this.aPacket_14)) {
 							return;
 						}
 						this.anInt4003++;
@@ -2110,17 +2110,17 @@ public final class Class307 implements Interface45 {
 						}
 						this.aList19.clear();
 						this.aList20.clear();
-						this.aClass80_Sub36_14.method23362(-543089443);
-						@Pc(246) int local246 = this.aClass80_Sub36_14.method23362(759023987);
-						@Pc(278) int local278 = this.aClass80_Sub36_14.method23362(493415938) & 0xFF | (this.aClass80_Sub36_14.method23362(-851439620) & 0xFF) << 8 | (this.aClass80_Sub36_14.method23362(-988499088) & 0xFF) << 16 | this.aClass80_Sub36_14.method23362(686014598) << 24;
+						this.aPacket_14.g1();
+						@Pc(246) int local246 = this.aPacket_14.g1();
+						@Pc(278) int local278 = this.aPacket_14.g1() & 0xFF | (this.aPacket_14.g1() & 0xFF) << 8 | (this.aPacket_14.g1() & 0xFF) << 16 | this.aPacket_14.g1() << 24;
 						@Pc(282) int local282 = local278 - local207;
-						this.aClass80_Sub36_14.anInt3152 += -632980048;
-						@Pc(294) int local294 = this.aClass80_Sub36_14.method23362(-1462087614);
-						@Pc(300) int local300 = this.aClass80_Sub36_14.anInt3152 * -1380987821;
+						this.aPacket_14.pos += -632980048;
+						@Pc(294) int local294 = this.aPacket_14.g1();
+						@Pc(300) int local300 = this.aPacket_14.pos * -1380987821;
 						@Pc(304) int local304 = local300 + local294;
 						if (local304 > local205 + this.anInt3995) {
-							this.aClass80_Sub36_14.anInt3152 = (local205 + this.anInt3995) * 1034180571;
-							this.anInt3996 = this.aClass80_Sub36_14.anInt3152 * -1380987821 - local205;
+							this.aPacket_14.pos = (local205 + this.anInt3995) * 1034180571;
+							this.anInt3996 = this.aPacket_14.pos * -1380987821 - local205;
 							this.aBoolean789 = false;
 						}
 						@Pc(333) int local333 = local304;
@@ -2128,12 +2128,12 @@ public final class Class307 implements Interface45 {
 						@Pc(352) int local352;
 						if (this.aBoolean789) {
 							for (@Pc(340) int local340 = 0; local340 < local294; local340++) {
-								local352 = this.aClass80_Sub36_14.aByteArray61[local300++] & 0xFF;
+								local352 = this.aPacket_14.data[local300++] & 0xFF;
 								local304 += local352;
 								local335 += local352;
 								if (local304 > local205 + this.anInt3995) {
-									this.aClass80_Sub36_14.anInt3152 = (local205 + this.anInt3995) * 1034180571;
-									this.anInt3996 = this.aClass80_Sub36_14.anInt3152 * -1380987821 - local205;
+									this.aPacket_14.pos = (local205 + this.anInt3995) * 1034180571;
+									this.anInt3996 = this.aPacket_14.pos * -1380987821 - local205;
 									this.aBoolean789 = false;
 									break;
 								}
@@ -2163,7 +2163,7 @@ public final class Class307 implements Interface45 {
 									local426 = true;
 								} else {
 									this.anAtomicReference1.set(null);
-									@Pc(486) boolean local486 = this.method27346(this.aClass80_Sub36_14.aByteArray61, local436, local440, this.anAtomicReference1);
+									@Pc(486) boolean local486 = this.method27346(this.aPacket_14.data, local436, local440, this.anAtomicReference1);
 									@Pc(492) Class326[] local492 = (Class326[]) this.anAtomicReference1.get();
 									if (!local486 || this.aBoolean791 && this.anInt4003 < this.anInt4002 && local352 < this.anInt4009) {
 										if (this.method27282()) {
@@ -2215,7 +2215,7 @@ public final class Class307 implements Interface45 {
 											@Pc(666) int local666 = this.method27276() - this.method27350();
 											local567 += local567 / this.method27350() * local666;
 										}
-										@Pc(679) Class80_Sub36 local679 = this.method27354(local567);
+										@Pc(679) Packet local679 = this.method27354(local567);
 										for (@Pc(681) int local681 = local560; local681 < local514; local681++) {
 											@Pc(687) boolean local687 = this.aBoolean791;
 											if (this.anInt4004 != 0) {
@@ -2251,23 +2251,23 @@ public final class Class307 implements Interface45 {
 													if (this.aClass449_1 == Class449.aClass449_2) {
 														local799 = this.method27334(local780);
 														if (this.aClass420_1 == Class420.aClass420_3) {
-															local679.method23385(local799, 1060557734);
+															local679.ip2(local799);
 														} else {
-															local679.method23155(local799, (byte) -101);
+															local679.p2(local799);
 														}
 													} else if (this.aClass449_1 == Class449.aClass449_3) {
 														local799 = this.method27323(local780);
 														if (this.aClass420_1 == Class420.aClass420_3) {
-															local679.method23385(local799, 1060557734);
+															local679.ip2(local799);
 														} else {
-															local679.method23155(local799, (byte) -122);
+															local679.p2(local799);
 														}
 													} else if (this.aClass449_1 == Class449.aClass449_4) {
 														local799 = this.method27328(local780);
-														local679.method23154(local799, 1275868335);
+														local679.p1(local799);
 													} else if (this.aClass449_1 == Class449.aClass449_5) {
 														local799 = this.method27374(local780);
-														local679.method23154(local799, 1275868335);
+														local679.p1(local799);
 													}
 												}
 												this.anInt3997++;
@@ -2276,7 +2276,7 @@ public final class Class307 implements Interface45 {
 										}
 										@Pc(875) List local875 = this.aList18;
 										synchronized (this.aList18) {
-											this.anInt4008 += this.method27302(local679.anInt3152 * -1380987821) / this.method27276();
+											this.anInt4008 += this.method27302(local679.pos * -1380987821) / this.method27276();
 											this.aList18.add(local679);
 										}
 									}
@@ -2284,14 +2284,14 @@ public final class Class307 implements Interface45 {
 									local492 = null;
 								}
 							}
-							this.aClass80_Sub36_14.anInt3152 = local304 * 1034180571;
+							this.aPacket_14.pos = local304 * 1034180571;
 							this.anInt3995 -= local304 - local205;
 							continue label286;
 						}
 					}
-					if (this.aClass80_Sub36_14 != null) {
+					if (this.aPacket_14 != null) {
 						this.anInt3996 = this.anInt3995;
-						this.aClass80_Sub36_14.anInt3152 += this.anInt3995 * 1034180571;
+						this.aPacket_14.pos += this.anInt3995 * 1034180571;
 					}
 					this.aBoolean789 = false;
 					return;
@@ -2336,21 +2336,21 @@ public final class Class307 implements Interface45 {
 		this.anInt4006 = 0;
 		@Pc(98) Iterator local98 = this.aList17.iterator();
 		while (local98.hasNext()) {
-			@Pc(105) Class80_Sub36 local105 = (Class80_Sub36) local98.next();
-			local105.method23197((byte) -31);
+			@Pc(105) Packet local105 = (Packet) local98.next();
+			local105.release();
 		}
 		this.aList17.clear();
 		this.aBoolean789 = false;
-		if (this.aClass80_Sub36_14 != null) {
-			@Pc(122) Class80_Sub36 local122 = this.aClass80_Sub36_14;
-			synchronized (this.aClass80_Sub36_14) {
-				this.aClass80_Sub36_14.method23197((byte) -53);
-				this.aClass80_Sub36_14 = null;
+		if (this.aPacket_14 != null) {
+			@Pc(122) Packet local122 = this.aPacket_14;
+			synchronized (this.aPacket_14) {
+				this.aPacket_14.release();
+				this.aPacket_14 = null;
 			}
 		}
 		this.anInt3995 = 0;
 		this.anInt3996 = 0;
-		@Pc(162) Class80_Sub36 local162;
+		@Pc(162) Packet local162;
 		@Pc(150) List local150;
 		@Pc(155) Iterator local155;
 		if (!arg0) {
@@ -2362,8 +2362,8 @@ public final class Class307 implements Interface45 {
 						this.aList18.clear();
 						break;
 					}
-					local162 = (Class80_Sub36) local155.next();
-					local162.method23197((byte) -77);
+					local162 = (Packet) local155.next();
+					local162.release();
 				}
 			}
 			this.anInt4008 = 0;
@@ -2376,8 +2376,8 @@ public final class Class307 implements Interface45 {
 					this.aList15.clear();
 					break;
 				}
-				local162 = (Class80_Sub36) local155.next();
-				local162.method23197((byte) -5);
+				local162 = (Packet) local155.next();
+				local162.release();
 			}
 		}
 		this.aBoolean790 = false;
@@ -2404,8 +2404,8 @@ public final class Class307 implements Interface45 {
 	}
 
 	@OriginalMember(owner = "client!ha", name = "dl", descriptor = "(Lclient!ald;)Z")
-	boolean method27386(@OriginalArg(0) Class80_Sub36 arg0) {
-		return arg0.method23362(760433253) == 79 && arg0.method23362(-545229191) == 103 && arg0.method23362(560326211) == 103 && arg0.method23362(-1359748288) == 83;
+	boolean method27386(@OriginalArg(0) Packet arg0) {
+		return arg0.g1() == 79 && arg0.g1() == 103 && arg0.g1() == 103 && arg0.g1() == 83;
 	}
 
 	@OriginalMember(owner = "client!ha", name = "dd", descriptor = "(Z)V")
@@ -2442,21 +2442,21 @@ public final class Class307 implements Interface45 {
 		this.anInt4006 = 0;
 		@Pc(98) Iterator local98 = this.aList17.iterator();
 		while (local98.hasNext()) {
-			@Pc(105) Class80_Sub36 local105 = (Class80_Sub36) local98.next();
-			local105.method23197((byte) 8);
+			@Pc(105) Packet local105 = (Packet) local98.next();
+			local105.release();
 		}
 		this.aList17.clear();
 		this.aBoolean789 = false;
-		if (this.aClass80_Sub36_14 != null) {
-			@Pc(122) Class80_Sub36 local122 = this.aClass80_Sub36_14;
-			synchronized (this.aClass80_Sub36_14) {
-				this.aClass80_Sub36_14.method23197((byte) -58);
-				this.aClass80_Sub36_14 = null;
+		if (this.aPacket_14 != null) {
+			@Pc(122) Packet local122 = this.aPacket_14;
+			synchronized (this.aPacket_14) {
+				this.aPacket_14.release();
+				this.aPacket_14 = null;
 			}
 		}
 		this.anInt3995 = 0;
 		this.anInt3996 = 0;
-		@Pc(162) Class80_Sub36 local162;
+		@Pc(162) Packet local162;
 		@Pc(150) List local150;
 		@Pc(155) Iterator local155;
 		if (!arg0) {
@@ -2468,8 +2468,8 @@ public final class Class307 implements Interface45 {
 						this.aList18.clear();
 						break;
 					}
-					local162 = (Class80_Sub36) local155.next();
-					local162.method23197((byte) -96);
+					local162 = (Packet) local155.next();
+					local162.release();
 				}
 			}
 			this.anInt4008 = 0;
@@ -2482,8 +2482,8 @@ public final class Class307 implements Interface45 {
 					this.aList15.clear();
 					break;
 				}
-				local162 = (Class80_Sub36) local155.next();
-				local162.method23197((byte) 82);
+				local162 = (Packet) local155.next();
+				local162.release();
 			}
 		}
 		this.aBoolean790 = false;
@@ -2510,7 +2510,7 @@ public final class Class307 implements Interface45 {
 	}
 
 	@OriginalMember(owner = "client!ha", name = "dc", descriptor = "(Lclient!ald;)V")
-	void method27388(@OriginalArg(0) Class80_Sub36 arg0) {
+	void method27388(@OriginalArg(0) Packet arg0) {
 		this.aList17.add(arg0);
 	}
 
@@ -2520,8 +2520,8 @@ public final class Class307 implements Interface45 {
 	}
 
 	@OriginalMember(owner = "client!ha", name = "df", descriptor = "(Lclient!ald;)Z")
-	boolean method27390(@OriginalArg(0) Class80_Sub36 arg0) {
-		return arg0.method23362(-1884263124) == 79 && arg0.method23362(62000121) == 103 && arg0.method23362(-987306404) == 103 && arg0.method23362(671871332) == 83;
+	boolean method27390(@OriginalArg(0) Packet arg0) {
+		return arg0.g1() == 79 && arg0.g1() == 103 && arg0.g1() == 103 && arg0.g1() == 83;
 	}
 
 	@OriginalMember(owner = "client!ha", name = "ct", descriptor = "()Lclient!nv;")
@@ -2686,7 +2686,7 @@ public final class Class307 implements Interface45 {
 
 	@OriginalMember(owner = "client!ha", name = "m", descriptor = "(I)Lclient!ald;")
 	@Override
-	public Class80_Sub36 method27279(@OriginalArg(0) int arg0) {
+	public Packet method27279(@OriginalArg(0) int arg0) {
 		return this.method27353(arg0);
 	}
 
@@ -3284,21 +3284,21 @@ public final class Class307 implements Interface45 {
 		this.anInt4006 = 0;
 		@Pc(98) Iterator local98 = this.aList17.iterator();
 		while (local98.hasNext()) {
-			@Pc(105) Class80_Sub36 local105 = (Class80_Sub36) local98.next();
-			local105.method23197((byte) -3);
+			@Pc(105) Packet local105 = (Packet) local98.next();
+			local105.release();
 		}
 		this.aList17.clear();
 		this.aBoolean789 = false;
-		if (this.aClass80_Sub36_14 != null) {
-			@Pc(122) Class80_Sub36 local122 = this.aClass80_Sub36_14;
-			synchronized (this.aClass80_Sub36_14) {
-				this.aClass80_Sub36_14.method23197((byte) -40);
-				this.aClass80_Sub36_14 = null;
+		if (this.aPacket_14 != null) {
+			@Pc(122) Packet local122 = this.aPacket_14;
+			synchronized (this.aPacket_14) {
+				this.aPacket_14.release();
+				this.aPacket_14 = null;
 			}
 		}
 		this.anInt3995 = 0;
 		this.anInt3996 = 0;
-		@Pc(162) Class80_Sub36 local162;
+		@Pc(162) Packet local162;
 		@Pc(150) List local150;
 		@Pc(155) Iterator local155;
 		if (!arg0) {
@@ -3310,8 +3310,8 @@ public final class Class307 implements Interface45 {
 						this.aList18.clear();
 						break;
 					}
-					local162 = (Class80_Sub36) local155.next();
-					local162.method23197((byte) 61);
+					local162 = (Packet) local155.next();
+					local162.release();
 				}
 			}
 			this.anInt4008 = 0;
@@ -3324,8 +3324,8 @@ public final class Class307 implements Interface45 {
 					this.aList15.clear();
 					break;
 				}
-				local162 = (Class80_Sub36) local155.next();
-				local162.method23197((byte) 31);
+				local162 = (Packet) local155.next();
+				local162.release();
 			}
 		}
 		this.aBoolean790 = false;
@@ -4544,7 +4544,7 @@ public final class Class307 implements Interface45 {
 			return;
 		}
 		if (!this.method27336()) {
-			@Pc(41) Class80_Sub36 local41 = (Class80_Sub36) (this.aList15 == null || this.aList15.isEmpty() ? null : this.aList15.get(0));
+			@Pc(41) Packet local41 = (Packet) (this.aList15 == null || this.aList15.isEmpty() ? null : this.aList15.get(0));
 			if (local41 == null) {
 				if (!this.aBoolean790) {
 					this.method27321(Class419.aClass419_5);
@@ -4562,59 +4562,59 @@ public final class Class307 implements Interface45 {
 	}
 
 	@OriginalMember(owner = "client!ha", name = "eu", descriptor = "(Lclient!ald;)V")
-	synchronized void method27421(@OriginalArg(0) Class80_Sub36 arg0) {
+	synchronized void method27421(@OriginalArg(0) Packet arg0) {
 		this.aList15.add(arg0);
 		this.method27321(Class419.aClass419_7);
 	}
 
 	@OriginalMember(owner = "client!ha", name = "es", descriptor = "(Lclient!ald;)V")
-	synchronized void method27422(@OriginalArg(0) Class80_Sub36 arg0) {
+	synchronized void method27422(@OriginalArg(0) Packet arg0) {
 		this.aList15.add(arg0);
 		this.method27321(Class419.aClass419_7);
 	}
 
 	@OriginalMember(owner = "client!ha", name = "er", descriptor = "()V")
 	synchronized void method27423() {
-		@Pc(10) int local10 = this.aClass80_Sub36_14 == null ? 0 : this.aClass80_Sub36_14.anInt3152 * -1380987821;
+		@Pc(10) int local10 = this.aPacket_14 == null ? 0 : this.aPacket_14.pos * -1380987821;
 		@Pc(12) int local12 = 0;
 		@Pc(16) Iterator local16 = this.aList17.iterator();
-		@Pc(23) Class80_Sub36 local23;
+		@Pc(23) Packet local23;
 		while (local16.hasNext()) {
-			local23 = (Class80_Sub36) local16.next();
-			local12 += local23.anInt3152 * -1380987821;
+			local23 = (Packet) local16.next();
+			local12 += local23.pos * -1380987821;
 		}
-		if (this.aClass80_Sub36_14 == null) {
-			this.aClass80_Sub36_14 = this.method27354(local12);
+		if (this.aPacket_14 == null) {
+			this.aPacket_14 = this.method27354(local12);
 			this.anInt3995 = 0;
 			local10 = 0;
-		} else if (this.aClass80_Sub36_14.aByteArray61.length - this.aClass80_Sub36_14.anInt3152 * -1380987821 < local12) {
-			@Pc(53) Class80_Sub36 local53 = this.method27354(local12 + this.anInt3995);
-			local53.method23168(this.aClass80_Sub36_14.aByteArray61, this.aClass80_Sub36_14.anInt3152 * -1380987821 - this.anInt3996, this.anInt3995, (byte) 50);
-			this.aClass80_Sub36_14.method23197((byte) -86);
-			this.aClass80_Sub36_14 = local53;
+		} else if (this.aPacket_14.data.length - this.aPacket_14.pos * -1380987821 < local12) {
+			@Pc(53) Packet local53 = this.method27354(local12 + this.anInt3995);
+			local53.pdata(this.aPacket_14.data, this.aPacket_14.pos * -1380987821 - this.anInt3996, this.anInt3995);
+			this.aPacket_14.release();
+			this.aPacket_14 = local53;
 			local10 = this.anInt3996;
 		}
 		local16 = this.aList17.iterator();
 		while (local16.hasNext()) {
-			local23 = (Class80_Sub36) local16.next();
-			this.aClass80_Sub36_14.method23168(local23.aByteArray61, 0, local23.anInt3152 * -1380987821, (byte) 113);
-			this.anInt3995 += local23.anInt3152 * -1380987821;
-			local23.method23197((byte) 37);
+			local23 = (Packet) local16.next();
+			this.aPacket_14.pdata(local23.data, 0, local23.pos * -1380987821);
+			this.anInt3995 += local23.pos * -1380987821;
+			local23.release();
 		}
-		this.aClass80_Sub36_14.anInt3152 = (local10 - this.anInt3996) * 1034180571;
+		this.aPacket_14.pos = (local10 - this.anInt3996) * 1034180571;
 		this.anInt3996 = 0;
 		this.aList17.clear();
 		label286: while (true) {
 			if (this.aBoolean789) {
-				if (this.aClass80_Sub36_14.anInt3152 * -1380987821 < this.aClass80_Sub36_14.aByteArray61.length) {
+				if (this.aPacket_14.pos * -1380987821 < this.aPacket_14.data.length) {
 					if (this.aBoolean792 && (float) (this.anInt4008 / this.method27325()) > this.aFloat285) {
 						return;
 					}
-					if (this.aClass80_Sub36_14 != null && this.anInt3995 >= 27) {
-						@Pc(205) int local205 = this.aClass80_Sub36_14.anInt3152 * -1380987821;
+					if (this.aPacket_14 != null && this.anInt3995 >= 27) {
+						@Pc(205) int local205 = this.aPacket_14.pos * -1380987821;
 						@Pc(207) byte local207 = 0;
 						@Pc(209) int local209 = 0;
-						if (!this.method27337(this.aClass80_Sub36_14)) {
+						if (!this.method27337(this.aPacket_14)) {
 							return;
 						}
 						this.anInt4003++;
@@ -4623,17 +4623,17 @@ public final class Class307 implements Interface45 {
 						}
 						this.aList19.clear();
 						this.aList20.clear();
-						this.aClass80_Sub36_14.method23362(1113363455);
-						@Pc(246) int local246 = this.aClass80_Sub36_14.method23362(1036936429);
-						@Pc(278) int local278 = this.aClass80_Sub36_14.method23362(-1485462089) & 0xFF | (this.aClass80_Sub36_14.method23362(-1716407074) & 0xFF) << 8 | (this.aClass80_Sub36_14.method23362(-580565824) & 0xFF) << 16 | this.aClass80_Sub36_14.method23362(-227141101) << 24;
+						this.aPacket_14.g1();
+						@Pc(246) int local246 = this.aPacket_14.g1();
+						@Pc(278) int local278 = this.aPacket_14.g1() & 0xFF | (this.aPacket_14.g1() & 0xFF) << 8 | (this.aPacket_14.g1() & 0xFF) << 16 | this.aPacket_14.g1() << 24;
 						@Pc(282) int local282 = local278 - local207;
-						this.aClass80_Sub36_14.anInt3152 += -632980048;
-						@Pc(294) int local294 = this.aClass80_Sub36_14.method23362(-1963428149);
-						@Pc(300) int local300 = this.aClass80_Sub36_14.anInt3152 * -1380987821;
+						this.aPacket_14.pos += -632980048;
+						@Pc(294) int local294 = this.aPacket_14.g1();
+						@Pc(300) int local300 = this.aPacket_14.pos * -1380987821;
 						@Pc(304) int local304 = local300 + local294;
 						if (local304 > local205 + this.anInt3995) {
-							this.aClass80_Sub36_14.anInt3152 = (local205 + this.anInt3995) * 1034180571;
-							this.anInt3996 = this.aClass80_Sub36_14.anInt3152 * -1380987821 - local205;
+							this.aPacket_14.pos = (local205 + this.anInt3995) * 1034180571;
+							this.anInt3996 = this.aPacket_14.pos * -1380987821 - local205;
 							this.aBoolean789 = false;
 						}
 						@Pc(333) int local333 = local304;
@@ -4641,12 +4641,12 @@ public final class Class307 implements Interface45 {
 						@Pc(352) int local352;
 						if (this.aBoolean789) {
 							for (@Pc(340) int local340 = 0; local340 < local294; local340++) {
-								local352 = this.aClass80_Sub36_14.aByteArray61[local300++] & 0xFF;
+								local352 = this.aPacket_14.data[local300++] & 0xFF;
 								local304 += local352;
 								local335 += local352;
 								if (local304 > local205 + this.anInt3995) {
-									this.aClass80_Sub36_14.anInt3152 = (local205 + this.anInt3995) * 1034180571;
-									this.anInt3996 = this.aClass80_Sub36_14.anInt3152 * -1380987821 - local205;
+									this.aPacket_14.pos = (local205 + this.anInt3995) * 1034180571;
+									this.anInt3996 = this.aPacket_14.pos * -1380987821 - local205;
 									this.aBoolean789 = false;
 									break;
 								}
@@ -4676,7 +4676,7 @@ public final class Class307 implements Interface45 {
 									local426 = true;
 								} else {
 									this.anAtomicReference1.set(null);
-									@Pc(486) boolean local486 = this.method27346(this.aClass80_Sub36_14.aByteArray61, local436, local440, this.anAtomicReference1);
+									@Pc(486) boolean local486 = this.method27346(this.aPacket_14.data, local436, local440, this.anAtomicReference1);
 									@Pc(492) Class326[] local492 = (Class326[]) this.anAtomicReference1.get();
 									if (!local486 || this.aBoolean791 && this.anInt4003 < this.anInt4002 && local352 < this.anInt4009) {
 										if (this.method27282()) {
@@ -4728,7 +4728,7 @@ public final class Class307 implements Interface45 {
 											@Pc(666) int local666 = this.method27276() - this.method27350();
 											local567 += local567 / this.method27350() * local666;
 										}
-										@Pc(679) Class80_Sub36 local679 = this.method27354(local567);
+										@Pc(679) Packet local679 = this.method27354(local567);
 										for (@Pc(681) int local681 = local560; local681 < local514; local681++) {
 											@Pc(687) boolean local687 = this.aBoolean791;
 											if (this.anInt4004 != 0) {
@@ -4764,23 +4764,23 @@ public final class Class307 implements Interface45 {
 													if (this.aClass449_1 == Class449.aClass449_2) {
 														local799 = this.method27334(local780);
 														if (this.aClass420_1 == Class420.aClass420_3) {
-															local679.method23385(local799, 1060557734);
+															local679.ip2(local799);
 														} else {
-															local679.method23155(local799, (byte) -118);
+															local679.p2(local799);
 														}
 													} else if (this.aClass449_1 == Class449.aClass449_3) {
 														local799 = this.method27323(local780);
 														if (this.aClass420_1 == Class420.aClass420_3) {
-															local679.method23385(local799, 1060557734);
+															local679.ip2(local799);
 														} else {
-															local679.method23155(local799, (byte) -22);
+															local679.p2(local799);
 														}
 													} else if (this.aClass449_1 == Class449.aClass449_4) {
 														local799 = this.method27328(local780);
-														local679.method23154(local799, 1275868335);
+														local679.p1(local799);
 													} else if (this.aClass449_1 == Class449.aClass449_5) {
 														local799 = this.method27374(local780);
-														local679.method23154(local799, 1275868335);
+														local679.p1(local799);
 													}
 												}
 												this.anInt3997++;
@@ -4789,7 +4789,7 @@ public final class Class307 implements Interface45 {
 										}
 										@Pc(875) List local875 = this.aList18;
 										synchronized (this.aList18) {
-											this.anInt4008 += this.method27302(local679.anInt3152 * -1380987821) / this.method27276();
+											this.anInt4008 += this.method27302(local679.pos * -1380987821) / this.method27276();
 											this.aList18.add(local679);
 										}
 									}
@@ -4797,14 +4797,14 @@ public final class Class307 implements Interface45 {
 									local492 = null;
 								}
 							}
-							this.aClass80_Sub36_14.anInt3152 = local304 * 1034180571;
+							this.aPacket_14.pos = local304 * 1034180571;
 							this.anInt3995 -= local304 - local205;
 							continue label286;
 						}
 					}
-					if (this.aClass80_Sub36_14 != null) {
+					if (this.aPacket_14 != null) {
 						this.anInt3996 = this.anInt3995;
-						this.aClass80_Sub36_14.anInt3152 += this.anInt3995 * 1034180571;
+						this.aPacket_14.pos += this.anInt3995 * 1034180571;
 					}
 					this.aBoolean789 = false;
 					return;
@@ -4817,46 +4817,46 @@ public final class Class307 implements Interface45 {
 
 	@OriginalMember(owner = "client!ha", name = "en", descriptor = "()V")
 	synchronized void method27424() {
-		@Pc(10) int local10 = this.aClass80_Sub36_14 == null ? 0 : this.aClass80_Sub36_14.anInt3152 * -1380987821;
+		@Pc(10) int local10 = this.aPacket_14 == null ? 0 : this.aPacket_14.pos * -1380987821;
 		@Pc(12) int local12 = 0;
 		@Pc(16) Iterator local16 = this.aList17.iterator();
-		@Pc(23) Class80_Sub36 local23;
+		@Pc(23) Packet local23;
 		while (local16.hasNext()) {
-			local23 = (Class80_Sub36) local16.next();
-			local12 += local23.anInt3152 * -1380987821;
+			local23 = (Packet) local16.next();
+			local12 += local23.pos * -1380987821;
 		}
-		if (this.aClass80_Sub36_14 == null) {
-			this.aClass80_Sub36_14 = this.method27354(local12);
+		if (this.aPacket_14 == null) {
+			this.aPacket_14 = this.method27354(local12);
 			this.anInt3995 = 0;
 			local10 = 0;
-		} else if (this.aClass80_Sub36_14.aByteArray61.length - this.aClass80_Sub36_14.anInt3152 * -1380987821 < local12) {
-			@Pc(53) Class80_Sub36 local53 = this.method27354(local12 + this.anInt3995);
-			local53.method23168(this.aClass80_Sub36_14.aByteArray61, this.aClass80_Sub36_14.anInt3152 * -1380987821 - this.anInt3996, this.anInt3995, (byte) 49);
-			this.aClass80_Sub36_14.method23197((byte) -90);
-			this.aClass80_Sub36_14 = local53;
+		} else if (this.aPacket_14.data.length - this.aPacket_14.pos * -1380987821 < local12) {
+			@Pc(53) Packet local53 = this.method27354(local12 + this.anInt3995);
+			local53.pdata(this.aPacket_14.data, this.aPacket_14.pos * -1380987821 - this.anInt3996, this.anInt3995);
+			this.aPacket_14.release();
+			this.aPacket_14 = local53;
 			local10 = this.anInt3996;
 		}
 		local16 = this.aList17.iterator();
 		while (local16.hasNext()) {
-			local23 = (Class80_Sub36) local16.next();
-			this.aClass80_Sub36_14.method23168(local23.aByteArray61, 0, local23.anInt3152 * -1380987821, (byte) 9);
-			this.anInt3995 += local23.anInt3152 * -1380987821;
-			local23.method23197((byte) -39);
+			local23 = (Packet) local16.next();
+			this.aPacket_14.pdata(local23.data, 0, local23.pos * -1380987821);
+			this.anInt3995 += local23.pos * -1380987821;
+			local23.release();
 		}
-		this.aClass80_Sub36_14.anInt3152 = (local10 - this.anInt3996) * 1034180571;
+		this.aPacket_14.pos = (local10 - this.anInt3996) * 1034180571;
 		this.anInt3996 = 0;
 		this.aList17.clear();
 		label286: while (true) {
 			if (this.aBoolean789) {
-				if (this.aClass80_Sub36_14.anInt3152 * -1380987821 < this.aClass80_Sub36_14.aByteArray61.length) {
+				if (this.aPacket_14.pos * -1380987821 < this.aPacket_14.data.length) {
 					if (this.aBoolean792 && (float) (this.anInt4008 / this.method27325()) > this.aFloat285) {
 						return;
 					}
-					if (this.aClass80_Sub36_14 != null && this.anInt3995 >= 27) {
-						@Pc(205) int local205 = this.aClass80_Sub36_14.anInt3152 * -1380987821;
+					if (this.aPacket_14 != null && this.anInt3995 >= 27) {
+						@Pc(205) int local205 = this.aPacket_14.pos * -1380987821;
 						@Pc(207) byte local207 = 0;
 						@Pc(209) int local209 = 0;
-						if (!this.method27337(this.aClass80_Sub36_14)) {
+						if (!this.method27337(this.aPacket_14)) {
 							return;
 						}
 						this.anInt4003++;
@@ -4865,17 +4865,17 @@ public final class Class307 implements Interface45 {
 						}
 						this.aList19.clear();
 						this.aList20.clear();
-						this.aClass80_Sub36_14.method23362(-1716568196);
-						@Pc(246) int local246 = this.aClass80_Sub36_14.method23362(-982789249);
-						@Pc(278) int local278 = this.aClass80_Sub36_14.method23362(-1335288313) & 0xFF | (this.aClass80_Sub36_14.method23362(-495036168) & 0xFF) << 8 | (this.aClass80_Sub36_14.method23362(-1936446949) & 0xFF) << 16 | this.aClass80_Sub36_14.method23362(980989229) << 24;
+						this.aPacket_14.g1();
+						@Pc(246) int local246 = this.aPacket_14.g1();
+						@Pc(278) int local278 = this.aPacket_14.g1() & 0xFF | (this.aPacket_14.g1() & 0xFF) << 8 | (this.aPacket_14.g1() & 0xFF) << 16 | this.aPacket_14.g1() << 24;
 						@Pc(282) int local282 = local278 - local207;
-						this.aClass80_Sub36_14.anInt3152 += -632980048;
-						@Pc(294) int local294 = this.aClass80_Sub36_14.method23362(-1212480487);
-						@Pc(300) int local300 = this.aClass80_Sub36_14.anInt3152 * -1380987821;
+						this.aPacket_14.pos += -632980048;
+						@Pc(294) int local294 = this.aPacket_14.g1();
+						@Pc(300) int local300 = this.aPacket_14.pos * -1380987821;
 						@Pc(304) int local304 = local300 + local294;
 						if (local304 > local205 + this.anInt3995) {
-							this.aClass80_Sub36_14.anInt3152 = (local205 + this.anInt3995) * 1034180571;
-							this.anInt3996 = this.aClass80_Sub36_14.anInt3152 * -1380987821 - local205;
+							this.aPacket_14.pos = (local205 + this.anInt3995) * 1034180571;
+							this.anInt3996 = this.aPacket_14.pos * -1380987821 - local205;
 							this.aBoolean789 = false;
 						}
 						@Pc(333) int local333 = local304;
@@ -4883,12 +4883,12 @@ public final class Class307 implements Interface45 {
 						@Pc(352) int local352;
 						if (this.aBoolean789) {
 							for (@Pc(340) int local340 = 0; local340 < local294; local340++) {
-								local352 = this.aClass80_Sub36_14.aByteArray61[local300++] & 0xFF;
+								local352 = this.aPacket_14.data[local300++] & 0xFF;
 								local304 += local352;
 								local335 += local352;
 								if (local304 > local205 + this.anInt3995) {
-									this.aClass80_Sub36_14.anInt3152 = (local205 + this.anInt3995) * 1034180571;
-									this.anInt3996 = this.aClass80_Sub36_14.anInt3152 * -1380987821 - local205;
+									this.aPacket_14.pos = (local205 + this.anInt3995) * 1034180571;
+									this.anInt3996 = this.aPacket_14.pos * -1380987821 - local205;
 									this.aBoolean789 = false;
 									break;
 								}
@@ -4918,7 +4918,7 @@ public final class Class307 implements Interface45 {
 									local426 = true;
 								} else {
 									this.anAtomicReference1.set(null);
-									@Pc(486) boolean local486 = this.method27346(this.aClass80_Sub36_14.aByteArray61, local436, local440, this.anAtomicReference1);
+									@Pc(486) boolean local486 = this.method27346(this.aPacket_14.data, local436, local440, this.anAtomicReference1);
 									@Pc(492) Class326[] local492 = (Class326[]) this.anAtomicReference1.get();
 									if (!local486 || this.aBoolean791 && this.anInt4003 < this.anInt4002 && local352 < this.anInt4009) {
 										if (this.method27282()) {
@@ -4970,7 +4970,7 @@ public final class Class307 implements Interface45 {
 											@Pc(666) int local666 = this.method27276() - this.method27350();
 											local567 += local567 / this.method27350() * local666;
 										}
-										@Pc(679) Class80_Sub36 local679 = this.method27354(local567);
+										@Pc(679) Packet local679 = this.method27354(local567);
 										for (@Pc(681) int local681 = local560; local681 < local514; local681++) {
 											@Pc(687) boolean local687 = this.aBoolean791;
 											if (this.anInt4004 != 0) {
@@ -5006,23 +5006,23 @@ public final class Class307 implements Interface45 {
 													if (this.aClass449_1 == Class449.aClass449_2) {
 														local799 = this.method27334(local780);
 														if (this.aClass420_1 == Class420.aClass420_3) {
-															local679.method23385(local799, 1060557734);
+															local679.ip2(local799);
 														} else {
-															local679.method23155(local799, (byte) -93);
+															local679.p2(local799);
 														}
 													} else if (this.aClass449_1 == Class449.aClass449_3) {
 														local799 = this.method27323(local780);
 														if (this.aClass420_1 == Class420.aClass420_3) {
-															local679.method23385(local799, 1060557734);
+															local679.ip2(local799);
 														} else {
-															local679.method23155(local799, (byte) -29);
+															local679.p2(local799);
 														}
 													} else if (this.aClass449_1 == Class449.aClass449_4) {
 														local799 = this.method27328(local780);
-														local679.method23154(local799, 1275868335);
+														local679.p1(local799);
 													} else if (this.aClass449_1 == Class449.aClass449_5) {
 														local799 = this.method27374(local780);
-														local679.method23154(local799, 1275868335);
+														local679.p1(local799);
 													}
 												}
 												this.anInt3997++;
@@ -5031,7 +5031,7 @@ public final class Class307 implements Interface45 {
 										}
 										@Pc(875) List local875 = this.aList18;
 										synchronized (this.aList18) {
-											this.anInt4008 += this.method27302(local679.anInt3152 * -1380987821) / this.method27276();
+											this.anInt4008 += this.method27302(local679.pos * -1380987821) / this.method27276();
 											this.aList18.add(local679);
 										}
 									}
@@ -5039,14 +5039,14 @@ public final class Class307 implements Interface45 {
 									local492 = null;
 								}
 							}
-							this.aClass80_Sub36_14.anInt3152 = local304 * 1034180571;
+							this.aPacket_14.pos = local304 * 1034180571;
 							this.anInt3995 -= local304 - local205;
 							continue label286;
 						}
 					}
-					if (this.aClass80_Sub36_14 != null) {
+					if (this.aPacket_14 != null) {
 						this.anInt3996 = this.anInt3995;
-						this.aClass80_Sub36_14.anInt3152 += this.anInt3995 * 1034180571;
+						this.aPacket_14.pos += this.anInt3995 * 1034180571;
 					}
 					this.aBoolean789 = false;
 					return;
@@ -5147,21 +5147,21 @@ public final class Class307 implements Interface45 {
 		this.anInt4006 = 0;
 		@Pc(98) Iterator local98 = this.aList17.iterator();
 		while (local98.hasNext()) {
-			@Pc(105) Class80_Sub36 local105 = (Class80_Sub36) local98.next();
-			local105.method23197((byte) -1);
+			@Pc(105) Packet local105 = (Packet) local98.next();
+			local105.release();
 		}
 		this.aList17.clear();
 		this.aBoolean789 = false;
-		if (this.aClass80_Sub36_14 != null) {
-			@Pc(122) Class80_Sub36 local122 = this.aClass80_Sub36_14;
-			synchronized (this.aClass80_Sub36_14) {
-				this.aClass80_Sub36_14.method23197((byte) 32);
-				this.aClass80_Sub36_14 = null;
+		if (this.aPacket_14 != null) {
+			@Pc(122) Packet local122 = this.aPacket_14;
+			synchronized (this.aPacket_14) {
+				this.aPacket_14.release();
+				this.aPacket_14 = null;
 			}
 		}
 		this.anInt3995 = 0;
 		this.anInt3996 = 0;
-		@Pc(162) Class80_Sub36 local162;
+		@Pc(162) Packet local162;
 		@Pc(150) List local150;
 		@Pc(155) Iterator local155;
 		if (!arg0) {
@@ -5173,8 +5173,8 @@ public final class Class307 implements Interface45 {
 						this.aList18.clear();
 						break;
 					}
-					local162 = (Class80_Sub36) local155.next();
-					local162.method23197((byte) -46);
+					local162 = (Packet) local155.next();
+					local162.release();
 				}
 			}
 			this.anInt4008 = 0;
@@ -5187,8 +5187,8 @@ public final class Class307 implements Interface45 {
 					this.aList15.clear();
 					break;
 				}
-				local162 = (Class80_Sub36) local155.next();
-				local162.method23197((byte) -47);
+				local162 = (Packet) local155.next();
+				local162.release();
 			}
 		}
 		this.aBoolean790 = false;
@@ -5215,24 +5215,24 @@ public final class Class307 implements Interface45 {
 	}
 
 	@OriginalMember(owner = "client!ha", name = "fv", descriptor = "(I)Lclient!ald;")
-	Class80_Sub36 method27430(@OriginalArg(0) int arg0) {
-		@Pc(5) Class80_Sub36 local5 = this.method27354(this.method27281(arg0));
+	Packet method27430(@OriginalArg(0) int arg0) {
+		@Pc(5) Packet local5 = this.method27354(this.method27281(arg0));
 		@Pc(7) int local7 = arg0;
 		@Pc(11) List local11 = this.aList18;
 		synchronized (this.aList18) {
 			while (!this.aList18.isEmpty()) {
-				@Pc(22) Class80_Sub36 local22 = (Class80_Sub36) this.aList18.remove(0);
-				this.anInt4008 -= this.method27302(local22.anInt3152 * -1380987821) / this.method27276();
+				@Pc(22) Packet local22 = (Packet) this.aList18.remove(0);
+				this.anInt4008 -= this.method27302(local22.pos * -1380987821) / this.method27276();
 				@Pc(40) int local40 = this.method27281(local7);
-				@Pc(53) int local53 = local22.anInt3152 * -1380987821 < local40 ? local22.anInt3152 * -1380987821 : local40;
-				local5.method23168(local22.aByteArray61, 0, local53, (byte) 23);
+				@Pc(53) int local53 = local22.pos * -1380987821 < local40 ? local22.pos * -1380987821 : local40;
+				local5.pdata(local22.data, 0, local53);
 				local7 -= this.method27302(local53);
-				@Pc(73) int local73 = local22.anInt3152 * -1380987821 - local53;
+				@Pc(73) int local73 = local22.pos * -1380987821 - local53;
 				if (local73 == 0) {
-					local22.method23197((byte) 2);
+					local22.release();
 				} else {
-					System.arraycopy(local22.aByteArray61, local53, local22.aByteArray61, 0, local73);
-					local22.anInt3152 = local73 * 1034180571;
+					System.arraycopy(local22.data, local53, local22.data, 0, local73);
+					local22.pos = local73 * 1034180571;
 					this.anInt4008 += this.method27302(local73) / this.method27276();
 					this.aList18.add(0, local22);
 				}
@@ -5248,24 +5248,24 @@ public final class Class307 implements Interface45 {
 	}
 
 	@OriginalMember(owner = "client!ha", name = "fm", descriptor = "(I)Lclient!ald;")
-	Class80_Sub36 method27431(@OriginalArg(0) int arg0) {
-		@Pc(5) Class80_Sub36 local5 = this.method27354(this.method27281(arg0));
+	Packet method27431(@OriginalArg(0) int arg0) {
+		@Pc(5) Packet local5 = this.method27354(this.method27281(arg0));
 		@Pc(7) int local7 = arg0;
 		@Pc(11) List local11 = this.aList18;
 		synchronized (this.aList18) {
 			while (!this.aList18.isEmpty()) {
-				@Pc(22) Class80_Sub36 local22 = (Class80_Sub36) this.aList18.remove(0);
-				this.anInt4008 -= this.method27302(local22.anInt3152 * -1380987821) / this.method27276();
+				@Pc(22) Packet local22 = (Packet) this.aList18.remove(0);
+				this.anInt4008 -= this.method27302(local22.pos * -1380987821) / this.method27276();
 				@Pc(40) int local40 = this.method27281(local7);
-				@Pc(53) int local53 = local22.anInt3152 * -1380987821 < local40 ? local22.anInt3152 * -1380987821 : local40;
-				local5.method23168(local22.aByteArray61, 0, local53, (byte) 51);
+				@Pc(53) int local53 = local22.pos * -1380987821 < local40 ? local22.pos * -1380987821 : local40;
+				local5.pdata(local22.data, 0, local53);
 				local7 -= this.method27302(local53);
-				@Pc(73) int local73 = local22.anInt3152 * -1380987821 - local53;
+				@Pc(73) int local73 = local22.pos * -1380987821 - local53;
 				if (local73 == 0) {
-					local22.method23197((byte) 110);
+					local22.release();
 				} else {
-					System.arraycopy(local22.aByteArray61, local53, local22.aByteArray61, 0, local73);
-					local22.anInt3152 = local73 * 1034180571;
+					System.arraycopy(local22.data, local53, local22.data, 0, local73);
+					local22.pos = local73 * 1034180571;
 					this.anInt4008 += this.method27302(local73) / this.method27276();
 					this.aList18.add(0, local22);
 				}
@@ -5281,24 +5281,24 @@ public final class Class307 implements Interface45 {
 	}
 
 	@OriginalMember(owner = "client!ha", name = "fp", descriptor = "(I)Lclient!ald;")
-	Class80_Sub36 method27432(@OriginalArg(0) int arg0) {
-		@Pc(5) Class80_Sub36 local5 = this.method27354(this.method27281(arg0));
+	Packet method27432(@OriginalArg(0) int arg0) {
+		@Pc(5) Packet local5 = this.method27354(this.method27281(arg0));
 		@Pc(7) int local7 = arg0;
 		@Pc(11) List local11 = this.aList18;
 		synchronized (this.aList18) {
 			while (!this.aList18.isEmpty()) {
-				@Pc(22) Class80_Sub36 local22 = (Class80_Sub36) this.aList18.remove(0);
-				this.anInt4008 -= this.method27302(local22.anInt3152 * -1380987821) / this.method27276();
+				@Pc(22) Packet local22 = (Packet) this.aList18.remove(0);
+				this.anInt4008 -= this.method27302(local22.pos * -1380987821) / this.method27276();
 				@Pc(40) int local40 = this.method27281(local7);
-				@Pc(53) int local53 = local22.anInt3152 * -1380987821 < local40 ? local22.anInt3152 * -1380987821 : local40;
-				local5.method23168(local22.aByteArray61, 0, local53, (byte) 35);
+				@Pc(53) int local53 = local22.pos * -1380987821 < local40 ? local22.pos * -1380987821 : local40;
+				local5.pdata(local22.data, 0, local53);
 				local7 -= this.method27302(local53);
-				@Pc(73) int local73 = local22.anInt3152 * -1380987821 - local53;
+				@Pc(73) int local73 = local22.pos * -1380987821 - local53;
 				if (local73 == 0) {
-					local22.method23197((byte) 17);
+					local22.release();
 				} else {
-					System.arraycopy(local22.aByteArray61, local53, local22.aByteArray61, 0, local73);
-					local22.anInt3152 = local73 * 1034180571;
+					System.arraycopy(local22.data, local53, local22.data, 0, local73);
+					local22.pos = local73 * 1034180571;
 					this.anInt4008 += this.method27302(local73) / this.method27276();
 					this.aList18.add(0, local22);
 				}
@@ -5314,8 +5314,8 @@ public final class Class307 implements Interface45 {
 	}
 
 	@OriginalMember(owner = "client!ha", name = "fx", descriptor = "(I)Lclient!ald;")
-	Class80_Sub36 method27433(@OriginalArg(0) int arg0) {
-		return new Class80_Sub36(arg0, true);
+	Packet method27433(@OriginalArg(0) int arg0) {
+		return new Packet(arg0, true);
 	}
 
 	@OriginalMember(owner = "client!ha", name = "fj", descriptor = "()I")
@@ -5343,10 +5343,10 @@ public final class Class307 implements Interface45 {
 
 	@OriginalMember(owner = "client!ha", name = "g", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method27293(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method27293(@OriginalArg(0) Packet arg0) {
 		if (this.method27270() == Class419.aClass419_8 || this.method27270() == Class419.aClass419_6) {
 			if (arg0 != null) {
-				arg0.method23197((byte) 12);
+				arg0.release();
 			}
 		} else if (arg0 == null) {
 			@Pc(33) boolean local33 = this.aBoolean793 && (this.anInt4004 > 0 && this.anInt4005 < this.anInt4004 || this.anInt4004 < 0);

@@ -31,8 +31,8 @@ public final class Class176 {
 	static void method24658(@OriginalArg(0) Class690 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(13) String local13 = (String) arg0.anObjectArray46[(arg0.anInt5776 -= -825189621) * -2070619997];
 		@Pc(19) Class80_Sub31 local19 = Class623.method32440(Class443.aClass443_123, client.aClass75_1.aClass22_1, -191270971);
-		local19.aClass80_Sub36_Sub1_2.method23154(local13.length() + 1, 1275868335);
-		local19.aClass80_Sub36_Sub1_2.method23165(local13, 2070586794);
+		local19.aPacketBit_2.p1(local13.length() + 1);
+		local19.aPacketBit_2.pjstr(local13);
 		client.aClass75_1.method1325(local19, (byte) -19);
 	}
 

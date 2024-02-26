@@ -35,15 +35,15 @@ public final class Class80_Sub26_Sub2 extends Class80_Sub26 {
 
 	@OriginalMember(owner = "client!ard", name = "e", descriptor = "(Lclient!ald;)V")
 	@Override
-	void method22255(@OriginalArg(0) Class80_Sub36 arg0) {
-		if (arg0.method23362(-2034337042) != 255) {
-			arg0.anInt3152 -= 1034180571;
-			arg0.method23273((byte) -20);
+	void method22255(@OriginalArg(0) Packet arg0) {
+		if (arg0.g1() != 255) {
+			arg0.pos -= 1034180571;
+			arg0.g8();
 		}
-		this.aString98 = arg0.method23189(-761473881);
-		this.anInt3025 = arg0.method23178((byte) -40) * 42141347;
-		this.aByte78 = arg0.method23177((byte) -7);
-		arg0.method23273((byte) 53);
+		this.aString98 = arg0.fastgstr();
+		this.anInt3025 = arg0.g2() * 42141347;
+		this.aByte78 = arg0.g1b();
+		arg0.g8();
 	}
 
 	@OriginalMember(owner = "client!ard", name = "f", descriptor = "(Lclient!akv;I)V")
@@ -58,15 +58,15 @@ public final class Class80_Sub26_Sub2 extends Class80_Sub26 {
 
 	@OriginalMember(owner = "client!ard", name = "t", descriptor = "(Lclient!ald;B)V")
 	@Override
-	void method22253(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
-		if (arg0.method23362(121165254) != 255) {
-			arg0.anInt3152 -= 1034180571;
-			arg0.method23273((byte) 43);
+	void method22253(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
+		if (arg0.g1() != 255) {
+			arg0.pos -= 1034180571;
+			arg0.g8();
 		}
-		this.aString98 = arg0.method23189(-761473881);
-		this.anInt3025 = arg0.method23178((byte) -33) * 42141347;
-		this.aByte78 = arg0.method23177((byte) -31);
-		arg0.method23273((byte) -9);
+		this.aString98 = arg0.fastgstr();
+		this.anInt3025 = arg0.g2() * 42141347;
+		this.aByte78 = arg0.g1b();
+		arg0.g8();
 	}
 
 	@OriginalMember(owner = "client!ard", name = "u", descriptor = "(Lclient!akv;)V")

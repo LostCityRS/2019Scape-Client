@@ -39,10 +39,10 @@ public final class Class643 implements Interface68 {
 	}
 
 	@OriginalMember(owner = "client!wo", name = "u", descriptor = "(Lclient!ald;B)Lclient!kn;")
-	public static Class125 method33026(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
+	public static Class125 method33026(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 		@Pc(3) Class125 local3 = Class524.method30653(arg0, (byte) -89);
-		@Pc(7) int local7 = arg0.method23182(-420015508);
-		@Pc(11) int local11 = arg0.method23182(1396258103);
+		@Pc(7) int local7 = arg0.g4();
+		@Pc(11) int local11 = arg0.g4();
 		return new Class125_Sub3(local3.aClass391_8, local3.aClass383_8, local3.anInt2899 * 808275465, local3.anInt2901 * 1789354437, local3.anInt2900 * 199320851, local3.anInt2903 * 1087492339, local3.anInt2902 * -173381277, local3.anInt2904 * -176628393, local3.anInt2905 * -1330014629, local7, local11);
 	}
 
@@ -174,7 +174,7 @@ public final class Class643 implements Interface68 {
 
 	@OriginalMember(owner = "client!wo", name = "av", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method33003(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method33003(@OriginalArg(0) Packet arg0) {
 	}
 
 	@OriginalMember(owner = "client!wo", name = "g", descriptor = "(II)[B")
@@ -199,7 +199,7 @@ public final class Class643 implements Interface68 {
 
 	@OriginalMember(owner = "client!wo", name = "a", descriptor = "(IB)Lclient!ald;")
 	@Override
-	public Class80_Sub36 method32976(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1) {
+	public Packet method32976(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1) {
 		return null;
 	}
 
@@ -292,7 +292,7 @@ public final class Class643 implements Interface68 {
 
 	@OriginalMember(owner = "client!wo", name = "an", descriptor = "(I)Lclient!ald;")
 	@Override
-	public Class80_Sub36 method33014(@OriginalArg(0) int arg0) {
+	public Packet method33014(@OriginalArg(0) int arg0) {
 		return null;
 	}
 
@@ -316,7 +316,7 @@ public final class Class643 implements Interface68 {
 
 	@OriginalMember(owner = "client!wo", name = "j", descriptor = "(Lclient!ald;I)V")
 	@Override
-	public void method32975(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	public void method32975(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 	}
 
 	@OriginalMember(owner = "client!wo", name = "w", descriptor = "(ZI)V")
@@ -352,7 +352,7 @@ public final class Class643 implements Interface68 {
 
 	@OriginalMember(owner = "client!wo", name = "aa", descriptor = "(I)Lclient!ald;")
 	@Override
-	public Class80_Sub36 method33005(@OriginalArg(0) int arg0) {
+	public Packet method33005(@OriginalArg(0) int arg0) {
 		return null;
 	}
 

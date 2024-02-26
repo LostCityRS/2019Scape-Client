@@ -31,7 +31,7 @@ public final class Class107_Sub1 extends Class107 {
 
 	@OriginalMember(owner = "client!afi", name = "l", descriptor = "(Lclient!ald;IB)V")
 	@Override
-	void method7186(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
+	void method7186(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
 	}
 
 	@OriginalMember(owner = "client!afi", name = "f", descriptor = "(B)V")
@@ -41,11 +41,11 @@ public final class Class107_Sub1 extends Class107 {
 
 	@OriginalMember(owner = "client!afi", name = "o", descriptor = "(Lclient!ald;I)V")
 	@Override
-	void method7188(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method7188(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 	}
 
 	@OriginalMember(owner = "client!afi", name = "m", descriptor = "(Lclient!ald;I)V")
 	@Override
-	void method7187(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method7187(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 	}
 }

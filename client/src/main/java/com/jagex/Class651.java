@@ -120,13 +120,13 @@ public final class Class651 {
 	@OriginalMember(owner = "client!wx", name = "<init>", descriptor = "(Lclient!pf;)V")
 	public Class651(@OriginalArg(0) Class480 arg0) {
 		@Pc(15) byte[] local15 = arg0.method29926(Class639.aClass639_6.anInt5637 * 1101033235, 1472047355);
-		this.method33125(new Class80_Sub36(local15), (byte) 115);
+		this.method33125(new Packet(local15), (byte) 115);
 	}
 
 	@OriginalMember(owner = "client!wx", name = "t", descriptor = "(Lclient!ald;B)V")
-	void method33125(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
+	void method33125(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(877692707);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				if (this.anIntArray512 == null) {
 					throw new RuntimeException("");
@@ -135,35 +135,35 @@ public final class Class651 {
 			}
 			@Pc(13) int local13;
 			if (local3 == 1) {
-				local13 = arg0.method23362(-1729962445);
+				local13 = arg0.g1();
 				this.anIntArray512 = new int[local13];
 				for (@Pc(19) int local19 = 0; local19 < this.anIntArray512.length; local19++) {
-					this.anIntArray512[local19] = arg0.method23362(-364717927);
+					this.anIntArray512[local19] = arg0.g1();
 					if (this.anIntArray512[local19] != 0 && this.anIntArray512[local19] == 2) {
 					}
 				}
 			} else if (local3 == 3) {
-				this.anInt5660 = arg0.method23362(-554346905) * -1854390057;
+				this.anInt5660 = arg0.g1() * -1854390057;
 			} else if (local3 == 4) {
-				this.anInt5661 = arg0.method23362(-207793250) * -1577563899;
+				this.anInt5661 = arg0.g1() * -1577563899;
 			} else if (local3 == 5) {
-				this.anIntArray511 = new int[arg0.method23362(685069062)];
+				this.anIntArray511 = new int[arg0.g1()];
 				for (local13 = 0; local13 < this.anIntArray511.length; local13++) {
-					this.anIntArray511[local13] = arg0.method23362(-19625202);
+					this.anIntArray511[local13] = arg0.g1();
 				}
 			} else if (local3 == 6) {
-				this.anIntArray513 = new int[arg0.method23362(416342734)];
+				this.anIntArray513 = new int[arg0.g1()];
 				for (local13 = 0; local13 < this.anIntArray513.length; local13++) {
-					this.anIntArray513[local13] = arg0.method23362(-595431478);
+					this.anIntArray513[local13] = arg0.g1();
 				}
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!wx", name = "f", descriptor = "(Lclient!ald;)V")
-	void method33126(@OriginalArg(0) Class80_Sub36 arg0) {
+	void method33126(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-1176775229);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				if (this.anIntArray512 == null) {
 					throw new RuntimeException("");
@@ -172,35 +172,35 @@ public final class Class651 {
 			}
 			@Pc(13) int local13;
 			if (local3 == 1) {
-				local13 = arg0.method23362(968692185);
+				local13 = arg0.g1();
 				this.anIntArray512 = new int[local13];
 				for (@Pc(19) int local19 = 0; local19 < this.anIntArray512.length; local19++) {
-					this.anIntArray512[local19] = arg0.method23362(1111992133);
+					this.anIntArray512[local19] = arg0.g1();
 					if (this.anIntArray512[local19] != 0 && this.anIntArray512[local19] == 2) {
 					}
 				}
 			} else if (local3 == 3) {
-				this.anInt5660 = arg0.method23362(-1090170379) * -1854390057;
+				this.anInt5660 = arg0.g1() * -1854390057;
 			} else if (local3 == 4) {
-				this.anInt5661 = arg0.method23362(-1594282006) * -1577563899;
+				this.anInt5661 = arg0.g1() * -1577563899;
 			} else if (local3 == 5) {
-				this.anIntArray511 = new int[arg0.method23362(1046856824)];
+				this.anIntArray511 = new int[arg0.g1()];
 				for (local13 = 0; local13 < this.anIntArray511.length; local13++) {
-					this.anIntArray511[local13] = arg0.method23362(973931049);
+					this.anIntArray511[local13] = arg0.g1();
 				}
 			} else if (local3 == 6) {
-				this.anIntArray513 = new int[arg0.method23362(-257305692)];
+				this.anIntArray513 = new int[arg0.g1()];
 				for (local13 = 0; local13 < this.anIntArray513.length; local13++) {
-					this.anIntArray513[local13] = arg0.method23362(308906762);
+					this.anIntArray513[local13] = arg0.g1();
 				}
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!wx", name = "e", descriptor = "(Lclient!ald;)V")
-	void method33127(@OriginalArg(0) Class80_Sub36 arg0) {
+	void method33127(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-188793264);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				if (this.anIntArray512 == null) {
 					throw new RuntimeException("");
@@ -209,26 +209,26 @@ public final class Class651 {
 			}
 			@Pc(13) int local13;
 			if (local3 == 1) {
-				local13 = arg0.method23362(-2119344204);
+				local13 = arg0.g1();
 				this.anIntArray512 = new int[local13];
 				for (@Pc(19) int local19 = 0; local19 < this.anIntArray512.length; local19++) {
-					this.anIntArray512[local19] = arg0.method23362(-271275419);
+					this.anIntArray512[local19] = arg0.g1();
 					if (this.anIntArray512[local19] != 0 && this.anIntArray512[local19] == 2) {
 					}
 				}
 			} else if (local3 == 3) {
-				this.anInt5660 = arg0.method23362(-1597690684) * -1854390057;
+				this.anInt5660 = arg0.g1() * -1854390057;
 			} else if (local3 == 4) {
-				this.anInt5661 = arg0.method23362(-192129246) * -1577563899;
+				this.anInt5661 = arg0.g1() * -1577563899;
 			} else if (local3 == 5) {
-				this.anIntArray511 = new int[arg0.method23362(-180124691)];
+				this.anIntArray511 = new int[arg0.g1()];
 				for (local13 = 0; local13 < this.anIntArray511.length; local13++) {
-					this.anIntArray511[local13] = arg0.method23362(-814225665);
+					this.anIntArray511[local13] = arg0.g1();
 				}
 			} else if (local3 == 6) {
-				this.anIntArray513 = new int[arg0.method23362(-939694618)];
+				this.anIntArray513 = new int[arg0.g1()];
 				for (local13 = 0; local13 < this.anIntArray513.length; local13++) {
-					this.anIntArray513[local13] = arg0.method23362(658815643);
+					this.anIntArray513[local13] = arg0.g1();
 				}
 			}
 		}

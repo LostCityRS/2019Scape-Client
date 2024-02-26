@@ -98,7 +98,7 @@ public final class Class52 {
 		local6 = new Class80_Sub1_Sub19();
 		local6.aClass52_1 = this;
 		if (local23 != null) {
-			local6.method23048(new Class80_Sub36(local23), (byte) 16);
+			local6.method23048(new Packet(local23), (byte) 16);
 		}
 		if (arg0 >= 32768) {
 			local6.method23060((byte) -39);
@@ -122,7 +122,7 @@ public final class Class52 {
 		local6 = new Class80_Sub1_Sub19();
 		local6.aClass52_1 = this;
 		if (local23 != null) {
-			local6.method23048(new Class80_Sub36(local23), (byte) 16);
+			local6.method23048(new Packet(local23), (byte) 16);
 		}
 		if (arg0 >= 32768) {
 			local6.method23060((byte) -53);

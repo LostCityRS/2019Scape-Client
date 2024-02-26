@@ -251,7 +251,7 @@ public final class Class20_Sub3 extends Class20 {
 
 	@OriginalMember(owner = "client!anm", name = "g", descriptor = "(Lclient!ald;I)V")
 	@Override
-	public void method23094(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	public void method23094(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		this.aClass466_4.method29644(arg0);
 	}
 
@@ -420,13 +420,13 @@ public final class Class20_Sub3 extends Class20 {
 
 	@OriginalMember(owner = "client!anm", name = "q", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method23090(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method23090(@OriginalArg(0) Packet arg0) {
 		this.aClass466_4.method29644(arg0);
 	}
 
 	@OriginalMember(owner = "client!anm", name = "h", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method23091(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method23091(@OriginalArg(0) Packet arg0) {
 		this.aClass466_4.method29644(arg0);
 	}
 

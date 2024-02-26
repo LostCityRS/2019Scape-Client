@@ -211,11 +211,6 @@ public final class Class55 {
 		Class542.method31171(local16, local22, arg0, 1806019531);
 	}
 
-	@OriginalMember(owner = "client!acd", name = "y", descriptor = "(Ljava/lang/String;B)I")
-	public static int method1114(@OriginalArg(0) String arg0, @OriginalArg(1) byte arg1) {
-		return arg0.length() + 2;
-	}
-
 	@OriginalMember(owner = "client!acd", name = "<init>", descriptor = "()V")
 	Class55() throws Throwable {
 		throw new Error();

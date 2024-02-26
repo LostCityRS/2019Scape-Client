@@ -63,9 +63,9 @@ public final class Class265 implements Interface26 {
 	}
 
 	@OriginalMember(owner = "client!fi", name = "<init>", descriptor = "(Lclient!gc;Lclient!ald;)V")
-	Class265(@OriginalArg(0) Class284 arg0, @OriginalArg(1) Class80_Sub36 arg1) {
+	Class265(@OriginalArg(0) Class284 arg0, @OriginalArg(1) Packet arg1) {
 		this.aClass284_2 = arg0;
-		this.anInt3915 = arg1.method23178((byte) -84) * -1557270405;
+		this.anInt3915 = arg1.g2() * -1557270405;
 	}
 
 	@OriginalMember(owner = "client!fi", name = "t", descriptor = "(Lclient!gz;I)V")

@@ -392,8 +392,8 @@ public final class Class80_Sub29 extends Class80 {
 	@OriginalMember(owner = "client!aks", name = "g", descriptor = "([II)V")
 	void method14376(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1) {
 		@Pc(1) int local1 = 0;
-		@Pc(5) Class80_Sub36_Sub2 local5 = this.aClass102_Sub3_30.aClass80_Sub36_Sub2_1;
-		local5.anInt3152 = 0;
+		@Pc(5) PacketGl local5 = this.aClass102_Sub3_30.aPacketGl_1;
+		local5.pos = 0;
 		@Pc(27) short[] local27;
 		@Pc(21) int local21;
 		@Pc(32) int local32;
@@ -412,11 +412,11 @@ public final class Class80_Sub29 extends Class80 {
 						if ((local32 & 0x1 << local38++) == 0) {
 							local40 += 3;
 						} else {
-							local5.method23155(local27[local40++] & 0xFFFF, (byte) -99);
+							local5.p2(local27[local40++] & 0xFFFF);
 							local1++;
-							local5.method23155(local27[local40++] & 0xFFFF, (byte) -108);
+							local5.p2(local27[local40++] & 0xFFFF);
 							local1++;
-							local5.method23155(local27[local40++] & 0xFFFF, (byte) -52);
+							local5.p2(local27[local40++] & 0xFFFF);
 							local1++;
 						}
 					}
@@ -434,11 +434,11 @@ public final class Class80_Sub29 extends Class80 {
 						if ((local32 & 0x1 << local38++) == 0) {
 							local40 += 3;
 						} else {
-							local5.method23385(local27[local40++] & 0xFFFF, 1060557734);
+							local5.ip2(local27[local40++] & 0xFFFF);
 							local1++;
-							local5.method23385(local27[local40++] & 0xFFFF, 1060557734);
+							local5.ip2(local27[local40++] & 0xFFFF);
 							local1++;
-							local5.method23385(local27[local40++] & 0xFFFF, 1060557734);
+							local5.ip2(local27[local40++] & 0xFFFF);
 							local1++;
 						}
 					}
@@ -448,7 +448,7 @@ public final class Class80_Sub29 extends Class80 {
 		if (local1 <= 0) {
 			return;
 		}
-		this.aClass94_Sub2_1.method2089(5123, local5.aByteArray61, local5.anInt3152 * -1380987821);
+		this.aClass94_Sub2_1.method2089(5123, local5.data, local5.pos * -1380987821);
 		this.aClass102_Sub3_30.method6550(this.aClass100_Sub3_2.aClass189_2, this.aClass100_Sub3_2.aClass189_1, this.aClass189_13, this.aClass100_Sub3_2.aClass189_4);
 		this.aClass102_Sub3_30.method6351(this.anInt1637, (this.aClass100_Sub3_2.anInt459 & 0x7) != 0, (this.aClass100_Sub3_2.anInt459 & 0x8) != 0);
 		if (this.aClass102_Sub3_30.aBoolean151) {
@@ -480,8 +480,8 @@ public final class Class80_Sub29 extends Class80 {
 	@OriginalMember(owner = "client!aks", name = "z", descriptor = "([II)V")
 	void method14378(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1) {
 		@Pc(1) int local1 = 0;
-		@Pc(5) Class80_Sub36_Sub2 local5 = this.aClass102_Sub3_30.aClass80_Sub36_Sub2_1;
-		local5.anInt3152 = 0;
+		@Pc(5) PacketGl local5 = this.aClass102_Sub3_30.aPacketGl_1;
+		local5.pos = 0;
 		@Pc(27) short[] local27;
 		@Pc(21) int local21;
 		@Pc(32) int local32;
@@ -500,11 +500,11 @@ public final class Class80_Sub29 extends Class80 {
 						if ((local32 & 0x1 << local38++) == 0) {
 							local40 += 3;
 						} else {
-							local5.method23155(local27[local40++] & 0xFFFF, (byte) -75);
+							local5.p2(local27[local40++] & 0xFFFF);
 							local1++;
-							local5.method23155(local27[local40++] & 0xFFFF, (byte) -24);
+							local5.p2(local27[local40++] & 0xFFFF);
 							local1++;
-							local5.method23155(local27[local40++] & 0xFFFF, (byte) -22);
+							local5.p2(local27[local40++] & 0xFFFF);
 							local1++;
 						}
 					}
@@ -522,11 +522,11 @@ public final class Class80_Sub29 extends Class80 {
 						if ((local32 & 0x1 << local38++) == 0) {
 							local40 += 3;
 						} else {
-							local5.method23385(local27[local40++] & 0xFFFF, 1060557734);
+							local5.ip2(local27[local40++] & 0xFFFF);
 							local1++;
-							local5.method23385(local27[local40++] & 0xFFFF, 1060557734);
+							local5.ip2(local27[local40++] & 0xFFFF);
 							local1++;
-							local5.method23385(local27[local40++] & 0xFFFF, 1060557734);
+							local5.ip2(local27[local40++] & 0xFFFF);
 							local1++;
 						}
 					}
@@ -536,7 +536,7 @@ public final class Class80_Sub29 extends Class80 {
 		if (local1 <= 0) {
 			return;
 		}
-		this.aClass94_Sub2_1.method2089(5123, local5.aByteArray61, local5.anInt3152 * -1380987821);
+		this.aClass94_Sub2_1.method2089(5123, local5.data, local5.pos * -1380987821);
 		this.aClass102_Sub3_30.method6550(this.aClass100_Sub3_2.aClass189_2, this.aClass100_Sub3_2.aClass189_1, this.aClass189_13, this.aClass100_Sub3_2.aClass189_4);
 		this.aClass102_Sub3_30.method6351(this.anInt1637, (this.aClass100_Sub3_2.anInt459 & 0x7) != 0, (this.aClass100_Sub3_2.anInt459 & 0x8) != 0);
 		if (this.aClass102_Sub3_30.aBoolean151) {
@@ -556,8 +556,8 @@ public final class Class80_Sub29 extends Class80 {
 	@OriginalMember(owner = "client!aks", name = "p", descriptor = "([II)V")
 	void method14379(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1) {
 		@Pc(1) int local1 = 0;
-		@Pc(5) Class80_Sub36_Sub2 local5 = this.aClass102_Sub3_30.aClass80_Sub36_Sub2_1;
-		local5.anInt3152 = 0;
+		@Pc(5) PacketGl local5 = this.aClass102_Sub3_30.aPacketGl_1;
+		local5.pos = 0;
 		@Pc(27) short[] local27;
 		@Pc(21) int local21;
 		@Pc(32) int local32;
@@ -576,11 +576,11 @@ public final class Class80_Sub29 extends Class80 {
 						if ((local32 & 0x1 << local38++) == 0) {
 							local40 += 3;
 						} else {
-							local5.method23155(local27[local40++] & 0xFFFF, (byte) -71);
+							local5.p2(local27[local40++] & 0xFFFF);
 							local1++;
-							local5.method23155(local27[local40++] & 0xFFFF, (byte) -88);
+							local5.p2(local27[local40++] & 0xFFFF);
 							local1++;
-							local5.method23155(local27[local40++] & 0xFFFF, (byte) -73);
+							local5.p2(local27[local40++] & 0xFFFF);
 							local1++;
 						}
 					}
@@ -598,11 +598,11 @@ public final class Class80_Sub29 extends Class80 {
 						if ((local32 & 0x1 << local38++) == 0) {
 							local40 += 3;
 						} else {
-							local5.method23385(local27[local40++] & 0xFFFF, 1060557734);
+							local5.ip2(local27[local40++] & 0xFFFF);
 							local1++;
-							local5.method23385(local27[local40++] & 0xFFFF, 1060557734);
+							local5.ip2(local27[local40++] & 0xFFFF);
 							local1++;
-							local5.method23385(local27[local40++] & 0xFFFF, 1060557734);
+							local5.ip2(local27[local40++] & 0xFFFF);
 							local1++;
 						}
 					}
@@ -612,7 +612,7 @@ public final class Class80_Sub29 extends Class80 {
 		if (local1 <= 0) {
 			return;
 		}
-		this.aClass94_Sub2_1.method2089(5123, local5.aByteArray61, local5.anInt3152 * -1380987821);
+		this.aClass94_Sub2_1.method2089(5123, local5.data, local5.pos * -1380987821);
 		this.aClass102_Sub3_30.method6550(this.aClass100_Sub3_2.aClass189_2, this.aClass100_Sub3_2.aClass189_1, this.aClass189_13, this.aClass100_Sub3_2.aClass189_4);
 		this.aClass102_Sub3_30.method6351(this.anInt1637, (this.aClass100_Sub3_2.anInt459 & 0x7) != 0, (this.aClass100_Sub3_2.anInt459 & 0x8) != 0);
 		if (this.aClass102_Sub3_30.aBoolean151) {

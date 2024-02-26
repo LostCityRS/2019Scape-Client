@@ -122,18 +122,18 @@ public final class Class623 {
 		local2.aClass443_1 = arg0;
 		local2.anInt1648 = arg0.anInt4879 * 1348369397;
 		if (local2.anInt1648 * -1051134449 == -1) {
-			local2.aClass80_Sub36_Sub1_2 = new Class80_Sub36_Sub1(260);
+			local2.aPacketBit_2 = new PacketBit(260);
 		} else if (local2.anInt1648 * -1051134449 == -2) {
-			local2.aClass80_Sub36_Sub1_2 = new Class80_Sub36_Sub1(10000);
+			local2.aPacketBit_2 = new PacketBit(10000);
 		} else if (local2.anInt1648 * -1051134449 <= 18) {
-			local2.aClass80_Sub36_Sub1_2 = new Class80_Sub36_Sub1(20);
+			local2.aPacketBit_2 = new PacketBit(20);
 		} else if (local2.anInt1648 * -1051134449 <= 98) {
-			local2.aClass80_Sub36_Sub1_2 = new Class80_Sub36_Sub1(100);
+			local2.aPacketBit_2 = new PacketBit(100);
 		} else {
-			local2.aClass80_Sub36_Sub1_2 = new Class80_Sub36_Sub1(260);
+			local2.aPacketBit_2 = new PacketBit(260);
 		}
-		local2.aClass80_Sub36_Sub1_2.method22564(arg1, -1499752488);
-		local2.aClass80_Sub36_Sub1_2.method22553(local2.aClass443_1.anInt4880 * 1861237215, 631359507);
+		local2.aPacketBit_2.method22564(arg1, -1499752488);
+		local2.aPacketBit_2.method22553(local2.aClass443_1.anInt4880 * 1861237215, 631359507);
 		local2.anInt1647 = 0;
 		return local2;
 	}

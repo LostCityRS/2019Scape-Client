@@ -70,7 +70,7 @@ public final class Class188 {
 	}
 
 	@OriginalMember(owner = "client!bl", name = "g", descriptor = "(Ljava/lang/CharSequence;II[BIB)I")
-	public static int method24829(@OriginalArg(0) CharSequence arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) byte[] arg3, @OriginalArg(4) int arg4, @OriginalArg(5) byte arg5) {
+	public static int encode(@OriginalArg(0) CharSequence arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) byte[] arg3, @OriginalArg(4) int arg4, @OriginalArg(5) byte arg5) {
 		@Pc(3) int local3 = arg2 - arg1;
 		for (@Pc(5) int local5 = 0; local5 < local3; local5++) {
 			@Pc(14) char local14 = arg0.charAt(local5 + arg1);

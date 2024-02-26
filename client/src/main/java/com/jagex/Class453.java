@@ -1,6 +1,5 @@
 package com.jagex;
 
-import java.awt.datatransfer.ClipboardOwner;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
@@ -25,17 +24,17 @@ public final class Class453 {
 	public int[] anIntArray451;
 
 	@OriginalMember(owner = "client!nz", name = "f", descriptor = "(Lclient!ald;)Lclient!nz;")
-	public static Class453 method29289(@OriginalArg(0) Class80_Sub36 arg0) {
+	public static Class453 method29289(@OriginalArg(0) Packet arg0) {
 		@Pc(3) Class453 local3 = new Class453();
-		local3.anInt4894 = arg0.method23178((byte) -114) * -1867362097;
+		local3.anInt4894 = arg0.g2() * -1867362097;
 		local3.aClass80_Sub1_Sub19_1 = Class610.aClass52_2.method1073(local3.anInt4894 * 221296175, 2036644846);
 		return local3;
 	}
 
 	@OriginalMember(owner = "client!nz", name = "e", descriptor = "(Lclient!ald;)Lclient!nz;")
-	public static Class453 method29290(@OriginalArg(0) Class80_Sub36 arg0) {
+	public static Class453 method29290(@OriginalArg(0) Packet arg0) {
 		@Pc(3) Class453 local3 = new Class453();
-		local3.anInt4894 = arg0.method23178((byte) -57) * -1867362097;
+		local3.anInt4894 = arg0.g2() * -1867362097;
 		local3.aClass80_Sub1_Sub19_1 = Class610.aClass52_2.method1073(local3.anInt4894 * 221296175, 1949596591);
 		return local3;
 	}

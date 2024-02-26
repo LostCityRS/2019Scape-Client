@@ -200,7 +200,7 @@ public final class Class80_Sub37 extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ale", name = "<init>", descriptor = "(Lclient!ald;Lclient!zy;I)V")
-	public Class80_Sub37(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class722 arg1, @OriginalArg(2) int arg2) {
+	public Class80_Sub37(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class722 arg1, @OriginalArg(2) int arg2) {
 		this.aClass722_3 = arg1;
 		this.aClass18_1 = new Class18(Class554.anInt3423 * -2024030715, Class554.anInt3412 * -349861231, Class103_Sub22.aString44.indexOf("arm") != -1, Class450.aString209.startsWith("win"), false);
 		this.aClass165_Sub1_2 = new Class165_Sub1(arg2, this);
@@ -216,11 +216,11 @@ public final class Class80_Sub37 extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ale", name = "t", descriptor = "(Lclient!ald;I)V")
-	void method14939(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		if (arg0 == null || arg0.aByteArray61 == null) {
+	void method14939(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		if (arg0 == null || arg0.data == null) {
 			this.method14940(true, true, 1225137085);
 		} else {
-			@Pc(15) int local15 = arg0.method23362(495265586);
+			@Pc(15) int local15 = arg0.g1();
 			if (local15 < 23) {
 				try {
 					this.method14951(arg0, local15, (byte) -75);
@@ -232,93 +232,93 @@ public final class Class80_Sub37 extends Class80 {
 				this.method14940(true, true, 1526709939);
 			} else {
 				if (local15 >= 29) {
-					this.aClass165_Sub35_1 = new Class165_Sub35(arg0.method23362(520736364), this);
+					this.aClass165_Sub35_1 = new Class165_Sub35(arg0.g1(), this);
 				}
-				this.aClass165_Sub43_2 = new Class165_Sub43(arg0.method23362(-1239425999), this);
+				this.aClass165_Sub43_2 = new Class165_Sub43(arg0.g1(), this);
 				if (local15 >= 31) {
-					this.aClass165_Sub31_1 = new Class165_Sub31(arg0.method23362(-735080612), this);
+					this.aClass165_Sub31_1 = new Class165_Sub31(arg0.g1(), this);
 				}
 				this.aClass165_Sub43_1 = new Class165_Sub43(this.aClass165_Sub43_2.method16849(1538334780), this);
-				this.aClass165_Sub47_1 = new Class165_Sub47(arg0.method23362(1107156592), this);
-				this.aClass165_Sub19_1 = new Class165_Sub19(arg0.method23362(-106198273), this);
-				this.aClass165_Sub11_1 = new Class165_Sub11(arg0.method23362(1106242437), this);
+				this.aClass165_Sub47_1 = new Class165_Sub47(arg0.g1(), this);
+				this.aClass165_Sub19_1 = new Class165_Sub19(arg0.g1(), this);
+				this.aClass165_Sub11_1 = new Class165_Sub11(arg0.g1(), this);
 				if (local15 >= 27) {
-					this.aClass165_Sub39_1 = new Class165_Sub39(arg0.method23362(267525701), this);
+					this.aClass165_Sub39_1 = new Class165_Sub39(arg0.g1(), this);
 				}
-				this.aClass165_Sub7_1 = new Class165_Sub7(arg0.method23362(-746813639), this);
-				this.aClass165_Sub9_1 = new Class165_Sub9(arg0.method23362(666281178), this);
-				this.aClass165_Sub41_1 = new Class165_Sub41(arg0.method23362(872548706), this);
-				this.aClass165_Sub26_1 = new Class165_Sub26(arg0.method23362(-1182328134), this);
-				this.aClass165_Sub34_1 = new Class165_Sub34(arg0.method23362(351282432), this);
-				this.aClass165_Sub4_1 = new Class165_Sub4(arg0.method23362(-360816322), this);
-				this.aClass165_Sub22_1 = new Class165_Sub22(arg0.method23362(-469428646), this);
+				this.aClass165_Sub7_1 = new Class165_Sub7(arg0.g1(), this);
+				this.aClass165_Sub9_1 = new Class165_Sub9(arg0.g1(), this);
+				this.aClass165_Sub41_1 = new Class165_Sub41(arg0.g1(), this);
+				this.aClass165_Sub26_1 = new Class165_Sub26(arg0.g1(), this);
+				this.aClass165_Sub34_1 = new Class165_Sub34(arg0.g1(), this);
+				this.aClass165_Sub4_1 = new Class165_Sub4(arg0.g1(), this);
+				this.aClass165_Sub22_1 = new Class165_Sub22(arg0.g1(), this);
 				if (local15 >= 33) {
-					this.aClass165_Sub15_1 = new Class165_Sub15(arg0.method23362(486733054), this);
+					this.aClass165_Sub15_1 = new Class165_Sub15(arg0.g1(), this);
 				}
 				if (local15 >= 34) {
-					arg0.method23362(-1903588132);
+					arg0.g1();
 				}
 				if (local15 >= 24) {
-					this.aClass165_Sub25_1 = new Class165_Sub25(arg0.method23362(745059300), this);
+					this.aClass165_Sub25_1 = new Class165_Sub25(arg0.g1(), this);
 				}
-				this.aClass165_Sub6_1 = new Class165_Sub6(arg0.method23362(-203194649), this);
-				this.aClass165_Sub10_1 = new Class165_Sub10(arg0.method23362(-1928557668), this);
+				this.aClass165_Sub6_1 = new Class165_Sub6(arg0.g1(), this);
+				this.aClass165_Sub10_1 = new Class165_Sub10(arg0.g1(), this);
 				this.aClass165_Sub10_2 = new Class165_Sub10(this.aClass165_Sub10_1.method16018(-1332812159), this);
-				this.aClass165_Sub8_1 = new Class165_Sub8(arg0.method23362(-444809324), this);
+				this.aClass165_Sub8_1 = new Class165_Sub8(arg0.g1(), this);
 				if (local15 >= 25) {
-					this.aClass165_Sub32_1 = new Class165_Sub32(arg0.method23362(672968499), this);
+					this.aClass165_Sub32_1 = new Class165_Sub32(arg0.g1(), this);
 				}
-				this.aClass165_Sub17_1 = new Class165_Sub17(arg0.method23362(-1764160268), this);
+				this.aClass165_Sub17_1 = new Class165_Sub17(arg0.g1(), this);
 				if (local15 <= 25) {
-					arg0.anInt3152 += 1034180571;
+					arg0.pos += 1034180571;
 				}
-				this.aClass165_Sub2_1 = new Class165_Sub2(arg0.method23362(267735365), this);
-				this.aClass165_Sub1_1 = new Class165_Sub1(arg0.method23362(107064194), this);
+				this.aClass165_Sub2_1 = new Class165_Sub2(arg0.g1(), this);
+				this.aClass165_Sub1_1 = new Class165_Sub1(arg0.g1(), this);
 				this.aClass165_Sub1_2 = new Class165_Sub1(this.aClass165_Sub1_1.method15834(1959447026), this);
-				arg0.method23362(-115457611);
-				this.aClass165_Sub13_1 = new Class165_Sub13(arg0.method23362(-1673280980), this);
-				this.aClass165_Sub18_1 = new Class165_Sub18(arg0.method23362(749479182), this);
+				arg0.g1();
+				this.aClass165_Sub13_1 = new Class165_Sub13(arg0.g1(), this);
+				this.aClass165_Sub18_1 = new Class165_Sub18(arg0.g1(), this);
 				if (local15 >= 35) {
-					this.aClass165_Sub3_1 = new Class165_Sub3(arg0.method23362(357201134), this);
-					this.aClass165_Sub21_1 = new Class165_Sub21(arg0.method23362(-194573964), this);
-					this.aClass165_Sub20_1 = new Class165_Sub20(arg0.method23362(-1572307741), this);
-					this.aClass165_Sub5_1 = new Class165_Sub5(arg0.method23362(111114090), this);
-					this.aClass165_Sub23_1 = new Class165_Sub23(arg0.method23362(502263608), this);
-					this.aClass165_Sub16_1 = new Class165_Sub16(arg0.method23177((byte) -64), this);
+					this.aClass165_Sub3_1 = new Class165_Sub3(arg0.g1(), this);
+					this.aClass165_Sub21_1 = new Class165_Sub21(arg0.g1(), this);
+					this.aClass165_Sub20_1 = new Class165_Sub20(arg0.g1(), this);
+					this.aClass165_Sub5_1 = new Class165_Sub5(arg0.g1(), this);
+					this.aClass165_Sub23_1 = new Class165_Sub23(arg0.g1(), this);
+					this.aClass165_Sub16_1 = new Class165_Sub16(arg0.g1b(), this);
 				}
 				if (local15 >= 36) {
-					this.aClass165_Sub33_1 = new Class165_Sub33(arg0.method23362(535392428), this);
-					this.aClass165_Sub24_1 = new Class165_Sub24(arg0.method23362(-1492378537), this);
+					this.aClass165_Sub33_1 = new Class165_Sub33(arg0.g1(), this);
+					this.aClass165_Sub24_1 = new Class165_Sub24(arg0.g1(), this);
 				}
 				if (local15 >= 37) {
-					this.aClass165_Sub37_1 = new Class165_Sub37(arg0.method23178((byte) -114), this);
-					this.aClass165_Sub14_1 = new Class165_Sub14(arg0.method23178((byte) -44), this);
+					this.aClass165_Sub37_1 = new Class165_Sub37(arg0.g2(), this);
+					this.aClass165_Sub14_1 = new Class165_Sub14(arg0.g2(), this);
 				}
 				if (local15 >= 38) {
-					this.aClass165_Sub12_1 = new Class165_Sub12(arg0.method23178((byte) -128), this);
-					this.aClass165_Sub45_1 = new Class165_Sub45(arg0.method23178((byte) -127), this);
+					this.aClass165_Sub12_1 = new Class165_Sub12(arg0.g2(), this);
+					this.aClass165_Sub45_1 = new Class165_Sub45(arg0.g2(), this);
 				}
 				this.aClass165_Sub18_2 = new Class165_Sub18(this.aClass165_Sub18_1.method16183((short) 32767), this);
-				this.aClass165_Sub46_1 = new Class165_Sub46(arg0.method23362(-1741105157), this);
-				this.aClass165_Sub38_1 = new Class165_Sub38(arg0.method23362(-1860745790), this);
-				this.aClass165_Sub30_1 = new Class165_Sub30(arg0.method23362(300332107), this);
-				this.aClass165_Sub28_1 = new Class165_Sub28(arg0.method23362(-1964756355), this);
-				this.aClass165_Sub44_1 = new Class165_Sub44(arg0.method23362(-1597676151), this);
+				this.aClass165_Sub46_1 = new Class165_Sub46(arg0.g1(), this);
+				this.aClass165_Sub38_1 = new Class165_Sub38(arg0.g1(), this);
+				this.aClass165_Sub30_1 = new Class165_Sub30(arg0.g1(), this);
+				this.aClass165_Sub28_1 = new Class165_Sub28(arg0.g1(), this);
+				this.aClass165_Sub44_1 = new Class165_Sub44(arg0.g1(), this);
 				if (local15 >= 26) {
-					this.aClass165_Sub42_1 = new Class165_Sub42(arg0.method23362(-813241695), this);
+					this.aClass165_Sub42_1 = new Class165_Sub42(arg0.g1(), this);
 				}
 				if (local15 >= 28) {
-					this.aClass165_Sub29_1 = new Class165_Sub29(arg0.method23362(10661337), this);
+					this.aClass165_Sub29_1 = new Class165_Sub29(arg0.g1(), this);
 				}
 				if (local15 >= 30) {
-					this.aClass165_Sub40_1 = new Class165_Sub40(arg0.method23362(349820182), this);
+					this.aClass165_Sub40_1 = new Class165_Sub40(arg0.g1(), this);
 				}
-				this.aClass165_Sub27_4 = new Class165_Sub27(arg0.method23362(1052075339), this);
-				this.aClass165_Sub27_5 = new Class165_Sub27(arg0.method23362(544733109), this);
-				this.aClass165_Sub27_1 = new Class165_Sub27(arg0.method23362(917243759), this);
-				this.aClass165_Sub27_3 = new Class165_Sub27(arg0.method23362(-478727896), this);
-				this.aClass165_Sub27_2 = new Class165_Sub27(arg0.method23362(-751481779), this);
-				this.aClass165_Sub36_1 = new Class165_Sub36(arg0.method23362(900252281), this);
+				this.aClass165_Sub27_4 = new Class165_Sub27(arg0.g1(), this);
+				this.aClass165_Sub27_5 = new Class165_Sub27(arg0.g1(), this);
+				this.aClass165_Sub27_1 = new Class165_Sub27(arg0.g1(), this);
+				this.aClass165_Sub27_3 = new Class165_Sub27(arg0.g1(), this);
+				this.aClass165_Sub27_2 = new Class165_Sub27(arg0.g1(), this);
+				this.aClass165_Sub36_1 = new Class165_Sub36(arg0.g1(), this);
 				this.method14940(false, local15 < 32, 1677757427);
 			}
 		}
@@ -554,62 +554,62 @@ public final class Class80_Sub37 extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ale", name = "u", descriptor = "(I)Lclient!ald;")
-	public Class80_Sub36 method14942(@OriginalArg(0) int arg0) {
-		@Pc(4) Class80_Sub36 local4 = new Class80_Sub36(59);
-		local4.method23154(38, 1275868335);
-		local4.method23154(this.aClass165_Sub35_1.method16584(-562000617), 1275868335);
-		local4.method23154(this.aClass165_Sub43_2.method16849(1538334780), 1275868335);
-		local4.method23154(this.aClass165_Sub31_1.method16476((byte) -78), 1275868335);
-		local4.method23154(this.aClass165_Sub47_1.method16965((short) -2537), 1275868335);
-		local4.method23154(this.aClass165_Sub19_1.method16205(894768830), 1275868335);
-		local4.method23154(this.aClass165_Sub11_1.method16040((byte) 8), 1275868335);
-		local4.method23154(this.aClass165_Sub39_1.method16764(671373495), 1275868335);
-		local4.method23154(this.aClass165_Sub7_1.method15953(805488576), 1275868335);
-		local4.method23154(this.aClass165_Sub9_1.method15996((byte) -85), 1275868335);
-		local4.method23154(this.aClass165_Sub41_1.method16802((byte) -10), 1275868335);
-		local4.method23154(this.aClass165_Sub26_1.method16355(-1813099789), 1275868335);
-		local4.method23154(this.aClass165_Sub34_1.method16561((byte) 63), 1275868335);
-		local4.method23154(this.aClass165_Sub4_1.method15896(1787476063), 1275868335);
-		local4.method23154(this.aClass165_Sub22_1.method16266(-1253094844), 1275868335);
-		local4.method23154(this.aClass165_Sub15_1.method16121(-299728100), 1275868335);
-		local4.method23154(0, 1275868335);
-		local4.method23154(this.aClass165_Sub25_1.method16332(-441029515), 1275868335);
-		local4.method23154(this.aClass165_Sub6_1.method15933(452441412), 1275868335);
-		local4.method23154(this.aClass165_Sub10_1.method16018(-152823929), 1275868335);
-		local4.method23154(this.aClass165_Sub8_1.method15974(-762326137), 1275868335);
-		local4.method23154(this.aClass165_Sub32_1.method16523(1384521051), 1275868335);
-		local4.method23154(this.aClass165_Sub17_1.method16165((byte) -98), 1275868335);
-		local4.method23154(this.aClass165_Sub2_1.method15861(1423795933), 1275868335);
-		local4.method23154(this.aClass165_Sub1_1.method15834(348614332), 1275868335);
-		local4.method23154(0, 1275868335);
-		local4.method23154(this.aClass165_Sub13_1.method16080(-2105193125), 1275868335);
-		local4.method23154(this.aClass165_Sub18_1.method16183((short) 32767), 1275868335);
-		local4.method23154(this.aClass165_Sub3_1.method15880(-1822087097), 1275868335);
-		local4.method23154(this.aClass165_Sub21_1.method16243(-1524150670), 1275868335);
-		local4.method23154(this.aClass165_Sub20_1.method16225(730789766), 1275868335);
-		local4.method23154(this.aClass165_Sub5_1.method15912(-693861466), 1275868335);
-		local4.method23154(this.aClass165_Sub23_1.method16292(1176901470), 1275868335);
-		local4.method23154(this.aClass165_Sub16_1.method16141(1760972068), 1275868335);
-		local4.method23154(this.aClass165_Sub33_1.method16543(1816604567), 1275868335);
-		local4.method23154(this.aClass165_Sub24_1.method16313(1652919007), 1275868335);
-		local4.method23155(this.aClass165_Sub37_1.method16682(33985), (byte) -75);
-		local4.method23155(this.aClass165_Sub14_1.method16104((byte) -118), (byte) -79);
-		local4.method23155(this.aClass165_Sub12_1.method16064((short) 15412), (byte) -79);
-		local4.method23155(this.aClass165_Sub45_1.method16892(1826921318), (byte) -50);
-		local4.method23154(this.aClass165_Sub46_1.method16910(2124688396), 1275868335);
-		local4.method23154(this.aClass165_Sub38_1.method16744(594900727), 1275868335);
-		local4.method23154(this.aClass165_Sub30_1.method16458(-1468534075), 1275868335);
-		local4.method23154(this.aClass165_Sub28_1.method16420(-1642411820), 1275868335);
-		local4.method23154(this.aClass165_Sub44_1.method16875(-543178442), 1275868335);
-		local4.method23154(this.aClass165_Sub42_1.method16835(1926000856), 1275868335);
-		local4.method23154(this.aClass165_Sub29_1.method16442(-1878420243), 1275868335);
-		local4.method23154(this.aClass165_Sub40_1.method16782(356256714), 1275868335);
-		local4.method23154(this.aClass165_Sub27_4.method16402((byte) -72), 1275868335);
-		local4.method23154(this.aClass165_Sub27_5.method16402((byte) -90), 1275868335);
-		local4.method23154(this.aClass165_Sub27_1.method16402((byte) -9), 1275868335);
-		local4.method23154(this.aClass165_Sub27_3.method16402((byte) 6), 1275868335);
-		local4.method23154(this.aClass165_Sub27_2.method16402((byte) 7), 1275868335);
-		local4.method23154(this.aClass165_Sub36_1.method16605((byte) 77), 1275868335);
+	public Packet method14942(@OriginalArg(0) int arg0) {
+		@Pc(4) Packet local4 = new Packet(59);
+		local4.p1(38);
+		local4.p1(this.aClass165_Sub35_1.method16584(-562000617));
+		local4.p1(this.aClass165_Sub43_2.method16849(1538334780));
+		local4.p1(this.aClass165_Sub31_1.method16476((byte) -78));
+		local4.p1(this.aClass165_Sub47_1.method16965((short) -2537));
+		local4.p1(this.aClass165_Sub19_1.method16205(894768830));
+		local4.p1(this.aClass165_Sub11_1.method16040((byte) 8));
+		local4.p1(this.aClass165_Sub39_1.method16764(671373495));
+		local4.p1(this.aClass165_Sub7_1.method15953(805488576));
+		local4.p1(this.aClass165_Sub9_1.method15996((byte) -85));
+		local4.p1(this.aClass165_Sub41_1.method16802((byte) -10));
+		local4.p1(this.aClass165_Sub26_1.method16355(-1813099789));
+		local4.p1(this.aClass165_Sub34_1.method16561((byte) 63));
+		local4.p1(this.aClass165_Sub4_1.method15896(1787476063));
+		local4.p1(this.aClass165_Sub22_1.method16266(-1253094844));
+		local4.p1(this.aClass165_Sub15_1.method16121(-299728100));
+		local4.p1(0);
+		local4.p1(this.aClass165_Sub25_1.method16332(-441029515));
+		local4.p1(this.aClass165_Sub6_1.method15933(452441412));
+		local4.p1(this.aClass165_Sub10_1.method16018(-152823929));
+		local4.p1(this.aClass165_Sub8_1.method15974(-762326137));
+		local4.p1(this.aClass165_Sub32_1.method16523(1384521051));
+		local4.p1(this.aClass165_Sub17_1.method16165((byte) -98));
+		local4.p1(this.aClass165_Sub2_1.method15861(1423795933));
+		local4.p1(this.aClass165_Sub1_1.method15834(348614332));
+		local4.p1(0);
+		local4.p1(this.aClass165_Sub13_1.method16080(-2105193125));
+		local4.p1(this.aClass165_Sub18_1.method16183((short) 32767));
+		local4.p1(this.aClass165_Sub3_1.method15880(-1822087097));
+		local4.p1(this.aClass165_Sub21_1.method16243(-1524150670));
+		local4.p1(this.aClass165_Sub20_1.method16225(730789766));
+		local4.p1(this.aClass165_Sub5_1.method15912(-693861466));
+		local4.p1(this.aClass165_Sub23_1.method16292(1176901470));
+		local4.p1(this.aClass165_Sub16_1.method16141(1760972068));
+		local4.p1(this.aClass165_Sub33_1.method16543(1816604567));
+		local4.p1(this.aClass165_Sub24_1.method16313(1652919007));
+		local4.p2(this.aClass165_Sub37_1.method16682(33985));
+		local4.p2(this.aClass165_Sub14_1.method16104((byte) -118));
+		local4.p2(this.aClass165_Sub12_1.method16064((short) 15412));
+		local4.p2(this.aClass165_Sub45_1.method16892(1826921318));
+		local4.p1(this.aClass165_Sub46_1.method16910(2124688396));
+		local4.p1(this.aClass165_Sub38_1.method16744(594900727));
+		local4.p1(this.aClass165_Sub30_1.method16458(-1468534075));
+		local4.p1(this.aClass165_Sub28_1.method16420(-1642411820));
+		local4.p1(this.aClass165_Sub44_1.method16875(-543178442));
+		local4.p1(this.aClass165_Sub42_1.method16835(1926000856));
+		local4.p1(this.aClass165_Sub29_1.method16442(-1878420243));
+		local4.p1(this.aClass165_Sub40_1.method16782(356256714));
+		local4.p1(this.aClass165_Sub27_4.method16402((byte) -72));
+		local4.p1(this.aClass165_Sub27_5.method16402((byte) -90));
+		local4.p1(this.aClass165_Sub27_1.method16402((byte) -9));
+		local4.p1(this.aClass165_Sub27_3.method16402((byte) 6));
+		local4.p1(this.aClass165_Sub27_2.method16402((byte) 7));
+		local4.p1(this.aClass165_Sub36_1.method16605((byte) 77));
 		return local4;
 	}
 
@@ -858,71 +858,71 @@ public final class Class80_Sub37 extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ale", name = "z", descriptor = "()Lclient!ald;")
-	public Class80_Sub36 method14948() {
-		@Pc(4) Class80_Sub36 local4 = new Class80_Sub36(59);
-		local4.method23154(38, 1275868335);
-		local4.method23154(this.aClass165_Sub35_1.method16584(-1549090133), 1275868335);
-		local4.method23154(this.aClass165_Sub43_2.method16849(1538334780), 1275868335);
-		local4.method23154(this.aClass165_Sub31_1.method16476((byte) -69), 1275868335);
-		local4.method23154(this.aClass165_Sub47_1.method16965((short) 4008), 1275868335);
-		local4.method23154(this.aClass165_Sub19_1.method16205(894768830), 1275868335);
-		local4.method23154(this.aClass165_Sub11_1.method16040((byte) 8), 1275868335);
-		local4.method23154(this.aClass165_Sub39_1.method16764(1355816293), 1275868335);
-		local4.method23154(this.aClass165_Sub7_1.method15953(-2004845173), 1275868335);
-		local4.method23154(this.aClass165_Sub9_1.method15996((byte) -1), 1275868335);
-		local4.method23154(this.aClass165_Sub41_1.method16802((byte) -98), 1275868335);
-		local4.method23154(this.aClass165_Sub26_1.method16355(-1259995435), 1275868335);
-		local4.method23154(this.aClass165_Sub34_1.method16561((byte) 27), 1275868335);
-		local4.method23154(this.aClass165_Sub4_1.method15896(2135277220), 1275868335);
-		local4.method23154(this.aClass165_Sub22_1.method16266(-1168765738), 1275868335);
-		local4.method23154(this.aClass165_Sub15_1.method16121(-1287239705), 1275868335);
-		local4.method23154(0, 1275868335);
-		local4.method23154(this.aClass165_Sub25_1.method16332(-441029515), 1275868335);
-		local4.method23154(this.aClass165_Sub6_1.method15933(548590707), 1275868335);
-		local4.method23154(this.aClass165_Sub10_1.method16018(-934415816), 1275868335);
-		local4.method23154(this.aClass165_Sub8_1.method15974(1757212589), 1275868335);
-		local4.method23154(this.aClass165_Sub32_1.method16523(1242290538), 1275868335);
-		local4.method23154(this.aClass165_Sub17_1.method16165((byte) -81), 1275868335);
-		local4.method23154(this.aClass165_Sub2_1.method15861(1423795933), 1275868335);
-		local4.method23154(this.aClass165_Sub1_1.method15834(888614946), 1275868335);
-		local4.method23154(0, 1275868335);
-		local4.method23154(this.aClass165_Sub13_1.method16080(1907540040), 1275868335);
-		local4.method23154(this.aClass165_Sub18_1.method16183((short) 32767), 1275868335);
-		local4.method23154(this.aClass165_Sub3_1.method15880(-1458288416), 1275868335);
-		local4.method23154(this.aClass165_Sub21_1.method16243(-1441923758), 1275868335);
-		local4.method23154(this.aClass165_Sub20_1.method16225(1674190090), 1275868335);
-		local4.method23154(this.aClass165_Sub5_1.method15912(-1786823501), 1275868335);
-		local4.method23154(this.aClass165_Sub23_1.method16292(1521218817), 1275868335);
-		local4.method23154(this.aClass165_Sub16_1.method16141(864414011), 1275868335);
-		local4.method23154(this.aClass165_Sub33_1.method16543(421089223), 1275868335);
-		local4.method23154(this.aClass165_Sub24_1.method16313(1398765741), 1275868335);
-		local4.method23155(this.aClass165_Sub37_1.method16682(33985), (byte) -120);
-		local4.method23155(this.aClass165_Sub14_1.method16104((byte) -4), (byte) -54);
-		local4.method23155(this.aClass165_Sub12_1.method16064((short) 31510), (byte) -32);
-		local4.method23155(this.aClass165_Sub45_1.method16892(2112932536), (byte) -78);
-		local4.method23154(this.aClass165_Sub46_1.method16910(1504778913), 1275868335);
-		local4.method23154(this.aClass165_Sub38_1.method16744(1033931981), 1275868335);
-		local4.method23154(this.aClass165_Sub30_1.method16458(1852069154), 1275868335);
-		local4.method23154(this.aClass165_Sub28_1.method16420(-594889402), 1275868335);
-		local4.method23154(this.aClass165_Sub44_1.method16875(1111282307), 1275868335);
-		local4.method23154(this.aClass165_Sub42_1.method16835(1791644964), 1275868335);
-		local4.method23154(this.aClass165_Sub29_1.method16442(-1878420243), 1275868335);
-		local4.method23154(this.aClass165_Sub40_1.method16782(-146016442), 1275868335);
-		local4.method23154(this.aClass165_Sub27_4.method16402((byte) -56), 1275868335);
-		local4.method23154(this.aClass165_Sub27_5.method16402((byte) 38), 1275868335);
-		local4.method23154(this.aClass165_Sub27_1.method16402((byte) -5), 1275868335);
-		local4.method23154(this.aClass165_Sub27_3.method16402((byte) 57), 1275868335);
-		local4.method23154(this.aClass165_Sub27_2.method16402((byte) -3), 1275868335);
-		local4.method23154(this.aClass165_Sub36_1.method16605((byte) 109), 1275868335);
+	public Packet method14948() {
+		@Pc(4) Packet local4 = new Packet(59);
+		local4.p1(38);
+		local4.p1(this.aClass165_Sub35_1.method16584(-1549090133));
+		local4.p1(this.aClass165_Sub43_2.method16849(1538334780));
+		local4.p1(this.aClass165_Sub31_1.method16476((byte) -69));
+		local4.p1(this.aClass165_Sub47_1.method16965((short) 4008));
+		local4.p1(this.aClass165_Sub19_1.method16205(894768830));
+		local4.p1(this.aClass165_Sub11_1.method16040((byte) 8));
+		local4.p1(this.aClass165_Sub39_1.method16764(1355816293));
+		local4.p1(this.aClass165_Sub7_1.method15953(-2004845173));
+		local4.p1(this.aClass165_Sub9_1.method15996((byte) -1));
+		local4.p1(this.aClass165_Sub41_1.method16802((byte) -98));
+		local4.p1(this.aClass165_Sub26_1.method16355(-1259995435));
+		local4.p1(this.aClass165_Sub34_1.method16561((byte) 27));
+		local4.p1(this.aClass165_Sub4_1.method15896(2135277220));
+		local4.p1(this.aClass165_Sub22_1.method16266(-1168765738));
+		local4.p1(this.aClass165_Sub15_1.method16121(-1287239705));
+		local4.p1(0);
+		local4.p1(this.aClass165_Sub25_1.method16332(-441029515));
+		local4.p1(this.aClass165_Sub6_1.method15933(548590707));
+		local4.p1(this.aClass165_Sub10_1.method16018(-934415816));
+		local4.p1(this.aClass165_Sub8_1.method15974(1757212589));
+		local4.p1(this.aClass165_Sub32_1.method16523(1242290538));
+		local4.p1(this.aClass165_Sub17_1.method16165((byte) -81));
+		local4.p1(this.aClass165_Sub2_1.method15861(1423795933));
+		local4.p1(this.aClass165_Sub1_1.method15834(888614946));
+		local4.p1(0);
+		local4.p1(this.aClass165_Sub13_1.method16080(1907540040));
+		local4.p1(this.aClass165_Sub18_1.method16183((short) 32767));
+		local4.p1(this.aClass165_Sub3_1.method15880(-1458288416));
+		local4.p1(this.aClass165_Sub21_1.method16243(-1441923758));
+		local4.p1(this.aClass165_Sub20_1.method16225(1674190090));
+		local4.p1(this.aClass165_Sub5_1.method15912(-1786823501));
+		local4.p1(this.aClass165_Sub23_1.method16292(1521218817));
+		local4.p1(this.aClass165_Sub16_1.method16141(864414011));
+		local4.p1(this.aClass165_Sub33_1.method16543(421089223));
+		local4.p1(this.aClass165_Sub24_1.method16313(1398765741));
+		local4.p2(this.aClass165_Sub37_1.method16682(33985));
+		local4.p2(this.aClass165_Sub14_1.method16104((byte) -4));
+		local4.p2(this.aClass165_Sub12_1.method16064((short) 31510));
+		local4.p2(this.aClass165_Sub45_1.method16892(2112932536));
+		local4.p1(this.aClass165_Sub46_1.method16910(1504778913));
+		local4.p1(this.aClass165_Sub38_1.method16744(1033931981));
+		local4.p1(this.aClass165_Sub30_1.method16458(1852069154));
+		local4.p1(this.aClass165_Sub28_1.method16420(-594889402));
+		local4.p1(this.aClass165_Sub44_1.method16875(1111282307));
+		local4.p1(this.aClass165_Sub42_1.method16835(1791644964));
+		local4.p1(this.aClass165_Sub29_1.method16442(-1878420243));
+		local4.p1(this.aClass165_Sub40_1.method16782(-146016442));
+		local4.p1(this.aClass165_Sub27_4.method16402((byte) -56));
+		local4.p1(this.aClass165_Sub27_5.method16402((byte) 38));
+		local4.p1(this.aClass165_Sub27_1.method16402((byte) -5));
+		local4.p1(this.aClass165_Sub27_3.method16402((byte) 57));
+		local4.p1(this.aClass165_Sub27_2.method16402((byte) -3));
+		local4.p1(this.aClass165_Sub36_1.method16605((byte) 109));
 		return local4;
 	}
 
 	@OriginalMember(owner = "client!ale", name = "j", descriptor = "(Lclient!ald;)V")
-	void method14949(@OriginalArg(0) Class80_Sub36 arg0) {
-		if (arg0 == null || arg0.aByteArray61 == null) {
+	void method14949(@OriginalArg(0) Packet arg0) {
+		if (arg0 == null || arg0.data == null) {
 			this.method14940(true, true, 2090350323);
 		} else {
-			@Pc(15) int local15 = arg0.method23362(-356450445);
+			@Pc(15) int local15 = arg0.g1();
 			if (local15 < 23) {
 				try {
 					this.method14951(arg0, local15, (byte) -106);
@@ -934,93 +934,93 @@ public final class Class80_Sub37 extends Class80 {
 				this.method14940(true, true, 1941593898);
 			} else {
 				if (local15 >= 29) {
-					this.aClass165_Sub35_1 = new Class165_Sub35(arg0.method23362(741773520), this);
+					this.aClass165_Sub35_1 = new Class165_Sub35(arg0.g1(), this);
 				}
-				this.aClass165_Sub43_2 = new Class165_Sub43(arg0.method23362(-88881583), this);
+				this.aClass165_Sub43_2 = new Class165_Sub43(arg0.g1(), this);
 				if (local15 >= 31) {
-					this.aClass165_Sub31_1 = new Class165_Sub31(arg0.method23362(-1026425706), this);
+					this.aClass165_Sub31_1 = new Class165_Sub31(arg0.g1(), this);
 				}
 				this.aClass165_Sub43_1 = new Class165_Sub43(this.aClass165_Sub43_2.method16849(1538334780), this);
-				this.aClass165_Sub47_1 = new Class165_Sub47(arg0.method23362(-331659285), this);
-				this.aClass165_Sub19_1 = new Class165_Sub19(arg0.method23362(-120292986), this);
-				this.aClass165_Sub11_1 = new Class165_Sub11(arg0.method23362(416806258), this);
+				this.aClass165_Sub47_1 = new Class165_Sub47(arg0.g1(), this);
+				this.aClass165_Sub19_1 = new Class165_Sub19(arg0.g1(), this);
+				this.aClass165_Sub11_1 = new Class165_Sub11(arg0.g1(), this);
 				if (local15 >= 27) {
-					this.aClass165_Sub39_1 = new Class165_Sub39(arg0.method23362(-1197106427), this);
+					this.aClass165_Sub39_1 = new Class165_Sub39(arg0.g1(), this);
 				}
-				this.aClass165_Sub7_1 = new Class165_Sub7(arg0.method23362(-1369529376), this);
-				this.aClass165_Sub9_1 = new Class165_Sub9(arg0.method23362(-2091918292), this);
-				this.aClass165_Sub41_1 = new Class165_Sub41(arg0.method23362(-1478399300), this);
-				this.aClass165_Sub26_1 = new Class165_Sub26(arg0.method23362(-1493062446), this);
-				this.aClass165_Sub34_1 = new Class165_Sub34(arg0.method23362(859051761), this);
-				this.aClass165_Sub4_1 = new Class165_Sub4(arg0.method23362(-1347818340), this);
-				this.aClass165_Sub22_1 = new Class165_Sub22(arg0.method23362(1046553822), this);
+				this.aClass165_Sub7_1 = new Class165_Sub7(arg0.g1(), this);
+				this.aClass165_Sub9_1 = new Class165_Sub9(arg0.g1(), this);
+				this.aClass165_Sub41_1 = new Class165_Sub41(arg0.g1(), this);
+				this.aClass165_Sub26_1 = new Class165_Sub26(arg0.g1(), this);
+				this.aClass165_Sub34_1 = new Class165_Sub34(arg0.g1(), this);
+				this.aClass165_Sub4_1 = new Class165_Sub4(arg0.g1(), this);
+				this.aClass165_Sub22_1 = new Class165_Sub22(arg0.g1(), this);
 				if (local15 >= 33) {
-					this.aClass165_Sub15_1 = new Class165_Sub15(arg0.method23362(369387677), this);
+					this.aClass165_Sub15_1 = new Class165_Sub15(arg0.g1(), this);
 				}
 				if (local15 >= 34) {
-					arg0.method23362(-1017225777);
+					arg0.g1();
 				}
 				if (local15 >= 24) {
-					this.aClass165_Sub25_1 = new Class165_Sub25(arg0.method23362(52015742), this);
+					this.aClass165_Sub25_1 = new Class165_Sub25(arg0.g1(), this);
 				}
-				this.aClass165_Sub6_1 = new Class165_Sub6(arg0.method23362(-381420870), this);
-				this.aClass165_Sub10_1 = new Class165_Sub10(arg0.method23362(831040227), this);
+				this.aClass165_Sub6_1 = new Class165_Sub6(arg0.g1(), this);
+				this.aClass165_Sub10_1 = new Class165_Sub10(arg0.g1(), this);
 				this.aClass165_Sub10_2 = new Class165_Sub10(this.aClass165_Sub10_1.method16018(-596359266), this);
-				this.aClass165_Sub8_1 = new Class165_Sub8(arg0.method23362(-274766668), this);
+				this.aClass165_Sub8_1 = new Class165_Sub8(arg0.g1(), this);
 				if (local15 >= 25) {
-					this.aClass165_Sub32_1 = new Class165_Sub32(arg0.method23362(262619259), this);
+					this.aClass165_Sub32_1 = new Class165_Sub32(arg0.g1(), this);
 				}
-				this.aClass165_Sub17_1 = new Class165_Sub17(arg0.method23362(-1363795113), this);
+				this.aClass165_Sub17_1 = new Class165_Sub17(arg0.g1(), this);
 				if (local15 <= 25) {
-					arg0.anInt3152 += 1034180571;
+					arg0.pos += 1034180571;
 				}
-				this.aClass165_Sub2_1 = new Class165_Sub2(arg0.method23362(-946779756), this);
-				this.aClass165_Sub1_1 = new Class165_Sub1(arg0.method23362(-1451846718), this);
+				this.aClass165_Sub2_1 = new Class165_Sub2(arg0.g1(), this);
+				this.aClass165_Sub1_1 = new Class165_Sub1(arg0.g1(), this);
 				this.aClass165_Sub1_2 = new Class165_Sub1(this.aClass165_Sub1_1.method15834(1213533356), this);
-				arg0.method23362(-394165497);
-				this.aClass165_Sub13_1 = new Class165_Sub13(arg0.method23362(226710183), this);
-				this.aClass165_Sub18_1 = new Class165_Sub18(arg0.method23362(-673178808), this);
+				arg0.g1();
+				this.aClass165_Sub13_1 = new Class165_Sub13(arg0.g1(), this);
+				this.aClass165_Sub18_1 = new Class165_Sub18(arg0.g1(), this);
 				if (local15 >= 35) {
-					this.aClass165_Sub3_1 = new Class165_Sub3(arg0.method23362(-15169860), this);
-					this.aClass165_Sub21_1 = new Class165_Sub21(arg0.method23362(101700707), this);
-					this.aClass165_Sub20_1 = new Class165_Sub20(arg0.method23362(-946833810), this);
-					this.aClass165_Sub5_1 = new Class165_Sub5(arg0.method23362(-91184553), this);
-					this.aClass165_Sub23_1 = new Class165_Sub23(arg0.method23362(-335917647), this);
-					this.aClass165_Sub16_1 = new Class165_Sub16(arg0.method23177((byte) -59), this);
+					this.aClass165_Sub3_1 = new Class165_Sub3(arg0.g1(), this);
+					this.aClass165_Sub21_1 = new Class165_Sub21(arg0.g1(), this);
+					this.aClass165_Sub20_1 = new Class165_Sub20(arg0.g1(), this);
+					this.aClass165_Sub5_1 = new Class165_Sub5(arg0.g1(), this);
+					this.aClass165_Sub23_1 = new Class165_Sub23(arg0.g1(), this);
+					this.aClass165_Sub16_1 = new Class165_Sub16(arg0.g1b(), this);
 				}
 				if (local15 >= 36) {
-					this.aClass165_Sub33_1 = new Class165_Sub33(arg0.method23362(-1770733209), this);
-					this.aClass165_Sub24_1 = new Class165_Sub24(arg0.method23362(-228117803), this);
+					this.aClass165_Sub33_1 = new Class165_Sub33(arg0.g1(), this);
+					this.aClass165_Sub24_1 = new Class165_Sub24(arg0.g1(), this);
 				}
 				if (local15 >= 37) {
-					this.aClass165_Sub37_1 = new Class165_Sub37(arg0.method23178((byte) -105), this);
-					this.aClass165_Sub14_1 = new Class165_Sub14(arg0.method23178((byte) -16), this);
+					this.aClass165_Sub37_1 = new Class165_Sub37(arg0.g2(), this);
+					this.aClass165_Sub14_1 = new Class165_Sub14(arg0.g2(), this);
 				}
 				if (local15 >= 38) {
-					this.aClass165_Sub12_1 = new Class165_Sub12(arg0.method23178((byte) -100), this);
-					this.aClass165_Sub45_1 = new Class165_Sub45(arg0.method23178((byte) -8), this);
+					this.aClass165_Sub12_1 = new Class165_Sub12(arg0.g2(), this);
+					this.aClass165_Sub45_1 = new Class165_Sub45(arg0.g2(), this);
 				}
 				this.aClass165_Sub18_2 = new Class165_Sub18(this.aClass165_Sub18_1.method16183((short) 32767), this);
-				this.aClass165_Sub46_1 = new Class165_Sub46(arg0.method23362(932501370), this);
-				this.aClass165_Sub38_1 = new Class165_Sub38(arg0.method23362(-1987683459), this);
-				this.aClass165_Sub30_1 = new Class165_Sub30(arg0.method23362(-2126331780), this);
-				this.aClass165_Sub28_1 = new Class165_Sub28(arg0.method23362(-742519256), this);
-				this.aClass165_Sub44_1 = new Class165_Sub44(arg0.method23362(-1088937328), this);
+				this.aClass165_Sub46_1 = new Class165_Sub46(arg0.g1(), this);
+				this.aClass165_Sub38_1 = new Class165_Sub38(arg0.g1(), this);
+				this.aClass165_Sub30_1 = new Class165_Sub30(arg0.g1(), this);
+				this.aClass165_Sub28_1 = new Class165_Sub28(arg0.g1(), this);
+				this.aClass165_Sub44_1 = new Class165_Sub44(arg0.g1(), this);
 				if (local15 >= 26) {
-					this.aClass165_Sub42_1 = new Class165_Sub42(arg0.method23362(-1921688355), this);
+					this.aClass165_Sub42_1 = new Class165_Sub42(arg0.g1(), this);
 				}
 				if (local15 >= 28) {
-					this.aClass165_Sub29_1 = new Class165_Sub29(arg0.method23362(-1828958721), this);
+					this.aClass165_Sub29_1 = new Class165_Sub29(arg0.g1(), this);
 				}
 				if (local15 >= 30) {
-					this.aClass165_Sub40_1 = new Class165_Sub40(arg0.method23362(560050350), this);
+					this.aClass165_Sub40_1 = new Class165_Sub40(arg0.g1(), this);
 				}
-				this.aClass165_Sub27_4 = new Class165_Sub27(arg0.method23362(1024841403), this);
-				this.aClass165_Sub27_5 = new Class165_Sub27(arg0.method23362(-114074136), this);
-				this.aClass165_Sub27_1 = new Class165_Sub27(arg0.method23362(652479964), this);
-				this.aClass165_Sub27_3 = new Class165_Sub27(arg0.method23362(180264300), this);
-				this.aClass165_Sub27_2 = new Class165_Sub27(arg0.method23362(420525515), this);
-				this.aClass165_Sub36_1 = new Class165_Sub36(arg0.method23362(-1359742306), this);
+				this.aClass165_Sub27_4 = new Class165_Sub27(arg0.g1(), this);
+				this.aClass165_Sub27_5 = new Class165_Sub27(arg0.g1(), this);
+				this.aClass165_Sub27_1 = new Class165_Sub27(arg0.g1(), this);
+				this.aClass165_Sub27_3 = new Class165_Sub27(arg0.g1(), this);
+				this.aClass165_Sub27_2 = new Class165_Sub27(arg0.g1(), this);
+				this.aClass165_Sub36_1 = new Class165_Sub36(arg0.g1(), this);
 				this.method14940(false, local15 < 32, 1729770677);
 			}
 		}
@@ -1028,11 +1028,11 @@ public final class Class80_Sub37 extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ale", name = "a", descriptor = "(Lclient!ald;)V")
-	void method14950(@OriginalArg(0) Class80_Sub36 arg0) {
-		if (arg0 == null || arg0.aByteArray61 == null) {
+	void method14950(@OriginalArg(0) Packet arg0) {
+		if (arg0 == null || arg0.data == null) {
 			this.method14940(true, true, 1587301491);
 		} else {
-			@Pc(15) int local15 = arg0.method23362(673177920);
+			@Pc(15) int local15 = arg0.g1();
 			if (local15 < 23) {
 				try {
 					this.method14951(arg0, local15, (byte) -34);
@@ -1044,93 +1044,93 @@ public final class Class80_Sub37 extends Class80 {
 				this.method14940(true, true, 1591393385);
 			} else {
 				if (local15 >= 29) {
-					this.aClass165_Sub35_1 = new Class165_Sub35(arg0.method23362(-268259446), this);
+					this.aClass165_Sub35_1 = new Class165_Sub35(arg0.g1(), this);
 				}
-				this.aClass165_Sub43_2 = new Class165_Sub43(arg0.method23362(747216356), this);
+				this.aClass165_Sub43_2 = new Class165_Sub43(arg0.g1(), this);
 				if (local15 >= 31) {
-					this.aClass165_Sub31_1 = new Class165_Sub31(arg0.method23362(-621889055), this);
+					this.aClass165_Sub31_1 = new Class165_Sub31(arg0.g1(), this);
 				}
 				this.aClass165_Sub43_1 = new Class165_Sub43(this.aClass165_Sub43_2.method16849(1538334780), this);
-				this.aClass165_Sub47_1 = new Class165_Sub47(arg0.method23362(799878067), this);
-				this.aClass165_Sub19_1 = new Class165_Sub19(arg0.method23362(-1795810008), this);
-				this.aClass165_Sub11_1 = new Class165_Sub11(arg0.method23362(359474426), this);
+				this.aClass165_Sub47_1 = new Class165_Sub47(arg0.g1(), this);
+				this.aClass165_Sub19_1 = new Class165_Sub19(arg0.g1(), this);
+				this.aClass165_Sub11_1 = new Class165_Sub11(arg0.g1(), this);
 				if (local15 >= 27) {
-					this.aClass165_Sub39_1 = new Class165_Sub39(arg0.method23362(878661507), this);
+					this.aClass165_Sub39_1 = new Class165_Sub39(arg0.g1(), this);
 				}
-				this.aClass165_Sub7_1 = new Class165_Sub7(arg0.method23362(522516256), this);
-				this.aClass165_Sub9_1 = new Class165_Sub9(arg0.method23362(-1227656856), this);
-				this.aClass165_Sub41_1 = new Class165_Sub41(arg0.method23362(-445108289), this);
-				this.aClass165_Sub26_1 = new Class165_Sub26(arg0.method23362(-286848052), this);
-				this.aClass165_Sub34_1 = new Class165_Sub34(arg0.method23362(-1438769337), this);
-				this.aClass165_Sub4_1 = new Class165_Sub4(arg0.method23362(-237244272), this);
-				this.aClass165_Sub22_1 = new Class165_Sub22(arg0.method23362(1022431773), this);
+				this.aClass165_Sub7_1 = new Class165_Sub7(arg0.g1(), this);
+				this.aClass165_Sub9_1 = new Class165_Sub9(arg0.g1(), this);
+				this.aClass165_Sub41_1 = new Class165_Sub41(arg0.g1(), this);
+				this.aClass165_Sub26_1 = new Class165_Sub26(arg0.g1(), this);
+				this.aClass165_Sub34_1 = new Class165_Sub34(arg0.g1(), this);
+				this.aClass165_Sub4_1 = new Class165_Sub4(arg0.g1(), this);
+				this.aClass165_Sub22_1 = new Class165_Sub22(arg0.g1(), this);
 				if (local15 >= 33) {
-					this.aClass165_Sub15_1 = new Class165_Sub15(arg0.method23362(6505622), this);
+					this.aClass165_Sub15_1 = new Class165_Sub15(arg0.g1(), this);
 				}
 				if (local15 >= 34) {
-					arg0.method23362(-550443249);
+					arg0.g1();
 				}
 				if (local15 >= 24) {
-					this.aClass165_Sub25_1 = new Class165_Sub25(arg0.method23362(-1519429506), this);
+					this.aClass165_Sub25_1 = new Class165_Sub25(arg0.g1(), this);
 				}
-				this.aClass165_Sub6_1 = new Class165_Sub6(arg0.method23362(-1826495650), this);
-				this.aClass165_Sub10_1 = new Class165_Sub10(arg0.method23362(-1145758145), this);
+				this.aClass165_Sub6_1 = new Class165_Sub6(arg0.g1(), this);
+				this.aClass165_Sub10_1 = new Class165_Sub10(arg0.g1(), this);
 				this.aClass165_Sub10_2 = new Class165_Sub10(this.aClass165_Sub10_1.method16018(-2140053204), this);
-				this.aClass165_Sub8_1 = new Class165_Sub8(arg0.method23362(-963235291), this);
+				this.aClass165_Sub8_1 = new Class165_Sub8(arg0.g1(), this);
 				if (local15 >= 25) {
-					this.aClass165_Sub32_1 = new Class165_Sub32(arg0.method23362(-489360300), this);
+					this.aClass165_Sub32_1 = new Class165_Sub32(arg0.g1(), this);
 				}
-				this.aClass165_Sub17_1 = new Class165_Sub17(arg0.method23362(-285229306), this);
+				this.aClass165_Sub17_1 = new Class165_Sub17(arg0.g1(), this);
 				if (local15 <= 25) {
-					arg0.anInt3152 += 1034180571;
+					arg0.pos += 1034180571;
 				}
-				this.aClass165_Sub2_1 = new Class165_Sub2(arg0.method23362(549288320), this);
-				this.aClass165_Sub1_1 = new Class165_Sub1(arg0.method23362(-380676216), this);
+				this.aClass165_Sub2_1 = new Class165_Sub2(arg0.g1(), this);
+				this.aClass165_Sub1_1 = new Class165_Sub1(arg0.g1(), this);
 				this.aClass165_Sub1_2 = new Class165_Sub1(this.aClass165_Sub1_1.method15834(1137765136), this);
-				arg0.method23362(558769988);
-				this.aClass165_Sub13_1 = new Class165_Sub13(arg0.method23362(-1178141806), this);
-				this.aClass165_Sub18_1 = new Class165_Sub18(arg0.method23362(-160562667), this);
+				arg0.g1();
+				this.aClass165_Sub13_1 = new Class165_Sub13(arg0.g1(), this);
+				this.aClass165_Sub18_1 = new Class165_Sub18(arg0.g1(), this);
 				if (local15 >= 35) {
-					this.aClass165_Sub3_1 = new Class165_Sub3(arg0.method23362(-736673938), this);
-					this.aClass165_Sub21_1 = new Class165_Sub21(arg0.method23362(996886832), this);
-					this.aClass165_Sub20_1 = new Class165_Sub20(arg0.method23362(-883852187), this);
-					this.aClass165_Sub5_1 = new Class165_Sub5(arg0.method23362(-1996898269), this);
-					this.aClass165_Sub23_1 = new Class165_Sub23(arg0.method23362(-1724483607), this);
-					this.aClass165_Sub16_1 = new Class165_Sub16(arg0.method23177((byte) -67), this);
+					this.aClass165_Sub3_1 = new Class165_Sub3(arg0.g1(), this);
+					this.aClass165_Sub21_1 = new Class165_Sub21(arg0.g1(), this);
+					this.aClass165_Sub20_1 = new Class165_Sub20(arg0.g1(), this);
+					this.aClass165_Sub5_1 = new Class165_Sub5(arg0.g1(), this);
+					this.aClass165_Sub23_1 = new Class165_Sub23(arg0.g1(), this);
+					this.aClass165_Sub16_1 = new Class165_Sub16(arg0.g1b(), this);
 				}
 				if (local15 >= 36) {
-					this.aClass165_Sub33_1 = new Class165_Sub33(arg0.method23362(-1523244948), this);
-					this.aClass165_Sub24_1 = new Class165_Sub24(arg0.method23362(202412656), this);
+					this.aClass165_Sub33_1 = new Class165_Sub33(arg0.g1(), this);
+					this.aClass165_Sub24_1 = new Class165_Sub24(arg0.g1(), this);
 				}
 				if (local15 >= 37) {
-					this.aClass165_Sub37_1 = new Class165_Sub37(arg0.method23178((byte) -103), this);
-					this.aClass165_Sub14_1 = new Class165_Sub14(arg0.method23178((byte) -105), this);
+					this.aClass165_Sub37_1 = new Class165_Sub37(arg0.g2(), this);
+					this.aClass165_Sub14_1 = new Class165_Sub14(arg0.g2(), this);
 				}
 				if (local15 >= 38) {
-					this.aClass165_Sub12_1 = new Class165_Sub12(arg0.method23178((byte) -116), this);
-					this.aClass165_Sub45_1 = new Class165_Sub45(arg0.method23178((byte) -10), this);
+					this.aClass165_Sub12_1 = new Class165_Sub12(arg0.g2(), this);
+					this.aClass165_Sub45_1 = new Class165_Sub45(arg0.g2(), this);
 				}
 				this.aClass165_Sub18_2 = new Class165_Sub18(this.aClass165_Sub18_1.method16183((short) 32767), this);
-				this.aClass165_Sub46_1 = new Class165_Sub46(arg0.method23362(343813663), this);
-				this.aClass165_Sub38_1 = new Class165_Sub38(arg0.method23362(-1650695513), this);
-				this.aClass165_Sub30_1 = new Class165_Sub30(arg0.method23362(-1011296791), this);
-				this.aClass165_Sub28_1 = new Class165_Sub28(arg0.method23362(-410779758), this);
-				this.aClass165_Sub44_1 = new Class165_Sub44(arg0.method23362(-534942588), this);
+				this.aClass165_Sub46_1 = new Class165_Sub46(arg0.g1(), this);
+				this.aClass165_Sub38_1 = new Class165_Sub38(arg0.g1(), this);
+				this.aClass165_Sub30_1 = new Class165_Sub30(arg0.g1(), this);
+				this.aClass165_Sub28_1 = new Class165_Sub28(arg0.g1(), this);
+				this.aClass165_Sub44_1 = new Class165_Sub44(arg0.g1(), this);
 				if (local15 >= 26) {
-					this.aClass165_Sub42_1 = new Class165_Sub42(arg0.method23362(-1136618665), this);
+					this.aClass165_Sub42_1 = new Class165_Sub42(arg0.g1(), this);
 				}
 				if (local15 >= 28) {
-					this.aClass165_Sub29_1 = new Class165_Sub29(arg0.method23362(77374294), this);
+					this.aClass165_Sub29_1 = new Class165_Sub29(arg0.g1(), this);
 				}
 				if (local15 >= 30) {
-					this.aClass165_Sub40_1 = new Class165_Sub40(arg0.method23362(-1307279197), this);
+					this.aClass165_Sub40_1 = new Class165_Sub40(arg0.g1(), this);
 				}
-				this.aClass165_Sub27_4 = new Class165_Sub27(arg0.method23362(-1594937461), this);
-				this.aClass165_Sub27_5 = new Class165_Sub27(arg0.method23362(-1127625656), this);
-				this.aClass165_Sub27_1 = new Class165_Sub27(arg0.method23362(738790944), this);
-				this.aClass165_Sub27_3 = new Class165_Sub27(arg0.method23362(25897685), this);
-				this.aClass165_Sub27_2 = new Class165_Sub27(arg0.method23362(949878436), this);
-				this.aClass165_Sub36_1 = new Class165_Sub36(arg0.method23362(-943391555), this);
+				this.aClass165_Sub27_4 = new Class165_Sub27(arg0.g1(), this);
+				this.aClass165_Sub27_5 = new Class165_Sub27(arg0.g1(), this);
+				this.aClass165_Sub27_1 = new Class165_Sub27(arg0.g1(), this);
+				this.aClass165_Sub27_3 = new Class165_Sub27(arg0.g1(), this);
+				this.aClass165_Sub27_2 = new Class165_Sub27(arg0.g1(), this);
+				this.aClass165_Sub36_1 = new Class165_Sub36(arg0.g1(), this);
 				this.method14940(false, local15 < 32, 1603785009);
 			}
 		}
@@ -1138,112 +1138,112 @@ public final class Class80_Sub37 extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ale", name = "e", descriptor = "(Lclient!ald;IB)V")
-	void method14951(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
-		this.aClass165_Sub19_1 = new Class165_Sub19(arg0.method23362(-368005814), this);
-		arg0.anInt3152 += 1034180571;
-		this.aClass165_Sub10_1 = new Class165_Sub10(arg0.method23362(801882128) + 1, this);
-		this.aClass165_Sub26_1 = new Class165_Sub26(arg0.method23362(-90838058), this);
-		arg0.anInt3152 += 1034180571;
-		this.aClass165_Sub34_1 = new Class165_Sub34(arg0.method23362(-1457782994), this);
-		this.aClass165_Sub7_1 = new Class165_Sub7(arg0.method23362(-70280334), this);
-		arg0.method23362(623544951);
-		this.aClass165_Sub17_1 = new Class165_Sub17(arg0.method23362(-1079375844), this);
-		@Pc(75) int local75 = arg0.method23362(-561450796);
+	void method14951(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
+		this.aClass165_Sub19_1 = new Class165_Sub19(arg0.g1(), this);
+		arg0.pos += 1034180571;
+		this.aClass165_Sub10_1 = new Class165_Sub10(arg0.g1() + 1, this);
+		this.aClass165_Sub26_1 = new Class165_Sub26(arg0.g1(), this);
+		arg0.pos += 1034180571;
+		this.aClass165_Sub34_1 = new Class165_Sub34(arg0.g1(), this);
+		this.aClass165_Sub7_1 = new Class165_Sub7(arg0.g1(), this);
+		arg0.g1();
+		this.aClass165_Sub17_1 = new Class165_Sub17(arg0.g1(), this);
+		@Pc(75) int local75 = arg0.g1();
 		@Pc(77) int local77 = 0;
 		if (arg1 >= 17) {
-			local77 = arg0.method23362(-614792219);
+			local77 = arg0.g1();
 		}
 		this.aClass165_Sub22_1 = new Class165_Sub22(local75 > local77 ? local75 : local77, this);
 		@Pc(98) boolean local98 = true;
 		@Pc(100) boolean local100 = true;
 		if (arg1 >= 2) {
-			local98 = arg0.method23362(-1318392308) == 1;
+			local98 = arg0.g1() == 1;
 			if (arg1 >= 17) {
-				local100 = arg0.method23362(-217918271) == 1;
+				local100 = arg0.g1() == 1;
 			}
 		} else {
-			local98 = arg0.method23362(1869823) == 1;
-			arg0.method23362(458469755);
+			local98 = arg0.g1() == 1;
+			arg0.g1();
 		}
 		this.aClass165_Sub4_1 = new Class165_Sub4(local98 | local100 ? 1 : 0, this);
-		this.aClass165_Sub13_1 = new Class165_Sub13(arg0.method23362(-1283450319), this);
-		this.aClass165_Sub9_1 = new Class165_Sub9(arg0.method23362(538680903), this);
-		this.aClass165_Sub43_2 = new Class165_Sub43(arg0.method23362(-1033426235), this);
-		this.aClass165_Sub36_1 = new Class165_Sub36(arg0.method23362(-751060807), this);
-		this.aClass165_Sub27_4 = new Class165_Sub27(arg0.method23362(-1028954644), this);
+		this.aClass165_Sub13_1 = new Class165_Sub13(arg0.g1(), this);
+		this.aClass165_Sub9_1 = new Class165_Sub9(arg0.g1(), this);
+		this.aClass165_Sub43_2 = new Class165_Sub43(arg0.g1(), this);
+		this.aClass165_Sub36_1 = new Class165_Sub36(arg0.g1(), this);
+		this.aClass165_Sub27_4 = new Class165_Sub27(arg0.g1(), this);
 		if (arg1 >= 20) {
-			this.aClass165_Sub27_1 = new Class165_Sub27(arg0.method23362(895186192), this);
+			this.aClass165_Sub27_1 = new Class165_Sub27(arg0.g1(), this);
 		} else {
 			this.aClass165_Sub27_1 = new Class165_Sub27(this.aClass165_Sub27_4.method16402((byte) 109), this);
 		}
-		this.aClass165_Sub27_3 = new Class165_Sub27(arg0.method23362(581948873), this);
-		this.aClass165_Sub27_5 = new Class165_Sub27(arg0.method23362(1000202029), this);
+		this.aClass165_Sub27_3 = new Class165_Sub27(arg0.g1(), this);
+		this.aClass165_Sub27_5 = new Class165_Sub27(arg0.g1(), this);
 		if (arg1 >= 21) {
-			this.aClass165_Sub27_2 = new Class165_Sub27(arg0.method23362(970875783), this);
+			this.aClass165_Sub27_2 = new Class165_Sub27(arg0.g1(), this);
 		} else {
 			this.aClass165_Sub27_2 = new Class165_Sub27(this.aClass165_Sub27_3.method16402((byte) 45), this);
 		}
 		if (arg1 >= 1) {
-			arg0.method23178((byte) -81);
-			arg0.method23178((byte) -25);
+			arg0.g2();
+			arg0.g2();
 		}
 		if (arg1 >= 3 && arg1 < 6) {
-			arg0.method23362(-703590246);
+			arg0.g1();
 		}
 		if (arg1 >= 4) {
-			this.aClass165_Sub6_1 = new Class165_Sub6(arg0.method23362(-1566435555), this);
+			this.aClass165_Sub6_1 = new Class165_Sub6(arg0.g1(), this);
 		}
-		arg0.method23182(378027971);
+		arg0.g4();
 		if (arg1 >= 6) {
-			this.aClass165_Sub18_1 = new Class165_Sub18(arg0.method23362(-319117643), this);
+			this.aClass165_Sub18_1 = new Class165_Sub18(arg0.g1(), this);
 		}
 		if (arg1 >= 7) {
-			this.aClass165_Sub44_1 = new Class165_Sub44(arg0.method23362(868444341), this);
+			this.aClass165_Sub44_1 = new Class165_Sub44(arg0.g1(), this);
 		}
 		if (arg1 >= 8) {
-			arg0.method23362(-725850680);
+			arg0.g1();
 		}
 		if (arg1 >= 9) {
-			this.aClass165_Sub11_1 = new Class165_Sub11(arg0.method23362(253328635), this);
+			this.aClass165_Sub11_1 = new Class165_Sub11(arg0.g1(), this);
 		}
 		if (arg1 >= 10) {
-			this.aClass165_Sub47_1 = new Class165_Sub47(arg0.method23362(-1538603057), this);
+			this.aClass165_Sub47_1 = new Class165_Sub47(arg0.g1(), this);
 		}
 		if (arg1 >= 11) {
-			this.aClass165_Sub46_1 = new Class165_Sub46(arg0.method23362(530696856), this);
+			this.aClass165_Sub46_1 = new Class165_Sub46(arg0.g1(), this);
 		}
 		if (arg1 >= 12) {
-			this.aClass165_Sub34_1 = new Class165_Sub34(arg0.method23362(-665299776), this);
+			this.aClass165_Sub34_1 = new Class165_Sub34(arg0.g1(), this);
 		}
 		if (arg1 >= 13) {
-			this.aClass165_Sub41_1 = new Class165_Sub41(arg0.method23362(302547352), this);
+			this.aClass165_Sub41_1 = new Class165_Sub41(arg0.g1(), this);
 		}
 		if (arg1 >= 14) {
-			this.aClass165_Sub1_1 = new Class165_Sub1(arg0.method23362(1120780013), this);
+			this.aClass165_Sub1_1 = new Class165_Sub1(arg0.g1(), this);
 		}
 		if (arg1 >= 15) {
-			this.aClass165_Sub30_1 = new Class165_Sub30(arg0.method23362(696122100), this);
+			this.aClass165_Sub30_1 = new Class165_Sub30(arg0.g1(), this);
 		}
 		if (arg1 >= 16) {
-			this.aClass165_Sub2_1 = new Class165_Sub2(arg0.method23362(1031306040), this);
+			this.aClass165_Sub2_1 = new Class165_Sub2(arg0.g1(), this);
 		}
 		if (arg1 >= 18) {
-			this.aClass165_Sub38_1 = new Class165_Sub38(arg0.method23362(895490271), this);
+			this.aClass165_Sub38_1 = new Class165_Sub38(arg0.g1(), this);
 		}
 		if (arg1 >= 19) {
-			this.aClass165_Sub8_1 = new Class165_Sub8(arg0.method23362(-950553066), this);
+			this.aClass165_Sub8_1 = new Class165_Sub8(arg0.g1(), this);
 		}
 		if (arg1 >= 22) {
-			this.aClass165_Sub28_1 = new Class165_Sub28(arg0.method23362(1021141189), this);
+			this.aClass165_Sub28_1 = new Class165_Sub28(arg0.g1(), this);
 		}
 	}
 
 	@OriginalMember(owner = "client!ale", name = "s", descriptor = "(Lclient!ald;)V")
-	void method14952(@OriginalArg(0) Class80_Sub36 arg0) {
-		if (arg0 == null || arg0.aByteArray61 == null) {
+	void method14952(@OriginalArg(0) Packet arg0) {
+		if (arg0 == null || arg0.data == null) {
 			this.method14940(true, true, 1641979236);
 		} else {
-			@Pc(15) int local15 = arg0.method23362(661895774);
+			@Pc(15) int local15 = arg0.g1();
 			if (local15 < 23) {
 				try {
 					this.method14951(arg0, local15, (byte) -60);
@@ -1255,93 +1255,93 @@ public final class Class80_Sub37 extends Class80 {
 				this.method14940(true, true, 1534833335);
 			} else {
 				if (local15 >= 29) {
-					this.aClass165_Sub35_1 = new Class165_Sub35(arg0.method23362(-1842375935), this);
+					this.aClass165_Sub35_1 = new Class165_Sub35(arg0.g1(), this);
 				}
-				this.aClass165_Sub43_2 = new Class165_Sub43(arg0.method23362(-372740693), this);
+				this.aClass165_Sub43_2 = new Class165_Sub43(arg0.g1(), this);
 				if (local15 >= 31) {
-					this.aClass165_Sub31_1 = new Class165_Sub31(arg0.method23362(-1932319243), this);
+					this.aClass165_Sub31_1 = new Class165_Sub31(arg0.g1(), this);
 				}
 				this.aClass165_Sub43_1 = new Class165_Sub43(this.aClass165_Sub43_2.method16849(1538334780), this);
-				this.aClass165_Sub47_1 = new Class165_Sub47(arg0.method23362(427571710), this);
-				this.aClass165_Sub19_1 = new Class165_Sub19(arg0.method23362(-1411031295), this);
-				this.aClass165_Sub11_1 = new Class165_Sub11(arg0.method23362(529251393), this);
+				this.aClass165_Sub47_1 = new Class165_Sub47(arg0.g1(), this);
+				this.aClass165_Sub19_1 = new Class165_Sub19(arg0.g1(), this);
+				this.aClass165_Sub11_1 = new Class165_Sub11(arg0.g1(), this);
 				if (local15 >= 27) {
-					this.aClass165_Sub39_1 = new Class165_Sub39(arg0.method23362(-1126548244), this);
+					this.aClass165_Sub39_1 = new Class165_Sub39(arg0.g1(), this);
 				}
-				this.aClass165_Sub7_1 = new Class165_Sub7(arg0.method23362(-173466709), this);
-				this.aClass165_Sub9_1 = new Class165_Sub9(arg0.method23362(-1154783963), this);
-				this.aClass165_Sub41_1 = new Class165_Sub41(arg0.method23362(-1113547042), this);
-				this.aClass165_Sub26_1 = new Class165_Sub26(arg0.method23362(929707646), this);
-				this.aClass165_Sub34_1 = new Class165_Sub34(arg0.method23362(-1177481023), this);
-				this.aClass165_Sub4_1 = new Class165_Sub4(arg0.method23362(-1363176732), this);
-				this.aClass165_Sub22_1 = new Class165_Sub22(arg0.method23362(-577234927), this);
+				this.aClass165_Sub7_1 = new Class165_Sub7(arg0.g1(), this);
+				this.aClass165_Sub9_1 = new Class165_Sub9(arg0.g1(), this);
+				this.aClass165_Sub41_1 = new Class165_Sub41(arg0.g1(), this);
+				this.aClass165_Sub26_1 = new Class165_Sub26(arg0.g1(), this);
+				this.aClass165_Sub34_1 = new Class165_Sub34(arg0.g1(), this);
+				this.aClass165_Sub4_1 = new Class165_Sub4(arg0.g1(), this);
+				this.aClass165_Sub22_1 = new Class165_Sub22(arg0.g1(), this);
 				if (local15 >= 33) {
-					this.aClass165_Sub15_1 = new Class165_Sub15(arg0.method23362(779045576), this);
+					this.aClass165_Sub15_1 = new Class165_Sub15(arg0.g1(), this);
 				}
 				if (local15 >= 34) {
-					arg0.method23362(-1184899742);
+					arg0.g1();
 				}
 				if (local15 >= 24) {
-					this.aClass165_Sub25_1 = new Class165_Sub25(arg0.method23362(-1076232944), this);
+					this.aClass165_Sub25_1 = new Class165_Sub25(arg0.g1(), this);
 				}
-				this.aClass165_Sub6_1 = new Class165_Sub6(arg0.method23362(-1123129483), this);
-				this.aClass165_Sub10_1 = new Class165_Sub10(arg0.method23362(-325268457), this);
+				this.aClass165_Sub6_1 = new Class165_Sub6(arg0.g1(), this);
+				this.aClass165_Sub10_1 = new Class165_Sub10(arg0.g1(), this);
 				this.aClass165_Sub10_2 = new Class165_Sub10(this.aClass165_Sub10_1.method16018(-397561177), this);
-				this.aClass165_Sub8_1 = new Class165_Sub8(arg0.method23362(412857442), this);
+				this.aClass165_Sub8_1 = new Class165_Sub8(arg0.g1(), this);
 				if (local15 >= 25) {
-					this.aClass165_Sub32_1 = new Class165_Sub32(arg0.method23362(-282559424), this);
+					this.aClass165_Sub32_1 = new Class165_Sub32(arg0.g1(), this);
 				}
-				this.aClass165_Sub17_1 = new Class165_Sub17(arg0.method23362(-291796912), this);
+				this.aClass165_Sub17_1 = new Class165_Sub17(arg0.g1(), this);
 				if (local15 <= 25) {
-					arg0.anInt3152 += 1034180571;
+					arg0.pos += 1034180571;
 				}
-				this.aClass165_Sub2_1 = new Class165_Sub2(arg0.method23362(711250209), this);
-				this.aClass165_Sub1_1 = new Class165_Sub1(arg0.method23362(-2087326793), this);
+				this.aClass165_Sub2_1 = new Class165_Sub2(arg0.g1(), this);
+				this.aClass165_Sub1_1 = new Class165_Sub1(arg0.g1(), this);
 				this.aClass165_Sub1_2 = new Class165_Sub1(this.aClass165_Sub1_1.method15834(1099571064), this);
-				arg0.method23362(427152191);
-				this.aClass165_Sub13_1 = new Class165_Sub13(arg0.method23362(828760857), this);
-				this.aClass165_Sub18_1 = new Class165_Sub18(arg0.method23362(-787417281), this);
+				arg0.g1();
+				this.aClass165_Sub13_1 = new Class165_Sub13(arg0.g1(), this);
+				this.aClass165_Sub18_1 = new Class165_Sub18(arg0.g1(), this);
 				if (local15 >= 35) {
-					this.aClass165_Sub3_1 = new Class165_Sub3(arg0.method23362(-239835591), this);
-					this.aClass165_Sub21_1 = new Class165_Sub21(arg0.method23362(223894226), this);
-					this.aClass165_Sub20_1 = new Class165_Sub20(arg0.method23362(-1694495060), this);
-					this.aClass165_Sub5_1 = new Class165_Sub5(arg0.method23362(-714654442), this);
-					this.aClass165_Sub23_1 = new Class165_Sub23(arg0.method23362(1114075167), this);
-					this.aClass165_Sub16_1 = new Class165_Sub16(arg0.method23177((byte) 13), this);
+					this.aClass165_Sub3_1 = new Class165_Sub3(arg0.g1(), this);
+					this.aClass165_Sub21_1 = new Class165_Sub21(arg0.g1(), this);
+					this.aClass165_Sub20_1 = new Class165_Sub20(arg0.g1(), this);
+					this.aClass165_Sub5_1 = new Class165_Sub5(arg0.g1(), this);
+					this.aClass165_Sub23_1 = new Class165_Sub23(arg0.g1(), this);
+					this.aClass165_Sub16_1 = new Class165_Sub16(arg0.g1b(), this);
 				}
 				if (local15 >= 36) {
-					this.aClass165_Sub33_1 = new Class165_Sub33(arg0.method23362(-914752036), this);
-					this.aClass165_Sub24_1 = new Class165_Sub24(arg0.method23362(-1400717321), this);
+					this.aClass165_Sub33_1 = new Class165_Sub33(arg0.g1(), this);
+					this.aClass165_Sub24_1 = new Class165_Sub24(arg0.g1(), this);
 				}
 				if (local15 >= 37) {
-					this.aClass165_Sub37_1 = new Class165_Sub37(arg0.method23178((byte) -31), this);
-					this.aClass165_Sub14_1 = new Class165_Sub14(arg0.method23178((byte) -37), this);
+					this.aClass165_Sub37_1 = new Class165_Sub37(arg0.g2(), this);
+					this.aClass165_Sub14_1 = new Class165_Sub14(arg0.g2(), this);
 				}
 				if (local15 >= 38) {
-					this.aClass165_Sub12_1 = new Class165_Sub12(arg0.method23178((byte) -94), this);
-					this.aClass165_Sub45_1 = new Class165_Sub45(arg0.method23178((byte) -96), this);
+					this.aClass165_Sub12_1 = new Class165_Sub12(arg0.g2(), this);
+					this.aClass165_Sub45_1 = new Class165_Sub45(arg0.g2(), this);
 				}
 				this.aClass165_Sub18_2 = new Class165_Sub18(this.aClass165_Sub18_1.method16183((short) 32767), this);
-				this.aClass165_Sub46_1 = new Class165_Sub46(arg0.method23362(-1340387593), this);
-				this.aClass165_Sub38_1 = new Class165_Sub38(arg0.method23362(-876606127), this);
-				this.aClass165_Sub30_1 = new Class165_Sub30(arg0.method23362(-208408107), this);
-				this.aClass165_Sub28_1 = new Class165_Sub28(arg0.method23362(651451952), this);
-				this.aClass165_Sub44_1 = new Class165_Sub44(arg0.method23362(977517210), this);
+				this.aClass165_Sub46_1 = new Class165_Sub46(arg0.g1(), this);
+				this.aClass165_Sub38_1 = new Class165_Sub38(arg0.g1(), this);
+				this.aClass165_Sub30_1 = new Class165_Sub30(arg0.g1(), this);
+				this.aClass165_Sub28_1 = new Class165_Sub28(arg0.g1(), this);
+				this.aClass165_Sub44_1 = new Class165_Sub44(arg0.g1(), this);
 				if (local15 >= 26) {
-					this.aClass165_Sub42_1 = new Class165_Sub42(arg0.method23362(66575064), this);
+					this.aClass165_Sub42_1 = new Class165_Sub42(arg0.g1(), this);
 				}
 				if (local15 >= 28) {
-					this.aClass165_Sub29_1 = new Class165_Sub29(arg0.method23362(609946628), this);
+					this.aClass165_Sub29_1 = new Class165_Sub29(arg0.g1(), this);
 				}
 				if (local15 >= 30) {
-					this.aClass165_Sub40_1 = new Class165_Sub40(arg0.method23362(-1675615021), this);
+					this.aClass165_Sub40_1 = new Class165_Sub40(arg0.g1(), this);
 				}
-				this.aClass165_Sub27_4 = new Class165_Sub27(arg0.method23362(347536265), this);
-				this.aClass165_Sub27_5 = new Class165_Sub27(arg0.method23362(-1369966202), this);
-				this.aClass165_Sub27_1 = new Class165_Sub27(arg0.method23362(169734644), this);
-				this.aClass165_Sub27_3 = new Class165_Sub27(arg0.method23362(-361334836), this);
-				this.aClass165_Sub27_2 = new Class165_Sub27(arg0.method23362(-594934441), this);
-				this.aClass165_Sub36_1 = new Class165_Sub36(arg0.method23362(-1398660952), this);
+				this.aClass165_Sub27_4 = new Class165_Sub27(arg0.g1(), this);
+				this.aClass165_Sub27_5 = new Class165_Sub27(arg0.g1(), this);
+				this.aClass165_Sub27_1 = new Class165_Sub27(arg0.g1(), this);
+				this.aClass165_Sub27_3 = new Class165_Sub27(arg0.g1(), this);
+				this.aClass165_Sub27_2 = new Class165_Sub27(arg0.g1(), this);
+				this.aClass165_Sub36_1 = new Class165_Sub36(arg0.g1(), this);
 				this.method14940(false, local15 < 32, 1912640420);
 			}
 		}
@@ -1349,62 +1349,62 @@ public final class Class80_Sub37 extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!ale", name = "p", descriptor = "()Lclient!ald;")
-	public Class80_Sub36 method14953() {
-		@Pc(4) Class80_Sub36 local4 = new Class80_Sub36(59);
-		local4.method23154(38, 1275868335);
-		local4.method23154(this.aClass165_Sub35_1.method16584(-330385476), 1275868335);
-		local4.method23154(this.aClass165_Sub43_2.method16849(1538334780), 1275868335);
-		local4.method23154(this.aClass165_Sub31_1.method16476((byte) -36), 1275868335);
-		local4.method23154(this.aClass165_Sub47_1.method16965((short) 7262), 1275868335);
-		local4.method23154(this.aClass165_Sub19_1.method16205(894768830), 1275868335);
-		local4.method23154(this.aClass165_Sub11_1.method16040((byte) 8), 1275868335);
-		local4.method23154(this.aClass165_Sub39_1.method16764(1068591130), 1275868335);
-		local4.method23154(this.aClass165_Sub7_1.method15953(964633145), 1275868335);
-		local4.method23154(this.aClass165_Sub9_1.method15996((byte) -108), 1275868335);
-		local4.method23154(this.aClass165_Sub41_1.method16802((byte) 64), 1275868335);
-		local4.method23154(this.aClass165_Sub26_1.method16355(553401691), 1275868335);
-		local4.method23154(this.aClass165_Sub34_1.method16561((byte) 72), 1275868335);
-		local4.method23154(this.aClass165_Sub4_1.method15896(1403637789), 1275868335);
-		local4.method23154(this.aClass165_Sub22_1.method16266(500659077), 1275868335);
-		local4.method23154(this.aClass165_Sub15_1.method16121(1643169324), 1275868335);
-		local4.method23154(0, 1275868335);
-		local4.method23154(this.aClass165_Sub25_1.method16332(-441029515), 1275868335);
-		local4.method23154(this.aClass165_Sub6_1.method15933(974307891), 1275868335);
-		local4.method23154(this.aClass165_Sub10_1.method16018(-2114087711), 1275868335);
-		local4.method23154(this.aClass165_Sub8_1.method15974(-650522889), 1275868335);
-		local4.method23154(this.aClass165_Sub32_1.method16523(1182191811), 1275868335);
-		local4.method23154(this.aClass165_Sub17_1.method16165((byte) -99), 1275868335);
-		local4.method23154(this.aClass165_Sub2_1.method15861(1423795933), 1275868335);
-		local4.method23154(this.aClass165_Sub1_1.method15834(-1401559169), 1275868335);
-		local4.method23154(0, 1275868335);
-		local4.method23154(this.aClass165_Sub13_1.method16080(-629515276), 1275868335);
-		local4.method23154(this.aClass165_Sub18_1.method16183((short) 32767), 1275868335);
-		local4.method23154(this.aClass165_Sub3_1.method15880(-1422929429), 1275868335);
-		local4.method23154(this.aClass165_Sub21_1.method16243(-1785111550), 1275868335);
-		local4.method23154(this.aClass165_Sub20_1.method16225(-597062245), 1275868335);
-		local4.method23154(this.aClass165_Sub5_1.method15912(-1698625772), 1275868335);
-		local4.method23154(this.aClass165_Sub23_1.method16292(1396066978), 1275868335);
-		local4.method23154(this.aClass165_Sub16_1.method16141(1438204057), 1275868335);
-		local4.method23154(this.aClass165_Sub33_1.method16543(1971326612), 1275868335);
-		local4.method23154(this.aClass165_Sub24_1.method16313(1570993963), 1275868335);
-		local4.method23155(this.aClass165_Sub37_1.method16682(33985), (byte) -13);
-		local4.method23155(this.aClass165_Sub14_1.method16104((byte) -49), (byte) -2);
-		local4.method23155(this.aClass165_Sub12_1.method16064((short) 18575), (byte) -113);
-		local4.method23155(this.aClass165_Sub45_1.method16892(1131596576), (byte) -121);
-		local4.method23154(this.aClass165_Sub46_1.method16910(1848615678), 1275868335);
-		local4.method23154(this.aClass165_Sub38_1.method16744(1512970143), 1275868335);
-		local4.method23154(this.aClass165_Sub30_1.method16458(-633457798), 1275868335);
-		local4.method23154(this.aClass165_Sub28_1.method16420(-844181777), 1275868335);
-		local4.method23154(this.aClass165_Sub44_1.method16875(885213989), 1275868335);
-		local4.method23154(this.aClass165_Sub42_1.method16835(2063543868), 1275868335);
-		local4.method23154(this.aClass165_Sub29_1.method16442(-1878420243), 1275868335);
-		local4.method23154(this.aClass165_Sub40_1.method16782(-1264594110), 1275868335);
-		local4.method23154(this.aClass165_Sub27_4.method16402((byte) 28), 1275868335);
-		local4.method23154(this.aClass165_Sub27_5.method16402((byte) -5), 1275868335);
-		local4.method23154(this.aClass165_Sub27_1.method16402((byte) -4), 1275868335);
-		local4.method23154(this.aClass165_Sub27_3.method16402((byte) 6), 1275868335);
-		local4.method23154(this.aClass165_Sub27_2.method16402((byte) -3), 1275868335);
-		local4.method23154(this.aClass165_Sub36_1.method16605((byte) 60), 1275868335);
+	public Packet method14953() {
+		@Pc(4) Packet local4 = new Packet(59);
+		local4.p1(38);
+		local4.p1(this.aClass165_Sub35_1.method16584(-330385476));
+		local4.p1(this.aClass165_Sub43_2.method16849(1538334780));
+		local4.p1(this.aClass165_Sub31_1.method16476((byte) -36));
+		local4.p1(this.aClass165_Sub47_1.method16965((short) 7262));
+		local4.p1(this.aClass165_Sub19_1.method16205(894768830));
+		local4.p1(this.aClass165_Sub11_1.method16040((byte) 8));
+		local4.p1(this.aClass165_Sub39_1.method16764(1068591130));
+		local4.p1(this.aClass165_Sub7_1.method15953(964633145));
+		local4.p1(this.aClass165_Sub9_1.method15996((byte) -108));
+		local4.p1(this.aClass165_Sub41_1.method16802((byte) 64));
+		local4.p1(this.aClass165_Sub26_1.method16355(553401691));
+		local4.p1(this.aClass165_Sub34_1.method16561((byte) 72));
+		local4.p1(this.aClass165_Sub4_1.method15896(1403637789));
+		local4.p1(this.aClass165_Sub22_1.method16266(500659077));
+		local4.p1(this.aClass165_Sub15_1.method16121(1643169324));
+		local4.p1(0);
+		local4.p1(this.aClass165_Sub25_1.method16332(-441029515));
+		local4.p1(this.aClass165_Sub6_1.method15933(974307891));
+		local4.p1(this.aClass165_Sub10_1.method16018(-2114087711));
+		local4.p1(this.aClass165_Sub8_1.method15974(-650522889));
+		local4.p1(this.aClass165_Sub32_1.method16523(1182191811));
+		local4.p1(this.aClass165_Sub17_1.method16165((byte) -99));
+		local4.p1(this.aClass165_Sub2_1.method15861(1423795933));
+		local4.p1(this.aClass165_Sub1_1.method15834(-1401559169));
+		local4.p1(0);
+		local4.p1(this.aClass165_Sub13_1.method16080(-629515276));
+		local4.p1(this.aClass165_Sub18_1.method16183((short) 32767));
+		local4.p1(this.aClass165_Sub3_1.method15880(-1422929429));
+		local4.p1(this.aClass165_Sub21_1.method16243(-1785111550));
+		local4.p1(this.aClass165_Sub20_1.method16225(-597062245));
+		local4.p1(this.aClass165_Sub5_1.method15912(-1698625772));
+		local4.p1(this.aClass165_Sub23_1.method16292(1396066978));
+		local4.p1(this.aClass165_Sub16_1.method16141(1438204057));
+		local4.p1(this.aClass165_Sub33_1.method16543(1971326612));
+		local4.p1(this.aClass165_Sub24_1.method16313(1570993963));
+		local4.p2(this.aClass165_Sub37_1.method16682(33985));
+		local4.p2(this.aClass165_Sub14_1.method16104((byte) -49));
+		local4.p2(this.aClass165_Sub12_1.method16064((short) 18575));
+		local4.p2(this.aClass165_Sub45_1.method16892(1131596576));
+		local4.p1(this.aClass165_Sub46_1.method16910(1848615678));
+		local4.p1(this.aClass165_Sub38_1.method16744(1512970143));
+		local4.p1(this.aClass165_Sub30_1.method16458(-633457798));
+		local4.p1(this.aClass165_Sub28_1.method16420(-844181777));
+		local4.p1(this.aClass165_Sub44_1.method16875(885213989));
+		local4.p1(this.aClass165_Sub42_1.method16835(2063543868));
+		local4.p1(this.aClass165_Sub29_1.method16442(-1878420243));
+		local4.p1(this.aClass165_Sub40_1.method16782(-1264594110));
+		local4.p1(this.aClass165_Sub27_4.method16402((byte) 28));
+		local4.p1(this.aClass165_Sub27_5.method16402((byte) -5));
+		local4.p1(this.aClass165_Sub27_1.method16402((byte) -4));
+		local4.p1(this.aClass165_Sub27_3.method16402((byte) 6));
+		local4.p1(this.aClass165_Sub27_2.method16402((byte) -3));
+		local4.p1(this.aClass165_Sub36_1.method16605((byte) 60));
 		return local4;
 	}
 

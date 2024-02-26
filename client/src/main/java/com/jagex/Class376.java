@@ -43,18 +43,18 @@ public final class Class376 implements Interface33 {
 	public final boolean aBoolean847;
 
 	@OriginalMember(owner = "client!kd", name = "e", descriptor = "(Lclient!ald;)Lclient!kd;")
-	public static Class376 method28456(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(3) int local3 = arg0.method23362(480837844);
-		@Pc(10) Class391 local10 = Class58_Sub1.method15727((byte) -97)[arg0.method23362(-1786792494)];
-		@Pc(17) Class383 local17 = Class646.method33047(-1097781758)[arg0.method23362(-221203284)];
-		@Pc(21) int local21 = arg0.method23179(-679558037);
-		@Pc(25) int local25 = arg0.method23179(1717918856);
-		@Pc(29) int local29 = arg0.method23178((byte) -34);
-		@Pc(33) int local33 = arg0.method23178((byte) -117);
-		@Pc(37) int local37 = arg0.method23182(1409590762);
-		@Pc(41) int local41 = arg0.method23182(186404564);
-		@Pc(45) int local45 = arg0.method23182(-627793081);
-		@Pc(54) boolean local54 = arg0.method23362(-1263597373) == 1;
+	public static Class376 method28456(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1();
+		@Pc(10) Class391 local10 = Class58_Sub1.method15727((byte) -97)[arg0.g1()];
+		@Pc(17) Class383 local17 = Class646.method33047(-1097781758)[arg0.g1()];
+		@Pc(21) int local21 = arg0.g2s();
+		@Pc(25) int local25 = arg0.g2s();
+		@Pc(29) int local29 = arg0.g2();
+		@Pc(33) int local33 = arg0.g2();
+		@Pc(37) int local37 = arg0.g4();
+		@Pc(41) int local41 = arg0.g4();
+		@Pc(45) int local45 = arg0.g4();
+		@Pc(54) boolean local54 = arg0.g1() == 1;
 		return new Class376(local3, local10, local17, local21, local25, local29, local33, local37, local41, local45, local54);
 	}
 

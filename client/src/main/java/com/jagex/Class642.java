@@ -99,11 +99,11 @@ public final class Class642 implements Interface68 {
 	}
 
 	@OriginalMember(owner = "client!wn", name = "u", descriptor = "(Lclient!ald;B)Lclient!kn;")
-	public static Class125 method32966(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
+	public static Class125 method32966(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 		@Pc(3) Class125 local3 = Class524.method30653(arg0, (byte) -29);
-		@Pc(7) int local7 = arg0.method23182(2074232368);
-		@Pc(11) int local11 = arg0.method23182(93382071);
-		@Pc(15) int local15 = arg0.method23210((byte) 82);
+		@Pc(7) int local7 = arg0.g4();
+		@Pc(11) int local11 = arg0.g4();
+		@Pc(15) int local15 = arg0.gSmart2or4null();
 		return new Class125_Sub1(local3.aClass391_8, local3.aClass383_8, local3.anInt2899 * 808275465, local3.anInt2901 * 1789354437, local3.anInt2900 * 199320851, local3.anInt2903 * 1087492339, local3.anInt2902 * -173381277, local3.anInt2904 * -176628393, local3.anInt2905 * -1330014629, local7, local11, local15);
 	}
 
@@ -206,7 +206,7 @@ public final class Class642 implements Interface68 {
 
 	@OriginalMember(owner = "client!wn", name = "j", descriptor = "(Lclient!ald;I)V")
 	@Override
-	public void method32975(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	public void method32975(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (this.aClass243_90 == null) {
 			return;
 		}
@@ -221,7 +221,7 @@ public final class Class642 implements Interface68 {
 			@Pc(28) List local28 = this.method32954(336223606);
 			if (local28 != null) {
 				local28.add(arg0);
-				this.anInt5642 += arg0.aByteArray61.length * 829546407;
+				this.anInt5642 += arg0.data.length * 829546407;
 				this.method32952(local28, this.anInt5642 * 2003884055, -2046853039);
 			}
 		}
@@ -229,11 +229,11 @@ public final class Class642 implements Interface68 {
 
 	@OriginalMember(owner = "client!wn", name = "a", descriptor = "(IB)Lclient!ald;")
 	@Override
-	public Class80_Sub36 method32976(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1) {
+	public Packet method32976(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1) {
 		if (this.aClass243_90 == null) {
 			return null;
 		}
-		@Pc(6) Class80_Sub36 local6 = null;
+		@Pc(6) Packet local6 = null;
 		if (this.anInterface70_1 != null) {
 			this.anInterface70_1.method26675(this, -1475227784);
 		}
@@ -241,7 +241,7 @@ public final class Class642 implements Interface68 {
 		synchronized (this.aClass243_90) {
 			@Pc(24) List local24 = this.method32954(336223606);
 			if (local24.size() > arg0) {
-				local6 = (Class80_Sub36) local24.get(arg0);
+				local6 = (Packet) local24.get(arg0);
 			}
 			return local6;
 		}
@@ -340,11 +340,11 @@ public final class Class642 implements Interface68 {
 
 	@OriginalMember(owner = "client!wn", name = "aa", descriptor = "(I)Lclient!ald;")
 	@Override
-	public Class80_Sub36 method33005(@OriginalArg(0) int arg0) {
+	public Packet method33005(@OriginalArg(0) int arg0) {
 		if (this.aClass243_90 == null) {
 			return null;
 		}
-		@Pc(6) Class80_Sub36 local6 = null;
+		@Pc(6) Packet local6 = null;
 		if (this.anInterface70_1 != null) {
 			this.anInterface70_1.method26675(this, -1904204740);
 		}
@@ -352,7 +352,7 @@ public final class Class642 implements Interface68 {
 		synchronized (this.aClass243_90) {
 			@Pc(24) List local24 = this.method32954(336223606);
 			if (local24.size() > arg0) {
-				local6 = (Class80_Sub36) local24.get(arg0);
+				local6 = (Packet) local24.get(arg0);
 			}
 			return local6;
 		}
@@ -435,11 +435,11 @@ public final class Class642 implements Interface68 {
 
 	@OriginalMember(owner = "client!wn", name = "an", descriptor = "(I)Lclient!ald;")
 	@Override
-	public Class80_Sub36 method33014(@OriginalArg(0) int arg0) {
+	public Packet method33014(@OriginalArg(0) int arg0) {
 		if (this.aClass243_90 == null) {
 			return null;
 		}
-		@Pc(6) Class80_Sub36 local6 = null;
+		@Pc(6) Packet local6 = null;
 		if (this.anInterface70_1 != null) {
 			this.anInterface70_1.method26675(this, -432861109);
 		}
@@ -447,7 +447,7 @@ public final class Class642 implements Interface68 {
 		synchronized (this.aClass243_90) {
 			@Pc(24) List local24 = this.method32954(336223606);
 			if (local24.size() > arg0) {
-				local6 = (Class80_Sub36) local24.get(arg0);
+				local6 = (Packet) local24.get(arg0);
 			}
 			return local6;
 		}
@@ -530,7 +530,7 @@ public final class Class642 implements Interface68 {
 
 	@OriginalMember(owner = "client!wn", name = "av", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method33003(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method33003(@OriginalArg(0) Packet arg0) {
 		if (this.aClass243_90 == null) {
 			return;
 		}
@@ -545,7 +545,7 @@ public final class Class642 implements Interface68 {
 			@Pc(28) List local28 = this.method32954(336223606);
 			if (local28 != null) {
 				local28.add(arg0);
-				this.anInt5642 += arg0.aByteArray61.length * 829546407;
+				this.anInt5642 += arg0.data.length * 829546407;
 				this.method32952(local28, this.anInt5642 * 2003884055, -2023114604);
 			}
 		}

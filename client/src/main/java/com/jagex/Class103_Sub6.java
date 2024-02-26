@@ -26,10 +26,10 @@ public final class Class103_Sub6 extends Class103 {
 	}
 
 	@OriginalMember(owner = "client!agb", name = "<init>", descriptor = "(Lclient!ald;)V")
-	Class103_Sub6(@OriginalArg(0) Class80_Sub36 arg0) {
+	Class103_Sub6(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.aString27 = arg0.method23376((short) 1758);
-		this.anInt924 = arg0.method23178((byte) -74) * 2041257597;
+		this.aString27 = arg0.gjstr();
+		this.anInt924 = arg0.g2() * 2041257597;
 	}
 
 	@OriginalMember(owner = "client!agb", name = "f", descriptor = "(I)V")

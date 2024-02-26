@@ -31,10 +31,10 @@ public final class Class266 {
 	final int anInt3916;
 
 	@OriginalMember(owner = "client!fj", name = "u", descriptor = "(Lclient!ald;B)V")
-	static void method26655(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
+	static void method26655(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 		for (@Pc(1) int local1 = 0; local1 < Class635.anInt5597 * 1584731201; local1++) {
-			@Pc(10) int local10 = arg0.method23195(2043874248);
-			@Pc(14) int local14 = arg0.method23178((byte) -35);
+			@Pc(10) int local10 = arg0.gSmart1or2();
+			@Pc(14) int local14 = arg0.g2();
 			if (local14 == 65535) {
 				local14 = -1;
 			}

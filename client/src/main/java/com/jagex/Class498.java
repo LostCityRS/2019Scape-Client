@@ -70,15 +70,15 @@ public final class Class498 implements Interface6 {
 		if (local18 == null) {
 			return new Class587(0);
 		}
-		@Pc(31) Class80_Sub36 local31 = new Class80_Sub36(local18);
-		@Pc(35) int local35 = local31.method23178((byte) -76);
+		@Pc(31) Packet local31 = new Packet(local18);
+		@Pc(35) int local35 = local31.g2();
 		@Pc(40) Class587 local40 = new Class587(local35);
 		@Pc(42) int local42 = 0;
 		while (true) {
 			while (local42 < local40.anInt5303 * -70603505) {
-				@Pc(52) int local52 = local31.method23182(-1711195033);
-				@Pc(56) int local56 = local31.method23178((byte) -26);
-				@Pc(60) int local60 = local31.method23362(321764269);
+				@Pc(52) int local52 = local31.g4();
+				@Pc(56) int local56 = local31.g2();
+				@Pc(60) int local60 = local31.g1();
 				if (!arg2 && local60 == 1) {
 					local40.anInt5303 -= 1039049199;
 				} else {

@@ -103,7 +103,7 @@ public abstract class Class162 {
 	abstract int method15778(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!xt", name = "g", descriptor = "(Lclient!ald;Lclient!akg;B)V")
-	abstract void method15779(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class80_Sub17 arg1, @OriginalArg(2) byte arg2);
+	abstract void method15779(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class80_Sub17 arg1, @OriginalArg(2) byte arg2);
 
 	@OriginalMember(owner = "client!xt", name = "j", descriptor = "()V")
 	abstract void method15780();
@@ -115,10 +115,10 @@ public abstract class Class162 {
 	abstract Class80_Sub31 method15782(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!xt", name = "q", descriptor = "(Lclient!ald;Lclient!akg;)V")
-	abstract void method15783(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class80_Sub17 arg1);
+	abstract void method15783(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class80_Sub17 arg1);
 
 	@OriginalMember(owner = "client!xt", name = "r", descriptor = "(Lclient!ald;Lclient!akg;)V")
-	abstract void method15784(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class80_Sub17 arg1);
+	abstract void method15784(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class80_Sub17 arg1);
 
 	@OriginalMember(owner = "client!xt", name = "i", descriptor = "(I)V")
 	abstract void method15785(@OriginalArg(0) int arg0);
@@ -127,7 +127,7 @@ public abstract class Class162 {
 	abstract int method15786();
 
 	@OriginalMember(owner = "client!xt", name = "w", descriptor = "(Lclient!ald;Lclient!akg;)V")
-	abstract void method15787(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class80_Sub17 arg1);
+	abstract void method15787(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class80_Sub17 arg1);
 
 	@OriginalMember(owner = "client!xt", name = "t", descriptor = "(I)V")
 	final void method15788(@OriginalArg(0) int arg0) {
@@ -143,7 +143,7 @@ public abstract class Class162 {
 						break label100;
 					}
 					@Pc(22) Class80_Sub17 local22 = (Class80_Sub17) local15.next();
-					if (local5 != null && local5.aClass80_Sub36_Sub1_2.anInt3152 * -1380987821 - local7 >= 252 - (this.method15778(-1976656633) + 6)) {
+					if (local5 != null && local5.aPacketBit_2.pos * -1380987821 - local7 >= 252 - (this.method15778(-1976656633) + 6)) {
 						break label100;
 					}
 					local22.method24395((byte) 38);
@@ -164,9 +164,9 @@ public abstract class Class162 {
 					} else {
 						if (local5 == null) {
 							local5 = this.method15782(-2124587702);
-							local5.aClass80_Sub36_Sub1_2.method23154(0, 1275868335);
-							local7 = local5.aClass80_Sub36_Sub1_2.anInt3152 * -1380987821;
-							local5.aClass80_Sub36_Sub1_2.anInt3152 += 2068361142;
+							local5.aPacketBit_2.p1(0);
+							local7 = local5.aPacketBit_2.pos * -1380987821;
+							local5.aPacketBit_2.pos += 2068361142;
 							local9 = 0;
 							local11 = 0;
 						}
@@ -188,41 +188,41 @@ public abstract class Class162 {
 						if (local151 < 8 && local132 >= -32 && local132 <= 31 && local139 >= -32 && local139 <= 31) {
 							local132 += 32;
 							local139 += 32;
-							local5.aClass80_Sub36_Sub1_2.method23155((local132 << 6) + (local151 << 12) + local139, (byte) -62);
+							local5.aPacketBit_2.p2((local132 << 6) + (local151 << 12) + local139);
 						} else if (local151 < 32 && local132 >= -128 && local132 <= 127 && local139 >= -128 && local139 <= 127) {
 							local132 += 128;
 							local139 += 128;
-							local5.aClass80_Sub36_Sub1_2.method23154(local151 + 128, 1275868335);
-							local5.aClass80_Sub36_Sub1_2.method23155(local139 + (local132 << 8), (byte) -72);
+							local5.aPacketBit_2.p1(local151 + 128);
+							local5.aPacketBit_2.p2(local139 + (local132 << 8));
 						} else if (local151 < 32) {
-							local5.aClass80_Sub36_Sub1_2.method23154(local151 + 192, 1275868335);
+							local5.aPacketBit_2.p1(local151 + 192);
 							if (local63 == -1 || local48 == -1) {
-								local5.aClass80_Sub36_Sub1_2.method23345(Integer.MIN_VALUE, (byte) 8);
+								local5.aPacketBit_2.p4(Integer.MIN_VALUE);
 							} else {
-								local5.aClass80_Sub36_Sub1_2.method23345(local63 | local48 << 16, (byte) 13);
+								local5.aPacketBit_2.p4(local63 | local48 << 16);
 							}
 						} else {
-							local5.aClass80_Sub36_Sub1_2.method23155((local151 & 0x1FFF) + 57344, (byte) -85);
+							local5.aPacketBit_2.p2((local151 & 0x1FFF) + 57344);
 							if (local63 == -1 || local48 == -1) {
-								local5.aClass80_Sub36_Sub1_2.method23345(Integer.MIN_VALUE, (byte) 68);
+								local5.aPacketBit_2.p4(Integer.MIN_VALUE);
 							} else {
-								local5.aClass80_Sub36_Sub1_2.method23345(local63 | local48 << 16, (byte) 61);
+								local5.aPacketBit_2.p4(local63 | local48 << 16);
 							}
 						}
 						local11++;
-						this.method15779(local5.aClass80_Sub36_Sub1_2, local22, (byte) -74);
+						this.method15779(local5.aPacketBit_2, local22, (byte) -74);
 						this.aLong153 = local22.method23456(-1278816192) * 9087722120326304853L;
 						local22.method23453(-454396966);
 					}
 				}
 			}
 			if (local5 != null) {
-				local5.aClass80_Sub36_Sub1_2.method23171(local5.aClass80_Sub36_Sub1_2.anInt3152 * -1380987821 - local7, (byte) 39);
-				@Pc(347) int local347 = local5.aClass80_Sub36_Sub1_2.anInt3152 * -1380987821;
-				local5.aClass80_Sub36_Sub1_2.anInt3152 = local7 * 1034180571;
-				local5.aClass80_Sub36_Sub1_2.method23154(local9 / local11, 1275868335);
-				local5.aClass80_Sub36_Sub1_2.method23154(local9 % local11, 1275868335);
-				local5.aClass80_Sub36_Sub1_2.anInt3152 = local347 * 1034180571;
+				local5.aPacketBit_2.p1check(local5.aPacketBit_2.pos * -1380987821 - local7);
+				@Pc(347) int local347 = local5.aPacketBit_2.pos * -1380987821;
+				local5.aPacketBit_2.pos = local7 * 1034180571;
+				local5.aPacketBit_2.p1(local9 / local11);
+				local5.aPacketBit_2.p1(local9 % local11);
+				local5.aPacketBit_2.pos = local347 * 1034180571;
 				client.aClass75_1.method1325(local5, (byte) -102);
 			}
 		}

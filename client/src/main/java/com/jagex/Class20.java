@@ -75,10 +75,10 @@ public abstract class Class20 {
 	public abstract Class463 method23089();
 
 	@OriginalMember(owner = "client!aas", name = "q", descriptor = "(Lclient!ald;)V")
-	public abstract void method23090(@OriginalArg(0) Class80_Sub36 arg0);
+	public abstract void method23090(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!aas", name = "h", descriptor = "(Lclient!ald;)V")
-	public abstract void method23091(@OriginalArg(0) Class80_Sub36 arg0);
+	public abstract void method23091(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!aas", name = "s", descriptor = "()Z")
 	public abstract boolean method23092();
@@ -87,7 +87,7 @@ public abstract class Class20 {
 	public abstract void method23093(@OriginalArg(0) Class363 arg0, @OriginalArg(1) Class471 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) float arg4, @OriginalArg(5) int arg5);
 
 	@OriginalMember(owner = "client!aas", name = "g", descriptor = "(Lclient!ald;I)V")
-	public abstract void method23094(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1);
+	public abstract void method23094(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1);
 
 	@OriginalMember(owner = "client!aas", name = "v", descriptor = "(Lclient!jl;Lclient!ov;IIF)V")
 	public abstract void method23095(@OriginalArg(0) Class363 arg0, @OriginalArg(1) Class471 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) float arg4);

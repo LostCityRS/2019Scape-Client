@@ -56,20 +56,20 @@ public final class Class90 {
 	@OriginalMember(owner = "client!adw", name = "<init>", descriptor = "(Lclient!zy;Lclient!zv;Lclient!pf;)V")
 	public Class90(@OriginalArg(0) Class722 arg0, @OriginalArg(1) Class719 arg1, @OriginalArg(2) Class480 arg2) {
 		this.aClass480_14 = arg2;
-		@Pc(14) Class80_Sub36 local14 = new Class80_Sub36(this.aClass480_14.method29918(0, 0, 1896589581));
-		@Pc(29) int local29 = local14.aByteArray61 == null || local14.aByteArray61.length < 1 ? -1 : local14.method23362(61923740);
+		@Pc(14) Packet local14 = new Packet(this.aClass480_14.method29918(0, 0, 1896589581));
+		@Pc(29) int local29 = local14.data == null || local14.data.length < 1 ? -1 : local14.g1();
 		if (local29 < 4) {
 			this.aClass86Array1 = new Class86[0];
 			this.anInt322 = 1269897521;
 		} else {
-			@Pc(44) int local44 = local14.method23362(304533459);
+			@Pc(44) int local44 = local14.g1();
 			@Pc(47) Class392[] local47 = Class348.method27985(194076605);
 			@Pc(49) boolean local49 = true;
 			@Pc(58) int local58;
 			@Pc(66) int local66;
 			if (local44 == local47.length) {
 				for (local58 = 0; local58 < local47.length; local58++) {
-					local66 = local14.method23362(201887849);
+					local66 = local14.g1();
 					if (local66 != local47[local58].anInt4562 * -39715273) {
 						local49 = false;
 						break;
@@ -79,14 +79,14 @@ public final class Class90 {
 				local49 = false;
 			}
 			if (local49) {
-				local58 = local14.method23362(-92047350);
-				local66 = local14.method23362(-481602434);
+				local58 = local14.g1();
+				local66 = local14.g1();
 				@Pc(107) int local107;
 				@Pc(103) int local103;
 				if (local29 > 2) {
-					this.anInt322 = local14.method23179(1842633947) * -1269897521;
-					local103 = local14.method23180(1710327153);
-					local107 = local14.method23178((byte) -109);
+					this.anInt322 = local14.g2s() * -1269897521;
+					local103 = local14.g3();
+					local107 = local14.g2();
 				} else {
 					this.anInt322 = 1269897521;
 					local103 = 0;
@@ -95,9 +95,9 @@ public final class Class90 {
 				this.aClass86Array1 = new Class86[local66 + 1];
 				@Pc(123) int local123;
 				for (local123 = 0; local123 < local58; local123++) {
-					@Pc(130) int local130 = local14.method23362(-271575751);
-					@Pc(139) boolean local139 = local14.method23362(-1490501773) == 1;
-					@Pc(143) int local143 = local14.method23178((byte) -121);
+					@Pc(130) int local130 = local14.g1();
+					@Pc(139) boolean local139 = local14.g1() == 1;
+					@Pc(143) int local143 = local14.g2();
 					@Pc(152) Class92[] local152;
 					@Pc(154) int local154;
 					@Pc(161) int local161;
@@ -106,9 +106,9 @@ public final class Class90 {
 					if (-1087741905 * this.anInt322 == -1) {
 						local152 = new Class92[local143];
 						for (local154 = 0; local154 < local143; local154++) {
-							local161 = local14.method23178((byte) -105);
-							local165 = local14.method23180(1710327153);
-							local169 = local14.method23178((byte) -53);
+							local161 = local14.g2();
+							local165 = local14.g3();
+							local169 = local14.g2();
 							local152[local154] = new Class92(local161, local165, local169);
 						}
 						this.aClass86Array1[local130] = new Class86(local139, local152);
@@ -116,9 +116,9 @@ public final class Class90 {
 						local152 = new Class92[local143 + 1];
 						local152[0] = new Class92(this.anInt322 * -1087741905, local103, local107);
 						for (local154 = 0; local154 < local143; local154++) {
-							local161 = local14.method23178((byte) -41);
-							local165 = local14.method23180(1710327153);
-							local169 = local14.method23178((byte) -40);
+							local161 = local14.g2();
+							local165 = local14.g3();
+							local169 = local14.g2();
 							local152[local154 + 1] = new Class92(local161, local165, local169);
 						}
 					}
@@ -172,7 +172,7 @@ public final class Class90 {
 	public Class78 method1857(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		@Pc(6) byte[] local6 = this.aClass480_14.method29918(arg0, 0, 1896589581);
 		@Pc(10) Class78 local10 = new Class78();
-		local10.method1371(new Class80_Sub36(local6), -841090123);
+		local10.method1371(new Packet(local6), -841090123);
 		return local10;
 	}
 
@@ -205,7 +205,7 @@ public final class Class90 {
 	public Class78 method1861(@OriginalArg(0) int arg0) {
 		@Pc(6) byte[] local6 = this.aClass480_14.method29918(arg0, 0, 1896589581);
 		@Pc(10) Class78 local10 = new Class78();
-		local10.method1371(new Class80_Sub36(local6), -1764740085);
+		local10.method1371(new Packet(local6), -1764740085);
 		return local10;
 	}
 
@@ -213,7 +213,7 @@ public final class Class90 {
 	public Class78 method1862(@OriginalArg(0) int arg0) {
 		@Pc(6) byte[] local6 = this.aClass480_14.method29918(arg0, 0, 1896589581);
 		@Pc(10) Class78 local10 = new Class78();
-		local10.method1371(new Class80_Sub36(local6), 738396878);
+		local10.method1371(new Packet(local6), 738396878);
 		return local10;
 	}
 

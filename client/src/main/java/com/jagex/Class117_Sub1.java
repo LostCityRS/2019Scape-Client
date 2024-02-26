@@ -9,18 +9,18 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class117_Sub1 extends Class117 {
 
 	@OriginalMember(owner = "client!agz", name = "t", descriptor = "(Lclient!ald;I)Lclient!kd;")
-	public static Class376 method8821(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) int local3 = arg0.method23362(958575473);
-		@Pc(10) Class391 local10 = Class58_Sub1.method15727((byte) -20)[arg0.method23362(-1099961481)];
-		@Pc(17) Class383 local17 = Class646.method33047(-1097781758)[arg0.method23362(-1045214140)];
-		@Pc(21) int local21 = arg0.method23179(1629707234);
-		@Pc(25) int local25 = arg0.method23179(699324367);
-		@Pc(29) int local29 = arg0.method23178((byte) -51);
-		@Pc(33) int local33 = arg0.method23178((byte) -64);
-		@Pc(37) int local37 = arg0.method23182(-695676364);
-		@Pc(41) int local41 = arg0.method23182(-416733943);
-		@Pc(45) int local45 = arg0.method23182(-1760699419);
-		@Pc(54) boolean local54 = arg0.method23362(817443862) == 1;
+	public static Class376 method8821(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) int local3 = arg0.g1();
+		@Pc(10) Class391 local10 = Class58_Sub1.method15727((byte) -20)[arg0.g1()];
+		@Pc(17) Class383 local17 = Class646.method33047(-1097781758)[arg0.g1()];
+		@Pc(21) int local21 = arg0.g2s();
+		@Pc(25) int local25 = arg0.g2s();
+		@Pc(29) int local29 = arg0.g2();
+		@Pc(33) int local33 = arg0.g2();
+		@Pc(37) int local37 = arg0.g4();
+		@Pc(41) int local41 = arg0.g4();
+		@Pc(45) int local45 = arg0.g4();
+		@Pc(54) boolean local54 = arg0.g1() == 1;
 		return new Class376(local3, local10, local17, local21, local25, local29, local33, local37, local41, local45, local54);
 	}
 

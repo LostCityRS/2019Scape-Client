@@ -110,7 +110,7 @@ public final class Class604 {
 	}
 
 	@OriginalMember(owner = "client!uy", name = "e", descriptor = "(Lclient!ald;I)Ljava/lang/String;")
-	public static String method32147(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	public static String method32147(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		return Class445.method29238(arg0, 32767, (byte) -5);
 	}
 

@@ -15,7 +15,7 @@ public final class Class542 {
 	Class536 aClass536_11;
 
 	@OriginalMember(owner = "client!rz", name = "f", descriptor = "Lclient!asa;")
-	Class80_Sub36_Sub1 aClass80_Sub36_Sub1_3;
+	PacketBit aPacketBit_3;
 
 	@OriginalMember(owner = "client!rz", name = "nn", descriptor = "(Lclient!hx;Lclient!he;Lclient!yp;I)V")
 	static void method31171(@OriginalArg(0) Class327 arg0, @OriginalArg(1) Class310 arg1, @OriginalArg(2) Class690 arg2, @OriginalArg(3) int arg3) {
@@ -49,8 +49,8 @@ public final class Class542 {
 	}
 
 	@OriginalMember(owner = "client!rz", name = "<init>", descriptor = "(Lclient!rr;Lclient!asa;)V")
-	public Class542(@OriginalArg(0) Class536 arg0, @OriginalArg(1) Class80_Sub36_Sub1 arg1) {
+	public Class542(@OriginalArg(0) Class536 arg0, @OriginalArg(1) PacketBit arg1) {
 		this.aClass536_11 = arg0;
-		this.aClass80_Sub36_Sub1_3 = arg1;
+		this.aPacketBit_3 = arg1;
 	}
 }

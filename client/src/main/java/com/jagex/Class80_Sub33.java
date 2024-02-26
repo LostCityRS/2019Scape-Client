@@ -162,7 +162,7 @@ public final class Class80_Sub33 extends Class80 implements Interface7 {
 	}
 
 	@OriginalMember(owner = "client!akx", name = "<init>", descriptor = "(Lclient!ald;)V")
-	public Class80_Sub33(@OriginalArg(0) Class80_Sub36 arg0) {
+	public Class80_Sub33(@OriginalArg(0) Packet arg0) {
 		this.method14462(arg0, (byte) -109);
 	}
 
@@ -262,11 +262,11 @@ public final class Class80_Sub33 extends Class80 implements Interface7 {
 	}
 
 	@OriginalMember(owner = "client!akx", name = "v", descriptor = "(Lclient!ald;I)V")
-	void method14472(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		arg0.method23154(this.anInt1652 * 1085842725, 1275868335);
-		arg0.method23345(this.anInt1655 * -1125961095, (byte) 46);
-		arg0.method23345(this.anInt1654 * 2058467157, (byte) 25);
-		arg0.method23345(this.anInt1653 * 1944136251, (byte) 56);
+	void method14472(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		arg0.p1(this.anInt1652 * 1085842725);
+		arg0.p4(this.anInt1655 * -1125961095);
+		arg0.p4(this.anInt1654 * 2058467157);
+		arg0.p4(this.anInt1653 * 1944136251);
 	}
 
 	@OriginalMember(owner = "client!akx", name = "t", descriptor = "(I)I")
@@ -283,16 +283,16 @@ public final class Class80_Sub33 extends Class80 implements Interface7 {
 
 	@OriginalMember(owner = "client!akx", name = "e", descriptor = "(Lclient!ald;B)V")
 	@Override
-	public void method14462(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
-		this.anInt1652 = arg0.method23362(-561858187) * 2079387309;
-		this.anInt1655 = arg0.method23182(329404186) * -1348954167;
-		this.anInt1654 = arg0.method23182(-1855563781) * -489386499;
-		this.anInt1653 = arg0.method23182(-1333704655) * -472506637;
+	public void method14462(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
+		this.anInt1652 = arg0.g1() * 2079387309;
+		this.anInt1655 = arg0.g4() * -1348954167;
+		this.anInt1654 = arg0.g4() * -489386499;
+		this.anInt1653 = arg0.g4() * -472506637;
 	}
 
 	@OriginalMember(owner = "client!akx", name = "f", descriptor = "(Lclient!ald;B)V")
 	@Override
-	public void method14459(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
+	public void method14459(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 		this.method14472(arg0, 905037829);
 	}
 
@@ -319,7 +319,7 @@ public final class Class80_Sub33 extends Class80 implements Interface7 {
 
 	@OriginalMember(owner = "client!akx", name = "l", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method14458(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method14458(@OriginalArg(0) Packet arg0) {
 		this.method14472(arg0, -274254198);
 	}
 
@@ -355,11 +355,11 @@ public final class Class80_Sub33 extends Class80 implements Interface7 {
 	}
 
 	@OriginalMember(owner = "client!akx", name = "ak", descriptor = "(Lclient!ald;)V")
-	void method14489(@OriginalArg(0) Class80_Sub36 arg0) {
-		arg0.method23154(this.anInt1652 * 1085842725, 1275868335);
-		arg0.method23345(this.anInt1655 * -1125961095, (byte) 34);
-		arg0.method23345(this.anInt1654 * 2058467157, (byte) 84);
-		arg0.method23345(this.anInt1653 * 1944136251, (byte) 18);
+	void method14489(@OriginalArg(0) Packet arg0) {
+		arg0.p1(this.anInt1652 * 1085842725);
+		arg0.p4(this.anInt1655 * -1125961095);
+		arg0.p4(this.anInt1654 * 2058467157);
+		arg0.p4(this.anInt1653 * 1944136251);
 	}
 
 	@OriginalMember(owner = "client!akx", name = "toString", descriptor = "()Ljava/lang/String;")
@@ -369,42 +369,42 @@ public final class Class80_Sub33 extends Class80 implements Interface7 {
 	}
 
 	@OriginalMember(owner = "client!akx", name = "ad", descriptor = "(Lclient!ald;)V")
-	void method14490(@OriginalArg(0) Class80_Sub36 arg0) {
-		arg0.method23154(this.anInt1652 * 1085842725, 1275868335);
-		arg0.method23345(this.anInt1655 * -1125961095, (byte) 111);
-		arg0.method23345(this.anInt1654 * 2058467157, (byte) 47);
-		arg0.method23345(this.anInt1653 * 1944136251, (byte) 42);
+	void method14490(@OriginalArg(0) Packet arg0) {
+		arg0.p1(this.anInt1652 * 1085842725);
+		arg0.p4(this.anInt1655 * -1125961095);
+		arg0.p4(this.anInt1654 * 2058467157);
+		arg0.p4(this.anInt1653 * 1944136251);
 	}
 
 	@OriginalMember(owner = "client!akx", name = "at", descriptor = "(Lclient!ald;)V")
-	void method14493(@OriginalArg(0) Class80_Sub36 arg0) {
-		arg0.method23154(this.anInt1652 * 1085842725, 1275868335);
-		arg0.method23345(this.anInt1655 * -1125961095, (byte) 116);
-		arg0.method23345(this.anInt1654 * 2058467157, (byte) 58);
-		arg0.method23345(this.anInt1653 * 1944136251, (byte) 93);
+	void method14493(@OriginalArg(0) Packet arg0) {
+		arg0.p1(this.anInt1652 * 1085842725);
+		arg0.p4(this.anInt1655 * -1125961095);
+		arg0.p4(this.anInt1654 * 2058467157);
+		arg0.p4(this.anInt1653 * 1944136251);
 	}
 
 	@OriginalMember(owner = "client!akx", name = "g", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method14460(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method14460(@OriginalArg(0) Packet arg0) {
 		this.method14472(arg0, 443976308);
 	}
 
 	@OriginalMember(owner = "client!akx", name = "i", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method14464(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.anInt1652 = arg0.method23362(395899073) * 2079387309;
-		this.anInt1655 = arg0.method23182(-1764075075) * -1348954167;
-		this.anInt1654 = arg0.method23182(985217497) * -489386499;
-		this.anInt1653 = arg0.method23182(1881332763) * -472506637;
+	public void method14464(@OriginalArg(0) Packet arg0) {
+		this.anInt1652 = arg0.g1() * 2079387309;
+		this.anInt1655 = arg0.g4() * -1348954167;
+		this.anInt1654 = arg0.g4() * -489386499;
+		this.anInt1653 = arg0.g4() * -472506637;
 	}
 
 	@OriginalMember(owner = "client!akx", name = "m", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method14465(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.anInt1652 = arg0.method23362(-1772331567) * 2079387309;
-		this.anInt1655 = arg0.method23182(2128336059) * -1348954167;
-		this.anInt1654 = arg0.method23182(-216669688) * -489386499;
-		this.anInt1653 = arg0.method23182(1907087915) * -472506637;
+	public void method14465(@OriginalArg(0) Packet arg0) {
+		this.anInt1652 = arg0.g1() * 2079387309;
+		this.anInt1655 = arg0.g4() * -1348954167;
+		this.anInt1654 = arg0.g4() * -489386499;
+		this.anInt1653 = arg0.g4() * -472506637;
 	}
 }

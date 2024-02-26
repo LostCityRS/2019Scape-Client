@@ -85,20 +85,20 @@ public final class Class81 implements Interface11, Interface5 {
 	}
 
 	@OriginalMember(owner = "client!adi", name = "m", descriptor = "(Lclient!ald;I)V")
-	void method1547(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method1547(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 != 1) {
 			return;
 		}
-		@Pc(6) int local6 = arg0.method23362(-1765580807);
+		@Pc(6) int local6 = arg0.g1();
 		if (this.aClass521ArrayArray2 == null) {
 			this.aClass521ArrayArray2 = new Class521[local6][];
 		}
-		for (@Pc(18) int local18 = arg0.method23362(892460664); local18 != 255; local18 = arg0.method23362(-1719920637)) {
+		for (@Pc(18) int local18 = arg0.g1(); local18 != 255; local18 = arg0.g1()) {
 			@Pc(25) int local25 = local18 & 0x7F;
 			@Pc(33) boolean local33 = (local18 & 0x80) != 0;
-			@Pc(38) Class521[] local38 = new Class521[arg0.method23362(-2023041115)];
+			@Pc(38) Class521[] local38 = new Class521[arg0.g1()];
 			for (@Pc(40) int local40 = 0; local40 < local38.length; local40++) {
-				local38[local40] = (Class521) Class80_Sub39.method15030(Class521.method30628(1915096332), arg0.method23195(2093322626), -2099186978);
+				local38[local40] = (Class521) Class80_Sub39.method15030(Class521.method30628(1915096332), arg0.gSmart1or2(), -2099186978);
 			}
 			this.aClass521ArrayArray2[local25] = local38;
 			if (local33) {
@@ -112,9 +112,9 @@ public final class Class81 implements Interface11, Interface5 {
 
 	@OriginalMember(owner = "client!adi", name = "t", descriptor = "(Lclient!ald;I)V")
 	@Override
-	public void method37006(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	public void method37006(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(645096567);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -139,9 +139,9 @@ public final class Class81 implements Interface11, Interface5 {
 
 	@OriginalMember(owner = "client!adi", name = "u", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method37009(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method37009(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-1224443726);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -170,20 +170,20 @@ public final class Class81 implements Interface11, Interface5 {
 	}
 
 	@OriginalMember(owner = "client!adi", name = "x", descriptor = "(Lclient!ald;I)V")
-	void method1548(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method1548(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 != 1) {
 			return;
 		}
-		@Pc(6) int local6 = arg0.method23362(-284096105);
+		@Pc(6) int local6 = arg0.g1();
 		if (this.aClass521ArrayArray2 == null) {
 			this.aClass521ArrayArray2 = new Class521[local6][];
 		}
-		for (@Pc(18) int local18 = arg0.method23362(398061983); local18 != 255; local18 = arg0.method23362(-142090642)) {
+		for (@Pc(18) int local18 = arg0.g1(); local18 != 255; local18 = arg0.g1()) {
 			@Pc(25) int local25 = local18 & 0x7F;
 			@Pc(33) boolean local33 = (local18 & 0x80) != 0;
-			@Pc(38) Class521[] local38 = new Class521[arg0.method23362(-855127752)];
+			@Pc(38) Class521[] local38 = new Class521[arg0.g1()];
 			for (@Pc(40) int local40 = 0; local40 < local38.length; local40++) {
-				local38[local40] = (Class521) Class80_Sub39.method15030(Class521.method30628(1923170807), arg0.method23195(1517040266), -1544222803);
+				local38[local40] = (Class521) Class80_Sub39.method15030(Class521.method30628(1923170807), arg0.gSmart1or2(), -1544222803);
 			}
 			this.aClass521ArrayArray2[local25] = local38;
 			if (local33) {
@@ -196,20 +196,20 @@ public final class Class81 implements Interface11, Interface5 {
 	}
 
 	@OriginalMember(owner = "client!adi", name = "i", descriptor = "(Lclient!ald;I)V")
-	void method1549(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method1549(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 != 1) {
 			return;
 		}
-		@Pc(6) int local6 = arg0.method23362(-1968272759);
+		@Pc(6) int local6 = arg0.g1();
 		if (this.aClass521ArrayArray2 == null) {
 			this.aClass521ArrayArray2 = new Class521[local6][];
 		}
-		for (@Pc(18) int local18 = arg0.method23362(-819800621); local18 != 255; local18 = arg0.method23362(-2117115153)) {
+		for (@Pc(18) int local18 = arg0.g1(); local18 != 255; local18 = arg0.g1()) {
 			@Pc(25) int local25 = local18 & 0x7F;
 			@Pc(33) boolean local33 = (local18 & 0x80) != 0;
-			@Pc(38) Class521[] local38 = new Class521[arg0.method23362(1041440368)];
+			@Pc(38) Class521[] local38 = new Class521[arg0.g1()];
 			for (@Pc(40) int local40 = 0; local40 < local38.length; local40++) {
-				local38[local40] = (Class521) Class80_Sub39.method15030(Class521.method30628(1298247514), arg0.method23195(1873832349), -1187844917);
+				local38[local40] = (Class521) Class80_Sub39.method15030(Class521.method30628(1298247514), arg0.gSmart1or2(), -1187844917);
 			}
 			this.aClass521ArrayArray2[local25] = local38;
 			if (local33) {
@@ -222,20 +222,20 @@ public final class Class81 implements Interface11, Interface5 {
 	}
 
 	@OriginalMember(owner = "client!adi", name = "k", descriptor = "(Lclient!ald;I)V")
-	void method1550(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method1550(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 != 1) {
 			return;
 		}
-		@Pc(6) int local6 = arg0.method23362(-637663119);
+		@Pc(6) int local6 = arg0.g1();
 		if (this.aClass521ArrayArray2 == null) {
 			this.aClass521ArrayArray2 = new Class521[local6][];
 		}
-		for (@Pc(18) int local18 = arg0.method23362(935821204); local18 != 255; local18 = arg0.method23362(-1099518157)) {
+		for (@Pc(18) int local18 = arg0.g1(); local18 != 255; local18 = arg0.g1()) {
 			@Pc(25) int local25 = local18 & 0x7F;
 			@Pc(33) boolean local33 = (local18 & 0x80) != 0;
-			@Pc(38) Class521[] local38 = new Class521[arg0.method23362(-1373721317)];
+			@Pc(38) Class521[] local38 = new Class521[arg0.g1()];
 			for (@Pc(40) int local40 = 0; local40 < local38.length; local40++) {
-				local38[local40] = (Class521) Class80_Sub39.method15030(Class521.method30628(1440513376), arg0.method23195(1394237077), -1345364402);
+				local38[local40] = (Class521) Class80_Sub39.method15030(Class521.method30628(1440513376), arg0.gSmart1or2(), -1345364402);
 			}
 			this.aClass521ArrayArray2[local25] = local38;
 			if (local33) {
@@ -248,20 +248,20 @@ public final class Class81 implements Interface11, Interface5 {
 	}
 
 	@OriginalMember(owner = "client!adi", name = "l", descriptor = "(Lclient!ald;II)V")
-	void method1551(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	void method1551(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (arg1 != 1) {
 			return;
 		}
-		@Pc(6) int local6 = arg0.method23362(-197517003);
+		@Pc(6) int local6 = arg0.g1();
 		if (this.aClass521ArrayArray2 == null) {
 			this.aClass521ArrayArray2 = new Class521[local6][];
 		}
-		for (@Pc(18) int local18 = arg0.method23362(709284004); local18 != 255; local18 = arg0.method23362(-1458235443)) {
+		for (@Pc(18) int local18 = arg0.g1(); local18 != 255; local18 = arg0.g1()) {
 			@Pc(25) int local25 = local18 & 0x7F;
 			@Pc(33) boolean local33 = (local18 & 0x80) != 0;
-			@Pc(38) Class521[] local38 = new Class521[arg0.method23362(791512065)];
+			@Pc(38) Class521[] local38 = new Class521[arg0.g1()];
 			for (@Pc(40) int local40 = 0; local40 < local38.length; local40++) {
-				local38[local40] = (Class521) Class80_Sub39.method15030(Class521.method30628(1760484879), arg0.method23195(1398856077), -1218468485);
+				local38[local40] = (Class521) Class80_Sub39.method15030(Class521.method30628(1760484879), arg0.gSmart1or2(), -1218468485);
 			}
 			this.aClass521ArrayArray2[local25] = local38;
 			if (local33) {

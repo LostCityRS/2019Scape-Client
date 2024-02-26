@@ -15,12 +15,12 @@ public final class Class485 {
 	float[] aFloatArray113 = new float[2];
 
 	@OriginalMember(owner = "client!pk", name = "<init>", descriptor = "(Lclient!ald;)V")
-	public Class485(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(13) int local13 = arg0.method23195(1797090904);
+	public Class485(@OriginalArg(0) Packet arg0) {
+		@Pc(13) int local13 = arg0.gSmart1or2();
 		this.aClass497Array1[0] = new Class497();
 		this.aClass497Array1[0].method30328(0, Class463.method29552(arg0));
 		this.aClass497Array1[0].method30328(1, Class463.method29552(arg0));
-		this.aFloatArray113[0] = arg0.method23188(817874603);
+		this.aFloatArray113[0] = arg0.gFloat();
 		@Pc(46) Class463 local46 = Class463.method29552(arg0);
 		@Pc(49) Class463 local49 = Class463.method29552(arg0);
 		@Pc(53) Class463 local53 = Class463.method29487(local46, local49);
@@ -28,14 +28,14 @@ public final class Class485 {
 		local53.method29483(local46);
 		this.aClass497Array1[0].method30328(3, local46);
 		this.aClass497Array1[0].method30328(2, local53);
-		this.aFloatArray113[1] = arg0.method23188(1920222400);
+		this.aFloatArray113[1] = arg0.gFloat();
 		for (@Pc(83) int local83 = 2; local83 < local13; local83++) {
 			@Pc(89) Class463 local89 = Class463.method29552(arg0);
 			@Pc(92) Class463 local92 = Class463.method29552(arg0);
 			@Pc(96) Class463 local96 = Class463.method29487(local89, local92);
 			local92.method29557();
 			local96.method29483(local89);
-			this.method30032(local89, local96, arg0.method23188(-460221800));
+			this.method30032(local89, local96, arg0.gFloat());
 		}
 	}
 

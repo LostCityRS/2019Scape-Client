@@ -140,8 +140,8 @@ public final class Class655 {
 		}
 		@Pc(207) Class75 local207 = Class52.method1074(16777215);
 		@Pc(213) Class80_Sub31 local213 = Class623.method32440(Class443.aClass443_86, local207.aClass22_1, -191270971);
-		local213.aClass80_Sub36_Sub1_2.method23154(Class350.method28013(arg0, (short) 16383), 1275868335);
-		local213.aClass80_Sub36_Sub1_2.method23165(arg0, 1988852866);
+		local213.aPacketBit_2.p1(Class350.method28013(arg0, (short) 16383));
+		local213.aPacketBit_2.pjstr(arg0);
 		local207.method1325(local213, (byte) -79);
 	}
 
@@ -154,7 +154,7 @@ public final class Class655 {
 	}
 
 	@OriginalMember(owner = "client!xb", name = "<init>", descriptor = "(Lclient!ald;Lclient!xm;)V")
-	public Class655(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class665 arg1) {
+	public Class655(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class665 arg1) {
 		this.method33176(arg0, arg1, 1382835897);
 	}
 
@@ -164,10 +164,10 @@ public final class Class655 {
 	}
 
 	@OriginalMember(owner = "client!xb", name = "l", descriptor = "(Lclient!ald;I)V")
-	public void method33172(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		this.aFloat343 = arg0.method23188(-501184852);
-		this.aFloat344 = arg0.method23188(1641654566);
-		this.aFloat348 = arg0.method23188(1654400203);
+	public void method33172(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		this.aFloat343 = arg0.gFloat();
+		this.aFloat344 = arg0.gFloat();
+		this.aFloat348 = arg0.gFloat();
 	}
 
 	@OriginalMember(owner = "client!xb", name = "t", descriptor = "(I)V")
@@ -202,58 +202,58 @@ public final class Class655 {
 	}
 
 	@OriginalMember(owner = "client!xb", name = "aq", descriptor = "(Lclient!ald;Lclient!xm;)V")
-	public void method33174(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class665 arg1) {
-		@Pc(3) int local3 = arg0.method23178((byte) -60);
-		@Pc(7) int local7 = arg0.method23179(2072766144);
-		@Pc(11) int local11 = arg0.method23179(-3369320);
-		@Pc(15) int local15 = arg0.method23179(1096602288);
-		@Pc(19) int local19 = arg0.method23178((byte) -23);
+	public void method33174(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class665 arg1) {
+		@Pc(3) int local3 = arg0.g2();
+		@Pc(7) int local7 = arg0.g2s();
+		@Pc(11) int local11 = arg0.g2s();
+		@Pc(15) int local15 = arg0.g2s();
+		@Pc(19) int local19 = arg0.g2();
 		Class262.anInt3902 = local19 * 1816954963;
 		this.aClass549_2 = arg1.method33374(local3, local7, local11, local15, 843865769);
 	}
 
 	@OriginalMember(owner = "client!xb", name = "b", descriptor = "(Lclient!ald;I)V")
-	void method33175(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		this.anIntArray515[arg1] = arg0.method23178((byte) -46);
-		this.aFloatArray120[arg1] = arg0.method23188(830739950);
+	void method33175(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		this.anIntArray515[arg1] = arg0.g2();
+		this.aFloatArray120[arg1] = arg0.gFloat();
 	}
 
 	@OriginalMember(owner = "client!xb", name = "u", descriptor = "(Lclient!ald;Lclient!xm;I)V")
-	public void method33176(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class665 arg1, @OriginalArg(2) int arg2) {
-		@Pc(3) int local3 = arg0.method23362(-1710100335);
+	public void method33176(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class665 arg1, @OriginalArg(2) int arg2) {
+		@Pc(3) int local3 = arg0.g1();
 		if (Class703.aClass80_Sub37_49.aClass165_Sub4_1.method15896(2099040593) == 1 && Class279.aClass102_9.method20768() > 0) {
 			if ((local3 & Class685.aClass685_8.anInt5771 * 1496170261) == 0) {
 				this.anInt5673 = 1259606231;
 			} else {
-				this.anInt5673 = arg0.method23182(-1523144382) * -571740375;
+				this.anInt5673 = arg0.g4() * -571740375;
 			}
 			if ((local3 & Class685.aClass685_2.anInt5771 * 1496170261) == 0) {
 				this.aFloat342 = 1.1523438F;
 			} else {
-				this.aFloat342 = (float) arg0.method23178((byte) -118) / 256.0F;
+				this.aFloat342 = (float) arg0.g2() / 256.0F;
 			}
 			if ((local3 & Class685.aClass685_3.anInt5771 * 1496170261) == 0) {
 				this.aFloat339 = 0.69921875F;
 			} else {
-				this.aFloat339 = (float) arg0.method23178((byte) -20) / 256.0F;
+				this.aFloat339 = (float) arg0.g2() / 256.0F;
 			}
 			if ((local3 & Class685.aClass685_7.anInt5771 * 1496170261) == 0) {
 				this.aFloat340 = 1.2F;
 			} else {
-				this.aFloat340 = (float) arg0.method23178((byte) -106) / 256.0F;
+				this.aFloat340 = (float) arg0.g2() / 256.0F;
 			}
 		} else {
 			if ((local3 & Class685.aClass685_8.anInt5771 * 1496170261) != 0) {
-				arg0.method23182(2145362479);
+				arg0.g4();
 			}
 			if ((local3 & Class685.aClass685_2.anInt5771 * 1496170261) != 0) {
-				arg0.method23178((byte) -85);
+				arg0.g2();
 			}
 			if ((local3 & Class685.aClass685_3.anInt5771 * 1496170261) != 0) {
-				arg0.method23178((byte) -10);
+				arg0.g2();
 			}
 			if ((local3 & Class685.aClass685_7.anInt5771 * 1496170261) != 0) {
-				arg0.method23178((byte) -83);
+				arg0.g2();
 			}
 			this.anInt5673 = 1259606231;
 			this.aFloat340 = 1.2F;
@@ -263,50 +263,50 @@ public final class Class655 {
 		if ((local3 & Class685.aClass685_5.anInt5771 * 1496170261) == 0) {
 			this.aClass463_64 = Class463.method29541(-50.0F, -60.0F, -50.0F);
 		} else {
-			this.aClass463_64 = Class463.method29541((float) arg0.method23179(40897401), (float) arg0.method23179(238694789), (float) arg0.method23179(1122813355));
+			this.aClass463_64 = Class463.method29541((float) arg0.g2s(), (float) arg0.g2s(), (float) arg0.g2s());
 		}
 		if ((local3 & Class685.aClass685_6.anInt5771 * 1496170261) == 0) {
 			this.anInt5674 = 1842885912;
 		} else {
-			this.anInt5674 = arg0.method23182(1755963638) * 1741085143;
+			this.anInt5674 = arg0.g4() * 1741085143;
 		}
 		if ((local3 & Class685.aClass685_4.anInt5771 * 1496170261) == 0) {
 			this.anInt5675 = 0;
 		} else {
-			this.anInt5675 = arg0.method23178((byte) -120) * 450465755;
+			this.anInt5675 = arg0.g2() * 450465755;
 		}
 		if ((local3 & Class685.aClass685_1.anInt5771 * 1496170261) == 0) {
 			this.aClass106_1 = Class665.aClass106_2;
 		} else {
-			@Pc(227) int local227 = arg0.method23178((byte) -56);
+			@Pc(227) int local227 = arg0.g2();
 			this.aClass106_1 = arg1.method33373(local227, (byte) -122);
 		}
 	}
 
 	@OriginalMember(owner = "client!xb", name = "m", descriptor = "(Lclient!ald;Lclient!xm;I)V")
-	public void method33177(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class665 arg1, @OriginalArg(2) int arg2) {
-		@Pc(3) int local3 = arg0.method23178((byte) -97);
-		@Pc(7) int local7 = arg0.method23179(-226000825);
-		@Pc(11) int local11 = arg0.method23179(-693075219);
-		@Pc(15) int local15 = arg0.method23179(731131638);
-		@Pc(19) int local19 = arg0.method23178((byte) -32);
+	public void method33177(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class665 arg1, @OriginalArg(2) int arg2) {
+		@Pc(3) int local3 = arg0.g2();
+		@Pc(7) int local7 = arg0.g2s();
+		@Pc(11) int local11 = arg0.g2s();
+		@Pc(15) int local15 = arg0.g2s();
+		@Pc(19) int local19 = arg0.g2();
 		Class262.anInt3902 = local19 * 1816954963;
 		this.aClass549_2 = arg1.method33374(local3, local7, local11, local15, 277281712);
 	}
 
 	@OriginalMember(owner = "client!xb", name = "g", descriptor = "(Lclient!ald;B)V")
-	public void method33178(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
+	public void method33178(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 		this.method33179(arg0, 0, 1523988809);
 	}
 
 	@OriginalMember(owner = "client!xb", name = "i", descriptor = "(Lclient!ald;II)V")
-	void method33179(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		this.anIntArray515[arg1] = arg0.method23178((byte) -23);
-		this.aFloatArray120[arg1] = arg0.method23188(420473290);
+	void method33179(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+		this.anIntArray515[arg1] = arg0.g2();
+		this.aFloatArray120[arg1] = arg0.gFloat();
 	}
 
 	@OriginalMember(owner = "client!xb", name = "n", descriptor = "(Lclient!ald;)V")
-	public void method33180(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method33180(@OriginalArg(0) Packet arg0) {
 		this.method33179(arg0, 0, -648919998);
 	}
 
@@ -417,7 +417,7 @@ public final class Class655 {
 	}
 
 	@OriginalMember(owner = "client!xb", name = "v", descriptor = "(Lclient!ald;)V")
-	public void method33186(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method33186(@OriginalArg(0) Packet arg0) {
 		this.method33179(arg0, 0, 1678487743);
 	}
 
@@ -658,41 +658,41 @@ public final class Class655 {
 	}
 
 	@OriginalMember(owner = "client!xb", name = "z", descriptor = "(Lclient!ald;Lclient!xm;)V")
-	public void method33192(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class665 arg1) {
-		@Pc(3) int local3 = arg0.method23362(-1134476238);
+	public void method33192(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class665 arg1) {
+		@Pc(3) int local3 = arg0.g1();
 		if (Class703.aClass80_Sub37_49.aClass165_Sub4_1.method15896(1892571178) == 1 && Class279.aClass102_9.method20768() > 0) {
 			if ((local3 & Class685.aClass685_8.anInt5771 * 1496170261) == 0) {
 				this.anInt5673 = 1259606231;
 			} else {
-				this.anInt5673 = arg0.method23182(232686153) * -571740375;
+				this.anInt5673 = arg0.g4() * -571740375;
 			}
 			if ((local3 & Class685.aClass685_2.anInt5771 * 1496170261) == 0) {
 				this.aFloat342 = 1.1523438F;
 			} else {
-				this.aFloat342 = (float) arg0.method23178((byte) -48) / 256.0F;
+				this.aFloat342 = (float) arg0.g2() / 256.0F;
 			}
 			if ((local3 & Class685.aClass685_3.anInt5771 * 1496170261) == 0) {
 				this.aFloat339 = 0.69921875F;
 			} else {
-				this.aFloat339 = (float) arg0.method23178((byte) -103) / 256.0F;
+				this.aFloat339 = (float) arg0.g2() / 256.0F;
 			}
 			if ((local3 & Class685.aClass685_7.anInt5771 * 1496170261) == 0) {
 				this.aFloat340 = 1.2F;
 			} else {
-				this.aFloat340 = (float) arg0.method23178((byte) -62) / 256.0F;
+				this.aFloat340 = (float) arg0.g2() / 256.0F;
 			}
 		} else {
 			if ((local3 & Class685.aClass685_8.anInt5771 * 1496170261) != 0) {
-				arg0.method23182(-789578422);
+				arg0.g4();
 			}
 			if ((local3 & Class685.aClass685_2.anInt5771 * 1496170261) != 0) {
-				arg0.method23178((byte) -126);
+				arg0.g2();
 			}
 			if ((local3 & Class685.aClass685_3.anInt5771 * 1496170261) != 0) {
-				arg0.method23178((byte) -46);
+				arg0.g2();
 			}
 			if ((local3 & Class685.aClass685_7.anInt5771 * 1496170261) != 0) {
-				arg0.method23178((byte) -21);
+				arg0.g2();
 			}
 			this.anInt5673 = 1259606231;
 			this.aFloat340 = 1.2F;
@@ -702,31 +702,31 @@ public final class Class655 {
 		if ((local3 & Class685.aClass685_5.anInt5771 * 1496170261) == 0) {
 			this.aClass463_64 = Class463.method29541(-50.0F, -60.0F, -50.0F);
 		} else {
-			this.aClass463_64 = Class463.method29541((float) arg0.method23179(-414432743), (float) arg0.method23179(435529835), (float) arg0.method23179(-351114177));
+			this.aClass463_64 = Class463.method29541((float) arg0.g2s(), (float) arg0.g2s(), (float) arg0.g2s());
 		}
 		if ((local3 & Class685.aClass685_6.anInt5771 * 1496170261) == 0) {
 			this.anInt5674 = 1842885912;
 		} else {
-			this.anInt5674 = arg0.method23182(-1014149448) * 1741085143;
+			this.anInt5674 = arg0.g4() * 1741085143;
 		}
 		if ((local3 & Class685.aClass685_4.anInt5771 * 1496170261) == 0) {
 			this.anInt5675 = 0;
 		} else {
-			this.anInt5675 = arg0.method23178((byte) -48) * 450465755;
+			this.anInt5675 = arg0.g2() * 450465755;
 		}
 		if ((local3 & Class685.aClass685_1.anInt5771 * 1496170261) == 0) {
 			this.aClass106_1 = Class665.aClass106_2;
 		} else {
-			@Pc(227) int local227 = arg0.method23178((byte) -82);
+			@Pc(227) int local227 = arg0.g2();
 			this.aClass106_1 = arg1.method33373(local227, (byte) -70);
 		}
 	}
 
 	@OriginalMember(owner = "client!xb", name = "p", descriptor = "(Lclient!ald;)V")
-	public void method33193(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.aFloat343 = arg0.method23188(225586971);
-		this.aFloat344 = arg0.method23188(-1544298509);
-		this.aFloat348 = arg0.method23188(-341095418);
+	public void method33193(@OriginalArg(0) Packet arg0) {
+		this.aFloat343 = arg0.gFloat();
+		this.aFloat344 = arg0.gFloat();
+		this.aFloat348 = arg0.gFloat();
 	}
 
 	@OriginalMember(owner = "client!xb", name = "al", descriptor = "(Lclient!xm;Lclient!yh;)V")
@@ -790,7 +790,7 @@ public final class Class655 {
 	}
 
 	@OriginalMember(owner = "client!xb", name = "y", descriptor = "(Lclient!ald;)V")
-	public void method33195(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method33195(@OriginalArg(0) Packet arg0) {
 		this.method33179(arg0, 0, 750531199);
 	}
 
@@ -915,9 +915,9 @@ public final class Class655 {
 	}
 
 	@OriginalMember(owner = "client!xb", name = "c", descriptor = "(Lclient!ald;I)V")
-	void method33197(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		this.anIntArray515[arg1] = arg0.method23178((byte) -122);
-		this.aFloatArray120[arg1] = arg0.method23188(-100146649);
+	void method33197(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		this.anIntArray515[arg1] = arg0.g2();
+		this.aFloatArray120[arg1] = arg0.gFloat();
 	}
 
 	@OriginalMember(owner = "client!xb", name = "h", descriptor = "(Lclient!xb;)V")
@@ -975,34 +975,34 @@ public final class Class655 {
 	}
 
 	@OriginalMember(owner = "client!xb", name = "ay", descriptor = "(Lclient!ald;Lclient!xm;)V")
-	public void method33200(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class665 arg1) {
-		@Pc(3) int local3 = arg0.method23178((byte) -14);
-		@Pc(7) int local7 = arg0.method23179(219621010);
-		@Pc(11) int local11 = arg0.method23179(951429381);
-		@Pc(15) int local15 = arg0.method23179(1332351797);
-		@Pc(19) int local19 = arg0.method23178((byte) -123);
+	public void method33200(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class665 arg1) {
+		@Pc(3) int local3 = arg0.g2();
+		@Pc(7) int local7 = arg0.g2s();
+		@Pc(11) int local11 = arg0.g2s();
+		@Pc(15) int local15 = arg0.g2s();
+		@Pc(19) int local19 = arg0.g2();
 		Class262.anInt3902 = local19 * 1816954963;
 		this.aClass549_2 = arg1.method33374(local3, local7, local11, local15, -437942441);
 	}
 
 	@OriginalMember(owner = "client!xb", name = "ai", descriptor = "(Lclient!ald;Lclient!xm;)V")
-	public void method33201(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class665 arg1) {
-		@Pc(3) int local3 = arg0.method23178((byte) -40);
-		@Pc(7) int local7 = arg0.method23179(635558742);
-		@Pc(11) int local11 = arg0.method23179(1392352905);
-		@Pc(15) int local15 = arg0.method23179(981062712);
-		@Pc(19) int local19 = arg0.method23178((byte) -24);
+	public void method33201(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class665 arg1) {
+		@Pc(3) int local3 = arg0.g2();
+		@Pc(7) int local7 = arg0.g2s();
+		@Pc(11) int local11 = arg0.g2s();
+		@Pc(15) int local15 = arg0.g2s();
+		@Pc(19) int local19 = arg0.g2();
 		Class262.anInt3902 = local19 * 1816954963;
 		this.aClass549_2 = arg1.method33374(local3, local7, local11, local15, 1238004854);
 	}
 
 	@OriginalMember(owner = "client!xb", name = "ao", descriptor = "(Lclient!ald;Lclient!xm;)V")
-	public void method33202(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class665 arg1) {
-		@Pc(3) int local3 = arg0.method23178((byte) -124);
-		@Pc(7) int local7 = arg0.method23179(1330199014);
-		@Pc(11) int local11 = arg0.method23179(866874854);
-		@Pc(15) int local15 = arg0.method23179(1587617105);
-		@Pc(19) int local19 = arg0.method23178((byte) -73);
+	public void method33202(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class665 arg1) {
+		@Pc(3) int local3 = arg0.g2();
+		@Pc(7) int local7 = arg0.g2s();
+		@Pc(11) int local11 = arg0.g2s();
+		@Pc(15) int local15 = arg0.g2s();
+		@Pc(19) int local19 = arg0.g2();
 		Class262.anInt3902 = local19 * 1816954963;
 		this.aClass549_2 = arg1.method33374(local3, local7, local11, local15, 336803159);
 	}
@@ -1083,9 +1083,9 @@ public final class Class655 {
 	}
 
 	@OriginalMember(owner = "client!xb", name = "ax", descriptor = "(Lclient!ald;I)V")
-	void method33207(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		this.anIntArray515[arg1] = arg0.method23178((byte) -56);
-		this.aFloatArray120[arg1] = arg0.method23188(1678053894);
+	void method33207(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		this.anIntArray515[arg1] = arg0.g2();
+		this.aFloatArray120[arg1] = arg0.gFloat();
 	}
 
 	@OriginalMember(owner = "client!xb", name = "ah", descriptor = "(Lclient!xm;Lclient!yh;)V")

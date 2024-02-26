@@ -735,7 +735,7 @@ public class Class144 {
 	}
 
 	@OriginalMember(owner = "client!qx", name = "al", descriptor = "(Lclient!ald;IIIIIII)V")
-	public final void method11924(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
+	public final void method11924(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
 		@Pc(5) int local5 = (arg5 & 0x7) * 8;
 		@Pc(11) int local11 = (arg6 & 0x7) * 8;
 		@Pc(17) int local17 = (arg5 & 0xFFFFFFF8) << 3;
@@ -1086,7 +1086,7 @@ public class Class144 {
 	}
 
 	@OriginalMember(owner = "client!qx", name = "l", descriptor = "(Lclient!ald;IIIII)V")
-	public final void method11926(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
+	public final void method11926(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
 		@Pc(3) int local3 = arg3 + arg1;
 		@Pc(7) int local7 = arg2 + arg4;
 		for (@Pc(9) int local9 = 0; local9 < this.anInt1383 * -2108820349; local9++) {
@@ -1109,7 +1109,7 @@ public class Class144 {
 	}
 
 	@OriginalMember(owner = "client!qx", name = "i", descriptor = "(Lclient!ald;IIIIIIIIZI)V")
-	final void method11928(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) boolean arg9, @OriginalArg(10) int arg10) {
+	final void method11928(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) boolean arg9, @OriginalArg(10) int arg10) {
 		if (arg8 == 1) {
 			arg5 = 1;
 		} else if (arg8 == 2) {
@@ -1120,54 +1120,54 @@ public class Class144 {
 		}
 		@Pc(53) int local53;
 		if (arg2 < 0 || arg2 >= this.anInt1396 * -967539287 || arg3 < 0 || arg3 >= this.anInt1380 * -1218727185) {
-			local53 = arg0.method23362(-1432243828);
+			local53 = arg0.g1();
 			if ((local53 & 0x1) != 0) {
-				arg0.method23362(590401739);
-				arg0.method23195(1462876368);
+				arg0.g1();
+				arg0.gSmart1or2();
 			}
 			if ((local53 & 0x2) != 0) {
-				arg0.anInt3152 += 1034180571;
+				arg0.pos += 1034180571;
 			}
 			if ((local53 & 0x4) != 0) {
-				arg0.method23195(2136471805);
+				arg0.gSmart1or2();
 			}
 			if ((local53 & 0x8) != 0) {
-				arg0.method23362(399698967);
+				arg0.g1();
 			}
 			return;
 		}
 		if (!this.aBoolean260 && !arg9) {
 			this.aClass502_2.aByteArrayArrayArray12[arg1][arg2][arg3] = 0;
 		}
-		local53 = arg0.method23362(-1034539079);
+		local53 = arg0.g1();
 		@Pc(73) int local73;
 		if ((local53 & 0x1) != 0) {
 			if (arg9) {
-				arg0.method23362(-1715128692);
-				arg0.method23195(1980290779);
+				arg0.g1();
+				arg0.gSmart1or2();
 			} else {
-				local73 = arg0.method23362(-349252318);
-				this.aShortArrayArrayArray4[arg1][arg2][arg3] = (short) arg0.method23195(1831275469);
+				local73 = arg0.g1();
+				this.aShortArrayArrayArray4[arg1][arg2][arg3] = (short) arg0.gSmart1or2();
 				this.aByteArrayArrayArray7[arg1][arg2][arg3] = (byte) (local73 >> 2);
 				this.aByteArrayArrayArray5[arg1][arg2][arg3] = (byte) (arg8 + local73 & 0x3);
 			}
 		}
 		if ((local53 & 0x2) != 0) {
 			if (this.aBoolean260 || arg9) {
-				arg0.anInt3152 += 1034180571;
+				arg0.pos += 1034180571;
 			} else {
-				this.aClass502_2.aByteArrayArrayArray12[arg1][arg2][arg3] = arg0.method23177((byte) -41);
+				this.aClass502_2.aByteArrayArrayArray12[arg1][arg2][arg3] = arg0.g1b();
 			}
 		}
 		if ((local53 & 0x4) != 0) {
 			if (arg9) {
-				arg0.method23195(2104613471);
+				arg0.gSmart1or2();
 			} else {
-				this.aShortArrayArrayArray3[arg1][arg2][arg3] = (short) arg0.method23195(1998007228);
+				this.aShortArrayArrayArray3[arg1][arg2][arg3] = (short) arg0.gSmart1or2();
 			}
 		}
 		if ((local53 & 0x8) != 0) {
-			local73 = arg0.method23362(49071356);
+			local73 = arg0.g1();
 			if (this.aBoolean260) {
 				this.anIntArrayArrayArray14[0][arg2 + arg4][arg3 + arg5] = local73 * 8 << 2;
 			} else {
@@ -2720,7 +2720,7 @@ public class Class144 {
 	}
 
 	@OriginalMember(owner = "client!qx", name = "ab", descriptor = "(Lclient!ald;IIIIIII)V")
-	public final void method11949(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
+	public final void method11949(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
 		@Pc(5) int local5 = (arg5 & 0x7) * 8;
 		@Pc(11) int local11 = (arg6 & 0x7) * 8;
 		@Pc(17) int local17 = (arg5 & 0xFFFFFFF8) << 3;
@@ -2806,7 +2806,7 @@ public class Class144 {
 	}
 
 	@OriginalMember(owner = "client!qx", name = "g", descriptor = "(Lclient!ald;IIIIIIIB)V")
-	public final void method11950(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) byte arg8) {
+	public final void method11950(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) byte arg8) {
 		@Pc(5) int local5 = (arg5 & 0x7) * 8;
 		@Pc(11) int local11 = (arg6 & 0x7) * 8;
 		@Pc(17) int local17 = (arg5 & 0xFFFFFFF8) << 3;
@@ -4271,7 +4271,7 @@ public class Class144 {
 	}
 
 	@OriginalMember(owner = "client!qx", name = "af", descriptor = "(Lclient!ald;IIIIIIIIZ)V")
-	final void method11968(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) boolean arg9) {
+	final void method11968(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) boolean arg9) {
 		if (arg8 == 1) {
 			arg5 = 1;
 		} else if (arg8 == 2) {
@@ -4282,54 +4282,54 @@ public class Class144 {
 		}
 		@Pc(53) int local53;
 		if (arg2 < 0 || arg2 >= this.anInt1396 * -967539287 || arg3 < 0 || arg3 >= this.anInt1380 * -1218727185) {
-			local53 = arg0.method23362(3888792);
+			local53 = arg0.g1();
 			if ((local53 & 0x1) != 0) {
-				arg0.method23362(-1505280565);
-				arg0.method23195(1634705386);
+				arg0.g1();
+				arg0.gSmart1or2();
 			}
 			if ((local53 & 0x2) != 0) {
-				arg0.anInt3152 += 1034180571;
+				arg0.pos += 1034180571;
 			}
 			if ((local53 & 0x4) != 0) {
-				arg0.method23195(1769584605);
+				arg0.gSmart1or2();
 			}
 			if ((local53 & 0x8) != 0) {
-				arg0.method23362(-66186856);
+				arg0.g1();
 			}
 			return;
 		}
 		if (!this.aBoolean260 && !arg9) {
 			this.aClass502_2.aByteArrayArrayArray12[arg1][arg2][arg3] = 0;
 		}
-		local53 = arg0.method23362(1019064013);
+		local53 = arg0.g1();
 		@Pc(73) int local73;
 		if ((local53 & 0x1) != 0) {
 			if (arg9) {
-				arg0.method23362(625477050);
-				arg0.method23195(1687319311);
+				arg0.g1();
+				arg0.gSmart1or2();
 			} else {
-				local73 = arg0.method23362(-1765766625);
-				this.aShortArrayArrayArray4[arg1][arg2][arg3] = (short) arg0.method23195(1679020016);
+				local73 = arg0.g1();
+				this.aShortArrayArrayArray4[arg1][arg2][arg3] = (short) arg0.gSmart1or2();
 				this.aByteArrayArrayArray7[arg1][arg2][arg3] = (byte) (local73 >> 2);
 				this.aByteArrayArrayArray5[arg1][arg2][arg3] = (byte) (arg8 + local73 & 0x3);
 			}
 		}
 		if ((local53 & 0x2) != 0) {
 			if (this.aBoolean260 || arg9) {
-				arg0.anInt3152 += 1034180571;
+				arg0.pos += 1034180571;
 			} else {
-				this.aClass502_2.aByteArrayArrayArray12[arg1][arg2][arg3] = arg0.method23177((byte) -88);
+				this.aClass502_2.aByteArrayArrayArray12[arg1][arg2][arg3] = arg0.g1b();
 			}
 		}
 		if ((local53 & 0x4) != 0) {
 			if (arg9) {
-				arg0.method23195(1895611597);
+				arg0.gSmart1or2();
 			} else {
-				this.aShortArrayArrayArray3[arg1][arg2][arg3] = (short) arg0.method23195(1452689728);
+				this.aShortArrayArrayArray3[arg1][arg2][arg3] = (short) arg0.gSmart1or2();
 			}
 		}
 		if ((local53 & 0x8) != 0) {
-			local73 = arg0.method23362(-622776376);
+			local73 = arg0.g1();
 			if (this.aBoolean260) {
 				this.anIntArrayArrayArray14[0][arg2 + arg4][arg3 + arg5] = local73 * 8 << 2;
 			} else {
@@ -4688,7 +4688,7 @@ public class Class144 {
 	}
 
 	@OriginalMember(owner = "client!qx", name = "ah", descriptor = "(Lclient!ald;IIIIIII)V")
-	public final void method11973(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
+	public final void method11973(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
 		@Pc(5) int local5 = (arg5 & 0x7) * 8;
 		@Pc(11) int local11 = (arg6 & 0x7) * 8;
 		@Pc(17) int local17 = (arg5 & 0xFFFFFFF8) << 3;

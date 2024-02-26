@@ -35,8 +35,8 @@ public final class Class111_Sub1 extends Class111 {
 				client.anInt3553 = client.anInt3569 * -799307175;
 				@Pc(65) Class75 local65 = Class52.method1074(16777215);
 				@Pc(71) Class80_Sub31 local71 = Class623.method32440(Class443.aClass443_34, local65.aClass22_1, -191270971);
-				local71.aClass80_Sub36_Sub1_2.method23154(Class350.method28013(arg0, (short) 16383), 1275868335);
-				local71.aClass80_Sub36_Sub1_2.method23165(arg0, 1935156430);
+				local71.aPacketBit_2.p1(Class350.method28013(arg0, (short) 16383));
+				local71.aPacketBit_2.pjstr(arg0);
 				local65.method1325(local71, (byte) -14);
 				break;
 			}

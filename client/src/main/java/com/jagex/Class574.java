@@ -45,16 +45,16 @@ public final class Class574 {
 	}
 
 	@OriginalMember(owner = "client!tk", name = "<init>", descriptor = "(Lclient!di;Lclient!ald;I)V")
-	public Class574(@OriginalArg(0) Class102 arg0, @OriginalArg(1) Class80_Sub36 arg1, @OriginalArg(2) int arg2) {
+	public Class574(@OriginalArg(0) Class102 arg0, @OriginalArg(1) Packet arg1, @OriginalArg(2) int arg2) {
 		this.anInt5282 = arg2 * 1307820025;
-		this.anInt5283 = arg1.method23194(35000) * -316069809;
+		this.anInt5283 = arg1.gSmart1or2s() * -316069809;
 		this.anIntArray476 = new int[this.anInt5283 * -1889734993];
 		this.anIntArray477 = new int[this.anInt5283 * -1889734993];
-		@Pc(31) int local31 = arg1.method23178((byte) -104);
-		@Pc(35) int local35 = arg1.method23178((byte) -87);
+		@Pc(31) int local31 = arg1.g2();
+		@Pc(35) int local35 = arg1.g2();
 		for (@Pc(37) int local37 = 0; local37 < this.anInt5283 * -1889734993; local37++) {
-			this.anIntArray476[local37] = local31 + arg1.method23177((byte) -13);
-			this.anIntArray477[local37] = local35 + arg1.method23177((byte) -100);
+			this.anIntArray476[local37] = local31 + arg1.g1b();
+			this.anIntArray477[local37] = local35 + arg1.g1b();
 		}
 		this.aClass105_9 = this.method31753(arg0, (short) 24017);
 	}

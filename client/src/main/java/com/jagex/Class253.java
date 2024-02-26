@@ -108,42 +108,42 @@ public final class Class253 {
 	}
 
 	@OriginalMember(owner = "client!ev", name = "e", descriptor = "(Lclient!ald;I)V")
-	void method26377(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		this.anInt3881 = arg0.method23179(1526750308) * 548134379;
-		this.aFloat284 = arg0.method23188(-2078725318);
-		this.aFloat282 = arg0.method23188(-1433380423);
-		this.aFloat281 = arg0.method23188(-1145374721);
-		this.aFloat280 = arg0.method23188(1599572951);
-		this.aFloat283 = arg0.method23188(-1219449257);
+	void method26377(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		this.anInt3881 = arg0.g2s() * 548134379;
+		this.aFloat284 = arg0.gFloat();
+		this.aFloat282 = arg0.gFloat();
+		this.aFloat281 = arg0.gFloat();
+		this.aFloat280 = arg0.gFloat();
+		this.aFloat283 = arg0.gFloat();
 	}
 
 	@OriginalMember(owner = "client!ev", name = "t", descriptor = "(Lclient!ald;II)V")
-	void method26378(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		this.anInt3881 = arg0.method23179(1508471957) * 548134379;
-		this.aFloat284 = arg0.method23188(-1168657236);
-		this.aFloat282 = arg0.method23188(1047668909);
-		this.aFloat281 = arg0.method23188(-1540868433);
-		this.aFloat280 = arg0.method23188(1694778914);
-		this.aFloat283 = arg0.method23188(833940857);
+	void method26378(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+		this.anInt3881 = arg0.g2s() * 548134379;
+		this.aFloat284 = arg0.gFloat();
+		this.aFloat282 = arg0.gFloat();
+		this.aFloat281 = arg0.gFloat();
+		this.aFloat280 = arg0.gFloat();
+		this.aFloat283 = arg0.gFloat();
 	}
 
 	@OriginalMember(owner = "client!ev", name = "u", descriptor = "(Lclient!ald;I)V")
-	void method26379(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		this.anInt3881 = arg0.method23179(1018534812) * 548134379;
-		this.aFloat284 = arg0.method23188(-1599360575);
-		this.aFloat282 = arg0.method23188(-262820336);
-		this.aFloat281 = arg0.method23188(2074808007);
-		this.aFloat280 = arg0.method23188(1124781477);
-		this.aFloat283 = arg0.method23188(762609367);
+	void method26379(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		this.anInt3881 = arg0.g2s() * 548134379;
+		this.aFloat284 = arg0.gFloat();
+		this.aFloat282 = arg0.gFloat();
+		this.aFloat281 = arg0.gFloat();
+		this.aFloat280 = arg0.gFloat();
+		this.aFloat283 = arg0.gFloat();
 	}
 
 	@OriginalMember(owner = "client!ev", name = "f", descriptor = "(Lclient!ald;I)V")
-	void method26380(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		this.anInt3881 = arg0.method23179(1667249601) * 548134379;
-		this.aFloat284 = arg0.method23188(-1963185653);
-		this.aFloat282 = arg0.method23188(963378001);
-		this.aFloat281 = arg0.method23188(-1027429842);
-		this.aFloat280 = arg0.method23188(1945945566);
-		this.aFloat283 = arg0.method23188(-259585764);
+	void method26380(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		this.anInt3881 = arg0.g2s() * 548134379;
+		this.aFloat284 = arg0.gFloat();
+		this.aFloat282 = arg0.gFloat();
+		this.aFloat281 = arg0.gFloat();
+		this.aFloat280 = arg0.gFloat();
+		this.aFloat283 = arg0.gFloat();
 	}
 }

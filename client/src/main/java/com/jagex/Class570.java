@@ -231,10 +231,10 @@ public final class Class570 {
 		@Pc(29) String local29 = local21.aString204;
 		@Pc(32) Class75 local32 = Class52.method1074(16777215);
 		@Pc(38) Class80_Sub31 local38 = Class623.method32440(Class443.aClass443_95, local32.aClass22_1, -191270971);
-		local38.aClass80_Sub36_Sub1_2.method23154(Class350.method28013(local29, (short) 16383) + 3, 1275868335);
-		local38.aClass80_Sub36_Sub1_2.method23154(arg0 ? 1 : 0, 1275868335);
-		local38.aClass80_Sub36_Sub1_2.method23155(arg1, (byte) -41);
-		local38.aClass80_Sub36_Sub1_2.method23165(local29, 1984155349);
+		local38.aPacketBit_2.p1(Class350.method28013(local29, (short) 16383) + 3);
+		local38.aPacketBit_2.p1(arg0 ? 1 : 0);
+		local38.aPacketBit_2.p2(arg1);
+		local38.aPacketBit_2.pjstr(local29);
 		local32.method1325(local38, (byte) -61);
 	}
 

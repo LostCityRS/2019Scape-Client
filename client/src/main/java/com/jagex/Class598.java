@@ -62,22 +62,22 @@ public final class Class598 implements Interface66 {
 	@Override
 	public void method32126() {
 		@Pc(5) Class80_Sub31 local5 = Class623.method32440(Class443.aClass443_89, client.aClass75_1.aClass22_1, -191270971);
-		@Pc(16) int local16 = (local5.aClass80_Sub36_Sub1_2.anInt3152 += 1034180571) * -1380987821;
-		local5.aClass80_Sub36_Sub1_2.method23154(this.aClass70_3.method37268(), 1275868335);
-		local5.aClass80_Sub36_Sub1_2.method23165(this.aString230, 2078288974);
-		local5.aClass80_Sub36_Sub1_2.method23155(this.anInt5365 * 1554837115, (byte) -95);
-		local5.aClass80_Sub36_Sub1_2.method23165(Class531.aString221, 1636219507);
+		@Pc(16) int local16 = (local5.aPacketBit_2.pos += 1034180571) * -1380987821;
+		local5.aPacketBit_2.p1(this.aClass70_3.method37268());
+		local5.aPacketBit_2.pjstr(this.aString230);
+		local5.aPacketBit_2.p2(this.anInt5365 * 1554837115);
+		local5.aPacketBit_2.pjstr(Class531.aString221);
 		if (this.aString229 == null) {
-			local5.aClass80_Sub36_Sub1_2.method23154(0, 1275868335);
+			local5.aPacketBit_2.p1(0);
 		} else {
-			local5.aClass80_Sub36_Sub1_2.method23154(1, 1275868335);
+			local5.aPacketBit_2.p1(1);
 			@Pc(54) String local54 = this.aString229;
 			if (local54.length() > 100) {
 				local54 = local54.substring(0, 100);
 			}
-			local5.aClass80_Sub36_Sub1_2.method23165(local54, 2082518753);
+			local5.aPacketBit_2.pjstr(local54);
 		}
-		local5.aClass80_Sub36_Sub1_2.method23171(local5.aClass80_Sub36_Sub1_2.anInt3152 * -1380987821 - local16, (byte) 119);
+		local5.aPacketBit_2.p1check(local5.aPacketBit_2.pos * -1380987821 - local16);
 		client.aClass75_1.method1325(local5, (byte) -27);
 	}
 
@@ -85,22 +85,22 @@ public final class Class598 implements Interface66 {
 	@Override
 	public void method32127(@OriginalArg(0) int arg0) {
 		@Pc(5) Class80_Sub31 local5 = Class623.method32440(Class443.aClass443_89, client.aClass75_1.aClass22_1, -191270971);
-		@Pc(16) int local16 = (local5.aClass80_Sub36_Sub1_2.anInt3152 += 1034180571) * -1380987821;
-		local5.aClass80_Sub36_Sub1_2.method23154(this.aClass70_3.method37268(), 1275868335);
-		local5.aClass80_Sub36_Sub1_2.method23165(this.aString230, 1740426046);
-		local5.aClass80_Sub36_Sub1_2.method23155(this.anInt5365 * 1554837115, (byte) -125);
-		local5.aClass80_Sub36_Sub1_2.method23165(Class531.aString221, 1695163400);
+		@Pc(16) int local16 = (local5.aPacketBit_2.pos += 1034180571) * -1380987821;
+		local5.aPacketBit_2.p1(this.aClass70_3.method37268());
+		local5.aPacketBit_2.pjstr(this.aString230);
+		local5.aPacketBit_2.p2(this.anInt5365 * 1554837115);
+		local5.aPacketBit_2.pjstr(Class531.aString221);
 		if (this.aString229 == null) {
-			local5.aClass80_Sub36_Sub1_2.method23154(0, 1275868335);
+			local5.aPacketBit_2.p1(0);
 		} else {
-			local5.aClass80_Sub36_Sub1_2.method23154(1, 1275868335);
+			local5.aPacketBit_2.p1(1);
 			@Pc(54) String local54 = this.aString229;
 			if (local54.length() > 100) {
 				local54 = local54.substring(0, 100);
 			}
-			local5.aClass80_Sub36_Sub1_2.method23165(local54, 1689492914);
+			local5.aPacketBit_2.pjstr(local54);
 		}
-		local5.aClass80_Sub36_Sub1_2.method23171(local5.aClass80_Sub36_Sub1_2.anInt3152 * -1380987821 - local16, (byte) 108);
+		local5.aPacketBit_2.p1check(local5.aPacketBit_2.pos * -1380987821 - local16);
 		client.aClass75_1.method1325(local5, (byte) -18);
 	}
 
@@ -108,22 +108,22 @@ public final class Class598 implements Interface66 {
 	@Override
 	public void method32128() {
 		@Pc(5) Class80_Sub31 local5 = Class623.method32440(Class443.aClass443_89, client.aClass75_1.aClass22_1, -191270971);
-		@Pc(16) int local16 = (local5.aClass80_Sub36_Sub1_2.anInt3152 += 1034180571) * -1380987821;
-		local5.aClass80_Sub36_Sub1_2.method23154(this.aClass70_3.method37268(), 1275868335);
-		local5.aClass80_Sub36_Sub1_2.method23165(this.aString230, 1781526834);
-		local5.aClass80_Sub36_Sub1_2.method23155(this.anInt5365 * 1554837115, (byte) -18);
-		local5.aClass80_Sub36_Sub1_2.method23165(Class531.aString221, 1984597830);
+		@Pc(16) int local16 = (local5.aPacketBit_2.pos += 1034180571) * -1380987821;
+		local5.aPacketBit_2.p1(this.aClass70_3.method37268());
+		local5.aPacketBit_2.pjstr(this.aString230);
+		local5.aPacketBit_2.p2(this.anInt5365 * 1554837115);
+		local5.aPacketBit_2.pjstr(Class531.aString221);
 		if (this.aString229 == null) {
-			local5.aClass80_Sub36_Sub1_2.method23154(0, 1275868335);
+			local5.aPacketBit_2.p1(0);
 		} else {
-			local5.aClass80_Sub36_Sub1_2.method23154(1, 1275868335);
+			local5.aPacketBit_2.p1(1);
 			@Pc(54) String local54 = this.aString229;
 			if (local54.length() > 100) {
 				local54 = local54.substring(0, 100);
 			}
-			local5.aClass80_Sub36_Sub1_2.method23165(local54, 1883257328);
+			local5.aPacketBit_2.pjstr(local54);
 		}
-		local5.aClass80_Sub36_Sub1_2.method23171(local5.aClass80_Sub36_Sub1_2.anInt3152 * -1380987821 - local16, (byte) 113);
+		local5.aPacketBit_2.p1check(local5.aPacketBit_2.pos * -1380987821 - local16);
 		client.aClass75_1.method1325(local5, (byte) -56);
 	}
 }

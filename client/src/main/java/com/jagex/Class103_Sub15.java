@@ -33,12 +33,12 @@ public final class Class103_Sub15 extends Class103 {
 	}
 
 	@OriginalMember(owner = "client!agl", name = "<init>", descriptor = "(Lclient!ald;)V")
-	Class103_Sub15(@OriginalArg(0) Class80_Sub36 arg0) {
+	Class103_Sub15(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.anInt969 = arg0.method23178((byte) -75) * -895742535;
-		this.anInt967 = arg0.method23362(-760184940) * -900566719;
-		this.anInt968 = arg0.method23362(343828471) * 1240601289;
-		this.anInt966 = arg0.method23362(-978592854) * 1405346305;
+		this.anInt969 = arg0.g2() * -895742535;
+		this.anInt967 = arg0.g1() * -900566719;
+		this.anInt968 = arg0.g1() * 1240601289;
+		this.anInt966 = arg0.g1() * 1405346305;
 		this.aClass529_2 = Class490.aClass263_13.method26536(Class280.aClass280_9, this, this.anInt969 * 620095625, this.anInt966 * 935337473, this.anInt967 * -153936191, Class278.aClass278_5.method26831(1944621597), Class269.aClass269_5, 0.0F, 0.0F, null, 0, this.anInt968 * 95725433, false, -129037277);
 		if (this.aClass529_2 != null) {
 			this.aClass529_2.method30768((byte) 49);

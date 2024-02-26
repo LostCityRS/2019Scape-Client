@@ -7,7 +7,6 @@ import java.awt.Container;
 import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Insets;
-import java.awt.LayoutManager;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -277,7 +276,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 	}
 
 	@OriginalMember(owner = "client!sm", name = "bf", descriptor = "(Lclient!ald;)V")
-	public static void method25240(@OriginalArg(0) Class80_Sub36 arg0) {
+	public static void method25240(@OriginalArg(0) Packet arg0) {
 		@Pc(2) byte[] local2 = new byte[24];
 		try {
 			aClass36_4.method762(0L);
@@ -293,11 +292,11 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 				local2[local33] = -1;
 			}
 		}
-		arg0.method23168(local2, 0, 24, (byte) 98);
+		arg0.pdata(local2, 0, 24);
 	}
 
 	@OriginalMember(owner = "client!sm", name = "bw", descriptor = "(Lclient!ald;)V")
-	public static void method25241(@OriginalArg(0) Class80_Sub36 arg0) {
+	public static void method25241(@OriginalArg(0) Packet arg0) {
 		@Pc(2) byte[] local2 = new byte[24];
 		try {
 			aClass36_4.method762(0L);
@@ -313,41 +312,41 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 				local2[local33] = -1;
 			}
 		}
-		arg0.method23168(local2, 0, 24, (byte) 16);
+		arg0.pdata(local2, 0, 24);
 	}
 
 	@OriginalMember(owner = "client!sm", name = "bi", descriptor = "(Lclient!ald;I)V")
-	static void method25243(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	static void method25243(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (aClass36_4 == null) {
 			return;
 		}
 		try {
 			aClass36_4.method762(0L);
-			aClass36_4.method767(arg0.aByteArray61, arg1, 24, (byte) 33);
+			aClass36_4.method767(arg0.data, arg1, 24, (byte) 33);
 		} catch (@Pc(13) Exception local13) {
 		}
 	}
 
 	@OriginalMember(owner = "client!sm", name = "bu", descriptor = "(Lclient!ald;I)V")
-	static void method25244(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	static void method25244(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (aClass36_4 == null) {
 			return;
 		}
 		try {
 			aClass36_4.method762(0L);
-			aClass36_4.method767(arg0.aByteArray61, arg1, 24, (byte) 111);
+			aClass36_4.method767(arg0.data, arg1, 24, (byte) 111);
 		} catch (@Pc(13) Exception local13) {
 		}
 	}
 
 	@OriginalMember(owner = "client!sm", name = "bm", descriptor = "(Lclient!ald;I)V")
-	static void method25245(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	static void method25245(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (aClass36_4 == null) {
 			return;
 		}
 		try {
 			aClass36_4.method762(0L);
-			aClass36_4.method767(arg0.aByteArray61, arg1, 24, (byte) 63);
+			aClass36_4.method767(arg0.data, arg1, 24, (byte) 63);
 		} catch (@Pc(13) Exception local13) {
 		}
 	}
@@ -444,7 +443,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 	}
 
 	@OriginalMember(owner = "client!sm", name = "bx", descriptor = "(Lclient!ald;)V")
-	public static void method25282(@OriginalArg(0) Class80_Sub36 arg0) {
+	public static void method25282(@OriginalArg(0) Packet arg0) {
 		@Pc(2) byte[] local2 = new byte[24];
 		try {
 			aClass36_4.method762(0L);
@@ -460,7 +459,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 				local2[local33] = -1;
 			}
 		}
-		arg0.method23168(local2, 0, 24, (byte) 118);
+		arg0.pdata(local2, 0, 24);
 	}
 
 	@OriginalMember(owner = "client!sm", name = "eb", descriptor = "()Lclient!sa;")
@@ -654,33 +653,33 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 		if (Class86.aFile1.exists()) {
 			try {
 				@Pc(50) Class40 local50 = new Class40(Class86.aFile1, "rw", 10000L);
-				@Pc(58) Class80_Sub36 local58 = new Class80_Sub36((int) local50.method839((byte) 0));
+				@Pc(58) Packet local58 = new Packet((int) local50.method839((byte) 0));
 				@Pc(84) int local84;
-				while (local58.anInt3152 * -1380987821 < local58.aByteArray61.length) {
-					local84 = local50.method832(local58.aByteArray61, local58.anInt3152 * -1380987821, local58.aByteArray61.length - local58.anInt3152 * -1380987821, (byte) -116);
+				while (local58.pos * -1380987821 < local58.data.length) {
+					local84 = local50.method832(local58.data, local58.pos * -1380987821, local58.data.length - local58.pos * -1380987821, (byte) -116);
 					if (local84 == -1) {
 						throw new IOException();
 					}
-					local58.anInt3152 += local84 * 1034180571;
+					local58.pos += local84 * 1034180571;
 				}
-				local58.anInt3152 = 0;
-				local84 = local58.method23362(-92473409);
+				local58.pos = 0;
+				local84 = local58.g1();
 				if (local84 < 1 || local84 > 3) {
 					throw new IOException("" + local84);
 				}
 				@Pc(127) int local127 = 0;
 				if (local84 > 1) {
-					local127 = local58.method23362(509338329);
+					local127 = local58.g1();
 				}
 				if (local84 <= 2) {
-					local36 = local58.method23186((byte) 12);
+					local36 = local58.gjstr2();
 					if (local127 == 1) {
-						local38 = local58.method23186((byte) 12);
+						local38 = local58.gjstr2();
 					}
 				} else {
-					local36 = local58.method23192((byte) 0);
+					local36 = local58.gUTF8();
 					if (local127 == 1) {
-						local38 = local58.method23192((byte) 0);
+						local38 = local58.gUTF8();
 					}
 				}
 				local50.method838(-805438164);
@@ -1593,33 +1592,33 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 		if (Class86.aFile1.exists()) {
 			try {
 				@Pc(50) Class40 local50 = new Class40(Class86.aFile1, "rw", 10000L);
-				@Pc(58) Class80_Sub36 local58 = new Class80_Sub36((int) local50.method839((byte) 0));
+				@Pc(58) Packet local58 = new Packet((int) local50.method839((byte) 0));
 				@Pc(84) int local84;
-				while (local58.anInt3152 * -1380987821 < local58.aByteArray61.length) {
-					local84 = local50.method832(local58.aByteArray61, local58.anInt3152 * -1380987821, local58.aByteArray61.length - local58.anInt3152 * -1380987821, (byte) -44);
+				while (local58.pos * -1380987821 < local58.data.length) {
+					local84 = local50.method832(local58.data, local58.pos * -1380987821, local58.data.length - local58.pos * -1380987821, (byte) -44);
 					if (local84 == -1) {
 						throw new IOException();
 					}
-					local58.anInt3152 += local84 * 1034180571;
+					local58.pos += local84 * 1034180571;
 				}
-				local58.anInt3152 = 0;
-				local84 = local58.method23362(-36403430);
+				local58.pos = 0;
+				local84 = local58.g1();
 				if (local84 < 1 || local84 > 3) {
 					throw new IOException("" + local84);
 				}
 				@Pc(127) int local127 = 0;
 				if (local84 > 1) {
-					local127 = local58.method23362(380492539);
+					local127 = local58.g1();
 				}
 				if (local84 <= 2) {
-					local36 = local58.method23186((byte) 12);
+					local36 = local58.gjstr2();
 					if (local127 == 1) {
-						local38 = local58.method23186((byte) 12);
+						local38 = local58.gjstr2();
 					}
 				} else {
-					local36 = local58.method23192((byte) 0);
+					local36 = local58.gUTF8();
 					if (local127 == 1) {
-						local38 = local58.method23192((byte) 0);
+						local38 = local58.gUTF8();
 					}
 				}
 				local50.method838(427589311);
@@ -1687,14 +1686,14 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 	final void method25232(@OriginalArg(0) File arg0, @OriginalArg(1) File arg1) {
 		try {
 			@Pc(6) Class40 local6 = new Class40(Class86.aFile1, "rw", 10000L);
-			@Pc(11) Class80_Sub36 local11 = new Class80_Sub36(500);
-			local11.method23154(3, 1275868335);
-			local11.method23154(arg1 == null ? 0 : 1, 1275868335);
-			local11.method23167(arg0.getPath(), -387028605);
+			@Pc(11) Packet local11 = new Packet(500);
+			local11.p1(3);
+			local11.p1(arg1 == null ? 0 : 1);
+			local11.pUTF8(arg0.getPath());
 			if (arg1 != null) {
-				local11.method23167(arg1.getPath(), -609578765);
+				local11.pUTF8(arg1.getPath());
 			}
-			local6.method834(local11.aByteArray61, 0, local11.anInt3152 * -1380987821, (byte) 1);
+			local6.method834(local11.data, 0, local11.pos * -1380987821, (byte) 1);
 			local6.method838(-677152846);
 		} catch (@Pc(52) IOException local52) {
 			local52.printStackTrace();
@@ -1849,14 +1848,14 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 	final void method25248(@OriginalArg(0) File arg0, @OriginalArg(1) File arg1) {
 		try {
 			@Pc(6) Class40 local6 = new Class40(Class86.aFile1, "rw", 10000L);
-			@Pc(11) Class80_Sub36 local11 = new Class80_Sub36(500);
-			local11.method23154(3, 1275868335);
-			local11.method23154(arg1 == null ? 0 : 1, 1275868335);
-			local11.method23167(arg0.getPath(), 1594855427);
+			@Pc(11) Packet local11 = new Packet(500);
+			local11.p1(3);
+			local11.p1(arg1 == null ? 0 : 1);
+			local11.pUTF8(arg0.getPath());
 			if (arg1 != null) {
-				local11.method23167(arg1.getPath(), -715242733);
+				local11.pUTF8(arg1.getPath());
 			}
-			local6.method834(local11.aByteArray61, 0, local11.anInt3152 * -1380987821, (byte) 1);
+			local6.method834(local11.data, 0, local11.pos * -1380987821, (byte) 1);
 			local6.method838(-1292443529);
 		} catch (@Pc(52) IOException local52) {
 			local52.printStackTrace();
@@ -2353,14 +2352,14 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 	final void method25291(@OriginalArg(0) File arg0, @OriginalArg(1) File arg1, @OriginalArg(2) short arg2) {
 		try {
 			@Pc(6) Class40 local6 = new Class40(Class86.aFile1, "rw", 10000L);
-			@Pc(11) Class80_Sub36 local11 = new Class80_Sub36(500);
-			local11.method23154(3, 1275868335);
-			local11.method23154(arg1 == null ? 0 : 1, 1275868335);
-			local11.method23167(arg0.getPath(), 430601841);
+			@Pc(11) Packet local11 = new Packet(500);
+			local11.p1(3);
+			local11.p1(arg1 == null ? 0 : 1);
+			local11.pUTF8(arg0.getPath());
 			if (arg1 != null) {
-				local11.method23167(arg1.getPath(), 1249630742);
+				local11.pUTF8(arg1.getPath());
 			}
-			local6.method834(local11.aByteArray61, 0, local11.anInt3152 * -1380987821, (byte) 1);
+			local6.method834(local11.data, 0, local11.pos * -1380987821, (byte) 1);
 			local6.method838(-1718462911);
 		} catch (@Pc(52) IOException local52) {
 			local52.printStackTrace();

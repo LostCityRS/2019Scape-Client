@@ -45,10 +45,10 @@ public final class Class80_Sub6 extends Class80 {
 	int anInt1453;
 
 	@OriginalMember(owner = "client!ajk", name = "z", descriptor = "Lclient!ald;")
-	Class80_Sub36 aClass80_Sub36_8;
+	Packet aPacket_8;
 
 	@OriginalMember(owner = "client!ajk", name = "p", descriptor = "Lclient!asx;")
-	Class80_Sub36_Sub2 aClass80_Sub36_Sub2_2;
+	PacketGl aPacketGl_2;
 
 	@OriginalMember(owner = "client!ajk", name = "v", descriptor = "Lclient!aax;")
 	Class24 aClass24_10;
@@ -128,8 +128,8 @@ public final class Class80_Sub6 extends Class80 {
 			}
 		}
 		if (this.anInt1453 > 0) {
-			this.aClass80_Sub36_8 = new Class80_Sub36(this.anInt1453 * 2);
-			this.aClass80_Sub36_Sub2_2 = new Class80_Sub36_Sub2(this.anInt1453 * 16);
+			this.aPacket_8 = new Packet(this.anInt1453 * 2);
+			this.aPacketGl_2 = new PacketGl(this.anInt1453 * 16);
 			this.aClass24_10 = new Class24(Class700.method37081(this.anInt1453, (byte) 9));
 			local127 = 0;
 			local119 = 0;
@@ -189,8 +189,8 @@ public final class Class80_Sub6 extends Class80 {
 				}
 				local127++;
 			}
-			this.anInterface15_3 = this.aClass102_Sub3_29.method6445(5123, this.aClass80_Sub36_8.aByteArray61, this.aClass80_Sub36_8.anInt3152 * -1380987821, false);
-			this.anInterface14_5 = this.aClass102_Sub3_29.method6375(16, this.aClass80_Sub36_Sub2_2.aByteArray61, this.aClass80_Sub36_Sub2_2.anInt3152 * -1380987821, false);
+			this.anInterface15_3 = this.aClass102_Sub3_29.method6445(5123, this.aPacket_8.data, this.aPacket_8.pos * -1380987821, false);
+			this.anInterface14_5 = this.aClass102_Sub3_29.method6375(16, this.aPacketGl_2.data, this.aPacketGl_2.pos * -1380987821, false);
 			this.aClass189_11 = new Class189(this.anInterface14_5, 5126, 3, 0);
 			this.aClass189_12 = new Class189(this.anInterface14_5, 5121, 4, 12);
 		} else {
@@ -199,8 +199,8 @@ public final class Class80_Sub6 extends Class80 {
 			this.aClass189_11 = null;
 			this.aClass189_12 = null;
 		}
-		this.aClass80_Sub36_Sub2_2 = null;
-		this.aClass80_Sub36_8 = null;
+		this.aPacketGl_2 = null;
+		this.aPacket_8 = null;
 		this.aClass24_10 = null;
 		this.aFloatArrayArray14 = null;
 		this.aFloatArrayArray16 = null;
@@ -344,18 +344,18 @@ public final class Class80_Sub6 extends Class80 {
 			local566 = 255;
 		}
 		if (this.aClass102_Sub3_29.aBoolean129) {
-			this.aClass80_Sub36_Sub2_2.method23420((float) local11);
-			this.aClass80_Sub36_Sub2_2.method23420((float) local28);
-			this.aClass80_Sub36_Sub2_2.method23420((float) local21);
+			this.aPacketGl_2.method23420((float) local11);
+			this.aPacketGl_2.method23420((float) local28);
+			this.aPacketGl_2.method23420((float) local21);
 		} else {
-			this.aClass80_Sub36_Sub2_2.method23418((float) local11);
-			this.aClass80_Sub36_Sub2_2.method23418((float) local28);
-			this.aClass80_Sub36_Sub2_2.method23418((float) local21);
+			this.aPacketGl_2.method23418((float) local11);
+			this.aPacketGl_2.method23418((float) local28);
+			this.aPacketGl_2.method23418((float) local21);
 		}
-		this.aClass80_Sub36_Sub2_2.method23154(local538, 1275868335);
-		this.aClass80_Sub36_Sub2_2.method23154(local553, 1275868335);
-		this.aClass80_Sub36_Sub2_2.method23154(local566, 1275868335);
-		this.aClass80_Sub36_Sub2_2.method23154(255, 1275868335);
+		this.aPacketGl_2.p1(local538);
+		this.aPacketGl_2.p1(local553);
+		this.aPacketGl_2.p1(local566);
+		this.aPacketGl_2.p1(255);
 		this.method13156(local70);
 	}
 
@@ -381,27 +381,27 @@ public final class Class80_Sub6 extends Class80 {
 	@OriginalMember(owner = "client!ajk", name = "u", descriptor = "(S)V")
 	void method13152(@OriginalArg(0) short arg0) {
 		if (this.aClass102_Sub3_29.aBoolean129) {
-			this.aClass80_Sub36_8.method23155(arg0, (byte) -14);
+			this.aPacket_8.p2(arg0);
 		} else {
-			this.aClass80_Sub36_8.method23385(arg0, 1060557734);
+			this.aPacket_8.ip2(arg0);
 		}
 	}
 
 	@OriginalMember(owner = "client!ajk", name = "l", descriptor = "(S)V")
 	void method13153(@OriginalArg(0) short arg0) {
 		if (this.aClass102_Sub3_29.aBoolean129) {
-			this.aClass80_Sub36_8.method23155(arg0, (byte) -127);
+			this.aPacket_8.p2(arg0);
 		} else {
-			this.aClass80_Sub36_8.method23385(arg0, 1060557734);
+			this.aPacket_8.ip2(arg0);
 		}
 	}
 
 	@OriginalMember(owner = "client!ajk", name = "g", descriptor = "(S)V")
 	void method13154(@OriginalArg(0) short arg0) {
 		if (this.aClass102_Sub3_29.aBoolean129) {
-			this.aClass80_Sub36_8.method23155(arg0, (byte) -107);
+			this.aPacket_8.p2(arg0);
 		} else {
-			this.aClass80_Sub36_8.method23385(arg0, 1060557734);
+			this.aPacket_8.ip2(arg0);
 		}
 	}
 
@@ -427,9 +427,9 @@ public final class Class80_Sub6 extends Class80 {
 	@OriginalMember(owner = "client!ajk", name = "t", descriptor = "(S)V")
 	void method13156(@OriginalArg(0) short arg0) {
 		if (this.aClass102_Sub3_29.aBoolean129) {
-			this.aClass80_Sub36_8.method23155(arg0, (byte) -116);
+			this.aPacket_8.p2(arg0);
 		} else {
-			this.aClass80_Sub36_8.method23385(arg0, 1060557734);
+			this.aPacket_8.ip2(arg0);
 		}
 	}
 }

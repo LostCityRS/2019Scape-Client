@@ -75,7 +75,7 @@ public final class Class706 {
 			Class47.aBoolean28 = true;
 			@Pc(76) Class75 local76 = Class52.method1074(16777215);
 			@Pc(82) Class80_Sub31 local82 = Class623.method32440(Class443.aClass443_79, local76.aClass22_1, -191270971);
-			local82.aClass80_Sub36_Sub1_2.method23345(RuntimeException_Sub1.anInt3204 * -1360627077, (byte) 78);
+			local82.aPacketBit_2.p4(RuntimeException_Sub1.anInt3204 * -1360627077);
 			local76.method1325(local82, (byte) -95);
 			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = 0;
 		}

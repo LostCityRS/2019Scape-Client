@@ -49,23 +49,23 @@ public final class Class464 implements Interface1 {
 
 	@OriginalMember(owner = "client!oo", name = "p", descriptor = "(Lclient!aku;I)[I")
 	static int[] method29620(@OriginalArg(0) Class80_Sub31 arg0, @OriginalArg(1) int arg1) {
-		@Pc(4) Class80_Sub36 local4 = new Class80_Sub36(518);
+		@Pc(4) Packet local4 = new Packet(518);
 		@Pc(7) int[] local7 = new int[4];
 		@Pc(9) int local9;
 		for (local9 = 0; local9 < 4; local9++) {
 			local7[local9] = (int) (Math.random() * 9.9999999E7D);
 		}
-		local4.method23154(10, 1275868335);
-		local4.method23345(local7[0], (byte) 32);
-		local4.method23345(local7[1], (byte) 88);
-		local4.method23345(local7[2], (byte) 125);
-		local4.method23345(local7[3], (byte) 78);
+		local4.p1(10);
+		local4.p4(local7[0]);
+		local4.p4(local7[1]);
+		local4.p4(local7[2]);
+		local4.p4(local7[3]);
 		for (local9 = 0; local9 < 10; local9++) {
-			local4.method23345((int) (Math.random() * 9.9999999E7D), (byte) 75);
+			local4.p4((int) (Math.random() * 9.9999999E7D));
 		}
-		local4.method23155((int) (Math.random() * 9.9999999E7D), (byte) -61);
-		local4.method23206(Class174.aBigInteger1, Class174.aBigInteger2, (byte) 0);
-		arg0.aClass80_Sub36_Sub1_2.method23168(local4.aByteArray61, 0, local4.anInt3152 * -1380987821, (byte) 111);
+		local4.p2((int) (Math.random() * 9.9999999E7D));
+		local4.rsaenc(Class174.aBigInteger1, Class174.aBigInteger2);
+		arg0.aPacketBit_2.pdata(local4.data, 0, local4.pos * -1380987821);
 		return local7;
 	}
 

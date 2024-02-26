@@ -79,7 +79,7 @@ public final class Class576 implements Interface62 {
 	public static void method31792(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1) {
 		if (client.anInt3433 * 1994758437 == 0) {
 			@Pc(11) Class80_Sub31 local11 = Class623.method32440(Class443.aClass443_19, client.aClass75_2.aClass22_1, -191270971);
-			local11.aClass80_Sub36_Sub1_2.method23154(arg0, 1275868335);
+			local11.aPacketBit_2.p1(arg0);
 			client.aClass75_2.method1325(local11, (byte) -18);
 		}
 	}

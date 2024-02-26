@@ -17,10 +17,10 @@ public final class Class103_Sub10 extends Class103 {
 	final int anInt944;
 
 	@OriginalMember(owner = "client!agf", name = "<init>", descriptor = "(Lclient!ald;)V")
-	Class103_Sub10(@OriginalArg(0) Class80_Sub36 arg0) {
+	Class103_Sub10(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.anInt945 = arg0.method23178((byte) -111) * -1254504383;
-		this.anInt944 = arg0.method23362(-292444373) * 1684166699;
+		this.anInt945 = arg0.g2() * -1254504383;
+		this.anInt944 = arg0.g1() * 1684166699;
 	}
 
 	@OriginalMember(owner = "client!agf", name = "u", descriptor = "(I)Z")

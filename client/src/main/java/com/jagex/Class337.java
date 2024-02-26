@@ -91,7 +91,7 @@ public final class Class337 {
 	}
 
 	@OriginalMember(owner = "client!ig", name = "o", descriptor = "(Lclient!ald;I)V")
-	public static void method27874(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	public static void method27874(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		@Pc(2) byte[] local2 = new byte[24];
 		try {
 			Class554.aClass36_4.method762(0L);
@@ -107,7 +107,7 @@ public final class Class337 {
 				local2[local33] = -1;
 			}
 		}
-		arg0.method23168(local2, 0, 24, (byte) 52);
+		arg0.pdata(local2, 0, 24);
 	}
 
 	@OriginalMember(owner = "client!ig", name = "arz", descriptor = "(Lclient!yp;B)V")

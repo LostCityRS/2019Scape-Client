@@ -461,17 +461,17 @@ public final class Class123_Sub3 extends Class123 {
 
 	@OriginalMember(owner = "client!ahm", name = "n", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method20521(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(5) Class362 local5 = Class384.method28588(arg0.method23362(-2067518680), (byte) 44);
-		@Pc(9) int local9 = arg0.method23178((byte) -113);
+	public void method20521(@OriginalArg(0) Packet arg0) {
+		@Pc(5) Class362 local5 = Class384.method28588(arg0.g1(), (byte) 44);
+		@Pc(9) int local9 = arg0.g2();
 		this.aClass463_41.method29476(arg0);
 		this.aClass466_1.method29644(arg0);
-		if (arg0.method23362(-155006771) == 1) {
+		if (arg0.g1() == 1) {
 			this.aBoolean217 = true;
 		} else {
 			this.aBoolean217 = false;
 		}
-		this.anInt1159 = arg0.method23178((byte) -120) * -1462761259;
+		this.anInt1159 = arg0.g2() * -1462761259;
 		this.anInterface31_1 = this.aClass121_13.method9605(959375167).method29301(local5, local9, 1929522207);
 	}
 
@@ -577,17 +577,17 @@ public final class Class123_Sub3 extends Class123 {
 
 	@OriginalMember(owner = "client!ahm", name = "y", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method20517(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(5) Class362 local5 = Class384.method28588(arg0.method23362(354836528), (byte) -56);
-		@Pc(9) int local9 = arg0.method23178((byte) -99);
+	public void method20517(@OriginalArg(0) Packet arg0) {
+		@Pc(5) Class362 local5 = Class384.method28588(arg0.g1(), (byte) -56);
+		@Pc(9) int local9 = arg0.g2();
 		this.aClass463_41.method29476(arg0);
 		this.aClass466_1.method29644(arg0);
-		if (arg0.method23362(389442548) == 1) {
+		if (arg0.g1() == 1) {
 			this.aBoolean217 = true;
 		} else {
 			this.aBoolean217 = false;
 		}
-		this.anInt1159 = arg0.method23178((byte) -60) * -1462761259;
+		this.anInt1159 = arg0.g2() * -1462761259;
 		this.anInterface31_1 = this.aClass121_13.method9605(959375167).method29301(local5, local9, 2136277632);
 	}
 
@@ -802,17 +802,17 @@ public final class Class123_Sub3 extends Class123 {
 
 	@OriginalMember(owner = "client!ahm", name = "c", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method20522(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(5) Class362 local5 = Class384.method28588(arg0.method23362(-239717834), (byte) 30);
-		@Pc(9) int local9 = arg0.method23178((byte) -96);
+	public void method20522(@OriginalArg(0) Packet arg0) {
+		@Pc(5) Class362 local5 = Class384.method28588(arg0.g1(), (byte) 30);
+		@Pc(9) int local9 = arg0.g2();
 		this.aClass463_41.method29476(arg0);
 		this.aClass466_1.method29644(arg0);
-		if (arg0.method23362(-1141699641) == 1) {
+		if (arg0.g1() == 1) {
 			this.aBoolean217 = true;
 		} else {
 			this.aBoolean217 = false;
 		}
-		this.anInt1159 = arg0.method23178((byte) -118) * -1462761259;
+		this.anInt1159 = arg0.g2() * -1462761259;
 		this.anInterface31_1 = this.aClass121_13.method9605(959375167).method29301(local5, local9, 1965416898);
 	}
 
@@ -828,17 +828,17 @@ public final class Class123_Sub3 extends Class123 {
 
 	@OriginalMember(owner = "client!ahm", name = "m", descriptor = "(Lclient!ald;I)V")
 	@Override
-	public void method20506(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		@Pc(5) Class362 local5 = Class384.method28588(arg0.method23362(641093479), (byte) -93);
-		@Pc(9) int local9 = arg0.method23178((byte) -21);
+	public void method20506(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(5) Class362 local5 = Class384.method28588(arg0.g1(), (byte) -93);
+		@Pc(9) int local9 = arg0.g2();
 		this.aClass463_41.method29476(arg0);
 		this.aClass466_1.method29644(arg0);
-		if (arg0.method23362(-176036612) == 1) {
+		if (arg0.g1() == 1) {
 			this.aBoolean217 = true;
 		} else {
 			this.aBoolean217 = false;
 		}
-		this.anInt1159 = arg0.method23178((byte) -106) * -1462761259;
+		this.anInt1159 = arg0.g2() * -1462761259;
 		this.anInterface31_1 = this.aClass121_13.method9605(959375167).method29301(local5, local9, 2081452319);
 	}
 }

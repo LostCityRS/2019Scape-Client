@@ -20,10 +20,10 @@ public final class Class103_Sub23 extends Class103 {
 	@OriginalMember(owner = "client!agx", name = "gz", descriptor = "(Lclient!ad;I)V")
 	static void method8699(@OriginalArg(0) Class75 arg0, @OriginalArg(1) int arg1) {
 		@Pc(5) Class80_Sub31 local5 = Class623.method32440(Class443.aClass443_124, arg0.aClass22_1, -191270971);
-		local5.aClass80_Sub36_Sub1_2.method23154(Class17.method437(-1349690784), 1275868335);
-		local5.aClass80_Sub36_Sub1_2.method23155(Class80_Sub1_Sub1.anInt254 * -255202897, (byte) -97);
-		local5.aClass80_Sub36_Sub1_2.method23155(Class80_Sub25.anInt1627 * 167687103, (byte) -77);
-		local5.aClass80_Sub36_Sub1_2.method23154(Class703.aClass80_Sub37_49.aClass165_Sub43_1.method16849(1538334780), 1275868335);
+		local5.aPacketBit_2.p1(Class17.method437(-1349690784));
+		local5.aPacketBit_2.p2(Class80_Sub1_Sub1.anInt254 * -255202897);
+		local5.aPacketBit_2.p2(Class80_Sub25.anInt1627 * 167687103);
+		local5.aPacketBit_2.p1(Class703.aClass80_Sub37_49.aClass165_Sub43_1.method16849(1538334780));
 		arg0.method1325(local5, (byte) -109);
 	}
 
@@ -148,11 +148,11 @@ public final class Class103_Sub23 extends Class103 {
 	}
 
 	@OriginalMember(owner = "client!agx", name = "<init>", descriptor = "(Lclient!ald;)V")
-	Class103_Sub23(@OriginalArg(0) Class80_Sub36 arg0) {
+	Class103_Sub23(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.anInt1024 = arg0.method23178((byte) -92) * 1020806835;
-		this.anInt1022 = arg0.method23178((byte) -111) * 241376385;
-		this.anInt1023 = arg0.method23362(-1440443022) * -1803887901;
+		this.anInt1024 = arg0.g2() * 1020806835;
+		this.anInt1022 = arg0.g2() * 241376385;
+		this.anInt1023 = arg0.g1() * -1803887901;
 	}
 
 	@OriginalMember(owner = "client!agx", name = "f", descriptor = "(I)V")

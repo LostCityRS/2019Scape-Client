@@ -142,7 +142,7 @@ public final class Class492 {
 
 	@OriginalMember(owner = "client!ps", name = "<init>", descriptor = "([BI[B)V")
 	Class492(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte[] arg2) {
-		this.anInt5026 = Class291.method26941(arg0, arg0.length, 554772943) * -1360507039;
+		this.anInt5026 = Packet.getcrc(arg0, arg0.length) * -1360507039;
 		if (arg1 != this.anInt5026 * 457348257) {
 			throw new RuntimeException();
 		}
@@ -162,25 +162,25 @@ public final class Class492 {
 
 	@OriginalMember(owner = "client!ps", name = "t", descriptor = "([BI)V")
 	void method30261(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1) {
-		@Pc(6) Class80_Sub36 local6 = new Class80_Sub36(Class306.method27214(arg0, 1972376445));
-		@Pc(10) int local10 = local6.method23362(-923631866);
+		@Pc(6) Packet local6 = new Packet(Class306.method27214(arg0, 1972376445));
+		@Pc(10) int local10 = local6.g1();
 		if (local10 < 5 || local10 > 7) {
 			throw new RuntimeException();
 		}
 		if (local10 >= 6) {
-			this.anInt5023 = local6.method23182(-1523631830) * -1921270019;
+			this.anInt5023 = local6.g4() * -1921270019;
 		} else {
 			this.anInt5023 = 0;
 		}
-		@Pc(38) int local38 = local6.method23362(-1309410075);
+		@Pc(38) int local38 = local6.g1();
 		@Pc(47) boolean local47 = (local38 & 0x1) != 0;
 		@Pc(55) boolean local55 = (local38 & 0x2) != 0;
 		@Pc(64) boolean local64 = (local38 & 0x4) != 0;
 		@Pc(72) boolean local72 = (local38 & 0x8) != 0;
 		if (local10 >= 7) {
-			this.anInt5024 = local6.method23330(-1375407504) * -210700441;
+			this.anInt5024 = local6.gSmart2or4() * -210700441;
 		} else {
-			this.anInt5024 = local6.method23178((byte) -20) * -210700441;
+			this.anInt5024 = local6.g2() * -210700441;
 		}
 		@Pc(92) int local92 = 0;
 		@Pc(94) int local94 = -1;
@@ -188,14 +188,14 @@ public final class Class492 {
 		@Pc(106) int local106;
 		if (local10 >= 7) {
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
-				this.anIntArray459[local106] = local92 += local6.method23330(-1375407504);
+				this.anIntArray459[local106] = local92 += local6.gSmart2or4();
 				if (this.anIntArray459[local106] > local94) {
 					local94 = this.anIntArray459[local106];
 				}
 			}
 		} else {
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
-				this.anIntArray459[local106] = local92 += local6.method23178((byte) -22);
+				this.anIntArray459[local106] = local92 += local6.g2();
 				if (this.anIntArray459[local106] > local94) {
 					local94 = this.anIntArray459[local106];
 				}
@@ -219,22 +219,22 @@ public final class Class492 {
 				this.anIntArray456[local106] = -1;
 			}
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
-				this.anIntArray456[this.anIntArray459[local106]] = local6.method23182(-747170655);
+				this.anIntArray456[this.anIntArray459[local106]] = local6.g4();
 			}
 			this.aClass349_1 = new Class349(this.anIntArray456);
 		}
 		for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
-			this.anIntArray455[this.anIntArray459[local106]] = local6.method23182(-55747685);
+			this.anIntArray455[this.anIntArray459[local106]] = local6.g4();
 		}
 		if (local72) {
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
-				this.anIntArray457[local106] = local6.method23182(-717370453);
+				this.anIntArray457[local106] = local6.g4();
 			}
 		}
 		if (local55) {
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
 				@Pc(332) byte[] local332 = new byte[64];
-				local6.method23399(local332, 0, 64, -1944974065);
+				local6.gdata(local332, 0, 64);
 				this.aByteArrayArray16[this.anIntArray459[local106]] = local332;
 			}
 		}
@@ -242,12 +242,12 @@ public final class Class492 {
 			this.anIntArray460 = new int[this.anInt5025 * 183068259];
 			this.anIntArray461 = new int[this.anInt5025 * 183068259];
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
-				this.anIntArray460[this.anIntArray459[local106]] = local6.method23182(305508328);
-				this.anIntArray461[this.anIntArray459[local106]] = local6.method23182(1364881349);
+				this.anIntArray460[this.anIntArray459[local106]] = local6.g4();
+				this.anIntArray461[this.anIntArray459[local106]] = local6.g4();
 			}
 		}
 		for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
-			this.anIntArray458[this.anIntArray459[local106]] = local6.method23182(-928070520);
+			this.anIntArray458[this.anIntArray459[local106]] = local6.g4();
 		}
 		@Pc(455) int local455;
 		@Pc(459) int local459;
@@ -256,7 +256,7 @@ public final class Class492 {
 		@Pc(450) int local450;
 		if (local10 >= 7) {
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
-				this.anIntArray462[this.anIntArray459[local106]] = local6.method23330(-1375407504);
+				this.anIntArray462[this.anIntArray459[local106]] = local6.gSmart2or4();
 			}
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
 				local450 = this.anIntArray459[local106];
@@ -265,7 +265,7 @@ public final class Class492 {
 				local459 = -1;
 				this.anIntArrayArray58[local450] = new int[local455];
 				for (local467 = 0; local467 < local455; local467++) {
-					local485 = this.anIntArrayArray58[local450][local467] = local92 += local6.method23330(-1375407504);
+					local485 = this.anIntArrayArray58[local450][local467] = local92 += local6.gSmart2or4();
 					if (local485 > local459) {
 						local459 = local485;
 					}
@@ -277,7 +277,7 @@ public final class Class492 {
 			}
 		} else {
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
-				this.anIntArray462[this.anIntArray459[local106]] = local6.method23178((byte) -53);
+				this.anIntArray462[this.anIntArray459[local106]] = local6.g2();
 			}
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
 				local450 = this.anIntArray459[local106];
@@ -286,7 +286,7 @@ public final class Class492 {
 				local459 = -1;
 				this.anIntArrayArray58[local450] = new int[local455];
 				for (local467 = 0; local467 < local455; local467++) {
-					local485 = this.anIntArrayArray58[local450][local467] = local92 += local6.method23178((byte) -40);
+					local485 = this.anIntArrayArray58[local450][local467] = local92 += local6.g2();
 					if (local485 > local459) {
 						local459 = local485;
 					}
@@ -315,7 +315,7 @@ public final class Class492 {
 				} else {
 					local467 = this.anIntArrayArray58[local450][local459];
 				}
-				this.anIntArrayArray59[local450][local467] = local6.method23182(-1671689885);
+				this.anIntArrayArray59[local450][local467] = local6.g4();
 			}
 			this.aClass349Array1[local450] = new Class349(this.anIntArrayArray59[local450]);
 		}
@@ -323,25 +323,25 @@ public final class Class492 {
 
 	@OriginalMember(owner = "client!ps", name = "f", descriptor = "([B)V")
 	void method30262(@OriginalArg(0) byte[] arg0) {
-		@Pc(6) Class80_Sub36 local6 = new Class80_Sub36(Class306.method27214(arg0, 1972376445));
-		@Pc(10) int local10 = local6.method23362(-206354833);
+		@Pc(6) Packet local6 = new Packet(Class306.method27214(arg0, 1972376445));
+		@Pc(10) int local10 = local6.g1();
 		if (local10 < 5 || local10 > 7) {
 			throw new RuntimeException();
 		}
 		if (local10 >= 6) {
-			this.anInt5023 = local6.method23182(-264927365) * -1921270019;
+			this.anInt5023 = local6.g4() * -1921270019;
 		} else {
 			this.anInt5023 = 0;
 		}
-		@Pc(38) int local38 = local6.method23362(-806702165);
+		@Pc(38) int local38 = local6.g1();
 		@Pc(47) boolean local47 = (local38 & 0x1) != 0;
 		@Pc(55) boolean local55 = (local38 & 0x2) != 0;
 		@Pc(64) boolean local64 = (local38 & 0x4) != 0;
 		@Pc(72) boolean local72 = (local38 & 0x8) != 0;
 		if (local10 >= 7) {
-			this.anInt5024 = local6.method23330(-1375407504) * -210700441;
+			this.anInt5024 = local6.gSmart2or4() * -210700441;
 		} else {
-			this.anInt5024 = local6.method23178((byte) -7) * -210700441;
+			this.anInt5024 = local6.g2() * -210700441;
 		}
 		@Pc(92) int local92 = 0;
 		@Pc(94) int local94 = -1;
@@ -349,14 +349,14 @@ public final class Class492 {
 		@Pc(106) int local106;
 		if (local10 >= 7) {
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
-				this.anIntArray459[local106] = local92 += local6.method23330(-1375407504);
+				this.anIntArray459[local106] = local92 += local6.gSmart2or4();
 				if (this.anIntArray459[local106] > local94) {
 					local94 = this.anIntArray459[local106];
 				}
 			}
 		} else {
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
-				this.anIntArray459[local106] = local92 += local6.method23178((byte) -2);
+				this.anIntArray459[local106] = local92 += local6.g2();
 				if (this.anIntArray459[local106] > local94) {
 					local94 = this.anIntArray459[local106];
 				}
@@ -380,22 +380,22 @@ public final class Class492 {
 				this.anIntArray456[local106] = -1;
 			}
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
-				this.anIntArray456[this.anIntArray459[local106]] = local6.method23182(1857704906);
+				this.anIntArray456[this.anIntArray459[local106]] = local6.g4();
 			}
 			this.aClass349_1 = new Class349(this.anIntArray456);
 		}
 		for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
-			this.anIntArray455[this.anIntArray459[local106]] = local6.method23182(1043632675);
+			this.anIntArray455[this.anIntArray459[local106]] = local6.g4();
 		}
 		if (local72) {
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
-				this.anIntArray457[local106] = local6.method23182(1029305704);
+				this.anIntArray457[local106] = local6.g4();
 			}
 		}
 		if (local55) {
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
 				@Pc(332) byte[] local332 = new byte[64];
-				local6.method23399(local332, 0, 64, -1905438376);
+				local6.gdata(local332, 0, 64);
 				this.aByteArrayArray16[this.anIntArray459[local106]] = local332;
 			}
 		}
@@ -403,12 +403,12 @@ public final class Class492 {
 			this.anIntArray460 = new int[this.anInt5025 * 183068259];
 			this.anIntArray461 = new int[this.anInt5025 * 183068259];
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
-				this.anIntArray460[this.anIntArray459[local106]] = local6.method23182(600990221);
-				this.anIntArray461[this.anIntArray459[local106]] = local6.method23182(150596893);
+				this.anIntArray460[this.anIntArray459[local106]] = local6.g4();
+				this.anIntArray461[this.anIntArray459[local106]] = local6.g4();
 			}
 		}
 		for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
-			this.anIntArray458[this.anIntArray459[local106]] = local6.method23182(1712869059);
+			this.anIntArray458[this.anIntArray459[local106]] = local6.g4();
 		}
 		@Pc(455) int local455;
 		@Pc(459) int local459;
@@ -417,7 +417,7 @@ public final class Class492 {
 		@Pc(450) int local450;
 		if (local10 >= 7) {
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
-				this.anIntArray462[this.anIntArray459[local106]] = local6.method23330(-1375407504);
+				this.anIntArray462[this.anIntArray459[local106]] = local6.gSmart2or4();
 			}
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
 				local450 = this.anIntArray459[local106];
@@ -426,7 +426,7 @@ public final class Class492 {
 				local459 = -1;
 				this.anIntArrayArray58[local450] = new int[local455];
 				for (local467 = 0; local467 < local455; local467++) {
-					local485 = this.anIntArrayArray58[local450][local467] = local92 += local6.method23330(-1375407504);
+					local485 = this.anIntArrayArray58[local450][local467] = local92 += local6.gSmart2or4();
 					if (local485 > local459) {
 						local459 = local485;
 					}
@@ -438,7 +438,7 @@ public final class Class492 {
 			}
 		} else {
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
-				this.anIntArray462[this.anIntArray459[local106]] = local6.method23178((byte) -46);
+				this.anIntArray462[this.anIntArray459[local106]] = local6.g2();
 			}
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
 				local450 = this.anIntArray459[local106];
@@ -447,7 +447,7 @@ public final class Class492 {
 				local459 = -1;
 				this.anIntArrayArray58[local450] = new int[local455];
 				for (local467 = 0; local467 < local455; local467++) {
-					local485 = this.anIntArrayArray58[local450][local467] = local92 += local6.method23178((byte) -105);
+					local485 = this.anIntArrayArray58[local450][local467] = local92 += local6.g2();
 					if (local485 > local459) {
 						local459 = local485;
 					}
@@ -476,7 +476,7 @@ public final class Class492 {
 				} else {
 					local467 = this.anIntArrayArray58[local450][local459];
 				}
-				this.anIntArrayArray59[local450][local467] = local6.method23182(-1178041199);
+				this.anIntArrayArray59[local450][local467] = local6.g4();
 			}
 			this.aClass349Array1[local450] = new Class349(this.anIntArrayArray59[local450]);
 		}
@@ -484,25 +484,25 @@ public final class Class492 {
 
 	@OriginalMember(owner = "client!ps", name = "e", descriptor = "([B)V")
 	void method30263(@OriginalArg(0) byte[] arg0) {
-		@Pc(6) Class80_Sub36 local6 = new Class80_Sub36(Class306.method27214(arg0, 1972376445));
-		@Pc(10) int local10 = local6.method23362(-21266383);
+		@Pc(6) Packet local6 = new Packet(Class306.method27214(arg0, 1972376445));
+		@Pc(10) int local10 = local6.g1();
 		if (local10 < 5 || local10 > 7) {
 			throw new RuntimeException();
 		}
 		if (local10 >= 6) {
-			this.anInt5023 = local6.method23182(-1652487015) * -1921270019;
+			this.anInt5023 = local6.g4() * -1921270019;
 		} else {
 			this.anInt5023 = 0;
 		}
-		@Pc(38) int local38 = local6.method23362(-2082289726);
+		@Pc(38) int local38 = local6.g1();
 		@Pc(47) boolean local47 = (local38 & 0x1) != 0;
 		@Pc(55) boolean local55 = (local38 & 0x2) != 0;
 		@Pc(64) boolean local64 = (local38 & 0x4) != 0;
 		@Pc(72) boolean local72 = (local38 & 0x8) != 0;
 		if (local10 >= 7) {
-			this.anInt5024 = local6.method23330(-1375407504) * -210700441;
+			this.anInt5024 = local6.gSmart2or4() * -210700441;
 		} else {
-			this.anInt5024 = local6.method23178((byte) -65) * -210700441;
+			this.anInt5024 = local6.g2() * -210700441;
 		}
 		@Pc(92) int local92 = 0;
 		@Pc(94) int local94 = -1;
@@ -510,14 +510,14 @@ public final class Class492 {
 		@Pc(106) int local106;
 		if (local10 >= 7) {
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
-				this.anIntArray459[local106] = local92 += local6.method23330(-1375407504);
+				this.anIntArray459[local106] = local92 += local6.gSmart2or4();
 				if (this.anIntArray459[local106] > local94) {
 					local94 = this.anIntArray459[local106];
 				}
 			}
 		} else {
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
-				this.anIntArray459[local106] = local92 += local6.method23178((byte) -43);
+				this.anIntArray459[local106] = local92 += local6.g2();
 				if (this.anIntArray459[local106] > local94) {
 					local94 = this.anIntArray459[local106];
 				}
@@ -541,22 +541,22 @@ public final class Class492 {
 				this.anIntArray456[local106] = -1;
 			}
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
-				this.anIntArray456[this.anIntArray459[local106]] = local6.method23182(1341331325);
+				this.anIntArray456[this.anIntArray459[local106]] = local6.g4();
 			}
 			this.aClass349_1 = new Class349(this.anIntArray456);
 		}
 		for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
-			this.anIntArray455[this.anIntArray459[local106]] = local6.method23182(-1128625017);
+			this.anIntArray455[this.anIntArray459[local106]] = local6.g4();
 		}
 		if (local72) {
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
-				this.anIntArray457[local106] = local6.method23182(-370606077);
+				this.anIntArray457[local106] = local6.g4();
 			}
 		}
 		if (local55) {
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
 				@Pc(332) byte[] local332 = new byte[64];
-				local6.method23399(local332, 0, 64, -2138341632);
+				local6.gdata(local332, 0, 64);
 				this.aByteArrayArray16[this.anIntArray459[local106]] = local332;
 			}
 		}
@@ -564,12 +564,12 @@ public final class Class492 {
 			this.anIntArray460 = new int[this.anInt5025 * 183068259];
 			this.anIntArray461 = new int[this.anInt5025 * 183068259];
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
-				this.anIntArray460[this.anIntArray459[local106]] = local6.method23182(492046571);
-				this.anIntArray461[this.anIntArray459[local106]] = local6.method23182(-767625223);
+				this.anIntArray460[this.anIntArray459[local106]] = local6.g4();
+				this.anIntArray461[this.anIntArray459[local106]] = local6.g4();
 			}
 		}
 		for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
-			this.anIntArray458[this.anIntArray459[local106]] = local6.method23182(-775024797);
+			this.anIntArray458[this.anIntArray459[local106]] = local6.g4();
 		}
 		@Pc(455) int local455;
 		@Pc(459) int local459;
@@ -578,7 +578,7 @@ public final class Class492 {
 		@Pc(450) int local450;
 		if (local10 >= 7) {
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
-				this.anIntArray462[this.anIntArray459[local106]] = local6.method23330(-1375407504);
+				this.anIntArray462[this.anIntArray459[local106]] = local6.gSmart2or4();
 			}
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
 				local450 = this.anIntArray459[local106];
@@ -587,7 +587,7 @@ public final class Class492 {
 				local459 = -1;
 				this.anIntArrayArray58[local450] = new int[local455];
 				for (local467 = 0; local467 < local455; local467++) {
-					local485 = this.anIntArrayArray58[local450][local467] = local92 += local6.method23330(-1375407504);
+					local485 = this.anIntArrayArray58[local450][local467] = local92 += local6.gSmart2or4();
 					if (local485 > local459) {
 						local459 = local485;
 					}
@@ -599,7 +599,7 @@ public final class Class492 {
 			}
 		} else {
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
-				this.anIntArray462[this.anIntArray459[local106]] = local6.method23178((byte) -30);
+				this.anIntArray462[this.anIntArray459[local106]] = local6.g2();
 			}
 			for (local106 = 0; local106 < this.anInt5024 * 2028811351; local106++) {
 				local450 = this.anIntArray459[local106];
@@ -608,7 +608,7 @@ public final class Class492 {
 				local459 = -1;
 				this.anIntArrayArray58[local450] = new int[local455];
 				for (local467 = 0; local467 < local455; local467++) {
-					local485 = this.anIntArrayArray58[local450][local467] = local92 += local6.method23178((byte) -91);
+					local485 = this.anIntArrayArray58[local450][local467] = local92 += local6.g2();
 					if (local485 > local459) {
 						local459 = local485;
 					}
@@ -637,7 +637,7 @@ public final class Class492 {
 				} else {
 					local467 = this.anIntArrayArray58[local450][local459];
 				}
-				this.anIntArrayArray59[local450][local467] = local6.method23182(-1230684360);
+				this.anIntArrayArray59[local450][local467] = local6.g4();
 			}
 			this.aClass349Array1[local450] = new Class349(this.anIntArrayArray59[local450]);
 		}

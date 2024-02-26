@@ -32,15 +32,15 @@ public final class Class587 {
 		if (local18 == null) {
 			return new Class587(0);
 		}
-		@Pc(31) Class80_Sub36 local31 = new Class80_Sub36(local18);
-		@Pc(35) int local35 = local31.method23178((byte) -36);
+		@Pc(31) Packet local31 = new Packet(local18);
+		@Pc(35) int local35 = local31.g2();
 		@Pc(40) Class587 local40 = new Class587(local35);
 		@Pc(42) int local42 = 0;
 		while (true) {
 			while (local42 < local40.anInt5303 * -70603505) {
-				@Pc(52) int local52 = local31.method23182(-136176025);
-				@Pc(56) int local56 = local31.method23178((byte) -104);
-				@Pc(60) int local60 = local31.method23362(540257755);
+				@Pc(52) int local52 = local31.g4();
+				@Pc(56) int local56 = local31.g2();
+				@Pc(60) int local60 = local31.g1();
 				if (!arg2 && local60 == 1) {
 					local40.anInt5303 -= 1039049199;
 				} else {
@@ -63,15 +63,15 @@ public final class Class587 {
 		if (local18 == null) {
 			return new Class587(0);
 		}
-		@Pc(31) Class80_Sub36 local31 = new Class80_Sub36(local18);
-		@Pc(35) int local35 = local31.method23178((byte) -48);
+		@Pc(31) Packet local31 = new Packet(local18);
+		@Pc(35) int local35 = local31.g2();
 		@Pc(40) Class587 local40 = new Class587(local35);
 		@Pc(42) int local42 = 0;
 		while (true) {
 			while (local42 < local40.anInt5303 * -70603505) {
-				@Pc(52) int local52 = local31.method23182(-2018820879);
-				@Pc(56) int local56 = local31.method23178((byte) -70);
-				@Pc(60) int local60 = local31.method23362(-662182805);
+				@Pc(52) int local52 = local31.g4();
+				@Pc(56) int local56 = local31.g2();
+				@Pc(60) int local60 = local31.g1();
 				if (!arg2 && local60 == 1) {
 					local40.anInt5303 -= 1039049199;
 				} else {
@@ -94,15 +94,15 @@ public final class Class587 {
 		if (local18 == null) {
 			return new Class587(0);
 		}
-		@Pc(31) Class80_Sub36 local31 = new Class80_Sub36(local18);
-		@Pc(35) int local35 = local31.method23178((byte) -117);
+		@Pc(31) Packet local31 = new Packet(local18);
+		@Pc(35) int local35 = local31.g2();
 		@Pc(40) Class587 local40 = new Class587(local35);
 		@Pc(42) int local42 = 0;
 		while (true) {
 			while (local42 < local40.anInt5303 * -70603505) {
-				@Pc(52) int local52 = local31.method23182(330810516);
-				@Pc(56) int local56 = local31.method23178((byte) -119);
-				@Pc(60) int local60 = local31.method23362(716277496);
+				@Pc(52) int local52 = local31.g4();
+				@Pc(56) int local56 = local31.g2();
+				@Pc(60) int local60 = local31.g1();
 				if (!arg2 && local60 == 1) {
 					local40.anInt5303 -= 1039049199;
 				} else {

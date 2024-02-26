@@ -94,8 +94,8 @@ public final class Class162_Sub1 extends Class162 {
 	}
 
 	@OriginalMember(owner = "client!alv", name = "c", descriptor = "(Lclient!ald;Lclient!asz;I)V")
-	void method15713(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class80_Sub17_Sub2 arg1, @OriginalArg(2) int arg2) {
-		arg0.method23154(arg1.method23471(1092977885), 1275868335);
+	void method15713(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class80_Sub17_Sub2 arg1, @OriginalArg(2) int arg2) {
+		arg0.p1(arg1.method23471(1092977885));
 	}
 
 	@OriginalMember(owner = "client!alv", name = "n", descriptor = "(Lclient!asz;I)V")
@@ -114,16 +114,16 @@ public final class Class162_Sub1 extends Class162 {
 			return;
 		}
 		@Pc(13) Class80_Sub31 local13 = Class623.method32440(Class443.aClass443_74, client.aClass75_1.aClass22_1, -191270971);
-		local13.aClass80_Sub36_Sub1_2.method23220(this.method15777(local4, 65535, 1530367823), 2036747717);
-		local13.aClass80_Sub36_Sub1_2.method23229(local4.method23451(1104430454) | local4.method23454(-358265751) << 16, 1350952348);
-		local13.aClass80_Sub36_Sub1_2.method23209(local4.method23472(1364854779) << 1 | local4.method23471(-1700354675) & 0x1, -220005457);
+		local13.aPacketBit_2.p2_alt3(this.method15777(local4, 65535, 1530367823));
+		local13.aPacketBit_2.p4_alt1(local4.method23451(1104430454) | local4.method23454(-358265751) << 16);
+		local13.aPacketBit_2.p1_alt1(local4.method23472(1364854779) << 1 | local4.method23471(-1700354675) & 0x1);
 		client.aClass75_1.method1325(local13, (byte) -4);
 		local4.method23453(-454396966);
 	}
 
 	@OriginalMember(owner = "client!alv", name = "q", descriptor = "(Lclient!ald;Lclient!akg;)V")
 	@Override
-	void method15783(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class80_Sub17 arg1) {
+	void method15783(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class80_Sub17 arg1) {
 		this.method15713(arg0, (Class80_Sub17_Sub2) arg1, 1306301075);
 	}
 
@@ -147,13 +147,13 @@ public final class Class162_Sub1 extends Class162 {
 
 	@OriginalMember(owner = "client!alv", name = "g", descriptor = "(Lclient!ald;Lclient!akg;B)V")
 	@Override
-	void method15779(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class80_Sub17 arg1, @OriginalArg(2) byte arg2) {
+	void method15779(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class80_Sub17 arg1, @OriginalArg(2) byte arg2) {
 		this.method15713(arg0, (Class80_Sub17_Sub2) arg1, 1835058222);
 	}
 
 	@OriginalMember(owner = "client!alv", name = "aq", descriptor = "(Lclient!ald;Lclient!asz;)V")
-	void method15715(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class80_Sub17_Sub2 arg1) {
-		arg0.method23154(arg1.method23471(-1762138318), 1275868335);
+	void method15715(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class80_Sub17_Sub2 arg1) {
+		arg0.p1(arg1.method23471(-1762138318));
 	}
 
 	@OriginalMember(owner = "client!alv", name = "ax", descriptor = "(Lclient!asz;)V")
@@ -172,9 +172,9 @@ public final class Class162_Sub1 extends Class162 {
 			return;
 		}
 		@Pc(13) Class80_Sub31 local13 = Class623.method32440(Class443.aClass443_74, client.aClass75_1.aClass22_1, -191270971);
-		local13.aClass80_Sub36_Sub1_2.method23220(this.method15777(local4, 65535, 1530367823), 2036747717);
-		local13.aClass80_Sub36_Sub1_2.method23229(local4.method23451(79378809) | local4.method23454(519251707) << 16, 601114679);
-		local13.aClass80_Sub36_Sub1_2.method23209(local4.method23472(1364854779) << 1 | local4.method23471(-1364708224) & 0x1, -1295932843);
+		local13.aPacketBit_2.p2_alt3(this.method15777(local4, 65535, 1530367823));
+		local13.aPacketBit_2.p4_alt1(local4.method23451(79378809) | local4.method23454(519251707) << 16);
+		local13.aPacketBit_2.p1_alt1(local4.method23472(1364854779) << 1 | local4.method23471(-1364708224) & 0x1);
 		client.aClass75_1.method1325(local13, (byte) -94);
 		local4.method23453(-454396966);
 	}
@@ -186,13 +186,13 @@ public final class Class162_Sub1 extends Class162 {
 	}
 
 	@OriginalMember(owner = "client!alv", name = "ay", descriptor = "(Lclient!ald;Lclient!asz;)V")
-	void method15717(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class80_Sub17_Sub2 arg1) {
-		arg0.method23154(arg1.method23471(13910069), 1275868335);
+	void method15717(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class80_Sub17_Sub2 arg1) {
+		arg0.p1(arg1.method23471(13910069));
 	}
 
 	@OriginalMember(owner = "client!alv", name = "ai", descriptor = "(Lclient!ald;Lclient!asz;)V")
-	void method15718(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class80_Sub17_Sub2 arg1) {
-		arg0.method23154(arg1.method23471(-1682243529), 1275868335);
+	void method15718(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class80_Sub17_Sub2 arg1) {
+		arg0.p1(arg1.method23471(-1682243529));
 	}
 
 	@OriginalMember(owner = "client!alv", name = "a", descriptor = "()Z")
@@ -215,13 +215,13 @@ public final class Class162_Sub1 extends Class162 {
 
 	@OriginalMember(owner = "client!alv", name = "w", descriptor = "(Lclient!ald;Lclient!akg;)V")
 	@Override
-	void method15787(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class80_Sub17 arg1) {
+	void method15787(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class80_Sub17 arg1) {
 		this.method15713(arg0, (Class80_Sub17_Sub2) arg1, 226673042);
 	}
 
 	@OriginalMember(owner = "client!alv", name = "r", descriptor = "(Lclient!ald;Lclient!akg;)V")
 	@Override
-	void method15784(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class80_Sub17 arg1) {
+	void method15784(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class80_Sub17 arg1) {
 		this.method15713(arg0, (Class80_Sub17_Sub2) arg1, 1341923232);
 	}
 

@@ -318,7 +318,7 @@ public final class Class296 {
 	}
 
 	@OriginalMember(owner = "client!gq", name = "t", descriptor = "(Lclient!asa;B)V")
-	static void method26996(@OriginalArg(0) Class80_Sub36_Sub1 arg0, @OriginalArg(1) byte arg1) {
+	static void method26996(@OriginalArg(0) PacketBit arg0, @OriginalArg(1) byte arg1) {
 		arg0.method22560(1668075746);
 		@Pc(6) int local6 = client.anInt3558 * 188678613;
 		@Pc(19) Class120_Sub1_Sub1_Sub1_Sub2 local19 = Class641.aClass120_Sub1_Sub1_Sub1_Sub2_3 = client.aClass120_Sub1_Sub1_Sub1_Sub2Array1[local6] = new Class120_Sub1_Sub1_Sub1_Sub2(client.aClass539_1.method30932(-1638462787));
@@ -335,11 +335,11 @@ public final class Class296 {
 		if (client.aClass539_1.method30903(-463929735).method30429(local19.anIntArray234[0], local19.anIntArray242[0], 2069744072)) {
 			local19.aByte100++;
 		}
-		if (Class51.aClass80_Sub36Array1[local6] != null) {
-			local19.method19053(Class51.aClass80_Sub36Array1[local6], 1933367219);
+		if (Class51.aPacketArray1[local6] != null) {
+			local19.method19053(Class51.aPacketArray1[local6], 1933367219);
 		}
-		if (Class51.aClass80_Sub36Array2[local6] != null) {
-			local19.method19054(Class51.aClass80_Sub36Array2[local6], 2015216348);
+		if (Class51.aPacketArray2[local6] != null) {
+			local19.method19054(Class51.aPacketArray2[local6], 2015216348);
 		}
 		Class51.anInt191 = 0;
 		Class51.anIntArray20[(Class51.anInt191 += -585441073) * 44967471 - 1] = local6;

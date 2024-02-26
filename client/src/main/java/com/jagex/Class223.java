@@ -604,9 +604,9 @@ public final class Class223 {
 	}
 
 	@OriginalMember(owner = "client!dd", name = "g", descriptor = "(Lclient!ald;I)Lclient!kn;")
-	public static Class125 method25944(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	public static Class125 method25944(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		@Pc(4) Class125_Sub2 local4 = (Class125_Sub2) Class312.method27467(arg0, (byte) -47);
-		@Pc(8) int local8 = arg0.method23179(1341172019);
+		@Pc(8) int local8 = arg0.g2s();
 		return new Class125_Sub2_Sub1(local4.aClass391_8, local4.aClass383_8, local4.anInt2899 * 808275465, local4.anInt2901 * 1789354437, local4.anInt2900 * 199320851, local4.anInt2903 * 1087492339, local4.anInt2902 * -173381277, local4.anInt2904 * -176628393, local4.anInt2905 * -1330014629, local4.anInt2907 * 80302769, local4.anInt2909 * 1969707833, local4.anInt2906 * -1908989391, local4.anInt2908 * -1284217071, local4.anInt2910 * 1921101589, local4.anInt2911 * 1339695313, local8);
 	}
 
@@ -621,9 +621,9 @@ public final class Class223 {
 		}
 		@Pc(25) Class75 local25 = Class52.method1074(16777215);
 		@Pc(31) Class80_Sub31 local31 = Class623.method32440(Class443.aClass443_10, local25.aClass22_1, -191270971);
-		local31.aClass80_Sub36_Sub1_2.method23154(Class350.method28013(local17.aString204, (short) 16383) + 2, 1275868335);
-		local31.aClass80_Sub36_Sub1_2.method23155(arg0, (byte) -37);
-		local31.aClass80_Sub36_Sub1_2.method23165(local17.aString204, 2023452638);
+		local31.aPacketBit_2.p1(Class350.method28013(local17.aString204, (short) 16383) + 2);
+		local31.aPacketBit_2.p2(arg0);
+		local31.aPacketBit_2.pjstr(local17.aString204);
 		local25.method1325(local31, (byte) -29);
 	}
 

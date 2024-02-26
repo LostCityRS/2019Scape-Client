@@ -37,7 +37,7 @@ public final class Class162_Sub2 extends Class162 {
 
 	@OriginalMember(owner = "client!alz", name = "r", descriptor = "(Lclient!ald;Lclient!akg;)V")
 	@Override
-	void method15784(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class80_Sub17 arg1) {
+	void method15784(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class80_Sub17 arg1) {
 	}
 
 	@OriginalMember(owner = "client!alz", name = "m", descriptor = "(I)Z")
@@ -64,7 +64,7 @@ public final class Class162_Sub2 extends Class162 {
 
 	@OriginalMember(owner = "client!alz", name = "g", descriptor = "(Lclient!ald;Lclient!akg;B)V")
 	@Override
-	void method15779(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class80_Sub17 arg1, @OriginalArg(2) byte arg2) {
+	void method15779(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class80_Sub17 arg1, @OriginalArg(2) byte arg2) {
 	}
 
 	@OriginalMember(owner = "client!alz", name = "a", descriptor = "()Z")
@@ -93,7 +93,7 @@ public final class Class162_Sub2 extends Class162 {
 
 	@OriginalMember(owner = "client!alz", name = "w", descriptor = "(Lclient!ald;Lclient!akg;)V")
 	@Override
-	void method15787(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class80_Sub17 arg1) {
+	void method15787(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class80_Sub17 arg1) {
 	}
 
 	@OriginalMember(owner = "client!alz", name = "j", descriptor = "()V")
@@ -121,8 +121,8 @@ public final class Class162_Sub2 extends Class162 {
 			local42 = 1;
 		}
 		@Pc(55) Class80_Sub31 local55 = Class623.method32440(Class443.aClass443_50, client.aClass75_1.aClass22_1, -191270971);
-		local55.aClass80_Sub36_Sub1_2.method23345(local30 | local16 << 16, (byte) 26);
-		local55.aClass80_Sub36_Sub1_2.method23220(local12 | local42 << 15, 2036747717);
+		local55.aPacketBit_2.p4(local30 | local16 << 16);
+		local55.aPacketBit_2.p2_alt3(local12 | local42 << 15);
 		client.aClass75_1.method1325(local55, (byte) -89);
 	}
 
@@ -151,14 +151,14 @@ public final class Class162_Sub2 extends Class162 {
 			local42 = 1;
 		}
 		@Pc(55) Class80_Sub31 local55 = Class623.method32440(Class443.aClass443_50, client.aClass75_1.aClass22_1, -191270971);
-		local55.aClass80_Sub36_Sub1_2.method23345(local30 | local16 << 16, (byte) 78);
-		local55.aClass80_Sub36_Sub1_2.method23220(local12 | local42 << 15, 2036747717);
+		local55.aPacketBit_2.p4(local30 | local16 << 16);
+		local55.aPacketBit_2.p2_alt3(local12 | local42 << 15);
 		client.aClass75_1.method1325(local55, (byte) -22);
 	}
 
 	@OriginalMember(owner = "client!alz", name = "q", descriptor = "(Lclient!ald;Lclient!akg;)V")
 	@Override
-	void method15783(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class80_Sub17 arg1) {
+	void method15783(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class80_Sub17 arg1) {
 	}
 
 	@OriginalMember(owner = "client!alz", name = "b", descriptor = "()Lclient!akg;")

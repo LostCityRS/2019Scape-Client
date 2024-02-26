@@ -36,9 +36,9 @@ public final class Class80_Sub1_Sub2 extends Class80_Sub1 implements Interface11
 
 	@OriginalMember(owner = "client!adn", name = "t", descriptor = "(Lclient!ald;I)V")
 	@Override
-	public void method37006(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	public void method37006(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-15803680);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -47,16 +47,16 @@ public final class Class80_Sub1_Sub2 extends Class80_Sub1 implements Interface11
 	}
 
 	@OriginalMember(owner = "client!adn", name = "l", descriptor = "(Lclient!ald;II)V")
-	void method1684(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	void method1684(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (arg1 == 2) {
-			this.anInt280 = arg0.method23178((byte) -4) * 373523545;
+			this.anInt280 = arg0.g2() * 373523545;
 		} else if (arg1 == 4) {
-			this.anInt279 = arg0.method23362(89044569) * 1559324799;
+			this.anInt279 = arg0.g1() * 1559324799;
 			this.anIntArray30 = new int[this.anInt279 * 960911231];
 			this.anIntArray29 = new int[this.anInt279 * 960911231];
 			for (@Pc(36) int local36 = 0; local36 < this.anInt279 * 960911231; local36++) {
-				this.anIntArray30[local36] = arg0.method23178((byte) -111);
-				this.anIntArray29[local36] = arg0.method23178((byte) -49);
+				this.anIntArray30[local36] = arg0.g2();
+				this.anIntArray29[local36] = arg0.g2();
 			}
 		}
 	}
@@ -73,9 +73,9 @@ public final class Class80_Sub1_Sub2 extends Class80_Sub1 implements Interface11
 
 	@OriginalMember(owner = "client!adn", name = "u", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method37009(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method37009(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(140208334);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -104,16 +104,16 @@ public final class Class80_Sub1_Sub2 extends Class80_Sub1 implements Interface11
 	}
 
 	@OriginalMember(owner = "client!adn", name = "i", descriptor = "(Lclient!ald;I)V")
-	void method1685(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method1685(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 2) {
-			this.anInt280 = arg0.method23178((byte) -68) * 373523545;
+			this.anInt280 = arg0.g2() * 373523545;
 		} else if (arg1 == 4) {
-			this.anInt279 = arg0.method23362(548019009) * 1559324799;
+			this.anInt279 = arg0.g1() * 1559324799;
 			this.anIntArray30 = new int[this.anInt279 * 960911231];
 			this.anIntArray29 = new int[this.anInt279 * 960911231];
 			for (@Pc(36) int local36 = 0; local36 < this.anInt279 * 960911231; local36++) {
-				this.anIntArray30[local36] = arg0.method23178((byte) -18);
-				this.anIntArray29[local36] = arg0.method23178((byte) -78);
+				this.anIntArray30[local36] = arg0.g2();
+				this.anIntArray29[local36] = arg0.g2();
 			}
 		}
 	}

@@ -79,19 +79,19 @@ public final class Class103_Sub7 extends Class103 {
 		}
 		@Pc(208) Class75 local208 = Class52.method1074(16777215);
 		@Pc(214) Class80_Sub31 local214 = Class623.method32440(Class443.aClass443_15, local208.aClass22_1, -191270971);
-		local214.aClass80_Sub36_Sub1_2.method23154(Class350.method28013(arg0, (short) 16383) + 1, 1275868335);
-		local214.aClass80_Sub36_Sub1_2.method23165(arg0, 2064669924);
-		local214.aClass80_Sub36_Sub1_2.method23154(arg1 ? 1 : 0, 1275868335);
+		local214.aPacketBit_2.p1(Class350.method28013(arg0, (short) 16383) + 1);
+		local214.aPacketBit_2.pjstr(arg0);
+		local214.aPacketBit_2.p1(arg1 ? 1 : 0);
 		local208.method1325(local214, (byte) -40);
 	}
 
 	@OriginalMember(owner = "client!agc", name = "<init>", descriptor = "(Lclient!ald;)V")
-	Class103_Sub7(@OriginalArg(0) Class80_Sub36 arg0) {
+	Class103_Sub7(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.anInt926 = arg0.method23178((byte) -93) * -1312806833;
-		this.anInt927 = arg0.method23362(-738765500) * -1708666999;
-		this.anInt928 = arg0.method23362(-195356621) * 458307329;
-		this.anInt929 = arg0.method23362(-558327380) * 1628070409;
+		this.anInt926 = arg0.g2() * -1312806833;
+		this.anInt927 = arg0.g1() * -1708666999;
+		this.anInt928 = arg0.g1() * 458307329;
+		this.anInt929 = arg0.g1() * 1628070409;
 		this.aClass529_1 = Class490.aClass263_13.method26536(Class280.aClass280_9, this, this.anInt926 * -1083838801, this.anInt929 * 1514785849, this.anInt927 * -1851042119, Class278.aClass278_5.method26831(-697689830), Class269.aClass269_5, 0.0F, 0.0F, null, 0, this.anInt928 * -679491327, false, 39194789);
 		if (this.aClass529_1 != null) {
 			this.aClass529_1.method30768((byte) 48);

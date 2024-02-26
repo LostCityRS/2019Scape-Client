@@ -69,9 +69,9 @@ public final class Class435 {
 	}
 
 	@OriginalMember(owner = "client!ne", name = "u", descriptor = "(Lclient!ald;I)V")
-	void method29116(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method29116(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-376358457);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -80,9 +80,9 @@ public final class Class435 {
 	}
 
 	@OriginalMember(owner = "client!ne", name = "t", descriptor = "(Lclient!ald;II)V")
-	void method29117(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	void method29117(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(1005535137);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -91,21 +91,21 @@ public final class Class435 {
 	}
 
 	@OriginalMember(owner = "client!ne", name = "f", descriptor = "(Lclient!ald;IIB)V")
-	void method29118(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) byte arg3) {
+	void method29118(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) byte arg3) {
 		if (arg1 == 1) {
-			this.anInt4797 = arg0.method23178((byte) -82) * 1460307721;
+			this.anInt4797 = arg0.g2() * 1460307721;
 			if (this.anInt4797 * -625133767 == 65535) {
 				this.anInt4797 = -1460307721;
 			}
 		} else if (arg1 == 2) {
-			this.anInt4796 = (arg0.method23178((byte) -70) + 1) * -603105659;
-			this.anInt4799 = (arg0.method23178((byte) -28) + 1) * 1994372893;
+			this.anInt4796 = (arg0.g2() + 1) * -603105659;
+			this.anInt4799 = (arg0.g2() + 1) * 1994372893;
 		} else if (arg1 == 3) {
-			arg0.method23177((byte) -32);
+			arg0.g1b();
 		} else if (arg1 == 4) {
-			this.anInt4801 = arg0.method23362(987569048) * 1186901831;
+			this.anInt4801 = arg0.g1() * 1186901831;
 		} else if (arg1 == 5) {
-			this.anInt4800 = arg0.method23362(-1132427786) * 617555343;
+			this.anInt4800 = arg0.g1() * 617555343;
 		} else if (arg1 == 6) {
 			this.aBoolean863 = true;
 		} else if (arg1 == 7) {
@@ -114,9 +114,9 @@ public final class Class435 {
 	}
 
 	@OriginalMember(owner = "client!ne", name = "e", descriptor = "(Lclient!ald;I)V")
-	void method29119(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method29119(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-488486621);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -125,21 +125,21 @@ public final class Class435 {
 	}
 
 	@OriginalMember(owner = "client!ne", name = "g", descriptor = "(Lclient!ald;II)V")
-	void method29120(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	void method29120(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (arg1 == 1) {
-			this.anInt4797 = arg0.method23178((byte) -58) * 1460307721;
+			this.anInt4797 = arg0.g2() * 1460307721;
 			if (this.anInt4797 * -625133767 == 65535) {
 				this.anInt4797 = -1460307721;
 			}
 		} else if (arg1 == 2) {
-			this.anInt4796 = (arg0.method23178((byte) -43) + 1) * -603105659;
-			this.anInt4799 = (arg0.method23178((byte) -60) + 1) * 1994372893;
+			this.anInt4796 = (arg0.g2() + 1) * -603105659;
+			this.anInt4799 = (arg0.g2() + 1) * 1994372893;
 		} else if (arg1 == 3) {
-			arg0.method23177((byte) -7);
+			arg0.g1b();
 		} else if (arg1 == 4) {
-			this.anInt4801 = arg0.method23362(-432289593) * 1186901831;
+			this.anInt4801 = arg0.g1() * 1186901831;
 		} else if (arg1 == 5) {
-			this.anInt4800 = arg0.method23362(828838020) * 617555343;
+			this.anInt4800 = arg0.g1() * 617555343;
 		} else if (arg1 == 6) {
 			this.aBoolean863 = true;
 		} else if (arg1 == 7) {
@@ -148,9 +148,9 @@ public final class Class435 {
 	}
 
 	@OriginalMember(owner = "client!ne", name = "l", descriptor = "(Lclient!ald;I)V")
-	void method29121(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method29121(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-1799829558);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}

@@ -48,16 +48,16 @@ public final class Class78 {
 	}
 
 	@OriginalMember(owner = "client!adc", name = "e", descriptor = "(Lclient!ald;)V")
-	void method1369(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.anInterface33Array1 = new Interface33[arg0.method23362(-1719084674)];
+	void method1369(@OriginalArg(0) Packet arg0) {
+		this.anInterface33Array1 = new Interface33[arg0.g1()];
 		@Pc(8) Class392[] local8 = Class348.method27985(194076605);
 		for (@Pc(10) int local10 = 0; local10 < this.anInterface33Array1.length; local10++) {
-			this.anInterface33Array1[local10] = this.method1370(arg0, local8[arg0.method23362(-1189618702)], 2136494004);
+			this.anInterface33Array1[local10] = this.method1370(arg0, local8[arg0.g1()], 2136494004);
 		}
 	}
 
 	@OriginalMember(owner = "client!adc", name = "f", descriptor = "(Lclient!ald;Lclient!kz;I)Lclient!ko;")
-	Interface33 method1370(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) Class392 arg1, @OriginalArg(2) int arg2) {
+	Interface33 method1370(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class392 arg1, @OriginalArg(2) int arg2) {
 		if (arg1 == Class392.aClass392_11) {
 			return Class262.method26511(arg0, 716146938);
 		} else if (arg1 == Class392.aClass392_2) {
@@ -86,20 +86,20 @@ public final class Class78 {
 	}
 
 	@OriginalMember(owner = "client!adc", name = "t", descriptor = "(Lclient!ald;I)V")
-	void method1371(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		this.anInterface33Array1 = new Interface33[arg0.method23362(-159902074)];
+	void method1371(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		this.anInterface33Array1 = new Interface33[arg0.g1()];
 		@Pc(8) Class392[] local8 = Class348.method27985(194076605);
 		for (@Pc(10) int local10 = 0; local10 < this.anInterface33Array1.length; local10++) {
-			this.anInterface33Array1[local10] = this.method1370(arg0, local8[arg0.method23362(-1042012630)], 2101724591);
+			this.anInterface33Array1[local10] = this.method1370(arg0, local8[arg0.g1()], 2101724591);
 		}
 	}
 
 	@OriginalMember(owner = "client!adc", name = "u", descriptor = "(Lclient!ald;)V")
-	void method1372(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.anInterface33Array1 = new Interface33[arg0.method23362(310300052)];
+	void method1372(@OriginalArg(0) Packet arg0) {
+		this.anInterface33Array1 = new Interface33[arg0.g1()];
 		@Pc(8) Class392[] local8 = Class348.method27985(194076605);
 		for (@Pc(10) int local10 = 0; local10 < this.anInterface33Array1.length; local10++) {
-			this.anInterface33Array1[local10] = this.method1370(arg0, local8[arg0.method23362(-225214412)], 2073664975);
+			this.anInterface33Array1[local10] = this.method1370(arg0, local8[arg0.g1()], 2073664975);
 		}
 	}
 }

@@ -45,12 +45,12 @@ public final class Class120_Sub1_Sub3_Sub2 extends Class120_Sub1_Sub3 implements
 	Class80_Sub1_Sub10 aClass80_Sub1_Sub10_4;
 
 	@OriginalMember(owner = "client!ajy", name = "f", descriptor = "(Lclient!ald;Ljava/lang/String;S)I")
-	public static int method13850(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) String arg1, @OriginalArg(2) short arg2) {
-		@Pc(4) int local4 = arg0.anInt3152 * -1380987821;
+	public static int method13850(@OriginalArg(0) Packet arg0, @OriginalArg(1) String arg1, @OriginalArg(2) short arg2) {
+		@Pc(4) int local4 = arg0.pos * -1380987821;
 		@Pc(8) byte[] local8 = Class623.method32438(arg1, -2113522262);
-		arg0.method23173(local8.length, (short) -5741);
-		arg0.anInt3152 += Class338.aClass336_1.method27862(local8, 0, local8.length, arg0.aByteArray61, arg0.anInt3152 * -1380987821, 1583928625) * 1034180571;
-		return arg0.anInt3152 * -1380987821 - local4;
+		arg0.pSmart1or2(local8.length);
+		arg0.pos += Class338.aClass336_1.method27862(local8, 0, local8.length, arg0.data, arg0.pos * -1380987821, 1583928625) * 1034180571;
+		return arg0.pos * -1380987821 - local4;
 	}
 
 	@OriginalMember(owner = "client!ajy", name = "aka", descriptor = "(Lclient!yp;I)V")

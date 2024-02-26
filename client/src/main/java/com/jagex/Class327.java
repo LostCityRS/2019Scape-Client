@@ -726,7 +726,7 @@ public final class Class327 {
 				if (local61 != null) {
 					@Pc(73) Class327 local73 = arg2.aClass327Array2[local45] = new Class327();
 					local73.anInt4087 = ((arg0 << 16) + local45) * 837863195;
-					local73.method27653(new Class80_Sub36(local61), -292561548);
+					local73.method27653(new Packet(local61), -292561548);
 				}
 			}
 		}
@@ -851,18 +851,18 @@ public final class Class327 {
 	}
 
 	@OriginalMember(owner = "client!hx", name = "ar", descriptor = "(Lclient!ald;)[Ljava/lang/Object;")
-	Object[] method27631(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(3) int local3 = arg0.method23362(-770056492);
+	Object[] method27631(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1();
 		if (local3 == 0) {
 			return null;
 		}
 		@Pc(11) Object[] local11 = new Object[local3];
 		for (@Pc(13) int local13 = 0; local13 < local3; local13++) {
-			@Pc(20) int local20 = arg0.method23362(-1707211433);
+			@Pc(20) int local20 = arg0.g1();
 			if (local20 == 0) {
-				local11[local13] = Integer.valueOf(arg0.method23182(358430919));
+				local11[local13] = Integer.valueOf(arg0.g4());
 			} else if (local20 == 1) {
-				local11[local13] = arg0.method23376((short) 21818);
+				local11[local13] = arg0.gjstr();
 			}
 		}
 		this.aBoolean815 = true;
@@ -870,14 +870,14 @@ public final class Class327 {
 	}
 
 	@OriginalMember(owner = "client!hx", name = "a", descriptor = "(Lclient!ald;I)[I")
-	int[] method27633(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) int local3 = arg0.method23362(-341301354);
+	int[] method27633(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) int local3 = arg0.g1();
 		if (local3 == 0) {
 			return null;
 		}
 		@Pc(11) int[] local11 = new int[local3];
 		for (@Pc(13) int local13 = 0; local13 < local3; local13++) {
-			local11[local13] = arg0.method23182(2036246963);
+			local11[local13] = arg0.g4();
 		}
 		return local11;
 	}
@@ -1118,7 +1118,7 @@ public final class Class327 {
 					arg1 |= arg9.method23592(2012356963);
 				}
 				@Pc(40) long local40 = -1L;
-				@Pc(42) long[] local42 = Class80_Sub36.aLongArray18;
+				@Pc(42) long[] local42 = Packet.crc64table;
 				@Pc(47) int local47;
 				if (this.aShortArray109 != null) {
 					for (local47 = 0; local47 < this.aShortArray109.length; local47++) {
@@ -1353,124 +1353,124 @@ public final class Class327 {
 	}
 
 	@OriginalMember(owner = "client!hx", name = "o", descriptor = "(Lclient!ald;I)V")
-	void method27653(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) int local3 = arg0.method23362(243657211);
+	void method27653(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) int local3 = arg0.g1();
 		if (local3 == 255) {
 			local3 = -1;
 		}
-		this.anInt4135 = arg0.method23362(-406045128) * 819107545;
+		this.anInt4135 = arg0.g1() * 819107545;
 		if ((this.anInt4135 * 710314345 & 0x80) != 0) {
 			this.anInt4135 = (this.anInt4135 * 710314345 & 0x7F) * 819107545;
-			this.aString182 = arg0.method23376((short) 30130);
+			this.aString182 = arg0.gjstr();
 		}
-		this.anInt4095 = arg0.method23178((byte) -81) * -82121019;
-		this.anInt4089 = arg0.method23179(1875530465) * 2017859153;
-		this.anInt4182 = arg0.method23179(2130015570) * -1380277965;
-		this.anInt4099 = arg0.method23178((byte) -54) * 1739295105;
-		this.anInt4161 = arg0.method23178((byte) -65) * 1695333709;
-		this.aByte127 = arg0.method23177((byte) -118);
-		this.aByte126 = arg0.method23177((byte) 20);
-		this.aByte124 = arg0.method23177((byte) 2);
-		this.aByte125 = arg0.method23177((byte) -17);
+		this.anInt4095 = arg0.g2() * -82121019;
+		this.anInt4089 = arg0.g2s() * 2017859153;
+		this.anInt4182 = arg0.g2s() * -1380277965;
+		this.anInt4099 = arg0.g2() * 1739295105;
+		this.anInt4161 = arg0.g2() * 1695333709;
+		this.aByte127 = arg0.g1b();
+		this.aByte126 = arg0.g1b();
+		this.aByte124 = arg0.g1b();
+		this.aByte125 = arg0.g1b();
 		if (this.aByte127 == 4 || this.aByte126 == 4) {
-			this.anInt4105 = arg0.method23178((byte) -41) * 1467789459;
-			this.anInt4106 = arg0.method23178((byte) -95) * 1596627121;
+			this.anInt4105 = arg0.g2() * 1467789459;
+			this.anInt4106 = arg0.g2() * 1596627121;
 		}
-		this.anInt4082 = arg0.method23178((byte) -42) * -887144585;
+		this.anInt4082 = arg0.g2() * -887144585;
 		if (this.anInt4082 * 254495303 == 65535) {
 			this.anInt4082 = 887144585;
 		} else {
 			this.anInt4082 = ((this.anInt4087 * -2053489901 & -65536) + this.anInt4082 * 254495303) * -887144585;
 		}
-		@Pc(151) int local151 = arg0.method23362(-61171616);
+		@Pc(151) int local151 = arg0.g1();
 		this.aBoolean800 = (local151 & 0x1) != 0;
 		if (local3 >= 0) {
 			this.aBoolean801 = (local151 & 0x2) != 0;
 		}
 		if (this.anInt4135 * 710314345 == 0) {
-			this.anInt4112 = arg0.method23178((byte) -12) * -67564629;
-			this.anInt4091 = arg0.method23178((byte) -39) * -721252229;
+			this.anInt4112 = arg0.g2() * -67564629;
+			this.anInt4091 = arg0.g2() * -721252229;
 			if (local3 < 0) {
-				this.aBoolean801 = arg0.method23362(-314720568) == 1;
+				this.aBoolean801 = arg0.g1() == 1;
 			}
 		}
 		@Pc(227) int local227;
 		if (this.anInt4135 * 710314345 == 5) {
-			this.anInt4117 = arg0.method23182(1792188505) * 1098751099;
-			this.anInt4166 = arg0.method23178((byte) -29) * 1002124109;
-			local227 = arg0.method23362(-2135162716);
+			this.anInt4117 = arg0.g4() * 1098751099;
+			this.anInt4166 = arg0.g2() * 1002124109;
+			local227 = arg0.g1();
 			this.aBoolean804 = (local227 & 0x1) != 0;
 			this.aBoolean805 = (local227 & 0x2) != 0;
-			this.anInt4143 = arg0.method23362(-925376010) * -298973929;
-			this.anInt4118 = arg0.method23362(781572075) * -2047026297;
-			this.anInt4096 = arg0.method23182(1896443480) * -1078944815;
-			this.aBoolean814 = arg0.method23362(607883290) == 1;
-			this.aBoolean817 = arg0.method23362(-990469122) == 1;
-			this.anInt4114 = arg0.method23182(-2099956783) * 351113221;
+			this.anInt4143 = arg0.g1() * -298973929;
+			this.anInt4118 = arg0.g1() * -2047026297;
+			this.anInt4096 = arg0.g4() * -1078944815;
+			this.aBoolean814 = arg0.g1() == 1;
+			this.aBoolean817 = arg0.g1() == 1;
+			this.anInt4114 = arg0.g4() * 351113221;
 			if (local3 >= 3) {
-				this.aBoolean820 = arg0.method23362(-2142636447) == 1;
+				this.aBoolean820 = arg0.g1() == 1;
 			}
 		}
 		if (this.anInt4135 * 710314345 == 6) {
 			this.anInt4136 = 1666794573;
-			this.anInt4122 = arg0.method23210((byte) 35) * -258024019;
-			local227 = arg0.method23362(198940473);
+			this.anInt4122 = arg0.gSmart2or4null() * -258024019;
+			local227 = arg0.g1();
 			@Pc(335) boolean local335 = (local227 & 0x1) == 1;
 			this.aBoolean806 = (local227 & 0x2) == 2;
 			this.aBoolean807 = (local227 & 0x4) == 4;
 			this.aBoolean808 = (local227 & 0x8) == 8;
 			if (local335) {
-				this.anInt4128 = arg0.method23179(-786080151) * -2096113369;
-				this.anInt4129 = arg0.method23179(1744585600) * -2132986315;
-				this.anInt4074 = arg0.method23178((byte) -128) * 149862615;
-				this.anInt4115 = arg0.method23178((byte) -31) * -1137256781;
-				this.anInt4127 = arg0.method23178((byte) -127) * -320713609;
-				this.anInt4131 = arg0.method23178((byte) -69) * 1341335515;
+				this.anInt4128 = arg0.g2s() * -2096113369;
+				this.anInt4129 = arg0.g2s() * -2132986315;
+				this.anInt4074 = arg0.g2() * 149862615;
+				this.anInt4115 = arg0.g2() * -1137256781;
+				this.anInt4127 = arg0.g2() * -320713609;
+				this.anInt4131 = arg0.g2() * 1341335515;
 			} else if (this.aBoolean806) {
-				this.anInt4128 = arg0.method23179(-762151737) * -2096113369;
-				this.anInt4129 = arg0.method23179(1034967794) * -2132986315;
-				this.anInt4130 = arg0.method23179(1772387881) * -1942973109;
-				this.anInt4074 = arg0.method23178((byte) -121) * 149862615;
-				this.anInt4115 = arg0.method23178((byte) -97) * -1137256781;
-				this.anInt4127 = arg0.method23178((byte) -38) * -320713609;
-				this.anInt4131 = arg0.method23179(1962758029) * 1341335515;
+				this.anInt4128 = arg0.g2s() * -2096113369;
+				this.anInt4129 = arg0.g2s() * -2132986315;
+				this.anInt4130 = arg0.g2s() * -1942973109;
+				this.anInt4074 = arg0.g2() * 149862615;
+				this.anInt4115 = arg0.g2() * -1137256781;
+				this.anInt4127 = arg0.g2() * -320713609;
+				this.anInt4131 = arg0.g2s() * 1341335515;
 			}
-			this.anInt4146 = arg0.method23210((byte) 74) * -365498645;
+			this.anInt4146 = arg0.gSmart2or4null() * -365498645;
 			if (this.aByte127 != 0) {
-				this.anInt4132 = arg0.method23178((byte) -77) * -756393347;
+				this.anInt4132 = arg0.g2() * -756393347;
 			}
 			if (this.aByte126 != 0) {
-				this.anInt4133 = arg0.method23178((byte) -83) * 1351536991;
+				this.anInt4133 = arg0.g2() * 1351536991;
 			}
 		}
 		if (this.anInt4135 * 710314345 == 4) {
-			this.anInt4148 = arg0.method23210((byte) 63) * 352163065;
+			this.anInt4148 = arg0.gSmart2or4null() * 352163065;
 			if (local3 >= 2) {
-				this.aBoolean810 = arg0.method23362(-744292434) == 1;
+				this.aBoolean810 = arg0.g1() == 1;
 			}
-			this.aString183 = arg0.method23376((short) 16563);
-			this.anInt4175 = arg0.method23362(258161430) * 278363431;
-			this.anInt4149 = arg0.method23362(-832590992) * -222805711;
-			this.anInt4150 = arg0.method23362(827343267) * 1130003185;
-			this.aBoolean811 = arg0.method23362(-2046748603) == 1;
-			this.anInt4114 = arg0.method23182(2144139245) * 351113221;
-			this.anInt4143 = arg0.method23362(131095504) * -298973929;
+			this.aString183 = arg0.gjstr();
+			this.anInt4175 = arg0.g1() * 278363431;
+			this.anInt4149 = arg0.g1() * -222805711;
+			this.anInt4150 = arg0.g1() * 1130003185;
+			this.aBoolean811 = arg0.g1() == 1;
+			this.anInt4114 = arg0.g4() * 351113221;
+			this.anInt4143 = arg0.g1() * -298973929;
 			if (local3 >= 0) {
-				this.anInt4168 = arg0.method23362(-1852784343) * 2068177093;
+				this.anInt4168 = arg0.g1() * 2068177093;
 			}
 		}
 		if (this.anInt4135 * 710314345 == 3) {
-			this.anInt4114 = arg0.method23182(1652358838) * 351113221;
-			this.aBoolean802 = arg0.method23362(236265401) == 1;
-			this.anInt4143 = arg0.method23362(-1669208588) * -298973929;
+			this.anInt4114 = arg0.g4() * 351113221;
+			this.aBoolean802 = arg0.g1() == 1;
+			this.anInt4143 = arg0.g1() * -298973929;
 		}
 		if (this.anInt4135 * 710314345 == 9) {
-			this.anInt4116 = arg0.method23362(-2078588555) * 886577953;
-			this.anInt4114 = arg0.method23182(-1115268054) * 351113221;
-			this.aBoolean803 = arg0.method23362(-531719380) == 1;
+			this.anInt4116 = arg0.g1() * 886577953;
+			this.anInt4114 = arg0.g4() * 351113221;
+			this.aBoolean803 = arg0.g1() == 1;
 		}
-		local227 = arg0.method23180(1710327153);
-		@Pc(644) int local644 = arg0.method23362(548378989);
+		local227 = arg0.g3();
+		@Pc(644) int local644 = arg0.g1();
 		@Pc(671) int local671;
 		if (local644 != 0) {
 			this.aByteArrayArray15 = new byte[11][];
@@ -1479,90 +1479,90 @@ public final class Class327 {
 			this.anIntArray403 = new int[11];
 			while (local644 != 0) {
 				local671 = (local644 >> 4) - 1;
-				local644 = local644 << 8 | arg0.method23362(-462489559);
+				local644 = local644 << 8 | arg0.g1();
 				local644 &= 0xFFF;
 				if (local644 == 4095) {
 					local644 = -1;
 				}
-				@Pc(692) byte local692 = arg0.method23177((byte) 18);
+				@Pc(692) byte local692 = arg0.g1b();
 				if (local692 != 0) {
 					this.aBoolean813 = true;
 				}
-				@Pc(701) byte local701 = arg0.method23177((byte) -53);
+				@Pc(701) byte local701 = arg0.g1b();
 				this.anIntArray410[local671] = local644;
 				this.aByteArrayArray15[local671] = new byte[] { local692 };
 				this.aByteArrayArray14[local671] = new byte[] { local701 };
-				local644 = arg0.method23362(414456284);
+				local644 = arg0.g1();
 			}
 		}
-		this.aString184 = arg0.method23376((short) 9587);
-		local671 = arg0.method23362(1081737400);
+		this.aString184 = arg0.gjstr();
+		local671 = arg0.g1();
 		@Pc(744) int local744 = local671 & 0xF;
 		@Pc(748) int local748 = local671 >> 4;
 		@Pc(756) int local756;
 		if (local744 > 0) {
 			this.aStringArray24 = new String[local744];
 			for (local756 = 0; local756 < local744; local756++) {
-				this.aStringArray24[local756] = arg0.method23376((short) 3679);
+				this.aStringArray24[local756] = arg0.gjstr();
 			}
 		}
 		@Pc(782) int local782;
 		if (local748 > 0) {
-			local756 = arg0.method23362(925235591);
+			local756 = arg0.g1();
 			this.anIntArray404 = new int[local756 + 1];
 			for (local782 = 0; local782 < this.anIntArray404.length; local782++) {
 				this.anIntArray404[local782] = -1;
 			}
-			this.anIntArray404[local756] = arg0.method23178((byte) -107);
+			this.anIntArray404[local756] = arg0.g2();
 		}
 		if (local748 > 1) {
-			local756 = arg0.method23362(301878614);
-			this.anIntArray404[local756] = arg0.method23178((byte) -111);
+			local756 = arg0.g1();
+			this.anIntArray404[local756] = arg0.g2();
 		}
-		this.aString185 = arg0.method23376((short) 5160);
+		this.aString185 = arg0.gjstr();
 		if (this.aString185.equals("")) {
 			this.aString185 = null;
 		}
-		this.anInt4113 = arg0.method23362(-356926135) * -1878285435;
-		this.anInt4158 = arg0.method23362(-1078068964) * -1634403891;
-		this.anInt4159 = arg0.method23362(-1227295146) * -1539868631;
-		this.aString186 = arg0.method23376((short) 10377);
+		this.anInt4113 = arg0.g1() * -1878285435;
+		this.anInt4158 = arg0.g1() * -1634403891;
+		this.anInt4159 = arg0.g1() * -1539868631;
+		this.aString186 = arg0.gjstr();
 		local756 = -1;
 		if (Class255.method26407(local227, 1633267) != 0) {
-			local756 = arg0.method23178((byte) -124);
+			local756 = arg0.g2();
 			if (local756 == 65535) {
 				local756 = -1;
 			}
-			this.anInt4107 = arg0.method23178((byte) -109) * -2046427885;
+			this.anInt4107 = arg0.g2() * -2046427885;
 			if (this.anInt4107 * -1943186149 == 65535) {
 				this.anInt4107 = 2046427885;
 			}
-			this.anInt4108 = arg0.method23178((byte) -63) * -714998373;
+			this.anInt4108 = arg0.g2() * -714998373;
 			if (this.anInt4108 * -1080549229 == 65535) {
 				this.anInt4108 = 714998373;
 			}
 		}
 		if (local3 >= 0) {
-			this.anInt4164 = arg0.method23178((byte) -53) * -1618545703;
+			this.anInt4164 = arg0.g2() * -1618545703;
 			if (this.anInt4164 * -744203159 == 65535) {
 				this.anInt4164 = 1618545703;
 			}
 		}
 		this.aClass80_Sub27_2 = new Class80_Sub27(local227, local756);
 		if (local3 >= 0) {
-			local782 = arg0.method23362(792375746);
+			local782 = arg0.g1();
 			@Pc(934) int local934;
 			@Pc(941) int local941;
 			@Pc(945) int local945;
 			for (local934 = 0; local934 < local782; local934++) {
-				local941 = arg0.method23180(1710327153);
-				local945 = arg0.method23182(159443709);
+				local941 = arg0.g3();
+				local945 = arg0.g4();
 				this.aClass24_28.method563(new Class80_Sub20(local945), (long) local941);
 			}
-			local934 = arg0.method23362(-1310534034);
+			local934 = arg0.g1();
 			for (local941 = 0; local941 < local934; local941++) {
-				local945 = arg0.method23180(1710327153);
-				@Pc(973) String local973 = arg0.method23186((byte) 12);
+				local945 = arg0.g3();
+				@Pc(973) String local973 = arg0.gjstr2();
 				this.aClass24_28.method563(new Class80_Sub19(local973), (long) local945);
 			}
 		}
@@ -1678,124 +1678,124 @@ public final class Class327 {
 	}
 
 	@OriginalMember(owner = "client!hx", name = "ae", descriptor = "(Lclient!ald;)V")
-	void method27663(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(3) int local3 = arg0.method23362(-1136867552);
+	void method27663(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1();
 		if (local3 == 255) {
 			local3 = -1;
 		}
-		this.anInt4135 = arg0.method23362(1071191816) * 819107545;
+		this.anInt4135 = arg0.g1() * 819107545;
 		if ((this.anInt4135 * 710314345 & 0x80) != 0) {
 			this.anInt4135 = (this.anInt4135 * 710314345 & 0x7F) * 819107545;
-			this.aString182 = arg0.method23376((short) 19514);
+			this.aString182 = arg0.gjstr();
 		}
-		this.anInt4095 = arg0.method23178((byte) -28) * -82121019;
-		this.anInt4089 = arg0.method23179(1093591126) * 2017859153;
-		this.anInt4182 = arg0.method23179(2108935954) * -1380277965;
-		this.anInt4099 = arg0.method23178((byte) -106) * 1739295105;
-		this.anInt4161 = arg0.method23178((byte) -69) * 1695333709;
-		this.aByte127 = arg0.method23177((byte) -53);
-		this.aByte126 = arg0.method23177((byte) -4);
-		this.aByte124 = arg0.method23177((byte) 18);
-		this.aByte125 = arg0.method23177((byte) -14);
+		this.anInt4095 = arg0.g2() * -82121019;
+		this.anInt4089 = arg0.g2s() * 2017859153;
+		this.anInt4182 = arg0.g2s() * -1380277965;
+		this.anInt4099 = arg0.g2() * 1739295105;
+		this.anInt4161 = arg0.g2() * 1695333709;
+		this.aByte127 = arg0.g1b();
+		this.aByte126 = arg0.g1b();
+		this.aByte124 = arg0.g1b();
+		this.aByte125 = arg0.g1b();
 		if (this.aByte127 == 4 || this.aByte126 == 4) {
-			this.anInt4105 = arg0.method23178((byte) -64) * 1467789459;
-			this.anInt4106 = arg0.method23178((byte) -38) * 1596627121;
+			this.anInt4105 = arg0.g2() * 1467789459;
+			this.anInt4106 = arg0.g2() * 1596627121;
 		}
-		this.anInt4082 = arg0.method23178((byte) -38) * -887144585;
+		this.anInt4082 = arg0.g2() * -887144585;
 		if (this.anInt4082 * 254495303 == 65535) {
 			this.anInt4082 = 887144585;
 		} else {
 			this.anInt4082 = ((this.anInt4087 * -2053489901 & -65536) + this.anInt4082 * 254495303) * -887144585;
 		}
-		@Pc(151) int local151 = arg0.method23362(297176082);
+		@Pc(151) int local151 = arg0.g1();
 		this.aBoolean800 = (local151 & 0x1) != 0;
 		if (local3 >= 0) {
 			this.aBoolean801 = (local151 & 0x2) != 0;
 		}
 		if (this.anInt4135 * 710314345 == 0) {
-			this.anInt4112 = arg0.method23178((byte) -16) * -67564629;
-			this.anInt4091 = arg0.method23178((byte) -21) * -721252229;
+			this.anInt4112 = arg0.g2() * -67564629;
+			this.anInt4091 = arg0.g2() * -721252229;
 			if (local3 < 0) {
-				this.aBoolean801 = arg0.method23362(-978948455) == 1;
+				this.aBoolean801 = arg0.g1() == 1;
 			}
 		}
 		@Pc(227) int local227;
 		if (this.anInt4135 * 710314345 == 5) {
-			this.anInt4117 = arg0.method23182(-2044958949) * 1098751099;
-			this.anInt4166 = arg0.method23178((byte) -59) * 1002124109;
-			local227 = arg0.method23362(-275545490);
+			this.anInt4117 = arg0.g4() * 1098751099;
+			this.anInt4166 = arg0.g2() * 1002124109;
+			local227 = arg0.g1();
 			this.aBoolean804 = (local227 & 0x1) != 0;
 			this.aBoolean805 = (local227 & 0x2) != 0;
-			this.anInt4143 = arg0.method23362(927971459) * -298973929;
-			this.anInt4118 = arg0.method23362(-59293513) * -2047026297;
-			this.anInt4096 = arg0.method23182(1448018000) * -1078944815;
-			this.aBoolean814 = arg0.method23362(-788624257) == 1;
-			this.aBoolean817 = arg0.method23362(-1344872076) == 1;
-			this.anInt4114 = arg0.method23182(-92885150) * 351113221;
+			this.anInt4143 = arg0.g1() * -298973929;
+			this.anInt4118 = arg0.g1() * -2047026297;
+			this.anInt4096 = arg0.g4() * -1078944815;
+			this.aBoolean814 = arg0.g1() == 1;
+			this.aBoolean817 = arg0.g1() == 1;
+			this.anInt4114 = arg0.g4() * 351113221;
 			if (local3 >= 3) {
-				this.aBoolean820 = arg0.method23362(-2103617534) == 1;
+				this.aBoolean820 = arg0.g1() == 1;
 			}
 		}
 		if (this.anInt4135 * 710314345 == 6) {
 			this.anInt4136 = 1666794573;
-			this.anInt4122 = arg0.method23210((byte) 37) * -258024019;
-			local227 = arg0.method23362(1051366799);
+			this.anInt4122 = arg0.gSmart2or4null() * -258024019;
+			local227 = arg0.g1();
 			@Pc(335) boolean local335 = (local227 & 0x1) == 1;
 			this.aBoolean806 = (local227 & 0x2) == 2;
 			this.aBoolean807 = (local227 & 0x4) == 4;
 			this.aBoolean808 = (local227 & 0x8) == 8;
 			if (local335) {
-				this.anInt4128 = arg0.method23179(1123550033) * -2096113369;
-				this.anInt4129 = arg0.method23179(1384320490) * -2132986315;
-				this.anInt4074 = arg0.method23178((byte) -121) * 149862615;
-				this.anInt4115 = arg0.method23178((byte) -22) * -1137256781;
-				this.anInt4127 = arg0.method23178((byte) -74) * -320713609;
-				this.anInt4131 = arg0.method23178((byte) -124) * 1341335515;
+				this.anInt4128 = arg0.g2s() * -2096113369;
+				this.anInt4129 = arg0.g2s() * -2132986315;
+				this.anInt4074 = arg0.g2() * 149862615;
+				this.anInt4115 = arg0.g2() * -1137256781;
+				this.anInt4127 = arg0.g2() * -320713609;
+				this.anInt4131 = arg0.g2() * 1341335515;
 			} else if (this.aBoolean806) {
-				this.anInt4128 = arg0.method23179(565575467) * -2096113369;
-				this.anInt4129 = arg0.method23179(1680302868) * -2132986315;
-				this.anInt4130 = arg0.method23179(-479806241) * -1942973109;
-				this.anInt4074 = arg0.method23178((byte) -124) * 149862615;
-				this.anInt4115 = arg0.method23178((byte) -6) * -1137256781;
-				this.anInt4127 = arg0.method23178((byte) -29) * -320713609;
-				this.anInt4131 = arg0.method23179(288425260) * 1341335515;
+				this.anInt4128 = arg0.g2s() * -2096113369;
+				this.anInt4129 = arg0.g2s() * -2132986315;
+				this.anInt4130 = arg0.g2s() * -1942973109;
+				this.anInt4074 = arg0.g2() * 149862615;
+				this.anInt4115 = arg0.g2() * -1137256781;
+				this.anInt4127 = arg0.g2() * -320713609;
+				this.anInt4131 = arg0.g2s() * 1341335515;
 			}
-			this.anInt4146 = arg0.method23210((byte) 20) * -365498645;
+			this.anInt4146 = arg0.gSmart2or4null() * -365498645;
 			if (this.aByte127 != 0) {
-				this.anInt4132 = arg0.method23178((byte) -78) * -756393347;
+				this.anInt4132 = arg0.g2() * -756393347;
 			}
 			if (this.aByte126 != 0) {
-				this.anInt4133 = arg0.method23178((byte) -43) * 1351536991;
+				this.anInt4133 = arg0.g2() * 1351536991;
 			}
 		}
 		if (this.anInt4135 * 710314345 == 4) {
-			this.anInt4148 = arg0.method23210((byte) 51) * 352163065;
+			this.anInt4148 = arg0.gSmart2or4null() * 352163065;
 			if (local3 >= 2) {
-				this.aBoolean810 = arg0.method23362(269119933) == 1;
+				this.aBoolean810 = arg0.g1() == 1;
 			}
-			this.aString183 = arg0.method23376((short) 23178);
-			this.anInt4175 = arg0.method23362(438305697) * 278363431;
-			this.anInt4149 = arg0.method23362(-705937004) * -222805711;
-			this.anInt4150 = arg0.method23362(-984218722) * 1130003185;
-			this.aBoolean811 = arg0.method23362(-1570108302) == 1;
-			this.anInt4114 = arg0.method23182(-1599946083) * 351113221;
-			this.anInt4143 = arg0.method23362(-1825314545) * -298973929;
+			this.aString183 = arg0.gjstr();
+			this.anInt4175 = arg0.g1() * 278363431;
+			this.anInt4149 = arg0.g1() * -222805711;
+			this.anInt4150 = arg0.g1() * 1130003185;
+			this.aBoolean811 = arg0.g1() == 1;
+			this.anInt4114 = arg0.g4() * 351113221;
+			this.anInt4143 = arg0.g1() * -298973929;
 			if (local3 >= 0) {
-				this.anInt4168 = arg0.method23362(1071276825) * 2068177093;
+				this.anInt4168 = arg0.g1() * 2068177093;
 			}
 		}
 		if (this.anInt4135 * 710314345 == 3) {
-			this.anInt4114 = arg0.method23182(98301076) * 351113221;
-			this.aBoolean802 = arg0.method23362(341215128) == 1;
-			this.anInt4143 = arg0.method23362(-1152330634) * -298973929;
+			this.anInt4114 = arg0.g4() * 351113221;
+			this.aBoolean802 = arg0.g1() == 1;
+			this.anInt4143 = arg0.g1() * -298973929;
 		}
 		if (this.anInt4135 * 710314345 == 9) {
-			this.anInt4116 = arg0.method23362(-289172197) * 886577953;
-			this.anInt4114 = arg0.method23182(634474870) * 351113221;
-			this.aBoolean803 = arg0.method23362(-586363153) == 1;
+			this.anInt4116 = arg0.g1() * 886577953;
+			this.anInt4114 = arg0.g4() * 351113221;
+			this.aBoolean803 = arg0.g1() == 1;
 		}
-		local227 = arg0.method23180(1710327153);
-		@Pc(644) int local644 = arg0.method23362(-1938060958);
+		local227 = arg0.g3();
+		@Pc(644) int local644 = arg0.g1();
 		@Pc(671) int local671;
 		if (local644 != 0) {
 			this.aByteArrayArray15 = new byte[11][];
@@ -1804,90 +1804,90 @@ public final class Class327 {
 			this.anIntArray403 = new int[11];
 			while (local644 != 0) {
 				local671 = (local644 >> 4) - 1;
-				local644 = local644 << 8 | arg0.method23362(-472974869);
+				local644 = local644 << 8 | arg0.g1();
 				local644 &= 0xFFF;
 				if (local644 == 4095) {
 					local644 = -1;
 				}
-				@Pc(692) byte local692 = arg0.method23177((byte) 11);
+				@Pc(692) byte local692 = arg0.g1b();
 				if (local692 != 0) {
 					this.aBoolean813 = true;
 				}
-				@Pc(701) byte local701 = arg0.method23177((byte) -100);
+				@Pc(701) byte local701 = arg0.g1b();
 				this.anIntArray410[local671] = local644;
 				this.aByteArrayArray15[local671] = new byte[] { local692 };
 				this.aByteArrayArray14[local671] = new byte[] { local701 };
-				local644 = arg0.method23362(1051555378);
+				local644 = arg0.g1();
 			}
 		}
-		this.aString184 = arg0.method23376((short) 21668);
-		local671 = arg0.method23362(-2192508);
+		this.aString184 = arg0.gjstr();
+		local671 = arg0.g1();
 		@Pc(744) int local744 = local671 & 0xF;
 		@Pc(748) int local748 = local671 >> 4;
 		@Pc(756) int local756;
 		if (local744 > 0) {
 			this.aStringArray24 = new String[local744];
 			for (local756 = 0; local756 < local744; local756++) {
-				this.aStringArray24[local756] = arg0.method23376((short) 7498);
+				this.aStringArray24[local756] = arg0.gjstr();
 			}
 		}
 		@Pc(782) int local782;
 		if (local748 > 0) {
-			local756 = arg0.method23362(-1525976789);
+			local756 = arg0.g1();
 			this.anIntArray404 = new int[local756 + 1];
 			for (local782 = 0; local782 < this.anIntArray404.length; local782++) {
 				this.anIntArray404[local782] = -1;
 			}
-			this.anIntArray404[local756] = arg0.method23178((byte) -86);
+			this.anIntArray404[local756] = arg0.g2();
 		}
 		if (local748 > 1) {
-			local756 = arg0.method23362(277021910);
-			this.anIntArray404[local756] = arg0.method23178((byte) -55);
+			local756 = arg0.g1();
+			this.anIntArray404[local756] = arg0.g2();
 		}
-		this.aString185 = arg0.method23376((short) 9378);
+		this.aString185 = arg0.gjstr();
 		if (this.aString185.equals("")) {
 			this.aString185 = null;
 		}
-		this.anInt4113 = arg0.method23362(-1309673498) * -1878285435;
-		this.anInt4158 = arg0.method23362(428164390) * -1634403891;
-		this.anInt4159 = arg0.method23362(1012901391) * -1539868631;
-		this.aString186 = arg0.method23376((short) 15267);
+		this.anInt4113 = arg0.g1() * -1878285435;
+		this.anInt4158 = arg0.g1() * -1634403891;
+		this.anInt4159 = arg0.g1() * -1539868631;
+		this.aString186 = arg0.gjstr();
 		local756 = -1;
 		if (Class255.method26407(local227, 1692431107) != 0) {
-			local756 = arg0.method23178((byte) -102);
+			local756 = arg0.g2();
 			if (local756 == 65535) {
 				local756 = -1;
 			}
-			this.anInt4107 = arg0.method23178((byte) -18) * -2046427885;
+			this.anInt4107 = arg0.g2() * -2046427885;
 			if (this.anInt4107 * -1943186149 == 65535) {
 				this.anInt4107 = 2046427885;
 			}
-			this.anInt4108 = arg0.method23178((byte) -127) * -714998373;
+			this.anInt4108 = arg0.g2() * -714998373;
 			if (this.anInt4108 * -1080549229 == 65535) {
 				this.anInt4108 = 714998373;
 			}
 		}
 		if (local3 >= 0) {
-			this.anInt4164 = arg0.method23178((byte) -113) * -1618545703;
+			this.anInt4164 = arg0.g2() * -1618545703;
 			if (this.anInt4164 * -744203159 == 65535) {
 				this.anInt4164 = 1618545703;
 			}
 		}
 		this.aClass80_Sub27_2 = new Class80_Sub27(local227, local756);
 		if (local3 >= 0) {
-			local782 = arg0.method23362(-1924772850);
+			local782 = arg0.g1();
 			@Pc(934) int local934;
 			@Pc(941) int local941;
 			@Pc(945) int local945;
 			for (local934 = 0; local934 < local782; local934++) {
-				local941 = arg0.method23180(1710327153);
-				local945 = arg0.method23182(-1578669554);
+				local941 = arg0.g3();
+				local945 = arg0.g4();
 				this.aClass24_28.method563(new Class80_Sub20(local945), (long) local941);
 			}
-			local934 = arg0.method23362(-678705675);
+			local934 = arg0.g1();
 			for (local941 = 0; local941 < local934; local941++) {
-				local945 = arg0.method23180(1710327153);
-				@Pc(973) String local973 = arg0.method23186((byte) 12);
+				local945 = arg0.g3();
+				@Pc(973) String local973 = arg0.gjstr2();
 				this.aClass24_28.method563(new Class80_Sub19(local973), (long) local945);
 			}
 		}
@@ -1922,18 +1922,18 @@ public final class Class327 {
 	}
 
 	@OriginalMember(owner = "client!hx", name = "ap", descriptor = "(Lclient!ald;)[Ljava/lang/Object;")
-	Object[] method27664(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(3) int local3 = arg0.method23362(-860560011);
+	Object[] method27664(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1();
 		if (local3 == 0) {
 			return null;
 		}
 		@Pc(11) Object[] local11 = new Object[local3];
 		for (@Pc(13) int local13 = 0; local13 < local3; local13++) {
-			@Pc(20) int local20 = arg0.method23362(-1452967586);
+			@Pc(20) int local20 = arg0.g1();
 			if (local20 == 0) {
-				local11[local13] = Integer.valueOf(arg0.method23182(-366842457));
+				local11[local13] = Integer.valueOf(arg0.g4());
 			} else if (local20 == 1) {
-				local11[local13] = arg0.method23376((short) 6998);
+				local11[local13] = arg0.gjstr();
 			}
 		}
 		this.aBoolean815 = true;
@@ -2062,14 +2062,14 @@ public final class Class327 {
 	}
 
 	@OriginalMember(owner = "client!hx", name = "au", descriptor = "(Lclient!ald;)[I")
-	int[] method27673(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(3) int local3 = arg0.method23362(896782570);
+	int[] method27673(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1();
 		if (local3 == 0) {
 			return null;
 		}
 		@Pc(11) int[] local11 = new int[local3];
 		for (@Pc(13) int local13 = 0; local13 < local3; local13++) {
-			local11[local13] = arg0.method23182(220357662);
+			local11[local13] = arg0.g4();
 		}
 		return local11;
 	}
@@ -2096,7 +2096,7 @@ public final class Class327 {
 					arg1 |= arg9.method23592(1886670984);
 				}
 				@Pc(40) long local40 = -1L;
-				@Pc(42) long[] local42 = Class80_Sub36.aLongArray18;
+				@Pc(42) long[] local42 = Packet.crc64table;
 				@Pc(47) int local47;
 				if (this.aShortArray109 != null) {
 					for (local47 = 0; local47 < this.aShortArray109.length; local47++) {
@@ -2223,7 +2223,7 @@ public final class Class327 {
 					arg1 |= arg9.method23592(2065107869);
 				}
 				@Pc(40) long local40 = -1L;
-				@Pc(42) long[] local42 = Class80_Sub36.aLongArray18;
+				@Pc(42) long[] local42 = Packet.crc64table;
 				@Pc(47) int local47;
 				if (this.aShortArray109 != null) {
 					for (local47 = 0; local47 < this.aShortArray109.length; local47++) {
@@ -2350,7 +2350,7 @@ public final class Class327 {
 					arg1 |= arg9.method23592(2131063105);
 				}
 				@Pc(40) long local40 = -1L;
-				@Pc(42) long[] local42 = Class80_Sub36.aLongArray18;
+				@Pc(42) long[] local42 = Packet.crc64table;
 				@Pc(47) int local47;
 				if (this.aShortArray109 != null) {
 					for (local47 = 0; local47 < this.aShortArray109.length; local47++) {
@@ -2477,7 +2477,7 @@ public final class Class327 {
 					arg1 |= arg9.method23592(2025965419);
 				}
 				@Pc(40) long local40 = -1L;
-				@Pc(42) long[] local42 = Class80_Sub36.aLongArray18;
+				@Pc(42) long[] local42 = Packet.crc64table;
 				@Pc(47) int local47;
 				if (this.aShortArray109 != null) {
 					for (local47 = 0; local47 < this.aShortArray109.length; local47++) {
@@ -2710,7 +2710,7 @@ public final class Class327 {
 					arg1 |= arg9.method23592(1984560416);
 				}
 				@Pc(40) long local40 = -1L;
-				@Pc(42) long[] local42 = Class80_Sub36.aLongArray18;
+				@Pc(42) long[] local42 = Packet.crc64table;
 				@Pc(47) int local47;
 				if (this.aShortArray109 != null) {
 					for (local47 = 0; local47 < this.aShortArray109.length; local47++) {
@@ -2823,18 +2823,18 @@ public final class Class327 {
 	}
 
 	@OriginalMember(owner = "client!hx", name = "j", descriptor = "(Lclient!ald;I)[Ljava/lang/Object;")
-	Object[] method27693(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) int local3 = arg0.method23362(-1052730689);
+	Object[] method27693(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) int local3 = arg0.g1();
 		if (local3 == 0) {
 			return null;
 		}
 		@Pc(11) Object[] local11 = new Object[local3];
 		for (@Pc(13) int local13 = 0; local13 < local3; local13++) {
-			@Pc(20) int local20 = arg0.method23362(339628319);
+			@Pc(20) int local20 = arg0.g1();
 			if (local20 == 0) {
-				local11[local13] = Integer.valueOf(arg0.method23182(503132214));
+				local11[local13] = Integer.valueOf(arg0.g4());
 			} else if (local20 == 1) {
-				local11[local13] = arg0.method23376((short) 11665);
+				local11[local13] = arg0.gjstr();
 			}
 		}
 		this.aBoolean815 = true;
@@ -2842,124 +2842,124 @@ public final class Class327 {
 	}
 
 	@OriginalMember(owner = "client!hx", name = "aa", descriptor = "(Lclient!ald;)V")
-	void method27694(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(3) int local3 = arg0.method23362(-859422398);
+	void method27694(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1();
 		if (local3 == 255) {
 			local3 = -1;
 		}
-		this.anInt4135 = arg0.method23362(-767276118) * 819107545;
+		this.anInt4135 = arg0.g1() * 819107545;
 		if ((this.anInt4135 * 710314345 & 0x80) != 0) {
 			this.anInt4135 = (this.anInt4135 * 710314345 & 0x7F) * 819107545;
-			this.aString182 = arg0.method23376((short) 7209);
+			this.aString182 = arg0.gjstr();
 		}
-		this.anInt4095 = arg0.method23178((byte) -63) * -82121019;
-		this.anInt4089 = arg0.method23179(290133168) * 2017859153;
-		this.anInt4182 = arg0.method23179(205367724) * -1380277965;
-		this.anInt4099 = arg0.method23178((byte) -53) * 1739295105;
-		this.anInt4161 = arg0.method23178((byte) -126) * 1695333709;
-		this.aByte127 = arg0.method23177((byte) -117);
-		this.aByte126 = arg0.method23177((byte) -40);
-		this.aByte124 = arg0.method23177((byte) -21);
-		this.aByte125 = arg0.method23177((byte) -117);
+		this.anInt4095 = arg0.g2() * -82121019;
+		this.anInt4089 = arg0.g2s() * 2017859153;
+		this.anInt4182 = arg0.g2s() * -1380277965;
+		this.anInt4099 = arg0.g2() * 1739295105;
+		this.anInt4161 = arg0.g2() * 1695333709;
+		this.aByte127 = arg0.g1b();
+		this.aByte126 = arg0.g1b();
+		this.aByte124 = arg0.g1b();
+		this.aByte125 = arg0.g1b();
 		if (this.aByte127 == 4 || this.aByte126 == 4) {
-			this.anInt4105 = arg0.method23178((byte) -58) * 1467789459;
-			this.anInt4106 = arg0.method23178((byte) -68) * 1596627121;
+			this.anInt4105 = arg0.g2() * 1467789459;
+			this.anInt4106 = arg0.g2() * 1596627121;
 		}
-		this.anInt4082 = arg0.method23178((byte) -66) * -887144585;
+		this.anInt4082 = arg0.g2() * -887144585;
 		if (this.anInt4082 * 254495303 == 65535) {
 			this.anInt4082 = 887144585;
 		} else {
 			this.anInt4082 = ((this.anInt4087 * -2053489901 & -65536) + this.anInt4082 * 254495303) * -887144585;
 		}
-		@Pc(151) int local151 = arg0.method23362(-492917283);
+		@Pc(151) int local151 = arg0.g1();
 		this.aBoolean800 = (local151 & 0x1) != 0;
 		if (local3 >= 0) {
 			this.aBoolean801 = (local151 & 0x2) != 0;
 		}
 		if (this.anInt4135 * 710314345 == 0) {
-			this.anInt4112 = arg0.method23178((byte) -50) * -67564629;
-			this.anInt4091 = arg0.method23178((byte) -33) * -721252229;
+			this.anInt4112 = arg0.g2() * -67564629;
+			this.anInt4091 = arg0.g2() * -721252229;
 			if (local3 < 0) {
-				this.aBoolean801 = arg0.method23362(-2039118276) == 1;
+				this.aBoolean801 = arg0.g1() == 1;
 			}
 		}
 		@Pc(227) int local227;
 		if (this.anInt4135 * 710314345 == 5) {
-			this.anInt4117 = arg0.method23182(2133295829) * 1098751099;
-			this.anInt4166 = arg0.method23178((byte) -37) * 1002124109;
-			local227 = arg0.method23362(-5237432);
+			this.anInt4117 = arg0.g4() * 1098751099;
+			this.anInt4166 = arg0.g2() * 1002124109;
+			local227 = arg0.g1();
 			this.aBoolean804 = (local227 & 0x1) != 0;
 			this.aBoolean805 = (local227 & 0x2) != 0;
-			this.anInt4143 = arg0.method23362(-1973933667) * -298973929;
-			this.anInt4118 = arg0.method23362(-1291953763) * -2047026297;
-			this.anInt4096 = arg0.method23182(-1874596024) * -1078944815;
-			this.aBoolean814 = arg0.method23362(-798266193) == 1;
-			this.aBoolean817 = arg0.method23362(-1317306892) == 1;
-			this.anInt4114 = arg0.method23182(1831778615) * 351113221;
+			this.anInt4143 = arg0.g1() * -298973929;
+			this.anInt4118 = arg0.g1() * -2047026297;
+			this.anInt4096 = arg0.g4() * -1078944815;
+			this.aBoolean814 = arg0.g1() == 1;
+			this.aBoolean817 = arg0.g1() == 1;
+			this.anInt4114 = arg0.g4() * 351113221;
 			if (local3 >= 3) {
-				this.aBoolean820 = arg0.method23362(-1240517277) == 1;
+				this.aBoolean820 = arg0.g1() == 1;
 			}
 		}
 		if (this.anInt4135 * 710314345 == 6) {
 			this.anInt4136 = 1666794573;
-			this.anInt4122 = arg0.method23210((byte) 44) * -258024019;
-			local227 = arg0.method23362(-1457198892);
+			this.anInt4122 = arg0.gSmart2or4null() * -258024019;
+			local227 = arg0.g1();
 			@Pc(335) boolean local335 = (local227 & 0x1) == 1;
 			this.aBoolean806 = (local227 & 0x2) == 2;
 			this.aBoolean807 = (local227 & 0x4) == 4;
 			this.aBoolean808 = (local227 & 0x8) == 8;
 			if (local335) {
-				this.anInt4128 = arg0.method23179(1171067200) * -2096113369;
-				this.anInt4129 = arg0.method23179(2033597054) * -2132986315;
-				this.anInt4074 = arg0.method23178((byte) -120) * 149862615;
-				this.anInt4115 = arg0.method23178((byte) -51) * -1137256781;
-				this.anInt4127 = arg0.method23178((byte) -43) * -320713609;
-				this.anInt4131 = arg0.method23178((byte) -27) * 1341335515;
+				this.anInt4128 = arg0.g2s() * -2096113369;
+				this.anInt4129 = arg0.g2s() * -2132986315;
+				this.anInt4074 = arg0.g2() * 149862615;
+				this.anInt4115 = arg0.g2() * -1137256781;
+				this.anInt4127 = arg0.g2() * -320713609;
+				this.anInt4131 = arg0.g2() * 1341335515;
 			} else if (this.aBoolean806) {
-				this.anInt4128 = arg0.method23179(-396855698) * -2096113369;
-				this.anInt4129 = arg0.method23179(1188914808) * -2132986315;
-				this.anInt4130 = arg0.method23179(-650485472) * -1942973109;
-				this.anInt4074 = arg0.method23178((byte) -81) * 149862615;
-				this.anInt4115 = arg0.method23178((byte) -18) * -1137256781;
-				this.anInt4127 = arg0.method23178((byte) -9) * -320713609;
-				this.anInt4131 = arg0.method23179(-354510242) * 1341335515;
+				this.anInt4128 = arg0.g2s() * -2096113369;
+				this.anInt4129 = arg0.g2s() * -2132986315;
+				this.anInt4130 = arg0.g2s() * -1942973109;
+				this.anInt4074 = arg0.g2() * 149862615;
+				this.anInt4115 = arg0.g2() * -1137256781;
+				this.anInt4127 = arg0.g2() * -320713609;
+				this.anInt4131 = arg0.g2s() * 1341335515;
 			}
-			this.anInt4146 = arg0.method23210((byte) 90) * -365498645;
+			this.anInt4146 = arg0.gSmart2or4null() * -365498645;
 			if (this.aByte127 != 0) {
-				this.anInt4132 = arg0.method23178((byte) -92) * -756393347;
+				this.anInt4132 = arg0.g2() * -756393347;
 			}
 			if (this.aByte126 != 0) {
-				this.anInt4133 = arg0.method23178((byte) -56) * 1351536991;
+				this.anInt4133 = arg0.g2() * 1351536991;
 			}
 		}
 		if (this.anInt4135 * 710314345 == 4) {
-			this.anInt4148 = arg0.method23210((byte) 81) * 352163065;
+			this.anInt4148 = arg0.gSmart2or4null() * 352163065;
 			if (local3 >= 2) {
-				this.aBoolean810 = arg0.method23362(-1080945789) == 1;
+				this.aBoolean810 = arg0.g1() == 1;
 			}
-			this.aString183 = arg0.method23376((short) 25589);
-			this.anInt4175 = arg0.method23362(-830143732) * 278363431;
-			this.anInt4149 = arg0.method23362(-1432695900) * -222805711;
-			this.anInt4150 = arg0.method23362(460869563) * 1130003185;
-			this.aBoolean811 = arg0.method23362(-1898901908) == 1;
-			this.anInt4114 = arg0.method23182(-1381161759) * 351113221;
-			this.anInt4143 = arg0.method23362(-1420405897) * -298973929;
+			this.aString183 = arg0.gjstr();
+			this.anInt4175 = arg0.g1() * 278363431;
+			this.anInt4149 = arg0.g1() * -222805711;
+			this.anInt4150 = arg0.g1() * 1130003185;
+			this.aBoolean811 = arg0.g1() == 1;
+			this.anInt4114 = arg0.g4() * 351113221;
+			this.anInt4143 = arg0.g1() * -298973929;
 			if (local3 >= 0) {
-				this.anInt4168 = arg0.method23362(624434891) * 2068177093;
+				this.anInt4168 = arg0.g1() * 2068177093;
 			}
 		}
 		if (this.anInt4135 * 710314345 == 3) {
-			this.anInt4114 = arg0.method23182(-1737266997) * 351113221;
-			this.aBoolean802 = arg0.method23362(831761802) == 1;
-			this.anInt4143 = arg0.method23362(-1986417184) * -298973929;
+			this.anInt4114 = arg0.g4() * 351113221;
+			this.aBoolean802 = arg0.g1() == 1;
+			this.anInt4143 = arg0.g1() * -298973929;
 		}
 		if (this.anInt4135 * 710314345 == 9) {
-			this.anInt4116 = arg0.method23362(-259757093) * 886577953;
-			this.anInt4114 = arg0.method23182(779869863) * 351113221;
-			this.aBoolean803 = arg0.method23362(-958041415) == 1;
+			this.anInt4116 = arg0.g1() * 886577953;
+			this.anInt4114 = arg0.g4() * 351113221;
+			this.aBoolean803 = arg0.g1() == 1;
 		}
-		local227 = arg0.method23180(1710327153);
-		@Pc(644) int local644 = arg0.method23362(-189909822);
+		local227 = arg0.g3();
+		@Pc(644) int local644 = arg0.g1();
 		@Pc(671) int local671;
 		if (local644 != 0) {
 			this.aByteArrayArray15 = new byte[11][];
@@ -2968,90 +2968,90 @@ public final class Class327 {
 			this.anIntArray403 = new int[11];
 			while (local644 != 0) {
 				local671 = (local644 >> 4) - 1;
-				local644 = local644 << 8 | arg0.method23362(-1198870270);
+				local644 = local644 << 8 | arg0.g1();
 				local644 &= 0xFFF;
 				if (local644 == 4095) {
 					local644 = -1;
 				}
-				@Pc(692) byte local692 = arg0.method23177((byte) -67);
+				@Pc(692) byte local692 = arg0.g1b();
 				if (local692 != 0) {
 					this.aBoolean813 = true;
 				}
-				@Pc(701) byte local701 = arg0.method23177((byte) -94);
+				@Pc(701) byte local701 = arg0.g1b();
 				this.anIntArray410[local671] = local644;
 				this.aByteArrayArray15[local671] = new byte[] { local692 };
 				this.aByteArrayArray14[local671] = new byte[] { local701 };
-				local644 = arg0.method23362(642213469);
+				local644 = arg0.g1();
 			}
 		}
-		this.aString184 = arg0.method23376((short) 28794);
-		local671 = arg0.method23362(-1158342419);
+		this.aString184 = arg0.gjstr();
+		local671 = arg0.g1();
 		@Pc(744) int local744 = local671 & 0xF;
 		@Pc(748) int local748 = local671 >> 4;
 		@Pc(756) int local756;
 		if (local744 > 0) {
 			this.aStringArray24 = new String[local744];
 			for (local756 = 0; local756 < local744; local756++) {
-				this.aStringArray24[local756] = arg0.method23376((short) 31444);
+				this.aStringArray24[local756] = arg0.gjstr();
 			}
 		}
 		@Pc(782) int local782;
 		if (local748 > 0) {
-			local756 = arg0.method23362(-1874372018);
+			local756 = arg0.g1();
 			this.anIntArray404 = new int[local756 + 1];
 			for (local782 = 0; local782 < this.anIntArray404.length; local782++) {
 				this.anIntArray404[local782] = -1;
 			}
-			this.anIntArray404[local756] = arg0.method23178((byte) -99);
+			this.anIntArray404[local756] = arg0.g2();
 		}
 		if (local748 > 1) {
-			local756 = arg0.method23362(1017027966);
-			this.anIntArray404[local756] = arg0.method23178((byte) -91);
+			local756 = arg0.g1();
+			this.anIntArray404[local756] = arg0.g2();
 		}
-		this.aString185 = arg0.method23376((short) 9116);
+		this.aString185 = arg0.gjstr();
 		if (this.aString185.equals("")) {
 			this.aString185 = null;
 		}
-		this.anInt4113 = arg0.method23362(251377218) * -1878285435;
-		this.anInt4158 = arg0.method23362(368278815) * -1634403891;
-		this.anInt4159 = arg0.method23362(-602383425) * -1539868631;
-		this.aString186 = arg0.method23376((short) 7256);
+		this.anInt4113 = arg0.g1() * -1878285435;
+		this.anInt4158 = arg0.g1() * -1634403891;
+		this.anInt4159 = arg0.g1() * -1539868631;
+		this.aString186 = arg0.gjstr();
 		local756 = -1;
 		if (Class255.method26407(local227, 583153293) != 0) {
-			local756 = arg0.method23178((byte) -51);
+			local756 = arg0.g2();
 			if (local756 == 65535) {
 				local756 = -1;
 			}
-			this.anInt4107 = arg0.method23178((byte) -117) * -2046427885;
+			this.anInt4107 = arg0.g2() * -2046427885;
 			if (this.anInt4107 * -1943186149 == 65535) {
 				this.anInt4107 = 2046427885;
 			}
-			this.anInt4108 = arg0.method23178((byte) -75) * -714998373;
+			this.anInt4108 = arg0.g2() * -714998373;
 			if (this.anInt4108 * -1080549229 == 65535) {
 				this.anInt4108 = 714998373;
 			}
 		}
 		if (local3 >= 0) {
-			this.anInt4164 = arg0.method23178((byte) -86) * -1618545703;
+			this.anInt4164 = arg0.g2() * -1618545703;
 			if (this.anInt4164 * -744203159 == 65535) {
 				this.anInt4164 = 1618545703;
 			}
 		}
 		this.aClass80_Sub27_2 = new Class80_Sub27(local227, local756);
 		if (local3 >= 0) {
-			local782 = arg0.method23362(-351186957);
+			local782 = arg0.g1();
 			@Pc(934) int local934;
 			@Pc(941) int local941;
 			@Pc(945) int local945;
 			for (local934 = 0; local934 < local782; local934++) {
-				local941 = arg0.method23180(1710327153);
-				local945 = arg0.method23182(962788875);
+				local941 = arg0.g3();
+				local945 = arg0.g4();
 				this.aClass24_28.method563(new Class80_Sub20(local945), (long) local941);
 			}
-			local934 = arg0.method23362(-853325877);
+			local934 = arg0.g1();
 			for (local941 = 0; local941 < local934; local941++) {
-				local945 = arg0.method23180(1710327153);
-				@Pc(973) String local973 = arg0.method23186((byte) 12);
+				local945 = arg0.g3();
+				@Pc(973) String local973 = arg0.gjstr2();
 				this.aClass24_28.method563(new Class80_Sub19(local973), (long) local945);
 			}
 		}

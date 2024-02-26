@@ -112,11 +112,6 @@ final class Class291 implements Iterator {
 		Class630.aBoolean955 = true;
 	}
 
-	@OriginalMember(owner = "client!gl", name = "f", descriptor = "([BII)I")
-	public static int method26941(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		return Class251.method26373(arg0, 0, arg1, -1638303044);
-	}
-
 	@OriginalMember(owner = "client!gl", name = "<init>", descriptor = "(Lclient!adh;)V")
 	Class291(@OriginalArg(0) Class2_Sub1_Sub1 arg0) {
 		this.aClass2_Sub1_Sub1_2 = arg0;

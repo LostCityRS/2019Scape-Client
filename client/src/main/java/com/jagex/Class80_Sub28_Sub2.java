@@ -31,22 +31,22 @@ public final class Class80_Sub28_Sub2 extends Class80_Sub28 {
 
 	@OriginalMember(owner = "client!arc", name = "e", descriptor = "(Lclient!ald;)V")
 	@Override
-	void method22225(@OriginalArg(0) Class80_Sub36 arg0) {
-		if (arg0.method23362(1051001753) != 255) {
-			arg0.anInt3152 -= 1034180571;
-			this.aLong189 = arg0.method23273((byte) 30) * 1628659081804031337L;
+	void method22225(@OriginalArg(0) Packet arg0) {
+		if (arg0.g1() != 255) {
+			arg0.pos -= 1034180571;
+			this.aLong189 = arg0.g8() * 1628659081804031337L;
 		}
-		this.aString97 = arg0.method23189(-761473881);
+		this.aString97 = arg0.fastgstr();
 	}
 
 	@OriginalMember(owner = "client!arc", name = "t", descriptor = "(Lclient!ald;B)V")
 	@Override
-	void method22223(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
-		if (arg0.method23362(-1633868922) != 255) {
-			arg0.anInt3152 -= 1034180571;
-			this.aLong189 = arg0.method23273((byte) 57) * 1628659081804031337L;
+	void method22223(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
+		if (arg0.g1() != 255) {
+			arg0.pos -= 1034180571;
+			this.aLong189 = arg0.g8() * 1628659081804031337L;
 		}
-		this.aString97 = arg0.method23189(-761473881);
+		this.aString97 = arg0.fastgstr();
 	}
 
 	@OriginalMember(owner = "client!arc", name = "f", descriptor = "(Lclient!kf;I)V")
@@ -57,22 +57,22 @@ public final class Class80_Sub28_Sub2 extends Class80_Sub28 {
 
 	@OriginalMember(owner = "client!arc", name = "u", descriptor = "(Lclient!ald;)V")
 	@Override
-	void method22226(@OriginalArg(0) Class80_Sub36 arg0) {
-		if (arg0.method23362(258210572) != 255) {
-			arg0.anInt3152 -= 1034180571;
-			this.aLong189 = arg0.method23273((byte) 33) * 1628659081804031337L;
+	void method22226(@OriginalArg(0) Packet arg0) {
+		if (arg0.g1() != 255) {
+			arg0.pos -= 1034180571;
+			this.aLong189 = arg0.g8() * 1628659081804031337L;
 		}
-		this.aString97 = arg0.method23189(-761473881);
+		this.aString97 = arg0.fastgstr();
 	}
 
 	@OriginalMember(owner = "client!arc", name = "l", descriptor = "(Lclient!ald;)V")
 	@Override
-	void method22224(@OriginalArg(0) Class80_Sub36 arg0) {
-		if (arg0.method23362(-1687463584) != 255) {
-			arg0.anInt3152 -= 1034180571;
-			this.aLong189 = arg0.method23273((byte) -58) * 1628659081804031337L;
+	void method22224(@OriginalArg(0) Packet arg0) {
+		if (arg0.g1() != 255) {
+			arg0.pos -= 1034180571;
+			this.aLong189 = arg0.g8() * 1628659081804031337L;
 		}
-		this.aString97 = arg0.method23189(-761473881);
+		this.aString97 = arg0.fastgstr();
 	}
 
 	@OriginalMember(owner = "client!arc", name = "g", descriptor = "(Lclient!kf;)V")

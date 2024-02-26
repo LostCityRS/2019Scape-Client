@@ -104,12 +104,12 @@ public final class Class231 {
 	}
 
 	@OriginalMember(owner = "client!dr", name = "x", descriptor = "(Lclient!ald;I)I")
-	int method26008(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) int local3 = arg0.method23178((byte) -84);
-		Class666.method33458(arg0.method23362(-312298539), -255202897);
-		this.aClass225_6 = Class616.method32287(arg0.method23362(877916346), 107209021);
-		this.aClass225_7 = Class616.method32287(arg0.method23362(-344434392), -1256740765);
-		this.aBoolean762 = arg0.method23362(-360766874) != 0;
+	int method26008(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) int local3 = arg0.g2();
+		Class666.method33458(arg0.g1(), -255202897);
+		this.aClass225_6 = Class616.method32287(arg0.g1(), 107209021);
+		this.aClass225_7 = Class616.method32287(arg0.g1(), -1256740765);
+		this.aBoolean762 = arg0.g1() != 0;
 		this.aClass253Array1 = new Class253[local3];
 		@Pc(38) Class253 local38 = null;
 		@Pc(40) int local40;
@@ -143,12 +143,12 @@ public final class Class231 {
 	}
 
 	@OriginalMember(owner = "client!dr", name = "t", descriptor = "(Lclient!ald;II)I")
-	int method26010(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(3) int local3 = arg0.method23178((byte) -9);
-		Class666.method33458(arg0.method23362(-1858497682), -255202897);
-		this.aClass225_6 = Class616.method32287(arg0.method23362(-467868232), 1862898202);
-		this.aClass225_7 = Class616.method32287(arg0.method23362(915437887), -38087050);
-		this.aBoolean762 = arg0.method23362(891459947) != 0;
+	int method26010(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+		@Pc(3) int local3 = arg0.g2();
+		Class666.method33458(arg0.g1(), -255202897);
+		this.aClass225_6 = Class616.method32287(arg0.g1(), 1862898202);
+		this.aClass225_7 = Class616.method32287(arg0.g1(), -38087050);
+		this.aBoolean762 = arg0.g1() != 0;
 		this.aClass253Array1 = new Class253[local3];
 		@Pc(38) Class253 local38 = null;
 		@Pc(40) int local40;
@@ -197,12 +197,12 @@ public final class Class231 {
 	}
 
 	@OriginalMember(owner = "client!dr", name = "o", descriptor = "(Lclient!ald;I)I")
-	int method26016(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) int local3 = arg0.method23178((byte) -42);
-		Class666.method33458(arg0.method23362(-317480664), -255202897);
-		this.aClass225_6 = Class616.method32287(arg0.method23362(1017006108), -1072402704);
-		this.aClass225_7 = Class616.method32287(arg0.method23362(-98632620), 873407146);
-		this.aBoolean762 = arg0.method23362(-261925420) != 0;
+	int method26016(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) int local3 = arg0.g2();
+		Class666.method33458(arg0.g1(), -255202897);
+		this.aClass225_6 = Class616.method32287(arg0.g1(), -1072402704);
+		this.aClass225_7 = Class616.method32287(arg0.g1(), 873407146);
+		this.aBoolean762 = arg0.g1() != 0;
 		this.aClass253Array1 = new Class253[local3];
 		@Pc(38) Class253 local38 = null;
 		@Pc(40) int local40;
@@ -225,12 +225,12 @@ public final class Class231 {
 	}
 
 	@OriginalMember(owner = "client!dr", name = "a", descriptor = "(Lclient!ald;I)I")
-	int method26017(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) int local3 = arg0.method23178((byte) -94);
-		Class666.method33458(arg0.method23362(-1414333420), -255202897);
-		this.aClass225_6 = Class616.method32287(arg0.method23362(-1970508586), 1345677533);
-		this.aClass225_7 = Class616.method32287(arg0.method23362(-1086668307), 2098861330);
-		this.aBoolean762 = arg0.method23362(539580665) != 0;
+	int method26017(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) int local3 = arg0.g2();
+		Class666.method33458(arg0.g1(), -255202897);
+		this.aClass225_6 = Class616.method32287(arg0.g1(), 1345677533);
+		this.aClass225_7 = Class616.method32287(arg0.g1(), 2098861330);
+		this.aBoolean762 = arg0.g1() != 0;
 		this.aClass253Array1 = new Class253[local3];
 		@Pc(38) Class253 local38 = null;
 		@Pc(40) int local40;
@@ -258,12 +258,12 @@ public final class Class231 {
 	}
 
 	@OriginalMember(owner = "client!dr", name = "s", descriptor = "(Lclient!ald;I)I")
-	int method26019(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) int local3 = arg0.method23178((byte) -50);
-		Class666.method33458(arg0.method23362(1025280126), -255202897);
-		this.aClass225_6 = Class616.method32287(arg0.method23362(-720441626), -1707881505);
-		this.aClass225_7 = Class616.method32287(arg0.method23362(622465937), 499956838);
-		this.aBoolean762 = arg0.method23362(-605118237) != 0;
+	int method26019(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) int local3 = arg0.g2();
+		Class666.method33458(arg0.g1(), -255202897);
+		this.aClass225_6 = Class616.method32287(arg0.g1(), -1707881505);
+		this.aClass225_7 = Class616.method32287(arg0.g1(), 499956838);
+		this.aBoolean762 = arg0.g1() != 0;
 		this.aClass253Array1 = new Class253[local3];
 		@Pc(38) Class253 local38 = null;
 		@Pc(40) int local40;
@@ -342,12 +342,12 @@ public final class Class231 {
 	}
 
 	@OriginalMember(owner = "client!dr", name = "k", descriptor = "(Lclient!ald;I)I")
-	int method26024(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) int local3 = arg0.method23178((byte) -20);
-		Class666.method33458(arg0.method23362(487587740), -255202897);
-		this.aClass225_6 = Class616.method32287(arg0.method23362(-999682240), -1946791019);
-		this.aClass225_7 = Class616.method32287(arg0.method23362(988640950), 1385319698);
-		this.aBoolean762 = arg0.method23362(495158173) != 0;
+	int method26024(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) int local3 = arg0.g2();
+		Class666.method33458(arg0.g1(), -255202897);
+		this.aClass225_6 = Class616.method32287(arg0.g1(), -1946791019);
+		this.aClass225_7 = Class616.method32287(arg0.g1(), 1385319698);
+		this.aBoolean762 = arg0.g1() != 0;
 		this.aClass253Array1 = new Class253[local3];
 		@Pc(38) Class253 local38 = null;
 		@Pc(40) int local40;
@@ -370,12 +370,12 @@ public final class Class231 {
 	}
 
 	@OriginalMember(owner = "client!dr", name = "j", descriptor = "(Lclient!ald;I)I")
-	int method26025(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) int local3 = arg0.method23178((byte) -106);
-		Class666.method33458(arg0.method23362(-294348154), -255202897);
-		this.aClass225_6 = Class616.method32287(arg0.method23362(123203730), -1834700119);
-		this.aClass225_7 = Class616.method32287(arg0.method23362(-1363053574), 1778798319);
-		this.aBoolean762 = arg0.method23362(957023878) != 0;
+	int method26025(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) int local3 = arg0.g2();
+		Class666.method33458(arg0.g1(), -255202897);
+		this.aClass225_6 = Class616.method32287(arg0.g1(), -1834700119);
+		this.aClass225_7 = Class616.method32287(arg0.g1(), 1778798319);
+		this.aBoolean762 = arg0.g1() != 0;
 		this.aClass253Array1 = new Class253[local3];
 		@Pc(38) Class253 local38 = null;
 		@Pc(40) int local40;

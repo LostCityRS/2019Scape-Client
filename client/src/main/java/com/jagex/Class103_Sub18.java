@@ -47,13 +47,13 @@ public final class Class103_Sub18 extends Class103 {
 	}
 
 	@OriginalMember(owner = "client!agp", name = "<init>", descriptor = "(Lclient!ald;)V")
-	Class103_Sub18(@OriginalArg(0) Class80_Sub36 arg0) {
+	Class103_Sub18(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.anInt997 = arg0.method23178((byte) -5) * -1417340513;
+		this.anInt997 = arg0.g2() * -1417340513;
 		this.anIntArray94 = new int[4];
-		this.anInt996 = arg0.method23210((byte) 46) * 1370742333;
+		this.anInt996 = arg0.gSmart2or4null() * 1370742333;
 		Arrays.fill(this.anIntArray94, 0, this.anIntArray94.length, this.anInt996 * 229845269);
-		this.anInt998 = arg0.method23182(1354462741) * 339020525;
+		this.anInt998 = arg0.g4() * 339020525;
 	}
 
 	@OriginalMember(owner = "client!agp", name = "u", descriptor = "(I)Z")

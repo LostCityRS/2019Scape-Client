@@ -35,7 +35,7 @@ public final class Class2_Sub1_Sub1 extends Class2_Sub1 implements Interface12 {
 		@Pc(12) byte[] local12 = this.aClass480_11.method29918(this.aClass143_3.method11823((byte) -10).anInt5690 * -1975739137, arg0, 1896589581);
 		@Pc(19) Class107_Sub2 local19 = new Class107_Sub2(this.aClass143_3, arg0);
 		if (local12 != null) {
-			local19.method37006(new Class80_Sub36(local12), 1896589581);
+			local19.method37006(new Packet(local12), 1896589581);
 		}
 		return local19;
 	}

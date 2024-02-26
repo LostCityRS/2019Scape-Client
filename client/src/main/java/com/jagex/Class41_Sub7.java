@@ -9,24 +9,24 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class41_Sub7 extends Class41 {
 
 	@OriginalMember(owner = "client!aoh", name = "v", descriptor = "(I)Lclient!ald;")
-	static Class80_Sub36 method17258(@OriginalArg(0) int arg0) {
-		@Pc(4) Class80_Sub36 local4 = new Class80_Sub36(518);
+	static Packet method17258(@OriginalArg(0) int arg0) {
+		@Pc(4) Packet local4 = new Packet(518);
 		Class238.anIntArray354 = new int[4];
 		Class238.anIntArray354[0] = Class66.aSecureRandom1.nextInt();
 		Class238.anIntArray354[1] = Class66.aSecureRandom1.nextInt();
 		Class238.anIntArray354[2] = Class66.aSecureRandom1.nextInt();
 		Class238.anIntArray354[3] = Class66.aSecureRandom1.nextInt();
-		local4.method23154(10, 1275868335);
-		local4.method23345(Class238.anIntArray354[0], (byte) 50);
-		local4.method23345(Class238.anIntArray354[1], (byte) 52);
-		local4.method23345(Class238.anIntArray354[2], (byte) 9);
-		local4.method23345(Class238.anIntArray354[3], (byte) 127);
-		local4.method23162(Class238.aLong357 * -3618167682495159963L);
+		local4.p1(10);
+		local4.p4(Class238.anIntArray354[0]);
+		local4.p4(Class238.anIntArray354[1]);
+		local4.p4(Class238.anIntArray354[2]);
+		local4.p4(Class238.anIntArray354[3]);
+		local4.p8(Class238.aLong357 * -3618167682495159963L);
 		if (client.anInt3433 * 1994758437 == 14) {
-			local4.method23345(Class157_Sub1.anIntArray200[0], (byte) 53);
-			local4.method23345(Class157_Sub1.anIntArray200[1], (byte) 49);
-			local4.method23345(Class157_Sub1.anIntArray200[2], (byte) 10);
-			local4.method23345(Class157_Sub1.anIntArray200[3], (byte) 21);
+			local4.p4(Class157_Sub1.anIntArray200[0]);
+			local4.p4(Class157_Sub1.anIntArray200[1]);
+			local4.p4(Class157_Sub1.anIntArray200[2]);
+			local4.p4(Class157_Sub1.anIntArray200[3]);
 		}
 		Class157_Sub1.anIntArray200 = Class238.anIntArray354;
 		return local4;

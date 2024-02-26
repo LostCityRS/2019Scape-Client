@@ -109,50 +109,50 @@ public final class Class694 implements Interface11, Interface5 {
 	}
 
 	@OriginalMember(owner = "client!yt", name = "m", descriptor = "(Lclient!ald;I)V")
-	void method37015(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	void method37015(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.anInt5786 = Class273.method26774(arg0.method23180(1710327153), (byte) 1) * -1746910345;
+			this.anInt5786 = Class273.method26774(arg0.g3(), (byte) 1) * -1746910345;
 		} else if (arg1 == 2) {
-			this.anInt5787 = arg0.method23362(285432452) * 244061577;
+			this.anInt5787 = arg0.g1() * 244061577;
 		} else if (arg1 == 3) {
-			this.anInt5787 = arg0.method23178((byte) -104) * 244061577;
+			this.anInt5787 = arg0.g2() * 244061577;
 			if (this.anInt5787 * 318042297 == 65535) {
 				this.anInt5787 = -244061577;
 			}
 		} else if (arg1 == 5) {
 			this.aBoolean989 = false;
 		} else if (arg1 == 7) {
-			this.anInt5788 = Class273.method26774(arg0.method23180(1710327153), (byte) 1) * -1275852455;
+			this.anInt5788 = Class273.method26774(arg0.g3(), (byte) 1) * -1275852455;
 		} else if (arg1 != 8) {
 			if (arg1 == 9) {
-				this.anInt5789 = (arg0.method23178((byte) -4) << 2) * 1177179577;
+				this.anInt5789 = (arg0.g2() << 2) * 1177179577;
 			} else if (arg1 == 10) {
 				this.aBoolean990 = false;
 			} else if (arg1 == 11) {
-				this.anInt5790 = arg0.method23362(-345317732) * 1371269909;
+				this.anInt5790 = arg0.g1() * 1371269909;
 			} else if (arg1 == 12) {
 				this.aBoolean991 = true;
 			} else if (arg1 == 13) {
-				this.anInt5791 = arg0.method23180(1710327153) * -1572911589;
+				this.anInt5791 = arg0.g3() * -1572911589;
 			} else if (arg1 == 14) {
-				this.anInt5784 = (arg0.method23362(-417356924) << 2) * -351309229;
+				this.anInt5784 = (arg0.g1() << 2) * -351309229;
 			} else if (arg1 == 16) {
-				this.anInt5793 = arg0.method23362(-336716070) * 1944472131;
+				this.anInt5793 = arg0.g1() * 1944472131;
 			} else if (arg1 == 20) {
-				this.anInt5792 = arg0.method23178((byte) -41) * 122540489;
+				this.anInt5792 = arg0.g2() * 122540489;
 			} else if (arg1 == 21) {
-				this.anInt5795 = arg0.method23362(-2427537) * -1489893169;
+				this.anInt5795 = arg0.g1() * -1489893169;
 			} else if (arg1 == 22) {
-				this.anInt5796 = arg0.method23178((byte) -11) * 173479811;
+				this.anInt5796 = arg0.g2() * 173479811;
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!yt", name = "t", descriptor = "(Lclient!ald;I)V")
 	@Override
-	public void method37006(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1) {
+	public void method37006(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-359176496);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}
@@ -161,41 +161,41 @@ public final class Class694 implements Interface11, Interface5 {
 	}
 
 	@OriginalMember(owner = "client!yt", name = "l", descriptor = "(Lclient!ald;IB)V")
-	void method37016(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
+	void method37016(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
 		if (arg1 == 1) {
-			this.anInt5786 = Class273.method26774(arg0.method23180(1710327153), (byte) 1) * -1746910345;
+			this.anInt5786 = Class273.method26774(arg0.g3(), (byte) 1) * -1746910345;
 		} else if (arg1 == 2) {
-			this.anInt5787 = arg0.method23362(612870692) * 244061577;
+			this.anInt5787 = arg0.g1() * 244061577;
 		} else if (arg1 == 3) {
-			this.anInt5787 = arg0.method23178((byte) -61) * 244061577;
+			this.anInt5787 = arg0.g2() * 244061577;
 			if (this.anInt5787 * 318042297 == 65535) {
 				this.anInt5787 = -244061577;
 			}
 		} else if (arg1 == 5) {
 			this.aBoolean989 = false;
 		} else if (arg1 == 7) {
-			this.anInt5788 = Class273.method26774(arg0.method23180(1710327153), (byte) 1) * -1275852455;
+			this.anInt5788 = Class273.method26774(arg0.g3(), (byte) 1) * -1275852455;
 		} else if (arg1 != 8) {
 			if (arg1 == 9) {
-				this.anInt5789 = (arg0.method23178((byte) -118) << 2) * 1177179577;
+				this.anInt5789 = (arg0.g2() << 2) * 1177179577;
 			} else if (arg1 == 10) {
 				this.aBoolean990 = false;
 			} else if (arg1 == 11) {
-				this.anInt5790 = arg0.method23362(1005926424) * 1371269909;
+				this.anInt5790 = arg0.g1() * 1371269909;
 			} else if (arg1 == 12) {
 				this.aBoolean991 = true;
 			} else if (arg1 == 13) {
-				this.anInt5791 = arg0.method23180(1710327153) * -1572911589;
+				this.anInt5791 = arg0.g3() * -1572911589;
 			} else if (arg1 == 14) {
-				this.anInt5784 = (arg0.method23362(1086744656) << 2) * -351309229;
+				this.anInt5784 = (arg0.g1() << 2) * -351309229;
 			} else if (arg1 == 16) {
-				this.anInt5793 = arg0.method23362(-791636385) * 1944472131;
+				this.anInt5793 = arg0.g1() * 1944472131;
 			} else if (arg1 == 20) {
-				this.anInt5792 = arg0.method23178((byte) -13) * 122540489;
+				this.anInt5792 = arg0.g2() * 122540489;
 			} else if (arg1 == 21) {
-				this.anInt5795 = arg0.method23362(432485050) * -1489893169;
+				this.anInt5795 = arg0.g1() * -1489893169;
 			} else if (arg1 == 22) {
-				this.anInt5796 = arg0.method23178((byte) -29) * 173479811;
+				this.anInt5796 = arg0.g2() * 173479811;
 			}
 		}
 	}
@@ -220,9 +220,9 @@ public final class Class694 implements Interface11, Interface5 {
 
 	@OriginalMember(owner = "client!yt", name = "u", descriptor = "(Lclient!ald;)V")
 	@Override
-	public void method37009(@OriginalArg(0) Class80_Sub36 arg0) {
+	public void method37009(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method23362(-1783948768);
+			@Pc(3) int local3 = arg0.g1();
 			if (local3 == 0) {
 				return;
 			}

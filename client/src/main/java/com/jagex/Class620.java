@@ -11,8 +11,8 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class620 {
 
 	@OriginalMember(owner = "client!vq", name = "f", descriptor = "(Lclient!ald;)Lclient!ve;")
-	public static Interface67 method32305(@OriginalArg(0) Class80_Sub36 arg0) {
-		@Pc(5) Class609 local5 = Class523.method30649(arg0.method23362(-1207424738), -614003712);
+	public static Interface67 method32305(@OriginalArg(0) Packet arg0) {
+		@Pc(5) Class609 local5 = Class523.method30649(arg0.g1(), -614003712);
 		if (Class609.aClass609_1 == local5) {
 			return Class505.method30470(arg0, (byte) 89);
 		} else if (local5 == Class609.aClass609_2) {

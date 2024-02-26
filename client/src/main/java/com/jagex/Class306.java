@@ -23,7 +23,7 @@ public final class Class306 implements Runnable {
 
 	@OriginalMember(owner = "client!h", name = "aj", descriptor = "([BI)[B")
 	static byte[] method27214(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1) {
-		@Pc(4) Class80_Sub36 local4 = new Class80_Sub36(arg0);
+		@Pc(4) Packet local4 = new Packet(arg0);
 		@Pc(9) Class489 local9 = new Class489(local4);
 		@Pc(13) Class486 local13 = local9.method30214((byte) 0);
 		@Pc(17) int local17 = local9.method30216(-2017496269);
@@ -31,7 +31,7 @@ public final class Class306 implements Runnable {
 			throw new RuntimeException();
 		} else if (local13 == Class486.aClass486_4) {
 			@Pc(38) byte[] local38 = new byte[local17];
-			local4.method23399(local38, 0, local17, -1610247708);
+			local4.gdata(local38, 0, local17);
 			return local38;
 		} else {
 			@Pc(50) int local50 = local9.method30215(-1506503231);

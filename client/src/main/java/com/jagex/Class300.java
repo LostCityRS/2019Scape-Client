@@ -37,10 +37,10 @@ public final class Class300 implements Interface26 {
 	}
 
 	@OriginalMember(owner = "client!gu", name = "<init>", descriptor = "(Lclient!gc;Lclient!ald;)V")
-	Class300(@OriginalArg(0) Class284 arg0, @OriginalArg(1) Class80_Sub36 arg1) {
+	Class300(@OriginalArg(0) Class284 arg0, @OriginalArg(1) Packet arg1) {
 		this.aClass284_14 = arg0;
-		this.anInt3964 = arg1.method23178((byte) -10) * 198383837;
-		this.anInt3963 = arg1.method23178((byte) -109) * 1650234719;
+		this.anInt3964 = arg1.g2() * 198383837;
+		this.anInt3963 = arg1.g2() * 1650234719;
 	}
 
 	@OriginalMember(owner = "client!gu", name = "f", descriptor = "(Lclient!gz;)V")

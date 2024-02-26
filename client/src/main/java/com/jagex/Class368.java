@@ -57,10 +57,10 @@ public final class Class368 {
 	@OriginalMember(owner = "client!jv", name = "cn", descriptor = "(Lclient!aod;[BIIIILclient!xs;Lclient!xs;I)I")
 	public static int method28295(@OriginalArg(0) Class41_Sub3 arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) Class669 arg6, @OriginalArg(7) Class669 arg7, @OriginalArg(8) int arg8) {
 		@Pc(1) int local1 = 0;
-		@Pc(6) Class80_Sub36 local6 = new Class80_Sub36(arg1);
+		@Pc(6) Packet local6 = new Packet(arg1);
 		@Pc(8) int local8 = -1;
 		label73: while (true) {
-			@Pc(12) int local12 = local6.method23261((byte) -98);
+			@Pc(12) int local12 = local6.gExtended1or2();
 			if (local12 == 0) {
 				return local1;
 			}
@@ -81,7 +81,7 @@ public final class Class368 {
 								do {
 									@Pc(28) int local28;
 									do {
-										local28 = local6.method23195(1776773084);
+										local28 = local6.gSmart1or2();
 										if (local28 == 0) {
 											continue label73;
 										}

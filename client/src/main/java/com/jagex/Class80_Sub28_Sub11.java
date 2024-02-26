@@ -30,20 +30,20 @@ public final class Class80_Sub28_Sub11 extends Class80_Sub28 {
 
 	@OriginalMember(owner = "client!arr", name = "u", descriptor = "(Lclient!ald;)V")
 	@Override
-	void method22226(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.anInt3044 = arg0.method23182(-593712627) * -577329307;
-		this.anInt3041 = arg0.method23182(248171037) * 1724438543;
-		this.anInt3043 = arg0.method23362(-497032357) * -2083916929;
-		this.anInt3042 = arg0.method23362(-1564210672) * 1577024195;
+	void method22226(@OriginalArg(0) Packet arg0) {
+		this.anInt3044 = arg0.g4() * -577329307;
+		this.anInt3041 = arg0.g4() * 1724438543;
+		this.anInt3043 = arg0.g1() * -2083916929;
+		this.anInt3042 = arg0.g1() * 1577024195;
 	}
 
 	@OriginalMember(owner = "client!arr", name = "e", descriptor = "(Lclient!ald;)V")
 	@Override
-	void method22225(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.anInt3044 = arg0.method23182(1201820241) * -577329307;
-		this.anInt3041 = arg0.method23182(25387008) * 1724438543;
-		this.anInt3043 = arg0.method23362(170287569) * -2083916929;
-		this.anInt3042 = arg0.method23362(-915326742) * 1577024195;
+	void method22225(@OriginalArg(0) Packet arg0) {
+		this.anInt3044 = arg0.g4() * -577329307;
+		this.anInt3041 = arg0.g4() * 1724438543;
+		this.anInt3043 = arg0.g1() * -2083916929;
+		this.anInt3042 = arg0.g1() * 1577024195;
 	}
 
 	@OriginalMember(owner = "client!arr", name = "f", descriptor = "(Lclient!kf;I)V")
@@ -60,19 +60,19 @@ public final class Class80_Sub28_Sub11 extends Class80_Sub28 {
 
 	@OriginalMember(owner = "client!arr", name = "l", descriptor = "(Lclient!ald;)V")
 	@Override
-	void method22224(@OriginalArg(0) Class80_Sub36 arg0) {
-		this.anInt3044 = arg0.method23182(-961933729) * -577329307;
-		this.anInt3041 = arg0.method23182(861082733) * 1724438543;
-		this.anInt3043 = arg0.method23362(-1466723651) * -2083916929;
-		this.anInt3042 = arg0.method23362(930743001) * 1577024195;
+	void method22224(@OriginalArg(0) Packet arg0) {
+		this.anInt3044 = arg0.g4() * -577329307;
+		this.anInt3041 = arg0.g4() * 1724438543;
+		this.anInt3043 = arg0.g1() * -2083916929;
+		this.anInt3042 = arg0.g1() * 1577024195;
 	}
 
 	@OriginalMember(owner = "client!arr", name = "t", descriptor = "(Lclient!ald;B)V")
 	@Override
-	void method22223(@OriginalArg(0) Class80_Sub36 arg0, @OriginalArg(1) byte arg1) {
-		this.anInt3044 = arg0.method23182(-684473476) * -577329307;
-		this.anInt3041 = arg0.method23182(1139755436) * 1724438543;
-		this.anInt3043 = arg0.method23362(614447985) * -2083916929;
-		this.anInt3042 = arg0.method23362(-1468180642) * 1577024195;
+	void method22223(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
+		this.anInt3044 = arg0.g4() * -577329307;
+		this.anInt3041 = arg0.g4() * 1724438543;
+		this.anInt3043 = arg0.g1() * -2083916929;
+		this.anInt3042 = arg0.g1() * 1577024195;
 	}
 }

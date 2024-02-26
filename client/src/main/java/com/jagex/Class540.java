@@ -38,9 +38,9 @@ public final class Class540 implements Runnable {
 			throw new RuntimeException("");
 		} else if (client.aClass75_1 != null) {
 			@Pc(65) Class80_Sub31 local65 = Class623.method32440(Class443.aClass443_90, client.aClass75_1.aClass22_1, -191270971);
-			local65.aClass80_Sub36_Sub1_2.method23155(local31.anInt5537 * -894305615, (byte) -119);
-			local65.aClass80_Sub36_Sub1_2.method23155(local31.anInt5540 * -390642507, (byte) -21);
-			local65.aClass80_Sub36_Sub1_2.method23351(local18.method37268(), -711109028);
+			local65.aPacketBit_2.p2(local31.anInt5537 * -894305615);
+			local65.aPacketBit_2.p2(local31.anInt5540 * -390642507);
+			local65.aPacketBit_2.p1_alt2(local18.method37268());
 			client.aClass75_1.method1325(local65, (byte) -34);
 		}
 	}
