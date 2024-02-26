@@ -1,0 +1,15 @@
+rootProject.name = "rt7-client"
+
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        flatDir {
+            dirs 'lib'
+        }
+    }
+}
+
+include(
+    "deob-annotations",
+    "client"
+)
