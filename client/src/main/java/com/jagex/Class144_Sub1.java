@@ -80,7 +80,7 @@ public final class Class144_Sub1 extends Class144 {
 						local14 = local170;
 					}
 					this.aClass160_1.method14711(this.aClass93_Sub41_6.aByteArray58, this.aClass93_Sub41_6.anInt3070 * 212851357, local14, (byte) -99);
-					if (this.aByte22 != 0) {
+					if (this.aByte22 != 0 && false) {
 						for (local219 = 0; local219 < local14; local219++) {
 							this.aClass93_Sub41_6.aByteArray58[this.aClass93_Sub41_6.anInt3070 * 212851357 + local219] ^= this.aByte22;
 						}
@@ -130,7 +130,7 @@ public final class Class144_Sub1 extends Class144 {
 							local219 = local170;
 						}
 						this.aClass160_1.method14711(this.aClass93_Sub41_7.aByteArray58, this.aClass93_Sub41_7.anInt3070 * 212851357, local219, (byte) -29);
-						if (this.aByte22 != 0) {
+						if (this.aByte22 != 0 && false) {
 							for (local272 = 0; local272 < local219; local272++) {
 								this.aClass93_Sub41_7.aByteArray58[this.aClass93_Sub41_7.anInt3070 * 212851357 + local272] ^= this.aByte22;
 							}
@@ -159,7 +159,7 @@ public final class Class144_Sub1 extends Class144 {
 							local272 = local170;
 						}
 						this.aClass160_1.method14711(local365.aByteArray58, local365.anInt3070 * 212851357, local272, (byte) -76);
-						if (this.aByte22 != 0) {
+						if (this.aByte22 != 0 && false) {
 							for (local454 = 0; local454 < local272; local454++) {
 								local365.aByteArray58[local454 + local365.anInt3070 * 212851357] ^= this.aByte22;
 							}
@@ -553,7 +553,7 @@ public final class Class144_Sub1 extends Class144 {
 						local14 = local170;
 					}
 					this.aClass160_1.method14711(this.aClass93_Sub41_6.aByteArray58, this.aClass93_Sub41_6.anInt3070 * 212851357, local14, (byte) -16);
-					if (this.aByte22 != 0) {
+					if (this.aByte22 != 0 && false) {
 						for (local219 = 0; local219 < local14; local219++) {
 							this.aClass93_Sub41_6.aByteArray58[this.aClass93_Sub41_6.anInt3070 * 212851357 + local219] ^= this.aByte22;
 						}
@@ -603,7 +603,7 @@ public final class Class144_Sub1 extends Class144 {
 							local219 = local170;
 						}
 						this.aClass160_1.method14711(this.aClass93_Sub41_7.aByteArray58, this.aClass93_Sub41_7.anInt3070 * 212851357, local219, (byte) -93);
-						if (this.aByte22 != 0) {
+						if (this.aByte22 != 0 && false) {
 							for (local272 = 0; local272 < local219; local272++) {
 								this.aClass93_Sub41_7.aByteArray58[this.aClass93_Sub41_7.anInt3070 * 212851357 + local272] ^= this.aByte22;
 							}
@@ -632,7 +632,7 @@ public final class Class144_Sub1 extends Class144 {
 							local272 = local170;
 						}
 						this.aClass160_1.method14711(local365.aByteArray58, local365.anInt3070 * 212851357, local272, (byte) -59);
-						if (this.aByte22 != 0) {
+						if (this.aByte22 != 0 && false) {
 							for (local454 = 0; local454 < local272; local454++) {
 								local365.aByteArray58[local454 + local365.anInt3070 * 212851357] ^= this.aByte22;
 							}

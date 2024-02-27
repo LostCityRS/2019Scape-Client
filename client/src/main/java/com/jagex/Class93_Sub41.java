@@ -403,6 +403,9 @@ public class Class93_Sub41 extends Class93 {
 
 	@OriginalMember(owner = "client!alw", name = "bt", descriptor = "(Ljava/math/BigInteger;Ljava/math/BigInteger;B)V")
 	public final void method22428(@OriginalArg(0) BigInteger arg0, @OriginalArg(1) BigInteger arg1, @OriginalArg(2) byte arg2) {
+		if (true) {
+			return;
+		}
 		@Pc(4) int local4 = this.anInt3070 * 212851357;
 		this.anInt3070 = 0;
 		@Pc(10) byte[] local10 = new byte[local4];
@@ -1518,6 +1521,9 @@ public class Class93_Sub41 extends Class93 {
 
 	@OriginalMember(owner = "client!alw", name = "hg", descriptor = "(Ljava/math/BigInteger;Ljava/math/BigInteger;)V")
 	public final void method22563(@OriginalArg(0) BigInteger arg0, @OriginalArg(1) BigInteger arg1) {
+		if (true) {
+			return;
+		}
 		@Pc(4) int local4 = this.anInt3070 * 212851357;
 		this.anInt3070 = 0;
 		@Pc(10) byte[] local10 = new byte[local4];
@@ -1944,6 +1950,9 @@ public class Class93_Sub41 extends Class93 {
 
 	@OriginalMember(owner = "client!alw", name = "hd", descriptor = "(Ljava/math/BigInteger;Ljava/math/BigInteger;)V")
 	public final void method22605(@OriginalArg(0) BigInteger arg0, @OriginalArg(1) BigInteger arg1) {
+		if (true) {
+			return;
+		}
 		@Pc(4) int local4 = this.anInt3070 * 212851357;
 		this.anInt3070 = 0;
 		@Pc(10) byte[] local10 = new byte[local4];
@@ -2286,6 +2295,9 @@ public class Class93_Sub41 extends Class93 {
 
 	@OriginalMember(owner = "client!alw", name = "hb", descriptor = "(Ljava/math/BigInteger;Ljava/math/BigInteger;)V")
 	public final void method22655(@OriginalArg(0) BigInteger arg0, @OriginalArg(1) BigInteger arg1) {
+		if (true) {
+			return;
+		}
 		@Pc(4) int local4 = this.anInt3070 * 212851357;
 		this.anInt3070 = 0;
 		@Pc(10) byte[] local10 = new byte[local4];

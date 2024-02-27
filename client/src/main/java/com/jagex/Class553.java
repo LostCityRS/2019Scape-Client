@@ -954,26 +954,27 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 
 	@OriginalMember(owner = "client!sk", name = "b", descriptor = "(I)Z")
 	final boolean method24860(@OriginalArg(0) int arg0) {
-		@Pc(4) String local4 = Class32_Sub10.anApplet2.getDocumentBase().getHost().toLowerCase();
-		if (local4.equals("jagex.com") || local4.endsWith(".jagex.com")) {
-			return true;
-		} else if (local4.equals("runescape.com") || local4.endsWith(".runescape.com")) {
-			return true;
-		} else if (local4.equals("stellardawn.com") || local4.endsWith(".stellardawn.com")) {
-			return true;
-		} else if (local4.endsWith("127.0.0.1")) {
-			return true;
-		} else {
-			while (local4.length() > 0 && local4.charAt(local4.length() - 1) >= '0' && local4.charAt(local4.length() - 1) <= '9') {
-				local4 = local4.substring(0, local4.length() - 1);
-			}
-			if (local4.endsWith("192.168.1.")) {
-				return true;
-			} else {
-				this.method24910("invalidhost", -1177588208);
-				return false;
-			}
-		}
+		return true;
+		// @Pc(4) String local4 = Class32_Sub10.anApplet2.getDocumentBase().getHost().toLowerCase();
+		// if (local4.equals("jagex.com") || local4.endsWith(".jagex.com")) {
+		// 	return true;
+		// } else if (local4.equals("runescape.com") || local4.endsWith(".runescape.com")) {
+		// 	return true;
+		// } else if (local4.equals("stellardawn.com") || local4.endsWith(".stellardawn.com")) {
+		// 	return true;
+		// } else if (local4.endsWith("127.0.0.1")) {
+		// 	return true;
+		// } else {
+		// 	while (local4.length() > 0 && local4.charAt(local4.length() - 1) >= '0' && local4.charAt(local4.length() - 1) <= '9') {
+		// 		local4 = local4.substring(0, local4.length() - 1);
+		// 	}
+		// 	if (local4.endsWith("192.168.1.")) {
+		// 		return true;
+		// 	} else {
+		// 		this.method24910("invalidhost", -1177588208);
+		// 		return false;
+		// 	}
+		// }
 	}
 
 	@OriginalMember(owner = "client!sk", name = "m", descriptor = "(Ljava/lang/String;Ljava/lang/String;II)Ljava/io/File;")
