@@ -273,7 +273,7 @@ public final class Class598 {
 					if (local354 < 0.0F) {
 						local354 *= -1.0F;
 					}
-					if (!local354 < (float) this.anInt5690 && (this.method31974(arg1, 0) && (this.method31974(arg1, 1) && (this.method31974(arg1, 2) && this.method31974(arg1, 3))))) {
+					if (!(local354 < (float) this.anInt5690) && (this.method31974(arg1, 0) && (this.method31974(arg1, 1) && (this.method31974(arg1, 2) && this.method31974(arg1, 3))))) {
 						this.aClass595Array4[this.anInt5697++] = arg1;
 					}
 				}

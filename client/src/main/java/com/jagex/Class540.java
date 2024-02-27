@@ -143,7 +143,7 @@ public final class Class540 implements Interface18, Interface19, Interface56 {
 
 	@OriginalMember(owner = "client!rx", name = "finalize", descriptor = "()V")
 	@Override
-	void finalize() throws Throwable {
+	protected void finalize() throws Throwable {
 		this.method31079();
 		super.finalize();
 	}

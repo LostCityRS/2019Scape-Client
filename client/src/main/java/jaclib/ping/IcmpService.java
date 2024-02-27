@@ -24,7 +24,7 @@ public abstract class IcmpService implements Runnable {
 	public final native void run();
 
 	@OriginalMember(owner = "client!jaclib/ping/IcmpService", name = "quit", descriptor = "()V")
-	protected final native void quit();
+	public final native void quit();
 
 	@OriginalMember(owner = "client!jaclib/ping/IcmpService", name = "c", descriptor = "()V")
 	public final native void c();

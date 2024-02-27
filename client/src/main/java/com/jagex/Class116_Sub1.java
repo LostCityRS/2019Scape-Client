@@ -416,7 +416,7 @@ public final class Class116_Sub1 extends Class116 {
 
 	@OriginalMember(owner = "client!agl", name = "finalize", descriptor = "()V")
 	@Override
-	void finalize() {
+	protected void finalize() {
 		this.method31065();
 	}
 

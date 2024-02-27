@@ -525,7 +525,7 @@ public final class Class112_Sub1_Sub2 extends Class112_Sub1 {
 
 	@OriginalMember(owner = "client!app", name = "finalize", descriptor = "()V")
 	@Override
-	void finalize() throws Throwable {
+	protected void finalize() throws Throwable {
 		super.finalize();
 		this.method23750();
 	}

@@ -131,7 +131,7 @@ public abstract class Class139 implements Interface36 {
 
 	@OriginalMember(owner = "client!rv", name = "finalize", descriptor = "()V")
 	@Override
-	final void finalize() throws Throwable {
+	protected void finalize() throws Throwable {
 		this.method31065();
 		super.finalize();
 	}

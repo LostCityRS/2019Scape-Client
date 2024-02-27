@@ -336,7 +336,7 @@ public final class Class112_Sub2_Sub1_Sub1 extends Class112_Sub2_Sub1 implements
 
 	@OriginalMember(owner = "client!aic", name = "finalize", descriptor = "()V")
 	@Override
-	void finalize() throws Throwable {
+	protected void finalize() throws Throwable {
 		this.method10404();
 		super.finalize();
 	}

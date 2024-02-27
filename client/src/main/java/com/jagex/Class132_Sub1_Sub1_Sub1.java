@@ -949,7 +949,7 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 
 	@OriginalMember(owner = "client!ahm", name = "finalize", descriptor = "()V")
 	@Override
-	final void finalize() {
+	protected void finalize() {
 		if (this.aClass674_3 != null) {
 			this.aClass674_3.method33275();
 		}

@@ -48,7 +48,7 @@ public abstract class Class135 implements Interface34 {
 
 	@OriginalMember(owner = "client!op", name = "finalize", descriptor = "()V")
 	@Override
-	final void finalize() {
+	protected void finalize() {
 		this.method11331();
 	}
 

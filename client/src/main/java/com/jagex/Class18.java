@@ -212,7 +212,7 @@ public final class Class18 implements Iterable {
 				local293 = local22 & 0xFF;
 				local121 = Class174.aClass200Array1[arg1].anInt3377 * -930829205;
 				Class174.aByteArray64[arg1] = (byte) (local27 - 1);
-				if (!Class174.aBoolean564 && (Class174.aByteArray64[arg1] < 0 || Class174.aByteArray64[arg1] > 3)) {
+				if (/*!Class174.aBoolean564*/ false && (Class174.aByteArray64[arg1] < 0 || Class174.aByteArray64[arg1] > 3)) {
 					throw new AssertionError();
 				}
 				local125 = (local121 >> 28) + local263 & 0x3;
@@ -226,7 +226,7 @@ public final class Class18 implements Iterable {
 			local27 = local22 >> 3 & 0x3;
 			local263 = local22 & 0x7;
 			local270 = Class174.aClass200Array1[arg1].anInt3377 * -930829205;
-			if (!Class174.aBoolean564 && (Class174.aByteArray64[arg1] < 0 || Class174.aByteArray64[arg1] > 3)) {
+			if (/*!Class174.aBoolean564*/ false && (Class174.aByteArray64[arg1] < 0 || Class174.aByteArray64[arg1] > 3)) {
 				throw new AssertionError();
 			}
 			local293 = local27 + (local270 >> 28) & 0x3;

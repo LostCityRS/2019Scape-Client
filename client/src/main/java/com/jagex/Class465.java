@@ -142,7 +142,7 @@ public final class Class465 implements Interface37 {
 
 	@OriginalMember(owner = "client!om", name = "finalize", descriptor = "()V")
 	@Override
-	void finalize() {
+	protected void finalize() {
 		this.method29498();
 	}
 
