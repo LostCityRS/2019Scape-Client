@@ -291,7 +291,7 @@ public final class Class541 {
 		} else {
 			this.aFloat333 = this.aFloat328;
 			this.aFloat332 = arg0;
-			this.aLong395 = Class303.method27111((byte) 19) * 624024950592669861L;
+			this.aLong395 = Class303.currentTimeMillis((byte) 19) * 624024950592669861L;
 			this.aLong394 = (this.aLong395 * -8204976024896790739L + (long) arg1) * -1198795337598715229L;
 		}
 	}
@@ -481,7 +481,7 @@ public final class Class541 {
 		}
 		this.method31098(-1339466994);
 		if (this.aFloat332 != this.aFloat328) {
-			@Pc(31) long local31 = Class303.method27111((byte) 15);
+			@Pc(31) long local31 = Class303.currentTimeMillis((byte) 15);
 			if (local31 > this.aLong394 * 6855399991086860555L) {
 				this.aFloat328 = this.aFloat332;
 			} else {
@@ -625,7 +625,7 @@ public final class Class541 {
 		} else {
 			this.aFloat333 = this.aFloat328;
 			this.aFloat332 = arg0;
-			this.aLong395 = Class303.method27111((byte) 44) * 624024950592669861L;
+			this.aLong395 = Class303.currentTimeMillis((byte) 44) * 624024950592669861L;
 			this.aLong394 = (this.aLong395 * -8204976024896790739L + (long) arg1) * -1198795337598715229L;
 		}
 	}
@@ -849,7 +849,7 @@ public final class Class541 {
 		}
 		this.method31098(1061524602);
 		if (this.aFloat332 != this.aFloat328) {
-			@Pc(31) long local31 = Class303.method27111((byte) 26);
+			@Pc(31) long local31 = Class303.currentTimeMillis((byte) 26);
 			if (local31 > this.aLong394 * 6855399991086860555L) {
 				this.aFloat328 = this.aFloat332;
 			} else {
@@ -1371,7 +1371,7 @@ public final class Class541 {
 		}
 		this.method31098(880267761);
 		if (this.aFloat332 != this.aFloat328) {
-			@Pc(31) long local31 = Class303.method27111((byte) 121);
+			@Pc(31) long local31 = Class303.currentTimeMillis((byte) 121);
 			if (local31 > this.aLong394 * 6855399991086860555L) {
 				this.aFloat328 = this.aFloat332;
 			} else {
@@ -1840,7 +1840,7 @@ public final class Class541 {
 		}
 		this.method31098(819599513);
 		if (this.aFloat332 != this.aFloat328) {
-			@Pc(31) long local31 = Class303.method27111((byte) 18);
+			@Pc(31) long local31 = Class303.currentTimeMillis((byte) 18);
 			if (local31 > this.aLong394 * 6855399991086860555L) {
 				this.aFloat328 = this.aFloat332;
 			} else {

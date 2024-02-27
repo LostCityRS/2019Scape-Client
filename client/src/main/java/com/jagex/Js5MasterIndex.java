@@ -8,7 +8,7 @@ import org.openrs2.deob.annotation.Pc;
 import java.math.BigInteger;
 
 @OriginalClass("client!qu")
-public final class Class518 {
+public final class Js5MasterIndex {
 
 	@OriginalMember(owner = "client!qu", name = "aq", descriptor = "Lclient!aam;")
 	protected static Class14 aClass14_1;
@@ -23,7 +23,7 @@ public final class Class518 {
 	public static int[] anIntArray466;
 
 	@OriginalMember(owner = "client!qu", name = "t", descriptor = "[Lclient!pt;")
-	Class493[] aClass493Array1;
+	Js5MasterIndexArchiveData[] archiveData;
 
 	@OriginalMember(owner = "client!qu", name = "ass", descriptor = "(Lclient!yp;I)V")
 	static void method30584(@OriginalArg(0) Class690 arg0, @OriginalArg(1) int arg1) {
@@ -60,7 +60,7 @@ public final class Class518 {
 	@OriginalMember(owner = "client!qu", name = "i", descriptor = "(Lclient!di;II)Z")
 	static boolean method30588(@OriginalArg(0) Class102 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		arg0.method20744();
-		Class303.method27111((byte) 98);
+		Class303.currentTimeMillis((byte) 98);
 		if (!arg0.method20757(-1759894852)) {
 			return false;
 		}
@@ -250,40 +250,48 @@ public final class Class518 {
 	}
 
 	@OriginalMember(owner = "client!qu", name = "<init>", descriptor = "(Lclient!ald;Ljava/math/BigInteger;Ljava/math/BigInteger;)V")
-	Class518(@OriginalArg(0) Packet arg0, @OriginalArg(1) BigInteger arg1, @OriginalArg(2) BigInteger arg2) {
-		arg0.pos = 875935559;
-		@Pc(8) int local8 = arg0.g1();
-		arg0.pos += local8 * 1130067056;
-		@Pc(26) byte[] local26 = new byte[arg0.data.length - arg0.pos * -1380987821];
-		arg0.gdata(local26, 0, local26.length);
-		@Pc(40) byte[] local40;
-		if (arg1 == null || arg2 == null) {
-			local40 = local26;
+	public Js5MasterIndex(@OriginalArg(0) Packet buf, @OriginalArg(1) BigInteger exponent, @OriginalArg(2) BigInteger modulus) {
+		buf.pos = 875935559;
+
+		@Pc(8) int count = buf.g1();
+		buf.pos += count * 1130067056;
+
+		@Pc(26) byte[] src = new byte[buf.data.length - buf.pos * -1380987821];
+		buf.gdata(src, 0, src.length);
+
+		@Pc(40) byte[] data;
+		if (exponent == null || modulus == null || ClientConfig.DISABLE_RSA) {
+			data = src;
 		} else {
-			@Pc(46) BigInteger local46 = new BigInteger(local26);
-			@Pc(51) BigInteger local51 = local46.modPow(arg1, arg2);
-			local40 = local51.toByteArray();
+			@Pc(46) BigInteger bigEnc = new BigInteger(src);
+			@Pc(51) BigInteger bigRaw = bigEnc.modPow(exponent, modulus);
+			data = bigRaw.toByteArray();
 		}
-		if (local40.length != 65) {
+
+		if (data.length != 65) {
 			throw new RuntimeException();
 		}
-		@Pc(77) byte[] local77 = Class130_Sub1.method10206(arg0.data, 5, arg0.pos * -1380987821 - local26.length - 5, 304928847);
-		@Pc(79) int local79;
-		for (local79 = 0; local79 < 64; local79++) {
-			if (local77[local79] != local40[local79 + 1]) {
+
+		@Pc(77) byte[] whirlpoolDigest = Class130_Sub1.compute(buf.data, 5, buf.pos * -1380987821 - src.length - 5, 304928847);
+		for (int i = 0; i < 64; i++) {
+			if (whirlpoolDigest[i] != data[i + 1]) {
 				throw new RuntimeException();
 			}
 		}
-		this.aClass493Array1 = new Class493[local8];
-		for (local79 = 0; local79 < local8; local79++) {
-			arg0.pos = local79 * 1130067056 + 1910116130;
-			@Pc(117) int local117 = arg0.g4();
-			@Pc(121) int local121 = arg0.g4();
-			@Pc(125) int local125 = arg0.g4();
-			@Pc(129) int local129 = arg0.g4();
-			@Pc(132) byte[] local132 = new byte[64];
-			arg0.gdata(local132, 0, 64);
-			this.aClass493Array1[local79] = new Class493(local117, local125, local121, local129, local132);
+
+		this.archiveData = new Js5MasterIndexArchiveData[count];
+
+		for (int i = 0; i < count; i++) {
+			buf.pos = i * 1130067056 + 1910116130;
+
+			@Pc(117) int crc = buf.g4();
+			@Pc(121) int groupCount = buf.g4();
+			@Pc(125) int version = buf.g4();
+			@Pc(129) int whirlpool = buf.g4();
+
+			@Pc(132) byte[] temp = new byte[64];
+			buf.gdata(temp, 0, 64);
+			this.archiveData[i] = new Js5MasterIndexArchiveData(crc, version, groupCount, whirlpool, temp);
 		}
 	}
 }

@@ -47,8 +47,8 @@ public final class Class161_Sub1 extends Class161 implements Interface3 {
 			if (Class368.anInt4502 * -1583611537 != 3) {
 				local114 = (int) client.aFloat254 >> 3;
 				local26 = (int) client.aFloat255 >> 3;
-			} else if (Class160.aClass121_Sub1_2.method9607(-1180806567) == Class340.aClass340_7) {
-				@Pc(107) Class123_Sub3 local107 = (Class123_Sub3) Class160.aClass121_Sub1_2.method9603(-1776795862);
+			} else if (BufferedSocket.aClass121_Sub1_2.method9607(-1180806567) == Class340.aClass340_7) {
+				@Pc(107) Class123_Sub3 local107 = (Class123_Sub3) BufferedSocket.aClass121_Sub1_2.method9603(-1776795862);
 				local114 = Class441.method29186(local107.aClass466_1, (byte) -91) >> 3;
 				@Pc(116) short local116 = 1024;
 				local26 = (local116 * 3 - (Class627.method32544(local107.aClass466_1, 1945075709) >> 3)) % (local116 * 2);
@@ -61,10 +61,10 @@ public final class Class161_Sub1 extends Class161 implements Interface3 {
 			local153.aPacketBit_2.p2_alt3(local114);
 			client.aClass75_1.method1325(local153, (byte) -3);
 		}
-		if (Class597.aBoolean926 != Class662.aBoolean975) {
-			Class662.aBoolean975 = Class597.aBoolean926;
+		if (Class597.focus != Class662.aBoolean975) {
+			Class662.aBoolean975 = Class597.focus;
 			local17 = Class623.method32440(Class443.aClass443_16, client.aClass75_1.aClass22_1, -191270971);
-			local17.aPacketBit_2.p1(Class597.aBoolean926 ? 1 : 0);
+			local17.aPacketBit_2.p1(Class597.focus ? 1 : 0);
 			client.aClass75_1.method1325(local17, (byte) -25);
 		}
 		if (!client.aBoolean714) {

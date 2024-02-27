@@ -45,13 +45,13 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 	static final String aString139 = "main_file_cache.idx255";
 
 	@OriginalMember(owner = "client!sm", name = "l", descriptor = "Lclient!sr;")
-	public static Class146 aClass146_2;
+	public static Class146 timer;
 
 	@OriginalMember(owner = "client!sm", name = "aw", descriptor = "I")
 	static final int anInt3420 = 0;
 
 	@OriginalMember(owner = "client!sm", name = "t", descriptor = "I")
-	static int anInt3421;
+	static int logicCycles;
 
 	@OriginalMember(owner = "client!sm", name = "g", descriptor = "I")
 	static final int anInt3422 = 32;
@@ -75,7 +75,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 	static long[] aLongArray22 = new long[32];
 
 	@OriginalMember(owner = "client!sm", name = "o", descriptor = "[J")
-	static long[] aLongArray21 = new long[32];
+	static long[] logicTimes = new long[32];
 
 	@OriginalMember(owner = "client!sm", name = "q", descriptor = "I")
 	public static int anInt3415 = 0;
@@ -102,7 +102,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 	protected static boolean aBoolean702 = false;
 
 	@OriginalMember(owner = "client!sm", name = "aj", descriptor = "Z")
-	static volatile boolean aBoolean698 = true;
+	static volatile boolean focusIn = true;
 
 	@OriginalMember(owner = "client!sm", name = "aa", descriptor = "Lclient!abj;")
 	static Class36 aClass36_4 = null;
@@ -117,7 +117,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 	static Class544 aClass544_2 = null;
 
 	@OriginalMember(owner = "client!sm", name = "br", descriptor = "J")
-	static long aLong349 = 0L;
+	static long killTime = 0L;
 
 	@OriginalMember(owner = "client!sm", name = "bn", descriptor = "Z")
 	static boolean aBoolean699 = false;
@@ -147,7 +147,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 
 	@OriginalMember(owner = "client!sm", name = "cx", descriptor = "()J")
 	static long method25199() {
-		return aClass146_2.method13858((byte) 1);
+		return timer.method13858((byte) 1);
 	}
 
 	@OriginalMember(owner = "client!sm", name = "cd", descriptor = "()Ljava/awt/Container;")
@@ -383,38 +383,38 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 
 	@OriginalMember(owner = "client!sm", name = "cb", descriptor = "()V")
 	public static void method25264() {
-		aClass146_2.method13855((byte) -78);
+		timer.method13855((byte) -78);
 		@Pc(4) int local4;
 		for (local4 = 0; local4 < 32; local4++) {
 			aLongArray22[local4] = 0L;
 		}
 		for (local4 = 0; local4 < 32; local4++) {
-			aLongArray21[local4] = 0L;
+			logicTimes[local4] = 0L;
 		}
-		anInt3421 = 0;
+		logicCycles = 0;
 	}
 
 	@OriginalMember(owner = "client!sm", name = "cw", descriptor = "()V")
 	public static void method25265() {
-		aClass146_2.method13855((byte) 0);
+		timer.method13855((byte) 0);
 		@Pc(4) int local4;
 		for (local4 = 0; local4 < 32; local4++) {
 			aLongArray22[local4] = 0L;
 		}
 		for (local4 = 0; local4 < 32; local4++) {
-			aLongArray21[local4] = 0L;
+			logicTimes[local4] = 0L;
 		}
-		anInt3421 = 0;
+		logicCycles = 0;
 	}
 
 	@OriginalMember(owner = "client!sm", name = "cl", descriptor = "()J")
 	static long method25266() {
-		return aClass146_2.method13858((byte) 1);
+		return timer.method13858((byte) 1);
 	}
 
 	@OriginalMember(owner = "client!sm", name = "cf", descriptor = "()J")
 	static long method25268() {
-		return aClass146_2.method13858((byte) 1);
+		return timer.method13858((byte) 1);
 	}
 
 	@OriginalMember(owner = "client!sm", name = "bv", descriptor = "()Ljava/io/File;")
@@ -465,15 +465,15 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 
 	@OriginalMember(owner = "client!sm", name = "b", descriptor = "(I)V")
 	public static void method25310(@OriginalArg(0) int arg0) {
-		aClass146_2.method13855((byte) -3);
+		timer.method13855((byte) -3);
 		@Pc(4) int local4;
 		for (local4 = 0; local4 < 32; local4++) {
 			aLongArray22[local4] = 0L;
 		}
 		for (local4 = 0; local4 < 32; local4++) {
-			aLongArray21[local4] = 0L;
+			logicTimes[local4] = 0L;
 		}
-		anInt3421 = 0;
+		logicCycles = 0;
 	}
 
 	@OriginalMember(owner = "client!sm", name = "<init>", descriptor = "()V")
@@ -525,11 +525,11 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 		Class93.anInt329 = arg2 * 808739727;
 		RuntimeException_Sub4.anInt3268 = arg4 * -1825691279;
 		Class349.anInt4254 = arg5 * -1969717623;
-		Class342.aString190 = "Unknown";
-		Class601.aString231 = "1.1";
+		Class342.javaVendor = "Unknown";
+		Class601.javaVersion = "1.1";
 		try {
-			Class342.aString190 = System.getProperty("java.vendor");
-			Class601.aString231 = System.getProperty("java.version");
+			Class342.javaVendor = System.getProperty("java.vendor");
+			Class601.javaVersion = System.getProperty("java.version");
 		} catch (@Pc(27) Exception local27) {
 		}
 		try {
@@ -611,7 +611,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 			Class203.aClass36Array1[local173] = new Class36(new Class40(Class292.method26945("main_file_cache.idx" + local173, (byte) 16), "rw", 1048576L), 6000, 0);
 		}
 		try {
-			Class518.aClass14_1 = new Class14();
+			Js5MasterIndex.aClass14_1 = new Class14();
 		} catch (@Pc(294) Exception local294) {
 			Class13.aBoolean5 = false;
 		}
@@ -774,10 +774,10 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 
 	@OriginalMember(owner = "client!sm", name = "w", descriptor = "(B)V")
 	final void method25190(@OriginalArg(0) byte arg0) {
-		if (Class454.aCanvas6 != null) {
-			Class454.aCanvas6.removeFocusListener(this);
-			Class454.aCanvas6.getParent().setBackground(Color.black);
-			Class454.aCanvas6.getParent().remove(Class454.aCanvas6);
+		if (Class454.canvas != null) {
+			Class454.canvas.removeFocusListener(this);
+			Class454.canvas.getParent().setBackground(Color.black);
+			Class454.canvas.getParent().remove(Class454.canvas);
 		}
 	}
 
@@ -803,7 +803,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 			if (local4.endsWith("192.168.1.")) {
 				return true;
 			} else {
-				this.method25206("invalidhost", 591439521);
+				this.error("invalidhost", 591439521);
 				return false;
 			}
 		}
@@ -816,14 +816,15 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 		label50: {
 			try {
 				var6 = true;
-				this.method25192((short) 22618);
+				this.runInner((short) 22618);
 				var6 = false;
 				break label50;
 			} catch (@Pc(8) ThreadDeath local8) {
 				throw local8;
-			} catch (@Pc(11) Throwable local11) {
-				Class603.method32133(this.method25297(-591161260), local11, 839300151);
-				this.method25206("crash", 1615320121);
+			} catch (@Pc(11) Throwable ex) {
+				ex.printStackTrace();
+				Class603.method32133(this.method25297(-591161260), ex, 839300151);
+				this.error("crash", 1615320121);
 				var6 = false;
 			} finally {
 				if (var6) {
@@ -837,22 +838,22 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 	}
 
 	@OriginalMember(owner = "client!sm", name = "d", descriptor = "(S)V")
-	final void method25192(@OriginalArg(0) short arg0) {
-		if (Class342.aString190 != null) {
-			@Pc(4) String local4 = Class342.aString190.toLowerCase();
-			if (local4.indexOf("sun") != -1 || local4.indexOf("apple") != -1) {
-				@Pc(16) String local16 = Class601.aString231;
-				if (local16.equals("1.1") || local16.startsWith("1.1.") || local16.equals("1.2") || local16.startsWith("1.2.") || local16.equals("1.3") || local16.startsWith("1.3.") || local16.equals("1.4") || local16.startsWith("1.4.") || local16.equals("1.5") || local16.startsWith("1.5.") || local16.equals("1.6.0")) {
-					this.method25206("wrongjava", -1126685893);
+	final void runInner(@OriginalArg(0) short arg0) {
+		if (Class342.javaVendor != null) {
+			@Pc(4) String javaVendorLower = Class342.javaVendor.toLowerCase();
+			if (javaVendorLower.indexOf("sun") != -1 || javaVendorLower.indexOf("apple") != -1) {
+				@Pc(16) String javaVersion = Class601.javaVersion;
+				if (javaVersion.equals("1.1") || javaVersion.startsWith("1.1.") || javaVersion.equals("1.2") || javaVersion.startsWith("1.2.") || javaVersion.equals("1.3") || javaVersion.startsWith("1.3.") || javaVersion.equals("1.4") || javaVersion.startsWith("1.4.") || javaVersion.equals("1.5") || javaVersion.startsWith("1.5.") || javaVersion.equals("1.6.0")) {
+					this.error("wrongjava", -1126685893);
 					return;
 				}
-				if (local16.startsWith("1.6.0_")) {
+				if (javaVersion.startsWith("1.6.0_")) {
 					@Pc(71) int local71;
-					for (local71 = 6; local71 < local16.length() && Class650.method33124(local16.charAt(local71), -2093655909); local71++) {
+					for (local71 = 6; local71 < javaVersion.length() && Class650.method33124(javaVersion.charAt(local71), -2093655909); local71++) {
 					}
-					@Pc(88) String local88 = local16.substring(6, local71);
+					@Pc(88) String local88 = javaVersion.substring(6, local71);
 					if (Class698.method37062(local88, (short) 9079) && Class679.method33621(local88, -1545419238) < 10) {
-						this.method25206("wrongjava", 705743067);
+						this.error("wrongjava", 705743067);
 						return;
 					}
 				}
@@ -863,29 +864,29 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 		anInt3412 = Runtime.getRuntime().availableProcessors() * -1356892559;
 		this.method25304(2079773863);
 		this.method25202((byte) -12);
-		aClass146_2 = Class257.method26425((short) -4136);
-		while (aLong349 * 6145620734226936405L == 0L || Class303.method27111((byte) 64) < aLong349 * 6145620734226936405L) {
-			anInt3421 = aClass146_2.method13854(aLong346 * -4113900210149837993L) * -1350095131;
-			for (@Pc(153) int local153 = 0; local153 < anInt3421 * -830218515; local153++) {
-				this.method25193((byte) -43);
+		timer = Class257.create((short) -4136);
+		while (killTime * 6145620734226936405L == 0L || Class303.currentTimeMillis((byte) 64) < killTime * 6145620734226936405L) {
+			logicCycles = timer.sleep(aLong346 * -4113900210149837993L) * -1350095131;
+			for (@Pc(153) int local153 = 0; local153 < logicCycles * -830218515; local153++) {
+				this.mainLoopWrapper((byte) -43);
 			}
-			this.method25200(1437751048);
-			Class643.method33030(Class454.aCanvas6, -1123999026);
+			this.mainRedrawWrapper(1437751048);
+			Class643.flush(Class454.canvas, -1123999026);
 		}
 	}
 
 	@OriginalMember(owner = "client!sm", name = "p", descriptor = "(B)V")
-	final void method25193(@OriginalArg(0) byte arg0) {
-		@Pc(2) long local2 = Class303.method27111((byte) 5);
-		@Pc(8) long local8 = aLongArray21[Class598.anInt5364 * 1176676047];
-		aLongArray21[Class598.anInt5364 * 1176676047] = local2;
-		Class598.anInt5364 = (Class598.anInt5364 * 1176676047 + 1 & 0x1F) * 721330223;
-		if (local8 != 0L && local2 > local8) {
+	final void mainLoopWrapper(@OriginalArg(0) byte arg0) {
+		@Pc(2) long now = Class303.currentTimeMillis((byte) 5);
+		@Pc(8) long previous = logicTimes[Class598.logicTimePointer * 1176676047];
+		logicTimes[Class598.logicTimePointer * 1176676047] = now;
+		Class598.logicTimePointer = (Class598.logicTimePointer * 1176676047 + 1 & 0x1F) * 721330223;
+		if (previous != 0L && now > previous) {
 		}
 		synchronized (this) {
-			Class597.aBoolean926 = aBoolean698;
+			Class597.focus = focusIn;
 		}
-		this.method25231((byte) 57);
+		this.mainLoop((byte) 57);
 	}
 
 	@OriginalMember(owner = "client!sm", name = "am", descriptor = "()V")
@@ -893,12 +894,12 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 
 	@OriginalMember(owner = "client!sm", name = "ch", descriptor = "()V")
 	final void method25195() {
-		if (Class342.aString190 != null) {
-			@Pc(4) String local4 = Class342.aString190.toLowerCase();
+		if (Class342.javaVendor != null) {
+			@Pc(4) String local4 = Class342.javaVendor.toLowerCase();
 			if (local4.indexOf("sun") != -1 || local4.indexOf("apple") != -1) {
-				@Pc(16) String local16 = Class601.aString231;
+				@Pc(16) String local16 = Class601.javaVersion;
 				if (local16.equals("1.1") || local16.startsWith("1.1.") || local16.equals("1.2") || local16.startsWith("1.2.") || local16.equals("1.3") || local16.startsWith("1.3.") || local16.equals("1.4") || local16.startsWith("1.4.") || local16.equals("1.5") || local16.startsWith("1.5.") || local16.equals("1.6.0")) {
-					this.method25206("wrongjava", 1960041362);
+					this.error("wrongjava", 1960041362);
 					return;
 				}
 				if (local16.startsWith("1.6.0_")) {
@@ -907,7 +908,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 					}
 					@Pc(88) String local88 = local16.substring(6, local71);
 					if (Class698.method37062(local88, (short) -11607) && Class679.method33621(local88, 1361954512) < 10) {
-						this.method25206("wrongjava", 1890592221);
+						this.error("wrongjava", 1890592221);
 						return;
 					}
 				}
@@ -918,14 +919,14 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 		anInt3412 = Runtime.getRuntime().availableProcessors() * -1356892559;
 		this.method25304(2020692400);
 		this.method25202((byte) -100);
-		aClass146_2 = Class257.method26425((short) -23082);
-		while (aLong349 * 6145620734226936405L == 0L || Class303.method27111((byte) 33) < aLong349 * 6145620734226936405L) {
-			anInt3421 = aClass146_2.method13854(aLong346 * -4113900210149837993L) * -1350095131;
-			for (@Pc(153) int local153 = 0; local153 < anInt3421 * -830218515; local153++) {
-				this.method25193((byte) -52);
+		timer = Class257.create((short) -23082);
+		while (killTime * 6145620734226936405L == 0L || Class303.currentTimeMillis((byte) 33) < killTime * 6145620734226936405L) {
+			logicCycles = timer.sleep(aLong346 * -4113900210149837993L) * -1350095131;
+			for (@Pc(153) int local153 = 0; local153 < logicCycles * -830218515; local153++) {
+				this.mainLoopWrapper((byte) -52);
 			}
-			this.method25200(1601390014);
-			Class643.method33030(Class454.aCanvas6, -1941337545);
+			this.mainRedrawWrapper(1601390014);
+			Class643.flush(Class454.canvas, -1941337545);
 		}
 	}
 
@@ -936,7 +937,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 	@Override
 	public final void start() {
 		if (!aBoolean699) {
-			aLong349 = 0L;
+			killTime = 0L;
 		}
 	}
 
@@ -944,7 +945,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 	@Override
 	public final void stop() {
 		if (!aBoolean699) {
-			aLong349 = (Class303.method27111((byte) 27) + 4000L) * 8365306696112028413L;
+			killTime = (Class303.currentTimeMillis((byte) 27) + 4000L) * 8365306696112028413L;
 		}
 	}
 
@@ -952,7 +953,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 	@Override
 	public final void destroy() {
 		if (!aBoolean699) {
-			aLong349 = Class303.method27111((byte) 119) * 8365306696112028413L;
+			killTime = Class303.currentTimeMillis((byte) 119) * 8365306696112028413L;
 			Class217.method25866(5000L);
 			this.method25252(false, -1707006117);
 		}
@@ -970,7 +971,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 			return;
 		}
 		aBoolean700 = true;
-		if (Class303.method27111((byte) 123) - aLong347 * -7402167867988945451L > 1000L) {
+		if (Class303.currentTimeMillis((byte) 123) - aLong347 * -7402167867988945451L > 1000L) {
 			@Pc(16) Rectangle local16 = arg0.getClipBounds();
 			if (local16 == null || local16.width >= Class334.anInt4196 * -455826321 && local16.height >= Class286.anInt3942 * -1411780839) {
 				aBoolean701 = true;
@@ -981,14 +982,14 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 	@OriginalMember(owner = "client!sm", name = "focusGained", descriptor = "(Ljava/awt/event/FocusEvent;)V")
 	@Override
 	public final void focusGained(@OriginalArg(0) FocusEvent arg0) {
-		aBoolean698 = true;
+		focusIn = true;
 		aBoolean700 = true;
 	}
 
 	@OriginalMember(owner = "client!sm", name = "focusLost", descriptor = "(Ljava/awt/event/FocusEvent;)V")
 	@Override
 	public final void focusLost(@OriginalArg(0) FocusEvent arg0) {
-		aBoolean698 = false;
+		focusIn = false;
 	}
 
 	@OriginalMember(owner = "client!sm", name = "windowActivated", descriptor = "(Ljava/awt/event/WindowEvent;)V")
@@ -998,16 +999,16 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 
 	@OriginalMember(owner = "client!sm", name = "ce", descriptor = "()V")
 	final void method25197() {
-		@Pc(2) long local2 = Class303.method27111((byte) 60);
-		@Pc(8) long local8 = aLongArray21[Class598.anInt5364 * 1176676047];
-		aLongArray21[Class598.anInt5364 * 1176676047] = local2;
-		Class598.anInt5364 = (Class598.anInt5364 * 1176676047 + 1 & 0x1F) * 721330223;
+		@Pc(2) long local2 = Class303.currentTimeMillis((byte) 60);
+		@Pc(8) long local8 = logicTimes[Class598.logicTimePointer * 1176676047];
+		logicTimes[Class598.logicTimePointer * 1176676047] = local2;
+		Class598.logicTimePointer = (Class598.logicTimePointer * 1176676047 + 1 & 0x1F) * 721330223;
 		if (local8 != 0L && local2 > local8) {
 		}
 		synchronized (this) {
-			Class597.aBoolean926 = aBoolean698;
+			Class597.focus = focusIn;
 		}
-		this.method25231((byte) 81);
+		this.mainLoop((byte) 81);
 	}
 
 	@OriginalMember(owner = "client!sm", name = "windowDeactivated", descriptor = "(Ljava/awt/event/WindowEvent;)V")
@@ -1021,8 +1022,8 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 	}
 
 	@OriginalMember(owner = "client!sm", name = "v", descriptor = "(I)V")
-	final void method25200(@OriginalArg(0) int arg0) {
-		@Pc(2) long local2 = Class303.method27111((byte) 64);
+	final void mainRedrawWrapper(@OriginalArg(0) int arg0) {
+		@Pc(2) long local2 = Class303.currentTimeMillis((byte) 64);
 		@Pc(12) long local12 = aLongArray22[anInt3416 * 1292481899 - 1 & 0x1F];
 		@Pc(18) long local18 = aLongArray22[anInt3416 * 1292481899];
 		aLongArray22[anInt3416 * 1292481899] = local2;
@@ -1035,13 +1036,13 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 		if ((anInt3418 += -377349701) * 219136883 - 1 > 50) {
 			anInt3418 -= -1687615866;
 			aBoolean700 = true;
-			Class454.aCanvas6.setSize(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
-			Class454.aCanvas6.setVisible(true);
+			Class454.canvas.setSize(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
+			Class454.canvas.setVisible(true);
 			if (Class244.aFrame1 != null && Class411.aFrame2 == null) {
 				@Pc(100) Insets local100 = Class244.aFrame1.getInsets();
-				Class454.aCanvas6.setLocation(anInt3415 * 317681859 + local100.left, local100.top + anInt3417 * -1044003729);
+				Class454.canvas.setLocation(anInt3415 * 317681859 + local100.left, local100.top + anInt3417 * -1044003729);
 			} else {
-				Class454.aCanvas6.setLocation(anInt3415 * 317681859, anInt3417 * -1044003729);
+				Class454.canvas.setLocation(anInt3415 * 317681859, anInt3417 * -1044003729);
 			}
 		}
 		this.method25204((byte) 0);
@@ -1049,7 +1050,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 
 	@OriginalMember(owner = "client!sm", name = "ck", descriptor = "()V")
 	final void method25201() {
-		@Pc(2) long local2 = Class303.method27111((byte) 33);
+		@Pc(2) long local2 = Class303.currentTimeMillis((byte) 33);
 		@Pc(12) long local12 = aLongArray22[anInt3416 * 1292481899 - 1 & 0x1F];
 		@Pc(18) long local18 = aLongArray22[anInt3416 * 1292481899];
 		aLongArray22[anInt3416 * 1292481899] = local2;
@@ -1062,13 +1063,13 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 		if ((anInt3418 += -377349701) * 219136883 - 1 > 50) {
 			anInt3418 -= -1687615866;
 			aBoolean700 = true;
-			Class454.aCanvas6.setSize(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
-			Class454.aCanvas6.setVisible(true);
+			Class454.canvas.setSize(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
+			Class454.canvas.setVisible(true);
 			if (Class244.aFrame1 != null && Class411.aFrame2 == null) {
 				@Pc(100) Insets local100 = Class244.aFrame1.getInsets();
-				Class454.aCanvas6.setLocation(anInt3415 * 317681859 + local100.left, local100.top + anInt3417 * -1044003729);
+				Class454.canvas.setLocation(anInt3415 * 317681859 + local100.left, local100.top + anInt3417 * -1044003729);
 			} else {
-				Class454.aCanvas6.setLocation(anInt3415 * 317681859, anInt3417 * -1044003729);
+				Class454.canvas.setLocation(anInt3415 * 317681859, anInt3417 * -1044003729);
 			}
 		}
 		this.method25204((byte) 0);
@@ -1084,7 +1085,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 	abstract void method25205(@OriginalArg(0) byte arg0);
 
 	@OriginalMember(owner = "client!sm", name = "ag", descriptor = "(Ljava/lang/String;I)V")
-	final void method25206(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1) {
+	final void error(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1) {
 		if (this.aBoolean703) {
 			return;
 		}
@@ -1153,14 +1154,14 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 		label50: {
 			try {
 				var6 = true;
-				this.method25192((short) 10471);
+				this.runInner((short) 10471);
 				var6 = false;
 				break label50;
 			} catch (@Pc(8) ThreadDeath local8) {
 				throw local8;
 			} catch (@Pc(11) Throwable local11) {
 				Class603.method32133(this.method25297(-591161260), local11, 839300151);
-				this.method25206("crash", -1058465794);
+				this.error("crash", -1058465794);
 				var6 = false;
 			} finally {
 				if (var6) {
@@ -1179,14 +1180,14 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 		label50: {
 			try {
 				var6 = true;
-				this.method25192((short) 4697);
+				this.runInner((short) 4697);
 				var6 = false;
 				break label50;
 			} catch (@Pc(8) ThreadDeath local8) {
 				throw local8;
 			} catch (@Pc(11) Throwable local11) {
 				Class603.method32133(this.method25297(-591161260), local11, 839300151);
-				this.method25206("crash", 441294158);
+				this.error("crash", 441294158);
 				var6 = false;
 			} finally {
 				if (var6) {
@@ -1225,7 +1226,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 			this.method25184(arg1, arg2, arg3, arg4, arg5, arg6, 2036747717);
 		} catch (@Pc(67) Throwable local67) {
 			Class603.method32133(null, local67, 839300151);
-			this.method25206("crash", -463671607);
+			this.error("crash", -463671607);
 		}
 	}
 
@@ -1233,7 +1234,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 	final synchronized void method25216() {
 		this.method25190((byte) 7);
 		@Pc(5) Container local5 = Class60.method1187(-1917816395);
-		Class454.aCanvas6 = new Canvas_Sub1(local5);
+		Class454.canvas = new Canvas_Sub1(local5);
 		this.method25227(local5, (byte) -31);
 	}
 
@@ -1296,7 +1297,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 			this.method25184(arg1, arg2, arg3, arg4, arg5, arg6, 2036747717);
 		} catch (@Pc(67) Throwable local67) {
 			Class603.method32133(null, local67, 839300151);
-			this.method25206("crash", 698256466);
+			this.error("crash", 698256466);
 		}
 	}
 
@@ -1317,7 +1318,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 			this.method25184(arg1, arg2, arg3, arg4, arg5, arg6, 2036747717);
 		} catch (@Pc(67) Throwable local67) {
 			Class603.method32133(null, local67, 839300151);
-			this.method25206("crash", 1376705037);
+			this.error("crash", 1376705037);
 		}
 	}
 
@@ -1325,23 +1326,23 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 	final void method25227(@OriginalArg(0) Container arg0, @OriginalArg(1) byte arg1) {
 		arg0.setBackground(Color.black);
 		arg0.setLayout(null);
-		arg0.add(Class454.aCanvas6);
-		Class454.aCanvas6.setSize(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
-		Class454.aCanvas6.setVisible(true);
+		arg0.add(Class454.canvas);
+		Class454.canvas.setSize(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
+		Class454.canvas.setVisible(true);
 		if (arg0 == Class244.aFrame1) {
 			@Pc(26) Insets local26 = Class244.aFrame1.getInsets();
-			Class454.aCanvas6.setLocation(local26.left + anInt3415 * 317681859, anInt3417 * -1044003729 + local26.top);
+			Class454.canvas.setLocation(local26.left + anInt3415 * 317681859, anInt3417 * -1044003729 + local26.top);
 		} else {
-			Class454.aCanvas6.setLocation(anInt3415 * 317681859, anInt3417 * -1044003729);
+			Class454.canvas.setLocation(anInt3415 * 317681859, anInt3417 * -1044003729);
 		}
-		Class454.aCanvas6.addFocusListener(this);
-		Class454.aCanvas6.requestFocus();
-		Class597.aBoolean926 = true;
-		aBoolean698 = true;
-		Class454.aCanvas6.setFocusTraversalKeysEnabled(false);
+		Class454.canvas.addFocusListener(this);
+		Class454.canvas.requestFocus();
+		Class597.focus = true;
+		focusIn = true;
+		Class454.canvas.setFocusTraversalKeysEnabled(false);
 		aBoolean700 = true;
 		aBoolean701 = false;
-		aLong347 = Class303.method27111((byte) 47) * 7467997290225548157L;
+		aLong347 = Class303.currentTimeMillis((byte) 47) * 7467997290225548157L;
 	}
 
 	@OriginalMember(owner = "client!sm", name = "bt", descriptor = "(Ljava/lang/String;Ljava/lang/String;IIII)V")
@@ -1350,11 +1351,11 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 		Class93.anInt329 = arg2 * 808739727;
 		RuntimeException_Sub4.anInt3268 = arg4 * -1825691279;
 		Class349.anInt4254 = arg5 * -1969717623;
-		Class342.aString190 = "Unknown";
-		Class601.aString231 = "1.1";
+		Class342.javaVendor = "Unknown";
+		Class601.javaVersion = "1.1";
 		try {
-			Class342.aString190 = System.getProperty("java.vendor");
-			Class601.aString231 = System.getProperty("java.version");
+			Class342.javaVendor = System.getProperty("java.vendor");
+			Class601.javaVersion = System.getProperty("java.version");
 		} catch (@Pc(27) Exception local27) {
 		}
 		try {
@@ -1436,7 +1437,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 			Class203.aClass36Array1[local173] = new Class36(new Class40(Class292.method26945("main_file_cache.idx" + local173, (byte) 16), "rw", 1048576L), 6000, 0);
 		}
 		try {
-			Class518.aClass14_1 = new Class14();
+			Js5MasterIndex.aClass14_1 = new Class14();
 		} catch (@Pc(294) Exception local294) {
 			Class13.aBoolean5 = false;
 		}
@@ -1464,11 +1465,11 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 		Class93.anInt329 = arg2 * 808739727;
 		RuntimeException_Sub4.anInt3268 = arg4 * -1825691279;
 		Class349.anInt4254 = arg5 * -1969717623;
-		Class342.aString190 = "Unknown";
-		Class601.aString231 = "1.1";
+		Class342.javaVendor = "Unknown";
+		Class601.javaVersion = "1.1";
 		try {
-			Class342.aString190 = System.getProperty("java.vendor");
-			Class601.aString231 = System.getProperty("java.version");
+			Class342.javaVendor = System.getProperty("java.vendor");
+			Class601.javaVersion = System.getProperty("java.version");
 		} catch (@Pc(27) Exception local27) {
 		}
 		try {
@@ -1550,7 +1551,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 			Class203.aClass36Array1[local173] = new Class36(new Class40(Class292.method26945("main_file_cache.idx" + local173, (byte) 16), "rw", 1048576L), 6000, 0);
 		}
 		try {
-			Class518.aClass14_1 = new Class14();
+			Js5MasterIndex.aClass14_1 = new Class14();
 		} catch (@Pc(294) Exception local294) {
 			Class13.aBoolean5 = false;
 		}
@@ -1671,7 +1672,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 	}
 
 	@OriginalMember(owner = "client!sm", name = "ai", descriptor = "(B)V")
-	abstract void method25231(@OriginalArg(0) byte arg0);
+	abstract void mainLoop(@OriginalArg(0) byte arg0);
 
 	@OriginalMember(owner = "client!sm", name = "bk", descriptor = "(Ljava/io/File;Ljava/io/File;)V")
 	final void method25232(@OriginalArg(0) File arg0, @OriginalArg(1) File arg1) {
@@ -1749,7 +1750,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 	@Override
 	public final void method25174() {
 		if (!aBoolean699) {
-			aLong349 = 0L;
+			killTime = 0L;
 		}
 	}
 
@@ -1770,7 +1771,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 			this.method25184(arg1, arg2, arg3, arg4, arg5, arg6, 2036747717);
 		} catch (@Pc(67) Throwable local67) {
 			Class603.method32133(null, local67, 839300151);
-			this.method25206("crash", 1640829273);
+			this.error("crash", 1640829273);
 		}
 	}
 
@@ -1804,10 +1805,10 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 		if (Class568.method31528(-1557850606)) {
 			Class588.method31902(350319923).method31856(-1957352985);
 		}
-		if (Class454.aCanvas6 != null) {
+		if (Class454.canvas != null) {
 			try {
-				Class454.aCanvas6.removeFocusListener(this);
-				Class454.aCanvas6.getParent().remove(Class454.aCanvas6);
+				Class454.canvas.removeFocusListener(this);
+				Class454.canvas.getParent().remove(Class454.canvas);
 			} catch (@Pc(74) Exception local74) {
 			}
 		}
@@ -1857,23 +1858,23 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 	final void method25249(@OriginalArg(0) Container arg0) {
 		arg0.setBackground(Color.black);
 		arg0.setLayout(null);
-		arg0.add(Class454.aCanvas6);
-		Class454.aCanvas6.setSize(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
-		Class454.aCanvas6.setVisible(true);
+		arg0.add(Class454.canvas);
+		Class454.canvas.setSize(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
+		Class454.canvas.setVisible(true);
 		if (arg0 == Class244.aFrame1) {
 			@Pc(26) Insets local26 = Class244.aFrame1.getInsets();
-			Class454.aCanvas6.setLocation(local26.left + anInt3415 * 317681859, anInt3417 * -1044003729 + local26.top);
+			Class454.canvas.setLocation(local26.left + anInt3415 * 317681859, anInt3417 * -1044003729 + local26.top);
 		} else {
-			Class454.aCanvas6.setLocation(anInt3415 * 317681859, anInt3417 * -1044003729);
+			Class454.canvas.setLocation(anInt3415 * 317681859, anInt3417 * -1044003729);
 		}
-		Class454.aCanvas6.addFocusListener(this);
-		Class454.aCanvas6.requestFocus();
-		Class597.aBoolean926 = true;
-		aBoolean698 = true;
-		Class454.aCanvas6.setFocusTraversalKeysEnabled(false);
+		Class454.canvas.addFocusListener(this);
+		Class454.canvas.requestFocus();
+		Class597.focus = true;
+		focusIn = true;
+		Class454.canvas.setFocusTraversalKeysEnabled(false);
 		aBoolean700 = true;
 		aBoolean701 = false;
-		aLong347 = Class303.method27111((byte) 88) * 7467997290225548157L;
+		aLong347 = Class303.currentTimeMillis((byte) 88) * 7467997290225548157L;
 	}
 
 	@OriginalMember(owner = "client!sm", name = "aw", descriptor = "(Ljava/applet/Applet;)V")
@@ -1908,7 +1909,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 			if (local4.endsWith("192.168.1.")) {
 				return true;
 			} else {
-				this.method25206("invalidhost", -242876040);
+				this.error("invalidhost", -242876040);
 				return false;
 			}
 		}
@@ -1944,10 +1945,10 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 		if (Class568.method31528(1177563659)) {
 			Class588.method31902(350319923).method31856(-1752943221);
 		}
-		if (Class454.aCanvas6 != null) {
+		if (Class454.canvas != null) {
 			try {
-				Class454.aCanvas6.removeFocusListener(this);
-				Class454.aCanvas6.getParent().remove(Class454.aCanvas6);
+				Class454.canvas.removeFocusListener(this);
+				Class454.canvas.getParent().remove(Class454.canvas);
 			} catch (@Pc(74) Exception local74) {
 			}
 		}
@@ -1960,12 +1961,12 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 
 	@OriginalMember(owner = "client!sm", name = "cc", descriptor = "()V")
 	final void method25253() {
-		if (Class342.aString190 != null) {
-			@Pc(4) String local4 = Class342.aString190.toLowerCase();
+		if (Class342.javaVendor != null) {
+			@Pc(4) String local4 = Class342.javaVendor.toLowerCase();
 			if (local4.indexOf("sun") != -1 || local4.indexOf("apple") != -1) {
-				@Pc(16) String local16 = Class601.aString231;
+				@Pc(16) String local16 = Class601.javaVersion;
 				if (local16.equals("1.1") || local16.startsWith("1.1.") || local16.equals("1.2") || local16.startsWith("1.2.") || local16.equals("1.3") || local16.startsWith("1.3.") || local16.equals("1.4") || local16.startsWith("1.4.") || local16.equals("1.5") || local16.startsWith("1.5.") || local16.equals("1.6.0")) {
-					this.method25206("wrongjava", -798123447);
+					this.error("wrongjava", -798123447);
 					return;
 				}
 				if (local16.startsWith("1.6.0_")) {
@@ -1974,7 +1975,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 					}
 					@Pc(88) String local88 = local16.substring(6, local71);
 					if (Class698.method37062(local88, (short) -19267) && Class679.method33621(local88, 1849961235) < 10) {
-						this.method25206("wrongjava", 329509230);
+						this.error("wrongjava", 329509230);
 						return;
 					}
 				}
@@ -1985,34 +1986,34 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 		anInt3412 = Runtime.getRuntime().availableProcessors() * -1356892559;
 		this.method25304(2146657891);
 		this.method25202((byte) 86);
-		aClass146_2 = Class257.method26425((short) -18441);
-		while (aLong349 * 6145620734226936405L == 0L || Class303.method27111((byte) 84) < aLong349 * 6145620734226936405L) {
-			anInt3421 = aClass146_2.method13854(aLong346 * -4113900210149837993L) * -1350095131;
-			for (@Pc(153) int local153 = 0; local153 < anInt3421 * -830218515; local153++) {
-				this.method25193((byte) 10);
+		timer = Class257.create((short) -18441);
+		while (killTime * 6145620734226936405L == 0L || Class303.currentTimeMillis((byte) 84) < killTime * 6145620734226936405L) {
+			logicCycles = timer.sleep(aLong346 * -4113900210149837993L) * -1350095131;
+			for (@Pc(153) int local153 = 0; local153 < logicCycles * -830218515; local153++) {
+				this.mainLoopWrapper((byte) 10);
 			}
-			this.method25200(2060903041);
-			Class643.method33030(Class454.aCanvas6, 386071135);
+			this.mainRedrawWrapper(2060903041);
+			Class643.flush(Class454.canvas, 386071135);
 		}
 	}
 
 	@OriginalMember(owner = "client!sm", name = "cs", descriptor = "()V")
 	final void method25256() {
-		@Pc(2) long local2 = Class303.method27111((byte) 107);
-		@Pc(8) long local8 = aLongArray21[Class598.anInt5364 * 1176676047];
-		aLongArray21[Class598.anInt5364 * 1176676047] = local2;
-		Class598.anInt5364 = (Class598.anInt5364 * 1176676047 + 1 & 0x1F) * 721330223;
+		@Pc(2) long local2 = Class303.currentTimeMillis((byte) 107);
+		@Pc(8) long local8 = logicTimes[Class598.logicTimePointer * 1176676047];
+		logicTimes[Class598.logicTimePointer * 1176676047] = local2;
+		Class598.logicTimePointer = (Class598.logicTimePointer * 1176676047 + 1 & 0x1F) * 721330223;
 		if (local8 != 0L && local2 > local8) {
 		}
 		synchronized (this) {
-			Class597.aBoolean926 = aBoolean698;
+			Class597.focus = focusIn;
 		}
-		this.method25231((byte) 115);
+		this.mainLoop((byte) 115);
 	}
 
 	@OriginalMember(owner = "client!sm", name = "cj", descriptor = "()V")
 	final void method25257() {
-		@Pc(2) long local2 = Class303.method27111((byte) 18);
+		@Pc(2) long local2 = Class303.currentTimeMillis((byte) 18);
 		@Pc(12) long local12 = aLongArray22[anInt3416 * 1292481899 - 1 & 0x1F];
 		@Pc(18) long local18 = aLongArray22[anInt3416 * 1292481899];
 		aLongArray22[anInt3416 * 1292481899] = local2;
@@ -2025,13 +2026,13 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 		if ((anInt3418 += -377349701) * 219136883 - 1 > 50) {
 			anInt3418 -= -1687615866;
 			aBoolean700 = true;
-			Class454.aCanvas6.setSize(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
-			Class454.aCanvas6.setVisible(true);
+			Class454.canvas.setSize(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
+			Class454.canvas.setVisible(true);
 			if (Class244.aFrame1 != null && Class411.aFrame2 == null) {
 				@Pc(100) Insets local100 = Class244.aFrame1.getInsets();
-				Class454.aCanvas6.setLocation(anInt3415 * 317681859 + local100.left, local100.top + anInt3417 * -1044003729);
+				Class454.canvas.setLocation(anInt3415 * 317681859 + local100.left, local100.top + anInt3417 * -1044003729);
 			} else {
-				Class454.aCanvas6.setLocation(anInt3415 * 317681859, anInt3417 * -1044003729);
+				Class454.canvas.setLocation(anInt3415 * 317681859, anInt3417 * -1044003729);
 			}
 		}
 		this.method25204((byte) 0);
@@ -2043,7 +2044,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 
 	@OriginalMember(owner = "client!sm", name = "ca", descriptor = "()V")
 	final void method25259() {
-		@Pc(2) long local2 = Class303.method27111((byte) 120);
+		@Pc(2) long local2 = Class303.currentTimeMillis((byte) 120);
 		@Pc(12) long local12 = aLongArray22[anInt3416 * 1292481899 - 1 & 0x1F];
 		@Pc(18) long local18 = aLongArray22[anInt3416 * 1292481899];
 		aLongArray22[anInt3416 * 1292481899] = local2;
@@ -2056,13 +2057,13 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 		if ((anInt3418 += -377349701) * 219136883 - 1 > 50) {
 			anInt3418 -= -1687615866;
 			aBoolean700 = true;
-			Class454.aCanvas6.setSize(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
-			Class454.aCanvas6.setVisible(true);
+			Class454.canvas.setSize(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
+			Class454.canvas.setVisible(true);
 			if (Class244.aFrame1 != null && Class411.aFrame2 == null) {
 				@Pc(100) Insets local100 = Class244.aFrame1.getInsets();
-				Class454.aCanvas6.setLocation(anInt3415 * 317681859 + local100.left, local100.top + anInt3417 * -1044003729);
+				Class454.canvas.setLocation(anInt3415 * 317681859 + local100.left, local100.top + anInt3417 * -1044003729);
 			} else {
-				Class454.aCanvas6.setLocation(anInt3415 * 317681859, anInt3417 * -1044003729);
+				Class454.canvas.setLocation(anInt3415 * 317681859, anInt3417 * -1044003729);
 			}
 		}
 		this.method25204((byte) 0);
@@ -2098,10 +2099,10 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 		if (Class568.method31528(-699669486)) {
 			Class588.method31902(350319923).method31856(-1018503692);
 		}
-		if (Class454.aCanvas6 != null) {
+		if (Class454.canvas != null) {
 			try {
-				Class454.aCanvas6.removeFocusListener(this);
-				Class454.aCanvas6.getParent().remove(Class454.aCanvas6);
+				Class454.canvas.removeFocusListener(this);
+				Class454.canvas.getParent().remove(Class454.canvas);
 			} catch (@Pc(74) Exception local74) {
 			}
 		}
@@ -2116,13 +2117,13 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 	@Override
 	public final void method25169() {
 		if (!aBoolean699) {
-			aLong349 = 0L;
+			killTime = 0L;
 		}
 	}
 
 	@OriginalMember(owner = "client!sm", name = "dt", descriptor = "(Ljava/awt/event/FocusEvent;)V")
 	public final void method25261(@OriginalArg(0) FocusEvent arg0) {
-		aBoolean698 = false;
+		focusIn = false;
 	}
 
 	@OriginalMember(owner = "client!sm", name = "l", descriptor = "(Ljava/io/File;ZI)Z")
@@ -2165,12 +2166,12 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 
 	@OriginalMember(owner = "client!sm", name = "dw", descriptor = "(Ljava/awt/event/FocusEvent;)V")
 	public final void method25270(@OriginalArg(0) FocusEvent arg0) {
-		aBoolean698 = false;
+		focusIn = false;
 	}
 
 	@OriginalMember(owner = "client!sm", name = "df", descriptor = "(Ljava/awt/event/FocusEvent;)V")
 	public final void method25271(@OriginalArg(0) FocusEvent arg0) {
-		aBoolean698 = true;
+		focusIn = true;
 		aBoolean700 = true;
 	}
 
@@ -2178,7 +2179,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 	@Override
 	public final void method25173() {
 		if (!aBoolean699) {
-			aLong349 = Class303.method27111((byte) 46) * 8365306696112028413L;
+			killTime = Class303.currentTimeMillis((byte) 46) * 8365306696112028413L;
 			Class217.method25866(5000L);
 			this.method25252(false, -1341874033);
 		}
@@ -2197,7 +2198,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 			return;
 		}
 		aBoolean700 = true;
-		if (Class303.method27111((byte) 97) - aLong347 * -7402167867988945451L > 1000L) {
+		if (Class303.currentTimeMillis((byte) 97) - aLong347 * -7402167867988945451L > 1000L) {
 			@Pc(16) Rectangle local16 = arg0.getClipBounds();
 			if (local16 == null || local16.width >= Class334.anInt4196 * -455826321 && local16.height >= Class286.anInt3942 * -1411780839) {
 				aBoolean701 = true;
@@ -2212,7 +2213,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 			return;
 		}
 		aBoolean700 = true;
-		if (Class303.method27111((byte) 34) - aLong347 * -7402167867988945451L > 1000L) {
+		if (Class303.currentTimeMillis((byte) 34) - aLong347 * -7402167867988945451L > 1000L) {
 			@Pc(16) Rectangle local16 = arg0.getClipBounds();
 			if (local16 == null || local16.width >= Class334.anInt4196 * -455826321 && local16.height >= Class286.anInt3942 * -1411780839) {
 				aBoolean701 = true;
@@ -2222,7 +2223,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 
 	@OriginalMember(owner = "client!sm", name = "db", descriptor = "(Ljava/awt/event/FocusEvent;)V")
 	public final void method25274(@OriginalArg(0) FocusEvent arg0) {
-		aBoolean698 = true;
+		focusIn = true;
 		aBoolean700 = true;
 	}
 
@@ -2230,26 +2231,26 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 	@Override
 	public final void method25176() {
 		if (!aBoolean699) {
-			aLong349 = (Class303.method27111((byte) 126) + 4000L) * 8365306696112028413L;
+			killTime = (Class303.currentTimeMillis((byte) 126) + 4000L) * 8365306696112028413L;
 		}
 	}
 
 	@OriginalMember(owner = "client!sm", name = "du", descriptor = "(Ljava/awt/event/FocusEvent;)V")
 	public final void method25275(@OriginalArg(0) FocusEvent arg0) {
-		aBoolean698 = false;
+		focusIn = false;
 	}
 
 	@OriginalMember(owner = "client!sm", name = "ds", descriptor = "(Ljava/awt/event/FocusEvent;)V")
 	public final void method25276(@OriginalArg(0) FocusEvent arg0) {
-		aBoolean698 = false;
+		focusIn = false;
 	}
 
 	@OriginalMember(owner = "client!sm", name = "cn", descriptor = "()V")
 	final void method25277() {
-		if (Class454.aCanvas6 != null) {
-			Class454.aCanvas6.removeFocusListener(this);
-			Class454.aCanvas6.getParent().setBackground(Color.black);
-			Class454.aCanvas6.getParent().remove(Class454.aCanvas6);
+		if (Class454.canvas != null) {
+			Class454.canvas.removeFocusListener(this);
+			Class454.canvas.getParent().setBackground(Color.black);
+			Class454.canvas.getParent().remove(Class454.canvas);
 		}
 	}
 
@@ -2269,23 +2270,23 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 	final void method25281(@OriginalArg(0) Container arg0) {
 		arg0.setBackground(Color.black);
 		arg0.setLayout(null);
-		arg0.add(Class454.aCanvas6);
-		Class454.aCanvas6.setSize(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
-		Class454.aCanvas6.setVisible(true);
+		arg0.add(Class454.canvas);
+		Class454.canvas.setSize(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
+		Class454.canvas.setVisible(true);
 		if (arg0 == Class244.aFrame1) {
 			@Pc(26) Insets local26 = Class244.aFrame1.getInsets();
-			Class454.aCanvas6.setLocation(local26.left + anInt3415 * 317681859, anInt3417 * -1044003729 + local26.top);
+			Class454.canvas.setLocation(local26.left + anInt3415 * 317681859, anInt3417 * -1044003729 + local26.top);
 		} else {
-			Class454.aCanvas6.setLocation(anInt3415 * 317681859, anInt3417 * -1044003729);
+			Class454.canvas.setLocation(anInt3415 * 317681859, anInt3417 * -1044003729);
 		}
-		Class454.aCanvas6.addFocusListener(this);
-		Class454.aCanvas6.requestFocus();
-		Class597.aBoolean926 = true;
-		aBoolean698 = true;
-		Class454.aCanvas6.setFocusTraversalKeysEnabled(false);
+		Class454.canvas.addFocusListener(this);
+		Class454.canvas.requestFocus();
+		Class597.focus = true;
+		focusIn = true;
+		Class454.canvas.setFocusTraversalKeysEnabled(false);
 		aBoolean700 = true;
 		aBoolean701 = false;
-		aLong347 = Class303.method27111((byte) 86) * 7467997290225548157L;
+		aLong347 = Class303.currentTimeMillis((byte) 86) * 7467997290225548157L;
 	}
 
 	@OriginalMember(owner = "client!sm", name = "dq", descriptor = "(Ljava/awt/event/WindowEvent;)V")
@@ -2381,7 +2382,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 
 	@OriginalMember(owner = "client!sm", name = "dl", descriptor = "(Ljava/awt/event/FocusEvent;)V")
 	public final void method25296(@OriginalArg(0) FocusEvent arg0) {
-		aBoolean698 = true;
+		focusIn = true;
 		aBoolean700 = true;
 	}
 
@@ -2490,7 +2491,7 @@ public abstract class Class554 implements Interface61, Runnable, FocusListener, 
 	final synchronized void method25304(@OriginalArg(0) int arg0) {
 		this.method25190((byte) 39);
 		@Pc(5) Container local5 = Class60.method1187(-2018745327);
-		Class454.aCanvas6 = new Canvas_Sub1(local5);
+		Class454.canvas = new Canvas_Sub1(local5);
 		this.method25227(local5, (byte) -69);
 	}
 

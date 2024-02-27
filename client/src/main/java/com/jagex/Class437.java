@@ -23,8 +23,8 @@ public final class Class437 {
 		@Pc(4) Iterator local4 = arg0.iterator();
 		while (local4.hasNext()) {
 			@Pc(11) Interface75 local11 = (Interface75) local4.next();
-			if (local11.method37268() > local1) {
-				local1 = local11.method37268();
+			if (local11.getId() > local1) {
+				local1 = local11.getId();
 			}
 		}
 		return (local1 + 8) / 8;
@@ -55,7 +55,7 @@ public final class Class437 {
 			@Pc(64) Class474 local64;
 			try {
 				var13 = true;
-				local1 = Class3.method70("3", client.aClass722_4.aString247, false, -1121022043);
+				local1 = SecondaryLinkedList.method70("3", client.aClass722_4.aString247, false, -1121022043);
 				@Pc(16) byte[] local16 = new byte[(int) local1.method839((byte) 0)];
 				@Pc(30) int local30;
 				for (int var19 = 0; var19 < local16.length; var19 += local30) {

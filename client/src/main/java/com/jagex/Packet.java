@@ -10,6 +10,18 @@ import java.math.BigInteger;
 @OriginalClass("client!ald")
 public class Packet extends Class80 {
 
+	@OriginalMember(owner = "client!ald", name = "l", descriptor = "I")
+	public static final int anInt3151 = 5000;
+
+	@OriginalMember(owner = "client!ald", name = "a", descriptor = "J")
+	public static final long aLong294 = -3932672073523589310L;
+
+	@OriginalMember(owner = "client!ald", name = "o", descriptor = "I")
+	public static final int anInt3153 = -306674912;
+
+	@OriginalMember(owner = "client!ald", name = "u", descriptor = "I")
+	public static final int anInt3154 = 100;
+
 	@OriginalMember(owner = "client!ald", name = "m", descriptor = "[I")
 	public static final int[] crctable = new int[256];
 
@@ -487,6 +499,10 @@ public class Packet extends Class80 {
 
 	@OriginalMember(owner = "client!ald", name = "be", descriptor = "(Ljava/math/BigInteger;Ljava/math/BigInteger;B)V")
 	public void rsaenc(@OriginalArg(0) BigInteger exponent, @OriginalArg(1) BigInteger modulus) {
+		if (ClientConfig.DISABLE_RSA) {
+			return;
+		}
+
 		@Pc(4) int length = this.pos * -1380987821;
 		this.pos = 0;
 		@Pc(10) byte[] temp = new byte[length];

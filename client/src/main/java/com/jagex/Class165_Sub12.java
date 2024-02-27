@@ -34,7 +34,7 @@ public final class Class165_Sub12 extends Class165 {
 					local70 = arg8;
 				}
 				local15.anInt4181 = local70 * -1722573563;
-				local15.anInt4088 = client.anInt3436 * -1200088107;
+				local15.anInt4088 = client.currentCycle * -1200088107;
 				if (!client.method25508(local15)) {
 					if (local15.anInt4095 * -281518067 != 0) {
 						Class312.method27471(local15, -506786311);
@@ -131,7 +131,7 @@ public final class Class165_Sub12 extends Class165 {
 								continue;
 							}
 							if (local15.anInt4095 * -281518067 == Class327.anInt4109 * -1774300681) {
-								Class493.method30276(Class279.aClass102_9, local102, local109, local15, -229615671);
+								Js5MasterIndexArchiveData.method30276(Class279.aClass102_9, local102, local109, local15, -229615671);
 								continue;
 							}
 							if (Class327.anInt4163 * 1889743183 == local15.anInt4095 * -281518067) {
@@ -220,8 +220,8 @@ public final class Class165_Sub12 extends Class165 {
 									local665 = client.anInt3465 * 323818503;
 									local919 = client.anInt3466 * -249739613;
 									local923 = client.anInt3467 * 58983689;
-									if (client.anInt3436 < client.anInt3464 * 1127291209) {
-										@Pc(946) float local946 = (float) (client.anInt3436 - client.anInt3463 * 1756420667) * 1.0F / (float) (client.anInt3464 * 1127291209 - client.anInt3463 * 1756420667);
+									if (client.currentCycle < client.anInt3464 * 1127291209) {
+										@Pc(946) float local946 = (float) (client.currentCycle - client.anInt3463 * 1756420667) * 1.0F / (float) (client.anInt3464 * 1127291209 - client.anInt3463 * 1756420667);
 										local342 = (int) ((1.0F - local946) * (float) (Class605.anInt5392 * 1040890981) + (float) (client.anInt3482 * 1708729717) * local946);
 										local665 = (int) ((float) (Class352.anInt4261 * -2124066439) * (1.0F - local946) + local946 * (float) (client.anInt3465 * 323818503));
 										local919 = (int) ((float) (client.anInt3466 * -249739613) * local946 + (float) (Class85.anInt283 * 1745324603) * (1.0F - local946));
@@ -273,7 +273,7 @@ public final class Class165_Sub12 extends Class165 {
 										}
 										local335 <<= 0x18;
 										if (local15.aBoolean812) {
-											local1189.method7637(local1206, local102, local109, local15.anInt4103 * 1892149809, local15.anInt4104 * 1990157877, local335 | local665, local15.aBoolean811 ? local335 : -1, local15.anInt4149 * 1280669649, local15.anInt4150 * -1409337839, client.aRandom2, Class622.anInt5488, client.anIntArray319, Class344.aClass99Array6, null, 1502123446);
+											local1189.method7637(local1206, local102, local109, local15.anInt4103 * 1892149809, local15.anInt4104 * 1990157877, local335 | local665, local15.aBoolean811 ? local335 : -1, local15.anInt4149 * 1280669649, local15.anInt4150 * -1409337839, client.random, Class622.seed, client.anIntArray319, Class344.aClass99Array6, null, 1502123446);
 										} else {
 											local1189.method7627(local1206, local102, local109, local15.anInt4103 * 1892149809, local15.anInt4104 * 1990157877, local335 | local665, local15.aBoolean811 ? local335 : -1, local15.anInt4149 * 1280669649, local15.anInt4150 * -1409337839, local15.anInt4175 * -141942121, local15.anInt4168 * -1049453043, Class344.aClass99Array6, null, null, 0, 0, (byte) -76);
 										}
@@ -300,7 +300,7 @@ public final class Class165_Sub12 extends Class165 {
 											local654 = (Class99) client.aClass243_70.method26282((long) (local15.anInt4174 * -1861131873));
 											if (local654 == null && !client.aMap16.containsKey(local15.anInt4174 * -1861131873)) {
 												try {
-													client.aMap16.put(local15.anInt4174 * -1861131873, Class148.aClass220_2.method25897(new URL(client.aString150 + "/img/image_" + local15.anInt4174 * -1861131873 + ".png?a=" + Class303.method27111((byte) 79)), 1062839870));
+													client.aMap16.put(local15.anInt4174 * -1861131873, Class148.aClass220_2.method25897(new URL(client.aString150 + "/img/image_" + local15.anInt4174 * -1861131873 + ".png?a=" + Class303.currentTimeMillis((byte) 79)), 1062839870));
 												} catch (@Pc(1546) MalformedURLException local1546) {
 													Class603.method32133(null, local1546, 839300151);
 												}
@@ -459,9 +459,9 @@ public final class Class165_Sub12 extends Class165 {
 										if (local15.aBoolean807) {
 											if (Class368.anInt4502 * -1583611537 == 3) {
 												if (local15.aBoolean806) {
-													local2413.method30092((float) local685, (float) local691, (float) local919, (float) local923, Class160.aClass121_Sub1_2.method9659(1485243573), Class160.aClass121_Sub1_2.method9652(1538125268), (float) (Class80_Sub1_Sub1.anInt254 * -255202897), (float) (Class80_Sub25.anInt1627 * 167687103), (float) (local15.anInt4131 * 2069134419));
+													local2413.method30092((float) local685, (float) local691, (float) local919, (float) local923, BufferedSocket.aClass121_Sub1_2.method9659(1485243573), BufferedSocket.aClass121_Sub1_2.method9652(1538125268), (float) (Class80_Sub1_Sub1.anInt254 * -255202897), (float) (Class80_Sub25.anInt1627 * 167687103), (float) (local15.anInt4131 * 2069134419));
 												} else {
-													local2413.method30092((float) local685, (float) local691, (float) local919, (float) local923, Class160.aClass121_Sub1_2.method9659(1485243573), Class160.aClass121_Sub1_2.method9652(-731854440), (float) (Class80_Sub1_Sub1.anInt254 * -255202897), (float) (Class80_Sub25.anInt1627 * 167687103), (float) (local15.anInt4131 * 2069134419 << 2));
+													local2413.method30092((float) local685, (float) local691, (float) local919, (float) local923, BufferedSocket.aClass121_Sub1_2.method9659(1485243573), BufferedSocket.aClass121_Sub1_2.method9652(-731854440), (float) (Class80_Sub1_Sub1.anInt254 * -255202897), (float) (Class80_Sub25.anInt1627 * 167687103), (float) (local15.anInt4131 * 2069134419 << 2));
 												}
 											} else if (local15.aBoolean806) {
 												local2413.method30092((float) local685, (float) local691, (float) local919, (float) local923, (float) local716, (float) local2428, (float) (Class80_Sub1_Sub1.anInt254 * -255202897), (float) (Class80_Sub25.anInt1627 * 167687103), (float) (local15.anInt4131 * 2069134419));
@@ -469,7 +469,7 @@ public final class Class165_Sub12 extends Class165 {
 												local2413.method30092((float) local685, (float) local691, (float) local919, (float) local923, (float) local716, (float) local2428, (float) (Class80_Sub1_Sub1.anInt254 * -255202897), (float) (Class80_Sub25.anInt1627 * 167687103), (float) (local15.anInt4131 * 2069134419 << 2));
 											}
 										} else if (Class368.anInt4502 * -1583611537 == 3) {
-											local2413.method30188((float) local685, (float) local691, (float) local919, (float) local923, Class160.aClass121_Sub1_2.method9659(1485243573), Class160.aClass121_Sub1_2.method9652(-858773753), (float) (Class80_Sub1_Sub1.anInt254 * -255202897), (float) (Class80_Sub25.anInt1627 * 167687103));
+											local2413.method30188((float) local685, (float) local691, (float) local919, (float) local923, BufferedSocket.aClass121_Sub1_2.method9659(1485243573), BufferedSocket.aClass121_Sub1_2.method9652(-858773753), (float) (Class80_Sub1_Sub1.anInt254 * -255202897), (float) (Class80_Sub25.anInt1627 * 167687103));
 										} else {
 											local2413.method30188((float) local685, (float) local691, (float) local919, (float) local923, (float) local716, (float) local2428, (float) (Class80_Sub1_Sub1.anInt254 * -255202897), (float) (Class80_Sub25.anInt1627 * 167687103));
 										}
@@ -491,7 +491,7 @@ public final class Class165_Sub12 extends Class165 {
 											client.aClass471_52.method29783((float) (local15.anInt4124 * 1923070285 << 2), (float) (local665 + local2696 + (local15.anInt4170 * -1707388971 << 2)), (float) ((local15.anInt4170 * -1707388971 << 2) + local2714));
 											client.aClass471_52.method29774(1.0F, 0.0F, 0.0F, Class467.method29716(local15.anInt4074 * 1940765415 << 3));
 										}
-										local15.method27638(Class279.aClass102_9, local1949, client.aClass471_52, client.anInt3436, 830012071);
+										local15.method27638(Class279.aClass102_9, local1949, client.aClass471_52, client.currentCycle, 830012071);
 										Class279.aClass102_9.method20705();
 										Class279.aClass102_9.method20712(true);
 										Class279.aClass102_9.method20986(arg2, arg3, arg4, arg5);

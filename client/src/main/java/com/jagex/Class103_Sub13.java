@@ -131,8 +131,8 @@ public final class Class103_Sub13 extends Class103 {
 	@OriginalMember(owner = "client!agi", name = "l", descriptor = "()V")
 	@Override
 	public void method19198() {
-		client.anInt3463 = client.anInt3436 * 769322739;
-		client.anInt3464 = (client.anInt3436 + this.anInt956 * -1517948015) * 838019321;
+		client.anInt3463 = client.currentCycle * 769322739;
+		client.anInt3464 = (client.currentCycle + this.anInt956 * -1517948015) * 838019321;
 		Class605.anInt5392 = client.anInt3482 * 1421413329;
 		Class352.anInt4261 = client.anInt3465 * -367152769;
 		Class85.anInt283 = client.anInt3466 * -1351153991;
@@ -146,8 +146,8 @@ public final class Class103_Sub13 extends Class103 {
 	@OriginalMember(owner = "client!agi", name = "f", descriptor = "(I)V")
 	@Override
 	public void method19206(@OriginalArg(0) int arg0) {
-		client.anInt3463 = client.anInt3436 * 769322739;
-		client.anInt3464 = (client.anInt3436 + this.anInt956 * -1517948015) * 838019321;
+		client.anInt3463 = client.currentCycle * 769322739;
+		client.anInt3464 = (client.currentCycle + this.anInt956 * -1517948015) * 838019321;
 		Class605.anInt5392 = client.anInt3482 * 1421413329;
 		Class352.anInt4261 = client.anInt3465 * -367152769;
 		Class85.anInt283 = client.anInt3466 * -1351153991;
@@ -161,8 +161,8 @@ public final class Class103_Sub13 extends Class103 {
 	@OriginalMember(owner = "client!agi", name = "g", descriptor = "()V")
 	@Override
 	public void method19202() {
-		client.anInt3463 = client.anInt3436 * 769322739;
-		client.anInt3464 = (client.anInt3436 + this.anInt956 * -1517948015) * 838019321;
+		client.anInt3463 = client.currentCycle * 769322739;
+		client.anInt3464 = (client.currentCycle + this.anInt956 * -1517948015) * 838019321;
 		Class605.anInt5392 = client.anInt3482 * 1421413329;
 		Class352.anInt4261 = client.anInt3465 * -367152769;
 		Class85.anInt283 = client.anInt3466 * -1351153991;

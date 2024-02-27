@@ -41,10 +41,10 @@ public final class Class372 {
 	@OriginalMember(owner = "client!k", name = "api", descriptor = "(Lclient!yp;I)V")
 	static void method28407(@OriginalArg(0) Class690 arg0, @OriginalArg(1) int arg1) {
 		arg0.anInt5778 -= 1815275855;
-		if (Class160.aClass121_Sub1_2.method9702(166249686) != Class347.aClass347_7) {
+		if (BufferedSocket.aClass121_Sub1_2.method9702(166249686) != Class347.aClass347_7) {
 			throw new RuntimeException();
 		}
-		((Class20_Sub3) Class160.aClass121_Sub1_2.method9693(2137969723)).method16636(arg0.anIntArray525[arg0.anInt5778 * 1896589581], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2], (byte) -30);
+		((Class20_Sub3) BufferedSocket.aClass121_Sub1_2.method9693(2137969723)).method16636(arg0.anIntArray525[arg0.anInt5778 * 1896589581], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2], (byte) -30);
 	}
 
 	@OriginalMember(owner = "client!k", name = "azj", descriptor = "(Lclient!yp;I)V")

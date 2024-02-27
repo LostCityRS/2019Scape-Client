@@ -188,10 +188,10 @@ public final class Class679 {
 
 	@OriginalMember(owner = "client!yd", name = "ax", descriptor = "(Lclient!asa;I)V")
 	static void method33623(@OriginalArg(0) PacketBit arg0, @OriginalArg(1) int arg1) {
-		@Pc(2) Class32[] local2 = Class337.method27878(1165208272);
+		@Pc(2) Class32[] local2 = Class32.all(1165208272);
 		for (@Pc(4) int local4 = 0; local4 < local2.length; local4++) {
 			@Pc(12) Class32 local12 = local2[local4];
-			if (Class32.aClass32_27 != local12) {
+			if (Class32.js5Archive32 != local12) {
 				@Pc(21) Class480 local21 = (Class480) Class673.aMap22.get(local12);
 				if (local21 == null) {
 					arg0.p4(0);

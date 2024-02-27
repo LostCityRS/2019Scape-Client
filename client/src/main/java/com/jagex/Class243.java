@@ -12,7 +12,7 @@ public final class Class243 {
 	Interface20 anInterface20_1;
 
 	@OriginalMember(owner = "client!ej", name = "u", descriptor = "Lclient!aaa;")
-	Class3 aClass3_13;
+	SecondaryLinkedList aSecondaryLinkedList_13;
 
 	@OriginalMember(owner = "client!ej", name = "t", descriptor = "I")
 	int anInt3860;
@@ -50,7 +50,7 @@ public final class Class243 {
 
 	@OriginalMember(owner = "client!ej", name = "<init>", descriptor = "(II)V")
 	public Class243(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		this.aClass3_13 = new Class3();
+		this.aSecondaryLinkedList_13 = new SecondaryLinkedList();
 		this.anInt3860 = arg0 * -809765537;
 		this.anInt3859 = arg0 * 923192057;
 		@Pc(18) int local18;
@@ -66,19 +66,19 @@ public final class Class243 {
 
 	@OriginalMember(owner = "client!ej", name = "i", descriptor = "(IB)V")
 	public void method26247(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1) {
-		for (@Pc(5) Class80_Sub1_Sub16 local5 = (Class80_Sub1_Sub16) this.aClass3_13.method50((byte) 20); local5 != null; local5 = (Class80_Sub1_Sub16) this.aClass3_13.method46((byte) -102)) {
+		for (@Pc(5) Class80_Sub1_Sub16 local5 = (Class80_Sub1_Sub16) this.aSecondaryLinkedList_13.head((byte) 20); local5 != null; local5 = (Class80_Sub1_Sub16) this.aSecondaryLinkedList_13.next((byte) -102)) {
 			if (local5.method24077((byte) 9)) {
 				if (local5.method24083(1431977934) == null) {
 					local5.method24395((byte) 18);
-					local5.method24406(Integer.MIN_VALUE);
+					local5.unlinkSecondary(Integer.MIN_VALUE);
 					this.anInt3859 += local5.anInt3267 * 98561721;
 				}
-			} else if ((local5.aLong340 += -4191731634426926145L) * 4203303297430504511L > (long) arg0) {
+			} else if ((local5.dualKey += -4191731634426926145L) * 4203303297430504511L > (long) arg0) {
 				@Pc(56) Class80_Sub1_Sub16_Sub2 local56 = new Class80_Sub1_Sub16_Sub2(local5.method24083(1136664039), local5.anInt3267 * -726568511);
 				this.aClass24_23.method563(local56, local5.aLong338 * 3209506792906532031L);
 				Class653.method33145(local56, local5, 191527309);
 				local5.method24395((byte) 13);
-				local5.method24406(-2147483646);
+				local5.unlinkSecondary(-2147483646);
 			}
 		}
 	}
@@ -108,7 +108,7 @@ public final class Class243 {
 	void method26252(@OriginalArg(0) Class80_Sub1_Sub16 arg0, @OriginalArg(1) int arg1) {
 		if (arg0 != null) {
 			arg0.method24395((byte) 85);
-			arg0.method24406(-2147483641);
+			arg0.unlinkSecondary(-2147483641);
 			this.anInt3859 += arg0.anInt3267 * 98561721;
 		}
 	}
@@ -126,7 +126,7 @@ public final class Class243 {
 		this.method26251(arg1);
 		this.anInt3859 -= arg2 * 923192057;
 		while (this.anInt3859 * -1801332919 < 0) {
-			@Pc(31) Class80_Sub1_Sub16 local31 = (Class80_Sub1_Sub16) this.aClass3_13.method67(-1701292623);
+			@Pc(31) Class80_Sub1_Sub16 local31 = (Class80_Sub1_Sub16) this.aSecondaryLinkedList_13.method67(-1701292623);
 			if (local31 == null) {
 				throw new RuntimeException("");
 			}
@@ -139,8 +139,8 @@ public final class Class243 {
 		}
 		@Pc(63) Class80_Sub1_Sub16_Sub1 local63 = new Class80_Sub1_Sub16_Sub1(arg0, arg2);
 		this.aClass24_23.method563(local63, arg1);
-		this.aClass3_13.method42(local63, 1599142138);
-		local63.aLong340 = 0L;
+		this.aSecondaryLinkedList_13.addTail(local63, 1599142138);
+		local63.dualKey = 0L;
 	}
 
 	@OriginalMember(owner = "client!ej", name = "r", descriptor = "(Lclient!ei;)V")
@@ -150,7 +150,7 @@ public final class Class243 {
 
 	@OriginalMember(owner = "client!ej", name = "m", descriptor = "(I)V")
 	public void method26256(@OriginalArg(0) int arg0) {
-		this.aClass3_13.method41(-252802305);
+		this.aSecondaryLinkedList_13.method41(-252802305);
 		this.aClass24_23.method564(979681382);
 		this.anInt3859 = this.anInt3860 * 1732675239;
 	}
@@ -163,7 +163,7 @@ public final class Class243 {
 	@OriginalMember(owner = "client!ej", name = "a", descriptor = "(I)I")
 	public int method26258(@OriginalArg(0) int arg0) {
 		@Pc(1) int local1 = 0;
-		for (@Pc(7) Class80_Sub1_Sub16 local7 = (Class80_Sub1_Sub16) this.aClass3_13.method50((byte) -114); local7 != null; local7 = (Class80_Sub1_Sub16) this.aClass3_13.method46((byte) -102)) {
+		for (@Pc(7) Class80_Sub1_Sub16 local7 = (Class80_Sub1_Sub16) this.aSecondaryLinkedList_13.head((byte) -114); local7 != null; local7 = (Class80_Sub1_Sub16) this.aSecondaryLinkedList_13.next((byte) -102)) {
 			if (!local7.method24077((byte) 56)) {
 				local1++;
 			}
@@ -173,10 +173,10 @@ public final class Class243 {
 
 	@OriginalMember(owner = "client!ej", name = "s", descriptor = "(B)V")
 	public void method26259(@OriginalArg(0) byte arg0) {
-		for (@Pc(5) Class80_Sub1_Sub16 local5 = (Class80_Sub1_Sub16) this.aClass3_13.method50((byte) -35); local5 != null; local5 = (Class80_Sub1_Sub16) this.aClass3_13.method46((byte) -102)) {
+		for (@Pc(5) Class80_Sub1_Sub16 local5 = (Class80_Sub1_Sub16) this.aSecondaryLinkedList_13.head((byte) -35); local5 != null; local5 = (Class80_Sub1_Sub16) this.aSecondaryLinkedList_13.next((byte) -102)) {
 			if (local5.method24077((byte) 111)) {
 				local5.method24395((byte) 99);
-				local5.method24406(-2147483642);
+				local5.unlinkSecondary(-2147483642);
 				this.anInt3859 += local5.anInt3267 * 98561721;
 			}
 		}
@@ -189,10 +189,10 @@ public final class Class243 {
 
 	@OriginalMember(owner = "client!ej", name = "af", descriptor = "()V")
 	public void method26261() {
-		for (@Pc(5) Class80_Sub1_Sub16 local5 = (Class80_Sub1_Sub16) this.aClass3_13.method50((byte) -61); local5 != null; local5 = (Class80_Sub1_Sub16) this.aClass3_13.method46((byte) -102)) {
+		for (@Pc(5) Class80_Sub1_Sub16 local5 = (Class80_Sub1_Sub16) this.aSecondaryLinkedList_13.head((byte) -61); local5 != null; local5 = (Class80_Sub1_Sub16) this.aSecondaryLinkedList_13.next((byte) -102)) {
 			if (local5.method24077((byte) 125)) {
 				local5.method24395((byte) 14);
-				local5.method24406(-2147483642);
+				local5.unlinkSecondary(-2147483642);
 				this.anInt3859 += local5.anInt3267 * 98561721;
 			}
 		}
@@ -214,7 +214,7 @@ public final class Class243 {
 			@Pc(16) Class80_Sub1_Sub16 local16 = local5;
 			local5 = (Class80_Sub1_Sub16) this.aClass24_23.method566((byte) 7);
 			local16.method24395((byte) 83);
-			local16.method24406(-2147483642);
+			local16.unlinkSecondary(-2147483642);
 			this.anInt3859 += local16.anInt3267 * 98561721;
 		}
 		return null;
@@ -234,20 +234,20 @@ public final class Class243 {
 		@Pc(13) Object local13 = local5.method24083(1492515577);
 		if (local13 == null) {
 			local5.method24395((byte) 16);
-			local5.method24406(-2147483640);
+			local5.unlinkSecondary(-2147483640);
 			this.anInt3859 += local5.anInt3267 * 98561721;
 			return null;
 		}
 		if (local5.method24077((byte) 57)) {
 			@Pc(46) Class80_Sub1_Sub16_Sub1 local46 = new Class80_Sub1_Sub16_Sub1(local13, local5.anInt3267 * -726568511);
 			this.aClass24_23.method563(local46, local5.aLong338 * 3209506792906532031L);
-			this.aClass3_13.method42(local46, 1599142138);
-			local46.aLong340 = 0L;
+			this.aSecondaryLinkedList_13.addTail(local46, 1599142138);
+			local46.dualKey = 0L;
 			local5.method24395((byte) 110);
-			local5.method24406(-2147483640);
+			local5.unlinkSecondary(-2147483640);
 		} else {
-			this.aClass3_13.method42(local5, 1599142138);
-			local5.aLong340 = 0L;
+			this.aSecondaryLinkedList_13.addTail(local5, 1599142138);
+			local5.dualKey = 0L;
 		}
 		return local13;
 	}
@@ -261,20 +261,20 @@ public final class Class243 {
 		@Pc(13) Object local13 = local5.method24083(2111785577);
 		if (local13 == null) {
 			local5.method24395((byte) 41);
-			local5.method24406(-2147483646);
+			local5.unlinkSecondary(-2147483646);
 			this.anInt3859 += local5.anInt3267 * 98561721;
 			return null;
 		}
 		if (local5.method24077((byte) 14)) {
 			@Pc(46) Class80_Sub1_Sub16_Sub1 local46 = new Class80_Sub1_Sub16_Sub1(local13, local5.anInt3267 * -726568511);
 			this.aClass24_23.method563(local46, local5.aLong338 * 3209506792906532031L);
-			this.aClass3_13.method42(local46, 1599142138);
-			local46.aLong340 = 0L;
+			this.aSecondaryLinkedList_13.addTail(local46, 1599142138);
+			local46.dualKey = 0L;
 			local5.method24395((byte) 104);
-			local5.method24406(-2147483644);
+			local5.unlinkSecondary(-2147483644);
 		} else {
-			this.aClass3_13.method42(local5, 1599142138);
-			local5.aLong340 = 0L;
+			this.aSecondaryLinkedList_13.addTail(local5, 1599142138);
+			local5.dualKey = 0L;
 		}
 		return local13;
 	}
@@ -288,20 +288,20 @@ public final class Class243 {
 		@Pc(13) Object local13 = local5.method24083(2030622721);
 		if (local13 == null) {
 			local5.method24395((byte) 66);
-			local5.method24406(-2147483646);
+			local5.unlinkSecondary(-2147483646);
 			this.anInt3859 += local5.anInt3267 * 98561721;
 			return null;
 		}
 		if (local5.method24077((byte) 99)) {
 			@Pc(46) Class80_Sub1_Sub16_Sub1 local46 = new Class80_Sub1_Sub16_Sub1(local13, local5.anInt3267 * -726568511);
 			this.aClass24_23.method563(local46, local5.aLong338 * 3209506792906532031L);
-			this.aClass3_13.method42(local46, 1599142138);
-			local46.aLong340 = 0L;
+			this.aSecondaryLinkedList_13.addTail(local46, 1599142138);
+			local46.dualKey = 0L;
 			local5.method24395((byte) 87);
-			local5.method24406(-2147483643);
+			local5.unlinkSecondary(-2147483643);
 		} else {
-			this.aClass3_13.method42(local5, 1599142138);
-			local5.aLong340 = 0L;
+			this.aSecondaryLinkedList_13.addTail(local5, 1599142138);
+			local5.dualKey = 0L;
 		}
 		return local13;
 	}
@@ -322,7 +322,7 @@ public final class Class243 {
 	void method26270(@OriginalArg(0) Class80_Sub1_Sub16 arg0) {
 		if (arg0 != null) {
 			arg0.method24395((byte) 112);
-			arg0.method24406(-2147483646);
+			arg0.unlinkSecondary(-2147483646);
 			this.anInt3859 += arg0.anInt3267 * 98561721;
 		}
 	}
@@ -331,7 +331,7 @@ public final class Class243 {
 	void method26271(@OriginalArg(0) Class80_Sub1_Sub16 arg0) {
 		if (arg0 != null) {
 			arg0.method24395((byte) 9);
-			arg0.method24406(Integer.MIN_VALUE);
+			arg0.unlinkSecondary(Integer.MIN_VALUE);
 			this.anInt3859 += arg0.anInt3267 * 98561721;
 		}
 	}
@@ -344,7 +344,7 @@ public final class Class243 {
 		this.method26251(arg1);
 		this.anInt3859 -= arg2 * 923192057;
 		while (this.anInt3859 * -1801332919 < 0) {
-			@Pc(31) Class80_Sub1_Sub16 local31 = (Class80_Sub1_Sub16) this.aClass3_13.method67(-998431199);
+			@Pc(31) Class80_Sub1_Sub16 local31 = (Class80_Sub1_Sub16) this.aSecondaryLinkedList_13.method67(-998431199);
 			if (local31 == null) {
 				throw new RuntimeException("");
 			}
@@ -357,8 +357,8 @@ public final class Class243 {
 		}
 		@Pc(63) Class80_Sub1_Sub16_Sub1 local63 = new Class80_Sub1_Sub16_Sub1(arg0, arg2);
 		this.aClass24_23.method563(local63, arg1);
-		this.aClass3_13.method42(local63, 1599142138);
-		local63.aLong340 = 0L;
+		this.aSecondaryLinkedList_13.addTail(local63, 1599142138);
+		local63.dualKey = 0L;
 	}
 
 	@OriginalMember(owner = "client!ej", name = "b", descriptor = "(Ljava/lang/Object;JI)V")
@@ -369,7 +369,7 @@ public final class Class243 {
 		this.method26251(arg1);
 		this.anInt3859 -= arg2 * 923192057;
 		while (this.anInt3859 * -1801332919 < 0) {
-			@Pc(31) Class80_Sub1_Sub16 local31 = (Class80_Sub1_Sub16) this.aClass3_13.method67(-157380689);
+			@Pc(31) Class80_Sub1_Sub16 local31 = (Class80_Sub1_Sub16) this.aSecondaryLinkedList_13.method67(-157380689);
 			if (local31 == null) {
 				throw new RuntimeException("");
 			}
@@ -382,89 +382,89 @@ public final class Class243 {
 		}
 		@Pc(63) Class80_Sub1_Sub16_Sub1 local63 = new Class80_Sub1_Sub16_Sub1(arg0, arg2);
 		this.aClass24_23.method563(local63, arg1);
-		this.aClass3_13.method42(local63, 1599142138);
-		local63.aLong340 = 0L;
+		this.aSecondaryLinkedList_13.addTail(local63, 1599142138);
+		local63.dualKey = 0L;
 	}
 
 	@OriginalMember(owner = "client!ej", name = "ax", descriptor = "(I)V")
 	public void method26274(@OriginalArg(0) int arg0) {
-		for (@Pc(5) Class80_Sub1_Sub16 local5 = (Class80_Sub1_Sub16) this.aClass3_13.method50((byte) 31); local5 != null; local5 = (Class80_Sub1_Sub16) this.aClass3_13.method46((byte) -102)) {
+		for (@Pc(5) Class80_Sub1_Sub16 local5 = (Class80_Sub1_Sub16) this.aSecondaryLinkedList_13.head((byte) 31); local5 != null; local5 = (Class80_Sub1_Sub16) this.aSecondaryLinkedList_13.next((byte) -102)) {
 			if (local5.method24077((byte) 117)) {
 				if (local5.method24083(1442897376) == null) {
 					local5.method24395((byte) 66);
-					local5.method24406(-2147483643);
+					local5.unlinkSecondary(-2147483643);
 					this.anInt3859 += local5.anInt3267 * 98561721;
 				}
-			} else if ((local5.aLong340 += -4191731634426926145L) * 4203303297430504511L > (long) arg0) {
+			} else if ((local5.dualKey += -4191731634426926145L) * 4203303297430504511L > (long) arg0) {
 				@Pc(56) Class80_Sub1_Sub16_Sub2 local56 = new Class80_Sub1_Sub16_Sub2(local5.method24083(1466483816), local5.anInt3267 * -726568511);
 				this.aClass24_23.method563(local56, local5.aLong338 * 3209506792906532031L);
 				Class653.method33145(local56, local5, -643964363);
 				local5.method24395((byte) 43);
-				local5.method24406(Integer.MIN_VALUE);
+				local5.unlinkSecondary(Integer.MIN_VALUE);
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!ej", name = "ay", descriptor = "(I)V")
 	public void method26275(@OriginalArg(0) int arg0) {
-		for (@Pc(5) Class80_Sub1_Sub16 local5 = (Class80_Sub1_Sub16) this.aClass3_13.method50((byte) 74); local5 != null; local5 = (Class80_Sub1_Sub16) this.aClass3_13.method46((byte) -102)) {
+		for (@Pc(5) Class80_Sub1_Sub16 local5 = (Class80_Sub1_Sub16) this.aSecondaryLinkedList_13.head((byte) 74); local5 != null; local5 = (Class80_Sub1_Sub16) this.aSecondaryLinkedList_13.next((byte) -102)) {
 			if (local5.method24077((byte) 4)) {
 				if (local5.method24083(2065040954) == null) {
 					local5.method24395((byte) 22);
-					local5.method24406(-2147483646);
+					local5.unlinkSecondary(-2147483646);
 					this.anInt3859 += local5.anInt3267 * 98561721;
 				}
-			} else if ((local5.aLong340 += -4191731634426926145L) * 4203303297430504511L > (long) arg0) {
+			} else if ((local5.dualKey += -4191731634426926145L) * 4203303297430504511L > (long) arg0) {
 				@Pc(56) Class80_Sub1_Sub16_Sub2 local56 = new Class80_Sub1_Sub16_Sub2(local5.method24083(1284372645), local5.anInt3267 * -726568511);
 				this.aClass24_23.method563(local56, local5.aLong338 * 3209506792906532031L);
 				Class653.method33145(local56, local5, 537149134);
 				local5.method24395((byte) 66);
-				local5.method24406(-2147483647);
+				local5.unlinkSecondary(-2147483647);
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!ej", name = "ai", descriptor = "(I)V")
 	public void method26276(@OriginalArg(0) int arg0) {
-		for (@Pc(5) Class80_Sub1_Sub16 local5 = (Class80_Sub1_Sub16) this.aClass3_13.method50((byte) -53); local5 != null; local5 = (Class80_Sub1_Sub16) this.aClass3_13.method46((byte) -102)) {
+		for (@Pc(5) Class80_Sub1_Sub16 local5 = (Class80_Sub1_Sub16) this.aSecondaryLinkedList_13.head((byte) -53); local5 != null; local5 = (Class80_Sub1_Sub16) this.aSecondaryLinkedList_13.next((byte) -102)) {
 			if (local5.method24077((byte) 64)) {
 				if (local5.method24083(1594971793) == null) {
 					local5.method24395((byte) 110);
-					local5.method24406(-2147483647);
+					local5.unlinkSecondary(-2147483647);
 					this.anInt3859 += local5.anInt3267 * 98561721;
 				}
-			} else if ((local5.aLong340 += -4191731634426926145L) * 4203303297430504511L > (long) arg0) {
+			} else if ((local5.dualKey += -4191731634426926145L) * 4203303297430504511L > (long) arg0) {
 				@Pc(56) Class80_Sub1_Sub16_Sub2 local56 = new Class80_Sub1_Sub16_Sub2(local5.method24083(2139619403), local5.anInt3267 * -726568511);
 				this.aClass24_23.method563(local56, local5.aLong338 * 3209506792906532031L);
 				Class653.method33145(local56, local5, 317127973);
 				local5.method24395((byte) 60);
-				local5.method24406(Integer.MIN_VALUE);
+				local5.unlinkSecondary(Integer.MIN_VALUE);
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!ej", name = "aq", descriptor = "(I)V")
 	public void method26277(@OriginalArg(0) int arg0) {
-		for (@Pc(5) Class80_Sub1_Sub16 local5 = (Class80_Sub1_Sub16) this.aClass3_13.method50((byte) 88); local5 != null; local5 = (Class80_Sub1_Sub16) this.aClass3_13.method46((byte) -102)) {
+		for (@Pc(5) Class80_Sub1_Sub16 local5 = (Class80_Sub1_Sub16) this.aSecondaryLinkedList_13.head((byte) 88); local5 != null; local5 = (Class80_Sub1_Sub16) this.aSecondaryLinkedList_13.next((byte) -102)) {
 			if (local5.method24077((byte) 10)) {
 				if (local5.method24083(1194644026) == null) {
 					local5.method24395((byte) 108);
-					local5.method24406(-2147483644);
+					local5.unlinkSecondary(-2147483644);
 					this.anInt3859 += local5.anInt3267 * 98561721;
 				}
-			} else if ((local5.aLong340 += -4191731634426926145L) * 4203303297430504511L > (long) arg0) {
+			} else if ((local5.dualKey += -4191731634426926145L) * 4203303297430504511L > (long) arg0) {
 				@Pc(56) Class80_Sub1_Sub16_Sub2 local56 = new Class80_Sub1_Sub16_Sub2(local5.method24083(1387657915), local5.anInt3267 * -726568511);
 				this.aClass24_23.method563(local56, local5.aLong338 * 3209506792906532031L);
 				Class653.method33145(local56, local5, 1853031354);
 				local5.method24395((byte) 37);
-				local5.method24406(-2147483645);
+				local5.unlinkSecondary(-2147483645);
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!ej", name = "ao", descriptor = "()V")
 	public void method26278() {
-		this.aClass3_13.method41(-252802305);
+		this.aSecondaryLinkedList_13.method41(-252802305);
 		this.aClass24_23.method564(-843476475);
 		this.anInt3859 = this.anInt3860 * 1732675239;
 	}
@@ -482,7 +482,7 @@ public final class Class243 {
 	@OriginalMember(owner = "client!ej", name = "ah", descriptor = "()I")
 	public int method26281() {
 		@Pc(1) int local1 = 0;
-		for (@Pc(7) Class80_Sub1_Sub16 local7 = (Class80_Sub1_Sub16) this.aClass3_13.method50((byte) -22); local7 != null; local7 = (Class80_Sub1_Sub16) this.aClass3_13.method46((byte) -102)) {
+		for (@Pc(7) Class80_Sub1_Sub16 local7 = (Class80_Sub1_Sub16) this.aSecondaryLinkedList_13.head((byte) -22); local7 != null; local7 = (Class80_Sub1_Sub16) this.aSecondaryLinkedList_13.next((byte) -102)) {
 			if (!local7.method24077((byte) 41)) {
 				local1++;
 			}
@@ -499,20 +499,20 @@ public final class Class243 {
 		@Pc(13) Object local13 = local5.method24083(1709124058);
 		if (local13 == null) {
 			local5.method24395((byte) 21);
-			local5.method24406(-2147483644);
+			local5.unlinkSecondary(-2147483644);
 			this.anInt3859 += local5.anInt3267 * 98561721;
 			return null;
 		}
 		if (local5.method24077((byte) 47)) {
 			@Pc(46) Class80_Sub1_Sub16_Sub1 local46 = new Class80_Sub1_Sub16_Sub1(local13, local5.anInt3267 * -726568511);
 			this.aClass24_23.method563(local46, local5.aLong338 * 3209506792906532031L);
-			this.aClass3_13.method42(local46, 1599142138);
-			local46.aLong340 = 0L;
+			this.aSecondaryLinkedList_13.addTail(local46, 1599142138);
+			local46.dualKey = 0L;
 			local5.method24395((byte) 36);
-			local5.method24406(-2147483647);
+			local5.unlinkSecondary(-2147483647);
 		} else {
-			this.aClass3_13.method42(local5, 1599142138);
-			local5.aLong340 = 0L;
+			this.aSecondaryLinkedList_13.addTail(local5, 1599142138);
+			local5.dualKey = 0L;
 		}
 		return local13;
 	}
@@ -520,7 +520,7 @@ public final class Class243 {
 	@OriginalMember(owner = "client!ej", name = "al", descriptor = "()I")
 	public int method26283() {
 		@Pc(1) int local1 = 0;
-		for (@Pc(7) Class80_Sub1_Sub16 local7 = (Class80_Sub1_Sub16) this.aClass3_13.method50((byte) -50); local7 != null; local7 = (Class80_Sub1_Sub16) this.aClass3_13.method46((byte) -102)) {
+		for (@Pc(7) Class80_Sub1_Sub16 local7 = (Class80_Sub1_Sub16) this.aSecondaryLinkedList_13.head((byte) -50); local7 != null; local7 = (Class80_Sub1_Sub16) this.aSecondaryLinkedList_13.next((byte) -102)) {
 			if (!local7.method24077((byte) 57)) {
 				local1++;
 			}
@@ -539,7 +539,7 @@ public final class Class243 {
 			@Pc(17) Class80_Sub1_Sub16 local17 = local5;
 			local5 = (Class80_Sub1_Sub16) this.aClass24_23.method566((byte) 7);
 			local17.method24395((byte) 25);
-			local17.method24406(-2147483646);
+			local17.unlinkSecondary(-2147483646);
 			this.anInt3859 += local17.anInt3267 * 98561721;
 		}
 		return null;
@@ -556,7 +556,7 @@ public final class Class243 {
 			@Pc(17) Class80_Sub1_Sub16 local17 = local5;
 			local5 = (Class80_Sub1_Sub16) this.aClass24_23.method566((byte) 7);
 			local17.method24395((byte) 118);
-			local17.method24406(-2147483647);
+			local17.unlinkSecondary(-2147483647);
 			this.anInt3859 += local17.anInt3267 * 98561721;
 		}
 		return null;
@@ -564,10 +564,10 @@ public final class Class243 {
 
 	@OriginalMember(owner = "client!ej", name = "ak", descriptor = "()V")
 	public void method26286() {
-		for (@Pc(5) Class80_Sub1_Sub16 local5 = (Class80_Sub1_Sub16) this.aClass3_13.method50((byte) -38); local5 != null; local5 = (Class80_Sub1_Sub16) this.aClass3_13.method46((byte) -102)) {
+		for (@Pc(5) Class80_Sub1_Sub16 local5 = (Class80_Sub1_Sub16) this.aSecondaryLinkedList_13.head((byte) -38); local5 != null; local5 = (Class80_Sub1_Sub16) this.aSecondaryLinkedList_13.next((byte) -102)) {
 			if (local5.method24077((byte) 10)) {
 				local5.method24395((byte) 114);
-				local5.method24406(-2147483642);
+				local5.unlinkSecondary(-2147483642);
 				this.anInt3859 += local5.anInt3267 * 98561721;
 			}
 		}
@@ -584,7 +584,7 @@ public final class Class243 {
 			@Pc(17) Class80_Sub1_Sub16 local17 = local5;
 			local5 = (Class80_Sub1_Sub16) this.aClass24_23.method566((byte) 7);
 			local17.method24395((byte) 94);
-			local17.method24406(-2147483642);
+			local17.unlinkSecondary(-2147483642);
 			this.anInt3859 += local17.anInt3267 * 98561721;
 		}
 		return null;
@@ -592,10 +592,10 @@ public final class Class243 {
 
 	@OriginalMember(owner = "client!ej", name = "am", descriptor = "()V")
 	public void method26288() {
-		for (@Pc(5) Class80_Sub1_Sub16 local5 = (Class80_Sub1_Sub16) this.aClass3_13.method50((byte) -89); local5 != null; local5 = (Class80_Sub1_Sub16) this.aClass3_13.method46((byte) -102)) {
+		for (@Pc(5) Class80_Sub1_Sub16 local5 = (Class80_Sub1_Sub16) this.aSecondaryLinkedList_13.head((byte) -89); local5 != null; local5 = (Class80_Sub1_Sub16) this.aSecondaryLinkedList_13.next((byte) -102)) {
 			if (local5.method24077((byte) 58)) {
 				local5.method24395((byte) 66);
-				local5.method24406(-2147483647);
+				local5.unlinkSecondary(-2147483647);
 				this.anInt3859 += local5.anInt3267 * 98561721;
 			}
 		}
@@ -612,7 +612,7 @@ public final class Class243 {
 			@Pc(17) Class80_Sub1_Sub16 local17 = local5;
 			local5 = (Class80_Sub1_Sub16) this.aClass24_23.method566((byte) 7);
 			local17.method24395((byte) 98);
-			local17.method24406(-2147483646);
+			local17.unlinkSecondary(-2147483646);
 			this.anInt3859 += local17.anInt3267 * 98561721;
 		}
 		return null;
@@ -629,7 +629,7 @@ public final class Class243 {
 			@Pc(16) Class80_Sub1_Sub16 local16 = local5;
 			local5 = (Class80_Sub1_Sub16) this.aClass24_23.method566((byte) 7);
 			local16.method24395((byte) 49);
-			local16.method24406(-2147483642);
+			local16.unlinkSecondary(-2147483642);
 			this.anInt3859 += local16.anInt3267 * 98561721;
 		}
 		return null;
@@ -646,7 +646,7 @@ public final class Class243 {
 			@Pc(16) Class80_Sub1_Sub16 local16 = local5;
 			local5 = (Class80_Sub1_Sub16) this.aClass24_23.method566((byte) 7);
 			local16.method24395((byte) 73);
-			local16.method24406(-2147483645);
+			local16.unlinkSecondary(-2147483645);
 			this.anInt3859 += local16.anInt3267 * 98561721;
 		}
 		return null;
@@ -663,7 +663,7 @@ public final class Class243 {
 			@Pc(16) Class80_Sub1_Sub16 local16 = local5;
 			local5 = (Class80_Sub1_Sub16) this.aClass24_23.method566((byte) 7);
 			local16.method24395((byte) 53);
-			local16.method24406(-2147483645);
+			local16.unlinkSecondary(-2147483645);
 			this.anInt3859 += local16.anInt3267 * 98561721;
 		}
 		return null;
@@ -680,7 +680,7 @@ public final class Class243 {
 			@Pc(16) Class80_Sub1_Sub16 local16 = local5;
 			local5 = (Class80_Sub1_Sub16) this.aClass24_23.method566((byte) 7);
 			local16.method24395((byte) 87);
-			local16.method24406(-2147483641);
+			local16.unlinkSecondary(-2147483641);
 			this.anInt3859 += local16.anInt3267 * 98561721;
 		}
 		return null;
@@ -697,7 +697,7 @@ public final class Class243 {
 			@Pc(16) Class80_Sub1_Sub16 local16 = local5;
 			local5 = (Class80_Sub1_Sub16) this.aClass24_23.method566((byte) 7);
 			local16.method24395((byte) 7);
-			local16.method24406(-2147483645);
+			local16.unlinkSecondary(-2147483645);
 			this.anInt3859 += local16.anInt3267 * 98561721;
 		}
 		return null;

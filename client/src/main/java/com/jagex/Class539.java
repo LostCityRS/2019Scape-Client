@@ -167,9 +167,9 @@ public final class Class539 {
 	static void method31037(@OriginalArg(0) Class120_Sub1_Sub1_Sub1 arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) byte arg2) {
 		@Pc(2) int local2 = Class712.aClass712_4.aByte165;
 		@Pc(4) int local4 = 0;
-		if (arg0.anInt2688 * -1881785185 > client.anInt3436) {
+		if (arg0.anInt2688 * -1881785185 > client.currentCycle) {
 			Class63.method1219(arg0, (byte) 3);
-		} else if (arg0.anInt2689 * 1790159189 >= client.anInt3436) {
+		} else if (arg0.anInt2689 * 1790159189 >= client.currentCycle) {
 			Class475.method29885(arg0, 715719102);
 		} else {
 			Class250.method26357(arg0, arg1, -1950121435);
@@ -992,11 +992,11 @@ public final class Class539 {
 						client.aClass24_18.method563(local210, (long) local95);
 						client.aClass80_Sub19Array1[(client.anInt3452 += -382054833) * -340916049 - 1] = local210;
 						client.anIntArray304[(client.anInt3453 += 192683631) * -1702559601 - 1] = local95;
-						local200.anInt2694 = client.anInt3436 * -265248265;
+						local200.anInt2694 = client.currentCycle * -265248265;
 						local200.method18794(local155, -313911151);
 						local200.method18984(local200.aClass335_1.anInt4212 * 1573297955, (byte) 76);
 						local200.anInt2697 = (local200.aClass335_1.anInt4209 * -2090808675 << 3) * 77355267;
-						local200.method18986(local200.aClass335_1.aClass716_1.method37222(1817877952).method37268() << 11 & 0x3FFF, true, (byte) -10);
+						local200.method18986(local200.aClass335_1.aClass716_1.method37222(1817877952).getId() << 11 & 0x3FFF, true, (byte) -10);
 						local200.method18792(local103, local130, local147, true, local200.method18966((byte) -106), 1675811585);
 					}
 				}
@@ -1074,7 +1074,7 @@ public final class Class539 {
 			Class249.method26348(false, -195610425);
 		}
 		if (-8057110165237688949L * this.aLong393 == -1L) {
-			this.aLong393 = Class303.method27111((byte) 61) * 1390528405935974947L;
+			this.aLong393 = Class303.currentTimeMillis((byte) 61) * 1390528405935974947L;
 		}
 		this.anInt5093 = 0;
 		@Pc(23) int local23;
@@ -1154,8 +1154,8 @@ public final class Class539 {
 		}
 		if (this.anInt5098 * 856004103 > 0) {
 			if (this.anInt5098 * 856004103 != local23) {
-				this.anInt5097 = client.anInt3436 * -1358506661;
-			} else if (this.anInt5097 * 2059752147 != 0 && client.anInt3436 - this.anInt5097 * 2059752147 == 1000) {
+				this.anInt5097 = client.currentCycle * -1358506661;
+			} else if (this.anInt5097 * 2059752147 != 0 && client.currentCycle - this.anInt5097 * 2059752147 == 1000) {
 				Class33.method739(local245.anInt5711 * 1757747911, local240.anInt5711 * 1757747911, this.anInt5098 * 856004103, 1078021321);
 				Class245.method26321(-315417534);
 			}
@@ -1318,7 +1318,7 @@ public final class Class539 {
 		}
 		this.aClass570_24.method31541(1728700029);
 		if (this.aBoolean893) {
-			Class303.method27111((byte) 23);
+			Class303.currentTimeMillis((byte) 23);
 			while (!Class279.aClass102_9.method20757(263832171)) {
 				this.method31013(1, 2084420170);
 			}
@@ -1329,7 +1329,7 @@ public final class Class539 {
 			this.method30918(local1171, 201895104);
 			Class39.aClass540_1.method31043(local1171, -126079334);
 			local1166 = true;
-			Class303.method27111((byte) 106);
+			Class303.currentTimeMillis((byte) 106);
 			@Pc(1187) Object local1187 = client.anObject14;
 			synchronized (client.anObject14) {
 				client.aBoolean721 = true;
@@ -1380,7 +1380,7 @@ public final class Class539 {
 				}
 			}
 		}
-		@Pc(1417) long local1417 = Class303.method27111((byte) 125) - this.aLong393 * -8057110165237688949L;
+		@Pc(1417) long local1417 = Class303.currentTimeMillis((byte) 125) - this.aLong393 * -8057110165237688949L;
 		if (client.anInt3433 * 1994758437 == 10) {
 			Class604.method32148(4, 946775093);
 		} else if (client.anInt3433 * 1994758437 == 6) {
@@ -1398,7 +1398,7 @@ public final class Class539 {
 			}
 		}
 		if (this.aBoolean894) {
-			Class294.method26961(Long.toString(Class303.method27111((byte) 106) - this.aLong392 * 7999054236944666629L), 1455295997);
+			Class294.method26961(Long.toString(Class303.currentTimeMillis((byte) 106) - this.aLong392 * 7999054236944666629L), 1455295997);
 			this.aBoolean894 = false;
 		}
 		if (local1166) {
@@ -3149,7 +3149,7 @@ public final class Class539 {
 			Class249.method26348(false, -1844651223);
 		}
 		if (-8057110165237688949L * this.aLong393 == -1L) {
-			this.aLong393 = Class303.method27111((byte) 98) * 1390528405935974947L;
+			this.aLong393 = Class303.currentTimeMillis((byte) 98) * 1390528405935974947L;
 		}
 		this.anInt5093 = 0;
 		@Pc(23) int local23;
@@ -3229,8 +3229,8 @@ public final class Class539 {
 		}
 		if (this.anInt5098 * 856004103 > 0) {
 			if (this.anInt5098 * 856004103 != local23) {
-				this.anInt5097 = client.anInt3436 * -1358506661;
-			} else if (this.anInt5097 * 2059752147 != 0 && client.anInt3436 - this.anInt5097 * 2059752147 == 1000) {
+				this.anInt5097 = client.currentCycle * -1358506661;
+			} else if (this.anInt5097 * 2059752147 != 0 && client.currentCycle - this.anInt5097 * 2059752147 == 1000) {
 				Class33.method739(local245.anInt5711 * 1757747911, local240.anInt5711 * 1757747911, this.anInt5098 * 856004103, -369572300);
 				Class245.method26321(-1109893460);
 			}
@@ -3393,7 +3393,7 @@ public final class Class539 {
 		}
 		this.aClass570_24.method31541(1221749237);
 		if (this.aBoolean893) {
-			Class303.method27111((byte) 8);
+			Class303.currentTimeMillis((byte) 8);
 			while (!Class279.aClass102_9.method20757(319993543)) {
 				this.method31013(1, 2126622399);
 			}
@@ -3404,7 +3404,7 @@ public final class Class539 {
 			this.method30918(local1171, 950763370);
 			Class39.aClass540_1.method31043(local1171, -126079334);
 			local1166 = true;
-			Class303.method27111((byte) 66);
+			Class303.currentTimeMillis((byte) 66);
 			@Pc(1187) Object local1187 = client.anObject14;
 			synchronized (client.anObject14) {
 				client.aBoolean721 = true;
@@ -3455,7 +3455,7 @@ public final class Class539 {
 				}
 			}
 		}
-		@Pc(1417) long local1417 = Class303.method27111((byte) 57) - this.aLong393 * -8057110165237688949L;
+		@Pc(1417) long local1417 = Class303.currentTimeMillis((byte) 57) - this.aLong393 * -8057110165237688949L;
 		if (client.anInt3433 * 1994758437 == 10) {
 			Class604.method32148(4, 323203092);
 		} else if (client.anInt3433 * 1994758437 == 6) {
@@ -3473,7 +3473,7 @@ public final class Class539 {
 			}
 		}
 		if (this.aBoolean894) {
-			Class294.method26961(Long.toString(Class303.method27111((byte) 112) - this.aLong392 * 7999054236944666629L), 1455295997);
+			Class294.method26961(Long.toString(Class303.currentTimeMillis((byte) 112) - this.aLong392 * 7999054236944666629L), 1455295997);
 			this.aBoolean894 = false;
 		}
 		if (local1166) {
@@ -3841,11 +3841,11 @@ public final class Class539 {
 						client.aClass24_18.method563(local210, (long) local95);
 						client.aClass80_Sub19Array1[(client.anInt3452 += -382054833) * -340916049 - 1] = local210;
 						client.anIntArray304[(client.anInt3453 += 192683631) * -1702559601 - 1] = local95;
-						local200.anInt2694 = client.anInt3436 * -265248265;
+						local200.anInt2694 = client.currentCycle * -265248265;
 						local200.method18794(local155, -1135283639);
 						local200.method18984(local200.aClass335_1.anInt4212 * 1573297955, (byte) 31);
 						local200.anInt2697 = (local200.aClass335_1.anInt4209 * -2090808675 << 3) * 77355267;
-						local200.method18986(local200.aClass335_1.aClass716_1.method37222(1897117730).method37268() << 11 & 0x3FFF, true, (byte) -23);
+						local200.method18986(local200.aClass335_1.aClass716_1.method37222(1897117730).getId() << 11 & 0x3FFF, true, (byte) -23);
 						local200.method18792(local103, local130, local147, true, local200.method18966((byte) -52), 5224428);
 					}
 				}
@@ -3888,11 +3888,11 @@ public final class Class539 {
 						client.aClass24_18.method563(local210, (long) local95);
 						client.aClass80_Sub19Array1[(client.anInt3452 += -382054833) * -340916049 - 1] = local210;
 						client.anIntArray304[(client.anInt3453 += 192683631) * -1702559601 - 1] = local95;
-						local200.anInt2694 = client.anInt3436 * -265248265;
+						local200.anInt2694 = client.currentCycle * -265248265;
 						local200.method18794(local155, -1573244012);
 						local200.method18984(local200.aClass335_1.anInt4212 * 1573297955, (byte) 73);
 						local200.anInt2697 = (local200.aClass335_1.anInt4209 * -2090808675 << 3) * 77355267;
-						local200.method18986(local200.aClass335_1.aClass716_1.method37222(1985099968).method37268() << 11 & 0x3FFF, true, (byte) -67);
+						local200.method18986(local200.aClass335_1.aClass716_1.method37222(1985099968).getId() << 11 & 0x3FFF, true, (byte) -67);
 						local200.method18792(local103, local130, local147, true, local200.method18966((byte) -89), 963188324);
 					}
 				}

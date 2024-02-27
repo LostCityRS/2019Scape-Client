@@ -156,10 +156,10 @@ public final class Class635 {
 
 	@OriginalMember(owner = "client!wf", name = "aob", descriptor = "(Lclient!yp;I)V")
 	static void method32819(@OriginalArg(0) Class690 arg0, @OriginalArg(1) int arg1) {
-		if (!Class160.aClass121_Sub1_2.method9702(2068730857).method27979(-1617893387)) {
+		if (!BufferedSocket.aClass121_Sub1_2.method9702(2068730857).method27979(-1617893387)) {
 			throw new RuntimeException();
 		}
-		@Pc(14) Class20_Sub4 local14 = (Class20_Sub4) Class160.aClass121_Sub1_2.method9693(2026282360);
+		@Pc(14) Class20_Sub4 local14 = (Class20_Sub4) BufferedSocket.aClass121_Sub1_2.method9693(2026282360);
 		local14.method23097(Class524.aClass485_2, -1, 0.0F, -1517893935);
 		client.aBoolean726 = true;
 	}

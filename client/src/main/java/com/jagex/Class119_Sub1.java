@@ -105,10 +105,10 @@ public final class Class119_Sub1 extends Class119 {
 
 	@OriginalMember(owner = "client!aha", name = "apv", descriptor = "(Lclient!yp;B)V")
 	static void method8898(@OriginalArg(0) Class690 arg0, @OriginalArg(1) byte arg1) {
-		if (Class160.aClass121_Sub1_2.method9702(1533777672) != Class347.aClass347_7) {
+		if (BufferedSocket.aClass121_Sub1_2.method9702(1533777672) != Class347.aClass347_7) {
 			throw new RuntimeException();
 		}
-		((Class20_Sub3) Class160.aClass121_Sub1_2.method9693(1317479146)).method16662(arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581], -1581197789);
+		((Class20_Sub3) BufferedSocket.aClass121_Sub1_2.method9693(1317479146)).method16662(arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581], -1581197789);
 	}
 
 	@OriginalMember(owner = "client!aha", name = "fo", descriptor = "(ZB)V")

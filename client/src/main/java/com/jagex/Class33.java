@@ -21,12 +21,12 @@ public final class Class33 implements Interface4 {
 
 	@OriginalMember(owner = "client!abg", name = "u", descriptor = "(IIII)V")
 	public static void method739(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		Class130_Sub1.method10205(new Class58_Sub1(arg0, arg1, arg2, client.anInt3583 * 292509161, Class108_Sub2.aClass139_8.anInt1250 * -1981136693, Class108_Sub2.aClass139_8.anInt1251 * 861114341, Class108_Sub2.aClass139_8.method10788((short) -2892), Class108_Sub2.aClass139_8.method10764((byte) 119), Class504.aClass495_3.method30298(527183928)), (byte) -105);
+		Class130_Sub1.method10205(new Class58_Sub1(arg0, arg1, arg2, client.js5ConnectState * 292509161, client.js5NetQueue.errorCount * -1981136693, client.js5NetQueue.errorCode * 861114341, client.js5NetQueue.isRequestQueueFull((short) -2892), client.js5NetQueue.method10764((byte) 119), Class504.aClass495_3.method30298(527183928)), (byte) -105);
 	}
 
 	@OriginalMember(owner = "client!abg", name = "ih", descriptor = "(B)V")
 	static void method740(@OriginalArg(0) byte arg0) {
-		Class411.method28964(Class279.aClass102_9, (long) client.anInt3436);
+		Class411.method28964(Class279.aClass102_9, (long) client.currentCycle);
 		if (client.anInt3460 * 1849344509 != -1) {
 			Class489.method30219(client.anInt3460 * 1849344509, 108158930);
 		}
@@ -35,7 +35,7 @@ public final class Class33 implements Interface4 {
 			client.aBooleanArray20[local15] = client.aBooleanArray19[local15];
 			client.aBooleanArray19[local15] = false;
 		}
-		client.anInt3560 = client.anInt3436 * -1141210301;
+		client.anInt3560 = client.currentCycle * -1141210301;
 		if (client.anInt3460 * 1849344509 != -1) {
 			client.anInt3530 = 0;
 			Class294.method26966((byte) -24);

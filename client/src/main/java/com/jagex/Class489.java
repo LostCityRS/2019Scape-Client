@@ -32,7 +32,7 @@ public final class Class489 {
 	Class489(@OriginalArg(0) Packet arg0) {
 		this.aClass486_5 = (Class486) Class80_Sub39.method15030(Class486.method30060(-835819538), arg0.g1(), -1498480699);
 		this.anInt5014 = arg0.g4() * 956051035;
-		if (Class486.aClass486_4 == this.aClass486_5) {
+		if (Class486.UNCOMPRESSED == this.aClass486_5) {
 			this.anInt5013 = this.anInt5014 * 319576311;
 		} else {
 			this.anInt5013 = arg0.g4() * -1736179251;

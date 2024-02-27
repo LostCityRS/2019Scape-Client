@@ -153,7 +153,7 @@ public final class Class665 {
 		local75.aPacketBit_2.p1(Class350.method28013(local4.aString187, (short) 16383) + 7 + 1);
 		local75.aPacketBit_2.p1_alt3(arg0);
 		local75.aPacketBit_2.p4_alt1(arg1);
-		local75.aPacketBit_2.p1(local4.aClass322_7.method37268());
+		local75.aPacketBit_2.p1(local4.aClass322_7.getId());
 		local75.aPacketBit_2.pjstr(local4.aString187);
 		local75.aPacketBit_2.p2_alt1(arg2);
 		local45.method1325(local75, (byte) -112);
@@ -189,7 +189,7 @@ public final class Class665 {
 		if (this.anInt5696 * -197144923 < 0) {
 			return;
 		}
-		@Pc(7) long local7 = Class303.method27111((byte) 80);
+		@Pc(7) long local7 = Class303.currentTimeMillis((byte) 80);
 		this.anInt5696 = (int) ((long) this.anInt5696 - (local7 - this.aLong410 * 5338907152258984957L) * 557541677L);
 		if (this.anInt5696 * -197144923 > 0) {
 			this.aClass655_1.method33196(this.aClass102_14, this.aClass655_3, this.aClass655_4, (float) (this.anInt5694 * 1181116139 - this.anInt5696 * -197144923) / (float) (this.anInt5694 * 1181116139), 1105241497);
@@ -306,7 +306,7 @@ public final class Class665 {
 			return;
 		}
 		this.aClass655_4.method33199(arg0, (byte) 4);
-		this.aLong410 = Class303.method27111((byte) 89) * -4780949853486888619L;
+		this.aLong410 = Class303.currentTimeMillis((byte) 89) * -4780949853486888619L;
 		this.anInt5694 = (this.anInt5696 = arg1 * 557541677) * -83272529;
 		if (this.anInt5694 * 1181116139 == 0) {
 			return;
@@ -374,7 +374,7 @@ public final class Class665 {
 		if (this.anInt5696 * -197144923 < 0) {
 			return;
 		}
-		@Pc(7) long local7 = Class303.method27111((byte) 70);
+		@Pc(7) long local7 = Class303.currentTimeMillis((byte) 70);
 		this.anInt5696 = (int) ((long) this.anInt5696 - (local7 - this.aLong410 * 5338907152258984957L) * 557541677L);
 		if (this.anInt5696 * -197144923 > 0) {
 			this.aClass655_1.method33196(this.aClass102_14, this.aClass655_3, this.aClass655_4, (float) (this.anInt5694 * 1181116139 - this.anInt5696 * -197144923) / (float) (this.anInt5694 * 1181116139), -2104331351);
@@ -478,7 +478,7 @@ public final class Class665 {
 			return;
 		}
 		this.aClass655_4.method33199(arg0, (byte) 4);
-		this.aLong410 = Class303.method27111((byte) 118) * -4780949853486888619L;
+		this.aLong410 = Class303.currentTimeMillis((byte) 118) * -4780949853486888619L;
 		this.anInt5694 = (this.anInt5696 = arg1 * 557541677) * -83272529;
 		if (this.anInt5694 * 1181116139 == 0) {
 			return;
@@ -935,7 +935,7 @@ public final class Class665 {
 			return;
 		}
 		this.aClass655_4.method33199(arg0, (byte) 4);
-		this.aLong410 = Class303.method27111((byte) 14) * -4780949853486888619L;
+		this.aLong410 = Class303.currentTimeMillis((byte) 14) * -4780949853486888619L;
 		this.anInt5694 = (this.anInt5696 = arg1 * 557541677) * -83272529;
 		if (this.anInt5694 * 1181116139 == 0) {
 			return;
@@ -957,7 +957,7 @@ public final class Class665 {
 		if (this.anInt5696 * -197144923 < 0) {
 			return;
 		}
-		@Pc(7) long local7 = Class303.method27111((byte) 44);
+		@Pc(7) long local7 = Class303.currentTimeMillis((byte) 44);
 		this.anInt5696 = (int) ((long) this.anInt5696 - (local7 - this.aLong410 * 5338907152258984957L) * 557541677L);
 		if (this.anInt5696 * -197144923 > 0) {
 			this.aClass655_1.method33196(this.aClass102_14, this.aClass655_3, this.aClass655_4, (float) (this.anInt5694 * 1181116139 - this.anInt5696 * -197144923) / (float) (this.anInt5694 * 1181116139), 1152000006);

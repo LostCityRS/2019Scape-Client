@@ -82,8 +82,8 @@ public abstract class Class138 {
 			if (arg0.equalsIgnoreCase("getcamerapos")) {
 				@Pc(173) Class626 local173 = client.aClass539_1.method30893((byte) -50);
 				if (Class368.anInt4502 * -1583611537 == 3) {
-					@Pc(182) Class463 local182 = Class160.aClass121_Sub1_2.method9608(239311056);
-					@Pc(186) Class463 local186 = Class160.aClass121_Sub1_2.method9668(-1231992692);
+					@Pc(182) Class463 local182 = BufferedSocket.aClass121_Sub1_2.method9608(239311056);
+					@Pc(186) Class463 local186 = BufferedSocket.aClass121_Sub1_2.method9668(-1231992692);
 					Class294.method26961("Pos: " + (new Class626(Class641.aClass120_Sub1_Sub1_Sub1_Sub2_3.aByte99, (int) local182.aFloat297 >> 9, (int) local182.aFloat296 >> 9)).toString() + " Height: " + (Class439.method29150((int) local182.aFloat297 - (local173.anInt5540 * -390642507 << 9), (int) local182.aFloat296 - (local173.anInt5537 * -894305615 << 9), Class641.aClass120_Sub1_Sub1_Sub1_Sub2_3.aByte99, 1037753497) + (int) local182.aFloat295), 1455295997);
 					Class294.method26961("Look: " + (new Class626(Class641.aClass120_Sub1_Sub1_Sub1_Sub2_3.aByte99, (int) local186.aFloat297 >> 9, (int) local186.aFloat296 >> 9)).toString() + " Height: " + (Class439.method29150((int) local186.aFloat297 - (local173.anInt5540 * -390642507 << 9), (int) local182.aFloat296 - (local173.anInt5537 * -894305615 << 9), Class641.aClass120_Sub1_Sub1_Sub1_Sub2_3.aByte99, 1037753497) + (int) local182.aFloat295), 1455295997);
 				} else {
@@ -218,7 +218,7 @@ public abstract class Class138 {
 							local786.method1321((byte) 2).method15550((byte) 0);
 						}
 					}
-					Class108_Sub2.aClass139_8.method10774(340163703);
+					client.js5NetQueue.method10774(340163703);
 					return;
 				}
 				if (arg0.startsWith("getclientvarpbit")) {
@@ -253,7 +253,7 @@ public abstract class Class138 {
 				if (arg0.startsWith("setoutput ")) {
 					local940 = new File(arg0.substring(10));
 					if (local940.exists()) {
-						local940 = new File(arg0.substring(10) + "." + Class303.method27111((byte) 120) + ".log");
+						local940 = new File(arg0.substring(10) + "." + Class303.currentTimeMillis((byte) 120) + ".log");
 						if (local940.exists()) {
 							Class294.method26961("file already exists!", 1455295997);
 							return;

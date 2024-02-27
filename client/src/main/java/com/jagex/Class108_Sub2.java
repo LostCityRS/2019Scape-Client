@@ -8,9 +8,6 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("client!afr")
 public abstract class Class108_Sub2 extends Class108 {
 
-	@OriginalMember(owner = "client!afr", name = "ej", descriptor = "Lclient!pz;")
-	public static Class139 aClass139_8;
-
 	@OriginalMember(owner = "client!afr", name = "tz", descriptor = "(Lclient!hx;Lclient!yp;I)V")
 	static void method24060(@OriginalArg(0) Class327 arg0, @OriginalArg(1) Class690 arg1, @OriginalArg(2) int arg2) {
 		@Pc(12) int local12 = arg1.anIntArray525[(arg1.anInt5778 -= 2036747717) * 1896589581];

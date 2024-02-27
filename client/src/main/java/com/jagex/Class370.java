@@ -96,10 +96,10 @@ public final class Class370 implements Interface30 {
 			return;
 		}
 		local49 = 0;
-		for (@Pc(111) Class80_Sub1_Sub4 local111 = (Class80_Sub1_Sub4) Class630.aClass3_17.method50((byte) -29); local111 != null; local111 = (Class80_Sub1_Sub4) Class630.aClass3_17.method46((byte) -102)) {
+		for (@Pc(111) Class80_Sub1_Sub4 local111 = (Class80_Sub1_Sub4) Class630.aSecondaryLinkedList_17.head((byte) -29); local111 != null; local111 = (Class80_Sub1_Sub4) Class630.aSecondaryLinkedList_17.next((byte) -102)) {
 			local74 = Class630.anInt5547 * 1378633515 * local49 + 31 + Class103_Sub15.anInt970 * -1540302901;
 			if (local111.anInt3022 * 855388281 == 1) {
-				Class646.method33049(local41, local45, Class594.anInt5325 * 2014486095, Class103_Sub15.anInt970 * -1540302901, Class427.anInt4636 * 663066865, Class106.anInt2551 * -1646871895, local74, (Class80_Sub1_Sub11) local111.aClass3_10.aClass80_Sub1_2.aClass80_Sub1_68, Class8.aClass104_1, Class375.aClass15_9, -1, -256, (byte) 1);
+				Class646.method33049(local41, local45, Class594.anInt5325 * 2014486095, Class103_Sub15.anInt970 * -1540302901, Class427.anInt4636 * 663066865, Class106.anInt2551 * -1646871895, local74, (Class80_Sub1_Sub11) local111.aSecondaryLinkedList_10.aClass80_Sub1_2.aClass80_Sub1_68, Class8.aClass104_1, Class375.aClass15_9, -1, -256, (byte) 1);
 			} else {
 				Class588.method31900(local41, local45, Class594.anInt5325 * 2014486095, Class103_Sub15.anInt970 * -1540302901, Class427.anInt4636 * 663066865, Class106.anInt2551 * -1646871895, local74, local111, Class8.aClass104_1, Class375.aClass15_9, -1, -256, 470825790);
 			}
@@ -111,7 +111,7 @@ public final class Class370 implements Interface30 {
 		Class362.method28159(arg0, Class41_Sub12.anInt2441 * 1627981811, Class630.anInt5557 * -1965654097, Class40.anInt116 * -477951091, Class681.anInt5749 * -1929920381, local1, -16777216, (byte) 74);
 		Class8.aClass104_1.method7655(Class630.aClass80_Sub1_Sub4_1.aString95, Class41_Sub12.anInt2441 * 1627981811 + 3, Class630.anInt5557 * -1965654097 + 14, local1, -1, -1506850063);
 		local49 = 0;
-		for (local54 = (Class80_Sub1_Sub11) Class630.aClass80_Sub1_Sub4_1.aClass3_10.method50((byte) 27); local54 != null; local54 = (Class80_Sub1_Sub11) Class630.aClass80_Sub1_Sub4_1.aClass3_10.method46((byte) -102)) {
+		for (local54 = (Class80_Sub1_Sub11) Class630.aClass80_Sub1_Sub4_1.aSecondaryLinkedList_10.head((byte) 27); local54 != null; local54 = (Class80_Sub1_Sub11) Class630.aClass80_Sub1_Sub4_1.aSecondaryLinkedList_10.next((byte) -102)) {
 			local74 = Class630.anInt5557 * -1965654097 + 31 + local49 * Class630.anInt5547 * 1378633515;
 			Class646.method33049(local41, local45, Class41_Sub12.anInt2441 * 1627981811, Class630.anInt5557 * -1965654097, Class40.anInt116 * -477951091, Class681.anInt5749 * -1929920381, local74, local54, Class8.aClass104_1, Class375.aClass15_9, -1, -256, (byte) 1);
 			local49++;
@@ -148,7 +148,7 @@ public final class Class370 implements Interface30 {
 				if (local13.length < 3) {
 					this.aBoolean844 = true;
 				} else {
-					@Pc(26) MediaTracker local26 = new MediaTracker(Class454.aCanvas6);
+					@Pc(26) MediaTracker local26 = new MediaTracker(Class454.canvas);
 					@Pc(28) int local28 = 0;
 					for (@Pc(30) int local30 = 0; local30 < local13.length; local30++) {
 						@Pc(42) String[] local42 = Class313.method27482(local13[local30].trim(), '=', 2036747717);
@@ -197,16 +197,16 @@ public final class Class370 implements Interface30 {
 			this.method28365(-1445059480);
 			return;
 		}
-		@Pc(244) Graphics local244 = Class454.aCanvas6.getGraphics();
+		@Pc(244) Graphics local244 = Class454.canvas.getGraphics();
 		if (local244 == null) {
-			Class454.aCanvas6.repaint();
+			Class454.canvas.repaint();
 			return;
 		}
 		try {
 			this.aString201 = "" + Class365.aClass369_1.method28332(-1974503527) + "%";
 			this.aString200 = Class365.aClass369_1.method28304(-699284490);
 			if (Class407.anImage4 == null) {
-				Class407.anImage4 = Class454.aCanvas6.createImage(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
+				Class407.anImage4 = Class454.canvas.createImage(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
 			}
 			@Pc(280) Graphics local280 = Class407.anImage4.getGraphics();
 			local280.setColor(Color.BLACK);
@@ -353,7 +353,7 @@ public final class Class370 implements Interface30 {
 				if (local13.length < 3) {
 					this.aBoolean844 = true;
 				} else {
-					@Pc(26) MediaTracker local26 = new MediaTracker(Class454.aCanvas6);
+					@Pc(26) MediaTracker local26 = new MediaTracker(Class454.canvas);
 					@Pc(28) int local28 = 0;
 					for (@Pc(30) int local30 = 0; local30 < local13.length; local30++) {
 						@Pc(42) String[] local42 = Class313.method27482(local13[local30].trim(), '=', 2036747717);
@@ -402,16 +402,16 @@ public final class Class370 implements Interface30 {
 			this.method28365(-1697806478);
 			return;
 		}
-		@Pc(244) Graphics local244 = Class454.aCanvas6.getGraphics();
+		@Pc(244) Graphics local244 = Class454.canvas.getGraphics();
 		if (local244 == null) {
-			Class454.aCanvas6.repaint();
+			Class454.canvas.repaint();
 			return;
 		}
 		try {
 			this.aString201 = "" + Class365.aClass369_1.method28332(-1858951767) + "%";
 			this.aString200 = Class365.aClass369_1.method28304(506456926);
 			if (Class407.anImage4 == null) {
-				Class407.anImage4 = Class454.aCanvas6.createImage(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
+				Class407.anImage4 = Class454.canvas.createImage(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
 			}
 			@Pc(280) Graphics local280 = Class407.anImage4.getGraphics();
 			local280.setColor(Color.BLACK);
@@ -437,7 +437,7 @@ public final class Class370 implements Interface30 {
 				if (local13.length < 3) {
 					this.aBoolean844 = true;
 				} else {
-					@Pc(26) MediaTracker local26 = new MediaTracker(Class454.aCanvas6);
+					@Pc(26) MediaTracker local26 = new MediaTracker(Class454.canvas);
 					@Pc(28) int local28 = 0;
 					for (@Pc(30) int local30 = 0; local30 < local13.length; local30++) {
 						@Pc(42) String[] local42 = Class313.method27482(local13[local30].trim(), '=', 2036747717);
@@ -486,16 +486,16 @@ public final class Class370 implements Interface30 {
 			this.method28365(-1316164156);
 			return;
 		}
-		@Pc(244) Graphics local244 = Class454.aCanvas6.getGraphics();
+		@Pc(244) Graphics local244 = Class454.canvas.getGraphics();
 		if (local244 == null) {
-			Class454.aCanvas6.repaint();
+			Class454.canvas.repaint();
 			return;
 		}
 		try {
 			this.aString201 = "" + Class365.aClass369_1.method28332(-888244878) + "%";
 			this.aString200 = Class365.aClass369_1.method28304(758809845);
 			if (Class407.anImage4 == null) {
-				Class407.anImage4 = Class454.aCanvas6.createImage(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
+				Class407.anImage4 = Class454.canvas.createImage(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
 			}
 			@Pc(280) Graphics local280 = Class407.anImage4.getGraphics();
 			local280.setColor(Color.BLACK);
@@ -526,7 +526,7 @@ public final class Class370 implements Interface30 {
 				if (local13.length < 3) {
 					this.aBoolean844 = true;
 				} else {
-					@Pc(26) MediaTracker local26 = new MediaTracker(Class454.aCanvas6);
+					@Pc(26) MediaTracker local26 = new MediaTracker(Class454.canvas);
 					@Pc(28) int local28 = 0;
 					for (@Pc(30) int local30 = 0; local30 < local13.length; local30++) {
 						@Pc(42) String[] local42 = Class313.method27482(local13[local30].trim(), '=', 2036747717);
@@ -575,16 +575,16 @@ public final class Class370 implements Interface30 {
 			this.method28365(1726895513);
 			return;
 		}
-		@Pc(244) Graphics local244 = Class454.aCanvas6.getGraphics();
+		@Pc(244) Graphics local244 = Class454.canvas.getGraphics();
 		if (local244 == null) {
-			Class454.aCanvas6.repaint();
+			Class454.canvas.repaint();
 			return;
 		}
 		try {
 			this.aString201 = "" + Class365.aClass369_1.method28332(-860128348) + "%";
 			this.aString200 = Class365.aClass369_1.method28304(-526878947);
 			if (Class407.anImage4 == null) {
-				Class407.anImage4 = Class454.aCanvas6.createImage(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
+				Class407.anImage4 = Class454.canvas.createImage(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
 			}
 			@Pc(280) Graphics local280 = Class407.anImage4.getGraphics();
 			local280.setColor(Color.BLACK);
@@ -688,7 +688,7 @@ public final class Class370 implements Interface30 {
 				if (local13.length < 3) {
 					this.aBoolean844 = true;
 				} else {
-					@Pc(26) MediaTracker local26 = new MediaTracker(Class454.aCanvas6);
+					@Pc(26) MediaTracker local26 = new MediaTracker(Class454.canvas);
 					@Pc(28) int local28 = 0;
 					for (@Pc(30) int local30 = 0; local30 < local13.length; local30++) {
 						@Pc(42) String[] local42 = Class313.method27482(local13[local30].trim(), '=', 2036747717);
@@ -737,16 +737,16 @@ public final class Class370 implements Interface30 {
 			this.method28365(1839336722);
 			return;
 		}
-		@Pc(244) Graphics local244 = Class454.aCanvas6.getGraphics();
+		@Pc(244) Graphics local244 = Class454.canvas.getGraphics();
 		if (local244 == null) {
-			Class454.aCanvas6.repaint();
+			Class454.canvas.repaint();
 			return;
 		}
 		try {
 			this.aString201 = "" + Class365.aClass369_1.method28332(-1554177391) + "%";
 			this.aString200 = Class365.aClass369_1.method28304(2130978741);
 			if (Class407.anImage4 == null) {
-				Class407.anImage4 = Class454.aCanvas6.createImage(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
+				Class407.anImage4 = Class454.canvas.createImage(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
 			}
 			@Pc(280) Graphics local280 = Class407.anImage4.getGraphics();
 			local280.setColor(Color.BLACK);
@@ -772,7 +772,7 @@ public final class Class370 implements Interface30 {
 				if (local13.length < 3) {
 					this.aBoolean844 = true;
 				} else {
-					@Pc(26) MediaTracker local26 = new MediaTracker(Class454.aCanvas6);
+					@Pc(26) MediaTracker local26 = new MediaTracker(Class454.canvas);
 					@Pc(28) int local28 = 0;
 					for (@Pc(30) int local30 = 0; local30 < local13.length; local30++) {
 						@Pc(42) String[] local42 = Class313.method27482(local13[local30].trim(), '=', 2036747717);
@@ -821,16 +821,16 @@ public final class Class370 implements Interface30 {
 			this.method28365(-836611279);
 			return;
 		}
-		@Pc(244) Graphics local244 = Class454.aCanvas6.getGraphics();
+		@Pc(244) Graphics local244 = Class454.canvas.getGraphics();
 		if (local244 == null) {
-			Class454.aCanvas6.repaint();
+			Class454.canvas.repaint();
 			return;
 		}
 		try {
 			this.aString201 = "" + Class365.aClass369_1.method28332(-912328548) + "%";
 			this.aString200 = Class365.aClass369_1.method28304(1903642237);
 			if (Class407.anImage4 == null) {
-				Class407.anImage4 = Class454.aCanvas6.createImage(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
+				Class407.anImage4 = Class454.canvas.createImage(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
 			}
 			@Pc(280) Graphics local280 = Class407.anImage4.getGraphics();
 			local280.setColor(Color.BLACK);

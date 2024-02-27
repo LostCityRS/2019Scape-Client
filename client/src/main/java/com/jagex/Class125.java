@@ -209,8 +209,8 @@ public class Class125 implements Interface33 {
 				local21.aByte71 = local2.g1b_alt1();
 				local21.aByte72 = local2.g1b_alt1();
 				local21.aByte73 = (byte) local2.g1();
-				local21.anInt2698 = (client.anInt3436 + local2.g2_alt1()) * 396975409;
-				local21.anInt2692 = (client.anInt3436 + local2.g2_alt2()) * 184947885;
+				local21.anInt2698 = (client.currentCycle + local2.g2_alt1()) * 396975409;
+				local21.anInt2692 = (client.currentCycle + local2.g2_alt2()) * 184947885;
 			}
 			if ((local29 & 0x40) != 0) {
 				@Pc(469) int[] local469 = new int[4];
@@ -439,7 +439,7 @@ public class Class125 implements Interface33 {
 							local89 = local2.gSmart1or2();
 						}
 						local711 = local2.gSmart1or2();
-						local21.method18962(local247, local89, local82, local98, client.anInt3436, local711, 2006951635);
+						local21.method18962(local247, local89, local82, local98, client.currentCycle, local711, 2006951635);
 					}
 				}
 				local238 = local2.g1_alt2();
@@ -453,7 +453,7 @@ public class Class125 implements Interface33 {
 							local98 = local2.gSmart1or2();
 							local711 = local2.g1();
 							local1130 = local89 > 0 ? local2.g1_alt3() : local711;
-							local21.method18963(local82, client.anInt3436, local89, local98, local711, local1130, -910068450);
+							local21.method18963(local82, client.currentCycle, local89, local98, local711, local1130, -910068450);
 						}
 					}
 				}
@@ -465,8 +465,8 @@ public class Class125 implements Interface33 {
 				local21.anInt2675 = local2.g1b() * 1443464925;
 				local21.anInt2686 = local2.g1b_alt3() * -638322203;
 				local21.anInt2687 = local2.g1b_alt2() * 1429480385;
-				local21.anInt2688 = (local2.g2_alt2() + client.anInt3436) * 1890574175;
-				local21.anInt2689 = (local2.g2_alt1() + client.anInt3436) * -2021716995;
+				local21.anInt2688 = (local2.g2_alt2() + client.currentCycle) * 1890574175;
+				local21.anInt2689 = (local2.g2_alt1() + client.currentCycle) * -2021716995;
 				local21.anInt2677 = local2.g2_alt3() * 1338483447;
 				local21.anInt2700 = -1307113885;
 				local21.anInt2702 = 0;

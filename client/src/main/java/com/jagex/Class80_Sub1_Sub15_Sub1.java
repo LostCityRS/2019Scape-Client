@@ -61,7 +61,7 @@ public final class Class80_Sub1_Sub15_Sub1 extends Class80_Sub1_Sub15 {
 
 	@OriginalMember(owner = "client!atl", name = "t", descriptor = "(I)[B")
 	@Override
-	byte[] method24390(@OriginalArg(0) int arg0) {
+	byte[] getData(@OriginalArg(0) int arg0) {
 		if (this.aFuture2.isDone()) {
 			try {
 				return ((Class483) this.aFuture2.get()).method30024(1555262089);

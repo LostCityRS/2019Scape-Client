@@ -44,7 +44,7 @@ public final class Class31 implements Interface75 {
 
 	@OriginalMember(owner = "client!abe", name = "f", descriptor = "()I")
 	@Override
-	public int method37268() {
+	public int getId() {
 		return this.anInt103 * -1887982775;
 	}
 

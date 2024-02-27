@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class342 {
 
 	@OriginalMember(owner = "client!im", name = "by", descriptor = "Ljava/lang/String;")
-	public static String aString190;
+	public static String javaVendor;
 
 	@OriginalMember(owner = "client!im", name = "t", descriptor = "Lclient!im;")
 	static final Class342 aClass342_3 = new Class342(0);

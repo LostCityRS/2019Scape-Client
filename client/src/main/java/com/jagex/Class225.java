@@ -128,7 +128,7 @@ public final class Class225 implements Interface75 {
 
 	@OriginalMember(owner = "client!dj", name = "f", descriptor = "()I")
 	@Override
-	public int method37268() {
+	public int getId() {
 		return this.anInt3622 * 1758984979;
 	}
 

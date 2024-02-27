@@ -155,7 +155,7 @@ public final class Class676 {
 	@OriginalMember(owner = "client!y", name = "anf", descriptor = "(Lclient!yp;B)V")
 	static void method33590(@OriginalArg(0) Class690 arg0, @OriginalArg(1) byte arg1) throws Exception_Sub3 {
 		@Pc(12) int local12 = arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581];
-		Class160.aClass121_Sub1_2.method9647(Class567.method31516(local12, (byte) 1), true, -1950241554);
+		BufferedSocket.aClass121_Sub1_2.method9647(Class567.method31516(local12, (byte) 1), true, -1950241554);
 		client.aBoolean726 = true;
 	}
 

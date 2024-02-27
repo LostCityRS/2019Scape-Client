@@ -22,7 +22,7 @@ public final class Class509 {
 		arg0.anInt5778 -= -221471862;
 		@Pc(13) int local13 = arg0.anIntArray525[arg0.anInt5778 * 1896589581];
 		@Pc(21) Class463 local21 = Class463.method29541((float) local13, (float) local13, (float) local13);
-		Class160.aClass121_Sub1_2.method9704(local21, (byte) -73);
+		BufferedSocket.aClass121_Sub1_2.method9704(local21, (byte) -73);
 		local21.method29557();
 	}
 

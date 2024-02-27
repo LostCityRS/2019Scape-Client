@@ -59,7 +59,7 @@ public final class Class124_Sub1 extends Class124 {
 						local36 = arg0.gSmart1or2();
 					}
 					local63 = arg0.gSmart1or2();
-					arg2.method18962(local25, local36, local17, local21, client.anInt3436, local63, 1761982781);
+					arg2.method18962(local25, local36, local17, local21, client.currentCycle, local63, 1761982781);
 				}
 			}
 			local12 = arg0.g1_alt2();
@@ -73,7 +73,7 @@ public final class Class124_Sub1 extends Class124 {
 						local21 = arg0.gSmart1or2();
 						local63 = arg0.g1_alt2();
 						@Pc(112) int local112 = local36 > 0 ? arg0.g1_alt3() : local63;
-						arg2.method18963(local17, client.anInt3436, local36, local21, local63, local112, -910068450);
+						arg2.method18963(local17, client.currentCycle, local36, local21, local63, local112, -910068450);
 					}
 				}
 			}
@@ -83,8 +83,8 @@ public final class Class124_Sub1 extends Class124 {
 			arg2.aByte71 = arg0.g1b_alt2();
 			arg2.aByte72 = arg0.g1b_alt2();
 			arg2.aByte73 = (byte) arg0.g1_alt3();
-			arg2.anInt2698 = (client.anInt3436 + arg0.g2_alt1()) * 396975409;
-			arg2.anInt2692 = (client.anInt3436 + arg0.g2_alt3()) * 184947885;
+			arg2.anInt2698 = (client.currentCycle + arg0.g2_alt1()) * 396975409;
+			arg2.anInt2692 = (client.currentCycle + arg0.g2_alt3()) * 184947885;
 		}
 		@Pc(215) Class519 local215;
 		@Pc(221) Class460 local221;
@@ -274,8 +274,8 @@ public final class Class124_Sub1 extends Class124 {
 			arg2.anInt2675 = arg0.g1b() * 1443464925;
 			arg2.anInt2686 = arg0.g1b_alt1() * -638322203;
 			arg2.anInt2687 = arg0.g1b_alt1() * 1429480385;
-			arg2.anInt2688 = (arg0.g2_alt2() + client.anInt3436) * 1890574175;
-			arg2.anInt2689 = (arg0.g2_alt2() + client.anInt3436) * -2021716995;
+			arg2.anInt2688 = (arg0.g2_alt2() + client.currentCycle) * 1890574175;
+			arg2.anInt2689 = (arg0.g2_alt2() + client.currentCycle) * -2021716995;
 			arg2.anInt2677 = arg0.g2_alt1() * 1338483447;
 			arg2.anInt2700 = -1307113885;
 			arg2.anInt2702 = 0;

@@ -49,7 +49,7 @@ public final class Class669 {
 			@Pc(100) int local100;
 			for (local46 = 0; local46 < local44.length / 2; local46++) {
 				if (Class368.anInt4502 * -1583611537 == 3) {
-					local71 = (int) ((double) Class160.aClass121_Sub1_2.method9648(-1751978382) * 2607.5945876176133D) + client.anInt3474 * -1918431893 & 0x3FFF;
+					local71 = (int) ((double) BufferedSocket.aClass121_Sub1_2.method9648(-1751978382) * 2607.5945876176133D) + client.anInt3474 * -1918431893 & 0x3FFF;
 				} else if (Class368.anInt4502 * -1583611537 == 4) {
 					local71 = (int) client.aFloat255 & 0x3FFF;
 				} else {

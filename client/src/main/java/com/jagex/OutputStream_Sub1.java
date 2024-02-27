@@ -11,7 +11,7 @@ import java.io.OutputStream;
 public final class OutputStream_Sub1 extends OutputStream {
 
 	@OriginalMember(owner = "client!apu", name = "jd", descriptor = "Lclient!ug;")
-	static Class160 aClass160_3;
+	static BufferedSocket aBufferedSocket_3;
 
 	@OriginalMember(owner = "client!apu", name = "s", descriptor = "(III)I")
 	public static int method18473(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {

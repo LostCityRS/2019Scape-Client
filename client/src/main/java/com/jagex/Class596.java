@@ -38,7 +38,7 @@ public final class Class596 implements Runnable {
 
 	@OriginalMember(owner = "client!ul", name = "s", descriptor = "(I)V")
 	static void method31993(@OriginalArg(0) int arg0) {
-		@Pc(6) Class40 local6 = Class3.method70("2", client.aClass722_4.aString247, false, -2121077095);
+		@Pc(6) Class40 local6 = SecondaryLinkedList.method70("2", client.aClass722_4.aString247, false, -2121077095);
 		Class120_Sub1_Sub1_Sub4.aClass110_Sub1_1.method7298(local6, (short) 11067);
 	}
 
@@ -66,7 +66,7 @@ public final class Class596 implements Runnable {
 	@OriginalMember(owner = "client!ul", name = "gn", descriptor = "(I)[Lclient!aaz;")
 	public static Class26[] method31996(@OriginalArg(0) int arg0) {
 		if (Class413.aClass26Array1 == null) {
-			@Pc(5) Class26[] local5 = Class152.method14626(Class518.aClass14_1, -1537318013);
+			@Pc(5) Class26[] local5 = Class152.method14626(Js5MasterIndex.aClass14_1, -1537318013);
 			@Pc(9) Class26[] local9 = new Class26[local5.length];
 			@Pc(11) int local11 = 0;
 			@Pc(16) int local16 = Class703.aClass80_Sub37_49.aClass165_Sub8_1.method15974(-1166750209);

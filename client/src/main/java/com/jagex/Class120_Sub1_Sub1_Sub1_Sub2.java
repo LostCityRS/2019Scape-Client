@@ -478,7 +478,7 @@ public final class Class120_Sub1_Sub1_Sub1_Sub2 extends Class120_Sub1_Sub1_Sub1 
 			arg1 |= 0x7;
 		}
 		@Pc(76) int local76 = this.aClass372_8.method28394((byte) 3);
-		@Pc(96) boolean local96 = this.aByte73 != 0 && client.anInt3436 >= this.anInt2698 * 1134746577 && client.anInt3436 < this.anInt2692 * -691507419;
+		@Pc(96) boolean local96 = this.aByte73 != 0 && client.currentCycle >= this.anInt2698 * 1134746577 && client.currentCycle < this.anInt2692 * -691507419;
 		if (local96) {
 			arg1 |= 0x80000;
 		}

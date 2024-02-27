@@ -19,12 +19,12 @@ public final class Class177 {
 		@Pc(3) Canvas local3 = new Canvas();
 		local3.setSize(100, 100);
 		@Pc(19) Class102 local19 = Class620.method32309(0, local3, null, null, null, null, null, null, 0, (byte) -115);
-		@Pc(22) long local22 = Class303.method27111((byte) 84);
+		@Pc(22) long local22 = Class303.currentTimeMillis((byte) 84);
 		@Pc(24) int local24;
 		for (local24 = 0; local24 < 10000; local24++) {
 			local19.method20724(5, 10, 100.0F, 75, 50, 100.0F, 15, 90, 100.0F, -65536, -65536, -65536, 1);
 		}
-		local24 = (int) (Class303.method27111((byte) 118) - local22);
+		local24 = (int) (Class303.currentTimeMillis((byte) 118) - local22);
 		local19.method20716(0, 0, 100, 100, -16777216, (byte) 59);
 		local19.method20660(-816476425);
 		return local24;

@@ -87,8 +87,8 @@ public final class Class340 {
 		@Pc(2) Queue local2 = Class662.aQueue3;
 		synchronized (Class662.aQueue3) {
 			@Pc(9) Point local9;
-			if (Class454.aCanvas6.isShowing()) {
-				local9 = Class454.aCanvas6.getLocationOnScreen();
+			if (Class454.canvas.isShowing()) {
+				local9 = Class454.canvas.getLocationOnScreen();
 			} else {
 				local9 = null;
 			}
@@ -98,7 +98,7 @@ public final class Class340 {
 					if (local16 == null) {
 						return;
 					}
-					if (local9 != null && Class454.aCanvas6.isShowing() && Class597.aBoolean926) {
+					if (local9 != null && Class454.canvas.isShowing() && Class597.focus) {
 						local16.method23478(local9, -2055904621);
 						if (!local16.method23475(-2064827578) && local16.method23451(472309609) < Class80_Sub1_Sub1.anInt254 * -255202897 && local16.method23454(-14417928) < Class80_Sub25.anInt1627 * 167687103 && local16.method23451(350790872) >= 0 && local16.method23454(183264799) >= 0) {
 							@Pc(66) int local66 = local16.method23452((byte) 3);

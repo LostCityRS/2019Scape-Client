@@ -157,7 +157,7 @@ public final class Class320 implements Interface11 {
 		@Pc(5) Class80_Sub1_Sub14 local5 = (Class80_Sub1_Sub14) Class329.aClass24_29.method560((long) arg0);
 		if (local5 == null) {
 			return -1;
-		} else if (Class329.aClass3_15.aClass80_Sub1_2 == local5.aClass80_Sub1_68) {
+		} else if (Class329.aSecondaryLinkedList_15.aClass80_Sub1_2 == local5.aClass80_Sub1_68) {
 			return -1;
 		} else {
 			return ((Class80_Sub1_Sub14) local5.aClass80_Sub1_68).anInt3100 * 102067333;
@@ -543,7 +543,7 @@ public final class Class320 implements Interface11 {
 				} else if (arg1 == 29) {
 					this.aClass313_4 = (Class313) Class80_Sub39.method15030(Class259.method26446(-220607665), arg0.g1(), -2071181568);
 				} else if (arg1 == 30) {
-					this.aClass309_4 = (Class309) Class80_Sub39.method15030(Class436.method29137(-1380987821), arg0.g1(), -994148187);
+					this.aClass309_4 = (Class309) Class80_Sub39.method15030(LoginProt.method29137(-1380987821), arg0.g1(), -994148187);
 				} else if (arg1 == 249) {
 					local70 = arg0.g1();
 					if (this.aClass24_27 == null) {
@@ -686,7 +686,7 @@ public final class Class320 implements Interface11 {
 				} else if (arg1 == 29) {
 					this.aClass313_4 = (Class313) Class80_Sub39.method15030(Class259.method26446(-220607665), arg0.g1(), -414955296);
 				} else if (arg1 == 30) {
-					this.aClass309_4 = (Class309) Class80_Sub39.method15030(Class436.method29137(-1380987821), arg0.g1(), -1722159744);
+					this.aClass309_4 = (Class309) Class80_Sub39.method15030(LoginProt.method29137(-1380987821), arg0.g1(), -1722159744);
 				} else if (arg1 == 249) {
 					local70 = arg0.g1();
 					if (this.aClass24_27 == null) {
@@ -829,7 +829,7 @@ public final class Class320 implements Interface11 {
 				} else if (arg1 == 29) {
 					this.aClass313_4 = (Class313) Class80_Sub39.method15030(Class259.method26446(-220607665), arg0.g1(), -1227030883);
 				} else if (arg1 == 30) {
-					this.aClass309_4 = (Class309) Class80_Sub39.method15030(Class436.method29137(-1380987821), arg0.g1(), -2006564290);
+					this.aClass309_4 = (Class309) Class80_Sub39.method15030(LoginProt.method29137(-1380987821), arg0.g1(), -2006564290);
 				} else if (arg1 == 249) {
 					local70 = arg0.g1();
 					if (this.aClass24_27 == null) {
@@ -1075,7 +1075,7 @@ public final class Class320 implements Interface11 {
 				} else if (arg1 == 29) {
 					this.aClass313_4 = (Class313) Class80_Sub39.method15030(Class259.method26446(-220607665), arg0.g1(), -394687002);
 				} else if (arg1 == 30) {
-					this.aClass309_4 = (Class309) Class80_Sub39.method15030(Class436.method29137(-1380987821), arg0.g1(), -1450856581);
+					this.aClass309_4 = (Class309) Class80_Sub39.method15030(LoginProt.method29137(-1380987821), arg0.g1(), -1450856581);
 				} else if (arg1 == 249) {
 					local70 = arg0.g1();
 					if (this.aClass24_27 == null) {

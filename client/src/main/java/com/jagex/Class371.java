@@ -52,7 +52,7 @@ final class Class371 implements Interface21 {
 		@Pc(5) Class15 local5 = Class445.method29244(2044017830);
 		@Pc(7) int local7 = 0;
 		@Pc(21) int local21;
-		for (@Pc(13) Class80_Sub1_Sub11 local13 = (Class80_Sub1_Sub11) arg0.aClass3_10.method50((byte) -32); local13 != null; local13 = (Class80_Sub1_Sub11) arg0.aClass3_10.method46((byte) -102)) {
+		for (@Pc(13) Class80_Sub1_Sub11 local13 = (Class80_Sub1_Sub11) arg0.aSecondaryLinkedList_10.head((byte) -32); local13 != null; local13 = (Class80_Sub1_Sub11) arg0.aSecondaryLinkedList_10.next((byte) -102)) {
 			local21 = Class413.method28991(local13, local5, (byte) 1);
 			if (local21 > local7) {
 				local7 = local21;
@@ -84,10 +84,10 @@ final class Class371 implements Interface21 {
 
 	@OriginalMember(owner = "client!jz", name = "apm", descriptor = "(Lclient!yp;B)V")
 	static void method28389(@OriginalArg(0) Class690 arg0, @OriginalArg(1) byte arg1) {
-		if (Class160.aClass121_Sub1_2.method9702(988561541) != Class347.aClass347_7) {
+		if (BufferedSocket.aClass121_Sub1_2.method9702(988561541) != Class347.aClass347_7) {
 			throw new RuntimeException();
 		}
-		((Class20_Sub3) Class160.aClass121_Sub1_2.method9693(1830893728)).method16649(arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581], -1600519277);
+		((Class20_Sub3) BufferedSocket.aClass121_Sub1_2.method9693(1830893728)).method16649(arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581], -1600519277);
 	}
 
 	@OriginalMember(owner = "client!jz", name = "ex", descriptor = "(Lclient!yp;S)V")

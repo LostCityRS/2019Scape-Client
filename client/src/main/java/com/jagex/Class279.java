@@ -12,7 +12,7 @@ final class Class279 implements Interface43 {
 	public static Class102 aClass102_9;
 
 	@OriginalMember(owner = "client!fy", name = "fv", descriptor = "Lclient!pr;")
-	public static Class491 aClass491_1;
+	public static Class491 js5MasterIndex;
 
 	@OriginalMember(owner = "client!fy", name = "gn", descriptor = "Lclient!aoe;")
 	public static Class41_Sub4 aClass41_Sub4_1;

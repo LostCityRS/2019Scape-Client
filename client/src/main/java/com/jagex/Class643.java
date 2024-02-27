@@ -94,7 +94,7 @@ public final class Class643 implements Interface68 {
 	}
 
 	@OriginalMember(owner = "client!wo", name = "z", descriptor = "(Ljava/lang/Object;I)V")
-	static void method33030(@OriginalArg(0) Object arg0, @OriginalArg(1) int arg1) {
+	static void flush(@OriginalArg(0) Object arg0, @OriginalArg(1) int arg1) {
 		if (Class166.anEventQueue1 == null) {
 			return;
 		}

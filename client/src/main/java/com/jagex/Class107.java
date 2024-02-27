@@ -33,7 +33,7 @@ public abstract class Class107 implements Interface13 {
 
 	@OriginalMember(owner = "client!ea", name = "aoi", descriptor = "(Lclient!yp;B)V")
 	static void method7193(@OriginalArg(0) Class690 arg0, @OriginalArg(1) byte arg1) {
-		Class160.aClass121_Sub1_2.method9599((byte) 11);
+		BufferedSocket.aClass121_Sub1_2.method9599((byte) 11);
 	}
 
 	@OriginalMember(owner = "client!ea", name = "atq", descriptor = "(Lclient!yp;I)V")

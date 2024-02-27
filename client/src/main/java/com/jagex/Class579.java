@@ -135,13 +135,13 @@ final class Class579 implements Comparator {
 											@Pc(494) Class80_Sub19 local494 = (Class80_Sub19) client.aClass24_18.method560((long) client.anIntArray304[local167]);
 											if (local494 != null) {
 												@Pc(502) Class120_Sub1_Sub1_Sub1_Sub1 local502 = (Class120_Sub1_Sub1_Sub1_Sub1) local494.anObject5;
-												if (client.anInt3436 != local502.anInt2691 * -1467925639 && local502.aBoolean452) {
+												if (client.currentCycle != local502.anInt2691 * -1467925639 && local502.aBoolean452) {
 													var24 = local502.method24552().aClass463_61;
 													var25 = (int) var24.aFloat297 - (local502.aClass335_1.anInt4212 * 1573297955 - 1 << 8);
 													var26 = (int) var24.aFloat296 - (local502.aClass335_1.anInt4212 * 1573297955 - 1 << 8);
 													if (var25 >= local467 && local502.aClass335_1.anInt4212 * 1573297955 <= local410.method18966((byte) -92) - (var25 - local467 >> 9) && var26 >= var52 && local502.aClass335_1.anInt4212 * 1573297955 <= local410.method18966((byte) -13) - (var26 - var52 >> 9)) {
 														Class578.method31798(local502, Class641.aClass120_Sub1_Sub1_Sub1_Sub2_3.aByte99 != local349.aClass120_Sub1_25.aByte99, (byte) 68);
-														local502.anInt2691 = client.anInt3436 * 770260681;
+														local502.anInt2691 = client.currentCycle * 770260681;
 													}
 												}
 											}
@@ -150,20 +150,20 @@ final class Class579 implements Comparator {
 										@Pc(605) int[] local605 = Class51.anIntArray20;
 										for (local222 = 0; local222 < local167; local222++) {
 											@Pc(616) Class120_Sub1_Sub1_Sub1_Sub2 local616 = client.aClass120_Sub1_Sub1_Sub1_Sub2Array1[local605[local222]];
-											if (local616 != null && local616.anInt2691 * -1467925639 != client.anInt3436 && local410 != local616 && local616.aBoolean452) {
+											if (local616 != null && local616.anInt2691 * -1467925639 != client.currentCycle && local410 != local616 && local616.aBoolean452) {
 												@Pc(636) Class463 local636 = local616.method24552().aClass463_61;
 												var26 = (int) local636.aFloat297 - (local616.method18966((byte) -81) - 1 << 8);
 												var27 = (int) local636.aFloat296 - (local616.method18966((byte) -48) - 1 << 8);
 												if (var26 >= local467 && local616.method18966((byte) -19) <= local410.method18966((byte) -72) - (var26 - local467 >> 9) && var27 >= var52 && local616.method18966((byte) -25) <= local410.method18966((byte) -103) - (var27 - var52 >> 9)) {
 													Class103_Sub13.method7940(local616, local349.aClass120_Sub1_25.aByte99 != Class641.aClass120_Sub1_Sub1_Sub1_Sub2_3.aByte99, (byte) -34);
-													local616.anInt2691 = client.anInt3436 * 770260681;
+													local616.anInt2691 = client.currentCycle * 770260681;
 												}
 											}
 										}
 									}
-									if (client.anInt3436 != local410.anInt2691 * -1467925639) {
+									if (client.currentCycle != local410.anInt2691 * -1467925639) {
 										Class103_Sub13.method7940(local410, Class641.aClass120_Sub1_Sub1_Sub1_Sub2_3.aByte99 != local349.aClass120_Sub1_25.aByte99, (byte) -59);
-										local410.anInt2691 = client.anInt3436 * 770260681;
+										local410.anInt2691 = client.currentCycle * 770260681;
 										break;
 									}
 								}
@@ -182,13 +182,13 @@ final class Class579 implements Comparator {
 										@Pc(838) Class80_Sub19 local838 = (Class80_Sub19) client.aClass24_18.method560((long) client.anIntArray304[var52]);
 										if (local838 != null) {
 											@Pc(845) Class120_Sub1_Sub1_Sub1_Sub1 local845 = (Class120_Sub1_Sub1_Sub1_Sub1) local838.anObject5;
-											if (client.anInt3436 != local845.anInt2691 * -1467925639 && local743 != local845 && local845.aBoolean452) {
+											if (client.currentCycle != local845.anInt2691 * -1467925639 && local743 != local845 && local845.aBoolean452) {
 												@Pc(862) Class463 local862 = local845.method24552().aClass463_61;
 												var65 = (int) local862.aFloat297 - (local845.aClass335_1.anInt4212 * 1573297955 - 1 << 8);
 												var25 = (int) local862.aFloat296 - (local845.aClass335_1.anInt4212 * 1573297955 - 1 << 8);
 												if (var65 >= local809 && local845.aClass335_1.anInt4212 * 1573297955 <= local743.aClass335_1.anInt4212 * 1573297955 - (var65 - local809 >> 9) && var25 >= local467 && local845.aClass335_1.anInt4212 * 1573297955 <= local743.aClass335_1.anInt4212 * 1573297955 - (var25 - local467 >> 9)) {
 													Class578.method31798(local845, local349.aClass120_Sub1_25.aByte99 != Class641.aClass120_Sub1_Sub1_Sub1_Sub2_3.aByte99, (byte) 91);
-													local845.anInt2691 = client.anInt3436 * 770260681;
+													local845.anInt2691 = client.currentCycle * 770260681;
 												}
 											}
 										}
@@ -197,20 +197,20 @@ final class Class579 implements Comparator {
 									@Pc(955) int[] local955 = Class51.anIntArray20;
 									for (local174 = 0; local174 < var52; local174++) {
 										@Pc(966) Class120_Sub1_Sub1_Sub1_Sub2 local966 = client.aClass120_Sub1_Sub1_Sub1_Sub2Array1[local955[local174]];
-										if (local966 != null && client.anInt3436 != local966.anInt2691 * -1467925639 && local966.aBoolean452) {
+										if (local966 != null && client.currentCycle != local966.anInt2691 * -1467925639 && local966.aBoolean452) {
 											var24 = local966.method24552().aClass463_61;
 											var25 = (int) var24.aFloat297 - (local966.method18966((byte) -120) - 1 << 8);
 											var26 = (int) var24.aFloat296 - (local966.method18966((byte) -110) - 1 << 8);
 											if (var25 >= local809 && local966.method18966((byte) -48) <= local743.aClass335_1.anInt4212 * 1573297955 - (var25 - local809 >> 9) && var26 >= local467 && local966.method18966((byte) -79) <= local743.aClass335_1.anInt4212 * 1573297955 - (var26 - local467 >> 9)) {
 												Class103_Sub13.method7940(local966, Class641.aClass120_Sub1_Sub1_Sub1_Sub2_3.aByte99 != local349.aClass120_Sub1_25.aByte99, (byte) -68);
-												local966.anInt2691 = client.anInt3436 * 770260681;
+												local966.anInt2691 = client.currentCycle * 770260681;
 											}
 										}
 									}
 								}
-								if (client.anInt3436 != local743.anInt2691 * -1467925639) {
+								if (client.currentCycle != local743.anInt2691 * -1467925639) {
 									Class578.method31798(local743, Class641.aClass120_Sub1_Sub1_Sub1_Sub2_3.aByte99 != local349.aClass120_Sub1_25.aByte99, (byte) 77);
-									local743.anInt2691 = client.anInt3436 * 770260681;
+									local743.anInt2691 = client.currentCycle * 770260681;
 									break;
 								}
 							}

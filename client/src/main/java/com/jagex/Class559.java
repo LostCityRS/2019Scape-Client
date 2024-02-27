@@ -92,7 +92,7 @@ public final class Class559 {
 			}
 		}
 		Class107.method7195(-159116402);
-		Class160.aClass121_Sub1_2.method9573(true, 1989067524);
+		BufferedSocket.aClass121_Sub1_2.method9573(true, 1989067524);
 		Class238.aBoolean771 = false;
 		Class288.method26911(1678423561);
 		client.anInt3502 = -847777085;

@@ -67,19 +67,19 @@ public final class Class612 implements Interface67 {
 				client.aClass75_2.method1316(Class411.method28965(Class47.aClass28_3.method655(907314028), 40000, (byte) -27), Class47.aClass28_3.aString4, -619669261);
 				client.aClass75_2.method1314(1587586714);
 				@Pc(43) Class80_Sub31 local43 = Class668.method33490(2032736644);
-				local43.aPacketBit_2.p1(Class436.aClass436_8.anInt4802 * 663664571);
+				local43.aPacketBit_2.p1(LoginProt.CREATE_ACCOUNT_CONNECT.opcode * 663664571);
 				local43.aPacketBit_2.p2(0);
 				local62 = local43.aPacketBit_2.pos * -1380987821;
 				local43.aPacketBit_2.p2(910);
 				local43.aPacketBit_2.p2(1);
 				Class499.anIntArray464 = Class464.method29620(local43, 1756123056);
 				@Pc(82) int local82 = local43.aPacketBit_2.pos * -1380987821;
-				local43.aPacketBit_2.pjstr(client.aString142);
+				local43.aPacketBit_2.pjstr(client.PARAMETER_6);
 				local43.aPacketBit_2.p2(client.anInt3426 * -622206633);
 				local43.aPacketBit_2.p4(client.anInt3428 * 805324377);
 				local43.aPacketBit_2.p4(client.anInt3427 * 1329290145);
 				local43.aPacketBit_2.pjstr(Class593.aString228);
-				local43.aPacketBit_2.p1(Class512.aClass719_3.method37268());
+				local43.aPacketBit_2.p1(Class512.aClass719_3.getId());
 				local43.aPacketBit_2.p1(client.aClass722_4.anInt5829 * 1531299647);
 				Class337.method27874(local43.aPacketBit_2, 507151176);
 				@Pc(133) String local133 = client.aString143;
@@ -100,10 +100,10 @@ public final class Class612 implements Interface67 {
 					Class161.method15651((byte) -92);
 					return;
 				}
-				if (!client.aClass75_2.method1321((byte) 2).method15545(1, (byte) -107)) {
+				if (!client.aClass75_2.method1321((byte) 2).hasBytes(1, (byte) -107)) {
 					return;
 				}
-				client.aClass75_2.method1321((byte) 2).method15551(client.aClass75_2.aPacketBit_1.data, 0, 1, -1770745780);
+				client.aClass75_2.method1321((byte) 2).read(client.aClass75_2.aPacketBit_1.data, 0, 1, -1770745780);
 				Class499.aClass708_1 = (Class708) Class80_Sub39.method15030(Class538.method30883(-1355340414), client.aClass75_2.aPacketBit_1.data[0] & 0xFF, -1486983874);
 				if (Class499.aClass708_1 == Class708.aClass708_10) {
 					client.aClass75_2.aClass22_1 = new Class22(Class499.anIntArray464);

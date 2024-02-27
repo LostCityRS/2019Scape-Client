@@ -233,10 +233,10 @@ public final class Class175 {
 		@Pc(23) int local23 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1];
 		@Pc(33) int local33 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2];
 		@Pc(48) boolean local48 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 3] == 1;
-		if (Class160.aClass121_Sub1_2.method9702(809873951) != Class347.aClass347_3) {
+		if (BufferedSocket.aClass121_Sub1_2.method9702(809873951) != Class347.aClass347_3) {
 			throw new RuntimeException();
 		}
-		@Pc(62) Class20_Sub5 local62 = (Class20_Sub5) Class160.aClass121_Sub1_2.method9693(1541629729);
+		@Pc(62) Class20_Sub5 local62 = (Class20_Sub5) BufferedSocket.aClass121_Sub1_2.method9693(1541629729);
 		if (arg1 != null) {
 			local62.method16938(arg1, new Class463((float) local13, (float) local23, (float) local33), local48, 1265686049);
 		}

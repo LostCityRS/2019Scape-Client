@@ -14,7 +14,7 @@ public final class Class75 {
 	Class448 aClass448_1;
 
 	@OriginalMember(owner = "client!ad", name = "t", descriptor = "Lclient!ug;")
-	Class160 aClass160_1;
+	BufferedSocket aBufferedSocket_1;
 
 	@OriginalMember(owner = "client!ad", name = "w", descriptor = "I")
 	int anInt242;
@@ -140,14 +140,14 @@ public final class Class75 {
 
 	@OriginalMember(owner = "client!ad", name = "s", descriptor = "()V")
 	public void method1313() throws IOException {
-		if (this.aClass160_1 == null || this.anInt249 * 982154633 <= 0) {
+		if (this.aBufferedSocket_1 == null || this.anInt249 * 982154633 <= 0) {
 			return;
 		}
 		this.aPacket_1.pos = 0;
 		while (true) {
 			@Pc(18) Class80_Sub31 local18 = (Class80_Sub31) this.aClass8_4.method247(129206984);
 			if (local18 == null || local18.anInt1647 * -883470063 > this.aPacket_1.data.length - this.aPacket_1.pos * -1380987821) {
-				this.aClass160_1.method15548(this.aPacket_1.data, 0, this.aPacket_1.pos * -1380987821, 779552044);
+				this.aBufferedSocket_1.write(this.aPacket_1.data, 0, this.aPacket_1.pos * -1380987821, 779552044);
 				this.anInt246 += this.aPacket_1.pos * 2145693327;
 				this.anInt243 = 0;
 				break;
@@ -168,14 +168,14 @@ public final class Class75 {
 
 	@OriginalMember(owner = "client!ad", name = "f", descriptor = "(I)V")
 	public void method1315(@OriginalArg(0) int arg0) throws IOException {
-		if (this.aClass160_1 == null || this.anInt249 * 982154633 <= 0) {
+		if (this.aBufferedSocket_1 == null || this.anInt249 * 982154633 <= 0) {
 			return;
 		}
 		this.aPacket_1.pos = 0;
 		while (true) {
 			@Pc(18) Class80_Sub31 local18 = (Class80_Sub31) this.aClass8_4.method247(129206984);
 			if (local18 == null || local18.anInt1647 * -883470063 > this.aPacket_1.data.length - this.aPacket_1.pos * -1380987821) {
-				this.aClass160_1.method15548(this.aPacket_1.data, 0, this.aPacket_1.pos * -1380987821, 779552044);
+				this.aBufferedSocket_1.write(this.aPacket_1.data, 0, this.aPacket_1.pos * -1380987821, 779552044);
 				this.anInt246 += this.aPacket_1.pos * 2145693327;
 				this.anInt243 = 0;
 				break;
@@ -189,14 +189,14 @@ public final class Class75 {
 	}
 
 	@OriginalMember(owner = "client!ad", name = "l", descriptor = "(Lclient!ug;Ljava/lang/String;I)V")
-	void method1316(@OriginalArg(0) Class160 arg0, @OriginalArg(1) String arg1, @OriginalArg(2) int arg2) {
-		this.aClass160_1 = arg0;
+	void method1316(@OriginalArg(0) BufferedSocket arg0, @OriginalArg(1) String arg1, @OriginalArg(2) int arg2) {
+		this.aBufferedSocket_1 = arg0;
 		this.aClass566_1.method31485(arg1, 470217233);
 	}
 
 	@OriginalMember(owner = "client!ad", name = "u", descriptor = "(B)V")
 	void method1317(@OriginalArg(0) byte arg0) {
-		if (client.anInt3436 % 50 == 0) {
+		if (client.currentCycle % 50 == 0) {
 			this.anInt242 = this.anInt246 * -415615545;
 			this.anInt246 = 0;
 			this.anInt244 = this.anInt247 * -1637913863;
@@ -206,31 +206,31 @@ public final class Class75 {
 
 	@OriginalMember(owner = "client!ad", name = "y", descriptor = "()V")
 	void method1318() {
-		if (this.aClass160_1 != null) {
-			this.aClass160_1.method15549((short) -2193);
-			this.aClass160_1 = null;
+		if (this.aBufferedSocket_1 != null) {
+			this.aBufferedSocket_1.close((short) -2193);
+			this.aBufferedSocket_1 = null;
 		}
 		this.aClass566_1.method31485(null, 1948527449);
 	}
 
 	@OriginalMember(owner = "client!ad", name = "g", descriptor = "(S)V")
 	void method1319(@OriginalArg(0) short arg0) {
-		if (this.aClass160_1 != null) {
-			this.aClass160_1.method15549((short) 2807);
-			this.aClass160_1 = null;
+		if (this.aBufferedSocket_1 != null) {
+			this.aBufferedSocket_1.close((short) 2807);
+			this.aBufferedSocket_1 = null;
 		}
 		this.aClass566_1.method31485(null, -589594244);
 	}
 
 	@OriginalMember(owner = "client!ad", name = "i", descriptor = "(I)V")
 	void method1320(@OriginalArg(0) int arg0) {
-		this.aClass160_1 = null;
+		this.aBufferedSocket_1 = null;
 		this.aClass566_1.method31485(null, -1503470621);
 	}
 
 	@OriginalMember(owner = "client!ad", name = "m", descriptor = "(B)Lclient!ug;")
-	public Class160 method1321(@OriginalArg(0) byte arg0) {
-		return this.aClass160_1;
+	public BufferedSocket method1321(@OriginalArg(0) byte arg0) {
+		return this.aBufferedSocket_1;
 	}
 
 	@OriginalMember(owner = "client!ad", name = "o", descriptor = "()V")
@@ -263,14 +263,14 @@ public final class Class75 {
 
 	@OriginalMember(owner = "client!ad", name = "k", descriptor = "()V")
 	public void method1326() throws IOException {
-		if (this.aClass160_1 == null || this.anInt249 * 982154633 <= 0) {
+		if (this.aBufferedSocket_1 == null || this.anInt249 * 982154633 <= 0) {
 			return;
 		}
 		this.aPacket_1.pos = 0;
 		while (true) {
 			@Pc(18) Class80_Sub31 local18 = (Class80_Sub31) this.aClass8_4.method247(129206984);
 			if (local18 == null || local18.anInt1647 * -883470063 > this.aPacket_1.data.length - this.aPacket_1.pos * -1380987821) {
-				this.aClass160_1.method15548(this.aPacket_1.data, 0, this.aPacket_1.pos * -1380987821, 779552044);
+				this.aBufferedSocket_1.write(this.aPacket_1.data, 0, this.aPacket_1.pos * -1380987821, 779552044);
 				this.anInt246 += this.aPacket_1.pos * 2145693327;
 				this.anInt243 = 0;
 				break;
@@ -309,7 +309,7 @@ public final class Class75 {
 
 	@OriginalMember(owner = "client!ad", name = "h", descriptor = "()V")
 	void method1330() {
-		if (client.anInt3436 % 50 == 0) {
+		if (client.currentCycle % 50 == 0) {
 			this.anInt242 = this.anInt246 * -415615545;
 			this.anInt246 = 0;
 			this.anInt244 = this.anInt247 * -1637913863;
@@ -318,50 +318,50 @@ public final class Class75 {
 	}
 
 	@OriginalMember(owner = "client!ad", name = "d", descriptor = "(Lclient!ug;Ljava/lang/String;)V")
-	void method1331(@OriginalArg(0) Class160 arg0, @OriginalArg(1) String arg1) {
-		this.aClass160_1 = arg0;
+	void method1331(@OriginalArg(0) BufferedSocket arg0, @OriginalArg(1) String arg1) {
+		this.aBufferedSocket_1 = arg0;
 		this.aClass566_1.method31485(arg1, -102323749);
 	}
 
 	@OriginalMember(owner = "client!ad", name = "z", descriptor = "(Lclient!ug;Ljava/lang/String;)V")
-	void method1332(@OriginalArg(0) Class160 arg0, @OriginalArg(1) String arg1) {
-		this.aClass160_1 = arg0;
+	void method1332(@OriginalArg(0) BufferedSocket arg0, @OriginalArg(1) String arg1) {
+		this.aBufferedSocket_1 = arg0;
 		this.aClass566_1.method31485(arg1, -1477534283);
 	}
 
 	@OriginalMember(owner = "client!ad", name = "p", descriptor = "(Lclient!ug;Ljava/lang/String;)V")
-	void method1333(@OriginalArg(0) Class160 arg0, @OriginalArg(1) String arg1) {
-		this.aClass160_1 = arg0;
+	void method1333(@OriginalArg(0) BufferedSocket arg0, @OriginalArg(1) String arg1) {
+		this.aBufferedSocket_1 = arg0;
 		this.aClass566_1.method31485(arg1, 1335607427);
 	}
 
 	@OriginalMember(owner = "client!ad", name = "v", descriptor = "()V")
 	void method1334() {
-		if (this.aClass160_1 != null) {
-			this.aClass160_1.method15549((short) -16355);
-			this.aClass160_1 = null;
+		if (this.aBufferedSocket_1 != null) {
+			this.aBufferedSocket_1.close((short) -16355);
+			this.aBufferedSocket_1 = null;
 		}
 		this.aClass566_1.method31485(null, -1601353017);
 	}
 
 	@OriginalMember(owner = "client!ad", name = "b", descriptor = "()V")
 	void method1335() {
-		this.aClass160_1 = null;
+		this.aBufferedSocket_1 = null;
 		this.aClass566_1.method31485(null, -1468832917);
 	}
 
 	@OriginalMember(owner = "client!ad", name = "n", descriptor = "()V")
 	void method1336() {
-		if (this.aClass160_1 != null) {
-			this.aClass160_1.method15549((short) -1726);
-			this.aClass160_1 = null;
+		if (this.aBufferedSocket_1 != null) {
+			this.aBufferedSocket_1.close((short) -1726);
+			this.aBufferedSocket_1 = null;
 		}
 		this.aClass566_1.method31485(null, 418033736);
 	}
 
 	@OriginalMember(owner = "client!ad", name = "c", descriptor = "()V")
 	void method1337() {
-		this.aClass160_1 = null;
+		this.aBufferedSocket_1 = null;
 		this.aClass566_1.method31485(null, -1650393570);
 	}
 
@@ -372,7 +372,7 @@ public final class Class75 {
 	}
 
 	@OriginalMember(owner = "client!ad", name = "ax", descriptor = "()Lclient!ug;")
-	public Class160 method1339() {
-		return this.aClass160_1;
+	public BufferedSocket method1339() {
+		return this.aBufferedSocket_1;
 	}
 }

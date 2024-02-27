@@ -828,7 +828,7 @@ public final class Class714 {
 		}
 		arg0.anIntArray528[local9] = local32;
 		@Pc(48) byte local48 = -1;
-		if (local19 == Class521.aClass521_65.method37268()) {
+		if (local19 == Class521.aClass521_65.getId()) {
 			local48 = 0;
 		}
 		for (@Pc(56) int local56 = 0; local56 < local32; local56++) {

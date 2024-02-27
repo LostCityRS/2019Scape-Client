@@ -210,7 +210,7 @@ public final class Class606 {
 			client.anInt3434 = Class80_Sub25.anInt1627 * 2130188529;
 		}
 		Class71.method18184(null, client.anInt3460 * 1849344509, 0, 0, Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103, 0, 0, local9, local13, 2018242369);
-		if (Class492.aClass327_12 != null) {
+		if (Js5ArchiveIndex.aClass327_12 != null) {
 			Class671.method33521(local9, local13, -702676384);
 		}
 	}

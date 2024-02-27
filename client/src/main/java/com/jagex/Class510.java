@@ -36,7 +36,7 @@ public final class Class510 {
 
 	@OriginalMember(owner = "client!ql", name = "awj", descriptor = "(Lclient!yp;B)V")
 	static void method30538(@OriginalArg(0) Class690 arg0, @OriginalArg(1) byte arg1) {
-		@Pc(2) long local2 = Class303.method27111((byte) 116);
+		@Pc(2) long local2 = Class303.currentTimeMillis((byte) 116);
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class692.method36974(local2);
 	}
 

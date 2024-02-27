@@ -38,9 +38,9 @@ public final class Class103_Sub18 extends Class103 {
 		@Pc(33) int local33 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2];
 		@Pc(43) int local43 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 3];
 		@Pc(49) Class50 local49 = (Class50) Class111_Sub1.aClass41_Sub20_1.method18054(local33, -1714171463);
-		if (local49.aClass521_2.method37268() != local13 || local49.aClass521_1.method37268() != local23) {
+		if (local49.aClass521_2.getId() != local13 || local49.aClass521_1.getId() != local23) {
 			throw new RuntimeException(local33 + " " + local43);
-		} else if (local23 == Class521.aClass521_42.method37268()) {
+		} else if (local23 == Class521.aClass521_42.getId()) {
 			arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = local49.method1016(local43, -343691795);
 		} else {
 			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local49.method1033(local43, -83186389);

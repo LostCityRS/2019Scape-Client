@@ -43,12 +43,12 @@ public final class Class604 {
 
 	@OriginalMember(owner = "client!uy", name = "k", descriptor = "(III)V")
 	public static void method32139(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		Class130_Sub1.method10205(new Class58_Sub1(arg0, arg1, arg2, client.anInt3583 * 292509161, Class108_Sub2.aClass139_8.anInt1250 * -1981136693, Class108_Sub2.aClass139_8.anInt1251 * 861114341, Class108_Sub2.aClass139_8.method10788((short) -105), Class108_Sub2.aClass139_8.method10764((byte) 48), Class504.aClass495_3.method30298(-648329341)), (byte) -70);
+		Class130_Sub1.method10205(new Class58_Sub1(arg0, arg1, arg2, client.js5ConnectState * 292509161, client.js5NetQueue.errorCount * -1981136693, client.js5NetQueue.errorCode * 861114341, client.js5NetQueue.isRequestQueueFull((short) -105), client.js5NetQueue.method10764((byte) 48), Class504.aClass495_3.method30298(-648329341)), (byte) -70);
 	}
 
 	@OriginalMember(owner = "client!uy", name = "x", descriptor = "(III)V")
 	public static void method32140(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		Class130_Sub1.method10205(new Class58_Sub1(arg0, arg1, arg2, client.anInt3583 * 292509161, Class108_Sub2.aClass139_8.anInt1250 * -1981136693, Class108_Sub2.aClass139_8.anInt1251 * 861114341, Class108_Sub2.aClass139_8.method10788((short) 3099), Class108_Sub2.aClass139_8.method10764((byte) 100), Class504.aClass495_3.method30298(553891216)), (byte) -58);
+		Class130_Sub1.method10205(new Class58_Sub1(arg0, arg1, arg2, client.js5ConnectState * 292509161, client.js5NetQueue.errorCount * -1981136693, client.js5NetQueue.errorCode * 861114341, client.js5NetQueue.isRequestQueueFull((short) 3099), client.js5NetQueue.method10764((byte) 100), Class504.aClass495_3.method30298(553891216)), (byte) -58);
 	}
 
 	@OriginalMember(owner = "client!uy", name = "w", descriptor = "(Lclient!acv;Ljava/lang/String;ILjava/lang/Throwable;)V")
@@ -103,8 +103,9 @@ public final class Class604 {
 		}
 		try {
 			local5 = Class228.method25994(local16, -2145224133);
-		} catch (@Pc(30) Exception local30) {
-			throw new RuntimeException(local30.getMessage() + " " + arg0);
+		} catch (@Pc(30) Exception ex) {
+			ex.printStackTrace();
+			throw new RuntimeException(ex.getMessage() + " " + arg0);
 		}
 		Class686.aClass248_1.method26330(local5, (long) arg0);
 		return local5;
@@ -127,9 +128,9 @@ public final class Class604 {
 		if (arg0 == 14 || arg0 == 19) {
 			Class34.method742(494080144);
 		}
-		if (arg0 != 14 && OutputStream_Sub1.aClass160_3 != null) {
-			OutputStream_Sub1.aClass160_3.method15549((short) 25614);
-			OutputStream_Sub1.aClass160_3 = null;
+		if (arg0 != 14 && OutputStream_Sub1.aBufferedSocket_3 != null) {
+			OutputStream_Sub1.aBufferedSocket_3.close((short) 25614);
+			OutputStream_Sub1.aBufferedSocket_3 = null;
 		}
 		if (arg0 == 4) {
 			Class559.method31408(client.anInt3433 * 1994758437 == 0 || client.anInt3433 * 1994758437 == 12 || client.anInt3460 * 1849344509 != Class698.aClass638_1.anInt5615 * -812846045, -5301585);
@@ -165,7 +166,7 @@ public final class Class604 {
 		local88 = arg0 == 1 || Class392.method28683(arg0, -1435533628) || Class301.method27043(arg0, (byte) 10);
 		@Pc(188) boolean local188 = client.anInt3433 * 1994758437 == 1 || Class392.method28683(client.anInt3433 * 1994758437, -1852916369) || Class301.method27043(client.anInt3433 * 1994758437, (byte) -37);
 		if (local188 != local88) {
-			Class108_Sub2.aClass139_8.method10771(!local88, (byte) 78);
+			client.js5NetQueue.writeLoggedIn(!local88, (byte) 78);
 		}
 		if (Class281.method26864(arg0, 1968874093) || arg0 == 14 || arg0 == 19) {
 			Class279.aClass102_9.method20894();

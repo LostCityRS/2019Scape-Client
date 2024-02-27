@@ -38,9 +38,9 @@ public final class Class239 {
 		arg0.anInt5778 -= -221471862;
 		@Pc(13) int local13 = arg0.anIntArray525[arg0.anInt5778 * 1896589581];
 		@Pc(23) int local23 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1];
-		@Pc(33) Class3 local33 = Class159.method15416(local13 >> 14 & 0x3FFF, local13 & 0x3FFF);
+		@Pc(33) SecondaryLinkedList local33 = Class159.method15416(local13 >> 14 & 0x3FFF, local13 & 0x3FFF);
 		@Pc(35) boolean local35 = false;
-		for (@Pc(40) Class80_Sub1_Sub12 local40 = (Class80_Sub1_Sub12) local33.method50((byte) -38); local40 != null; local40 = (Class80_Sub1_Sub12) local33.method46((byte) -102)) {
+		for (@Pc(40) Class80_Sub1_Sub12 local40 = (Class80_Sub1_Sub12) local33.head((byte) -38); local40 != null; local40 = (Class80_Sub1_Sub12) local33.next((byte) -102)) {
 			if (local40.anInt3091 * 1774210559 == local23) {
 				local35 = true;
 				break;
@@ -63,7 +63,7 @@ public final class Class239 {
 		@Pc(1) Class101[] local1 = client.aClass101Array1;
 		for (@Pc(3) int local3 = 0; local3 < local1.length; local3++) {
 			@Pc(11) Class101 local11 = local1[local3];
-			if (local11 != null && local11.anInt467 * 1614016575 != 0 && client.anInt3436 % 20 < 10) {
+			if (local11 != null && local11.anInt467 * 1614016575 != 0 && client.currentCycle % 20 < 10) {
 				@Pc(59) int local59;
 				if (local11.anInt467 * 1614016575 == 1) {
 					@Pc(38) Class80_Sub19 local38 = (Class80_Sub19) client.aClass24_18.method560((long) (local11.anInt464 * 1096614689));

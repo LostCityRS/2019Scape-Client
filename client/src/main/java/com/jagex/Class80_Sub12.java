@@ -172,7 +172,7 @@ public final class Class80_Sub12 extends Class80 {
 			this.anInt1536 = this.anInt1532 * -2132159791;
 		}
 		this.anInt1534 = arg1 * 2028678155;
-		this.aLong81 = Class303.method27111((byte) 42) * -3277204844630146777L;
+		this.aLong81 = Class303.currentTimeMillis((byte) 42) * -3277204844630146777L;
 	}
 
 	@OriginalMember(owner = "client!akb", name = "y", descriptor = "(FII)V")
@@ -184,7 +184,7 @@ public final class Class80_Sub12 extends Class80 {
 			this.aFloat139 = 1.0F;
 		}
 		this.anInt1537 = arg1 * -1778200193;
-		this.aLong82 = Class303.method27111((byte) 51) * -4138414860134479215L;
+		this.aLong82 = Class303.currentTimeMillis((byte) 51) * -4138414860134479215L;
 	}
 
 	@OriginalMember(owner = "client!akb", name = "n", descriptor = "(I)V")
@@ -192,7 +192,7 @@ public final class Class80_Sub12 extends Class80 {
 		@Pc(11) long local11;
 		@Pc(18) long local18;
 		if (this.anInt1533 * 317138137 != this.anInt1536 * 1625084043) {
-			local11 = Class303.method27111((byte) 48);
+			local11 = Class303.currentTimeMillis((byte) 48);
 			local18 = local11 - this.aLong81 * -4875598587704385897L;
 			this.anInt1534 = (int) ((long) this.anInt1534 - local18 * 2028678155L);
 			if (this.anInt1534 * -1095958621 > 0) {
@@ -205,7 +205,7 @@ public final class Class80_Sub12 extends Class80 {
 		if (this.aFloat139 == this.aFloat140) {
 			return;
 		}
-		local11 = Class303.method27111((byte) 113);
+		local11 = Class303.currentTimeMillis((byte) 113);
 		local18 = local11 - this.aLong82 * 3275358663915107953L;
 		this.anInt1537 = (int) ((long) this.anInt1537 - local18 * -1778200193L);
 		if (this.anInt1537 * -383062401 > 0) {
@@ -235,7 +235,7 @@ public final class Class80_Sub12 extends Class80 {
 			this.anInt1536 = this.anInt1532 * -2132159791;
 		}
 		this.anInt1534 = arg1 * 2028678155;
-		this.aLong81 = Class303.method27111((byte) 116) * -3277204844630146777L;
+		this.aLong81 = Class303.currentTimeMillis((byte) 116) * -3277204844630146777L;
 	}
 
 	@OriginalMember(owner = "client!akb", name = "e", descriptor = "(I)I")
@@ -298,7 +298,7 @@ public final class Class80_Sub12 extends Class80 {
 		@Pc(11) long local11;
 		@Pc(18) long local18;
 		if (this.anInt1533 * 317138137 != this.anInt1536 * 1625084043) {
-			local11 = Class303.method27111((byte) 30);
+			local11 = Class303.currentTimeMillis((byte) 30);
 			local18 = local11 - this.aLong81 * -4875598587704385897L;
 			this.anInt1534 = (int) ((long) this.anInt1534 - local18 * 2028678155L);
 			if (this.anInt1534 * -1095958621 > 0) {
@@ -311,7 +311,7 @@ public final class Class80_Sub12 extends Class80 {
 		if (this.aFloat139 == this.aFloat140) {
 			return;
 		}
-		local11 = Class303.method27111((byte) 45);
+		local11 = Class303.currentTimeMillis((byte) 45);
 		local18 = local11 - this.aLong82 * 3275358663915107953L;
 		this.anInt1537 = (int) ((long) this.anInt1537 - local18 * -1778200193L);
 		if (this.anInt1537 * -383062401 > 0) {
@@ -367,7 +367,7 @@ public final class Class80_Sub12 extends Class80 {
 		@Pc(11) long local11;
 		@Pc(18) long local18;
 		if (this.anInt1533 * 317138137 != this.anInt1536 * 1625084043) {
-			local11 = Class303.method27111((byte) 101);
+			local11 = Class303.currentTimeMillis((byte) 101);
 			local18 = local11 - this.aLong81 * -4875598587704385897L;
 			this.anInt1534 = (int) ((long) this.anInt1534 - local18 * 2028678155L);
 			if (this.anInt1534 * -1095958621 > 0) {
@@ -380,7 +380,7 @@ public final class Class80_Sub12 extends Class80 {
 		if (this.aFloat139 == this.aFloat140) {
 			return;
 		}
-		local11 = Class303.method27111((byte) 66);
+		local11 = Class303.currentTimeMillis((byte) 66);
 		local18 = local11 - this.aLong82 * 3275358663915107953L;
 		this.anInt1537 = (int) ((long) this.anInt1537 - local18 * -1778200193L);
 		if (this.anInt1537 * -383062401 > 0) {
@@ -425,7 +425,7 @@ public final class Class80_Sub12 extends Class80 {
 			this.aFloat139 = 1.0F;
 		}
 		this.anInt1537 = arg1 * -1778200193;
-		this.aLong82 = Class303.method27111((byte) 69) * -4138414860134479215L;
+		this.aLong82 = Class303.currentTimeMillis((byte) 69) * -4138414860134479215L;
 	}
 
 	@OriginalMember(owner = "client!akb", name = "az", descriptor = "()F")
@@ -443,7 +443,7 @@ public final class Class80_Sub12 extends Class80 {
 		@Pc(11) long local11;
 		@Pc(18) long local18;
 		if (this.anInt1533 * 317138137 != this.anInt1536 * 1625084043) {
-			local11 = Class303.method27111((byte) 40);
+			local11 = Class303.currentTimeMillis((byte) 40);
 			local18 = local11 - this.aLong81 * -4875598587704385897L;
 			this.anInt1534 = (int) ((long) this.anInt1534 - local18 * 2028678155L);
 			if (this.anInt1534 * -1095958621 > 0) {
@@ -456,7 +456,7 @@ public final class Class80_Sub12 extends Class80 {
 		if (this.aFloat139 == this.aFloat140) {
 			return;
 		}
-		local11 = Class303.method27111((byte) 32);
+		local11 = Class303.currentTimeMillis((byte) 32);
 		local18 = local11 - this.aLong82 * 3275358663915107953L;
 		this.anInt1537 = (int) ((long) this.anInt1537 - local18 * -1778200193L);
 		if (this.anInt1537 * -383062401 > 0) {

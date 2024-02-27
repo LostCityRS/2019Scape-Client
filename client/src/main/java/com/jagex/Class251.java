@@ -285,7 +285,7 @@ public final class Class251 {
 		arg0.anInt5778 -= -221471862;
 		@Pc(13) int local13 = arg0.anIntArray525[arg0.anInt5778 * 1896589581];
 		@Pc(23) int local23 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1];
-		Class160.aClass121_Sub1_2.method9645((float) ((double) local13 * 3.141592653589793D * 2.0D / 16384.0D), (float) ((double) local23 * 2.0D * 3.141592653589793D / 16384.0D), 133874245);
+		BufferedSocket.aClass121_Sub1_2.method9645((float) ((double) local13 * 3.141592653589793D * 2.0D / 16384.0D), (float) ((double) local23 * 2.0D * 3.141592653589793D / 16384.0D), 133874245);
 	}
 
 	@OriginalMember(owner = "client!et", name = "ank", descriptor = "(Lclient!yp;I)V")

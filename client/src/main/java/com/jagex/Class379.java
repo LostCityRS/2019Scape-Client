@@ -81,7 +81,7 @@ public final class Class379 implements Interface75 {
 		@Pc(5) Class80_Sub1_Sub14 local5 = (Class80_Sub1_Sub14) Class329.aClass24_29.method560((long) arg0);
 		if (local5 == null) {
 			return -1;
-		} else if (Class329.aClass3_15.aClass80_Sub1_2 == local5.aClass80_Sub1_67) {
+		} else if (Class329.aSecondaryLinkedList_15.aClass80_Sub1_2 == local5.aClass80_Sub1_67) {
 			return -1;
 		} else {
 			return ((Class80_Sub1_Sub14) local5.aClass80_Sub1_67).anInt3100 * 102067333;
@@ -108,7 +108,7 @@ public final class Class379 implements Interface75 {
 
 	@OriginalMember(owner = "client!kg", name = "f", descriptor = "()I")
 	@Override
-	public int method37268() {
+	public int getId() {
 		return this.anInt4537 * -1250898689;
 	}
 }

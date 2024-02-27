@@ -54,7 +54,7 @@ public final class Class331 {
 	@OriginalMember(owner = "client!ia", name = "e", descriptor = "(Lclient!akw;Lclient!akw;B)V")
 	public static void method27786(@OriginalArg(0) Class80_Sub1 arg0, @OriginalArg(1) Class80_Sub1 arg1, @OriginalArg(2) byte arg2) {
 		if (arg0.aClass80_Sub1_67 != null) {
-			arg0.method24406(-2147483644);
+			arg0.unlinkSecondary(-2147483644);
 		}
 		arg0.aClass80_Sub1_67 = arg1.aClass80_Sub1_67;
 		arg0.aClass80_Sub1_68 = arg1;
@@ -137,7 +137,7 @@ public final class Class331 {
 			local4 = new Class80_Sub1_Sub14(arg0, arg1, arg2, arg3, arg4, arg6, arg7, arg5, arg8);
 		} else {
 			local4.method24395((byte) 103);
-			local4.method24406(-2147483643);
+			local4.unlinkSecondary(-2147483643);
 			local4.method22751(arg0, arg1, arg2, arg3, arg4, arg6, arg7, arg5, arg8, 620956837);
 		}
 		this.aClass80_Sub1_Sub14Array1[0] = local4;
@@ -159,7 +159,7 @@ public final class Class331 {
 			local4 = new Class80_Sub1_Sub14(arg0, arg1, arg2, arg3, arg4, arg6, arg7, arg5, arg8);
 		} else {
 			local4.method24395((byte) 3);
-			local4.method24406(-2147483647);
+			local4.unlinkSecondary(-2147483647);
 			local4.method22751(arg0, arg1, arg2, arg3, arg4, arg6, arg7, arg5, arg8, 254854014);
 		}
 		this.aClass80_Sub1_Sub14Array1[0] = local4;
@@ -191,7 +191,7 @@ public final class Class331 {
 			local4 = new Class80_Sub1_Sub14(arg0, arg1, arg2, arg3, arg4, arg6, arg7, arg5, arg8);
 		} else {
 			local4.method24395((byte) 66);
-			local4.method24406(-2147483647);
+			local4.unlinkSecondary(-2147483647);
 			local4.method22751(arg0, arg1, arg2, arg3, arg4, arg6, arg7, arg5, arg8, 2079126246);
 		}
 		this.aClass80_Sub1_Sub14Array1[0] = local4;

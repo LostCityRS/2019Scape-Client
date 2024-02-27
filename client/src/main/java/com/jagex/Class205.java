@@ -123,7 +123,7 @@ public final class Class205 implements Interface75 {
 	@OriginalMember(owner = "client!ci", name = "anq", descriptor = "(Lclient!yp;B)V")
 	static void method24988(@OriginalArg(0) Class690 arg0, @OriginalArg(1) byte arg1) throws Exception_Sub3 {
 		@Pc(12) int local12 = arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581];
-		Class160.aClass121_Sub1_2.method9577(Class169.method21691(local12, (byte) 100), true, -46931258);
+		BufferedSocket.aClass121_Sub1_2.method9577(Class169.method21691(local12, (byte) 100), true, -46931258);
 		client.aBoolean726 = true;
 	}
 
@@ -150,7 +150,7 @@ public final class Class205 implements Interface75 {
 
 	@OriginalMember(owner = "client!ci", name = "f", descriptor = "()I")
 	@Override
-	public int method37268() {
+	public int getId() {
 		return this.anInt3389 * -720140911;
 	}
 

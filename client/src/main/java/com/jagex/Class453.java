@@ -110,7 +110,7 @@ public final class Class453 {
 			Class149.anInt1527 += 231464462;
 		}
 		@Pc(24) int local24;
-		if (Class149.anInt1529 * -59652309 != -1 && Class519.aLong391 * 4234509874920039543L < Class303.method27111((byte) 95)) {
+		if (Class149.anInt1529 * -59652309 != -1 && Class519.aLong391 * 4234509874920039543L < Class303.currentTimeMillis((byte) 95)) {
 			for (local24 = Class149.anInt1529 * -59652309; local24 < Class491.aStringArray30.length; local24++) {
 				if (Class491.aStringArray30[local24].startsWith("pause")) {
 					@Pc(36) int local36 = 5;
@@ -120,11 +120,11 @@ public final class Class453 {
 					}
 					Class294.method26961("Pausing for " + local36 + " seconds...", 1455295997);
 					Class149.anInt1529 = (local24 + 1) * 864731011;
-					Class519.aLong391 = (Class303.method27111((byte) 22) + (long) (local36 * 1000)) * 7383831285108766023L;
+					Class519.aLong391 = (Class303.currentTimeMillis((byte) 22) + (long) (local36 * 1000)) * 7383831285108766023L;
 					return;
 				}
 				Class149.aString48 = Class491.aStringArray30[local24];
-				Class436.method29134(false, -972307639);
+				LoginProt.method29134(false, -972307639);
 			}
 			Class149.anInt1529 = -864731011;
 		}
@@ -144,10 +144,10 @@ public final class Class453 {
 			@Pc(136) char local136 = local128.method14074(-91542808);
 			@Pc(140) int local140 = local128.method14068(2006604282);
 			if (local132 == 84) {
-				Class436.method29134(false, -972307639);
+				LoginProt.method29134(false, -972307639);
 			}
 			if (local132 == 80) {
-				Class436.method29134(true, -972307639);
+				LoginProt.method29134(true, -972307639);
 			} else if (local132 == 66 && (local140 & 0x4) != 0) {
 				if (Class80_Sub42.aClipboard1 != null) {
 					@Pc(166) String local166 = "";

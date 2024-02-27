@@ -60,7 +60,7 @@ public final class Class80_Sub42 extends Class80 {
 		if (arg1) {
 			Class123.method20527(local4, (byte) 4);
 		}
-		Class436.method29135(local4, -2047878608);
+		LoginProt.method29135(local4, -2047878608);
 		@Pc(25) Class327 local25 = Class301.method27041(local10, 2089748918);
 		if (local25 != null) {
 			Class296.method26998(local25, -96980808);

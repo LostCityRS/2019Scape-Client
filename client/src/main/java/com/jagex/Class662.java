@@ -98,8 +98,8 @@ public final class Class662 {
 			if (Class368.anInt4502 * -1583611537 != 3) {
 				local114 = (int) client.aFloat254 >> 3;
 				local26 = (int) client.aFloat255 >> 3;
-			} else if (Class160.aClass121_Sub1_2.method9607(-805288997) == Class340.aClass340_7) {
-				@Pc(107) Class123_Sub3 local107 = (Class123_Sub3) Class160.aClass121_Sub1_2.method9603(-1731364376);
+			} else if (BufferedSocket.aClass121_Sub1_2.method9607(-805288997) == Class340.aClass340_7) {
+				@Pc(107) Class123_Sub3 local107 = (Class123_Sub3) BufferedSocket.aClass121_Sub1_2.method9603(-1731364376);
 				local114 = Class441.method29186(local107.aClass466_1, (byte) -119) >> 3;
 				@Pc(116) short local116 = 1024;
 				local26 = (local116 * 3 - (Class627.method32544(local107.aClass466_1, 1945075709) >> 3)) % (local116 * 2);
@@ -112,10 +112,10 @@ public final class Class662 {
 			local153.aPacketBit_2.p2_alt3(local114);
 			client.aClass75_1.method1325(local153, (byte) -124);
 		}
-		if (Class597.aBoolean926 != aBoolean975) {
-			aBoolean975 = Class597.aBoolean926;
+		if (Class597.focus != aBoolean975) {
+			aBoolean975 = Class597.focus;
 			local17 = Class623.method32440(Class443.aClass443_16, client.aClass75_1.aClass22_1, -191270971);
-			local17.aPacketBit_2.p1(Class597.aBoolean926 ? 1 : 0);
+			local17.aPacketBit_2.p1(Class597.focus ? 1 : 0);
 			client.aClass75_1.method1325(local17, (byte) -90);
 		}
 		if (!client.aBoolean714) {
@@ -222,8 +222,8 @@ public final class Class662 {
 			if (Class368.anInt4502 * -1583611537 != 3) {
 				local114 = (int) client.aFloat254 >> 3;
 				local26 = (int) client.aFloat255 >> 3;
-			} else if (Class160.aClass121_Sub1_2.method9607(-2080654173) == Class340.aClass340_7) {
-				@Pc(107) Class123_Sub3 local107 = (Class123_Sub3) Class160.aClass121_Sub1_2.method9603(-1594043013);
+			} else if (BufferedSocket.aClass121_Sub1_2.method9607(-2080654173) == Class340.aClass340_7) {
+				@Pc(107) Class123_Sub3 local107 = (Class123_Sub3) BufferedSocket.aClass121_Sub1_2.method9603(-1594043013);
 				local114 = Class441.method29186(local107.aClass466_1, (byte) -76) >> 3;
 				@Pc(116) short local116 = 1024;
 				local26 = (local116 * 3 - (Class627.method32544(local107.aClass466_1, 1945075709) >> 3)) % (local116 * 2);
@@ -236,10 +236,10 @@ public final class Class662 {
 			local153.aPacketBit_2.p2_alt3(local114);
 			client.aClass75_1.method1325(local153, (byte) -6);
 		}
-		if (Class597.aBoolean926 != aBoolean975) {
-			aBoolean975 = Class597.aBoolean926;
+		if (Class597.focus != aBoolean975) {
+			aBoolean975 = Class597.focus;
 			local17 = Class623.method32440(Class443.aClass443_16, client.aClass75_1.aClass22_1, -191270971);
-			local17.aPacketBit_2.p1(Class597.aBoolean926 ? 1 : 0);
+			local17.aPacketBit_2.p1(Class597.focus ? 1 : 0);
 			client.aClass75_1.method1325(local17, (byte) -65);
 		}
 		if (!client.aBoolean714) {
@@ -388,8 +388,8 @@ public final class Class662 {
 			if (Class368.anInt4502 * -1583611537 != 3) {
 				local114 = (int) client.aFloat254 >> 3;
 				local26 = (int) client.aFloat255 >> 3;
-			} else if (Class160.aClass121_Sub1_2.method9607(-1793809382) == Class340.aClass340_7) {
-				@Pc(107) Class123_Sub3 local107 = (Class123_Sub3) Class160.aClass121_Sub1_2.method9603(-2007918602);
+			} else if (BufferedSocket.aClass121_Sub1_2.method9607(-1793809382) == Class340.aClass340_7) {
+				@Pc(107) Class123_Sub3 local107 = (Class123_Sub3) BufferedSocket.aClass121_Sub1_2.method9603(-2007918602);
 				local114 = Class441.method29186(local107.aClass466_1, (byte) -66) >> 3;
 				@Pc(116) short local116 = 1024;
 				local26 = (local116 * 3 - (Class627.method32544(local107.aClass466_1, 1945075709) >> 3)) % (local116 * 2);
@@ -402,10 +402,10 @@ public final class Class662 {
 			local153.aPacketBit_2.p2_alt3(local114);
 			client.aClass75_1.method1325(local153, (byte) -100);
 		}
-		if (Class597.aBoolean926 != aBoolean975) {
-			aBoolean975 = Class597.aBoolean926;
+		if (Class597.focus != aBoolean975) {
+			aBoolean975 = Class597.focus;
 			local17 = Class623.method32440(Class443.aClass443_16, client.aClass75_1.aClass22_1, -191270971);
-			local17.aPacketBit_2.p1(Class597.aBoolean926 ? 1 : 0);
+			local17.aPacketBit_2.p1(Class597.focus ? 1 : 0);
 			client.aClass75_1.method1325(local17, (byte) -35);
 		}
 		if (!client.aBoolean714) {
@@ -512,8 +512,8 @@ public final class Class662 {
 			if (Class368.anInt4502 * -1583611537 != 3) {
 				local114 = (int) client.aFloat254 >> 3;
 				local26 = (int) client.aFloat255 >> 3;
-			} else if (Class160.aClass121_Sub1_2.method9607(-1639616885) == Class340.aClass340_7) {
-				@Pc(107) Class123_Sub3 local107 = (Class123_Sub3) Class160.aClass121_Sub1_2.method9603(-1770127309);
+			} else if (BufferedSocket.aClass121_Sub1_2.method9607(-1639616885) == Class340.aClass340_7) {
+				@Pc(107) Class123_Sub3 local107 = (Class123_Sub3) BufferedSocket.aClass121_Sub1_2.method9603(-1770127309);
 				local114 = Class441.method29186(local107.aClass466_1, (byte) -118) >> 3;
 				@Pc(116) short local116 = 1024;
 				local26 = (local116 * 3 - (Class627.method32544(local107.aClass466_1, 1945075709) >> 3)) % (local116 * 2);
@@ -526,10 +526,10 @@ public final class Class662 {
 			local153.aPacketBit_2.p2_alt3(local114);
 			client.aClass75_1.method1325(local153, (byte) -96);
 		}
-		if (Class597.aBoolean926 != aBoolean975) {
-			aBoolean975 = Class597.aBoolean926;
+		if (Class597.focus != aBoolean975) {
+			aBoolean975 = Class597.focus;
 			local17 = Class623.method32440(Class443.aClass443_16, client.aClass75_1.aClass22_1, -191270971);
-			local17.aPacketBit_2.p1(Class597.aBoolean926 ? 1 : 0);
+			local17.aPacketBit_2.p1(Class597.focus ? 1 : 0);
 			client.aClass75_1.method1325(local17, (byte) -93);
 		}
 		if (!client.aBoolean714) {

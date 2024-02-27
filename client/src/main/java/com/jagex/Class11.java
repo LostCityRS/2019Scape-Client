@@ -82,27 +82,28 @@ public final class Class11 {
 			}
 		}
 		if (Class365.aClass360_19 == Class360.aClass360_16) {
-			if (Class279.aClass491_1 == null) {
-				Class279.aClass491_1 = new Class491(Class108_Sub2.aClass139_8, Class411.aClass490_2, Class504.aClass495_3, Class174.aBigInteger3, Class174.aBigInteger4);
+			if (Class279.js5MasterIndex == null) {
+				Class279.js5MasterIndex = new Class491(client.js5NetQueue, Class411.aClass490_2, Class504.aClass495_3, Class174.aBigInteger3, Class174.aBigInteger4);
 			}
-			if (!Class279.aClass491_1.method30244(-1998688159)) {
+			if (!Class279.js5MasterIndex.loadMasterIndex(-1998688159)) {
 				return 0;
 			}
+			ClientConfig.printVerbose("Loaded master index");
 			Class430.method29085(0, null, true, (byte) 0);
 			Class365.aBoolean840 = !Class317.method27512((byte) -87);
-			Class365.aClass480_98 = Class103_Sub4.method7625(Class365.aBoolean840 ? Class32.aClass32_29 : Class32.aClass32_27, false, 1, true, true, -2025083144);
-			Class365.aClass480_99 = Class103_Sub4.method7625(Class32.aClass32_28, false, 1, true, true, -1500974908);
-			Class569.aClass480_124 = Class103_Sub4.method7625(Class32.aClass32_10, false, 1, true, true, -1260854377);
-			Class329.aClass480_95 = Class103_Sub4.method7625(Class32.aClass32_41, true, 1, true, true, -1461170371);
+			Class365.aClass480_98 = Class103_Sub4.method7625(Class365.aBoolean840 ? Class32.js5Archive34 : Class32.js5Archive32, false, 1, true, true, -2025083144);
+			Class365.aClass480_99 = Class103_Sub4.method7625(Class32.js5Archive33, false, 1, true, true, -1500974908);
+			Class569.aClass480_124 = Class103_Sub4.method7625(Class32.js5Archive13, false, 1, true, true, -1260854377);
+			Class329.aClass480_95 = Class103_Sub4.method7625(Class32.js5Archive28, true, 1, true, true, -1461170371);
 		}
 		@Pc(126) int local126;
 		@Pc(114) boolean local114;
 		if (Class365.aClass360_19 == Class360.aClass360_2) {
 			local114 = Class365.aClass480_99.method29956(2117444573);
 			@Pc(118) boolean local118 = Class329.aClass480_95.method29956(2125340009);
-			local126 = Class626.aClass141_Sub1Array2[Class32.aClass32_28.method683(-1049838064)].method10910((byte) 14);
-			@Pc(142) int local142 = local126 + Class626.aClass141_Sub1Array2[Class365.aBoolean840 ? Class32.aClass32_29.method683(1991220206) : Class32.aClass32_27.method683(378011543)].method10910((byte) 38);
-			@Pc(152) int local152 = local142 + Class626.aClass141_Sub1Array2[Class32.aClass32_10.method683(1247709886)].method10910((byte) 60);
+			local126 = Class626.aClass141_Sub1Array2[Class32.js5Archive33.method683(-1049838064)].method10910((byte) 14);
+			@Pc(142) int local142 = local126 + Class626.aClass141_Sub1Array2[Class365.aBoolean840 ? Class32.js5Archive34.method683(1991220206) : Class32.js5Archive32.method683(378011543)].method10910((byte) 38);
+			@Pc(152) int local152 = local142 + Class626.aClass141_Sub1Array2[Class32.js5Archive13.method683(1247709886)].method10910((byte) 60);
 			@Pc(162) int local162 = local152 + (local118 ? 100 : Class329.aClass480_95.method29936(-1605381918));
 			@Pc(172) int local172 = local162 + (local114 ? 100 : Class365.aClass480_99.method29936(62896774));
 			if (local172 != 500) {
@@ -150,37 +151,37 @@ public final class Class11 {
 			Class604.method32148(11, -1420016371);
 		}
 		if (Class360.aClass360_1 == Class365.aClass360_19) {
-			Class708.aClass480_136 = Class103_Sub4.method7625(Class32.aClass32_7, false, 1, false, true, -825822574);
-			Class297.aClass480_92 = Class103_Sub4.method7625(Class32.aClass32_15, false, 1, false, true, -1794088396);
-			Class578.aClass480_125 = Class103_Sub4.method7625(Class32.aClass32_32, false, 1, false, true, -1240110936);
-			Class380.aClass480_105 = Class103_Sub4.method7625(Class32.aClass32_42, false, 1, false, true, -1249073364);
-			Class171.aClass480_82 = Class103_Sub4.method7625(Class32.aClass32_24, false, 1, true, true, -789012955);
-			Class688.aClass480_135 = Class103_Sub4.method7625(Class32.aClass32_36, false, 1, true, true, -961290628);
-			Class104_Sub2.aClass480_16 = Class103_Sub4.method7625(Class32.aClass32_4, false, 1, true, true, -1552109205);
-			Class325.aClass480_94 = Class103_Sub4.method7625(Class32.aClass32_5, true, 1, false, true, -1214396965);
-			Class626.aClass480_129 = Class103_Sub4.method7625(Class32.aClass32_2, false, 1, false, true, -1972581339);
-			Class270.aClass480_89 = Class103_Sub4.method7625(Class32.aClass32_1, true, 1, false, true, -1276713108);
-			client.aClass480_83 = Class103_Sub4.method7625(Class32.aClass32_8, false, 1, false, true, -1644309040);
-			Class438.aClass480_112 = Class103_Sub4.method7625(Class32.aClass32_9, false, 1, true, true, -973561627);
-			Class9.aClass480_1 = Class103_Sub4.method7625(Class32.aClass32_14, true, 1, false, false, -863233814);
-			Class238.aClass480_88 = Class103_Sub4.method7625(Class32.aClass32_31, true, 1, false, false, -1153807492);
-			Class223.aClass480_84 = Class103_Sub4.method7625(Class32.aClass32_11, false, 1, true, true, -1678262315);
-			Class56.aClass480_7 = Class103_Sub4.method7625(Class32.aClass32_12, false, 1, true, true, -1601158337);
-			Class352.aClass480_97 = Class103_Sub4.method7625(Class32.aClass32_13, false, 1, true, true, -1952557285);
-			Class231.aClass480_86 = Class103_Sub4.method7625(Class32.aClass32_25, false, 1, true, true, -1196083858);
-			Class143_Sub3.aClass480_34 = Class103_Sub4.method7625(Class32.aClass32_3, false, 1, true, true, -1910234329);
-			Class83.aClass480_12 = Class103_Sub4.method7625(Class32.aClass32_16, false, 1, true, true, -1061299955);
-			Class228.aClass480_85 = Class103_Sub4.method7625(Class32.aClass32_17, false, 1, true, true, -2123781500);
-			Class588.aClass480_127 = Class103_Sub4.method7625(Class32.aClass32_18, true, 1, false, false, -2091765986);
-			Class310.aClass480_93 = Class103_Sub4.method7625(Class32.aClass32_40, true, 1, false, true, -1402336647);
-			Class62.aClass480_8 = Class103_Sub4.method7625(Class32.aClass32_19, false, 1, true, true, -1456140540);
-			Class480.aClass480_120 = Class103_Sub4.method7625(Class32.aClass32_20, false, 1, true, true, -1344797444);
-			Class371.aClass480_102 = Class103_Sub4.method7625(Class32.aClass32_6, true, 1, true, true, -1564323078);
-			Class687.aClass480_134 = Class103_Sub4.method7625(Class32.aClass32_22, false, 1, true, true, -1203605659);
-			Class155.aClass480_41 = Class103_Sub4.method7625(Class32.aClass32_38, false, 1, true, true, -1475858065);
-			Class110_Sub1.aClass480_17 = Class103_Sub4.method7625(Class32.aClass32_30, true, 1, false, true, -2034806134);
-			Class40.aClass480_3 = Class103_Sub4.method7625(Class32.aClass32_39, true, 1, false, true, -1523474318);
-			Class80_Sub15.aClass480_35 = Class103_Sub4.method7625(Class32.aClass32_26, true, 1, true, true, -1348436143);
+			Class708.aClass480_136 = Class103_Sub4.method7625(Class32.js5Archive8, false, 1, false, true, -825822574);
+			Class297.aClass480_92 = Class103_Sub4.method7625(Class32.js5Archive0, false, 1, false, true, -1794088396);
+			Class578.aClass480_125 = Class103_Sub4.method7625(Class32.js5Archive56, false, 1, false, true, -1240110936);
+			Class380.aClass480_105 = Class103_Sub4.method7625(Class32.js5Archive1, false, 1, false, true, -1249073364);
+			Class171.aClass480_82 = Class103_Sub4.method7625(Class32.js5Archive2, false, 1, true, true, -789012955);
+			Class688.aClass480_135 = Class103_Sub4.method7625(Class32.js5Archive49, false, 1, true, true, -961290628);
+			Class104_Sub2.aClass480_16 = Class103_Sub4.method7625(Class32.js5Archive3, false, 1, true, true, -1552109205);
+			Class325.aClass480_94 = Class103_Sub4.method7625(Class32.js5Archive5, true, 1, false, true, -1214396965);
+			Class626.aClass480_129 = Class103_Sub4.method7625(Class32.js5Archive7, false, 1, false, true, -1972581339);
+			Class270.aClass480_89 = Class103_Sub4.method7625(Class32.js5Archive53, true, 1, false, true, -1276713108);
+			client.aClass480_83 = Class103_Sub4.method7625(Class32.js5Archive10, false, 1, false, true, -1644309040);
+			Class438.aClass480_112 = Class103_Sub4.method7625(Class32.js5Archive12, false, 1, true, true, -973561627);
+			Class9.aClass480_1 = Class103_Sub4.method7625(Class32.js5Archive14, true, 1, false, false, -863233814);
+			Class238.aClass480_88 = Class103_Sub4.method7625(Class32.js5Archive40, true, 1, false, false, -1153807492);
+			Class223.aClass480_84 = Class103_Sub4.method7625(Class32.js5Archive16, false, 1, true, true, -1678262315);
+			Class56.aClass480_7 = Class103_Sub4.method7625(Class32.js5Archive17, false, 1, true, true, -1601158337);
+			Class352.aClass480_97 = Class103_Sub4.method7625(Class32.js5Archive18, false, 1, true, true, -1952557285);
+			Class231.aClass480_86 = Class103_Sub4.method7625(Class32.js5Archive19, false, 1, true, true, -1196083858);
+			Class143_Sub3.aClass480_34 = Class103_Sub4.method7625(Class32.js5Archive20, false, 1, true, true, -1910234329);
+			Class83.aClass480_12 = Class103_Sub4.method7625(Class32.js5Archive21, false, 1, true, true, -1061299955);
+			Class228.aClass480_85 = Class103_Sub4.method7625(Class32.js5Archive22, false, 1, true, true, -2123781500);
+			Class588.aClass480_127 = Class103_Sub4.method7625(Class32.js5Archive23, true, 1, false, false, -2091765986);
+			Class310.aClass480_93 = Class103_Sub4.method7625(Class32.js5Archive41, true, 1, false, true, -1402336647);
+			Class62.aClass480_8 = Class103_Sub4.method7625(Class32.js5Archive24, false, 1, true, true, -1456140540);
+			Class480.aClass480_120 = Class103_Sub4.method7625(Class32.js5Archive25, false, 1, true, true, -1344797444);
+			Class371.aClass480_102 = Class103_Sub4.method7625(Class32.js5Archive26, true, 1, true, true, -1564323078);
+			Class687.aClass480_134 = Class103_Sub4.method7625(Class32.js5Archive27, false, 1, true, true, -1203605659);
+			Class155.aClass480_41 = Class103_Sub4.method7625(Class32.js5Archive29, false, 1, true, true, -1475858065);
+			Class110_Sub1.aClass480_17 = Class103_Sub4.method7625(Class32.js5Archive35, true, 1, false, true, -2034806134);
+			Class40.aClass480_3 = Class103_Sub4.method7625(Class32.js5Archive30, true, 1, false, true, -1523474318);
+			Class80_Sub15.aClass480_35 = Class103_Sub4.method7625(Class32.js5Archive31, true, 1, true, true, -1348436143);
 		}
 		if (Class365.aClass360_19 == Class360.aClass360_6) {
 			local6 = 0;
@@ -293,7 +294,7 @@ public final class Class11 {
 			Class35.method759(Class626.aClass480_129, Class626.aClass235_8, Class39.anInterface23_1, (byte) 90);
 			@Pc(1212) Class336 local1212 = new Class336(client.aClass480_83.method29938("huffman", "", -1406931575));
 			Class211.method25821(local1212, 1444582414);
-			Class554.aClass146_2 = Class257.method26425((short) -24982);
+			Class554.timer = Class257.create((short) -24982);
 			Class705.aClass80_Sub39_1 = new Class80_Sub39(true);
 		}
 		if (Class365.aClass360_19 == Class360.aClass360_9) {
@@ -347,9 +348,9 @@ public final class Class11 {
 			Class365.aClass480_99 = null;
 			Class384.aClass90_1 = null;
 			Class365.anInterface30Array1 = null;
-			Class673.aMap22.remove(Class32.aClass32_28);
-			Class673.aMap22.remove(Class32.aClass32_27);
-			Class673.aMap22.remove(Class32.aClass32_29);
+			Class673.aMap22.remove(Class32.js5Archive33);
+			Class673.aMap22.remove(Class32.js5Archive32);
+			Class673.aMap22.remove(Class32.js5Archive34);
 			Class279.method26845(-1308628666);
 			client.aBoolean709 = Class703.aClass80_Sub37_49.aClass165_Sub44_1.method16875(1492463754) == 1;
 			Class703.aClass80_Sub37_49.method14943(Class703.aClass80_Sub37_49.aClass165_Sub44_1, 1, (byte) 122);

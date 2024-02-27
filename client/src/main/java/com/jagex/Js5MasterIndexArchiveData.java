@@ -6,19 +6,19 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!pt")
-public final class Class493 {
+public final class Js5MasterIndexArchiveData {
 
 	@OriginalMember(owner = "client!pt", name = "t", descriptor = "I")
-	final int anInt5030;
+	final int crc;
 
 	@OriginalMember(owner = "client!pt", name = "f", descriptor = "I")
-	final int anInt5028;
+	final int groupCount;
 
 	@OriginalMember(owner = "client!pt", name = "e", descriptor = "I")
-	final int anInt5029;
+	final int version;
 
 	@OriginalMember(owner = "client!pt", name = "u", descriptor = "[B")
-	final byte[] aByteArray95;
+	final byte[] whirlpool;
 
 	@OriginalMember(owner = "client!pt", name = "fh", descriptor = "(Lclient!hx;Lclient!he;Lclient!yp;B)V")
 	static void method30272(@OriginalArg(0) Class327 arg0, @OriginalArg(1) Class310 arg1, @OriginalArg(2) Class690 arg2, @OriginalArg(3) byte arg3) {
@@ -102,10 +102,10 @@ public final class Class493 {
 	}
 
 	@OriginalMember(owner = "client!pt", name = "<init>", descriptor = "(IIII[B)V")
-	Class493(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) byte[] arg4) {
-		this.anInt5030 = arg0 * -1423024557;
-		this.anInt5028 = arg1 * -1908463777;
-		this.anInt5029 = arg2 * 1502121733;
-		this.aByteArray95 = arg4;
+	public Js5MasterIndexArchiveData(@OriginalArg(0) int crc, @OriginalArg(1) int groupCount, @OriginalArg(2) int version, @OriginalArg(3) int arg3, @OriginalArg(4) byte[] whirlpool) {
+		this.crc = crc * -1423024557;
+		this.groupCount = groupCount * -1908463777;
+		this.version = version * 1502121733;
+		this.whirlpool = whirlpool;
 	}
 }

@@ -38,12 +38,12 @@ public final class Class25 {
 					@Pc(78) Class261 local78 = local58.method23581((byte) 67);
 					if (local74.aBoolean986) {
 						if (local78.anInt3890 * 679184865 == 3) {
-							if (arg0.anInt2702 * -2417789 > 0 && arg0.anInt2688 * -1881785185 <= client.anInt3436 && arg0.anInt2689 * 1790159189 < client.anInt3436) {
+							if (arg0.anInt2702 * -2417789 > 0 && arg0.anInt2688 * -1881785185 <= client.currentCycle && arg0.anInt2689 * 1790159189 < client.currentCycle) {
 								local58.method23587(-1, -2060415981);
 								arg0.aClass561Array3[local38].anInt5188 = -1389203317;
 								continue;
 							}
-						} else if (local78.anInt3890 * 679184865 == 1 && arg0.anInt2702 * -2417789 > 0 && arg0.anInt2688 * -1881785185 <= client.anInt3436 && arg0.anInt2689 * 1790159189 < client.anInt3436) {
+						} else if (local78.anInt3890 * 679184865 == 1 && arg0.anInt2702 * -2417789 > 0 && arg0.anInt2688 * -1881785185 <= client.currentCycle && arg0.anInt2689 * 1790159189 < client.currentCycle) {
 							continue;
 						}
 					}
@@ -59,13 +59,13 @@ public final class Class25 {
 			label84: {
 				@Pc(171) Class261 local171 = local163.method23581((byte) 67);
 				if (local171.anInt3890 * 679184865 == 3) {
-					if (arg0.anInt2702 * -2417789 > 0 && arg0.anInt2688 * -1881785185 <= client.anInt3436 && arg0.anInt2689 * 1790159189 < client.anInt3436) {
+					if (arg0.anInt2702 * -2417789 > 0 && arg0.anInt2688 * -1881785185 <= client.currentCycle && arg0.anInt2689 * 1790159189 < client.currentCycle) {
 						arg0.anIntArray240 = null;
 						local163.method23587(-1, -2060415981);
 						break label84;
 					}
 				} else if (local171.anInt3890 * 679184865 == 1) {
-					if (arg0.anInt2702 * -2417789 > 0 && arg0.anInt2688 * -1881785185 <= client.anInt3436 && arg0.anInt2689 * 1790159189 < client.anInt3436) {
+					if (arg0.anInt2702 * -2417789 > 0 && arg0.anInt2688 * -1881785185 <= client.currentCycle && arg0.anInt2689 * 1790159189 < client.currentCycle) {
 						local163.method23621(1, (byte) -17);
 						break label84;
 					}

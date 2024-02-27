@@ -123,7 +123,7 @@ public final class Class322 implements Interface75 {
 
 	@OriginalMember(owner = "client!hq", name = "f", descriptor = "()I")
 	@Override
-	public int method37268() {
+	public int getId() {
 		return this.anInt4064 * -686561189;
 	}
 

@@ -15,7 +15,7 @@ public final class Class71_Sub1 extends Class71 {
 		Class266.method26657(false, (short) 20385);
 		Class305.method27205(-1236463393);
 		Class365.aClass360Array1 = null;
-		Class279.aClass491_1 = null;
+		Class279.js5MasterIndex = null;
 		Class604.method32148(5, -534910436);
 	}
 

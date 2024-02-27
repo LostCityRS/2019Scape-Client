@@ -12,7 +12,7 @@ public final class Class248 {
 	Class80_Sub1 aClass80_Sub1_69 = new Class80_Sub1();
 
 	@OriginalMember(owner = "client!eq", name = "l", descriptor = "Lclient!aaa;")
-	Class3 aClass3_14 = new Class3();
+	SecondaryLinkedList aSecondaryLinkedList_14 = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!eq", name = "f", descriptor = "I")
 	int anInt3869;
@@ -54,33 +54,33 @@ public final class Class248 {
 	@OriginalMember(owner = "client!eq", name = "f", descriptor = "(Lclient!akw;J)V")
 	public void method26330(@OriginalArg(0) Class80_Sub1 arg0, @OriginalArg(1) long arg1) {
 		if (this.anInt3870 * -676646489 == 0) {
-			@Pc(9) Class80_Sub1 local9 = this.aClass3_14.method67(835173147);
+			@Pc(9) Class80_Sub1 local9 = this.aSecondaryLinkedList_14.method67(835173147);
 			local9.method24395((byte) 120);
-			local9.method24406(-2147483643);
+			local9.unlinkSecondary(-2147483643);
 			if (this.aClass80_Sub1_69 == local9) {
-				local9 = this.aClass3_14.method67(-834238014);
+				local9 = this.aSecondaryLinkedList_14.method67(-834238014);
 				local9.method24395((byte) 96);
-				local9.method24406(-2147483641);
+				local9.unlinkSecondary(-2147483641);
 			}
 		} else {
 			this.anInt3870 -= -969251305;
 		}
 		this.aClass24_24.method563(arg0, arg1);
-		this.aClass3_14.method42(arg0, 1599142138);
+		this.aSecondaryLinkedList_14.addTail(arg0, 1599142138);
 	}
 
 	@OriginalMember(owner = "client!eq", name = "t", descriptor = "(J)Lclient!akw;")
 	public Class80_Sub1 method26331(@OriginalArg(0) long arg0) {
 		@Pc(5) Class80_Sub1 local5 = (Class80_Sub1) this.aClass24_24.method560(arg0);
 		if (local5 != null) {
-			this.aClass3_14.method42(local5, 1599142138);
+			this.aSecondaryLinkedList_14.addTail(local5, 1599142138);
 		}
 		return local5;
 	}
 
 	@OriginalMember(owner = "client!eq", name = "e", descriptor = "(I)V")
 	public void method26332(@OriginalArg(0) int arg0) {
-		this.aClass3_14.method41(-252802305);
+		this.aSecondaryLinkedList_14.method41(-252802305);
 		this.aClass24_24.method564(-1272458582);
 		this.aClass80_Sub1_69 = new Class80_Sub1();
 		this.anInt3870 = this.anInt3869 * 2135590717;
@@ -88,7 +88,7 @@ public final class Class248 {
 
 	@OriginalMember(owner = "client!eq", name = "g", descriptor = "()V")
 	public void method26333() {
-		this.aClass3_14.method41(-252802305);
+		this.aSecondaryLinkedList_14.method41(-252802305);
 		this.aClass24_24.method564(-1747074140);
 		this.aClass80_Sub1_69 = new Class80_Sub1();
 		this.anInt3870 = this.anInt3869 * 2135590717;
@@ -98,7 +98,7 @@ public final class Class248 {
 	public Class80_Sub1 method26334(@OriginalArg(0) long arg0) {
 		@Pc(5) Class80_Sub1 local5 = (Class80_Sub1) this.aClass24_24.method560(arg0);
 		if (local5 != null) {
-			this.aClass3_14.method42(local5, 1599142138);
+			this.aSecondaryLinkedList_14.addTail(local5, 1599142138);
 		}
 		return local5;
 	}
@@ -107,14 +107,14 @@ public final class Class248 {
 	public Class80_Sub1 method26335(@OriginalArg(0) long arg0) {
 		@Pc(5) Class80_Sub1 local5 = (Class80_Sub1) this.aClass24_24.method560(arg0);
 		if (local5 != null) {
-			this.aClass3_14.method42(local5, 1599142138);
+			this.aSecondaryLinkedList_14.addTail(local5, 1599142138);
 		}
 		return local5;
 	}
 
 	@OriginalMember(owner = "client!eq", name = "i", descriptor = "()V")
 	public void method26336() {
-		this.aClass3_14.method41(-252802305);
+		this.aSecondaryLinkedList_14.method41(-252802305);
 		this.aClass24_24.method564(-258520469);
 		this.aClass80_Sub1_69 = new Class80_Sub1();
 		this.anInt3870 = this.anInt3869 * 2135590717;
@@ -122,7 +122,7 @@ public final class Class248 {
 
 	@OriginalMember(owner = "client!eq", name = "m", descriptor = "()V")
 	public void method26337() {
-		this.aClass3_14.method41(-252802305);
+		this.aSecondaryLinkedList_14.method41(-252802305);
 		this.aClass24_24.method564(-1669491269);
 		this.aClass80_Sub1_69 = new Class80_Sub1();
 		this.anInt3870 = this.anInt3869 * 2135590717;

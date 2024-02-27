@@ -445,7 +445,7 @@ public final class Class443 {
 	static void method29216(@OriginalArg(0) int arg0) {
 		Class391.aClass8_53 = null;
 		Class159_Sub1.anInt2017 = 0;
-		Class492.aClass327_12 = null;
+		Js5ArchiveIndex.aClass327_12 = null;
 		Class159_Sub1.method15335();
 		Class159_Sub1.aClass8_28.method260(1366176491);
 		Class159_Sub1.aClass587_2 = null;

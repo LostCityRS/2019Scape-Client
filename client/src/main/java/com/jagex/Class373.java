@@ -34,12 +34,12 @@ public final class Class373 implements Interface33 {
 	@OriginalMember(owner = "client!ka", name = "hh", descriptor = "(I)V")
 	static void method28414(@OriginalArg(0) int arg0) {
 		@Pc(3) Class626 local3 = client.aClass539_1.method30893((byte) -20);
-		@Pc(7) Class463 local7 = Class160.aClass121_Sub1_2.method9608(2043947411);
+		@Pc(7) Class463 local7 = BufferedSocket.aClass121_Sub1_2.method9608(2043947411);
 		Class89.anInt319 = ((int) local7.aFloat297 - (local3.anInt5540 * -390642507 << 9)) * 2068667409;
 		Class283.anInt3937 = -((int) local7.aFloat295) * 364051605;
 		Class102_Sub2.anInt653 = ((int) local7.aFloat296 - (local3.anInt5537 * -894305615 << 9)) * 483037039;
-		client.anInt3481 = ((int) ((double) Class160.aClass121_Sub1_2.method9612(-2035359138) * 2607.5945876176133D) & 0x3FFF) * -560342087;
-		Class664.anInt5692 = ((int) ((double) Class160.aClass121_Sub1_2.method9648(-827111528) * 2607.5945876176133D) & 0x3FFF) * -399825347;
+		client.anInt3481 = ((int) ((double) BufferedSocket.aClass121_Sub1_2.method9612(-2035359138) * 2607.5945876176133D) & 0x3FFF) * -560342087;
+		Class664.anInt5692 = ((int) ((double) BufferedSocket.aClass121_Sub1_2.method9648(-827111528) * 2607.5945876176133D) & 0x3FFF) * -399825347;
 		Class338.anInt4231 = 0;
 	}
 

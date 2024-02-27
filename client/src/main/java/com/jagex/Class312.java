@@ -116,7 +116,7 @@ public final class Class312 {
 			return;
 		}
 		arg0.anInt4074 = 1004555770;
-		arg0.anInt4115 = ((int) (Math.sin((double) client.anInt3436 / 40.0D) * 256.0D) & 0x7FF) * -1137256781;
+		arg0.anInt4115 = ((int) (Math.sin((double) client.currentCycle / 40.0D) * 256.0D) & 0x7FF) * -1137256781;
 		arg0.anInt4136 = -255961727;
 		arg0.anInt4122 = client.anInt3558 * -811655695;
 		arg0.anInt4123 = Class343.method27943(Class641.aClass120_Sub1_Sub1_Sub1_Sub2_3.aString73, -1220959402) * -1037144091;

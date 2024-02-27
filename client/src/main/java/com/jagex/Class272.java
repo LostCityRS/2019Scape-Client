@@ -142,7 +142,7 @@ final class Class272 implements Interface55 {
 			if (local23.aFloat297 != 0.0F || local23.aFloat296 != 0.0F) {
 				@Pc(227) int local227;
 				if (Class368.anInt4502 * -1583611537 == 3) {
-					local102 = Class160.aClass121_Sub1_2.method9648(-340872501);
+					local102 = BufferedSocket.aClass121_Sub1_2.method9648(-340872501);
 					if (local23.aFloat297 != 0.0F || local23.aFloat296 != 0.0F) {
 						local227 = (int) ((double) (-1.0F * local102) * 2607.5945876176133D) - (int) (Math.atan2((double) local23.aFloat297, (double) local23.aFloat296) * 2607.5945876176133D) - 4096 & 0x3FFF;
 						if (local227 > 8192) {
@@ -216,7 +216,7 @@ final class Class272 implements Interface55 {
 			if (local23.aFloat297 != 0.0F || local23.aFloat296 != 0.0F) {
 				@Pc(227) int local227;
 				if (Class368.anInt4502 * -1583611537 == 3) {
-					local102 = Class160.aClass121_Sub1_2.method9648(2086670892);
+					local102 = BufferedSocket.aClass121_Sub1_2.method9648(2086670892);
 					if (local23.aFloat297 != 0.0F || local23.aFloat296 != 0.0F) {
 						local227 = (int) ((double) (-1.0F * local102) * 2607.5945876176133D) - (int) (Math.atan2((double) local23.aFloat297, (double) local23.aFloat296) * 2607.5945876176133D) - 4096 & 0x3FFF;
 						if (local227 > 8192) {
@@ -290,7 +290,7 @@ final class Class272 implements Interface55 {
 			if (local23.aFloat297 != 0.0F || local23.aFloat296 != 0.0F) {
 				@Pc(227) int local227;
 				if (Class368.anInt4502 * -1583611537 == 3) {
-					local102 = Class160.aClass121_Sub1_2.method9648(418755835);
+					local102 = BufferedSocket.aClass121_Sub1_2.method9648(418755835);
 					if (local23.aFloat297 != 0.0F || local23.aFloat296 != 0.0F) {
 						local227 = (int) ((double) (-1.0F * local102) * 2607.5945876176133D) - (int) (Math.atan2((double) local23.aFloat297, (double) local23.aFloat296) * 2607.5945876176133D) - 4096 & 0x3FFF;
 						if (local227 > 8192) {

@@ -37,7 +37,7 @@ public final class Class543 {
 
 	@OriginalMember(owner = "client!s", name = "bfh", descriptor = "(Lclient!yp;I)V")
 	static void method31176(@OriginalArg(0) Class690 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = client.aClass65_15.method37268();
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = client.aClass65_15.getId();
 	}
 
 	@OriginalMember(owner = "client!s", name = "<init>", descriptor = "()V")

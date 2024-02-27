@@ -83,17 +83,17 @@ public final class Class301 implements Interface75 {
 				Class294.method26961("Pausing for " + local17 + " seconds...", 1455295997);
 				Class491.aStringArray30 = arg0;
 				Class149.anInt1529 = (local5 + 1) * 864731011;
-				Class519.aLong391 = (Class303.method27111((byte) 104) + (long) (local17 * 1000)) * 7383831285108766023L;
+				Class519.aLong391 = (Class303.currentTimeMillis((byte) 104) + (long) (local17 * 1000)) * 7383831285108766023L;
 				return;
 			}
 			Class149.aString48 = arg0[local5];
-			Class436.method29134(false, -972307639);
+			LoginProt.method29134(false, -972307639);
 		}
 	}
 
 	@OriginalMember(owner = "client!gv", name = "ax", descriptor = "(I)J")
 	static long method27039(@OriginalArg(0) int arg0) {
-		return Class554.aClass146_2.method13858((byte) 1);
+		return Class554.timer.method13858((byte) 1);
 	}
 
 	@OriginalMember(owner = "client!gv", name = "it", descriptor = "(Lclient!hx;Lclient!he;Lclient!yp;I)V")
@@ -144,7 +144,7 @@ public final class Class301 implements Interface75 {
 
 	@OriginalMember(owner = "client!gv", name = "f", descriptor = "()I")
 	@Override
-	public int method37268() {
+	public int getId() {
 		return this.anInt3965 * 302445531;
 	}
 

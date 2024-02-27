@@ -9,23 +9,23 @@ import java.io.IOException;
 import java.net.Socket;
 
 @OriginalClass("client!ug")
-public abstract class Class160 {
+public abstract class BufferedSocket {
 
 	@OriginalMember(owner = "client!ug", name = "ub", descriptor = "Lclient!ahd;")
 	public static Class121_Sub1 aClass121_Sub1_2;
 
 	@OriginalMember(owner = "client!ug", name = "b", descriptor = "(Ljava/net/Socket;II)Lclient!ug;")
-	static Class160 method15544(@OriginalArg(0) Socket arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) throws IOException {
-		return new Class160_Sub1(arg0, arg1, arg2);
+	static BufferedSocket method15544(@OriginalArg(0) Socket arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) throws IOException {
+		return new BufferedSocket_Sub1(arg0, arg1, arg2);
 	}
 
 	@OriginalMember(owner = "client!ug", name = "c", descriptor = "(Ljava/net/Socket;II)Lclient!ug;")
-	static Class160 method15546(@OriginalArg(0) Socket arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) throws IOException {
-		return new Class160_Sub1(arg0, arg1, arg2);
+	static BufferedSocket method15546(@OriginalArg(0) Socket arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) throws IOException {
+		return new BufferedSocket_Sub1(arg0, arg1, arg2);
 	}
 
 	@OriginalMember(owner = "client!ug", name = "n", descriptor = "(Ljava/net/Socket;I)Lclient!ug;")
-	public static Class160 method15565(@OriginalArg(0) Socket arg0, @OriginalArg(1) int arg1) throws IOException {
+	public static BufferedSocket method15565(@OriginalArg(0) Socket arg0, @OriginalArg(1) int arg1) throws IOException {
 		return Class515.method30572(arg0, arg1, arg1, 1535694702);
 	}
 
@@ -40,26 +40,26 @@ public abstract class Class160 {
 	}
 
 	@OriginalMember(owner = "client!ug", name = "<init>", descriptor = "()V")
-	Class160() {
+	BufferedSocket() {
 	}
 
 	@OriginalMember(owner = "client!ug", name = "e", descriptor = "(IB)Z")
-	public abstract boolean method15545(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1) throws IOException;
+	public abstract boolean hasBytes(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1) throws IOException;
 
 	@OriginalMember(owner = "client!ug", name = "u", descriptor = "(I)I")
-	public abstract int method15547(@OriginalArg(0) int arg0) throws IOException;
+	public abstract int available(@OriginalArg(0) int arg0) throws IOException;
 
 	@OriginalMember(owner = "client!ug", name = "g", descriptor = "([BIII)V")
-	public abstract void method15548(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) throws IOException;
+	public abstract void write(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) throws IOException;
 
 	@OriginalMember(owner = "client!ug", name = "i", descriptor = "(S)V")
-	public abstract void method15549(@OriginalArg(0) short arg0);
+	public abstract void close(@OriginalArg(0) short arg0);
 
 	@OriginalMember(owner = "client!ug", name = "m", descriptor = "(B)V")
 	public abstract void method15550(@OriginalArg(0) byte arg0);
 
 	@OriginalMember(owner = "client!ug", name = "l", descriptor = "([BIII)I")
-	public abstract int method15551(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) throws IOException;
+	public abstract int read(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) throws IOException;
 
 	@OriginalMember(owner = "client!ug", name = "a", descriptor = "(I)Z")
 	public abstract boolean method15552(@OriginalArg(0) int arg0) throws IOException;

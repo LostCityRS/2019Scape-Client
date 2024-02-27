@@ -122,7 +122,7 @@ public class Class158 implements Interface64 {
 
 	@OriginalMember(owner = "client!ub", name = "f", descriptor = "()I")
 	@Override
-	public final int method37268() {
+	public final int getId() {
 		return this.anInt2028 * 2015367115;
 	}
 

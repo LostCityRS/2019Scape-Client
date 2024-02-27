@@ -345,7 +345,7 @@ public abstract class Class155 {
 	static int method15058(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		@Pc(5) Class80_Sub20 local5 = (Class80_Sub20) Class654.aClass24_38.method560((long) arg0);
 		if (local5 == null) {
-			@Pc(12) Class433 local12 = Class518.anInterface48_1.method29225(arg0, (byte) -33);
+			@Pc(12) Class433 local12 = Js5MasterIndex.anInterface48_1.method29225(arg0, (byte) -33);
 			if (local12 == null || local12.anInt4737 * 821164565 != 2) {
 				return -1;
 			}

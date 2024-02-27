@@ -184,7 +184,7 @@ public final class Class80_Sub39 extends Class80 {
 		@Pc(1) Interface75[] local1 = arg0;
 		for (@Pc(3) int local3 = 0; local3 < local1.length; local3++) {
 			@Pc(11) Interface75 local11 = local1[local3];
-			if (arg1 == local11.method37268()) {
+			if (arg1 == local11.getId()) {
 				return local11;
 			}
 		}
@@ -251,13 +251,13 @@ public final class Class80_Sub39 extends Class80 {
 					this.anInt1706 = 1645458645;
 				}
 			}
-			if (Class342.aString190.toLowerCase().indexOf("sun") != -1) {
+			if (Class342.javaVendor.toLowerCase().indexOf("sun") != -1) {
 				this.anInt1712 = 970518717;
-			} else if (Class342.aString190.toLowerCase().indexOf("microsoft") != -1) {
+			} else if (Class342.javaVendor.toLowerCase().indexOf("microsoft") != -1) {
 				this.anInt1712 = 1941037434;
-			} else if (Class342.aString190.toLowerCase().indexOf("apple") != -1) {
+			} else if (Class342.javaVendor.toLowerCase().indexOf("apple") != -1) {
 				this.anInt1712 = -1383411145;
-			} else if (Class342.aString190.toLowerCase().indexOf("oracle") == -1) {
+			} else if (Class342.javaVendor.toLowerCase().indexOf("oracle") == -1) {
 				this.anInt1712 = -412892428;
 			} else {
 				this.anInt1712 = 557626289;
@@ -266,8 +266,8 @@ public final class Class80_Sub39 extends Class80 {
 			@Pc(278) int local278 = 0;
 			@Pc(286) char local286;
 			try {
-				while (local276 < Class601.aString231.length()) {
-					local286 = Class601.aString231.charAt(local276);
+				while (local276 < Class601.javaVersion.length()) {
+					local286 = Class601.javaVersion.charAt(local276);
 					if (local286 < '0' || local286 > '9') {
 						break;
 					}
@@ -277,11 +277,11 @@ public final class Class80_Sub39 extends Class80 {
 			} catch (@Pc(304) Exception local304) {
 			}
 			this.anInt1723 = local278 * -764779723;
-			local276 = Class601.aString231.indexOf(46, 2) + 1;
+			local276 = Class601.javaVersion.indexOf(46, 2) + 1;
 			local278 = 0;
 			try {
-				while (local276 < Class601.aString231.length()) {
-					local286 = Class601.aString231.charAt(local276);
+				while (local276 < Class601.javaVersion.length()) {
+					local286 = Class601.javaVersion.charAt(local276);
 					if (local286 < '0' || local286 > '9') {
 						break;
 					}
@@ -291,11 +291,11 @@ public final class Class80_Sub39 extends Class80 {
 			} catch (@Pc(344) Exception local344) {
 			}
 			this.anInt1714 = local278 * 1800875411;
-			local276 = Class601.aString231.indexOf(95, 4) + 1;
+			local276 = Class601.javaVersion.indexOf(95, 4) + 1;
 			local278 = 0;
 			try {
-				while (local276 < Class601.aString231.length()) {
-					local286 = Class601.aString231.charAt(local276);
+				while (local276 < Class601.javaVersion.length()) {
+					local286 = Class601.javaVersion.charAt(local276);
 					if (local286 < '0' || local286 > '9') {
 						break;
 					}

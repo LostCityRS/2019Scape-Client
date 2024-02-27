@@ -52,7 +52,7 @@ public abstract class Class165 {
 		}
 		@Pc(21) int local21;
 		if (Class368.anInt4502 * -1583611537 == 3) {
-			local21 = (int) ((double) Class160.aClass121_Sub1_2.method9648(579251441) * 2607.5945876176133D) + client.anInt3474 * -1918431893 & 0x3FFF;
+			local21 = (int) ((double) BufferedSocket.aClass121_Sub1_2.method9648(579251441) * 2607.5945876176133D) + client.anInt3474 * -1918431893 & 0x3FFF;
 		} else if (Class368.anInt4502 * -1583611537 == 4) {
 			local21 = (int) client.aFloat255 & 0x3FFF;
 		} else {

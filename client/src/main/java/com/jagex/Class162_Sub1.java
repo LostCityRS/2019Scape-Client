@@ -20,8 +20,8 @@ public final class Class162_Sub1 extends Class162 {
 	@OriginalMember(owner = "client!alv", name = "q", descriptor = "(Lclient!ara;I)V")
 	static void method15720(@OriginalArg(0) Class80_Sub1_Sub4 arg0, @OriginalArg(1) int arg1) {
 		@Pc(1) boolean local1 = false;
-		arg0.method24406(-2147483643);
-		for (@Pc(9) Class80_Sub1_Sub4 local9 = (Class80_Sub1_Sub4) Class630.aClass3_17.method50((byte) 27); local9 != null; local9 = (Class80_Sub1_Sub4) Class630.aClass3_17.method46((byte) -102)) {
+		arg0.unlinkSecondary(-2147483643);
+		for (@Pc(9) Class80_Sub1_Sub4 local9 = (Class80_Sub1_Sub4) Class630.aSecondaryLinkedList_17.head((byte) 27); local9 != null; local9 = (Class80_Sub1_Sub4) Class630.aSecondaryLinkedList_17.next((byte) -102)) {
 			if (Class690.method36959(arg0.method21711((byte) 14), local9.method21711((byte) 35), -577765912)) {
 				Class653.method33145(arg0, local9, -489801945);
 				local1 = true;
@@ -29,7 +29,7 @@ public final class Class162_Sub1 extends Class162 {
 			}
 		}
 		if (!local1) {
-			Class630.aClass3_17.method42(arg0, 1599142138);
+			Class630.aSecondaryLinkedList_17.addTail(arg0, 1599142138);
 		}
 	}
 
@@ -137,7 +137,7 @@ public final class Class162_Sub1 extends Class162 {
 	@OriginalMember(owner = "client!alv", name = "m", descriptor = "(I)Z")
 	@Override
 	boolean method15781(@OriginalArg(0) int arg0) {
-		return !this.aQueue1.isEmpty() || this.aLong153 * 4888655562420521213L < Class303.method27111((byte) 121) - 2000L;
+		return !this.aQueue1.isEmpty() || this.aLong153 * 4888655562420521213L < Class303.currentTimeMillis((byte) 121) - 2000L;
 	}
 
 	@OriginalMember(owner = "client!alv", name = "l", descriptor = "(I)I")
@@ -199,7 +199,7 @@ public final class Class162_Sub1 extends Class162 {
 	@OriginalMember(owner = "client!alv", name = "a", descriptor = "()Z")
 	@Override
 	boolean method15776() {
-		return !this.aQueue1.isEmpty() || this.aLong153 * 4888655562420521213L < Class303.method27111((byte) 63) - 2000L;
+		return !this.aQueue1.isEmpty() || this.aLong153 * 4888655562420521213L < Class303.currentTimeMillis((byte) 63) - 2000L;
 	}
 
 	@OriginalMember(owner = "client!alv", name = "k", descriptor = "()I")

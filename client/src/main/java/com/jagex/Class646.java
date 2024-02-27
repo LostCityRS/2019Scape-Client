@@ -48,7 +48,7 @@ public final class Class646 {
 		if (local34 != null) {
 			local38 = local38 + Class279.method26846(local34, 1593328944);
 		}
-		arg8.method7636(local38, arg2 + 3, arg6, arg10, 0, client.aRandom2, Class622.anInt5488, Class344.aClass99Array6, null, -1897112221);
+		arg8.method7636(local38, arg2 + 3, arg6, arg10, 0, client.random, Class622.seed, Class344.aClass99Array6, null, -1897112221);
 		if (arg7.aBoolean588) {
 			Class11.aClass99_1.method18225(arg2 + 5 + arg9.method374(local38, Class344.aClass99Array6, -1856024496), arg6 - arg9.anInt45 * 1190692343);
 		}

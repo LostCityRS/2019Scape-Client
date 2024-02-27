@@ -247,7 +247,7 @@ public final class Class441 {
 		@Pc(8) Class691 local8 = arg0.aBoolean988 ? arg0.aClass691_1 : arg0.aClass691_2;
 		@Pc(11) Class327 local11 = local8.aClass327_14;
 		@Pc(14) Class310 local14 = local8.aClass310_4;
-		Class493.method30272(local11, local14, arg0, (byte) -67);
+		Js5MasterIndexArchiveData.method30272(local11, local14, arg0, (byte) -67);
 	}
 
 	@OriginalMember(owner = "client!nl", name = "zm", descriptor = "(Lclient!yp;I)V")

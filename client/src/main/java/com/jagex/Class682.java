@@ -89,7 +89,7 @@ public final class Class682 {
 			}
 		}
 		Class47.aBoolean28 = false;
-		Class47.aLong10 = Class303.method27111((byte) 11) * 6116256794156162355L;
+		Class47.aLong10 = Class303.currentTimeMillis((byte) 11) * 6116256794156162355L;
 		Class650.aPacket_17 = null;
 	}
 

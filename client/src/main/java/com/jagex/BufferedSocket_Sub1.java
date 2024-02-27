@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.net.Socket;
 
 @OriginalClass("client!alr")
-public final class Class160_Sub1 extends Class160 {
+public final class BufferedSocket_Sub1 extends BufferedSocket {
 
 	@OriginalMember(owner = "client!alr", name = "t", descriptor = "Ljava/net/Socket;")
 	Socket aSocket3;
@@ -21,7 +21,7 @@ public final class Class160_Sub1 extends Class160 {
 	Class596 aClass596_1;
 
 	@OriginalMember(owner = "client!alr", name = "<init>", descriptor = "(Ljava/net/Socket;II)V")
-	Class160_Sub1(@OriginalArg(0) Socket arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) throws IOException {
+	BufferedSocket_Sub1(@OriginalArg(0) Socket arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) throws IOException {
 		this.aSocket3 = arg0;
 		this.aSocket3.setSoTimeout(30000);
 		this.aSocket3.setTcpNoDelay(true);
@@ -39,19 +39,19 @@ public final class Class160_Sub1 extends Class160 {
 
 	@OriginalMember(owner = "client!alr", name = "e", descriptor = "(IB)Z")
 	@Override
-	public boolean method15545(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1) throws IOException {
+	public boolean hasBytes(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1) throws IOException {
 		return this.aClass597_1.method32000(arg0, -996463965);
 	}
 
 	@OriginalMember(owner = "client!alr", name = "u", descriptor = "(I)I")
 	@Override
-	public int method15547(@OriginalArg(0) int arg0) throws IOException {
+	public int available(@OriginalArg(0) int arg0) throws IOException {
 		return this.aClass597_1.method32001(1935144914);
 	}
 
 	@OriginalMember(owner = "client!alr", name = "ht", descriptor = "()V")
 	void method15569() {
-		this.method15549((short) 20602);
+		this.close((short) 20602);
 	}
 
 	@OriginalMember(owner = "client!alr", name = "k", descriptor = "()I")
@@ -62,7 +62,7 @@ public final class Class160_Sub1 extends Class160 {
 
 	@OriginalMember(owner = "client!alr", name = "i", descriptor = "(S)V")
 	@Override
-	public void method15549(@OriginalArg(0) short arg0) {
+	public void close(@OriginalArg(0) short arg0) {
 		this.aClass596_1.method31981(-1552725369);
 		try {
 			this.aSocket3.close();
@@ -81,17 +81,17 @@ public final class Class160_Sub1 extends Class160 {
 	@OriginalMember(owner = "client!alr", name = "finalize", descriptor = "()V")
 	@Override
 	protected void finalize() {
-		this.method15549((short) 9381);
+		this.close((short) 9381);
 	}
 
 	@OriginalMember(owner = "client!alr", name = "hy", descriptor = "()V")
 	void method15570() {
-		this.method15549((short) 23525);
+		this.close((short) 23525);
 	}
 
 	@OriginalMember(owner = "client!alr", name = "hj", descriptor = "()V")
 	void method15571() {
-		this.method15549((short) 10197);
+		this.close((short) 10197);
 	}
 
 	@OriginalMember(owner = "client!alr", name = "j", descriptor = "(I)Z")
@@ -150,13 +150,13 @@ public final class Class160_Sub1 extends Class160 {
 
 	@OriginalMember(owner = "client!alr", name = "g", descriptor = "([BIII)V")
 	@Override
-	public void method15548(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) throws IOException {
+	public void write(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) throws IOException {
 		this.aClass596_1.method31980(arg0, arg1, arg2, (byte) 51);
 	}
 
 	@OriginalMember(owner = "client!alr", name = "l", descriptor = "([BIII)I")
 	@Override
-	public int method15551(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) throws IOException {
+	public int read(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) throws IOException {
 		return this.aClass597_1.method32002(arg0, arg1, arg2, 1206901479);
 	}
 

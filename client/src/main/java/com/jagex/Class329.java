@@ -24,7 +24,7 @@ public final class Class329 {
 	static final Class24 aClass24_29 = new Class24(1024);
 
 	@OriginalMember(owner = "client!hz", name = "e", descriptor = "Lclient!aaa;")
-	static final Class3 aClass3_15 = new Class3();
+	static final SecondaryLinkedList aSecondaryLinkedList_15 = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!hz", name = "u", descriptor = "I")
 	static int anInt4183 = 0;
@@ -34,7 +34,7 @@ public final class Class329 {
 		@Pc(5) Class80_Sub1_Sub14 local5 = (Class80_Sub1_Sub14) aClass24_29.method560((long) arg0);
 		if (local5 == null) {
 			return -1;
-		} else if (aClass3_15.aClass80_Sub1_2 == local5.aClass80_Sub1_67) {
+		} else if (aSecondaryLinkedList_15.aClass80_Sub1_2 == local5.aClass80_Sub1_67) {
 			return -1;
 		} else {
 			return ((Class80_Sub1_Sub14) local5.aClass80_Sub1_67).anInt3100 * 102067333;
@@ -50,7 +50,7 @@ public final class Class329 {
 		}
 		@Pc(31) Class80_Sub1_Sub14 local31 = local5.method27773(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, 588951009);
 		aClass24_29.method563(local31, (long) (local31.anInt3100 * 102067333));
-		aClass3_15.method42(local31, 1599142138);
+		aSecondaryLinkedList_15.addTail(local31, 1599142138);
 		client.anInt3552 = client.anInt3569 * 1273462915;
 	}
 
@@ -98,7 +98,7 @@ public final class Class329 {
 		}
 		@Pc(31) Class80_Sub1_Sub14 local31 = local5.method27773(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, 588951009);
 		aClass24_29.method563(local31, (long) (local31.anInt3100 * 102067333));
-		aClass3_15.method42(local31, 1599142138);
+		aSecondaryLinkedList_15.addTail(local31, 1599142138);
 		client.anInt3552 = client.anInt3569 * 1273462915;
 	}
 
@@ -166,7 +166,7 @@ public final class Class329 {
 		@Pc(5) Class80_Sub1_Sub14 local5 = (Class80_Sub1_Sub14) aClass24_29.method560((long) arg0);
 		if (local5 == null) {
 			return -1;
-		} else if (aClass3_15.aClass80_Sub1_2 == local5.aClass80_Sub1_68) {
+		} else if (aSecondaryLinkedList_15.aClass80_Sub1_2 == local5.aClass80_Sub1_68) {
 			return -1;
 		} else {
 			return ((Class80_Sub1_Sub14) local5.aClass80_Sub1_68).anInt3100 * 102067333;
@@ -177,7 +177,7 @@ public final class Class329 {
 	public static void method27747() {
 		aMap18.clear();
 		aClass24_29.method564(-1646302826);
-		aClass3_15.method41(-252802305);
+		aSecondaryLinkedList_15.method41(-252802305);
 		anInt4183 = 0;
 	}
 
@@ -186,7 +186,7 @@ public final class Class329 {
 		@Pc(5) Class80_Sub1_Sub14 local5 = (Class80_Sub1_Sub14) aClass24_29.method560((long) arg0);
 		if (local5 == null) {
 			return -1;
-		} else if (aClass3_15.aClass80_Sub1_2 == local5.aClass80_Sub1_67) {
+		} else if (aSecondaryLinkedList_15.aClass80_Sub1_2 == local5.aClass80_Sub1_67) {
 			return -1;
 		} else {
 			return ((Class80_Sub1_Sub14) local5.aClass80_Sub1_67).anInt3100 * 102067333;
@@ -203,7 +203,7 @@ public final class Class329 {
 		@Pc(5) Class80_Sub1_Sub14 local5 = (Class80_Sub1_Sub14) aClass24_29.method560((long) arg0);
 		if (local5 == null) {
 			return -1;
-		} else if (aClass3_15.aClass80_Sub1_2 == local5.aClass80_Sub1_67) {
+		} else if (aSecondaryLinkedList_15.aClass80_Sub1_2 == local5.aClass80_Sub1_67) {
 			return -1;
 		} else {
 			return ((Class80_Sub1_Sub14) local5.aClass80_Sub1_67).anInt3100 * 102067333;
@@ -215,7 +215,7 @@ public final class Class329 {
 		@Pc(5) Class80_Sub1_Sub14 local5 = (Class80_Sub1_Sub14) aClass24_29.method560((long) arg0);
 		if (local5 == null) {
 			return -1;
-		} else if (aClass3_15.aClass80_Sub1_2 == local5.aClass80_Sub1_68) {
+		} else if (aSecondaryLinkedList_15.aClass80_Sub1_2 == local5.aClass80_Sub1_68) {
 			return -1;
 		} else {
 			return ((Class80_Sub1_Sub14) local5.aClass80_Sub1_68).anInt3100 * 102067333;
@@ -227,7 +227,7 @@ public final class Class329 {
 		@Pc(5) Class80_Sub1_Sub14 local5 = (Class80_Sub1_Sub14) aClass24_29.method560((long) arg0);
 		if (local5 == null) {
 			return -1;
-		} else if (aClass3_15.aClass80_Sub1_2 == local5.aClass80_Sub1_68) {
+		} else if (aSecondaryLinkedList_15.aClass80_Sub1_2 == local5.aClass80_Sub1_68) {
 			return -1;
 		} else {
 			return ((Class80_Sub1_Sub14) local5.aClass80_Sub1_68).anInt3100 * 102067333;

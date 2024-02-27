@@ -128,11 +128,6 @@ public final class Class337 {
 		return arg0 == 4 || arg0 == 13 || arg0 == 15 || arg0 == 18;
 	}
 
-	@OriginalMember(owner = "client!ig", name = "t", descriptor = "(I)[Lclient!abf;")
-	public static Class32[] method27878(@OriginalArg(0) int arg0) {
-		return new Class32[] { Class32.aClass32_15, Class32.aClass32_42, Class32.aClass32_24, Class32.aClass32_4, Class32.aClass32_5, Class32.aClass32_2, Class32.aClass32_7, Class32.aClass32_8, Class32.aClass32_9, Class32.aClass32_10, Class32.aClass32_14, Class32.aClass32_11, Class32.aClass32_12, Class32.aClass32_13, Class32.aClass32_25, Class32.aClass32_3, Class32.aClass32_16, Class32.aClass32_17, Class32.aClass32_18, Class32.aClass32_19, Class32.aClass32_20, Class32.aClass32_6, Class32.aClass32_22, Class32.aClass32_41, Class32.aClass32_38, Class32.aClass32_39, Class32.aClass32_26, Class32.aClass32_27, Class32.aClass32_28, Class32.aClass32_29, Class32.aClass32_30, Class32.aClass32_31, Class32.aClass32_40, Class32.aClass32_33, Class32.aClass32_23, Class32.aClass32_35, Class32.aClass32_36, Class32.aClass32_37, Class32.aClass32_1, Class32.aClass32_21, Class32.aClass32_34, Class32.aClass32_32 };
-	}
-
 	@OriginalMember(owner = "client!ig", name = "bs", descriptor = "(II)Z")
 	static boolean method27879(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		return arg0 == 57 || arg0 == 58 || arg0 == 1007 || arg0 == 25 || arg0 == 30;

@@ -23,7 +23,7 @@ final class Class328 implements Interface28 {
 
 	@OriginalMember(owner = "client!hy", name = "aqi", descriptor = "(Lclient!yp;I)V")
 	static void method27722(@OriginalArg(0) Class690 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class103_Sub14.method8213(1712806873).method37268();
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class103_Sub14.method8213(1712806873).getId();
 	}
 
 	@OriginalMember(owner = "client!hy", name = "e", descriptor = "(Lclient!ald;[Lclient!qy;I)[Ljava/lang/Object;")

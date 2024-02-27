@@ -45,7 +45,7 @@ public final class Class303 {
 	}
 
 	@OriginalMember(owner = "client!gx", name = "t", descriptor = "(B)J")
-	public static synchronized long method27111(@OriginalArg(0) byte arg0) {
+	public static synchronized long currentTimeMillis(@OriginalArg(0) byte arg0) {
 		@Pc(1) long local1 = System.currentTimeMillis();
 		if (local1 < aLong365 * -96120465846323047L) {
 			aLong364 += (aLong365 * -96120465846323047L - local1) * -5590234105563552995L;

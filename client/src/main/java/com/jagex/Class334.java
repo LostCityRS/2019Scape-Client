@@ -19,11 +19,6 @@ public final class Class334 implements Interface3 {
 		Class407.method28950(local16, local22, arg0, -2145651697);
 	}
 
-	@OriginalMember(owner = "client!id", name = "t", descriptor = "(I)[Lclient!nf;")
-	static Class436[] method27817(@OriginalArg(0) int arg0) {
-		return new Class436[] { Class436.aClass436_7, Class436.aClass436_8, Class436.aClass436_4, Class436.aClass436_3, Class436.aClass436_9, Class436.aClass436_11, Class436.aClass436_5, Class436.aClass436_6, Class436.aClass436_12, Class436.aClass436_1, Class436.aClass436_2, Class436.aClass436_10 };
-	}
-
 	@OriginalMember(owner = "client!id", name = "e", descriptor = "(CB)Z")
 	static boolean method27818(@OriginalArg(0) char arg0, @OriginalArg(1) byte arg1) {
 		return arg0 == ' ' || arg0 == ' ' || arg0 == '_' || arg0 == '-';

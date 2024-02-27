@@ -29,23 +29,23 @@ public final class Class349 {
 
 	@OriginalMember(owner = "client!iu", name = "e", descriptor = "(I)Lclient!art;")
 	static Class80_Sub1_Sub9 method28000(@OriginalArg(0) int arg0) {
-		@Pc(4) Class80_Sub1_Sub9 local4 = (Class80_Sub1_Sub9) Class80_Sub1_Sub9.aClass3_11.method50((byte) -13);
+		@Pc(4) Class80_Sub1_Sub9 local4 = (Class80_Sub1_Sub9) Class80_Sub1_Sub9.aSecondaryLinkedList_11.head((byte) -13);
 		if (local4 != null) {
 			local4.method24395((byte) 10);
-			local4.method24406(-2147483640);
+			local4.unlinkSecondary(-2147483640);
 			return local4;
 		}
 		do {
-			local4 = (Class80_Sub1_Sub9) Class80_Sub1_Sub9.aClass3_12.method50((byte) 60);
+			local4 = (Class80_Sub1_Sub9) Class80_Sub1_Sub9.aSecondaryLinkedList_12.head((byte) 60);
 			if (local4 == null) {
 				return null;
 			}
-			if (local4.method22096(-1853381875) > Class303.method27111((byte) 13)) {
+			if (local4.method22096(-1853381875) > Class303.currentTimeMillis((byte) 13)) {
 				return null;
 			}
 			local4.method24395((byte) 84);
-			local4.method24406(-2147483645);
-		} while ((local4.aLong340 * 4203303297430504511L & Long.MIN_VALUE) == 0L);
+			local4.unlinkSecondary(-2147483645);
+		} while ((local4.dualKey * 4203303297430504511L & Long.MIN_VALUE) == 0L);
 		return local4;
 	}
 

@@ -90,20 +90,20 @@ public final class Class103_Sub8 extends Class103 {
 	@Override
 	public void method19198() {
 		@Pc(8) Class120_Sub1_Sub1_Sub1 local8 = Class251.aClass254Array1[this.anInt934 * -537966461].method26399((byte) -13);
-		local8.method18962(this.anInt931 * 1825956035, this.anInt933 * -1614441887, this.anInt932 * 1831772829, this.anInt935 * -458557731, client.anInt3436, 0, 1763965267);
+		local8.method18962(this.anInt931 * 1825956035, this.anInt933 * -1614441887, this.anInt932 * 1831772829, this.anInt935 * -458557731, client.currentCycle, 0, 1763965267);
 	}
 
 	@OriginalMember(owner = "client!agd", name = "f", descriptor = "(I)V")
 	@Override
 	public void method19206(@OriginalArg(0) int arg0) {
 		@Pc(8) Class120_Sub1_Sub1_Sub1 local8 = Class251.aClass254Array1[this.anInt934 * -537966461].method26399((byte) 4);
-		local8.method18962(this.anInt931 * 1825956035, this.anInt933 * -1614441887, this.anInt932 * 1831772829, this.anInt935 * -458557731, client.anInt3436, 0, -272394313);
+		local8.method18962(this.anInt931 * 1825956035, this.anInt933 * -1614441887, this.anInt932 * 1831772829, this.anInt935 * -458557731, client.currentCycle, 0, -272394313);
 	}
 
 	@OriginalMember(owner = "client!agd", name = "g", descriptor = "()V")
 	@Override
 	public void method19202() {
 		@Pc(8) Class120_Sub1_Sub1_Sub1 local8 = Class251.aClass254Array1[this.anInt934 * -537966461].method26399((byte) 40);
-		local8.method18962(this.anInt931 * 1825956035, this.anInt933 * -1614441887, this.anInt932 * 1831772829, this.anInt935 * -458557731, client.anInt3436, 0, 1822963366);
+		local8.method18962(this.anInt931 * 1825956035, this.anInt933 * -1614441887, this.anInt932 * 1831772829, this.anInt935 * -458557731, client.currentCycle, 0, 1822963366);
 	}
 }

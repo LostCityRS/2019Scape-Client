@@ -250,7 +250,7 @@ public final class ByteArrayPool {
 		arg0.anInt5778 -= -221471862;
 		@Pc(13) int local13 = arg0.anIntArray525[arg0.anInt5778 * 1896589581];
 		@Pc(23) int local23 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1];
-		Class160.aClass121_Sub1_2.method9592((float) local13, (float) local23, 345620555);
+		BufferedSocket.aClass121_Sub1_2.method9592((float) local13, (float) local23, 345620555);
 	}
 
 	@OriginalMember(owner = "client!zb", name = "af", descriptor = "(Lclient!arz;I)Ljava/lang/String;")

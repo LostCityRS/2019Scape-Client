@@ -322,8 +322,8 @@ public final class Class230 {
 		if (-1.0F == local31.aFloat296) {
 			local31.aFloat296 = Float.POSITIVE_INFINITY;
 		}
-		Class160.aClass121_Sub1_2.method9572(local31, 1108633111);
-		Class160.aClass121_Sub1_2.method9680((float) local23 / 1000.0F, (byte) 10);
+		BufferedSocket.aClass121_Sub1_2.method9572(local31, 1108633111);
+		BufferedSocket.aClass121_Sub1_2.method9680((float) local23 / 1000.0F, (byte) 10);
 		local31.method29557();
 	}
 

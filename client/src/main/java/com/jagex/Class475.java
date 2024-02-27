@@ -37,9 +37,9 @@ public final class Class475 implements Callable {
 	@OriginalMember(owner = "client!pa", name = "hb", descriptor = "(Lclient!ahb;I)V")
 	static void method29885(@OriginalArg(0) Class120_Sub1_Sub1_Sub1 arg0, @OriginalArg(1) int arg1) {
 		@Pc(2) Class6 local2 = arg0.aClass6_3;
-		if (client.anInt3436 == arg0.anInt2689 * 1790159189 || !local2.method23590(-499060808) || local2.method23629(1, -1127446556)) {
+		if (client.currentCycle == arg0.anInt2689 * 1790159189 || !local2.method23590(-499060808) || local2.method23629(1, -1127446556)) {
 			@Pc(27) int local27 = arg0.anInt2689 * 1790159189 - arg0.anInt2688 * -1881785185;
-			@Pc(34) int local34 = client.anInt3436 - arg0.anInt2688 * -1881785185;
+			@Pc(34) int local34 = client.currentCycle - arg0.anInt2688 * -1881785185;
 			@Pc(45) int local45 = arg0.anInt2684 * -2097547776 + arg0.method18966((byte) -121) * 256;
 			@Pc(56) int local56 = arg0.anInt2704 * -73903616 + arg0.method18966((byte) -76) * 256;
 			@Pc(67) int local67 = arg0.anInt2676 * -415562240 + arg0.method18966((byte) -23) * 256;
@@ -102,7 +102,7 @@ public final class Class475 implements Callable {
 		try {
 			local3.connect();
 		} catch (@Pc(15) IOException local15) {
-			this.aClass490_3.aLong387 = Class303.method27111((byte) 12) * -7572508353662902279L;
+			this.aClass490_3.aLong387 = Class303.currentTimeMillis((byte) 12) * -7572508353662902279L;
 			local11 = false;
 		}
 		return new Class483(this.aClass490_3, local11 ? local3.getInputStream() : null, this.aClass80_Sub1_Sub15_Sub1_1, this.anURL2);
@@ -117,7 +117,7 @@ public final class Class475 implements Callable {
 		try {
 			local3.connect();
 		} catch (@Pc(15) IOException local15) {
-			this.aClass490_3.aLong387 = Class303.method27111((byte) 58) * -7572508353662902279L;
+			this.aClass490_3.aLong387 = Class303.currentTimeMillis((byte) 58) * -7572508353662902279L;
 			local11 = false;
 		}
 		return new Class483(this.aClass490_3, local11 ? local3.getInputStream() : null, this.aClass80_Sub1_Sub15_Sub1_1, this.anURL2);

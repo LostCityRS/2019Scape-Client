@@ -7,68 +7,58 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!nf")
-public final class Class436 {
+public final class LoginProt {
 
 	@OriginalMember(owner = "client!nf", name = "jg", descriptor = "I")
 	static int anInt4803;
 
 	@OriginalMember(owner = "client!nf", name = "t", descriptor = "Lclient!nf;")
-	public static final Class436 aClass436_10 = new Class436(14, 0);
+	public static final LoginProt INIT_GAME_CONNECTION = new LoginProt(14, 0);
 
 	@OriginalMember(owner = "client!nf", name = "f", descriptor = "Lclient!nf;")
-	public static final Class436 aClass436_2 = new Class436(15, -1);
+	public static final LoginProt INIT_JS5REMOTE_CONNECTION = new LoginProt(15, -1);
 
 	@OriginalMember(owner = "client!nf", name = "e", descriptor = "Lclient!nf;")
-	public static final Class436 aClass436_12 = new Class436(16, -2);
+	public static final LoginProt GAMELOGIN = new LoginProt(16, -2);
 
 	@OriginalMember(owner = "client!nf", name = "u", descriptor = "Lclient!nf;")
-	public static final Class436 aClass436_4 = new Class436(19, -2);
+	public static final LoginProt LOBBYLOGIN = new LoginProt(19, -2);
 
 	@OriginalMember(owner = "client!nf", name = "l", descriptor = "Lclient!nf;")
-	static final Class436 aClass436_5 = new Class436(23, 4);
+	public static final LoginProt REQUEST_WORLDLIST = new LoginProt(23, 4);
 
 	@OriginalMember(owner = "client!nf", name = "g", descriptor = "Lclient!nf;")
-	static final Class436 aClass436_3 = new Class436(24, -1);
+	public static final LoginProt CHECK_WORLD_SUITABILITY = new LoginProt(24, -1);
 
 	@OriginalMember(owner = "client!nf", name = "i", descriptor = "Lclient!nf;")
-	public static final Class436 aClass436_1 = new Class436(26, 0);
+	public static final LoginProt GAMELOGIN_CONTINUE = new LoginProt(26, 0);
 
 	@OriginalMember(owner = "client!nf", name = "m", descriptor = "Lclient!nf;")
-	static final Class436 aClass436_7 = new Class436(27, 0);
+	public static final LoginProt SSL_WEBCONNECTION = new LoginProt(27, 0);
 
 	@OriginalMember(owner = "client!nf", name = "o", descriptor = "Lclient!nf;")
-	public static final Class436 aClass436_8 = new Class436(28, -2);
+	public static final LoginProt CREATE_ACCOUNT_CONNECT = new LoginProt(28, -2);
 
 	@OriginalMember(owner = "client!nf", name = "j", descriptor = "Lclient!nf;")
-	public static final Class436 aClass436_9 = new Class436(29, -2);
+	public static final LoginProt INIT_SOCIAL_NETWORK_CONNECTION = new LoginProt(29, -2);
 
 	@OriginalMember(owner = "client!nf", name = "a", descriptor = "Lclient!nf;")
-	public static final Class436 aClass436_6 = new Class436(30, -2);
+	public static final LoginProt SOCIAL_NETWORK_LOGIN = new LoginProt(30, -2);
 
 	@OriginalMember(owner = "client!nf", name = "s", descriptor = "Lclient!nf;")
-	static final Class436 aClass436_11 = new Class436(31, 4);
+	public static final LoginProt INIT_DEBUG_CONNECTION = new LoginProt(31, 4);
 
 	@OriginalMember(owner = "client!nf", name = "x", descriptor = "[Lclient!nf;")
-	static final Class436[] aClass436Array1 = new Class436[32];
+	static final LoginProt[] PACKETS = new LoginProt[32];
 
 	@OriginalMember(owner = "client!nf", name = "k", descriptor = "I")
-	public final int anInt4802;
+	public final int opcode;
 
 	static {
-		@Pc(77) Class436[] local77 = Class334.method27817(-1387240508);
-		for (@Pc(79) int local79 = 0; local79 < local77.length; local79++) {
-			aClass436Array1[local77[local79].anInt4802 * 663664571] = local77[local79];
+		@Pc(77) LoginProt[] all = getAllPackets();
+		for (@Pc(79) int i = 0; i < all.length; i++) {
+			PACKETS[all[i].opcode * 663664571] = all[i];
 		}
-	}
-
-	@OriginalMember(owner = "client!nf", name = "f", descriptor = "()[Lclient!nf;")
-	static Class436[] method29127() {
-		return new Class436[] { aClass436_7, aClass436_8, aClass436_4, aClass436_3, aClass436_9, aClass436_11, aClass436_5, aClass436_6, aClass436_12, aClass436_1, aClass436_2, aClass436_10 };
-	}
-
-	@OriginalMember(owner = "client!nf", name = "e", descriptor = "()[Lclient!nf;")
-	static Class436[] method29128() {
-		return new Class436[] { aClass436_7, aClass436_8, aClass436_4, aClass436_3, aClass436_9, aClass436_11, aClass436_5, aClass436_6, aClass436_12, aClass436_1, aClass436_2, aClass436_10 };
 	}
 
 	@OriginalMember(owner = "client!nf", name = "ao", descriptor = "(III)V")
@@ -76,7 +66,7 @@ public final class Class436 {
 		@Pc(5) TwitchEventResult local5 = new TwitchEventResult(arg0, arg1);
 		@Pc(8) Class601 local8 = local5.f();
 		if (local8 != null) {
-			Class312.method27463(local8.method37268(), local5, (byte) 49);
+			Class312.method27463(local8.getId(), local5, (byte) 49);
 		}
 	}
 
@@ -145,7 +135,12 @@ public final class Class436 {
 	}
 
 	@OriginalMember(owner = "client!nf", name = "<init>", descriptor = "(II)V")
-	Class436(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		this.anInt4802 = arg0 * -795773581;
+	LoginProt(@OriginalArg(0) int opcode, @OriginalArg(1) int size) {
+		this.opcode = opcode * -795773581;
+	}
+
+	@OriginalMember(owner = "client!id", name = "t", descriptor = "(I)[Lclient!nf;")
+	static LoginProt[] getAllPackets() {
+		return new LoginProt[] { SSL_WEBCONNECTION, CREATE_ACCOUNT_CONNECT, LOBBYLOGIN, CHECK_WORLD_SUITABILITY, INIT_SOCIAL_NETWORK_CONNECTION, INIT_DEBUG_CONNECTION, REQUEST_WORLDLIST, SOCIAL_NETWORK_LOGIN, GAMELOGIN, GAMELOGIN_CONTINUE, INIT_JS5REMOTE_CONNECTION, INIT_GAME_CONNECTION };
 	}
 }

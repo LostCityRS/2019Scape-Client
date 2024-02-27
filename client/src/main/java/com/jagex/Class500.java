@@ -88,7 +88,7 @@ public final class Class500 implements Interface75 {
 
 	@OriginalMember(owner = "client!qa", name = "f", descriptor = "()I")
 	@Override
-	public int method37268() {
+	public int getId() {
 		return this.anInt5036 * -1890737077;
 	}
 

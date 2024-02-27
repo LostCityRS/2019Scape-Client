@@ -83,7 +83,7 @@ public final class Class229 {
 			}
 			if (arg0.eventType == 34) {
 				Class506.aTwitchEventLiveStreams1 = (TwitchEventLiveStreams) arg0;
-				Class436.method29129(34, 0, 830620996);
+				LoginProt.method29129(34, 0, 830620996);
 			}
 			return true;
 		} else if (Class622.aTwitchWebcamFrameData1 == null) {
@@ -100,7 +100,7 @@ public final class Class229 {
 				}
 				Class329.method27754(1626365401);
 				Class622.aLong401 = arg1 * 6599029287603157643L;
-				Class436.method29129(33, 0, 1626709028);
+				LoginProt.method29129(33, 0, 1626709028);
 			} else {
 				Class622.aClass99_38 = null;
 			}

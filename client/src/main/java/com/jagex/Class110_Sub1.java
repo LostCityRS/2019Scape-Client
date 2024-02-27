@@ -55,7 +55,7 @@ public final class Class110_Sub1 extends Class110 {
 			if ((int) local16.aFloat297 < 0 || (int) local16.aFloat297 >= client.aClass539_1.method30921(2085483617) * 512 || (int) local16.aFloat296 < 0 || (int) local16.aFloat296 >= client.aClass539_1.method31011(-1194298857) * 512) {
 				local18 = true;
 			}
-			if (Class368.anInt4502 * -1583611537 == 3 && !Class160.aClass121_Sub1_2.method9600(-650332462)) {
+			if (Class368.anInt4502 * -1583611537 == 3 && !BufferedSocket.aClass121_Sub1_2.method9600(-650332462)) {
 				local18 = true;
 			}
 		} else if (!client.aBoolean722) {
@@ -170,7 +170,7 @@ public final class Class110_Sub1 extends Class110 {
 		if (Class130.method10199(755243815)) {
 			Class606.aClass121_Sub1_3.method9601(local615, client.aClass471_51, client.aClass487_95, local619.anInt5540 * -390642507 << 9, local619.anInt5537 * -894305615 << 9, -172011429);
 		} else if (Class368.anInt4502 * -1583611537 == 3) {
-			Class160.aClass121_Sub1_2.method9601(local615, client.aClass471_51, client.aClass487_95, local619.anInt5540 * -390642507 << 9, local619.anInt5537 * -894305615 << 9, -494292523);
+			BufferedSocket.aClass121_Sub1_2.method9601(local615, client.aClass471_51, client.aClass487_95, local619.anInt5540 * -390642507 << 9, local619.anInt5537 * -894305615 << 9, -494292523);
 		} else {
 			client.aClass471_51.method29775((float) -(Class89.anInt319 * 1749751025), (float) -(Class283.anInt3937 * -1465520451), (float) -(Class102_Sub2.anInt653 * 1132703631));
 			client.aClass471_51.method29774(0.0F, -1.0F, 0.0F, Class467.method29716(-(Class664.anInt5692 * -953671403) & 0x3FFF));
@@ -187,8 +187,8 @@ public final class Class110_Sub1 extends Class110 {
 			Class279.aClass102_9.method20801(1.0F);
 			Class279.aClass102_9.method20765(16777215, 0.0F, 0.0F, 1.0F, 0.0F, 0.0F);
 			if (Class368.anInt4502 * -1583611537 == 3) {
-				@Pc(778) int local778 = (int) ((double) Class160.aClass121_Sub1_2.method9612(1665100075) * 2607.5945876176133D);
-				local786 = (int) ((double) Class160.aClass121_Sub1_2.method9648(-1639232169) * 2607.5945876176133D);
+				@Pc(778) int local778 = (int) ((double) BufferedSocket.aClass121_Sub1_2.method9612(1665100075) * 2607.5945876176133D);
+				local786 = (int) ((double) BufferedSocket.aClass121_Sub1_2.method9648(-1639232169) * 2607.5945876176133D);
 				local607.method33184(-1566042451).method31296(Class279.aClass102_9, Class262.anInt3902 * -672465957 << 3, local177, local181, local185, local189, local778, local786, 0, local427, true, false, -767356145);
 			} else {
 				local607.method33184(-458476464).method31296(Class279.aClass102_9, Class262.anInt3902 * -672465957 << 3, local177, local181, local185, local189, client.anInt3481 * 1789770377, Class664.anInt5692 * -953671403, Class338.anInt4231 * -553315487, local427, true, false, -767356145);
@@ -208,9 +208,9 @@ public final class Class110_Sub1 extends Class110 {
 			local870 = 1;
 		}
 		if (Class130.method10199(755243815) || Class368.anInt4502 * -1583611537 == 3) {
-			client.aClass539_1.method30932(-1638462787).method31580(client.anInt3436, local615.anInt4494 * -1436739801, local615.anInt4495 * -1997461327, local615.anInt4496 * 803116615, client.aClass539_1.method30960(-126036613), client.anIntArray305, client.anIntArray314, client.anIntArray315, client.anIntArray316, client.anIntArray317, Class641.aClass120_Sub1_Sub1_Sub1_Sub2_3.aByte99 + 1, local870, (int) local16.aFloat297 >> 9, (int) local16.aFloat296 >> 9, Class703.aClass80_Sub37_49.aClass165_Sub7_1.method15953(-395223684) == 0, true, 0, true);
+			client.aClass539_1.method30932(-1638462787).method31580(client.currentCycle, local615.anInt4494 * -1436739801, local615.anInt4495 * -1997461327, local615.anInt4496 * 803116615, client.aClass539_1.method30960(-126036613), client.anIntArray305, client.anIntArray314, client.anIntArray315, client.anIntArray316, client.anIntArray317, Class641.aClass120_Sub1_Sub1_Sub1_Sub2_3.aByte99 + 1, local870, (int) local16.aFloat297 >> 9, (int) local16.aFloat296 >> 9, Class703.aClass80_Sub37_49.aClass165_Sub7_1.method15953(-395223684) == 0, true, 0, true);
 		} else {
-			client.aClass539_1.method30932(-1638462787).method31580(client.anInt3436, Class89.anInt319 * 1749751025, Class283.anInt3937 * -1465520451, Class102_Sub2.anInt653 * 1132703631, client.aClass539_1.method30960(693786935), client.anIntArray305, client.anIntArray314, client.anIntArray315, client.anIntArray316, client.anIntArray317, Class641.aClass120_Sub1_Sub1_Sub1_Sub2_3.aByte99 + 1, local870, (int) local16.aFloat297 >> 9, (int) local16.aFloat296 >> 9, Class703.aClass80_Sub37_49.aClass165_Sub7_1.method15953(-1366749376) == 0, true, 0, true);
+			client.aClass539_1.method30932(-1638462787).method31580(client.currentCycle, Class89.anInt319 * 1749751025, Class283.anInt3937 * -1465520451, Class102_Sub2.anInt653 * 1132703631, client.aClass539_1.method30960(693786935), client.anIntArray305, client.anIntArray314, client.anIntArray315, client.anIntArray316, client.anIntArray317, Class641.aClass120_Sub1_Sub1_Sub1_Sub2_3.aByte99 + 1, local870, (int) local16.aFloat297 >> 9, (int) local16.aFloat296 >> 9, Class703.aClass80_Sub37_49.aClass165_Sub7_1.method15953(-1366749376) == 0, true, 0, true);
 		}
 		client.anInt3440 += 965673495;
 		if (!Class279.aClass102_9.method20776() && client.anInt3433 * 1994758437 == 18) {
@@ -222,7 +222,7 @@ public final class Class110_Sub1 extends Class110 {
 		Class102_Sub2.anInt653 = local375 * 483037039;
 		client.anInt3481 = local379 * -560342087;
 		Class664.anInt5692 = local383 * -399825347;
-		if (client.aBoolean730 && Class108_Sub2.aClass139_8.method10767((byte) 78) == 0) {
+		if (client.aBoolean730 && client.js5NetQueue.getUrgentRequestCount((byte) 78) == 0) {
 			client.aBoolean730 = false;
 		}
 		if (client.aBoolean730) {
@@ -375,7 +375,7 @@ public final class Class110_Sub1 extends Class110 {
 			} catch (@Pc(86) Exception local86) {
 			}
 		}
-		this.aLong28 = Class303.method27111((byte) 51) * 5417489894409825011L;
+		this.aLong28 = Class303.currentTimeMillis((byte) 51) * 5417489894409825011L;
 		this.aBoolean171 = false;
 	}
 
@@ -579,13 +579,13 @@ public final class Class110_Sub1 extends Class110 {
 			} catch (@Pc(86) Exception local86) {
 			}
 		}
-		this.aLong28 = Class303.method27111((byte) 86) * 5417489894409825011L;
+		this.aLong28 = Class303.currentTimeMillis((byte) 86) * 5417489894409825011L;
 		this.aBoolean171 = false;
 	}
 
 	@OriginalMember(owner = "client!afv", name = "b", descriptor = "(B)V")
 	public void method7300(@OriginalArg(0) byte arg0) {
-		if (Class303.method27111((byte) 7) < this.aLong29 * -1539683278029240173L) {
+		if (Class303.currentTimeMillis((byte) 7) < this.aLong29 * -1539683278029240173L) {
 			return;
 		}
 		@Pc(35) int local35;
@@ -630,7 +630,7 @@ public final class Class110_Sub1 extends Class110 {
 			local87.aPacketBit_2.data[local35] = 0;
 		}
 		local74.method1325(local87, (byte) -104);
-		this.aLong29 = (Class303.method27111((byte) 127) + 1000L) * 1827088047933691291L;
+		this.aLong29 = (Class303.currentTimeMillis((byte) 127) + 1000L) * 1827088047933691291L;
 	}
 
 	@OriginalMember(owner = "client!afv", name = "ao", descriptor = "(I)V")
@@ -700,7 +700,7 @@ public final class Class110_Sub1 extends Class110 {
 			} catch (@Pc(86) Exception local86) {
 			}
 		}
-		this.aLong28 = Class303.method27111((byte) 81) * 5417489894409825011L;
+		this.aLong28 = Class303.currentTimeMillis((byte) 81) * 5417489894409825011L;
 		this.aBoolean171 = false;
 	}
 
@@ -927,7 +927,7 @@ public final class Class110_Sub1 extends Class110 {
 
 	@OriginalMember(owner = "client!afv", name = "ak", descriptor = "()V")
 	public void method7306() {
-		if (Class303.method27111((byte) 52) < this.aLong29 * -1539683278029240173L) {
+		if (Class303.currentTimeMillis((byte) 52) < this.aLong29 * -1539683278029240173L) {
 			return;
 		}
 		@Pc(35) int local35;
@@ -972,7 +972,7 @@ public final class Class110_Sub1 extends Class110 {
 			local87.aPacketBit_2.data[local35] = 0;
 		}
 		local74.method1325(local87, (byte) -112);
-		this.aLong29 = (Class303.method27111((byte) 108) + 1000L) * 1827088047933691291L;
+		this.aLong29 = (Class303.currentTimeMillis((byte) 108) + 1000L) * 1827088047933691291L;
 	}
 
 	@OriginalMember(owner = "client!afv", name = "ac", descriptor = "()V")
@@ -1143,7 +1143,7 @@ public final class Class110_Sub1 extends Class110 {
 			} catch (@Pc(86) Exception local86) {
 			}
 		}
-		this.aLong28 = Class303.method27111((byte) 100) * 5417489894409825011L;
+		this.aLong28 = Class303.currentTimeMillis((byte) 100) * 5417489894409825011L;
 		this.aBoolean171 = false;
 	}
 
@@ -1203,7 +1203,7 @@ public final class Class110_Sub1 extends Class110 {
 			} catch (@Pc(86) Exception local86) {
 			}
 		}
-		this.aLong28 = Class303.method27111((byte) 14) * 5417489894409825011L;
+		this.aLong28 = Class303.currentTimeMillis((byte) 14) * 5417489894409825011L;
 		this.aBoolean171 = false;
 	}
 
@@ -1221,7 +1221,7 @@ public final class Class110_Sub1 extends Class110 {
 
 	@OriginalMember(owner = "client!afv", name = "at", descriptor = "()V")
 	public void method7312() {
-		if (Class303.method27111((byte) 64) < this.aLong29 * -1539683278029240173L) {
+		if (Class303.currentTimeMillis((byte) 64) < this.aLong29 * -1539683278029240173L) {
 			return;
 		}
 		@Pc(35) int local35;
@@ -1266,12 +1266,12 @@ public final class Class110_Sub1 extends Class110 {
 			local87.aPacketBit_2.data[local35] = 0;
 		}
 		local74.method1325(local87, (byte) -48);
-		this.aLong29 = (Class303.method27111((byte) 101) + 1000L) * 1827088047933691291L;
+		this.aLong29 = (Class303.currentTimeMillis((byte) 101) + 1000L) * 1827088047933691291L;
 	}
 
 	@OriginalMember(owner = "client!afv", name = "ad", descriptor = "()V")
 	public void method7313() {
-		if (Class303.method27111((byte) 46) < this.aLong29 * -1539683278029240173L) {
+		if (Class303.currentTimeMillis((byte) 46) < this.aLong29 * -1539683278029240173L) {
 			return;
 		}
 		@Pc(35) int local35;
@@ -1316,7 +1316,7 @@ public final class Class110_Sub1 extends Class110 {
 			local87.aPacketBit_2.data[local35] = 0;
 		}
 		local74.method1325(local87, (byte) -60);
-		this.aLong29 = (Class303.method27111((byte) 118) + 1000L) * 1827088047933691291L;
+		this.aLong29 = (Class303.currentTimeMillis((byte) 118) + 1000L) * 1827088047933691291L;
 	}
 
 	@OriginalMember(owner = "client!afv", name = "an", descriptor = "()V")

@@ -65,7 +65,7 @@ public final class Class341 {
 		@Pc(34) Class626 local34 = client.aClass539_1.method30893((byte) -29);
 		@Pc(72) int local72;
 		if (Class368.anInt4502 * -1583611537 == 3) {
-			@Pc(45) Class463 local45 = Class160.aClass121_Sub1_2.method9693(1393209570).method23078(-2031543136);
+			@Pc(45) Class463 local45 = BufferedSocket.aClass121_Sub1_2.method9693(1393209570).method23078(-2031543136);
 			if (Float.isNaN(local45.aFloat297)) {
 				return;
 			}
@@ -88,7 +88,7 @@ public final class Class341 {
 		@Pc(179) int local179;
 		@Pc(168) int local168;
 		if (Class368.anInt4502 * -1583611537 == 3) {
-			@Pc(157) Class463 local157 = Class160.aClass121_Sub1_2.method9603(-1530171948).method20516(1436604136);
+			@Pc(157) Class463 local157 = BufferedSocket.aClass121_Sub1_2.method9603(-1530171948).method20516(1436604136);
 			local168 = ((int) local157.aFloat297 >> 9) - local34.anInt5540 * -390642507;
 			local179 = ((int) local157.aFloat296 >> 9) - local34.anInt5537 * -894305615;
 			if (local168 < 0 || local179 < 0 || local168 >= local15.aByteArrayArrayArray12[Class507.anInt5045 * -1170417853].length || local179 >= local15.aByteArrayArrayArray12[Class507.anInt5045 * -1170417853][local168].length) {

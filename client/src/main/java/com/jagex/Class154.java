@@ -49,11 +49,11 @@ public abstract class Class154 {
 
 	@OriginalMember(owner = "client!xq", name = "aow", descriptor = "(Lclient!yp;B)V")
 	static void method14989(@OriginalArg(0) Class690 arg0, @OriginalArg(1) byte arg1) {
-		if (Class160.aClass121_Sub1_2.method9607(-236604108) != Class340.aClass340_7 || Class160.aClass121_Sub1_2.method9702(1049874251) != Class347.aClass347_3) {
+		if (BufferedSocket.aClass121_Sub1_2.method9607(-236604108) != Class340.aClass340_7 || BufferedSocket.aClass121_Sub1_2.method9702(1049874251) != Class347.aClass347_3) {
 			throw new RuntimeException();
 		}
-		@Pc(20) Class463 local20 = ((Class123_Sub3) Class160.aClass121_Sub1_2.method9603(-1562466019)).method10019(301301268);
-		@Pc(27) Class463 local27 = ((Class20_Sub5) Class160.aClass121_Sub1_2.method9693(1616961231)).method16940(-1132458519);
+		@Pc(20) Class463 local20 = ((Class123_Sub3) BufferedSocket.aClass121_Sub1_2.method9603(-1562466019)).method10019(301301268);
+		@Pc(27) Class463 local27 = ((Class20_Sub5) BufferedSocket.aClass121_Sub1_2.method9693(1616961231)).method16940(-1132458519);
 		@Pc(30) Class463 local30 = Class463.method29472(local20);
 		local30.method29486(local27);
 		@Pc(40) float local40 = Class490.method30239(local30.aFloat297, local30.aFloat296, (byte) 52);

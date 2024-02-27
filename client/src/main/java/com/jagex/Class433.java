@@ -124,7 +124,7 @@ public final class Class433 {
 	@OriginalMember(owner = "client!nc", name = "axy", descriptor = "(Lclient!yp;B)V")
 	static void method29108(@OriginalArg(0) Class690 arg0, @OriginalArg(1) byte arg1) {
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = (int) (Class336.aLong369 * 621512022876777217L / 60000L);
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = (int) ((Class336.aLong369 * 621512022876777217L - Class303.method27111((byte) 13) - Class231.aLong355 * -6086046986162291493L) / 60000L);
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = (int) ((Class336.aLong369 * 621512022876777217L - Class303.currentTimeMillis((byte) 13) - Class231.aLong355 * -6086046986162291493L) / 60000L);
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class655.aBoolean969 ? 1 : 0;
 	}
 

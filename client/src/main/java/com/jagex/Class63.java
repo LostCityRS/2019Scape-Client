@@ -13,7 +13,7 @@ public final class Class63 implements Interface3 {
 
 	@OriginalMember(owner = "client!acn", name = "hg", descriptor = "(Lclient!ahb;B)V")
 	static void method1219(@OriginalArg(0) Class120_Sub1_Sub1_Sub1 arg0, @OriginalArg(1) byte arg1) {
-		@Pc(6) int local6 = arg0.anInt2688 * -1881785185 - client.anInt3436;
+		@Pc(6) int local6 = arg0.anInt2688 * -1881785185 - client.currentCycle;
 		@Pc(17) int local17 = arg0.anInt2684 * -2097547776 + arg0.method18966((byte) -123) * 256;
 		@Pc(28) int local28 = arg0.anInt2704 * -73903616 + arg0.method18966((byte) -79) * 256;
 		@Pc(37) int local37 = Class439.method29150(local17, local28, arg0.anInt2686 * -1606116371, 1037753497);

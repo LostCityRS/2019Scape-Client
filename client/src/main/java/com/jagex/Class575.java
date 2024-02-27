@@ -91,7 +91,7 @@ public final class Class575 {
 			@Pc(11) Class101 local11 = local1[local3];
 			if (local11 != null && local11.anInt467 * 1614016575 == 2) {
 				Class66.method1240(local11.anInt463 * -299343395, local11.anInt466 * -191529145, local11.anInt465 * -1207974023, 0, local11.anInt468 * -1914249634, false, false, -1995742121);
-				if (client.aFloatArray95[0] > -1.0F && client.anInt3436 % 20 < 10) {
+				if (client.aFloatArray95[0] > -1.0F && client.currentCycle % 20 < 10) {
 					@Pc(59) Class99 local59 = Class668.aClass99Array8[local11.anInt461 * -168952975];
 					@Pc(69) int local69 = (int) (client.aFloatArray95[0] + (float) arg0 - 12.0F);
 					@Pc(79) int local79 = (int) ((float) arg1 + client.aFloatArray95[1] - 28.0F);

@@ -86,13 +86,13 @@ public final class Class599 implements Interface11, Interface5 {
 
 	@OriginalMember(owner = "client!ur", name = "aol", descriptor = "(Lclient!yp;B)V")
 	static void method32046(@OriginalArg(0) Class690 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class160.aClass121_Sub1_2.method9602((byte) 102).anInt4487 * -1638462787;
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = BufferedSocket.aClass121_Sub1_2.method9602((byte) 102).anInt4487 * -1638462787;
 	}
 
 	@OriginalMember(owner = "client!ur", name = "apu", descriptor = "(Lclient!yp;B)V")
 	static void method32047(@OriginalArg(0) Class690 arg0, @OriginalArg(1) byte arg1) throws Exception_Sub3 {
 		arg0.anInt5778 -= 1815275855;
-		Class160.aClass121_Sub1_2.method9606((float) arg0.anIntArray525[arg0.anInt5778 * 1896589581], (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1], (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2], -1827977621);
+		BufferedSocket.aClass121_Sub1_2.method9606((float) arg0.anIntArray525[arg0.anInt5778 * 1896589581], (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1], (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2], -1827977621);
 	}
 
 	@OriginalMember(owner = "client!ur", name = "bdv", descriptor = "(Lclient!yp;B)V")
@@ -131,8 +131,8 @@ public final class Class599 implements Interface11, Interface5 {
 		if (Class159_Sub1.anInt2017 * 1776676847 == 100 || Class159_Sub1.aClass80_Sub1_Sub12_3 == null) {
 			return;
 		}
-		Class303.method27111((byte) 81);
-		Class303.method27111((byte) 24);
+		Class303.currentTimeMillis((byte) 81);
+		Class303.currentTimeMillis((byte) 24);
 		@Pc(21) int local21;
 		@Pc(27) int local27;
 		if (Class159_Sub1.anInt2017 * 1776676847 < 10) {

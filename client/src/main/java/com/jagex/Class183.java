@@ -19,7 +19,7 @@ public final class Class183 implements Interface18 {
 
 	@OriginalMember(owner = "client!bg", name = "yn", descriptor = "(Lclient!yp;B)V")
 	static void method24698(@OriginalArg(0) Class690 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class597.aBoolean926 ? 1 : 0;
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class597.focus ? 1 : 0;
 	}
 
 	@OriginalMember(owner = "client!bg", name = "f", descriptor = "(II)Lclient!aaj;")

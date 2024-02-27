@@ -161,28 +161,28 @@ public class Class159 {
 	static int[][] anIntArrayArray43 = new int[][] { { 2, 2, 0, 0, 0, 0 }, { 2, 2, 2, 0, 0, 0 }, { 1, 2, 2, 2, 0, 0 }, { 1, 1, 1, 2, 2, 0 }, { 1, 1, 1, 2, 2, 2 }, { 1, 1, 1, 1, 2, 2 } };
 
 	@OriginalMember(owner = "client!tz", name = "af", descriptor = "I")
-	static final int anInt1993 = Class716.aClass716_9.method37268();
+	static final int anInt1993 = Class716.aClass716_9.getId();
 
 	@OriginalMember(owner = "client!tz", name = "am", descriptor = "I")
-	static final int anInt1994 = Class716.aClass716_3.method37268();
+	static final int anInt1994 = Class716.aClass716_3.getId();
 
 	@OriginalMember(owner = "client!tz", name = "ak", descriptor = "I")
-	static final int anInt1995 = Class716.aClass716_5.method37268();
+	static final int anInt1995 = Class716.aClass716_5.getId();
 
 	@OriginalMember(owner = "client!tz", name = "at", descriptor = "I")
-	static final int anInt2000 = Class716.aClass716_2.method37268();
+	static final int anInt2000 = Class716.aClass716_2.getId();
 
 	@OriginalMember(owner = "client!tz", name = "ad", descriptor = "I")
-	static final int anInt1987 = Class716.aClass716_8.method37268();
+	static final int anInt1987 = Class716.aClass716_8.getId();
 
 	@OriginalMember(owner = "client!tz", name = "av", descriptor = "I")
-	static final int anInt1985 = Class716.aClass716_6.method37268();
+	static final int anInt1985 = Class716.aClass716_6.getId();
 
 	@OriginalMember(owner = "client!tz", name = "an", descriptor = "I")
-	static final int anInt2011 = Class716.aClass716_7.method37268();
+	static final int anInt2011 = Class716.aClass716_7.getId();
 
 	@OriginalMember(owner = "client!tz", name = "aa", descriptor = "I")
-	static final int anInt1997 = Class716.aClass716_4.method37268();
+	static final int anInt1997 = Class716.aClass716_4.getId();
 
 	@OriginalMember(owner = "client!tz", name = "ap", descriptor = "Lclient!ej;")
 	protected static Class243 aClass243_32 = new Class243(4096, 256);
@@ -232,7 +232,7 @@ public class Class159 {
 
 	@OriginalMember(owner = "client!tz", name = "s", descriptor = "(Lclient!di;IIZ)Z")
 	static boolean method15332(@OriginalArg(0) Class102 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) boolean arg3) {
-		@Pc(2) long local2 = Class303.method27111((byte) 76);
+		@Pc(2) long local2 = Class303.currentTimeMillis((byte) 76);
 		@Pc(19) int local19;
 		@Pc(60) int local60;
 		@Pc(80) int local80;
@@ -261,7 +261,7 @@ public class Class159 {
 		}
 		@Pc(132) int local132;
 		@Pc(293) int local293;
-		while (aPacket_12 != null && aPacket_12.pos * -1380987821 < aPacket_12.data.length && (!arg3 || Class303.method27111((byte) 112) < local2 + (long) anInt2002)) {
+		while (aPacket_12 != null && aPacket_12.pos * -1380987821 < aPacket_12.data.length && (!arg3 || Class303.currentTimeMillis((byte) 112) < local2 + (long) anInt2002)) {
 			@Pc(142) int local142;
 			@Pc(144) int local144;
 			@Pc(157) int local157;
@@ -348,7 +348,7 @@ public class Class159 {
 			method15347(aShortArray49, aByteArray46, aShortArray50, arg1, arg2);
 			aShortArray49 = null;
 		}
-		if (arg3 && Class303.method27111((byte) 89) >= local2 + (long) anInt2002) {
+		if (arg3 && Class303.currentTimeMillis((byte) 89) >= local2 + (long) anInt2002) {
 			return false;
 		} else {
 			method15380();
@@ -368,7 +368,7 @@ public class Class159 {
 		anInterface21_2 = arg7;
 		anInterface24_2 = arg8;
 		aClass24_14.method564(471409294);
-		@Pc(26) int[] local26 = aClass480_49.method29927(Class656.aClass656_5.method37268(), (byte) 1);
+		@Pc(26) int[] local26 = aClass480_49.method29927(Class656.aClass656_5.getId(), (byte) 1);
 		if (local26 != null) {
 			for (@Pc(30) int local30 = 0; local30 < local26.length; local30++) {
 				@Pc(41) Class80_Sub1_Sub12 local41 = Class165_Sub30.method16462(aClass480_49, local26[local30], -2081302757);
@@ -1679,7 +1679,7 @@ public class Class159 {
 		anInterface21_2 = arg7;
 		anInterface24_2 = arg8;
 		aClass24_14.method564(-400607801);
-		@Pc(26) int[] local26 = aClass480_49.method29927(Class656.aClass656_5.method37268(), (byte) 1);
+		@Pc(26) int[] local26 = aClass480_49.method29927(Class656.aClass656_5.getId(), (byte) 1);
 		if (local26 != null) {
 			for (@Pc(30) int local30 = 0; local30 < local26.length; local30++) {
 				@Pc(41) Class80_Sub1_Sub12 local41 = Class165_Sub30.method16462(aClass480_49, local26[local30], -1820001076);
@@ -2001,7 +2001,7 @@ public class Class159 {
 
 	@OriginalMember(owner = "client!tz", name = "ba", descriptor = "(Lclient!di;IIZ)Z")
 	static boolean method15389(@OriginalArg(0) Class102 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) boolean arg3) {
-		@Pc(2) long local2 = Class303.method27111((byte) 51);
+		@Pc(2) long local2 = Class303.currentTimeMillis((byte) 51);
 		@Pc(19) int local19;
 		@Pc(60) int local60;
 		@Pc(80) int local80;
@@ -2030,7 +2030,7 @@ public class Class159 {
 		}
 		@Pc(132) int local132;
 		@Pc(293) int local293;
-		while (aPacket_12 != null && aPacket_12.pos * -1380987821 < aPacket_12.data.length && (!arg3 || Class303.method27111((byte) 58) < local2 + (long) anInt2002)) {
+		while (aPacket_12 != null && aPacket_12.pos * -1380987821 < aPacket_12.data.length && (!arg3 || Class303.currentTimeMillis((byte) 58) < local2 + (long) anInt2002)) {
 			@Pc(142) int local142;
 			@Pc(144) int local144;
 			@Pc(157) int local157;
@@ -2117,7 +2117,7 @@ public class Class159 {
 			method15347(aShortArray49, aByteArray46, aShortArray50, arg1, arg2);
 			aShortArray49 = null;
 		}
-		if (arg3 && Class303.method27111((byte) 108) >= local2 + (long) anInt2002) {
+		if (arg3 && Class303.currentTimeMillis((byte) 108) >= local2 + (long) anInt2002) {
 			return false;
 		} else {
 			method15380();
@@ -3167,11 +3167,11 @@ public class Class159 {
 	}
 
 	@OriginalMember(owner = "client!tz", name = "m", descriptor = "(II)Lclient!aaa;")
-	public static Class3 method15416(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) Class3 local3 = new Class3();
+	public static SecondaryLinkedList method15416(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) SecondaryLinkedList local3 = new SecondaryLinkedList();
 		for (@Pc(8) Class80_Sub1_Sub12 local8 = (Class80_Sub1_Sub12) aClass24_14.method580((byte) -6); local8 != null; local8 = (Class80_Sub1_Sub12) aClass24_14.method566((byte) 7)) {
 			if (local8.aBoolean592 && local8.method22593(arg0, arg1, 1685437604)) {
-				local3.method42(local8, 1599142138);
+				local3.addTail(local8, 1599142138);
 			}
 		}
 		return local3;
@@ -3405,7 +3405,7 @@ public class Class159 {
 		anInterface21_2 = arg7;
 		anInterface24_2 = arg8;
 		aClass24_14.method564(-330766175);
-		@Pc(26) int[] local26 = aClass480_49.method29927(Class656.aClass656_5.method37268(), (byte) 1);
+		@Pc(26) int[] local26 = aClass480_49.method29927(Class656.aClass656_5.getId(), (byte) 1);
 		if (local26 != null) {
 			for (@Pc(30) int local30 = 0; local30 < local26.length; local30++) {
 				@Pc(41) Class80_Sub1_Sub12 local41 = Class165_Sub30.method16462(aClass480_49, local26[local30], -2006613693);

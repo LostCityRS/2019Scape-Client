@@ -83,14 +83,14 @@ public final class Class450 implements Interface47 {
 			for (@Pc(106) int local106 = client.anInt3452 * -340916049; local106 < local18; local106++) {
 				client.aClass80_Sub19Array1[local106] = null;
 			}
-			@Pc(119) Class340 local119 = Class160.aClass121_Sub1_2.method9607(-1618822953);
+			@Pc(119) Class340 local119 = BufferedSocket.aClass121_Sub1_2.method9607(-1618822953);
 			if (Class340.aClass340_7 == local119) {
-				@Pc(127) Class123_Sub3 local127 = (Class123_Sub3) Class160.aClass121_Sub1_2.method9603(-2130710922);
+				@Pc(127) Class123_Sub3 local127 = (Class123_Sub3) BufferedSocket.aClass121_Sub1_2.method9603(-2130710922);
 				local127.method10000((byte) 105);
 			}
-			@Pc(134) Class347 local134 = Class160.aClass121_Sub1_2.method9702(1200302453);
+			@Pc(134) Class347 local134 = BufferedSocket.aClass121_Sub1_2.method9702(1200302453);
 			if (Class347.aClass347_3 == local134) {
-				@Pc(142) Class20_Sub5 local142 = (Class20_Sub5) Class160.aClass121_Sub1_2.method9693(1738323543);
+				@Pc(142) Class20_Sub5 local142 = (Class20_Sub5) BufferedSocket.aClass121_Sub1_2.method9693(1738323543);
 				local142.method16939(120598405);
 			}
 		}

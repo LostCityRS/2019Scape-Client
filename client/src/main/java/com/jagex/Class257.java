@@ -15,7 +15,7 @@ final class Class257 implements Interface55 {
 	final Class263 aClass263_1;
 
 	@OriginalMember(owner = "client!fa", name = "t", descriptor = "(S)Lclient!sr;")
-	public static Class146 method26425(@OriginalArg(0) short arg0) {
+	public static Class146 create(@OriginalArg(0) short arg0) {
 		try {
 			return new Class146_Sub2();
 		} catch (@Pc(4) Throwable local4) {
@@ -55,10 +55,10 @@ final class Class257 implements Interface55 {
 			}
 		}
 		try {
-			@Pc(32) Dimension local32 = Class454.aCanvas6.getSize();
+			@Pc(32) Dimension local32 = Class454.canvas.getSize();
 			Class92.method1878(Class60.aClass60_163.method1180(Class512.aClass719_3, 428778926), true, Class279.aClass102_9, Class709.aClass104_26, Class689.aClass15_13, 761812012);
 			@Pc(50) Class232 local50 = Class232.method26043(Class626.aClass480_129, Class698.aClass638_1.anInt5630 * -2013498219, 0);
-			@Pc(53) long local53 = Class303.method27111((byte) 64);
+			@Pc(53) long local53 = Class303.currentTimeMillis((byte) 64);
 			Class279.aClass102_9.method20877();
 			client.aClass471_51.method29775(0.0F, 256.0F, 0.0F);
 			Class279.aClass102_9.method20759(client.aClass471_51);
@@ -76,14 +76,14 @@ final class Class257 implements Interface55 {
 						client.aClass471_52.method29775((float) (((float) local133 - (float) local129 / 2.0F) * 512.0F), 0.0F, (float) ((local129 + 1) * 512));
 						local116.method7359(client.aClass471_52, null, 0);
 						local118++;
-						if (Class303.method27111((byte) 61) - local53 >= (long) arg1) {
+						if (Class303.currentTimeMillis((byte) 61) - local53 >= (long) arg1) {
 							break label42;
 						}
 					}
 				}
 			}
 			Class279.aClass102_9.method20659();
-			@Pc(189) long local189 = (long) (local118 * 1000) / (Class303.method27111((byte) 62) - local53);
+			@Pc(189) long local189 = (long) (local118 * 1000) / (Class303.currentTimeMillis((byte) 62) - local53);
 			Class279.aClass102_9.method20714(3, 0);
 			return (int) local189;
 		} catch (@Pc(197) Throwable local197) {

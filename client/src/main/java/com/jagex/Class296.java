@@ -359,14 +359,14 @@ public final class Class296 {
 			}
 		}
 		arg0.method22568(178350976);
-		@Pc(259) Class340 local259 = Class160.aClass121_Sub1_2.method9607(-1663575425);
+		@Pc(259) Class340 local259 = BufferedSocket.aClass121_Sub1_2.method9607(-1663575425);
 		if (Class340.aClass340_7 == local259) {
-			@Pc(267) Class123_Sub3 local267 = (Class123_Sub3) Class160.aClass121_Sub1_2.method9603(-1584877514);
+			@Pc(267) Class123_Sub3 local267 = (Class123_Sub3) BufferedSocket.aClass121_Sub1_2.method9603(-1584877514);
 			local267.method10000((byte) 102);
 		}
-		@Pc(274) Class347 local274 = Class160.aClass121_Sub1_2.method9702(786823149);
+		@Pc(274) Class347 local274 = BufferedSocket.aClass121_Sub1_2.method9702(786823149);
 		if (local274 == Class347.aClass347_3) {
-			@Pc(282) Class20_Sub5 local282 = (Class20_Sub5) Class160.aClass121_Sub1_2.method9693(1894638147);
+			@Pc(282) Class20_Sub5 local282 = (Class20_Sub5) BufferedSocket.aClass121_Sub1_2.method9693(1894638147);
 			local282.method16939(1950215551);
 		}
 	}
@@ -426,7 +426,7 @@ public final class Class296 {
 				if (local106 != null && Class229.method25998(local106, arg1)) {
 					@Pc(115) Class601 local115 = local106.f();
 					if (local115 != null) {
-						Class312.method27463(local115.method37268(), local106, (byte) 24);
+						Class312.method27463(local115.getId(), local106, (byte) 24);
 					}
 				}
 			}

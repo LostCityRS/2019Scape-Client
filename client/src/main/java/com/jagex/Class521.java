@@ -645,7 +645,7 @@ public final class Class521 implements Interface75, Interface54 {
 
 	@OriginalMember(owner = "client!qy", name = "aof", descriptor = "(Lclient!yp;I)V")
 	static void method30632(@OriginalArg(0) Class690 arg0, @OriginalArg(1) int arg1) throws Exception_Sub3 {
-		Class160.aClass121_Sub1_2.method9610((float) arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581] / 1000.0F, 1677117656);
+		BufferedSocket.aClass121_Sub1_2.method9610((float) arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581] / 1000.0F, 1677117656);
 	}
 
 	@OriginalMember(owner = "client!qy", name = "atj", descriptor = "(Lclient!yp;B)V")
@@ -688,7 +688,7 @@ public final class Class521 implements Interface75, Interface54 {
 
 	@OriginalMember(owner = "client!qy", name = "f", descriptor = "()I")
 	@Override
-	public int method37268() {
+	public int getId() {
 		return this.anInt5059 * -353299761;
 	}
 

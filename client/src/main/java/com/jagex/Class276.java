@@ -47,11 +47,11 @@ public final class Class276 implements Interface11, Interface5 {
 			@Pc(35) int local35 = local28.anInt5540 * -390642507 << 9;
 			@Pc(42) int local42 = local28.anInt5537 * -894305615 << 9;
 			@Pc(47) int local47 = 1000 / Class165_Sub11.method16047((byte) -114);
-			Class160.aClass121_Sub1_2.method9675((float) local47 / 1000.0F, client.aClass539_1.method30910((byte) -79).anIntArrayArrayArray14, client.aClass539_1.method30903(-463929735), local35, local42, (byte) -97);
+			BufferedSocket.aClass121_Sub1_2.method9675((float) local47 / 1000.0F, client.aClass539_1.method30910((byte) -79).anIntArrayArrayArray14, client.aClass539_1.method30903(-463929735), local35, local42, (byte) -97);
 		}
 		Class130_Sub1.anInt1175 = -1464167667;
 		Class588.anInt5304 = -503779167;
-		client.anInt3425 = client.anInt3436 * 1891801039;
+		client.anInt3425 = client.currentCycle * 1891801039;
 		Class656.anInt5677 = Class89.anInt319 * -613974023;
 		Class614.anInt5428 = Class283.anInt3937 * 1874485949;
 		Class597.anInt5363 = Class102_Sub2.anInt653 * -442810047;

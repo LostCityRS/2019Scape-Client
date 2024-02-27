@@ -54,7 +54,7 @@ public final class Class654 {
 	public static void method33147(@OriginalArg(0) Class102 arg0, @OriginalArg(1) long arg1) {
 		anInt5664 = anInt5668 * -2011109703;
 		anInt5668 = 0;
-		Class303.method27111((byte) 83);
+		Class303.currentTimeMillis((byte) 83);
 		@Pc(11) Iterator local11 = Class286.aList14.iterator();
 		while (local11.hasNext()) {
 			@Pc(18) Class658 local18 = (Class658) local11.next();
@@ -71,7 +71,7 @@ public final class Class654 {
 	static int method33148(@OriginalArg(0) int arg0) {
 		@Pc(5) Class80_Sub20 local5 = (Class80_Sub20) aClass24_38.method560((long) arg0);
 		if (local5 == null) {
-			@Pc(12) Class433 local12 = Class518.anInterface48_1.method29225(arg0, (byte) -109);
+			@Pc(12) Class433 local12 = Js5MasterIndex.anInterface48_1.method29225(arg0, (byte) -109);
 			if (local12 == null || local12.anInt4737 * 821164565 != 2) {
 				return -1;
 			}
@@ -86,7 +86,7 @@ public final class Class654 {
 	static int method33149(@OriginalArg(0) int arg0) {
 		@Pc(5) Class80_Sub20 local5 = (Class80_Sub20) aClass24_38.method560((long) arg0);
 		if (local5 == null) {
-			@Pc(12) Class433 local12 = Class518.anInterface48_1.method29225(arg0, (byte) -28);
+			@Pc(12) Class433 local12 = Js5MasterIndex.anInterface48_1.method29225(arg0, (byte) -28);
 			if (local12 == null || local12.anInt4737 * 821164565 != 2) {
 				return -1;
 			}
@@ -106,7 +106,7 @@ public final class Class654 {
 		Class40.aClass658Array1 = new Class658[Class233.anIntArray351[anInt5665 * 2087772395] + 1];
 		anInt5666 = 0;
 		anInt5667 = 0;
-		Class518.anInterface48_1 = arg1;
+		Js5MasterIndex.anInterface48_1 = arg1;
 	}
 
 	@OriginalMember(owner = "client!xa", name = "a", descriptor = "(Lclient!np;Lclient!nt;)V")
@@ -118,7 +118,7 @@ public final class Class654 {
 		Class40.aClass658Array1 = new Class658[Class233.anIntArray351[anInt5665 * 2087772395] + 1];
 		anInt5666 = 0;
 		anInt5667 = 0;
-		Class518.anInterface48_1 = arg1;
+		Js5MasterIndex.anInterface48_1 = arg1;
 	}
 
 	@OriginalMember(owner = "client!xa", name = "r", descriptor = "(Lclient!te;Lclient!di;)V")
@@ -141,7 +141,7 @@ public final class Class654 {
 		Class40.aClass658Array1 = new Class658[Class233.anIntArray351[anInt5665 * 2087772395] + 1];
 		anInt5666 = 0;
 		anInt5667 = 0;
-		Class518.anInterface48_1 = arg1;
+		Js5MasterIndex.anInterface48_1 = arg1;
 	}
 
 	@OriginalMember(owner = "client!xa", name = "y", descriptor = "()I")
@@ -169,7 +169,7 @@ public final class Class654 {
 		Class40.aClass658Array1 = new Class658[Class233.anIntArray351[anInt5665 * 2087772395] + 1];
 		anInt5666 = 0;
 		anInt5667 = 0;
-		Class518.anInterface48_1 = arg1;
+		Js5MasterIndex.anInterface48_1 = arg1;
 	}
 
 	@OriginalMember(owner = "client!xa", name = "h", descriptor = "()V")
@@ -187,7 +187,7 @@ public final class Class654 {
 	static int method33158(@OriginalArg(0) int arg0) {
 		@Pc(5) Class80_Sub20 local5 = (Class80_Sub20) aClass24_38.method560((long) arg0);
 		if (local5 == null) {
-			@Pc(12) Class433 local12 = Class518.anInterface48_1.method29225(arg0, (byte) -2);
+			@Pc(12) Class433 local12 = Js5MasterIndex.anInterface48_1.method29225(arg0, (byte) -2);
 			if (local12 == null || local12.anInt4737 * 821164565 != 2) {
 				return -1;
 			}

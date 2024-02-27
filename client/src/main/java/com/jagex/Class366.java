@@ -43,7 +43,7 @@ public final class Class366 implements Interface11 {
 
 	@OriginalMember(owner = "client!jq", name = "agr", descriptor = "(Lclient!yp;S)V")
 	static void method28271(@OriginalArg(0) Class690 arg0, @OriginalArg(1) short arg1) {
-		arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = Class546.method31208((long) arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581] * 60000L, Class512.aClass719_3.method37268(), true, -197060662) + " UTC";
+		arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = Class546.method31208((long) arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581] * 60000L, Class512.aClass719_3.getId(), true, -197060662) + " UTC";
 	}
 
 	@OriginalMember(owner = "client!jq", name = "agx", descriptor = "(Lclient!yp;I)V")

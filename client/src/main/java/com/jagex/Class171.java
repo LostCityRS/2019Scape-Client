@@ -155,7 +155,7 @@ public final class Class171 {
 	public static void method23487() {
 		@Pc(1) Class40 local1 = null;
 		try {
-			local1 = Class3.method70("", client.aClass722_4.aString247, true, -2014760894);
+			local1 = SecondaryLinkedList.method70("", client.aClass722_4.aString247, true, -2014760894);
 			@Pc(12) Packet local12 = Class703.aClass80_Sub37_49.method14942(-453302767);
 			local1.method834(local12.data, 0, local12.pos * -1380987821, (byte) 1);
 		} catch (@Pc(24) Exception local24) {
@@ -706,7 +706,7 @@ public final class Class171 {
 		if (local113 == null) {
 			local113 = Class8.aClass104_1;
 		}
-		local113.method7637(local34, Class630.anInt5558 * -1686046855, Class630.anInt5559 * -9767145, Class630.aClass327_13.anInt4103 * 1892149809, Class630.aClass327_13.anInt4104 * 1990157877, Class630.aClass327_13.anInt4114 * 671136973, Class630.aClass327_13.anInt4096 * -449602255, Class630.aClass327_13.anInt4149 * 1280669649, Class630.aClass327_13.anInt4150 * -1409337839, client.aRandom2, Class622.anInt5488, client.anIntArray319, Class344.aClass99Array6, null, -178223731);
+		local113.method7637(local34, Class630.anInt5558 * -1686046855, Class630.anInt5559 * -9767145, Class630.aClass327_13.anInt4103 * 1892149809, Class630.aClass327_13.anInt4104 * 1990157877, Class630.aClass327_13.anInt4114 * 671136973, Class630.aClass327_13.anInt4096 * -449602255, Class630.aClass327_13.anInt4149 * 1280669649, Class630.aClass327_13.anInt4150 * -1409337839, client.random, Class622.seed, client.anIntArray319, Class344.aClass99Array6, null, -178223731);
 		Class312.method27468(client.anIntArray319[0], client.anIntArray319[1], client.anIntArray319[2], client.anIntArray319[3], -136798746);
 	}
 

@@ -168,8 +168,8 @@ public final class Class159_Sub1 extends Class159 {
 		if (anInt2017 * 1776676847 == 100 || aClass80_Sub1_Sub12_3 == null) {
 			return;
 		}
-		Class303.method27111((byte) 32);
-		Class303.method27111((byte) 41);
+		Class303.currentTimeMillis((byte) 32);
+		Class303.currentTimeMillis((byte) 41);
 		@Pc(21) int local21;
 		@Pc(27) int local27;
 		if (anInt2017 * 1776676847 < 10) {

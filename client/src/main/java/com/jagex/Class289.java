@@ -91,12 +91,12 @@ public final class Class289 implements Interface75 {
 			if (local25 == null) {
 				arg0 = -1;
 			} else {
-				Class365.aClass555_1.setcustomcursor(Class454.aCanvas6, local25.method7117(true), local25.method7126(), local25.method7137(), new Point(local21.anInt5733 * -103573951, local21.anInt5735 * 527126297));
+				Class365.aClass555_1.setcustomcursor(Class454.canvas, local25.method7117(true), local25.method7126(), local25.method7137(), new Point(local21.anInt5733 * -103573951, local21.anInt5735 * 527126297));
 				client.anInt3525 = arg0 * -724759145;
 			}
 		}
 		if (arg0 == -1 && client.anInt3525 * -284278233 != -1) {
-			Class365.aClass555_1.setcustomcursor(Class454.aCanvas6, null, -1, -1, new Point());
+			Class365.aClass555_1.setcustomcursor(Class454.canvas, null, -1, -1, new Point());
 			client.anInt3525 = 724759145;
 		}
 	}
@@ -132,7 +132,7 @@ public final class Class289 implements Interface75 {
 
 	@OriginalMember(owner = "client!gj", name = "f", descriptor = "()I")
 	@Override
-	public int method37268() {
+	public int getId() {
 		return this.anInt3944 * -1944888911;
 	}
 

@@ -632,7 +632,7 @@ public final class Class430 {
 	@OriginalMember(owner = "client!n", name = "fl", descriptor = "(ILjava/lang/String;ZB)V")
 	public static void method29085(@OriginalArg(0) int arg0, @OriginalArg(1) String arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) byte arg3) {
 		if (arg0 == 0) {
-			Class279.aClass102_9 = Class620.method32309(0, Class454.aCanvas6, Class626.aClass235_8, Class39.anInterface23_1, Class475.aClass445_1, Class447.aClass450_1, Class380.aClass444_1, Class80_Sub15.aClass480_35, Class703.aClass80_Sub37_49.aClass165_Sub43_1.method16849(1538334780) * 2, (byte) -74);
+			Class279.aClass102_9 = Class620.method32309(0, Class454.canvas, Class626.aClass235_8, Class39.anInterface23_1, Class475.aClass445_1, Class447.aClass450_1, Class380.aClass444_1, Class80_Sub15.aClass480_35, Class703.aClass80_Sub37_49.aClass165_Sub43_1.method16849(1538334780) * 2, (byte) -74);
 			if (arg1 != null) {
 				Class279.aClass102_9.method20714(1, 0);
 				@Pc(34) Class15 local34 = Class165_Sub44.method16877(Class569.aClass480_124, Class361.anInt4492 * 187098293, 0, Class317.aClass464_1, -1880069492);
@@ -643,7 +643,7 @@ public final class Class430 {
 		} else {
 			@Pc(57) Class102 local57 = null;
 			if (arg1 != null) {
-				local57 = Class620.method32309(0, Class454.aCanvas6, Class626.aClass235_8, Class39.anInterface23_1, Class475.aClass445_1, Class447.aClass450_1, Class380.aClass444_1, Class80_Sub15.aClass480_35, 0, (byte) -79);
+				local57 = Class620.method32309(0, Class454.canvas, Class626.aClass235_8, Class39.anInterface23_1, Class475.aClass445_1, Class447.aClass450_1, Class380.aClass444_1, Class80_Sub15.aClass480_35, 0, (byte) -79);
 				local57.method20714(1, 0);
 				@Pc(84) Class15 local84 = Class427.method29056(Class569.aClass480_124, Class361.anInt4492 * 187098293, 0, (byte) 91);
 				@Pc(95) Class104 local95 = local57.method20749(local84, Class212.method25822(Class708.aClass480_136, Class361.anInt4492 * 187098293, 0), true);
@@ -662,7 +662,7 @@ public final class Class430 {
 						var18 = true;
 						Class230.method26005(-672164049);
 						System.gc();
-						Class279.aClass102_9 = Class620.method32309(arg0, Class454.aCanvas6, Class626.aClass235_8, Class39.anInterface23_1, Class475.aClass445_1, Class447.aClass450_1, Class380.aClass444_1, Class80_Sub15.aClass480_35, Class703.aClass80_Sub37_49.aClass165_Sub43_1.method16849(1538334780) * 2, (byte) -16);
+						Class279.aClass102_9 = Class620.method32309(arg0, Class454.canvas, Class626.aClass235_8, Class39.anInterface23_1, Class475.aClass445_1, Class447.aClass450_1, Class380.aClass444_1, Class80_Sub15.aClass480_35, Class703.aClass80_Sub37_49.aClass165_Sub43_1.method16849(1538334780) * 2, (byte) -16);
 						Class317.aClass464_1 = new Class464(Class279.aClass102_9, Class708.aClass480_136, Class569.aClass480_124, Class546.method31209(-373997454));
 						if (Class279.aClass102_9.method20664()) {
 							@Pc(145) boolean local145 = true;

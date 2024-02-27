@@ -141,10 +141,10 @@ public final class Class623 {
 	@OriginalMember(owner = "client!vt", name = "ant", descriptor = "(Lclient!yp;I)V")
 	static void method32441(@OriginalArg(0) Class690 arg0, @OriginalArg(1) int arg1) {
 		@Pc(13) Class80_Sub33 local13 = (Class80_Sub33) arg0.anObjectArray46[(arg0.anInt5776 -= -825189621) * -2070619997];
-		if (Class160.aClass121_Sub1_2.method9702(1596964472) != Class347.aClass347_4) {
+		if (BufferedSocket.aClass121_Sub1_2.method9702(1596964472) != Class347.aClass347_4) {
 			throw new RuntimeException();
 		}
-		@Pc(27) Class20_Sub2 local27 = (Class20_Sub2) Class160.aClass121_Sub1_2.method9693(1425232456);
+		@Pc(27) Class20_Sub2 local27 = (Class20_Sub2) BufferedSocket.aClass121_Sub1_2.method9693(1425232456);
 		local27.method16504(local13, (short) 18002);
 		client.aBoolean726 = true;
 	}

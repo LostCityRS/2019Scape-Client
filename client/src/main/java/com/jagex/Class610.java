@@ -23,7 +23,7 @@ public final class Class610 implements Interface67 {
 	@OriginalMember(owner = "client!vd", name = "aoc", descriptor = "(Lclient!yp;B)V")
 	static void method32206(@OriginalArg(0) Class690 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(12) int local12 = arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581];
-		Class160.aClass121_Sub1_2.method9639(local12, 1902135830);
+		BufferedSocket.aClass121_Sub1_2.method9639(local12, 1902135830);
 	}
 
 	@OriginalMember(owner = "client!vd", name = "d", descriptor = "(CI)Z")

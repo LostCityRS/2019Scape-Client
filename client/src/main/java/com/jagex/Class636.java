@@ -21,7 +21,7 @@ public final class Class636 implements Interface22 {
 	static final long aLong405 = 500L;
 
 	@OriginalMember(owner = "client!wg", name = "fx", descriptor = "J")
-	static long aLong406;
+	static long js5ConnectTime;
 
 	@OriginalMember(owner = "client!wg", name = "i", descriptor = "Lclient!aax;")
 	Class24 aClass24_36 = new Class24(128);
@@ -50,7 +50,7 @@ public final class Class636 implements Interface22 {
 
 	@OriginalMember(owner = "client!wg", name = "ye", descriptor = "(Lclient!yp;I)V")
 	static void method32865(@OriginalArg(0) Class690 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class512.aClass719_3.method37268();
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class512.aClass719_3.getId();
 	}
 
 	@OriginalMember(owner = "client!wg", name = "ko", descriptor = "(Lclient!yp;I)V")
@@ -68,7 +68,7 @@ public final class Class636 implements Interface22 {
 
 	@OriginalMember(owner = "client!wg", name = "v", descriptor = "(ZI)I")
 	public int method32847(@OriginalArg(0) boolean arg0, @OriginalArg(1) int arg1) {
-		@Pc(2) long local2 = Class303.method27111((byte) 107);
+		@Pc(2) long local2 = Class303.currentTimeMillis((byte) 107);
 		for (@Pc(15) Class80_Sub25 local15 = (Class80_Sub25) (arg0 ? this.aClass24_36.method580((byte) -28) : this.aClass24_36.method566((byte) 7)); local15 != null; local15 = (Class80_Sub25) this.aClass24_36.method566((byte) 7)) {
 			if ((local15.aLong111 * -3870080695537343021L & 0x3FFFFFFFFFFFFFFFL) < local2) {
 				if ((local15.aLong111 * -3870080695537343021L & 0x4000000000000000L) != 0L) {
@@ -104,10 +104,10 @@ public final class Class636 implements Interface22 {
 		this.anIntArray508[arg0.anInt862 * -1873516487] = arg1;
 		@Pc(17) Class80_Sub25 local17 = (Class80_Sub25) this.aClass24_36.method560((long) (arg0.anInt862 * -1873516487));
 		if (local17 == null) {
-			local17 = new Class80_Sub25(Class303.method27111((byte) 31) + 500L);
+			local17 = new Class80_Sub25(Class303.currentTimeMillis((byte) 31) + 500L);
 			this.aClass24_36.method563(local17, (long) (arg0.anInt862 * -1873516487));
 		} else {
-			local17.aLong111 = (Class303.method27111((byte) 101) + 500L) * -6811134150962562469L;
+			local17.aLong111 = (Class303.currentTimeMillis((byte) 101) + 500L) * -6811134150962562469L;
 		}
 	}
 
@@ -119,7 +119,7 @@ public final class Class636 implements Interface22 {
 			local17 = new Class80_Sub25(4611686018427387905L);
 			this.aClass24_36.method563(local17, (long) (arg0.anInt862 * -1873516487));
 		} else if (local17.aLong111 * -3870080695537343021L != 4611686018427387905L) {
-			local17.aLong111 = (Class303.method27111((byte) 93) + 500L | 0x4000000000000000L) * -6811134150962562469L;
+			local17.aLong111 = (Class303.currentTimeMillis((byte) 93) + 500L | 0x4000000000000000L) * -6811134150962562469L;
 		}
 	}
 
@@ -162,10 +162,10 @@ public final class Class636 implements Interface22 {
 		this.anIntArray508[arg0.anInt862 * -1873516487] = arg1;
 		@Pc(17) Class80_Sub25 local17 = (Class80_Sub25) this.aClass24_36.method560((long) (arg0.anInt862 * -1873516487));
 		if (local17 == null) {
-			local17 = new Class80_Sub25(Class303.method27111((byte) 106) + 500L);
+			local17 = new Class80_Sub25(Class303.currentTimeMillis((byte) 106) + 500L);
 			this.aClass24_36.method563(local17, (long) (arg0.anInt862 * -1873516487));
 		} else {
-			local17.aLong111 = (Class303.method27111((byte) 56) + 500L) * -6811134150962562469L;
+			local17.aLong111 = (Class303.currentTimeMillis((byte) 56) + 500L) * -6811134150962562469L;
 		}
 	}
 
@@ -204,7 +204,7 @@ public final class Class636 implements Interface22 {
 			local17 = new Class80_Sub25(4611686018427387905L);
 			this.aClass24_36.method563(local17, (long) (arg0.anInt862 * -1873516487));
 		} else if (local17.aLong111 * -3870080695537343021L != 4611686018427387905L) {
-			local17.aLong111 = (Class303.method27111((byte) 95) + 500L | 0x4000000000000000L) * -6811134150962562469L;
+			local17.aLong111 = (Class303.currentTimeMillis((byte) 95) + 500L | 0x4000000000000000L) * -6811134150962562469L;
 		}
 	}
 
@@ -220,10 +220,10 @@ public final class Class636 implements Interface22 {
 		this.anIntArray508[arg0.anInt862 * -1873516487] = arg1;
 		@Pc(17) Class80_Sub25 local17 = (Class80_Sub25) this.aClass24_36.method560((long) (arg0.anInt862 * -1873516487));
 		if (local17 == null) {
-			local17 = new Class80_Sub25(Class303.method27111((byte) 107) + 500L);
+			local17 = new Class80_Sub25(Class303.currentTimeMillis((byte) 107) + 500L);
 			this.aClass24_36.method563(local17, (long) (arg0.anInt862 * -1873516487));
 		} else {
-			local17.aLong111 = (Class303.method27111((byte) 59) + 500L) * -6811134150962562469L;
+			local17.aLong111 = (Class303.currentTimeMillis((byte) 59) + 500L) * -6811134150962562469L;
 		}
 	}
 
@@ -247,7 +247,7 @@ public final class Class636 implements Interface22 {
 			local17 = new Class80_Sub25(4611686018427387905L);
 			this.aClass24_36.method563(local17, (long) (arg0.anInt862 * -1873516487));
 		} else if (local17.aLong111 * -3870080695537343021L != 4611686018427387905L) {
-			local17.aLong111 = (Class303.method27111((byte) 94) + 500L | 0x4000000000000000L) * -6811134150962562469L;
+			local17.aLong111 = (Class303.currentTimeMillis((byte) 94) + 500L | 0x4000000000000000L) * -6811134150962562469L;
 		}
 	}
 
@@ -303,7 +303,7 @@ public final class Class636 implements Interface22 {
 
 	@OriginalMember(owner = "client!wg", name = "b", descriptor = "(Z)I")
 	public int method32855(@OriginalArg(0) boolean arg0) {
-		@Pc(2) long local2 = Class303.method27111((byte) 87);
+		@Pc(2) long local2 = Class303.currentTimeMillis((byte) 87);
 		for (@Pc(15) Class80_Sub25 local15 = (Class80_Sub25) (arg0 ? this.aClass24_36.method580((byte) -39) : this.aClass24_36.method566((byte) 7)); local15 != null; local15 = (Class80_Sub25) this.aClass24_36.method566((byte) 7)) {
 			if ((local15.aLong111 * -3870080695537343021L & 0x3FFFFFFFFFFFFFFFL) < local2) {
 				if ((local15.aLong111 * -3870080695537343021L & 0x4000000000000000L) != 0L) {
@@ -320,7 +320,7 @@ public final class Class636 implements Interface22 {
 
 	@OriginalMember(owner = "client!wg", name = "ao", descriptor = "(Z)I")
 	public int method32856(@OriginalArg(0) boolean arg0) {
-		@Pc(2) long local2 = Class303.method27111((byte) 61);
+		@Pc(2) long local2 = Class303.currentTimeMillis((byte) 61);
 		for (@Pc(15) Class80_Sub25 local15 = (Class80_Sub25) (arg0 ? this.aClass24_36.method580((byte) -123) : this.aClass24_36.method566((byte) 7)); local15 != null; local15 = (Class80_Sub25) this.aClass24_36.method566((byte) 7)) {
 			if ((local15.aLong111 * -3870080695537343021L & 0x3FFFFFFFFFFFFFFFL) < local2) {
 				if ((local15.aLong111 * -3870080695537343021L & 0x4000000000000000L) != 0L) {
@@ -352,7 +352,7 @@ public final class Class636 implements Interface22 {
 			local17 = new Class80_Sub25(4611686018427387905L);
 			this.aClass24_36.method563(local17, (long) (arg0.anInt862 * -1873516487));
 		} else if (local17.aLong111 * -3870080695537343021L != 4611686018427387905L) {
-			local17.aLong111 = (Class303.method27111((byte) 52) + 500L | 0x4000000000000000L) * -6811134150962562469L;
+			local17.aLong111 = (Class303.currentTimeMillis((byte) 52) + 500L | 0x4000000000000000L) * -6811134150962562469L;
 		}
 	}
 

@@ -375,7 +375,7 @@ public final class Class53 {
 	@OriginalMember(owner = "client!acb", name = "mb", descriptor = "(Ljava/lang/String;ZI)I")
 	public static int method1089(@OriginalArg(0) String arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2) {
 		@Pc(2) String local2 = arg0.toLowerCase();
-		Class518.anIntArray466 = null;
+		Js5MasterIndex.anIntArray466 = null;
 		Class679.anInt5743 = 0;
 		@Pc(10) LinkedList local10 = new LinkedList();
 		@Pc(14) LinkedList local14 = new LinkedList();
@@ -390,15 +390,15 @@ public final class Class53 {
 				local14.add(local28.aString5);
 			}
 		}
-		Class518.anIntArray466 = new int[local10.size()];
+		Js5MasterIndex.anIntArray466 = new int[local10.size()];
 		local16 = 0;
 		@Pc(93) Iterator local93 = local10.iterator();
 		while (local93.hasNext()) {
 			@Pc(100) Integer local100 = (Integer) local93.next();
-			Class518.anIntArray466[local16++] = local100;
+			Js5MasterIndex.anIntArray466[local16++] = local100;
 		}
-		@Pc(115) String[] local115 = (String[]) local14.toArray(new String[Class518.anIntArray466.length]);
-		Class602.method32125(local115, Class518.anIntArray466, -447506242);
+		@Pc(115) String[] local115 = (String[]) local14.toArray(new String[Js5MasterIndex.anIntArray466.length]);
+		Class602.method32125(local115, Js5MasterIndex.anIntArray466, -447506242);
 		return local10.size();
 	}
 

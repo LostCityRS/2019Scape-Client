@@ -34,9 +34,9 @@ public final class Class103_Sub4 extends Class103 {
 		@Pc(11) Class592 local11 = null;
 		@Pc(15) int local15 = arg0.method683(2093159744);
 		if (client.aClass36_6 != null && !Class638.aBoolean964) {
-			local11 = new Class592(local15, client.aClass36_6, Class203.aClass36Array1[local15], local15 == Class32.aClass32_39.method683(-468480685) ? 8000000 : 2500000);
+			local11 = new Class592(local15, client.aClass36_6, Class203.aClass36Array1[local15], local15 == Class32.js5Archive30.method683(-468480685) ? 8000000 : 2500000);
 		}
-		Class626.aClass141_Sub1Array2[local15] = Class279.aClass491_1.method30245(local15, local11, Class644.aClass592_4, arg0.method686(-2121595563), -604582785);
+		Class626.aClass141_Sub1Array2[local15] = Class279.js5MasterIndex.method30245(local15, local11, Class644.aClass592_4, arg0.method686(-2121595563), -604582785);
 		if (arg4) {
 			Class626.aClass141_Sub1Array2[local15].method10917((byte) 14);
 		}

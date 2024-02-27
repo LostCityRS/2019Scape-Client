@@ -13,7 +13,7 @@ import java.io.InputStream;
 public final class Class597 implements Runnable {
 
 	@OriginalMember(owner = "client!up", name = "ac", descriptor = "Z")
-	public static boolean aBoolean926;
+	public static boolean focus;
 
 	@OriginalMember(owner = "client!up", name = "ua", descriptor = "I")
 	static int anInt5363;

@@ -17,7 +17,7 @@ public final class Class20_Sub4_Sub2 extends Class20_Sub4 {
 		}
 		@Pc(31) Class80_Sub1_Sub14 local31 = local5.method27773(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, 588951009);
 		Class329.aClass24_29.method563(local31, (long) (local31.anInt3100 * 102067333));
-		Class329.aClass3_15.method42(local31, 1599142138);
+		Class329.aSecondaryLinkedList_15.addTail(local31, 1599142138);
 		client.anInt3552 = client.anInt3569 * 1273462915;
 	}
 

@@ -43,9 +43,9 @@ final class Class532 implements Interface41 {
 		arg0.method20986(0, 0, Class80_Sub1_Sub1.anInt254 * -255202897, 350);
 		arg0.method20893(0, 350 - Class149.anInt1521 * 353598737, Class80_Sub1_Sub1.anInt254 * -255202897, -1, -1859623006);
 		Class8.aClass104_1.method7655("--> " + Class343.method27946(Class149.aString48, (byte) 36), 10, 350 - Class375.aClass15_9.anInt46 * -191270971 - 1, -1, -16777216, -1268477993);
-		if (Class597.aBoolean926) {
+		if (Class597.focus) {
 			local55 = -1;
-			if (client.anInt3436 % 30 > 15) {
+			if (client.currentCycle % 30 > 15) {
 				local55 = 16777215;
 			}
 			arg0.method20719(Class375.aClass15_9.method373("--> " + Class343.method27946(Class149.aString48, (byte) 109).substring(0, Class149.anInt1523 * -187541765), -1743680922) + 10, 350 - Class375.aClass15_9.anInt46 * -191270971 - 11, 12, local55, (byte) -84);

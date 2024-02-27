@@ -32,7 +32,7 @@ public abstract class Class141 {
 	}
 
 	@OriginalMember(owner = "client!pn", name = "i", descriptor = "()Lclient!ps;")
-	abstract Class492 method10890();
+	abstract Js5ArchiveIndex method10890();
 
 	@OriginalMember(owner = "client!pn", name = "f", descriptor = "(IB)[B")
 	abstract byte[] method10891(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1);
@@ -44,10 +44,10 @@ public abstract class Class141 {
 	abstract int method10893(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1);
 
 	@OriginalMember(owner = "client!pn", name = "t", descriptor = "(I)Lclient!ps;")
-	abstract Class492 method10894(@OriginalArg(0) int arg0);
+	abstract Js5ArchiveIndex getIndex(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!pn", name = "g", descriptor = "()Lclient!ps;")
-	abstract Class492 method10895();
+	abstract Js5ArchiveIndex method10895();
 
 	@OriginalMember(owner = "client!pn", name = "k", descriptor = "(I)I")
 	abstract int method10896(@OriginalArg(0) int arg0);
@@ -71,5 +71,5 @@ public abstract class Class141 {
 	abstract void method10902(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1);
 
 	@OriginalMember(owner = "client!pn", name = "l", descriptor = "()Lclient!ps;")
-	abstract Class492 method10903();
+	abstract Js5ArchiveIndex method10903();
 }

@@ -15,12 +15,12 @@ public final class Class162_Sub2 extends Class162 {
 		@Pc(3) Canvas local3 = new Canvas();
 		local3.setSize(100, 100);
 		@Pc(19) Class102 local19 = Class620.method32309(0, local3, null, null, null, null, null, null, 0, (byte) -85);
-		@Pc(22) long local22 = Class303.method27111((byte) 123);
+		@Pc(22) long local22 = Class303.currentTimeMillis((byte) 123);
 		@Pc(24) int local24;
 		for (local24 = 0; local24 < 10000; local24++) {
 			local19.method20724(5, 10, 100.0F, 75, 50, 100.0F, 15, 90, 100.0F, -65536, -65536, -65536, 1);
 		}
-		local24 = (int) (Class303.method27111((byte) 27) - local22);
+		local24 = (int) (Class303.currentTimeMillis((byte) 27) - local22);
 		local19.method20716(0, 0, 100, 100, -16777216, (byte) 120);
 		local19.method20660(-1697952403);
 		return local24;
@@ -44,7 +44,7 @@ public final class Class162_Sub2 extends Class162 {
 	@OriginalMember(owner = "client!alz", name = "m", descriptor = "(I)Z")
 	@Override
 	boolean method15781(@OriginalArg(0) int arg0) {
-		return this.method15799((byte) 26) != null || this.aLong153 * 4888655562420521213L < Class303.method27111((byte) 54) - 2000L;
+		return this.method15799((byte) 26) != null || this.aLong153 * 4888655562420521213L < Class303.currentTimeMillis((byte) 54) - 2000L;
 	}
 
 	@OriginalMember(owner = "client!alz", name = "n", descriptor = "(B)Lclient!akg;")
@@ -71,7 +71,7 @@ public final class Class162_Sub2 extends Class162 {
 	@OriginalMember(owner = "client!alz", name = "a", descriptor = "()Z")
 	@Override
 	boolean method15776() {
-		return this.method15799((byte) 118) != null || this.aLong153 * 4888655562420521213L < Class303.method27111((byte) 14) - 2000L;
+		return this.method15799((byte) 118) != null || this.aLong153 * 4888655562420521213L < Class303.currentTimeMillis((byte) 14) - 2000L;
 	}
 
 	@OriginalMember(owner = "client!alz", name = "s", descriptor = "()Lclient!aku;")

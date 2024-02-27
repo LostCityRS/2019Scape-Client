@@ -38,11 +38,11 @@ public final class Class393 implements Callable {
 
 	@OriginalMember(owner = "client!l", name = "aod", descriptor = "(Lclient!yp;I)V")
 	static void method28689(@OriginalArg(0) Class690 arg0, @OriginalArg(1) int arg1) {
-		if (Class160.aClass121_Sub1_2.method9607(-1459478280) != Class340.aClass340_7 || Class160.aClass121_Sub1_2.method9702(757298057) != Class347.aClass347_3) {
+		if (BufferedSocket.aClass121_Sub1_2.method9607(-1459478280) != Class340.aClass340_7 || BufferedSocket.aClass121_Sub1_2.method9702(757298057) != Class347.aClass347_3) {
 			throw new RuntimeException();
 		}
-		@Pc(20) Class463 local20 = ((Class123_Sub3) Class160.aClass121_Sub1_2.method9603(-1923755221)).method10019(1839083426);
-		@Pc(27) Class463 local27 = ((Class20_Sub5) Class160.aClass121_Sub1_2.method9693(2067870696)).method16940(-761692517);
+		@Pc(20) Class463 local20 = ((Class123_Sub3) BufferedSocket.aClass121_Sub1_2.method9603(-1923755221)).method10019(1839083426);
+		@Pc(27) Class463 local27 = ((Class20_Sub5) BufferedSocket.aClass121_Sub1_2.method9693(2067870696)).method16940(-761692517);
 		@Pc(30) Class463 local30 = Class463.method29472(local20);
 		local30.method29486(local27);
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = (int) local30.method29481();

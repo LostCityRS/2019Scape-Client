@@ -33,7 +33,7 @@ public class Class129_Sub2 extends Class129 {
 		@Pc(23) int local23 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1];
 		@Pc(33) int local33 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2];
 		@Pc(41) Class463 local41 = Class463.method29541((float) local13, (float) local23, (float) local33);
-		Class160.aClass121_Sub1_2.method9704(local41, (byte) -7);
+		BufferedSocket.aClass121_Sub1_2.method9704(local41, (byte) -7);
 		local41.method29557();
 	}
 

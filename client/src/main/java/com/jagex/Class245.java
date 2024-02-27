@@ -18,7 +18,7 @@ final class Class245 implements Interface24 {
 		if (Class365.aClass360Array1 == null) {
 			Class365.aClass360Array1 = Class360.method28143(-2137743917);
 			Class365.aClass360_19 = Class365.aClass360Array1[0];
-			Exception_Sub7.aLong155 = Class303.method27111((byte) 68) * 3348525561735091157L;
+			Exception_Sub7.aLong155 = Class303.currentTimeMillis((byte) 68) * 3348525561735091157L;
 		}
 		if (Class365.aClass369_1 == null) {
 			Class699.method37064(-1230278720);
@@ -49,7 +49,7 @@ final class Class245 implements Interface24 {
 			}
 			Class8.anInt17 = local19.anInt4489 * 904844433;
 			if (Class365.aClass360_19.aBoolean836 || local19.aBoolean836) {
-				Exception_Sub7.aLong155 = Class303.method27111((byte) 79) * 3348525561735091157L;
+				Exception_Sub7.aLong155 = Class303.currentTimeMillis((byte) 79) * 3348525561735091157L;
 			}
 		}
 		if (Class365.aClass369_1 == null) {

@@ -34,7 +34,7 @@ public final class Class688 {
 
 	@OriginalMember(owner = "client!yn", name = "bs", descriptor = "(Lclient!yp;)V")
 	static void method36837(@OriginalArg(0) Class690 arg0) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class436.method29130((byte) 1);
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = LoginProt.method29130((byte) 1);
 	}
 
 	@OriginalMember(owner = "client!yn", name = "ac", descriptor = "(Lclient!yp;)V")
@@ -227,7 +227,7 @@ public final class Class688 {
 
 	@OriginalMember(owner = "client!yn", name = "bj", descriptor = "(Lclient!yp;)V")
 	static void method36865(@OriginalArg(0) Class690 arg0) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class436.method29130((byte) 1);
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = LoginProt.method29130((byte) 1);
 	}
 
 	@OriginalMember(owner = "client!yn", name = "by", descriptor = "(Lclient!yp;)V")
@@ -614,16 +614,16 @@ public final class Class688 {
 					}
 					if (Class697.aClass697_4 != Class566.aClass697_1 && Class80_Sub1_Sub1.anInt254 * -255202897 < 1024 && Class80_Sub25.anInt1627 * 167687103 < 768) {
 					}
-					Class454.aCanvas6.setSize(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
+					Class454.canvas.setSize(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
 					if (Class279.aClass102_9 != null) {
-						Class279.aClass102_9.method21008(Class454.aCanvas6, Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103, (short) 255);
-						Class434.method29112(Class279.aClass102_9, Class303.method27111((byte) 19));
+						Class279.aClass102_9.method21008(Class454.canvas, Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103, (short) 255);
+						Class434.method29112(Class279.aClass102_9, Class303.currentTimeMillis((byte) 19));
 					}
 					if (Class244.aFrame1 == local11) {
 						local35 = Class244.aFrame1.getInsets();
-						Class454.aCanvas6.setLocation(local35.left + client.anInt3415 * 317681859, client.anInt3417 * -1044003729 + local35.top);
+						Class454.canvas.setLocation(local35.left + client.anInt3415 * 317681859, client.anInt3417 * -1044003729 + local35.top);
 					} else {
-						Class454.aCanvas6.setLocation(client.anInt3415 * 317681859, client.anInt3417 * -1044003729);
+						Class454.canvas.setLocation(client.anInt3415 * 317681859, client.anInt3417 * -1044003729);
 					}
 					Class533.method30832((byte) 114);
 					if (client.anInt3460 * 1849344509 != -1) {

@@ -39,10 +39,10 @@ public final class Class21 implements Interface11, Interface5 {
 	static void method530(@OriginalArg(0) Class690 arg0, @OriginalArg(1) int arg1) {
 		arg0.anInt5778 -= -664415586;
 		@Pc(19) Class80_Sub33 local19 = (Class80_Sub33) arg0.anObjectArray46[(arg0.anInt5776 -= -825189621) * -2070619997];
-		if (Class160.aClass121_Sub1_2.method9702(1230226828) != Class347.aClass347_7) {
+		if (BufferedSocket.aClass121_Sub1_2.method9702(1230226828) != Class347.aClass347_7) {
 			throw new RuntimeException();
 		}
-		((Class20_Sub3) Class160.aClass121_Sub1_2.method9693(1764789025)).method16637(local19.method14467(873333789), arg0.anIntArray525[arg0.anInt5778 * 1896589581], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 3], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 4], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 5], 1707432626);
+		((Class20_Sub3) BufferedSocket.aClass121_Sub1_2.method9693(1764789025)).method16637(local19.method14467(873333789), arg0.anIntArray525[arg0.anInt5778 * 1896589581], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 3], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 4], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 5], 1707432626);
 	}
 
 	@OriginalMember(owner = "client!aau", name = "wg", descriptor = "(Lclient!yp;I)V")

@@ -72,10 +72,10 @@ public final class Class231 {
 
 	@OriginalMember(owner = "client!dr", name = "anb", descriptor = "(Lclient!yp;I)V")
 	static void method26034(@OriginalArg(0) Class690 arg0, @OriginalArg(1) int arg1) {
-		if (Class160.aClass121_Sub1_2.method9607(-2123649700) != Class340.aClass340_5) {
+		if (BufferedSocket.aClass121_Sub1_2.method9607(-2123649700) != Class340.aClass340_5) {
 			throw new RuntimeException();
 		}
-		arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = Class160.aClass121_Sub1_2.method9628(517433720);
+		arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = BufferedSocket.aClass121_Sub1_2.method9628(517433720);
 	}
 
 	@OriginalMember(owner = "client!dr", name = "ati", descriptor = "(Lclient!yp;I)V")

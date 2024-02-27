@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class716 implements Interface75 {
 
 	@OriginalMember(owner = "client!zs", name = "ei", descriptor = "Lclient!ug;")
-	static Class160 aClass160_4;
+	static BufferedSocket js5Socket;
 
 	@OriginalMember(owner = "client!zs", name = "t", descriptor = "Lclient!zs;")
 	public static final Class716 aClass716_9 = new Class716(4, 0);
@@ -95,7 +95,7 @@ public final class Class716 implements Interface75 {
 
 	@OriginalMember(owner = "client!zs", name = "aon", descriptor = "(Lclient!yp;B)V")
 	static void method37231(@OriginalArg(0) Class690 arg0, @OriginalArg(1) byte arg1) throws Exception_Sub3 {
-		Class160.aClass121_Sub1_2.method9680((float) arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581] / 1000.0F, (byte) 29);
+		BufferedSocket.aClass121_Sub1_2.method9680((float) arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581] / 1000.0F, (byte) 29);
 	}
 
 	@OriginalMember(owner = "client!zs", name = "<init>", descriptor = "(II)V")
@@ -106,7 +106,7 @@ public final class Class716 implements Interface75 {
 
 	@OriginalMember(owner = "client!zs", name = "f", descriptor = "()I")
 	@Override
-	public int method37268() {
+	public int getId() {
 		return this.anInt5826 * 288659849;
 	}
 

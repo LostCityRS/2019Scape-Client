@@ -18,7 +18,7 @@ public final class Class103_Sub20 extends Class103 {
 
 	@OriginalMember(owner = "client!ags", name = "js", descriptor = "(Lclient!ad;I)Z")
 	static boolean method8554(@OriginalArg(0) Class75 arg0, @OriginalArg(1) int arg1) throws IOException {
-		@Pc(3) Class160 local3 = arg0.method1321((byte) 2);
+		@Pc(3) BufferedSocket local3 = arg0.method1321((byte) 2);
 		@Pc(6) PacketBit local6 = arg0.aPacketBit_1;
 		if (local3 == null) {
 			return false;
@@ -26,20 +26,20 @@ public final class Class103_Sub20 extends Class103 {
 		@Pc(87) int local87;
 		if (arg0.aClass448_2 == null) {
 			if (arg0.aBoolean34) {
-				if (!local3.method15545(1, (byte) -9)) {
+				if (!local3.hasBytes(1, (byte) -9)) {
 					return false;
 				}
-				local3.method15551(arg0.aPacketBit_1.data, 0, 1, -1802296177);
+				local3.read(arg0.aPacketBit_1.data, 0, 1, -1802296177);
 				arg0.anInt247 += -1388920241;
 				arg0.anInt245 = 0;
 				arg0.aBoolean34 = false;
 			}
 			local6.pos = 0;
 			if (local6.method22555(-1133982098)) {
-				if (!local3.method15545(1, (byte) -88)) {
+				if (!local3.hasBytes(1, (byte) -88)) {
 					return false;
 				}
-				local3.method15551(arg0.aPacketBit_1.data, 1, 1, -1335422010);
+				local3.read(arg0.aPacketBit_1.data, 1, 1, -1335422010);
 				arg0.anInt247 += -1388920241;
 				arg0.anInt245 = 0;
 			}
@@ -53,30 +53,30 @@ public final class Class103_Sub20 extends Class103 {
 			arg0.anInt248 = arg0.aClass448_2.anInt4886 * -2117136173;
 		}
 		if (arg0.anInt248 * 460106407 == -1) {
-			if (!local3.method15545(1, (byte) 17)) {
+			if (!local3.hasBytes(1, (byte) 17)) {
 				return false;
 			}
-			local3.method15551(local6.data, 0, 1, -2012140545);
+			local3.read(local6.data, 0, 1, -2012140545);
 			arg0.anInt248 = (local6.data[0] & 0xFF) * -460169961;
 			arg0.anInt247 += -1388920241;
 			arg0.anInt245 = 0;
 		}
 		if (arg0.anInt248 * 460106407 == -2) {
-			if (!local3.method15545(2, (byte) 31)) {
+			if (!local3.hasBytes(2, (byte) 31)) {
 				return false;
 			}
-			local3.method15551(local6.data, 0, 2, -1830336943);
+			local3.read(local6.data, 0, 2, -1830336943);
 			local6.pos = 0;
 			arg0.anInt248 = local6.g2() * -460169961;
 			arg0.anInt247 += 1517126814;
 			arg0.anInt245 = 0;
 		}
 		if (arg0.anInt248 * 460106407 > 0) {
-			if (!local3.method15545(arg0.anInt248 * 460106407, (byte) 115)) {
+			if (!local3.hasBytes(arg0.anInt248 * 460106407, (byte) 115)) {
 				return false;
 			}
 			local6.pos = 0;
-			local3.method15551(local6.data, 0, arg0.anInt248 * 460106407, -1899761357);
+			local3.read(local6.data, 0, arg0.anInt248 * 460106407, -1899761357);
 			arg0.anInt247 += arg0.anInt248 * -1441450103;
 			arg0.anInt245 = 0;
 		}
@@ -379,7 +379,7 @@ public final class Class103_Sub20 extends Class103 {
 						} else if (arg0.aClass448_2 == Class448.aClass448_59) {
 							Class691.anInt5781 = local6.g1_alt3() * 1974075953;
 							Class434.anInt4795 = (local6.g1b_alt3() << 3) * 2012819499;
-							Class436.anInt4803 = (local6.g1b_alt1() << 3) * -1557571403;
+							LoginProt.anInt4803 = (local6.g1b_alt1() << 3) * -1557571403;
 							arg0.aClass448_2 = null;
 							return true;
 						} else {
@@ -882,7 +882,7 @@ public final class Class103_Sub20 extends Class103 {
 										return true;
 									} else if (Class448.aClass448_8 == arg0.aClass448_2) {
 										local347 = local6.g1();
-										@Pc(3077) Class711 local3077 = (Class711) Class80_Sub39.method15030(Class492.method30266(-44696562), local347, -426314753);
+										@Pc(3077) Class711 local3077 = (Class711) Class80_Sub39.method15030(Js5ArchiveIndex.method30266(-44696562), local347, -426314753);
 										if (local3077 == null) {
 											local3077 = Class711.aClass711_5;
 										}
@@ -945,7 +945,7 @@ public final class Class103_Sub20 extends Class103 {
 										arg0.aClass448_2 = null;
 										return true;
 									} else if (Class448.aClass448_155 == arg0.aClass448_2) {
-										Class160.aClass121_Sub1_2.method9723(local6, arg0.anInt248 * 460106407, -387244557);
+										BufferedSocket.aClass121_Sub1_2.method9723(local6, arg0.anInt248 * 460106407, -387244557);
 										client.anInt3555 = client.anInt3569 * -1093366769;
 										arg0.aClass448_2 = null;
 										return true;
@@ -1462,7 +1462,7 @@ public final class Class103_Sub20 extends Class103 {
 													} else if (Class448.aClass448_178 == arg0.aClass448_2) {
 														Class434.anInt4795 = (local6.g1b_alt2() << 3) * 2012819499;
 														Class691.anInt5781 = local6.g1_alt1() * 1974075953;
-														Class436.anInt4803 = (local6.g1b_alt1() << 3) * -1557571403;
+														LoginProt.anInt4803 = (local6.g1b_alt1() << 3) * -1557571403;
 														@Pc(5247) Class626 local5247 = client.aClass539_1.method30893((byte) -49);
 														for (@Pc(5252) Class80_Sub4 local5252 = (Class80_Sub4) client.aClass24_22.method580((byte) -55); local5252 != null; local5252 = (Class80_Sub4) client.aClass24_22.method566((byte) 7)) {
 															local386 = (int) (local5252.aLong338 * 3209506792906532031L >> 28 & 0x3L);
@@ -1470,7 +1470,7 @@ public final class Class103_Sub20 extends Class103 {
 															local1383 = local438 - local5247.anInt5540 * -390642507;
 															local1641 = (int) (local5252.aLong338 * 3209506792906532031L >> 14 & 0x3FFFL);
 															local464 = local1641 - local5247.anInt5537 * -894305615;
-															if (local386 == Class691.anInt5781 * -280750383 && local1383 >= Class436.anInt4803 * -113322595 && local1383 < Class436.anInt4803 * -113322595 + 8 && local464 >= Class434.anInt4795 * 1234046595 && local464 < Class434.anInt4795 * 1234046595 + 8) {
+															if (local386 == Class691.anInt5781 * -280750383 && local1383 >= LoginProt.anInt4803 * -113322595 && local1383 < LoginProt.anInt4803 * -113322595 + 8 && local464 >= Class434.anInt4795 * 1234046595 && local464 < Class434.anInt4795 * 1234046595 + 8) {
 																local5252.method24395((byte) 49);
 																if (local1383 >= 0 && local464 >= 0 && local1383 < client.aClass539_1.method30921(2111167440) && local464 < client.aClass539_1.method31011(51669832)) {
 																	Class103_Sub23.method8700(Class691.anInt5781 * -280750383, local1383, local464, (short) -2582);
@@ -1479,12 +1479,12 @@ public final class Class103_Sub20 extends Class103 {
 														}
 														@Pc(5361) Class80_Sub8 local5361;
 														for (local5361 = (Class80_Sub8) Class80_Sub8.aClass8_19.method247(129206984); local5361 != null; local5361 = (Class80_Sub8) Class80_Sub8.aClass8_19.method237(-2036121634)) {
-															if (local5361.anInt1476 * 781975081 >= Class436.anInt4803 * -113322595 && local5361.anInt1476 * 781975081 < Class436.anInt4803 * -113322595 + 8 && local5361.anInt1473 * -1479987305 >= Class434.anInt4795 * 1234046595 && local5361.anInt1473 * -1479987305 < Class434.anInt4795 * 1234046595 + 8 && Class691.anInt5781 * -280750383 == local5361.anInt1478 * -31519745) {
+															if (local5361.anInt1476 * 781975081 >= LoginProt.anInt4803 * -113322595 && local5361.anInt1476 * 781975081 < LoginProt.anInt4803 * -113322595 + 8 && local5361.anInt1473 * -1479987305 >= Class434.anInt4795 * 1234046595 && local5361.anInt1473 * -1479987305 < Class434.anInt4795 * 1234046595 + 8 && Class691.anInt5781 * -280750383 == local5361.anInt1478 * -31519745) {
 																local5361.aBoolean338 = true;
 															}
 														}
 														for (local5361 = (Class80_Sub8) Class80_Sub8.aClass8_20.method247(129206984); local5361 != null; local5361 = (Class80_Sub8) Class80_Sub8.aClass8_20.method237(-1101729569)) {
-															if (local5361.anInt1476 * 781975081 >= Class436.anInt4803 * -113322595 && local5361.anInt1476 * 781975081 < Class436.anInt4803 * -113322595 + 8 && local5361.anInt1473 * -1479987305 >= Class434.anInt4795 * 1234046595 && local5361.anInt1473 * -1479987305 < Class434.anInt4795 * 1234046595 + 8 && local5361.anInt1478 * -31519745 == Class691.anInt5781 * -280750383) {
+															if (local5361.anInt1476 * 781975081 >= LoginProt.anInt4803 * -113322595 && local5361.anInt1476 * 781975081 < LoginProt.anInt4803 * -113322595 + 8 && local5361.anInt1473 * -1479987305 >= Class434.anInt4795 * 1234046595 && local5361.anInt1473 * -1479987305 < Class434.anInt4795 * 1234046595 + 8 && local5361.anInt1478 * -31519745 == Class691.anInt5781 * -280750383) {
 																local5361.aBoolean338 = true;
 															}
 														}
@@ -1814,7 +1814,7 @@ public final class Class103_Sub20 extends Class103 {
 															return true;
 														} else if (Class448.aClass448_61 == arg0.aClass448_2) {
 															Class434.anInt4795 = (local6.g1b() << 3) * 2012819499;
-															Class436.anInt4803 = (local6.g1b() << 3) * -1557571403;
+															LoginProt.anInt4803 = (local6.g1b() << 3) * -1557571403;
 															Class691.anInt5781 = local6.g1_alt2() * 1974075953;
 															while (local6.pos * -1380987821 < arg0.anInt248 * 460106407) {
 																@Pc(6754) Class438 local6754 = Class277.method26827((byte) -100)[local6.g1()];

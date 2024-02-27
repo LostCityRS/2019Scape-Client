@@ -41,7 +41,7 @@ public abstract class Class146 {
 	abstract long method13853();
 
 	@OriginalMember(owner = "client!sr", name = "f", descriptor = "(J)I")
-	final int method13854(@OriginalArg(0) long arg0) {
+	final int sleep(@OriginalArg(0) long arg0) {
 		@Pc(3) long local3 = this.method13857((byte) -54);
 		if (local3 > 0L) {
 			Class217.method25866(local3);

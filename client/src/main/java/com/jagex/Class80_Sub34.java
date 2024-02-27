@@ -42,7 +42,7 @@ public final class Class80_Sub34 extends Class80 {
 	@OriginalMember(owner = "client!aky", name = "<init>", descriptor = "(Lclient!cp;Lclient!xe;)V")
 	Class80_Sub34(@OriginalArg(0) Class211 arg0, @OriginalArg(1) Class658 arg1) {
 		this.aClass211_1 = arg0;
-		this.aClass433_1 = this.aClass211_1.method25810(Class518.anInterface48_1, -1624047245);
+		this.aClass433_1 = this.aClass211_1.method25810(Js5MasterIndex.anInterface48_1, -1624047245);
 		this.method14505(1764932608);
 	}
 

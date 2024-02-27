@@ -58,7 +58,7 @@ public final class Class382 {
 
 	@OriginalMember(owner = "client!kj", name = "aoj", descriptor = "(Lclient!yp;I)V")
 	static void method28570(@OriginalArg(0) Class690 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class160.aClass121_Sub1_2.method9702(1351329807) == null ? -1 : Class160.aClass121_Sub1_2.method9702(1073111830).anInt4252 * 1583199675;
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = BufferedSocket.aClass121_Sub1_2.method9702(1351329807) == null ? -1 : BufferedSocket.aClass121_Sub1_2.method9702(1073111830).anInt4252 * 1583199675;
 	}
 
 	@OriginalMember(owner = "client!kj", name = "jz", descriptor = "(Lclient!yp;I)V")

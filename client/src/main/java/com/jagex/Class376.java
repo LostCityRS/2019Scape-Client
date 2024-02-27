@@ -98,8 +98,8 @@ public final class Class376 implements Interface33 {
 	@OriginalMember(owner = "client!kd", name = "f", descriptor = "(B)V")
 	static void method28463(@OriginalArg(0) byte arg0) {
 		Class80_Sub1_Sub9.aClass24_17.method564(885744624);
-		Class80_Sub1_Sub9.aClass3_12.method41(-252802305);
-		Class80_Sub1_Sub9.aClass3_11.method41(-252802305);
+		Class80_Sub1_Sub9.aSecondaryLinkedList_12.method41(-252802305);
+		Class80_Sub1_Sub9.aSecondaryLinkedList_11.method41(-252802305);
 	}
 
 	@OriginalMember(owner = "client!kd", name = "<init>", descriptor = "(ILclient!ky;Lclient!km;IIIIIIIZ)V")

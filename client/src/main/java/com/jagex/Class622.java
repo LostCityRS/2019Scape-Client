@@ -42,7 +42,7 @@ public final class Class622 {
 	static final int anInt5487 = 0;
 
 	@OriginalMember(owner = "client!vs", name = "lm", descriptor = "I")
-	public static int anInt5488;
+	public static int seed;
 
 	@OriginalMember(owner = "client!vs", name = "t", descriptor = "Z")
 	static boolean aBoolean935 = false;
@@ -411,7 +411,7 @@ public final class Class622 {
 			}
 			if (arg0.eventType == 34) {
 				Class506.aTwitchEventLiveStreams1 = (TwitchEventLiveStreams) arg0;
-				Class436.method29129(34, 0, 1579559935);
+				LoginProt.method29129(34, 0, 1579559935);
 			}
 			return true;
 		} else if (aTwitchWebcamFrameData1 == null) {
@@ -428,7 +428,7 @@ public final class Class622 {
 				}
 				Class329.method27754(-75371870);
 				aLong401 = arg1 * 6599029287603157643L;
-				Class436.method29129(33, 0, 1694932549);
+				LoginProt.method29129(33, 0, 1694932549);
 			} else {
 				aClass99_38 = null;
 			}
@@ -605,7 +605,7 @@ public final class Class622 {
 				if (local106 != null && Class229.method25998(local106, arg1)) {
 					@Pc(115) Class601 local115 = local106.f();
 					if (local115 != null) {
-						Class312.method27463(local115.method37268(), local106, (byte) 73);
+						Class312.method27463(local115.getId(), local106, (byte) 73);
 					}
 				}
 			}
@@ -674,8 +674,8 @@ public final class Class622 {
 			Class347.anIntArray420 = new int[aBoolean937 ? arg3 * arg2 : Class351.anInt4255 * -1311710401 * Class292.anInt3951 * 823569197];
 		}
 		if (arg0.method20693()) {
-			arg0.method20867(client.anInt3436, Class292.anInt3951 * 823569197, Class351.anInt4255 * -1311710401);
-			aLinkedList6.add(new Class629(client.anInt3436, aLinkedList7, arg0.anInt2947 * 1069673649, arg0.anInt2932 * 262780429, arg0.aFloat200));
+			arg0.method20867(client.currentCycle, Class292.anInt3951 * 823569197, Class351.anInt4255 * -1311710401);
+			aLinkedList6.add(new Class629(client.currentCycle, aLinkedList7, arg0.anInt2947 * 1069673649, arg0.anInt2932 * 262780429, arg0.aFloat200));
 			aLinkedList7 = new LinkedList();
 		} else {
 			arg0.method20782();
@@ -737,8 +737,8 @@ public final class Class622 {
 			Class347.anIntArray420 = new int[aBoolean937 ? arg3 * arg2 : Class351.anInt4255 * -1311710401 * Class292.anInt3951 * 823569197];
 		}
 		if (arg0.method20693()) {
-			arg0.method20867(client.anInt3436, Class292.anInt3951 * 823569197, Class351.anInt4255 * -1311710401);
-			aLinkedList6.add(new Class629(client.anInt3436, aLinkedList7, arg0.anInt2947 * 1069673649, arg0.anInt2932 * 262780429, arg0.aFloat200));
+			arg0.method20867(client.currentCycle, Class292.anInt3951 * 823569197, Class351.anInt4255 * -1311710401);
+			aLinkedList6.add(new Class629(client.currentCycle, aLinkedList7, arg0.anInt2947 * 1069673649, arg0.anInt2932 * 262780429, arg0.aFloat200));
 			aLinkedList7 = new LinkedList();
 		} else {
 			arg0.method20782();
@@ -835,7 +835,7 @@ public final class Class622 {
 			}
 			if (arg0.eventType == 34) {
 				Class506.aTwitchEventLiveStreams1 = (TwitchEventLiveStreams) arg0;
-				Class436.method29129(34, 0, 1816397044);
+				LoginProt.method29129(34, 0, 1816397044);
 			}
 			return true;
 		} else if (aTwitchWebcamFrameData1 == null) {
@@ -852,7 +852,7 @@ public final class Class622 {
 				}
 				Class329.method27754(67002945);
 				aLong401 = arg1 * 6599029287603157643L;
-				Class436.method29129(33, 0, 965246107);
+				LoginProt.method29129(33, 0, 965246107);
 			} else {
 				aClass99_38 = null;
 			}
@@ -865,7 +865,7 @@ public final class Class622 {
 		@Pc(5) TwitchEventResult local5 = new TwitchEventResult(arg0, arg1);
 		@Pc(8) Class601 local8 = local5.f();
 		if (local8 != null) {
-			Class312.method27463(local8.method37268(), local5, (byte) -14);
+			Class312.method27463(local8.getId(), local5, (byte) -14);
 		}
 	}
 
@@ -1259,7 +1259,7 @@ public final class Class622 {
 				@Pc(19) Interface75[] local19 = (Interface75[]) arg0.getEnumConstants();
 				for (@Pc(21) int local21 = 0; local21 < local19.length; local21++) {
 					@Pc(29) Interface75 local29 = local19[local21];
-					local8.put(local29.method37268(), local29);
+					local8.put(local29.getId(), local29);
 				}
 				Class702.aMap25.put(arg0, local8);
 			}
@@ -1276,7 +1276,7 @@ public final class Class622 {
 				Class236.method26133(arg0);
 			}
 		}
-		Class411.method28964(Class279.aClass102_9, (long) client.anInt3436);
+		Class411.method28964(Class279.aClass102_9, (long) client.currentCycle);
 		if (client.anInt3460 * 1849344509 != -1) {
 			Class489.method30219(client.anInt3460 * 1849344509, 108158930);
 		}
@@ -1285,7 +1285,7 @@ public final class Class622 {
 			client.aBooleanArray20[local39] = client.aBooleanArray19[local39];
 			client.aBooleanArray19[local39] = false;
 		}
-		client.anInt3560 = client.anInt3436 * -1141210301;
+		client.anInt3560 = client.currentCycle * -1141210301;
 		Class646.method33048(-1, -1, (byte) -53);
 		if (client.anInt3460 * 1849344509 != -1) {
 			client.anInt3530 = 0;

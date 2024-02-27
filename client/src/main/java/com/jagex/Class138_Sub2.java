@@ -19,7 +19,7 @@ public final class Class138_Sub2 extends Class138 {
 	volatile boolean aBoolean240 = false;
 
 	@OriginalMember(owner = "client!aiq", name = "i", descriptor = "J")
-	long aLong48 = Class303.method27111((byte) 34) * -1933457669006000555L;
+	long aLong48 = Class303.currentTimeMillis((byte) 34) * -1933457669006000555L;
 
 	@OriginalMember(owner = "client!aiq", name = "m", descriptor = "Ljava/lang/Runnable;")
 	Runnable aRunnable3 = new Class255(this);
@@ -138,7 +138,7 @@ public final class Class138_Sub2 extends Class138 {
 	@OriginalMember(owner = "client!aiq", name = "l", descriptor = "(Ljava/lang/Object;I)I")
 	@Override
 	public int method11513(@OriginalArg(0) Object arg0, @OriginalArg(1) int arg1) {
-		@Pc(2) long local2 = Class303.method27111((byte) 36);
+		@Pc(2) long local2 = Class303.currentTimeMillis((byte) 36);
 		@Pc(15) int local15 = (int) (180000.0F / ((float) (local2 - this.aLong48 * 654637171565432573L) / 1000.0F));
 		this.aLong48 = local2 * -1933457669006000555L;
 		return local15;
@@ -222,7 +222,7 @@ public final class Class138_Sub2 extends Class138 {
 	@OriginalMember(owner = "client!aiq", name = "j", descriptor = "(Ljava/lang/Object;)I")
 	@Override
 	public int method11514(@OriginalArg(0) Object arg0) {
-		@Pc(2) long local2 = Class303.method27111((byte) 106);
+		@Pc(2) long local2 = Class303.currentTimeMillis((byte) 106);
 		@Pc(15) int local15 = (int) (180000.0F / ((float) (local2 - this.aLong48 * 654637171565432573L) / 1000.0F));
 		this.aLong48 = local2 * -1933457669006000555L;
 		return local15;

@@ -175,7 +175,7 @@ public final class Class584 {
 			Class334.anInt4196 = local6 * -252102001;
 			Class286.anInt3942 = local10 * -1848246999;
 		}
-		client.aLong352 = (Class303.method27111((byte) 48) + 500L) * -2661831643140335425L;
+		client.aLong352 = (Class303.currentTimeMillis((byte) 48) + 500L) * -2661831643140335425L;
 		client.aBoolean718 = false;
 	}
 

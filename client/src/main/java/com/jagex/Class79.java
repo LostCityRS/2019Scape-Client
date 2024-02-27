@@ -66,7 +66,7 @@ public final class Class79 implements Interface11, Interface5 {
 	@OriginalMember(owner = "client!adf", name = "u", descriptor = "(I)I")
 	public static int method1432(@OriginalArg(0) int arg0) {
 		if (Class32.anInt105 * 1355646637 == -1) {
-			@Pc(7) Class32[] local7 = Class337.method27878(51924286);
+			@Pc(7) Class32[] local7 = Class32.all(51924286);
 			for (@Pc(9) int local9 = 0; local9 < local7.length; local9++) {
 				@Pc(17) Class32 local17 = local7[local9];
 				if (local17.anInt106 * -296656423 > Class32.anInt105 * 1355646637) {

@@ -45,8 +45,8 @@ public final class Class515 {
 	final int anInt5051;
 
 	@OriginalMember(owner = "client!qq", name = "f", descriptor = "(Ljava/net/Socket;III)Lclient!ug;")
-	static Class160 method30572(@OriginalArg(0) Socket arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) throws IOException {
-		return new Class160_Sub1(arg0, arg1, arg2);
+	static BufferedSocket method30572(@OriginalArg(0) Socket arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) throws IOException {
+		return new BufferedSocket_Sub1(arg0, arg1, arg2);
 	}
 
 	@OriginalMember(owner = "client!qq", name = "ne", descriptor = "(Lclient!hx;Lclient!he;Lclient!yp;I)V")

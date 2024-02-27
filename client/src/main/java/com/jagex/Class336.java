@@ -22,7 +22,7 @@ public final class Class336 {
 
 	@OriginalMember(owner = "client!if", name = "apo", descriptor = "(Lclient!yp;B)V")
 	static void method27866(@OriginalArg(0) Class690 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class165_Sub40.method16786(-1819717071).method37268();
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class165_Sub40.method16786(-1819717071).getId();
 	}
 
 	@OriginalMember(owner = "client!if", name = "aso", descriptor = "(Lclient!yp;I)V")

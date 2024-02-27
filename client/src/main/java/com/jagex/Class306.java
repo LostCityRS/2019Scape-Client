@@ -30,7 +30,7 @@ public final class Class306 implements Runnable {
 		@Pc(17) int local17 = local9.method30216(-2017496269);
 		if (local17 < 0 || Class480.anInt4993 * -214443435 != 0 && local17 > Class480.anInt4993 * -214443435) {
 			throw new RuntimeException();
-		} else if (local13 == Class486.aClass486_4) {
+		} else if (local13 == Class486.UNCOMPRESSED) {
 			@Pc(38) byte[] local38 = new byte[local17];
 			local4.gdata(local38, 0, local17);
 			return local38;
@@ -40,16 +40,16 @@ public final class Class306 implements Runnable {
 				throw new RuntimeException();
 			}
 			@Pc(72) byte[] local72;
-			if (Class486.aClass486_1 == local13) {
+			if (Class486.BZIP2 == local13) {
 				local72 = new byte[local50];
 				Class19.method462(local72, local50, arg0, local17, 9);
-			} else if (Class486.aClass486_3 == local13) {
+			} else if (Class486.GZIP == local13) {
 				local72 = new byte[local50];
 				@Pc(89) Class83 local89 = Class480.aClass83_1;
 				synchronized (Class480.aClass83_1) {
 					Class480.aClass83_1.method1562(local4, local72, -905146406);
 				}
-			} else if (Class486.aClass486_2 == local13) {
+			} else if (Class486.LZMA == local13) {
 				try {
 					local72 = Class169.method21687(local4, local50, 1001035218);
 				} catch (@Pc(114) IOException local114) {

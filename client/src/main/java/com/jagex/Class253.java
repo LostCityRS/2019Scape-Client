@@ -34,7 +34,7 @@ public final class Class253 {
 
 	@OriginalMember(owner = "client!ev", name = "aoo", descriptor = "(Lclient!yp;I)V")
 	static void method26381(@OriginalArg(0) Class690 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class160.aClass121_Sub1_2.method9607(-2120784752) == null ? -1 : Class160.aClass121_Sub1_2.method9607(-959870320).anInt4242 * -1796689509;
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = BufferedSocket.aClass121_Sub1_2.method9607(-2120784752) == null ? -1 : BufferedSocket.aClass121_Sub1_2.method9607(-959870320).anInt4242 * -1796689509;
 	}
 
 	@OriginalMember(owner = "client!ev", name = "azv", descriptor = "(Lclient!yp;I)V")

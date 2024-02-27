@@ -39,7 +39,7 @@ public final class Class176 {
 
 	@OriginalMember(owner = "client!az", name = "acy", descriptor = "(Lclient!yp;I)V")
 	static void method24659(@OriginalArg(0) Class690 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class134.aClass305_1.method27139(-1158489095).method37268();
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class134.aClass305_1.method27139(-1158489095).getId();
 	}
 
 	@OriginalMember(owner = "client!az", name = "aez", descriptor = "(Lclient!yp;I)V")

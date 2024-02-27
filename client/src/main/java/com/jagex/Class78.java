@@ -33,10 +33,10 @@ public final class Class78 {
 		Class544.aClass155_1.method15052(1558603228);
 		Class363.aClass152_1.method14600(1524217695);
 		Class564.aClient1.method25304(1991529297);
-		Class454.aCanvas6.setBackground(Color.black);
+		Class454.canvas.setBackground(Color.black);
 		client.anInt3525 = 724759145;
-		Class544.aClass155_1 = Class57.method1165(Class454.aCanvas6, -736632711);
-		Class363.aClass152_1 = Class413.method28988(Class454.aCanvas6, true, 1957587824);
+		Class544.aClass155_1 = Class57.method1165(Class454.canvas, -736632711);
+		Class363.aClass152_1 = Class413.method28988(Class454.canvas, true, 1957587824);
 	}
 
 	@OriginalMember(owner = "client!adc", name = "aqa", descriptor = "(Lclient!yp;I)V")

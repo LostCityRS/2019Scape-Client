@@ -42,10 +42,10 @@ public final class Class8 implements Iterable, Collection {
 	@OriginalMember(owner = "client!aag", name = "anl", descriptor = "(Lclient!yp;I)V")
 	static void method313(@OriginalArg(0) Class690 arg0, @OriginalArg(1) int arg1) {
 		@Pc(13) Class80_Sub33 local13 = (Class80_Sub33) arg0.anObjectArray46[(arg0.anInt5776 -= -825189621) * -2070619997];
-		if (Class160.aClass121_Sub1_2.method9607(-449912154) != Class340.aClass340_5) {
+		if (BufferedSocket.aClass121_Sub1_2.method9607(-449912154) != Class340.aClass340_5) {
 			throw new RuntimeException();
 		}
-		@Pc(27) Class123_Sub1 local27 = (Class123_Sub1) Class160.aClass121_Sub1_2.method9603(-1577450079);
+		@Pc(27) Class123_Sub1 local27 = (Class123_Sub1) BufferedSocket.aClass121_Sub1_2.method9603(-1577450079);
 		local27.method9811(local13, -561681627);
 		client.aBoolean726 = true;
 	}

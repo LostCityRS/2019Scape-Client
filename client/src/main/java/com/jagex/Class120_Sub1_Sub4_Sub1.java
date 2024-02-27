@@ -37,7 +37,7 @@ public final class Class120_Sub1_Sub4_Sub1 extends Class120_Sub1_Sub4 implements
 
 	@OriginalMember(owner = "client!ajf", name = "avt", descriptor = "(Lclient!yp;I)V")
 	static void method13027(@OriginalArg(0) Class690 arg0, @OriginalArg(1) int arg1) {
-		@Pc(2) long local2 = Class303.method27111((byte) 99);
+		@Pc(2) long local2 = Class303.currentTimeMillis((byte) 99);
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = (int) (local2 / 60000L);
 	}
 

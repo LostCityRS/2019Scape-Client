@@ -46,11 +46,11 @@ public final class Class699 {
 	@OriginalMember(owner = "client!z", name = "gh", descriptor = "(IIIIZI)V")
 	static void method37066(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4, @OriginalArg(5) int arg5) {
 		if (Class13.aBoolean5 && Class411.aFrame2 != null && (arg1 != 3 || Class346.anInt4250 * 956969065 != arg2 || arg3 != Class269.anInt3918 * -1948970357)) {
-			Class708.method37149(Class518.aClass14_1, Class411.aFrame2, -376247776);
+			Class708.method37149(Js5MasterIndex.aClass14_1, Class411.aFrame2, -376247776);
 			Class411.aFrame2 = null;
 		}
 		if (Class13.aBoolean5 && arg1 == 3 && Class411.aFrame2 == null) {
-			Class411.aFrame2 = Class549.method31317(Class518.aClass14_1, arg2, arg3, 0, 0, -1794933958);
+			Class411.aFrame2 = Class549.method31317(Js5MasterIndex.aClass14_1, arg2, arg3, 0, 0, -1794933958);
 			if (Class411.aFrame2 != null) {
 				Class346.anInt4250 = arg2 * 1584816089;
 				Class269.anInt3918 = arg3 * -226671325;
@@ -95,13 +95,13 @@ public final class Class699 {
 		if (arg4) {
 			Class686.method36803((byte) 5);
 		} else {
-			Class454.aCanvas6.setSize(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
-			Class279.aClass102_9.method21008(Class454.aCanvas6, Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103, (short) 255);
+			Class454.canvas.setSize(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
+			Class279.aClass102_9.method21008(Class454.canvas, Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103, (short) 255);
 			if (local73 == Class244.aFrame1) {
 				local89 = Class244.aFrame1.getInsets();
-				Class454.aCanvas6.setLocation(client.anInt3415 * 317681859 + local89.left, client.anInt3417 * -1044003729 + local89.top);
+				Class454.canvas.setLocation(client.anInt3415 * 317681859 + local89.left, client.anInt3417 * -1044003729 + local89.top);
 			} else {
-				Class454.aCanvas6.setLocation(client.anInt3415 * 317681859, client.anInt3417 * -1044003729);
+				Class454.canvas.setLocation(client.anInt3415 * 317681859, client.anInt3417 * -1044003729);
 			}
 		}
 		if (arg1 >= 2) {

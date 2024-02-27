@@ -214,7 +214,7 @@ public final class Class553 {
 				Class621.method32343(arg1, 1097004550);
 				return;
 			case 28:
-				Class3.method68(arg1, -77374291);
+				SecondaryLinkedList.method68(arg1, -77374291);
 				return;
 			case 29:
 				Class636.method32865(arg1, -1912401704);
@@ -481,7 +481,7 @@ public final class Class553 {
 				Class163.method15762(arg1, 2047267458);
 				return;
 			case 117:
-				Class492.method30267(arg1, -1674406613);
+				Js5ArchiveIndex.method30267(arg1, -1674406613);
 				return;
 			case 118:
 				Class74.method1310(arg1, -327522936);
@@ -880,7 +880,7 @@ public final class Class553 {
 				Class627.method32541(arg1, 2024356989);
 				return;
 			case 250:
-				Class492.method30269(arg1, 615694342);
+				Js5ArchiveIndex.method30269(arg1, 615694342);
 				return;
 			case 251:
 				Class373.method28413(arg1, (byte) 14);
@@ -1546,7 +1546,7 @@ public final class Class553 {
 				Class125.method20588(arg1, -1648247929);
 				return;
 			case 472:
-				Class492.method30270(arg1, 395777396);
+				Js5ArchiveIndex.method30270(arg1, 395777396);
 				return;
 			case 473:
 				Class510.method30537(arg1, (byte) -31);
@@ -1759,7 +1759,7 @@ public final class Class553 {
 				Class513.method30569(arg1, -1037608193);
 				return;
 			case 544:
-				Class160.method15568(arg1, 672119684);
+				BufferedSocket.method15568(arg1, 672119684);
 				return;
 			case 545:
 				Class88.method1791(arg1, (byte) 45);
@@ -1861,7 +1861,7 @@ public final class Class553 {
 				Class679.method33618(arg1, 1251369623);
 				return;
 			case 578:
-				Class436.method29131(arg1, -707074525);
+				LoginProt.method29131(arg1, -707074525);
 				return;
 			case 579:
 				Class375.method28450(arg1, 1149107773);
@@ -1993,7 +1993,7 @@ public final class Class553 {
 				Class568.method31529(arg1, 1189911429);
 				return;
 			case 622:
-				Class492.method30271(arg1, 1682311043);
+				Js5ArchiveIndex.method30271(arg1, 1682311043);
 				return;
 			case 623:
 				Class464.method29621(arg1, (byte) 31);
@@ -2086,7 +2086,7 @@ public final class Class553 {
 				Class536.method30877(arg1, 1360519479);
 				return;
 			case 653:
-				Class493.method30274(arg1, 335176021);
+				Js5MasterIndexArchiveData.method30274(arg1, 335176021);
 				return;
 			case 654:
 				Class176.method24659(arg1, 836147518);
@@ -2548,7 +2548,7 @@ public final class Class553 {
 				Class365.method28246(arg1, (byte) 0);
 				return;
 			case 807:
-				Class492.method30268(arg1, (short) 18236);
+				Js5ArchiveIndex.method30268(arg1, (short) 18236);
 				return;
 			case 808:
 				Class176.method24657(arg1, -1210740990);
@@ -2725,7 +2725,7 @@ public final class Class553 {
 				Class503.method30452(arg1, 248089609);
 				return;
 			case 866:
-				Class493.method30275(arg1, -752322200);
+				Js5MasterIndexArchiveData.method30275(arg1, -752322200);
 				return;
 			case 867:
 				Class317.method27513(arg1, -476518954);
@@ -3070,7 +3070,7 @@ public final class Class553 {
 				Class464.method29619(arg1, -1134027609);
 				return;
 			case 981:
-				Class436.method29133(arg1, (short) 9241);
+				LoginProt.method29133(arg1, (short) 9241);
 				return;
 			case 982:
 				Class639.method32882(arg1, (byte) -91);
@@ -3394,7 +3394,7 @@ public final class Class553 {
 				Class299.method27026(arg1, 1743290592);
 				return;
 			case 1090:
-				Class518.method30586(arg1, (byte) -120);
+				Js5MasterIndex.method30586(arg1, (byte) -120);
 				return;
 			case 1091:
 				Class143_Sub5.method11844(arg1, 635934386);
@@ -3478,7 +3478,7 @@ public final class Class553 {
 				Class305.method27207(arg1, (short) 28283);
 				return;
 			case 1118:
-				Class3.method69(arg1, 1600903457);
+				SecondaryLinkedList.method69(arg1, 1600903457);
 				return;
 			case 1119:
 				Class328.method27724(arg1, 1665189190);
@@ -3571,7 +3571,7 @@ public final class Class553 {
 				Class522.method30639(arg1, (byte) -96);
 				return;
 			case 1149:
-				Class139.method10803(arg1, (byte) -80);
+				Js5NetQueue.method10803(arg1, (byte) -80);
 				return;
 			case 1150:
 				Class632.method32727(arg1, (short) 1066);
@@ -3652,7 +3652,7 @@ public final class Class553 {
 				Class120_Sub1_Sub1_Sub1.method19050(arg1, -105886206);
 				return;
 			case 1176:
-				Class518.method30585(arg1, 1078420805);
+				Js5MasterIndex.method30585(arg1, 1078420805);
 				return;
 			case 1177:
 				Class29.method664(arg1, 1679156386);
@@ -3685,7 +3685,7 @@ public final class Class553 {
 				Class688.method36894(arg1, 719400511);
 				return;
 			case 1187:
-				Class518.method30584(arg1, 2113529038);
+				Js5MasterIndex.method30584(arg1, 2113529038);
 				return;
 			case 1188:
 				Class231.method26034(arg1, 1689530376);
@@ -3814,7 +3814,7 @@ public final class Class553 {
 				Class482.method30021(arg1, 1409963830);
 				return;
 			case 1230:
-				Class436.method29132(arg1, 1098115260);
+				LoginProt.method29132(arg1, 1098115260);
 				return;
 			case 1231:
 				Class491.method30259(arg1, -1736355726);
@@ -3949,7 +3949,7 @@ public final class Class553 {
 				Class318.method27526(arg1, 1992095198);
 				return;
 			case 1275:
-				Class139.method10804(arg1, 643027306);
+				Js5NetQueue.method10804(arg1, 643027306);
 				return;
 			case 1276:
 				Class663.method33347(arg1, -2044777207);
@@ -4050,7 +4050,7 @@ public final class Class553 {
 				Class432.method29092(arg1, -1770835578);
 				return;
 			case 1309:
-				Class492.method30265(arg1, (byte) 7);
+				Js5ArchiveIndex.method30265(arg1, (byte) 7);
 				return;
 			case 1310:
 				Class649.method33113(arg1, (short) 255);
@@ -4101,7 +4101,7 @@ public final class Class553 {
 				Class165_Sub33.method16546(arg1, (byte) 51);
 				return;
 			case 1326:
-				Class518.method30587(arg1, (byte) -59);
+				Js5MasterIndex.method30587(arg1, (byte) -59);
 				return;
 			case 1327:
 				Class663.method33351(arg1, 2036747717);
@@ -4140,7 +4140,7 @@ public final class Class553 {
 				Class359.method28140(arg1, -395679401);
 				return;
 			case 1339:
-				Class492.method30264(arg1, -734353682);
+				Js5ArchiveIndex.method30264(arg1, -734353682);
 				return;
 			case 1340:
 				Class527.method30712(arg1, (byte) 7);
@@ -4224,7 +4224,7 @@ public final class Class553 {
 				Class115.method8669(arg1, -1953011029);
 				return;
 			case 1368:
-				Class493.method30273(arg1, -1199354718);
+				Js5MasterIndexArchiveData.method30273(arg1, -1199354718);
 				return;
 			case 1369:
 				Class18.method458(arg1, -2100547906);
@@ -4392,7 +4392,7 @@ public final class Class553 {
 				Class61.method1190(arg1, (short) 16736);
 				return;
 			case 1425:
-				Class436.method29136(arg1, 1232421347);
+				LoginProt.method29136(arg1, 1232421347);
 				return;
 			case 1426:
 				Class381.method28566(arg1, 281041005);
@@ -4445,7 +4445,7 @@ public final class Class553 {
 	@OriginalMember(owner = "client!sl", name = "jj", descriptor = "(IIIIIII)V")
 	static void method31369(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
 		for (@Pc(4) Class147_Sub5 local4 = (Class147_Sub5) client.aClass5_8.method93((byte) 62); local4 != null; local4 = (Class147_Sub5) client.aClass5_8.method110(992037005)) {
-			if (client.anInt3436 >= local4.anInt1495 * -1697532161) {
+			if (client.currentCycle >= local4.anInt1495 * -1697532161) {
 				local4.method23926(1483193607);
 			} else {
 				Class66.method1240(local4.anInt1494 * 1535256661, (local4.anInt1491 * -1872873415 << 9) + 256, (local4.anInt1493 * 2032435185 << 9) + 256, 0, local4.anInt1492 * 281452690, false, false, -2073641592);

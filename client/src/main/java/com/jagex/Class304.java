@@ -211,7 +211,7 @@ public final class Class304 implements Interface75 {
 					}
 					if (local227 != -1) {
 						local705 = 0;
-						@Pc(802) Class12 local802 = new Class12(Class630.aClass3_17);
+						@Pc(802) Class12 local802 = new Class12(Class630.aSecondaryLinkedList_17);
 						for (@Pc(807) Class80_Sub1_Sub4 local807 = (Class80_Sub1_Sub4) local802.method338(-272128745); local807 != null; local807 = (Class80_Sub1_Sub4) local802.next()) {
 							if (local227 == local705) {
 								if (local807.anInt3022 * 855388281 > 1) {
@@ -246,7 +246,7 @@ public final class Class304 implements Interface75 {
 			}
 			if (local225 != -1) {
 				local227 = 0;
-				local312 = new Class12(Class630.aClass80_Sub1_Sub4_1.aClass3_10);
+				local312 = new Class12(Class630.aClass80_Sub1_Sub4_1.aSecondaryLinkedList_10);
 				for (local317 = (Class80_Sub1_Sub11) local312.method338(-1812319030); local317 != null; local317 = (Class80_Sub1_Sub11) local312.next()) {
 					if (local225 == local227) {
 						Class103_Sub11.method7907(local317, local61, local176, true, -1660975810);
@@ -276,10 +276,10 @@ public final class Class304 implements Interface75 {
 				}
 				if (local225 != -1) {
 					local227 = 0;
-					local312 = new Class12(Class630.aClass3_17);
+					local312 = new Class12(Class630.aSecondaryLinkedList_17);
 					for (@Pc(586) Class80_Sub1_Sub4 local586 = (Class80_Sub1_Sub4) local312.method338(-1994930908); local586 != null; local586 = (Class80_Sub1_Sub4) local312.next()) {
 						if (local227 == local225) {
-							Class103_Sub11.method7907((Class80_Sub1_Sub11) local586.aClass3_10.aClass80_Sub1_2.aClass80_Sub1_68, local61, local176, true, -2142093431);
+							Class103_Sub11.method7907((Class80_Sub1_Sub11) local586.aSecondaryLinkedList_10.aClass80_Sub1_2.aClass80_Sub1_68, local61, local176, true, -2142093431);
 							Class392.method28680(1305557302);
 							break;
 						}
@@ -325,7 +325,7 @@ public final class Class304 implements Interface75 {
 
 	@OriginalMember(owner = "client!gy", name = "f", descriptor = "()I")
 	@Override
-	public int method37268() {
+	public int getId() {
 		return this.anInt3974 * -349479321;
 	}
 

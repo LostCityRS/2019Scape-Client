@@ -14,7 +14,7 @@ public class Class80_Sub1 extends Class80 {
 	public Class80_Sub1 aClass80_Sub1_68;
 
 	@OriginalMember(owner = "client!akw", name = "u", descriptor = "J")
-	public long aLong340;
+	public long dualKey;
 
 	@OriginalMember(owner = "client!akw", name = "b", descriptor = "()V")
 	public final void method24405() {
@@ -27,7 +27,7 @@ public class Class80_Sub1 extends Class80 {
 	}
 
 	@OriginalMember(owner = "client!akw", name = "c", descriptor = "(I)V")
-	public final void method24406(@OriginalArg(0) int arg0) {
+	public final void unlinkSecondary(@OriginalArg(0) int arg0) {
 		if (this.aClass80_Sub1_67 != null) {
 			this.aClass80_Sub1_67.aClass80_Sub1_68 = this.aClass80_Sub1_68;
 			this.aClass80_Sub1_68.aClass80_Sub1_67 = this.aClass80_Sub1_67;

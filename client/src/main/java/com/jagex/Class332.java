@@ -98,8 +98,8 @@ public final class Class332 {
 	@OriginalMember(owner = "client!ib", name = "g", descriptor = "(Lclient!di;I)V")
 	static void method27799(@OriginalArg(0) Class102 arg0, @OriginalArg(1) int arg1) {
 		if (-1955503601 * Class27.anInt83 != Class641.aClass120_Sub1_Sub1_Sub1_Sub2_3.aByte99 && client.aClass539_1.method30932(-1638462787) != null) {
-			Class303.method27111((byte) 30);
-			if (Class518.method30588(arg0, Class641.aClass120_Sub1_Sub1_Sub1_Sub2_3.aByte99, 71349046)) {
+			Class303.currentTimeMillis((byte) 30);
+			if (Js5MasterIndex.method30588(arg0, Class641.aClass120_Sub1_Sub1_Sub1_Sub2_3.aByte99, 71349046)) {
 				Class27.anInt83 = Class641.aClass120_Sub1_Sub1_Sub1_Sub2_3.aByte99 * 208096495;
 			}
 		}

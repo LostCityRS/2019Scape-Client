@@ -10,7 +10,7 @@ public interface Interface75 {
 	int method37267();
 
 	@OriginalMember(owner = "client!zg", name = "f", descriptor = "()I")
-	int method37268();
+	int getId();
 
 	@OriginalMember(owner = "client!zg", name = "i", descriptor = "()I")
 	int method37269();

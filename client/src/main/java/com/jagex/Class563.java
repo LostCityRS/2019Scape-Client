@@ -49,7 +49,7 @@ public final class Class563 {
 		@Pc(25) float local25 = (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1];
 		@Pc(36) float local36 = (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2];
 		@Pc(49) float local49 = (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 3] / 1000.0F;
-		Class160.aClass121_Sub1_2.method9589(Class463.method29541(local14, local25, local36), local49, (byte) -54);
+		BufferedSocket.aClass121_Sub1_2.method9589(Class463.method29541(local14, local25, local36), local49, (byte) -54);
 	}
 
 	@OriginalMember(owner = "client!sx", name = "f", descriptor = "(II)Lclient!aao;")

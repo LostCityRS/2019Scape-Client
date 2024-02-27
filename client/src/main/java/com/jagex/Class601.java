@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class601 implements Interface75, Interface65 {
 
 	@OriginalMember(owner = "client!ut", name = "bk", descriptor = "Ljava/lang/String;")
-	public static String aString231;
+	public static String javaVersion;
 
 	@OriginalMember(owner = "client!ut", name = "t", descriptor = "Lclient!ut;")
 	public static final Class601 aClass601_4 = new Class601(0, "", new Class521[] { Class521.aClass521_65, Class521.aClass521_42 });
@@ -139,7 +139,7 @@ public final class Class601 implements Interface75, Interface65 {
 
 	@OriginalMember(owner = "client!ut", name = "f", descriptor = "()I")
 	@Override
-	public int method37268() {
+	public int getId() {
 		return this.anInt5379 * -1057029625;
 	}
 

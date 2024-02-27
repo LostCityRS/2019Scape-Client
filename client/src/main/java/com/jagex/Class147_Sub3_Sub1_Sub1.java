@@ -319,7 +319,7 @@ public final class Class147_Sub3_Sub1_Sub1 extends Class147_Sub3_Sub1 {
 			if (local35.anIntArray449 == null) {
 				local35.anIntArray449 = new int[local35.anIntArray450.length];
 				for (local362 = 0; local362 < local35.anIntArray450.length; local362++) {
-					Class518.anInterface48_1.method29225(local35.anIntArray450[local362], (byte) 60);
+					Js5MasterIndex.anInterface48_1.method29225(local35.anIntArray450[local362], (byte) 60);
 					local35.anIntArray449[local362] = Class155.method15058(local35.anIntArray450[local362], -1952436405);
 				}
 			}
@@ -876,7 +876,7 @@ public final class Class147_Sub3_Sub1_Sub1 extends Class147_Sub3_Sub1 {
 			if (local35.anIntArray449 == null) {
 				local35.anIntArray449 = new int[local35.anIntArray450.length];
 				for (local362 = 0; local362 < local35.anIntArray450.length; local362++) {
-					Class518.anInterface48_1.method29225(local35.anIntArray450[local362], (byte) -29);
+					Js5MasterIndex.anInterface48_1.method29225(local35.anIntArray450[local362], (byte) -29);
 					local35.anIntArray449[local362] = Class155.method15058(local35.anIntArray450[local362], -1722823799);
 				}
 			}

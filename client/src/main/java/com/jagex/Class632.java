@@ -77,10 +77,10 @@ public final class Class632 {
 
 	@OriginalMember(owner = "client!wb", name = "aoa", descriptor = "(Lclient!yp;S)V")
 	static void method32727(@OriginalArg(0) Class690 arg0, @OriginalArg(1) short arg1) {
-		if (Class160.aClass121_Sub1_2.method9607(-2104910463) != Class340.aClass340_7) {
+		if (BufferedSocket.aClass121_Sub1_2.method9607(-2104910463) != Class340.aClass340_7) {
 			throw new RuntimeException();
 		}
-		@Pc(13) Class123_Sub3 local13 = (Class123_Sub3) Class160.aClass121_Sub1_2.method9603(-2049889335);
+		@Pc(13) Class123_Sub3 local13 = (Class123_Sub3) BufferedSocket.aClass121_Sub1_2.method9603(-2049889335);
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = (int) ((double) local13.method10007(118811021) * 2607.5945876176133D) & 0x3FFF;
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = (int) ((double) local13.method10008(-2052827079) * 2607.5945876176133D) & 0x3FFF;
 	}

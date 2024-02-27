@@ -272,7 +272,7 @@ public final class Class152_Sub1 extends Class152 implements MouseListener, Mous
 
 	@OriginalMember(owner = "client!alb", name = "ak", descriptor = "(IIIII)V")
 	void method14632(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		@Pc(8) Class80_Sub17_Sub1 local8 = Class120_Sub1_Sub1_Sub1.method19051(arg0, arg1, arg2, Class303.method27111((byte) 50), arg3, 1823781748);
+		@Pc(8) Class80_Sub17_Sub1 local8 = Class120_Sub1_Sub1_Sub1.method19051(arg0, arg1, arg2, Class303.currentTimeMillis((byte) 50), arg3, 1823781748);
 		this.aClass8_23.method232(local8, 1267320724);
 	}
 
@@ -356,7 +356,7 @@ public final class Class152_Sub1 extends Class152 implements MouseListener, Mous
 
 	@OriginalMember(owner = "client!alb", name = "ae", descriptor = "(IIII)V")
 	void method14633(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		@Pc(8) Class80_Sub17_Sub1 local8 = Class120_Sub1_Sub1_Sub1.method19051(arg0, arg1, arg2, Class303.method27111((byte) 123), arg3, 1573444081);
+		@Pc(8) Class80_Sub17_Sub1 local8 = Class120_Sub1_Sub1_Sub1.method19051(arg0, arg1, arg2, Class303.currentTimeMillis((byte) 123), arg3, 1573444081);
 		this.aClass8_23.method232(local8, 2139178797);
 	}
 

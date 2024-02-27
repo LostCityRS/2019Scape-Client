@@ -197,11 +197,11 @@ public final class Class686 {
 	@OriginalMember(owner = "client!yk", name = "fu", descriptor = "(B)V")
 	static void method36803(@OriginalArg(0) byte arg0) {
 		if (Class279.aClass102_9.method20858()) {
-			Class279.aClass102_9.method20681(Class454.aCanvas6, 2001622185);
+			Class279.aClass102_9.method20681(Class454.canvas, 2001622185);
 			Class78.method1375(-1247188279);
-			@Pc(11) Dimension local11 = Class454.aCanvas6.getSize();
-			Class279.aClass102_9.method20679(Class454.aCanvas6, local11.width, local11.height, 884311003);
-			Class279.aClass102_9.method20682(Class454.aCanvas6, -1585422623);
+			@Pc(11) Dimension local11 = Class454.canvas.getSize();
+			Class279.aClass102_9.method20679(Class454.canvas, local11.width, local11.height, 884311003);
+			Class279.aClass102_9.method20682(Class454.canvas, -1585422623);
 		} else {
 			Class528.method30719(Class703.aClass80_Sub37_49.aClass165_Sub1_2.method15834(-457928533), false, -1055845935);
 		}

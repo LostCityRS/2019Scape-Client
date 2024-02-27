@@ -30,7 +30,7 @@ public final class Class476 implements Interface6 {
 		@Pc(1) Class40 local1 = null;
 		@Pc(7) Class80_Sub37 local7 = new Class80_Sub37(client.aClass722_4, 0);
 		try {
-			local1 = Class3.method70("", client.aClass722_4.aString247, false, -2066644810);
+			local1 = SecondaryLinkedList.method70("", client.aClass722_4.aString247, false, -2066644810);
 			@Pc(20) byte[] local20 = new byte[(int) local1.method839((byte) 0)];
 			@Pc(36) int local36;
 			for (@Pc(22) int local22 = 0; local22 < local20.length; local22 += local36) {

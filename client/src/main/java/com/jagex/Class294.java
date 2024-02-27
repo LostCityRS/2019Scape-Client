@@ -20,7 +20,7 @@ public final class Class294 implements Interface26 {
 		if (Class149.aStringArray16 == null) {
 			Class579.method31811(65280);
 		}
-		client.aCalendar3.setTime(new Date(Class303.method27111((byte) 8)));
+		client.aCalendar3.setTime(new Date(Class303.currentTimeMillis((byte) 8)));
 		@Pc(14) int local14 = client.aCalendar3.get(11);
 		@Pc(18) int local18 = client.aCalendar3.get(12);
 		@Pc(22) int local22 = client.aCalendar3.get(13);
@@ -56,8 +56,8 @@ public final class Class294 implements Interface26 {
 	@OriginalMember(owner = "client!go", name = "aou", descriptor = "(Lclient!yp;I)V")
 	static void method26963(@OriginalArg(0) Class690 arg0, @OriginalArg(1) int arg1) {
 		@Pc(13) float local13 = Class467.method29716(arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581]);
-		@Pc(21) Class80_Sub1_Sub13_Sub1 local21 = new Class80_Sub1_Sub13_Sub1(Class160.aClass121_Sub1_2.method9722(1381388953), local13);
-		Class160.aClass121_Sub1_2.method9596(local21, (byte) 1);
+		@Pc(21) Class80_Sub1_Sub13_Sub1 local21 = new Class80_Sub1_Sub13_Sub1(BufferedSocket.aClass121_Sub1_2.method9722(1381388953), local13);
+		BufferedSocket.aClass121_Sub1_2.method9596(local21, (byte) 1);
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local21.anInt3226 * 393755111;
 	}
 

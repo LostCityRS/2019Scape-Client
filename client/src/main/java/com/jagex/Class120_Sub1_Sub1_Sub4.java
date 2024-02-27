@@ -338,10 +338,10 @@ public final class Class120_Sub1_Sub1_Sub4 extends Class120_Sub1_Sub1 {
 		@Pc(5) Class228[] local5 = arg1.method7385();
 		@Pc(8) Class211[] local8 = arg1.method7386();
 		if ((this.aClass658_4 == null || this.aClass658_4.aBoolean972) && (local5 != null || local8 != null)) {
-			this.aClass658_4 = Class658.method33264(client.anInt3436, true);
+			this.aClass658_4 = Class658.method33264(client.currentCycle, true);
 		}
 		if (this.aClass658_4 != null) {
-			this.aClass658_4.method33238(arg0, (long) client.anInt3436, local5, local8, false);
+			this.aClass658_4.method33238(arg0, (long) client.currentCycle, local5, local8, false);
 			this.aClass658_4.method33242(this.aByte99, this.aShort129, this.aShort126, this.aShort127, this.aShort128);
 		}
 	}
@@ -365,10 +365,10 @@ public final class Class120_Sub1_Sub1_Sub4 extends Class120_Sub1_Sub1 {
 		@Pc(5) Class228[] local5 = arg1.method7385();
 		@Pc(8) Class211[] local8 = arg1.method7386();
 		if ((this.aClass658_4 == null || this.aClass658_4.aBoolean972) && (local5 != null || local8 != null)) {
-			this.aClass658_4 = Class658.method33264(client.anInt3436, true);
+			this.aClass658_4 = Class658.method33264(client.currentCycle, true);
 		}
 		if (this.aClass658_4 != null) {
-			this.aClass658_4.method33238(arg0, (long) client.anInt3436, local5, local8, false);
+			this.aClass658_4.method33238(arg0, (long) client.currentCycle, local5, local8, false);
 			this.aClass658_4.method33242(this.aByte99, this.aShort129, this.aShort126, this.aShort127, this.aShort128);
 		}
 	}
@@ -761,10 +761,10 @@ public final class Class120_Sub1_Sub1_Sub4 extends Class120_Sub1_Sub1 {
 		@Pc(5) Class228[] local5 = arg1.method7385();
 		@Pc(8) Class211[] local8 = arg1.method7386();
 		if ((this.aClass658_4 == null || this.aClass658_4.aBoolean972) && (local5 != null || local8 != null)) {
-			this.aClass658_4 = Class658.method33264(client.anInt3436, true);
+			this.aClass658_4 = Class658.method33264(client.currentCycle, true);
 		}
 		if (this.aClass658_4 != null) {
-			this.aClass658_4.method33238(arg0, (long) client.anInt3436, local5, local8, false);
+			this.aClass658_4.method33238(arg0, (long) client.currentCycle, local5, local8, false);
 			this.aClass658_4.method33242(this.aByte99, this.aShort129, this.aShort126, this.aShort127, this.aShort128);
 		}
 	}

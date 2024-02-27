@@ -47,7 +47,7 @@ public final class Class93 {
 		local3.anInt1494 = arg0 * -1646684931;
 		local3.anInt1491 = arg1 * 729036297;
 		local3.anInt1493 = arg2 * -1512271599;
-		local3.anInt1495 = (arg4 + client.anInt3436) * -1386395393;
+		local3.anInt1495 = (arg4 + client.currentCycle) * -1386395393;
 		local3.anInt1492 = arg3 * -996040199;
 		local3.aString45 = arg6;
 		local3.anInt1496 = arg5 * -1174661451;

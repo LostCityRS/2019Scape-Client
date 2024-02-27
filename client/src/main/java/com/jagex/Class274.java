@@ -38,7 +38,7 @@ public final class Class274 {
 		}
 		@Pc(42) int local42;
 		if (Class368.anInt4502 * -1583611537 == 3) {
-			local42 = (int) -((double) Class160.aClass121_Sub1_2.method9648(-414253226) * 2607.5945876176133D);
+			local42 = (int) -((double) BufferedSocket.aClass121_Sub1_2.method9648(-414253226) * 2607.5945876176133D);
 		} else {
 			local42 = (int) -client.aFloat255;
 		}

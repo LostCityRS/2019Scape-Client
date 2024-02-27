@@ -140,7 +140,7 @@ public final class Class719 implements Interface75 {
 	public static void method37291(@OriginalArg(0) int arg0) {
 		@Pc(1) Class40 local1 = null;
 		try {
-			local1 = Class3.method70("", client.aClass722_4.aString247, true, -1361589576);
+			local1 = SecondaryLinkedList.method70("", client.aClass722_4.aString247, true, -1361589576);
 			@Pc(12) Packet local12 = Class703.aClass80_Sub37_49.method14942(-453302767);
 			local1.method834(local12.data, 0, local12.pos * -1380987821, (byte) 1);
 		} catch (@Pc(24) Exception local24) {
@@ -227,7 +227,7 @@ public final class Class719 implements Interface75 {
 
 	@OriginalMember(owner = "client!zv", name = "f", descriptor = "()I")
 	@Override
-	public int method37268() {
+	public int getId() {
 		return this.anInt5827 * 379080821;
 	}
 

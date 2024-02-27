@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class598 implements Interface66 {
 
 	@OriginalMember(owner = "client!uq", name = "j", descriptor = "I")
-	static int anInt5364;
+	static int logicTimePointer;
 
 	@OriginalMember(owner = "client!uq", name = "t", descriptor = "Lclient!acv;")
 	final Class70 aClass70_3;
@@ -37,7 +37,7 @@ public final class Class598 implements Interface66 {
 
 	@OriginalMember(owner = "client!uq", name = "apn", descriptor = "(Lclient!yp;I)V")
 	static void method32027(@OriginalArg(0) Class690 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class218.method25872(-1277705824).method37268();
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class218.method25872(-1277705824).getId();
 	}
 
 	@OriginalMember(owner = "client!uq", name = "acl", descriptor = "(Lclient!yp;B)V")
@@ -63,7 +63,7 @@ public final class Class598 implements Interface66 {
 	public void method32126() {
 		@Pc(5) Class80_Sub31 local5 = Class623.method32440(Class443.aClass443_89, client.aClass75_1.aClass22_1, -191270971);
 		@Pc(16) int local16 = (local5.aPacketBit_2.pos += 1034180571) * -1380987821;
-		local5.aPacketBit_2.p1(this.aClass70_3.method37268());
+		local5.aPacketBit_2.p1(this.aClass70_3.getId());
 		local5.aPacketBit_2.pjstr(this.aString230);
 		local5.aPacketBit_2.p2(this.anInt5365 * 1554837115);
 		local5.aPacketBit_2.pjstr(Class531.aString221);
@@ -86,7 +86,7 @@ public final class Class598 implements Interface66 {
 	public void method32127(@OriginalArg(0) int arg0) {
 		@Pc(5) Class80_Sub31 local5 = Class623.method32440(Class443.aClass443_89, client.aClass75_1.aClass22_1, -191270971);
 		@Pc(16) int local16 = (local5.aPacketBit_2.pos += 1034180571) * -1380987821;
-		local5.aPacketBit_2.p1(this.aClass70_3.method37268());
+		local5.aPacketBit_2.p1(this.aClass70_3.getId());
 		local5.aPacketBit_2.pjstr(this.aString230);
 		local5.aPacketBit_2.p2(this.anInt5365 * 1554837115);
 		local5.aPacketBit_2.pjstr(Class531.aString221);
@@ -109,7 +109,7 @@ public final class Class598 implements Interface66 {
 	public void method32128() {
 		@Pc(5) Class80_Sub31 local5 = Class623.method32440(Class443.aClass443_89, client.aClass75_1.aClass22_1, -191270971);
 		@Pc(16) int local16 = (local5.aPacketBit_2.pos += 1034180571) * -1380987821;
-		local5.aPacketBit_2.p1(this.aClass70_3.method37268());
+		local5.aPacketBit_2.p1(this.aClass70_3.getId());
 		local5.aPacketBit_2.pjstr(this.aString230);
 		local5.aPacketBit_2.p2(this.anInt5365 * 1554837115);
 		local5.aPacketBit_2.pjstr(Class531.aString221);

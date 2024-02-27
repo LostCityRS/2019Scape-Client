@@ -284,10 +284,10 @@ public final class Class570 {
 						}
 						if (local52 != -1) {
 							local54 = 0;
-							local289 = new Class12(Class630.aClass3_17);
+							local289 = new Class12(Class630.aSecondaryLinkedList_17);
 							for (@Pc(294) Class80_Sub1_Sub4 local294 = (Class80_Sub1_Sub4) local289.method338(-1997919557); local294 != null; local294 = (Class80_Sub1_Sub4) local289.next()) {
 								if (local54++ == local52) {
-									return ((Class80_Sub1_Sub11) local294.aClass3_10.aClass80_Sub1_2.aClass80_Sub1_68).anInt3075 * -1687136903;
+									return ((Class80_Sub1_Sub11) local294.aSecondaryLinkedList_10.aClass80_Sub1_2.aClass80_Sub1_68).anInt3075 * -1687136903;
 								}
 							}
 						}
@@ -308,7 +308,7 @@ public final class Class570 {
 						}
 						if (local52 != -1) {
 							local54 = 0;
-							local289 = new Class12(Class630.aClass80_Sub1_Sub4_1.aClass3_10);
+							local289 = new Class12(Class630.aClass80_Sub1_Sub4_1.aSecondaryLinkedList_10);
 							for (local162 = (Class80_Sub1_Sub11) local289.method338(1302598120); local162 != null; local162 = (Class80_Sub1_Sub11) local289.next()) {
 								if (local54++ == local52) {
 									return local162.anInt3075 * -1687136903;

@@ -40,7 +40,7 @@ public final class Class130_Sub1 extends Class130 {
 	}
 
 	@OriginalMember(owner = "client!ahr", name = "l", descriptor = "([BIII)[B")
-	public static byte[] method10206(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+	public static byte[] compute(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		@Pc(4) byte[] local4;
 		if (arg1 > 0) {
 			local4 = new byte[arg2];

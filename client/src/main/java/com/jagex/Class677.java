@@ -31,11 +31,11 @@ final class Class677 implements Runnable {
 	@OriginalMember(owner = "client!ya", name = "aot", descriptor = "(Lclient!yp;B)V")
 	static void method33595(@OriginalArg(0) Class690 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(12) int local12 = arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581];
-		if (Class160.aClass121_Sub1_2.method9607(-1217651876) != Class340.aClass340_7 || Class160.aClass121_Sub1_2.method9702(1915818124) != Class347.aClass347_3) {
+		if (BufferedSocket.aClass121_Sub1_2.method9607(-1217651876) != Class340.aClass340_7 || BufferedSocket.aClass121_Sub1_2.method9702(1915818124) != Class347.aClass347_3) {
 			throw new RuntimeException();
 		}
-		@Pc(31) Class123_Sub3 local31 = (Class123_Sub3) Class160.aClass121_Sub1_2.method9603(-1967615480);
-		@Pc(36) Class20_Sub5 local36 = (Class20_Sub5) Class160.aClass121_Sub1_2.method9693(2053835332);
+		@Pc(31) Class123_Sub3 local31 = (Class123_Sub3) BufferedSocket.aClass121_Sub1_2.method9603(-1967615480);
+		@Pc(36) Class20_Sub5 local36 = (Class20_Sub5) BufferedSocket.aClass121_Sub1_2.method9693(2053835332);
 		@Pc(40) Class463 local40 = local31.method10019(1578321902);
 		@Pc(43) Class463 local43 = Class463.method29472(local40);
 		local43.aFloat295 += local12;

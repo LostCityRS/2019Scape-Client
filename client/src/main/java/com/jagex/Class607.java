@@ -219,7 +219,7 @@ public final class Class607 implements Interface75 {
 			arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = local17.aString114 == null ? "" : local17.aString114;
 			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local17.anInt3101 * -949162007;
 			arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = local17.aString112 == null ? "" : local17.aString112;
-			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local17.aClass452_1 == null ? -1 : local17.aClass452_1.method37268();
+			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local17.aClass452_1 == null ? -1 : local17.aClass452_1.getId();
 			return;
 		}
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = -1;
@@ -247,7 +247,7 @@ public final class Class607 implements Interface75 {
 
 	@OriginalMember(owner = "client!va", name = "f", descriptor = "()I")
 	@Override
-	public int method37268() {
+	public int getId() {
 		return this.anInt5396 * 1323580581;
 	}
 

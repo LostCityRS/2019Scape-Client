@@ -37,10 +37,10 @@ public final class Class275 implements Interface26 {
 
 	@OriginalMember(owner = "client!fu", name = "ago", descriptor = "(Lclient!yp;I)V")
 	static void method26804(@OriginalArg(0) Class690 arg0, @OriginalArg(1) int arg1) {
-		if (Class518.anIntArray466 == null || Class679.anInt5743 * 410636669 >= Class518.anIntArray466.length) {
+		if (Js5MasterIndex.anIntArray466 == null || Class679.anInt5743 * 410636669 >= Js5MasterIndex.anIntArray466.length) {
 			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = -1;
 		} else {
-			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class518.anIntArray466[(Class679.anInt5743 += -182063147) * 410636669 - 1] & 0xFFFF;
+			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Js5MasterIndex.anIntArray466[(Class679.anInt5743 += -182063147) * 410636669 - 1] & 0xFFFF;
 		}
 	}
 
@@ -67,7 +67,7 @@ public final class Class275 implements Interface26 {
 		@Pc(31) Iterator local31 = arg0.iterator();
 		while (local31.hasNext()) {
 			@Pc(38) Interface75 local38 = (Interface75) local31.next();
-			@Pc(41) int local41 = local38.method37268();
+			@Pc(41) int local41 = local38.getId();
 			@Pc(45) int local45 = local41 / 8;
 			arg1.data[local45 + arg1.pos * -1380987821] = (byte) (arg1.data[local45 + arg1.pos * -1380987821] | 0x1 << (local41 & 0x7));
 		}

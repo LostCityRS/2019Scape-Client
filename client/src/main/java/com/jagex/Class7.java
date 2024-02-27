@@ -42,8 +42,8 @@ public final class Class7 implements Iterator {
 		if (local51.aFloat296 == -1.0F) {
 			local51.aFloat296 = Float.POSITIVE_INFINITY;
 		}
-		Class160.aClass121_Sub1_2.method9572(local51, 1480894522);
-		Class160.aClass121_Sub1_2.method9680((float) local43 / 1000.0F, (byte) 111);
+		BufferedSocket.aClass121_Sub1_2.method9572(local51, 1480894522);
+		BufferedSocket.aClass121_Sub1_2.method9680((float) local43 / 1000.0F, (byte) 111);
 		local51.method29557();
 	}
 

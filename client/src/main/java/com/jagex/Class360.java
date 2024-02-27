@@ -127,7 +127,7 @@ public final class Class360 {
 		Class256.anInt3886 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 4] * 1485393561;
 		Class100.anInt449 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 5] * 399396531;
 		Class273.anInt3922 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 6] * -1122765567;
-		Class80_Sub1_Sub15_Sub3.anInt3293 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 7] * -1684060647;
+		Js5NetRequest.anInt3293 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 7] * -1684060647;
 		Class382.anInt4539 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 8] * -1889578211;
 		Class145.anInt1411 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 9] * 726537671;
 		Class302.anInt3972 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 10] * 80752127;
@@ -135,7 +135,7 @@ public final class Class360 {
 		Class708.aClass480_136.method29945(Class256.anInt3886 * 1465329065, (byte) 1);
 		Class708.aClass480_136.method29945(Class100.anInt449 * 1941377147, (byte) 1);
 		Class708.aClass480_136.method29945(Class273.anInt3922 * -1100674303, (byte) 1);
-		Class708.aClass480_136.method29945(Class80_Sub1_Sub15_Sub3.anInt3293 * -102189527, (byte) 1);
+		Class708.aClass480_136.method29945(Js5NetRequest.anInt3293 * -102189527, (byte) 1);
 		Class708.aClass480_136.method29945(Class382.anInt4539 * -1617557707, (byte) 1);
 		Class708.aClass480_136.method29945(Class355.anInt4265 * -694663589, (byte) 1);
 		Class569.aClass480_124.method29945(Class355.anInt4265 * -694663589, (byte) 1);

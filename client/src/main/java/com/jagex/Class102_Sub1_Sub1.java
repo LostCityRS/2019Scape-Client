@@ -1868,9 +1868,9 @@ public final class Class102_Sub1_Sub1 extends Class102_Sub1 {
 			local21 = (Class80_Sub20) this.aClass8_36.method233(1395958328);
 			OpenGL.glDeleteLists((int) (local21.aLong338 * 3209506792906532031L), local21.anInt1588 * 701000167);
 		}
-		if (this.method20911() > 100663296 && Class303.method27111((byte) 95) > this.aLong160 + 60000L) {
+		if (this.method20911() > 100663296 && Class303.currentTimeMillis((byte) 95) > this.aLong160 + 60000L) {
 			System.gc();
-			this.aLong160 = Class303.method27111((byte) 58);
+			this.aLong160 = Class303.currentTimeMillis((byte) 58);
 		}
 		super.method20662(local10);
 	}
@@ -2186,9 +2186,9 @@ public final class Class102_Sub1_Sub1 extends Class102_Sub1 {
 			local21 = (Class80_Sub20) this.aClass8_36.method233(-211602693);
 			OpenGL.glDeleteLists((int) (local21.aLong338 * 3209506792906532031L), local21.anInt1588 * 701000167);
 		}
-		if (this.method20911() > 100663296 && Class303.method27111((byte) 66) > this.aLong160 + 60000L) {
+		if (this.method20911() > 100663296 && Class303.currentTimeMillis((byte) 66) > this.aLong160 + 60000L) {
 			System.gc();
-			this.aLong160 = Class303.method27111((byte) 58);
+			this.aLong160 = Class303.currentTimeMillis((byte) 58);
 		}
 		super.method20662(local10);
 	}

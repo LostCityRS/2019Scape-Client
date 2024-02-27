@@ -41,7 +41,7 @@ final class Class588 implements Interface49 {
 			arg10 = arg11;
 		}
 		@Pc(31) String local31 = Class569.method31536(arg7, -1101981990);
-		arg8.method7636(local31, arg2 + 3, arg6, arg10, 0, client.aRandom2, Class622.anInt5488, Class344.aClass99Array6, null, -2118200131);
+		arg8.method7636(local31, arg2 + 3, arg6, arg10, 0, client.random, Class622.seed, Class344.aClass99Array6, null, -2118200131);
 	}
 
 	@OriginalMember(owner = "client!u", name = "dv", descriptor = "(Lclient!hx;Lclient!he;Lclient!yp;I)V")
@@ -79,7 +79,7 @@ final class Class588 implements Interface49 {
 			Class266.method26657(false, (short) 21108);
 		} else {
 			client.aClass65_15 = Class65.aClass65_1;
-			OutputStream_Sub1.aClass160_3 = client.aClass75_1.method1321((byte) 2);
+			OutputStream_Sub1.aBufferedSocket_3 = client.aClass75_1.method1321((byte) 2);
 			client.aClass75_1.method1320(988532437);
 			Class604.method32148(14, -763004919);
 		}

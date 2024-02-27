@@ -27,7 +27,7 @@ public final class Class28 {
 	public int anInt91;
 
 	@OriginalMember(owner = "client!abb", name = "l", descriptor = "Z")
-	boolean aBoolean16 = true;
+	boolean aBoolean16 = ClientConfig.USE_HTTP_JS5;
 
 	@OriginalMember(owner = "client!abb", name = "g", descriptor = "Z")
 	boolean aBoolean17 = false;
@@ -39,6 +39,11 @@ public final class Class28 {
 
 	@OriginalMember(owner = "client!abb", name = "t", descriptor = "(I)Ljava/net/Socket;")
 	public Socket method655(@OriginalArg(0) int arg0) throws IOException {
+		if (this.aBoolean16) {
+			ClientConfig.printVerbose("Connecting to Js5Http on port " + (this.anInt91 * -1614303315));
+		} else {
+			ClientConfig.printVerbose("Connecting to Js5Tcp on port " + (this.anInt90 * -1516712071));
+		}
 		return this.aBoolean17 ? Class171.method23505(this.aString4, this.aBoolean16 ? this.anInt91 * -1614303315 : this.anInt90 * -1516712071, 378389686).method17286(-1338066305) : new Socket(InetAddress.getByName(this.aString4), this.aBoolean16 ? this.anInt91 * -1614303315 : this.anInt90 * -1516712071);
 	}
 

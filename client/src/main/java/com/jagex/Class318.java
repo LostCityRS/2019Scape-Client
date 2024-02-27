@@ -32,10 +32,10 @@ public final class Class318 {
 
 	@OriginalMember(owner = "client!hm", name = "apq", descriptor = "(Lclient!yp;I)V")
 	static void method27525(@OriginalArg(0) Class690 arg0, @OriginalArg(1) int arg1) {
-		if (Class160.aClass121_Sub1_2.method9702(1167114577) != Class347.aClass347_7) {
+		if (BufferedSocket.aClass121_Sub1_2.method9702(1167114577) != Class347.aClass347_7) {
 			throw new RuntimeException();
 		}
-		((Class20_Sub3) Class160.aClass121_Sub1_2.method9693(2134851426)).method16634(arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581], (byte) -74);
+		((Class20_Sub3) BufferedSocket.aClass121_Sub1_2.method9693(2134851426)).method16634(arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581], (byte) -74);
 	}
 
 	@OriginalMember(owner = "client!hm", name = "arn", descriptor = "(Lclient!yp;I)V")

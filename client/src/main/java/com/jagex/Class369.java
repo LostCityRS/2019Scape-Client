@@ -92,7 +92,7 @@ public final class Class369 implements Runnable {
 	synchronized void method28300(@OriginalArg(0) Interface30 arg0, @OriginalArg(1) byte arg1) {
 		this.anInterface30_2 = this.anInterface30_1;
 		this.anInterface30_1 = arg0;
-		this.aLong372 = Class303.method27111((byte) 35) * 1663794655508498245L;
+		this.aLong372 = Class303.currentTimeMillis((byte) 35) * 1663794655508498245L;
 	}
 
 	@OriginalMember(owner = "client!jx", name = "l", descriptor = "(JLjava/lang/String;Ljava/lang/String;ILclient!jh;I)V")
@@ -162,14 +162,14 @@ public final class Class369 implements Runnable {
 	@OriginalMember(owner = "client!jx", name = "h", descriptor = "()V")
 	public void method28311() {
 		while (!this.aBoolean842) {
-			@Pc(5) long local5 = Class303.method27111((byte) 54);
+			@Pc(5) long local5 = Class303.currentTimeMillis((byte) 54);
 			synchronized (this) {
 				try {
 					this.anInt4503 += -76931097;
 					if (this.anInterface30_1 instanceof Class370) {
 						this.anInterface30_1.method28354(this.aBoolean841, -1935419683);
 					} else {
-						@Pc(29) long local29 = Class303.method27111((byte) 90);
+						@Pc(29) long local29 = Class303.currentTimeMillis((byte) 90);
 						if (Class279.aClass102_9 == null || this.anInterface30_2 == null || this.anInterface30_2.method28346(-1626957083) == 0 || this.aLong372 * -5942248225951353971L < local29 - (long) this.anInterface30_2.method28346(-1876555553)) {
 							if (this.anInterface30_2 != null) {
 								this.aBoolean841 = true;
@@ -220,7 +220,7 @@ public final class Class369 implements Runnable {
 					continue;
 				}
 			}
-			@Pc(263) long local263 = Class303.method27111((byte) 54);
+			@Pc(263) long local263 = Class303.currentTimeMillis((byte) 54);
 			@Pc(270) int local270 = (int) (20L - (local263 - local5));
 			if (local270 > 0) {
 				Class217.method25866((long) local270);
@@ -382,14 +382,14 @@ public final class Class369 implements Runnable {
 	@OriginalMember(owner = "client!jx", name = "q", descriptor = "()V")
 	public void method28333() {
 		while (!this.aBoolean842) {
-			@Pc(5) long local5 = Class303.method27111((byte) 13);
+			@Pc(5) long local5 = Class303.currentTimeMillis((byte) 13);
 			synchronized (this) {
 				try {
 					this.anInt4503 += -76931097;
 					if (this.anInterface30_1 instanceof Class370) {
 						this.anInterface30_1.method28354(this.aBoolean841, 1949506982);
 					} else {
-						@Pc(29) long local29 = Class303.method27111((byte) 101);
+						@Pc(29) long local29 = Class303.currentTimeMillis((byte) 101);
 						if (Class279.aClass102_9 == null || this.anInterface30_2 == null || this.anInterface30_2.method28346(-1484462313) == 0 || this.aLong372 * -5942248225951353971L < local29 - (long) this.anInterface30_2.method28346(-1929767384)) {
 							if (this.anInterface30_2 != null) {
 								this.aBoolean841 = true;
@@ -440,7 +440,7 @@ public final class Class369 implements Runnable {
 					continue;
 				}
 			}
-			@Pc(263) long local263 = Class303.method27111((byte) 96);
+			@Pc(263) long local263 = Class303.currentTimeMillis((byte) 96);
 			@Pc(270) int local270 = (int) (20L - (local263 - local5));
 			if (local270 > 0) {
 				Class217.method25866((long) local270);
@@ -457,14 +457,14 @@ public final class Class369 implements Runnable {
 	@Override
 	public void run() {
 		while (!this.aBoolean842) {
-			@Pc(5) long local5 = Class303.method27111((byte) 126);
+			@Pc(5) long local5 = Class303.currentTimeMillis((byte) 126);
 			synchronized (this) {
 				try {
 					this.anInt4503 += -76931097;
 					if (this.anInterface30_1 instanceof Class370) {
 						this.anInterface30_1.method28354(this.aBoolean841, 91482235);
 					} else {
-						@Pc(29) long local29 = Class303.method27111((byte) 90);
+						@Pc(29) long local29 = Class303.currentTimeMillis((byte) 90);
 						if (Class279.aClass102_9 == null || this.anInterface30_2 == null || this.anInterface30_2.method28346(-2095378057) == 0 || this.aLong372 * -5942248225951353971L < local29 - (long) this.anInterface30_2.method28346(-1776199499)) {
 							if (this.anInterface30_2 != null) {
 								this.aBoolean841 = true;
@@ -515,7 +515,7 @@ public final class Class369 implements Runnable {
 					continue;
 				}
 			}
-			@Pc(263) long local263 = Class303.method27111((byte) 10);
+			@Pc(263) long local263 = Class303.currentTimeMillis((byte) 10);
 			@Pc(270) int local270 = (int) (20L - (local263 - local5));
 			if (local270 > 0) {
 				Class217.method25866((long) local270);
@@ -537,6 +537,6 @@ public final class Class369 implements Runnable {
 	synchronized void method28337(@OriginalArg(0) Interface30 arg0) {
 		this.anInterface30_2 = this.anInterface30_1;
 		this.anInterface30_1 = arg0;
-		this.aLong372 = Class303.method27111((byte) 75) * 1663794655508498245L;
+		this.aLong372 = Class303.currentTimeMillis((byte) 75) * 1663794655508498245L;
 	}
 }

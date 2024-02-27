@@ -195,8 +195,8 @@ public final class Class490 {
 		if (local37 == Class337.aClass337_7 || local37 == Class337.aClass337_6 || local37 == Class337.aClass337_3) {
 			local40 = Class467.method29716(local23);
 		}
-		@Pc(65) Class80_Sub1_Sub13_Sub2 local65 = new Class80_Sub1_Sub13_Sub2(Class160.aClass121_Sub1_2.method9722(1381388953), local37, local40, (float) local33 / 1000.0F);
-		Class160.aClass121_Sub1_2.method9596(local65, (byte) 1);
+		@Pc(65) Class80_Sub1_Sub13_Sub2 local65 = new Class80_Sub1_Sub13_Sub2(BufferedSocket.aClass121_Sub1_2.method9722(1381388953), local37, local40, (float) local33 / 1000.0F);
+		BufferedSocket.aClass121_Sub1_2.method9596(local65, (byte) 1);
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local65.anInt3226 * 393755111;
 	}
 
@@ -251,8 +251,8 @@ public final class Class490 {
 	}
 
 	@OriginalMember(owner = "client!pq", name = "f", descriptor = "(B)Lclient!atl;")
-	Class80_Sub1_Sub15_Sub1 method30222(@OriginalArg(0) byte arg0) {
-		return this.method30226(255, 255, (byte) 0, true, 0, 0, 1129957830);
+	Class80_Sub1_Sub15_Sub1 requestMasterIndex(@OriginalArg(0) byte arg0) {
+		return this.request(255, 255, (byte) 0, true, 0, 0, 1129957830);
 	}
 
 	@OriginalMember(owner = "client!pq", name = "u", descriptor = "(I)V")
@@ -262,7 +262,7 @@ public final class Class490 {
 
 	@OriginalMember(owner = "client!pq", name = "o", descriptor = "()Lclient!atl;")
 	Class80_Sub1_Sub15_Sub1 method30224() {
-		return this.method30226(255, 255, (byte) 0, true, 0, 0, 1803463286);
+		return this.request(255, 255, (byte) 0, true, 0, 0, 1803463286);
 	}
 
 	@OriginalMember(owner = "client!pq", name = "g", descriptor = "(ZI)V")
@@ -271,7 +271,7 @@ public final class Class490 {
 	}
 
 	@OriginalMember(owner = "client!pq", name = "e", descriptor = "(IIBZIII)Lclient!atl;")
-	Class80_Sub1_Sub15_Sub1 method30226(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2, @OriginalArg(3) boolean arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
+	Class80_Sub1_Sub15_Sub1 request(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2, @OriginalArg(3) boolean arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
 		if (arg0 < 0 || arg1 < 0) {
 			throw new RuntimeException(arg0 + "," + arg1);
 		} else if (this.method30221(1392262948)) {
@@ -280,13 +280,13 @@ public final class Class490 {
 			@Pc(33) boolean local33 = arg0 == 255 && arg1 == 255;
 			if (!this.aBoolean881 && !local33) {
 				return null;
-			} else if (this.aLong387 * -217093783324200375L + 10000L >= Class303.method27111((byte) 73)) {
+			} else if (this.aLong387 * -217093783324200375L + 10000L >= Class303.currentTimeMillis((byte) 73)) {
 				return null;
 			} else {
 				@Pc(54) URL local54 = null;
 				@Pc(66) String local66;
 				if (local33) {
-					local66 = "&cb=" + Class303.method27111((byte) 54);
+					local66 = "&cb=" + Class303.currentTimeMillis((byte) 54);
 				} else {
 					local66 = "&c=" + arg4 + "&v=" + arg5;
 				}
@@ -320,13 +320,13 @@ public final class Class490 {
 			@Pc(33) boolean local33 = arg0 == 255 && arg1 == 255;
 			if (!this.aBoolean881 && !local33) {
 				return null;
-			} else if (this.aLong387 * -217093783324200375L + 10000L >= Class303.method27111((byte) 48)) {
+			} else if (this.aLong387 * -217093783324200375L + 10000L >= Class303.currentTimeMillis((byte) 48)) {
 				return null;
 			} else {
 				@Pc(54) URL local54 = null;
 				@Pc(66) String local66;
 				if (local33) {
-					local66 = "&cb=" + Class303.method27111((byte) 122);
+					local66 = "&cb=" + Class303.currentTimeMillis((byte) 122);
 				} else {
 					local66 = "&c=" + arg4 + "&v=" + arg5;
 				}
@@ -355,13 +355,13 @@ public final class Class490 {
 			@Pc(33) boolean local33 = arg0 == 255 && arg1 == 255;
 			if (!this.aBoolean881 && !local33) {
 				return null;
-			} else if (this.aLong387 * -217093783324200375L + 10000L >= Class303.method27111((byte) 103)) {
+			} else if (this.aLong387 * -217093783324200375L + 10000L >= Class303.currentTimeMillis((byte) 103)) {
 				return null;
 			} else {
 				@Pc(54) URL local54 = null;
 				@Pc(66) String local66;
 				if (local33) {
-					local66 = "&cb=" + Class303.method27111((byte) 121);
+					local66 = "&cb=" + Class303.currentTimeMillis((byte) 121);
 				} else {
 					local66 = "&c=" + arg4 + "&v=" + arg5;
 				}
@@ -382,7 +382,7 @@ public final class Class490 {
 
 	@OriginalMember(owner = "client!pq", name = "m", descriptor = "()Lclient!atl;")
 	Class80_Sub1_Sub15_Sub1 method30230() {
-		return this.method30226(255, 255, (byte) 0, true, 0, 0, -31810008);
+		return this.request(255, 255, (byte) 0, true, 0, 0, -31810008);
 	}
 
 	@OriginalMember(owner = "client!pq", name = "s", descriptor = "()V")

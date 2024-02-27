@@ -25,7 +25,7 @@ public final class Class390 implements Interface32 {
 	@OriginalMember(owner = "client!kx", name = "aj", descriptor = "(ILjava/lang/String;Ljava/awt/Color;Ljava/awt/Color;Ljava/awt/Color;B)V")
 	public static void method28666(@OriginalArg(0) int arg0, @OriginalArg(1) String arg1, @OriginalArg(2) Color arg2, @OriginalArg(3) Color arg3, @OriginalArg(4) Color arg4, @OriginalArg(5) byte arg5) {
 		try {
-			@Pc(2) Graphics local2 = Class454.aCanvas6.getGraphics();
+			@Pc(2) Graphics local2 = Class454.canvas.getGraphics();
 			if (Class540.aFont2 == null) {
 				Class540.aFont2 = new Font("Helvetica", 1, 13);
 			}
@@ -42,7 +42,7 @@ public final class Class390 implements Interface32 {
 			@Pc(84) int local84;
 			try {
 				if (Class407.anImage4 == null) {
-					Class407.anImage4 = Class454.aCanvas6.createImage(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
+					Class407.anImage4 = Class454.canvas.createImage(Class80_Sub1_Sub1.anInt254 * -255202897, Class80_Sub25.anInt1627 * 167687103);
 				}
 				@Pc(55) Graphics local55 = Class407.anImage4.getGraphics();
 				local55.setColor(Color.black);
@@ -87,7 +87,7 @@ public final class Class390 implements Interface32 {
 				local2.drawString(arg1, local76 + (304 - arg1.length() * 6) / 2, local84 + 22);
 			}
 		} catch (@Pc(338) Exception local338) {
-			Class454.aCanvas6.repaint();
+			Class454.canvas.repaint();
 		}
 	}
 

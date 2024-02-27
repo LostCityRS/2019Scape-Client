@@ -98,7 +98,7 @@ public final class Class712 implements Interface75 {
 
 	@OriginalMember(owner = "client!zn", name = "f", descriptor = "()I")
 	@Override
-	public int method37268() {
+	public int getId() {
 		return this.aByte165;
 	}
 

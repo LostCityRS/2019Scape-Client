@@ -35,7 +35,7 @@ public final class Class483 {
 
 	@OriginalMember(owner = "client!pi", name = "ape", descriptor = "(Lclient!yp;B)V")
 	static void method30028(@OriginalArg(0) Class690 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class103.method19210((short) -1314).method37268();
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class103.method19210((short) -1314).getId();
 	}
 
 	@OriginalMember(owner = "client!pi", name = "mi", descriptor = "(II)Lclient!adt;")
@@ -122,7 +122,7 @@ public final class Class483 {
 				local129.printStackTrace();
 			}
 		}
-		arg2.aBoolean661 = false;
+		arg2.incomplete = false;
 		arg0.method30223(-315400436);
 	}
 

@@ -38,7 +38,7 @@ final class Class267 implements Interface55 {
 			throw new RuntimeException();
 		}
 		@Pc(46) Class50 local46 = (Class50) Class111_Sub1.aClass41_Sub20_1.method18054(local23, 864855370);
-		if (local46.aClass521_1.method37268() != local13) {
+		if (local46.aClass521_1.getId() != local13) {
 			throw new RuntimeException();
 		}
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local46.method1018(local33, (short) -13342) ? 1 : 0;
@@ -165,7 +165,7 @@ final class Class267 implements Interface55 {
 		@Pc(73) float local73 = 0.0F;
 		@Pc(115) int local115;
 		if (Class368.anInt4502 * -1583611537 == 3) {
-			@Pc(82) float local82 = Class160.aClass121_Sub1_2.method9648(-1101596195);
+			@Pc(82) float local82 = BufferedSocket.aClass121_Sub1_2.method9648(-1101596195);
 			if (local21.aFloat297 != 0.0F || local21.aFloat296 != 0.0F) {
 				local115 = (int) ((double) (-1.0F * local82) * 2607.5945876176133D) - (int) (Math.atan2((double) local21.aFloat297, (double) local21.aFloat296) * 2607.5945876176133D) - 4096 & 0x3FFF;
 				if (local115 > 8192) {
@@ -229,7 +229,7 @@ final class Class267 implements Interface55 {
 		@Pc(73) float local73 = 0.0F;
 		@Pc(115) int local115;
 		if (Class368.anInt4502 * -1583611537 == 3) {
-			@Pc(82) float local82 = Class160.aClass121_Sub1_2.method9648(435593999);
+			@Pc(82) float local82 = BufferedSocket.aClass121_Sub1_2.method9648(435593999);
 			if (local21.aFloat297 != 0.0F || local21.aFloat296 != 0.0F) {
 				local115 = (int) ((double) (-1.0F * local82) * 2607.5945876176133D) - (int) (Math.atan2((double) local21.aFloat297, (double) local21.aFloat296) * 2607.5945876176133D) - 4096 & 0x3FFF;
 				if (local115 > 8192) {
@@ -293,7 +293,7 @@ final class Class267 implements Interface55 {
 		@Pc(73) float local73 = 0.0F;
 		@Pc(115) int local115;
 		if (Class368.anInt4502 * -1583611537 == 3) {
-			@Pc(82) float local82 = Class160.aClass121_Sub1_2.method9648(1893417589);
+			@Pc(82) float local82 = BufferedSocket.aClass121_Sub1_2.method9648(1893417589);
 			if (local21.aFloat297 != 0.0F || local21.aFloat296 != 0.0F) {
 				local115 = (int) ((double) (-1.0F * local82) * 2607.5945876176133D) - (int) (Math.atan2((double) local21.aFloat297, (double) local21.aFloat296) * 2607.5945876176133D) - 4096 & 0x3FFF;
 				if (local115 > 8192) {

@@ -45,7 +45,7 @@ public final class Class405 implements Interface33 {
 		@Pc(33) int local33 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2];
 		@Pc(46) float local46 = (float) (Math.atan((double) ((float) local13 / 2.0F / (float) local33)) * 2.0D);
 		@Pc(59) float local59 = (float) (Math.atan((double) ((float) local23 / 2.0F / (float) local33)) * 2.0D);
-		Class160.aClass121_Sub1_2.method9645(local46, local59, 1047425041);
+		BufferedSocket.aClass121_Sub1_2.method9645(local46, local59, 1047425041);
 	}
 
 	@OriginalMember(owner = "client!lt", name = "bcn", descriptor = "(Lclient!yp;I)V")

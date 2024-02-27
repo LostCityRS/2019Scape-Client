@@ -165,7 +165,7 @@ public final class Class102_Sub2 extends Class102 {
 			this.method5072(0);
 			Class388.method28633(true, true, -1455258027);
 			this.aBoolean109 = true;
-			this.anInt635 = (int) Class303.method27111((byte) 81) * -1466000769;
+			this.anInt635 = (int) Class303.currentTimeMillis((byte) 81) * -1466000769;
 		} catch (@Pc(102) Throwable local102) {
 			local102.printStackTrace();
 			this.method20660(-1411707420);

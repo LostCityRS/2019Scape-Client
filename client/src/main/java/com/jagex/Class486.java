@@ -9,16 +9,16 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class486 implements Interface75 {
 
 	@OriginalMember(owner = "client!pl", name = "t", descriptor = "Lclient!pl;")
-	static final Class486 aClass486_4 = new Class486("UNCOMPRESSED", 0);
+	static final Class486 UNCOMPRESSED = new Class486("UNCOMPRESSED", 0);
 
 	@OriginalMember(owner = "client!pl", name = "f", descriptor = "Lclient!pl;")
-	static final Class486 aClass486_1 = new Class486("BZIP2", 1);
+	static final Class486 BZIP2 = new Class486("BZIP2", 1);
 
 	@OriginalMember(owner = "client!pl", name = "e", descriptor = "Lclient!pl;")
-	static final Class486 aClass486_3 = new Class486("GZIP", 2);
+	static final Class486 GZIP = new Class486("GZIP", 2);
 
 	@OriginalMember(owner = "client!pl", name = "u", descriptor = "Lclient!pl;")
-	static final Class486 aClass486_2 = new Class486("LZMA", 3);
+	static final Class486 LZMA = new Class486("LZMA", 3);
 
 	@OriginalMember(owner = "client!pl", name = "l", descriptor = "Ljava/lang/String;")
 	final String aString211;
@@ -36,12 +36,12 @@ public final class Class486 implements Interface75 {
 
 	@OriginalMember(owner = "client!pl", name = "e", descriptor = "()[Lclient!pl;")
 	static Class486[] method30059() {
-		return new Class486[] { aClass486_1, aClass486_3, aClass486_2, aClass486_4 };
+		return new Class486[] { BZIP2, GZIP, LZMA, UNCOMPRESSED };
 	}
 
 	@OriginalMember(owner = "client!pl", name = "t", descriptor = "(I)[Lclient!pl;")
 	static Class486[] method30060(@OriginalArg(0) int arg0) {
-		return new Class486[] { aClass486_1, aClass486_3, aClass486_2, aClass486_4 };
+		return new Class486[] { BZIP2, GZIP, LZMA, UNCOMPRESSED };
 	}
 
 	@OriginalMember(owner = "client!pl", name = "vi", descriptor = "(Lclient!yp;I)V")
@@ -139,7 +139,7 @@ public final class Class486 implements Interface75 {
 
 	@OriginalMember(owner = "client!pl", name = "f", descriptor = "()I")
 	@Override
-	public int method37268() {
+	public int getId() {
 		return this.anInt5004 * -212629227;
 	}
 

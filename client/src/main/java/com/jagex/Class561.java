@@ -35,7 +35,7 @@ public final class Class561 {
 
 	@OriginalMember(owner = "client!sv", name = "aba", descriptor = "(Lclient!yp;B)V")
 	static void method31426(@OriginalArg(0) Class690 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = (int) ((Class303.method27111((byte) 57) - Class134.aClass305_1.method27136(-2064047106) - Class231.aLong355 * -6086046986162291493L) / 1000L);
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = (int) ((Class303.currentTimeMillis((byte) 57) - Class134.aClass305_1.method27136(-2064047106) - Class231.aLong355 * -6086046986162291493L) / 1000L);
 	}
 
 	@OriginalMember(owner = "client!sv", name = "art", descriptor = "(Lclient!yp;I)V")

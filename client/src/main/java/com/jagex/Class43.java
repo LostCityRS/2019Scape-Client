@@ -301,8 +301,8 @@ public final class Class43 implements Interface11 {
 				}
 			}
 		}
-		@Pc(115) Class120_Sub1_Sub1_Sub4 local115 = new Class120_Sub1_Sub1_Sub4(client.aClass539_1.method30932(-1638462787), arg0, arg16, arg16, arg6, arg7, arg4, arg10 + client.anInt3436, client.anInt3436 + arg11, arg12, arg13, arg1, arg2, arg5, arg14, arg3, arg15);
-		local115.method24204(arg8, arg9, Class439.method29150(arg8, arg9, arg16, 1037753497) - arg5, arg10 + client.anInt3436, 1761349411);
+		@Pc(115) Class120_Sub1_Sub1_Sub4 local115 = new Class120_Sub1_Sub1_Sub4(client.aClass539_1.method30932(-1638462787), arg0, arg16, arg16, arg6, arg7, arg4, arg10 + client.currentCycle, client.currentCycle + arg11, arg12, arg13, arg1, arg2, arg5, arg14, arg3, arg15);
+		local115.method24204(arg8, arg9, Class439.method29150(arg8, arg9, arg16, 1037753497) - arg5, arg10 + client.currentCycle, 1761349411);
 		client.aClass8_49.method232(new Class80_Sub1_Sub6(local115), 880699779);
 	}
 

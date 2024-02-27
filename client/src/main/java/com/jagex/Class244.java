@@ -55,7 +55,7 @@ public final class Class244 implements Interface75 {
 
 	@OriginalMember(owner = "client!ek", name = "afl", descriptor = "(Lclient!yp;B)V")
 	static void method26302(@OriginalArg(0) Class690 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = Class634.method32806(Class721.method37333(arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581], (byte) -121), Class512.aClass719_3.method37268(), (byte) 72);
+		arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = Class634.method32806(Class721.method37333(arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581], (byte) -121), Class512.aClass719_3.getId(), (byte) 72);
 	}
 
 	@OriginalMember(owner = "client!ek", name = "bfy", descriptor = "(Lclient!yp;I)V")
@@ -92,7 +92,7 @@ public final class Class244 implements Interface75 {
 			local17 = client.aClass539_1.method30893((byte) -67);
 			local25 = (local13 & 0x7) + Class434.anInt4795 * 1234046595;
 			local32 = local17.anInt5537 * -894305615 + local25;
-			local42 = Class436.anInt4803 * -113322595 + (local13 >> 4 & 0x7);
+			local42 = LoginProt.anInt4803 * -113322595 + (local13 >> 4 & 0x7);
 			local49 = local17.anInt5540 * -390642507 + local42;
 			local53 = local2.g2_alt2();
 			local57 = local2.g2();
@@ -111,7 +111,7 @@ public final class Class244 implements Interface75 {
 		if (arg0 == Class438.aClass438_6) {
 			local9 = local2.g1();
 			local13 = local2.g1_alt3();
-			local131 = (local13 >> 4 & 0x7) + Class436.anInt4803 * -113322595;
+			local131 = (local13 >> 4 & 0x7) + LoginProt.anInt4803 * -113322595;
 			local25 = Class434.anInt4795 * 1234046595 + (local13 & 0x7);
 			@Pc(146) Class619 local146 = new Class619(local2, local9, false);
 			local42 = client.anIntArray306[local146.anInt5434 * 13806191];
@@ -122,7 +122,7 @@ public final class Class244 implements Interface75 {
 			local9 = local2.g1();
 			local13 = local2.g4_alt3();
 			local131 = local2.g1_alt2();
-			local25 = Class436.anInt4803 * -113322595 + (local131 >> 4 & 0x7);
+			local25 = LoginProt.anInt4803 * -113322595 + (local131 >> 4 & 0x7);
 			local32 = (local131 & 0x7) + Class434.anInt4795 * 1234046595;
 			@Pc(233) Class619 local233 = new Class619(local2, local9, false);
 			local49 = client.anIntArray306[local233.anInt5434 * 13806191];
@@ -136,7 +136,7 @@ public final class Class244 implements Interface75 {
 				local291 = client.aClass539_1.method30893((byte) -14);
 				local131 = (local9 & 0x7) + Class434.anInt4795 * 1234046595;
 				local25 = local291.anInt5537 * -894305615 + local131;
-				local32 = Class436.anInt4803 * -113322595 + (local9 >> 4 & 0x7);
+				local32 = LoginProt.anInt4803 * -113322595 + (local9 >> 4 & 0x7);
 				local42 = local291.anInt5540 * -390642507 + local32;
 				local49 = local2.g2_alt3();
 				local53 = local2.g2_alt1();
@@ -150,7 +150,7 @@ public final class Class244 implements Interface75 {
 			} else if (arg0 == Class438.aClass438_3) {
 				local2.g1();
 				local9 = local2.g1();
-				local13 = Class436.anInt4803 * -113322595 + (local9 >> 4 & 0x7);
+				local13 = LoginProt.anInt4803 * -113322595 + (local9 >> 4 & 0x7);
 				local131 = Class434.anInt4795 * 1234046595 + (local9 & 0x7);
 				local25 = local2.g2();
 				local32 = local2.g1();
@@ -165,7 +165,7 @@ public final class Class244 implements Interface75 {
 					local9 = local2.g4_alt1();
 					local13 = local2.g1_alt1();
 					local131 = local2.g1_alt3();
-					local25 = Class436.anInt4803 * -113322595 + (local131 >> 4 & 0x7);
+					local25 = LoginProt.anInt4803 * -113322595 + (local131 >> 4 & 0x7);
 					local32 = Class434.anInt4795 * 1234046595 + (local131 & 0x7);
 					local42 = local2.g1_alt3();
 					local486 = new Class619(local2, local13, false);
@@ -184,7 +184,7 @@ public final class Class244 implements Interface75 {
 					@Pc(695) int local695;
 					if (arg0 == Class438.aClass438_4) {
 						local9 = local2.g1();
-						local13 = (local9 >> 4 & 0x7) + Class436.anInt4803 * -113322595;
+						local13 = (local9 >> 4 & 0x7) + LoginProt.anInt4803 * -113322595;
 						local131 = (local9 & 0x7) + Class434.anInt4795 * 1234046595;
 						local25 = local2.g2();
 						if (local25 == 65535) {
@@ -210,7 +210,7 @@ public final class Class244 implements Interface75 {
 						@Pc(824) int local824;
 						if (arg0 == Class438.aClass438_2) {
 							local9 = local2.g1();
-							local13 = Class436.anInt4803 * -113322595 + (local9 >> 4 & 0x7);
+							local13 = LoginProt.anInt4803 * -113322595 + (local9 >> 4 & 0x7);
 							local131 = (local9 & 0x7) + Class434.anInt4795 * 1234046595;
 							local25 = local2.g2();
 							if (local25 == 65535) {
@@ -244,7 +244,7 @@ public final class Class244 implements Interface75 {
 							local17 = client.aClass539_1.method30893((byte) -69);
 							local25 = (local13 & 0x7) + Class434.anInt4795 * 1234046595;
 							local32 = local25 + local17.anInt5537 * -894305615;
-							local42 = (local13 >> 4 & 0x7) + Class436.anInt4803 * -113322595;
+							local42 = (local13 >> 4 & 0x7) + LoginProt.anInt4803 * -113322595;
 							local49 = local17.anInt5540 * -390642507 + local42;
 							@Pc(943) Class80_Sub4 local943 = (Class80_Sub4) client.aClass24_22.method560((long) (Class691.anInt5781 * -280750383 << 28 | local32 << 14 | local49));
 							if (local943 != null) {
@@ -266,7 +266,7 @@ public final class Class244 implements Interface75 {
 							if (Class438.aClass438_8 == arg0) {
 								local9 = local2.g1();
 								@Pc(1017) boolean local1017 = (local9 & 0x80) != 0;
-								local131 = Class436.anInt4803 * -113322595 + (local9 >> 3 & 0x7);
+								local131 = LoginProt.anInt4803 * -113322595 + (local9 >> 3 & 0x7);
 								local25 = Class434.anInt4795 * 1234046595 + (local9 & 0x7);
 								local32 = local131 + local2.g1b();
 								local42 = local25 + local2.g1b();
@@ -290,8 +290,8 @@ public final class Class244 implements Interface75 {
 									local57 <<= 0x2;
 									local603 <<= 0x2;
 									local685 <<= 0x2;
-									@Pc(1196) Class120_Sub1_Sub1_Sub4 local1196 = new Class120_Sub1_Sub1_Sub4(client.aClass539_1.method30932(-1638462787), local53, Class691.anInt5781 * -280750383, Class691.anInt5781 * -280750383, local131, local25, local57, local824 + client.anInt3436, client.anInt3436 + local636, local1079, local685, 0, local49, local603, local1017, -1, local695);
-									local1196.method24204(local32, local42, Class439.method29150(local32, local42, Class691.anInt5781 * -280750383, 1037753497) - local603, local824 + client.anInt3436, 2111777600);
+									@Pc(1196) Class120_Sub1_Sub1_Sub4 local1196 = new Class120_Sub1_Sub1_Sub4(client.aClass539_1.method30932(-1638462787), local53, Class691.anInt5781 * -280750383, Class691.anInt5781 * -280750383, local131, local25, local57, local824 + client.currentCycle, client.currentCycle + local636, local1079, local685, 0, local49, local603, local1017, -1, local695);
+									local1196.method24204(local32, local42, Class439.method29150(local32, local42, Class691.anInt5781 * -280750383, 1037753497) - local603, local824 + client.currentCycle, 2111777600);
 									client.aClass8_49.method232(new Class80_Sub1_Sub6(local1196), -107666413);
 								}
 							} else if (Class438.aClass438_5 == arg0) {
@@ -299,7 +299,7 @@ public final class Class244 implements Interface75 {
 								local291 = client.aClass539_1.method30893((byte) -18);
 								local131 = (local9 & 0x7) + Class434.anInt4795 * 1234046595;
 								local25 = local131 + local291.anInt5537 * -894305615;
-								local32 = Class436.anInt4803 * -113322595 + (local9 >> 4 & 0x7);
+								local32 = LoginProt.anInt4803 * -113322595 + (local9 >> 4 & 0x7);
 								local42 = local32 + local291.anInt5540 * -390642507;
 								local49 = local2.g2();
 								local53 = local2.g2();
@@ -322,7 +322,7 @@ public final class Class244 implements Interface75 {
 								}
 							} else if (Class438.aClass438_15 == arg0) {
 								local9 = local2.g1();
-								local13 = Class436.anInt4803 * -113322595 + (local9 >> 4 & 0x7);
+								local13 = LoginProt.anInt4803 * -113322595 + (local9 >> 4 & 0x7);
 								local131 = (local9 & 0x7) + Class434.anInt4795 * 1234046595;
 								local25 = local2.g2();
 								if (local25 == 65535) {
@@ -344,7 +344,7 @@ public final class Class244 implements Interface75 {
 								}
 							} else if (arg0 == Class438.aClass438_13) {
 								local9 = local2.g1();
-								local13 = (local9 >> 4 & 0xF) + Class436.anInt4803 * -226645190;
+								local13 = (local9 >> 4 & 0xF) + LoginProt.anInt4803 * -226645190;
 								local131 = (local9 & 0xF) + Class434.anInt4795 * -1826874106;
 								local25 = local2.g1();
 								@Pc(1556) boolean local1556 = (local25 & 0x1) != 0;
@@ -385,7 +385,7 @@ public final class Class244 implements Interface75 {
 								local13 = local2.g4_alt3();
 								local131 = local2.g1_alt2();
 								local25 = local2.g1_alt3();
-								local32 = (local25 >> 4 & 0x7) + Class436.anInt4803 * -113322595;
+								local32 = (local25 >> 4 & 0x7) + LoginProt.anInt4803 * -113322595;
 								local42 = (local25 & 0x7) + Class434.anInt4795 * 1234046595;
 								local486 = new Class619(local2, local131, false);
 								local53 = client.anIntArray306[local486.anInt5434 * 13806191];
@@ -441,7 +441,7 @@ public final class Class244 implements Interface75 {
 
 	@OriginalMember(owner = "client!ek", name = "f", descriptor = "()I")
 	@Override
-	public int method37268() {
+	public int getId() {
 		return this.anInt3861 * 635180789;
 	}
 

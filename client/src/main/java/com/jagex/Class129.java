@@ -71,7 +71,7 @@ public abstract class Class129 implements Interface32 {
 				@Pc(31) long local31 = this.aLong161 * -8978064761541613925L - Class365.aClass369_1.method28306(1023004530);
 				if (local31 > 0L) {
 					@Pc(47) long local47 = (long) (local19 - local3) * (local31 * 10000L / (long) local3);
-					@Pc(57) long local57 = (Class303.method27111((byte) 116) - this.aLong161 * -8978064761541613925L) * 10000L;
+					@Pc(57) long local57 = (Class303.currentTimeMillis((byte) 116) - this.aLong161 * -8978064761541613925L) * 10000L;
 					if (local57 < local47) {
 						local7 = (int) (local57 * 100L * (long) (local19 - local3) / local47 + (long) (local3 * 100));
 					} else {
@@ -81,7 +81,7 @@ public abstract class Class129 implements Interface32 {
 			}
 		} else {
 			this.anInt2854 = local3 * -1454522821;
-			this.aLong161 = Class303.method27111((byte) 73) * -615229443635130477L;
+			this.aLong161 = Class303.currentTimeMillis((byte) 73) * -615229443635130477L;
 		}
 		return local7;
 	}
@@ -94,7 +94,7 @@ public abstract class Class129 implements Interface32 {
 		this.method20274(arg0, local19, local39, (byte) 90);
 		this.method20273(arg0, local19, local39, -903003123);
 		@Pc(55) String local55 = Class365.aClass369_1.method28304(2024787963);
-		if (Class303.method27111((byte) 66) - this.aLong161 * -8978064761541613925L > 10000L) {
+		if (Class303.currentTimeMillis((byte) 66) - this.aLong161 * -8978064761541613925L > 10000L) {
 			local55 = local55 + " (" + Class365.aClass369_1.method28307((byte) 21).anInt4490 * 1975723063 + ")";
 		}
 		this.aClass104_18.method7642(local55, local19 + this.aClass125_5.anInt2900 * 199320851 / 2, local39 + this.aClass125_5.anInt2903 * 1087492339 / 2 + 4 + this.aClass125_5.anInt2902 * -173381277, this.aClass125_5.anInt2905 * -1330014629, -1, 1095872157);
@@ -115,7 +115,7 @@ public abstract class Class129 implements Interface32 {
 		this.method20274(arg0, local19, local39, (byte) 32);
 		this.method20273(arg0, local19, local39, 1191237258);
 		@Pc(55) String local55 = Class365.aClass369_1.method28304(1942246055);
-		if (Class303.method27111((byte) 48) - this.aLong161 * -8978064761541613925L > 10000L) {
+		if (Class303.currentTimeMillis((byte) 48) - this.aLong161 * -8978064761541613925L > 10000L) {
 			local55 = local55 + " (" + Class365.aClass369_1.method28307((byte) 89).anInt4490 * 1975723063 + ")";
 		}
 		this.aClass104_18.method7642(local55, local19 + this.aClass125_5.anInt2900 * 199320851 / 2, local39 + this.aClass125_5.anInt2903 * 1087492339 / 2 + 4 + this.aClass125_5.anInt2902 * -173381277, this.aClass125_5.anInt2905 * -1330014629, -1, 1725566424);
@@ -138,7 +138,7 @@ public abstract class Class129 implements Interface32 {
 		this.method20274(arg0, local19, local39, (byte) 127);
 		this.method20273(arg0, local19, local39, -1725355);
 		@Pc(55) String local55 = Class365.aClass369_1.method28304(-690349989);
-		if (Class303.method27111((byte) 87) - this.aLong161 * -8978064761541613925L > 10000L) {
+		if (Class303.currentTimeMillis((byte) 87) - this.aLong161 * -8978064761541613925L > 10000L) {
 			local55 = local55 + " (" + Class365.aClass369_1.method28307((byte) 31).anInt4490 * 1975723063 + ")";
 		}
 		this.aClass104_18.method7642(local55, local19 + this.aClass125_5.anInt2900 * 199320851 / 2, local39 + this.aClass125_5.anInt2903 * 1087492339 / 2 + 4 + this.aClass125_5.anInt2902 * -173381277, this.aClass125_5.anInt2905 * -1330014629, -1, 1891091546);
@@ -152,7 +152,7 @@ public abstract class Class129 implements Interface32 {
 		this.method20274(arg0, local19, local39, (byte) 56);
 		this.method20273(arg0, local19, local39, -926968630);
 		@Pc(55) String local55 = Class365.aClass369_1.method28304(1271560948);
-		if (Class303.method27111((byte) 14) - this.aLong161 * -8978064761541613925L > 10000L) {
+		if (Class303.currentTimeMillis((byte) 14) - this.aLong161 * -8978064761541613925L > 10000L) {
 			local55 = local55 + " (" + Class365.aClass369_1.method28307((byte) 4).anInt4490 * 1975723063 + ")";
 		}
 		this.aClass104_18.method7642(local55, local19 + this.aClass125_5.anInt2900 * 199320851 / 2, local39 + this.aClass125_5.anInt2903 * 1087492339 / 2 + 4 + this.aClass125_5.anInt2902 * -173381277, this.aClass125_5.anInt2905 * -1330014629, -1, 1549265743);
@@ -233,7 +233,7 @@ public abstract class Class129 implements Interface32 {
 				@Pc(31) long local31 = this.aLong161 * -8978064761541613925L - Class365.aClass369_1.method28306(-2002916672);
 				if (local31 > 0L) {
 					@Pc(47) long local47 = (long) (local19 - local3) * (local31 * 10000L / (long) local3);
-					@Pc(57) long local57 = (Class303.method27111((byte) 18) - this.aLong161 * -8978064761541613925L) * 10000L;
+					@Pc(57) long local57 = (Class303.currentTimeMillis((byte) 18) - this.aLong161 * -8978064761541613925L) * 10000L;
 					if (local57 < local47) {
 						local7 = (int) (local57 * 100L * (long) (local19 - local3) / local47 + (long) (local3 * 100));
 					} else {
@@ -243,7 +243,7 @@ public abstract class Class129 implements Interface32 {
 			}
 		} else {
 			this.anInt2854 = local3 * -1454522821;
-			this.aLong161 = Class303.method27111((byte) 18) * -615229443635130477L;
+			this.aLong161 = Class303.currentTimeMillis((byte) 18) * -615229443635130477L;
 		}
 		return local7;
 	}
@@ -258,7 +258,7 @@ public abstract class Class129 implements Interface32 {
 				@Pc(31) long local31 = this.aLong161 * -8978064761541613925L - Class365.aClass369_1.method28306(1578580009);
 				if (local31 > 0L) {
 					@Pc(47) long local47 = (long) (local19 - local3) * (local31 * 10000L / (long) local3);
-					@Pc(57) long local57 = (Class303.method27111((byte) 43) - this.aLong161 * -8978064761541613925L) * 10000L;
+					@Pc(57) long local57 = (Class303.currentTimeMillis((byte) 43) - this.aLong161 * -8978064761541613925L) * 10000L;
 					if (local57 < local47) {
 						local7 = (int) (local57 * 100L * (long) (local19 - local3) / local47 + (long) (local3 * 100));
 					} else {
@@ -268,7 +268,7 @@ public abstract class Class129 implements Interface32 {
 			}
 		} else {
 			this.anInt2854 = local3 * -1454522821;
-			this.aLong161 = Class303.method27111((byte) 36) * -615229443635130477L;
+			this.aLong161 = Class303.currentTimeMillis((byte) 36) * -615229443635130477L;
 		}
 		return local7;
 	}

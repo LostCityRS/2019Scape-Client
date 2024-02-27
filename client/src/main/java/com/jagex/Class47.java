@@ -212,7 +212,7 @@ public final class Class47 {
 			}
 		}
 		aBoolean28 = false;
-		aLong10 = Class303.method27111((byte) 29) * 6116256794156162355L;
+		aLong10 = Class303.currentTimeMillis((byte) 29) * 6116256794156162355L;
 		Class650.aPacket_17 = null;
 	}
 
@@ -253,7 +253,7 @@ public final class Class47 {
 			}
 		}
 		aBoolean28 = false;
-		aLong10 = Class303.method27111((byte) 84) * 6116256794156162355L;
+		aLong10 = Class303.currentTimeMillis((byte) 84) * 6116256794156162355L;
 		Class650.aPacket_17 = null;
 	}
 

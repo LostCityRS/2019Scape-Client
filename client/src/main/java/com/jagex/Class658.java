@@ -254,7 +254,7 @@ public final class Class658 {
 				for (local1 = 0; local1 < arg0.length && local1 != 16 && this.anInt5681 != 16; local1++) {
 					if (!aBooleanArray34[local1]) {
 						local21 = null;
-						if (arg0[local1].method25810(Class518.anInterface48_1, -1624047245).anInt4737 * 821164565 == 1 && Class654.anInt5671 * 637195825 < 32) {
+						if (arg0[local1].method25810(Js5MasterIndex.anInterface48_1, -1624047245).anInt4737 * 821164565 == 1 && Class654.anInt5671 * 637195825 < 32) {
 							local21 = new Class80_Sub34(arg0[local1], this);
 							Class654.aClass24_39.method563(local21, (long) (arg0[local1].anInt3603 * -251298279));
 							Class654.anInt5671 += -1631141167;
@@ -495,7 +495,7 @@ public final class Class658 {
 				for (local1 = 0; local1 < arg0.length && local1 != 16 && this.anInt5681 != 16; local1++) {
 					if (!aBooleanArray34[local1]) {
 						local21 = null;
-						if (arg0[local1].method25810(Class518.anInterface48_1, -1624047245).anInt4737 * 821164565 == 1 && Class654.anInt5671 * 637195825 < 32) {
+						if (arg0[local1].method25810(Js5MasterIndex.anInterface48_1, -1624047245).anInt4737 * 821164565 == 1 && Class654.anInt5671 * 637195825 < 32) {
 							local21 = new Class80_Sub34(arg0[local1], this);
 							Class654.aClass24_39.method563(local21, (long) (arg0[local1].anInt3603 * -251298279));
 							Class654.anInt5671 += -1631141167;
@@ -546,7 +546,7 @@ public final class Class658 {
 				for (local1 = 0; local1 < arg0.length && local1 != 16 && this.anInt5681 != 16; local1++) {
 					if (!aBooleanArray34[local1]) {
 						local21 = null;
-						if (arg0[local1].method25810(Class518.anInterface48_1, -1624047245).anInt4737 * 821164565 == 1 && Class654.anInt5671 * 637195825 < 32) {
+						if (arg0[local1].method25810(Js5MasterIndex.anInterface48_1, -1624047245).anInt4737 * 821164565 == 1 && Class654.anInt5671 * 637195825 < 32) {
 							local21 = new Class80_Sub34(arg0[local1], this);
 							Class654.aClass24_39.method563(local21, (long) (arg0[local1].anInt3603 * -251298279));
 							Class654.anInt5671 += -1631141167;
@@ -597,7 +597,7 @@ public final class Class658 {
 				for (local1 = 0; local1 < arg0.length && local1 != 16 && this.anInt5681 != 16; local1++) {
 					if (!aBooleanArray34[local1]) {
 						local21 = null;
-						if (arg0[local1].method25810(Class518.anInterface48_1, -1624047245).anInt4737 * 821164565 == 1 && Class654.anInt5671 * 637195825 < 32) {
+						if (arg0[local1].method25810(Js5MasterIndex.anInterface48_1, -1624047245).anInt4737 * 821164565 == 1 && Class654.anInt5671 * 637195825 < 32) {
 							local21 = new Class80_Sub34(arg0[local1], this);
 							Class654.aClass24_39.method563(local21, (long) (arg0[local1].anInt3603 * -251298279));
 							Class654.anInt5671 += -1631141167;

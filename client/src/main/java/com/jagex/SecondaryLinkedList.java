@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.Iterator;
 
 @OriginalClass("client!aaa")
-public final class Class3 implements Iterable {
+public final class SecondaryLinkedList implements Iterable {
 
 	@OriginalMember(owner = "client!aaa", name = "f", descriptor = "Lclient!akw;")
 	Class80_Sub1 aClass80_Sub1_1;
@@ -21,7 +21,7 @@ public final class Class3 implements Iterable {
 	@OriginalMember(owner = "client!aaa", name = "h", descriptor = "(Lclient!akw;Lclient!akw;)V")
 	public static void method40(@OriginalArg(0) Class80_Sub1 arg0, @OriginalArg(1) Class80_Sub1 arg1) {
 		if (arg0.aClass80_Sub1_67 != null) {
-			arg0.method24406(-2147483644);
+			arg0.unlinkSecondary(-2147483644);
 		}
 		arg0.aClass80_Sub1_67 = arg1.aClass80_Sub1_67;
 		arg0.aClass80_Sub1_68 = arg1;
@@ -32,7 +32,7 @@ public final class Class3 implements Iterable {
 	@OriginalMember(owner = "client!aaa", name = "d", descriptor = "(Lclient!akw;Lclient!akw;)V")
 	public static void method57(@OriginalArg(0) Class80_Sub1 arg0, @OriginalArg(1) Class80_Sub1 arg1) {
 		if (arg0.aClass80_Sub1_67 != null) {
-			arg0.method24406(-2147483640);
+			arg0.unlinkSecondary(-2147483640);
 		}
 		arg0.aClass80_Sub1_67 = arg1.aClass80_Sub1_67;
 		arg0.aClass80_Sub1_68 = arg1;
@@ -43,7 +43,7 @@ public final class Class3 implements Iterable {
 	@OriginalMember(owner = "client!aaa", name = "p", descriptor = "(Lclient!akw;Lclient!akw;)V")
 	public static void method59(@OriginalArg(0) Class80_Sub1 arg0, @OriginalArg(1) Class80_Sub1 arg1) {
 		if (arg0.aClass80_Sub1_67 != null) {
-			arg0.method24406(-2147483647);
+			arg0.unlinkSecondary(-2147483647);
 		}
 		arg0.aClass80_Sub1_67 = arg1.aClass80_Sub1_67;
 		arg0.aClass80_Sub1_68 = arg1;
@@ -54,7 +54,7 @@ public final class Class3 implements Iterable {
 	@OriginalMember(owner = "client!aaa", name = "v", descriptor = "(Lclient!akw;Lclient!akw;)V")
 	public static void method60(@OriginalArg(0) Class80_Sub1 arg0, @OriginalArg(1) Class80_Sub1 arg1) {
 		if (arg0.aClass80_Sub1_67 != null) {
-			arg0.method24406(-2147483642);
+			arg0.unlinkSecondary(-2147483642);
 		}
 		arg0.aClass80_Sub1_67 = arg1;
 		arg0.aClass80_Sub1_68 = arg1.aClass80_Sub1_68;
@@ -65,7 +65,7 @@ public final class Class3 implements Iterable {
 	@OriginalMember(owner = "client!aaa", name = "z", descriptor = "(Lclient!akw;Lclient!akw;)V")
 	public static void method63(@OriginalArg(0) Class80_Sub1 arg0, @OriginalArg(1) Class80_Sub1 arg1) {
 		if (arg0.aClass80_Sub1_67 != null) {
-			arg0.method24406(-2147483643);
+			arg0.unlinkSecondary(-2147483643);
 		}
 		arg0.aClass80_Sub1_67 = arg1.aClass80_Sub1_67;
 		arg0.aClass80_Sub1_68 = arg1;
@@ -114,7 +114,7 @@ public final class Class3 implements Iterable {
 	}
 
 	@OriginalMember(owner = "client!aaa", name = "<init>", descriptor = "()V")
-	public Class3() {
+	public SecondaryLinkedList() {
 		this.aClass80_Sub1_2.aClass80_Sub1_68 = this.aClass80_Sub1_2;
 		this.aClass80_Sub1_2.aClass80_Sub1_67 = this.aClass80_Sub1_2;
 	}
@@ -122,14 +122,14 @@ public final class Class3 implements Iterable {
 	@OriginalMember(owner = "client!aaa", name = "t", descriptor = "(I)V")
 	public void method41(@OriginalArg(0) int arg0) {
 		while (this.aClass80_Sub1_2 != this.aClass80_Sub1_2.aClass80_Sub1_68) {
-			this.aClass80_Sub1_2.aClass80_Sub1_68.method24406(-2147483645);
+			this.aClass80_Sub1_2.aClass80_Sub1_68.unlinkSecondary(-2147483645);
 		}
 	}
 
 	@OriginalMember(owner = "client!aaa", name = "f", descriptor = "(Lclient!akw;I)V")
-	public void method42(@OriginalArg(0) Class80_Sub1 arg0, @OriginalArg(1) int arg1) {
+	public void addTail(@OriginalArg(0) Class80_Sub1 arg0, @OriginalArg(1) int arg1) {
 		if (arg0.aClass80_Sub1_67 != null) {
-			arg0.method24406(-2147483643);
+			arg0.unlinkSecondary(-2147483643);
 		}
 		arg0.aClass80_Sub1_67 = this.aClass80_Sub1_2.aClass80_Sub1_67;
 		arg0.aClass80_Sub1_68 = this.aClass80_Sub1_2;
@@ -177,7 +177,7 @@ public final class Class3 implements Iterable {
 	}
 
 	@OriginalMember(owner = "client!aaa", name = "m", descriptor = "(B)Lclient!akw;")
-	public Class80_Sub1 method46(@OriginalArg(0) byte arg0) {
+	public Class80_Sub1 next(@OriginalArg(0) byte arg0) {
 		@Pc(2) Class80_Sub1 local2 = this.aClass80_Sub1_1;
 		if (this.aClass80_Sub1_2 == local2) {
 			this.aClass80_Sub1_1 = null;
@@ -214,14 +214,14 @@ public final class Class3 implements Iterable {
 	}
 
 	@OriginalMember(owner = "client!aaa", name = "g", descriptor = "(B)Lclient!akw;")
-	public Class80_Sub1 method50(@OriginalArg(0) byte arg0) {
+	public Class80_Sub1 head(@OriginalArg(0) byte arg0) {
 		return this.method45(null, (byte) 0);
 	}
 
 	@OriginalMember(owner = "client!aaa", name = "q", descriptor = "(Lclient!akw;)V")
 	public void method51(@OriginalArg(0) Class80_Sub1 arg0) {
 		if (arg0.aClass80_Sub1_67 != null) {
-			arg0.method24406(-2147483645);
+			arg0.unlinkSecondary(-2147483645);
 		}
 		arg0.aClass80_Sub1_67 = this.aClass80_Sub1_2.aClass80_Sub1_67;
 		arg0.aClass80_Sub1_68 = this.aClass80_Sub1_2;
@@ -232,14 +232,14 @@ public final class Class3 implements Iterable {
 	@OriginalMember(owner = "client!aaa", name = "x", descriptor = "()V")
 	public void method52() {
 		while (this.aClass80_Sub1_2 != this.aClass80_Sub1_2.aClass80_Sub1_68) {
-			this.aClass80_Sub1_2.aClass80_Sub1_68.method24406(-2147483640);
+			this.aClass80_Sub1_2.aClass80_Sub1_68.unlinkSecondary(-2147483640);
 		}
 	}
 
 	@OriginalMember(owner = "client!aaa", name = "w", descriptor = "(Lclient!akw;)V")
 	public void method53(@OriginalArg(0) Class80_Sub1 arg0) {
 		if (arg0.aClass80_Sub1_67 != null) {
-			arg0.method24406(-2147483645);
+			arg0.unlinkSecondary(-2147483645);
 		}
 		arg0.aClass80_Sub1_67 = this.aClass80_Sub1_2.aClass80_Sub1_67;
 		arg0.aClass80_Sub1_68 = this.aClass80_Sub1_2;
@@ -250,7 +250,7 @@ public final class Class3 implements Iterable {
 	@OriginalMember(owner = "client!aaa", name = "r", descriptor = "(Lclient!akw;)V")
 	public void method54(@OriginalArg(0) Class80_Sub1 arg0) {
 		if (arg0.aClass80_Sub1_67 != null) {
-			arg0.method24406(-2147483643);
+			arg0.unlinkSecondary(-2147483643);
 		}
 		arg0.aClass80_Sub1_67 = this.aClass80_Sub1_2.aClass80_Sub1_67;
 		arg0.aClass80_Sub1_68 = this.aClass80_Sub1_2;
@@ -270,7 +270,7 @@ public final class Class3 implements Iterable {
 	@OriginalMember(owner = "client!aaa", name = "k", descriptor = "()V")
 	public void method56() {
 		while (this.aClass80_Sub1_2 != this.aClass80_Sub1_2.aClass80_Sub1_68) {
-			this.aClass80_Sub1_2.aClass80_Sub1_68.method24406(-2147483642);
+			this.aClass80_Sub1_2.aClass80_Sub1_68.unlinkSecondary(-2147483642);
 		}
 	}
 
@@ -280,7 +280,7 @@ public final class Class3 implements Iterable {
 		if (this.aClass80_Sub1_2 == local3) {
 			return null;
 		} else {
-			local3.method24406(-2147483643);
+			local3.unlinkSecondary(-2147483643);
 			return local3;
 		}
 	}
@@ -291,7 +291,7 @@ public final class Class3 implements Iterable {
 		if (this.aClass80_Sub1_2 == local3) {
 			return null;
 		} else {
-			local3.method24406(-2147483642);
+			local3.unlinkSecondary(-2147483642);
 			return local3;
 		}
 	}
@@ -302,7 +302,7 @@ public final class Class3 implements Iterable {
 		if (this.aClass80_Sub1_2 == local3) {
 			return null;
 		} else {
-			local3.method24406(Integer.MIN_VALUE);
+			local3.unlinkSecondary(Integer.MIN_VALUE);
 			return local3;
 		}
 	}
@@ -346,7 +346,7 @@ public final class Class3 implements Iterable {
 		if (this.aClass80_Sub1_2 == local3) {
 			return null;
 		} else {
-			local3.method24406(-2147483643);
+			local3.unlinkSecondary(-2147483643);
 			return local3;
 		}
 	}

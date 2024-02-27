@@ -39,8 +39,8 @@ public final class Class70 implements Interface75 {
 		if (-1.0F == local51.aFloat296) {
 			local51.aFloat296 = Float.POSITIVE_INFINITY;
 		}
-		Class160.aClass121_Sub1_2.method9583(local51, -351030388);
-		Class160.aClass121_Sub1_2.method9610((float) local43 / 1000.0F, 2077125254);
+		BufferedSocket.aClass121_Sub1_2.method9583(local51, -351030388);
+		BufferedSocket.aClass121_Sub1_2.method9610((float) local43 / 1000.0F, 2077125254);
 		local51.method29557();
 	}
 
@@ -61,7 +61,7 @@ public final class Class70 implements Interface75 {
 
 	@OriginalMember(owner = "client!acv", name = "f", descriptor = "()I")
 	@Override
-	public int method37268() {
+	public int getId() {
 		return this.anInt219 * 1517987079;
 	}
 

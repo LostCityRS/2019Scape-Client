@@ -35,7 +35,7 @@ public final class Class262 implements Interface26 {
 
 	@OriginalMember(owner = "client!ff", name = "we", descriptor = "(Lclient!yp;I)V")
 	static void method26508(@OriginalArg(0) Class690 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = client.anInt3436;
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = client.currentCycle;
 	}
 
 	@OriginalMember(owner = "client!ff", name = "xs", descriptor = "(Lclient!yp;I)V")

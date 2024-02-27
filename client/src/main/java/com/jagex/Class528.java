@@ -88,7 +88,7 @@ public final class Class528 {
 
 	@OriginalMember(owner = "client!re", name = "hf", descriptor = "(IB)V")
 	static void method30720(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1) {
-		@Pc(5) int local5 = client.anInt3436 - client.anInt3425 * -875622609;
+		@Pc(5) int local5 = client.currentCycle - client.anInt3425 * -875622609;
 		if (local5 >= 100) {
 			Class368.anInt4502 = Class676.method33586(1947851731) * 1633189263;
 			Class130_Sub1.anInt1175 = -1464167667;
@@ -98,12 +98,12 @@ public final class Class528 {
 		@Pc(35) float local35 = 1.0F - (float) ((100 - local5) * (100 - local5) * (100 - local5)) / 1000000.0F;
 		@Pc(188) int local188;
 		if (Class676.method33586(123043068) == 3) {
-			@Pc(45) Class80_Sub33 local45 = Class160.aClass121_Sub1_2.method9603(-1628779323).method20519((byte) 0);
+			@Pc(45) Class80_Sub33 local45 = BufferedSocket.aClass121_Sub1_2.method9603(-1628779323).method20519((byte) 0);
 			@Pc(49) Class626 local49 = client.aClass539_1.method30893((byte) -20);
-			client.anInt3481 = ((int) ((double) Class160.aClass121_Sub1_2.method9612(1853766937) * 2607.5945876176133D) & 0x3FFF) * -560342087;
-			Class664.anInt5692 = ((int) ((double) Class160.aClass121_Sub1_2.method9648(1845836626) * -2607.5945876176133D) & 0x3FFF) * -399825347;
+			client.anInt3481 = ((int) ((double) BufferedSocket.aClass121_Sub1_2.method9612(1853766937) * 2607.5945876176133D) & 0x3FFF) * -560342087;
+			Class664.anInt5692 = ((int) ((double) BufferedSocket.aClass121_Sub1_2.method9648(1845836626) * -2607.5945876176133D) & 0x3FFF) * -399825347;
 			Class338.anInt4231 = 0;
-			client.anInt3498 = (int) ((float) (Class163.anInt2084 * -1371538825) + (float) ((int) ((double) (client.anInt3439 * -1389306785) / (Math.tan((double) (Class160.aClass121_Sub1_2.method9623(-233893999) / 2.0F)) * 4.0D)) - Class163.anInt2084 * -1371538825) * local35) * -1095333801;
+			client.anInt3498 = (int) ((float) (Class163.anInt2084 * -1371538825) + (float) ((int) ((double) (client.anInt3439 * -1389306785) / (Math.tan((double) (BufferedSocket.aClass121_Sub1_2.method9623(-233893999) / 2.0F)) * 4.0D)) - Class163.anInt2084 * -1371538825) * local35) * -1095333801;
 			Class89.anInt319 = (int) (local35 * (float) (local45.anInt1655 * -1125961095 - local49.anInt5540 * 1854499328 - Class656.anInt5677 * -1992889671) + (float) (Class656.anInt5677 * -1992889671)) * 2068667409;
 			Class283.anInt3937 = (int) ((float) (Class614.anInt5428 * 318274561) + local35 * (float) (-(local45.anInt1654 * 2058467157) - Class614.anInt5428 * 318274561)) * 364051605;
 			Class102_Sub2.anInt653 = (int) ((float) (local45.anInt1653 * 1944136251 - local49.anInt5537 * 1677025792 - Class597.anInt5363 * -1806504753) * local35 + (float) (Class597.anInt5363 * -1806504753)) * 483037039;

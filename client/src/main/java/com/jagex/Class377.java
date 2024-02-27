@@ -79,10 +79,10 @@ public final class Class377 implements Interface32 {
 		}
 		@Pc(67) int local67 = Class365.aClass369_1.method28332(-224021344);
 		if (this.aLong373 * 1124598000462765881L < 0L || local67 == 0 || this.anInt4528 * -376011947 != local67) {
-			this.aLong373 = Class303.method27111((byte) 121) * 7240852760952086281L;
+			this.aLong373 = Class303.currentTimeMillis((byte) 121) * 7240852760952086281L;
 			this.anInt4528 = local67 * 2122932733;
 		}
-		if (this.aClass375_1.anInt4519 * -1889789311 != 1 && Class303.method27111((byte) 25) - this.aLong373 * 1124598000462765881L > 10000L) {
+		if (this.aClass375_1.anInt4519 * -1889789311 != 1 && Class303.currentTimeMillis((byte) 25) - this.aLong373 * 1124598000462765881L > 10000L) {
 			local39 = local39 + " (" + Class365.aClass369_1.method28307((byte) -97).anInt4490 * 1975723063 + ")";
 		}
 		this.aClass104_24.method7642(local39, local15, local31, this.aClass375_1.anInt4518 * 1968072543, -1, 886799486);
@@ -109,10 +109,10 @@ public final class Class377 implements Interface32 {
 		}
 		@Pc(67) int local67 = Class365.aClass369_1.method28332(-1698902773);
 		if (this.aLong373 * 1124598000462765881L < 0L || local67 == 0 || this.anInt4528 * -376011947 != local67) {
-			this.aLong373 = Class303.method27111((byte) 45) * 7240852760952086281L;
+			this.aLong373 = Class303.currentTimeMillis((byte) 45) * 7240852760952086281L;
 			this.anInt4528 = local67 * 2122932733;
 		}
-		if (this.aClass375_1.anInt4519 * -1889789311 != 1 && Class303.method27111((byte) 64) - this.aLong373 * 1124598000462765881L > 10000L) {
+		if (this.aClass375_1.anInt4519 * -1889789311 != 1 && Class303.currentTimeMillis((byte) 64) - this.aLong373 * 1124598000462765881L > 10000L) {
 			local39 = local39 + " (" + Class365.aClass369_1.method28307((byte) 24).anInt4490 * 1975723063 + ")";
 		}
 		this.aClass104_24.method7642(local39, local15, local31, this.aClass375_1.anInt4518 * 1968072543, -1, 1158459925);
@@ -159,10 +159,10 @@ public final class Class377 implements Interface32 {
 		}
 		@Pc(67) int local67 = Class365.aClass369_1.method28332(-1792093508);
 		if (this.aLong373 * 1124598000462765881L < 0L || local67 == 0 || this.anInt4528 * -376011947 != local67) {
-			this.aLong373 = Class303.method27111((byte) 81) * 7240852760952086281L;
+			this.aLong373 = Class303.currentTimeMillis((byte) 81) * 7240852760952086281L;
 			this.anInt4528 = local67 * 2122932733;
 		}
-		if (this.aClass375_1.anInt4519 * -1889789311 != 1 && Class303.method27111((byte) 7) - this.aLong373 * 1124598000462765881L > 10000L) {
+		if (this.aClass375_1.anInt4519 * -1889789311 != 1 && Class303.currentTimeMillis((byte) 7) - this.aLong373 * 1124598000462765881L > 10000L) {
 			local39 = local39 + " (" + Class365.aClass369_1.method28307((byte) -2).anInt4490 * 1975723063 + ")";
 		}
 		this.aClass104_24.method7642(local39, local15, local31, this.aClass375_1.anInt4518 * 1968072543, -1, 1952406464);
@@ -196,10 +196,10 @@ public final class Class377 implements Interface32 {
 		}
 		@Pc(67) int local67 = Class365.aClass369_1.method28332(-723838579);
 		if (this.aLong373 * 1124598000462765881L < 0L || local67 == 0 || this.anInt4528 * -376011947 != local67) {
-			this.aLong373 = Class303.method27111((byte) 86) * 7240852760952086281L;
+			this.aLong373 = Class303.currentTimeMillis((byte) 86) * 7240852760952086281L;
 			this.anInt4528 = local67 * 2122932733;
 		}
-		if (this.aClass375_1.anInt4519 * -1889789311 != 1 && Class303.method27111((byte) 70) - this.aLong373 * 1124598000462765881L > 10000L) {
+		if (this.aClass375_1.anInt4519 * -1889789311 != 1 && Class303.currentTimeMillis((byte) 70) - this.aLong373 * 1124598000462765881L > 10000L) {
 			local39 = local39 + " (" + Class365.aClass369_1.method28307((byte) -51).anInt4490 * 1975723063 + ")";
 		}
 		this.aClass104_24.method7642(local39, local15, local31, this.aClass375_1.anInt4518 * 1968072543, -1, 1425697096);

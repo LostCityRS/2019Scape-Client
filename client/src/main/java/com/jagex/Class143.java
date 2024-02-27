@@ -172,7 +172,7 @@ public class Class143 implements Interface75 {
 
 	@OriginalMember(owner = "client!qt", name = "f", descriptor = "()I")
 	@Override
-	public final int method37268() {
+	public final int getId() {
 		return this.anInt1348 * 1911055273;
 	}
 

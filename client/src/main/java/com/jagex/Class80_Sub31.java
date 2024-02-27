@@ -154,7 +154,7 @@ public final class Class80_Sub31 extends Class80 {
 		}
 		client.aClass75_2.method1319((short) 468);
 		Class282.method26867(-455826321);
-		Class597.aBoolean926 = true;
+		Class597.focus = true;
 		Class332.method27797(-1597079621);
 		@Pc(17) int local17;
 		for (local17 = 0; local17 < client.aClass101Array1.length; local17++) {

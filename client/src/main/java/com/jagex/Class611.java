@@ -103,7 +103,7 @@ public final class Class611 implements Interface75 {
 
 	@OriginalMember(owner = "client!vg", name = "f", descriptor = "()I")
 	@Override
-	public int method37268() {
+	public int getId() {
 		return this.anInt5402 * -1755822759;
 	}
 

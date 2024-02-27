@@ -36,7 +36,7 @@ public final class Class680 implements Runnable {
 		arg0.anInt5778 -= -221471862;
 		@Pc(13) int local13 = arg0.anIntArray525[arg0.anInt5778 * 1896589581];
 		@Pc(24) float local24 = Class467.method29716(arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1]);
-		@Pc(29) Class80_Sub1_Sub13 local29 = Class160.aClass121_Sub1_2.method9598(local13, 531254025);
+		@Pc(29) Class80_Sub1_Sub13 local29 = BufferedSocket.aClass121_Sub1_2.method9598(local13, 531254025);
 		if (local29 == null) {
 			throw new RuntimeException("");
 		} else if (local29 instanceof Class80_Sub1_Sub13_Sub1) {

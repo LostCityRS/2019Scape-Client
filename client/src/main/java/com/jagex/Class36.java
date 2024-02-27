@@ -59,10 +59,10 @@ public final class Class36 {
 
 	@OriginalMember(owner = "client!abj", name = "aog", descriptor = "(Lclient!yp;I)V")
 	static void method786(@OriginalArg(0) Class690 arg0, @OriginalArg(1) int arg1) {
-		if (Class160.aClass121_Sub1_2.method9607(-428331506) != Class340.aClass340_5) {
+		if (BufferedSocket.aClass121_Sub1_2.method9607(-428331506) != Class340.aClass340_5) {
 			throw new RuntimeException();
 		}
-		((Class123_Sub1) Class160.aClass121_Sub1_2.method9603(-1978812105)).method9813(arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581] == 1, (byte) -1);
+		((Class123_Sub1) BufferedSocket.aClass121_Sub1_2.method9603(-1978812105)).method9813(arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581] == 1, (byte) -1);
 	}
 
 	@OriginalMember(owner = "client!abj", name = "<init>", descriptor = "(Lclient!abp;II)V")

@@ -21,8 +21,8 @@ public final class Class702 {
 		@Pc(4) Iterator local4 = arg0.iterator();
 		while (local4.hasNext()) {
 			@Pc(11) Interface75 local11 = (Interface75) local4.next();
-			if (local11.method37268() > local1) {
-				local1 = local11.method37268();
+			if (local11.getId() > local1) {
+				local1 = local11.getId();
 			}
 		}
 		return (local1 + 8) / 8;
@@ -38,7 +38,7 @@ public final class Class702 {
 				@Pc(19) Interface75[] local19 = (Interface75[]) arg0.getEnumConstants();
 				for (@Pc(21) int local21 = 0; local21 < local19.length; local21++) {
 					@Pc(29) Interface75 local29 = local19[local21];
-					local8.put(local29.method37268(), local29);
+					local8.put(local29.getId(), local29);
 				}
 				aMap25.put(arg0, local8);
 			}
@@ -56,7 +56,7 @@ public final class Class702 {
 				@Pc(19) Interface75[] local19 = (Interface75[]) arg0.getEnumConstants();
 				for (@Pc(21) int local21 = 0; local21 < local19.length; local21++) {
 					@Pc(29) Interface75 local29 = local19[local21];
-					local8.put(local29.method37268(), local29);
+					local8.put(local29.getId(), local29);
 				}
 				aMap25.put(arg0, local8);
 			}
@@ -69,7 +69,7 @@ public final class Class702 {
 		@Pc(1) Interface75[] local1 = arg0;
 		for (@Pc(3) int local3 = 0; local3 < local1.length; local3++) {
 			@Pc(11) Interface75 local11 = local1[local3];
-			if (arg1 == local11.method37268()) {
+			if (arg1 == local11.getId()) {
 				return local11;
 			}
 		}
@@ -82,8 +82,8 @@ public final class Class702 {
 		@Pc(4) Iterator local4 = arg0.iterator();
 		while (local4.hasNext()) {
 			@Pc(11) Interface75 local11 = (Interface75) local4.next();
-			if (local11.method37268() > local1) {
-				local1 = local11.method37268();
+			if (local11.getId() > local1) {
+				local1 = local11.getId();
 			}
 		}
 		return (local1 + 8) / 8;
@@ -94,7 +94,7 @@ public final class Class702 {
 		@Pc(1) Interface75[] local1 = arg0;
 		for (@Pc(3) int local3 = 0; local3 < local1.length; local3++) {
 			@Pc(11) Interface75 local11 = local1[local3];
-			if (arg1 == local11.method37268()) {
+			if (arg1 == local11.getId()) {
 				return local11;
 			}
 		}
@@ -114,7 +114,7 @@ public final class Class702 {
 		@Pc(31) Iterator local31 = arg0.iterator();
 		while (local31.hasNext()) {
 			@Pc(38) Interface75 local38 = (Interface75) local31.next();
-			@Pc(41) int local41 = local38.method37268();
+			@Pc(41) int local41 = local38.getId();
 			@Pc(45) int local45 = local41 / 8;
 			arg1.data[local45 + arg1.pos * -1380987821] = (byte) (arg1.data[local45 + arg1.pos * -1380987821] | 0x1 << (local41 & 0x7));
 		}
@@ -126,7 +126,7 @@ public final class Class702 {
 		@Pc(1) Interface75[] local1 = arg0;
 		for (@Pc(3) int local3 = 0; local3 < local1.length; local3++) {
 			@Pc(11) Interface75 local11 = local1[local3];
-			if (arg1 == local11.method37268()) {
+			if (arg1 == local11.getId()) {
 				return local11;
 			}
 		}

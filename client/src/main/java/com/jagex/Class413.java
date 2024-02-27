@@ -110,7 +110,7 @@ public final class Class413 {
 		if (this.anInterface43_1 == null) {
 			this.aFloat288 = arg0;
 			this.aFloat289 = this.aFloat287;
-			this.aLong380 = Class303.method27111((byte) 67) * 3830625284655284973L;
+			this.aLong380 = Class303.currentTimeMillis((byte) 67) * 3830625284655284973L;
 			this.aLong379 = this.aLong380 * -2505719051048353477L + -7853543436540050916L;
 		}
 	}
@@ -129,7 +129,7 @@ public final class Class413 {
 		if (this.anInterface43_1 == null) {
 			this.aFloat288 = arg0;
 			this.aFloat289 = this.aFloat287;
-			this.aLong380 = Class303.method27111((byte) 30) * 3830625284655284973L;
+			this.aLong380 = Class303.currentTimeMillis((byte) 30) * 3830625284655284973L;
 			this.aLong379 = this.aLong380 * -2505719051048353477L + -7853543436540050916L;
 		}
 	}
@@ -148,7 +148,7 @@ public final class Class413 {
 		if (this.anInterface43_1 == null) {
 			this.aFloat288 = arg0;
 			this.aFloat289 = this.aFloat287;
-			this.aLong380 = Class303.method27111((byte) 105) * 3830625284655284973L;
+			this.aLong380 = Class303.currentTimeMillis((byte) 105) * 3830625284655284973L;
 			this.aLong379 = this.aLong380 * -2505719051048353477L + -7853543436540050916L;
 		}
 	}
@@ -189,12 +189,12 @@ public final class Class413 {
 			if (this.aFloat287 != local8 && this.aFloat288 < 0.0F) {
 				this.aFloat289 = this.aFloat287;
 				this.aFloat288 = local8;
-				this.aLong380 = Class303.method27111((byte) 77) * 3830625284655284973L;
+				this.aLong380 = Class303.currentTimeMillis((byte) 77) * 3830625284655284973L;
 				this.aLong379 = this.aLong380 * -2505719051048353477L + -7853543436540050916L;
 			}
 		}
 		if (this.aFloat288 >= 0.0F) {
-			@Pc(47) long local47 = Class303.method27111((byte) 100);
+			@Pc(47) long local47 = Class303.currentTimeMillis((byte) 100);
 			if (local47 > this.aLong379 * -6383271465288744353L) {
 				this.aFloat287 = this.aFloat288;
 				this.aFloat288 = -1.0F;
@@ -218,12 +218,12 @@ public final class Class413 {
 			if (this.aFloat287 != local8 && this.aFloat288 < 0.0F) {
 				this.aFloat289 = this.aFloat287;
 				this.aFloat288 = local8;
-				this.aLong380 = Class303.method27111((byte) 86) * 3830625284655284973L;
+				this.aLong380 = Class303.currentTimeMillis((byte) 86) * 3830625284655284973L;
 				this.aLong379 = this.aLong380 * -2505719051048353477L + -7853543436540050916L;
 			}
 		}
 		if (this.aFloat288 >= 0.0F) {
-			@Pc(47) long local47 = Class303.method27111((byte) 68);
+			@Pc(47) long local47 = Class303.currentTimeMillis((byte) 68);
 			if (local47 > this.aLong379 * -6383271465288744353L) {
 				this.aFloat287 = this.aFloat288;
 				this.aFloat288 = -1.0F;
@@ -255,7 +255,7 @@ public final class Class413 {
 		if (this.anInterface43_1 == null) {
 			this.aFloat288 = arg0;
 			this.aFloat289 = this.aFloat287;
-			this.aLong380 = Class303.method27111((byte) 9) * 3830625284655284973L;
+			this.aLong380 = Class303.currentTimeMillis((byte) 9) * 3830625284655284973L;
 			this.aLong379 = this.aLong380 * -2505719051048353477L + -7853543436540050916L;
 		}
 	}
@@ -265,7 +265,7 @@ public final class Class413 {
 		if (this.anInterface43_1 == null) {
 			this.aFloat288 = arg0;
 			this.aFloat289 = this.aFloat287;
-			this.aLong380 = Class303.method27111((byte) 85) * 3830625284655284973L;
+			this.aLong380 = Class303.currentTimeMillis((byte) 85) * 3830625284655284973L;
 			this.aLong379 = this.aLong380 * -2505719051048353477L + -7853543436540050916L;
 		}
 	}
@@ -277,12 +277,12 @@ public final class Class413 {
 			if (this.aFloat287 != local8 && this.aFloat288 < 0.0F) {
 				this.aFloat289 = this.aFloat287;
 				this.aFloat288 = local8;
-				this.aLong380 = Class303.method27111((byte) 41) * 3830625284655284973L;
+				this.aLong380 = Class303.currentTimeMillis((byte) 41) * 3830625284655284973L;
 				this.aLong379 = this.aLong380 * -2505719051048353477L + -7853543436540050916L;
 			}
 		}
 		if (this.aFloat288 >= 0.0F) {
-			@Pc(47) long local47 = Class303.method27111((byte) 17);
+			@Pc(47) long local47 = Class303.currentTimeMillis((byte) 17);
 			if (local47 > this.aLong379 * -6383271465288744353L) {
 				this.aFloat287 = this.aFloat288;
 				this.aFloat288 = -1.0F;
@@ -304,7 +304,7 @@ public final class Class413 {
 		if (this.anInterface43_1 == null) {
 			this.aFloat288 = arg0;
 			this.aFloat289 = this.aFloat287;
-			this.aLong380 = Class303.method27111((byte) 109) * 3830625284655284973L;
+			this.aLong380 = Class303.currentTimeMillis((byte) 109) * 3830625284655284973L;
 			this.aLong379 = this.aLong380 * -2505719051048353477L + -7853543436540050916L;
 		}
 	}

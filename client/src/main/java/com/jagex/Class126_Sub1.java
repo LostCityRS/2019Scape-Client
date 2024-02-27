@@ -32,7 +32,7 @@ public final class Class126_Sub1 extends Class126 {
 		this.aClass370_2 = arg0;
 		this.aBoolean216 = arg1;
 		this.aFont1 = new Font(arg2, 0, arg3);
-		this.aFontMetrics1 = Class454.aCanvas6.getFontMetrics(this.aFont1);
+		this.aFontMetrics1 = Class454.canvas.getFontMetrics(this.aFont1);
 		this.aColor1 = new Color(arg4);
 	}
 

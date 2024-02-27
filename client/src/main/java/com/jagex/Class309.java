@@ -46,7 +46,7 @@ public final class Class309 implements Interface75 {
 	@OriginalMember(owner = "client!hd", name = "amh", descriptor = "(Lclient!yp;I)V")
 	static void method27450(@OriginalArg(0) Class690 arg0, @OriginalArg(1) int arg1) {
 		if (Class368.anInt4502 * -1583611537 == 3) {
-			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = (int) ((double) Class160.aClass121_Sub1_2.method9648(190317147) * 2607.5945876176133D) >> 3;
+			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = (int) ((double) BufferedSocket.aClass121_Sub1_2.method9648(190317147) * 2607.5945876176133D) >> 3;
 		} else {
 			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = (int) client.aFloat255 >> 3;
 		}
@@ -104,7 +104,7 @@ public final class Class309 implements Interface75 {
 
 	@OriginalMember(owner = "client!hd", name = "f", descriptor = "()I")
 	@Override
-	public int method37268() {
+	public int getId() {
 		return this.anInt4012 * -1221332577;
 	}
 

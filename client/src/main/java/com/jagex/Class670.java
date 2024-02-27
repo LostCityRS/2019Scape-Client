@@ -355,7 +355,7 @@ public final class Class670 {
 		arg0.anInt5778 -= -221471862;
 		@Pc(13) int local13 = arg0.anIntArray525[arg0.anInt5778 * 1896589581];
 		@Pc(26) float local26 = (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1] / 1000.0F;
-		Class160.aClass121_Sub1_2.method9595(local13, local26, -140372461);
+		BufferedSocket.aClass121_Sub1_2.method9595(local13, local26, -140372461);
 	}
 
 	@OriginalMember(owner = "client!xu", name = "eo", descriptor = "(IB)V")

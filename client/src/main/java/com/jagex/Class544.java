@@ -53,10 +53,10 @@ public final class Class544 {
 
 	@OriginalMember(owner = "client!sa", name = "aos", descriptor = "(Lclient!yp;B)V")
 	static void method31180(@OriginalArg(0) Class690 arg0, @OriginalArg(1) byte arg1) {
-		if (!Class160.aClass121_Sub1_2.method9607(-1029056994).method27901(-138509754)) {
+		if (!BufferedSocket.aClass121_Sub1_2.method9607(-1029056994).method27901(-138509754)) {
 			throw new RuntimeException();
 		}
-		@Pc(14) Class123_Sub2 local14 = (Class123_Sub2) Class160.aClass121_Sub1_2.method9603(-1661099790);
+		@Pc(14) Class123_Sub2 local14 = (Class123_Sub2) BufferedSocket.aClass121_Sub1_2.method9603(-1661099790);
 		local14.method20542(Class524.aClass485_2, -1, 0.0F, 1887749978);
 		client.aBoolean726 = true;
 	}

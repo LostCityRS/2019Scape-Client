@@ -12,7 +12,7 @@ import java.util.Stack;
 public final class Class454 implements Interface29 {
 
 	@OriginalMember(owner = "client!o", name = "y", descriptor = "Ljava/awt/Canvas;")
-	public static Canvas aCanvas6;
+	public static Canvas canvas;
 
 	@OriginalMember(owner = "client!o", name = "j", descriptor = "(Ljava/lang/String;I)V")
 	public static void method29302(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1) {
@@ -169,7 +169,7 @@ public final class Class454 implements Interface29 {
 			local96 = (int) local113.aFloat297;
 			local100 = (int) local113.aFloat296;
 			if (Class368.anInt4502 * -1583611537 == 3) {
-				local106 = (int) -((double) Class160.aClass121_Sub1_2.method9648(-2051110487) * 2607.5945876176133D) + client.anInt3474 * -1918431893 & 0x3FFF;
+				local106 = (int) -((double) BufferedSocket.aClass121_Sub1_2.method9648(-2051110487) * 2607.5945876176133D) + client.anInt3474 * -1918431893 & 0x3FFF;
 			} else {
 				local106 = (int) -client.aFloat255 + client.anInt3474 * -1918431893 & 0x3FFF;
 			}

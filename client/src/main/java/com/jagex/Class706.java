@@ -69,7 +69,7 @@ public final class Class706 {
 			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = 1;
 		} else if (Class47.aBoolean28) {
 			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = 0;
-		} else if (Class47.aLong10 * -5301286679800453637L > Class303.method27111((byte) 72) - 1000L) {
+		} else if (Class47.aLong10 * -5301286679800453637L > Class303.currentTimeMillis((byte) 72) - 1000L) {
 			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = 1;
 		} else {
 			Class47.aBoolean28 = true;
@@ -83,7 +83,7 @@ public final class Class706 {
 
 	@OriginalMember(owner = "client!zh", name = "gu", descriptor = "(I)V")
 	public static void method37137(@OriginalArg(0) int arg0) {
-		@Pc(6) Class40 local6 = Class3.method70("2", client.aClass722_4.aString247, true, -1042851952);
+		@Pc(6) Class40 local6 = SecondaryLinkedList.method70("2", client.aClass722_4.aString247, true, -1042851952);
 		Class120_Sub1_Sub1_Sub4.aClass110_Sub1_1.method7299(local6, 1354415048);
 	}
 

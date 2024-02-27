@@ -77,7 +77,7 @@ public final class Class123_Sub3 extends Class123 {
 	static void method10026(@OriginalArg(0) Class690 arg0, @OriginalArg(1) int arg1) {
 		@Pc(7) int local7 = arg0.anIntArray526[arg0.anInt5780 * -1336568839];
 		arg0.anInt5776 -= local7 * -825189621;
-		@Pc(25) String local25 = Class493.method30277(arg0.anObjectArray46, arg0.anInt5776 * -2070619997, local7, -2072054502);
+		@Pc(25) String local25 = Js5MasterIndexArchiveData.method30277(arg0.anObjectArray46, arg0.anInt5776 * -2070619997, local7, -2072054502);
 		arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = local25;
 	}
 

@@ -38,7 +38,7 @@ public abstract class Class113 {
 	@OriginalMember(owner = "client!hb", name = "abw", descriptor = "(Lclient!yp;B)V")
 	static void method8378(@OriginalArg(0) Class690 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(12) int local12 = arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581];
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class134.aClass305_1.method27140(local12, 988927035).method27061((byte) -54).method37268();
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class134.aClass305_1.method27140(local12, 988927035).method27061((byte) -54).getId();
 	}
 
 	@OriginalMember(owner = "client!hb", name = "act", descriptor = "(Lclient!yp;I)V")

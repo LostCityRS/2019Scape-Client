@@ -28,7 +28,7 @@ public final class Class300 implements Interface26 {
 		@Pc(12) int local12 = arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581];
 		@Pc(16) Class327 local16 = Class301.method27041(local12, 2119964923);
 		@Pc(22) Class310 local22 = Class709.aClass310Array1[local12 >> 16];
-		Class493.method30272(local16, local22, arg0, (byte) -13);
+		Js5MasterIndexArchiveData.method30272(local16, local22, arg0, (byte) -13);
 	}
 
 	@OriginalMember(owner = "client!gu", name = "avg", descriptor = "(Lclient!yp;I)V")

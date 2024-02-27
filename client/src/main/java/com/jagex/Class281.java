@@ -358,7 +358,7 @@ public final class Class281 {
 	static void method26861(@OriginalArg(0) Class327 arg0, @OriginalArg(1) Class98 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) String arg7, @OriginalArg(8) Class104 arg8, @OriginalArg(9) Class15 arg9, @OriginalArg(10) int arg10, @OriginalArg(11) int arg11) {
 		@Pc(18) int local18;
 		if (Class368.anInt4502 * -1583611537 == 3) {
-			local18 = (int) ((double) Class160.aClass121_Sub1_2.method9648(-1459697573) * 2607.5945876176133D) + client.anInt3474 * -1918431893 & 0x3FFF;
+			local18 = (int) ((double) BufferedSocket.aClass121_Sub1_2.method9648(-1459697573) * 2607.5945876176133D) + client.anInt3474 * -1918431893 & 0x3FFF;
 		} else if (Class368.anInt4502 * -1583611537 == 4) {
 			local18 = (int) client.aFloat255 & 0x3FFF;
 		} else {

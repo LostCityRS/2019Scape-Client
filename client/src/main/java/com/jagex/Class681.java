@@ -483,7 +483,7 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "dug", descriptor = "(Lclient!yp;)V")
 	static void method33678(@OriginalArg(0) Class690 arg0) {
-		arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = Class634.method32806(Class721.method37333(arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581], (byte) -17), Class512.aClass719_3.method37268(), (byte) 70);
+		arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = Class634.method32806(Class721.method37333(arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581], (byte) -17), Class512.aClass719_3.getId(), (byte) 70);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "bkl", descriptor = "(Lclient!yp;)V")
@@ -694,7 +694,7 @@ public final class Class681 {
 				Class621.method32343(arg1, 751696651);
 				return;
 			case 28:
-				Class3.method68(arg1, -77374291);
+				SecondaryLinkedList.method68(arg1, -77374291);
 				return;
 			case 29:
 				Class636.method32865(arg1, -1304007560);
@@ -961,7 +961,7 @@ public final class Class681 {
 				Class163.method15762(arg1, 716402763);
 				return;
 			case 117:
-				Class492.method30267(arg1, -1744257399);
+				Js5ArchiveIndex.method30267(arg1, -1744257399);
 				return;
 			case 118:
 				Class74.method1310(arg1, 684909268);
@@ -1360,7 +1360,7 @@ public final class Class681 {
 				Class627.method32541(arg1, 1510768564);
 				return;
 			case 250:
-				Class492.method30269(arg1, 1583300936);
+				Js5ArchiveIndex.method30269(arg1, 1583300936);
 				return;
 			case 251:
 				Class373.method28413(arg1, (byte) 14);
@@ -2026,7 +2026,7 @@ public final class Class681 {
 				Class125.method20588(arg1, -1201351294);
 				return;
 			case 472:
-				Class492.method30270(arg1, 1360378002);
+				Js5ArchiveIndex.method30270(arg1, 1360378002);
 				return;
 			case 473:
 				Class510.method30537(arg1, (byte) -71);
@@ -2239,7 +2239,7 @@ public final class Class681 {
 				Class513.method30569(arg1, 1071938878);
 				return;
 			case 544:
-				Class160.method15568(arg1, 1628495457);
+				BufferedSocket.method15568(arg1, 1628495457);
 				return;
 			case 545:
 				Class88.method1791(arg1, (byte) 37);
@@ -2341,7 +2341,7 @@ public final class Class681 {
 				Class679.method33618(arg1, 1251369623);
 				return;
 			case 578:
-				Class436.method29131(arg1, 1757532373);
+				LoginProt.method29131(arg1, 1757532373);
 				return;
 			case 579:
 				Class375.method28450(arg1, 769517615);
@@ -2473,7 +2473,7 @@ public final class Class681 {
 				Class568.method31529(arg1, 2036402581);
 				return;
 			case 622:
-				Class492.method30271(arg1, -819928883);
+				Js5ArchiveIndex.method30271(arg1, -819928883);
 				return;
 			case 623:
 				Class464.method29621(arg1, (byte) 31);
@@ -2566,7 +2566,7 @@ public final class Class681 {
 				Class536.method30877(arg1, 1360519479);
 				return;
 			case 653:
-				Class493.method30274(arg1, -1362578225);
+				Js5MasterIndexArchiveData.method30274(arg1, -1362578225);
 				return;
 			case 654:
 				Class176.method24659(arg1, -1191734417);
@@ -3028,7 +3028,7 @@ public final class Class681 {
 				Class365.method28246(arg1, (byte) 0);
 				return;
 			case 807:
-				Class492.method30268(arg1, (short) 19599);
+				Js5ArchiveIndex.method30268(arg1, (short) 19599);
 				return;
 			case 808:
 				Class176.method24657(arg1, 456982150);
@@ -3205,7 +3205,7 @@ public final class Class681 {
 				Class503.method30452(arg1, 2106587361);
 				return;
 			case 866:
-				Class493.method30275(arg1, -1730131824);
+				Js5MasterIndexArchiveData.method30275(arg1, -1730131824);
 				return;
 			case 867:
 				Class317.method27513(arg1, -476518954);
@@ -3550,7 +3550,7 @@ public final class Class681 {
 				Class464.method29619(arg1, -1134027609);
 				return;
 			case 981:
-				Class436.method29133(arg1, (short) 13548);
+				LoginProt.method29133(arg1, (short) 13548);
 				return;
 			case 982:
 				Class639.method32882(arg1, (byte) -124);
@@ -3874,7 +3874,7 @@ public final class Class681 {
 				Class299.method27026(arg1, 1743290592);
 				return;
 			case 1090:
-				Class518.method30586(arg1, (byte) -1);
+				Js5MasterIndex.method30586(arg1, (byte) -1);
 				return;
 			case 1091:
 				Class143_Sub5.method11844(arg1, 635934386);
@@ -3958,7 +3958,7 @@ public final class Class681 {
 				Class305.method27207(arg1, (short) 15486);
 				return;
 			case 1118:
-				Class3.method69(arg1, 1858492139);
+				SecondaryLinkedList.method69(arg1, 1858492139);
 				return;
 			case 1119:
 				Class328.method27724(arg1, -712730590);
@@ -4051,7 +4051,7 @@ public final class Class681 {
 				Class522.method30639(arg1, (byte) -68);
 				return;
 			case 1149:
-				Class139.method10803(arg1, (byte) -14);
+				Js5NetQueue.method10803(arg1, (byte) -14);
 				return;
 			case 1150:
 				Class632.method32727(arg1, (short) 1066);
@@ -4132,7 +4132,7 @@ public final class Class681 {
 				Class120_Sub1_Sub1_Sub1.method19050(arg1, -105886206);
 				return;
 			case 1176:
-				Class518.method30585(arg1, 1271797231);
+				Js5MasterIndex.method30585(arg1, 1271797231);
 				return;
 			case 1177:
 				Class29.method664(arg1, 769003780);
@@ -4165,7 +4165,7 @@ public final class Class681 {
 				Class688.method36894(arg1, 719400511);
 				return;
 			case 1187:
-				Class518.method30584(arg1, 2146387525);
+				Js5MasterIndex.method30584(arg1, 2146387525);
 				return;
 			case 1188:
 				Class231.method26034(arg1, 1958478679);
@@ -4294,7 +4294,7 @@ public final class Class681 {
 				Class482.method30021(arg1, 1494771582);
 				return;
 			case 1230:
-				Class436.method29132(arg1, -802122592);
+				LoginProt.method29132(arg1, -802122592);
 				return;
 			case 1231:
 				Class491.method30259(arg1, -531859671);
@@ -4429,7 +4429,7 @@ public final class Class681 {
 				Class318.method27526(arg1, 2081609391);
 				return;
 			case 1275:
-				Class139.method10804(arg1, 508996654);
+				Js5NetQueue.method10804(arg1, 508996654);
 				return;
 			case 1276:
 				Class663.method33347(arg1, -1717806662);
@@ -4530,7 +4530,7 @@ public final class Class681 {
 				Class432.method29092(arg1, -2042731255);
 				return;
 			case 1309:
-				Class492.method30265(arg1, (byte) -17);
+				Js5ArchiveIndex.method30265(arg1, (byte) -17);
 				return;
 			case 1310:
 				Class649.method33113(arg1, (short) 255);
@@ -4581,7 +4581,7 @@ public final class Class681 {
 				Class165_Sub33.method16546(arg1, (byte) 22);
 				return;
 			case 1326:
-				Class518.method30587(arg1, (byte) -94);
+				Js5MasterIndex.method30587(arg1, (byte) -94);
 				return;
 			case 1327:
 				Class663.method33351(arg1, 2036747717);
@@ -4620,7 +4620,7 @@ public final class Class681 {
 				Class359.method28140(arg1, -899991951);
 				return;
 			case 1339:
-				Class492.method30264(arg1, -734353682);
+				Js5ArchiveIndex.method30264(arg1, -734353682);
 				return;
 			case 1340:
 				Class527.method30712(arg1, (byte) 14);
@@ -4704,7 +4704,7 @@ public final class Class681 {
 				Class115.method8669(arg1, -1417647010);
 				return;
 			case 1368:
-				Class493.method30273(arg1, -1166495251);
+				Js5MasterIndexArchiveData.method30273(arg1, -1166495251);
 				return;
 			case 1369:
 				Class18.method458(arg1, -1034852111);
@@ -4872,7 +4872,7 @@ public final class Class681 {
 				Class61.method1190(arg1, (short) 13015);
 				return;
 			case 1425:
-				Class436.method29136(arg1, 799559286);
+				LoginProt.method29136(arg1, 799559286);
 				return;
 			case 1426:
 				Class381.method28566(arg1, -1919660850);
@@ -4986,7 +4986,7 @@ public final class Class681 {
 				Class621.method32343(arg1, -305971127);
 				return;
 			case 28:
-				Class3.method68(arg1, -77374291);
+				SecondaryLinkedList.method68(arg1, -77374291);
 				return;
 			case 29:
 				Class636.method32865(arg1, -2021884516);
@@ -5253,7 +5253,7 @@ public final class Class681 {
 				Class163.method15762(arg1, 1822862441);
 				return;
 			case 117:
-				Class492.method30267(arg1, -2037555052);
+				Js5ArchiveIndex.method30267(arg1, -2037555052);
 				return;
 			case 118:
 				Class74.method1310(arg1, -501837954);
@@ -5652,7 +5652,7 @@ public final class Class681 {
 				Class627.method32541(arg1, 1561763876);
 				return;
 			case 250:
-				Class492.method30269(arg1, -2027796871);
+				Js5ArchiveIndex.method30269(arg1, -2027796871);
 				return;
 			case 251:
 				Class373.method28413(arg1, (byte) 14);
@@ -6318,7 +6318,7 @@ public final class Class681 {
 				Class125.method20588(arg1, -1963172958);
 				return;
 			case 472:
-				Class492.method30270(arg1, 1667188953);
+				Js5ArchiveIndex.method30270(arg1, 1667188953);
 				return;
 			case 473:
 				Class510.method30537(arg1, (byte) -27);
@@ -6531,7 +6531,7 @@ public final class Class681 {
 				Class513.method30569(arg1, 1135432132);
 				return;
 			case 544:
-				Class160.method15568(arg1, 1979382385);
+				BufferedSocket.method15568(arg1, 1979382385);
 				return;
 			case 545:
 				Class88.method1791(arg1, (byte) 69);
@@ -6633,7 +6633,7 @@ public final class Class681 {
 				Class679.method33618(arg1, 1251369623);
 				return;
 			case 578:
-				Class436.method29131(arg1, 1225602911);
+				LoginProt.method29131(arg1, 1225602911);
 				return;
 			case 579:
 				Class375.method28450(arg1, 1353244378);
@@ -6765,7 +6765,7 @@ public final class Class681 {
 				Class568.method31529(arg1, -144232664);
 				return;
 			case 622:
-				Class492.method30271(arg1, -1659440252);
+				Js5ArchiveIndex.method30271(arg1, -1659440252);
 				return;
 			case 623:
 				Class464.method29621(arg1, (byte) 31);
@@ -6858,7 +6858,7 @@ public final class Class681 {
 				Class536.method30877(arg1, 1360519479);
 				return;
 			case 653:
-				Class493.method30274(arg1, -1151073888);
+				Js5MasterIndexArchiveData.method30274(arg1, -1151073888);
 				return;
 			case 654:
 				Class176.method24659(arg1, 142597472);
@@ -7320,7 +7320,7 @@ public final class Class681 {
 				Class365.method28246(arg1, (byte) 0);
 				return;
 			case 807:
-				Class492.method30268(arg1, (short) 24736);
+				Js5ArchiveIndex.method30268(arg1, (short) 24736);
 				return;
 			case 808:
 				Class176.method24657(arg1, -1522328016);
@@ -7497,7 +7497,7 @@ public final class Class681 {
 				Class503.method30452(arg1, 1953901682);
 				return;
 			case 866:
-				Class493.method30275(arg1, 1589639171);
+				Js5MasterIndexArchiveData.method30275(arg1, 1589639171);
 				return;
 			case 867:
 				Class317.method27513(arg1, -476518954);
@@ -7842,7 +7842,7 @@ public final class Class681 {
 				Class464.method29619(arg1, -1134027609);
 				return;
 			case 981:
-				Class436.method29133(arg1, (short) 29567);
+				LoginProt.method29133(arg1, (short) 29567);
 				return;
 			case 982:
 				Class639.method32882(arg1, (byte) -78);
@@ -8166,7 +8166,7 @@ public final class Class681 {
 				Class299.method27026(arg1, 1743290592);
 				return;
 			case 1090:
-				Class518.method30586(arg1, (byte) -97);
+				Js5MasterIndex.method30586(arg1, (byte) -97);
 				return;
 			case 1091:
 				Class143_Sub5.method11844(arg1, 635934386);
@@ -8250,7 +8250,7 @@ public final class Class681 {
 				Class305.method27207(arg1, (short) 21491);
 				return;
 			case 1118:
-				Class3.method69(arg1, 1473526499);
+				SecondaryLinkedList.method69(arg1, 1473526499);
 				return;
 			case 1119:
 				Class328.method27724(arg1, 491671876);
@@ -8343,7 +8343,7 @@ public final class Class681 {
 				Class522.method30639(arg1, (byte) -52);
 				return;
 			case 1149:
-				Class139.method10803(arg1, (byte) -78);
+				Js5NetQueue.method10803(arg1, (byte) -78);
 				return;
 			case 1150:
 				Class632.method32727(arg1, (short) 1066);
@@ -8424,7 +8424,7 @@ public final class Class681 {
 				Class120_Sub1_Sub1_Sub1.method19050(arg1, -105886206);
 				return;
 			case 1176:
-				Class518.method30585(arg1, 895248591);
+				Js5MasterIndex.method30585(arg1, 895248591);
 				return;
 			case 1177:
 				Class29.method664(arg1, 1026760699);
@@ -8457,7 +8457,7 @@ public final class Class681 {
 				Class688.method36894(arg1, 719400511);
 				return;
 			case 1187:
-				Class518.method30584(arg1, 2077511816);
+				Js5MasterIndex.method30584(arg1, 2077511816);
 				return;
 			case 1188:
 				Class231.method26034(arg1, 613478527);
@@ -8586,7 +8586,7 @@ public final class Class681 {
 				Class482.method30021(arg1, 562844407);
 				return;
 			case 1230:
-				Class436.method29132(arg1, 2076618596);
+				LoginProt.method29132(arg1, 2076618596);
 				return;
 			case 1231:
 				Class491.method30259(arg1, -1196209682);
@@ -8721,7 +8721,7 @@ public final class Class681 {
 				Class318.method27526(arg1, 2043940932);
 				return;
 			case 1275:
-				Class139.method10804(arg1, 833210812);
+				Js5NetQueue.method10804(arg1, 833210812);
 				return;
 			case 1276:
 				Class663.method33347(arg1, -430043046);
@@ -8822,7 +8822,7 @@ public final class Class681 {
 				Class432.method29092(arg1, 825182482);
 				return;
 			case 1309:
-				Class492.method30265(arg1, (byte) 26);
+				Js5ArchiveIndex.method30265(arg1, (byte) 26);
 				return;
 			case 1310:
 				Class649.method33113(arg1, (short) 255);
@@ -8873,7 +8873,7 @@ public final class Class681 {
 				Class165_Sub33.method16546(arg1, (byte) 38);
 				return;
 			case 1326:
-				Class518.method30587(arg1, (byte) -124);
+				Js5MasterIndex.method30587(arg1, (byte) -124);
 				return;
 			case 1327:
 				Class663.method33351(arg1, 2036747717);
@@ -8912,7 +8912,7 @@ public final class Class681 {
 				Class359.method28140(arg1, -1628012356);
 				return;
 			case 1339:
-				Class492.method30264(arg1, -734353682);
+				Js5ArchiveIndex.method30264(arg1, -734353682);
 				return;
 			case 1340:
 				Class527.method30712(arg1, (byte) 30);
@@ -8996,7 +8996,7 @@ public final class Class681 {
 				Class115.method8669(arg1, -2046581774);
 				return;
 			case 1368:
-				Class493.method30273(arg1, -1925621760);
+				Js5MasterIndexArchiveData.method30273(arg1, -1925621760);
 				return;
 			case 1369:
 				Class18.method458(arg1, -2100563200);
@@ -9164,7 +9164,7 @@ public final class Class681 {
 				Class61.method1190(arg1, (short) 30683);
 				return;
 			case 1425:
-				Class436.method29136(arg1, 1573332409);
+				LoginProt.method29136(arg1, 1573332409);
 				return;
 			case 1426:
 				Class381.method28566(arg1, -620507806);
@@ -9413,7 +9413,7 @@ public final class Class681 {
 	static void method33717(@OriginalArg(0) Class690 arg0) {
 		@Pc(7) int local7 = arg0.anIntArray526[arg0.anInt5780 * -1336568839];
 		arg0.anInt5776 -= local7 * -825189621;
-		@Pc(25) String local25 = Class493.method30277(arg0.anObjectArray46, arg0.anInt5776 * -2070619997, local7, -1736295585);
+		@Pc(25) String local25 = Js5MasterIndexArchiveData.method30277(arg0.anObjectArray46, arg0.anInt5776 * -2070619997, local7, -1736295585);
 		arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = local25;
 	}
 
@@ -9421,7 +9421,7 @@ public final class Class681 {
 	static void method33718(@OriginalArg(0) Class690 arg0) {
 		@Pc(7) int local7 = arg0.anIntArray526[arg0.anInt5780 * -1336568839];
 		arg0.anInt5776 -= local7 * -825189621;
-		@Pc(25) String local25 = Class493.method30277(arg0.anObjectArray46, arg0.anInt5776 * -2070619997, local7, -1655041447);
+		@Pc(25) String local25 = Js5MasterIndexArchiveData.method30277(arg0.anObjectArray46, arg0.anInt5776 * -2070619997, local7, -1655041447);
 		arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = local25;
 	}
 
@@ -9594,7 +9594,7 @@ public final class Class681 {
 		}
 		arg0.anIntArray528[local9] = local32;
 		@Pc(48) byte local48 = -1;
-		if (local19 == Class521.aClass521_65.method37268()) {
+		if (local19 == Class521.aClass521_65.getId()) {
 			local48 = 0;
 		}
 		for (@Pc(56) int local56 = 0; local56 < local32; local56++) {
@@ -9604,7 +9604,7 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "dup", descriptor = "(Lclient!yp;)V")
 	static void method33729(@OriginalArg(0) Class690 arg0) {
-		arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = Class634.method32806(Class721.method37333(arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581], (byte) -60), Class512.aClass719_3.method37268(), (byte) 112);
+		arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = Class634.method32806(Class721.method37333(arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581], (byte) -60), Class512.aClass719_3.getId(), (byte) 112);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "bjb", descriptor = "(Lclient!yp;ZZ)V")
@@ -9715,10 +9715,10 @@ public final class Class681 {
 	static void method33742(@OriginalArg(0) Class690 arg0) {
 		arg0.anInt5778 -= -664415586;
 		@Pc(19) Class80_Sub33 local19 = (Class80_Sub33) arg0.anObjectArray46[(arg0.anInt5776 -= -825189621) * -2070619997];
-		if (Class160.aClass121_Sub1_2.method9702(994699913) != Class347.aClass347_7) {
+		if (BufferedSocket.aClass121_Sub1_2.method9702(994699913) != Class347.aClass347_7) {
 			throw new RuntimeException();
 		}
-		((Class20_Sub3) Class160.aClass121_Sub1_2.method9693(1518265074)).method16637(local19.method14467(-908078923), arg0.anIntArray525[arg0.anInt5778 * 1896589581], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 3], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 4], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 5], 1707432626);
+		((Class20_Sub3) BufferedSocket.aClass121_Sub1_2.method9693(1518265074)).method16637(local19.method14467(-908078923), arg0.anIntArray525[arg0.anInt5778 * 1896589581], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 3], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 4], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 5], 1707432626);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "bjz", descriptor = "(Lclient!yp;)V")
@@ -10037,7 +10037,7 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "eok", descriptor = "(Lclient!yp;)V")
 	static void method33782(@OriginalArg(0) Class690 arg0) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class165_Sub40.method16786(-1819717071).method37268();
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class165_Sub40.method16786(-1819717071).getId();
 	}
 
 	@OriginalMember(owner = "client!yf", name = "bll", descriptor = "(ZLclient!yp;)V")
@@ -10305,7 +10305,7 @@ public final class Class681 {
 		arg0.anInt5778 -= -221471862;
 		@Pc(18) boolean local18 = arg0.anIntArray525[arg0.anInt5778 * 1896589581] == 1;
 		@Pc(33) boolean local33 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1] == 1;
-		Class160.aClass121_Sub1_2.method9594(local18, local33, (byte) 115);
+		BufferedSocket.aClass121_Sub1_2.method9594(local18, local33, (byte) 115);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "bmm", descriptor = "(Lclient!yp;)V")
@@ -10676,10 +10676,10 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "eni", descriptor = "(Lclient!yp;)V")
 	static void method33852(@OriginalArg(0) Class690 arg0) {
-		if (Class160.aClass121_Sub1_2.method9702(591288997) != Class347.aClass347_7) {
+		if (BufferedSocket.aClass121_Sub1_2.method9702(591288997) != Class347.aClass347_7) {
 			throw new RuntimeException();
 		}
-		((Class20_Sub3) Class160.aClass121_Sub1_2.method9693(1595525337)).method16634(arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581], (byte) -79);
+		((Class20_Sub3) BufferedSocket.aClass121_Sub1_2.method9693(1595525337)).method16634(arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581], (byte) -79);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "fpb", descriptor = "(Lclient!yp;)V")
@@ -11266,7 +11266,7 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "fag", descriptor = "(Lclient!yp;)V")
 	static void method33912(@OriginalArg(0) Class690 arg0) {
-		@Pc(2) long local2 = Class303.method27111((byte) 13);
+		@Pc(2) long local2 = Class303.currentTimeMillis((byte) 13);
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class692.method36974(local2);
 	}
 
@@ -12074,7 +12074,7 @@ public final class Class681 {
 		@Pc(12) int local12 = arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581];
 		@Pc(16) Class327 local16 = Class301.method27041(local12, 2060993285);
 		@Pc(22) Class310 local22 = Class709.aClass310Array1[local12 >> 16];
-		Class493.method30272(local16, local22, arg0, (byte) -96);
+		Js5MasterIndexArchiveData.method30272(local16, local22, arg0, (byte) -96);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "buw", descriptor = "(Lclient!yp;)V")
@@ -12082,7 +12082,7 @@ public final class Class681 {
 		@Pc(12) int local12 = arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581];
 		@Pc(16) Class327 local16 = Class301.method27041(local12, 2128161060);
 		@Pc(22) Class310 local22 = Class709.aClass310Array1[local12 >> 16];
-		Class493.method30272(local16, local22, arg0, (byte) -47);
+		Js5MasterIndexArchiveData.method30272(local16, local22, arg0, (byte) -47);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "buk", descriptor = "(Lclient!yp;)V")
@@ -12090,7 +12090,7 @@ public final class Class681 {
 		@Pc(12) int local12 = arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581];
 		@Pc(16) Class327 local16 = Class301.method27041(local12, 2086129374);
 		@Pc(22) Class310 local22 = Class709.aClass310Array1[local12 >> 16];
-		Class493.method30272(local16, local22, arg0, (byte) -48);
+		Js5MasterIndexArchiveData.method30272(local16, local22, arg0, (byte) -48);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "dmu", descriptor = "(Lclient!yp;)V")
@@ -13607,7 +13607,7 @@ public final class Class681 {
 		arg0.anInt5778 -= -221471862;
 		@Pc(13) int local13 = arg0.anIntArray525[arg0.anInt5778 * 1896589581];
 		@Pc(24) float local24 = Class467.method29716(arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1]);
-		@Pc(29) Class80_Sub1_Sub13 local29 = Class160.aClass121_Sub1_2.method9598(local13, 531254025);
+		@Pc(29) Class80_Sub1_Sub13 local29 = BufferedSocket.aClass121_Sub1_2.method9598(local13, 531254025);
 		if (local29 == null) {
 			throw new RuntimeException("");
 		} else if (local29 instanceof Class80_Sub1_Sub13_Sub1) {
@@ -13799,7 +13799,7 @@ public final class Class681 {
 		@Pc(25) float local25 = (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1];
 		@Pc(36) float local36 = (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2];
 		@Pc(49) float local49 = (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 3] / 1000.0F;
-		Class160.aClass121_Sub1_2.method9590(Class463.method29541(local14, local25, local36), local49, (byte) 2);
+		BufferedSocket.aClass121_Sub1_2.method9590(Class463.method29541(local14, local25, local36), local49, (byte) 2);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "cbh", descriptor = "(Lclient!yp;)V")
@@ -14139,10 +14139,10 @@ public final class Class681 {
 	static void method34244(@OriginalArg(0) Class690 arg0) {
 		arg0.anInt5778 -= -664415586;
 		@Pc(19) Class80_Sub33 local19 = (Class80_Sub33) arg0.anObjectArray46[(arg0.anInt5776 -= -825189621) * -2070619997];
-		if (Class160.aClass121_Sub1_2.method9702(480253234) != Class347.aClass347_7) {
+		if (BufferedSocket.aClass121_Sub1_2.method9702(480253234) != Class347.aClass347_7) {
 			throw new RuntimeException();
 		}
-		((Class20_Sub3) Class160.aClass121_Sub1_2.method9693(1445648461)).method16637(local19.method14467(-186060432), arg0.anIntArray525[arg0.anInt5778 * 1896589581], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 3], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 4], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 5], 1707432626);
+		((Class20_Sub3) BufferedSocket.aClass121_Sub1_2.method9693(1445648461)).method16637(local19.method14467(-186060432), arg0.anIntArray525[arg0.anInt5778 * 1896589581], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 3], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 4], arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 5], 1707432626);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "cdx", descriptor = "(Lclient!yp;)V")
@@ -15141,7 +15141,7 @@ public final class Class681 {
 		arg0.anInt5778 -= -221471862;
 		@Pc(13) int local13 = arg0.anIntArray525[arg0.anInt5778 * 1896589581];
 		@Pc(26) float local26 = (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1] / 1000.0F;
-		Class160.aClass121_Sub1_2.method9595(local13, local26, -29780326);
+		BufferedSocket.aClass121_Sub1_2.method9595(local13, local26, -29780326);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "ffn", descriptor = "(Lclient!yp;)V")
@@ -15189,7 +15189,7 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "els", descriptor = "(Lclient!yp;)V")
 	static void method34366(@OriginalArg(0) Class690 arg0) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class160.aClass121_Sub1_2.method9602((byte) 80).anInt4487 * -1638462787;
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = BufferedSocket.aClass121_Sub1_2.method9602((byte) 80).anInt4487 * -1638462787;
 	}
 
 	@OriginalMember(owner = "client!yf", name = "cho", descriptor = "(Lclient!yp;)V")
@@ -15787,8 +15787,8 @@ public final class Class681 {
 		if (-1.0F == local31.aFloat296) {
 			local31.aFloat296 = Float.POSITIVE_INFINITY;
 		}
-		Class160.aClass121_Sub1_2.method9572(local31, 1971638408);
-		Class160.aClass121_Sub1_2.method9680((float) local23 / 1000.0F, (byte) 87);
+		BufferedSocket.aClass121_Sub1_2.method9572(local31, 1971638408);
+		BufferedSocket.aClass121_Sub1_2.method9680((float) local23 / 1000.0F, (byte) 87);
 		local31.method29557();
 	}
 
@@ -15904,7 +15904,7 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "fao", descriptor = "(Lclient!yp;)V")
 	static void method34444(@OriginalArg(0) Class690 arg0) {
-		@Pc(2) long local2 = Class303.method27111((byte) 6);
+		@Pc(2) long local2 = Class303.currentTimeMillis((byte) 6);
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = (int) (local2 / 86400000L) - 11745;
 	}
 
@@ -16177,10 +16177,10 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "emc", descriptor = "(Lclient!yp;)V")
 	static void method34478(@OriginalArg(0) Class690 arg0) {
-		if (Class160.aClass121_Sub1_2.method9607(-2111883209) != Class340.aClass340_5) {
+		if (BufferedSocket.aClass121_Sub1_2.method9607(-2111883209) != Class340.aClass340_5) {
 			throw new RuntimeException();
 		}
-		((Class123_Sub1) Class160.aClass121_Sub1_2.method9603(-2023238847)).method9813(arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581] == 1, (byte) 23);
+		((Class123_Sub1) BufferedSocket.aClass121_Sub1_2.method9603(-2023238847)).method9813(arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581] == 1, (byte) 23);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "cmu", descriptor = "(Lclient!yp;)V")
@@ -16657,8 +16657,8 @@ public final class Class681 {
 		if (local37 == Class337.aClass337_7 || local37 == Class337.aClass337_6 || local37 == Class337.aClass337_3) {
 			local40 = Class467.method29716(local23);
 		}
-		@Pc(65) Class80_Sub1_Sub13_Sub2 local65 = new Class80_Sub1_Sub13_Sub2(Class160.aClass121_Sub1_2.method9722(1381388953), local37, local40, (float) local33 / 1000.0F);
-		Class160.aClass121_Sub1_2.method9596(local65, (byte) 1);
+		@Pc(65) Class80_Sub1_Sub13_Sub2 local65 = new Class80_Sub1_Sub13_Sub2(BufferedSocket.aClass121_Sub1_2.method9722(1381388953), local37, local40, (float) local33 / 1000.0F);
+		BufferedSocket.aClass121_Sub1_2.method9596(local65, (byte) 1);
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local65.anInt3226 * 393755111;
 	}
 
@@ -17563,7 +17563,7 @@ public final class Class681 {
 		@Pc(12) int local12 = arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581];
 		@Pc(16) Class327 local16 = Class301.method27041(local12, 2045848639);
 		@Pc(22) Class310 local22 = Class709.aClass310Array1[local12 >> 16];
-		Class493.method30272(local16, local22, arg0, (byte) -115);
+		Js5MasterIndexArchiveData.method30272(local16, local22, arg0, (byte) -115);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "csa", descriptor = "(Lclient!yp;)V")
@@ -18277,7 +18277,7 @@ public final class Class681 {
 		@Pc(33) int local33 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2];
 		@Pc(46) float local46 = (float) (Math.atan((double) ((float) local13 / 2.0F / (float) local33)) * 2.0D);
 		@Pc(59) float local59 = (float) (Math.atan((double) ((float) local23 / 2.0F / (float) local33)) * 2.0D);
-		Class160.aClass121_Sub1_2.method9645(local46, local59, -1369894272);
+		BufferedSocket.aClass121_Sub1_2.method9645(local46, local59, -1369894272);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "cwk", descriptor = "(Lclient!yp;)V")
@@ -19759,7 +19759,7 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "dcd", descriptor = "(Lclient!yp;)V")
 	static void method34915(@OriginalArg(0) Class690 arg0) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = client.anInt3436;
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = client.currentCycle;
 	}
 
 	@OriginalMember(owner = "client!yf", name = "dcs", descriptor = "(Lclient!yp;)V")
@@ -19958,7 +19958,7 @@ public final class Class681 {
 		arg0.anInt5778 -= -221471862;
 		@Pc(13) int local13 = arg0.anIntArray525[arg0.anInt5778 * 1896589581];
 		@Pc(21) Class463 local21 = Class463.method29541((float) local13, (float) local13, (float) local13);
-		Class160.aClass121_Sub1_2.method9704(local21, (byte) -23);
+		BufferedSocket.aClass121_Sub1_2.method9704(local21, (byte) -23);
 		local21.method29557();
 	}
 
@@ -20202,7 +20202,7 @@ public final class Class681 {
 		@Pc(33) int local33 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2];
 		@Pc(46) float local46 = (float) (Math.atan((double) ((float) local13 / 2.0F / (float) local33)) * 2.0D);
 		@Pc(59) float local59 = (float) (Math.atan((double) ((float) local23 / 2.0F / (float) local33)) * 2.0D);
-		Class160.aClass121_Sub1_2.method9645(local46, local59, -920803260);
+		BufferedSocket.aClass121_Sub1_2.method9645(local46, local59, -920803260);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "dfu", descriptor = "(Lclient!yp;)V")
@@ -20385,7 +20385,7 @@ public final class Class681 {
 		@Pc(8) Class691 local8 = arg0.aBoolean988 ? arg0.aClass691_1 : arg0.aClass691_2;
 		@Pc(11) Class327 local11 = local8.aClass327_14;
 		@Pc(14) Class310 local14 = local8.aClass310_4;
-		Class493.method30272(local11, local14, arg0, (byte) -41);
+		Js5MasterIndexArchiveData.method30272(local11, local14, arg0, (byte) -41);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "ett", descriptor = "(Lclient!yp;)V")
@@ -20434,7 +20434,7 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "dng", descriptor = "(Lclient!yp;)V")
 	static void method35013(@OriginalArg(0) Class690 arg0) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class134.aClass305_1.method27139(-1158489095).method37268();
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class134.aClass305_1.method27139(-1158489095).getId();
 	}
 
 	@OriginalMember(owner = "client!yf", name = "dmf", descriptor = "(Lclient!yp;)V")
@@ -20482,7 +20482,7 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "dgj", descriptor = "(Lclient!yp;)V")
 	static void method35020(@OriginalArg(0) Class690 arg0) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class512.aClass719_3.method37268();
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class512.aClass719_3.getId();
 	}
 
 	@OriginalMember(owner = "client!yf", name = "ftz", descriptor = "(Lclient!yp;)V")
@@ -20530,12 +20530,12 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "dhj", descriptor = "(Lclient!yp;)V")
 	static void method35028(@OriginalArg(0) Class690 arg0) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class597.aBoolean926 ? 1 : 0;
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class597.focus ? 1 : 0;
 	}
 
 	@OriginalMember(owner = "client!yf", name = "dhx", descriptor = "(Lclient!yp;)V")
 	static void method35029(@OriginalArg(0) Class690 arg0) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class597.aBoolean926 ? 1 : 0;
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class597.focus ? 1 : 0;
 	}
 
 	@OriginalMember(owner = "client!yf", name = "cvr", descriptor = "(Lclient!yp;)V")
@@ -20784,9 +20784,9 @@ public final class Class681 {
 		@Pc(33) int local33 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2];
 		@Pc(43) int local43 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 3];
 		@Pc(49) Class50 local49 = (Class50) Class111_Sub1.aClass41_Sub20_1.method18054(local33, 1833678242);
-		if (local49.aClass521_2.method37268() != local13 || local49.aClass521_1.method37268() != local23) {
+		if (local49.aClass521_2.getId() != local13 || local49.aClass521_1.getId() != local23) {
 			throw new RuntimeException(local33 + " " + local43);
-		} else if (local23 == Class521.aClass521_42.method37268()) {
+		} else if (local23 == Class521.aClass521_42.getId()) {
 			arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = local49.method1016(local43, 595480711);
 		} else {
 			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local49.method1033(local43, -1661089869);
@@ -20801,9 +20801,9 @@ public final class Class681 {
 		@Pc(33) int local33 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2];
 		@Pc(43) int local43 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 3];
 		@Pc(49) Class50 local49 = (Class50) Class111_Sub1.aClass41_Sub20_1.method18054(local33, 1646149636);
-		if (local49.aClass521_2.method37268() != local13 || local49.aClass521_1.method37268() != local23) {
+		if (local49.aClass521_2.getId() != local13 || local49.aClass521_1.getId() != local23) {
 			throw new RuntimeException(local33 + " " + local43);
-		} else if (local23 == Class521.aClass521_42.method37268()) {
+		} else if (local23 == Class521.aClass521_42.getId()) {
 			arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = local49.method1016(local43, 95855);
 		} else {
 			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local49.method1033(local43, -913930360);
@@ -20820,7 +20820,7 @@ public final class Class681 {
 			throw new RuntimeException();
 		}
 		@Pc(46) Class50 local46 = (Class50) Class111_Sub1.aClass41_Sub20_1.method18054(local23, -493474855);
-		if (local46.aClass521_1.method37268() != local13) {
+		if (local46.aClass521_1.getId() != local13) {
 			throw new RuntimeException();
 		}
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local46.method1018(local33, (short) -1562) ? 1 : 0;
@@ -20867,7 +20867,7 @@ public final class Class681 {
 			throw new RuntimeException();
 		}
 		@Pc(46) Class50 local46 = (Class50) Class111_Sub1.aClass41_Sub20_1.method18054(local23, -1608642383);
-		if (local46.aClass521_1.method37268() != local13) {
+		if (local46.aClass521_1.getId() != local13) {
 			throw new RuntimeException();
 		}
 		@Pc(61) int[] local61 = local46.method1019(local33, 1896589581);
@@ -20928,9 +20928,9 @@ public final class Class681 {
 			throw new RuntimeException();
 		}
 		@Pc(66) Class50 local66 = (Class50) Class111_Sub1.aClass41_Sub20_1.method18054(local33, 636281566);
-		if (local66.aClass521_2.method37268() != local23) {
+		if (local66.aClass521_2.getId() != local23) {
 			throw new RuntimeException();
-		} else if (local66.aClass521_1.method37268() == local13) {
+		} else if (local66.aClass521_1.getId() == local13) {
 			@Pc(90) int[] local90 = local66.method1019(local43, 1896589581);
 			if (local53 < 0 || local90 == null || local90.length <= local53) {
 				throw new RuntimeException();
@@ -20953,9 +20953,9 @@ public final class Class681 {
 			throw new RuntimeException();
 		}
 		@Pc(66) Class50 local66 = (Class50) Class111_Sub1.aClass41_Sub20_1.method18054(local33, -1575260035);
-		if (local66.aClass521_2.method37268() != local23) {
+		if (local66.aClass521_2.getId() != local23) {
 			throw new RuntimeException();
-		} else if (local66.aClass521_1.method37268() == local13) {
+		} else if (local66.aClass521_1.getId() == local13) {
 			@Pc(90) int[] local90 = local66.method1019(local43, 1896589581);
 			if (local53 < 0 || local90 == null || local90.length <= local53) {
 				throw new RuntimeException();
@@ -20983,9 +20983,9 @@ public final class Class681 {
 			throw new RuntimeException();
 		}
 		@Pc(66) Class50 local66 = (Class50) Class111_Sub1.aClass41_Sub20_1.method18054(local33, 769079256);
-		if (local66.aClass521_2.method37268() != local23) {
+		if (local66.aClass521_2.getId() != local23) {
 			throw new RuntimeException();
-		} else if (local66.aClass521_1.method37268() == local13) {
+		} else if (local66.aClass521_1.getId() == local13) {
 			@Pc(90) int[] local90 = local66.method1019(local43, 1896589581);
 			if (local53 < 0 || local90 == null || local90.length <= local53) {
 				throw new RuntimeException();
@@ -21007,9 +21007,9 @@ public final class Class681 {
 			throw new RuntimeException();
 		}
 		@Pc(60) Class50 local60 = (Class50) Class111_Sub1.aClass41_Sub20_1.method18054(local23, 1297324907);
-		if (local60.aClass521_2.method37268() != local13) {
+		if (local60.aClass521_2.getId() != local13) {
 			throw new RuntimeException();
-		} else if (local60.aClass521_1.method37268() == Class521.aClass521_42.method37268()) {
+		} else if (local60.aClass521_1.getId() == Class521.aClass521_42.getId()) {
 			@Pc(84) int[] local84 = local60.method1019(local47, 1896589581);
 			if (local33 < 0 || local84 == null || local84.length <= local33) {
 				throw new RuntimeException();
@@ -21031,9 +21031,9 @@ public final class Class681 {
 			throw new RuntimeException();
 		}
 		@Pc(60) Class50 local60 = (Class50) Class111_Sub1.aClass41_Sub20_1.method18054(local23, -1577766495);
-		if (local60.aClass521_2.method37268() != local13) {
+		if (local60.aClass521_2.getId() != local13) {
 			throw new RuntimeException();
-		} else if (local60.aClass521_1.method37268() == Class521.aClass521_42.method37268()) {
+		} else if (local60.aClass521_1.getId() == Class521.aClass521_42.getId()) {
 			@Pc(84) int[] local84 = local60.method1019(local47, 1896589581);
 			if (local33 < 0 || local84 == null || local84.length <= local33) {
 				throw new RuntimeException();
@@ -21880,7 +21880,7 @@ public final class Class681 {
 		arg0.anInt5778 -= -221471862;
 		@Pc(13) int local13 = arg0.anIntArray525[arg0.anInt5778 * 1896589581];
 		@Pc(23) int local23 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1];
-		Class160.aClass121_Sub1_2.method9592((float) local13, (float) local23, -810448473);
+		BufferedSocket.aClass121_Sub1_2.method9592((float) local13, (float) local23, -810448473);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "evc", descriptor = "(Lclient!yp;)V")
@@ -22078,7 +22078,7 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "dnj", descriptor = "(Lclient!yp;)V")
 	static void method35193(@OriginalArg(0) Class690 arg0) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class134.aClass305_1.method27139(-1158489095).method37268();
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class134.aClass305_1.method27139(-1158489095).getId();
 	}
 
 	@OriginalMember(owner = "client!yf", name = "dne", descriptor = "(Lclient!yp;)V")
@@ -22258,10 +22258,10 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "emw", descriptor = "(Lclient!yp;)V")
 	static void method35221(@OriginalArg(0) Class690 arg0) {
-		if (Class160.aClass121_Sub1_2.method9607(-287678434) != Class340.aClass340_5) {
+		if (BufferedSocket.aClass121_Sub1_2.method9607(-287678434) != Class340.aClass340_5) {
 			throw new RuntimeException();
 		}
-		((Class123_Sub1) Class160.aClass121_Sub1_2.method9603(-1596849747)).method9813(arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581] == 1, (byte) -20);
+		((Class123_Sub1) BufferedSocket.aClass121_Sub1_2.method9603(-1596849747)).method9813(arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581] == 1, (byte) -20);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "doz", descriptor = "(Lclient!yp;)V")
@@ -22320,7 +22320,7 @@ public final class Class681 {
 		arg0.anInt5778 -= -221471862;
 		@Pc(13) int local13 = arg0.anIntArray525[arg0.anInt5778 * 1896589581];
 		@Pc(21) Class463 local21 = Class463.method29541((float) local13, (float) local13, (float) local13);
-		Class160.aClass121_Sub1_2.method9704(local21, (byte) 35);
+		BufferedSocket.aClass121_Sub1_2.method9704(local21, (byte) 35);
 		local21.method29557();
 	}
 
@@ -22442,9 +22442,9 @@ public final class Class681 {
 		arg0.anInt5778 -= -221471862;
 		@Pc(13) int local13 = arg0.anIntArray525[arg0.anInt5778 * 1896589581];
 		@Pc(23) int local23 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1];
-		@Pc(33) Class3 local33 = Class159.method15416(local13 >> 14 & 0x3FFF, local13 & 0x3FFF);
+		@Pc(33) SecondaryLinkedList local33 = Class159.method15416(local13 >> 14 & 0x3FFF, local13 & 0x3FFF);
 		@Pc(35) boolean local35 = false;
-		for (@Pc(40) Class80_Sub1_Sub12 local40 = (Class80_Sub1_Sub12) local33.method50((byte) -37); local40 != null; local40 = (Class80_Sub1_Sub12) local33.method46((byte) -102)) {
+		for (@Pc(40) Class80_Sub1_Sub12 local40 = (Class80_Sub1_Sub12) local33.head((byte) -37); local40 != null; local40 = (Class80_Sub1_Sub12) local33.next((byte) -102)) {
 			if (local40.anInt3091 * 1774210559 == local23) {
 				local35 = true;
 				break;
@@ -22760,7 +22760,7 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "emr", descriptor = "(Lclient!yp;)V")
 	static void method35290(@OriginalArg(0) Class690 arg0) throws Exception_Sub3 {
-		Class160.aClass121_Sub1_2.method9610((float) arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581] / 1000.0F, 1848255038);
+		BufferedSocket.aClass121_Sub1_2.method9610((float) arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581] / 1000.0F, 1848255038);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "cju", descriptor = "(Lclient!hx;Lclient!he;Lclient!yp;)V")
@@ -23758,7 +23758,7 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "dvb", descriptor = "(Lclient!yp;)V")
 	static void method35409(@OriginalArg(0) Class690 arg0) {
-		arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = Class546.method31208((long) arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581] * 60000L, Class512.aClass719_3.method37268(), true, -197060662) + " UTC";
+		arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = Class546.method31208((long) arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581] * 60000L, Class512.aClass719_3.getId(), true, -197060662) + " UTC";
 	}
 
 	@OriginalMember(owner = "client!yf", name = "cvp", descriptor = "(Lclient!yp;)V")
@@ -23959,8 +23959,8 @@ public final class Class681 {
 	@OriginalMember(owner = "client!yf", name = "emq", descriptor = "(Lclient!yp;)V")
 	static void method35435(@OriginalArg(0) Class690 arg0) {
 		@Pc(13) float local13 = Class467.method29716(arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581]);
-		@Pc(21) Class80_Sub1_Sub13_Sub1 local21 = new Class80_Sub1_Sub13_Sub1(Class160.aClass121_Sub1_2.method9722(1381388953), local13);
-		Class160.aClass121_Sub1_2.method9596(local21, (byte) 1);
+		@Pc(21) Class80_Sub1_Sub13_Sub1 local21 = new Class80_Sub1_Sub13_Sub1(BufferedSocket.aClass121_Sub1_2.method9722(1381388953), local13);
+		BufferedSocket.aClass121_Sub1_2.method9596(local21, (byte) 1);
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local21.anInt3226 * 393755111;
 	}
 
@@ -24087,19 +24087,19 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "dxx", descriptor = "(Lclient!yp;)V")
 	static void method35454(@OriginalArg(0) Class690 arg0) {
-		if (Class518.anIntArray466 == null || Class679.anInt5743 * 410636669 >= Class518.anIntArray466.length) {
+		if (Js5MasterIndex.anIntArray466 == null || Class679.anInt5743 * 410636669 >= Js5MasterIndex.anIntArray466.length) {
 			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = -1;
 		} else {
-			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class518.anIntArray466[(Class679.anInt5743 += -182063147) * 410636669 - 1] & 0xFFFF;
+			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Js5MasterIndex.anIntArray466[(Class679.anInt5743 += -182063147) * 410636669 - 1] & 0xFFFF;
 		}
 	}
 
 	@OriginalMember(owner = "client!yf", name = "dxw", descriptor = "(Lclient!yp;)V")
 	static void method35455(@OriginalArg(0) Class690 arg0) {
-		if (Class518.anIntArray466 == null || Class679.anInt5743 * 410636669 >= Class518.anIntArray466.length) {
+		if (Js5MasterIndex.anIntArray466 == null || Class679.anInt5743 * 410636669 >= Js5MasterIndex.anIntArray466.length) {
 			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = -1;
 		} else {
-			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class518.anIntArray466[(Class679.anInt5743 += -182063147) * 410636669 - 1] & 0xFFFF;
+			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Js5MasterIndex.anIntArray466[(Class679.anInt5743 += -182063147) * 410636669 - 1] & 0xFFFF;
 		}
 	}
 
@@ -24434,7 +24434,7 @@ public final class Class681 {
 			arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = local28.aString114 == null ? "" : local28.aString114;
 			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local28.anInt3101 * -949162007;
 			arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = local28.aString112 == null ? "" : local28.aString112;
-			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local28.aClass452_1 == null ? -1 : local28.aClass452_1.method37268();
+			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local28.aClass452_1 == null ? -1 : local28.aClass452_1.getId();
 			return;
 		}
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = -1;
@@ -24465,7 +24465,7 @@ public final class Class681 {
 			arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = local28.aString114 == null ? "" : local28.aString114;
 			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local28.anInt3101 * -949162007;
 			arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = local28.aString112 == null ? "" : local28.aString112;
-			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local28.aClass452_1 == null ? -1 : local28.aClass452_1.method37268();
+			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local28.aClass452_1 == null ? -1 : local28.aClass452_1.getId();
 			return;
 		}
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = -1;
@@ -24495,7 +24495,7 @@ public final class Class681 {
 			arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = local17.aString114 == null ? "" : local17.aString114;
 			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local17.anInt3101 * -949162007;
 			arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = local17.aString112 == null ? "" : local17.aString112;
-			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local17.aClass452_1 == null ? -1 : local17.aClass452_1.method37268();
+			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local17.aClass452_1 == null ? -1 : local17.aClass452_1.getId();
 			return;
 		}
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = -1;
@@ -24570,7 +24570,7 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "eom", descriptor = "(Lclient!yp;)V")
 	static void method35501(@OriginalArg(0) Class690 arg0) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class165_Sub40.method16786(-1819717071).method37268();
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class165_Sub40.method16786(-1819717071).getId();
 	}
 
 	@OriginalMember(owner = "client!yf", name = "dzr", descriptor = "(Lclient!yp;)V")
@@ -25721,9 +25721,9 @@ public final class Class681 {
 		arg0.anInt5778 -= -221471862;
 		@Pc(13) int local13 = arg0.anIntArray525[arg0.anInt5778 * 1896589581];
 		@Pc(23) int local23 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1];
-		@Pc(33) Class3 local33 = Class159.method15416(local13 >> 14 & 0x3FFF, local13 & 0x3FFF);
+		@Pc(33) SecondaryLinkedList local33 = Class159.method15416(local13 >> 14 & 0x3FFF, local13 & 0x3FFF);
 		@Pc(35) boolean local35 = false;
-		for (@Pc(40) Class80_Sub1_Sub12 local40 = (Class80_Sub1_Sub12) local33.method50((byte) 28); local40 != null; local40 = (Class80_Sub1_Sub12) local33.method46((byte) -102)) {
+		for (@Pc(40) Class80_Sub1_Sub12 local40 = (Class80_Sub1_Sub12) local33.head((byte) 28); local40 != null; local40 = (Class80_Sub1_Sub12) local33.next((byte) -102)) {
 			if (local40.anInt3091 * 1774210559 == local23) {
 				local35 = true;
 				break;
@@ -25786,8 +25786,8 @@ public final class Class681 {
 		if (local31.aFloat296 == -1.0F) {
 			local31.aFloat296 = Float.POSITIVE_INFINITY;
 		}
-		Class160.aClass121_Sub1_2.method9583(local31, -351030388);
-		Class160.aClass121_Sub1_2.method9610((float) local23 / 1000.0F, 1395555259);
+		BufferedSocket.aClass121_Sub1_2.method9583(local31, -351030388);
+		BufferedSocket.aClass121_Sub1_2.method9610((float) local23 / 1000.0F, 1395555259);
 		local31.method29557();
 	}
 
@@ -26398,7 +26398,7 @@ public final class Class681 {
 		arg0.anInt5778 -= -221471862;
 		@Pc(13) int local13 = arg0.anIntArray525[arg0.anInt5778 * 1896589581];
 		@Pc(23) int local23 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1];
-		Class160.aClass121_Sub1_2.method9645((float) ((double) local13 * 3.141592653589793D * 2.0D / 16384.0D), (float) ((double) local23 * 2.0D * 3.141592653589793D / 16384.0D), -1723898045);
+		BufferedSocket.aClass121_Sub1_2.method9645((float) ((double) local13 * 3.141592653589793D * 2.0D / 16384.0D), (float) ((double) local23 * 2.0D * 3.141592653589793D / 16384.0D), -1723898045);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "egu", descriptor = "(Lclient!yp;)V")
@@ -26881,7 +26881,7 @@ public final class Class681 {
 	@OriginalMember(owner = "client!yf", name = "eij", descriptor = "(Lclient!yp;)V")
 	static void method35741(@OriginalArg(0) Class690 arg0) {
 		if (Class368.anInt4502 * -1583611537 == 3) {
-			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = (int) ((double) Class160.aClass121_Sub1_2.method9648(699248992) * 2607.5945876176133D) >> 3;
+			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = (int) ((double) BufferedSocket.aClass121_Sub1_2.method9648(699248992) * 2607.5945876176133D) >> 3;
 		} else {
 			arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = (int) client.aFloat255 >> 3;
 		}
@@ -27096,21 +27096,21 @@ public final class Class681 {
 	@OriginalMember(owner = "client!yf", name = "ejt", descriptor = "(Lclient!yp;)V")
 	static void method35766(@OriginalArg(0) Class690 arg0) throws Exception_Sub3 {
 		@Pc(12) int local12 = arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581];
-		Class160.aClass121_Sub1_2.method9577(Class169.method21691(local12, (byte) 45), true, 2017844762);
+		BufferedSocket.aClass121_Sub1_2.method9577(Class169.method21691(local12, (byte) 45), true, 2017844762);
 		client.aBoolean726 = true;
 	}
 
 	@OriginalMember(owner = "client!yf", name = "ejq", descriptor = "(Lclient!yp;)V")
 	static void method35767(@OriginalArg(0) Class690 arg0) throws Exception_Sub3 {
 		@Pc(12) int local12 = arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581];
-		Class160.aClass121_Sub1_2.method9577(Class169.method21691(local12, (byte) 68), true, -718693484);
+		BufferedSocket.aClass121_Sub1_2.method9577(Class169.method21691(local12, (byte) 68), true, -718693484);
 		client.aBoolean726 = true;
 	}
 
 	@OriginalMember(owner = "client!yf", name = "ejn", descriptor = "(Lclient!yp;)V")
 	static void method35768(@OriginalArg(0) Class690 arg0) throws Exception_Sub3 {
 		@Pc(12) int local12 = arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581];
-		Class160.aClass121_Sub1_2.method9577(Class169.method21691(local12, (byte) 61), true, 1352151521);
+		BufferedSocket.aClass121_Sub1_2.method9577(Class169.method21691(local12, (byte) 61), true, 1352151521);
 		client.aBoolean726 = true;
 	}
 
@@ -27122,7 +27122,7 @@ public final class Class681 {
 	@OriginalMember(owner = "client!yf", name = "ejm", descriptor = "(Lclient!yp;)V")
 	static void method35770(@OriginalArg(0) Class690 arg0) throws Exception_Sub3 {
 		@Pc(12) int local12 = arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581];
-		Class160.aClass121_Sub1_2.method9647(Class567.method31516(local12, (byte) 1), true, -890945517);
+		BufferedSocket.aClass121_Sub1_2.method9647(Class567.method31516(local12, (byte) 1), true, -890945517);
 		client.aBoolean726 = true;
 	}
 
@@ -27141,8 +27141,8 @@ public final class Class681 {
 		if (local31.aFloat296 == -1.0F) {
 			local31.aFloat296 = Float.POSITIVE_INFINITY;
 		}
-		Class160.aClass121_Sub1_2.method9583(local31, -351030388);
-		Class160.aClass121_Sub1_2.method9610((float) local23 / 1000.0F, 2083362530);
+		BufferedSocket.aClass121_Sub1_2.method9583(local31, -351030388);
+		BufferedSocket.aClass121_Sub1_2.method9610((float) local23 / 1000.0F, 2083362530);
 		local31.method29557();
 	}
 
@@ -27167,8 +27167,8 @@ public final class Class681 {
 		if (local31.aFloat296 == -1.0F) {
 			local31.aFloat296 = Float.POSITIVE_INFINITY;
 		}
-		Class160.aClass121_Sub1_2.method9583(local31, -351030388);
-		Class160.aClass121_Sub1_2.method9610((float) local23 / 1000.0F, 1410689235);
+		BufferedSocket.aClass121_Sub1_2.method9583(local31, -351030388);
+		BufferedSocket.aClass121_Sub1_2.method9610((float) local23 / 1000.0F, 1410689235);
 		local31.method29557();
 	}
 
@@ -27187,8 +27187,8 @@ public final class Class681 {
 		if (-1.0F == local31.aFloat296) {
 			local31.aFloat296 = Float.POSITIVE_INFINITY;
 		}
-		Class160.aClass121_Sub1_2.method9572(local31, 1995938312);
-		Class160.aClass121_Sub1_2.method9680((float) local23 / 1000.0F, (byte) 85);
+		BufferedSocket.aClass121_Sub1_2.method9572(local31, 1995938312);
+		BufferedSocket.aClass121_Sub1_2.method9680((float) local23 / 1000.0F, (byte) 85);
 		local31.method29557();
 	}
 
@@ -27214,8 +27214,8 @@ public final class Class681 {
 		if (-1.0F == local31.aFloat296) {
 			local31.aFloat296 = Float.POSITIVE_INFINITY;
 		}
-		Class160.aClass121_Sub1_2.method9572(local31, 1944277293);
-		Class160.aClass121_Sub1_2.method9680((float) local23 / 1000.0F, (byte) 14);
+		BufferedSocket.aClass121_Sub1_2.method9572(local31, 1944277293);
+		BufferedSocket.aClass121_Sub1_2.method9680((float) local23 / 1000.0F, (byte) 14);
 		local31.method29557();
 	}
 
@@ -27231,7 +27231,7 @@ public final class Class681 {
 		arg0.anInt5778 -= -221471862;
 		@Pc(13) int local13 = arg0.anIntArray525[arg0.anInt5778 * 1896589581];
 		@Pc(21) Class463 local21 = Class463.method29541((float) local13, (float) local13, (float) local13);
-		Class160.aClass121_Sub1_2.method9704(local21, (byte) 33);
+		BufferedSocket.aClass121_Sub1_2.method9704(local21, (byte) 33);
 		local21.method29557();
 	}
 
@@ -27264,7 +27264,7 @@ public final class Class681 {
 		arg0.anInt5778 -= -221471862;
 		@Pc(13) int local13 = arg0.anIntArray525[arg0.anInt5778 * 1896589581];
 		@Pc(21) Class463 local21 = Class463.method29541((float) local13, (float) local13, (float) local13);
-		Class160.aClass121_Sub1_2.method9588(local21, (short) 255);
+		BufferedSocket.aClass121_Sub1_2.method9588(local21, (short) 255);
 		local21.method29557();
 	}
 
@@ -27273,7 +27273,7 @@ public final class Class681 {
 		arg0.anInt5778 -= -221471862;
 		@Pc(13) int local13 = arg0.anIntArray525[arg0.anInt5778 * 1896589581];
 		@Pc(21) Class463 local21 = Class463.method29541((float) local13, (float) local13, (float) local13);
-		Class160.aClass121_Sub1_2.method9588(local21, (short) 255);
+		BufferedSocket.aClass121_Sub1_2.method9588(local21, (short) 255);
 		local21.method29557();
 	}
 
@@ -27282,7 +27282,7 @@ public final class Class681 {
 		arg0.anInt5778 -= -221471862;
 		@Pc(13) int local13 = arg0.anIntArray525[arg0.anInt5778 * 1896589581];
 		@Pc(21) Class463 local21 = Class463.method29541((float) local13, (float) local13, (float) local13);
-		Class160.aClass121_Sub1_2.method9588(local21, (short) 255);
+		BufferedSocket.aClass121_Sub1_2.method9588(local21, (short) 255);
 		local21.method29557();
 	}
 
@@ -27301,7 +27301,7 @@ public final class Class681 {
 		arg0.anInt5778 -= -221471862;
 		@Pc(13) int local13 = arg0.anIntArray525[arg0.anInt5778 * 1896589581];
 		@Pc(23) int local23 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1];
-		Class160.aClass121_Sub1_2.method9592((float) local13, (float) local23, 898424059);
+		BufferedSocket.aClass121_Sub1_2.method9592((float) local13, (float) local23, 898424059);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "dxc", descriptor = "(Lclient!yp;)V")
@@ -27315,16 +27315,16 @@ public final class Class681 {
 		arg0.anInt5778 -= -221471862;
 		@Pc(13) int local13 = arg0.anIntArray525[arg0.anInt5778 * 1896589581];
 		@Pc(23) int local23 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1];
-		Class160.aClass121_Sub1_2.method9645((float) ((double) local13 * 3.141592653589793D * 2.0D / 16384.0D), (float) ((double) local23 * 2.0D * 3.141592653589793D / 16384.0D), -1016848215);
+		BufferedSocket.aClass121_Sub1_2.method9645((float) ((double) local13 * 3.141592653589793D * 2.0D / 16384.0D), (float) ((double) local23 * 2.0D * 3.141592653589793D / 16384.0D), -1016848215);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "ekh", descriptor = "(Lclient!yp;)V")
 	static void method35787(@OriginalArg(0) Class690 arg0) {
 		@Pc(13) Class80_Sub33 local13 = (Class80_Sub33) arg0.anObjectArray46[(arg0.anInt5776 -= -825189621) * -2070619997];
-		if (Class160.aClass121_Sub1_2.method9702(870994254) != Class347.aClass347_4) {
+		if (BufferedSocket.aClass121_Sub1_2.method9702(870994254) != Class347.aClass347_4) {
 			throw new RuntimeException();
 		}
-		@Pc(27) Class20_Sub2 local27 = (Class20_Sub2) Class160.aClass121_Sub1_2.method9693(1960272156);
+		@Pc(27) Class20_Sub2 local27 = (Class20_Sub2) BufferedSocket.aClass121_Sub1_2.method9693(1960272156);
 		local27.method16504(local13, (short) 18002);
 		client.aBoolean726 = true;
 	}
@@ -27340,10 +27340,10 @@ public final class Class681 {
 	@OriginalMember(owner = "client!yf", name = "ekw", descriptor = "(Lclient!yp;)V")
 	static void method35789(@OriginalArg(0) Class690 arg0) {
 		@Pc(13) Class80_Sub33 local13 = (Class80_Sub33) arg0.anObjectArray46[(arg0.anInt5776 -= -825189621) * -2070619997];
-		if (Class160.aClass121_Sub1_2.method9607(-2017685160) != Class340.aClass340_5) {
+		if (BufferedSocket.aClass121_Sub1_2.method9607(-2017685160) != Class340.aClass340_5) {
 			throw new RuntimeException();
 		}
-		@Pc(27) Class123_Sub1 local27 = (Class123_Sub1) Class160.aClass121_Sub1_2.method9603(-1934919799);
+		@Pc(27) Class123_Sub1 local27 = (Class123_Sub1) BufferedSocket.aClass121_Sub1_2.method9603(-1934919799);
 		local27.method9811(local13, -1171720930);
 		client.aBoolean726 = true;
 	}
@@ -27390,10 +27390,10 @@ public final class Class681 {
 		@Pc(53) int local53 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 4];
 		@Pc(68) boolean local68 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 5] == 1;
 		@Pc(78) int local78 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 6];
-		if (Class160.aClass121_Sub1_2.method9607(-808003284) != Class340.aClass340_7) {
+		if (BufferedSocket.aClass121_Sub1_2.method9607(-808003284) != Class340.aClass340_7) {
 			throw new RuntimeException();
 		}
-		@Pc(92) Class123_Sub3 local92 = (Class123_Sub3) Class160.aClass121_Sub1_2.method9603(-1993867386);
+		@Pc(92) Class123_Sub3 local92 = (Class123_Sub3) BufferedSocket.aClass121_Sub1_2.method9603(-1993867386);
 		@Pc(96) Class466 local96 = new Class466();
 		@Pc(100) Class466 local100 = new Class466();
 		local96.method29645(0.0F, 1.0F, 0.0F, (float) ((double) local53 * 3.141592653589793D * 2.0D / 16384.0D));
@@ -27421,10 +27421,10 @@ public final class Class681 {
 		@Pc(53) int local53 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 4];
 		@Pc(68) boolean local68 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 5] == 1;
 		@Pc(78) int local78 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 6];
-		if (Class160.aClass121_Sub1_2.method9607(-1748518445) != Class340.aClass340_7) {
+		if (BufferedSocket.aClass121_Sub1_2.method9607(-1748518445) != Class340.aClass340_7) {
 			throw new RuntimeException();
 		}
-		@Pc(92) Class123_Sub3 local92 = (Class123_Sub3) Class160.aClass121_Sub1_2.method9603(-1554463327);
+		@Pc(92) Class123_Sub3 local92 = (Class123_Sub3) BufferedSocket.aClass121_Sub1_2.method9603(-1554463327);
 		@Pc(96) Class466 local96 = new Class466();
 		@Pc(100) Class466 local100 = new Class466();
 		local96.method29645(0.0F, 1.0F, 0.0F, (float) ((double) local53 * 3.141592653589793D * 2.0D / 16384.0D));
@@ -27471,7 +27471,7 @@ public final class Class681 {
 		@Pc(33) int local33 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2];
 		@Pc(46) float local46 = (float) (Math.atan((double) ((float) local13 / 2.0F / (float) local33)) * 2.0D);
 		@Pc(59) float local59 = (float) (Math.atan((double) ((float) local23 / 2.0F / (float) local33)) * 2.0D);
-		Class160.aClass121_Sub1_2.method9645(local46, local59, 1077129443);
+		BufferedSocket.aClass121_Sub1_2.method9645(local46, local59, 1077129443);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "frz", descriptor = "(Lclient!yp;)V")
@@ -27482,20 +27482,20 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "ekq", descriptor = "(Lclient!yp;)V")
 	static void method35800(@OriginalArg(0) Class690 arg0) {
-		if (!Class160.aClass121_Sub1_2.method9607(10526119).method27901(2134577018)) {
+		if (!BufferedSocket.aClass121_Sub1_2.method9607(10526119).method27901(2134577018)) {
 			throw new RuntimeException();
 		}
-		@Pc(14) Class123_Sub2 local14 = (Class123_Sub2) Class160.aClass121_Sub1_2.method9603(-1751158278);
+		@Pc(14) Class123_Sub2 local14 = (Class123_Sub2) BufferedSocket.aClass121_Sub1_2.method9603(-1751158278);
 		local14.method20542(Class524.aClass485_2, -1, 0.0F, 973219268);
 		client.aBoolean726 = true;
 	}
 
 	@OriginalMember(owner = "client!yf", name = "elm", descriptor = "(Lclient!yp;)V")
 	static void method35801(@OriginalArg(0) Class690 arg0) {
-		if (!Class160.aClass121_Sub1_2.method9702(676614891).method27979(-1617893387)) {
+		if (!BufferedSocket.aClass121_Sub1_2.method9702(676614891).method27979(-1617893387)) {
 			throw new RuntimeException();
 		}
-		@Pc(14) Class20_Sub4 local14 = (Class20_Sub4) Class160.aClass121_Sub1_2.method9693(1597428861);
+		@Pc(14) Class20_Sub4 local14 = (Class20_Sub4) BufferedSocket.aClass121_Sub1_2.method9693(1597428861);
 		local14.method23097(Class524.aClass485_2, -1, 0.0F, 170479727);
 		client.aBoolean726 = true;
 	}
@@ -27521,58 +27521,58 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "eka", descriptor = "(Lclient!yp;)V")
 	static void method35804(@OriginalArg(0) Class690 arg0) {
-		if (Class160.aClass121_Sub1_2.method9607(-443454477) != Class340.aClass340_5) {
+		if (BufferedSocket.aClass121_Sub1_2.method9607(-443454477) != Class340.aClass340_5) {
 			throw new RuntimeException();
 		}
-		arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = Class160.aClass121_Sub1_2.method9628(-384644629);
+		arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = BufferedSocket.aClass121_Sub1_2.method9628(-384644629);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "ela", descriptor = "(Lclient!yp;)V")
 	static void method35805(@OriginalArg(0) Class690 arg0) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class160.aClass121_Sub1_2.method9602((byte) 62).anInt4487 * -1638462787;
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = BufferedSocket.aClass121_Sub1_2.method9602((byte) 62).anInt4487 * -1638462787;
 	}
 
 	@OriginalMember(owner = "client!yf", name = "elr", descriptor = "(Lclient!yp;)V")
 	static void method35806(@OriginalArg(0) Class690 arg0) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class160.aClass121_Sub1_2.method9602((byte) 44).anInt4487 * -1638462787;
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = BufferedSocket.aClass121_Sub1_2.method9602((byte) 44).anInt4487 * -1638462787;
 	}
 
 	@OriginalMember(owner = "client!yf", name = "elv", descriptor = "(Lclient!yp;)V")
 	static void method35807(@OriginalArg(0) Class690 arg0) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class160.aClass121_Sub1_2.method9702(1768050084) == null ? -1 : Class160.aClass121_Sub1_2.method9702(2134250785).anInt4252 * 1583199675;
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = BufferedSocket.aClass121_Sub1_2.method9702(1768050084) == null ? -1 : BufferedSocket.aClass121_Sub1_2.method9702(2134250785).anInt4252 * 1583199675;
 	}
 
 	@OriginalMember(owner = "client!yf", name = "eln", descriptor = "(Lclient!yp;)V")
 	static void method35808(@OriginalArg(0) Class690 arg0) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class160.aClass121_Sub1_2.method9607(-17633854) == null ? -1 : Class160.aClass121_Sub1_2.method9607(-1566837538).anInt4242 * -1796689509;
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = BufferedSocket.aClass121_Sub1_2.method9607(-17633854) == null ? -1 : BufferedSocket.aClass121_Sub1_2.method9607(-1566837538).anInt4242 * -1796689509;
 	}
 
 	@OriginalMember(owner = "client!yf", name = "elw", descriptor = "(Lclient!yp;)V")
 	static void method35809(@OriginalArg(0) Class690 arg0) {
-		if (Class160.aClass121_Sub1_2.method9607(-1112421599) != Class340.aClass340_7) {
+		if (BufferedSocket.aClass121_Sub1_2.method9607(-1112421599) != Class340.aClass340_7) {
 			throw new RuntimeException();
 		}
-		@Pc(13) Class123_Sub3 local13 = (Class123_Sub3) Class160.aClass121_Sub1_2.method9603(-1874759496);
+		@Pc(13) Class123_Sub3 local13 = (Class123_Sub3) BufferedSocket.aClass121_Sub1_2.method9603(-1874759496);
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = (int) ((double) local13.method10007(-142978624) * 2607.5945876176133D) & 0x3FFF;
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = (int) ((double) local13.method10008(1539344491) * 2607.5945876176133D) & 0x3FFF;
 	}
 
 	@OriginalMember(owner = "client!yf", name = "elg", descriptor = "(Lclient!yp;)V")
 	static void method35810(@OriginalArg(0) Class690 arg0) {
-		if (Class160.aClass121_Sub1_2.method9607(27288423) != Class340.aClass340_7) {
+		if (BufferedSocket.aClass121_Sub1_2.method9607(27288423) != Class340.aClass340_7) {
 			throw new RuntimeException();
 		}
-		@Pc(13) Class123_Sub3 local13 = (Class123_Sub3) Class160.aClass121_Sub1_2.method9603(-2037847829);
+		@Pc(13) Class123_Sub3 local13 = (Class123_Sub3) BufferedSocket.aClass121_Sub1_2.method9603(-2037847829);
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = (int) ((double) local13.method10007(-336607651) * 2607.5945876176133D) & 0x3FFF;
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = (int) ((double) local13.method10008(-309990301) * 2607.5945876176133D) & 0x3FFF;
 	}
 
 	@OriginalMember(owner = "client!yf", name = "elz", descriptor = "(Lclient!yp;)V")
 	static void method35811(@OriginalArg(0) Class690 arg0) {
-		if (Class160.aClass121_Sub1_2.method9607(-60802114) != Class340.aClass340_7) {
+		if (BufferedSocket.aClass121_Sub1_2.method9607(-60802114) != Class340.aClass340_7) {
 			throw new RuntimeException();
 		}
-		@Pc(13) Class123_Sub3 local13 = (Class123_Sub3) Class160.aClass121_Sub1_2.method9603(-2045365172);
+		@Pc(13) Class123_Sub3 local13 = (Class123_Sub3) BufferedSocket.aClass121_Sub1_2.method9603(-2045365172);
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = (int) ((double) local13.method10007(-1905324528) * 2607.5945876176133D) & 0x3FFF;
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = (int) ((double) local13.method10008(168784982) * 2607.5945876176133D) & 0x3FFF;
 	}
@@ -27588,8 +27588,8 @@ public final class Class681 {
 		if (local37 == Class337.aClass337_7 || local37 == Class337.aClass337_6 || local37 == Class337.aClass337_3) {
 			local40 = Class467.method29716(local23);
 		}
-		@Pc(65) Class80_Sub1_Sub13_Sub2 local65 = new Class80_Sub1_Sub13_Sub2(Class160.aClass121_Sub1_2.method9722(1381388953), local37, local40, (float) local33 / 1000.0F);
-		Class160.aClass121_Sub1_2.method9596(local65, (byte) 1);
+		@Pc(65) Class80_Sub1_Sub13_Sub2 local65 = new Class80_Sub1_Sub13_Sub2(BufferedSocket.aClass121_Sub1_2.method9722(1381388953), local37, local40, (float) local33 / 1000.0F);
+		BufferedSocket.aClass121_Sub1_2.method9596(local65, (byte) 1);
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local65.anInt3226 * 393755111;
 	}
 
@@ -27604,8 +27604,8 @@ public final class Class681 {
 		if (local37 == Class337.aClass337_7 || local37 == Class337.aClass337_6 || local37 == Class337.aClass337_3) {
 			local40 = Class467.method29716(local23);
 		}
-		@Pc(65) Class80_Sub1_Sub13_Sub2 local65 = new Class80_Sub1_Sub13_Sub2(Class160.aClass121_Sub1_2.method9722(1381388953), local37, local40, (float) local33 / 1000.0F);
-		Class160.aClass121_Sub1_2.method9596(local65, (byte) 1);
+		@Pc(65) Class80_Sub1_Sub13_Sub2 local65 = new Class80_Sub1_Sub13_Sub2(BufferedSocket.aClass121_Sub1_2.method9722(1381388953), local37, local40, (float) local33 / 1000.0F);
+		BufferedSocket.aClass121_Sub1_2.method9596(local65, (byte) 1);
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local65.anInt3226 * 393755111;
 	}
 
@@ -27620,8 +27620,8 @@ public final class Class681 {
 		if (local37 == Class337.aClass337_7 || local37 == Class337.aClass337_6 || local37 == Class337.aClass337_3) {
 			local40 = Class467.method29716(local23);
 		}
-		@Pc(65) Class80_Sub1_Sub13_Sub2 local65 = new Class80_Sub1_Sub13_Sub2(Class160.aClass121_Sub1_2.method9722(1381388953), local37, local40, (float) local33 / 1000.0F);
-		Class160.aClass121_Sub1_2.method9596(local65, (byte) 1);
+		@Pc(65) Class80_Sub1_Sub13_Sub2 local65 = new Class80_Sub1_Sub13_Sub2(BufferedSocket.aClass121_Sub1_2.method9722(1381388953), local37, local40, (float) local33 / 1000.0F);
+		BufferedSocket.aClass121_Sub1_2.method9596(local65, (byte) 1);
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local65.anInt3226 * 393755111;
 	}
 
@@ -27636,8 +27636,8 @@ public final class Class681 {
 		if (local37 == Class337.aClass337_7 || local37 == Class337.aClass337_6 || local37 == Class337.aClass337_3) {
 			local40 = Class467.method29716(local23);
 		}
-		@Pc(65) Class80_Sub1_Sub13_Sub2 local65 = new Class80_Sub1_Sub13_Sub2(Class160.aClass121_Sub1_2.method9722(1381388953), local37, local40, (float) local33 / 1000.0F);
-		Class160.aClass121_Sub1_2.method9596(local65, (byte) 1);
+		@Pc(65) Class80_Sub1_Sub13_Sub2 local65 = new Class80_Sub1_Sub13_Sub2(BufferedSocket.aClass121_Sub1_2.method9722(1381388953), local37, local40, (float) local33 / 1000.0F);
+		BufferedSocket.aClass121_Sub1_2.method9596(local65, (byte) 1);
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local65.anInt3226 * 393755111;
 	}
 
@@ -27649,7 +27649,7 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "elk", descriptor = "(Lclient!yp;)V")
 	static void method35817(@OriginalArg(0) Class690 arg0) {
-		Class160.aClass121_Sub1_2.method9599((byte) -18);
+		BufferedSocket.aClass121_Sub1_2.method9599((byte) -18);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "elf", descriptor = "(Lclient!yp;)V")
@@ -27669,8 +27669,8 @@ public final class Class681 {
 		if (-1.0F == local51.aFloat296) {
 			local51.aFloat296 = Float.POSITIVE_INFINITY;
 		}
-		Class160.aClass121_Sub1_2.method9583(local51, -351030388);
-		Class160.aClass121_Sub1_2.method9610((float) local43 / 1000.0F, 1388655007);
+		BufferedSocket.aClass121_Sub1_2.method9583(local51, -351030388);
+		BufferedSocket.aClass121_Sub1_2.method9610((float) local43 / 1000.0F, 1388655007);
 		local51.method29557();
 	}
 
@@ -27681,7 +27681,7 @@ public final class Class681 {
 		@Pc(23) int local23 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1];
 		@Pc(33) int local33 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2];
 		@Pc(41) Class463 local41 = Class463.method29541((float) local13, (float) local23, (float) local33);
-		Class160.aClass121_Sub1_2.method9704(local41, (byte) -35);
+		BufferedSocket.aClass121_Sub1_2.method9704(local41, (byte) -35);
 		local41.method29557();
 	}
 
@@ -27692,7 +27692,7 @@ public final class Class681 {
 		@Pc(23) int local23 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1];
 		@Pc(33) int local33 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2];
 		@Pc(41) Class463 local41 = Class463.method29541((float) local13, (float) local23, (float) local33);
-		Class160.aClass121_Sub1_2.method9704(local41, (byte) 26);
+		BufferedSocket.aClass121_Sub1_2.method9704(local41, (byte) 26);
 		local41.method29557();
 	}
 
@@ -27703,7 +27703,7 @@ public final class Class681 {
 		@Pc(23) int local23 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1];
 		@Pc(33) int local33 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2];
 		@Pc(41) Class463 local41 = Class463.method29541((float) local13, (float) local23, (float) local33);
-		Class160.aClass121_Sub1_2.method9704(local41, (byte) -48);
+		BufferedSocket.aClass121_Sub1_2.method9704(local41, (byte) -48);
 		local41.method29557();
 	}
 
@@ -27714,18 +27714,18 @@ public final class Class681 {
 		@Pc(23) int local23 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1];
 		@Pc(33) int local33 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2];
 		@Pc(41) Class463 local41 = Class463.method29541((float) local13, (float) local23, (float) local33);
-		Class160.aClass121_Sub1_2.method9588(local41, (short) 255);
+		BufferedSocket.aClass121_Sub1_2.method9588(local41, (short) 255);
 		local41.method29557();
 	}
 
 	@OriginalMember(owner = "client!yf", name = "eld", descriptor = "(Lclient!yp;)V")
 	static void method35823(@OriginalArg(0) Class690 arg0) {
 		@Pc(12) int local12 = arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581];
-		if (Class160.aClass121_Sub1_2.method9607(-1444897068) != Class340.aClass340_7 || Class160.aClass121_Sub1_2.method9702(1234751797) != Class347.aClass347_3) {
+		if (BufferedSocket.aClass121_Sub1_2.method9607(-1444897068) != Class340.aClass340_7 || BufferedSocket.aClass121_Sub1_2.method9702(1234751797) != Class347.aClass347_3) {
 			throw new RuntimeException();
 		}
-		@Pc(31) Class123_Sub3 local31 = (Class123_Sub3) Class160.aClass121_Sub1_2.method9603(-1669398831);
-		@Pc(36) Class20_Sub5 local36 = (Class20_Sub5) Class160.aClass121_Sub1_2.method9693(1377025683);
+		@Pc(31) Class123_Sub3 local31 = (Class123_Sub3) BufferedSocket.aClass121_Sub1_2.method9603(-1669398831);
+		@Pc(36) Class20_Sub5 local36 = (Class20_Sub5) BufferedSocket.aClass121_Sub1_2.method9693(1377025683);
 		@Pc(40) Class463 local40 = local31.method10019(733244767);
 		@Pc(43) Class463 local43 = Class463.method29472(local40);
 		local43.aFloat295 += local12;
@@ -27751,11 +27751,11 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "ele", descriptor = "(Lclient!yp;)V")
 	static void method35824(@OriginalArg(0) Class690 arg0) {
-		if (Class160.aClass121_Sub1_2.method9607(-131199656) != Class340.aClass340_7 || Class160.aClass121_Sub1_2.method9702(1496791689) != Class347.aClass347_3) {
+		if (BufferedSocket.aClass121_Sub1_2.method9607(-131199656) != Class340.aClass340_7 || BufferedSocket.aClass121_Sub1_2.method9702(1496791689) != Class347.aClass347_3) {
 			throw new RuntimeException();
 		}
-		@Pc(20) Class463 local20 = ((Class123_Sub3) Class160.aClass121_Sub1_2.method9603(-1586171585)).method10019(-383040385);
-		@Pc(27) Class463 local27 = ((Class20_Sub5) Class160.aClass121_Sub1_2.method9693(1731947638)).method16940(727935540);
+		@Pc(20) Class463 local20 = ((Class123_Sub3) BufferedSocket.aClass121_Sub1_2.method9603(-1586171585)).method10019(-383040385);
+		@Pc(27) Class463 local27 = ((Class20_Sub5) BufferedSocket.aClass121_Sub1_2.method9693(1731947638)).method16940(727935540);
 		@Pc(30) Class463 local30 = Class463.method29472(local20);
 		local30.method29486(local27);
 		@Pc(40) float local40 = Class490.method30239(local30.aFloat297, local30.aFloat296, (byte) 83);
@@ -27764,11 +27764,11 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "elx", descriptor = "(Lclient!yp;)V")
 	static void method35825(@OriginalArg(0) Class690 arg0) {
-		if (Class160.aClass121_Sub1_2.method9607(-862010725) != Class340.aClass340_7 || Class160.aClass121_Sub1_2.method9702(1601861235) != Class347.aClass347_3) {
+		if (BufferedSocket.aClass121_Sub1_2.method9607(-862010725) != Class340.aClass340_7 || BufferedSocket.aClass121_Sub1_2.method9702(1601861235) != Class347.aClass347_3) {
 			throw new RuntimeException();
 		}
-		@Pc(20) Class463 local20 = ((Class123_Sub3) Class160.aClass121_Sub1_2.method9603(-1670736449)).method10019(1023014539);
-		@Pc(27) Class463 local27 = ((Class20_Sub5) Class160.aClass121_Sub1_2.method9693(1777567797)).method16940(1940830511);
+		@Pc(20) Class463 local20 = ((Class123_Sub3) BufferedSocket.aClass121_Sub1_2.method9603(-1670736449)).method10019(1023014539);
+		@Pc(27) Class463 local27 = ((Class20_Sub5) BufferedSocket.aClass121_Sub1_2.method9693(1777567797)).method16940(1940830511);
 		@Pc(30) Class463 local30 = Class463.method29472(local20);
 		local30.method29486(local27);
 		@Pc(40) float local40 = Class490.method30239(local30.aFloat297, local30.aFloat296, (byte) 87);
@@ -27790,7 +27790,7 @@ public final class Class681 {
 		arg0.anInt5778 -= -221471862;
 		@Pc(18) boolean local18 = arg0.anIntArray525[arg0.anInt5778 * 1896589581] == 1;
 		@Pc(33) boolean local33 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1] == 1;
-		Class160.aClass121_Sub1_2.method9594(local18, local33, (byte) 115);
+		BufferedSocket.aClass121_Sub1_2.method9594(local18, local33, (byte) 115);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "epx", descriptor = "(Lclient!yp;)V")
@@ -27806,8 +27806,8 @@ public final class Class681 {
 	@OriginalMember(owner = "client!yf", name = "emt", descriptor = "(Lclient!yp;)V")
 	static void method35830(@OriginalArg(0) Class690 arg0) {
 		@Pc(13) float local13 = Class467.method29716(arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581]);
-		@Pc(21) Class80_Sub1_Sub13_Sub1 local21 = new Class80_Sub1_Sub13_Sub1(Class160.aClass121_Sub1_2.method9722(1381388953), local13);
-		Class160.aClass121_Sub1_2.method9596(local21, (byte) 1);
+		@Pc(21) Class80_Sub1_Sub13_Sub1 local21 = new Class80_Sub1_Sub13_Sub1(BufferedSocket.aClass121_Sub1_2.method9722(1381388953), local13);
+		BufferedSocket.aClass121_Sub1_2.method9596(local21, (byte) 1);
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local21.anInt3226 * 393755111;
 	}
 
@@ -27824,7 +27824,7 @@ public final class Class681 {
 		arg0.anInt5778 -= -221471862;
 		@Pc(13) int local13 = arg0.anIntArray525[arg0.anInt5778 * 1896589581];
 		@Pc(24) float local24 = Class467.method29716(arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1]);
-		@Pc(29) Class80_Sub1_Sub13 local29 = Class160.aClass121_Sub1_2.method9598(local13, 531254025);
+		@Pc(29) Class80_Sub1_Sub13 local29 = BufferedSocket.aClass121_Sub1_2.method9598(local13, 531254025);
 		if (local29 == null) {
 			throw new RuntimeException("");
 		} else if (local29 instanceof Class80_Sub1_Sub13_Sub1) {
@@ -27842,10 +27842,10 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "eky", descriptor = "(Lclient!yp;)V")
 	static void method35834(@OriginalArg(0) Class690 arg0) {
-		if (Class160.aClass121_Sub1_2.method9607(-1440115018) != Class340.aClass340_5) {
+		if (BufferedSocket.aClass121_Sub1_2.method9607(-1440115018) != Class340.aClass340_5) {
 			throw new RuntimeException();
 		}
-		arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = Class160.aClass121_Sub1_2.method9628(1103275411);
+		arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = BufferedSocket.aClass121_Sub1_2.method9628(1103275411);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "emo", descriptor = "(Lclient!yp;)V")
@@ -27853,7 +27853,7 @@ public final class Class681 {
 		arg0.anInt5778 -= -221471862;
 		@Pc(13) int local13 = arg0.anIntArray525[arg0.anInt5778 * 1896589581];
 		@Pc(26) float local26 = (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1] / 1000.0F;
-		Class160.aClass121_Sub1_2.method9595(local13, local26, -157178057);
+		BufferedSocket.aClass121_Sub1_2.method9595(local13, local26, -157178057);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "emv", descriptor = "(Lclient!yp;)V")
@@ -27863,7 +27863,7 @@ public final class Class681 {
 		if (local16 == null) {
 			throw new RuntimeException();
 		}
-		Class160.aClass121_Sub1_2.method9649(local16, (byte) 33);
+		BufferedSocket.aClass121_Sub1_2.method9649(local16, (byte) 33);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "emg", descriptor = "(Lclient!yp;)V")
@@ -27873,7 +27873,7 @@ public final class Class681 {
 		if (local16 == null) {
 			throw new RuntimeException();
 		}
-		Class160.aClass121_Sub1_2.method9649(local16, (byte) 107);
+		BufferedSocket.aClass121_Sub1_2.method9649(local16, (byte) 107);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "eme", descriptor = "(Lclient!yp;)V")
@@ -27883,7 +27883,7 @@ public final class Class681 {
 		@Pc(25) float local25 = (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1];
 		@Pc(36) float local36 = (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2];
 		@Pc(49) float local49 = (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 3] / 1000.0F;
-		Class160.aClass121_Sub1_2.method9589(Class463.method29541(local14, local25, local36), local49, (byte) 0);
+		BufferedSocket.aClass121_Sub1_2.method9589(Class463.method29541(local14, local25, local36), local49, (byte) 0);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "emh", descriptor = "(Lclient!yp;)V")
@@ -27893,7 +27893,7 @@ public final class Class681 {
 		@Pc(25) float local25 = (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1];
 		@Pc(36) float local36 = (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2];
 		@Pc(49) float local49 = (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 3] / 1000.0F;
-		Class160.aClass121_Sub1_2.method9589(Class463.method29541(local14, local25, local36), local49, (byte) -38);
+		BufferedSocket.aClass121_Sub1_2.method9589(Class463.method29541(local14, local25, local36), local49, (byte) -38);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "cnn", descriptor = "(Lclient!yp;)V")
@@ -27906,12 +27906,12 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "emu", descriptor = "(Lclient!yp;)V")
 	static void method35841(@OriginalArg(0) Class690 arg0) throws Exception_Sub3 {
-		Class160.aClass121_Sub1_2.method9610((float) arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581] / 1000.0F, 1425805790);
+		BufferedSocket.aClass121_Sub1_2.method9610((float) arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581] / 1000.0F, 1425805790);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "emp", descriptor = "(Lclient!yp;)V")
 	static void method35842(@OriginalArg(0) Class690 arg0) throws Exception_Sub3 {
-		Class160.aClass121_Sub1_2.method9680((float) arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581] / 1000.0F, (byte) 121);
+		BufferedSocket.aClass121_Sub1_2.method9680((float) arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581] / 1000.0F, (byte) 121);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "djg", descriptor = "(Lclient!yp;)V")
@@ -27940,7 +27940,7 @@ public final class Class681 {
 		@Pc(25) float local25 = (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1];
 		@Pc(36) float local36 = (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2];
 		@Pc(49) float local49 = (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 3] / 1000.0F;
-		Class160.aClass121_Sub1_2.method9591(Class463.method29541(local14, local25, local36), local49, 757397694);
+		BufferedSocket.aClass121_Sub1_2.method9591(Class463.method29541(local14, local25, local36), local49, 757397694);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "eml", descriptor = "(Lclient!yp;)V")
@@ -27950,7 +27950,7 @@ public final class Class681 {
 		@Pc(25) float local25 = (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1];
 		@Pc(36) float local36 = (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2];
 		@Pc(49) float local49 = (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 3] / 1000.0F;
-		Class160.aClass121_Sub1_2.method9591(Class463.method29541(local14, local25, local36), local49, 757397694);
+		BufferedSocket.aClass121_Sub1_2.method9591(Class463.method29541(local14, local25, local36), local49, 757397694);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "fow", descriptor = "(Lclient!yp;)V")
@@ -27997,28 +27997,28 @@ public final class Class681 {
 	@OriginalMember(owner = "client!yf", name = "enf", descriptor = "(Lclient!yp;)V")
 	static void method35852(@OriginalArg(0) Class690 arg0) throws Exception_Sub3 {
 		arg0.anInt5778 -= 1815275855;
-		Class160.aClass121_Sub1_2.method9606((float) arg0.anIntArray525[arg0.anInt5778 * 1896589581], (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1], (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2], -1827977621);
+		BufferedSocket.aClass121_Sub1_2.method9606((float) arg0.anIntArray525[arg0.anInt5778 * 1896589581], (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1], (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2], -1827977621);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "enb", descriptor = "(Lclient!yp;)V")
 	static void method35853(@OriginalArg(0) Class690 arg0) throws Exception_Sub3 {
 		arg0.anInt5778 -= 1815275855;
-		Class160.aClass121_Sub1_2.method9606((float) arg0.anIntArray525[arg0.anInt5778 * 1896589581], (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1], (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2], -1827977621);
+		BufferedSocket.aClass121_Sub1_2.method9606((float) arg0.anIntArray525[arg0.anInt5778 * 1896589581], (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1], (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2], -1827977621);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "enk", descriptor = "(Lclient!yp;)V")
 	static void method35854(@OriginalArg(0) Class690 arg0) throws Exception_Sub3 {
-		Class160.aClass121_Sub1_2.method9586(-854037568);
+		BufferedSocket.aClass121_Sub1_2.method9586(-854037568);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "enp", descriptor = "(Lclient!yp;)V")
 	static void method35855(@OriginalArg(0) Class690 arg0) throws Exception_Sub3 {
-		Class160.aClass121_Sub1_2.method9586(-854037568);
+		BufferedSocket.aClass121_Sub1_2.method9586(-854037568);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "eng", descriptor = "(Lclient!yp;)V")
 	static void method35856(@OriginalArg(0) Class690 arg0) throws Exception_Sub3 {
-		Class160.aClass121_Sub1_2.method9586(-854037568);
+		BufferedSocket.aClass121_Sub1_2.method9586(-854037568);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "cop", descriptor = "(Lclient!yp;)V")
@@ -28031,18 +28031,18 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "eno", descriptor = "(Lclient!yp;)V")
 	static void method35858(@OriginalArg(0) Class690 arg0) {
-		if (Class160.aClass121_Sub1_2.method9702(1496778706) != Class347.aClass347_7) {
+		if (BufferedSocket.aClass121_Sub1_2.method9702(1496778706) != Class347.aClass347_7) {
 			throw new RuntimeException();
 		}
-		((Class20_Sub3) Class160.aClass121_Sub1_2.method9693(1493930380)).method16650(arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581], 1614481170);
+		((Class20_Sub3) BufferedSocket.aClass121_Sub1_2.method9693(1493930380)).method16650(arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581], 1614481170);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "env", descriptor = "(Lclient!yp;)V")
 	static void method35859(@OriginalArg(0) Class690 arg0) {
-		if (Class160.aClass121_Sub1_2.method9702(1381610846) != Class347.aClass347_7) {
+		if (BufferedSocket.aClass121_Sub1_2.method9702(1381610846) != Class347.aClass347_7) {
 			throw new RuntimeException();
 		}
-		((Class20_Sub3) Class160.aClass121_Sub1_2.method9693(1580534542)).method16650(arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581], 1191663429);
+		((Class20_Sub3) BufferedSocket.aClass121_Sub1_2.method9693(1580534542)).method16650(arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581], 1191663429);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "emb", descriptor = "(Lclient!yp;)V")
@@ -28203,12 +28203,12 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "eoe", descriptor = "(Lclient!yp;)V")
 	static void method35884(@OriginalArg(0) Class690 arg0) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class218.method25872(-857349188).method37268();
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class218.method25872(-857349188).getId();
 	}
 
 	@OriginalMember(owner = "client!yf", name = "eoo", descriptor = "(Lclient!yp;)V")
 	static void method35885(@OriginalArg(0) Class690 arg0) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class218.method25872(2083307038).method37268();
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class218.method25872(2083307038).getId();
 	}
 
 	@OriginalMember(owner = "client!yf", name = "bvy", descriptor = "(Lclient!hx;Lclient!he;Lclient!yp;)V")
@@ -28237,12 +28237,12 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "eon", descriptor = "(Lclient!yp;)V")
 	static void method35888(@OriginalArg(0) Class690 arg0) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class165_Sub40.method16786(-1819717071).method37268();
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class165_Sub40.method16786(-1819717071).getId();
 	}
 
 	@OriginalMember(owner = "client!yf", name = "eoh", descriptor = "(Lclient!yp;)V")
 	static void method35889(@OriginalArg(0) Class690 arg0) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class165_Sub40.method16786(-1819717071).method37268();
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class165_Sub40.method16786(-1819717071).getId();
 	}
 
 	@OriginalMember(owner = "client!yf", name = "dxe", descriptor = "(Lclient!yp;)V")
@@ -28258,7 +28258,7 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "eof", descriptor = "(Lclient!yp;)V")
 	static void method35892(@OriginalArg(0) Class690 arg0) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class103.method19210((short) 22393).method37268();
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class103.method19210((short) 22393).getId();
 	}
 
 	@OriginalMember(owner = "client!yf", name = "eou", descriptor = "(Lclient!yp;)V")
@@ -28268,7 +28268,7 @@ public final class Class681 {
 		if (local5 == null) {
 			local5 = "";
 		}
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local2.method37268();
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local2.getId();
 		arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = local5;
 	}
 
@@ -28279,7 +28279,7 @@ public final class Class681 {
 		if (local5 == null) {
 			local5 = "";
 		}
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local2.method37268();
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = local2.getId();
 		arg0.anObjectArray46[(arg0.anInt5776 += -825189621) * -2070619997 - 1] = local5;
 	}
 
@@ -28612,7 +28612,7 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "fsp", descriptor = "(Lclient!yp;)V")
 	static void method35949(@OriginalArg(0) Class690 arg0) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = client.aClass65_15.method37268();
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = client.aClass65_15.getId();
 	}
 
 	@OriginalMember(owner = "client!yf", name = "crc", descriptor = "(Lclient!yp;)V")
@@ -30301,7 +30301,7 @@ public final class Class681 {
 	@OriginalMember(owner = "client!yf", name = "elj", descriptor = "(Lclient!yp;)V")
 	static void method36181(@OriginalArg(0) Class690 arg0) {
 		@Pc(12) int local12 = arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581];
-		Class160.aClass121_Sub1_2.method9639(local12, 1981616141);
+		BufferedSocket.aClass121_Sub1_2.method9639(local12, 1981616141);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "ezk", descriptor = "(Lclient!yp;)V")
@@ -30430,7 +30430,7 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "eoz", descriptor = "(Lclient!yp;)V")
 	static void method36204(@OriginalArg(0) Class690 arg0) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class218.method25872(554224818).method37268();
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class218.method25872(554224818).getId();
 	}
 
 	@OriginalMember(owner = "client!yf", name = "fam", descriptor = "(Lclient!yp;)V")
@@ -30454,7 +30454,7 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "fai", descriptor = "(Lclient!yp;)V")
 	static void method36208(@OriginalArg(0) Class690 arg0) {
-		@Pc(2) long local2 = Class303.method27111((byte) 6);
+		@Pc(2) long local2 = Class303.currentTimeMillis((byte) 6);
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = (int) (local2 / 60000L);
 	}
 
@@ -30467,7 +30467,7 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "faj", descriptor = "(Lclient!yp;)V")
 	static void method36210(@OriginalArg(0) Class690 arg0) {
-		@Pc(2) long local2 = Class303.method27111((byte) 41);
+		@Pc(2) long local2 = Class303.currentTimeMillis((byte) 41);
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class692.method36974(local2);
 	}
 
@@ -30477,7 +30477,7 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "fax", descriptor = "(Lclient!yp;)V")
 	static void method36212(@OriginalArg(0) Class690 arg0) {
-		@Pc(2) long local2 = Class303.method27111((byte) 76);
+		@Pc(2) long local2 = Class303.currentTimeMillis((byte) 76);
 		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class692.method36974(local2);
 	}
 
@@ -30631,10 +30631,10 @@ public final class Class681 {
 	@OriginalMember(owner = "client!yf", name = "ekn", descriptor = "(Lclient!yp;)V")
 	static void method36222(@OriginalArg(0) Class690 arg0) {
 		@Pc(13) Class80_Sub33 local13 = (Class80_Sub33) arg0.anObjectArray46[(arg0.anInt5776 -= -825189621) * -2070619997];
-		if (Class160.aClass121_Sub1_2.method9702(146899117) != Class347.aClass347_4) {
+		if (BufferedSocket.aClass121_Sub1_2.method9702(146899117) != Class347.aClass347_4) {
 			throw new RuntimeException();
 		}
-		@Pc(27) Class20_Sub2 local27 = (Class20_Sub2) Class160.aClass121_Sub1_2.method9693(1519340158);
+		@Pc(27) Class20_Sub2 local27 = (Class20_Sub2) BufferedSocket.aClass121_Sub1_2.method9693(1519340158);
 		local27.method16504(local13, (short) 18002);
 		client.aBoolean726 = true;
 	}
@@ -30795,7 +30795,7 @@ public final class Class681 {
 	@OriginalMember(owner = "client!yf", name = "ejh", descriptor = "(Lclient!yp;)V")
 	static void method36243(@OriginalArg(0) Class690 arg0) throws Exception_Sub3 {
 		@Pc(12) int local12 = arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581];
-		Class160.aClass121_Sub1_2.method9577(Class169.method21691(local12, (byte) 120), true, 1205498648);
+		BufferedSocket.aClass121_Sub1_2.method9577(Class169.method21691(local12, (byte) 120), true, 1205498648);
 		client.aBoolean726 = true;
 	}
 
@@ -32054,7 +32054,7 @@ public final class Class681 {
 	@OriginalMember(owner = "client!yf", name = "dmd", descriptor = "(Lclient!yp;)V")
 	static void method36418(@OriginalArg(0) Class690 arg0) {
 		@Pc(12) int local12 = arg0.anIntArray525[(arg0.anInt5778 -= 2036747717) * 1896589581];
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class134.aClass305_1.method27140(local12, 879496222).method27061((byte) -97).method37268();
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class134.aClass305_1.method27140(local12, 879496222).method27061((byte) -97).getId();
 	}
 
 	@OriginalMember(owner = "client!yf", name = "fig", descriptor = "(Lclient!yp;)V")
@@ -32199,7 +32199,7 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "eoi", descriptor = "(Lclient!yp;)V")
 	static void method36437(@OriginalArg(0) Class690 arg0) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class165_Sub40.method16786(-1819717071).method37268();
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class165_Sub40.method16786(-1819717071).getId();
 	}
 
 	@OriginalMember(owner = "client!yf", name = "ckx", descriptor = "(Lclient!yp;)V")
@@ -32314,9 +32314,9 @@ public final class Class681 {
 			throw new RuntimeException();
 		}
 		@Pc(66) Class50 local66 = (Class50) Class111_Sub1.aClass41_Sub20_1.method18054(local33, 1080344556);
-		if (local66.aClass521_2.method37268() != local23) {
+		if (local66.aClass521_2.getId() != local23) {
 			throw new RuntimeException();
-		} else if (local66.aClass521_1.method37268() == local13) {
+		} else if (local66.aClass521_1.getId() == local13) {
 			@Pc(90) int[] local90 = local66.method1019(local43, 1896589581);
 			if (local53 < 0 || local90 == null || local90.length <= local53) {
 				throw new RuntimeException();
@@ -33090,7 +33090,7 @@ public final class Class681 {
 		@Pc(33) int local33 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2];
 		@Pc(46) float local46 = (float) (Math.atan((double) ((float) local13 / 2.0F / (float) local33)) * 2.0D);
 		@Pc(59) float local59 = (float) (Math.atan((double) ((float) local23 / 2.0F / (float) local33)) * 2.0D);
-		Class160.aClass121_Sub1_2.method9645(local46, local59, -500738861);
+		BufferedSocket.aClass121_Sub1_2.method9645(local46, local59, -500738861);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "dzc", descriptor = "(Lclient!yp;)V")
@@ -33361,7 +33361,7 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "elc", descriptor = "(Lclient!yp;)V")
 	static void method36598(@OriginalArg(0) Class690 arg0) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class160.aClass121_Sub1_2.method9602((byte) 37).anInt4487 * -1638462787;
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = BufferedSocket.aClass121_Sub1_2.method9602((byte) 37).anInt4487 * -1638462787;
 	}
 
 	@OriginalMember(owner = "client!yf", name = "bmu", descriptor = "(Lclient!yp;)V")
@@ -33845,7 +33845,7 @@ public final class Class681 {
 		@Pc(25) float local25 = (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1];
 		@Pc(36) float local36 = (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2];
 		@Pc(49) float local49 = (float) arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 3] / 1000.0F;
-		Class160.aClass121_Sub1_2.method9590(Class463.method29541(local14, local25, local36), local49, (byte) 104);
+		BufferedSocket.aClass121_Sub1_2.method9590(Class463.method29541(local14, local25, local36), local49, (byte) 104);
 	}
 
 	@OriginalMember(owner = "client!yf", name = "fra", descriptor = "(Lclient!yp;)V")
@@ -34075,7 +34075,7 @@ public final class Class681 {
 
 	@OriginalMember(owner = "client!yf", name = "eli", descriptor = "(Lclient!yp;)V")
 	static void method36678(@OriginalArg(0) Class690 arg0) {
-		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = Class160.aClass121_Sub1_2.method9602((byte) 69).anInt4487 * -1638462787;
+		arg0.anIntArray525[(arg0.anInt5778 += 2036747717) * 1896589581 - 1] = BufferedSocket.aClass121_Sub1_2.method9602((byte) 69).anInt4487 * -1638462787;
 	}
 
 	@OriginalMember(owner = "client!yf", name = "fsu", descriptor = "(Lclient!yp;)V")

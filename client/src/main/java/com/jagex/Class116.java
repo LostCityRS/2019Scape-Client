@@ -11,7 +11,7 @@ import java.net.Socket;
 public abstract class Class116 implements Interface3 {
 
 	@OriginalMember(owner = "client!ik", name = "eb", descriptor = "Ljava/net/Socket;")
-	static Socket aSocket2;
+	static Socket js5SocketRequest;
 
 	@OriginalMember(owner = "client!ik", name = "g", descriptor = "I")
 	int anInt1026;

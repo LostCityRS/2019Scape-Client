@@ -96,7 +96,7 @@ public final class Class155_Sub1 extends Class155 implements KeyListener, FocusL
 		local3.anInt1561 = arg0 * 1858616291;
 		local3.aChar11 = arg1;
 		local3.anInt1563 = arg2 * 1110445449;
-		local3.aLong89 = Class303.method27111((byte) 66) * 4790344457956539703L;
+		local3.aLong89 = Class303.currentTimeMillis((byte) 66) * 4790344457956539703L;
 		this.aClass8_26.method232(local3, 1598238085);
 	}
 
@@ -121,7 +121,7 @@ public final class Class155_Sub1 extends Class155 implements KeyListener, FocusL
 		local3.anInt1561 = arg0 * 1858616291;
 		local3.aChar11 = arg1;
 		local3.anInt1563 = arg2 * 1110445449;
-		local3.aLong89 = Class303.method27111((byte) 92) * 4790344457956539703L;
+		local3.aLong89 = Class303.currentTimeMillis((byte) 92) * 4790344457956539703L;
 		this.aClass8_26.method232(local3, 12549465);
 	}
 
@@ -367,7 +367,7 @@ public final class Class155_Sub1 extends Class155 implements KeyListener, FocusL
 		local3.anInt1561 = arg0 * 1858616291;
 		local3.aChar11 = arg1;
 		local3.anInt1563 = arg2 * 1110445449;
-		local3.aLong89 = Class303.method27111((byte) 106) * 4790344457956539703L;
+		local3.aLong89 = Class303.currentTimeMillis((byte) 106) * 4790344457956539703L;
 		this.aClass8_26.method232(local3, 1145182902);
 	}
 
@@ -386,7 +386,7 @@ public final class Class155_Sub1 extends Class155 implements KeyListener, FocusL
 		local3.anInt1561 = arg0 * 1858616291;
 		local3.aChar11 = arg1;
 		local3.anInt1563 = arg2 * 1110445449;
-		local3.aLong89 = Class303.method27111((byte) 73) * 4790344457956539703L;
+		local3.aLong89 = Class303.currentTimeMillis((byte) 73) * 4790344457956539703L;
 		this.aClass8_26.method232(local3, 1202691488);
 	}
 
@@ -404,7 +404,7 @@ public final class Class155_Sub1 extends Class155 implements KeyListener, FocusL
 		local3.anInt1561 = arg0 * 1858616291;
 		local3.aChar11 = arg1;
 		local3.anInt1563 = arg2 * 1110445449;
-		local3.aLong89 = Class303.method27111((byte) 33) * 4790344457956539703L;
+		local3.aLong89 = Class303.currentTimeMillis((byte) 33) * 4790344457956539703L;
 		this.aClass8_26.method232(local3, 1032079003);
 	}
 
@@ -414,7 +414,7 @@ public final class Class155_Sub1 extends Class155 implements KeyListener, FocusL
 		local3.anInt1561 = arg0 * 1858616291;
 		local3.aChar11 = arg1;
 		local3.anInt1563 = arg2 * 1110445449;
-		local3.aLong89 = Class303.method27111((byte) 23) * 4790344457956539703L;
+		local3.aLong89 = Class303.currentTimeMillis((byte) 23) * 4790344457956539703L;
 		this.aClass8_26.method232(local3, 97455594);
 	}
 
@@ -603,7 +603,7 @@ public final class Class155_Sub1 extends Class155 implements KeyListener, FocusL
 		local3.anInt1561 = arg0 * 1858616291;
 		local3.aChar11 = arg1;
 		local3.anInt1563 = arg2 * 1110445449;
-		local3.aLong89 = Class303.method27111((byte) 34) * 4790344457956539703L;
+		local3.aLong89 = Class303.currentTimeMillis((byte) 34) * 4790344457956539703L;
 		this.aClass8_26.method232(local3, 78058192);
 	}
 

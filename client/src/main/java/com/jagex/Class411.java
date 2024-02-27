@@ -65,7 +65,7 @@ public final class Class411 {
 	public static void method28964(@OriginalArg(0) Class102 arg0, @OriginalArg(1) long arg1) {
 		Class654.anInt5664 = Class654.anInt5668 * -2011109703;
 		Class654.anInt5668 = 0;
-		Class303.method27111((byte) 33);
+		Class303.currentTimeMillis((byte) 33);
 		@Pc(11) Iterator local11 = Class286.aList14.iterator();
 		while (local11.hasNext()) {
 			@Pc(18) Class658 local18 = (Class658) local11.next();
@@ -79,7 +79,7 @@ public final class Class411 {
 	}
 
 	@OriginalMember(owner = "client!m", name = "t", descriptor = "(Ljava/net/Socket;IB)Lclient!ug;")
-	public static Class160 method28965(@OriginalArg(0) Socket arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) throws IOException {
+	public static BufferedSocket method28965(@OriginalArg(0) Socket arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) throws IOException {
 		return Class515.method30572(arg0, arg1, arg1, 1535694702);
 	}
 

@@ -17,7 +17,7 @@ public abstract class Class80_Sub1_Sub15 extends Class80_Sub1 {
 	boolean aBoolean663;
 
 	@OriginalMember(owner = "client!asj", name = "o", descriptor = "Z")
-	volatile boolean aBoolean661 = true;
+	volatile boolean incomplete = true;
 
 	@OriginalMember(owner = "client!asj", name = "<init>", descriptor = "()V")
 	Class80_Sub1_Sub15() {
@@ -27,7 +27,7 @@ public abstract class Class80_Sub1_Sub15 extends Class80_Sub1 {
 	abstract byte[] method24389();
 
 	@OriginalMember(owner = "client!asj", name = "t", descriptor = "(I)[B")
-	abstract byte[] method24390(@OriginalArg(0) int arg0);
+	abstract byte[] getData(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!asj", name = "f", descriptor = "(I)I")
 	abstract int method24391(@OriginalArg(0) int arg0);

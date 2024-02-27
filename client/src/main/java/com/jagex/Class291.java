@@ -35,8 +35,8 @@ final class Class291 implements Iterator {
 		if (local31.aFloat296 == -1.0F) {
 			local31.aFloat296 = Float.POSITIVE_INFINITY;
 		}
-		Class160.aClass121_Sub1_2.method9583(local31, -351030388);
-		Class160.aClass121_Sub1_2.method9610((float) local23 / 1000.0F, 1892578942);
+		BufferedSocket.aClass121_Sub1_2.method9583(local31, -351030388);
+		BufferedSocket.aClass121_Sub1_2.method9610((float) local23 / 1000.0F, 1892578942);
 		local31.method29557();
 	}
 
@@ -67,9 +67,9 @@ final class Class291 implements Iterator {
 		@Pc(71) int local71;
 		@Pc(49) int local49;
 		if (Class630.aBoolean956) {
-			for (@Pc(93) Class80_Sub1_Sub4 local93 = (Class80_Sub1_Sub4) Class630.aClass3_17.method50((byte) -65); local93 != null; local93 = (Class80_Sub1_Sub4) Class630.aClass3_17.method46((byte) -102)) {
+			for (@Pc(93) Class80_Sub1_Sub4 local93 = (Class80_Sub1_Sub4) Class630.aSecondaryLinkedList_17.head((byte) -65); local93 != null; local93 = (Class80_Sub1_Sub4) Class630.aSecondaryLinkedList_17.next((byte) -102)) {
 				if (local93.anInt3022 * 855388281 == 1) {
-					local49 = Class413.method28991((Class80_Sub1_Sub11) local93.aClass3_10.aClass80_Sub1_2.aClass80_Sub1_68, local27, (byte) -101);
+					local49 = Class413.method28991((Class80_Sub1_Sub11) local93.aSecondaryLinkedList_10.aClass80_Sub1_2.aClass80_Sub1_68, local27, (byte) -101);
 				} else {
 					local49 = Class141.method10904(local93, local27, 1610685666);
 				}

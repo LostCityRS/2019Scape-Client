@@ -5,7 +5,7 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!atr")
-public final class Class80_Sub1_Sub15_Sub2 extends Class80_Sub1_Sub15 {
+public final class Js5WorkerRequest extends Class80_Sub1_Sub15 {
 
 	@OriginalMember(owner = "client!atr", name = "j", descriptor = "I")
 	static final int anInt3254 = 1;
@@ -26,25 +26,25 @@ public final class Class80_Sub1_Sub15_Sub2 extends Class80_Sub1_Sub15 {
 	Class592 aClass592_3;
 
 	@OriginalMember(owner = "client!atr", name = "<init>", descriptor = "()V")
-	Class80_Sub1_Sub15_Sub2() {
+	Js5WorkerRequest() {
 	}
 
 	@OriginalMember(owner = "client!atr", name = "f", descriptor = "(I)I")
 	@Override
 	int method24391(@OriginalArg(0) int arg0) {
-		return this.aBoolean661 ? 0 : 100;
+		return this.incomplete ? 0 : 100;
 	}
 
 	@OriginalMember(owner = "client!atr", name = "l", descriptor = "()I")
 	@Override
 	int method24393() {
-		return this.aBoolean661 ? 0 : 100;
+		return this.incomplete ? 0 : 100;
 	}
 
 	@OriginalMember(owner = "client!atr", name = "e", descriptor = "()[B")
 	@Override
 	byte[] method24389() {
-		if (this.aBoolean661) {
+		if (this.incomplete) {
 			throw new RuntimeException();
 		}
 		return this.aByteArray63;
@@ -52,8 +52,8 @@ public final class Class80_Sub1_Sub15_Sub2 extends Class80_Sub1_Sub15 {
 
 	@OriginalMember(owner = "client!atr", name = "t", descriptor = "(I)[B")
 	@Override
-	byte[] method24390(@OriginalArg(0) int arg0) {
-		if (this.aBoolean661) {
+	byte[] getData(@OriginalArg(0) int arg0) {
+		if (this.incomplete) {
 			throw new RuntimeException();
 		}
 		return this.aByteArray63;
@@ -62,7 +62,7 @@ public final class Class80_Sub1_Sub15_Sub2 extends Class80_Sub1_Sub15 {
 	@OriginalMember(owner = "client!atr", name = "u", descriptor = "()[B")
 	@Override
 	byte[] method24392() {
-		if (this.aBoolean661) {
+		if (this.incomplete) {
 			throw new RuntimeException();
 		}
 		return this.aByteArray63;

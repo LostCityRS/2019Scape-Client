@@ -231,7 +231,7 @@ public abstract class Class120_Sub1_Sub1_Sub1 extends Class120_Sub1_Sub1 impleme
 		@Pc(23) int local23 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 1];
 		@Pc(33) int local33 = arg0.anIntArray525[arg0.anInt5778 * 1896589581 + 2];
 		@Pc(41) Class463 local41 = Class463.method29541((float) local13, (float) local23, (float) local33);
-		Class160.aClass121_Sub1_2.method9588(local41, (short) 255);
+		BufferedSocket.aClass121_Sub1_2.method9588(local41, (short) 255);
 		local41.method29557();
 	}
 
@@ -977,7 +977,7 @@ public abstract class Class120_Sub1_Sub1_Sub1 extends Class120_Sub1_Sub1 impleme
 				}
 			}
 			if ((this.aClass658_3 == null || this.aClass658_3.aBoolean972) && (local5 > 0 || local9 > 0)) {
-				this.aClass658_3 = Class658.method33264(client.anInt3436, true);
+				this.aClass658_3 = Class658.method33264(client.currentCycle, true);
 			}
 			if (this.aClass658_3 != null) {
 				@Pc(103) Class228[] local103 = null;
@@ -1007,11 +1007,11 @@ public abstract class Class120_Sub1_Sub1_Sub1 extends Class120_Sub1_Sub1 impleme
 						}
 					}
 				}
-				this.aClass658_3.method33238(arg0, (long) client.anInt3436, local103, local148, false);
+				this.aClass658_3.method33238(arg0, (long) client.currentCycle, local103, local148, false);
 				this.aBoolean455 = true;
 			}
 		} else if (this.aClass658_3 != null) {
-			this.aClass658_3.method33237((long) client.anInt3436);
+			this.aClass658_3.method33237((long) client.currentCycle);
 		}
 		if (this.aClass658_3 != null) {
 			this.aClass658_3.method33242(this.aByte99, this.aShort129, this.aShort126, this.aShort127, this.aShort128);

@@ -75,7 +75,7 @@ public final class Class387 {
 		Class40.aClass658Array1 = new Class658[Class233.anIntArray351[Class654.anInt5665 * 2087772395] + 1];
 		Class654.anInt5666 = 0;
 		Class654.anInt5667 = 0;
-		Class518.anInterface48_1 = arg1;
+		Js5MasterIndex.anInterface48_1 = arg1;
 	}
 
 	@OriginalMember(owner = "client!kt", name = "ail", descriptor = "(Lclient!yp;B)V")

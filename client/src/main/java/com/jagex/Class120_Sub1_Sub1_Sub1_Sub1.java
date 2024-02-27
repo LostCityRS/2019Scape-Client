@@ -263,17 +263,17 @@ public final class Class120_Sub1_Sub1_Sub1_Sub1 extends Class120_Sub1_Sub1_Sub1 
 		if (local42 != 0 || local47 != 0 || local5.anInt5467 * 73788751 != 0 || local5.anInt5466 * -1192955301 != 0) {
 			arg1 |= 0x7;
 		}
-		@Pc(85) boolean local85 = this.aByte73 != 0 && client.anInt3436 >= this.anInt2698 * 1134746577 && client.anInt3436 < this.anInt2692 * -691507419;
+		@Pc(85) boolean local85 = this.aByte73 != 0 && client.currentCycle >= this.anInt2698 * 1134746577 && client.currentCycle < this.anInt2692 * -691507419;
 		if (local85) {
 			arg1 |= 0x80000;
 		}
 		@Pc(93) boolean local93 = false;
 		if (this.anInt2685 * -411125797 != 0) {
 			@Pc(113) Class335 local113 = this.aClass335_1.anIntArray416 == null ? this.aClass335_1 : this.aClass335_1.method27836(Class672.aClass134_1, Class672.aClass134_1, 1210767081);
-			if (local113 == null || client.anInt3436 >= local113.anInt4229 * 690436873 + this.anInt2690 * 712425003) {
+			if (local113 == null || client.currentCycle >= local113.anInt4229 * 690436873 + this.anInt2690 * 712425003) {
 				this.anInt2685 = 0;
 			} else {
-				this.anInt2685 = (255 - (client.anInt3436 - this.anInt2690 * 712425003) * 255 / (local113.anInt4229 * 690436873)) * 1227779155;
+				this.anInt2685 = (255 - (client.currentCycle - this.anInt2690 * 712425003) * 255 / (local113.anInt4229 * 690436873)) * 1227779155;
 				local93 = true;
 			}
 		}
@@ -444,7 +444,7 @@ public final class Class120_Sub1_Sub1_Sub1_Sub1 extends Class120_Sub1_Sub1_Sub1 
 	@OriginalMember(owner = "client!aqb", name = "hc", descriptor = "(I)V")
 	public void method18793(@OriginalArg(0) int arg0) {
 		this.anInt2685 = -448928083;
-		this.anInt2690 = client.anInt3436 * -653389693;
+		this.anInt2690 = client.currentCycle * -653389693;
 	}
 
 	@OriginalMember(owner = "client!aqb", name = "gk", descriptor = "(Lclient!di;Lclient!alf;IIIZ)V")
@@ -1333,19 +1333,19 @@ public final class Class120_Sub1_Sub1_Sub1_Sub1 extends Class120_Sub1_Sub1_Sub1 
 	@OriginalMember(owner = "client!aqb", name = "il", descriptor = "()V")
 	public void method18808() {
 		this.anInt2685 = -448928083;
-		this.anInt2690 = client.anInt3436 * -653389693;
+		this.anInt2690 = client.currentCycle * -653389693;
 	}
 
 	@OriginalMember(owner = "client!aqb", name = "in", descriptor = "()V")
 	public void method18809() {
 		this.anInt2685 = -448928083;
-		this.anInt2690 = client.anInt3436 * -653389693;
+		this.anInt2690 = client.currentCycle * -653389693;
 	}
 
 	@OriginalMember(owner = "client!aqb", name = "if", descriptor = "()V")
 	public void method18810() {
 		this.anInt2685 = -448928083;
-		this.anInt2690 = client.anInt3436 * -653389693;
+		this.anInt2690 = client.currentCycle * -653389693;
 	}
 
 	@OriginalMember(owner = "client!aqb", name = "fb", descriptor = "(I)V")
@@ -1461,17 +1461,17 @@ public final class Class120_Sub1_Sub1_Sub1_Sub1 extends Class120_Sub1_Sub1_Sub1 
 		if (local42 != 0 || local47 != 0 || local5.anInt5467 * 73788751 != 0 || local5.anInt5466 * -1192955301 != 0) {
 			arg1 |= 0x7;
 		}
-		@Pc(85) boolean local85 = this.aByte73 != 0 && client.anInt3436 >= this.anInt2698 * 1134746577 && client.anInt3436 < this.anInt2692 * -691507419;
+		@Pc(85) boolean local85 = this.aByte73 != 0 && client.currentCycle >= this.anInt2698 * 1134746577 && client.currentCycle < this.anInt2692 * -691507419;
 		if (local85) {
 			arg1 |= 0x80000;
 		}
 		@Pc(93) boolean local93 = false;
 		if (this.anInt2685 * -411125797 != 0) {
 			@Pc(113) Class335 local113 = this.aClass335_1.anIntArray416 == null ? this.aClass335_1 : this.aClass335_1.method27836(Class672.aClass134_1, Class672.aClass134_1, 1519812325);
-			if (local113 == null || client.anInt3436 >= local113.anInt4229 * 690436873 + this.anInt2690 * 712425003) {
+			if (local113 == null || client.currentCycle >= local113.anInt4229 * 690436873 + this.anInt2690 * 712425003) {
 				this.anInt2685 = 0;
 			} else {
-				this.anInt2685 = (255 - (client.anInt3436 - this.anInt2690 * 712425003) * 255 / (local113.anInt4229 * 690436873)) * 1227779155;
+				this.anInt2685 = (255 - (client.currentCycle - this.anInt2690 * 712425003) * 255 / (local113.anInt4229 * 690436873)) * 1227779155;
 				local93 = true;
 			}
 		}

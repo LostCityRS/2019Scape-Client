@@ -394,7 +394,7 @@ public final class Class364 implements Interface30 {
 	@OriginalMember(owner = "client!jm", name = "o", descriptor = "(J)Z")
 	@Override
 	public boolean method28357(@OriginalArg(0) long arg0) {
-		return Class303.method27111((byte) 11) >= arg0 + (long) (this.anInt4497 * -250015945);
+		return Class303.currentTimeMillis((byte) 11) >= arg0 + (long) (this.anInt4497 * -250015945);
 	}
 
 	@OriginalMember(owner = "client!jm", name = "j", descriptor = "(I)I")
@@ -560,7 +560,7 @@ public final class Class364 implements Interface30 {
 	@OriginalMember(owner = "client!jm", name = "ac", descriptor = "(J)Z")
 	@Override
 	public boolean method28360(@OriginalArg(0) long arg0) {
-		return Class303.method27111((byte) 119) >= arg0 + (long) (this.anInt4497 * -250015945);
+		return Class303.currentTimeMillis((byte) 119) >= arg0 + (long) (this.anInt4497 * -250015945);
 	}
 
 	@OriginalMember(owner = "client!jm", name = "i", descriptor = "(I)V")

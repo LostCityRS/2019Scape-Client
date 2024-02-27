@@ -312,17 +312,17 @@ public final class Class664 {
 					} else if (arg0 == 23) {
 						Class47.aClass28_6.method656((byte) -48);
 					} else if (arg0 == 14) {
-						Class108_Sub2.aClass139_8.method10773((byte) -1);
+						client.js5NetQueue.close((byte) -1);
 					} else if (arg0 == 6) {
-						Class108_Sub2.aClass139_8.method10772(2055380311);
+						client.js5NetQueue.method10772(2055380311);
 					} else if (arg0 == 26) {
-						Class454.aCanvas6.setLocation(50, 50);
+						Class454.canvas.setLocation(50, 50);
 					} else if (arg0 == 22) {
-						Class454.aCanvas6.setLocation(Class554.anInt3415 * 317681859, Class554.anInt3417 * -1044003729);
+						Class454.canvas.setLocation(Class554.anInt3415 * 317681859, Class554.anInt3417 * -1044003729);
 					} else if (arg0 == 4) {
 						Class354.method28084(-2045579613);
 					} else if (arg0 == 17) {
-						client.aClass539_1.aLong392 = Class303.method27111((byte) 125) * -6950858845886169907L;
+						client.aClass539_1.aLong392 = Class303.currentTimeMillis((byte) 125) * -6950858845886169907L;
 						client.aClass539_1.aBoolean894 = true;
 						Class354.method28084(-2049267391);
 					} else {

@@ -254,8 +254,8 @@ public final class Class507 {
 			Class347.anIntArray420 = new int[Class622.aBoolean937 ? arg3 * arg2 : Class351.anInt4255 * -1311710401 * Class292.anInt3951 * 823569197];
 		}
 		if (arg0.method20693()) {
-			arg0.method20867(client.anInt3436, Class292.anInt3951 * 823569197, Class351.anInt4255 * -1311710401);
-			Class622.aLinkedList6.add(new Class629(client.anInt3436, Class622.aLinkedList7, arg0.anInt2947 * 1069673649, arg0.anInt2932 * 262780429, arg0.aFloat200));
+			arg0.method20867(client.currentCycle, Class292.anInt3951 * 823569197, Class351.anInt4255 * -1311710401);
+			Class622.aLinkedList6.add(new Class629(client.currentCycle, Class622.aLinkedList7, arg0.anInt2947 * 1069673649, arg0.anInt2932 * 262780429, arg0.aFloat200));
 			Class622.aLinkedList7 = new LinkedList();
 		} else {
 			arg0.method20782();

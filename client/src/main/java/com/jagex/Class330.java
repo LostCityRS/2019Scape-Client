@@ -196,7 +196,7 @@ public final class Class330 {
 			local11.anInt3197 = arg1 * 1484841599;
 			local11.anInt3172 = arg2 * 1590406265;
 			local11.anInt3195 = arg3 * 676657145;
-			local11.aLong299 = Class303.method27111((byte) 84) * -115045695046593249L;
+			local11.aLong299 = Class303.currentTimeMillis((byte) 84) * -115045695046593249L;
 			return local11;
 		}
 	}

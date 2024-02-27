@@ -73,7 +73,7 @@ public final class IcmpService_Sub1 extends IcmpService {
 		}
 		@Pc(129) int local129;
 		if (Class533.aClass692_2 == null) {
-			if (Class303.method27111((byte) 30) >= Class80.aLong339 * -4419959139974228777L) {
+			if (Class303.currentTimeMillis((byte) 30) >= Class80.aLong339 * -4419959139974228777L) {
 				Class533.aClass692_2 = client.aClass680_1.method33626(Class47.aClass28_6.aString4, (byte) 58);
 			}
 		} else if (Class533.aClass692_2.anInt5782 * -1361729949 != -1) {
@@ -92,7 +92,7 @@ public final class IcmpService_Sub1 extends IcmpService {
 				} catch (@Pc(124) Throwable local124) {
 				}
 			}
-			@Pc(127) long local127 = Class303.method27111((byte) 54);
+			@Pc(127) long local127 = Class303.currentTimeMillis((byte) 54);
 			local129 = -1;
 			if (Class425.aGarbageCollectorMXBean1 != null) {
 				@Pc(134) long local134 = Class425.aGarbageCollectorMXBean1.getCollectionTime();
@@ -141,17 +141,17 @@ public final class IcmpService_Sub1 extends IcmpService {
 			local285 = local278.anInt5540 * -390642507 << 9;
 			local129 = local278.anInt5537 * -894305615 << 9;
 			if (Class118.aLong34 * 7778702343690755751L <= 0L) {
-				Class118.aLong34 = Class303.method27111((byte) 30) * 2247461033347131671L;
+				Class118.aLong34 = Class303.currentTimeMillis((byte) 30) * 2247461033347131671L;
 			}
-			@Pc(311) float local311 = (float) (Class303.method27111((byte) 82) - Class118.aLong34 * 7778702343690755751L);
+			@Pc(311) float local311 = (float) (Class303.currentTimeMillis((byte) 82) - Class118.aLong34 * 7778702343690755751L);
 			@Pc(316) int local316 = 1000 / Class165_Sub11.method16047((byte) -14);
 			@Pc(322) int local322 = (int) ((double) local316 * 1.25D);
 			while (local311 > 0.0F) {
 				@Pc(331) float local331 = Math.min(local311, (float) local322);
-				Class160.aClass121_Sub1_2.method9675(local331 / 1000.0F, client.aClass539_1.method30910((byte) -47).anIntArrayArrayArray14, client.aClass539_1.method30903(-463929735), local285, local129, (byte) -2);
+				BufferedSocket.aClass121_Sub1_2.method9675(local331 / 1000.0F, client.aClass539_1.method30910((byte) -47).anIntArrayArrayArray14, client.aClass539_1.method30903(-463929735), local285, local129, (byte) -2);
 				local311 -= local322;
 			}
-			Class118.aLong34 = Class303.method27111((byte) 110) * 2247461033347131671L;
+			Class118.aLong34 = Class303.currentTimeMillis((byte) 110) * 2247461033347131671L;
 		}
 		Class349.method27999((byte) 69);
 		if (client.anInt3433 * 1994758437 != 18) {
@@ -179,13 +179,13 @@ public final class IcmpService_Sub1 extends IcmpService {
 			if (client.anInt3541 * -1330995431 == 1 && client.anInt3433 * 1994758437 != 3) {
 				Class251.aClass24_25.method564(810194433);
 				client.anInt3541 = 0;
-				client.anInt3432 = client.anInt3436 * -1914178337;
+				client.anInt3432 = client.currentCycle * -1914178337;
 				client.anInt3588 = 0;
 				client.aBoolean722 = false;
 				Class165_Sub41.method16812((byte) -41);
 			}
 			if (client.anInt3541 * -1330995431 == 0) {
-				local63 = client.anInt3436 - client.anInt3432 * -1603221729;
+				local63 = client.currentCycle - client.anInt3432 * -1603221729;
 				if (client.anInt3588 * 76099205 < Class251.aClass103Array1.length) {
 					do {
 						@Pc(486) Class103 local486 = Class251.aClass103Array1[client.anInt3588 * 76099205];
@@ -228,7 +228,7 @@ public final class IcmpService_Sub1 extends IcmpService {
 		client.aClass327_6 = null;
 		client.aBoolean742 = false;
 		client.aBoolean739 = false;
-		Class492.aClass327_12 = null;
+		Js5ArchiveIndex.aClass327_12 = null;
 		Class567.method31525(null, -1, -1, 2064809539);
 		if (!client.aBoolean728) {
 			client.anInt3502 = -847777085;
@@ -257,7 +257,7 @@ public final class IcmpService_Sub1 extends IcmpService {
 									do {
 										local650 = (Class80_Sub42) client.aClass8_46.method233(973410715);
 										if (local650 == null) {
-											if (Class492.aClass327_12 == null) {
+											if (Js5ArchiveIndex.aClass327_12 == null) {
 												client.anInt3430 = 0;
 											}
 											if (client.aClass327_8 != null) {
@@ -277,12 +277,12 @@ public final class IcmpService_Sub1 extends IcmpService {
 											for (local63 = 0; local63 < 5; local63++) {
 												@Pc(882) int local882 = client.anIntArray332[local63]++;
 											}
-											if (Class120_Sub1_Sub1_Sub4.aClass110_Sub1_1.aBoolean171 && Class120_Sub1_Sub1_Sub4.aClass110_Sub1_1.aLong28 * -2439323268239245765L < Class303.method27111((byte) 76) - 60000L) {
+											if (Class120_Sub1_Sub1_Sub4.aClass110_Sub1_1.aBoolean171 && Class120_Sub1_Sub1_Sub4.aClass110_Sub1_1.aLong28 * -2439323268239245765L < Class303.currentTimeMillis((byte) 76) - 60000L) {
 												Class706.method37137(-1413673503);
 											}
 											Class120_Sub1_Sub1_Sub4.aClass110_Sub1_1.method7300((byte) -105);
 											for (@Pc(910) Class147_Sub6 local910 = (Class147_Sub6) client.aClass5_6.method93((byte) -66); local910 != null; local910 = (Class147_Sub6) client.aClass5_6.method110(822122660)) {
-												if ((long) (local910.anInt1499 * -96601151) < Class303.method27111((byte) 108) / 1000L - 5L) {
+												if ((long) (local910.anInt1499 * -96601151) < Class303.currentTimeMillis((byte) 108) / 1000L - 5L) {
 													if (local910.aShort49 > 0) {
 														Class255.method26406(5, 0, "", "", "", local910.aString46 + Class60.aClass60_21.method1180(Class512.aClass719_3, 1438335857), null, (byte) 3);
 													}

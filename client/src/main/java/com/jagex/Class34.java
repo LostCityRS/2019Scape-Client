@@ -45,10 +45,10 @@ public final class Class34 {
 			}
 			return;
 		}
-		for (@Pc(53) Class80_Sub1_Sub4 local53 = (Class80_Sub1_Sub4) Class630.aClass3_17.method50((byte) 34); local53 != null; local53 = (Class80_Sub1_Sub4) Class630.aClass3_17.method46((byte) -102)) {
+		for (@Pc(53) Class80_Sub1_Sub4 local53 = (Class80_Sub1_Sub4) Class630.aSecondaryLinkedList_17.head((byte) 34); local53 != null; local53 = (Class80_Sub1_Sub4) Class630.aSecondaryLinkedList_17.next((byte) -102)) {
 			if (local53.aString95.equals(arg0.aString105)) {
 				@Pc(64) boolean local64 = false;
-				for (@Pc(70) Class80_Sub1_Sub11 local70 = (Class80_Sub1_Sub11) local53.aClass3_10.method50((byte) -26); local70 != null; local70 = (Class80_Sub1_Sub11) local53.aClass3_10.method46((byte) -102)) {
+				for (@Pc(70) Class80_Sub1_Sub11 local70 = (Class80_Sub1_Sub11) local53.aSecondaryLinkedList_10.head((byte) -26); local70 != null; local70 = (Class80_Sub1_Sub11) local53.aSecondaryLinkedList_10.next((byte) -102)) {
 					if (arg0 == local70) {
 						if (local53.method21709(arg0, -937303079)) {
 							Class162_Sub1.method15720(local53, -1693247424);

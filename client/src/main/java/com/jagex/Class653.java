@@ -87,7 +87,7 @@ public final class Class653 {
 	@OriginalMember(owner = "client!x", name = "u", descriptor = "(Lclient!akw;Lclient!akw;I)V")
 	public static void method33145(@OriginalArg(0) Class80_Sub1 arg0, @OriginalArg(1) Class80_Sub1 arg1, @OriginalArg(2) int arg2) {
 		if (arg0.aClass80_Sub1_67 != null) {
-			arg0.method24406(-2147483644);
+			arg0.unlinkSecondary(-2147483644);
 		}
 		arg0.aClass80_Sub1_67 = arg1;
 		arg0.aClass80_Sub1_68 = arg1.aClass80_Sub1_68;

@@ -78,10 +78,10 @@ public final class Class80_Sub1_Sub9 extends Class80_Sub1 {
 	static final int anInt3069 = 17;
 
 	@OriginalMember(owner = "client!art", name = "ao", descriptor = "Lclient!aaa;")
-	static Class3 aClass3_11 = new Class3();
+	static SecondaryLinkedList aSecondaryLinkedList_11 = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!art", name = "aj", descriptor = "Lclient!aaa;")
-	static Class3 aClass3_12 = new Class3();
+	static SecondaryLinkedList aSecondaryLinkedList_12 = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!art", name = "ac", descriptor = "Lclient!aax;")
 	static Class24 aClass24_17 = new Class24(16);
@@ -160,29 +160,29 @@ public final class Class80_Sub1_Sub9 extends Class80_Sub1 {
 	@OriginalMember(owner = "client!art", name = "bj", descriptor = "()V")
 	static void method22087() {
 		aClass24_17.method564(-1189426717);
-		aClass3_12.method41(-252802305);
-		aClass3_11.method41(-252802305);
+		aSecondaryLinkedList_12.method41(-252802305);
+		aSecondaryLinkedList_11.method41(-252802305);
 	}
 
 	@OriginalMember(owner = "client!art", name = "by", descriptor = "()Lclient!art;")
 	static Class80_Sub1_Sub9 method22088() {
-		@Pc(4) Class80_Sub1_Sub9 local4 = (Class80_Sub1_Sub9) aClass3_11.method50((byte) -109);
+		@Pc(4) Class80_Sub1_Sub9 local4 = (Class80_Sub1_Sub9) aSecondaryLinkedList_11.head((byte) -109);
 		if (local4 != null) {
 			local4.method24395((byte) 101);
-			local4.method24406(-2147483646);
+			local4.unlinkSecondary(-2147483646);
 			return local4;
 		}
 		do {
-			local4 = (Class80_Sub1_Sub9) aClass3_12.method50((byte) 2);
+			local4 = (Class80_Sub1_Sub9) aSecondaryLinkedList_12.head((byte) 2);
 			if (local4 == null) {
 				return null;
 			}
-			if (local4.method22096(-1811389590) > Class303.method27111((byte) 46)) {
+			if (local4.method22096(-1811389590) > Class303.currentTimeMillis((byte) 46)) {
 				return null;
 			}
 			local4.method24395((byte) 115);
-			local4.method24406(-2147483647);
-		} while ((local4.aLong340 * 4203303297430504511L & Long.MIN_VALUE) == 0L);
+			local4.unlinkSecondary(-2147483647);
+		} while ((local4.dualKey * 4203303297430504511L & Long.MIN_VALUE) == 0L);
 		return local4;
 	}
 
@@ -388,23 +388,23 @@ public final class Class80_Sub1_Sub9 extends Class80_Sub1 {
 
 	@OriginalMember(owner = "client!art", name = "bk", descriptor = "()Lclient!art;")
 	static Class80_Sub1_Sub9 method22120() {
-		@Pc(4) Class80_Sub1_Sub9 local4 = (Class80_Sub1_Sub9) aClass3_11.method50((byte) -16);
+		@Pc(4) Class80_Sub1_Sub9 local4 = (Class80_Sub1_Sub9) aSecondaryLinkedList_11.head((byte) -16);
 		if (local4 != null) {
 			local4.method24395((byte) 44);
-			local4.method24406(-2147483641);
+			local4.unlinkSecondary(-2147483641);
 			return local4;
 		}
 		do {
-			local4 = (Class80_Sub1_Sub9) aClass3_12.method50((byte) 2);
+			local4 = (Class80_Sub1_Sub9) aSecondaryLinkedList_12.head((byte) 2);
 			if (local4 == null) {
 				return null;
 			}
-			if (local4.method22096(-1525424001) > Class303.method27111((byte) 36)) {
+			if (local4.method22096(-1525424001) > Class303.currentTimeMillis((byte) 36)) {
 				return null;
 			}
 			local4.method24395((byte) 123);
-			local4.method24406(-2147483647);
-		} while ((local4.aLong340 * 4203303297430504511L & Long.MIN_VALUE) == 0L);
+			local4.unlinkSecondary(-2147483647);
+		} while ((local4.dualKey * 4203303297430504511L & Long.MIN_VALUE) == 0L);
 		return local4;
 	}
 
@@ -512,23 +512,23 @@ public final class Class80_Sub1_Sub9 extends Class80_Sub1 {
 
 	@OriginalMember(owner = "client!art", name = "bz", descriptor = "()Lclient!art;")
 	static Class80_Sub1_Sub9 method22134() {
-		@Pc(4) Class80_Sub1_Sub9 local4 = (Class80_Sub1_Sub9) aClass3_11.method50((byte) -73);
+		@Pc(4) Class80_Sub1_Sub9 local4 = (Class80_Sub1_Sub9) aSecondaryLinkedList_11.head((byte) -73);
 		if (local4 != null) {
 			local4.method24395((byte) 61);
-			local4.method24406(-2147483646);
+			local4.unlinkSecondary(-2147483646);
 			return local4;
 		}
 		do {
-			local4 = (Class80_Sub1_Sub9) aClass3_12.method50((byte) 57);
+			local4 = (Class80_Sub1_Sub9) aSecondaryLinkedList_12.head((byte) 57);
 			if (local4 == null) {
 				return null;
 			}
-			if (local4.method22096(-924603818) > Class303.method27111((byte) 122)) {
+			if (local4.method22096(-924603818) > Class303.currentTimeMillis((byte) 122)) {
 				return null;
 			}
 			local4.method24395((byte) 28);
-			local4.method24406(-2147483640);
-		} while ((local4.aLong340 * 4203303297430504511L & Long.MIN_VALUE) == 0L);
+			local4.unlinkSecondary(-2147483640);
+		} while ((local4.dualKey * 4203303297430504511L & Long.MIN_VALUE) == 0L);
 		return local4;
 	}
 
@@ -616,8 +616,8 @@ public final class Class80_Sub1_Sub9 extends Class80_Sub1 {
 	@OriginalMember(owner = "client!art", name = "bs", descriptor = "()V")
 	static void method22148() {
 		aClass24_17.method564(520021420);
-		aClass3_12.method41(-252802305);
-		aClass3_11.method41(-252802305);
+		aSecondaryLinkedList_12.method41(-252802305);
+		aSecondaryLinkedList_11.method41(-252802305);
 	}
 
 	@OriginalMember(owner = "client!art", name = "dy", descriptor = "(III)V")
@@ -790,8 +790,8 @@ public final class Class80_Sub1_Sub9 extends Class80_Sub1 {
 
 	@OriginalMember(owner = "client!art", name = "aw", descriptor = "(I)V")
 	void method22078(@OriginalArg(0) int arg0) {
-		this.aLong340 = (this.aLong340 * 4203303297430504511L & Long.MIN_VALUE | Class303.method27111((byte) 81) + 500L) * -4191731634426926145L;
-		aClass3_12.method42(this, 1599142138);
+		this.dualKey = (this.dualKey * 4203303297430504511L & Long.MIN_VALUE | Class303.currentTimeMillis((byte) 81) + 500L) * -4191731634426926145L;
+		aSecondaryLinkedList_12.addTail(this, 1599142138);
 	}
 
 	@OriginalMember(owner = "client!art", name = "bl", descriptor = "(I)I")
@@ -806,7 +806,7 @@ public final class Class80_Sub1_Sub9 extends Class80_Sub1 {
 
 	@OriginalMember(owner = "client!art", name = "bn", descriptor = "(I)J")
 	long method22096(@OriginalArg(0) int arg0) {
-		return this.aLong340 * 4203303297430504511L & Long.MAX_VALUE;
+		return this.dualKey * 4203303297430504511L & Long.MAX_VALUE;
 	}
 
 	@OriginalMember(owner = "client!art", name = "et", descriptor = "()I")
@@ -816,35 +816,35 @@ public final class Class80_Sub1_Sub9 extends Class80_Sub1 {
 
 	@OriginalMember(owner = "client!art", name = "bg", descriptor = "(I)V")
 	void method22135(@OriginalArg(0) int arg0) {
-		this.aLong340 = (this.aLong340 * 4203303297430504511L | Long.MIN_VALUE) * -4191731634426926145L;
+		this.dualKey = (this.dualKey * 4203303297430504511L | Long.MIN_VALUE) * -4191731634426926145L;
 		if (this.method22096(-106099317) == 0L) {
-			aClass3_11.method42(this, 1599142138);
+			aSecondaryLinkedList_11.addTail(this, 1599142138);
 		}
 	}
 
 	@OriginalMember(owner = "client!art", name = "el", descriptor = "()V")
 	void method22141() {
-		this.aLong340 = (this.aLong340 * 4203303297430504511L & Long.MIN_VALUE | Class303.method27111((byte) 28) + 500L) * -4191731634426926145L;
-		aClass3_12.method42(this, 1599142138);
+		this.dualKey = (this.dualKey * 4203303297430504511L & Long.MIN_VALUE | Class303.currentTimeMillis((byte) 28) + 500L) * -4191731634426926145L;
+		aSecondaryLinkedList_12.addTail(this, 1599142138);
 	}
 
 	@OriginalMember(owner = "client!art", name = "ea", descriptor = "()V")
 	void method22167() {
-		this.aLong340 = (this.aLong340 * 4203303297430504511L & Long.MIN_VALUE | Class303.method27111((byte) 64) + 500L) * -4191731634426926145L;
-		aClass3_12.method42(this, 1599142138);
+		this.dualKey = (this.dualKey * 4203303297430504511L & Long.MIN_VALUE | Class303.currentTimeMillis((byte) 64) + 500L) * -4191731634426926145L;
+		aSecondaryLinkedList_12.addTail(this, 1599142138);
 	}
 
 	@OriginalMember(owner = "client!art", name = "eh", descriptor = "()V")
 	void method22168() {
-		this.aLong340 = (this.aLong340 * 4203303297430504511L & Long.MIN_VALUE | Class303.method27111((byte) 33) + 500L) * -4191731634426926145L;
-		aClass3_12.method42(this, 1599142138);
+		this.dualKey = (this.dualKey * 4203303297430504511L & Long.MIN_VALUE | Class303.currentTimeMillis((byte) 33) + 500L) * -4191731634426926145L;
+		aSecondaryLinkedList_12.addTail(this, 1599142138);
 	}
 
 	@OriginalMember(owner = "client!art", name = "em", descriptor = "()V")
 	void method22170() {
-		this.aLong340 = (this.aLong340 * 4203303297430504511L | Long.MIN_VALUE) * -4191731634426926145L;
+		this.dualKey = (this.dualKey * 4203303297430504511L | Long.MIN_VALUE) * -4191731634426926145L;
 		if (this.method22096(-194365506) == 0L) {
-			aClass3_11.method42(this, 1599142138);
+			aSecondaryLinkedList_11.addTail(this, 1599142138);
 		}
 	}
 
@@ -860,6 +860,6 @@ public final class Class80_Sub1_Sub9 extends Class80_Sub1 {
 
 	@OriginalMember(owner = "client!art", name = "er", descriptor = "()J")
 	long method22174() {
-		return this.aLong340 * 4203303297430504511L & Long.MAX_VALUE;
+		return this.dualKey * 4203303297430504511L & Long.MAX_VALUE;
 	}
 }

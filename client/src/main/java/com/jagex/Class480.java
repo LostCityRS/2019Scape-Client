@@ -39,7 +39,7 @@ public final class Class480 {
 	Object[] anObjectArray43;
 
 	@OriginalMember(owner = "client!pf", name = "t", descriptor = "Lclient!ps;")
-	Class492 aClass492_2 = null;
+	Js5ArchiveIndex aJs5ArchiveIndex_2 = null;
 
 	@OriginalMember(owner = "client!pf", name = "j", descriptor = "Lclient!pn;")
 	Class141 aClass141_1;
@@ -58,7 +58,7 @@ public final class Class480 {
 		@Pc(17) int local17 = local9.method30216(-1063256912);
 		if (local17 < 0 || anInt4993 * -214443435 != 0 && local17 > anInt4993 * -214443435) {
 			throw new RuntimeException();
-		} else if (local13 == Class486.aClass486_4) {
+		} else if (local13 == Class486.UNCOMPRESSED) {
 			@Pc(38) byte[] local38 = new byte[local17];
 			local4.gdata(local38, 0, local17);
 			return local38;
@@ -68,16 +68,16 @@ public final class Class480 {
 				throw new RuntimeException();
 			}
 			@Pc(72) byte[] local72;
-			if (Class486.aClass486_1 == local13) {
+			if (Class486.BZIP2 == local13) {
 				local72 = new byte[local50];
 				Class19.method462(local72, local50, arg0, local17, 9);
-			} else if (Class486.aClass486_3 == local13) {
+			} else if (Class486.GZIP == local13) {
 				local72 = new byte[local50];
 				@Pc(89) Class83 local89 = aClass83_1;
 				synchronized (aClass83_1) {
 					aClass83_1.method1562(local4, local72, -751441187);
 				}
-			} else if (Class486.aClass486_2 == local13) {
+			} else if (Class486.LZMA == local13) {
 				try {
 					local72 = Class169.method21687(local4, local50, -1668908582);
 				} catch (@Pc(114) IOException local114) {
@@ -98,7 +98,7 @@ public final class Class480 {
 		@Pc(17) int local17 = local9.method30216(-1485545155);
 		if (local17 < 0 || anInt4993 * -214443435 != 0 && local17 > anInt4993 * -214443435) {
 			throw new RuntimeException();
-		} else if (local13 == Class486.aClass486_4) {
+		} else if (local13 == Class486.UNCOMPRESSED) {
 			@Pc(38) byte[] local38 = new byte[local17];
 			local4.gdata(local38, 0, local17);
 			return local38;
@@ -108,16 +108,16 @@ public final class Class480 {
 				throw new RuntimeException();
 			}
 			@Pc(72) byte[] local72;
-			if (Class486.aClass486_1 == local13) {
+			if (Class486.BZIP2 == local13) {
 				local72 = new byte[local50];
 				Class19.method462(local72, local50, arg0, local17, 9);
-			} else if (Class486.aClass486_3 == local13) {
+			} else if (Class486.GZIP == local13) {
 				local72 = new byte[local50];
 				@Pc(89) Class83 local89 = aClass83_1;
 				synchronized (aClass83_1) {
 					aClass83_1.method1562(local4, local72, -333596490);
 				}
-			} else if (Class486.aClass486_2 == local13) {
+			} else if (Class486.LZMA == local13) {
 				try {
 					local72 = Class169.method21687(local4, local50, 1240999624);
 				} catch (@Pc(114) IOException local114) {
@@ -138,7 +138,7 @@ public final class Class480 {
 		@Pc(17) int local17 = local9.method30216(-1901212010);
 		if (local17 < 0 || anInt4993 * -214443435 != 0 && local17 > anInt4993 * -214443435) {
 			throw new RuntimeException();
-		} else if (local13 == Class486.aClass486_4) {
+		} else if (local13 == Class486.UNCOMPRESSED) {
 			@Pc(38) byte[] local38 = new byte[local17];
 			local4.gdata(local38, 0, local17);
 			return local38;
@@ -148,16 +148,16 @@ public final class Class480 {
 				throw new RuntimeException();
 			}
 			@Pc(72) byte[] local72;
-			if (Class486.aClass486_1 == local13) {
+			if (Class486.BZIP2 == local13) {
 				local72 = new byte[local50];
 				Class19.method462(local72, local50, arg0, local17, 9);
-			} else if (Class486.aClass486_3 == local13) {
+			} else if (Class486.GZIP == local13) {
 				local72 = new byte[local50];
 				@Pc(89) Class83 local89 = aClass83_1;
 				synchronized (aClass83_1) {
 					aClass83_1.method1562(local4, local72, 1204877204);
 				}
-			} else if (Class486.aClass486_2 == local13) {
+			} else if (Class486.LZMA == local13) {
 				try {
 					local72 = Class169.method21687(local4, local50, 1451864669);
 				} catch (@Pc(114) IOException local114) {
@@ -221,7 +221,7 @@ public final class Class480 {
 		}
 		try {
 			@Pc(9) String local9 = Class306.anApplet1.getParameter(Class469.aClass469_26.aString210);
-			@Pc(17) int local17 = (int) (Class303.method27111((byte) 66) / 86400000L) - 11745;
+			@Pc(17) int local17 = (int) (Class303.currentTimeMillis((byte) 66) / 86400000L) - 11745;
 			@Pc(30) String local30 = "usrdob=" + local17 + "; version=1; path=/; domain=" + local9;
 			Class64.method1225(Class306.anApplet1, "document.cookie=\"" + local30 + "\"", (byte) 0);
 		} catch (@Pc(45) Throwable local45) {
@@ -260,13 +260,13 @@ public final class Class480 {
 
 	@OriginalMember(owner = "client!pf", name = "t", descriptor = "(I)Z")
 	synchronized boolean method29912(@OriginalArg(0) int arg0) {
-		if (this.aClass492_2 == null) {
-			this.aClass492_2 = this.aClass141_1.method10894(1936242940);
-			if (this.aClass492_2 == null) {
+		if (this.aJs5ArchiveIndex_2 == null) {
+			this.aJs5ArchiveIndex_2 = this.aClass141_1.getIndex(1936242940);
+			if (this.aJs5ArchiveIndex_2 == null) {
 				return false;
 			}
-			this.anObjectArray43 = new Object[this.aClass492_2.anInt5025 * 183068259];
-			this.anObjectArrayArray3 = new Object[this.aClass492_2.anInt5025 * 183068259][];
+			this.anObjectArray43 = new Object[this.aJs5ArchiveIndex_2.groupArraySize * 183068259];
+			this.anObjectArrayArray3 = new Object[this.aJs5ArchiveIndex_2.groupArraySize * 183068259][];
 		}
 		return true;
 	}
@@ -278,11 +278,11 @@ public final class Class480 {
 		}
 		@Pc(8) String local8 = arg0.toLowerCase();
 		@Pc(11) String local11 = arg1.toLowerCase();
-		@Pc(20) int local20 = this.aClass492_2.aClass349_1.method27995(Class536.method30875(local8, -2084753460), 600500347);
+		@Pc(20) int local20 = this.aJs5ArchiveIndex_2.aClass349_1.method27995(Class536.method30875(local8, -2084753460), 600500347);
 		if (local20 < 0) {
 			return false;
 		} else {
-			@Pc(35) int local35 = this.aClass492_2.aClass349Array1[local20].method27995(Class536.method30875(local11, -1996879008), -182418223);
+			@Pc(35) int local35 = this.aJs5ArchiveIndex_2.aClass349Array1[local20].method27995(Class536.method30875(local11, -1996879008), -182418223);
 			return local35 >= 0;
 		}
 	}
@@ -291,7 +291,7 @@ public final class Class480 {
 	synchronized boolean method29914(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1) {
 		if (!this.method29912(337529426)) {
 			return false;
-		} else if (arg0 >= 0 && arg0 < this.aClass492_2.anIntArray463.length && this.aClass492_2.anIntArray463[arg0] != 0) {
+		} else if (arg0 >= 0 && arg0 < this.aJs5ArchiveIndex_2.anIntArray463.length && this.aJs5ArchiveIndex_2.anIntArray463[arg0] != 0) {
 			return true;
 		} else if (aBoolean880) {
 			throw new IllegalArgumentException(Integer.toString(arg0));
@@ -304,7 +304,7 @@ public final class Class480 {
 	public synchronized boolean method29915(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
 		if (!this.method29912(337529426)) {
 			return false;
-		} else if (arg0 >= 0 && arg1 >= 0 && arg0 < this.aClass492_2.anIntArray463.length && arg1 < this.aClass492_2.anIntArray463[arg0]) {
+		} else if (arg0 >= 0 && arg1 >= 0 && arg0 < this.aJs5ArchiveIndex_2.anIntArray463.length && arg1 < this.aJs5ArchiveIndex_2.anIntArray463[arg0]) {
 			return true;
 		} else if (aBoolean880) {
 			throw new IllegalArgumentException(arg0 + " " + arg1);
@@ -360,7 +360,7 @@ public final class Class480 {
 		if (local9 != null) {
 			if (this.anInt4992 * 524273497 == 1) {
 				this.anObjectArrayArray3[arg0][arg1] = null;
-				if (this.aClass492_2.anIntArray463[arg0] == 1) {
+				if (this.aJs5ArchiveIndex_2.anIntArray463[arg0] == 1) {
 					this.anObjectArrayArray3[arg0] = null;
 				}
 			} else if (this.anInt4992 * 524273497 == 2) {
@@ -376,8 +376,8 @@ public final class Class480 {
 			return false;
 		}
 		@Pc(7) boolean local7 = true;
-		for (@Pc(9) int local9 = 0; local9 < this.aClass492_2.anIntArray459.length; local9++) {
-			@Pc(21) int local21 = this.aClass492_2.anIntArray459[local9];
+		for (@Pc(9) int local9 = 0; local9 < this.aJs5ArchiveIndex_2.anIntArray459.length; local9++) {
+			@Pc(21) int local21 = this.aJs5ArchiveIndex_2.anIntArray459[local9];
 			if (this.anObjectArray43[local21] == null) {
 				this.method29916(local21, -2068852384);
 				if (this.anObjectArray43[local21] == null) {
@@ -402,7 +402,7 @@ public final class Class480 {
 		@Pc(7) int local7 = 0;
 		@Pc(9) int local9 = 0;
 		for (@Pc(11) int local11 = 0; local11 < this.anObjectArray43.length; local11++) {
-			if (this.aClass492_2.anIntArray462[local11] > 0) {
+			if (this.aJs5ArchiveIndex_2.anIntArray462[local11] > 0) {
 				local7 += 100;
 				local9 += this.method29924(local11, (byte) 87);
 			}
@@ -418,7 +418,7 @@ public final class Class480 {
 	public synchronized boolean method29923(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		if (!this.method29912(337529426)) {
 			return false;
-		} else if (arg0 >= 0 && arg1 >= 0 && arg0 < this.aClass492_2.anIntArray463.length && arg1 < this.aClass492_2.anIntArray463[arg0]) {
+		} else if (arg0 >= 0 && arg1 >= 0 && arg0 < this.aJs5ArchiveIndex_2.anIntArray463.length && arg1 < this.aJs5ArchiveIndex_2.anIntArray463[arg0]) {
 			return true;
 		} else if (aBoolean880) {
 			throw new IllegalArgumentException(arg0 + " " + arg1);
@@ -454,11 +454,11 @@ public final class Class480 {
 	public synchronized byte[] method29926(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		if (!this.method29912(337529426)) {
 			return null;
-		} else if (this.aClass492_2.anIntArray463.length == 1) {
+		} else if (this.aJs5ArchiveIndex_2.anIntArray463.length == 1) {
 			return this.method29918(0, arg0, 1896589581);
 		} else if (!this.method29914(arg0, (byte) 12)) {
 			return null;
-		} else if (this.aClass492_2.anIntArray463[arg0] == 1) {
+		} else if (this.aJs5ArchiveIndex_2.anIntArray463[arg0] == 1) {
 			return this.method29918(arg0, 0, 1896589581);
 		} else {
 			throw new RuntimeException();
@@ -470,9 +470,9 @@ public final class Class480 {
 		if (!this.method29914(arg0, (byte) -30)) {
 			return null;
 		}
-		@Pc(12) int[] local12 = this.aClass492_2.anIntArrayArray58[arg0];
+		@Pc(12) int[] local12 = this.aJs5ArchiveIndex_2.anIntArrayArray58[arg0];
 		if (local12 == null) {
-			local12 = new int[this.aClass492_2.anIntArray462[arg0]];
+			local12 = new int[this.aJs5ArchiveIndex_2.anIntArray462[arg0]];
 			@Pc(24) int local24 = 0;
 			while (local24 < local12.length) {
 				local12[local24] = local24++;
@@ -485,11 +485,11 @@ public final class Class480 {
 	public boolean method29928(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		if (!this.method29912(337529426)) {
 			return false;
-		} else if (this.aClass492_2.anIntArray463.length == 1) {
+		} else if (this.aJs5ArchiveIndex_2.anIntArray463.length == 1) {
 			return this.method29915(0, arg0, (byte) -97);
 		} else if (!this.method29914(arg0, (byte) 40)) {
 			return false;
-		} else if (this.aClass492_2.anIntArray463[arg0] == 1) {
+		} else if (this.aJs5ArchiveIndex_2.anIntArray463[arg0] == 1) {
 			return this.method29915(arg0, 0, (byte) -11);
 		} else {
 			throw new RuntimeException();
@@ -498,12 +498,12 @@ public final class Class480 {
 
 	@OriginalMember(owner = "client!pf", name = "h", descriptor = "(II)I")
 	public int method29929(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		return this.method29914(arg0, (byte) -16) ? this.aClass492_2.anIntArray463[arg0] : 0;
+		return this.method29914(arg0, (byte) -16) ? this.aJs5ArchiveIndex_2.anIntArray463[arg0] : 0;
 	}
 
 	@OriginalMember(owner = "client!pf", name = "d", descriptor = "(I)I")
 	public int method29930(@OriginalArg(0) int arg0) {
-		return this.method29912(337529426) ? this.aClass492_2.anIntArray463.length : -1;
+		return this.method29912(337529426) ? this.aJs5ArchiveIndex_2.anIntArray463.length : -1;
 	}
 
 	@OriginalMember(owner = "client!pf", name = "z", descriptor = "(II)V")
@@ -519,12 +519,12 @@ public final class Class480 {
 			return;
 		}
 		if (arg0) {
-			this.aClass492_2.anIntArray456 = null;
-			this.aClass492_2.aClass349_1 = null;
+			this.aJs5ArchiveIndex_2.anIntArray456 = null;
+			this.aJs5ArchiveIndex_2.aClass349_1 = null;
 		}
 		if (arg1) {
-			this.aClass492_2.anIntArrayArray59 = null;
-			this.aClass492_2.aClass349Array1 = null;
+			this.aJs5ArchiveIndex_2.anIntArrayArray59 = null;
+			this.aJs5ArchiveIndex_2.aClass349Array1 = null;
 		}
 	}
 
@@ -535,10 +535,10 @@ public final class Class480 {
 		} else if (this.anObjectArray43[arg0] == null) {
 			return false;
 		} else {
-			@Pc(19) int local19 = this.aClass492_2.anIntArray462[arg0];
-			@Pc(25) int[] local25 = this.aClass492_2.anIntArrayArray58[arg0];
+			@Pc(19) int local19 = this.aJs5ArchiveIndex_2.anIntArray462[arg0];
+			@Pc(25) int[] local25 = this.aJs5ArchiveIndex_2.anIntArrayArray58[arg0];
 			if (this.anObjectArrayArray3[arg0] == null) {
-				this.anObjectArrayArray3[arg0] = new Object[this.aClass492_2.anIntArray463[arg0]];
+				this.anObjectArrayArray3[arg0] = new Object[this.aJs5ArchiveIndex_2.anIntArray463[arg0]];
 			}
 			@Pc(45) Object[] local45 = this.anObjectArrayArray3[arg0];
 			@Pc(47) boolean local47 = true;
@@ -567,14 +567,14 @@ public final class Class480 {
 				@Pc(108) Packet local108 = new Packet(local103);
 				local112 = local108.g1();
 				local116 = local108.g4();
-				@Pc(126) int local126 = (local112 == Class486.aClass486_4.method37268() ? 5 : 9) + local116;
+				@Pc(126) int local126 = (local112 == Class486.UNCOMPRESSED.getId() ? 5 : 9) + local116;
 				local108.tinydec(arg2, 5, local126);
 			}
 			@Pc(145) byte[] local145;
 			try {
 				local145 = Class306.method27214(local103, 1972376445);
 			} catch (@Pc(147) RuntimeException local147) {
-				throw Class271.method26705(local147, (arg2 != null) + " " + arg0 + " " + local103.length + " " + Packet.getcrc(local103, local103.length) + " " + Packet.getcrc(local103, local103.length - 2) + " " + this.aClass492_2.anIntArray455[arg0] + " " + this.aClass492_2.anInt5026 * 457348257);
+				throw Class271.method26705(local147, (arg2 != null) + " " + arg0 + " " + local103.length + " " + Packet.getcrc(local103, local103.length) + " " + Packet.getcrc(local103, local103.length - 2) + " " + this.aJs5ArchiveIndex_2.anIntArray455[arg0] + " " + this.aJs5ArchiveIndex_2.anInt5026 * 457348257);
 			}
 			if (this.aBoolean879) {
 				this.anObjectArray43[arg0] = null;
@@ -699,7 +699,7 @@ public final class Class480 {
 	public int method29934(@OriginalArg(0) String arg0, @OriginalArg(1) byte arg1) {
 		if (this.method29912(337529426)) {
 			@Pc(8) String local8 = arg0.toLowerCase();
-			@Pc(17) int local17 = this.aClass492_2.aClass349_1.method27995(Class536.method30875(local8, -2096255705), -1783390357);
+			@Pc(17) int local17 = this.aJs5ArchiveIndex_2.aClass349_1.method27995(Class536.method30875(local8, -2096255705), -1783390357);
 			return this.method29914(local17, (byte) 14) ? local17 : -1;
 		} else {
 			return -1;
@@ -709,7 +709,7 @@ public final class Class480 {
 	@OriginalMember(owner = "client!pf", name = "n", descriptor = "(II)I")
 	public int method29935(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		if (this.method29912(337529426)) {
-			@Pc(12) int local12 = this.aClass492_2.aClass349_1.method27995(arg0, -931794011);
+			@Pc(12) int local12 = this.aJs5ArchiveIndex_2.aClass349_1.method27995(arg0, -931794011);
 			return this.method29914(local12, (byte) -107) ? local12 : -1;
 		} else {
 			return -1;
@@ -724,7 +724,7 @@ public final class Class480 {
 		@Pc(7) int local7 = 0;
 		@Pc(9) int local9 = 0;
 		for (@Pc(11) int local11 = 0; local11 < this.anObjectArray43.length; local11++) {
-			if (this.aClass492_2.anIntArray462[local11] > 0) {
+			if (this.aJs5ArchiveIndex_2.anIntArray462[local11] > 0) {
 				local7 += 100;
 				local9 += this.method29924(local11, (byte) 64);
 			}
@@ -743,11 +743,11 @@ public final class Class480 {
 		}
 		@Pc(8) String local8 = arg0.toLowerCase();
 		@Pc(11) String local11 = arg1.toLowerCase();
-		@Pc(20) int local20 = this.aClass492_2.aClass349_1.method27995(Class536.method30875(local8, -2063903163), 339828066);
+		@Pc(20) int local20 = this.aJs5ArchiveIndex_2.aClass349_1.method27995(Class536.method30875(local8, -2063903163), 339828066);
 		if (local20 < 0) {
 			return false;
 		} else {
-			@Pc(35) int local35 = this.aClass492_2.aClass349Array1[local20].method27995(Class536.method30875(local11, -2000415577), -381632471);
+			@Pc(35) int local35 = this.aJs5ArchiveIndex_2.aClass349Array1[local20].method27995(Class536.method30875(local11, -2000415577), -381632471);
 			return local35 >= 0;
 		}
 	}
@@ -759,9 +759,9 @@ public final class Class480 {
 		}
 		@Pc(8) String local8 = arg0.toLowerCase();
 		@Pc(11) String local11 = arg1.toLowerCase();
-		@Pc(20) int local20 = this.aClass492_2.aClass349_1.method27995(Class536.method30875(local8, -1881945646), -1968220838);
+		@Pc(20) int local20 = this.aJs5ArchiveIndex_2.aClass349_1.method27995(Class536.method30875(local8, -1881945646), -1968220838);
 		if (this.method29914(local20, (byte) 47)) {
-			@Pc(38) int local38 = this.aClass492_2.aClass349Array1[local20].method27995(Class536.method30875(local11, -2067019555), -1538485970);
+			@Pc(38) int local38 = this.aJs5ArchiveIndex_2.aClass349Array1[local20].method27995(Class536.method30875(local11, -2067019555), -1538485970);
 			return this.method29918(local20, local38, 1896589581);
 		} else {
 			return null;
@@ -775,9 +775,9 @@ public final class Class480 {
 		}
 		@Pc(8) String local8 = arg0.toLowerCase();
 		@Pc(11) String local11 = arg1.toLowerCase();
-		@Pc(20) int local20 = this.aClass492_2.aClass349_1.method27995(Class536.method30875(local8, -1901256779), -578738905);
+		@Pc(20) int local20 = this.aJs5ArchiveIndex_2.aClass349_1.method27995(Class536.method30875(local8, -1901256779), -578738905);
 		if (this.method29914(local20, (byte) 33)) {
-			@Pc(38) int local38 = this.aClass492_2.aClass349Array1[local20].method27995(Class536.method30875(local11, -1973321995), 1001035445);
+			@Pc(38) int local38 = this.aJs5ArchiveIndex_2.aClass349Array1[local20].method27995(Class536.method30875(local11, -1973321995), 1001035445);
 			return this.method29925(local20, local38, -131330030);
 		} else {
 			return false;
@@ -792,7 +792,7 @@ public final class Class480 {
 		@Pc(7) int local7 = 0;
 		@Pc(9) int local9 = 0;
 		for (@Pc(11) int local11 = 0; local11 < this.anObjectArray43.length; local11++) {
-			if (this.aClass492_2.anIntArray462[local11] > 0) {
+			if (this.aJs5ArchiveIndex_2.anIntArray462[local11] > 0) {
 				local7 += 100;
 				local9 += this.method29924(local11, (byte) 15);
 			}
@@ -808,11 +808,11 @@ public final class Class480 {
 	public synchronized boolean method29941(@OriginalArg(0) int arg0) {
 		if (!this.method29912(337529426)) {
 			return false;
-		} else if (this.aClass492_2.anIntArray463.length == 1) {
+		} else if (this.aJs5ArchiveIndex_2.anIntArray463.length == 1) {
 			return this.method29925(0, arg0, 1937972701);
 		} else if (!this.method29914(arg0, (byte) -96)) {
 			return false;
-		} else if (this.aClass492_2.anIntArray463[arg0] == 1) {
+		} else if (this.aJs5ArchiveIndex_2.anIntArray463[arg0] == 1) {
 			return this.method29925(arg0, 0, 384093741);
 		} else {
 			throw new RuntimeException();
@@ -823,7 +823,7 @@ public final class Class480 {
 	public int method29942(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1) {
 		if (this.method29912(337529426)) {
 			@Pc(8) String local8 = arg0.toLowerCase();
-			@Pc(17) int local17 = this.aClass492_2.aClass349_1.method27995(Class536.method30875(local8, -1932830386), -1020647405);
+			@Pc(17) int local17 = this.aJs5ArchiveIndex_2.aClass349_1.method27995(Class536.method30875(local8, -1932830386), -1020647405);
 			return this.method29924(local17, (byte) 118);
 		} else {
 			return 0;
@@ -832,13 +832,13 @@ public final class Class480 {
 
 	@OriginalMember(owner = "client!pf", name = "ac", descriptor = "()Z")
 	synchronized boolean method29943() {
-		if (this.aClass492_2 == null) {
-			this.aClass492_2 = this.aClass141_1.method10894(714743103);
-			if (this.aClass492_2 == null) {
+		if (this.aJs5ArchiveIndex_2 == null) {
+			this.aJs5ArchiveIndex_2 = this.aClass141_1.getIndex(714743103);
+			if (this.aJs5ArchiveIndex_2 == null) {
 				return false;
 			}
-			this.anObjectArray43 = new Object[this.aClass492_2.anInt5025 * 183068259];
-			this.anObjectArrayArray3 = new Object[this.aClass492_2.anInt5025 * 183068259][];
+			this.anObjectArray43 = new Object[this.aJs5ArchiveIndex_2.groupArraySize * 183068259];
+			this.anObjectArrayArray3 = new Object[this.aJs5ArchiveIndex_2.groupArraySize * 183068259][];
 		}
 		return true;
 	}
@@ -848,18 +848,18 @@ public final class Class480 {
 		if (!this.method29912(337529426)) {
 			throw new IllegalStateException("");
 		}
-		return this.aClass492_2.anInt5026 * 457348257;
+		return this.aJs5ArchiveIndex_2.anInt5026 * 457348257;
 	}
 
 	@OriginalMember(owner = "client!pf", name = "j", descriptor = "(IB)Z")
 	public synchronized boolean method29945(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1) {
 		if (!this.method29912(337529426)) {
 			return false;
-		} else if (this.aClass492_2.anIntArray463.length == 1) {
+		} else if (this.aJs5ArchiveIndex_2.anIntArray463.length == 1) {
 			return this.method29925(0, arg0, 1814107649);
 		} else if (!this.method29914(arg0, (byte) 42)) {
 			return false;
-		} else if (this.aClass492_2.anIntArray463[arg0] == 1) {
+		} else if (this.aJs5ArchiveIndex_2.anIntArray463[arg0] == 1) {
 			return this.method29925(arg0, 0, -2048965803);
 		} else {
 			throw new RuntimeException();
@@ -875,7 +875,7 @@ public final class Class480 {
 	public synchronized boolean method29947(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		if (!this.method29912(337529426)) {
 			return false;
-		} else if (arg0 >= 0 && arg1 >= 0 && arg0 < this.aClass492_2.anIntArray463.length && arg1 < this.aClass492_2.anIntArray463[arg0]) {
+		} else if (arg0 >= 0 && arg1 >= 0 && arg0 < this.aJs5ArchiveIndex_2.anIntArray463.length && arg1 < this.aJs5ArchiveIndex_2.anIntArray463[arg0]) {
 			return true;
 		} else if (aBoolean880) {
 			throw new IllegalArgumentException(arg0 + " " + arg1);
@@ -921,7 +921,7 @@ public final class Class480 {
 		@Pc(7) int local7 = 0;
 		@Pc(9) int local9 = 0;
 		for (@Pc(11) int local11 = 0; local11 < this.anObjectArray43.length; local11++) {
-			if (this.aClass492_2.anIntArray462[local11] > 0) {
+			if (this.aJs5ArchiveIndex_2.anIntArray462[local11] > 0) {
 				local7 += 100;
 				local9 += this.method29924(local11, (byte) 73);
 			}
@@ -944,8 +944,8 @@ public final class Class480 {
 			return false;
 		}
 		@Pc(7) boolean local7 = true;
-		for (@Pc(9) int local9 = 0; local9 < this.aClass492_2.anIntArray459.length; local9++) {
-			@Pc(21) int local21 = this.aClass492_2.anIntArray459[local9];
+		for (@Pc(9) int local9 = 0; local9 < this.aJs5ArchiveIndex_2.anIntArray459.length; local9++) {
+			@Pc(21) int local21 = this.aJs5ArchiveIndex_2.anIntArray459[local9];
 			if (this.anObjectArray43[local21] == null) {
 				this.method29916(local21, -2068852384);
 				if (this.anObjectArray43[local21] == null) {
@@ -984,7 +984,7 @@ public final class Class480 {
 		if (local9 != null) {
 			if (this.anInt4992 * 524273497 == 1) {
 				this.anObjectArrayArray3[arg0][arg1] = null;
-				if (this.aClass492_2.anIntArray463[arg0] == 1) {
+				if (this.aJs5ArchiveIndex_2.anIntArray463[arg0] == 1) {
 					this.anObjectArrayArray3[arg0] = null;
 				}
 			} else if (this.anInt4992 * 524273497 == 2) {
@@ -996,7 +996,7 @@ public final class Class480 {
 
 	@OriginalMember(owner = "client!pf", name = "bo", descriptor = "(I)I")
 	public int method29958(@OriginalArg(0) int arg0) {
-		return this.method29914(arg0, (byte) -101) ? this.aClass492_2.anIntArray463[arg0] : 0;
+		return this.method29914(arg0, (byte) -101) ? this.aJs5ArchiveIndex_2.anIntArray463[arg0] : 0;
 	}
 
 	@OriginalMember(owner = "client!pf", name = "cy", descriptor = "(Ljava/lang/String;Ljava/lang/String;)Z")
@@ -1006,9 +1006,9 @@ public final class Class480 {
 		}
 		@Pc(8) String local8 = arg0.toLowerCase();
 		@Pc(11) String local11 = arg1.toLowerCase();
-		@Pc(20) int local20 = this.aClass492_2.aClass349_1.method27995(Class536.method30875(local8, -2126334957), 690721609);
+		@Pc(20) int local20 = this.aJs5ArchiveIndex_2.aClass349_1.method27995(Class536.method30875(local8, -2126334957), 690721609);
 		if (this.method29914(local20, (byte) 1)) {
-			@Pc(38) int local38 = this.aClass492_2.aClass349Array1[local20].method27995(Class536.method30875(local11, -1946218269), 885704406);
+			@Pc(38) int local38 = this.aJs5ArchiveIndex_2.aClass349Array1[local20].method27995(Class536.method30875(local11, -1946218269), 885704406);
 			return this.method29925(local20, local38, -384789105);
 		} else {
 			return false;
@@ -1019,11 +1019,11 @@ public final class Class480 {
 	public synchronized boolean method29960(@OriginalArg(0) int arg0) {
 		if (!this.method29912(337529426)) {
 			return false;
-		} else if (this.aClass492_2.anIntArray463.length == 1) {
+		} else if (this.aJs5ArchiveIndex_2.anIntArray463.length == 1) {
 			return this.method29925(0, arg0, -1902074535);
 		} else if (!this.method29914(arg0, (byte) -36)) {
 			return false;
-		} else if (this.aClass492_2.anIntArray463[arg0] == 1) {
+		} else if (this.aJs5ArchiveIndex_2.anIntArray463[arg0] == 1) {
 			return this.method29925(arg0, 0, 392555199);
 		} else {
 			throw new RuntimeException();
@@ -1034,11 +1034,11 @@ public final class Class480 {
 	public synchronized boolean method29961(@OriginalArg(0) int arg0) {
 		if (!this.method29912(337529426)) {
 			return false;
-		} else if (this.aClass492_2.anIntArray463.length == 1) {
+		} else if (this.aJs5ArchiveIndex_2.anIntArray463.length == 1) {
 			return this.method29925(0, arg0, 1678207830);
 		} else if (!this.method29914(arg0, (byte) -36)) {
 			return false;
-		} else if (this.aClass492_2.anIntArray463[arg0] == 1) {
+		} else if (this.aJs5ArchiveIndex_2.anIntArray463[arg0] == 1) {
 			return this.method29925(arg0, 0, 1838127272);
 		} else {
 			throw new RuntimeException();
@@ -1075,8 +1075,8 @@ public final class Class480 {
 			return false;
 		}
 		@Pc(7) boolean local7 = true;
-		for (@Pc(9) int local9 = 0; local9 < this.aClass492_2.anIntArray459.length; local9++) {
-			@Pc(21) int local21 = this.aClass492_2.anIntArray459[local9];
+		for (@Pc(9) int local9 = 0; local9 < this.aJs5ArchiveIndex_2.anIntArray459.length; local9++) {
+			@Pc(21) int local21 = this.aJs5ArchiveIndex_2.anIntArray459[local9];
 			if (this.anObjectArray43[local21] == null) {
 				this.method29916(local21, -2068852384);
 				if (this.anObjectArray43[local21] == null) {
@@ -1093,8 +1093,8 @@ public final class Class480 {
 			return false;
 		}
 		@Pc(7) boolean local7 = true;
-		for (@Pc(9) int local9 = 0; local9 < this.aClass492_2.anIntArray459.length; local9++) {
-			@Pc(21) int local21 = this.aClass492_2.anIntArray459[local9];
+		for (@Pc(9) int local9 = 0; local9 < this.aJs5ArchiveIndex_2.anIntArray459.length; local9++) {
+			@Pc(21) int local21 = this.aJs5ArchiveIndex_2.anIntArray459[local9];
 			if (this.anObjectArray43[local21] == null) {
 				this.method29916(local21, -2068852384);
 				if (this.anObjectArray43[local21] == null) {
@@ -1110,9 +1110,9 @@ public final class Class480 {
 		if (!this.method29914(arg0, (byte) -60)) {
 			return null;
 		}
-		@Pc(12) int[] local12 = this.aClass492_2.anIntArrayArray58[arg0];
+		@Pc(12) int[] local12 = this.aJs5ArchiveIndex_2.anIntArrayArray58[arg0];
 		if (local12 == null) {
-			local12 = new int[this.aClass492_2.anIntArray462[arg0]];
+			local12 = new int[this.aJs5ArchiveIndex_2.anIntArray462[arg0]];
 			@Pc(24) int local24 = 0;
 			while (local24 < local12.length) {
 				local12[local24] = local24++;
@@ -1158,7 +1158,7 @@ public final class Class480 {
 		if (local9 != null) {
 			if (this.anInt4992 * 524273497 == 1) {
 				this.anObjectArrayArray3[arg0][arg1] = null;
-				if (this.aClass492_2.anIntArray463[arg0] == 1) {
+				if (this.aJs5ArchiveIndex_2.anIntArray463[arg0] == 1) {
 					this.anObjectArrayArray3[arg0] = null;
 				}
 			} else if (this.anInt4992 * 524273497 == 2) {
@@ -1173,18 +1173,18 @@ public final class Class480 {
 		if (!this.method29912(337529426)) {
 			throw new IllegalStateException("");
 		}
-		return this.aClass492_2.anInt5026 * 457348257;
+		return this.aJs5ArchiveIndex_2.anInt5026 * 457348257;
 	}
 
 	@OriginalMember(owner = "client!pf", name = "be", descriptor = "(I)[B")
 	public synchronized byte[] method29970(@OriginalArg(0) int arg0) {
 		if (!this.method29912(337529426)) {
 			return null;
-		} else if (this.aClass492_2.anIntArray463.length == 1) {
+		} else if (this.aJs5ArchiveIndex_2.anIntArray463.length == 1) {
 			return this.method29918(0, arg0, 1896589581);
 		} else if (!this.method29914(arg0, (byte) 64)) {
 			return null;
-		} else if (this.aClass492_2.anIntArray463[arg0] == 1) {
+		} else if (this.aJs5ArchiveIndex_2.anIntArray463[arg0] == 1) {
 			return this.method29918(arg0, 0, 1896589581);
 		} else {
 			throw new RuntimeException();
@@ -1199,7 +1199,7 @@ public final class Class480 {
 		@Pc(7) int local7 = 0;
 		@Pc(9) int local9 = 0;
 		for (@Pc(11) int local11 = 0; local11 < this.anObjectArray43.length; local11++) {
-			if (this.aClass492_2.anIntArray462[local11] > 0) {
+			if (this.aJs5ArchiveIndex_2.anIntArray462[local11] > 0) {
 				local7 += 100;
 				local9 += this.method29924(local11, (byte) 35);
 			}
@@ -1215,7 +1215,7 @@ public final class Class480 {
 	public boolean method29972(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1) {
 		if (this.method29912(337529426)) {
 			@Pc(8) String local8 = arg0.toLowerCase();
-			@Pc(17) int local17 = this.aClass492_2.aClass349_1.method27995(Class536.method30875(local8, -1949820957), 286917540);
+			@Pc(17) int local17 = this.aJs5ArchiveIndex_2.aClass349_1.method27995(Class536.method30875(local8, -1949820957), 286917540);
 			return local17 >= 0;
 		} else {
 			return false;
@@ -1226,11 +1226,11 @@ public final class Class480 {
 	public boolean method29973(@OriginalArg(0) int arg0) {
 		if (!this.method29912(337529426)) {
 			return false;
-		} else if (this.aClass492_2.anIntArray463.length == 1) {
+		} else if (this.aJs5ArchiveIndex_2.anIntArray463.length == 1) {
 			return this.method29915(0, arg0, (byte) -52);
 		} else if (!this.method29914(arg0, (byte) 31)) {
 			return false;
-		} else if (this.aClass492_2.anIntArray463[arg0] == 1) {
+		} else if (this.aJs5ArchiveIndex_2.anIntArray463[arg0] == 1) {
 			return this.method29915(arg0, 0, (byte) -120);
 		} else {
 			throw new RuntimeException();
@@ -1241,11 +1241,11 @@ public final class Class480 {
 	public synchronized byte[] method29974(@OriginalArg(0) int arg0) {
 		if (!this.method29912(337529426)) {
 			return null;
-		} else if (this.aClass492_2.anIntArray463.length == 1) {
+		} else if (this.aJs5ArchiveIndex_2.anIntArray463.length == 1) {
 			return this.method29918(0, arg0, 1896589581);
 		} else if (!this.method29914(arg0, (byte) -25)) {
 			return null;
-		} else if (this.aClass492_2.anIntArray463[arg0] == 1) {
+		} else if (this.aJs5ArchiveIndex_2.anIntArray463[arg0] == 1) {
 			return this.method29918(arg0, 0, 1896589581);
 		} else {
 			throw new RuntimeException();
@@ -1268,11 +1268,11 @@ public final class Class480 {
 	public boolean method29976(@OriginalArg(0) int arg0) {
 		if (!this.method29912(337529426)) {
 			return false;
-		} else if (this.aClass492_2.anIntArray463.length == 1) {
+		} else if (this.aJs5ArchiveIndex_2.anIntArray463.length == 1) {
 			return this.method29915(0, arg0, (byte) -107);
 		} else if (!this.method29914(arg0, (byte) 27)) {
 			return false;
-		} else if (this.aClass492_2.anIntArray463[arg0] == 1) {
+		} else if (this.aJs5ArchiveIndex_2.anIntArray463[arg0] == 1) {
 			return this.method29915(arg0, 0, (byte) -55);
 		} else {
 			throw new RuntimeException();
@@ -1288,7 +1288,7 @@ public final class Class480 {
 	synchronized boolean method29978(@OriginalArg(0) int arg0) {
 		if (!this.method29912(337529426)) {
 			return false;
-		} else if (arg0 >= 0 && arg0 < this.aClass492_2.anIntArray463.length && this.aClass492_2.anIntArray463[arg0] != 0) {
+		} else if (arg0 >= 0 && arg0 < this.aJs5ArchiveIndex_2.anIntArray463.length && this.aJs5ArchiveIndex_2.anIntArray463[arg0] != 0) {
 			return true;
 		} else if (aBoolean880) {
 			throw new IllegalArgumentException(Integer.toString(arg0));
@@ -1299,17 +1299,17 @@ public final class Class480 {
 
 	@OriginalMember(owner = "client!pf", name = "bc", descriptor = "()I")
 	public int method29979() {
-		return this.method29912(337529426) ? this.aClass492_2.anIntArray463.length : -1;
+		return this.method29912(337529426) ? this.aJs5ArchiveIndex_2.anIntArray463.length : -1;
 	}
 
 	@OriginalMember(owner = "client!pf", name = "bf", descriptor = "()I")
 	public int method29980() {
-		return this.method29912(337529426) ? this.aClass492_2.anIntArray463.length : -1;
+		return this.method29912(337529426) ? this.aJs5ArchiveIndex_2.anIntArray463.length : -1;
 	}
 
 	@OriginalMember(owner = "client!pf", name = "bw", descriptor = "()I")
 	public int method29981() {
-		return this.method29912(337529426) ? this.aClass492_2.anIntArray463.length : -1;
+		return this.method29912(337529426) ? this.aJs5ArchiveIndex_2.anIntArray463.length : -1;
 	}
 
 	@OriginalMember(owner = "client!pf", name = "bx", descriptor = "(I)V")
@@ -1325,12 +1325,12 @@ public final class Class480 {
 			return;
 		}
 		if (arg0) {
-			this.aClass492_2.anIntArray456 = null;
-			this.aClass492_2.aClass349_1 = null;
+			this.aJs5ArchiveIndex_2.anIntArray456 = null;
+			this.aJs5ArchiveIndex_2.aClass349_1 = null;
 		}
 		if (arg1) {
-			this.aClass492_2.anIntArrayArray59 = null;
-			this.aClass492_2.aClass349Array1 = null;
+			this.aJs5ArchiveIndex_2.anIntArrayArray59 = null;
+			this.aJs5ArchiveIndex_2.aClass349Array1 = null;
 		}
 	}
 
@@ -1341,10 +1341,10 @@ public final class Class480 {
 		} else if (this.anObjectArray43[arg0] == null) {
 			return false;
 		} else {
-			@Pc(19) int local19 = this.aClass492_2.anIntArray462[arg0];
-			@Pc(25) int[] local25 = this.aClass492_2.anIntArrayArray58[arg0];
+			@Pc(19) int local19 = this.aJs5ArchiveIndex_2.anIntArray462[arg0];
+			@Pc(25) int[] local25 = this.aJs5ArchiveIndex_2.anIntArrayArray58[arg0];
 			if (this.anObjectArrayArray3[arg0] == null) {
-				this.anObjectArrayArray3[arg0] = new Object[this.aClass492_2.anIntArray463[arg0]];
+				this.anObjectArrayArray3[arg0] = new Object[this.aJs5ArchiveIndex_2.anIntArray463[arg0]];
 			}
 			@Pc(45) Object[] local45 = this.anObjectArrayArray3[arg0];
 			@Pc(47) boolean local47 = true;
@@ -1373,14 +1373,14 @@ public final class Class480 {
 				@Pc(108) Packet local108 = new Packet(local103);
 				local112 = local108.g1();
 				local116 = local108.g4();
-				@Pc(126) int local126 = (local112 == Class486.aClass486_4.method37268() ? 5 : 9) + local116;
+				@Pc(126) int local126 = (local112 == Class486.UNCOMPRESSED.getId() ? 5 : 9) + local116;
 				local108.tinydec(arg2, 5, local126);
 			}
 			@Pc(145) byte[] local145;
 			try {
 				local145 = Class306.method27214(local103, 1972376445);
 			} catch (@Pc(147) RuntimeException local147) {
-				throw Class271.method26705(local147, (arg2 != null) + " " + arg0 + " " + local103.length + " " + Packet.getcrc(local103, local103.length) + " " + Packet.getcrc(local103, local103.length - 2) + " " + this.aClass492_2.anIntArray455[arg0] + " " + this.aClass492_2.anInt5026 * 457348257);
+				throw Class271.method26705(local147, (arg2 != null) + " " + arg0 + " " + local103.length + " " + Packet.getcrc(local103, local103.length) + " " + Packet.getcrc(local103, local103.length - 2) + " " + this.aJs5ArchiveIndex_2.anIntArray455[arg0] + " " + this.aJs5ArchiveIndex_2.anInt5026 * 457348257);
 			}
 			if (this.aBoolean879) {
 				this.anObjectArray43[arg0] = null;
@@ -1504,7 +1504,7 @@ public final class Class480 {
 	@OriginalMember(owner = "client!pf", name = "bm", descriptor = "(I)I")
 	public int method29985(@OriginalArg(0) int arg0) {
 		if (this.method29912(337529426)) {
-			@Pc(12) int local12 = this.aClass492_2.aClass349_1.method27995(arg0, 1292025317);
+			@Pc(12) int local12 = this.aJs5ArchiveIndex_2.aClass349_1.method27995(arg0, 1292025317);
 			return this.method29914(local12, (byte) -102) ? local12 : -1;
 		} else {
 			return -1;
@@ -1515,7 +1515,7 @@ public final class Class480 {
 	public boolean method29986(@OriginalArg(0) String arg0) {
 		if (this.method29912(337529426)) {
 			@Pc(8) String local8 = arg0.toLowerCase();
-			@Pc(17) int local17 = this.aClass492_2.aClass349_1.method27995(Class536.method30875(local8, -1909716579), 1677086857);
+			@Pc(17) int local17 = this.aJs5ArchiveIndex_2.aClass349_1.method27995(Class536.method30875(local8, -1909716579), 1677086857);
 			return local17 >= 0;
 		} else {
 			return false;
@@ -1526,7 +1526,7 @@ public final class Class480 {
 	public boolean method29987(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1) {
 		if (this.method29912(337529426)) {
 			@Pc(8) String local8 = arg0.toLowerCase();
-			@Pc(17) int local17 = this.aClass492_2.aClass349_1.method27995(Class536.method30875(local8, -1928157037), -1704010286);
+			@Pc(17) int local17 = this.aJs5ArchiveIndex_2.aClass349_1.method27995(Class536.method30875(local8, -1928157037), -1704010286);
 			return this.method29975(local17, -1403081456);
 		} else {
 			return false;
@@ -1540,11 +1540,11 @@ public final class Class480 {
 		}
 		@Pc(8) String local8 = arg0.toLowerCase();
 		@Pc(11) String local11 = arg1.toLowerCase();
-		@Pc(20) int local20 = this.aClass492_2.aClass349_1.method27995(Class536.method30875(local8, -2142563697), 1112898895);
+		@Pc(20) int local20 = this.aJs5ArchiveIndex_2.aClass349_1.method27995(Class536.method30875(local8, -2142563697), 1112898895);
 		if (local20 < 0) {
 			return false;
 		} else {
-			@Pc(35) int local35 = this.aClass492_2.aClass349Array1[local20].method27995(Class536.method30875(local11, -2011739568), -1158209107);
+			@Pc(35) int local35 = this.aJs5ArchiveIndex_2.aClass349Array1[local20].method27995(Class536.method30875(local11, -2011739568), -1158209107);
 			return local35 >= 0;
 		}
 	}
@@ -1556,11 +1556,11 @@ public final class Class480 {
 		}
 		@Pc(8) String local8 = arg0.toLowerCase();
 		@Pc(11) String local11 = arg1.toLowerCase();
-		@Pc(20) int local20 = this.aClass492_2.aClass349_1.method27995(Class536.method30875(local8, -1879668153), 1385963983);
+		@Pc(20) int local20 = this.aJs5ArchiveIndex_2.aClass349_1.method27995(Class536.method30875(local8, -1879668153), 1385963983);
 		if (local20 < 0) {
 			return false;
 		} else {
-			@Pc(35) int local35 = this.aClass492_2.aClass349Array1[local20].method27995(Class536.method30875(local11, -1970340610), -444906631);
+			@Pc(35) int local35 = this.aJs5ArchiveIndex_2.aClass349Array1[local20].method27995(Class536.method30875(local11, -1970340610), -444906631);
 			return local35 >= 0;
 		}
 	}
@@ -1572,9 +1572,9 @@ public final class Class480 {
 		}
 		@Pc(8) String local8 = arg0.toLowerCase();
 		@Pc(11) String local11 = arg1.toLowerCase();
-		@Pc(20) int local20 = this.aClass492_2.aClass349_1.method27995(Class536.method30875(local8, -2033842842), 331680554);
+		@Pc(20) int local20 = this.aJs5ArchiveIndex_2.aClass349_1.method27995(Class536.method30875(local8, -2033842842), 331680554);
 		if (this.method29914(local20, (byte) 13)) {
-			@Pc(38) int local38 = this.aClass492_2.aClass349Array1[local20].method27995(Class536.method30875(local11, -1963033711), -1376614727);
+			@Pc(38) int local38 = this.aJs5ArchiveIndex_2.aClass349Array1[local20].method27995(Class536.method30875(local11, -1963033711), -1376614727);
 			return this.method29918(local20, local38, 1896589581);
 		} else {
 			return null;
@@ -1588,9 +1588,9 @@ public final class Class480 {
 		}
 		@Pc(8) String local8 = arg0.toLowerCase();
 		@Pc(11) String local11 = arg1.toLowerCase();
-		@Pc(20) int local20 = this.aClass492_2.aClass349_1.method27995(Class536.method30875(local8, -1926558222), -1569679012);
+		@Pc(20) int local20 = this.aJs5ArchiveIndex_2.aClass349_1.method27995(Class536.method30875(local8, -1926558222), -1569679012);
 		if (this.method29914(local20, (byte) 25)) {
-			@Pc(38) int local38 = this.aClass492_2.aClass349Array1[local20].method27995(Class536.method30875(local11, -2124876363), 1825194411);
+			@Pc(38) int local38 = this.aJs5ArchiveIndex_2.aClass349Array1[local20].method27995(Class536.method30875(local11, -2124876363), 1825194411);
 			return this.method29925(local20, local38, -1117316256);
 		} else {
 			return false;
@@ -1624,7 +1624,7 @@ public final class Class480 {
 	public boolean method29996(@OriginalArg(0) String arg0) {
 		if (this.method29912(337529426)) {
 			@Pc(8) String local8 = arg0.toLowerCase();
-			@Pc(17) int local17 = this.aClass492_2.aClass349_1.method27995(Class536.method30875(local8, -2050715341), -1089530944);
+			@Pc(17) int local17 = this.aJs5ArchiveIndex_2.aClass349_1.method27995(Class536.method30875(local8, -2050715341), -1089530944);
 			return this.method29975(local17, -1403081456);
 		} else {
 			return false;
@@ -1653,7 +1653,7 @@ public final class Class480 {
 		@Pc(7) int local7 = 0;
 		@Pc(9) int local9 = 0;
 		for (@Pc(11) int local11 = 0; local11 < this.anObjectArray43.length; local11++) {
-			if (this.aClass492_2.anIntArray462[local11] > 0) {
+			if (this.aJs5ArchiveIndex_2.anIntArray462[local11] > 0) {
 				local7 += 100;
 				local9 += this.method29924(local11, (byte) 64);
 			}
