@@ -511,7 +511,7 @@ public class Class112_Sub1_Sub3_Sub2 extends Class112_Sub1_Sub3 {
 
 	@OriginalMember(owner = "client!ath", name = "finalize", descriptor = "()V", line = 139)
 	@Override
-	void finalize() throws Throwable {
+	protected void finalize() throws Throwable {
 		this.method23454();
 		super.finalize();
 	}

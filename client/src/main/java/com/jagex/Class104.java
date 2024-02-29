@@ -297,7 +297,7 @@ public abstract class Class104 {
 
 	@OriginalMember(owner = "client!dh", name = "finalize", descriptor = "()V", line = 123)
 	@Override
-	void finalize() {
+	protected void finalize() {
 		this.method20429(-1801463895);
 	}
 

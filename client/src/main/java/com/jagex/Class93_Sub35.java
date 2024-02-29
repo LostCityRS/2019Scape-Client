@@ -196,7 +196,7 @@ public abstract class Class93_Sub35 extends Class93 {
 			}
 			client.aClass132_Sub1_Sub1_Sub1_Sub2Array1[arg1] = null;
 			if (arg0.method22686(1, 1402643434) != 0) {
-				Class18.method272(arg0, arg1, 1694438313);
+				Class174.method272(arg0, arg1, 1694438313);
 			}
 		}
 	}

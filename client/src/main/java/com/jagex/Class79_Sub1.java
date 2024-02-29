@@ -195,7 +195,9 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 				local23.anObject19 = local66;
 			} catch (@Pc(75) InstantiationException local75) {
 			} catch (@Pc(77) IllegalAccessException local77) {
-			}
+			} catch (java.lang.NoSuchMethodException ignored) {
+            } catch (java.lang.reflect.InvocationTargetException ignored) {
+            }
 		} else {
 			throw new IllegalStateException();
 		}
@@ -224,7 +226,9 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 				local23.anObject19 = local66;
 			} catch (@Pc(75) InstantiationException local75) {
 			} catch (@Pc(77) IllegalAccessException local77) {
-			}
+			} catch (java.lang.NoSuchMethodException ignored) {
+            } catch (java.lang.reflect.InvocationTargetException ignored) {
+            }
 		} else {
 			throw new IllegalStateException();
 		}
@@ -249,7 +253,9 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 				local8.anObject19 = local48;
 			} catch (@Pc(57) InstantiationException local57) {
 			} catch (@Pc(59) IllegalAccessException local59) {
-			}
+			} catch (java.lang.NoSuchMethodException ignored) {
+            } catch (java.lang.reflect.InvocationTargetException ignored) {
+            }
 		} else {
 			throw new IllegalStateException();
 		}
@@ -275,7 +281,9 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 				local8.anObject19 = local48;
 			} catch (@Pc(57) InstantiationException local57) {
 			} catch (@Pc(59) IllegalAccessException local59) {
-			}
+			} catch (java.lang.NoSuchMethodException ignored) {
+            } catch (java.lang.reflect.InvocationTargetException ignored) {
+            }
 		} else {
 			throw new IllegalStateException();
 		}
@@ -301,7 +309,9 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 				local8.anObject19 = local48;
 			} catch (@Pc(57) InstantiationException local57) {
 			} catch (@Pc(59) IllegalAccessException local59) {
-			}
+			} catch (java.lang.NoSuchMethodException ignored) {
+            } catch (java.lang.reflect.InvocationTargetException ignored) {
+            }
 		} else {
 			throw new IllegalStateException();
 		}
@@ -327,7 +337,9 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 				local8.anObject19 = local48;
 			} catch (@Pc(57) InstantiationException local57) {
 			} catch (@Pc(59) IllegalAccessException local59) {
-			}
+			} catch (java.lang.NoSuchMethodException ignored) {
+            } catch (java.lang.reflect.InvocationTargetException ignored) {
+            }
 		} else {
 			throw new IllegalStateException();
 		}

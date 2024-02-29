@@ -1059,7 +1059,7 @@ public class Class104_Sub2_Sub1 extends Class104_Sub2 {
 
 	@OriginalMember(owner = "client!aqd", name = "finalize", descriptor = "()V", line = 324)
 	@Override
-	void finalize() {
+	protected void finalize() {
 		super.finalize();
 	}
 

@@ -140,7 +140,7 @@ public class Class160_Sub1 extends Class160 {
 
 	@OriginalMember(owner = "client!all", name = "finalize", descriptor = "()V", line = 53)
 	@Override
-	void finalize() {
+	protected void finalize() {
 		this.method14722(-734619071);
 	}
 

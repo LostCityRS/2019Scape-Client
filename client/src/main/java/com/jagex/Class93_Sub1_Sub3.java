@@ -159,7 +159,7 @@ public class Class93_Sub1_Sub3 extends Class93_Sub1 implements Interface15 {
 
 	@OriginalMember(owner = "client!aeg", name = "finalize", descriptor = "()V", line = 73)
 	@Override
-	void finalize() throws Throwable {
+	protected void finalize() throws Throwable {
 		this.method2214();
 		super.finalize();
 	}

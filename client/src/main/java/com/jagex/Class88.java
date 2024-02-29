@@ -271,7 +271,7 @@ public abstract class Class88 {
 
 	@OriginalMember(owner = "client!bq", name = "finalize", descriptor = "()V", line = 96)
 	@Override
-	void finalize() throws Throwable {
+	protected void finalize() throws Throwable {
 		this.method18055();
 		super.finalize();
 	}

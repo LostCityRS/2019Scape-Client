@@ -126,7 +126,7 @@ public class Class459 implements Interface49 {
 
 	@OriginalMember(owner = "client!of", name = "finalize", descriptor = "()V", line = 55)
 	@Override
-	void finalize() {
+	protected void finalize() {
 		this.method29647();
 	}
 

@@ -136,7 +136,7 @@ public class Class145_Sub2 extends Class145 {
 
 	@OriginalMember(owner = "client!ait", name = "finalize", descriptor = "()V", line = 68)
 	@Override
-	void finalize() {
+	protected void finalize() {
 		this.method11489();
 	}
 

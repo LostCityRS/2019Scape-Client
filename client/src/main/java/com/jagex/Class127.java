@@ -130,7 +130,7 @@ public abstract class Class127 implements Interface4 {
 					if (local38 == 0) {
 						local1 = Class206.method24698(arg0, -1341202410);
 						Class174.aByteArray63[local15] = (byte) (Class174.aByteArray63[local15] | 0x2);
-					} else if (Class18.method272(arg0, local15, 1130832603)) {
+					} else if (Class174.method272(arg0, local15, 1130832603)) {
 						Class174.aByteArray63[local15] = (byte) (Class174.aByteArray63[local15] | 0x2);
 					}
 				}
@@ -152,7 +152,7 @@ public abstract class Class127 implements Interface4 {
 					if (local38 == 0) {
 						local1 = Class206.method24698(arg0, -1665931944);
 						Class174.aByteArray63[local15] = (byte) (Class174.aByteArray63[local15] | 0x2);
-					} else if (Class18.method272(arg0, local15, 491218498)) {
+					} else if (Class174.method272(arg0, local15, 491218498)) {
 						Class174.aByteArray63[local15] = (byte) (Class174.aByteArray63[local15] | 0x2);
 					}
 				}

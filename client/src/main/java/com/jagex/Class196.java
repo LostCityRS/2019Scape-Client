@@ -104,7 +104,7 @@ public class Class196 {
 
 	@OriginalMember(owner = "client!bu", name = "finalize", descriptor = "()V", line = 31)
 	@Override
-	void finalize() throws Throwable {
+	protected void finalize() throws Throwable {
 		this.aClass104_Sub1_42.method3968(this.anInt3365);
 		super.finalize();
 	}

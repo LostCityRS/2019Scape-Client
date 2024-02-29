@@ -580,28 +580,27 @@ public class Class109_Sub1 extends Class109 {
 							method6816(this.anIntArray47[local816], this.anIntArray48[local816], this.anIntArray49[local816], local1186, local1191, local1196, local1201, local1206, local849, local595);
 							local657[2] = local595[0];
 							local665[2] = local595[1];
-							@Pc(1898) int local1898;
 							if ((local1206 & 0x1) == 0) {
 								if (local657[1] - local657[0] > 0.5F) {
-									local1898 = local657[1]--;
+									local657[1]--;
 								} else if (local657[0] - local657[1] > 0.5F) {
-									local1898 = local657[1]++;
+									local657[1]++;
 								}
 								if (local657[2] - local657[0] > 0.5F) {
-									local1898 = local657[2]--;
+									local657[2]--;
 								} else if (local657[0] - local657[2] > 0.5F) {
-									local1898 = local657[2]++;
+									local657[2]++;
 								}
 							} else {
 								if (local665[1] - local665[0] > 0.5F) {
-									local1898 = local665[1]--;
+									local665[1]--;
 								} else if (local665[0] - local665[1] > 0.5F) {
-									local1898 = local665[1]++;
+									local665[1]++;
 								}
 								if (local665[2] - local665[0] > 0.5F) {
-									local1898 = local665[2]--;
+									local665[2]--;
 								} else if (local665[0] - local665[2] > 0.5F) {
-									local1898 = local665[2]++;
+									local665[2]++;
 								}
 							}
 						}

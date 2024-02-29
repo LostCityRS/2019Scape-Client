@@ -155,7 +155,7 @@ public final class Class38 {
 
 	@OriginalMember(owner = "client!abl", name = "finalize", descriptor = "()V", line = 69)
 	@Override
-	void finalize() throws Throwable {
+	protected void finalize() throws Throwable {
 		if (this.aRandomAccessFile1 != null) {
 			System.out.println("");
 			this.method728(-1178992354);
