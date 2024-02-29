@@ -235,7 +235,7 @@ public final class Class586 implements Interface57 {
 			throw new Exception_Sub1(4, arg0);
 		}
 		try {
-			local20 = new File(local20.getCanonicalPath());
+			/*local20 = new File(local20.getCanonicalPath());
 			@Pc(39) Class local39 = Class.forName("java.lang.Runtime");
 			@Pc(42) Class local42 = Class.forName("java.lang.reflect.AccessibleObject");
 			@Pc(52) Method local52 = local42.getDeclaredMethod("setAccessible", Boolean.TYPE);
@@ -244,7 +244,7 @@ public final class Class586 implements Interface57 {
 			local68.invoke(Runtime.getRuntime(), arg1, local20.getPath());
 			local52.invoke(local68, Boolean.FALSE);
 			this.aHashtable11.put(arg0, arg1);
-		} catch (@Pc(111) NoSuchMethodException local111) {
+		} catch (@Pc(111) NoSuchMethodException local111) {*/
 			System.load(local20.getPath());
 			this.aHashtable11.put(arg0, Class574.class);
 		} catch (@Pc(122) Throwable local122) {
@@ -272,7 +272,7 @@ public final class Class586 implements Interface57 {
 			throw new Exception_Sub1(4, arg0);
 		}
 		try {
-			local20 = new File(local20.getCanonicalPath());
+			/*local20 = new File(local20.getCanonicalPath());
 			@Pc(39) Class local39 = Class.forName("java.lang.Runtime");
 			@Pc(42) Class local42 = Class.forName("java.lang.reflect.AccessibleObject");
 			@Pc(52) Method local52 = local42.getDeclaredMethod("setAccessible", Boolean.TYPE);
@@ -281,7 +281,7 @@ public final class Class586 implements Interface57 {
 			local68.invoke(Runtime.getRuntime(), arg1, local20.getPath());
 			local52.invoke(local68, Boolean.FALSE);
 			this.aHashtable11.put(arg0, arg1);
-		} catch (@Pc(111) NoSuchMethodException local111) {
+		} catch (@Pc(111) NoSuchMethodException local111) {*/
 			System.load(local20.getPath());
 			this.aHashtable11.put(arg0, Class574.class);
 		} catch (@Pc(122) Throwable local122) {
@@ -474,7 +474,7 @@ public final class Class586 implements Interface57 {
 			throw new Exception_Sub1(4, arg0);
 		}
 		try {
-			local20 = new File(local20.getCanonicalPath());
+			/*local20 = new File(local20.getCanonicalPath());
 			@Pc(39) Class local39 = Class.forName("java.lang.Runtime");
 			@Pc(42) Class local42 = Class.forName("java.lang.reflect.AccessibleObject");
 			@Pc(52) Method local52 = local42.getDeclaredMethod("setAccessible", Boolean.TYPE);
@@ -483,7 +483,7 @@ public final class Class586 implements Interface57 {
 			local68.invoke(Runtime.getRuntime(), arg1, local20.getPath());
 			local52.invoke(local68, Boolean.FALSE);
 			this.aHashtable11.put(arg0, arg1);
-		} catch (@Pc(111) NoSuchMethodException local111) {
+		} catch (@Pc(111) NoSuchMethodException local111) {*/
 			System.load(local20.getPath());
 			this.aHashtable11.put(arg0, Class574.class);
 		} catch (@Pc(122) Throwable local122) {
@@ -511,7 +511,7 @@ public final class Class586 implements Interface57 {
 			throw new Exception_Sub1(4, arg0);
 		}
 		try {
-			local20 = new File(local20.getCanonicalPath());
+			/*local20 = new File(local20.getCanonicalPath());
 			@Pc(39) Class local39 = Class.forName("java.lang.Runtime");
 			@Pc(42) Class local42 = Class.forName("java.lang.reflect.AccessibleObject");
 			@Pc(52) Method local52 = local42.getDeclaredMethod("setAccessible", Boolean.TYPE);
@@ -520,7 +520,7 @@ public final class Class586 implements Interface57 {
 			local68.invoke(Runtime.getRuntime(), arg1, local20.getPath());
 			local52.invoke(local68, Boolean.FALSE);
 			this.aHashtable11.put(arg0, arg1);
-		} catch (@Pc(111) NoSuchMethodException local111) {
+		} catch (@Pc(111) NoSuchMethodException local111) {*/
 			System.load(local20.getPath());
 			this.aHashtable11.put(arg0, Class574.class);
 		} catch (@Pc(122) Throwable local122) {
@@ -542,7 +542,7 @@ public final class Class586 implements Interface57 {
 			throw new Exception_Sub1(4, arg0);
 		}
 		try {
-			local20 = new File(local20.getCanonicalPath());
+			/*local20 = new File(local20.getCanonicalPath());
 			@Pc(39) Class local39 = Class.forName("java.lang.Runtime");
 			@Pc(42) Class local42 = Class.forName("java.lang.reflect.AccessibleObject");
 			@Pc(52) Method local52 = local42.getDeclaredMethod("setAccessible", Boolean.TYPE);
@@ -551,7 +551,7 @@ public final class Class586 implements Interface57 {
 			local68.invoke(Runtime.getRuntime(), arg1, local20.getPath());
 			local52.invoke(local68, Boolean.FALSE);
 			this.aHashtable11.put(arg0, arg1);
-		} catch (@Pc(111) NoSuchMethodException local111) {
+		} catch (@Pc(111) NoSuchMethodException local111) {*/
 			System.load(local20.getPath());
 			this.aHashtable11.put(arg0, Class574.class);
 		} catch (@Pc(122) Throwable local122) {
