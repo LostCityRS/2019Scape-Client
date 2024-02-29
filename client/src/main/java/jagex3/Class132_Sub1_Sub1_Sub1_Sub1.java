@@ -753,14 +753,14 @@ public final class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 
 
 	@OriginalMember(owner = "client!aqc", name = "z", descriptor = "()Lclient!akt;")
 	@Override
-	public Class93_Sub30 method19956() {
+	public CoordFine method19956() {
 		@Pc(3) Class611 local3 = client.aClass532_1.method30624(2067254857);
 		return Class393.method28502(this.aByte100, (int) this.method24241().aClass472_61.aFloat325 + local3.anInt5784 * 1114227200, -((int) this.method24241().aClass472_61.aFloat326), (int) this.method24241().aClass472_61.aFloat327 + local3.anInt5785 * 1116707328, (short) -10152);
 	}
 
 	@OriginalMember(owner = "client!aqc", name = "p", descriptor = "()Lclient!akt;")
 	@Override
-	public Class93_Sub30 method19955() {
+	public CoordFine method19955() {
 		@Pc(3) Class611 local3 = client.aClass532_1.method30624(2078928802);
 		return Class393.method28502(this.aByte100, (int) this.method24241().aClass472_61.aFloat325 + local3.anInt5784 * 1114227200, -((int) this.method24241().aClass472_61.aFloat326), (int) this.method24241().aClass472_61.aFloat327 + local3.anInt5785 * 1116707328, (short) 6808);
 	}
@@ -965,7 +965,7 @@ public final class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 
 
 	@OriginalMember(owner = "client!aqc", name = "u", descriptor = "()Lclient!akt;")
 	@Override
-	public Class93_Sub30 method19952() {
+	public CoordFine method19952() {
 		@Pc(3) Class611 local3 = client.aClass532_1.method30624(1994750451);
 		return Class393.method28502(this.aByte100, (int) this.method24241().aClass472_61.aFloat325 + local3.anInt5784 * 1114227200, -((int) this.method24241().aClass472_61.aFloat326), (int) this.method24241().aClass472_61.aFloat327 + local3.anInt5785 * 1116707328, (short) -12387);
 	}
@@ -1047,7 +1047,7 @@ public final class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 
 
 	@OriginalMember(owner = "client!aqc", name = "m", descriptor = "(B)Lclient!akt;")
 	@Override
-	public Class93_Sub30 method19950(@OriginalArg(0) byte arg0) {
+	public CoordFine method19950(@OriginalArg(0) byte arg0) {
 		@Pc(3) Class611 local3 = client.aClass532_1.method30624(1793080753);
 		return Class393.method28502(this.aByte100, (int) this.method24241().aClass472_61.aFloat325 + local3.anInt5784 * 1114227200, -((int) this.method24241().aClass472_61.aFloat326), (int) this.method24241().aClass472_61.aFloat327 + local3.anInt5785 * 1116707328, (short) -8537);
 	}

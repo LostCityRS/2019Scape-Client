@@ -326,7 +326,7 @@ public final class Class113_Sub1 extends Class113 {
 										break;
 									}
 									@Pc(117) Class466 local117 = Class72.aClass79_Sub1_Sub2_2.method1463(local38, (byte) 80);
-									if (this.aClass507Array1[local117.anInt5253 * -1181855333] == Class507.aClass507_4 && ((Class108) Class72.aClass79_Sub1_Sub2_2.method18273(local117.anInt5253 * -1181855333, -2028069293)).aClass519_6.method30492((byte) 36).aClass2.isAssignableFrom(local117.anObject19.getClass())) {
+									if (this.aClass507Array1[local117.anInt5253 * -1181855333] == Class507.aClass507_4 && ((Class108) Class72.aClass79_Sub1_Sub2_2.method18273(local117.anInt5253 * -1181855333, -2028069293)).aScriptVarType_6.getBaseVarType().instance.isAssignableFrom(local117.anObject19.getClass())) {
 										this.anInterface3_2.method776(local117.anInt5253 * -1181855333, local117.anObject19, (byte) 2);
 									}
 									local109++;
@@ -426,7 +426,7 @@ public final class Class113_Sub1 extends Class113 {
 										break;
 									}
 									@Pc(117) Class466 local117 = Class72.aClass79_Sub1_Sub2_2.method1463(local38, (byte) 9);
-									if (this.aClass507Array1[local117.anInt5253 * -1181855333] == Class507.aClass507_4 && ((Class108) Class72.aClass79_Sub1_Sub2_2.method18273(local117.anInt5253 * -1181855333, -2073808347)).aClass519_6.method30492((byte) 36).aClass2.isAssignableFrom(local117.anObject19.getClass())) {
+									if (this.aClass507Array1[local117.anInt5253 * -1181855333] == Class507.aClass507_4 && ((Class108) Class72.aClass79_Sub1_Sub2_2.method18273(local117.anInt5253 * -1181855333, -2073808347)).aScriptVarType_6.getBaseVarType().instance.isAssignableFrom(local117.anObject19.getClass())) {
 										this.anInterface3_2.method776(local117.anInt5253 * -1181855333, local117.anObject19, (byte) 68);
 									}
 									local109++;

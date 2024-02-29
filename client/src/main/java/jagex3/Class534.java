@@ -32,7 +32,7 @@ final class Class534 implements Interface41 {
 			Class623.method32329(arg2, local6, local8, false, -1065743879);
 		}
 		@Pc(66) int local66;
-		@Pc(73) Class500 local73;
+		@Pc(73) BaseVarType local73;
 		@Pc(79) Class466 local79;
 		@Pc(57) int local57;
 		if ((arg3 & 0x40000) != 0) {
@@ -40,7 +40,7 @@ final class Class534 implements Interface41 {
 			local57 = arg0.aByteArray58[(arg0.anInt3070 += -1445626955) * 212851357 - 1] & 0xFF;
 			for (local8 = 0; local8 < local57; local8++) {
 				local66 = arg0.method22511(1282515777);
-				local73 = (Class500) Class107.method18131(Class500.method30340(-1769728711), local66, -1915563430);
+				local73 = (BaseVarType) Class107.method18131(BaseVarType.values(), local66, -1915563430);
 				local79 = Class21.aClass79_Sub1_Sub1_1.method1464(arg0, local73, (byte) 1);
 				arg2.anInterface3_5.method776(local79.anInt5253 * -1181855333, local79.anObject19, (byte) 100);
 			}
@@ -198,7 +198,7 @@ final class Class534 implements Interface41 {
 			local57 = arg0.aByteArray58[(arg0.anInt3070 += -1445626955) * 212851357 - 1] & 0xFF;
 			for (local8 = 0; local8 < local57; local8++) {
 				local66 = arg0.method22511(1406553697);
-				local73 = (Class500) Class107.method18131(Class500.method30340(-1762008343), local66, -1915563430);
+				local73 = (BaseVarType) Class107.method18131(BaseVarType.values(), local66, -1915563430);
 				local79 = Class21.aClass79_Sub1_Sub1_1.method1464(arg0, local73, (byte) 1);
 				arg2.anInterface3_5.method776(local79.anInt5253 * -1181855333, local79.anObject19, (byte) 11);
 			}

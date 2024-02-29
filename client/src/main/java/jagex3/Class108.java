@@ -12,7 +12,7 @@ public abstract class Class108 implements Interface12 {
 	static Class497 aClass497_21;
 
 	@OriginalMember(owner = "client!ec", name = "m", descriptor = "Lclient!qw;")
-	public Class519 aClass519_6;
+	public ScriptVarType aScriptVarType_6;
 
 	@OriginalMember(owner = "client!ec", name = "k", descriptor = "Lclient!qj;")
 	public Class507 aClass507_3 = Class507.aClass507_5;
@@ -65,7 +65,7 @@ public abstract class Class108 implements Interface12 {
 
 	@OriginalMember(owner = "client!ec", name = "z", descriptor = "(B)Z")
 	final boolean method7437(@OriginalArg(0) byte arg0) {
-		return this.aClass138_6 != null && this.aClass519_6 != null;
+		return this.aClass138_6 != null && this.aScriptVarType_6 != null;
 	}
 
 	@OriginalMember(owner = "client!ec", name = "e", descriptor = "(Lclient!alw;B)V")
@@ -86,8 +86,8 @@ public abstract class Class108 implements Interface12 {
 						break;
 					case 1:
 						@Pc(50) int local50 = arg0.method22425((short) 16384);
-						this.aClass519_6 = (Class519) Class107.method18131(Class519.method30493(2041400837), local50, -1915563430);
-						if (this.aClass519_6 != null) {
+						this.aScriptVarType_6 = (ScriptVarType) Class107.method18131(ScriptVarType.values(), local50, -1915563430);
+						if (this.aScriptVarType_6 != null) {
 							break;
 						}
 						throw new IllegalStateException("");
@@ -127,8 +127,8 @@ public abstract class Class108 implements Interface12 {
 						break;
 					case 1:
 						@Pc(50) int local50 = arg0.method22425((short) 16384);
-						this.aClass519_6 = (Class519) Class107.method18131(Class519.method30493(1623296093), local50, -1915563430);
-						if (this.aClass519_6 != null) {
+						this.aScriptVarType_6 = (ScriptVarType) Class107.method18131(ScriptVarType.values(), local50, -1915563430);
+						if (this.aScriptVarType_6 != null) {
 							break;
 						}
 						throw new IllegalStateException("");
@@ -168,8 +168,8 @@ public abstract class Class108 implements Interface12 {
 						break;
 					case 1:
 						@Pc(50) int local50 = arg0.method22425((short) 16384);
-						this.aClass519_6 = (Class519) Class107.method18131(Class519.method30493(1533022602), local50, -1915563430);
-						if (this.aClass519_6 != null) {
+						this.aScriptVarType_6 = (ScriptVarType) Class107.method18131(ScriptVarType.values(), local50, -1915563430);
+						if (this.aScriptVarType_6 != null) {
 							break;
 						}
 						throw new IllegalStateException("");
@@ -214,8 +214,8 @@ public abstract class Class108 implements Interface12 {
 						break;
 					case 1:
 						@Pc(50) int local50 = arg0.method22425((short) 16384);
-						this.aClass519_6 = (Class519) Class107.method18131(Class519.method30493(1403388839), local50, -1915563430);
-						if (this.aClass519_6 != null) {
+						this.aScriptVarType_6 = (ScriptVarType) Class107.method18131(ScriptVarType.values(), local50, -1915563430);
+						if (this.aScriptVarType_6 != null) {
 							break;
 						}
 						throw new IllegalStateException("");
@@ -258,8 +258,8 @@ public abstract class Class108 implements Interface12 {
 						break;
 					case 1:
 						@Pc(50) int local50 = arg0.method22425((short) 16384);
-						this.aClass519_6 = (Class519) Class107.method18131(Class519.method30493(1223585481), local50, -1915563430);
-						if (this.aClass519_6 != null) {
+						this.aScriptVarType_6 = (ScriptVarType) Class107.method18131(ScriptVarType.values(), local50, -1915563430);
+						if (this.aScriptVarType_6 != null) {
 							break;
 						}
 						throw new IllegalStateException("");
@@ -286,17 +286,17 @@ public abstract class Class108 implements Interface12 {
 
 	@OriginalMember(owner = "client!ec", name = "v", descriptor = "()Z")
 	final boolean method7441() {
-		return this.aClass138_6 != null && this.aClass519_6 != null;
+		return this.aClass138_6 != null && this.aScriptVarType_6 != null;
 	}
 
 	@OriginalMember(owner = "client!ec", name = "o", descriptor = "()Z")
 	final boolean method7442() {
-		return this.aClass138_6 != null && this.aClass519_6 != null;
+		return this.aClass138_6 != null && this.aScriptVarType_6 != null;
 	}
 
 	@OriginalMember(owner = "client!ec", name = "s", descriptor = "()Z")
 	final boolean method7443() {
-		return this.aClass138_6 != null && this.aClass519_6 != null;
+		return this.aClass138_6 != null && this.aScriptVarType_6 != null;
 	}
 
 	@OriginalMember(owner = "client!ec", name = "y", descriptor = "()Ljava/lang/Object;")

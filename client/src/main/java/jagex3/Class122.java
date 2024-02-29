@@ -38,7 +38,7 @@ public abstract class Class122 implements Interface33 {
 
 	@OriginalMember(owner = "client!kz", name = "bfm", descriptor = "(Lclient!yf;I)V")
 	static void method20232(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = client.aClass67_15.method37101();
+		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = client.aClass67_15.getId();
 	}
 
 	@OriginalMember(owner = "client!kz", name = "<init>", descriptor = "(Lclient!py;Lclient!py;Lclient!kp;)V")

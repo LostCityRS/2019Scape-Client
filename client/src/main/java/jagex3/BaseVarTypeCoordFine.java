@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!qm")
-final class Class510 implements Interface9 {
+final class BaseVarTypeCoordFine implements BaseVarTypeCodec {
 
 	@OriginalMember(owner = "client!qm", name = "ae", descriptor = "(Lclient!dh;I)V")
 	static void method30426(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1) {
@@ -47,21 +47,10 @@ final class Class510 implements Interface9 {
 		Class75.aBoolean31 = true;
 	}
 
-	@OriginalMember(owner = "client!qm", name = "m", descriptor = "(Lclient!alw;)Ljava/lang/Object;")
-	@Override
-	public Object method30452(@OriginalArg(0) Class93_Sub41 arg0) {
-		return new Class93_Sub30(arg0);
-	}
-
 	@OriginalMember(owner = "client!qm", name = "e", descriptor = "(Lclient!alw;I)Ljava/lang/Object;")
 	@Override
-	public Object method30453(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		return new Class93_Sub30(arg0);
+	public Object decode(@OriginalArg(0) Class93_Sub41 arg0) {
+		return new CoordFine(arg0);
 	}
 
-	@OriginalMember(owner = "client!qm", name = "n", descriptor = "(Lclient!alw;)Ljava/lang/Object;")
-	@Override
-	public Object method30451(@OriginalArg(0) Class93_Sub41 arg0) {
-		return new Class93_Sub30(arg0);
-	}
 }

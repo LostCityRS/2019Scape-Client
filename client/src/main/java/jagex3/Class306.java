@@ -149,7 +149,7 @@ public final class Class306 {
 	@OriginalMember(owner = "client!h", name = "xx", descriptor = "(Lclient!yf;I)V")
 	static void method26915(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(3) Class611 local3 = new Class611();
-		local3.method32208((Class93_Sub30) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375], (byte) 89);
+		local3.method32208((CoordFine) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375], (byte) 89);
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local3.method32207((short) 448);
 	}
 

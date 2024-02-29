@@ -61,8 +61,8 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 			local6 = local1 + 8;
 		} else if (arg0.anObject19 instanceof String) {
 			local6 = local1 + Class582.method31595((String) arg0.anObject19, 1732748241);
-		} else if (arg0.anObject19 instanceof Interface6) {
-			local6 = local1 + ((Interface6) arg0.anObject19).method13865((byte) -55);
+		} else if (arg0.anObject19 instanceof Serializable) {
+			local6 = local1 + ((Serializable) arg0.anObject19).computeSerialisedSize((byte) -55);
 		} else {
 			throw new IllegalStateException();
 		}
@@ -78,8 +78,8 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 			arg0.method22411((Long) arg1.anObject19);
 		} else if (arg1.anObject19 instanceof String) {
 			arg0.method22415((String) arg1.anObject19, 1516871641);
-		} else if (arg1.anObject19 instanceof Interface6) {
-			((Interface6) arg1.anObject19).method13861(arg0, (short) 1211);
+		} else if (arg1.anObject19 instanceof Serializable) {
+			((Serializable) arg1.anObject19).method13861(arg0, (short) 1211);
 		} else {
 			throw new IllegalStateException();
 		}
@@ -93,16 +93,16 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 			throw new IllegalStateException("");
 		}
 		@Pc(23) Class466 local23 = new Class466(local3);
-		@Pc(29) Class local29 = local9.aClass519_6.method30492((byte) 36).aClass2;
+		@Pc(29) Class local29 = local9.aScriptVarType_6.getBaseVarType().instance;
 		if (local29 == Integer.class) {
 			local23.anObject19 = arg0.method22431(-118643075);
 		} else if (Long.class == local29) {
 			local23.anObject19 = arg0.method22435(526348717);
 		} else if (String.class == local29) {
 			local23.anObject19 = arg0.method22440(158598774);
-		} else if (Interface6.class.isAssignableFrom(local29)) {
+		} else if (Serializable.class.isAssignableFrom(local29)) {
 			try {
-				@Pc(66) Interface6 local66 = (Interface6) local29.getDeclaredConstructor().newInstance();
+				@Pc(66) Serializable local66 = (Serializable) local29.getDeclaredConstructor().newInstance();
 				local66.method13862(arg0, 1715102703);
 				local23.anObject19 = local66;
 			} catch (@Pc(75) InstantiationException local75) {
@@ -117,19 +117,19 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 	}
 
 	@OriginalMember(owner = "client!add", name = "ah", descriptor = "(Lclient!alw;Lclient!qa;B)Lclient!on;")
-	public final Class466 method1464(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) Class500 arg1, @OriginalArg(2) byte arg2) {
+	public final Class466 method1464(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) BaseVarType arg1, @OriginalArg(2) byte arg2) {
 		@Pc(3) int local3 = arg0.method22427(-1434290800);
 		@Pc(8) Class466 local8 = new Class466(local3);
-		@Pc(11) Class local11 = arg1.aClass2;
+		@Pc(11) Class local11 = arg1.instance;
 		if (Integer.class == local11) {
 			local8.anObject19 = arg0.method22431(-118643075);
 		} else if (Long.class == local11) {
 			local8.anObject19 = arg0.method22435(-1724840463);
 		} else if (local11 == String.class) {
 			local8.anObject19 = arg0.method22440(1558569498);
-		} else if (Interface6.class.isAssignableFrom(local11)) {
+		} else if (Serializable.class.isAssignableFrom(local11)) {
 			try {
-				@Pc(48) Interface6 local48 = (Interface6) local11.getDeclaredConstructor().newInstance();
+				@Pc(48) Serializable local48 = (Serializable) local11.getDeclaredConstructor().newInstance();
 				local48.method13862(arg0, 1136636381);
 				local8.anObject19 = local48;
 			} catch (@Pc(57) InstantiationException local57) {
@@ -141,7 +141,7 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 			throw new IllegalStateException();
 		}
 		@Pc(70) Class108 local70 = (Class108) this.method18273(local3, 828575494);
-		return local70.method7437((byte) -30) && local70.aClass519_6.method30492((byte) 36) == arg1 ? local8 : null;
+		return local70.method7437((byte) -30) && local70.aScriptVarType_6.getBaseVarType() == arg1 ? local8 : null;
 	}
 
 	@OriginalMember(owner = "client!add", name = "m", descriptor = "(I)Lclient!ay;")
@@ -166,8 +166,8 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 			local6 = local1 + 8;
 		} else if (arg0.anObject19 instanceof String) {
 			local6 = local1 + Class582.method31595((String) arg0.anObject19, 333037137);
-		} else if (arg0.anObject19 instanceof Interface6) {
-			local6 = local1 + ((Interface6) arg0.anObject19).method13865((byte) -62);
+		} else if (arg0.anObject19 instanceof Serializable) {
+			local6 = local1 + ((Serializable) arg0.anObject19).computeSerialisedSize((byte) -62);
 		} else {
 			throw new IllegalStateException();
 		}
@@ -194,8 +194,8 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 			local6 = local1 + 8;
 		} else if (arg0.anObject19 instanceof String) {
 			local6 = local1 + Class582.method31595((String) arg0.anObject19, 826935043);
-		} else if (arg0.anObject19 instanceof Interface6) {
-			local6 = local1 + ((Interface6) arg0.anObject19).method13865((byte) -57);
+		} else if (arg0.anObject19 instanceof Serializable) {
+			local6 = local1 + ((Serializable) arg0.anObject19).computeSerialisedSize((byte) -57);
 		} else {
 			throw new IllegalStateException();
 		}
@@ -218,8 +218,8 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 			arg0.method22411((Long) arg1.anObject19);
 		} else if (arg1.anObject19 instanceof String) {
 			arg0.method22415((String) arg1.anObject19, 1516871641);
-		} else if (arg1.anObject19 instanceof Interface6) {
-			((Interface6) arg1.anObject19).method13861(arg0, (short) 1211);
+		} else if (arg1.anObject19 instanceof Serializable) {
+			((Serializable) arg1.anObject19).method13861(arg0, (short) 1211);
 		} else {
 			throw new IllegalStateException();
 		}
@@ -234,8 +234,8 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 			arg0.method22411((Long) arg1.anObject19);
 		} else if (arg1.anObject19 instanceof String) {
 			arg0.method22415((String) arg1.anObject19, 1516871641);
-		} else if (arg1.anObject19 instanceof Interface6) {
-			((Interface6) arg1.anObject19).method13861(arg0, (short) 1211);
+		} else if (arg1.anObject19 instanceof Serializable) {
+			((Serializable) arg1.anObject19).method13861(arg0, (short) 1211);
 		} else {
 			throw new IllegalStateException();
 		}
@@ -249,16 +249,16 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 			throw new IllegalStateException("");
 		}
 		@Pc(23) Class466 local23 = new Class466(local3);
-		@Pc(29) Class local29 = local9.aClass519_6.method30492((byte) 36).aClass2;
+		@Pc(29) Class local29 = local9.aScriptVarType_6.getBaseVarType().instance;
 		if (local29 == Integer.class) {
 			local23.anObject19 = arg0.method22431(-118643075);
 		} else if (Long.class == local29) {
 			local23.anObject19 = arg0.method22435(752691255);
 		} else if (String.class == local29) {
 			local23.anObject19 = arg0.method22440(1537930131);
-		} else if (Interface6.class.isAssignableFrom(local29)) {
+		} else if (Serializable.class.isAssignableFrom(local29)) {
 			try {
-				@Pc(66) Interface6 local66 = (Interface6) local29.getDeclaredConstructor().newInstance();
+				@Pc(66) Serializable local66 = (Serializable) local29.getDeclaredConstructor().newInstance();
 				local66.method13862(arg0, 1068222458);
 				local23.anObject19 = local66;
 			} catch (@Pc(75) InstantiationException local75) {
@@ -273,19 +273,19 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 	}
 
 	@OriginalMember(owner = "client!add", name = "ad", descriptor = "(Lclient!alw;Lclient!qa;)Lclient!on;")
-	public final Class466 method1471(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) Class500 arg1) {
+	public final Class466 method1471(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) BaseVarType arg1) {
 		@Pc(3) int local3 = arg0.method22427(-1434290800);
 		@Pc(8) Class466 local8 = new Class466(local3);
-		@Pc(11) Class local11 = arg1.aClass2;
+		@Pc(11) Class local11 = arg1.instance;
 		if (Integer.class == local11) {
 			local8.anObject19 = arg0.method22431(-118643075);
 		} else if (Long.class == local11) {
 			local8.anObject19 = arg0.method22435(-617457273);
 		} else if (local11 == String.class) {
 			local8.anObject19 = arg0.method22440(-153120367);
-		} else if (Interface6.class.isAssignableFrom(local11)) {
+		} else if (Serializable.class.isAssignableFrom(local11)) {
 			try {
-				@Pc(48) Interface6 local48 = (Interface6) local11.getDeclaredConstructor().newInstance();
+				@Pc(48) Serializable local48 = (Serializable) local11.getDeclaredConstructor().newInstance();
 				local48.method13862(arg0, 1536960997);
 				local8.anObject19 = local48;
 			} catch (@Pc(57) InstantiationException local57) {
@@ -297,23 +297,23 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 			throw new IllegalStateException();
 		}
 		@Pc(70) Class108 local70 = (Class108) this.method18273(local3, -1651253270);
-		return local70.method7437((byte) -5) && local70.aClass519_6.method30492((byte) 36) == arg1 ? local8 : null;
+		return local70.method7437((byte) -5) && local70.aScriptVarType_6.getBaseVarType() == arg1 ? local8 : null;
 	}
 
 	@OriginalMember(owner = "client!add", name = "am", descriptor = "(Lclient!alw;Lclient!qa;)Lclient!on;")
-	public final Class466 method1472(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) Class500 arg1) {
+	public final Class466 method1472(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) BaseVarType arg1) {
 		@Pc(3) int local3 = arg0.method22427(-1434290800);
 		@Pc(8) Class466 local8 = new Class466(local3);
-		@Pc(11) Class local11 = arg1.aClass2;
+		@Pc(11) Class local11 = arg1.instance;
 		if (Integer.class == local11) {
 			local8.anObject19 = arg0.method22431(-118643075);
 		} else if (Long.class == local11) {
 			local8.anObject19 = arg0.method22435(-1567631637);
 		} else if (local11 == String.class) {
 			local8.anObject19 = arg0.method22440(-429090498);
-		} else if (Interface6.class.isAssignableFrom(local11)) {
+		} else if (Serializable.class.isAssignableFrom(local11)) {
 			try {
-				@Pc(48) Interface6 local48 = (Interface6) local11.getDeclaredConstructor().newInstance();
+				@Pc(48) Serializable local48 = (Serializable) local11.getDeclaredConstructor().newInstance();
 				local48.method13862(arg0, 1056436859);
 				local8.anObject19 = local48;
 			} catch (@Pc(57) InstantiationException local57) {
@@ -325,23 +325,23 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 			throw new IllegalStateException();
 		}
 		@Pc(70) Class108 local70 = (Class108) this.method18273(local3, -775959803);
-		return local70.method7437((byte) -48) && local70.aClass519_6.method30492((byte) 36) == arg1 ? local8 : null;
+		return local70.method7437((byte) -48) && local70.aScriptVarType_6.getBaseVarType() == arg1 ? local8 : null;
 	}
 
 	@OriginalMember(owner = "client!add", name = "au", descriptor = "(Lclient!alw;Lclient!qa;)Lclient!on;")
-	public final Class466 method1473(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) Class500 arg1) {
+	public final Class466 method1473(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) BaseVarType arg1) {
 		@Pc(3) int local3 = arg0.method22427(-1434290800);
 		@Pc(8) Class466 local8 = new Class466(local3);
-		@Pc(11) Class local11 = arg1.aClass2;
+		@Pc(11) Class local11 = arg1.instance;
 		if (Integer.class == local11) {
 			local8.anObject19 = arg0.method22431(-118643075);
 		} else if (Long.class == local11) {
 			local8.anObject19 = arg0.method22435(-783449995);
 		} else if (local11 == String.class) {
 			local8.anObject19 = arg0.method22440(-50914556);
-		} else if (Interface6.class.isAssignableFrom(local11)) {
+		} else if (Serializable.class.isAssignableFrom(local11)) {
 			try {
-				@Pc(48) Interface6 local48 = (Interface6) local11.getDeclaredConstructor().newInstance();
+				@Pc(48) Serializable local48 = (Serializable) local11.getDeclaredConstructor().newInstance();
 				local48.method13862(arg0, 1598431297);
 				local8.anObject19 = local48;
 			} catch (@Pc(57) InstantiationException local57) {
@@ -353,6 +353,6 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 			throw new IllegalStateException();
 		}
 		@Pc(70) Class108 local70 = (Class108) this.method18273(local3, -1060313518);
-		return local70.method7437((byte) -97) && local70.aClass519_6.method30492((byte) 36) == arg1 ? local8 : null;
+		return local70.method7437((byte) -97) && local70.aScriptVarType_6.getBaseVarType() == arg1 ? local8 : null;
 	}
 }

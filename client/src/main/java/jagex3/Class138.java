@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!qe")
-public class Class138 implements Interface75 {
+public class Class138 implements SerializableEnum {
 
 	@OriginalMember(owner = "client!qe", name = "cu", descriptor = "I")
 	public static int anInt1383;
@@ -178,34 +178,28 @@ public class Class138 implements Interface75 {
 
 	@OriginalMember(owner = "client!qe", name = "n", descriptor = "()I")
 	@Override
-	public final int method37101() {
+	public final int getId() {
 		return this.anInt1382 * 2090586857;
 	}
 
 	@OriginalMember(owner = "client!qe", name = "f", descriptor = "(Lclient!ec;B)Ljava/lang/Object;")
 	public final Object method11521(@OriginalArg(0) Class108 arg0, @OriginalArg(1) byte arg1) {
-		return arg0.aBoolean173 ? this.method11522(arg0, 27720345) : arg0.aClass519_6.method30498(657683700);
+		return arg0.aBoolean173 ? this.method11522(arg0, 27720345) : arg0.aScriptVarType_6.getDefaultValue();
 	}
 
 	@OriginalMember(owner = "client!qe", name = "w", descriptor = "(Lclient!ec;I)Ljava/lang/Object;")
 	Object method11522(@OriginalArg(0) Class108 arg0, @OriginalArg(1) int arg1) {
-		return arg0.aClass519_6.method30498(657683700);
+		return arg0.aScriptVarType_6.getDefaultValue();
 	}
 
 	@OriginalMember(owner = "client!qe", name = "u", descriptor = "(Lclient!ec;)Ljava/lang/Object;")
 	Object method11523(@OriginalArg(0) Class108 arg0) {
-		return arg0.aClass519_6.method30498(657683700);
-	}
-
-	@OriginalMember(owner = "client!qe", name = "k", descriptor = "()I")
-	@Override
-	public final int method37100() {
-		return this.anInt1382 * 2090586857;
+		return arg0.aScriptVarType_6.getDefaultValue();
 	}
 
 	@OriginalMember(owner = "client!qe", name = "l", descriptor = "(Lclient!ec;)Ljava/lang/Object;")
 	Object method11524(@OriginalArg(0) Class108 arg0) {
-		return arg0.aClass519_6.method30498(657683700);
+		return arg0.aScriptVarType_6.getDefaultValue();
 	}
 
 	@OriginalMember(owner = "client!qe", name = "m", descriptor = "(B)Lclient!xq;")
@@ -230,11 +224,11 @@ public class Class138 implements Interface75 {
 
 	@OriginalMember(owner = "client!qe", name = "o", descriptor = "(Lclient!ec;)Ljava/lang/Object;")
 	public final Object method11532(@OriginalArg(0) Class108 arg0) {
-		return arg0.aBoolean173 ? this.method11522(arg0, 27720345) : arg0.aClass519_6.method30498(657683700);
+		return arg0.aBoolean173 ? this.method11522(arg0, 27720345) : arg0.aScriptVarType_6.getDefaultValue();
 	}
 
 	@OriginalMember(owner = "client!qe", name = "s", descriptor = "(Lclient!ec;)Ljava/lang/Object;")
 	public final Object method11533(@OriginalArg(0) Class108 arg0) {
-		return arg0.aBoolean173 ? this.method11522(arg0, 27720345) : arg0.aClass519_6.method30498(657683700);
+		return arg0.aBoolean173 ? this.method11522(arg0, 27720345) : arg0.aScriptVarType_6.getDefaultValue();
 	}
 }

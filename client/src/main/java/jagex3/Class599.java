@@ -47,7 +47,7 @@ public final class Class599 implements Interface63 {
 	@Override
 	public void method32076(@OriginalArg(0) int arg0) {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2592(Class446.aClass446_55, client.aClass175_2.aClass24_2, (byte) 77);
-		local5.aClass93_Sub41_Sub2_1.method22458(this.aClass73_15.method37101(), -1591808004);
+		local5.aClass93_Sub41_Sub2_1.method22458(this.aClass73_15.getId(), -1591808004);
 		client.aClass175_2.method24363(local5, -1927374045);
 	}
 
@@ -55,7 +55,7 @@ public final class Class599 implements Interface63 {
 	@Override
 	public void method32075() {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2592(Class446.aClass446_55, client.aClass175_2.aClass24_2, (byte) 21);
-		local5.aClass93_Sub41_Sub2_1.method22458(this.aClass73_15.method37101(), -1591808004);
+		local5.aClass93_Sub41_Sub2_1.method22458(this.aClass73_15.getId(), -1591808004);
 		client.aClass175_2.method24363(local5, -1874286412);
 	}
 
@@ -63,7 +63,7 @@ public final class Class599 implements Interface63 {
 	@Override
 	public void method32077() {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2592(Class446.aClass446_55, client.aClass175_2.aClass24_2, (byte) 77);
-		local5.aClass93_Sub41_Sub2_1.method22458(this.aClass73_15.method37101(), -1591808004);
+		local5.aClass93_Sub41_Sub2_1.method22458(this.aClass73_15.getId(), -1591808004);
 		client.aClass175_2.method24363(local5, -1961824600);
 	}
 
@@ -71,7 +71,7 @@ public final class Class599 implements Interface63 {
 	@Override
 	public void method32078() {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2592(Class446.aClass446_55, client.aClass175_2.aClass24_2, (byte) 19);
-		local5.aClass93_Sub41_Sub2_1.method22458(this.aClass73_15.method37101(), -1591808004);
+		local5.aClass93_Sub41_Sub2_1.method22458(this.aClass73_15.getId(), -1591808004);
 		client.aClass175_2.method24363(local5, -1698366104);
 	}
 
@@ -79,7 +79,7 @@ public final class Class599 implements Interface63 {
 	@Override
 	public void method32079() {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2592(Class446.aClass446_55, client.aClass175_2.aClass24_2, (byte) 106);
-		local5.aClass93_Sub41_Sub2_1.method22458(this.aClass73_15.method37101(), -1591808004);
+		local5.aClass93_Sub41_Sub2_1.method22458(this.aClass73_15.getId(), -1591808004);
 		client.aClass175_2.method24363(local5, -1490185051);
 	}
 }

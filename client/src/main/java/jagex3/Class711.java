@@ -22,47 +22,47 @@ public final class Class711 {
 		@Pc(1) int local1 = -1;
 		@Pc(4) Iterator local4 = arg0.iterator();
 		while (local4.hasNext()) {
-			@Pc(11) Interface75 local11 = (Interface75) local4.next();
-			if (local11.method37101() > local1) {
-				local1 = local11.method37101();
+			@Pc(11) SerializableEnum local11 = (SerializableEnum) local4.next();
+			if (local11.getId() > local1) {
+				local1 = local11.getId();
 			}
 		}
 		return (local1 + 8) / 8;
 	}
 
 	@OriginalMember(owner = "client!zn", name = "f", descriptor = "(Ljava/lang/Class;I)Lclient!za;")
-	public static Interface75 method36983(@OriginalArg(0) Class arg0, @OriginalArg(1) int arg1) {
+	public static SerializableEnum method36983(@OriginalArg(0) Class arg0, @OriginalArg(1) int arg1) {
 		@Pc(2) Map local2 = aMap27;
 		synchronized (aMap27) {
 			@Pc(8) Map local8 = (Map) aMap27.get(arg0);
 			if (local8 == null) {
 				local8 = new HashMap();
-				@Pc(19) Interface75[] local19 = (Interface75[]) arg0.getEnumConstants();
+				@Pc(19) SerializableEnum[] local19 = (SerializableEnum[]) arg0.getEnumConstants();
 				for (@Pc(21) int local21 = 0; local21 < local19.length; local21++) {
-					@Pc(29) Interface75 local29 = local19[local21];
-					local8.put(local29.method37101(), local29);
+					@Pc(29) SerializableEnum local29 = local19[local21];
+					local8.put(local29.getId(), local29);
 				}
 				aMap27.put(arg0, local8);
 			}
-			return (Interface75) local8.get(arg1);
+			return (SerializableEnum) local8.get(arg1);
 		}
 	}
 
 	@OriginalMember(owner = "client!zn", name = "w", descriptor = "(Ljava/lang/Class;I)Lclient!za;")
-	public static Interface75 method36984(@OriginalArg(0) Class arg0, @OriginalArg(1) int arg1) {
+	public static SerializableEnum method36984(@OriginalArg(0) Class arg0, @OriginalArg(1) int arg1) {
 		@Pc(2) Map local2 = aMap27;
 		synchronized (aMap27) {
 			@Pc(8) Map local8 = (Map) aMap27.get(arg0);
 			if (local8 == null) {
 				local8 = new HashMap();
-				@Pc(19) Interface75[] local19 = (Interface75[]) arg0.getEnumConstants();
+				@Pc(19) SerializableEnum[] local19 = (SerializableEnum[]) arg0.getEnumConstants();
 				for (@Pc(21) int local21 = 0; local21 < local19.length; local21++) {
-					@Pc(29) Interface75 local29 = local19[local21];
-					local8.put(local29.method37101(), local29);
+					@Pc(29) SerializableEnum local29 = local19[local21];
+					local8.put(local29.getId(), local29);
 				}
 				aMap27.put(arg0, local8);
 			}
-			return (Interface75) local8.get(arg1);
+			return (SerializableEnum) local8.get(arg1);
 		}
 	}
 
@@ -71,9 +71,9 @@ public final class Class711 {
 		@Pc(1) int local1 = -1;
 		@Pc(4) Iterator local4 = arg0.iterator();
 		while (local4.hasNext()) {
-			@Pc(11) Interface75 local11 = (Interface75) local4.next();
-			if (local11.method37101() > local1) {
-				local1 = local11.method37101();
+			@Pc(11) SerializableEnum local11 = (SerializableEnum) local4.next();
+			if (local11.getId() > local1) {
+				local1 = local11.getId();
 			}
 		}
 		return (local1 + 8) / 8;
@@ -91,8 +91,8 @@ public final class Class711 {
 		}
 		@Pc(31) Iterator local31 = arg0.iterator();
 		while (local31.hasNext()) {
-			@Pc(38) Interface75 local38 = (Interface75) local31.next();
-			@Pc(41) int local41 = local38.method37101();
+			@Pc(38) SerializableEnum local38 = (SerializableEnum) local31.next();
+			@Pc(41) int local41 = local38.getId();
 			@Pc(45) int local45 = local41 / 8;
 			arg1.aByteArray58[arg1.anInt3070 * 212851357 + local45] = (byte) (arg1.aByteArray58[arg1.anInt3070 * 212851357 + local45] | 0x1 << (local41 & 0x7));
 		}
@@ -100,11 +100,11 @@ public final class Class711 {
 	}
 
 	@OriginalMember(owner = "client!zn", name = "z", descriptor = "([Lclient!za;I)Lclient!za;")
-	public static Interface75 method36987(@OriginalArg(0) Interface75[] arg0, @OriginalArg(1) int arg1) {
-		@Pc(1) Interface75[] local1 = arg0;
+	public static SerializableEnum method36987(@OriginalArg(0) SerializableEnum[] arg0, @OriginalArg(1) int arg1) {
+		@Pc(1) SerializableEnum[] local1 = arg0;
 		for (@Pc(3) int local3 = 0; local3 < local1.length; local3++) {
-			@Pc(11) Interface75 local11 = local1[local3];
-			if (arg1 == local11.method37101()) {
+			@Pc(11) SerializableEnum local11 = local1[local3];
+			if (arg1 == local11.getId()) {
 				return local11;
 			}
 		}
@@ -112,11 +112,11 @@ public final class Class711 {
 	}
 
 	@OriginalMember(owner = "client!zn", name = "p", descriptor = "([Lclient!za;I)Lclient!za;")
-	public static Interface75 method36988(@OriginalArg(0) Interface75[] arg0, @OriginalArg(1) int arg1) {
-		@Pc(1) Interface75[] local1 = arg0;
+	public static SerializableEnum method36988(@OriginalArg(0) SerializableEnum[] arg0, @OriginalArg(1) int arg1) {
+		@Pc(1) SerializableEnum[] local1 = arg0;
 		for (@Pc(3) int local3 = 0; local3 < local1.length; local3++) {
-			@Pc(11) Interface75 local11 = local1[local3];
-			if (arg1 == local11.method37101()) {
+			@Pc(11) SerializableEnum local11 = local1[local3];
+			if (arg1 == local11.getId()) {
 				return local11;
 			}
 		}
@@ -124,11 +124,11 @@ public final class Class711 {
 	}
 
 	@OriginalMember(owner = "client!zn", name = "d", descriptor = "([Lclient!za;I)Lclient!za;")
-	public static Interface75 method36989(@OriginalArg(0) Interface75[] arg0, @OriginalArg(1) int arg1) {
-		@Pc(1) Interface75[] local1 = arg0;
+	public static SerializableEnum method36989(@OriginalArg(0) SerializableEnum[] arg0, @OriginalArg(1) int arg1) {
+		@Pc(1) SerializableEnum[] local1 = arg0;
 		for (@Pc(3) int local3 = 0; local3 < local1.length; local3++) {
-			@Pc(11) Interface75 local11 = local1[local3];
-			if (arg1 == local11.method37101()) {
+			@Pc(11) SerializableEnum local11 = local1[local3];
+			if (arg1 == local11.getId()) {
 				return local11;
 			}
 		}
@@ -136,38 +136,38 @@ public final class Class711 {
 	}
 
 	@OriginalMember(owner = "client!zn", name = "l", descriptor = "(Ljava/lang/Class;I)Lclient!za;")
-	public static Interface75 method36990(@OriginalArg(0) Class arg0, @OriginalArg(1) int arg1) {
+	public static SerializableEnum method36990(@OriginalArg(0) Class arg0, @OriginalArg(1) int arg1) {
 		@Pc(2) Map local2 = aMap27;
 		synchronized (aMap27) {
 			@Pc(8) Map local8 = (Map) aMap27.get(arg0);
 			if (local8 == null) {
 				local8 = new HashMap();
-				@Pc(19) Interface75[] local19 = (Interface75[]) arg0.getEnumConstants();
+				@Pc(19) SerializableEnum[] local19 = (SerializableEnum[]) arg0.getEnumConstants();
 				for (@Pc(21) int local21 = 0; local21 < local19.length; local21++) {
-					@Pc(29) Interface75 local29 = local19[local21];
-					local8.put(local29.method37101(), local29);
+					@Pc(29) SerializableEnum local29 = local19[local21];
+					local8.put(local29.getId(), local29);
 				}
 				aMap27.put(arg0, local8);
 			}
-			return (Interface75) local8.get(arg1);
+			return (SerializableEnum) local8.get(arg1);
 		}
 	}
 
 	@OriginalMember(owner = "client!zn", name = "u", descriptor = "(Ljava/lang/Class;I)Lclient!za;")
-	public static Interface75 method36991(@OriginalArg(0) Class arg0, @OriginalArg(1) int arg1) {
+	public static SerializableEnum method36991(@OriginalArg(0) Class arg0, @OriginalArg(1) int arg1) {
 		@Pc(2) Map local2 = aMap27;
 		synchronized (aMap27) {
 			@Pc(8) Map local8 = (Map) aMap27.get(arg0);
 			if (local8 == null) {
 				local8 = new HashMap();
-				@Pc(19) Interface75[] local19 = (Interface75[]) arg0.getEnumConstants();
+				@Pc(19) SerializableEnum[] local19 = (SerializableEnum[]) arg0.getEnumConstants();
 				for (@Pc(21) int local21 = 0; local21 < local19.length; local21++) {
-					@Pc(29) Interface75 local29 = local19[local21];
-					local8.put(local29.method37101(), local29);
+					@Pc(29) SerializableEnum local29 = local19[local21];
+					local8.put(local29.getId(), local29);
 				}
 				aMap27.put(arg0, local8);
 			}
-			return (Interface75) local8.get(arg1);
+			return (SerializableEnum) local8.get(arg1);
 		}
 	}
 
@@ -183,8 +183,8 @@ public final class Class711 {
 		}
 		@Pc(31) Iterator local31 = arg0.iterator();
 		while (local31.hasNext()) {
-			@Pc(38) Interface75 local38 = (Interface75) local31.next();
-			@Pc(41) int local41 = local38.method37101();
+			@Pc(38) SerializableEnum local38 = (SerializableEnum) local31.next();
+			@Pc(41) int local41 = local38.getId();
 			@Pc(45) int local45 = local41 / 8;
 			arg1.aByteArray58[arg1.anInt3070 * 212851357 + local45] = (byte) (arg1.aByteArray58[arg1.anInt3070 * 212851357 + local45] | 0x1 << (local41 & 0x7));
 		}
@@ -196,9 +196,9 @@ public final class Class711 {
 		@Pc(1) int local1 = -1;
 		@Pc(4) Iterator local4 = arg0.iterator();
 		while (local4.hasNext()) {
-			@Pc(11) Interface75 local11 = (Interface75) local4.next();
-			if (local11.method37101() > local1) {
-				local1 = local11.method37101();
+			@Pc(11) SerializableEnum local11 = (SerializableEnum) local4.next();
+			if (local11.getId() > local1) {
+				local1 = local11.getId();
 			}
 		}
 		return (local1 + 8) / 8;

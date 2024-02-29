@@ -35,7 +35,7 @@ public abstract class Class124 {
 
 	@OriginalMember(owner = "client!kl", name = "anj", descriptor = "(Lclient!yf;I)V")
 	static void method21439(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		@Pc(13) Class93_Sub30 local13 = (Class93_Sub30) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
+		@Pc(13) CoordFine local13 = (CoordFine) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
 		if (Class65.aClass123_Sub1_2.method8986((byte) -114) != Class338.aClass338_6) {
 			throw new RuntimeException();
 		}
@@ -95,7 +95,7 @@ public abstract class Class124 {
 	public abstract double[] method21415();
 
 	@OriginalMember(owner = "client!kl", name = "f", descriptor = "(B)Lclient!akt;")
-	public abstract Class93_Sub30 method21416(@OriginalArg(0) byte arg0);
+	public abstract CoordFine method21416(@OriginalArg(0) byte arg0);
 
 	@OriginalMember(owner = "client!kl", name = "w", descriptor = "(I)F")
 	public abstract float method21417(@OriginalArg(0) int arg0);
@@ -113,13 +113,13 @@ public abstract class Class124 {
 	public abstract boolean method21421();
 
 	@OriginalMember(owner = "client!kl", name = "o", descriptor = "()Lclient!akt;")
-	public abstract Class93_Sub30 method21422();
+	public abstract CoordFine method21422();
 
 	@OriginalMember(owner = "client!kl", name = "c", descriptor = "()Lclient!akt;")
-	public abstract Class93_Sub30 method21423();
+	public abstract CoordFine method21423();
 
 	@OriginalMember(owner = "client!kl", name = "v", descriptor = "()Lclient!akt;")
-	public abstract Class93_Sub30 method21424();
+	public abstract CoordFine method21424();
 
 	@OriginalMember(owner = "client!kl", name = "k", descriptor = "(I)[D")
 	public abstract double[] method21425(@OriginalArg(0) int arg0);
@@ -143,7 +143,7 @@ public abstract class Class124 {
 	public abstract void method21431(@OriginalArg(0) float arg0, @OriginalArg(1) int[][][] arg1, @OriginalArg(2) Class520 arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4);
 
 	@OriginalMember(owner = "client!kl", name = "r", descriptor = "()Lclient!akt;")
-	public abstract Class93_Sub30 method21432();
+	public abstract CoordFine method21432();
 
 	@OriginalMember(owner = "client!kl", name = "e", descriptor = "(F[[[ILclient!qx;IIB)V")
 	public abstract void method21433(@OriginalArg(0) float arg0, @OriginalArg(1) int[][][] arg1, @OriginalArg(2) Class520 arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) byte arg5);

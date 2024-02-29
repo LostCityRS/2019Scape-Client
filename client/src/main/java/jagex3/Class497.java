@@ -183,7 +183,7 @@ public final class Class497 {
 				@Pc(109) Class93_Sub41 local109 = new Class93_Sub41(local104);
 				local113 = local109.method22425((short) 16384);
 				local117 = local109.method22431(-118643075);
-				@Pc(127) int local127 = (local113 == Class484.aClass484_5.method37101() ? 5 : 9) + local117;
+				@Pc(127) int local127 = (local113 == Class484.aClass484_5.getId() ? 5 : 9) + local117;
 				local109.method22454(arg2, 5, local127, -1984067408);
 			}
 			@Pc(146) byte[] local146;
@@ -536,7 +536,7 @@ public final class Class497 {
 				@Pc(109) Class93_Sub41 local109 = new Class93_Sub41(local104);
 				local113 = local109.method22425((short) 16384);
 				local117 = local109.method22431(-118643075);
-				@Pc(127) int local127 = (local113 == Class484.aClass484_5.method37101() ? 5 : 9) + local117;
+				@Pc(127) int local127 = (local113 == Class484.aClass484_5.getId() ? 5 : 9) + local117;
 				local109.method22454(arg2, 5, local127, -2092552953);
 			}
 			@Pc(146) byte[] local146;
@@ -1129,7 +1129,7 @@ public final class Class497 {
 				@Pc(109) Class93_Sub41 local109 = new Class93_Sub41(local104);
 				local113 = local109.method22425((short) 16384);
 				local117 = local109.method22431(-118643075);
-				@Pc(127) int local127 = (local113 == Class484.aClass484_5.method37101() ? 5 : 9) + local117;
+				@Pc(127) int local127 = (local113 == Class484.aClass484_5.getId() ? 5 : 9) + local117;
 				local109.method22454(arg2, 5, local127, -2044400234);
 			}
 			@Pc(146) byte[] local146;
@@ -1364,7 +1364,7 @@ public final class Class497 {
 				@Pc(109) Class93_Sub41 local109 = new Class93_Sub41(local104);
 				local113 = local109.method22425((short) 16384);
 				local117 = local109.method22431(-118643075);
-				@Pc(127) int local127 = (local113 == Class484.aClass484_5.method37101() ? 5 : 9) + local117;
+				@Pc(127) int local127 = (local113 == Class484.aClass484_5.getId() ? 5 : 9) + local117;
 				local109.method22454(arg2, 5, local127, -2083254910);
 			}
 			@Pc(146) byte[] local146;
@@ -1700,7 +1700,7 @@ public final class Class497 {
 				@Pc(109) Class93_Sub41 local109 = new Class93_Sub41(local104);
 				local113 = local109.method22425((short) 16384);
 				local117 = local109.method22431(-118643075);
-				@Pc(127) int local127 = (local113 == Class484.aClass484_5.method37101() ? 5 : 9) + local117;
+				@Pc(127) int local127 = (local113 == Class484.aClass484_5.getId() ? 5 : 9) + local117;
 				local109.method22454(arg2, 5, local127, -2089227421);
 			}
 			@Pc(146) byte[] local146;

@@ -30,7 +30,7 @@ public final class Class292 implements Interface26 {
 				@Pc(48) Class105 local48 = Class203.method24664(Class110_Sub7.aClass497_22, Class165.anInt2067 * 36532273, 0);
 				Class25.aClass100_39 = arg0.method20511(local48, true);
 				local48.method7168();
-				Class441.aClass100_44 = arg0.method20511(local48, true);
+				SortedQueueEntry.aClass100_44 = arg0.method20511(local48, true);
 			} else {
 				arg0.method20665(arg1, arg2, arg3, arg5, local9 << 24 | Class650.anInt5957 * -1046144577, 1);
 			}
@@ -41,7 +41,7 @@ public final class Class292 implements Interface26 {
 				Class92.aClass100_2.method18181(arg1 + Class25.aClass100_39.method18201() + local92 * Class92.aClass100_2.method18201(), arg2);
 			}
 			Class25.aClass100_39.method18181(arg1, arg2);
-			Class441.aClass100_44.method18181(arg1 + arg3 - Class441.aClass100_44.method18201(), arg2);
+			SortedQueueEntry.aClass100_44.method18181(arg1 + arg3 - SortedQueueEntry.aClass100_44.method18201(), arg2);
 		}
 		arg6.method7524(arg8, arg1 + 3, arg2 + arg7.anInt6 * -8978697 + (20 - arg7.anInt6 * -8978697) / 2, Class219.anInt3668 * 333089103 | 0xFF000000, -1, (byte) 0);
 		arg0.method20665(arg1, arg5 + arg2, arg3, arg4 - arg5, local9 << 24 | Class650.anInt5957 * -1046144577, 1);

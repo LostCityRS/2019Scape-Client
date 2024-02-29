@@ -14,13 +14,13 @@ public interface Interface29 {
 	Class472 method19949(@OriginalArg(0) byte arg0);
 
 	@OriginalMember(owner = "client!jn", name = "m", descriptor = "(B)Lclient!akt;")
-	Class93_Sub30 method19950(@OriginalArg(0) byte arg0);
+    CoordFine method19950(@OriginalArg(0) byte arg0);
 
 	@OriginalMember(owner = "client!jn", name = "k", descriptor = "(I)Lclient!ov;")
 	Class471 method19951(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!jn", name = "u", descriptor = "()Lclient!akt;")
-	Class93_Sub30 method19952();
+    CoordFine method19952();
 
 	@OriginalMember(owner = "client!jn", name = "n", descriptor = "(I)I")
 	int method19953(@OriginalArg(0) int arg0);
@@ -29,10 +29,10 @@ public interface Interface29 {
 	Class363 method19954();
 
 	@OriginalMember(owner = "client!jn", name = "p", descriptor = "()Lclient!akt;")
-	Class93_Sub30 method19955();
+    CoordFine method19955();
 
 	@OriginalMember(owner = "client!jn", name = "z", descriptor = "()Lclient!akt;")
-	Class93_Sub30 method19956();
+    CoordFine method19956();
 
 	@OriginalMember(owner = "client!jn", name = "l", descriptor = "()I")
 	int method19957();

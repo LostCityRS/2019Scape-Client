@@ -287,7 +287,7 @@ public final class Class676 {
 				local43.aClass93_Sub41_Sub2_1.method22407(client.anInt3429 * 1672118199, (byte) 51);
 				local43.aClass93_Sub41_Sub2_1.method22407(client.anInt3428 * -1830493323, (byte) 35);
 				local43.aClass93_Sub41_Sub2_1.method22414(Class454.aString219, 1860722181);
-				local43.aClass93_Sub41_Sub2_1.method22522(Class106.aClass717_8.method37101(), (byte) -14);
+				local43.aClass93_Sub41_Sub2_1.method22522(Class106.aClass717_8.getId(), (byte) -14);
 				local43.aClass93_Sub41_Sub2_1.method22522(client.aClass702_4.anInt6114 * -1111983921, (byte) -34);
 				Class314.method27033(local43.aClass93_Sub41_Sub2_1, 1361591805);
 				@Pc(133) String local133 = client.aString138;
@@ -496,7 +496,7 @@ public final class Class676 {
 				local43.aClass93_Sub41_Sub2_1.method22407(client.anInt3429 * 1672118199, (byte) 48);
 				local43.aClass93_Sub41_Sub2_1.method22407(client.anInt3428 * -1830493323, (byte) -32);
 				local43.aClass93_Sub41_Sub2_1.method22414(Class454.aString219, -232688334);
-				local43.aClass93_Sub41_Sub2_1.method22522(Class106.aClass717_8.method37101(), (byte) -107);
+				local43.aClass93_Sub41_Sub2_1.method22522(Class106.aClass717_8.getId(), (byte) -107);
 				local43.aClass93_Sub41_Sub2_1.method22522(client.aClass702_4.anInt6114 * -1111983921, (byte) -74);
 				Class314.method27033(local43.aClass93_Sub41_Sub2_1, 828866243);
 				@Pc(133) String local133 = client.aString138;
@@ -672,7 +672,7 @@ public final class Class676 {
 	}
 
 	@OriginalMember(owner = "client!y", name = "e", descriptor = "(Lclient!akt;I)V")
-	static void method33404(@OriginalArg(0) Class93_Sub30 arg0, @OriginalArg(1) int arg1) {
+	static void method33404(@OriginalArg(0) CoordFine arg0, @OriginalArg(1) int arg1) {
 		Class1.aClass123_Sub1_1 = new Class123_Sub1(client.aClass699_1);
 		Class1.aClass123_Sub1_1.method8926(Class358.aClass358_3, (byte) 39);
 		try {

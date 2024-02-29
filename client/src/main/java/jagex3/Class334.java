@@ -109,7 +109,7 @@ public final class Class334 {
 		local73.aClass93_Sub41_Sub2_1.method22414(local4.aString173, -905461201);
 		local73.aClass93_Sub41_Sub2_1.method22602(arg2, (byte) 59);
 		local73.aClass93_Sub41_Sub2_1.method22459(arg0, -1733657513);
-		local73.aClass93_Sub41_Sub2_1.method22460(local4.aClass310_7.method37101(), (byte) -109);
+		local73.aClass93_Sub41_Sub2_1.method22460(local4.aClass310_7.getId(), (byte) -109);
 		local73.aClass93_Sub41_Sub2_1.method22478(arg1, 844689790);
 		local45.method24363(local73, -2068554359);
 	}

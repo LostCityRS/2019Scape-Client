@@ -36,7 +36,7 @@ public final class Class49_Sub1 extends Class49 {
 		@Pc(13) int local13 = arg0.anIntArray521[arg0.anInt6052 * -1497248091];
 		@Pc(23) int local23 = arg0.anIntArray521[arg0.anInt6052 * -1497248091 + 1];
 		@Pc(29) Class39 local29 = (Class39) Class19.aClass32_Sub7_5.method18273(local13, 1759496810);
-		if (local29.aClass519_1 != Class519.aClass519_7) {
+		if (local29.aScriptVarType_1 != ScriptVarType.STRING) {
 		}
 		arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local29.method749(local23, -1899126758);
 	}

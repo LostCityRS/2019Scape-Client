@@ -123,7 +123,7 @@ public final class Class444 implements Interface47 {
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local17.aString108 == null ? "" : local17.aString108;
 			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local17.anInt3089 * -92607533;
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local17.aString112 == null ? "" : local17.aString112;
-			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local17.aClass443_1 == null ? -1 : local17.aClass443_1.method37101();
+			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local17.aClass443_1 == null ? -1 : local17.aClass443_1.getId();
 			return;
 		}
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = -1;

@@ -357,7 +357,7 @@ public final class Class174 {
 		local19.anIntArray240[0] = local40 - local48.anInt5784 * 270611681;
 		local19.anIntArray239[0] = local44 - local48.anInt5785 * -1994307635;
 		local19.method24243((float) ((local19.anIntArray240[0] << 9) + (local19.method20009(1571372511) << 8)), local19.method24230().aClass472_61.aFloat326, (float) ((local19.anIntArray239[0] << 9) + (local19.method20009(-1886875829) << 8)));
-		Class512.anInt5370 = (local19.aByte100 = local19.aByte99 = local34) * -69533369;
+		BaseVarTypeComponentHook.anInt5370 = (local19.aByte100 = local19.aByte99 = local34) * -69533369;
 		if (client.aClass532_1.method30690(-134831049).method30511(local19.anIntArray240[0], local19.anIntArray239[0], -662808309)) {
 			local19.aByte99++;
 		}
@@ -671,8 +671,8 @@ public final class Class174 {
 					if (client.aClass532_1.method30690(28535818).method30511(local453, local460, -662808309)) {
 						local36.aByte99++;
 					}
-					if (client.anInt3513 * -859840571 == arg1 && Class512.anInt5370 * 1177442423 != local36.aByte100) {
-						Class512.anInt5370 = local36.aByte100 * -69533369;
+					if (client.anInt3513 * -859840571 == arg1 && BaseVarTypeComponentHook.anInt5370 * 1177442423 != local36.aByte100) {
+						BaseVarTypeComponentHook.anInt5370 = local36.aByte100 * -69533369;
 					}
 				} else {
 					local167 = arg0.method22701(3, 1140643232);
@@ -693,7 +693,7 @@ public final class Class174 {
 						local36.aByte99++;
 					}
 					if (client.anInt3513 * -859840571 == arg1) {
-						Class512.anInt5370 = local36.aByte100 * -69533369;
+						BaseVarTypeComponentHook.anInt5370 = local36.aByte100 * -69533369;
 					}
 				}
 			}
@@ -860,8 +860,8 @@ public final class Class174 {
 					if (client.aClass532_1.method30690(1792384093).method30511(local453, local460, -662808309)) {
 						local36.aByte99++;
 					}
-					if (client.anInt3513 * -859840571 == arg1 && Class512.anInt5370 * 1177442423 != local36.aByte100) {
-						Class512.anInt5370 = local36.aByte100 * -69533369;
+					if (client.anInt3513 * -859840571 == arg1 && BaseVarTypeComponentHook.anInt5370 * 1177442423 != local36.aByte100) {
+						BaseVarTypeComponentHook.anInt5370 = local36.aByte100 * -69533369;
 					}
 				} else {
 					local167 = arg0.method22701(3, -2085650135);
@@ -882,7 +882,7 @@ public final class Class174 {
 						local36.aByte99++;
 					}
 					if (client.anInt3513 * -859840571 == arg1) {
-						Class512.anInt5370 = local36.aByte100 * -69533369;
+						BaseVarTypeComponentHook.anInt5370 = local36.aByte100 * -69533369;
 					}
 				}
 			}
@@ -923,7 +923,7 @@ public final class Class174 {
 			Class623.method32329(arg2, local6, local8, false, 74518649);
 		}
 		@Pc(66) int local66;
-		@Pc(73) Class500 local73;
+		@Pc(73) BaseVarType local73;
 		@Pc(79) Class466 local79;
 		@Pc(57) int local57;
 		if ((arg3 & 0x40000) != 0) {
@@ -931,7 +931,7 @@ public final class Class174 {
 			local57 = arg0.aByteArray58[(arg0.anInt3070 += -1445626955) * 212851357 - 1] & 0xFF;
 			for (local8 = 0; local8 < local57; local8++) {
 				local66 = arg0.method22511(1249200523);
-				local73 = (Class500) Class107.method18131(Class500.method30340(-1842025323), local66, -1915563430);
+				local73 = (BaseVarType) Class107.method18131(BaseVarType.values(), local66, -1915563430);
 				local79 = Class21.aClass79_Sub1_Sub1_1.method1464(arg0, local73, (byte) 1);
 				arg2.anInterface3_5.method776(local79.anInt5253 * -1181855333, local79.anObject19, (byte) 72);
 			}
@@ -1089,7 +1089,7 @@ public final class Class174 {
 			local57 = arg0.aByteArray58[(arg0.anInt3070 += -1445626955) * 212851357 - 1] & 0xFF;
 			for (local8 = 0; local8 < local57; local8++) {
 				local66 = arg0.method22511(2050003278);
-				local73 = (Class500) Class107.method18131(Class500.method30340(-2004547610), local66, -1915563430);
+				local73 = (BaseVarType) Class107.method18131(BaseVarType.values(), local66, -1915563430);
 				local79 = Class21.aClass79_Sub1_Sub1_1.method1464(arg0, local73, (byte) 1);
 				arg2.anInterface3_5.method776(local79.anInt5253 * -1181855333, local79.anObject19, (byte) 69);
 			}
@@ -1321,8 +1321,8 @@ public final class Class174 {
 					if (client.aClass532_1.method30690(390804325).method30511(local453, local460, -662808309)) {
 						local36.aByte99++;
 					}
-					if (client.anInt3513 * -859840571 == arg1 && Class512.anInt5370 * 1177442423 != local36.aByte100) {
-						Class512.anInt5370 = local36.aByte100 * -69533369;
+					if (client.anInt3513 * -859840571 == arg1 && BaseVarTypeComponentHook.anInt5370 * 1177442423 != local36.aByte100) {
+						BaseVarTypeComponentHook.anInt5370 = local36.aByte100 * -69533369;
 					}
 				} else {
 					local167 = arg0.method22701(3, 1821231761);
@@ -1343,7 +1343,7 @@ public final class Class174 {
 						local36.aByte99++;
 					}
 					if (client.anInt3513 * -859840571 == arg1) {
-						Class512.anInt5370 = local36.aByte100 * -69533369;
+						BaseVarTypeComponentHook.anInt5370 = local36.aByte100 * -69533369;
 					}
 				}
 			}

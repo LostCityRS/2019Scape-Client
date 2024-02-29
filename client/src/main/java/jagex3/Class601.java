@@ -63,7 +63,7 @@ public final class Class601 implements Interface63 {
 	public void method32076(@OriginalArg(0) int arg0) {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2592(Class446.aClass446_48, client.aClass175_2.aClass24_2, (byte) 112);
 		@Pc(16) int local16 = (local5.aClass93_Sub41_Sub2_1.anInt3070 += -1445626955) * 212851357;
-		local5.aClass93_Sub41_Sub2_1.method22522(this.aClass72_3.method37101(), (byte) -109);
+		local5.aClass93_Sub41_Sub2_1.method22522(this.aClass72_3.getId(), (byte) -109);
 		local5.aClass93_Sub41_Sub2_1.method22414(this.aString240, 1785495722);
 		local5.aClass93_Sub41_Sub2_1.method22466(this.anInt5710 * -1620060651, 2130770716);
 		local5.aClass93_Sub41_Sub2_1.method22414(Class527.aString232, 1143402571);
@@ -86,7 +86,7 @@ public final class Class601 implements Interface63 {
 	public void method32077() {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2592(Class446.aClass446_48, client.aClass175_2.aClass24_2, (byte) 84);
 		@Pc(16) int local16 = (local5.aClass93_Sub41_Sub2_1.anInt3070 += -1445626955) * 212851357;
-		local5.aClass93_Sub41_Sub2_1.method22522(this.aClass72_3.method37101(), (byte) -100);
+		local5.aClass93_Sub41_Sub2_1.method22522(this.aClass72_3.getId(), (byte) -100);
 		local5.aClass93_Sub41_Sub2_1.method22414(this.aString240, 1555231612);
 		local5.aClass93_Sub41_Sub2_1.method22466(this.anInt5710 * -1620060651, 2131304719);
 		local5.aClass93_Sub41_Sub2_1.method22414(Class527.aString232, -634106784);
@@ -109,7 +109,7 @@ public final class Class601 implements Interface63 {
 	public void method32075() {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2592(Class446.aClass446_48, client.aClass175_2.aClass24_2, (byte) 89);
 		@Pc(16) int local16 = (local5.aClass93_Sub41_Sub2_1.anInt3070 += -1445626955) * 212851357;
-		local5.aClass93_Sub41_Sub2_1.method22522(this.aClass72_3.method37101(), (byte) -88);
+		local5.aClass93_Sub41_Sub2_1.method22522(this.aClass72_3.getId(), (byte) -88);
 		local5.aClass93_Sub41_Sub2_1.method22414(this.aString240, 2035137442);
 		local5.aClass93_Sub41_Sub2_1.method22466(this.anInt5710 * -1620060651, 2145038277);
 		local5.aClass93_Sub41_Sub2_1.method22414(Class527.aString232, -2011882673);
@@ -132,7 +132,7 @@ public final class Class601 implements Interface63 {
 	public void method32079() {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2592(Class446.aClass446_48, client.aClass175_2.aClass24_2, (byte) 75);
 		@Pc(16) int local16 = (local5.aClass93_Sub41_Sub2_1.anInt3070 += -1445626955) * 212851357;
-		local5.aClass93_Sub41_Sub2_1.method22522(this.aClass72_3.method37101(), (byte) -32);
+		local5.aClass93_Sub41_Sub2_1.method22522(this.aClass72_3.getId(), (byte) -32);
 		local5.aClass93_Sub41_Sub2_1.method22414(this.aString240, -1285080766);
 		local5.aClass93_Sub41_Sub2_1.method22466(this.anInt5710 * -1620060651, 2132714364);
 		local5.aClass93_Sub41_Sub2_1.method22414(Class527.aString232, -1326473836);
@@ -155,7 +155,7 @@ public final class Class601 implements Interface63 {
 	public void method32078() {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2592(Class446.aClass446_48, client.aClass175_2.aClass24_2, (byte) 123);
 		@Pc(16) int local16 = (local5.aClass93_Sub41_Sub2_1.anInt3070 += -1445626955) * 212851357;
-		local5.aClass93_Sub41_Sub2_1.method22522(this.aClass72_3.method37101(), (byte) -84);
+		local5.aClass93_Sub41_Sub2_1.method22522(this.aClass72_3.getId(), (byte) -84);
 		local5.aClass93_Sub41_Sub2_1.method22414(this.aString240, -321854920);
 		local5.aClass93_Sub41_Sub2_1.method22466(this.anInt5710 * -1620060651, 2146916514);
 		local5.aClass93_Sub41_Sub2_1.method22414(Class527.aString232, 616372095);

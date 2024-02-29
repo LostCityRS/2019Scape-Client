@@ -174,7 +174,7 @@ public final class Class110_Sub23 extends Class110 {
 
 	@OriginalMember(owner = "client!agz", name = "anl", descriptor = "(Lclient!yf;I)V")
 	static void method8625(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		@Pc(13) Class93_Sub30 local13 = (Class93_Sub30) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
+		@Pc(13) CoordFine local13 = (CoordFine) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
 		if (Class65.aClass123_Sub1_2.method9023(-1662199153) != Class342.aClass342_4) {
 			throw new RuntimeException();
 		}

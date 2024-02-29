@@ -49,9 +49,9 @@ public final class Class221 {
 		if (arg0 == null || arg0.method25719(-1507711602) == 0) {
 			return 0.0F;
 		} else if (arg1 < (float) (arg0.aClass254Array1[0].anInt3893 * 1727636433)) {
-			return Class222.aClass222_2 == arg0.aClass222_6 ? arg0.aClass254Array1[0].aFloat281 : Class512.method30441(arg0, arg1, true, 583067723);
+			return Class222.aClass222_2 == arg0.aClass222_6 ? arg0.aClass254Array1[0].aFloat281 : BaseVarTypeComponentHook.method30441(arg0, arg1, true, 583067723);
 		} else if (arg1 > (float) (arg0.aClass254Array1[arg0.method25719(-1507711602) - 1].anInt3893 * 1727636433)) {
-			return Class222.aClass222_2 == arg0.aClass222_7 ? arg0.aClass254Array1[arg0.method25719(-1507711602) - 1].aFloat281 : Class512.method30441(arg0, arg1, false, 5136303);
+			return Class222.aClass222_2 == arg0.aClass222_7 ? arg0.aClass254Array1[arg0.method25719(-1507711602) - 1].aFloat281 : BaseVarTypeComponentHook.method30441(arg0, arg1, false, 5136303);
 		} else if (arg0.aBoolean653) {
 			return arg0.aClass254Array1[0].aFloat281;
 		} else {
@@ -514,9 +514,9 @@ public final class Class221 {
 		if (arg0 == null || arg0.method25719(-1507711602) == 0) {
 			return 0.0F;
 		} else if (arg1 < (float) (arg0.aClass254Array1[0].anInt3893 * 1727636433)) {
-			return Class222.aClass222_2 == arg0.aClass222_6 ? arg0.aClass254Array1[0].aFloat281 : Class512.method30441(arg0, arg1, true, -188912588);
+			return Class222.aClass222_2 == arg0.aClass222_6 ? arg0.aClass254Array1[0].aFloat281 : BaseVarTypeComponentHook.method30441(arg0, arg1, true, -188912588);
 		} else if (arg1 > (float) (arg0.aClass254Array1[arg0.method25719(-1507711602) - 1].anInt3893 * 1727636433)) {
-			return Class222.aClass222_2 == arg0.aClass222_7 ? arg0.aClass254Array1[arg0.method25719(-1507711602) - 1].aFloat281 : Class512.method30441(arg0, arg1, false, -2050204645);
+			return Class222.aClass222_2 == arg0.aClass222_7 ? arg0.aClass254Array1[arg0.method25719(-1507711602) - 1].aFloat281 : BaseVarTypeComponentHook.method30441(arg0, arg1, false, -2050204645);
 		} else if (arg0.aBoolean653) {
 			return arg0.aClass254Array1[0].aFloat281;
 		} else {

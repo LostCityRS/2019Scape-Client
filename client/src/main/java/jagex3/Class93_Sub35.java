@@ -146,8 +146,8 @@ public abstract class Class93_Sub35 extends Class93 {
 					if (client.aClass532_1.method30690(1695451641).method30511(local453, local460, -662808309)) {
 						local36.aByte99++;
 					}
-					if (client.anInt3513 * -859840571 == arg1 && Class512.anInt5370 * 1177442423 != local36.aByte100) {
-						Class512.anInt5370 = local36.aByte100 * -69533369;
+					if (client.anInt3513 * -859840571 == arg1 && BaseVarTypeComponentHook.anInt5370 * 1177442423 != local36.aByte100) {
+						BaseVarTypeComponentHook.anInt5370 = local36.aByte100 * -69533369;
 					}
 				} else {
 					local167 = arg0.method22701(3, 1150118268);
@@ -168,7 +168,7 @@ public abstract class Class93_Sub35 extends Class93 {
 						local36.aByte99++;
 					}
 					if (client.anInt3513 * -859840571 == arg1) {
-						Class512.anInt5370 = local36.aByte100 * -69533369;
+						BaseVarTypeComponentHook.anInt5370 = local36.aByte100 * -69533369;
 					}
 				}
 			}

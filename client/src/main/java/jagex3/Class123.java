@@ -315,7 +315,7 @@ public abstract class Class123 {
 	}
 
 	@OriginalMember(owner = "client!je", name = "ey", descriptor = "()Lclient!akt;")
-	public final Class93_Sub30 method8928() {
+	public final CoordFine method8928() {
 		return this.aClass124_2 != null && this.aClass124_2.method21413(-1886035910) ? this.aClass124_2.method21416((byte) 119) : null;
 	}
 
@@ -605,7 +605,7 @@ public abstract class Class123 {
 	}
 
 	@OriginalMember(owner = "client!je", name = "ar", descriptor = "(I)Lclient!akt;")
-	public final Class93_Sub30 method8960(@OriginalArg(0) int arg0) {
+	public final CoordFine method8960(@OriginalArg(0) int arg0) {
 		return this.aClass124_2 != null && this.aClass124_2.method21413(-1477690575) ? this.aClass124_2.method21416((byte) 78) : null;
 	}
 

@@ -52,7 +52,7 @@ public final class Class124_Sub2 extends Class124 {
 	}
 
 	@OriginalMember(owner = "client!ahh", name = "t", descriptor = "(Lclient!akt;I)V")
-	public void method9297(@OriginalArg(0) Class93_Sub30 arg0, @OriginalArg(1) int arg1) {
+	public void method9297(@OriginalArg(0) CoordFine arg0, @OriginalArg(1) int arg1) {
 		this.aClass472_22.aFloat325 = arg0.anInt1610 * -427776677;
 		this.aClass472_22.aFloat326 = arg0.anInt1611 * 1802884841;
 		this.aClass472_22.aFloat327 = arg0.anInt1612 * 671628745;
@@ -164,7 +164,7 @@ public final class Class124_Sub2 extends Class124 {
 	}
 
 	@OriginalMember(owner = "client!ahh", name = "al", descriptor = "(Lclient!akt;)V")
-	public void method9300(@OriginalArg(0) Class93_Sub30 arg0) {
+	public void method9300(@OriginalArg(0) CoordFine arg0) {
 		this.aClass472_22.aFloat325 = arg0.anInt1610 * -427776677;
 		this.aClass472_22.aFloat326 = arg0.anInt1611 * 1802884841;
 		this.aClass472_22.aFloat327 = arg0.anInt1612 * 671628745;
@@ -221,7 +221,7 @@ public final class Class124_Sub2 extends Class124 {
 	}
 
 	@OriginalMember(owner = "client!ahh", name = "ah", descriptor = "(Lclient!akt;)V")
-	public void method9303(@OriginalArg(0) Class93_Sub30 arg0) {
+	public void method9303(@OriginalArg(0) CoordFine arg0) {
 		this.aClass472_22.aFloat325 = arg0.anInt1610 * -427776677;
 		this.aClass472_22.aFloat326 = arg0.anInt1611 * 1802884841;
 		this.aClass472_22.aFloat327 = arg0.anInt1612 * 671628745;
@@ -234,14 +234,14 @@ public final class Class124_Sub2 extends Class124 {
 
 	@OriginalMember(owner = "client!ahh", name = "v", descriptor = "()Lclient!akt;")
 	@Override
-	public Class93_Sub30 method21424() {
-		return new Class93_Sub30(this.anInt1037 * -778327225, (int) this.aClass472_21.aFloat325, (int) this.aClass472_21.aFloat326, (int) this.aClass472_21.aFloat327);
+	public CoordFine method21424() {
+		return new CoordFine(this.anInt1037 * -778327225, (int) this.aClass472_21.aFloat325, (int) this.aClass472_21.aFloat326, (int) this.aClass472_21.aFloat327);
 	}
 
 	@OriginalMember(owner = "client!ahh", name = "o", descriptor = "()Lclient!akt;")
 	@Override
-	public Class93_Sub30 method21422() {
-		return new Class93_Sub30(this.anInt1037 * -778327225, (int) this.aClass472_21.aFloat325, (int) this.aClass472_21.aFloat326, (int) this.aClass472_21.aFloat327);
+	public CoordFine method21422() {
+		return new CoordFine(this.anInt1037 * -778327225, (int) this.aClass472_21.aFloat325, (int) this.aClass472_21.aFloat326, (int) this.aClass472_21.aFloat327);
 	}
 
 	@OriginalMember(owner = "client!ahh", name = "s", descriptor = "()F")
@@ -252,8 +252,8 @@ public final class Class124_Sub2 extends Class124 {
 
 	@OriginalMember(owner = "client!ahh", name = "r", descriptor = "()Lclient!akt;")
 	@Override
-	public Class93_Sub30 method21432() {
-		return new Class93_Sub30(this.anInt1037 * -778327225, (int) this.aClass472_21.aFloat325, (int) this.aClass472_21.aFloat326, (int) this.aClass472_21.aFloat327);
+	public CoordFine method21432() {
+		return new CoordFine(this.anInt1037 * -778327225, (int) this.aClass472_21.aFloat325, (int) this.aClass472_21.aFloat326, (int) this.aClass472_21.aFloat327);
 	}
 
 	@OriginalMember(owner = "client!ahh", name = "q", descriptor = "(Lclient!alw;)V")
@@ -303,8 +303,8 @@ public final class Class124_Sub2 extends Class124 {
 
 	@OriginalMember(owner = "client!ahh", name = "c", descriptor = "()Lclient!akt;")
 	@Override
-	public Class93_Sub30 method21423() {
-		return new Class93_Sub30(this.anInt1037 * -778327225, (int) this.aClass472_21.aFloat325, (int) this.aClass472_21.aFloat326, (int) this.aClass472_21.aFloat327);
+	public CoordFine method21423() {
+		return new CoordFine(this.anInt1037 * -778327225, (int) this.aClass472_21.aFloat325, (int) this.aClass472_21.aFloat326, (int) this.aClass472_21.aFloat327);
 	}
 
 	@OriginalMember(owner = "client!ahh", name = "at", descriptor = "([[[ILclient!qx;II)V")
@@ -374,8 +374,8 @@ public final class Class124_Sub2 extends Class124 {
 
 	@OriginalMember(owner = "client!ahh", name = "f", descriptor = "(B)Lclient!akt;")
 	@Override
-	public Class93_Sub30 method21416(@OriginalArg(0) byte arg0) {
-		return new Class93_Sub30(this.anInt1037 * -778327225, (int) this.aClass472_21.aFloat325, (int) this.aClass472_21.aFloat326, (int) this.aClass472_21.aFloat327);
+	public CoordFine method21416(@OriginalArg(0) byte arg0) {
+		return new CoordFine(this.anInt1037 * -778327225, (int) this.aClass472_21.aFloat325, (int) this.aClass472_21.aFloat326, (int) this.aClass472_21.aFloat327);
 	}
 
 	@OriginalMember(owner = "client!ahh", name = "a", descriptor = "(F[[[ILclient!qx;II)V")

@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!uw")
-public final class Class604 implements Interface75 {
+public final class Class604 implements SerializableEnum {
 
 	@OriginalMember(owner = "client!uw", name = "bu", descriptor = "Ljava/awt/EventQueue;")
 	static EventQueue anEventQueue1;
@@ -55,9 +55,9 @@ public final class Class604 implements Interface75 {
 		@Pc(33) int local33 = arg0.anIntArray521[arg0.anInt6052 * -1497248091 + 2];
 		@Pc(43) int local43 = arg0.anIntArray521[arg0.anInt6052 * -1497248091 + 3];
 		@Pc(49) Class39 local49 = (Class39) Class19.aClass32_Sub7_5.method18273(local33, 1866311135);
-		if (local49.aClass519_2.method37101() != local13 || local49.aClass519_1.method37101() != local23) {
+		if (local49.aScriptVarType_2.getId() != local13 || local49.aScriptVarType_1.getId() != local23) {
 			throw new RuntimeException(local33 + " " + local43);
-		} else if (local23 == Class519.aClass519_7.method37101()) {
+		} else if (local23 == ScriptVarType.STRING.getId()) {
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local49.method749(local43, -564286328);
 		} else {
 			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local49.method748(local43, -833256997);
@@ -92,13 +92,8 @@ public final class Class604 implements Interface75 {
 
 	@OriginalMember(owner = "client!uw", name = "n", descriptor = "()I")
 	@Override
-	public int method37101() {
+	public int getId() {
 		return this.anInt5714 * -818656829;
 	}
 
-	@OriginalMember(owner = "client!uw", name = "k", descriptor = "()I")
-	@Override
-	public int method37100() {
-		return this.anInt5714 * -818656829;
-	}
 }

@@ -24,7 +24,7 @@ public final class Class1 {
 	}
 
 	@OriginalMember(owner = "client!a", name = "f", descriptor = "(Lclient!akt;)V")
-	static void method2(@OriginalArg(0) Class93_Sub30 arg0) {
+	static void method2(@OriginalArg(0) CoordFine arg0) {
 		aClass123_Sub1_1 = new Class123_Sub1(client.aClass699_1);
 		aClass123_Sub1_1.method8926(Class358.aClass358_3, (byte) -13);
 		try {
@@ -44,7 +44,7 @@ public final class Class1 {
 	}
 
 	@OriginalMember(owner = "client!a", name = "w", descriptor = "(Lclient!akt;)V")
-	static void method3(@OriginalArg(0) Class93_Sub30 arg0) {
+	static void method3(@OriginalArg(0) CoordFine arg0) {
 		aClass123_Sub1_1 = new Class123_Sub1(client.aClass699_1);
 		aClass123_Sub1_1.method8926(Class358.aClass358_3, (byte) 78);
 		try {
@@ -64,7 +64,7 @@ public final class Class1 {
 	}
 
 	@OriginalMember(owner = "client!a", name = "u", descriptor = "(Lclient!akt;)V")
-	static void method4(@OriginalArg(0) Class93_Sub30 arg0) {
+	static void method4(@OriginalArg(0) CoordFine arg0) {
 		aClass123_Sub1_1 = new Class123_Sub1(client.aClass699_1);
 		aClass123_Sub1_1.method8926(Class358.aClass358_3, (byte) -51);
 		try {
@@ -84,7 +84,7 @@ public final class Class1 {
 	}
 
 	@OriginalMember(owner = "client!a", name = "l", descriptor = "(Lclient!akt;)V")
-	static void method5(@OriginalArg(0) Class93_Sub30 arg0) {
+	static void method5(@OriginalArg(0) CoordFine arg0) {
 		aClass123_Sub1_1 = new Class123_Sub1(client.aClass699_1);
 		aClass123_Sub1_1.method8926(Class358.aClass358_3, (byte) 21);
 		try {
@@ -164,7 +164,7 @@ public final class Class1 {
 			local140.aFloat326 *= -1.0F;
 			local13.method29724(local140);
 		}
-		@Pc(232) Class93_Sub30 local232 = new Class93_Sub30(0, (int) local13.aFloat325, (int) local13.aFloat326, (int) local13.aFloat327);
+		@Pc(232) CoordFine local232 = new CoordFine(0, (int) local13.aFloat325, (int) local13.aFloat326, (int) local13.aFloat327);
 		local4.method9297(local232, -1049152339);
 		@Pc(240) Class611 local240 = client.aClass532_1.method30624(1913918924);
 		@Pc(247) int local247 = local240.anInt5784 * 270611681 << 9;
@@ -228,7 +228,7 @@ public final class Class1 {
 			local140.aFloat326 *= -1.0F;
 			local13.method29724(local140);
 		}
-		@Pc(232) Class93_Sub30 local232 = new Class93_Sub30(0, (int) local13.aFloat325, (int) local13.aFloat326, (int) local13.aFloat327);
+		@Pc(232) CoordFine local232 = new CoordFine(0, (int) local13.aFloat325, (int) local13.aFloat326, (int) local13.aFloat327);
 		local4.method9297(local232, -1049152339);
 		@Pc(240) Class611 local240 = client.aClass532_1.method30624(2022295829);
 		@Pc(247) int local247 = local240.anInt5784 * 270611681 << 9;
@@ -292,7 +292,7 @@ public final class Class1 {
 			local140.aFloat326 *= -1.0F;
 			local13.method29724(local140);
 		}
-		@Pc(232) Class93_Sub30 local232 = new Class93_Sub30(0, (int) local13.aFloat325, (int) local13.aFloat326, (int) local13.aFloat327);
+		@Pc(232) CoordFine local232 = new CoordFine(0, (int) local13.aFloat325, (int) local13.aFloat326, (int) local13.aFloat327);
 		local4.method9297(local232, -1049152339);
 		@Pc(240) Class611 local240 = client.aClass532_1.method30624(1794944577);
 		@Pc(247) int local247 = local240.anInt5784 * 270611681 << 9;
@@ -378,9 +378,9 @@ public final class Class1 {
 		@Pc(3) Class472 local3 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.method24241().aClass472_61;
 		@Pc(11) int local11 = client.anInt3469 * 2040985693 + (int) local3.aFloat325;
 		@Pc(19) int local19 = client.anInt3474 * -1711095971 + (int) local3.aFloat327;
-		if (Class72.anInt241 * -1022856553 - local11 < -2000 || Class72.anInt241 * -1022856553 - local11 > 2000 || Class441.anInt5047 * -953396699 - local19 < -2000 || Class441.anInt5047 * -953396699 - local19 > 2000) {
+		if (Class72.anInt241 * -1022856553 - local11 < -2000 || Class72.anInt241 * -1022856553 - local11 > 2000 || SortedQueueEntry.anInt5047 * -953396699 - local19 < -2000 || SortedQueueEntry.anInt5047 * -953396699 - local19 > 2000) {
 			Class72.anInt241 = local11 * -79811289;
-			Class441.anInt5047 = local19 * 2072345005;
+			SortedQueueEntry.anInt5047 = local19 * 2072345005;
 		}
 		@Pc(66) int local66;
 		@Pc(74) int local74;
@@ -400,8 +400,8 @@ public final class Class1 {
 			}
 			Class72.anInt241 += local74 * -79811289;
 		}
-		if (Class441.anInt5047 * -953396699 != local19) {
-			local66 = local19 - Class441.anInt5047 * -953396699;
+		if (SortedQueueEntry.anInt5047 * -953396699 != local19) {
+			local66 = local19 - SortedQueueEntry.anInt5047 * -953396699;
 			local74 = (int) ((long) local66 * arg0 / 320L);
 			if (local66 > 0) {
 				if (local74 == 0) {
@@ -414,7 +414,7 @@ public final class Class1 {
 			} else if (local74 < local66) {
 				local74 = local66;
 			}
-			Class441.anInt5047 += local74 * 2072345005;
+			SortedQueueEntry.anInt5047 += local74 * 2072345005;
 		}
 		client.aFloat253 += client.aFloat254 * (float) arg0 / 6.0F;
 		client.aFloat256 += (float) arg0 * client.aFloat255 / 6.0F;

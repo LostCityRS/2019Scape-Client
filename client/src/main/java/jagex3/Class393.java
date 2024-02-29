@@ -402,14 +402,14 @@ public final class Class393 {
 	}
 
 	@OriginalMember(owner = "client!l", name = "u", descriptor = "(IIIIS)Lclient!akt;")
-	public static Class93_Sub30 method28502(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) short arg4) {
-		@Pc(2) Class93_Sub30[] local2 = Class93_Sub30.aClass93_Sub30Array1;
-		synchronized (Class93_Sub30.aClass93_Sub30Array1) {
+	public static CoordFine method28502(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) short arg4) {
+		@Pc(2) CoordFine[] local2 = CoordFine.aCoordFineArray1;
+		synchronized (CoordFine.aCoordFineArray1) {
 			if (Class509.anInt5367 * 672498035 == 0) {
-				return new Class93_Sub30(arg0, arg1, arg2, arg3);
+				return new CoordFine(arg0, arg1, arg2, arg3);
 			} else {
-				Class93_Sub30.aClass93_Sub30Array1[(Class509.anInt5367 -= -1799648325) * 672498035].method13868(arg0, arg1, arg2, arg3, 905722706);
-				return Class93_Sub30.aClass93_Sub30Array1[Class509.anInt5367 * 672498035];
+				CoordFine.aCoordFineArray1[(Class509.anInt5367 -= -1799648325) * 672498035].method13868(arg0, arg1, arg2, arg3, 905722706);
+				return CoordFine.aCoordFineArray1[Class509.anInt5367 * 672498035];
 			}
 		}
 	}

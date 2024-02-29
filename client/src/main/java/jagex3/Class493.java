@@ -56,12 +56,12 @@ public final class Class493 {
 	static void method30188(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(9) Class108 local9 = (Class108) arg0.aClass93_Sub1_Sub13_1.anObjectArray5[arg0.anInt6050 * -709694321];
 		@Pc(31) Interface20 local31 = (Interface20) (arg0.anIntArray522[arg0.anInt6050 * -709694321] == 0 ? arg0.aMap26.get(local9.aClass138_6) : arg0.aMap25.get(local9.aClass138_6));
-		@Pc(36) Class500 local36 = local9.aClass519_6.method30492((byte) 36);
-		if (local36 == Class500.aClass500_6) {
+		@Pc(36) BaseVarType local36 = local9.aScriptVarType_6.getBaseVarType();
+		if (local36 == BaseVarType.INTEGER) {
 			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local31.method33636(local9, 989683427);
-		} else if (local36 == Class500.aClass500_3) {
+		} else if (local36 == BaseVarType.LONG) {
 			arg0.aLongArray27[(arg0.anInt6055 += -1364417339) * -2000995827 - 1] = local31.method33646(local9, 1462276921);
-		} else if (local36 == Class500.aClass500_2) {
+		} else if (local36 == BaseVarType.STRING) {
 			try {
 				@Pc(89) String local89 = (String) local31.method33648(local9, (byte) 120);
 				if (local89 == null) {
@@ -198,14 +198,14 @@ public final class Class493 {
 	}
 
 	@OriginalMember(owner = "client!pu", name = "z", descriptor = "(Lclient!akt;I)Lclient!akt;")
-	public static Class93_Sub30 method30196(@OriginalArg(0) Class93_Sub30 arg0, @OriginalArg(1) int arg1) {
-		@Pc(2) Class93_Sub30[] local2 = Class93_Sub30.aClass93_Sub30Array1;
-		synchronized (Class93_Sub30.aClass93_Sub30Array1) {
+	public static CoordFine method30196(@OriginalArg(0) CoordFine arg0, @OriginalArg(1) int arg1) {
+		@Pc(2) CoordFine[] local2 = CoordFine.aCoordFineArray1;
+		synchronized (CoordFine.aCoordFineArray1) {
 			if (Class509.anInt5367 * 672498035 == 0) {
-				return new Class93_Sub30(arg0);
+				return new CoordFine(arg0);
 			} else {
-				Class93_Sub30.aClass93_Sub30Array1[(Class509.anInt5367 -= -1799648325) * 672498035].method13885(arg0, -17532584);
-				return Class93_Sub30.aClass93_Sub30Array1[Class509.anInt5367 * 672498035];
+				CoordFine.aCoordFineArray1[(Class509.anInt5367 -= -1799648325) * 672498035].method13885(arg0, -17532584);
+				return CoordFine.aCoordFineArray1[Class509.anInt5367 * 672498035];
 			}
 		}
 	}

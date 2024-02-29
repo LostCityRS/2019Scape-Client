@@ -22,7 +22,7 @@ public final class Class21 {
 		arg0.anInt6052 -= -1915563430;
 		@Pc(13) int local13 = arg0.anIntArray521[arg0.anInt6052 * -1497248091];
 		@Pc(23) int local23 = arg0.anIntArray521[arg0.anInt6052 * -1497248091 + 1];
-		@Pc(28) Class93_Sub1_Sub15 local28 = Class512.method30438(local13, local23, 552647328);
+		@Pc(28) Class93_Sub1_Sub15 local28 = BaseVarTypeComponentHook.method30438(local13, local23, 552647328);
 		if (local28 != null) {
 			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local28.anInt3090 * -565994431;
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = Class123_Sub1.method9095(local28.aLong190 * -9166377137725744335L, Class106.aClass717_8.anInt6124 * -1156137245, 304225723);
@@ -33,7 +33,7 @@ public final class Class21 {
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local28.aString108 == null ? "" : local28.aString108;
 			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local28.anInt3089 * -92607533;
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local28.aString112 == null ? "" : local28.aString112;
-			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local28.aClass443_1 == null ? -1 : local28.aClass443_1.method37101();
+			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local28.aClass443_1 == null ? -1 : local28.aClass443_1.getId();
 			return;
 		}
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = -1;

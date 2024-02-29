@@ -38,21 +38,21 @@ public final class Class495 implements Interface7 {
 		@Pc(2) client local2 = Class717.aClient1;
 		synchronized (Class717.aClient1) {
 			if (Class125_Sub2_Sub1.aFrame1 == null) {
-				@Pc(11) Container local11 = Class504.method30377(-283088421);
+				@Pc(11) Container local11 = BaseVarTypeString.method30377(-283088421);
 				if (local11 != null) {
 					client.anInt3413 = local11.getSize().width * -1386467717;
-					Class504.anInt5362 = local11.getSize().height * -1294184635;
+					BaseVarTypeString.anInt5362 = local11.getSize().height * -1294184635;
 					@Pc(34) Insets local34;
 					if (local11 == Class628.aFrame2) {
 						local34 = Class628.aFrame2.getInsets();
 						client.anInt3413 -= (local34.left + local34.right) * -1386467717;
-						Class504.anInt5362 -= (local34.top + local34.bottom) * -1294184635;
+						BaseVarTypeString.anInt5362 -= (local34.top + local34.bottom) * -1294184635;
 					}
 					if (client.anInt3413 * -108363597 <= 0) {
 						client.anInt3413 = -1386467717;
 					}
-					if (Class504.anInt5362 * 2090134413 <= 0) {
-						Class504.anInt5362 = -1294184635;
+					if (BaseVarTypeString.anInt5362 * 2090134413 <= 0) {
+						BaseVarTypeString.anInt5362 = -1294184635;
 					}
 					if (Class255.method26101(1309306044) == 1) {
 						client.anInt3408 = client.anInt3511 * 685234053;

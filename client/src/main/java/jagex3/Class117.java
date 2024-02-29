@@ -55,7 +55,7 @@ public abstract class Class117 implements Interface4 {
 		@Pc(33) int local33 = local23 & 0xFF;
 		@Pc(39) Class30 local39 = (Class30) Class74.aClass32_2.method18273(local13, -2074756598);
 		@Pc(45) Class77 local45 = (Class77) Class276.aClass32_3.method18273(local29, -675571426);
-		@Pc(50) Class519[] local50 = local45.aClass519ArrayArray2[local33];
+		@Pc(50) ScriptVarType[] local50 = local45.aScriptVarTypeArrayArray2[local33];
 		@Pc(55) Object[] local55 = local39.method620(local33, 1113569772);
 		if (local55 == null && local45.anObjectArrayArray2 != null) {
 			local55 = local45.anObjectArrayArray2[local33];

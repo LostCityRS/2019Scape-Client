@@ -49,11 +49,11 @@ public abstract class Class107 {
 	}
 
 	@OriginalMember(owner = "client!dz", name = "n", descriptor = "([Lclient!za;II)Lclient!za;")
-	public static Interface75 method18131(@OriginalArg(0) Interface75[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(1) Interface75[] local1 = arg0;
+	public static SerializableEnum method18131(@OriginalArg(0) SerializableEnum[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+		@Pc(1) SerializableEnum[] local1 = arg0;
 		for (@Pc(3) int local3 = 0; local3 < local1.length; local3++) {
-			@Pc(11) Interface75 local11 = local1[local3];
-			if (arg1 == local11.method37101()) {
+			@Pc(11) SerializableEnum local11 = local1[local3];
+			if (arg1 == local11.getId()) {
 				return local11;
 			}
 		}

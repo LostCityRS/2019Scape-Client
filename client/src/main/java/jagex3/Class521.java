@@ -18,10 +18,10 @@ public final class Class521 {
 	final Map aMap24;
 
 	@OriginalMember(owner = "client!qy", name = "m", descriptor = "Lclient!att;")
-	final AbstractQueue_Sub1 anAbstractQueue_Sub1_2;
+	final SortedQueue aSortedQueue_2;
 
 	@OriginalMember(owner = "client!qy", name = "k", descriptor = "Lclient!att;")
-	final AbstractQueue_Sub1 anAbstractQueue_Sub1_3;
+	final SortedQueue aSortedQueue_3;
 
 	@OriginalMember(owner = "client!qy", name = "e", descriptor = "Ljava/util/Comparator;")
 	final Comparator aComparator2;
@@ -53,14 +53,14 @@ public final class Class521 {
 		this.aClass502_3 = arg2;
 		if (this.anInt5382 * 176969143 == -1) {
 			this.aMap24 = new HashMap(64);
-			this.anAbstractQueue_Sub1_2 = new AbstractQueue_Sub1(64, this.aComparator2);
-			this.anAbstractQueue_Sub1_3 = null;
+			this.aSortedQueue_2 = new SortedQueue(64, this.aComparator2);
+			this.aSortedQueue_3 = null;
 		} else if (this.aClass502_3 == null) {
 			throw new IllegalArgumentException("");
 		} else {
 			this.aMap24 = new HashMap(this.anInt5382 * 176969143);
-			this.anAbstractQueue_Sub1_2 = new AbstractQueue_Sub1(this.anInt5382 * 176969143, this.aComparator2);
-			this.anAbstractQueue_Sub1_3 = new AbstractQueue_Sub1(this.anInt5382 * 176969143);
+			this.aSortedQueue_2 = new SortedQueue(this.anInt5382 * 176969143, this.aComparator2);
+			this.aSortedQueue_3 = new SortedQueue(this.anInt5382 * 176969143);
 		}
 	}
 
@@ -70,15 +70,15 @@ public final class Class521 {
 			throw new IllegalStateException("");
 		}
 		@Pc(18) long local18 = System.currentTimeMillis() - this.aLong288 * -8222533772526471457L;
-		while (!this.anAbstractQueue_Sub1_2.isEmpty()) {
-			@Pc(27) Class503 local27 = (Class503) this.anAbstractQueue_Sub1_2.peek();
+		while (!this.aSortedQueue_2.isEmpty()) {
+			@Pc(27) Class503 local27 = (Class503) this.aSortedQueue_2.peek();
 			if (local27.aLong287 * -2148301208355003327L >= local18) {
 				return;
 			}
 			this.aMap24.remove(local27.anObject20);
-			this.anAbstractQueue_Sub1_2.remove(local27);
+			this.aSortedQueue_2.remove(local27);
 			if (this.method30526((byte) 40)) {
-				this.anAbstractQueue_Sub1_3.remove(local27);
+				this.aSortedQueue_3.remove(local27);
 			}
 		}
 	}
@@ -119,9 +119,9 @@ public final class Class521 {
 			}
 			@Pc(54) Class503 local54;
 			if (this.method30526((byte) 40) && this.aMap24.size() == this.anInt5382 * 176969143) {
-				local54 = (Class503) this.anAbstractQueue_Sub1_3.remove();
+				local54 = (Class503) this.aSortedQueue_3.remove();
 				this.aMap24.remove(local54.anObject20);
-				this.anAbstractQueue_Sub1_2.remove(local54);
+				this.aSortedQueue_2.remove(local54);
 			}
 			local54 = new Class503(arg1, arg0);
 			this.aMap24.put(arg0, local54);
@@ -141,15 +141,15 @@ public final class Class521 {
 			throw new IllegalStateException("");
 		}
 		@Pc(18) long local18 = System.currentTimeMillis() - this.aLong288 * -8222533772526471457L;
-		while (!this.anAbstractQueue_Sub1_2.isEmpty()) {
-			@Pc(27) Class503 local27 = (Class503) this.anAbstractQueue_Sub1_2.peek();
+		while (!this.aSortedQueue_2.isEmpty()) {
+			@Pc(27) Class503 local27 = (Class503) this.aSortedQueue_2.peek();
 			if (local27.aLong287 * -2148301208355003327L >= local18) {
 				return;
 			}
 			this.aMap24.remove(local27.anObject20);
-			this.anAbstractQueue_Sub1_2.remove(local27);
+			this.aSortedQueue_2.remove(local27);
 			if (this.method30526((byte) 40)) {
-				this.anAbstractQueue_Sub1_3.remove(local27);
+				this.aSortedQueue_3.remove(local27);
 			}
 		}
 	}
@@ -201,9 +201,9 @@ public final class Class521 {
 			}
 			@Pc(54) Class503 local54;
 			if (this.method30526((byte) 40) && this.aMap24.size() == this.anInt5382 * 176969143) {
-				local54 = (Class503) this.anAbstractQueue_Sub1_3.remove();
+				local54 = (Class503) this.aSortedQueue_3.remove();
 				this.aMap24.remove(local54.anObject20);
-				this.anAbstractQueue_Sub1_2.remove(local54);
+				this.aSortedQueue_2.remove(local54);
 			}
 			local54 = new Class503(arg1, arg0);
 			this.aMap24.put(arg0, local54);
@@ -215,8 +215,8 @@ public final class Class521 {
 	@OriginalMember(owner = "client!qy", name = "p", descriptor = "(Lclient!qd;Z)V")
 	void method30534(@OriginalArg(0) Class503 arg0, @OriginalArg(1) boolean arg1) {
 		if (!arg1) {
-			this.anAbstractQueue_Sub1_2.remove(arg0);
-			if (this.method30526((byte) 40) && !this.anAbstractQueue_Sub1_3.remove(arg0)) {
+			this.aSortedQueue_2.remove(arg0);
+			if (this.method30526((byte) 40) && !this.aSortedQueue_3.remove(arg0)) {
 				throw new IllegalStateException("");
 			}
 		}
@@ -229,16 +229,16 @@ public final class Class521 {
 				case 1:
 					arg0.aLong286 += 7680150200786882353L;
 			}
-			this.anAbstractQueue_Sub1_3.add(arg0);
+			this.aSortedQueue_3.add(arg0);
 		}
-		this.anAbstractQueue_Sub1_2.add(arg0);
+		this.aSortedQueue_2.add(arg0);
 	}
 
 	@OriginalMember(owner = "client!qy", name = "k", descriptor = "(Lclient!qd;ZI)V")
 	void method30535(@OriginalArg(0) Class503 arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2) {
 		if (!arg1) {
-			this.anAbstractQueue_Sub1_2.remove(arg0);
-			if (this.method30526((byte) 40) && !this.anAbstractQueue_Sub1_3.remove(arg0)) {
+			this.aSortedQueue_2.remove(arg0);
+			if (this.method30526((byte) 40) && !this.aSortedQueue_3.remove(arg0)) {
 				throw new IllegalStateException("");
 			}
 		}
@@ -251,9 +251,9 @@ public final class Class521 {
 				case 1:
 					arg0.aLong286 += 7680150200786882353L;
 			}
-			this.anAbstractQueue_Sub1_3.add(arg0);
+			this.aSortedQueue_3.add(arg0);
 		}
-		this.anAbstractQueue_Sub1_2.add(arg0);
+		this.aSortedQueue_2.add(arg0);
 	}
 
 	@OriginalMember(owner = "client!qy", name = "c", descriptor = "()V")
@@ -262,15 +262,15 @@ public final class Class521 {
 			throw new IllegalStateException("");
 		}
 		@Pc(18) long local18 = System.currentTimeMillis() - this.aLong288 * -8222533772526471457L;
-		while (!this.anAbstractQueue_Sub1_2.isEmpty()) {
-			@Pc(27) Class503 local27 = (Class503) this.anAbstractQueue_Sub1_2.peek();
+		while (!this.aSortedQueue_2.isEmpty()) {
+			@Pc(27) Class503 local27 = (Class503) this.aSortedQueue_2.peek();
 			if (local27.aLong287 * -2148301208355003327L >= local18) {
 				return;
 			}
 			this.aMap24.remove(local27.anObject20);
-			this.anAbstractQueue_Sub1_2.remove(local27);
+			this.aSortedQueue_2.remove(local27);
 			if (this.method30526((byte) 40)) {
-				this.anAbstractQueue_Sub1_3.remove(local27);
+				this.aSortedQueue_3.remove(local27);
 			}
 		}
 	}
@@ -281,15 +281,15 @@ public final class Class521 {
 			throw new IllegalStateException("");
 		}
 		@Pc(18) long local18 = System.currentTimeMillis() - this.aLong288 * -8222533772526471457L;
-		while (!this.anAbstractQueue_Sub1_2.isEmpty()) {
-			@Pc(27) Class503 local27 = (Class503) this.anAbstractQueue_Sub1_2.peek();
+		while (!this.aSortedQueue_2.isEmpty()) {
+			@Pc(27) Class503 local27 = (Class503) this.aSortedQueue_2.peek();
 			if (local27.aLong287 * -2148301208355003327L >= local18) {
 				return;
 			}
 			this.aMap24.remove(local27.anObject20);
-			this.anAbstractQueue_Sub1_2.remove(local27);
+			this.aSortedQueue_2.remove(local27);
 			if (this.method30526((byte) 40)) {
-				this.anAbstractQueue_Sub1_3.remove(local27);
+				this.aSortedQueue_3.remove(local27);
 			}
 		}
 	}

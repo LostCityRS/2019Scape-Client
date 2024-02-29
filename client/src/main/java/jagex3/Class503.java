@@ -55,14 +55,14 @@ public final class Class503 implements Comparable {
 		@Pc(34) int local34;
 		if (local1 == 2) {
 			local23 = client.anInt3413 * -108363597 > 800 ? 800 : client.anInt3413 * -108363597;
-			local34 = Class504.anInt5362 * 2090134413 > 600 ? 600 : Class504.anInt5362 * 2090134413;
+			local34 = BaseVarTypeString.anInt5362 * 2090134413 > 600 ? 600 : BaseVarTypeString.anInt5362 * 2090134413;
 			client.anInt3408 = local23 * 1671148283;
 			client.anInt3414 = (client.anInt3413 * -108363597 - local23) / 2 * 1405880713;
 			client.anInt3416 = local34 * 490799697;
 			client.anInt3415 = 0;
 		} else if (local1 == 1) {
 			local23 = client.anInt3413 * -108363597 > 1024 ? 1024 : client.anInt3413 * -108363597;
-			local34 = Class504.anInt5362 * 2090134413 > 768 ? 768 : Class504.anInt5362 * 2090134413;
+			local34 = BaseVarTypeString.anInt5362 * 2090134413 > 768 ? 768 : BaseVarTypeString.anInt5362 * 2090134413;
 			client.anInt3408 = local23 * 1671148283;
 			client.anInt3414 = (client.anInt3413 * -108363597 - local23) / 2 * 1405880713;
 			client.anInt3416 = local34 * 490799697;
@@ -70,7 +70,7 @@ public final class Class503 implements Comparable {
 		} else {
 			client.anInt3408 = client.anInt3413 * 497657217;
 			client.anInt3414 = 0;
-			client.anInt3416 = Class504.anInt5362 * 1556259229;
+			client.anInt3416 = BaseVarTypeString.anInt5362 * 1556259229;
 			client.anInt3415 = 0;
 		}
 	}

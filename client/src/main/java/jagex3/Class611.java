@@ -112,7 +112,7 @@ public final class Class611 {
 	}
 
 	@OriginalMember(owner = "client!ve", name = "e", descriptor = "(Lclient!akt;B)V")
-	public void method32208(@OriginalArg(0) Class93_Sub30 arg0, @OriginalArg(1) byte arg1) {
+	public void method32208(@OriginalArg(0) CoordFine arg0, @OriginalArg(1) byte arg1) {
 		this.anInt5786 = arg0.anInt1609 * 1839387951;
 		this.anInt5784 = (arg0.anInt1610 * -427776677 >> 9) * 2122256161;
 		this.anInt5785 = (arg0.anInt1612 * 671628745 >> 9) * -67830523;
@@ -146,7 +146,7 @@ public final class Class611 {
 	}
 
 	@OriginalMember(owner = "client!ve", name = "l", descriptor = "(Lclient!akt;)V")
-	public void method32212(@OriginalArg(0) Class93_Sub30 arg0) {
+	public void method32212(@OriginalArg(0) CoordFine arg0) {
 		this.anInt5786 = arg0.anInt1609 * 1839387951;
 		this.anInt5784 = (arg0.anInt1610 * -427776677 >> 9) * 2122256161;
 		this.anInt5785 = (arg0.anInt1612 * 671628745 >> 9) * -67830523;
@@ -196,7 +196,7 @@ public final class Class611 {
 	}
 
 	@OriginalMember(owner = "client!ve", name = "w", descriptor = "(Lclient!akt;)V")
-	public void method32218(@OriginalArg(0) Class93_Sub30 arg0) {
+	public void method32218(@OriginalArg(0) CoordFine arg0) {
 		this.anInt5786 = arg0.anInt1609 * 1839387951;
 		this.anInt5784 = (arg0.anInt1610 * -427776677 >> 9) * 2122256161;
 		this.anInt5785 = (arg0.anInt1612 * 671628745 >> 9) * -67830523;
@@ -215,7 +215,7 @@ public final class Class611 {
 	}
 
 	@OriginalMember(owner = "client!ve", name = "u", descriptor = "(Lclient!akt;)V")
-	public void method32219(@OriginalArg(0) Class93_Sub30 arg0) {
+	public void method32219(@OriginalArg(0) CoordFine arg0) {
 		this.anInt5786 = arg0.anInt1609 * 1839387951;
 		this.anInt5784 = (arg0.anInt1610 * -427776677 >> 9) * 2122256161;
 		this.anInt5785 = (arg0.anInt1612 * 671628745 >> 9) * -67830523;

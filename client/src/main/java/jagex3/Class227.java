@@ -37,7 +37,7 @@ public final class Class227 {
 			throw new RuntimeException("");
 		} else if (client.aClass175_2 != null) {
 			@Pc(65) Class93_Sub22 local65 = Class102.method2592(Class446.aClass446_45, client.aClass175_2.aClass24_2, (byte) 12);
-			local65.aClass93_Sub41_Sub2_1.method22458(local18.method37101(), -1591808004);
+			local65.aClass93_Sub41_Sub2_1.method22458(local18.getId(), -1591808004);
 			local65.aClass93_Sub41_Sub2_1.method22470(local31.anInt5785 * -1994307635, -1895191206);
 			local65.aClass93_Sub41_Sub2_1.method22602(local31.anInt5784 * 270611681, (byte) -14);
 			client.aClass175_2.method24363(local65, -1630265729);

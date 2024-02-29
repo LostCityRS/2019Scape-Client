@@ -28,7 +28,7 @@ public final class Class110_Sub5 extends Class110 {
 		local19.anIntArray240[0] = local40 - local48.anInt5784 * 270611681;
 		local19.anIntArray239[0] = local44 - local48.anInt5785 * -1994307635;
 		local19.method24243((float) ((local19.anIntArray240[0] << 9) + (local19.method20009(-79999018) << 8)), local19.method24230().aClass472_61.aFloat326, (float) ((local19.anIntArray239[0] << 9) + (local19.method20009(1449782044) << 8)));
-		Class512.anInt5370 = (local19.aByte100 = local19.aByte99 = local34) * -69533369;
+		BaseVarTypeComponentHook.anInt5370 = (local19.aByte100 = local19.aByte99 = local34) * -69533369;
 		if (client.aClass532_1.method30690(148494815).method30511(local19.anIntArray240[0], local19.anIntArray239[0], -662808309)) {
 			local19.aByte99++;
 		}

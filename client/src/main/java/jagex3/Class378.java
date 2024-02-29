@@ -131,7 +131,7 @@ public final class Class378 implements Interface33 {
 
 	@OriginalMember(owner = "client!kg", name = "yw", descriptor = "(Lclient!yf;I)V")
 	static void method28251(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class106.aClass717_8.method37101();
+		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class106.aClass717_8.getId();
 	}
 
 	@OriginalMember(owner = "client!kg", name = "l", descriptor = "(Lclient!aqk;I)V")

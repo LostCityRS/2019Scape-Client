@@ -411,11 +411,11 @@ public final class Class166_Sub6 extends Class166 {
 	static void method15497(@OriginalArg(0) byte arg0) {
 		@Pc(5) int local5 = Class26.anInt90 * 1489927680 + 256;
 		@Pc(11) int local11 = Class20.anInt70 * -1850666496 + 256;
-		@Pc(23) int local23 = Class305.method26894(local5, local11, Class512.anInt5370 * 1177442423, (byte) -63) - Class165.anInt2068 * -1400777707;
+		@Pc(23) int local23 = Class305.method26894(local5, local11, BaseVarTypeComponentHook.anInt5370 * 1177442423, (byte) -63) - Class165.anInt2068 * -1400777707;
 		if (Class256.anInt3894 * 1151351583 >= 100) {
 			Class163.anInt2002 = Class26.anInt90 * 884609536 + -2035173632;
 			Class270.anInt3925 = Class20.anInt70 * 243676672 + 1435337472;
-			Class130_Sub2.anInt1117 = (Class305.method26894(Class163.anInt2002 * -1331168249, Class270.anInt3925 * 466086187, Class512.anInt5370 * 1177442423, (byte) -19) - Class165.anInt2068 * -1400777707) * 1820517185;
+			Class130_Sub2.anInt1117 = (Class305.method26894(Class163.anInt2002 * -1331168249, Class270.anInt3925 * 466086187, BaseVarTypeComponentHook.anInt5370 * 1177442423, (byte) -19) - Class165.anInt2068 * -1400777707) * 1820517185;
 		} else {
 			if (Class163.anInt2002 * -1331168249 < local5) {
 				Class163.anInt2002 += ((local5 - Class163.anInt2002 * -1331168249) * 1151351583 * Class256.anInt3894 / 1000 + Class366.anInt4746 * -1516483055) * 1636217271;
@@ -456,7 +456,7 @@ public final class Class166_Sub6 extends Class166 {
 		}
 		local5 = Class545.anInt5450 * -717754880 + 256;
 		local11 = Class349.anInt4242 * -970841600 + 256;
-		local23 = Class305.method26894(local5, local11, Class512.anInt5370 * 1177442423, (byte) -44) - Class290.anInt3952 * -1980774829;
+		local23 = Class305.method26894(local5, local11, BaseVarTypeComponentHook.anInt5370 * 1177442423, (byte) -44) - Class290.anInt3952 * -1980774829;
 		@Pc(293) int local293 = local5 - Class163.anInt2002 * -1331168249;
 		@Pc(299) int local299 = local23 - Class130_Sub2.anInt1117 * 1055108289;
 		@Pc(305) int local305 = local11 - Class270.anInt3925 * 466086187;

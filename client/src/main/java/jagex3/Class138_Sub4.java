@@ -45,18 +45,18 @@ final class Class138_Sub4 extends Class138 {
 	@OriginalMember(owner = "client!aiu", name = "l", descriptor = "(Lclient!ec;)Ljava/lang/Object;")
 	@Override
 	Object method11524(@OriginalArg(0) Class108 arg0) {
-		return arg0.aClass519_6 == Class519.aClass519_88 || arg0.aClass519_6 == Class519.aClass519_8 ? -1 : arg0.aClass519_6.method30498(657683700);
+		return arg0.aScriptVarType_6 == ScriptVarType.INT || arg0.aScriptVarType_6 == ScriptVarType.BOOLEAN ? -1 : arg0.aScriptVarType_6.getDefaultValue();
 	}
 
 	@OriginalMember(owner = "client!aiu", name = "w", descriptor = "(Lclient!ec;I)Ljava/lang/Object;")
 	@Override
 	Object method11522(@OriginalArg(0) Class108 arg0, @OriginalArg(1) int arg1) {
-		return arg0.aClass519_6 == Class519.aClass519_88 || arg0.aClass519_6 == Class519.aClass519_8 ? -1 : arg0.aClass519_6.method30498(657683700);
+		return arg0.aScriptVarType_6 == ScriptVarType.INT || arg0.aScriptVarType_6 == ScriptVarType.BOOLEAN ? -1 : arg0.aScriptVarType_6.getDefaultValue();
 	}
 
 	@OriginalMember(owner = "client!aiu", name = "u", descriptor = "(Lclient!ec;)Ljava/lang/Object;")
 	@Override
 	Object method11523(@OriginalArg(0) Class108 arg0) {
-		return arg0.aClass519_6 == Class519.aClass519_88 || arg0.aClass519_6 == Class519.aClass519_8 ? -1 : arg0.aClass519_6.method30498(657683700);
+		return arg0.aScriptVarType_6 == ScriptVarType.INT || arg0.aScriptVarType_6 == ScriptVarType.BOOLEAN ? -1 : arg0.aScriptVarType_6.getDefaultValue();
 	}
 }

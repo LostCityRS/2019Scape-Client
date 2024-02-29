@@ -188,16 +188,16 @@ public abstract class Class127 implements Interface4 {
 	@OriginalMember(owner = "client!ka", name = "w", descriptor = "(I)Z")
 	public static boolean method9264(@OriginalArg(0) int arg0) {
 		try {
-			if (!IcmpService_Sub1.available()) {
+			if (!NativeMouse.available()) {
 				return false;
 			}
 		} catch (@Pc(5) Throwable local5) {
 			return false;
 		}
-		if (IcmpService_Sub1.anIcmpService_Sub1_1 != null) {
+		if (NativeMouse.instance != null) {
 			throw new IllegalStateException("");
 		}
-		IcmpService_Sub1.anIcmpService_Sub1_1 = new IcmpService_Sub1();
+		NativeMouse.instance = new NativeMouse();
 		@Pc(26) Thread local26 = new Thread(new Class690());
 		local26.setDaemon(true);
 		local26.start();

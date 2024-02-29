@@ -36,7 +36,7 @@ public final class Class243 {
 		}
 		arg0.anIntArray520[local9] = local32;
 		@Pc(48) byte local48 = -1;
-		if (local19 == Class519.aClass519_88.method37101()) {
+		if (local19 == ScriptVarType.INT.getId()) {
 			local48 = 0;
 		}
 		for (@Pc(56) int local56 = 0; local56 < local32; local56++) {

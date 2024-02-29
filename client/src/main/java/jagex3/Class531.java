@@ -40,7 +40,7 @@ public final class Class531 {
 			if (local8 == 255) {
 				return local4;
 			}
-			@Pc(18) Class500 local18 = (Class500) Class93_Sub16.method13572(Class500.class, local8, (byte) 1);
+			@Pc(18) BaseVarType local18 = (BaseVarType) Class93_Sub16.method13572(BaseVarType.class, local8, (byte) 1);
 			while (true) {
 				@Pc(22) int local22 = arg0.method22425((short) 16384);
 				if (local22 == 255) {
@@ -63,7 +63,7 @@ public final class Class531 {
 			if (local8 == 255) {
 				return local4;
 			}
-			@Pc(18) Class500 local18 = (Class500) Class93_Sub16.method13572(Class500.class, local8, (byte) 1);
+			@Pc(18) BaseVarType local18 = (BaseVarType) Class93_Sub16.method13572(BaseVarType.class, local8, (byte) 1);
 			while (true) {
 				@Pc(22) int local22 = arg0.method22425((short) 16384);
 				if (local22 == 255) {
@@ -86,7 +86,7 @@ public final class Class531 {
 			if (local8 == 255) {
 				return local4;
 			}
-			@Pc(18) Class500 local18 = (Class500) Class93_Sub16.method13572(Class500.class, local8, (byte) 1);
+			@Pc(18) BaseVarType local18 = (BaseVarType) Class93_Sub16.method13572(BaseVarType.class, local8, (byte) 1);
 			while (true) {
 				@Pc(22) int local22 = arg0.method22425((short) 16384);
 				if (local22 == 255) {
@@ -104,7 +104,7 @@ public final class Class531 {
 	@OriginalMember(owner = "client!rk", name = "al", descriptor = "(I)V")
 	public static void method30616(@OriginalArg(0) int arg0) {
 		Class25.aClass100_39 = null;
-		Class441.aClass100_44 = null;
+		SortedQueueEntry.aClass100_44 = null;
 		Class92.aClass100_2 = null;
 		Class124_Sub3.aClass100_36 = null;
 		Class454.aClass100_45 = null;

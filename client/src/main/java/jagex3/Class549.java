@@ -85,7 +85,7 @@ public final class Class549 {
 		if (local13.startsWith(Class346.method27663(0, -1614681388)) || local13.startsWith(Class346.method27663(1, -1614681388))) {
 			local13 = local13.substring(7);
 		}
-		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class500.method30347(local13, -598449122);
+		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = BaseVarType.method30347(local13, -598449122);
 	}
 
 	@OriginalMember(owner = "client!sg", name = "ane", descriptor = "(Lclient!yf;I)V")

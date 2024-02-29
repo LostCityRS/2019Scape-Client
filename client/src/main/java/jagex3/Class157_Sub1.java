@@ -36,7 +36,7 @@ public final class Class157_Sub1 extends Class157 implements Interface4 {
 			Class79_Sub1_Sub2.method1489(-1721291139);
 		}
 		Class694.aClass104_14.method20478();
-		Class510.method30426(Class694.aClass104_14, 1483618617);
+		BaseVarTypeCoordFine.method30426(Class694.aClass104_14, 1483618617);
 		local39 = Class168.method17640(-608440267);
 		if (local39 == -1) {
 			local39 = client.anInt3520 * 895420077;

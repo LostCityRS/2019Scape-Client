@@ -8,14 +8,12 @@ import java.awt.Font;
 import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Insets;
-import java.awt.LayoutManager;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-import java.awt.image.ImageObserver;
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -928,14 +926,14 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 		Class628.aFrame2.setVisible(true);
 		Class628.aFrame2.toFront();
 		@Pc(23) Insets local23 = Class628.aFrame2.getInsets();
-		Class628.aFrame2.setSize(anInt3413 * -108363597 + local23.left + local23.right, local23.bottom + local23.top + Class504.anInt5362 * 2090134413);
+		Class628.aFrame2.setSize(anInt3413 * -108363597 + local23.left + local23.right, local23.bottom + local23.top + BaseVarTypeString.anInt5362 * 2090134413);
 	}
 
 	@OriginalMember(owner = "client!sk", name = "s", descriptor = "(I)V")
 	final synchronized void method24857(@OriginalArg(0) int arg0) {
 		this.method24859(-1978270461);
-		@Pc(5) Container local5 = Class504.method30377(-283088421);
-		Class125_Sub3.aCanvas1 = new Canvas_Sub1(local5);
+		@Pc(5) Container local5 = BaseVarTypeString.method30377(-283088421);
+		Class125_Sub3.aCanvas1 = new GameCanvas(local5);
 		this.method24947(local5, 1220248857);
 	}
 
@@ -1097,7 +1095,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 				}
 			}
 		}
-		Class504.method30377(-283088421).setFocusCycleRoot(true);
+		BaseVarTypeString.method30377(-283088421).setFocusCycleRoot(true);
 		anInt3419 = ((int) (Runtime.getRuntime().maxMemory() / 1048576L) + 1) * 2060182503;
 		anInt3422 = Runtime.getRuntime().availableProcessors() * -1401201395;
 		this.method24857(-1483631858);
@@ -1217,7 +1215,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 		aBoolean588 = true;
 		if (Class305.method26889(322683967) - aLong239 * -8866144438303274951L > 1000L) {
 			@Pc(16) Rectangle local16 = arg0.getClipBounds();
-			if (local16 == null || local16.width >= anInt3413 * -108363597 && local16.height >= Class504.anInt5362 * 2090134413) {
+			if (local16 == null || local16.width >= anInt3413 * -108363597 && local16.height >= BaseVarTypeString.anInt5362 * 2090134413) {
 				aBoolean592 = true;
 			}
 		}
@@ -1274,12 +1272,12 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 		try {
 			this.method24877(Class555.aClass555_4, arg7, 1101059334);
 			anInt3413 = (anInt3408 = arg0.method31296(-820575818) * 1671148283) * -1040934271;
-			Class504.anInt5362 = (anInt3416 = arg0.method31297(-567283080) * 490799697) * 500427957;
+			BaseVarTypeString.anInt5362 = (anInt3416 = arg0.method31297(-567283080) * 490799697) * 500427957;
 			anInt3414 = 0;
 			anInt3415 = 0;
 			if (Class343.method27611((byte) 45) == Class555.aClass555_5) {
 				anInt3413 += arg0.method31298(-1175088513) * 1522031862;
-				Class504.anInt5362 += arg0.method31299(-1743498683) * 1706598026;
+				BaseVarTypeString.anInt5362 += arg0.method31299(-1743498683) * 1706598026;
 				this.method24856(arg0.method31300((byte) -13), (byte) 114);
 			}
 			Class69.anApplet1 = Class32_Sub10.anApplet2;
@@ -1584,12 +1582,12 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 		try {
 			this.method24877(Class555.aClass555_4, arg7, 1331913860);
 			anInt3413 = (anInt3408 = arg0.method31296(-820575818) * 1671148283) * -1040934271;
-			Class504.anInt5362 = (anInt3416 = arg0.method31297(-567283080) * 490799697) * 500427957;
+			BaseVarTypeString.anInt5362 = (anInt3416 = arg0.method31297(-567283080) * 490799697) * 500427957;
 			anInt3414 = 0;
 			anInt3415 = 0;
 			if (Class343.method27611((byte) 115) == Class555.aClass555_5) {
 				anInt3413 += arg0.method31298(-1726618611) * 1522031862;
-				Class504.anInt5362 += arg0.method31299(-1743498683) * 1706598026;
+				BaseVarTypeString.anInt5362 += arg0.method31299(-1743498683) * 1706598026;
 				this.method24856(arg0.method31300((byte) -78), (byte) 99);
 			}
 			Class69.anApplet1 = Class32_Sub10.anApplet2;
@@ -1605,12 +1603,12 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 		try {
 			this.method24877(Class555.aClass555_4, arg7, 917811850);
 			anInt3413 = (anInt3408 = arg0.method31296(-820575818) * 1671148283) * -1040934271;
-			Class504.anInt5362 = (anInt3416 = arg0.method31297(-567283080) * 490799697) * 500427957;
+			BaseVarTypeString.anInt5362 = (anInt3416 = arg0.method31297(-567283080) * 490799697) * 500427957;
 			anInt3414 = 0;
 			anInt3415 = 0;
 			if (Class343.method27611((byte) 44) == Class555.aClass555_5) {
 				anInt3413 += arg0.method31298(1426116554) * 1522031862;
-				Class504.anInt5362 += arg0.method31299(-1743498683) * 1706598026;
+				BaseVarTypeString.anInt5362 += arg0.method31299(-1743498683) * 1706598026;
 				this.method24856(arg0.method31300((byte) -47), (byte) 125);
 			}
 			Class69.anApplet1 = Class32_Sub10.anApplet2;
@@ -1626,12 +1624,12 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 		try {
 			this.method24877(Class555.aClass555_4, arg7, -868112265);
 			anInt3413 = (anInt3408 = arg0.method31296(-820575818) * 1671148283) * -1040934271;
-			Class504.anInt5362 = (anInt3416 = arg0.method31297(-567283080) * 490799697) * 500427957;
+			BaseVarTypeString.anInt5362 = (anInt3416 = arg0.method31297(-567283080) * 490799697) * 500427957;
 			anInt3414 = 0;
 			anInt3415 = 0;
 			if (Class343.method27611((byte) 9) == Class555.aClass555_5) {
 				anInt3413 += arg0.method31298(-1311792139) * 1522031862;
-				Class504.anInt5362 += arg0.method31299(-1743498683) * 1706598026;
+				BaseVarTypeString.anInt5362 += arg0.method31299(-1743498683) * 1706598026;
 				this.method24856(arg0.method31300((byte) -87), (byte) 105);
 			}
 			Class69.anApplet1 = Class32_Sub10.anApplet2;
@@ -2025,7 +2023,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 		aBoolean588 = true;
 		if (Class305.method26889(648936748) - aLong239 * -8866144438303274951L > 1000L) {
 			@Pc(16) Rectangle local16 = arg0.getClipBounds();
-			if (local16 == null || local16.width >= anInt3413 * -108363597 && local16.height >= Class504.anInt5362 * 2090134413) {
+			if (local16 == null || local16.width >= anInt3413 * -108363597 && local16.height >= BaseVarTypeString.anInt5362 * 2090134413) {
 				aBoolean592 = true;
 			}
 		}
@@ -2051,7 +2049,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 		Class628.aFrame2.setVisible(true);
 		Class628.aFrame2.toFront();
 		@Pc(23) Insets local23 = Class628.aFrame2.getInsets();
-		Class628.aFrame2.setSize(anInt3413 * -108363597 + local23.left + local23.right, local23.bottom + local23.top + Class504.anInt5362 * 2090134413);
+		Class628.aFrame2.setSize(anInt3413 * -108363597 + local23.left + local23.right, local23.bottom + local23.top + BaseVarTypeString.anInt5362 * 2090134413);
 	}
 
 	@OriginalMember(owner = "client!sk", name = "bw", descriptor = "(Ljava/lang/String;)V")
@@ -2064,7 +2062,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 		Class628.aFrame2.setVisible(true);
 		Class628.aFrame2.toFront();
 		@Pc(23) Insets local23 = Class628.aFrame2.getInsets();
-		Class628.aFrame2.setSize(anInt3413 * -108363597 + local23.left + local23.right, local23.bottom + local23.top + Class504.anInt5362 * 2090134413);
+		Class628.aFrame2.setSize(anInt3413 * -108363597 + local23.left + local23.right, local23.bottom + local23.top + BaseVarTypeString.anInt5362 * 2090134413);
 	}
 
 	@OriginalMember(owner = "client!sk", name = "t", descriptor = "(ZI)V")
@@ -2290,7 +2288,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 				}
 			}
 		}
-		Class504.method30377(-283088421).setFocusCycleRoot(true);
+		BaseVarTypeString.method30377(-283088421).setFocusCycleRoot(true);
 		anInt3419 = ((int) (Runtime.getRuntime().maxMemory() / 1048576L) + 1) * 2060182503;
 		anInt3422 = Runtime.getRuntime().availableProcessors() * -1401201395;
 		this.method24857(-1483631858);
@@ -2328,7 +2326,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 				}
 			}
 		}
-		Class504.method30377(-283088421).setFocusCycleRoot(true);
+		BaseVarTypeString.method30377(-283088421).setFocusCycleRoot(true);
 		anInt3419 = ((int) (Runtime.getRuntime().maxMemory() / 1048576L) + 1) * 2060182503;
 		anInt3422 = Runtime.getRuntime().availableProcessors() * -1401201395;
 		this.method24857(-1483631858);
@@ -2392,7 +2390,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 				}
 			}
 		}
-		Class504.method30377(-283088421).setFocusCycleRoot(true);
+		BaseVarTypeString.method30377(-283088421).setFocusCycleRoot(true);
 		anInt3419 = ((int) (Runtime.getRuntime().maxMemory() / 1048576L) + 1) * 2060182503;
 		anInt3422 = Runtime.getRuntime().availableProcessors() * -1401201395;
 		this.method24857(-1483631858);
@@ -2594,7 +2592,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 				}
 			}
 		}
-		Class504.method30377(-283088421).setFocusCycleRoot(true);
+		BaseVarTypeString.method30377(-283088421).setFocusCycleRoot(true);
 		anInt3419 = ((int) (Runtime.getRuntime().maxMemory() / 1048576L) + 1) * 2060182503;
 		anInt3422 = Runtime.getRuntime().availableProcessors() * -1401201395;
 		this.method24857(-1483631858);
@@ -2826,7 +2824,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 				}
 			}
 		}
-		Class504.method30377(-283088421).setFocusCycleRoot(true);
+		BaseVarTypeString.method30377(-283088421).setFocusCycleRoot(true);
 		anInt3419 = ((int) (Runtime.getRuntime().maxMemory() / 1048576L) + 1) * 2060182503;
 		anInt3422 = Runtime.getRuntime().availableProcessors() * -1401201395;
 		this.method24857(-1483631858);

@@ -36,9 +36,9 @@ public final class Class384 implements Interface33 {
 		@Pc(1) int local1 = -1;
 		@Pc(4) Iterator local4 = arg0.iterator();
 		while (local4.hasNext()) {
-			@Pc(11) Interface75 local11 = (Interface75) local4.next();
-			if (local11.method37101() > local1) {
-				local1 = local11.method37101();
+			@Pc(11) SerializableEnum local11 = (SerializableEnum) local4.next();
+			if (local11.getId() > local1) {
+				local1 = local11.getId();
 			}
 		}
 		return (local1 + 8) / 8;

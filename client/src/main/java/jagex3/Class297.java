@@ -73,7 +73,7 @@ public final class Class297 {
 
 	@OriginalMember(owner = "client!gq", name = "age", descriptor = "(Lclient!yf;B)V")
 	static void method26788(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = Class440.method29033((long) arg0.anIntArray521[(arg0.anInt6052 -= 1189701933) * -1497248091] * 60000L, Class106.aClass717_8.method37101(), true, (byte) -125) + " UTC";
+		arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = Class440.method29033((long) arg0.anIntArray521[(arg0.anInt6052 -= 1189701933) * -1497248091] * 60000L, Class106.aClass717_8.getId(), true, (byte) -125) + " UTC";
 	}
 
 	@OriginalMember(owner = "client!gq", name = "aoi", descriptor = "(Lclient!yf;I)V")

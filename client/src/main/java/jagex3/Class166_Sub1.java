@@ -23,19 +23,19 @@ public final class Class166_Sub1 extends Class166 {
 	@OriginalMember(owner = "client!ama", name = "w", descriptor = "()I")
 	@Override
 	int method16562() {
-		return Class345.aClass345_3.method37101();
+		return Class345.aClass345_3.getId();
 	}
 
 	@OriginalMember(owner = "client!ama", name = "b", descriptor = "()V")
 	public void method15362() {
-		if (this.anInt2379 * 960141055 < Class345.aClass345_3.method37101() || this.anInt2379 * 960141055 > Class345.aClass345_2.method37101()) {
+		if (this.anInt2379 * 960141055 < Class345.aClass345_3.getId() || this.anInt2379 * 960141055 > Class345.aClass345_2.getId()) {
 			this.anInt2379 = this.method16554((byte) 8) * -88839937;
 		}
 	}
 
 	@OriginalMember(owner = "client!ama", name = "y", descriptor = "()V")
 	public void method15363() {
-		if (this.anInt2379 * 960141055 < Class345.aClass345_3.method37101() || this.anInt2379 * 960141055 > Class345.aClass345_2.method37101()) {
+		if (this.anInt2379 * 960141055 < Class345.aClass345_3.getId() || this.anInt2379 * 960141055 > Class345.aClass345_2.getId()) {
 			this.anInt2379 = this.method16554((byte) 8) * -88839937;
 		}
 	}
@@ -43,7 +43,7 @@ public final class Class166_Sub1 extends Class166 {
 	@OriginalMember(owner = "client!ama", name = "e", descriptor = "(B)I")
 	@Override
 	int method16554(@OriginalArg(0) byte arg0) {
-		return Class345.aClass345_3.method37101();
+		return Class345.aClass345_3.getId();
 	}
 
 	@OriginalMember(owner = "client!ama", name = "n", descriptor = "(II)I")
@@ -66,12 +66,12 @@ public final class Class166_Sub1 extends Class166 {
 	@OriginalMember(owner = "client!ama", name = "f", descriptor = "()I")
 	@Override
 	int method16553() {
-		return Class345.aClass345_3.method37101();
+		return Class345.aClass345_3.getId();
 	}
 
 	@OriginalMember(owner = "client!ama", name = "o", descriptor = "(I)V")
 	public void method15365(@OriginalArg(0) int arg0) {
-		if (this.anInt2379 * 960141055 < Class345.aClass345_3.method37101() || this.anInt2379 * 960141055 > Class345.aClass345_2.method37101()) {
+		if (this.anInt2379 * 960141055 < Class345.aClass345_3.getId() || this.anInt2379 * 960141055 > Class345.aClass345_2.getId()) {
 			this.anInt2379 = this.method16554((byte) 33) * -88839937;
 		}
 	}
@@ -79,13 +79,13 @@ public final class Class166_Sub1 extends Class166 {
 	@OriginalMember(owner = "client!ama", name = "l", descriptor = "()I")
 	@Override
 	int method16559() {
-		return Class345.aClass345_3.method37101();
+		return Class345.aClass345_3.getId();
 	}
 
 	@OriginalMember(owner = "client!ama", name = "u", descriptor = "()I")
 	@Override
 	int method16560() {
-		return Class345.aClass345_3.method37101();
+		return Class345.aClass345_3.getId();
 	}
 
 	@OriginalMember(owner = "client!ama", name = "p", descriptor = "(I)I")
@@ -108,14 +108,14 @@ public final class Class166_Sub1 extends Class166 {
 
 	@OriginalMember(owner = "client!ama", name = "x", descriptor = "()V")
 	public void method15366() {
-		if (this.anInt2379 * 960141055 < Class345.aClass345_3.method37101() || this.anInt2379 * 960141055 > Class345.aClass345_2.method37101()) {
+		if (this.anInt2379 * 960141055 < Class345.aClass345_3.getId() || this.anInt2379 * 960141055 > Class345.aClass345_2.getId()) {
 			this.anInt2379 = this.method16554((byte) -20) * -88839937;
 		}
 	}
 
 	@OriginalMember(owner = "client!ama", name = "q", descriptor = "()V")
 	public void method15367() {
-		if (this.anInt2379 * 960141055 < Class345.aClass345_3.method37101() || this.anInt2379 * 960141055 > Class345.aClass345_2.method37101()) {
+		if (this.anInt2379 * 960141055 < Class345.aClass345_3.getId() || this.anInt2379 * 960141055 > Class345.aClass345_2.getId()) {
 			this.anInt2379 = this.method16554((byte) -1) * -88839937;
 		}
 	}

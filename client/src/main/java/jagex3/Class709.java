@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!zl")
-public final class Class709 implements Interface75 {
+public final class Class709 implements SerializableEnum {
 
 	@OriginalMember(owner = "client!zl", name = "j", descriptor = "Lclient!py;")
 	static Class497 aClass497_142;
@@ -90,7 +90,7 @@ public final class Class709 implements Interface75 {
 		} else {
 			local9 = Class36.aClass36_3;
 		}
-		arg0.method22522(local9.method37101(), (byte) -45);
+		arg0.method22522(local9.getId(), (byte) -45);
 		switch(local9.anInt115 * 1351038807) {
 			case 0:
 				arg0.method22407(Class266.aClass306_1.method26897(arg1), (byte) 22);
@@ -127,13 +127,8 @@ public final class Class709 implements Interface75 {
 
 	@OriginalMember(owner = "client!zl", name = "n", descriptor = "()I")
 	@Override
-	public int method37101() {
+	public int getId() {
 		return this.anInt6120 * -919734503;
 	}
 
-	@OriginalMember(owner = "client!zl", name = "k", descriptor = "()I")
-	@Override
-	public int method37100() {
-		return this.anInt6120 * -919734503;
-	}
 }

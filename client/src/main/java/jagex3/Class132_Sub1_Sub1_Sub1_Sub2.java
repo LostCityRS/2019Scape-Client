@@ -333,7 +333,7 @@ public final class Class132_Sub1_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1_Sub1 
 		@Pc(128) Class109 local128 = this.aClass109Array3[0] = this.aClass658_1.method32953(arg0, arg1, Class166_Sub6.aClass32_Sub5_1, Class343.aClass32_Sub19_1, Class162.aClass32_Sub3_2, Class277.aClass32_Sub12_1, Class624.aClass120_1, Class624.aClass120_1, local20, local40, this.aClass19_Sub1_Sub1Array3, this.anIntArray237, local76, true, Class113.aClass651_2, (byte) 5);
 		@Pc(131) int local131 = Class153_Sub1.method14114(-1581772389);
 		if (Class553.anInt3419 * 1798078423 < 96 && local131 > 50) {
-			Class510.method30429((byte) -100);
+			BaseVarTypeCoordFine.method30429((byte) -100);
 		}
 		if (Class693.aClass693_8 != Class280.aClass693_1 && local131 < 50) {
 			@Pc(151) int local151 = 50 - local131;
@@ -644,7 +644,7 @@ public final class Class132_Sub1_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1_Sub1 
 
 	@OriginalMember(owner = "client!aqk", name = "m", descriptor = "(B)Lclient!akt;")
 	@Override
-	public Class93_Sub30 method19950(@OriginalArg(0) byte arg0) {
+	public CoordFine method19950(@OriginalArg(0) byte arg0) {
 		@Pc(3) Class611 local3 = client.aClass532_1.method30624(1708873229);
 		return Class393.method28502(this.aByte100, (int) this.method24241().aClass472_61.aFloat325 + local3.anInt5784 * 1114227200, -((int) this.method24241().aClass472_61.aFloat326), (int) this.method24241().aClass472_61.aFloat327 + local3.anInt5785 * 1116707328, (short) 7825);
 	}
@@ -688,21 +688,21 @@ public final class Class132_Sub1_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1_Sub1 
 
 	@OriginalMember(owner = "client!aqk", name = "u", descriptor = "()Lclient!akt;")
 	@Override
-	public Class93_Sub30 method19952() {
+	public CoordFine method19952() {
 		@Pc(3) Class611 local3 = client.aClass532_1.method30624(1842997006);
 		return Class393.method28502(this.aByte100, (int) this.method24241().aClass472_61.aFloat325 + local3.anInt5784 * 1114227200, -((int) this.method24241().aClass472_61.aFloat326), (int) this.method24241().aClass472_61.aFloat327 + local3.anInt5785 * 1116707328, (short) -10789);
 	}
 
 	@OriginalMember(owner = "client!aqk", name = "z", descriptor = "()Lclient!akt;")
 	@Override
-	public Class93_Sub30 method19956() {
+	public CoordFine method19956() {
 		@Pc(3) Class611 local3 = client.aClass532_1.method30624(1817587508);
 		return Class393.method28502(this.aByte100, (int) this.method24241().aClass472_61.aFloat325 + local3.anInt5784 * 1114227200, -((int) this.method24241().aClass472_61.aFloat326), (int) this.method24241().aClass472_61.aFloat327 + local3.anInt5785 * 1116707328, (short) 8650);
 	}
 
 	@OriginalMember(owner = "client!aqk", name = "p", descriptor = "()Lclient!akt;")
 	@Override
-	public Class93_Sub30 method19955() {
+	public CoordFine method19955() {
 		@Pc(3) Class611 local3 = client.aClass532_1.method30624(2128852291);
 		return Class393.method28502(this.aByte100, (int) this.method24241().aClass472_61.aFloat325 + local3.anInt5784 * 1114227200, -((int) this.method24241().aClass472_61.aFloat326), (int) this.method24241().aClass472_61.aFloat327 + local3.anInt5785 * 1116707328, (short) -6992);
 	}
@@ -1759,7 +1759,7 @@ public final class Class132_Sub1_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1_Sub1 
 		@Pc(128) Class109 local128 = this.aClass109Array3[0] = this.aClass658_1.method32953(arg0, arg1, Class166_Sub6.aClass32_Sub5_1, Class343.aClass32_Sub19_1, Class162.aClass32_Sub3_2, Class277.aClass32_Sub12_1, Class624.aClass120_1, Class624.aClass120_1, local20, local40, this.aClass19_Sub1_Sub1Array3, this.anIntArray237, local76, true, Class113.aClass651_2, (byte) -23);
 		@Pc(131) int local131 = Class153_Sub1.method14114(-1581772389);
 		if (Class553.anInt3419 * 1798078423 < 96 && local131 > 50) {
-			Class510.method30429((byte) -8);
+			BaseVarTypeCoordFine.method30429((byte) -8);
 		}
 		if (Class693.aClass693_8 != Class280.aClass693_1 && local131 < 50) {
 			@Pc(151) int local151 = 50 - local131;
@@ -1824,7 +1824,7 @@ public final class Class132_Sub1_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1_Sub1 
 		@Pc(128) Class109 local128 = this.aClass109Array3[0] = this.aClass658_1.method32953(arg0, arg1, Class166_Sub6.aClass32_Sub5_1, Class343.aClass32_Sub19_1, Class162.aClass32_Sub3_2, Class277.aClass32_Sub12_1, Class624.aClass120_1, Class624.aClass120_1, local20, local40, this.aClass19_Sub1_Sub1Array3, this.anIntArray237, local76, true, Class113.aClass651_2, (byte) 28);
 		@Pc(131) int local131 = Class153_Sub1.method14114(-1581772389);
 		if (Class553.anInt3419 * 1798078423 < 96 && local131 > 50) {
-			Class510.method30429((byte) 21);
+			BaseVarTypeCoordFine.method30429((byte) 21);
 		}
 		if (Class693.aClass693_8 != Class280.aClass693_1 && local131 < 50) {
 			@Pc(151) int local151 = 50 - local131;
@@ -1889,7 +1889,7 @@ public final class Class132_Sub1_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1_Sub1 
 		@Pc(128) Class109 local128 = this.aClass109Array3[0] = this.aClass658_1.method32953(arg0, arg1, Class166_Sub6.aClass32_Sub5_1, Class343.aClass32_Sub19_1, Class162.aClass32_Sub3_2, Class277.aClass32_Sub12_1, Class624.aClass120_1, Class624.aClass120_1, local20, local40, this.aClass19_Sub1_Sub1Array3, this.anIntArray237, local76, true, Class113.aClass651_2, (byte) -25);
 		@Pc(131) int local131 = Class153_Sub1.method14114(-1581772389);
 		if (Class553.anInt3419 * 1798078423 < 96 && local131 > 50) {
-			Class510.method30429((byte) -5);
+			BaseVarTypeCoordFine.method30429((byte) -5);
 		}
 		if (Class693.aClass693_8 != Class280.aClass693_1 && local131 < 50) {
 			@Pc(151) int local151 = 50 - local131;

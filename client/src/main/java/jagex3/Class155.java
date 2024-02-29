@@ -12,28 +12,28 @@ public class Class155 implements Interface65 {
 	public static int anInt2066;
 
 	@OriginalMember(owner = "client!uh", name = "e", descriptor = "Lclient!uh;")
-	public static final Class155 aClass155_57 = new Class155("", 10, new Class519[] { Class519.aClass519_63 }, null);
+	public static final Class155 aClass155_57 = new Class155("", 10, new ScriptVarType[] { ScriptVarType.MAPELEMENT}, null);
 
 	@OriginalMember(owner = "client!uh", name = "n", descriptor = "Lclient!uh;")
-	public static final Class155 aClass155_48 = new Class155("", 11, new Class519[] { Class519.aClass519_63 }, null);
+	public static final Class155 aClass155_48 = new Class155("", 11, new ScriptVarType[] { ScriptVarType.MAPELEMENT}, null);
 
 	@OriginalMember(owner = "client!uh", name = "m", descriptor = "Lclient!uh;")
-	public static final Class155 aClass155_56 = new Class155("", 12, new Class519[] { Class519.aClass519_63 }, null);
+	public static final Class155 aClass155_56 = new Class155("", 12, new ScriptVarType[] { ScriptVarType.MAPELEMENT}, null);
 
 	@OriginalMember(owner = "client!uh", name = "k", descriptor = "Lclient!uh;")
-	public static final Class155 aClass155_52 = new Class155("", 13, new Class519[] { Class519.aClass519_63 }, null);
+	public static final Class155 aClass155_52 = new Class155("", 13, new ScriptVarType[] { ScriptVarType.MAPELEMENT}, null);
 
 	@OriginalMember(owner = "client!uh", name = "f", descriptor = "Lclient!uh;")
-	public static final Class155 aClass155_51 = new Class155("", 14, new Class519[] { Class519.aClass519_63 }, null);
+	public static final Class155 aClass155_51 = new Class155("", 14, new ScriptVarType[] { ScriptVarType.MAPELEMENT}, null);
 
 	@OriginalMember(owner = "client!uh", name = "w", descriptor = "Lclient!uh;")
-	public static final Class155 aClass155_62 = new Class155("", 15, new Class519[] { Class519.aClass519_63, Class519.aClass519_88, Class519.aClass519_88 }, null);
+	public static final Class155 aClass155_62 = new Class155("", 15, new ScriptVarType[] { ScriptVarType.MAPELEMENT, ScriptVarType.INT, ScriptVarType.INT}, null);
 
 	@OriginalMember(owner = "client!uh", name = "l", descriptor = "Lclient!uh;")
-	public static final Class155 aClass155_53 = new Class155("", 16, new Class519[] { Class519.aClass519_63, Class519.aClass519_88, Class519.aClass519_88 }, null);
+	public static final Class155 aClass155_53 = new Class155("", 16, new ScriptVarType[] { ScriptVarType.MAPELEMENT, ScriptVarType.INT, ScriptVarType.INT}, null);
 
 	@OriginalMember(owner = "client!uh", name = "u", descriptor = "Lclient!uh;")
-	public static final Class155 aClass155_54 = new Class155("", 17, new Class519[] { Class519.aClass519_63, Class519.aClass519_88, Class519.aClass519_88 }, null);
+	public static final Class155 aClass155_54 = new Class155("", 17, new ScriptVarType[] { ScriptVarType.MAPELEMENT, ScriptVarType.INT, ScriptVarType.INT}, null);
 
 	@OriginalMember(owner = "client!uh", name = "z", descriptor = "Lclient!uh;")
 	static final Class155 aClass155_55 = new Class155("", 18);
@@ -42,7 +42,7 @@ public class Class155 implements Interface65 {
 	public static final Class155 aClass155_60 = new Class155("", 19);
 
 	@OriginalMember(owner = "client!uh", name = "d", descriptor = "Lclient!uh;")
-	public static final Class155 aClass155_68 = new Class155("", 20, new Class519[] { Class519.aClass519_7, Class519.aClass519_88 }, null);
+	public static final Class155 aClass155_68 = new Class155("", 20, new ScriptVarType[] { ScriptVarType.STRING, ScriptVarType.INT}, null);
 
 	@OriginalMember(owner = "client!uh", name = "c", descriptor = "Lclient!uh;")
 	public static final Class155 aClass155_58 = new Class155("", 21);
@@ -51,7 +51,7 @@ public class Class155 implements Interface65 {
 	public static final Class155 aClass155_59 = new Class155("", 22);
 
 	@OriginalMember(owner = "client!uh", name = "v", descriptor = "Lclient!uh;")
-	public static final Class155 aClass155_50 = new Class155("", 23, new Class519[] { Class519.aClass519_106 }, null);
+	public static final Class155 aClass155_50 = new Class155("", 23, new ScriptVarType[] { ScriptVarType.PLAYER_UID}, null);
 
 	@OriginalMember(owner = "client!uh", name = "o", descriptor = "Lclient!uh;")
 	public static final Class155 aClass155_61 = new Class155("", 24);
@@ -134,17 +134,17 @@ public class Class155 implements Interface65 {
 	}
 
 	@OriginalMember(owner = "client!uh", name = "<init>", descriptor = "(Ljava/lang/String;IZ[Lclient!qw;Z[Lclient!qw;)V")
-	Class155(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) Class519[] arg3, @OriginalArg(4) boolean arg4, @OriginalArg(5) Class519[] arg5) {
+	Class155(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) ScriptVarType[] arg3, @OriginalArg(4) boolean arg4, @OriginalArg(5) ScriptVarType[] arg5) {
 		this.anInt2065 = arg1 * 1169253771;
 	}
 
 	@OriginalMember(owner = "client!uh", name = "<init>", descriptor = "(Ljava/lang/String;IZZ)V")
 	Class155(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) boolean arg3) {
-		this(arg0, arg1, arg2, (Class519[]) null, arg3, (Class519[]) null);
+		this(arg0, arg1, arg2, (ScriptVarType[]) null, arg3, (ScriptVarType[]) null);
 	}
 
 	@OriginalMember(owner = "client!uh", name = "<init>", descriptor = "(Ljava/lang/String;I[Lclient!qw;[Lclient!qw;)V")
-	Class155(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class519[] arg2, @OriginalArg(3) Class519[] arg3) {
+	Class155(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1, @OriginalArg(2) ScriptVarType[] arg2, @OriginalArg(3) ScriptVarType[] arg3) {
 		this(arg0, arg1, arg2 != null, arg2, arg3 != null, arg3);
 	}
 
@@ -156,18 +156,12 @@ public class Class155 implements Interface65 {
 
 	@OriginalMember(owner = "client!uh", name = "<init>", descriptor = "(Ljava/lang/String;I)V")
 	Class155(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1) {
-		this(arg0, arg1, false, (Class519[]) null, false, (Class519[]) null);
-	}
-
-	@OriginalMember(owner = "client!uh", name = "k", descriptor = "()I")
-	@Override
-	public final int method37100() {
-		return this.anInt2065 * 825039395;
+		this(arg0, arg1, false, (ScriptVarType[]) null, false, (ScriptVarType[]) null);
 	}
 
 	@OriginalMember(owner = "client!uh", name = "n", descriptor = "()I")
 	@Override
-	public final int method37101() {
+	public final int getId() {
 		return this.anInt2065 * 825039395;
 	}
 }

@@ -55,7 +55,7 @@ public final class Class696 {
 				Class667.method33094(arg1, 1784884076);
 				return;
 			case 6:
-				Class512.method30442(arg1, 977040734);
+				BaseVarTypeComponentHook.method30442(arg1, 977040734);
 				return;
 			case 7:
 				Class498.method30319(arg1, 1725531492);
@@ -136,7 +136,7 @@ public final class Class696 {
 				Class379.method28278(arg1, -1650967321);
 				return;
 			case 33:
-				Class515.method30457(arg1, -2140473630);
+				BaseVarTypeLong.method30457(arg1, -2140473630);
 				return;
 			case 34:
 				Class157.method14269(arg1, (byte) 1);
@@ -256,7 +256,7 @@ public final class Class696 {
 				Class351.method27739(arg1, (byte) -74);
 				return;
 			case 73:
-				Class504.method30379(arg1, 1236634735);
+				BaseVarTypeString.method30379(arg1, 1236634735);
 				return;
 			case 74:
 				Class342.method27601(arg1, 1571586967);
@@ -464,7 +464,7 @@ public final class Class696 {
 				Class260.method26248(arg1, 470951148);
 				return;
 			case 142:
-				Class505.method30386(arg1, (byte) 1);
+				BaseVarTypeInteger.method30386(arg1, (byte) 1);
 				return;
 			case 143:
 				Class362.method28027(arg1, 1466241518);
@@ -554,7 +554,7 @@ public final class Class696 {
 				Class229.method25716(arg1, 2063090323);
 				return;
 			case 172:
-				Class519.method30504(arg1, 1635358503);
+				ScriptVarType.method30504(arg1, 1635358503);
 				return;
 			case 173:
 				Class277.method26452(arg1, (byte) 70);
@@ -563,7 +563,7 @@ public final class Class696 {
 				Class173.method23813(arg1, -376425542);
 				return;
 			case 175:
-				Class512.method30440(arg1, (byte) 23);
+				BaseVarTypeComponentHook.method30440(arg1, (byte) 23);
 				return;
 			case 176:
 				Class577.method31539(arg1, -597720792);
@@ -659,7 +659,7 @@ public final class Class696 {
 				Class691.method36774(arg1, -1921330037);
 				return;
 			case 207:
-				Class504.method30381(arg1, 749884258);
+				BaseVarTypeString.method30381(arg1, 749884258);
 				return;
 			case 208:
 				Class593.method31900(arg1, 772853833);
@@ -830,7 +830,7 @@ public final class Class696 {
 				Class573.method31525(arg1, 1240826495);
 				return;
 			case 266:
-				Class500.method30348(arg1, (byte) 0);
+				BaseVarType.method30348(arg1, (byte) 0);
 				return;
 			case 267:
 				Class655.method32924(arg1, (byte) 107);
@@ -944,7 +944,7 @@ public final class Class696 {
 				Class267.method26342(arg1, -1354326916);
 				return;
 			case 304:
-				Class321.method27335(arg1, (byte) 11);
+				ComponentHook.method27335(arg1, (byte) 11);
 				return;
 			case 305:
 				Class149_Sub2.method11787(arg1, 1650344681);
@@ -989,7 +989,7 @@ public final class Class696 {
 				Class123.method9087(arg1, 1289643132);
 				return;
 			case 319:
-				Class505.method30387(arg1, 674172259);
+				BaseVarTypeInteger.method30387(arg1, 674172259);
 				return;
 			case 320:
 				Class121.method8704(arg1, (byte) -64);
@@ -1298,7 +1298,7 @@ public final class Class696 {
 				Class267.method26338(arg1, 2069692143);
 				return;
 			case 423:
-				Class500.method30345(arg1, (short) 255);
+				BaseVarType.method30345(arg1, (short) 255);
 				return;
 			case 424:
 				Class672.method33261(arg1, 1613673257);
@@ -1631,7 +1631,7 @@ public final class Class696 {
 				Class518.method30485(arg1, 2105439338);
 				return;
 			case 534:
-				Class515.method30458(arg1, (byte) 52);
+				BaseVarTypeLong.method30458(arg1, (byte) 52);
 				return;
 			case 535:
 				Class345.method27656(arg1, -2084736465);
@@ -1715,7 +1715,7 @@ public final class Class696 {
 				Class229.method25711(arg1, (byte) -97);
 				return;
 			case 562:
-				Class519.method30503(arg1, (byte) -56);
+				ScriptVarType.method30503(arg1, (byte) -56);
 				return;
 			case 563:
 				Class378.method28251(arg1, 908013946);
@@ -1829,7 +1829,7 @@ public final class Class696 {
 				Class138.method11536(arg1, 951415633);
 				return;
 			case 600:
-				Class505.method30390(arg1, (byte) 1);
+				BaseVarTypeInteger.method30390(arg1, (byte) 1);
 				return;
 			case 601:
 				Class584.method31608(arg1, -1687712969);
@@ -1841,7 +1841,7 @@ public final class Class696 {
 				Class495.method30209(arg1, -587629237);
 				return;
 			case 604:
-				Class504.method30378(arg1, 1591781880);
+				BaseVarTypeString.method30378(arg1, 1591781880);
 				return;
 			case 605:
 				Class110_Sub19.method8513(arg1, 295656970);
@@ -1871,7 +1871,7 @@ public final class Class696 {
 				Class474.method29844(arg1, (byte) 76);
 				return;
 			case 614:
-				Class519.method30502(arg1, 1465242253);
+				ScriptVarType.method30502(arg1, 1465242253);
 				return;
 			case 615:
 				Class116.method8484(arg1, 1074364008);
@@ -2093,7 +2093,7 @@ public final class Class696 {
 				Class602.method32047(arg1, 977193490);
 				return;
 			case 688:
-				Class505.method30391(arg1, 1791994475);
+				BaseVarTypeInteger.method30391(arg1, 1791994475);
 				return;
 			case 689:
 				Class437.method28998(arg1, -1267773509);
@@ -2168,7 +2168,7 @@ public final class Class696 {
 				Class31.method637(arg1, -651402772);
 				return;
 			case 713:
-				Class512.method30439(arg1, -51763216);
+				BaseVarTypeComponentHook.method30439(arg1, -51763216);
 				return;
 			case 714:
 				Class175.method24388(arg1, -2111989645);
@@ -2591,7 +2591,7 @@ public final class Class696 {
 				Class166_Sub44.method16462(arg1, -1445626955);
 				return;
 			case 854:
-				Class515.method30454(arg1, 2038561903);
+				BaseVarTypeLong.method30454(arg1, 2038561903);
 				return;
 			case 855:
 				Class129_Sub1.method9405(arg1, 1967509456);
@@ -2624,7 +2624,7 @@ public final class Class696 {
 				Class295.method26696(arg1, 119764401);
 				return;
 			case 865:
-				Class504.method30380(arg1, (byte) -11);
+				BaseVarTypeString.method30380(arg1, (byte) -11);
 				return;
 			case 866:
 				Class723.method37123(arg1, -436656466);
@@ -2654,7 +2654,7 @@ public final class Class696 {
 				Class445.method29071(arg1, 688053865);
 				return;
 			case 875:
-				Class500.method30346(arg1, -2124603688);
+				BaseVarType.method30346(arg1, -2124603688);
 				return;
 			case 876:
 				Class613.method32240(arg1, -1964070237);
@@ -2852,7 +2852,7 @@ public final class Class696 {
 				Class392.method28477(arg1, 348077053);
 				return;
 			case 941:
-				Class505.method30388(arg1, 610754300);
+				BaseVarTypeInteger.method30388(arg1, 610754300);
 				return;
 			case 942:
 				Class633.method32490(arg1, (short) 255);
@@ -2915,7 +2915,7 @@ public final class Class696 {
 				Class339.method27577(arg1, -399235000);
 				return;
 			case 962:
-				Class512.method30443(arg1, -697236714);
+				BaseVarTypeComponentHook.method30443(arg1, -697236714);
 				return;
 			case 963:
 				Class579.method31551(arg1, (byte) -41);
@@ -3200,7 +3200,7 @@ public final class Class696 {
 				Class538.method30965(arg1, 186648508);
 				return;
 			case 1057:
-				Class515.method30455(arg1, 854874319);
+				BaseVarTypeLong.method30455(arg1, 854874319);
 				return;
 			case 1058:
 				Class558.method31292(arg1, 1602336145);
@@ -3239,7 +3239,7 @@ public final class Class696 {
 				Class374.method28211(arg1, -1743608073);
 				return;
 			case 1070:
-				Class519.method30505(arg1, (short) -10687);
+				ScriptVarType.method30505(arg1, (short) -10687);
 				return;
 			case 1071:
 				Class112.method23765(arg1, (byte) -101);
@@ -3517,7 +3517,7 @@ public final class Class696 {
 				Class613.method32241(arg1, (byte) -97);
 				return;
 			case 1163:
-				Class510.method30427(arg1, (byte) 12);
+				BaseVarTypeCoordFine.method30427(arg1, (byte) 12);
 				return;
 			case 1164:
 				Class124.method21441(arg1, 1049366257);
@@ -3751,7 +3751,7 @@ public final class Class696 {
 				Class679.method33417(arg1, 836108988);
 				return;
 			case 1241:
-				Class441.method29036(arg1, (byte) -103);
+				SortedQueueEntry.method29036(arg1, (byte) -103);
 				return;
 			case 1242:
 				Class244.method25987(arg1, 469465121);
@@ -4018,7 +4018,7 @@ public final class Class696 {
 				Class309.method26921(arg1, -1068086190);
 				return;
 			case 1330:
-				Class510.method30428(arg1, (byte) 64);
+				BaseVarTypeCoordFine.method30428(arg1, (byte) 64);
 				return;
 			case 1331:
 				Class604.method32072(arg1, -606612737);
@@ -4093,7 +4093,7 @@ public final class Class696 {
 				Class359.method27968(arg1, (byte) 63);
 				return;
 			case 1355:
-				Class441.method29035(arg1, 1202353724);
+				SortedQueueEntry.method29035(arg1, 1202353724);
 				return;
 			case 1356:
 				Class123_Sub1.method9093(arg1, (short) 785);
@@ -4213,7 +4213,7 @@ public final class Class696 {
 				Class702.method36902(arg1, (byte) 50);
 				return;
 			case 1395:
-				Class505.method30389(arg1, 508452376);
+				BaseVarTypeInteger.method30389(arg1, 508452376);
 				return;
 			case 1396:
 				Class286.method26624(arg1, -121944298);

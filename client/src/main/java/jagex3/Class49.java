@@ -72,14 +72,14 @@ public abstract class Class49 {
 		@Pc(33) Class520 local33 = client.aClass532_1.method30690(494969536);
 		@Pc(37) Class585 local37 = client.aClass532_1.method30640(-1038565011);
 		@Pc(43) int local43 = Class72.anInt241 * -1022856553 >> 9;
-		@Pc(49) int local49 = Class441.anInt5047 * -953396699 >> 9;
-		@Pc(61) int local61 = Class305.method26894(Class72.anInt241 * -1022856553, Class441.anInt5047 * -953396699, Class512.anInt5370 * 1177442423, (byte) -91);
+		@Pc(49) int local49 = SortedQueueEntry.anInt5047 * -953396699 >> 9;
+		@Pc(61) int local61 = Class305.method26894(Class72.anInt241 * -1022856553, SortedQueueEntry.anInt5047 * -953396699, BaseVarTypeComponentHook.anInt5370 * 1177442423, (byte) -91);
 		@Pc(63) int local63 = 0;
 		@Pc(87) int local87;
 		if (local43 > 3 && local49 > 3 && local43 < client.aClass532_1.method30625(-247853602) - 4 && local49 < client.aClass532_1.method30655((short) 128) - 4) {
 			for (local87 = local43 - 4; local87 <= local43 + 4; local87++) {
 				for (@Pc(96) int local96 = local49 - 4; local96 <= local49 + 4; local96++) {
-					@Pc(105) int local105 = Class512.anInt5370 * 1177442423;
+					@Pc(105) int local105 = BaseVarTypeComponentHook.anInt5370 * 1177442423;
 					if (local105 < 3 && local33.method30511(local87, local96, -662808309)) {
 						local105++;
 					}

@@ -811,7 +811,7 @@ public final class Class168 {
 						local86 = Runtime.getRuntime();
 						local95 = (int) ((local86.totalMemory() - local86.freeMemory()) / 1024L);
 						Class314.method27032("" + local95, -2016426337);
-						Class510.method30429((byte) 10);
+						BaseVarTypeCoordFine.method30429((byte) 10);
 						Class684.method33604((byte) -104);
 						for (@Pc(146) int local146 = 0; local146 < 10; local146++) {
 							System.gc();
@@ -913,7 +913,7 @@ public final class Class168 {
 						local86 = Runtime.getRuntime();
 						local95 = (int) ((local86.totalMemory() - local86.freeMemory()) / 1024L);
 						Class314.method27032("" + local95, -2028558599);
-						Class510.method30429((byte) -72);
+						BaseVarTypeCoordFine.method30429((byte) -72);
 						Class684.method33604((byte) -115);
 						for (@Pc(146) int local146 = 0; local146 < 10; local146++) {
 							System.gc();
@@ -1040,7 +1040,7 @@ public final class Class168 {
 						local86 = Runtime.getRuntime();
 						local95 = (int) ((local86.totalMemory() - local86.freeMemory()) / 1024L);
 						Class314.method27032("" + local95, -1846868207);
-						Class510.method30429((byte) 59);
+						BaseVarTypeCoordFine.method30429((byte) 59);
 						Class684.method33604((byte) -46);
 						for (@Pc(146) int local146 = 0; local146 < 10; local146++) {
 							System.gc();

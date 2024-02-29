@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class77 implements Interface13, Interface5 {
 
 	@OriginalMember(owner = "client!adb", name = "e", descriptor = "[[Lclient!qw;")
-	public Class519[][] aClass519ArrayArray2;
+	public ScriptVarType[][] aScriptVarTypeArrayArray2;
 
 	@OriginalMember(owner = "client!adb", name = "n", descriptor = "[[Ljava/lang/Object;")
 	public Object[][] anObjectArrayArray2;
@@ -55,20 +55,20 @@ public final class Class77 implements Interface13, Interface5 {
 			return;
 		}
 		@Pc(6) int local6 = arg0.method22425((short) 16384);
-		if (this.aClass519ArrayArray2 == null) {
-			this.aClass519ArrayArray2 = new Class519[local6][];
+		if (this.aScriptVarTypeArrayArray2 == null) {
+			this.aScriptVarTypeArrayArray2 = new ScriptVarType[local6][];
 		}
 		for (@Pc(18) int local18 = arg0.method22425((short) 16384); local18 != 255; local18 = arg0.method22425((short) 16384)) {
 			@Pc(25) int local25 = local18 & 0x7F;
 			@Pc(33) boolean local33 = (local18 & 0x80) != 0;
-			@Pc(38) Class519[] local38 = new Class519[arg0.method22425((short) 16384)];
+			@Pc(38) ScriptVarType[] local38 = new ScriptVarType[arg0.method22425((short) 16384)];
 			for (@Pc(40) int local40 = 0; local40 < local38.length; local40++) {
-				local38[local40] = (Class519) Class107.method18131(Class519.method30493(1668594609), arg0.method22644((byte) -116), -1915563430);
+				local38[local40] = (ScriptVarType) Class107.method18131(ScriptVarType.values(), arg0.method22644((byte) -116), -1915563430);
 			}
-			this.aClass519ArrayArray2[local25] = local38;
+			this.aScriptVarTypeArrayArray2[local25] = local38;
 			if (local33) {
 				if (this.anObjectArrayArray2 == null) {
-					this.anObjectArrayArray2 = new Object[this.aClass519ArrayArray2.length][];
+					this.anObjectArrayArray2 = new Object[this.aScriptVarTypeArrayArray2.length][];
 				}
 				this.anObjectArrayArray2[local25] = Class166_Sub38.method16338(arg0, local38, -2042939894);
 			}
@@ -161,20 +161,20 @@ public final class Class77 implements Interface13, Interface5 {
 			return;
 		}
 		@Pc(6) int local6 = arg0.method22425((short) 16384);
-		if (this.aClass519ArrayArray2 == null) {
-			this.aClass519ArrayArray2 = new Class519[local6][];
+		if (this.aScriptVarTypeArrayArray2 == null) {
+			this.aScriptVarTypeArrayArray2 = new ScriptVarType[local6][];
 		}
 		for (@Pc(18) int local18 = arg0.method22425((short) 16384); local18 != 255; local18 = arg0.method22425((short) 16384)) {
 			@Pc(25) int local25 = local18 & 0x7F;
 			@Pc(33) boolean local33 = (local18 & 0x80) != 0;
-			@Pc(38) Class519[] local38 = new Class519[arg0.method22425((short) 16384)];
+			@Pc(38) ScriptVarType[] local38 = new ScriptVarType[arg0.method22425((short) 16384)];
 			for (@Pc(40) int local40 = 0; local40 < local38.length; local40++) {
-				local38[local40] = (Class519) Class107.method18131(Class519.method30493(1460103674), arg0.method22644((byte) -71), -1915563430);
+				local38[local40] = (ScriptVarType) Class107.method18131(ScriptVarType.values(), arg0.method22644((byte) -71), -1915563430);
 			}
-			this.aClass519ArrayArray2[local25] = local38;
+			this.aScriptVarTypeArrayArray2[local25] = local38;
 			if (local33) {
 				if (this.anObjectArrayArray2 == null) {
-					this.anObjectArrayArray2 = new Object[this.aClass519ArrayArray2.length][];
+					this.anObjectArrayArray2 = new Object[this.aScriptVarTypeArrayArray2.length][];
 				}
 				this.anObjectArrayArray2[local25] = Class166_Sub38.method16338(arg0, local38, -1659135670);
 			}
@@ -187,20 +187,20 @@ public final class Class77 implements Interface13, Interface5 {
 			return;
 		}
 		@Pc(6) int local6 = arg0.method22425((short) 16384);
-		if (this.aClass519ArrayArray2 == null) {
-			this.aClass519ArrayArray2 = new Class519[local6][];
+		if (this.aScriptVarTypeArrayArray2 == null) {
+			this.aScriptVarTypeArrayArray2 = new ScriptVarType[local6][];
 		}
 		for (@Pc(18) int local18 = arg0.method22425((short) 16384); local18 != 255; local18 = arg0.method22425((short) 16384)) {
 			@Pc(25) int local25 = local18 & 0x7F;
 			@Pc(33) boolean local33 = (local18 & 0x80) != 0;
-			@Pc(38) Class519[] local38 = new Class519[arg0.method22425((short) 16384)];
+			@Pc(38) ScriptVarType[] local38 = new ScriptVarType[arg0.method22425((short) 16384)];
 			for (@Pc(40) int local40 = 0; local40 < local38.length; local40++) {
-				local38[local40] = (Class519) Class107.method18131(Class519.method30493(2049948201), arg0.method22644((byte) -109), -1915563430);
+				local38[local40] = (ScriptVarType) Class107.method18131(ScriptVarType.values(), arg0.method22644((byte) -109), -1915563430);
 			}
-			this.aClass519ArrayArray2[local25] = local38;
+			this.aScriptVarTypeArrayArray2[local25] = local38;
 			if (local33) {
 				if (this.anObjectArrayArray2 == null) {
-					this.anObjectArrayArray2 = new Object[this.aClass519ArrayArray2.length][];
+					this.anObjectArrayArray2 = new Object[this.aScriptVarTypeArrayArray2.length][];
 				}
 				this.anObjectArrayArray2[local25] = Class166_Sub38.method16338(arg0, local38, 1288295709);
 			}
@@ -213,20 +213,20 @@ public final class Class77 implements Interface13, Interface5 {
 			return;
 		}
 		@Pc(6) int local6 = arg0.method22425((short) 16384);
-		if (this.aClass519ArrayArray2 == null) {
-			this.aClass519ArrayArray2 = new Class519[local6][];
+		if (this.aScriptVarTypeArrayArray2 == null) {
+			this.aScriptVarTypeArrayArray2 = new ScriptVarType[local6][];
 		}
 		for (@Pc(18) int local18 = arg0.method22425((short) 16384); local18 != 255; local18 = arg0.method22425((short) 16384)) {
 			@Pc(25) int local25 = local18 & 0x7F;
 			@Pc(33) boolean local33 = (local18 & 0x80) != 0;
-			@Pc(38) Class519[] local38 = new Class519[arg0.method22425((short) 16384)];
+			@Pc(38) ScriptVarType[] local38 = new ScriptVarType[arg0.method22425((short) 16384)];
 			for (@Pc(40) int local40 = 0; local40 < local38.length; local40++) {
-				local38[local40] = (Class519) Class107.method18131(Class519.method30493(1679068317), arg0.method22644((byte) -122), -1915563430);
+				local38[local40] = (ScriptVarType) Class107.method18131(ScriptVarType.values(), arg0.method22644((byte) -122), -1915563430);
 			}
-			this.aClass519ArrayArray2[local25] = local38;
+			this.aScriptVarTypeArrayArray2[local25] = local38;
 			if (local33) {
 				if (this.anObjectArrayArray2 == null) {
-					this.anObjectArrayArray2 = new Object[this.aClass519ArrayArray2.length][];
+					this.anObjectArrayArray2 = new Object[this.aScriptVarTypeArrayArray2.length][];
 				}
 				this.anObjectArrayArray2[local25] = Class166_Sub38.method16338(arg0, local38, 2116645453);
 			}
@@ -239,20 +239,20 @@ public final class Class77 implements Interface13, Interface5 {
 			return;
 		}
 		@Pc(6) int local6 = arg0.method22425((short) 16384);
-		if (this.aClass519ArrayArray2 == null) {
-			this.aClass519ArrayArray2 = new Class519[local6][];
+		if (this.aScriptVarTypeArrayArray2 == null) {
+			this.aScriptVarTypeArrayArray2 = new ScriptVarType[local6][];
 		}
 		for (@Pc(18) int local18 = arg0.method22425((short) 16384); local18 != 255; local18 = arg0.method22425((short) 16384)) {
 			@Pc(25) int local25 = local18 & 0x7F;
 			@Pc(33) boolean local33 = (local18 & 0x80) != 0;
-			@Pc(38) Class519[] local38 = new Class519[arg0.method22425((short) 16384)];
+			@Pc(38) ScriptVarType[] local38 = new ScriptVarType[arg0.method22425((short) 16384)];
 			for (@Pc(40) int local40 = 0; local40 < local38.length; local40++) {
-				local38[local40] = (Class519) Class107.method18131(Class519.method30493(1837731987), arg0.method22644((byte) -3), -1915563430);
+				local38[local40] = (ScriptVarType) Class107.method18131(ScriptVarType.values(), arg0.method22644((byte) -3), -1915563430);
 			}
-			this.aClass519ArrayArray2[local25] = local38;
+			this.aScriptVarTypeArrayArray2[local25] = local38;
 			if (local33) {
 				if (this.anObjectArrayArray2 == null) {
-					this.anObjectArrayArray2 = new Object[this.aClass519ArrayArray2.length][];
+					this.anObjectArrayArray2 = new Object[this.aScriptVarTypeArrayArray2.length][];
 				}
 				this.anObjectArrayArray2[local25] = Class166_Sub38.method16338(arg0, local38, 111677415);
 			}

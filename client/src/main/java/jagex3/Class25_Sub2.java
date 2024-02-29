@@ -53,7 +53,7 @@ public final class Class25_Sub2 extends Class25 {
 	}
 
 	@OriginalMember(owner = "client!anc", name = "q", descriptor = "(Lclient!akt;B)V")
-	public void method16030(@OriginalArg(0) Class93_Sub30 arg0, @OriginalArg(1) byte arg1) {
+	public void method16030(@OriginalArg(0) CoordFine arg0, @OriginalArg(1) byte arg1) {
 		this.aClass472_49.aFloat325 = arg0.anInt1610 * -427776677;
 		this.aClass472_49.aFloat326 = arg0.anInt1611 * 1802884841;
 		this.aClass472_49.aFloat327 = arg0.anInt1612 * 671628745;
@@ -120,7 +120,7 @@ public final class Class25_Sub2 extends Class25 {
 	}
 
 	@OriginalMember(owner = "client!anc", name = "x", descriptor = "(Lclient!akt;)V")
-	public void method16031(@OriginalArg(0) Class93_Sub30 arg0) {
+	public void method16031(@OriginalArg(0) CoordFine arg0) {
 		this.aClass472_49.aFloat325 = arg0.anInt1610 * -427776677;
 		this.aClass472_49.aFloat326 = arg0.anInt1611 * 1802884841;
 		this.aClass472_49.aFloat327 = arg0.anInt1612 * 671628745;
@@ -131,7 +131,7 @@ public final class Class25_Sub2 extends Class25 {
 	}
 
 	@OriginalMember(owner = "client!anc", name = "b", descriptor = "(Lclient!akt;)V")
-	public void method16032(@OriginalArg(0) Class93_Sub30 arg0) {
+	public void method16032(@OriginalArg(0) CoordFine arg0) {
 		this.aClass472_49.aFloat325 = arg0.anInt1610 * -427776677;
 		this.aClass472_49.aFloat326 = arg0.anInt1611 * 1802884841;
 		this.aClass472_49.aFloat327 = arg0.anInt1612 * 671628745;

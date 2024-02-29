@@ -30,7 +30,7 @@ public final class Class679 {
 			return;
 		}
 		@Pc(59) Class108_Sub1 local59 = (Class108_Sub1) Class21.aClass79_Sub1_Sub1_1.method18273(local38, -98003055);
-		switch(local59.aClass519_6.aClass500_7.anInt5357 * -1217885029) {
+		switch(local59.aScriptVarType_6.baseVarType.ordinal * -1217885029) {
 			case 2:
 				arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local43.method26854(-2128181752).method781(local59.anInt867 * -1284841473, -1267242705);
 				break;

@@ -38,7 +38,7 @@ final class Class290 implements Iterator {
 			throw new RuntimeException();
 		}
 		@Pc(39) Class39 local39 = (Class39) Class19.aClass32_Sub7_5.method18273(local12, 1819008273);
-		if (local39.aClass519_1 != Class519.aClass519_7) {
+		if (local39.aScriptVarType_1 != ScriptVarType.STRING) {
 			throw new RuntimeException();
 		}
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local39.method751(local26, (byte) 0) ? 1 : 0;

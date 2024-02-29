@@ -77,12 +77,12 @@ public final class Class110_Sub7 extends Class110 {
 	@OriginalMember(owner = "client!agd", name = "f", descriptor = "()V")
 	@Override
 	public void method20152() {
-		Class586.method31819(Class512.anInt5370 * 1177442423, this.anInt908 * -1732389343, this.anInt906 * 2071811457, Class305.method26894(this.anInt908 * -1732389343, this.anInt906 * 2071811457, Class512.anInt5370 * 1177442423, (byte) -114), this.anInt909 * 1294238949, this.anInt907 * 1147009387, this.aString28, -1341391550);
+		Class586.method31819(BaseVarTypeComponentHook.anInt5370 * 1177442423, this.anInt908 * -1732389343, this.anInt906 * 2071811457, Class305.method26894(this.anInt908 * -1732389343, this.anInt906 * 2071811457, BaseVarTypeComponentHook.anInt5370 * 1177442423, (byte) -114), this.anInt909 * 1294238949, this.anInt907 * 1147009387, this.aString28, -1341391550);
 	}
 
 	@OriginalMember(owner = "client!agd", name = "n", descriptor = "(I)V")
 	@Override
 	public void method20150(@OriginalArg(0) int arg0) {
-		Class586.method31819(Class512.anInt5370 * 1177442423, this.anInt908 * -1732389343, this.anInt906 * 2071811457, Class305.method26894(this.anInt908 * -1732389343, this.anInt906 * 2071811457, Class512.anInt5370 * 1177442423, (byte) -71), this.anInt909 * 1294238949, this.anInt907 * 1147009387, this.aString28, -1341391550);
+		Class586.method31819(BaseVarTypeComponentHook.anInt5370 * 1177442423, this.anInt908 * -1732389343, this.anInt906 * 2071811457, Class305.method26894(this.anInt908 * -1732389343, this.anInt906 * 2071811457, BaseVarTypeComponentHook.anInt5370 * 1177442423, (byte) -71), this.anInt909 * 1294238949, this.anInt907 * 1147009387, this.aString28, -1341391550);
 	}
 }

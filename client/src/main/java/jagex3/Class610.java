@@ -280,7 +280,7 @@ public final class Class610 implements Interface13 {
 		Class162.aClass32_Sub3_2.method16701(local1, 1883724472);
 		Class501.aClass32_Sub18_1.method17293(local1, 440978938);
 		Class581.method31579(local1, 1027376640);
-		Class512.method30437(local1, 1221464647);
+		BaseVarTypeComponentHook.method30437(local1, 1221464647);
 		Class148_Sub1.method11760(local1, -1913380689);
 		Class244.method25985(local1, (short) 896);
 		Class389.method28450(local1, (byte) 106);

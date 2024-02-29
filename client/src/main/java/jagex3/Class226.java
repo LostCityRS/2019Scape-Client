@@ -111,7 +111,7 @@ public final class Class226 {
 			local140.aFloat326 *= -1.0F;
 			local13.method29724(local140);
 		}
-		@Pc(232) Class93_Sub30 local232 = new Class93_Sub30(0, (int) local13.aFloat325, (int) local13.aFloat326, (int) local13.aFloat327);
+		@Pc(232) CoordFine local232 = new CoordFine(0, (int) local13.aFloat325, (int) local13.aFloat326, (int) local13.aFloat327);
 		local4.method9297(local232, -1049152339);
 		@Pc(240) Class611 local240 = client.aClass532_1.method30624(2087749905);
 		@Pc(247) int local247 = local240.anInt5784 * 270611681 << 9;

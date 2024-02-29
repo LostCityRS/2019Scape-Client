@@ -56,7 +56,7 @@ final class Class262 implements Interface39 {
 			Class249.method26038((byte) (client.anInt3495 * 1815175593 - 4 & 0xFF), 2102891014);
 			Class75.method1270(2, (byte) 119);
 		}
-		client.anInt3559 = Class512.anInt5370 * -1452064847;
+		client.anInt3559 = BaseVarTypeComponentHook.anInt5370 * -1452064847;
 	}
 
 	@OriginalMember(owner = "client!ff", name = "k", descriptor = "(S)V")

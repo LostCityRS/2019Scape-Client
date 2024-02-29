@@ -80,7 +80,7 @@ public final class Class683 {
 	static void method33465(@OriginalArg(0) Class681 arg0) {
 		arg0.anInt6052 -= -725861497;
 		if (aBoolean885) {
-			Class504.method30376(arg0.anIntArray521[arg0.anInt6052 * -1497248091] != 0, 1813151266);
+			BaseVarTypeString.method30376(arg0.anIntArray521[arg0.anInt6052 * -1497248091] != 0, 1813151266);
 			Class320.method27331(arg0.anIntArray521[arg0.anInt6052 * -1497248091 + 1] != 0, -522627859);
 			Class585.method31792(arg0.anIntArray521[arg0.anInt6052 * -1497248091 + 2] != 0, -1133639401);
 		}
@@ -236,7 +236,7 @@ public final class Class683 {
 	static void method33490(@OriginalArg(0) Class681 arg0) {
 		arg0.anInt6052 -= -725861497;
 		if (aBoolean885) {
-			Class504.method30376(arg0.anIntArray521[arg0.anInt6052 * -1497248091] != 0, 332882425);
+			BaseVarTypeString.method30376(arg0.anIntArray521[arg0.anInt6052 * -1497248091] != 0, 332882425);
 			Class320.method27331(arg0.anIntArray521[arg0.anInt6052 * -1497248091 + 1] != 0, -80951305);
 			Class585.method31792(arg0.anIntArray521[arg0.anInt6052 * -1497248091 + 2] != 0, -1501033627);
 		}
@@ -473,7 +473,7 @@ public final class Class683 {
 	static void method33513(@OriginalArg(0) Class681 arg0) {
 		arg0.anInt6052 -= -725861497;
 		if (aBoolean885) {
-			Class504.method30376(arg0.anIntArray521[arg0.anInt6052 * -1497248091] != 0, 241363025);
+			BaseVarTypeString.method30376(arg0.anIntArray521[arg0.anInt6052 * -1497248091] != 0, 241363025);
 			Class320.method27331(arg0.anIntArray521[arg0.anInt6052 * -1497248091 + 1] != 0, -493134229);
 			Class585.method31792(arg0.anIntArray521[arg0.anInt6052 * -1497248091 + 2] != 0, -1820525259);
 		}
@@ -653,7 +653,7 @@ public final class Class683 {
 	static void method33531(@OriginalArg(0) Class681 arg0) {
 		arg0.anInt6052 -= -725861497;
 		if (aBoolean885) {
-			Class504.method30376(arg0.anIntArray521[arg0.anInt6052 * -1497248091] != 0, 922994868);
+			BaseVarTypeString.method30376(arg0.anIntArray521[arg0.anInt6052 * -1497248091] != 0, 922994868);
 			Class320.method27331(arg0.anIntArray521[arg0.anInt6052 * -1497248091 + 1] != 0, -455087816);
 			Class585.method31792(arg0.anIntArray521[arg0.anInt6052 * -1497248091 + 2] != 0, -2066615919);
 		}

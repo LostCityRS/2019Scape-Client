@@ -8,7 +8,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!yu")
-public final class Class693 implements Interface75 {
+public final class Class693 implements SerializableEnum {
 
 	@OriginalMember(owner = "client!yu", name = "e", descriptor = "Lclient!yu;")
 	public static final Class693 aClass693_8 = new Class693("", 0, new Class705[] { Class705.aClass705_3 });
@@ -96,7 +96,7 @@ public final class Class693 implements Interface75 {
 	@OriginalMember(owner = "client!yu", name = "apl", descriptor = "(Lclient!yf;I)V")
 	static void method36795(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		arg0.anInt6052 -= -1451722994;
-		@Pc(19) Class93_Sub30 local19 = (Class93_Sub30) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
+		@Pc(19) CoordFine local19 = (CoordFine) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
 		if (Class65.aClass123_Sub1_2.method8986((byte) -82) != Class338.aClass338_7) {
 			throw new RuntimeException();
 		}
@@ -118,14 +118,14 @@ public final class Class693 implements Interface75 {
 
 	@OriginalMember(owner = "client!yu", name = "l", descriptor = "(I)V")
 	public static void method36798(@OriginalArg(0) int arg0) {
-		if (IcmpService_Sub1.anIcmpService_Sub1_1 == null) {
+		if (NativeMouse.instance == null) {
 			return;
 		}
 		try {
-			IcmpService_Sub1.anIcmpService_Sub1_1.quit();
+			NativeMouse.instance.quit();
 		} catch (@Pc(7) Throwable local7) {
 		}
-		IcmpService_Sub1.anIcmpService_Sub1_1 = null;
+		NativeMouse.instance = null;
 	}
 
 	@OriginalMember(owner = "client!yu", name = "bce", descriptor = "(Lclient!yf;I)V")
@@ -160,7 +160,7 @@ public final class Class693 implements Interface75 {
 
 	@OriginalMember(owner = "client!yu", name = "n", descriptor = "()I")
 	@Override
-	public int method37101() {
+	public int getId() {
 		return this.anInt6098 * 458725559;
 	}
 
@@ -169,9 +169,4 @@ public final class Class693 implements Interface75 {
 		return this.aSet2.contains(arg0);
 	}
 
-	@OriginalMember(owner = "client!yu", name = "k", descriptor = "()I")
-	@Override
-	public int method37100() {
-		return this.anInt6098 * 458725559;
-	}
 }

@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!qf")
-final class Class504 implements Interface9 {
+final class BaseVarTypeString implements BaseVarTypeCodec {
 
 	@OriginalMember(owner = "client!qf", name = "c", descriptor = "I")
 	protected static int anInt5362;
@@ -48,7 +48,7 @@ final class Class504 implements Interface9 {
 
 	@OriginalMember(owner = "client!qf", name = "aqn", descriptor = "(Lclient!yf;I)V")
 	static void method30381(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class251.method26059(-1877670986).method37101();
+		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class251.method26059(-1877670986).getId();
 	}
 
 	@OriginalMember(owner = "client!qf", name = "ha", descriptor = "(Lclient!ahm;IIII)V")
@@ -143,19 +143,8 @@ final class Class504 implements Interface9 {
 
 	@OriginalMember(owner = "client!qf", name = "e", descriptor = "(Lclient!alw;I)Ljava/lang/Object;")
 	@Override
-	public Object method30453(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	public Object decode(@OriginalArg(0) Class93_Sub41 arg0) {
 		return arg0.method22439(641571683);
 	}
 
-	@OriginalMember(owner = "client!qf", name = "m", descriptor = "(Lclient!alw;)Ljava/lang/Object;")
-	@Override
-	public Object method30452(@OriginalArg(0) Class93_Sub41 arg0) {
-		return arg0.method22439(1005656372);
-	}
-
-	@OriginalMember(owner = "client!qf", name = "n", descriptor = "(Lclient!alw;)Ljava/lang/Object;")
-	@Override
-	public Object method30451(@OriginalArg(0) Class93_Sub41 arg0) {
-		return arg0.method22439(1732561270);
-	}
 }

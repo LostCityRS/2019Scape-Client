@@ -74,8 +74,8 @@ public final class Class281 {
 		}
 		@Pc(31) Iterator local31 = arg0.iterator();
 		while (local31.hasNext()) {
-			@Pc(38) Interface75 local38 = (Interface75) local31.next();
-			@Pc(41) int local41 = local38.method37101();
+			@Pc(38) SerializableEnum local38 = (SerializableEnum) local31.next();
+			@Pc(41) int local41 = local38.getId();
 			@Pc(45) int local45 = local41 / 8;
 			arg1.aByteArray58[arg1.anInt3070 * 212851357 + local45] = (byte) (arg1.aByteArray58[arg1.anInt3070 * 212851357 + local45] | 0x1 << (local41 & 0x7));
 		}

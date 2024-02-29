@@ -35,7 +35,7 @@ public final class Class125_Sub3 extends Class125 {
 
 	@OriginalMember(owner = "client!ahs", name = "ack", descriptor = "(Lclient!yf;I)V")
 	static void method10062(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class557.aClass297_1.method26767((byte) 16).method37101();
+		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class557.aClass297_1.method26767((byte) 16).getId();
 	}
 
 	@OriginalMember(owner = "client!ahs", name = "iv", descriptor = "(IIIIIII)V")

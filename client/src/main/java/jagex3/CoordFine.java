@@ -6,10 +6,10 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!akt")
-public final class Class93_Sub30 extends Class93 implements Interface6 {
+public final class CoordFine extends Class93 implements Serializable {
 
 	@OriginalMember(owner = "client!akt", name = "k", descriptor = "[Lclient!akt;")
-	static Class93_Sub30[] aClass93_Sub30Array1 = new Class93_Sub30[0];
+	static CoordFine[] aCoordFineArray1 = new CoordFine[0];
 
 	@OriginalMember(owner = "client!akt", name = "w", descriptor = "I")
 	public int anInt1609;
@@ -24,79 +24,79 @@ public final class Class93_Sub30 extends Class93 implements Interface6 {
 	public int anInt1612;
 
 	@OriginalMember(owner = "client!akt", name = "a", descriptor = "(IIII)Lclient!akt;")
-	public static Class93_Sub30 method13874(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		@Pc(2) Class93_Sub30[] local2 = aClass93_Sub30Array1;
-		synchronized (aClass93_Sub30Array1) {
+	public static CoordFine method13874(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+		@Pc(2) CoordFine[] local2 = aCoordFineArray1;
+		synchronized (aCoordFineArray1) {
 			if (Class509.anInt5367 * 672498035 == 0) {
-				return new Class93_Sub30(arg0, arg1, arg2, arg3);
+				return new CoordFine(arg0, arg1, arg2, arg3);
 			} else {
-				aClass93_Sub30Array1[(Class509.anInt5367 -= -1799648325) * 672498035].method13868(arg0, arg1, arg2, arg3, -942195842);
-				return aClass93_Sub30Array1[Class509.anInt5367 * 672498035];
+				aCoordFineArray1[(Class509.anInt5367 -= -1799648325) * 672498035].method13868(arg0, arg1, arg2, arg3, -942195842);
+				return aCoordFineArray1[Class509.anInt5367 * 672498035];
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!akt", name = "g", descriptor = "(IIII)Lclient!akt;")
-	public static Class93_Sub30 method13875(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		@Pc(2) Class93_Sub30[] local2 = aClass93_Sub30Array1;
-		synchronized (aClass93_Sub30Array1) {
+	public static CoordFine method13875(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+		@Pc(2) CoordFine[] local2 = aCoordFineArray1;
+		synchronized (aCoordFineArray1) {
 			if (Class509.anInt5367 * 672498035 == 0) {
-				return new Class93_Sub30(arg0, arg1, arg2, arg3);
+				return new CoordFine(arg0, arg1, arg2, arg3);
 			} else {
-				aClass93_Sub30Array1[(Class509.anInt5367 -= -1799648325) * 672498035].method13868(arg0, arg1, arg2, arg3, -1055472011);
-				return aClass93_Sub30Array1[Class509.anInt5367 * 672498035];
+				aCoordFineArray1[(Class509.anInt5367 -= -1799648325) * 672498035].method13868(arg0, arg1, arg2, arg3, -1055472011);
+				return aCoordFineArray1[Class509.anInt5367 * 672498035];
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!akt", name = "i", descriptor = "(IIII)Lclient!akt;")
-	public static Class93_Sub30 method13876(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		@Pc(2) Class93_Sub30[] local2 = aClass93_Sub30Array1;
-		synchronized (aClass93_Sub30Array1) {
+	public static CoordFine method13876(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+		@Pc(2) CoordFine[] local2 = aCoordFineArray1;
+		synchronized (aCoordFineArray1) {
 			if (Class509.anInt5367 * 672498035 == 0) {
-				return new Class93_Sub30(arg0, arg1, arg2, arg3);
+				return new CoordFine(arg0, arg1, arg2, arg3);
 			} else {
-				aClass93_Sub30Array1[(Class509.anInt5367 -= -1799648325) * 672498035].method13868(arg0, arg1, arg2, arg3, 35844660);
-				return aClass93_Sub30Array1[Class509.anInt5367 * 672498035];
+				aCoordFineArray1[(Class509.anInt5367 -= -1799648325) * 672498035].method13868(arg0, arg1, arg2, arg3, 35844660);
+				return aCoordFineArray1[Class509.anInt5367 * 672498035];
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!akt", name = "j", descriptor = "(Lclient!akt;)Lclient!akt;")
-	public static Class93_Sub30 method13877(@OriginalArg(0) Class93_Sub30 arg0) {
-		@Pc(2) Class93_Sub30[] local2 = aClass93_Sub30Array1;
-		synchronized (aClass93_Sub30Array1) {
+	public static CoordFine method13877(@OriginalArg(0) CoordFine arg0) {
+		@Pc(2) CoordFine[] local2 = aCoordFineArray1;
+		synchronized (aCoordFineArray1) {
 			if (Class509.anInt5367 * 672498035 == 0) {
-				return new Class93_Sub30(arg0);
+				return new CoordFine(arg0);
 			} else {
-				aClass93_Sub30Array1[(Class509.anInt5367 -= -1799648325) * 672498035].method13885(arg0, -414899775);
-				return aClass93_Sub30Array1[Class509.anInt5367 * 672498035];
+				aCoordFineArray1[(Class509.anInt5367 -= -1799648325) * 672498035].method13885(arg0, -414899775);
+				return aCoordFineArray1[Class509.anInt5367 * 672498035];
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!akt", name = "t", descriptor = "(IZ)Lclient!akt;")
-	public static Class93_Sub30 method13878(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1) {
-		@Pc(2) Class93_Sub30[] local2 = aClass93_Sub30Array1;
-		synchronized (aClass93_Sub30Array1) {
+	public static CoordFine method13878(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1) {
+		@Pc(2) CoordFine[] local2 = aCoordFineArray1;
+		synchronized (aCoordFineArray1) {
 			if (Class509.anInt5367 * 672498035 == 0) {
-				return new Class93_Sub30(arg0, arg1);
+				return new CoordFine(arg0, arg1);
 			} else {
-				aClass93_Sub30Array1[(Class509.anInt5367 -= -1799648325) * 672498035].method13887(arg0, arg1, 16711680);
-				return aClass93_Sub30Array1[Class509.anInt5367 * 672498035];
+				aCoordFineArray1[(Class509.anInt5367 -= -1799648325) * 672498035].method13887(arg0, arg1, 16711680);
+				return aCoordFineArray1[Class509.anInt5367 * 672498035];
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!akt", name = "h", descriptor = "(IIII)Lclient!akt;")
-	public static Class93_Sub30 method13879(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		@Pc(2) Class93_Sub30[] local2 = aClass93_Sub30Array1;
-		synchronized (aClass93_Sub30Array1) {
+	public static CoordFine method13879(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+		@Pc(2) CoordFine[] local2 = aCoordFineArray1;
+		synchronized (aCoordFineArray1) {
 			if (Class509.anInt5367 * 672498035 == 0) {
-				return new Class93_Sub30(arg0, arg1, arg2, arg3);
+				return new CoordFine(arg0, arg1, arg2, arg3);
 			} else {
-				aClass93_Sub30Array1[(Class509.anInt5367 -= -1799648325) * 672498035].method13868(arg0, arg1, arg2, arg3, -1446295033);
-				return aClass93_Sub30Array1[Class509.anInt5367 * 672498035];
+				aCoordFineArray1[(Class509.anInt5367 -= -1799648325) * 672498035].method13868(arg0, arg1, arg2, arg3, -1446295033);
+				return aCoordFineArray1[Class509.anInt5367 * 672498035];
 			}
 		}
 	}
@@ -107,7 +107,7 @@ public final class Class93_Sub30 extends Class93 implements Interface6 {
 	}
 
 	@OriginalMember(owner = "client!akt", name = "<init>", descriptor = "(IIII)V")
-	public Class93_Sub30(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+	public CoordFine(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		this.anInt1609 = arg0 * 1850625305;
 		this.anInt1610 = arg1 * -1902705965;
 		this.anInt1611 = arg2 * -2071305895;
@@ -115,7 +115,7 @@ public final class Class93_Sub30 extends Class93 implements Interface6 {
 	}
 
 	@OriginalMember(owner = "client!akt", name = "<init>", descriptor = "(Lclient!akt;)V")
-	Class93_Sub30(@OriginalArg(0) Class93_Sub30 arg0) {
+	CoordFine(@OriginalArg(0) CoordFine arg0) {
 		this.anInt1609 = arg0.anInt1609;
 		this.anInt1610 = arg0.anInt1610;
 		this.anInt1611 = arg0.anInt1611;
@@ -123,12 +123,12 @@ public final class Class93_Sub30 extends Class93 implements Interface6 {
 	}
 
 	@OriginalMember(owner = "client!akt", name = "<init>", descriptor = "(Lclient!alw;)V")
-	public Class93_Sub30(@OriginalArg(0) Class93_Sub41 arg0) {
+	public CoordFine(@OriginalArg(0) Class93_Sub41 arg0) {
 		this.method13862(arg0, 966153105);
 	}
 
 	@OriginalMember(owner = "client!akt", name = "<init>", descriptor = "(IZ)V")
-	Class93_Sub30(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1) {
+	CoordFine(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1) {
 		if (arg0 == -1) {
 			this.anInt1609 = -1850625305;
 		} else {
@@ -144,7 +144,7 @@ public final class Class93_Sub30 extends Class93 implements Interface6 {
 	}
 
 	@OriginalMember(owner = "client!akt", name = "<init>", descriptor = "()V")
-	public Class93_Sub30() {
+	public CoordFine() {
 		this.anInt1609 = -1850625305;
 	}
 
@@ -223,7 +223,7 @@ public final class Class93_Sub30 extends Class93 implements Interface6 {
 
 	@OriginalMember(owner = "client!akt", name = "e", descriptor = "(B)I")
 	@Override
-	public int method13865(@OriginalArg(0) byte arg0) {
+	public int computeSerialisedSize(@OriginalArg(0) byte arg0) {
 		return Class299.method26805((short) -2639);
 	}
 
@@ -249,7 +249,7 @@ public final class Class93_Sub30 extends Class93 implements Interface6 {
 	}
 
 	@OriginalMember(owner = "client!akt", name = "al", descriptor = "(Lclient!akt;)V")
-	void method13881(@OriginalArg(0) Class93_Sub30 arg0) {
+	void method13881(@OriginalArg(0) CoordFine arg0) {
 		this.anInt1609 = arg0.anInt1609;
 		this.anInt1610 = arg0.anInt1610;
 		this.anInt1611 = arg0.anInt1611;
@@ -289,7 +289,7 @@ public final class Class93_Sub30 extends Class93 implements Interface6 {
 	}
 
 	@OriginalMember(owner = "client!akt", name = "c", descriptor = "(Lclient!akt;I)V")
-	void method13885(@OriginalArg(0) Class93_Sub30 arg0, @OriginalArg(1) int arg1) {
+	void method13885(@OriginalArg(0) CoordFine arg0, @OriginalArg(1) int arg1) {
 		this.anInt1609 = arg0.anInt1609;
 		this.anInt1610 = arg0.anInt1610;
 		this.anInt1611 = arg0.anInt1611;

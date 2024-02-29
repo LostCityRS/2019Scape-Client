@@ -5,7 +5,7 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!acf")
-public interface Interface6 {
+public interface Serializable {
 
 	@OriginalMember(owner = "client!acf", name = "f", descriptor = "()I")
 	int method13860();
@@ -23,7 +23,7 @@ public interface Interface6 {
 	void method13864(@OriginalArg(0) Class93_Sub41 arg0);
 
 	@OriginalMember(owner = "client!acf", name = "e", descriptor = "(B)I")
-	int method13865(@OriginalArg(0) byte arg0);
+	int computeSerialisedSize(@OriginalArg(0) byte arg0);
 
 	@OriginalMember(owner = "client!acf", name = "w", descriptor = "(Lclient!alw;)V")
 	void method13866(@OriginalArg(0) Class93_Sub41 arg0);

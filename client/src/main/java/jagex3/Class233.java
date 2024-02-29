@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!dt")
-public final class Class233 implements Interface75 {
+public final class Class233 implements SerializableEnum {
 
 	@OriginalMember(owner = "client!dt", name = "e", descriptor = "Lclient!dt;")
 	static final Class233 aClass233_4 = new Class233(0, 0, null, 0);
@@ -100,7 +100,7 @@ public final class Class233 implements Interface75 {
 		}
 		local79 = Class721.method37102(arg0, (byte) -57);
 		Class669.method33126(arg0, -648220126);
-		Class504.method30382(arg0, local2, local4, local79, -1077736889);
+		BaseVarTypeString.method30382(arg0, local2, local4, local79, -1077736889);
 		Class552.method31227(arg0, local2, (byte) 54);
 		Class58.method1103(arg0, 749925756);
 		@Pc(279) Class471 local279 = Class471.method29702();
@@ -112,7 +112,7 @@ public final class Class233 implements Interface75 {
 	@OriginalMember(owner = "client!dt", name = "fh", descriptor = "(I)V")
 	static void method25826(@OriginalArg(0) int arg0) {
 		Class142_Sub1.method10991(Class694.aClass104_14, (byte) 0);
-		if (Class512.anInt5370 * 1177442423 != client.anInt3559 * -1248097113) {
+		if (BaseVarTypeComponentHook.anInt5370 * 1177442423 != client.anInt3559 * -1248097113) {
 			Class262.method26266(2147444241);
 		}
 	}
@@ -145,13 +145,7 @@ public final class Class233 implements Interface75 {
 
 	@OriginalMember(owner = "client!dt", name = "n", descriptor = "()I")
 	@Override
-	public int method37101() {
-		return this.anInt3794 * -1615522623;
-	}
-
-	@OriginalMember(owner = "client!dt", name = "k", descriptor = "()I")
-	@Override
-	public int method37100() {
+	public int getId() {
 		return this.anInt3794 * -1615522623;
 	}
 

@@ -19,7 +19,7 @@ public final class Class39 implements Interface13, Interface5 {
 	public static Class79_Sub1_Sub2 aClass79_Sub1_Sub2_1;
 
 	@OriginalMember(owner = "client!abm", name = "n", descriptor = "Lclient!qw;")
-	public Class519 aClass519_1;
+	public ScriptVarType aScriptVarType_1;
 
 	@OriginalMember(owner = "client!abm", name = "k", descriptor = "I")
 	int anInt124;
@@ -31,7 +31,7 @@ public final class Class39 implements Interface13, Interface5 {
 	Object[] anObjectArray1;
 
 	@OriginalMember(owner = "client!abm", name = "e", descriptor = "Lclient!qw;")
-	public Class519 aClass519_2;
+	public ScriptVarType aScriptVarType_2;
 
 	@OriginalMember(owner = "client!abm", name = "u", descriptor = "Ljava/util/HashMap;")
 	HashMap aHashMap1;
@@ -134,10 +134,10 @@ public final class Class39 implements Interface13, Interface5 {
 		@Pc(8) char local8;
 		if (arg1 == 1) {
 			local8 = Class615.method32270(arg0.method22426(495285591), (short) 150);
-			this.aClass519_2 = Class519.method30500(local8, (byte) 8);
+			this.aScriptVarType_2 = ScriptVarType.method30500(local8, (byte) 8);
 		} else if (arg1 == 2) {
 			local8 = Class615.method32270(arg0.method22426(1839076446), (short) 150);
-			this.aClass519_1 = Class519.method30500(local8, (byte) 8);
+			this.aScriptVarType_1 = ScriptVarType.method30500(local8, (byte) 8);
 		} else if (arg1 == 3) {
 			this.aString5 = arg0.method22439(-139955878);
 		} else if (arg1 == 4) {
@@ -171,9 +171,9 @@ public final class Class39 implements Interface13, Interface5 {
 					}
 				}
 			} else if (arg1 == 101) {
-				this.aClass519_2 = (Class519) Class107.method18131(Class519.method30493(1296094007), arg0.method22644((byte) -9), -1915563430);
+				this.aScriptVarType_2 = (ScriptVarType) Class107.method18131(ScriptVarType.values(), arg0.method22644((byte) -9), -1915563430);
 			} else if (arg1 == 102) {
-				this.aClass519_1 = (Class519) Class107.method18131(Class519.method30493(1382853603), arg0.method22644((byte) -91), -1915563430);
+				this.aScriptVarType_1 = (ScriptVarType) Class107.method18131(ScriptVarType.values(), arg0.method22644((byte) -91), -1915563430);
 			}
 		}
 	}
@@ -315,10 +315,10 @@ public final class Class39 implements Interface13, Interface5 {
 		@Pc(8) char local8;
 		if (arg1 == 1) {
 			local8 = Class615.method32270(arg0.method22426(555189002), (short) 150);
-			this.aClass519_2 = Class519.method30500(local8, (byte) 8);
+			this.aScriptVarType_2 = ScriptVarType.method30500(local8, (byte) 8);
 		} else if (arg1 == 2) {
 			local8 = Class615.method32270(arg0.method22426(1205391096), (short) 150);
-			this.aClass519_1 = Class519.method30500(local8, (byte) 8);
+			this.aScriptVarType_1 = ScriptVarType.method30500(local8, (byte) 8);
 		} else if (arg1 == 3) {
 			this.aString5 = arg0.method22439(182992110);
 		} else if (arg1 == 4) {
@@ -352,9 +352,9 @@ public final class Class39 implements Interface13, Interface5 {
 					}
 				}
 			} else if (arg1 == 101) {
-				this.aClass519_2 = (Class519) Class107.method18131(Class519.method30493(1675883141), arg0.method22644((byte) -112), -1915563430);
+				this.aScriptVarType_2 = (ScriptVarType) Class107.method18131(ScriptVarType.values(), arg0.method22644((byte) -112), -1915563430);
 			} else if (arg1 == 102) {
-				this.aClass519_1 = (Class519) Class107.method18131(Class519.method30493(1558760533), arg0.method22644((byte) -66), -1915563430);
+				this.aScriptVarType_1 = (ScriptVarType) Class107.method18131(ScriptVarType.values(), arg0.method22644((byte) -66), -1915563430);
 			}
 		}
 	}

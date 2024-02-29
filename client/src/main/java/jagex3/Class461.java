@@ -185,15 +185,15 @@ public final class Class461 {
 	static void method29403(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(9) Class108 local9 = (Class108) arg0.aClass93_Sub1_Sub13_1.anObjectArray5[arg0.anInt6050 * -709694321];
 		@Pc(30) Interface20 local30 = (Interface20) (arg0.anIntArray522[arg0.anInt6050 * -709694321] == 0 ? arg0.aMap26.get(local9.aClass138_6) : arg0.aMap25.get(local9.aClass138_6));
-		@Pc(35) Class500 local35 = local9.aClass519_6.method30492((byte) 36);
-		if (Class500.aClass500_6 == local35) {
+		@Pc(35) BaseVarType local35 = local9.aScriptVarType_6.getBaseVarType();
+		if (BaseVarType.INTEGER == local35) {
 			if (Class138.aClass138_63 == local9.aClass138_6) {
 				Class301.method26825(local9, -178345407);
 			}
 			local30.method33645(local9, arg0.anIntArray521[(arg0.anInt6052 -= 1189701933) * -1497248091], 908369267);
-		} else if (Class500.aClass500_3 == local35) {
+		} else if (BaseVarType.LONG == local35) {
 			local30.method33647(local9, arg0.aLongArray27[(arg0.anInt6055 -= -1364417339) * -2000995827]);
-		} else if (Class500.aClass500_2 == local35) {
+		} else if (BaseVarType.STRING == local35) {
 			if (Class138.aClass138_63 == local9.aClass138_6) {
 				Class715.method37051(local9, (byte) -2);
 			}

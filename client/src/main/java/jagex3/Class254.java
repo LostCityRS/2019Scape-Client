@@ -79,7 +79,7 @@ public final class Class254 {
 	}
 
 	@OriginalMember(owner = "client!ey", name = "e", descriptor = "(Lclient!alw;I)Lclient!hr;")
-	public static Class321 method26095(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	public static ComponentHook method26095(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
 		@Pc(3) int local3 = arg0.method22425((short) 16384);
 		if (local3 == 0) {
 			return null;
@@ -91,14 +91,14 @@ public final class Class254 {
 		for (@Pc(23) int local23 = 0; local23 < local3; local23++) {
 			@Pc(30) int local30 = arg0.method22425((short) 16384);
 			if (local30 == 0) {
-				local21[local23] = Class500.method30338(Integer.class, -47609621).method30453(arg0, -1187347627);
+				local21[local23] = BaseVarType.method30338(Integer.class, -47609621).decode(arg0);
 			} else if (local30 == 1) {
-				local21[local23] = Class500.method30338(String.class, -47609621).method30453(arg0, -1187347627);
+				local21[local23] = BaseVarType.method30338(String.class, -47609621).decode(arg0);
 			} else {
 				throw new IllegalStateException("Unrecognised type ID in deserialise: " + local30);
 			}
 		}
-		return new Class321(local18, local21);
+		return new ComponentHook(local18, local21);
 	}
 
 	@OriginalMember(owner = "client!ey", name = "<init>", descriptor = "()V")

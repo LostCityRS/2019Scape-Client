@@ -9,13 +9,13 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class166_Sub38 extends Class166 {
 
 	@OriginalMember(owner = "client!anp", name = "m", descriptor = "(Lclient!alw;[Lclient!qw;I)[Ljava/lang/Object;")
-	public static Object[] method16338(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) Class519[] arg1, @OriginalArg(2) int arg2) {
+	public static Object[] method16338(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) ScriptVarType[] arg1, @OriginalArg(2) int arg2) {
 		@Pc(3) int local3 = arg0.method22644((byte) -70);
 		@Pc(9) Object[] local9 = new Object[local3 * arg1.length];
 		for (@Pc(11) int local11 = 0; local11 < local3; local11++) {
 			for (@Pc(16) int local16 = 0; local16 < arg1.length; local16++) {
 				@Pc(27) int local27 = local11 * arg1.length + local16;
-				local9[local27] = arg1[local16].aClass500_7.method30337(arg0, (byte) 0);
+				local9[local27] = arg1[local16].baseVarType.decode(arg0);
 			}
 		}
 		return local9;

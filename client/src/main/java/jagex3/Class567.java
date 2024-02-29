@@ -90,9 +90,9 @@ public final class Class567 {
 		this.aLinkedList5 = new LinkedList();
 		@Pc(8) Class520 local8 = client.aClass532_1.method30690(-1261392332);
 		@Pc(12) Class611 local12 = client.aClass532_1.method30624(2012769476);
-		@Pc(27) Class611 local27 = new Class611(Class512.anInt5370 * 1177442423, this.anIntArray470[0], this.anIntArray471[0]);
+		@Pc(27) Class611 local27 = new Class611(BaseVarTypeComponentHook.anInt5370 * 1177442423, this.anIntArray470[0], this.anIntArray471[0]);
 		for (@Pc(29) int local29 = 1; local29 < this.anInt5548 * 554261149; local29++) {
-			@Pc(50) Class611 local50 = new Class611(Class512.anInt5370 * 1177442423, this.anIntArray470[local29], this.anIntArray471[local29]);
+			@Pc(50) Class611 local50 = new Class611(BaseVarTypeComponentHook.anInt5370 * 1177442423, this.anIntArray470[local29], this.anIntArray471[local29]);
 			while (local27.anInt5784 * 270611681 != local50.anInt5784 * 270611681 || local27.anInt5785 * -1994307635 != local50.anInt5785 * -1994307635) {
 				if (local27.anInt5784 * 270611681 < local50.anInt5784 * 270611681) {
 					local27.anInt5784 += 2122256161;
@@ -104,7 +104,7 @@ public final class Class567 {
 				} else if (local27.anInt5785 * -1994307635 > local50.anInt5785 * -1994307635) {
 					local27.anInt5785 -= -67830523;
 				}
-				@Pc(134) int local134 = Class512.anInt5370 * 1177442423;
+				@Pc(134) int local134 = BaseVarTypeComponentHook.anInt5370 * 1177442423;
 				@Pc(144) int local144 = local27.anInt5784 * 270611681 - local12.anInt5784 * 270611681;
 				@Pc(154) int local154 = local27.anInt5785 * -1994307635 - local12.anInt5785 * -1994307635;
 				if (local144 >= 0 && local144 < arg0.anInt5604 * -200159665 && local154 >= 0 && local154 < arg0.anInt5605 * -1943751559) {
@@ -113,7 +113,7 @@ public final class Class567 {
 					if (local8.method30511(local144, local154, -662808309)) {
 						local134++;
 					}
-					this.aLinkedList5.add(new Class132_Sub1_Sub1_Sub6(arg0, this, Class512.anInt5370 * 1177442423, local134, local176, Class305.method26894(local176, local182, Class512.anInt5370 * 1177442423, (byte) -77), local182));
+					this.aLinkedList5.add(new Class132_Sub1_Sub1_Sub6(arg0, this, BaseVarTypeComponentHook.anInt5370 * 1177442423, local134, local176, Class305.method26894(local176, local182, BaseVarTypeComponentHook.anInt5370 * 1177442423, (byte) -77), local182));
 				}
 			}
 			local27 = local50;
@@ -137,9 +137,9 @@ public final class Class567 {
 		this.aLinkedList5 = new LinkedList();
 		@Pc(8) Class520 local8 = client.aClass532_1.method30690(1928147315);
 		@Pc(12) Class611 local12 = client.aClass532_1.method30624(2006744981);
-		@Pc(27) Class611 local27 = new Class611(Class512.anInt5370 * 1177442423, this.anIntArray470[0], this.anIntArray471[0]);
+		@Pc(27) Class611 local27 = new Class611(BaseVarTypeComponentHook.anInt5370 * 1177442423, this.anIntArray470[0], this.anIntArray471[0]);
 		for (@Pc(29) int local29 = 1; local29 < this.anInt5548 * 554261149; local29++) {
-			@Pc(50) Class611 local50 = new Class611(Class512.anInt5370 * 1177442423, this.anIntArray470[local29], this.anIntArray471[local29]);
+			@Pc(50) Class611 local50 = new Class611(BaseVarTypeComponentHook.anInt5370 * 1177442423, this.anIntArray470[local29], this.anIntArray471[local29]);
 			while (local27.anInt5784 * 270611681 != local50.anInt5784 * 270611681 || local27.anInt5785 * -1994307635 != local50.anInt5785 * -1994307635) {
 				if (local27.anInt5784 * 270611681 < local50.anInt5784 * 270611681) {
 					local27.anInt5784 += 2122256161;
@@ -151,7 +151,7 @@ public final class Class567 {
 				} else if (local27.anInt5785 * -1994307635 > local50.anInt5785 * -1994307635) {
 					local27.anInt5785 -= -67830523;
 				}
-				@Pc(134) int local134 = Class512.anInt5370 * 1177442423;
+				@Pc(134) int local134 = BaseVarTypeComponentHook.anInt5370 * 1177442423;
 				@Pc(144) int local144 = local27.anInt5784 * 270611681 - local12.anInt5784 * 270611681;
 				@Pc(154) int local154 = local27.anInt5785 * -1994307635 - local12.anInt5785 * -1994307635;
 				if (local144 >= 0 && local144 < arg0.anInt5604 * -200159665 && local154 >= 0 && local154 < arg0.anInt5605 * -1943751559) {
@@ -160,7 +160,7 @@ public final class Class567 {
 					if (local8.method30511(local144, local154, -662808309)) {
 						local134++;
 					}
-					this.aLinkedList5.add(new Class132_Sub1_Sub1_Sub6(arg0, this, Class512.anInt5370 * 1177442423, local134, local176, Class305.method26894(local176, local182, Class512.anInt5370 * 1177442423, (byte) -53), local182));
+					this.aLinkedList5.add(new Class132_Sub1_Sub1_Sub6(arg0, this, BaseVarTypeComponentHook.anInt5370 * 1177442423, local134, local176, Class305.method26894(local176, local182, BaseVarTypeComponentHook.anInt5370 * 1177442423, (byte) -53), local182));
 				}
 			}
 			local27 = local50;
@@ -281,9 +281,9 @@ public final class Class567 {
 		this.aLinkedList5 = new LinkedList();
 		@Pc(8) Class520 local8 = client.aClass532_1.method30690(1357705550);
 		@Pc(12) Class611 local12 = client.aClass532_1.method30624(2088962294);
-		@Pc(27) Class611 local27 = new Class611(Class512.anInt5370 * 1177442423, this.anIntArray470[0], this.anIntArray471[0]);
+		@Pc(27) Class611 local27 = new Class611(BaseVarTypeComponentHook.anInt5370 * 1177442423, this.anIntArray470[0], this.anIntArray471[0]);
 		for (@Pc(29) int local29 = 1; local29 < this.anInt5548 * 554261149; local29++) {
-			@Pc(50) Class611 local50 = new Class611(Class512.anInt5370 * 1177442423, this.anIntArray470[local29], this.anIntArray471[local29]);
+			@Pc(50) Class611 local50 = new Class611(BaseVarTypeComponentHook.anInt5370 * 1177442423, this.anIntArray470[local29], this.anIntArray471[local29]);
 			while (local27.anInt5784 * 270611681 != local50.anInt5784 * 270611681 || local27.anInt5785 * -1994307635 != local50.anInt5785 * -1994307635) {
 				if (local27.anInt5784 * 270611681 < local50.anInt5784 * 270611681) {
 					local27.anInt5784 += 2122256161;
@@ -295,7 +295,7 @@ public final class Class567 {
 				} else if (local27.anInt5785 * -1994307635 > local50.anInt5785 * -1994307635) {
 					local27.anInt5785 -= -67830523;
 				}
-				@Pc(134) int local134 = Class512.anInt5370 * 1177442423;
+				@Pc(134) int local134 = BaseVarTypeComponentHook.anInt5370 * 1177442423;
 				@Pc(144) int local144 = local27.anInt5784 * 270611681 - local12.anInt5784 * 270611681;
 				@Pc(154) int local154 = local27.anInt5785 * -1994307635 - local12.anInt5785 * -1994307635;
 				if (local144 >= 0 && local144 < arg0.anInt5604 * -200159665 && local154 >= 0 && local154 < arg0.anInt5605 * -1943751559) {
@@ -304,7 +304,7 @@ public final class Class567 {
 					if (local8.method30511(local144, local154, -662808309)) {
 						local134++;
 					}
-					this.aLinkedList5.add(new Class132_Sub1_Sub1_Sub6(arg0, this, Class512.anInt5370 * 1177442423, local134, local176, Class305.method26894(local176, local182, Class512.anInt5370 * 1177442423, (byte) -19), local182));
+					this.aLinkedList5.add(new Class132_Sub1_Sub1_Sub6(arg0, this, BaseVarTypeComponentHook.anInt5370 * 1177442423, local134, local176, Class305.method26894(local176, local182, BaseVarTypeComponentHook.anInt5370 * 1177442423, (byte) -19), local182));
 				}
 			}
 			local27 = local50;
@@ -316,9 +316,9 @@ public final class Class567 {
 		this.aLinkedList5 = new LinkedList();
 		@Pc(8) Class520 local8 = client.aClass532_1.method30690(1209348711);
 		@Pc(12) Class611 local12 = client.aClass532_1.method30624(2101845940);
-		@Pc(27) Class611 local27 = new Class611(Class512.anInt5370 * 1177442423, this.anIntArray470[0], this.anIntArray471[0]);
+		@Pc(27) Class611 local27 = new Class611(BaseVarTypeComponentHook.anInt5370 * 1177442423, this.anIntArray470[0], this.anIntArray471[0]);
 		for (@Pc(29) int local29 = 1; local29 < this.anInt5548 * 554261149; local29++) {
-			@Pc(50) Class611 local50 = new Class611(Class512.anInt5370 * 1177442423, this.anIntArray470[local29], this.anIntArray471[local29]);
+			@Pc(50) Class611 local50 = new Class611(BaseVarTypeComponentHook.anInt5370 * 1177442423, this.anIntArray470[local29], this.anIntArray471[local29]);
 			while (local27.anInt5784 * 270611681 != local50.anInt5784 * 270611681 || local27.anInt5785 * -1994307635 != local50.anInt5785 * -1994307635) {
 				if (local27.anInt5784 * 270611681 < local50.anInt5784 * 270611681) {
 					local27.anInt5784 += 2122256161;
@@ -330,7 +330,7 @@ public final class Class567 {
 				} else if (local27.anInt5785 * -1994307635 > local50.anInt5785 * -1994307635) {
 					local27.anInt5785 -= -67830523;
 				}
-				@Pc(134) int local134 = Class512.anInt5370 * 1177442423;
+				@Pc(134) int local134 = BaseVarTypeComponentHook.anInt5370 * 1177442423;
 				@Pc(144) int local144 = local27.anInt5784 * 270611681 - local12.anInt5784 * 270611681;
 				@Pc(154) int local154 = local27.anInt5785 * -1994307635 - local12.anInt5785 * -1994307635;
 				if (local144 >= 0 && local144 < arg0.anInt5604 * -200159665 && local154 >= 0 && local154 < arg0.anInt5605 * -1943751559) {
@@ -339,7 +339,7 @@ public final class Class567 {
 					if (local8.method30511(local144, local154, -662808309)) {
 						local134++;
 					}
-					this.aLinkedList5.add(new Class132_Sub1_Sub1_Sub6(arg0, this, Class512.anInt5370 * 1177442423, local134, local176, Class305.method26894(local176, local182, Class512.anInt5370 * 1177442423, (byte) -108), local182));
+					this.aLinkedList5.add(new Class132_Sub1_Sub1_Sub6(arg0, this, BaseVarTypeComponentHook.anInt5370 * 1177442423, local134, local176, Class305.method26894(local176, local182, BaseVarTypeComponentHook.anInt5370 * 1177442423, (byte) -108), local182));
 				}
 			}
 			local27 = local50;
@@ -351,9 +351,9 @@ public final class Class567 {
 		this.aLinkedList5 = new LinkedList();
 		@Pc(8) Class520 local8 = client.aClass532_1.method30690(580292846);
 		@Pc(12) Class611 local12 = client.aClass532_1.method30624(2101151843);
-		@Pc(27) Class611 local27 = new Class611(Class512.anInt5370 * 1177442423, this.anIntArray470[0], this.anIntArray471[0]);
+		@Pc(27) Class611 local27 = new Class611(BaseVarTypeComponentHook.anInt5370 * 1177442423, this.anIntArray470[0], this.anIntArray471[0]);
 		for (@Pc(29) int local29 = 1; local29 < this.anInt5548 * 554261149; local29++) {
-			@Pc(50) Class611 local50 = new Class611(Class512.anInt5370 * 1177442423, this.anIntArray470[local29], this.anIntArray471[local29]);
+			@Pc(50) Class611 local50 = new Class611(BaseVarTypeComponentHook.anInt5370 * 1177442423, this.anIntArray470[local29], this.anIntArray471[local29]);
 			while (local27.anInt5784 * 270611681 != local50.anInt5784 * 270611681 || local27.anInt5785 * -1994307635 != local50.anInt5785 * -1994307635) {
 				if (local27.anInt5784 * 270611681 < local50.anInt5784 * 270611681) {
 					local27.anInt5784 += 2122256161;
@@ -365,7 +365,7 @@ public final class Class567 {
 				} else if (local27.anInt5785 * -1994307635 > local50.anInt5785 * -1994307635) {
 					local27.anInt5785 -= -67830523;
 				}
-				@Pc(134) int local134 = Class512.anInt5370 * 1177442423;
+				@Pc(134) int local134 = BaseVarTypeComponentHook.anInt5370 * 1177442423;
 				@Pc(144) int local144 = local27.anInt5784 * 270611681 - local12.anInt5784 * 270611681;
 				@Pc(154) int local154 = local27.anInt5785 * -1994307635 - local12.anInt5785 * -1994307635;
 				if (local144 >= 0 && local144 < arg0.anInt5604 * -200159665 && local154 >= 0 && local154 < arg0.anInt5605 * -1943751559) {
@@ -374,7 +374,7 @@ public final class Class567 {
 					if (local8.method30511(local144, local154, -662808309)) {
 						local134++;
 					}
-					this.aLinkedList5.add(new Class132_Sub1_Sub1_Sub6(arg0, this, Class512.anInt5370 * 1177442423, local134, local176, Class305.method26894(local176, local182, Class512.anInt5370 * 1177442423, (byte) -99), local182));
+					this.aLinkedList5.add(new Class132_Sub1_Sub1_Sub6(arg0, this, BaseVarTypeComponentHook.anInt5370 * 1177442423, local134, local176, Class305.method26894(local176, local182, BaseVarTypeComponentHook.anInt5370 * 1177442423, (byte) -99), local182));
 				}
 			}
 			local27 = local50;

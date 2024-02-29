@@ -63,7 +63,7 @@ final class Class61 implements Iterator {
 				local43.aClass93_Sub41_Sub2_1.method22407(client.anInt3429 * 1672118199, (byte) 61);
 				local43.aClass93_Sub41_Sub2_1.method22407(client.anInt3428 * -1830493323, (byte) 109);
 				local43.aClass93_Sub41_Sub2_1.method22414(Class454.aString219, -569118241);
-				local43.aClass93_Sub41_Sub2_1.method22522(Class106.aClass717_8.method37101(), (byte) -97);
+				local43.aClass93_Sub41_Sub2_1.method22522(Class106.aClass717_8.getId(), (byte) -97);
 				local43.aClass93_Sub41_Sub2_1.method22522(client.aClass702_4.anInt6114 * -1111983921, (byte) -80);
 				Class314.method27033(local43.aClass93_Sub41_Sub2_1, 1822213152);
 				@Pc(133) String local133 = client.aString138;

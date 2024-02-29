@@ -31,7 +31,7 @@ public final class Class327 {
 
 	@OriginalMember(owner = "client!hx", name = "afm", descriptor = "(Lclient!yf;B)V")
 	static void method27411(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = Class14.method192(Class41.method815(arg0.anIntArray521[(arg0.anInt6052 -= 1189701933) * -1497248091], 424376929), Class106.aClass717_8.method37101(), -2123126678);
+		arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = Class14.method192(Class41.method815(arg0.anIntArray521[(arg0.anInt6052 -= 1189701933) * -1497248091], 424376929), Class106.aClass717_8.getId(), -2123126678);
 	}
 
 	@OriginalMember(owner = "client!hx", name = "wv", descriptor = "(Lclient!yf;S)V")

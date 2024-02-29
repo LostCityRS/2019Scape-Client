@@ -161,7 +161,7 @@ public final class Class366 implements Interface30 {
 		while (true) {
 			try {
 				@Pc(11) Image local11 = Toolkit.getDefaultToolkit().createImage(arg0);
-				@Pc(14) Container local14 = Class504.method30377(-283088421);
+				@Pc(14) Container local14 = BaseVarTypeString.method30377(-283088421);
 				@Pc(19) MediaTracker local19 = new MediaTracker(local14);
 				local19.addImage(local11, 0);
 				local19.waitForAll();

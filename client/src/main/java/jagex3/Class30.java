@@ -12,7 +12,7 @@ public final class Class30 implements Interface13, Interface5 {
 	public static Class32_Sub16 aClass32_Sub16_1;
 
 	@OriginalMember(owner = "client!abc", name = "n", descriptor = "[[Lclient!qw;")
-	Class519[][] aClass519ArrayArray1;
+	ScriptVarType[][] aScriptVarTypeArrayArray1;
 
 	@OriginalMember(owner = "client!abc", name = "e", descriptor = "[[Ljava/lang/Object;")
 	Object[][] anObjectArrayArray1;
@@ -64,16 +64,16 @@ public final class Class30 implements Interface13, Interface5 {
 			@Pc(6) int local6 = arg0.method22425((short) 16384);
 			if (this.anObjectArrayArray1 == null) {
 				this.anObjectArrayArray1 = new Object[local6][];
-				this.aClass519ArrayArray1 = new Class519[local6][];
+				this.aScriptVarTypeArrayArray1 = new ScriptVarType[local6][];
 			}
 			for (@Pc(22) int local22 = arg0.method22425((short) 16384); local22 != 255; local22 = arg0.method22425((short) 16384)) {
 				@Pc(29) int local29 = arg0.method22425((short) 16384);
-				@Pc(32) Class519[] local32 = new Class519[local29];
+				@Pc(32) ScriptVarType[] local32 = new ScriptVarType[local29];
 				for (@Pc(34) int local34 = 0; local34 < local29; local34++) {
-					local32[local34] = (Class519) Class107.method18131(Class519.method30493(1543250623), arg0.method22644((byte) -33), -1915563430);
+					local32[local34] = (ScriptVarType) Class107.method18131(ScriptVarType.values(), arg0.method22644((byte) -33), -1915563430);
 				}
 				this.anObjectArrayArray1[local22] = Class166_Sub38.method16338(arg0, local32, -932100834);
-				this.aClass519ArrayArray1[local22] = local32;
+				this.aScriptVarTypeArrayArray1[local22] = local32;
 			}
 		} else if (arg1 == 4) {
 			this.anInt105 = arg0.method22608((short) 6058) * 586759731;
@@ -86,16 +86,16 @@ public final class Class30 implements Interface13, Interface5 {
 			@Pc(6) int local6 = arg0.method22425((short) 16384);
 			if (this.anObjectArrayArray1 == null) {
 				this.anObjectArrayArray1 = new Object[local6][];
-				this.aClass519ArrayArray1 = new Class519[local6][];
+				this.aScriptVarTypeArrayArray1 = new ScriptVarType[local6][];
 			}
 			for (@Pc(22) int local22 = arg0.method22425((short) 16384); local22 != 255; local22 = arg0.method22425((short) 16384)) {
 				@Pc(29) int local29 = arg0.method22425((short) 16384);
-				@Pc(32) Class519[] local32 = new Class519[local29];
+				@Pc(32) ScriptVarType[] local32 = new ScriptVarType[local29];
 				for (@Pc(34) int local34 = 0; local34 < local29; local34++) {
-					local32[local34] = (Class519) Class107.method18131(Class519.method30493(1860785111), arg0.method22644((byte) -58), -1915563430);
+					local32[local34] = (ScriptVarType) Class107.method18131(ScriptVarType.values(), arg0.method22644((byte) -58), -1915563430);
 				}
 				this.anObjectArrayArray1[local22] = Class166_Sub38.method16338(arg0, local32, -486098583);
-				this.aClass519ArrayArray1[local22] = local32;
+				this.aScriptVarTypeArrayArray1[local22] = local32;
 			}
 		} else if (arg1 == 4) {
 			this.anInt105 = arg0.method22608((short) -6368) * 586759731;
@@ -113,16 +113,16 @@ public final class Class30 implements Interface13, Interface5 {
 			@Pc(6) int local6 = arg0.method22425((short) 16384);
 			if (this.anObjectArrayArray1 == null) {
 				this.anObjectArrayArray1 = new Object[local6][];
-				this.aClass519ArrayArray1 = new Class519[local6][];
+				this.aScriptVarTypeArrayArray1 = new ScriptVarType[local6][];
 			}
 			for (@Pc(22) int local22 = arg0.method22425((short) 16384); local22 != 255; local22 = arg0.method22425((short) 16384)) {
 				@Pc(29) int local29 = arg0.method22425((short) 16384);
-				@Pc(32) Class519[] local32 = new Class519[local29];
+				@Pc(32) ScriptVarType[] local32 = new ScriptVarType[local29];
 				for (@Pc(34) int local34 = 0; local34 < local29; local34++) {
-					local32[local34] = (Class519) Class107.method18131(Class519.method30493(1688759182), arg0.method22644((byte) -119), -1915563430);
+					local32[local34] = (ScriptVarType) Class107.method18131(ScriptVarType.values(), arg0.method22644((byte) -119), -1915563430);
 				}
 				this.anObjectArrayArray1[local22] = Class166_Sub38.method16338(arg0, local32, -1452468992);
-				this.aClass519ArrayArray1[local22] = local32;
+				this.aScriptVarTypeArrayArray1[local22] = local32;
 			}
 		} else if (arg1 == 4) {
 			this.anInt105 = arg0.method22608((short) -9339) * 586759731;
@@ -218,16 +218,16 @@ public final class Class30 implements Interface13, Interface5 {
 			@Pc(6) int local6 = arg0.method22425((short) 16384);
 			if (this.anObjectArrayArray1 == null) {
 				this.anObjectArrayArray1 = new Object[local6][];
-				this.aClass519ArrayArray1 = new Class519[local6][];
+				this.aScriptVarTypeArrayArray1 = new ScriptVarType[local6][];
 			}
 			for (@Pc(22) int local22 = arg0.method22425((short) 16384); local22 != 255; local22 = arg0.method22425((short) 16384)) {
 				@Pc(29) int local29 = arg0.method22425((short) 16384);
-				@Pc(32) Class519[] local32 = new Class519[local29];
+				@Pc(32) ScriptVarType[] local32 = new ScriptVarType[local29];
 				for (@Pc(34) int local34 = 0; local34 < local29; local34++) {
-					local32[local34] = (Class519) Class107.method18131(Class519.method30493(1865591604), arg0.method22644((byte) -41), -1915563430);
+					local32[local34] = (ScriptVarType) Class107.method18131(ScriptVarType.values(), arg0.method22644((byte) -41), -1915563430);
 				}
 				this.anObjectArrayArray1[local22] = Class166_Sub38.method16338(arg0, local32, -1802627876);
-				this.aClass519ArrayArray1[local22] = local32;
+				this.aScriptVarTypeArrayArray1[local22] = local32;
 			}
 		} else if (arg1 == 4) {
 			this.anInt105 = arg0.method22608((short) -8336) * 586759731;
@@ -252,16 +252,16 @@ public final class Class30 implements Interface13, Interface5 {
 			@Pc(6) int local6 = arg0.method22425((short) 16384);
 			if (this.anObjectArrayArray1 == null) {
 				this.anObjectArrayArray1 = new Object[local6][];
-				this.aClass519ArrayArray1 = new Class519[local6][];
+				this.aScriptVarTypeArrayArray1 = new ScriptVarType[local6][];
 			}
 			for (@Pc(22) int local22 = arg0.method22425((short) 16384); local22 != 255; local22 = arg0.method22425((short) 16384)) {
 				@Pc(29) int local29 = arg0.method22425((short) 16384);
-				@Pc(32) Class519[] local32 = new Class519[local29];
+				@Pc(32) ScriptVarType[] local32 = new ScriptVarType[local29];
 				for (@Pc(34) int local34 = 0; local34 < local29; local34++) {
-					local32[local34] = (Class519) Class107.method18131(Class519.method30493(1507909282), arg0.method22644((byte) -83), -1915563430);
+					local32[local34] = (ScriptVarType) Class107.method18131(ScriptVarType.values(), arg0.method22644((byte) -83), -1915563430);
 				}
 				this.anObjectArrayArray1[local22] = Class166_Sub38.method16338(arg0, local32, -1626946471);
-				this.aClass519ArrayArray1[local22] = local32;
+				this.aScriptVarTypeArrayArray1[local22] = local32;
 			}
 		} else if (arg1 == 4) {
 			this.anInt105 = arg0.method22608((short) -6125) * 586759731;
@@ -274,16 +274,16 @@ public final class Class30 implements Interface13, Interface5 {
 			@Pc(6) int local6 = arg0.method22425((short) 16384);
 			if (this.anObjectArrayArray1 == null) {
 				this.anObjectArrayArray1 = new Object[local6][];
-				this.aClass519ArrayArray1 = new Class519[local6][];
+				this.aScriptVarTypeArrayArray1 = new ScriptVarType[local6][];
 			}
 			for (@Pc(22) int local22 = arg0.method22425((short) 16384); local22 != 255; local22 = arg0.method22425((short) 16384)) {
 				@Pc(29) int local29 = arg0.method22425((short) 16384);
-				@Pc(32) Class519[] local32 = new Class519[local29];
+				@Pc(32) ScriptVarType[] local32 = new ScriptVarType[local29];
 				for (@Pc(34) int local34 = 0; local34 < local29; local34++) {
-					local32[local34] = (Class519) Class107.method18131(Class519.method30493(1698160951), arg0.method22644((byte) -19), -1915563430);
+					local32[local34] = (ScriptVarType) Class107.method18131(ScriptVarType.values(), arg0.method22644((byte) -19), -1915563430);
 				}
 				this.anObjectArrayArray1[local22] = Class166_Sub38.method16338(arg0, local32, 712117700);
-				this.aClass519ArrayArray1[local22] = local32;
+				this.aScriptVarTypeArrayArray1[local22] = local32;
 			}
 		} else if (arg1 == 4) {
 			this.anInt105 = arg0.method22608((short) 1719) * 586759731;

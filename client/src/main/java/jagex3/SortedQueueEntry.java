@@ -8,7 +8,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!nl")
-public final class Class441 {
+public final class SortedQueueEntry {
 
 	@OriginalMember(owner = "client!nl", name = "bh", descriptor = "Lclient!cm;")
 	public static Class100 aClass100_44;
@@ -52,7 +52,7 @@ public final class Class441 {
 	}
 
 	@OriginalMember(owner = "client!nl", name = "<init>", descriptor = "(Ljava/lang/Object;I)V")
-	Class441(@OriginalArg(0) Object arg0, @OriginalArg(1) int arg1) {
+	SortedQueueEntry(@OriginalArg(0) Object arg0, @OriginalArg(1) int arg1) {
 		this.anObject18 = arg0;
 		this.anInt5046 = arg1 * 1240994129;
 	}

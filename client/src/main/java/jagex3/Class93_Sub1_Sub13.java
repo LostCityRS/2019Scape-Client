@@ -117,8 +117,8 @@ public final class Class93_Sub1_Sub13 extends Class93_Sub1 {
 			}
 			this.anIntArray259[arg1] = arg0.method22425((short) 16384);
 		} else if (Class560.aClass560_6 == arg2) {
-			@Pc(68) Class500 local68 = (Class500) Class107.method18131(Class500.method30340(-1706625330), arg0.method22425((short) 16384), -1915563430);
-			switch(local68.anInt5357 * -1217885029) {
+			@Pc(68) BaseVarType local68 = (BaseVarType) Class107.method18131(BaseVarType.values(), arg0.method22425((short) 16384), -1915563430);
+			switch(local68.ordinal * -1217885029) {
 				case 1:
 					if (this.anObjectArray5 == null) {
 						this.anObjectArray5 = new Object[local3];
@@ -288,8 +288,8 @@ public final class Class93_Sub1_Sub13 extends Class93_Sub1 {
 			}
 			this.anIntArray259[arg1] = arg0.method22425((short) 16384);
 		} else if (Class560.aClass560_6 == arg2) {
-			@Pc(68) Class500 local68 = (Class500) Class107.method18131(Class500.method30340(-1731000292), arg0.method22425((short) 16384), -1915563430);
-			switch(local68.anInt5357 * -1217885029) {
+			@Pc(68) BaseVarType local68 = (BaseVarType) Class107.method18131(BaseVarType.values(), arg0.method22425((short) 16384), -1915563430);
+			switch(local68.ordinal * -1217885029) {
 				case 1:
 					if (this.anObjectArray5 == null) {
 						this.anObjectArray5 = new Object[local3];
@@ -351,8 +351,8 @@ public final class Class93_Sub1_Sub13 extends Class93_Sub1 {
 			}
 			this.anIntArray259[arg1] = arg0.method22425((short) 16384);
 		} else if (Class560.aClass560_6 == arg2) {
-			@Pc(68) Class500 local68 = (Class500) Class107.method18131(Class500.method30340(-2066490338), arg0.method22425((short) 16384), -1915563430);
-			switch(local68.anInt5357 * -1217885029) {
+			@Pc(68) BaseVarType local68 = (BaseVarType) Class107.method18131(BaseVarType.values(), arg0.method22425((short) 16384), -1915563430);
+			switch(local68.ordinal * -1217885029) {
 				case 1:
 					if (this.anObjectArray5 == null) {
 						this.anObjectArray5 = new Object[local3];
@@ -414,8 +414,8 @@ public final class Class93_Sub1_Sub13 extends Class93_Sub1 {
 			}
 			this.anIntArray259[arg1] = arg0.method22425((short) 16384);
 		} else if (Class560.aClass560_6 == arg2) {
-			@Pc(68) Class500 local68 = (Class500) Class107.method18131(Class500.method30340(-1916976035), arg0.method22425((short) 16384), -1915563430);
-			switch(local68.anInt5357 * -1217885029) {
+			@Pc(68) BaseVarType local68 = (BaseVarType) Class107.method18131(BaseVarType.values(), arg0.method22425((short) 16384), -1915563430);
+			switch(local68.ordinal * -1217885029) {
 				case 1:
 					if (this.anObjectArray5 == null) {
 						this.anObjectArray5 = new Object[local3];

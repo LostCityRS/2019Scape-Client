@@ -130,7 +130,7 @@ public final class Class688 implements Interface13, Interface5 {
 		@Pc(35) float local35 = 1.0F - (float) ((100 - local5) * (100 - local5) * (100 - local5)) / 1000000.0F;
 		@Pc(188) int local188;
 		if (Class20.method376(2013206566) == 3) {
-			@Pc(45) Class93_Sub30 local45 = Class65.aClass123_Sub1_2.method8952((byte) -76).method21416((byte) 42);
+			@Pc(45) CoordFine local45 = Class65.aClass123_Sub1_2.method8952((byte) -76).method21416((byte) 42);
 			@Pc(49) Class611 local49 = client.aClass532_1.method30624(1876469160);
 			Class620.anInt5805 = ((int) ((double) Class65.aClass123_Sub1_2.method8961((byte) 122) * 2607.5945876176133D) & 0x3FFF) * -1151839067;
 			Class24.anInt82 = ((int) ((double) Class65.aClass123_Sub1_2.method8962((byte) -94) * -2607.5945876176133D) & 0x3FFF) * 1056124373;
@@ -155,7 +155,7 @@ public final class Class688 implements Interface13, Interface5 {
 			}
 			@Pc(240) int local240 = (int) client.aFloat253 + client.anInt3461 * 1018036723 & 0x3FFF;
 			@Pc(244) Class472 local244 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.method24241().aClass472_61;
-			Class716.method37057(Class72.anInt241 * -1022856553, Class305.method26894((int) local244.aFloat325, (int) local244.aFloat327, Class512.anInt5370 * 1177442423, (byte) -78) - client.anInt3484 * 1974760385, Class441.anInt5047 * -953396699, local201, local240, (local201 >> 3) * 3 + 600 << 2, arg0, (byte) -12);
+			Class716.method37057(Class72.anInt241 * -1022856553, Class305.method26894((int) local244.aFloat325, (int) local244.aFloat327, BaseVarTypeComponentHook.anInt5370 * 1177442423, (byte) -78) - client.anInt3484 * 1974760385, SortedQueueEntry.anInt5047 * -953396699, local201, local240, (local201 >> 3) * 3 + 600 << 2, arg0, (byte) -12);
 			Class163.anInt2002 = (int) (local35 * (float) (Class163.anInt2002 * -1331168249 - Class86.anInt264 * 1288101077) + (float) (Class86.anInt264 * 1288101077)) * 1636217271;
 			Class130_Sub2.anInt1117 = (int) (local35 * (float) (Class130_Sub2.anInt1117 * 1055108289 - Class508.anInt5365 * -313412555) + (float) (Class508.anInt5365 * -313412555)) * 1820517185;
 			Class270.anInt3925 = (int) ((float) (Class156.anInt1664 * 1602282841) + local35 * (float) (Class270.anInt3925 * 466086187 - Class156.anInt1664 * 1602282841)) * -967471741;

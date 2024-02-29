@@ -119,7 +119,7 @@ public final class Class25_Sub1 extends Class25 {
 		}
 		local3.method29651();
 		@Pc(93) Class124_Sub2 local93 = (Class124_Sub2) this.aClass123_16.method8952((byte) -119);
-		@Pc(97) Class93_Sub30 local97 = local93.method21416((byte) 6);
+		@Pc(97) CoordFine local97 = local93.method21416((byte) 6);
 		@Pc(101) Class472 local101 = local97.method13870(-442338112);
 		@Pc(109) Class472 local109 = Class472.method29710(0.0F, 0.0F, (float) (anInt2246 * -316778127));
 		local109.method29753(local3);
@@ -130,7 +130,7 @@ public final class Class25_Sub1 extends Class25 {
 		local129.aFloat326 *= -1.0F;
 		local101.method29724(local129);
 		this.method15984(local101, (byte) -106);
-		local93.method9297(new Class93_Sub30(local97.anInt1609 * -2022654167, (int) local101.aFloat325, (int) local101.aFloat326, (int) local101.aFloat327), -1049152339);
+		local93.method9297(new CoordFine(local97.anInt1609 * -2022654167, (int) local101.aFloat325, (int) local101.aFloat326, (int) local101.aFloat327), -1049152339);
 		anInt2244 = 0;
 		anInt2246 = 0;
 	}
@@ -194,7 +194,7 @@ public final class Class25_Sub1 extends Class25 {
 		}
 		local3.method29651();
 		@Pc(93) Class124_Sub2 local93 = (Class124_Sub2) this.aClass123_16.method8952((byte) -60);
-		@Pc(97) Class93_Sub30 local97 = local93.method21416((byte) 100);
+		@Pc(97) CoordFine local97 = local93.method21416((byte) 100);
 		@Pc(101) Class472 local101 = local97.method13870(-201057327);
 		@Pc(109) Class472 local109 = Class472.method29710(0.0F, 0.0F, (float) (anInt2246 * -316778127));
 		local109.method29753(local3);
@@ -205,7 +205,7 @@ public final class Class25_Sub1 extends Class25 {
 		local129.aFloat326 *= -1.0F;
 		local101.method29724(local129);
 		this.method15984(local101, (byte) -44);
-		local93.method9297(new Class93_Sub30(local97.anInt1609 * -2022654167, (int) local101.aFloat325, (int) local101.aFloat326, (int) local101.aFloat327), -1049152339);
+		local93.method9297(new CoordFine(local97.anInt1609 * -2022654167, (int) local101.aFloat325, (int) local101.aFloat326, (int) local101.aFloat327), -1049152339);
 		anInt2244 = 0;
 		anInt2246 = 0;
 	}
@@ -288,7 +288,7 @@ public final class Class25_Sub1 extends Class25 {
 		}
 		local3.method29651();
 		@Pc(93) Class124_Sub2 local93 = (Class124_Sub2) this.aClass123_16.method8952((byte) -100);
-		@Pc(97) Class93_Sub30 local97 = local93.method21416((byte) 94);
+		@Pc(97) CoordFine local97 = local93.method21416((byte) 94);
 		@Pc(101) Class472 local101 = local97.method13870(-1340290272);
 		@Pc(109) Class472 local109 = Class472.method29710(0.0F, 0.0F, (float) (anInt2246 * -316778127));
 		local109.method29753(local3);
@@ -299,7 +299,7 @@ public final class Class25_Sub1 extends Class25 {
 		local129.aFloat326 *= -1.0F;
 		local101.method29724(local129);
 		this.method15984(local101, (byte) -98);
-		local93.method9297(new Class93_Sub30(local97.anInt1609 * -2022654167, (int) local101.aFloat325, (int) local101.aFloat326, (int) local101.aFloat327), -1049152339);
+		local93.method9297(new CoordFine(local97.anInt1609 * -2022654167, (int) local101.aFloat325, (int) local101.aFloat326, (int) local101.aFloat327), -1049152339);
 		anInt2244 = 0;
 		anInt2246 = 0;
 	}

@@ -160,7 +160,7 @@ public final class Class124_Sub1 extends Class124 {
 		if (!this.method21413(-338882669) || !this.aClass123_13.method8973(-670900429) && !this.aClass123_13.method8974(427282430)) {
 			return;
 		}
-		@Pc(18) Class93_Sub30 local18 = this.anInterface29_1.method19950((byte) 99);
+		@Pc(18) CoordFine local18 = this.anInterface29_1.method19950((byte) 99);
 		this.anInt1016 = local18.anInt1609 * -157762799;
 		@Pc(29) int local29 = this.anInt1016 * 526766745;
 		@Pc(31) boolean local31 = true;
@@ -325,7 +325,7 @@ public final class Class124_Sub1 extends Class124 {
 		if (!this.method21413(-1146669639) || !this.aClass123_13.method8973(-841598397) && !this.aClass123_13.method8974(-2014046209)) {
 			return;
 		}
-		@Pc(18) Class93_Sub30 local18 = this.anInterface29_1.method19950((byte) 29);
+		@Pc(18) CoordFine local18 = this.anInterface29_1.method19950((byte) 29);
 		this.anInt1016 = local18.anInt1609 * -157762799;
 		@Pc(29) int local29 = this.anInt1016 * 526766745;
 		@Pc(31) boolean local31 = true;
@@ -397,9 +397,9 @@ public final class Class124_Sub1 extends Class124 {
 
 	@OriginalMember(owner = "client!ahd", name = "c", descriptor = "()Lclient!akt;")
 	@Override
-	public Class93_Sub30 method21423() {
+	public CoordFine method21423() {
 		@Pc(3) Class472 local3 = this.method21414((byte) 52);
-		@Pc(20) Class93_Sub30 local20 = new Class93_Sub30(this.anInt1016 * 526766745, (int) local3.aFloat325, (int) local3.aFloat326, (int) local3.aFloat327);
+		@Pc(20) CoordFine local20 = new CoordFine(this.anInt1016 * 526766745, (int) local3.aFloat325, (int) local3.aFloat326, (int) local3.aFloat327);
 		local3.method29713();
 		return local20;
 	}
@@ -415,18 +415,18 @@ public final class Class124_Sub1 extends Class124 {
 
 	@OriginalMember(owner = "client!ahd", name = "v", descriptor = "()Lclient!akt;")
 	@Override
-	public Class93_Sub30 method21424() {
+	public CoordFine method21424() {
 		@Pc(3) Class472 local3 = this.method21414((byte) 111);
-		@Pc(20) Class93_Sub30 local20 = new Class93_Sub30(this.anInt1016 * 526766745, (int) local3.aFloat325, (int) local3.aFloat326, (int) local3.aFloat327);
+		@Pc(20) CoordFine local20 = new CoordFine(this.anInt1016 * 526766745, (int) local3.aFloat325, (int) local3.aFloat326, (int) local3.aFloat327);
 		local3.method29713();
 		return local20;
 	}
 
 	@OriginalMember(owner = "client!ahd", name = "o", descriptor = "()Lclient!akt;")
 	@Override
-	public Class93_Sub30 method21422() {
+	public CoordFine method21422() {
 		@Pc(3) Class472 local3 = this.method21414((byte) 123);
-		@Pc(20) Class93_Sub30 local20 = new Class93_Sub30(this.anInt1016 * 526766745, (int) local3.aFloat325, (int) local3.aFloat326, (int) local3.aFloat327);
+		@Pc(20) CoordFine local20 = new CoordFine(this.anInt1016 * 526766745, (int) local3.aFloat325, (int) local3.aFloat326, (int) local3.aFloat327);
 		local3.method29713();
 		return local20;
 	}
@@ -563,9 +563,9 @@ public final class Class124_Sub1 extends Class124 {
 
 	@OriginalMember(owner = "client!ahd", name = "f", descriptor = "(B)Lclient!akt;")
 	@Override
-	public Class93_Sub30 method21416(@OriginalArg(0) byte arg0) {
+	public CoordFine method21416(@OriginalArg(0) byte arg0) {
 		@Pc(3) Class472 local3 = this.method21414((byte) 40);
-		@Pc(20) Class93_Sub30 local20 = new Class93_Sub30(this.anInt1016 * 526766745, (int) local3.aFloat325, (int) local3.aFloat326, (int) local3.aFloat327);
+		@Pc(20) CoordFine local20 = new CoordFine(this.anInt1016 * 526766745, (int) local3.aFloat325, (int) local3.aFloat326, (int) local3.aFloat327);
 		local3.method29713();
 		return local20;
 	}
@@ -629,7 +629,7 @@ public final class Class124_Sub1 extends Class124 {
 		if (!this.method21413(-811652722) || !this.aClass123_13.method8973(1469855959) && !this.aClass123_13.method8974(-343419890)) {
 			return;
 		}
-		@Pc(18) Class93_Sub30 local18 = this.anInterface29_1.method19950((byte) 79);
+		@Pc(18) CoordFine local18 = this.anInterface29_1.method19950((byte) 79);
 		this.anInt1016 = local18.anInt1609 * -157762799;
 		@Pc(29) int local29 = this.anInt1016 * 526766745;
 		@Pc(31) boolean local31 = true;
@@ -686,7 +686,7 @@ public final class Class124_Sub1 extends Class124 {
 		if (!this.method21413(1441795224) || !this.aClass123_13.method8973(-957457219) && !this.aClass123_13.method8974(663285406)) {
 			return;
 		}
-		@Pc(18) Class93_Sub30 local18 = this.anInterface29_1.method19950((byte) 55);
+		@Pc(18) CoordFine local18 = this.anInterface29_1.method19950((byte) 55);
 		this.anInt1016 = local18.anInt1609 * -157762799;
 		@Pc(29) int local29 = this.anInt1016 * 526766745;
 		@Pc(31) boolean local31 = true;
@@ -743,7 +743,7 @@ public final class Class124_Sub1 extends Class124 {
 		if (!this.method21413(1105318035) || !this.aClass123_13.method8973(-1658735763) && !this.aClass123_13.method8974(1786354635)) {
 			return;
 		}
-		@Pc(18) Class93_Sub30 local18 = this.anInterface29_1.method19950((byte) 50);
+		@Pc(18) CoordFine local18 = this.anInterface29_1.method19950((byte) 50);
 		this.anInt1016 = local18.anInt1609 * -157762799;
 		@Pc(29) int local29 = this.anInt1016 * 526766745;
 		@Pc(31) boolean local31 = true;
@@ -893,9 +893,9 @@ public final class Class124_Sub1 extends Class124 {
 
 	@OriginalMember(owner = "client!ahd", name = "r", descriptor = "()Lclient!akt;")
 	@Override
-	public Class93_Sub30 method21432() {
+	public CoordFine method21432() {
 		@Pc(3) Class472 local3 = this.method21414((byte) 63);
-		@Pc(20) Class93_Sub30 local20 = new Class93_Sub30(this.anInt1016 * 526766745, (int) local3.aFloat325, (int) local3.aFloat326, (int) local3.aFloat327);
+		@Pc(20) CoordFine local20 = new CoordFine(this.anInt1016 * 526766745, (int) local3.aFloat325, (int) local3.aFloat326, (int) local3.aFloat327);
 		local3.method29713();
 		return local20;
 	}

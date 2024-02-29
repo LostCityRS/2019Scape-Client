@@ -951,7 +951,7 @@ public final class Class687 {
 				Class667.method33094(arg1, -1623786571);
 				return;
 			case 6:
-				Class512.method30442(arg1, -2093066835);
+				BaseVarTypeComponentHook.method30442(arg1, -2093066835);
 				return;
 			case 7:
 				Class498.method30319(arg1, 1393749015);
@@ -1032,7 +1032,7 @@ public final class Class687 {
 				Class379.method28278(arg1, -2076015194);
 				return;
 			case 33:
-				Class515.method30457(arg1, -2109248130);
+				BaseVarTypeLong.method30457(arg1, -2109248130);
 				return;
 			case 34:
 				Class157.method14269(arg1, (byte) 1);
@@ -1152,7 +1152,7 @@ public final class Class687 {
 				Class351.method27739(arg1, (byte) 23);
 				return;
 			case 73:
-				Class504.method30379(arg1, 509346303);
+				BaseVarTypeString.method30379(arg1, 509346303);
 				return;
 			case 74:
 				Class342.method27601(arg1, -72400630);
@@ -1360,7 +1360,7 @@ public final class Class687 {
 				Class260.method26248(arg1, 268193368);
 				return;
 			case 142:
-				Class505.method30386(arg1, (byte) 1);
+				BaseVarTypeInteger.method30386(arg1, (byte) 1);
 				return;
 			case 143:
 				Class362.method28027(arg1, 307065723);
@@ -1450,7 +1450,7 @@ public final class Class687 {
 				Class229.method25716(arg1, 603066629);
 				return;
 			case 172:
-				Class519.method30504(arg1, 788791633);
+				ScriptVarType.method30504(arg1, 788791633);
 				return;
 			case 173:
 				Class277.method26452(arg1, (byte) 104);
@@ -1459,7 +1459,7 @@ public final class Class687 {
 				Class173.method23813(arg1, 1167142364);
 				return;
 			case 175:
-				Class512.method30440(arg1, (byte) 20);
+				BaseVarTypeComponentHook.method30440(arg1, (byte) 20);
 				return;
 			case 176:
 				Class577.method31539(arg1, -597720792);
@@ -1555,7 +1555,7 @@ public final class Class687 {
 				Class691.method36774(arg1, -1937050761);
 				return;
 			case 207:
-				Class504.method30381(arg1, 2005278398);
+				BaseVarTypeString.method30381(arg1, 2005278398);
 				return;
 			case 208:
 				Class593.method31900(arg1, 1298048234);
@@ -1726,7 +1726,7 @@ public final class Class687 {
 				Class573.method31525(arg1, 1698599639);
 				return;
 			case 266:
-				Class500.method30348(arg1, (byte) 0);
+				BaseVarType.method30348(arg1, (byte) 0);
 				return;
 			case 267:
 				Class655.method32924(arg1, (byte) 105);
@@ -1840,7 +1840,7 @@ public final class Class687 {
 				Class267.method26342(arg1, -1576319000);
 				return;
 			case 304:
-				Class321.method27335(arg1, (byte) 81);
+				ComponentHook.method27335(arg1, (byte) 81);
 				return;
 			case 305:
 				Class149_Sub2.method11787(arg1, 176185885);
@@ -1885,7 +1885,7 @@ public final class Class687 {
 				Class123.method9087(arg1, 661990032);
 				return;
 			case 319:
-				Class505.method30387(arg1, -237817219);
+				BaseVarTypeInteger.method30387(arg1, -237817219);
 				return;
 			case 320:
 				Class121.method8704(arg1, (byte) 25);
@@ -2194,7 +2194,7 @@ public final class Class687 {
 				Class267.method26338(arg1, 1437995396);
 				return;
 			case 423:
-				Class500.method30345(arg1, (short) 255);
+				BaseVarType.method30345(arg1, (short) 255);
 				return;
 			case 424:
 				Class672.method33261(arg1, -2093089058);
@@ -2527,7 +2527,7 @@ public final class Class687 {
 				Class518.method30485(arg1, 1114436636);
 				return;
 			case 534:
-				Class515.method30458(arg1, (byte) 103);
+				BaseVarTypeLong.method30458(arg1, (byte) 103);
 				return;
 			case 535:
 				Class345.method27656(arg1, 1139930968);
@@ -2611,7 +2611,7 @@ public final class Class687 {
 				Class229.method25711(arg1, (byte) -7);
 				return;
 			case 562:
-				Class519.method30503(arg1, (byte) -94);
+				ScriptVarType.method30503(arg1, (byte) -94);
 				return;
 			case 563:
 				Class378.method28251(arg1, -650894250);
@@ -2725,7 +2725,7 @@ public final class Class687 {
 				Class138.method11536(arg1, 2096990245);
 				return;
 			case 600:
-				Class505.method30390(arg1, (byte) 1);
+				BaseVarTypeInteger.method30390(arg1, (byte) 1);
 				return;
 			case 601:
 				Class584.method31608(arg1, -911350789);
@@ -2737,7 +2737,7 @@ public final class Class687 {
 				Class495.method30209(arg1, -146029484);
 				return;
 			case 604:
-				Class504.method30378(arg1, 1973499274);
+				BaseVarTypeString.method30378(arg1, 1973499274);
 				return;
 			case 605:
 				Class110_Sub19.method8513(arg1, 279045325);
@@ -2767,7 +2767,7 @@ public final class Class687 {
 				Class474.method29844(arg1, (byte) 40);
 				return;
 			case 614:
-				Class519.method30502(arg1, 1465242253);
+				ScriptVarType.method30502(arg1, 1465242253);
 				return;
 			case 615:
 				Class116.method8484(arg1, -572219930);
@@ -2989,7 +2989,7 @@ public final class Class687 {
 				Class602.method32047(arg1, 977193490);
 				return;
 			case 688:
-				Class505.method30391(arg1, 1791994475);
+				BaseVarTypeInteger.method30391(arg1, 1791994475);
 				return;
 			case 689:
 				Class437.method28998(arg1, -1914307704);
@@ -3064,7 +3064,7 @@ public final class Class687 {
 				Class31.method637(arg1, 1086107878);
 				return;
 			case 713:
-				Class512.method30439(arg1, 1492449783);
+				BaseVarTypeComponentHook.method30439(arg1, 1492449783);
 				return;
 			case 714:
 				Class175.method24388(arg1, -2007637553);
@@ -3487,7 +3487,7 @@ public final class Class687 {
 				Class166_Sub44.method16462(arg1, -1445626955);
 				return;
 			case 854:
-				Class515.method30454(arg1, 2026584716);
+				BaseVarTypeLong.method30454(arg1, 2026584716);
 				return;
 			case 855:
 				Class129_Sub1.method9405(arg1, 2062334095);
@@ -3520,7 +3520,7 @@ public final class Class687 {
 				Class295.method26696(arg1, -355636466);
 				return;
 			case 865:
-				Class504.method30380(arg1, (byte) -26);
+				BaseVarTypeString.method30380(arg1, (byte) -26);
 				return;
 			case 866:
 				Class723.method37123(arg1, 1993192043);
@@ -3550,7 +3550,7 @@ public final class Class687 {
 				Class445.method29071(arg1, -1127308882);
 				return;
 			case 875:
-				Class500.method30346(arg1, -1620226964);
+				BaseVarType.method30346(arg1, -1620226964);
 				return;
 			case 876:
 				Class613.method32240(arg1, -1982018359);
@@ -3748,7 +3748,7 @@ public final class Class687 {
 				Class392.method28477(arg1, 348077053);
 				return;
 			case 941:
-				Class505.method30388(arg1, 1129614666);
+				BaseVarTypeInteger.method30388(arg1, 1129614666);
 				return;
 			case 942:
 				Class633.method32490(arg1, (short) 255);
@@ -3811,7 +3811,7 @@ public final class Class687 {
 				Class339.method27577(arg1, 158249099);
 				return;
 			case 962:
-				Class512.method30443(arg1, -697236714);
+				BaseVarTypeComponentHook.method30443(arg1, -697236714);
 				return;
 			case 963:
 				Class579.method31551(arg1, (byte) -97);
@@ -4096,7 +4096,7 @@ public final class Class687 {
 				Class538.method30965(arg1, 750728612);
 				return;
 			case 1057:
-				Class515.method30455(arg1, 854874319);
+				BaseVarTypeLong.method30455(arg1, 854874319);
 				return;
 			case 1058:
 				Class558.method31292(arg1, 33694227);
@@ -4135,7 +4135,7 @@ public final class Class687 {
 				Class374.method28211(arg1, 918365544);
 				return;
 			case 1070:
-				Class519.method30505(arg1, (short) -26254);
+				ScriptVarType.method30505(arg1, (short) -26254);
 				return;
 			case 1071:
 				Class112.method23765(arg1, (byte) -11);
@@ -4413,7 +4413,7 @@ public final class Class687 {
 				Class613.method32241(arg1, (byte) -56);
 				return;
 			case 1163:
-				Class510.method30427(arg1, (byte) 12);
+				BaseVarTypeCoordFine.method30427(arg1, (byte) 12);
 				return;
 			case 1164:
 				Class124.method21441(arg1, 1049366257);
@@ -4647,7 +4647,7 @@ public final class Class687 {
 				Class679.method33417(arg1, 836108988);
 				return;
 			case 1241:
-				Class441.method29036(arg1, (byte) -42);
+				SortedQueueEntry.method29036(arg1, (byte) -42);
 				return;
 			case 1242:
 				Class244.method25987(arg1, -1378041921);
@@ -4914,7 +4914,7 @@ public final class Class687 {
 				Class309.method26921(arg1, 610403369);
 				return;
 			case 1330:
-				Class510.method30428(arg1, (byte) 64);
+				BaseVarTypeCoordFine.method30428(arg1, (byte) 64);
 				return;
 			case 1331:
 				Class604.method32072(arg1, -759310076);
@@ -4989,7 +4989,7 @@ public final class Class687 {
 				Class359.method27968(arg1, (byte) 63);
 				return;
 			case 1355:
-				Class441.method29035(arg1, 1061191265);
+				SortedQueueEntry.method29035(arg1, 1061191265);
 				return;
 			case 1356:
 				Class123_Sub1.method9093(arg1, (short) 785);
@@ -5109,7 +5109,7 @@ public final class Class687 {
 				Class702.method36902(arg1, (byte) 50);
 				return;
 			case 1395:
-				Class505.method30389(arg1, 508452376);
+				BaseVarTypeInteger.method30389(arg1, 508452376);
 				return;
 			case 1396:
 				Class286.method26624(arg1, -1888761566);
@@ -5243,7 +5243,7 @@ public final class Class687 {
 				Class667.method33094(arg1, -1695575609);
 				return;
 			case 6:
-				Class512.method30442(arg1, -1434269851);
+				BaseVarTypeComponentHook.method30442(arg1, -1434269851);
 				return;
 			case 7:
 				Class498.method30319(arg1, 912708374);
@@ -5324,7 +5324,7 @@ public final class Class687 {
 				Class379.method28278(arg1, -2109140040);
 				return;
 			case 33:
-				Class515.method30457(arg1, -2048151964);
+				BaseVarTypeLong.method30457(arg1, -2048151964);
 				return;
 			case 34:
 				Class157.method14269(arg1, (byte) 1);
@@ -5444,7 +5444,7 @@ public final class Class687 {
 				Class351.method27739(arg1, (byte) 97);
 				return;
 			case 73:
-				Class504.method30379(arg1, 30924415);
+				BaseVarTypeString.method30379(arg1, 30924415);
 				return;
 			case 74:
 				Class342.method27601(arg1, -1452623713);
@@ -5652,7 +5652,7 @@ public final class Class687 {
 				Class260.method26248(arg1, -1710172627);
 				return;
 			case 142:
-				Class505.method30386(arg1, (byte) 1);
+				BaseVarTypeInteger.method30386(arg1, (byte) 1);
 				return;
 			case 143:
 				Class362.method28027(arg1, 1950118798);
@@ -5742,7 +5742,7 @@ public final class Class687 {
 				Class229.method25716(arg1, 180974840);
 				return;
 			case 172:
-				Class519.method30504(arg1, 1203766663);
+				ScriptVarType.method30504(arg1, 1203766663);
 				return;
 			case 173:
 				Class277.method26452(arg1, (byte) 0);
@@ -5751,7 +5751,7 @@ public final class Class687 {
 				Class173.method23813(arg1, 1501505637);
 				return;
 			case 175:
-				Class512.method30440(arg1, (byte) -90);
+				BaseVarTypeComponentHook.method30440(arg1, (byte) -90);
 				return;
 			case 176:
 				Class577.method31539(arg1, -597720792);
@@ -5847,7 +5847,7 @@ public final class Class687 {
 				Class691.method36774(arg1, -2133161404);
 				return;
 			case 207:
-				Class504.method30381(arg1, 926806801);
+				BaseVarTypeString.method30381(arg1, 926806801);
 				return;
 			case 208:
 				Class593.method31900(arg1, 83647627);
@@ -6018,7 +6018,7 @@ public final class Class687 {
 				Class573.method31525(arg1, 1918598106);
 				return;
 			case 266:
-				Class500.method30348(arg1, (byte) 0);
+				BaseVarType.method30348(arg1, (byte) 0);
 				return;
 			case 267:
 				Class655.method32924(arg1, (byte) 10);
@@ -6132,7 +6132,7 @@ public final class Class687 {
 				Class267.method26342(arg1, -1770882268);
 				return;
 			case 304:
-				Class321.method27335(arg1, (byte) 0);
+				ComponentHook.method27335(arg1, (byte) 0);
 				return;
 			case 305:
 				Class149_Sub2.method11787(arg1, 1564066784);
@@ -6177,7 +6177,7 @@ public final class Class687 {
 				Class123.method9087(arg1, -1030672280);
 				return;
 			case 319:
-				Class505.method30387(arg1, 516613589);
+				BaseVarTypeInteger.method30387(arg1, 516613589);
 				return;
 			case 320:
 				Class121.method8704(arg1, (byte) -83);
@@ -6486,7 +6486,7 @@ public final class Class687 {
 				Class267.method26338(arg1, 1460780769);
 				return;
 			case 423:
-				Class500.method30345(arg1, (short) 255);
+				BaseVarType.method30345(arg1, (short) 255);
 				return;
 			case 424:
 				Class672.method33261(arg1, -945680475);
@@ -6819,7 +6819,7 @@ public final class Class687 {
 				Class518.method30485(arg1, 2140812376);
 				return;
 			case 534:
-				Class515.method30458(arg1, (byte) 27);
+				BaseVarTypeLong.method30458(arg1, (byte) 27);
 				return;
 			case 535:
 				Class345.method27656(arg1, 249650570);
@@ -6903,7 +6903,7 @@ public final class Class687 {
 				Class229.method25711(arg1, (byte) 9);
 				return;
 			case 562:
-				Class519.method30503(arg1, (byte) -128);
+				ScriptVarType.method30503(arg1, (byte) -128);
 				return;
 			case 563:
 				Class378.method28251(arg1, 943317192);
@@ -7017,7 +7017,7 @@ public final class Class687 {
 				Class138.method11536(arg1, -906899126);
 				return;
 			case 600:
-				Class505.method30390(arg1, (byte) 1);
+				BaseVarTypeInteger.method30390(arg1, (byte) 1);
 				return;
 			case 601:
 				Class584.method31608(arg1, -48824655);
@@ -7029,7 +7029,7 @@ public final class Class687 {
 				Class495.method30209(arg1, 367595812);
 				return;
 			case 604:
-				Class504.method30378(arg1, 767580371);
+				BaseVarTypeString.method30378(arg1, 767580371);
 				return;
 			case 605:
 				Class110_Sub19.method8513(arg1, 1596579780);
@@ -7059,7 +7059,7 @@ public final class Class687 {
 				Class474.method29844(arg1, (byte) 53);
 				return;
 			case 614:
-				Class519.method30502(arg1, 1465242253);
+				ScriptVarType.method30502(arg1, 1465242253);
 				return;
 			case 615:
 				Class116.method8484(arg1, 1379046904);
@@ -7281,7 +7281,7 @@ public final class Class687 {
 				Class602.method32047(arg1, 977193490);
 				return;
 			case 688:
-				Class505.method30391(arg1, 1791994475);
+				BaseVarTypeInteger.method30391(arg1, 1791994475);
 				return;
 			case 689:
 				Class437.method28998(arg1, -1295076889);
@@ -7356,7 +7356,7 @@ public final class Class687 {
 				Class31.method637(arg1, -1200856371);
 				return;
 			case 713:
-				Class512.method30439(arg1, 1980834784);
+				BaseVarTypeComponentHook.method30439(arg1, 1980834784);
 				return;
 			case 714:
 				Class175.method24388(arg1, -2016725594);
@@ -7779,7 +7779,7 @@ public final class Class687 {
 				Class166_Sub44.method16462(arg1, -1445626955);
 				return;
 			case 854:
-				Class515.method30454(arg1, 2136670175);
+				BaseVarTypeLong.method30454(arg1, 2136670175);
 				return;
 			case 855:
 				Class129_Sub1.method9405(arg1, 1960166942);
@@ -7812,7 +7812,7 @@ public final class Class687 {
 				Class295.method26696(arg1, -1821088594);
 				return;
 			case 865:
-				Class504.method30380(arg1, (byte) 94);
+				BaseVarTypeString.method30380(arg1, (byte) 94);
 				return;
 			case 866:
 				Class723.method37123(arg1, -1437898959);
@@ -7842,7 +7842,7 @@ public final class Class687 {
 				Class445.method29071(arg1, 1265860281);
 				return;
 			case 875:
-				Class500.method30346(arg1, -1728909191);
+				BaseVarType.method30346(arg1, -1728909191);
 				return;
 			case 876:
 				Class613.method32240(arg1, -1935425836);
@@ -8040,7 +8040,7 @@ public final class Class687 {
 				Class392.method28477(arg1, 348077053);
 				return;
 			case 941:
-				Class505.method30388(arg1, -1604912258);
+				BaseVarTypeInteger.method30388(arg1, -1604912258);
 				return;
 			case 942:
 				Class633.method32490(arg1, (short) 255);
@@ -8103,7 +8103,7 @@ public final class Class687 {
 				Class339.method27577(arg1, 1096783003);
 				return;
 			case 962:
-				Class512.method30443(arg1, -697236714);
+				BaseVarTypeComponentHook.method30443(arg1, -697236714);
 				return;
 			case 963:
 				Class579.method31551(arg1, (byte) -32);
@@ -8388,7 +8388,7 @@ public final class Class687 {
 				Class538.method30965(arg1, 778422812);
 				return;
 			case 1057:
-				Class515.method30455(arg1, 854874319);
+				BaseVarTypeLong.method30455(arg1, 854874319);
 				return;
 			case 1058:
 				Class558.method31292(arg1, 548792155);
@@ -8427,7 +8427,7 @@ public final class Class687 {
 				Class374.method28211(arg1, 1010725921);
 				return;
 			case 1070:
-				Class519.method30505(arg1, (short) -30521);
+				ScriptVarType.method30505(arg1, (short) -30521);
 				return;
 			case 1071:
 				Class112.method23765(arg1, (byte) -20);
@@ -8705,7 +8705,7 @@ public final class Class687 {
 				Class613.method32241(arg1, (byte) -57);
 				return;
 			case 1163:
-				Class510.method30427(arg1, (byte) 12);
+				BaseVarTypeCoordFine.method30427(arg1, (byte) 12);
 				return;
 			case 1164:
 				Class124.method21441(arg1, 1049366257);
@@ -8939,7 +8939,7 @@ public final class Class687 {
 				Class679.method33417(arg1, 836108988);
 				return;
 			case 1241:
-				Class441.method29036(arg1, (byte) -57);
+				SortedQueueEntry.method29036(arg1, (byte) -57);
 				return;
 			case 1242:
 				Class244.method25987(arg1, 110485621);
@@ -9206,7 +9206,7 @@ public final class Class687 {
 				Class309.method26921(arg1, 365263573);
 				return;
 			case 1330:
-				Class510.method30428(arg1, (byte) 64);
+				BaseVarTypeCoordFine.method30428(arg1, (byte) 64);
 				return;
 			case 1331:
 				Class604.method32072(arg1, -1546408898);
@@ -9281,7 +9281,7 @@ public final class Class687 {
 				Class359.method27968(arg1, (byte) 63);
 				return;
 			case 1355:
-				Class441.method29035(arg1, 712720970);
+				SortedQueueEntry.method29035(arg1, 712720970);
 				return;
 			case 1356:
 				Class123_Sub1.method9093(arg1, (short) 785);
@@ -9401,7 +9401,7 @@ public final class Class687 {
 				Class702.method36902(arg1, (byte) 50);
 				return;
 			case 1395:
-				Class505.method30389(arg1, 508452376);
+				BaseVarTypeInteger.method30389(arg1, 508452376);
 				return;
 			case 1396:
 				Class286.method26624(arg1, 1978263052);
@@ -9552,12 +9552,12 @@ public final class Class687 {
 	static void method33721(@OriginalArg(0) Class681 arg0) {
 		@Pc(9) Class108 local9 = (Class108) arg0.aClass93_Sub1_Sub13_1.anObjectArray5[arg0.anInt6050 * -709694321];
 		@Pc(31) Interface20 local31 = (Interface20) (arg0.anIntArray522[arg0.anInt6050 * -709694321] == 0 ? arg0.aMap26.get(local9.aClass138_6) : arg0.aMap25.get(local9.aClass138_6));
-		@Pc(36) Class500 local36 = local9.aClass519_6.method30492((byte) 36);
-		if (local36 == Class500.aClass500_6) {
+		@Pc(36) BaseVarType local36 = local9.aScriptVarType_6.getBaseVarType();
+		if (local36 == BaseVarType.INTEGER) {
 			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local31.method33636(local9, -1451550270);
-		} else if (local36 == Class500.aClass500_3) {
+		} else if (local36 == BaseVarType.LONG) {
 			arg0.aLongArray27[(arg0.anInt6055 += -1364417339) * -2000995827 - 1] = local31.method33646(local9, 1525873300);
-		} else if (local36 == Class500.aClass500_2) {
+		} else if (local36 == BaseVarType.STRING) {
 			try {
 				@Pc(89) String local89 = (String) local31.method33648(local9, (byte) 123);
 				if (local89 == null) {
@@ -9576,12 +9576,12 @@ public final class Class687 {
 	static void method33722(@OriginalArg(0) Class681 arg0) {
 		@Pc(9) Class108 local9 = (Class108) arg0.aClass93_Sub1_Sub13_1.anObjectArray5[arg0.anInt6050 * -709694321];
 		@Pc(31) Interface20 local31 = (Interface20) (arg0.anIntArray522[arg0.anInt6050 * -709694321] == 0 ? arg0.aMap26.get(local9.aClass138_6) : arg0.aMap25.get(local9.aClass138_6));
-		@Pc(36) Class500 local36 = local9.aClass519_6.method30492((byte) 36);
-		if (local36 == Class500.aClass500_6) {
+		@Pc(36) BaseVarType local36 = local9.aScriptVarType_6.getBaseVarType();
+		if (local36 == BaseVarType.INTEGER) {
 			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local31.method33636(local9, -4838816);
-		} else if (local36 == Class500.aClass500_3) {
+		} else if (local36 == BaseVarType.LONG) {
 			arg0.aLongArray27[(arg0.anInt6055 += -1364417339) * -2000995827 - 1] = local31.method33646(local9, 1354916658);
-		} else if (local36 == Class500.aClass500_2) {
+		} else if (local36 == BaseVarType.STRING) {
 			try {
 				@Pc(89) String local89 = (String) local31.method33648(local9, (byte) 15);
 				if (local89 == null) {
@@ -9600,12 +9600,12 @@ public final class Class687 {
 	static void method33723(@OriginalArg(0) Class681 arg0) {
 		@Pc(9) Class108 local9 = (Class108) arg0.aClass93_Sub1_Sub13_1.anObjectArray5[arg0.anInt6050 * -709694321];
 		@Pc(31) Interface20 local31 = (Interface20) (arg0.anIntArray522[arg0.anInt6050 * -709694321] == 0 ? arg0.aMap26.get(local9.aClass138_6) : arg0.aMap25.get(local9.aClass138_6));
-		@Pc(36) Class500 local36 = local9.aClass519_6.method30492((byte) 36);
-		if (local36 == Class500.aClass500_6) {
+		@Pc(36) BaseVarType local36 = local9.aScriptVarType_6.getBaseVarType();
+		if (local36 == BaseVarType.INTEGER) {
 			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local31.method33636(local9, -1527979215);
-		} else if (local36 == Class500.aClass500_3) {
+		} else if (local36 == BaseVarType.LONG) {
 			arg0.aLongArray27[(arg0.anInt6055 += -1364417339) * -2000995827 - 1] = local31.method33646(local9, 1980956159);
-		} else if (local36 == Class500.aClass500_2) {
+		} else if (local36 == BaseVarType.STRING) {
 			try {
 				@Pc(89) String local89 = (String) local31.method33648(local9, (byte) 97);
 				if (local89 == null) {
@@ -10051,7 +10051,7 @@ public final class Class687 {
 		}
 		arg0.anIntArray520[local9] = local32;
 		@Pc(48) byte local48 = -1;
-		if (local19 == Class519.aClass519_88.method37101()) {
+		if (local19 == ScriptVarType.INT.getId()) {
 			local48 = 0;
 		}
 		for (@Pc(56) int local56 = 0; local56 < local32; local56++) {
@@ -10116,7 +10116,7 @@ public final class Class687 {
 
 	@OriginalMember(owner = "client!ym", name = "dcf", descriptor = "(Lclient!yf;)V")
 	static void method33775(@OriginalArg(0) Class681 arg0) {
-		@Pc(13) Class93_Sub30 local13 = (Class93_Sub30) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
+		@Pc(13) CoordFine local13 = (CoordFine) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local13.anInt1612 * 671628745;
 	}
 
@@ -11262,7 +11262,7 @@ public final class Class687 {
 
 	@OriginalMember(owner = "client!ym", name = "dkk", descriptor = "(Lclient!yf;)V")
 	static void method33897(@OriginalArg(0) Class681 arg0) {
-		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class557.aClass297_1.method26767((byte) 46).method37101();
+		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class557.aClass297_1.method26767((byte) 46).getId();
 	}
 
 	@OriginalMember(owner = "client!ym", name = "bou", descriptor = "(Lclient!hf;Lclient!hq;Lclient!yf;)V")
@@ -12782,9 +12782,9 @@ public final class Class687 {
 			throw new RuntimeException();
 		}
 		@Pc(66) Class39 local66 = (Class39) Class19.aClass32_Sub7_5.method18273(local33, -110809949);
-		if (local66.aClass519_2.method37101() != local23) {
+		if (local66.aScriptVarType_2.getId() != local23) {
 			throw new RuntimeException();
-		} else if (local66.aClass519_1.method37101() == local13) {
+		} else if (local66.aScriptVarType_1.getId() == local13) {
 			@Pc(90) int[] local90 = local66.method767(local43, -1497248091);
 			if (local53 < 0 || local90 == null || local90.length <= local53) {
 				throw new RuntimeException();
@@ -13210,7 +13210,7 @@ public final class Class687 {
 			throw new RuntimeException();
 		}
 		@Pc(46) Class39 local46 = (Class39) Class19.aClass32_Sub7_5.method18273(local23, -145676807);
-		if (local46.aClass519_1.method37101() != local13) {
+		if (local46.aScriptVarType_1.getId() != local13) {
 			throw new RuntimeException();
 		}
 		@Pc(61) int[] local61 = local46.method767(local33, -1497248091);
@@ -15057,7 +15057,7 @@ public final class Class687 {
 
 	@OriginalMember(owner = "client!ym", name = "dby", descriptor = "(Lclient!yf;)V")
 	static void method34363(@OriginalArg(0) Class681 arg0) {
-		@Pc(13) Class93_Sub30 local13 = (Class93_Sub30) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
+		@Pc(13) CoordFine local13 = (CoordFine) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local13.anInt1610 * -427776677;
 	}
 
@@ -15173,7 +15173,7 @@ public final class Class687 {
 
 	@OriginalMember(owner = "client!ym", name = "dqe", descriptor = "(Lclient!yf;)V")
 	static void method34377(@OriginalArg(0) Class681 arg0) {
-		arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = Class14.method192(Class41.method815(arg0.anIntArray521[(arg0.anInt6052 -= 1189701933) * -1497248091], -1535825362), Class106.aClass717_8.method37101(), -2085268527);
+		arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = Class14.method192(Class41.method815(arg0.anIntArray521[(arg0.anInt6052 -= 1189701933) * -1497248091], -1535825362), Class106.aClass717_8.getId(), -2085268527);
 	}
 
 	@OriginalMember(owner = "client!ym", name = "chc", descriptor = "(Lclient!hf;Lclient!hq;Lclient!yf;)V")
@@ -15977,7 +15977,7 @@ public final class Class687 {
 
 	@OriginalMember(owner = "client!ym", name = "ele", descriptor = "(Lclient!yf;)V")
 	static void method34474(@OriginalArg(0) Class681 arg0) {
-		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class129_Sub1.method9406((byte) 0).method37101();
+		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class129_Sub1.method9406((byte) 0).getId();
 	}
 
 	@OriginalMember(owner = "client!ym", name = "egx", descriptor = "(Lclient!yf;)V")
@@ -17582,7 +17582,7 @@ public final class Class687 {
 			throw new RuntimeException();
 		}
 		@Pc(39) Class39 local39 = (Class39) Class19.aClass32_Sub7_5.method18273(local12, -1505968423);
-		if (Class519.aClass519_7 != local39.aClass519_1) {
+		if (ScriptVarType.STRING != local39.aScriptVarType_1) {
 			throw new RuntimeException();
 		}
 		@Pc(52) int[] local52 = local39.method767(local26, -1497248091);
@@ -18358,7 +18358,7 @@ public final class Class687 {
 			throw new RuntimeException();
 		}
 		@Pc(46) Class39 local46 = (Class39) Class19.aClass32_Sub7_5.method18273(local23, 587649010);
-		if (local46.aClass519_1.method37101() != local13) {
+		if (local46.aScriptVarType_1.getId() != local13) {
 			throw new RuntimeException();
 		}
 		@Pc(61) int[] local61 = local46.method767(local33, -1497248091);
@@ -18486,7 +18486,7 @@ public final class Class687 {
 		}
 		arg0.anIntArray520[local9] = local32;
 		@Pc(48) byte local48 = -1;
-		if (local19 == Class519.aClass519_88.method37101()) {
+		if (local19 == ScriptVarType.INT.getId()) {
 			local48 = 0;
 		}
 		for (@Pc(56) int local56 = 0; local56 < local32; local56++) {
@@ -18621,15 +18621,15 @@ public final class Class687 {
 	static void method34784(@OriginalArg(0) Class681 arg0) {
 		@Pc(9) Class108 local9 = (Class108) arg0.aClass93_Sub1_Sub13_1.anObjectArray5[arg0.anInt6050 * -709694321];
 		@Pc(30) Interface20 local30 = (Interface20) (arg0.anIntArray522[arg0.anInt6050 * -709694321] == 0 ? arg0.aMap26.get(local9.aClass138_6) : arg0.aMap25.get(local9.aClass138_6));
-		@Pc(35) Class500 local35 = local9.aClass519_6.method30492((byte) 36);
-		if (Class500.aClass500_6 == local35) {
+		@Pc(35) BaseVarType local35 = local9.aScriptVarType_6.getBaseVarType();
+		if (BaseVarType.INTEGER == local35) {
 			if (Class138.aClass138_63 == local9.aClass138_6) {
 				Class301.method26825(local9, -108898536);
 			}
 			local30.method33645(local9, arg0.anIntArray521[(arg0.anInt6052 -= 1189701933) * -1497248091], 908369267);
-		} else if (Class500.aClass500_3 == local35) {
+		} else if (BaseVarType.LONG == local35) {
 			local30.method33647(local9, arg0.aLongArray27[(arg0.anInt6055 -= -1364417339) * -2000995827]);
-		} else if (Class500.aClass500_2 == local35) {
+		} else if (BaseVarType.STRING == local35) {
 			if (Class138.aClass138_63 == local9.aClass138_6) {
 				Class715.method37051(local9, (byte) -95);
 			}
@@ -19272,7 +19272,7 @@ public final class Class687 {
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local17.aString108 == null ? "" : local17.aString108;
 			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local17.anInt3089 * -92607533;
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local17.aString112 == null ? "" : local17.aString112;
-			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local17.aClass443_1 == null ? -1 : local17.aClass443_1.method37101();
+			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local17.aClass443_1 == null ? -1 : local17.aClass443_1.getId();
 			return;
 		}
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = -1;
@@ -19732,7 +19732,7 @@ public final class Class687 {
 
 	@OriginalMember(owner = "client!ym", name = "dbl", descriptor = "(Lclient!yf;)V")
 	static void method34912(@OriginalArg(0) Class681 arg0) {
-		@Pc(13) Class93_Sub30 local13 = (Class93_Sub30) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
+		@Pc(13) CoordFine local13 = (CoordFine) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local13.anInt1610 * -427776677;
 	}
 
@@ -19752,31 +19752,31 @@ public final class Class687 {
 
 	@OriginalMember(owner = "client!ym", name = "dbk", descriptor = "(Lclient!yf;)V")
 	static void method34915(@OriginalArg(0) Class681 arg0) {
-		@Pc(13) Class93_Sub30 local13 = (Class93_Sub30) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
+		@Pc(13) CoordFine local13 = (CoordFine) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local13.anInt1611 * 1802884841;
 	}
 
 	@OriginalMember(owner = "client!ym", name = "dbz", descriptor = "(Lclient!yf;)V")
 	static void method34916(@OriginalArg(0) Class681 arg0) {
-		@Pc(13) Class93_Sub30 local13 = (Class93_Sub30) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
+		@Pc(13) CoordFine local13 = (CoordFine) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local13.anInt1611 * 1802884841;
 	}
 
 	@OriginalMember(owner = "client!ym", name = "dbd", descriptor = "(Lclient!yf;)V")
 	static void method34917(@OriginalArg(0) Class681 arg0) {
-		@Pc(13) Class93_Sub30 local13 = (Class93_Sub30) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
+		@Pc(13) CoordFine local13 = (CoordFine) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local13.anInt1611 * 1802884841;
 	}
 
 	@OriginalMember(owner = "client!ym", name = "dce", descriptor = "(Lclient!yf;)V")
 	static void method34918(@OriginalArg(0) Class681 arg0) {
-		@Pc(13) Class93_Sub30 local13 = (Class93_Sub30) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
+		@Pc(13) CoordFine local13 = (CoordFine) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local13.anInt1612 * 671628745;
 	}
 
 	@OriginalMember(owner = "client!ym", name = "dch", descriptor = "(Lclient!yf;)V")
 	static void method34919(@OriginalArg(0) Class681 arg0) {
-		@Pc(13) Class93_Sub30 local13 = (Class93_Sub30) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
+		@Pc(13) CoordFine local13 = (CoordFine) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local13.anInt1612 * 671628745;
 	}
 
@@ -19786,27 +19786,27 @@ public final class Class687 {
 
 	@OriginalMember(owner = "client!ym", name = "dcx", descriptor = "(Lclient!yf;)V")
 	static void method34921(@OriginalArg(0) Class681 arg0) {
-		@Pc(13) Class93_Sub30 local13 = (Class93_Sub30) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
+		@Pc(13) CoordFine local13 = (CoordFine) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local13.anInt1609 * -2022654167;
 	}
 
 	@OriginalMember(owner = "client!ym", name = "dcm", descriptor = "(Lclient!yf;)V")
 	static void method34922(@OriginalArg(0) Class681 arg0) {
-		@Pc(13) Class93_Sub30 local13 = (Class93_Sub30) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
+		@Pc(13) CoordFine local13 = (CoordFine) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local13.anInt1609 * -2022654167;
 	}
 
 	@OriginalMember(owner = "client!ym", name = "dcr", descriptor = "(Lclient!yf;)V")
 	static void method34923(@OriginalArg(0) Class681 arg0) {
 		@Pc(3) Class611 local3 = new Class611();
-		local3.method32208((Class93_Sub30) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375], (byte) 126);
+		local3.method32208((CoordFine) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375], (byte) 126);
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local3.method32207((short) 448);
 	}
 
 	@OriginalMember(owner = "client!ym", name = "dcp", descriptor = "(Lclient!yf;)V")
 	static void method34924(@OriginalArg(0) Class681 arg0) {
 		@Pc(3) Class611 local3 = new Class611();
-		local3.method32208((Class93_Sub30) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375], (byte) 102);
+		local3.method32208((CoordFine) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375], (byte) 102);
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local3.method32207((short) 448);
 	}
 
@@ -19898,7 +19898,7 @@ public final class Class687 {
 
 	@OriginalMember(owner = "client!ym", name = "elx", descriptor = "(Lclient!yf;)V")
 	static void method34937(@OriginalArg(0) Class681 arg0) {
-		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class129_Sub1.method9406((byte) 0).method37101();
+		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class129_Sub1.method9406((byte) 0).getId();
 	}
 
 	@OriginalMember(owner = "client!ym", name = "fkb", descriptor = "(Lclient!yf;)V")
@@ -19975,7 +19975,7 @@ public final class Class687 {
 	@OriginalMember(owner = "client!ym", name = "elc", descriptor = "(Lclient!yf;)V")
 	static void method34948(@OriginalArg(0) Class681 arg0) {
 		arg0.anInt6052 -= -1451722994;
-		@Pc(19) Class93_Sub30 local19 = (Class93_Sub30) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
+		@Pc(19) CoordFine local19 = (CoordFine) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
 		if (Class65.aClass123_Sub1_2.method8986((byte) -37) != Class338.aClass338_7) {
 			throw new RuntimeException();
 		}
@@ -20107,7 +20107,7 @@ public final class Class687 {
 
 	@OriginalMember(owner = "client!ym", name = "ehe", descriptor = "(Lclient!yf;)V")
 	static void method34968(@OriginalArg(0) Class681 arg0) {
-		@Pc(13) Class93_Sub30 local13 = (Class93_Sub30) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
+		@Pc(13) CoordFine local13 = (CoordFine) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
 		if (Class65.aClass123_Sub1_2.method8986((byte) -53) != Class338.aClass338_6) {
 			throw new RuntimeException();
 		}
@@ -20451,9 +20451,9 @@ public final class Class687 {
 		@Pc(33) int local33 = arg0.anIntArray521[arg0.anInt6052 * -1497248091 + 2];
 		@Pc(43) int local43 = arg0.anIntArray521[arg0.anInt6052 * -1497248091 + 3];
 		@Pc(49) Class39 local49 = (Class39) Class19.aClass32_Sub7_5.method18273(local33, -1319626337);
-		if (local49.aClass519_2.method37101() != local13 || local49.aClass519_1.method37101() != local23) {
+		if (local49.aScriptVarType_2.getId() != local13 || local49.aScriptVarType_1.getId() != local23) {
 			throw new RuntimeException(local33 + " " + local43);
-		} else if (local23 == Class519.aClass519_7.method37101()) {
+		} else if (local23 == ScriptVarType.STRING.getId()) {
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local49.method749(local43, -805869811);
 		} else {
 			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local49.method748(local43, 1169144143);
@@ -20470,7 +20470,7 @@ public final class Class687 {
 			throw new RuntimeException();
 		}
 		@Pc(46) Class39 local46 = (Class39) Class19.aClass32_Sub7_5.method18273(local23, 689328183);
-		if (local46.aClass519_1.method37101() != local13) {
+		if (local46.aScriptVarType_1.getId() != local13) {
 			throw new RuntimeException();
 		}
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local46.method751(local33, (byte) 0) ? 1 : 0;
@@ -20484,7 +20484,7 @@ public final class Class687 {
 			throw new RuntimeException();
 		}
 		@Pc(39) Class39 local39 = (Class39) Class19.aClass32_Sub7_5.method18273(local12, -825028376);
-		if (local39.aClass519_1 != Class519.aClass519_7) {
+		if (local39.aScriptVarType_1 != ScriptVarType.STRING) {
 			throw new RuntimeException();
 		}
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local39.method751(local26, (byte) 0) ? 1 : 0;
@@ -20522,7 +20522,7 @@ public final class Class687 {
 			throw new RuntimeException();
 		}
 		@Pc(46) Class39 local46 = (Class39) Class19.aClass32_Sub7_5.method18273(local23, 566686525);
-		if (local46.aClass519_1.method37101() != local13) {
+		if (local46.aScriptVarType_1.getId() != local13) {
 			throw new RuntimeException();
 		}
 		@Pc(61) int[] local61 = local46.method767(local33, -1497248091);
@@ -20582,9 +20582,9 @@ public final class Class687 {
 			throw new RuntimeException();
 		}
 		@Pc(66) Class39 local66 = (Class39) Class19.aClass32_Sub7_5.method18273(local33, -1219438290);
-		if (local66.aClass519_2.method37101() != local23) {
+		if (local66.aScriptVarType_2.getId() != local23) {
 			throw new RuntimeException();
-		} else if (local66.aClass519_1.method37101() == local13) {
+		} else if (local66.aScriptVarType_1.getId() == local13) {
 			@Pc(90) int[] local90 = local66.method767(local43, -1497248091);
 			if (local53 < 0 || local90 == null || local90.length <= local53) {
 				throw new RuntimeException();
@@ -21166,7 +21166,7 @@ public final class Class687 {
 
 	@OriginalMember(owner = "client!ym", name = "dbf", descriptor = "(Lclient!yf;)V")
 	static void method35077(@OriginalArg(0) Class681 arg0) {
-		@Pc(13) Class93_Sub30 local13 = (Class93_Sub30) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
+		@Pc(13) CoordFine local13 = (CoordFine) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local13.anInt1610 * -427776677;
 	}
 
@@ -21352,7 +21352,7 @@ public final class Class687 {
 			return;
 		}
 		@Pc(59) Class108_Sub1 local59 = (Class108_Sub1) Class21.aClass79_Sub1_Sub1_1.method18273(local38, 1282592979);
-		switch(local59.aClass519_6.aClass500_7.anInt5357 * -1217885029) {
+		switch(local59.aScriptVarType_6.baseVarType.ordinal * -1217885029) {
 			case 2:
 				arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local43.method26854(-2123111890).method781(local59.anInt867 * -1284841473, -1267242705);
 				break;
@@ -21380,7 +21380,7 @@ public final class Class687 {
 			return;
 		}
 		@Pc(59) Class108_Sub1 local59 = (Class108_Sub1) Class21.aClass79_Sub1_Sub1_1.method18273(local38, 1524179506);
-		switch(local59.aClass519_6.aClass500_7.anInt5357 * -1217885029) {
+		switch(local59.aScriptVarType_6.baseVarType.ordinal * -1217885029) {
 			case 2:
 				arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local43.method26854(-2092485662).method781(local59.anInt867 * -1284841473, -1267242705);
 				break;
@@ -21450,7 +21450,7 @@ public final class Class687 {
 	@OriginalMember(owner = "client!ym", name = "djz", descriptor = "(Lclient!yf;)V")
 	static void method35109(@OriginalArg(0) Class681 arg0) {
 		@Pc(12) int local12 = arg0.anIntArray521[(arg0.anInt6052 -= 1189701933) * -1497248091];
-		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class557.aClass297_1.method26715(local12, 1076358003).method26845((short) 4064).method37101();
+		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class557.aClass297_1.method26715(local12, 1076358003).method26845((short) 4064).getId();
 	}
 
 	@OriginalMember(owner = "client!ym", name = "djc", descriptor = "(Lclient!yf;)V")
@@ -21982,7 +21982,7 @@ public final class Class687 {
 
 	@OriginalMember(owner = "client!ym", name = "emr", descriptor = "(Lclient!yf;)V")
 	static void method35189(@OriginalArg(0) Class681 arg0) {
-		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class251.method26059(-329270616).method37101();
+		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class251.method26059(-329270616).getId();
 	}
 
 	@OriginalMember(owner = "client!ym", name = "dmp", descriptor = "(Lclient!yf;)V")
@@ -22425,9 +22425,9 @@ public final class Class687 {
 			throw new RuntimeException();
 		}
 		@Pc(66) Class39 local66 = (Class39) Class19.aClass32_Sub7_5.method18273(local33, 2000229250);
-		if (local66.aClass519_2.method37101() != local23) {
+		if (local66.aScriptVarType_2.getId() != local23) {
 			throw new RuntimeException();
-		} else if (local66.aClass519_1.method37101() == local13) {
+		} else if (local66.aScriptVarType_1.getId() == local13) {
 			@Pc(90) int[] local90 = local66.method767(local43, -1497248091);
 			if (local53 < 0 || local90 == null || local90.length <= local53) {
 				throw new RuntimeException();
@@ -22854,15 +22854,15 @@ public final class Class687 {
 	static void method35299(@OriginalArg(0) Class681 arg0) {
 		@Pc(9) Class108 local9 = (Class108) arg0.aClass93_Sub1_Sub13_1.anObjectArray5[arg0.anInt6050 * -709694321];
 		@Pc(30) Interface20 local30 = (Interface20) (arg0.anIntArray522[arg0.anInt6050 * -709694321] == 0 ? arg0.aMap26.get(local9.aClass138_6) : arg0.aMap25.get(local9.aClass138_6));
-		@Pc(35) Class500 local35 = local9.aClass519_6.method30492((byte) 36);
-		if (Class500.aClass500_6 == local35) {
+		@Pc(35) BaseVarType local35 = local9.aScriptVarType_6.getBaseVarType();
+		if (BaseVarType.INTEGER == local35) {
 			if (Class138.aClass138_63 == local9.aClass138_6) {
 				Class301.method26825(local9, 1332217507);
 			}
 			local30.method33645(local9, arg0.anIntArray521[(arg0.anInt6052 -= 1189701933) * -1497248091], 908369267);
-		} else if (Class500.aClass500_3 == local35) {
+		} else if (BaseVarType.LONG == local35) {
 			local30.method33647(local9, arg0.aLongArray27[(arg0.anInt6055 -= -1364417339) * -2000995827]);
-		} else if (Class500.aClass500_2 == local35) {
+		} else if (BaseVarType.STRING == local35) {
 			if (Class138.aClass138_63 == local9.aClass138_6) {
 				Class715.method37051(local9, (byte) 82);
 			}
@@ -23134,7 +23134,7 @@ public final class Class687 {
 
 	@OriginalMember(owner = "client!ym", name = "elb", descriptor = "(Lclient!yf;)V")
 	static void method35329(@OriginalArg(0) Class681 arg0) {
-		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class166_Sub6.method15494(590945398).method37101();
+		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class166_Sub6.method15494(590945398).getId();
 	}
 
 	@OriginalMember(owner = "client!ym", name = "drw", descriptor = "(Lclient!yf;)V")
@@ -23263,17 +23263,17 @@ public final class Class687 {
 
 	@OriginalMember(owner = "client!ym", name = "dsh", descriptor = "(Lclient!yf;)V")
 	static void method35345(@OriginalArg(0) Class681 arg0) {
-		arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = Class440.method29033((long) arg0.anIntArray521[(arg0.anInt6052 -= 1189701933) * -1497248091] * 60000L, Class106.aClass717_8.method37101(), true, (byte) -70) + " UTC";
+		arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = Class440.method29033((long) arg0.anIntArray521[(arg0.anInt6052 -= 1189701933) * -1497248091] * 60000L, Class106.aClass717_8.getId(), true, (byte) -70) + " UTC";
 	}
 
 	@OriginalMember(owner = "client!ym", name = "dsc", descriptor = "(Lclient!yf;)V")
 	static void method35346(@OriginalArg(0) Class681 arg0) {
-		arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = Class440.method29033((long) arg0.anIntArray521[(arg0.anInt6052 -= 1189701933) * -1497248091] * 60000L, Class106.aClass717_8.method37101(), true, (byte) -109) + " UTC";
+		arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = Class440.method29033((long) arg0.anIntArray521[(arg0.anInt6052 -= 1189701933) * -1497248091] * 60000L, Class106.aClass717_8.getId(), true, (byte) -109) + " UTC";
 	}
 
 	@OriginalMember(owner = "client!ym", name = "dsv", descriptor = "(Lclient!yf;)V")
 	static void method35347(@OriginalArg(0) Class681 arg0) {
-		arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = Class440.method29033((long) arg0.anIntArray521[(arg0.anInt6052 -= 1189701933) * -1497248091] * 60000L, Class106.aClass717_8.method37101(), true, (byte) -61) + " UTC";
+		arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = Class440.method29033((long) arg0.anIntArray521[(arg0.anInt6052 -= 1189701933) * -1497248091] * 60000L, Class106.aClass717_8.getId(), true, (byte) -61) + " UTC";
 	}
 
 	@OriginalMember(owner = "client!ym", name = "box", descriptor = "(Lclient!yf;)V")
@@ -23939,7 +23939,7 @@ public final class Class687 {
 		arg0.anInt6052 -= -1915563430;
 		@Pc(13) int local13 = arg0.anIntArray521[arg0.anInt6052 * -1497248091];
 		@Pc(23) int local23 = arg0.anIntArray521[arg0.anInt6052 * -1497248091 + 1];
-		@Pc(28) Class93_Sub1_Sub15 local28 = Class512.method30438(local13, local23, 170689668);
+		@Pc(28) Class93_Sub1_Sub15 local28 = BaseVarTypeComponentHook.method30438(local13, local23, 170689668);
 		if (local28 != null) {
 			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local28.anInt3090 * -565994431;
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = Class123_Sub1.method9095(local28.aLong190 * -9166377137725744335L, Class106.aClass717_8.anInt6124 * -1156137245, 304225723);
@@ -23950,7 +23950,7 @@ public final class Class687 {
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local28.aString108 == null ? "" : local28.aString108;
 			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local28.anInt3089 * -92607533;
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local28.aString112 == null ? "" : local28.aString112;
-			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local28.aClass443_1 == null ? -1 : local28.aClass443_1.method37101();
+			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local28.aClass443_1 == null ? -1 : local28.aClass443_1.getId();
 			return;
 		}
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = -1;
@@ -23980,7 +23980,7 @@ public final class Class687 {
 		arg0.anInt6052 -= -1915563430;
 		@Pc(13) int local13 = arg0.anIntArray521[arg0.anInt6052 * -1497248091];
 		@Pc(23) int local23 = arg0.anIntArray521[arg0.anInt6052 * -1497248091 + 1];
-		@Pc(28) Class93_Sub1_Sub15 local28 = Class512.method30438(local13, local23, 513271691);
+		@Pc(28) Class93_Sub1_Sub15 local28 = BaseVarTypeComponentHook.method30438(local13, local23, 513271691);
 		if (local28 != null) {
 			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local28.anInt3090 * -565994431;
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = Class123_Sub1.method9095(local28.aLong190 * -9166377137725744335L, Class106.aClass717_8.anInt6124 * -1156137245, 304225723);
@@ -23991,7 +23991,7 @@ public final class Class687 {
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local28.aString108 == null ? "" : local28.aString108;
 			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local28.anInt3089 * -92607533;
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local28.aString112 == null ? "" : local28.aString112;
-			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local28.aClass443_1 == null ? -1 : local28.aClass443_1.method37101();
+			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local28.aClass443_1 == null ? -1 : local28.aClass443_1.getId();
 			return;
 		}
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = -1;
@@ -24029,7 +24029,7 @@ public final class Class687 {
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local17.aString108 == null ? "" : local17.aString108;
 			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local17.anInt3089 * -92607533;
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local17.aString112 == null ? "" : local17.aString112;
-			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local17.aClass443_1 == null ? -1 : local17.aClass443_1.method37101();
+			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local17.aClass443_1 == null ? -1 : local17.aClass443_1.getId();
 			return;
 		}
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = -1;
@@ -24064,7 +24064,7 @@ public final class Class687 {
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local17.aString108 == null ? "" : local17.aString108;
 			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local17.anInt3089 * -92607533;
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local17.aString112 == null ? "" : local17.aString112;
-			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local17.aClass443_1 == null ? -1 : local17.aClass443_1.method37101();
+			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local17.aClass443_1 == null ? -1 : local17.aClass443_1.getId();
 			return;
 		}
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = -1;
@@ -24094,7 +24094,7 @@ public final class Class687 {
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local17.aString108 == null ? "" : local17.aString108;
 			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local17.anInt3089 * -92607533;
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local17.aString112 == null ? "" : local17.aString112;
-			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local17.aClass443_1 == null ? -1 : local17.aClass443_1.method37101();
+			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local17.aClass443_1 == null ? -1 : local17.aClass443_1.getId();
 			return;
 		}
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = -1;
@@ -24909,7 +24909,7 @@ public final class Class687 {
 		if (local5 == null) {
 			local5 = "";
 		}
-		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local2.method37101();
+		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local2.getId();
 		arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local5;
 	}
 
@@ -25877,7 +25877,7 @@ public final class Class687 {
 
 	@OriginalMember(owner = "client!ym", name = "ddn", descriptor = "(Lclient!yf;)V")
 	static void method35583(@OriginalArg(0) Class681 arg0) {
-		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class106.aClass717_8.method37101();
+		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class106.aClass717_8.getId();
 	}
 
 	@OriginalMember(owner = "client!ym", name = "ebp", descriptor = "(Lclient!yf;)V")
@@ -27275,7 +27275,7 @@ public final class Class687 {
 
 	@OriginalMember(owner = "client!ym", name = "ehx", descriptor = "(Lclient!yf;)V")
 	static void method35731(@OriginalArg(0) Class681 arg0) {
-		@Pc(13) Class93_Sub30 local13 = (Class93_Sub30) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
+		@Pc(13) CoordFine local13 = (CoordFine) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
 		if (Class65.aClass123_Sub1_2.method8986((byte) -54) != Class338.aClass338_6) {
 			throw new RuntimeException();
 		}
@@ -27722,7 +27722,7 @@ public final class Class687 {
 		Class211.aClass100_41 = null;
 		Class166_Sub34.aClass100_23 = null;
 		Class53_Sub1.aClass100_19 = null;
-		Class441.aClass100_44 = null;
+		SortedQueueEntry.aClass100_44 = null;
 		Class25.aClass100_39 = null;
 		Class92.aClass100_2 = null;
 		Class454.aClass100_45 = null;
@@ -28348,12 +28348,12 @@ public final class Class687 {
 
 	@OriginalMember(owner = "client!ym", name = "elk", descriptor = "(Lclient!yf;)V")
 	static void method35848(@OriginalArg(0) Class681 arg0) {
-		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class166_Sub6.method15494(-979517548).method37101();
+		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class166_Sub6.method15494(-979517548).getId();
 	}
 
 	@OriginalMember(owner = "client!ym", name = "elp", descriptor = "(Lclient!yf;)V")
 	static void method35849(@OriginalArg(0) Class681 arg0) {
-		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class618.method32280((byte) -61).method37101();
+		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class618.method32280((byte) -61).getId();
 	}
 
 	@OriginalMember(owner = "client!ym", name = "cpd", descriptor = "(Lclient!yf;)V")
@@ -28385,7 +28385,7 @@ public final class Class687 {
 		if (local5 == null) {
 			local5 = "";
 		}
-		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local2.method37101();
+		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local2.getId();
 		arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local5;
 	}
 
@@ -28406,13 +28406,13 @@ public final class Class687 {
 		if (local5 == null) {
 			local5 = "";
 		}
-		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local2.method37101();
+		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local2.getId();
 		arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local5;
 	}
 
 	@OriginalMember(owner = "client!ym", name = "emg", descriptor = "(Lclient!yf;)V")
 	static void method35856(@OriginalArg(0) Class681 arg0) {
-		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class251.method26059(-1574471981).method37101();
+		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class251.method26059(-1574471981).getId();
 	}
 
 	@OriginalMember(owner = "client!ym", name = "bsu", descriptor = "(Lclient!yf;)V")
@@ -29243,9 +29243,9 @@ public final class Class687 {
 			throw new RuntimeException();
 		}
 		@Pc(66) Class39 local66 = (Class39) Class19.aClass32_Sub7_5.method18273(local33, 836066194);
-		if (local66.aClass519_2.method37101() != local23) {
+		if (local66.aScriptVarType_2.getId() != local23) {
 			throw new RuntimeException();
-		} else if (local66.aClass519_1.method37101() == local13) {
+		} else if (local66.aScriptVarType_1.getId() == local13) {
 			@Pc(90) int[] local90 = local66.method767(local43, -1497248091);
 			if (local53 < 0 || local90 == null || local90.length <= local53) {
 				throw new RuntimeException();
@@ -29417,7 +29417,7 @@ public final class Class687 {
 		arg0.anInt6052 -= -1915563430;
 		@Pc(13) int local13 = arg0.anIntArray521[arg0.anInt6052 * -1497248091];
 		@Pc(23) int local23 = arg0.anIntArray521[arg0.anInt6052 * -1497248091 + 1];
-		@Pc(28) Class93_Sub1_Sub15 local28 = Class512.method30438(local13, local23, 146359335);
+		@Pc(28) Class93_Sub1_Sub15 local28 = BaseVarTypeComponentHook.method30438(local13, local23, 146359335);
 		if (local28 != null) {
 			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local28.anInt3090 * -565994431;
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = Class123_Sub1.method9095(local28.aLong190 * -9166377137725744335L, Class106.aClass717_8.anInt6124 * -1156137245, 304225723);
@@ -29428,7 +29428,7 @@ public final class Class687 {
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local28.aString108 == null ? "" : local28.aString108;
 			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local28.anInt3089 * -92607533;
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local28.aString112 == null ? "" : local28.aString112;
-			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local28.aClass443_1 == null ? -1 : local28.aClass443_1.method37101();
+			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local28.aClass443_1 == null ? -1 : local28.aClass443_1.getId();
 			return;
 		}
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = -1;
@@ -29941,7 +29941,7 @@ public final class Class687 {
 
 	@OriginalMember(owner = "client!ym", name = "elz", descriptor = "(Lclient!yf;)V")
 	static void method36060(@OriginalArg(0) Class681 arg0) {
-		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class129_Sub1.method9406((byte) 0).method37101();
+		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class129_Sub1.method9406((byte) 0).getId();
 	}
 
 	@OriginalMember(owner = "client!ym", name = "cfc", descriptor = "(Lclient!yf;)V")
@@ -31246,9 +31246,9 @@ public final class Class687 {
 		@Pc(33) int local33 = arg0.anIntArray521[arg0.anInt6052 * -1497248091 + 2];
 		@Pc(43) int local43 = arg0.anIntArray521[arg0.anInt6052 * -1497248091 + 3];
 		@Pc(49) Class39 local49 = (Class39) Class19.aClass32_Sub7_5.method18273(local33, -2082956107);
-		if (local49.aClass519_2.method37101() != local13 || local49.aClass519_1.method37101() != local23) {
+		if (local49.aScriptVarType_2.getId() != local13 || local49.aScriptVarType_1.getId() != local23) {
 			throw new RuntimeException(local33 + " " + local43);
-		} else if (local23 == Class519.aClass519_7.method37101()) {
+		} else if (local23 == ScriptVarType.STRING.getId()) {
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local49.method749(local43, -817326882);
 		} else {
 			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local49.method748(local43, 526452312);
@@ -31465,7 +31465,7 @@ public final class Class687 {
 		if (local13.startsWith(Class346.method27663(0, -1614681388)) || local13.startsWith(Class346.method27663(1, -1614681388))) {
 			local13 = local13.substring(7);
 		}
-		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class500.method30347(local13, 1890103383);
+		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = BaseVarType.method30347(local13, 1890103383);
 	}
 
 	@OriginalMember(owner = "client!ym", name = "fbq", descriptor = "(Lclient!yf;)V")
@@ -32080,9 +32080,9 @@ public final class Class687 {
 		@Pc(33) int local33 = arg0.anIntArray521[arg0.anInt6052 * -1497248091 + 2];
 		@Pc(43) int local43 = arg0.anIntArray521[arg0.anInt6052 * -1497248091 + 3];
 		@Pc(49) Class39 local49 = (Class39) Class19.aClass32_Sub7_5.method18273(local33, 1836886505);
-		if (local49.aClass519_2.method37101() != local13 || local49.aClass519_1.method37101() != local23) {
+		if (local49.aScriptVarType_2.getId() != local13 || local49.aScriptVarType_1.getId() != local23) {
 			throw new RuntimeException(local33 + " " + local43);
-		} else if (local23 == Class519.aClass519_7.method37101()) {
+		} else if (local23 == ScriptVarType.STRING.getId()) {
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local49.method749(local43, -774353772);
 		} else {
 			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local49.method748(local43, -986892631);
@@ -32234,7 +32234,7 @@ public final class Class687 {
 		@Pc(13) int local13 = arg0.anIntArray521[arg0.anInt6052 * -1497248091];
 		@Pc(23) int local23 = arg0.anIntArray521[arg0.anInt6052 * -1497248091 + 1];
 		@Pc(29) Class39 local29 = (Class39) Class19.aClass32_Sub7_5.method18273(local13, 1593551359);
-		if (local29.aClass519_1 != Class519.aClass519_7) {
+		if (local29.aScriptVarType_1 != ScriptVarType.STRING) {
 		}
 		arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local29.method749(local23, -2071489893);
 	}
@@ -33571,7 +33571,7 @@ public final class Class687 {
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local17.aString108 == null ? "" : local17.aString108;
 			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local17.anInt3089 * -92607533;
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local17.aString112 == null ? "" : local17.aString112;
-			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local17.aClass443_1 == null ? -1 : local17.aClass443_1.method37101();
+			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local17.aClass443_1 == null ? -1 : local17.aClass443_1.getId();
 			return;
 		}
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = -1;
@@ -33853,7 +33853,7 @@ public final class Class687 {
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local17.aString108 == null ? "" : local17.aString108;
 			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local17.anInt3089 * -92607533;
 			arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local17.aString112 == null ? "" : local17.aString112;
-			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local17.aClass443_1 == null ? -1 : local17.aClass443_1.method37101();
+			arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local17.aClass443_1 == null ? -1 : local17.aClass443_1.getId();
 			return;
 		}
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = -1;
@@ -33914,7 +33914,7 @@ public final class Class687 {
 			throw new RuntimeException("");
 		} else if (client.aClass175_2 != null) {
 			@Pc(65) Class93_Sub22 local65 = Class102.method2592(Class446.aClass446_45, client.aClass175_2.aClass24_2, (byte) 45);
-			local65.aClass93_Sub41_Sub2_1.method22458(local18.method37101(), -1591808004);
+			local65.aClass93_Sub41_Sub2_1.method22458(local18.getId(), -1591808004);
 			local65.aClass93_Sub41_Sub2_1.method22470(local31.anInt5785 * -1994307635, -1855393362);
 			local65.aClass93_Sub41_Sub2_1.method22602(local31.anInt5784 * 270611681, (byte) -37);
 			client.aClass175_2.method24363(local65, -1732982906);
@@ -34307,7 +34307,7 @@ public final class Class687 {
 		@Pc(41) int local41 = Class57.method1089(local23, -52780061);
 		@Pc(47) Class30 local47 = (Class30) Class74.aClass32_2.method18273(local13, -45373463);
 		@Pc(53) Class77 local53 = (Class77) Class276.aClass32_3.method18273(local37, 1649979725);
-		@Pc(58) Class519[] local58 = local53.aClass519ArrayArray2[local41];
+		@Pc(58) ScriptVarType[] local58 = local53.aScriptVarTypeArrayArray2[local41];
 		@Pc(63) Object[] local63 = local47.method620(local41, 517299123);
 		if (local63 == null && local53.anObjectArrayArray2 != null) {
 			local63 = local53.anObjectArrayArray2[local41];
@@ -34315,10 +34315,10 @@ public final class Class687 {
 		@Pc(79) int local79;
 		if (local63 == null) {
 			for (local79 = 0; local79 < local58.length; local79++) {
-				@Pc(87) Class519 local87 = local58[local79];
-				if (local87 == Class519.aClass519_7) {
+				@Pc(87) ScriptVarType local87 = local58[local79];
+				if (local87 == ScriptVarType.STRING) {
 					arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = "";
-				} else if (local87 == Class519.aClass519_88 || Class519.aClass519_8 == local87) {
+				} else if (local87 == ScriptVarType.INT || ScriptVarType.BOOLEAN == local87) {
 					arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = 0;
 				} else {
 					arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = -1;
@@ -34332,7 +34332,7 @@ public final class Class687 {
 		}
 		for (@Pc(163) int local163 = 0; local163 < local58.length; local163++) {
 			@Pc(174) int local174 = local163 + local33 * local58.length;
-			if (local58[local163] == Class519.aClass519_7) {
+			if (local58[local163] == ScriptVarType.STRING) {
 				arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local63[local174];
 			} else {
 				arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = (Integer) local63[local174];
@@ -34350,7 +34350,7 @@ public final class Class687 {
 		@Pc(41) int local41 = Class57.method1089(local23, -52780061);
 		@Pc(47) Class30 local47 = (Class30) Class74.aClass32_2.method18273(local13, 580417160);
 		@Pc(53) Class77 local53 = (Class77) Class276.aClass32_3.method18273(local37, -275037814);
-		@Pc(58) Class519[] local58 = local53.aClass519ArrayArray2[local41];
+		@Pc(58) ScriptVarType[] local58 = local53.aScriptVarTypeArrayArray2[local41];
 		@Pc(63) Object[] local63 = local47.method620(local41, 2095266738);
 		if (local63 == null && local53.anObjectArrayArray2 != null) {
 			local63 = local53.anObjectArrayArray2[local41];
@@ -34358,10 +34358,10 @@ public final class Class687 {
 		@Pc(79) int local79;
 		if (local63 == null) {
 			for (local79 = 0; local79 < local58.length; local79++) {
-				@Pc(87) Class519 local87 = local58[local79];
-				if (local87 == Class519.aClass519_7) {
+				@Pc(87) ScriptVarType local87 = local58[local79];
+				if (local87 == ScriptVarType.STRING) {
 					arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = "";
-				} else if (local87 == Class519.aClass519_88 || Class519.aClass519_8 == local87) {
+				} else if (local87 == ScriptVarType.INT || ScriptVarType.BOOLEAN == local87) {
 					arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = 0;
 				} else {
 					arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = -1;
@@ -34375,7 +34375,7 @@ public final class Class687 {
 		}
 		for (@Pc(163) int local163 = 0; local163 < local58.length; local163++) {
 			@Pc(174) int local174 = local163 + local33 * local58.length;
-			if (local58[local163] == Class519.aClass519_7) {
+			if (local58[local163] == ScriptVarType.STRING) {
 				arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local63[local174];
 			} else {
 				arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = (Integer) local63[local174];
@@ -34393,7 +34393,7 @@ public final class Class687 {
 		@Pc(41) int local41 = Class57.method1089(local23, -52780061);
 		@Pc(47) Class30 local47 = (Class30) Class74.aClass32_2.method18273(local13, 1349028538);
 		@Pc(53) Class77 local53 = (Class77) Class276.aClass32_3.method18273(local37, 386953300);
-		@Pc(58) Class519[] local58 = local53.aClass519ArrayArray2[local41];
+		@Pc(58) ScriptVarType[] local58 = local53.aScriptVarTypeArrayArray2[local41];
 		@Pc(63) Object[] local63 = local47.method620(local41, 727346257);
 		if (local63 == null && local53.anObjectArrayArray2 != null) {
 			local63 = local53.anObjectArrayArray2[local41];
@@ -34401,10 +34401,10 @@ public final class Class687 {
 		@Pc(79) int local79;
 		if (local63 == null) {
 			for (local79 = 0; local79 < local58.length; local79++) {
-				@Pc(87) Class519 local87 = local58[local79];
-				if (local87 == Class519.aClass519_7) {
+				@Pc(87) ScriptVarType local87 = local58[local79];
+				if (local87 == ScriptVarType.STRING) {
 					arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = "";
-				} else if (local87 == Class519.aClass519_88 || Class519.aClass519_8 == local87) {
+				} else if (local87 == ScriptVarType.INT || ScriptVarType.BOOLEAN == local87) {
 					arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = 0;
 				} else {
 					arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = -1;
@@ -34418,7 +34418,7 @@ public final class Class687 {
 		}
 		for (@Pc(163) int local163 = 0; local163 < local58.length; local163++) {
 			@Pc(174) int local174 = local163 + local33 * local58.length;
-			if (local58[local163] == Class519.aClass519_7) {
+			if (local58[local163] == ScriptVarType.STRING) {
 				arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local63[local174];
 			} else {
 				arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = (Integer) local63[local174];
@@ -34663,7 +34663,7 @@ public final class Class687 {
 
 	@OriginalMember(owner = "client!ym", name = "fqz", descriptor = "(Lclient!yf;)V")
 	static void method36654(@OriginalArg(0) Class681 arg0) {
-		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = client.aClass67_15.method37101();
+		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = client.aClass67_15.getId();
 	}
 
 	@OriginalMember(owner = "client!ym", name = "fqy", descriptor = "(Lclient!yf;)V")
@@ -34877,26 +34877,26 @@ public final class Class687 {
 			method36684(arg0, Class51.aClass93_Sub36_1.aClass166_Sub23_1.method15856(677738758), -1, -1, true, (byte) -36);
 			return;
 		}
-		@Pc(73) Container local73 = Class504.method30377(-283088421);
+		@Pc(73) Container local73 = BaseVarTypeString.method30377(-283088421);
 		@Pc(90) Insets local90;
 		if (Class125_Sub2_Sub1.aFrame1 != null) {
 			client.anInt3413 = arg2 * -1386467717;
-			Class504.anInt5362 = arg3 * -1294184635;
+			BaseVarTypeString.anInt5362 = arg3 * -1294184635;
 		} else if (Class628.aFrame2 == null) {
 			client.anInt3413 = local73.getSize().width * -1386467717;
-			Class504.anInt5362 = local73.getSize().height * -1294184635;
+			BaseVarTypeString.anInt5362 = local73.getSize().height * -1294184635;
 		} else {
 			local90 = Class628.aFrame2.getInsets();
 			@Pc(98) int local98 = local90.left + local90.right;
 			client.anInt3413 = (Class628.aFrame2.getSize().width - local98) * -1386467717;
 			@Pc(110) int local110 = local90.top + local90.bottom;
-			Class504.anInt5362 = (Class628.aFrame2.getSize().height - local110) * -1294184635;
+			BaseVarTypeString.anInt5362 = (Class628.aFrame2.getSize().height - local110) * -1294184635;
 		}
 		if (client.anInt3413 * -108363597 <= 0) {
 			client.anInt3413 = -1386467717;
 		}
-		if (Class504.anInt5362 * 2090134413 <= 0) {
-			Class504.anInt5362 = -1294184635;
+		if (BaseVarTypeString.anInt5362 * 2090134413 <= 0) {
+			BaseVarTypeString.anInt5362 = -1294184635;
 		}
 		if (arg1 == 1) {
 			client.anInt3408 = client.anInt3511 * 685234053;

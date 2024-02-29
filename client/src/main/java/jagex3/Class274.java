@@ -52,7 +52,7 @@ final class Class274 implements Interface22 {
 
 	@OriginalMember(owner = "client!fs", name = "fj", descriptor = "(B)V")
 	public static void method26433(@OriginalArg(0) byte arg0) {
-		@Pc(2) Container local2 = Class504.method30377(-283088421);
+		@Pc(2) Container local2 = BaseVarTypeString.method30377(-283088421);
 		@Pc(6) int local6 = local2.getSize().width;
 		@Pc(10) int local10 = local2.getSize().height;
 		if (Class628.aFrame2 == local2) {
@@ -60,14 +60,14 @@ final class Class274 implements Interface22 {
 			local6 -= local16.left + local16.right;
 			local10 -= local16.bottom + local16.top;
 		}
-		if (client.anInt3413 * -108363597 == local6 && Class504.anInt5362 * 2090134413 == local10 && !client.aBoolean611) {
+		if (client.anInt3413 * -108363597 == local6 && BaseVarTypeString.anInt5362 * 2090134413 == local10 && !client.aBoolean611) {
 			return;
 		}
 		if (Class694.aClass104_14 == null || Class694.aClass104_14.method20435()) {
 			Class495.method30210((byte) -61);
 		} else {
 			client.anInt3413 = local6 * -1386467717;
-			Class504.anInt5362 = local10 * -1294184635;
+			BaseVarTypeString.anInt5362 = local10 * -1294184635;
 		}
 		client.aLong244 = (Class305.method26889(1582354690) + 500L) * -3239649073383352057L;
 		client.aBoolean611 = false;

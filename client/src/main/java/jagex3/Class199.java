@@ -134,12 +134,12 @@ public final class Class199 {
 			@Pc(31) int local31;
 			@Pc(42) byte[] local42;
 			for (local31 = 0; local31 < 16; local31++) {
-				local42 = Class441.method29037(anObject11, local31 * 32768, 32768, 1048575);
+				local42 = SortedQueueEntry.method29037(anObject11, local31 * 32768, 32768, 1048575);
 				this.aClass88_Sub2Array2[local31] = new Class88_Sub2(arg0, 3553, Class206.aClass206_21, Class226.aClass226_22, 128, 128, true, local42, Class206.aClass206_21, false);
 			}
 			this.aClass88_Sub2Array3 = new Class88_Sub2[16];
 			for (local31 = 0; local31 < 16; local31++) {
-				local42 = Class441.method29037(anObject10, local31 * 32768, 32768, 1048575);
+				local42 = SortedQueueEntry.method29037(anObject10, local31 * 32768, 32768, 1048575);
 				this.aClass88_Sub2Array3[local31] = new Class88_Sub2(arg0, 3553, Class206.aClass206_21, Class226.aClass226_22, 128, 128, true, local42, Class206.aClass206_21, false);
 			}
 		}

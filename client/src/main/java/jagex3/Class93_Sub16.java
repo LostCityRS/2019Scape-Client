@@ -59,20 +59,20 @@ public final class Class93_Sub16 extends Class93 {
 	float aFloat147;
 
 	@OriginalMember(owner = "client!akf", name = "e", descriptor = "(Ljava/lang/Class;IB)Lclient!za;")
-	public static Interface75 method13572(@OriginalArg(0) Class arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
+	public static SerializableEnum method13572(@OriginalArg(0) Class arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
 		@Pc(2) Map local2 = Class711.aMap27;
 		synchronized (Class711.aMap27) {
 			@Pc(8) Map local8 = (Map) Class711.aMap27.get(arg0);
 			if (local8 == null) {
 				local8 = new HashMap();
-				@Pc(19) Interface75[] local19 = (Interface75[]) arg0.getEnumConstants();
+				@Pc(19) SerializableEnum[] local19 = (SerializableEnum[]) arg0.getEnumConstants();
 				for (@Pc(21) int local21 = 0; local21 < local19.length; local21++) {
-					@Pc(29) Interface75 local29 = local19[local21];
-					local8.put(local29.method37101(), local29);
+					@Pc(29) SerializableEnum local29 = local19[local21];
+					local8.put(local29.getId(), local29);
 				}
 				Class711.aMap27.put(arg0, local8);
 			}
-			return (Interface75) local8.get(arg1);
+			return (SerializableEnum) local8.get(arg1);
 		}
 	}
 

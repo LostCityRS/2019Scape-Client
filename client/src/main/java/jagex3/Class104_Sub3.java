@@ -142,7 +142,7 @@ public final class Class104_Sub3 extends Class104 {
 		if (arg5 && Class256.anInt3894 * 1151351583 >= 100) {
 			Class163.anInt2002 = Class26.anInt90 * 884609536 + -2035173632;
 			Class270.anInt3925 = Class20.anInt70 * 243676672 + 1435337472;
-			Class130_Sub2.anInt1117 = (Class305.method26894(Class163.anInt2002 * -1331168249, Class270.anInt3925 * 466086187, Class512.anInt5370 * 1177442423, (byte) -5) - Class165.anInt2068 * -1400777707) * 1820517185;
+			Class130_Sub2.anInt1117 = (Class305.method26894(Class163.anInt2002 * -1331168249, Class270.anInt3925 * 466086187, BaseVarTypeComponentHook.anInt5370 * 1177442423, (byte) -5) - Class165.anInt2068 * -1400777707) * 1820517185;
 		}
 		Class429.anInt4942 = -2103515459;
 		Class444.anInt5056 = 783237131;

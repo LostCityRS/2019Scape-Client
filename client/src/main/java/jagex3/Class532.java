@@ -307,7 +307,7 @@ public final class Class532 {
 				this.anInt5408 = client.anInt3485 * -176246917;
 			} else if (this.anInt5408 * 766629811 != 0 && client.anInt3485 - this.anInt5408 * 766629811 == 1000) {
 				Class389.method28444(local244.anInt5971 * -1287795829, local239.anInt5971 * -1287795829, this.anInt5406 * -330761899, 1454112597);
-				Class591.method31877(1665619291);
+				Class602.method31877(1665619291);
 			}
 			if (this.anInt5407 * 1069530631 < this.anInt5406 * -330761899) {
 				this.anInt5407 = this.anInt5406 * 2117891779;
@@ -1162,7 +1162,7 @@ public final class Class532 {
 			client.anInt3481 -= local11 * 1960371712;
 			client.anInt3482 -= local23 * -917312000;
 			Class72.anInt241 -= local11 * 2086292992;
-			Class441.anInt5047 -= local23 * 183720448;
+			SortedQueueEntry.anInt5047 -= local23 * 183720448;
 			if (Class429.anInt4942 * -1453926679 != 4 && Class429.anInt4942 * -1453926679 != 3) {
 				Class322.method27367(Class20.method376(1836476577), 1452588171);
 			}
@@ -1383,7 +1383,7 @@ public final class Class532 {
 						local199.method18601(local154, -1344920544);
 						local199.method19973(local199.aClass336_1.anInt4195 * 447008399, -2142170693);
 						local199.anInt2788 = (local199.aClass336_1.anInt4206 * 295553787 << 3) * 723489705;
-						local199.method19964(local199.aClass336_1.aClass706_1.method36918(-1466068232).method37101() << 11 & 0x3FFF, true, -1247975766);
+						local199.method19964(local199.aClass336_1.aClass706_1.method36918(-1466068232).getId() << 11 & 0x3FFF, true, -1247975766);
 						local199.method18604(local102, local129, local146, true, local199.method20009(1910086703), (byte) -9);
 					}
 				}
@@ -1409,7 +1409,7 @@ public final class Class532 {
 		@Pc(30) int local30 = (Class163.anInt2002 * -1331168249 >> 12) + (local14 >> 3);
 		@Pc(40) int local40 = (local20 >> 3) + (Class270.anInt3925 * 466086187 >> 12);
 		Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aByte100 = 0;
-		Class512.anInt5370 = 0;
+		BaseVarTypeComponentHook.anInt5370 = 0;
 		Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.method20067(8, 8, (byte) 1);
 		@Pc(52) byte local52 = 18;
 		this.anIntArray465 = new int[local52];
@@ -1848,7 +1848,7 @@ public final class Class532 {
 			client.anInt3481 -= local11 * 1960371712;
 			client.anInt3482 -= local23 * -917312000;
 			Class72.anInt241 -= local11 * 2086292992;
-			Class441.anInt5047 -= local23 * 183720448;
+			SortedQueueEntry.anInt5047 -= local23 * 183720448;
 			if (Class429.anInt4942 * -1453926679 != 4 && Class429.anInt4942 * -1453926679 != 3) {
 				Class322.method27367(Class20.method376(1387892749), 2085808841);
 			}
@@ -2497,7 +2497,7 @@ public final class Class532 {
 			client.anInt3481 -= local11 * 1960371712;
 			client.anInt3482 -= local23 * -917312000;
 			Class72.anInt241 -= local11 * 2086292992;
-			Class441.anInt5047 -= local23 * 183720448;
+			SortedQueueEntry.anInt5047 -= local23 * 183720448;
 			if (Class429.anInt4942 * -1453926679 != 4 && Class429.anInt4942 * -1453926679 != 3) {
 				Class322.method27367(Class20.method376(1034177989), -440247363);
 			}
@@ -2695,7 +2695,7 @@ public final class Class532 {
 		@Pc(30) int local30 = (Class163.anInt2002 * -1331168249 >> 12) + (local14 >> 3);
 		@Pc(40) int local40 = (local20 >> 3) + (Class270.anInt3925 * 466086187 >> 12);
 		Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aByte100 = 0;
-		Class512.anInt5370 = 0;
+		BaseVarTypeComponentHook.anInt5370 = 0;
 		Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.method20067(8, 8, (byte) 1);
 		@Pc(52) byte local52 = 18;
 		this.anIntArray465 = new int[local52];
@@ -2740,7 +2740,7 @@ public final class Class532 {
 		@Pc(30) int local30 = (Class163.anInt2002 * -1331168249 >> 12) + (local14 >> 3);
 		@Pc(40) int local40 = (local20 >> 3) + (Class270.anInt3925 * 466086187 >> 12);
 		Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aByte100 = 0;
-		Class512.anInt5370 = 0;
+		BaseVarTypeComponentHook.anInt5370 = 0;
 		Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.method20067(8, 8, (byte) 1);
 		@Pc(52) byte local52 = 18;
 		this.anIntArray465 = new int[local52];
@@ -3828,7 +3828,7 @@ public final class Class532 {
 			client.anInt3481 -= local11 * 1960371712;
 			client.anInt3482 -= local23 * -917312000;
 			Class72.anInt241 -= local11 * 2086292992;
-			Class441.anInt5047 -= local23 * 183720448;
+			SortedQueueEntry.anInt5047 -= local23 * 183720448;
 			if (Class429.anInt4942 * -1453926679 != 4 && Class429.anInt4942 * -1453926679 != 3) {
 				Class322.method27367(Class20.method376(1237485698), -1881417422);
 			}
@@ -4001,7 +4001,7 @@ public final class Class532 {
 			client.anInt3481 -= local11 * 1960371712;
 			client.anInt3482 -= local23 * -917312000;
 			Class72.anInt241 -= local11 * 2086292992;
-			Class441.anInt5047 -= local23 * 183720448;
+			SortedQueueEntry.anInt5047 -= local23 * 183720448;
 			if (Class429.anInt4942 * -1453926679 != 4 && Class429.anInt4942 * -1453926679 != 3) {
 				Class322.method27367(Class20.method376(1507858175), 488009948);
 			}
@@ -4161,7 +4161,7 @@ public final class Class532 {
 				this.anInt5408 = client.anInt3485 * -176246917;
 			} else if (this.anInt5408 * 766629811 != 0 && client.anInt3485 - this.anInt5408 * 766629811 == 1000) {
 				Class389.method28444(local244.anInt5971 * -1287795829, local239.anInt5971 * -1287795829, this.anInt5406 * -330761899, 1659073893);
-				Class591.method31877(659361545);
+				Class602.method31877(659361545);
 			}
 			if (this.anInt5407 * 1069530631 < this.anInt5406 * -330761899) {
 				this.anInt5407 = this.anInt5406 * 2117891779;
@@ -4503,7 +4503,7 @@ public final class Class532 {
 				this.anInt5408 = client.anInt3485 * -176246917;
 			} else if (this.anInt5408 * 766629811 != 0 && client.anInt3485 - this.anInt5408 * 766629811 == 1000) {
 				Class389.method28444(local244.anInt5971 * -1287795829, local239.anInt5971 * -1287795829, this.anInt5406 * -330761899, 2051381242);
-				Class591.method31877(-754948695);
+				Class602.method31877(-754948695);
 			}
 			if (this.anInt5407 * 1069530631 < this.anInt5406 * -330761899) {
 				this.anInt5407 = this.anInt5406 * 2117891779;
@@ -4845,7 +4845,7 @@ public final class Class532 {
 				this.anInt5408 = client.anInt3485 * -176246917;
 			} else if (this.anInt5408 * 766629811 != 0 && client.anInt3485 - this.anInt5408 * 766629811 == 1000) {
 				Class389.method28444(local244.anInt5971 * -1287795829, local239.anInt5971 * -1287795829, this.anInt5406 * -330761899, -1069217288);
-				Class591.method31877(-714969397);
+				Class602.method31877(-714969397);
 			}
 			if (this.anInt5407 * 1069530631 < this.anInt5406 * -330761899) {
 				this.anInt5407 = this.anInt5406 * 2117891779;

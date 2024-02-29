@@ -174,7 +174,7 @@ public final class Class689 {
 			Class79_Sub1_Sub2.method1489(-1675832915);
 		}
 		Class694.aClass104_14.method20478();
-		Class510.method30426(Class694.aClass104_14, 1483618617);
+		BaseVarTypeCoordFine.method30426(Class694.aClass104_14, 1483618617);
 		local15 = Class168.method17640(572497392);
 		if (local15 == -1) {
 			local15 = client.anInt3520 * 895420077;

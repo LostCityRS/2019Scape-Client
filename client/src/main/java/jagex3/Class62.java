@@ -298,7 +298,7 @@ public final class Class62 {
 
 	@OriginalMember(owner = "client!acl", name = "aps", descriptor = "(Lclient!yf;I)V")
 	static void method1152(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class618.method32280((byte) -21).method37101();
+		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class618.method32280((byte) -21).getId();
 	}
 
 	@OriginalMember(owner = "client!acl", name = "ee", descriptor = "(IIIB)V")

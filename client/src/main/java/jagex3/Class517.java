@@ -54,7 +54,7 @@ public final class Class517 {
 	}
 
 	@OriginalMember(owner = "client!qu", name = "<init>", descriptor = "(I)V")
-	Class517(@OriginalArg(0) int arg0) {
+	public Class517(@OriginalArg(0) int arg0) {
 		this.anInt5373 = arg0 * -580598989;
 	}
 }

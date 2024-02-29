@@ -141,7 +141,7 @@ public final class Class144_Sub1 extends Class144 {
 							local272 = this.aClass93_Sub41_7.method22425((short) 16384);
 							local454 = this.aClass93_Sub41_7.method22431(-118643075);
 							@Pc(456) byte local456 = 5;
-							if (local272 != Class484.aClass484_5.method37101()) {
+							if (local272 != Class484.aClass484_5.getId()) {
 								local456 = 9;
 							}
 							local365 = this.aClass93_Sub1_Sub16_Sub3_2.aClass93_Sub41_13 = new Class93_Sub41(this.aClass93_Sub1_Sub16_Sub3_2.aByte93 + local454 + local456);
@@ -614,7 +614,7 @@ public final class Class144_Sub1 extends Class144 {
 							local272 = this.aClass93_Sub41_7.method22425((short) 16384);
 							local454 = this.aClass93_Sub41_7.method22431(-118643075);
 							@Pc(456) byte local456 = 5;
-							if (local272 != Class484.aClass484_5.method37101()) {
+							if (local272 != Class484.aClass484_5.getId()) {
 								local456 = 9;
 							}
 							local365 = this.aClass93_Sub1_Sub16_Sub3_2.aClass93_Sub41_13 = new Class93_Sub41(this.aClass93_Sub1_Sub16_Sub3_2.aByte93 + local454 + local456);

@@ -31,7 +31,7 @@ public final class Class82 {
 	Map aMap5;
 
 	@OriginalMember(owner = "client!adh", name = "m", descriptor = "Lclient!qa;")
-	Class500 aClass500_1;
+	BaseVarType aBaseVarType_1;
 
 	@OriginalMember(owner = "client!adh", name = "jl", descriptor = "(ILjava/lang/String;I)V")
 	public static void method1384(@OriginalArg(0) int arg0, @OriginalArg(1) String arg1, @OriginalArg(2) int arg2) {
@@ -136,11 +136,11 @@ public final class Class82 {
 
 	@OriginalMember(owner = "client!adh", name = "e", descriptor = "(Lclient!alw;B)V")
 	void method1382(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
-		this.aClass500_1 = (Class500) Class107.method18131(Class500.method30340(-2085726699), arg0.method22425((short) 16384), -1915563430);
+		this.aBaseVarType_1 = (BaseVarType) Class107.method18131(BaseVarType.values(), arg0.method22425((short) 16384), -1915563430);
 		@Pc(13) int local13 = arg0.method22608((short) -3184);
 		this.aMap5 = new HashMap(local13);
 		while (local13-- > 0) {
-			@Pc(28) Object local28 = this.aClass500_1.method30337(arg0, (byte) 0);
+			@Pc(28) Object local28 = this.aBaseVarType_1.decode(arg0);
 			@Pc(32) int local32 = arg0.method22608((short) -11628);
 			@Pc(36) ArrayList local36 = new ArrayList();
 			while (local32-- > 0) {

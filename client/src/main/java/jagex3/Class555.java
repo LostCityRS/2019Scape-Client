@@ -29,12 +29,12 @@ public final class Class555 {
 		@Pc(7) int local7 = client.anInt3414 * 495533241;
 		@Pc(11) int local11 = client.anInt3415 * -1074927711;
 		@Pc(21) int local21 = client.anInt3413 * -108363597 - client.anInt3408 * -1378711501 - local7;
-		@Pc(31) int local31 = Class504.anInt5362 * 2090134413 - client.anInt3416 * 2091353777 - local11;
+		@Pc(31) int local31 = BaseVarTypeString.anInt5362 * 2090134413 - client.anInt3416 * 2091353777 - local11;
 		if (local7 <= 0 && local21 <= 0 && local11 <= 0 && local31 <= 0) {
 			return;
 		}
 		try {
-			@Pc(42) Container local42 = Class504.method30377(-283088421);
+			@Pc(42) Container local42 = BaseVarTypeString.method30377(-283088421);
 			@Pc(44) int local44 = 0;
 			@Pc(46) int local46 = 0;
 			if (local42 == Class628.aFrame2) {
@@ -45,16 +45,16 @@ public final class Class555 {
 			@Pc(61) Graphics local61 = local42.getGraphics();
 			local61.setColor(Color.black);
 			if (local7 > 0) {
-				local61.fillRect(local44, local46, local7, Class504.anInt5362 * 2090134413);
+				local61.fillRect(local44, local46, local7, BaseVarTypeString.anInt5362 * 2090134413);
 			}
 			if (local11 > 0) {
 				local61.fillRect(local44, local46, client.anInt3413 * -108363597, local11);
 			}
 			if (local21 > 0) {
-				local61.fillRect(client.anInt3413 * -108363597 + local44 - local21, local46, local21, Class504.anInt5362 * 2090134413);
+				local61.fillRect(client.anInt3413 * -108363597 + local44 - local21, local46, local21, BaseVarTypeString.anInt5362 * 2090134413);
 			}
 			if (local31 > 0) {
-				local61.fillRect(local44, local46 + Class504.anInt5362 * 2090134413 - local31, client.anInt3413 * -108363597, local31);
+				local61.fillRect(local44, local46 + BaseVarTypeString.anInt5362 * 2090134413 - local31, client.anInt3413 * -108363597, local31);
 			}
 		} catch (@Pc(118) Exception local118) {
 		}

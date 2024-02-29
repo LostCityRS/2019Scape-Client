@@ -22,46 +22,46 @@ final class Class690 implements Runnable {
 	@OriginalMember(owner = "client!yp", name = "o", descriptor = "()V")
 	public void method36711() {
 		try {
-			IcmpService_Sub1.anIcmpService_Sub1_1.run();
+			NativeMouse.instance.run();
 		} catch (@Pc(3) Throwable local3) {
 		}
-		IcmpService_Sub1.anIcmpService_Sub1_1 = null;
+		NativeMouse.instance = null;
 	}
 
 	@OriginalMember(owner = "client!yp", name = "run", descriptor = "()V")
 	@Override
 	public void run() {
 		try {
-			IcmpService_Sub1.anIcmpService_Sub1_1.run();
+			NativeMouse.instance.run();
 		} catch (@Pc(3) Throwable local3) {
 		}
-		IcmpService_Sub1.anIcmpService_Sub1_1 = null;
+		NativeMouse.instance = null;
 	}
 
 	@OriginalMember(owner = "client!yp", name = "c", descriptor = "()V")
 	public void method36712() {
 		try {
-			IcmpService_Sub1.anIcmpService_Sub1_1.run();
+			NativeMouse.instance.run();
 		} catch (@Pc(3) Throwable local3) {
 		}
-		IcmpService_Sub1.anIcmpService_Sub1_1 = null;
+		NativeMouse.instance = null;
 	}
 
 	@OriginalMember(owner = "client!yp", name = "r", descriptor = "()V")
 	public void method36713() {
 		try {
-			IcmpService_Sub1.anIcmpService_Sub1_1.run();
+			NativeMouse.instance.run();
 		} catch (@Pc(3) Throwable local3) {
 		}
-		IcmpService_Sub1.anIcmpService_Sub1_1 = null;
+		NativeMouse.instance = null;
 	}
 
 	@OriginalMember(owner = "client!yp", name = "v", descriptor = "()V")
 	public void method36714() {
 		try {
-			IcmpService_Sub1.anIcmpService_Sub1_1.run();
+			NativeMouse.instance.run();
 		} catch (@Pc(3) Throwable local3) {
 		}
-		IcmpService_Sub1.anIcmpService_Sub1_1 = null;
+		NativeMouse.instance = null;
 	}
 }

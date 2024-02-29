@@ -42,7 +42,7 @@ public final class Class29 {
 		if (Class174.anInt3297 * -283420141 >= 100) {
 			@Pc(37) int local37 = Class545.anInt5450 * -717754880 + 256;
 			@Pc(43) int local43 = Class349.anInt4242 * -970841600 + 256;
-			@Pc(55) int local55 = Class305.method26894(local37, local43, Class512.anInt5370 * 1177442423, (byte) -49) - Class290.anInt3952 * -1980774829;
+			@Pc(55) int local55 = Class305.method26894(local37, local43, BaseVarTypeComponentHook.anInt5370 * 1177442423, (byte) -49) - Class290.anInt3952 * -1980774829;
 			@Pc(61) int local61 = local37 - Class163.anInt2002 * -1331168249;
 			@Pc(67) int local67 = local55 - Class130_Sub2.anInt1117 * 1055108289;
 			@Pc(73) int local73 = local43 - Class270.anInt3925 * 466086187;

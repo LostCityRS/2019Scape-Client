@@ -8,13 +8,13 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!atu")
-public final class Canvas_Sub1 extends Canvas {
+public final class GameCanvas extends Canvas {
 
 	@OriginalMember(owner = "client!atu", name = "e", descriptor = "Ljava/awt/Component;")
 	Component aComponent3;
 
 	@OriginalMember(owner = "client!atu", name = "<init>", descriptor = "(Ljava/awt/Component;)V")
-	Canvas_Sub1(@OriginalArg(0) Component arg0) {
+	GameCanvas(@OriginalArg(0) Component arg0) {
 		this.aComponent3 = arg0;
 	}
 

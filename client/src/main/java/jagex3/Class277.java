@@ -55,8 +55,8 @@ final class Class277 implements Interface58 {
 			}
 			Class72.anInt241 += local26 * -79811289;
 		}
-		if (Class441.anInt5047 * -953396699 != local7) {
-			local18 = local7 - Class441.anInt5047 * -953396699;
+		if (SortedQueueEntry.anInt5047 * -953396699 != local7) {
+			local18 = local7 - SortedQueueEntry.anInt5047 * -953396699;
 			local26 = (int) (arg0 * (long) local18 / 320L);
 			if (local18 > 0) {
 				if (local26 == 0) {
@@ -69,7 +69,7 @@ final class Class277 implements Interface58 {
 			} else if (local26 < local18) {
 				local26 = local18;
 			}
-			Class441.anInt5047 += local26 * 2072345005;
+			SortedQueueEntry.anInt5047 += local26 * 2072345005;
 		}
 		client.aFloat253 += (float) arg0 * client.aFloat254 / 40.0F * 8.0F;
 		client.aFloat256 += (float) arg0 * client.aFloat255 / 40.0F * 8.0F;

@@ -1261,13 +1261,13 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 	}
 
 	@OriginalMember(owner = "client!ahm", name = "ct", descriptor = "(I)Lclient!akt;")
-	public final Class93_Sub30 method20000(@OriginalArg(0) int arg0) {
+	public final CoordFine method20000(@OriginalArg(0) int arg0) {
 		@Pc(3) Class472 local3 = this.method24241().aClass472_61;
 		@Pc(7) Class611 local7 = client.aClass532_1.method30624(1878386949);
 		@Pc(16) int local16 = local7.anInt5784 * 1114227200 + (int) local3.aFloat325;
 		@Pc(20) int local20 = (int) local3.aFloat326;
 		@Pc(29) int local29 = (int) local3.aFloat327 + local7.anInt5785 * 1116707328;
-		return new Class93_Sub30(this.aByte100, local16, local20, local29);
+		return new CoordFine(this.aByte100, local16, local20, local29);
 	}
 
 	@OriginalMember(owner = "client!ahm", name = "dg", descriptor = "(Lclient!do;)V")
@@ -2443,12 +2443,12 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 	}
 
 	@OriginalMember(owner = "client!ahm", name = "fx", descriptor = "()Lclient!akt;")
-	public final Class93_Sub30 method20056() {
+	public final CoordFine method20056() {
 		@Pc(3) Class472 local3 = this.method24241().aClass472_61;
 		@Pc(7) Class611 local7 = client.aClass532_1.method30624(1955860467);
 		@Pc(16) int local16 = local7.anInt5784 * 1114227200 + (int) local3.aFloat325;
 		@Pc(20) int local20 = (int) local3.aFloat326;
 		@Pc(29) int local29 = (int) local3.aFloat327 + local7.anInt5785 * 1116707328;
-		return new Class93_Sub30(this.aByte100, local16, local20, local29);
+		return new CoordFine(this.aByte100, local16, local20, local29);
 	}
 }

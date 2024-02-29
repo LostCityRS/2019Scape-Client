@@ -208,7 +208,7 @@ public final class Class93_Sub23_Sub2 extends Class93_Sub23 {
 	public void method22889(@OriginalArg(0) byte arg0) {
 		@Pc(2) Class93_Sub23_Sub2[] local2 = aClass93_Sub23_Sub2Array1;
 		synchronized (aClass93_Sub23_Sub2Array1) {
-			if (Class640.anInt5916 * -757688083 < Class321.anInt4139 * 865776021 - 1) {
+			if (Class640.anInt5916 * -757688083 < ComponentHook.anInt4139 * 865776021 - 1) {
 				aClass93_Sub23_Sub2Array1[(Class640.anInt5916 += 1091273957) * -757688083 - 1] = this;
 			}
 		}
@@ -404,7 +404,7 @@ public final class Class93_Sub23_Sub2 extends Class93_Sub23 {
 	public void method22883() {
 		@Pc(2) Class93_Sub23_Sub2[] local2 = aClass93_Sub23_Sub2Array1;
 		synchronized (aClass93_Sub23_Sub2Array1) {
-			if (Class640.anInt5916 * -757688083 < Class321.anInt4139 * 865776021 - 1) {
+			if (Class640.anInt5916 * -757688083 < ComponentHook.anInt4139 * 865776021 - 1) {
 				aClass93_Sub23_Sub2Array1[(Class640.anInt5916 += 1091273957) * -757688083 - 1] = this;
 			}
 		}
@@ -415,7 +415,7 @@ public final class Class93_Sub23_Sub2 extends Class93_Sub23 {
 	public void method22897() {
 		@Pc(2) Class93_Sub23_Sub2[] local2 = aClass93_Sub23_Sub2Array1;
 		synchronized (aClass93_Sub23_Sub2Array1) {
-			if (Class640.anInt5916 * -757688083 < Class321.anInt4139 * 865776021 - 1) {
+			if (Class640.anInt5916 * -757688083 < ComponentHook.anInt4139 * 865776021 - 1) {
 				aClass93_Sub23_Sub2Array1[(Class640.anInt5916 += 1091273957) * -757688083 - 1] = this;
 			}
 		}

@@ -127,7 +127,7 @@ public final class Class670 {
 		@Pc(5) TwitchEventResult local5 = new TwitchEventResult(arg0, arg1);
 		@Pc(8) Class591 local8 = local5.method25474();
 		if (local8 != null) {
-			Class707.method36932(local8.method37101(), local5, (byte) -64);
+			Class707.method36932(local8.getId(), local5, (byte) -64);
 		}
 	}
 

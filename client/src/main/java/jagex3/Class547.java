@@ -34,7 +34,7 @@ public final class Class547 implements Interface20 {
 			throw new RuntimeException();
 		}
 		@Pc(46) Class39 local46 = (Class39) Class19.aClass32_Sub7_5.method18273(local23, -313640571);
-		if (local46.aClass519_1.method37101() != local13) {
+		if (local46.aScriptVarType_1.getId() != local13) {
 			throw new RuntimeException();
 		}
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local46.method751(local33, (byte) 0) ? 1 : 0;

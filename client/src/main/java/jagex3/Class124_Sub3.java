@@ -179,9 +179,9 @@ public abstract class Class124_Sub3 extends Class124 {
 
 	@OriginalMember(owner = "client!ahn", name = "v", descriptor = "()Lclient!akt;")
 	@Override
-	public final Class93_Sub30 method21424() {
+	public final CoordFine method21424() {
 		@Pc(3) Class472 local3 = this.method21414((byte) 41);
-		return new Class93_Sub30(0, (int) local3.aFloat325, (int) local3.aFloat326, (int) local3.aFloat327);
+		return new CoordFine(0, (int) local3.aFloat325, (int) local3.aFloat326, (int) local3.aFloat327);
 	}
 
 	@OriginalMember(owner = "client!ahn", name = "m", descriptor = "(B)Lclient!ox;")
@@ -203,9 +203,9 @@ public abstract class Class124_Sub3 extends Class124 {
 
 	@OriginalMember(owner = "client!ahn", name = "f", descriptor = "(B)Lclient!akt;")
 	@Override
-	public final Class93_Sub30 method21416(@OriginalArg(0) byte arg0) {
+	public final CoordFine method21416(@OriginalArg(0) byte arg0) {
 		@Pc(3) Class472 local3 = this.method21414((byte) 61);
-		return new Class93_Sub30(0, (int) local3.aFloat325, (int) local3.aFloat326, (int) local3.aFloat327);
+		return new CoordFine(0, (int) local3.aFloat325, (int) local3.aFloat326, (int) local3.aFloat327);
 	}
 
 	@OriginalMember(owner = "client!ahn", name = "y", descriptor = "()F")
@@ -408,9 +408,9 @@ public abstract class Class124_Sub3 extends Class124 {
 
 	@OriginalMember(owner = "client!ahn", name = "r", descriptor = "()Lclient!akt;")
 	@Override
-	public final Class93_Sub30 method21432() {
+	public final CoordFine method21432() {
 		@Pc(3) Class472 local3 = this.method21414((byte) 105);
-		return new Class93_Sub30(0, (int) local3.aFloat325, (int) local3.aFloat326, (int) local3.aFloat327);
+		return new CoordFine(0, (int) local3.aFloat325, (int) local3.aFloat326, (int) local3.aFloat327);
 	}
 
 	@OriginalMember(owner = "client!ahn", name = "q", descriptor = "(Lclient!alw;)V")
@@ -431,9 +431,9 @@ public abstract class Class124_Sub3 extends Class124 {
 
 	@OriginalMember(owner = "client!ahn", name = "o", descriptor = "()Lclient!akt;")
 	@Override
-	public final Class93_Sub30 method21422() {
+	public final CoordFine method21422() {
 		@Pc(3) Class472 local3 = this.method21414((byte) 70);
-		return new Class93_Sub30(0, (int) local3.aFloat325, (int) local3.aFloat326, (int) local3.aFloat327);
+		return new CoordFine(0, (int) local3.aFloat325, (int) local3.aFloat326, (int) local3.aFloat327);
 	}
 
 	@OriginalMember(owner = "client!ahn", name = "s", descriptor = "()F")
@@ -471,9 +471,9 @@ public abstract class Class124_Sub3 extends Class124 {
 
 	@OriginalMember(owner = "client!ahn", name = "c", descriptor = "()Lclient!akt;")
 	@Override
-	public final Class93_Sub30 method21423() {
+	public final CoordFine method21423() {
 		@Pc(3) Class472 local3 = this.method21414((byte) 14);
-		return new Class93_Sub30(0, (int) local3.aFloat325, (int) local3.aFloat326, (int) local3.aFloat327);
+		return new CoordFine(0, (int) local3.aFloat325, (int) local3.aFloat326, (int) local3.aFloat327);
 	}
 
 	@OriginalMember(owner = "client!ahn", name = "ar", descriptor = "(Lclient!alw;I)V")

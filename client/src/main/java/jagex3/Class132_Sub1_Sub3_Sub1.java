@@ -22,10 +22,10 @@ public final class Class132_Sub1_Sub3_Sub1 extends Class132_Sub1_Sub3 implements
 
 	@OriginalMember(owner = "client!ajh", name = "f", descriptor = "(Lclient!yh;S)V")
 	public static void method12302(@OriginalArg(0) Interface73 arg0, @OriginalArg(1) short arg1) {
-		if (IcmpService_Sub1.anIcmpService_Sub1_1 == null) {
+		if (NativeMouse.instance == null) {
 			throw new IllegalStateException("");
 		}
-		IcmpService_Sub1.anIcmpService_Sub1_1.aList2.add(arg0);
+		NativeMouse.instance.listeners.add(arg0);
 	}
 
 	@OriginalMember(owner = "client!ajh", name = "ass", descriptor = "(Lclient!yf;B)V")

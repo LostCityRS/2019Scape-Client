@@ -63,9 +63,9 @@ public final class Class529 {
 			throw new RuntimeException();
 		}
 		@Pc(60) Class39 local60 = (Class39) Class19.aClass32_Sub7_5.method18273(local23, 493731023);
-		if (local60.aClass519_2.method37101() != local13) {
+		if (local60.aScriptVarType_2.getId() != local13) {
 			throw new RuntimeException();
-		} else if (local60.aClass519_1.method37101() == Class519.aClass519_7.method37101()) {
+		} else if (local60.aScriptVarType_1.getId() == ScriptVarType.STRING.getId()) {
 			@Pc(84) int[] local84 = local60.method767(local47, -1497248091);
 			if (local33 < 0 || local84 == null || local84.length <= local33) {
 				throw new RuntimeException();

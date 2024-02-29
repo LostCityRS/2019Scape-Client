@@ -15,7 +15,7 @@ public final class Class87 implements Interface13, Interface5 {
 	public int anInt265;
 
 	@OriginalMember(owner = "client!adp", name = "e", descriptor = "Lclient!qw;")
-	Class519 aClass519_3;
+    ScriptVarType aScriptVarType_3;
 
 	@OriginalMember(owner = "client!adp", name = "k", descriptor = "Z")
 	public boolean aBoolean32 = true;
@@ -33,7 +33,7 @@ public final class Class87 implements Interface13, Interface5 {
 	void method1506(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
 			@Pc(8) char local8 = Class615.method32270(arg0.method22426(1220074706), (short) 150);
-			this.aClass519_3 = Class519.method30500(local8, (byte) 8);
+			this.aScriptVarType_3 = ScriptVarType.method30500(local8, (byte) 8);
 		} else if (arg1 == 2) {
 			this.anInt265 = arg0.method22431(-118643075) * -2008172851;
 		} else if (arg1 == 4) {
@@ -41,7 +41,7 @@ public final class Class87 implements Interface13, Interface5 {
 		} else if (arg1 == 5) {
 			this.aString11 = arg0.method22439(1948836307);
 		} else if (arg1 == 101) {
-			this.aClass519_3 = (Class519) Class107.method18131(Class519.method30493(1432836651), arg0.method22644((byte) -127), -1915563430);
+			this.aScriptVarType_3 = (ScriptVarType) Class107.method18131(ScriptVarType.values(), arg0.method22644((byte) -127), -1915563430);
 		}
 	}
 
@@ -49,7 +49,7 @@ public final class Class87 implements Interface13, Interface5 {
 	void method1507(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (arg1 == 1) {
 			@Pc(8) char local8 = Class615.method32270(arg0.method22426(1065706590), (short) 150);
-			this.aClass519_3 = Class519.method30500(local8, (byte) 8);
+			this.aScriptVarType_3 = ScriptVarType.method30500(local8, (byte) 8);
 		} else if (arg1 == 2) {
 			this.anInt265 = arg0.method22431(-118643075) * -2008172851;
 		} else if (arg1 == 4) {
@@ -57,13 +57,13 @@ public final class Class87 implements Interface13, Interface5 {
 		} else if (arg1 == 5) {
 			this.aString11 = arg0.method22439(2147401139);
 		} else if (arg1 == 101) {
-			this.aClass519_3 = (Class519) Class107.method18131(Class519.method30493(1992894062), arg0.method22644((byte) -67), -1915563430);
+			this.aScriptVarType_3 = (ScriptVarType) Class107.method18131(ScriptVarType.values(), arg0.method22644((byte) -67), -1915563430);
 		}
 	}
 
 	@OriginalMember(owner = "client!adp", name = "p", descriptor = "(I)Z")
 	public boolean method1508(@OriginalArg(0) int arg0) {
-		return this.aClass519_3 == Class519.aClass519_7;
+		return this.aScriptVarType_3 == ScriptVarType.STRING;
 	}
 
 	@OriginalMember(owner = "client!adp", name = "n", descriptor = "(I)V")
@@ -80,7 +80,7 @@ public final class Class87 implements Interface13, Interface5 {
 	void method1509(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
 			@Pc(8) char local8 = Class615.method32270(arg0.method22426(1528387687), (short) 150);
-			this.aClass519_3 = Class519.method30500(local8, (byte) 8);
+			this.aScriptVarType_3 = ScriptVarType.method30500(local8, (byte) 8);
 		} else if (arg1 == 2) {
 			this.anInt265 = arg0.method22431(-118643075) * -2008172851;
 		} else if (arg1 == 4) {
@@ -88,7 +88,7 @@ public final class Class87 implements Interface13, Interface5 {
 		} else if (arg1 == 5) {
 			this.aString11 = arg0.method22439(1933586620);
 		} else if (arg1 == 101) {
-			this.aClass519_3 = (Class519) Class107.method18131(Class519.method30493(1999805024), arg0.method22644((byte) -108), -1915563430);
+			this.aScriptVarType_3 = (ScriptVarType) Class107.method18131(ScriptVarType.values(), arg0.method22644((byte) -108), -1915563430);
 		}
 	}
 
@@ -154,7 +154,7 @@ public final class Class87 implements Interface13, Interface5 {
 	void method1510(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
 			@Pc(8) char local8 = Class615.method32270(arg0.method22426(1255886065), (short) 150);
-			this.aClass519_3 = Class519.method30500(local8, (byte) 8);
+			this.aScriptVarType_3 = ScriptVarType.method30500(local8, (byte) 8);
 		} else if (arg1 == 2) {
 			this.anInt265 = arg0.method22431(-118643075) * -2008172851;
 		} else if (arg1 == 4) {
@@ -162,7 +162,7 @@ public final class Class87 implements Interface13, Interface5 {
 		} else if (arg1 == 5) {
 			this.aString11 = arg0.method22439(2093566124);
 		} else if (arg1 == 101) {
-			this.aClass519_3 = (Class519) Class107.method18131(Class519.method30493(1366069052), arg0.method22644((byte) -101), -1915563430);
+			this.aScriptVarType_3 = (ScriptVarType) Class107.method18131(ScriptVarType.values(), arg0.method22644((byte) -101), -1915563430);
 		}
 	}
 
@@ -187,7 +187,7 @@ public final class Class87 implements Interface13, Interface5 {
 	void method1511(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
 			@Pc(8) char local8 = Class615.method32270(arg0.method22426(2060430853), (short) 150);
-			this.aClass519_3 = Class519.method30500(local8, (byte) 8);
+			this.aScriptVarType_3 = ScriptVarType.method30500(local8, (byte) 8);
 		} else if (arg1 == 2) {
 			this.anInt265 = arg0.method22431(-118643075) * -2008172851;
 		} else if (arg1 == 4) {
@@ -195,12 +195,12 @@ public final class Class87 implements Interface13, Interface5 {
 		} else if (arg1 == 5) {
 			this.aString11 = arg0.method22439(-180913270);
 		} else if (arg1 == 101) {
-			this.aClass519_3 = (Class519) Class107.method18131(Class519.method30493(1718461465), arg0.method22644((byte) -19), -1915563430);
+			this.aScriptVarType_3 = (ScriptVarType) Class107.method18131(ScriptVarType.values(), arg0.method22644((byte) -19), -1915563430);
 		}
 	}
 
 	@OriginalMember(owner = "client!adp", name = "y", descriptor = "()Z")
 	public boolean method1512() {
-		return this.aClass519_3 == Class519.aClass519_7;
+		return this.aScriptVarType_3 == ScriptVarType.STRING;
 	}
 }

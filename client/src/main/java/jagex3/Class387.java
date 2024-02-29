@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!ks")
-public final class Class387 implements Interface75 {
+public final class Class387 implements SerializableEnum {
 
 	@OriginalMember(owner = "client!ks", name = "e", descriptor = "Lclient!ks;")
 	static final Class387 aClass387_12 = new Class387(14, 1);
@@ -141,13 +141,8 @@ public final class Class387 implements Interface75 {
 
 	@OriginalMember(owner = "client!ks", name = "n", descriptor = "()I")
 	@Override
-	public int method37101() {
+	public int getId() {
 		return this.anInt4810 * -1390671857;
 	}
 
-	@OriginalMember(owner = "client!ks", name = "k", descriptor = "()I")
-	@Override
-	public int method37100() {
-		return this.anInt4810 * -1390671857;
-	}
 }

@@ -277,4 +277,18 @@ public final class Class602 {
 	Class602() throws Throwable {
 		throw new Error();
 	}
+
+    @OriginalMember(owner = "client!ud", name = "l", descriptor = "(I)V")
+    public static void method31877(@OriginalArg(0) int arg0) {
+        if (client.anInt3435 * -849002901 != 18 && client.anInt3435 * -849002901 != 3 || client.aClass175_2 == null) {
+            return;
+        }
+        while (true) {
+            @Pc(17) Interface63 local17 = (Interface63) aLinkedList6.poll();
+            if (local17 == null) {
+                return;
+            }
+            local17.method32076(-1043598981);
+        }
+    }
 }

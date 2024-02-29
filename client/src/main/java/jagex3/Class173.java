@@ -118,7 +118,7 @@ public final class Class173 {
 	@OriginalMember(owner = "client!au", name = "abz", descriptor = "(Lclient!yf;I)V")
 	static void method23811(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray521[(arg0.anInt6052 -= 1189701933) * -1497248091];
-		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class557.aClass297_1.method26715(local12, -549067081).method26845((short) 7249).method37101();
+		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = Class557.aClass297_1.method26715(local12, -549067081).method26845((short) 7249).getId();
 	}
 
 	@OriginalMember(owner = "client!au", name = "m", descriptor = "(I)[I")
@@ -160,14 +160,14 @@ public final class Class173 {
 	}
 
 	@OriginalMember(owner = "client!au", name = "p", descriptor = "(IZB)Lclient!akt;")
-	public static Class93_Sub30 method23816(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) byte arg2) {
-		@Pc(2) Class93_Sub30[] local2 = Class93_Sub30.aClass93_Sub30Array1;
-		synchronized (Class93_Sub30.aClass93_Sub30Array1) {
+	public static CoordFine method23816(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) byte arg2) {
+		@Pc(2) CoordFine[] local2 = CoordFine.aCoordFineArray1;
+		synchronized (CoordFine.aCoordFineArray1) {
 			if (Class509.anInt5367 * 672498035 == 0) {
-				return new Class93_Sub30(arg0, arg1);
+				return new CoordFine(arg0, arg1);
 			} else {
-				Class93_Sub30.aClass93_Sub30Array1[(Class509.anInt5367 -= -1799648325) * 672498035].method13887(arg0, arg1, 16711680);
-				return Class93_Sub30.aClass93_Sub30Array1[Class509.anInt5367 * 672498035];
+				CoordFine.aCoordFineArray1[(Class509.anInt5367 -= -1799648325) * 672498035].method13887(arg0, arg1, 16711680);
+				return CoordFine.aCoordFineArray1[Class509.anInt5367 * 672498035];
 			}
 		}
 	}

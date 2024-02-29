@@ -603,7 +603,7 @@ public final class Class625 {
 				if (local106 != null && Class490.method30159(local106, arg1)) {
 					@Pc(116) Class591 local116 = local106.method25474();
 					if (local116 != null) {
-						Class707.method36932(local116.method37101(), local106, (byte) -86);
+						Class707.method36932(local116.getId(), local106, (byte) -86);
 					}
 				}
 			}
@@ -674,7 +674,7 @@ public final class Class625 {
 				if (local106 != null && Class490.method30159(local106, arg1)) {
 					@Pc(116) Class591 local116 = local106.method25474();
 					if (local116 != null) {
-						Class707.method36932(local116.method37101(), local106, (byte) -118);
+						Class707.method36932(local116.getId(), local106, (byte) -118);
 					}
 				}
 			}
@@ -827,7 +827,7 @@ public final class Class625 {
 				if (local106 != null && Class490.method30159(local106, arg1)) {
 					@Pc(116) Class591 local116 = local106.method25474();
 					if (local116 != null) {
-						Class707.method36932(local116.method37101(), local106, (byte) -104);
+						Class707.method36932(local116.getId(), local106, (byte) -104);
 					}
 				}
 			}
@@ -893,7 +893,7 @@ public final class Class625 {
 				if (local106 != null && Class490.method30159(local106, arg1)) {
 					@Pc(116) Class591 local116 = local106.method25474();
 					if (local116 != null) {
-						Class707.method36932(local116.method37101(), local106, (byte) -1);
+						Class707.method36932(local116.getId(), local106, (byte) -1);
 					}
 				}
 			}
@@ -1022,7 +1022,7 @@ public final class Class625 {
 				if (local106 != null && Class490.method30159(local106, arg1)) {
 					@Pc(116) Class591 local116 = local106.method25474();
 					if (local116 != null) {
-						Class707.method36932(local116.method37101(), local106, (byte) -45);
+						Class707.method36932(local116.getId(), local106, (byte) -45);
 					}
 				}
 			}

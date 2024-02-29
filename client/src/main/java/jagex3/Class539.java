@@ -77,11 +77,11 @@ public final class Class539 {
 	static boolean method31064(@OriginalArg(0) Class572[][][] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4, @OriginalArg(5) int arg5) {
 		@Pc(3) byte[][][] local3 = client.aClass532_1.method30639((byte) -98);
 		@Pc(14) byte local14 = arg4 ? 1 : (byte) (client.anInt3495 * 1815175593 & 0xFF);
-		if (local14 == local3[Class512.anInt5370 * 1177442423][arg2][arg3]) {
+		if (local14 == local3[BaseVarTypeComponentHook.anInt5370 * 1177442423][arg2][arg3]) {
 			return false;
 		}
 		@Pc(31) Class520 local31 = client.aClass532_1.method30690(-1466943068);
-		if ((local31.aByteArrayArrayArray12[Class512.anInt5370 * 1177442423][arg2][arg3] & 0x4) == 0) {
+		if ((local31.aByteArrayArrayArray12[BaseVarTypeComponentHook.anInt5370 * 1177442423][arg2][arg3] & 0x4) == 0) {
 			return false;
 		}
 		@Pc(49) byte local49 = 0;
@@ -89,7 +89,7 @@ public final class Class539 {
 		client.anIntArray331[local49] = arg2;
 		@Pc(58) int local58 = local49 + 1;
 		client.anIntArray317[local49] = arg3;
-		local3[Class512.anInt5370 * 1177442423][arg2][arg3] = local14;
+		local3[BaseVarTypeComponentHook.anInt5370 * 1177442423][arg2][arg3] = local14;
 		while (local51 != local58) {
 			@Pc(79) int local79 = client.anIntArray331[local51] & 0xFFFF;
 			@Pc(87) int local87 = client.anIntArray331[local51] >> 16 & 0xFF;
@@ -98,7 +98,7 @@ public final class Class539 {
 			@Pc(109) int local109 = client.anIntArray317[local51] >> 16 & 0xFF;
 			local51 = local51 + 1 & 0xFFF;
 			@Pc(117) boolean local117 = false;
-			if ((local31.aByteArrayArrayArray12[Class512.anInt5370 * 1177442423][local79][local101] & 0x4) == 0) {
+			if ((local31.aByteArrayArrayArray12[BaseVarTypeComponentHook.anInt5370 * 1177442423][local79][local101] & 0x4) == 0) {
 				local117 = true;
 			}
 			@Pc(134) boolean local134 = false;
@@ -106,7 +106,7 @@ public final class Class539 {
 			@Pc(186) int local186;
 			@Pc(226) int local226;
 			if (arg0 != null) {
-				label240: for (local143 = Class512.anInt5370 * 1177442423 + 1; local143 <= 3; local143++) {
+				label240: for (local143 = BaseVarTypeComponentHook.anInt5370 * 1177442423 + 1; local143 <= 3; local143++) {
 					if (arg0[local143] != null && (local31.aByteArrayArrayArray12[local143][local79][local101] & 0x8) == 0) {
 						@Pc(318) Class132_Sub1_Sub1 local318;
 						@Pc(328) int local328;
@@ -181,7 +181,7 @@ public final class Class539 {
 				}
 			}
 			if (local134) {
-				local143 = client.aClass532_1.method30640(-1948542630).aClass99Array1[Class512.anInt5370 * 1177442423 + 1].method2482(local79, local101, -1740548441);
+				local143 = client.aClass532_1.method30640(-1948542630).aClass99Array1[BaseVarTypeComponentHook.anInt5370 * 1177442423 + 1].method2482(local79, local101, -1740548441);
 				if (client.anIntArray327[arg1] < local143) {
 					client.anIntArray327[arg1] = local143;
 				}
@@ -199,59 +199,59 @@ public final class Class539 {
 				}
 			}
 			if (!local117) {
-				if (local79 >= 1 && local14 != local3[Class512.anInt5370 * 1177442423][local79 - 1][local101]) {
+				if (local79 >= 1 && local14 != local3[BaseVarTypeComponentHook.anInt5370 * 1177442423][local79 - 1][local101]) {
 					client.anIntArray331[local58] = local79 - 1 | 0x120000 | 0xD3000000;
 					client.anIntArray317[local58] = local101 | 0x130000;
 					local58 = local58 + 1 & 0xFFF;
-					local3[Class512.anInt5370 * 1177442423][local79 - 1][local101] = local14;
+					local3[BaseVarTypeComponentHook.anInt5370 * 1177442423][local79 - 1][local101] = local14;
 				}
 				local101++;
 				if (local101 < client.aClass532_1.method30655((short) 128)) {
-					if (local79 - 1 >= 0 && local14 != local3[Class512.anInt5370 * 1177442423][local79 - 1][local101] && (local31.aByteArrayArrayArray12[Class512.anInt5370 * 1177442423][local79][local101] & 0x4) == 0 && (local31.aByteArrayArrayArray12[Class512.anInt5370 * 1177442423][local79 - 1][local101 - 1] & 0x4) == 0) {
+					if (local79 - 1 >= 0 && local14 != local3[BaseVarTypeComponentHook.anInt5370 * 1177442423][local79 - 1][local101] && (local31.aByteArrayArrayArray12[BaseVarTypeComponentHook.anInt5370 * 1177442423][local79][local101] & 0x4) == 0 && (local31.aByteArrayArrayArray12[BaseVarTypeComponentHook.anInt5370 * 1177442423][local79 - 1][local101 - 1] & 0x4) == 0) {
 						client.anIntArray331[local58] = local79 - 1 | 0x120000 | 0x52000000;
 						client.anIntArray317[local58] = local101 | 0x130000;
 						local58 = local58 + 1 & 0xFFF;
-						local3[Class512.anInt5370 * 1177442423][local79 - 1][local101] = local14;
+						local3[BaseVarTypeComponentHook.anInt5370 * 1177442423][local79 - 1][local101] = local14;
 					}
-					if (local3[Class512.anInt5370 * 1177442423][local79][local101] != local14) {
+					if (local3[BaseVarTypeComponentHook.anInt5370 * 1177442423][local79][local101] != local14) {
 						client.anIntArray331[local58] = local79 | 0x520000 | 0x13000000;
 						client.anIntArray317[local58] = local101 | 0x530000;
 						local58 = local58 + 1 & 0xFFF;
-						local3[Class512.anInt5370 * 1177442423][local79][local101] = local14;
+						local3[BaseVarTypeComponentHook.anInt5370 * 1177442423][local79][local101] = local14;
 					}
-					if (local79 + 1 < client.aClass532_1.method30625(1277779931) && local14 != local3[Class512.anInt5370 * 1177442423][local79 + 1][local101] && (local31.aByteArrayArrayArray12[Class512.anInt5370 * 1177442423][local79][local101] & 0x4) == 0 && (local31.aByteArrayArrayArray12[Class512.anInt5370 * 1177442423][local79 + 1][local101 - 1] & 0x4) == 0) {
+					if (local79 + 1 < client.aClass532_1.method30625(1277779931) && local14 != local3[BaseVarTypeComponentHook.anInt5370 * 1177442423][local79 + 1][local101] && (local31.aByteArrayArrayArray12[BaseVarTypeComponentHook.anInt5370 * 1177442423][local79][local101] & 0x4) == 0 && (local31.aByteArrayArrayArray12[BaseVarTypeComponentHook.anInt5370 * 1177442423][local79 + 1][local101 - 1] & 0x4) == 0) {
 						client.anIntArray331[local58] = local79 + 1 | 0x520000 | 0x92000000;
 						client.anIntArray317[local58] = local101 | 0x530000;
 						local58 = local58 + 1 & 0xFFF;
-						local3[Class512.anInt5370 * 1177442423][local79 + 1][local101] = local14;
+						local3[BaseVarTypeComponentHook.anInt5370 * 1177442423][local79 + 1][local101] = local14;
 					}
 				}
 				local101--;
-				if (local79 + 1 < client.aClass532_1.method30625(139032878) && local14 != local3[Class512.anInt5370 * 1177442423][local79 + 1][local101]) {
+				if (local79 + 1 < client.aClass532_1.method30625(139032878) && local14 != local3[BaseVarTypeComponentHook.anInt5370 * 1177442423][local79 + 1][local101]) {
 					client.anIntArray331[local58] = local79 + 1 | 0x920000 | 0x53000000;
 					client.anIntArray317[local58] = local101 | 0x930000;
 					local58 = local58 + 1 & 0xFFF;
-					local3[Class512.anInt5370 * 1177442423][local79 + 1][local101] = local14;
+					local3[BaseVarTypeComponentHook.anInt5370 * 1177442423][local79 + 1][local101] = local14;
 				}
 				local101--;
 				if (local101 >= 0) {
-					if (local79 - 1 >= 0 && local14 != local3[Class512.anInt5370 * 1177442423][local79 - 1][local101] && (local31.aByteArrayArrayArray12[Class512.anInt5370 * 1177442423][local79][local101] & 0x4) == 0 && (local31.aByteArrayArrayArray12[Class512.anInt5370 * 1177442423][local79 - 1][local101 + 1] & 0x4) == 0) {
+					if (local79 - 1 >= 0 && local14 != local3[BaseVarTypeComponentHook.anInt5370 * 1177442423][local79 - 1][local101] && (local31.aByteArrayArrayArray12[BaseVarTypeComponentHook.anInt5370 * 1177442423][local79][local101] & 0x4) == 0 && (local31.aByteArrayArrayArray12[BaseVarTypeComponentHook.anInt5370 * 1177442423][local79 - 1][local101 + 1] & 0x4) == 0) {
 						client.anIntArray331[local58] = local79 - 1 | 0xD20000 | 0x12000000;
 						client.anIntArray317[local58] = local101 | 0xD30000;
 						local58 = local58 + 1 & 0xFFF;
-						local3[Class512.anInt5370 * 1177442423][local79 - 1][local101] = local14;
+						local3[BaseVarTypeComponentHook.anInt5370 * 1177442423][local79 - 1][local101] = local14;
 					}
-					if (local14 != local3[Class512.anInt5370 * 1177442423][local79][local101]) {
+					if (local14 != local3[BaseVarTypeComponentHook.anInt5370 * 1177442423][local79][local101]) {
 						client.anIntArray331[local58] = local79 | 0xD20000 | 0x93000000;
 						client.anIntArray317[local58] = local101 | 0xD30000;
 						local58 = local58 + 1 & 0xFFF;
-						local3[Class512.anInt5370 * 1177442423][local79][local101] = local14;
+						local3[BaseVarTypeComponentHook.anInt5370 * 1177442423][local79][local101] = local14;
 					}
-					if (local79 + 1 < client.aClass532_1.method30625(330584158) && local3[Class512.anInt5370 * 1177442423][local79 + 1][local101] != local14 && (local31.aByteArrayArrayArray12[Class512.anInt5370 * 1177442423][local79][local101] & 0x4) == 0 && (local31.aByteArrayArrayArray12[Class512.anInt5370 * 1177442423][local79 + 1][local101 + 1] & 0x4) == 0) {
+					if (local79 + 1 < client.aClass532_1.method30625(330584158) && local3[BaseVarTypeComponentHook.anInt5370 * 1177442423][local79 + 1][local101] != local14 && (local31.aByteArrayArrayArray12[BaseVarTypeComponentHook.anInt5370 * 1177442423][local79][local101] & 0x4) == 0 && (local31.aByteArrayArrayArray12[BaseVarTypeComponentHook.anInt5370 * 1177442423][local79 + 1][local101 + 1] & 0x4) == 0) {
 						client.anIntArray331[local58] = local79 + 1 | 0x920000 | 0xD2000000;
 						client.anIntArray317[local58] = local101 | 0x930000;
 						local58 = local58 + 1 & 0xFFF;
-						local3[Class512.anInt5370 * 1177442423][local79 + 1][local101] = local14;
+						local3[BaseVarTypeComponentHook.anInt5370 * 1177442423][local79 + 1][local101] = local14;
 					}
 				}
 			}

@@ -128,7 +128,7 @@ public final class Class265 {
 				Class709.method36946(local301, (long) (Class411.anInt4907 * 276097583));
 				Class413.aLong275 = (long) Class411.anInt4907 * -1187630733921575941L;
 				local301.method22522(Class411.anInt4907 * 276097583, (byte) -77);
-				local301.method22522(Class106.aClass717_8.method37101(), (byte) 1);
+				local301.method22522(Class106.aClass717_8.getId(), (byte) 1);
 				local301.method22407(client.anInt3426 * -1765120027, (byte) 70);
 				for (local331 = 0; local331 < 5; local331++) {
 					local301.method22407(Class110_Sub9.aSecureRandom1.nextInt(), (byte) -114);
@@ -278,7 +278,7 @@ public final class Class265 {
 						}
 					}
 					local601.method22522(client.aClass702_4.anInt6114 * -1111983921, (byte) -51);
-					local601.method22522(Class106.aClass717_8.method37101(), (byte) -65);
+					local601.method22522(Class106.aClass717_8.getId(), (byte) -65);
 					local601.method22522(Class255.method26101(1731944066), (byte) -8);
 					local601.method22466(Class553.anInt3408 * -1378711501, 2135813365);
 					local601.method22466(Class553.anInt3416 * 2091353777, 2124973746);

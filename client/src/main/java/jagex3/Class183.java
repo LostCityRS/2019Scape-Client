@@ -41,8 +41,8 @@ public final class Class183 implements Interface18 {
 		if (client.anInt3413 * -108363597 < local3) {
 			local3 = client.anInt3413 * -108363597;
 		}
-		if (Class504.anInt5362 * 2090134413 < local7) {
-			local7 = Class504.anInt5362 * 2090134413;
+		if (BaseVarTypeString.anInt5362 * 2090134413 < local7) {
+			local7 = BaseVarTypeString.anInt5362 * 2090134413;
 		}
 		try {
 			if (Class51.aClass93_Sub36_1 != null) {

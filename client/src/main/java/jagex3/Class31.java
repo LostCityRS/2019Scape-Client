@@ -175,7 +175,7 @@ public final class Class31 {
 
 	@OriginalMember(owner = "client!abd", name = "xz", descriptor = "(Lclient!yf;I)V")
 	static void method637(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		@Pc(13) Class93_Sub30 local13 = (Class93_Sub30) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
+		@Pc(13) CoordFine local13 = (CoordFine) arg0.anObjectArray45[(arg0.anInt6049 -= 957530791) * 587908375];
 		arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = local13.anInt1612 * 671628745;
 	}
 

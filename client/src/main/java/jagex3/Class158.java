@@ -354,9 +354,9 @@ public abstract class Class158 {
 		if (arg0 == null || arg0.method25719(-1507711602) == 0) {
 			return 0.0F;
 		} else if (arg1 < (float) (arg0.aClass254Array1[0].anInt3893 * 1727636433)) {
-			return Class222.aClass222_2 == arg0.aClass222_6 ? arg0.aClass254Array1[0].aFloat281 : Class512.method30441(arg0, arg1, true, 555250862);
+			return Class222.aClass222_2 == arg0.aClass222_6 ? arg0.aClass254Array1[0].aFloat281 : BaseVarTypeComponentHook.method30441(arg0, arg1, true, 555250862);
 		} else if (arg1 > (float) (arg0.aClass254Array1[arg0.method25719(-1507711602) - 1].anInt3893 * 1727636433)) {
-			return Class222.aClass222_2 == arg0.aClass222_7 ? arg0.aClass254Array1[arg0.method25719(-1507711602) - 1].aFloat281 : Class512.method30441(arg0, arg1, false, -158176518);
+			return Class222.aClass222_2 == arg0.aClass222_7 ? arg0.aClass254Array1[arg0.method25719(-1507711602) - 1].aFloat281 : BaseVarTypeComponentHook.method30441(arg0, arg1, false, -158176518);
 		} else if (arg0.aBoolean653) {
 			return arg0.aClass254Array1[0].aFloat281;
 		} else {

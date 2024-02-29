@@ -169,7 +169,7 @@ public final class Class237 {
 				local135 = client.anIntArray329[4] + 128;
 			}
 			local240 = client.anInt3461 * 1018036723 + (int) client.aFloat253 & 0x3FFF;
-			Class716.method37057(Class72.anInt241 * -1022856553, Class305.method26894((int) local16.aFloat325, (int) local16.aFloat327, Class512.anInt5370 * 1177442423, (byte) -13) - client.anInt3484 * 1974760385, Class441.anInt5047 * -953396699, local135, local240, (local135 >> 3) * 3 + 600 << 2, local189, (byte) -40);
+			Class716.method37057(Class72.anInt241 * -1022856553, Class305.method26894((int) local16.aFloat325, (int) local16.aFloat327, BaseVarTypeComponentHook.anInt5370 * 1177442423, (byte) -13) - client.anInt3484 * 1974760385, SortedQueueEntry.anInt5047 * -953396699, local135, local240, (local135 >> 3) * 3 + 600 << 2, local189, (byte) -40);
 		} else if (Class429.anInt4942 * -1453926679 == 4) {
 			local135 = (int) client.aFloat256;
 			if (client.anInt3443 * 182292977 >> 8 > local135) {
@@ -179,7 +179,7 @@ public final class Class237 {
 				local135 = client.anIntArray329[4] + 128;
 			}
 			local240 = (int) client.aFloat253 & 0x3FFF;
-			Class716.method37057(Class72.anInt241 * -1022856553, Class305.method26894(client.anInt3481 * -1195894597, client.anInt3482 * 1196621895, Class512.anInt5370 * 1177442423, (byte) -53) - client.anInt3484 * 1974760385, Class441.anInt5047 * -953396699, local135, local240, (local135 >> 3) * 3 + 600 << 2, local189, (byte) -83);
+			Class716.method37057(Class72.anInt241 * -1022856553, Class305.method26894(client.anInt3481 * -1195894597, client.anInt3482 * 1196621895, BaseVarTypeComponentHook.anInt5370 * 1177442423, (byte) -53) - client.anInt3484 * 1974760385, SortedQueueEntry.anInt5047 * -953396699, local135, local240, (local135 >> 3) * 3 + 600 << 2, local189, (byte) -83);
 		} else if (Class429.anInt4942 * -1453926679 == 1) {
 			Class688.method36702(local189, -1103134376);
 		}

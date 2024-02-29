@@ -84,12 +84,12 @@ public final class Class402 {
 				@Pc(66) int local66;
 				@Pc(77) byte[] local77;
 				for (local66 = 0; local66 < 16; local66++) {
-					local77 = Class441.method29037(anObject16, local66 * 32768, 32768, 1048575);
+					local77 = SortedQueueEntry.method29037(anObject16, local66 * 32768, 32768, 1048575);
 					this.anInterface38Array2[local66] = this.aClass104_Sub2_36.method20968(Class206.aClass206_21, 128, 128, true, local77);
 				}
 				this.anInterface38Array1 = new Interface38[16];
 				for (local66 = 0; local66 < 16; local66++) {
-					local77 = Class441.method29037(anObject17, local66 * 32768, 32768, 1048575);
+					local77 = SortedQueueEntry.method29037(anObject17, local66 * 32768, 32768, 1048575);
 					this.anInterface38Array1[local66] = this.aClass104_Sub2_36.method20968(Class206.aClass206_21, 128, 128, true, local77);
 				}
 			}

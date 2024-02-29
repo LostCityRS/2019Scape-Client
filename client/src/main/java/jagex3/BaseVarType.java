@@ -6,50 +6,50 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!qa")
-public final class Class500 implements Interface75 {
+public final class BaseVarType implements SerializableEnum {
 
 	@OriginalMember(owner = "client!qa", name = "e", descriptor = "Lclient!qa;")
-	public static final Class500 aClass500_6 = new Class500(2, 0, Integer.class, new Class505());
+	public static final BaseVarType INTEGER = new BaseVarType(2, 0, Integer.class, new BaseVarTypeInteger());
 
 	@OriginalMember(owner = "client!qa", name = "n", descriptor = "Lclient!qa;")
-	public static final Class500 aClass500_3 = new Class500(4, 1, Long.class, new Class515());
+	public static final BaseVarType LONG = new BaseVarType(4, 1, Long.class, new BaseVarTypeLong());
 
 	@OriginalMember(owner = "client!qa", name = "m", descriptor = "Lclient!qa;")
-	public static final Class500 aClass500_2 = new Class500(1, 2, String.class, new Class504());
+	public static final BaseVarType STRING = new BaseVarType(1, 2, String.class, new BaseVarTypeString());
 
 	@OriginalMember(owner = "client!qa", name = "k", descriptor = "Lclient!qa;")
-	static final Class500 aClass500_5 = new Class500(0, 3, Class93_Sub30.class, new Class510());
+	public static final BaseVarType COORDFINE = new BaseVarType(0, 3, CoordFine.class, new BaseVarTypeCoordFine());
 
 	@OriginalMember(owner = "client!qa", name = "f", descriptor = "Lclient!qa;")
-	static final Class500 aClass500_4 = new Class500(3, 4, Class321.class, new Class512());
+	public static final BaseVarType COMPONENTHOOK = new BaseVarType(3, 4, ComponentHook.class, new BaseVarTypeComponentHook());
 
 	@OriginalMember(owner = "client!qa", name = "w", descriptor = "I")
-	public final int anInt5357;
+	public final int ordinal;
 
 	@OriginalMember(owner = "client!qa", name = "l", descriptor = "I")
-	final int anInt5358;
+	public final int id;
 
 	@OriginalMember(owner = "client!qa", name = "u", descriptor = "Ljava/lang/Class;")
-	public final Class aClass2;
+	public final Class instance;
 
 	@OriginalMember(owner = "client!qa", name = "z", descriptor = "Lclient!ade;")
-	final Interface9 anInterface9_1;
+	final BaseVarTypeCodec codec;
 
 	@OriginalMember(owner = "client!qa", name = "f", descriptor = "(Ljava/lang/Class;I)Lclient!ade;")
-	public static Interface9 method30338(@OriginalArg(0) Class arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) Class500 local3 = method30339(arg0, 513196918);
+	public static BaseVarTypeCodec method30338(@OriginalArg(0) Class arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) BaseVarType local3 = method30339(arg0, 513196918);
 		if (local3 == null) {
 			throw new IllegalArgumentException();
 		}
-		return local3.anInterface9_1;
+		return local3.codec;
 	}
 
 	@OriginalMember(owner = "client!qa", name = "m", descriptor = "(Ljava/lang/Class;I)Lclient!qa;")
-	static Class500 method30339(@OriginalArg(0) Class arg0, @OriginalArg(1) int arg1) {
-		@Pc(2) Class500[] local2 = method30340(-1834477791);
+	static BaseVarType method30339(@OriginalArg(0) Class arg0, @OriginalArg(1) int arg1) {
+		@Pc(2) BaseVarType[] local2 = values();
 		for (@Pc(4) int local4 = 0; local4 < local2.length; local4++) {
-			@Pc(12) Class500 local12 = local2[local4];
-			if (arg0 == local12.aClass2) {
+			@Pc(12) BaseVarType local12 = local2[local4];
+			if (arg0 == local12.instance) {
 				return local12;
 			}
 		}
@@ -57,16 +57,16 @@ public final class Class500 implements Interface75 {
 	}
 
 	@OriginalMember(owner = "client!qa", name = "e", descriptor = "(I)[Lclient!qa;")
-	public static Class500[] method30340(@OriginalArg(0) int arg0) {
-		return new Class500[] { aClass500_5, aClass500_4, aClass500_2, aClass500_6, aClass500_3 };
+	public static BaseVarType[] values() {
+		return new BaseVarType[] {COORDFINE, COMPONENTHOOK, STRING, INTEGER, LONG};
 	}
 
 	@OriginalMember(owner = "client!qa", name = "l", descriptor = "(Ljava/lang/Class;)Lclient!qa;")
-	static Class500 method30341(@OriginalArg(0) Class arg0) {
-		@Pc(2) Class500[] local2 = method30340(-1802498777);
+	static BaseVarType method30341(@OriginalArg(0) Class arg0) {
+		@Pc(2) BaseVarType[] local2 = values();
 		for (@Pc(4) int local4 = 0; local4 < local2.length; local4++) {
-			@Pc(12) Class500 local12 = local2[local4];
-			if (arg0 == local12.aClass2) {
+			@Pc(12) BaseVarType local12 = local2[local4];
+			if (arg0 == local12.instance) {
 				return local12;
 			}
 		}
@@ -74,11 +74,11 @@ public final class Class500 implements Interface75 {
 	}
 
 	@OriginalMember(owner = "client!qa", name = "u", descriptor = "(Ljava/lang/Class;)Lclient!qa;")
-	static Class500 method30342(@OriginalArg(0) Class arg0) {
-		@Pc(2) Class500[] local2 = method30340(-2022207499);
+	static BaseVarType method30342(@OriginalArg(0) Class arg0) {
+		@Pc(2) BaseVarType[] local2 = values();
 		for (@Pc(4) int local4 = 0; local4 < local2.length; local4++) {
-			@Pc(12) Class500 local12 = local2[local4];
-			if (arg0 == local12.aClass2) {
+			@Pc(12) BaseVarType local12 = local2[local4];
+			if (arg0 == local12.instance) {
 				return local12;
 			}
 		}
@@ -86,21 +86,21 @@ public final class Class500 implements Interface75 {
 	}
 
 	@OriginalMember(owner = "client!qa", name = "z", descriptor = "(Ljava/lang/Class;)Lclient!ade;")
-	public static Interface9 method30343(@OriginalArg(0) Class arg0) {
-		@Pc(3) Class500 local3 = method30339(arg0, -44876368);
+	public static BaseVarTypeCodec method30343(@OriginalArg(0) Class arg0) {
+		@Pc(3) BaseVarType local3 = method30339(arg0, -44876368);
 		if (local3 == null) {
 			throw new IllegalArgumentException();
 		}
-		return local3.anInterface9_1;
+		return local3.codec;
 	}
 
 	@OriginalMember(owner = "client!qa", name = "p", descriptor = "(Ljava/lang/Class;)Lclient!ade;")
-	public static Interface9 method30344(@OriginalArg(0) Class arg0) {
-		@Pc(3) Class500 local3 = method30339(arg0, 1739346658);
+	public static BaseVarTypeCodec method30344(@OriginalArg(0) Class arg0) {
+		@Pc(3) BaseVarType local3 = method30339(arg0, 1739346658);
 		if (local3 == null) {
 			throw new IllegalArgumentException();
 		}
-		return local3.anInterface9_1;
+		return local3.codec;
 	}
 
 	@OriginalMember(owner = "client!qa", name = "vn", descriptor = "(Lclient!yf;S)V")
@@ -143,27 +143,22 @@ public final class Class500 implements Interface75 {
 	}
 
 	@OriginalMember(owner = "client!qa", name = "<init>", descriptor = "(IILjava/lang/Class;Lclient!ade;)V")
-	Class500(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class arg2, @OriginalArg(3) Interface9 arg3) {
-		this.anInt5357 = arg0 * -928613997;
-		this.anInt5358 = arg1 * -568068317;
-		this.aClass2 = arg2;
-		this.anInterface9_1 = arg3;
+	BaseVarType(@OriginalArg(0) int ordinal, @OriginalArg(1) int id, @OriginalArg(2) Class instance, @OriginalArg(3) BaseVarTypeCodec codec) {
+		this.ordinal = ordinal * -928613997;
+		this.id = id * -568068317;
+		this.instance = instance;
+		this.codec = codec;
 	}
 
 	@OriginalMember(owner = "client!qa", name = "w", descriptor = "(Lclient!alw;B)Ljava/lang/Object;")
-	public Object method30337(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
-		return this.anInterface9_1.method30453(arg0, -1187347627);
+	public Object decode(@OriginalArg(0) Class93_Sub41 arg0) {
+		return this.codec.decode(arg0);
 	}
 
 	@OriginalMember(owner = "client!qa", name = "n", descriptor = "()I")
 	@Override
-	public int method37101() {
-		return this.anInt5358 * 983101579;
+	public int getId() {
+		return this.id * 983101579;
 	}
 
-	@OriginalMember(owner = "client!qa", name = "k", descriptor = "()I")
-	@Override
-	public int method37100() {
-		return this.anInt5358 * 983101579;
-	}
 }

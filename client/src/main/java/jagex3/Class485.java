@@ -29,7 +29,7 @@ public final class Class485 implements Interface7 {
 		@Pc(41) int local41 = Class57.method1089(local23, -52780061);
 		@Pc(47) Class30 local47 = (Class30) Class74.aClass32_2.method18273(local13, 1584973293);
 		@Pc(53) Class77 local53 = (Class77) Class276.aClass32_3.method18273(local37, 928470865);
-		@Pc(58) Class519[] local58 = local53.aClass519ArrayArray2[local41];
+		@Pc(58) ScriptVarType[] local58 = local53.aScriptVarTypeArrayArray2[local41];
 		@Pc(63) Object[] local63 = local47.method620(local41, 1417620205);
 		if (local63 == null && local53.anObjectArrayArray2 != null) {
 			local63 = local53.anObjectArrayArray2[local41];
@@ -37,10 +37,10 @@ public final class Class485 implements Interface7 {
 		@Pc(79) int local79;
 		if (local63 == null) {
 			for (local79 = 0; local79 < local58.length; local79++) {
-				@Pc(87) Class519 local87 = local58[local79];
-				if (local87 == Class519.aClass519_7) {
+				@Pc(87) ScriptVarType local87 = local58[local79];
+				if (local87 == ScriptVarType.STRING) {
 					arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = "";
-				} else if (local87 == Class519.aClass519_88 || Class519.aClass519_8 == local87) {
+				} else if (local87 == ScriptVarType.INT || ScriptVarType.BOOLEAN == local87) {
 					arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = 0;
 				} else {
 					arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = -1;
@@ -54,7 +54,7 @@ public final class Class485 implements Interface7 {
 		}
 		for (@Pc(163) int local163 = 0; local163 < local58.length; local163++) {
 			@Pc(174) int local174 = local163 + local33 * local58.length;
-			if (local58[local163] == Class519.aClass519_7) {
+			if (local58[local163] == ScriptVarType.STRING) {
 				arg0.anObjectArray45[(arg0.anInt6049 += 957530791) * 587908375 - 1] = local63[local174];
 			} else {
 				arg0.anIntArray521[(arg0.anInt6052 += 1189701933) * -1497248091 - 1] = (Integer) local63[local174];

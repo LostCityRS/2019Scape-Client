@@ -29,18 +29,18 @@ final class Class138_Sub2 extends Class138 {
 	@OriginalMember(owner = "client!ain", name = "u", descriptor = "(Lclient!ec;)Ljava/lang/Object;")
 	@Override
 	Object method11523(@OriginalArg(0) Class108 arg0) {
-		return Class519.aClass519_8 == arg0.aClass519_6 ? -1 : arg0.aClass519_6.method30498(657683700);
+		return ScriptVarType.BOOLEAN == arg0.aScriptVarType_6 ? -1 : arg0.aScriptVarType_6.getDefaultValue();
 	}
 
 	@OriginalMember(owner = "client!ain", name = "w", descriptor = "(Lclient!ec;I)Ljava/lang/Object;")
 	@Override
 	Object method11522(@OriginalArg(0) Class108 arg0, @OriginalArg(1) int arg1) {
-		return Class519.aClass519_8 == arg0.aClass519_6 ? -1 : arg0.aClass519_6.method30498(657683700);
+		return ScriptVarType.BOOLEAN == arg0.aScriptVarType_6 ? -1 : arg0.aScriptVarType_6.getDefaultValue();
 	}
 
 	@OriginalMember(owner = "client!ain", name = "l", descriptor = "(Lclient!ec;)Ljava/lang/Object;")
 	@Override
 	Object method11524(@OriginalArg(0) Class108 arg0) {
-		return Class519.aClass519_8 == arg0.aClass519_6 ? -1 : arg0.aClass519_6.method30498(657683700);
+		return ScriptVarType.BOOLEAN == arg0.aScriptVarType_6 ? -1 : arg0.aScriptVarType_6.getDefaultValue();
 	}
 }

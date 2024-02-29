@@ -168,7 +168,7 @@ public final class Class686 implements Interface20 {
 	@OriginalMember(owner = "client!yl", name = "k", descriptor = "(Lclient!ec;B)Ljava/lang/Object;")
 	@Override
 	public Object method33648(@OriginalArg(0) Class108 arg0, @OriginalArg(1) byte arg1) {
-		if (Class519.aClass519_7 != arg0.aClass519_6) {
+		if (ScriptVarType.STRING != arg0.aScriptVarType_6) {
 			throw new IllegalArgumentException("");
 		}
 		return this.aClass386_4.method28350(client.aClass702_4.anInt6114 * -1111983921 << 16 | arg0.anInt867 * -1284841473, -1270432674);
@@ -190,7 +190,7 @@ public final class Class686 implements Interface20 {
 	@OriginalMember(owner = "client!yl", name = "b", descriptor = "(Lclient!ec;)Ljava/lang/Object;")
 	@Override
 	public Object method33662(@OriginalArg(0) Class108 arg0) {
-		if (Class519.aClass519_7 != arg0.aClass519_6) {
+		if (ScriptVarType.STRING != arg0.aScriptVarType_6) {
 			throw new IllegalArgumentException("");
 		}
 		return this.aClass386_4.method28350(client.aClass702_4.anInt6114 * -1111983921 << 16 | arg0.anInt867 * -1284841473, -1019955817);
@@ -311,7 +311,7 @@ public final class Class686 implements Interface20 {
 	@OriginalMember(owner = "client!yl", name = "g", descriptor = "(Lclient!ec;)Ljava/lang/Object;")
 	@Override
 	public Object method33652(@OriginalArg(0) Class108 arg0) {
-		if (Class519.aClass519_7 != arg0.aClass519_6) {
+		if (ScriptVarType.STRING != arg0.aScriptVarType_6) {
 			throw new IllegalArgumentException("");
 		}
 		return this.aClass386_4.method28350(client.aClass702_4.anInt6114 * -1111983921 << 16 | arg0.anInt867 * -1284841473, -570202534);
@@ -332,7 +332,7 @@ public final class Class686 implements Interface20 {
 	@OriginalMember(owner = "client!yl", name = "h", descriptor = "(Lclient!ec;)Ljava/lang/Object;")
 	@Override
 	public Object method33663(@OriginalArg(0) Class108 arg0) {
-		if (Class519.aClass519_7 != arg0.aClass519_6) {
+		if (ScriptVarType.STRING != arg0.aScriptVarType_6) {
 			throw new IllegalArgumentException("");
 		}
 		return this.aClass386_4.method28350(client.aClass702_4.anInt6114 * -1111983921 << 16 | arg0.anInt867 * -1284841473, -668984648);
@@ -341,7 +341,7 @@ public final class Class686 implements Interface20 {
 	@OriginalMember(owner = "client!yl", name = "a", descriptor = "(Lclient!ec;)Ljava/lang/Object;")
 	@Override
 	public Object method33661(@OriginalArg(0) Class108 arg0) {
-		if (Class519.aClass519_7 != arg0.aClass519_6) {
+		if (ScriptVarType.STRING != arg0.aScriptVarType_6) {
 			throw new IllegalArgumentException("");
 		}
 		return this.aClass386_4.method28350(client.aClass702_4.anInt6114 * -1111983921 << 16 | arg0.anInt867 * -1284841473, -866978723);

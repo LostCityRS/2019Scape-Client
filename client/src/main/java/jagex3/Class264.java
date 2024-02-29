@@ -50,7 +50,7 @@ final class Class264 implements Interface58 {
 		Class211.aClass100_41 = null;
 		Class166_Sub34.aClass100_23 = null;
 		Class53_Sub1.aClass100_19 = null;
-		Class441.aClass100_44 = null;
+		SortedQueueEntry.aClass100_44 = null;
 		Class25.aClass100_39 = null;
 		Class92.aClass100_2 = null;
 		Class454.aClass100_45 = null;

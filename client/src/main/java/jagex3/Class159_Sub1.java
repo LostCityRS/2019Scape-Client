@@ -1937,7 +1937,7 @@ public final class Class159_Sub1 extends Class159 {
 
 	@OriginalMember(owner = "client!alj", name = "t", descriptor = "(II)V")
 	public static void method14675(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		Class321.anInt4139 = arg0 * -587198019;
+		ComponentHook.anInt4139 = arg0 * -587198019;
 		Class93_Sub23_Sub2.aClass93_Sub23_Sub2Array1 = new Class93_Sub23_Sub2[arg0];
 		Class640.anInt5916 = 0;
 	}

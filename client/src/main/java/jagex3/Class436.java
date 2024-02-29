@@ -15,10 +15,10 @@ public final class Class436 implements Iterator {
 	int anInt4971 = 0;
 
 	@OriginalMember(owner = "client!ng", name = "m", descriptor = "I")
-	int anInt4972 = this.anAbstractQueue_Sub1_1.anInt3231 * -1483168829;
+	int anInt4972 = this.aSortedQueue_1.modCount * -1483168829;
 
 	@OriginalMember(owner = "client!ng", name = "e", descriptor = "Lclient!att;")
-	AbstractQueue_Sub1 anAbstractQueue_Sub1_1;
+	SortedQueue aSortedQueue_1;
 
 	@OriginalMember(owner = "client!ng", name = "r", descriptor = "(I)V")
 	public static void method28992(@OriginalArg(0) int arg0) {
@@ -55,8 +55,8 @@ public final class Class436 implements Iterator {
 	}
 
 	@OriginalMember(owner = "client!ng", name = "<init>", descriptor = "(Lclient!att;)V")
-	Class436(@OriginalArg(0) AbstractQueue_Sub1 arg0) {
-		this.anAbstractQueue_Sub1_1 = arg0;
+	Class436(@OriginalArg(0) SortedQueue arg0) {
+		this.aSortedQueue_1 = arg0;
 	}
 
 	@OriginalMember(owner = "client!ng", name = "remove", descriptor = "()V")
@@ -68,16 +68,16 @@ public final class Class436 implements Iterator {
 	@OriginalMember(owner = "client!ng", name = "hasNext", descriptor = "()Z")
 	@Override
 	public boolean hasNext() {
-		return this.anInt4971 * 1263898687 < this.anAbstractQueue_Sub1_1.anInt3230 * 2087138905;
+		return this.anInt4971 * 1263898687 < this.aSortedQueue_1.size * 2087138905;
 	}
 
 	@OriginalMember(owner = "client!ng", name = "next", descriptor = "()Ljava/lang/Object;")
 	@Override
 	public Object next() {
-		if (this.anInt4972 * 1753024071 != this.anAbstractQueue_Sub1_1.anInt3231 * 1029897493) {
+		if (this.anInt4972 * 1753024071 != this.aSortedQueue_1.modCount * 1029897493) {
 			throw new ConcurrentModificationException();
-		} else if (this.anInt4971 * 1263898687 < this.anAbstractQueue_Sub1_1.anInt3230 * 2087138905) {
-			@Pc(33) Object local33 = this.anAbstractQueue_Sub1_1.aClass441Array1[this.anInt4971 * 1263898687].anObject18;
+		} else if (this.anInt4971 * 1263898687 < this.aSortedQueue_1.size * 2087138905) {
+			@Pc(33) Object local33 = this.aSortedQueue_1.sortedEntries[this.anInt4971 * 1263898687].anObject18;
 			this.anInt4971 += 215900095;
 			return local33;
 		} else {
@@ -87,20 +87,20 @@ public final class Class436 implements Iterator {
 
 	@OriginalMember(owner = "client!ng", name = "e", descriptor = "()Z")
 	public boolean method28986() {
-		return this.anInt4971 * 1263898687 < this.anAbstractQueue_Sub1_1.anInt3230 * 2087138905;
+		return this.anInt4971 * 1263898687 < this.aSortedQueue_1.size * 2087138905;
 	}
 
 	@OriginalMember(owner = "client!ng", name = "n", descriptor = "()Z")
 	public boolean method28987() {
-		return this.anInt4971 * 1263898687 < this.anAbstractQueue_Sub1_1.anInt3230 * 2087138905;
+		return this.anInt4971 * 1263898687 < this.aSortedQueue_1.size * 2087138905;
 	}
 
 	@OriginalMember(owner = "client!ng", name = "k", descriptor = "()Ljava/lang/Object;")
 	public Object method28988() {
-		if (this.anInt4972 * 1753024071 != this.anAbstractQueue_Sub1_1.anInt3231 * 1029897493) {
+		if (this.anInt4972 * 1753024071 != this.aSortedQueue_1.modCount * 1029897493) {
 			throw new ConcurrentModificationException();
-		} else if (this.anInt4971 * 1263898687 < this.anAbstractQueue_Sub1_1.anInt3230 * 2087138905) {
-			@Pc(33) Object local33 = this.anAbstractQueue_Sub1_1.aClass441Array1[this.anInt4971 * 1263898687].anObject18;
+		} else if (this.anInt4971 * 1263898687 < this.aSortedQueue_1.size * 2087138905) {
+			@Pc(33) Object local33 = this.aSortedQueue_1.sortedEntries[this.anInt4971 * 1263898687].anObject18;
 			this.anInt4971 += 215900095;
 			return local33;
 		} else {
@@ -110,10 +110,10 @@ public final class Class436 implements Iterator {
 
 	@OriginalMember(owner = "client!ng", name = "m", descriptor = "()Ljava/lang/Object;")
 	public Object method28989() {
-		if (this.anInt4972 * 1753024071 != this.anAbstractQueue_Sub1_1.anInt3231 * 1029897493) {
+		if (this.anInt4972 * 1753024071 != this.aSortedQueue_1.modCount * 1029897493) {
 			throw new ConcurrentModificationException();
-		} else if (this.anInt4971 * 1263898687 < this.anAbstractQueue_Sub1_1.anInt3230 * 2087138905) {
-			@Pc(33) Object local33 = this.anAbstractQueue_Sub1_1.aClass441Array1[this.anInt4971 * 1263898687].anObject18;
+		} else if (this.anInt4971 * 1263898687 < this.aSortedQueue_1.size * 2087138905) {
+			@Pc(33) Object local33 = this.aSortedQueue_1.sortedEntries[this.anInt4971 * 1263898687].anObject18;
 			this.anInt4971 += 215900095;
 			return local33;
 		} else {

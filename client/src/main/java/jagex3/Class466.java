@@ -296,7 +296,7 @@ public final class Class466 {
 					}
 				}
 			}
-			@Pc(1075) Class500 local1075;
+			@Pc(1075) BaseVarType local1075;
 			@Pc(1081) Class466 local1081;
 			if ((local29 & 0x200000) != 0) {
 				local21.anInterface3_5.method777(1028548122);
@@ -304,7 +304,7 @@ public final class Class466 {
 				local75 = local2.aByteArray58[(local2.anInt3070 += -1445626955) * 212851357 - 1] & 0xFF;
 				for (local79 = 0; local79 < local75; local79++) {
 					local88 = local2.method22509(231523518);
-					local1075 = (Class500) Class107.method18131(Class500.method30340(-1971788437), local88, -1915563430);
+					local1075 = (BaseVarType) Class107.method18131(BaseVarType.values(), local88, -1915563430);
 					local1081 = Class684.aClass79_Sub1_Sub2_7.method1464(local2, local1075, (byte) 1);
 					local21.anInterface3_5.method776(local1081.anInt5253 * -1181855333, local1081.anObject19, (byte) 82);
 				}
@@ -436,7 +436,7 @@ public final class Class466 {
 				local75 = local2.aByteArray58[(local2.anInt3070 += -1445626955) * 212851357 - 1] & 0xFF;
 				for (local79 = 0; local79 < local75; local79++) {
 					local88 = local2.method22511(1418372123);
-					local1075 = (Class500) Class107.method18131(Class500.method30340(-1993363083), local88, -1915563430);
+					local1075 = (BaseVarType) Class107.method18131(BaseVarType.values(), local88, -1915563430);
 					local1081 = Class684.aClass79_Sub1_Sub2_7.method1464(local2, local1075, (byte) 1);
 					local21.anInterface3_5.method776(local1081.anInt5253 * -1181855333, local1081.anObject19, (byte) 121);
 				}

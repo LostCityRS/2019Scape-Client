@@ -29,7 +29,7 @@ public final class Class588 {
 	static void method31831(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		arg0.anInt6052 -= -725861497;
 		if (Class683.aBoolean885) {
-			Class504.method30376(arg0.anIntArray521[arg0.anInt6052 * -1497248091] != 0, 98582919);
+			BaseVarTypeString.method30376(arg0.anIntArray521[arg0.anInt6052 * -1497248091] != 0, 98582919);
 			Class320.method27331(arg0.anIntArray521[arg0.anInt6052 * -1497248091 + 1] != 0, 802032704);
 			Class585.method31792(arg0.anIntArray521[arg0.anInt6052 * -1497248091 + 2] != 0, -2027415738);
 		}
