@@ -1,0 +1,19 @@
+package jagex3;
+
+import org.openrs2.deob.annotation.OriginalArg;
+import org.openrs2.deob.annotation.OriginalClass;
+import org.openrs2.deob.annotation.OriginalMember;
+
+@OriginalClass("client!atn")
+public final class Exception_Sub2_Sub1 extends Exception_Sub2 {
+
+	@OriginalMember(owner = "client!atn", name = "<init>", descriptor = "(Ljava/lang/String;)V")
+	Exception_Sub2_Sub1(@OriginalArg(0) String arg0) {
+		this(arg0, false);
+	}
+
+	@OriginalMember(owner = "client!atn", name = "<init>", descriptor = "(Ljava/lang/String;Z)V")
+	Exception_Sub2_Sub1(@OriginalArg(0) String arg0, @OriginalArg(1) boolean arg1) {
+		super(arg0);
+	}
+}
