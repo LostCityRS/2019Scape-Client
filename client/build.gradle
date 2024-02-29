@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 dependencies {
@@ -11,7 +12,23 @@ java {
     sourceCompatibility = JavaVersion.VERSION_1_8
 }
 
+application {
+    mainClass = "AppletViewer"
+}
+
+jar {
+    manifest {
+        attributes(
+            'Main-Class': 'AppletViewer'
+        )
+    }
+}
+
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
     // options.compilerArgs << '-Xlint:unchecked' << '-Xlint:deprecation'
+}
+
+tasks.withType(JavaExec) {
+    workingDir = project.rootDir
 }

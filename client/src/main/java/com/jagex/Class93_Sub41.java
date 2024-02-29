@@ -1700,6 +1700,10 @@ public class Class93_Sub41 extends Class93 {
 
 	@OriginalMember(owner = "client!alw", name = "bt", descriptor = "(Ljava/math/BigInteger;Ljava/math/BigInteger;B)V", line = 530)
 	public void method22560(@OriginalArg(0) BigInteger arg0, @OriginalArg(1) BigInteger arg1, @OriginalArg(2) byte arg2) {
+        if (!client.ENABLE_RSA) {
+            return;
+        }
+
 		@Pc(4) int local4 = this.anInt3070 * 212851357;
 		this.anInt3070 = 0;
 		@Pc(10) byte[] local10 = new byte[local4];

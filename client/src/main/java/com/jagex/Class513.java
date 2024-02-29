@@ -21,7 +21,7 @@ public class Class513 {
 		@Pc(26) byte[] local26 = new byte[arg0.aByteArray58.length - arg0.anInt3070 * 212851357];
 		arg0.method22518(local26, 0, local26.length, (short) 4299);
 		@Pc(40) byte[] local40;
-		if (arg1 == null || arg2 == null) {
+		if (arg1 == null || arg2 == null || !client.ENABLE_JS5_RSA) {
 			local40 = local26;
 		} else {
 			@Pc(46) BigInteger local46 = new BigInteger(local26);

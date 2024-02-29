@@ -1506,6 +1506,10 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 
 	@OriginalMember(owner = "client!sk", name = "b", descriptor = "(I)Z", line = 492)
 	final boolean method24879(@OriginalArg(0) int arg0) {
+        if (!client.ENABLE_HOST_CHECK) {
+            return true;
+        }
+
 		@Pc(4) String local4 = Class32_Sub10.anApplet2.getDocumentBase().getHost().toLowerCase();
 		if (local4.equals("jagex.com") || local4.endsWith(".jagex.com")) {
 			return true;
