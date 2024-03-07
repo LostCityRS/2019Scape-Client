@@ -37,27 +37,27 @@ public abstract class Class110_Sub15 extends Class110 {
 	@OriginalMember(owner = "client!agm", name = "w", descriptor = "()Z", line = 21)
 	@Override
 	boolean method20142() {
-		@Pc(8) Class697 local8 = (Class697) Class501.aClass32_Sub18_1.method18261(this.anInt2821 * 1307909245, 1172914588);
+		@Pc(8) Class697 local8 = (Class697) Class501.aClass32_Sub18_1.get(this.anInt2821 * 1307909245, 1172914588);
 		@Pc(12) boolean local12 = local8.method36677((byte) 25);
-		@Pc(21) Class263 local21 = (Class263) Class32.aClass32_Sub17_23.method18261(local8.anInt5949 * 1477426425, 1528162838);
+		@Pc(21) Class263 local21 = (Class263) Class32.aClass32_Sub17_23.get(local8.anInt5949 * 1477426425, 1528162838);
 		return local12 & local21.method26188((byte) -85);
 	}
 
 	@OriginalMember(owner = "client!agm", name = "k", descriptor = "(I)Z", line = 21)
 	@Override
 	boolean method20141(@OriginalArg(0) int arg0) {
-		@Pc(8) Class697 local8 = (Class697) Class501.aClass32_Sub18_1.method18261(this.anInt2821 * 1307909245, 1032226577);
+		@Pc(8) Class697 local8 = (Class697) Class501.aClass32_Sub18_1.get(this.anInt2821 * 1307909245, 1032226577);
 		@Pc(12) boolean local12 = local8.method36677((byte) 83);
-		@Pc(21) Class263 local21 = (Class263) Class32.aClass32_Sub17_23.method18261(local8.anInt5949 * 1477426425, 823738504);
+		@Pc(21) Class263 local21 = (Class263) Class32.aClass32_Sub17_23.get(local8.anInt5949 * 1477426425, 823738504);
 		return local12 & local21.method26188((byte) -124);
 	}
 
 	@OriginalMember(owner = "client!agm", name = "l", descriptor = "()Z", line = 21)
 	@Override
 	boolean method20143() {
-		@Pc(8) Class697 local8 = (Class697) Class501.aClass32_Sub18_1.method18261(this.anInt2821 * 1307909245, -807075372);
+		@Pc(8) Class697 local8 = (Class697) Class501.aClass32_Sub18_1.get(this.anInt2821 * 1307909245, -807075372);
 		@Pc(12) boolean local12 = local8.method36677((byte) 8);
-		@Pc(21) Class263 local21 = (Class263) Class32.aClass32_Sub17_23.method18261(local8.anInt5949 * 1477426425, 1642330214);
+		@Pc(21) Class263 local21 = (Class263) Class32.aClass32_Sub17_23.get(local8.anInt5949 * 1477426425, 1642330214);
 		return local12 & local21.method26188((byte) -99);
 	}
 

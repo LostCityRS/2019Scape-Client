@@ -1269,9 +1269,9 @@ public class Class336 implements Interface13 {
 		}
 		@Pc(150) Class622 local150 = null;
 		if (!arg12 && arg11 != -1) {
-			local150 = (Class622) arg2.method18261(arg11, 443072642);
+			local150 = (Class622) arg2.get(arg11, 443072642);
 		} else if (this.anInt4180 * 1511832251 != -1) {
-			local150 = (Class622) arg2.method18261(this.anInt4180 * 1511832251, -2077575125);
+			local150 = (Class622) arg2.get(this.anInt4180 * 1511832251, -2077575125);
 		}
 		@Pc(238) int local238;
 		if (local140 == null || (local140.method6875() & local32) != local32) {
@@ -1508,9 +1508,9 @@ public class Class336 implements Interface13 {
 		}
 		@Pc(150) Class622 local150 = null;
 		if (!arg12 && arg11 != -1) {
-			local150 = (Class622) arg2.method18261(arg11, 2040379512);
+			local150 = (Class622) arg2.get(arg11, 2040379512);
 		} else if (this.anInt4180 * 1511832251 != -1) {
-			local150 = (Class622) arg2.method18261(this.anInt4180 * 1511832251, -421916847);
+			local150 = (Class622) arg2.get(this.anInt4180 * 1511832251, -421916847);
 		}
 		@Pc(238) int local238;
 		if (local140 == null || (local140.method6875() & local32) != local32) {
@@ -1931,10 +1931,10 @@ public class Class336 implements Interface13 {
 			}
 		}
 		if (local1 >= 0 && local1 < this.anIntArray412.length - 1) {
-			return this.anIntArray412[local1] == -1 ? null : (Class336) this.anInterface11_11.method18261(this.anIntArray412[local1], 451480134);
+			return this.anIntArray412[local1] == -1 ? null : (Class336) this.anInterface11_11.get(this.anIntArray412[local1], 451480134);
 		} else {
 			@Pc(65) int local65 = this.anIntArray412[this.anIntArray412.length - 1];
-			return local65 == -1 ? null : (Class336) this.anInterface11_11.method18261(local65, -1380319884);
+			return local65 == -1 ? null : (Class336) this.anInterface11_11.get(local65, -1380319884);
 		}
 	}
 
@@ -1953,10 +1953,10 @@ public class Class336 implements Interface13 {
 			}
 		}
 		if (local1 >= 0 && local1 < this.anIntArray412.length - 1) {
-			return this.anIntArray412[local1] == -1 ? null : (Class336) this.anInterface11_11.method18261(this.anIntArray412[local1], 862134801);
+			return this.anIntArray412[local1] == -1 ? null : (Class336) this.anInterface11_11.get(this.anIntArray412[local1], 862134801);
 		} else {
 			@Pc(65) int local65 = this.anIntArray412[this.anIntArray412.length - 1];
-			return local65 == -1 ? null : (Class336) this.anInterface11_11.method18261(local65, -566969620);
+			return local65 == -1 ? null : (Class336) this.anInterface11_11.get(local65, -566969620);
 		}
 	}
 
@@ -1975,10 +1975,10 @@ public class Class336 implements Interface13 {
 			}
 		}
 		if (local1 >= 0 && local1 < this.anIntArray412.length - 1) {
-			return this.anIntArray412[local1] == -1 ? null : (Class336) this.anInterface11_11.method18261(this.anIntArray412[local1], 473831085);
+			return this.anIntArray412[local1] == -1 ? null : (Class336) this.anInterface11_11.get(this.anIntArray412[local1], 473831085);
 		} else {
 			@Pc(65) int local65 = this.anIntArray412[this.anIntArray412.length - 1];
-			return local65 == -1 ? null : (Class336) this.anInterface11_11.method18261(local65, -618928035);
+			return local65 == -1 ? null : (Class336) this.anInterface11_11.get(local65, -618928035);
 		}
 	}
 
@@ -2039,7 +2039,7 @@ public class Class336 implements Interface13 {
 		}
 		for (@Pc(27) int local27 = 0; local27 < this.anIntArray412.length; local27++) {
 			if (this.anIntArray412[local27] != -1) {
-				@Pc(48) Class336 local48 = (Class336) this.anInterface11_11.method18261(this.anIntArray412[local27], -1860411256);
+				@Pc(48) Class336 local48 = (Class336) this.anInterface11_11.get(this.anIntArray412[local27], -1860411256);
 				if (local48.anInt4170 * 1249212417 != -1 || local48.anInt4172 * -374268759 != -1 || local48.anInt4173 * -2119958049 != -1) {
 					return true;
 				}
@@ -2055,7 +2055,7 @@ public class Class336 implements Interface13 {
 		}
 		for (@Pc(27) int local27 = 0; local27 < this.anIntArray412.length; local27++) {
 			if (this.anIntArray412[local27] != -1) {
-				@Pc(48) Class336 local48 = (Class336) this.anInterface11_11.method18261(this.anIntArray412[local27], -808682223);
+				@Pc(48) Class336 local48 = (Class336) this.anInterface11_11.get(this.anIntArray412[local27], -808682223);
 				if (local48.anInt4170 * 1249212417 != -1 || local48.anInt4172 * -374268759 != -1 || local48.anInt4173 * -2119958049 != -1) {
 					return true;
 				}
@@ -2071,7 +2071,7 @@ public class Class336 implements Interface13 {
 		}
 		for (@Pc(27) int local27 = 0; local27 < this.anIntArray412.length; local27++) {
 			if (this.anIntArray412[local27] != -1) {
-				@Pc(48) Class336 local48 = (Class336) this.anInterface11_11.method18261(this.anIntArray412[local27], 2028252712);
+				@Pc(48) Class336 local48 = (Class336) this.anInterface11_11.get(this.anIntArray412[local27], 2028252712);
 				if (local48.anInt4170 * 1249212417 != -1 || local48.anInt4172 * -374268759 != -1 || local48.anInt4173 * -2119958049 != -1) {
 					return true;
 				}

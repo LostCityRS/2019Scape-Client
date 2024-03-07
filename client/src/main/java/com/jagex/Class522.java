@@ -83,7 +83,7 @@ public class Class522 {
 				if (local37.anInt3823 * -376320861 >= 0) {
 					local29 = ((Class132_Sub1_Sub1_Sub1_Sub1) local45).aClass336_1;
 					if (local29.anIntArray412 != null) {
-						local29 = local29.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 10080);
+						local29 = local29.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 10080);
 						if (local29 == null) {
 							continue;
 						}
@@ -96,7 +96,7 @@ public class Class522 {
 					local45 = (Class132_Sub1_Sub1_Sub1) ((Class93_Sub15) client.aClass16_18.method214((long) client.anIntArray323[local24 - local3])).anObject5;
 					local29 = ((Class132_Sub1_Sub1_Sub1_Sub1) local45).aClass336_1;
 					if (local29.anIntArray412 != null) {
-						local29 = local29.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 22301);
+						local29 = local29.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 22301);
 						if (local29 == null) {
 							continue;
 						}
@@ -302,10 +302,10 @@ public class Class522 {
 						if (local579 <= client.anInt3485) {
 							continue;
 						}
-						local979 = (Class608) Class366.aClass32_Sub8_1.method18261(local45.anIntArray232[local787], -415496325);
+						local979 = (Class608) Class366.aClass32_Sub8_1.get(local45.anIntArray232[local787], -415496325);
 						local602 = local979.anInt5570 * 2130827517;
 						if (local979 != null && local979.anIntArray487 != null) {
-							local979 = local979.method31941(Class624.aClass120_1, Class624.aClass120_1, 1711353062);
+							local979 = local979.method31941(Class624.playerVariableManager, Class624.playerVariableManager, 1711353062);
 							if (local979 == null) {
 								local45.anIntArray235[local787] = -1;
 								continue;
@@ -317,9 +317,9 @@ public class Class522 {
 					local1029 = local45.anIntArray241[local787];
 					@Pc(1031) Class608 local1031 = null;
 					if (local1029 >= 0) {
-						local1031 = (Class608) Class366.aClass32_Sub8_1.method18261(local1029, 926777418);
+						local1031 = (Class608) Class366.aClass32_Sub8_1.get(local1029, 926777418);
 						if (local1031 != null && local1031.anIntArray487 != null) {
-							local1031 = local1031.method31941(Class624.aClass120_1, Class624.aClass120_1, 1874145105);
+							local1031 = local1031.method31941(Class624.playerVariableManager, Class624.playerVariableManager, 1874145105);
 						}
 					}
 					if (local579 - local602 <= client.anInt3485) {

@@ -36,7 +36,7 @@ public abstract class Class107 {
 
 	@OriginalMember(owner = "client!dz", name = "r", descriptor = "(Lclient!dh;Lclient!vd;IIII)V", line = 400)
 	static void method18119(@OriginalArg(0) Class104 arg0, @OriginalArg(1) Class610 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
-		@Pc(8) Class65 local8 = (Class65) Class466.aClass32_Sub20_3.method18261(arg1.anInt5601 * -303013723, -930776699);
+		@Pc(8) Class65 local8 = (Class65) Class466.aClass32_Sub20_3.get(arg1.anInt5601 * -303013723, -930776699);
 		if (local8.anInt232 * -1612489907 == -1) {
 			return;
 		}

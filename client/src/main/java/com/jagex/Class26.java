@@ -649,7 +649,7 @@ public class Class26 implements Interface13, Interface5 {
 						if (local322 >= 0 && local322 < local14 && local328 >= 0 && local328 < local18) {
 							Class172.aClass22_43.method408(new Class93_Sub14(local318), -1424010891);
 						} else {
-							@Pc(715) Class322 local715 = (Class322) Class542.aClass32_Sub2_3.method18261(local637.anIntArray472[local318], -1874921866);
+							@Pc(715) Class322 local715 = (Class322) Class542.aClass32_Sub2_3.get(local637.anIntArray472[local318], -1874921866);
 							if (local715.anIntArray399 != null && local322 + local715.anInt4122 * 141650771 >= 0 && local715.anInt4104 * -975351719 + local322 < local14 && local328 + local715.anInt4123 * 226143903 >= 0 && local328 + local715.anInt4121 * -1564254457 < local18) {
 								Class172.aClass22_43.method408(new Class93_Sub14(local318), -565374885);
 							}

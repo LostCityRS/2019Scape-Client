@@ -620,7 +620,7 @@ public final class Class240 {
 	@OriginalMember(owner = "client!eb", name = "wi", descriptor = "(Lclient!yf;I)V", line = 9098)
 	static final void method25872(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class624.aClass120_1.method8654(local12, -1445626955);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class624.playerVariableManager.method8654(local12, -1445626955);
 	}
 
 	@OriginalMember(owner = "client!eb", name = "aaw", descriptor = "(Lclient!yf;I)V", line = 9770)

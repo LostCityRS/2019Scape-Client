@@ -57,11 +57,11 @@ public class Class613 implements Interface75 {
 		arg0.anInt5891 -= -1915563430;
 		@Pc(13) int local13 = arg0.anIntArray519[arg0.anInt5891 * -1497248091];
 		@Pc(23) int local23 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 1];
-		@Pc(29) Class87 local29 = (Class87) Class124.aClass32_Sub21_7.method18261(local23, -1030967057);
+		@Pc(29) Class87 local29 = (Class87) Class124.aClass32_Sub21_7.get(local23, -1030967057);
 		if (local29.method1511(1429228259)) {
-			arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = ((Class610) client.world.method30496(1139320094).method18261(local13, -1722652423)).method32000(local23, local29.aString11, (byte) 79);
+			arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = ((Class610) client.world.method30496(1139320094).get(local13, -1722652423)).method32000(local23, local29.aString11, (byte) 79);
 		} else {
-			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = ((Class610) client.world.method30496(2034848841).method18261(local13, 334707401)).method31997(local23, local29.anInt265 * 951920133, 1072417041);
+			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = ((Class610) client.world.method30496(2034848841).get(local13, 334707401)).method31997(local23, local29.anInt265 * 951920133, 1072417041);
 		}
 	}
 

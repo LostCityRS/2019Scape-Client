@@ -108,7 +108,7 @@ public class Class108_Sub1 extends Class108 {
 				if (Class520.selfPlayer.anInt2802 * -1582304709 != 0 && local16.anInt2802 * -1582304709 != 0 && local16.anInt2802 * -1582304709 == Class520.selfPlayer.anInt2802 * -1582304709) {
 					local112 = true;
 				}
-				if (local16.aClass658_1 != null && local16.aClass658_1.anInt5817 * 1405397749 != -1 && ((Class336) Class162.aClass32_Sub3_2.method18261(local16.aClass658_1.anInt5817 * 1405397749, 800819127)).aBoolean713) {
+				if (local16.aClass658_1 != null && local16.aClass658_1.anInt5817 * 1405397749 != -1 && ((Class336) Class162.aClass32_Sub3_2.get(local16.aClass658_1.anInt5817 * 1405397749, 800819127)).aBoolean713) {
 					Class151.method13981(arg2, arg3, arg4, arg5, local49, local59, Class393.aClass100Array6[1], 1464052313);
 				} else if (Class286.aClass286_3 == local16.aClass286_1) {
 					Class151.method13981(arg2, arg3, arg4, arg5, local49, local59, Class393.aClass100Array6[8], 1338713154);

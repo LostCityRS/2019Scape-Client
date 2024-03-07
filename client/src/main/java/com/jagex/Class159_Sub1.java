@@ -803,7 +803,7 @@ public class Class159_Sub1 extends Class159 {
 			return;
 		}
 		for (@Pc(10) Class93_Sub29 local10 = (Class93_Sub29) arg1.method428((byte) 90); local10 != null; local10 = (Class93_Sub29) arg1.method442(66453397)) {
-			@Pc(21) Class322 local21 = (Class322) aClass32_Sub2_2.method18261(local10.anInt1603 * 1208139441, -604627504);
+			@Pc(21) Class322 local21 = (Class322) aClass32_Sub2_2.get(local10.anInt1603 * 1208139441, -604627504);
 			if (Class32_Sub11.method17037(local21, (byte) 58)) {
 				@Pc(34) boolean local34 = Class300.method26720(arg0, local10, local21, arg2, arg3, (byte) 2);
 				if (local34) {
@@ -820,7 +820,7 @@ public class Class159_Sub1 extends Class159 {
 			return;
 		}
 		for (@Pc(10) Class93_Sub29 local10 = (Class93_Sub29) arg1.method428((byte) 99); local10 != null; local10 = (Class93_Sub29) arg1.method442(163738953)) {
-			@Pc(21) Class322 local21 = (Class322) aClass32_Sub2_2.method18261(local10.anInt1603 * 1208139441, 1007084580);
+			@Pc(21) Class322 local21 = (Class322) aClass32_Sub2_2.get(local10.anInt1603 * 1208139441, 1007084580);
 			if (Class32_Sub11.method17037(local21, (byte) 122)) {
 				@Pc(34) boolean local34 = Class300.method26720(arg0, local10, local21, arg2, arg3, (byte) 2);
 				if (local34) {
@@ -1212,7 +1212,7 @@ public class Class159_Sub1 extends Class159 {
 									if (!local140.hasNext()) {
 										if (aBoolean352 && Class93_Sub9.aClass22_20 != null) {
 											for (@Pc(240) Class93_Sub9 local240 = (Class93_Sub9) Class93_Sub9.aClass22_20.method428((byte) 96); local240 != null; local240 = (Class93_Sub9) Class93_Sub9.aClass22_20.method442(216912206)) {
-												@Pc(252) Class322 local252 = (Class322) aClass32_Sub2_2.method18261(local240.aClass93_Sub29_1.anInt1603 * 1208139441, -1498353186);
+												@Pc(252) Class322 local252 = (Class322) aClass32_Sub2_2.get(local240.aClass93_Sub29_1.anInt1603 * 1208139441, -1498353186);
 												if (local240.method13153(arg0, arg1, -907521036)) {
 													if (local252.aStringArray24 != null) {
 														if (local252.aStringArray24[4] != null) {
@@ -1320,7 +1320,7 @@ public class Class159_Sub1 extends Class159 {
 									if (!local140.hasNext()) {
 										if (aBoolean352 && Class93_Sub9.aClass22_20 != null) {
 											for (@Pc(240) Class93_Sub9 local240 = (Class93_Sub9) Class93_Sub9.aClass22_20.method428((byte) 33); local240 != null; local240 = (Class93_Sub9) Class93_Sub9.aClass22_20.method442(1623102666)) {
-												@Pc(252) Class322 local252 = (Class322) aClass32_Sub2_2.method18261(local240.aClass93_Sub29_1.anInt1603 * 1208139441, -914247543);
+												@Pc(252) Class322 local252 = (Class322) aClass32_Sub2_2.get(local240.aClass93_Sub29_1.anInt1603 * 1208139441, -914247543);
 												if (local240.method13153(arg0, arg1, -290004852)) {
 													if (local252.aStringArray24 != null) {
 														if (local252.aStringArray24[4] != null) {
@@ -1428,7 +1428,7 @@ public class Class159_Sub1 extends Class159 {
 									if (!local140.hasNext()) {
 										if (aBoolean352 && Class93_Sub9.aClass22_20 != null) {
 											for (@Pc(240) Class93_Sub9 local240 = (Class93_Sub9) Class93_Sub9.aClass22_20.method428((byte) 10); local240 != null; local240 = (Class93_Sub9) Class93_Sub9.aClass22_20.method442(1448201620)) {
-												@Pc(252) Class322 local252 = (Class322) aClass32_Sub2_2.method18261(local240.aClass93_Sub29_1.anInt1603 * 1208139441, 1281126787);
+												@Pc(252) Class322 local252 = (Class322) aClass32_Sub2_2.get(local240.aClass93_Sub29_1.anInt1603 * 1208139441, 1281126787);
 												if (local240.method13153(arg0, arg1, 473833113)) {
 													if (local252.aStringArray24 != null) {
 														if (local252.aStringArray24[4] != null) {
@@ -1536,7 +1536,7 @@ public class Class159_Sub1 extends Class159 {
 									if (!local140.hasNext()) {
 										if (aBoolean352 && Class93_Sub9.aClass22_20 != null) {
 											for (@Pc(240) Class93_Sub9 local240 = (Class93_Sub9) Class93_Sub9.aClass22_20.method428((byte) 24); local240 != null; local240 = (Class93_Sub9) Class93_Sub9.aClass22_20.method442(107780897)) {
-												@Pc(252) Class322 local252 = (Class322) aClass32_Sub2_2.method18261(local240.aClass93_Sub29_1.anInt1603 * 1208139441, 611656513);
+												@Pc(252) Class322 local252 = (Class322) aClass32_Sub2_2.get(local240.aClass93_Sub29_1.anInt1603 * 1208139441, 611656513);
 												if (local240.method13153(arg0, arg1, 1875581865)) {
 													if (local252.aStringArray24 != null) {
 														if (local252.aStringArray24[4] != null) {
@@ -1896,7 +1896,7 @@ public class Class159_Sub1 extends Class159 {
 		if (local14 == null) {
 			return null;
 		} else {
-			@Pc(27) Class322 local27 = (Class322) aClass32_Sub2_2.method18261(local14.anInt1603 * 1208139441, 910208001);
+			@Pc(27) Class322 local27 = (Class322) aClass32_Sub2_2.get(local14.anInt1603 * 1208139441, 910208001);
 			return local27 != null && local27.aBoolean711 && local27.method27252(anInterface21_2, anInterface23_2, -1061137005) ? local14 : Class717.method36894(-424775651);
 		}
 	}
@@ -1911,7 +1911,7 @@ public class Class159_Sub1 extends Class159 {
 		if (local14 == null) {
 			return null;
 		} else {
-			@Pc(27) Class322 local27 = (Class322) aClass32_Sub2_2.method18261(local14.anInt1603 * 1208139441, -1364671074);
+			@Pc(27) Class322 local27 = (Class322) aClass32_Sub2_2.get(local14.anInt1603 * 1208139441, -1364671074);
 			return local27 != null && local27.aBoolean711 && local27.method27252(anInterface21_2, anInterface23_2, 22091325) ? local14 : Class717.method36894(-1111713554);
 		}
 	}

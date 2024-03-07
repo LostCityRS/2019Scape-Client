@@ -257,7 +257,7 @@ public class Class641 implements Interface75 {
 		} else if (arg0 == ZoneProt.aZoneProt_8) {
 			local9 = local2.g4(-118643075);
 			local156 = local2.g1((short) 16384);
-			((Class610) client.world.method30496(1359924061).method18261(local9, 692964413)).method31977(local156, (byte) -63);
+			((Class610) client.world.method30496(1359924061).get(local9, 692964413)).method31977(local156, (byte) -63);
 		} else if (ZoneProt.aZoneProt_3 == arg0) {
 			local9 = local2.g1((short) 16384);
 			@Pc(959) boolean local959 = (local9 & 0x80) != 0;

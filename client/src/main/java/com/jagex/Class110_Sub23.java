@@ -139,7 +139,7 @@ public class Class110_Sub23 extends Class110 {
 				local115 = Class566.method31257(local4.aClass132_Sub1_Sub1_Sub1_Sub1_1, -755129677);
 				@Pc(119) Class336 local119 = local4.aClass132_Sub1_Sub1_Sub1_Sub1_1.aClass336_1;
 				if (local119.anIntArray412 != null) {
-					local119 = local119.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 29606);
+					local119 = local119.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 29606);
 				}
 				if (local119 == null || local115 == -1) {
 					local4.anInt1522 = 1340593683;

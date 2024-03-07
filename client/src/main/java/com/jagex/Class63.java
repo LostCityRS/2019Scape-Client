@@ -115,13 +115,13 @@ class Class63 implements Iterator {
 		Class279.aClass386_1 = null;
 		client.aBoolean636 = true;
 		ModeWhere.method36612((short) -24121);
-		for (@Pc(42) int local42 = 0; local42 < Class624.aClass120_1.aClass675Array1.length; local42++) {
+		for (@Pc(42) int local42 = 0; local42 < Class624.playerVariableManager.aClass675Array1.length; local42++) {
 			@Pc(56) Class675 local56 = new Class675(Class336.aClass644_1.method32591(local42, (byte) 24), false);
 			local56.method33143(0, 584874206);
 			local56.method33157(0, 479175137);
-			Class624.aClass120_1.aClass675Array1[local42] = local56;
+			Class624.playerVariableManager.aClass675Array1[local42] = local56;
 		}
-		Class624.aClass120_1.aClass647_1.method32643((byte) -51);
+		Class624.playerVariableManager.vars.method32643((byte) -51);
 		Class151.method13978(-64820407);
 		Class339.method27486(Class411.connection, (byte) 38);
 	}

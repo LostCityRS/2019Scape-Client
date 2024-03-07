@@ -12,73 +12,73 @@ final class Class251 implements Interface23 {
 	@Override
 	public int method33457(@OriginalArg(0) Class108 arg0) {
 		@Pc(8) Class93_Sub14 local8 = (Class93_Sub14) Class249.aClass16_24.method214((long) (arg0.anInt867 * -1284841473));
-		return local8 == null ? Class624.aClass120_1.method33455(arg0, -1576913014) : local8.anInt1526 * 1279598251;
+		return local8 == null ? Class624.playerVariableManager.method33455(arg0, -1576913014) : local8.anInt1526 * 1279598251;
 	}
 
 	@OriginalMember(owner = "client!et", name = "u", descriptor = "(Lclient!ec;I)I", line = 41)
 	@Override
 	public int method33455(@OriginalArg(0) Class108 arg0, @OriginalArg(1) int arg1) {
 		@Pc(8) Class93_Sub14 local8 = (Class93_Sub14) Class249.aClass16_24.method214((long) (arg0.anInt867 * -1284841473));
-		return local8 == null ? Class624.aClass120_1.method33455(arg0, -1166835359) : local8.anInt1526 * 1279598251;
+		return local8 == null ? Class624.playerVariableManager.method33455(arg0, -1166835359) : local8.anInt1526 * 1279598251;
 	}
 
 	@OriginalMember(owner = "client!et", name = "ac", descriptor = "(Lclient!ec;)I", line = 41)
 	@Override
 	public int method33458(@OriginalArg(0) Class108 arg0) {
 		@Pc(8) Class93_Sub14 local8 = (Class93_Sub14) Class249.aClass16_24.method214((long) (arg0.anInt867 * -1284841473));
-		return local8 == null ? Class624.aClass120_1.method33455(arg0, 207119544) : local8.anInt1526 * 1279598251;
+		return local8 == null ? Class624.playerVariableManager.method33455(arg0, 207119544) : local8.anInt1526 * 1279598251;
 	}
 
 	@OriginalMember(owner = "client!et", name = "ah", descriptor = "(Lclient!ec;)I", line = 41)
 	@Override
 	public int method33456(@OriginalArg(0) Class108 arg0) {
 		@Pc(8) Class93_Sub14 local8 = (Class93_Sub14) Class249.aClass16_24.method214((long) (arg0.anInt867 * -1284841473));
-		return local8 == null ? Class624.aClass120_1.method33455(arg0, -860700189) : local8.anInt1526 * 1279598251;
+		return local8 == null ? Class624.playerVariableManager.method33455(arg0, -860700189) : local8.anInt1526 * 1279598251;
 	}
 
 	@OriginalMember(owner = "client!et", name = "ai", descriptor = "(Lclient!ec;)I", line = 41)
 	@Override
 	public int method33459(@OriginalArg(0) Class108 arg0) {
 		@Pc(8) Class93_Sub14 local8 = (Class93_Sub14) Class249.aClass16_24.method214((long) (arg0.anInt867 * -1284841473));
-		return local8 == null ? Class624.aClass120_1.method33455(arg0, -653174860) : local8.anInt1526 * 1279598251;
+		return local8 == null ? Class624.playerVariableManager.method33455(arg0, -653174860) : local8.anInt1526 * 1279598251;
 	}
 
 	@OriginalMember(owner = "client!et", name = "z", descriptor = "(Lclient!kh;I)I", line = 47)
 	@Override
 	public int method33454(@OriginalArg(0) Class379 arg0, @OriginalArg(1) int arg1) {
 		@Pc(10) Class93_Sub14 local10 = (Class93_Sub14) Class249.aClass16_24.method214((long) (arg0.anInt4622 * -15749287) | 0x100000000L);
-		return local10 == null ? Class624.aClass120_1.method33454(arg0, -1890685598) : local10.anInt1526 * 1279598251;
+		return local10 == null ? Class624.playerVariableManager.method33454(arg0, -1890685598) : local10.anInt1526 * 1279598251;
 	}
 
 	@OriginalMember(owner = "client!et", name = "at", descriptor = "(Lclient!kh;)I", line = 47)
 	@Override
 	public int method33462(@OriginalArg(0) Class379 arg0) {
 		@Pc(10) Class93_Sub14 local10 = (Class93_Sub14) Class249.aClass16_24.method214((long) (arg0.anInt4622 * -15749287) | 0x100000000L);
-		return local10 == null ? Class624.aClass120_1.method33454(arg0, 1979714963) : local10.anInt1526 * 1279598251;
+		return local10 == null ? Class624.playerVariableManager.method33454(arg0, 1979714963) : local10.anInt1526 * 1279598251;
 	}
 
 	@OriginalMember(owner = "client!et", name = "aw", descriptor = "(Lclient!kh;)I", line = 47)
 	@Override
 	public int method33461(@OriginalArg(0) Class379 arg0) {
 		@Pc(10) Class93_Sub14 local10 = (Class93_Sub14) Class249.aClass16_24.method214((long) (arg0.anInt4622 * -15749287) | 0x100000000L);
-		return local10 == null ? Class624.aClass120_1.method33454(arg0, -154214933) : local10.anInt1526 * 1279598251;
+		return local10 == null ? Class624.playerVariableManager.method33454(arg0, -154214933) : local10.anInt1526 * 1279598251;
 	}
 
 	@OriginalMember(owner = "client!et", name = "as", descriptor = "(Lclient!kh;)I", line = 47)
 	@Override
 	public int method33460(@OriginalArg(0) Class379 arg0) {
 		@Pc(10) Class93_Sub14 local10 = (Class93_Sub14) Class249.aClass16_24.method214((long) (arg0.anInt4622 * -15749287) | 0x100000000L);
-		return local10 == null ? Class624.aClass120_1.method33454(arg0, -296507910) : local10.anInt1526 * 1279598251;
+		return local10 == null ? Class624.playerVariableManager.method33454(arg0, -296507910) : local10.anInt1526 * 1279598251;
 	}
 
 	@OriginalMember(owner = "client!et", name = "d", descriptor = "(Lclient!yf;I)V", line = 56)
 	static void method25966(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1] = ((Class347) Class288.aClass55_Sub2_1.method18261(arg0.anIntArray519[-1497248091 * arg0.anInt5891 - 1], 538953545)).method27596(Class624.aClass120_1, -56090989) ? 1 : 0;
+		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1] = ((Class347) Class288.aClass55_Sub2_1.get(arg0.anIntArray519[-1497248091 * arg0.anInt5891 - 1], 538953545)).method27596(Class624.playerVariableManager, -56090989) ? 1 : 0;
 	}
 
 	@OriginalMember(owner = "client!et", name = "y", descriptor = "(Lclient!yf;I)V", line = 85)
 	static void method25967(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = ((Class347) Class288.aClass55_Sub2_1.method18261(arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 2], 41450559)).aStringArray27[arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1]];
+		arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = ((Class347) Class288.aClass55_Sub2_1.get(arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 2], 41450559)).aStringArray27[arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1]];
 		arg0.anInt5891 -= -1915563430;
 	}
 

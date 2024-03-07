@@ -137,6 +137,6 @@ public class Class443 implements Interface75 {
 	@OriginalMember(owner = "client!nn", name = "ws", descriptor = "(Lclient!yf;S)V", line = 9093)
 	static final void method28871(@OriginalArg(0) Class681 arg0, @OriginalArg(1) short arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class624.aClass120_1.method8662(local12, -165618893);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class624.playerVariableManager.method8662(local12, -165618893);
 	}
 }

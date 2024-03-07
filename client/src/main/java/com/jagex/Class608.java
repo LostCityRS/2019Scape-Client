@@ -324,10 +324,10 @@ public class Class608 implements Interface13 {
 				}
 			}
 			if (local1 >= 0 && local1 < this.anIntArray487.length - 1) {
-				return this.anIntArray487[local1] == -1 ? null : (Class608) this.anInterface11_13.method18261(this.anIntArray487[local1], 1614628704);
+				return this.anIntArray487[local1] == -1 ? null : (Class608) this.anInterface11_13.get(this.anIntArray487[local1], 1614628704);
 			} else {
 				@Pc(77) int local77 = this.anIntArray487[this.anIntArray487.length - 1];
-				return local77 == -1 ? null : (Class608) this.anInterface11_13.method18261(local77, -398870355);
+				return local77 == -1 ? null : (Class608) this.anInterface11_13.get(local77, -398870355);
 			}
 		}
 	}
@@ -352,10 +352,10 @@ public class Class608 implements Interface13 {
 				}
 			}
 			if (local1 >= 0 && local1 < this.anIntArray487.length - 1) {
-				return this.anIntArray487[local1] == -1 ? null : (Class608) this.anInterface11_13.method18261(this.anIntArray487[local1], -603934325);
+				return this.anIntArray487[local1] == -1 ? null : (Class608) this.anInterface11_13.get(this.anIntArray487[local1], -603934325);
 			} else {
 				@Pc(77) int local77 = this.anIntArray487[this.anIntArray487.length - 1];
-				return local77 == -1 ? null : (Class608) this.anInterface11_13.method18261(local77, -1628673430);
+				return local77 == -1 ? null : (Class608) this.anInterface11_13.get(local77, -1628673430);
 			}
 		}
 	}

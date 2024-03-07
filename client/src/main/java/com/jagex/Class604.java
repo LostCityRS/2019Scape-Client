@@ -71,7 +71,7 @@ public class Class604 implements Interface75 {
 		@Pc(23) int local23 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 1];
 		@Pc(33) int local33 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 2];
 		@Pc(43) int local43 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 3];
-		@Pc(49) Class39 local49 = (Class39) Class19.aClass32_Sub7_5.method18261(local33, 1866311135);
+		@Pc(49) Class39 local49 = (Class39) Class19.aClass32_Sub7_5.get(local33, 1866311135);
 		if (local49.aClass519_2.getId() != local13 || local49.aClass519_1.getId() != local23) {
 			throw new RuntimeException(local33 + " " + local43);
 		} else if (local23 == Class519.aClass519_7.getId()) {

@@ -704,12 +704,12 @@ public class Class168 {
 				}
 				if (arg0.startsWith("getclientvarpbit")) {
 					local568 = Integer.parseInt(arg0.substring(17));
-					Class314.method26939("varpbit=" + Class624.aClass120_1.method33454(Class624.aClass120_1.method27953(local568, (byte) -21), -497230021), -1939005617);
+					Class314.method26939("varpbit=" + Class624.playerVariableManager.method33454(Class624.playerVariableManager.method27953(local568, (byte) -21), -497230021), -1939005617);
 					return;
 				}
 				if (arg0.startsWith("getclientvarp")) {
 					local568 = Integer.parseInt(arg0.substring(14));
-					Class314.method26939("varp=" + Class624.aClass120_1.method33455(Class624.aClass120_1.method27954(Class138.aClass138_65, local568, -1497248091), 2115292292), -1920639858);
+					Class314.method26939("varp=" + Class624.playerVariableManager.method33455(Class624.playerVariableManager.method27954(Class138.aClass138_65, local568, -1497248091), 2115292292), -1920639858);
 					return;
 				}
 				@Pc(865) String[] local865;

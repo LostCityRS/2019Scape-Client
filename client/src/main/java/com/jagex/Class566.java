@@ -10,7 +10,7 @@ import org.openrs2.deob.annotation.Pc;
 public class Class566 {
 
 	@OriginalMember(owner = "client!t", name = "aa", descriptor = "I")
-	static int anInt5385;
+	static int nextLength;
 
 	@OriginalMember(owner = "client!t", name = "<init>", descriptor = "()V", line = 9)
 	Class566() throws Throwable {
@@ -37,7 +37,7 @@ public class Class566 {
 	static int method31257(@OriginalArg(0) Class132_Sub1_Sub1_Sub1_Sub1 arg0, @OriginalArg(1) int arg1) {
 		@Pc(2) Class336 local2 = arg0.aClass336_1;
 		if (local2.anIntArray412 != null) {
-			local2 = local2.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 18848);
+			local2 = local2.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 18848);
 			if (local2 == null) {
 				return -1;
 			}

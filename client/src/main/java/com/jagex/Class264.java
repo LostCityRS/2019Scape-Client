@@ -15,7 +15,7 @@ class Class264 implements Interface58 {
 
 	@OriginalMember(owner = "client!fi", name = "a", descriptor = "(Lclient!yf;I)V", line = 110)
 	static void method26206(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1] = ((Class347) Class288.aClass55_Sub2_1.method18261(arg0.anIntArray519[-1497248091 * arg0.anInt5891 - 1], -1373728399)).method27593(Class624.aClass120_1, -1740409299) ? 1 : 0;
+		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1] = ((Class347) Class288.aClass55_Sub2_1.get(arg0.anIntArray519[-1497248091 * arg0.anInt5891 - 1], -1373728399)).method27593(Class624.playerVariableManager, -1740409299) ? 1 : 0;
 	}
 
 	@OriginalMember(owner = "client!fi", name = "<init>", descriptor = "(Lclient!fb;)V", line = 204)
@@ -203,7 +203,7 @@ class Class264 implements Interface58 {
 	@OriginalMember(owner = "client!fi", name = "axr", descriptor = "(Lclient!yf;B)V", line = 13935)
 	static final void method26212(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		@Pc(18) Class322 local18 = (Class322) Class542.aClass32_Sub2_3.method18261(local12, 797660038);
+		@Pc(18) Class322 local18 = (Class322) Class542.aClass32_Sub2_3.get(local12, 797660038);
 		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local18.anInt4126 * -498063801;
 	}
 

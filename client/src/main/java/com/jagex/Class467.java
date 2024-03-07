@@ -94,7 +94,7 @@ public class Class467 {
 	@OriginalMember(owner = "client!oo", name = "agm", descriptor = "(Lclient!yf;I)V", line = 10680)
 	static final void method29329(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = ((Class47) Class277.aClass32_Sub12_1.method18261(local12, -1822892454)).aString6;
+		arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = ((Class47) Class277.aClass32_Sub12_1.get(local12, -1822892454)).aString6;
 	}
 
 	@OriginalMember(owner = "client!oo", name = "arh", descriptor = "(Lclient!yf;B)V", line = 12957)

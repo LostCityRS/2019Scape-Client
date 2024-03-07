@@ -48,7 +48,7 @@ public class Class110_Sub21 extends Class110 {
 		if (arg1.aClass312Array1 != null) {
 			Class206.method24700(arg1.aClass312Array1, arg1.anInt3953 * -1549590237, local15, local31, arg2, -672135787);
 		}
-		@Pc(64) Class93_Sub40 local64 = (Class93_Sub40) client.aClass16_22.method214((long) (arg1.anInt3953 * -1549590237));
+		@Pc(64) SubInterface local64 = (SubInterface) client.aClass16_22.method214((long) (arg1.anInt3953 * -1549590237));
 		if (local64 != null) {
 			Class568.method31298(local64.anInt3172 * 1220811495, local15, local31, arg2, (byte) -4);
 		}

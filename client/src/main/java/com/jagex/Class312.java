@@ -1305,7 +1305,7 @@ public class Class312 {
 			} else {
 				@Pc(394) Class109 local394;
 				if (this.anInt4001 * 1553054515 == 2) {
-					local394 = ((Class336) arg4.method18261(this.anInt4037 * 371778301, 937269988)).method27426(arg0, arg1, arg7, arg8, arg9, this.aClass331_2, (short) -5422);
+					local394 = ((Class336) arg4.get(this.anInt4037 * 371778301, 937269988)).method27426(arg0, arg1, arg7, arg8, arg9, this.aClass331_2, (short) -5422);
 					if (local394 == null) {
 						aBoolean699 = true;
 						return null;
@@ -1324,7 +1324,7 @@ public class Class312 {
 						return local394;
 					}
 				} else if (this.anInt4001 * 1553054515 == 4) {
-					@Pc(450) Class47 local450 = (Class47) arg5.method18261(this.anInt4037 * 371778301, -2050199754);
+					@Pc(450) Class47 local450 = (Class47) arg5.get(this.anInt4037 * 371778301, -2050199754);
 					@Pc(463) Class109 local463 = local450.method924(arg0, arg1, 10, arg10, arg9, 0, 0, 0, 0, 1476063327);
 					if (local463 == null) {
 						aBoolean699 = true;
@@ -1333,7 +1333,7 @@ public class Class312 {
 						return local463;
 					}
 				} else if (this.anInt4001 * 1553054515 == 6) {
-					local394 = ((Class336) arg4.method18261(this.anInt4037 * 371778301, -202806877)).method27421(arg0, arg1, arg2, arg7, arg8, arg9, null, null, null, 0, this.aClass331_2, -1872411274);
+					local394 = ((Class336) arg4.get(this.anInt4037 * 371778301, -202806877)).method27421(arg0, arg1, arg2, arg7, arg8, arg9, null, null, null, 0, this.aClass331_2, -1872411274);
 					if (local394 == null) {
 						aBoolean699 = true;
 						return null;
@@ -1432,7 +1432,7 @@ public class Class312 {
 			} else {
 				@Pc(394) Class109 local394;
 				if (this.anInt4001 * 1553054515 == 2) {
-					local394 = ((Class336) arg4.method18261(this.anInt4037 * 371778301, -890359717)).method27426(arg0, arg1, arg7, arg8, arg9, this.aClass331_2, (short) 22184);
+					local394 = ((Class336) arg4.get(this.anInt4037 * 371778301, -890359717)).method27426(arg0, arg1, arg7, arg8, arg9, this.aClass331_2, (short) 22184);
 					if (local394 == null) {
 						aBoolean699 = true;
 						return null;
@@ -1451,7 +1451,7 @@ public class Class312 {
 						return local394;
 					}
 				} else if (this.anInt4001 * 1553054515 == 4) {
-					@Pc(450) Class47 local450 = (Class47) arg5.method18261(this.anInt4037 * 371778301, 1967095422);
+					@Pc(450) Class47 local450 = (Class47) arg5.get(this.anInt4037 * 371778301, 1967095422);
 					@Pc(463) Class109 local463 = local450.method924(arg0, arg1, 10, arg10, arg9, 0, 0, 0, 0, 412288553);
 					if (local463 == null) {
 						aBoolean699 = true;
@@ -1460,7 +1460,7 @@ public class Class312 {
 						return local463;
 					}
 				} else if (this.anInt4001 * 1553054515 == 6) {
-					local394 = ((Class336) arg4.method18261(this.anInt4037 * 371778301, 1131749451)).method27421(arg0, arg1, arg2, arg7, arg8, arg9, null, null, null, 0, this.aClass331_2, -1872411274);
+					local394 = ((Class336) arg4.get(this.anInt4037 * 371778301, 1131749451)).method27421(arg0, arg1, arg2, arg7, arg8, arg9, null, null, null, 0, this.aClass331_2, -1872411274);
 					if (local394 == null) {
 						aBoolean699 = true;
 						return null;
@@ -2354,7 +2354,7 @@ public class Class312 {
 	@OriginalMember(owner = "client!hf", name = "agw", descriptor = "(Lclient!yf;I)V", line = 10708)
 	static final void method26925(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = ((Class47) Class277.aClass32_Sub12_1.method18261(local12, 1217873845)).anInt150 * -1809820871 == 1 ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = ((Class47) Class277.aClass32_Sub12_1.get(local12, 1217873845)).anInt150 * -1809820871 == 1 ? 1 : 0;
 	}
 
 	@OriginalMember(owner = "client!hf", name = "aye", descriptor = "(Lclient!yf;B)V", line = 14062)

@@ -1854,7 +1854,7 @@ public final class Class497 {
 	static long method30130(@OriginalArg(0) Interface61 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		@Pc(1) long local1 = 4194304L;
 		@Pc(3) long local3 = Long.MIN_VALUE;
-		@Pc(13) Class610 local13 = (Class610) client.world.method30496(1877474569).method18261(arg0.method13423(-1037211373), 1104549899);
+		@Pc(13) Class610 local13 = (Class610) client.world.method30496(1877474569).get(arg0.method13423(-1037211373), 1104549899);
 		@Pc(34) long local34 = (long) (arg1 | arg2 << 7 | arg0.method13420(1402096015) << 14 | arg0.method13404(2090297000) << 20 | 0x40000000);
 		if (local13.anInt5592 * 1067969079 == 0) {
 			local34 |= local3;

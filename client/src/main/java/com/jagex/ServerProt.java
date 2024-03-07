@@ -75,7 +75,7 @@ public class ServerProt {
 	public static final ServerProt aServerProt_16 = new ServerProt(20, 6);
 
 	@OriginalMember(owner = "client!nz", name = "a", descriptor = "Lclient!nz;")
-	public static final ServerProt aServerProt_26 = new ServerProt(21, -2);
+	public static final ServerProt CLIENT_SETVARCSTR_LARGE = new ServerProt(21, -2);
 
 	@OriginalMember(owner = "client!nz", name = "g", descriptor = "Lclient!nz;")
 	public static final ServerProt aServerProt_194 = new ServerProt(22, -1);
@@ -102,7 +102,7 @@ public class ServerProt {
 	public static final ServerProt aServerProt_34 = new ServerProt(29, 2);
 
 	@OriginalMember(owner = "client!nz", name = "ac", descriptor = "Lclient!nz;")
-	public static final ServerProt aServerProt_35 = new ServerProt(30, -1);
+	public static final ServerProt CLIENT_SETVARCSTR_SMALL = new ServerProt(30, -1);
 
 	@OriginalMember(owner = "client!nz", name = "ai", descriptor = "Lclient!nz;")
 	public static final ServerProt aServerProt_36 = new ServerProt(31, 8);
@@ -117,7 +117,7 @@ public class ServerProt {
 	public static final ServerProt aServerProt_39 = new ServerProt(34, -1);
 
 	@OriginalMember(owner = "client!nz", name = "ad", descriptor = "Lclient!nz;")
-	public static final ServerProt aServerProt_40 = new ServerProt(35, 19);
+	public static final ServerProt IF_OPENTOP = new ServerProt(35, 19);
 
 	@OriginalMember(owner = "client!nz", name = "am", descriptor = "Lclient!nz;")
 	public static final ServerProt aServerProt_175 = new ServerProt(36, -1);
@@ -126,7 +126,7 @@ public class ServerProt {
 	public static final ServerProt aServerProt_42 = new ServerProt(37, 8);
 
 	@OriginalMember(owner = "client!nz", name = "ar", descriptor = "Lclient!nz;")
-	public static final ServerProt aServerProt_43 = new ServerProt(38, 23);
+	public static final ServerProt IF_OPENSUB = new ServerProt(38, 23);
 
 	@OriginalMember(owner = "client!nz", name = "ap", descriptor = "Lclient!nz;")
 	public static final ServerProt aServerProt_44 = new ServerProt(39, 3);
@@ -144,7 +144,7 @@ public class ServerProt {
 	public static final ServerProt aServerProt_76 = new ServerProt(43, 4);
 
 	@OriginalMember(owner = "client!nz", name = "aj", descriptor = "Lclient!nz;")
-	public static final ServerProt aServerProt_68 = new ServerProt(44, 3);
+	public static final ServerProt VARBIT_SMALL = new ServerProt(44, 3);
 
 	@OriginalMember(owner = "client!nz", name = "ay", descriptor = "Lclient!nz;")
 	public static final ServerProt aServerProt_50 = new ServerProt(45, 2);
@@ -162,7 +162,7 @@ public class ServerProt {
 	public static final ServerProt aServerProt_54 = new ServerProt(49, 3);
 
 	@OriginalMember(owner = "client!nz", name = "ak", descriptor = "Lclient!nz;")
-	public static final ServerProt aServerProt_25 = new ServerProt(50, 6);
+	public static final ServerProt VARP_LARGE = new ServerProt(50, 6);
 
 	@OriginalMember(owner = "client!nz", name = "an", descriptor = "Lclient!nz;")
 	static final ServerProt aServerProt_32 = new ServerProt(51, -2);
@@ -174,7 +174,7 @@ public class ServerProt {
 	public static final ServerProt aServerProt_125 = new ServerProt(53, 28);
 
 	@OriginalMember(owner = "client!nz", name = "bk", descriptor = "Lclient!nz;")
-	public static final ServerProt aServerProt_59 = new ServerProt(54, 3);
+	public static final ServerProt CLIENT_SETVARCBIT_SMALL = new ServerProt(54, 3);
 
 	@OriginalMember(owner = "client!nz", name = "bh", descriptor = "Lclient!nz;")
 	public static final ServerProt aServerProt_60 = new ServerProt(55, 3);
@@ -219,7 +219,7 @@ public class ServerProt {
 	public static final ServerProt aServerProt_73 = new ServerProt(68, 1);
 
 	@OriginalMember(owner = "client!nz", name = "bo", descriptor = "Lclient!nz;")
-	public static final ServerProt aServerProt_178 = new ServerProt(69, 6);
+	public static final ServerProt CLIENT_SETVARCBIT_LARGE = new ServerProt(69, 6);
 
 	@OriginalMember(owner = "client!nz", name = "bz", descriptor = "Lclient!nz;")
 	public static final ServerProt aServerProt_131 = new ServerProt(70, 6);
@@ -309,7 +309,7 @@ public class ServerProt {
 	public static final ServerProt aServerProt_103 = new ServerProt(98, 6);
 
 	@OriginalMember(owner = "client!nz", name = "cc", descriptor = "Lclient!nz;")
-	public static final ServerProt aServerProt_104 = new ServerProt(99, 0);
+	public static final ServerProt RESET_CLIENT_VARCACHE = new ServerProt(99, 0);
 
 	@OriginalMember(owner = "client!nz", name = "cz", descriptor = "Lclient!nz;")
 	public static final ServerProt aServerProt_85 = new ServerProt(100, 10);
@@ -396,7 +396,7 @@ public class ServerProt {
 	public static final ServerProt aServerProt_7 = new ServerProt(127, 11);
 
 	@OriginalMember(owner = "client!nz", name = "de", descriptor = "Lclient!nz;")
-	public static final ServerProt aServerProt_132 = new ServerProt(128, 6);
+	public static final ServerProt CLIENT_SETVARC_LARGE = new ServerProt(128, 6);
 
 	@OriginalMember(owner = "client!nz", name = "dj", descriptor = "Lclient!nz;")
 	public static final ServerProt aServerProt_133 = new ServerProt(129, 0);
@@ -438,7 +438,7 @@ public class ServerProt {
 	public static final ServerProt aServerProt_145 = new ServerProt(141, 1);
 
 	@OriginalMember(owner = "client!nz", name = "ek", descriptor = "Lclient!nz;")
-	public static final ServerProt aServerProt_95 = new ServerProt(142, 6);
+	public static final ServerProt VARBIT_LARGE = new ServerProt(142, 6);
 
 	@OriginalMember(owner = "client!nz", name = "em", descriptor = "Lclient!nz;")
 	public static final ServerProt aServerProt_147 = new ServerProt(143, 6);
@@ -459,7 +459,7 @@ public class ServerProt {
 	public static final ServerProt aServerProt_152 = new ServerProt(148, 0);
 
 	@OriginalMember(owner = "client!nz", name = "et", descriptor = "Lclient!nz;")
-	public static final ServerProt aServerProt_153 = new ServerProt(149, 3);
+	public static final ServerProt CLIENT_SETVARC_SMALL = new ServerProt(149, 3);
 
 	@OriginalMember(owner = "client!nz", name = "ea", descriptor = "Lclient!nz;")
 	public static final ServerProt aServerProt_154 = new ServerProt(150, 2);
@@ -483,7 +483,7 @@ public class ServerProt {
 	public static final ServerProt RUNCLIENTSCRIPT = new ServerProt(156, -2);
 
 	@OriginalMember(owner = "client!nz", name = "fm", descriptor = "Lclient!nz;")
-	public static final ServerProt aServerProt_126 = new ServerProt(157, 3);
+	public static final ServerProt VARP_SMALL = new ServerProt(157, 3);
 
 	@OriginalMember(owner = "client!nz", name = "fu", descriptor = "Lclient!nz;")
 	public static final ServerProt aServerProt_48 = new ServerProt(158, 10);
@@ -600,7 +600,7 @@ public class ServerProt {
 	public final int opcode;
 
 	@OriginalMember(owner = "client!nz", name = "gr", descriptor = "I")
-	public final int anInt5033;
+	public final int length;
 
 	@OriginalMember(owner = "client!nz", name = "m", descriptor = "(Ljava/lang/String;ZLjava/lang/String;ZB)V", line = 32)
 	public static void openUrl(@OriginalArg(0) String arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) String arg2, @OriginalArg(3) boolean arg3, @OriginalArg(4) byte arg4) {
@@ -629,7 +629,7 @@ public class ServerProt {
 	@OriginalMember(owner = "client!nz", name = "<init>", descriptor = "(II)V", line = 209)
 	ServerProt(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		this.opcode = arg0 * -1690226739;
-		this.anInt5033 = arg1 * -215834691;
+		this.length = arg1 * -215834691;
 	}
 
 	@OriginalMember(owner = "client!nz", name = "fa", descriptor = "(Lclient!hf;Lclient!hq;Lclient!yf;S)V", line = 5951)
@@ -673,7 +673,7 @@ public class ServerProt {
 	@OriginalMember(owner = "client!nz", name = "ahf", descriptor = "(Lclient!yf;I)V", line = 10833)
 	static final void method28967(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		@Pc(18) Class47 local18 = (Class47) Class277.aClass32_Sub12_1.method18261(local12, 373831168);
+		@Pc(18) Class47 local18 = (Class47) Class277.aClass32_Sub12_1.get(local12, 373831168);
 		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local18.aBoolean25 ? 1 : 0;
 	}
 
@@ -684,6 +684,6 @@ public class ServerProt {
 
     @OriginalMember(owner = "client!amc", name = "e", descriptor = "(I)[Lclient!nz;", line = 206)
     public static ServerProt[] values(@OriginalArg(0) int arg0) {
-        return new ServerProt[] {aServerProt_161, aServerProt_6, aServerProt_49, aServerProt_8, aServerProt_52, aServerProt_144, aServerProt_11, aServerProt_12, aServerProt_13, REBUILD_REGION, aServerProt_15, aServerProt_75, aServerProt_17, aServerProt_18, aServerProt_19, aServerProt_190, aServerProt_21, aServerProt_22, aServerProt_23, aServerProt_24, aServerProt_16, aServerProt_26, aServerProt_194, aServerProt_28, aServerProt_29, aServerProt_30, aServerProt_169, aServerProt_195, aServerProt_101, aServerProt_34, aServerProt_35, aServerProt_36, aServerProt_37, aServerProt_155, aServerProt_39, aServerProt_40, aServerProt_175, aServerProt_42, aServerProt_43, aServerProt_44, aServerProt_45, aServerProt_117, aServerProt_199, aServerProt_76, aServerProt_68, aServerProt_50, aServerProt_51, aServerProt_58, aServerProt_53, aServerProt_54, aServerProt_25, aServerProt_32, aServerProt_57, aServerProt_125, aServerProt_59, aServerProt_60, aServerProt_61, aServerProt_62, UPDATE_ZONE_PARTIAL_ENCLOSED, aServerProt_64, aServerProt_65, aServerProt_66, aServerProt_67, aServerProt_150, aServerProt_69, aServerProt_70, aServerProt_38, aServerProt_72, aServerProt_73, aServerProt_178, aServerProt_131, aServerProt_77, aServerProt_138, aServerProt_55, aServerProt_79, aServerProt_80, aServerProt_113, aServerProt_5, aServerProt_83, aServerProt_84, aServerProt_170, aServerProt_86, aServerProt_87, aServerProt_182, aServerProt_89, aServerProt_90, aServerProt_91, aServerProt_92, aServerProt_93, aServerProt_94, aServerProt_106, aServerProt_198, aServerProt_127, aServerProt_98, aServerProt_99, aServerProt_100, aServerProt_10, aServerProt_102, aServerProt_103, aServerProt_104, aServerProt_85, aServerProt_33, aServerProt_107, aServerProt_108, aServerProt_109, aServerProt_110, aServerProt_111, aServerProt_112, aServerProt_176, aServerProt_114, aServerProt_115, aServerProt_116, aServerProt_120, aServerProt_118, aServerProt_119, aServerProt_81, aServerProt_197, aServerProt_159, aServerProt_122, aServerProt_123, aServerProt_124, aServerProt_136, aServerProt_41, aServerProt_63, aServerProt_128, aServerProt_129, aServerProt_130, aServerProt_7, aServerProt_132, aServerProt_133, aServerProt_134, aServerProt_135, aServerProt_173, aServerProt_137, aServerProt_121, aServerProt_71, aServerProt_140, aServerProt_141, aServerProt_82, aServerProt_143, aServerProt_196, aServerProt_145, aServerProt_95, aServerProt_147, aServerProt_78, aServerProt_149, aServerProt_142, aServerProt_151, aServerProt_152, aServerProt_153, aServerProt_154, aServerProt_97, aServerProt_156, aServerProt_157, aServerProt_158, aServerProt_27, RUNCLIENTSCRIPT, aServerProt_126, aServerProt_48, aServerProt_163, aServerProt_164, aServerProt_165, aServerProt_166, aServerProt_167, aServerProt_168, aServerProt_56, aServerProt_96, aServerProt_171, aServerProt_172, aServerProt_148, aServerProt_174, aServerProt_9, aServerProt_88, aServerProt_177, aServerProt_193, aServerProt_179, aServerProt_180, aServerProt_181, aServerProt_74, aServerProt_183, aServerProt_184, aServerProt_185, aServerProt_186, aServerProt_187, aServerProt_188, aServerProt_189, aServerProt_105, aServerProt_191, aServerProt_192, aServerProt_31, aServerProt_47, aServerProt_139, aServerProt_20, aServerProt_14, aServerProt_162};
+        return new ServerProt[] {aServerProt_161, aServerProt_6, aServerProt_49, aServerProt_8, aServerProt_52, aServerProt_144, aServerProt_11, aServerProt_12, aServerProt_13, REBUILD_REGION, aServerProt_15, aServerProt_75, aServerProt_17, aServerProt_18, aServerProt_19, aServerProt_190, aServerProt_21, aServerProt_22, aServerProt_23, aServerProt_24, aServerProt_16, CLIENT_SETVARCSTR_LARGE, aServerProt_194, aServerProt_28, aServerProt_29, aServerProt_30, aServerProt_169, aServerProt_195, aServerProt_101, aServerProt_34, CLIENT_SETVARCSTR_SMALL, aServerProt_36, aServerProt_37, aServerProt_155, aServerProt_39, IF_OPENTOP, aServerProt_175, aServerProt_42, IF_OPENSUB, aServerProt_44, aServerProt_45, aServerProt_117, aServerProt_199, aServerProt_76, VARBIT_SMALL, aServerProt_50, aServerProt_51, aServerProt_58, aServerProt_53, aServerProt_54, VARP_LARGE, aServerProt_32, aServerProt_57, aServerProt_125, CLIENT_SETVARCBIT_SMALL, aServerProt_60, aServerProt_61, aServerProt_62, UPDATE_ZONE_PARTIAL_ENCLOSED, aServerProt_64, aServerProt_65, aServerProt_66, aServerProt_67, aServerProt_150, aServerProt_69, aServerProt_70, aServerProt_38, aServerProt_72, aServerProt_73, CLIENT_SETVARCBIT_LARGE, aServerProt_131, aServerProt_77, aServerProt_138, aServerProt_55, aServerProt_79, aServerProt_80, aServerProt_113, aServerProt_5, aServerProt_83, aServerProt_84, aServerProt_170, aServerProt_86, aServerProt_87, aServerProt_182, aServerProt_89, aServerProt_90, aServerProt_91, aServerProt_92, aServerProt_93, aServerProt_94, aServerProt_106, aServerProt_198, aServerProt_127, aServerProt_98, aServerProt_99, aServerProt_100, aServerProt_10, aServerProt_102, aServerProt_103, RESET_CLIENT_VARCACHE, aServerProt_85, aServerProt_33, aServerProt_107, aServerProt_108, aServerProt_109, aServerProt_110, aServerProt_111, aServerProt_112, aServerProt_176, aServerProt_114, aServerProt_115, aServerProt_116, aServerProt_120, aServerProt_118, aServerProt_119, aServerProt_81, aServerProt_197, aServerProt_159, aServerProt_122, aServerProt_123, aServerProt_124, aServerProt_136, aServerProt_41, aServerProt_63, aServerProt_128, aServerProt_129, aServerProt_130, aServerProt_7, CLIENT_SETVARC_LARGE, aServerProt_133, aServerProt_134, aServerProt_135, aServerProt_173, aServerProt_137, aServerProt_121, aServerProt_71, aServerProt_140, aServerProt_141, aServerProt_82, aServerProt_143, aServerProt_196, aServerProt_145, VARBIT_LARGE, aServerProt_147, aServerProt_78, aServerProt_149, aServerProt_142, aServerProt_151, aServerProt_152, CLIENT_SETVARC_SMALL, aServerProt_154, aServerProt_97, aServerProt_156, aServerProt_157, aServerProt_158, aServerProt_27, RUNCLIENTSCRIPT, VARP_SMALL, aServerProt_48, aServerProt_163, aServerProt_164, aServerProt_165, aServerProt_166, aServerProt_167, aServerProt_168, aServerProt_56, aServerProt_96, aServerProt_171, aServerProt_172, aServerProt_148, aServerProt_174, aServerProt_9, aServerProt_88, aServerProt_177, aServerProt_193, aServerProt_179, aServerProt_180, aServerProt_181, aServerProt_74, aServerProt_183, aServerProt_184, aServerProt_185, aServerProt_186, aServerProt_187, aServerProt_188, aServerProt_189, aServerProt_105, aServerProt_191, aServerProt_192, aServerProt_31, aServerProt_47, aServerProt_139, aServerProt_20, aServerProt_14, aServerProt_162};
     }
 }

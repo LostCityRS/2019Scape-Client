@@ -726,7 +726,7 @@ public class Class279 {
 			if (local130 == 1) {
 				client.anIntArray306[(client.anInt3472 += -170330519) * 146012633 - 1] = local17;
 			}
-			local38.method18594((Class336) Class162.aClass32_Sub3_2.method18261(local2.gBit(15, -1414174684), 1358140749), 484412968);
+			local38.method18594((Class336) Class162.aClass32_Sub3_2.get(local2.gBit(15, -1414174684), 1358140749), 484412968);
 			@Pc(161) int local161 = local2.gBit(1, -1125559557);
 			@Pc(172) int local172 = local2.gBit(3, 1297161788) + 4 << 11 & 0x3FFF;
 			@Pc(177) int local177 = local2.gBit(arg0, 59162484);

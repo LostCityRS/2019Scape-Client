@@ -234,7 +234,7 @@ public class Class547 implements Interface20 {
 		if (local23 == -1) {
 			throw new RuntimeException();
 		}
-		@Pc(46) Class39 local46 = (Class39) Class19.aClass32_Sub7_5.method18261(local23, -313640571);
+		@Pc(46) Class39 local46 = (Class39) Class19.aClass32_Sub7_5.get(local23, -313640571);
 		if (local46.aClass519_1.getId() != local13) {
 			throw new RuntimeException();
 		}

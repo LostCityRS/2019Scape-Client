@@ -1526,7 +1526,7 @@ public class Class174 {
 			for (local8 = 0; local8 < local57; local8++) {
 				local66 = arg0.g1_alt3(1249200523);
 				local73 = (Class500) Class107.method18116(Class500.method30156(-1842025323), local66, -1915563430);
-				local79 = Class21.aClass79_Sub1_Sub1_1.method1470(arg0, local73, (byte) 1);
+				local79 = Class21.varPlayerTypes.method1470(arg0, local73, (byte) 1);
 				arg2.anInterface3_5.method776(local79.anInt5092 * -1181855333, local79.anObject19, (byte) 72);
 			}
 		}
@@ -1684,7 +1684,7 @@ public class Class174 {
 			for (local8 = 0; local8 < local57; local8++) {
 				local66 = arg0.g1_alt3(2050003278);
 				local73 = (Class500) Class107.method18116(Class500.method30156(-2004547610), local66, -1915563430);
-				local79 = Class21.aClass79_Sub1_Sub1_1.method1470(arg0, local73, (byte) 1);
+				local79 = Class21.varPlayerTypes.method1470(arg0, local73, (byte) 1);
 				arg2.anInterface3_5.method776(local79.anInt5092 * -1181855333, local79.anObject19, (byte) 69);
 			}
 		}

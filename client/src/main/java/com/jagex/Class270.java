@@ -269,16 +269,16 @@ public class Class270 {
 	@OriginalMember(owner = "client!fo", name = "awy", descriptor = "(Lclient!yf;I)V", line = 13747)
 	static final void method26299(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		if (client.anInt3526 * -703563959 != -1) {
+		if (client.topLevelInterface * -703563959 != -1) {
 			if (local12 == 0) {
-				arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.anInt3526 * -703563959;
+				arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.topLevelInterface * -703563959;
 				return;
 			}
 			local12--;
 		}
-		@Pc(44) Class93_Sub40 local44 = (Class93_Sub40) client.aClass16_22.method227((byte) -36);
+		@Pc(44) SubInterface local44 = (SubInterface) client.aClass16_22.method227((byte) -36);
 		while (local12-- > 0) {
-			local44 = (Class93_Sub40) client.aClass16_22.method229(1599311067);
+			local44 = (SubInterface) client.aClass16_22.method229(1599311067);
 		}
 		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local44.anInt3172 * 1220811495;
 	}

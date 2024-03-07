@@ -126,17 +126,17 @@ public class Class157_Sub1 extends Class157 implements Interface4 {
 			}
 		}
 		Class143.method11049(Class694.aClass104_14, (long) client.anInt3485);
-		if (client.anInt3526 * -703563959 != -1) {
-			Class19.method23635(client.anInt3526 * -703563959, 2103577804);
+		if (client.topLevelInterface * -703563959 != -1) {
+			Class19.method23635(client.topLevelInterface * -703563959, 2103577804);
 		}
 		@Pc(39) int local39;
 		for (local39 = 0; local39 < client.anInt3562 * -1477010237; local39++) {
-			client.aBooleanArray19[local39] = client.aBooleanArray22[local39];
-			client.aBooleanArray22[local39] = false;
+			client.aBooleanArray19[local39] = client.topLevelComponentRedrawRequestedTemp[local39];
+			client.topLevelComponentRedrawRequestedTemp[local39] = false;
 		}
 		client.anInt3554 = client.anInt3485 * -836590449;
 		Class497.method30131(-1, -1, (byte) 50);
-		if (client.anInt3526 * -703563959 != -1) {
+		if (client.topLevelInterface * -703563959 != -1) {
 			client.anInt3562 = 0;
 			Class79_Sub1_Sub2.method1489(-1721291139);
 		}

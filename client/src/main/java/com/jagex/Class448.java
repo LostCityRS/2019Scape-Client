@@ -85,7 +85,7 @@ public class Class448 {
 
 	@OriginalMember(owner = "client!nt", name = "e", descriptor = "(Lclient!yf;I)V", line = 13)
 	static void method28919(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = ((Class347) Class288.aClass55_Sub2_1.method18261(arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], -2004200570)).aString183;
+		arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = ((Class347) Class288.aClass55_Sub2_1.get(arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], -2004200570)).aString183;
 	}
 
 	@OriginalMember(owner = "client!nt", name = "k", descriptor = "(Lclient!alw;I)Lclient!vy;", line = 27)

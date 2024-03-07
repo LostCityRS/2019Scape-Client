@@ -111,7 +111,7 @@ public class Class27 {
 
 	@OriginalMember(owner = "client!ab", name = "q", descriptor = "(Lclient!yf;B)V", line = 90)
 	static void method586(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 2] = ((Class347) Class288.aClass55_Sub2_1.method18261(arg0.anIntArray519[-1497248091 * arg0.anInt5891 - 2], 957882178)).method27607(Class624.aClass120_1, arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1], -2112159817) ? 1 : 0;
+		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 2] = ((Class347) Class288.aClass55_Sub2_1.get(arg0.anIntArray519[-1497248091 * arg0.anInt5891 - 2], 957882178)).method27607(Class624.playerVariableManager, arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1], -2112159817) ? 1 : 0;
 		arg0.anInt5891 -= 1189701933;
 	}
 

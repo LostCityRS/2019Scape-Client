@@ -18,7 +18,7 @@ public class Class93_Sub33 extends Class93 {
 
 	@OriginalMember(owner = "client!akw", name = "w", descriptor = "(Lclient!yf;B)V", line = 33)
 	static void method23646(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1] = ((Class347) Class288.aClass55_Sub2_1.method18261(arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1], -610357348)).anInt4194 * 1554294991;
+		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1] = ((Class347) Class288.aClass55_Sub2_1.get(arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1], -610357348)).anInt4194 * 1554294991;
 	}
 
 	@OriginalMember(owner = "client!akw", name = "<init>", descriptor = "()V", line = 68)

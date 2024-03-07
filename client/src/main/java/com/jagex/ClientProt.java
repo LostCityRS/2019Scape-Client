@@ -321,7 +321,7 @@ public class ClientProt {
 	public static final ClientProt aClientProt_104 = new ClientProt(102, 3);
 
 	@OriginalMember(owner = "client!nr", name = "cd", descriptor = "Lclient!nr;")
-	public static final ClientProt aClientProt_105 = new ClientProt(103, 0);
+	public static final ClientProt NO_TIMEOUT = new ClientProt(103, 0);
 
 	@OriginalMember(owner = "client!nr", name = "dd", descriptor = "Lclient!nr;")
 	public static final ClientProt aClientProt_106 = new ClientProt(104, -1);

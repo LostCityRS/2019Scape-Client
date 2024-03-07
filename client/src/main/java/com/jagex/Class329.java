@@ -210,19 +210,19 @@ public class Class329 {
 		Class290.anInt3911 = 0;
 		Class5.anInt14 = 0;
 		Class174.anInt3297 = 0;
-		if (client.anInt3526 * -703563959 != -1) {
-			Class535.method30697(client.anInt3526 * -703563959, 1574420063);
+		if (client.topLevelInterface * -703563959 != -1) {
+			Class535.method30697(client.topLevelInterface * -703563959, 1574420063);
 		}
-		for (@Pc(161) Class93_Sub40 local161 = (Class93_Sub40) client.aClass16_22.method227((byte) 39); local161 != null; local161 = (Class93_Sub40) client.aClass16_22.method229(1733245813)) {
+		for (@Pc(161) SubInterface local161 = (SubInterface) client.aClass16_22.method227((byte) 39); local161 != null; local161 = (SubInterface) client.aClass16_22.method229(1733245813)) {
 			if (!local161.method23970(1587931417)) {
-				local161 = (Class93_Sub40) client.aClass16_22.method227((byte) -90);
+				local161 = (SubInterface) client.aClass16_22.method227((byte) -90);
 				if (local161 == null) {
 					break;
 				}
 			}
 			Class372.method28019(local161, true, false, 522605025);
 		}
-		client.anInt3526 = -823798521;
+		client.topLevelInterface = -823798521;
 		client.aClass16_22 = new Class16(8);
 		Class361.method27805((byte) -14);
 		client.aClass312_7 = null;
@@ -234,7 +234,7 @@ public class Class329 {
 		Class245.method25899((byte) -27);
 		client.aBoolean630 = true;
 		for (local17 = 0; local17 < 114; local17++) {
-			client.aBooleanArray22[local17] = true;
+			client.topLevelComponentRedrawRequestedTemp[local17] = true;
 		}
 		for (local17 = 0; local17 < 3; local17++) {
 			for (@Pc(240) int local240 = 0; local240 < 8; local240++) {

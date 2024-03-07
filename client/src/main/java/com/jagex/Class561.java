@@ -129,7 +129,7 @@ public class Class561 {
 	@OriginalMember(owner = "client!su", name = "wd", descriptor = "(Lclient!yf;I)V", line = 9071)
 	static final void method31152(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		arg0.anInt5891 -= -1915563430;
-		@Pc(17) Class93_Sub1_Sub2 local17 = (Class93_Sub1_Sub2) Class638.aClass32_Sub22_1.method18261(arg0.anIntArray519[arg0.anInt5891 * -1497248091], -1949164151);
+		@Pc(17) Class93_Sub1_Sub2 local17 = (Class93_Sub1_Sub2) Class638.aClass32_Sub22_1.get(arg0.anIntArray519[arg0.anInt5891 * -1497248091], -1949164151);
 		@Pc(27) int local27 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 1];
 		@Pc(29) int local29 = -1;
 		for (@Pc(31) int local31 = 0; local31 < local17.anInt317 * 795395889; local31++) {

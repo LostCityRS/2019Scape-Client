@@ -94,6 +94,10 @@ public class AppletViewer extends Applet implements AppletStub {
 			frame.setSize(1280, 720);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+			Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+			frame.setLocation(dim.width / 2 - frame.getSize().width / 2, dim.height / 2 - frame.getSize().height / 2);
+			frame.toFront();
+
 			client cl = new client();
 			cl.supplyApplet(this);
 			cl.init();

@@ -24,10 +24,10 @@ public final class Class647 implements Interface20 {
 	Class16 aClass16_36 = new Class16(128);
 
 	@OriginalMember(owner = "client!wu", name = "f", descriptor = "[I")
-	int[] anIntArray504 = new int[Class21.aClass79_Sub1_Sub1_1.method18262(1305564391)];
+	int[] anIntArray504 = new int[Class21.varPlayerTypes.method18262(1305564391)];
 
 	@OriginalMember(owner = "client!wu", name = "w", descriptor = "[I")
-	int[] anIntArray505 = new int[Class21.aClass79_Sub1_Sub1_1.method18262(1453906174)];
+	int[] anIntArray505 = new int[Class21.varPlayerTypes.method18262(1453906174)];
 
 	@OriginalMember(owner = "client!wu", name = "i", descriptor = "(ZI)I", line = 29)
 	public int method32641(@OriginalArg(0) boolean arg0, @OriginalArg(1) int arg1) {
@@ -65,8 +65,8 @@ public final class Class647 implements Interface20 {
 
 	@OriginalMember(owner = "client!wu", name = "j", descriptor = "(B)V", line = 45)
 	public void method32643(@OriginalArg(0) byte arg0) {
-		for (@Pc(1) int local1 = 0; local1 < Class21.aClass79_Sub1_Sub1_1.method18262(1172276198); local1++) {
-			@Pc(12) Class108_Sub1 local12 = (Class108_Sub1) Class21.aClass79_Sub1_Sub1_1.method18261(local1, -557910454);
+		for (@Pc(1) int local1 = 0; local1 < Class21.varPlayerTypes.method18262(1172276198); local1++) {
+			@Pc(12) Class108_Sub1 local12 = (Class108_Sub1) Class21.varPlayerTypes.get(local1, -557910454);
 			if (local12 != null) {
 				this.anIntArray504[local1] = 0;
 				this.anIntArray505[local1] = 0;
@@ -132,7 +132,7 @@ public final class Class647 implements Interface20 {
 	}
 
 	@OriginalMember(owner = "client!wu", name = "t", descriptor = "(Lclient!ec;IB)V", line = 70)
-	public void method32644(@OriginalArg(0) Class108 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
+	public void setVarValueFromServer(@OriginalArg(0) Class108 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
 		this.anIntArray504[arg0.anInt867 * -1284841473] = arg1;
 		@Pc(17) Class93_Sub11 local17 = (Class93_Sub11) this.aClass16_36.method214((long) (arg0.anInt867 * -1284841473));
 		if (local17 == null) {
@@ -223,7 +223,7 @@ public final class Class647 implements Interface20 {
 	public void method32647(@OriginalArg(0) Class379 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		try {
 			@Pc(12) int local12 = arg0.method28094(this.anIntArray504[arg0.aClass108_1.anInt867 * -1284841473], arg1, -2036827754);
-			this.method32644(arg0.aClass108_1, local12, (byte) 1);
+			this.setVarValueFromServer(arg0.aClass108_1, local12, (byte) 1);
 		} catch (@Pc(20) Exception_Sub7 local20) {
 		}
 	}

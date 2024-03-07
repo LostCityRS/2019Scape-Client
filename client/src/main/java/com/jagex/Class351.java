@@ -118,7 +118,7 @@ public class Class351 {
 		@Pc(8) Class677 local8 = arg0.aBoolean875 ? arg0.aClass677_2 : arg0.aClass677_1;
 		@Pc(11) Class312 local11 = local8.aClass312_13;
 		@Pc(24) int local24 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		@Pc(30) Class87 local30 = (Class87) Class124.aClass32_Sub21_7.method18261(local24, 111252798);
+		@Pc(30) Class87 local30 = (Class87) Class124.aClass32_Sub21_7.get(local24, 111252798);
 		if (local30.method1511(1429228259)) {
 			arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = local11.method26908(local24, local30.aString11, -2111319918);
 		} else {

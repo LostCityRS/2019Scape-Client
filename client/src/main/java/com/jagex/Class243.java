@@ -66,14 +66,14 @@ public class Class243 {
 		if (this.anInt3833 * -1294794067 < 0) {
 			return true;
 		}
-		@Pc(13) Class610 local13 = (Class610) Class273.aClass32_Sub14_8.method18261(this.anInt3833 * -1294794067, 960491903);
+		@Pc(13) Class610 local13 = (Class610) Class273.aClass32_Sub14_8.get(this.anInt3833 * -1294794067, 960491903);
 		@Pc(22) boolean local22 = local13.method31977(this.aClass615_1.anInt5628 * 948246811, (byte) -60);
 		@Pc(26) int[] local26 = local13.method32012(-344985243);
 		if (local26 != null) {
 			@Pc(30) int[] local30 = local26;
 			for (@Pc(32) int local32 = 0; local32 < local30.length; local32++) {
 				@Pc(40) int local40 = local30[local32];
-				local22 &= ((Class263) Class32.aClass32_Sub17_23.method18261(local40, 922425536)).method26188((byte) -104);
+				local22 &= ((Class263) Class32.aClass32_Sub17_23.get(local40, 922425536)).method26188((byte) -104);
 			}
 		}
 		return local22;
@@ -84,14 +84,14 @@ public class Class243 {
 		if (this.anInt3833 * -1294794067 < 0) {
 			return true;
 		}
-		@Pc(13) Class610 local13 = (Class610) Class273.aClass32_Sub14_8.method18261(this.anInt3833 * -1294794067, -1308447379);
+		@Pc(13) Class610 local13 = (Class610) Class273.aClass32_Sub14_8.get(this.anInt3833 * -1294794067, -1308447379);
 		@Pc(22) boolean local22 = local13.method31977(this.aClass615_1.anInt5628 * 948246811, (byte) -75);
 		@Pc(26) int[] local26 = local13.method32012(432725978);
 		if (local26 != null) {
 			@Pc(30) int[] local30 = local26;
 			for (@Pc(32) int local32 = 0; local32 < local30.length; local32++) {
 				@Pc(40) int local40 = local30[local32];
-				local22 &= ((Class263) Class32.aClass32_Sub17_23.method18261(local40, -106184449)).method26188((byte) -3);
+				local22 &= ((Class263) Class32.aClass32_Sub17_23.get(local40, -106184449)).method26188((byte) -3);
 			}
 		}
 		return local22;

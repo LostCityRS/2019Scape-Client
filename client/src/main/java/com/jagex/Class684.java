@@ -1041,7 +1041,7 @@ public class Class684 {
 		Class32.aClass32_Sub17_23.method17822(652399493);
 		Class501.aClass32_Sub18_1.method17822(1249715159);
 		Class30.aClass32_Sub16_1.method17822(-1483298106);
-		Class21.aClass79_Sub1_Sub1_1.method1425((byte) -39);
+		Class21.varPlayerTypes.method1425((byte) -39);
 		aClass79_Sub1_Sub2_6.method1483(2022880669);
 		Class39.aClass79_Sub1_Sub2_1.method1483(1132937742);
 		Class93_Sub26_Sub6.aClass79_Sub1_Sub2_3.method1483(-207543288);

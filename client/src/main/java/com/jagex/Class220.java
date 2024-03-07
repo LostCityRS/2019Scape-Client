@@ -24,11 +24,11 @@ final class Class220 implements Interface27 {
 	@OriginalMember(owner = "client!d", name = "p", descriptor = "(IIIILclient!ao;Lclient!ao;I)Lclient!sv;", line = 47)
 	public static Class562 method25543(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) Interface11 arg4, @OriginalArg(5) Interface11 arg5, @OriginalArg(6) int arg6) {
 		@Pc(1) Class563[] local1 = null;
-		@Pc(7) Class603 local7 = (Class603) arg4.method18261(arg0, 1428840854);
+		@Pc(7) Class603 local7 = (Class603) arg4.get(arg0, 1428840854);
 		if (local7.anIntArray486 != null) {
 			local1 = new Class563[local7.anIntArray486.length];
 			for (@Pc(18) int local18 = 0; local18 < local1.length; local18++) {
-				@Pc(31) Class353 local31 = (Class353) arg5.method18261(local7.anIntArray486[local18], -773558756);
+				@Pc(31) Class353 local31 = (Class353) arg5.get(local7.anIntArray486[local18], -773558756);
 				local1[local18] = new Class563(local31.anInt4210 * -1345955691, local31.anInt4208 * -835293139, local31.anInt4212 * 1917694335, local31.anInt4209 * 1421004741, local31.anInt4207 * -691618485, local31.anInt4206 * -1875676513, local31.anInt4211 * -1567865913, local31.aBoolean726, local31.anInt4213 * -1648858631, local31.anInt4214 * 1528316847, local31.anInt4215 * 61090465);
 			}
 		}
@@ -43,13 +43,13 @@ final class Class220 implements Interface27 {
 	@OriginalMember(owner = "client!d", name = "e", descriptor = "(B)Lclient!add;", line = 620)
 	@Override
 	public Class79_Sub1 method25539(@OriginalArg(0) byte arg0) {
-		return Class21.aClass79_Sub1_Sub1_1;
+		return Class21.varPlayerTypes;
 	}
 
 	@OriginalMember(owner = "client!d", name = "f", descriptor = "()Lclient!add;", line = 620)
 	@Override
 	public Class79_Sub1 method25532() {
-		return Class21.aClass79_Sub1_Sub1_1;
+		return Class21.varPlayerTypes;
 	}
 
 	@OriginalMember(owner = "client!d", name = "n", descriptor = "(B)Lclient!add;", line = 624)
@@ -154,7 +154,7 @@ final class Class220 implements Interface27 {
 		@Pc(6) String local6 = local3.aString66;
 		@Pc(9) Class336 local9 = local3.aClass336_1;
 		if (local9.anIntArray412 != null) {
-			local9 = local9.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 20208);
+			local9 = local9.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 20208);
 			if (local9 == null) {
 				local6 = "";
 			} else {

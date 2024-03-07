@@ -511,7 +511,7 @@ public class Class268 implements Interface13, Interface5 {
 											}
 											client.aClass175_2.anInt3300 += -1073519993;
 											if (client.aClass175_2.anInt3300 * -1270889673 > 50) {
-												local622 = Class102.createGameMessage(ClientProt.aClientProt_105, client.aClass175_2.clientIsaac, (byte) 57);
+												local622 = Class102.createGameMessage(ClientProt.NO_TIMEOUT, client.aClass175_2.clientIsaac, (byte) 57);
 												client.aClass175_2.send(local622, -1516030500);
 											}
 											if (client.aBoolean634) {

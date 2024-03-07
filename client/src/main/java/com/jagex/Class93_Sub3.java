@@ -38,7 +38,7 @@ public class Class93_Sub3 extends Class93 {
 		if (arg0.anInt4001 * 1553054515 != 6 && arg0.anInt4001 * 1553054515 != 2) {
 			throw new RuntimeException("");
 		}
-		@Pc(55) Class336 local55 = (Class336) Class162.aClass32_Sub3_2.method18261(arg0.anInt4037 * 371778301, 720909893);
+		@Pc(55) Class336 local55 = (Class336) Class162.aClass32_Sub3_2.get(arg0.anInt4037 * 371778301, 720909893);
 		if (arg0.aClass331_2 == null) {
 			arg0.aClass331_2 = new Class331(local55, arg0.anInt4001 * 1553054515 == 6);
 		}
@@ -59,7 +59,7 @@ public class Class93_Sub3 extends Class93 {
 	@OriginalMember(owner = "client!ajf", name = "agb", descriptor = "(Lclient!yf;B)V", line = 10703)
 	static final void method11815(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = ((Class47) Class277.aClass32_Sub12_1.method18261(local12, 928908145)).anInt135 * 1415652865;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = ((Class47) Class277.aClass32_Sub12_1.get(local12, 928908145)).anInt135 * 1415652865;
 	}
 
 	@OriginalMember(owner = "client!ajf", name = "ase", descriptor = "(Lclient!yf;I)V", line = 13131)

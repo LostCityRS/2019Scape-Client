@@ -206,7 +206,7 @@ public class Class523 {
 		Class32.aClass32_Sub17_23.method17817(5, -1151565447);
 		Class501.aClass32_Sub18_1.method17817(5, -1718353166);
 		Class30.aClass32_Sub16_1.method17817(5, -1031774923);
-		Class21.aClass79_Sub1_Sub1_1.method1423(5, -111955687);
+		Class21.varPlayerTypes.method1423(5, -111955687);
 		Class684.aClass79_Sub1_Sub2_6.method1480(5, -1616506229);
 		Class39.aClass79_Sub1_Sub2_1.method1480(5, -1523319173);
 		Class93_Sub26_Sub6.aClass79_Sub1_Sub2_3.method1480(5, -1189746683);

@@ -176,7 +176,7 @@ public class Class20 implements Iterator {
 	static final void method375(@OriginalArg(0) Class681 arg0, @OriginalArg(1) short arg1) {
 		arg0.anInt5891 -= 1189701933;
 		@Pc(13) int local13 = arg0.anIntArray519[arg0.anInt5891 * -1497248091];
-		@Pc(19) Class93_Sub40 local19 = (Class93_Sub40) client.aClass16_22.method214((long) local13);
+		@Pc(19) SubInterface local19 = (SubInterface) client.aClass16_22.method214((long) local13);
 		if (local19 != null && local19.anInt3171 * -256237711 == 3) {
 			Class372.method28019(local19, true, true, 1891268550);
 		}

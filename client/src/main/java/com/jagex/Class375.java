@@ -61,7 +61,7 @@ public class Class375 {
 
 	@OriginalMember(owner = "client!kd", name = "m", descriptor = "(Lclient!yf;S)V", line = 21)
 	static void method28032(@OriginalArg(0) Class681 arg0, @OriginalArg(1) short arg1) {
-		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1] = ((Class347) Class288.aClass55_Sub2_1.method18261(arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1], 1744384565)).anInt4197 * -1174086497;
+		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1] = ((Class347) Class288.aClass55_Sub2_1.get(arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1], 1744384565)).anInt4197 * -1174086497;
 	}
 
 	@OriginalMember(owner = "client!kd", name = "<init>", descriptor = "(Lclient!alw;)V", line = 26)
@@ -71,7 +71,7 @@ public class Class375 {
 
 	@OriginalMember(owner = "client!kd", name = "f", descriptor = "(Lclient!yf;I)V", line = 29)
 	static void method28033(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1] = ((Class347) Class288.aClass55_Sub2_1.method18261(arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1], -1110912110)).aBoolean725 ? 1 : 0;
+		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1] = ((Class347) Class288.aClass55_Sub2_1.get(arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1], -1110912110)).aBoolean725 ? 1 : 0;
 	}
 
 	@OriginalMember(owner = "client!kd", name = "e", descriptor = "(Lclient!alw;B)V", line = 31)

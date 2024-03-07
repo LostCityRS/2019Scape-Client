@@ -186,13 +186,13 @@ class Class277 implements Interface58 {
 	@OriginalMember(owner = "client!fw", name = "agh", descriptor = "(Lclient!yf;I)V", line = 10747)
 	static final void method26356(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = ((Class47) aClass32_Sub12_1.method18261(local12, 713374606)).anInt152 * -945892479;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = ((Class47) aClass32_Sub12_1.get(local12, 713374606)).anInt152 * -945892479;
 	}
 
 	@OriginalMember(owner = "client!fw", name = "aha", descriptor = "(Lclient!yf;B)V", line = 10880)
 	static final void method26357(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = ((Class263) Class32.aClass32_Sub17_23.method18261(local12, -1829388866)).anInt3871 * -1681798739;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = ((Class263) Class32.aClass32_Sub17_23.get(local12, -1829388866)).anInt3871 * -1681798739;
 	}
 
 	@OriginalMember(owner = "client!fw", name = "ahn", descriptor = "(Lclient!yf;I)V", line = 11002)

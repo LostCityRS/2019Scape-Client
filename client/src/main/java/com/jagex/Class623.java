@@ -172,7 +172,7 @@ public class Class623 {
 			if (arg1[local7] != -1) {
 				local5 = false;
 			}
-			if (arg0.anIntArray236 == null || arg0.anIntArray236[local7] == -1 || ((Class263) Class32.aClass32_Sub17_23.method18261(arg1[local7], 1327322706)).anInt3873 * -1789992573 >= ((Class263) Class32.aClass32_Sub17_23.method18261(arg0.anIntArray236[local7], -98644071)).anInt3873 * -1789992573) {
+			if (arg0.anIntArray236 == null || arg0.anIntArray236[local7] == -1 || ((Class263) Class32.aClass32_Sub17_23.get(arg1[local7], 1327322706)).anInt3873 * -1789992573 >= ((Class263) Class32.aClass32_Sub17_23.get(arg0.anIntArray236[local7], -98644071)).anInt3873 * -1789992573) {
 				arg0.anIntArray236 = arg1;
 				arg0.aClass19_3.method23583(arg2, (byte) 2);
 				if (arg3) {

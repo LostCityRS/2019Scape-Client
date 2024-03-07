@@ -301,7 +301,7 @@ class Class269 implements Interface58 {
 		for (@Pc(1) int local1 = 0; local1 < client.anInt3562 * -1477010237; local1++) {
 			@Pc(10) Rectangle local10 = client.aRectangleArray1[local1];
 			if (local10.width + local10.x > arg0 && local10.x < arg0 + arg2 && local10.y + local10.height > arg1 && local10.y < arg3 + arg1) {
-				client.aBooleanArray22[local1] = true;
+				client.topLevelComponentRedrawRequestedTemp[local1] = true;
 			}
 		}
 	}

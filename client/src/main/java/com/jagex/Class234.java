@@ -103,7 +103,7 @@ public class Class234 {
 
 	@OriginalMember(owner = "client!du", name = "u", descriptor = "(Lclient!yf;I)V", line = 42)
 	static void method25742(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 2] = ((Class347) Class288.aClass55_Sub2_1.method18261(arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 2], 1771293837)).anIntArray419[arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1]];
+		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 2] = ((Class347) Class288.aClass55_Sub2_1.get(arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 2], 1771293837)).anIntArray419[arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1]];
 		arg0.anInt5891 -= 1189701933;
 	}
 
@@ -115,7 +115,7 @@ public class Class234 {
 	@OriginalMember(owner = "client!du", name = "tm", descriptor = "(Lclient!hf;IIB)V", line = 8395)
 	static void method25744(@OriginalArg(0) Class312 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) byte arg3) {
 		if (arg0.aClass331_2 == null) {
-			@Pc(11) Class336 local11 = (Class336) Class162.aClass32_Sub3_2.method18261(arg0.anInt4037 * 371778301, -1468824631);
+			@Pc(11) Class336 local11 = (Class336) Class162.aClass32_Sub3_2.get(arg0.anInt4037 * 371778301, -1468824631);
 			arg0.aClass331_2 = new Class331(local11, false);
 		}
 		arg0.aClass331_2.aLong259 = Class388.method28251((byte) 127) * 6591543353939106377L;

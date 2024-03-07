@@ -38,7 +38,7 @@ public class Class32 implements Interface11 {
 
 	@OriginalMember(owner = "client!abe", name = "e", descriptor = "(II)Lclient!ay;", line = 30)
 	@Override
-	public Interface13 method18261(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
+	public Interface13 get(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		@Pc(3) Class240 local3 = this.aClass240_62;
 		@Pc(11) Interface13 local11;
 		synchronized (this.aClass240_62) {
@@ -244,7 +244,7 @@ public class Class32 implements Interface11 {
 			return 0;
 		}
 		for (@Pc(13) int local13 = 0; local13 < local6.anIntArray173.length; local13++) {
-			if (local6.anIntArray173[local13] >= 0 && ((Class47) Class277.aClass32_Sub12_1.method18261(local6.anIntArray173[local13], 1574977583)).anInt140 * 352108515 == arg1) {
+			if (local6.anIntArray173[local13] >= 0 && ((Class47) Class277.aClass32_Sub12_1.get(local6.anIntArray173[local13], 1574977583)).anInt140 * 352108515 == arg1) {
 				local1 += Class14.method193(arg0, local13, arg2, -109844901);
 			}
 		}

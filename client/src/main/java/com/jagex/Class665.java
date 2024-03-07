@@ -121,7 +121,7 @@ class Class665 implements Iterator {
 		@Pc(3) Class132_Sub1_Sub1_Sub1_Sub1 local3 = (Class132_Sub1_Sub1_Sub1_Sub1) arg0.aClass132_Sub1_Sub1_Sub1_4;
 		@Pc(6) Class336 local6 = local3.aClass336_1;
 		if (local6.anIntArray412 != null) {
-			local6 = local6.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 2121);
+			local6 = local6.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 2121);
 		}
 		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local6 == null ? 0 : 1;
 	}

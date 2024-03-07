@@ -1116,7 +1116,7 @@ public class Class142 {
 					if (local119 < this.anInt1279 * -115974587) {
 						local136 = this.aShortArrayArrayArray6[local58][local119][local109] & 0x7FFF;
 						if (local136 > 0) {
-							@Pc(147) Class26 local147 = (Class26) this.aClass32_Sub4_2.method18261(local136 - 1, 987977727);
+							@Pc(147) Class26 local147 = (Class26) this.aClass32_Sub4_2.get(local136 - 1, 987977727);
 							this.anIntArray130[local109] += local147.anInt87 * -1134158301;
 							this.anIntArray133[local109] += local147.anInt83 * 1784923953;
 							this.anIntArray134[local109] += local147.anInt86 * -466499201;
@@ -1128,7 +1128,7 @@ public class Class142 {
 					if (local136 >= 0) {
 						local216 = this.aShortArrayArrayArray6[local58][local136][local109] & 0x7FFF;
 						if (local216 > 0) {
-							@Pc(227) Class26 local227 = (Class26) this.aClass32_Sub4_2.method18261(local216 - 1, 2118308498);
+							@Pc(227) Class26 local227 = (Class26) this.aClass32_Sub4_2.get(local216 - 1, 2118308498);
 							this.anIntArray130[local109] -= local227.anInt87 * -1134158301;
 							this.anIntArray133[local109] -= local227.anInt83 * 1784923953;
 							this.anIntArray134[local109] -= local227.anInt86 * -466499201;
@@ -1220,7 +1220,7 @@ public class Class142 {
 					if (local119 < this.anInt1279 * -115974587) {
 						local136 = this.aShortArrayArrayArray6[local58][local119][local109] & 0x7FFF;
 						if (local136 > 0) {
-							@Pc(147) Class26 local147 = (Class26) this.aClass32_Sub4_2.method18261(local136 - 1, -1575090834);
+							@Pc(147) Class26 local147 = (Class26) this.aClass32_Sub4_2.get(local136 - 1, -1575090834);
 							this.anIntArray130[local109] += local147.anInt87 * -1134158301;
 							this.anIntArray133[local109] += local147.anInt83 * 1784923953;
 							this.anIntArray134[local109] += local147.anInt86 * -466499201;
@@ -1232,7 +1232,7 @@ public class Class142 {
 					if (local136 >= 0) {
 						local216 = this.aShortArrayArrayArray6[local58][local136][local109] & 0x7FFF;
 						if (local216 > 0) {
-							@Pc(227) Class26 local227 = (Class26) this.aClass32_Sub4_2.method18261(local216 - 1, -1565798095);
+							@Pc(227) Class26 local227 = (Class26) this.aClass32_Sub4_2.get(local216 - 1, -1565798095);
 							this.anIntArray130[local109] -= local227.anInt87 * -1134158301;
 							this.anIntArray133[local109] -= local227.anInt83 * 1784923953;
 							this.anIntArray134[local109] -= local227.anInt86 * -466499201;
@@ -1324,7 +1324,7 @@ public class Class142 {
 					if (local119 < this.anInt1279 * -115974587) {
 						local136 = this.aShortArrayArrayArray6[local58][local119][local109] & 0x7FFF;
 						if (local136 > 0) {
-							@Pc(147) Class26 local147 = (Class26) this.aClass32_Sub4_2.method18261(local136 - 1, 1680391880);
+							@Pc(147) Class26 local147 = (Class26) this.aClass32_Sub4_2.get(local136 - 1, 1680391880);
 							this.anIntArray130[local109] += local147.anInt87 * -1134158301;
 							this.anIntArray133[local109] += local147.anInt83 * 1784923953;
 							this.anIntArray134[local109] += local147.anInt86 * -466499201;
@@ -1336,7 +1336,7 @@ public class Class142 {
 					if (local136 >= 0) {
 						local216 = this.aShortArrayArrayArray6[local58][local136][local109] & 0x7FFF;
 						if (local216 > 0) {
-							@Pc(227) Class26 local227 = (Class26) this.aClass32_Sub4_2.method18261(local216 - 1, -1783357409);
+							@Pc(227) Class26 local227 = (Class26) this.aClass32_Sub4_2.get(local216 - 1, -1783357409);
 							this.anIntArray130[local109] -= local227.anInt87 * -1134158301;
 							this.anIntArray133[local109] -= local227.anInt83 * 1784923953;
 							this.anIntArray134[local109] -= local227.anInt86 * -466499201;
@@ -1428,7 +1428,7 @@ public class Class142 {
 					if (local119 < this.anInt1279 * -115974587) {
 						local136 = this.aShortArrayArrayArray6[local58][local119][local109] & 0x7FFF;
 						if (local136 > 0) {
-							@Pc(147) Class26 local147 = (Class26) this.aClass32_Sub4_2.method18261(local136 - 1, -392133195);
+							@Pc(147) Class26 local147 = (Class26) this.aClass32_Sub4_2.get(local136 - 1, -392133195);
 							this.anIntArray130[local109] += local147.anInt87 * -1134158301;
 							this.anIntArray133[local109] += local147.anInt83 * 1784923953;
 							this.anIntArray134[local109] += local147.anInt86 * -466499201;
@@ -1440,7 +1440,7 @@ public class Class142 {
 					if (local136 >= 0) {
 						local216 = this.aShortArrayArrayArray6[local58][local136][local109] & 0x7FFF;
 						if (local216 > 0) {
-							@Pc(227) Class26 local227 = (Class26) this.aClass32_Sub4_2.method18261(local216 - 1, 2108040171);
+							@Pc(227) Class26 local227 = (Class26) this.aClass32_Sub4_2.get(local216 - 1, 2108040171);
 							this.anIntArray130[local109] -= local227.anInt87 * -1134158301;
 							this.anIntArray133[local109] -= local227.anInt83 * 1784923953;
 							this.anIntArray134[local109] -= local227.anInt86 * -466499201;
@@ -1532,7 +1532,7 @@ public class Class142 {
 					if (local119 < this.anInt1279 * -115974587) {
 						local136 = this.aShortArrayArrayArray6[local58][local119][local109] & 0x7FFF;
 						if (local136 > 0) {
-							@Pc(147) Class26 local147 = (Class26) this.aClass32_Sub4_2.method18261(local136 - 1, 1531798381);
+							@Pc(147) Class26 local147 = (Class26) this.aClass32_Sub4_2.get(local136 - 1, 1531798381);
 							this.anIntArray130[local109] += local147.anInt87 * -1134158301;
 							this.anIntArray133[local109] += local147.anInt83 * 1784923953;
 							this.anIntArray134[local109] += local147.anInt86 * -466499201;
@@ -1544,7 +1544,7 @@ public class Class142 {
 					if (local136 >= 0) {
 						local216 = this.aShortArrayArrayArray6[local58][local136][local109] & 0x7FFF;
 						if (local216 > 0) {
-							@Pc(227) Class26 local227 = (Class26) this.aClass32_Sub4_2.method18261(local216 - 1, 81627894);
+							@Pc(227) Class26 local227 = (Class26) this.aClass32_Sub4_2.get(local216 - 1, 81627894);
 							this.anIntArray130[local109] -= local227.anInt87 * -1134158301;
 							this.anIntArray133[local109] -= local227.anInt83 * 1784923953;
 							this.anIntArray134[local109] -= local227.anInt86 * -466499201;
@@ -1613,8 +1613,8 @@ public class Class142 {
 				@Pc(33) byte local33 = this.aByteArrayArrayArray7[arg2][local1][local9];
 				@Pc(44) int local44 = this.aShortArrayArrayArray7[arg2][local1][local9] & 0x7FFF;
 				@Pc(55) int local55 = this.aShortArrayArrayArray6[arg2][local1][local9] & 0x7FFF;
-				@Pc(69) Class688 local69 = (Class688) (local44 == 0 ? null : this.aClass32_Sub1_2.method18261(local44 - 1, 647243549));
-				@Pc(83) Class26 local83 = (Class26) (local55 == 0 ? null : this.aClass32_Sub4_2.method18261(local55 - 1, -2074803707));
+				@Pc(69) Class688 local69 = (Class688) (local44 == 0 ? null : this.aClass32_Sub1_2.get(local44 - 1, 647243549));
+				@Pc(83) Class26 local83 = (Class26) (local55 == 0 ? null : this.aClass32_Sub4_2.get(local55 - 1, -2074803707));
 				if (local24 == 0 && local69 == null) {
 					local24 = 12;
 				}
@@ -1759,8 +1759,8 @@ public class Class142 {
 				@Pc(33) byte local33 = this.aByteArrayArrayArray7[arg2][local1][local9];
 				@Pc(44) int local44 = this.aShortArrayArrayArray7[arg2][local1][local9] & 0x7FFF;
 				@Pc(55) int local55 = this.aShortArrayArrayArray6[arg2][local1][local9] & 0x7FFF;
-				@Pc(69) Class688 local69 = (Class688) (local44 == 0 ? null : this.aClass32_Sub1_2.method18261(local44 - 1, -295338312));
-				@Pc(83) Class26 local83 = (Class26) (local55 == 0 ? null : this.aClass32_Sub4_2.method18261(local55 - 1, -1877866974));
+				@Pc(69) Class688 local69 = (Class688) (local44 == 0 ? null : this.aClass32_Sub1_2.get(local44 - 1, -295338312));
+				@Pc(83) Class26 local83 = (Class26) (local55 == 0 ? null : this.aClass32_Sub4_2.get(local55 - 1, -1877866974));
 				if (local24 == 0 && local69 == null) {
 					local24 = 12;
 				}
@@ -1905,8 +1905,8 @@ public class Class142 {
 				@Pc(33) byte local33 = this.aByteArrayArrayArray7[arg2][local1][local9];
 				@Pc(44) int local44 = this.aShortArrayArrayArray7[arg2][local1][local9] & 0x7FFF;
 				@Pc(55) int local55 = this.aShortArrayArrayArray6[arg2][local1][local9] & 0x7FFF;
-				@Pc(69) Class688 local69 = (Class688) (local44 == 0 ? null : this.aClass32_Sub1_2.method18261(local44 - 1, -701801464));
-				@Pc(83) Class26 local83 = (Class26) (local55 == 0 ? null : this.aClass32_Sub4_2.method18261(local55 - 1, -851268596));
+				@Pc(69) Class688 local69 = (Class688) (local44 == 0 ? null : this.aClass32_Sub1_2.get(local44 - 1, -701801464));
+				@Pc(83) Class26 local83 = (Class26) (local55 == 0 ? null : this.aClass32_Sub4_2.get(local55 - 1, -851268596));
 				if (local24 == 0 && local69 == null) {
 					local24 = 12;
 				}
@@ -2059,8 +2059,8 @@ public class Class142 {
 				@Pc(92) int local92 = local19[local24][local46] & 0x7FFF;
 				@Pc(100) int local100 = local14[local24][local46] & 0x7FFF;
 				if (local92 != 0 || local100 != 0) {
-					@Pc(118) Class688 local118 = (Class688) (local92 == 0 ? null : this.aClass32_Sub1_2.method18261(local92 - 1, 859965066));
-					@Pc(132) Class26 local132 = (Class26) (local100 == 0 ? null : this.aClass32_Sub4_2.method18261(local100 - 1, -1647710044));
+					@Pc(118) Class688 local118 = (Class688) (local92 == 0 ? null : this.aClass32_Sub1_2.get(local92 - 1, 859965066));
+					@Pc(132) Class26 local132 = (Class26) (local100 == 0 ? null : this.aClass32_Sub4_2.get(local100 - 1, -1647710044));
 					if (this.anInt1296 * 884573313 == 0 && local118 == null) {
 						this.anInt1296 = -993998324;
 					}
@@ -2158,8 +2158,8 @@ public class Class142 {
 				@Pc(92) int local92 = local19[local24][local46] & 0x7FFF;
 				@Pc(100) int local100 = local14[local24][local46] & 0x7FFF;
 				if (local92 != 0 || local100 != 0) {
-					@Pc(118) Class688 local118 = (Class688) (local92 == 0 ? null : this.aClass32_Sub1_2.method18261(local92 - 1, -166079893));
-					@Pc(132) Class26 local132 = (Class26) (local100 == 0 ? null : this.aClass32_Sub4_2.method18261(local100 - 1, 348162258));
+					@Pc(118) Class688 local118 = (Class688) (local92 == 0 ? null : this.aClass32_Sub1_2.get(local92 - 1, -166079893));
+					@Pc(132) Class26 local132 = (Class26) (local100 == 0 ? null : this.aClass32_Sub4_2.get(local100 - 1, 348162258));
 					if (this.anInt1296 * 884573313 == 0 && local118 == null) {
 						this.anInt1296 = -993998324;
 					}
@@ -2257,8 +2257,8 @@ public class Class142 {
 				@Pc(92) int local92 = local19[local24][local46] & 0x7FFF;
 				@Pc(100) int local100 = local14[local24][local46] & 0x7FFF;
 				if (local92 != 0 || local100 != 0) {
-					@Pc(118) Class688 local118 = (Class688) (local92 == 0 ? null : this.aClass32_Sub1_2.method18261(local92 - 1, -353878001));
-					@Pc(132) Class26 local132 = (Class26) (local100 == 0 ? null : this.aClass32_Sub4_2.method18261(local100 - 1, 190974992));
+					@Pc(118) Class688 local118 = (Class688) (local92 == 0 ? null : this.aClass32_Sub1_2.get(local92 - 1, -353878001));
+					@Pc(132) Class26 local132 = (Class26) (local100 == 0 ? null : this.aClass32_Sub4_2.get(local100 - 1, 190974992));
 					if (this.anInt1296 * 884573313 == 0 && local118 == null) {
 						this.anInt1296 = -993998324;
 					}
@@ -3256,10 +3256,10 @@ public class Class142 {
 		if (arg10 == 0) {
 			arg10 = arg7;
 		}
-		@Pc(25) Class26 local25 = (Class26) this.aClass32_Sub4_2.method18261(arg7 - 1, 575438714);
-		@Pc(34) Class26 local34 = (Class26) this.aClass32_Sub4_2.method18261(arg8 - 1, -199430384);
-		@Pc(43) Class26 local43 = (Class26) this.aClass32_Sub4_2.method18261(arg9 - 1, 338991844);
-		@Pc(52) Class26 local52 = (Class26) this.aClass32_Sub4_2.method18261(arg10 - 1, -2052421890);
+		@Pc(25) Class26 local25 = (Class26) this.aClass32_Sub4_2.get(arg7 - 1, 575438714);
+		@Pc(34) Class26 local34 = (Class26) this.aClass32_Sub4_2.get(arg8 - 1, -199430384);
+		@Pc(43) Class26 local43 = (Class26) this.aClass32_Sub4_2.get(arg9 - 1, 338991844);
+		@Pc(52) Class26 local52 = (Class26) this.aClass32_Sub4_2.get(arg10 - 1, -2052421890);
 		for (@Pc(54) int local54 = 0; local54 < this.anInt1301 * -774469999; local54++) {
 			@Pc(62) boolean local62 = false;
 			@Pc(138) byte local138;
@@ -3416,10 +3416,10 @@ public class Class142 {
 		if (arg10 == 0) {
 			arg10 = arg7;
 		}
-		@Pc(25) Class26 local25 = (Class26) this.aClass32_Sub4_2.method18261(arg7 - 1, -802733409);
-		@Pc(34) Class26 local34 = (Class26) this.aClass32_Sub4_2.method18261(arg8 - 1, -992836756);
-		@Pc(43) Class26 local43 = (Class26) this.aClass32_Sub4_2.method18261(arg9 - 1, -351911923);
-		@Pc(52) Class26 local52 = (Class26) this.aClass32_Sub4_2.method18261(arg10 - 1, -911986086);
+		@Pc(25) Class26 local25 = (Class26) this.aClass32_Sub4_2.get(arg7 - 1, -802733409);
+		@Pc(34) Class26 local34 = (Class26) this.aClass32_Sub4_2.get(arg8 - 1, -992836756);
+		@Pc(43) Class26 local43 = (Class26) this.aClass32_Sub4_2.get(arg9 - 1, -351911923);
+		@Pc(52) Class26 local52 = (Class26) this.aClass32_Sub4_2.get(arg10 - 1, -911986086);
 		for (@Pc(54) int local54 = 0; local54 < this.anInt1301 * -774469999; local54++) {
 			@Pc(62) boolean local62 = false;
 			@Pc(138) byte local138;
@@ -3576,10 +3576,10 @@ public class Class142 {
 		if (arg10 == 0) {
 			arg10 = arg7;
 		}
-		@Pc(25) Class26 local25 = (Class26) this.aClass32_Sub4_2.method18261(arg7 - 1, 228966344);
-		@Pc(34) Class26 local34 = (Class26) this.aClass32_Sub4_2.method18261(arg8 - 1, -140265013);
-		@Pc(43) Class26 local43 = (Class26) this.aClass32_Sub4_2.method18261(arg9 - 1, -1611107697);
-		@Pc(52) Class26 local52 = (Class26) this.aClass32_Sub4_2.method18261(arg10 - 1, -1325856380);
+		@Pc(25) Class26 local25 = (Class26) this.aClass32_Sub4_2.get(arg7 - 1, 228966344);
+		@Pc(34) Class26 local34 = (Class26) this.aClass32_Sub4_2.get(arg8 - 1, -140265013);
+		@Pc(43) Class26 local43 = (Class26) this.aClass32_Sub4_2.get(arg9 - 1, -1611107697);
+		@Pc(52) Class26 local52 = (Class26) this.aClass32_Sub4_2.get(arg10 - 1, -1325856380);
 		for (@Pc(54) int local54 = 0; local54 < this.anInt1301 * -774469999; local54++) {
 			@Pc(62) boolean local62 = false;
 			@Pc(138) byte local138;
@@ -3780,7 +3780,7 @@ public class Class142 {
 			if (arg3 > 0) {
 				local34 = arg7[arg3 - 1][arg4 - 1] & 0x7FFF;
 				if (local34 > 0) {
-					local45 = (Class688) this.aClass32_Sub1_2.method18261(local34 - 1, 116481712);
+					local45 = (Class688) this.aClass32_Sub1_2.get(local34 - 1, 116481712);
 					if (local45.anInt5914 * 592157171 != -1 && local45.aBoolean879) {
 						local64 = arg8[arg3 - 1][arg4 - 1];
 						local80 = arg9[arg3 - 1][arg4 - 1] * 2 + 4 & 0x7;
@@ -3799,7 +3799,7 @@ public class Class142 {
 			if (arg3 < arg5 - 1) {
 				local34 = arg7[arg3 + 1][arg4 - 1] & 0x7FFF;
 				if (local34 > 0) {
-					local45 = (Class688) this.aClass32_Sub1_2.method18261(local34 - 1, 1435658583);
+					local45 = (Class688) this.aClass32_Sub1_2.get(local34 - 1, 1435658583);
 					if (local45.anInt5914 * 592157171 != -1 && local45.aBoolean879) {
 						local64 = arg8[arg3 + 1][arg4 - 1];
 						local80 = arg9[arg3 + 1][arg4 - 1] * 2 + 6 & 0x7;
@@ -3820,7 +3820,7 @@ public class Class142 {
 			if (arg3 > 0) {
 				local34 = arg7[arg3 - 1][arg4 + 1] & 0x7FFF;
 				if (local34 > 0) {
-					local45 = (Class688) this.aClass32_Sub1_2.method18261(local34 - 1, 727397328);
+					local45 = (Class688) this.aClass32_Sub1_2.get(local34 - 1, 727397328);
 					if (local45.anInt5914 * 592157171 != -1 && local45.aBoolean879) {
 						local64 = arg8[arg3 - 1][arg4 + 1];
 						local80 = arg9[arg3 - 1][arg4 + 1] * 2 + 2 & 0x7;
@@ -3839,7 +3839,7 @@ public class Class142 {
 			if (arg3 < arg5 - 1) {
 				local34 = arg7[arg3 + 1][arg4 + 1] & 0x7FFF;
 				if (local34 > 0) {
-					local45 = (Class688) this.aClass32_Sub1_2.method18261(local34 - 1, 1613170277);
+					local45 = (Class688) this.aClass32_Sub1_2.get(local34 - 1, 1613170277);
 					if (local45.anInt5914 * 592157171 != -1 && local45.aBoolean879) {
 						local64 = arg8[arg3 + 1][arg4 + 1];
 						local80 = arg9[arg3 + 1][arg4 + 1] * 2 & 0x7;
@@ -3863,7 +3863,7 @@ public class Class142 {
 		if (arg4 > 0) {
 			local34 = arg7[arg3][arg4 - 1] & 0x7FFF;
 			if (local34 > 0) {
-				local45 = (Class688) this.aClass32_Sub1_2.method18261(local34 - 1, 453711788);
+				local45 = (Class688) this.aClass32_Sub1_2.get(local34 - 1, 453711788);
 				if (local45.anInt5914 * 592157171 != -1) {
 					local64 = arg8[arg3][arg4 - 1];
 					local528 = arg9[arg3][arg4 - 1];
@@ -3901,7 +3901,7 @@ public class Class142 {
 		if (arg4 < arg6 - 1) {
 			local34 = arg7[arg3][arg4 + 1] & 0x7FFF;
 			if (local34 > 0) {
-				local45 = (Class688) this.aClass32_Sub1_2.method18261(local34 - 1, -538677739);
+				local45 = (Class688) this.aClass32_Sub1_2.get(local34 - 1, -538677739);
 				if (local45.anInt5914 * 592157171 != -1) {
 					local64 = arg8[arg3][arg4 + 1];
 					local528 = arg9[arg3][arg4 + 1];
@@ -3939,7 +3939,7 @@ public class Class142 {
 		if (arg3 > 0) {
 			local34 = arg7[arg3 - 1][arg4] & 0x7FFF;
 			if (local34 > 0) {
-				local45 = (Class688) this.aClass32_Sub1_2.method18261(local34 - 1, -1622619464);
+				local45 = (Class688) this.aClass32_Sub1_2.get(local34 - 1, -1622619464);
 				if (local45.anInt5914 * 592157171 != -1) {
 					local64 = arg8[arg3 - 1][arg4];
 					local528 = arg9[arg3 - 1][arg4];
@@ -3977,7 +3977,7 @@ public class Class142 {
 		if (arg3 < arg5 - 1) {
 			local34 = arg7[arg3 + 1][arg4] & 0x7FFF;
 			if (local34 > 0) {
-				local45 = (Class688) this.aClass32_Sub1_2.method18261(local34 - 1, -386725626);
+				local45 = (Class688) this.aClass32_Sub1_2.get(local34 - 1, -386725626);
 				if (local45.anInt5914 * 592157171 != -1) {
 					local64 = arg8[arg3 + 1][arg4];
 					local528 = arg9[arg3 + 1][arg4];
@@ -4045,7 +4045,7 @@ public class Class142 {
 			if (arg3 > 0) {
 				local34 = arg7[arg3 - 1][arg4 - 1] & 0x7FFF;
 				if (local34 > 0) {
-					local45 = (Class688) this.aClass32_Sub1_2.method18261(local34 - 1, -1100772230);
+					local45 = (Class688) this.aClass32_Sub1_2.get(local34 - 1, -1100772230);
 					if (local45.anInt5914 * 592157171 != -1 && local45.aBoolean879) {
 						local64 = arg8[arg3 - 1][arg4 - 1];
 						local80 = arg9[arg3 - 1][arg4 - 1] * 2 + 4 & 0x7;
@@ -4064,7 +4064,7 @@ public class Class142 {
 			if (arg3 < arg5 - 1) {
 				local34 = arg7[arg3 + 1][arg4 - 1] & 0x7FFF;
 				if (local34 > 0) {
-					local45 = (Class688) this.aClass32_Sub1_2.method18261(local34 - 1, -1455068462);
+					local45 = (Class688) this.aClass32_Sub1_2.get(local34 - 1, -1455068462);
 					if (local45.anInt5914 * 592157171 != -1 && local45.aBoolean879) {
 						local64 = arg8[arg3 + 1][arg4 - 1];
 						local80 = arg9[arg3 + 1][arg4 - 1] * 2 + 6 & 0x7;
@@ -4085,7 +4085,7 @@ public class Class142 {
 			if (arg3 > 0) {
 				local34 = arg7[arg3 - 1][arg4 + 1] & 0x7FFF;
 				if (local34 > 0) {
-					local45 = (Class688) this.aClass32_Sub1_2.method18261(local34 - 1, -235863672);
+					local45 = (Class688) this.aClass32_Sub1_2.get(local34 - 1, -235863672);
 					if (local45.anInt5914 * 592157171 != -1 && local45.aBoolean879) {
 						local64 = arg8[arg3 - 1][arg4 + 1];
 						local80 = arg9[arg3 - 1][arg4 + 1] * 2 + 2 & 0x7;
@@ -4104,7 +4104,7 @@ public class Class142 {
 			if (arg3 < arg5 - 1) {
 				local34 = arg7[arg3 + 1][arg4 + 1] & 0x7FFF;
 				if (local34 > 0) {
-					local45 = (Class688) this.aClass32_Sub1_2.method18261(local34 - 1, 1587279758);
+					local45 = (Class688) this.aClass32_Sub1_2.get(local34 - 1, 1587279758);
 					if (local45.anInt5914 * 592157171 != -1 && local45.aBoolean879) {
 						local64 = arg8[arg3 + 1][arg4 + 1];
 						local80 = arg9[arg3 + 1][arg4 + 1] * 2 & 0x7;
@@ -4128,7 +4128,7 @@ public class Class142 {
 		if (arg4 > 0) {
 			local34 = arg7[arg3][arg4 - 1] & 0x7FFF;
 			if (local34 > 0) {
-				local45 = (Class688) this.aClass32_Sub1_2.method18261(local34 - 1, 1759443765);
+				local45 = (Class688) this.aClass32_Sub1_2.get(local34 - 1, 1759443765);
 				if (local45.anInt5914 * 592157171 != -1) {
 					local64 = arg8[arg3][arg4 - 1];
 					local528 = arg9[arg3][arg4 - 1];
@@ -4166,7 +4166,7 @@ public class Class142 {
 		if (arg4 < arg6 - 1) {
 			local34 = arg7[arg3][arg4 + 1] & 0x7FFF;
 			if (local34 > 0) {
-				local45 = (Class688) this.aClass32_Sub1_2.method18261(local34 - 1, 1022390838);
+				local45 = (Class688) this.aClass32_Sub1_2.get(local34 - 1, 1022390838);
 				if (local45.anInt5914 * 592157171 != -1) {
 					local64 = arg8[arg3][arg4 + 1];
 					local528 = arg9[arg3][arg4 + 1];
@@ -4204,7 +4204,7 @@ public class Class142 {
 		if (arg3 > 0) {
 			local34 = arg7[arg3 - 1][arg4] & 0x7FFF;
 			if (local34 > 0) {
-				local45 = (Class688) this.aClass32_Sub1_2.method18261(local34 - 1, 428283650);
+				local45 = (Class688) this.aClass32_Sub1_2.get(local34 - 1, 428283650);
 				if (local45.anInt5914 * 592157171 != -1) {
 					local64 = arg8[arg3 - 1][arg4];
 					local528 = arg9[arg3 - 1][arg4];
@@ -4242,7 +4242,7 @@ public class Class142 {
 		if (arg3 < arg5 - 1) {
 			local34 = arg7[arg3 + 1][arg4] & 0x7FFF;
 			if (local34 > 0) {
-				local45 = (Class688) this.aClass32_Sub1_2.method18261(local34 - 1, -1386115339);
+				local45 = (Class688) this.aClass32_Sub1_2.get(local34 - 1, -1386115339);
 				if (local45.anInt5914 * 592157171 != -1) {
 					local64 = arg8[arg3 + 1][arg4];
 					local528 = arg9[arg3 + 1][arg4];
@@ -4310,7 +4310,7 @@ public class Class142 {
 			if (arg3 > 0) {
 				local34 = arg7[arg3 - 1][arg4 - 1] & 0x7FFF;
 				if (local34 > 0) {
-					local45 = (Class688) this.aClass32_Sub1_2.method18261(local34 - 1, -1800339958);
+					local45 = (Class688) this.aClass32_Sub1_2.get(local34 - 1, -1800339958);
 					if (local45.anInt5914 * 592157171 != -1 && local45.aBoolean879) {
 						local64 = arg8[arg3 - 1][arg4 - 1];
 						local80 = arg9[arg3 - 1][arg4 - 1] * 2 + 4 & 0x7;
@@ -4329,7 +4329,7 @@ public class Class142 {
 			if (arg3 < arg5 - 1) {
 				local34 = arg7[arg3 + 1][arg4 - 1] & 0x7FFF;
 				if (local34 > 0) {
-					local45 = (Class688) this.aClass32_Sub1_2.method18261(local34 - 1, -1442529863);
+					local45 = (Class688) this.aClass32_Sub1_2.get(local34 - 1, -1442529863);
 					if (local45.anInt5914 * 592157171 != -1 && local45.aBoolean879) {
 						local64 = arg8[arg3 + 1][arg4 - 1];
 						local80 = arg9[arg3 + 1][arg4 - 1] * 2 + 6 & 0x7;
@@ -4350,7 +4350,7 @@ public class Class142 {
 			if (arg3 > 0) {
 				local34 = arg7[arg3 - 1][arg4 + 1] & 0x7FFF;
 				if (local34 > 0) {
-					local45 = (Class688) this.aClass32_Sub1_2.method18261(local34 - 1, -1609767533);
+					local45 = (Class688) this.aClass32_Sub1_2.get(local34 - 1, -1609767533);
 					if (local45.anInt5914 * 592157171 != -1 && local45.aBoolean879) {
 						local64 = arg8[arg3 - 1][arg4 + 1];
 						local80 = arg9[arg3 - 1][arg4 + 1] * 2 + 2 & 0x7;
@@ -4369,7 +4369,7 @@ public class Class142 {
 			if (arg3 < arg5 - 1) {
 				local34 = arg7[arg3 + 1][arg4 + 1] & 0x7FFF;
 				if (local34 > 0) {
-					local45 = (Class688) this.aClass32_Sub1_2.method18261(local34 - 1, 1495958852);
+					local45 = (Class688) this.aClass32_Sub1_2.get(local34 - 1, 1495958852);
 					if (local45.anInt5914 * 592157171 != -1 && local45.aBoolean879) {
 						local64 = arg8[arg3 + 1][arg4 + 1];
 						local80 = arg9[arg3 + 1][arg4 + 1] * 2 & 0x7;
@@ -4393,7 +4393,7 @@ public class Class142 {
 		if (arg4 > 0) {
 			local34 = arg7[arg3][arg4 - 1] & 0x7FFF;
 			if (local34 > 0) {
-				local45 = (Class688) this.aClass32_Sub1_2.method18261(local34 - 1, -154433382);
+				local45 = (Class688) this.aClass32_Sub1_2.get(local34 - 1, -154433382);
 				if (local45.anInt5914 * 592157171 != -1) {
 					local64 = arg8[arg3][arg4 - 1];
 					local528 = arg9[arg3][arg4 - 1];
@@ -4431,7 +4431,7 @@ public class Class142 {
 		if (arg4 < arg6 - 1) {
 			local34 = arg7[arg3][arg4 + 1] & 0x7FFF;
 			if (local34 > 0) {
-				local45 = (Class688) this.aClass32_Sub1_2.method18261(local34 - 1, -780959949);
+				local45 = (Class688) this.aClass32_Sub1_2.get(local34 - 1, -780959949);
 				if (local45.anInt5914 * 592157171 != -1) {
 					local64 = arg8[arg3][arg4 + 1];
 					local528 = arg9[arg3][arg4 + 1];
@@ -4469,7 +4469,7 @@ public class Class142 {
 		if (arg3 > 0) {
 			local34 = arg7[arg3 - 1][arg4] & 0x7FFF;
 			if (local34 > 0) {
-				local45 = (Class688) this.aClass32_Sub1_2.method18261(local34 - 1, 1309813350);
+				local45 = (Class688) this.aClass32_Sub1_2.get(local34 - 1, 1309813350);
 				if (local45.anInt5914 * 592157171 != -1) {
 					local64 = arg8[arg3 - 1][arg4];
 					local528 = arg9[arg3 - 1][arg4];
@@ -4507,7 +4507,7 @@ public class Class142 {
 		if (arg3 < arg5 - 1) {
 			local34 = arg7[arg3 + 1][arg4] & 0x7FFF;
 			if (local34 > 0) {
-				local45 = (Class688) this.aClass32_Sub1_2.method18261(local34 - 1, -1417738984);
+				local45 = (Class688) this.aClass32_Sub1_2.get(local34 - 1, -1417738984);
 				if (local45.anInt5914 * 592157171 != -1) {
 					local64 = arg8[arg3 + 1][arg4];
 					local528 = arg9[arg3 + 1][arg4];

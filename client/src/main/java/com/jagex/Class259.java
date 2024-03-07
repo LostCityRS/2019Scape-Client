@@ -37,7 +37,7 @@ class Class259 implements Interface39 {
 	@OriginalMember(owner = "client!fc", name = "axf", descriptor = "(Lclient!yf;I)V", line = 13947)
 	static final void method26146(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		@Pc(18) Class322 local18 = (Class322) Class542.aClass32_Sub2_3.method18261(local12, -765082799);
+		@Pc(18) Class322 local18 = (Class322) Class542.aClass32_Sub2_3.get(local12, -765082799);
 		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local18.anInt4105 * 880251661;
 	}
 }

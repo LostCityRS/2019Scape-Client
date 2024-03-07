@@ -168,7 +168,7 @@ public class Class342 {
 		@Pc(14) LinkedList local14 = new LinkedList();
 		@Pc(16) int local16;
 		for (local16 = 0; local16 < Class277.aClass32_Sub12_1.anInt2487 * -152478627; local16++) {
-			@Pc(28) Class47 local28 = (Class47) Class277.aClass32_Sub12_1.method18261(local16, -121945858);
+			@Pc(28) Class47 local28 = (Class47) Class277.aClass32_Sub12_1.get(local16, -121945858);
 			if ((!arg1 || local28.aBoolean19) && local28.anInt163 * 1265448031 == -1 && local28.anInt173 * -1291515553 == -1 && -143668583 * local28.anInt185 == -1 && local28.anInt182 * 1212305741 == 0 && local28.aString6.toLowerCase().indexOf(local2) != -1) {
 				if (local10.size() >= 250) {
 					return -1;

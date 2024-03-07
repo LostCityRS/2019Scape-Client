@@ -163,11 +163,11 @@ public class Class166_Sub34 extends Class166 {
 	@OriginalMember(owner = "client!ank", name = "kn", descriptor = "(II)V", line = 11871)
 	static final void method16206(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		Class76.method1283(2036041726);
-		@Pc(10) int local10 = ((Class108_Sub1) Class21.aClass79_Sub1_Sub1_1.method18261(arg0, -866348547)).anInt693 * 242969929;
+		@Pc(10) int local10 = ((Class108_Sub1) Class21.varPlayerTypes.get(arg0, -866348547)).anInt693 * 242969929;
 		if (local10 == 0) {
 			return;
 		}
-		@Pc(22) int local22 = Class624.aClass120_1.method33455((Class108) Class21.aClass79_Sub1_Sub1_1.method18261(arg0, -815907093), 994687710);
+		@Pc(22) int local22 = Class624.playerVariableManager.method33455((Class108) Class21.varPlayerTypes.get(arg0, -815907093), 994687710);
 		if (local10 == 5) {
 			client.anInt3519 = local22 * -1972877813;
 		}

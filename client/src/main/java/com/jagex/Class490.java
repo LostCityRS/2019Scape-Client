@@ -193,7 +193,7 @@ public class Class490 {
 		Class322.method27271(Class20.method376(1197191252), -1621738124);
 		Class481.setState(18, 1823202236);
 		for (local32 = 0; local32 < 114; local32++) {
-			client.aBooleanArray22[local32] = true;
+			client.topLevelComponentRedrawRequestedTemp[local32] = true;
 		}
 		Class339.method27486(Class411.connection, (byte) 23);
 		Class653.aClass678_2 = null;

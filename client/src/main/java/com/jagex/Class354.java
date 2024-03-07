@@ -77,7 +77,7 @@ public class Class354 {
 	@OriginalMember(owner = "client!iz", name = "kh", descriptor = "(Lclient!hf;I)V", line = 11800)
 	public static void method27694(@OriginalArg(0) Class312 arg0, @OriginalArg(1) int arg1) {
 		if (arg0.anInt4011 * -987231457 == client.anInt3554 * 181009007) {
-			client.aBooleanArray22[arg0.anInt3969 * -2101991717] = true;
+			client.topLevelComponentRedrawRequestedTemp[arg0.anInt3969 * -2101991717] = true;
 		}
 	}
 

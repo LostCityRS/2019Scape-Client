@@ -121,7 +121,7 @@ public class Class95 {
 		arg0.anInt5891 -= -1915563430;
 		@Pc(25) int local25 = arg0.anIntArray519[arg0.anInt5891 * -1497248091];
 		@Pc(35) int local35 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 1];
-		@Pc(41) Class87 local41 = (Class87) Class124.aClass32_Sub21_7.method18261(local25, -1583968213);
+		@Pc(41) Class87 local41 = (Class87) Class124.aClass32_Sub21_7.get(local25, -1583968213);
 		if (local35 == local41.anInt265 * 951920133) {
 			local11.method26914(local25, 2087973884);
 		} else {

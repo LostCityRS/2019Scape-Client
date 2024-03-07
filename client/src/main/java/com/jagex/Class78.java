@@ -311,7 +311,7 @@ public final class Class78 {
 			return 1;
 		}
 		if (arg0 != Class51.options.aClass166_Sub4_2.method15426((byte) 59)) {
-			Class704.method36733(arg0, Class74.aClass74_100.method1259(Class106.lang, (byte) -116), true, (byte) -18);
+			Class704.changeToolkit(arg0, Class74.aClass74_100.method1259(Class106.lang, (byte) -116), true, (byte) -18);
 			if (Class51.options.aClass166_Sub4_2.method15426((byte) 116) != arg0) {
 				return -1;
 			}

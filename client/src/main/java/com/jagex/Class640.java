@@ -219,6 +219,6 @@ public class Class640 {
 	@OriginalMember(owner = "client!wm", name = "agt", descriptor = "(Lclient!yf;I)V", line = 10762)
 	static final void method32498(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = ((Class47) Class277.aClass32_Sub12_1.method18261(local12, -909308048)).aBoolean21 ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = ((Class47) Class277.aClass32_Sub12_1.get(local12, -909308048)).aBoolean21 ? 1 : 0;
 	}
 }

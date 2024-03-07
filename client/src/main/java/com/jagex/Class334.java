@@ -79,7 +79,7 @@ public class Class334 {
 									@Pc(54) int local54 = local21 >> 6 & 0x3F;
 									local58 = local54 + arg2;
 									local62 = arg3 + local48;
-									local68 = (Class610) arg0.method18261(local8, -540558831);
+									local68 = (Class610) arg0.get(local8, -540558831);
 									if ((local36.anInt5708 * -1626288991 & 0x1) == 0) {
 										local81 = local68.anInt5608 * 427800467;
 										local86 = local68.anInt5603 * -774442965;

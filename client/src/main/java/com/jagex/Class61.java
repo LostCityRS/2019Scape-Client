@@ -145,7 +145,7 @@ class Class61 implements Iterator {
 					client.aClass175_1.prevServerPacketType2 = null;
 					client.aClass175_1.prevServerPacketType3 = null;
 					client.aClass175_1.anInt3298 = 0;
-					Class624.aClass120_1.aClass647_1.method32643((byte) 119);
+					Class624.playerVariableManager.vars.method32643((byte) 119);
 					Class151.method13978(-2015714483);
 				} else {
 					client.aClass175_1.close((byte) 34);

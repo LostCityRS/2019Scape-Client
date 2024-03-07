@@ -35,7 +35,7 @@ public class Class132_Sub1_Sub1_Sub5 extends Class132_Sub1_Sub1 {
 		this.anInt3276 = arg1 * -1258371209;
 		this.anInt3274 = arg12 * 449841739;
 		this.anInt3273 = arg14 * 199968911;
-		@Pc(49) Class697 local49 = (Class697) Class501.aClass32_Sub18_1.method18261(this.anInt3276 * -1612299705, 1137944685);
+		@Pc(49) Class697 local49 = (Class697) Class501.aClass32_Sub18_1.get(this.anInt3276 * -1612299705, 1137944685);
 		@Pc(54) int local54 = local49.anInt5949 * 1477426425;
 		if (local54 != -1) {
 			this.aClass19_5 = new Class19_Sub1(this, false);
@@ -174,7 +174,7 @@ public class Class132_Sub1_Sub1_Sub5 extends Class132_Sub1_Sub1 {
 
 	@OriginalMember(owner = "client!aur", name = "v", descriptor = "(Lclient!dh;II)Lclient!do;", line = 81)
 	Class109 method24101(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(5) Class697 local5 = (Class697) Class501.aClass32_Sub18_1.method18261(arg2, -1422442268);
+		@Pc(5) Class697 local5 = (Class697) Class501.aClass32_Sub18_1.get(arg2, -1422442268);
 		@Pc(12) Class99 local12 = this.aClass585_23.aClass99Array2[this.aByte100];
 		@Pc(27) Class99 local27 = this.aByte99 < 3 ? this.aClass585_23.aClass99Array2[this.aByte99 + 1] : null;
 		@Pc(31) Class472 local31 = this.method24220().aClass472_61;
@@ -183,7 +183,7 @@ public class Class132_Sub1_Sub1_Sub5 extends Class132_Sub1_Sub1 {
 
 	@OriginalMember(owner = "client!aur", name = "f", descriptor = "(Lclient!dh;IIB)Lclient!do;", line = 81)
 	Class109 method24102(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) byte arg3) {
-		@Pc(5) Class697 local5 = (Class697) Class501.aClass32_Sub18_1.method18261(arg2, 926486655);
+		@Pc(5) Class697 local5 = (Class697) Class501.aClass32_Sub18_1.get(arg2, 926486655);
 		@Pc(12) Class99 local12 = this.aClass585_23.aClass99Array2[this.aByte100];
 		@Pc(27) Class99 local27 = this.aByte99 < 3 ? this.aClass585_23.aClass99Array2[this.aByte99 + 1] : null;
 		@Pc(31) Class472 local31 = this.method24220().aClass472_61;
@@ -192,7 +192,7 @@ public class Class132_Sub1_Sub1_Sub5 extends Class132_Sub1_Sub1 {
 
 	@OriginalMember(owner = "client!aur", name = "o", descriptor = "(Lclient!dh;II)Lclient!do;", line = 81)
 	Class109 method24103(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(5) Class697 local5 = (Class697) Class501.aClass32_Sub18_1.method18261(arg2, -1700464429);
+		@Pc(5) Class697 local5 = (Class697) Class501.aClass32_Sub18_1.get(arg2, -1700464429);
 		@Pc(12) Class99 local12 = this.aClass585_23.aClass99Array2[this.aByte100];
 		@Pc(27) Class99 local27 = this.aByte99 < 3 ? this.aClass585_23.aClass99Array2[this.aByte99 + 1] : null;
 		@Pc(31) Class472 local31 = this.method24220().aClass472_61;
@@ -201,7 +201,7 @@ public class Class132_Sub1_Sub1_Sub5 extends Class132_Sub1_Sub1 {
 
 	@OriginalMember(owner = "client!aur", name = "s", descriptor = "(Lclient!dh;II)Lclient!do;", line = 81)
 	Class109 method24104(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(5) Class697 local5 = (Class697) Class501.aClass32_Sub18_1.method18261(arg2, -1034388816);
+		@Pc(5) Class697 local5 = (Class697) Class501.aClass32_Sub18_1.get(arg2, -1034388816);
 		@Pc(12) Class99 local12 = this.aClass585_23.aClass99Array2[this.aByte100];
 		@Pc(27) Class99 local27 = this.aByte99 < 3 ? this.aClass585_23.aClass99Array2[this.aByte99 + 1] : null;
 		@Pc(31) Class472 local31 = this.method24220().aClass472_61;
@@ -210,7 +210,7 @@ public class Class132_Sub1_Sub1_Sub5 extends Class132_Sub1_Sub1 {
 
 	@OriginalMember(owner = "client!aur", name = "y", descriptor = "(Lclient!dh;II)Lclient!do;", line = 81)
 	Class109 method24105(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(5) Class697 local5 = (Class697) Class501.aClass32_Sub18_1.method18261(arg2, -1014317714);
+		@Pc(5) Class697 local5 = (Class697) Class501.aClass32_Sub18_1.get(arg2, -1014317714);
 		@Pc(12) Class99 local12 = this.aClass585_23.aClass99Array2[this.aByte100];
 		@Pc(27) Class99 local27 = this.aByte99 < 3 ? this.aClass585_23.aClass99Array2[this.aByte99 + 1] : null;
 		@Pc(31) Class472 local31 = this.method24220().aClass472_61;

@@ -465,7 +465,7 @@ public class Class676 {
 					client.aClass175_1.prevServerPacketType2 = null;
 					client.aClass175_1.prevServerPacketType3 = null;
 					client.aClass175_1.anInt3298 = 0;
-					Class624.aClass120_1.aClass647_1.method32643((byte) 48);
+					Class624.playerVariableManager.vars.method32643((byte) 48);
 					Class151.method13978(-1589523704);
 				} else {
 					client.aClass175_1.close((byte) 80);
@@ -553,7 +553,7 @@ public class Class676 {
 					client.aClass175_1.prevServerPacketType2 = null;
 					client.aClass175_1.prevServerPacketType3 = null;
 					client.aClass175_1.anInt3298 = 0;
-					Class624.aClass120_1.aClass647_1.method32643((byte) 52);
+					Class624.playerVariableManager.vars.method32643((byte) 52);
 					Class151.method13978(-227598485);
 				} else {
 					client.aClass175_1.close((byte) 33);
@@ -672,13 +672,13 @@ public class Class676 {
 			local15.aClass22_17.method408(arg3, -98830014);
 			return;
 		}
-		@Pc(41) Class47 local41 = (Class47) Class277.aClass32_Sub12_1.method18261(arg3.anInt1405 * -308533965, 616318106);
+		@Pc(41) Class47 local41 = (Class47) Class277.aClass32_Sub12_1.get(arg3.anInt1405 * -308533965, 616318106);
 		@Pc(46) int local46 = local41.anInt135 * 1415652865;
 		if (local41.anInt150 * -1809820871 == 1) {
 			local46 *= arg3.anInt1404 * -815066371 + 1;
 		}
 		for (@Pc(67) Class93_Sub3 local67 = (Class93_Sub3) local15.aClass22_17.method428((byte) 86); local67 != null; local67 = (Class93_Sub3) local15.aClass22_17.method442(970329713)) {
-			local41 = (Class47) Class277.aClass32_Sub12_1.method18261(local67.anInt1405 * -308533965, -1804441507);
+			local41 = (Class47) Class277.aClass32_Sub12_1.get(local67.anInt1405 * -308533965, -1804441507);
 			@Pc(83) int local83 = local41.anInt135 * 1415652865;
 			if (local41.anInt150 * -1809820871 == 1) {
 				local83 *= local67.anInt1404 * -815066371 + 1;

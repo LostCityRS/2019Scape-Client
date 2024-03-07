@@ -53,7 +53,7 @@ public class Class481 {
 			}
 			local21.anInt3300 = 0;
 			if (!local21.aBoolean564 && local21.getStream((byte) 7) != null) {
-				@Pc(52) ClientMessage local52 = Class102.createGameMessage(ClientProt.aClientProt_105, local21.clientIsaac, (byte) 34);
+				@Pc(52) ClientMessage local52 = Class102.createGameMessage(ClientProt.NO_TIMEOUT, local21.clientIsaac, (byte) 34);
 				local21.send(local52, -1743193292);
 				try {
 					local21.flush((byte) 60);
@@ -93,7 +93,7 @@ public class Class481 {
 			Class166_Sub20.aClass160_2 = null;
 		}
 		if (arg0 == 4) {
-			Class138.method11535(client.state * -849002901 == 0 || client.state * -849002901 == 12 || client.anInt3526 * -703563959 != Class93_Sub26.aClass645_15.anInt5766 * -221025663, -729963422);
+			Class138.method11535(client.state * -849002901 == 0 || client.state * -849002901 == 12 || client.topLevelInterface * -703563959 != Class93_Sub26.aClass645_15.anInt5766 * -221025663, -729963422);
 			Class606.method31909(-1637013277);
 		}
 		@Pc(88) boolean local88;
@@ -101,7 +101,7 @@ public class Class481 {
 			if (Class93_Sub26.aClass645_15.anInt5768 * 1106038941 == -1) {
 				local88 = client.state * -849002901 == 17 || client.state * -849002901 == 9;
 			} else {
-				local88 = client.anInt3526 * -703563959 != Class93_Sub26.aClass645_15.anInt5768 * 1106038941;
+				local88 = client.topLevelInterface * -703563959 != Class93_Sub26.aClass645_15.anInt5768 * 1106038941;
 			}
 			Class152.method14005(local88, -598022508);
 		}

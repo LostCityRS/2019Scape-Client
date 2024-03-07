@@ -44,7 +44,7 @@ public class Class55 implements Interface11 {
 
 	@OriginalMember(owner = "client!acd", name = "e", descriptor = "(II)Lclient!ay;", line = 35)
 	@Override
-	public Interface13 method18261(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
+	public Interface13 get(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		if (arg0 < 0) {
 			if (this.anInterface13_3 == null) {
 				this.anInterface13_3 = this.anInterface4_26.method27703(-1, this, -1535866624);

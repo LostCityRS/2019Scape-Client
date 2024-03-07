@@ -555,7 +555,7 @@ public class Class159 {
 
 	@OriginalMember(owner = "client!tf", name = "bi", descriptor = "(Lclient!ao;Lclient!df;III)I", line = 224)
 	static int method14532(@OriginalArg(0) Interface11 arg0, @OriginalArg(1) Class225 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		@Pc(5) Class688 local5 = (Class688) arg0.method18261(arg2, -1266565796);
+		@Pc(5) Class688 local5 = (Class688) arg0.get(arg2, -1266565796);
 		if (local5 == null) {
 			return 0;
 		}
@@ -597,7 +597,7 @@ public class Class159 {
 
 	@OriginalMember(owner = "client!tf", name = "bn", descriptor = "(Lclient!ao;Lclient!df;III)I", line = 224)
 	static int method14533(@OriginalArg(0) Interface11 arg0, @OriginalArg(1) Class225 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		@Pc(5) Class688 local5 = (Class688) arg0.method18261(arg2, -83697797);
+		@Pc(5) Class688 local5 = (Class688) arg0.get(arg2, -83697797);
 		if (local5 == null) {
 			return 0;
 		}
@@ -639,7 +639,7 @@ public class Class159 {
 
 	@OriginalMember(owner = "client!tf", name = "d", descriptor = "(Lclient!ao;Lclient!df;III)I", line = 224)
 	static int method14534(@OriginalArg(0) Interface11 arg0, @OriginalArg(1) Class225 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		@Pc(5) Class688 local5 = (Class688) arg0.method18261(arg2, -98995164);
+		@Pc(5) Class688 local5 = (Class688) arg0.get(arg2, -98995164);
 		if (local5 == null) {
 			return 0;
 		}
@@ -1691,7 +1691,7 @@ public class Class159 {
 						@Pc(25) Class93_Sub17 local25 = (Class93_Sub17) local17;
 						if (local25 != null) {
 							for (@Pc(29) int local29 = 0; local29 < local25.anIntArray176.length; local29++) {
-								@Pc(43) Class610 local43 = (Class610) aClass32_Sub14_7.method18261(local25.anIntArray176[local29], -1596881729);
+								@Pc(43) Class610 local43 = (Class610) aClass32_Sub14_7.get(local25.anIntArray176[local29], -1596881729);
 								local48 = local43.anInt5600 * 400633667;
 								if (local43.anIntArray492 != null) {
 									local43 = local43.method31991(anInterface21_2, anInterface23_2, -196554466);
@@ -1709,7 +1709,7 @@ public class Class159 {
 						}
 					} else {
 						@Pc(92) Integer local92 = (Integer) local17;
-						@Pc(99) Class610 local99 = (Class610) aClass32_Sub14_7.method18261(local92, 1776123609);
+						@Pc(99) Class610 local99 = (Class610) aClass32_Sub14_7.get(local92, 1776123609);
 						@Pc(104) int local104 = local99.anInt5600 * 400633667;
 						if (local99.anIntArray492 != null) {
 							local99 = local99.method31991(anInterface21_2, anInterface23_2, 1518301408);
@@ -1742,7 +1742,7 @@ public class Class159 {
 								local190 = (Class575) local183.next();
 							} while (local190.anIntArray471 == null);
 							for (local48 = 0; local48 < local190.anIntArray471.length; local48++) {
-								@Pc(209) Class610 local209 = (Class610) aClass32_Sub14_7.method18261(local190.anIntArray471[local48], 2053536370);
+								@Pc(209) Class610 local209 = (Class610) aClass32_Sub14_7.get(local190.anIntArray471[local48], 2053536370);
 								@Pc(214) int local214 = local209.anInt5600 * 400633667;
 								if (local209.anIntArray492 != null) {
 									local209 = local209.method31991(anInterface21_2, anInterface23_2, -69481498);
@@ -1777,7 +1777,7 @@ public class Class159 {
 						@Pc(25) Class93_Sub17 local25 = (Class93_Sub17) local17;
 						if (local25 != null) {
 							for (@Pc(29) int local29 = 0; local29 < local25.anIntArray176.length; local29++) {
-								@Pc(43) Class610 local43 = (Class610) aClass32_Sub14_7.method18261(local25.anIntArray176[local29], 514801598);
+								@Pc(43) Class610 local43 = (Class610) aClass32_Sub14_7.get(local25.anIntArray176[local29], 514801598);
 								local48 = local43.anInt5600 * 400633667;
 								if (local43.anIntArray492 != null) {
 									local43 = local43.method31991(anInterface21_2, anInterface23_2, 349493219);
@@ -1795,7 +1795,7 @@ public class Class159 {
 						}
 					} else {
 						@Pc(92) Integer local92 = (Integer) local17;
-						@Pc(99) Class610 local99 = (Class610) aClass32_Sub14_7.method18261(local92, -1289020622);
+						@Pc(99) Class610 local99 = (Class610) aClass32_Sub14_7.get(local92, -1289020622);
 						@Pc(104) int local104 = local99.anInt5600 * 400633667;
 						if (local99.anIntArray492 != null) {
 							local99 = local99.method31991(anInterface21_2, anInterface23_2, 1771874519);
@@ -1828,7 +1828,7 @@ public class Class159 {
 								local190 = (Class575) local183.next();
 							} while (local190.anIntArray471 == null);
 							for (local48 = 0; local48 < local190.anIntArray471.length; local48++) {
-								@Pc(209) Class610 local209 = (Class610) aClass32_Sub14_7.method18261(local190.anIntArray471[local48], -461155669);
+								@Pc(209) Class610 local209 = (Class610) aClass32_Sub14_7.get(local190.anIntArray471[local48], -461155669);
 								@Pc(214) int local214 = local209.anInt5600 * 400633667;
 								if (local209.anIntArray492 != null) {
 									local209 = local209.method31991(anInterface21_2, anInterface23_2, 417172120);
@@ -1863,7 +1863,7 @@ public class Class159 {
 						@Pc(25) Class93_Sub17 local25 = (Class93_Sub17) local17;
 						if (local25 != null) {
 							for (@Pc(29) int local29 = 0; local29 < local25.anIntArray176.length; local29++) {
-								@Pc(43) Class610 local43 = (Class610) aClass32_Sub14_7.method18261(local25.anIntArray176[local29], -1126081976);
+								@Pc(43) Class610 local43 = (Class610) aClass32_Sub14_7.get(local25.anIntArray176[local29], -1126081976);
 								local48 = local43.anInt5600 * 400633667;
 								if (local43.anIntArray492 != null) {
 									local43 = local43.method31991(anInterface21_2, anInterface23_2, 240504413);
@@ -1881,7 +1881,7 @@ public class Class159 {
 						}
 					} else {
 						@Pc(92) Integer local92 = (Integer) local17;
-						@Pc(99) Class610 local99 = (Class610) aClass32_Sub14_7.method18261(local92, -1129608035);
+						@Pc(99) Class610 local99 = (Class610) aClass32_Sub14_7.get(local92, -1129608035);
 						@Pc(104) int local104 = local99.anInt5600 * 400633667;
 						if (local99.anIntArray492 != null) {
 							local99 = local99.method31991(anInterface21_2, anInterface23_2, 1295235820);
@@ -1914,7 +1914,7 @@ public class Class159 {
 								local190 = (Class575) local183.next();
 							} while (local190.anIntArray471 == null);
 							for (local48 = 0; local48 < local190.anIntArray471.length; local48++) {
-								@Pc(209) Class610 local209 = (Class610) aClass32_Sub14_7.method18261(local190.anIntArray471[local48], 1838002811);
+								@Pc(209) Class610 local209 = (Class610) aClass32_Sub14_7.get(local190.anIntArray471[local48], 1838002811);
 								@Pc(214) int local214 = local209.anInt5600 * 400633667;
 								if (local209.anIntArray492 != null) {
 									local209 = local209.method31991(anInterface21_2, anInterface23_2, -447093775);
@@ -1949,7 +1949,7 @@ public class Class159 {
 						@Pc(25) Class93_Sub17 local25 = (Class93_Sub17) local17;
 						if (local25 != null) {
 							for (@Pc(29) int local29 = 0; local29 < local25.anIntArray176.length; local29++) {
-								@Pc(43) Class610 local43 = (Class610) aClass32_Sub14_7.method18261(local25.anIntArray176[local29], -1861274609);
+								@Pc(43) Class610 local43 = (Class610) aClass32_Sub14_7.get(local25.anIntArray176[local29], -1861274609);
 								local48 = local43.anInt5600 * 400633667;
 								if (local43.anIntArray492 != null) {
 									local43 = local43.method31991(anInterface21_2, anInterface23_2, 1825181738);
@@ -1967,7 +1967,7 @@ public class Class159 {
 						}
 					} else {
 						@Pc(92) Integer local92 = (Integer) local17;
-						@Pc(99) Class610 local99 = (Class610) aClass32_Sub14_7.method18261(local92, -898810049);
+						@Pc(99) Class610 local99 = (Class610) aClass32_Sub14_7.get(local92, -898810049);
 						@Pc(104) int local104 = local99.anInt5600 * 400633667;
 						if (local99.anIntArray492 != null) {
 							local99 = local99.method31991(anInterface21_2, anInterface23_2, 1691147723);
@@ -2000,7 +2000,7 @@ public class Class159 {
 								local190 = (Class575) local183.next();
 							} while (local190.anIntArray471 == null);
 							for (local48 = 0; local48 < local190.anIntArray471.length; local48++) {
-								@Pc(209) Class610 local209 = (Class610) aClass32_Sub14_7.method18261(local190.anIntArray471[local48], -1117625068);
+								@Pc(209) Class610 local209 = (Class610) aClass32_Sub14_7.get(local190.anIntArray471[local48], -1117625068);
 								@Pc(214) int local214 = local209.anInt5600 * 400633667;
 								if (local209.anIntArray492 != null) {
 									local209 = local209.method31991(anInterface21_2, anInterface23_2, -157953701);
@@ -2035,7 +2035,7 @@ public class Class159 {
 						@Pc(25) Class93_Sub17 local25 = (Class93_Sub17) local17;
 						if (local25 != null) {
 							for (@Pc(29) int local29 = 0; local29 < local25.anIntArray176.length; local29++) {
-								@Pc(43) Class610 local43 = (Class610) aClass32_Sub14_7.method18261(local25.anIntArray176[local29], 263230704);
+								@Pc(43) Class610 local43 = (Class610) aClass32_Sub14_7.get(local25.anIntArray176[local29], 263230704);
 								local48 = local43.anInt5600 * 400633667;
 								if (local43.anIntArray492 != null) {
 									local43 = local43.method31991(anInterface21_2, anInterface23_2, -163727026);
@@ -2053,7 +2053,7 @@ public class Class159 {
 						}
 					} else {
 						@Pc(92) Integer local92 = (Integer) local17;
-						@Pc(99) Class610 local99 = (Class610) aClass32_Sub14_7.method18261(local92, -572541554);
+						@Pc(99) Class610 local99 = (Class610) aClass32_Sub14_7.get(local92, -572541554);
 						@Pc(104) int local104 = local99.anInt5600 * 400633667;
 						if (local99.anIntArray492 != null) {
 							local99 = local99.method31991(anInterface21_2, anInterface23_2, -542438383);
@@ -2086,7 +2086,7 @@ public class Class159 {
 								local190 = (Class575) local183.next();
 							} while (local190.anIntArray471 == null);
 							for (local48 = 0; local48 < local190.anIntArray471.length; local48++) {
-								@Pc(209) Class610 local209 = (Class610) aClass32_Sub14_7.method18261(local190.anIntArray471[local48], -1210473147);
+								@Pc(209) Class610 local209 = (Class610) aClass32_Sub14_7.get(local190.anIntArray471[local48], -1210473147);
 								@Pc(214) int local214 = local209.anInt5600 * 400633667;
 								if (local209.anIntArray492 != null) {
 									local209 = local209.method31991(anInterface21_2, anInterface23_2, 1902020043);
@@ -2126,7 +2126,7 @@ public class Class159 {
 				if (local23 < anInt1923) {
 					local43 = arg0[local23 + local29 * anInt1923];
 					if (local43 > 0) {
-						local53 = (Class26) anInterface11_8.method18261(local43 - 1, 2075299070);
+						local53 = (Class26) anInterface11_8.get(local43 - 1, 2075299070);
 						local2[local29] += local53.anInt87 * -1134158301;
 						local5[local29] += local53.anInt83 * 1784923953;
 						local8[local29] += local53.anInt86 * -466499201;
@@ -2137,7 +2137,7 @@ public class Class159 {
 				if (local27 >= 0) {
 					local43 = arg0[local27 + local29 * anInt1923];
 					if (local43 > 0) {
-						local53 = (Class26) anInterface11_8.method18261(local43 - 1, 1724734005);
+						local53 = (Class26) anInterface11_8.get(local43 - 1, 1724734005);
 						local2[local29] -= local53.anInt87 * -1134158301;
 						local5[local29] -= local53.anInt83 * 1784923953;
 						local8[local29] -= local53.anInt86 * -466499201;
@@ -2213,7 +2213,7 @@ public class Class159 {
 				if (local23 < anInt1923) {
 					local43 = arg0[local23 + local29 * anInt1923];
 					if (local43 > 0) {
-						local53 = (Class26) anInterface11_8.method18261(local43 - 1, 1679577968);
+						local53 = (Class26) anInterface11_8.get(local43 - 1, 1679577968);
 						local2[local29] += local53.anInt87 * -1134158301;
 						local5[local29] += local53.anInt83 * 1784923953;
 						local8[local29] += local53.anInt86 * -466499201;
@@ -2224,7 +2224,7 @@ public class Class159 {
 				if (local27 >= 0) {
 					local43 = arg0[local27 + local29 * anInt1923];
 					if (local43 > 0) {
-						local53 = (Class26) anInterface11_8.method18261(local43 - 1, 1035325077);
+						local53 = (Class26) anInterface11_8.get(local43 - 1, 1035325077);
 						local2[local29] -= local53.anInt87 * -1134158301;
 						local5[local29] -= local53.anInt83 * 1784923953;
 						local8[local29] -= local53.anInt86 * -466499201;
@@ -3093,7 +3093,7 @@ public class Class159 {
 		for (local62 = 0; local62 < arg10.length; local62++) {
 			@Pc(116) int local116 = arg11[local62] & 0x3F;
 			if (local116 == Class615.aClass615_13.anInt5628 * 948246811 || local116 == Class615.aClass615_4.anInt5628 * 948246811 || local116 == Class615.aClass615_5.anInt5628 * 948246811 || local116 == Class615.aClass615_6.anInt5628 * 948246811) {
-				@Pc(148) Class610 local148 = (Class610) aClass32_Sub14_7.method18261(arg10[local62], -1158822073);
+				@Pc(148) Class610 local148 = (Class610) aClass32_Sub14_7.get(arg10[local62], -1158822073);
 				if (local148.anInt5601 * -303013723 == -1) {
 					@Pc(157) int local157 = -3355444;
 					if (local148.anInt5592 * 1067969079 == 1) {
@@ -3182,7 +3182,7 @@ public class Class159 {
 		for (local62 = 0; local62 < arg10.length; local62++) {
 			@Pc(116) int local116 = arg11[local62] & 0x3F;
 			if (local116 == Class615.aClass615_13.anInt5628 * 948246811 || local116 == Class615.aClass615_4.anInt5628 * 948246811 || local116 == Class615.aClass615_5.anInt5628 * 948246811 || local116 == Class615.aClass615_6.anInt5628 * 948246811) {
-				@Pc(148) Class610 local148 = (Class610) aClass32_Sub14_7.method18261(arg10[local62], 1075533027);
+				@Pc(148) Class610 local148 = (Class610) aClass32_Sub14_7.get(arg10[local62], 1075533027);
 				if (local148.anInt5601 * -303013723 == -1) {
 					@Pc(157) int local157 = -3355444;
 					if (local148.anInt5592 * 1067969079 == 1) {
@@ -3271,7 +3271,7 @@ public class Class159 {
 		for (local62 = 0; local62 < arg10.length; local62++) {
 			@Pc(116) int local116 = arg11[local62] & 0x3F;
 			if (local116 == Class615.aClass615_13.anInt5628 * 948246811 || local116 == Class615.aClass615_4.anInt5628 * 948246811 || local116 == Class615.aClass615_5.anInt5628 * 948246811 || local116 == Class615.aClass615_6.anInt5628 * 948246811) {
-				@Pc(148) Class610 local148 = (Class610) aClass32_Sub14_7.method18261(arg10[local62], 378292988);
+				@Pc(148) Class610 local148 = (Class610) aClass32_Sub14_7.get(arg10[local62], 378292988);
 				if (local148.anInt5601 * -303013723 == -1) {
 					@Pc(157) int local157 = -3355444;
 					if (local148.anInt5592 * 1067969079 == 1) {
@@ -3360,7 +3360,7 @@ public class Class159 {
 		for (local62 = 0; local62 < arg10.length; local62++) {
 			@Pc(116) int local116 = arg11[local62] & 0x3F;
 			if (local116 == Class615.aClass615_13.anInt5628 * 948246811 || local116 == Class615.aClass615_4.anInt5628 * 948246811 || local116 == Class615.aClass615_5.anInt5628 * 948246811 || local116 == Class615.aClass615_6.anInt5628 * 948246811) {
-				@Pc(148) Class610 local148 = (Class610) aClass32_Sub14_7.method18261(arg10[local62], -824514120);
+				@Pc(148) Class610 local148 = (Class610) aClass32_Sub14_7.get(arg10[local62], -824514120);
 				if (local148.anInt5601 * -303013723 == -1) {
 					@Pc(157) int local157 = -3355444;
 					if (local148.anInt5592 * 1067969079 == 1) {
@@ -3481,10 +3481,10 @@ public class Class159 {
 			return;
 		}
 		for (@Pc(4) int local4 = 0; local4 < arg5.length; local4++) {
-			@Pc(16) Class610 local16 = (Class610) aClass32_Sub14_7.method18261(arg5[local4], -1228576074);
+			@Pc(16) Class610 local16 = (Class610) aClass32_Sub14_7.get(arg5[local4], -1228576074);
 			@Pc(21) int local21 = local16.anInt5601 * -303013723;
 			if (local21 != -1) {
-				@Pc(31) Class65 local31 = (Class65) aClass32_Sub20_2.method18261(local21, 1797646976);
+				@Pc(31) Class65 local31 = (Class65) aClass32_Sub20_2.get(local21, 1797646976);
 				@Pc(55) Class100 local55 = local31.method1177(arg0, local16.aBoolean832 ? arg6[local4] >> 6 & 0x3 : 0, local16.aBoolean836 ? local16.aBoolean833 : false, 608157392);
 				@Pc(79) int[] local79 = local31.method1181(arg0, local16.aBoolean832 ? arg6[local4] >> 6 & 0x3 : 0, local16.aBoolean836 ? local16.aBoolean833 : false, (byte) -73);
 				if (local55 != null) {
@@ -3542,10 +3542,10 @@ public class Class159 {
 			return;
 		}
 		for (@Pc(4) int local4 = 0; local4 < arg5.length; local4++) {
-			@Pc(16) Class610 local16 = (Class610) aClass32_Sub14_7.method18261(arg5[local4], -943281401);
+			@Pc(16) Class610 local16 = (Class610) aClass32_Sub14_7.get(arg5[local4], -943281401);
 			@Pc(21) int local21 = local16.anInt5601 * -303013723;
 			if (local21 != -1) {
-				@Pc(31) Class65 local31 = (Class65) aClass32_Sub20_2.method18261(local21, -1391765025);
+				@Pc(31) Class65 local31 = (Class65) aClass32_Sub20_2.get(local21, -1391765025);
 				@Pc(55) Class100 local55 = local31.method1177(arg0, local16.aBoolean832 ? arg6[local4] >> 6 & 0x3 : 0, local16.aBoolean836 ? local16.aBoolean833 : false, 608157392);
 				@Pc(79) int[] local79 = local31.method1181(arg0, local16.aBoolean832 ? arg6[local4] >> 6 & 0x3 : 0, local16.aBoolean836 ? local16.aBoolean833 : false, (byte) -109);
 				if (local55 != null) {
@@ -3603,10 +3603,10 @@ public class Class159 {
 			return;
 		}
 		for (@Pc(4) int local4 = 0; local4 < arg5.length; local4++) {
-			@Pc(16) Class610 local16 = (Class610) aClass32_Sub14_7.method18261(arg5[local4], -1420921021);
+			@Pc(16) Class610 local16 = (Class610) aClass32_Sub14_7.get(arg5[local4], -1420921021);
 			@Pc(21) int local21 = local16.anInt5601 * -303013723;
 			if (local21 != -1) {
-				@Pc(31) Class65 local31 = (Class65) aClass32_Sub20_2.method18261(local21, 890580448);
+				@Pc(31) Class65 local31 = (Class65) aClass32_Sub20_2.get(local21, 890580448);
 				@Pc(55) Class100 local55 = local31.method1177(arg0, local16.aBoolean832 ? arg6[local4] >> 6 & 0x3 : 0, local16.aBoolean836 ? local16.aBoolean833 : false, 608157392);
 				@Pc(79) int[] local79 = local31.method1181(arg0, local16.aBoolean832 ? arg6[local4] >> 6 & 0x3 : 0, local16.aBoolean836 ? local16.aBoolean833 : false, (byte) -105);
 				if (local55 != null) {

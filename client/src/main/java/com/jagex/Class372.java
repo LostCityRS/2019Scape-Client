@@ -90,7 +90,7 @@ final class Class372 implements Interface50 {
 	}
 
 	@OriginalMember(owner = "client!k", name = "kk", descriptor = "(Lclient!alu;ZZI)V", line = 11936)
-	public static final void method28019(@OriginalArg(0) Class93_Sub40 arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) int arg3) {
+	public static final void method28019(@OriginalArg(0) SubInterface arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) int arg3) {
 		@Pc(4) int local4 = arg0.anInt3172 * 1220811495;
 		@Pc(10) int local10 = (int) (arg0.aLong232 * -3750704643647536275L);
 		arg0.method23969(-1035667234);
@@ -103,13 +103,13 @@ final class Class372 implements Interface50 {
 			Class354.method27694(local25, -1174743804);
 		}
 		Class74.method1261(local4, (byte) 3);
-		if (!arg2 && -703563959 * client.anInt3526 != -1) {
-			Class189.method24583(client.anInt3526 * -703563959, 1, 1029282319);
+		if (!arg2 && -703563959 * client.topLevelInterface != -1) {
+			Class189.method24583(client.topLevelInterface * -703563959, 1, 1029282319);
 		}
 		@Pc(52) Class10 local52 = new Class10(client.aClass16_22);
-		for (@Pc(57) Class93_Sub40 local57 = (Class93_Sub40) local52.method158((byte) 118); local57 != null; local57 = (Class93_Sub40) local52.next()) {
+		for (@Pc(57) SubInterface local57 = (SubInterface) local52.method158((byte) 118); local57 != null; local57 = (SubInterface) local52.next()) {
 			if (!local57.method23970(-1382074122)) {
-				local57 = (Class93_Sub40) local52.method158((byte) 89);
+				local57 = (SubInterface) local52.method158((byte) 89);
 				if (local57 == null) {
 					break;
 				}

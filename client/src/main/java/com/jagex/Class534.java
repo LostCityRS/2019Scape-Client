@@ -46,7 +46,7 @@ class Class534 implements Interface41 {
 
 	@OriginalMember(owner = "client!rp", name = "h", descriptor = "(Lclient!yf;I)V", line = 105)
 	static void method30624(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 2] = ((Class347) Class288.aClass55_Sub2_1.method18261(arg0.anIntArray519[-1497248091 * arg0.anInt5891 - 2], 399178293)).method27610(Class624.aClass120_1, arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1], -1533827398) ? 1 : 0;
+		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 2] = ((Class347) Class288.aClass55_Sub2_1.get(arg0.anIntArray519[-1497248091 * arg0.anInt5891 - 2], 399178293)).method27610(Class624.playerVariableManager, arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1], -1533827398) ? 1 : 0;
 		arg0.anInt5891 -= 1189701933;
 	}
 
@@ -71,7 +71,7 @@ class Class534 implements Interface41 {
 			for (local8 = 0; local8 < local57; local8++) {
 				local66 = arg0.g1_alt3(1282515777);
 				local73 = (Class500) Class107.method18116(Class500.method30156(-1769728711), local66, -1915563430);
-				local79 = Class21.aClass79_Sub1_Sub1_1.method1470(arg0, local73, (byte) 1);
+				local79 = Class21.varPlayerTypes.method1470(arg0, local73, (byte) 1);
 				arg2.anInterface3_5.method776(local79.anInt5092 * -1181855333, local79.anObject19, (byte) 100);
 			}
 		}
@@ -229,7 +229,7 @@ class Class534 implements Interface41 {
 			for (local8 = 0; local8 < local57; local8++) {
 				local66 = arg0.g1_alt3(1406553697);
 				local73 = (Class500) Class107.method18116(Class500.method30156(-1762008343), local66, -1915563430);
-				local79 = Class21.aClass79_Sub1_Sub1_1.method1470(arg0, local73, (byte) 1);
+				local79 = Class21.varPlayerTypes.method1470(arg0, local73, (byte) 1);
 				arg2.anInterface3_5.method776(local79.anInt5092 * -1181855333, local79.anObject19, (byte) 11);
 			}
 		}
@@ -340,7 +340,7 @@ class Class534 implements Interface41 {
 	@OriginalMember(owner = "client!rp", name = "awi", descriptor = "(Lclient!yf;I)V", line = 13741)
 	static final void method30628(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(3) int local3 = client.aClass16_22.method219(-291053272);
-		if (-703563959 * client.anInt3526 != -1) {
+		if (-703563959 * client.topLevelInterface != -1) {
 			local3++;
 		}
 		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local3;

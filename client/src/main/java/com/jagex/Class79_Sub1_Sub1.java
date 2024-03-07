@@ -40,7 +40,7 @@ public class Class79_Sub1_Sub1 extends Class79_Sub1 implements Interface11 {
 
 	@OriginalMember(owner = "client!adj", name = "e", descriptor = "(II)Lclient!ay;", line = 24)
 	@Override
-	public Interface13 method18261(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
+	public Interface13 get(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		@Pc(3) Class240 local3 = this.aClass240_5;
 		synchronized (this.aClass240_5) {
 			@Pc(11) Class108_Sub1 local11 = (Class108_Sub1) this.aClass240_5.method25829((long) arg0);

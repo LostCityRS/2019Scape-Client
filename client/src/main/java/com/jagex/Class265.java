@@ -129,7 +129,7 @@ public class Class265 {
 					Class680.method33240(-503643611);
 					return;
 				}
-				Class411.aLong269 = Class411.connection.packet.g8(1738752174) * -4112723527472146283L;
+				Class411.sessionId = Class411.connection.packet.g8(1738752174) * -4112723527472146283L;
 				Class411.connection.packet.pos = 0;
 				if (Class411.socialNetworkLogin) {
 					Class411.step = -339489564;
@@ -345,18 +345,18 @@ public class Class265 {
 					return;
 				}
 				Class411.connection.getStream((byte) 25).read(Class411.connection.packet.data, 0, 1, (byte) -76);
-				local210 = Class411.connection.packet.g1((short) 16384);
+				int reply = Class411.connection.packet.g1((short) 16384);
 				Class411.connection.packet.pos = 0;
-				if (local210 == 21) {
+				if (reply == 21) {
 					Class411.step = -808566346;
-				} else if (local210 == 1) {
+				} else if (reply == 1) {
 					Class411.step = 293466275;
-					Class114.setReply(local210, 682838166);
+					Class114.setReply(reply, 682838166);
 					return;
-				} else if (local210 == 52) {
-					Class166_Sub32.anInt2280 = local210 * -2099137307;
+				} else if (reply == 52) {
+					Class166_Sub32.anInt2280 = reply * -2099137307;
 					Class411.step = -1443868475;
-				} else if (local210 == 2) {
+				} else if (reply == 2) {
 					if (Class411.aBoolean753) {
 						Class411.aBoolean753 = false;
 						Class411.step = -1044277882;
@@ -368,28 +368,28 @@ public class Class265 {
 					} else {
 						Class411.step = 526831521;
 					}
-				} else if (local210 == 15) {
+				} else if (reply == 15) {
 					Class411.connection.length = 1705477074;
 					Class411.step = 122548348;
-				} else if (local210 == 23 && Class411.anInt4748 * 558401221 < 3) {
+				} else if (reply == 23 && Class411.anInt4748 * 558401221 < 3) {
 					Class411.waitingTime = 0;
 					Class411.anInt4748 += 1751058445;
 					Class411.step = -1044277882;
 					Class411.connection.close((byte) 118);
 					return;
-				} else if (local210 == 42) {
+				} else if (reply == 42) {
 					Class411.step = 529177811;
-					Class114.setReply(local210, 1363680162);
+					Class114.setReply(reply, 1363680162);
 					return;
-				} else if (Class411.target * -1128337797 == 132 && local210 == 49 && client.state * -849002901 != 9) {
+				} else if (Class411.target * -1128337797 == 132 && reply == 49 && client.state * -849002901 != 9) {
 					if (Class411.enterLobbyReply * 914785575 != 52) {
-						Class114.setReply(local210, 126962330);
+						Class114.setReply(reply, 126962330);
 					}
 					return;
-				} else if (!Class411.aBoolean750 || Class411.socialNetworkLogin || Class411.anInt4746 * 276097583 == -1 || local210 != 35) {
-					if (local210 != 53) {
+				} else if (!Class411.aBoolean750 || Class411.socialNetworkLogin || Class411.anInt4746 * 276097583 == -1 || reply != 35) {
+					if (reply != 53) {
 						Class411.step = -522138941;
-						Class114.setReply(local210, 1915412652);
+						Class114.setReply(reply, 1915412652);
 						Class411.connection.close((byte) 107);
 						Class680.method33240(-15044996);
 						return;
@@ -562,17 +562,18 @@ public class Class265 {
 					return;
 				}
 				Class411.connection.getStream((byte) 81).read(Class411.connection.packet.data, 0, 1, (byte) -9);
-				Class566.anInt5385 = (Class411.connection.packet.data[0] & 0xFF) * 252135035;
+				Class566.nextLength = (Class411.connection.packet.data[0] & 0xFF) * 252135035;
 				Class411.step = -53062159;
 			}
+
 			@Pc(2027) PacketBit local2027;
 			if (Class411.step * 327612781 == 157) {
 				local2027 = Class411.connection.packet;
 				if (Class411.target * -1128337797 == 211) {
-					if (!Class411.connection.getStream((byte) -12).available(Class566.anInt5385 * 1395370163, 565770471)) {
+					if (!Class411.connection.getStream((byte) -12).available(Class566.nextLength * 1395370163, 565770471)) {
 						return;
 					}
-					Class411.connection.getStream((byte) -4).read(local2027.data, 0, Class566.anInt5385 * 1395370163, (byte) -67);
+					Class411.connection.getStream((byte) -4).read(local2027.data, 0, Class566.nextLength * 1395370163, (byte) -67);
 					local2027.pos = 0;
 					Class124.decodeTotpToken(local2027, -909097621);
 					client.userStaffModLevel = local2027.g1((short) 16384) * 1370077333;
@@ -591,8 +592,8 @@ public class Class265 {
 					Class392.aClass541_1.method30914(1412431328).method30496(1592888770).setMembers(client.mapMember, -1542972859);
 					Class277.aClass32_Sub12_1.setMembers(client.mapMember, 566140184);
 					Class162.aClass32_Sub3_2.setMembers(client.mapMember, 821785291);
-				} else if (Class411.connection.getStream((byte) 23).available(Class566.anInt5385 * 1395370163, 670220006)) {
-					Class411.connection.getStream((byte) 67).read(local2027.data, 0, Class566.anInt5385 * 1395370163, (byte) -110);
+				} else if (Class411.connection.getStream((byte) 23).available(Class566.nextLength * 1395370163, 670220006)) {
+					Class411.connection.getStream((byte) 67).read(local2027.data, 0, Class566.nextLength * 1395370163, (byte) -110);
 					local2027.pos = 0;
 					Class124.decodeTotpToken(local2027, -909097621);
 					client.userStaffModLevel = local2027.g1((short) 16384) * 1370077333;
@@ -696,7 +697,7 @@ public class Class265 {
 				Class411.step = -522138941;
 				Class114.setReply(2, 1017547595);
 				Class329.method27348(1073741823);
-				Class110_Sub5.method7654(Class411.connection.packet, -1504067443);
+				Class110_Sub5.init(Class411.connection.packet, -1504067443);
 				local271 = local210 - Class411.connection.packet.pos * 212851357;
 				local1890 = new PacketBit(local271);
 				System.arraycopy(Class411.connection.packet.data, Class411.connection.packet.pos * 212851357, local1890.data, 0, local271);
@@ -730,7 +731,7 @@ public class Class265 {
 				Class411.step = -522138941;
 				Class114.setReply(15, -827767309);
 				Class490.method29977((byte) 41);
-				Class110_Sub5.method7654(Class411.connection.packet, -1605988782);
+				Class110_Sub5.init(Class411.connection.packet, -1605988782);
 				if (Class411.connection.packet.pos * 212851357 != local210) {
 					throw new RuntimeException(Class411.connection.packet.pos * 212851357 + " " + local210);
 				}

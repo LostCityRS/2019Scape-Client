@@ -23,7 +23,7 @@ public class Class411 {
 	static final int anInt4715 = 204;
 
 	@OriginalMember(owner = "client!m", name = "w", descriptor = "J")
-	static long aLong269;
+	static long sessionId;
 
 	@OriginalMember(owner = "client!m", name = "l", descriptor = "[I")
 	static int[] currentIsaacKey;
@@ -675,7 +675,7 @@ public class Class411 {
 					Class680.method33240(414531576);
 					return;
 				}
-				aLong269 = connection.packet.g8(-726450921) * -4112723527472146283L;
+				sessionId = connection.packet.g8(-726450921) * -4112723527472146283L;
 				connection.packet.pos = 0;
 				if (socialNetworkLogin) {
 					step = -339489564;
@@ -1108,17 +1108,17 @@ public class Class411 {
 					return;
 				}
 				connection.getStream((byte) 54).read(connection.packet.data, 0, 1, (byte) -93);
-				Class566.anInt5385 = (connection.packet.data[0] & 0xFF) * 252135035;
+				Class566.nextLength = (connection.packet.data[0] & 0xFF) * 252135035;
 				step = -53062159;
 			}
 			@Pc(2027) PacketBit local2027;
 			if (step * 327612781 == 157) {
 				local2027 = connection.packet;
 				if (target * -1128337797 == 211) {
-					if (!connection.getStream((byte) -20).available(Class566.anInt5385 * 1395370163, 655334467)) {
+					if (!connection.getStream((byte) -20).available(Class566.nextLength * 1395370163, 655334467)) {
 						return;
 					}
-					connection.getStream((byte) 22).read(local2027.data, 0, Class566.anInt5385 * 1395370163, (byte) -112);
+					connection.getStream((byte) 22).read(local2027.data, 0, Class566.nextLength * 1395370163, (byte) -112);
 					local2027.pos = 0;
 					Class124.decodeTotpToken(local2027, -909097621);
 					client.userStaffModLevel = local2027.g1((short) 16384) * 1370077333;
@@ -1137,8 +1137,8 @@ public class Class411 {
 					Class392.aClass541_1.method30914(1585980332).method30496(943836065).setMembers(client.mapMember, 2073863666);
 					Class277.aClass32_Sub12_1.setMembers(client.mapMember, 878152271);
 					Class162.aClass32_Sub3_2.setMembers(client.mapMember, 919852100);
-				} else if (connection.getStream((byte) -30).available(Class566.anInt5385 * 1395370163, 1508553670)) {
-					connection.getStream((byte) 44).read(local2027.data, 0, Class566.anInt5385 * 1395370163, (byte) -5);
+				} else if (connection.getStream((byte) -30).available(Class566.nextLength * 1395370163, 1508553670)) {
+					connection.getStream((byte) 44).read(local2027.data, 0, Class566.nextLength * 1395370163, (byte) -5);
 					local2027.pos = 0;
 					Class124.decodeTotpToken(local2027, -909097621);
 					client.userStaffModLevel = local2027.g1((short) 16384) * 1370077333;
@@ -1242,7 +1242,7 @@ public class Class411 {
 				step = -522138941;
 				Class114.setReply(2, -1474214764);
 				Class329.method27348(1073741823);
-				Class110_Sub5.method7654(connection.packet, -623569416);
+				Class110_Sub5.init(connection.packet, -623569416);
 				local271 = local210 - connection.packet.pos * 212851357;
 				local1890 = new PacketBit(local271);
 				System.arraycopy(connection.packet.data, connection.packet.pos * 212851357, local1890.data, 0, local271);
@@ -1276,7 +1276,7 @@ public class Class411 {
 				step = -522138941;
 				Class114.setReply(15, -342446185);
 				Class490.method29977((byte) 28);
-				Class110_Sub5.method7654(connection.packet, -1920813449);
+				Class110_Sub5.init(connection.packet, -1920813449);
 				if (connection.packet.pos * 212851357 != local210) {
 					throw new RuntimeException(connection.packet.pos * 212851357 + " " + local210);
 				}
@@ -1372,7 +1372,7 @@ public class Class411 {
 					Class680.method33240(277489533);
 					return;
 				}
-				aLong269 = connection.packet.g8(192352550) * -4112723527472146283L;
+				sessionId = connection.packet.g8(192352550) * -4112723527472146283L;
 				connection.packet.pos = 0;
 				if (socialNetworkLogin) {
 					step = -339489564;
@@ -1805,17 +1805,17 @@ public class Class411 {
 					return;
 				}
 				connection.getStream((byte) 9).read(connection.packet.data, 0, 1, (byte) -68);
-				Class566.anInt5385 = (connection.packet.data[0] & 0xFF) * 252135035;
+				Class566.nextLength = (connection.packet.data[0] & 0xFF) * 252135035;
 				step = -53062159;
 			}
 			@Pc(2027) PacketBit local2027;
 			if (step * 327612781 == 157) {
 				local2027 = connection.packet;
 				if (target * -1128337797 == 211) {
-					if (!connection.getStream((byte) -9).available(Class566.anInt5385 * 1395370163, 530447851)) {
+					if (!connection.getStream((byte) -9).available(Class566.nextLength * 1395370163, 530447851)) {
 						return;
 					}
-					connection.getStream((byte) -75).read(local2027.data, 0, Class566.anInt5385 * 1395370163, (byte) -60);
+					connection.getStream((byte) -75).read(local2027.data, 0, Class566.nextLength * 1395370163, (byte) -60);
 					local2027.pos = 0;
 					Class124.decodeTotpToken(local2027, -909097621);
 					client.userStaffModLevel = local2027.g1((short) 16384) * 1370077333;
@@ -1834,8 +1834,8 @@ public class Class411 {
 					Class392.aClass541_1.method30914(1302548611).method30496(1679242950).setMembers(client.mapMember, -1490549311);
 					Class277.aClass32_Sub12_1.setMembers(client.mapMember, 709924387);
 					Class162.aClass32_Sub3_2.setMembers(client.mapMember, -1693395084);
-				} else if (connection.getStream((byte) -28).available(Class566.anInt5385 * 1395370163, 2133275176)) {
-					connection.getStream((byte) 50).read(local2027.data, 0, Class566.anInt5385 * 1395370163, (byte) -102);
+				} else if (connection.getStream((byte) -28).available(Class566.nextLength * 1395370163, 2133275176)) {
+					connection.getStream((byte) 50).read(local2027.data, 0, Class566.nextLength * 1395370163, (byte) -102);
 					local2027.pos = 0;
 					Class124.decodeTotpToken(local2027, -909097621);
 					client.userStaffModLevel = local2027.g1((short) 16384) * 1370077333;
@@ -1939,7 +1939,7 @@ public class Class411 {
 				step = -522138941;
 				Class114.setReply(2, 1895125740);
 				Class329.method27348(1073741823);
-				Class110_Sub5.method7654(connection.packet, -892703872);
+				Class110_Sub5.init(connection.packet, -892703872);
 				local271 = local210 - connection.packet.pos * 212851357;
 				local1890 = new PacketBit(local271);
 				System.arraycopy(connection.packet.data, connection.packet.pos * 212851357, local1890.data, 0, local271);
@@ -1973,7 +1973,7 @@ public class Class411 {
 				step = -522138941;
 				Class114.setReply(15, -595675321);
 				Class490.method29977((byte) 107);
-				Class110_Sub5.method7654(connection.packet, -1543227077);
+				Class110_Sub5.init(connection.packet, -1543227077);
 				if (connection.packet.pos * 212851357 != local210) {
 					throw new RuntimeException(connection.packet.pos * 212851357 + " " + local210);
 				}
@@ -2069,7 +2069,7 @@ public class Class411 {
 					Class680.method33240(-2039063602);
 					return;
 				}
-				aLong269 = connection.packet.g8(777534496) * -4112723527472146283L;
+				sessionId = connection.packet.g8(777534496) * -4112723527472146283L;
 				connection.packet.pos = 0;
 				if (socialNetworkLogin) {
 					step = -339489564;
@@ -2502,17 +2502,17 @@ public class Class411 {
 					return;
 				}
 				connection.getStream((byte) -66).read(connection.packet.data, 0, 1, (byte) -35);
-				Class566.anInt5385 = (connection.packet.data[0] & 0xFF) * 252135035;
+				Class566.nextLength = (connection.packet.data[0] & 0xFF) * 252135035;
 				step = -53062159;
 			}
 			@Pc(2027) PacketBit local2027;
 			if (step * 327612781 == 157) {
 				local2027 = connection.packet;
 				if (target * -1128337797 == 211) {
-					if (!connection.getStream((byte) -6).available(Class566.anInt5385 * 1395370163, 654112255)) {
+					if (!connection.getStream((byte) -6).available(Class566.nextLength * 1395370163, 654112255)) {
 						return;
 					}
-					connection.getStream((byte) 21).read(local2027.data, 0, Class566.anInt5385 * 1395370163, (byte) -45);
+					connection.getStream((byte) 21).read(local2027.data, 0, Class566.nextLength * 1395370163, (byte) -45);
 					local2027.pos = 0;
 					Class124.decodeTotpToken(local2027, -909097621);
 					client.userStaffModLevel = local2027.g1((short) 16384) * 1370077333;
@@ -2531,8 +2531,8 @@ public class Class411 {
 					Class392.aClass541_1.method30914(1886428195).method30496(570742032).setMembers(client.mapMember, -803310796);
 					Class277.aClass32_Sub12_1.setMembers(client.mapMember, 85713545);
 					Class162.aClass32_Sub3_2.setMembers(client.mapMember, 694462227);
-				} else if (connection.getStream((byte) 3).available(Class566.anInt5385 * 1395370163, 9241152)) {
-					connection.getStream((byte) -22).read(local2027.data, 0, Class566.anInt5385 * 1395370163, (byte) -121);
+				} else if (connection.getStream((byte) 3).available(Class566.nextLength * 1395370163, 9241152)) {
+					connection.getStream((byte) -22).read(local2027.data, 0, Class566.nextLength * 1395370163, (byte) -121);
 					local2027.pos = 0;
 					Class124.decodeTotpToken(local2027, -909097621);
 					client.userStaffModLevel = local2027.g1((short) 16384) * 1370077333;
@@ -2636,7 +2636,7 @@ public class Class411 {
 				step = -522138941;
 				Class114.setReply(2, -844996238);
 				Class329.method27348(1073741823);
-				Class110_Sub5.method7654(connection.packet, -1132327592);
+				Class110_Sub5.init(connection.packet, -1132327592);
 				local271 = local210 - connection.packet.pos * 212851357;
 				local1890 = new PacketBit(local271);
 				System.arraycopy(connection.packet.data, connection.packet.pos * 212851357, local1890.data, 0, local271);
@@ -2670,7 +2670,7 @@ public class Class411 {
 				step = -522138941;
 				Class114.setReply(15, 675720464);
 				Class490.method29977((byte) 59);
-				Class110_Sub5.method7654(connection.packet, -1965997892);
+				Class110_Sub5.init(connection.packet, -1965997892);
 				if (connection.packet.pos * 212851357 != local210) {
 					throw new RuntimeException(connection.packet.pos * 212851357 + " " + local210);
 				}
@@ -2766,7 +2766,7 @@ public class Class411 {
 					Class680.method33240(992968799);
 					return;
 				}
-				aLong269 = connection.packet.g8(-2068190121) * -4112723527472146283L;
+				sessionId = connection.packet.g8(-2068190121) * -4112723527472146283L;
 				connection.packet.pos = 0;
 				if (socialNetworkLogin) {
 					step = -339489564;
@@ -3199,17 +3199,17 @@ public class Class411 {
 					return;
 				}
 				connection.getStream((byte) 16).read(connection.packet.data, 0, 1, (byte) -111);
-				Class566.anInt5385 = (connection.packet.data[0] & 0xFF) * 252135035;
+				Class566.nextLength = (connection.packet.data[0] & 0xFF) * 252135035;
 				step = -53062159;
 			}
 			@Pc(2027) PacketBit buf;
 			if (step * 327612781 == 157) {
 				buf = connection.packet;
 				if (target * -1128337797 == 211) {
-					if (!connection.getStream((byte) 39).available(Class566.anInt5385 * 1395370163, -290007161)) {
+					if (!connection.getStream((byte) 39).available(Class566.nextLength * 1395370163, -290007161)) {
 						return;
 					}
-					connection.getStream((byte) 72).read(buf.data, 0, Class566.anInt5385 * 1395370163, (byte) -116);
+					connection.getStream((byte) 72).read(buf.data, 0, Class566.nextLength * 1395370163, (byte) -116);
 					buf.pos = 0;
 					Class124.decodeTotpToken(buf, -909097621);
 					client.userStaffModLevel = buf.g1((short) 16384) * 1370077333;
@@ -3228,8 +3228,8 @@ public class Class411 {
 					Class392.aClass541_1.method30914(1522465188).method30496(1348987236).setMembers(client.mapMember, -1706061400);
 					Class277.aClass32_Sub12_1.setMembers(client.mapMember, 143378757);
 					Class162.aClass32_Sub3_2.setMembers(client.mapMember, 385457106);
-				} else if (connection.getStream((byte) -14).available(Class566.anInt5385 * 1395370163, 1779903703)) {
-					connection.getStream((byte) -13).read(buf.data, 0, Class566.anInt5385 * 1395370163, (byte) -9);
+				} else if (connection.getStream((byte) -14).available(Class566.nextLength * 1395370163, 1779903703)) {
+					connection.getStream((byte) -13).read(buf.data, 0, Class566.nextLength * 1395370163, (byte) -9);
 					buf.pos = 0;
 					Class124.decodeTotpToken(buf, -909097621);
 					client.userStaffModLevel = buf.g1((short) 16384) * 1370077333;
@@ -3333,7 +3333,7 @@ public class Class411 {
 				step = -522138941;
 				Class114.setReply(2, -1955849974);
 				Class329.method27348(1073741823);
-				Class110_Sub5.method7654(connection.packet, -1463822806);
+				Class110_Sub5.init(connection.packet, -1463822806);
 				local271 = local210 - connection.packet.pos * 212851357;
 				local1890 = new PacketBit(local271);
 				System.arraycopy(connection.packet.data, connection.packet.pos * 212851357, local1890.data, 0, local271);
@@ -3367,7 +3367,7 @@ public class Class411 {
 				step = -522138941;
 				Class114.setReply(15, 214621239);
 				Class490.method29977((byte) 120);
-				Class110_Sub5.method7654(connection.packet, -1759570103);
+				Class110_Sub5.init(connection.packet, -1759570103);
 				if (connection.packet.pos * 212851357 != local210) {
 					throw new RuntimeException(connection.packet.pos * 212851357 + " " + local210);
 				}
@@ -3463,7 +3463,7 @@ public class Class411 {
 					Class680.method33240(-443624118);
 					return;
 				}
-				aLong269 = connection.packet.g8(-695850523) * -4112723527472146283L;
+				sessionId = connection.packet.g8(-695850523) * -4112723527472146283L;
 				connection.packet.pos = 0;
 				if (socialNetworkLogin) {
 					step = -339489564;
@@ -3896,17 +3896,17 @@ public class Class411 {
 					return;
 				}
 				connection.getStream((byte) 43).read(connection.packet.data, 0, 1, (byte) -82);
-				Class566.anInt5385 = (connection.packet.data[0] & 0xFF) * 252135035;
+				Class566.nextLength = (connection.packet.data[0] & 0xFF) * 252135035;
 				step = -53062159;
 			}
 			@Pc(2027) PacketBit local2027;
 			if (step * 327612781 == 157) {
 				local2027 = connection.packet;
 				if (target * -1128337797 == 211) {
-					if (!connection.getStream((byte) 80).available(Class566.anInt5385 * 1395370163, 938271646)) {
+					if (!connection.getStream((byte) 80).available(Class566.nextLength * 1395370163, 938271646)) {
 						return;
 					}
-					connection.getStream((byte) 56).read(local2027.data, 0, Class566.anInt5385 * 1395370163, (byte) -116);
+					connection.getStream((byte) 56).read(local2027.data, 0, Class566.nextLength * 1395370163, (byte) -116);
 					local2027.pos = 0;
 					Class124.decodeTotpToken(local2027, -909097621);
 					client.userStaffModLevel = local2027.g1((short) 16384) * 1370077333;
@@ -3925,8 +3925,8 @@ public class Class411 {
 					Class392.aClass541_1.method30914(1965351577).method30496(721619012).setMembers(client.mapMember, -502701258);
 					Class277.aClass32_Sub12_1.setMembers(client.mapMember, -1033176957);
 					Class162.aClass32_Sub3_2.setMembers(client.mapMember, -1257824961);
-				} else if (connection.getStream((byte) 77).available(Class566.anInt5385 * 1395370163, -154494944)) {
-					connection.getStream((byte) -35).read(local2027.data, 0, Class566.anInt5385 * 1395370163, (byte) -76);
+				} else if (connection.getStream((byte) 77).available(Class566.nextLength * 1395370163, -154494944)) {
+					connection.getStream((byte) -35).read(local2027.data, 0, Class566.nextLength * 1395370163, (byte) -76);
 					local2027.pos = 0;
 					Class124.decodeTotpToken(local2027, -909097621);
 					client.userStaffModLevel = local2027.g1((short) 16384) * 1370077333;
@@ -4030,7 +4030,7 @@ public class Class411 {
 				step = -522138941;
 				Class114.setReply(2, -1835764514);
 				Class329.method27348(1073741823);
-				Class110_Sub5.method7654(connection.packet, -1431810389);
+				Class110_Sub5.init(connection.packet, -1431810389);
 				local271 = local210 - connection.packet.pos * 212851357;
 				local1890 = new PacketBit(local271);
 				System.arraycopy(connection.packet.data, connection.packet.pos * 212851357, local1890.data, 0, local271);
@@ -4064,7 +4064,7 @@ public class Class411 {
 				step = -522138941;
 				Class114.setReply(15, 1536917052);
 				Class490.method29977((byte) 108);
-				Class110_Sub5.method7654(connection.packet, -951254325);
+				Class110_Sub5.init(connection.packet, -951254325);
 				if (connection.packet.pos * 212851357 != local210) {
 					throw new RuntimeException(connection.packet.pos * 212851357 + " " + local210);
 				}
@@ -4135,7 +4135,7 @@ public class Class411 {
 		local4.p4(currentIsaacKey[1], (byte) -84);
 		local4.p4(currentIsaacKey[2], (byte) 95);
 		local4.p4(currentIsaacKey[3], (byte) 10);
-		local4.p8(aLong269 * 5489047686998946493L);
+		local4.p8(sessionId * 5489047686998946493L);
 		if (client.state * -849002901 == 14) {
 			local4.p4(anIntArray442[0], (byte) -2);
 			local4.p4(anIntArray442[1], (byte) -40);
@@ -4159,7 +4159,7 @@ public class Class411 {
 		local4.p4(currentIsaacKey[1], (byte) 46);
 		local4.p4(currentIsaacKey[2], (byte) 29);
 		local4.p4(currentIsaacKey[3], (byte) -71);
-		local4.p8(aLong269 * 5489047686998946493L);
+		local4.p8(sessionId * 5489047686998946493L);
 		if (client.state * -849002901 == 14) {
 			local4.p4(anIntArray442[0], (byte) -100);
 			local4.p4(anIntArray442[1], (byte) -16);
@@ -4341,13 +4341,13 @@ public class Class411 {
 		Class279.aClass386_1 = null;
 		client.aBoolean636 = true;
 		ModeWhere.method36612((short) -15508);
-		for (@Pc(42) int local42 = 0; local42 < Class624.aClass120_1.aClass675Array1.length; local42++) {
+		for (@Pc(42) int local42 = 0; local42 < Class624.playerVariableManager.aClass675Array1.length; local42++) {
 			@Pc(56) Class675 local56 = new Class675(Class336.aClass644_1.method32591(local42, (byte) 24), false);
 			local56.method33143(0, 2056093099);
 			local56.method33157(0, 479175137);
-			Class624.aClass120_1.aClass675Array1[local42] = local56;
+			Class624.playerVariableManager.aClass675Array1[local42] = local56;
 		}
-		Class624.aClass120_1.aClass647_1.method32643((byte) -35);
+		Class624.playerVariableManager.vars.method32643((byte) -35);
 		Class151.method13978(403003535);
 		Class339.method27486(connection, (byte) 77);
 	}
@@ -4401,19 +4401,19 @@ public class Class411 {
 		Class290.anInt3911 = 0;
 		Class5.anInt14 = 0;
 		Class174.anInt3297 = 0;
-		if (client.anInt3526 * -703563959 != -1) {
-			Class535.method30697(client.anInt3526 * -703563959, -1484132347);
+		if (client.topLevelInterface * -703563959 != -1) {
+			Class535.method30697(client.topLevelInterface * -703563959, -1484132347);
 		}
-		for (@Pc(161) Class93_Sub40 local161 = (Class93_Sub40) client.aClass16_22.method227((byte) -106); local161 != null; local161 = (Class93_Sub40) client.aClass16_22.method229(2001834142)) {
+		for (@Pc(161) SubInterface local161 = (SubInterface) client.aClass16_22.method227((byte) -106); local161 != null; local161 = (SubInterface) client.aClass16_22.method229(2001834142)) {
 			if (!local161.method23970(-2051087328)) {
-				local161 = (Class93_Sub40) client.aClass16_22.method227((byte) -8);
+				local161 = (SubInterface) client.aClass16_22.method227((byte) -8);
 				if (local161 == null) {
 					break;
 				}
 			}
 			Class372.method28019(local161, true, false, 886296781);
 		}
-		client.anInt3526 = -823798521;
+		client.topLevelInterface = -823798521;
 		client.aClass16_22 = new Class16(8);
 		Class361.method27805((byte) -34);
 		client.aClass312_7 = null;
@@ -4425,7 +4425,7 @@ public class Class411 {
 		Class245.method25899((byte) -3);
 		client.aBoolean630 = true;
 		for (local17 = 0; local17 < 114; local17++) {
-			client.aBooleanArray22[local17] = true;
+			client.topLevelComponentRedrawRequestedTemp[local17] = true;
 		}
 		for (local17 = 0; local17 < 3; local17++) {
 			for (@Pc(240) int local240 = 0; local240 < 8; local240++) {

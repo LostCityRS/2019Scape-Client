@@ -112,7 +112,7 @@ public class Class700 implements Interface75 {
 			Class32.aClass32_Sub17_23.method17810(252067684);
 			Class501.aClass32_Sub18_1.method17810(-196257358);
 			Class30.aClass32_Sub16_1.method17810(-1494617514);
-			Class21.aClass79_Sub1_Sub1_1.method1421(2033836279);
+			Class21.varPlayerTypes.method1421(2033836279);
 			Class684.aClass79_Sub1_Sub2_6.method1479(-1244746038);
 			Class39.aClass79_Sub1_Sub2_1.method1479(-1244746038);
 			Class93_Sub26_Sub6.aClass79_Sub1_Sub2_3.method1479(-1244746038);

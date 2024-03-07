@@ -362,9 +362,9 @@ public class Class65 implements Interface13 {
 		}
 		for (@Pc(85) int local85 = 0; local85 < arg0.aClass554Array3.length; local85++) {
 			if (arg0.aClass554Array3[local85].anInt5319 * 601549465 != -1 && arg0.aClass554Array3[local85].aClass19_7.method23578((byte) 0)) {
-				@Pc(119) Class697 local119 = (Class697) Class501.aClass32_Sub18_1.method18261(arg0.aClass554Array3[local85].anInt5319 * 601549465, -1457911894);
+				@Pc(119) Class697 local119 = (Class697) Class501.aClass32_Sub18_1.get(arg0.aClass554Array3[local85].anInt5319 * 601549465, -1457911894);
 				if (local119.aBoolean881 && local119.anInt5949 * 1477426425 != -1) {
-					@Pc(137) Class263 local137 = (Class263) Class32.aClass32_Sub17_23.method18261(local119.anInt5949 * 1477426425, 1117391038);
+					@Pc(137) Class263 local137 = (Class263) Class32.aClass32_Sub17_23.get(local119.anInt5949 * 1477426425, 1117391038);
 					if (arg0.anInt2760 * -215928493 > 0 && local137.anInt3867 * -2017474589 == 0) {
 						arg0.anInt2791 += -1315809289;
 						Class279.anInt3892 = Class707.aClass707_5.aByte176 * 511155897;

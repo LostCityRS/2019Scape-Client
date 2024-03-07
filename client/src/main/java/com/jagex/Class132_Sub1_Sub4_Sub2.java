@@ -162,7 +162,7 @@ public class Class132_Sub1_Sub4_Sub2 extends Class132_Sub1_Sub4 implements Inter
 
 	@OriginalMember(owner = "client!ajz", name = "bv", descriptor = "(Lclient!dh;IZI)Lclient!abg;", line = 88)
 	Class34 method13430(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) int arg3) {
-		@Pc(9) Class610 local9 = (Class610) this.aClass32_Sub14_5.method18261(this.anInt1497 * -2043631571, -2136843153);
+		@Pc(9) Class610 local9 = (Class610) this.aClass32_Sub14_5.get(this.anInt1497 * -2043631571, -2136843153);
 		@Pc(19) Class99 local19;
 		@Pc(25) Class99 local25;
 		if (this.aBoolean333) {
@@ -182,7 +182,7 @@ public class Class132_Sub1_Sub4_Sub2 extends Class132_Sub1_Sub4 implements Inter
 
 	@OriginalMember(owner = "client!ajz", name = "bg", descriptor = "(Lclient!dh;IZ)Lclient!abg;", line = 88)
 	Class34 method13431(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2) {
-		@Pc(9) Class610 local9 = (Class610) this.aClass32_Sub14_5.method18261(this.anInt1497 * -2043631571, -1635690562);
+		@Pc(9) Class610 local9 = (Class610) this.aClass32_Sub14_5.get(this.anInt1497 * -2043631571, -1635690562);
 		@Pc(19) Class99 local19;
 		@Pc(25) Class99 local25;
 		if (this.aBoolean333) {
@@ -238,7 +238,7 @@ public class Class132_Sub1_Sub4_Sub2 extends Class132_Sub1_Sub4 implements Inter
 		}
 		@Pc(8) Class470 local8 = this.method24227();
 		@Pc(13) Class573 local13 = Class125_Sub1.method9212(this.aBoolean334, 373147274);
-		@Pc(24) Class463 local24 = ((Class610) this.aClass32_Sub14_5.method18261(this.anInt1497 * -2043631571, -1270120272)).aClass463_2;
+		@Pc(24) Class463 local24 = ((Class610) this.aClass32_Sub14_5.get(this.anInt1497 * -2043631571, -1270120272)).aClass463_2;
 		if (local24 == null) {
 			this.aClass109_4.method6976(local8, this.aClass241Array21[0], 0);
 		} else {
@@ -256,7 +256,7 @@ public class Class132_Sub1_Sub4_Sub2 extends Class132_Sub1_Sub4 implements Inter
 		}
 		@Pc(8) Class470 local8 = this.method24227();
 		@Pc(13) Class573 local13 = Class125_Sub1.method9212(this.aBoolean334, 373147274);
-		@Pc(24) Class463 local24 = ((Class610) this.aClass32_Sub14_5.method18261(this.anInt1497 * -2043631571, 1120917848)).aClass463_2;
+		@Pc(24) Class463 local24 = ((Class610) this.aClass32_Sub14_5.get(this.anInt1497 * -2043631571, 1120917848)).aClass463_2;
 		if (local24 == null) {
 			this.aClass109_4.method6976(local8, this.aClass241Array21[0], 0);
 		} else {
@@ -284,7 +284,7 @@ public class Class132_Sub1_Sub4_Sub2 extends Class132_Sub1_Sub4 implements Inter
 	@OriginalMember(owner = "client!ajz", name = "fk", descriptor = "(Lclient!dh;II)Z", line = 126)
 	@Override
 	boolean method24304(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(10) Class463 local10 = ((Class610) this.aClass32_Sub14_5.method18261(this.anInt1497 * -2043631571, 477233153)).aClass463_2;
+		@Pc(10) Class463 local10 = ((Class610) this.aClass32_Sub14_5.get(this.anInt1497 * -2043631571, 477233153)).aClass463_2;
 		if (local10 != null) {
 			return arg0.method20482(arg1, arg2, this.method24227(), local10, -301337288);
 		}
@@ -300,7 +300,7 @@ public class Class132_Sub1_Sub4_Sub2 extends Class132_Sub1_Sub4 implements Inter
 	@OriginalMember(owner = "client!ajz", name = "fa", descriptor = "(Lclient!dh;IIB)Z", line = 126)
 	@Override
 	boolean method24283(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) byte arg3) {
-		@Pc(10) Class463 local10 = ((Class610) this.aClass32_Sub14_5.method18261(this.anInt1497 * -2043631571, -975711667)).aClass463_2;
+		@Pc(10) Class463 local10 = ((Class610) this.aClass32_Sub14_5.get(this.anInt1497 * -2043631571, -975711667)).aClass463_2;
 		if (local10 != null) {
 			return arg0.method20482(arg1, arg2, this.method24227(), local10, -670689451);
 		}

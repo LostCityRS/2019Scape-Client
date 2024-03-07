@@ -127,7 +127,7 @@ public class Class89 {
 
 	@OriginalMember(owner = "client!adr", name = "m", descriptor = "(IIIZB)I", line = 44)
 	public static int method1596(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) boolean arg3, @OriginalArg(4) byte arg4) {
-		@Pc(5) Class379 local5 = (Class379) Class30.aClass32_Sub16_1.method18261(arg2, 850949127);
+		@Pc(5) Class379 local5 = (Class379) Class30.aClass32_Sub16_1.get(arg2, 850949127);
 		@Pc(8) Class108 local8 = local5.aClass108_1;
 		@Pc(13) Class93_Sub6 local13 = Class557.method31064(arg0, arg3, (short) 255);
 		@Pc(37) int local37;

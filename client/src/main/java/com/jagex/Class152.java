@@ -110,26 +110,26 @@ public abstract class Class152 {
 	@OriginalMember(owner = "client!vl", name = "eg", descriptor = "(ZI)V", line = 1972)
 	static void method14005(@OriginalArg(0) boolean arg0, @OriginalArg(1) int arg1) {
 		if (arg0) {
-			if (-703563959 * client.anInt3526 != -1) {
-				Class535.method30697(client.anInt3526 * -703563959, 1770633861);
+			if (-703563959 * client.topLevelInterface != -1) {
+				Class535.method30697(client.topLevelInterface * -703563959, 1770633861);
 			}
-			for (@Pc(16) Class93_Sub40 local16 = (Class93_Sub40) client.aClass16_22.method227((byte) -19); local16 != null; local16 = (Class93_Sub40) client.aClass16_22.method229(2146561672)) {
+			for (@Pc(16) SubInterface local16 = (SubInterface) client.aClass16_22.method227((byte) -19); local16 != null; local16 = (SubInterface) client.aClass16_22.method229(2146561672)) {
 				if (!local16.method23970(1540367973)) {
-					local16 = (Class93_Sub40) client.aClass16_22.method227((byte) 22);
+					local16 = (SubInterface) client.aClass16_22.method227((byte) 22);
 					if (local16 == null) {
 						break;
 					}
 				}
 				Class372.method28019(local16, true, false, -10455895);
 			}
-			client.anInt3526 = -823798521;
+			client.topLevelInterface = -823798521;
 			client.aClass16_22 = new Class16(8);
 			Class361.method27805((byte) -79);
-			client.anInt3526 = Class93_Sub26.aClass645_15.anInt5768 * 914533045;
-			if (client.anInt3526 * -703563959 != -1) {
-				Class618.method32103(false, -1213042793);
+			client.topLevelInterface = Class93_Sub26.aClass645_15.anInt5768 * 914533045;
+			if (client.topLevelInterface * -703563959 != -1) {
+				Class618.computeTopLevelInterfaceLayout(false, -1213042793);
 				Class635.method32440((short) 255);
-				Class56.method18034(client.anInt3526 * -703563959, null, 683653350);
+				Class56.runOnLoad(client.topLevelInterface * -703563959, null, 683653350);
 			}
 		}
 		Class411.aBoolean752 = true;

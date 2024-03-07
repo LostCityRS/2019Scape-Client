@@ -45,7 +45,7 @@ public abstract class Class93_Sub31 extends Class93 {
 	}
 
 	@OriginalMember(owner = "client!aku", name = "kd", descriptor = "(I[IB)V", line = 11833)
-	static final void method22008(@OriginalArg(0) int arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) byte arg2) {
+	static final void resetInterfaceAnims(@OriginalArg(0) int arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) byte arg2) {
 		if (!Class383.method28142(arg0, arg1, 1244060671)) {
 			return;
 		}

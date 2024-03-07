@@ -238,7 +238,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 		local19.method29362(local13);
 		local19.method29424(0.0F, (float) (-20 - -78148565 * this.anInt2770), 0.0F);
 		@Pc(112) Class622 local112 = this.method19997(1195709612);
-		@Pc(126) Class336 local126 = this.aClass336_1.anIntArray412 == null ? this.aClass336_1 : this.aClass336_1.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 17955);
+		@Pc(126) Class336 local126 = this.aClass336_1.anIntArray412 == null ? this.aClass336_1 : this.aClass336_1.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 17955);
 		@Pc(134) boolean local134 = local126.aClass463_1 != null;
 		this.aBoolean454 = false;
 		@Pc(139) Class573 local139 = null;
@@ -333,7 +333,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 		local19.method29362(local13);
 		local19.method29424(0.0F, (float) (-20 - -78148565 * this.anInt2770), 0.0F);
 		@Pc(112) Class622 local112 = this.method19997(1723705474);
-		@Pc(126) Class336 local126 = this.aClass336_1.anIntArray412 == null ? this.aClass336_1 : this.aClass336_1.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 28366);
+		@Pc(126) Class336 local126 = this.aClass336_1.anIntArray412 == null ? this.aClass336_1 : this.aClass336_1.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 28366);
 		@Pc(134) boolean local134 = local126.aClass463_1 != null;
 		this.aBoolean454 = false;
 		@Pc(139) Class573 local139 = null;
@@ -425,7 +425,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 		}
 		@Pc(94) boolean local94 = false;
 		if (this.anInt2783 * -653477493 != 0) {
-			@Pc(114) Class336 local114 = this.aClass336_1.anIntArray412 == null ? this.aClass336_1 : this.aClass336_1.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 13513);
+			@Pc(114) Class336 local114 = this.aClass336_1.anIntArray412 == null ? this.aClass336_1 : this.aClass336_1.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 13513);
 			if (local114 == null || client.anInt3485 >= this.anInt2784 * -1767642857 + local114.anInt4183 * 1207466827) {
 				this.anInt2783 = 0;
 			} else {
@@ -437,7 +437,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 			arg1 |= 0x100;
 		}
 		@Pc(163) int local163 = this.aClass523_7.method30365(605110613);
-		@Pc(191) Class109 local191 = this.aClass109Array3[0] = this.aClass336_1.method27424(arg0, arg1, Class166_Sub6.aClass32_Sub5_1, Class624.aClass120_1, Class624.aClass120_1, local20, local37, this.aClass19_Sub1_Sub1Array3, this.anIntArray237, local163, this.aClass331_1, this.method20034((short) 560), false, (byte) 10);
+		@Pc(191) Class109 local191 = this.aClass109Array3[0] = this.aClass336_1.method27424(arg0, arg1, Class166_Sub6.aClass32_Sub5_1, Class624.playerVariableManager, Class624.playerVariableManager, local20, local37, this.aClass19_Sub1_Sub1Array3, this.anIntArray237, local163, this.aClass331_1, this.method20034((short) 560), false, (byte) 10);
 		if (local191 == null) {
 			return false;
 		}
@@ -486,7 +486,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 		}
 		@Pc(94) boolean local94 = false;
 		if (this.anInt2783 * -653477493 != 0) {
-			@Pc(114) Class336 local114 = this.aClass336_1.anIntArray412 == null ? this.aClass336_1 : this.aClass336_1.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 9896);
+			@Pc(114) Class336 local114 = this.aClass336_1.anIntArray412 == null ? this.aClass336_1 : this.aClass336_1.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 9896);
 			if (local114 == null || client.anInt3485 >= this.anInt2784 * -1767642857 + local114.anInt4183 * 1207466827) {
 				this.anInt2783 = 0;
 			} else {
@@ -498,7 +498,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 			arg1 |= 0x100;
 		}
 		@Pc(163) int local163 = this.aClass523_7.method30365(565854458);
-		@Pc(191) Class109 local191 = this.aClass109Array3[0] = this.aClass336_1.method27424(arg0, arg1, Class166_Sub6.aClass32_Sub5_1, Class624.aClass120_1, Class624.aClass120_1, local20, local37, this.aClass19_Sub1_Sub1Array3, this.anIntArray237, local163, this.aClass331_1, this.method20034((short) 560), false, (byte) 10);
+		@Pc(191) Class109 local191 = this.aClass109Array3[0] = this.aClass336_1.method27424(arg0, arg1, Class166_Sub6.aClass32_Sub5_1, Class624.playerVariableManager, Class624.playerVariableManager, local20, local37, this.aClass19_Sub1_Sub1Array3, this.anIntArray237, local163, this.aClass331_1, this.method20034((short) 560), false, (byte) 10);
 		if (local191 == null) {
 			return false;
 		}
@@ -547,7 +547,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 		}
 		@Pc(94) boolean local94 = false;
 		if (this.anInt2783 * -653477493 != 0) {
-			@Pc(114) Class336 local114 = this.aClass336_1.anIntArray412 == null ? this.aClass336_1 : this.aClass336_1.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 24058);
+			@Pc(114) Class336 local114 = this.aClass336_1.anIntArray412 == null ? this.aClass336_1 : this.aClass336_1.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 24058);
 			if (local114 == null || client.anInt3485 >= this.anInt2784 * -1767642857 + local114.anInt4183 * 1207466827) {
 				this.anInt2783 = 0;
 			} else {
@@ -559,7 +559,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 			arg1 |= 0x100;
 		}
 		@Pc(163) int local163 = this.aClass523_7.method30365(-471397205);
-		@Pc(191) Class109 local191 = this.aClass109Array3[0] = this.aClass336_1.method27424(arg0, arg1, Class166_Sub6.aClass32_Sub5_1, Class624.aClass120_1, Class624.aClass120_1, local20, local37, this.aClass19_Sub1_Sub1Array3, this.anIntArray237, local163, this.aClass331_1, this.method20034((short) 560), false, (byte) 10);
+		@Pc(191) Class109 local191 = this.aClass109Array3[0] = this.aClass336_1.method27424(arg0, arg1, Class166_Sub6.aClass32_Sub5_1, Class624.playerVariableManager, Class624.playerVariableManager, local20, local37, this.aClass19_Sub1_Sub1Array3, this.anIntArray237, local163, this.aClass331_1, this.method20034((short) 560), false, (byte) 10);
 		if (local191 == null) {
 			return false;
 		}
@@ -608,7 +608,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 		}
 		@Pc(94) boolean local94 = false;
 		if (this.anInt2783 * -653477493 != 0) {
-			@Pc(114) Class336 local114 = this.aClass336_1.anIntArray412 == null ? this.aClass336_1 : this.aClass336_1.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 20692);
+			@Pc(114) Class336 local114 = this.aClass336_1.anIntArray412 == null ? this.aClass336_1 : this.aClass336_1.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 20692);
 			if (local114 == null || client.anInt3485 >= this.anInt2784 * -1767642857 + local114.anInt4183 * 1207466827) {
 				this.anInt2783 = 0;
 			} else {
@@ -620,7 +620,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 			arg1 |= 0x100;
 		}
 		@Pc(163) int local163 = this.aClass523_7.method30365(626575079);
-		@Pc(191) Class109 local191 = this.aClass109Array3[0] = this.aClass336_1.method27424(arg0, arg1, Class166_Sub6.aClass32_Sub5_1, Class624.aClass120_1, Class624.aClass120_1, local20, local37, this.aClass19_Sub1_Sub1Array3, this.anIntArray237, local163, this.aClass331_1, this.method20034((short) 560), false, (byte) 10);
+		@Pc(191) Class109 local191 = this.aClass109Array3[0] = this.aClass336_1.method27424(arg0, arg1, Class166_Sub6.aClass32_Sub5_1, Class624.playerVariableManager, Class624.playerVariableManager, local20, local37, this.aClass19_Sub1_Sub1Array3, this.anIntArray237, local163, this.aClass331_1, this.method20034((short) 560), false, (byte) 10);
 		if (local191 == null) {
 			return false;
 		}
@@ -737,8 +737,8 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 		@Pc(57) int local57;
 		for (local57 = 0; local57 < this.aClass554Array3.length; local57++) {
 			if (this.aClass554Array3[local57].anInt5319 * 601549465 != -1) {
-				@Pc(83) Class697 local83 = (Class697) Class501.aClass32_Sub18_1.method18261(this.aClass554Array3[local57].anInt5319 * 601549465, 192289221);
-				if (local83.aBoolean881 && local83.anInt5949 * 1477426425 != -1 && ((Class263) Class32.aClass32_Sub17_23.method18261(local83.anInt5949 * 1477426425, 1458740450)).anInt3876 * -1511529595 == 1) {
+				@Pc(83) Class697 local83 = (Class697) Class501.aClass32_Sub18_1.get(this.aClass554Array3[local57].anInt5319 * 601549465, 192289221);
+				if (local83.aBoolean881 && local83.anInt5949 * 1477426425 != -1 && ((Class263) Class32.aClass32_Sub17_23.get(local83.anInt5949 * 1477426425, 1458740450)).anInt3876 * -1511529595 == 1) {
 					this.aClass554Array3[local57].aClass19_7.method23566(-1, 449293107);
 					this.aClass554Array3[local57].anInt5319 = 1020147287;
 				}
@@ -797,8 +797,8 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 		@Pc(57) int local57;
 		for (local57 = 0; local57 < this.aClass554Array3.length; local57++) {
 			if (this.aClass554Array3[local57].anInt5319 * 601549465 != -1) {
-				@Pc(83) Class697 local83 = (Class697) Class501.aClass32_Sub18_1.method18261(this.aClass554Array3[local57].anInt5319 * 601549465, 1282002512);
-				if (local83.aBoolean881 && local83.anInt5949 * 1477426425 != -1 && ((Class263) Class32.aClass32_Sub17_23.method18261(local83.anInt5949 * 1477426425, 315734678)).anInt3876 * -1511529595 == 1) {
+				@Pc(83) Class697 local83 = (Class697) Class501.aClass32_Sub18_1.get(this.aClass554Array3[local57].anInt5319 * 601549465, 1282002512);
+				if (local83.aBoolean881 && local83.anInt5949 * 1477426425 != -1 && ((Class263) Class32.aClass32_Sub17_23.get(local83.anInt5949 * 1477426425, 315734678)).anInt3876 * -1511529595 == 1) {
 					this.aClass554Array3[local57].aClass19_7.method23566(-1, 2132025543);
 					this.aClass554Array3[local57].anInt5319 = 1020147287;
 				}
@@ -857,8 +857,8 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 		@Pc(57) int local57;
 		for (local57 = 0; local57 < this.aClass554Array3.length; local57++) {
 			if (this.aClass554Array3[local57].anInt5319 * 601549465 != -1) {
-				@Pc(83) Class697 local83 = (Class697) Class501.aClass32_Sub18_1.method18261(this.aClass554Array3[local57].anInt5319 * 601549465, -1778686446);
-				if (local83.aBoolean881 && local83.anInt5949 * 1477426425 != -1 && ((Class263) Class32.aClass32_Sub17_23.method18261(local83.anInt5949 * 1477426425, -1535807356)).anInt3876 * -1511529595 == 1) {
+				@Pc(83) Class697 local83 = (Class697) Class501.aClass32_Sub18_1.get(this.aClass554Array3[local57].anInt5319 * 601549465, -1778686446);
+				if (local83.aBoolean881 && local83.anInt5949 * 1477426425 != -1 && ((Class263) Class32.aClass32_Sub17_23.get(local83.anInt5949 * 1477426425, -1535807356)).anInt3876 * -1511529595 == 1) {
 					this.aClass554Array3[local57].aClass19_7.method23566(-1, 2109468995);
 					this.aClass554Array3[local57].anInt5319 = 1020147287;
 				}
@@ -917,8 +917,8 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 		@Pc(57) int local57;
 		for (local57 = 0; local57 < this.aClass554Array3.length; local57++) {
 			if (this.aClass554Array3[local57].anInt5319 * 601549465 != -1) {
-				@Pc(83) Class697 local83 = (Class697) Class501.aClass32_Sub18_1.method18261(this.aClass554Array3[local57].anInt5319 * 601549465, 683976343);
-				if (local83.aBoolean881 && local83.anInt5949 * 1477426425 != -1 && ((Class263) Class32.aClass32_Sub17_23.method18261(local83.anInt5949 * 1477426425, -640853206)).anInt3876 * -1511529595 == 1) {
+				@Pc(83) Class697 local83 = (Class697) Class501.aClass32_Sub18_1.get(this.aClass554Array3[local57].anInt5319 * 601549465, 683976343);
+				if (local83.aBoolean881 && local83.anInt5949 * 1477426425 != -1 && ((Class263) Class32.aClass32_Sub17_23.get(local83.anInt5949 * 1477426425, -640853206)).anInt3876 * -1511529595 == 1) {
 					this.aClass554Array3[local57].aClass19_7.method23566(-1, 1761663402);
 					this.aClass554Array3[local57].anInt5319 = 1020147287;
 				}
@@ -950,8 +950,8 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 		@Pc(45) int local45;
 		for (local45 = 0; local45 < this.aClass554Array3.length; local45++) {
 			if (this.aClass554Array3[local45].anInt5319 * 601549465 != -1) {
-				@Pc(71) Class697 local71 = (Class697) Class501.aClass32_Sub18_1.method18261(this.aClass554Array3[local45].anInt5319 * 601549465, 1964285781);
-				if (local71.aBoolean881 && local71.anInt5949 * 1477426425 != -1 && ((Class263) Class32.aClass32_Sub17_23.method18261(local71.anInt5949 * 1477426425, -309386659)).anInt3876 * -1511529595 == 1) {
+				@Pc(71) Class697 local71 = (Class697) Class501.aClass32_Sub18_1.get(this.aClass554Array3[local45].anInt5319 * 601549465, 1964285781);
+				if (local71.aBoolean881 && local71.anInt5949 * 1477426425 != -1 && ((Class263) Class32.aClass32_Sub17_23.get(local71.anInt5949 * 1477426425, -309386659)).anInt3876 * -1511529595 == 1) {
 					this.aClass554Array3[local45].aClass19_7.method23566(-1, 912807568);
 					this.aClass554Array3[local45].anInt5319 = 1020147287;
 				}
@@ -1022,7 +1022,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 			return this.anInt2646 * -1509096373;
 		}
 		if (this.aClass336_1.anIntArray412 != null) {
-			@Pc(22) Class336 local22 = this.aClass336_1.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 27819);
+			@Pc(22) Class336 local22 = this.aClass336_1.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 27819);
 			if (local22 != null && local22.anInt4180 * 1511832251 != -1) {
 				return local22.anInt4180 * 1511832251;
 			}
@@ -1037,7 +1037,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 			return this.anInt2646 * -1509096373;
 		}
 		if (this.aClass336_1.anIntArray412 != null) {
-			@Pc(22) Class336 local22 = this.aClass336_1.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 8758);
+			@Pc(22) Class336 local22 = this.aClass336_1.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 8758);
 			if (local22 != null && local22.anInt4180 * 1511832251 != -1) {
 				return local22.anInt4180 * 1511832251;
 			}
@@ -1052,7 +1052,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 			return this.anInt2646 * -1509096373;
 		}
 		if (this.aClass336_1.anIntArray412 != null) {
-			@Pc(22) Class336 local22 = this.aClass336_1.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 20004);
+			@Pc(22) Class336 local22 = this.aClass336_1.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 20004);
 			if (local22 != null && local22.anInt4180 * 1511832251 != -1) {
 				return local22.anInt4180 * 1511832251;
 			}
@@ -1067,7 +1067,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 			return this.anInt2646 * -1509096373;
 		}
 		if (this.aClass336_1.anIntArray412 != null) {
-			@Pc(22) Class336 local22 = this.aClass336_1.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 21450);
+			@Pc(22) Class336 local22 = this.aClass336_1.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 21450);
 			if (local22 != null && local22.anInt4180 * 1511832251 != -1) {
 				return local22.anInt4180 * 1511832251;
 			}
@@ -1079,7 +1079,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 	@Override
 	public int method20044() {
 		if (this.aClass336_1.anIntArray412 != null) {
-			@Pc(11) Class336 local11 = this.aClass336_1.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 27471);
+			@Pc(11) Class336 local11 = this.aClass336_1.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 27471);
 			if (local11 != null && local11.anInt4156 * -1610600657 != -1) {
 				return local11.anInt4156 * -1610600657;
 			}
@@ -1091,7 +1091,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 	@Override
 	public int method20032(@OriginalArg(0) byte arg0) {
 		if (this.aClass336_1.anIntArray412 != null) {
-			@Pc(11) Class336 local11 = this.aClass336_1.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 10048);
+			@Pc(11) Class336 local11 = this.aClass336_1.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 10048);
 			if (local11 != null && local11.anInt4156 * -1610600657 != -1) {
 				return local11.anInt4156 * -1610600657;
 			}
@@ -1103,7 +1103,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 	@Override
 	public int method24272() {
 		if (this.aClass336_1.anIntArray412 != null) {
-			@Pc(10) Class336 local10 = this.aClass336_1.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 17542);
+			@Pc(10) Class336 local10 = this.aClass336_1.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 17542);
 			if (local10 != null && local10.anInt4176 * -962798449 != -1) {
 				return local10.anInt4176 * -962798449;
 			}
@@ -1115,7 +1115,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 	@Override
 	public int method24271() {
 		if (this.aClass336_1.anIntArray412 != null) {
-			@Pc(10) Class336 local10 = this.aClass336_1.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 11514);
+			@Pc(10) Class336 local10 = this.aClass336_1.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 11514);
 			if (local10 != null && local10.anInt4176 * -962798449 != -1) {
 				return local10.anInt4176 * -962798449;
 			}
@@ -1127,7 +1127,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 	@Override
 	public int method24270(@OriginalArg(0) int arg0) {
 		if (this.aClass336_1.anIntArray412 != null) {
-			@Pc(10) Class336 local10 = this.aClass336_1.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 9212);
+			@Pc(10) Class336 local10 = this.aClass336_1.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 9212);
 			if (local10 != null && local10.anInt4176 * -962798449 != -1) {
 				return local10.anInt4176 * -962798449;
 			}
@@ -1139,7 +1139,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 	@Override
 	public int method24273() {
 		if (this.aClass336_1.anIntArray412 != null) {
-			@Pc(10) Class336 local10 = this.aClass336_1.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 16959);
+			@Pc(10) Class336 local10 = this.aClass336_1.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 16959);
 			if (local10 != null && local10.anInt4176 * -962798449 != -1) {
 				return local10.anInt4176 * -962798449;
 			}
@@ -1544,25 +1544,25 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 	@OriginalMember(owner = "client!aqc", name = "gt", descriptor = "()Z", line = 461)
 	@Override
 	public boolean method24260() {
-		return this.aClass336_1.anIntArray412 == null || this.aClass336_1.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 32438) != null;
+		return this.aClass336_1.anIntArray412 == null || this.aClass336_1.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 32438) != null;
 	}
 
 	@OriginalMember(owner = "client!aqc", name = "gh", descriptor = "()Z", line = 461)
 	@Override
 	public boolean method24261() {
-		return this.aClass336_1.anIntArray412 == null || this.aClass336_1.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 27781) != null;
+		return this.aClass336_1.anIntArray412 == null || this.aClass336_1.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 27781) != null;
 	}
 
 	@OriginalMember(owner = "client!aqc", name = "gc", descriptor = "(I)Z", line = 461)
 	@Override
 	public boolean method24259(@OriginalArg(0) int arg0) {
-		return this.aClass336_1.anIntArray412 == null || this.aClass336_1.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 12899) != null;
+		return this.aClass336_1.anIntArray412 == null || this.aClass336_1.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 12899) != null;
 	}
 
 	@OriginalMember(owner = "client!aqc", name = "gs", descriptor = "()Z", line = 461)
 	@Override
 	public boolean method24262() {
-		return this.aClass336_1.anIntArray412 == null || this.aClass336_1.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 23921) != null;
+		return this.aClass336_1.anIntArray412 == null || this.aClass336_1.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 23921) != null;
 	}
 
 	@OriginalMember(owner = "client!aqc", name = "bo", descriptor = "(Lclient!yf;I)V", line = 5197)

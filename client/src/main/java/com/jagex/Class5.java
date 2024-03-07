@@ -1326,7 +1326,7 @@ public class Class5 {
 	@OriginalMember(owner = "client!aac", name = "agn", descriptor = "(Lclient!yf;I)V", line = 10713)
 	static final void method80(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		@Pc(18) Class47 local18 = (Class47) Class277.aClass32_Sub12_1.method18261(local12, 1561296549);
+		@Pc(18) Class47 local18 = (Class47) Class277.aClass32_Sub12_1.get(local12, 1561296549);
 		if (local18.anInt163 * 1265448031 == -1 && local18.anInt171 * -17795249 >= 0) {
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local18.anInt171 * -17795249;
 		} else {

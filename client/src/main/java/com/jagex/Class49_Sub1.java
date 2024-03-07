@@ -534,7 +534,7 @@ public class Class49_Sub1 extends Class49 {
 		arg0.anInt5891 -= -1915563430;
 		@Pc(13) int local13 = arg0.anIntArray519[arg0.anInt5891 * -1497248091];
 		@Pc(23) int local23 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 1];
-		@Pc(29) Class39 local29 = (Class39) Class19.aClass32_Sub7_5.method18261(local13, 1759496810);
+		@Pc(29) Class39 local29 = (Class39) Class19.aClass32_Sub7_5.get(local13, 1759496810);
 		if (local29.aClass519_1 != Class519.aClass519_7) {
 		}
 		arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = local29.method749(local23, -1899126758);

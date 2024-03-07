@@ -95,7 +95,7 @@ public class Class12 {
 		arg0.anInt4045 = local13 * 678873919;
 		arg0.anInt4046 = local23 * -284330987;
 		arg0.aBoolean689 = arg2;
-		@Pc(82) Class47 local82 = (Class47) Class277.aClass32_Sub12_1.method18261(local13, 1227903220);
+		@Pc(82) Class47 local82 = (Class47) Class277.aClass32_Sub12_1.get(local13, 1227903220);
 		arg0.anInt4006 = local82.anInt145 * 1241028479;
 		arg0.anInt4007 = local82.anInt138 * 1321409063;
 		arg0.anInt4044 = local82.anInt147 * -1708793689;
@@ -119,7 +119,7 @@ public class Class12 {
 		if (local23 == -1) {
 			throw new RuntimeException();
 		}
-		@Pc(46) Class39 local46 = (Class39) Class19.aClass32_Sub7_5.method18261(local23, -1108907654);
+		@Pc(46) Class39 local46 = (Class39) Class19.aClass32_Sub7_5.get(local23, -1108907654);
 		if (local46.aClass519_1.getId() != local13) {
 			throw new RuntimeException();
 		}

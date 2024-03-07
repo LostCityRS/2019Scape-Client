@@ -107,7 +107,7 @@ public class Class658 {
 	@OriginalMember(owner = "client!xg", name = "n", descriptor = "(IILclient!aov;I)V", line = 63)
 	public void method32761(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class32_Sub19 arg2, @OriginalArg(3) int arg3) {
 		@Pc(3) int local3 = anIntArray513[arg0];
-		if (arg2.method18261(arg1, -2057102422) != null) {
+		if (arg2.get(arg1, -2057102422) != null) {
 			this.anIntArray510[local3] = arg1 | Integer.MIN_VALUE;
 			this.method32772(-438814159);
 		}
@@ -116,7 +116,7 @@ public class Class658 {
 	@OriginalMember(owner = "client!xg", name = "y", descriptor = "(IILclient!aov;)V", line = 63)
 	public void method32762(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class32_Sub19 arg2) {
 		@Pc(3) int local3 = anIntArray513[arg0];
-		if (arg2.method18261(arg1, 1443277048) != null) {
+		if (arg2.get(arg1, 1443277048) != null) {
 			this.anIntArray510[local3] = arg1 | Integer.MIN_VALUE;
 			this.method32772(-450129235);
 		}
@@ -162,7 +162,7 @@ public class Class658 {
 	public void method32769(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class32_Sub12 arg2, @OriginalArg(3) byte arg3) {
 		if (arg1 == -1) {
 			this.anIntArray510[arg0] = 0;
-		} else if (arg2.method18261(arg1, 496573574) == null) {
+		} else if (arg2.get(arg1, 496573574) == null) {
 			return;
 		} else {
 			this.anIntArray510[arg0] = arg1 | 0x40000000;
@@ -174,7 +174,7 @@ public class Class658 {
 	public void method32770(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class32_Sub12 arg2) {
 		if (arg1 == -1) {
 			this.anIntArray510[arg0] = 0;
-		} else if (arg2.method18261(arg1, -494405897) == null) {
+		} else if (arg2.get(arg1, -494405897) == null) {
 			return;
 		} else {
 			this.anIntArray510[arg0] = arg1 | 0x40000000;
@@ -186,7 +186,7 @@ public class Class658 {
 	public void method32771(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class32_Sub12 arg2) {
 		if (arg1 == -1) {
 			this.anIntArray510[arg0] = 0;
-		} else if (arg2.method18261(arg1, 2130028694) == null) {
+		} else if (arg2.get(arg1, 2130028694) == null) {
 			return;
 		} else {
 			this.anIntArray510[arg0] = arg1 | 0x40000000;
@@ -321,7 +321,7 @@ public class Class658 {
 	@OriginalMember(owner = "client!xg", name = "u", descriptor = "(Lclient!dh;ILclient!aof;Lclient!aov;Lclient!aod;Lclient!aon;Lclient!em;Lclient!ep;Lclient!aaq;Lclient!aaq;[Lclient!aaq;[IIZLclient!wy;B)Lclient!do;", line = 154)
 	public Class109 method32774(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class32_Sub5 arg2, @OriginalArg(3) Class32_Sub19 arg3, @OriginalArg(4) Class32_Sub3 arg4, @OriginalArg(5) Class32_Sub12 arg5, @OriginalArg(6) Interface21 arg6, @OriginalArg(7) Interface23 arg7, @OriginalArg(8) Class19 arg8, @OriginalArg(9) Class19 arg9, @OriginalArg(10) Class19[] arg10, @OriginalArg(11) int[] arg11, @OriginalArg(12) int arg12, @OriginalArg(13) boolean arg13, @OriginalArg(14) Class651 arg14, @OriginalArg(15) byte arg15) {
 		if (this.anInt5817 * 1405397749 != -1) {
-			return ((Class336) arg4.method18261(this.anInt5817 * 1405397749, 315365327)).method27421(arg0, arg1, arg2, arg6, arg7, arg8, arg9, arg10, arg11, arg12, null, -1872411274);
+			return ((Class336) arg4.get(this.anInt5817 * 1405397749, 315365327)).method27421(arg0, arg1, arg2, arg6, arg7, arg8, arg9, arg10, arg11, arg12, null, -1872411274);
 		}
 		@Pc(29) int local29 = arg1;
 		@Pc(34) long local34 = this.aLong300 * 3247757972139510557L;
@@ -402,7 +402,7 @@ public class Class658 {
 		}
 		@Pc(348) Class622 local348 = null;
 		if (-1790369147 * this.anInt5816 != -1) {
-			local348 = (Class622) arg2.method18261(this.anInt5816 * -1790369147, 1332928259);
+			local348 = (Class622) arg2.get(this.anInt5816 * -1790369147, 1332928259);
 		}
 		@Pc(385) int local385;
 		@Pc(393) int local393;
@@ -437,12 +437,12 @@ public class Class658 {
 								if (!local581 && this.aClass48Array1 != null && this.aClass48Array1[local393] != null) {
 									local567 = this.aClass48Array1[local393];
 								}
-								local614 = ((Class47) arg5.method18261(local565 & 0x3FFFFFFF, -554368952)).method939(this.aBoolean862, local567, -1032805468);
+								local614 = ((Class47) arg5.get(local565 & 0x3FFFFFFF, -554368952)).method939(this.aBoolean862, local567, -1032805468);
 								if (local614 != null) {
 									local555[local393] = local614;
 								}
 							} else if ((local565 & Integer.MIN_VALUE) != 0) {
-								local614 = ((Class369) arg3.method18261(local565 & 0x3FFFFFFF, 479189538)).method27982(109093879);
+								local614 = ((Class369) arg3.get(local565 & 0x3FFFFFFF, 479189538)).method27982(109093879);
 								if (local614 != null) {
 									local555[local393] = local614;
 								}
@@ -535,10 +535,10 @@ public class Class658 {
 					if (!local397 && this.aClass48Array1 != null && this.aClass48Array1[local385] != null) {
 						local395 = this.aClass48Array1[local385];
 					}
-					if (!((Class47) arg5.method18261(local393 & 0x3FFFFFFF, -2122313286)).method938(this.aBoolean862, local395, 488278399)) {
+					if (!((Class47) arg5.get(local393 & 0x3FFFFFFF, -2122313286)).method938(this.aBoolean862, local395, 488278399)) {
 						local383 = true;
 					}
-				} else if ((local393 & Integer.MIN_VALUE) != 0 && !((Class369) arg3.method18261(local393 & 0x3FFFFFFF, 1130418803)).method27980((byte) 3)) {
+				} else if ((local393 & Integer.MIN_VALUE) != 0 && !((Class369) arg3.get(local393 & 0x3FFFFFFF, 1130418803)).method27980((byte) 3)) {
 					local383 = true;
 				}
 				local385++;
@@ -599,7 +599,7 @@ public class Class658 {
 	@OriginalMember(owner = "client!xg", name = "i", descriptor = "(Lclient!dh;ILclient!aof;Lclient!aov;Lclient!aod;Lclient!aon;Lclient!em;Lclient!ep;Lclient!aaq;Lclient!aaq;[Lclient!aaq;[IIZLclient!wy;)Lclient!do;", line = 154)
 	public Class109 method32775(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class32_Sub5 arg2, @OriginalArg(3) Class32_Sub19 arg3, @OriginalArg(4) Class32_Sub3 arg4, @OriginalArg(5) Class32_Sub12 arg5, @OriginalArg(6) Interface21 arg6, @OriginalArg(7) Interface23 arg7, @OriginalArg(8) Class19 arg8, @OriginalArg(9) Class19 arg9, @OriginalArg(10) Class19[] arg10, @OriginalArg(11) int[] arg11, @OriginalArg(12) int arg12, @OriginalArg(13) boolean arg13, @OriginalArg(14) Class651 arg14) {
 		if (this.anInt5817 * 1405397749 != -1) {
-			return ((Class336) arg4.method18261(this.anInt5817 * 1405397749, 1601653993)).method27421(arg0, arg1, arg2, arg6, arg7, arg8, arg9, arg10, arg11, arg12, null, -1872411274);
+			return ((Class336) arg4.get(this.anInt5817 * 1405397749, 1601653993)).method27421(arg0, arg1, arg2, arg6, arg7, arg8, arg9, arg10, arg11, arg12, null, -1872411274);
 		}
 		@Pc(29) int local29 = arg1;
 		@Pc(34) long local34 = this.aLong300 * 3247757972139510557L;
@@ -680,7 +680,7 @@ public class Class658 {
 		}
 		@Pc(348) Class622 local348 = null;
 		if (-1790369147 * this.anInt5816 != -1) {
-			local348 = (Class622) arg2.method18261(this.anInt5816 * -1790369147, 902973076);
+			local348 = (Class622) arg2.get(this.anInt5816 * -1790369147, 902973076);
 		}
 		@Pc(385) int local385;
 		@Pc(393) int local393;
@@ -715,12 +715,12 @@ public class Class658 {
 								if (!local581 && this.aClass48Array1 != null && this.aClass48Array1[local393] != null) {
 									local567 = this.aClass48Array1[local393];
 								}
-								local614 = ((Class47) arg5.method18261(local565 & 0x3FFFFFFF, 1565132104)).method939(this.aBoolean862, local567, -854931958);
+								local614 = ((Class47) arg5.get(local565 & 0x3FFFFFFF, 1565132104)).method939(this.aBoolean862, local567, -854931958);
 								if (local614 != null) {
 									local555[local393] = local614;
 								}
 							} else if ((local565 & Integer.MIN_VALUE) != 0) {
-								local614 = ((Class369) arg3.method18261(local565 & 0x3FFFFFFF, 1074529241)).method27982(976353450);
+								local614 = ((Class369) arg3.get(local565 & 0x3FFFFFFF, 1074529241)).method27982(976353450);
 								if (local614 != null) {
 									local555[local393] = local614;
 								}
@@ -813,10 +813,10 @@ public class Class658 {
 					if (!local397 && this.aClass48Array1 != null && this.aClass48Array1[local385] != null) {
 						local395 = this.aClass48Array1[local385];
 					}
-					if (!((Class47) arg5.method18261(local393 & 0x3FFFFFFF, 1758475538)).method938(this.aBoolean862, local395, 1914995837)) {
+					if (!((Class47) arg5.get(local393 & 0x3FFFFFFF, 1758475538)).method938(this.aBoolean862, local395, 1914995837)) {
 						local383 = true;
 					}
-				} else if ((local393 & Integer.MIN_VALUE) != 0 && !((Class369) arg3.method18261(local393 & 0x3FFFFFFF, 1624383438)).method27980((byte) 3)) {
+				} else if ((local393 & Integer.MIN_VALUE) != 0 && !((Class369) arg3.get(local393 & 0x3FFFFFFF, 1624383438)).method27980((byte) 3)) {
 					local383 = true;
 				}
 				local385++;
@@ -877,7 +877,7 @@ public class Class658 {
 	@OriginalMember(owner = "client!xg", name = "z", descriptor = "(Lclient!dh;ILclient!aov;Lclient!aod;Lclient!aon;Lclient!em;Lclient!ep;Lclient!aaq;B)Lclient!do;", line = 372)
 	public Class109 method32776(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class32_Sub19 arg2, @OriginalArg(3) Class32_Sub3 arg3, @OriginalArg(4) Class32_Sub12 arg4, @OriginalArg(5) Interface21 arg5, @OriginalArg(6) Interface23 arg6, @OriginalArg(7) Class19 arg7, @OriginalArg(8) byte arg8) {
 		if (this.anInt5817 * 1405397749 != -1) {
-			return ((Class336) arg3.method18261(this.anInt5817 * 1405397749, -1224011498)).method27426(arg0, arg1, arg5, arg6, arg7, null, (short) 19018);
+			return ((Class336) arg3.get(this.anInt5817 * 1405397749, -1224011498)).method27426(arg0, arg1, arg5, arg6, arg7, null, (short) 19018);
 		}
 		@Pc(32) int local32 = arg7 == null ? arg1 : arg1 | arg7.method23585(-1891973119);
 		@Pc(35) Class240 local35 = aClass240_92;
@@ -898,10 +898,10 @@ public class Class658 {
 					if (this.aClass48Array1 != null && this.aClass48Array1[local74] != null) {
 						local86 = this.aClass48Array1[local74];
 					}
-					if (!((Class47) arg4.method18261(local84 & 0x3FFFFFFF, 977328260)).method940(this.aBoolean862, local86, 873246423)) {
+					if (!((Class47) arg4.get(local84 & 0x3FFFFFFF, 977328260)).method940(this.aBoolean862, local86, 873246423)) {
 						local72 = true;
 					}
-				} else if ((local84 & Integer.MIN_VALUE) != 0 && !((Class369) arg2.method18261(local84 & 0x3FFFFFFF, -2060602475)).method27985(-717643915)) {
+				} else if ((local84 & Integer.MIN_VALUE) != 0 && !((Class369) arg2.get(local84 & 0x3FFFFFFF, -2060602475)).method27985(-717643915)) {
 					local72 = true;
 				}
 			}
@@ -919,12 +919,12 @@ public class Class658 {
 					if (this.aClass48Array1 != null && this.aClass48Array1[local152] != null) {
 						local164 = this.aClass48Array1[local152];
 					}
-					local195 = ((Class47) arg4.method18261(local162 & 0x3FFFFFFF, 1321523399)).method941(this.aBoolean862, local164, (byte) -44);
+					local195 = ((Class47) arg4.get(local162 & 0x3FFFFFFF, 1321523399)).method941(this.aBoolean862, local164, (byte) -44);
 					if (local195 != null) {
 						local148[local84++] = local195;
 					}
 				} else if ((local162 & Integer.MIN_VALUE) != 0) {
-					local195 = ((Class369) arg2.method18261(local162 & 0x3FFFFFFF, -782220012)).method27987(-265979979);
+					local195 = ((Class369) arg2.get(local162 & 0x3FFFFFFF, -782220012)).method27987(-265979979);
 					if (local195 != null) {
 						local148[local84++] = local195;
 					}
@@ -966,7 +966,7 @@ public class Class658 {
 	@OriginalMember(owner = "client!xg", name = "j", descriptor = "(Lclient!dh;ILclient!aov;Lclient!aod;Lclient!aon;Lclient!em;Lclient!ep;Lclient!aaq;)Lclient!do;", line = 372)
 	public Class109 method32777(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class32_Sub19 arg2, @OriginalArg(3) Class32_Sub3 arg3, @OriginalArg(4) Class32_Sub12 arg4, @OriginalArg(5) Interface21 arg5, @OriginalArg(6) Interface23 arg6, @OriginalArg(7) Class19 arg7) {
 		if (this.anInt5817 * 1405397749 != -1) {
-			return ((Class336) arg3.method18261(this.anInt5817 * 1405397749, -106965983)).method27426(arg0, arg1, arg5, arg6, arg7, null, (short) -13900);
+			return ((Class336) arg3.get(this.anInt5817 * 1405397749, -106965983)).method27426(arg0, arg1, arg5, arg6, arg7, null, (short) -13900);
 		}
 		@Pc(32) int local32 = arg7 == null ? arg1 : arg1 | arg7.method23585(-1985328760);
 		@Pc(35) Class240 local35 = aClass240_92;
@@ -987,10 +987,10 @@ public class Class658 {
 					if (this.aClass48Array1 != null && this.aClass48Array1[local74] != null) {
 						local86 = this.aClass48Array1[local74];
 					}
-					if (!((Class47) arg4.method18261(local84 & 0x3FFFFFFF, -278648908)).method940(this.aBoolean862, local86, 1464972472)) {
+					if (!((Class47) arg4.get(local84 & 0x3FFFFFFF, -278648908)).method940(this.aBoolean862, local86, 1464972472)) {
 						local72 = true;
 					}
-				} else if ((local84 & Integer.MIN_VALUE) != 0 && !((Class369) arg2.method18261(local84 & 0x3FFFFFFF, 1966297002)).method27985(-717643915)) {
+				} else if ((local84 & Integer.MIN_VALUE) != 0 && !((Class369) arg2.get(local84 & 0x3FFFFFFF, 1966297002)).method27985(-717643915)) {
 					local72 = true;
 				}
 			}
@@ -1008,12 +1008,12 @@ public class Class658 {
 					if (this.aClass48Array1 != null && this.aClass48Array1[local152] != null) {
 						local164 = this.aClass48Array1[local152];
 					}
-					local195 = ((Class47) arg4.method18261(local162 & 0x3FFFFFFF, -1721940041)).method941(this.aBoolean862, local164, (byte) -54);
+					local195 = ((Class47) arg4.get(local162 & 0x3FFFFFFF, -1721940041)).method941(this.aBoolean862, local164, (byte) -54);
 					if (local195 != null) {
 						local148[local84++] = local195;
 					}
 				} else if ((local162 & Integer.MIN_VALUE) != 0) {
-					local195 = ((Class369) arg2.method18261(local162 & 0x3FFFFFFF, -1927994518)).method27987(295356555);
+					local195 = ((Class369) arg2.get(local162 & 0x3FFFFFFF, -1927994518)).method27987(295356555);
 					if (local195 != null) {
 						local148[local84++] = local195;
 					}
@@ -1055,7 +1055,7 @@ public class Class658 {
 	@OriginalMember(owner = "client!xg", name = "t", descriptor = "(Lclient!dh;ILclient!aov;Lclient!aod;Lclient!aon;Lclient!em;Lclient!ep;Lclient!aaq;)Lclient!do;", line = 372)
 	public Class109 method32778(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class32_Sub19 arg2, @OriginalArg(3) Class32_Sub3 arg3, @OriginalArg(4) Class32_Sub12 arg4, @OriginalArg(5) Interface21 arg5, @OriginalArg(6) Interface23 arg6, @OriginalArg(7) Class19 arg7) {
 		if (this.anInt5817 * 1405397749 != -1) {
-			return ((Class336) arg3.method18261(this.anInt5817 * 1405397749, -679009246)).method27426(arg0, arg1, arg5, arg6, arg7, null, (short) -17607);
+			return ((Class336) arg3.get(this.anInt5817 * 1405397749, -679009246)).method27426(arg0, arg1, arg5, arg6, arg7, null, (short) -17607);
 		}
 		@Pc(32) int local32 = arg7 == null ? arg1 : arg1 | arg7.method23585(-1968224571);
 		@Pc(35) Class240 local35 = aClass240_92;
@@ -1076,10 +1076,10 @@ public class Class658 {
 					if (this.aClass48Array1 != null && this.aClass48Array1[local74] != null) {
 						local86 = this.aClass48Array1[local74];
 					}
-					if (!((Class47) arg4.method18261(local84 & 0x3FFFFFFF, 1479782268)).method940(this.aBoolean862, local86, 278777939)) {
+					if (!((Class47) arg4.get(local84 & 0x3FFFFFFF, 1479782268)).method940(this.aBoolean862, local86, 278777939)) {
 						local72 = true;
 					}
-				} else if ((local84 & Integer.MIN_VALUE) != 0 && !((Class369) arg2.method18261(local84 & 0x3FFFFFFF, 1926117039)).method27985(-717643915)) {
+				} else if ((local84 & Integer.MIN_VALUE) != 0 && !((Class369) arg2.get(local84 & 0x3FFFFFFF, 1926117039)).method27985(-717643915)) {
 					local72 = true;
 				}
 			}
@@ -1097,12 +1097,12 @@ public class Class658 {
 					if (this.aClass48Array1 != null && this.aClass48Array1[local152] != null) {
 						local164 = this.aClass48Array1[local152];
 					}
-					local195 = ((Class47) arg4.method18261(local162 & 0x3FFFFFFF, -1692131171)).method941(this.aBoolean862, local164, (byte) -41);
+					local195 = ((Class47) arg4.get(local162 & 0x3FFFFFFF, -1692131171)).method941(this.aBoolean862, local164, (byte) -41);
 					if (local195 != null) {
 						local148[local84++] = local195;
 					}
 				} else if ((local162 & Integer.MIN_VALUE) != 0) {
-					local195 = ((Class369) arg2.method18261(local162 & 0x3FFFFFFF, -504942304)).method27987(4397118);
+					local195 = ((Class369) arg2.get(local162 & 0x3FFFFFFF, -504942304)).method27987(4397118);
 					if (local195 != null) {
 						local148[local84++] = local195;
 					}
@@ -1156,18 +1156,18 @@ public class Class658 {
 			}
 			@Pc(63) Class231[] local63 = new Class231[3];
 			@Pc(65) int local65 = 0;
-			if (!((Class369) arg2.method18261(arg5, -1960117957)).method27985(-717643915) || !((Class369) arg2.method18261(arg6, 1126814929)).method27985(-717643915) || !((Class369) arg2.method18261(arg7, -345367678)).method27985(-717643915)) {
+			if (!((Class369) arg2.get(arg5, -1960117957)).method27985(-717643915) || !((Class369) arg2.get(arg6, 1126814929)).method27985(-717643915) || !((Class369) arg2.get(arg7, -345367678)).method27985(-717643915)) {
 				return null;
 			}
-			@Pc(97) Class231 local97 = ((Class369) arg2.method18261(arg5, 651670343)).method27987(600863545);
+			@Pc(97) Class231 local97 = ((Class369) arg2.get(arg5, 651670343)).method27987(600863545);
 			if (local97 != null) {
 				local63[local65++] = local97;
 			}
-			local97 = ((Class369) arg2.method18261(arg6, 1030448243)).method27987(-187612889);
+			local97 = ((Class369) arg2.get(arg6, 1030448243)).method27987(-187612889);
 			if (local97 != null) {
 				local63[local65++] = local97;
 			}
-			local97 = ((Class369) arg2.method18261(arg7, 1208248253)).method27987(1418256729);
+			local97 = ((Class369) arg2.get(arg7, 1208248253)).method27987(1418256729);
 			if (local97 != null) {
 				local63[local65++] = local97;
 			}
@@ -1220,18 +1220,18 @@ public class Class658 {
 			}
 			@Pc(63) Class231[] local63 = new Class231[3];
 			@Pc(65) int local65 = 0;
-			if (!((Class369) arg2.method18261(arg5, -1905770142)).method27985(-717643915) || !((Class369) arg2.method18261(arg6, -726700587)).method27985(-717643915) || !((Class369) arg2.method18261(arg7, -1248551005)).method27985(-717643915)) {
+			if (!((Class369) arg2.get(arg5, -1905770142)).method27985(-717643915) || !((Class369) arg2.get(arg6, -726700587)).method27985(-717643915) || !((Class369) arg2.get(arg7, -1248551005)).method27985(-717643915)) {
 				return null;
 			}
-			@Pc(97) Class231 local97 = ((Class369) arg2.method18261(arg5, -452903144)).method27987(424519211);
+			@Pc(97) Class231 local97 = ((Class369) arg2.get(arg5, -452903144)).method27987(424519211);
 			if (local97 != null) {
 				local63[local65++] = local97;
 			}
-			local97 = ((Class369) arg2.method18261(arg6, -396780475)).method27987(-501312008);
+			local97 = ((Class369) arg2.get(arg6, -396780475)).method27987(-501312008);
 			if (local97 != null) {
 				local63[local65++] = local97;
 			}
-			local97 = ((Class369) arg2.method18261(arg7, 1942954545)).method27987(1350823627);
+			local97 = ((Class369) arg2.get(arg7, 1942954545)).method27987(1350823627);
 			if (local97 != null) {
 				local63[local65++] = local97;
 			}
@@ -1284,18 +1284,18 @@ public class Class658 {
 			}
 			@Pc(63) Class231[] local63 = new Class231[3];
 			@Pc(65) int local65 = 0;
-			if (!((Class369) arg2.method18261(arg5, -2137004052)).method27985(-717643915) || !((Class369) arg2.method18261(arg6, -702686787)).method27985(-717643915) || !((Class369) arg2.method18261(arg7, -472064577)).method27985(-717643915)) {
+			if (!((Class369) arg2.get(arg5, -2137004052)).method27985(-717643915) || !((Class369) arg2.get(arg6, -702686787)).method27985(-717643915) || !((Class369) arg2.get(arg7, -472064577)).method27985(-717643915)) {
 				return null;
 			}
-			@Pc(97) Class231 local97 = ((Class369) arg2.method18261(arg5, 1215043749)).method27987(2089358961);
+			@Pc(97) Class231 local97 = ((Class369) arg2.get(arg5, 1215043749)).method27987(2089358961);
 			if (local97 != null) {
 				local63[local65++] = local97;
 			}
-			local97 = ((Class369) arg2.method18261(arg6, 425742272)).method27987(2081716358);
+			local97 = ((Class369) arg2.get(arg6, 425742272)).method27987(2081716358);
 			if (local97 != null) {
 				local63[local65++] = local97;
 			}
-			local97 = ((Class369) arg2.method18261(arg7, -2000068547)).method27987(1300804541);
+			local97 = ((Class369) arg2.get(arg7, -2000068547)).method27987(1300804541);
 			if (local97 != null) {
 				local63[local65++] = local97;
 			}
@@ -1348,18 +1348,18 @@ public class Class658 {
 			}
 			@Pc(63) Class231[] local63 = new Class231[3];
 			@Pc(65) int local65 = 0;
-			if (!((Class369) arg2.method18261(arg5, 41457871)).method27985(-717643915) || !((Class369) arg2.method18261(arg6, -867445175)).method27985(-717643915) || !((Class369) arg2.method18261(arg7, -2071280398)).method27985(-717643915)) {
+			if (!((Class369) arg2.get(arg5, 41457871)).method27985(-717643915) || !((Class369) arg2.get(arg6, -867445175)).method27985(-717643915) || !((Class369) arg2.get(arg7, -2071280398)).method27985(-717643915)) {
 				return null;
 			}
-			@Pc(97) Class231 local97 = ((Class369) arg2.method18261(arg5, 2023985425)).method27987(1011800592);
+			@Pc(97) Class231 local97 = ((Class369) arg2.get(arg5, 2023985425)).method27987(1011800592);
 			if (local97 != null) {
 				local63[local65++] = local97;
 			}
-			local97 = ((Class369) arg2.method18261(arg6, -18554275)).method27987(279869800);
+			local97 = ((Class369) arg2.get(arg6, -18554275)).method27987(279869800);
 			if (local97 != null) {
 				local63[local65++] = local97;
 			}
-			local97 = ((Class369) arg2.method18261(arg7, 1418229496)).method27987(-563476725);
+			local97 = ((Class369) arg2.get(arg7, 1418229496)).method27987(-563476725);
 			if (local97 != null) {
 				local63[local65++] = local97;
 			}

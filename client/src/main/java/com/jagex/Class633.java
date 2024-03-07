@@ -104,7 +104,7 @@ public class Class633 {
 
 	@OriginalMember(owner = "client!wc", name = "b", descriptor = "(Lclient!yf;S)V", line = 100)
 	static void method32305(@OriginalArg(0) Class681 arg0, @OriginalArg(1) short arg1) {
-		arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = ((Class347) Class288.aClass55_Sub2_1.method18261(arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 2], 590791293)).aStringArray26[arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1]];
+		arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = ((Class347) Class288.aClass55_Sub2_1.get(arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 2], 590791293)).aStringArray26[arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1]];
 		arg0.anInt5891 -= -1915563430;
 	}
 

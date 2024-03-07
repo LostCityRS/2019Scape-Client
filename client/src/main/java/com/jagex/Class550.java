@@ -186,7 +186,7 @@ public class Class550 {
 	}
 
 	@OriginalMember(owner = "client!sh", name = "kq", descriptor = "(Lclient!alu;IIIIIIIIII)V", line = 10996)
-	static final void method31033(@OriginalArg(0) Class93_Sub40 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10) {
+	static final void method31033(@OriginalArg(0) SubInterface arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10) {
 		if (!Class383.method28142(arg1, null, 633209048)) {
 			return;
 		}
@@ -207,7 +207,7 @@ public class Class550 {
 					if (local9.aClass312Array1 != null) {
 						method31034(local9.aClass312Array1, arg1, (byte) 41);
 					}
-					@Pc(35) Class93_Sub40 local35 = (Class93_Sub40) client.aClass16_22.method214((long) (local9.anInt3953 * -1549590237));
+					@Pc(35) SubInterface local35 = (SubInterface) client.aClass16_22.method214((long) (local9.anInt3953 * -1549590237));
 					if (local35 != null) {
 						Class189.method24583(local35.anInt3172 * 1220811495, arg1, 780494749);
 					}

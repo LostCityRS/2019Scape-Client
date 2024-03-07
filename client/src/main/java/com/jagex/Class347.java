@@ -827,7 +827,7 @@ public class Class347 implements Interface13 {
 		}
 		if (this.anIntArray419 != null) {
 			for (local16 = 0; local16 < this.anIntArray419.length; local16++) {
-				if (!((Class347) this.anInterface11_12.method18261(this.anIntArray419[local16], 2099280735)).method27592(arg0, -311349838)) {
+				if (!((Class347) this.anInterface11_12.get(this.anIntArray419[local16], 2099280735)).method27592(arg0, -311349838)) {
 					return false;
 				}
 			}
@@ -869,7 +869,7 @@ public class Class347 implements Interface13 {
 		}
 		if (this.anIntArray419 != null) {
 			for (local16 = 0; local16 < this.anIntArray419.length; local16++) {
-				if (!((Class347) this.anInterface11_12.method18261(this.anIntArray419[local16], 1683047922)).method27592(arg0, 1416347485)) {
+				if (!((Class347) this.anInterface11_12.get(this.anIntArray419[local16], 1683047922)).method27592(arg0, 1416347485)) {
 					return false;
 				}
 			}
@@ -911,7 +911,7 @@ public class Class347 implements Interface13 {
 		}
 		if (this.anIntArray419 != null) {
 			for (local16 = 0; local16 < this.anIntArray419.length; local16++) {
-				if (!((Class347) this.anInterface11_12.method18261(this.anIntArray419[local16], 169140713)).method27592(arg0, -282194740)) {
+				if (!((Class347) this.anInterface11_12.get(this.anIntArray419[local16], 169140713)).method27592(arg0, -282194740)) {
 					return false;
 				}
 			}
@@ -990,7 +990,7 @@ public class Class347 implements Interface13 {
 		if (this.anIntArray419 == null || arg1 < 0 || arg1 >= this.anIntArray419.length) {
 			return false;
 		} else {
-			return ((Class347) this.anInterface11_12.method18261(this.anIntArray419[arg1], -2072938598)).method27592(arg0, -936672811);
+			return ((Class347) this.anInterface11_12.get(this.anIntArray419[arg1], -2072938598)).method27592(arg0, -936672811);
 		}
 	}
 
@@ -999,7 +999,7 @@ public class Class347 implements Interface13 {
 		if (this.anIntArray419 == null || arg1 < 0 || arg1 >= this.anIntArray419.length) {
 			return false;
 		} else {
-			return ((Class347) this.anInterface11_12.method18261(this.anIntArray419[arg1], 902489864)).method27592(arg0, 505958932);
+			return ((Class347) this.anInterface11_12.get(this.anIntArray419[arg1], 902489864)).method27592(arg0, 505958932);
 		}
 	}
 
@@ -1008,7 +1008,7 @@ public class Class347 implements Interface13 {
 		if (this.anIntArray419 == null || arg1 < 0 || arg1 >= this.anIntArray419.length) {
 			return false;
 		} else {
-			return ((Class347) this.anInterface11_12.method18261(this.anIntArray419[arg1], 670655413)).method27592(arg0, 1249952222);
+			return ((Class347) this.anInterface11_12.get(this.anIntArray419[arg1], 670655413)).method27592(arg0, 1249952222);
 		}
 	}
 
@@ -1017,7 +1017,7 @@ public class Class347 implements Interface13 {
 		if (this.anIntArray419 == null || arg1 < 0 || arg1 >= this.anIntArray419.length) {
 			return false;
 		} else {
-			return ((Class347) this.anInterface11_12.method18261(this.anIntArray419[arg1], 272322942)).method27592(arg0, -432716996);
+			return ((Class347) this.anInterface11_12.get(this.anIntArray419[arg1], 272322942)).method27592(arg0, -432716996);
 		}
 	}
 

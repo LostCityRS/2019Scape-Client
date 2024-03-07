@@ -43,42 +43,42 @@ final class Class367 implements Interface21 {
 	@OriginalMember(owner = "client!js", name = "w", descriptor = "(Lclient!qe;II)Lclient!ec;", line = 526)
 	@Override
 	public Class108 method27954(@OriginalArg(0) Class138 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		return (Class108) ((Interface11) Class96.aMap9.get(arg0)).method18261(arg1, -2012268201);
+		return (Class108) ((Interface11) Class96.aMap9.get(arg0)).get(arg1, -2012268201);
 	}
 
 	@OriginalMember(owner = "client!js", name = "i", descriptor = "(Lclient!qe;I)Lclient!ec;", line = 526)
 	@Override
 	public Class108 method27952(@OriginalArg(0) Class138 arg0, @OriginalArg(1) int arg1) {
-		return (Class108) ((Interface11) Class96.aMap9.get(arg0)).method18261(arg1, -226156357);
+		return (Class108) ((Interface11) Class96.aMap9.get(arg0)).get(arg1, -226156357);
 	}
 
 	@OriginalMember(owner = "client!js", name = "j", descriptor = "(Lclient!qe;I)Lclient!ec;", line = 526)
 	@Override
 	public Class108 method27955(@OriginalArg(0) Class138 arg0, @OriginalArg(1) int arg1) {
-		return (Class108) ((Interface11) Class96.aMap9.get(arg0)).method18261(arg1, 1871499791);
+		return (Class108) ((Interface11) Class96.aMap9.get(arg0)).get(arg1, 1871499791);
 	}
 
 	@OriginalMember(owner = "client!js", name = "t", descriptor = "(Lclient!qe;I)Lclient!ec;", line = 526)
 	@Override
 	public Class108 method27956(@OriginalArg(0) Class138 arg0, @OriginalArg(1) int arg1) {
-		return (Class108) ((Interface11) Class96.aMap9.get(arg0)).method18261(arg1, 1419419634);
+		return (Class108) ((Interface11) Class96.aMap9.get(arg0)).get(arg1, 1419419634);
 	}
 
 	@OriginalMember(owner = "client!js", name = "ag", descriptor = "(I)Lclient!kh;", line = 530)
 	@Override
 	public Class379 method27958(@OriginalArg(0) int arg0) {
-		return (Class379) Class30.aClass32_Sub16_1.method18261(arg0, 835613564);
+		return (Class379) Class30.aClass32_Sub16_1.get(arg0, 835613564);
 	}
 
 	@OriginalMember(owner = "client!js", name = "ae", descriptor = "(I)Lclient!kh;", line = 530)
 	@Override
 	public Class379 method27957(@OriginalArg(0) int arg0) {
-		return (Class379) Class30.aClass32_Sub16_1.method18261(arg0, -165770305);
+		return (Class379) Class30.aClass32_Sub16_1.get(arg0, -165770305);
 	}
 
 	@OriginalMember(owner = "client!js", name = "l", descriptor = "(IB)Lclient!kh;", line = 530)
 	@Override
 	public Class379 method27953(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1) {
-		return (Class379) Class30.aClass32_Sub16_1.method18261(arg0, 746126493);
+		return (Class379) Class30.aClass32_Sub16_1.get(arg0, 746126493);
 	}
 }

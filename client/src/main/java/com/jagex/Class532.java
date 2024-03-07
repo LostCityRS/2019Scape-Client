@@ -2635,7 +2635,7 @@ public class Class532 {
 		for (local407 = (Class93_Sub8) Class93_Sub8.aClass22_18.method428((byte) 73); local407 != null; local407 = (Class93_Sub8) Class93_Sub8.aClass22_18.method442(1659946316)) {
 			local407.anInt1462 -= local11 * -1126729883;
 			local407.anInt1464 -= local23 * -89446595;
-			local435 = (Class610) this.aClass32_Sub14_9.method18261(local407.anInt1468 * -1430483277, 241316374);
+			local435 = (Class610) this.aClass32_Sub14_9.get(local407.anInt1468 * -1430483277, 241316374);
 			if ((local407.anInt1469 * 1312747191 & 0x1) == 0) {
 				local117 = local435.anInt5608 * 427800467;
 				local45 = local435.anInt5603 * -774442965;
@@ -2650,7 +2650,7 @@ public class Class532 {
 		for (local407 = (Class93_Sub8) Class93_Sub8.aClass22_19.method428((byte) 44); local407 != null; local407 = (Class93_Sub8) Class93_Sub8.aClass22_19.method442(385236094)) {
 			local407.anInt1462 -= local11 * -1126729883;
 			local407.anInt1464 -= local23 * -89446595;
-			local435 = (Class610) this.aClass32_Sub14_9.method18261(local407.anInt1468 * -1430483277, -1350721914);
+			local435 = (Class610) this.aClass32_Sub14_9.get(local407.anInt1468 * -1430483277, -1350721914);
 			if ((local407.anInt1469 * 1312747191 & 0x1) == 0) {
 				local117 = local435.anInt5608 * 427800467;
 				local45 = local435.anInt5603 * -774442965;
@@ -2808,7 +2808,7 @@ public class Class532 {
 		for (local407 = (Class93_Sub8) Class93_Sub8.aClass22_18.method428((byte) 127); local407 != null; local407 = (Class93_Sub8) Class93_Sub8.aClass22_18.method442(1276487582)) {
 			local407.anInt1462 -= local11 * -1126729883;
 			local407.anInt1464 -= local23 * -89446595;
-			local435 = (Class610) this.aClass32_Sub14_9.method18261(local407.anInt1468 * -1430483277, -1392865124);
+			local435 = (Class610) this.aClass32_Sub14_9.get(local407.anInt1468 * -1430483277, -1392865124);
 			if ((local407.anInt1469 * 1312747191 & 0x1) == 0) {
 				local117 = local435.anInt5608 * 427800467;
 				local45 = local435.anInt5603 * -774442965;
@@ -2823,7 +2823,7 @@ public class Class532 {
 		for (local407 = (Class93_Sub8) Class93_Sub8.aClass22_19.method428((byte) 104); local407 != null; local407 = (Class93_Sub8) Class93_Sub8.aClass22_19.method442(1460342415)) {
 			local407.anInt1462 -= local11 * -1126729883;
 			local407.anInt1464 -= local23 * -89446595;
-			local435 = (Class610) this.aClass32_Sub14_9.method18261(local407.anInt1468 * -1430483277, -1562711448);
+			local435 = (Class610) this.aClass32_Sub14_9.get(local407.anInt1468 * -1430483277, -1562711448);
 			if ((local407.anInt1469 * 1312747191 & 0x1) == 0) {
 				local117 = local435.anInt5608 * 427800467;
 				local45 = local435.anInt5603 * -774442965;
@@ -2981,7 +2981,7 @@ public class Class532 {
 		for (local407 = (Class93_Sub8) Class93_Sub8.aClass22_18.method428((byte) 58); local407 != null; local407 = (Class93_Sub8) Class93_Sub8.aClass22_18.method442(339156053)) {
 			local407.anInt1462 -= local11 * -1126729883;
 			local407.anInt1464 -= local23 * -89446595;
-			local435 = (Class610) this.aClass32_Sub14_9.method18261(local407.anInt1468 * -1430483277, 226639903);
+			local435 = (Class610) this.aClass32_Sub14_9.get(local407.anInt1468 * -1430483277, 226639903);
 			if ((local407.anInt1469 * 1312747191 & 0x1) == 0) {
 				local117 = local435.anInt5608 * 427800467;
 				local45 = local435.anInt5603 * -774442965;
@@ -2996,7 +2996,7 @@ public class Class532 {
 		for (local407 = (Class93_Sub8) Class93_Sub8.aClass22_19.method428((byte) 26); local407 != null; local407 = (Class93_Sub8) Class93_Sub8.aClass22_19.method442(790845587)) {
 			local407.anInt1462 -= local11 * -1126729883;
 			local407.anInt1464 -= local23 * -89446595;
-			local435 = (Class610) this.aClass32_Sub14_9.method18261(local407.anInt1468 * -1430483277, 1166350140);
+			local435 = (Class610) this.aClass32_Sub14_9.get(local407.anInt1468 * -1430483277, 1166350140);
 			if ((local407.anInt1469 * 1312747191 & 0x1) == 0) {
 				local117 = local435.anInt5608 * 427800467;
 				local45 = local435.anInt5603 * -774442965;
@@ -3154,7 +3154,7 @@ public class Class532 {
 		for (local407 = (Class93_Sub8) Class93_Sub8.aClass22_18.method428((byte) 40); local407 != null; local407 = (Class93_Sub8) Class93_Sub8.aClass22_18.method442(1472564079)) {
 			local407.anInt1462 -= local11 * -1126729883;
 			local407.anInt1464 -= local23 * -89446595;
-			local435 = (Class610) this.aClass32_Sub14_9.method18261(local407.anInt1468 * -1430483277, -2012320857);
+			local435 = (Class610) this.aClass32_Sub14_9.get(local407.anInt1468 * -1430483277, -2012320857);
 			if ((local407.anInt1469 * 1312747191 & 0x1) == 0) {
 				local117 = local435.anInt5608 * 427800467;
 				local45 = local435.anInt5603 * -774442965;
@@ -3169,7 +3169,7 @@ public class Class532 {
 		for (local407 = (Class93_Sub8) Class93_Sub8.aClass22_19.method428((byte) 84); local407 != null; local407 = (Class93_Sub8) Class93_Sub8.aClass22_19.method442(427596658)) {
 			local407.anInt1462 -= local11 * -1126729883;
 			local407.anInt1464 -= local23 * -89446595;
-			local435 = (Class610) this.aClass32_Sub14_9.method18261(local407.anInt1468 * -1430483277, -251098048);
+			local435 = (Class610) this.aClass32_Sub14_9.get(local407.anInt1468 * -1430483277, -251098048);
 			if ((local407.anInt1469 * 1312747191 & 0x1) == 0) {
 				local117 = local435.anInt5608 * 427800467;
 				local45 = local435.anInt5603 * -774442965;
@@ -3327,7 +3327,7 @@ public class Class532 {
 		for (local407 = (Class93_Sub8) Class93_Sub8.aClass22_18.method428((byte) 127); local407 != null; local407 = (Class93_Sub8) Class93_Sub8.aClass22_18.method442(1520188095)) {
 			local407.anInt1462 -= local11 * -1126729883;
 			local407.anInt1464 -= local23 * -89446595;
-			local435 = (Class610) this.aClass32_Sub14_9.method18261(local407.anInt1468 * -1430483277, 973488404);
+			local435 = (Class610) this.aClass32_Sub14_9.get(local407.anInt1468 * -1430483277, 973488404);
 			if ((local407.anInt1469 * 1312747191 & 0x1) == 0) {
 				local117 = local435.anInt5608 * 427800467;
 				local45 = local435.anInt5603 * -774442965;
@@ -3342,7 +3342,7 @@ public class Class532 {
 		for (local407 = (Class93_Sub8) Class93_Sub8.aClass22_19.method428((byte) 6); local407 != null; local407 = (Class93_Sub8) Class93_Sub8.aClass22_19.method442(905207288)) {
 			local407.anInt1462 -= local11 * -1126729883;
 			local407.anInt1464 -= local23 * -89446595;
-			local435 = (Class610) this.aClass32_Sub14_9.method18261(local407.anInt1468 * -1430483277, 24509535);
+			local435 = (Class610) this.aClass32_Sub14_9.get(local407.anInt1468 * -1430483277, 24509535);
 			if ((local407.anInt1469 * 1312747191 & 0x1) == 0) {
 				local117 = local435.anInt5608 * 427800467;
 				local45 = local435.anInt5603 * -774442965;
@@ -5294,7 +5294,7 @@ public class Class532 {
 					@Pc(112) int local112 = local98 & 0x3F;
 					@Pc(129) int local129 = local108 + ((this.anIntArray463[local5] >> 8) * 64 - this.aClass611_1.anInt5623 * 270611681);
 					@Pc(146) int local146 = (this.anIntArray463[local5] & 0xFF) * 64 - this.aClass611_1.anInt5624 * -1994307635 + local112;
-					@Pc(154) Class336 local154 = (Class336) Class162.aClass32_Sub3_2.method18261(local66.g2(-1434290800), -1024135375);
+					@Pc(154) Class336 local154 = (Class336) Class162.aClass32_Sub3_2.get(local66.g2(-1434290800), -1024135375);
 					@Pc(160) Class93_Sub15 local160 = (Class93_Sub15) client.aClass16_18.method214((long) local94);
 					if (local160 == null && (local154.aByte137 & 0x1) > 0 && local129 >= 0 && local129 + local154.anInt4154 * 447008399 < this.anInt5239 * -1096901053 && local146 >= 0 && local154.anInt4154 * 447008399 + local146 < this.anInt5242 * -2134504113) {
 						@Pc(199) Class132_Sub1_Sub1_Sub1_Sub1 local199 = new Class132_Sub1_Sub1_Sub1_Sub1(this.aClass585_24);

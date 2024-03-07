@@ -121,7 +121,7 @@ public class Class328 implements Interface75 {
 		arg0.anInt5891 -= -1915563430;
 		@Pc(13) int local13 = arg0.anIntArray519[arg0.anInt5891 * -1497248091];
 		@Pc(23) int local23 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 1];
-		@Pc(29) Class93_Sub40 local29 = (Class93_Sub40) client.aClass16_22.method214((long) local13);
+		@Pc(29) SubInterface local29 = (SubInterface) client.aClass16_22.method214((long) local13);
 		if (local29 != null && local29.anInt3172 * 1220811495 == local23) {
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = 1;
 		} else {

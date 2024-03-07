@@ -114,25 +114,25 @@ public class Class477 {
 	static int[] method29703(@OriginalArg(0) Class93_Sub1_Sub7 arg0, @OriginalArg(1) int arg1) {
 		@Pc(1) int[] local1 = null;
 		if (Class664.method32882(arg0.anInt3012 * -92627949, 1527912881)) {
-			local1 = ((Class47) Class277.aClass32_Sub12_1.method18261((int) (arg0.aLong154 * 3050087486000948885L), -1836489641)).anIntArray11;
+			local1 = ((Class47) Class277.aClass32_Sub12_1.get((int) (arg0.aLong154 * 3050087486000948885L), -1836489641)).anIntArray11;
 		} else if (arg0.anInt3010 * 1303344433 != -1) {
-			local1 = ((Class47) Class277.aClass32_Sub12_1.method18261(arg0.anInt3010 * 1303344433, -43288383)).anIntArray11;
+			local1 = ((Class47) Class277.aClass32_Sub12_1.get(arg0.anInt3010 * 1303344433, -43288383)).anIntArray11;
 		} else if (Class110_Sub6.method7672(arg0.anInt3012 * -92627949, (byte) -1)) {
 			@Pc(54) Class93_Sub15 local54 = (Class93_Sub15) client.aClass16_18.method214((long) (arg0.aLong154 * 3050087486000948885L));
 			if (local54 != null) {
 				@Pc(61) Class132_Sub1_Sub1_Sub1_Sub1 local61 = (Class132_Sub1_Sub1_Sub1_Sub1) local54.anObject5;
 				@Pc(64) Class336 local64 = local61.aClass336_1;
 				if (local64.anIntArray412 != null) {
-					local64 = local64.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 15584);
+					local64 = local64.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 15584);
 				}
 				if (local64 != null) {
 					local1 = local64.anIntArray415;
 				}
 			}
 		} else if (Class118.method8411(arg0.anInt3012 * -92627949, (byte) 74)) {
-			@Pc(104) Class610 local104 = (Class610) client.world.method30496(1685828747).method18261((int) (arg0.aLong154 * 3050087486000948885L >>> 32 & 0x7FFFFFFFL), -552016599);
+			@Pc(104) Class610 local104 = (Class610) client.world.method30496(1685828747).get((int) (arg0.aLong154 * 3050087486000948885L >>> 32 & 0x7FFFFFFFL), -552016599);
 			if (local104.anIntArray492 != null) {
-				local104 = local104.method31991(Class624.aClass120_1, Class624.aClass120_1, 1070158816);
+				local104 = local104.method31991(Class624.playerVariableManager, Class624.playerVariableManager, 1070158816);
 			}
 			if (local104 != null) {
 				local1 = local104.anIntArray490;

@@ -194,7 +194,7 @@ public class Class717 implements Interface75 {
 			return null;
 		}
 		for (@Pc(11) Class93_Sub29 local11 = (Class93_Sub29) Class159_Sub1.aClass20_1.next(); local11 != null; local11 = (Class93_Sub29) Class159_Sub1.aClass20_1.next()) {
-			@Pc(22) Class322 local22 = (Class322) Class159_Sub1.aClass32_Sub2_2.method18261(local11.anInt1603 * 1208139441, 1622909317);
+			@Pc(22) Class322 local22 = (Class322) Class159_Sub1.aClass32_Sub2_2.get(local11.anInt1603 * 1208139441, 1622909317);
 			if (local22 != null && local22.aBoolean711 && local22.method27252(Class159_Sub1.anInterface21_2, Class159_Sub1.anInterface23_2, -1868745929)) {
 				return local11;
 			}

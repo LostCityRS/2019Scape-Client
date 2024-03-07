@@ -48,7 +48,7 @@ public class Class133_Sub1 extends Class133 {
 					if (local9 == -1) {
 						arg0.aClass19_Sub1_Sub1Array3[local19] = null;
 					} else {
-						@Pc(48) Class263 local48 = (Class263) Class32.aClass32_Sub17_23.method18261(local9, -286655540);
+						@Pc(48) Class263 local48 = (Class263) Class32.aClass32_Sub17_23.get(local9, -286655540);
 						@Pc(53) int local53 = local48.anInt3868 * 23893545;
 						@Pc(58) Class19_Sub1_Sub1 local58 = arg0.aClass19_Sub1_Sub1Array3[local19];
 						if (local58 != null && local58.method23557(-492776415)) {

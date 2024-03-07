@@ -32,7 +32,7 @@ public class Class35 {
 	static final void method686(@OriginalArg(0) Class312 arg0, @OriginalArg(1) Class320 arg1, @OriginalArg(2) Class681 arg2, @OriginalArg(3) int arg3) {
 		@Pc(12) int local12 = arg2.anIntArray519[(arg2.anInt5891 -= 1189701933) * -1497248091];
 		@Pc(26) String local26 = (String) arg2.anObjectArray45[(arg2.anInt5888 -= 957530791) * 587908375];
-		@Pc(32) Class87 local32 = (Class87) Class124.aClass32_Sub21_7.method18261(local12, -878509456);
+		@Pc(32) Class87 local32 = (Class87) Class124.aClass32_Sub21_7.get(local12, -878509456);
 		if (local32.aString11.equals(local26)) {
 			arg0.method26914(local12, 602703457);
 		} else {

@@ -142,9 +142,9 @@ public class Class606 {
 		for (local261 = 0; local261 < Class172.anInt3176 * 906807861; local261++) {
 			local275 = Class172.anIntArray270[local261] * 4 + 2 - local95 / 128;
 			local287 = Class172.anIntArray272[local261] * 4 + 2 - local99 / 128;
-			@Pc(367) Class610 local367 = (Class610) client.world.method30496(1161509209).method18261(Class172.anIntArray271[local261], -1264690199);
+			@Pc(367) Class610 local367 = (Class610) client.world.method30496(1161509209).get(Class172.anIntArray271[local261], -1264690199);
 			if (local367.anIntArray492 != null) {
-				local367 = local367.method31991(Class624.aClass120_1, Class624.aClass120_1, 90754467);
+				local367 = local367.method31991(Class624.playerVariableManager, Class624.playerVariableManager, 90754467);
 				if (local367 == null || local367.anInt5600 * 400633667 == -1) {
 					continue;
 				}

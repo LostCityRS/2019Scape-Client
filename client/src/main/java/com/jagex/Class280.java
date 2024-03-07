@@ -114,7 +114,7 @@ public class Class280 {
 		@Pc(5) boolean local5 = false;
 		@Pc(8) Class336 local8 = local3.aClass336_1;
 		if (local8.anIntArray412 != null) {
-			local8 = local8.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 13450);
+			local8 = local8.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 13450);
 		}
 		if (local8 != null) {
 			local5 = local8.aBoolean718;

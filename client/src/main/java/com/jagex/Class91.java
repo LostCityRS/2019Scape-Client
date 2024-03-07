@@ -100,7 +100,7 @@ public class Class91 {
 		@Pc(23) Class560 local23 = null;
 		arg2.anInt5890 = 0;
 		arg2.aMap26.clear();
-		arg2.aMap26.put(Class138.aClass138_65, Class624.aClass120_1.aClass647_1);
+		arg2.aMap26.put(Class138.aClass138_65, Class624.playerVariableManager.vars);
 		arg2.aMap26.put(Class138.aClass138_63, Class596.aClass113_Sub1_1);
 		arg2.aMap26.put(Class138.aClass138_71, Class637.aClass113_1);
 		if (arg2.aClass386_3 != null) {

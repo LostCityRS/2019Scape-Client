@@ -12,13 +12,13 @@ public class Class452 implements Interface72 {
 	@Override
 	public String method28957(@OriginalArg(0) Class669 arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) long arg2) {
 		if (arg0 == Class669.aClass669_15) {
-			@Pc(10) Class39 local10 = (Class39) Class19.aClass32_Sub7_5.method18261(arg1[0], -305655229);
+			@Pc(10) Class39 local10 = (Class39) Class19.aClass32_Sub7_5.get(arg1[0], -305655229);
 			return local10.method749((int) arg2, -1038506051);
 		} else if (Class669.aClass669_1 == arg0 || Class669.aClass669_14 == arg0) {
-			@Pc(29) Class47 local29 = (Class47) Class277.aClass32_Sub12_1.method18261((int) arg2, 1927257423);
+			@Pc(29) Class47 local29 = (Class47) Class277.aClass32_Sub12_1.get((int) arg2, 1927257423);
 			return local29.aString6;
 		} else if (Class669.aClass669_4 == arg0 || arg0 == Class669.aClass669_2 || Class669.aClass669_5 == arg0 || arg0 == Class669.aClass669_9) {
-			return ((Class39) Class19.aClass32_Sub7_5.method18261(arg1[0], 2044955521)).method749((int) arg2, -831086758);
+			return ((Class39) Class19.aClass32_Sub7_5.get(arg1[0], 2044955521)).method749((int) arg2, -831086758);
 		} else {
 			return null;
 		}
@@ -28,13 +28,13 @@ public class Class452 implements Interface72 {
 	@Override
 	public String method28956(@OriginalArg(0) Class669 arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) long arg2) {
 		if (arg0 == Class669.aClass669_15) {
-			@Pc(10) Class39 local10 = (Class39) Class19.aClass32_Sub7_5.method18261(arg1[0], -309937267);
+			@Pc(10) Class39 local10 = (Class39) Class19.aClass32_Sub7_5.get(arg1[0], -309937267);
 			return local10.method749((int) arg2, -189922074);
 		} else if (Class669.aClass669_1 == arg0 || Class669.aClass669_14 == arg0) {
-			@Pc(29) Class47 local29 = (Class47) Class277.aClass32_Sub12_1.method18261((int) arg2, -1085586453);
+			@Pc(29) Class47 local29 = (Class47) Class277.aClass32_Sub12_1.get((int) arg2, -1085586453);
 			return local29.aString6;
 		} else if (Class669.aClass669_4 == arg0 || arg0 == Class669.aClass669_2 || Class669.aClass669_5 == arg0 || arg0 == Class669.aClass669_9) {
-			return ((Class39) Class19.aClass32_Sub7_5.method18261(arg1[0], 1268047144)).method749((int) arg2, -968328985);
+			return ((Class39) Class19.aClass32_Sub7_5.get(arg1[0], 1268047144)).method749((int) arg2, -968328985);
 		} else {
 			return null;
 		}
@@ -42,7 +42,7 @@ public class Class452 implements Interface72 {
 
 	@OriginalMember(owner = "client!ny", name = "c", descriptor = "(Lclient!yf;I)V", line = 60)
 	static void method28958(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		@Pc(16) Class347 local16 = (Class347) Class288.aClass55_Sub2_1.method18261(arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], -1948031516);
+		@Pc(16) Class347 local16 = (Class347) Class288.aClass55_Sub2_1.get(arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], -1948031516);
 		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local16.anIntArrayArray57 == null ? 0 : local16.anIntArrayArray57.length;
 	}
 

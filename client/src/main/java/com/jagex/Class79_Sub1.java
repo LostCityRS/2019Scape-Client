@@ -60,14 +60,14 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 	@OriginalMember(owner = "client!add", name = "u", descriptor = "(IB)Ljava/lang/Object;", line = 43)
 	@Override
 	public Object method1460(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1) {
-		@Pc(5) Class108 local5 = (Class108) this.method18261(arg0, -1770456980);
+		@Pc(5) Class108 local5 = (Class108) this.get(arg0, -1770456980);
 		return local5 != null && local5.method7435((byte) -128) ? local5.method7440((byte) 2) : null;
 	}
 
 	@OriginalMember(owner = "client!add", name = "z", descriptor = "(I)Ljava/lang/Object;", line = 43)
 	@Override
 	public Object method1459(@OriginalArg(0) int arg0) {
-		@Pc(5) Class108 local5 = (Class108) this.method18261(arg0, 2113417987);
+		@Pc(5) Class108 local5 = (Class108) this.get(arg0, 2113417987);
 		return local5 != null && local5.method7435((byte) -86) ? local5.method7440((byte) 2) : null;
 	}
 
@@ -176,7 +176,7 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 	@OriginalMember(owner = "client!add", name = "ag", descriptor = "(Lclient!alw;B)Lclient!on;", line = 68)
 	public Class466 method1468(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 		@Pc(3) int local3 = arg0.g2(-1434290800);
-		@Pc(9) Class108 local9 = (Class108) this.method18261(local3, -1439586201);
+		@Pc(9) Class108 local9 = (Class108) this.get(local3, -1439586201);
 		if (!local9.method7435((byte) -108)) {
 			throw new IllegalStateException("");
 		}
@@ -207,7 +207,7 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 	@OriginalMember(owner = "client!add", name = "at", descriptor = "(Lclient!alw;)Lclient!on;", line = 68)
 	public Class466 method1469(@OriginalArg(0) Packet arg0) {
 		@Pc(3) int local3 = arg0.g2(-1434290800);
-		@Pc(9) Class108 local9 = (Class108) this.method18261(local3, -60965265);
+		@Pc(9) Class108 local9 = (Class108) this.get(local3, -60965265);
 		if (!local9.method7435((byte) -64)) {
 			throw new IllegalStateException("");
 		}
@@ -259,7 +259,7 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 		} else {
 			throw new IllegalStateException();
 		}
-		@Pc(70) Class108 local70 = (Class108) this.method18261(local3, 828575494);
+		@Pc(70) Class108 local70 = (Class108) this.get(local3, 828575494);
 		return local70.method7435((byte) -30) && local70.aClass519_6.method30313((byte) 36) == arg1 ? local8 : null;
 	}
 
@@ -287,7 +287,7 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 		} else {
 			throw new IllegalStateException();
 		}
-		@Pc(70) Class108 local70 = (Class108) this.method18261(local3, -1651253270);
+		@Pc(70) Class108 local70 = (Class108) this.get(local3, -1651253270);
 		return local70.method7435((byte) -5) && local70.aClass519_6.method30313((byte) 36) == arg1 ? local8 : null;
 	}
 
@@ -315,7 +315,7 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 		} else {
 			throw new IllegalStateException();
 		}
-		@Pc(70) Class108 local70 = (Class108) this.method18261(local3, -775959803);
+		@Pc(70) Class108 local70 = (Class108) this.get(local3, -775959803);
 		return local70.method7435((byte) -48) && local70.aClass519_6.method30313((byte) 36) == arg1 ? local8 : null;
 	}
 
@@ -343,7 +343,7 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 		} else {
 			throw new IllegalStateException();
 		}
-		@Pc(70) Class108 local70 = (Class108) this.method18261(local3, -1060313518);
+		@Pc(70) Class108 local70 = (Class108) this.get(local3, -1060313518);
 		return local70.method7435((byte) -97) && local70.aClass519_6.method30313((byte) 36) == arg1 ? local8 : null;
 	}
 
@@ -354,5 +354,5 @@ public abstract class Class79_Sub1 extends Class79 implements Interface51 {
 	public abstract Interface13 method18265(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!add", name = "e", descriptor = "(II)Lclient!ay;")
-	public abstract Interface13 method18261(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1);
+	public abstract Interface13 get(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1);
 }

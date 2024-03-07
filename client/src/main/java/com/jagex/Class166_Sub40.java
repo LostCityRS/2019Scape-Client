@@ -132,7 +132,7 @@ public class Class166_Sub40 extends Class166 {
 
 	@OriginalMember(owner = "client!anr", name = "z", descriptor = "(Lclient!yf;I)V", line = 47)
 	static void method16366(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 2] = ((Class347) Class288.aClass55_Sub2_1.method18261(arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 2], 2107005754)).method27605(Class624.aClass120_1, arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1], (byte) 121) ? 1 : 0;
+		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 2] = ((Class347) Class288.aClass55_Sub2_1.get(arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 2], 2107005754)).method27605(Class624.playerVariableManager, arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1], (byte) 121) ? 1 : 0;
 		arg0.anInt5891 -= 1189701933;
 	}
 

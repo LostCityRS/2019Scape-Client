@@ -210,7 +210,7 @@ public class Class132_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1 implements Inter
 
 	@OriginalMember(owner = "client!ajv", name = "bg", descriptor = "(Lclient!dh;IZI)Lclient!abg;", line = 99)
 	Class34 method13137(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) int arg3) {
-		@Pc(9) Class610 local9 = (Class610) this.aClass32_Sub14_4.method18261(this.anInt1480 * 1637738595, 1467081729);
+		@Pc(9) Class610 local9 = (Class610) this.aClass32_Sub14_4.get(this.anInt1480 * 1637738595, 1467081729);
 		@Pc(19) Class99 local19;
 		@Pc(25) Class99 local25;
 		if (this.aBoolean316) {
@@ -230,7 +230,7 @@ public class Class132_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1 implements Inter
 
 	@OriginalMember(owner = "client!ajv", name = "ce", descriptor = "(Lclient!dh;IZ)Lclient!abg;", line = 99)
 	Class34 method13138(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2) {
-		@Pc(9) Class610 local9 = (Class610) this.aClass32_Sub14_4.method18261(this.anInt1480 * 1637738595, -1785459331);
+		@Pc(9) Class610 local9 = (Class610) this.aClass32_Sub14_4.get(this.anInt1480 * 1637738595, -1785459331);
 		@Pc(19) Class99 local19;
 		@Pc(25) Class99 local25;
 		if (this.aBoolean316) {
@@ -250,7 +250,7 @@ public class Class132_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1 implements Inter
 
 	@OriginalMember(owner = "client!ajv", name = "cu", descriptor = "(Lclient!dh;IZ)Lclient!abg;", line = 99)
 	Class34 method13139(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2) {
-		@Pc(9) Class610 local9 = (Class610) this.aClass32_Sub14_4.method18261(this.anInt1480 * 1637738595, 1958010372);
+		@Pc(9) Class610 local9 = (Class610) this.aClass32_Sub14_4.get(this.anInt1480 * 1637738595, 1958010372);
 		@Pc(19) Class99 local19;
 		@Pc(25) Class99 local25;
 		if (this.aBoolean316) {
@@ -306,7 +306,7 @@ public class Class132_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1 implements Inter
 		}
 		@Pc(7) Class470 local7 = this.method24227();
 		@Pc(12) Class573 local12 = Class125_Sub1.method9212(this.aBoolean317, 373147274);
-		@Pc(23) Class463 local23 = ((Class610) this.aClass32_Sub14_4.method18261(this.anInt1480 * 1637738595, -1480583559)).aClass463_2;
+		@Pc(23) Class463 local23 = ((Class610) this.aClass32_Sub14_4.get(this.anInt1480 * 1637738595, -1480583559)).aClass463_2;
 		if (local23 == null) {
 			this.aClass109_3.method6976(local7, this.aClass241Array21[0], 0);
 		} else {
@@ -324,7 +324,7 @@ public class Class132_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1 implements Inter
 		}
 		@Pc(7) Class470 local7 = this.method24227();
 		@Pc(12) Class573 local12 = Class125_Sub1.method9212(this.aBoolean317, 373147274);
-		@Pc(23) Class463 local23 = ((Class610) this.aClass32_Sub14_4.method18261(this.anInt1480 * 1637738595, 2076646799)).aClass463_2;
+		@Pc(23) Class463 local23 = ((Class610) this.aClass32_Sub14_4.get(this.anInt1480 * 1637738595, 2076646799)).aClass463_2;
 		if (local23 == null) {
 			this.aClass109_3.method6976(local7, this.aClass241Array21[0], 0);
 		} else {
@@ -352,7 +352,7 @@ public class Class132_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1 implements Inter
 	@OriginalMember(owner = "client!ajv", name = "fk", descriptor = "(Lclient!dh;II)Z", line = 137)
 	@Override
 	boolean method24304(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(10) Class463 local10 = ((Class610) this.aClass32_Sub14_4.method18261(this.anInt1480 * 1637738595, 400508177)).aClass463_2;
+		@Pc(10) Class463 local10 = ((Class610) this.aClass32_Sub14_4.get(this.anInt1480 * 1637738595, 400508177)).aClass463_2;
 		if (local10 != null) {
 			return arg0.method20482(arg1, arg2, this.method24227(), local10, -222976533);
 		}
@@ -368,7 +368,7 @@ public class Class132_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1 implements Inter
 	@OriginalMember(owner = "client!ajv", name = "fa", descriptor = "(Lclient!dh;IIB)Z", line = 137)
 	@Override
 	boolean method24283(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) byte arg3) {
-		@Pc(10) Class463 local10 = ((Class610) this.aClass32_Sub14_4.method18261(this.anInt1480 * 1637738595, -1637810176)).aClass463_2;
+		@Pc(10) Class463 local10 = ((Class610) this.aClass32_Sub14_4.get(this.anInt1480 * 1637738595, -1637810176)).aClass463_2;
 		if (local10 != null) {
 			return arg0.method20482(arg1, arg2, this.method24227(), local10, 11440144);
 		}

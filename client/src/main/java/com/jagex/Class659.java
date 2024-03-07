@@ -159,7 +159,7 @@ public class Class659 implements Interface75 {
 	@OriginalMember(owner = "client!xh", name = "zk", descriptor = "(Lclient!yf;I)V", line = 9470)
 	static final void method32813(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		@Pc(18) Class39 local18 = (Class39) Class19.aClass32_Sub7_5.method18261(local12, -746105267);
+		@Pc(18) Class39 local18 = (Class39) Class19.aClass32_Sub7_5.get(local12, -746105267);
 		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local18.method765(885023744);
 	}
 

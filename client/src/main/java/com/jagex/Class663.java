@@ -247,7 +247,7 @@ public class Class663 {
 
 	@OriginalMember(owner = "client!xl", name = "fk", descriptor = "(B)V", line = 3154)
 	static final void method32868(@OriginalArg(0) byte arg0) {
-		for (@Pc(5) int local5 = Class624.aClass120_1.aClass647_1.method32641(true, 1236194973); local5 != -1; local5 = Class624.aClass120_1.aClass647_1.method32641(false, 1844575074)) {
+		for (@Pc(5) int local5 = Class624.playerVariableManager.vars.method32641(true, 1236194973); local5 != -1; local5 = Class624.playerVariableManager.vars.method32641(false, 1844575074)) {
 			Class166_Sub34.method16206(local5, 575191378);
 			client.anIntArray319[(client.anInt3539 += -245152335) * 1497097041 - 1 & 0x3F] = local5;
 		}
@@ -256,11 +256,11 @@ public class Class663 {
 			@Pc(45) long local45 = local35.method21893(668145154);
 			@Pc(55) Class108 local55;
 			if (local41 == 1) {
-				local55 = (Class108) Class72.aClass79_Sub1_Sub2_2.method18261((int) local45, 1318381296);
+				local55 = (Class108) Class72.aClass79_Sub1_Sub2_2.get((int) local45, 1318381296);
 				Class596.aClass113_Sub1_1.method33464(local55, local35.anInt3020 * -222984563, 908369267);
 				client.anIntArray322[(client.anInt3543 += -417848381) * -491428629 - 1 & 0x3F] = (int) local45;
 			} else if (local41 == 2) {
-				local55 = (Class108) Class72.aClass79_Sub1_Sub2_2.method18261((int) local45, -1294191481);
+				local55 = (Class108) Class72.aClass79_Sub1_Sub2_2.get((int) local45, -1294191481);
 				Class596.aClass113_Sub1_1.method33468(local55, local35.aString103, -1670748317);
 				client.anIntArray321[(client.anInt3544 += 238378227) * 1821580347 - 1 & 0x3F] = (int) local45;
 			} else {
@@ -410,7 +410,7 @@ public class Class663 {
 	@OriginalMember(owner = "client!xl", name = "xm", descriptor = "(Lclient!yf;I)V", line = 9108)
 	static final void method32869(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class624.aClass120_1.method8667(local12, (byte) 35);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class624.playerVariableManager.method8667(local12, (byte) 35);
 	}
 
 	@OriginalMember(owner = "client!xl", name = "lr", descriptor = "(II)V", line = 12082)

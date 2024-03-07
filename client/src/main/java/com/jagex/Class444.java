@@ -179,7 +179,7 @@ public class Class444 implements Interface47 {
 	@OriginalMember(owner = "client!no", name = "ags", descriptor = "(Lclient!yf;B)V", line = 10727)
 	static final void method28883(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		@Pc(18) Class47 local18 = (Class47) Class277.aClass32_Sub12_1.method18261(local12, -358892091);
+		@Pc(18) Class47 local18 = (Class47) Class277.aClass32_Sub12_1.get(local12, -358892091);
 		if (local18.anInt175 * 858499729 == -1 && local18.anInt174 * -391282687 >= 0) {
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local18.anInt174 * -391282687;
 		} else {

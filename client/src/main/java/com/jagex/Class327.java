@@ -106,7 +106,7 @@ public class Class327 {
 		arg0.anInt5891 -= -1915563430;
 		@Pc(13) int local13 = arg0.anIntArray519[arg0.anInt5891 * -1497248091];
 		@Pc(23) int local23 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 1];
-		@Pc(29) Class47 local29 = (Class47) Class277.aClass32_Sub12_1.method18261(local13, 1072665738);
+		@Pc(29) Class47 local29 = (Class47) Class277.aClass32_Sub12_1.get(local13, 1072665738);
 		if (local23 < 1 || local23 > 5 || local29.aStringArray4[local23 - 1] == null) {
 			arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = "";
 		} else {

@@ -85,13 +85,13 @@ public class Class132_Sub1_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1_Sub1 {
 
 	@OriginalMember(owner = "client!aqk", name = "<init>", descriptor = "(Lclient!tx;)V", line = 75)
 	public Class132_Sub1_Sub1_Sub1_Sub2(@OriginalArg(0) Class585 arg0) {
-		super(arg0, Class21.aClass79_Sub1_Sub1_1);
+		super(arg0, Class21.varPlayerTypes);
 		this.method20059((byte) 80);
 	}
 
 	@OriginalMember(owner = "client!aqk", name = "<init>", descriptor = "(Lclient!tx;I)V", line = 80)
 	public Class132_Sub1_Sub1_Sub1_Sub2(@OriginalArg(0) Class585 arg0, @OriginalArg(1) int arg1) {
-		super(arg0, arg1, Class21.aClass79_Sub1_Sub1_1);
+		super(arg0, arg1, Class21.varPlayerTypes);
 		this.method20059((byte) 41);
 	}
 
@@ -124,7 +124,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1_Sub1 {
 					if (local56 >= 2048) {
 						local56 -= 2048;
 						local12[local24] = local56 | 0x40000000;
-						local22[local24] = (Class47) Class277.aClass32_Sub12_1.method18261(local56, 420334811);
+						local22[local24] = (Class47) Class277.aClass32_Sub12_1.get(local56, 420334811);
 						local101 = local22[local24].anInt180 * -2011521841;
 						if (local101 != 0) {
 							this.anInt2802 = local101 * -1228663053;
@@ -227,7 +227,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1_Sub1 {
 					if (local56 >= 2048) {
 						local56 -= 2048;
 						local12[local24] = local56 | 0x40000000;
-						local22[local24] = (Class47) Class277.aClass32_Sub12_1.method18261(local56, 1886973743);
+						local22[local24] = (Class47) Class277.aClass32_Sub12_1.get(local56, 1886973743);
 						local101 = local22[local24].anInt180 * -2011521841;
 						if (local101 != 0) {
 							this.anInt2802 = local101 * -1228663053;
@@ -330,7 +330,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1_Sub1 {
 					if (local56 >= 2048) {
 						local56 -= 2048;
 						local12[local24] = local56 | 0x40000000;
-						local22[local24] = (Class47) Class277.aClass32_Sub12_1.method18261(local56, 899886084);
+						local22[local24] = (Class47) Class277.aClass32_Sub12_1.get(local56, 899886084);
 						local101 = local22[local24].anInt180 * -2011521841;
 						if (local101 != 0) {
 							this.anInt2802 = local101 * -1228663053;
@@ -433,7 +433,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1_Sub1 {
 					if (local56 >= 2048) {
 						local56 -= 2048;
 						local12[local24] = local56 | 0x40000000;
-						local22[local24] = (Class47) Class277.aClass32_Sub12_1.method18261(local56, -912256819);
+						local22[local24] = (Class47) Class277.aClass32_Sub12_1.get(local56, -912256819);
 						local101 = local22[local24].anInt180 * -2011521841;
 						if (local101 != 0) {
 							this.anInt2802 = local101 * -1228663053;
@@ -536,7 +536,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1_Sub1 {
 					if (local56 >= 2048) {
 						local56 -= 2048;
 						local12[local24] = local56 | 0x40000000;
-						local22[local24] = (Class47) Class277.aClass32_Sub12_1.method18261(local56, -1986666173);
+						local22[local24] = (Class47) Class277.aClass32_Sub12_1.get(local56, -1986666173);
 						local101 = local22[local24].anInt180 * -2011521841;
 						if (local101 != 0) {
 							this.anInt2802 = local101 * -1228663053;
@@ -628,7 +628,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1_Sub1 {
 		if (local43) {
 			this.anInt2798 = arg0.gSmart1or2((byte) -122) * 1608377605;
 			local100 = local11 == 0 ? Class659.aClass633_1.anInt5725 * 503316691 : Class659.aClass633_1.anInt5724 * -1032447795;
-			this.aString80 = ((Class39) Class19.aClass32_Sub7_5.method18261(local100, 984053557)).method749(this.anInt2798 * 243539917, -726344232);
+			this.aString80 = ((Class39) Class19.aClass32_Sub7_5.get(local100, 984053557)).method749(this.anInt2798 * 243539917, -726344232);
 		} else {
 			this.anInt2798 = -1608377605;
 			this.aString80 = null;
@@ -698,7 +698,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1_Sub1 {
 		if (local43) {
 			this.anInt2798 = arg0.gSmart1or2((byte) -41) * 1608377605;
 			local100 = local11 == 0 ? Class659.aClass633_1.anInt5725 * 503316691 : Class659.aClass633_1.anInt5724 * -1032447795;
-			this.aString80 = ((Class39) Class19.aClass32_Sub7_5.method18261(local100, 418490072)).method749(this.anInt2798 * 243539917, -1744984977);
+			this.aString80 = ((Class39) Class19.aClass32_Sub7_5.get(local100, 418490072)).method749(this.anInt2798 * 243539917, -1744984977);
 		} else {
 			this.anInt2798 = -1608377605;
 			this.aString80 = null;
@@ -768,7 +768,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1_Sub1 {
 		if (local43) {
 			this.anInt2798 = arg0.gSmart1or2((byte) -19) * 1608377605;
 			local100 = local11 == 0 ? Class659.aClass633_1.anInt5725 * 503316691 : Class659.aClass633_1.anInt5724 * -1032447795;
-			this.aString80 = ((Class39) Class19.aClass32_Sub7_5.method18261(local100, 1809345697)).method749(this.anInt2798 * 243539917, -1491303799);
+			this.aString80 = ((Class39) Class19.aClass32_Sub7_5.get(local100, 1809345697)).method749(this.anInt2798 * 243539917, -1491303799);
 		} else {
 			this.anInt2798 = -1608377605;
 			this.aString80 = null;
@@ -973,14 +973,14 @@ public class Class132_Sub1_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1_Sub1 {
 		this.aBoolean454 = false;
 		if (Class51.options.aClass166_Sub21_1.method15807(1832634020) == 1) {
 			@Pc(124) Class622 local124 = this.method19997(-1319371126);
-			if (local124.aBoolean844 && (this.aClass658_1.anInt5817 * 1405397749 == -1 || ((Class336) Class162.aClass32_Sub3_2.method18261(this.aClass658_1.anInt5817 * 1405397749, 1621821390)).aBoolean714)) {
+			if (local124.aBoolean844 && (this.aClass658_1.anInt5817 * 1405397749 == -1 || ((Class336) Class162.aClass32_Sub3_2.get(this.aClass658_1.anInt5817 * 1405397749, 1621821390)).aBoolean714)) {
 				@Pc(160) Class19 local160 = this.aClass19_3.method23557(-1080551603) && this.aClass19_3.method23578((byte) 0) ? this.aClass19_3 : null;
 				@Pc(176) Class19_Sub3 local176 = this.aClass19_Sub3_3.method23557(1321224940) && (!this.aClass19_Sub3_3.aBoolean379 || local160 == null) ? this.aClass19_Sub3_3 : null;
 				@Pc(179) short local179 = Class93_Sub26.aClass645_15.aShort184;
 				@Pc(182) byte local182 = Class93_Sub26.aClass645_15.aByte174;
 				if (this.aClass658_1.anInt5817 * 1405397749 != -1) {
-					local179 = ((Class336) Class162.aClass32_Sub3_2.method18261(this.aClass658_1.anInt5817 * 1405397749, 1474355349)).aShort167;
-					local182 = ((Class336) Class162.aClass32_Sub3_2.method18261(this.aClass658_1.anInt5817 * 1405397749, 494941685)).aByte131;
+					local179 = ((Class336) Class162.aClass32_Sub3_2.get(this.aClass658_1.anInt5817 * 1405397749, 1474355349)).aShort167;
+					local182 = ((Class336) Class162.aClass32_Sub3_2.get(this.aClass658_1.anInt5817 * 1405397749, 494941685)).aByte131;
 				}
 				@Pc(213) Class109 local213 = null;
 				if (local179 > -1 && Class51.options.aClass166_Sub14_1.method15656(1897492919) == 1) {
@@ -1089,14 +1089,14 @@ public class Class132_Sub1_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1_Sub1 {
 		this.aBoolean454 = false;
 		if (Class51.options.aClass166_Sub21_1.method15807(-194221532) == 1) {
 			@Pc(124) Class622 local124 = this.method19997(-2004119314);
-			if (local124.aBoolean844 && (this.aClass658_1.anInt5817 * 1405397749 == -1 || ((Class336) Class162.aClass32_Sub3_2.method18261(this.aClass658_1.anInt5817 * 1405397749, -2024494595)).aBoolean714)) {
+			if (local124.aBoolean844 && (this.aClass658_1.anInt5817 * 1405397749 == -1 || ((Class336) Class162.aClass32_Sub3_2.get(this.aClass658_1.anInt5817 * 1405397749, -2024494595)).aBoolean714)) {
 				@Pc(160) Class19 local160 = this.aClass19_3.method23557(-733521141) && this.aClass19_3.method23578((byte) 0) ? this.aClass19_3 : null;
 				@Pc(176) Class19_Sub3 local176 = this.aClass19_Sub3_3.method23557(-1570163943) && (!this.aClass19_Sub3_3.aBoolean379 || local160 == null) ? this.aClass19_Sub3_3 : null;
 				@Pc(179) short local179 = Class93_Sub26.aClass645_15.aShort184;
 				@Pc(182) byte local182 = Class93_Sub26.aClass645_15.aByte174;
 				if (this.aClass658_1.anInt5817 * 1405397749 != -1) {
-					local179 = ((Class336) Class162.aClass32_Sub3_2.method18261(this.aClass658_1.anInt5817 * 1405397749, 150261234)).aShort167;
-					local182 = ((Class336) Class162.aClass32_Sub3_2.method18261(this.aClass658_1.anInt5817 * 1405397749, -1105453787)).aByte131;
+					local179 = ((Class336) Class162.aClass32_Sub3_2.get(this.aClass658_1.anInt5817 * 1405397749, 150261234)).aShort167;
+					local182 = ((Class336) Class162.aClass32_Sub3_2.get(this.aClass658_1.anInt5817 * 1405397749, -1105453787)).aByte131;
 				}
 				@Pc(213) Class109 local213 = null;
 				if (local179 > -1 && Class51.options.aClass166_Sub14_1.method15656(1944709686) == 1) {
@@ -1273,7 +1273,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1_Sub1 {
 		if (local95) {
 			arg1 |= 0x80000;
 		}
-		@Pc(128) Class109 local128 = this.aClass109Array3[0] = this.aClass658_1.method32774(arg0, arg1, Class166_Sub6.aClass32_Sub5_1, Class343.aClass32_Sub19_1, Class162.aClass32_Sub3_2, Class277.aClass32_Sub12_1, Class624.aClass120_1, Class624.aClass120_1, local20, local40, this.aClass19_Sub1_Sub1Array3, this.anIntArray237, local76, true, Class113.aClass651_2, (byte) 5);
+		@Pc(128) Class109 local128 = this.aClass109Array3[0] = this.aClass658_1.method32774(arg0, arg1, Class166_Sub6.aClass32_Sub5_1, Class343.aClass32_Sub19_1, Class162.aClass32_Sub3_2, Class277.aClass32_Sub12_1, Class624.playerVariableManager, Class624.playerVariableManager, local20, local40, this.aClass19_Sub1_Sub1Array3, this.anIntArray237, local76, true, Class113.aClass651_2, (byte) 5);
 		@Pc(131) int local131 = Class153_Sub1.method14115(-1581772389);
 		if (Class553.anInt3419 * 1798078423 < 96 && local131 > 50) {
 			Class510.method30245((byte) -100);
@@ -1338,7 +1338,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1_Sub1 {
 		if (local95) {
 			arg1 |= 0x80000;
 		}
-		@Pc(128) Class109 local128 = this.aClass109Array3[0] = this.aClass658_1.method32774(arg0, arg1, Class166_Sub6.aClass32_Sub5_1, Class343.aClass32_Sub19_1, Class162.aClass32_Sub3_2, Class277.aClass32_Sub12_1, Class624.aClass120_1, Class624.aClass120_1, local20, local40, this.aClass19_Sub1_Sub1Array3, this.anIntArray237, local76, true, Class113.aClass651_2, (byte) -23);
+		@Pc(128) Class109 local128 = this.aClass109Array3[0] = this.aClass658_1.method32774(arg0, arg1, Class166_Sub6.aClass32_Sub5_1, Class343.aClass32_Sub19_1, Class162.aClass32_Sub3_2, Class277.aClass32_Sub12_1, Class624.playerVariableManager, Class624.playerVariableManager, local20, local40, this.aClass19_Sub1_Sub1Array3, this.anIntArray237, local76, true, Class113.aClass651_2, (byte) -23);
 		@Pc(131) int local131 = Class153_Sub1.method14115(-1581772389);
 		if (Class553.anInt3419 * 1798078423 < 96 && local131 > 50) {
 			Class510.method30245((byte) -8);
@@ -1403,7 +1403,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1_Sub1 {
 		if (local95) {
 			arg1 |= 0x80000;
 		}
-		@Pc(128) Class109 local128 = this.aClass109Array3[0] = this.aClass658_1.method32774(arg0, arg1, Class166_Sub6.aClass32_Sub5_1, Class343.aClass32_Sub19_1, Class162.aClass32_Sub3_2, Class277.aClass32_Sub12_1, Class624.aClass120_1, Class624.aClass120_1, local20, local40, this.aClass19_Sub1_Sub1Array3, this.anIntArray237, local76, true, Class113.aClass651_2, (byte) 28);
+		@Pc(128) Class109 local128 = this.aClass109Array3[0] = this.aClass658_1.method32774(arg0, arg1, Class166_Sub6.aClass32_Sub5_1, Class343.aClass32_Sub19_1, Class162.aClass32_Sub3_2, Class277.aClass32_Sub12_1, Class624.playerVariableManager, Class624.playerVariableManager, local20, local40, this.aClass19_Sub1_Sub1Array3, this.anIntArray237, local76, true, Class113.aClass651_2, (byte) 28);
 		@Pc(131) int local131 = Class153_Sub1.method14115(-1581772389);
 		if (Class553.anInt3419 * 1798078423 < 96 && local131 > 50) {
 			Class510.method30245((byte) 21);
@@ -1468,7 +1468,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1_Sub1 {
 		if (local95) {
 			arg1 |= 0x80000;
 		}
-		@Pc(128) Class109 local128 = this.aClass109Array3[0] = this.aClass658_1.method32774(arg0, arg1, Class166_Sub6.aClass32_Sub5_1, Class343.aClass32_Sub19_1, Class162.aClass32_Sub3_2, Class277.aClass32_Sub12_1, Class624.aClass120_1, Class624.aClass120_1, local20, local40, this.aClass19_Sub1_Sub1Array3, this.anIntArray237, local76, true, Class113.aClass651_2, (byte) -25);
+		@Pc(128) Class109 local128 = this.aClass109Array3[0] = this.aClass658_1.method32774(arg0, arg1, Class166_Sub6.aClass32_Sub5_1, Class343.aClass32_Sub19_1, Class162.aClass32_Sub3_2, Class277.aClass32_Sub12_1, Class624.playerVariableManager, Class624.playerVariableManager, local20, local40, this.aClass19_Sub1_Sub1Array3, this.anIntArray237, local76, true, Class113.aClass651_2, (byte) -25);
 		@Pc(131) int local131 = Class153_Sub1.method14115(-1581772389);
 		if (Class553.anInt3419 * 1798078423 < 96 && local131 > 50) {
 			Class510.method30245((byte) -5);
@@ -1553,8 +1553,8 @@ public class Class132_Sub1_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1_Sub1 {
 		}
 		for (@Pc(23) int local23 = 0; local23 < this.aClass554Array3.length; local23++) {
 			if (this.aClass554Array3[local23].anInt5319 * 601549465 != -1) {
-				@Pc(49) Class697 local49 = (Class697) Class501.aClass32_Sub18_1.method18261(this.aClass554Array3[local23].anInt5319 * 601549465, 1928560303);
-				if (local49.aBoolean881 && local49.anInt5949 * 1477426425 != -1 && ((Class263) Class32.aClass32_Sub17_23.method18261(local49.anInt5949 * 1477426425, -398937132)).anInt3876 * -1511529595 == 1) {
+				@Pc(49) Class697 local49 = (Class697) Class501.aClass32_Sub18_1.get(this.aClass554Array3[local23].anInt5319 * 601549465, 1928560303);
+				if (local49.aBoolean881 && local49.anInt5949 * 1477426425 != -1 && ((Class263) Class32.aClass32_Sub17_23.get(local49.anInt5949 * 1477426425, -398937132)).anInt3876 * -1511529595 == 1) {
 					this.aClass554Array3[local23].aClass19_7.method23566(-1, 1822566302);
 					this.aClass554Array3[local23].anInt5319 = 1020147287;
 				}
@@ -1763,13 +1763,13 @@ public class Class132_Sub1_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1_Sub1 {
 	@OriginalMember(owner = "client!aqk", name = "dl", descriptor = "()I", line = 494)
 	@Override
 	public int method19985() {
-		return this.aClass658_1 == null || this.aClass658_1.anInt5817 * 1405397749 == -1 ? super.method19986(1640004791) : ((Class336) Class162.aClass32_Sub3_2.method18261(this.aClass658_1.anInt5817 * 1405397749, -705767290)).anInt4154 * 447008399;
+		return this.aClass658_1 == null || this.aClass658_1.anInt5817 * 1405397749 == -1 ? super.method19986(1640004791) : ((Class336) Class162.aClass32_Sub3_2.get(this.aClass658_1.anInt5817 * 1405397749, -705767290)).anInt4154 * 447008399;
 	}
 
 	@OriginalMember(owner = "client!aqk", name = "bz", descriptor = "(I)I", line = 494)
 	@Override
 	public int method19986(@OriginalArg(0) int arg0) {
-		return this.aClass658_1 == null || this.aClass658_1.anInt5817 * 1405397749 == -1 ? super.method19986(-1170617764) : ((Class336) Class162.aClass32_Sub3_2.method18261(this.aClass658_1.anInt5817 * 1405397749, -3451010)).anInt4154 * 447008399;
+		return this.aClass658_1 == null || this.aClass658_1.anInt5817 * 1405397749 == -1 ? super.method19986(-1170617764) : ((Class336) Class162.aClass32_Sub3_2.get(this.aClass658_1.anInt5817 * 1405397749, -3451010)).anInt4154 * 447008399;
 	}
 
 	@OriginalMember(owner = "client!aqk", name = "bj", descriptor = "(S)I", line = 499)

@@ -82,11 +82,11 @@ public class Class679 {
 			local43.method26788(client.anInterface27_1, (byte) 96);
 		}
 		if (!local28) {
-			@Pc(144) Class379 local144 = (Class379) Class30.aClass32_Sub16_1.method18261(local38, 1343530537);
+			@Pc(144) Class379 local144 = (Class379) Class30.aClass32_Sub16_1.get(local38, 1343530537);
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local144.method28089(local43.method26790(-2067389413).method781(local144.aClass108_1.anInt867 * -1284841473, -1267242705), 1071523002);
 			return;
 		}
-		@Pc(59) Class108_Sub1 local59 = (Class108_Sub1) Class21.aClass79_Sub1_Sub1_1.method18261(local38, -98003055);
+		@Pc(59) Class108_Sub1 local59 = (Class108_Sub1) Class21.varPlayerTypes.get(local38, -98003055);
 		switch(local59.aClass519_6.aClass500_7.anInt5196 * -1217885029) {
 			case 2:
 				arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local43.method26790(-2128181752).method781(local59.anInt867 * -1284841473, -1267242705);

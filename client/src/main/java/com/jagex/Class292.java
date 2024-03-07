@@ -43,7 +43,7 @@ public class Class292 implements Interface26 {
 	public void method26714(@OriginalArg(0) Class297 arg0) {
 		if (-423742175 * this.anInt3913 != -1) {
 			try {
-				arg0.method26653(583161273).method33469((Class379) this.this$0.anInterface27_2.method25530(1191202635).method18261(this.anInt3913 * -423742175, -992668554), this.anInt3912 * 1735945331, -283552376);
+				arg0.method26653(583161273).method33469((Class379) this.this$0.anInterface27_2.method25530(1191202635).get(this.anInt3913 * -423742175, -992668554), this.anInt3912 * 1735945331, -283552376);
 			} catch (@Pc(28) Exception_Sub7 local28) {
 			}
 		}
@@ -54,7 +54,7 @@ public class Class292 implements Interface26 {
 	public void method26715(@OriginalArg(0) Class297 arg0, @OriginalArg(1) byte arg1) {
 		if (-423742175 * this.anInt3913 != -1) {
 			try {
-				arg0.method26653(-652552122).method33469((Class379) this.this$0.anInterface27_2.method25530(-247809848).method18261(this.anInt3913 * -423742175, 1089121099), this.anInt3912 * 1735945331, 2067586462);
+				arg0.method26653(-652552122).method33469((Class379) this.this$0.anInterface27_2.method25530(-247809848).get(this.anInt3913 * -423742175, 1089121099), this.anInt3912 * 1735945331, 2067586462);
 			} catch (@Pc(28) Exception_Sub7 local28) {
 			}
 		}
@@ -65,7 +65,7 @@ public class Class292 implements Interface26 {
 	public void method26713(@OriginalArg(0) Class297 arg0) {
 		if (-423742175 * this.anInt3913 != -1) {
 			try {
-				arg0.method26653(1992846787).method33469((Class379) this.this$0.anInterface27_2.method25530(877498787).method18261(this.anInt3913 * -423742175, 926467896), this.anInt3912 * 1735945331, 1025843417);
+				arg0.method26653(1992846787).method33469((Class379) this.this$0.anInterface27_2.method25530(877498787).get(this.anInt3913 * -423742175, 926467896), this.anInt3912 * 1735945331, 1025843417);
 			} catch (@Pc(28) Exception_Sub7 local28) {
 			}
 		}

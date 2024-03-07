@@ -72,10 +72,10 @@ public class Class282 {
 			}
 			local65 = false;
 			if (arg0.aClass658_1 != null && arg0.aClass658_1.anInt5817 * 1405397749 != -1) {
-				@Pc(287) Class336 local287 = (Class336) Class162.aClass32_Sub3_2.method18261(arg0.aClass658_1.anInt5817 * 1405397749, 1918118324);
+				@Pc(287) Class336 local287 = (Class336) Class162.aClass32_Sub3_2.get(arg0.aClass658_1.anInt5817 * 1405397749, 1918118324);
 				if (local287.aBoolean713) {
 					local65 = true;
-					local176 = ((Class336) Class162.aClass32_Sub3_2.method18261(arg0.aClass658_1.anInt5817 * 1405397749, 1941995995)).aString178;
+					local176 = ((Class336) Class162.aClass32_Sub3_2.get(arg0.aClass658_1.anInt5817 * 1405397749, 1941995995)).aString178;
 					if (local287.anInt4159 * 76137607 != 0) {
 						@Pc(321) String local321 = Class702.aClass702_5 == client.modeGame ? Class74.aClass74_137.method1259(Class106.lang, (byte) 25) : Class74.aClass74_135.method1259(Class106.lang, (byte) -64);
 						local176 = local176 + Class93_Sub31.method22006(local287.anInt4159 * 76137607, Class520.selfPlayer.anInt2804 * 1852619943, 422529462) + Class430.aString203 + local321 + local287.anInt4159 * 76137607 + Class430.aString205;

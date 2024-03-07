@@ -102,7 +102,7 @@ public abstract class Class56 implements Interface4 {
 	}
 
 	@OriginalMember(owner = "client!ace", name = "k", descriptor = "(I[II)V", line = 221)
-	public static void method18034(@OriginalArg(0) int arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2) {
+	public static void runOnLoad(@OriginalArg(0) int arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2) {
 		if (-1 != arg0 && Class383.method28142(arg0, arg1, -23207145)) {
 			@Pc(14) Class312[] local14 = Class166_Sub1.aClass320Array1[arg0].aClass312Array3;
 			Class118_Sub1.method8416(local14, 2070418787);
@@ -111,11 +111,11 @@ public abstract class Class56 implements Interface4 {
 
 	@OriginalMember(owner = "client!ace", name = "q", descriptor = "(Lclient!dh;Lclient!ch;Lclient!hf;IIIIIB)V", line = 616)
 	static void method18035(@OriginalArg(0) Class104 arg0, @OriginalArg(1) Class96 arg1, @OriginalArg(2) Class312 arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) byte arg8) {
-		@Pc(5) Class322 local5 = (Class322) Class542.aClass32_Sub2_3.method18261(arg7, -1462404455);
-		if (local5 != null && local5.anIntArray398 != null && local5.method27252(Class624.aClass120_1, Class624.aClass120_1, -1579107494)) {
-			local5 = local5.method27270(Class624.aClass120_1, Class624.aClass120_1, (short) 565);
+		@Pc(5) Class322 local5 = (Class322) Class542.aClass32_Sub2_3.get(arg7, -1462404455);
+		if (local5 != null && local5.anIntArray398 != null && local5.method27252(Class624.playerVariableManager, Class624.playerVariableManager, -1579107494)) {
+			local5 = local5.method27270(Class624.playerVariableManager, Class624.playerVariableManager, (short) 565);
 		}
-		if (local5 == null || !local5.aBoolean710 || !local5.method27252(Class624.aClass120_1, Class624.aClass120_1, -1929091443)) {
+		if (local5 == null || !local5.aBoolean710 || !local5.method27252(Class624.playerVariableManager, Class624.playerVariableManager, -1929091443)) {
 			return;
 		}
 		@Pc(45) int local45;

@@ -173,7 +173,7 @@ class Class245 implements Runnable {
 	@OriginalMember(owner = "client!ei", name = "beb", descriptor = "(Lclient!yf;B)V", line = 15033)
 	static final void method25900(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		@Pc(18) Class30 local18 = (Class30) Class74.aClass32_1.method18261(local12, -1384634871);
+		@Pc(18) Class30 local18 = (Class30) Class74.aClass32_1.get(local12, -1384634871);
 		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local18.anInt105 * -476844805;
 	}
 }

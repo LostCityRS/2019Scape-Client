@@ -285,7 +285,7 @@ public class Class466 {
 				if (local21.aClass336_1.method27441((short) 10492)) {
 					Class665.method32891(local21, -1683778969);
 				}
-				local21.method18596((Class336) Class162.aClass32_Sub3_2.method18261(local2.gSmart2or4null(-647151788), 36099140), (local29 & 0x10000) == 0, (local29 & 0x800000) == 0, true, (short) -13155);
+				local21.method18596((Class336) Class162.aClass32_Sub3_2.get(local2.gSmart2or4null(-647151788), 36099140), (local29 & 0x10000) == 0, (local29 & 0x800000) == 0, true, (short) -13155);
 				local21.method19980(local21.aClass336_1.anInt4154 * 447008399, -2142170693);
 				local21.anInt2788 = (local21.aClass336_1.anInt4165 * 295553787 << 3) * 723489705;
 				if (local21.aClass336_1.method27441((short) 5757)) {

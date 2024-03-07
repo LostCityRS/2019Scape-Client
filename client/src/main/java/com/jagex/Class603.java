@@ -135,11 +135,11 @@ public class Class603 implements Interface13, Interface5 {
 	@OriginalMember(owner = "client!uv", name = "d", descriptor = "(IIIILclient!ao;Lclient!ao;)Lclient!sv;", line = 47)
 	public static Class562 method31880(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) Interface11 arg4, @OriginalArg(5) Interface11 arg5) {
 		@Pc(1) Class563[] local1 = null;
-		@Pc(7) Class603 local7 = (Class603) arg4.method18261(arg0, 1551311868);
+		@Pc(7) Class603 local7 = (Class603) arg4.get(arg0, 1551311868);
 		if (local7.anIntArray486 != null) {
 			local1 = new Class563[local7.anIntArray486.length];
 			for (@Pc(18) int local18 = 0; local18 < local1.length; local18++) {
-				@Pc(31) Class353 local31 = (Class353) arg5.method18261(local7.anIntArray486[local18], -2088882693);
+				@Pc(31) Class353 local31 = (Class353) arg5.get(local7.anIntArray486[local18], -2088882693);
 				local1[local18] = new Class563(local31.anInt4210 * -1345955691, local31.anInt4208 * -835293139, local31.anInt4212 * 1917694335, local31.anInt4209 * 1421004741, local31.anInt4207 * -691618485, local31.anInt4206 * -1875676513, local31.anInt4211 * -1567865913, local31.aBoolean726, local31.anInt4213 * -1648858631, local31.anInt4214 * 1528316847, local31.anInt4215 * 61090465);
 			}
 		}
@@ -149,11 +149,11 @@ public class Class603 implements Interface13, Interface5 {
 	@OriginalMember(owner = "client!uv", name = "c", descriptor = "(IIIILclient!ao;Lclient!ao;)Lclient!sv;", line = 47)
 	public static Class562 method31881(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) Interface11 arg4, @OriginalArg(5) Interface11 arg5) {
 		@Pc(1) Class563[] local1 = null;
-		@Pc(7) Class603 local7 = (Class603) arg4.method18261(arg0, 1413088281);
+		@Pc(7) Class603 local7 = (Class603) arg4.get(arg0, 1413088281);
 		if (local7.anIntArray486 != null) {
 			local1 = new Class563[local7.anIntArray486.length];
 			for (@Pc(18) int local18 = 0; local18 < local1.length; local18++) {
-				@Pc(31) Class353 local31 = (Class353) arg5.method18261(local7.anIntArray486[local18], 1867359385);
+				@Pc(31) Class353 local31 = (Class353) arg5.get(local7.anIntArray486[local18], 1867359385);
 				local1[local18] = new Class563(local31.anInt4210 * -1345955691, local31.anInt4208 * -835293139, local31.anInt4212 * 1917694335, local31.anInt4209 * 1421004741, local31.anInt4207 * -691618485, local31.anInt4206 * -1875676513, local31.anInt4211 * -1567865913, local31.aBoolean726, local31.anInt4213 * -1648858631, local31.anInt4214 * 1528316847, local31.anInt4215 * 61090465);
 			}
 		}

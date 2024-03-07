@@ -73,7 +73,7 @@ public class Class591 implements Interface75, Interface64 {
 
 	@OriginalMember(owner = "client!ud", name = "g", descriptor = "(Lclient!yf;I)V", line = 114)
 	static void method31697(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1] = ((Class347) Class288.aClass55_Sub2_1.method18261(arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1], 1718854444)).method27590(Class624.aClass120_1, 1522075562) ? 1 : 0;
+		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1] = ((Class347) Class288.aClass55_Sub2_1.get(arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1], 1718854444)).method27590(Class624.playerVariableManager, 1522075562) ? 1 : 0;
 	}
 
 	@OriginalMember(owner = "client!ud", name = "u", descriptor = "(IIIILclient!vp;I)V", line = 187)

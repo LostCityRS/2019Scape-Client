@@ -47,7 +47,7 @@ public final class Class113_Sub1 extends Class113 {
 		super(arg0);
 		this.aClass507Array1 = new Class507[arg0.method18262(1527635403)];
 		for (@Pc(25) int local25 = 0; local25 < arg0.method18262(1715330233); local25++) {
-			this.aClass507Array1[local25] = ((Class108) arg0.method18261(local25, -1916410122)).aClass507_3;
+			this.aClass507Array1[local25] = ((Class108) arg0.get(local25, -1916410122)).aClass507_3;
 		}
 		this.aSet1 = new HashSet(arg0.method18262(518377990));
 	}
@@ -308,7 +308,7 @@ public final class Class113_Sub1 extends Class113 {
 										break;
 									}
 									@Pc(117) Class466 local117 = Class72.aClass79_Sub1_Sub2_2.method1468(local38, (byte) 80);
-									if (this.aClass507Array1[local117.anInt5092 * -1181855333] == Class507.aClass507_4 && ((Class108) Class72.aClass79_Sub1_Sub2_2.method18261(local117.anInt5092 * -1181855333, -2028069293)).aClass519_6.method30313((byte) 36).aClass2.isAssignableFrom(local117.anObject19.getClass())) {
+									if (this.aClass507Array1[local117.anInt5092 * -1181855333] == Class507.aClass507_4 && ((Class108) Class72.aClass79_Sub1_Sub2_2.get(local117.anInt5092 * -1181855333, -2028069293)).aClass519_6.method30313((byte) 36).aClass2.isAssignableFrom(local117.anObject19.getClass())) {
 										this.anInterface3_2.method776(local117.anInt5092 * -1181855333, local117.anObject19, (byte) 2);
 									}
 									local109++;
@@ -408,7 +408,7 @@ public final class Class113_Sub1 extends Class113 {
 										break;
 									}
 									@Pc(117) Class466 local117 = Class72.aClass79_Sub1_Sub2_2.method1468(local38, (byte) 9);
-									if (this.aClass507Array1[local117.anInt5092 * -1181855333] == Class507.aClass507_4 && ((Class108) Class72.aClass79_Sub1_Sub2_2.method18261(local117.anInt5092 * -1181855333, -2073808347)).aClass519_6.method30313((byte) 36).aClass2.isAssignableFrom(local117.anObject19.getClass())) {
+									if (this.aClass507Array1[local117.anInt5092 * -1181855333] == Class507.aClass507_4 && ((Class108) Class72.aClass79_Sub1_Sub2_2.get(local117.anInt5092 * -1181855333, -2073808347)).aClass519_6.method30313((byte) 36).aClass2.isAssignableFrom(local117.anObject19.getClass())) {
 										this.anInterface3_2.method776(local117.anInt5092 * -1181855333, local117.anObject19, (byte) 68);
 									}
 									local109++;

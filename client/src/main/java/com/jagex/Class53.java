@@ -57,7 +57,7 @@ public abstract class Class53 {
 		arg0.anInt5891 -= -1915563430;
 		@Pc(13) int local13 = arg0.anIntArray519[arg0.anInt5891 * -1497248091];
 		@Pc(23) int local23 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 1];
-		Class348.method27623(local13, new Class93_Sub40(local23, 3), null, true, (byte) 0);
+		Class348.openSubInterface(local13, new SubInterface(local23, 3), null, true, (byte) 0);
 	}
 
 	@OriginalMember(owner = "client!acb", name = "all", descriptor = "(Lclient!yf;I)V", line = 11851)

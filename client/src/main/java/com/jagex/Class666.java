@@ -208,7 +208,7 @@ public final class Class666 {
 
 	@OriginalMember(owner = "client!xo", name = "x", descriptor = "(Lclient!yf;B)V", line = 95)
 	static void method32901(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		@Pc(16) Class347 local16 = (Class347) Class288.aClass55_Sub2_1.method18261(arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], -1857953871);
+		@Pc(16) Class347 local16 = (Class347) Class288.aClass55_Sub2_1.get(arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], -1857953871);
 		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local16.anIntArray423 == null ? 0 : local16.anIntArray423.length;
 	}
 

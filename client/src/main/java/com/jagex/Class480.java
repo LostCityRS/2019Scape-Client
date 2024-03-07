@@ -317,7 +317,7 @@ public class Class480 implements Runnable {
 		}
 		@Pc(8) Class93_Sub6 local8 = Class557.method31064(arg0, arg1, (short) 255);
 		if (local8 == null) {
-			return ((Class93_Sub1_Sub2) Class638.aClass32_Sub22_1.method18261(arg0, 380980563)).anInt316 * 820091969;
+			return ((Class93_Sub1_Sub2) Class638.aClass32_Sub22_1.get(arg0, 380980563)).anInt316 * 820091969;
 		}
 		@Pc(21) int local21 = 0;
 		for (@Pc(23) int local23 = 0; local23 < local8.anIntArray173.length; local23++) {
@@ -325,7 +325,7 @@ public class Class480 implements Runnable {
 				local21++;
 			}
 		}
-		return local21 + (((Class93_Sub1_Sub2) Class638.aClass32_Sub22_1.method18261(arg0, -537088877)).anInt316 * 820091969 - local8.anIntArray173.length);
+		return local21 + (((Class93_Sub1_Sub2) Class638.aClass32_Sub22_1.get(arg0, -537088877)).anInt316 * 820091969 - local8.anIntArray173.length);
 	}
 
 	@OriginalMember(owner = "client!pf", name = "f", descriptor = "(I)I", line = 97)

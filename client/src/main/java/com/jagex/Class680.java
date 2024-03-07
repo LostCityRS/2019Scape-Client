@@ -181,7 +181,7 @@ public class Class680 {
 		arg0.anInt5891 -= -1915563430;
 		@Pc(13) int local13 = arg0.anIntArray519[arg0.anInt5891 * -1497248091];
 		@Pc(25) int local25 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 1] - 1;
-		@Pc(31) Class47 local31 = (Class47) Class277.aClass32_Sub12_1.method18261(local13, -1689501885);
+		@Pc(31) Class47 local31 = (Class47) Class277.aClass32_Sub12_1.get(local13, -1689501885);
 		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local31.method954(local25, 1955719201);
 	}
 

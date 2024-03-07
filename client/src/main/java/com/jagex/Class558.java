@@ -175,19 +175,19 @@ public class Class558 {
 
 	@OriginalMember(owner = "client!sp", name = "f", descriptor = "(S)Lclient!vd;", line = 87)
 	Class610 method31079(@OriginalArg(0) short arg0) {
-		return (Class610) this.aClass32_Sub14_10.method18261(this.anInt5324 * 1228794785, 1535638980);
+		return (Class610) this.aClass32_Sub14_10.get(this.anInt5324 * 1228794785, 1535638980);
 	}
 
 	@OriginalMember(owner = "client!sp", name = "a", descriptor = "()Lclient!vd;", line = 87)
 	Class610 method31080() {
-		return (Class610) this.aClass32_Sub14_10.method18261(this.anInt5324 * 1228794785, 316385548);
+		return (Class610) this.aClass32_Sub14_10.get(this.anInt5324 * 1228794785, 316385548);
 	}
 
 	@OriginalMember(owner = "client!sp", name = "w", descriptor = "(Lclient!dh;IZZI)Lclient!do;", line = 91)
 	final Class109 method31081(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) boolean arg3, @OriginalArg(4) int arg4) {
-		@Pc(9) Class610 local9 = (Class610) this.aClass32_Sub14_10.method18261(this.anInt5324 * 1228794785, -2017480866);
+		@Pc(9) Class610 local9 = (Class610) this.aClass32_Sub14_10.get(this.anInt5324 * 1228794785, -2017480866);
 		if (local9.anIntArray492 != null) {
-			local9 = local9.method31991(Class624.aClass120_1, client.anInt3463 * 1819062465 == 0 ? Class249.anInterface23_3 : Class624.aClass120_1, 89276088);
+			local9 = local9.method31991(Class624.playerVariableManager, client.anInt3463 * 1819062465 == 0 ? Class249.anInterface23_3 : Class624.playerVariableManager, 89276088);
 		}
 		if (local9 == null) {
 			this.method31097(arg0, (byte) 15);
@@ -273,9 +273,9 @@ public class Class558 {
 
 	@OriginalMember(owner = "client!sp", name = "g", descriptor = "(Lclient!dh;IZZ)Lclient!do;", line = 91)
 	final Class109 method31082(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) boolean arg3) {
-		@Pc(9) Class610 local9 = (Class610) this.aClass32_Sub14_10.method18261(this.anInt5324 * 1228794785, 907520427);
+		@Pc(9) Class610 local9 = (Class610) this.aClass32_Sub14_10.get(this.anInt5324 * 1228794785, 907520427);
 		if (local9.anIntArray492 != null) {
-			local9 = local9.method31991(Class624.aClass120_1, client.anInt3463 * 1819062465 == 0 ? Class249.anInterface23_3 : Class624.aClass120_1, 1233056883);
+			local9 = local9.method31991(Class624.playerVariableManager, client.anInt3463 * 1819062465 == 0 ? Class249.anInterface23_3 : Class624.playerVariableManager, 1233056883);
 		}
 		if (local9 == null) {
 			this.method31097(arg0, (byte) 42);
@@ -361,9 +361,9 @@ public class Class558 {
 
 	@OriginalMember(owner = "client!sp", name = "i", descriptor = "(Lclient!dh;IZZ)Lclient!do;", line = 91)
 	final Class109 method31083(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) boolean arg3) {
-		@Pc(9) Class610 local9 = (Class610) this.aClass32_Sub14_10.method18261(this.anInt5324 * 1228794785, 113096799);
+		@Pc(9) Class610 local9 = (Class610) this.aClass32_Sub14_10.get(this.anInt5324 * 1228794785, 113096799);
 		if (local9.anIntArray492 != null) {
-			local9 = local9.method31991(Class624.aClass120_1, client.anInt3463 * 1819062465 == 0 ? Class249.anInterface23_3 : Class624.aClass120_1, 1748011725);
+			local9 = local9.method31991(Class624.playerVariableManager, client.anInt3463 * 1819062465 == 0 ? Class249.anInterface23_3 : Class624.playerVariableManager, 1748011725);
 		}
 		if (local9 == null) {
 			this.method31097(arg0, (byte) 27);
@@ -449,9 +449,9 @@ public class Class558 {
 
 	@OriginalMember(owner = "client!sp", name = "j", descriptor = "(Lclient!dh;IZZ)Lclient!do;", line = 91)
 	final Class109 method31084(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) boolean arg3) {
-		@Pc(9) Class610 local9 = (Class610) this.aClass32_Sub14_10.method18261(this.anInt5324 * 1228794785, -372528071);
+		@Pc(9) Class610 local9 = (Class610) this.aClass32_Sub14_10.get(this.anInt5324 * 1228794785, -372528071);
 		if (local9.anIntArray492 != null) {
-			local9 = local9.method31991(Class624.aClass120_1, client.anInt3463 * 1819062465 == 0 ? Class249.anInterface23_3 : Class624.aClass120_1, 272892866);
+			local9 = local9.method31991(Class624.playerVariableManager, client.anInt3463 * 1819062465 == 0 ? Class249.anInterface23_3 : Class624.playerVariableManager, 272892866);
 		}
 		if (local9 == null) {
 			this.method31097(arg0, (byte) -11);
@@ -540,9 +540,9 @@ public class Class558 {
 		@Pc(2) Class234[] local2 = arg1.method6919();
 		@Pc(5) Class210[] local5 = arg1.method6931();
 		if ((this.aClass674_7 == null || this.aClass674_7.aBoolean870) && (local2 != null || local5 != null)) {
-			@Pc(26) Class610 local26 = (Class610) this.aClass32_Sub14_10.method18261(this.anInt5324 * 1228794785, 510346103);
+			@Pc(26) Class610 local26 = (Class610) this.aClass32_Sub14_10.get(this.anInt5324 * 1228794785, 510346103);
 			if (local26.anIntArray492 != null) {
-				local26 = local26.method31991(Class624.aClass120_1, client.anInt3463 * 1819062465 == 0 ? Class249.anInterface23_3 : Class624.aClass120_1, 68498104);
+				local26 = local26.method31991(Class624.playerVariableManager, client.anInt3463 * 1819062465 == 0 ? Class249.anInterface23_3 : Class624.playerVariableManager, 68498104);
 			}
 			if (local26 != null) {
 				this.aClass674_7 = Class674.method33091(client.anInt3485, true);
@@ -565,9 +565,9 @@ public class Class558 {
 		@Pc(2) Class234[] local2 = arg1.method6919();
 		@Pc(5) Class210[] local5 = arg1.method6931();
 		if ((this.aClass674_7 == null || this.aClass674_7.aBoolean870) && (local2 != null || local5 != null)) {
-			@Pc(26) Class610 local26 = (Class610) this.aClass32_Sub14_10.method18261(this.anInt5324 * 1228794785, 877741272);
+			@Pc(26) Class610 local26 = (Class610) this.aClass32_Sub14_10.get(this.anInt5324 * 1228794785, 877741272);
 			if (local26.anIntArray492 != null) {
-				local26 = local26.method31991(Class624.aClass120_1, client.anInt3463 * 1819062465 == 0 ? Class249.anInterface23_3 : Class624.aClass120_1, 880450077);
+				local26 = local26.method31991(Class624.playerVariableManager, client.anInt3463 * 1819062465 == 0 ? Class249.anInterface23_3 : Class624.playerVariableManager, 880450077);
 			}
 			if (local26 != null) {
 				this.aClass674_7 = Class674.method33091(client.anInt3485, true);
@@ -767,10 +767,10 @@ public class Class558 {
 		@Pc(1) int local1 = arg1;
 		@Pc(3) boolean local3 = false;
 		if (arg1 == -1) {
-			@Pc(16) Class610 local16 = (Class610) this.aClass32_Sub14_10.method18261(this.anInt5324 * 1228794785, 924845331);
+			@Pc(16) Class610 local16 = (Class610) this.aClass32_Sub14_10.get(this.anInt5324 * 1228794785, 924845331);
 			@Pc(18) Class610 local18 = local16;
 			if (local16.anIntArray492 != null) {
-				local16 = local16.method31991(Class624.aClass120_1, client.anInt3463 * 1819062465 == 0 ? Class249.anInterface23_3 : Class624.aClass120_1, -579369343);
+				local16 = local16.method31991(Class624.playerVariableManager, client.anInt3463 * 1819062465 == 0 ? Class249.anInterface23_3 : Class624.playerVariableManager, -579369343);
 			}
 			if (local16 == null) {
 				return;
@@ -823,10 +823,10 @@ public class Class558 {
 		@Pc(1) int local1 = arg1;
 		@Pc(3) boolean local3 = false;
 		if (arg1 == -1) {
-			@Pc(16) Class610 local16 = (Class610) this.aClass32_Sub14_10.method18261(this.anInt5324 * 1228794785, 1142026822);
+			@Pc(16) Class610 local16 = (Class610) this.aClass32_Sub14_10.get(this.anInt5324 * 1228794785, 1142026822);
 			@Pc(18) Class610 local18 = local16;
 			if (local16.anIntArray492 != null) {
-				local16 = local16.method31991(Class624.aClass120_1, client.anInt3463 * 1819062465 == 0 ? Class249.anInterface23_3 : Class624.aClass120_1, -456826603);
+				local16 = local16.method31991(Class624.playerVariableManager, client.anInt3463 * 1819062465 == 0 ? Class249.anInterface23_3 : Class624.playerVariableManager, -456826603);
 			}
 			if (local16 == null) {
 				return;
@@ -879,10 +879,10 @@ public class Class558 {
 		@Pc(1) int local1 = arg1;
 		@Pc(3) boolean local3 = false;
 		if (arg1 == -1) {
-			@Pc(16) Class610 local16 = (Class610) this.aClass32_Sub14_10.method18261(this.anInt5324 * 1228794785, -199306362);
+			@Pc(16) Class610 local16 = (Class610) this.aClass32_Sub14_10.get(this.anInt5324 * 1228794785, -199306362);
 			@Pc(18) Class610 local18 = local16;
 			if (local16.anIntArray492 != null) {
-				local16 = local16.method31991(Class624.aClass120_1, client.anInt3463 * 1819062465 == 0 ? Class249.anInterface23_3 : Class624.aClass120_1, 1039550395);
+				local16 = local16.method31991(Class624.playerVariableManager, client.anInt3463 * 1819062465 == 0 ? Class249.anInterface23_3 : Class624.playerVariableManager, 1039550395);
 			}
 			if (local16 == null) {
 				return;
@@ -935,10 +935,10 @@ public class Class558 {
 		@Pc(1) int local1 = arg1;
 		@Pc(3) boolean local3 = false;
 		if (arg1 == -1) {
-			@Pc(16) Class610 local16 = (Class610) this.aClass32_Sub14_10.method18261(this.anInt5324 * 1228794785, 1239516771);
+			@Pc(16) Class610 local16 = (Class610) this.aClass32_Sub14_10.get(this.anInt5324 * 1228794785, 1239516771);
 			@Pc(18) Class610 local18 = local16;
 			if (local16.anIntArray492 != null) {
-				local16 = local16.method31991(Class624.aClass120_1, client.anInt3463 * 1819062465 == 0 ? Class249.anInterface23_3 : Class624.aClass120_1, 1947854409);
+				local16 = local16.method31991(Class624.playerVariableManager, client.anInt3463 * 1819062465 == 0 ? Class249.anInterface23_3 : Class624.playerVariableManager, 1947854409);
 			}
 			if (local16 == null) {
 				return;
@@ -1014,9 +1014,9 @@ public class Class558 {
 	public static final void method31111(@OriginalArg(0) boolean arg0, @OriginalArg(1) int arg1) {
 		@Pc(5) ClientMessage local5 = Class102.createGameMessage(ClientProt.aClientProt_59, client.aClass175_2.clientIsaac, (byte) 26);
 		client.aClass175_2.send(local5, -1718406436);
-		for (@Pc(14) Class93_Sub40 local14 = (Class93_Sub40) client.aClass16_22.method227((byte) 83); local14 != null; local14 = (Class93_Sub40) client.aClass16_22.method229(1694641359)) {
+		for (@Pc(14) SubInterface local14 = (SubInterface) client.aClass16_22.method227((byte) 83); local14 != null; local14 = (SubInterface) client.aClass16_22.method229(1694641359)) {
 			if (!local14.method23970(658560992)) {
-				local14 = (Class93_Sub40) client.aClass16_22.method227((byte) 60);
+				local14 = (SubInterface) client.aClass16_22.method227((byte) 60);
 				if (local14 == null) {
 					break;
 				}
@@ -1039,7 +1039,7 @@ public class Class558 {
 	@OriginalMember(owner = "client!sp", name = "axe", descriptor = "(Lclient!yf;I)V", line = 13928)
 	static final void method31113(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		@Pc(18) Class322 local18 = (Class322) Class542.aClass32_Sub2_3.method18261(local12, -536187821);
+		@Pc(18) Class322 local18 = (Class322) Class542.aClass32_Sub2_3.get(local12, -536187821);
 		if (local18.aString174 == null) {
 			arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = "";
 		} else {

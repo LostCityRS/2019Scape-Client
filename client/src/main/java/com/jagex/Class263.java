@@ -254,7 +254,7 @@ public class Class263 implements Interface13 {
 				} else if (arg1 == 24) {
 					this.anInt3879 = arg0.g2(-1434290800) * -1103879291;
 					if (this.aClass117_1 != null) {
-						this.aClass268_1 = (Class268) this.aClass117_1.anInterface11_4.method18261(this.anInt3879 * -421372595, 942640473);
+						this.aClass268_1 = (Class268) this.aClass117_1.anInterface11_4.get(this.anInt3879 * -421372595, 942640473);
 					}
 				} else if (arg1 == 25) {
 					this.anInt3878 = arg0.g2(-1434290800) * 2036536913;
@@ -382,7 +382,7 @@ public class Class263 implements Interface13 {
 				} else if (arg1 == 24) {
 					this.anInt3879 = arg0.g2(-1434290800) * -1103879291;
 					if (this.aClass117_1 != null) {
-						this.aClass268_1 = (Class268) this.aClass117_1.anInterface11_4.method18261(this.anInt3879 * -421372595, 131950226);
+						this.aClass268_1 = (Class268) this.aClass117_1.anInterface11_4.get(this.anInt3879 * -421372595, 131950226);
 					}
 				} else if (arg1 == 25) {
 					this.anInt3878 = arg0.g2(-1434290800) * 2036536913;

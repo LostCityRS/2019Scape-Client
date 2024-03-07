@@ -755,7 +755,7 @@ public class Class635 implements Interface70 {
 	@OriginalMember(owner = "client!we", name = "ka", descriptor = "(S)V", line = 11806)
 	static void method32440(@OriginalArg(0) short arg0) {
 		for (@Pc(1) int local1 = 0; local1 < 114; local1++) {
-			client.aBooleanArray22[local1] = true;
+			client.topLevelComponentRedrawRequestedTemp[local1] = true;
 		}
 	}
 

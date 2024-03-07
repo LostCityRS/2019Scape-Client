@@ -263,7 +263,7 @@ public class Class627 {
 		arg2.anInt5891 -= -1915563430;
 		@Pc(13) int local13 = arg2.anIntArray519[arg2.anInt5891 * -1497248091];
 		@Pc(23) int local23 = arg2.anIntArray519[arg2.anInt5891 * -1497248091 + 1];
-		@Pc(29) Class87 local29 = (Class87) Class124.aClass32_Sub21_7.method18261(local13, 154074221);
+		@Pc(29) Class87 local29 = (Class87) Class124.aClass32_Sub21_7.get(local13, 154074221);
 		if (local29.anInt265 * 951920133 == local23) {
 			arg0.method26914(local13, 570797165);
 		} else {

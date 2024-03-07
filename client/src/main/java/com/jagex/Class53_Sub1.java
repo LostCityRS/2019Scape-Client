@@ -130,7 +130,7 @@ public class Class53_Sub1 extends Class53 implements Interface63 {
 
 	@OriginalMember(owner = "client!alv", name = "al", descriptor = "(III)V", line = 188)
 	static void method14955(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(5) Class379 local5 = (Class379) Class30.aClass32_Sub16_1.method18261(arg0, 1660295563);
+		@Pc(5) Class379 local5 = (Class379) Class30.aClass32_Sub16_1.get(arg0, 1660295563);
 		@Pc(14) Class93_Sub1_Sub11 local14 = Class371.method28000(1, (long) (local5.aClass108_1.anInt867 * -1284841473));
 		try {
 			if (Class93_Sub1_Sub11.aBoolean506) {

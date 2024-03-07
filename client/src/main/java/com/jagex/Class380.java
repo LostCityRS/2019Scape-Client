@@ -184,7 +184,7 @@ public class Class380 implements Interface33 {
 	@OriginalMember(owner = "client!ki", name = "agq", descriptor = "(Lclient!yf;I)V", line = 10752)
 	static final void method28119(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = ((Class47) Class277.aClass32_Sub12_1.method18261(local12, 740005349)).anInt153 * 497223015;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = ((Class47) Class277.aClass32_Sub12_1.get(local12, 740005349)).anInt153 * 497223015;
 	}
 
 	@OriginalMember(owner = "client!ki", name = "aht", descriptor = "(Lclient!yf;I)V", line = 11023)

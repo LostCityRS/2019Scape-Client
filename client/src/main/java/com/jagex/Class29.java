@@ -24,7 +24,7 @@ public class Class29 {
 
 	@OriginalMember(owner = "client!abb", name = "cn", descriptor = "(Lclient!aop;III)Z", line = 380)
 	static final boolean method604(@OriginalArg(0) Class32_Sub14 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		@Pc(5) Class610 local5 = (Class610) arg0.method18261(arg1, -957686636);
+		@Pc(5) Class610 local5 = (Class610) arg0.get(arg1, -957686636);
 		if (arg2 == 11) {
 			arg2 = 10;
 		}

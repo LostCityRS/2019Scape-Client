@@ -19,7 +19,7 @@ public class Class120 implements Interface23, Interface21, Interface71 {
 	final Class675[] aClass675Array1;
 
 	@OriginalMember(owner = "client!ah", name = "e", descriptor = "Lclient!wu;")
-	public final Class647 aClass647_1;
+	public final Class647 vars;
 
 	@OriginalMember(owner = "client!ah", name = "n", descriptor = "Lclient!adj;")
 	final Class79_Sub1_Sub1 aClass79_Sub1_Sub1_2;
@@ -30,7 +30,7 @@ public class Class120 implements Interface23, Interface21, Interface71 {
 	@OriginalMember(owner = "client!ah", name = "<init>", descriptor = "(Lclient!adj;Lclient!aor;I)V", line = 21)
 	public Class120(@OriginalArg(0) Class79_Sub1_Sub1 arg0, @OriginalArg(1) Class32_Sub16 arg1, @OriginalArg(2) int arg2) {
 		this.aClass675Array1 = new Class675[arg2];
-		this.aClass647_1 = new Class647();
+		this.vars = new Class647();
 		this.aClass79_Sub1_Sub1_2 = arg0;
 		this.aClass32_Sub16_2 = arg1;
 	}
@@ -148,100 +148,100 @@ public class Class120 implements Interface23, Interface21, Interface71 {
 	@OriginalMember(owner = "client!ah", name = "j", descriptor = "(Lclient!qe;I)Lclient!ec;", line = 49)
 	@Override
 	public Class108 method27955(@OriginalArg(0) Class138 arg0, @OriginalArg(1) int arg1) {
-		return Class138.aClass138_65 == arg0 ? (Class108) this.aClass79_Sub1_Sub1_2.method18261(arg1, 1568859277) : null;
+		return Class138.aClass138_65 == arg0 ? (Class108) this.aClass79_Sub1_Sub1_2.get(arg1, 1568859277) : null;
 	}
 
 	@OriginalMember(owner = "client!ah", name = "i", descriptor = "(Lclient!qe;I)Lclient!ec;", line = 49)
 	@Override
 	public Class108 method27952(@OriginalArg(0) Class138 arg0, @OriginalArg(1) int arg1) {
-		return Class138.aClass138_65 == arg0 ? (Class108) this.aClass79_Sub1_Sub1_2.method18261(arg1, -937357950) : null;
+		return Class138.aClass138_65 == arg0 ? (Class108) this.aClass79_Sub1_Sub1_2.get(arg1, -937357950) : null;
 	}
 
 	@OriginalMember(owner = "client!ah", name = "w", descriptor = "(Lclient!qe;II)Lclient!ec;", line = 49)
 	@Override
 	public Class108 method27954(@OriginalArg(0) Class138 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		return Class138.aClass138_65 == arg0 ? (Class108) this.aClass79_Sub1_Sub1_2.method18261(arg1, -1007474932) : null;
+		return Class138.aClass138_65 == arg0 ? (Class108) this.aClass79_Sub1_Sub1_2.get(arg1, -1007474932) : null;
 	}
 
 	@OriginalMember(owner = "client!ah", name = "t", descriptor = "(Lclient!qe;I)Lclient!ec;", line = 49)
 	@Override
 	public Class108 method27956(@OriginalArg(0) Class138 arg0, @OriginalArg(1) int arg1) {
-		return Class138.aClass138_65 == arg0 ? (Class108) this.aClass79_Sub1_Sub1_2.method18261(arg1, 1374713298) : null;
+		return Class138.aClass138_65 == arg0 ? (Class108) this.aClass79_Sub1_Sub1_2.get(arg1, 1374713298) : null;
 	}
 
 	@OriginalMember(owner = "client!ah", name = "l", descriptor = "(IB)Lclient!kh;", line = 54)
 	@Override
 	public Class379 method27953(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1) {
-		@Pc(6) Class379 local6 = (Class379) this.aClass32_Sub16_2.method18261(arg0, -1929021210);
+		@Pc(6) Class379 local6 = (Class379) this.aClass32_Sub16_2.get(arg0, -1929021210);
 		return Class138.aClass138_65 == local6.aClass108_1.aClass138_6 ? local6 : null;
 	}
 
 	@OriginalMember(owner = "client!ah", name = "ae", descriptor = "(I)Lclient!kh;", line = 54)
 	@Override
 	public Class379 method27957(@OriginalArg(0) int arg0) {
-		@Pc(6) Class379 local6 = (Class379) this.aClass32_Sub16_2.method18261(arg0, 266305644);
+		@Pc(6) Class379 local6 = (Class379) this.aClass32_Sub16_2.get(arg0, 266305644);
 		return Class138.aClass138_65 == local6.aClass108_1.aClass138_6 ? local6 : null;
 	}
 
 	@OriginalMember(owner = "client!ah", name = "ag", descriptor = "(I)Lclient!kh;", line = 54)
 	@Override
 	public Class379 method27958(@OriginalArg(0) int arg0) {
-		@Pc(6) Class379 local6 = (Class379) this.aClass32_Sub16_2.method18261(arg0, -44947171);
+		@Pc(6) Class379 local6 = (Class379) this.aClass32_Sub16_2.get(arg0, -44947171);
 		return Class138.aClass138_65 == local6.aClass108_1.aClass138_6 ? local6 : null;
 	}
 
 	@OriginalMember(owner = "client!ah", name = "ac", descriptor = "(Lclient!ec;)I", line = 60)
 	@Override
 	public int method33458(@OriginalArg(0) Class108 arg0) {
-		return this.aClass647_1.method33455(arg0, 924022621);
+		return this.vars.method33455(arg0, 924022621);
 	}
 
 	@OriginalMember(owner = "client!ah", name = "u", descriptor = "(Lclient!ec;I)I", line = 60)
 	@Override
 	public int method33455(@OriginalArg(0) Class108 arg0, @OriginalArg(1) int arg1) {
-		return this.aClass647_1.method33455(arg0, -1665549357);
+		return this.vars.method33455(arg0, -1665549357);
 	}
 
 	@OriginalMember(owner = "client!ah", name = "al", descriptor = "(Lclient!ec;)I", line = 60)
 	@Override
 	public int method33457(@OriginalArg(0) Class108 arg0) {
-		return this.aClass647_1.method33455(arg0, -1176593209);
+		return this.vars.method33455(arg0, -1176593209);
 	}
 
 	@OriginalMember(owner = "client!ah", name = "ah", descriptor = "(Lclient!ec;)I", line = 60)
 	@Override
 	public int method33456(@OriginalArg(0) Class108 arg0) {
-		return this.aClass647_1.method33455(arg0, -1170362389);
+		return this.vars.method33455(arg0, -1170362389);
 	}
 
 	@OriginalMember(owner = "client!ah", name = "ai", descriptor = "(Lclient!ec;)I", line = 60)
 	@Override
 	public int method33459(@OriginalArg(0) Class108 arg0) {
-		return this.aClass647_1.method33455(arg0, -1894837578);
+		return this.vars.method33455(arg0, -1894837578);
 	}
 
 	@OriginalMember(owner = "client!ah", name = "z", descriptor = "(Lclient!kh;I)I", line = 64)
 	@Override
 	public int method33454(@OriginalArg(0) Class379 arg0, @OriginalArg(1) int arg1) {
-		return this.aClass647_1.method33454(arg0, 1588220606);
+		return this.vars.method33454(arg0, 1588220606);
 	}
 
 	@OriginalMember(owner = "client!ah", name = "aw", descriptor = "(Lclient!kh;)I", line = 64)
 	@Override
 	public int method33461(@OriginalArg(0) Class379 arg0) {
-		return this.aClass647_1.method33454(arg0, -1965711294);
+		return this.vars.method33454(arg0, -1965711294);
 	}
 
 	@OriginalMember(owner = "client!ah", name = "as", descriptor = "(Lclient!kh;)I", line = 64)
 	@Override
 	public int method33460(@OriginalArg(0) Class379 arg0) {
-		return this.aClass647_1.method33454(arg0, -2131373946);
+		return this.vars.method33454(arg0, -2131373946);
 	}
 
 	@OriginalMember(owner = "client!ah", name = "at", descriptor = "(Lclient!kh;)I", line = 64)
 	@Override
 	public int method33462(@OriginalArg(0) Class379 arg0) {
-		return this.aClass647_1.method33454(arg0, 1454930453);
+		return this.vars.method33454(arg0, 1454930453);
 	}
 
 	@OriginalMember(owner = "client!ah", name = "vz", descriptor = "(Lclient!yf;I)V", line = 8869)

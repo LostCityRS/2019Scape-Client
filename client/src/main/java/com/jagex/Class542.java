@@ -35,7 +35,7 @@ public class Class542 {
 			}
 			local21.anInt3300 = 0;
 			if (!local21.aBoolean564 && local21.getStream((byte) 32) != null) {
-				@Pc(52) ClientMessage local52 = Class102.createGameMessage(ClientProt.aClientProt_105, local21.clientIsaac, (byte) 58);
+				@Pc(52) ClientMessage local52 = Class102.createGameMessage(ClientProt.NO_TIMEOUT, local21.clientIsaac, (byte) 58);
 				local21.send(local52, -2105041718);
 				try {
 					local21.flush((byte) 49);
@@ -62,7 +62,7 @@ public class Class542 {
 			}
 			local21.anInt3300 = 0;
 			if (!local21.aBoolean564 && local21.getStream((byte) 39) != null) {
-				@Pc(52) ClientMessage local52 = Class102.createGameMessage(ClientProt.aClientProt_105, local21.clientIsaac, (byte) 13);
+				@Pc(52) ClientMessage local52 = Class102.createGameMessage(ClientProt.NO_TIMEOUT, local21.clientIsaac, (byte) 13);
 				local21.send(local52, -1864049693);
 				try {
 					local21.flush((byte) 113);
@@ -89,7 +89,7 @@ public class Class542 {
 			}
 			local21.anInt3300 = 0;
 			if (!local21.aBoolean564 && local21.getStream((byte) 2) != null) {
-				@Pc(52) ClientMessage local52 = Class102.createGameMessage(ClientProt.aClientProt_105, local21.clientIsaac, (byte) 112);
+				@Pc(52) ClientMessage local52 = Class102.createGameMessage(ClientProt.NO_TIMEOUT, local21.clientIsaac, (byte) 112);
 				local21.send(local52, -1994753786);
 				try {
 					local21.flush((byte) 118);

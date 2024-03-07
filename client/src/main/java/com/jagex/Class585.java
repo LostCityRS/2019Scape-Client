@@ -261,7 +261,7 @@ public class Class585 {
 
 	@OriginalMember(owner = "client!tx", name = "i", descriptor = "(Lclient!yf;B)V", line = 118)
 	static void method31430(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1] = ((Class347) Class288.aClass55_Sub2_1.method18261(arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1], 321826192)).method27592(Class624.aClass120_1, 1317834618) ? 1 : 0;
+		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1] = ((Class347) Class288.aClass55_Sub2_1.get(arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1], 321826192)).method27592(Class624.playerVariableManager, 1317834618) ? 1 : 0;
 	}
 
 	@OriginalMember(owner = "client!tx", name = "e", descriptor = "(IB)V", line = 133)

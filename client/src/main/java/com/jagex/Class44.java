@@ -84,7 +84,7 @@ public abstract class Class44 implements Interface4 {
 				return local12;
 			}
 		}
-		@Pc(23) Class47 local23 = (Class47) arg12.method18261(arg2, -1066152931);
+		@Pc(23) Class47 local23 = (Class47) arg12.get(arg2, -1066152931);
 		if (arg3 > 1 && local23.anIntArray8 != null) {
 			@Pc(31) int local31 = -1;
 			for (@Pc(33) int local33 = 0; local33 < 10; local33++) {
@@ -93,7 +93,7 @@ public abstract class Class44 implements Interface4 {
 				}
 			}
 			if (local31 != -1) {
-				local23 = (Class47) arg12.method18261(local31, -883362020);
+				local23 = (Class47) arg12.get(local31, -883362020);
 			}
 		}
 		@Pc(77) int[] local77 = local23.method928(arg0, arg1, arg3, arg4, arg5, arg6, arg8, arg9, arg10, arg11, (byte) 14);
@@ -128,7 +128,7 @@ public abstract class Class44 implements Interface4 {
 				return local12;
 			}
 		}
-		@Pc(23) Class47 local23 = (Class47) arg12.method18261(arg2, 149837038);
+		@Pc(23) Class47 local23 = (Class47) arg12.get(arg2, 149837038);
 		if (arg3 > 1 && local23.anIntArray8 != null) {
 			@Pc(31) int local31 = -1;
 			for (@Pc(33) int local33 = 0; local33 < 10; local33++) {
@@ -137,7 +137,7 @@ public abstract class Class44 implements Interface4 {
 				}
 			}
 			if (local31 != -1) {
-				local23 = (Class47) arg12.method18261(local31, -249849204);
+				local23 = (Class47) arg12.get(local31, -249849204);
 			}
 		}
 		@Pc(77) int[] local77 = local23.method928(arg0, arg1, arg3, arg4, arg5, arg6, arg8, arg9, arg10, arg11, (byte) -57);

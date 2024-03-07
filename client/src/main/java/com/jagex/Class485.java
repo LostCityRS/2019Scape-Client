@@ -180,7 +180,7 @@ public class Class485 implements Interface7 {
 									Class157.method14258(local71, local188, local192, local327, local329, local103, local110, 266367318);
 									Class694.aClass104_14.method20637();
 									Class694.aClass104_14.method20569(arg2, arg3, arg4, arg5);
-									client.aBooleanArray22[local71] = true;
+									client.topLevelComponentRedrawRequestedTemp[local71] = true;
 								}
 								continue;
 							}
@@ -209,20 +209,20 @@ public class Class485 implements Interface7 {
 							}
 							if (Class312.anInt3959 * 2108700873 == local15.anInt3972 * -1428659995) {
 								Class480.method29749(Class694.aClass104_14, local103, local110, local15.anInt3981 * 1215292027, local15.anInt3982 * -1490598249, (short) -19136);
-								client.aBooleanArray22[local71] = true;
+								client.topLevelComponentRedrawRequestedTemp[local71] = true;
 								Class694.aClass104_14.method20569(arg2, arg3, arg4, arg5);
 								continue;
 							}
 							if (Class312.anInt3960 * 145731619 == local15.anInt3972 * -1428659995) {
 								Class284.method26485(Class694.aClass104_14, local103, local110, local15.anInt3981 * 1215292027, local15.anInt3982 * -1490598249, (byte) 0);
-								client.aBooleanArray22[local71] = true;
+								client.topLevelComponentRedrawRequestedTemp[local71] = true;
 								Class694.aClass104_14.method20569(arg2, arg3, arg4, arg5);
 								continue;
 							}
 							if (Class312.anInt3961 * 89210441 == local15.anInt3972 * -1428659995) {
 								if (client.aBoolean599 || client.aBoolean610) {
 									Class110_Sub4.method7302(local103, local110, local15, (byte) 46);
-									client.aBooleanArray22[local71] = true;
+									client.topLevelComponentRedrawRequestedTemp[local71] = true;
 								}
 								continue;
 							}
@@ -265,7 +265,7 @@ public class Class485 implements Interface7 {
 							if (local15.aClass312Array1 != null) {
 								method29802(local15.aClass312Array1, local15.anInt3953 * -1549590237, local188, local192, local327, local329, local103 - local15.anInt3989 * 1868441863, local110 - local15.anInt3990 * -1543587533, local71, arg9, 338284877);
 							}
-							@Pc(840) Class93_Sub40 local840 = (Class93_Sub40) client.aClass16_22.method214((long) (local15.anInt3953 * -1549590237));
+							@Pc(840) SubInterface local840 = (SubInterface) client.aClass16_22.method214((long) (local15.anInt3953 * -1549590237));
 							if (local840 != null) {
 								Class660.method32824(local840.anInt3172 * 1220811495, local188, local192, local327, local329, local103 - local15.anInt3989 * 1868441863, local110 - local15.anInt3990 * -1543587533, local71, 658105198);
 							}
@@ -316,7 +316,7 @@ public class Class485 implements Interface7 {
 										local666 = local15.anInt3993 * 969124391;
 										@Pc(1206) String local1206 = local15.aString164;
 										if (local15.anInt4045 * 307668159 != -1) {
-											@Pc(1221) Class47 local1221 = (Class47) Class277.aClass32_Sub12_1.method18261(local15.anInt4045 * 307668159, -1974256897);
+											@Pc(1221) Class47 local1221 = (Class47) Class277.aClass32_Sub12_1.get(local15.anInt4045 * 307668159, -1974256897);
 											local1206 = local1221.aString6;
 											if (local1206 == null) {
 												local1206 = "null";
@@ -437,7 +437,7 @@ public class Class485 implements Interface7 {
 											if (local920 >= 0 && local920 < 2048) {
 												local2044 = client.aClass132_Sub1_Sub1_Sub1_Sub2Array1[local920];
 												if (local2044 != null && (local920 == client.selfPlayerSlot * -859840571 || Class704.method36732(local2044.name2, 304329139) == local15.anInt4038 * 786895357)) {
-													local1951 = local15.method26874(Class694.aClass104_14, local344, Class166_Sub6.aClass32_Sub5_1, Class343.aClass32_Sub19_1, Class162.aClass32_Sub3_2, Class277.aClass32_Sub12_1, Class32.aClass32_Sub17_23, Class624.aClass120_1, Class624.aClass120_1, local15.aClass19_6, local2044.aClass658_1, -1133182906);
+													local1951 = local15.method26874(Class694.aClass104_14, local344, Class166_Sub6.aClass32_Sub5_1, Class343.aClass32_Sub19_1, Class162.aClass32_Sub3_2, Class277.aClass32_Sub12_1, Class32.aClass32_Sub17_23, Class624.playerVariableManager, Class624.playerVariableManager, local15.aClass19_6, local2044.aClass658_1, -1133182906);
 													if (local1951 == null && Class312.aBoolean699) {
 														Class354.method27694(local15, -1174743804);
 													}
@@ -461,7 +461,7 @@ public class Class485 implements Interface7 {
 												}
 											}
 											if (local1607 && local2044 != null && local2044.aClass658_1 != null) {
-												local1951 = local2044.aClass658_1.method32774(Class694.aClass104_14, local344, Class166_Sub6.aClass32_Sub5_1, Class343.aClass32_Sub19_1, Class162.aClass32_Sub3_2, Class277.aClass32_Sub12_1, Class624.aClass120_1, Class624.aClass120_1, local15.aClass19_6, null, null, null, 0, true, Class113.aClass651_2, (byte) 40);
+												local1951 = local2044.aClass658_1.method32774(Class694.aClass104_14, local344, Class166_Sub6.aClass32_Sub5_1, Class343.aClass32_Sub19_1, Class162.aClass32_Sub3_2, Class277.aClass32_Sub12_1, Class624.playerVariableManager, Class624.playerVariableManager, local15.aClass19_6, null, null, null, 0, true, Class113.aClass651_2, (byte) 40);
 											}
 										} else if (local15.anInt4001 * 1553054515 == 8 || local15.anInt4001 * 1553054515 == 9) {
 											@Pc(2208) Class93_Sub6 local2208 = Class557.method31064(local15.anInt4037 * 371778301, false, (short) 255);
@@ -469,18 +469,18 @@ public class Class485 implements Interface7 {
 												local1951 = local2208.method12680(Class694.aClass104_14, local344, local15.aClass19_6, local15.anInt4038 * 786895357, local15.anInt4001 * 1553054515 == 9, local15.aBoolean689 ? Class520.selfPlayer.aClass658_1 : null, 1946877310);
 											}
 										} else if (local15.aClass19_6 != null && local15.aClass19_6.method23557(732026440)) {
-											local1951 = local15.method26874(Class694.aClass104_14, local344, Class166_Sub6.aClass32_Sub5_1, Class343.aClass32_Sub19_1, Class162.aClass32_Sub3_2, Class277.aClass32_Sub12_1, Class32.aClass32_Sub17_23, Class624.aClass120_1, Class624.aClass120_1, local15.aClass19_6, Class520.selfPlayer.aClass658_1, -1753279164);
+											local1951 = local15.method26874(Class694.aClass104_14, local344, Class166_Sub6.aClass32_Sub5_1, Class343.aClass32_Sub19_1, Class162.aClass32_Sub3_2, Class277.aClass32_Sub12_1, Class32.aClass32_Sub17_23, Class624.playerVariableManager, Class624.playerVariableManager, local15.aClass19_6, Class520.selfPlayer.aClass658_1, -1753279164);
 											if (local1951 == null && Class312.aBoolean699) {
 												Class354.method27694(local15, -1174743804);
 											}
 										} else {
-											local1951 = local15.method26874(Class694.aClass104_14, local344, Class166_Sub6.aClass32_Sub5_1, Class343.aClass32_Sub19_1, Class162.aClass32_Sub3_2, Class277.aClass32_Sub12_1, Class32.aClass32_Sub17_23, Class624.aClass120_1, Class624.aClass120_1, null, Class520.selfPlayer.aClass658_1, -1974335303);
+											local1951 = local15.method26874(Class694.aClass104_14, local344, Class166_Sub6.aClass32_Sub5_1, Class343.aClass32_Sub19_1, Class162.aClass32_Sub3_2, Class277.aClass32_Sub12_1, Class32.aClass32_Sub17_23, Class624.playerVariableManager, Class624.playerVariableManager, null, Class520.selfPlayer.aClass658_1, -1974335303);
 											if (local1951 == null && Class312.aBoolean699) {
 												Class354.method27694(local15, -1174743804);
 											}
 										}
 									} else {
-										@Pc(1979) Class47 local1979 = (Class47) Class277.aClass32_Sub12_1.method18261(local15.anInt4045 * 307668159, 2096714263);
+										@Pc(1979) Class47 local1979 = (Class47) Class277.aClass32_Sub12_1.get(local15.anInt4045 * 307668159, 2096714263);
 										if (local1979 != null) {
 											local1979 = local1979.method927(local15.anInt4046 * -570377411, 1586672031);
 											local1951 = local1979.method924(Class694.aClass104_14, local344, 1, local15.aBoolean689 ? Class520.selfPlayer.aClass658_1 : null, local15.aClass19_6, 0, 0, 0, 0, -1240997013);
@@ -615,8 +615,8 @@ public class Class485 implements Interface7 {
 		@Pc(33) int local33 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 2];
 		@Pc(37) int local37 = Class174.method24323(local23, (byte) 31);
 		@Pc(41) int local41 = Class57.method1077(local23, -52780061);
-		@Pc(47) Class30 local47 = (Class30) Class74.aClass32_1.method18261(local13, 1584973293);
-		@Pc(53) Class77 local53 = (Class77) Class276.aClass32_2.method18261(local37, 928470865);
+		@Pc(47) Class30 local47 = (Class30) Class74.aClass32_1.get(local13, 1584973293);
+		@Pc(53) Class77 local53 = (Class77) Class276.aClass32_2.get(local37, 928470865);
 		@Pc(58) Class519[] local58 = local53.aClass519ArrayArray2[local41];
 		@Pc(63) Object[] local63 = local47.method617(local41, 1417620205);
 		if (local63 == null && local53.anObjectArrayArray2 != null) {

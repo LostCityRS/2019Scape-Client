@@ -439,7 +439,7 @@ public class Class7 {
 	static String method122(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1) {
 		@Pc(3) StringBuilder local3 = new StringBuilder();
 		for (@Pc(5) int local5 = 0; local5 < arg0.length; local5++) {
-			@Pc(17) Class347 local17 = (Class347) Class288.aClass55_Sub2_1.method18261(arg0[local5], -1871632979);
+			@Pc(17) Class347 local17 = (Class347) Class288.aClass55_Sub2_1.get(arg0[local5], -1871632979);
 			if (-941975975 * local17.anInt4198 != -1) {
 				local3.append(" <sprite=").append(local17.anInt4198 * -941975975).append(">");
 			}

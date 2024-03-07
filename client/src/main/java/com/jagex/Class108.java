@@ -284,7 +284,7 @@ public abstract class Class108 implements Interface12 {
 
 	@OriginalMember(owner = "client!ec", name = "r", descriptor = "(Lclient!yf;I)V", line = 65)
 	static void method7444(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 2] = ((Class347) Class288.aClass55_Sub2_1.method18261(arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 2], -405999438)).anIntArrayArray57[arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1]][0];
+		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 2] = ((Class347) Class288.aClass55_Sub2_1.get(arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 2], -405999438)).anIntArrayArray57[arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1]][0];
 		arg0.anInt5891 -= 1189701933;
 	}
 

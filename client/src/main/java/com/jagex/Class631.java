@@ -117,7 +117,7 @@ public class Class631 implements Interface75 {
 		if (local12 == -1) {
 			throw new RuntimeException();
 		}
-		@Pc(39) Class39 local39 = (Class39) Class19.aClass32_Sub7_5.method18261(local12, -229709126);
+		@Pc(39) Class39 local39 = (Class39) Class19.aClass32_Sub7_5.get(local12, -229709126);
 		if (Class519.aClass519_7 != local39.aClass519_1) {
 			throw new RuntimeException();
 		}

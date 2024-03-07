@@ -46,7 +46,7 @@ public class Class432 {
 					if (local9.aClass312Array1 != null) {
 						method28788(local9.aClass312Array1, local9.anInt3953 * -1549590237, -1463521841);
 					}
-					@Pc(57) Class93_Sub40 local57 = (Class93_Sub40) client.aClass16_22.method214((long) (local9.anInt3953 * -1549590237));
+					@Pc(57) SubInterface local57 = (SubInterface) client.aClass16_22.method214((long) (local9.anInt3953 * -1549590237));
 					if (local57 != null) {
 						Class19.method23635(local57.anInt3172 * 1220811495, 462245976);
 					}

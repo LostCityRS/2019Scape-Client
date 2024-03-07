@@ -38,7 +38,7 @@ public class Class110_Sub5 extends Class110 {
 	}
 
 	@OriginalMember(owner = "client!aga", name = "e", descriptor = "(Lclient!ase;I)V", line = 42)
-	static final void method7654(@OriginalArg(0) PacketBit arg0, @OriginalArg(1) int arg1) {
+	static final void init(@OriginalArg(0) PacketBit arg0, @OriginalArg(1) int arg1) {
 		arg0.accessBits((byte) 48);
 		@Pc(6) int local6 = client.selfPlayerSlot * -859840571;
 		@Pc(19) Class132_Sub1_Sub1_Sub1_Sub2 local19 = Class520.selfPlayer = client.aClass132_Sub1_Sub1_Sub1_Sub2Array1[local6] = new Class132_Sub1_Sub1_Sub1_Sub2(client.world.method30481(-1946144137));

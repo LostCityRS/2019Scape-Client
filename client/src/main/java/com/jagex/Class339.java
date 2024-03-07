@@ -193,7 +193,7 @@ public class Class339 {
 	@OriginalMember(owner = "client!ij", name = "ahx", descriptor = "(Lclient!yf;I)V", line = 10885)
 	static final void method27488(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		@Pc(18) Class622 local18 = (Class622) Class166_Sub6.aClass32_Sub5_1.method18261(local12, 212419559);
+		@Pc(18) Class622 local18 = (Class622) Class166_Sub6.aClass32_Sub5_1.get(local12, 212419559);
 		if (local18.anIntArray497 == null || local18.anIntArray497.length <= 0) {
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local18.anInt5669 * -727082723;
 			return;

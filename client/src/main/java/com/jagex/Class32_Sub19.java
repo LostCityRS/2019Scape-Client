@@ -34,7 +34,7 @@ public class Class32_Sub19 extends Class32 {
 		if (arg0.anInt4001 * 1553054515 != 6 && arg0.anInt4001 * 1553054515 != 2) {
 			throw new RuntimeException("");
 		}
-		@Pc(55) Class336 local55 = (Class336) Class162.aClass32_Sub3_2.method18261(arg0.anInt4037 * 371778301, 1269697311);
+		@Pc(55) Class336 local55 = (Class336) Class162.aClass32_Sub3_2.get(arg0.anInt4037 * 371778301, 1269697311);
 		if (arg0.aClass331_2 == null) {
 			arg0.aClass331_2 = new Class331(local55, arg0.anInt4001 * 1553054515 == 6);
 		}

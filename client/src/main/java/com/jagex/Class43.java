@@ -35,7 +35,7 @@ public class Class43 {
 	@OriginalMember(owner = "client!abq", name = "ahc", descriptor = "(Lclient!yf;I)V", line = 10799)
 	static final void method843(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		@Pc(18) Class47 local18 = (Class47) Class277.aClass32_Sub12_1.method18261(local12, 686249143);
+		@Pc(18) Class47 local18 = (Class47) Class277.aClass32_Sub12_1.get(local12, 686249143);
 		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local18.aBoolean20 ? 1 : 0;
 	}
 

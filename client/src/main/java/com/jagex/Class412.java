@@ -126,7 +126,7 @@ public class Class412 {
 
 	@OriginalMember(owner = "client!mb", name = "p", descriptor = "(Lclient!yf;I)V", line = 52)
 	static void method28667(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1] = ((Class347) Class288.aClass55_Sub2_1.method18261(arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1], 548441272)).anInt4196 * -643441633;
+		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1] = ((Class347) Class288.aClass55_Sub2_1.get(arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1], 548441272)).anInt4196 * -643441633;
 	}
 
 	@OriginalMember(owner = "client!mb", name = "l", descriptor = "(III)I", line = 167)

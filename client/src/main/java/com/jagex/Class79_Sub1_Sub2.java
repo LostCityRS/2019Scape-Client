@@ -26,7 +26,7 @@ public class Class79_Sub1_Sub2 extends Class79_Sub1 implements Interface11 {
 
 	@OriginalMember(owner = "client!adm", name = "e", descriptor = "(II)Lclient!ay;", line = 24)
 	@Override
-	public Interface13 method18261(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
+	public Interface13 get(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		@Pc(3) Class240 local3 = this.aClass240_6;
 		synchronized (this.aClass240_6) {
 			@Pc(11) Class108_Sub2 local11 = (Class108_Sub2) this.aClass240_6.method25829((long) arg0);
@@ -218,7 +218,7 @@ public class Class79_Sub1_Sub2 extends Class79_Sub1 implements Interface11 {
 	@OriginalMember(owner = "client!adm", name = "jq", descriptor = "(I)V", line = 10308)
 	static final void method1489(@OriginalArg(0) int arg0) {
 		Class642.aClass312Array5 = null;
-		Class660.method32824(client.anInt3526 * -703563959, 0, 0, client.width * -1378711501, client.height * 2091353777, 0, 0, -1, 739901381);
+		Class660.method32824(client.topLevelInterface * -703563959, 0, 0, client.width * -1378711501, client.height * 2091353777, 0, 0, -1, 739901381);
 		if (Class642.aClass312Array5 != null) {
 			Class485.method29802(Class642.aClass312Array5, -1412584499, 0, 0, client.width * -1378711501, client.height * 2091353777, Class511.anInt5208 * 544640871, Exception_Sub4.anInt2489 * 729048639, client.aClass312_3 == Class255.aClass312_8 ? -1 : -2101991717 * client.aClass312_3.anInt3969, true, -1900803929);
 			Class642.aClass312Array5 = null;

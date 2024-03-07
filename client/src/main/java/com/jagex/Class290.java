@@ -90,7 +90,7 @@ class Class290 implements Iterator {
 		if (local12 == -1) {
 			throw new RuntimeException();
 		}
-		@Pc(39) Class39 local39 = (Class39) Class19.aClass32_Sub7_5.method18261(local12, 1819008273);
+		@Pc(39) Class39 local39 = (Class39) Class19.aClass32_Sub7_5.get(local12, 1819008273);
 		if (local39.aClass519_1 != Class519.aClass519_7) {
 			throw new RuntimeException();
 		}

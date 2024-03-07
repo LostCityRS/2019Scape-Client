@@ -445,7 +445,7 @@ public class Class643 implements Interface70 {
 			@Pc(191) Class336 local191 = arg5.aClass336_1;
 			if (local191.anIntArray412 != null) {
 				local3.aBoolean336 = true;
-				local191 = local191.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 1984);
+				local191 = local191.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 1984);
 			}
 			if (local191 != null) {
 				local3.anInt1508 = (arg1 + local191.anInt4154 * 447008399 << 9) * 440138643;

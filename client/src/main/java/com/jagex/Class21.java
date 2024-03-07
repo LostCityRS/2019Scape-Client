@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public class Class21 {
 
 	@OriginalMember(owner = "client!aas", name = "ij", descriptor = "Lclient!adj;")
-	public static Class79_Sub1_Sub1 aClass79_Sub1_Sub1_1;
+	public static Class79_Sub1_Sub1 varPlayerTypes;
 
 	@OriginalMember(owner = "client!aas", name = "n", descriptor = "Lclient!tc;")
 	Class149 aClass149_2;

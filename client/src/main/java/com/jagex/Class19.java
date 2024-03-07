@@ -222,7 +222,7 @@ public class Class19 {
 			this.aClass263_5 = null;
 		} else {
 			if (this.aClass263_5 == null || arg0 != this.aClass263_5.anInt3869 * 1707631335) {
-				this.aClass263_5 = (Class263) RuntimeException_Sub2.aClass32_Sub17_24.method18261(arg0, -720153592);
+				this.aClass263_5 = (Class263) RuntimeException_Sub2.aClass32_Sub17_24.get(arg0, -720153592);
 				if (this.aClass263_5 == null || this.aClass263_5.anIntArray364 == null && !this.aClass263_5.method26194(-2082957909)) {
 					this.aClass263_5 = null;
 					return;
@@ -271,7 +271,7 @@ public class Class19 {
 			this.aClass263_5 = null;
 		} else {
 			if (this.aClass263_5 == null || arg0 != this.aClass263_5.anInt3869 * 1707631335) {
-				this.aClass263_5 = (Class263) RuntimeException_Sub2.aClass32_Sub17_24.method18261(arg0, 1278160707);
+				this.aClass263_5 = (Class263) RuntimeException_Sub2.aClass32_Sub17_24.get(arg0, 1278160707);
 				if (this.aClass263_5 == null || this.aClass263_5.anIntArray364 == null && !this.aClass263_5.method26194(-2144736921)) {
 					this.aClass263_5 = null;
 					return;
@@ -320,7 +320,7 @@ public class Class19 {
 			this.aClass263_5 = null;
 		} else {
 			if (this.aClass263_5 == null || arg0 != this.aClass263_5.anInt3869 * 1707631335) {
-				this.aClass263_5 = (Class263) RuntimeException_Sub2.aClass32_Sub17_24.method18261(arg0, -1073290760);
+				this.aClass263_5 = (Class263) RuntimeException_Sub2.aClass32_Sub17_24.get(arg0, -1073290760);
 				if (this.aClass263_5 == null || this.aClass263_5.anIntArray364 == null && !this.aClass263_5.method26194(-2143677955)) {
 					this.aClass263_5 = null;
 					return;
@@ -369,7 +369,7 @@ public class Class19 {
 			this.aClass263_5 = null;
 		} else {
 			if (this.aClass263_5 == null || arg0 != this.aClass263_5.anInt3869 * 1707631335) {
-				this.aClass263_5 = (Class263) RuntimeException_Sub2.aClass32_Sub17_24.method18261(arg0, 205476528);
+				this.aClass263_5 = (Class263) RuntimeException_Sub2.aClass32_Sub17_24.get(arg0, 205476528);
 				if (this.aClass263_5 == null || this.aClass263_5.anIntArray364 == null && !this.aClass263_5.method26194(-2130580654)) {
 					this.aClass263_5 = null;
 					return;

@@ -37,7 +37,7 @@ public class Class352 {
 
 	@OriginalMember(owner = "client!ix", name = "n", descriptor = "(Lclient!yf;B)V", line = 17)
 	static void method27652(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = ((Class347) Class288.aClass55_Sub2_1.method18261(arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], -507738355)).aString182;
+		arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = ((Class347) Class288.aClass55_Sub2_1.get(arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], -507738355)).aString182;
 	}
 
 	@OriginalMember(owner = "client!ix", name = "e", descriptor = "(I)[Lclient!kt;", line = 19)
@@ -276,7 +276,7 @@ public class Class352 {
 		@Pc(34) int local34;
 		@Pc(50) int local50;
 		if (local11 != null) {
-			local24 = (Class610) client.world.method30496(850690886).method18261(local11.method13423(-1037211373), -444023650);
+			local24 = (Class610) client.world.method30496(850690886).get(local11.method13423(-1037211373), -444023650);
 			local30 = local11.method13404(1783887286) & 0x3;
 			local34 = local11.method13420(1287426884);
 			if (local24.anInt5601 * -303013723 == -1) {
@@ -323,7 +323,7 @@ public class Class352 {
 		}
 		local11 = (Interface61) local3.method31551(arg1, arg2, arg3, client.anInterface62_1, (byte) 3);
 		if (local11 != null) {
-			local24 = (Class610) client.world.method30496(1023330810).method18261(local11.method13423(-1037211373), 580832347);
+			local24 = (Class610) client.world.method30496(1023330810).get(local11.method13423(-1037211373), 580832347);
 			local30 = local11.method13404(1627243811) & 0x3;
 			local34 = local11.method13420(1681465668);
 			if (-303013723 * local24.anInt5601 != -1) {
@@ -344,7 +344,7 @@ public class Class352 {
 		if (local11 == null) {
 			return;
 		}
-		local24 = (Class610) client.world.method30496(1742546820).method18261(local11.method13423(-1037211373), 592037436);
+		local24 = (Class610) client.world.method30496(1742546820).get(local11.method13423(-1037211373), 592037436);
 		local30 = local11.method13404(2001249884) & 0x3;
 		if (-303013723 * local24.anInt5601 != -1) {
 			Class107.method18119(arg0, local24, local30, arg4, arg5, 2144043100);

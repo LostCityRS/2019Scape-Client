@@ -298,7 +298,7 @@ public class Class93_Sub13 extends Class93 {
 	void method13471(@OriginalArg(0) byte arg0) {
 		@Pc(4) int local4 = this.anInt1522 * 486579173;
 		if (this.aClass610_1 != null) {
-			@Pc(20) Class610 local20 = this.aClass610_1.method31991(Class624.aClass120_1, client.anInt3463 * 1819062465 == 0 ? Class249.anInterface23_3 : Class624.aClass120_1, -115392112);
+			@Pc(20) Class610 local20 = this.aClass610_1.method31991(Class624.playerVariableManager, client.anInt3463 * 1819062465 == 0 ? Class249.anInterface23_3 : Class624.playerVariableManager, -115392112);
 			if (local20 == null) {
 				this.anInt1522 = 1340593683;
 				this.anInt1512 = 0;
@@ -325,7 +325,7 @@ public class Class93_Sub13 extends Class93 {
 				this.anInt1522 = local110 * -1340593683;
 				@Pc(122) Class336 local122 = this.aClass132_Sub1_Sub1_Sub1_Sub1_1.aClass336_1;
 				if (local122.anIntArray412 != null) {
-					local122 = local122.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 26278);
+					local122 = local122.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 26278);
 				}
 				if (local122 == null) {
 					this.anInt1511 = 0;
@@ -360,7 +360,7 @@ public class Class93_Sub13 extends Class93 {
 	void method13472() {
 		@Pc(4) int local4 = this.anInt1522 * 486579173;
 		if (this.aClass610_1 != null) {
-			@Pc(20) Class610 local20 = this.aClass610_1.method31991(Class624.aClass120_1, client.anInt3463 * 1819062465 == 0 ? Class249.anInterface23_3 : Class624.aClass120_1, -80119828);
+			@Pc(20) Class610 local20 = this.aClass610_1.method31991(Class624.playerVariableManager, client.anInt3463 * 1819062465 == 0 ? Class249.anInterface23_3 : Class624.playerVariableManager, -80119828);
 			if (local20 == null) {
 				this.anInt1522 = 1340593683;
 				this.anInt1512 = 0;
@@ -387,7 +387,7 @@ public class Class93_Sub13 extends Class93 {
 				this.anInt1522 = local110 * -1340593683;
 				@Pc(122) Class336 local122 = this.aClass132_Sub1_Sub1_Sub1_Sub1_1.aClass336_1;
 				if (local122.anIntArray412 != null) {
-					local122 = local122.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 26303);
+					local122 = local122.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 26303);
 				}
 				if (local122 == null) {
 					this.anInt1511 = 0;
@@ -458,7 +458,7 @@ public class Class93_Sub13 extends Class93 {
 			@Pc(191) Class336 local191 = arg5.aClass336_1;
 			if (local191.anIntArray412 != null) {
 				local3.aBoolean336 = true;
-				local191 = local191.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 4636);
+				local191 = local191.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 4636);
 			}
 			if (local191 != null) {
 				local3.anInt1508 = (arg1 + local191.anInt4154 * 447008399 << 9) * 440138643;
@@ -533,7 +533,7 @@ public class Class93_Sub13 extends Class93 {
 			@Pc(191) Class336 local191 = arg5.aClass336_1;
 			if (local191.anIntArray412 != null) {
 				local3.aBoolean336 = true;
-				local191 = local191.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 7422);
+				local191 = local191.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 7422);
 			}
 			if (local191 != null) {
 				local3.anInt1508 = (arg1 + local191.anInt4154 * 447008399 << 9) * 440138643;
@@ -688,7 +688,7 @@ public class Class93_Sub13 extends Class93 {
 	static int method13482(@OriginalArg(0) Class132_Sub1_Sub1_Sub1_Sub1 arg0) {
 		@Pc(2) Class336 local2 = arg0.aClass336_1;
 		if (local2.anIntArray412 != null) {
-			local2 = local2.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 22846);
+			local2 = local2.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 22846);
 			if (local2 == null) {
 				return -1;
 			}
@@ -710,7 +710,7 @@ public class Class93_Sub13 extends Class93 {
 	static int method13483(@OriginalArg(0) Class132_Sub1_Sub1_Sub1_Sub1 arg0) {
 		@Pc(2) Class336 local2 = arg0.aClass336_1;
 		if (local2.anIntArray412 != null) {
-			local2 = local2.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 26957);
+			local2 = local2.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 26957);
 			if (local2 == null) {
 				return -1;
 			}
@@ -784,7 +784,7 @@ public class Class93_Sub13 extends Class93 {
 				local115 = Class566.method31257(local4.aClass132_Sub1_Sub1_Sub1_Sub1_1, 530261123);
 				@Pc(119) Class336 local119 = local4.aClass132_Sub1_Sub1_Sub1_Sub1_1.aClass336_1;
 				if (local119.anIntArray412 != null) {
-					local119 = local119.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 11066);
+					local119 = local119.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 11066);
 				}
 				if (local119 == null || local115 == -1) {
 					local4.anInt1522 = 1340593683;
@@ -892,7 +892,7 @@ public class Class93_Sub13 extends Class93 {
 				local115 = Class566.method31257(local4.aClass132_Sub1_Sub1_Sub1_Sub1_1, -1103739151);
 				@Pc(119) Class336 local119 = local4.aClass132_Sub1_Sub1_Sub1_Sub1_1.aClass336_1;
 				if (local119.anIntArray412 != null) {
-					local119 = local119.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 11447);
+					local119 = local119.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 11447);
 				}
 				if (local119 == null || local115 == -1) {
 					local4.anInt1522 = 1340593683;
@@ -1000,7 +1000,7 @@ public class Class93_Sub13 extends Class93 {
 				local115 = Class566.method31257(local4.aClass132_Sub1_Sub1_Sub1_Sub1_1, 571250632);
 				@Pc(119) Class336 local119 = local4.aClass132_Sub1_Sub1_Sub1_Sub1_1.aClass336_1;
 				if (local119.anIntArray412 != null) {
-					local119 = local119.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 13499);
+					local119 = local119.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 13499);
 				}
 				if (local119 == null || local115 == -1) {
 					local4.anInt1522 = 1340593683;
@@ -1108,7 +1108,7 @@ public class Class93_Sub13 extends Class93 {
 				local115 = Class566.method31257(local4.aClass132_Sub1_Sub1_Sub1_Sub1_1, -2025861728);
 				@Pc(119) Class336 local119 = local4.aClass132_Sub1_Sub1_Sub1_Sub1_1.aClass336_1;
 				if (local119.anIntArray412 != null) {
-					local119 = local119.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 23956);
+					local119 = local119.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 23956);
 				}
 				if (local119 == null || local115 == -1) {
 					local4.anInt1522 = 1340593683;
@@ -1216,7 +1216,7 @@ public class Class93_Sub13 extends Class93 {
 				local115 = Class566.method31257(local4.aClass132_Sub1_Sub1_Sub1_Sub1_1, -659494931);
 				@Pc(119) Class336 local119 = local4.aClass132_Sub1_Sub1_Sub1_Sub1_1.aClass336_1;
 				if (local119.anIntArray412 != null) {
-					local119 = local119.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 14861);
+					local119 = local119.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 14861);
 				}
 				if (local119 == null || local115 == -1) {
 					local4.anInt1522 = 1340593683;

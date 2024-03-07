@@ -433,7 +433,7 @@ public class Class93_Sub1_Sub11 extends Class93_Sub1 {
 
 	@OriginalMember(owner = "client!ars", name = "cj", descriptor = "(II)V", line = 188)
 	static void method21845(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(5) Class379 local5 = (Class379) Class30.aClass32_Sub16_1.method18261(arg0, 734427980);
+		@Pc(5) Class379 local5 = (Class379) Class30.aClass32_Sub16_1.get(arg0, 734427980);
 		@Pc(14) Class93_Sub1_Sub11 local14 = Class371.method28000(1, (long) (local5.aClass108_1.anInt867 * -1284841473));
 		try {
 			if (aBoolean506) {
@@ -448,7 +448,7 @@ public class Class93_Sub1_Sub11 extends Class93_Sub1 {
 
 	@OriginalMember(owner = "client!ars", name = "cc", descriptor = "(II)V", line = 188)
 	static void method21846(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(5) Class379 local5 = (Class379) Class30.aClass32_Sub16_1.method18261(arg0, -1974946524);
+		@Pc(5) Class379 local5 = (Class379) Class30.aClass32_Sub16_1.get(arg0, -1974946524);
 		@Pc(14) Class93_Sub1_Sub11 local14 = Class371.method28000(1, (long) (local5.aClass108_1.anInt867 * -1284841473));
 		try {
 			if (aBoolean506) {
@@ -463,7 +463,7 @@ public class Class93_Sub1_Sub11 extends Class93_Sub1 {
 
 	@OriginalMember(owner = "client!ars", name = "cz", descriptor = "(II)V", line = 188)
 	static void method21847(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(5) Class379 local5 = (Class379) Class30.aClass32_Sub16_1.method18261(arg0, 1427037277);
+		@Pc(5) Class379 local5 = (Class379) Class30.aClass32_Sub16_1.get(arg0, 1427037277);
 		@Pc(14) Class93_Sub1_Sub11 local14 = Class371.method28000(1, (long) (local5.aClass108_1.anInt867 * -1284841473));
 		try {
 			if (aBoolean506) {
@@ -478,7 +478,7 @@ public class Class93_Sub1_Sub11 extends Class93_Sub1 {
 
 	@OriginalMember(owner = "client!ars", name = "ck", descriptor = "(II)V", line = 188)
 	static void method21848(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(5) Class379 local5 = (Class379) Class30.aClass32_Sub16_1.method18261(arg0, -575218377);
+		@Pc(5) Class379 local5 = (Class379) Class30.aClass32_Sub16_1.get(arg0, -575218377);
 		@Pc(14) Class93_Sub1_Sub11 local14 = Class371.method28000(1, (long) (local5.aClass108_1.anInt867 * -1284841473));
 		try {
 			if (aBoolean506) {

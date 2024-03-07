@@ -78,7 +78,7 @@ public class Class704 implements Interface75 {
 	}
 
 	@OriginalMember(owner = "client!zg", name = "ea", descriptor = "(ILjava/lang/String;ZB)V", line = 2019)
-	static void method36733(@OriginalArg(0) int arg0, @OriginalArg(1) String arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) byte arg3) {
+	static void changeToolkit(@OriginalArg(0) int arg0, @OriginalArg(1) String arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) byte arg3) {
 		Class560.method31131((byte) 117);
 		Class507.method30230(1540843203);
 		Class84.method1430(-1123473883);

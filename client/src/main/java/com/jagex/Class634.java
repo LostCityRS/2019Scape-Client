@@ -150,7 +150,7 @@ public class Class634 {
 		client.aClass16_20.method225((byte) 127);
 		Class322.method27271(Class20.method376(1437601641), -1555248762);
 		client.verifyId = 0;
-		Class624.aClass120_1.aClass647_1.method32643((byte) -15);
+		Class624.playerVariableManager.vars.method32643((byte) -15);
 		Class581.aClass386_2 = null;
 		Class279.aClass386_1 = null;
 		Class253.aClass93_Sub28_3 = null;

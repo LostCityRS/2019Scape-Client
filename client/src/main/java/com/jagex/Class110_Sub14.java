@@ -59,21 +59,21 @@ public class Class110_Sub14 extends Class110 {
 	@OriginalMember(owner = "client!agk", name = "w", descriptor = "()Z", line = 32)
 	@Override
 	boolean method20142() {
-		@Pc(8) Class263 local8 = (Class263) Class32.aClass32_Sub17_23.method18261(this.anInt953 * -1542933247, 801450270);
+		@Pc(8) Class263 local8 = (Class263) Class32.aClass32_Sub17_23.get(this.anInt953 * -1542933247, 801450270);
 		return local8.method26188((byte) -37);
 	}
 
 	@OriginalMember(owner = "client!agk", name = "k", descriptor = "(I)Z", line = 32)
 	@Override
 	boolean method20141(@OriginalArg(0) int arg0) {
-		@Pc(8) Class263 local8 = (Class263) Class32.aClass32_Sub17_23.method18261(this.anInt953 * -1542933247, 1722237017);
+		@Pc(8) Class263 local8 = (Class263) Class32.aClass32_Sub17_23.get(this.anInt953 * -1542933247, 1722237017);
 		return local8.method26188((byte) -119);
 	}
 
 	@OriginalMember(owner = "client!agk", name = "l", descriptor = "()Z", line = 32)
 	@Override
 	boolean method20143() {
-		@Pc(8) Class263 local8 = (Class263) Class32.aClass32_Sub17_23.method18261(this.anInt953 * -1542933247, -1289167082);
+		@Pc(8) Class263 local8 = (Class263) Class32.aClass32_Sub17_23.get(this.anInt953 * -1542933247, -1289167082);
 		return local8.method26188((byte) -87);
 	}
 

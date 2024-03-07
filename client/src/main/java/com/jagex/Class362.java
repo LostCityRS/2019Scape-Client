@@ -614,13 +614,13 @@ public class Class362 {
 			Class501.aClass32_Sub18_1 = new Class32_Sub18(client.modeGame, Class106.lang, Class327.aClass497_102, Class86.aClass497_15);
 			Class649.aClass55_Sub1_1 = new Class55_Sub1(client.modeGame, Class106.lang, Class443.aClass497_115, true);
 			Class72.aClass79_Sub1_Sub2_2 = new Class79_Sub1_Sub2(client.modeGame, Class138.aClass138_63, Class106.lang, Class166_Sub45.aClass497_60);
-			Class21.aClass79_Sub1_Sub1_1 = new Class79_Sub1_Sub1(client.modeGame, Class138.aClass138_65, Class106.lang, Class166_Sub45.aClass497_60);
+			Class21.varPlayerTypes = new Class79_Sub1_Sub1(client.modeGame, Class138.aClass138_65, Class106.lang, Class166_Sub45.aClass497_60);
 			Class684.aClass79_Sub1_Sub2_6 = new Class79_Sub1_Sub2(client.modeGame, Class138.aClass138_67, Class106.lang, Class166_Sub45.aClass497_60);
 			Class39.aClass79_Sub1_Sub2_1 = new Class79_Sub1_Sub2(client.modeGame, Class138.aClass138_71, Class106.lang, Class166_Sub45.aClass497_60);
 			Class93_Sub26_Sub6.aClass79_Sub1_Sub2_3 = new Class79_Sub1_Sub2(client.modeGame, Class138.aClass138_68, Class106.lang, Class166_Sub45.aClass497_60);
 			Class429.aClass79_Sub1_Sub2_5 = new Class79_Sub1_Sub2(client.modeGame, Class138.aClass138_70, Class106.lang, Class166_Sub45.aClass497_60);
 			Class265.aClass79_Sub1_Sub2_4 = new Class79_Sub1_Sub2(client.modeGame, Class138.aClass138_72, Class106.lang, Class166_Sub45.aClass497_60);
-			Class96.aMap9 = Class85.method1445(new Class79_Sub1[] { Class72.aClass79_Sub1_Sub2_2, Class21.aClass79_Sub1_Sub1_1, Class684.aClass79_Sub1_Sub2_6, Class39.aClass79_Sub1_Sub2_1, Class93_Sub26_Sub6.aClass79_Sub1_Sub2_3, Class429.aClass79_Sub1_Sub2_5, Class265.aClass79_Sub1_Sub2_4 }, (short) 2105);
+			Class96.aMap9 = Class85.method1445(new Class79_Sub1[] { Class72.aClass79_Sub1_Sub2_2, Class21.varPlayerTypes, Class684.aClass79_Sub1_Sub2_6, Class39.aClass79_Sub1_Sub2_1, Class93_Sub26_Sub6.aClass79_Sub1_Sub2_3, Class429.aClass79_Sub1_Sub2_5, Class265.aClass79_Sub1_Sub2_4 }, (short) 2105);
 			Class30.aClass32_Sub16_1 = new Class32_Sub16(client.modeGame, Class106.lang, Class166_Sub45.aClass497_60, Class96.aMap9);
 			Class506.anInterface21_4 = new Class367();
 			Class283.method26478(Class200.aClass497_96, Class86.aClass497_15, Class110_Sub7.aClass497_22, Class633.aClass497_137, -1002953568);
@@ -629,7 +629,7 @@ public class Class362 {
 			Class599.aClass438_1 = new Class438(Class577.aClass497_130);
 			Class687.aClass514_1 = new Class514(Class106.lang, Class486.aClass497_123, Class304.aClass497_101);
 			Class372.aClass58_2 = new Class58(Class106.lang, Class486.aClass497_123, Class304.aClass497_101, new Class452());
-			Class624.aClass120_1 = new Class120(Class21.aClass79_Sub1_Sub1_1, Class30.aClass32_Sub16_1, Class336.aClass644_1.method32590(1062924354));
+			Class624.playerVariableManager = new Class120(Class21.varPlayerTypes, Class30.aClass32_Sub16_1, Class336.aClass644_1.method32590(1062924354));
 			Class610.method32020(-1539114738);
 			Class450.method28934(Class32.aClass32_Sub17_23, 923638569);
 			Class120.method8671(Class599.aClass438_1, Class283.aClass444_1, 360743183);
@@ -647,7 +647,7 @@ public class Class362 {
 			}
 		}
 		if (Class146.aClass370_3 == Class370.aClass370_16) {
-			Class159.method14502(Class144_Sub1.aClass497_42, Class710.aClass497_143, Class682.aClass32_Sub1_3, Class692.aClass32_Sub4_3, client.world.method30496(1847782911), Class542.aClass32_Sub2_3, Class466.aClass32_Sub20_3, Class624.aClass120_1, Class624.aClass120_1);
+			Class159.method14502(Class144_Sub1.aClass497_42, Class710.aClass497_143, Class682.aClass32_Sub1_3, Class692.aClass32_Sub4_3, client.world.method30496(1847782911), Class542.aClass32_Sub2_3, Class466.aClass32_Sub20_3, Class624.playerVariableManager, Class624.playerVariableManager);
 		}
 		if (Class146.aClass370_3 == Class370.aClass370_17) {
 			Class596.aClass113_Sub1_1 = new Class113_Sub1(Class72.aClass79_Sub1_Sub2_2);
@@ -858,7 +858,7 @@ public class Class362 {
 		arg0.anInt5891 -= -1915563430;
 		@Pc(13) int local13 = arg0.anIntArray519[arg0.anInt5891 * -1497248091];
 		@Pc(23) int local23 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 1];
-		@Pc(29) Class47 local29 = (Class47) Class277.aClass32_Sub12_1.method18261(local13, -1140004431);
+		@Pc(29) Class47 local29 = (Class47) Class277.aClass32_Sub12_1.get(local13, -1140004431);
 		if (local23 < 1 || local23 > 5 || local29.aStringArray5[local23 - 1] == null) {
 			arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = "";
 		} else {
@@ -873,7 +873,7 @@ public class Class362 {
 
 	@OriginalMember(owner = "client!ji", name = "awe", descriptor = "(Lclient!yf;B)V", line = 13737)
 	static final void method27848(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.anInt3526 * -703563959;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.topLevelInterface * -703563959;
 	}
 
 	@OriginalMember(owner = "client!ji", name = "bfv", descriptor = "(Lclient!yf;I)V", line = 15093)

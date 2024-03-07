@@ -79,7 +79,7 @@ public class Class587 {
 	@OriginalMember(owner = "client!tz", name = "ahw", descriptor = "(Lclient!yf;S)V", line = 10815)
 	static final void method31648(@OriginalArg(0) Class681 arg0, @OriginalArg(1) short arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		@Pc(18) Class47 local18 = (Class47) Class277.aClass32_Sub12_1.method18261(local12, 277488318);
+		@Pc(18) Class47 local18 = (Class47) Class277.aClass32_Sub12_1.get(local12, 277488318);
 		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local18.anInt140 * 352108515;
 	}
 }

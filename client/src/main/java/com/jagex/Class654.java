@@ -27,7 +27,7 @@ public class Class654 {
 	@OriginalMember(owner = "client!xa", name = "wy", descriptor = "(Lclient!yf;B)V", line = 9103)
 	static final void method32719(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class624.aClass120_1.method8655(local12, (byte) 56);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class624.playerVariableManager.method8655(local12, (byte) 56);
 	}
 
 	@OriginalMember(owner = "client!xa", name = "alz", descriptor = "(Lclient!yf;B)V", line = 11899)

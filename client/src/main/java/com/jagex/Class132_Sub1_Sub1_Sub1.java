@@ -1002,9 +1002,9 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 		if (arg0 != -1 && local9 != -1) {
 			@Pc(24) Class697 local24;
 			if (arg0 == local9) {
-				local24 = (Class697) Class501.aClass32_Sub18_1.method18261(arg0, 2025843831);
+				local24 = (Class697) Class501.aClass32_Sub18_1.get(arg0, 2025843831);
 				if (local24.aBoolean881 && local24.anInt5949 * 1477426425 != -1) {
-					@Pc(42) Class263 local42 = (Class263) Class32.aClass32_Sub17_23.method18261(local24.anInt5949 * 1477426425, 396732708);
+					@Pc(42) Class263 local42 = (Class263) Class32.aClass32_Sub17_23.get(local24.anInt5949 * 1477426425, 396732708);
 					@Pc(47) int local47 = local42.anInt3868 * 23893545;
 					if (local47 == 0) {
 						return;
@@ -1015,11 +1015,11 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 					}
 				}
 			} else {
-				local24 = (Class697) Class501.aClass32_Sub18_1.method18261(arg0, -86542314);
-				@Pc(71) Class697 local71 = (Class697) Class501.aClass32_Sub18_1.method18261(local9, 1987920821);
+				local24 = (Class697) Class501.aClass32_Sub18_1.get(arg0, -86542314);
+				@Pc(71) Class697 local71 = (Class697) Class501.aClass32_Sub18_1.get(local9, 1987920821);
 				if (local24.anInt5949 * 1477426425 != -1 && local71.anInt5949 * 1477426425 != -1) {
-					@Pc(92) Class263 local92 = (Class263) Class32.aClass32_Sub17_23.method18261(local24.anInt5949 * 1477426425, -1735517747);
-					@Pc(101) Class263 local101 = (Class263) Class32.aClass32_Sub17_23.method18261(local71.anInt5949 * 1477426425, -683786045);
+					@Pc(92) Class263 local92 = (Class263) Class32.aClass32_Sub17_23.get(local24.anInt5949 * 1477426425, -1735517747);
+					@Pc(101) Class263 local101 = (Class263) Class32.aClass32_Sub17_23.get(local71.anInt5949 * 1477426425, -683786045);
 					if (local92.anInt3873 * -1789992573 < local101.anInt3873 * -1789992573) {
 						return;
 					}
@@ -1027,7 +1027,7 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 			}
 		}
 		@Pc(113) byte local113 = 0;
-		if (arg0 != -1 && !((Class697) Class501.aClass32_Sub18_1.method18261(arg0, -764780738)).aBoolean881) {
+		if (arg0 != -1 && !((Class697) Class501.aClass32_Sub18_1.get(arg0, -764780738)).aBoolean881) {
 			local113 = 2;
 		}
 		if (arg0 != -1 && arg4) {
@@ -1037,7 +1037,7 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 		local4.anInt5320 = arg3 * -768943269;
 		local4.anInt5322 = (arg1 >> 16) * 1878659233;
 		local4.anInt5321 = arg2 * -1443403675;
-		local4.aClass19_7.method23572(arg0 == -1 ? -1 : ((Class697) Class501.aClass32_Sub18_1.method18261(arg0, -150530354)).anInt5949 * 1477426425, arg1 & 0xFFFF, local113, false, (short) -18066);
+		local4.aClass19_7.method23572(arg0 == -1 ? -1 : ((Class697) Class501.aClass32_Sub18_1.get(arg0, -150530354)).anInt5949 * 1477426425, arg1 & 0xFFFF, local113, false, (short) -18066);
 	}
 
 	@OriginalMember(owner = "client!ahm", name = "h", descriptor = "(IIIIZIB)V", line = 326)
@@ -1047,9 +1047,9 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 		if (arg0 != -1 && local9 != -1) {
 			@Pc(24) Class697 local24;
 			if (arg0 == local9) {
-				local24 = (Class697) Class501.aClass32_Sub18_1.method18261(arg0, 1923530961);
+				local24 = (Class697) Class501.aClass32_Sub18_1.get(arg0, 1923530961);
 				if (local24.aBoolean881 && local24.anInt5949 * 1477426425 != -1) {
-					@Pc(42) Class263 local42 = (Class263) Class32.aClass32_Sub17_23.method18261(local24.anInt5949 * 1477426425, -987278448);
+					@Pc(42) Class263 local42 = (Class263) Class32.aClass32_Sub17_23.get(local24.anInt5949 * 1477426425, -987278448);
 					@Pc(47) int local47 = local42.anInt3868 * 23893545;
 					if (local47 == 0) {
 						return;
@@ -1060,11 +1060,11 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 					}
 				}
 			} else {
-				local24 = (Class697) Class501.aClass32_Sub18_1.method18261(arg0, 2036787537);
-				@Pc(71) Class697 local71 = (Class697) Class501.aClass32_Sub18_1.method18261(local9, -743709786);
+				local24 = (Class697) Class501.aClass32_Sub18_1.get(arg0, 2036787537);
+				@Pc(71) Class697 local71 = (Class697) Class501.aClass32_Sub18_1.get(local9, -743709786);
 				if (local24.anInt5949 * 1477426425 != -1 && local71.anInt5949 * 1477426425 != -1) {
-					@Pc(92) Class263 local92 = (Class263) Class32.aClass32_Sub17_23.method18261(local24.anInt5949 * 1477426425, 632667263);
-					@Pc(101) Class263 local101 = (Class263) Class32.aClass32_Sub17_23.method18261(local71.anInt5949 * 1477426425, -1550279114);
+					@Pc(92) Class263 local92 = (Class263) Class32.aClass32_Sub17_23.get(local24.anInt5949 * 1477426425, 632667263);
+					@Pc(101) Class263 local101 = (Class263) Class32.aClass32_Sub17_23.get(local71.anInt5949 * 1477426425, -1550279114);
 					if (local92.anInt3873 * -1789992573 < local101.anInt3873 * -1789992573) {
 						return;
 					}
@@ -1072,7 +1072,7 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 			}
 		}
 		@Pc(113) byte local113 = 0;
-		if (arg0 != -1 && !((Class697) Class501.aClass32_Sub18_1.method18261(arg0, -1414584100)).aBoolean881) {
+		if (arg0 != -1 && !((Class697) Class501.aClass32_Sub18_1.get(arg0, -1414584100)).aBoolean881) {
 			local113 = 2;
 		}
 		if (arg0 != -1 && arg4) {
@@ -1082,7 +1082,7 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 		local4.anInt5320 = arg3 * -768943269;
 		local4.anInt5322 = (arg1 >> 16) * 1878659233;
 		local4.anInt5321 = arg2 * -1443403675;
-		local4.aClass19_7.method23572(arg0 == -1 ? -1 : ((Class697) Class501.aClass32_Sub18_1.method18261(arg0, -370577298)).anInt5949 * 1477426425, arg1 & 0xFFFF, local113, false, (short) -29255);
+		local4.aClass19_7.method23572(arg0 == -1 ? -1 : ((Class697) Class501.aClass32_Sub18_1.get(arg0, -370577298)).anInt5949 * 1477426425, arg1 & 0xFFFF, local113, false, (short) -29255);
 	}
 
 	@OriginalMember(owner = "client!ahm", name = "a", descriptor = "(B)V", line = 362)
@@ -1125,7 +1125,7 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 		@Pc(28) int local28 = -1;
 		@Pc(30) int local30 = 0;
 		if (arg0 >= 0) {
-			@Pc(38) Class608 local38 = (Class608) Class366.aClass32_Sub8_1.method18261(arg0, -1106167674);
+			@Pc(38) Class608 local38 = (Class608) Class366.aClass32_Sub8_1.get(arg0, -1106167674);
 			local28 = local38.anInt5578 * 29103457;
 			local30 = local38.anInt5570 * 2130827517;
 		}
@@ -1194,7 +1194,7 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 		@Pc(28) int local28 = -1;
 		@Pc(30) int local30 = 0;
 		if (arg0 >= 0) {
-			@Pc(38) Class608 local38 = (Class608) Class366.aClass32_Sub8_1.method18261(arg0, -194907344);
+			@Pc(38) Class608 local38 = (Class608) Class366.aClass32_Sub8_1.get(arg0, -194907344);
 			local28 = local38.anInt5578 * 29103457;
 			local30 = local38.anInt5570 * 2130827517;
 		}
@@ -1263,7 +1263,7 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 		@Pc(28) int local28 = -1;
 		@Pc(30) int local30 = 0;
 		if (arg0 >= 0) {
-			@Pc(38) Class608 local38 = (Class608) Class366.aClass32_Sub8_1.method18261(arg0, 2064414946);
+			@Pc(38) Class608 local38 = (Class608) Class366.aClass32_Sub8_1.get(arg0, 2064414946);
 			local28 = local38.anInt5578 * 29103457;
 			local30 = local38.anInt5570 * 2130827517;
 		}
@@ -1332,7 +1332,7 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 		@Pc(28) int local28 = -1;
 		@Pc(30) int local30 = 0;
 		if (arg0 >= 0) {
-			@Pc(38) Class608 local38 = (Class608) Class366.aClass32_Sub8_1.method18261(arg0, 1632022166);
+			@Pc(38) Class608 local38 = (Class608) Class366.aClass32_Sub8_1.get(arg0, 1632022166);
 			local28 = local38.anInt5578 * 29103457;
 			local30 = local38.anInt5570 * 2130827517;
 		}
@@ -1387,7 +1387,7 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 
 	@OriginalMember(owner = "client!ahm", name = "i", descriptor = "(IIIIIII)V", line = 423)
 	public final void method19976(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
-		@Pc(5) Class596 local5 = (Class596) Class534.aClass32_Sub10_1.method18261(arg0, -1903455428);
+		@Pc(5) Class596 local5 = (Class596) Class534.aClass32_Sub10_1.get(arg0, -1903455428);
 		@Pc(7) Class149_Sub3 local7 = null;
 		@Pc(9) Class149_Sub3 local9 = null;
 		@Pc(14) int local14 = local5.anInt5490 * -351467953;
@@ -1424,7 +1424,7 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 
 	@OriginalMember(owner = "client!ahm", name = "j", descriptor = "(II)V", line = 449)
 	public final void method19977(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(5) Class596 local5 = (Class596) Class534.aClass32_Sub10_1.method18261(arg0, 2112328129);
+		@Pc(5) Class596 local5 = (Class596) Class534.aClass32_Sub10_1.get(arg0, 2112328129);
 		for (@Pc(11) Class149_Sub3 local11 = (Class149_Sub3) this.aClass21_5.method390((short) 4396); local11 != null; local11 = (Class149_Sub3) this.aClass21_5.method392(-1915563430)) {
 			if (local5 == local11.aClass596_1) {
 				local11.method23766(-719770481);
@@ -1435,7 +1435,7 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 
 	@OriginalMember(owner = "client!ahm", name = "dn", descriptor = "(I)V", line = 449)
 	public final void method19978(@OriginalArg(0) int arg0) {
-		@Pc(5) Class596 local5 = (Class596) Class534.aClass32_Sub10_1.method18261(arg0, 1830398630);
+		@Pc(5) Class596 local5 = (Class596) Class534.aClass32_Sub10_1.get(arg0, 1830398630);
 		for (@Pc(11) Class149_Sub3 local11 = (Class149_Sub3) this.aClass21_5.method390((short) 8828); local11 != null; local11 = (Class149_Sub3) this.aClass21_5.method392(-1915563430)) {
 			if (local5 == local11.aClass596_1) {
 				local11.method23766(-719770481);
@@ -1446,7 +1446,7 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 
 	@OriginalMember(owner = "client!ahm", name = "dk", descriptor = "(I)V", line = 449)
 	public final void method19979(@OriginalArg(0) int arg0) {
-		@Pc(5) Class596 local5 = (Class596) Class534.aClass32_Sub10_1.method18261(arg0, -922749404);
+		@Pc(5) Class596 local5 = (Class596) Class534.aClass32_Sub10_1.get(arg0, -922749404);
 		for (@Pc(11) Class149_Sub3 local11 = (Class149_Sub3) this.aClass21_5.method390((short) 22154); local11 != null; local11 = (Class149_Sub3) this.aClass21_5.method392(-1915563430)) {
 			if (local5 == local11.aClass596_1) {
 				local11.method23766(-719770481);
@@ -1741,7 +1741,7 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 			if (local41.anInt5319 * 601549465 == -1 || local41.aClass19_7.method23578((byte) 0)) {
 				this.aClass109Array3[local1 + 1] = null;
 			} else {
-				@Pc(61) Class697 local61 = (Class697) Class501.aClass32_Sub18_1.method18261(local41.anInt5319 * 601549465, 582674015);
+				@Pc(61) Class697 local61 = (Class697) Class501.aClass32_Sub18_1.get(local41.anInt5319 * 601549465, 582674015);
 				@Pc(63) int local63 = arg2;
 				if (local41.anInt5321 * -1497822867 != 0) {
 					local63 = arg2 | 0x5;
@@ -1822,7 +1822,7 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 			if (local41.anInt5319 * 601549465 == -1 || local41.aClass19_7.method23578((byte) 0)) {
 				this.aClass109Array3[local1 + 1] = null;
 			} else {
-				@Pc(61) Class697 local61 = (Class697) Class501.aClass32_Sub18_1.method18261(local41.anInt5319 * 601549465, -673775012);
+				@Pc(61) Class697 local61 = (Class697) Class501.aClass32_Sub18_1.get(local41.anInt5319 * 601549465, -673775012);
 				@Pc(63) int local63 = arg2;
 				if (local41.anInt5321 * -1497822867 != 0) {
 					local63 = arg2 | 0x5;
@@ -2070,19 +2070,19 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 	@OriginalMember(owner = "client!ahm", name = "bp", descriptor = "(I)Lclient!vr;", line = 614)
 	public Class622 method19997(@OriginalArg(0) int arg0) {
 		@Pc(3) int local3 = this.method20034((short) 560);
-		return local3 == -1 ? Class32_Sub5.aClass622_1 : (Class622) Class166_Sub6.aClass32_Sub5_1.method18261(local3, 308572296);
+		return local3 == -1 ? Class32_Sub5.aClass622_1 : (Class622) Class166_Sub6.aClass32_Sub5_1.get(local3, 308572296);
 	}
 
 	@OriginalMember(owner = "client!ahm", name = "ee", descriptor = "()Lclient!vr;", line = 614)
 	public Class622 method19998() {
 		@Pc(3) int local3 = this.method20034((short) 560);
-		return local3 == -1 ? Class32_Sub5.aClass622_1 : (Class622) Class166_Sub6.aClass32_Sub5_1.method18261(local3, 990077928);
+		return local3 == -1 ? Class32_Sub5.aClass622_1 : (Class622) Class166_Sub6.aClass32_Sub5_1.get(local3, 990077928);
 	}
 
 	@OriginalMember(owner = "client!ahm", name = "es", descriptor = "()Lclient!vr;", line = 614)
 	public Class622 method19999() {
 		@Pc(3) int local3 = this.method20034((short) 560);
-		return local3 == -1 ? Class32_Sub5.aClass622_1 : (Class622) Class166_Sub6.aClass32_Sub5_1.method18261(local3, 1374680981);
+		return local3 == -1 ? Class32_Sub5.aClass622_1 : (Class622) Class166_Sub6.aClass32_Sub5_1.get(local3, 1374680981);
 	}
 
 	@OriginalMember(owner = "client!ahm", name = "cl", descriptor = "(B)V", line = 623)
@@ -2250,10 +2250,10 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 			Class485.method29802(this.aClass320_3.method27227(855839648), -1, arg1, arg2, arg3, arg4, arg5, arg6, arg0, false, 1754094029);
 		} else if (arg0 == -1) {
 			for (@Pc(13) int local13 = 0; local13 < 114; local13++) {
-				client.aBooleanArray22[local13] = true;
+				client.topLevelComponentRedrawRequestedTemp[local13] = true;
 			}
 		} else {
-			client.aBooleanArray22[arg0] = true;
+			client.topLevelComponentRedrawRequestedTemp[arg0] = true;
 		}
 	}
 
@@ -2263,10 +2263,10 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 			Class485.method29802(this.aClass320_3.method27227(855839648), -1, arg1, arg2, arg3, arg4, arg5, arg6, arg0, false, -774771379);
 		} else if (arg0 == -1) {
 			for (@Pc(13) int local13 = 0; local13 < 114; local13++) {
-				client.aBooleanArray22[local13] = true;
+				client.topLevelComponentRedrawRequestedTemp[local13] = true;
 			}
 		} else {
-			client.aBooleanArray22[arg0] = true;
+			client.topLevelComponentRedrawRequestedTemp[arg0] = true;
 		}
 	}
 
@@ -2276,10 +2276,10 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 			Class485.method29802(this.aClass320_3.method27227(855839648), -1, arg1, arg2, arg3, arg4, arg5, arg6, arg0, false, 1545160059);
 		} else if (arg0 == -1) {
 			for (@Pc(13) int local13 = 0; local13 < 114; local13++) {
-				client.aBooleanArray22[local13] = true;
+				client.topLevelComponentRedrawRequestedTemp[local13] = true;
 			}
 		} else {
-			client.aBooleanArray22[arg0] = true;
+			client.topLevelComponentRedrawRequestedTemp[arg0] = true;
 		}
 	}
 
@@ -2289,10 +2289,10 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 			Class485.method29802(this.aClass320_3.method27227(855839648), -1, arg1, arg2, arg3, arg4, arg5, arg6, arg0, false, 1778164531);
 		} else if (arg0 == -1) {
 			for (@Pc(13) int local13 = 0; local13 < 114; local13++) {
-				client.aBooleanArray22[local13] = true;
+				client.topLevelComponentRedrawRequestedTemp[local13] = true;
 			}
 		} else {
-			client.aBooleanArray22[arg0] = true;
+			client.topLevelComponentRedrawRequestedTemp[arg0] = true;
 		}
 	}
 

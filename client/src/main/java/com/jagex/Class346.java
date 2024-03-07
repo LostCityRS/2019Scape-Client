@@ -63,7 +63,7 @@ public class Class346 {
 		local4.p4(Class411.currentIsaacKey[1], (byte) -73);
 		local4.p4(Class411.currentIsaacKey[2], (byte) -27);
 		local4.p4(Class411.currentIsaacKey[3], (byte) 35);
-		local4.p8(Class411.aLong269 * 5489047686998946493L);
+		local4.p8(Class411.sessionId * 5489047686998946493L);
 		if (client.state * -849002901 == 14) {
 			local4.p4(Class411.anIntArray442[0], (byte) -22);
 			local4.p4(Class411.anIntArray442[1], (byte) -15);

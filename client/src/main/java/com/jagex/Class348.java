@@ -126,13 +126,13 @@ public class Class348 {
 	}
 
 	@OriginalMember(owner = "client!is", name = "ky", descriptor = "(ILclient!alu;[IZB)Lclient!alu;", line = 11919)
-	public static final Class93_Sub40 method27623(@OriginalArg(0) int arg0, @OriginalArg(1) Class93_Sub40 arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) boolean arg3, @OriginalArg(4) byte arg4) {
-		@Pc(5) Class93_Sub40 local5 = (Class93_Sub40) client.aClass16_22.method214((long) arg0);
+	public static final SubInterface openSubInterface(@OriginalArg(0) int arg0, @OriginalArg(1) SubInterface arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) boolean arg3, @OriginalArg(4) byte arg4) {
+		@Pc(5) SubInterface local5 = (SubInterface) client.aClass16_22.method214((long) arg0);
 		if (local5 != null) {
 			Class372.method28019(local5, arg1.anInt3172 * 1220811495 != local5.anInt3172 * 1220811495, arg3, 1872539225);
 		}
 		client.aClass16_22.method220(arg1, (long) arg0);
-		Class93_Sub31.method22008(arg1.anInt3172 * 1220811495, arg2, (byte) 31);
+		Class93_Sub31.resetInterfaceAnims(arg1.anInt3172 * 1220811495, arg2, (byte) 31);
 		@Pc(39) Class312 local39 = Class659.method32808(arg0, 823100477);
 		if (local39 != null) {
 			Class354.method27694(local39, -1174743804);
@@ -145,10 +145,10 @@ public class Class348 {
 			Class548.method31015(Class166_Sub1.aClass320Array1[local39.anInt3953 * -1549590237 >>> 16], local39, !arg3, 1750609449);
 		}
 		if (!arg3) {
-			Class56.method18034(arg1.anInt3172 * 1220811495, arg2, -446023490);
+			Class56.runOnLoad(arg1.anInt3172 * 1220811495, arg2, -446023490);
 		}
-		if (!arg3 && -703563959 * client.anInt3526 != -1) {
-			Class189.method24583(client.anInt3526 * -703563959, 1, 31301296);
+		if (!arg3 && -703563959 * client.topLevelInterface != -1) {
+			Class189.method24583(client.topLevelInterface * -703563959, 1, 31301296);
 		}
 		return arg1;
 	}

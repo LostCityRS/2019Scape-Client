@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!asn")
-public class Class93_Sub40_Sub2 extends Class93_Sub40 {
+public class Class93_Sub40_Sub2 extends SubInterface {
 
 	@OriginalMember(owner = "client!asn", name = "w", descriptor = "Lclient!yd;")
 	final Class679 aClass679_1;

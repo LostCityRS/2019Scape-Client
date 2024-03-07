@@ -81,7 +81,7 @@ public class Class142_Sub1 extends Class142 {
 							for (local59 = 0; local59 < local55; local59++) {
 								@Pc(74) Class597 local74 = new Class597(arg0, this.aClass585_5.anInt5438 * -358186793, arg1, 2);
 								if (local74.anInt5528 * 365017865 == 31) {
-									@Pc(88) Class85 local88 = (Class85) Class668.aClass32_Sub15_1.method18261(arg1.g2(-1434290800), 110165572);
+									@Pc(88) Class85 local88 = (Class85) Class668.aClass32_Sub15_1.get(arg1.g2(-1434290800), 110165572);
 									local74.method31768(local88.anInt260 * 649135051, local88.anInt262 * 2054784993, local88.anInt259 * 243149709, local88.anInt261 * -88051697, -81207454);
 								}
 								if (arg0.method20527() > 0) {
@@ -275,7 +275,7 @@ public class Class142_Sub1 extends Class142 {
 							for (local59 = 0; local59 < local55; local59++) {
 								@Pc(74) Class597 local74 = new Class597(arg0, this.aClass585_5.anInt5438 * -358186793, arg1, 2);
 								if (local74.anInt5528 * 365017865 == 31) {
-									@Pc(88) Class85 local88 = (Class85) Class668.aClass32_Sub15_1.method18261(arg1.g2(-1434290800), -1042531125);
+									@Pc(88) Class85 local88 = (Class85) Class668.aClass32_Sub15_1.get(arg1.g2(-1434290800), -1042531125);
 									local74.method31768(local88.anInt260 * 649135051, local88.anInt262 * 2054784993, local88.anInt259 * 243149709, local88.anInt261 * -88051697, -81207454);
 								}
 								if (arg0.method20527() > 0) {
@@ -469,7 +469,7 @@ public class Class142_Sub1 extends Class142 {
 							for (local59 = 0; local59 < local55; local59++) {
 								@Pc(74) Class597 local74 = new Class597(arg0, this.aClass585_5.anInt5438 * -358186793, arg1, 2);
 								if (local74.anInt5528 * 365017865 == 31) {
-									@Pc(88) Class85 local88 = (Class85) Class668.aClass32_Sub15_1.method18261(arg1.g2(-1434290800), 904551016);
+									@Pc(88) Class85 local88 = (Class85) Class668.aClass32_Sub15_1.get(arg1.g2(-1434290800), 904551016);
 									local74.method31768(local88.anInt260 * 649135051, local88.anInt262 * 2054784993, local88.anInt259 * 243149709, local88.anInt261 * -88051697, -81207454);
 								}
 								if (arg0.method20527() > 0) {
@@ -663,7 +663,7 @@ public class Class142_Sub1 extends Class142 {
 							for (local59 = 0; local59 < local55; local59++) {
 								@Pc(74) Class597 local74 = new Class597(arg0, this.aClass585_5.anInt5438 * -358186793, arg1, 2);
 								if (local74.anInt5528 * 365017865 == 31) {
-									@Pc(88) Class85 local88 = (Class85) Class668.aClass32_Sub15_1.method18261(arg1.g2(-1434290800), -1035510331);
+									@Pc(88) Class85 local88 = (Class85) Class668.aClass32_Sub15_1.get(arg1.g2(-1434290800), -1035510331);
 									local74.method31768(local88.anInt260 * 649135051, local88.anInt262 * 2054784993, local88.anInt259 * 243149709, local88.anInt261 * -88051697, -81207454);
 								}
 								if (arg0.method20527() > 0) {
@@ -869,7 +869,7 @@ public class Class142_Sub1 extends Class142 {
 							for (local70 = 0; local70 < local66; local70++) {
 								@Pc(85) Class597 local85 = new Class597(arg0, this.aClass585_5.anInt5438 * -358186793, arg1, 2);
 								if (local85.anInt5528 * 365017865 == 31) {
-									@Pc(99) Class85 local99 = (Class85) Class668.aClass32_Sub15_1.method18261(arg1.g2(-1434290800), -908353382);
+									@Pc(99) Class85 local99 = (Class85) Class668.aClass32_Sub15_1.get(arg1.g2(-1434290800), -908353382);
 									local85.method31768(local99.anInt260 * 649135051, local99.anInt262 * 2054784993, local99.anInt259 * 243149709, local99.anInt261 * -88051697, -81207454);
 								}
 								if (arg0.method20527() > 0) {
@@ -1038,7 +1038,7 @@ public class Class142_Sub1 extends Class142 {
 									@Pc(54) int local54 = local21 >> 6 & 0x3F;
 									local58 = local54 + arg2;
 									local62 = arg3 + local48;
-									local68 = (Class610) arg0.method18261(local8, -1150804951);
+									local68 = (Class610) arg0.get(local8, -1150804951);
 									if ((local36.anInt5708 * -1626288991 & 0x1) == 0) {
 										local81 = local68.anInt5608 * 427800467;
 										local86 = local68.anInt5603 * -774442965;
@@ -1098,7 +1098,7 @@ public class Class142_Sub1 extends Class142 {
 									@Pc(54) int local54 = local21 >> 6 & 0x3F;
 									local58 = local54 + arg2;
 									local62 = arg3 + local48;
-									local68 = (Class610) arg0.method18261(local8, -244136268);
+									local68 = (Class610) arg0.get(local8, -244136268);
 									if ((local36.anInt5708 * -1626288991 & 0x1) == 0) {
 										local81 = local68.anInt5608 * 427800467;
 										local86 = local68.anInt5603 * -774442965;
@@ -1158,7 +1158,7 @@ public class Class142_Sub1 extends Class142 {
 									@Pc(54) int local54 = local21 >> 6 & 0x3F;
 									local58 = local54 + arg2;
 									local62 = arg3 + local48;
-									local68 = (Class610) arg0.method18261(local8, 1970755084);
+									local68 = (Class610) arg0.get(local8, 1970755084);
 									if ((local36.anInt5708 * -1626288991 & 0x1) == 0) {
 										local81 = local68.anInt5608 * 427800467;
 										local86 = local68.anInt5603 * -774442965;
@@ -1182,7 +1182,7 @@ public class Class142_Sub1 extends Class142 {
 
 	@OriginalMember(owner = "client!aih", name = "cy", descriptor = "(Lclient!aop;II)Z", line = 380)
 	static final boolean method10961(@OriginalArg(0) Class32_Sub14 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(5) Class610 local5 = (Class610) arg0.method18261(arg1, 1042228997);
+		@Pc(5) Class610 local5 = (Class610) arg0.get(arg1, 1042228997);
 		if (arg2 == 11) {
 			arg2 = 10;
 		}
@@ -1226,7 +1226,7 @@ public class Class142_Sub1 extends Class142 {
 									local53 = new Class629(local4);
 									local57 = arg2 + local44;
 									local61 = arg3 + local38;
-									@Pc(68) Class610 local68 = (Class610) this.aClass32_Sub14_1.method18261(local6, -1523237490);
+									@Pc(68) Class610 local68 = (Class610) this.aClass32_Sub14_1.get(local6, -1523237490);
 									@Pc(80) int local80;
 									@Pc(85) int local85;
 									if ((local53.anInt5708 * -1626288991 & 0x1) == 0) {
@@ -1282,7 +1282,7 @@ public class Class142_Sub1 extends Class142 {
 									local53 = new Class629(local4);
 									local57 = arg2 + local44;
 									local61 = arg3 + local38;
-									@Pc(68) Class610 local68 = (Class610) this.aClass32_Sub14_1.method18261(local6, -866167413);
+									@Pc(68) Class610 local68 = (Class610) this.aClass32_Sub14_1.get(local6, -866167413);
 									@Pc(80) int local80;
 									@Pc(85) int local85;
 									if ((local53.anInt5708 * -1626288991 & 0x1) == 0) {
@@ -1338,7 +1338,7 @@ public class Class142_Sub1 extends Class142 {
 									local53 = new Class629(local4);
 									local57 = arg2 + local44;
 									local61 = arg3 + local38;
-									@Pc(68) Class610 local68 = (Class610) this.aClass32_Sub14_1.method18261(local6, 1243491282);
+									@Pc(68) Class610 local68 = (Class610) this.aClass32_Sub14_1.get(local6, 1243491282);
 									@Pc(80) int local80;
 									@Pc(85) int local85;
 									if ((local53.anInt5708 * -1626288991 & 0x1) == 0) {
@@ -1394,7 +1394,7 @@ public class Class142_Sub1 extends Class142 {
 									local53 = new Class629(local4);
 									local57 = arg2 + local44;
 									local61 = arg3 + local38;
-									@Pc(68) Class610 local68 = (Class610) this.aClass32_Sub14_1.method18261(local6, -1581959712);
+									@Pc(68) Class610 local68 = (Class610) this.aClass32_Sub14_1.get(local6, -1581959712);
 									@Pc(80) int local80;
 									@Pc(85) int local85;
 									if ((local53.anInt5708 * -1626288991 & 0x1) == 0) {
@@ -1450,7 +1450,7 @@ public class Class142_Sub1 extends Class142 {
 									local53 = new Class629(local4);
 									local57 = arg2 + local44;
 									local61 = arg3 + local38;
-									@Pc(68) Class610 local68 = (Class610) this.aClass32_Sub14_1.method18261(local6, 1473409033);
+									@Pc(68) Class610 local68 = (Class610) this.aClass32_Sub14_1.get(local6, 1473409033);
 									@Pc(80) int local80;
 									@Pc(85) int local85;
 									if ((local53.anInt5708 * -1626288991 & 0x1) == 0) {
@@ -1506,7 +1506,7 @@ public class Class142_Sub1 extends Class142 {
 									local53 = new Class629(local4);
 									local57 = arg2 + local44;
 									local61 = arg3 + local38;
-									@Pc(68) Class610 local68 = (Class610) this.aClass32_Sub14_1.method18261(local6, -274683347);
+									@Pc(68) Class610 local68 = (Class610) this.aClass32_Sub14_1.get(local6, -274683347);
 									@Pc(80) int local80;
 									@Pc(85) int local85;
 									if ((local53.anInt5708 * -1626288991 & 0x1) == 0) {
@@ -1572,7 +1572,7 @@ public class Class142_Sub1 extends Class142 {
 											} while (local42 >= arg6 + 8);
 										} while (local36 < arg7);
 									} while (local36 >= arg7 + 8);
-									@Pc(77) Class610 local77 = (Class610) this.aClass32_Sub14_1.method18261(local6, -2007022956);
+									@Pc(77) Class610 local77 = (Class610) this.aClass32_Sub14_1.get(local6, -2007022956);
 									@Pc(89) int local89;
 									@Pc(94) int local94;
 									if ((local51.anInt5708 * -1626288991 & 0x1) == 0) {
@@ -1640,7 +1640,7 @@ public class Class142_Sub1 extends Class142 {
 											} while (local42 >= arg6 + 8);
 										} while (local36 < arg7);
 									} while (local36 >= arg7 + 8);
-									@Pc(77) Class610 local77 = (Class610) this.aClass32_Sub14_1.method18261(local6, 923331474);
+									@Pc(77) Class610 local77 = (Class610) this.aClass32_Sub14_1.get(local6, 923331474);
 									@Pc(89) int local89;
 									@Pc(94) int local94;
 									if ((local51.anInt5708 * -1626288991 & 0x1) == 0) {
@@ -1708,7 +1708,7 @@ public class Class142_Sub1 extends Class142 {
 											} while (local42 >= arg6 + 8);
 										} while (local36 < arg7);
 									} while (local36 >= arg7 + 8);
-									@Pc(77) Class610 local77 = (Class610) this.aClass32_Sub14_1.method18261(local6, -2104361079);
+									@Pc(77) Class610 local77 = (Class610) this.aClass32_Sub14_1.get(local6, -2104361079);
 									@Pc(89) int local89;
 									@Pc(94) int local94;
 									if ((local51.anInt5708 * -1626288991 & 0x1) == 0) {
@@ -1751,7 +1751,7 @@ public class Class142_Sub1 extends Class142 {
 		if (arg2 < this.anInt1303 * -1860234461) {
 			this.anInt1303 = arg2 * 728020107;
 		}
-		@Pc(17) Class610 local17 = (Class610) this.aClass32_Sub14_1.method18261(arg5, -1483752704);
+		@Pc(17) Class610 local17 = (Class610) this.aClass32_Sub14_1.get(arg5, -1483752704);
 		if (Class51.options.aClass166_Sub14_1.method15656(-1684897143) == 0 && local17.aBoolean838) {
 			return;
 		}
@@ -1866,7 +1866,7 @@ public class Class142_Sub1 extends Class142 {
 		if (arg2 < this.anInt1303 * -1860234461) {
 			this.anInt1303 = arg2 * 728020107;
 		}
-		@Pc(17) Class610 local17 = (Class610) this.aClass32_Sub14_1.method18261(arg5, 1820923607);
+		@Pc(17) Class610 local17 = (Class610) this.aClass32_Sub14_1.get(arg5, 1820923607);
 		if (Class51.options.aClass166_Sub14_1.method15656(-1138395363) == 0 && local17.aBoolean838) {
 			return;
 		}
@@ -1981,7 +1981,7 @@ public class Class142_Sub1 extends Class142 {
 		if (arg2 < this.anInt1303 * -1860234461) {
 			this.anInt1303 = arg2 * 728020107;
 		}
-		@Pc(17) Class610 local17 = (Class610) this.aClass32_Sub14_1.method18261(arg5, 150234049);
+		@Pc(17) Class610 local17 = (Class610) this.aClass32_Sub14_1.get(arg5, 150234049);
 		if (Class51.options.aClass166_Sub14_1.method15656(-881210666) == 0 && local17.aBoolean838) {
 			return;
 		}
@@ -2798,7 +2798,7 @@ public class Class142_Sub1 extends Class142 {
 			local83 = 65;
 			local92 = (Interface61) this.aClass585_5.method31534(arg7, arg12, arg13, -1309876799);
 			if (local92 != null) {
-				local83 = ((Class610) this.aClass32_Sub14_1.method18261(local92.method13423(-1037211373), 425980959)).anInt5597 * 1128343593 + 1;
+				local83 = ((Class610) this.aClass32_Sub14_1.get(local92.method13423(-1037211373), 425980959)).anInt5597 * 1128343593 + 1;
 			}
 			if (arg3) {
 				local140 = new Class132_Sub1_Sub3_Sub2(this.aClass585_5, arg0, this.aClass32_Sub14_1, arg4, arg7, arg8, arg9, arg10, arg11, this.aBoolean236, anIntArray156[arg2] * local83, anIntArray155[arg2] * local83, arg1, arg2, arg14);
@@ -2815,7 +2815,7 @@ public class Class142_Sub1 extends Class142 {
 			local83 = 33;
 			local92 = (Interface61) this.aClass585_5.method31534(arg7, arg12, arg13, -1309876799);
 			if (local92 != null) {
-				local83 = ((Class610) this.aClass32_Sub14_1.method18261(local92.method13423(-1037211373), -1411769706)).anInt5597 * 1128343593 / 2 + 1;
+				local83 = ((Class610) this.aClass32_Sub14_1.get(local92.method13423(-1037211373), -1411769706)).anInt5597 * 1128343593 / 2 + 1;
 			}
 			if (arg3) {
 				local140 = new Class132_Sub1_Sub3_Sub2(this.aClass585_5, arg0, this.aClass32_Sub14_1, arg4, arg7, arg8, arg9, arg10, arg11, this.aBoolean236, local83 * anIntArray156[arg2], local83 * anIntArray155[arg2], arg1, arg2 + 4, arg14);
@@ -2846,7 +2846,7 @@ public class Class142_Sub1 extends Class142 {
 			@Pc(420) int local420 = 33;
 			@Pc(429) Interface61 local429 = (Interface61) this.aClass585_5.method31534(arg7, arg12, arg13, -1309876799);
 			if (local429 != null) {
-				local420 = ((Class610) this.aClass32_Sub14_1.method18261(local429.method13423(-1037211373), 1106137551)).anInt5597 * 1128343593 / 2 + 1;
+				local420 = ((Class610) this.aClass32_Sub14_1.get(local429.method13423(-1037211373), 1106137551)).anInt5597 * 1128343593 / 2 + 1;
 			}
 			@Pc(525) Class132_Sub1_Sub3 local525;
 			if (arg3) {
@@ -2896,7 +2896,7 @@ public class Class142_Sub1 extends Class142 {
 			local83 = 65;
 			local92 = (Interface61) this.aClass585_5.method31534(arg7, arg12, arg13, -1309876799);
 			if (local92 != null) {
-				local83 = ((Class610) this.aClass32_Sub14_1.method18261(local92.method13423(-1037211373), -1558405476)).anInt5597 * 1128343593 + 1;
+				local83 = ((Class610) this.aClass32_Sub14_1.get(local92.method13423(-1037211373), -1558405476)).anInt5597 * 1128343593 + 1;
 			}
 			if (arg3) {
 				local140 = new Class132_Sub1_Sub3_Sub2(this.aClass585_5, arg0, this.aClass32_Sub14_1, arg4, arg7, arg8, arg9, arg10, arg11, this.aBoolean236, anIntArray156[arg2] * local83, anIntArray155[arg2] * local83, arg1, arg2, arg14);
@@ -2913,7 +2913,7 @@ public class Class142_Sub1 extends Class142 {
 			local83 = 33;
 			local92 = (Interface61) this.aClass585_5.method31534(arg7, arg12, arg13, -1309876799);
 			if (local92 != null) {
-				local83 = ((Class610) this.aClass32_Sub14_1.method18261(local92.method13423(-1037211373), 913038263)).anInt5597 * 1128343593 / 2 + 1;
+				local83 = ((Class610) this.aClass32_Sub14_1.get(local92.method13423(-1037211373), 913038263)).anInt5597 * 1128343593 / 2 + 1;
 			}
 			if (arg3) {
 				local140 = new Class132_Sub1_Sub3_Sub2(this.aClass585_5, arg0, this.aClass32_Sub14_1, arg4, arg7, arg8, arg9, arg10, arg11, this.aBoolean236, local83 * anIntArray156[arg2], local83 * anIntArray155[arg2], arg1, arg2 + 4, arg14);
@@ -2944,7 +2944,7 @@ public class Class142_Sub1 extends Class142 {
 			@Pc(420) int local420 = 33;
 			@Pc(429) Interface61 local429 = (Interface61) this.aClass585_5.method31534(arg7, arg12, arg13, -1309876799);
 			if (local429 != null) {
-				local420 = ((Class610) this.aClass32_Sub14_1.method18261(local429.method13423(-1037211373), 935013888)).anInt5597 * 1128343593 / 2 + 1;
+				local420 = ((Class610) this.aClass32_Sub14_1.get(local429.method13423(-1037211373), 935013888)).anInt5597 * 1128343593 / 2 + 1;
 			}
 			@Pc(525) Class132_Sub1_Sub3 local525;
 			if (arg3) {
@@ -2977,7 +2977,7 @@ public class Class142_Sub1 extends Class142 {
 		if (local7 == null) {
 			return;
 		}
-		@Pc(19) Class610 local19 = (Class610) this.aClass32_Sub14_1.method18261(local7.method13423(-1037211373), -961474130);
+		@Pc(19) Class610 local19 = (Class610) this.aClass32_Sub14_1.get(local7.method13423(-1037211373), -961474130);
 		@Pc(23) int local23 = local7.method13420(1381183806);
 		@Pc(27) int local27 = local7.method13404(1586088497);
 		if (local19.method32001(819545494)) {
@@ -3023,7 +3023,7 @@ public class Class142_Sub1 extends Class142 {
 		if (local7 == null) {
 			return;
 		}
-		@Pc(19) Class610 local19 = (Class610) this.aClass32_Sub14_1.method18261(local7.method13423(-1037211373), 632295491);
+		@Pc(19) Class610 local19 = (Class610) this.aClass32_Sub14_1.get(local7.method13423(-1037211373), 632295491);
 		@Pc(23) int local23 = local7.method13420(1729391823);
 		@Pc(27) int local27 = local7.method13404(2030479628);
 		if (local19.method32001(762906085)) {

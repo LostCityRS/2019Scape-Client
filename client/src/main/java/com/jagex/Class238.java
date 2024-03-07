@@ -167,7 +167,7 @@ public class Class238 implements Runnable {
 
 	@OriginalMember(owner = "client!e", name = "o", descriptor = "(Lclient!yf;I)V", line = 75)
 	static void method25796(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 2] = ((Class347) Class288.aClass55_Sub2_1.method18261(arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 2], 1506735470)).method27601(Class624.aClass120_1, arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1], (byte) -16) ? 1 : 0;
+		arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 2] = ((Class347) Class288.aClass55_Sub2_1.get(arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 2], 1506735470)).method27601(Class624.playerVariableManager, arg0.anIntArray519[arg0.anInt5891 * -1497248091 - 1], (byte) -16) ? 1 : 0;
 		arg0.anInt5891 -= 1189701933;
 	}
 

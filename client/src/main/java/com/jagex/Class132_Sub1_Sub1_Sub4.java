@@ -90,7 +90,7 @@ public class Class132_Sub1_Sub1_Sub4 extends Class132_Sub1_Sub1 {
 		this.aBoolean542 = false;
 		this.anInt3264 = arg15 * 1383937513;
 		this.anInt3268 = arg16 * -1740027791;
-		@Pc(112) int local112 = ((Class697) Class501.aClass32_Sub18_1.method18261(this.anInt3266 * 2083472695, -1724063811)).anInt5949 * 1477426425;
+		@Pc(112) int local112 = ((Class697) Class501.aClass32_Sub18_1.get(this.anInt3266 * 2083472695, -1724063811)).anInt5949 * 1477426425;
 		this.aClass19_4 = new Class19_Sub1(this, false);
 		this.aClass19_4.method23566(local112, 1540652555);
 		this.method24274(1, -1922530479);
@@ -430,31 +430,31 @@ public class Class132_Sub1_Sub1_Sub4 extends Class132_Sub1_Sub1 {
 
 	@OriginalMember(owner = "client!aue", name = "f", descriptor = "(Lclient!dh;II)Lclient!do;", line = 200)
 	Class109 method23921(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(8) Class697 local8 = (Class697) Class501.aClass32_Sub18_1.method18261(this.anInt3266 * 2083472695, 1679098612);
+		@Pc(8) Class697 local8 = (Class697) Class501.aClass32_Sub18_1.get(this.anInt3266 * 2083472695, 1679098612);
 		return local8.method36665(arg0, arg1, this.aClass19_4, (byte) 2, -1747901038);
 	}
 
 	@OriginalMember(owner = "client!aue", name = "y", descriptor = "(Lclient!dh;I)Lclient!do;", line = 200)
 	Class109 method23922(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1) {
-		@Pc(8) Class697 local8 = (Class697) Class501.aClass32_Sub18_1.method18261(this.anInt3266 * 2083472695, 1489625715);
+		@Pc(8) Class697 local8 = (Class697) Class501.aClass32_Sub18_1.get(this.anInt3266 * 2083472695, 1489625715);
 		return local8.method36665(arg0, arg1, this.aClass19_4, (byte) 2, -959318598);
 	}
 
 	@OriginalMember(owner = "client!aue", name = "v", descriptor = "(Lclient!dh;I)Lclient!do;", line = 200)
 	Class109 method23923(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1) {
-		@Pc(8) Class697 local8 = (Class697) Class501.aClass32_Sub18_1.method18261(this.anInt3266 * 2083472695, -652108441);
+		@Pc(8) Class697 local8 = (Class697) Class501.aClass32_Sub18_1.get(this.anInt3266 * 2083472695, -652108441);
 		return local8.method36665(arg0, arg1, this.aClass19_4, (byte) 2, -1492119822);
 	}
 
 	@OriginalMember(owner = "client!aue", name = "o", descriptor = "(Lclient!dh;I)Lclient!do;", line = 200)
 	Class109 method23924(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1) {
-		@Pc(8) Class697 local8 = (Class697) Class501.aClass32_Sub18_1.method18261(this.anInt3266 * 2083472695, -255784588);
+		@Pc(8) Class697 local8 = (Class697) Class501.aClass32_Sub18_1.get(this.anInt3266 * 2083472695, -255784588);
 		return local8.method36665(arg0, arg1, this.aClass19_4, (byte) 2, -1731992424);
 	}
 
 	@OriginalMember(owner = "client!aue", name = "s", descriptor = "(Lclient!dh;I)Lclient!do;", line = 200)
 	Class109 method23925(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1) {
-		@Pc(8) Class697 local8 = (Class697) Class501.aClass32_Sub18_1.method18261(this.anInt3266 * 2083472695, -899430241);
+		@Pc(8) Class697 local8 = (Class697) Class501.aClass32_Sub18_1.get(this.anInt3266 * 2083472695, -899430241);
 		return local8.method36665(arg0, arg1, this.aClass19_4, (byte) 2, -1000468434);
 	}
 

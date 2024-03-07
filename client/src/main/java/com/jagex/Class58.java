@@ -239,7 +239,7 @@ public class Class58 {
 			if (arg0.aClass554Array3[local38].anInt5319 * 601549465 != -1) {
 				@Pc(58) Class19 local58 = arg0.aClass554Array3[local38].aClass19_7;
 				if (local58.method23578((byte) 0)) {
-					@Pc(74) Class697 local74 = (Class697) Class501.aClass32_Sub18_1.method18261(arg0.aClass554Array3[local38].anInt5319 * 601549465, 1862784475);
+					@Pc(74) Class697 local74 = (Class697) Class501.aClass32_Sub18_1.get(arg0.aClass554Array3[local38].anInt5319 * 601549465, 1862784475);
 					@Pc(78) Class263 local78 = local58.method23560(34907548);
 					if (local74.aBoolean881) {
 						if (local78.anInt3867 * -2017474589 == 3) {

@@ -196,6 +196,6 @@ public abstract class Class164 implements Interface4 {
 	@OriginalMember(owner = "client!yc", name = "wh", descriptor = "(Lclient!yf;I)V", line = 9066)
 	static final void method15287(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = ((Class93_Sub1_Sub2) Class638.aClass32_Sub22_1.method18261(local12, 428702843)).anInt316 * 820091969;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = ((Class93_Sub1_Sub2) Class638.aClass32_Sub22_1.get(local12, 428702843)).anInt316 * 820091969;
 	}
 }

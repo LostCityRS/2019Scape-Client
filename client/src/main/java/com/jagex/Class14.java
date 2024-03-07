@@ -52,7 +52,7 @@ public class Class14 {
 	@OriginalMember(owner = "client!aal", name = "ahr", descriptor = "(Lclient!yf;I)V", line = 10839)
 	static final void method194(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = ((Class47) Class277.aClass32_Sub12_1.method18261(local12, -1790603482)).anInt139 * 415441565;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = ((Class47) Class277.aClass32_Sub12_1.get(local12, -1790603482)).anInt139 * 415441565;
 	}
 
 	@OriginalMember(owner = "client!aal", name = "aow", descriptor = "(Lclient!yf;I)V", line = 12427)

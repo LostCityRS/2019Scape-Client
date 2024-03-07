@@ -333,7 +333,7 @@ public class Class393 {
 		if (arg0 == null) {
 			return false;
 		}
-		@Pc(11) Class610 local11 = (Class610) arg1.method18261(arg0.method13423(-1037211373), -1165989297);
+		@Pc(11) Class610 local11 = (Class610) arg1.get(arg0.method13423(-1037211373), -1165989297);
 		if (local11.aBoolean839 && !client.mapMember) {
 			return false;
 		}
@@ -341,7 +341,7 @@ public class Class393 {
 		if (local11.anIntArray492 != null) {
 			for (@Pc(29) int local29 = 0; local29 < local11.anIntArray492.length; local29++) {
 				if (local11.anIntArray492[local29] != -1) {
-					@Pc(49) Class610 local49 = (Class610) arg1.method18261(local11.anIntArray492[local29], -569765544);
+					@Pc(49) Class610 local49 = (Class610) arg1.get(local11.anIntArray492[local29], -569765544);
 					if (local49.anInt5600 * 400633667 >= 0) {
 						local23 = local49.anInt5600 * 400633667;
 					}

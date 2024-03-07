@@ -103,7 +103,7 @@ public class Class255 {
 
 	@OriginalMember(owner = "client!ez", name = "s", descriptor = "(Lclient!yf;I)V", line = 80)
 	static void method26006(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		@Pc(16) Class347 local16 = (Class347) Class288.aClass55_Sub2_1.method18261(arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], -1050431703);
+		@Pc(16) Class347 local16 = (Class347) Class288.aClass55_Sub2_1.get(arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], -1050431703);
 		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local16.anIntArray421 == null ? 0 : local16.anIntArray421.length;
 	}
 

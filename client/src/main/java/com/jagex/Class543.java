@@ -45,7 +45,7 @@ final class Class543 implements Interface62 {
 
 	@OriginalMember(owner = "client!s", name = "et", descriptor = "(IZI)V", line = 2015)
 	public static void method30945(@OriginalArg(0) int arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2) {
-		Class704.method36733(arg0, Class74.aClass74_99.method1259(Class106.lang, (byte) 12), arg1, (byte) -27);
+		Class704.changeToolkit(arg0, Class74.aClass74_99.method1259(Class106.lang, (byte) 12), arg1, (byte) -27);
 	}
 
 	@OriginalMember(owner = "client!s", name = "amw", descriptor = "(Lclient!yf;I)V", line = 12119)

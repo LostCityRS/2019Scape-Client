@@ -129,16 +129,16 @@ public class Class689 {
 	@OriginalMember(owner = "client!yo", name = "hb", descriptor = "(B)V", line = 4378)
 	static final void method36524(@OriginalArg(0) byte arg0) {
 		Class143.method11049(Class694.aClass104_14, (long) client.anInt3485);
-		if (client.anInt3526 * -703563959 != -1) {
-			Class19.method23635(client.anInt3526 * -703563959, 1117783766);
+		if (client.topLevelInterface * -703563959 != -1) {
+			Class19.method23635(client.topLevelInterface * -703563959, 1117783766);
 		}
 		@Pc(15) int local15;
 		for (local15 = 0; local15 < client.anInt3562 * -1477010237; local15++) {
-			client.aBooleanArray19[local15] = client.aBooleanArray22[local15];
-			client.aBooleanArray22[local15] = false;
+			client.aBooleanArray19[local15] = client.topLevelComponentRedrawRequestedTemp[local15];
+			client.topLevelComponentRedrawRequestedTemp[local15] = false;
 		}
 		client.anInt3554 = client.anInt3485 * -836590449;
-		if (-703563959 * client.anInt3526 != -1) {
+		if (-703563959 * client.topLevelInterface != -1) {
 			client.anInt3562 = 0;
 			Class79_Sub1_Sub2.method1489(-1675832915);
 		}

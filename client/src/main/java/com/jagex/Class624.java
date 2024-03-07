@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public class Class624 implements Interface67 {
 
 	@OriginalMember(owner = "client!vu", name = "dj", descriptor = "Lclient!ah;")
-	public static Class120 aClass120_1;
+	public static Class120 playerVariableManager;
 
 	@OriginalMember(owner = "client!vu", name = "e", descriptor = "I")
 	final int anInt5684;

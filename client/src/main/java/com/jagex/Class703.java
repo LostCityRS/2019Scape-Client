@@ -53,7 +53,7 @@ public class Class703 {
 	@OriginalMember(owner = "client!ze", name = "xl", descriptor = "(Lclient!yf;I)V", line = 9113)
 	static final void method36724(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class624.aClass120_1.method8663(local12, -2117194675);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class624.playerVariableManager.method8663(local12, -2117194675);
 	}
 
 	@OriginalMember(owner = "client!ze", name = "baq", descriptor = "(Lclient!yf;I)V", line = 14325)

@@ -42,7 +42,7 @@ public class Class284 implements Interface26 {
 	@Override
 	public void method26715(@OriginalArg(0) Class297 arg0, @OriginalArg(1) byte arg1) {
 		if (this.aClass466_1 != null) {
-			arg0.method26653(-2044048665).method33468((Class108) this.this$0.anInterface27_2.method25528((byte) -32).method18261(this.aClass466_1.anInt5092 * -1181855333, 1495013738), this.aClass466_1.anObject19, -1982962417);
+			arg0.method26653(-2044048665).method33468((Class108) this.this$0.anInterface27_2.method25528((byte) -32).get(this.aClass466_1.anInt5092 * -1181855333, 1495013738), this.aClass466_1.anObject19, -1982962417);
 		}
 	}
 
@@ -50,7 +50,7 @@ public class Class284 implements Interface26 {
 	@Override
 	public void method26714(@OriginalArg(0) Class297 arg0) {
 		if (this.aClass466_1 != null) {
-			arg0.method26653(1838875806).method33468((Class108) this.this$0.anInterface27_2.method25528((byte) 1).method18261(this.aClass466_1.anInt5092 * -1181855333, -2036295823), this.aClass466_1.anObject19, -1383761232);
+			arg0.method26653(1838875806).method33468((Class108) this.this$0.anInterface27_2.method25528((byte) 1).get(this.aClass466_1.anInt5092 * -1181855333, -2036295823), this.aClass466_1.anObject19, -1383761232);
 		}
 	}
 
@@ -58,7 +58,7 @@ public class Class284 implements Interface26 {
 	@Override
 	public void method26713(@OriginalArg(0) Class297 arg0) {
 		if (this.aClass466_1 != null) {
-			arg0.method26653(355717944).method33468((Class108) this.this$0.anInterface27_2.method25528((byte) -38).method18261(this.aClass466_1.anInt5092 * -1181855333, -1907853590), this.aClass466_1.anObject19, -1729143292);
+			arg0.method26653(355717944).method33468((Class108) this.this$0.anInterface27_2.method25528((byte) -38).get(this.aClass466_1.anInt5092 * -1181855333, -1907853590), this.aClass466_1.anObject19, -1729143292);
 		}
 	}
 
@@ -98,7 +98,7 @@ public class Class284 implements Interface26 {
 		arg0.method20721(local142, local156, local124, local132, local158, 1);
 		arg0.method20573(local142, local156, local124, local132, local158, 0);
 		for (@Pc(184) Class93_Sub29 local184 = (Class93_Sub29) Class159_Sub1.aClass22_28.method428((byte) 70); local184 != null; local184 = (Class93_Sub29) Class159_Sub1.aClass22_28.method442(1881187987)) {
-			@Pc(195) Class322 local195 = (Class322) Class159_Sub1.aClass32_Sub2_2.method18261(local184.anInt1603 * 1208139441, 1078866102);
+			@Pc(195) Class322 local195 = (Class322) Class159_Sub1.aClass32_Sub2_2.get(local184.anInt1603 * 1208139441, 1078866102);
 			if (Class32_Sub11.method17037(local195, (byte) 82)) {
 				@Pc(209) Class355 local209 = (Class355) Class159_Sub1.aHashMap4.get(local184.anInt1603 * 1208139441);
 				if (local209 == null) {

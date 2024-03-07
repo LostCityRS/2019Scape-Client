@@ -103,8 +103,8 @@ public class Class495 implements Interface7 {
 						Class125_Sub3.aCanvas1.setLocation(client.anInt3414 * 495533241, client.anInt3415 * -1074927711);
 					}
 					Class183.method24573(2139195022);
-					if (client.anInt3526 * -703563959 != -1) {
-						Class618.method32103(true, -1743495735);
+					if (client.topLevelInterface * -703563959 != -1) {
+						Class618.computeTopLevelInterfaceLayout(true, -1743495735);
 					}
 					Class555.method31054(1022489549);
 				}

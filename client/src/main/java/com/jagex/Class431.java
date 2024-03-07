@@ -333,7 +333,7 @@ public class Class431 {
 		if (!arg0.aBoolean708) {
 			@Pc(23) int local23 = arg1.anInt3953 * -1549590237 >>> 16;
 			@Pc(28) Class10 local28 = new Class10(client.aClass16_22);
-			for (@Pc(33) Class93_Sub40 local33 = (Class93_Sub40) local28.method158((byte) 45); local33 != null; local33 = (Class93_Sub40) local28.next()) {
+			for (@Pc(33) SubInterface local33 = (SubInterface) local28.method158((byte) 45); local33 != null; local33 = (SubInterface) local28.next()) {
 				if (local23 == local33.anInt3172 * 1220811495) {
 					return Class659.method32808((int) (local33.aLong232 * -3750704643647536275L), 62779510);
 				}

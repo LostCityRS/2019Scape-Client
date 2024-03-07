@@ -168,7 +168,7 @@ public class Class636 {
 		if (local14 == null) {
 			return null;
 		} else {
-			@Pc(27) Class322 local27 = (Class322) Class159_Sub1.aClass32_Sub2_2.method18261(local14.anInt1603 * 1208139441, 453195580);
+			@Pc(27) Class322 local27 = (Class322) Class159_Sub1.aClass32_Sub2_2.get(local14.anInt1603 * 1208139441, 453195580);
 			return local27 != null && local27.aBoolean711 && local27.method27252(Class159_Sub1.anInterface21_2, Class159_Sub1.anInterface23_2, -1486934819) ? local14 : Class717.method36894(-1720438426);
 		}
 	}

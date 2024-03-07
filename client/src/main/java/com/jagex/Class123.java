@@ -1503,7 +1503,7 @@ public abstract class Class123 {
 				if (local21.method18607(33985) && local21.aByte100 == Class520.selfPlayer.aByte100) {
 					@Pc(33) Class336 local33 = local21.aClass336_1;
 					if (local33 != null && local33.anIntArray412 != null) {
-						local33 = local33.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 9686);
+						local33 = local33.method27435(Class624.playerVariableManager, Class624.playerVariableManager, (short) 9686);
 					}
 					if (local33 != null && local33.aBoolean715 && local33.aBoolean718) {
 						@Pc(58) Class472 local58 = local21.method24220().aClass472_61;

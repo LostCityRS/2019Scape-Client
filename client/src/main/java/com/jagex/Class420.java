@@ -316,7 +316,7 @@ public class Class420 {
 	@OriginalMember(owner = "client!mj", name = "ti", descriptor = "(Lclient!hf;IIFIIIIIIB)V", line = 8386)
 	static void method28742(@OriginalArg(0) Class312 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) float arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) byte arg10) {
 		if (arg0.aClass331_2 == null) {
-			@Pc(11) Class336 local11 = (Class336) Class162.aClass32_Sub3_2.method18261(arg0.anInt4037 * 371778301, 1660075289);
+			@Pc(11) Class336 local11 = (Class336) Class162.aClass32_Sub3_2.get(arg0.anInt4037 * 371778301, 1660075289);
 			arg0.aClass331_2 = new Class331(local11, true);
 		}
 		arg0.aClass331_2.aLong259 = Class388.method28251((byte) 127) * 6591543353939106377L;

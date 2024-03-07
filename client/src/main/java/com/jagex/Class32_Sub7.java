@@ -214,12 +214,12 @@ public class Class32_Sub7 extends Class32 {
 				}
 				if (arg0.startsWith("getclientvarpbit")) {
 					local568 = Integer.parseInt(arg0.substring(17));
-					Class314.method26939("varpbit=" + Class624.aClass120_1.method33454(Class624.aClass120_1.method27953(local568, (byte) -50), 1590591055), -1870461469);
+					Class314.method26939("varpbit=" + Class624.playerVariableManager.method33454(Class624.playerVariableManager.method27953(local568, (byte) -50), 1590591055), -1870461469);
 					return;
 				}
 				if (arg0.startsWith("getclientvarp")) {
 					local568 = Integer.parseInt(arg0.substring(14));
-					Class314.method26939("varp=" + Class624.aClass120_1.method33455(Class624.aClass120_1.method27954(Class138.aClass138_65, local568, -1497248091), 1585251344), -2109390046);
+					Class314.method26939("varp=" + Class624.playerVariableManager.method33455(Class624.playerVariableManager.method27954(Class138.aClass138_65, local568, -1497248091), 1585251344), -2109390046);
 					return;
 				}
 				@Pc(865) String[] local865;
@@ -308,7 +308,7 @@ public class Class32_Sub7 extends Class32 {
 	@OriginalMember(owner = "client!aoh", name = "axg", descriptor = "(Lclient!yf;I)V", line = 13941)
 	static final void method16824(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		@Pc(18) Class322 local18 = (Class322) Class542.aClass32_Sub2_3.method18261(local12, -198406608);
+		@Pc(18) Class322 local18 = (Class322) Class542.aClass32_Sub2_3.get(local12, -198406608);
 		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local18.anInt4116 * 1579741579;
 	}
 }

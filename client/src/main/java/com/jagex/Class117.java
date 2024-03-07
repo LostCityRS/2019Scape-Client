@@ -205,8 +205,8 @@ public abstract class Class117 implements Interface4 {
 		@Pc(25) int local25 = 0;
 		@Pc(29) int local29 = local23 >>> 8;
 		@Pc(33) int local33 = local23 & 0xFF;
-		@Pc(39) Class30 local39 = (Class30) Class74.aClass32_1.method18261(local13, -2074756598);
-		@Pc(45) Class77 local45 = (Class77) Class276.aClass32_2.method18261(local29, -675571426);
+		@Pc(39) Class30 local39 = (Class30) Class74.aClass32_1.get(local13, -2074756598);
+		@Pc(45) Class77 local45 = (Class77) Class276.aClass32_2.get(local29, -675571426);
 		@Pc(50) Class519[] local50 = local45.aClass519ArrayArray2[local33];
 		@Pc(55) Object[] local55 = local39.method617(local33, 1113569772);
 		if (local55 == null && local45.anObjectArrayArray2 != null) {

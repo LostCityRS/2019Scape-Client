@@ -66,7 +66,7 @@ public class Class529 {
 		if (local23 == -1) {
 			throw new RuntimeException();
 		}
-		@Pc(60) Class39 local60 = (Class39) Class19.aClass32_Sub7_5.method18261(local23, 493731023);
+		@Pc(60) Class39 local60 = (Class39) Class19.aClass32_Sub7_5.get(local23, 493731023);
 		if (local60.aClass519_2.getId() != local13) {
 			throw new RuntimeException();
 		} else if (local60.aClass519_1.getId() == Class519.aClass519_7.getId()) {

@@ -118,8 +118,8 @@ public class Class618 implements Interface75 {
 	}
 
 	@OriginalMember(owner = "client!vn", name = "jc", descriptor = "(ZI)V", line = 10859)
-	static final void method32103(@OriginalArg(0) boolean arg0, @OriginalArg(1) int arg1) {
-		Class568.method31298(client.anInt3526 * -703563959, client.width * -1378711501, client.height * 2091353777, arg0, (byte) -4);
+	static final void computeTopLevelInterfaceLayout(@OriginalArg(0) boolean arg0, @OriginalArg(1) int arg1) {
+		Class568.method31298(client.topLevelInterface * -703563959, client.width * -1378711501, client.height * 2091353777, arg0, (byte) -4);
 	}
 
 	@OriginalMember(owner = "client!vn", name = "ahu", descriptor = "(Lclient!yf;B)V", line = 10862)
@@ -127,11 +127,11 @@ public class Class618 implements Interface75 {
 		arg0.anInt5891 -= -1915563430;
 		@Pc(13) int local13 = arg0.anIntArray519[arg0.anInt5891 * -1497248091];
 		@Pc(23) int local23 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 1];
-		@Pc(29) Class87 local29 = (Class87) Class124.aClass32_Sub21_7.method18261(local23, -1792071388);
+		@Pc(29) Class87 local29 = (Class87) Class124.aClass32_Sub21_7.get(local23, -1792071388);
 		if (local29.method1511(1429228259)) {
-			arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = ((Class93_Sub1_Sub1) Class649.aClass55_Sub1_1.method18261(local13, -1868377509)).method1759(local23, local29.aString11, -203331809);
+			arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = ((Class93_Sub1_Sub1) Class649.aClass55_Sub1_1.get(local13, -1868377509)).method1759(local23, local29.aString11, -203331809);
 		} else {
-			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = ((Class93_Sub1_Sub1) Class649.aClass55_Sub1_1.method18261(local13, 501223273)).method1756(local23, local29.anInt265 * 951920133, (byte) -92);
+			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = ((Class93_Sub1_Sub1) Class649.aClass55_Sub1_1.get(local13, 501223273)).method1756(local23, local29.anInt265 * 951920133, (byte) -92);
 		}
 	}
 }

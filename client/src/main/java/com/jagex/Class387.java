@@ -81,7 +81,7 @@ public class Class387 implements Interface75 {
 	static int method28242(@OriginalArg(0) Interface23 arg0, @OriginalArg(1) Interface11 arg1, @OriginalArg(2) byte arg2) {
 		@Pc(1) int local1 = 0;
 		for (@Pc(3) int local3 = 0; local3 < arg1.method18262(182453511); local3++) {
-			@Pc(14) Class347 local14 = (Class347) arg1.method18261(local3, -1593675311);
+			@Pc(14) Class347 local14 = (Class347) arg1.get(local3, -1593675311);
 			if (local14.method27592(arg0, -458136851)) {
 				local1 += local14.anInt4194 * 1554294991;
 			}

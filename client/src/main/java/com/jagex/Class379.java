@@ -264,7 +264,7 @@ public class Class379 implements Interface12 {
 				if (this.aClass127_1 != null) {
 					@Pc(66) Interface11 local66 = (Interface11) this.aClass127_1.aMap16.get(this.aClass138_73);
 					if (local66 != null) {
-						this.aClass108_1 = (Class108) local66.method18261(this.anInt4620 * 1982504613, -353278518);
+						this.aClass108_1 = (Class108) local66.get(this.anInt4620 * 1982504613, -353278518);
 					} else if (!arg2) {
 						throw new IllegalStateException("");
 					}
@@ -292,7 +292,7 @@ public class Class379 implements Interface12 {
 				if (this.aClass127_1 != null) {
 					@Pc(66) Interface11 local66 = (Interface11) this.aClass127_1.aMap16.get(this.aClass138_73);
 					if (local66 != null) {
-						this.aClass108_1 = (Class108) local66.method18261(this.anInt4620 * 1982504613, 1573681872);
+						this.aClass108_1 = (Class108) local66.get(this.anInt4620 * 1982504613, 1573681872);
 					} else if (!arg2) {
 						throw new IllegalStateException("");
 					}

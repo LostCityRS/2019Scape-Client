@@ -1,6 +1,5 @@
 package com.jagex;
 
-import java.awt.datatransfer.ClipboardOwner;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
@@ -215,7 +214,7 @@ public abstract class Class162 {
 	@OriginalMember(owner = "client!xd", name = "ahj", descriptor = "(Lclient!yf;I)V", line = 10805)
 	static final void method14788(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		@Pc(18) Class47 local18 = (Class47) Class277.aClass32_Sub12_1.method18261(local12, 411748954);
+		@Pc(18) Class47 local18 = (Class47) Class277.aClass32_Sub12_1.get(local12, 411748954);
 		@Pc(26) int local26;
 		if (local18.aBoolean20) {
 			local26 = local18.anInt187 * 454881133;
