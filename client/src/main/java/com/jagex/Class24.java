@@ -52,7 +52,11 @@ public final class Class24 {
 			this.method512(-225680934);
 			this.anInt77 = 211515136;
 		}
-		return this.anIntArray5[(this.anInt77 -= -1861444745) * -732254649];
+        if (client.ENABLE_ISAAC) {
+		    return this.anIntArray5[(this.anInt77 -= -1861444745) * -732254649];
+        } else {
+            return 0;
+        }
 	}
 
 	@OriginalMember(owner = "client!aav", name = "f", descriptor = "()I", line = 24)
@@ -79,7 +83,11 @@ public final class Class24 {
 			this.method512(434971419);
 			this.anInt77 = 211515136;
 		}
-		return this.anIntArray5[this.anInt77 * -732254649 - 1];
+        if (client.ENABLE_ISAAC) {
+		    return this.anIntArray5[this.anInt77 * -732254649 - 1];
+        } else {
+            return 0;
+        }
 	}
 
 	@OriginalMember(owner = "client!aav", name = "u", descriptor = "()I", line = 32)

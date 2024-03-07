@@ -41,6 +41,7 @@ public final class client extends Class553 {
     public static final boolean ENABLE_JS5_RSA = false;
     public static final boolean ENABLE_JS5_XOR = false;
     public static final boolean ENABLE_HOST_CHECK = false;
+    public static final boolean ENABLE_ISAAC = false;
 
 	@OriginalMember(owner = "client!client", name = "hi", descriptor = "Lclient!aoo;")
 	public static Class32_Sub13 aClass32_Sub13_1;
