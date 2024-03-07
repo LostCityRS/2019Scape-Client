@@ -91,7 +91,7 @@ public class Class334 {
 							} while (local62 >= arg5);
 						} while (local81 + local58 < 0);
 					} while (local86 + local62 < 0);
-				} while (local36.anInt5709 * 1175627307 == Class615.aClass615_24.anInt5628 * 948246811 && Class51.aClass93_Sub36_1.aClass166_Sub3_1.method15405(1402098336) == 0 && local68.anInt5592 * 1067969079 == 0 && local68.anInt5591 * -297318857 != 1 && !local68.aBoolean835);
+				} while (local36.anInt5709 * 1175627307 == Class615.aClass615_24.anInt5628 * 948246811 && Class51.options.aClass166_Sub3_1.method15405(1402098336) == 0 && local68.anInt5592 * 1067969079 == 0 && local68.anInt5591 * -297318857 != 1 && !local68.aBoolean835);
 				if (!local68.method31981(arg7, (short) 9804)) {
 					arg6.anInt5810 = local8 * -33749981;
 					local1++;
@@ -119,20 +119,20 @@ public class Class334 {
 			return;
 		}
 		@Pc(45) Class175 local45 = Class330.method27371(-1502628854);
-		if (client.anInt3435 * -849002901 != 13 && client.anInt3435 * -849002901 != 18 && client.anInt3435 * -849002901 != 0) {
+		if (client.state * -849002901 != 13 && client.state * -849002901 != 18 && client.state * -849002901 != 0) {
 			return;
 		}
 		if (local4.aString167 == null || local4.aClass310_7 == null) {
 			Class493.method30012(local45, local4, arg0, arg1, arg2, 1999052883);
 			return;
 		}
-		@Pc(73) Class93_Sub22 local73 = Class102.method2588(Class446.aClass446_106, local45.aClass24_2, (byte) 71);
-		local73.aPacketBit_1.p1(Packet.pjstrlen(local4.aString167, -1710534944) + 7 + 1, (byte) -1);
-		local73.aPacketBit_1.pjstr(local4.aString167, -905461201);
-		local73.aPacketBit_1.p2_alt1(arg2, (byte) 59);
-		local73.aPacketBit_1.p1_alt2(arg0, -1733657513);
-		local73.aPacketBit_1.p1_alt3(local4.aClass310_7.method36920(), (byte) -109);
-		local73.aPacketBit_1.p4_alt2(arg1, 844689790);
-		local45.method24356(local73, -2068554359);
+		@Pc(73) ClientMessage local73 = Class102.createGameMessage(ClientProt.aClientProt_106, local45.clientIsaac, (byte) 71);
+		local73.packet.p1(Packet.pjstrlen(local4.aString167, -1710534944) + 7 + 1, (byte) -1);
+		local73.packet.pjstr(local4.aString167, -905461201);
+		local73.packet.p2_alt1(arg2, (byte) 59);
+		local73.packet.p1_alt2(arg0, -1733657513);
+		local73.packet.p1_alt3(local4.aClass310_7.getId(), (byte) -109);
+		local73.packet.p4_alt2(arg1, 844689790);
+		local45.send(local73, -2068554359);
 	}
 }

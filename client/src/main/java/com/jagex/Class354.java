@@ -88,6 +88,6 @@ public class Class354 {
 
 	@OriginalMember(owner = "client!iz", name = "ayx", descriptor = "(Lclient!yf;I)V", line = 14019)
 	static final void method27696(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class351.anInt4205 * 225309145;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class351.userJcoinsBalance * 225309145;
 	}
 }

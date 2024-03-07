@@ -160,7 +160,7 @@ public class Class651 {
 	@OriginalMember(owner = "client!wy", name = "alj", descriptor = "(Lclient!yf;I)V", line = 11845)
 	static final void method32674(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		if (Class4.aBoolean2 && Class125_Sub2_Sub1.aFrame1 != null) {
-			Class717.method36895(Class51.aClass93_Sub36_1.aClass166_Sub23_1.method15844(453071792), -1, -1, false, (byte) 42);
+			Class717.method36895(Class51.options.aClass166_Sub23_1.method15844(453071792), -1, -1, false, (byte) 42);
 		}
 	}
 }

@@ -70,8 +70,8 @@ public abstract class Class54 {
 	protected int anInt1990 = -811224685;
 
 	@OriginalMember(owner = "client!acc", name = "m", descriptor = "(Lclient!yu;Lclient!ze;II)I", line = 21)
-	public static int method14852(@OriginalArg(0) Class693 arg0, @OriginalArg(1) Class703 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		if (arg0 == Class693.aClass693_8) {
+	public static int method14852(@OriginalArg(0) ModeWhere arg0, @OriginalArg(1) Class703 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+		if (arg0 == ModeWhere.aModeWhere_8) {
 			return 80;
 		} else if (Class703.aClass703_2 == arg1) {
 			return arg2 + 12000;
@@ -123,8 +123,8 @@ public abstract class Class54 {
 		@Pc(31) int local31 = 0;
 		@Pc(33) int local33 = 0;
 		if (arg2.aString174 != null) {
-			local33 = Class129_Sub2.aClass5_13.method72(arg2.aString174, Class553.anInt3408 * -1378711501, 0, null, (byte) 0);
-			local31 = Class129_Sub2.aClass5_13.method64(arg2.aString174, Class553.anInt3408 * -1378711501, null, -1910907678);
+			local33 = Class129_Sub2.aClass5_13.method72(arg2.aString174, Class553.width * -1378711501, 0, null, (byte) 0);
+			local31 = Class129_Sub2.aClass5_13.method64(arg2.aString174, Class553.width * -1378711501, null, -1910907678);
 		}
 		@Pc(66) int local66 = arg1.anInt1606 * 704671089 + local10 / 2;
 		@Pc(71) int local71 = arg1.anInt1607 * 1844815193;

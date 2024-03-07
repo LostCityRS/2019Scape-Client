@@ -119,7 +119,7 @@ public class Class443 implements Interface75 {
 
 	@OriginalMember(owner = "client!nn", name = "n", descriptor = "()I", line = 34)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt4894 * 1363599629;
 	}
 

@@ -208,12 +208,12 @@ public class Class541 implements Runnable {
 		if (arg0.aClass526_11 == Class526.aClass526_7) {
 			this.aClass532_2.method30533((byte) 0);
 		} else {
-			this.aClass532_2.method30540(arg0, 439366062);
+			this.aClass532_2.beginRebuild(arg0, 439366062);
 		}
 		for (@Pc(18) boolean local18 = this.aClass532_2.method30577((byte) 57); !local18; local18 = this.aClass532_2.method30577((byte) 119)) {
 		}
 		this.aClass532_2.method30520(1213218812);
-		client.aClass532_1.method30520(1213218812);
+		client.world.method30520(1213218812);
 	}
 
 	@OriginalMember(owner = "client!ry", name = "l", descriptor = "(Lclient!rt;I)V", line = 63)
@@ -221,12 +221,12 @@ public class Class541 implements Runnable {
 		if (arg0.aClass526_11 == Class526.aClass526_7) {
 			this.aClass532_2.method30533((byte) 0);
 		} else {
-			this.aClass532_2.method30540(arg0, -1635529773);
+			this.aClass532_2.beginRebuild(arg0, -1635529773);
 		}
 		for (@Pc(18) boolean local18 = this.aClass532_2.method30577((byte) 58); !local18; local18 = this.aClass532_2.method30577((byte) 71)) {
 		}
 		this.aClass532_2.method30520(1213218812);
-		client.aClass532_1.method30520(1213218812);
+		client.world.method30520(1213218812);
 	}
 
 	@OriginalMember(owner = "client!ry", name = "j", descriptor = "(Lclient!rt;)V", line = 63)
@@ -234,12 +234,12 @@ public class Class541 implements Runnable {
 		if (arg0.aClass526_11 == Class526.aClass526_7) {
 			this.aClass532_2.method30533((byte) 0);
 		} else {
-			this.aClass532_2.method30540(arg0, 938984196);
+			this.aClass532_2.beginRebuild(arg0, 938984196);
 		}
 		for (@Pc(18) boolean local18 = this.aClass532_2.method30577((byte) 86); !local18; local18 = this.aClass532_2.method30577((byte) 86)) {
 		}
 		this.aClass532_2.method30520(1213218812);
-		client.aClass532_1.method30520(1213218812);
+		client.world.method30520(1213218812);
 	}
 
 	@OriginalMember(owner = "client!ry", name = "t", descriptor = "(Lclient!rt;)V", line = 63)
@@ -247,12 +247,12 @@ public class Class541 implements Runnable {
 		if (arg0.aClass526_11 == Class526.aClass526_7) {
 			this.aClass532_2.method30533((byte) 0);
 		} else {
-			this.aClass532_2.method30540(arg0, 1001637900);
+			this.aClass532_2.beginRebuild(arg0, 1001637900);
 		}
 		for (@Pc(18) boolean local18 = this.aClass532_2.method30577((byte) 27); !local18; local18 = this.aClass532_2.method30577((byte) 106)) {
 		}
 		this.aClass532_2.method30520(1213218812);
-		client.aClass532_1.method30520(1213218812);
+		client.world.method30520(1213218812);
 	}
 
 	@OriginalMember(owner = "client!ry", name = "fn", descriptor = "(Lclient!yf;I)V", line = 5905)

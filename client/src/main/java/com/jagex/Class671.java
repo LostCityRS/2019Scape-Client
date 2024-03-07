@@ -555,13 +555,13 @@ public class Class671 {
 		@Pc(1) Class672 local1 = null;
 		@Pc(3) int local3 = -1;
 		@Pc(5) int local5 = -1;
-		if (Class1.method12(client.anInt3435 * -849002901, -1212653237) || Class56.method18036(client.anInt3435 * -849002901, -1497248091)) {
+		if (Class1.method12(client.state * -849002901, -1212653237) || Class56.method18036(client.state * -849002901, -1497248091)) {
 			local3 = Class163.anInt2002 * -1331168249 >> 12;
 			local5 = Class270.anInt3884 * 466086187 >> 12;
 		} else {
-			if (Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3 != null) {
-				local3 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anIntArray240[0] >> 3;
-				local5 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anIntArray239[0] >> 3;
+			if (Class520.selfPlayer != null) {
+				local3 = Class520.selfPlayer.anIntArray240[0] >> 3;
+				local5 = Class520.selfPlayer.anIntArray239[0] >> 3;
 			}
 			if (local3 < 0 || local3 >= arg0.method30459(-485462668) >> 3 || local5 < 0 || local5 >= arg0.method30466((short) 128) >> 3) {
 				local3 = arg0.method30459(-295129019) >> 4;
@@ -580,13 +580,13 @@ public class Class671 {
 		@Pc(1) Class672 local1 = null;
 		@Pc(3) int local3 = -1;
 		@Pc(5) int local5 = -1;
-		if (Class1.method12(client.anInt3435 * -849002901, 992364855) || Class56.method18036(client.anInt3435 * -849002901, -1497248091)) {
+		if (Class1.method12(client.state * -849002901, 992364855) || Class56.method18036(client.state * -849002901, -1497248091)) {
 			local3 = Class163.anInt2002 * -1331168249 >> 12;
 			local5 = Class270.anInt3884 * 466086187 >> 12;
 		} else {
-			if (Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3 != null) {
-				local3 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anIntArray240[0] >> 3;
-				local5 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anIntArray239[0] >> 3;
+			if (Class520.selfPlayer != null) {
+				local3 = Class520.selfPlayer.anIntArray240[0] >> 3;
+				local5 = Class520.selfPlayer.anIntArray239[0] >> 3;
 			}
 			if (local3 < 0 || local3 >= arg0.method30459(1771391415) >> 3 || local5 < 0 || local5 >= arg0.method30466((short) 128) >> 3) {
 				local3 = arg0.method30459(-559947505) >> 4;
@@ -605,13 +605,13 @@ public class Class671 {
 		@Pc(1) Class672 local1 = null;
 		@Pc(3) int local3 = -1;
 		@Pc(5) int local5 = -1;
-		if (Class1.method12(client.anInt3435 * -849002901, -341826344) || Class56.method18036(client.anInt3435 * -849002901, -1497248091)) {
+		if (Class1.method12(client.state * -849002901, -341826344) || Class56.method18036(client.state * -849002901, -1497248091)) {
 			local3 = Class163.anInt2002 * -1331168249 >> 12;
 			local5 = Class270.anInt3884 * 466086187 >> 12;
 		} else {
-			if (Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3 != null) {
-				local3 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anIntArray240[0] >> 3;
-				local5 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anIntArray239[0] >> 3;
+			if (Class520.selfPlayer != null) {
+				local3 = Class520.selfPlayer.anIntArray240[0] >> 3;
+				local5 = Class520.selfPlayer.anIntArray239[0] >> 3;
 			}
 			if (local3 < 0 || local3 >= arg0.method30459(-576694170) >> 3 || local5 < 0 || local5 >= arg0.method30466((short) 128) >> 3) {
 				local3 = arg0.method30459(684151797) >> 4;
@@ -630,13 +630,13 @@ public class Class671 {
 		@Pc(1) Class672 local1 = null;
 		@Pc(3) int local3 = -1;
 		@Pc(5) int local5 = -1;
-		if (Class1.method12(client.anInt3435 * -849002901, -98792332) || Class56.method18036(client.anInt3435 * -849002901, -1497248091)) {
+		if (Class1.method12(client.state * -849002901, -98792332) || Class56.method18036(client.state * -849002901, -1497248091)) {
 			local3 = Class163.anInt2002 * -1331168249 >> 12;
 			local5 = Class270.anInt3884 * 466086187 >> 12;
 		} else {
-			if (Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3 != null) {
-				local3 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anIntArray240[0] >> 3;
-				local5 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anIntArray239[0] >> 3;
+			if (Class520.selfPlayer != null) {
+				local3 = Class520.selfPlayer.anIntArray240[0] >> 3;
+				local5 = Class520.selfPlayer.anIntArray239[0] >> 3;
 			}
 			if (local3 < 0 || local3 >= arg0.method30459(99088898) >> 3 || local5 < 0 || local5 >= arg0.method30466((short) 128) >> 3) {
 				local3 = arg0.method30459(48735057) >> 4;
@@ -655,13 +655,13 @@ public class Class671 {
 		@Pc(1) Class672 local1 = null;
 		@Pc(3) int local3 = -1;
 		@Pc(5) int local5 = -1;
-		if (Class1.method12(client.anInt3435 * -849002901, 461592936) || Class56.method18036(client.anInt3435 * -849002901, -1497248091)) {
+		if (Class1.method12(client.state * -849002901, 461592936) || Class56.method18036(client.state * -849002901, -1497248091)) {
 			local3 = Class163.anInt2002 * -1331168249 >> 12;
 			local5 = Class270.anInt3884 * 466086187 >> 12;
 		} else {
-			if (Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3 != null) {
-				local3 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anIntArray240[0] >> 3;
-				local5 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anIntArray239[0] >> 3;
+			if (Class520.selfPlayer != null) {
+				local3 = Class520.selfPlayer.anIntArray240[0] >> 3;
+				local5 = Class520.selfPlayer.anIntArray239[0] >> 3;
 			}
 			if (local3 < 0 || local3 >= arg0.method30459(1264651395) >> 3 || local5 < 0 || local5 >= arg0.method30466((short) 128) >> 3) {
 				local3 = arg0.method30459(-1057908191) >> 4;
@@ -680,13 +680,13 @@ public class Class671 {
 		@Pc(1) Class672 local1 = null;
 		@Pc(3) int local3 = -1;
 		@Pc(5) int local5 = -1;
-		if (Class1.method12(client.anInt3435 * -849002901, 494650525) || Class56.method18036(client.anInt3435 * -849002901, -1497248091)) {
+		if (Class1.method12(client.state * -849002901, 494650525) || Class56.method18036(client.state * -849002901, -1497248091)) {
 			local3 = Class163.anInt2002 * -1331168249 >> 12;
 			local5 = Class270.anInt3884 * 466086187 >> 12;
 		} else {
-			if (Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3 != null) {
-				local3 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anIntArray240[0] >> 3;
-				local5 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anIntArray239[0] >> 3;
+			if (Class520.selfPlayer != null) {
+				local3 = Class520.selfPlayer.anIntArray240[0] >> 3;
+				local5 = Class520.selfPlayer.anIntArray239[0] >> 3;
 			}
 			if (local3 < 0 || local3 >= arg0.method30459(-797578492) >> 3 || local5 < 0 || local5 >= arg0.method30466((short) 128) >> 3) {
 				local3 = arg0.method30459(-1767243829) >> 4;
@@ -826,35 +826,35 @@ public class Class671 {
 
 	@OriginalMember(owner = "client!xu", name = "bm", descriptor = "()V", line = 256)
 	void method33016() {
-		this.aClass104_13.method20606(((float) Class51.aClass93_Sub36_1.aClass166_Sub7_1.method15506((byte) -25) * 0.1F + 0.7F + client.aClass532_1.method30471(-1772387017)) * this.aClass672_1.aFloat349);
+		this.aClass104_13.method20606(((float) Class51.options.aClass166_Sub7_1.method15506((byte) -25) * 0.1F + 0.7F + client.world.method30471(-1772387017)) * this.aClass672_1.aFloat349);
 		this.aClass104_13.method20607(this.aClass672_1.anInt5862 * 1540075243, this.aClass672_1.aFloat344, this.aClass672_1.aFloat346, (float) ((int) this.aClass472_64.aFloat317 << 2), (float) ((int) this.aClass472_64.aFloat318 << 2), (float) ((int) this.aClass472_64.aFloat319 << 2));
 		this.aClass104_13.method20860(this.aClass672_1.aClass107_2);
 	}
 
 	@OriginalMember(owner = "client!xu", name = "q", descriptor = "(I)V", line = 256)
 	void method33017(@OriginalArg(0) int arg0) {
-		this.aClass104_13.method20606(((float) Class51.aClass93_Sub36_1.aClass166_Sub7_1.method15506((byte) -49) * 0.1F + 0.7F + client.aClass532_1.method30471(-676345909)) * this.aClass672_1.aFloat349);
+		this.aClass104_13.method20606(((float) Class51.options.aClass166_Sub7_1.method15506((byte) -49) * 0.1F + 0.7F + client.world.method30471(-676345909)) * this.aClass672_1.aFloat349);
 		this.aClass104_13.method20607(this.aClass672_1.anInt5862 * 1540075243, this.aClass672_1.aFloat344, this.aClass672_1.aFloat346, (float) ((int) this.aClass472_64.aFloat317 << 2), (float) ((int) this.aClass472_64.aFloat318 << 2), (float) ((int) this.aClass472_64.aFloat319 << 2));
 		this.aClass104_13.method20860(this.aClass672_1.aClass107_2);
 	}
 
 	@OriginalMember(owner = "client!xu", name = "bb", descriptor = "()V", line = 256)
 	void method33018() {
-		this.aClass104_13.method20606(((float) Class51.aClass93_Sub36_1.aClass166_Sub7_1.method15506((byte) -106) * 0.1F + 0.7F + client.aClass532_1.method30471(-1764688948)) * this.aClass672_1.aFloat349);
+		this.aClass104_13.method20606(((float) Class51.options.aClass166_Sub7_1.method15506((byte) -106) * 0.1F + 0.7F + client.world.method30471(-1764688948)) * this.aClass672_1.aFloat349);
 		this.aClass104_13.method20607(this.aClass672_1.anInt5862 * 1540075243, this.aClass672_1.aFloat344, this.aClass672_1.aFloat346, (float) ((int) this.aClass472_64.aFloat317 << 2), (float) ((int) this.aClass472_64.aFloat318 << 2), (float) ((int) this.aClass472_64.aFloat319 << 2));
 		this.aClass104_13.method20860(this.aClass672_1.aClass107_2);
 	}
 
 	@OriginalMember(owner = "client!xu", name = "x", descriptor = "(FFFIIIIII)V", line = 262)
 	public void method33019(@OriginalArg(0) float arg0, @OriginalArg(1) float arg1, @OriginalArg(2) float arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8) {
-		this.aClass104_13.method20606(((float) Class51.aClass93_Sub36_1.aClass166_Sub7_1.method15506((byte) -34) * 0.1F + 0.7F + client.aClass532_1.method30471(-374350000)) * arg0);
+		this.aClass104_13.method20606(((float) Class51.options.aClass166_Sub7_1.method15506((byte) -34) * 0.1F + 0.7F + client.world.method30471(-374350000)) * arg0);
 		this.aClass104_13.method20607(arg3, arg1, arg2, (float) (arg4 << 2), (float) (arg5 << 2), (float) (arg6 << 2));
 		this.aClass104_13.method20860(this.method32985(arg7, 1094578849));
 	}
 
 	@OriginalMember(owner = "client!xu", name = "be", descriptor = "(FFFIIIII)V", line = 262)
 	public void method33020(@OriginalArg(0) float arg0, @OriginalArg(1) float arg1, @OriginalArg(2) float arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
-		this.aClass104_13.method20606(((float) Class51.aClass93_Sub36_1.aClass166_Sub7_1.method15506((byte) -66) * 0.1F + 0.7F + client.aClass532_1.method30471(365784513)) * arg0);
+		this.aClass104_13.method20606(((float) Class51.options.aClass166_Sub7_1.method15506((byte) -66) * 0.1F + 0.7F + client.world.method30471(365784513)) * arg0);
 		this.aClass104_13.method20607(arg3, arg1, arg2, (float) (arg4 << 2), (float) (arg5 << 2), (float) (arg6 << 2));
 		this.aClass104_13.method20860(this.method32985(arg7, 2126752395));
 	}
@@ -863,14 +863,14 @@ public class Class671 {
 	public void method33021(@OriginalArg(0) int arg0) {
 		@Pc(1) byte local1 = 0;
 		@Pc(13) int local13 = (this.aClass672_1.anInt5861 * -2139322713 + 256 << 2) + local1;
-		this.aClass104_13.method20878(this.aClass672_1.anInt5860 * -2016142599, Class51.aClass93_Sub36_1.aClass166_Sub2_1.method15381(-1722659830) == 1 ? local13 : -1, 0);
+		this.aClass104_13.method20878(this.aClass672_1.anInt5860 * -2016142599, Class51.options.aClass166_Sub2_1.method15381(-1722659830) == 1 ? local13 : -1, 0);
 	}
 
 	@OriginalMember(owner = "client!xu", name = "by", descriptor = "()V", line = 268)
 	public void method33022() {
 		@Pc(1) byte local1 = 0;
 		@Pc(13) int local13 = (this.aClass672_1.anInt5861 * -2139322713 + 256 << 2) + local1;
-		this.aClass104_13.method20878(this.aClass672_1.anInt5860 * -2016142599, Class51.aClass93_Sub36_1.aClass166_Sub2_1.method15381(-1522894148) == 1 ? local13 : -1, 0);
+		this.aClass104_13.method20878(this.aClass672_1.anInt5860 * -2016142599, Class51.options.aClass166_Sub2_1.method15381(-1522894148) == 1 ? local13 : -1, 0);
 	}
 
 	@OriginalMember(owner = "client!xu", name = "bw", descriptor = "()V", line = 274)
@@ -1120,7 +1120,7 @@ public class Class671 {
 
 	@OriginalMember(owner = "client!xu", name = "t", descriptor = "(I)V", line = 326)
 	public void method33041(@OriginalArg(0) int arg0) {
-		this.aClass104_13.method20606(((float) Class51.aClass93_Sub36_1.aClass166_Sub7_1.method15506((byte) -125) * 0.1F + 0.7F + client.aClass532_1.method30471(-1769209909)) * 1.1523438F);
+		this.aClass104_13.method20606(((float) Class51.options.aClass166_Sub7_1.method15506((byte) -125) * 0.1F + 0.7F + client.world.method30471(-1769209909)) * 1.1523438F);
 		this.aClass104_13.method20607(16777215, 0.69921875F, 1.2F, -200.0F, -240.0F, -200.0F);
 		this.aClass104_13.method20878(13156520, -1, 0);
 		this.aClass104_13.method20860(aClass107_1);
@@ -1128,7 +1128,7 @@ public class Class671 {
 
 	@OriginalMember(owner = "client!xu", name = "ce", descriptor = "()V", line = 326)
 	public void method33042() {
-		this.aClass104_13.method20606(((float) Class51.aClass93_Sub36_1.aClass166_Sub7_1.method15506((byte) -1) * 0.1F + 0.7F + client.aClass532_1.method30471(715014192)) * 1.1523438F);
+		this.aClass104_13.method20606(((float) Class51.options.aClass166_Sub7_1.method15506((byte) -1) * 0.1F + 0.7F + client.world.method30471(715014192)) * 1.1523438F);
 		this.aClass104_13.method20607(16777215, 0.69921875F, 1.2F, -200.0F, -240.0F, -200.0F);
 		this.aClass104_13.method20878(13156520, -1, 0);
 		this.aClass104_13.method20860(aClass107_1);
@@ -1136,7 +1136,7 @@ public class Class671 {
 
 	@OriginalMember(owner = "client!xu", name = "cu", descriptor = "()V", line = 326)
 	public void method33043() {
-		this.aClass104_13.method20606(((float) Class51.aClass93_Sub36_1.aClass166_Sub7_1.method15506((byte) -127) * 0.1F + 0.7F + client.aClass532_1.method30471(648195851)) * 1.1523438F);
+		this.aClass104_13.method20606(((float) Class51.options.aClass166_Sub7_1.method15506((byte) -127) * 0.1F + 0.7F + client.world.method30471(648195851)) * 1.1523438F);
 		this.aClass104_13.method20607(16777215, 0.69921875F, 1.2F, -200.0F, -240.0F, -200.0F);
 		this.aClass104_13.method20878(13156520, -1, 0);
 		this.aClass104_13.method20860(aClass107_1);

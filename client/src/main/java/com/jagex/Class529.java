@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public class Class529 {
 
 	@OriginalMember(owner = "client!rg", name = "pe", descriptor = "I")
-	public static int anInt5230;
+	public static int userMembersStats;
 
 	@OriginalMember(owner = "client!rg", name = "e", descriptor = "Lclient!rg;")
 	static final Class529 aClass529_3 = new Class529();
@@ -37,7 +37,7 @@ public class Class529 {
 		@Pc(2) Class702[] local2 = Class520.method30328((byte) -91);
 		for (@Pc(4) int local4 = 0; local4 < local2.length; local4++) {
 			@Pc(12) Class702 local12 = local2[local4];
-			if (arg0 == local12.anInt5953 * -1111983921) {
+			if (arg0 == local12.id * -1111983921) {
 				return local12;
 			}
 		}
@@ -51,9 +51,9 @@ public class Class529 {
 
 	@OriginalMember(owner = "client!rg", name = "s", descriptor = "(I)Z", line = 226)
 	static boolean method30400(@OriginalArg(0) int arg0) {
-		Class411.anInt4714 = -1680223351;
-		Class411.aClass175_3 = client.aClass175_2;
-		return Class507.method30229(Class411.aLong271 * 4457507688757033075L == -1L, true, "", "", Class411.aLong271 * 4457507688757033075L);
+		Class411.target = -1680223351;
+		Class411.connection = client.aClass175_2;
+		return Class507.method30229(Class411.ssoKeyIdentifier * 4457507688757033075L == -1L, true, "", "", Class411.ssoKeyIdentifier * 4457507688757033075L);
 	}
 
 	@OriginalMember(owner = "client!rg", name = "ze", descriptor = "(Lclient!yf;I)V", line = 9534)
@@ -67,9 +67,9 @@ public class Class529 {
 			throw new RuntimeException();
 		}
 		@Pc(60) Class39 local60 = (Class39) Class19.aClass32_Sub7_5.method18261(local23, 493731023);
-		if (local60.aClass519_2.method36920() != local13) {
+		if (local60.aClass519_2.getId() != local13) {
 			throw new RuntimeException();
-		} else if (local60.aClass519_1.method36920() == Class519.aClass519_7.method36920()) {
+		} else if (local60.aClass519_1.getId() == Class519.aClass519_7.getId()) {
 			@Pc(84) int[] local84 = local60.method764(local47, -1497248091);
 			if (local33 < 0 || local84 == null || local84.length <= local33) {
 				throw new RuntimeException();

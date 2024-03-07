@@ -164,28 +164,28 @@ public class Class159 {
 	static int[][] anIntArrayArray43 = new int[][] { { 2, 2, 0, 0, 0, 0 }, { 2, 2, 2, 0, 0, 0 }, { 1, 2, 2, 2, 0, 0 }, { 1, 1, 1, 2, 2, 0 }, { 1, 1, 1, 2, 2, 2 }, { 1, 1, 1, 1, 2, 2 } };
 
 	@OriginalMember(owner = "client!tf", name = "au", descriptor = "I")
-	static final int anInt1924 = Class706.aClass706_9.method36920();
+	static final int anInt1924 = Class706.aClass706_9.getId();
 
 	@OriginalMember(owner = "client!tf", name = "ar", descriptor = "I")
-	static final int anInt1925 = Class706.aClass706_3.method36920();
+	static final int anInt1925 = Class706.aClass706_3.getId();
 
 	@OriginalMember(owner = "client!tf", name = "ap", descriptor = "I")
-	static final int anInt1926 = Class706.aClass706_2.method36920();
+	static final int anInt1926 = Class706.aClass706_2.getId();
 
 	@OriginalMember(owner = "client!tf", name = "aq", descriptor = "I")
-	static final int anInt1927 = Class706.aClass706_4.method36920();
+	static final int anInt1927 = Class706.aClass706_4.getId();
 
 	@OriginalMember(owner = "client!tf", name = "ax", descriptor = "I")
-	static final int anInt1928 = Class706.aClass706_5.method36920();
+	static final int anInt1928 = Class706.aClass706_5.getId();
 
 	@OriginalMember(owner = "client!tf", name = "av", descriptor = "I")
-	static final int anInt1929 = Class706.aClass706_6.method36920();
+	static final int anInt1929 = Class706.aClass706_6.getId();
 
 	@OriginalMember(owner = "client!tf", name = "ao", descriptor = "I")
-	static final int anInt1936 = Class706.aClass706_7.method36920();
+	static final int anInt1936 = Class706.aClass706_7.getId();
 
 	@OriginalMember(owner = "client!tf", name = "aj", descriptor = "I")
-	static final int anInt1931 = Class706.aClass706_8.method36920();
+	static final int anInt1931 = Class706.aClass706_8.getId();
 
 	@OriginalMember(owner = "client!tf", name = "ab", descriptor = "Lclient!eb;")
 	protected static Class240 aClass240_33 = new Class240(4096, 256);
@@ -250,7 +250,7 @@ public class Class159 {
 		anInterface21_2 = arg7;
 		anInterface23_2 = arg8;
 		aClass16_14.method225((byte) 77);
-		@Pc(26) int[] local26 = aClass497_53.method30080(Class662.aClass662_2.method36920(), (byte) 82);
+		@Pc(26) int[] local26 = aClass497_53.method30080(Class662.aClass662_2.getId(), (byte) 82);
 		if (local26 != null) {
 			for (@Pc(30) int local30 = 0; local30 < local26.length; local30++) {
 				@Pc(41) Class93_Sub1_Sub20 local41 = Class297.method26625(aClass497_53, local26[local30], 530620572);
@@ -272,7 +272,7 @@ public class Class159 {
 		anInterface21_2 = arg7;
 		anInterface23_2 = arg8;
 		aClass16_14.method225((byte) 61);
-		@Pc(26) int[] local26 = aClass497_53.method30080(Class662.aClass662_2.method36920(), (byte) 125);
+		@Pc(26) int[] local26 = aClass497_53.method30080(Class662.aClass662_2.getId(), (byte) 125);
 		if (local26 != null) {
 			for (@Pc(30) int local30 = 0; local30 < local26.length; local30++) {
 				@Pc(41) Class93_Sub1_Sub20 local41 = Class297.method26625(aClass497_53, local26[local30], -1430511678);
@@ -294,7 +294,7 @@ public class Class159 {
 		anInterface21_2 = arg7;
 		anInterface23_2 = arg8;
 		aClass16_14.method225((byte) 99);
-		@Pc(26) int[] local26 = aClass497_53.method30080(Class662.aClass662_2.method36920(), (byte) 4);
+		@Pc(26) int[] local26 = aClass497_53.method30080(Class662.aClass662_2.getId(), (byte) 4);
 		if (local26 != null) {
 			for (@Pc(30) int local30 = 0; local30 < local26.length; local30++) {
 				@Pc(41) Class93_Sub1_Sub20 local41 = Class297.method26625(aClass497_53, local26[local30], 1299585185);

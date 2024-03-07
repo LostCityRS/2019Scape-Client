@@ -33,7 +33,7 @@ public class Class520 {
 	public static Class144 aClass144_3;
 
 	@OriginalMember(owner = "client!qx", name = "ns", descriptor = "Lclient!aqk;")
-	public static Class132_Sub1_Sub1_Sub1_Sub2 aClass132_Sub1_Sub1_Sub1_Sub2_3;
+	public static Class132_Sub1_Sub1_Sub1_Sub2 selfPlayer;
 
 	@OriginalMember(owner = "client!qx", name = "l", descriptor = "[[[B")
 	public byte[][][] aByteArrayArrayArray12;

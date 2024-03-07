@@ -187,7 +187,7 @@ public class Class184 implements Interface75 {
 
 	@OriginalMember(owner = "client!bg", name = "n", descriptor = "()I", line = 72)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt3334;
 	}
 

@@ -34,13 +34,13 @@ public class Class679 {
 		if (local25 == null) {
 			return null;
 		}
-		@Pc(34) Class611 local34 = client.aClass532_1.method30455(1738778102);
+		@Pc(34) Class611 local34 = client.world.method30455(1738778102);
 		@Pc(45) int local45 = this.aClass611_3.anInt5623 * 270611681 - local34.anInt5623 * 270611681;
 		@Pc(56) int local56 = this.aClass611_3.anInt5624 * -1994307635 - local34.anInt5624 * -1994307635;
-		if (local45 >= 0 && local56 >= 0 && local45 < client.aClass532_1.method30459(-655527418) && local56 < client.aClass532_1.method30466((short) 128) && client.aClass532_1.method30481(-1937321968) != null) {
+		if (local45 >= 0 && local56 >= 0 && local45 < client.world.method30459(-655527418) && local56 < client.world.method30466((short) 128) && client.world.method30481(-1937321968) != null) {
 			for (@Pc(80) Class93_Sub3 local80 = (Class93_Sub3) local25.aClass22_17.method428((byte) 87); local80 != null; local80 = (Class93_Sub3) local25.aClass22_17.method442(1312498463)) {
 				if (local80.anInt1405 * -308533965 == this.anInt5887 * -1840455417) {
-					return (Class132_Sub1_Sub5_Sub1) client.aClass532_1.method30481(-1911750433).method31546(this.aClass611_3.anInt5625 * -78984409, local45, local56, (byte) -81);
+					return (Class132_Sub1_Sub5_Sub1) client.world.method30481(-1911750433).method31546(this.aClass611_3.anInt5625 * -78984409, local45, local56, (byte) -81);
 				}
 			}
 		}
@@ -53,13 +53,13 @@ public class Class679 {
 		if (local25 == null) {
 			return null;
 		}
-		@Pc(34) Class611 local34 = client.aClass532_1.method30455(1717907315);
+		@Pc(34) Class611 local34 = client.world.method30455(1717907315);
 		@Pc(45) int local45 = this.aClass611_3.anInt5623 * 270611681 - local34.anInt5623 * 270611681;
 		@Pc(56) int local56 = this.aClass611_3.anInt5624 * -1994307635 - local34.anInt5624 * -1994307635;
-		if (local45 >= 0 && local56 >= 0 && local45 < client.aClass532_1.method30459(213030222) && local56 < client.aClass532_1.method30466((short) 128) && client.aClass532_1.method30481(-1968482691) != null) {
+		if (local45 >= 0 && local56 >= 0 && local45 < client.world.method30459(213030222) && local56 < client.world.method30466((short) 128) && client.world.method30481(-1968482691) != null) {
 			for (@Pc(80) Class93_Sub3 local80 = (Class93_Sub3) local25.aClass22_17.method428((byte) 101); local80 != null; local80 = (Class93_Sub3) local25.aClass22_17.method442(1246770939)) {
 				if (local80.anInt1405 * -308533965 == this.anInt5887 * -1840455417) {
-					return (Class132_Sub1_Sub5_Sub1) client.aClass532_1.method30481(-1112053277).method31546(this.aClass611_3.anInt5625 * -78984409, local45, local56, (byte) -52);
+					return (Class132_Sub1_Sub5_Sub1) client.world.method30481(-1112053277).method31546(this.aClass611_3.anInt5625 * -78984409, local45, local56, (byte) -52);
 				}
 			}
 		}

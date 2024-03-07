@@ -13,9 +13,9 @@ final class Class510 implements Interface9 {
 		if (Class75.aBoolean31) {
 			return;
 		}
-		Class277.method26353(client.aClass532_1.method30481(-1344665081).aClass572ArrayArrayArray1, 1741982922);
-		if (client.aClass532_1.method30481(-1571706188).aClass572ArrayArrayArray2 != null) {
-			Class277.method26353(client.aClass532_1.method30481(-1592981131).aClass572ArrayArrayArray2, 1091328726);
+		Class277.method26353(client.world.method30481(-1344665081).aClass572ArrayArrayArray1, 1741982922);
+		if (client.world.method30481(-1571706188).aClass572ArrayArrayArray2 != null) {
+			Class277.method26353(client.world.method30481(-1592981131).aClass572ArrayArrayArray2, 1091328726);
 		}
 		Class75.aBoolean31 = true;
 	}

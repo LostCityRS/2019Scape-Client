@@ -13,7 +13,7 @@ public class Class32_Sub3 extends Class32 {
 	}
 
 	@OriginalMember(owner = "client!aod", name = "al", descriptor = "(ZI)V", line = 16)
-	public void method16688(@OriginalArg(0) boolean arg0, @OriginalArg(1) int arg1) {
+	public void setMembers(@OriginalArg(0) boolean arg0, @OriginalArg(1) int arg1) {
 		((Class119) this.anInterface4_25).method8591(arg0, -1640263275);
 		super.method17810(588967175);
 	}

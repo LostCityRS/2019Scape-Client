@@ -129,8 +129,8 @@ public abstract class Class111 implements Interface24 {
 
 	@OriginalMember(owner = "client!dk", name = "e", descriptor = "(I)V", line = 40)
 	public static void method6787(@OriginalArg(0) int arg0) {
-		if (-849002901 * client.anInt3435 == 4 && (!Class251.method25969(557768686) && !Class631.method32280(1145615378))) {
-			Class481.method29756(12, 1823202236);
+		if (-849002901 * client.state == 4 && (!Class251.method25969(557768686) && !Class631.method32280(1145615378))) {
+			Class481.setState(12, 1823202236);
 		}
 	}
 

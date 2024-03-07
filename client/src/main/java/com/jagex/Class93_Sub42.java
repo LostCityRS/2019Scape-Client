@@ -508,7 +508,7 @@ public class Class93_Sub42 extends Class93 {
 	}
 
 	@OriginalMember(owner = "client!aly", name = "n", descriptor = "(Lclient!alw;I)V", line = 262)
-	public void method15300(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+	public void encode(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		arg0.p1(8, (byte) -37);
 		arg0.p1(this.anInt2058 * 2065137227, (byte) -123);
 		arg0.p1(this.aBoolean362 ? 1 : 0, (byte) -78);
@@ -572,7 +572,7 @@ public class Class93_Sub42 extends Class93 {
 	}
 
 	@OriginalMember(owner = "client!aly", name = "m", descriptor = "(I)I", line = 291)
-	public int method15302(@OriginalArg(0) int arg0) {
+	public int computeSize(@OriginalArg(0) int arg0) {
 		@Pc(1) byte local1 = 39;
 		@Pc(8) int local8 = local1 + Packet.pjstr2len(this.aString52, 1642462336);
 		@Pc(15) int local15 = local8 + Packet.pjstr2len(this.aString57, 1178809023);

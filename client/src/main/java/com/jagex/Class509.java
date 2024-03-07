@@ -44,7 +44,7 @@ public class Class509 implements Interface75 {
 
 	@OriginalMember(owner = "client!ql", name = "n", descriptor = "()I", line = 22)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt5205 * 2001471645;
 	}
 

@@ -256,6 +256,6 @@ public class Class632 {
 
 	@OriginalMember(owner = "client!wb", name = "ayk", descriptor = "(Lclient!yf;B)V", line = 14023)
 	static final void method32298(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class380.anInt4623 * -1189534179;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class380.userLoyaltyBalance * -1189534179;
 	}
 }

@@ -50,7 +50,7 @@ public class Class110_Sub7 extends Class110 {
 
 	@OriginalMember(owner = "client!agd", name = "hv", descriptor = "(IIII)Lclient!ahm;", line = 5474)
 	static Class132_Sub1_Sub1_Sub1 method7943(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		@Pc(10) Class572 local10 = client.aClass532_1.method30481(-910933729).aClass572ArrayArrayArray3[arg0][arg1][arg2];
+		@Pc(10) Class572 local10 = client.world.method30481(-910933729).aClass572ArrayArrayArray3[arg0][arg1][arg2];
 		if (local10 == null) {
 			return null;
 		}

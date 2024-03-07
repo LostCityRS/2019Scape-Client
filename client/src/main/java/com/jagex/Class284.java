@@ -82,7 +82,7 @@ public class Class284 implements Interface26 {
 		if (Class604.aClass100_50 == null || Class604.aClass100_50.method18205() != local31 || Class604.aClass100_50.method18192() != local33) {
 			Class159_Sub1.aClass240_35 = Class159_Sub1.aClass240_34;
 			Class159_Sub1.method14557(Class159_Sub1.anInt1915, Class159_Sub1.anInt1922 + Class159_Sub1.anInt1921, Class159_Sub1.anInt1923 + Class159_Sub1.anInt1915, Class159_Sub1.anInt1921, local58, local66, local58 + local31, local66 + local33);
-			Class159_Sub1.method14558(arg0, false, false, client.aBoolean620, true);
+			Class159_Sub1.method14558(arg0, false, false, client.mapMember, true);
 			arg0.method20489();
 			Class604.aClass100_50 = arg0.method20682(local58, local66, local31, local33, true);
 		}
@@ -92,7 +92,7 @@ public class Class284 implements Interface26 {
 		@Pc(142) int local142 = local58 + local31 * -767301419 * Class344.anInt4190 / Class159_Sub1.anInt1923;
 		@Pc(156) int local156 = local66 + local33 - Class657.anInt5811 * -1716473211 * local33 / Class159_Sub1.anInt1922 - local132;
 		@Pc(158) int local158 = -1996554240;
-		if (Class702.aClass702_5 == client.aClass702_4) {
+		if (Class702.aClass702_5 == client.modeGame) {
 			local158 = -1996488705;
 		}
 		arg0.method20721(local142, local156, local124, local132, local158, 1);

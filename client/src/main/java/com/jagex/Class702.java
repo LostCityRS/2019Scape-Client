@@ -33,7 +33,7 @@ public class Class702 {
 	public final String aString242;
 
 	@OriginalMember(owner = "client!zd", name = "z", descriptor = "I")
-	public final int anInt5953;
+	public final int id;
 
 	@OriginalMember(owner = "client!zd", name = "n", descriptor = "([SI)[S", line = 16)
 	public static short[] method36718(@OriginalArg(0) short[] arg0, @OriginalArg(1) int arg1) {
@@ -50,7 +50,7 @@ public class Class702 {
 	Class702(@OriginalArg(0) String arg0, @OriginalArg(1) String arg1, @OriginalArg(2) int arg2, @OriginalArg(3) Class83 arg3) {
 		this.aString241 = arg0;
 		this.aString242 = arg1;
-		this.anInt5953 = arg2 * -542011857;
+		this.id = arg2 * -542011857;
 	}
 
 	@OriginalMember(owner = "client!zd", name = "m", descriptor = "(I)Lclient!zd;", line = 29)
@@ -58,7 +58,7 @@ public class Class702 {
 		@Pc(2) Class702[] local2 = Class520.method30328((byte) 32);
 		for (@Pc(4) int local4 = 0; local4 < local2.length; local4++) {
 			@Pc(12) Class702 local12 = local2[local4];
-			if (arg0 == local12.anInt5953 * -1111983921) {
+			if (arg0 == local12.id * -1111983921) {
 				return local12;
 			}
 		}
@@ -70,7 +70,7 @@ public class Class702 {
 		@Pc(2) Class702[] local2 = Class520.method30328((byte) 94);
 		for (@Pc(4) int local4 = 0; local4 < local2.length; local4++) {
 			@Pc(12) Class702 local12 = local2[local4];
-			if (arg0 == local12.anInt5953 * -1111983921) {
+			if (arg0 == local12.id * -1111983921) {
 				return local12;
 			}
 		}

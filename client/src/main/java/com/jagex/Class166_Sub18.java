@@ -138,13 +138,13 @@ public class Class166_Sub18 extends Class166 {
 		if (arg0.length() > 320 || !Class146_Sub2.method11709(-1662128038)) {
 			return;
 		}
-		client.aClass175_1.method24367((byte) 90);
+		client.aClass175_1.close((byte) 90);
 		Class358.method27775((byte) 0);
-		Class411.aString200 = arg0;
+		Class411.username = arg0;
 		Class411.aString201 = arg1;
 		Class411.aString199 = arg2;
 		Class411.aBoolean751 = arg3;
-		Class481.method29756(17, 1823202236);
+		Class481.setState(17, 1823202236);
 	}
 
 	@OriginalMember(owner = "client!amr", name = "dy", descriptor = "(I)V", line = 277)

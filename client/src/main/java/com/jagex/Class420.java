@@ -338,23 +338,23 @@ public class Class420 {
 				Class211.method25429(local21, 37610278);
 			}
 		}
-		@Pc(40) Class93_Sub22 local40 = Class102.method2588(Class446.aClass446_60, client.aClass175_2.aClass24_2, (byte) 90);
-		local40.aPacketBit_1.p4_alt1(arg0.anInt3953 * -1549590237, 907143239);
-		local40.aPacketBit_1.p2(arg0.anInt4045 * 307668159, 2134260399);
-		local40.aPacketBit_1.p2_alt2(client.anInt3524 * -239149331, -1850331297);
-		local40.aPacketBit_1.p2_alt2(arg0.anInt3970 * 532402067, -1666236355);
-		local40.aPacketBit_1.p2_alt2(client.anInt3523 * 1573685689, -1922842379);
-		local40.aPacketBit_1.p4_alt1(Class148.anInt1394 * -278883695, 907143239);
-		client.aClass175_2.method24356(local40, -1894315664);
+		@Pc(40) ClientMessage local40 = Class102.createGameMessage(ClientProt.aClientProt_60, client.aClass175_2.clientIsaac, (byte) 90);
+		local40.packet.p4_alt1(arg0.anInt3953 * -1549590237, 907143239);
+		local40.packet.p2(arg0.anInt4045 * 307668159, 2134260399);
+		local40.packet.p2_alt2(client.anInt3524 * -239149331, -1850331297);
+		local40.packet.p2_alt2(arg0.anInt3970 * 532402067, -1666236355);
+		local40.packet.p2_alt2(client.anInt3523 * 1573685689, -1922842379);
+		local40.packet.p4_alt1(Class148.anInt1394 * -278883695, 907143239);
+		client.aClass175_2.send(local40, -1894315664);
 	}
 
 	@OriginalMember(owner = "client!mj", name = "ahs", descriptor = "(Lclient!yf;I)V", line = 11015)
 	static final void method28744(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
 		@Pc(15) Class175 local15 = Class330.method27371(-1652783239);
-		@Pc(21) Class93_Sub22 local21 = Class102.method2588(Class446.aClass446_46, local15.aClass24_2, (byte) 93);
-		local21.aPacketBit_1.p1(local12, (byte) -27);
-		local15.method24356(local21, -2010054592);
+		@Pc(21) ClientMessage local21 = Class102.createGameMessage(ClientProt.aClientProt_46, local15.clientIsaac, (byte) 93);
+		local21.packet.p1(local12, (byte) -27);
+		local15.send(local21, -2010054592);
 	}
 
 	@OriginalMember(owner = "client!mj", name = "amf", descriptor = "(Lclient!yf;I)V", line = 12075)

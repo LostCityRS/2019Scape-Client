@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 public class Class626 {
 
 	@OriginalMember(owner = "client!vw", name = "oh", descriptor = "I")
-	public static int anInt5704;
+	public static int userDob;
 
 	@OriginalMember(owner = "client!vw", name = "e", descriptor = "I")
 	final int anInt5701;

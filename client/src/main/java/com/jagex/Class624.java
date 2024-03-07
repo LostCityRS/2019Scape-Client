@@ -122,11 +122,11 @@ public class Class624 implements Interface67 {
 
 	@OriginalMember(owner = "client!vu", name = "n", descriptor = "(ILjava/lang/String;III)Z", line = 55)
 	public static boolean method32156(@OriginalArg(0) int arg0, @OriginalArg(1) String arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		Class50.aClass28_5 = new Class28();
-		Class50.aClass28_5.anInt101 = arg0 * 470002905;
-		Class50.aClass28_5.aString4 = arg1;
-		Class50.aClass28_5.anInt100 = arg2 * -1138615973;
-		Class50.aClass28_5.anInt99 = arg3 * 702279345;
+		Class50.world = new Class28();
+		Class50.world.id = arg0 * 470002905;
+		Class50.world.host = arg1;
+		Class50.world.port1 = arg2 * -1138615973;
+		Class50.world.port2 = arg3 * 702279345;
 		return true;
 	}
 

@@ -130,13 +130,13 @@ public class Class149_Sub3 extends Class149 {
 			return;
 		}
 		if (arg0 != Class411.anInt4746 * 276097583) {
-			Class411.aLong271 = -7033311592096984251L;
+			Class411.ssoKeyIdentifier = -7033311592096984251L;
 		}
 		Class411.anInt4746 = arg0 * 48143567;
 		Class411.aString199 = arg1;
 		Class411.aBoolean751 = arg2;
-		client.aClass175_1.method24367((byte) 45);
-		Class481.method29756(17, 1823202236);
+		client.aClass175_1.close((byte) 45);
+		Class481.setState(17, 1823202236);
 	}
 
 	@OriginalMember(owner = "client!aji", name = "em", descriptor = "(S)I", line = 873)

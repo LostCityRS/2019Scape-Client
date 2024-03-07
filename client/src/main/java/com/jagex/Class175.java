@@ -13,10 +13,10 @@ public class Class175 {
 	public static int anInt3306;
 
 	@OriginalMember(owner = "client!ax", name = "y", descriptor = "Lclient!nz;")
-	Class453 aClass453_1;
+	ServerProt prevServerPacketType1;
 
 	@OriginalMember(owner = "client!ax", name = "f", descriptor = "Lclient!aav;")
-	public Class24 aClass24_2;
+	public IsaacRandom clientIsaac;
 
 	@OriginalMember(owner = "client!ax", name = "o", descriptor = "I")
 	int anInt3302;
@@ -34,13 +34,13 @@ public class Class175 {
 	int anInt3305;
 
 	@OriginalMember(owner = "client!ax", name = "x", descriptor = "Lclient!nz;")
-	Class453 aClass453_3;
+	ServerProt prevServerPacketType3;
 
 	@OriginalMember(owner = "client!ax", name = "q", descriptor = "Lclient!nz;")
-	Class453 aClass453_4;
+	ServerProt prevServerPacketType2;
 
 	@OriginalMember(owner = "client!ax", name = "l", descriptor = "Lclient!aav;")
-	Class24 aClass24_3;
+	IsaacRandom serverIsaac;
 
 	@OriginalMember(owner = "client!ax", name = "n", descriptor = "Lclient!aat;")
 	Class22 aClass22_44 = new Class22();
@@ -52,10 +52,10 @@ public class Class175 {
 	Packet aPacket_14 = new Packet(1700);
 
 	@OriginalMember(owner = "client!ax", name = "w", descriptor = "Lclient!ase;")
-	PacketBit aPacketBit_2 = new PacketBit(40000);
+	PacketBit packet = new PacketBit(40000);
 
 	@OriginalMember(owner = "client!ax", name = "u", descriptor = "Lclient!nz;")
-	Class453 aClass453_2 = null;
+	ServerProt serverPacketType = null;
 
 	@OriginalMember(owner = "client!ax", name = "z", descriptor = "I")
 	int length = 0;
@@ -102,29 +102,29 @@ public class Class175 {
 	}
 
 	@OriginalMember(owner = "client!ax", name = "e", descriptor = "(I)V", line = 44)
-	final void method24351(@OriginalArg(0) int arg0) {
+	final void clear(@OriginalArg(0) int arg0) {
 		this.aClass22_44.method405(-2037259486);
 		this.anInt3299 = 0;
 	}
 
 	@OriginalMember(owner = "client!ax", name = "n", descriptor = "(B)V", line = 49)
-	public final void method24352(@OriginalArg(0) byte arg0) throws IOException {
+	public final void flush(@OriginalArg(0) byte arg0) throws IOException {
 		if (this.aClass160_3 == null || this.anInt3299 * 195575097 <= 0) {
 			return;
 		}
 		this.aPacket_14.pos = 0;
 		while (true) {
-			@Pc(17) Class93_Sub22 local17 = (Class93_Sub22) this.aClass22_44.method428((byte) 24);
+			@Pc(17) ClientMessage local17 = (ClientMessage) this.aClass22_44.method428((byte) 24);
 			if (local17 == null || local17.anInt1569 * -1609174005 > this.aPacket_14.data.length - this.aPacket_14.pos * 212851357) {
 				this.aClass160_3.method14721(this.aPacket_14.data, 0, this.aPacket_14.pos * 212851357, 597469915);
 				this.anInt3303 += this.aPacket_14.pos * 1323994419;
 				this.anInt3300 = 0;
 				break;
 			}
-			this.aPacket_14.pdata(local17.aPacketBit_1.data, 0, local17.anInt1569 * -1609174005, 2026842986);
+			this.aPacket_14.pdata(local17.packet.data, 0, local17.anInt1569 * -1609174005, 2026842986);
 			this.anInt3299 -= local17.anInt1569 * -337674397;
 			local17.method23969(-1674819412);
-			local17.aPacketBit_1.release((byte) 1);
+			local17.packet.release((byte) 1);
 			local17.method13717(-915434420);
 		}
 	}
@@ -136,17 +136,17 @@ public class Class175 {
 		}
 		this.aPacket_14.pos = 0;
 		while (true) {
-			@Pc(17) Class93_Sub22 local17 = (Class93_Sub22) this.aClass22_44.method428((byte) 49);
+			@Pc(17) ClientMessage local17 = (ClientMessage) this.aClass22_44.method428((byte) 49);
 			if (local17 == null || local17.anInt1569 * -1609174005 > this.aPacket_14.data.length - this.aPacket_14.pos * 212851357) {
 				this.aClass160_3.method14721(this.aPacket_14.data, 0, this.aPacket_14.pos * 212851357, -145339264);
 				this.anInt3303 += this.aPacket_14.pos * 1323994419;
 				this.anInt3300 = 0;
 				break;
 			}
-			this.aPacket_14.pdata(local17.aPacketBit_1.data, 0, local17.anInt1569 * -1609174005, 2026842986);
+			this.aPacket_14.pdata(local17.packet.data, 0, local17.anInt1569 * -1609174005, 2026842986);
 			this.anInt3299 -= local17.anInt1569 * -337674397;
 			local17.method23969(-2064695648);
-			local17.aPacketBit_1.release((byte) 1);
+			local17.packet.release((byte) 1);
 			local17.method13717(-915434420);
 		}
 	}
@@ -158,17 +158,17 @@ public class Class175 {
 		}
 		this.aPacket_14.pos = 0;
 		while (true) {
-			@Pc(17) Class93_Sub22 local17 = (Class93_Sub22) this.aClass22_44.method428((byte) 19);
+			@Pc(17) ClientMessage local17 = (ClientMessage) this.aClass22_44.method428((byte) 19);
 			if (local17 == null || local17.anInt1569 * -1609174005 > this.aPacket_14.data.length - this.aPacket_14.pos * 212851357) {
 				this.aClass160_3.method14721(this.aPacket_14.data, 0, this.aPacket_14.pos * 212851357, 631640877);
 				this.anInt3303 += this.aPacket_14.pos * 1323994419;
 				this.anInt3300 = 0;
 				break;
 			}
-			this.aPacket_14.pdata(local17.aPacketBit_1.data, 0, local17.anInt1569 * -1609174005, 2026842986);
+			this.aPacket_14.pdata(local17.packet.data, 0, local17.anInt1569 * -1609174005, 2026842986);
 			this.anInt3299 -= local17.anInt1569 * -337674397;
 			local17.method23969(-635188353);
-			local17.aPacketBit_1.release((byte) 1);
+			local17.packet.release((byte) 1);
 			local17.method13717(-915434420);
 		}
 	}
@@ -180,42 +180,42 @@ public class Class175 {
 		}
 		this.aPacket_14.pos = 0;
 		while (true) {
-			@Pc(17) Class93_Sub22 local17 = (Class93_Sub22) this.aClass22_44.method428((byte) 45);
+			@Pc(17) ClientMessage local17 = (ClientMessage) this.aClass22_44.method428((byte) 45);
 			if (local17 == null || local17.anInt1569 * -1609174005 > this.aPacket_14.data.length - this.aPacket_14.pos * 212851357) {
 				this.aClass160_3.method14721(this.aPacket_14.data, 0, this.aPacket_14.pos * 212851357, 1992464729);
 				this.anInt3303 += this.aPacket_14.pos * 1323994419;
 				this.anInt3300 = 0;
 				break;
 			}
-			this.aPacket_14.pdata(local17.aPacketBit_1.data, 0, local17.anInt1569 * -1609174005, 2026842986);
+			this.aPacket_14.pdata(local17.packet.data, 0, local17.anInt1569 * -1609174005, 2026842986);
 			this.anInt3299 -= local17.anInt1569 * -337674397;
 			local17.method23969(1768156483);
-			local17.aPacketBit_1.release((byte) 1);
+			local17.packet.release((byte) 1);
 			local17.method13717(-915434420);
 		}
 	}
 
 	@OriginalMember(owner = "client!ax", name = "m", descriptor = "(Lclient!akl;I)V", line = 68)
-	public final void method24356(@OriginalArg(0) Class93_Sub22 arg0, @OriginalArg(1) int arg1) {
+	public final void send(@OriginalArg(0) ClientMessage arg0, @OriginalArg(1) int arg1) {
 		this.aClass22_44.method408(arg0, -664094901);
-		arg0.anInt1569 = arg0.aPacketBit_1.pos * 1658760439;
-		arg0.aPacketBit_1.pos = 0;
+		arg0.anInt1569 = arg0.packet.pos * 1658760439;
+		arg0.packet.pos = 0;
 		this.anInt3299 += arg0.anInt1569 * -337674397;
 	}
 
 	@OriginalMember(owner = "client!ax", name = "s", descriptor = "(Lclient!akl;)V", line = 68)
-	public final void method24357(@OriginalArg(0) Class93_Sub22 arg0) {
+	public final void method24357(@OriginalArg(0) ClientMessage arg0) {
 		this.aClass22_44.method408(arg0, -1320871128);
-		arg0.anInt1569 = arg0.aPacketBit_1.pos * 1658760439;
-		arg0.aPacketBit_1.pos = 0;
+		arg0.anInt1569 = arg0.packet.pos * 1658760439;
+		arg0.packet.pos = 0;
 		this.anInt3299 += arg0.anInt1569 * -337674397;
 	}
 
 	@OriginalMember(owner = "client!ax", name = "o", descriptor = "(Lclient!akl;)V", line = 68)
-	public final void method24358(@OriginalArg(0) Class93_Sub22 arg0) {
+	public final void method24358(@OriginalArg(0) ClientMessage arg0) {
 		this.aClass22_44.method408(arg0, -942047023);
-		arg0.anInt1569 = arg0.aPacketBit_1.pos * 1658760439;
-		arg0.aPacketBit_1.pos = 0;
+		arg0.anInt1569 = arg0.packet.pos * 1658760439;
+		arg0.packet.pos = 0;
 		this.anInt3299 += arg0.anInt1569 * -337674397;
 	}
 
@@ -270,7 +270,7 @@ public class Class175 {
 	}
 
 	@OriginalMember(owner = "client!ax", name = "f", descriptor = "(Lclient!uz;Ljava/lang/String;I)V", line = 84)
-	void method24364(@OriginalArg(0) Class160 arg0, @OriginalArg(1) String arg1, @OriginalArg(2) int arg2) {
+	void setStream(@OriginalArg(0) Class160 arg0, @OriginalArg(1) String arg1, @OriginalArg(2) int arg2) {
 		this.aClass160_3 = arg0;
 		this.aClass238_1.method25779(arg1, 1786592897);
 	}
@@ -288,7 +288,7 @@ public class Class175 {
 	}
 
 	@OriginalMember(owner = "client!ax", name = "w", descriptor = "(B)V", line = 89)
-	void method24367(@OriginalArg(0) byte arg0) {
+	void close(@OriginalArg(0) byte arg0) {
 		if (this.aClass160_3 != null) {
 			this.aClass160_3.method14722(1225840225);
 			this.aClass160_3 = null;
@@ -321,7 +321,7 @@ public class Class175 {
 	}
 
 	@OriginalMember(owner = "client!ax", name = "u", descriptor = "(B)Lclient!uz;", line = 102)
-	public Class160 method24372(@OriginalArg(0) byte arg0) {
+	public Class160 getStream(@OriginalArg(0) byte arg0) {
 		return this.aClass160_3;
 	}
 

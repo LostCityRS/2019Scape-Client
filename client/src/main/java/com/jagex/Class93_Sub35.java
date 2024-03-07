@@ -14,7 +14,7 @@ public abstract class Class93_Sub35 extends Class93 {
 
 	@OriginalMember(owner = "client!akz", name = "f", descriptor = "(Lclient!ase;IS)V", line = 210)
 	static void method19706(@OriginalArg(0) PacketBit arg0, @OriginalArg(1) int arg1, @OriginalArg(2) short arg2) {
-		@Pc(3) Class611 local3 = client.aClass532_1.method30455(2075446028);
+		@Pc(3) Class611 local3 = client.world.method30455(2075446028);
 		@Pc(13) boolean local13 = arg0.gBit(1, -2036436358) == 1;
 		if (local13) {
 			Class174.anIntArray279[(Class174.anInt3292 += 981825405) * 2140666325 - 1] = arg1;
@@ -147,10 +147,10 @@ public abstract class Class93_Sub35 extends Class93 {
 						local36.method20074(local453, local460, Class174.aByteArray64[arg1], (byte) 120);
 					}
 					local36.aByte100 = local36.aByte99 = (byte) (local36.aByte100 + local177 & 0x3);
-					if (client.aClass532_1.method30487(1695451641).method30330(local453, local460, -662808309)) {
+					if (client.world.method30487(1695451641).method30330(local453, local460, -662808309)) {
 						local36.aByte99++;
 					}
-					if (client.anInt3513 * -859840571 == arg1 && Class512.anInt5209 * 1177442423 != local36.aByte100) {
+					if (client.selfPlayerSlot * -859840571 == arg1 && Class512.anInt5209 * 1177442423 != local36.aByte100) {
 						Class512.anInt5209 = local36.aByte100 * -69533369;
 					}
 				} else {
@@ -168,16 +168,16 @@ public abstract class Class93_Sub35 extends Class93 {
 						local36.method20074(local453, local460, Class174.aByteArray64[arg1], (byte) 109);
 					}
 					local36.aByte100 = local36.aByte99 = (byte) (local177 + local36.aByte100 & 0x3);
-					if (client.aClass532_1.method30487(1137438638).method30330(local453, local460, -662808309)) {
+					if (client.world.method30487(1137438638).method30330(local453, local460, -662808309)) {
 						local36.aByte99++;
 					}
-					if (client.anInt3513 * -859840571 == arg1) {
+					if (client.selfPlayerSlot * -859840571 == arg1) {
 						Class512.anInt5209 = local36.aByte100 * -69533369;
 					}
 				}
 			}
 		} else if (!local13) {
-			if (client.anInt3513 * -859840571 == arg1) {
+			if (client.selfPlayerSlot * -859840571 == arg1) {
 				throw new RuntimeException();
 			}
 			@Pc(59) Class200 local59 = Class174.aClass200Array1[arg1] = new Class200();

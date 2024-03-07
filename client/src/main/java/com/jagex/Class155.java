@@ -129,7 +129,7 @@ public class Class155 implements Interface65 {
 
 	@OriginalMember(owner = "client!uh", name = "n", descriptor = "()I", line = 48)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt2065 * 825039395;
 	}
 
@@ -155,7 +155,7 @@ public class Class155 implements Interface65 {
 
 	@OriginalMember(owner = "client!uh", name = "yh", descriptor = "(Lclient!yf;I)V", line = 9280)
 	static final void method15307(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.aBoolean638 ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.userQuickChat4 ? 1 : 0;
 	}
 
 	@OriginalMember(owner = "client!uh", name = "bev", descriptor = "(Lclient!yf;B)V", line = 14829)

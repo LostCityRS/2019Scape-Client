@@ -48,13 +48,13 @@ public class Class35 {
 	@OriginalMember(owner = "client!abh", name = "lf", descriptor = "(Ljava/lang/String;Ljava/lang/String;I)V", line = 12029)
 	public static final void method688(@OriginalArg(0) String arg0, @OriginalArg(1) String arg1, @OriginalArg(2) int arg2) {
 		@Pc(2) Class175 local2 = Class330.method27371(-1607413619);
-		@Pc(8) Class93_Sub22 local8 = Class102.method2588(Class446.aClass446_102, local2.aClass24_2, (byte) 73);
+		@Pc(8) ClientMessage local8 = Class102.createGameMessage(ClientProt.aClientProt_102, local2.clientIsaac, (byte) 73);
 		if (arg1.length() > 30) {
 			arg1 = arg1.substring(0, 30);
 		}
-		local8.aPacketBit_1.p1(Packet.pjstrlen(arg0, -1758564069) + Packet.pjstrlen(arg1, -1948018325), (byte) -24);
-		local8.aPacketBit_1.pjstr(arg1, -543354089);
-		local8.aPacketBit_1.pjstr(arg0, 832412331);
-		local2.method24356(local8, -1632121537);
+		local8.packet.p1(Packet.pjstrlen(arg0, -1758564069) + Packet.pjstrlen(arg1, -1948018325), (byte) -24);
+		local8.packet.pjstr(arg1, -543354089);
+		local8.packet.pjstr(arg0, 832412331);
+		local2.send(local8, -1632121537);
 	}
 }

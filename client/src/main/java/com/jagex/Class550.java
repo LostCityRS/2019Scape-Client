@@ -238,6 +238,6 @@ public class Class550 {
 	@OriginalMember(owner = "client!sh", name = "bdd", descriptor = "(Lclient!yf;B)V", line = 14762)
 	static final void method31035(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
 		arg0.anInt5891 -= 1189701933;
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.method20024(1927066028).method32027((short) 448);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class520.selfPlayer.method20024(1927066028).method32027((short) 448);
 	}
 }

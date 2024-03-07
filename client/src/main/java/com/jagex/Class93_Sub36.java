@@ -36,7 +36,7 @@ public class Class93_Sub36 extends Class93 {
 	public Class166_Sub40 aClass166_Sub40_1;
 
 	@OriginalMember(owner = "client!ali", name = "c", descriptor = "Lclient!anq;")
-	public Class166_Sub39 aClass166_Sub39_1;
+	public Class166_Sub39 antialiasing;
 
 	@OriginalMember(owner = "client!ali", name = "r", descriptor = "Lclient!anu;")
 	Class166_Sub43 aClass166_Sub43_1;
@@ -233,7 +233,7 @@ public class Class93_Sub36 extends Class93 {
 				if (local15 >= 31) {
 					this.aClass166_Sub43_1 = new Class166_Sub43(arg0.g1((short) 16384), this);
 				}
-				this.aClass166_Sub39_1 = new Class166_Sub39(this.aClass166_Sub39_2.method16345(194194982), this);
+				this.antialiasing = new Class166_Sub39(this.aClass166_Sub39_2.getValue(194194982), this);
 				this.aClass166_Sub28_1 = new Class166_Sub28(arg0.g1((short) 16384), this);
 				this.aClass166_Sub7_1 = new Class166_Sub7(arg0.g1((short) 16384), this);
 				this.aClass166_Sub12_1 = new Class166_Sub12(arg0.g1((short) 16384), this);
@@ -343,7 +343,7 @@ public class Class93_Sub36 extends Class93 {
 				if (local15 >= 31) {
 					this.aClass166_Sub43_1 = new Class166_Sub43(arg0.g1((short) 16384), this);
 				}
-				this.aClass166_Sub39_1 = new Class166_Sub39(this.aClass166_Sub39_2.method16345(-2009415674), this);
+				this.antialiasing = new Class166_Sub39(this.aClass166_Sub39_2.getValue(-2009415674), this);
 				this.aClass166_Sub28_1 = new Class166_Sub28(arg0.g1((short) 16384), this);
 				this.aClass166_Sub7_1 = new Class166_Sub7(arg0.g1((short) 16384), this);
 				this.aClass166_Sub12_1 = new Class166_Sub12(arg0.g1((short) 16384), this);
@@ -441,8 +441,8 @@ public class Class93_Sub36 extends Class93 {
 		if (arg0 || this.aClass166_Sub43_1 == null) {
 			this.aClass166_Sub43_1 = new Class166_Sub43(this);
 		}
-		if (arg0 || this.aClass166_Sub39_1 == null) {
-			this.aClass166_Sub39_1 = new Class166_Sub39(this.aClass166_Sub39_2.method16345(1687031900), this);
+		if (arg0 || this.antialiasing == null) {
+			this.antialiasing = new Class166_Sub39(this.aClass166_Sub39_2.getValue(1687031900), this);
 		}
 		if (arg0 || this.aClass166_Sub28_1 == null) {
 			this.aClass166_Sub28_1 = new Class166_Sub28(this);
@@ -610,8 +610,8 @@ public class Class93_Sub36 extends Class93 {
 		if (arg0 || this.aClass166_Sub43_1 == null) {
 			this.aClass166_Sub43_1 = new Class166_Sub43(this);
 		}
-		if (arg0 || this.aClass166_Sub39_1 == null) {
-			this.aClass166_Sub39_1 = new Class166_Sub39(this.aClass166_Sub39_2.method16345(-1345112047), this);
+		if (arg0 || this.antialiasing == null) {
+			this.antialiasing = new Class166_Sub39(this.aClass166_Sub39_2.getValue(-1345112047), this);
 		}
 		if (arg0 || this.aClass166_Sub28_1 == null) {
 			this.aClass166_Sub28_1 = new Class166_Sub28(this);
@@ -779,8 +779,8 @@ public class Class93_Sub36 extends Class93 {
 		if (arg0 || this.aClass166_Sub43_1 == null) {
 			this.aClass166_Sub43_1 = new Class166_Sub43(this);
 		}
-		if (arg0 || this.aClass166_Sub39_1 == null) {
-			this.aClass166_Sub39_1 = new Class166_Sub39(this.aClass166_Sub39_2.method16345(1920567237), this);
+		if (arg0 || this.antialiasing == null) {
+			this.antialiasing = new Class166_Sub39(this.aClass166_Sub39_2.getValue(1920567237), this);
 		}
 		if (arg0 || this.aClass166_Sub28_1 == null) {
 			this.aClass166_Sub28_1 = new Class166_Sub28(this);
@@ -948,8 +948,8 @@ public class Class93_Sub36 extends Class93 {
 		if (arg0 || this.aClass166_Sub43_1 == null) {
 			this.aClass166_Sub43_1 = new Class166_Sub43(this);
 		}
-		if (arg0 || this.aClass166_Sub39_1 == null) {
-			this.aClass166_Sub39_1 = new Class166_Sub39(this.aClass166_Sub39_2.method16345(1944787734), this);
+		if (arg0 || this.antialiasing == null) {
+			this.antialiasing = new Class166_Sub39(this.aClass166_Sub39_2.getValue(1944787734), this);
 		}
 		if (arg0 || this.aClass166_Sub28_1 == null) {
 			this.aClass166_Sub28_1 = new Class166_Sub28(this);
@@ -1410,11 +1410,11 @@ public class Class93_Sub36 extends Class93 {
 	}
 
 	@OriginalMember(owner = "client!ali", name = "k", descriptor = "(I)Lclient!alw;", line = 308)
-	public Packet method14361(@OriginalArg(0) int arg0) {
+	public Packet encode(@OriginalArg(0) int arg0) {
 		@Pc(4) Packet local4 = new Packet(59);
 		local4.p1(38, (byte) -26);
 		local4.p1(this.aClass166_Sub31_1.method16114((short) 8198), (byte) -54);
-		local4.p1(this.aClass166_Sub39_2.method16345(-305388529), (byte) -67);
+		local4.p1(this.aClass166_Sub39_2.getValue(-305388529), (byte) -67);
 		local4.p1(this.aClass166_Sub43_1.method16425(1627488819), (byte) -17);
 		local4.p1(this.aClass166_Sub28_1.method16041((byte) -11), (byte) -34);
 		local4.p1(this.aClass166_Sub7_1.method15506((byte) -71), (byte) -114);
@@ -1474,7 +1474,7 @@ public class Class93_Sub36 extends Class93 {
 		@Pc(4) Packet local4 = new Packet(59);
 		local4.p1(38, (byte) 4);
 		local4.p1(this.aClass166_Sub31_1.method16114((short) 7436), (byte) -127);
-		local4.p1(this.aClass166_Sub39_2.method16345(-619491720), (byte) -103);
+		local4.p1(this.aClass166_Sub39_2.getValue(-619491720), (byte) -103);
 		local4.p1(this.aClass166_Sub43_1.method16425(190132856), (byte) -110);
 		local4.p1(this.aClass166_Sub28_1.method16041((byte) -88), (byte) -22);
 		local4.p1(this.aClass166_Sub7_1.method15506((byte) -114), (byte) -97);
@@ -1558,7 +1558,7 @@ public class Class93_Sub36 extends Class93 {
 		this.aClass166_Sub31_1.method16105(-2024581220);
 		this.aClass166_Sub39_2.method16341((byte) 9);
 		this.aClass166_Sub43_1.method16422(-918758163);
-		this.aClass166_Sub39_1.method16341((byte) 71);
+		this.antialiasing.method16341((byte) 71);
 		this.aClass166_Sub28_1.method16036(-371797640);
 		this.aClass166_Sub7_1.method15505(12151710);
 		this.aClass166_Sub12_1.method15609((byte) 16);
@@ -1617,7 +1617,7 @@ public class Class93_Sub36 extends Class93 {
 		this.aClass166_Sub31_1.method16105(-1301053714);
 		this.aClass166_Sub39_2.method16341((byte) 43);
 		this.aClass166_Sub43_1.method16422(-918758163);
-		this.aClass166_Sub39_1.method16341((byte) 10);
+		this.antialiasing.method16341((byte) 10);
 		this.aClass166_Sub28_1.method16036(-371797640);
 		this.aClass166_Sub7_1.method15505(29944843);
 		this.aClass166_Sub12_1.method15609((byte) 16);
@@ -1676,7 +1676,7 @@ public class Class93_Sub36 extends Class93 {
 		this.aClass166_Sub31_1.method16105(-1270801713);
 		this.aClass166_Sub39_2.method16341((byte) 24);
 		this.aClass166_Sub43_1.method16422(-918758163);
-		this.aClass166_Sub39_1.method16341((byte) 66);
+		this.antialiasing.method16341((byte) 66);
 		this.aClass166_Sub28_1.method16036(-371797640);
 		this.aClass166_Sub7_1.method15505(990779777);
 		this.aClass166_Sub12_1.method15609((byte) 16);
@@ -1735,7 +1735,7 @@ public class Class93_Sub36 extends Class93 {
 		this.aClass166_Sub31_1.method16105(-1427248727);
 		this.aClass166_Sub39_2.method16341((byte) 99);
 		this.aClass166_Sub43_1.method16422(-918758163);
-		this.aClass166_Sub39_1.method16341((byte) 119);
+		this.antialiasing.method16341((byte) 119);
 		this.aClass166_Sub28_1.method16036(-371797640);
 		this.aClass166_Sub7_1.method15505(-1550900764);
 		this.aClass166_Sub12_1.method15609((byte) 16);

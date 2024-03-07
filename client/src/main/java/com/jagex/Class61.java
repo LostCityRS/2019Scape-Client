@@ -88,69 +88,69 @@ class Class61 implements Iterator {
 			}
 			@Pc(62) int local62;
 			if (Class588.aClass588_1 == Class588.aClass588_3) {
-				client.aClass175_1.method24364(Class516.method30278(Class50.aClass28_2.method593((byte) 1), 40000, (short) -5827), Class50.aClass28_2.aString4, 2126602668);
-				client.aClass175_1.method24351(1778124812);
-				@Pc(43) Class93_Sub22 local43 = Class720.method36909((byte) 31);
-				local43.aPacketBit_1.p1(Class449.aClass449_6.anInt4980 * 1690737369, (byte) -94);
-				local43.aPacketBit_1.p2(0, 2129088042);
-				local62 = local43.aPacketBit_1.pos * 212851357;
-				local43.aPacketBit_1.p2(910, 2124806922);
-				local43.aPacketBit_1.p2(1, 2141744574);
+				client.aClass175_1.setStream(Class516.method30278(Class50.lobby.openSocket((byte) 1), 40000, (short) -5827), Class50.lobby.host, 2126602668);
+				client.aClass175_1.clear(1778124812);
+				@Pc(43) ClientMessage local43 = Class720.createLoginMessage((byte) 31);
+				local43.packet.p1(LoginProt.CREATE_ACCOUNT_CONNECT.opcode * 1690737369, (byte) -94);
+				local43.packet.p2(0, 2129088042);
+				local62 = local43.packet.pos * 212851357;
+				local43.packet.p2(910, 2124806922);
+				local43.packet.p2(1, 2141744574);
 				Class676.anIntArray516 = Class367.method27961(local43, (byte) 117);
-				@Pc(82) int local82 = local43.aPacketBit_1.pos * 212851357;
-				local43.aPacketBit_1.pjstr(client.aString139, 802881230);
-				local43.aPacketBit_1.p2(client.anInt3426 * -1765120027, 2143561161);
-				local43.aPacketBit_1.p4(client.anInt3429 * 1672118199, (byte) 61);
-				local43.aPacketBit_1.p4(client.anInt3428 * -1830493323, (byte) 109);
-				local43.aPacketBit_1.pjstr(Class454.aString210, -569118241);
-				local43.aPacketBit_1.p1(Class106.aClass717_8.method36920(), (byte) -97);
-				local43.aPacketBit_1.p1(client.aClass702_4.anInt5953 * -1111983921, (byte) -80);
-				Class314.method26940(local43.aPacketBit_1, 1822213152);
+				@Pc(82) int local82 = local43.packet.pos * 212851357;
+				local43.packet.pjstr(client.clientToken, 802881230);
+				local43.packet.p2(client.affiliate * -1765120027, 2143561161);
+				local43.packet.p4(client.userFlowFlag1 * 1672118199, (byte) 61);
+				local43.packet.p4(client.userFlowFlag2 * -1830493323, (byte) 109);
+				local43.packet.pjstr(Class454.aString210, -569118241);
+				local43.packet.p1(Class106.lang.getId(), (byte) -97);
+				local43.packet.p1(client.modeGame.id * -1111983921, (byte) -80);
+				Class314.getUid192(local43.packet, 1822213152);
 				@Pc(133) String local133 = client.aString138;
-				local43.aPacketBit_1.p1(local133 == null ? 0 : 1, (byte) -103);
+				local43.packet.p1(local133 == null ? 0 : 1, (byte) -103);
 				if (local133 != null) {
-					local43.aPacketBit_1.pjstr(local133, 1575484636);
+					local43.packet.pjstr(local133, 1575484636);
 				}
-				Class125_Sub3.aClass93_Sub42_1.method15300(local43.aPacketBit_1, 1797123567);
-				local43.aPacketBit_1.pos += -1529454093;
-				local43.aPacketBit_1.tinyenc(Class676.anIntArray516, local82, local43.aPacketBit_1.pos * 212851357, (byte) -117);
-				local43.aPacketBit_1.psize2(local43.aPacketBit_1.pos * 212851357 - local62, 1251011626);
-				client.aClass175_1.method24356(local43, -1683542800);
-				client.aClass175_1.method24352((byte) 15);
+				Class125_Sub3.platformStats.encode(local43.packet, 1797123567);
+				local43.packet.pos += -1529454093;
+				local43.packet.tinyenc(Class676.anIntArray516, local82, local43.packet.pos * 212851357, (byte) -117);
+				local43.packet.psize2(local43.packet.pos * 212851357 - local62, 1251011626);
+				client.aClass175_1.send(local43, -1683542800);
+				client.aClass175_1.flush((byte) 15);
 				Class588.aClass588_3 = Class588.aClass588_2;
 			}
 			if (Class588.aClass588_2 == Class588.aClass588_3) {
-				if (client.aClass175_1.method24372((byte) 21) == null) {
+				if (client.aClass175_1.getStream((byte) 21) == null) {
 					Class132_Sub1_Sub3_Sub1.method12303(-109098973);
 					return;
 				}
-				if (!client.aClass175_1.method24372((byte) 41).method14727(1, 30631038)) {
+				if (!client.aClass175_1.getStream((byte) 41).available(1, 30631038)) {
 					return;
 				}
-				client.aClass175_1.method24372((byte) 3).method14720(client.aClass175_1.aPacketBit_2.data, 0, 1, (byte) -80);
-				Class676.aClass709_1 = (Class709) Class107.method18116(Class124_Sub3.method21431(-1406618035), client.aClass175_1.aPacketBit_2.data[0] & 0xFF, -1915563430);
+				client.aClass175_1.getStream((byte) 3).read(client.aClass175_1.packet.data, 0, 1, (byte) -80);
+				Class676.aClass709_1 = (Class709) Class107.method18116(Class124_Sub3.method21431(-1406618035), client.aClass175_1.packet.data[0] & 0xFF, -1915563430);
 				if (Class709.aClass709_7 == Class676.aClass709_1) {
-					client.aClass175_1.aClass24_2 = new Class24(Class676.anIntArray516);
+					client.aClass175_1.clientIsaac = new IsaacRandom(Class676.anIntArray516);
 					@Pc(247) int[] local247 = new int[4];
 					for (local62 = 0; local62 < 4; local62++) {
 						local247[local62] = Class676.anIntArray516[local62] + 50;
 					}
-					client.aClass175_1.aClass24_3 = new Class24(local247);
-					new Class24(local247);
-					client.aClass175_1.aPacketBit_2.setRandom(client.aClass175_1.aClass24_3, (byte) -60);
-					Class481.method29756(0, 1823202236);
-					client.aClass175_1.method24351(-62093601);
-					client.aClass175_1.aPacketBit_2.pos = 0;
-					client.aClass175_1.aClass453_1 = null;
-					client.aClass175_1.aClass453_4 = null;
-					client.aClass175_1.aClass453_3 = null;
+					client.aClass175_1.serverIsaac = new IsaacRandom(local247);
+					new IsaacRandom(local247);
+					client.aClass175_1.packet.setRandom(client.aClass175_1.serverIsaac, (byte) -60);
+					Class481.setState(0, 1823202236);
+					client.aClass175_1.clear(-62093601);
+					client.aClass175_1.packet.pos = 0;
+					client.aClass175_1.prevServerPacketType1 = null;
+					client.aClass175_1.prevServerPacketType2 = null;
+					client.aClass175_1.prevServerPacketType3 = null;
 					client.aClass175_1.anInt3298 = 0;
 					Class624.aClass120_1.aClass647_1.method32643((byte) 119);
 					Class151.method13978(-2015714483);
 				} else {
-					client.aClass175_1.method24367((byte) 34);
+					client.aClass175_1.close((byte) 34);
 				}
-				client.aClass175_1.aClass453_2 = null;
+				client.aClass175_1.serverPacketType = null;
 				Class588.aClass588_3 = null;
 			}
 		} catch (@Pc(318) IOException local318) {

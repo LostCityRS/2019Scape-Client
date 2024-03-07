@@ -47,7 +47,7 @@ public class Class349 {
 
 	@OriginalMember(owner = "client!iu", name = "n", descriptor = "(S)Z", line = 123)
 	static boolean method27625(@OriginalArg(0) short arg0) {
-		return Class411.anInt4746 * 276097583 == -1 ? Class93_Sub3.method11813(Class411.aString200, Class411.aString201, (byte) 47) : Class219.method25511(-1544706360);
+		return Class411.anInt4746 * 276097583 == -1 ? Class93_Sub3.method11813(Class411.username, Class411.aString201, (byte) 47) : Class219.method25511(-1544706360);
 	}
 
 	@OriginalMember(owner = "client!iu", name = "je", descriptor = "(Lclient!yf;I)V", line = 6649)

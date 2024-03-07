@@ -37,7 +37,7 @@ public class Class244 {
 	@OriginalMember(owner = "client!eg", name = "alt", descriptor = "(Lclient!yf;I)V", line = 11952)
 	static final void method25893(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		if (Class4.aBoolean2 && Class125_Sub2_Sub1.aFrame1 != null) {
-			Class717.method36895(Class51.aClass93_Sub36_1.aClass166_Sub23_1.method15844(235476874), -1, -1, false, (byte) 17);
+			Class717.method36895(Class51.options.aClass166_Sub23_1.method15844(235476874), -1, -1, false, (byte) 17);
 		}
 		if (Class343.method27519((byte) 125) == Class555.aClass555_3) {
 			Class25.method23117(-1283127986);

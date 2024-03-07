@@ -29,7 +29,7 @@ public class Class72 implements Interface75 {
 
 	@OriginalMember(owner = "client!acw", name = "n", descriptor = "()I", line = 15)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt240 * 1422097493;
 	}
 

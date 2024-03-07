@@ -40,8 +40,8 @@ public class Class93_Sub1 extends Class93 {
 			if (Class276.aClass106_10 != null && Class49.aClass5_12 != null) {
 				Class436.method28812(-916881791);
 				@Pc(57) int local57 = local11 / 2 + local3;
-				if (local11 + local57 > Class553.anInt3408 * -1378711501) {
-					local57 = Class553.anInt3408 * -1378711501 - local11;
+				if (local11 + local57 > Class553.width * -1378711501) {
+					local57 = Class553.width * -1378711501 - local11;
 				}
 				if (local57 < 0) {
 					local57 = 0;
@@ -57,7 +57,7 @@ public class Class93_Sub1 extends Class93 {
 			local88 = Class276.aClass106_10;
 		}
 		@Pc(94) Class5 local94 = Class142_Sub1.method10971((byte) 98);
-		Class292.method26580(arg0, Class166_Sub17.anInt2179 * 1703853389, Class369.anInt4589 * -310709577, Class221.anInt3629 * 1555894759, Class115.anInt972 * 1280805653, local19, local88, local94, Class74.aClass74_90.method1259(Class106.aClass717_8, (byte) -22), 1189701933);
+		Class292.method26580(arg0, Class166_Sub17.anInt2179 * 1703853389, Class369.anInt4589 * -310709577, Class221.anInt3629 * 1555894759, Class115.anInt972 * 1280805653, local19, local88, local94, Class74.aClass74_90.method1259(Class106.lang, (byte) -22), 1189701933);
 		@Pc(126) int local126 = 255 - Class166_Sub34.anInt2296 * 1405170691 - Class454.anInt5055 * 1506557571;
 		if (local126 < 0) {
 			local126 = 0;

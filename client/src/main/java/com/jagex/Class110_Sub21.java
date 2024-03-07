@@ -32,11 +32,11 @@ public class Class110_Sub21 extends Class110 {
 	@OriginalMember(owner = "client!agw", name = "bl", descriptor = "(Lclient!arm;I)Ljava/lang/String;", line = 1361)
 	static String method8544(@OriginalArg(0) Class93_Sub1_Sub7 arg0, @OriginalArg(1) int arg1) {
 		if (arg0.aString98 == null || arg0.aString98.length() == 0) {
-			return arg0.aString100 == null || arg0.aString100.length() <= 0 ? arg0.aString99 : arg0.aString99 + Class74.aClass74_140.method1259(Class106.aClass717_8, (byte) 33) + arg0.aString100;
+			return arg0.aString100 == null || arg0.aString100.length() <= 0 ? arg0.aString99 : arg0.aString99 + Class74.aClass74_140.method1259(Class106.lang, (byte) 33) + arg0.aString100;
 		} else if (arg0.aString100 == null || arg0.aString100.length() <= 0) {
-			return arg0.aString99 + Class74.aClass74_140.method1259(Class106.aClass717_8, (byte) -33) + arg0.aString98;
+			return arg0.aString99 + Class74.aClass74_140.method1259(Class106.lang, (byte) -33) + arg0.aString98;
 		} else {
-			return arg0.aString99 + Class74.aClass74_140.method1259(Class106.aClass717_8, (byte) 20) + arg0.aString100 + Class74.aClass74_140.method1259(Class106.aClass717_8, (byte) -6) + arg0.aString98;
+			return arg0.aString99 + Class74.aClass74_140.method1259(Class106.lang, (byte) 20) + arg0.aString100 + Class74.aClass74_140.method1259(Class106.lang, (byte) -6) + arg0.aString98;
 		}
 	}
 

@@ -267,10 +267,10 @@ public class Class486 {
 		}
 		client.anInt3552 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 2] * 630676823;
 		@Pc(46) Class175 local46 = Class330.method27371(-1730720637);
-		@Pc(52) Class93_Sub22 local52 = Class102.method2588(Class446.aClass446_75, local46.aClass24_2, (byte) 78);
-		local52.aPacketBit_1.p1(client.anInt3561 * 2112576331, (byte) -110);
-		local52.aPacketBit_1.p1(Class118_Sub1.aClass12_4.anInt25 * -1955231941, (byte) -12);
-		local52.aPacketBit_1.p1(client.anInt3552 * -350691737, (byte) -93);
-		local46.method24356(local52, -1738439709);
+		@Pc(52) ClientMessage local52 = Class102.createGameMessage(ClientProt.aClientProt_75, local46.clientIsaac, (byte) 78);
+		local52.packet.p1(client.anInt3561 * 2112576331, (byte) -110);
+		local52.packet.p1(Class118_Sub1.aClass12_4.anInt25 * -1955231941, (byte) -12);
+		local52.packet.p1(client.anInt3552 * -350691737, (byte) -93);
+		local46.send(local52, -1738439709);
 	}
 }

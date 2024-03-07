@@ -345,7 +345,7 @@ public class Class596 implements Interface13 {
 
 	@OriginalMember(owner = "client!uk", name = "asl", descriptor = "(Lclient!yf;I)V", line = 13142)
 	static final void method31765(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub36_1, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], (byte) 116);
+		Class51.options.method14363(Class51.options.aClass166_Sub36_1, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], (byte) 116);
 		Class106_Sub1.method5135(138249748);
 	}
 }

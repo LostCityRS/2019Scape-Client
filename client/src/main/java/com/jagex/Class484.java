@@ -63,7 +63,7 @@ public class Class484 implements Interface75 {
 
 	@OriginalMember(owner = "client!pj", name = "n", descriptor = "()I", line = 26)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt5143 * 2144401315;
 	}
 
@@ -86,15 +86,15 @@ public class Class484 implements Interface75 {
 	}
 
 	@OriginalMember(owner = "client!pj", name = "jt", descriptor = "(Lclient!akl;IIII)V", line = 10302)
-	static void method29789(@OriginalArg(0) Class93_Sub22 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		arg0.aPacketBit_1.p2_alt3(arg3, (short) 255);
-		arg0.aPacketBit_1.p2_alt2(arg2, -1871503550);
-		arg0.aPacketBit_1.p4(arg1, (byte) -9);
+	static void method29789(@OriginalArg(0) ClientMessage arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
+		arg0.packet.p2_alt3(arg3, (short) 255);
+		arg0.packet.p2_alt2(arg2, -1871503550);
+		arg0.packet.p4(arg1, (byte) -9);
 	}
 
 	@OriginalMember(owner = "client!pj", name = "anb", descriptor = "(Lclient!yf;B)V", line = 12364)
 	static final void method29790(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		Class320.method27240(arg0, Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3, -1694852530);
+		Class320.method27240(arg0, Class520.selfPlayer, -1694852530);
 	}
 
 	@OriginalMember(owner = "client!pj", name = "avh", descriptor = "(Lclient!yf;I)V", line = 13465)

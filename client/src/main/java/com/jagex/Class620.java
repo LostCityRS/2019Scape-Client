@@ -48,6 +48,6 @@ public class Class620 {
 
 	@OriginalMember(owner = "client!vp", name = "ye", descriptor = "(Lclient!yf;I)V", line = 9246)
 	static final void method32111(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class50.aClass28_5.anInt101 * 2142901097;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class50.world.id * 2142901097;
 	}
 }

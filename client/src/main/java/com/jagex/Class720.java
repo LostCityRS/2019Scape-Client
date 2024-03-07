@@ -166,11 +166,11 @@ public class Class720 {
 	}
 
 	@OriginalMember(owner = "client!zw", name = "m", descriptor = "(B)Lclient!akl;", line = 39)
-	public static Class93_Sub22 method36909(@OriginalArg(0) byte arg0) {
-		@Pc(2) Class93_Sub22 local2 = Class527.method30386(-1845715267);
-		local2.aClass446_1 = null;
+	public static ClientMessage createLoginMessage(@OriginalArg(0) byte arg0) {
+		@Pc(2) ClientMessage local2 = Class527.method30386(-1845715267);
+		local2.aClientProt_1 = null;
 		local2.anInt1570 = 0;
-		local2.aPacketBit_1 = new PacketBit(5000);
+		local2.packet = new PacketBit(5000);
 		return local2;
 	}
 

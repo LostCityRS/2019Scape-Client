@@ -19,7 +19,7 @@ public class Class133_Sub1 extends Class133 {
 
 	@OriginalMember(owner = "client!aht", name = "f", descriptor = "(Lclient!alw;)Lclient!la;", line = 14)
 	public static Class133 method10074(@OriginalArg(0) Packet arg0) {
-		@Pc(3) Class133 local3 = Class449.method28926(arg0, 216811848);
+		@Pc(3) Class133 local3 = Class133.method28926(arg0, 216811848);
 		@Pc(7) int local7 = arg0.g3s(-87715282);
 		return new Class133_Sub1(local3.anInt1133 * 716586081, local3.aClass390_6, local3.aClass392_6, local3.anInt1131 * -1599175185, local3.anInt1132 * -1271918157, local7);
 	}

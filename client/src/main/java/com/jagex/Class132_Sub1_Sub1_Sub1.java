@@ -1470,7 +1470,7 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 		@Pc(33) Class458 local33 = this.method24220();
 		@Pc(40) int local40 = (int) local33.aClass472_61.aFloat317 >> 9;
 		@Pc(47) int local47 = (int) local33.aClass472_61.aFloat319 >> 9;
-		if (this.aClass585_23 != null && local40 >= 1 && local47 >= 1 && local40 <= client.aClass532_1.method30459(572446711) - 1 && local47 <= client.aClass532_1.method30466((short) 128) - 1) {
+		if (this.aClass585_23 != null && local40 >= 1 && local47 >= 1 && local40 <= client.world.method30459(572446711) - 1 && local47 <= client.world.method30466((short) 128) - 1) {
 			@Pc(81) Class572 local81 = this.aClass585_23.aClass572ArrayArrayArray3[this.aByte100][local40][local47];
 			if (local81 != null && local81.aClass132_Sub1_Sub4_1 != null) {
 				return local81.aClass132_Sub1_Sub4_1.aShort97 + local14;
@@ -1494,7 +1494,7 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 		@Pc(33) Class458 local33 = this.method24220();
 		@Pc(40) int local40 = (int) local33.aClass472_61.aFloat317 >> 9;
 		@Pc(47) int local47 = (int) local33.aClass472_61.aFloat319 >> 9;
-		if (this.aClass585_23 != null && local40 >= 1 && local47 >= 1 && local40 <= client.aClass532_1.method30459(-80587308) - 1 && local47 <= client.aClass532_1.method30466((short) 128) - 1) {
+		if (this.aClass585_23 != null && local40 >= 1 && local47 >= 1 && local40 <= client.world.method30459(-80587308) - 1 && local47 <= client.world.method30466((short) 128) - 1) {
 			@Pc(81) Class572 local81 = this.aClass585_23.aClass572ArrayArrayArray3[this.aByte100][local40][local47];
 			if (local81 != null && local81.aClass132_Sub1_Sub4_1 != null) {
 				return local81.aClass132_Sub1_Sub4_1.aShort97 + local14;
@@ -1518,7 +1518,7 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 		@Pc(33) Class458 local33 = this.method24220();
 		@Pc(40) int local40 = (int) local33.aClass472_61.aFloat317 >> 9;
 		@Pc(47) int local47 = (int) local33.aClass472_61.aFloat319 >> 9;
-		if (this.aClass585_23 != null && local40 >= 1 && local47 >= 1 && local40 <= client.aClass532_1.method30459(-1023606926) - 1 && local47 <= client.aClass532_1.method30466((short) 128) - 1) {
+		if (this.aClass585_23 != null && local40 >= 1 && local47 >= 1 && local40 <= client.world.method30459(-1023606926) - 1 && local47 <= client.world.method30466((short) 128) - 1) {
 			@Pc(81) Class572 local81 = this.aClass585_23.aClass572ArrayArrayArray3[this.aByte100][local40][local47];
 			if (local81 != null && local81.aClass132_Sub1_Sub4_1 != null) {
 				return local81.aClass132_Sub1_Sub4_1.aShort97 + local14;
@@ -1542,7 +1542,7 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 		@Pc(33) Class458 local33 = this.method24220();
 		@Pc(40) int local40 = (int) local33.aClass472_61.aFloat317 >> 9;
 		@Pc(47) int local47 = (int) local33.aClass472_61.aFloat319 >> 9;
-		if (this.aClass585_23 != null && local40 >= 1 && local47 >= 1 && local40 <= client.aClass532_1.method30459(1332941870) - 1 && local47 <= client.aClass532_1.method30466((short) 128) - 1) {
+		if (this.aClass585_23 != null && local40 >= 1 && local47 >= 1 && local40 <= client.world.method30459(1332941870) - 1 && local47 <= client.world.method30466((short) 128) - 1) {
 			@Pc(81) Class572 local81 = this.aClass585_23.aClass572ArrayArrayArray3[this.aByte100][local40][local47];
 			if (local81 != null && local81.aClass132_Sub1_Sub4_1 != null) {
 				return local81.aClass132_Sub1_Sub4_1.aShort97 + local14;
@@ -2327,7 +2327,7 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 	@OriginalMember(owner = "client!ahm", name = "cw", descriptor = "(I)Lclient!ve;", line = 678)
 	public Class611 method20024(@OriginalArg(0) int arg0) {
 		@Pc(3) Class472 local3 = this.method24220().aClass472_61;
-		@Pc(7) Class611 local7 = client.aClass532_1.method30455(2116380776);
+		@Pc(7) Class611 local7 = client.world.method30455(2116380776);
 		@Pc(18) int local18 = local7.anInt5623 * 270611681 + ((int) local3.aFloat317 >> 9);
 		@Pc(29) int local29 = ((int) local3.aFloat319 >> 9) + local7.anInt5624 * -1994307635;
 		return new Class611(this.aByte100, local18, local29);
@@ -2336,7 +2336,7 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 	@OriginalMember(owner = "client!ahm", name = "fi", descriptor = "()Lclient!ve;", line = 678)
 	public Class611 method20025() {
 		@Pc(3) Class472 local3 = this.method24220().aClass472_61;
-		@Pc(7) Class611 local7 = client.aClass532_1.method30455(2135505069);
+		@Pc(7) Class611 local7 = client.world.method30455(2135505069);
 		@Pc(18) int local18 = local7.anInt5623 * 270611681 + ((int) local3.aFloat317 >> 9);
 		@Pc(29) int local29 = ((int) local3.aFloat319 >> 9) + local7.anInt5624 * -1994307635;
 		return new Class611(this.aByte100, local18, local29);
@@ -2345,7 +2345,7 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 	@OriginalMember(owner = "client!ahm", name = "fn", descriptor = "()Lclient!ve;", line = 678)
 	public Class611 method20026() {
 		@Pc(3) Class472 local3 = this.method24220().aClass472_61;
-		@Pc(7) Class611 local7 = client.aClass532_1.method30455(1811030082);
+		@Pc(7) Class611 local7 = client.world.method30455(1811030082);
 		@Pc(18) int local18 = local7.anInt5623 * 270611681 + ((int) local3.aFloat317 >> 9);
 		@Pc(29) int local29 = ((int) local3.aFloat319 >> 9) + local7.anInt5624 * -1994307635;
 		return new Class611(this.aByte100, local18, local29);
@@ -2354,7 +2354,7 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 	@OriginalMember(owner = "client!ahm", name = "ft", descriptor = "()Lclient!ve;", line = 678)
 	public Class611 method20027() {
 		@Pc(3) Class472 local3 = this.method24220().aClass472_61;
-		@Pc(7) Class611 local7 = client.aClass532_1.method30455(1740653919);
+		@Pc(7) Class611 local7 = client.world.method30455(1740653919);
 		@Pc(18) int local18 = local7.anInt5623 * 270611681 + ((int) local3.aFloat317 >> 9);
 		@Pc(29) int local29 = ((int) local3.aFloat319 >> 9) + local7.anInt5624 * -1994307635;
 		return new Class611(this.aByte100, local18, local29);
@@ -2363,7 +2363,7 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 	@OriginalMember(owner = "client!ahm", name = "ct", descriptor = "(I)Lclient!akt;", line = 686)
 	public Class93_Sub30 method20028(@OriginalArg(0) int arg0) {
 		@Pc(3) Class472 local3 = this.method24220().aClass472_61;
-		@Pc(7) Class611 local7 = client.aClass532_1.method30455(1878386949);
+		@Pc(7) Class611 local7 = client.world.method30455(1878386949);
 		@Pc(16) int local16 = local7.anInt5623 * 1114227200 + (int) local3.aFloat317;
 		@Pc(20) int local20 = (int) local3.aFloat318;
 		@Pc(29) int local29 = (int) local3.aFloat319 + local7.anInt5624 * 1116707328;
@@ -2373,7 +2373,7 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 	@OriginalMember(owner = "client!ahm", name = "fx", descriptor = "()Lclient!akt;", line = 686)
 	public Class93_Sub30 method20029() {
 		@Pc(3) Class472 local3 = this.method24220().aClass472_61;
-		@Pc(7) Class611 local7 = client.aClass532_1.method30455(1955860467);
+		@Pc(7) Class611 local7 = client.world.method30455(1955860467);
 		@Pc(16) int local16 = local7.anInt5623 * 1114227200 + (int) local3.aFloat317;
 		@Pc(20) int local20 = (int) local3.aFloat318;
 		@Pc(29) int local29 = (int) local3.aFloat319 + local7.anInt5624 * 1116707328;
@@ -2397,14 +2397,14 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 
 	@OriginalMember(owner = "client!ahm", name = "jw", descriptor = "(Lclient!hf;Lclient!hf;I)V", line = 10174)
 	static void method20031(@OriginalArg(0) Class312 arg0, @OriginalArg(1) Class312 arg1, @OriginalArg(2) int arg2) {
-		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_124, client.aClass175_2.aClass24_2, (byte) 94);
-		local5.aPacketBit_1.p2(arg1.anInt3970 * 532402067, 2141496041);
-		local5.aPacketBit_1.p4_alt3(arg0.anInt3953 * -1549590237, (byte) -15);
-		local5.aPacketBit_1.p2_alt1(arg1.anInt4045 * 307668159, (byte) 19);
-		local5.aPacketBit_1.p2_alt3(arg0.anInt4045 * 307668159, (short) 255);
-		local5.aPacketBit_1.p4_alt3(arg1.anInt3953 * -1549590237, (byte) -19);
-		local5.aPacketBit_1.p2_alt1(arg0.anInt3970 * 532402067, (byte) -5);
-		client.aClass175_2.method24356(local5, -1472900530);
+		@Pc(5) ClientMessage local5 = Class102.createGameMessage(ClientProt.aClientProt_124, client.aClass175_2.clientIsaac, (byte) 94);
+		local5.packet.p2(arg1.anInt3970 * 532402067, 2141496041);
+		local5.packet.p4_alt3(arg0.anInt3953 * -1549590237, (byte) -15);
+		local5.packet.p2_alt1(arg1.anInt4045 * 307668159, (byte) 19);
+		local5.packet.p2_alt3(arg0.anInt4045 * 307668159, (short) 255);
+		local5.packet.p4_alt3(arg1.anInt3953 * -1549590237, (byte) -19);
+		local5.packet.p2_alt1(arg0.anInt3970 * 532402067, (byte) -5);
+		client.aClass175_2.send(local5, -1472900530);
 	}
 
 	@OriginalMember(owner = "client!ahm", name = "bs", descriptor = "(B)I")

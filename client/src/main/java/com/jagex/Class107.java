@@ -17,7 +17,7 @@ public abstract class Class107 {
 		@Pc(1) Interface75[] local1 = arg0;
 		for (@Pc(3) int local3 = 0; local3 < local1.length; local3++) {
 			@Pc(11) Interface75 local11 = local1[local3];
-			if (arg1 == local11.method36920()) {
+			if (arg1 == local11.getId()) {
 				return local11;
 			}
 		}
@@ -99,18 +99,18 @@ public abstract class Class107 {
 		}
 		@Pc(21) int local21 = local12 >> 14 & 0x3FFF;
 		@Pc(25) int local25 = local12 & 0x3FFF;
-		@Pc(29) Class611 local29 = client.aClass532_1.method30455(1893284929);
+		@Pc(29) Class611 local29 = client.world.method30455(1893284929);
 		local21 -= local29.anInt5623 * 270611681;
 		if (local21 < 0) {
 			local21 = 0;
-		} else if (local21 >= client.aClass532_1.method30459(-1357363239)) {
-			local21 = client.aClass532_1.method30459(1080896010);
+		} else if (local21 >= client.world.method30459(-1357363239)) {
+			local21 = client.world.method30459(1080896010);
 		}
 		local25 -= local29.anInt5624 * -1994307635;
 		if (local25 < 0) {
 			local25 = 0;
-		} else if (local25 >= client.aClass532_1.method30466((short) 128)) {
-			local25 = client.aClass532_1.method30466((short) 128);
+		} else if (local25 >= client.world.method30466((short) 128)) {
+			local25 = client.world.method30466((short) 128);
 		}
 		Class175.anInt3306 = ((local21 << 9) + 256) * -1395810859;
 		Class444.anInt4895 = ((local25 << 9) + 256) * -783237131;

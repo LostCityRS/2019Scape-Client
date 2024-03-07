@@ -28,7 +28,7 @@ public class Class32_Sub12 extends Class32 {
 	}
 
 	@OriginalMember(owner = "client!aon", name = "ai", descriptor = "(ZI)V", line = 31)
-	public void method17072(@OriginalArg(0) boolean arg0, @OriginalArg(1) int arg1) {
+	public void setMembers(@OriginalArg(0) boolean arg0, @OriginalArg(1) int arg1) {
 		((Class44) this.anInterface4_25).method17415(arg0, (byte) 1);
 		super.method17810(420243345);
 	}

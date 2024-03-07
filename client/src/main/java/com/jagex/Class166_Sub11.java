@@ -130,7 +130,7 @@ public class Class166_Sub11 extends Class166 {
 
 	@OriginalMember(owner = "client!amk", name = "il", descriptor = "(IIIIIZZI)V", line = 6283)
 	static final void method15594(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5, @OriginalArg(6) boolean arg6, @OriginalArg(7) int arg7) {
-		if (!arg5 && (arg1 < 512 || arg2 < 512 || arg1 > (client.aClass532_1.method30459(648603660) - 2) * 512 || arg2 > (client.aClass532_1.method30466((short) 128) - 2) * 512)) {
+		if (!arg5 && (arg1 < 512 || arg2 < 512 || arg1 > (client.world.method30459(648603660) - 2) * 512 || arg2 > (client.world.method30466((short) 128) - 2) * 512)) {
 			@Pc(27) float[] local27 = client.aFloatArray93;
 			client.aFloatArray93[1] = -1.0F;
 			local27[0] = -1.0F;

@@ -30,7 +30,7 @@ final class Class372 implements Interface50 {
 	static void method28016(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1) {
 		@Pc(1) int local1 = -10660793;
 		Class319.method27220(arg0, Class166_Sub17.anInt2179 * 1703853389, Class369.anInt4589 * -310709577, Class221.anInt3629 * 1555894759, Class115.anInt972 * 1280805653, local1, -16777216, -1752375831);
-		Class118_Sub1.aClass106_3.method7523(Class74.aClass74_90.method1259(Class106.aClass717_8, (byte) -17), Class166_Sub17.anInt2179 * 1703853389 + 3, Class369.anInt4589 * -310709577 + 14, local1, -1, (byte) 0);
+		Class118_Sub1.aClass106_3.method7523(Class74.aClass74_90.method1259(Class106.lang, (byte) -17), Class166_Sub17.anInt2179 * 1703853389 + 3, Class369.anInt4589 * -310709577 + 14, local1, -1, (byte) 0);
 		@Pc(41) int local41 = Class82.aClass153_1.method14070(966984045);
 		@Pc(45) int local45 = Class82.aClass153_1.method14075(-312530223);
 		@Pc(49) int local49;

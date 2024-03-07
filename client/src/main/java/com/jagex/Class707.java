@@ -16,7 +16,7 @@ public class Class707 implements Interface75 {
 	public static Class106 aClass106_13;
 
 	@OriginalMember(owner = "client!zj", name = "og", descriptor = "J")
-	public static long aLong308;
+	public static long userMembershipTime;
 
 	@OriginalMember(owner = "client!zj", name = "b", descriptor = "[Lclient!cm;")
 	static Class100[] aClass100Array9;
@@ -65,7 +65,7 @@ public class Class707 implements Interface75 {
 
 	@OriginalMember(owner = "client!zj", name = "n", descriptor = "()I", line = 28)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.aByte176;
 	}
 

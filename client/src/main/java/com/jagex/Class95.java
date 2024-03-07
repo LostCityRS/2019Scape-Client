@@ -16,10 +16,10 @@ public class Class95 {
 	public static String aString12;
 
 	@OriginalMember(owner = "client!ae", name = "e", descriptor = "Ljava/math/BigInteger;")
-	static final BigInteger aBigInteger2 = new BigInteger("10001", 16);
+	static final BigInteger LOGIN_RSAE = new BigInteger("10001", 16);
 
 	@OriginalMember(owner = "client!ae", name = "n", descriptor = "Ljava/math/BigInteger;")
-	static final BigInteger aBigInteger4 = new BigInteger("89a1a51902ff0cb294dcafe10f6dc680d56a5ca37d0923826bbf7212e09a3f2fdfb616db51473dd3c38339ad1f859519befafce85f7f5498a1c6e7829707fa053a0bdcab63b7c45cca0b8a66d2800efd43bb27f794360b722c429e36ddc61ec15cd428f7b64e1ecf8648f6ff6d191eaed8e89fc576721e7d668e5455e34ef5a3", 16);
+	static final BigInteger LOGIN_RSAN = new BigInteger("89a1a51902ff0cb294dcafe10f6dc680d56a5ca37d0923826bbf7212e09a3f2fdfb616db51473dd3c38339ad1f859519befafce85f7f5498a1c6e7829707fa053a0bdcab63b7c45cca0b8a66d2800efd43bb27f794360b722c429e36ddc61ec15cd428f7b64e1ecf8648f6ff6d191eaed8e89fc576721e7d668e5455e34ef5a3", 16);
 
 	@OriginalMember(owner = "client!ae", name = "m", descriptor = "Ljava/math/BigInteger;")
 	public static final BigInteger aBigInteger1 = new BigInteger("10001", 16);
@@ -39,9 +39,9 @@ public class Class95 {
 
 	@OriginalMember(owner = "client!ae", name = "w", descriptor = "(I)V", line = 86)
 	public static void method1800(@OriginalArg(0) int arg0) {
-		if (client.anInt3435 * -849002901 == 0) {
-			@Pc(10) Class93_Sub22 local10 = Class102.method2588(Class446.aClass446_63, client.aClass175_1.aClass24_2, (byte) 32);
-			client.aClass175_1.method24356(local10, -1573030867);
+		if (client.state * -849002901 == 0) {
+			@Pc(10) ClientMessage local10 = Class102.createGameMessage(ClientProt.aClientProt_63, client.aClass175_1.clientIsaac, (byte) 32);
+			client.aClass175_1.send(local10, -1573030867);
 			Class676.aClass704_1 = Class704.aClass704_3;
 			Class355.aString184 = null;
 		}

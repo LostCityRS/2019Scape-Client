@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public class Class669 {
 
 	@OriginalMember(owner = "client!xs", name = "ox", descriptor = "I")
-	static int anInt5855;
+	static int userLastLoginAddress;
 
 	@OriginalMember(owner = "client!xs", name = "e", descriptor = "Lclient!xs;")
 	public static final Class669 aClass669_15 = new Class669(0, 2, 2, 1);
@@ -151,7 +151,7 @@ public class Class669 {
 			return;
 		}
 		@Pc(10) boolean local10 = true;
-		@Pc(14) Class611 local14 = client.aClass532_1.method30455(1814705989);
+		@Pc(14) Class611 local14 = client.world.method30455(1814705989);
 		for (@Pc(16) int local16 = 0; local16 < arg0.anIntArray234.length; local16++) {
 			@Pc(23) int local23 = -1;
 			if (arg0.anIntArray234 != null) {

@@ -21,7 +21,7 @@ public abstract class Class25 {
 
 	@OriginalMember(owner = "client!aax", name = "fo", descriptor = "(I)V", line = 2738)
 	public static void method23117(@OriginalArg(0) int arg0) {
-		@Pc(6) Class38 local6 = Class166_Sub18.method15743("2", client.aClass702_4.aString241, true, 199047110);
+		@Pc(6) Class38 local6 = Class166_Sub18.method15743("2", client.modeGame.aString241, true, 199047110);
 		Class596.aClass113_Sub1_1.method7419(local6, (byte) -103);
 	}
 
@@ -35,7 +35,7 @@ public abstract class Class25 {
 
 	@OriginalMember(owner = "client!aax", name = "asv", descriptor = "(Lclient!yf;I)V", line = 13169)
 	static final void method23119(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub34_1, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], (byte) 58);
+		Class51.options.method14363(Class51.options.aClass166_Sub34_1, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], (byte) 58);
 		Class106_Sub1.method5135(1553871106);
 	}
 

@@ -151,13 +151,13 @@ public class Class166_Sub40 extends Class166 {
 			local25 = local25.substring(0, 80);
 		}
 		@Pc(66) Class175 local66 = Class330.method27371(-1643987676);
-		@Pc(72) Class93_Sub22 local72 = Class102.method2588(Class446.aClass446_77, local66.aClass24_2, (byte) 102);
-		local72.aPacketBit_1.p1(Packet.pjstrlen(local14, -1905129874) + 2 + Packet.pjstrlen(local25, -1698593716), (byte) -60);
-		local72.aPacketBit_1.pjstr(local14, 964893669);
-		local72.aPacketBit_1.p1(local39 - 1, (byte) -121);
-		local72.aPacketBit_1.p1(local49, (byte) -66);
-		local72.aPacketBit_1.pjstr(local25, -1781436268);
-		local66.method24356(local72, -1553810752);
+		@Pc(72) ClientMessage local72 = Class102.createGameMessage(ClientProt.aClientProt_77, local66.clientIsaac, (byte) 102);
+		local72.packet.p1(Packet.pjstrlen(local14, -1905129874) + 2 + Packet.pjstrlen(local25, -1698593716), (byte) -60);
+		local72.packet.pjstr(local14, 964893669);
+		local72.packet.p1(local39 - 1, (byte) -121);
+		local72.packet.p1(local49, (byte) -66);
+		local72.packet.pjstr(local25, -1781436268);
+		local66.send(local72, -1553810752);
 	}
 
 	@OriginalMember(owner = "client!anr", name = "kr", descriptor = "([Ljava/lang/String;I)[Ljava/lang/String;", line = 11824)

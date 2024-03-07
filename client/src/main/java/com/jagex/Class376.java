@@ -107,20 +107,20 @@ public class Class376 {
 
 	@OriginalMember(owner = "client!ke", name = "mg", descriptor = "(Ljava/lang/String;B)V", line = 12400)
 	static void method28047(@OriginalArg(0) String arg0, @OriginalArg(1) byte arg1) {
-		client.aString143 = arg0;
+		client.settings = arg0;
 		if (Class343.method27519((byte) 95) == Class555.aClass555_3) {
 			return;
 		}
 		try {
-			@Pc(11) String local11 = Class32_Sub10.anApplet2.getParameter(Class461.aClass461_16.aString211);
-			@Pc(16) String local16 = Class32_Sub10.anApplet2.getParameter(Class461.aClass461_26.aString211);
+			@Pc(11) String local11 = Class32_Sub10.applet.getParameter(Class461.aClass461_16.aString211);
+			@Pc(16) String local16 = Class32_Sub10.applet.getParameter(Class461.aClass461_26.aString211);
 			@Pc(31) String local31 = local11 + "settings=" + arg0 + "; version=1; path=/; domain=" + local16;
 			if (arg0.length() == 0) {
 				local31 = local31 + "; Expires=Thu, 01-Jan-1970 00:00:00 GMT; Max-Age=0";
 			} else {
 				local31 = local31 + "; Expires=" + Class53.method14946(Class305.method26797(1748071629) + 94608000000L) + "; Max-Age=" + 94608000L;
 			}
-			Class70.method1230(Class32_Sub10.anApplet2, "document.cookie=\"" + local31 + "\"", (byte) -79);
+			Class70.method1230(Class32_Sub10.applet, "document.cookie=\"" + local31 + "\"", (byte) -79);
 		} catch (@Pc(78) Throwable local78) {
 		}
 	}

@@ -200,7 +200,7 @@ public class Class523 {
 		Class682.aClass32_Sub1_3.method17817(5, -1312417448);
 		Class692.aClass32_Sub4_3.method17817(5, -1233337353);
 		Class343.aClass32_Sub19_1.method17817(5, -1795925862);
-		client.aClass532_1.method30496(1631537682).method17817(5, -1004848175);
+		client.world.method30496(1631537682).method17817(5, -1004848175);
 		Class162.aClass32_Sub3_2.method17817(5, -2024153195);
 		Class277.aClass32_Sub12_1.method17817(5, -1835658016);
 		Class32.aClass32_Sub17_23.method17817(5, -1151565447);
@@ -246,6 +246,6 @@ public class Class523 {
 
 	@OriginalMember(owner = "client!r", name = "azu", descriptor = "(Lclient!yf;I)V", line = 14145)
 	static final void method30371(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub17_1.method15711(1213114059) ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub17_1.method15711(1213114059) ? 1 : 0;
 	}
 }

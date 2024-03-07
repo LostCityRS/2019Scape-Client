@@ -9438,7 +9438,7 @@ public class Class104_Sub3 extends Class104 {
 
 	@OriginalMember(owner = "client!afg", name = "auc", descriptor = "(Lclient!yf;I)V", line = 13373)
 	static final void method5766(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub41_1.method16387(-1469985575) == 1 ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub41_1.method16387(-1469985575) == 1 ? 1 : 0;
 	}
 
 	@OriginalMember(owner = "client!afg", name = "axd", descriptor = "(Lclient!yf;I)V", line = 13851)

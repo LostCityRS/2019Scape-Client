@@ -286,7 +286,7 @@ public class Class40 implements Interface3 {
 		}
 		local13.p8(local3.nextLong());
 		local13.p6(local3.nextLong());
-		Class314.method26940(local13, 1451401383);
+		Class314.getUid192(local13, 1451401383);
 		local13.p8(local3.nextLong());
 		local13.rsaenc(Class630.aBigInteger7, Class630.aBigInteger8, (byte) -4);
 		local44 = Packet.pjstrlen(arg1, -2064764933);

@@ -220,26 +220,26 @@ public class Class268 implements Interface13, Interface5 {
 		}
 		for (@Pc(27) int local27 = 0; local27 < 100 && Class247.method25915(client.aClass175_2, -305693694); local27++) {
 		}
-		if (client.anInt3435 * -849002901 != 18) {
+		if (client.state * -849002901 != 18) {
 			return;
 		}
 		@Pc(63) int local63;
-		@Pc(52) Class93_Sub22 local52;
+		@Pc(52) ClientMessage local52;
 		while (Class33.method677(-1408990993)) {
-			local52 = Class102.method2588(Class446.aClass446_74, client.aClass175_2.aClass24_2, (byte) 124);
-			local52.aPacketBit_1.p1(0, (byte) -38);
-			local63 = local52.aPacketBit_1.pos * 212851357;
-			Class359.method27787(local52.aPacketBit_1, -1023210575);
-			local52.aPacketBit_1.psize1(local52.aPacketBit_1.pos * 212851357 - local63, (byte) 87);
-			client.aClass175_2.method24356(local52, -1777674683);
+			local52 = Class102.createGameMessage(ClientProt.aClientProt_74, client.aClass175_2.clientIsaac, (byte) 124);
+			local52.packet.p1(0, (byte) -38);
+			local63 = local52.packet.pos * 212851357;
+			Class359.method27787(local52.packet, -1023210575);
+			local52.packet.psize1(local52.packet.pos * 212851357 - local63, (byte) 87);
+			client.aClass175_2.send(local52, -1777674683);
 		}
 		@Pc(129) int local129;
 		if (Class653.aClass678_2 == null) {
 			if (Class305.method26797(1272065378) >= Class442.aLong276 * 2005126307215913191L) {
-				Class653.aClass678_2 = client.aClass698_1.method36684(Class50.aClass28_5.aString4, (byte) 1);
+				Class653.aClass678_2 = client.aClass698_1.method36684(Class50.world.host, (byte) 1);
 			}
 		} else if (Class653.aClass678_2.anInt5886 * 1528915565 != -1) {
-			local52 = Class102.method2588(Class446.aClass446_76, client.aClass175_2.aClass24_2, (byte) 95);
+			local52 = Class102.createGameMessage(ClientProt.aClientProt_76, client.aClass175_2.clientIsaac, (byte) 95);
 			if (Class93_Sub28.aGarbageCollectorMXBean1 == null || !Class93_Sub28.aGarbageCollectorMXBean1.isValid()) {
 				try {
 					@Pc(105) Iterator local105 = ManagementFactory.getGarbageCollectorMXBeans().iterator();
@@ -268,17 +268,17 @@ public class Class268 implements Interface13, Interface5 {
 				client.aLong245 = local134 * -5212376496802918447L;
 				client.aLong246 = local127 * 7217957106487703565L;
 			}
-			local52.aPacketBit_1.p2_alt1(Class653.aClass678_2.anInt5886 * 1528915565, (byte) 42);
-			local52.aPacketBit_1.p1_alt3(client.anInt3407 * 1249273355, (byte) -74);
-			local52.aPacketBit_1.p1(local129, (byte) 3);
-			client.aClass175_2.method24356(local52, -1641840970);
+			local52.packet.p2_alt1(Class653.aClass678_2.anInt5886 * 1528915565, (byte) 42);
+			local52.packet.p1_alt3(client.anInt3407 * 1249273355, (byte) -74);
+			local52.packet.p1(local129, (byte) 3);
+			client.aClass175_2.send(local52, -1641840970);
 			Class653.aClass678_2 = null;
 			Class442.aLong276 = (local127 + 30000L) * 3040038476132704983L;
 		}
 		Class285.method26513(1661842445);
 		Class591.method31696(-1831053519);
 		@Pc(226) Class93_Sub23 local226 = (Class93_Sub23) client.aClass22_45.method428((byte) 93);
-		if (client.aClass532_1.method30481(-922608362) != null) {
+		if (client.world.method30481(-922608362) != null) {
 			if (Class429.anInt4781 * -1453926679 == 5) {
 				Class166_Sub6.method15485((byte) 69);
 			} else if (Class429.anInt4781 * -1453926679 == 6) {
@@ -299,7 +299,7 @@ public class Class268 implements Interface13, Interface5 {
 		if (Class253.method25991((byte) 19)) {
 			Class226.method25606((byte) 21);
 		} else if (Class429.anInt4781 * -1453926679 == 3) {
-			@Pc(278) Class611 local278 = client.aClass532_1.method30455(1948712438);
+			@Pc(278) Class611 local278 = client.world.method30455(1948712438);
 			local285 = local278.anInt5623 * 270611681 << 9;
 			local129 = local278.anInt5624 * -1994307635 << 9;
 			if (Class120.aLong32 * 3284406794071211249L <= 0L) {
@@ -310,16 +310,16 @@ public class Class268 implements Interface13, Interface5 {
 			@Pc(322) int local322 = (int) ((double) local316 * 1.25D);
 			while (local311 > 0.0F) {
 				@Pc(331) float local331 = Math.min(local311, (float) local322);
-				Class65.aClass123_Sub1_2.method8925(local331 / 1000.0F, client.aClass532_1.method30511(-310507201).anIntArrayArrayArray14, client.aClass532_1.method30487(209855820), local285, local129, 1160510591);
+				Class65.aClass123_Sub1_2.method8925(local331 / 1000.0F, client.world.method30511(-310507201).anIntArrayArrayArray14, client.world.method30487(209855820), local285, local129, 1160510591);
 				local311 -= local322;
 			}
 			Class120.aLong32 = Class305.method26797(889115132) * -7990349007261731823L;
 		}
 		Class233.method25733(273180016);
-		if (client.anInt3435 * -849002901 != 18) {
+		if (client.state * -849002901 != 18) {
 			return;
 		}
-		client.aClass532_1.method30494((byte) -85).method32962(client.aClass532_1, (byte) 3);
+		client.world.method30494((byte) -85).method32962(client.world, (byte) 3);
 		Class296.method26608((byte) 47);
 		if (client.anInt3494 * -850888501 > 10) {
 			client.aClass175_2.anInt3298 += -1887848975;
@@ -335,10 +335,10 @@ public class Class268 implements Interface13, Interface5 {
 			Class501.method30168(false, 294148195);
 		} else {
 			if (client.anInt3463 * 1819062465 == 2 && Class661.method32840(client.anInt3462 * 1756332913, -1517051870)) {
-				client.aClass532_1.method30540(new Class537(Class526.aClass526_2, null), 1326237852);
+				client.world.beginRebuild(new Class537(Class526.aClass526_2, null), 1326237852);
 				client.anInt3463 = 389013313;
 			}
-			if (client.anInt3463 * 1819062465 == 1 && client.anInt3435 * -849002901 != 3) {
+			if (client.anInt3463 * 1819062465 == 1 && client.state * -849002901 != 3) {
 				Class249.aClass16_24.method225((byte) 119);
 				client.anInt3463 = 0;
 				client.anInt3556 = client.anInt3485 * 389330083;
@@ -397,11 +397,11 @@ public class Class268 implements Interface13, Interface5 {
 		}
 		Class356.method27708(-1043586684);
 		client.anInt3565 += -782787733;
-		@Pc(622) Class93_Sub22 local622;
+		@Pc(622) ClientMessage local622;
 		if (client.aBoolean635) {
-			local622 = Class102.method2588(Class446.aClass446_10, client.aClass175_2.aClass24_2, (byte) 87);
-			local622.aPacketBit_1.p4_alt3(Class570.anInt5397 * -554382929 << 28 | Class523.anInt5225 * -2075541317 << 14 | Class562.anInt5352 * 1760194437, (byte) -15);
-			client.aClass175_2.method24356(local622, -1920560437);
+			local622 = Class102.createGameMessage(ClientProt.aClientProt_10, client.aClass175_2.clientIsaac, (byte) 87);
+			local622.packet.p4_alt3(Class570.anInt5397 * -554382929 << 28 | Class523.anInt5225 * -2075541317 << 14 | Class562.anInt5352 * 1760194437, (byte) -15);
+			client.aClass175_2.send(local622, -1920560437);
 			client.aBoolean635 = false;
 		}
 		while (true) {
@@ -426,15 +426,15 @@ public class Class268 implements Interface13, Interface5 {
 												Class491.method29981(619345558);
 											}
 											Class593.method31715((byte) 72);
-											if (client.anInt3514 * 2055688893 > 0 && Class112_Sub2_Sub2.aClass158_2.method14313(82, -898822318) && Class112_Sub2_Sub2.aClass158_2.method14313(81, -714138076) && client.anInt3446 * 1897469075 != 0) {
-												local63 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aByte100 - client.anInt3446 * 1897469075;
+											if (client.userStaffModLevel * 2055688893 > 0 && Class112_Sub2_Sub2.aClass158_2.method14313(82, -898822318) && Class112_Sub2_Sub2.aClass158_2.method14313(81, -714138076) && client.anInt3446 * 1897469075 != 0) {
+												local63 = Class520.selfPlayer.aByte100 - client.anInt3446 * 1897469075;
 												if (local63 < 0) {
 													local63 = 0;
 												} else if (local63 > 3) {
 													local63 = 3;
 												}
-												@Pc(855) Class611 local855 = client.aClass532_1.method30455(1691996593);
-												Class684.method33422(local63, local855.anInt5623 * 270611681 + Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anIntArray240[0], local855.anInt5624 * -1994307635 + Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anIntArray239[0], (byte) 118);
+												@Pc(855) Class611 local855 = client.world.method30455(1691996593);
+												Class684.method33422(local63, local855.anInt5623 * 270611681 + Class520.selfPlayer.anIntArray240[0], local855.anInt5624 * -1994307635 + Class520.selfPlayer.anIntArray239[0], (byte) 118);
 											}
 											for (local63 = 0; local63 < 5; local63++) {
 												@Pc(885) int local885 = client.anIntArray318[local63]++;
@@ -446,10 +446,10 @@ public class Class268 implements Interface13, Interface5 {
 											for (@Pc(913) Class149_Sub2 local913 = (Class149_Sub2) client.aClass21_8.method390((short) 15439); local913 != null; local913 = (Class149_Sub2) client.aClass21_8.method392(-1915563430)) {
 												if ((long) (local913.anInt1400 * 147268085) < Class305.method26797(128851323) / 1000L - 5L) {
 													if (local913.aShort77 > 0) {
-														Class227.method25612(5, 0, "", "", "", local913.aString42 + Class74.aClass74_1.method1259(Class106.aClass717_8, (byte) 40), null, -1832767344);
+														Class227.method25612(5, 0, "", "", "", local913.aString42 + Class74.aClass74_1.method1259(Class106.lang, (byte) 40), null, -1832767344);
 													}
 													if (local913.aShort77 == 0) {
-														Class227.method25612(5, 0, "", "", "", local913.aString42 + Class74.aClass74_126.method1259(Class106.aClass717_8, (byte) -22), null, -1919256656);
+														Class227.method25612(5, 0, "", "", "", local913.aString42 + Class74.aClass74_126.method1259(Class106.lang, (byte) -22), null, -1919256656);
 													}
 													local913.method23766(-719770481);
 												}
@@ -511,15 +511,15 @@ public class Class268 implements Interface13, Interface5 {
 											}
 											client.aClass175_2.anInt3300 += -1073519993;
 											if (client.aClass175_2.anInt3300 * -1270889673 > 50) {
-												local622 = Class102.method2588(Class446.aClass446_105, client.aClass175_2.aClass24_2, (byte) 57);
-												client.aClass175_2.method24356(local622, -1516030500);
+												local622 = Class102.createGameMessage(ClientProt.aClientProt_105, client.aClass175_2.clientIsaac, (byte) 57);
+												client.aClass175_2.send(local622, -1516030500);
 											}
 											if (client.aBoolean634) {
 												Class77.method1301(-802518606);
 												client.aBoolean634 = false;
 											}
 											try {
-												client.aClass175_2.method24352((byte) 34);
+												client.aClass175_2.flush((byte) 34);
 											} catch (@Pc(1174) IOException local1174) {
 												Class565.method31252(-2066387364);
 											}

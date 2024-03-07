@@ -788,7 +788,7 @@ public class Class672 {
 	@OriginalMember(owner = "client!xv", name = "k", descriptor = "(Lclient!alw;Lclient!xu;B)V", line = 204)
 	public void method33058(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class671 arg1, @OriginalArg(2) byte arg2) {
 		@Pc(3) int local3 = arg0.g1((short) 16384);
-		if (Class51.aClass93_Sub36_1.aClass166_Sub19_1.method15759(-1521019499) == 1 && Class694.aClass104_14.method20527() > 0) {
+		if (Class51.options.aClass166_Sub19_1.method15759(-1521019499) == 1 && Class694.aClass104_14.method20527() > 0) {
 			if ((local3 & Class692.aClass692_8.anInt5935 * -457319509) == 0) {
 				this.anInt5862 = -322603459;
 			} else {
@@ -853,7 +853,7 @@ public class Class672 {
 	@OriginalMember(owner = "client!xv", name = "a", descriptor = "(Lclient!alw;Lclient!xu;)V", line = 204)
 	public void method33059(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class671 arg1) {
 		@Pc(3) int local3 = arg0.g1((short) 16384);
-		if (Class51.aClass93_Sub36_1.aClass166_Sub19_1.method15759(-1653118437) == 1 && Class694.aClass104_14.method20527() > 0) {
+		if (Class51.options.aClass166_Sub19_1.method15759(-1653118437) == 1 && Class694.aClass104_14.method20527() > 0) {
 			if ((local3 & Class692.aClass692_8.anInt5935 * -457319509) == 0) {
 				this.anInt5862 = -322603459;
 			} else {
@@ -918,7 +918,7 @@ public class Class672 {
 	@OriginalMember(owner = "client!xv", name = "g", descriptor = "(Lclient!alw;Lclient!xu;)V", line = 204)
 	public void method33060(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class671 arg1) {
 		@Pc(3) int local3 = arg0.g1((short) 16384);
-		if (Class51.aClass93_Sub36_1.aClass166_Sub19_1.method15759(-1451595330) == 1 && Class694.aClass104_14.method20527() > 0) {
+		if (Class51.options.aClass166_Sub19_1.method15759(-1451595330) == 1 && Class694.aClass104_14.method20527() > 0) {
 			if ((local3 & Class692.aClass692_8.anInt5935 * -457319509) == 0) {
 				this.anInt5862 = -322603459;
 			} else {
@@ -1055,7 +1055,7 @@ public class Class672 {
 
 	@OriginalMember(owner = "client!xv", name = "p", descriptor = "(Lclient!xu;Lclient!yj;I)V", line = 268)
 	void method33072(@OriginalArg(0) Class671 arg0, @OriginalArg(1) Class684 arg1, @OriginalArg(2) int arg2) {
-		if (Class51.aClass93_Sub36_1.aClass166_Sub19_1.method15759(-1571965219) == 1 && Class694.aClass104_14.method20527() > 0) {
+		if (Class51.options.aClass166_Sub19_1.method15759(-1571965219) == 1 && Class694.aClass104_14.method20527() > 0) {
 			if (arg1.method33362(-2044341700) != -1) {
 				this.anInt5862 = arg1.method33362(-700746591) * -700806717;
 			}
@@ -1115,7 +1115,7 @@ public class Class672 {
 
 	@OriginalMember(owner = "client!xv", name = "al", descriptor = "(Lclient!xu;Lclient!yj;)V", line = 268)
 	void method33073(@OriginalArg(0) Class671 arg0, @OriginalArg(1) Class684 arg1) {
-		if (Class51.aClass93_Sub36_1.aClass166_Sub19_1.method15759(-1490421126) == 1 && Class694.aClass104_14.method20527() > 0) {
+		if (Class51.options.aClass166_Sub19_1.method15759(-1490421126) == 1 && Class694.aClass104_14.method20527() > 0) {
 			if (arg1.method33362(-1028581434) != -1) {
 				this.anInt5862 = arg1.method33362(-1336241233) * -700806717;
 			}
@@ -1175,7 +1175,7 @@ public class Class672 {
 
 	@OriginalMember(owner = "client!xv", name = "ac", descriptor = "(Lclient!xu;Lclient!yj;)V", line = 268)
 	void method33074(@OriginalArg(0) Class671 arg0, @OriginalArg(1) Class684 arg1) {
-		if (Class51.aClass93_Sub36_1.aClass166_Sub19_1.method15759(-951713330) == 1 && Class694.aClass104_14.method20527() > 0) {
+		if (Class51.options.aClass166_Sub19_1.method15759(-951713330) == 1 && Class694.aClass104_14.method20527() > 0) {
 			if (arg1.method33362(1415940018) != -1) {
 				this.anInt5862 = arg1.method33362(1821462312) * -700806717;
 			}
@@ -1283,7 +1283,7 @@ public class Class672 {
 
 	@OriginalMember(owner = "client!xv", name = "awa", descriptor = "(Lclient!yf;I)V", line = 13723)
 	static final void method33083(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		Class667.method32907(-574625113);
+		Class667.autoWorld(-574625113);
 	}
 
 	@OriginalMember(owner = "client!xv", name = "azo", descriptor = "(Lclient!yf;I)V", line = 14229)

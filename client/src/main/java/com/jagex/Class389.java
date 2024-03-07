@@ -56,8 +56,8 @@ public class Class389 implements Interface33 {
 		if (!arg0) {
 			return;
 		}
-		@Pc(16) int local16 = Class553.anInt3408 * -1378711501 > client.anInt3511 * 2040043391 ? Class553.anInt3408 * -1378711501 : client.anInt3511 * 2040043391;
-		@Pc(31) int local31 = Class553.anInt3416 * 2091353777 > client.anInt3512 * -817449061 ? Class553.anInt3416 * 2091353777 : client.anInt3512 * -817449061;
+		@Pc(16) int local16 = Class553.width * -1378711501 > client.anInt3511 * 2040043391 ? Class553.width * -1378711501 : client.anInt3511 * 2040043391;
+		@Pc(31) int local31 = Class553.height * 2091353777 > client.anInt3512 * -817449061 ? Class553.height * 2091353777 : client.anInt3512 * -817449061;
 		@Pc(35) int local35 = this.aClass100_43.method18160();
 		@Pc(39) int local39 = this.aClass100_43.method18193();
 		@Pc(41) int local41 = 0;
@@ -79,8 +79,8 @@ public class Class389 implements Interface33 {
 		if (!arg0) {
 			return;
 		}
-		@Pc(16) int local16 = Class553.anInt3408 * -1378711501 > client.anInt3511 * 2040043391 ? Class553.anInt3408 * -1378711501 : client.anInt3511 * 2040043391;
-		@Pc(31) int local31 = Class553.anInt3416 * 2091353777 > client.anInt3512 * -817449061 ? Class553.anInt3416 * 2091353777 : client.anInt3512 * -817449061;
+		@Pc(16) int local16 = Class553.width * -1378711501 > client.anInt3511 * 2040043391 ? Class553.width * -1378711501 : client.anInt3511 * 2040043391;
+		@Pc(31) int local31 = Class553.height * 2091353777 > client.anInt3512 * -817449061 ? Class553.height * 2091353777 : client.anInt3512 * -817449061;
 		@Pc(35) int local35 = this.aClass100_43.method18160();
 		@Pc(39) int local39 = this.aClass100_43.method18193();
 		@Pc(41) int local41 = 0;
@@ -102,8 +102,8 @@ public class Class389 implements Interface33 {
 		if (!arg0) {
 			return;
 		}
-		@Pc(16) int local16 = Class553.anInt3408 * -1378711501 > client.anInt3511 * 2040043391 ? Class553.anInt3408 * -1378711501 : client.anInt3511 * 2040043391;
-		@Pc(31) int local31 = Class553.anInt3416 * 2091353777 > client.anInt3512 * -817449061 ? Class553.anInt3416 * 2091353777 : client.anInt3512 * -817449061;
+		@Pc(16) int local16 = Class553.width * -1378711501 > client.anInt3511 * 2040043391 ? Class553.width * -1378711501 : client.anInt3511 * 2040043391;
+		@Pc(31) int local31 = Class553.height * 2091353777 > client.anInt3512 * -817449061 ? Class553.height * 2091353777 : client.anInt3512 * -817449061;
 		@Pc(35) int local35 = this.aClass100_43.method18160();
 		@Pc(39) int local39 = this.aClass100_43.method18193();
 		@Pc(41) int local41 = 0;
@@ -172,7 +172,7 @@ public class Class389 implements Interface33 {
 	@OriginalMember(owner = "client!ku", name = "afc", descriptor = "(Lclient!yf;B)V", line = 10519)
 	static final void method28270(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
 		arg0.anInt5888 -= 1915061582;
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class488.method29820((String) arg0.anObjectArray45[arg0.anInt5888 * 587908375], (String) arg0.anObjectArray45[arg0.anInt5888 * 587908375 + 1], Class106.aClass717_8, -1678452234);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class488.method29820((String) arg0.anObjectArray45[arg0.anInt5888 * 587908375], (String) arg0.anObjectArray45[arg0.anInt5888 * 587908375 + 1], Class106.lang, -1678452234);
 	}
 
 	@OriginalMember(owner = "client!ku", name = "afw", descriptor = "(Lclient!yf;I)V", line = 10553)

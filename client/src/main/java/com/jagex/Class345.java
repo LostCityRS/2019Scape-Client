@@ -27,7 +27,7 @@ public class Class345 implements Interface75 {
 
 	@OriginalMember(owner = "client!ip", name = "n", descriptor = "()I", line = 49)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt4191 * 1395301761;
 	}
 
@@ -65,6 +65,6 @@ public class Class345 implements Interface75 {
 
 	@OriginalMember(owner = "client!ip", name = "azs", descriptor = "(Lclient!yf;I)V", line = 14169)
 	static final void method27564(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub46_1.method16533(-1996816178) ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub46_1.method16533(-1996816178) ? 1 : 0;
 	}
 }

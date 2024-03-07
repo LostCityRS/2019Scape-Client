@@ -368,64 +368,64 @@ public class Class493 {
 
 	@OriginalMember(owner = "client!pu", name = "ji", descriptor = "(Lclient!ax;Lclient!hf;IIII)V", line = 10239)
 	static void method30012(@OriginalArg(0) Class175 arg0, @OriginalArg(1) Class312 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
-		@Pc(8) Class93_Sub22 local8;
+		@Pc(8) ClientMessage local8;
 		if (arg2 == 1) {
-			local8 = Class102.method2588(Class446.aClass446_113, arg0.aClass24_2, (byte) 101);
+			local8 = Class102.createGameMessage(ClientProt.aClientProt_113, arg0.clientIsaac, (byte) 101);
 			Class484.method29789(local8, arg3, arg4, arg1.anInt4045 * 307668159, 1067969079);
-			arg0.method24356(local8, -2029461381);
+			arg0.send(local8, -2029461381);
 		}
 		if (arg2 == 2) {
-			local8 = Class102.method2588(Class446.aClass446_49, arg0.aClass24_2, (byte) 100);
+			local8 = Class102.createGameMessage(ClientProt.aClientProt_49, arg0.clientIsaac, (byte) 100);
 			Class484.method29789(local8, arg3, arg4, arg1.anInt4045 * 307668159, 1067969079);
-			arg0.method24356(local8, -1450275775);
+			arg0.send(local8, -1450275775);
 		}
 		if (arg2 == 3) {
-			local8 = Class102.method2588(Class446.aClass446_88, arg0.aClass24_2, (byte) 20);
+			local8 = Class102.createGameMessage(ClientProt.aClientProt_88, arg0.clientIsaac, (byte) 20);
 			Class484.method29789(local8, arg3, arg4, arg1.anInt4045 * 307668159, 1067969079);
-			arg0.method24356(local8, -1680844145);
+			arg0.send(local8, -1680844145);
 		}
 		if (arg2 == 4) {
-			local8 = Class102.method2588(Class446.aClass446_33, arg0.aClass24_2, (byte) 106);
+			local8 = Class102.createGameMessage(ClientProt.aClientProt_33, arg0.clientIsaac, (byte) 106);
 			Class484.method29789(local8, arg3, arg4, arg1.anInt4045 * 307668159, 1067969079);
-			arg0.method24356(local8, -2017482437);
+			arg0.send(local8, -2017482437);
 		}
 		if (arg2 == 5) {
-			local8 = Class102.method2588(Class446.aClass446_72, arg0.aClass24_2, (byte) 74);
+			local8 = Class102.createGameMessage(ClientProt.aClientProt_72, arg0.clientIsaac, (byte) 74);
 			Class484.method29789(local8, arg3, arg4, arg1.anInt4045 * 307668159, 1067969079);
-			arg0.method24356(local8, -1709604427);
+			arg0.send(local8, -1709604427);
 		}
 		if (arg2 == 6) {
-			local8 = Class102.method2588(Class446.aClass446_85, arg0.aClass24_2, (byte) 88);
+			local8 = Class102.createGameMessage(ClientProt.aClientProt_85, arg0.clientIsaac, (byte) 88);
 			Class484.method29789(local8, arg3, arg4, arg1.anInt4045 * 307668159, 1067969079);
-			arg0.method24356(local8, -1855017957);
+			arg0.send(local8, -1855017957);
 		}
 		if (arg2 == 7) {
-			local8 = Class102.method2588(Class446.aClass446_65, arg0.aClass24_2, (byte) 33);
+			local8 = Class102.createGameMessage(ClientProt.aClientProt_65, arg0.clientIsaac, (byte) 33);
 			Class484.method29789(local8, arg3, arg4, arg1.anInt4045 * 307668159, 1067969079);
-			arg0.method24356(local8, -1745831216);
+			arg0.send(local8, -1745831216);
 		}
 		if (arg2 == 8) {
-			local8 = Class102.method2588(Class446.aClass446_52, arg0.aClass24_2, (byte) 89);
+			local8 = Class102.createGameMessage(ClientProt.aClientProt_52, arg0.clientIsaac, (byte) 89);
 			Class484.method29789(local8, arg3, arg4, arg1.anInt4045 * 307668159, 1067969079);
-			arg0.method24356(local8, -1504112130);
+			arg0.send(local8, -1504112130);
 		}
 		if (arg2 == 9) {
-			local8 = Class102.method2588(Class446.aClass446_68, arg0.aClass24_2, (byte) 77);
+			local8 = Class102.createGameMessage(ClientProt.aClientProt_68, arg0.clientIsaac, (byte) 77);
 			Class484.method29789(local8, arg3, arg4, arg1.anInt4045 * 307668159, 1067969079);
-			arg0.method24356(local8, -1439293808);
+			arg0.send(local8, -1439293808);
 		}
 		if (arg2 == 10) {
-			local8 = Class102.method2588(Class446.aClass446_69, arg0.aClass24_2, (byte) 111);
+			local8 = Class102.createGameMessage(ClientProt.aClientProt_69, arg0.clientIsaac, (byte) 111);
 			Class484.method29789(local8, arg3, arg4, arg1.anInt4045 * 307668159, 1067969079);
-			arg0.method24356(local8, -1730602101);
+			arg0.send(local8, -1730602101);
 		}
 	}
 
 	@OriginalMember(owner = "client!pu", name = "arq", descriptor = "(Lclient!yf;I)V", line = 12992)
 	static final void method30013(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub7_1, local12, (byte) 88);
-		client.aClass532_1.method30533((byte) 0);
+		Class51.options.method14363(Class51.options.aClass166_Sub7_1, local12, (byte) 88);
+		client.world.method30533((byte) 0);
 		Class106_Sub1.method5135(14271387);
 		client.aBoolean601 = false;
 	}

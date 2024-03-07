@@ -73,6 +73,6 @@ public class Class130_Sub2 extends Class130 {
 
 	@OriginalMember(owner = "client!ahq", name = "arf", descriptor = "(Lclient!yf;B)V", line = 12973)
 	static final void method10030(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class411.anInt4754 * 1176571707;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class411.disallowTrigger * 1176571707;
 	}
 }

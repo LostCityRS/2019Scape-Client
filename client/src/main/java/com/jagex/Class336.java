@@ -2130,6 +2130,6 @@ public class Class336 implements Interface13 {
 
 	@OriginalMember(owner = "client!if", name = "aqm", descriptor = "(Lclient!yf;B)V", line = 12790)
 	static final void method27450(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class411.anInt4755 * 1373414505;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class411.disallowResult * 1373414505;
 	}
 }

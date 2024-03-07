@@ -43,9 +43,9 @@ public class Class576 {
 			throw new RuntimeException();
 		}
 		@Pc(66) Class39 local66 = (Class39) Class19.aClass32_Sub7_5.method18261(local33, 1454891541);
-		if (local66.aClass519_2.method36920() != local23) {
+		if (local66.aClass519_2.getId() != local23) {
 			throw new RuntimeException();
-		} else if (local66.aClass519_1.method36920() == local13) {
+		} else if (local66.aClass519_1.getId() == local13) {
 			@Pc(90) int[] local90 = local66.method764(local43, -1497248091);
 			if (local53 < 0 || local90 == null || local90.length <= local53) {
 				throw new RuntimeException();

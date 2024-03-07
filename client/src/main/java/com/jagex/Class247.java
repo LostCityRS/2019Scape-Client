@@ -92,7 +92,7 @@ class Class247 implements Comparator {
 		try {
 			return Class696.readLobbyPackets(arg0, (byte) -8);
 		} catch (@Pc(4) IOException local4) {
-			if (client.anInt3435 * -849002901 == 15) {
+			if (client.state * -849002901 == 15) {
 				arg0.method24368((byte) 95);
 				return false;
 			} else {
@@ -100,13 +100,13 @@ class Class247 implements Comparator {
 				return true;
 			}
 		} catch (@Pc(19) Exception local19) {
-			@Pc(23) Class611 local23 = client.aClass532_1.method30455(1828891152);
-			@Pc(99) String local99 = (arg0.aClass453_2 == null ? -1 : arg0.aClass453_2.opcode * 1430738181) + Class430.aString204 + (arg0.aClass453_4 == null ? -1 : arg0.aClass453_4.opcode * 1430738181) + Class430.aString204 + (arg0.aClass453_3 == null ? -1 : arg0.aClass453_3.opcode * 1430738181) + " " + arg0.length * 2010044839 + Class430.aString204 + (local23.anInt5623 * 270611681 + Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anIntArray240[0]) + Class430.aString204 + (local23.anInt5624 * -1994307635 + Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anIntArray239[0]) + " ";
+			@Pc(23) Class611 local23 = client.world.method30455(1828891152);
+			@Pc(99) String local99 = (arg0.serverPacketType == null ? -1 : arg0.serverPacketType.opcode * 1430738181) + Class430.aString204 + (arg0.prevServerPacketType2 == null ? -1 : arg0.prevServerPacketType2.opcode * 1430738181) + Class430.aString204 + (arg0.prevServerPacketType3 == null ? -1 : arg0.prevServerPacketType3.opcode * 1430738181) + " " + arg0.length * 2010044839 + Class430.aString204 + (local23.anInt5623 * 270611681 + Class520.selfPlayer.anIntArray240[0]) + Class430.aString204 + (local23.anInt5624 * -1994307635 + Class520.selfPlayer.anIntArray239[0]) + " ";
 			for (@Pc(101) int local101 = 0; local101 < arg0.length * 2010044839 && local101 < 50; local101++) {
-				local99 = local99 + arg0.aPacketBit_2.data[local101] + Class430.aString204;
+				local99 = local99 + arg0.packet.data[local101] + Class430.aString204;
 			}
 			Class646.method32608(local99, local19, 1224473706);
-			Class642.method32520(false, (short) 17862);
+			Class642.logout(false, (short) 17862);
 			return true;
 		}
 	}
@@ -135,6 +135,6 @@ class Class247 implements Comparator {
 
 	@OriginalMember(owner = "client!el", name = "auj", descriptor = "(Lclient!yf;B)V", line = 13345)
 	static final void method25919(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub35_2.method16226(-374662973);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub35_2.method16226(-374662973);
 	}
 }

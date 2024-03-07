@@ -214,8 +214,8 @@ public final class Class666 {
 
 	@OriginalMember(owner = "client!xo", name = "o", descriptor = "(Ljava/lang/String;Ljava/lang/String;I)Z", line = 220)
 	static boolean method32902(@OriginalArg(0) String arg0, @OriginalArg(1) String arg1, @OriginalArg(2) int arg2) {
-		Class411.anInt4714 = -1680223351;
-		Class411.aClass175_3 = client.aClass175_2;
+		Class411.target = -1680223351;
+		Class411.connection = client.aClass175_2;
 		return Class507.method30229(false, false, arg0, arg1, -1L);
 	}
 
@@ -239,6 +239,6 @@ public final class Class666 {
 	@OriginalMember(owner = "client!xo", name = "bai", descriptor = "(Lclient!yf;B)V", line = 14330)
 	static final void method32905(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub29_1.method16546(local12, -1461159917);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub29_1.method16546(local12, -1461159917);
 	}
 }

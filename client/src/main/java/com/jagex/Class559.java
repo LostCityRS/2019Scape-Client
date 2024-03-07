@@ -26,7 +26,7 @@ public class Class559 {
 	@OriginalMember(owner = "client!sq", name = "d", descriptor = "(Lclient!yf;I)V", line = 66)
 	static void method31114(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(13) String local13 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class440.method28848(local13, 1716106050);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = ZoneProt.method28848(local13, 1716106050);
 	}
 
 	@OriginalMember(owner = "client!sq", name = "<init>", descriptor = "(IIIILjava/lang/String;)V", line = 856)
@@ -132,7 +132,7 @@ public class Class559 {
 
 	@OriginalMember(owner = "client!sq", name = "vs", descriptor = "(Lclient!yf;I)V", line = 8815)
 	static final void method31129(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_108, client.aClass175_2.aClass24_2, (byte) 57);
-		client.aClass175_2.method24356(local5, -2137094028);
+		@Pc(5) ClientMessage local5 = Class102.createGameMessage(ClientProt.aClientProt_108, client.aClass175_2.clientIsaac, (byte) 57);
+		client.aClass175_2.send(local5, -2137094028);
 	}
 }

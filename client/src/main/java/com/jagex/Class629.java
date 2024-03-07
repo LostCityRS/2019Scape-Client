@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public class Class629 {
 
 	@OriginalMember(owner = "client!vz", name = "af", descriptor = "I")
-	static int anInt5710;
+	static int urlLength;
 
 	@OriginalMember(owner = "client!vz", name = "m", descriptor = "Lclient!oe;")
 	public Class458 aClass458_90;

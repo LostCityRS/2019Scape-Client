@@ -123,7 +123,7 @@ public class Class166_Sub39 extends Class166 {
 	}
 
 	@OriginalMember(owner = "client!anq", name = "y", descriptor = "(I)I", line = 43)
-	public int method16345(@OriginalArg(0) int arg0) {
+	public int getValue(@OriginalArg(0) int arg0) {
 		return this.anInt2379 * 960141055;
 	}
 

@@ -62,7 +62,7 @@ public class Class149_Sub1 extends Class149 {
 
 	@OriginalMember(owner = "client!ajc", name = "d", descriptor = "(Lclient!st;S)Z", line = 339)
 	static boolean method11777(@OriginalArg(0) Interface61 arg0, @OriginalArg(1) short arg1) {
-		@Pc(9) Class610 local9 = (Class610) client.aClass532_1.method30496(912481518).method18261(arg0.method13423(-1037211373), 1840718394);
+		@Pc(9) Class610 local9 = (Class610) client.world.method30496(912481518).method18261(arg0.method13423(-1037211373), 1840718394);
 		if (local9.anInt5601 * -303013723 == -1) {
 			return true;
 		} else {

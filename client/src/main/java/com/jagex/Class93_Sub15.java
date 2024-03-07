@@ -45,7 +45,7 @@ public class Class93_Sub15 extends Class93 {
 		if (local5 == null) {
 			local5 = "";
 		}
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local2.method36920();
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local2.getId();
 		arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = local5;
 	}
 }

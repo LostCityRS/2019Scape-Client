@@ -85,27 +85,27 @@ public class Class108_Sub1 extends Class108 {
 		@Pc(5) int[] local5 = Class174.anIntArray278;
 		for (@Pc(7) int local7 = 0; local7 < local3; local7++) {
 			@Pc(16) Class132_Sub1_Sub1_Sub1_Sub2 local16 = client.aClass132_Sub1_Sub1_Sub1_Sub2Array1[local5[local7]];
-			if (local16 != null && local16.method20084(1688699220) && !local16.aClass659_1.method32801(-125905710) && local16 != Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3 && local16.aByte100 == Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aByte100) {
+			if (local16 != null && local16.method20084(1688699220) && !local16.aClass659_1.method32801(-125905710) && local16 != Class520.selfPlayer && local16.aByte100 == Class520.selfPlayer.aByte100) {
 				@Pc(39) Class472 local39 = local16.method24220().aClass472_61;
 				@Pc(49) int local49 = (int) local39.aFloat317 / 128 - arg0 / 128;
 				@Pc(59) int local59 = (int) local39.aFloat319 / 128 - arg1 / 128;
 				@Pc(61) boolean local61 = false;
 				for (@Pc(63) int local63 = 0; local63 < client.anInt3444 * 862418793; local63++) {
 					@Pc(72) Class281 local72 = client.aClass281Array1[local63];
-					if (local16.aString82.equals(local72.aString153) && local72.anInt3894 * 1928339871 != 0) {
+					if (local16.name2.equals(local72.aString153) && local72.anInt3894 * 1928339871 != 0) {
 						local61 = true;
 						break;
 					}
 				}
 				@Pc(90) boolean local90 = false;
 				for (@Pc(92) int local92 = 0; local92 < Class623.anInt5682 * 1581594575; local92++) {
-					if (local16.aString82.equals(Class93_Sub1_Sub2.aClass170Array1[local92].aString91)) {
+					if (local16.name2.equals(Class93_Sub1_Sub2.aClass170Array1[local92].aString91)) {
 						local90 = true;
 						break;
 					}
 				}
 				@Pc(112) boolean local112 = false;
-				if (Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anInt2802 * -1582304709 != 0 && local16.anInt2802 * -1582304709 != 0 && local16.anInt2802 * -1582304709 == Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anInt2802 * -1582304709) {
+				if (Class520.selfPlayer.anInt2802 * -1582304709 != 0 && local16.anInt2802 * -1582304709 != 0 && local16.anInt2802 * -1582304709 == Class520.selfPlayer.anInt2802 * -1582304709) {
 					local112 = true;
 				}
 				if (local16.aClass658_1 != null && local16.aClass658_1.anInt5817 * 1405397749 != -1 && ((Class336) Class162.aClass32_Sub3_2.method18261(local16.aClass658_1.anInt5817 * 1405397749, 800819127)).aBoolean713) {

@@ -122,7 +122,7 @@ public class Class615 implements Interface75 {
 
 	@OriginalMember(owner = "client!vj", name = "n", descriptor = "()I", line = 44)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt5628 * 948246811;
 	}
 
@@ -204,7 +204,7 @@ public class Class615 implements Interface75 {
 	@OriginalMember(owner = "client!vj", name = "asf", descriptor = "(Lclient!yf;B)V", line = 13113)
 	static final void method32088(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub6_1, local12, (byte) 123);
+		Class51.options.method14363(Class51.options.aClass166_Sub6_1, local12, (byte) 123);
 		Class106_Sub1.method5135(1995942857);
 		client.aBoolean601 = false;
 	}

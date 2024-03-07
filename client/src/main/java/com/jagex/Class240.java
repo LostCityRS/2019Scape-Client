@@ -626,7 +626,7 @@ public final class Class240 {
 	@OriginalMember(owner = "client!eb", name = "aaw", descriptor = "(Lclient!yf;I)V", line = 9770)
 	static final void method25873(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		if (Class93_Sub1_Sub2.aClass170Array1 == null || local12 >= Class623.anInt5682 * 1581594575 || !Class93_Sub1_Sub2.aClass170Array1[local12].aString91.equalsIgnoreCase(Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aString82)) {
+		if (Class93_Sub1_Sub2.aClass170Array1 == null || local12 >= Class623.anInt5682 * 1581594575 || !Class93_Sub1_Sub2.aClass170Array1[local12].aString91.equalsIgnoreCase(Class520.selfPlayer.name2)) {
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = 0;
 		} else {
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = 1;

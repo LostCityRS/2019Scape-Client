@@ -16,25 +16,25 @@ public class Class717 implements Interface75 {
 	public static client aClient1;
 
 	@OriginalMember(owner = "client!zt", name = "e", descriptor = "Lclient!zt;")
-	public static final Class717 aClass717_15 = new Class717("EN", "en", "English", Class693.aClass693_8, 0, "GB");
+	public static final Class717 aClass717_15 = new Class717("EN", "en", "English", ModeWhere.aModeWhere_8, 0, "GB");
 
 	@OriginalMember(owner = "client!zt", name = "n", descriptor = "Lclient!zt;")
-	public static final Class717 aClass717_16 = new Class717("DE", "de", "German", Class693.aClass693_8, 1, "DE");
+	public static final Class717 aClass717_16 = new Class717("DE", "de", "German", ModeWhere.aModeWhere_8, 1, "DE");
 
 	@OriginalMember(owner = "client!zt", name = "m", descriptor = "Lclient!zt;")
-	public static final Class717 aClass717_11 = new Class717("FR", "fr", "French", Class693.aClass693_8, 2, "FR");
+	public static final Class717 aClass717_11 = new Class717("FR", "fr", "French", ModeWhere.aModeWhere_8, 2, "FR");
 
 	@OriginalMember(owner = "client!zt", name = "k", descriptor = "Lclient!zt;")
-	public static final Class717 aClass717_13 = new Class717("PT", "pt", "Portuguese", Class693.aClass693_8, 3, "BR");
+	public static final Class717 aClass717_13 = new Class717("PT", "pt", "Portuguese", ModeWhere.aModeWhere_8, 3, "BR");
 
 	@OriginalMember(owner = "client!zt", name = "f", descriptor = "Lclient!zt;")
-	static final Class717 aClass717_14 = new Class717("NL", "nl", "Dutch", Class693.aClass693_3, 4, "NL");
+	static final Class717 aClass717_14 = new Class717("NL", "nl", "Dutch", ModeWhere.aModeWhere_3, 4, "NL");
 
 	@OriginalMember(owner = "client!zt", name = "w", descriptor = "Lclient!zt;")
-	public static final Class717 aClass717_12 = new Class717("ES", "es", "Spanish", Class693.aClass693_3, 5, "ES");
+	public static final Class717 aClass717_12 = new Class717("ES", "es", "Spanish", ModeWhere.aModeWhere_3, 5, "ES");
 
 	@OriginalMember(owner = "client!zt", name = "l", descriptor = "Lclient!zt;")
-	public static final Class717 aClass717_10 = new Class717("ES_MX", "es-mx", "Spanish (Latin American)", Class693.aClass693_8, 6, "MX");
+	public static final Class717 aClass717_10 = new Class717("ES_MX", "es-mx", "Spanish (Latin American)", ModeWhere.aModeWhere_8, 6, "MX");
 
 	@OriginalMember(owner = "client!zt", name = "r", descriptor = "[Lclient!zt;")
 	static final Class717[] aClass717Array1;
@@ -75,7 +75,7 @@ public class Class717 implements Interface75 {
 	}
 
 	@OriginalMember(owner = "client!zt", name = "<init>", descriptor = "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lclient!yu;ILjava/lang/String;)V", line = 45)
-	Class717(@OriginalArg(0) String arg0, @OriginalArg(1) String arg1, @OriginalArg(2) String arg2, @OriginalArg(3) Class693 arg3, @OriginalArg(4) int arg4, @OriginalArg(5) String arg5) {
+	Class717(@OriginalArg(0) String arg0, @OriginalArg(1) String arg1, @OriginalArg(2) String arg2, @OriginalArg(3) ModeWhere arg3, @OriginalArg(4) int arg4, @OriginalArg(5) String arg5) {
 		this.aString245 = arg0;
 		this.aString244 = arg1;
 		this.anInt5963 = arg4 * -1170311477;
@@ -118,7 +118,7 @@ public class Class717 implements Interface75 {
 
 	@OriginalMember(owner = "client!zt", name = "n", descriptor = "()I", line = 62)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt5963 * -1156137245;
 	}
 
@@ -205,7 +205,7 @@ public class Class717 implements Interface75 {
 	@OriginalMember(owner = "client!zt", name = "fu", descriptor = "(IIIZB)V", line = 2253)
 	public static void method36895(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) boolean arg3, @OriginalArg(4) byte arg4) {
 		client.aLong244 = 0L;
-		@Pc(4) int local4 = Class255.method26008(1589990040);
+		@Pc(4) int local4 = Class255.getWindowMode(1589990040);
 		if (arg0 == 3 || local4 == 3) {
 			arg3 = true;
 		}

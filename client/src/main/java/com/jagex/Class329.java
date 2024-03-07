@@ -168,10 +168,10 @@ public class Class329 {
 
 	@OriginalMember(owner = "client!hz", name = "al", descriptor = "(I)V", line = 1050)
 	static void method27348(@OriginalArg(0) int arg0) {
-		if (client.anInt3435 * -849002901 == 19) {
+		if (client.state * -849002901 == 19) {
 			Class634.method32319(813052467);
 		}
-		client.aClass175_1.method24367((byte) 126);
+		client.aClass175_1.close((byte) 126);
 		Class63.method1162((byte) 15);
 		Class20.aBoolean10 = true;
 		Class118.method8409(-1359375999);
@@ -190,7 +190,7 @@ public class Class329 {
 		for (local17 = 0; local17 < 2048; local17++) {
 			client.aClass132_Sub1_Sub1_Sub1_Sub2Array1[local17] = null;
 		}
-		Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3 = null;
+		Class520.selfPlayer = null;
 		client.anInt3540 = 0;
 		client.anInt3488 = 0;
 		client.aClass16_18.method225((byte) 116);
@@ -241,12 +241,12 @@ public class Class329 {
 				client.aClass531ArrayArray1[local17][local240] = new Class531();
 			}
 		}
-		client.aClass532_1.method30494((byte) -54).method33015(-1404774556);
+		client.world.method30494((byte) -54).method33015(-1404774556);
 		client.aBoolean619 = true;
 		Class610.aShortArray147 = Class336.aShortArray116 = Class47.aShortArray4 = new short[256];
-		Class511.aString220 = Class74.aClass74_133.method1259(Class106.aClass717_8, (byte) 56);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub15_2, Class51.aClass93_Sub36_1.aClass166_Sub15_1.method15673(1772258488), (byte) 103);
-		client.anInt3455 = 0;
+		Class511.aString220 = Class74.aClass74_133.method1259(Class106.lang, (byte) 56);
+		Class51.options.method14363(Class51.options.aClass166_Sub15_2, Class51.options.aClass166_Sub15_1.method15673(1772258488), (byte) 103);
+		client.verifyId = 0;
 		Class380.method28117((byte) 114);
 		Class653.aClass678_2 = null;
 		Class442.aLong276 = 0L;

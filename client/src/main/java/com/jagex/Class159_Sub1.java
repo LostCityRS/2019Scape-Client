@@ -146,9 +146,9 @@ public class Class159_Sub1 extends Class159 {
 			@Pc(127) int[] local127 = new int[3];
 			local26 = -1;
 			@Pc(131) int local131 = -1;
-			@Pc(135) Class472 local135 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.method24220().aClass472_61;
-			@Pc(139) Class611 local139 = client.aClass532_1.method30455(1833115093);
-			if (aClass93_Sub1_Sub20_2.method23174(Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aByte100, local139.anInt5623 * 270611681 + ((int) local135.aFloat317 >> 9), ((int) local135.aFloat319 >> 9) + local139.anInt5624 * -1994307635, local127, -1025864883)) {
+			@Pc(135) Class472 local135 = Class520.selfPlayer.method24220().aClass472_61;
+			@Pc(139) Class611 local139 = client.world.method30455(1833115093);
+			if (aClass93_Sub1_Sub20_2.method23174(Class520.selfPlayer.aByte100, local139.anInt5623 * 270611681 + ((int) local135.aFloat317 >> 9), ((int) local135.aFloat319 >> 9) + local139.anInt5624 * -1994307635, local127, -1025864883)) {
 				local26 = local127[1] - anInt1915;
 				local131 = local127[2] - anInt1921;
 			}
@@ -233,7 +233,7 @@ public class Class159_Sub1 extends Class159 {
 				if (!aClass497_54.method30127(aClass93_Sub1_Sub20_2.aString113, -1158095937)) {
 					return;
 				}
-				aClass584_2 = Class443.method28865(aClass497_54, aClass93_Sub1_Sub20_2.aString113, client.aBoolean620, (byte) 74);
+				aClass584_2 = Class443.method28865(aClass497_54, aClass93_Sub1_Sub20_2.aString113, client.mapMember, (byte) 74);
 			} else {
 				aClass584_2 = new Class584(0);
 			}
@@ -294,9 +294,9 @@ public class Class159_Sub1 extends Class159 {
 			@Pc(127) int[] local127 = new int[3];
 			local26 = -1;
 			@Pc(131) int local131 = -1;
-			@Pc(135) Class472 local135 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.method24220().aClass472_61;
-			@Pc(139) Class611 local139 = client.aClass532_1.method30455(1844206789);
-			if (aClass93_Sub1_Sub20_2.method23174(Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aByte100, local139.anInt5623 * 270611681 + ((int) local135.aFloat317 >> 9), ((int) local135.aFloat319 >> 9) + local139.anInt5624 * -1994307635, local127, -698957378)) {
+			@Pc(135) Class472 local135 = Class520.selfPlayer.method24220().aClass472_61;
+			@Pc(139) Class611 local139 = client.world.method30455(1844206789);
+			if (aClass93_Sub1_Sub20_2.method23174(Class520.selfPlayer.aByte100, local139.anInt5623 * 270611681 + ((int) local135.aFloat317 >> 9), ((int) local135.aFloat319 >> 9) + local139.anInt5624 * -1994307635, local127, -698957378)) {
 				local26 = local127[1] - anInt1915;
 				local131 = local127[2] - anInt1921;
 			}
@@ -381,7 +381,7 @@ public class Class159_Sub1 extends Class159 {
 				if (!aClass497_54.method30127(aClass93_Sub1_Sub20_2.aString113, -1658069308)) {
 					return;
 				}
-				aClass584_2 = Class443.method28865(aClass497_54, aClass93_Sub1_Sub20_2.aString113, client.aBoolean620, (byte) 99);
+				aClass584_2 = Class443.method28865(aClass497_54, aClass93_Sub1_Sub20_2.aString113, client.mapMember, (byte) 99);
 			} else {
 				aClass584_2 = new Class584(0);
 			}
@@ -442,9 +442,9 @@ public class Class159_Sub1 extends Class159 {
 			@Pc(127) int[] local127 = new int[3];
 			local26 = -1;
 			@Pc(131) int local131 = -1;
-			@Pc(135) Class472 local135 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.method24220().aClass472_61;
-			@Pc(139) Class611 local139 = client.aClass532_1.method30455(1721305507);
-			if (aClass93_Sub1_Sub20_2.method23174(Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aByte100, local139.anInt5623 * 270611681 + ((int) local135.aFloat317 >> 9), ((int) local135.aFloat319 >> 9) + local139.anInt5624 * -1994307635, local127, -1354512975)) {
+			@Pc(135) Class472 local135 = Class520.selfPlayer.method24220().aClass472_61;
+			@Pc(139) Class611 local139 = client.world.method30455(1721305507);
+			if (aClass93_Sub1_Sub20_2.method23174(Class520.selfPlayer.aByte100, local139.anInt5623 * 270611681 + ((int) local135.aFloat317 >> 9), ((int) local135.aFloat319 >> 9) + local139.anInt5624 * -1994307635, local127, -1354512975)) {
 				local26 = local127[1] - anInt1915;
 				local131 = local127[2] - anInt1921;
 			}
@@ -529,7 +529,7 @@ public class Class159_Sub1 extends Class159 {
 				if (!aClass497_54.method30127(aClass93_Sub1_Sub20_2.aString113, -1295844527)) {
 					return;
 				}
-				aClass584_2 = Class443.method28865(aClass497_54, aClass93_Sub1_Sub20_2.aString113, client.aBoolean620, (byte) 7);
+				aClass584_2 = Class443.method28865(aClass497_54, aClass93_Sub1_Sub20_2.aString113, client.mapMember, (byte) 7);
 			} else {
 				aClass584_2 = new Class584(0);
 			}
@@ -763,7 +763,7 @@ public class Class159_Sub1 extends Class159 {
 			arg0.method20721(arg1, arg2, arg3, arg4, -16777216, 0);
 			arg0.method20573(local22 - 152, local32, 304, 34, client.aColorArray2[client.anInt3427 * 182213747].getRGB(), 0);
 			arg0.method20721(local22 - 150, local32 + 2, anInt1950 * -428996579, 30, client.aColorArray1[client.anInt3427 * 182213747].getRGB(), 0);
-			Class118_Sub1.aClass106_3.method7530(Class74.aClass74_131.method1259(Class106.aClass717_8, (byte) -34), local22, local32 + local16, client.aColorArray3[client.anInt3427 * 182213747].getRGB(), -1, 1357185837);
+			Class118_Sub1.aClass106_3.method7530(Class74.aClass74_131.method1259(Class106.lang, (byte) -34), local22, local32 + local16, client.aColorArray3[client.anInt3427 * 182213747].getRGB(), -1, 1357185837);
 			return;
 		}
 		@Pc(103) int local103 = Class93_Sub14.anInt1527 * -1951188017 - (int) ((float) arg3 / aFloat152);
@@ -776,7 +776,7 @@ public class Class159_Sub1 extends Class159 {
 		Class138.anInt1383 = (int) ((float) (arg4 * 2) / aFloat152) * 1182553313;
 		aClass240_35 = aClass240_33;
 		method14557(anInt1915 + local103, local22 + anInt1921, anInt1915 + local32, local133 + anInt1921, arg1, arg2, arg1 + arg3, arg2 + 1 + arg4);
-		method14558(arg0, !aBoolean350, !aBoolean349, client.aBoolean620, false);
+		method14558(arg0, !aBoolean350, !aBoolean349, client.mapMember, false);
 		@Pc(219) Class22 local219 = method14579(arg0);
 		Class169.method18339(arg0, local219, 0, 0, (byte) -121);
 		if (client.aBoolean599) {
@@ -832,7 +832,7 @@ public class Class159_Sub1 extends Class159 {
 
 	@OriginalMember(owner = "client!alj", name = "fq", descriptor = "(Lclient!dh;Lclient!aks;Lclient!hs;II)Z", line = 376)
 	static boolean method14638(@OriginalArg(0) Class104 arg0, @OriginalArg(1) Class93_Sub29 arg1, @OriginalArg(2) Class322 arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		if (aBoolean347 && !client.aBoolean620 && !method14589(arg1.anInt1605 * 1012619213, arg1.anInt1608 * -2087611449)) {
+		if (aBoolean347 && !client.mapMember && !method14589(arg1.anInt1605 * 1012619213, arg1.anInt1608 * -2087611449)) {
 			return false;
 		}
 		if (arg2.anIntArray398 != null) {
@@ -918,8 +918,8 @@ public class Class159_Sub1 extends Class159 {
 		if (arg2.aString174 != null) {
 			Class254.method26000(arg2.anInt4116 * 1579741579, -870552661);
 			if (Class171.aClass106_9 != null) {
-				local333 = Class129_Sub2.aClass5_13.method72(arg2.aString174, Class553.anInt3408 * -1378711501, 0, null, (byte) 0);
-				local323 = Class129_Sub2.aClass5_13.method64(arg2.aString174, Class553.anInt3408 * -1378711501, null, -1910907678);
+				local333 = Class129_Sub2.aClass5_13.method72(arg2.aString174, Class553.width * -1378711501, 0, null, (byte) 0);
+				local323 = Class129_Sub2.aClass5_13.method64(arg2.aString174, Class553.width * -1378711501, null, -1910907678);
 				local319 = arg1.anInt1606 * 704671089 - local323 / 2 + (anInt1941 - anInt1919) * arg2.anInt4131 * 2089237947 / (anInt1939 - anInt1937);
 				local321 = arg1.anInt1607 * 1844815193 - arg2.anInt4120 * -876461677 * (anInt1942 - anInt1934) / (anInt1938 - anInt1940);
 				if (local130 == null) {
@@ -1076,8 +1076,8 @@ public class Class159_Sub1 extends Class159 {
 		@Pc(31) int local31 = 0;
 		@Pc(33) int local33 = 0;
 		if (arg2.aString174 != null) {
-			local33 = Class129_Sub2.aClass5_13.method72(arg2.aString174, Class553.anInt3408 * -1378711501, 0, null, (byte) 0);
-			local31 = Class129_Sub2.aClass5_13.method64(arg2.aString174, Class553.anInt3408 * -1378711501, null, -1910907678);
+			local33 = Class129_Sub2.aClass5_13.method72(arg2.aString174, Class553.width * -1378711501, 0, null, (byte) 0);
+			local31 = Class129_Sub2.aClass5_13.method64(arg2.aString174, Class553.width * -1378711501, null, -1910907678);
 		}
 		@Pc(66) int local66 = arg1.anInt1606 * 704671089 + local10 / 2;
 		@Pc(71) int local71 = arg1.anInt1607 * 1844815193;
@@ -1620,7 +1620,7 @@ public class Class159_Sub1 extends Class159 {
 
 	@OriginalMember(owner = "client!alj", name = "gq", descriptor = "(Z)V", line = 819)
 	static void method14649(@OriginalArg(0) boolean arg0) {
-		@Pc(3) Class611 local3 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.method20024(1927066028);
+		@Pc(3) Class611 local3 = Class520.selfPlayer.method20024(1927066028);
 		@Pc(13) Class93_Sub1_Sub20 local13 = method14518(local3.anInt5623 * 270611681, local3.anInt5624 * -1994307635);
 		if (local13 == null) {
 			local13 = method14520(aClass637_2.anInt5747 * 267023917);

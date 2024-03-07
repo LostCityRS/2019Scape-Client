@@ -235,7 +235,7 @@ public class Class547 implements Interface20 {
 			throw new RuntimeException();
 		}
 		@Pc(46) Class39 local46 = (Class39) Class19.aClass32_Sub7_5.method18261(local23, -313640571);
-		if (local46.aClass519_1.method36920() != local13) {
+		if (local46.aClass519_1.getId() != local13) {
 			throw new RuntimeException();
 		}
 		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local46.method757(local33, (byte) 0) ? 1 : 0;

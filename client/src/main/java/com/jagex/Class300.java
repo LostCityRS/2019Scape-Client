@@ -72,7 +72,7 @@ public class Class300 implements Interface25 {
 
 	@OriginalMember(owner = "client!gt", name = "de", descriptor = "(Lclient!dh;Lclient!aks;Lclient!hs;IIB)Z", line = 376)
 	static boolean method26720(@OriginalArg(0) Class104 arg0, @OriginalArg(1) Class93_Sub29 arg1, @OriginalArg(2) Class322 arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) byte arg5) {
-		if (Class159_Sub1.aBoolean347 && !client.aBoolean620 && !Class159_Sub1.method14589(arg1.anInt1605 * 1012619213, arg1.anInt1608 * -2087611449)) {
+		if (Class159_Sub1.aBoolean347 && !client.mapMember && !Class159_Sub1.method14589(arg1.anInt1605 * 1012619213, arg1.anInt1608 * -2087611449)) {
 			return false;
 		}
 		if (arg2.anIntArray398 != null) {
@@ -158,8 +158,8 @@ public class Class300 implements Interface25 {
 		if (arg2.aString174 != null) {
 			Class254.method26000(arg2.anInt4116 * 1579741579, -1078358079);
 			if (Class171.aClass106_9 != null) {
-				local333 = Class129_Sub2.aClass5_13.method72(arg2.aString174, Class553.anInt3408 * -1378711501, 0, null, (byte) 0);
-				local323 = Class129_Sub2.aClass5_13.method64(arg2.aString174, Class553.anInt3408 * -1378711501, null, -1910907678);
+				local333 = Class129_Sub2.aClass5_13.method72(arg2.aString174, Class553.width * -1378711501, 0, null, (byte) 0);
+				local323 = Class129_Sub2.aClass5_13.method64(arg2.aString174, Class553.width * -1378711501, null, -1910907678);
 				local319 = arg1.anInt1606 * 704671089 - local323 / 2 + (Class159_Sub1.anInt1941 - Class159_Sub1.anInt1919) * arg2.anInt4131 * 2089237947 / (Class159_Sub1.anInt1939 - Class159_Sub1.anInt1937);
 				local321 = arg1.anInt1607 * 1844815193 - arg2.anInt4120 * -876461677 * (Class159_Sub1.anInt1942 - Class159_Sub1.anInt1934) / (Class159_Sub1.anInt1938 - Class159_Sub1.anInt1940);
 				if (local130 == null) {

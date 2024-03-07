@@ -1304,7 +1304,7 @@ public class Class93_Sub13 extends Class93 {
 			return;
 		}
 		@Pc(14) int local14 = arg0.anInt1514 * 1666407207;
-		if (arg0.anInt1512 * -193034713 != 0 && Class51.aClass93_Sub36_1.aClass166_Sub35_1.method16226(-1493456746) != 0 && arg0.anInt1506 * 1124978351 == arg1) {
+		if (arg0.anInt1512 * -193034713 != 0 && Class51.options.aClass166_Sub35_1.method16226(-1493456746) != 0 && arg0.anInt1506 * 1124978351 == arg1) {
 			if (arg0.aClass539_3 != null && (arg0.aClass539_3.method30821(408099178) == Class536.aClass536_8 || arg0.aClass539_3.method30821(600194851) == Class536.aClass536_2)) {
 				Class274.aClass258_1.method26088(arg0.aClass539_3, 1972260705);
 				arg0.aClass539_3 = null;

@@ -270,7 +270,7 @@ public class Class431 {
 					}
 					if (local9 != null && Class125_Sub3.aCanvas1.isShowing() && Class20.aBoolean10) {
 						local16.method22901(local9, 1989476160);
-						if (!local16.method22898(133063708) && local16.method22875(-1678286317) < Class553.anInt3408 * -1378711501 && local16.method22876((byte) -67) < Class553.anInt3416 * 2091353777 && local16.method22875(-1678286317) >= 0 && local16.method22876((byte) -67) >= 0) {
+						if (!local16.method22898(133063708) && local16.method22875(-1678286317) < Class553.width * -1378711501 && local16.method22876((byte) -67) < Class553.height * 2091353777 && local16.method22875(-1678286317) >= 0 && local16.method22876((byte) -67) >= 0) {
 							@Pc(67) int local67 = local16.method22891(-1553844929);
 							if (local16.method22891(848223835) == -1) {
 								Class655.aClass163_Sub1_1.method14905(local16, 1650852741);
@@ -314,15 +314,15 @@ public class Class431 {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
 		@Pc(16) Class312 local16 = Class659.method32808(local12, -379497974);
 		@Pc(22) Class320 local22 = Class166_Sub1.aClass320Array1[local12 >> 16];
-		Class453.method28965(local16, local22, arg0, (short) 22262);
+		ServerProt.method28965(local16, local22, arg0, (short) 22262);
 	}
 
 	@OriginalMember(owner = "client!na", name = "vg", descriptor = "(Lclient!yf;B)V", line = 8843)
 	static final void method28779(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		@Pc(18) Class93_Sub22 local18 = Class102.method2588(Class446.aClass446_101, client.aClass175_2.aClass24_2, (byte) 109);
-		local18.aPacketBit_1.p2(local12, 2131625847);
-		client.aClass175_2.method24356(local18, -1807660685);
+		@Pc(18) ClientMessage local18 = Class102.createGameMessage(ClientProt.aClientProt_101, client.aClass175_2.clientIsaac, (byte) 109);
+		local18.packet.p2(local12, 2131625847);
+		client.aClass175_2.send(local18, -1807660685);
 	}
 
 	@OriginalMember(owner = "client!na", name = "jz", descriptor = "(Lclient!hq;Lclient!hf;I)Lclient!hf;", line = 10846)

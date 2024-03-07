@@ -262,8 +262,8 @@ public class Class132_Sub1_Sub1_Sub4 extends Class132_Sub1_Sub1 {
 			@Pc(40) int local40;
 			if (this.anInt3267 * -1124702409 < 0) {
 				local40 = -(this.anInt3267 * -1124702409) - 1;
-				if (local40 == client.anInt3513 * -859840571) {
-					local11 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3;
+				if (local40 == client.selfPlayerSlot * -859840571) {
+					local11 = Class520.selfPlayer;
 				} else {
 					local11 = client.aClass132_Sub1_Sub1_Sub1_Sub2Array1[local40];
 				}
@@ -326,8 +326,8 @@ public class Class132_Sub1_Sub1_Sub4 extends Class132_Sub1_Sub1 {
 			@Pc(40) int local40;
 			if (this.anInt3267 * -1124702409 < 0) {
 				local40 = -(this.anInt3267 * -1124702409) - 1;
-				if (local40 == client.anInt3513 * -859840571) {
-					local11 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3;
+				if (local40 == client.selfPlayerSlot * -859840571) {
+					local11 = Class520.selfPlayer;
 				} else {
 					local11 = client.aClass132_Sub1_Sub1_Sub1_Sub2Array1[local40];
 				}

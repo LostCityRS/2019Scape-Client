@@ -102,7 +102,7 @@ public abstract class Class154 {
 		if (local2 == arg0) {
 			return false;
 		} else {
-			Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub28_1, arg0 ? 1 : 0, (byte) 104);
+			Class51.options.method14363(Class51.options.aClass166_Sub28_1, arg0 ? 1 : 0, (byte) 104);
 			Class106_Sub1.method5135(1212135578);
 			return true;
 		}
@@ -116,7 +116,7 @@ public abstract class Class154 {
 		if (local23 == -1) {
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = -1;
 		} else {
-			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class449.aClass514_1.method30267(local13, (byte) -12).method22369((char) local23, -642307170);
+			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class687.aClass514_1.method30267(local13, (byte) -12).method22369((char) local23, -642307170);
 		}
 	}
 

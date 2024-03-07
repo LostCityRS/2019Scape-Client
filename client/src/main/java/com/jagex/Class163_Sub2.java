@@ -36,10 +36,10 @@ public class Class163_Sub2 extends Class163 {
 		if (local3.method22891(1106946160) == 2) {
 			local41 = 1;
 		}
-		@Pc(54) Class93_Sub22 local54 = Class102.method2588(Class446.aClass446_47, client.aClass175_2.aClass24_2, (byte) 119);
-		local54.aPacketBit_1.p4(local29 | local15 << 16, (byte) 20);
-		local54.aPacketBit_1.p2_alt3(local11 | local41 << 15, (short) 255);
-		client.aClass175_2.method24356(local54, -2063301593);
+		@Pc(54) ClientMessage local54 = Class102.createGameMessage(ClientProt.aClientProt_47, client.aClass175_2.clientIsaac, (byte) 119);
+		local54.packet.p4(local29 | local15 << 16, (byte) 20);
+		local54.packet.p2_alt3(local11 | local41 << 15, (short) 255);
+		client.aClass175_2.send(local54, -2063301593);
 	}
 
 	@OriginalMember(owner = "client!alt", name = "p", descriptor = "()V", line = 14)
@@ -66,10 +66,10 @@ public class Class163_Sub2 extends Class163 {
 		if (local3.method22891(-1042519865) == 2) {
 			local41 = 1;
 		}
-		@Pc(54) Class93_Sub22 local54 = Class102.method2588(Class446.aClass446_47, client.aClass175_2.aClass24_2, (byte) 35);
-		local54.aPacketBit_1.p4(local29 | local15 << 16, (byte) 38);
-		local54.aPacketBit_1.p2_alt3(local11 | local41 << 15, (short) 255);
-		client.aClass175_2.method24356(local54, -1490890350);
+		@Pc(54) ClientMessage local54 = Class102.createGameMessage(ClientProt.aClientProt_47, client.aClass175_2.clientIsaac, (byte) 35);
+		local54.packet.p4(local29 | local15 << 16, (byte) 38);
+		local54.packet.p2_alt3(local11 | local41 << 15, (short) 255);
+		client.aClass175_2.send(local54, -1490890350);
 	}
 
 	@OriginalMember(owner = "client!alt", name = "d", descriptor = "()V", line = 14)
@@ -96,10 +96,10 @@ public class Class163_Sub2 extends Class163 {
 		if (local3.method22891(214706887) == 2) {
 			local41 = 1;
 		}
-		@Pc(54) Class93_Sub22 local54 = Class102.method2588(Class446.aClass446_47, client.aClass175_2.aClass24_2, (byte) 78);
-		local54.aPacketBit_1.p4(local29 | local15 << 16, (byte) -2);
-		local54.aPacketBit_1.p2_alt3(local11 | local41 << 15, (short) 255);
-		client.aClass175_2.method24356(local54, -1921175465);
+		@Pc(54) ClientMessage local54 = Class102.createGameMessage(ClientProt.aClientProt_47, client.aClass175_2.clientIsaac, (byte) 78);
+		local54.packet.p4(local29 | local15 << 16, (byte) -2);
+		local54.packet.p2_alt3(local11 | local41 << 15, (short) 255);
+		client.aClass175_2.send(local54, -1921175465);
 	}
 
 	@OriginalMember(owner = "client!alt", name = "u", descriptor = "(I)Z", line = 34)
@@ -146,14 +146,14 @@ public class Class163_Sub2 extends Class163 {
 
 	@OriginalMember(owner = "client!alt", name = "r", descriptor = "()Lclient!akl;", line = 43)
 	@Override
-	Class93_Sub22 method14921() {
-		return Class102.method2588(Class446.aClass446_99, client.aClass175_2.aClass24_2, (byte) 54);
+	ClientMessage method14921() {
+		return Class102.createGameMessage(ClientProt.aClientProt_99, client.aClass175_2.clientIsaac, (byte) 54);
 	}
 
 	@OriginalMember(owner = "client!alt", name = "z", descriptor = "(S)Lclient!akl;", line = 43)
 	@Override
-	Class93_Sub22 method14917(@OriginalArg(0) short arg0) {
-		return Class102.method2588(Class446.aClass446_99, client.aClass175_2.aClass24_2, (byte) 67);
+	ClientMessage method14917(@OriginalArg(0) short arg0) {
+		return Class102.createGameMessage(ClientProt.aClientProt_99, client.aClass175_2.clientIsaac, (byte) 67);
 	}
 
 	@OriginalMember(owner = "client!alt", name = "w", descriptor = "(Lclient!alw;Lclient!akm;I)V", line = 46)

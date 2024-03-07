@@ -149,7 +149,7 @@ public class Class166_Sub27 extends Class166 {
 
 	@OriginalMember(owner = "client!ana", name = "awl", descriptor = "(Lclient!yf;I)V", line = 13613)
 	static final void method15940(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		if (client.anInt3435 * -849002901 != 13 && client.anInt3435 * -849002901 != 18 || Class251.method25969(-961904827)) {
+		if (client.state * -849002901 != 13 && client.state * -849002901 != 18 || Class251.method25969(-961904827)) {
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = 1;
 		} else if (Class50.aBoolean26) {
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = 0;
@@ -158,9 +158,9 @@ public class Class166_Sub27 extends Class166 {
 		} else {
 			Class50.aBoolean26 = true;
 			@Pc(76) Class175 local76 = Class330.method27371(-2084952673);
-			@Pc(82) Class93_Sub22 local82 = Class102.method2588(Class446.aClass446_79, local76.aClass24_2, (byte) 95);
-			local82.aPacketBit_1.p4(Class632.anInt5720 * 1926204629, (byte) 45);
-			local76.method24356(local82, -1598204780);
+			@Pc(82) ClientMessage local82 = Class102.createGameMessage(ClientProt.aClientProt_79, local76.clientIsaac, (byte) 95);
+			local82.packet.p4(Class632.anInt5720 * 1926204629, (byte) 45);
+			local76.send(local82, -1598204780);
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = 0;
 		}
 	}

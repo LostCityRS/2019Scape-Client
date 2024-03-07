@@ -77,8 +77,8 @@ public class Class343 implements Interface4 {
 	@OriginalMember(owner = "client!in", name = "alo", descriptor = "(Lclient!yf;I)V", line = 11965)
 	static final void method27521(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(1) String local1 = null;
-		if (Class120.aClass499_1 != null) {
-			local1 = Class120.aClass499_1.method30140(-1773318151);
+		if (Class120.userLastLoginHost != null) {
+			local1 = Class120.userLastLoginHost.method30140(-1773318151);
 		}
 		if (local1 == null) {
 			local1 = "";

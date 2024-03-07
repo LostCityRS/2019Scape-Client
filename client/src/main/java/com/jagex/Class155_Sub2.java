@@ -38,10 +38,10 @@ final class Class155_Sub2 extends Class155 {
 			local18 = 1;
 			arg0.method14875(64, 1666227099);
 		}
-		if (Class51.aClass93_Sub36_1.aClass166_Sub4_2.method15426((byte) 45) == 0) {
-			Class51.aClass93_Sub36_1.method14366(Class51.aClass93_Sub36_1.aClass166_Sub4_2, true, -1601759255);
+		if (Class51.options.aClass166_Sub4_2.method15426((byte) 45) == 0) {
+			Class51.options.method14366(Class51.options.aClass166_Sub4_2, true, -1601759255);
 		} else {
-			Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub4_1, 0, (byte) 118);
+			Class51.options.method14363(Class51.options.aClass166_Sub4_1, 0, (byte) 118);
 			Class543.method30945(0, false, 1945646779);
 		}
 		Class106_Sub1.method5135(-312958799);

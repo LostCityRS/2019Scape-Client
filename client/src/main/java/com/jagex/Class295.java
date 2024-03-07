@@ -75,11 +75,11 @@ public class Class295 implements Interface25 {
 		local121.method29561();
 		local100.method29478(local121, (float) ((double) local43 * 3.141592653589793D * 2.0D / 16384.0D));
 		local96.method29510(local100);
-		@Pc(145) Class611 local145 = client.aClass532_1.method30455(1719093004);
+		@Pc(145) Class611 local145 = client.world.method30455(1719093004);
 		@Pc(152) int local152 = local145.anInt5623 * 270611681 << 9;
 		@Pc(159) int local159 = local145.anInt5624 * -1994307635 << 9;
 		if (arg1 != null) {
-			local92.method9158(arg1, new Class472((float) local13, (float) local23, (float) local33), local96, local68, local78, client.aClass532_1.method30511(-310507201).anIntArrayArrayArray14, client.aClass532_1.method30487(-875952590), local152, local159, 2039271547);
+			local92.method9158(arg1, new Class472((float) local13, (float) local23, (float) local33), local96, local68, local78, client.world.method30511(-310507201).anIntArrayArrayArray14, client.world.method30487(-875952590), local152, local159, 2039271547);
 		}
 		client.aBoolean619 = true;
 	}

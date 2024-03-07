@@ -87,7 +87,7 @@ public class Class302 implements Interface75 {
 
 	@OriginalMember(owner = "client!gw", name = "n", descriptor = "()I", line = 39)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt3932 * -549460653;
 	}
 
@@ -106,8 +106,8 @@ public class Class302 implements Interface75 {
 			@Pc(14) int local14;
 			if (arg1 < 0) {
 				local14 = -arg1 - 1;
-				if (local14 == client.anInt3513 * -859840571) {
-					local7 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3;
+				if (local14 == client.selfPlayerSlot * -859840571) {
+					local7 = Class520.selfPlayer;
 				} else {
 					local7 = client.aClass132_Sub1_Sub1_Sub1_Sub2Array1[local14];
 				}
@@ -128,7 +128,7 @@ public class Class302 implements Interface75 {
 				}
 			}
 		}
-		@Pc(111) Class132_Sub1_Sub1_Sub4 local111 = new Class132_Sub1_Sub1_Sub4(client.aClass532_1.method30481(-1676828513), arg0, arg16, arg16, arg6, arg7, arg4, client.anInt3485 + arg10, client.anInt3485 + arg11, arg12, arg13, arg1, arg2, arg5, arg14, arg3, arg15);
+		@Pc(111) Class132_Sub1_Sub1_Sub4 local111 = new Class132_Sub1_Sub1_Sub4(client.world.method30481(-1676828513), arg0, arg16, arg16, arg6, arg7, arg4, client.anInt3485 + arg10, client.anInt3485 + arg11, arg12, arg13, arg1, arg2, arg5, arg14, arg3, arg15);
 		local111.method23915(arg8, arg9, Class305.method26802(arg8, arg9, arg16, (byte) -20) - arg5, client.anInt3485 + arg10, -1488185361);
 		client.aClass22_46.method408(new Class93_Sub1_Sub6(local111), -1734998803);
 	}

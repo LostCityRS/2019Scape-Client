@@ -619,7 +619,7 @@ public class Class664 {
 		@Pc(23) int local23 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 1];
 		@Pc(33) int local33 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 2];
 		@Pc(43) int local43 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 3];
-		@Pc(47) Class611 local47 = client.aClass532_1.method30455(1703500171);
+		@Pc(47) Class611 local47 = client.world.method30455(1703500171);
 		Class104_Sub3.method5765((local13 >> 14 & 0x3FFF) - local47.anInt5623 * 270611681, (local13 & 0x3FFF) - local47.anInt5624 * -1994307635, local23 << 2, local33, local43, false, 1645651862);
 		client.aBoolean619 = true;
 	}

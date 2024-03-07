@@ -230,9 +230,9 @@ public class Class450 {
 	@OriginalMember(owner = "client!nv", name = "ash", descriptor = "(Lclient!yf;I)V", line = 13194)
 	static final void method28941(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		@Pc(17) int local17 = Class51.aClass93_Sub36_1.aClass166_Sub35_5.method16226(-93350508);
+		@Pc(17) int local17 = Class51.options.aClass166_Sub35_5.method16226(-93350508);
 		if (local12 != local17) {
-			Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub35_5, local12, (byte) 64);
+			Class51.options.method14363(Class51.options.aClass166_Sub35_5, local12, (byte) 64);
 			Class106_Sub1.method5135(1778372851);
 			client.aBoolean601 = false;
 		}

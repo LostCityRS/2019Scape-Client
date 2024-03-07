@@ -236,8 +236,8 @@ class Class534 implements Interface41 {
 		@Pc(673) String local673;
 		if ((arg3 & 0x200) != 0) {
 			local673 = arg0.gjstr(310956939);
-			if (Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3 == arg2) {
-				Class227.method25612(2, 0, arg2.method20069(true, (byte) 65), arg2.method20072(false, 2091353777), arg2.aString81, local673, null, -1797429238);
+			if (Class520.selfPlayer == arg2) {
+				Class227.method25612(2, 0, arg2.method20069(true, (byte) 65), arg2.method20072(false, 2091353777), arg2.name1, local673, null, -1797429238);
 			}
 			arg2.method20089(local673, 0, 0, -1685399895);
 		}
@@ -300,7 +300,7 @@ class Class534 implements Interface41 {
 			local673 = arg0.gjstr(1075193584);
 			local8 = arg0.g1((short) 16384);
 			if ((local8 & 0x1) != 0) {
-				Class227.method25612(2, local8, arg2.method20069(true, (byte) -44), arg2.method20072(false, 2091353777), arg2.aString81, local673, null, -1851507170);
+				Class227.method25612(2, local8, arg2.method20069(true, (byte) -44), arg2.method20072(false, 2091353777), arg2.name1, local673, null, -1851507170);
 			}
 			arg2.method20089(local673, 0, 0, -1685399895);
 		}

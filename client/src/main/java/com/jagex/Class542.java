@@ -23,7 +23,7 @@ public class Class542 {
 	@OriginalMember(owner = "client!rz", name = "k", descriptor = "(Z)V", line = 15)
 	public static void method30931(@OriginalArg(0) boolean arg0) {
 		Class274.aClass258_1.method26040((short) -13558);
-		if (!Class106.method7570(client.anInt3435 * -849002901, -447754634)) {
+		if (!Class106.method7570(client.state * -849002901, -447754634)) {
 			return;
 		}
 		@Pc(11) Class175[] local11 = client.aClass175Array1;
@@ -34,11 +34,11 @@ public class Class542 {
 				return;
 			}
 			local21.anInt3300 = 0;
-			if (!local21.aBoolean564 && local21.method24372((byte) 32) != null) {
-				@Pc(52) Class93_Sub22 local52 = Class102.method2588(Class446.aClass446_105, local21.aClass24_2, (byte) 58);
-				local21.method24356(local52, -2105041718);
+			if (!local21.aBoolean564 && local21.getStream((byte) 32) != null) {
+				@Pc(52) ClientMessage local52 = Class102.createGameMessage(ClientProt.aClientProt_105, local21.clientIsaac, (byte) 58);
+				local21.send(local52, -2105041718);
 				try {
-					local21.method24352((byte) 49);
+					local21.flush((byte) 49);
 				} catch (@Pc(61) IOException local61) {
 					local21.aBoolean564 = true;
 				}
@@ -50,7 +50,7 @@ public class Class542 {
 	@OriginalMember(owner = "client!rz", name = "n", descriptor = "(Z)V", line = 15)
 	public static void method30932(@OriginalArg(0) boolean arg0) {
 		Class274.aClass258_1.method26040((short) 3189);
-		if (!Class106.method7570(client.anInt3435 * -849002901, -382494755)) {
+		if (!Class106.method7570(client.state * -849002901, -382494755)) {
 			return;
 		}
 		@Pc(11) Class175[] local11 = client.aClass175Array1;
@@ -61,11 +61,11 @@ public class Class542 {
 				return;
 			}
 			local21.anInt3300 = 0;
-			if (!local21.aBoolean564 && local21.method24372((byte) 39) != null) {
-				@Pc(52) Class93_Sub22 local52 = Class102.method2588(Class446.aClass446_105, local21.aClass24_2, (byte) 13);
-				local21.method24356(local52, -1864049693);
+			if (!local21.aBoolean564 && local21.getStream((byte) 39) != null) {
+				@Pc(52) ClientMessage local52 = Class102.createGameMessage(ClientProt.aClientProt_105, local21.clientIsaac, (byte) 13);
+				local21.send(local52, -1864049693);
 				try {
-					local21.method24352((byte) 113);
+					local21.flush((byte) 113);
 				} catch (@Pc(61) IOException local61) {
 					local21.aBoolean564 = true;
 				}
@@ -77,7 +77,7 @@ public class Class542 {
 	@OriginalMember(owner = "client!rz", name = "m", descriptor = "(Z)V", line = 15)
 	public static void method30933(@OriginalArg(0) boolean arg0) {
 		Class274.aClass258_1.method26040((short) 1631);
-		if (!Class106.method7570(client.anInt3435 * -849002901, -1055243539)) {
+		if (!Class106.method7570(client.state * -849002901, -1055243539)) {
 			return;
 		}
 		@Pc(11) Class175[] local11 = client.aClass175Array1;
@@ -88,11 +88,11 @@ public class Class542 {
 				return;
 			}
 			local21.anInt3300 = 0;
-			if (!local21.aBoolean564 && local21.method24372((byte) 2) != null) {
-				@Pc(52) Class93_Sub22 local52 = Class102.method2588(Class446.aClass446_105, local21.aClass24_2, (byte) 112);
-				local21.method24356(local52, -1994753786);
+			if (!local21.aBoolean564 && local21.getStream((byte) 2) != null) {
+				@Pc(52) ClientMessage local52 = Class102.createGameMessage(ClientProt.aClientProt_105, local21.clientIsaac, (byte) 112);
+				local21.send(local52, -1994753786);
 				try {
-					local21.method24352((byte) 118);
+					local21.flush((byte) 118);
 				} catch (@Pc(61) IOException local61) {
 					local21.aBoolean564 = true;
 				}
@@ -126,6 +126,6 @@ public class Class542 {
 
 	@OriginalMember(owner = "client!rz", name = "yn", descriptor = "(Lclient!yf;B)V", line = 9268)
 	static final void method30937(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.aBoolean629 ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.userMember ? 1 : 0;
 	}
 }

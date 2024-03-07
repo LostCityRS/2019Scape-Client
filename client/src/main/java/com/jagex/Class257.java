@@ -23,13 +23,13 @@ class Class257 implements Interface39 {
 	@OriginalMember(owner = "client!fa", name = "n", descriptor = "()F", line = 492)
 	@Override
 	public float method26346() {
-		return (float) Class51.aClass93_Sub36_1.aClass166_Sub35_3.method16226(-1975448762) / 255.0F;
+		return (float) Class51.options.aClass166_Sub35_3.method16226(-1975448762) / 255.0F;
 	}
 
 	@OriginalMember(owner = "client!fa", name = "e", descriptor = "(I)F", line = 492)
 	@Override
 	public float method26345(@OriginalArg(0) int arg0) {
-		return (float) Class51.aClass93_Sub36_1.aClass166_Sub35_3.method16226(218814774) / 255.0F;
+		return (float) Class51.options.aClass166_Sub35_3.method16226(218814774) / 255.0F;
 	}
 
 	@OriginalMember(owner = "client!fa", name = "fv", descriptor = "(Lclient!hf;Lclient!hq;Lclient!yf;B)V", line = 5931)

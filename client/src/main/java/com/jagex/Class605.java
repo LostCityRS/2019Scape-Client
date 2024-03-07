@@ -19,46 +19,46 @@ public class Class605 implements Interface63 {
 	@OriginalMember(owner = "client!ux", name = "e", descriptor = "(I)V", line = 61)
 	@Override
 	public void method31895(@OriginalArg(0) int arg0) {
-		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_57, client.aClass175_2.aClass24_2, (byte) 48);
-		local5.aPacketBit_1.p2(this.anInt5554 * -1596174029, 2127823971);
-		client.aClass175_2.method24356(local5, -1922171802);
+		@Pc(5) ClientMessage local5 = Class102.createGameMessage(ClientProt.aClientProt_57, client.aClass175_2.clientIsaac, (byte) 48);
+		local5.packet.p2(this.anInt5554 * -1596174029, 2127823971);
+		client.aClass175_2.send(local5, -1922171802);
 	}
 
 	@OriginalMember(owner = "client!ux", name = "n", descriptor = "()V", line = 61)
 	@Override
 	public void method31894() {
-		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_57, client.aClass175_2.aClass24_2, (byte) 92);
-		local5.aPacketBit_1.p2(this.anInt5554 * -1596174029, 2136098271);
-		client.aClass175_2.method24356(local5, -1522138341);
+		@Pc(5) ClientMessage local5 = Class102.createGameMessage(ClientProt.aClientProt_57, client.aClass175_2.clientIsaac, (byte) 92);
+		local5.packet.p2(this.anInt5554 * -1596174029, 2136098271);
+		client.aClass175_2.send(local5, -1522138341);
 	}
 
 	@OriginalMember(owner = "client!ux", name = "k", descriptor = "()V", line = 61)
 	@Override
 	public void method31897() {
-		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_57, client.aClass175_2.aClass24_2, (byte) 9);
-		local5.aPacketBit_1.p2(this.anInt5554 * -1596174029, 2141013227);
-		client.aClass175_2.method24356(local5, -1738368580);
+		@Pc(5) ClientMessage local5 = Class102.createGameMessage(ClientProt.aClientProt_57, client.aClass175_2.clientIsaac, (byte) 9);
+		local5.packet.p2(this.anInt5554 * -1596174029, 2141013227);
+		client.aClass175_2.send(local5, -1738368580);
 	}
 
 	@OriginalMember(owner = "client!ux", name = "m", descriptor = "()V", line = 61)
 	@Override
 	public void method31896() {
-		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_57, client.aClass175_2.aClass24_2, (byte) 83);
-		local5.aPacketBit_1.p2(this.anInt5554 * -1596174029, 2142194470);
-		client.aClass175_2.method24356(local5, -1576299280);
+		@Pc(5) ClientMessage local5 = Class102.createGameMessage(ClientProt.aClientProt_57, client.aClass175_2.clientIsaac, (byte) 83);
+		local5.packet.p2(this.anInt5554 * -1596174029, 2142194470);
+		client.aClass175_2.send(local5, -1576299280);
 	}
 
 	@OriginalMember(owner = "client!ux", name = "f", descriptor = "()V", line = 61)
 	@Override
 	public void method31898() {
-		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_57, client.aClass175_2.aClass24_2, (byte) 63);
-		local5.aPacketBit_1.p2(this.anInt5554 * -1596174029, 2126729837);
-		client.aClass175_2.method24356(local5, -1693886198);
+		@Pc(5) ClientMessage local5 = Class102.createGameMessage(ClientProt.aClientProt_57, client.aClass175_2.clientIsaac, (byte) 63);
+		local5.packet.p2(this.anInt5554 * -1596174029, 2126729837);
+		client.aClass175_2.send(local5, -1693886198);
 	}
 
 	@OriginalMember(owner = "client!ux", name = "c", descriptor = "(I)V", line = 645)
 	static void method31899(@OriginalArg(0) int arg0) {
-		@Pc(6) Class38 local6 = Class166_Sub18.method15743("2", client.aClass702_4.aString241, false, 199047110);
+		@Pc(6) Class38 local6 = Class166_Sub18.method15743("2", client.modeGame.aString241, false, 199047110);
 		Class596.aClass113_Sub1_1.method7417(local6, (byte) 54);
 	}
 
@@ -79,7 +79,7 @@ public class Class605 implements Interface63 {
 
 	@OriginalMember(owner = "client!ux", name = "yq", descriptor = "(Lclient!yf;I)V", line = 9276)
 	static final void method31902(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aClass658_1 != null && Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aClass658_1.aBoolean862 ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class520.selfPlayer.aClass658_1 != null && Class520.selfPlayer.aClass658_1.aBoolean862 ? 1 : 0;
 	}
 
 	@OriginalMember(owner = "client!ux", name = "abe", descriptor = "(Lclient!yf;B)V", line = 9936)

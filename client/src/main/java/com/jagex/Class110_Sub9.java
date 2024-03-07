@@ -10,7 +10,7 @@ import org.openrs2.deob.annotation.Pc;
 public class Class110_Sub9 extends Class110 {
 
 	@OriginalMember(owner = "client!agf", name = "jr", descriptor = "Ljava/security/SecureRandom;")
-	static SecureRandom aSecureRandom1;
+	static SecureRandom secureRandom;
 
 	@OriginalMember(owner = "client!agf", name = "n", descriptor = "I")
 	final int anInt919;

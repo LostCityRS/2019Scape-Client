@@ -527,13 +527,13 @@ public class Class597 {
 			@Pc(83) int local83;
 			try {
 				if (Class115.anImage3 == null) {
-					Class115.anImage3 = Class125_Sub3.aCanvas1.createImage(Class553.anInt3408 * -1378711501, Class553.anInt3416 * 2091353777);
+					Class115.anImage3 = Class125_Sub3.aCanvas1.createImage(Class553.width * -1378711501, Class553.height * 2091353777);
 				}
 				@Pc(54) Graphics local54 = Class115.anImage3.getGraphics();
 				local54.setColor(Color.black);
-				local54.fillRect(0, 0, Class553.anInt3408 * -1378711501, Class553.anInt3416 * 2091353777);
-				local75 = Class553.anInt3408 * -1378711501 / 2 - 152;
-				local83 = Class553.anInt3416 * 2091353777 / 2 - 18;
+				local54.fillRect(0, 0, Class553.width * -1378711501, Class553.height * 2091353777);
+				local75 = Class553.width * -1378711501 / 2 - 152;
+				local83 = Class553.height * 2091353777 / 2 - 18;
 				local54.setColor(arg3);
 				local54.drawRect(local75, local83, 303, 33);
 				local54.setColor(arg2);
@@ -547,14 +547,14 @@ public class Class597 {
 				if (Class553.aString133 != null) {
 					local54.setFont(Class68.aFont1);
 					local54.setColor(arg4);
-					local54.drawString(Class553.aString133, Class553.anInt3408 * -1378711501 / 2 - Class553.aString133.length() * 6 / 2, Class553.anInt3416 * 2091353777 / 2 - 26);
+					local54.drawString(Class553.aString133, Class553.width * -1378711501 / 2 - Class553.aString133.length() * 6 / 2, Class553.height * 2091353777 / 2 - 26);
 				}
 				local2.drawImage(Class115.anImage3, 0, 0, null);
 			} catch (@Pc(200) Exception local200) {
 				local2.setColor(Color.black);
-				local2.fillRect(0, 0, Class553.anInt3408 * -1378711501, Class553.anInt3416 * 2091353777);
-				local75 = Class553.anInt3408 * -1378711501 / 2 - 152;
-				local83 = Class553.anInt3416 * 2091353777 / 2 - 18;
+				local2.fillRect(0, 0, Class553.width * -1378711501, Class553.height * 2091353777);
+				local75 = Class553.width * -1378711501 / 2 - 152;
+				local83 = Class553.height * 2091353777 / 2 - 18;
 				local2.setColor(arg3);
 				local2.drawRect(local75, local83, 303, 33);
 				local2.setColor(arg2);
@@ -567,7 +567,7 @@ public class Class597 {
 				if (Class553.aString133 != null) {
 					local2.setFont(Class68.aFont1);
 					local2.setColor(arg4);
-					local2.drawString(Class553.aString133, Class553.anInt3408 * -1378711501 / 2 - Class553.aString133.length() * 6 / 2, Class553.anInt3416 * 2091353777 / 2 - 26);
+					local2.drawString(Class553.aString133, Class553.width * -1378711501 / 2 - Class553.aString133.length() * 6 / 2, Class553.height * 2091353777 / 2 - 26);
 				}
 				local2.drawString(arg1, local75 + (304 - arg1.length() * 6) / 2, local83 + 22);
 			}
@@ -579,8 +579,8 @@ public class Class597 {
 	@OriginalMember(owner = "client!ul", name = "br", descriptor = "(Lclient!yf;I)V", line = 5232)
 	static final void method31780(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(16) boolean local16 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091] != 0;
-		if (Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aClass658_1 != null) {
-			Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aClass658_1.method32768(local16, (byte) 73);
+		if (Class520.selfPlayer.aClass658_1 != null) {
+			Class520.selfPlayer.aClass658_1.method32768(local16, (byte) 73);
 		}
 	}
 
@@ -607,13 +607,13 @@ public class Class597 {
 
 	@OriginalMember(owner = "client!ul", name = "atz", descriptor = "(Lclient!yf;I)V", line = 13293)
 	static final void method31783(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub7_1.method15506((byte) -125);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub7_1.method15506((byte) -125);
 	}
 
 	@OriginalMember(owner = "client!ul", name = "aze", descriptor = "(Lclient!yf;I)V", line = 14119)
 	static final void method31784(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(1) boolean local1 = true;
-		if (client.aBoolean632) {
+		if (client.javascript) {
 			try {
 				@Pc(7) Object local7 = Class447.aClass447_8.method28906((short) 255);
 				if (local7 != null) {

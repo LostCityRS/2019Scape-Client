@@ -30,41 +30,41 @@ public class Class599 implements Interface63 {
 	@OriginalMember(owner = "client!uo", name = "e", descriptor = "(I)V", line = 75)
 	@Override
 	public void method31895(@OriginalArg(0) int arg0) {
-		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_55, client.aClass175_2.aClass24_2, (byte) 77);
-		local5.aPacketBit_1.p1_alt1(this.aClass73_15.method36920(), -1591808004);
-		client.aClass175_2.method24356(local5, -1927374045);
+		@Pc(5) ClientMessage local5 = Class102.createGameMessage(ClientProt.aClientProt_55, client.aClass175_2.clientIsaac, (byte) 77);
+		local5.packet.p1_alt1(this.aClass73_15.getId(), -1591808004);
+		client.aClass175_2.send(local5, -1927374045);
 	}
 
 	@OriginalMember(owner = "client!uo", name = "n", descriptor = "()V", line = 75)
 	@Override
 	public void method31894() {
-		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_55, client.aClass175_2.aClass24_2, (byte) 21);
-		local5.aPacketBit_1.p1_alt1(this.aClass73_15.method36920(), -1591808004);
-		client.aClass175_2.method24356(local5, -1874286412);
+		@Pc(5) ClientMessage local5 = Class102.createGameMessage(ClientProt.aClientProt_55, client.aClass175_2.clientIsaac, (byte) 21);
+		local5.packet.p1_alt1(this.aClass73_15.getId(), -1591808004);
+		client.aClass175_2.send(local5, -1874286412);
 	}
 
 	@OriginalMember(owner = "client!uo", name = "m", descriptor = "()V", line = 75)
 	@Override
 	public void method31896() {
-		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_55, client.aClass175_2.aClass24_2, (byte) 77);
-		local5.aPacketBit_1.p1_alt1(this.aClass73_15.method36920(), -1591808004);
-		client.aClass175_2.method24356(local5, -1961824600);
+		@Pc(5) ClientMessage local5 = Class102.createGameMessage(ClientProt.aClientProt_55, client.aClass175_2.clientIsaac, (byte) 77);
+		local5.packet.p1_alt1(this.aClass73_15.getId(), -1591808004);
+		client.aClass175_2.send(local5, -1961824600);
 	}
 
 	@OriginalMember(owner = "client!uo", name = "k", descriptor = "()V", line = 75)
 	@Override
 	public void method31897() {
-		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_55, client.aClass175_2.aClass24_2, (byte) 19);
-		local5.aPacketBit_1.p1_alt1(this.aClass73_15.method36920(), -1591808004);
-		client.aClass175_2.method24356(local5, -1698366104);
+		@Pc(5) ClientMessage local5 = Class102.createGameMessage(ClientProt.aClientProt_55, client.aClass175_2.clientIsaac, (byte) 19);
+		local5.packet.p1_alt1(this.aClass73_15.getId(), -1591808004);
+		client.aClass175_2.send(local5, -1698366104);
 	}
 
 	@OriginalMember(owner = "client!uo", name = "f", descriptor = "()V", line = 75)
 	@Override
 	public void method31898() {
-		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_55, client.aClass175_2.aClass24_2, (byte) 106);
-		local5.aPacketBit_1.p1_alt1(this.aClass73_15.method36920(), -1591808004);
-		client.aClass175_2.method24356(local5, -1490185051);
+		@Pc(5) ClientMessage local5 = Class102.createGameMessage(ClientProt.aClientProt_55, client.aClass175_2.clientIsaac, (byte) 106);
+		local5.packet.p1_alt1(this.aClass73_15.getId(), -1591808004);
+		client.aClass175_2.send(local5, -1490185051);
 	}
 
 	@OriginalMember(owner = "client!uo", name = "ec", descriptor = "(Lclient!yf;I)V", line = 5761)

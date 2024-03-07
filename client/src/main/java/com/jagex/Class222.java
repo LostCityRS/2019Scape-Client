@@ -45,7 +45,7 @@ public class Class222 implements Interface75 {
 
 	@OriginalMember(owner = "client!db", name = "n", descriptor = "()I", line = 149)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt3631 * -307556643;
 	}
 
@@ -81,11 +81,11 @@ public class Class222 implements Interface75 {
 
 	@OriginalMember(owner = "client!db", name = "aud", descriptor = "(Lclient!yf;I)V", line = 13377)
 	static final void method25585(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub36_1.method16246((byte) 1);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub36_1.method16246((byte) 1);
 	}
 
 	@OriginalMember(owner = "client!db", name = "auw", descriptor = "(Lclient!yf;I)V", line = 13397)
 	static final void method25586(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub14_1.method15656(1947646546) == 1 ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub14_1.method15656(1947646546) == 1 ? 1 : 0;
 	}
 }

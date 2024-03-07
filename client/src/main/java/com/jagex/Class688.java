@@ -333,15 +333,15 @@ public class Class688 implements Interface13, Interface5 {
 		@Pc(188) int local188;
 		if (Class20.method376(2013206566) == 3) {
 			@Pc(45) Class93_Sub30 local45 = Class65.aClass123_Sub1_2.method9011((byte) -76).method21410((byte) 42);
-			@Pc(49) Class611 local49 = client.aClass532_1.method30455(1876469160);
+			@Pc(49) Class611 local49 = client.world.method30455(1876469160);
 			Class620.anInt5644 = ((int) ((double) Class65.aClass123_Sub1_2.method9040((byte) 122) * 2607.5945876176133D) & 0x3FFF) * -1151839067;
-			Class24.anInt82 = ((int) ((double) Class65.aClass123_Sub1_2.method9042((byte) -94) * -2607.5945876176133D) & 0x3FFF) * 1056124373;
+			IsaacRandom.anInt82 = ((int) ((double) Class65.aClass123_Sub1_2.method9042((byte) -94) * -2607.5945876176133D) & 0x3FFF) * 1056124373;
 			Class348.anInt4199 = 0;
 			client.anInt3571 = (int) ((float) (Class627.anInt5706 * -103954239) + (float) ((int) ((double) (client.anInt3569 * -1968459517) / (Math.tan((double) (Class65.aClass123_Sub1_2.method9077(-1674847276) / 2.0F)) * 4.0D)) - Class627.anInt5706 * -103954239) * local35) * 1984904847;
 			Class163.anInt2002 = (int) (local35 * (float) (local45.anInt1610 * -427776677 - local49.anInt5623 * 1114227200 - Class86.anInt264 * 1288101077) + (float) (Class86.anInt264 * 1288101077)) * 1636217271;
 			Class130_Sub2.anInt1117 = (int) ((float) (-(local45.anInt1611 * 1802884841) - Class508.anInt5204 * -313412555) * local35 + (float) (Class508.anInt5204 * -313412555)) * 1820517185;
 			Class270.anInt3884 = (int) (local35 * (float) (local45.anInt1612 * 671628745 - local49.anInt5624 * 1116707328 - Class156.anInt1664 * 1602282841) + (float) (Class156.anInt1664 * 1602282841)) * -967471741;
-			local188 = -(Class24.anInt82 * -20667523) - Class35.anInt114 * 1851606237 & 0x3FFF;
+			local188 = -(IsaacRandom.anInt82 * -20667523) - Class35.anInt114 * 1851606237 & 0x3FFF;
 			if (local188 > 8192) {
 				local188 -= 16384;
 			} else if (local188 < -8192) {
@@ -356,21 +356,21 @@ public class Class688 implements Interface13, Interface5 {
 				local201 = client.anIntArray329[4] + 128;
 			}
 			@Pc(240) int local240 = (int) client.aFloat253 + client.anInt3461 * 1018036723 & 0x3FFF;
-			@Pc(244) Class472 local244 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.method24220().aClass472_61;
+			@Pc(244) Class472 local244 = Class520.selfPlayer.method24220().aClass472_61;
 			Class716.method36876(Class72.anInt241 * -1022856553, Class305.method26802((int) local244.aFloat317, (int) local244.aFloat319, Class512.anInt5209 * 1177442423, (byte) -78) - client.anInt3484 * 1974760385, Class441.anInt4886 * -953396699, local201, local240, (local201 >> 3) * 3 + 600 << 2, arg0, (byte) -12);
 			Class163.anInt2002 = (int) (local35 * (float) (Class163.anInt2002 * -1331168249 - Class86.anInt264 * 1288101077) + (float) (Class86.anInt264 * 1288101077)) * 1636217271;
 			Class130_Sub2.anInt1117 = (int) (local35 * (float) (Class130_Sub2.anInt1117 * 1055108289 - Class508.anInt5204 * -313412555) + (float) (Class508.anInt5204 * -313412555)) * 1820517185;
 			Class270.anInt3884 = (int) ((float) (Class156.anInt1664 * 1602282841) + local35 * (float) (Class270.anInt3884 * 466086187 - Class156.anInt1664 * 1602282841)) * -967471741;
 			Class620.anInt5644 = (int) ((float) (Class219.anInt3628 * -1583127759) + local35 * (float) (Class620.anInt5644 * 607613741 - Class219.anInt3628 * -1583127759)) * -1151839067;
-			local188 = Class24.anInt82 * -20667523 - Class35.anInt114 * 1851606237;
+			local188 = IsaacRandom.anInt82 * -20667523 - Class35.anInt114 * 1851606237;
 			if (local188 > 8192) {
 				local188 -= 16384;
 			} else if (local188 < -8192) {
 				local188 += 16384;
 			}
 		}
-		Class24.anInt82 = (int) (local35 * (float) local188 + (float) (Class35.anInt114 * 1851606237)) * 1056124373;
-		Class24.anInt82 = (Class24.anInt82 * -20667523 & 0x3FFF) * 1056124373;
+		IsaacRandom.anInt82 = (int) (local35 * (float) local188 + (float) (Class35.anInt114 * 1851606237)) * 1056124373;
+		IsaacRandom.anInt82 = (IsaacRandom.anInt82 * -20667523 & 0x3FFF) * 1056124373;
 		client.anInt3571 = (int) ((float) (Class627.anInt5706 * -103954239) + local35 * (float) (client.anInt3571 * -1609686929 - Class627.anInt5706 * -103954239)) * 1984904847;
 	}
 

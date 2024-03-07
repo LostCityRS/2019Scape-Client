@@ -72,9 +72,9 @@ public class Class170 {
 	static final void method21485(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
 		@Pc(26) String local26 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
-		@Pc(32) int local32 = Class250.method25947(Class280.aClass693_1, Class703.aClass703_3, local12, 893842351);
-		@Pc(38) int local38 = Class654.method32718(Class280.aClass693_1, Class703.aClass703_3, local12, 153396189);
-		if (client.anInt3435 * -849002901 == 13 && !Class251.method25969(-473748555)) {
+		@Pc(32) int local32 = Class250.method25947(Class280.modeWhere, Class703.aClass703_3, local12, 893842351);
+		@Pc(38) int local38 = Class654.method32718(Class280.modeWhere, Class703.aClass703_3, local12, 153396189);
+		if (client.state * -849002901 == 13 && !Class251.method25969(-473748555)) {
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class624.method32156(local12, local26, local32, local38, -1351470887) ? 1 : 0;
 		} else {
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = 0;
@@ -83,6 +83,6 @@ public class Class170 {
 
 	@OriginalMember(owner = "client!ar", name = "aym", descriptor = "(Lclient!yf;I)V", line = 14007)
 	static final void method21486(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class626.anInt5704 * 2085461781;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class626.userDob * 2085461781;
 	}
 }

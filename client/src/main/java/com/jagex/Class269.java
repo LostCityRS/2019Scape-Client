@@ -63,7 +63,7 @@ class Class269 implements Interface58 {
 			local73 = (float) local71 * 6.1035156E-5F;
 		} else {
 			if (local21.aFloat317 != 0.0F || local21.aFloat319 != 0.0F) {
-				@Pc(193) int local193 = -(Class24.anInt82 * -20667523) - (int) (Math.atan2((double) local21.aFloat317, (double) local21.aFloat319) * 2607.5945876176133D) - 4096 & 0x3FFF;
+				@Pc(193) int local193 = -(IsaacRandom.anInt82 * -20667523) - (int) (Math.atan2((double) local21.aFloat317, (double) local21.aFloat319) * 2607.5945876176133D) - 4096 & 0x3FFF;
 				if (local193 > 8192) {
 					local193 = 16384 - local193;
 				}
@@ -127,7 +127,7 @@ class Class269 implements Interface58 {
 			local73 = (float) local71 * 6.1035156E-5F;
 		} else {
 			if (local21.aFloat317 != 0.0F || local21.aFloat319 != 0.0F) {
-				@Pc(193) int local193 = -(Class24.anInt82 * -20667523) - (int) (Math.atan2((double) local21.aFloat317, (double) local21.aFloat319) * 2607.5945876176133D) - 4096 & 0x3FFF;
+				@Pc(193) int local193 = -(IsaacRandom.anInt82 * -20667523) - (int) (Math.atan2((double) local21.aFloat317, (double) local21.aFloat319) * 2607.5945876176133D) - 4096 & 0x3FFF;
 				if (local193 > 8192) {
 					local193 = 16384 - local193;
 				}
@@ -191,7 +191,7 @@ class Class269 implements Interface58 {
 			local73 = (float) local71 * 6.1035156E-5F;
 		} else {
 			if (local21.aFloat317 != 0.0F || local21.aFloat319 != 0.0F) {
-				@Pc(193) int local193 = -(Class24.anInt82 * -20667523) - (int) (Math.atan2((double) local21.aFloat317, (double) local21.aFloat319) * 2607.5945876176133D) - 4096 & 0x3FFF;
+				@Pc(193) int local193 = -(IsaacRandom.anInt82 * -20667523) - (int) (Math.atan2((double) local21.aFloat317, (double) local21.aFloat319) * 2607.5945876176133D) - 4096 & 0x3FFF;
 				if (local193 > 8192) {
 					local193 = 16384 - local193;
 				}
@@ -282,7 +282,7 @@ class Class269 implements Interface58 {
 	@OriginalMember(owner = "client!fn", name = "aq", descriptor = "(I)I", line = 519)
 	public static int method26272(@OriginalArg(0) int arg0) {
 		Class522.aTwitchEventLiveStreams1 = null;
-		return Class166_Sub13.aTwitchTV1.RequestLiveStreams(client.aClass702_4.aString242);
+		return Class166_Sub13.aTwitchTV1.RequestLiveStreams(client.modeGame.aString242);
 	}
 
 	@OriginalMember(owner = "client!fn", name = "act", descriptor = "(Lclient!yf;B)V", line = 9964)

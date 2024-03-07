@@ -19,7 +19,7 @@ final class Class367 implements Interface21 {
 	}
 
 	@OriginalMember(owner = "client!js", name = "h", descriptor = "(Lclient!akl;B)[I", line = 250)
-	static int[] method27961(@OriginalArg(0) Class93_Sub22 arg0, @OriginalArg(1) byte arg1) {
+	static int[] method27961(@OriginalArg(0) ClientMessage arg0, @OriginalArg(1) byte arg1) {
 		@Pc(4) Packet local4 = new Packet(518);
 		@Pc(7) int[] local7 = new int[4];
 		@Pc(9) int local9;
@@ -35,8 +35,8 @@ final class Class367 implements Interface21 {
 			local4.p4((int) (Math.random() * 9.9999999E7D), (byte) -16);
 		}
 		local4.p2((int) (Math.random() * 9.9999999E7D), 2130714535);
-		local4.rsaenc(Class95.aBigInteger2, Class95.aBigInteger4, (byte) -67);
-		arg0.aPacketBit_1.pdata(local4.data, 0, local4.pos * 212851357, 2026842986);
+		local4.rsaenc(Class95.LOGIN_RSAE, Class95.LOGIN_RSAN, (byte) -67);
+		arg0.packet.pdata(local4.data, 0, local4.pos * 212851357, 2026842986);
 		return local7;
 	}
 

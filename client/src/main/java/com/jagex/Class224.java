@@ -70,7 +70,7 @@ public class Class224 {
 
 	@OriginalMember(owner = "client!dd", name = "awc", descriptor = "(Lclient!yf;I)V", line = 13727)
 	static final void method25596(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		if (client.anInt3435 * -849002901 == 13) {
+		if (client.state * -849002901 == 13) {
 			Class50.aBoolean27 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091] == 1;
 		}
 	}

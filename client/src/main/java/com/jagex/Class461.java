@@ -227,6 +227,6 @@ public class Class461 {
 
 	@OriginalMember(owner = "client!oh", name = "ayr", descriptor = "(Lclient!yf;I)V", line = 14011)
 	static final void method29226(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class529.anInt5230 * 2066451899;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class529.userMembersStats * 2066451899;
 	}
 }

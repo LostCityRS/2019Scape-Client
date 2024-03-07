@@ -13,7 +13,7 @@ public class Class125_Sub3 extends Class125 {
 	public static Canvas aCanvas1;
 
 	@OriginalMember(owner = "client!ahs", name = "dv", descriptor = "Lclient!aly;")
-	public static Class93_Sub42 aClass93_Sub42_1;
+	public static Class93_Sub42 platformStats;
 
 	@OriginalMember(owner = "client!ahs", name = "p", descriptor = "I")
 	public final int anInt1127;
@@ -66,6 +66,6 @@ public class Class125_Sub3 extends Class125 {
 
 	@OriginalMember(owner = "client!ahs", name = "ack", descriptor = "(Lclient!yf;I)V", line = 9956)
 	static final void method10063(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class557.aClass297_1.method26645((byte) 16).method36920();
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class557.aClass297_1.method26645((byte) 16).getId();
 	}
 }

@@ -12,7 +12,7 @@ public class Class280 {
 	static Class497 aClass497_100;
 
 	@OriginalMember(owner = "client!fz", name = "bz", descriptor = "Lclient!yu;")
-	public static Class693 aClass693_1;
+	public static ModeWhere modeWhere;
 
 	@OriginalMember(owner = "client!fz", name = "e", descriptor = "Lclient!fz;")
 	public static final Class280 aClass280_7 = new Class280(8);
@@ -98,7 +98,7 @@ public class Class280 {
 
 	@OriginalMember(owner = "client!fz", name = "ara", descriptor = "(Lclient!yf;I)V", line = 13030)
 	static final void method26457(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub21_1, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091] == 1 ? 1 : 0, (byte) 55);
+		Class51.options.method14363(Class51.options.aClass166_Sub21_1, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091] == 1 ? 1 : 0, (byte) 55);
 		Class106_Sub1.method5135(-996412657);
 		client.aBoolean601 = false;
 	}

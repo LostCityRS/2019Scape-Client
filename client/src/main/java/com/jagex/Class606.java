@@ -71,7 +71,7 @@ public class Class606 {
 
 	@OriginalMember(owner = "client!v", name = "v", descriptor = "(Lclient!dh;Lclient!hf;IIB)V", line = 426)
 	static void method31910(@OriginalArg(0) Class104 arg0, @OriginalArg(1) Class312 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) byte arg4) {
-		if (Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3 == null) {
+		if (Class520.selfPlayer == null) {
 			return;
 		}
 		arg0.method20489();
@@ -97,7 +97,7 @@ public class Class606 {
 		}
 		arg0.method20694(Class172.anIntArray269);
 		arg0.method20637();
-		@Pc(86) Class611 local86 = client.aClass532_1.method30455(1884925766);
+		@Pc(86) Class611 local86 = client.world.method30455(1884925766);
 		@Pc(95) int local95;
 		@Pc(99) int local99;
 		@Pc(105) int local105;
@@ -108,7 +108,7 @@ public class Class606 {
 			local105 = (int) -client.aFloat253 & 0x3FFF;
 			local107 = 4096;
 		} else {
-			@Pc(112) Class472 local112 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.method24220().aClass472_61;
+			@Pc(112) Class472 local112 = Class520.selfPlayer.method24220().aClass472_61;
 			local95 = (int) local112.aFloat317;
 			local99 = (int) local112.aFloat319;
 			if (Class429.anInt4781 * -1453926679 == 3) {
@@ -119,13 +119,13 @@ public class Class606 {
 			local107 = 4096 - client.anInt3478 * 2027131152;
 		}
 		@Pc(163) int local163 = local95 / 128 + 48;
-		@Pc(175) int local175 = client.aClass532_1.method30466((short) 128) * 4 + 48 - local99 / 128;
+		@Pc(175) int local175 = client.world.method30466((short) 128) * 4 + 48 - local99 / 128;
 		if (local8 == null) {
 			Class172.aClass100_40.method18175((float) arg2 + (float) (arg1.anInt3981 * 1215292027) / 2.0F, (float) (arg1.anInt3982 * -1490598249) / 2.0F + (float) arg3, (float) local163, (float) local175, local107, local105 << 2, 1, -1, 1);
 		} else {
 			Class172.aClass100_40.method18181((float) arg2 + (float) (arg1.anInt3981 * 1215292027) / 2.0F, (float) arg3 + (float) (arg1.anInt3982 * -1490598249) / 2.0F, (float) local163, (float) local175, local107, local105 << 2, local8, arg2, arg3);
 		}
-		@Pc(249) Class584 local249 = client.aClass532_1.method30467(-484613851);
+		@Pc(249) Class584 local249 = client.world.method30467(-484613851);
 		@Pc(261) int local261;
 		@Pc(275) int local275;
 		@Pc(287) int local287;
@@ -142,7 +142,7 @@ public class Class606 {
 		for (local261 = 0; local261 < Class172.anInt3176 * 906807861; local261++) {
 			local275 = Class172.anIntArray270[local261] * 4 + 2 - local95 / 128;
 			local287 = Class172.anIntArray272[local261] * 4 + 2 - local99 / 128;
-			@Pc(367) Class610 local367 = (Class610) client.aClass532_1.method30496(1161509209).method18261(Class172.anIntArray271[local261], -1264690199);
+			@Pc(367) Class610 local367 = (Class610) client.world.method30496(1161509209).method18261(Class172.anIntArray271[local261], -1264690199);
 			if (local367.anIntArray492 != null) {
 				local367 = local367.method31991(Class624.aClass120_1, Class624.aClass120_1, 90754467);
 				if (local367 == null || local367.anInt5600 * 400633667 == -1) {
@@ -166,11 +166,11 @@ public class Class606 {
 		Class331.method27385(local95, local99, arg1, local6, arg2, arg3, (short) 28482);
 		if (Class429.anInt4781 * -1453926679 != 4) {
 			if (Class172.anInt3179 * -820036969 != -1) {
-				local261 = Class172.anInt3179 * 1014819420 + 2 - local95 / 128 + (Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.method19986(842279579) - 1) * 2;
-				local275 = Class172.anInt3174 * -879462196 + 2 - local99 / 128 + (Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.method19986(1473374830) - 1) * 2;
+				local261 = Class172.anInt3179 * 1014819420 + 2 - local95 / 128 + (Class520.selfPlayer.method19986(842279579) - 1) * 2;
+				local275 = Class172.anInt3174 * -879462196 + 2 - local99 / 128 + (Class520.selfPlayer.method19986(1473374830) - 1) * 2;
 				Class323.method27276(arg1, local8, arg2 - Class32_Sub7.anInt2393 * -1219483541, arg3 - Class106_Sub2.anInt749 * -2031220771, local261, local275, Class60.aClass100Array1[Class172.aBoolean521 ? 1 : 0], 100.0D, Class319.aClass319_3, Class328.aClass328_4, 1383377149);
 			}
-			if (!Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aClass659_1.method32801(-125905710)) {
+			if (!Class520.selfPlayer.aClass659_1.method32801(-125905710)) {
 				arg0.method20469(arg1.anInt3981 * 1215292027 / 2 + arg2 - 1, arg1.anInt3982 * -1490598249 / 2 + arg3 - 1, 3, 3, -1, (byte) 121);
 			}
 		}

@@ -101,25 +101,25 @@ class Class262 implements Interface39 {
 	@OriginalMember(owner = "client!ff", name = "n", descriptor = "()F", line = 487)
 	@Override
 	public float method26346() {
-		return (float) Class51.aClass93_Sub36_1.aClass166_Sub35_1.method16226(1740916554) / 255.0F;
+		return (float) Class51.options.aClass166_Sub35_1.method16226(1740916554) / 255.0F;
 	}
 
 	@OriginalMember(owner = "client!ff", name = "e", descriptor = "(I)F", line = 487)
 	@Override
 	public float method26345(@OriginalArg(0) int arg0) {
-		return (float) Class51.aClass93_Sub36_1.aClass166_Sub35_1.method16226(-1754336219) / 255.0F;
+		return (float) Class51.options.aClass166_Sub35_1.method16226(-1754336219) / 255.0F;
 	}
 
 	@OriginalMember(owner = "client!ff", name = "hq", descriptor = "(I)V", line = 4633)
 	public static final void method26171(@OriginalArg(0) int arg0) {
-		@Pc(4) int local4 = Class51.aClass93_Sub36_1.aClass166_Sub15_2.method15673(1349843171);
+		@Pc(4) int local4 = Class51.options.aClass166_Sub15_2.method15673(1349843171);
 		if (local4 == 0) {
-			client.aClass532_1.method30508(null, 1388606318);
+			client.world.method30508(null, 1388606318);
 			Class75.method1268(0, (byte) 91);
 		} else if (local4 == 1 || local4 == 3) {
 			Class249.method25945((byte) 0, 1118107359);
 			Class75.method1268(512, (byte) 109);
-			if (client.aClass532_1.method30481(-1092450087) != null) {
+			if (client.world.method30481(-1092450087) != null) {
 				Class110.method20146(-2108217161);
 			}
 		} else {

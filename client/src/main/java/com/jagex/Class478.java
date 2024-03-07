@@ -32,9 +32,9 @@ public class Class478 {
 	@OriginalMember(owner = "client!pd", name = "e", descriptor = "(I)Lclient!ali;", line = 38)
 	static Class93_Sub36 method29707(@OriginalArg(0) int arg0) {
 		@Pc(1) Class38 local1 = null;
-		@Pc(7) Class93_Sub36 local7 = new Class93_Sub36(client.aClass702_4, 0);
+		@Pc(7) Class93_Sub36 local7 = new Class93_Sub36(client.modeGame, 0);
 		try {
-			local1 = Class166_Sub18.method15743("", client.aClass702_4.aString241, false, 199047110);
+			local1 = Class166_Sub18.method15743("", client.modeGame.aString241, false, 199047110);
 			@Pc(20) byte[] local20 = new byte[(int) local1.method732(1587415624)];
 			@Pc(36) int local36;
 			for (@Pc(22) int local22 = 0; local22 < local20.length; local22 += local36) {
@@ -43,7 +43,7 @@ public class Class478 {
 					throw new IOException();
 				}
 			}
-			local7 = new Class93_Sub36(new Packet(local20), client.aClass702_4, 0);
+			local7 = new Class93_Sub36(new Packet(local20), client.modeGame, 0);
 		} catch (@Pc(60) Exception local60) {
 		}
 		try {
@@ -81,9 +81,9 @@ public class Class478 {
 	@OriginalMember(owner = "client!pd", name = "asr", descriptor = "(Lclient!yf;B)V", line = 13090)
 	static final void method29710(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		@Pc(17) int local17 = Class51.aClass93_Sub36_1.aClass166_Sub35_4.method16226(212353480);
+		@Pc(17) int local17 = Class51.options.aClass166_Sub35_4.method16226(212353480);
 		if (local12 != local17) {
-			Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub35_4, local12, (byte) 113);
+			Class51.options.method14363(Class51.options.aClass166_Sub35_4, local12, (byte) 113);
 			Class106_Sub1.method5135(337596176);
 			client.aBoolean601 = false;
 		}

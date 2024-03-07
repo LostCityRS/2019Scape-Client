@@ -71,7 +71,7 @@ public class Class132_Sub1_Sub5_Sub1 extends Class132_Sub1_Sub5 {
 		this.anInt3287 = ((int) (Math.random() * 4.0D) + 32) * 633559013;
 		this.anInt3288 = ((int) (Math.random() * 2.0D) + 3) * -1127649149;
 		this.anInt3282 = ((int) (Math.random() * 3.0D) + 16) * 1718684555;
-		if (Class51.aClass93_Sub36_1.aClass166_Sub14_1.method15656(470258637) == 1) {
+		if (Class51.options.aClass166_Sub14_1.method15656(470258637) == 1) {
 			this.anInt3283 = (int) (Math.random() * 10.0D) * 1162224971;
 		} else {
 			this.anInt3283 = (int) (Math.random() * 20.0D) * 1162224971;
@@ -83,7 +83,7 @@ public class Class132_Sub1_Sub5_Sub1 extends Class132_Sub1_Sub5 {
 		this.anInt3287 = ((int) (Math.random() * 4.0D) + 32) * 633559013;
 		this.anInt3288 = ((int) (Math.random() * 2.0D) + 3) * -1127649149;
 		this.anInt3282 = ((int) (Math.random() * 3.0D) + 16) * 1718684555;
-		if (Class51.aClass93_Sub36_1.aClass166_Sub14_1.method15656(440735077) == 1) {
+		if (Class51.options.aClass166_Sub14_1.method15656(440735077) == 1) {
 			this.anInt3283 = (int) (Math.random() * 10.0D) * 1162224971;
 		} else {
 			this.anInt3283 = (int) (Math.random() * 20.0D) * 1162224971;

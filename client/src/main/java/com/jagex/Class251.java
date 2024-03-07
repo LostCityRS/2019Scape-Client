@@ -89,7 +89,7 @@ final class Class251 implements Interface23 {
 
 	@OriginalMember(owner = "client!et", name = "w", descriptor = "(I)Z", line = 148)
 	public static final boolean method25969(@OriginalArg(0) int arg0) {
-		return Class411.anInt4721 * 327612781 != 7;
+		return Class411.step * 327612781 != 7;
 	}
 
 	@OriginalMember(owner = "client!et", name = "w", descriptor = "(Lclient!alq;IIB)V", line = 224)
@@ -109,10 +109,10 @@ final class Class251 implements Interface23 {
 			Class238.method25797(true, 1736405322);
 			local10 = 1;
 		}
-		if (Class51.aClass93_Sub36_1.aClass166_Sub4_2.method15426((byte) 72) == arg1) {
-			Class51.aClass93_Sub36_1.method14366(Class51.aClass93_Sub36_1.aClass166_Sub4_2, true, 1597280608);
+		if (Class51.options.aClass166_Sub4_2.method15426((byte) 72) == arg1) {
+			Class51.options.method14366(Class51.options.aClass166_Sub4_2, true, 1597280608);
 		} else {
-			Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub4_1, arg1, (byte) 123);
+			Class51.options.method14363(Class51.options.aClass166_Sub4_1, arg1, (byte) 123);
 			Class543.method30945(arg1, false, 1945646779);
 		}
 		Class106_Sub1.method5135(-500282930);
@@ -139,6 +139,6 @@ final class Class251 implements Interface23 {
 
 	@OriginalMember(owner = "client!et", name = "aqc", descriptor = "(Lclient!yf;I)V", line = 12798)
 	static final void method25973(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class411.anInt4750 * 1486673001;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class411.enterGameReply * 1486673001;
 	}
 }

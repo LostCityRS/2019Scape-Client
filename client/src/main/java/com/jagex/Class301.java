@@ -58,7 +58,7 @@ public class Class301 implements Interface75 {
 
 	@OriginalMember(owner = "client!gv", name = "n", descriptor = "()I", line = 27)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt3930 * 2034968885;
 	}
 
@@ -79,11 +79,11 @@ public class Class301 implements Interface75 {
 		Class174.anInt3297 = 0;
 		Class429.anInt4781 = -1279696551;
 		if (Class20.method376(1207975135) == 3) {
-			@Pc(28) Class611 local28 = client.aClass532_1.method30455(1810107931);
+			@Pc(28) Class611 local28 = client.world.method30455(1810107931);
 			@Pc(35) int local35 = local28.anInt5623 * 270611681 << 9;
 			@Pc(42) int local42 = local28.anInt5624 * -1994307635 << 9;
 			@Pc(47) int local47 = 1000 / Class451.method28950((byte) 3);
-			Class65.aClass123_Sub1_2.method8925((float) local47 / 1000.0F, client.aClass532_1.method30511(-310507201).anIntArrayArrayArray14, client.aClass532_1.method30487(-1214309031), local35, local42, 1160510591);
+			Class65.aClass123_Sub1_2.method8925((float) local47 / 1000.0F, client.world.method30511(-310507201).anIntArrayArrayArray14, client.world.method30487(-1214309031), local35, local42, 1160510591);
 		}
 		Class444.anInt4895 = 783237131;
 		Class175.anInt3306 = 1395810859;
@@ -92,7 +92,7 @@ public class Class301 implements Interface75 {
 		Class508.anInt5204 = Class130_Sub2.anInt1117 * 1612451805;
 		Class156.anInt1664 = Class270.anInt3884 * 1977957923;
 		Class219.anInt3628 = Class620.anInt5644 * 151828669;
-		Class35.anInt114 = Class24.anInt82 * 881336097;
+		Class35.anInt114 = IsaacRandom.anInt82 * 881336097;
 		Class627.anInt5706 = client.anInt3571 * -1367702225;
 	}
 

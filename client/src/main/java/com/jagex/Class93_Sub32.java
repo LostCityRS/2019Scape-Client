@@ -164,6 +164,6 @@ public class Class93_Sub32 extends Class93 {
 
 	@OriginalMember(owner = "client!akv", name = "arg", descriptor = "(Lclient!yf;I)V", line = 12903)
 	static final void method13931(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		Class642.method32520(false, (short) 3224);
+		Class642.logout(false, (short) 3224);
 	}
 }

@@ -51,19 +51,19 @@ public class Class368 {
 
 	@OriginalMember(owner = "client!ju", name = "arr", descriptor = "(Lclient!yf;S)V", line = 13043)
 	static final void method27966(@OriginalArg(0) Class681 arg0, @OriginalArg(1) short arg1) {
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub17_1, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], (byte) 82);
-		client.aClass532_1.method30533((byte) 0);
+		Class51.options.method14363(Class51.options.aClass166_Sub17_1, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], (byte) 82);
+		client.world.method30533((byte) 0);
 		Class106_Sub1.method5135(1506467753);
 		client.aBoolean601 = false;
 	}
 
 	@OriginalMember(owner = "client!ju", name = "ays", descriptor = "(Lclient!yf;B)V", line = 13999)
 	static final void method27967(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class481.anInt5142 * -2042157777;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class481.userGraceExpiry * -2042157777;
 	}
 
 	@OriginalMember(owner = "client!ju", name = "ayc", descriptor = "(Lclient!yf;B)V", line = 14015)
 	static final void method27968(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class549.anInt5292 * -1276619065;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class549.userPlayAge * -1276619065;
 	}
 }

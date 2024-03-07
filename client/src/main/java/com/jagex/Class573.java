@@ -121,16 +121,16 @@ public class Class573 {
 
 	@OriginalMember(owner = "client!tl", name = "ju", descriptor = "(IIIIIILclient!oe;IIB)V", line = 10018)
 	public static void method31343(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) Class458 arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(9) byte arg9) {
-		if (arg1 < 0 || arg2 < 0 || arg1 >= client.aClass532_1.method30459(789645594) - 1 || arg2 >= client.aClass532_1.method30466((short) 128) - 1) {
+		if (arg1 < 0 || arg2 < 0 || arg1 >= client.world.method30459(789645594) - 1 || arg2 >= client.world.method30466((short) 128) - 1) {
 			return;
 		}
-		if (client.aClass532_1.method30481(-1060849552) == null) {
+		if (client.world.method30481(-1060849552) == null) {
 			return;
 		}
 		@Pc(34) Interface61 local34;
 		if (arg3 == 0) {
-			local34 = (Interface61) client.aClass532_1.method30481(-1973903823).method31534(arg0, arg1, arg2, -1309876799);
-			@Pc(44) Interface61 local44 = (Interface61) client.aClass532_1.method30481(-1124323373).method31543(arg0, arg1, arg2, -1583959719);
+			local34 = (Interface61) client.world.method30481(-1973903823).method31534(arg0, arg1, arg2, -1309876799);
+			@Pc(44) Interface61 local44 = (Interface61) client.world.method30481(-1124323373).method31543(arg0, arg1, arg2, -1583959719);
 			if (local34 != null && arg4 != 2) {
 				if (local34 instanceof Class132_Sub1_Sub2_Sub2) {
 					((Class132_Sub1_Sub2_Sub2) local34).aClass558_2.method31068(arg7, arg8, -84795505);
@@ -146,7 +146,7 @@ public class Class573 {
 				}
 			}
 		} else if (arg3 == 1) {
-			local34 = (Interface61) client.aClass532_1.method30481(-1740417433).method31544(arg0, arg1, arg2, -2076903304);
+			local34 = (Interface61) client.world.method30481(-1740417433).method31544(arg0, arg1, arg2, -2076903304);
 			if (local34 != null) {
 				if (local34 instanceof Class132_Sub1_Sub3_Sub1) {
 					((Class132_Sub1_Sub3_Sub1) local34).aClass558_1.method31068(arg7, arg8, 1922760338);
@@ -165,7 +165,7 @@ public class Class573 {
 				}
 			}
 		} else if (arg3 == 2) {
-			local34 = (Interface61) client.aClass532_1.method30481(-2026121943).method31551(arg0, arg1, arg2, client.anInterface62_1, (byte) 3);
+			local34 = (Interface61) client.world.method30481(-2026121943).method31551(arg0, arg1, arg2, client.anInterface62_1, (byte) 3);
 			if (local34 != null) {
 				if (arg4 == 11) {
 					arg4 = 10;
@@ -177,7 +177,7 @@ public class Class573 {
 				}
 			}
 		} else if (arg3 == 3) {
-			local34 = (Interface61) client.aClass532_1.method30481(-2083185738).method31556(arg0, arg1, arg2, -968156135);
+			local34 = (Interface61) client.world.method30481(-2083185738).method31556(arg0, arg1, arg2, -968156135);
 			if (local34 != null) {
 				if (local34 instanceof Class132_Sub1_Sub4_Sub1) {
 					((Class132_Sub1_Sub4_Sub1) local34).aClass558_3.method31068(arg7, arg8, -209475280);

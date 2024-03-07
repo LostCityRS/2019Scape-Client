@@ -275,7 +275,7 @@ public class Class378 implements Interface33 {
 
 	@OriginalMember(owner = "client!kg", name = "e", descriptor = "(I)Z", line = 118)
 	static boolean method28070(@OriginalArg(0) int arg0) {
-		return Class411.anInt4746 * 276097583 == -1 ? Class666.method32902(Class411.aString200, Class411.aString201, -869588093) : Class529.method30400(-1373744230);
+		return Class411.anInt4746 * 276097583 == -1 ? Class666.method32902(Class411.username, Class411.aString201, -869588093) : Class529.method30400(-1373744230);
 	}
 
 	@OriginalMember(owner = "client!kg", name = "l", descriptor = "(Lclient!aqk;I)V", line = 268)
@@ -294,6 +294,6 @@ public class Class378 implements Interface33 {
 
 	@OriginalMember(owner = "client!kg", name = "yw", descriptor = "(Lclient!yf;I)V", line = 9303)
 	static final void method28072(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class106.aClass717_8.method36920();
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class106.lang.getId();
 	}
 }

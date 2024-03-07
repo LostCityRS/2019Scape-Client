@@ -210,12 +210,12 @@ public class Class31 {
 			if (Class454.anInt5042 * -1838307953 == 1) {
 				return;
 			}
-			if (Class620.aBoolean843 && Class454.anInt5042 * -1838307953 == 2 && Class594.aClass93_Sub1_Sub7_6.aString99.equals(Class74.aClass74_134.method1259(Class106.aClass717_8, (byte) -15))) {
+			if (Class620.aBoolean843 && Class454.anInt5042 * -1838307953 == 2 && Class594.aClass93_Sub1_Sub7_6.aString99.equals(Class74.aClass74_134.method1259(Class106.lang, (byte) -15))) {
 				return;
 			}
 		}
 		@Pc(27) Class5 local27 = Class142_Sub1.method10971((byte) 48);
-		@Pc(35) int local35 = local27.method53(Class74.aClass74_90.method1259(Class106.aClass717_8, (byte) 85), -231282877);
+		@Pc(35) int local35 = local27.method53(Class74.aClass74_90.method1259(Class106.lang, (byte) 85), -231282877);
 		@Pc(72) int local72;
 		@Pc(50) int local50;
 		if (Class454.aBoolean772) {
@@ -245,15 +245,15 @@ public class Class31 {
 		}
 		local35 += 10;
 		@Pc(162) int local162 = arg0 - local35 / 2;
-		if (local35 + local162 > Class553.anInt3408 * -1378711501) {
-			local162 = Class553.anInt3408 * -1378711501 - local35;
+		if (local35 + local162 > Class553.width * -1378711501) {
+			local162 = Class553.width * -1378711501 - local35;
 		}
 		if (local162 < 0) {
 			local162 = 0;
 		}
 		local50 = arg1;
-		if (arg1 + local72 > Class553.anInt3416 * 2091353777) {
-			local50 = Class553.anInt3416 * 2091353777 - local72;
+		if (arg1 + local72 > Class553.height * 2091353777) {
+			local50 = Class553.height * 2091353777 - local72;
 		}
 		if (local50 < 0) {
 			local50 = 0;

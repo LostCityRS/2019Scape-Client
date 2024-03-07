@@ -47,7 +47,7 @@ public class Class591 implements Interface75, Interface64 {
 
 	@OriginalMember(owner = "client!ud", name = "n", descriptor = "()I", line = 39)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt5476 * -1028676027;
 	}
 
@@ -59,7 +59,7 @@ public class Class591 implements Interface75, Interface64 {
 
 	@OriginalMember(owner = "client!ud", name = "l", descriptor = "(I)V", line = 45)
 	public static void method31696(@OriginalArg(0) int arg0) {
-		if (client.anInt3435 * -849002901 != 18 && client.anInt3435 * -849002901 != 3 || client.aClass175_2 == null) {
+		if (client.state * -849002901 != 18 && client.state * -849002901 != 3 || client.aClass175_2 == null) {
 			return;
 		}
 		while (true) {
@@ -78,13 +78,13 @@ public class Class591 implements Interface75, Interface64 {
 
 	@OriginalMember(owner = "client!ud", name = "u", descriptor = "(IIIILclient!vp;I)V", line = 187)
 	static final void method31698(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) Class620 arg4, @OriginalArg(5) int arg5) {
-		if (arg2 < 1 || arg3 < 1 || arg2 > client.aClass532_1.method30459(299394856) - 2 || arg3 > client.aClass532_1.method30466((short) 128) - 2) {
+		if (arg2 < 1 || arg3 < 1 || arg2 > client.world.method30459(299394856) - 2 || arg3 > client.world.method30466((short) 128) - 2) {
 			return;
 		}
-		if (client.aClass532_1.method30481(-1931560151) == null) {
+		if (client.world.method30481(-1931560151) == null) {
 			return;
 		}
-		@Pc(34) Interface61 local34 = client.aClass532_1.method30511(-310507201).method10987(arg0, arg1, arg2, arg3, 2036579613);
+		@Pc(34) Interface61 local34 = client.world.method30511(-310507201).method10987(arg0, arg1, arg2, arg3, 2036579613);
 		if (local34 == null) {
 			return;
 		}
@@ -124,7 +124,7 @@ public class Class591 implements Interface75, Interface64 {
 	@OriginalMember(owner = "client!ud", name = "alh", descriptor = "(Lclient!yf;I)V", line = 11972)
 	static final void method31701(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		if (Class4.aBoolean2 && Class125_Sub2_Sub1.aFrame1 != null) {
-			Class717.method36895(Class51.aClass93_Sub36_1.aClass166_Sub23_1.method15844(807670402), -1, -1, false, (byte) 2);
+			Class717.method36895(Class51.options.aClass166_Sub23_1.method15844(807670402), -1, -1, false, (byte) 2);
 		}
 		@Pc(26) String local26 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
 		@Pc(44) boolean local44 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091] == 1;

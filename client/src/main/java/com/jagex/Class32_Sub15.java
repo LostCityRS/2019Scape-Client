@@ -21,6 +21,6 @@ public class Class32_Sub15 extends Class32 {
 
 	@OriginalMember(owner = "client!aoq", name = "avs", descriptor = "(Lclient!yf;I)V", line = 13441)
 	static final void method17181(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub29_1.method16064(-1628934257);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub29_1.method16064(-1628934257);
 	}
 }

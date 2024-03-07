@@ -44,7 +44,7 @@ public class Class319 implements Interface75 {
 
 	@OriginalMember(owner = "client!hp", name = "n", descriptor = "()I", line = 23)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt4096 * 147992651;
 	}
 
@@ -89,10 +89,10 @@ public class Class319 implements Interface75 {
 		@Pc(63) int local63 = -1;
 		if (local7) {
 			try {
-				Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub45_1, 3, (byte) 8);
+				Class51.options.method14363(Class51.options.aClass166_Sub45_1, 3, (byte) 8);
 				Class106_Sub1.method5135(-1375852755);
 				local61 = Class78.method1316(3, 1000, 1323350560);
-				if (Class51.aClass93_Sub36_1.aClass166_Sub4_2.method15426((byte) 95) == 3) {
+				if (Class51.options.aClass166_Sub4_2.method15426((byte) 95) == 3) {
 					local3.method14875(4, -186815924);
 					@Pc(91) Class219 local91 = Class694.aClass104_14.method20644();
 					@Pc(98) long local98 = local91.aLong247 * -2731861378298283411L & 0xFFFFFFFFFFFFL;
@@ -119,10 +119,10 @@ public class Class319 implements Interface75 {
 		}
 		if (local9) {
 			try {
-				Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub45_1, 5, (byte) 53);
+				Class51.options.method14363(Class51.options.aClass166_Sub45_1, 5, (byte) 53);
 				Class106_Sub1.method5135(-137038787);
 				local63 = Class78.method1316(5, 1000, 1323350560);
-				if (Class51.aClass93_Sub36_1.aClass166_Sub4_2.method15426((byte) 31) == 5) {
+				if (Class51.options.aClass166_Sub4_2.method15426((byte) 31) == 5) {
 					local3.method14875(8192, -537301305);
 				}
 			} catch (@Pc(173) Exception local173) {
@@ -131,17 +131,17 @@ public class Class319 implements Interface75 {
 		}
 		if (local5) {
 			try {
-				Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub45_1, 4, (byte) 62);
+				Class51.options.method14363(Class51.options.aClass166_Sub45_1, 4, (byte) 62);
 				Class106_Sub1.method5135(1965936072);
 				local59 = Class78.method1316(1, 1000, 1323350560);
-				if (Class51.aClass93_Sub36_1.aClass166_Sub4_2.method15426((byte) 75) == 1) {
+				if (Class51.options.aClass166_Sub4_2.method15426((byte) 75) == 1) {
 					local3.method14875(2, 399925894);
 				}
 			} catch (@Pc(204) Exception local204) {
 				local3.method14875(2048, -22813249);
 			}
 		}
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub45_1, 0, (byte) 35);
+		Class51.options.method14363(Class51.options.aClass166_Sub45_1, 0, (byte) 35);
 		if (local59 == -1 && local61 == -1) {
 			Class155_Sub2.method15310(local3, -602061204);
 			return local3;

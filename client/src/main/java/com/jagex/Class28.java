@@ -12,16 +12,16 @@ import org.openrs2.deob.annotation.Pc;
 public class Class28 {
 
 	@OriginalMember(owner = "client!aba", name = "k", descriptor = "I")
-	public int anInt99;
+	public int port2;
 
 	@OriginalMember(owner = "client!aba", name = "m", descriptor = "I")
-	public int anInt100;
+	public int port1;
 
 	@OriginalMember(owner = "client!aba", name = "n", descriptor = "Ljava/lang/String;")
-	public String aString4;
+	public String host;
 
 	@OriginalMember(owner = "client!aba", name = "e", descriptor = "I")
-	public int anInt101;
+	public int id;
 
 	@OriginalMember(owner = "client!aba", name = "f", descriptor = "Z")
 	boolean aBoolean15 = true;
@@ -31,16 +31,16 @@ public class Class28 {
 
 	@OriginalMember(owner = "client!aba", name = "k", descriptor = "()Ljava/net/Socket;", line = 19)
 	public Socket method592() throws IOException {
-		return this.aBoolean14 ? Class429.method28753(this.aString4, this.aBoolean15 ? this.anInt99 * -1815897519 : this.anInt100 * 721448659, -19069192).method16610(1875748059) : new Socket(InetAddress.getByName(this.aString4), this.aBoolean15 ? this.anInt99 * -1815897519 : this.anInt100 * 721448659);
+		return this.aBoolean14 ? Class429.method28753(this.host, this.aBoolean15 ? this.port2 * -1815897519 : this.port1 * 721448659, -19069192).method16610(1875748059) : new Socket(InetAddress.getByName(this.host), this.aBoolean15 ? this.port2 * -1815897519 : this.port1 * 721448659);
 	}
 
 	@OriginalMember(owner = "client!aba", name = "e", descriptor = "(B)Ljava/net/Socket;", line = 19)
-	public Socket method593(@OriginalArg(0) byte arg0) throws IOException {
-		return this.aBoolean14 ? Class429.method28753(this.aString4, this.aBoolean15 ? this.anInt99 * -1815897519 : this.anInt100 * 721448659, -80518013).method16610(1312515116) : new Socket(InetAddress.getByName(this.aString4), this.aBoolean15 ? this.anInt99 * -1815897519 : this.anInt100 * 721448659);
+	public Socket openSocket(@OriginalArg(0) byte arg0) throws IOException {
+		return this.aBoolean14 ? Class429.method28753(this.host, this.aBoolean15 ? this.port2 * -1815897519 : this.port1 * 721448659, -80518013).method16610(1312515116) : new Socket(InetAddress.getByName(this.host), this.aBoolean15 ? this.port2 * -1815897519 : this.port1 * 721448659);
 	}
 
 	@OriginalMember(owner = "client!aba", name = "n", descriptor = "(S)V", line = 24)
-	public void method594(@OriginalArg(0) short arg0) {
+	public void cycleSettings(@OriginalArg(0) short arg0) {
 		if (!this.aBoolean15) {
 			this.aBoolean15 = true;
 			this.aBoolean14 = true;
@@ -80,7 +80,7 @@ public class Class28 {
 		if (arg0 == null) {
 			return false;
 		} else {
-			return arg0.anInt101 * 2142901097 == this.anInt101 * 2142901097 && this.aString4.equals(arg0.aString4) && this.anInt100 * 721448659 == arg0.anInt100 * 721448659 && arg0.anInt99 * -1815897519 == this.anInt99 * -1815897519;
+			return arg0.id * 2142901097 == this.id * 2142901097 && this.host.equals(arg0.host) && this.port1 * 721448659 == arg0.port1 * 721448659 && arg0.port2 * -1815897519 == this.port2 * -1815897519;
 		}
 	}
 
@@ -89,7 +89,7 @@ public class Class28 {
 		if (arg0 == null) {
 			return false;
 		} else {
-			return arg0.anInt101 * 2142901097 == this.anInt101 * 2142901097 && this.aString4.equals(arg0.aString4) && this.anInt100 * 721448659 == arg0.anInt100 * 721448659 && arg0.anInt99 * -1815897519 == this.anInt99 * -1815897519;
+			return arg0.id * 2142901097 == this.id * 2142901097 && this.host.equals(arg0.host) && this.port1 * 721448659 == arg0.port1 * 721448659 && arg0.port2 * -1815897519 == this.port2 * -1815897519;
 		}
 	}
 
@@ -98,7 +98,7 @@ public class Class28 {
 		if (arg0 == null) {
 			return false;
 		} else {
-			return arg0.anInt101 * 2142901097 == this.anInt101 * 2142901097 && this.aString4.equals(arg0.aString4) && this.anInt100 * 721448659 == arg0.anInt100 * 721448659 && arg0.anInt99 * -1815897519 == this.anInt99 * -1815897519;
+			return arg0.id * 2142901097 == this.id * 2142901097 && this.host.equals(arg0.host) && this.port1 * 721448659 == arg0.port1 * 721448659 && arg0.port2 * -1815897519 == this.port2 * -1815897519;
 		}
 	}
 
@@ -107,7 +107,7 @@ public class Class28 {
 		if (arg0 == null) {
 			return false;
 		} else {
-			return arg0.anInt101 * 2142901097 == this.anInt101 * 2142901097 && this.aString4.equals(arg0.aString4) && this.anInt100 * 721448659 == arg0.anInt100 * 721448659 && arg0.anInt99 * -1815897519 == this.anInt99 * -1815897519;
+			return arg0.id * 2142901097 == this.id * 2142901097 && this.host.equals(arg0.host) && this.port1 * 721448659 == arg0.port1 * 721448659 && arg0.port2 * -1815897519 == this.port2 * -1815897519;
 		}
 	}
 

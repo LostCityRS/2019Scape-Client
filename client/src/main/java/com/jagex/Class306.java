@@ -144,7 +144,7 @@ public class Class306 {
 			@Pc(65) Class306 local65;
 			try {
 				var12 = true;
-				local1 = Class166_Sub18.method15743("3", client.aClass702_4.aString241, false, 199047110);
+				local1 = Class166_Sub18.method15743("3", client.modeGame.aString241, false, 199047110);
 				@Pc(16) byte[] local16 = new byte[(int) local1.method732(1585643083)];
 				@Pc(30) int local30;
 				for (int var18 = 0; var18 < local16.length; var18 += local30) {
@@ -193,7 +193,7 @@ public class Class306 {
 		label88: {
 			try {
 				var11 = true;
-				local1 = Class166_Sub18.method15743("3", client.aClass702_4.aString241, true, 199047110);
+				local1 = Class166_Sub18.method15743("3", client.modeGame.aString241, true, 199047110);
 				@Pc(15) Packet local15 = new Packet(5000);
 				this.method26805(local15, (byte) 2);
 				local1.method725(local15.data, 0, local15.pos * 212851357, 1540615972);
@@ -235,7 +235,7 @@ public class Class306 {
 		label88: {
 			try {
 				var10 = true;
-				local1 = Class166_Sub18.method15743("3", client.aClass702_4.aString241, true, 199047110);
+				local1 = Class166_Sub18.method15743("3", client.modeGame.aString241, true, 199047110);
 				@Pc(15) Packet local15 = new Packet(5000);
 				this.method26805(local15, (byte) 2);
 				local1.method725(local15.data, 0, local15.pos * 212851357, -161745629);
@@ -277,7 +277,7 @@ public class Class306 {
 		label88: {
 			try {
 				var10 = true;
-				local1 = Class166_Sub18.method15743("3", client.aClass702_4.aString241, true, 199047110);
+				local1 = Class166_Sub18.method15743("3", client.modeGame.aString241, true, 199047110);
 				@Pc(15) Packet local15 = new Packet(5000);
 				this.method26805(local15, (byte) 2);
 				local1.method725(local15.data, 0, local15.pos * 212851357, 407279871);
@@ -319,7 +319,7 @@ public class Class306 {
 		label88: {
 			try {
 				var10 = true;
-				local1 = Class166_Sub18.method15743("3", client.aClass702_4.aString241, true, 199047110);
+				local1 = Class166_Sub18.method15743("3", client.modeGame.aString241, true, 199047110);
 				@Pc(15) Packet local15 = new Packet(5000);
 				this.method26805(local15, (byte) 2);
 				local1.method725(local15.data, 0, local15.pos * 212851357, 444681064);

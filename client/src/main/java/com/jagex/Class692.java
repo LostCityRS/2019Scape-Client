@@ -50,7 +50,7 @@ public class Class692 {
 	static void method36595(@OriginalArg(0) byte arg0) {
 		Class411.aString199 = "";
 		Class411.aString201 = "";
-		Class411.aString200 = "";
+		Class411.username = "";
 		Class411.aBoolean751 = true;
 	}
 

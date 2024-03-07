@@ -301,6 +301,6 @@ public class Class331 {
 	@OriginalMember(owner = "client!ia", name = "bah", descriptor = "(Lclient!yf;I)V", line = 14268)
 	static final void method27386(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub17_1.method16546(local12, -2095582490);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub17_1.method16546(local12, -2095582490);
 	}
 }

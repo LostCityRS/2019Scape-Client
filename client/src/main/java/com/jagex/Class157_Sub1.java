@@ -118,7 +118,7 @@ public class Class157_Sub1 extends Class157 implements Interface4 {
 
 	@OriginalMember(owner = "client!alf", name = "hg", descriptor = "(J)V", line = 4399)
 	static final void method14277(@OriginalArg(0) long arg0) {
-		if (client.aClass532_1.method30481(-982141012) != null) {
+		if (client.world.method30481(-982141012) != null) {
 			if (Class429.anInt4781 * -1453926679 == 2 || Class429.anInt4781 * -1453926679 == 1) {
 				Class1.method13(arg0);
 			} else if (Class429.anInt4781 * -1453926679 == 4) {
@@ -150,9 +150,9 @@ public class Class157_Sub1 extends Class157 implements Interface4 {
 			local39 = client.anInt3555 * 225035861;
 		}
 		Class696.method36644(local39, 456633732);
-		@Pc(104) int local104 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.method19986(-1568045286) << 8;
-		@Pc(108) Class472 local108 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.method24220().aClass472_61;
-		Class110_Sub23.method8624(Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aByte100, (int) local108.aFloat317 + local104, (int) local108.aFloat319 + local104, client.anInt3480 * 1820654295, 2073453342);
+		@Pc(104) int local104 = Class520.selfPlayer.method19986(-1568045286) << 8;
+		@Pc(108) Class472 local108 = Class520.selfPlayer.method24220().aClass472_61;
+		Class110_Sub23.method8624(Class520.selfPlayer.aByte100, (int) local108.aFloat317 + local104, (int) local108.aFloat319 + local104, client.anInt3480 * 1820654295, 2073453342);
 		client.anInt3480 = 0;
 	}
 }

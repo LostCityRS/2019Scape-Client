@@ -38,7 +38,7 @@ public class Class328 implements Interface75 {
 
 	@OriginalMember(owner = "client!hy", name = "n", descriptor = "()I", line = 23)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt4143 * -1195601229;
 	}
 
@@ -82,7 +82,7 @@ public class Class328 implements Interface75 {
 				if (local106 != null && Class490.method29976(local106, arg1)) {
 					@Pc(116) Class591 local116 = local106.n();
 					if (local116 != null) {
-						Class707.method36751(local116.method36920(), local106, (byte) -47);
+						Class707.method36751(local116.getId(), local106, (byte) -47);
 					}
 				}
 			}

@@ -67,21 +67,21 @@ public class Class335 {
 		@Pc(16) int[] local16 = Class174.anIntArray278;
 		for (@Pc(18) int local18 = 0; local18 < local14; local18++) {
 			@Pc(27) Class132_Sub1_Sub1_Sub1_Sub2 local27 = client.aClass132_Sub1_Sub1_Sub1_Sub2Array1[local16[local18]];
-			if (local27.aString82 != null && local27.aString82.equalsIgnoreCase(arg0) && (local27 == Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3 && (Class253.anInt3851 * 735260021 & 0x10) != 0 || (Class253.anInt3851 * 735260021 & 0x8) != 0)) {
-				@Pc(58) Class93_Sub22 local58 = Class102.method2588(Class446.aClass446_71, client.aClass175_2.aClass24_2, (byte) 42);
-				local58.aPacketBit_1.p2(client.anInt3523 * 1573685689, 2133965049);
-				local58.aPacketBit_1.p1_alt1(0, -1591808004);
-				local58.aPacketBit_1.p2_alt1(client.anInt3524 * -239149331, (byte) -49);
-				local58.aPacketBit_1.p2_alt3(local16[local18], (short) 255);
-				local58.aPacketBit_1.p4_alt2(Class148.anInt1394 * -278883695, 844689790);
-				client.aClass175_2.method24356(local58, -2145186804);
+			if (local27.name2 != null && local27.name2.equalsIgnoreCase(arg0) && (local27 == Class520.selfPlayer && (Class253.anInt3851 * 735260021 & 0x10) != 0 || (Class253.anInt3851 * 735260021 & 0x8) != 0)) {
+				@Pc(58) ClientMessage local58 = Class102.createGameMessage(ClientProt.aClientProt_71, client.aClass175_2.clientIsaac, (byte) 42);
+				local58.packet.p2(client.anInt3523 * 1573685689, 2133965049);
+				local58.packet.p1_alt1(0, -1591808004);
+				local58.packet.p2_alt1(client.anInt3524 * -239149331, (byte) -49);
+				local58.packet.p2_alt3(local16[local18], (short) 255);
+				local58.packet.p4_alt2(Class148.anInt1394 * -278883695, 844689790);
+				client.aClass175_2.send(local58, -2145186804);
 				Class498.method30135(local27.anIntArray240[0], local27.anIntArray239[0], -2062153340);
 				local10 = true;
 				break;
 			}
 		}
 		if (!local10) {
-			Class103.method2809(4, Class74.aClass74_127.method1259(Class106.aClass717_8, (byte) -9) + arg0, -1963408433);
+			Class103.method2809(4, Class74.aClass74_127.method1259(Class106.lang, (byte) -9) + arg0, -1963408433);
 		}
 		if (client.aBoolean625) {
 			Class624.method32159(682408472);
@@ -90,6 +90,6 @@ public class Class335 {
 
 	@OriginalMember(owner = "client!ie", name = "azq", descriptor = "(Lclient!yf;I)V", line = 14185)
 	static final void method27409(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub26_1.method15910((short) -21412) ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub26_1.method15910((short) -21412) ? 1 : 0;
 	}
 }

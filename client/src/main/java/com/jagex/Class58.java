@@ -301,6 +301,6 @@ public class Class58 {
 
 	@OriginalMember(owner = "client!ach", name = "auh", descriptor = "(Lclient!yf;B)V", line = 13413)
 	static final void method1103(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub35_5.method16226(288048339);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub35_5.method16226(288048339);
 	}
 }

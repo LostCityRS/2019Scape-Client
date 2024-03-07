@@ -32,7 +32,7 @@ public class Class160_Sub1 extends Class160 {
 
 	@OriginalMember(owner = "client!all", name = "m", descriptor = "(II)Z", line = 23)
 	@Override
-	public boolean method14727(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) throws IOException {
+	public boolean available(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) throws IOException {
 		return this.aClass589_1.method31664(arg0, -1593034678);
 	}
 
@@ -74,7 +74,7 @@ public class Class160_Sub1 extends Class160 {
 
 	@OriginalMember(owner = "client!all", name = "f", descriptor = "([BIIB)I", line = 31)
 	@Override
-	public int method14720(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) byte arg3) throws IOException {
+	public int read(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) byte arg3) throws IOException {
 		return this.aClass589_1.method31671(arg0, arg1, arg2, -290440176);
 	}
 

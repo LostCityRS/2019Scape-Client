@@ -25,7 +25,7 @@ public class Class93_Sub26_Sub12 extends Class93_Sub26 {
 
 	@OriginalMember(owner = "client!arw", name = "n", descriptor = "(I)V", line = 56)
 	public static void method21966(@OriginalArg(0) int arg0) {
-		Class693.method36608(376773936);
+		ModeWhere.method36608(376773936);
 	}
 
 	@OriginalMember(owner = "client!arw", name = "<init>", descriptor = "(Lclient!kd;)V", line = 273)

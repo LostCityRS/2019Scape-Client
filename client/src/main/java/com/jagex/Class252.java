@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public class Class252 implements Interface75 {
 
 	@OriginalMember(owner = "client!ev", name = "jc", descriptor = "I")
-	static int anInt3848;
+	static int zoneUpdateLevel;
 
 	@OriginalMember(owner = "client!ev", name = "e", descriptor = "Lclient!ev;")
 	static final Class252 aClass252_4 = new Class252(2, 1);
@@ -61,7 +61,7 @@ public class Class252 implements Interface75 {
 
 	@OriginalMember(owner = "client!ev", name = "n", descriptor = "()I", line = 28)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt3847 * -315649973;
 	}
 

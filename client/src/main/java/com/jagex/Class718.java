@@ -24,7 +24,7 @@ public class Class718 implements Interface75 {
 
 	@OriginalMember(owner = "client!zu", name = "n", descriptor = "()I", line = 15)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt5964 * -1350231727;
 	}
 

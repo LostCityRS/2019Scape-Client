@@ -337,9 +337,9 @@ public class Class126_Sub2 extends Class126 {
 			return;
 		}
 		@Pc(5) Class175 local5 = Class330.method27371(-1569486854);
-		@Pc(11) Class93_Sub22 local11 = Class102.method2588(Class446.aClass446_34, local5.aClass24_2, (byte) 107);
-		local11.aPacketBit_1.p1(Packet.pjstrlen(arg0, -1727046151), (byte) -93);
-		local11.aPacketBit_1.pjstr(arg0, -1517906929);
-		local5.method24356(local11, -1632891367);
+		@Pc(11) ClientMessage local11 = Class102.createGameMessage(ClientProt.aClientProt_34, local5.clientIsaac, (byte) 107);
+		local11.packet.p1(Packet.pjstrlen(arg0, -1727046151), (byte) -93);
+		local11.packet.pjstr(arg0, -1517906929);
+		local5.send(local11, -1632891367);
 	}
 }

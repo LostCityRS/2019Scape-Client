@@ -88,7 +88,7 @@ public class Class617 {
 		arg0.anInt5888 -= 1915061582;
 		@Pc(14) String local14 = (String) arg0.anObjectArray45[arg0.anInt5888 * 587908375];
 		@Pc(25) String local25 = (String) arg0.anObjectArray45[arg0.anInt5888 * 587908375 + 1];
-		if (Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aClass658_1 != null && Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aClass658_1.aBoolean862) {
+		if (Class520.selfPlayer.aClass658_1 != null && Class520.selfPlayer.aClass658_1.aBoolean862) {
 			arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = local25;
 		} else {
 			arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = local14;
@@ -98,6 +98,6 @@ public class Class617 {
 	@OriginalMember(owner = "client!vm", name = "baw", descriptor = "(Lclient!yf;I)V", line = 14273)
 	static final void method32095(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub20_1.method16546(local12, 303122570);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub20_1.method16546(local12, 303122570);
 	}
 }

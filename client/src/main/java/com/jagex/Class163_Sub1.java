@@ -56,11 +56,11 @@ public class Class163_Sub1 extends Class163 {
 		if (local4 == null) {
 			return;
 		}
-		@Pc(14) Class93_Sub22 local14 = Class102.method2588(Class446.aClass446_8, client.aClass175_2.aClass24_2, (byte) 92);
-		local14.aPacketBit_1.p4(local4.method22875(-1678286317) | local4.method22876((byte) -36) << 16, (byte) -2);
-		local14.aPacketBit_1.p2_alt1(this.method14908(local4, 65535, 1398211098), (byte) 27);
-		local14.aPacketBit_1.p1_alt1(local4.method22896(181202022) << 1 | local4.method22894(1461818217) & 0x1, -1591808004);
-		client.aClass175_2.method24356(local14, -1652879956);
+		@Pc(14) ClientMessage local14 = Class102.createGameMessage(ClientProt.aClientProt_8, client.aClass175_2.clientIsaac, (byte) 92);
+		local14.packet.p4(local4.method22875(-1678286317) | local4.method22876((byte) -36) << 16, (byte) -2);
+		local14.packet.p2_alt1(this.method14908(local4, 65535, 1398211098), (byte) 27);
+		local14.packet.p1_alt1(local4.method22896(181202022) << 1 | local4.method22894(1461818217) & 0x1, -1591808004);
+		client.aClass175_2.send(local14, -1652879956);
 		local4.method22879((byte) 21);
 	}
 
@@ -71,11 +71,11 @@ public class Class163_Sub1 extends Class163 {
 		if (local4 == null) {
 			return;
 		}
-		@Pc(14) Class93_Sub22 local14 = Class102.method2588(Class446.aClass446_8, client.aClass175_2.aClass24_2, (byte) 22);
-		local14.aPacketBit_1.p4(local4.method22875(-1678286317) | local4.method22876((byte) -101) << 16, (byte) 101);
-		local14.aPacketBit_1.p2_alt1(this.method14908(local4, 65535, -226537743), (byte) -65);
-		local14.aPacketBit_1.p1_alt1(local4.method22896(1235421580) << 1 | local4.method22894(1584031211) & 0x1, -1591808004);
-		client.aClass175_2.method24356(local14, -1983532613);
+		@Pc(14) ClientMessage local14 = Class102.createGameMessage(ClientProt.aClientProt_8, client.aClass175_2.clientIsaac, (byte) 22);
+		local14.packet.p4(local4.method22875(-1678286317) | local4.method22876((byte) -101) << 16, (byte) 101);
+		local14.packet.p2_alt1(this.method14908(local4, 65535, -226537743), (byte) -65);
+		local14.packet.p1_alt1(local4.method22896(1235421580) << 1 | local4.method22894(1584031211) & 0x1, -1591808004);
+		client.aClass175_2.send(local14, -1983532613);
 		local4.method22879((byte) 76);
 	}
 
@@ -86,11 +86,11 @@ public class Class163_Sub1 extends Class163 {
 		if (local4 == null) {
 			return;
 		}
-		@Pc(14) Class93_Sub22 local14 = Class102.method2588(Class446.aClass446_8, client.aClass175_2.aClass24_2, (byte) 7);
-		local14.aPacketBit_1.p4(local4.method22875(-1678286317) | local4.method22876((byte) -26) << 16, (byte) -40);
-		local14.aPacketBit_1.p2_alt1(this.method14908(local4, 65535, 1718512283), (byte) 33);
-		local14.aPacketBit_1.p1_alt1(local4.method22896(-1693652945) << 1 | local4.method22894(886727591) & 0x1, -1591808004);
-		client.aClass175_2.method24356(local14, -1444338590);
+		@Pc(14) ClientMessage local14 = Class102.createGameMessage(ClientProt.aClientProt_8, client.aClass175_2.clientIsaac, (byte) 7);
+		local14.packet.p4(local4.method22875(-1678286317) | local4.method22876((byte) -26) << 16, (byte) -40);
+		local14.packet.p2_alt1(this.method14908(local4, 65535, 1718512283), (byte) 33);
+		local14.packet.p1_alt1(local4.method22896(-1693652945) << 1 | local4.method22894(886727591) & 0x1, -1591808004);
+		client.aClass175_2.send(local14, -1444338590);
 		local4.method22879((byte) 39);
 	}
 
@@ -108,14 +108,14 @@ public class Class163_Sub1 extends Class163 {
 
 	@OriginalMember(owner = "client!alp", name = "z", descriptor = "(S)Lclient!akl;", line = 38)
 	@Override
-	Class93_Sub22 method14917(@OriginalArg(0) short arg0) {
-		return Class102.method2588(Class446.aClass446_7, client.aClass175_2.aClass24_2, (byte) 58);
+	ClientMessage method14917(@OriginalArg(0) short arg0) {
+		return Class102.createGameMessage(ClientProt.aClientProt_7, client.aClass175_2.clientIsaac, (byte) 58);
 	}
 
 	@OriginalMember(owner = "client!alp", name = "r", descriptor = "()Lclient!akl;", line = 38)
 	@Override
-	Class93_Sub22 method14921() {
-		return Class102.method2588(Class446.aClass446_7, client.aClass175_2.aClass24_2, (byte) 22);
+	ClientMessage method14921() {
+		return Class102.createGameMessage(ClientProt.aClientProt_7, client.aClass175_2.clientIsaac, (byte) 22);
 	}
 
 	@OriginalMember(owner = "client!alp", name = "j", descriptor = "(Lclient!alw;Lclient!asp;I)V", line = 42)

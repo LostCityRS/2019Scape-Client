@@ -39,9 +39,9 @@ public class Class429 {
 		if (Class633.method32304(local13, 250407149)) {
 			local15 = Class616.method32090(local13, (byte) 8);
 		}
-		@Pc(29) Class93_Sub22 local29 = Class102.method2588(Class446.aClass446_123, client.aClass175_2.aClass24_2, (byte) 75);
-		local29.aPacketBit_1.p4(local15, (byte) -9);
-		client.aClass175_2.method24356(local29, -1971146310);
+		@Pc(29) ClientMessage local29 = Class102.createGameMessage(ClientProt.aClientProt_123, client.aClass175_2.clientIsaac, (byte) 75);
+		local29.packet.p4(local15, (byte) -9);
+		client.aClass175_2.send(local29, -1971146310);
 	}
 
 	@OriginalMember(owner = "client!mz", name = "aon", descriptor = "(Lclient!yf;I)V", line = 12606)

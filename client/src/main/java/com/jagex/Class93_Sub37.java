@@ -44,7 +44,7 @@ public class Class93_Sub37 extends Class93 {
 	static final void method14684(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		Class586.method31636((byte) 71);
 		Class275.method26341(1235995117);
-		client.aClass532_1.method30533((byte) 0);
+		client.world.method30533((byte) 0);
 		Class106_Sub1.method5135(-130412303);
 		client.aBoolean601 = false;
 	}

@@ -130,9 +130,9 @@ public class Class234 {
 		@Pc(33) boolean local33 = arg0.anIntArray519[arg0.anInt5891 * -1497248091] == 1;
 		@Pc(48) boolean local48 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 1] == 1;
 		@Pc(63) boolean local63 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 2] == 1;
-		@Pc(69) Class93_Sub22 local69 = Class102.method2588(Class446.aClass446_80, client.aClass175_1.aClass24_2, (byte) 116);
-		local69.aPacketBit_1.p2(Packet.pjstrlen(local20, -1764169458) + 1, 2132026922);
-		local69.aPacketBit_1.pjstr(local20, 1458001794);
+		@Pc(69) ClientMessage local69 = Class102.createGameMessage(ClientProt.aClientProt_80, client.aClass175_1.clientIsaac, (byte) 116);
+		local69.packet.p2(Packet.pjstrlen(local20, -1764169458) + 1, 2132026922);
+		local69.packet.pjstr(local20, 1458001794);
 		@Pc(85) int local85 = 0;
 		if (local33) {
 			local85 |= 0x1;
@@ -143,12 +143,12 @@ public class Class234 {
 		if (local63) {
 			local85 |= 0x4;
 		}
-		local69.aPacketBit_1.p1(local85, (byte) -36);
-		client.aClass175_1.method24356(local69, -1987932025);
+		local69.packet.p1(local85, (byte) -36);
+		client.aClass175_1.send(local69, -1987932025);
 	}
 
 	@OriginalMember(owner = "client!du", name = "aum", descriptor = "(Lclient!yf;I)V", line = 13385)
 	static final void method25746(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub4_2.method15426((byte) 108);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub4_2.method15426((byte) 108);
 	}
 }

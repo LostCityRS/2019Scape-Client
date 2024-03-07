@@ -12,16 +12,16 @@ public class Class50 {
 	public static Class28 aClass28_1;
 
 	@OriginalMember(owner = "client!abz", name = "e", descriptor = "Lclient!aba;")
-	public static Class28 aClass28_2;
+	public static Class28 lobby;
 
 	@OriginalMember(owner = "client!abz", name = "f", descriptor = "Lclient!aba;")
-	public static Class28 aClass28_3;
+	public static Class28 game;
 
 	@OriginalMember(owner = "client!abz", name = "l", descriptor = "Lclient!aba;")
 	public static Class28 aClass28_4;
 
 	@OriginalMember(owner = "client!abz", name = "k", descriptor = "Lclient!aba;")
-	public static Class28 aClass28_5;
+	public static Class28 world;
 
 	@OriginalMember(owner = "client!abz", name = "m", descriptor = "Lclient!aba;")
 	public static Class28 aClass28_6;
@@ -141,47 +141,47 @@ public class Class50 {
 
 	@OriginalMember(owner = "client!abz", name = "s", descriptor = "(ILjava/lang/String;II)Z", line = 55)
 	public static boolean method986(@OriginalArg(0) int arg0, @OriginalArg(1) String arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		aClass28_5 = new Class28();
-		aClass28_5.anInt101 = arg0 * 470002905;
-		aClass28_5.aString4 = arg1;
-		aClass28_5.anInt100 = arg2 * -1138615973;
-		aClass28_5.anInt99 = arg3 * 702279345;
+		world = new Class28();
+		world.id = arg0 * 470002905;
+		world.host = arg1;
+		world.port1 = arg2 * -1138615973;
+		world.port2 = arg3 * 702279345;
 		return true;
 	}
 
 	@OriginalMember(owner = "client!abz", name = "q", descriptor = "(Ljava/lang/String;I)V", line = 64)
 	public static void method987(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1) {
-		if (aClass28_2 == null) {
-			aClass28_2 = new Class28();
+		if (lobby == null) {
+			lobby = new Class28();
 		}
-		aClass28_2.aString4 = arg0;
-		aClass28_2.anInt101 = (arg1 + 1099) * 470002905;
-		aClass28_2.anInt100 = Class250.method25947(Class280.aClass693_1, Class703.aClass703_2, aClass28_2.anInt101 * 2142901097, -1608230696) * -1138615973;
-		aClass28_2.anInt99 = Class654.method32718(Class280.aClass693_1, Class703.aClass703_2, aClass28_2.anInt101 * 2142901097, -986600748) * 702279345;
+		lobby.host = arg0;
+		lobby.id = (arg1 + 1099) * 470002905;
+		lobby.port1 = Class250.method25947(Class280.modeWhere, Class703.aClass703_2, lobby.id * 2142901097, -1608230696) * -1138615973;
+		lobby.port2 = Class654.method32718(Class280.modeWhere, Class703.aClass703_2, lobby.id * 2142901097, -986600748) * 702279345;
 	}
 
 	@OriginalMember(owner = "client!abz", name = "y", descriptor = "(Ljava/lang/String;I)V", line = 64)
 	public static void method988(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1) {
-		if (aClass28_2 == null) {
-			aClass28_2 = new Class28();
+		if (lobby == null) {
+			lobby = new Class28();
 		}
-		aClass28_2.aString4 = arg0;
-		aClass28_2.anInt101 = (arg1 + 1099) * 470002905;
-		aClass28_2.anInt100 = Class250.method25947(Class280.aClass693_1, Class703.aClass703_2, aClass28_2.anInt101 * 2142901097, 635696343) * -1138615973;
-		aClass28_2.anInt99 = Class654.method32718(Class280.aClass693_1, Class703.aClass703_2, aClass28_2.anInt101 * 2142901097, 1731024311) * 702279345;
+		lobby.host = arg0;
+		lobby.id = (arg1 + 1099) * 470002905;
+		lobby.port1 = Class250.method25947(Class280.modeWhere, Class703.aClass703_2, lobby.id * 2142901097, 635696343) * -1138615973;
+		lobby.port2 = Class654.method32718(Class280.modeWhere, Class703.aClass703_2, lobby.id * 2142901097, 1731024311) * 702279345;
 	}
 
 	@OriginalMember(owner = "client!abz", name = "b", descriptor = "()V", line = 72)
 	public static void method989() {
-		if (Class94.aClass28_7.anInt101 * 2142901097 != -1) {
-			Class624.method32156(Class94.aClass28_7.anInt101 * 2142901097, Class94.aClass28_7.aString4, Class94.aClass28_7.anInt100 * 721448659, Class94.aClass28_7.anInt99 * -1815897519, -1021247143);
+		if (Class94.mapWorld.id * 2142901097 != -1) {
+			Class624.method32156(Class94.mapWorld.id * 2142901097, Class94.mapWorld.host, Class94.mapWorld.port1 * 721448659, Class94.mapWorld.port2 * -1815897519, -1021247143);
 		}
 	}
 
 	@OriginalMember(owner = "client!abz", name = "x", descriptor = "()V", line = 72)
 	public static void method990() {
-		if (Class94.aClass28_7.anInt101 * 2142901097 != -1) {
-			Class624.method32156(Class94.aClass28_7.anInt101 * 2142901097, Class94.aClass28_7.aString4, Class94.aClass28_7.anInt100 * 721448659, Class94.aClass28_7.anInt99 * -1815897519, -1553384514);
+		if (Class94.mapWorld.id * 2142901097 != -1) {
+			Class624.method32156(Class94.mapWorld.id * 2142901097, Class94.mapWorld.host, Class94.mapWorld.port1 * 721448659, Class94.mapWorld.port2 * -1815897519, -1553384514);
 		}
 	}
 
@@ -215,12 +215,12 @@ public class Class50 {
 
 	@OriginalMember(owner = "client!abz", name = "t", descriptor = "()Lclient!alc;", line = 105)
 	public static Class154_Sub1 method996() {
-		return Class367.method27959(aClass28_5.anInt101 * 2142901097, (byte) 93);
+		return Class367.method27959(world.id * 2142901097, (byte) 93);
 	}
 
 	@OriginalMember(owner = "client!abz", name = "ae", descriptor = "()Lclient!alc;", line = 105)
 	public static Class154_Sub1 method997() {
-		return Class367.method27959(aClass28_5.anInt101 * 2142901097, (byte) 29);
+		return Class367.method27959(world.id * 2142901097, (byte) 29);
 	}
 
 	@OriginalMember(owner = "client!abz", name = "al", descriptor = "(IZIZ)V", line = 109)
@@ -329,7 +329,7 @@ public class Class50 {
 			}
 			return local7 - local12;
 		} else if (arg2 == 2) {
-			return Class488.method29820(arg0.method14157((byte) -85), arg1.method14157((byte) -37), Class106.aClass717_8, -826026012);
+			return Class488.method29820(arg0.method14157((byte) -85), arg1.method14157((byte) -37), Class106.lang, -826026012);
 		} else if (arg2 == 3) {
 			if (arg0.aString47.equals("-")) {
 				if (arg1.aString47.equals("-")) {
@@ -342,7 +342,7 @@ public class Class50 {
 			} else if (arg1.aString47.equals("-")) {
 				return arg3 ? 1 : -1;
 			} else {
-				return Class488.method29820(arg0.aString47, arg1.aString47, Class106.aClass717_8, -1981895540);
+				return Class488.method29820(arg0.aString47, arg1.aString47, Class106.lang, -1981895540);
 			}
 		} else if (arg2 == 4) {
 			return arg0.method14141((byte) 1) ? (arg1.method14141((byte) 1) ? 0 : 1) : (arg1.method14141((byte) 1) ? -1 : 0);

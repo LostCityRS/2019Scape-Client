@@ -572,7 +572,7 @@ public class Class330 {
 
 	@OriginalMember(owner = "client!i", name = "ef", descriptor = "(I)Lclient!ax;", line = 2010)
 	public static Class175 method27371(@OriginalArg(0) int arg0) {
-		return Class56.method18036(client.anInt3435 * -849002901, -1497248091) || client.anInt3435 * -849002901 == 0 ? client.aClass175_1 : client.aClass175_2;
+		return Class56.method18036(client.state * -849002901, -1497248091) || client.state * -849002901 == 0 ? client.aClass175_1 : client.aClass175_2;
 	}
 
 	@OriginalMember(owner = "client!i", name = "tn", descriptor = "(Lclient!yf;I)V", line = 8419)
@@ -587,11 +587,11 @@ public class Class330 {
 		if (client.aClass175_2 == null) {
 			return;
 		}
-		@Pc(7) Class93_Sub22 local7 = Class102.method2588(Class446.aClass446_110, client.aClass175_2.aClass24_2, (byte) 66);
-		local7.aPacketBit_1.p2(Packet.pjstr2len(arg1, 275898717) + 1 + Packet.pjstr2len(arg2, -580076764), 2145636263);
-		local7.aPacketBit_1.pjstr2(arg1, 1516871641);
-		local7.aPacketBit_1.p1_alt2(arg0, -1311286727);
-		local7.aPacketBit_1.pjstr2(arg2, 1516871641);
-		client.aClass175_2.method24356(local7, -2111524569);
+		@Pc(7) ClientMessage local7 = Class102.createGameMessage(ClientProt.aClientProt_110, client.aClass175_2.clientIsaac, (byte) 66);
+		local7.packet.p2(Packet.pjstr2len(arg1, 275898717) + 1 + Packet.pjstr2len(arg2, -580076764), 2145636263);
+		local7.packet.pjstr2(arg1, 1516871641);
+		local7.packet.p1_alt2(arg0, -1311286727);
+		local7.packet.pjstr2(arg2, 1516871641);
+		client.aClass175_2.send(local7, -2111524569);
 	}
 }

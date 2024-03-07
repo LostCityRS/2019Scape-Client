@@ -145,7 +145,7 @@ final class Class220 implements Interface27 {
 	@OriginalMember(owner = "client!d", name = "bal", descriptor = "(Lclient!yf;B)V", line = 14310)
 	static final void method25548(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub24_1.method16546(local12, 1638952250);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub24_1.method16546(local12, 1638952250);
 	}
 
 	@OriginalMember(owner = "client!d", name = "bbn", descriptor = "(Lclient!yf;B)V", line = 14431)

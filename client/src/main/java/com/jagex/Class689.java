@@ -188,6 +188,6 @@ public class Class689 {
 
 	@OriginalMember(owner = "client!yo", name = "atf", descriptor = "(Lclient!yf;I)V", line = 13329)
 	static final void method36529(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub20_1.method15781(-1831440856) == 2 ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub20_1.method15781(-1831440856) == 2 ? 1 : 0;
 	}
 }

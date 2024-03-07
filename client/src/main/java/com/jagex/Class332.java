@@ -118,8 +118,8 @@ public class Class332 {
 
 	@OriginalMember(owner = "client!ib", name = "ms", descriptor = "(Lclient!ax;I)V", line = 12492)
 	static void method27394(@OriginalArg(0) Class175 arg0, @OriginalArg(1) int arg1) {
-		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_82, arg0.aClass24_2, (byte) 93);
-		arg0.method24356(local5, -1462283660);
+		@Pc(5) ClientMessage local5 = Class102.createGameMessage(ClientProt.aClientProt_82, arg0.clientIsaac, (byte) 93);
+		arg0.send(local5, -1462283660);
 		client.aBoolean636 = true;
 	}
 
@@ -130,6 +130,6 @@ public class Class332 {
 	@OriginalMember(owner = "client!ib", name = "bae", descriptor = "(Lclient!yf;I)V", line = 14305)
 	static final void method27396(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub14_1.method16546(local12, -69207239);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub14_1.method16546(local12, -69207239);
 	}
 }

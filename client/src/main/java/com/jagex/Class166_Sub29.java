@@ -158,7 +158,7 @@ public class Class166_Sub29 extends Class166 {
 			@Pc(65) Class306 local65;
 			try {
 				var13 = true;
-				local1 = Class166_Sub18.method15743("3", client.aClass702_4.aString241, false, 199047110);
+				local1 = Class166_Sub18.method15743("3", client.modeGame.aString241, false, 199047110);
 				@Pc(16) byte[] local16 = new byte[(int) local1.method732(2081698296)];
 				@Pc(30) int local30;
 				for (int var19 = 0; var19 < local16.length; var19 += local30) {
@@ -217,7 +217,7 @@ public class Class166_Sub29 extends Class166 {
 
 	@OriginalMember(owner = "client!ane", name = "auv", descriptor = "(Lclient!yf;S)V", line = 13365)
 	static final void method16069(@OriginalArg(0) Class681 arg0, @OriginalArg(1) short arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub12_1.method15615((byte) 56);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub12_1.method15615((byte) 56);
 	}
 
 	@OriginalMember(owner = "client!ane", name = "bao", descriptor = "(Lclient!yf;I)V", line = 14348)

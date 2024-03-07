@@ -94,7 +94,7 @@ public class Class388 {
 
 	@OriginalMember(owner = "client!kt", name = "auf", descriptor = "(Lclient!yf;I)V", line = 13341)
 	static final void method28253(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub33_1.method16182(-2100375867) == 1 ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub33_1.method16182(-2100375867) == 1 ? 1 : 0;
 	}
 
 	@OriginalMember(owner = "client!kt", name = "beu", descriptor = "(Lclient!yf;I)V", line = 14877)

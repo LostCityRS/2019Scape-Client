@@ -12,7 +12,7 @@ public class Class552 {
 	static Class100[] aClass100Array8;
 
 	@OriginalMember(owner = "client!sj", name = "pt", descriptor = "I")
-	public static int anInt5318;
+	public static int userEmailStatus;
 
 	@OriginalMember(owner = "client!sj", name = "k", descriptor = "I")
 	int anInt5315;

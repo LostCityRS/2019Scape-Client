@@ -32,7 +32,7 @@ public class Class631 implements Interface75 {
 
 	@OriginalMember(owner = "client!wa", name = "n", descriptor = "()I", line = 22)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt5719 * -494867057;
 	}
 
@@ -85,7 +85,7 @@ public class Class631 implements Interface75 {
 			local178 = client.anIntArrayArrayArray15[client.anInt3486 * 901426439][local69 + 2][local71] - local148 + local100 - local138;
 			local65[local71] = ((local62 * (float) local178 + (float) local160) * local62 + (float) local152) * local62 + (float) local148;
 		}
-		@Pc(204) Class611 local204 = client.aClass532_1.method30455(1700360326);
+		@Pc(204) Class611 local204 = client.world.method30455(1700360326);
 		Class163.anInt2002 = ((int) local65[0] - local204.anInt5623 * 1114227200) * 1636217271;
 		Class130_Sub2.anInt1117 = (int) local65[1] * -1820517185;
 		Class270.anInt3884 = ((int) local65[2] - local204.anInt5624 * 1116707328) * -967471741;
@@ -106,7 +106,7 @@ public class Class631 implements Interface75 {
 		@Pc(399) float local399 = local238[2] - local65[2];
 		@Pc(409) double local409 = Math.sqrt((double) (local381 * local381 + local399 * local399));
 		Class620.anInt5644 = ((int) (Math.atan2((double) local391, local409) * 2607.5945876176133D) & 0x3FFF) * -1151839067;
-		Class24.anInt82 = ((int) (-Math.atan2((double) local381, (double) local399) * 2607.5945876176133D) & 0x3FFF) * 1056124373;
+		IsaacRandom.anInt82 = ((int) (-Math.atan2((double) local381, (double) local399) * 2607.5945876176133D) & 0x3FFF) * 1056124373;
 		Class348.anInt4199 = (client.anIntArrayArrayArray15[client.anInt3486 * 901426439][local69][3] + (client.anInt3525 * 1769487553 * (client.anIntArrayArrayArray15[client.anInt3486 * 901426439][local69 + 2][3] - client.anIntArrayArrayArray15[client.anInt3486 * 901426439][local69][3]) >> 16)) * -2045030213;
 	}
 

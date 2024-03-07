@@ -46,10 +46,10 @@ public class Class93_Sub33 extends Class93 {
 	@OriginalMember(owner = "client!akw", name = "ars", descriptor = "(Lclient!yf;I)V", line = 13000)
 	static final void method23648(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub15_1, local12, (byte) 21);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub15_2, local12, (byte) 76);
-		Class51.aClass93_Sub36_1.aClass166_Sub15_1.method15672(1876080314);
-		Class51.aClass93_Sub36_1.aClass166_Sub15_2.method15672(1835432474);
+		Class51.options.method14363(Class51.options.aClass166_Sub15_1, local12, (byte) 21);
+		Class51.options.method14363(Class51.options.aClass166_Sub15_2, local12, (byte) 76);
+		Class51.options.aClass166_Sub15_1.method15672(1876080314);
+		Class51.options.aClass166_Sub15_2.method15672(1835432474);
 		Class262.method26171(1013204858);
 		Class106_Sub1.method5135(604055877);
 		client.aBoolean601 = false;
@@ -57,7 +57,7 @@ public class Class93_Sub33 extends Class93 {
 
 	@OriginalMember(owner = "client!akw", name = "asp", descriptor = "(Lclient!yf;I)V", line = 13120)
 	static final void method23649(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub39_2, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], (byte) 24);
+		Class51.options.method14363(Class51.options.aClass166_Sub39_2, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], (byte) 24);
 		Class106_Sub1.method5135(1993240271);
 	}
 }

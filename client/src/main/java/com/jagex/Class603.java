@@ -163,9 +163,9 @@ public class Class603 implements Interface13, Interface5 {
 	@OriginalMember(owner = "client!uv", name = "vc", descriptor = "(Lclient!yf;I)V", line = 8890)
 	static final void method31882(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		@Pc(18) Class93_Sub22 local18 = Class102.method2588(Class446.aClass446_3, client.aClass175_2.aClass24_2, (byte) 109);
-		local18.aPacketBit_1.p2(local12, 2143066079);
-		client.aClass175_2.method24356(local18, -1476942798);
+		@Pc(18) ClientMessage local18 = Class102.createGameMessage(ClientProt.aClientProt_3, client.aClass175_2.clientIsaac, (byte) 109);
+		local18.packet.p2(local12, 2143066079);
+		client.aClass175_2.send(local18, -1476942798);
 	}
 
 	@OriginalMember(owner = "client!uv", name = "ank", descriptor = "(Lclient!yf;I)V", line = 12303)

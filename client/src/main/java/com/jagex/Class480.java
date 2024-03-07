@@ -384,7 +384,7 @@ public class Class480 implements Runnable {
 			arg0.method20721(arg1, arg2, arg3, arg4, -16777216, 0);
 			arg0.method20573(local22 - 152, local32, 304, 34, client.aColorArray2[client.anInt3427 * 182213747].getRGB(), 0);
 			arg0.method20721(local22 - 150, local32 + 2, Class159_Sub1.anInt1950 * -428996579, 30, client.aColorArray1[client.anInt3427 * 182213747].getRGB(), 0);
-			Class118_Sub1.aClass106_3.method7530(Class74.aClass74_131.method1259(Class106.aClass717_8, (byte) -41), local22, local32 + local16, client.aColorArray3[client.anInt3427 * 182213747].getRGB(), -1, 1357185837);
+			Class118_Sub1.aClass106_3.method7530(Class74.aClass74_131.method1259(Class106.lang, (byte) -41), local22, local32 + local16, client.aColorArray3[client.anInt3427 * 182213747].getRGB(), -1, 1357185837);
 			return;
 		}
 		@Pc(103) int local103 = Class93_Sub14.anInt1527 * -1951188017 - (int) ((float) arg3 / Class159_Sub1.aFloat152);
@@ -397,7 +397,7 @@ public class Class480 implements Runnable {
 		Class138.anInt1383 = (int) ((float) (arg4 * 2) / Class159_Sub1.aFloat152) * 1182553313;
 		Class159_Sub1.aClass240_35 = Class159_Sub1.aClass240_33;
 		Class159_Sub1.method14557(Class159_Sub1.anInt1915 + local103, local22 + Class159_Sub1.anInt1921, Class159_Sub1.anInt1915 + local32, local133 + Class159_Sub1.anInt1921, arg1, arg2, arg1 + arg3, arg2 + 1 + arg4);
-		Class159_Sub1.method14558(arg0, !Class159_Sub1.aBoolean350, !Class159_Sub1.aBoolean349, client.aBoolean620, false);
+		Class159_Sub1.method14558(arg0, !Class159_Sub1.aBoolean350, !Class159_Sub1.aBoolean349, client.mapMember, false);
 		@Pc(219) Class22 local219 = Class159_Sub1.method14579(arg0);
 		Class169.method18339(arg0, local219, 0, 0, (byte) -4);
 		if (client.aBoolean599) {
@@ -420,14 +420,14 @@ public class Class480 implements Runnable {
 	@OriginalMember(owner = "client!pf", name = "x", descriptor = "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZI)V", line = 522)
 	static void method29750(@OriginalArg(0) String arg0, @OriginalArg(1) String arg1, @OriginalArg(2) String arg2, @OriginalArg(3) boolean arg3, @OriginalArg(4) boolean arg4, @OriginalArg(5) int arg5) {
 		@Pc(2) Class175 local2 = Class330.method27371(-1981318146);
-		if (local2.method24372((byte) 27) == null) {
+		if (local2.getStream((byte) 27) == null) {
 			return;
 		}
-		@Pc(12) Class93_Sub22 local12 = Class102.method2588(Class446.aClass446_27, local2.aClass24_2, (byte) 124);
-		local12.aPacketBit_1.p2(Packet.pjstrlen(arg0, -1553492743) + Packet.pjstrlen(arg1, -2061658131) + Packet.pjstrlen(arg2, -1984974626) + 1, 2126703870);
-		local12.aPacketBit_1.pjstr(arg0, -1212929370);
-		local12.aPacketBit_1.pjstr(arg1, 107167147);
-		local12.aPacketBit_1.pjstr(arg2, -2062750704);
+		@Pc(12) ClientMessage local12 = Class102.createGameMessage(ClientProt.aClientProt_27, local2.clientIsaac, (byte) 124);
+		local12.packet.p2(Packet.pjstrlen(arg0, -1553492743) + Packet.pjstrlen(arg1, -2061658131) + Packet.pjstrlen(arg2, -1984974626) + 1, 2126703870);
+		local12.packet.pjstr(arg0, -1212929370);
+		local12.packet.pjstr(arg1, 107167147);
+		local12.packet.pjstr(arg2, -2062750704);
 		@Pc(46) int local46 = 0;
 		if (arg3) {
 			local46 |= 0x1;
@@ -435,8 +435,8 @@ public class Class480 implements Runnable {
 		if (arg4) {
 			local46 |= 0x2;
 		}
-		local12.aPacketBit_1.p1(local46, (byte) -46);
-		local2.method24356(local12, -1817238704);
+		local12.packet.p1(local46, (byte) -46);
+		local2.send(local12, -1817238704);
 	}
 
 	@OriginalMember(owner = "client!pf", name = "bv", descriptor = "(FFFFFFII)F", line = 1925)
@@ -448,16 +448,16 @@ public class Class480 implements Runnable {
 		@Pc(15) float local15 = 0.0F;
 		@Pc(17) float local17 = 0.0F;
 		@Pc(19) float local19 = 0.0F;
-		@Pc(23) Class585 local23 = client.aClass532_1.method30481(-1170801764);
+		@Pc(23) Class585 local23 = client.world.method30481(-1170801764);
 		while (local1 < 1.1F) {
 			@Pc(33) float local33 = arg0 + local5 * local1;
 			@Pc(39) float local39 = local9 * local1 + arg1;
 			@Pc(45) float local45 = arg2 + local1 * local13;
 			@Pc(50) int local50 = (int) local33 >> 9;
 			@Pc(55) int local55 = (int) local45 >> 9;
-			if (local50 > 0 && local55 > 0 && local50 < client.aClass532_1.method30459(1448389296) && local55 < client.aClass532_1.method30466((short) 128)) {
-				@Pc(72) int local72 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aByte100;
-				if (local72 < 3 && (client.aClass532_1.method30487(2096861293).aByteArrayArrayArray12[1][local50][local55] & 0x2) != 0) {
+			if (local50 > 0 && local55 > 0 && local50 < client.world.method30459(1448389296) && local55 < client.world.method30466((short) 128)) {
+				@Pc(72) int local72 = Class520.selfPlayer.aByte100;
+				if (local72 < 3 && (client.world.method30487(2096861293).aByteArrayArrayArray12[1][local50][local55] & 0x2) != 0) {
 					local72++;
 				}
 				@Pc(100) int local100 = local23.aClass99Array2[local72].method2473((int) local33, (int) local45, 1712015066);

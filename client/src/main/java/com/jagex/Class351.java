@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public class Class351 {
 
 	@OriginalMember(owner = "client!iw", name = "or", descriptor = "I")
-	public static int anInt4205;
+	public static int userJcoinsBalance;
 
 	@OriginalMember(owner = "client!iw", name = "e", descriptor = "Lclient!iw;")
 	static final Class351 aClass351_1 = new Class351(0, 4);
@@ -138,17 +138,17 @@ public class Class351 {
 		arg0.anInt5888 -= 1915061582;
 		@Pc(14) String local14 = (String) arg0.anObjectArray45[arg0.anInt5888 * 587908375];
 		@Pc(25) String local25 = (String) arg0.anObjectArray45[arg0.anInt5888 * 587908375 + 1];
-		if (client.anInt3514 * 2055688893 == 0 && (client.aBoolean621 && !client.aBoolean633 || client.aBoolean638)) {
+		if (client.userStaffModLevel * 2055688893 == 0 && (client.userQuickChat1 && !client.userQuickChat2 || client.userQuickChat4)) {
 			return;
 		}
 		@Pc(39) Class175 local39 = Class330.method27371(-1608641612);
-		@Pc(45) Class93_Sub22 local45 = Class102.method2588(Class446.aClass446_9, local39.aClass24_2, (byte) 49);
-		local45.aPacketBit_1.p2(0, 2145264426);
-		@Pc(56) int local56 = local45.aPacketBit_1.pos * 212851357;
-		local45.aPacketBit_1.pjstr(local14, -664135129);
-		Class284.method26484(local45.aPacketBit_1, local25, -1497248091);
-		local45.aPacketBit_1.psize2(local45.aPacketBit_1.pos * 212851357 - local56, 857643681);
-		local39.method24356(local45, -1594490576);
+		@Pc(45) ClientMessage local45 = Class102.createGameMessage(ClientProt.aClientProt_9, local39.clientIsaac, (byte) 49);
+		local45.packet.p2(0, 2145264426);
+		@Pc(56) int local56 = local45.packet.pos * 212851357;
+		local45.packet.pjstr(local14, -664135129);
+		Class284.method26484(local45.packet, local25, -1497248091);
+		local45.packet.psize2(local45.packet.pos * 212851357 - local56, 857643681);
+		local39.send(local45, -1594490576);
 	}
 
 	@OriginalMember(owner = "client!iw", name = "awj", descriptor = "(Lclient!yf;B)V", line = 13816)

@@ -122,7 +122,7 @@ public class Class466 {
 
 	@OriginalMember(owner = "client!on", name = "jd", descriptor = "(I)V", line = 9656)
 	static final void method29327(@OriginalArg(0) int arg0) {
-		@Pc(2) PacketBit local2 = client.aClass175_2.aPacketBit_2;
+		@Pc(2) PacketBit local2 = client.aClass175_2.packet;
 		for (@Pc(4) int local4 = 0; local4 < client.anInt3472 * 146012633; local4++) {
 			@Pc(13) int local13 = client.anIntArray306[local4];
 			@Pc(21) Class132_Sub1_Sub1_Sub1_Sub1 local21 = (Class132_Sub1_Sub1_Sub1_Sub1) ((Class93_Sub15) client.aClass16_18.method214((long) local13)).anObject5;

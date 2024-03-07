@@ -473,8 +473,13 @@ public class Class323 {
 
 	@OriginalMember(owner = "client!ht", name = "asu", descriptor = "(Lclient!yf;I)V", line = 13147)
 	static final void method27279(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub46_1, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091] == 0 ? 0 : 1, (byte) 110);
+		Class51.options.method14363(Class51.options.aClass166_Sub46_1, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091] == 0 ? 0 : 1, (byte) 110);
 		Class106_Sub1.method5135(868845844);
-		client.aClass532_1.method30533((byte) 0);
+		client.world.method30533((byte) 0);
 	}
+
+    @OriginalMember(owner = "client!nu", name = "e", descriptor = "(I)[Lclient!ht;", line = 134)
+    static Class323[] method28929(@OriginalArg(0) int arg0) {
+        return new Class323[] {aClass323_32, aClass323_8, aClass323_9, aClass323_10, aClass323_11, aClass323_12, aClass323_13, aClass323_14, aClass323_15, aClass323_68, aClass323_17, aClass323_18, aClass323_19, aClass323_26, aClass323_21, aClass323_89, aClass323_23, aClass323_99, aClass323_25, aClass323_20, aClass323_75, aClass323_28, aClass323_29, aClass323_16, aClass323_92, aClass323_63, aClass323_107, aClass323_34, aClass323_104, aClass323_36, aClass323_82, aClass323_56, aClass323_39, aClass323_37, aClass323_41, aClass323_42, aClass323_43, aClass323_44, aClass323_45, aClass323_46, aClass323_47, aClass323_48, aClass323_85, aClass323_50, aClass323_51, aClass323_76, aClass323_106, aClass323_54, aClass323_55, aClass323_52, aClass323_57, aClass323_58, aClass323_111, aClass323_60, aClass323_61, aClass323_112, aClass323_27, aClass323_64, aClass323_65, aClass323_66, aClass323_67, aClass323_71, aClass323_69, aClass323_70, aClass323_109, aClass323_72, aClass323_73, aClass323_74, aClass323_90, aClass323_35, aClass323_77, aClass323_78, aClass323_62, aClass323_105, aClass323_80, aClass323_81, aClass323_79, aClass323_83, aClass323_84, aClass323_22, aClass323_86, aClass323_87, aClass323_88, aClass323_33, aClass323_40, aClass323_91, aClass323_31, aClass323_93, aClass323_94, aClass323_95, aClass323_49, aClass323_97, aClass323_98, aClass323_115, aClass323_100, aClass323_101, aClass323_102, aClass323_108, aClass323_7, aClass323_129, aClass323_30, aClass323_24, aClass323_59, aClass323_96, aClass323_110, aClass323_103, aClass323_38, aClass323_113, aClass323_114, aClass323_53, aClass323_116, aClass323_117, aClass323_118, aClass323_119, aClass323_120, aClass323_121, aClass323_122, aClass323_123, aClass323_124, aClass323_125, aClass323_126, aClass323_127, aClass323_128, aClass323_131, aClass323_130};
+    }
 }

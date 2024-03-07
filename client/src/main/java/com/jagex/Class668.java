@@ -67,7 +67,7 @@ final class Class668 implements Interface73 {
 
 	@OriginalMember(owner = "client!xr", name = "xw", descriptor = "(Lclient!yf;S)V", line = 9122)
 	static final void method32933(@OriginalArg(0) Class681 arg0, @OriginalArg(1) short arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.method20024(1927066028).method32027((short) 448);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class520.selfPlayer.method20024(1927066028).method32027((short) 448);
 	}
 
 	@OriginalMember(owner = "client!xr", name = "aic", descriptor = "(Lclient!yf;I)V", line = 11330)
@@ -75,6 +75,6 @@ final class Class668 implements Interface73 {
 		arg0.anInt5891 -= -1915563430;
 		@Pc(13) int local13 = arg0.anIntArray519[arg0.anInt5891 * -1497248091];
 		@Pc(23) int local23 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 1];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class449.aClass514_1.method30267(local13, (byte) 30).aCharArray4[local23];
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class687.aClass514_1.method30267(local13, (byte) 30).aCharArray4[local23];
 	}
 }

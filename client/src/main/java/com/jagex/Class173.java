@@ -168,7 +168,7 @@ public class Class173 {
 	@OriginalMember(owner = "client!au", name = "abz", descriptor = "(Lclient!yf;I)V", line = 9893)
 	static final void method23803(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class557.aClass297_1.method26646(local12, -549067081).method26766((short) 7249).method36920();
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class557.aClass297_1.method26646(local12, -549067081).method26766((short) 7249).getId();
 	}
 
 	@OriginalMember(owner = "client!au", name = "abt", descriptor = "(Lclient!yf;B)V", line = 9944)

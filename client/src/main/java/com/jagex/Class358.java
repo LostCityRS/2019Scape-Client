@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public class Class358 {
 
 	@OriginalMember(owner = "client!jd", name = "pi", descriptor = "I")
-	public static int anInt4567;
+	public static int userCcExpiry;
 
 	@OriginalMember(owner = "client!jd", name = "e", descriptor = "Lclient!jd;")
 	static final Class358 aClass358_4 = new Class358(0);
@@ -71,8 +71,8 @@ public class Class358 {
 
 	@OriginalMember(owner = "client!jd", name = "k", descriptor = "(B)V", line = 134)
 	static final void method27775(@OriginalArg(0) byte arg0) {
-		Class411.aLong271 = -7033311592096984251L;
-		Class411.aLong270 = 0L;
+		Class411.ssoKeyIdentifier = -7033311592096984251L;
+		Class411.ssoKey = 0L;
 		Class411.anInt4746 = -48143567;
 	}
 
@@ -135,12 +135,12 @@ public class Class358 {
 
 	@OriginalMember(owner = "client!jd", name = "aun", descriptor = "(Lclient!yf;I)V", line = 13425)
 	static final void method27781(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub26_1.method15913((byte) 39);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub26_1.method15913((byte) 39);
 	}
 
 	@OriginalMember(owner = "client!jd", name = "bau", descriptor = "(Lclient!yf;I)V", line = 14258)
 	static final void method27782(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub21_1.method16546(local12, 767811690);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub21_1.method16546(local12, 767811690);
 	}
 }

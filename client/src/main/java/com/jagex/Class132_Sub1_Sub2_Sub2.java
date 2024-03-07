@@ -502,7 +502,7 @@ public class Class132_Sub1_Sub2_Sub2 extends Class132_Sub1_Sub2 implements Inter
 
 	@OriginalMember(owner = "client!ajj", name = "bbj", descriptor = "(Lclient!yf;I)V", line = 14403)
 	static final void method12451(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class553.anInt3408 * -1378711501;
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class553.anInt3416 * 2091353777;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class553.width * -1378711501;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class553.height * 2091353777;
 	}
 }

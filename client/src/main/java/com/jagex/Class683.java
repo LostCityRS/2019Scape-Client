@@ -185,7 +185,7 @@ public final class Class683 {
 	@OriginalMember(owner = "client!yi", name = "bi", descriptor = "(Lclient!yf;)V", line = 66)
 	static void method33308(@OriginalArg(0) Class681 arg0) {
 		@Pc(13) String local13 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class440.method28848(local13, 914182141);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = ZoneProt.method28848(local13, 914182141);
 	}
 
 	@OriginalMember(owner = "client!yi", name = "bt", descriptor = "(Lclient!yf;)V", line = 71)

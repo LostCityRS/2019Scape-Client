@@ -110,7 +110,7 @@ public final class Class4 {
 	}
 
 	@OriginalMember(owner = "client!aab", name = "ae", descriptor = "(Lclient!ase;I)V", line = 1001)
-	static void method30(@OriginalArg(0) PacketBit arg0, @OriginalArg(1) int arg1) {
+	static void pushJs5Crcs(@OriginalArg(0) PacketBit arg0, @OriginalArg(1) int arg1) {
 		@Pc(2) Class31[] local2 = Class286.method26524((byte) 12);
 		for (@Pc(4) int local4 = 0; local4 < local2.length; local4++) {
 			@Pc(12) Class31 local12 = local2[local4];

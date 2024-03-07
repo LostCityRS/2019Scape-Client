@@ -672,7 +672,7 @@ public class Class297 {
 
 	@OriginalMember(owner = "client!gq", name = "age", descriptor = "(Lclient!yf;B)V", line = 10671)
 	static final void method26696(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = Class440.method28847((long) arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091] * 60000L, Class106.aClass717_8.method36920(), true, (byte) -125) + " UTC";
+		arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = ZoneProt.method28847((long) arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091] * 60000L, Class106.lang.getId(), true, (byte) -125) + " UTC";
 	}
 
 	@OriginalMember(owner = "client!gq", name = "aoi", descriptor = "(Lclient!yf;I)V", line = 12418)

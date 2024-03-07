@@ -31,7 +31,7 @@ public class Class481 {
 	static final int anInt5141 = 7;
 
 	@OriginalMember(owner = "client!pg", name = "pq", descriptor = "I")
-	public static int anInt5142;
+	public static int userGraceExpiry;
 
 	@OriginalMember(owner = "client!pg", name = "<init>", descriptor = "()V", line = 12)
 	Class481() throws Throwable {
@@ -41,7 +41,7 @@ public class Class481 {
 	@OriginalMember(owner = "client!pg", name = "e", descriptor = "(ZB)V", line = 15)
 	public static void method29753(@OriginalArg(0) boolean arg0, @OriginalArg(1) byte arg1) {
 		Class274.aClass258_1.method26040((short) 29858);
-		if (!Class106.method7570(client.anInt3435 * -849002901, -1132685789)) {
+		if (!Class106.method7570(client.state * -849002901, -1132685789)) {
 			return;
 		}
 		@Pc(11) Class175[] local11 = client.aClass175Array1;
@@ -52,11 +52,11 @@ public class Class481 {
 				return;
 			}
 			local21.anInt3300 = 0;
-			if (!local21.aBoolean564 && local21.method24372((byte) 7) != null) {
-				@Pc(52) Class93_Sub22 local52 = Class102.method2588(Class446.aClass446_105, local21.aClass24_2, (byte) 34);
-				local21.method24356(local52, -1743193292);
+			if (!local21.aBoolean564 && local21.getStream((byte) 7) != null) {
+				@Pc(52) ClientMessage local52 = Class102.createGameMessage(ClientProt.aClientProt_105, local21.clientIsaac, (byte) 34);
+				local21.send(local52, -1743193292);
 				try {
-					local21.method24352((byte) 60);
+					local21.flush((byte) 60);
 				} catch (@Pc(61) IOException local61) {
 					local21.aBoolean564 = true;
 				}
@@ -77,12 +77,12 @@ public class Class481 {
 	}
 
 	@OriginalMember(owner = "client!pg", name = "ec", descriptor = "(II)V", line = 1784)
-	public static void method29756(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		if (client.anInt3435 * -849002901 == arg0) {
+	public static void setState(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
+		if (client.state * -849002901 == arg0) {
 			return;
 		}
 		client.anInt3494 = 0;
-		if (client.anInt3435 * -849002901 == 18 && arg0 != 3) {
+		if (client.state * -849002901 == 18 && arg0 != 3) {
 			Class570.method31313(-668282493);
 		}
 		if (arg0 == 14 || arg0 == 19) {
@@ -93,13 +93,13 @@ public class Class481 {
 			Class166_Sub20.aClass160_2 = null;
 		}
 		if (arg0 == 4) {
-			Class138.method11535(client.anInt3435 * -849002901 == 0 || client.anInt3435 * -849002901 == 12 || client.anInt3526 * -703563959 != Class93_Sub26.aClass645_15.anInt5766 * -221025663, -729963422);
+			Class138.method11535(client.state * -849002901 == 0 || client.state * -849002901 == 12 || client.anInt3526 * -703563959 != Class93_Sub26.aClass645_15.anInt5766 * -221025663, -729963422);
 			Class606.method31909(-1637013277);
 		}
 		@Pc(88) boolean local88;
 		if (arg0 == 13) {
 			if (Class93_Sub26.aClass645_15.anInt5768 * 1106038941 == -1) {
-				local88 = client.anInt3435 * -849002901 == 17 || client.anInt3435 * -849002901 == 9;
+				local88 = client.state * -849002901 == 17 || client.state * -849002901 == 9;
 			} else {
 				local88 = client.anInt3526 * -703563959 != Class93_Sub26.aClass645_15.anInt5768 * 1106038941;
 			}
@@ -109,7 +109,7 @@ public class Class481 {
 			if (!Class349.method27625((short) 25902)) {
 				return;
 			}
-		} else if (arg0 == 7 || arg0 == 15 && client.anInt3435 * -849002901 != 16) {
+		} else if (arg0 == 7 || arg0 == 15 && client.state * -849002901 != 16) {
 			if (!Class378.method28070(1142325507)) {
 				return;
 			}
@@ -117,20 +117,20 @@ public class Class481 {
 			Class166_Sub6.method15481((byte) 37);
 		}
 		if (Class608.method31960(arg0, (byte) 101)) {
-			client.aClass532_1.method30520(1213218812);
-			client.aClass532_1.aLong287 = -1529257764138147785L;
+			client.world.method30520(1213218812);
+			client.world.aLong287 = -1529257764138147785L;
 		}
 		if (arg0 == 3 || arg0 == 4) {
 			Class277.method26360(815773506);
 		}
 		local88 = arg0 == 1 || Class1.method12(arg0, 1453479910) || Class56.method18036(arg0, -1497248091);
-		@Pc(188) boolean local188 = client.anInt3435 * -849002901 == 1 || Class1.method12(client.anInt3435 * -849002901, -895984920) || Class56.method18036(client.anInt3435 * -849002901, -1497248091);
+		@Pc(188) boolean local188 = client.state * -849002901 == 1 || Class1.method12(client.state * -849002901, -895984920) || Class56.method18036(client.state * -849002901, -1497248091);
 		if (local88 != local188) {
 			Class520.aClass144_3.method11161(!local88, -1734631247);
 		}
 		if (Class608.method31960(arg0, (byte) 117) || arg0 == 14 || arg0 == 19) {
 			Class694.aClass104_14.method20553();
 		}
-		client.anInt3435 = arg0 * 525893187;
+		client.state = arg0 * 525893187;
 	}
 }

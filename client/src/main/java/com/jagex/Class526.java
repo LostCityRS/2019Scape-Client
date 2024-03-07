@@ -15,10 +15,10 @@ public class Class526 {
 	public static final Class526 aClass526_2 = new Class526(true, false);
 
 	@OriginalMember(owner = "client!rc", name = "m", descriptor = "Lclient!rc;")
-	public static final Class526 aClass526_8 = new Class526(false, false);
+	public static final Class526 NORMAL = new Class526(false, false);
 
 	@OriginalMember(owner = "client!rc", name = "k", descriptor = "Lclient!rc;")
-	public static final Class526 aClass526_3 = new Class526(true, false);
+	public static final Class526 REGION = new Class526(true, false);
 
 	@OriginalMember(owner = "client!rc", name = "f", descriptor = "Lclient!rc;")
 	static final Class526 aClass526_4 = new Class526(true, false);

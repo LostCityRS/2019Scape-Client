@@ -42,7 +42,7 @@ public class Class507 implements Interface75 {
 
 	@OriginalMember(owner = "client!qj", name = "n", descriptor = "()I", line = 22)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt5202 * 1367455329;
 	}
 
@@ -60,28 +60,28 @@ public class Class507 implements Interface75 {
 
 	@OriginalMember(owner = "client!qj", name = "q", descriptor = "(ZZLjava/lang/String;Ljava/lang/String;J)Z", line = 238)
 	static boolean method30229(@OriginalArg(0) boolean arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) String arg2, @OriginalArg(3) String arg3, @OriginalArg(4) long arg4) {
-		Class411.aBoolean749 = arg0;
+		Class411.socialNetworkLogin = arg0;
 		if (!arg1) {
 			Class411.anInt4746 = -48143567;
 		}
 		Class411.aBoolean750 = arg1;
-		Class411.aString200 = arg2;
+		Class411.username = arg2;
 		Class411.aString201 = arg3;
-		Class411.aLong271 = arg4 * 7033311592096984251L;
-		if (!Class411.aBoolean750 && (Class411.aString200.equals("") || Class411.aString201.equals(""))) {
-			Class114.method7637(3, 404726518);
+		Class411.ssoKeyIdentifier = arg4 * 7033311592096984251L;
+		if (!Class411.aBoolean750 && (Class411.username.equals("") || Class411.aString201.equals(""))) {
+			Class114.setReply(3, 404726518);
 			Class680.method33240(-658529605);
 			return false;
 		}
-		if (Class411.anInt4714 * -1128337797 != 132) {
-			Class411.anInt4739 = 0;
-			Class411.anInt4755 = -1109601241;
-			Class411.anInt4754 = -156824051;
+		if (Class411.target * -1128337797 != 132) {
+			Class411.hopTime = 0;
+			Class411.disallowResult = -1109601241;
+			Class411.disallowTrigger = -156824051;
 		}
-		Class411.aClass175_3.aBoolean564 = false;
-		Class114.method7637(-3, -1221204395);
-		Class411.anInt4721 = -1044277882;
-		Class411.anInt4751 = 0;
+		Class411.connection.aBoolean564 = false;
+		Class114.setReply(-3, -1221204395);
+		Class411.step = -1044277882;
+		Class411.waitingTime = 0;
 		Class411.anInt4748 = 0;
 		return true;
 	}
@@ -91,12 +91,12 @@ public class Class507 implements Interface75 {
 		if (Class694.aClass104_14 == null) {
 			return;
 		}
-		client.aClass532_1.method30518((byte) 59);
+		client.world.method30518((byte) 59);
 		Class360.method27799((short) -5760);
 		Class389.method28267((byte) 34);
 		Class54.method14856((short) 2003);
 		Class106.method7569((byte) 1);
-		client.aClass532_1.method30522(true, -1425513161);
+		client.world.method30522(true, -1425513161);
 		Class542.method30934(-1497248091);
 		Class165.method15315(-248208143);
 		Class700.method36716(false, (byte) -31);

@@ -135,14 +135,14 @@ public abstract class Class49 {
 		while (client.aFloat253 < 0.0F) {
 			client.aFloat253 += 16384.0F;
 		}
-		@Pc(33) Class520 local33 = client.aClass532_1.method30487(494969536);
-		@Pc(37) Class585 local37 = client.aClass532_1.method30481(-1038565011);
+		@Pc(33) Class520 local33 = client.world.method30487(494969536);
+		@Pc(37) Class585 local37 = client.world.method30481(-1038565011);
 		@Pc(43) int local43 = Class72.anInt241 * -1022856553 >> 9;
 		@Pc(49) int local49 = Class441.anInt4886 * -953396699 >> 9;
 		@Pc(61) int local61 = Class305.method26802(Class72.anInt241 * -1022856553, Class441.anInt4886 * -953396699, Class512.anInt5209 * 1177442423, (byte) -91);
 		@Pc(63) int local63 = 0;
 		@Pc(87) int local87;
-		if (local43 > 3 && local49 > 3 && local43 < client.aClass532_1.method30459(-247853602) - 4 && local49 < client.aClass532_1.method30466((short) 128) - 4) {
+		if (local43 > 3 && local49 > 3 && local43 < client.world.method30459(-247853602) - 4 && local49 < client.world.method30466((short) 128) - 4) {
 			for (local87 = local43 - 4; local87 <= local43 + 4; local87++) {
 				for (@Pc(96) int local96 = local49 - 4; local96 <= local49 + 4; local96++) {
 					@Pc(105) int local105 = Class512.anInt5209 * 1177442423;
@@ -150,7 +150,7 @@ public abstract class Class49 {
 						local105++;
 					}
 					@Pc(117) int local117 = 0;
-					@Pc(122) byte[][] local122 = client.aClass532_1.method30484(local105, 796728889);
+					@Pc(122) byte[][] local122 = client.world.method30484(local105, 796728889);
 					if (local122 != null) {
 						local117 = (local122[local87][local96] & 0xFF) * 8 << 2;
 					}

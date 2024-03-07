@@ -167,14 +167,14 @@ public class Class490 {
 
 	@OriginalMember(owner = "client!pr", name = "ac", descriptor = "(B)V", line = 1123)
 	static void method29977(@OriginalArg(0) byte arg0) {
-		Class411.aClass175_3.method24351(1222194881);
-		Class411.aClass175_3.aPacketBit_2.pos = 0;
-		Class411.aClass175_3.aClass453_2 = null;
-		Class411.aClass175_3.aClass453_1 = null;
-		Class411.aClass175_3.aClass453_4 = null;
-		Class411.aClass175_3.aClass453_3 = null;
-		Class411.aClass175_3.length = 0;
-		Class411.aClass175_3.anInt3298 = 0;
+		Class411.connection.clear(1222194881);
+		Class411.connection.packet.pos = 0;
+		Class411.connection.serverPacketType = null;
+		Class411.connection.prevServerPacketType1 = null;
+		Class411.connection.prevServerPacketType2 = null;
+		Class411.connection.prevServerPacketType3 = null;
+		Class411.connection.length = 0;
+		Class411.connection.anInt3298 = 0;
 		client.anInt3453 = 0;
 		Class380.method28117((byte) 66);
 		Class287.method26541((byte) 62);
@@ -182,7 +182,7 @@ public class Class490 {
 		for (local32 = 0; local32 < 2048; local32++) {
 			client.aClass132_Sub1_Sub1_Sub1_Sub2Array1[local32] = null;
 		}
-		Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3 = null;
+		Class520.selfPlayer = null;
 		for (local32 = 0; local32 < client.anInt3488 * -1814159537; local32++) {
 			@Pc(56) Class132_Sub1_Sub1_Sub1 local56 = (Class132_Sub1_Sub1_Sub1) client.aClass93_Sub15Array1[local32].anObject5;
 			if (local56 != null) {
@@ -191,11 +191,11 @@ public class Class490 {
 		}
 		Class245.method25899((byte) -123);
 		Class322.method27271(Class20.method376(1197191252), -1621738124);
-		Class481.method29756(18, 1823202236);
+		Class481.setState(18, 1823202236);
 		for (local32 = 0; local32 < 114; local32++) {
 			client.aBooleanArray22[local32] = true;
 		}
-		Class339.method27486(Class411.aClass175_3, (byte) 23);
+		Class339.method27486(Class411.connection, (byte) 23);
 		Class653.aClass678_2 = null;
 		Class442.aLong276 = 0L;
 		Class285.method26515(2125922980);
@@ -207,6 +207,6 @@ public class Class490 {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
 		@Pc(16) Class312 local16 = Class659.method32808(local12, 1883831207);
 		@Pc(22) Class320 local22 = Class166_Sub1.aClass320Array1[local12 >> 16];
-		Class453.method28966(local16, local22, arg0, Class310.aClass310_6, (byte) 110);
+		ServerProt.method28966(local16, local22, arg0, Class310.aClass310_6, (byte) 110);
 	}
 }

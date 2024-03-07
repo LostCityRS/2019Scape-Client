@@ -104,7 +104,7 @@ public class Class138 implements Interface75 {
 
 	@OriginalMember(owner = "client!qe", name = "n", descriptor = "()I", line = 76)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt1382 * 2090586857;
 	}
 
@@ -188,11 +188,11 @@ public class Class138 implements Interface75 {
 		Class548.method31011((byte) 1);
 		client.anInt3520 = 410366683;
 		Class696.method36644(client.anInt3555 * 225035861, 785682939);
-		Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3 = new Class132_Sub1_Sub1_Sub1_Sub2(null);
+		Class520.selfPlayer = new Class132_Sub1_Sub1_Sub1_Sub2(null);
 		client.aMap18.clear();
-		Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.method24244((float) (client.aClass532_1.method30459(750691944) * 512 / 2), 0.0F, (float) (client.aClass532_1.method30466((short) 128) * 512 / 2));
-		Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anIntArray240[0] = client.aClass532_1.method30459(668145533) / 2;
-		Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anIntArray239[0] = client.aClass532_1.method30466((short) 128) / 2;
+		Class520.selfPlayer.method24244((float) (client.world.method30459(750691944) * 512 / 2), 0.0F, (float) (client.world.method30466((short) 128) * 512 / 2));
+		Class520.selfPlayer.anIntArray240[0] = client.world.method30459(668145533) / 2;
+		Class520.selfPlayer.anIntArray239[0] = client.world.method30466((short) 128) / 2;
 		Class270.anInt3884 = 0;
 		Class163.anInt2002 = 0;
 		if (Class429.anInt4781 * -1453926679 == 5) {
@@ -201,7 +201,7 @@ public class Class138 implements Interface75 {
 		} else {
 			Class631.method32281(1251129319);
 		}
-		client.aClass532_1.method30494((byte) 16).method33015(1086101290);
+		client.world.method30494((byte) 16).method33015(1086101290);
 	}
 
 	@OriginalMember(owner = "client!qe", name = "bb", descriptor = "(ZLclient!yf;B)V", line = 5159)

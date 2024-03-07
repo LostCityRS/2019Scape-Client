@@ -501,8 +501,8 @@ public class Class248 {
 		if (Class512.anInt5209 * 1177442423 == 3) {
 			return;
 		}
-		@Pc(11) Class472 local11 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.method24220().aClass472_61;
-		@Pc(15) Class520 local15 = client.aClass532_1.method30487(665835011);
+		@Pc(11) Class472 local11 = Class520.selfPlayer.method24220().aClass472_61;
+		@Pc(15) Class520 local15 = client.world.method30487(665835011);
 		@Pc(61) int local61;
 		if (Class429.anInt4781 * -1453926679 != 2 && Class429.anInt4781 * -1453926679 != 3 && -364465283 * Class175.anInt3306 == -1) {
 			local61 = Class305.method26802(Class163.anInt2002 * -1331168249, Class270.anInt3884 * 466086187, Class512.anInt5209 * 1177442423, (byte) -75);
@@ -511,7 +511,7 @@ public class Class248 {
 			}
 			return;
 		}
-		@Pc(34) Class611 local34 = client.aClass532_1.method30455(1774726122);
+		@Pc(34) Class611 local34 = client.world.method30455(1774726122);
 		@Pc(72) int local72;
 		if (Class429.anInt4781 * -1453926679 == 3) {
 			@Pc(45) Class472 local45 = Class65.aClass123_Sub1_2.method9017(1051482140).method23126(1189701933);
@@ -571,7 +571,7 @@ public class Class248 {
 		} else {
 			local273 = local179 - local225;
 		}
-		if (local241 == 0 && local273 == 0 || local241 <= -client.aClass532_1.method30459(571331926) || local241 >= client.aClass532_1.method30459(-1358540408) || local273 <= -client.aClass532_1.method30466((short) 128) || local273 >= client.aClass532_1.method30466((short) 128)) {
+		if (local241 == 0 && local273 == 0 || local241 <= -client.world.method30459(571331926) || local241 >= client.world.method30459(-1358540408) || local273 <= -client.world.method30466((short) 128) || local273 >= client.world.method30466((short) 128)) {
 			if (Class429.anInt4781 * -1453926679 != 3) {
 				Class646.method32608(local168 + Class430.aString204 + local179 + " " + local221 + Class430.aString204 + local225 + " " + local34.anInt5623 * 270611681 + Class430.aString204 + local34.anInt5624 * -1994307635, new RuntimeException(), 674335144);
 			}

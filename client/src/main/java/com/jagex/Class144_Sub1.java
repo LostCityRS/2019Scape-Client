@@ -116,7 +116,7 @@ public class Class144_Sub1 extends Class144 {
 					if (local14 > local170) {
 						local14 = local170;
 					}
-					this.aClass160_1.method14720(this.aPacket_6.data, this.aPacket_6.pos * 212851357, local14, (byte) -99);
+					this.aClass160_1.read(this.aPacket_6.data, this.aPacket_6.pos * 212851357, local14, (byte) -99);
 					if (this.aByte22 != 0 && client.ENABLE_JS5_XOR) {
 						for (local219 = 0; local219 < local14; local219++) {
 							this.aPacket_6.data[this.aPacket_6.pos * 212851357 + local219] ^= this.aByte22;
@@ -166,7 +166,7 @@ public class Class144_Sub1 extends Class144 {
 						if (local219 > local170) {
 							local219 = local170;
 						}
-						this.aClass160_1.method14720(this.aPacket_7.data, this.aPacket_7.pos * 212851357, local219, (byte) -29);
+						this.aClass160_1.read(this.aPacket_7.data, this.aPacket_7.pos * 212851357, local219, (byte) -29);
 						if (this.aByte22 != 0 && client.ENABLE_JS5_XOR) {
 							for (local272 = 0; local272 < local219; local272++) {
 								this.aPacket_7.data[this.aPacket_7.pos * 212851357 + local272] ^= this.aByte22;
@@ -178,7 +178,7 @@ public class Class144_Sub1 extends Class144 {
 							local272 = this.aPacket_7.g1((short) 16384);
 							local454 = this.aPacket_7.g4(-118643075);
 							@Pc(456) byte local456 = 5;
-							if (local272 != Class484.aClass484_5.method36920()) {
+							if (local272 != Class484.aClass484_5.getId()) {
 								local456 = 9;
 							}
 							local365 = this.aClass93_Sub1_Sub16_Sub3_2.aPacket_13 = new Packet(this.aClass93_Sub1_Sub16_Sub3_2.aByte93 + local454 + local456);
@@ -195,7 +195,7 @@ public class Class144_Sub1 extends Class144 {
 						if (local272 > local170) {
 							local272 = local170;
 						}
-						this.aClass160_1.method14720(local365.data, local365.pos * 212851357, local272, (byte) -76);
+						this.aClass160_1.read(local365.data, local365.pos * 212851357, local272, (byte) -76);
 						if (this.aByte22 != 0 && client.ENABLE_JS5_XOR) {
 							for (local454 = 0; local454 < local272; local454++) {
 								local365.data[local454 + local365.pos * 212851357] ^= this.aByte22;
@@ -282,7 +282,7 @@ public class Class144_Sub1 extends Class144 {
 					if (local14 > local170) {
 						local14 = local170;
 					}
-					this.aClass160_1.method14720(this.aPacket_6.data, this.aPacket_6.pos * 212851357, local14, (byte) -16);
+					this.aClass160_1.read(this.aPacket_6.data, this.aPacket_6.pos * 212851357, local14, (byte) -16);
 					if (this.aByte22 != 0) {
 						for (local219 = 0; local219 < local14; local219++) {
 							this.aPacket_6.data[this.aPacket_6.pos * 212851357 + local219] ^= this.aByte22;
@@ -332,7 +332,7 @@ public class Class144_Sub1 extends Class144 {
 						if (local219 > local170) {
 							local219 = local170;
 						}
-						this.aClass160_1.method14720(this.aPacket_7.data, this.aPacket_7.pos * 212851357, local219, (byte) -93);
+						this.aClass160_1.read(this.aPacket_7.data, this.aPacket_7.pos * 212851357, local219, (byte) -93);
 						if (this.aByte22 != 0) {
 							for (local272 = 0; local272 < local219; local272++) {
 								this.aPacket_7.data[this.aPacket_7.pos * 212851357 + local272] ^= this.aByte22;
@@ -344,7 +344,7 @@ public class Class144_Sub1 extends Class144 {
 							local272 = this.aPacket_7.g1((short) 16384);
 							local454 = this.aPacket_7.g4(-118643075);
 							@Pc(456) byte local456 = 5;
-							if (local272 != Class484.aClass484_5.method36920()) {
+							if (local272 != Class484.aClass484_5.getId()) {
 								local456 = 9;
 							}
 							local365 = this.aClass93_Sub1_Sub16_Sub3_2.aPacket_13 = new Packet(this.aClass93_Sub1_Sub16_Sub3_2.aByte93 + local454 + local456);
@@ -361,7 +361,7 @@ public class Class144_Sub1 extends Class144 {
 						if (local272 > local170) {
 							local272 = local170;
 						}
-						this.aClass160_1.method14720(local365.data, local365.pos * 212851357, local272, (byte) -59);
+						this.aClass160_1.read(local365.data, local365.pos * 212851357, local272, (byte) -59);
 						if (this.aByte22 != 0) {
 							for (local454 = 0; local454 < local272; local454++) {
 								local365.data[local454 + local365.pos * 212851357] ^= this.aByte22;

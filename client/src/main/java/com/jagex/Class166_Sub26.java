@@ -152,8 +152,8 @@ public class Class166_Sub26 extends Class166 {
 
 	@OriginalMember(owner = "client!amz", name = "yk", descriptor = "(Lclient!yf;I)V", line = 9263)
 	static final void method15916(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		if (client.anInt3515 * 1563202683 >= 5 && client.anInt3515 * 1563202683 <= 9) {
-			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.anInt3515 * 1563202683;
+		if (client.userPlayerModLevel * 1563202683 >= 5 && client.userPlayerModLevel * 1563202683 <= 9) {
+			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.userPlayerModLevel * 1563202683;
 		} else {
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = 0;
 		}

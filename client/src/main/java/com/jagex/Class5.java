@@ -69,12 +69,12 @@ public class Class5 {
 
 	@OriginalMember(owner = "client!aac", name = "h", descriptor = "(Lclient!py;II)Lclient!aac;", line = 26)
 	public static Class5 method32(@OriginalArg(0) Class497 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		return Class446.method28894(arg0, arg1, arg2, null, -1150628510);
+		return ClientProt.method28894(arg0, arg1, arg2, null, -1150628510);
 	}
 
 	@OriginalMember(owner = "client!aac", name = "a", descriptor = "(Lclient!py;II)Lclient!aac;", line = 26)
 	public static Class5 method33(@OriginalArg(0) Class497 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		return Class446.method28894(arg0, arg1, arg2, null, 1261778633);
+		return ClientProt.method28894(arg0, arg1, arg2, null, 1261778633);
 	}
 
 	@OriginalMember(owner = "client!aac", name = "n", descriptor = "(II)I", line = 28)

@@ -61,17 +61,17 @@ public class Class564 {
 
 	@OriginalMember(owner = "client!sx", name = "p", descriptor = "(Ljava/lang/String;ZZ)V", line = 28)
 	public static void method31219(@OriginalArg(0) String arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) {
-		Class453.method28964(arg0, arg1, "openjs", arg2, (byte) 65);
+		ServerProt.openUrl(arg0, arg1, "openjs", arg2, (byte) 65);
 	}
 
 	@OriginalMember(owner = "client!sx", name = "d", descriptor = "(Ljava/lang/String;ZZ)V", line = 28)
 	public static void method31220(@OriginalArg(0) String arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) {
-		Class453.method28964(arg0, arg1, "openjs", arg2, (byte) 51);
+		ServerProt.openUrl(arg0, arg1, "openjs", arg2, (byte) 51);
 	}
 
 	@OriginalMember(owner = "client!sx", name = "z", descriptor = "(Ljava/lang/String;ZZ)V", line = 28)
 	public static void method31221(@OriginalArg(0) String arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) {
-		Class453.method28964(arg0, arg1, "openjs", arg2, (byte) 56);
+		ServerProt.openUrl(arg0, arg1, "openjs", arg2, (byte) 56);
 	}
 
 	@OriginalMember(owner = "client!sx", name = "c", descriptor = "(Ljava/lang/String;ZLjava/lang/String;Z)V", line = 32)
@@ -241,7 +241,7 @@ public class Class564 {
 
 	@OriginalMember(owner = "client!sx", name = "arb", descriptor = "(Lclient!yf;B)V", line = 12949)
 	static final void method31231(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class411.anInt4742 * 1424285035;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class411.queuePosition * 1424285035;
 	}
 
 	@OriginalMember(owner = "client!sx", name = "axs", descriptor = "(Lclient!yf;B)V", line = 13830)

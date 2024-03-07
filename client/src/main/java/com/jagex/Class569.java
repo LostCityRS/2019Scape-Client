@@ -207,12 +207,12 @@ public class Class569 {
 
 	@OriginalMember(owner = "client!tg", name = "xg", descriptor = "(Lclient!yf;B)V", line = 9141)
 	static final void method31309(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.method20028(353018298);
+		arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = Class520.selfPlayer.method20028(353018298);
 	}
 
 	@OriginalMember(owner = "client!tg", name = "axl", descriptor = "(Lclient!yf;B)V", line = 13962)
 	static final void method31310(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.aBoolean621 && !client.aBoolean633 ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.userQuickChat1 && !client.userQuickChat2 ? 1 : 0;
 	}
 
 	@OriginalMember(owner = "client!tg", name = "bck", descriptor = "(Lclient!yf;I)V", line = 14667)

@@ -105,10 +105,10 @@ public class Class226 {
 		}
 		@Pc(232) Class93_Sub30 local232 = new Class93_Sub30(0, (int) local13.aFloat317, (int) local13.aFloat318, (int) local13.aFloat319);
 		local4.method9297(local232, -1049152339);
-		@Pc(240) Class611 local240 = client.aClass532_1.method30455(2087749905);
+		@Pc(240) Class611 local240 = client.world.method30455(2087749905);
 		@Pc(247) int local247 = local240.anInt5623 * 270611681 << 9;
 		@Pc(254) int local254 = local240.anInt5624 * -1994307635 << 9;
-		Class1.aClass123_Sub1_1.method8925(0.02F, client.aClass532_1.method30511(-310507201).anIntArrayArrayArray14, client.aClass532_1.method30487(-608801050), local247, local254, 1160510591);
+		Class1.aClass123_Sub1_1.method8925(0.02F, client.world.method30511(-310507201).anIntArrayArrayArray14, client.world.method30487(-608801050), local247, local254, 1160510591);
 	}
 
 	@OriginalMember(owner = "client!dg", name = "co", descriptor = "(Lclient!yf;I)V", line = 5394)

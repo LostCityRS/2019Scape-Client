@@ -182,8 +182,8 @@ public class Class567 {
 	@OriginalMember(owner = "client!ta", name = "s", descriptor = "(Lclient!tx;)V", line = 73)
 	void method31269(@OriginalArg(0) Class585 arg0) {
 		this.aLinkedList4 = new LinkedList();
-		@Pc(8) Class520 local8 = client.aClass532_1.method30487(-1261392332);
-		@Pc(12) Class611 local12 = client.aClass532_1.method30455(2012769476);
+		@Pc(8) Class520 local8 = client.world.method30487(-1261392332);
+		@Pc(12) Class611 local12 = client.world.method30455(2012769476);
 		@Pc(27) Class611 local27 = new Class611(Class512.anInt5209 * 1177442423, this.anIntArray468[0], this.anIntArray469[0]);
 		for (@Pc(29) int local29 = 1; local29 < this.anInt5387 * 554261149; local29++) {
 			@Pc(50) Class611 local50 = new Class611(Class512.anInt5209 * 1177442423, this.anIntArray468[local29], this.anIntArray469[local29]);
@@ -217,8 +217,8 @@ public class Class567 {
 	@OriginalMember(owner = "client!ta", name = "k", descriptor = "(Lclient!tx;B)V", line = 73)
 	void method31270(@OriginalArg(0) Class585 arg0, @OriginalArg(1) byte arg1) {
 		this.aLinkedList4 = new LinkedList();
-		@Pc(8) Class520 local8 = client.aClass532_1.method30487(1928147315);
-		@Pc(12) Class611 local12 = client.aClass532_1.method30455(2006744981);
+		@Pc(8) Class520 local8 = client.world.method30487(1928147315);
+		@Pc(12) Class611 local12 = client.world.method30455(2006744981);
 		@Pc(27) Class611 local27 = new Class611(Class512.anInt5209 * 1177442423, this.anIntArray468[0], this.anIntArray469[0]);
 		for (@Pc(29) int local29 = 1; local29 < this.anInt5387 * 554261149; local29++) {
 			@Pc(50) Class611 local50 = new Class611(Class512.anInt5209 * 1177442423, this.anIntArray468[local29], this.anIntArray469[local29]);
@@ -252,8 +252,8 @@ public class Class567 {
 	@OriginalMember(owner = "client!ta", name = "y", descriptor = "(Lclient!tx;)V", line = 73)
 	void method31271(@OriginalArg(0) Class585 arg0) {
 		this.aLinkedList4 = new LinkedList();
-		@Pc(8) Class520 local8 = client.aClass532_1.method30487(1357705550);
-		@Pc(12) Class611 local12 = client.aClass532_1.method30455(2088962294);
+		@Pc(8) Class520 local8 = client.world.method30487(1357705550);
+		@Pc(12) Class611 local12 = client.world.method30455(2088962294);
 		@Pc(27) Class611 local27 = new Class611(Class512.anInt5209 * 1177442423, this.anIntArray468[0], this.anIntArray469[0]);
 		for (@Pc(29) int local29 = 1; local29 < this.anInt5387 * 554261149; local29++) {
 			@Pc(50) Class611 local50 = new Class611(Class512.anInt5209 * 1177442423, this.anIntArray468[local29], this.anIntArray469[local29]);
@@ -287,8 +287,8 @@ public class Class567 {
 	@OriginalMember(owner = "client!ta", name = "q", descriptor = "(Lclient!tx;)V", line = 73)
 	void method31272(@OriginalArg(0) Class585 arg0) {
 		this.aLinkedList4 = new LinkedList();
-		@Pc(8) Class520 local8 = client.aClass532_1.method30487(1209348711);
-		@Pc(12) Class611 local12 = client.aClass532_1.method30455(2101845940);
+		@Pc(8) Class520 local8 = client.world.method30487(1209348711);
+		@Pc(12) Class611 local12 = client.world.method30455(2101845940);
 		@Pc(27) Class611 local27 = new Class611(Class512.anInt5209 * 1177442423, this.anIntArray468[0], this.anIntArray469[0]);
 		for (@Pc(29) int local29 = 1; local29 < this.anInt5387 * 554261149; local29++) {
 			@Pc(50) Class611 local50 = new Class611(Class512.anInt5209 * 1177442423, this.anIntArray468[local29], this.anIntArray469[local29]);
@@ -322,8 +322,8 @@ public class Class567 {
 	@OriginalMember(owner = "client!ta", name = "x", descriptor = "(Lclient!tx;)V", line = 73)
 	void method31273(@OriginalArg(0) Class585 arg0) {
 		this.aLinkedList4 = new LinkedList();
-		@Pc(8) Class520 local8 = client.aClass532_1.method30487(580292846);
-		@Pc(12) Class611 local12 = client.aClass532_1.method30455(2101151843);
+		@Pc(8) Class520 local8 = client.world.method30487(580292846);
+		@Pc(12) Class611 local12 = client.world.method30455(2101151843);
 		@Pc(27) Class611 local27 = new Class611(Class512.anInt5209 * 1177442423, this.anIntArray468[0], this.anIntArray469[0]);
 		for (@Pc(29) int local29 = 1; local29 < this.anInt5387 * 554261149; local29++) {
 			@Pc(50) Class611 local50 = new Class611(Class512.anInt5209 * 1177442423, this.anIntArray468[local29], this.anIntArray469[local29]);

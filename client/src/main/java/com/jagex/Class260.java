@@ -83,7 +83,7 @@ class Class260 implements Interface58 {
 					}
 					local32 = (float) local27 * 6.1035156E-5F;
 				} else {
-					@Pc(295) int local295 = -(Class24.anInt82 * -20667523) - (int) (Math.atan2((double) local23.aFloat317, (double) local23.aFloat319) * 2607.5945876176133D) - 4096 & 0x3FFF;
+					@Pc(295) int local295 = -(IsaacRandom.anInt82 * -20667523) - (int) (Math.atan2((double) local23.aFloat317, (double) local23.aFloat319) * 2607.5945876176133D) - 4096 & 0x3FFF;
 					if (local295 > 8192) {
 						local295 = 16384 - local295;
 					}
@@ -157,7 +157,7 @@ class Class260 implements Interface58 {
 					}
 					local32 = (float) local27 * 6.1035156E-5F;
 				} else {
-					@Pc(295) int local295 = -(Class24.anInt82 * -20667523) - (int) (Math.atan2((double) local23.aFloat317, (double) local23.aFloat319) * 2607.5945876176133D) - 4096 & 0x3FFF;
+					@Pc(295) int local295 = -(IsaacRandom.anInt82 * -20667523) - (int) (Math.atan2((double) local23.aFloat317, (double) local23.aFloat319) * 2607.5945876176133D) - 4096 & 0x3FFF;
 					if (local295 > 8192) {
 						local295 = 16384 - local295;
 					}
@@ -231,7 +231,7 @@ class Class260 implements Interface58 {
 					}
 					local32 = (float) local27 * 6.1035156E-5F;
 				} else {
-					@Pc(295) int local295 = -(Class24.anInt82 * -20667523) - (int) (Math.atan2((double) local23.aFloat317, (double) local23.aFloat319) * 2607.5945876176133D) - 4096 & 0x3FFF;
+					@Pc(295) int local295 = -(IsaacRandom.anInt82 * -20667523) - (int) (Math.atan2((double) local23.aFloat317, (double) local23.aFloat319) * 2607.5945876176133D) - 4096 & 0x3FFF;
 					if (local295 > 8192) {
 						local295 = 16384 - local295;
 					}
@@ -260,33 +260,33 @@ class Class260 implements Interface58 {
 
 	@OriginalMember(owner = "client!fd", name = "z", descriptor = "(I)V", line = 312)
 	public static void method26155(@OriginalArg(0) int arg0) {
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub15_1, 1, (byte) 39);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub15_2, 1, (byte) 75);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub3_1, 1, (byte) 70);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub46_1, 1, (byte) 121);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub36_1, 0, (byte) 84);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub25_1, 0, (byte) 10);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub21_1, 0, (byte) 93);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub8_1, 0, (byte) 85);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub14_1, 0, (byte) 59);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub19_1, 0, (byte) 59);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub20_1, 0, (byte) 112);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub2_1, 0, (byte) 96);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub39_2, 0, (byte) 103);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub39_1, 0, (byte) 75);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub6_1, 0, (byte) 11);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub12_1, Class332.aClass332_6.anInt4147 * 595334117, (byte) 67);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub28_1, 0, (byte) 72);
+		Class51.options.method14363(Class51.options.aClass166_Sub15_1, 1, (byte) 39);
+		Class51.options.method14363(Class51.options.aClass166_Sub15_2, 1, (byte) 75);
+		Class51.options.method14363(Class51.options.aClass166_Sub3_1, 1, (byte) 70);
+		Class51.options.method14363(Class51.options.aClass166_Sub46_1, 1, (byte) 121);
+		Class51.options.method14363(Class51.options.aClass166_Sub36_1, 0, (byte) 84);
+		Class51.options.method14363(Class51.options.aClass166_Sub25_1, 0, (byte) 10);
+		Class51.options.method14363(Class51.options.aClass166_Sub21_1, 0, (byte) 93);
+		Class51.options.method14363(Class51.options.aClass166_Sub8_1, 0, (byte) 85);
+		Class51.options.method14363(Class51.options.aClass166_Sub14_1, 0, (byte) 59);
+		Class51.options.method14363(Class51.options.aClass166_Sub19_1, 0, (byte) 59);
+		Class51.options.method14363(Class51.options.aClass166_Sub20_1, 0, (byte) 112);
+		Class51.options.method14363(Class51.options.aClass166_Sub2_1, 0, (byte) 96);
+		Class51.options.method14363(Class51.options.aClass166_Sub39_2, 0, (byte) 103);
+		Class51.options.method14363(Class51.options.antialiasing, 0, (byte) 75);
+		Class51.options.method14363(Class51.options.aClass166_Sub6_1, 0, (byte) 11);
+		Class51.options.method14363(Class51.options.aClass166_Sub12_1, Class332.aClass332_6.anInt4147 * 595334117, (byte) 67);
+		Class51.options.method14363(Class51.options.aClass166_Sub28_1, 0, (byte) 72);
 		if (Class694.aClass104_14 != null && Class694.aClass104_14.method20639() && Class694.aClass104_14.method20622()) {
 			Class694.aClass104_14.method20645();
 		}
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub29_1, 0, (byte) 121);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub31_1, 0, (byte) 99);
+		Class51.options.method14363(Class51.options.aClass166_Sub29_1, 0, (byte) 121);
+		Class51.options.method14363(Class51.options.aClass166_Sub31_1, 0, (byte) 99);
 		Class386.method28235((byte) 5);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub24_1, 2, (byte) 95);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub40_1, 2, (byte) 46);
+		Class51.options.method14363(Class51.options.aClass166_Sub24_1, 2, (byte) 95);
+		Class51.options.method14363(Class51.options.aClass166_Sub40_1, 2, (byte) 46);
 		Class610.method32020(286513806);
-		client.aClass532_1.method30494((byte) 79).method33015(-51699213);
+		client.world.method30494((byte) 79).method33015(-51699213);
 		client.aBoolean609 = true;
 	}
 
@@ -310,7 +310,7 @@ class Class260 implements Interface58 {
 				return true;
 			}
 		}
-		if (arg0.equalsIgnoreCase(Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aString82)) {
+		if (arg0.equalsIgnoreCase(Class520.selfPlayer.name2)) {
 			return true;
 		} else {
 			return false;
@@ -319,7 +319,7 @@ class Class260 implements Interface58 {
 
 	@OriginalMember(owner = "client!fd", name = "aui", descriptor = "(Lclient!yf;I)V", line = 13405)
 	static final void method26159(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub24_1.method15870(1045625469);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub24_1.method15870(1045625469);
 	}
 
 	@OriginalMember(owner = "client!fd", name = "bdk", descriptor = "(Lclient!yf;I)V", line = 14700)

@@ -30,7 +30,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 	static final String aString132 = "main_file_cache.dat2";
 
 	@OriginalMember(owner = "client!sk", name = "r", descriptor = "I")
-	public static int anInt3408;
+	public static int width;
 
 	@OriginalMember(owner = "client!sk", name = "p", descriptor = "I")
 	static int anInt3409;
@@ -51,7 +51,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 	public static Class147 aClass147_2;
 
 	@OriginalMember(owner = "client!sk", name = "v", descriptor = "I")
-	public static int anInt3416;
+	public static int height;
 
 	@OriginalMember(owner = "client!sk", name = "at", descriptor = "J")
 	static final long aLong240 = 3221225472L;
@@ -289,21 +289,21 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 	@OriginalMember(owner = "client!sk", name = "supplyApplet", descriptor = "(Ljava/applet/Applet;)V", line = 92)
 	@Override
 	public void supplyApplet(@OriginalArg(0) Applet arg0) {
-		Class32_Sub10.anApplet2 = arg0;
+		Class32_Sub10.applet = arg0;
 	}
 
 	@OriginalMember(owner = "client!sk", name = "af", descriptor = "(Ljava/applet/Applet;)V", line = 92)
 	@Override
 	public void method24833(@OriginalArg(0) Applet arg0) {
-		Class32_Sub10.anApplet2 = arg0;
+		Class32_Sub10.applet = arg0;
 	}
 
 	@OriginalMember(owner = "client!sk", name = "ak", descriptor = "(Lclient!sq;Ljava/lang/String;Ljava/lang/String;IIIIZ)V", line = 97)
 	final void method24843(@OriginalArg(0) Class559 arg0, @OriginalArg(1) String arg1, @OriginalArg(2) String arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7) {
 		try {
 			this.method24935(Class555.aClass555_4, arg7, 1101059334);
-			anInt3413 = (anInt3408 = arg0.method31115(-820575818) * 1671148283) * -1040934271;
-			Class504.anInt5201 = (anInt3416 = arg0.method31118(-567283080) * 490799697) * 500427957;
+			anInt3413 = (width = arg0.method31115(-820575818) * 1671148283) * -1040934271;
+			Class504.anInt5201 = (height = arg0.method31118(-567283080) * 490799697) * 500427957;
 			anInt3414 = 0;
 			anInt3415 = 0;
 			if (Class343.method27519((byte) 45) == Class555.aClass555_5) {
@@ -311,7 +311,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 				Class504.anInt5201 += arg0.method31123(-1743498683) * 1706598026;
 				this.method24865(arg0.method31125((byte) -13), (byte) 114);
 			}
-			Class69.anApplet1 = Class32_Sub10.anApplet2;
+			Class69.anApplet1 = Class32_Sub10.applet;
 			this.method24847(arg1, arg2, arg3, arg4, arg5, arg6, -616301363);
 		} catch (@Pc(67) Throwable local67) {
 			Class646.method32608(null, local67, 1579532191);
@@ -323,8 +323,8 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 	final void method24844(@OriginalArg(0) Class559 arg0, @OriginalArg(1) String arg1, @OriginalArg(2) String arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7, @OriginalArg(8) int arg8) {
 		try {
 			this.method24935(Class555.aClass555_4, arg7, 1331913860);
-			anInt3413 = (anInt3408 = arg0.method31115(-820575818) * 1671148283) * -1040934271;
-			Class504.anInt5201 = (anInt3416 = arg0.method31118(-567283080) * 490799697) * 500427957;
+			anInt3413 = (width = arg0.method31115(-820575818) * 1671148283) * -1040934271;
+			Class504.anInt5201 = (height = arg0.method31118(-567283080) * 490799697) * 500427957;
 			anInt3414 = 0;
 			anInt3415 = 0;
 			if (Class343.method27519((byte) 115) == Class555.aClass555_5) {
@@ -332,7 +332,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 				Class504.anInt5201 += arg0.method31123(-1743498683) * 1706598026;
 				this.method24865(arg0.method31125((byte) -78), (byte) 99);
 			}
-			Class69.anApplet1 = Class32_Sub10.anApplet2;
+			Class69.anApplet1 = Class32_Sub10.applet;
 			this.method24847(arg1, arg2, arg3, arg4, arg5, arg6, -616301363);
 		} catch (@Pc(67) Throwable local67) {
 			Class646.method32608(null, local67, 1692810338);
@@ -344,8 +344,8 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 	final void method24845(@OriginalArg(0) Class559 arg0, @OriginalArg(1) String arg1, @OriginalArg(2) String arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7) {
 		try {
 			this.method24935(Class555.aClass555_4, arg7, 917811850);
-			anInt3413 = (anInt3408 = arg0.method31115(-820575818) * 1671148283) * -1040934271;
-			Class504.anInt5201 = (anInt3416 = arg0.method31118(-567283080) * 490799697) * 500427957;
+			anInt3413 = (width = arg0.method31115(-820575818) * 1671148283) * -1040934271;
+			Class504.anInt5201 = (height = arg0.method31118(-567283080) * 490799697) * 500427957;
 			anInt3414 = 0;
 			anInt3415 = 0;
 			if (Class343.method27519((byte) 44) == Class555.aClass555_5) {
@@ -353,7 +353,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 				Class504.anInt5201 += arg0.method31123(-1743498683) * 1706598026;
 				this.method24865(arg0.method31125((byte) -47), (byte) 125);
 			}
-			Class69.anApplet1 = Class32_Sub10.anApplet2;
+			Class69.anApplet1 = Class32_Sub10.applet;
 			this.method24847(arg1, arg2, arg3, arg4, arg5, arg6, -616301363);
 		} catch (@Pc(67) Throwable local67) {
 			Class646.method32608(null, local67, 1089355595);
@@ -365,8 +365,8 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 	final void method24846(@OriginalArg(0) Class559 arg0, @OriginalArg(1) String arg1, @OriginalArg(2) String arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7) {
 		try {
 			this.method24935(Class555.aClass555_4, arg7, -868112265);
-			anInt3413 = (anInt3408 = arg0.method31115(-820575818) * 1671148283) * -1040934271;
-			Class504.anInt5201 = (anInt3416 = arg0.method31118(-567283080) * 490799697) * 500427957;
+			anInt3413 = (width = arg0.method31115(-820575818) * 1671148283) * -1040934271;
+			Class504.anInt5201 = (height = arg0.method31118(-567283080) * 490799697) * 500427957;
 			anInt3414 = 0;
 			anInt3415 = 0;
 			if (Class343.method27519((byte) 9) == Class555.aClass555_5) {
@@ -374,7 +374,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 				Class504.anInt5201 += arg0.method31123(-1743498683) * 1706598026;
 				this.method24865(arg0.method31125((byte) -87), (byte) 105);
 			}
-			Class69.anApplet1 = Class32_Sub10.anApplet2;
+			Class69.anApplet1 = Class32_Sub10.applet;
 			this.method24847(arg1, arg2, arg3, arg4, arg5, arg6, -616301363);
 		} catch (@Pc(67) Throwable local67) {
 			Class646.method32608(null, local67, 823907050);
@@ -1373,7 +1373,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 	@OriginalMember(owner = "client!sk", name = "bz", descriptor = "()Ljava/awt/Container;", line = 457)
 	public static Container method24869() {
 		if (Class125_Sub2_Sub1.aFrame1 == null) {
-			return Class628.aFrame2 == null ? Class32_Sub10.anApplet2 : Class628.aFrame2;
+			return Class628.aFrame2 == null ? Class32_Sub10.applet : Class628.aFrame2;
 		} else {
 			return Class125_Sub2_Sub1.aFrame1;
 		}
@@ -1382,7 +1382,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 	@OriginalMember(owner = "client!sk", name = "br", descriptor = "()Ljava/awt/Container;", line = 457)
 	public static Container method24870() {
 		if (Class125_Sub2_Sub1.aFrame1 == null) {
-			return Class628.aFrame2 == null ? Class32_Sub10.anApplet2 : Class628.aFrame2;
+			return Class628.aFrame2 == null ? Class32_Sub10.applet : Class628.aFrame2;
 		} else {
 			return Class125_Sub2_Sub1.aFrame1;
 		}
@@ -1391,7 +1391,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 	@OriginalMember(owner = "client!sk", name = "bv", descriptor = "()Ljava/awt/Container;", line = 457)
 	public static Container method24871() {
 		if (Class125_Sub2_Sub1.aFrame1 == null) {
-			return Class628.aFrame2 == null ? Class32_Sub10.anApplet2 : Class628.aFrame2;
+			return Class628.aFrame2 == null ? Class32_Sub10.applet : Class628.aFrame2;
 		} else {
 			return Class125_Sub2_Sub1.aFrame1;
 		}
@@ -1400,7 +1400,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 	@OriginalMember(owner = "client!sk", name = "bo", descriptor = "()Ljava/awt/Container;", line = 457)
 	public static Container method24872() {
 		if (Class125_Sub2_Sub1.aFrame1 == null) {
-			return Class628.aFrame2 == null ? Class32_Sub10.anApplet2 : Class628.aFrame2;
+			return Class628.aFrame2 == null ? Class32_Sub10.applet : Class628.aFrame2;
 		} else {
 			return Class125_Sub2_Sub1.aFrame1;
 		}
@@ -1411,7 +1411,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 		arg0.setBackground(Color.black);
 		arg0.setLayout(null);
 		arg0.add(Class125_Sub3.aCanvas1);
-		Class125_Sub3.aCanvas1.setSize(anInt3408 * -1378711501, anInt3416 * 2091353777);
+		Class125_Sub3.aCanvas1.setSize(width * -1378711501, height * 2091353777);
 		Class125_Sub3.aCanvas1.setVisible(true);
 		if (Class628.aFrame2 == arg0) {
 			@Pc(26) Insets local26 = Class628.aFrame2.getInsets();
@@ -1434,7 +1434,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 		arg0.setBackground(Color.black);
 		arg0.setLayout(null);
 		arg0.add(Class125_Sub3.aCanvas1);
-		Class125_Sub3.aCanvas1.setSize(anInt3408 * -1378711501, anInt3416 * 2091353777);
+		Class125_Sub3.aCanvas1.setSize(width * -1378711501, height * 2091353777);
 		Class125_Sub3.aCanvas1.setVisible(true);
 		if (Class628.aFrame2 == arg0) {
 			@Pc(26) Insets local26 = Class628.aFrame2.getInsets();
@@ -1457,7 +1457,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 		arg0.setBackground(Color.black);
 		arg0.setLayout(null);
 		arg0.add(Class125_Sub3.aCanvas1);
-		Class125_Sub3.aCanvas1.setSize(anInt3408 * -1378711501, anInt3416 * 2091353777);
+		Class125_Sub3.aCanvas1.setSize(width * -1378711501, height * 2091353777);
 		Class125_Sub3.aCanvas1.setVisible(true);
 		if (Class628.aFrame2 == arg0) {
 			@Pc(26) Insets local26 = Class628.aFrame2.getInsets();
@@ -1508,7 +1508,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
             return true;
         }
 
-		@Pc(4) String local4 = Class32_Sub10.anApplet2.getDocumentBase().getHost().toLowerCase();
+		@Pc(4) String local4 = Class32_Sub10.applet.getDocumentBase().getHost().toLowerCase();
 		if (local4.equals("jagex.com") || local4.endsWith(".jagex.com")) {
 			return true;
 		} else if (local4.equals("runescape.com") || local4.endsWith(".runescape.com")) {
@@ -1946,7 +1946,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 		if ((anInt3418 += 1670111301) * -133680499 - 1 > 50) {
 			anInt3418 -= 1901186426;
 			aBoolean586 = true;
-			Class125_Sub3.aCanvas1.setSize(anInt3408 * -1378711501, anInt3416 * 2091353777);
+			Class125_Sub3.aCanvas1.setSize(width * -1378711501, height * 2091353777);
 			Class125_Sub3.aCanvas1.setVisible(true);
 			if (Class628.aFrame2 != null && Class125_Sub2_Sub1.aFrame1 == null) {
 				@Pc(101) Insets local101 = Class628.aFrame2.getInsets();
@@ -1973,7 +1973,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 		if ((anInt3418 += 1670111301) * -133680499 - 1 > 50) {
 			anInt3418 -= 1901186426;
 			aBoolean586 = true;
-			Class125_Sub3.aCanvas1.setSize(anInt3408 * -1378711501, anInt3416 * 2091353777);
+			Class125_Sub3.aCanvas1.setSize(width * -1378711501, height * 2091353777);
 			Class125_Sub3.aCanvas1.setVisible(true);
 			if (Class628.aFrame2 != null && Class125_Sub2_Sub1.aFrame1 == null) {
 				@Pc(101) Insets local101 = Class628.aFrame2.getInsets();
@@ -2000,7 +2000,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 		if ((anInt3418 += 1670111301) * -133680499 - 1 > 50) {
 			anInt3418 -= 1901186426;
 			aBoolean586 = true;
-			Class125_Sub3.aCanvas1.setSize(anInt3408 * -1378711501, anInt3416 * 2091353777);
+			Class125_Sub3.aCanvas1.setSize(width * -1378711501, height * 2091353777);
 			Class125_Sub3.aCanvas1.setVisible(true);
 			if (Class628.aFrame2 != null && Class125_Sub2_Sub1.aFrame1 == null) {
 				@Pc(101) Insets local101 = Class628.aFrame2.getInsets();
@@ -2027,7 +2027,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 		if ((anInt3418 += 1670111301) * -133680499 - 1 > 50) {
 			anInt3418 -= 1901186426;
 			aBoolean586 = true;
-			Class125_Sub3.aCanvas1.setSize(anInt3408 * -1378711501, anInt3416 * 2091353777);
+			Class125_Sub3.aCanvas1.setSize(width * -1378711501, height * 2091353777);
 			Class125_Sub3.aCanvas1.setVisible(true);
 			if (Class628.aFrame2 != null && Class125_Sub2_Sub1.aFrame1 == null) {
 				@Pc(101) Insets local101 = Class628.aFrame2.getInsets();
@@ -2054,7 +2054,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 		if ((anInt3418 += 1670111301) * -133680499 - 1 > 50) {
 			anInt3418 -= 1901186426;
 			aBoolean586 = true;
-			Class125_Sub3.aCanvas1.setSize(anInt3408 * -1378711501, anInt3416 * 2091353777);
+			Class125_Sub3.aCanvas1.setSize(width * -1378711501, height * 2091353777);
 			Class125_Sub3.aCanvas1.setVisible(true);
 			if (Class628.aFrame2 != null && Class125_Sub2_Sub1.aFrame1 == null) {
 				@Pc(101) Insets local101 = Class628.aFrame2.getInsets();
@@ -2524,13 +2524,13 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 			@Pc(83) int local83;
 			try {
 				if (Class115.anImage3 == null) {
-					Class115.anImage3 = Class125_Sub3.aCanvas1.createImage(anInt3408 * -1378711501, anInt3416 * 2091353777);
+					Class115.anImage3 = Class125_Sub3.aCanvas1.createImage(width * -1378711501, height * 2091353777);
 				}
 				@Pc(54) Graphics local54 = Class115.anImage3.getGraphics();
 				local54.setColor(Color.black);
-				local54.fillRect(0, 0, anInt3408 * -1378711501, anInt3416 * 2091353777);
-				local75 = anInt3408 * -1378711501 / 2 - 152;
-				local83 = anInt3416 * 2091353777 / 2 - 18;
+				local54.fillRect(0, 0, width * -1378711501, height * 2091353777);
+				local75 = width * -1378711501 / 2 - 152;
+				local83 = height * 2091353777 / 2 - 18;
 				local54.setColor(arg3);
 				local54.drawRect(local75, local83, 303, 33);
 				local54.setColor(arg2);
@@ -2544,14 +2544,14 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 				if (aString133 != null) {
 					local54.setFont(Class68.aFont1);
 					local54.setColor(arg4);
-					local54.drawString(aString133, anInt3408 * -1378711501 / 2 - aString133.length() * 6 / 2, anInt3416 * 2091353777 / 2 - 26);
+					local54.drawString(aString133, width * -1378711501 / 2 - aString133.length() * 6 / 2, height * 2091353777 / 2 - 26);
 				}
 				local2.drawImage(Class115.anImage3, 0, 0, null);
 			} catch (@Pc(200) Exception local200) {
 				local2.setColor(Color.black);
-				local2.fillRect(0, 0, anInt3408 * -1378711501, anInt3416 * 2091353777);
-				local75 = anInt3408 * -1378711501 / 2 - 152;
-				local83 = anInt3416 * 2091353777 / 2 - 18;
+				local2.fillRect(0, 0, width * -1378711501, height * 2091353777);
+				local75 = width * -1378711501 / 2 - 152;
+				local83 = height * 2091353777 / 2 - 18;
 				local2.setColor(arg3);
 				local2.drawRect(local75, local83, 303, 33);
 				local2.setColor(arg2);
@@ -2564,7 +2564,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 				if (aString133 != null) {
 					local2.setFont(Class68.aFont1);
 					local2.setColor(arg4);
-					local2.drawString(aString133, anInt3408 * -1378711501 / 2 - aString133.length() * 6 / 2, anInt3416 * 2091353777 / 2 - 26);
+					local2.drawString(aString133, width * -1378711501 / 2 - aString133.length() * 6 / 2, height * 2091353777 / 2 - 26);
 				}
 				local2.drawString(arg1, local75 + (304 - arg1.length() * 6) / 2, local83 + 22);
 			}
@@ -2593,13 +2593,13 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 			@Pc(83) int local83;
 			try {
 				if (Class115.anImage3 == null) {
-					Class115.anImage3 = Class125_Sub3.aCanvas1.createImage(anInt3408 * -1378711501, anInt3416 * 2091353777);
+					Class115.anImage3 = Class125_Sub3.aCanvas1.createImage(width * -1378711501, height * 2091353777);
 				}
 				@Pc(54) Graphics local54 = Class115.anImage3.getGraphics();
 				local54.setColor(Color.black);
-				local54.fillRect(0, 0, anInt3408 * -1378711501, anInt3416 * 2091353777);
-				local75 = anInt3408 * -1378711501 / 2 - 152;
-				local83 = anInt3416 * 2091353777 / 2 - 18;
+				local54.fillRect(0, 0, width * -1378711501, height * 2091353777);
+				local75 = width * -1378711501 / 2 - 152;
+				local83 = height * 2091353777 / 2 - 18;
 				local54.setColor(arg3);
 				local54.drawRect(local75, local83, 303, 33);
 				local54.setColor(arg2);
@@ -2613,14 +2613,14 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 				if (aString133 != null) {
 					local54.setFont(Class68.aFont1);
 					local54.setColor(arg4);
-					local54.drawString(aString133, anInt3408 * -1378711501 / 2 - aString133.length() * 6 / 2, anInt3416 * 2091353777 / 2 - 26);
+					local54.drawString(aString133, width * -1378711501 / 2 - aString133.length() * 6 / 2, height * 2091353777 / 2 - 26);
 				}
 				local2.drawImage(Class115.anImage3, 0, 0, null);
 			} catch (@Pc(200) Exception local200) {
 				local2.setColor(Color.black);
-				local2.fillRect(0, 0, anInt3408 * -1378711501, anInt3416 * 2091353777);
-				local75 = anInt3408 * -1378711501 / 2 - 152;
-				local83 = anInt3416 * 2091353777 / 2 - 18;
+				local2.fillRect(0, 0, width * -1378711501, height * 2091353777);
+				local75 = width * -1378711501 / 2 - 152;
+				local83 = height * 2091353777 / 2 - 18;
 				local2.setColor(arg3);
 				local2.drawRect(local75, local83, 303, 33);
 				local2.setColor(arg2);
@@ -2633,7 +2633,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 				if (aString133 != null) {
 					local2.setFont(Class68.aFont1);
 					local2.setColor(arg4);
-					local2.drawString(aString133, anInt3408 * -1378711501 / 2 - aString133.length() * 6 / 2, anInt3416 * 2091353777 / 2 - 26);
+					local2.drawString(aString133, width * -1378711501 / 2 - aString133.length() * 6 / 2, height * 2091353777 / 2 - 26);
 				}
 				local2.drawString(arg1, local75 + (304 - arg1.length() * 6) / 2, local83 + 22);
 			}
@@ -2662,13 +2662,13 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 			@Pc(83) int local83;
 			try {
 				if (Class115.anImage3 == null) {
-					Class115.anImage3 = Class125_Sub3.aCanvas1.createImage(anInt3408 * -1378711501, anInt3416 * 2091353777);
+					Class115.anImage3 = Class125_Sub3.aCanvas1.createImage(width * -1378711501, height * 2091353777);
 				}
 				@Pc(54) Graphics local54 = Class115.anImage3.getGraphics();
 				local54.setColor(Color.black);
-				local54.fillRect(0, 0, anInt3408 * -1378711501, anInt3416 * 2091353777);
-				local75 = anInt3408 * -1378711501 / 2 - 152;
-				local83 = anInt3416 * 2091353777 / 2 - 18;
+				local54.fillRect(0, 0, width * -1378711501, height * 2091353777);
+				local75 = width * -1378711501 / 2 - 152;
+				local83 = height * 2091353777 / 2 - 18;
 				local54.setColor(arg3);
 				local54.drawRect(local75, local83, 303, 33);
 				local54.setColor(arg2);
@@ -2682,14 +2682,14 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 				if (aString133 != null) {
 					local54.setFont(Class68.aFont1);
 					local54.setColor(arg4);
-					local54.drawString(aString133, anInt3408 * -1378711501 / 2 - aString133.length() * 6 / 2, anInt3416 * 2091353777 / 2 - 26);
+					local54.drawString(aString133, width * -1378711501 / 2 - aString133.length() * 6 / 2, height * 2091353777 / 2 - 26);
 				}
 				local2.drawImage(Class115.anImage3, 0, 0, null);
 			} catch (@Pc(200) Exception local200) {
 				local2.setColor(Color.black);
-				local2.fillRect(0, 0, anInt3408 * -1378711501, anInt3416 * 2091353777);
-				local75 = anInt3408 * -1378711501 / 2 - 152;
-				local83 = anInt3416 * 2091353777 / 2 - 18;
+				local2.fillRect(0, 0, width * -1378711501, height * 2091353777);
+				local75 = width * -1378711501 / 2 - 152;
+				local83 = height * 2091353777 / 2 - 18;
 				local2.setColor(arg3);
 				local2.drawRect(local75, local83, 303, 33);
 				local2.setColor(arg2);
@@ -2702,7 +2702,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 				if (aString133 != null) {
 					local2.setFont(Class68.aFont1);
 					local2.setColor(arg4);
-					local2.drawString(aString133, anInt3408 * -1378711501 / 2 - aString133.length() * 6 / 2, anInt3416 * 2091353777 / 2 - 26);
+					local2.drawString(aString133, width * -1378711501 / 2 - aString133.length() * 6 / 2, height * 2091353777 / 2 - 26);
 				}
 				local2.drawString(arg1, local75 + (304 - arg1.length() * 6) / 2, local83 + 22);
 			}
@@ -2725,11 +2725,11 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 		this.aBoolean592 = true;
 		System.out.println("error_game_" + arg0);
 		try {
-			Class70.method1237(Class32_Sub10.anApplet2, "loggedout", 1946669565);
+			Class70.method1237(Class32_Sub10.applet, "loggedout", 1946669565);
 		} catch (@Pc(23) Throwable local23) {
 		}
 		try {
-			Class32_Sub10.anApplet2.getAppletContext().showDocument(new URL(Class32_Sub10.anApplet2.getCodeBase(), "error_game_" + arg0 + ".ws"), "_top");
+			Class32_Sub10.applet.getAppletContext().showDocument(new URL(Class32_Sub10.applet.getCodeBase(), "error_game_" + arg0 + ".ws"), "_top");
 		} catch (@Pc(44) Exception local44) {
 		}
 	}
@@ -2742,11 +2742,11 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 		this.aBoolean592 = true;
 		System.out.println("error_game_" + arg0);
 		try {
-			Class70.method1237(Class32_Sub10.anApplet2, "loggedout", 2092136710);
+			Class70.method1237(Class32_Sub10.applet, "loggedout", 2092136710);
 		} catch (@Pc(23) Throwable local23) {
 		}
 		try {
-			Class32_Sub10.anApplet2.getAppletContext().showDocument(new URL(Class32_Sub10.anApplet2.getCodeBase(), "error_game_" + arg0 + ".ws"), "_top");
+			Class32_Sub10.applet.getAppletContext().showDocument(new URL(Class32_Sub10.applet.getCodeBase(), "error_game_" + arg0 + ".ws"), "_top");
 		} catch (@Pc(44) Exception local44) {
 		}
 	}
@@ -2759,11 +2759,11 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 		this.aBoolean592 = true;
 		System.out.println("error_game_" + arg0);
 		try {
-			Class70.method1237(Class32_Sub10.anApplet2, "loggedout", 1622519257);
+			Class70.method1237(Class32_Sub10.applet, "loggedout", 1622519257);
 		} catch (@Pc(23) Throwable local23) {
 		}
 		try {
-			Class32_Sub10.anApplet2.getAppletContext().showDocument(new URL(Class32_Sub10.anApplet2.getCodeBase(), "error_game_" + arg0 + ".ws?" + arg1), "_top");
+			Class32_Sub10.applet.getAppletContext().showDocument(new URL(Class32_Sub10.applet.getCodeBase(), "error_game_" + arg0 + ".ws?" + arg1), "_top");
 		} catch (@Pc(46) Exception local46) {
 		}
 	}
@@ -2776,11 +2776,11 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 		this.aBoolean592 = true;
 		System.out.println("error_game_" + arg0);
 		try {
-			Class70.method1237(Class32_Sub10.anApplet2, "loggedout", 2002709341);
+			Class70.method1237(Class32_Sub10.applet, "loggedout", 2002709341);
 		} catch (@Pc(23) Throwable local23) {
 		}
 		try {
-			Class32_Sub10.anApplet2.getAppletContext().showDocument(new URL(Class32_Sub10.anApplet2.getCodeBase(), "error_game_" + arg0 + ".ws?" + arg1), "_top");
+			Class32_Sub10.applet.getAppletContext().showDocument(new URL(Class32_Sub10.applet.getCodeBase(), "error_game_" + arg0 + ".ws?" + arg1), "_top");
 		} catch (@Pc(46) Exception local46) {
 		}
 	}

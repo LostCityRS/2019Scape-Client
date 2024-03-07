@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 public class Class127_Sub1 extends Class127 {
 
 	@OriginalMember(owner = "client!ahg", name = "jg", descriptor = "I")
-	static int anInt1036;
+	static int zoneUpdateZ;
 
 	@OriginalMember(owner = "client!ahg", name = "<init>", descriptor = "(Ljava/util/Map;)V", line = 104)
 	Class127_Sub1(@OriginalArg(0) Map arg0) {

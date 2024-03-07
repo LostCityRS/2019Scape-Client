@@ -69,7 +69,7 @@ public class Class67 implements Interface75 {
 
 	@OriginalMember(owner = "client!acq", name = "n", descriptor = "()I", line = 32)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt238 * -578444119;
 	}
 
@@ -94,7 +94,7 @@ public class Class67 implements Interface75 {
 	static final void method1205(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = 0;
 		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = 0;
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class553.anInt3408 * -1378711501;
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class553.anInt3416 * 2091353777;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class553.width * -1378711501;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class553.height * 2091353777;
 	}
 }

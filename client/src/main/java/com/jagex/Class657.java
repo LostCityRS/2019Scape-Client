@@ -147,10 +147,10 @@ public class Class657 {
 	@OriginalMember(owner = "client!xf", name = "lp", descriptor = "(Ljava/lang/String;II)V", line = 12010)
 	public static final void method32757(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		@Pc(2) Class175 local2 = Class330.method27371(-1553800594);
-		@Pc(8) Class93_Sub22 local8 = Class102.method2588(Class446.aClass446_56, local2.aClass24_2, (byte) 31);
-		local8.aPacketBit_1.p1(Packet.pjstrlen(arg0, -2061366101) + 1, (byte) -21);
-		local8.aPacketBit_1.pjstr(arg0, 98344578);
-		local8.aPacketBit_1.p1_alt2(arg1, 1243726215);
-		local2.method24356(local8, -2038067562);
+		@Pc(8) ClientMessage local8 = Class102.createGameMessage(ClientProt.aClientProt_56, local2.clientIsaac, (byte) 31);
+		local8.packet.p1(Packet.pjstrlen(arg0, -2061366101) + 1, (byte) -21);
+		local8.packet.pjstr(arg0, 98344578);
+		local8.packet.p1_alt2(arg1, 1243726215);
+		local2.send(local8, -2038067562);
 	}
 }

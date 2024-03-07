@@ -114,7 +114,7 @@ public class Class243 {
 			}
 			return local7 - local12;
 		} else if (arg2 == 2) {
-			return Class488.method29820(arg0.method14157((byte) -36), arg1.method14157((byte) -121), Class106.aClass717_8, -264791838);
+			return Class488.method29820(arg0.method14157((byte) -36), arg1.method14157((byte) -121), Class106.lang, -264791838);
 		} else if (arg2 == 3) {
 			if (arg0.aString47.equals("-")) {
 				if (arg1.aString47.equals("-")) {
@@ -127,7 +127,7 @@ public class Class243 {
 			} else if (arg1.aString47.equals("-")) {
 				return arg3 ? 1 : -1;
 			} else {
-				return Class488.method29820(arg0.aString47, arg1.aString47, Class106.aClass717_8, 437101550);
+				return Class488.method29820(arg0.aString47, arg1.aString47, Class106.lang, 437101550);
 			}
 		} else if (arg2 == 4) {
 			return arg0.method14141((byte) 1) ? (arg1.method14141((byte) 1) ? 0 : 1) : (arg1.method14141((byte) 1) ? -1 : 0);
@@ -171,7 +171,7 @@ public class Class243 {
 		}
 		arg0.anIntArray518[local9] = local32;
 		@Pc(48) byte local48 = -1;
-		if (local19 == Class519.aClass519_88.method36920()) {
+		if (local19 == Class519.aClass519_88.getId()) {
 			local48 = 0;
 		}
 		for (@Pc(56) int local56 = 0; local56 < local32; local56++) {

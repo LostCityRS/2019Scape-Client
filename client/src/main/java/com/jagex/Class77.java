@@ -254,8 +254,8 @@ public class Class77 implements Interface13, Interface5 {
 	@OriginalMember(owner = "client!adb", name = "lt", descriptor = "(I)V", line = 12319)
 	static void method1301(@OriginalArg(0) int arg0) {
 		@Pc(2) Class175 local2 = Class330.method27371(-1535095443);
-		@Pc(8) Class93_Sub22 local8 = Class102.method2588(Class446.aClass446_87, local2.aClass24_2, (byte) 102);
-		local8.aPacketBit_1.p4(client.anInt3455 * 1598735607, (byte) 31);
-		local2.method24356(local8, -2067585322);
+		@Pc(8) ClientMessage local8 = Class102.createGameMessage(ClientProt.aClientProt_87, local2.clientIsaac, (byte) 102);
+		local8.packet.p4(client.verifyId * 1598735607, (byte) 31);
+		local2.send(local8, -2067585322);
 	}
 }

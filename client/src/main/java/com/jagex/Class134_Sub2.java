@@ -309,6 +309,6 @@ public final class Class134_Sub2 extends Class134 {
 
 	@OriginalMember(owner = "client!ahz", name = "apk", descriptor = "(Lclient!yf;B)V", line = 12766)
 	static final void method10212(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class166_Sub6.method15484(-218445149).method36920();
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class166_Sub6.method15484(-218445149).getId();
 	}
 }

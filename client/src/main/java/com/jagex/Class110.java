@@ -193,11 +193,11 @@ public abstract class Class110 {
 		if (arg0 instanceof Class132_Sub1_Sub1_Sub1_Sub1) {
 			@Pc(5) Class132_Sub1_Sub1_Sub1_Sub1 local5 = (Class132_Sub1_Sub1_Sub1_Sub1) arg0;
 			if (local5.aClass336_1 != null) {
-				Class660.method32823(local5, local5.aByte100 != Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aByte100, 1025965340);
+				Class660.method32823(local5, local5.aByte100 != Class520.selfPlayer.aByte100, 1025965340);
 			}
 		} else if (arg0 instanceof Class132_Sub1_Sub1_Sub1_Sub2) {
 			@Pc(27) Class132_Sub1_Sub1_Sub1_Sub2 local27 = (Class132_Sub1_Sub1_Sub1_Sub2) arg0;
-			Class282.method26467(local27, Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aByte100 != local27.aByte100, 1176685425);
+			Class282.method26467(local27, Class520.selfPlayer.aByte100 != local27.aByte100, 1176685425);
 		}
 	}
 
@@ -210,9 +210,9 @@ public abstract class Class110 {
 	@OriginalMember(owner = "client!ew", name = "hs", descriptor = "(I)V", line = 4672)
 	static final void method20146(@OriginalArg(0) int arg0) {
 		@Pc(1) int local1 = 0;
-		@Pc(5) Class585 local5 = client.aClass532_1.method30481(-1073906249);
-		for (@Pc(7) int local7 = 0; local7 < client.aClass532_1.method30459(365725241); local7++) {
-			for (@Pc(14) int local14 = 0; local14 < client.aClass532_1.method30466((short) 128); local14++) {
+		@Pc(5) Class585 local5 = client.world.method30481(-1073906249);
+		for (@Pc(7) int local7 = 0; local7 < client.world.method30459(365725241); local7++) {
+			for (@Pc(14) int local14 = 0; local14 < client.world.method30466((short) 128); local14++) {
 				if (Class539.method30883(local5.aClass572ArrayArrayArray3, local1, local7, local14, true, -2129976726)) {
 					local1++;
 				}
@@ -230,7 +230,7 @@ public abstract class Class110 {
 
 	@OriginalMember(owner = "client!ew", name = "atj", descriptor = "(Lclient!yf;I)V", line = 13321)
 	static final void method20148(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub17_1.method15713(443078958);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub17_1.method15713(443078958);
 	}
 
 	@OriginalMember(owner = "client!ew", name = "n", descriptor = "(I)V")

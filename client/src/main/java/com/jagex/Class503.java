@@ -137,29 +137,29 @@ public final class Class503 implements Comparable {
 	@OriginalMember(owner = "client!qd", name = "fi", descriptor = "(I)V", line = 2408)
 	static void method30188(@OriginalArg(0) int arg0) {
 		@Pc(1) int local1 = 0;
-		if (Class51.aClass93_Sub36_1 != null) {
-			local1 = Class51.aClass93_Sub36_1.aClass166_Sub24_1.method15870(692665550);
+		if (Class51.options != null) {
+			local1 = Class51.options.aClass166_Sub24_1.method15870(692665550);
 		}
 		@Pc(23) int local23;
 		@Pc(34) int local34;
 		if (local1 == 2) {
 			local23 = client.anInt3413 * -108363597 > 800 ? 800 : client.anInt3413 * -108363597;
 			local34 = Class504.anInt5201 * 2090134413 > 600 ? 600 : Class504.anInt5201 * 2090134413;
-			client.anInt3408 = local23 * 1671148283;
+			client.width = local23 * 1671148283;
 			client.anInt3414 = (client.anInt3413 * -108363597 - local23) / 2 * 1405880713;
-			client.anInt3416 = local34 * 490799697;
+			client.height = local34 * 490799697;
 			client.anInt3415 = 0;
 		} else if (local1 == 1) {
 			local23 = client.anInt3413 * -108363597 > 1024 ? 1024 : client.anInt3413 * -108363597;
 			local34 = Class504.anInt5201 * 2090134413 > 768 ? 768 : Class504.anInt5201 * 2090134413;
-			client.anInt3408 = local23 * 1671148283;
+			client.width = local23 * 1671148283;
 			client.anInt3414 = (client.anInt3413 * -108363597 - local23) / 2 * 1405880713;
-			client.anInt3416 = local34 * 490799697;
+			client.height = local34 * 490799697;
 			client.anInt3415 = 0;
 		} else {
-			client.anInt3408 = client.anInt3413 * 497657217;
+			client.width = client.anInt3413 * 497657217;
 			client.anInt3414 = 0;
-			client.anInt3416 = Class504.anInt5201 * 1556259229;
+			client.height = Class504.anInt5201 * 1556259229;
 			client.anInt3415 = 0;
 		}
 	}

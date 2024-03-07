@@ -55,7 +55,7 @@ public class Class219 {
 
 	@OriginalMember(owner = "client!cz", name = "e", descriptor = "(Lclient!py;III)Lclient!aac;", line = 26)
 	public static Class5 method25509(@OriginalArg(0) Class497 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		return Class446.method28894(arg0, arg1, arg2, null, 156544913);
+		return ClientProt.method28894(arg0, arg1, arg2, null, 156544913);
 	}
 
 	@OriginalMember(owner = "client!cz", name = "n", descriptor = "(Lclient!py;IB)Lclient!cm;", line = 89)
@@ -74,9 +74,9 @@ public class Class219 {
 
 	@OriginalMember(owner = "client!cz", name = "y", descriptor = "(I)Z", line = 232)
 	static boolean method25511(@OriginalArg(0) int arg0) {
-		Class411.anInt4714 = 1757895756;
-		Class411.aClass175_3 = client.aClass175_1;
-		return Class507.method30229(Class411.aLong271 * 4457507688757033075L == -1L, true, "", "", Class411.aLong271 * 4457507688757033075L);
+		Class411.target = 1757895756;
+		Class411.connection = client.aClass175_1;
+		return Class507.method30229(Class411.ssoKeyIdentifier * 4457507688757033075L == -1L, true, "", "", Class411.ssoKeyIdentifier * 4457507688757033075L);
 	}
 
 	@OriginalMember(owner = "client!cz", name = "v", descriptor = "(I)V", line = 481)

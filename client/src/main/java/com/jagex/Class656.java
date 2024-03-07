@@ -56,8 +56,8 @@ public class Class656 {
 
 	@OriginalMember(owner = "client!xe", name = "ask", descriptor = "(Lclient!yf;B)V", line = 13072)
 	static final void method32749(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub39_1, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], (byte) 75);
-		Class543.method30945(Class51.aClass93_Sub36_1.aClass166_Sub4_2.method15426((byte) 82), false, 1945646779);
+		Class51.options.method14363(Class51.options.antialiasing, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], (byte) 75);
+		Class543.method30945(Class51.options.aClass166_Sub4_2.method15426((byte) 82), false, 1945646779);
 		Class106_Sub1.method5135(-1581694735);
 	}
 }

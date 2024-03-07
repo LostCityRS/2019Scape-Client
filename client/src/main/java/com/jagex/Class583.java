@@ -186,7 +186,7 @@ class Class583 implements Runnable {
 		@Pc(8) Class677 local8 = arg0.aBoolean875 ? arg0.aClass677_2 : arg0.aClass677_1;
 		@Pc(11) Class312 local11 = local8.aClass312_13;
 		@Pc(14) Class320 local14 = local8.aClass320_4;
-		Class453.method28966(local11, local14, arg0, arg0.aClass93_Sub28_4 == Class121.aClass93_Sub28_2 ? Class310.aClass310_5 : Class310.aClass310_1, (byte) -1);
+		ServerProt.method28966(local11, local14, arg0, arg0.aClass93_Sub28_4 == Class121.aClass93_Sub28_2 ? Class310.aClass310_5 : Class310.aClass310_1, (byte) -1);
 	}
 
 	@OriginalMember(owner = "client!tv", name = "ahv", descriptor = "(Lclient!yf;B)V", line = 10827)

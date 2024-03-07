@@ -158,10 +158,10 @@ public class Class607 implements Interface67 {
 	@OriginalMember(owner = "client!va", name = "zv", descriptor = "(Lclient!yf;I)V", line = 9557)
 	static final void method31927(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(13) String local13 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
-		@Pc(19) Class93_Sub22 local19 = Class102.method2588(Class446.aClass446_62, client.aClass175_1.aClass24_2, (byte) 115);
-		local19.aPacketBit_1.p1(Packet.pjstrlen(local13, -1912953263), (byte) -30);
-		local19.aPacketBit_1.pjstr(local13, -508826280);
-		client.aClass175_1.method24356(local19, -2037749837);
+		@Pc(19) ClientMessage local19 = Class102.createGameMessage(ClientProt.aClientProt_62, client.aClass175_1.clientIsaac, (byte) 115);
+		local19.packet.p1(Packet.pjstrlen(local13, -1912953263), (byte) -30);
+		local19.packet.pjstr(local13, -508826280);
+		client.aClass175_1.send(local19, -2037749837);
 	}
 
 	@OriginalMember(owner = "client!va", name = "aei", descriptor = "(Lclient!yf;B)V", line = 10380)

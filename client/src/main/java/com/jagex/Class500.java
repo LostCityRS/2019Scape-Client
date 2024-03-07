@@ -113,7 +113,7 @@ public class Class500 implements Interface75 {
 
 	@OriginalMember(owner = "client!qa", name = "n", descriptor = "()I", line = 74)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt5197 * 983101579;
 	}
 
@@ -137,16 +137,16 @@ public class Class500 implements Interface75 {
 	@OriginalMember(owner = "client!qa", name = "vn", descriptor = "(Lclient!yf;S)V", line = 8898)
 	static final void method30165(@OriginalArg(0) Class681 arg0, @OriginalArg(1) short arg1) {
 		@Pc(13) String local13 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
-		@Pc(19) Class93_Sub22 local19 = Class102.method2588(Class446.aClass446_112, client.aClass175_2.aClass24_2, (byte) 71);
-		local19.aPacketBit_1.p1(local13.length() + 1, (byte) -74);
-		local19.aPacketBit_1.pjstr(local13, -288853937);
-		client.aClass175_2.method24356(local19, -1861149337);
+		@Pc(19) ClientMessage local19 = Class102.createGameMessage(ClientProt.aClientProt_112, client.aClass175_2.clientIsaac, (byte) 71);
+		local19.packet.p1(local13.length() + 1, (byte) -74);
+		local19.packet.pjstr(local13, -288853937);
+		client.aClass175_2.send(local19, -1861149337);
 	}
 
 	@OriginalMember(owner = "client!qa", name = "aio", descriptor = "(Lclient!yf;B)V", line = 11255)
 	static final void method30166(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		@Pc(17) Class93_Sub1_Sub14 local17 = Class449.aClass514_1.method30267(local12, (byte) -105);
+		@Pc(17) Class93_Sub1_Sub14 local17 = Class687.aClass514_1.method30267(local12, (byte) -105);
 		if (local17.anIntArray261 == null) {
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = 0;
 		} else {

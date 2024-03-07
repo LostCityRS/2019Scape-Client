@@ -8,46 +8,46 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!yu")
-public class Class693 implements Interface75 {
+public class ModeWhere implements Interface75 {
 
 	@OriginalMember(owner = "client!yu", name = "e", descriptor = "Lclient!yu;")
-	public static final Class693 aClass693_8 = new Class693("", 0, new Class705[] { Class705.aClass705_3 });
+	public static final ModeWhere aModeWhere_8 = new ModeWhere("", 0, new Class705[] { Class705.aClass705_3 });
 
 	@OriginalMember(owner = "client!yu", name = "n", descriptor = "Lclient!yu;")
-	public static final Class693 aClass693_5 = new Class693("", 1, new Class705[] { Class705.aClass705_2, Class705.aClass705_3 });
+	public static final ModeWhere aModeWhere_5 = new ModeWhere("", 1, new Class705[] { Class705.aClass705_2, Class705.aClass705_3 });
 
 	@OriginalMember(owner = "client!yu", name = "m", descriptor = "Lclient!yu;")
-	public static final Class693 aClass693_4 = new Class693("", 2, new Class705[] { Class705.aClass705_2, Class705.aClass705_1, Class705.aClass705_3 });
+	public static final ModeWhere WTQA = new ModeWhere("", 2, new Class705[] { Class705.aClass705_2, Class705.aClass705_1, Class705.aClass705_3 });
 
 	@OriginalMember(owner = "client!yu", name = "k", descriptor = "Lclient!yu;")
-	public static final Class693 aClass693_3 = new Class693("", 3, new Class705[] { Class705.aClass705_2 });
+	public static final ModeWhere aModeWhere_3 = new ModeWhere("", 3, new Class705[] { Class705.aClass705_2 });
 
 	@OriginalMember(owner = "client!yu", name = "f", descriptor = "Lclient!yu;")
-	public static final Class693 aClass693_12 = new Class693("", 4);
+	public static final ModeWhere LOCAL = new ModeWhere("", 4);
 
 	@OriginalMember(owner = "client!yu", name = "w", descriptor = "Lclient!yu;")
-	public static final Class693 aClass693_7 = new Class693("", 5, new Class705[] { Class705.aClass705_2, Class705.aClass705_3 });
+	public static final ModeWhere aModeWhere_7 = new ModeWhere("", 5, new Class705[] { Class705.aClass705_2, Class705.aClass705_3 });
 
 	@OriginalMember(owner = "client!yu", name = "l", descriptor = "Lclient!yu;")
-	static final Class693 aClass693_14 = new Class693("", 6, new Class705[] { Class705.aClass705_3 });
+	static final ModeWhere aModeWhere_14 = new ModeWhere("", 6, new Class705[] { Class705.aClass705_3 });
 
 	@OriginalMember(owner = "client!yu", name = "u", descriptor = "Lclient!yu;")
-	static final Class693 aClass693_9 = new Class693("", 8, new Class705[] { Class705.aClass705_2, Class705.aClass705_3 });
+	static final ModeWhere aModeWhere_9 = new ModeWhere("", 8, new Class705[] { Class705.aClass705_2, Class705.aClass705_3 });
 
 	@OriginalMember(owner = "client!yu", name = "z", descriptor = "Lclient!yu;")
-	static final Class693 aClass693_10 = new Class693("", 9, new Class705[] { Class705.aClass705_2, Class705.aClass705_1 });
+	static final ModeWhere aModeWhere_10 = new ModeWhere("", 9, new Class705[] { Class705.aClass705_2, Class705.aClass705_1 });
 
 	@OriginalMember(owner = "client!yu", name = "p", descriptor = "Lclient!yu;")
-	public static final Class693 aClass693_11 = new Class693("", 10, new Class705[] { Class705.aClass705_2 });
+	public static final ModeWhere aModeWhere_11 = new ModeWhere("", 10, new Class705[] { Class705.aClass705_2 });
 
 	@OriginalMember(owner = "client!yu", name = "d", descriptor = "Lclient!yu;")
-	static final Class693 aClass693_2 = new Class693("", 11, new Class705[] { Class705.aClass705_2 });
+	static final ModeWhere aModeWhere_2 = new ModeWhere("", 11, new Class705[] { Class705.aClass705_2 });
 
 	@OriginalMember(owner = "client!yu", name = "c", descriptor = "Lclient!yu;")
-	static final Class693 aClass693_13 = new Class693("", 12, new Class705[] { Class705.aClass705_2, Class705.aClass705_3 });
+	static final ModeWhere aModeWhere_13 = new ModeWhere("", 12, new Class705[] { Class705.aClass705_2, Class705.aClass705_3 });
 
 	@OriginalMember(owner = "client!yu", name = "r", descriptor = "Lclient!yu;")
-	static final Class693 aClass693_6 = new Class693("", 13, new Class705[] { Class705.aClass705_2 });
+	static final ModeWhere aModeWhere_6 = new ModeWhere("", 13, new Class705[] { Class705.aClass705_2 });
 
 	@OriginalMember(owner = "client!yu", name = "o", descriptor = "Ljava/util/Set;")
 	final Set aSet2 = new HashSet();
@@ -60,22 +60,22 @@ public class Class693 implements Interface75 {
 	}
 
 	@OriginalMember(owner = "client!yu", name = "f", descriptor = "()[Lclient!yu;", line = 35)
-	public static Class693[] method36605() {
-		return new Class693[] { aClass693_5, aClass693_6, aClass693_10, aClass693_12, aClass693_14, aClass693_4, aClass693_11, aClass693_8, aClass693_2, aClass693_7, aClass693_13, aClass693_3, aClass693_9 };
+	public static ModeWhere[] method36605() {
+		return new ModeWhere[] {aModeWhere_5, aModeWhere_6, aModeWhere_10, LOCAL, aModeWhere_14, WTQA, aModeWhere_11, aModeWhere_8, aModeWhere_2, aModeWhere_7, aModeWhere_13, aModeWhere_3, aModeWhere_9};
 	}
 
 	@OriginalMember(owner = "client!yu", name = "w", descriptor = "()[Lclient!yu;", line = 35)
-	public static Class693[] method36606() {
-		return new Class693[] { aClass693_5, aClass693_6, aClass693_10, aClass693_12, aClass693_14, aClass693_4, aClass693_11, aClass693_8, aClass693_2, aClass693_7, aClass693_13, aClass693_3, aClass693_9 };
+	public static ModeWhere[] method36606() {
+		return new ModeWhere[] {aModeWhere_5, aModeWhere_6, aModeWhere_10, LOCAL, aModeWhere_14, WTQA, aModeWhere_11, aModeWhere_8, aModeWhere_2, aModeWhere_7, aModeWhere_13, aModeWhere_3, aModeWhere_9};
 	}
 
 	@OriginalMember(owner = "client!yu", name = "e", descriptor = "(B)[Lclient!yu;", line = 35)
-	public static Class693[] method36607(@OriginalArg(0) byte arg0) {
-		return new Class693[] { aClass693_5, aClass693_6, aClass693_10, aClass693_12, aClass693_14, aClass693_4, aClass693_11, aClass693_8, aClass693_2, aClass693_7, aClass693_13, aClass693_3, aClass693_9 };
+	public static ModeWhere[] method36607(@OriginalArg(0) byte arg0) {
+		return new ModeWhere[] {aModeWhere_5, aModeWhere_6, aModeWhere_10, LOCAL, aModeWhere_14, WTQA, aModeWhere_11, aModeWhere_8, aModeWhere_2, aModeWhere_7, aModeWhere_13, aModeWhere_3, aModeWhere_9};
 	}
 
 	@OriginalMember(owner = "client!yu", name = "<init>", descriptor = "(Ljava/lang/String;I)V", line = 38)
-	Class693(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1) {
+	ModeWhere(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1) {
 		this.anInt5937 = arg1 * -694500089;
 	}
 
@@ -92,7 +92,7 @@ public class Class693 implements Interface75 {
 	}
 
 	@OriginalMember(owner = "client!yu", name = "<init>", descriptor = "(Ljava/lang/String;I[Lclient!zh;)V", line = 42)
-	Class693(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class705[] arg2) {
+	ModeWhere(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class705[] arg2) {
 		this.anInt5937 = arg1 * -694500089;
 		@Pc(13) Class705[] local13 = arg2;
 		for (@Pc(15) int local15 = 0; local15 < local13.length; local15++) {
@@ -103,7 +103,7 @@ public class Class693 implements Interface75 {
 
 	@OriginalMember(owner = "client!yu", name = "n", descriptor = "()I", line = 54)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt5937 * 458725559;
 	}
 
@@ -154,20 +154,20 @@ public class Class693 implements Interface75 {
 
 	@OriginalMember(owner = "client!yu", name = "apa", descriptor = "(Lclient!yf;I)V", line = 12758)
 	static final void method36615(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class411.anInt4739 * -466225957;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class411.hopTime * -466225957;
 	}
 
 	@OriginalMember(owner = "client!yu", name = "asg", descriptor = "(Lclient!yf;B)V", line = 13058)
 	static final void method36616(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub20_1, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091] == 1 ? 2 : 0, (byte) 40);
-		client.aClass532_1.method30533((byte) 0);
+		Class51.options.method14363(Class51.options.aClass166_Sub20_1, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091] == 1 ? 2 : 0, (byte) 40);
+		client.world.method30533((byte) 0);
 		Class106_Sub1.method5135(-1925434054);
 		client.aBoolean601 = false;
 	}
 
 	@OriginalMember(owner = "client!yu", name = "atm", descriptor = "(Lclient!yf;I)V", line = 13313)
 	static final void method36617(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub21_1.method15807(761099430) == 1 ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub21_1.method15807(761099430) == 1 ? 1 : 0;
 	}
 
 	@OriginalMember(owner = "client!yu", name = "bce", descriptor = "(Lclient!yf;I)V", line = 14500)

@@ -693,6 +693,6 @@ public class Class462 implements Interface1 {
 
 	@OriginalMember(owner = "client!oi", name = "ayb", descriptor = "(Lclient!yf;I)V", line = 14089)
 	static final void method29278(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub40_1.method16364(1912416434);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub40_1.method16364(1912416434);
 	}
 }

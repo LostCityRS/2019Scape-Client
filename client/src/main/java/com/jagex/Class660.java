@@ -67,16 +67,16 @@ public class Class660 implements Interface75 {
 
 	@OriginalMember(owner = "client!xi", name = "n", descriptor = "()I", line = 26)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt5824 * -673115993;
 	}
 
 	@OriginalMember(owner = "client!xi", name = "q", descriptor = "(B)V", line = 682)
 	static void method32822(@OriginalArg(0) byte arg0) {
-		if (Class51.aClass93_Sub36_1.aClass166_Sub47_1.method16557((short) 512) == 1) {
+		if (Class51.options.aClass166_Sub47_1.method16557((short) 512) == 1) {
 			Class392.aClass541_1.method30906(new Class537(Class526.aClass526_7, null), (byte) -13);
 		} else {
-			client.aClass532_1.method30533((byte) 0);
+			client.world.method30533((byte) 0);
 			Class360.method27799((short) -7152);
 		}
 	}
@@ -99,8 +99,8 @@ public class Class660 implements Interface75 {
 			return;
 		}
 		if (arg0.anInt2647 * 1464472043 != 0) {
-			@Pc(49) String local49 = client.aClass702_4 == Class702.aClass702_5 ? Class74.aClass74_137.method1259(Class106.aClass717_8, (byte) 18) : Class74.aClass74_135.method1259(Class106.aClass717_8, (byte) -36);
-			local11 = local11 + Class93_Sub31.method22006(arg0.anInt2647 * 1464472043, Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anInt2804 * 1852619943, 1195437977) + Class430.aString203 + local49 + arg0.anInt2647 * 1464472043 + Class430.aString205;
+			@Pc(49) String local49 = client.modeGame == Class702.aClass702_5 ? Class74.aClass74_137.method1259(Class106.lang, (byte) 18) : Class74.aClass74_135.method1259(Class106.lang, (byte) -36);
+			local11 = local11 + Class93_Sub31.method22006(arg0.anInt2647 * 1464472043, Class520.selfPlayer.anInt2804 * 1852619943, 1195437977) + Class430.aString203 + local49 + arg0.anInt2647 * 1464472043 + Class430.aString205;
 		}
 		if (client.aBoolean625 && !arg1) {
 			@Pc(97) Class87 local97 = (Class87) (Class650.anInt5797 * -759562015 == -1 ? null : Class124.aClass32_Sub21_7.method18261(Class650.anInt5797 * -759562015, 2088182410));
@@ -128,8 +128,8 @@ public class Class660 implements Interface75 {
 				if (local213 != -1) {
 					local208 = local213;
 				}
-				@Pc(227) boolean local227 = local168[local183].equalsIgnoreCase(Class74.aClass74_130.method1259(Class106.aClass717_8, (byte) -20));
-				@Pc(236) boolean local236 = local168[local183].equalsIgnoreCase(Class74.aClass74_129.method1259(Class106.aClass717_8, (byte) -12));
+				@Pc(227) boolean local227 = local168[local183].equalsIgnoreCase(Class74.aClass74_130.method1259(Class106.lang, (byte) -20));
+				@Pc(236) boolean local236 = local168[local183].equalsIgnoreCase(Class74.aClass74_129.method1259(Class106.lang, (byte) -12));
 				if (local227 || local236) {
 					if (local170) {
 						continue;
@@ -163,8 +163,8 @@ public class Class660 implements Interface75 {
 		}
 		for (local183 = 0; local183 < local168.length; local183++) {
 			if (local168[local183] != null && (arg0.anInt2651 * -999636135 & 0x1 << local183) == 0) {
-				@Pc(334) boolean local334 = local168[local183].equalsIgnoreCase(Class74.aClass74_130.method1259(Class106.aClass717_8, (byte) 49));
-				@Pc(343) boolean local343 = local168[local183].equalsIgnoreCase(Class74.aClass74_129.method1259(Class106.aClass717_8, (byte) 16));
+				@Pc(334) boolean local334 = local168[local183].equalsIgnoreCase(Class74.aClass74_130.method1259(Class106.lang, (byte) 49));
+				@Pc(343) boolean local343 = local168[local183].equalsIgnoreCase(Class74.aClass74_129.method1259(Class106.lang, (byte) 16));
 				if (local334 || local343) {
 					@Pc(351) short local351 = client.aShortArray84[local183];
 					@Pc(355) int local355 = client.anInt3521 * 1255649659;
@@ -172,7 +172,7 @@ public class Class660 implements Interface75 {
 					if (local360 != -1) {
 						local355 = local360;
 					}
-					if (aClass660_6 == client.aClass660_2 || client.aClass660_2 == aClass660_5 && arg0.anInt2647 * 1464472043 > Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anInt2804 * 1852619943) {
+					if (aClass660_6 == client.aClass660_2 || client.aClass660_2 == aClass660_5 && arg0.anInt2647 * 1464472043 > Class520.selfPlayer.anInt2804 * 1852619943) {
 						local351 = (short) (local351 + 2000);
 					}
 					if (local334) {

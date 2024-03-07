@@ -1212,7 +1212,7 @@ public class Class568 {
 	static final void method31297(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(16) boolean local16 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091] != 0;
 		@Pc(29) int local29 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = Class218.method25506((long) local29, 0, local16, Class106.aClass717_8, -433742498);
+		arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = Class218.method25506((long) local29, 0, local16, Class106.lang, -433742498);
 	}
 
 	@OriginalMember(owner = "client!tb", name = "jp", descriptor = "(IIIZB)V", line = 10905)

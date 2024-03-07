@@ -37,7 +37,7 @@ final class Class504 implements Interface9 {
 	@OriginalMember(owner = "client!qf", name = "y", descriptor = "(I)Ljava/awt/Container;", line = 457)
 	public static Container method30196(@OriginalArg(0) int arg0) {
 		if (Class125_Sub2_Sub1.aFrame1 == null) {
-			return Class628.aFrame2 == null ? Class32_Sub10.anApplet2 : Class628.aFrame2;
+			return Class628.aFrame2 == null ? Class32_Sub10.applet : Class628.aFrame2;
 		} else {
 			return Class125_Sub2_Sub1.aFrame1;
 		}
@@ -151,11 +151,11 @@ final class Class504 implements Interface9 {
 
 	@OriginalMember(owner = "client!qf", name = "aqn", descriptor = "(Lclient!yf;I)V", line = 12786)
 	static final void method30200(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class251.method25968(-1877670986).method36920();
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class251.method25968(-1877670986).getId();
 	}
 
 	@OriginalMember(owner = "client!qf", name = "azz", descriptor = "(Lclient!yf;B)V", line = 14153)
 	static final void method30201(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub39_2.method16343(-2128919861) && Class694.aClass104_14.method20546() ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub39_2.method16343(-2128919861) && Class694.aClass104_14.method20546() ? 1 : 0;
 	}
 }

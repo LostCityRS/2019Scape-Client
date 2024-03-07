@@ -29,7 +29,7 @@ public class Class555 {
 		for (@Pc(28) int local28 = 0; local28 < Class518.aStringArray31.length; local28++) {
 			Class518.aStringArray31[local28] = "";
 		}
-		Class314.method26939(Class74.aClass74_107.method1259(Class106.aClass717_8, (byte) -29), -2030188977);
+		Class314.method26939(Class74.aClass74_107.method1259(Class106.lang, (byte) -29), -2030188977);
 	}
 
 	@OriginalMember(owner = "client!sm", name = "<init>", descriptor = "()V", line = 846)
@@ -43,8 +43,8 @@ public class Class555 {
 		}
 		@Pc(7) int local7 = client.anInt3414 * 495533241;
 		@Pc(11) int local11 = client.anInt3415 * -1074927711;
-		@Pc(21) int local21 = client.anInt3413 * -108363597 - client.anInt3408 * -1378711501 - local7;
-		@Pc(31) int local31 = Class504.anInt5201 * 2090134413 - client.anInt3416 * 2091353777 - local11;
+		@Pc(21) int local21 = client.anInt3413 * -108363597 - client.width * -1378711501 - local7;
+		@Pc(31) int local31 = Class504.anInt5201 * 2090134413 - client.height * 2091353777 - local11;
 		if (local7 <= 0 && local21 <= 0 && local11 <= 0 && local31 <= 0) {
 			return;
 		}

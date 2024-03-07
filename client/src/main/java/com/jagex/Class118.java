@@ -68,12 +68,12 @@ public abstract class Class118 implements Interface4 {
 		arg0.anInt5891 -= -1915563430;
 		@Pc(13) int local13 = arg0.anIntArray519[arg0.anInt5891 * -1497248091];
 		@Pc(23) int local23 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 1];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class449.aClass514_1.method30267(local13, (byte) -56).anIntArray261[local23];
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class687.aClass514_1.method30267(local13, (byte) -56).anIntArray261[local23];
 	}
 
 	@OriginalMember(owner = "client!hh", name = "aus", descriptor = "(Lclient!yf;B)V", line = 13369)
 	static final void method8414(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub28_1.method16041((byte) -16) == 1 ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub28_1.method16041((byte) -16) == 1 ? 1 : 0;
 	}
 
 	@OriginalMember(owner = "client!hh", name = "awg", descriptor = "(Lclient!yf;I)V", line = 13788)

@@ -64,7 +64,7 @@ public class Class338 {
 
 	@OriginalMember(owner = "client!ii", name = "n", descriptor = "(Ljava/lang/String;ZZB)V", line = 28)
 	public static void method27464(@OriginalArg(0) String arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) byte arg3) {
-		Class453.method28964(arg0, arg1, "openjs", arg2, (byte) 85);
+		ServerProt.openUrl(arg0, arg1, "openjs", arg2, (byte) 85);
 	}
 
 	@OriginalMember(owner = "client!ii", name = "n", descriptor = "(B)Z", line = 31)
@@ -113,9 +113,9 @@ public class Class338 {
 
 	@OriginalMember(owner = "client!ii", name = "axi", descriptor = "(Lclient!yf;B)V", line = 13966)
 	static final void method27471(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = (int) (Class707.aLong308 * -9212939189200455573L / 60000L);
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = (int) ((Class707.aLong308 * -9212939189200455573L - Class305.method26797(-215627443) - Class99.aLong23 * 6132827453956137203L) / 60000L);
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class154_Sub1.aBoolean342 ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = (int) (Class707.userMembershipTime * -9212939189200455573L / 60000L);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = (int) ((Class707.userMembershipTime * -9212939189200455573L - Class305.method26797(-215627443) - Class99.aLong23 * 6132827453956137203L) / 60000L);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class154_Sub1.userMember2 ? 1 : 0;
 	}
 
 	@OriginalMember(owner = "client!ii", name = "bcw", descriptor = "(Lclient!yf;I)V", line = 14671)

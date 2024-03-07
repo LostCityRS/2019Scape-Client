@@ -81,19 +81,19 @@ public class Class495 implements Interface7 {
 					if (Class504.anInt5201 * 2090134413 <= 0) {
 						Class504.anInt5201 = -1294184635;
 					}
-					if (Class255.method26008(1309306044) == 1) {
-						client.anInt3408 = client.anInt3511 * 685234053;
+					if (Class255.getWindowMode(1309306044) == 1) {
+						client.width = client.anInt3511 * 685234053;
 						client.anInt3414 = (client.anInt3413 * -108363597 - client.anInt3511 * 2040043391) / 2 * 1405880713;
-						client.anInt3416 = client.anInt3512 * 1344949771;
+						client.height = client.anInt3512 * 1344949771;
 						client.anInt3415 = 0;
 					} else {
 						Class503.method30188(163431309);
 					}
-					if (Class693.aClass693_8 != Class280.aClass693_1 && client.anInt3408 * -1378711501 < 1024 && client.anInt3416 * 2091353777 < 768) {
+					if (ModeWhere.aModeWhere_8 != Class280.modeWhere && client.width * -1378711501 < 1024 && client.height * 2091353777 < 768) {
 					}
-					Class125_Sub3.aCanvas1.setSize(client.anInt3408 * -1378711501, client.anInt3416 * 2091353777);
+					Class125_Sub3.aCanvas1.setSize(client.width * -1378711501, client.height * 2091353777);
 					if (Class694.aClass104_14 != null) {
-						Class694.aClass104_14.method20450(Class125_Sub3.aCanvas1, client.anInt3408 * -1378711501, client.anInt3416 * 2091353777, -1205668804);
+						Class694.aClass104_14.method20450(Class125_Sub3.aCanvas1, client.width * -1378711501, client.height * 2091353777, -1205668804);
 						Class503.method30187(Class694.aClass104_14, Class305.method26797(1721059607));
 					}
 					if (local11 == Class628.aFrame2) {
@@ -119,7 +119,7 @@ public class Class495 implements Interface7 {
 
 	@OriginalMember(owner = "client!pw", name = "ayv", descriptor = "(Lclient!yf;B)V", line = 13991)
 	static final void method30029(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class552.anInt5318 * 164443283;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class552.userEmailStatus * 164443283;
 	}
 
 	@OriginalMember(owner = "client!pw", name = "bei", descriptor = "(Lclient!yf;I)V", line = 14861)

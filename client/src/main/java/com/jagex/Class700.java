@@ -96,7 +96,7 @@ public class Class700 implements Interface75 {
 
 	@OriginalMember(owner = "client!zb", name = "n", descriptor = "()I", line = 38)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt5952 * -548657953;
 	}
 
@@ -106,7 +106,7 @@ public class Class700 implements Interface75 {
 			Class682.aClass32_Sub1_3.method17810(1050193543);
 			Class692.aClass32_Sub4_3.method17810(-1427945281);
 			Class343.aClass32_Sub19_1.method17810(32615772);
-			client.aClass532_1.method30496(1888566825).method17810(1000150104);
+			client.world.method30496(1888566825).method17810(1000150104);
 			Class162.aClass32_Sub3_2.method17810(-50393825);
 			Class277.aClass32_Sub12_1.method17810(78992661);
 			Class32.aClass32_Sub17_23.method17810(252067684);
@@ -132,13 +132,13 @@ public class Class700 implements Interface75 {
 			Class407.method28583(909075664);
 			Class157.aClass462_2.method29265((byte) 0);
 			Class55.method18274(-1889465518);
-			if (Class693.aClass693_8 != Class280.aClass693_1) {
+			if (ModeWhere.aModeWhere_8 != Class280.modeWhere) {
 				for (@Pc(92) int local92 = 0; local92 < Class64.aByteArrayArray3.length; local92++) {
 					Class64.aByteArrayArray3[local92] = null;
 				}
 				client.anInt3437 = 0;
 			}
-			client.aClass532_1.method30494((byte) -17).method32982(1094597367);
+			client.world.method30494((byte) -17).method32982(1094597367);
 			Class234.method25743((byte) -2);
 			Class275.method26341(-387193248);
 			Class599.aClass438_1.method28826(161029432);

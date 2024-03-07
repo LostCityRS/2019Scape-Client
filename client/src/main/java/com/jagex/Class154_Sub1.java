@@ -11,7 +11,7 @@ public class Class154_Sub1 extends Class154 {
 	static String aString49;
 
 	@OriginalMember(owner = "client!alc", name = "ok", descriptor = "Z")
-	public static boolean aBoolean342;
+	public static boolean userMember2;
 
 	@OriginalMember(owner = "client!alc", name = "c", descriptor = "I")
 	int anInt1653;

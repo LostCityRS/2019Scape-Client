@@ -40,6 +40,6 @@ public class Class93_Sub29 extends Class93 {
 
 	@OriginalMember(owner = "client!aks", name = "auo", descriptor = "(Lclient!yf;B)V", line = 13437)
 	static final void method13851(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub44_1.method16449(2098691445);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub44_1.method16449(2098691445);
 	}
 }

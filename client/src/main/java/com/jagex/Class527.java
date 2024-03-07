@@ -62,8 +62,8 @@ public class Class527 {
 	}
 
 	@OriginalMember(owner = "client!rd", name = "e", descriptor = "(I)Lclient!akl;", line = 19)
-	static Class93_Sub22 method30386(@OriginalArg(0) int arg0) {
-		return Class93_Sub22.anInt1571 * -1803982567 == 0 ? new Class93_Sub22() : Class93_Sub22.aClass93_Sub22Array1[(Class93_Sub22.anInt1571 -= -1780096215) * -1803982567];
+	static ClientMessage method30386(@OriginalArg(0) int arg0) {
+		return ClientMessage.anInt1571 * -1803982567 == 0 ? new ClientMessage() : ClientMessage.aClientMessageArray1[(ClientMessage.anInt1571 -= -1780096215) * -1803982567];
 	}
 
 	@OriginalMember(owner = "client!rd", name = "<init>", descriptor = "()V", line = 52)
@@ -82,7 +82,7 @@ public class Class527 {
 			return;
 		}
 		@Pc(14) int local14 = arg0.anInt1514 * 1666407207;
-		if (arg0.anInt1512 * -193034713 != 0 && Class51.aClass93_Sub36_1.aClass166_Sub35_1.method16226(-267881720) != 0 && arg0.anInt1506 * 1124978351 == arg1) {
+		if (arg0.anInt1512 * -193034713 != 0 && Class51.options.aClass166_Sub35_1.method16226(-267881720) != 0 && arg0.anInt1506 * 1124978351 == arg1) {
 			if (arg0.aClass539_3 != null && (arg0.aClass539_3.method30821(1207189556) == Class536.aClass536_8 || arg0.aClass539_3.method30821(-1219949032) == Class536.aClass536_2)) {
 				Class274.aClass258_1.method26088(arg0.aClass539_3, 1630370575);
 				arg0.aClass539_3 = null;
@@ -149,9 +149,9 @@ public class Class527 {
 			local2 = local2.substring(0, local7) + Class430.aString204 + local2.substring(local7);
 		}
 		if (local2.length() > 9) {
-			return " " + Class306.method26804(65408, 1533273736) + local2.substring(0, local2.length() - 8) + Class74.aClass74_141.method1259(Class106.aClass717_8, (byte) 35) + " (" + local2 + ")" + Class430.aString208;
+			return " " + Class306.method26804(65408, 1533273736) + local2.substring(0, local2.length() - 8) + Class74.aClass74_141.method1259(Class106.lang, (byte) 35) + " (" + local2 + ")" + Class430.aString208;
 		} else if (local2.length() > 6) {
-			return " " + Class306.method26804(16777215, 2137745885) + local2.substring(0, local2.length() - 4) + Class74.aClass74_143.method1259(Class106.aClass717_8, (byte) 26) + " (" + local2 + ")" + Class430.aString208;
+			return " " + Class306.method26804(16777215, 2137745885) + local2.substring(0, local2.length() - 4) + Class74.aClass74_143.method1259(Class106.lang, (byte) 26) + " (" + local2 + ")" + Class430.aString208;
 		} else {
 			return " " + Class306.method26804(16776960, -1241240774) + local2 + Class430.aString208;
 		}
@@ -161,7 +161,7 @@ public class Class527 {
 	static final void method30391(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
 		if (Class694.aClass104_14.method20546()) {
-			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub39_2.method16546(local12, 2125433854);
+			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub39_2.method16546(local12, 2125433854);
 		} else {
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = 3;
 		}

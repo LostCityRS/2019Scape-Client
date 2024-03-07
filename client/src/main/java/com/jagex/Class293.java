@@ -50,10 +50,10 @@ public class Class293 implements Interface26 {
 	@OriginalMember(owner = "client!gm", name = "ew", descriptor = "(ILjava/lang/String;ZI)V", line = 2041)
 	public static void method26587(@OriginalArg(0) int arg0, @OriginalArg(1) String arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) int arg3) {
 		if (arg0 == 0) {
-			Class694.aClass104_14 = Class5.method40(0, Class125_Sub3.aCanvas1, Class619.aClass225_8, Class636.anInterface24_10, Class81.aClass451_1, Class599.aClass438_1, Class283.aClass444_1, Class364.aClass497_105, Class51.aClass93_Sub36_1.aClass166_Sub39_1.method16345(1862789908) * 2, 636490669);
+			Class694.aClass104_14 = Class5.method40(0, Class125_Sub3.aCanvas1, Class619.aClass225_8, Class636.anInterface24_10, Class81.aClass451_1, Class599.aClass438_1, Class283.aClass444_1, Class364.aClass497_105, Class51.options.antialiasing.getValue(1862789908) * 2, 636490669);
 			if (arg1 != null) {
 				Class694.aClass104_14.method20829(1, 0);
-				@Pc(33) Class5 local33 = Class446.method28894(Class633.aClass497_137, Class393.anInt4653 * 545040483, 0, Class157.aClass462_2, -939272896);
+				@Pc(33) Class5 local33 = ClientProt.method28894(Class633.aClass497_137, Class393.anInt4653 * 545040483, 0, Class157.aClass462_2, -939272896);
 				@Pc(44) Class106 local44 = Class694.aClass104_14.method20593(local33, Class203.method24648(Class110_Sub7.aClass497_22, Class393.anInt4653 * 545040483, 0), true);
 				Class555.method31054(91836446);
 				Class95.method1801(arg1, true, Class694.aClass104_14, local44, local33, (byte) -2);
@@ -80,12 +80,12 @@ public class Class293 implements Interface26 {
 						var18 = true;
 						Class507.method30230(1707042915);
 						System.gc();
-						Class694.aClass104_14 = Class5.method40(arg0, Class125_Sub3.aCanvas1, Class619.aClass225_8, Class636.anInterface24_10, Class81.aClass451_1, Class599.aClass438_1, Class283.aClass444_1, Class364.aClass497_105, Class51.aClass93_Sub36_1.aClass166_Sub39_1.method16345(1148649642) * 2, 636490669);
+						Class694.aClass104_14 = Class5.method40(arg0, Class125_Sub3.aCanvas1, Class619.aClass225_8, Class636.anInterface24_10, Class81.aClass451_1, Class599.aClass438_1, Class283.aClass444_1, Class364.aClass497_105, Class51.options.antialiasing.getValue(1148649642) * 2, 636490669);
 						Class157.aClass462_2 = new Class462(Class694.aClass104_14, Class110_Sub7.aClass497_22, Class633.aClass497_137, Class173.method23799(-588930715));
 						if (Class694.aClass104_14.method20584()) {
 							@Pc(143) boolean local143 = true;
 							try {
-								local143 = Class125_Sub3.aClass93_Sub42_1.anInt2055 * 714183489 > 256;
+								local143 = Class125_Sub3.platformStats.anInt2055 * 714183489 > 256;
 							} catch (@Pc(155) Throwable local155) {
 							}
 							@Pc(161) Class93_Sub35 local161;
@@ -110,11 +110,11 @@ public class Class293 implements Interface26 {
                                 break;
 						}
                         if (local178 instanceof RuntimeException_Sub2) {
-                            Class51.aClass93_Sub36_1.aClass166_Sub39_2.method16547(0, 1603572843);
-                            Class51.aClass93_Sub36_1.aClass166_Sub39_1.method16547(0, -162075972);
+                            Class51.options.aClass166_Sub39_2.method16547(0, 1603572843);
+                            Class51.options.antialiasing.method16547(0, -162075972);
                         }
-                        @Pc(205) int local205 = Class51.aClass93_Sub36_1.aClass166_Sub4_2.method15426((byte) 103);
-                        Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub4_2, 0, (byte) 61);
+                        @Pc(205) int local205 = Class51.options.aClass166_Sub4_2.method15426((byte) 103);
+                        Class51.options.method14363(Class51.options.aClass166_Sub4_2, 0, (byte) 61);
                         if (local56 != null) {
                             try {
                                 local56.method20429(-950398244);
@@ -151,21 +151,21 @@ public class Class293 implements Interface26 {
 			}
 		}
 		if (arg2) {
-			Class51.aClass93_Sub36_1.method14366(Class51.aClass93_Sub36_1.aClass166_Sub4_2, !arg2, -1748243435);
+			Class51.options.method14366(Class51.options.aClass166_Sub4_2, !arg2, -1748243435);
 		}
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub4_2, arg0, (byte) 54);
+		Class51.options.method14363(Class51.options.aClass166_Sub4_2, arg0, (byte) 54);
 		if (!arg2) {
-			Class51.aClass93_Sub36_1.method14366(Class51.aClass93_Sub36_1.aClass166_Sub4_2, !arg2, 950520922);
+			Class51.options.method14366(Class51.options.aClass166_Sub4_2, !arg2, 950520922);
 		}
 		Class93_Sub16.method13527(2119184065);
 		Class694.aClass104_14.method20865(20000);
 		Class694.aClass104_14.method20608(32);
-		client.aClass532_1.method30526((byte) 60);
+		client.world.method30526((byte) 60);
 		if (Class694.aClass104_14.method20639()) {
-			Class154.method14144(Class51.aClass93_Sub36_1.aClass166_Sub28_1.method16041((byte) -53) == 1, 1093255583);
+			Class154.method14144(Class51.options.aClass166_Sub28_1.method16041((byte) -53) == 1, 1093255583);
 		}
-		client.aClass532_1.method30522(true, -1769293471);
-		client.aClass532_1.method30494((byte) -14).method33015(838025276);
+		client.world.method30522(true, -1769293471);
+		client.world.method30494((byte) -14).method33015(838025276);
 		Class165.method15315(-977306673);
 		client.aBoolean601 = false;
 		client.aBoolean602 = false;
@@ -180,8 +180,8 @@ public class Class293 implements Interface26 {
 		while (local2.hasNext()) {
 			@Pc(9) Class93_Sub1_Sub9 local9 = (Class93_Sub1_Sub9) local2.next();
 			@Pc(12) Class132_Sub1_Sub1_Sub5 local12 = local9.aClass132_Sub1_Sub1_Sub5_1;
-			if (client.aClass532_1.method30481(-1497851924) != null && local12.method24094(382519706)) {
-				client.aClass532_1.method30481(-2053196264).method31495(local12, true, -1906905266);
+			if (client.world.method30481(-1497851924) != null && local12.method24094(382519706)) {
+				client.world.method30481(-2053196264).method31495(local12, true, -1906905266);
 			}
 		}
 	}

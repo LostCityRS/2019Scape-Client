@@ -123,18 +123,18 @@ public class Class633 {
 	}
 
 	@OriginalMember(owner = "client!wc", name = "bw", descriptor = "(IIII)Lclient!akl;", line = 1889)
-	static Class93_Sub22 method32307(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		@Pc(1) Class93_Sub22 local1 = null;
+	static ClientMessage method32307(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+		@Pc(1) ClientMessage local1 = null;
 		if (arg2 == 0) {
-			local1 = Class102.method2588(Class446.aClass446_107, client.aClass175_2.aClass24_2, (byte) 101);
+			local1 = Class102.createGameMessage(ClientProt.aClientProt_107, client.aClass175_2.clientIsaac, (byte) 101);
 		}
 		if (arg2 == 1) {
-			local1 = Class102.method2588(Class446.aClass446_70, client.aClass175_2.aClass24_2, (byte) 43);
+			local1 = Class102.createGameMessage(ClientProt.aClientProt_70, client.aClass175_2.clientIsaac, (byte) 43);
 		}
-		@Pc(22) Class611 local22 = client.aClass532_1.method30455(1811251602);
-		local1.aPacketBit_1.p2(arg1 + local22.anInt5624 * -1994307635, 2136457997);
-		local1.aPacketBit_1.p1(Class28.method601(1440469475) ? 1 : 0, (byte) -82);
-		local1.aPacketBit_1.p2_alt3(local22.anInt5623 * 270611681 + arg0, (short) 255);
+		@Pc(22) Class611 local22 = client.world.method30455(1811251602);
+		local1.packet.p2(arg1 + local22.anInt5624 * -1994307635, 2136457997);
+		local1.packet.p1(Class28.method601(1440469475) ? 1 : 0, (byte) -82);
+		local1.packet.p2_alt3(local22.anInt5623 * 270611681 + arg0, (short) 255);
 		Class172.anInt3179 = arg0 * 2004084007;
 		Class172.anInt3174 = arg1 * -246739717;
 		Class172.aBoolean521 = false;

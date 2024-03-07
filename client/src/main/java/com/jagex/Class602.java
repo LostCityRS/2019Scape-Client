@@ -86,7 +86,7 @@ public class Class602 {
 
 	@OriginalMember(owner = "client!uu", name = "x", descriptor = "()V", line = 45)
 	public static void method31865() {
-		if (client.anInt3435 * -849002901 != 18 && client.anInt3435 * -849002901 != 3 || client.aClass175_2 == null) {
+		if (client.state * -849002901 != 18 && client.state * -849002901 != 3 || client.aClass175_2 == null) {
 			return;
 		}
 		while (true) {
@@ -128,9 +128,9 @@ public class Class602 {
 			@Pc(127) int[] local127 = new int[3];
 			local26 = -1;
 			@Pc(131) int local131 = -1;
-			@Pc(135) Class472 local135 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.method24220().aClass472_61;
-			@Pc(139) Class611 local139 = client.aClass532_1.method30455(1908234883);
-			if (Class159_Sub1.aClass93_Sub1_Sub20_2.method23174(Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aByte100, local139.anInt5623 * 270611681 + ((int) local135.aFloat317 >> 9), ((int) local135.aFloat319 >> 9) + local139.anInt5624 * -1994307635, local127, -2104016020)) {
+			@Pc(135) Class472 local135 = Class520.selfPlayer.method24220().aClass472_61;
+			@Pc(139) Class611 local139 = client.world.method30455(1908234883);
+			if (Class159_Sub1.aClass93_Sub1_Sub20_2.method23174(Class520.selfPlayer.aByte100, local139.anInt5623 * 270611681 + ((int) local135.aFloat317 >> 9), ((int) local135.aFloat319 >> 9) + local139.anInt5624 * -1994307635, local127, -2104016020)) {
 				local26 = local127[1] - Class159_Sub1.anInt1915;
 				local131 = local127[2] - Class159_Sub1.anInt1921;
 			}
@@ -215,7 +215,7 @@ public class Class602 {
 				if (!Class159_Sub1.aClass497_54.method30127(Class159_Sub1.aClass93_Sub1_Sub20_2.aString113, -427472885)) {
 					return;
 				}
-				Class159_Sub1.aClass584_2 = Class443.method28865(Class159_Sub1.aClass497_54, Class159_Sub1.aClass93_Sub1_Sub20_2.aString113, client.aBoolean620, (byte) 85);
+				Class159_Sub1.aClass584_2 = Class443.method28865(Class159_Sub1.aClass497_54, Class159_Sub1.aClass93_Sub1_Sub20_2.aString113, client.mapMember, (byte) 85);
 			} else {
 				Class159_Sub1.aClass584_2 = new Class584(0);
 			}

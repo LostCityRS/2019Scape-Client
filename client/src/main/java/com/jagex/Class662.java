@@ -40,7 +40,7 @@ public class Class662 implements Interface75 {
 
 	@OriginalMember(owner = "client!xk", name = "n", descriptor = "()I", line = 19)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt5828 * -413587663;
 	}
 
@@ -50,9 +50,9 @@ public class Class662 implements Interface75 {
 			return;
 		}
 		@Pc(14) Class93_Sub10 local14;
-		if (Class51.aClass93_Sub36_1.aClass166_Sub4_2.method15426((byte) 44) == 0) {
+		if (Class51.options.aClass166_Sub4_2.method15426((byte) 44) == 0) {
 			for (local14 = (Class93_Sub10) Class114.aClass22_14.method428((byte) 106); local14 != null; local14 = (Class93_Sub10) Class114.aClass22_14.method442(756544337)) {
-				Class277.aClass32_Sub12_1.method17071(arg0, arg0, local14.anInt1491 * -542760641, local14.anInt1490 * -442414689, local14.anInt1493 * -965915761, local14.anInt1492 * 124153651, false, false, local14.anInt1489 * 1920495325, Class707.aClass106_13, local14.aBoolean319 ? Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aClass658_1 : null, Class93_Sub26.aClass645_15, (short) 255);
+				Class277.aClass32_Sub12_1.method17071(arg0, arg0, local14.anInt1491 * -542760641, local14.anInt1490 * -442414689, local14.anInt1493 * -965915761, local14.anInt1492 * 124153651, false, false, local14.anInt1489 * 1920495325, Class707.aClass106_13, local14.aBoolean319 ? Class520.selfPlayer.aClass658_1 : null, Class93_Sub26.aClass645_15, (short) 255);
 				local14.method23969(1549569714);
 			}
 			Class635.method32440((short) 255);
@@ -65,7 +65,7 @@ public class Class662 implements Interface75 {
 			Class114.aClass106_2 = Class114.aClass104_8.method20593(Class219.method25509(Class633.aClass497_137, Class393.anInt4654 * -414755309, 0, 2081443949), Class203.method24648(Class110_Sub7.aClass497_22, Class393.anInt4654 * -414755309, 0), true);
 		}
 		for (local14 = (Class93_Sub10) Class114.aClass22_14.method428((byte) 12); local14 != null; local14 = (Class93_Sub10) Class114.aClass22_14.method442(994650198)) {
-			Class277.aClass32_Sub12_1.method17071(Class114.aClass104_8, arg0, local14.anInt1491 * -542760641, local14.anInt1490 * -442414689, local14.anInt1493 * -965915761, local14.anInt1492 * 124153651, false, false, local14.anInt1489 * 1920495325, Class114.aClass106_2, local14.aBoolean319 ? Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aClass658_1 : null, Class93_Sub26.aClass645_15, (short) 255);
+			Class277.aClass32_Sub12_1.method17071(Class114.aClass104_8, arg0, local14.anInt1491 * -542760641, local14.anInt1490 * -442414689, local14.anInt1493 * -965915761, local14.anInt1492 * 124153651, false, false, local14.anInt1489 * 1920495325, Class114.aClass106_2, local14.aBoolean319 ? Class520.selfPlayer.aClass658_1 : null, Class93_Sub26.aClass645_15, (short) 255);
 			local14.method23969(-2132130896);
 		}
 	}

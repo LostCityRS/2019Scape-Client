@@ -12,7 +12,7 @@ public class Class413 {
 	public static Clipboard aClipboard1;
 
 	@OriginalMember(owner = "client!mc", name = "ay", descriptor = "J")
-	static long aLong272;
+	static long totpTokenKey;
 
 	@OriginalMember(owner = "client!mc", name = "e", descriptor = "Lclient!mc;")
 	public static final Class413 aClass413_8 = new Class413();

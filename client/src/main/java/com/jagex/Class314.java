@@ -190,7 +190,7 @@ public class Class314 {
 	}
 
 	@OriginalMember(owner = "client!hj", name = "z", descriptor = "(Lclient!alw;I)V", line = 411)
-	public static void method26940(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+	public static void getUid192(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		@Pc(2) byte[] local2 = new byte[24];
 		try {
 			Class553.aClass42_4.method819(0L);

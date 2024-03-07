@@ -184,7 +184,7 @@ public abstract class Class122 implements Interface33 {
 
 	@OriginalMember(owner = "client!kz", name = "bfm", descriptor = "(Lclient!yf;I)V", line = 15145)
 	static final void method20215(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.aClass67_15.method36920();
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.aClass67_15.getId();
 	}
 
 	@OriginalMember(owner = "client!kz", name = "z", descriptor = "(ZIIS)V")

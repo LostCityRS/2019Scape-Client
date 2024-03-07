@@ -19,81 +19,81 @@ public class Class53_Sub1 extends Class53 implements Interface63 {
 	@OriginalMember(owner = "client!alv", name = "e", descriptor = "(I)V", line = 14)
 	@Override
 	public void method31895(@OriginalArg(0) int arg0) {
-		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_125, client.aClass175_2.aClass24_2, (byte) 58);
-		local5.aPacketBit_1.p1_alt3(this.anInt2005 * 1246034961, (byte) -7);
+		@Pc(5) ClientMessage local5 = Class102.createGameMessage(ClientProt.aClientProt_125, client.aClass175_2.clientIsaac, (byte) 58);
+		local5.packet.p1_alt3(this.anInt2005 * 1246034961, (byte) -7);
 		@Pc(27) int local27 = (this.aBoolean361 ? 2 : 0) | (this.aBoolean360 ? 1 : 0);
-		local5.aPacketBit_1.p1_alt2(local27, -852948596);
-		local5.aPacketBit_1.p1_alt3(this.anInt2009 * -2001831323, (byte) -12);
-		local5.aPacketBit_1.p2_alt1(this.anInt2007 * 684378299, (byte) 32);
-		local5.aPacketBit_1.p1(this.anInt2008 * -549711223, (byte) -45);
-		local5.aPacketBit_1.p4_alt3(this.anInt2011 * 1745723939, (byte) -23);
-		local5.aPacketBit_1.p4_alt1(this.anInt2006 * 975184085, 907143239);
-		local5.aPacketBit_1.p1_alt3(this.anInt2010 * -260736217, (byte) -67);
-		client.aClass175_2.method24356(local5, -2114396153);
+		local5.packet.p1_alt2(local27, -852948596);
+		local5.packet.p1_alt3(this.anInt2009 * -2001831323, (byte) -12);
+		local5.packet.p2_alt1(this.anInt2007 * 684378299, (byte) 32);
+		local5.packet.p1(this.anInt2008 * -549711223, (byte) -45);
+		local5.packet.p4_alt3(this.anInt2011 * 1745723939, (byte) -23);
+		local5.packet.p4_alt1(this.anInt2006 * 975184085, 907143239);
+		local5.packet.p1_alt3(this.anInt2010 * -260736217, (byte) -67);
+		client.aClass175_2.send(local5, -2114396153);
 	}
 
 	@OriginalMember(owner = "client!alv", name = "n", descriptor = "()V", line = 14)
 	@Override
 	public void method31894() {
-		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_125, client.aClass175_2.aClass24_2, (byte) 20);
-		local5.aPacketBit_1.p1_alt3(this.anInt2005 * 1246034961, (byte) -58);
+		@Pc(5) ClientMessage local5 = Class102.createGameMessage(ClientProt.aClientProt_125, client.aClass175_2.clientIsaac, (byte) 20);
+		local5.packet.p1_alt3(this.anInt2005 * 1246034961, (byte) -58);
 		@Pc(27) int local27 = (this.aBoolean361 ? 2 : 0) | (this.aBoolean360 ? 1 : 0);
-		local5.aPacketBit_1.p1_alt2(local27, 2018704071);
-		local5.aPacketBit_1.p1_alt3(this.anInt2009 * -2001831323, (byte) -84);
-		local5.aPacketBit_1.p2_alt1(this.anInt2007 * 684378299, (byte) -46);
-		local5.aPacketBit_1.p1(this.anInt2008 * -549711223, (byte) -54);
-		local5.aPacketBit_1.p4_alt3(this.anInt2011 * 1745723939, (byte) -114);
-		local5.aPacketBit_1.p4_alt1(this.anInt2006 * 975184085, 907143239);
-		local5.aPacketBit_1.p1_alt3(this.anInt2010 * -260736217, (byte) -101);
-		client.aClass175_2.method24356(local5, -2033959323);
+		local5.packet.p1_alt2(local27, 2018704071);
+		local5.packet.p1_alt3(this.anInt2009 * -2001831323, (byte) -84);
+		local5.packet.p2_alt1(this.anInt2007 * 684378299, (byte) -46);
+		local5.packet.p1(this.anInt2008 * -549711223, (byte) -54);
+		local5.packet.p4_alt3(this.anInt2011 * 1745723939, (byte) -114);
+		local5.packet.p4_alt1(this.anInt2006 * 975184085, 907143239);
+		local5.packet.p1_alt3(this.anInt2010 * -260736217, (byte) -101);
+		client.aClass175_2.send(local5, -2033959323);
 	}
 
 	@OriginalMember(owner = "client!alv", name = "m", descriptor = "()V", line = 14)
 	@Override
 	public void method31896() {
-		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_125, client.aClass175_2.aClass24_2, (byte) 53);
-		local5.aPacketBit_1.p1_alt3(this.anInt2005 * 1246034961, (byte) -18);
+		@Pc(5) ClientMessage local5 = Class102.createGameMessage(ClientProt.aClientProt_125, client.aClass175_2.clientIsaac, (byte) 53);
+		local5.packet.p1_alt3(this.anInt2005 * 1246034961, (byte) -18);
 		@Pc(27) int local27 = (this.aBoolean361 ? 2 : 0) | (this.aBoolean360 ? 1 : 0);
-		local5.aPacketBit_1.p1_alt2(local27, -1579338520);
-		local5.aPacketBit_1.p1_alt3(this.anInt2009 * -2001831323, (byte) -99);
-		local5.aPacketBit_1.p2_alt1(this.anInt2007 * 684378299, (byte) 25);
-		local5.aPacketBit_1.p1(this.anInt2008 * -549711223, (byte) -112);
-		local5.aPacketBit_1.p4_alt3(this.anInt2011 * 1745723939, (byte) -21);
-		local5.aPacketBit_1.p4_alt1(this.anInt2006 * 975184085, 907143239);
-		local5.aPacketBit_1.p1_alt3(this.anInt2010 * -260736217, (byte) -108);
-		client.aClass175_2.method24356(local5, -1855863095);
+		local5.packet.p1_alt2(local27, -1579338520);
+		local5.packet.p1_alt3(this.anInt2009 * -2001831323, (byte) -99);
+		local5.packet.p2_alt1(this.anInt2007 * 684378299, (byte) 25);
+		local5.packet.p1(this.anInt2008 * -549711223, (byte) -112);
+		local5.packet.p4_alt3(this.anInt2011 * 1745723939, (byte) -21);
+		local5.packet.p4_alt1(this.anInt2006 * 975184085, 907143239);
+		local5.packet.p1_alt3(this.anInt2010 * -260736217, (byte) -108);
+		client.aClass175_2.send(local5, -1855863095);
 	}
 
 	@OriginalMember(owner = "client!alv", name = "k", descriptor = "()V", line = 14)
 	@Override
 	public void method31897() {
-		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_125, client.aClass175_2.aClass24_2, (byte) 20);
-		local5.aPacketBit_1.p1_alt3(this.anInt2005 * 1246034961, (byte) -6);
+		@Pc(5) ClientMessage local5 = Class102.createGameMessage(ClientProt.aClientProt_125, client.aClass175_2.clientIsaac, (byte) 20);
+		local5.packet.p1_alt3(this.anInt2005 * 1246034961, (byte) -6);
 		@Pc(27) int local27 = (this.aBoolean361 ? 2 : 0) | (this.aBoolean360 ? 1 : 0);
-		local5.aPacketBit_1.p1_alt2(local27, -291878256);
-		local5.aPacketBit_1.p1_alt3(this.anInt2009 * -2001831323, (byte) -53);
-		local5.aPacketBit_1.p2_alt1(this.anInt2007 * 684378299, (byte) -87);
-		local5.aPacketBit_1.p1(this.anInt2008 * -549711223, (byte) -123);
-		local5.aPacketBit_1.p4_alt3(this.anInt2011 * 1745723939, (byte) -83);
-		local5.aPacketBit_1.p4_alt1(this.anInt2006 * 975184085, 907143239);
-		local5.aPacketBit_1.p1_alt3(this.anInt2010 * -260736217, (byte) -28);
-		client.aClass175_2.method24356(local5, -1932758516);
+		local5.packet.p1_alt2(local27, -291878256);
+		local5.packet.p1_alt3(this.anInt2009 * -2001831323, (byte) -53);
+		local5.packet.p2_alt1(this.anInt2007 * 684378299, (byte) -87);
+		local5.packet.p1(this.anInt2008 * -549711223, (byte) -123);
+		local5.packet.p4_alt3(this.anInt2011 * 1745723939, (byte) -83);
+		local5.packet.p4_alt1(this.anInt2006 * 975184085, 907143239);
+		local5.packet.p1_alt3(this.anInt2010 * -260736217, (byte) -28);
+		client.aClass175_2.send(local5, -1932758516);
 	}
 
 	@OriginalMember(owner = "client!alv", name = "f", descriptor = "()V", line = 14)
 	@Override
 	public void method31898() {
-		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_125, client.aClass175_2.aClass24_2, (byte) 81);
-		local5.aPacketBit_1.p1_alt3(this.anInt2005 * 1246034961, (byte) -93);
+		@Pc(5) ClientMessage local5 = Class102.createGameMessage(ClientProt.aClientProt_125, client.aClass175_2.clientIsaac, (byte) 81);
+		local5.packet.p1_alt3(this.anInt2005 * 1246034961, (byte) -93);
 		@Pc(27) int local27 = (this.aBoolean361 ? 2 : 0) | (this.aBoolean360 ? 1 : 0);
-		local5.aPacketBit_1.p1_alt2(local27, 867132250);
-		local5.aPacketBit_1.p1_alt3(this.anInt2009 * -2001831323, (byte) -72);
-		local5.aPacketBit_1.p2_alt1(this.anInt2007 * 684378299, (byte) 24);
-		local5.aPacketBit_1.p1(this.anInt2008 * -549711223, (byte) -59);
-		local5.aPacketBit_1.p4_alt3(this.anInt2011 * 1745723939, (byte) -65);
-		local5.aPacketBit_1.p4_alt1(this.anInt2006 * 975184085, 907143239);
-		local5.aPacketBit_1.p1_alt3(this.anInt2010 * -260736217, (byte) -117);
-		client.aClass175_2.method24356(local5, -1910227286);
+		local5.packet.p1_alt2(local27, 867132250);
+		local5.packet.p1_alt3(this.anInt2009 * -2001831323, (byte) -72);
+		local5.packet.p2_alt1(this.anInt2007 * 684378299, (byte) 24);
+		local5.packet.p1(this.anInt2008 * -549711223, (byte) -59);
+		local5.packet.p4_alt3(this.anInt2011 * 1745723939, (byte) -65);
+		local5.packet.p4_alt1(this.anInt2006 * 975184085, 907143239);
+		local5.packet.p1_alt3(this.anInt2010 * -260736217, (byte) -117);
+		client.aClass175_2.send(local5, -1910227286);
 	}
 
 	@OriginalMember(owner = "client!alv", name = "k", descriptor = "(CB)Z", line = 29)

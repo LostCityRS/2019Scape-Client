@@ -79,8 +79,8 @@ public class Class377 implements Runnable {
 	@OriginalMember(owner = "client!kf", name = "v", descriptor = "()V", line = 37)
 	public void method28055() {
 		try {
-			@Pc(8) int local8 = Class54.method14852(Class280.aClass693_1, Class703.aClass703_3, Class50.aClass28_3.anInt101 * 2142901097, 42682579);
-			@Pc(42) BufferedReader local42 = new BufferedReader(new InputStreamReader(new DataInputStream((new URL("http://" + Class50.aClass28_3.aString4 + ":" + local8 + "/news.ws?game=" + client.aClass702_4.anInt5953 * -1111983921)).openStream())));
+			@Pc(8) int local8 = Class54.method14852(Class280.modeWhere, Class703.aClass703_3, Class50.game.id * 2142901097, 42682579);
+			@Pc(42) BufferedReader local42 = new BufferedReader(new InputStreamReader(new DataInputStream((new URL("http://" + Class50.game.host + ":" + local8 + "/news.ws?game=" + client.modeGame.id * -1111983921)).openStream())));
 			@Pc(45) String local45 = local42.readLine();
 			@Pc(49) ArrayList local49 = new ArrayList();
 			while (local45 != null) {
@@ -105,8 +105,8 @@ public class Class377 implements Runnable {
 	@Override
 	public void run() {
 		try {
-			@Pc(8) int local8 = Class54.method14852(Class280.aClass693_1, Class703.aClass703_3, Class50.aClass28_3.anInt101 * 2142901097, -1149963884);
-			@Pc(42) BufferedReader local42 = new BufferedReader(new InputStreamReader(new DataInputStream((new URL("http://" + Class50.aClass28_3.aString4 + ":" + local8 + "/news.ws?game=" + client.aClass702_4.anInt5953 * -1111983921)).openStream())));
+			@Pc(8) int local8 = Class54.method14852(Class280.modeWhere, Class703.aClass703_3, Class50.game.id * 2142901097, -1149963884);
+			@Pc(42) BufferedReader local42 = new BufferedReader(new InputStreamReader(new DataInputStream((new URL("http://" + Class50.game.host + ":" + local8 + "/news.ws?game=" + client.modeGame.id * -1111983921)).openStream())));
 			@Pc(45) String local45 = local42.readLine();
 			@Pc(49) ArrayList local49 = new ArrayList();
 			while (local45 != null) {
@@ -130,8 +130,8 @@ public class Class377 implements Runnable {
 	@OriginalMember(owner = "client!kf", name = "c", descriptor = "()V", line = 37)
 	public void method28056() {
 		try {
-			@Pc(8) int local8 = Class54.method14852(Class280.aClass693_1, Class703.aClass703_3, Class50.aClass28_3.anInt101 * 2142901097, 777120932);
-			@Pc(42) BufferedReader local42 = new BufferedReader(new InputStreamReader(new DataInputStream((new URL("http://" + Class50.aClass28_3.aString4 + ":" + local8 + "/news.ws?game=" + client.aClass702_4.anInt5953 * -1111983921)).openStream())));
+			@Pc(8) int local8 = Class54.method14852(Class280.modeWhere, Class703.aClass703_3, Class50.game.id * 2142901097, 777120932);
+			@Pc(42) BufferedReader local42 = new BufferedReader(new InputStreamReader(new DataInputStream((new URL("http://" + Class50.game.host + ":" + local8 + "/news.ws?game=" + client.modeGame.id * -1111983921)).openStream())));
 			@Pc(45) String local45 = local42.readLine();
 			@Pc(49) ArrayList local49 = new ArrayList();
 			while (local45 != null) {
@@ -155,8 +155,8 @@ public class Class377 implements Runnable {
 	@OriginalMember(owner = "client!kf", name = "r", descriptor = "()V", line = 37)
 	public void method28057() {
 		try {
-			@Pc(8) int local8 = Class54.method14852(Class280.aClass693_1, Class703.aClass703_3, Class50.aClass28_3.anInt101 * 2142901097, -1155272263);
-			@Pc(42) BufferedReader local42 = new BufferedReader(new InputStreamReader(new DataInputStream((new URL("http://" + Class50.aClass28_3.aString4 + ":" + local8 + "/news.ws?game=" + client.aClass702_4.anInt5953 * -1111983921)).openStream())));
+			@Pc(8) int local8 = Class54.method14852(Class280.modeWhere, Class703.aClass703_3, Class50.game.id * 2142901097, -1155272263);
+			@Pc(42) BufferedReader local42 = new BufferedReader(new InputStreamReader(new DataInputStream((new URL("http://" + Class50.game.host + ":" + local8 + "/news.ws?game=" + client.modeGame.id * -1111983921)).openStream())));
 			@Pc(45) String local45 = local42.readLine();
 			@Pc(49) ArrayList local49 = new ArrayList();
 			while (local45 != null) {
@@ -180,8 +180,8 @@ public class Class377 implements Runnable {
 	@OriginalMember(owner = "client!kf", name = "o", descriptor = "()V", line = 37)
 	public void method28058() {
 		try {
-			@Pc(8) int local8 = Class54.method14852(Class280.aClass693_1, Class703.aClass703_3, Class50.aClass28_3.anInt101 * 2142901097, -507551914);
-			@Pc(42) BufferedReader local42 = new BufferedReader(new InputStreamReader(new DataInputStream((new URL("http://" + Class50.aClass28_3.aString4 + ":" + local8 + "/news.ws?game=" + client.aClass702_4.anInt5953 * -1111983921)).openStream())));
+			@Pc(8) int local8 = Class54.method14852(Class280.modeWhere, Class703.aClass703_3, Class50.game.id * 2142901097, -507551914);
+			@Pc(42) BufferedReader local42 = new BufferedReader(new InputStreamReader(new DataInputStream((new URL("http://" + Class50.game.host + ":" + local8 + "/news.ws?game=" + client.modeGame.id * -1111983921)).openStream())));
 			@Pc(45) String local45 = local42.readLine();
 			@Pc(49) ArrayList local49 = new ArrayList();
 			while (local45 != null) {
@@ -210,6 +210,6 @@ public class Class377 implements Runnable {
 
 	@OriginalMember(owner = "client!kf", name = "aul", descriptor = "(Lclient!yf;B)V", line = 13401)
 	static final void method28060(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class78.method1316(Class51.aClass93_Sub36_1.aClass166_Sub4_2.method15426((byte) 109), 200, 1323350560);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class78.method1316(Class51.options.aClass166_Sub4_2.method15426((byte) 109), 200, 1323350560);
 	}
 }

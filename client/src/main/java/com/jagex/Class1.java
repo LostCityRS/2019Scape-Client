@@ -176,10 +176,10 @@ public class Class1 {
 		}
 		@Pc(232) Class93_Sub30 local232 = new Class93_Sub30(0, (int) local13.aFloat317, (int) local13.aFloat318, (int) local13.aFloat319);
 		local4.method9297(local232, -1049152339);
-		@Pc(240) Class611 local240 = client.aClass532_1.method30455(1913918924);
+		@Pc(240) Class611 local240 = client.world.method30455(1913918924);
 		@Pc(247) int local247 = local240.anInt5623 * 270611681 << 9;
 		@Pc(254) int local254 = local240.anInt5624 * -1994307635 << 9;
-		aClass123_Sub1_1.method8925(0.02F, client.aClass532_1.method30511(-310507201).anIntArrayArrayArray14, client.aClass532_1.method30487(-1789987950), local247, local254, 1160510591);
+		aClass123_Sub1_1.method8925(0.02F, client.world.method30511(-310507201).anIntArrayArrayArray14, client.world.method30487(-1789987950), local247, local254, 1160510591);
 	}
 
 	@OriginalMember(owner = "client!a", name = "c", descriptor = "()V", line = 57)
@@ -240,10 +240,10 @@ public class Class1 {
 		}
 		@Pc(232) Class93_Sub30 local232 = new Class93_Sub30(0, (int) local13.aFloat317, (int) local13.aFloat318, (int) local13.aFloat319);
 		local4.method9297(local232, -1049152339);
-		@Pc(240) Class611 local240 = client.aClass532_1.method30455(2022295829);
+		@Pc(240) Class611 local240 = client.world.method30455(2022295829);
 		@Pc(247) int local247 = local240.anInt5623 * 270611681 << 9;
 		@Pc(254) int local254 = local240.anInt5624 * -1994307635 << 9;
-		aClass123_Sub1_1.method8925(0.02F, client.aClass532_1.method30511(-310507201).anIntArrayArrayArray14, client.aClass532_1.method30487(-1510086608), local247, local254, 1160510591);
+		aClass123_Sub1_1.method8925(0.02F, client.world.method30511(-310507201).anIntArrayArrayArray14, client.world.method30487(-1510086608), local247, local254, 1160510591);
 	}
 
 	@OriginalMember(owner = "client!a", name = "r", descriptor = "()V", line = 57)
@@ -304,10 +304,10 @@ public class Class1 {
 		}
 		@Pc(232) Class93_Sub30 local232 = new Class93_Sub30(0, (int) local13.aFloat317, (int) local13.aFloat318, (int) local13.aFloat319);
 		local4.method9297(local232, -1049152339);
-		@Pc(240) Class611 local240 = client.aClass532_1.method30455(1794944577);
+		@Pc(240) Class611 local240 = client.world.method30455(1794944577);
 		@Pc(247) int local247 = local240.anInt5623 * 270611681 << 9;
 		@Pc(254) int local254 = local240.anInt5624 * -1994307635 << 9;
-		aClass123_Sub1_1.method8925(0.02F, client.aClass532_1.method30511(-310507201).anIntArrayArrayArray14, client.aClass532_1.method30487(996713093), local247, local254, 1160510591);
+		aClass123_Sub1_1.method8925(0.02F, client.world.method30511(-310507201).anIntArrayArrayArray14, client.world.method30487(996713093), local247, local254, 1160510591);
 	}
 
 	@OriginalMember(owner = "client!a", name = "l", descriptor = "(Lclient!ase;B)V", line = 472)
@@ -334,7 +334,7 @@ public class Class1 {
 
 	@OriginalMember(owner = "client!a", name = "gp", descriptor = "(J)V", line = 3555)
 	static final void method13(@OriginalArg(0) long arg0) {
-		@Pc(3) Class472 local3 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.method24220().aClass472_61;
+		@Pc(3) Class472 local3 = Class520.selfPlayer.method24220().aClass472_61;
 		@Pc(11) int local11 = client.anInt3469 * 2040985693 + (int) local3.aFloat317;
 		@Pc(19) int local19 = client.anInt3474 * -1711095971 + (int) local3.aFloat319;
 		if (Class72.anInt241 * -1022856553 - local11 < -2000 || Class72.anInt241 * -1022856553 - local11 > 2000 || Class441.anInt4886 * -953396699 - local19 < -2000 || Class441.anInt4886 * -953396699 - local19 > 2000) {
@@ -407,10 +407,10 @@ public class Class1 {
 
 	@OriginalMember(owner = "client!a", name = "jm", descriptor = "(III)V", line = 10166)
 	public static void method17(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_100, client.aClass175_2.aClass24_2, (byte) 16);
-		local5.aPacketBit_1.p4_alt3(arg0, (byte) -89);
-		local5.aPacketBit_1.p2_alt2(arg1, -2116645711);
-		client.aClass175_2.method24356(local5, -1765853382);
+		@Pc(5) ClientMessage local5 = Class102.createGameMessage(ClientProt.aClientProt_100, client.aClass175_2.clientIsaac, (byte) 16);
+		local5.packet.p4_alt3(arg0, (byte) -89);
+		local5.packet.p2_alt2(arg1, -2116645711);
+		client.aClass175_2.send(local5, -1765853382);
 	}
 
 	@OriginalMember(owner = "client!a", name = "ahk", descriptor = "(Lclient!yf;I)V", line = 10844)

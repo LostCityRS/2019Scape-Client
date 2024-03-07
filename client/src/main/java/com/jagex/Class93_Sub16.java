@@ -68,7 +68,7 @@ public class Class93_Sub16 extends Class93 {
 				@Pc(19) Interface75[] local19 = (Interface75[]) arg0.getEnumConstants();
 				for (@Pc(21) int local21 = 0; local21 < local19.length; local21++) {
 					@Pc(29) Interface75 local29 = local19[local21];
-					local8.put(local29.method36920(), local29);
+					local8.put(local29.getId(), local29);
 				}
 				Class711.aMap27.put(arg0, local8);
 			}

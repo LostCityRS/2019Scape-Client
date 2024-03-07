@@ -162,18 +162,18 @@ public class Class546 {
 	static final void method30973(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(13) String local13 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
 		@Pc(27) String local27 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
-		@Pc(33) Class93_Sub22 local33 = Class102.method2588(Class446.aClass446_36, client.aClass175_1.aClass24_2, (byte) 65);
-		local33.aPacketBit_1.p2(Packet.pjstrlen(local13, -1746842495) + Packet.pjstrlen(local27, -1698473232), 2145656670);
-		local33.aPacketBit_1.pjstr(local13, 588125156);
-		local33.aPacketBit_1.pjstr(local27, 1144919468);
-		client.aClass175_1.method24356(local33, -1898577141);
+		@Pc(33) ClientMessage local33 = Class102.createGameMessage(ClientProt.aClientProt_36, client.aClass175_1.clientIsaac, (byte) 65);
+		local33.packet.p2(Packet.pjstrlen(local13, -1746842495) + Packet.pjstrlen(local27, -1698473232), 2145656670);
+		local33.packet.pjstr(local13, 588125156);
+		local33.packet.pjstr(local27, 1144919468);
+		client.aClass175_1.send(local33, -1898577141);
 	}
 
 	@OriginalMember(owner = "client!sc", name = "ayp", descriptor = "(Lclient!yf;B)V", line = 13984)
 	static final void method30974(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(1) String local1 = null;
-		if (Class120.aClass499_1 != null) {
-			local1 = Class120.aClass499_1.method30140(-549432700);
+		if (Class120.userLastLoginHost != null) {
+			local1 = Class120.userLastLoginHost.method30140(-549432700);
 		}
 		if (local1 == null) {
 			local1 = "";
@@ -183,7 +183,7 @@ public class Class546 {
 
 	@OriginalMember(owner = "client!sc", name = "ayl", descriptor = "(Lclient!yf;I)V", line = 14078)
 	static final void method30975(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub40_1, 0, (byte) 114);
+		Class51.options.method14363(Class51.options.aClass166_Sub40_1, 0, (byte) 114);
 		Class106_Sub1.method5135(-700641211);
 		client.aBoolean601 = false;
 	}

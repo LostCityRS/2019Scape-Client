@@ -1274,7 +1274,7 @@ public abstract class Class104 {
 
 	@OriginalMember(owner = "client!dh", name = "azv", descriptor = "(Lclient!yf;B)V", line = 14173)
 	static final void method20525(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub14_1.method15655((byte) -93) ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub14_1.method15655((byte) -93) ? 1 : 0;
 	}
 
 	@OriginalMember(owner = "client!dh", name = "bfd", descriptor = "(Lclient!yf;I)V", line = 15153)

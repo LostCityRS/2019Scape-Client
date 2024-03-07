@@ -47,18 +47,18 @@ public class Class648 {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
 		@Pc(18) int local18 = local12 >> 14 & 0x3FFF;
 		@Pc(22) int local22 = local12 & 0x3FFF;
-		@Pc(26) Class611 local26 = client.aClass532_1.method30455(1787132275);
+		@Pc(26) Class611 local26 = client.world.method30455(1787132275);
 		local18 -= local26.anInt5623 * 270611681;
 		if (local18 < 0) {
 			local18 = 0;
-		} else if (local18 >= client.aClass532_1.method30459(-1267149682)) {
-			local18 = client.aClass532_1.method30459(1910607887);
+		} else if (local18 >= client.world.method30459(-1267149682)) {
+			local18 = client.world.method30459(1910607887);
 		}
 		local22 -= local26.anInt5624 * -1994307635;
 		if (local22 < 0) {
 			local22 = 0;
-		} else if (local22 >= client.aClass532_1.method30466((short) 128)) {
-			local22 = client.aClass532_1.method30466((short) 128);
+		} else if (local22 >= client.world.method30466((short) 128)) {
+			local22 = client.world.method30466((short) 128);
 		}
 		client.anInt3481 = ((local18 << 9) + 256) * 2042260595;
 		client.anInt3482 = ((local22 << 9) + 256) * -1025201801;

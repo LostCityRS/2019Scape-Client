@@ -51,8 +51,8 @@ public class Class165 {
 
 	@OriginalMember(owner = "client!am", name = "f", descriptor = "(I)V", line = 89)
 	public static void method15315(@OriginalArg(0) int arg0) {
-		@Pc(3) int local3 = client.aClass532_1.method30459(182359137);
-		@Pc(7) int local7 = client.aClass532_1.method30466((short) 128);
+		@Pc(3) int local3 = client.world.method30459(182359137);
+		@Pc(7) int local7 = client.world.method30466((short) 128);
 		Class690.aBooleanArrayArray15 = new boolean[local3 >> 3][local7 >> 3];
 	}
 

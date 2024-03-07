@@ -85,19 +85,19 @@ public final class Class305 {
 
 	@OriginalMember(owner = "client!gz", name = "iw", descriptor = "(IIIB)I", line = 6306)
 	public static final int method26802(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) byte arg3) {
-		if (client.aClass532_1.method30481(-1392626687) == null) {
+		if (client.world.method30481(-1392626687) == null) {
 			return 0;
 		}
 		@Pc(9) int local9 = arg0 >> 9;
 		@Pc(13) int local13 = arg1 >> 9;
-		if (local9 < 0 || local13 < 0 || local9 > client.aClass532_1.method30459(-474836985) - 1 || local13 > client.aClass532_1.method30466((short) 128) - 1) {
+		if (local9 < 0 || local13 < 0 || local9 > client.world.method30459(-474836985) - 1 || local13 > client.world.method30466((short) 128) - 1) {
 			return 0;
 		}
 		@Pc(35) int local35 = arg2;
-		if (arg2 < 3 && (client.aClass532_1.method30487(-1502082692).aByteArrayArrayArray12[1][local9][local13] & 0x2) != 0) {
+		if (arg2 < 3 && (client.world.method30487(-1502082692).aByteArrayArrayArray12[1][local9][local13] & 0x2) != 0) {
 			local35 = arg2 + 1;
 		}
-		return client.aClass532_1.method30481(-1352859328).aClass99Array1[local35].method2473(arg0, arg1, 942007362);
+		return client.world.method30481(-1352859328).aClass99Array1[local35].method2473(arg0, arg1, 942007362);
 	}
 
 	@OriginalMember(owner = "client!gz", name = "ue", descriptor = "(Lclient!yf;B)V", line = 8716)

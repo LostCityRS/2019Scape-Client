@@ -60,7 +60,7 @@ public class Class83 implements Interface75 {
 
 	@OriginalMember(owner = "client!adi", name = "n", descriptor = "()I", line = 33)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt252 * -178785547;
 	}
 
@@ -83,17 +83,17 @@ public class Class83 implements Interface75 {
 
 	@OriginalMember(owner = "client!adi", name = "ip", descriptor = "(IIIIII)I", line = 6316)
 	public static final int method1389(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {
-		if (client.aClass532_1.method30481(-1429843164) == null) {
+		if (client.world.method30481(-1429843164) == null) {
 			return 0;
 		}
 		if (arg4 < 3) {
-			@Pc(12) Class520 local12 = client.aClass532_1.method30487(-626226984);
+			@Pc(12) Class520 local12 = client.world.method30487(-626226984);
 			@Pc(16) int local16 = arg0 >> 9;
 			@Pc(20) int local20 = arg1 >> 9;
-			if (arg2 < 0 || arg3 < 0 || arg2 > client.aClass532_1.method30459(-1695441531) - 1 || arg3 > client.aClass532_1.method30466((short) 128) - 1) {
+			if (arg2 < 0 || arg3 < 0 || arg2 > client.world.method30459(-1695441531) - 1 || arg3 > client.world.method30466((short) 128) - 1) {
 				return 0;
 			}
-			if (local16 < 1 || local20 < 1 || local16 > client.aClass532_1.method30459(2020371789) - 1 || local20 > client.aClass532_1.method30466((short) 128) - 1) {
+			if (local16 < 1 || local20 < 1 || local16 > client.world.method30459(2020371789) - 1 || local20 > client.world.method30466((short) 128) - 1) {
 				return 0;
 			}
 			@Pc(81) boolean local81 = (local12.aByteArrayArrayArray12[1][arg0 >> 9][arg1 >> 9] & 0x2) != 0;
@@ -117,6 +117,6 @@ public class Class83 implements Interface75 {
 				arg4++;
 			}
 		}
-		return client.aClass532_1.method30481(-1845062565).aClass99Array1[arg4].method2473(arg0, arg1, 168936804);
+		return client.world.method30481(-1845062565).aClass99Array1[arg4].method2473(arg0, arg1, 168936804);
 	}
 }

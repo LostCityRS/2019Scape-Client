@@ -165,7 +165,7 @@ public abstract class Class99 {
 
 	@OriginalMember(owner = "client!cb", name = "atr", descriptor = "(Lclient!yf;I)V", line = 13301)
 	static final void method2484(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub3_1.method15405(-790628695) == 1 ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub3_1.method15405(-790628695) == 1 ? 1 : 0;
 	}
 
 	@OriginalMember(owner = "client!cb", name = "q", descriptor = "(II[I[I[I[I[I[I[I[ILclient!dy;Z)V")

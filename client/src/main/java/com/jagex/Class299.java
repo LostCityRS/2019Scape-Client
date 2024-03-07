@@ -83,7 +83,7 @@ public class Class299 implements Interface75 {
 
 	@OriginalMember(owner = "client!gs", name = "n", descriptor = "()I", line = 124)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt3928 * 145054147;
 	}
 

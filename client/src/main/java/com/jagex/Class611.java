@@ -228,13 +228,13 @@ public class Class611 {
 		@Pc(8) Class677 local8 = arg0.aBoolean875 ? arg0.aClass677_2 : arg0.aClass677_1;
 		@Pc(11) Class312 local11 = local8.aClass312_13;
 		@Pc(14) Class320 local14 = local8.aClass320_4;
-		Class453.method28966(local11, local14, arg0, Class310.aClass310_2, (byte) 73);
+		ServerProt.method28966(local11, local14, arg0, Class310.aClass310_2, (byte) 73);
 	}
 
 	@OriginalMember(owner = "client!ve", name = "zn", descriptor = "(Lclient!yf;S)V", line = 9397)
 	static final void method32047(@OriginalArg(0) Class681 arg0, @OriginalArg(1) short arg1) {
 		@Pc(13) String local13 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
-		if (Class108_Sub2.aString24 != null && Class108_Sub2.aString24.equalsIgnoreCase(local13)) {
+		if (Class108_Sub2.mapOwner != null && Class108_Sub2.mapOwner.equalsIgnoreCase(local13)) {
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = 1;
 		} else {
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = 0;
@@ -246,7 +246,7 @@ public class Class611 {
 		if (Class312.anInt3954 * -270313193 != arg0.anInt3972 * -1428659995) {
 			return;
 		}
-		if (Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aString82 == null) {
+		if (Class520.selfPlayer.name2 == null) {
 			arg0.anInt4037 = 0;
 			arg0.anInt4038 = 0;
 			return;
@@ -254,9 +254,9 @@ public class Class611 {
 		arg0.anInt4006 = -1268657782;
 		arg0.anInt4007 = ((int) (Math.sin((double) client.anInt3485 / 40.0D) * 256.0D) & 0x7FF) * 1060356621;
 		arg0.anInt4001 = -2003331097;
-		arg0.anInt4037 = client.anInt3513 * 1786756713;
-		arg0.anInt4038 = Class704.method36732(Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aString82, 304329139) * 1171936085;
-		@Pc(54) Class19_Sub3 local54 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aClass19_Sub3_3;
+		arg0.anInt4037 = client.selfPlayerSlot * 1786756713;
+		arg0.anInt4038 = Class704.method36732(Class520.selfPlayer.name2, 304329139) * 1171936085;
+		@Pc(54) Class19_Sub3 local54 = Class520.selfPlayer.aClass19_Sub3_3;
 		if (local54 == null) {
 			arg0.aClass19_6 = null;
 			return;

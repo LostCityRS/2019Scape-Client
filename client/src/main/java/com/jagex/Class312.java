@@ -2361,7 +2361,7 @@ public class Class312 {
 	static final void method26926(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
 		Class260.method26155(673864408);
 		Class275.method26341(1808079102);
-		client.aClass532_1.method30533((byte) 0);
+		client.world.method30533((byte) 0);
 		Class106_Sub1.method5135(-1066358506);
 		client.aBoolean601 = false;
 	}

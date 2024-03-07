@@ -64,11 +64,11 @@ public class Class227 {
 		} else if (Class707.aClass707_1 != local18 && Class707.aClass707_2 != local18 && Class707.aClass707_3 != local18) {
 			throw new RuntimeException("");
 		} else if (client.aClass175_2 != null) {
-			@Pc(65) Class93_Sub22 local65 = Class102.method2588(Class446.aClass446_45, client.aClass175_2.aClass24_2, (byte) 12);
-			local65.aPacketBit_1.p1_alt1(local18.method36920(), -1591808004);
-			local65.aPacketBit_1.p2_alt2(local31.anInt5624 * -1994307635, -1895191206);
-			local65.aPacketBit_1.p2_alt1(local31.anInt5623 * 270611681, (byte) -14);
-			client.aClass175_2.method24356(local65, -1630265729);
+			@Pc(65) ClientMessage local65 = Class102.createGameMessage(ClientProt.aClientProt_45, client.aClass175_2.clientIsaac, (byte) 12);
+			local65.packet.p1_alt1(local18.getId(), -1591808004);
+			local65.packet.p2_alt2(local31.anInt5624 * -1994307635, -1895191206);
+			local65.packet.p2_alt1(local31.anInt5623 * 270611681, (byte) -14);
+			client.aClass175_2.send(local65, -1630265729);
 		}
 	}
 }

@@ -35,23 +35,23 @@ public abstract class Class102 {
 	}
 
 	@OriginalMember(owner = "client!cj", name = "n", descriptor = "(Lclient!nr;Lclient!aav;B)Lclient!akl;", line = 24)
-	public static Class93_Sub22 method2588(@OriginalArg(0) Class446 arg0, @OriginalArg(1) Class24 arg1, @OriginalArg(2) byte arg2) {
-		@Pc(2) Class93_Sub22 local2 = Class527.method30386(1355424345);
-		local2.aClass446_1 = arg0;
+	public static ClientMessage createGameMessage(@OriginalArg(0) ClientProt arg0, @OriginalArg(1) IsaacRandom arg1, @OriginalArg(2) byte arg2) {
+		@Pc(2) ClientMessage local2 = Class527.method30386(1355424345);
+		local2.aClientProt_1 = arg0;
 		local2.anInt1570 = arg0.anInt4952 * -84230039;
 		if (local2.anInt1570 * -702266491 == -1) {
-			local2.aPacketBit_1 = new PacketBit(260);
+			local2.packet = new PacketBit(260);
 		} else if (local2.anInt1570 * -702266491 == -2) {
-			local2.aPacketBit_1 = new PacketBit(10000);
+			local2.packet = new PacketBit(10000);
 		} else if (local2.anInt1570 * -702266491 <= 18) {
-			local2.aPacketBit_1 = new PacketBit(20);
+			local2.packet = new PacketBit(20);
 		} else if (local2.anInt1570 * -702266491 <= 98) {
-			local2.aPacketBit_1 = new PacketBit(100);
+			local2.packet = new PacketBit(100);
 		} else {
-			local2.aPacketBit_1 = new PacketBit(260);
+			local2.packet = new PacketBit(260);
 		}
-		local2.aPacketBit_1.setRandom(arg1, (byte) -28);
-		local2.aPacketBit_1.p1opcode(local2.aClass446_1.anInt4951 * -1222765451, -1213648128);
+		local2.packet.setRandom(arg1, (byte) -28);
+		local2.packet.p1opcode(local2.aClientProt_1.anInt4951 * -1222765451, -1213648128);
 		local2.anInt1569 = 0;
 		return local2;
 	}
@@ -75,10 +75,10 @@ public abstract class Class102 {
 			return;
 		}
 		@Pc(7) Class175 local7 = Class330.method27371(-1580060079);
-		@Pc(13) Class93_Sub22 local13 = method2588(Class446.aClass446_94, local7.aClass24_2, (byte) 29);
-		local13.aPacketBit_1.p1(Packet.pjstrlen(arg0, -1857161175), (byte) -28);
-		local13.aPacketBit_1.pjstr(arg0, 932008120);
-		local7.method24356(local13, -2047560182);
+		@Pc(13) ClientMessage local13 = createGameMessage(ClientProt.aClientProt_94, local7.clientIsaac, (byte) 29);
+		local13.packet.p1(Packet.pjstrlen(arg0, -1857161175), (byte) -28);
+		local13.packet.pjstr(arg0, 932008120);
+		local7.send(local13, -2047560182);
 	}
 
 	@OriginalMember(owner = "client!cj", name = "bcd", descriptor = "(Lclient!yf;I)V", line = 14504)

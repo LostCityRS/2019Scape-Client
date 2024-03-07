@@ -823,7 +823,7 @@ public class Class685 {
 	static final void method33453(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		Class642.method32518((byte) 80);
 		Class275.method26341(1725709509);
-		client.aClass532_1.method30533((byte) 0);
+		client.world.method30533((byte) 0);
 		Class106_Sub1.method5135(-2032756498);
 		client.aBoolean601 = false;
 	}

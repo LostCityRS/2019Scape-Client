@@ -334,7 +334,7 @@ public class Class393 {
 			return false;
 		}
 		@Pc(11) Class610 local11 = (Class610) arg1.method18261(arg0.method13423(-1037211373), -1165989297);
-		if (local11.aBoolean839 && !client.aBoolean620) {
+		if (local11.aBoolean839 && !client.mapMember) {
 			return false;
 		}
 		@Pc(23) int local23 = local11.anInt5600 * 400633667;
@@ -362,7 +362,7 @@ public class Class393 {
 	static void method28315(@OriginalArg(0) byte arg0) {
 		if (Class146.aClass370_3 != null) {
 			Class653.aClass357_1 = new Class357();
-			Class653.aClass357_1.method27741(Class661.aLong302 * 3693219987677404063L, Class146.aClass370_3.aClass74_177.method1259(Class106.aClass717_8, (byte) -62), Class146.aClass370_3.aClass74_177.method1259(Class106.aClass717_8, (byte) 25), Class146.aClass370_3.anInt4591 * 903713925, Class146.aClass370_3, (short) 174);
+			Class653.aClass357_1.method27741(Class661.aLong302 * 3693219987677404063L, Class146.aClass370_3.aClass74_177.method1259(Class106.lang, (byte) -62), Class146.aClass370_3.aClass74_177.method1259(Class106.lang, (byte) 25), Class146.aClass370_3.anInt4591 * 903713925, Class146.aClass370_3, (short) 174);
 			Class362.aThread6 = new Thread(Class653.aClass357_1, "");
 			Class362.aThread6.start();
 		}

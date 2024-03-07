@@ -599,27 +599,27 @@ public class Class565 {
 
 	@OriginalMember(owner = "client!sz", name = "fb", descriptor = "(I)V", line = 2726)
 	static final void method31252(@OriginalArg(0) int arg0) {
-		if (Class56.method18036(client.anInt3435 * -849002901, -1497248091) || Class1.method12(client.anInt3435 * -849002901, 314071452)) {
+		if (Class56.method18036(client.state * -849002901, -1497248091) || Class1.method12(client.state * -849002901, 314071452)) {
 			client.aClass67_15 = Class67.aClass67_5;
-			Class642.method32520(false, (short) 23401);
+			Class642.logout(false, (short) 23401);
 		} else {
 			client.aClass67_15 = Class67.aClass67_11;
-			Class166_Sub20.aClass160_2 = client.aClass175_2.method24372((byte) -45);
+			Class166_Sub20.aClass160_2 = client.aClass175_2.getStream((byte) -45);
 			client.aClass175_2.method24368((byte) 44);
-			Class481.method29756(14, 1823202236);
+			Class481.setState(14, 1823202236);
 		}
 	}
 
 	@OriginalMember(owner = "client!sz", name = "asb", descriptor = "(Lclient!yf;B)V", line = 13125)
 	static final void method31253(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub12_1, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], (byte) 48);
+		Class51.options.method14363(Class51.options.aClass166_Sub12_1, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], (byte) 48);
 		Class106_Sub1.method5135(-1302342410);
 		client.aBoolean601 = false;
 	}
 
 	@OriginalMember(owner = "client!sz", name = "azl", descriptor = "(Lclient!yf;I)V", line = 14193)
 	static final void method31254(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub29_1.method16061(-819614202) ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub29_1.method16061(-819614202) ? 1 : 0;
 	}
 
 	@OriginalMember(owner = "client!sz", name = "bdw", descriptor = "(Lclient!yf;I)V", line = 14798)

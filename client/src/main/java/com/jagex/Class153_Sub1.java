@@ -250,17 +250,17 @@ public class Class153_Sub1 extends Class153 implements MouseListener, MouseMotio
 
 	@OriginalMember(owner = "client!alb", name = "f", descriptor = "(Ljava/lang/String;I)V", line = 73)
 	public static void method14112(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1) {
-		if (client.anInt3435 * -849002901 != 0) {
+		if (client.state * -849002901 != 0) {
 			return;
 		}
-		@Pc(11) Class93_Sub22 local11 = Class102.method2588(Class446.aClass446_13, client.aClass175_1.aClass24_2, (byte) 32);
-		local11.aPacketBit_1.p1(0, (byte) -57);
-		@Pc(22) int local22 = local11.aPacketBit_1.pos * 212851357;
-		local11.aPacketBit_1.pjstr(arg0, 1388325526);
-		local11.aPacketBit_1.pos += -1529454093;
-		local11.aPacketBit_1.tinyenc(Class676.anIntArray516, local22, local11.aPacketBit_1.pos * 212851357, (byte) -53);
-		local11.aPacketBit_1.psize1(local11.aPacketBit_1.pos * 212851357 - local22, (byte) 78);
-		client.aClass175_1.method24356(local11, -1787674322);
+		@Pc(11) ClientMessage local11 = Class102.createGameMessage(ClientProt.aClientProt_13, client.aClass175_1.clientIsaac, (byte) 32);
+		local11.packet.p1(0, (byte) -57);
+		@Pc(22) int local22 = local11.packet.pos * 212851357;
+		local11.packet.pjstr(arg0, 1388325526);
+		local11.packet.pos += -1529454093;
+		local11.packet.tinyenc(Class676.anIntArray516, local22, local11.packet.pos * 212851357, (byte) -53);
+		local11.packet.psize1(local11.packet.pos * 212851357 - local22, (byte) 78);
+		client.aClass175_1.send(local11, -1787674322);
 		Class325.aClass715_1 = Class715.aClass715_3;
 	}
 

@@ -632,7 +632,7 @@ public class Class166_Sub6 extends Class166 {
 				Class620.anInt5644 = local327 * -1151839067;
 			}
 		}
-		@Pc(430) int local430 = local338 - Class24.anInt82 * -20667523;
+		@Pc(430) int local430 = local338 - IsaacRandom.anInt82 * -20667523;
 		if (local430 > 8192) {
 			local430 -= 16384;
 		}
@@ -641,14 +641,14 @@ public class Class166_Sub6 extends Class166 {
 		}
 		local430 >>= 0x3;
 		if (local430 > 0) {
-			Class24.anInt82 += (Class174.anInt3297 * -283420141 * local430 / 1000 + Class5.anInt14 * 1762938653 << 3) * 1056124373;
-			Class24.anInt82 = (Class24.anInt82 * -20667523 & 0x3FFF) * 1056124373;
+			IsaacRandom.anInt82 += (Class174.anInt3297 * -283420141 * local430 / 1000 + Class5.anInt14 * 1762938653 << 3) * 1056124373;
+			IsaacRandom.anInt82 = (IsaacRandom.anInt82 * -20667523 & 0x3FFF) * 1056124373;
 		}
 		if (local430 < 0) {
-			Class24.anInt82 -= (-local430 * -283420141 * Class174.anInt3297 / 1000 + Class5.anInt14 * 1762938653 << 3) * 1056124373;
-			Class24.anInt82 = (Class24.anInt82 * -20667523 & 0x3FFF) * 1056124373;
+			IsaacRandom.anInt82 -= (-local430 * -283420141 * Class174.anInt3297 / 1000 + Class5.anInt14 * 1762938653 << 3) * 1056124373;
+			IsaacRandom.anInt82 = (IsaacRandom.anInt82 * -20667523 & 0x3FFF) * 1056124373;
 		}
-		@Pc(505) int local505 = local338 - Class24.anInt82 * -20667523;
+		@Pc(505) int local505 = local338 - IsaacRandom.anInt82 * -20667523;
 		if (local505 > 8192) {
 			local505 -= 16384;
 		}
@@ -656,7 +656,7 @@ public class Class166_Sub6 extends Class166 {
 			local505 += 16384;
 		}
 		if (local505 < 0 && local430 > 0 || local505 > 0 && local430 < 0) {
-			Class24.anInt82 = local338 * 1056124373;
+			IsaacRandom.anInt82 = local338 * 1056124373;
 		}
 		Class348.anInt4199 = 0;
 	}

@@ -58,7 +58,7 @@ public class Class132_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1 implements Inter
 		this.aByte48 = (byte) arg15;
 		this.aBoolean317 = arg3.anInt5592 * 1067969079 != 0 && !arg9;
 		this.aBoolean314 = arg16;
-		this.aBoolean315 = arg1.method20535() && arg3.aBoolean828 && !this.aBoolean316 && Class51.aClass93_Sub36_1.aClass166_Sub8_1.method15531((short) 13931) != 0;
+		this.aBoolean315 = arg1.method20535() && arg3.aBoolean828 && !this.aBoolean316 && Class51.options.aClass166_Sub8_1.method15531((short) 13931) != 0;
 		this.aBoolean318 = arg17;
 		this.anInt1479 = arg7 * -1006984057;
 		@Pc(93) int local93 = 2048;
@@ -75,7 +75,7 @@ public class Class132_Sub1_Sub1_Sub2 extends Class132_Sub1_Sub1 implements Inter
 			if (this.aBoolean314 || arg3.aBoolean842) {
 				this.aClass109_3 = this.aClass109_3.method6938((byte) 0, local93, false);
 				if (arg3.aBoolean842) {
-					@Pc(148) Class528 local148 = client.aClass532_1.method30468((byte) -26);
+					@Pc(148) Class528 local148 = client.world.method30468((byte) -26);
 					this.aClass109_3.method6914(local148.anInt5229 * 1660167749, local148.anInt5227 * -831110151, local148.anInt5228 * 1060946059, local148.anInt5226 * -1883995863);
 				}
 			}

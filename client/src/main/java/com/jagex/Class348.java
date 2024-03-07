@@ -111,7 +111,7 @@ public class Class348 {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
 		@Pc(16) Class312 local16 = Class659.method32808(local12, 838209713);
 		@Pc(22) Class320 local22 = Class166_Sub1.aClass320Array1[local12 >> 16];
-		Class693.method36613(local16, local22, arg0, -1987680147);
+		ModeWhere.method36613(local16, local22, arg0, -1987680147);
 	}
 
 	@OriginalMember(owner = "client!is", name = "lq", descriptor = "(Lclient!hf;ILclient!yf;I)V", line = 7037)

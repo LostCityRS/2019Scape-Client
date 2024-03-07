@@ -81,8 +81,8 @@ public class Class149 {
 		if (local12 > 255 || local12 < 0) {
 			local12 = 0;
 		}
-		if (local12 != Class51.aClass93_Sub36_1.aClass166_Sub38_1.method16324(-98785499)) {
-			Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub38_1, local12, (byte) 45);
+		if (local12 != Class51.options.aClass166_Sub38_1.method16324(-98785499)) {
+			Class51.options.method14363(Class51.options.aClass166_Sub38_1, local12, (byte) 45);
 			Class106_Sub1.method5135(-26762461);
 			client.aBoolean601 = false;
 		}

@@ -153,6 +153,6 @@ class Class506 implements Comparator {
 
 	@OriginalMember(owner = "client!qi", name = "ale", descriptor = "(Lclient!yf;S)V", line = 11889)
 	static final void method30222(@OriginalArg(0) Class681 arg0, @OriginalArg(1) short arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class255.method26008(1741045804);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class255.getWindowMode(1741045804);
 	}
 }

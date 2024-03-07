@@ -1500,7 +1500,7 @@ public abstract class Class123 {
 			@Pc(14) Class93_Sub15 local14 = (Class93_Sub15) client.aClass16_18.method214((long) client.anIntArray323[local1]);
 			if (local14 != null) {
 				@Pc(21) Class132_Sub1_Sub1_Sub1_Sub1 local21 = (Class132_Sub1_Sub1_Sub1_Sub1) local14.anObject5;
-				if (local21.method18607(33985) && local21.aByte100 == Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aByte100) {
+				if (local21.method18607(33985) && local21.aByte100 == Class520.selfPlayer.aByte100) {
 					@Pc(33) Class336 local33 = local21.aClass336_1;
 					if (local33 != null && local33.anIntArray412 != null) {
 						local33 = local33.method27435(Class624.aClass120_1, Class624.aClass120_1, (short) 9686);
@@ -1530,7 +1530,7 @@ public abstract class Class123 {
 			client.aFloat253 = local7;
 			if (Class429.anInt4781 * -1453926679 == 5) {
 				Class620.anInt5644 = local3 * -1151839067;
-				Class24.anInt82 = local7 * 1056124373;
+				IsaacRandom.anInt82 = local7 * 1056124373;
 				Class348.anInt4199 = local11 * -2045030213;
 			}
 			Class49.method16604((byte) 20);

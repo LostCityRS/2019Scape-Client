@@ -57,21 +57,21 @@ class Class518 implements Interface55 {
 
 	@OriginalMember(owner = "client!qv", name = "iz", descriptor = "(IIII)V", line = 9417)
 	public static void method30305(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		@Pc(3) Class611 local3 = client.aClass532_1.method30455(1708149186);
+		@Pc(3) Class611 local3 = client.world.method30455(1708149186);
 		@Pc(10) int local10 = arg1 + local3.anInt5623 * 270611681;
 		@Pc(17) int local17 = local3.anInt5624 * -1994307635 + arg2;
-		if (client.aClass532_1.method30481(-1692526925) == null || client.aClass532_1.method30443(-1000241849) == Class526.aClass526_2 || arg1 < 0 || arg2 < 0 || arg1 >= client.aClass532_1.method30459(978808638) || arg2 >= client.aClass532_1.method30466((short) 128)) {
+		if (client.world.method30481(-1692526925) == null || client.world.method30443(-1000241849) == Class526.aClass526_2 || arg1 < 0 || arg2 < 0 || arg1 >= client.world.method30459(978808638) || arg2 >= client.world.method30466((short) 128)) {
 			return;
 		}
 		@Pc(52) long local52 = (long) (arg0 << 28 | local17 << 14 | local10);
 		@Pc(57) Class93_Sub5 local57 = (Class93_Sub5) client.aClass16_20.method214(local52);
 		if (local57 == null) {
-			client.aClass532_1.method30481(-1541129926).method31522(arg0, arg1, arg2, (byte) 0);
+			client.world.method30481(-1541129926).method31522(arg0, arg1, arg2, (byte) 0);
 			return;
 		}
 		@Pc(75) Class93_Sub3 local75 = (Class93_Sub3) local57.aClass22_17.method428((byte) 102);
 		if (local75 == null) {
-			client.aClass532_1.method30481(-1343606828).method31522(arg0, arg1, arg2, (byte) 0);
+			client.world.method30481(-1343606828).method31522(arg0, arg1, arg2, (byte) 0);
 			return;
 		}
 		@Pc(89) int local89 = -1;
@@ -80,9 +80,9 @@ class Class518 implements Interface55 {
 		@Pc(95) Class470 local95 = null;
 		@Pc(97) Class470 local97 = null;
 		@Pc(99) Class470 local99 = null;
-		@Pc(109) Class132_Sub1_Sub5_Sub1 local109 = (Class132_Sub1_Sub5_Sub1) client.aClass532_1.method30481(-1363026273).method31522(arg0, arg1, arg2, (byte) 0);
+		@Pc(109) Class132_Sub1_Sub5_Sub1 local109 = (Class132_Sub1_Sub5_Sub1) client.world.method30481(-1363026273).method31522(arg0, arg1, arg2, (byte) 0);
 		if (local109 == null) {
-			local109 = new Class132_Sub1_Sub5_Sub1(client.aClass532_1.method30481(-1098561897), arg1 << 9, client.aClass532_1.method30481(-1889998591).aClass99Array1[arg0].method2480(arg1, arg2, -1141511953), arg2 << 9, arg0, arg0);
+			local109 = new Class132_Sub1_Sub5_Sub1(client.world.method30481(-1098561897), arg1 << 9, client.world.method30481(-1889998591).aClass99Array1[arg0].method2480(arg1, arg2, -1141511953), arg2 << 9, arg0, arg0);
 		} else {
 			local89 = local109.anInt3286 * 1294558559;
 			local91 = local109.anInt3278 * -272885985;
@@ -92,7 +92,7 @@ class Class518 implements Interface55 {
 			local99 = local109.aClass470_46;
 			local109.anInt3281 = -185312629;
 			local109.anInt3278 = 2136431393;
-			local109.aClass585_23 = client.aClass532_1.method30481(-1964126979);
+			local109.aClass585_23 = client.world.method30481(-1964126979);
 		}
 		local109.anInt3286 = local75.anInt1405 * 1268505773;
 		local109.anInt3279 = local75.anInt1404 * -549461587;
@@ -158,10 +158,10 @@ class Class518 implements Interface55 {
 		local109.anInt3284 = 0;
 		local109.aByte100 = (byte) arg0;
 		local109.aByte99 = (byte) arg0;
-		if (client.aClass532_1.method30487(-1897195293).method30330(arg1, arg2, -662808309)) {
+		if (client.world.method30487(-1897195293).method30330(arg1, arg2, -662808309)) {
 			local109.aByte99++;
 		}
-		client.aClass532_1.method30481(-1861143396).method31484(arg0, arg1, arg2, local274, local109, (short) 4365);
+		client.world.method30481(-1861143396).method31484(arg0, arg1, arg2, local274, local109, (short) 4365);
 	}
 
 	@OriginalMember(owner = "client!qv", name = "aef", descriptor = "(Lclient!yf;I)V", line = 10387)

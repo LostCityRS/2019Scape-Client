@@ -33,7 +33,7 @@ public class Class613 implements Interface75 {
 
 	@OriginalMember(owner = "client!vg", name = "n", descriptor = "()I", line = 22)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt5627 * 919563995;
 	}
 
@@ -59,9 +59,9 @@ public class Class613 implements Interface75 {
 		@Pc(23) int local23 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 1];
 		@Pc(29) Class87 local29 = (Class87) Class124.aClass32_Sub21_7.method18261(local23, -1030967057);
 		if (local29.method1511(1429228259)) {
-			arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = ((Class610) client.aClass532_1.method30496(1139320094).method18261(local13, -1722652423)).method32000(local23, local29.aString11, (byte) 79);
+			arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = ((Class610) client.world.method30496(1139320094).method18261(local13, -1722652423)).method32000(local23, local29.aString11, (byte) 79);
 		} else {
-			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = ((Class610) client.aClass532_1.method30496(2034848841).method18261(local13, 334707401)).method31997(local23, local29.anInt265 * 951920133, 1072417041);
+			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = ((Class610) client.world.method30496(2034848841).method18261(local13, 334707401)).method31997(local23, local29.anInt265 * 951920133, 1072417041);
 		}
 	}
 
@@ -76,7 +76,7 @@ public class Class613 implements Interface75 {
 
 	@OriginalMember(owner = "client!vg", name = "azh", descriptor = "(Lclient!yf;B)V", line = 14189)
 	static final void method32063(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub4_1.method15424((byte) 0) ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub4_1.method15424((byte) 0) ? 1 : 0;
 	}
 
 	@OriginalMember(owner = "client!vg", name = "bcr", descriptor = "(Lclient!yf;I)V", line = 14663)

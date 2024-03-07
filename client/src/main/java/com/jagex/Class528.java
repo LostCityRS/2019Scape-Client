@@ -25,7 +25,7 @@ public class Class528 {
 		this.anInt5229 = ((int) (Math.random() * 4.0D) + 32) * -1583350643;
 		this.anInt5227 = ((int) (Math.random() * 2.0D) + 3) * -490271159;
 		this.anInt5228 = ((int) (Math.random() * 3.0D) + 16) * 1327867683;
-		if (Class51.aClass93_Sub36_1.aClass166_Sub14_1.method15656(-1287736392) == 1) {
+		if (Class51.options.aClass166_Sub14_1.method15656(-1287736392) == 1) {
 			this.anInt5226 = (int) (Math.random() * 6.0D) * -1838044391;
 		} else {
 			this.anInt5226 = (int) (Math.random() * 12.0D) * -1838044391;

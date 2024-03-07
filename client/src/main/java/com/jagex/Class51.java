@@ -153,7 +153,7 @@ public class Class51 {
 	public static Class32_Sub9 aClass32_Sub9_1;
 
 	@OriginalMember(owner = "client!ac", name = "dz", descriptor = "Lclient!ali;")
-	public static Class93_Sub36 aClass93_Sub36_1;
+	public static Class93_Sub36 options;
 
 	@OriginalMember(owner = "client!ac", name = "<init>", descriptor = "()V", line = 145)
 	Class51() throws Throwable {

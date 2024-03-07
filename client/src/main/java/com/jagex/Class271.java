@@ -59,13 +59,13 @@ class Class271 implements Interface39 {
 	@OriginalMember(owner = "client!fp", name = "e", descriptor = "(I)F", line = 482)
 	@Override
 	public float method26345(@OriginalArg(0) int arg0) {
-		return (float) Class51.aClass93_Sub36_1.aClass166_Sub35_5.method16226(-1130756527) / 255.0F;
+		return (float) Class51.options.aClass166_Sub35_5.method16226(-1130756527) / 255.0F;
 	}
 
 	@OriginalMember(owner = "client!fp", name = "n", descriptor = "()F", line = 482)
 	@Override
 	public float method26346() {
-		return (float) Class51.aClass93_Sub36_1.aClass166_Sub35_5.method16226(-142344880) / 255.0F;
+		return (float) Class51.options.aClass166_Sub35_5.method16226(-142344880) / 255.0F;
 	}
 
 	@OriginalMember(owner = "client!fp", name = "ir", descriptor = "(IIIII)V", line = 6229)
@@ -101,6 +101,6 @@ class Class271 implements Interface39 {
 
 	@OriginalMember(owner = "client!fp", name = "ayn", descriptor = "(Lclient!yf;B)V", line = 13980)
 	static final void method26307(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class278.anInt3888 * 715531683;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class278.userLastLoginDay * 715531683;
 	}
 }

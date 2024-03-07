@@ -59,8 +59,8 @@ public class Class3 {
 
 	@OriginalMember(owner = "client!aaa", name = "f", descriptor = "(B)V", line = 140)
 	public static final void method22(@OriginalArg(0) byte arg0) {
-		if (Class411.anInt4721 * 327612781 != 7) {
-			Class411.aClass175_3.method24367((byte) 47);
+		if (Class411.step * 327612781 != 7) {
+			Class411.connection.close((byte) 47);
 			Class594.method31724(1712001575);
 			Class680.method33240(1418060216);
 		}

@@ -57,7 +57,7 @@ public final class Class239 {
 		if (!this.aBoolean662) {
 			this.aBoolean662 = true;
 			if (this.anInt3823 * -376320861 >= 0) {
-				this.aClass132_Sub1_Sub1_Sub1_Sub1_2 = new Class132_Sub1_Sub1_Sub1_Sub1(client.aClass532_1.method30481(-1677262342), 25);
+				this.aClass132_Sub1_Sub1_Sub1_Sub1_2 = new Class132_Sub1_Sub1_Sub1_Sub1(client.world.method30481(-1677262342), 25);
 				this.aClass132_Sub1_Sub1_Sub1_Sub1_2.anInt2768 = this.anInt3822 * 718421009;
 				this.aClass132_Sub1_Sub1_Sub1_Sub1_2.anInt2786 = client.anInt3485 * 632844529;
 				this.aClass132_Sub1_Sub1_Sub1_Sub1_2.method18594((Class336) Class162.aClass32_Sub3_2.method18261(this.anInt3823 * -376320861, -487793701), 1486115803);
@@ -65,7 +65,7 @@ public final class Class239 {
 				this.aClass132_Sub1_Sub1_Sub1_Sub1_2.anInt2788 = (this.aClass132_Sub1_Sub1_Sub1_Sub1_2.aClass336_1.anInt4165 * 295553787 << 3) * 723489705;
 				this.aClass132_Sub1_Sub1_Sub1_Sub1_2.anInt2766 = ((Class249.anInt3840 += -1432082549) * -1421948893 - 1) * 1501413983;
 			} else {
-				this.aClass132_Sub1_Sub1_Sub1_Sub2_2 = new Class132_Sub1_Sub1_Sub1_Sub2(client.aClass532_1.method30481(-1436025319), 25);
+				this.aClass132_Sub1_Sub1_Sub1_Sub2_2 = new Class132_Sub1_Sub1_Sub1_Sub2(client.world.method30481(-1436025319), 25);
 				this.aClass132_Sub1_Sub1_Sub1_Sub2_2.method20052(Class36.aPacket_1, 2031771916);
 				this.aClass132_Sub1_Sub1_Sub1_Sub2_2.anInt2768 = this.anInt3822 * 718421009;
 				this.aClass132_Sub1_Sub1_Sub1_Sub2_2.anInt2786 = client.anInt3485 * 632844529;
@@ -87,7 +87,7 @@ public final class Class239 {
 		if (!this.aBoolean662) {
 			this.aBoolean662 = true;
 			if (this.anInt3823 * -376320861 >= 0) {
-				this.aClass132_Sub1_Sub1_Sub1_Sub1_2 = new Class132_Sub1_Sub1_Sub1_Sub1(client.aClass532_1.method30481(-1748089856), 25);
+				this.aClass132_Sub1_Sub1_Sub1_Sub1_2 = new Class132_Sub1_Sub1_Sub1_Sub1(client.world.method30481(-1748089856), 25);
 				this.aClass132_Sub1_Sub1_Sub1_Sub1_2.anInt2768 = this.anInt3822 * 718421009;
 				this.aClass132_Sub1_Sub1_Sub1_Sub1_2.anInt2786 = client.anInt3485 * 632844529;
 				this.aClass132_Sub1_Sub1_Sub1_Sub1_2.method18594((Class336) Class162.aClass32_Sub3_2.method18261(this.anInt3823 * -376320861, -1194506055), -454667111);
@@ -95,7 +95,7 @@ public final class Class239 {
 				this.aClass132_Sub1_Sub1_Sub1_Sub1_2.anInt2788 = (this.aClass132_Sub1_Sub1_Sub1_Sub1_2.aClass336_1.anInt4165 * 295553787 << 3) * 723489705;
 				this.aClass132_Sub1_Sub1_Sub1_Sub1_2.anInt2766 = ((Class249.anInt3840 += -1432082549) * -1421948893 - 1) * 1501413983;
 			} else {
-				this.aClass132_Sub1_Sub1_Sub1_Sub2_2 = new Class132_Sub1_Sub1_Sub1_Sub2(client.aClass532_1.method30481(-1551032622), 25);
+				this.aClass132_Sub1_Sub1_Sub1_Sub2_2 = new Class132_Sub1_Sub1_Sub1_Sub2(client.world.method30481(-1551032622), 25);
 				this.aClass132_Sub1_Sub1_Sub1_Sub2_2.method20052(Class36.aPacket_1, 2125155458);
 				this.aClass132_Sub1_Sub1_Sub1_Sub2_2.anInt2768 = this.anInt3822 * 718421009;
 				this.aClass132_Sub1_Sub1_Sub1_Sub2_2.anInt2786 = client.anInt3485 * 632844529;
@@ -117,7 +117,7 @@ public final class Class239 {
 		if (!this.aBoolean662) {
 			this.aBoolean662 = true;
 			if (this.anInt3823 * -376320861 >= 0) {
-				this.aClass132_Sub1_Sub1_Sub1_Sub1_2 = new Class132_Sub1_Sub1_Sub1_Sub1(client.aClass532_1.method30481(-944034311), 25);
+				this.aClass132_Sub1_Sub1_Sub1_Sub1_2 = new Class132_Sub1_Sub1_Sub1_Sub1(client.world.method30481(-944034311), 25);
 				this.aClass132_Sub1_Sub1_Sub1_Sub1_2.anInt2768 = this.anInt3822 * 718421009;
 				this.aClass132_Sub1_Sub1_Sub1_Sub1_2.anInt2786 = client.anInt3485 * 632844529;
 				this.aClass132_Sub1_Sub1_Sub1_Sub1_2.method18594((Class336) Class162.aClass32_Sub3_2.method18261(this.anInt3823 * -376320861, -1809746076), -945067991);
@@ -125,7 +125,7 @@ public final class Class239 {
 				this.aClass132_Sub1_Sub1_Sub1_Sub1_2.anInt2788 = (this.aClass132_Sub1_Sub1_Sub1_Sub1_2.aClass336_1.anInt4165 * 295553787 << 3) * 723489705;
 				this.aClass132_Sub1_Sub1_Sub1_Sub1_2.anInt2766 = ((Class249.anInt3840 += -1432082549) * -1421948893 - 1) * 1501413983;
 			} else {
-				this.aClass132_Sub1_Sub1_Sub1_Sub2_2 = new Class132_Sub1_Sub1_Sub1_Sub2(client.aClass532_1.method30481(-1678184848), 25);
+				this.aClass132_Sub1_Sub1_Sub1_Sub2_2 = new Class132_Sub1_Sub1_Sub1_Sub2(client.world.method30481(-1678184848), 25);
 				this.aClass132_Sub1_Sub1_Sub1_Sub2_2.method20052(Class36.aPacket_1, 1881477473);
 				this.aClass132_Sub1_Sub1_Sub1_Sub2_2.anInt2768 = this.anInt3822 * 718421009;
 				this.aClass132_Sub1_Sub1_Sub1_Sub2_2.anInt2786 = client.anInt3485 * 632844529;
@@ -313,6 +313,6 @@ public final class Class239 {
 
 	@OriginalMember(owner = "client!ea", name = "apf", descriptor = "(Lclient!yf;I)V", line = 12762)
 	static final void method25825(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class411.anInt4757 * 873638739;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class411.banDuration * 873638739;
 	}
 }

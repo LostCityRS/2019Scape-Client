@@ -57,6 +57,6 @@ public class Class373 {
 	@OriginalMember(owner = "client!kb", name = "bak", descriptor = "(Lclient!yf;I)V", line = 14315)
 	static final void method28024(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub2_1.method16546(local12, -628091418);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub2_1.method16546(local12, -628091418);
 	}
 }

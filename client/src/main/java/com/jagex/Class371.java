@@ -54,7 +54,7 @@ public class Class371 {
 				local4.method23969(-386141128);
 			} else {
 				local4.aBoolean308 = true;
-				if (local4.anInt1462 * -1824529811 >= 0 && local4.anInt1464 * 275343381 >= 0 && local4.anInt1462 * -1824529811 < client.aClass532_1.method30459(1941313512) && local4.anInt1464 * 275343381 < client.aClass532_1.method30466((short) 128)) {
+				if (local4.anInt1462 * -1824529811 >= 0 && local4.anInt1464 * 275343381 >= 0 && local4.anInt1462 * -1824529811 < client.world.method30459(1941313512) && local4.anInt1464 * 275343381 < client.world.method30466((short) 128)) {
 					Class593.method31714(local4, (byte) 91);
 				}
 			}

@@ -217,10 +217,10 @@ public class Class695 {
 	@OriginalMember(owner = "client!yw", name = "ahy", descriptor = "(Lclient!yf;S)V", line = 11199)
 	static final void method36640(@OriginalArg(0) Class681 arg0, @OriginalArg(1) short arg1) {
 		@Pc(9) String local9;
-		if (Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3 == null || Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aString81 == null) {
+		if (Class520.selfPlayer == null || Class520.selfPlayer.name1 == null) {
 			local9 = "";
 		} else {
-			local9 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.method20069(true, (byte) -71);
+			local9 = Class520.selfPlayer.method20069(true, (byte) -71);
 		}
 		arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = local9;
 	}

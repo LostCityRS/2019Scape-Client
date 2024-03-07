@@ -24,9 +24,9 @@ public class Class75 {
 		if (aBoolean31) {
 			return;
 		}
-		Class277.method26353(client.aClass532_1.method30481(-1472658235).aClass572ArrayArrayArray1, 2010590815);
-		if (client.aClass532_1.method30481(-1813439572).aClass572ArrayArrayArray2 != null) {
-			Class277.method26353(client.aClass532_1.method30481(-2000392838).aClass572ArrayArrayArray2, 1088151341);
+		Class277.method26353(client.world.method30481(-1472658235).aClass572ArrayArrayArray1, 2010590815);
+		if (client.world.method30481(-1813439572).aClass572ArrayArrayArray2 != null) {
+			Class277.method26353(client.world.method30481(-2000392838).aClass572ArrayArrayArray2, 1088151341);
 		}
 		aBoolean31 = true;
 	}

@@ -675,7 +675,7 @@ public final class Class593 {
 
 	@OriginalMember(owner = "client!uf", name = "k", descriptor = "(Lclient!ajt;B)V", line = 113)
 	static final void method31714(@OriginalArg(0) Class93_Sub8 arg0, @OriginalArg(1) byte arg1) {
-		@Pc(3) Class585 local3 = client.aClass532_1.method30481(-1276251391);
+		@Pc(3) Class585 local3 = client.world.method30481(-1276251391);
 		if (local3 == null) {
 			return;
 		}
@@ -714,7 +714,7 @@ public final class Class593 {
 		}
 		@Pc(7) Class5 local7 = Class142_Sub1.method10971((byte) 11);
 		if (!Class454.aBoolean773) {
-			Class454.aBoolean772 = Class454.anInt5056 * 755390299 != -1 && Class454.anInt5042 * -1838307953 >= Class454.anInt5056 * 755390299 || (Class454.aBoolean774 ? 26 : 22) + Class454.anInt5036 * -875883057 * Class454.anInt5042 * -1838307953 > Class553.anInt3416 * 2091353777;
+			Class454.aBoolean772 = Class454.anInt5056 * 755390299 != -1 && Class454.anInt5042 * -1838307953 >= Class454.anInt5056 * 755390299 || (Class454.aBoolean774 ? 26 : 22) + Class454.anInt5036 * -875883057 * Class454.anInt5042 * -1838307953 > Class553.height * 2091353777;
 		}
 		Class454.aClass22_54.method405(-2037259486);
 		Class454.aClass22_56.method405(-2037259486);
@@ -960,13 +960,13 @@ public final class Class593 {
 
 	@OriginalMember(owner = "client!uf", name = "gh", descriptor = "(S)V", line = 3808)
 	static final void method31718(@OriginalArg(0) short arg0) {
-		@Pc(3) Class611 local3 = client.aClass532_1.method30455(2040681733);
+		@Pc(3) Class611 local3 = client.world.method30455(2040681733);
 		@Pc(7) Class472 local7 = Class65.aClass123_Sub1_2.method9025(300515238);
 		Class163.anInt2002 = ((int) local7.aFloat317 - (local3.anInt5623 * 270611681 << 9)) * 1636217271;
 		Class130_Sub2.anInt1117 = -((int) local7.aFloat318) * 1820517185;
 		Class270.anInt3884 = ((int) local7.aFloat319 - (local3.anInt5624 * -1994307635 << 9)) * -967471741;
 		Class620.anInt5644 = ((int) ((double) Class65.aClass123_Sub1_2.method9040((byte) 72) * 2607.5945876176133D) & 0x3FFF) * -1151839067;
-		Class24.anInt82 = ((int) ((double) Class65.aClass123_Sub1_2.method9042((byte) -126) * 2607.5945876176133D) & 0x3FFF) * 1056124373;
+		IsaacRandom.anInt82 = ((int) ((double) Class65.aClass123_Sub1_2.method9042((byte) -126) * 2607.5945876176133D) & 0x3FFF) * 1056124373;
 		Class348.anInt4199 = 0;
 	}
 

@@ -86,12 +86,12 @@ public class Class225 {
 			return;
 		}
 		if (Class411.anInt4746 * 276097583 != arg0) {
-			Class411.aLong271 = -7033311592096984251L;
+			Class411.ssoKeyIdentifier = -7033311592096984251L;
 		}
 		Class411.anInt4746 = arg0 * 48143567;
 		Class411.aString199 = arg1;
 		Class411.aBoolean751 = arg2;
-		Class481.method29756(7, 1823202236);
+		Class481.setState(7, 1823202236);
 	}
 
 	@OriginalMember(owner = "client!df", name = "ag", descriptor = "(III)V", line = 177)

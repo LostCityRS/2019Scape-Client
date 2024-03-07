@@ -16,7 +16,7 @@ public final class Class113_Sub1 extends Class113 {
 	static final int anInt864 = 1;
 
 	@OriginalMember(owner = "client!afu", name = "jz", descriptor = "I")
-	static int anInt866;
+	static int zoneUpdateX;
 
 	@OriginalMember(owner = "client!afu", name = "u", descriptor = "[Lclient!on;")
 	Class466[] aClass466Array1;
@@ -462,10 +462,10 @@ public final class Class113_Sub1 extends Class113 {
 
 	@OriginalMember(owner = "client!afu", name = "u", descriptor = "(II)V", line = 115)
 	public static void method7418(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		if (client.anInt3435 * -849002901 == 0) {
-			@Pc(10) Class93_Sub22 local10 = Class102.method2588(Class446.aClass446_120, client.aClass175_1.aClass24_2, (byte) 7);
-			local10.aPacketBit_1.p1(arg0, (byte) -78);
-			client.aClass175_1.method24356(local10, -2112472349);
+		if (client.state * -849002901 == 0) {
+			@Pc(10) ClientMessage local10 = Class102.createGameMessage(ClientProt.aClientProt_120, client.aClass175_1.clientIsaac, (byte) 7);
+			local10.packet.p1(arg0, (byte) -78);
+			client.aClass175_1.send(local10, -2112472349);
 		}
 	}
 
@@ -662,25 +662,25 @@ public final class Class113_Sub1 extends Class113 {
 		if (local73.anInt3299 * 195575097 > 1200) {
 			return;
 		}
-		@Pc(86) Class93_Sub22 local86 = Class102.method2588(Class446.aClass446_53, local73.aClass24_2, (byte) 9);
-		local86.aPacketBit_1.p2(0, 2138201948);
-		local35 = local86.aPacketBit_1.pos * 212851357;
-		local86.aPacketBit_1.pos += -1445626955;
+		@Pc(86) ClientMessage local86 = Class102.createGameMessage(ClientProt.aClientProt_53, local73.clientIsaac, (byte) 9);
+		local86.packet.p2(0, 2138201948);
+		local35 = local86.packet.pos * 212851357;
+		local86.packet.pos += -1445626955;
 		while (this.anInt865 * -866505885 < this.aClass466Array1.length) {
 			@Pc(120) Class466 local120 = this.aClass466Array1[this.anInt865 * -866505885];
-			if (local86.aPacketBit_1.pos * 212851357 + local73.anInt3299 * 195575097 + Class72.aClass79_Sub1_Sub2_2.method1462(local120, (byte) 17) > 1500) {
+			if (local86.packet.pos * 212851357 + local73.anInt3299 * 195575097 + Class72.aClass79_Sub1_Sub2_2.method1462(local120, (byte) 17) > 1500) {
 				break;
 			}
-			Class72.aClass79_Sub1_Sub2_2.method1465(local86.aPacketBit_1, local120, 1803396975);
+			Class72.aClass79_Sub1_Sub2_2.method1465(local86.packet, local120, 1803396975);
 			this.anInt865 += -1626821045;
 		}
-		local86.aPacketBit_1.psize2(local86.aPacketBit_1.pos * 212851357 - local35, 810164877);
+		local86.packet.psize2(local86.packet.pos * 212851357 - local35, 810164877);
 		if (this.anInt865 * -866505885 >= this.aClass466Array1.length) {
-			local86.aPacketBit_1.data[local35] = 1;
+			local86.packet.data[local35] = 1;
 		} else {
-			local86.aPacketBit_1.data[local35] = 0;
+			local86.packet.data[local35] = 0;
 		}
-		local73.method24356(local86, -1435756525);
+		local73.send(local86, -1435756525);
 		this.aLong27 = (Class305.method26797(1428123275) + 1000L) * -1570658587136822319L;
 	}
 
@@ -712,25 +712,25 @@ public final class Class113_Sub1 extends Class113 {
 		if (local73.anInt3299 * 195575097 > 1200) {
 			return;
 		}
-		@Pc(86) Class93_Sub22 local86 = Class102.method2588(Class446.aClass446_53, local73.aClass24_2, (byte) 52);
-		local86.aPacketBit_1.p2(0, 2136273513);
-		local35 = local86.aPacketBit_1.pos * 212851357;
-		local86.aPacketBit_1.pos += -1445626955;
+		@Pc(86) ClientMessage local86 = Class102.createGameMessage(ClientProt.aClientProt_53, local73.clientIsaac, (byte) 52);
+		local86.packet.p2(0, 2136273513);
+		local35 = local86.packet.pos * 212851357;
+		local86.packet.pos += -1445626955;
 		while (this.anInt865 * -866505885 < this.aClass466Array1.length) {
 			@Pc(120) Class466 local120 = this.aClass466Array1[this.anInt865 * -866505885];
-			if (local86.aPacketBit_1.pos * 212851357 + local73.anInt3299 * 195575097 + Class72.aClass79_Sub1_Sub2_2.method1462(local120, (byte) 32) > 1500) {
+			if (local86.packet.pos * 212851357 + local73.anInt3299 * 195575097 + Class72.aClass79_Sub1_Sub2_2.method1462(local120, (byte) 32) > 1500) {
 				break;
 			}
-			Class72.aClass79_Sub1_Sub2_2.method1465(local86.aPacketBit_1, local120, 1411790795);
+			Class72.aClass79_Sub1_Sub2_2.method1465(local86.packet, local120, 1411790795);
 			this.anInt865 += -1626821045;
 		}
-		local86.aPacketBit_1.psize2(local86.aPacketBit_1.pos * 212851357 - local35, 1212927647);
+		local86.packet.psize2(local86.packet.pos * 212851357 - local35, 1212927647);
 		if (this.anInt865 * -866505885 >= this.aClass466Array1.length) {
-			local86.aPacketBit_1.data[local35] = 1;
+			local86.packet.data[local35] = 1;
 		} else {
-			local86.aPacketBit_1.data[local35] = 0;
+			local86.packet.data[local35] = 0;
 		}
-		local73.method24356(local86, -1784685613);
+		local73.send(local86, -1784685613);
 		this.aLong27 = (Class305.method26797(-336313948) + 1000L) * -1570658587136822319L;
 	}
 
@@ -762,25 +762,25 @@ public final class Class113_Sub1 extends Class113 {
 		if (local73.anInt3299 * 195575097 > 1200) {
 			return;
 		}
-		@Pc(86) Class93_Sub22 local86 = Class102.method2588(Class446.aClass446_53, local73.aClass24_2, (byte) 33);
-		local86.aPacketBit_1.p2(0, 2135477586);
-		local35 = local86.aPacketBit_1.pos * 212851357;
-		local86.aPacketBit_1.pos += -1445626955;
+		@Pc(86) ClientMessage local86 = Class102.createGameMessage(ClientProt.aClientProt_53, local73.clientIsaac, (byte) 33);
+		local86.packet.p2(0, 2135477586);
+		local35 = local86.packet.pos * 212851357;
+		local86.packet.pos += -1445626955;
 		while (this.anInt865 * -866505885 < this.aClass466Array1.length) {
 			@Pc(120) Class466 local120 = this.aClass466Array1[this.anInt865 * -866505885];
-			if (local86.aPacketBit_1.pos * 212851357 + local73.anInt3299 * 195575097 + Class72.aClass79_Sub1_Sub2_2.method1462(local120, (byte) -56) > 1500) {
+			if (local86.packet.pos * 212851357 + local73.anInt3299 * 195575097 + Class72.aClass79_Sub1_Sub2_2.method1462(local120, (byte) -56) > 1500) {
 				break;
 			}
-			Class72.aClass79_Sub1_Sub2_2.method1465(local86.aPacketBit_1, local120, 1530331711);
+			Class72.aClass79_Sub1_Sub2_2.method1465(local86.packet, local120, 1530331711);
 			this.anInt865 += -1626821045;
 		}
-		local86.aPacketBit_1.psize2(local86.aPacketBit_1.pos * 212851357 - local35, -1536370504);
+		local86.packet.psize2(local86.packet.pos * 212851357 - local35, -1536370504);
 		if (this.anInt865 * -866505885 >= this.aClass466Array1.length) {
-			local86.aPacketBit_1.data[local35] = 1;
+			local86.packet.data[local35] = 1;
 		} else {
-			local86.aPacketBit_1.data[local35] = 0;
+			local86.packet.data[local35] = 0;
 		}
-		local73.method24356(local86, -2102565645);
+		local73.send(local86, -2102565645);
 		this.aLong27 = (Class305.method26797(1556519612) + 1000L) * -1570658587136822319L;
 	}
 
@@ -812,25 +812,25 @@ public final class Class113_Sub1 extends Class113 {
 		if (local73.anInt3299 * 195575097 > 1200) {
 			return;
 		}
-		@Pc(86) Class93_Sub22 local86 = Class102.method2588(Class446.aClass446_53, local73.aClass24_2, (byte) 125);
-		local86.aPacketBit_1.p2(0, 2125731311);
-		local35 = local86.aPacketBit_1.pos * 212851357;
-		local86.aPacketBit_1.pos += -1445626955;
+		@Pc(86) ClientMessage local86 = Class102.createGameMessage(ClientProt.aClientProt_53, local73.clientIsaac, (byte) 125);
+		local86.packet.p2(0, 2125731311);
+		local35 = local86.packet.pos * 212851357;
+		local86.packet.pos += -1445626955;
 		while (this.anInt865 * -866505885 < this.aClass466Array1.length) {
 			@Pc(120) Class466 local120 = this.aClass466Array1[this.anInt865 * -866505885];
-			if (local86.aPacketBit_1.pos * 212851357 + local73.anInt3299 * 195575097 + Class72.aClass79_Sub1_Sub2_2.method1462(local120, (byte) 43) > 1500) {
+			if (local86.packet.pos * 212851357 + local73.anInt3299 * 195575097 + Class72.aClass79_Sub1_Sub2_2.method1462(local120, (byte) 43) > 1500) {
 				break;
 			}
-			Class72.aClass79_Sub1_Sub2_2.method1465(local86.aPacketBit_1, local120, 1548134889);
+			Class72.aClass79_Sub1_Sub2_2.method1465(local86.packet, local120, 1548134889);
 			this.anInt865 += -1626821045;
 		}
-		local86.aPacketBit_1.psize2(local86.aPacketBit_1.pos * 212851357 - local35, 1251982343);
+		local86.packet.psize2(local86.packet.pos * 212851357 - local35, 1251982343);
 		if (this.anInt865 * -866505885 >= this.aClass466Array1.length) {
-			local86.aPacketBit_1.data[local35] = 1;
+			local86.packet.data[local35] = 1;
 		} else {
-			local86.aPacketBit_1.data[local35] = 0;
+			local86.packet.data[local35] = 0;
 		}
-		local73.method24356(local86, -2068777433);
+		local73.send(local86, -2068777433);
 		this.aLong27 = (Class305.method26797(1109693824) + 1000L) * -1570658587136822319L;
 	}
 

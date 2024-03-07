@@ -202,8 +202,8 @@ public class Class640 {
 		arg0.anInt5891 -= -1915563430;
 		@Pc(13) int local13 = arg0.anIntArray519[arg0.anInt5891 * -1497248091];
 		@Pc(23) int local23 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 1];
-		if (Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aClass658_1 != null) {
-			Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aClass658_1.method32763(local13, local23, -130712985);
+		if (Class520.selfPlayer.aClass658_1 != null) {
+			Class520.selfPlayer.aClass658_1.method32763(local13, local23, -130712985);
 		}
 	}
 

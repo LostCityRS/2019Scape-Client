@@ -8,7 +8,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 public class Class108_Sub2 extends Class108 {
 
 	@OriginalMember(owner = "client!afv", name = "dl", descriptor = "Ljava/lang/String;")
-	public static String aString24;
+	public static String mapOwner;
 
 	@OriginalMember(owner = "client!afv", name = "<init>", descriptor = "(Lclient!qe;I)V", line = 9)
 	Class108_Sub2(@OriginalArg(0) Class138 arg0, @OriginalArg(1) int arg1) {
@@ -47,6 +47,6 @@ public class Class108_Sub2 extends Class108 {
 
 	@OriginalMember(owner = "client!afv", name = "xy", descriptor = "(Lclient!yf;I)V", line = 9118)
 	static final void method7452(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aClass523_7.method30365(1351361500);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class520.selfPlayer.aClass523_7.method30365(1351361500);
 	}
 }

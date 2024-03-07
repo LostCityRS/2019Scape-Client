@@ -10,7 +10,7 @@ import org.openrs2.deob.annotation.Pc;
 public class Class120 implements Interface23, Interface21, Interface71 {
 
 	@OriginalMember(owner = "client!ah", name = "dh", descriptor = "Lclient!q;")
-	public static Class499 aClass499_1;
+	public static Class499 userLastLoginHost;
 
 	@OriginalMember(owner = "client!ah", name = "us", descriptor = "J")
 	static long aLong32;
@@ -37,22 +37,22 @@ public class Class120 implements Interface23, Interface21, Interface71 {
 
 	@OriginalMember(owner = "client!ah", name = "e", descriptor = "(IB)I", line = 29)
 	public int method8655(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1) {
-		return this.aClass675Array1[arg0].method33138(client.aBoolean620 ? Class718.aClass718_1 : Class718.aClass718_2, (byte) 11);
+		return this.aClass675Array1[arg0].method33138(client.mapMember ? Class718.aClass718_1 : Class718.aClass718_2, (byte) 11);
 	}
 
 	@OriginalMember(owner = "client!ah", name = "p", descriptor = "(I)I", line = 29)
 	public int method8656(@OriginalArg(0) int arg0) {
-		return this.aClass675Array1[arg0].method33138(client.aBoolean620 ? Class718.aClass718_1 : Class718.aClass718_2, (byte) -15);
+		return this.aClass675Array1[arg0].method33138(client.mapMember ? Class718.aClass718_1 : Class718.aClass718_2, (byte) -15);
 	}
 
 	@OriginalMember(owner = "client!ah", name = "d", descriptor = "(I)I", line = 29)
 	public int method8657(@OriginalArg(0) int arg0) {
-		return this.aClass675Array1[arg0].method33138(client.aBoolean620 ? Class718.aClass718_1 : Class718.aClass718_2, (byte) 14);
+		return this.aClass675Array1[arg0].method33138(client.mapMember ? Class718.aClass718_1 : Class718.aClass718_2, (byte) 14);
 	}
 
 	@OriginalMember(owner = "client!ah", name = "c", descriptor = "(I)I", line = 29)
 	public int method8658(@OriginalArg(0) int arg0) {
-		return this.aClass675Array1[arg0].method33138(client.aBoolean620 ? Class718.aClass718_1 : Class718.aClass718_2, (byte) -47);
+		return this.aClass675Array1[arg0].method33138(client.mapMember ? Class718.aClass718_1 : Class718.aClass718_2, (byte) -47);
 	}
 
 	@OriginalMember(owner = "client!ah", name = "r", descriptor = "(I)I", line = 33)
@@ -78,19 +78,19 @@ public class Class120 implements Interface23, Interface21, Interface71 {
 	@OriginalMember(owner = "client!ah", name = "m", descriptor = "(II)I", line = 37)
 	@Override
 	public int method8654(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		return this.aClass675Array1[arg0].method33151(client.aBoolean620 ? Class718.aClass718_1 : Class718.aClass718_2, (byte) 72);
+		return this.aClass675Array1[arg0].method33151(client.mapMember ? Class718.aClass718_1 : Class718.aClass718_2, (byte) 72);
 	}
 
 	@OriginalMember(owner = "client!ah", name = "s", descriptor = "(I)I", line = 37)
 	@Override
 	public int method8652(@OriginalArg(0) int arg0) {
-		return this.aClass675Array1[arg0].method33151(client.aBoolean620 ? Class718.aClass718_1 : Class718.aClass718_2, (byte) 12);
+		return this.aClass675Array1[arg0].method33151(client.mapMember ? Class718.aClass718_1 : Class718.aClass718_2, (byte) 12);
 	}
 
 	@OriginalMember(owner = "client!ah", name = "y", descriptor = "(I)I", line = 37)
 	@Override
 	public int method8653(@OriginalArg(0) int arg0) {
-		return this.aClass675Array1[arg0].method33151(client.aBoolean620 ? Class718.aClass718_1 : Class718.aClass718_2, (byte) 57);
+		return this.aClass675Array1[arg0].method33151(client.mapMember ? Class718.aClass718_1 : Class718.aClass718_2, (byte) 57);
 	}
 
 	@OriginalMember(owner = "client!ah", name = "k", descriptor = "(II)I", line = 41)

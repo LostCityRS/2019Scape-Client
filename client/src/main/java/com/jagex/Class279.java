@@ -694,7 +694,7 @@ public class Class279 {
 
 	@OriginalMember(owner = "client!fy", name = "ic", descriptor = "(IB)V", line = 9614)
 	static final void method26448(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1) {
-		@Pc(2) PacketBit local2 = client.aClass175_2.aPacketBit_2;
+		@Pc(2) PacketBit local2 = client.aClass175_2.packet;
 		while (local2.bitsAvailable(client.aClass175_2.length * 2010044839, 1313572448) >= 15) {
 			@Pc(17) int local17 = local2.gBit(15, 1227115599);
 			if (local17 == 32767) {
@@ -704,7 +704,7 @@ public class Class279 {
 			@Pc(29) Class93_Sub15 local29 = (Class93_Sub15) client.aClass16_18.method214((long) local17);
 			@Pc(38) Class132_Sub1_Sub1_Sub1_Sub1 local38;
 			if (local29 == null) {
-				local38 = new Class132_Sub1_Sub1_Sub1_Sub1(client.aClass532_1.method30481(-2038432393));
+				local38 = new Class132_Sub1_Sub1_Sub1_Sub1(client.world.method30481(-2038432393));
 				local38.anInt2768 = local17 * 171759809;
 				local29 = new Class93_Sub15(local38);
 				client.aClass16_18.method220(local29, (long) local17);
@@ -738,7 +738,7 @@ public class Class279 {
 			if (local23) {
 				local38.method19953(local172, true, 1006106775);
 			}
-			local38.method18606(local105, Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anIntArray240[0] + local177, Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anIntArray239[0] + local110, local161 == 1, local38.method19986(-1066476941), (byte) -95);
+			local38.method18606(local105, Class520.selfPlayer.anIntArray240[0] + local177, Class520.selfPlayer.anIntArray239[0] + local110, local161 == 1, local38.method19986(-1066476941), (byte) -95);
 			if (local38.aClass336_1.method27441((short) -2741)) {
 				Class643.method32582(local38.aByte100, local38.anIntArray240[0], local38.anIntArray239[0], 0, null, local38, null, 694869299);
 			}

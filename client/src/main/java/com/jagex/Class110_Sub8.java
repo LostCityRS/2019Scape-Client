@@ -76,7 +76,7 @@ public class Class110_Sub8 extends Class110 {
 	@OriginalMember(owner = "client!age", name = "ie", descriptor = "(Lclient!hf;Lclient!hq;Lclient!yf;S)V", line = 6491)
 	static final void method7959(@OriginalArg(0) Class312 arg0, @OriginalArg(1) Class320 arg1, @OriginalArg(2) Class681 arg2, @OriginalArg(3) short arg3) {
 		arg0.anInt4001 = -2003331097;
-		arg0.anInt4037 = client.anInt3513 * 1786756713;
+		arg0.anInt4037 = client.selfPlayerSlot * 1786756713;
 		arg0.anInt4038 = 0;
 		if (arg0.anInt3970 * 532402067 == -1 && !arg1.aBoolean708) {
 			Class124_Sub3_Sub1.method19766(arg0.anInt3953 * -1549590237, 256284111);

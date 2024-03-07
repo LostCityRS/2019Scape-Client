@@ -66,7 +66,7 @@ public class Class73 implements Interface75 {
 
 	@OriginalMember(owner = "client!acx", name = "n", descriptor = "()I", line = 27)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt242 * 2146579763;
 	}
 

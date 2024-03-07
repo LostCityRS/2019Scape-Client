@@ -25,8 +25,8 @@ public class Class93_Sub3 extends Class93 {
 
 	@OriginalMember(owner = "client!ajf", name = "v", descriptor = "(Ljava/lang/String;Ljava/lang/String;B)Z", line = 214)
 	static boolean method11813(@OriginalArg(0) String arg0, @OriginalArg(1) String arg1, @OriginalArg(2) byte arg2) {
-		Class411.anInt4714 = 1757895756;
-		Class411.aClass175_3 = client.aClass175_1;
+		Class411.target = 1757895756;
+		Class411.connection = client.aClass175_1;
 		return Class507.method30229(false, false, arg0, arg1, -1L);
 	}
 

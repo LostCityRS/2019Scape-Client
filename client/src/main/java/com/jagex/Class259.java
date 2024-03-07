@@ -20,13 +20,13 @@ class Class259 implements Interface39 {
 	@OriginalMember(owner = "client!fc", name = "e", descriptor = "(I)F", line = 477)
 	@Override
 	public float method26345(@OriginalArg(0) int arg0) {
-		return (float) Class51.aClass93_Sub36_1.aClass166_Sub35_4.method16226(574500123) / 255.0F;
+		return (float) Class51.options.aClass166_Sub35_4.method16226(574500123) / 255.0F;
 	}
 
 	@OriginalMember(owner = "client!fc", name = "n", descriptor = "()F", line = 477)
 	@Override
 	public float method26346() {
-		return (float) Class51.aClass93_Sub36_1.aClass166_Sub35_4.method16226(1170062514) / 255.0F;
+		return (float) Class51.options.aClass166_Sub35_4.method16226(1170062514) / 255.0F;
 	}
 
 	@OriginalMember(owner = "client!fc", name = "att", descriptor = "(Lclient!yf;B)V", line = 13237)

@@ -61,7 +61,7 @@ public class Class706 implements Interface75 {
 
 	@OriginalMember(owner = "client!zi", name = "n", descriptor = "()I", line = 29)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt5956 * -841213291;
 	}
 

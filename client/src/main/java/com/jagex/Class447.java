@@ -59,7 +59,7 @@ public class Class447 {
 	}
 
 	@OriginalMember(owner = "client!ns", name = "e", descriptor = "(B)Ljava/lang/String;", line = 41)
-	public String method28900(@OriginalArg(0) byte arg0) {
+	public String getName(@OriginalArg(0) byte arg0) {
 		return "_" + this.anInt4953 * -767074855;
 	}
 
@@ -70,37 +70,37 @@ public class Class447 {
 
 	@OriginalMember(owner = "client!ns", name = "u", descriptor = "([Ljava/lang/Object;)Ljava/lang/Object;", line = 45)
 	public Object method28902(@OriginalArg(0) Object[] arg0) throws Throwable {
-		return Class70.method1238(Class32_Sub10.anApplet2, this.method28900((byte) -58), arg0, -946348026);
+		return Class70.method1238(Class32_Sub10.applet, this.getName((byte) -58), arg0, -946348026);
 	}
 
 	@OriginalMember(owner = "client!ns", name = "z", descriptor = "([Ljava/lang/Object;)Ljava/lang/Object;", line = 45)
 	public Object method28903(@OriginalArg(0) Object[] arg0) throws Throwable {
-		return Class70.method1238(Class32_Sub10.anApplet2, this.method28900((byte) -18), arg0, -1421675881);
+		return Class70.method1238(Class32_Sub10.applet, this.getName((byte) -18), arg0, -1421675881);
 	}
 
 	@OriginalMember(owner = "client!ns", name = "n", descriptor = "([Ljava/lang/Object;I)Ljava/lang/Object;", line = 45)
 	public Object method28904(@OriginalArg(0) Object[] arg0, @OriginalArg(1) int arg1) throws Throwable {
-		return Class70.method1238(Class32_Sub10.anApplet2, this.method28900((byte) -26), arg0, -477969301);
+		return Class70.method1238(Class32_Sub10.applet, this.getName((byte) -26), arg0, -477969301);
 	}
 
 	@OriginalMember(owner = "client!ns", name = "l", descriptor = "([Ljava/lang/Object;)Ljava/lang/Object;", line = 45)
 	public Object method28905(@OriginalArg(0) Object[] arg0) throws Throwable {
-		return Class70.method1238(Class32_Sub10.anApplet2, this.method28900((byte) -26), arg0, -1552428073);
+		return Class70.method1238(Class32_Sub10.applet, this.getName((byte) -26), arg0, -1552428073);
 	}
 
 	@OriginalMember(owner = "client!ns", name = "m", descriptor = "(S)Ljava/lang/Object;", line = 49)
 	public Object method28906(@OriginalArg(0) short arg0) throws Throwable {
-		return Class70.method1237(Class32_Sub10.anApplet2, this.method28900((byte) -42), 2105786931);
+		return Class70.method1237(Class32_Sub10.applet, this.getName((byte) -42), 2105786931);
 	}
 
 	@OriginalMember(owner = "client!ns", name = "p", descriptor = "()Ljava/lang/Object;", line = 49)
 	public Object method28907() throws Throwable {
-		return Class70.method1237(Class32_Sub10.anApplet2, this.method28900((byte) -57), 1992977010);
+		return Class70.method1237(Class32_Sub10.applet, this.getName((byte) -57), 1992977010);
 	}
 
 	@OriginalMember(owner = "client!ns", name = "d", descriptor = "()Ljava/lang/Object;", line = 49)
 	public Object method28908() throws Throwable {
-		return Class70.method1237(Class32_Sub10.anApplet2, this.method28900((byte) -71), 1770799661);
+		return Class70.method1237(Class32_Sub10.applet, this.getName((byte) -71), 1770799661);
 	}
 
 	@OriginalMember(owner = "client!ns", name = "c", descriptor = "([Ljava/lang/Object;)V", line = 54)

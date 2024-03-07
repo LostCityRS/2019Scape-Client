@@ -206,17 +206,17 @@ class Class277 implements Interface58 {
 			return;
 		}
 		try {
-			@Pc(9) String local9 = Class32_Sub10.anApplet2.getParameter(Class461.aClass461_26.aString211);
+			@Pc(9) String local9 = Class32_Sub10.applet.getParameter(Class461.aClass461_26.aString211);
 			@Pc(17) int local17 = (int) (Class305.method26797(1236000300) / 86400000L) - 11745;
 			@Pc(30) String local30 = "usrdob=" + local17 + "; version=1; path=/; domain=" + local9;
-			Class70.method1230(Class32_Sub10.anApplet2, "document.cookie=\"" + local30 + "\"", (byte) -68);
+			Class70.method1230(Class32_Sub10.applet, "document.cookie=\"" + local30 + "\"", (byte) -68);
 		} catch (@Pc(45) Throwable local45) {
 		}
 	}
 
 	@OriginalMember(owner = "client!fw", name = "mq", descriptor = "(I)V", line = 12487)
 	static void method26360(@OriginalArg(0) int arg0) {
-		if (Class280.aClass693_1 != Class693.aClass693_12) {
+		if (Class280.modeWhere != ModeWhere.LOCAL) {
 			Class447.aClass447_13.method28913(-2042335748);
 		}
 	}

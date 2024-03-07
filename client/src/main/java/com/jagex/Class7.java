@@ -449,8 +449,8 @@ public class Class7 {
 
 	@OriginalMember(owner = "client!aae", name = "ard", descriptor = "(Lclient!yf;I)V", line = 13036)
 	static final void method123(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub8_1, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], (byte) 71);
-		client.aClass532_1.method30533((byte) 0);
+		Class51.options.method14363(Class51.options.aClass166_Sub8_1, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], (byte) 71);
+		client.world.method30533((byte) 0);
 		Class106_Sub1.method5135(300192766);
 		client.aBoolean601 = false;
 	}

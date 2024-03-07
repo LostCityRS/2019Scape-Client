@@ -60,7 +60,7 @@ public class Class545 {
 
 	@OriginalMember(owner = "client!sb", name = "ayw", descriptor = "(Lclient!yf;I)V", line = 14113)
 	static final void method30960(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		if (client.aBoolean632) {
+		if (client.javascript) {
 			Class447.aClass447_7.method28913(-2005443579);
 		}
 	}

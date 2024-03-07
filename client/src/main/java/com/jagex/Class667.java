@@ -279,9 +279,9 @@ public class Class667 {
 	}
 
 	@OriginalMember(owner = "client!xq", name = "k", descriptor = "(I)V", line = 72)
-	public static void method32907(@OriginalArg(0) int arg0) {
-		if (Class94.aClass28_7.anInt101 * 2142901097 != -1) {
-			Class624.method32156(Class94.aClass28_7.anInt101 * 2142901097, Class94.aClass28_7.aString4, Class94.aClass28_7.anInt100 * 721448659, Class94.aClass28_7.anInt99 * -1815897519, -1945788417);
+	public static void autoWorld(@OriginalArg(0) int arg0) {
+		if (Class94.mapWorld.id * 2142901097 != -1) {
+			Class624.method32156(Class94.mapWorld.id * 2142901097, Class94.mapWorld.host, Class94.mapWorld.port1 * 721448659, Class94.mapWorld.port2 * -1815897519, -1945788417);
 		}
 	}
 

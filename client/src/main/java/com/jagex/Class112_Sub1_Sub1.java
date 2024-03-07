@@ -289,7 +289,7 @@ public class Class112_Sub1_Sub1 extends Class112_Sub1 {
 			local5 = this.aClass180_1.aFloatArray91;
 			local7 = this.aClass104_Sub3_10.aFloatArray20;
 		}
-		Class446.method28895(this.anInt2494 * 335394069, this.aClass104_Sub3_10.anInt719 * 1808307287, local1, local3, local5, local7, arg0, arg1, arg4, arg5, arg2, arg3, -668959189);
+		ClientProt.method28895(this.anInt2494 * 335394069, this.aClass104_Sub3_10.anInt719 * 1808307287, local1, local3, local5, local7, arg0, arg1, arg4, arg5, arg2, arg3, -668959189);
 	}
 
 	@OriginalMember(owner = "client!apn", name = "ag", descriptor = "(IIIIIIZZ)V", line = 69)
@@ -307,7 +307,7 @@ public class Class112_Sub1_Sub1 extends Class112_Sub1 {
 			local5 = this.aClass180_1.aFloatArray91;
 			local7 = this.aClass104_Sub3_10.aFloatArray20;
 		}
-		Class446.method28895(this.anInt2494 * 335394069, this.aClass104_Sub3_10.anInt719 * 1808307287, local1, local3, local5, local7, arg0, arg1, arg4, arg5, arg2, arg3, -2084436487);
+		ClientProt.method28895(this.anInt2494 * 335394069, this.aClass104_Sub3_10.anInt719 * 1808307287, local1, local3, local5, local7, arg0, arg1, arg4, arg5, arg2, arg3, -2084436487);
 	}
 
 	@OriginalMember(owner = "client!apn", name = "ae", descriptor = "(IIIIIIZZ)V", line = 69)
@@ -325,7 +325,7 @@ public class Class112_Sub1_Sub1 extends Class112_Sub1 {
 			local5 = this.aClass180_1.aFloatArray91;
 			local7 = this.aClass104_Sub3_10.aFloatArray20;
 		}
-		Class446.method28895(this.anInt2494 * 335394069, this.aClass104_Sub3_10.anInt719 * 1808307287, local1, local3, local5, local7, arg0, arg1, arg4, arg5, arg2, arg3, 245127258);
+		ClientProt.method28895(this.anInt2494 * 335394069, this.aClass104_Sub3_10.anInt719 * 1808307287, local1, local3, local5, local7, arg0, arg1, arg4, arg5, arg2, arg3, 245127258);
 	}
 
 	@OriginalMember(owner = "client!apn", name = "ai", descriptor = "(II[I[I[F[FIIIIII)V", line = 85)

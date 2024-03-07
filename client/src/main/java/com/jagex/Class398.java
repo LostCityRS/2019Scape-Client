@@ -42,6 +42,6 @@ public class Class398 implements Interface32 {
 
 	@OriginalMember(owner = "client!li", name = "ayg", descriptor = "(Lclient!yf;B)V", line = 13976)
 	static final void method28493(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class659.anInt5822 * 1565516845;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class659.userUnreadMessages * 1565516845;
 	}
 }

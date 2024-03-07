@@ -138,7 +138,7 @@ public class Class110_Sub11 extends Class110 {
 			}
 		}
 		@Pc(101) int local101 = this.anInt943 * -737657961 << 2;
-		@Pc(155) Class132_Sub1_Sub1_Sub4 local155 = new Class132_Sub1_Sub1_Sub4(client.aClass532_1.method30481(-1772585750), this.anInt938 * 1146100473, local23, local23, local11, local18, this.anInt935 * -642905959 << 2, client.anInt3485, client.anInt3485 + this.anInt941 * 1271870141, this.anInt942 * -1988657767, local101, this.anInt932 * 2057662313 + 1, this.anInt936 * -1993333201 + 1, this.anInt939 * 2036589367 << 2, false, 0, 0);
+		@Pc(155) Class132_Sub1_Sub1_Sub4 local155 = new Class132_Sub1_Sub1_Sub4(client.world.method30481(-1772585750), this.anInt938 * 1146100473, local23, local23, local11, local18, this.anInt935 * -642905959 << 2, client.anInt3485, client.anInt3485 + this.anInt941 * 1271870141, this.anInt942 * -1988657767, local101, this.anInt932 * 2057662313 + 1, this.anInt936 * -1993333201 + 1, this.anInt939 * 2036589367 << 2, false, 0, 0);
 		local155.method23915(local60, local67, this.anInt939 * 2036589367 << 2, client.anInt3485 + this.anInt941 * 1271870141, -1511764208);
 		client.aClass22_46.method408(new Class93_Sub1_Sub6(local155), -1121761134);
 	}
@@ -177,7 +177,7 @@ public class Class110_Sub11 extends Class110 {
 			}
 		}
 		@Pc(101) int local101 = this.anInt943 * -737657961 << 2;
-		@Pc(155) Class132_Sub1_Sub1_Sub4 local155 = new Class132_Sub1_Sub1_Sub4(client.aClass532_1.method30481(-2018361671), this.anInt938 * 1146100473, local23, local23, local11, local18, this.anInt935 * -642905959 << 2, client.anInt3485, client.anInt3485 + this.anInt941 * 1271870141, this.anInt942 * -1988657767, local101, this.anInt932 * 2057662313 + 1, this.anInt936 * -1993333201 + 1, this.anInt939 * 2036589367 << 2, false, 0, 0);
+		@Pc(155) Class132_Sub1_Sub1_Sub4 local155 = new Class132_Sub1_Sub1_Sub4(client.world.method30481(-2018361671), this.anInt938 * 1146100473, local23, local23, local11, local18, this.anInt935 * -642905959 << 2, client.anInt3485, client.anInt3485 + this.anInt941 * 1271870141, this.anInt942 * -1988657767, local101, this.anInt932 * 2057662313 + 1, this.anInt936 * -1993333201 + 1, this.anInt939 * 2036589367 << 2, false, 0, 0);
 		local155.method23915(local60, local67, this.anInt939 * 2036589367 << 2, client.anInt3485 + this.anInt941 * 1271870141, 63616125);
 		client.aClass22_46.method408(new Class93_Sub1_Sub6(local155), -1227466539);
 	}

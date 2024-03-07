@@ -42,7 +42,7 @@ public class Class721 implements Interface75 {
 
 	@OriginalMember(owner = "client!zx", name = "n", descriptor = "()I", line = 25)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt5965 * -2128881333;
 	}
 
@@ -82,7 +82,7 @@ public class Class721 implements Interface75 {
 			@Pc(129) Class132_Sub1_Sub1_Sub1_Sub1 local129 = (Class132_Sub1_Sub1_Sub1_Sub1) arg0;
 			if (local129.anInt2642 * 310344423 != -1 && (local129.anInt2763 * -846948133 == 0 || local129.anInt2791 * 938318279 > 0)) {
 				local63 = local129.method24220().aClass472_61;
-				@Pc(154) Class611 local154 = client.aClass532_1.method30455(2005556280);
+				@Pc(154) Class611 local154 = client.world.method30455(2005556280);
 				local71 = (int) local63.aFloat317 - (local129.anInt2642 * 2138760960 - local154.anInt5623 * 557113600 - local154.anInt5623 * 557113600);
 				@Pc(192) int local192 = (int) local63.aFloat319 - (local129.anInt2643 * -1914292992 - local154.anInt5624 * 558353664 - local154.anInt5624 * 558353664);
 				if (local71 != 0 || local192 != 0) {

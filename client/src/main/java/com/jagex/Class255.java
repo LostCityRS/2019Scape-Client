@@ -119,7 +119,7 @@ public class Class255 {
 	}
 
 	@OriginalMember(owner = "client!ez", name = "fm", descriptor = "(I)I", line = 2248)
-	public static int method26008(@OriginalArg(0) int arg0) {
+	public static int getWindowMode(@OriginalArg(0) int arg0) {
 		if (Class4.aBoolean2 && Class125_Sub2_Sub1.aFrame1 != null) {
 			return 3;
 		} else if (client.aBoolean623) {

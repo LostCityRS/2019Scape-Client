@@ -483,7 +483,7 @@ public abstract class Class124_Sub3 extends Class124 {
 			@Pc(6) Class14[] local6 = Class629.method32258(Class556.aClass7_1, -1574654625);
 			@Pc(10) Class14[] local10 = new Class14[local6.length];
 			@Pc(12) int local12 = 0;
-			@Pc(17) int local17 = Class51.aClass93_Sub36_1.aClass166_Sub24_1.method15870(64980131);
+			@Pc(17) int local17 = Class51.options.aClass166_Sub24_1.method15870(64980131);
 			label71: for (@Pc(19) int local19 = 0; local19 < local6.length; local19++) {
 				@Pc(27) Class14 local27 = local6[local19];
 				if ((local27.anInt51 * -787109915 <= 0 || local27.anInt51 * -787109915 >= 24) && local27.anInt49 * -1362482655 >= 800 && local27.anInt50 * 72041005 >= 600 && (local17 != 2 || local27.anInt49 * -1362482655 <= 800 && local27.anInt50 * 72041005 <= 600) && (local17 != 1 || local27.anInt49 * -1362482655 <= 1024 && local27.anInt50 * 72041005 <= 768)) {

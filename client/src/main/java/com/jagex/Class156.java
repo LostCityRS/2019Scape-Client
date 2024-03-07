@@ -98,7 +98,7 @@ public abstract class Class156 {
 		@Pc(11) Class312 local11 = local8.aClass312_13;
 		@Pc(14) Class320 local14 = local8.aClass320_4;
 		@Pc(32) boolean local32 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091] == 1;
-		Class453.method28966(local11, local14, arg0, local32 ? Class310.aClass310_4 : Class310.aClass310_3, (byte) -65);
+		ServerProt.method28966(local11, local14, arg0, local32 ? Class310.aClass310_4 : Class310.aClass310_3, (byte) -65);
 	}
 
 	@OriginalMember(owner = "client!uy", name = "aet", descriptor = "(Lclient!yf;I)V", line = 10267)

@@ -194,7 +194,7 @@ public class Class444 implements Interface47 {
 		@Pc(17) Class93_Sub1_Sub15 local17 = Class220.method25544(local13, -1137288482);
 		if (local17 != null) {
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local17.anInt3087 * 812782679;
-			arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = Class123_Sub1.method9093(local17.aLong190 * -9166377137725744335L, Class106.aClass717_8.anInt5963 * -1156137245, 304225723);
+			arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = Class123_Sub1.method9093(local17.aLong190 * -9166377137725744335L, Class106.lang.anInt5963 * -1156137245, 304225723);
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local17.anInt3088 * 933094649;
 			arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = local17.aString109 == null ? "" : local17.aString109;
 			arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = local17.aString110 == null ? "" : local17.aString110;
@@ -202,7 +202,7 @@ public class Class444 implements Interface47 {
 			arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = local17.aString108 == null ? "" : local17.aString108;
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local17.anInt3089 * -92607533;
 			arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = local17.aString112 == null ? "" : local17.aString112;
-			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local17.aClass443_1 == null ? -1 : local17.aClass443_1.method36920();
+			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local17.aClass443_1 == null ? -1 : local17.aClass443_1.getId();
 			return;
 		}
 		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = -1;
@@ -219,9 +219,9 @@ public class Class444 implements Interface47 {
 
 	@OriginalMember(owner = "client!no", name = "asa", descriptor = "(Lclient!yf;I)V", line = 13050)
 	static final void method28885(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub19_1, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091] == 1 ? 1 : 0, (byte) 32);
+		Class51.options.method14363(Class51.options.aClass166_Sub19_1, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091] == 1 ? 1 : 0, (byte) 32);
 		Class610.method32020(-818545189);
-		client.aClass532_1.method30494((byte) 56).method33015(612179344);
+		client.world.method30494((byte) 56).method33015(612179344);
 		Class106_Sub1.method5135(-555897078);
 		client.aBoolean601 = false;
 	}
@@ -234,7 +234,7 @@ public class Class444 implements Interface47 {
 	@OriginalMember(owner = "client!no", name = "bas", descriptor = "(Lclient!yf;B)V", line = 14284)
 	static final void method28887(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub6_1.method16546(local12, 1863697913);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub6_1.method16546(local12, 1863697913);
 	}
 
 	@OriginalMember(owner = "client!no", name = "bcn", descriptor = "(Lclient!yf;I)V", line = 14646)

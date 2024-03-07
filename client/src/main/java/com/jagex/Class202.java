@@ -39,7 +39,7 @@ public class Class202 {
 
 	@OriginalMember(owner = "client!cc", name = "e", descriptor = "(B)Z", line = 67)
 	static boolean method24643(@OriginalArg(0) byte arg0) {
-		return !Class228.method25615(client.anInt3435 * -849002901, -1710463806);
+		return !Class228.method25615(client.state * -849002901, -1710463806);
 	}
 
 	@OriginalMember(owner = "client!cc", name = "x", descriptor = "(II)V", line = 142)

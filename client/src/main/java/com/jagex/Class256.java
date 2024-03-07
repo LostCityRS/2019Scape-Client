@@ -103,6 +103,6 @@ public class Class256 implements Callable {
 
 	@OriginalMember(owner = "client!f", name = "azt", descriptor = "(Lclient!yf;B)V", line = 14161)
 	static final void method26017(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub12_1.method15611(515685797) ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub12_1.method15611(515685797) ? 1 : 0;
 	}
 }

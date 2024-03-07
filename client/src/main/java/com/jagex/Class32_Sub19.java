@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public class Class32_Sub19 extends Class32 {
 
 	@OriginalMember(owner = "client!aov", name = "ph", descriptor = "Z")
-	public static boolean aBoolean374;
+	public static boolean userDobRequested;
 
 	@OriginalMember(owner = "client!aov", name = "<init>", descriptor = "(Lclient!zd;Lclient!zt;Lclient!py;Lclient!py;)V", line = 11)
 	public Class32_Sub19(@OriginalArg(0) Class702 arg0, @OriginalArg(1) Class717 arg1, @OriginalArg(2) Class497 arg2, @OriginalArg(3) Class497 arg3) {

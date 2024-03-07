@@ -299,7 +299,7 @@ public class Class21 {
 		@Pc(28) Class93_Sub1_Sub15 local28 = Class512.method30256(local13, local23, 552647328);
 		if (local28 != null) {
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local28.anInt3090 * -565994431;
-			arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = Class123_Sub1.method9093(local28.aLong190 * -9166377137725744335L, Class106.aClass717_8.anInt5963 * -1156137245, 304225723);
+			arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = Class123_Sub1.method9093(local28.aLong190 * -9166377137725744335L, Class106.lang.anInt5963 * -1156137245, 304225723);
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local28.anInt3088 * 933094649;
 			arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = local28.aString109 == null ? "" : local28.aString109;
 			arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = local28.aString110 == null ? "" : local28.aString110;
@@ -307,7 +307,7 @@ public class Class21 {
 			arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = local28.aString108 == null ? "" : local28.aString108;
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local28.anInt3089 * -92607533;
 			arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = local28.aString112 == null ? "" : local28.aString112;
-			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local28.aClass443_1 == null ? -1 : local28.aClass443_1.method36920();
+			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local28.aClass443_1 == null ? -1 : local28.aClass443_1.getId();
 			return;
 		}
 		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = -1;

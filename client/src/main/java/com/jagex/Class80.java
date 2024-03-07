@@ -29,7 +29,7 @@ public class Class80 {
 		@Pc(19) Class370 local19 = Class146.aClass370_3;
 		@Pc(22) int local22 = Class533.method30602(65280);
 		if (Class146.aClass370_3 == local19) {
-			Class362.aString187 = Class146.aClass370_3.aClass74_177.method1259(Class106.aClass717_8, (byte) 26);
+			Class362.aString187 = Class146.aClass370_3.aClass74_177.method1259(Class106.lang, (byte) 26);
 			Class531.aString225 = Class362.aString187;
 			if (Class146.aClass370_3.aBoolean737) {
 				Class66.anInt237 = (Class146.aClass370_3.anInt4591 * 903713925 + (-1203887493 * Class146.aClass370_3.anInt4592 - Class146.aClass370_3.anInt4591 * 903713925) * local22 / 100) * -2053976653;
@@ -39,13 +39,13 @@ public class Class80 {
 			}
 		} else if (Class146.aClass370_3 == Class370.aClass370_21) {
 			Class653.aClass357_1 = null;
-			Class481.method29756(4, 1823202236);
+			Class481.setState(4, 1823202236);
 			if (Class362.aBoolean730) {
 				Class362.aBoolean730 = false;
 				Class114.method7635(Class7.aString2, Class490.aString217, "", false, (byte) 119);
 			}
 		} else {
-			Class362.aString187 = local19.aClass74_178.method1259(Class106.aClass717_8, (byte) -28);
+			Class362.aString187 = local19.aClass74_178.method1259(Class106.lang, (byte) -28);
 			Class531.aString225 = Class362.aString187;
 			if (Class146.aClass370_3.aBoolean736) {
 				Class531.aString225 = Class531.aString225 + " - " + local19.anInt4592 * -1203887493 + "%";
@@ -63,7 +63,7 @@ public class Class80 {
 			return;
 		}
 		for (@Pc(162) int local162 = Class362.anInt4573 * 815014065 + 1; local162 < Class362.anInterface30Array1.length; local162++) {
-			if (Class362.anInterface30Array1[local162].method27932(-1143727088) >= 100 && local162 - 1 == Class362.anInt4573 * 815014065 && client.anInt3435 * -849002901 != 5 && Class653.aClass357_1.method27735((byte) 29)) {
+			if (Class362.anInterface30Array1[local162].method27932(-1143727088) >= 100 && local162 - 1 == Class362.anInt4573 * 815014065 && client.state * -849002901 != 5 && Class653.aClass357_1.method27735((byte) 29)) {
 				try {
 					Class362.anInterface30Array1[local162].method27923((short) 253);
 				} catch (@Pc(196) Exception local196) {

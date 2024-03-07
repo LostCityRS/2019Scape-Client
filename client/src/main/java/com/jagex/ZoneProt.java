@@ -7,70 +7,60 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!nk")
-public class Class440 {
+public class ZoneProt {
 
 	@OriginalMember(owner = "client!nk", name = "e", descriptor = "Lclient!nk;")
-	public static final Class440 aClass440_8 = new Class440(5);
+	public static final ZoneProt aZoneProt_8 = new ZoneProt(5);
 
 	@OriginalMember(owner = "client!nk", name = "n", descriptor = "Lclient!nk;")
-	public static final Class440 aClass440_2 = new Class440(10);
+	public static final ZoneProt aZoneProt_2 = new ZoneProt(10);
 
 	@OriginalMember(owner = "client!nk", name = "m", descriptor = "Lclient!nk;")
-	public static final Class440 aClass440_1 = new Class440(-1);
+	public static final ZoneProt aZoneProt_1 = new ZoneProt(-1);
 
 	@OriginalMember(owner = "client!nk", name = "k", descriptor = "Lclient!nk;")
-	public static final Class440 aClass440_4 = new Class440(7);
+	public static final ZoneProt aZoneProt_4 = new ZoneProt(7);
 
 	@OriginalMember(owner = "client!nk", name = "f", descriptor = "Lclient!nk;")
-	public static final Class440 aClass440_5 = new Class440(7);
+	public static final ZoneProt aZoneProt_5 = new ZoneProt(7);
 
 	@OriginalMember(owner = "client!nk", name = "w", descriptor = "Lclient!nk;")
-	public static final Class440 aClass440_14 = new Class440(2);
+	public static final ZoneProt aZoneProt_14 = new ZoneProt(2);
 
 	@OriginalMember(owner = "client!nk", name = "l", descriptor = "Lclient!nk;")
-	public static final Class440 aClass440_7 = new Class440(9);
+	public static final ZoneProt aZoneProt_7 = new ZoneProt(9);
 
 	@OriginalMember(owner = "client!nk", name = "u", descriptor = "Lclient!nk;")
-	public static final Class440 aClass440_3 = new Class440(18);
+	public static final ZoneProt aZoneProt_3 = new ZoneProt(18);
 
 	@OriginalMember(owner = "client!nk", name = "z", descriptor = "Lclient!nk;")
-	public static final Class440 aClass440_9 = new Class440(7);
+	public static final ZoneProt aZoneProt_9 = new ZoneProt(7);
 
 	@OriginalMember(owner = "client!nk", name = "p", descriptor = "Lclient!nk;")
-	public static final Class440 aClass440_6 = new Class440(3);
+	public static final ZoneProt aZoneProt_6 = new ZoneProt(3);
 
 	@OriginalMember(owner = "client!nk", name = "d", descriptor = "Lclient!nk;")
-	public static final Class440 aClass440_11 = new Class440(-1);
+	public static final ZoneProt aZoneProt_11 = new ZoneProt(-1);
 
 	@OriginalMember(owner = "client!nk", name = "c", descriptor = "Lclient!nk;")
-	public static final Class440 aClass440_12 = new Class440(-1);
+	public static final ZoneProt aZoneProt_12 = new ZoneProt(-1);
 
 	@OriginalMember(owner = "client!nk", name = "r", descriptor = "Lclient!nk;")
-	public static final Class440 aClass440_13 = new Class440(21);
+	public static final ZoneProt aZoneProt_13 = new ZoneProt(21);
 
 	@OriginalMember(owner = "client!nk", name = "v", descriptor = "Lclient!nk;")
-	public static final Class440 aClass440_10 = new Class440(5);
+	public static final ZoneProt aZoneProt_10 = new ZoneProt(5);
 
 	@OriginalMember(owner = "client!nk", name = "o", descriptor = "Lclient!nk;")
-	public static final Class440 aClass440_15 = new Class440(8);
+	public static final ZoneProt aZoneProt_15 = new ZoneProt(8);
 
-	@OriginalMember(owner = "client!nk", name = "n", descriptor = "()[Lclient!nk;", line = 22)
-	public static Class440[] method28844() {
-		return new Class440[] { aClass440_8, aClass440_2, aClass440_1, aClass440_4, aClass440_5, aClass440_14, aClass440_7, aClass440_3, aClass440_9, aClass440_6, aClass440_11, aClass440_12, aClass440_13, aClass440_10, aClass440_15 };
-	}
-
-	@OriginalMember(owner = "client!nk", name = "m", descriptor = "()[Lclient!nk;", line = 22)
-	public static Class440[] method28845() {
-		return new Class440[] { aClass440_8, aClass440_2, aClass440_1, aClass440_4, aClass440_5, aClass440_14, aClass440_7, aClass440_3, aClass440_9, aClass440_6, aClass440_11, aClass440_12, aClass440_13, aClass440_10, aClass440_15 };
-	}
-
-	@OriginalMember(owner = "client!nk", name = "k", descriptor = "()[Lclient!nk;", line = 22)
-	public static Class440[] method28846() {
-		return new Class440[] { aClass440_8, aClass440_2, aClass440_1, aClass440_4, aClass440_5, aClass440_14, aClass440_7, aClass440_3, aClass440_9, aClass440_6, aClass440_11, aClass440_12, aClass440_13, aClass440_10, aClass440_15 };
+	@OriginalMember(owner = "client!kh", name = "e", descriptor = "(I)[Lclient!nk;", line = 22)
+	public static ZoneProt[] values(@OriginalArg(0) int arg0) {
+		return new ZoneProt[] {aZoneProt_8, aZoneProt_2, aZoneProt_1, aZoneProt_4, aZoneProt_5, aZoneProt_14, aZoneProt_7, aZoneProt_3, aZoneProt_9, aZoneProt_6, aZoneProt_11, aZoneProt_12, aZoneProt_13, aZoneProt_10, aZoneProt_15};
 	}
 
 	@OriginalMember(owner = "client!nk", name = "<init>", descriptor = "(I)V", line = 25)
-	Class440(@OriginalArg(0) int arg0) {
+	ZoneProt(@OriginalArg(0) int arg0) {
 	}
 
 	@OriginalMember(owner = "client!nk", name = "n", descriptor = "(JIZB)Ljava/lang/String;", line = 40)
@@ -93,7 +83,7 @@ public class Class440 {
 
 	@OriginalMember(owner = "client!nk", name = "q", descriptor = "(Ljava/lang/String;I)I", line = 249)
 	public static int method28848(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1) {
-		return Class166_Sub13.aTwitchTV1.SetStreamTitle(arg0, client.aClass702_4.aString242);
+		return Class166_Sub13.aTwitchTV1.SetStreamTitle(arg0, client.modeGame.aString242);
 	}
 
 	@OriginalMember(owner = "client!nk", name = "bx", descriptor = "(Lclient!yf;I)V", line = 5101)

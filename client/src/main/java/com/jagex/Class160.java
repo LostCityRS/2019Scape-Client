@@ -80,7 +80,7 @@ public abstract class Class160 {
 	public abstract void method14719(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) throws IOException;
 
 	@OriginalMember(owner = "client!uz", name = "f", descriptor = "([BIIB)I")
-	public abstract int method14720(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) byte arg3) throws IOException;
+	public abstract int read(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) byte arg3) throws IOException;
 
 	@OriginalMember(owner = "client!uz", name = "w", descriptor = "([BIII)V")
 	public abstract void method14721(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) throws IOException;
@@ -101,7 +101,7 @@ public abstract class Class160 {
 	public abstract int method14726(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) throws IOException;
 
 	@OriginalMember(owner = "client!uz", name = "m", descriptor = "(II)Z")
-	public abstract boolean method14727(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) throws IOException;
+	public abstract boolean available(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) throws IOException;
 
 	@OriginalMember(owner = "client!uz", name = "o", descriptor = "()V")
 	public abstract void method14728();

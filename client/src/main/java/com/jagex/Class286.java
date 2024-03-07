@@ -42,7 +42,7 @@ public class Class286 implements Interface75 {
 
 	@OriginalMember(owner = "client!ge", name = "n", descriptor = "()I", line = 26)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt3899 * -1963408433;
 	}
 
@@ -127,7 +127,7 @@ public class Class286 implements Interface75 {
 	@OriginalMember(owner = "client!ge", name = "gd", descriptor = "(Lclient!hf;Lclient!hq;Lclient!yf;B)V", line = 6197)
 	static final void method26530(@OriginalArg(0) Class312 arg0, @OriginalArg(1) Class320 arg1, @OriginalArg(2) Class681 arg2, @OriginalArg(3) byte arg3) {
 		arg0.anInt4001 = -343005199;
-		arg0.anInt4037 = client.anInt3513 * 1786756713;
+		arg0.anInt4037 = client.selfPlayerSlot * 1786756713;
 		arg0.anInt4038 = 0;
 		if (arg0.anInt3970 * 532402067 == -1 && !arg1.aBoolean708) {
 			Class124_Sub3_Sub1.method19766(arg0.anInt3953 * -1549590237, 256284111);
@@ -174,12 +174,12 @@ public class Class286 implements Interface75 {
 
 	@OriginalMember(owner = "client!ge", name = "aqd", descriptor = "(Lclient!yf;B)V", line = 12774)
 	static final void method26536(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class129_Sub1.method9403((byte) 0).method36920();
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class129_Sub1.method9403((byte) 0).getId();
 	}
 
 	@OriginalMember(owner = "client!ge", name = "asm", descriptor = "(Lclient!yf;I)V", line = 13174)
 	static final void method26537(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub14_1, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091] == 1 ? 1 : 0, (byte) 31);
+		Class51.options.method14363(Class51.options.aClass166_Sub14_1, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091] == 1 ? 1 : 0, (byte) 31);
 		Class106_Sub1.method5135(-1678521064);
 		Class610.method32020(-1804241793);
 		Class275.method26341(-805234298);

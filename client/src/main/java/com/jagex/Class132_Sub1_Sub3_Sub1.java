@@ -428,24 +428,24 @@ public class Class132_Sub1_Sub3_Sub1 extends Class132_Sub1_Sub3 implements Inter
 
 	@OriginalMember(owner = "client!ajh", name = "a", descriptor = "(I)V", line = 266)
 	static void method12303(@OriginalArg(0) int arg0) {
-		client.aClass175_1.method24367((byte) 88);
+		client.aClass175_1.close((byte) 88);
 		if (Class676.anInt5883 * -1667786339 < 2) {
-			Class50.aClass28_2.method594((short) -28233);
+			Class50.lobby.cycleSettings((short) -28233);
 			Class676.anInt5885 = 0;
 			Class676.anInt5883 += -643386187;
 			Class588.aClass588_3 = Class588.aClass588_1;
 		} else {
 			Class588.aClass588_3 = null;
 			Class676.aClass709_1 = Class709.aClass709_6;
-			Class481.method29756(4, 1823202236);
+			Class481.setState(4, 1823202236);
 		}
 	}
 
 	@OriginalMember(owner = "client!ajh", name = "ass", descriptor = "(Lclient!yf;B)V", line = 13214)
 	static final void method12304(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		if (local12 != Class51.aClass93_Sub36_1.aClass166_Sub29_1.method16064(-1628934257)) {
-			Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub29_1, local12, (byte) 81);
+		if (local12 != Class51.options.aClass166_Sub29_1.method16064(-1628934257)) {
+			Class51.options.method14363(Class51.options.aClass166_Sub29_1, local12, (byte) 81);
 			Class106_Sub1.method5135(-996214817);
 			client.aBoolean601 = false;
 		}

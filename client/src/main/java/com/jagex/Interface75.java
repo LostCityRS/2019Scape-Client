@@ -10,5 +10,5 @@ public interface Interface75 {
 	int method36919();
 
 	@OriginalMember(owner = "client!za", name = "n", descriptor = "()I")
-	int method36920();
+	int getId();
 }

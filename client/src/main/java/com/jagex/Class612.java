@@ -56,7 +56,7 @@ public class Class612 implements Interface75 {
 
 	@OriginalMember(owner = "client!vf", name = "n", descriptor = "()I", line = 25)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt5626 * 653803943;
 	}
 
@@ -73,7 +73,7 @@ public class Class612 implements Interface75 {
 		}
 		@Pc(34) String local34;
 		if (client.aBoolean625 && Class454.anInt5042 * -1838307953 < 2) {
-			local34 = client.aString145 + Class74.aClass74_140.method1259(Class106.aClass717_8, (byte) -1) + client.aString142 + " " + Class430.aString206;
+			local34 = client.aString145 + Class74.aClass74_140.method1259(Class106.lang, (byte) -1) + client.aString142 + " " + Class430.aString206;
 		} else if (Class527.method30387((byte) 2) && Class454.anInt5042 * -1838307953 > 2) {
 			local34 = Class110_Sub21.method8544(Class112_Sub1_Sub1.aClass93_Sub1_Sub7_4, -1497248091);
 		} else {
@@ -88,7 +88,7 @@ public class Class612 implements Interface75 {
 			}
 		}
 		if (Class454.anInt5042 * -1838307953 > 2) {
-			local34 = local34 + Class306.method26804(16777215, -412140771) + " / " + (Class454.anInt5042 * -1838307953 - 2) + Class74.aClass74_132.method1259(Class106.aClass717_8, (byte) -70);
+			local34 = local34 + Class306.method26804(16777215, -412140771) + " / " + (Class454.anInt5042 * -1838307953 - 2) + Class74.aClass74_132.method1259(Class106.lang, (byte) -70);
 		}
 		if (Class454.aClass312_11 == null) {
 			return;

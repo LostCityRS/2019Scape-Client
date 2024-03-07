@@ -148,49 +148,49 @@ public class Class686 implements Interface20 {
 	@OriginalMember(owner = "client!yl", name = "ai", descriptor = "(Lclient!ec;)I", line = 15202)
 	@Override
 	public int method33459(@OriginalArg(0) Class108 arg0) {
-		@Pc(15) Integer local15 = this.aClass386_4.method28178(client.aClass702_4.anInt5953 * -1111983921 << 16 | arg0.anInt867 * -1284841473, 1899238502);
+		@Pc(15) Integer local15 = this.aClass386_4.method28178(client.modeGame.id * -1111983921 << 16 | arg0.anInt867 * -1284841473, 1899238502);
 		return local15 == null ? (Integer) arg0.method7440((byte) 2) : local15;
 	}
 
 	@OriginalMember(owner = "client!yl", name = "u", descriptor = "(Lclient!ec;I)I", line = 15202)
 	@Override
 	public int method33455(@OriginalArg(0) Class108 arg0, @OriginalArg(1) int arg1) {
-		@Pc(15) Integer local15 = this.aClass386_4.method28178(client.aClass702_4.anInt5953 * -1111983921 << 16 | arg0.anInt867 * -1284841473, 1899238502);
+		@Pc(15) Integer local15 = this.aClass386_4.method28178(client.modeGame.id * -1111983921 << 16 | arg0.anInt867 * -1284841473, 1899238502);
 		return local15 == null ? (Integer) arg0.method7440((byte) 2) : local15;
 	}
 
 	@OriginalMember(owner = "client!yl", name = "ah", descriptor = "(Lclient!ec;)I", line = 15202)
 	@Override
 	public int method33456(@OriginalArg(0) Class108 arg0) {
-		@Pc(15) Integer local15 = this.aClass386_4.method28178(client.aClass702_4.anInt5953 * -1111983921 << 16 | arg0.anInt867 * -1284841473, 1899238502);
+		@Pc(15) Integer local15 = this.aClass386_4.method28178(client.modeGame.id * -1111983921 << 16 | arg0.anInt867 * -1284841473, 1899238502);
 		return local15 == null ? (Integer) arg0.method7440((byte) 2) : local15;
 	}
 
 	@OriginalMember(owner = "client!yl", name = "ac", descriptor = "(Lclient!ec;)I", line = 15202)
 	@Override
 	public int method33458(@OriginalArg(0) Class108 arg0) {
-		@Pc(15) Integer local15 = this.aClass386_4.method28178(client.aClass702_4.anInt5953 * -1111983921 << 16 | arg0.anInt867 * -1284841473, 1899238502);
+		@Pc(15) Integer local15 = this.aClass386_4.method28178(client.modeGame.id * -1111983921 << 16 | arg0.anInt867 * -1284841473, 1899238502);
 		return local15 == null ? (Integer) arg0.method7440((byte) 2) : local15;
 	}
 
 	@OriginalMember(owner = "client!yl", name = "al", descriptor = "(Lclient!ec;)I", line = 15202)
 	@Override
 	public int method33457(@OriginalArg(0) Class108 arg0) {
-		@Pc(15) Integer local15 = this.aClass386_4.method28178(client.aClass702_4.anInt5953 * -1111983921 << 16 | arg0.anInt867 * -1284841473, 1899238502);
+		@Pc(15) Integer local15 = this.aClass386_4.method28178(client.modeGame.id * -1111983921 << 16 | arg0.anInt867 * -1284841473, 1899238502);
 		return local15 == null ? (Integer) arg0.method7440((byte) 2) : local15;
 	}
 
 	@OriginalMember(owner = "client!yl", name = "n", descriptor = "(Lclient!ec;I)J", line = 15208)
 	@Override
 	public long method33465(@OriginalArg(0) Class108 arg0, @OriginalArg(1) int arg1) {
-		@Pc(15) Long local15 = this.aClass386_4.method28179(client.aClass702_4.anInt5953 * -1111983921 << 16 | arg0.anInt867 * -1284841473, -771674756);
+		@Pc(15) Long local15 = this.aClass386_4.method28179(client.modeGame.id * -1111983921 << 16 | arg0.anInt867 * -1284841473, -771674756);
 		return local15 == null ? (Long) arg0.method7440((byte) 2) : local15;
 	}
 
 	@OriginalMember(owner = "client!yl", name = "p", descriptor = "(Lclient!ec;)J", line = 15208)
 	@Override
 	public long method33473(@OriginalArg(0) Class108 arg0) {
-		@Pc(15) Long local15 = this.aClass386_4.method28179(client.aClass702_4.anInt5953 * -1111983921 << 16 | arg0.anInt867 * -1284841473, -771674756);
+		@Pc(15) Long local15 = this.aClass386_4.method28179(client.modeGame.id * -1111983921 << 16 | arg0.anInt867 * -1284841473, -771674756);
 		return local15 == null ? (Long) arg0.method7440((byte) 2) : local15;
 	}
 
@@ -200,7 +200,7 @@ public class Class686 implements Interface20 {
 		if (Class519.aClass519_7 != arg0.aClass519_6) {
 			throw new IllegalArgumentException("");
 		}
-		return this.aClass386_4.method28182(client.aClass702_4.anInt5953 * -1111983921 << 16 | arg0.anInt867 * -1284841473, -1270432674);
+		return this.aClass386_4.method28182(client.modeGame.id * -1111983921 << 16 | arg0.anInt867 * -1284841473, -1270432674);
 	}
 
 	@OriginalMember(owner = "client!yl", name = "b", descriptor = "(Lclient!ec;)Ljava/lang/Object;", line = 15214)
@@ -209,7 +209,7 @@ public class Class686 implements Interface20 {
 		if (Class519.aClass519_7 != arg0.aClass519_6) {
 			throw new IllegalArgumentException("");
 		}
-		return this.aClass386_4.method28182(client.aClass702_4.anInt5953 * -1111983921 << 16 | arg0.anInt867 * -1284841473, -1019955817);
+		return this.aClass386_4.method28182(client.modeGame.id * -1111983921 << 16 | arg0.anInt867 * -1284841473, -1019955817);
 	}
 
 	@OriginalMember(owner = "client!yl", name = "g", descriptor = "(Lclient!ec;)Ljava/lang/Object;", line = 15214)
@@ -218,7 +218,7 @@ public class Class686 implements Interface20 {
 		if (Class519.aClass519_7 != arg0.aClass519_6) {
 			throw new IllegalArgumentException("");
 		}
-		return this.aClass386_4.method28182(client.aClass702_4.anInt5953 * -1111983921 << 16 | arg0.anInt867 * -1284841473, -570202534);
+		return this.aClass386_4.method28182(client.modeGame.id * -1111983921 << 16 | arg0.anInt867 * -1284841473, -570202534);
 	}
 
 	@OriginalMember(owner = "client!yl", name = "h", descriptor = "(Lclient!ec;)Ljava/lang/Object;", line = 15214)
@@ -227,7 +227,7 @@ public class Class686 implements Interface20 {
 		if (Class519.aClass519_7 != arg0.aClass519_6) {
 			throw new IllegalArgumentException("");
 		}
-		return this.aClass386_4.method28182(client.aClass702_4.anInt5953 * -1111983921 << 16 | arg0.anInt867 * -1284841473, -668984648);
+		return this.aClass386_4.method28182(client.modeGame.id * -1111983921 << 16 | arg0.anInt867 * -1284841473, -668984648);
 	}
 
 	@OriginalMember(owner = "client!yl", name = "a", descriptor = "(Lclient!ec;)Ljava/lang/Object;", line = 15214)
@@ -236,7 +236,7 @@ public class Class686 implements Interface20 {
 		if (Class519.aClass519_7 != arg0.aClass519_6) {
 			throw new IllegalArgumentException("");
 		}
-		return this.aClass386_4.method28182(client.aClass702_4.anInt5953 * -1111983921 << 16 | arg0.anInt867 * -1284841473, -866978723);
+		return this.aClass386_4.method28182(client.modeGame.id * -1111983921 << 16 | arg0.anInt867 * -1284841473, -866978723);
 	}
 
 	@OriginalMember(owner = "client!yl", name = "at", descriptor = "(Lclient!kh;)I", line = 15219)

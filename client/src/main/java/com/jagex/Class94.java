@@ -12,7 +12,7 @@ public class Class94 {
 	static final int anInt318 = 12;
 
 	@OriginalMember(owner = "client!adz", name = "w", descriptor = "Lclient!aba;")
-	public static Class28 aClass28_7;
+	public static Class28 mapWorld;
 
 	@OriginalMember(owner = "client!adz", name = "e", descriptor = "I")
 	static final int anInt319 = 1;

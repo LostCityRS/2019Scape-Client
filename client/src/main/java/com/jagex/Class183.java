@@ -80,8 +80,8 @@ public class Class183 implements Interface18 {
 
 	@OriginalMember(owner = "client!bf", name = "fn", descriptor = "(I)V", line = 2395)
 	static void method24573(@OriginalArg(0) int arg0) {
-		@Pc(3) int local3 = client.anInt3408 * -1378711501;
-		@Pc(7) int local7 = client.anInt3416 * 2091353777;
+		@Pc(3) int local3 = client.width * -1378711501;
+		@Pc(7) int local7 = client.height * 2091353777;
 		if (client.anInt3413 * -108363597 < local3) {
 			local3 = client.anInt3413 * -108363597;
 		}
@@ -89,8 +89,8 @@ public class Class183 implements Interface18 {
 			local7 = Class504.anInt5201 * 2090134413;
 		}
 		try {
-			if (Class51.aClass93_Sub36_1 != null) {
-				Class447.aClass447_4.method28910(new Object[] { local3, local7, Class255.method26008(1796947708), Class51.aClass93_Sub36_1.aClass166_Sub24_1.method15870(-509783612) }, -1473067086);
+			if (Class51.options != null) {
+				Class447.aClass447_4.method28910(new Object[] { local3, local7, Class255.getWindowMode(1796947708), Class51.options.aClass166_Sub24_1.method15870(-509783612) }, -1473067086);
 			}
 		} catch (@Pc(59) Throwable local59) {
 		}
@@ -113,11 +113,11 @@ public class Class183 implements Interface18 {
 
 	@OriginalMember(owner = "client!bf", name = "ani", descriptor = "(Lclient!yf;B)V", line = 12400)
 	static final void method24576(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		Class295.method26602(arg0, Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3, 1744525210);
+		Class295.method26602(arg0, Class520.selfPlayer, 1744525210);
 	}
 
 	@OriginalMember(owner = "client!bf", name = "aup", descriptor = "(Lclient!yf;I)V", line = 13381)
 	static final void method24577(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub46_1.method16536(396043493) == 1 ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub46_1.method16536(396043493) == 1 ? 1 : 0;
 	}
 }

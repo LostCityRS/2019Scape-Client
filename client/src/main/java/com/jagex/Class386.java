@@ -1844,9 +1844,9 @@ public class Class386 {
 	@OriginalMember(owner = "client!kr", name = "d", descriptor = "(B)V", line = 370)
 	static void method28235(@OriginalArg(0) byte arg0) {
 		if (Class553.anInt3422 * 861911493 > 1) {
-			Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub34_1, 4, (byte) 68);
+			Class51.options.method14363(Class51.options.aClass166_Sub34_1, 4, (byte) 68);
 		} else {
-			Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub34_1, 2, (byte) 124);
+			Class51.options.method14363(Class51.options.aClass166_Sub34_1, 2, (byte) 124);
 		}
 	}
 

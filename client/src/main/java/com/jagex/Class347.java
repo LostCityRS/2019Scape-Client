@@ -1117,7 +1117,7 @@ public class Class347 implements Interface13 {
 		arg0.anInt5891 -= -1915563430;
 		@Pc(13) int local13 = arg0.anIntArray519[arg0.anInt5891 * -1497248091];
 		@Pc(23) int local23 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 1];
-		@Pc(28) Class93_Sub1_Sub14 local28 = Class449.aClass514_1.method30267(local13, (byte) 42);
+		@Pc(28) Class93_Sub1_Sub14 local28 = Class687.aClass514_1.method30267(local13, (byte) 42);
 		@Pc(33) int local33 = local28.anIntArray260[local23];
 		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local33;
 	}

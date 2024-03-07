@@ -310,22 +310,22 @@ public final class Class78 {
 		if (Class93_Sub26.aClass645_15.anInt5773 * -742728449 == -1) {
 			return 1;
 		}
-		if (arg0 != Class51.aClass93_Sub36_1.aClass166_Sub4_2.method15426((byte) 59)) {
-			Class704.method36733(arg0, Class74.aClass74_100.method1259(Class106.aClass717_8, (byte) -116), true, (byte) -18);
-			if (Class51.aClass93_Sub36_1.aClass166_Sub4_2.method15426((byte) 116) != arg0) {
+		if (arg0 != Class51.options.aClass166_Sub4_2.method15426((byte) 59)) {
+			Class704.method36733(arg0, Class74.aClass74_100.method1259(Class106.lang, (byte) -116), true, (byte) -18);
+			if (Class51.options.aClass166_Sub4_2.method15426((byte) 116) != arg0) {
 				return -1;
 			}
 		}
 		try {
 			@Pc(32) Dimension local32 = Class125_Sub3.aCanvas1.getSize();
-			Class95.method1801(Class74.aClass74_100.method1259(Class106.aClass717_8, (byte) 52), true, Class694.aClass104_14, Class82.aClass106_1, Class348.aClass5_14, (byte) 22);
+			Class95.method1801(Class74.aClass74_100.method1259(Class106.lang, (byte) 52), true, Class694.aClass104_14, Class82.aClass106_1, Class348.aClass5_14, (byte) 22);
 			@Pc(50) Class231 local50 = Class231.method25655(Class86.aClass497_15, Class93_Sub26.aClass645_15.anInt5773 * -742728449, 0);
 			@Pc(53) long local53 = Class305.method26797(1680301932);
 			Class694.aClass104_14.method20568();
 			client.aClass470_51.method29419(0.0F, 256.0F, 0.0F);
 			Class694.aClass104_14.method20601(client.aClass470_51);
 			@Pc(66) Class489 local66 = Class694.aClass104_14.method20594();
-			local66.method29909((float) (local32.width / 2), (float) (local32.height / 2), 512.0F, 512.0F, (float) client.aClass532_1.method30474(-1086647736), (float) client.aClass532_1.method30476(575023203), (float) local32.width, (float) local32.height);
+			local66.method29909((float) (local32.width / 2), (float) (local32.height / 2), 512.0F, 512.0F, (float) client.world.method30474(-1086647736), (float) client.world.method30476(575023203), (float) local32.width, (float) local32.height);
 			Class694.aClass104_14.method20604(local66);
 			Class694.aClass104_14.method20606(1.0F);
 			Class694.aClass104_14.method20607(16777215, 0.5F, 0.5F, 20.0F, -50.0F, 30.0F);

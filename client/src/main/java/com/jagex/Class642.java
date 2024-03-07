@@ -60,7 +60,7 @@ public class Class642 implements Interface75 {
 
 	@OriginalMember(owner = "client!wo", name = "n", descriptor = "()I", line = 25)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt5757 * -986096493;
 	}
 
@@ -72,33 +72,33 @@ public class Class642 implements Interface75 {
 
 	@OriginalMember(owner = "client!wo", name = "l", descriptor = "(B)V", line = 254)
 	public static void method32518(@OriginalArg(0) byte arg0) {
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub15_1, 2, (byte) 24);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub15_2, 2, (byte) 48);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub3_1, 1, (byte) 116);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub46_1, 1, (byte) 123);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub36_1, 1, (byte) 27);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub25_1, 1, (byte) 53);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub21_1, 1, (byte) 42);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub14_1, 1, (byte) 83);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub8_1, 2, (byte) 46);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub19_1, 1, (byte) 93);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub20_1, 2, (byte) 7);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub2_1, 1, (byte) 64);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub39_2, 0, (byte) 74);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub39_1, 0, (byte) 7);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub6_1, 2, (byte) 47);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub12_1, Class332.aClass332_6.anInt4147 * 595334117, (byte) 73);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub28_1, 0, (byte) 20);
+		Class51.options.method14363(Class51.options.aClass166_Sub15_1, 2, (byte) 24);
+		Class51.options.method14363(Class51.options.aClass166_Sub15_2, 2, (byte) 48);
+		Class51.options.method14363(Class51.options.aClass166_Sub3_1, 1, (byte) 116);
+		Class51.options.method14363(Class51.options.aClass166_Sub46_1, 1, (byte) 123);
+		Class51.options.method14363(Class51.options.aClass166_Sub36_1, 1, (byte) 27);
+		Class51.options.method14363(Class51.options.aClass166_Sub25_1, 1, (byte) 53);
+		Class51.options.method14363(Class51.options.aClass166_Sub21_1, 1, (byte) 42);
+		Class51.options.method14363(Class51.options.aClass166_Sub14_1, 1, (byte) 83);
+		Class51.options.method14363(Class51.options.aClass166_Sub8_1, 2, (byte) 46);
+		Class51.options.method14363(Class51.options.aClass166_Sub19_1, 1, (byte) 93);
+		Class51.options.method14363(Class51.options.aClass166_Sub20_1, 2, (byte) 7);
+		Class51.options.method14363(Class51.options.aClass166_Sub2_1, 1, (byte) 64);
+		Class51.options.method14363(Class51.options.aClass166_Sub39_2, 0, (byte) 74);
+		Class51.options.method14363(Class51.options.antialiasing, 0, (byte) 7);
+		Class51.options.method14363(Class51.options.aClass166_Sub6_1, 2, (byte) 47);
+		Class51.options.method14363(Class51.options.aClass166_Sub12_1, Class332.aClass332_6.anInt4147 * 595334117, (byte) 73);
+		Class51.options.method14363(Class51.options.aClass166_Sub28_1, 0, (byte) 20);
 		if (Class694.aClass104_14 != null && Class694.aClass104_14.method20639() && Class694.aClass104_14.method20622()) {
 			Class694.aClass104_14.method20645();
 		}
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub29_1, 1, (byte) 27);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub31_1, 1, (byte) 7);
+		Class51.options.method14363(Class51.options.aClass166_Sub29_1, 1, (byte) 27);
+		Class51.options.method14363(Class51.options.aClass166_Sub31_1, 1, (byte) 7);
 		Class386.method28235((byte) -83);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub24_1, 0, (byte) 82);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub40_1, 4, (byte) 78);
+		Class51.options.method14363(Class51.options.aClass166_Sub24_1, 0, (byte) 82);
+		Class51.options.method14363(Class51.options.aClass166_Sub40_1, 4, (byte) 78);
 		Class610.method32020(-1918309609);
-		client.aClass532_1.method30494((byte) 33).method33015(1628233714);
+		client.world.method30494((byte) 33).method33015(1628233714);
 		client.aBoolean609 = true;
 	}
 
@@ -117,35 +117,35 @@ public class Class642 implements Interface75 {
 	}
 
 	@OriginalMember(owner = "client!wo", name = "fp", descriptor = "(ZS)V", line = 2557)
-	public static final void method32520(@OriginalArg(0) boolean arg0, @OriginalArg(1) short arg1) {
+	public static final void logout(@OriginalArg(0) boolean arg0, @OriginalArg(1) short arg1) {
 		@Pc(1) Class175[] local1 = client.aClass175Array1;
 		for (@Pc(3) int local3 = 0; local3 < local1.length; local3++) {
 			@Pc(11) Class175 local11 = local1[local3];
 			try {
-				local11.method24352((byte) 95);
+				local11.flush((byte) 95);
 			} catch (@Pc(16) IOException local16) {
 			}
-			local11.method24367((byte) 123);
+			local11.close((byte) 123);
 		}
 		Class594.method31724(1244534845);
 		Class12.method186(-1516713678);
 		Class700.method36716(false, (byte) 5);
-		client.aClass532_1.method30518((byte) 66);
-		client.aClass532_1.method30516((byte) -91);
-		client.aClass532_1.method30524(-1602017739);
+		client.world.method30518((byte) 66);
+		client.world.method30516((byte) -91);
+		client.world.method30524(-1602017739);
 		Class47.method905((byte) -101);
 		Class310.method26831(-1797323310);
 		Class707.method36750(true, (byte) 1);
 		Class431.method28776((byte) 72);
 		Class634.method32319(8457347);
-		client.anInt3513 = 410368243;
+		client.selfPlayerSlot = 410368243;
 		if (arg0) {
-			Class481.method29756(9, 1823202236);
+			Class481.setState(9, 1823202236);
 			return;
 		}
-		Class481.method29756(4, 1823202236);
+		Class481.setState(4, 1823202236);
 		try {
-			Class70.method1237(Class32_Sub10.anApplet2, "loggedout", 1752346842);
+			Class70.method1237(Class32_Sub10.applet, "loggedout", 1752346842);
 		} catch (@Pc(66) Throwable local66) {
 		}
 	}
@@ -179,11 +179,11 @@ public class Class642 implements Interface75 {
 	@OriginalMember(owner = "client!wo", name = "asx", descriptor = "(Lclient!yf;B)V", line = 13223)
 	static final void method32524(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		if (local12 != Class51.aClass93_Sub36_1.aClass166_Sub31_1.method16114((short) 8834)) {
-			Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub31_1, local12, (byte) 40);
+		if (local12 != Class51.options.aClass166_Sub31_1.method16114((short) 8834)) {
+			Class51.options.method14363(Class51.options.aClass166_Sub31_1, local12, (byte) 40);
 			Class106_Sub1.method5135(1350256755);
 			client.aBoolean601 = false;
-			client.aClass532_1.method30533((byte) 0);
+			client.world.method30533((byte) 0);
 		}
 	}
 }

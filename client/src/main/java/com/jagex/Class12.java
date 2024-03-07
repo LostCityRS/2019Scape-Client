@@ -120,7 +120,7 @@ public class Class12 {
 			throw new RuntimeException();
 		}
 		@Pc(46) Class39 local46 = (Class39) Class19.aClass32_Sub7_5.method18261(local23, -1108907654);
-		if (local46.aClass519_1.method36920() != local13) {
+		if (local46.aClass519_1.getId() != local13) {
 			throw new RuntimeException();
 		}
 		@Pc(61) int[] local61 = local46.method764(local33, -1497248091);

@@ -236,7 +236,7 @@ public class Class166_Sub46 extends Class166 {
 
 	@OriginalMember(owner = "client!any", name = "arn", descriptor = "(Lclient!yf;I)V", line = 13024)
 	static final void method16539(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub25_1, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091] == 1 ? 1 : 0, (byte) 80);
+		Class51.options.method14363(Class51.options.aClass166_Sub25_1, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091] == 1 ? 1 : 0, (byte) 80);
 		Class106_Sub1.method5135(-414677210);
 		client.aBoolean601 = false;
 	}

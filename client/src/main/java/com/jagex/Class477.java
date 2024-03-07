@@ -130,7 +130,7 @@ public class Class477 {
 				}
 			}
 		} else if (Class118.method8411(arg0.anInt3012 * -92627949, (byte) 74)) {
-			@Pc(104) Class610 local104 = (Class610) client.aClass532_1.method30496(1685828747).method18261((int) (arg0.aLong154 * 3050087486000948885L >>> 32 & 0x7FFFFFFFL), -552016599);
+			@Pc(104) Class610 local104 = (Class610) client.world.method30496(1685828747).method18261((int) (arg0.aLong154 * 3050087486000948885L >>> 32 & 0x7FFFFFFFL), -552016599);
 			if (local104.anIntArray492 != null) {
 				local104 = local104.method31991(Class624.aClass120_1, Class624.aClass120_1, 1070158816);
 			}
@@ -158,6 +158,6 @@ public class Class477 {
 	@OriginalMember(owner = "client!pc", name = "bap", descriptor = "(Lclient!yf;B)V", line = 14300)
 	static final void method29706(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub46_1.method16546(local12, -122175387);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub46_1.method16546(local12, -122175387);
 	}
 }

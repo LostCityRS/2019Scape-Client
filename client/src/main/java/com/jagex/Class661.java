@@ -194,7 +194,7 @@ public class Class661 implements Interface13 {
 		}
 		@Pc(40) int local40;
 		if (Class244.aClass244_2 == Class136.aClass244_1) {
-			@Pc(23) byte[] local23 = Class446.aClass497_117.method30079(arg0, (byte) 58);
+			@Pc(23) byte[] local23 = ClientProt.aClass497_117.method30079(arg0, (byte) 58);
 			if (local23 == null) {
 				return false;
 			}

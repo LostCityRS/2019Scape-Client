@@ -158,16 +158,16 @@ public class Class680 {
 
 	@OriginalMember(owner = "client!ye", name = "t", descriptor = "(I)V", line = 983)
 	static void method33240(@OriginalArg(0) int arg0) {
-		if (Class23.method502(client.anInt3435 * -849002901, (byte) 41)) {
-			if (client.aClass175_1.method24372((byte) 31) == null) {
-				Class481.method29756(17, 1823202236);
+		if (Class23.method502(client.state * -849002901, (byte) 41)) {
+			if (client.aClass175_1.getStream((byte) 31) == null) {
+				Class481.setState(17, 1823202236);
 			} else {
-				Class481.method29756(13, 1823202236);
+				Class481.setState(13, 1823202236);
 			}
-		} else if (client.anInt3435 * -849002901 == 17 || client.anInt3435 * -849002901 == 7) {
-			Class481.method29756(4, 1823202236);
-		} else if (client.anInt3435 * -849002901 == 9) {
-			Class481.method29756(4, 1823202236);
+		} else if (client.state * -849002901 == 17 || client.state * -849002901 == 7) {
+			Class481.setState(4, 1823202236);
+		} else if (client.state * -849002901 == 9) {
+			Class481.setState(4, 1823202236);
 		}
 	}
 
@@ -192,6 +192,6 @@ public class Class680 {
 
 	@OriginalMember(owner = "client!ye", name = "aut", descriptor = "(Lclient!yf;I)V", line = 13349)
 	static final void method33244(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub35_4.method16226(1437580619);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub35_4.method16226(1437580619);
 	}
 }

@@ -363,7 +363,7 @@ public class Class365 {
 
 	@OriginalMember(owner = "client!jp", name = "ayj", descriptor = "(Lclient!yf;I)V", line = 14107)
 	static final void method27919(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		if (client.aBoolean632) {
+		if (client.javascript) {
 			Class447.aClass447_6.method28913(-2022949626);
 		}
 	}
@@ -376,6 +376,6 @@ public class Class365 {
 	@OriginalMember(owner = "client!jp", name = "bag", descriptor = "(Lclient!yf;B)V", line = 14253)
 	static final void method27921(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub3_1.method16546(local12, 1927192604);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub3_1.method16546(local12, 1927192604);
 	}
 }

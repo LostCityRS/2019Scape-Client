@@ -190,7 +190,7 @@ public class Class359 {
 			local1.anInt1465 = arg3 * -272445693;
 			local1.anInt1462 = arg1 * -1126729883;
 			local1.anInt1464 = arg2 * -89446595;
-			if (arg1 >= 0 && arg2 >= 0 && arg1 < client.aClass532_1.method30459(510184718) && arg2 < client.aClass532_1.method30466((short) 128)) {
+			if (arg1 >= 0 && arg2 >= 0 && arg1 < client.world.method30459(510184718) && arg2 < client.world.method30466((short) 128)) {
 				Class593.method31714(local1, (byte) 70);
 			}
 			Class93_Sub8.aClass22_18.method408(local1, -262984256);
@@ -237,6 +237,6 @@ public class Class359 {
 
 	@OriginalMember(owner = "client!jf", name = "azj", descriptor = "(Lclient!yf;B)V", line = 14149)
 	static final void method27792(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub20_1.method15778((byte) -94) ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub20_1.method15778((byte) -94) ? 1 : 0;
 	}
 }

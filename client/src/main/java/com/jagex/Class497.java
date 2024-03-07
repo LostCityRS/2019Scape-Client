@@ -734,7 +734,7 @@ public final class Class497 {
 				@Pc(109) Packet local109 = new Packet(local104);
 				local113 = local109.g1((short) 16384);
 				local117 = local109.g4(-118643075);
-				@Pc(127) int local127 = (local113 == Class484.aClass484_5.method36920() ? 5 : 9) + local117;
+				@Pc(127) int local127 = (local113 == Class484.aClass484_5.getId() ? 5 : 9) + local117;
 				local109.tinydec(arg2, 5, local127, -1984067408);
 			}
 			@Pc(146) byte[] local146;
@@ -901,7 +901,7 @@ public final class Class497 {
 				@Pc(109) Packet local109 = new Packet(local104);
 				local113 = local109.g1((short) 16384);
 				local117 = local109.g4(-118643075);
-				@Pc(127) int local127 = (local113 == Class484.aClass484_5.method36920() ? 5 : 9) + local117;
+				@Pc(127) int local127 = (local113 == Class484.aClass484_5.getId() ? 5 : 9) + local117;
 				local109.tinydec(arg2, 5, local127, -2092552953);
 			}
 			@Pc(146) byte[] local146;
@@ -1068,7 +1068,7 @@ public final class Class497 {
 				@Pc(109) Packet local109 = new Packet(local104);
 				local113 = local109.g1((short) 16384);
 				local117 = local109.g4(-118643075);
-				@Pc(127) int local127 = (local113 == Class484.aClass484_5.method36920() ? 5 : 9) + local117;
+				@Pc(127) int local127 = (local113 == Class484.aClass484_5.getId() ? 5 : 9) + local117;
 				local109.tinydec(arg2, 5, local127, -2044400234);
 			}
 			@Pc(146) byte[] local146;
@@ -1235,7 +1235,7 @@ public final class Class497 {
 				@Pc(109) Packet local109 = new Packet(local104);
 				local113 = local109.g1((short) 16384);
 				local117 = local109.g4(-118643075);
-				@Pc(127) int local127 = (local113 == Class484.aClass484_5.method36920() ? 5 : 9) + local117;
+				@Pc(127) int local127 = (local113 == Class484.aClass484_5.getId() ? 5 : 9) + local117;
 				local109.tinydec(arg2, 5, local127, -2083254910);
 			}
 			@Pc(146) byte[] local146;
@@ -1402,7 +1402,7 @@ public final class Class497 {
 				@Pc(109) Packet local109 = new Packet(local104);
 				local113 = local109.g1((short) 16384);
 				local117 = local109.g4(-118643075);
-				@Pc(127) int local127 = (local113 == Class484.aClass484_5.method36920() ? 5 : 9) + local117;
+				@Pc(127) int local127 = (local113 == Class484.aClass484_5.getId() ? 5 : 9) + local117;
 				local109.tinydec(arg2, 5, local127, -2089227421);
 			}
 			@Pc(146) byte[] local146;
@@ -1854,7 +1854,7 @@ public final class Class497 {
 	static long method30130(@OriginalArg(0) Interface61 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		@Pc(1) long local1 = 4194304L;
 		@Pc(3) long local3 = Long.MIN_VALUE;
-		@Pc(13) Class610 local13 = (Class610) client.aClass532_1.method30496(1877474569).method18261(arg0.method13423(-1037211373), 1104549899);
+		@Pc(13) Class610 local13 = (Class610) client.world.method30496(1877474569).method18261(arg0.method13423(-1037211373), 1104549899);
 		@Pc(34) long local34 = (long) (arg1 | arg2 << 7 | arg0.method13420(1402096015) << 14 | arg0.method13404(2090297000) << 20 | 0x40000000);
 		if (local13.anInt5592 * 1067969079 == 0) {
 			local34 |= local3;
@@ -1881,7 +1881,7 @@ public final class Class497 {
 
 	@OriginalMember(owner = "client!py", name = "asz", descriptor = "(Lclient!yf;I)V", line = 13137)
 	static final void method30133(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub41_1, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091] == 0 ? 0 : 1, (byte) 65);
+		Class51.options.method14363(Class51.options.aClass166_Sub41_1, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091] == 0 ? 0 : 1, (byte) 65);
 		Class106_Sub1.method5135(452662493);
 	}
 }

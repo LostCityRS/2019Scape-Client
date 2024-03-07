@@ -587,7 +587,7 @@ public class Class74 {
 			Class694.aClass104_14.method20441(Class125_Sub3.aCanvas1, local11.width, local11.height, 25630324);
 			Class694.aClass104_14.method20446(Class125_Sub3.aCanvas1, (byte) 14);
 		} else {
-			Class543.method30945(Class51.aClass93_Sub36_1.aClass166_Sub4_2.method15426((byte) 47), false, 1945646779);
+			Class543.method30945(Class51.options.aClass166_Sub4_2.method15426((byte) 47), false, 1945646779);
 		}
 		Class635.method32440((short) 255);
 	}

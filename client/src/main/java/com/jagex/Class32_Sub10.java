@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 public class Class32_Sub10 extends Class32 {
 
 	@OriginalMember(owner = "client!aol", name = "i", descriptor = "Ljava/applet/Applet;")
-	public static Applet anApplet2;
+	public static Applet applet;
 
 	@OriginalMember(owner = "client!aol", name = "e", descriptor = "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Z", line = 11)
 	public static final boolean method17005(@OriginalArg(0) String arg0, @OriginalArg(1) String arg1, @OriginalArg(2) String arg2, @OriginalArg(3) String arg3, @OriginalArg(4) int arg4) {

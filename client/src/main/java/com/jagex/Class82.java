@@ -22,7 +22,7 @@ public class Class82 {
 	public static Class153 aClass153_1;
 
 	@OriginalMember(owner = "client!adh", name = "oe", descriptor = "I")
-	public static int anInt251;
+	public static int userRecoveryDay;
 
 	@OriginalMember(owner = "client!adh", name = "q", descriptor = "Lclient!eu;")
 	public static Class106 aClass106_1;
@@ -118,41 +118,41 @@ public class Class82 {
 		@Pc(7) boolean local7 = false;
 		for (@Pc(9) int local9 = 0; local9 < local3; local9++) {
 			@Pc(18) Class132_Sub1_Sub1_Sub1_Sub2 local18 = client.aClass132_Sub1_Sub1_Sub1_Sub2Array1[local5[local9]];
-			if (local18 != null && local18 != Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3 && local18.aString82 != null && local18.aString82.equalsIgnoreCase(arg1)) {
-				@Pc(35) Class446 local35 = null;
+			if (local18 != null && local18 != Class520.selfPlayer && local18.name2 != null && local18.name2.equalsIgnoreCase(arg1)) {
+				@Pc(35) ClientProt local35 = null;
 				if (arg0 == 1) {
-					local35 = Class446.aClass446_119;
+					local35 = ClientProt.aClientProt_119;
 				} else if (arg0 == 2) {
-					local35 = Class446.aClass446_25;
+					local35 = ClientProt.aClientProt_25;
 				} else if (arg0 == 3) {
-					local35 = Class446.aClass446_78;
+					local35 = ClientProt.aClientProt_78;
 				} else if (arg0 == 4) {
-					local35 = Class446.aClass446_104;
+					local35 = ClientProt.aClientProt_104;
 				} else if (arg0 == 5) {
-					local35 = Class446.aClass446_6;
+					local35 = ClientProt.aClientProt_6;
 				} else if (arg0 == 6) {
-					local35 = Class446.aClass446_64;
+					local35 = ClientProt.aClientProt_64;
 				} else if (arg0 == 7) {
-					local35 = Class446.aClass446_40;
+					local35 = ClientProt.aClientProt_40;
 				} else if (arg0 == 8) {
-					local35 = Class446.aClass446_50;
+					local35 = ClientProt.aClientProt_50;
 				} else if (arg0 == 9) {
-					local35 = Class446.aClass446_91;
+					local35 = ClientProt.aClientProt_91;
 				} else if (arg0 == 10) {
-					local35 = Class446.aClass446_24;
+					local35 = ClientProt.aClientProt_24;
 				}
 				if (local35 != null) {
-					@Pc(102) Class93_Sub22 local102 = Class102.method2588(local35, client.aClass175_2.aClass24_2, (byte) 28);
-					local102.aPacketBit_1.p2(local5[local9], 2129512639);
-					local102.aPacketBit_1.p1_alt1(0, -1591808004);
-					client.aClass175_2.method24356(local102, -2107828542);
+					@Pc(102) ClientMessage local102 = Class102.createGameMessage(local35, client.aClass175_2.clientIsaac, (byte) 28);
+					local102.packet.p2(local5[local9], 2129512639);
+					local102.packet.p1_alt1(0, -1591808004);
+					client.aClass175_2.send(local102, -2107828542);
 				}
 				local7 = true;
 				break;
 			}
 		}
 		if (!local7) {
-			Class103.method2809(4, Class74.aClass74_127.method1259(Class106.aClass717_8, (byte) 16) + arg1, -1963408433);
+			Class103.method2809(4, Class74.aClass74_127.method1259(Class106.lang, (byte) 16) + arg1, -1963408433);
 		}
 	}
 }

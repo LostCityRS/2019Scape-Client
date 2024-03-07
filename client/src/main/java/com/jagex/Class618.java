@@ -30,7 +30,7 @@ public class Class618 implements Interface75 {
 
 	@OriginalMember(owner = "client!vn", name = "n", descriptor = "()I", line = 22)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt5639 * -738593267;
 	}
 
@@ -104,8 +104,8 @@ public class Class618 implements Interface75 {
 
 	@OriginalMember(owner = "client!vn", name = "l", descriptor = "(B)V", line = 152)
 	public static void method32101(@OriginalArg(0) byte arg0) {
-		if (Class411.anInt4721 * 327612781 == 103) {
-			Class411.anInt4721 = -228672666;
+		if (Class411.step * 327612781 == 103) {
+			Class411.step = -228672666;
 		}
 	}
 
@@ -119,7 +119,7 @@ public class Class618 implements Interface75 {
 
 	@OriginalMember(owner = "client!vn", name = "jc", descriptor = "(ZI)V", line = 10859)
 	static final void method32103(@OriginalArg(0) boolean arg0, @OriginalArg(1) int arg1) {
-		Class568.method31298(client.anInt3526 * -703563959, client.anInt3408 * -1378711501, client.anInt3416 * 2091353777, arg0, (byte) -4);
+		Class568.method31298(client.anInt3526 * -703563959, client.width * -1378711501, client.height * 2091353777, arg0, (byte) -4);
 	}
 
 	@OriginalMember(owner = "client!vn", name = "ahu", descriptor = "(Lclient!yf;B)V", line = 10862)

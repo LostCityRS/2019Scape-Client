@@ -73,7 +73,7 @@ public class Class579 implements Interface62 {
 
 	@OriginalMember(owner = "client!tr", name = "im", descriptor = "(I)V", line = 9554)
 	static final void method31371(@OriginalArg(0) int arg0) {
-		@Pc(2) PacketBit local2 = client.aClass175_2.aPacketBit_2;
+		@Pc(2) PacketBit local2 = client.aClass175_2.packet;
 		local2.accessBits((byte) -27);
 		@Pc(10) int local10 = local2.gBit(8, -495582830);
 		@Pc(17) int local17;
@@ -137,7 +137,7 @@ public class Class579 implements Interface62 {
 	@OriginalMember(owner = "client!tr", name = "ais", descriptor = "(Lclient!yf;I)V", line = 11239)
 	static final void method31372(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		@Pc(17) Class93_Sub1_Sub14 local17 = Class449.aClass514_1.method30267(local12, (byte) 80);
+		@Pc(17) Class93_Sub1_Sub14 local17 = Class687.aClass514_1.method30267(local12, (byte) 80);
 		if (local17.anIntArray260 == null) {
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = 0;
 		} else {

@@ -52,11 +52,6 @@ public abstract class Class53 {
 		this.anInt2010 = arg8 * -1865268073;
 	}
 
-	@OriginalMember(owner = "client!acb", name = "e", descriptor = "(I)[Lclient!nu;", line = 28)
-	static Class449[] method14943(@OriginalArg(0) int arg0) {
-		return new Class449[] { Class449.aClass449_1, Class449.aClass449_9, Class449.aClass449_11, Class449.aClass449_2, Class449.aClass449_10, Class449.aClass449_5, Class449.aClass449_8, Class449.aClass449_7, Class449.aClass449_4, Class449.aClass449_6, Class449.aClass449_3, Class449.aClass449_12 };
-	}
-
 	@OriginalMember(owner = "client!acb", name = "vp", descriptor = "(Lclient!yf;S)V", line = 8851)
 	static final void method14944(@OriginalArg(0) Class681 arg0, @OriginalArg(1) short arg1) {
 		arg0.anInt5891 -= -1915563430;

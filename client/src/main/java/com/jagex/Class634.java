@@ -132,7 +132,7 @@ public class Class634 {
 	@OriginalMember(owner = "client!wd", name = "fa", descriptor = "(I)V", line = 2530)
 	static final void method32319(@OriginalArg(0) int arg0) {
 		Class285.method26515(2095162445);
-		client.aClass532_1.method30516((byte) -13);
+		client.world.method30516((byte) -13);
 		@Pc(6) int local6;
 		for (local6 = 0; local6 < client.aClass173Array1.length; local6++) {
 			client.aClass173Array1[local6] = null;
@@ -149,7 +149,7 @@ public class Class634 {
 		client.anInt3488 = 0;
 		client.aClass16_20.method225((byte) 127);
 		Class322.method27271(Class20.method376(1437601641), -1555248762);
-		client.anInt3455 = 0;
+		client.verifyId = 0;
 		Class624.aClass120_1.aClass647_1.method32643((byte) -15);
 		Class581.aClass386_2 = null;
 		Class279.aClass386_1 = null;
@@ -182,6 +182,6 @@ public class Class634 {
 
 	@OriginalMember(owner = "client!wd", name = "auz", descriptor = "(Lclient!yf;I)V", line = 13409)
 	static final void method32321(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub35_3.method16226(-77427108);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub35_3.method16226(-77427108);
 	}
 }

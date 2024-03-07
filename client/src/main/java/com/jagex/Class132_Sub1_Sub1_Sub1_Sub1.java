@@ -91,7 +91,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 		this.anInt2641 = ((int) (Math.random() * 4.0D) + 32) * 237359311;
 		this.anInt2648 = ((int) (Math.random() * 2.0D) + 3) * 1962911457;
 		this.anInt2649 = ((int) (Math.random() * 3.0D) + 16) * -616222357;
-		if (Class51.aClass93_Sub36_1.aClass166_Sub14_1.method15656(-1832930692) == 1) {
+		if (Class51.options.aClass166_Sub14_1.method15656(-1832930692) == 1) {
 			this.anInt2650 = (int) (Math.random() * 6.0D) * 1007532221;
 		} else {
 			this.anInt2650 = (int) (Math.random() * 12.0D) * 1007532221;
@@ -103,7 +103,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 		this.anInt2641 = ((int) (Math.random() * 4.0D) + 32) * 237359311;
 		this.anInt2648 = ((int) (Math.random() * 2.0D) + 3) * 1962911457;
 		this.anInt2649 = ((int) (Math.random() * 3.0D) + 16) * -616222357;
-		if (Class51.aClass93_Sub36_1.aClass166_Sub14_1.method15656(1518852139) == 1) {
+		if (Class51.options.aClass166_Sub14_1.method15656(1518852139) == 1) {
 			this.anInt2650 = (int) (Math.random() * 6.0D) * 1007532221;
 		} else {
 			this.anInt2650 = (int) (Math.random() * 12.0D) * 1007532221;
@@ -115,7 +115,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 		this.anInt2641 = ((int) (Math.random() * 4.0D) + 32) * 237359311;
 		this.anInt2648 = ((int) (Math.random() * 2.0D) + 3) * 1962911457;
 		this.anInt2649 = ((int) (Math.random() * 3.0D) + 16) * -616222357;
-		if (Class51.aClass93_Sub36_1.aClass166_Sub14_1.method15656(806049606) == 1) {
+		if (Class51.options.aClass166_Sub14_1.method15656(806049606) == 1) {
 			this.anInt2650 = (int) (Math.random() * 6.0D) * 1007532221;
 		} else {
 			this.anInt2650 = (int) (Math.random() * 12.0D) * 1007532221;
@@ -127,7 +127,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 		this.anInt2641 = ((int) (Math.random() * 4.0D) + 32) * 237359311;
 		this.anInt2648 = ((int) (Math.random() * 2.0D) + 3) * 1962911457;
 		this.anInt2649 = ((int) (Math.random() * 3.0D) + 16) * -616222357;
-		if (Class51.aClass93_Sub36_1.aClass166_Sub14_1.method15656(-1321829975) == 1) {
+		if (Class51.options.aClass166_Sub14_1.method15656(-1321829975) == 1) {
 			this.anInt2650 = (int) (Math.random() * 6.0D) * 1007532221;
 		} else {
 			this.anInt2650 = (int) (Math.random() * 12.0D) * 1007532221;
@@ -139,7 +139,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 		this.anInt2641 = ((int) (Math.random() * 4.0D) + 32) * 237359311;
 		this.anInt2648 = ((int) (Math.random() * 2.0D) + 3) * 1962911457;
 		this.anInt2649 = ((int) (Math.random() * 3.0D) + 16) * -616222357;
-		if (Class51.aClass93_Sub36_1.aClass166_Sub14_1.method15656(1115153392) == 1) {
+		if (Class51.options.aClass166_Sub14_1.method15656(1115153392) == 1) {
 			this.anInt2650 = (int) (Math.random() * 6.0D) * 1007532221;
 		} else {
 			this.anInt2650 = (int) (Math.random() * 12.0D) * 1007532221;
@@ -242,7 +242,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 		@Pc(134) boolean local134 = local126.aClass463_1 != null;
 		this.aBoolean454 = false;
 		@Pc(139) Class573 local139 = null;
-		if (Class51.aClass93_Sub36_1.aClass166_Sub21_1.method15807(-1890656231) == 1 && local126.aBoolean714 && local112.aBoolean844) {
+		if (Class51.options.aClass166_Sub21_1.method15807(-1890656231) == 1 && local126.aBoolean714 && local112.aBoolean844) {
 			@Pc(166) Class19 local166 = this.aClass19_3.method23557(158322583) && this.aClass19_3.method23578((byte) 0) ? this.aClass19_3 : null;
 			@Pc(183) Class19_Sub3 local183 = this.aClass19_Sub3_3.method23557(-914049455) && (!this.aClass19_Sub3_3.aBoolean379 || local166 == null) ? this.aClass19_Sub3_3 : null;
 			@Pc(186) short local186 = Class93_Sub26.aClass645_15.aShort184;
@@ -252,7 +252,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 				local189 = this.aClass336_1.aByte131;
 			}
 			@Pc(240) Class109 local240;
-			if (local186 > -1 && Class51.aClass93_Sub36_1.aClass166_Sub14_1.method15656(-2005850360) == 1) {
+			if (local186 > -1 && Class51.options.aClass166_Sub14_1.method15656(-2005850360) == 1) {
 				local240 = Class270.method26296(arg0, local24, this.anInt2767 * -1595449153, this.anInt2790 * 1471665235, this.anInt2769 * 1367159499, this.aClass109Array3[0], local186, local189, local183 == null ? local166 : local183, -633139408);
 			} else {
 				local240 = Class365.method27905(arg0, local24, this.anInt2767 * -1595449153, this.anInt2790 * 1471665235, this.anInt2769 * 1367159499, this.aClass336_1.anInt4154 * 447008399, this.aClass109Array3[0], this.aClass336_1.aShort166 & 0xFFFF, this.aClass336_1.aShort165 & 0xFFFF, this.aClass336_1.aByte135 & 0xFF, this.aClass336_1.aByte136 & 0xFF, local183 == null ? local166 : local183, (byte) -73);
@@ -337,7 +337,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 		@Pc(134) boolean local134 = local126.aClass463_1 != null;
 		this.aBoolean454 = false;
 		@Pc(139) Class573 local139 = null;
-		if (Class51.aClass93_Sub36_1.aClass166_Sub21_1.method15807(484847692) == 1 && local126.aBoolean714 && local112.aBoolean844) {
+		if (Class51.options.aClass166_Sub21_1.method15807(484847692) == 1 && local126.aBoolean714 && local112.aBoolean844) {
 			@Pc(166) Class19 local166 = this.aClass19_3.method23557(235109070) && this.aClass19_3.method23578((byte) 0) ? this.aClass19_3 : null;
 			@Pc(183) Class19_Sub3 local183 = this.aClass19_Sub3_3.method23557(1968391922) && (!this.aClass19_Sub3_3.aBoolean379 || local166 == null) ? this.aClass19_Sub3_3 : null;
 			@Pc(186) short local186 = Class93_Sub26.aClass645_15.aShort184;
@@ -347,7 +347,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 				local189 = this.aClass336_1.aByte131;
 			}
 			@Pc(240) Class109 local240;
-			if (local186 > -1 && Class51.aClass93_Sub36_1.aClass166_Sub14_1.method15656(-962404656) == 1) {
+			if (local186 > -1 && Class51.options.aClass166_Sub14_1.method15656(-962404656) == 1) {
 				local240 = Class270.method26296(arg0, local24, this.anInt2767 * -1595449153, this.anInt2790 * 1471665235, this.anInt2769 * 1367159499, this.aClass109Array3[0], local186, local189, local183 == null ? local166 : local183, 1798752829);
 			} else {
 				local240 = Class365.method27905(arg0, local24, this.anInt2767 * -1595449153, this.anInt2790 * 1471665235, this.anInt2769 * 1367159499, this.aClass336_1.anInt4154 * 447008399, this.aClass109Array3[0], this.aClass336_1.aShort166 & 0xFFFF, this.aClass336_1.aShort165 & 0xFFFF, this.aClass336_1.aByte135 & 0xFF, this.aClass336_1.aByte136 & 0xFF, local183 == null ? local166 : local183, (byte) -19);
@@ -940,7 +940,7 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 	@OriginalMember(owner = "client!aqc", name = "hy", descriptor = "(IIIZIB)V", line = 287)
 	public void method18606(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) boolean arg3, @OriginalArg(4) int arg4, @OriginalArg(5) byte arg5) {
 		this.aByte100 = this.aByte99 = (byte) arg0;
-		if (client.aClass532_1.method30487(-1807976770).method30330(arg1, arg2, -662808309)) {
+		if (client.world.method30487(-1807976770).method30330(arg1, arg2, -662808309)) {
 			this.aByte99++;
 		}
 		if (this.aClass19_3.method23557(-1838942885) && this.aClass19_3.method23560(-419482638).anInt3876 * -1511529595 == 1) {
@@ -1476,28 +1476,28 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 	@OriginalMember(owner = "client!aqc", name = "z", descriptor = "()Lclient!akt;", line = 446)
 	@Override
 	public Class93_Sub30 method19944() {
-		@Pc(3) Class611 local3 = client.aClass532_1.method30455(2067254857);
+		@Pc(3) Class611 local3 = client.world.method30455(2067254857);
 		return Class393.method28297(this.aByte100, (int) this.method24220().aClass472_61.aFloat317 + local3.anInt5623 * 1114227200, -((int) this.method24220().aClass472_61.aFloat318), (int) this.method24220().aClass472_61.aFloat319 + local3.anInt5624 * 1116707328, (short) -10152);
 	}
 
 	@OriginalMember(owner = "client!aqc", name = "p", descriptor = "()Lclient!akt;", line = 446)
 	@Override
 	public Class93_Sub30 method19943() {
-		@Pc(3) Class611 local3 = client.aClass532_1.method30455(2078928802);
+		@Pc(3) Class611 local3 = client.world.method30455(2078928802);
 		return Class393.method28297(this.aByte100, (int) this.method24220().aClass472_61.aFloat317 + local3.anInt5623 * 1114227200, -((int) this.method24220().aClass472_61.aFloat318), (int) this.method24220().aClass472_61.aFloat319 + local3.anInt5624 * 1116707328, (short) 6808);
 	}
 
 	@OriginalMember(owner = "client!aqc", name = "u", descriptor = "()Lclient!akt;", line = 446)
 	@Override
 	public Class93_Sub30 method19940() {
-		@Pc(3) Class611 local3 = client.aClass532_1.method30455(1994750451);
+		@Pc(3) Class611 local3 = client.world.method30455(1994750451);
 		return Class393.method28297(this.aByte100, (int) this.method24220().aClass472_61.aFloat317 + local3.anInt5623 * 1114227200, -((int) this.method24220().aClass472_61.aFloat318), (int) this.method24220().aClass472_61.aFloat319 + local3.anInt5624 * 1116707328, (short) -12387);
 	}
 
 	@OriginalMember(owner = "client!aqc", name = "m", descriptor = "(B)Lclient!akt;", line = 446)
 	@Override
 	public Class93_Sub30 method19938(@OriginalArg(0) byte arg0) {
-		@Pc(3) Class611 local3 = client.aClass532_1.method30455(1793080753);
+		@Pc(3) Class611 local3 = client.world.method30455(1793080753);
 		return Class393.method28297(this.aByte100, (int) this.method24220().aClass472_61.aFloat317 + local3.anInt5623 * 1114227200, -((int) this.method24220().aClass472_61.aFloat318), (int) this.method24220().aClass472_61.aFloat319 + local3.anInt5624 * 1116707328, (short) -8537);
 	}
 
@@ -1570,19 +1570,19 @@ public class Class132_Sub1_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1_Sub1 {
 		arg0.anInt5891 -= -1915563430;
 		@Pc(13) int local13 = arg0.anIntArray519[arg0.anInt5891 * -1497248091];
 		@Pc(23) int local23 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 1];
-		if (Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aClass658_1 == null) {
+		if (Class520.selfPlayer.aClass658_1 == null) {
 			return;
 		}
 		@Pc(30) int local30;
 		for (local30 = 0; local30 < Class369.anIntArray429.length; local30++) {
 			if (Class369.anIntArray429[local30] == local13) {
-				Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aClass658_1.method32761(local30, local23, Class343.aClass32_Sub19_1, 528085384);
+				Class520.selfPlayer.aClass658_1.method32761(local30, local23, Class343.aClass32_Sub19_1, 528085384);
 				return;
 			}
 		}
 		for (local30 = 0; local30 < Class369.anIntArray431.length; local30++) {
 			if (local13 == Class369.anIntArray431[local30]) {
-				Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aClass658_1.method32761(local30, local23, Class343.aClass32_Sub19_1, 248287246);
+				Class520.selfPlayer.aClass658_1.method32761(local30, local23, Class343.aClass32_Sub19_1, 248287246);
 				return;
 			}
 		}

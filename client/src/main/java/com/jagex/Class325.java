@@ -41,11 +41,11 @@ public class Class325 {
 	@OriginalMember(owner = "client!hv", name = "e", descriptor = "(Lclient!hw;I)V", line = 61)
 	void method27296(@OriginalArg(0) Class326 arg0, @OriginalArg(1) int arg1) {
 		@Pc(3) int local3 = arg0.method27305(2111968903);
-		this.aClass323_133 = Class449.method28929(379945710)[local3];
+		this.aClass323_133 = Class323.method28929(379945710)[local3];
 		@Pc(17) int local17;
 		if (Class323.aClass323_9 == this.aClass323_133) {
 			local17 = arg0.method27305(4220749);
-			this.aClass323_132 = Class449.method28929(1869537355)[local17];
+			this.aClass323_132 = Class323.method28929(1869537355)[local17];
 			this.anInt4138 = arg0.method27305(-10506204) * -592418195;
 		}
 		this.aString176 = arg0.method27309(729817088);
@@ -62,11 +62,11 @@ public class Class325 {
 	@OriginalMember(owner = "client!hv", name = "n", descriptor = "(Lclient!hw;)V", line = 61)
 	void method27297(@OriginalArg(0) Class326 arg0) {
 		@Pc(3) int local3 = arg0.method27305(1827444776);
-		this.aClass323_133 = Class449.method28929(883563858)[local3];
+		this.aClass323_133 = Class323.method28929(883563858)[local3];
 		@Pc(17) int local17;
 		if (Class323.aClass323_9 == this.aClass323_133) {
 			local17 = arg0.method27305(492955076);
-			this.aClass323_132 = Class449.method28929(1598590006)[local17];
+			this.aClass323_132 = Class323.method28929(1598590006)[local17];
 			this.anInt4138 = arg0.method27305(191215798) * -592418195;
 		}
 		this.aString176 = arg0.method27309(-1485007811);
@@ -83,11 +83,11 @@ public class Class325 {
 	@OriginalMember(owner = "client!hv", name = "m", descriptor = "(Lclient!hw;)V", line = 61)
 	void method27298(@OriginalArg(0) Class326 arg0) {
 		@Pc(3) int local3 = arg0.method27305(1981299989);
-		this.aClass323_133 = Class449.method28929(339649391)[local3];
+		this.aClass323_133 = Class323.method28929(339649391)[local3];
 		@Pc(17) int local17;
 		if (Class323.aClass323_9 == this.aClass323_133) {
 			local17 = arg0.method27305(1625307413);
-			this.aClass323_132 = Class449.method28929(1794091978)[local17];
+			this.aClass323_132 = Class323.method28929(1794091978)[local17];
 			this.anInt4138 = arg0.method27305(1129541645) * -592418195;
 		}
 		this.aString176 = arg0.method27309(-2088652371);

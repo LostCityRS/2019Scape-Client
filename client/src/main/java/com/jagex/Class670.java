@@ -101,7 +101,7 @@ public class Class670 {
 		@Pc(5) TwitchEventResult local5 = new TwitchEventResult(arg0, arg1);
 		@Pc(8) Class591 local8 = local5.n();
 		if (local8 != null) {
-			Class707.method36751(local8.method36920(), local5, (byte) -64);
+			Class707.method36751(local8.getId(), local5, (byte) -64);
 		}
 	}
 
@@ -133,13 +133,13 @@ public class Class670 {
 	@OriginalMember(owner = "client!xt", name = "lc", descriptor = "(Ljava/lang/String;Ljava/lang/String;I)V", line = 12019)
 	public static final void method32960(@OriginalArg(0) String arg0, @OriginalArg(1) String arg1, @OriginalArg(2) int arg2) {
 		@Pc(2) Class175 local2 = Class330.method27371(-1999693521);
-		@Pc(8) Class93_Sub22 local8 = Class102.method2588(Class446.aClass446_66, local2.aClass24_2, (byte) 124);
+		@Pc(8) ClientMessage local8 = Class102.createGameMessage(ClientProt.aClientProt_66, local2.clientIsaac, (byte) 124);
 		if (arg1.length() > 30) {
 			arg1 = arg1.substring(0, 30);
 		}
-		local8.aPacketBit_1.p1(Packet.pjstrlen(arg0, -2112445074) + Packet.pjstrlen(arg1, -2002128209), (byte) -97);
-		local8.aPacketBit_1.pjstr(arg0, 660568065);
-		local8.aPacketBit_1.pjstr(arg1, 330355015);
-		local2.method24356(local8, -2034693953);
+		local8.packet.p1(Packet.pjstrlen(arg0, -2112445074) + Packet.pjstrlen(arg1, -2002128209), (byte) -97);
+		local8.packet.pjstr(arg0, 660568065);
+		local8.packet.pjstr(arg1, 330355015);
+		local2.send(local8, -2034693953);
 	}
 }

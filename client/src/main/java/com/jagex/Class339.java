@@ -176,12 +176,12 @@ public class Class339 {
 
 	@OriginalMember(owner = "client!ij", name = "fz", descriptor = "(Lclient!ax;B)V", line = 2325)
 	static void method27486(@OriginalArg(0) Class175 arg0, @OriginalArg(1) byte arg1) {
-		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_51, arg0.aClass24_2, (byte) 46);
-		local5.aPacketBit_1.p1(Class255.method26008(2033898723), (byte) -58);
-		local5.aPacketBit_1.p2(client.anInt3408 * -1378711501, 2145519216);
-		local5.aPacketBit_1.p2(client.anInt3416 * 2091353777, 2128531004);
-		local5.aPacketBit_1.p1(Class51.aClass93_Sub36_1.aClass166_Sub39_1.method16345(-1923223686), (byte) -120);
-		arg0.method24356(local5, -2013322142);
+		@Pc(5) ClientMessage local5 = Class102.createGameMessage(ClientProt.WINDOW_STATUS, arg0.clientIsaac, (byte) 46);
+		local5.packet.p1(Class255.getWindowMode(2033898723), (byte) -58);
+		local5.packet.p2(client.width * -1378711501, 2145519216);
+		local5.packet.p2(client.height * 2091353777, 2128531004);
+		local5.packet.p1(Class51.options.antialiasing.getValue(-1923223686), (byte) -120);
+		arg0.send(local5, -2013322142);
 	}
 
 	@OriginalMember(owner = "client!ij", name = "aag", descriptor = "(Lclient!yf;I)V", line = 9650)
@@ -211,6 +211,6 @@ public class Class339 {
 
 	@OriginalMember(owner = "client!ij", name = "azx", descriptor = "(Lclient!yf;I)V", line = 14133)
 	static final void method27489(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub3_1.method15402((byte) 53) ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub3_1.method15402((byte) 53) ? 1 : 0;
 	}
 }

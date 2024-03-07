@@ -154,11 +154,6 @@ public class Class379 implements Interface12 {
 		}
 	}
 
-	@OriginalMember(owner = "client!kh", name = "e", descriptor = "(I)[Lclient!nk;", line = 22)
-	public static Class440[] method28081(@OriginalArg(0) int arg0) {
-		return new Class440[] { Class440.aClass440_8, Class440.aClass440_2, Class440.aClass440_1, Class440.aClass440_4, Class440.aClass440_5, Class440.aClass440_14, Class440.aClass440_7, Class440.aClass440_3, Class440.aClass440_9, Class440.aClass440_6, Class440.aClass440_11, Class440.aClass440_12, Class440.aClass440_13, Class440.aClass440_10, Class440.aClass440_15 };
-	}
-
 	@OriginalMember(owner = "client!kh", name = "<init>", descriptor = "(ILclient!ka;)V", line = 30)
 	Class379(@OriginalArg(0) int arg0, @OriginalArg(1) Class127 arg1) {
 		this.anInt4622 = arg0 * 1459595497;
@@ -510,7 +505,7 @@ public class Class379 implements Interface12 {
 
 	@OriginalMember(owner = "client!kh", name = "xr", descriptor = "(Lclient!yf;I)V", line = 9188)
 	static final void method28106(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.aBoolean620 ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.mapMember ? 1 : 0;
 	}
 
 	@OriginalMember(owner = "client!kh", name = "acw", descriptor = "(Lclient!yf;B)V", line = 9998)

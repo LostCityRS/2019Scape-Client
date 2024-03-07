@@ -477,14 +477,14 @@ public class Class26 implements Interface13, Interface5 {
 		if (!arg0.method20503(2114416749)) {
 			return false;
 		}
-		@Pc(14) int local14 = client.aClass532_1.method30459(514819425);
-		@Pc(18) int local18 = client.aClass532_1.method30466((short) 128);
-		@Pc(22) Class520 local22 = client.aClass532_1.method30487(-706123304);
-		@Pc(26) Class585 local26 = client.aClass532_1.method30481(-1444248603);
+		@Pc(14) int local14 = client.world.method30459(514819425);
+		@Pc(18) int local18 = client.world.method30466((short) 128);
+		@Pc(22) Class520 local22 = client.world.method30487(-706123304);
+		@Pc(26) Class585 local26 = client.world.method30481(-1444248603);
 		@Pc(28) int local28 = arg1;
-		if (Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3 != null) {
-			@Pc(37) int local37 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anIntArray240[0] >> 3;
-			@Pc(44) int local44 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anIntArray239[0] >> 3;
+		if (Class520.selfPlayer != null) {
+			@Pc(37) int local37 = Class520.selfPlayer.anIntArray240[0] >> 3;
+			@Pc(44) int local44 = Class520.selfPlayer.anIntArray239[0] >> 3;
 			if (local37 >= 0 && local37 < Class690.aBooleanArrayArray15.length && local44 >= 0 && local44 < Class690.aBooleanArrayArray15[local37].length && Class690.aBooleanArrayArray15[local37][local44]) {
 				local28 = 0;
 			}
@@ -535,7 +535,7 @@ public class Class26 implements Interface13, Interface5 {
 		} else {
 			Class172.aClass100_40 = arg0.method20487(local148, 0, local78, local78, local78, 438797212);
 		}
-		client.aClass532_1.method30494((byte) 33).method33041(730324292);
+		client.world.method30494((byte) 33).method33041(730324292);
 		@Pc(253) int local253 = ((int) (Math.random() * 20.0D) + 238 - 10 << 16) + ((int) (Math.random() * 20.0D) + 238 - 10 << 8) + ((int) (Math.random() * 20.0D) + 238 - 10) | 0xFF000000;
 		@Pc(266) int local266 = ((int) (Math.random() * 20.0D) + 238 - 10 | 0xFF00) << 16;
 		@Pc(285) int local285 = (int) (Math.random() * 8.0D) << 16 | (int) (Math.random() * 8.0D) << 8 | (int) (Math.random() * 8.0D);
@@ -637,13 +637,13 @@ public class Class26 implements Interface13, Interface5 {
 		Class172.aClass22_43.method405(-2037259486);
 		if (!Class172.aBoolean522) {
 			Class110_Sub15.method20152(arg1, 1757293797);
-			@Pc(637) Class584 local637 = client.aClass532_1.method30467(-304373563);
+			@Pc(637) Class584 local637 = client.world.method30467(-304373563);
 			if (local637 != null) {
 				Class542.aClass32_Sub2_3.method16652(1024, 64, -1613328696);
-				@Pc(649) Class611 local649 = client.aClass532_1.method30455(1819027207);
+				@Pc(649) Class611 local649 = client.world.method30455(1819027207);
 				for (local318 = 0; local318 < local637.anInt5436 * 1285867561; local318++) {
 					local320 = local637.anIntArray473[local318];
-					if (local320 >> 28 == Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aByte100) {
+					if (local320 >> 28 == Class520.selfPlayer.aByte100) {
 						local322 = (local320 >> 14 & 0x3FFF) - local649.anInt5623 * 270611681;
 						local328 = (local320 & 0x3FFF) - local649.anInt5624 * -1994307635;
 						if (local322 >= 0 && local322 < local14 && local328 >= 0 && local328 < local18) {

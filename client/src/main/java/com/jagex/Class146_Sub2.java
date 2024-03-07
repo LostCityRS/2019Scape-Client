@@ -703,7 +703,7 @@ public class Class146_Sub2 extends Class146 {
 
 	@OriginalMember(owner = "client!aiz", name = "ai", descriptor = "(I)Z", line = 1152)
 	static boolean method11709(@OriginalArg(0) int arg0) {
-		if (client.anInt3435 * -849002901 == 4) {
+		if (client.state * -849002901 == 4) {
 			return !Class251.method25969(1619801325) && !Class631.method32280(-1890347983);
 		} else {
 			return false;

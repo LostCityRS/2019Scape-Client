@@ -386,14 +386,14 @@ public class Class366 implements Interface30 {
 	static final void method27950(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
 		@Pc(15) Class175 local15 = Class330.method27371(-1899288836);
-		@Pc(21) Class93_Sub22 local21 = Class102.method2588(Class446.aClass446_31, local15.aClass24_2, (byte) 7);
-		local21.aPacketBit_1.p1(0, (byte) -6);
-		@Pc(32) int local32 = local21.aPacketBit_1.pos * 212851357;
-		local21.aPacketBit_1.p1(local12, (byte) -55);
-		local21.aPacketBit_1.p2(arg0.aClass434_1.anInt4807 * 526894191, 2143091659);
-		arg0.aClass434_1.aClass93_Sub1_Sub18_1.method22924(local21.aPacketBit_1, arg0.aClass434_1.anIntArray445, -1891254382);
-		local21.aPacketBit_1.psize1(local21.aPacketBit_1.pos * 212851357 - local32, (byte) 70);
-		local15.method24356(local21, -1659915406);
+		@Pc(21) ClientMessage local21 = Class102.createGameMessage(ClientProt.aClientProt_31, local15.clientIsaac, (byte) 7);
+		local21.packet.p1(0, (byte) -6);
+		@Pc(32) int local32 = local21.packet.pos * 212851357;
+		local21.packet.p1(local12, (byte) -55);
+		local21.packet.p2(arg0.aClass434_1.anInt4807 * 526894191, 2143091659);
+		arg0.aClass434_1.aClass93_Sub1_Sub18_1.method22924(local21.packet, arg0.aClass434_1.anIntArray445, -1891254382);
+		local21.packet.psize1(local21.packet.pos * 212851357 - local32, (byte) 70);
+		local15.send(local21, -1659915406);
 	}
 
 	@OriginalMember(owner = "client!jr", name = "baf", descriptor = "(Lclient!yf;S)V", line = 14249)

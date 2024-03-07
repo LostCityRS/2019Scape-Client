@@ -40,19 +40,19 @@ public class Class110_Sub5 extends Class110 {
 	@OriginalMember(owner = "client!aga", name = "e", descriptor = "(Lclient!ase;I)V", line = 42)
 	static final void method7654(@OriginalArg(0) PacketBit arg0, @OriginalArg(1) int arg1) {
 		arg0.accessBits((byte) 48);
-		@Pc(6) int local6 = client.anInt3513 * -859840571;
-		@Pc(19) Class132_Sub1_Sub1_Sub1_Sub2 local19 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3 = client.aClass132_Sub1_Sub1_Sub1_Sub2Array1[local6] = new Class132_Sub1_Sub1_Sub1_Sub2(client.aClass532_1.method30481(-1946144137));
+		@Pc(6) int local6 = client.selfPlayerSlot * -859840571;
+		@Pc(19) Class132_Sub1_Sub1_Sub1_Sub2 local19 = Class520.selfPlayer = client.aClass132_Sub1_Sub1_Sub1_Sub2Array1[local6] = new Class132_Sub1_Sub1_Sub1_Sub2(client.world.method30481(-1946144137));
 		local19.anInt2768 = local6 * 171759809;
 		@Pc(29) int local29 = arg0.gBit(30, 1245006124);
 		@Pc(34) byte local34 = (byte) (local29 >> 28);
 		@Pc(40) int local40 = local29 >> 14 & 0x3FFF;
 		@Pc(44) int local44 = local29 & 0x3FFF;
-		@Pc(48) Class611 local48 = client.aClass532_1.method30455(1806933485);
+		@Pc(48) Class611 local48 = client.world.method30455(1806933485);
 		local19.anIntArray240[0] = local40 - local48.anInt5623 * 270611681;
 		local19.anIntArray239[0] = local44 - local48.anInt5624 * -1994307635;
 		local19.method24244((float) ((local19.anIntArray240[0] << 9) + (local19.method19986(-79999018) << 8)), local19.method24218().aClass472_61.aFloat318, (float) ((local19.anIntArray239[0] << 9) + (local19.method19986(1449782044) << 8)));
 		Class512.anInt5209 = (local19.aByte100 = local19.aByte99 = local34) * -69533369;
-		if (client.aClass532_1.method30487(148494815).method30330(local19.anIntArray240[0], local19.anIntArray239[0], -662808309)) {
+		if (client.world.method30487(148494815).method30330(local19.anIntArray240[0], local19.anIntArray239[0], -662808309)) {
 			local19.aByte99++;
 		}
 		if (Class174.aPacketArray2[local6] != null) {

@@ -110,8 +110,8 @@ public class Class513 {
 				local142.method16477(-2005412477);
 			}
 		}
-		if (client.aClass175_2.length * 2010044839 != client.aClass175_2.aPacketBit_2.pos * 212851357) {
-			throw new RuntimeException(client.aClass175_2.aPacketBit_2.pos * 212851357 + " " + client.aClass175_2.length * 2010044839);
+		if (client.aClass175_2.length * 2010044839 != client.aClass175_2.packet.pos * 212851357) {
+			throw new RuntimeException(client.aClass175_2.packet.pos * 212851357 + " " + client.aClass175_2.length * 2010044839);
 		}
 		for (local18 = 0; local18 < client.anInt3540 * 568731113; local18++) {
 			if (client.aClass16_18.method214((long) client.anIntArray323[local18]) == null) {

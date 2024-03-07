@@ -98,12 +98,12 @@ class Class63 implements Iterator {
 
 	@OriginalMember(owner = "client!acm", name = "ag", descriptor = "(B)V", line = 1017)
 	static void method1162(@OriginalArg(0) byte arg0) {
-		Class411.aClass175_3.method24351(-1146389155);
-		Class411.aClass175_3.aPacketBit_2.pos = 0;
-		Class411.aClass175_3.aClass453_1 = null;
-		Class411.aClass175_3.aClass453_4 = null;
-		Class411.aClass175_3.aClass453_3 = null;
-		Class411.aClass175_3.anInt3298 = 0;
+		Class411.connection.clear(-1146389155);
+		Class411.connection.packet.pos = 0;
+		Class411.connection.prevServerPacketType1 = null;
+		Class411.connection.prevServerPacketType2 = null;
+		Class411.connection.prevServerPacketType3 = null;
+		Class411.connection.anInt3298 = 0;
 		client.anInt3453 = 0;
 		client.anInt3572 = 0;
 		client.anInt3444 = 0;
@@ -114,7 +114,7 @@ class Class63 implements Iterator {
 		Class581.aClass386_2 = null;
 		Class279.aClass386_1 = null;
 		client.aBoolean636 = true;
-		Class693.method36612((short) -24121);
+		ModeWhere.method36612((short) -24121);
 		for (@Pc(42) int local42 = 0; local42 < Class624.aClass120_1.aClass675Array1.length; local42++) {
 			@Pc(56) Class675 local56 = new Class675(Class336.aClass644_1.method32591(local42, (byte) 24), false);
 			local56.method33143(0, 584874206);
@@ -123,6 +123,6 @@ class Class63 implements Iterator {
 		}
 		Class624.aClass120_1.aClass647_1.method32643((byte) -51);
 		Class151.method13978(-64820407);
-		Class339.method27486(Class411.aClass175_3, (byte) 38);
+		Class339.method27486(Class411.connection, (byte) 38);
 	}
 }

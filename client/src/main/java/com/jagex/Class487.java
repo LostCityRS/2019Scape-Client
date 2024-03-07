@@ -601,8 +601,8 @@ public class Class487 {
 
 	@OriginalMember(owner = "client!pm", name = "xf", descriptor = "(Lclient!yf;I)V", line = 9237)
 	static final void method29818(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		if (client.anInt3514 * 2055688893 >= 2) {
-			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.anInt3514 * 2055688893;
+		if (client.userStaffModLevel * 2055688893 >= 2) {
+			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.userStaffModLevel * 2055688893;
 		} else {
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = 0;
 		}
@@ -613,9 +613,9 @@ public class Class487 {
 		arg0.anInt5891 -= -1915563430;
 		@Pc(13) int local13 = arg0.anIntArray519[arg0.anInt5891 * -1497248091];
 		@Pc(28) boolean local28 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 1] == 1;
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub4_1, local13, (byte) 95);
+		Class51.options.method14363(Class51.options.aClass166_Sub4_1, local13, (byte) 95);
 		if (!local28) {
-			Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub40_1, 0, (byte) 44);
+			Class51.options.method14363(Class51.options.aClass166_Sub40_1, 0, (byte) 44);
 		}
 		Class106_Sub1.method5135(-640539118);
 		client.aBoolean601 = false;

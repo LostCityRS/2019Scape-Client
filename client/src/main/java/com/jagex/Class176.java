@@ -210,12 +210,12 @@ public class Class176 {
 
 	@OriginalMember(owner = "client!az", name = "lh", descriptor = "(Ljava/lang/String;ZB)V", line = 12159)
 	public static final void method24387(@OriginalArg(0) String arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) byte arg2) {
-		@Pc(5) int local5 = client.aBoolean629 ? 400 : 100;
+		@Pc(5) int local5 = client.userMember ? 400 : 100;
 		if (arg0 == null) {
 			return;
 		}
 		if (client.anInt3573 * 1882800101 >= local5) {
-			Class103.method2809(4, client.aBoolean629 ? Class74.aClass74_5.method1259(Class106.aClass717_8, (byte) 56) : Class74.aClass74_167.method1259(Class106.aClass717_8, (byte) 43), -1963408433);
+			Class103.method2809(4, client.userMember ? Class74.aClass74_5.method1259(Class106.lang, (byte) 56) : Class74.aClass74_167.method1259(Class106.lang, (byte) 43), -1963408433);
 			return;
 		}
 		@Pc(33) String local33 = Class82.method1384(arg0, client.aClass83_10, (byte) 1);
@@ -229,13 +229,13 @@ public class Class176 {
 			@Pc(47) Class177 local47 = client.aClass177Array1[local38];
 			local53 = Class82.method1384(local47.aString125, client.aClass83_10, (byte) 1);
 			if (local53 != null && local53.equals(local33)) {
-				Class103.method2809(4, arg0 + Class74.aClass74_150.method1259(Class106.aClass717_8, (byte) 10), -1963408433);
+				Class103.method2809(4, arg0 + Class74.aClass74_150.method1259(Class106.lang, (byte) 10), -1963408433);
 				return;
 			}
 			if (local47.aString123 != null) {
 				local84 = Class82.method1384(local47.aString123, client.aClass83_10, (byte) 1);
 				if (local84 != null && local84.equals(local33)) {
-					Class103.method2809(4, arg0 + Class74.aClass74_150.method1259(Class106.aClass717_8, (byte) 36), -1963408433);
+					Class103.method2809(4, arg0 + Class74.aClass74_150.method1259(Class106.lang, (byte) 36), -1963408433);
 					return;
 				}
 			}
@@ -244,26 +244,26 @@ public class Class176 {
 			@Pc(118) Class281 local118 = client.aClass281Array1[local38];
 			local53 = Class82.method1384(local118.aString153, client.aClass83_10, (byte) 1);
 			if (local53 != null && local53.equals(local33)) {
-				Class103.method2809(4, Class74.aClass74_7.method1259(Class106.aClass717_8, (byte) 28) + arg0 + Class74.aClass74_40.method1259(Class106.aClass717_8, (byte) -68), -1963408433);
+				Class103.method2809(4, Class74.aClass74_7.method1259(Class106.lang, (byte) 28) + arg0 + Class74.aClass74_40.method1259(Class106.lang, (byte) -68), -1963408433);
 				return;
 			}
 			if (local118.aString154 != null) {
 				local84 = Class82.method1384(local118.aString154, client.aClass83_10, (byte) 1);
 				if (local84 != null && local84.equals(local33)) {
-					Class103.method2809(4, Class74.aClass74_7.method1259(Class106.aClass717_8, (byte) -63) + arg0 + Class74.aClass74_40.method1259(Class106.aClass717_8, (byte) 32), -1963408433);
+					Class103.method2809(4, Class74.aClass74_7.method1259(Class106.lang, (byte) -63) + arg0 + Class74.aClass74_40.method1259(Class106.lang, (byte) 32), -1963408433);
 					return;
 				}
 			}
 		}
-		if (Class82.method1384(Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aString82, client.aClass83_10, (byte) 1).equals(local33)) {
-			Class103.method2809(4, Class74.aClass74_152.method1259(Class106.aClass717_8, (byte) 69), -1963408433);
+		if (Class82.method1384(Class520.selfPlayer.name2, client.aClass83_10, (byte) 1).equals(local33)) {
+			Class103.method2809(4, Class74.aClass74_152.method1259(Class106.lang, (byte) 69), -1963408433);
 			return;
 		}
 		@Pc(206) Class175 local206 = Class330.method27371(-1710329126);
-		@Pc(212) Class93_Sub22 local212 = Class102.method2588(Class446.aClass446_15, local206.aClass24_2, (byte) 36);
-		local212.aPacketBit_1.p1(Packet.pjstrlen(arg0, -1907754676) + 1, (byte) -97);
-		local212.aPacketBit_1.pjstr(arg0, 1814436622);
-		local212.aPacketBit_1.p1(arg1 ? 1 : 0, (byte) -110);
-		local206.method24356(local212, -1741556461);
+		@Pc(212) ClientMessage local212 = Class102.createGameMessage(ClientProt.aClientProt_15, local206.clientIsaac, (byte) 36);
+		local212.packet.p1(Packet.pjstrlen(arg0, -1907754676) + 1, (byte) -97);
+		local212.packet.pjstr(arg0, 1814436622);
+		local212.packet.p1(arg1 ? 1 : 0, (byte) -110);
+		local206.send(local212, -1741556461);
 	}
 }

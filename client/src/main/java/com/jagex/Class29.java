@@ -58,7 +58,7 @@ public class Class29 {
 			@Pc(73) int local73 = local43 - Class270.anInt3884 * 466086187;
 			@Pc(84) int local84 = (int) Math.sqrt((double) (local73 * local73 + local61 * local61));
 			Class620.anInt5644 = ((int) (Math.atan2((double) local67, (double) local84) * 2607.5945876176133D) & 0x3FFF) * -1151839067;
-			Class24.anInt82 = ((int) (Math.atan2((double) local61, (double) local73) * -2607.5945876176133D) & 0x3FFF) * 1056124373;
+			IsaacRandom.anInt82 = ((int) (Math.atan2((double) local61, (double) local73) * -2607.5945876176133D) & 0x3FFF) * 1056124373;
 			Class348.anInt4199 = 0;
 			if (Class620.anInt5644 * 607613741 < 1024) {
 				Class620.anInt5644 = 1632801792;

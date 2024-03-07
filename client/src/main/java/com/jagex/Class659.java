@@ -12,7 +12,7 @@ public class Class659 implements Interface75 {
 	public static Class633 aClass633_1;
 
 	@OriginalMember(owner = "client!xh", name = "ov", descriptor = "I")
-	public static int anInt5822;
+	public static int userUnreadMessages;
 
 	@OriginalMember(owner = "client!xh", name = "e", descriptor = "Lclient!xh;")
 	public static final Class659 aClass659_3 = new Class659(0);
@@ -48,7 +48,7 @@ public class Class659 implements Interface75 {
 
 	@OriginalMember(owner = "client!xh", name = "n", descriptor = "()I", line = 31)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt5821 * 1384393999;
 	}
 
@@ -146,7 +146,7 @@ public class Class659 implements Interface75 {
 		@Pc(8) Class677 local8 = arg0.aBoolean875 ? arg0.aClass677_2 : arg0.aClass677_1;
 		@Pc(11) Class312 local11 = local8.aClass312_13;
 		@Pc(14) Class320 local14 = local8.aClass320_4;
-		Class693.method36613(local11, local14, arg0, -1987680147);
+		ModeWhere.method36613(local11, local14, arg0, -1987680147);
 	}
 
 	@OriginalMember(owner = "client!xh", name = "tu", descriptor = "(Lclient!yf;I)V", line = 8350)

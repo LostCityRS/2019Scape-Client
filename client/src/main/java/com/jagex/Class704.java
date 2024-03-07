@@ -48,7 +48,7 @@ public class Class704 implements Interface75 {
 
 	@OriginalMember(owner = "client!zg", name = "n", descriptor = "()I", line = 24)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt5954 * -1656729963;
 	}
 
@@ -91,26 +91,26 @@ public class Class704 implements Interface75 {
 		Class389.method28267((byte) 31);
 		Class635.method32440((short) 255);
 		Class610.method32020(-1355392527);
-		if (client.anInt3435 * -849002901 == 4) {
-			Class481.method29756(10, 1823202236);
-		} else if (client.anInt3435 * -849002901 == 13) {
-			Class481.method29756(6, 1823202236);
-		} else if (client.anInt3435 * -849002901 == 15) {
-			Class481.method29756(16, 1823202236);
-		} else if (client.anInt3435 * -849002901 == 18) {
-			Class481.method29756(3, 1823202236);
-		} else if (client.anInt3435 * -849002901 == 11 || client.anInt3435 * -849002901 == 1) {
+		if (client.state * -849002901 == 4) {
+			Class481.setState(10, 1823202236);
+		} else if (client.state * -849002901 == 13) {
+			Class481.setState(6, 1823202236);
+		} else if (client.state * -849002901 == 15) {
+			Class481.setState(16, 1823202236);
+		} else if (client.state * -849002901 == 18) {
+			Class481.setState(3, 1823202236);
+		} else if (client.state * -849002901 == 11 || client.state * -849002901 == 1) {
 			Exception_Sub1.method17631(-738493458);
-		} else if (client.anInt3435 * -849002901 == 0) {
-			Class481.method29756(8, 1823202236);
-		} else if (client.anInt3435 * -849002901 == 3) {
+		} else if (client.state * -849002901 == 0) {
+			Class481.setState(8, 1823202236);
+		} else if (client.state * -849002901 == 3) {
 			Class707.method36750(false, (byte) 1);
 		}
 	}
 
 	@OriginalMember(owner = "client!zg", name = "ln", descriptor = "(S)Z", line = 12312)
-	static boolean method36734(@OriginalArg(0) short arg0) {
-		client.anInt3455 += -1136575289;
+	static boolean incrementVerifyId(@OriginalArg(0) short arg0) {
+		client.verifyId += -1136575289;
 		client.aBoolean634 = true;
 		return true;
 	}

@@ -236,24 +236,24 @@ public abstract class Class119 implements Interface4 {
 	@OriginalMember(owner = "client!ih", name = "mv", descriptor = "(Ljava/lang/String;ZI)Ljava/lang/String;", line = 12429)
 	static String method8605(@OriginalArg(0) String arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2) {
 		@Pc(5) String local5 = arg1 ? "https://" : "http://";
-		if (Class280.aClass693_1 == Class693.aClass693_5) {
+		if (Class280.modeWhere == ModeWhere.aModeWhere_5) {
 			arg0 = arg0 + "-wtrc";
-		} else if (Class693.aClass693_4 == Class280.aClass693_1) {
+		} else if (ModeWhere.WTQA == Class280.modeWhere) {
 			arg0 = arg0 + "-wtqa";
-		} else if (Class693.aClass693_3 == Class280.aClass693_1) {
+		} else if (ModeWhere.aModeWhere_3 == Class280.modeWhere) {
 			arg0 = arg0 + "-wtwip";
-		} else if (Class280.aClass693_1 == Class693.aClass693_7) {
+		} else if (Class280.modeWhere == ModeWhere.aModeWhere_7) {
 			arg0 = arg0 + "-wti";
-		} else if (Class280.aClass693_1 == Class693.aClass693_11) {
+		} else if (Class280.modeWhere == ModeWhere.aModeWhere_11) {
 			arg0 = arg0 + "-demo";
-		} else if (Class693.aClass693_12 == Class280.aClass693_1) {
+		} else if (ModeWhere.LOCAL == Class280.modeWhere) {
 			arg0 = "local";
 		}
 		@Pc(77) String local77 = "";
-		if (client.aString143 != null) {
-			local77 = "/p=" + client.aString143;
+		if (client.settings != null) {
+			local77 = "/p=" + client.settings;
 		}
-		@Pc(98) String local98 = client.aClass702_4.aString241 + ".com";
-		return local5 + arg0 + "." + local98 + "/l=" + Class106.aClass717_8.anInt5963 * -1156137245 + "/a=" + client.anInt3426 * -1765120027 + local77 + "/";
+		@Pc(98) String local98 = client.modeGame.aString241 + ".com";
+		return local5 + arg0 + "." + local98 + "/l=" + Class106.lang.anInt5963 * -1156137245 + "/a=" + client.affiliate * -1765120027 + local77 + "/";
 	}
 }

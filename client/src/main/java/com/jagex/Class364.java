@@ -6,7 +6,6 @@ import java.awt.Image;
 import java.awt.MediaTracker;
 import java.awt.Toolkit;
 import java.awt.geom.AffineTransform;
-import java.awt.image.ImageObserver;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -59,37 +58,37 @@ public class Class364 implements Interface30 {
 
 	@OriginalMember(owner = "client!jm", name = "e", descriptor = "(II)I", line = 33)
 	final int method27882(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		return this.aBoolean733 ? (Class553.anInt3408 * -1378711501 - arg0) / 2 : 0;
+		return this.aBoolean733 ? (Class553.width * -1378711501 - arg0) / 2 : 0;
 	}
 
 	@OriginalMember(owner = "client!jm", name = "d", descriptor = "(I)I", line = 33)
 	final int method27883(@OriginalArg(0) int arg0) {
-		return this.aBoolean733 ? (Class553.anInt3408 * -1378711501 - arg0) / 2 : 0;
+		return this.aBoolean733 ? (Class553.width * -1378711501 - arg0) / 2 : 0;
 	}
 
 	@OriginalMember(owner = "client!jm", name = "c", descriptor = "(I)I", line = 33)
 	final int method27884(@OriginalArg(0) int arg0) {
-		return this.aBoolean733 ? (Class553.anInt3408 * -1378711501 - arg0) / 2 : 0;
+		return this.aBoolean733 ? (Class553.width * -1378711501 - arg0) / 2 : 0;
 	}
 
 	@OriginalMember(owner = "client!jm", name = "r", descriptor = "(I)I", line = 33)
 	final int method27885(@OriginalArg(0) int arg0) {
-		return this.aBoolean733 ? (Class553.anInt3408 * -1378711501 - arg0) / 2 : 0;
+		return this.aBoolean733 ? (Class553.width * -1378711501 - arg0) / 2 : 0;
 	}
 
 	@OriginalMember(owner = "client!jm", name = "n", descriptor = "(II)I", line = 38)
 	final int method27886(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		return this.aBoolean732 ? (Class553.anInt3416 * 2091353777 - arg0) / 2 : 0;
+		return this.aBoolean732 ? (Class553.height * 2091353777 - arg0) / 2 : 0;
 	}
 
 	@OriginalMember(owner = "client!jm", name = "v", descriptor = "(I)I", line = 38)
 	final int method27887(@OriginalArg(0) int arg0) {
-		return this.aBoolean732 ? (Class553.anInt3416 * 2091353777 - arg0) / 2 : 0;
+		return this.aBoolean732 ? (Class553.height * 2091353777 - arg0) / 2 : 0;
 	}
 
 	@OriginalMember(owner = "client!jm", name = "o", descriptor = "(I)I", line = 38)
 	final int method27888(@OriginalArg(0) int arg0) {
-		return this.aBoolean732 ? (Class553.anInt3416 * 2091353777 - arg0) / 2 : 0;
+		return this.aBoolean732 ? (Class553.height * 2091353777 - arg0) / 2 : 0;
 	}
 
 	@OriginalMember(owner = "client!jm", name = "m", descriptor = "(ZI)V", line = 43)
@@ -160,11 +159,11 @@ public class Class364 implements Interface30 {
 			this.aString189 = "" + Class653.aClass357_1.method27749(1285578807) + "%";
 			this.aString190 = Class653.aClass357_1.method27751((byte) -48);
 			if (Class115.anImage3 == null) {
-				Class115.anImage3 = Class125_Sub3.aCanvas1.createImage(Class553.anInt3408 * -1378711501, Class553.anInt3416 * 2091353777);
+				Class115.anImage3 = Class125_Sub3.aCanvas1.createImage(Class553.width * -1378711501, Class553.height * 2091353777);
 			}
 			@Pc(282) Graphics local282 = Class115.anImage3.getGraphics();
 			local282.setColor(Color.BLACK);
-			local282.fillRect(0, 0, Class553.anInt3408 * -1378711501, Class553.anInt3416 * 2091353777);
+			local282.fillRect(0, 0, Class553.width * -1378711501, Class553.height * 2091353777);
 			@Pc(299) Iterator local299 = this.aList20.iterator();
 			while (local299.hasNext()) {
 				@Pc(306) Class129 local306 = (Class129) local299.next();
@@ -244,11 +243,11 @@ public class Class364 implements Interface30 {
 			this.aString189 = "" + Class653.aClass357_1.method27749(1285578807) + "%";
 			this.aString190 = Class653.aClass357_1.method27751((byte) -87);
 			if (Class115.anImage3 == null) {
-				Class115.anImage3 = Class125_Sub3.aCanvas1.createImage(Class553.anInt3408 * -1378711501, Class553.anInt3416 * 2091353777);
+				Class115.anImage3 = Class125_Sub3.aCanvas1.createImage(Class553.width * -1378711501, Class553.height * 2091353777);
 			}
 			@Pc(282) Graphics local282 = Class115.anImage3.getGraphics();
 			local282.setColor(Color.BLACK);
-			local282.fillRect(0, 0, Class553.anInt3408 * -1378711501, Class553.anInt3416 * 2091353777);
+			local282.fillRect(0, 0, Class553.width * -1378711501, Class553.height * 2091353777);
 			@Pc(299) Iterator local299 = this.aList20.iterator();
 			while (local299.hasNext()) {
 				@Pc(306) Class129 local306 = (Class129) local299.next();
@@ -328,11 +327,11 @@ public class Class364 implements Interface30 {
 			this.aString189 = "" + Class653.aClass357_1.method27749(1285578807) + "%";
 			this.aString190 = Class653.aClass357_1.method27751((byte) -94);
 			if (Class115.anImage3 == null) {
-				Class115.anImage3 = Class125_Sub3.aCanvas1.createImage(Class553.anInt3408 * -1378711501, Class553.anInt3416 * 2091353777);
+				Class115.anImage3 = Class125_Sub3.aCanvas1.createImage(Class553.width * -1378711501, Class553.height * 2091353777);
 			}
 			@Pc(282) Graphics local282 = Class115.anImage3.getGraphics();
 			local282.setColor(Color.BLACK);
-			local282.fillRect(0, 0, Class553.anInt3408 * -1378711501, Class553.anInt3416 * 2091353777);
+			local282.fillRect(0, 0, Class553.width * -1378711501, Class553.height * 2091353777);
 			@Pc(299) Iterator local299 = this.aList20.iterator();
 			while (local299.hasNext()) {
 				@Pc(306) Class129 local306 = (Class129) local299.next();
@@ -353,7 +352,7 @@ public class Class364 implements Interface30 {
 	Image method27890(@OriginalArg(0) String arg0) throws IOException {
 		@Pc(1) InputStream local1 = null;
 		try {
-			local1 = Class32_Sub10.anApplet2.getClass().getClassLoader().getResourceAsStream(arg0);
+			local1 = Class32_Sub10.applet.getClass().getClassLoader().getResourceAsStream(arg0);
 			@Pc(10) byte[] local10 = new byte[12000];
 			@Pc(12) int local12 = 0;
 			@Pc(16) int local16;
@@ -377,7 +376,7 @@ public class Class364 implements Interface30 {
 	Image method27891(@OriginalArg(0) String arg0) throws IOException {
 		@Pc(1) InputStream local1 = null;
 		try {
-			local1 = Class32_Sub10.anApplet2.getClass().getClassLoader().getResourceAsStream(arg0);
+			local1 = Class32_Sub10.applet.getClass().getClassLoader().getResourceAsStream(arg0);
 			@Pc(10) byte[] local10 = new byte[12000];
 			@Pc(12) int local12 = 0;
 			@Pc(16) int local16;
@@ -401,7 +400,7 @@ public class Class364 implements Interface30 {
 	Image method27892(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1) throws IOException {
 		@Pc(1) InputStream local1 = null;
 		try {
-			local1 = Class32_Sub10.anApplet2.getClass().getClassLoader().getResourceAsStream(arg0);
+			local1 = Class32_Sub10.applet.getClass().getClassLoader().getResourceAsStream(arg0);
 			@Pc(10) byte[] local10 = new byte[12000];
 			@Pc(12) int local12 = 0;
 			@Pc(16) int local16;
@@ -425,7 +424,7 @@ public class Class364 implements Interface30 {
 	Image method27893(@OriginalArg(0) String arg0) throws IOException {
 		@Pc(1) InputStream local1 = null;
 		try {
-			local1 = Class32_Sub10.anApplet2.getClass().getClassLoader().getResourceAsStream(arg0);
+			local1 = Class32_Sub10.applet.getClass().getClassLoader().getResourceAsStream(arg0);
 			@Pc(10) byte[] local10 = new byte[12000];
 			@Pc(12) int local12 = 0;
 			@Pc(16) int local16;
@@ -449,7 +448,7 @@ public class Class364 implements Interface30 {
 	Image method27894(@OriginalArg(0) String arg0) throws IOException {
 		@Pc(1) InputStream local1 = null;
 		try {
-			local1 = Class32_Sub10.anApplet2.getClass().getClassLoader().getResourceAsStream(arg0);
+			local1 = Class32_Sub10.applet.getClass().getClassLoader().getResourceAsStream(arg0);
 			@Pc(10) byte[] local10 = new byte[12000];
 			@Pc(12) int local12 = 0;
 			@Pc(16) int local16;
@@ -473,7 +472,7 @@ public class Class364 implements Interface30 {
 	Image method27895(@OriginalArg(0) String arg0) throws IOException {
 		@Pc(1) InputStream local1 = null;
 		try {
-			local1 = Class32_Sub10.anApplet2.getClass().getClassLoader().getResourceAsStream(arg0);
+			local1 = Class32_Sub10.applet.getClass().getClassLoader().getResourceAsStream(arg0);
 			@Pc(10) byte[] local10 = new byte[12000];
 			@Pc(12) int local12 = 0;
 			@Pc(16) int local16;

@@ -376,7 +376,7 @@ public class Class625 {
 			arg1 = 0;
 		}
 		@Pc(24) boolean local24 = Class527.aString222.startsWith("mac");
-		@Pc(38) int[] local38 = Class166_Sub13.aTwitchTV1.GetRecommendedSettings(Class553.anInt3408 * -1378711501, Class553.anInt3416 * 2091353777, arg0, 2000, arg2, aFloat337, local24);
+		@Pc(38) int[] local38 = Class166_Sub13.aTwitchTV1.GetRecommendedSettings(Class553.width * -1378711501, Class553.height * 2091353777, arg0, 2000, arg2, aFloat337, local24);
 		if (local38[0] != 0) {
 			return local38[0];
 		}
@@ -391,7 +391,7 @@ public class Class625 {
 		if (arg1 != 0) {
 			local58 = arg1 * local58 / 100;
 		}
-		Class314.method26939("Stream - Input: " + Class553.anInt3408 * -1378711501 + "x" + Class553.anInt3416 * 2091353777 + " (" + local60 + "kbps)" + " => " + "Output: " + local50 + "x" + local54 + " [" + (arg0 == 0 ? "auto" : arg0 + "%") + "] (" + local58 + "kbps [" + (arg1 == 0 ? "auto" : arg1 + "%") + "])", -2009366128);
+		Class314.method26939("Stream - Input: " + Class553.width * -1378711501 + "x" + Class553.height * 2091353777 + " (" + local60 + "kbps)" + " => " + "Output: " + local50 + "x" + local54 + " [" + (arg0 == 0 ? "auto" : arg0 + "%") + "] (" + local58 + "kbps [" + (arg1 == 0 ? "auto" : arg1 + "%") + "])", -2009366128);
 		return Class166_Sub13.aTwitchTV1.StartStreaming(local50, local54, arg2, local58, arg1 != 0, aFloat337, anInt5699 * -473071333, arg3);
 	}
 
@@ -404,7 +404,7 @@ public class Class625 {
 			arg1 = 0;
 		}
 		@Pc(24) boolean local24 = Class527.aString222.startsWith("mac");
-		@Pc(38) int[] local38 = Class166_Sub13.aTwitchTV1.GetRecommendedSettings(Class553.anInt3408 * -1378711501, Class553.anInt3416 * 2091353777, arg0, 2000, arg2, aFloat337, local24);
+		@Pc(38) int[] local38 = Class166_Sub13.aTwitchTV1.GetRecommendedSettings(Class553.width * -1378711501, Class553.height * 2091353777, arg0, 2000, arg2, aFloat337, local24);
 		if (local38[0] != 0) {
 			return local38[0];
 		}
@@ -419,7 +419,7 @@ public class Class625 {
 		if (arg1 != 0) {
 			local58 = arg1 * local58 / 100;
 		}
-		Class314.method26939("Stream - Input: " + Class553.anInt3408 * -1378711501 + "x" + Class553.anInt3416 * 2091353777 + " (" + local60 + "kbps)" + " => " + "Output: " + local50 + "x" + local54 + " [" + (arg0 == 0 ? "auto" : arg0 + "%") + "] (" + local58 + "kbps [" + (arg1 == 0 ? "auto" : arg1 + "%") + "])", -1907314446);
+		Class314.method26939("Stream - Input: " + Class553.width * -1378711501 + "x" + Class553.height * 2091353777 + " (" + local60 + "kbps)" + " => " + "Output: " + local50 + "x" + local54 + " [" + (arg0 == 0 ? "auto" : arg0 + "%") + "] (" + local58 + "kbps [" + (arg1 == 0 ? "auto" : arg1 + "%") + "])", -1907314446);
 		return Class166_Sub13.aTwitchTV1.StartStreaming(local50, local54, arg2, local58, arg1 != 0, aFloat337, anInt5699 * -473071333, arg3);
 	}
 
@@ -432,7 +432,7 @@ public class Class625 {
 			arg1 = 0;
 		}
 		@Pc(24) boolean local24 = Class527.aString222.startsWith("mac");
-		@Pc(38) int[] local38 = Class166_Sub13.aTwitchTV1.GetRecommendedSettings(Class553.anInt3408 * -1378711501, Class553.anInt3416 * 2091353777, arg0, 2000, arg2, aFloat337, local24);
+		@Pc(38) int[] local38 = Class166_Sub13.aTwitchTV1.GetRecommendedSettings(Class553.width * -1378711501, Class553.height * 2091353777, arg0, 2000, arg2, aFloat337, local24);
 		if (local38[0] != 0) {
 			return local38[0];
 		}
@@ -447,7 +447,7 @@ public class Class625 {
 		if (arg1 != 0) {
 			local58 = arg1 * local58 / 100;
 		}
-		Class314.method26939("Stream - Input: " + Class553.anInt3408 * -1378711501 + "x" + Class553.anInt3416 * 2091353777 + " (" + local60 + "kbps)" + " => " + "Output: " + local50 + "x" + local54 + " [" + (arg0 == 0 ? "auto" : arg0 + "%") + "] (" + local58 + "kbps [" + (arg1 == 0 ? "auto" : arg1 + "%") + "])", -1953780599);
+		Class314.method26939("Stream - Input: " + Class553.width * -1378711501 + "x" + Class553.height * 2091353777 + " (" + local60 + "kbps)" + " => " + "Output: " + local50 + "x" + local54 + " [" + (arg0 == 0 ? "auto" : arg0 + "%") + "] (" + local58 + "kbps [" + (arg1 == 0 ? "auto" : arg1 + "%") + "])", -1953780599);
 		return Class166_Sub13.aTwitchTV1.StartStreaming(local50, local54, arg2, local58, arg1 != 0, aFloat337, anInt5699 * -473071333, arg3);
 	}
 
@@ -460,7 +460,7 @@ public class Class625 {
 			arg1 = 0;
 		}
 		@Pc(24) boolean local24 = Class527.aString222.startsWith("mac");
-		@Pc(38) int[] local38 = Class166_Sub13.aTwitchTV1.GetRecommendedSettings(Class553.anInt3408 * -1378711501, Class553.anInt3416 * 2091353777, arg0, 2000, arg2, aFloat337, local24);
+		@Pc(38) int[] local38 = Class166_Sub13.aTwitchTV1.GetRecommendedSettings(Class553.width * -1378711501, Class553.height * 2091353777, arg0, 2000, arg2, aFloat337, local24);
 		if (local38[0] != 0) {
 			return local38[0];
 		}
@@ -475,7 +475,7 @@ public class Class625 {
 		if (arg1 != 0) {
 			local58 = arg1 * local58 / 100;
 		}
-		Class314.method26939("Stream - Input: " + Class553.anInt3408 * -1378711501 + "x" + Class553.anInt3416 * 2091353777 + " (" + local60 + "kbps)" + " => " + "Output: " + local50 + "x" + local54 + " [" + (arg0 == 0 ? "auto" : arg0 + "%") + "] (" + local58 + "kbps [" + (arg1 == 0 ? "auto" : arg1 + "%") + "])", -1847983142);
+		Class314.method26939("Stream - Input: " + Class553.width * -1378711501 + "x" + Class553.height * 2091353777 + " (" + local60 + "kbps)" + " => " + "Output: " + local50 + "x" + local54 + " [" + (arg0 == 0 ? "auto" : arg0 + "%") + "] (" + local58 + "kbps [" + (arg1 == 0 ? "auto" : arg1 + "%") + "])", -1847983142);
 		return Class166_Sub13.aTwitchTV1.StartStreaming(local50, local54, arg2, local58, arg1 != 0, aFloat337, anInt5699 * -473071333, arg3);
 	}
 
@@ -488,7 +488,7 @@ public class Class625 {
 			arg1 = 0;
 		}
 		@Pc(24) boolean local24 = Class527.aString222.startsWith("mac");
-		@Pc(38) int[] local38 = Class166_Sub13.aTwitchTV1.GetRecommendedSettings(Class553.anInt3408 * -1378711501, Class553.anInt3416 * 2091353777, arg0, 2000, arg2, aFloat337, local24);
+		@Pc(38) int[] local38 = Class166_Sub13.aTwitchTV1.GetRecommendedSettings(Class553.width * -1378711501, Class553.height * 2091353777, arg0, 2000, arg2, aFloat337, local24);
 		if (local38[0] != 0) {
 			return local38[0];
 		}
@@ -503,7 +503,7 @@ public class Class625 {
 		if (arg1 != 0) {
 			local58 = arg1 * local58 / 100;
 		}
-		Class314.method26939("Stream - Input: " + Class553.anInt3408 * -1378711501 + "x" + Class553.anInt3416 * 2091353777 + " (" + local60 + "kbps)" + " => " + "Output: " + local50 + "x" + local54 + " [" + (arg0 == 0 ? "auto" : arg0 + "%") + "] (" + local58 + "kbps [" + (arg1 == 0 ? "auto" : arg1 + "%") + "])", -2083493911);
+		Class314.method26939("Stream - Input: " + Class553.width * -1378711501 + "x" + Class553.height * 2091353777 + " (" + local60 + "kbps)" + " => " + "Output: " + local50 + "x" + local54 + " [" + (arg0 == 0 ? "auto" : arg0 + "%") + "] (" + local58 + "kbps [" + (arg1 == 0 ? "auto" : arg1 + "%") + "])", -2083493911);
 		return Class166_Sub13.aTwitchTV1.StartStreaming(local50, local54, arg2, local58, arg1 != 0, aFloat337, anInt5699 * -473071333, arg3);
 	}
 
@@ -537,22 +537,22 @@ public class Class625 {
 
 	@OriginalMember(owner = "client!vv", name = "cl", descriptor = "(Ljava/lang/String;)I", line = 249)
 	public static int method32195(@OriginalArg(0) String arg0) {
-		return Class166_Sub13.aTwitchTV1.SetStreamTitle(arg0, client.aClass702_4.aString242);
+		return Class166_Sub13.aTwitchTV1.SetStreamTitle(arg0, client.modeGame.aString242);
 	}
 
 	@OriginalMember(owner = "client!vv", name = "cg", descriptor = "(Ljava/lang/String;)I", line = 249)
 	public static int method32196(@OriginalArg(0) String arg0) {
-		return Class166_Sub13.aTwitchTV1.SetStreamTitle(arg0, client.aClass702_4.aString242);
+		return Class166_Sub13.aTwitchTV1.SetStreamTitle(arg0, client.modeGame.aString242);
 	}
 
 	@OriginalMember(owner = "client!vv", name = "cu", descriptor = "(Ljava/lang/String;)I", line = 249)
 	public static int method32197(@OriginalArg(0) String arg0) {
-		return Class166_Sub13.aTwitchTV1.SetStreamTitle(arg0, client.aClass702_4.aString242);
+		return Class166_Sub13.aTwitchTV1.SetStreamTitle(arg0, client.modeGame.aString242);
 	}
 
 	@OriginalMember(owner = "client!vv", name = "ce", descriptor = "(Ljava/lang/String;)I", line = 249)
 	public static int method32198(@OriginalArg(0) String arg0) {
-		return Class166_Sub13.aTwitchTV1.SetStreamTitle(arg0, client.aClass702_4.aString242);
+		return Class166_Sub13.aTwitchTV1.SetStreamTitle(arg0, client.modeGame.aString242);
 	}
 
 	@OriginalMember(owner = "client!vv", name = "ci", descriptor = "()I", line = 253)
@@ -646,7 +646,7 @@ public class Class625 {
 				if (local106 != null && Class490.method29976(local106, arg1)) {
 					@Pc(116) Class591 local116 = local106.n();
 					if (local116 != null) {
-						Class707.method36751(local116.method36920(), local106, (byte) -86);
+						Class707.method36751(local116.getId(), local106, (byte) -86);
 					}
 				}
 			}
@@ -712,7 +712,7 @@ public class Class625 {
 				if (local106 != null && Class490.method29976(local106, arg1)) {
 					@Pc(116) Class591 local116 = local106.n();
 					if (local116 != null) {
-						Class707.method36751(local116.method36920(), local106, (byte) -118);
+						Class707.method36751(local116.getId(), local106, (byte) -118);
 					}
 				}
 			}
@@ -778,7 +778,7 @@ public class Class625 {
 				if (local106 != null && Class490.method29976(local106, arg1)) {
 					@Pc(116) Class591 local116 = local106.n();
 					if (local116 != null) {
-						Class707.method36751(local116.method36920(), local106, (byte) -104);
+						Class707.method36751(local116.getId(), local106, (byte) -104);
 					}
 				}
 			}
@@ -844,7 +844,7 @@ public class Class625 {
 				if (local106 != null && Class490.method29976(local106, arg1)) {
 					@Pc(116) Class591 local116 = local106.n();
 					if (local116 != null) {
-						Class707.method36751(local116.method36920(), local106, (byte) -1);
+						Class707.method36751(local116.getId(), local106, (byte) -1);
 					}
 				}
 			}
@@ -910,7 +910,7 @@ public class Class625 {
 				if (local106 != null && Class490.method29976(local106, arg1)) {
 					@Pc(116) Class591 local116 = local106.n();
 					if (local116 != null) {
-						Class707.method36751(local116.method36920(), local106, (byte) -45);
+						Class707.method36751(local116.getId(), local106, (byte) -45);
 					}
 				}
 			}
@@ -1352,7 +1352,7 @@ public class Class625 {
 	@OriginalMember(owner = "client!vv", name = "dc", descriptor = "()I", line = 519)
 	public static int method32230() {
 		Class522.aTwitchEventLiveStreams1 = null;
-		return Class166_Sub13.aTwitchTV1.RequestLiveStreams(client.aClass702_4.aString242);
+		return Class166_Sub13.aTwitchTV1.RequestLiveStreams(client.modeGame.aString242);
 	}
 
 	@OriginalMember(owner = "client!vv", name = "di", descriptor = "()I", line = 525)
@@ -1504,10 +1504,10 @@ public class Class625 {
 				}
 				client.anInt3547 = client.anInt3565 * -541355657;
 				@Pc(64) Class175 local64 = Class330.method27371(-1534093073);
-				@Pc(70) Class93_Sub22 local70 = Class102.method2588(Class446.aClass446_37, local64.aClass24_2, (byte) 5);
-				local70.aPacketBit_1.p1(Packet.pjstrlen(arg0, -1997823666), (byte) -105);
-				local70.aPacketBit_1.pjstr(arg0, -1783139557);
-				local64.method24356(local70, -1947881956);
+				@Pc(70) ClientMessage local70 = Class102.createGameMessage(ClientProt.aClientProt_37, local64.clientIsaac, (byte) 5);
+				local70.packet.p1(Packet.pjstrlen(arg0, -1997823666), (byte) -105);
+				local70.packet.pjstr(arg0, -1783139557);
+				local64.send(local70, -1947881956);
 				break;
 			}
 		}

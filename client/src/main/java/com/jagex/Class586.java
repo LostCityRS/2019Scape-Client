@@ -481,33 +481,33 @@ public class Class586 implements Interface57 {
 
 	@OriginalMember(owner = "client!ty", name = "u", descriptor = "(B)V", line = 283)
 	public static void method31636(@OriginalArg(0) byte arg0) {
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub15_1, 2, (byte) 86);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub15_2, 2, (byte) 91);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub3_1, 1, (byte) 72);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub46_1, 1, (byte) 126);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub36_1, 1, (byte) 73);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub25_1, 1, (byte) 67);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub21_1, 1, (byte) 17);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub14_1, 1, (byte) 120);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub8_1, 1, (byte) 35);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub19_1, 1, (byte) 81);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub20_1, 0, (byte) 4);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub2_1, 1, (byte) 75);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub39_2, 0, (byte) 76);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub39_1, 0, (byte) 127);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub6_1, 1, (byte) 93);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub12_1, Class332.aClass332_6.anInt4147 * 595334117, (byte) 71);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub28_1, 0, (byte) 125);
+		Class51.options.method14363(Class51.options.aClass166_Sub15_1, 2, (byte) 86);
+		Class51.options.method14363(Class51.options.aClass166_Sub15_2, 2, (byte) 91);
+		Class51.options.method14363(Class51.options.aClass166_Sub3_1, 1, (byte) 72);
+		Class51.options.method14363(Class51.options.aClass166_Sub46_1, 1, (byte) 126);
+		Class51.options.method14363(Class51.options.aClass166_Sub36_1, 1, (byte) 73);
+		Class51.options.method14363(Class51.options.aClass166_Sub25_1, 1, (byte) 67);
+		Class51.options.method14363(Class51.options.aClass166_Sub21_1, 1, (byte) 17);
+		Class51.options.method14363(Class51.options.aClass166_Sub14_1, 1, (byte) 120);
+		Class51.options.method14363(Class51.options.aClass166_Sub8_1, 1, (byte) 35);
+		Class51.options.method14363(Class51.options.aClass166_Sub19_1, 1, (byte) 81);
+		Class51.options.method14363(Class51.options.aClass166_Sub20_1, 0, (byte) 4);
+		Class51.options.method14363(Class51.options.aClass166_Sub2_1, 1, (byte) 75);
+		Class51.options.method14363(Class51.options.aClass166_Sub39_2, 0, (byte) 76);
+		Class51.options.method14363(Class51.options.antialiasing, 0, (byte) 127);
+		Class51.options.method14363(Class51.options.aClass166_Sub6_1, 1, (byte) 93);
+		Class51.options.method14363(Class51.options.aClass166_Sub12_1, Class332.aClass332_6.anInt4147 * 595334117, (byte) 71);
+		Class51.options.method14363(Class51.options.aClass166_Sub28_1, 0, (byte) 125);
 		if (Class694.aClass104_14 != null && Class694.aClass104_14.method20639() && Class694.aClass104_14.method20622()) {
 			Class694.aClass104_14.method20645();
 		}
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub29_1, 1, (byte) 82);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub31_1, 1, (byte) 62);
+		Class51.options.method14363(Class51.options.aClass166_Sub29_1, 1, (byte) 82);
+		Class51.options.method14363(Class51.options.aClass166_Sub31_1, 1, (byte) 62);
 		Class386.method28235((byte) -54);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub24_1, 1, (byte) 51);
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub40_1, 3, (byte) 88);
+		Class51.options.method14363(Class51.options.aClass166_Sub24_1, 1, (byte) 51);
+		Class51.options.method14363(Class51.options.aClass166_Sub40_1, 3, (byte) 88);
 		Class610.method32020(-584004913);
-		client.aClass532_1.method30494((byte) -12).method33015(467828911);
+		client.world.method30494((byte) -12).method33015(467828911);
 		client.aBoolean609 = true;
 	}
 
@@ -548,7 +548,7 @@ public class Class586 implements Interface57 {
 
 	@OriginalMember(owner = "client!ty", name = "avp", descriptor = "(Lclient!yf;I)V", line = 13513)
 	static final void method31641(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub31_1.method16114((short) 23967);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub31_1.method16114((short) 23967);
 	}
 
 	@OriginalMember(owner = "client!ty", name = "bci", descriptor = "(Lclient!yf;B)V", line = 14515)

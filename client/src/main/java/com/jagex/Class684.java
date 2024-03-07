@@ -1035,7 +1035,7 @@ public class Class684 {
 		Class682.aClass32_Sub1_3.method17822(1701372950);
 		Class692.aClass32_Sub4_3.method17822(681435632);
 		Class343.aClass32_Sub19_1.method17822(-928707022);
-		client.aClass532_1.method30496(1073538312).method17822(-2055115919);
+		client.world.method30496(1073538312).method17822(-2055115919);
 		Class162.aClass32_Sub3_2.method17822(1409459113);
 		Class277.aClass32_Sub12_1.method17822(-899090766);
 		Class32.aClass32_Sub17_23.method17822(652399493);
@@ -1081,10 +1081,10 @@ public class Class684 {
 	@OriginalMember(owner = "client!yj", name = "vi", descriptor = "(Lclient!yf;I)V", line = 8797)
 	static final void method33423(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(13) String local13 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
-		@Pc(19) Class93_Sub22 local19 = Class102.method2588(Class446.aClass446_103, client.aClass175_2.aClass24_2, (byte) 34);
-		local19.aPacketBit_1.p1(local13.length() + 1, (byte) -107);
-		local19.aPacketBit_1.pjstr(local13, -1780120468);
-		client.aClass175_2.method24356(local19, -1984927484);
+		@Pc(19) ClientMessage local19 = Class102.createGameMessage(ClientProt.aClientProt_103, client.aClass175_2.clientIsaac, (byte) 34);
+		local19.packet.p1(local13.length() + 1, (byte) -107);
+		local19.packet.pjstr(local13, -1780120468);
+		client.aClass175_2.send(local19, -1984927484);
 	}
 
 	@OriginalMember(owner = "client!yj", name = "ame", descriptor = "(Lclient!yf;I)V", line = 12026)

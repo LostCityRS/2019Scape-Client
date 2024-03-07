@@ -28,7 +28,7 @@ public class Class103 {
 
 	@OriginalMember(owner = "client!af", name = "p", descriptor = "(IIII)Z", line = 326)
 	static boolean method2810(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		@Pc(3) Class585 local3 = client.aClass532_1.method30481(-1178117724);
+		@Pc(3) Class585 local3 = client.world.method30481(-1178117724);
 		@Pc(5) boolean local5 = true;
 		@Pc(13) Interface61 local13 = (Interface61) local3.method31534(arg0, arg1, arg2, -1309876799);
 		if (local13 != null) {
@@ -55,6 +55,6 @@ public class Class103 {
 
 	@OriginalMember(owner = "client!af", name = "axw", descriptor = "(Lclient!yf;I)V", line = 13972)
 	static final void method2812(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class82.anInt251 * -1802992919;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class82.userRecoveryDay * -1802992919;
 	}
 }

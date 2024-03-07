@@ -69,6 +69,6 @@ public class Class291 implements Interface26 {
 
 	@OriginalMember(owner = "client!gk", name = "ati", descriptor = "(Lclient!yf;I)V", line = 13309)
 	static final void method26575(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub25_1.method15888(-988861719) == 1 ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub25_1.method15888(-988861719) == 1 ? 1 : 0;
 	}
 }

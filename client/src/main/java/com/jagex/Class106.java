@@ -19,7 +19,7 @@ public abstract class Class106 {
 	public static final int anInt884 = 1;
 
 	@OriginalMember(owner = "client!eu", name = "br", descriptor = "Lclient!zt;")
-	public static Class717 aClass717_8;
+	public static Class717 lang;
 
 	@OriginalMember(owner = "client!eu", name = "lf", descriptor = "I")
 	public static int anInt891;

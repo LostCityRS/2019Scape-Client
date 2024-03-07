@@ -369,13 +369,13 @@ public final class Class647 implements Interface20 {
 
 	@OriginalMember(owner = "client!wu", name = "ary", descriptor = "(Lclient!yf;B)V", line = 12917)
 	static final void method32652(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.anInt3429 * 1672118199;
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.anInt3428 * -1830493323;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.userFlowFlag1 * 1672118199;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.userFlowFlag2 * -1830493323;
 	}
 
 	@OriginalMember(owner = "client!wu", name = "ast", descriptor = "(Lclient!yf;B)V", line = 13188)
 	static final void method32653(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub35_3, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], (byte) 114);
+		Class51.options.method14363(Class51.options.aClass166_Sub35_3, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], (byte) 114);
 		Class106_Sub1.method5135(-695941709);
 		client.aBoolean601 = false;
 	}

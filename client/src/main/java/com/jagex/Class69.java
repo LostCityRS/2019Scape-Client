@@ -210,8 +210,8 @@ public class Class69 {
 
 	@OriginalMember(owner = "client!acs", name = "er", descriptor = "(Lclient!pq;ZFFFFIII)V", line = 2142)
 	static void method1229(@OriginalArg(0) Class489 arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) float arg2, @OriginalArg(3) float arg3, @OriginalArg(4) float arg4, @OriginalArg(5) float arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8) {
-		@Pc(3) int local3 = client.aClass532_1.method30476(-1884407916);
-		@Pc(7) int local7 = client.aClass532_1.method30474(-953546015);
+		@Pc(3) int local3 = client.world.method30476(-1884407916);
+		@Pc(7) int local7 = client.world.method30474(-953546015);
 		arg0.method29909(arg2, arg3, arg4, arg5, (float) local7, (float) local3, (float) arg6, (float) arg7);
 	}
 }

@@ -51,9 +51,9 @@ public class Class501 {
 			Class165.method15320(Class155.aClass155_65, Class249.anInt3843 * -213302133, -1, -532799195);
 		}
 		Class287.method26542(-100950526);
-		@Pc(68) Class93_Sub22 local68 = Class102.method2588(Class446.aClass446_42, client.aClass175_2.aClass24_2, (byte) 72);
-		local68.aPacketBit_1.p1(arg0 ? 1 : 0, (byte) -67);
-		client.aClass175_2.method24356(local68, -1619193338);
+		@Pc(68) ClientMessage local68 = Class102.createGameMessage(ClientProt.aClientProt_42, client.aClass175_2.clientIsaac, (byte) 72);
+		local68.packet.p1(arg0 ? 1 : 0, (byte) -67);
+		client.aClass175_2.send(local68, -1619193338);
 	}
 
 	@OriginalMember(owner = "client!qb", name = "<init>", descriptor = "(Lclient!rq;Lclient!alw;Z)V", line = 750)

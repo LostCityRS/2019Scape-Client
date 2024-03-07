@@ -134,17 +134,17 @@ public class Class630 {
 
 	@OriginalMember(owner = "client!w", name = "k", descriptor = "(Ljava/lang/String;B)V", line = 60)
 	public static void method32269(@OriginalArg(0) String arg0, @OriginalArg(1) byte arg1) {
-		if (client.anInt3435 * -849002901 != 0) {
+		if (client.state * -849002901 != 0) {
 			return;
 		}
-		@Pc(10) Class93_Sub22 local10 = Class102.method2588(Class446.aClass446_30, client.aClass175_1.aClass24_2, (byte) 47);
-		local10.aPacketBit_1.p2(0, 2144093970);
-		@Pc(21) int local21 = local10.aPacketBit_1.pos * 212851357;
-		local10.aPacketBit_1.pjstr(arg0, 1419926272);
-		local10.aPacketBit_1.pos += -1529454093;
-		local10.aPacketBit_1.tinyenc(Class676.anIntArray516, local21, local10.aPacketBit_1.pos * 212851357, (byte) -65);
-		local10.aPacketBit_1.psize2(local10.aPacketBit_1.pos * 212851357 - local21, 2020888247);
-		client.aClass175_1.method24356(local10, -1528137382);
+		@Pc(10) ClientMessage local10 = Class102.createGameMessage(ClientProt.aClientProt_30, client.aClass175_1.clientIsaac, (byte) 47);
+		local10.packet.p2(0, 2144093970);
+		@Pc(21) int local21 = local10.packet.pos * 212851357;
+		local10.packet.pjstr(arg0, 1419926272);
+		local10.packet.pos += -1529454093;
+		local10.packet.tinyenc(Class676.anIntArray516, local21, local10.packet.pos * 212851357, (byte) -65);
+		local10.packet.psize2(local10.packet.pos * 212851357 - local21, 2020888247);
+		client.aClass175_1.send(local10, -1528137382);
 		Class103.aClass721_1 = Class721.aClass721_5;
 	}
 
@@ -173,7 +173,7 @@ public class Class630 {
 		}
 		local13.p8(local3.nextLong());
 		local13.p6(local3.nextLong());
-		Class314.method26940(local13, 2128804438);
+		Class314.getUid192(local13, 2128804438);
 		local13.p8(local3.nextLong());
 		local13.rsaenc(aBigInteger7, aBigInteger8, (byte) -84);
 		local44 = Packet.pjstrlen(arg1, -1889900536);
@@ -318,7 +318,7 @@ public class Class630 {
 	static final void method32276(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		Class238.method25797(true, 1773551774);
 		Class275.method26341(1558357183);
-		client.aClass532_1.method30533((byte) 0);
+		client.world.method30533((byte) 0);
 		Class106_Sub1.method5135(-636886944);
 		client.aBoolean601 = false;
 	}

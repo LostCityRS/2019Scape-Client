@@ -12,7 +12,7 @@ public class PacketBit extends Packet {
 	static final int[] BITMASK = new int[] { 0, 1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047, 4095, 8191, 16383, 32767, 65535, 131071, 262143, 524287, 1048575, 2097151, 4194303, 8388607, 16777215, 33554431, 67108863, 134217727, 268435455, 536870911, 1073741823, Integer.MAX_VALUE, -1 };
 
 	@OriginalMember(owner = "client!ase", name = "c", descriptor = "Lclient!aav;")
-	Class24 random;
+	IsaacRandom random;
 
 	@OriginalMember(owner = "client!ase", name = "v", descriptor = "I")
 	int bitPos;
@@ -23,7 +23,7 @@ public class PacketBit extends Packet {
 	}
 
 	@OriginalMember(owner = "client!ase", name = "jg", descriptor = "(Lclient!aav;B)V", line = 15)
-	public void setRandom(@OriginalArg(0) Class24 arg0, @OriginalArg(1) byte arg1) {
+	public void setRandom(@OriginalArg(0) IsaacRandom arg0, @OriginalArg(1) byte arg1) {
 		this.random = arg0;
 	}
 
@@ -38,19 +38,19 @@ public class PacketBit extends Packet {
 	}
 
 	@OriginalMember(owner = "client!ase", name = "jp", descriptor = "(I)Z", line = 27)
-	public boolean method22673(@OriginalArg(0) int arg0) {
+	public boolean peekIsaacBit(@OriginalArg(0) int arg0) {
 		@Pc(14) int local14 = this.data[this.pos * 212851357] - this.random.peekInt(1070614472) & 0xFF;
 		return local14 >= 128;
 	}
 
 	@OriginalMember(owner = "client!ase", name = "jk", descriptor = "(I)I", line = 33)
-	public int method22677(@OriginalArg(0) int arg0) {
+	public int gIsaac1or2(@OriginalArg(0) int arg0) {
 		@Pc(21) int local21 = this.data[(this.pos += -1445626955) * 212851357 - 1] - this.random.nextInt(565430542) & 0xFF;
 		return local21 < 128 ? local21 : (local21 - 128 << 8) + (this.data[(this.pos += -1445626955) * 212851357 - 1] - this.random.nextInt(565430542) & 0xFF);
 	}
 
 	@OriginalMember(owner = "client!ase", name = "kw", descriptor = "([BIII)V", line = 39)
-	public void method22679(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+	public void gIsaacArrayBuffer(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		for (@Pc(1) int local1 = 0; local1 < arg2; local1++) {
 			arg0[arg1 + local1] = (byte) (this.data[(this.pos += -1445626955) * 212851357 - 1] - this.random.nextInt(565430542));
 		}

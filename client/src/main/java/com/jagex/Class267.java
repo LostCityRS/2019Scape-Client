@@ -107,7 +107,7 @@ class Class267 implements Interface68 {
 
 	@OriginalMember(owner = "client!fl", name = "yg", descriptor = "(Lclient!yf;I)V", line = 9272)
 	static final void method26246(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anInt2804 * 1852619943;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class520.selfPlayer.anInt2804 * 1852619943;
 	}
 
 	@OriginalMember(owner = "client!fl", name = "aaz", descriptor = "(Lclient!yf;I)V", line = 9744)
@@ -130,12 +130,12 @@ class Class267 implements Interface68 {
 	@OriginalMember(owner = "client!fl", name = "aia", descriptor = "(Lclient!yf;I)V", line = 11234)
 	static final void method26248(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = Class449.aClass514_1.method30267(local12, (byte) 69).aString107;
+		arg0.anObjectArray45[(arg0.anInt5888 += 957530791) * 587908375 - 1] = Class687.aClass514_1.method30267(local12, (byte) 69).aString107;
 	}
 
 	@OriginalMember(owner = "client!fl", name = "asw", descriptor = "(Lclient!yf;I)V", line = 13182)
 	static final void method26249(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub24_1, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], (byte) 48);
+		Class51.options.method14363(Class51.options.aClass166_Sub24_1, arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091], (byte) 48);
 		Class106_Sub1.method5135(-598046140);
 		client.aBoolean609 = true;
 	}

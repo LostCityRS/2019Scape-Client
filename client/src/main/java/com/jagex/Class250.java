@@ -21,8 +21,8 @@ public class Class250 {
 	final int[] anIntArray356;
 
 	@OriginalMember(owner = "client!er", name = "e", descriptor = "(Lclient!yu;Lclient!ze;II)I", line = 11)
-	public static int method25947(@OriginalArg(0) Class693 arg0, @OriginalArg(1) Class703 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		return Class693.aClass693_8 == arg0 ? 43594 : arg2 + 40000;
+	public static int method25947(@OriginalArg(0) ModeWhere arg0, @OriginalArg(1) Class703 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+		return ModeWhere.aModeWhere_8 == arg0 ? 43594 : arg2 + 40000;
 	}
 
 	@OriginalMember(owner = "client!er", name = "<init>", descriptor = "(Lclient!alw;)V", line = 13)
@@ -151,8 +151,8 @@ public class Class250 {
 
 	@OriginalMember(owner = "client!er", name = "aro", descriptor = "(Lclient!yf;B)V", line = 12922)
 	static final void method25955(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.anInt3431 * 1723909759;
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.anInt3430 * 1191340313;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.automatedTestFlag1 * 1723909759;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.automatedTestFlag2 * 1191340313;
 	}
 
 	@OriginalMember(owner = "client!er", name = "awq", descriptor = "(Lclient!yf;B)V", line = 13761)

@@ -61,7 +61,7 @@ public class Class452 implements Interface72 {
 
 	@OriginalMember(owner = "client!ny", name = "ayu", descriptor = "(Lclient!yf;B)V", line = 13995)
 	static final void method28961(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class358.anInt4567 * -1927181481;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class358.userCcExpiry * -1927181481;
 	}
 
 	@OriginalMember(owner = "client!ny", name = "bdq", descriptor = "(Lclient!yf;I)V", line = 14758)

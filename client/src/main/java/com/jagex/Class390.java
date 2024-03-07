@@ -28,7 +28,7 @@ public class Class390 {
 
 	@OriginalMember(owner = "client!kv", name = "n", descriptor = "(III)I", line = 18)
 	public int method28274(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(10) int local10 = Class553.anInt3408 * -1378711501 > arg1 ? Class553.anInt3408 * -1378711501 : arg1;
+		@Pc(10) int local10 = Class553.width * -1378711501 > arg1 ? Class553.width * -1378711501 : arg1;
 		if (aClass390_13 == this) {
 			return 0;
 		} else if (aClass390_12 == this) {
@@ -42,7 +42,7 @@ public class Class390 {
 
 	@OriginalMember(owner = "client!kv", name = "k", descriptor = "(II)I", line = 18)
 	public int method28275(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(10) int local10 = Class553.anInt3408 * -1378711501 > arg1 ? Class553.anInt3408 * -1378711501 : arg1;
+		@Pc(10) int local10 = Class553.width * -1378711501 > arg1 ? Class553.width * -1378711501 : arg1;
 		if (aClass390_13 == this) {
 			return 0;
 		} else if (aClass390_12 == this) {

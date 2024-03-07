@@ -23,7 +23,7 @@ public abstract class Class124 {
 	}
 
 	@OriginalMember(owner = "client!kl", name = "b", descriptor = "(Lclient!ase;I)V", line = 879)
-	static void method21400(@OriginalArg(0) PacketBit arg0, @OriginalArg(1) int arg1) {
+	static void decodeTotpToken(@OriginalArg(0) PacketBit arg0, @OriginalArg(1) int arg1) {
 		@Pc(8) boolean local8 = arg0.g1((short) 16384) == 1;
 		if (!local8) {
 			return;
@@ -33,7 +33,7 @@ public abstract class Class124 {
 		@Pc(26) int local26 = local18 | arg0.g1opcode(-1795674623) << 16;
 		@Pc(34) int local34 = local26 | arg0.g1opcode(-1708200762) << 8;
 		@Pc(40) int local40 = local34 | arg0.g1opcode(-617258435);
-		Class266.aClass306_1.method26809(Class413.aLong272 * 1983505324986122333L, local40, 823690709);
+		Class266.aClass306_1.method26809(Class413.totpTokenKey * 1983505324986122333L, local40, 823690709);
 	}
 
 	@OriginalMember(owner = "client!kl", name = "yz", descriptor = "(Lclient!yf;B)V", line = 9296)

@@ -116,7 +116,7 @@ public class Class544 {
 
 	@OriginalMember(owner = "client!sa", name = "aue", descriptor = "(Lclient!yf;I)V", line = 13353)
 	static final void method30958(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub35_1.method16226(1931997619);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub35_1.method16226(1931997619);
 	}
 
 	@OriginalMember(owner = "client!sa", name = "bdp", descriptor = "(Lclient!yf;I)V", line = 14738)

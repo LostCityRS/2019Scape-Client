@@ -658,7 +658,7 @@ public class Class519 implements Interface75, Interface54 {
 
 	@OriginalMember(owner = "client!qw", name = "n", descriptor = "()I", line = 243)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt5213 * 2042132033;
 	}
 
@@ -693,7 +693,7 @@ public class Class519 implements Interface75, Interface54 {
 
 	@OriginalMember(owner = "client!qw", name = "zy", descriptor = "(Lclient!yf;S)V", line = 9409)
 	static final void method30322(@OriginalArg(0) Class681 arg0, @OriginalArg(1) short arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.anInt3513 * -859840571;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.selfPlayerSlot * -859840571;
 	}
 
 	@OriginalMember(owner = "client!qw", name = "acg", descriptor = "(Lclient!yf;I)V", line = 10010)
@@ -704,9 +704,9 @@ public class Class519 implements Interface75, Interface54 {
 
 	@OriginalMember(owner = "client!qw", name = "ari", descriptor = "(Lclient!yf;B)V", line = 12911)
 	static final void method30324(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		if (client.anInt3435 * -849002901 == 17) {
-			@Pc(11) Class93_Sub22 local11 = Class102.method2588(Class446.aClass446_84, client.aClass175_1.aClass24_2, (byte) 112);
-			client.aClass175_1.method24356(local11, -2028724292);
+		if (client.state * -849002901 == 17) {
+			@Pc(11) ClientMessage local11 = Class102.createGameMessage(ClientProt.aClientProt_84, client.aClass175_1.clientIsaac, (byte) 112);
+			client.aClass175_1.send(local11, -2028724292);
 		}
 	}
 }

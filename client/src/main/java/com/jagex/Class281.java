@@ -58,7 +58,7 @@ public class Class281 {
 		@Pc(31) Iterator local31 = arg0.iterator();
 		while (local31.hasNext()) {
 			@Pc(38) Interface75 local38 = (Interface75) local31.next();
-			@Pc(41) int local41 = local38.method36920();
+			@Pc(41) int local41 = local38.getId();
 			@Pc(45) int local45 = local41 / 8;
 			arg1.data[arg1.pos * 212851357 + local45] = (byte) (arg1.data[arg1.pos * 212851357 + local45] | 0x1 << (local41 & 0x7));
 		}

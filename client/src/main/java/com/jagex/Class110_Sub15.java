@@ -64,15 +64,15 @@ public abstract class Class110_Sub15 extends Class110 {
 	@OriginalMember(owner = "client!agm", name = "u", descriptor = "(II)V", line = 272)
 	static void method20152(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		Class172.anInt3176 = 0;
-		@Pc(5) int local5 = client.aClass532_1.method30459(2067319058);
-		@Pc(9) int local9 = client.aClass532_1.method30466((short) 128);
-		@Pc(13) Class520 local13 = client.aClass532_1.method30487(-218524362);
-		@Pc(17) Class585 local17 = client.aClass532_1.method30481(-1736355724);
-		@Pc(21) Class32_Sub14 local21 = client.aClass532_1.method30496(959323443);
+		@Pc(5) int local5 = client.world.method30459(2067319058);
+		@Pc(9) int local9 = client.world.method30466((short) 128);
+		@Pc(13) Class520 local13 = client.world.method30487(-218524362);
+		@Pc(17) Class585 local17 = client.world.method30481(-1736355724);
+		@Pc(21) Class32_Sub14 local21 = client.world.method30496(959323443);
 		@Pc(23) int local23 = arg0;
-		if (Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3 != null) {
-			@Pc(32) int local32 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anIntArray240[0] >> 3;
-			@Pc(39) int local39 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anIntArray239[0] >> 3;
+		if (Class520.selfPlayer != null) {
+			@Pc(32) int local32 = Class520.selfPlayer.anIntArray240[0] >> 3;
+			@Pc(39) int local39 = Class520.selfPlayer.anIntArray239[0] >> 3;
 			if (local32 >= 0 && local32 < Class690.aBooleanArrayArray15.length && local39 >= 0 && local39 < Class690.aBooleanArrayArray15[local32].length && Class690.aBooleanArrayArray15[local32][local39]) {
 				local23 = 0;
 			}

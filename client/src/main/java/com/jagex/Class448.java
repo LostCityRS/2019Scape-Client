@@ -120,7 +120,7 @@ public class Class448 {
 
 	@OriginalMember(owner = "client!nt", name = "aux", descriptor = "(Lclient!yf;B)V", line = 13393)
 	static final void method28923(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub34_1.method16204((byte) 4);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub34_1.method16204((byte) 4);
 	}
 
 	@OriginalMember(owner = "client!nt", name = "bbd", descriptor = "(Lclient!yf;B)V", line = 14356)

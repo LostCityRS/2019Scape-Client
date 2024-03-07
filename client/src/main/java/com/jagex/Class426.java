@@ -34,9 +34,9 @@ public class Class426 {
 	static final void method28752(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
 		if (local12 == -1) {
-			Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub15_2, Class51.aClass93_Sub36_1.aClass166_Sub15_1.method15673(-1808076394), (byte) 5);
+			Class51.options.method14363(Class51.options.aClass166_Sub15_2, Class51.options.aClass166_Sub15_1.method15673(-1808076394), (byte) 5);
 		} else {
-			Class51.aClass93_Sub36_1.method14363(Class51.aClass93_Sub36_1.aClass166_Sub15_2, local12, (byte) 47);
+			Class51.options.method14363(Class51.options.aClass166_Sub15_2, local12, (byte) 47);
 		}
 		Class262.method26171(371080600);
 	}

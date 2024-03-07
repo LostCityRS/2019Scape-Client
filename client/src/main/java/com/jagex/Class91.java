@@ -70,7 +70,7 @@ public class Class91 {
 			arg1 = 0;
 		}
 		@Pc(24) boolean local24 = Class527.aString222.startsWith("mac");
-		@Pc(38) int[] local38 = Class166_Sub13.aTwitchTV1.GetRecommendedSettings(Class553.anInt3408 * -1378711501, Class553.anInt3416 * 2091353777, arg0, 2000, arg2, Class625.aFloat337, local24);
+		@Pc(38) int[] local38 = Class166_Sub13.aTwitchTV1.GetRecommendedSettings(Class553.width * -1378711501, Class553.height * 2091353777, arg0, 2000, arg2, Class625.aFloat337, local24);
 		if (local38[0] != 0) {
 			return local38[0];
 		}
@@ -85,7 +85,7 @@ public class Class91 {
 		if (arg1 != 0) {
 			local58 = arg1 * local58 / 100;
 		}
-		Class314.method26939("Stream - Input: " + Class553.anInt3408 * -1378711501 + "x" + Class553.anInt3416 * 2091353777 + " (" + local60 + "kbps)" + " => " + "Output: " + local50 + "x" + local54 + " [" + (arg0 == 0 ? "auto" : arg0 + "%") + "] (" + local58 + "kbps [" + (arg1 == 0 ? "auto" : arg1 + "%") + "])", -2098003940);
+		Class314.method26939("Stream - Input: " + Class553.width * -1378711501 + "x" + Class553.height * 2091353777 + " (" + local60 + "kbps)" + " => " + "Output: " + local50 + "x" + local54 + " [" + (arg0 == 0 ? "auto" : arg0 + "%") + "] (" + local58 + "kbps [" + (arg1 == 0 ? "auto" : arg1 + "%") + "])", -2098003940);
 		return Class166_Sub13.aTwitchTV1.StartStreaming(local50, local54, arg2, local58, arg1 != 0, Class625.aFloat337, Class625.anInt5699 * -473071333, arg3);
 	}
 
@@ -138,7 +138,7 @@ public class Class91 {
 						var9 = false;
 						break label130;
 					}
-					Class696.method36643(local23, arg2, 359964894);
+					Class687.method36643(local23, arg2, 359964894);
 				}
 			} catch (@Pc(190) Exception local190) {
 				Class361.method27803(arg2, local23, local190, "S", 433817837);
@@ -172,10 +172,10 @@ public class Class91 {
 	@OriginalMember(owner = "client!adv", name = "ayo", descriptor = "(Lclient!yf;I)V", line = 14027)
 	static final void method1710(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(2) int local2 = Class314.method26938(1054716290);
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = (Class166_Sub12.anInt2143 = Class51.aClass93_Sub36_1.aClass166_Sub4_2.method15426((byte) 87) * 1038066943) * -2067309825;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = (Class166_Sub12.anInt2143 = Class51.options.aClass166_Sub4_2.method15426((byte) 87) * 1038066943) * -2067309825;
 		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local2;
 		Class275.method26341(1118364760);
-		client.aClass532_1.method30533((byte) 0);
+		client.world.method30533((byte) 0);
 		Class106_Sub1.method5135(1368867977);
 		client.aBoolean601 = false;
 	}

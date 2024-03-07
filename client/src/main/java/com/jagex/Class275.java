@@ -64,7 +64,7 @@ public class Class275 {
 
 	@OriginalMember(owner = "client!ft", name = "ej", descriptor = "(ZB)V", line = 819)
 	static void method26342(@OriginalArg(0) boolean arg0, @OriginalArg(1) byte arg1) {
-		@Pc(3) Class611 local3 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.method20024(1927066028);
+		@Pc(3) Class611 local3 = Class520.selfPlayer.method20024(1927066028);
 		@Pc(13) Class93_Sub1_Sub20 local13 = Class159_Sub1.method14518(local3.anInt5623 * 270611681, local3.anInt5624 * -1994307635);
 		if (local13 == null) {
 			local13 = Class159_Sub1.method14520(Class159_Sub1.aClass637_2.anInt5747 * 267023917);

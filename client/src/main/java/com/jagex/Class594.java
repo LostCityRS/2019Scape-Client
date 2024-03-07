@@ -39,9 +39,9 @@ public class Class594 implements Runnable {
 
 	@OriginalMember(owner = "client!ug", name = "m", descriptor = "(I)V", line = 128)
 	public static final void method31724(@OriginalArg(0) int arg0) {
-		Class411.anInt4721 = -522138941;
-		Class411.anInt4750 = -898365362;
-		Class411.anInt4749 = 1954204370;
+		Class411.step = -522138941;
+		Class411.enterGameReply = -898365362;
+		Class411.enterLobbyReply = 1954204370;
 	}
 
 	@OriginalMember(owner = "client!ug", name = "<init>", descriptor = "(Ljava/io/OutputStream;I)V", line = 184)

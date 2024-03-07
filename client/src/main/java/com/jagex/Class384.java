@@ -22,7 +22,7 @@ public class Class384 implements Interface33 {
 	@Override
 	public void method28285(@OriginalArg(0) boolean arg0, @OriginalArg(1) int arg1) {
 		if (arg0) {
-			Class694.aClass104_14.method20721(0, 0, Class553.anInt3408 * -1378711501, Class553.anInt3416 * 2091353777, this.aClass381_1.anInt4624 * -25521439, 0);
+			Class694.aClass104_14.method20721(0, 0, Class553.width * -1378711501, Class553.height * 2091353777, this.aClass381_1.anInt4624 * -25521439, 0);
 		}
 	}
 
@@ -30,7 +30,7 @@ public class Class384 implements Interface33 {
 	@Override
 	public void method28281(@OriginalArg(0) boolean arg0) {
 		if (arg0) {
-			Class694.aClass104_14.method20721(0, 0, Class553.anInt3408 * -1378711501, Class553.anInt3416 * 2091353777, this.aClass381_1.anInt4624 * -25521439, 0);
+			Class694.aClass104_14.method20721(0, 0, Class553.width * -1378711501, Class553.height * 2091353777, this.aClass381_1.anInt4624 * -25521439, 0);
 		}
 	}
 
@@ -38,7 +38,7 @@ public class Class384 implements Interface33 {
 	@Override
 	public void method28282(@OriginalArg(0) boolean arg0) {
 		if (arg0) {
-			Class694.aClass104_14.method20721(0, 0, Class553.anInt3408 * -1378711501, Class553.anInt3416 * 2091353777, this.aClass381_1.anInt4624 * -25521439, 0);
+			Class694.aClass104_14.method20721(0, 0, Class553.width * -1378711501, Class553.height * 2091353777, this.aClass381_1.anInt4624 * -25521439, 0);
 		}
 	}
 
@@ -75,8 +75,8 @@ public class Class384 implements Interface33 {
 		@Pc(4) Iterator local4 = arg0.iterator();
 		while (local4.hasNext()) {
 			@Pc(11) Interface75 local11 = (Interface75) local4.next();
-			if (local11.method36920() > local1) {
-				local1 = local11.method36920();
+			if (local11.getId() > local1) {
+				local1 = local11.getId();
 			}
 		}
 		return (local1 + 8) / 8;

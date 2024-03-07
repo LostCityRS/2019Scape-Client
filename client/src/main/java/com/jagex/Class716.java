@@ -131,7 +131,7 @@ public abstract class Class716 {
 		Class130_Sub2.anInt1117 = (arg1 - local45) * 1820517185;
 		Class270.anInt3884 = (arg2 - local47) * -967471741;
 		Class620.anInt5644 = arg3 * -1151839067;
-		Class24.anInt82 = arg4 * 1056124373;
+		IsaacRandom.anInt82 = arg4 * 1056124373;
 		Class348.anInt4199 = 0;
 	}
 

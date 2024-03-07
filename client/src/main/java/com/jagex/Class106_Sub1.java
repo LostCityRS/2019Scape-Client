@@ -293,8 +293,8 @@ public class Class106_Sub1 extends Class106 {
 	public static void method5135(@OriginalArg(0) int arg0) {
 		@Pc(1) Class38 local1 = null;
 		try {
-			local1 = Class166_Sub18.method15743("", client.aClass702_4.aString241, true, 199047110);
-			@Pc(12) Packet local12 = Class51.aClass93_Sub36_1.method14361(149427018);
+			local1 = Class166_Sub18.method15743("", client.modeGame.aString241, true, 199047110);
+			@Pc(12) Packet local12 = Class51.options.encode(149427018);
 			local1.method725(local12.data, 0, local12.pos * 212851357, 815855156);
 		} catch (@Pc(24) Exception local24) {
 		}

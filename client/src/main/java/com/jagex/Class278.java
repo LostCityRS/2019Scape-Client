@@ -10,7 +10,7 @@ import org.openrs2.deob.annotation.Pc;
 public class Class278 {
 
 	@OriginalMember(owner = "client!fx", name = "oc", descriptor = "I")
-	public static int anInt3888;
+	public static int userLastLoginDay;
 
 	@OriginalMember(owner = "client!fx", name = "e", descriptor = "Lclient!fx;")
 	public static final Class278 aClass278_5 = new Class278();
@@ -59,6 +59,6 @@ public class Class278 {
 
 	@OriginalMember(owner = "client!fx", name = "arp", descriptor = "(Lclient!yf;I)V", line = 12907)
 	static final void method26365(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class411.anInt4749 * 914785575;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class411.enterLobbyReply * 914785575;
 	}
 }

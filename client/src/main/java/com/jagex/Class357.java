@@ -313,7 +313,7 @@ public class Class357 implements Runnable {
 							@Pc(85) int local85 = local73 << 24 | 0xFFFFFF;
 							Class555.method31054(853275626);
 							Class694.aClass104_14.method20829(1, 0);
-							@Pc(102) Class100 local102 = Class694.aClass104_14.method20485(Class553.anInt3408 * -1378711501, Class553.anInt3416 * 2091353777, true, -533073351);
+							@Pc(102) Class100 local102 = Class694.aClass104_14.method20485(Class553.width * -1378711501, Class553.height * 2091353777, true, -533073351);
 							@Pc(105) Class112_Sub1 local105 = Class694.aClass104_14.method20548();
 							local105.method23435(0, local102.method18194());
 							Class694.aClass104_14.method20453(local105, (byte) 1);
@@ -382,7 +382,7 @@ public class Class357 implements Runnable {
 							@Pc(85) int local85 = local73 << 24 | 0xFFFFFF;
 							Class555.method31054(1819369552);
 							Class694.aClass104_14.method20829(1, 0);
-							@Pc(102) Class100 local102 = Class694.aClass104_14.method20485(Class553.anInt3408 * -1378711501, Class553.anInt3416 * 2091353777, true, -1919413746);
+							@Pc(102) Class100 local102 = Class694.aClass104_14.method20485(Class553.width * -1378711501, Class553.height * 2091353777, true, -1919413746);
 							@Pc(105) Class112_Sub1 local105 = Class694.aClass104_14.method20548();
 							local105.method23435(0, local102.method18194());
 							Class694.aClass104_14.method20453(local105, (byte) 1);
@@ -452,7 +452,7 @@ public class Class357 implements Runnable {
 							@Pc(85) int local85 = local73 << 24 | 0xFFFFFF;
 							Class555.method31054(1929758039);
 							Class694.aClass104_14.method20829(1, 0);
-							@Pc(102) Class100 local102 = Class694.aClass104_14.method20485(Class553.anInt3408 * -1378711501, Class553.anInt3416 * 2091353777, true, -1398219634);
+							@Pc(102) Class100 local102 = Class694.aClass104_14.method20485(Class553.width * -1378711501, Class553.height * 2091353777, true, -1398219634);
 							@Pc(105) Class112_Sub1 local105 = Class694.aClass104_14.method20548();
 							local105.method23435(0, local102.method18194());
 							Class694.aClass104_14.method20453(local105, (byte) 1);
@@ -521,7 +521,7 @@ public class Class357 implements Runnable {
 							@Pc(85) int local85 = local73 << 24 | 0xFFFFFF;
 							Class555.method31054(-542212805);
 							Class694.aClass104_14.method20829(1, 0);
-							@Pc(102) Class100 local102 = Class694.aClass104_14.method20485(Class553.anInt3408 * -1378711501, Class553.anInt3416 * 2091353777, true, -1026105753);
+							@Pc(102) Class100 local102 = Class694.aClass104_14.method20485(Class553.width * -1378711501, Class553.height * 2091353777, true, -1026105753);
 							@Pc(105) Class112_Sub1 local105 = Class694.aClass104_14.method20548();
 							local105.method23435(0, local102.method18194());
 							Class694.aClass104_14.method20453(local105, (byte) 1);
@@ -590,7 +590,7 @@ public class Class357 implements Runnable {
 							@Pc(85) int local85 = local73 << 24 | 0xFFFFFF;
 							Class555.method31054(1162632401);
 							Class694.aClass104_14.method20829(1, 0);
-							@Pc(102) Class100 local102 = Class694.aClass104_14.method20485(Class553.anInt3408 * -1378711501, Class553.anInt3416 * 2091353777, true, -1321456634);
+							@Pc(102) Class100 local102 = Class694.aClass104_14.method20485(Class553.width * -1378711501, Class553.height * 2091353777, true, -1321456634);
 							@Pc(105) Class112_Sub1 local105 = Class694.aClass104_14.method20548();
 							local105.method23435(0, local102.method18194());
 							Class694.aClass104_14.method20453(local105, (byte) 1);
@@ -631,13 +631,13 @@ public class Class357 implements Runnable {
 	@OriginalMember(owner = "client!jb", name = "e", descriptor = "(I)V", line = 236)
 	public static void method27768(@OriginalArg(0) int arg0) {
 		Class362.aBoolean730 = true;
-		Class7.aString2 = Class411.aString200;
+		Class7.aString2 = Class411.username;
 		Class490.aString217 = Class411.aString201;
-		Class642.method32520(false, (short) 9562);
+		Class642.logout(false, (short) 9562);
 		Class283.method26476((byte) -12);
 		Class362.aClass370Array1 = null;
 		Class275.aClass496_1 = null;
-		Class481.method29756(5, 1823202236);
+		Class481.setState(5, 1823202236);
 	}
 
 	@OriginalMember(owner = "client!jb", name = "ht", descriptor = "(Lclient!yf;I)V", line = 6413)
@@ -645,7 +645,7 @@ public class Class357 implements Runnable {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
 		@Pc(16) Class312 local16 = Class659.method32808(local12, -590070381);
 		@Pc(22) Class320 local22 = Class166_Sub1.aClass320Array1[local12 >> 16];
-		Class453.method28966(local16, local22, arg0, Class310.aClass310_2, (byte) -46);
+		ServerProt.method28966(local16, local22, arg0, Class310.aClass310_2, (byte) -46);
 	}
 
 	@OriginalMember(owner = "client!jb", name = "bfn", descriptor = "(Lclient!yf;B)V", line = 15137)

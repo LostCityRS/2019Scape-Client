@@ -98,7 +98,7 @@ class Class665 implements Iterator {
 		@Pc(8) Class677 local8 = arg0.aBoolean875 ? arg0.aClass677_2 : arg0.aClass677_1;
 		@Pc(11) Class312 local11 = local8.aClass312_13;
 		@Pc(14) Class320 local14 = local8.aClass320_4;
-		Class453.method28965(local11, local14, arg0, (short) -1473);
+		ServerProt.method28965(local11, local14, arg0, (short) -1473);
 	}
 
 	@OriginalMember(owner = "client!xn", name = "qz", descriptor = "(Lclient!hf;Lclient!hq;Lclient!yf;I)V", line = 7888)
@@ -113,7 +113,7 @@ class Class665 implements Iterator {
 
 	@OriginalMember(owner = "client!xn", name = "apt", descriptor = "(Lclient!yf;I)V", line = 12754)
 	static final void method32894(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class411.anInt4750 * 1486673001;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class411.enterGameReply * 1486673001;
 	}
 
 	@OriginalMember(owner = "client!xn", name = "bbc", descriptor = "(Lclient!yf;I)V", line = 14491)

@@ -323,11 +323,11 @@ public final class Class285 {
 		Class431.method28775((byte) -67);
 		Class655.aClass163_Sub2_1.method14903((short) 9732);
 		Class655.aClass163_Sub1_1.method14903((short) 21171);
-		@Pc(17) Class93_Sub22 local17;
+		@Pc(17) ClientMessage local17;
 		@Pc(26) int local26;
 		if (client.anInt3450 * -938319179 > 0) {
-			local17 = Class102.method2588(Class446.aClass446_89, client.aClass175_2.aClass24_2, (byte) 86);
-			local17.aPacketBit_1.p2(client.anInt3450 * 541690580, 2125814869);
+			local17 = Class102.createGameMessage(ClientProt.aClientProt_89, client.aClass175_2.clientIsaac, (byte) 86);
+			local17.packet.p2(client.anInt3450 * 541690580, 2125814869);
 			for (local26 = 0; local26 < client.anInt3450 * -938319179; local26++) {
 				@Pc(35) Interface66 local35 = client.anInterface66Array1[local26];
 				@Pc(43) long local43 = local35.method13688((byte) 57) - Class655.aLong299 * -4327737356022789177L;
@@ -335,10 +335,10 @@ public final class Class285 {
 					local43 = 16777215L;
 				}
 				Class655.aLong299 = local35.method13688((byte) 106) * -2492000195029924361L;
-				local17.aPacketBit_1.p1(local35.method13696((byte) 0), (byte) -34);
-				local17.aPacketBit_1.p3((int) local43, (byte) 26);
+				local17.packet.p1(local35.method13696((byte) 0), (byte) -34);
+				local17.packet.p3((int) local43, (byte) 26);
 			}
-			client.aClass175_2.method24356(local17, -1754044428);
+			client.aClass175_2.send(local17, -1754044428);
 		}
 		if (Class655.anInt5808 * 660178843 > 0) {
 			Class655.anInt5808 -= 1066698387;
@@ -359,46 +359,46 @@ public final class Class285 {
 				local114 = 0;
 				local26 = 0;
 			}
-			@Pc(153) Class93_Sub22 local153 = Class102.method2588(Class446.aClass446_39, client.aClass175_2.aClass24_2, (byte) 69);
-			local153.aPacketBit_1.p2_alt3(local26, (short) 255);
-			local153.aPacketBit_1.p2(local114, 2132239081);
-			client.aClass175_2.method24356(local153, -1929411858);
+			@Pc(153) ClientMessage local153 = Class102.createGameMessage(ClientProt.aClientProt_39, client.aClass175_2.clientIsaac, (byte) 69);
+			local153.packet.p2_alt3(local26, (short) 255);
+			local153.packet.p2(local114, 2132239081);
+			client.aClass175_2.send(local153, -1929411858);
 		}
 		if (Class20.aBoolean10 != Class655.aBoolean861) {
 			Class655.aBoolean861 = Class20.aBoolean10;
-			local17 = Class102.method2588(Class446.aClass446_95, client.aClass175_2.aClass24_2, (byte) 10);
-			local17.aPacketBit_1.p1(Class20.aBoolean10 ? 1 : 0, (byte) -87);
-			client.aClass175_2.method24356(local17, -1548378459);
+			local17 = Class102.createGameMessage(ClientProt.aClientProt_95, client.aClass175_2.clientIsaac, (byte) 10);
+			local17.packet.p1(Class20.aBoolean10 ? 1 : 0, (byte) -87);
+			client.aClass175_2.send(local17, -1548378459);
 		}
 		if (!client.aBoolean601) {
-			local17 = Class102.method2588(Class446.aClass446_19, client.aClass175_2.aClass24_2, (byte) 76);
-			local17.aPacketBit_1.p1(0, (byte) 4);
-			local26 = local17.aPacketBit_1.pos * 212851357;
-			@Pc(214) Packet local214 = Class51.aClass93_Sub36_1.method14361(-451359255);
-			local17.aPacketBit_1.pdata(local214.data, 0, local214.pos * 212851357, 2026842986);
-			local17.aPacketBit_1.psize1(local17.aPacketBit_1.pos * 212851357 - local26, (byte) 90);
-			client.aClass175_2.method24356(local17, -1817093601);
+			local17 = Class102.createGameMessage(ClientProt.aClientProt_19, client.aClass175_2.clientIsaac, (byte) 76);
+			local17.packet.p1(0, (byte) 4);
+			local26 = local17.packet.pos * 212851357;
+			@Pc(214) Packet local214 = Class51.options.encode(-451359255);
+			local17.packet.pdata(local214.data, 0, local214.pos * 212851357, 2026842986);
+			local17.packet.psize1(local17.packet.pos * 212851357 - local26, (byte) 90);
+			client.aClass175_2.send(local17, -1817093601);
 			client.aBoolean601 = true;
 		}
-		if (client.aBoolean602 || Class51.aClass93_Sub36_1.aClass166_Sub4_1.method15426((byte) 79) != 1) {
+		if (client.aBoolean602 || Class51.options.aClass166_Sub4_1.method15426((byte) 79) != 1) {
 			return;
 		}
 		@Pc(253) int[] local253 = Class694.aClass104_14.method20773();
-		@Pc(259) Class93_Sub22 local259 = Class102.method2588(Class446.aClass446_111, client.aClass175_2.aClass24_2, (byte) 86);
-		local259.aPacketBit_1.p2(0, 2131881198);
-		@Pc(270) int local270 = local259.aPacketBit_1.pos * 212851357;
+		@Pc(259) ClientMessage local259 = Class102.createGameMessage(ClientProt.aClientProt_111, client.aClass175_2.clientIsaac, (byte) 86);
+		local259.packet.p2(0, 2131881198);
+		@Pc(270) int local270 = local259.packet.pos * 212851357;
 		if (local253 == null || local253.length == 0) {
-			local259.aPacketBit_1.p1(0, (byte) -67);
+			local259.packet.p1(0, (byte) -67);
 		} else {
-			local259.aPacketBit_1.p1(1, (byte) -68);
+			local259.packet.p1(1, (byte) -68);
 			@Pc(284) Class184[] local284 = Class184.method24580(1539890468);
 			@Pc(288) HashSet local288 = new HashSet();
 			@Pc(292) ArrayList local292 = new ArrayList();
 			@Pc(294) int local294 = 0;
 			label94: while (true) {
 				if (local294 >= local253.length) {
-					Class281.method26461(local288, local259.aPacketBit_1, -2075218078);
-					local259.aPacketBit_1.pSmart1or2s(local292.size(), -888816505);
+					Class281.method26461(local288, local259.packet, -2075218078);
+					local259.packet.pSmart1or2s(local292.size(), -888816505);
 					if (local292.size() <= 0) {
 						break;
 					}
@@ -411,7 +411,7 @@ public final class Class285 {
 							local294 = local362;
 						}
 					}
-					local259.aPacketBit_1.pSmart2or4(local294, -1464683848);
+					local259.packet.pSmart2or4(local294, -1464683848);
 					local355 = local292.iterator();
 					while (true) {
 						if (!local355.hasNext()) {
@@ -419,7 +419,7 @@ public final class Class285 {
 						}
 						local362 = (Integer) local355.next();
 						if (local362 != local294) {
-							local259.aPacketBit_1.pSmart2or4(local362 - local294, -1849944858);
+							local259.packet.pSmart2or4(local362 - local294, -1849944858);
 						}
 					}
 				}
@@ -437,8 +437,8 @@ public final class Class285 {
 				local294++;
 			}
 		}
-		local259.aPacketBit_1.psize2(local259.aPacketBit_1.pos * 212851357 - local270, -1045912997);
-		client.aClass175_2.method24356(local259, -2052901139);
+		local259.packet.psize2(local259.packet.pos * 212851357 - local270, -1045912997);
+		client.aClass175_2.send(local259, -2052901139);
 		client.aBoolean602 = true;
 	}
 
@@ -506,6 +506,6 @@ public final class Class285 {
 
 	@OriginalMember(owner = "client!gd", name = "azy", descriptor = "(Lclient!yf;B)V", line = 14181)
 	static final void method26519(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub2_1.method15376((byte) 75) ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub2_1.method15376((byte) 75) ? 1 : 0;
 	}
 }

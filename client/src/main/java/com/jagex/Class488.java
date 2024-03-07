@@ -136,12 +136,12 @@ public class Class488 {
 
 	@OriginalMember(owner = "client!pn", name = "lo", descriptor = "(Ljava/lang/String;I)V", line = 12108)
 	public static final void method29824(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1) {
-		@Pc(5) int local5 = client.aBoolean629 ? 400 : 200;
+		@Pc(5) int local5 = client.userMember ? 400 : 200;
 		if (arg0 == null) {
 			return;
 		}
 		if (client.anInt3444 * 862418793 >= local5) {
-			Class103.method2809(4, client.aBoolean629 ? Class74.aClass74_38.method1259(Class106.aClass717_8, (byte) 50) : Class74.aClass74_39.method1259(Class106.aClass717_8, (byte) -63), -1963408433);
+			Class103.method2809(4, client.userMember ? Class74.aClass74_38.method1259(Class106.lang, (byte) 50) : Class74.aClass74_39.method1259(Class106.lang, (byte) -63), -1963408433);
 			return;
 		}
 		@Pc(33) String local33 = Class82.method1384(arg0, client.aClass83_10, (byte) 1);
@@ -155,13 +155,13 @@ public class Class488 {
 			@Pc(47) Class281 local47 = client.aClass281Array1[local38];
 			local53 = Class82.method1384(local47.aString153, client.aClass83_10, (byte) 1);
 			if (local53 != null && local53.equals(local33)) {
-				Class103.method2809(4, arg0 + Class74.aClass74_155.method1259(Class106.aClass717_8, (byte) -65), -1963408433);
+				Class103.method2809(4, arg0 + Class74.aClass74_155.method1259(Class106.lang, (byte) -65), -1963408433);
 				return;
 			}
 			if (local47.aString154 != null) {
 				local84 = Class82.method1384(local47.aString154, client.aClass83_10, (byte) 1);
 				if (local84 != null && local84.equals(local33)) {
-					Class103.method2809(4, arg0 + Class74.aClass74_155.method1259(Class106.aClass717_8, (byte) 100), -1963408433);
+					Class103.method2809(4, arg0 + Class74.aClass74_155.method1259(Class106.lang, (byte) 100), -1963408433);
 					return;
 				}
 			}
@@ -170,37 +170,37 @@ public class Class488 {
 			@Pc(118) Class177 local118 = client.aClass177Array1[local38];
 			local53 = Class82.method1384(local118.aString125, client.aClass83_10, (byte) 1);
 			if (local53 != null && local53.equals(local33)) {
-				Class103.method2809(4, Class74.aClass74_154.method1259(Class106.aClass717_8, (byte) 8) + arg0 + Class74.aClass74_74.method1259(Class106.aClass717_8, (byte) -47), -1963408433);
+				Class103.method2809(4, Class74.aClass74_154.method1259(Class106.lang, (byte) 8) + arg0 + Class74.aClass74_74.method1259(Class106.lang, (byte) -47), -1963408433);
 				return;
 			}
 			if (local118.aString123 != null) {
 				local84 = Class82.method1384(local118.aString123, client.aClass83_10, (byte) 1);
 				if (local84 != null && local84.equals(local33)) {
-					Class103.method2809(4, Class74.aClass74_154.method1259(Class106.aClass717_8, (byte) -42) + arg0 + Class74.aClass74_74.method1259(Class106.aClass717_8, (byte) 45), -1963408433);
+					Class103.method2809(4, Class74.aClass74_154.method1259(Class106.lang, (byte) -42) + arg0 + Class74.aClass74_74.method1259(Class106.lang, (byte) 45), -1963408433);
 					return;
 				}
 			}
 		}
-		if (Class82.method1384(Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aString82, client.aClass83_10, (byte) 1).equals(local33)) {
-			Class103.method2809(4, Class74.aClass74_151.method1259(Class106.aClass717_8, (byte) 43), -1963408433);
+		if (Class82.method1384(Class520.selfPlayer.name2, client.aClass83_10, (byte) 1).equals(local33)) {
+			Class103.method2809(4, Class74.aClass74_151.method1259(Class106.lang, (byte) 43), -1963408433);
 			return;
 		}
 		@Pc(208) Class175 local208 = Class330.method27371(-1644772968);
-		@Pc(214) Class93_Sub22 local214 = Class102.method2588(Class446.aClass446_54, local208.aClass24_2, (byte) 126);
-		local214.aPacketBit_1.p1(Packet.pjstrlen(arg0, -2103213469), (byte) -54);
-		local214.aPacketBit_1.pjstr(arg0, -1639122878);
-		local208.method24356(local214, -1899542244);
+		@Pc(214) ClientMessage local214 = Class102.createGameMessage(ClientProt.aClientProt_54, local208.clientIsaac, (byte) 126);
+		local214.packet.p1(Packet.pjstrlen(arg0, -2103213469), (byte) -54);
+		local214.packet.pjstr(arg0, -1639122878);
+		local208.send(local214, -1899542244);
 	}
 
 	@OriginalMember(owner = "client!pn", name = "bam", descriptor = "(Lclient!yf;I)V", line = 14263)
 	static final void method29825(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub8_1.method16546(local12, -1852738245);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub8_1.method16546(local12, -1852738245);
 	}
 
 	@OriginalMember(owner = "client!pn", name = "baz", descriptor = "(Lclient!yf;I)V", line = 14320)
 	static final void method29826(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub26_1.method16546(local12, -440372523);
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub26_1.method16546(local12, -440372523);
 	}
 }

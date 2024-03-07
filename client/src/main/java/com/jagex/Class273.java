@@ -68,7 +68,7 @@ public class Class273 implements Interface26 {
 
 	@OriginalMember(owner = "client!fr", name = "yr", descriptor = "(Lclient!yf;B)V", line = 9319)
 	static final void method26328(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.anInt3426 * -1765120027;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = client.affiliate * -1765120027;
 	}
 
 	@OriginalMember(owner = "client!fr", name = "avx", descriptor = "(Lclient!yf;B)V", line = 13501)

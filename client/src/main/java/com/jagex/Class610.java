@@ -2124,18 +2124,18 @@ public class Class610 implements Interface13 {
 	@OriginalMember(owner = "client!vd", name = "fc", descriptor = "(I)V", line = 2497)
 	public static void method32020(@OriginalArg(0) int arg0) {
 		@Pc(1) int local1 = 0;
-		if (Class51.aClass93_Sub36_1.aClass166_Sub19_1.method15759(-2030077214) == 1) {
+		if (Class51.options.aClass166_Sub19_1.method15759(-2030077214) == 1) {
 			local1 |= 0x1;
 			local1 |= 0x10;
 			local1 |= 0x20;
 			local1 |= 0x2;
 			local1 |= 0x4;
 		}
-		if (Class51.aClass93_Sub36_1.aClass166_Sub14_1.method15656(168439217) == 0) {
+		if (Class51.options.aClass166_Sub14_1.method15656(168439217) == 0) {
 			local1 |= 0x40;
 		}
 		Class61.method1131(local1, (byte) -45);
-		client.aClass532_1.method30496(1973423090).method17147(local1, (byte) -120);
+		client.world.method30496(1973423090).method17147(local1, (byte) -120);
 		Class392.aClass541_1.method30914(1980933050).method30496(2050196998).method17147(local1, (byte) -55);
 		Class277.aClass32_Sub12_1.method17075(local1, 145514828);
 		Class162.aClass32_Sub3_2.method16690(local1, 1883724472);
@@ -2145,7 +2145,7 @@ public class Class610 implements Interface13 {
 		Class148_Sub1.method11760(local1, -1913380689);
 		Class244.method25892(local1, (short) 896);
 		Class389.method28265(local1, (byte) 106);
-		client.aClass532_1.method30533((byte) 0);
+		client.world.method30533((byte) 0);
 	}
 
 	@OriginalMember(owner = "client!vd", name = "nm", descriptor = "(Lclient!yf;B)V", line = 7351)

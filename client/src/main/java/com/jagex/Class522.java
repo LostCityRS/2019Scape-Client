@@ -102,7 +102,7 @@ public class Class522 {
 						}
 					}
 				}
-				if (local45.anInt2766 * 1874270623 < 0 || client.anInt3495 * 1815175593 != local45.anInt2761 * -792447673 && Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aByte100 != local45.aByte100) {
+				if (local45.anInt2766 * 1874270623 < 0 || client.anInt3495 * 1815175593 != local45.anInt2761 * -792447673 && Class520.selfPlayer.aByte100 != local45.aByte100) {
 					continue;
 				}
 			}

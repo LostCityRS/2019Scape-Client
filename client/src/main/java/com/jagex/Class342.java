@@ -134,7 +134,7 @@ public class Class342 {
 		@Pc(45) int local45 = arg0.anInt3013 * -2109043087 * Class454.anInt5036 * -875883057 + 21;
 		Class360.anInt4570 = (-875883057 * Class454.anInt5036 * arg0.anInt3013 * -2109043087 + (Class454.aBoolean774 ? 26 : 22)) * -1989460377;
 		local21 = Class166_Sub17.anInt2179 * 1703853389 + Class221.anInt3629 * 1555894759;
-		if (local21 + local7 > Class553.anInt3408 * -1378711501) {
+		if (local21 + local7 > Class553.width * -1378711501) {
 			local21 = Class166_Sub17.anInt2179 * 1703853389 - local7;
 		}
 		if (local21 < 0) {
@@ -142,8 +142,8 @@ public class Class342 {
 		}
 		@Pc(100) int local100 = Class454.aBoolean774 ? 1 + 20 + local5.anInt6 * -8978697 : 31;
 		@Pc(111) int local111 = arg1 + 1 - local100 + local5.anInt6 * -8978697;
-		if (local45 + local111 > Class553.anInt3416 * 2091353777) {
-			local111 = Class553.anInt3416 * 2091353777 - local45;
+		if (local45 + local111 > Class553.height * 2091353777) {
+			local111 = Class553.height * 2091353777 - local45;
 		}
 		if (local111 < 0) {
 			local111 = 0;

@@ -45,7 +45,7 @@ public class Class548 {
 
 	@OriginalMember(owner = "client!sf", name = "w", descriptor = "(B)V", line = 165)
 	static void method31011(@OriginalArg(0) byte arg0) {
-		Class701.aClass93_Sub1_Sub7_7 = new Class93_Sub1_Sub7(Class74.aClass74_56.method1259(Class106.aClass717_8, (byte) -78), "", client.anInt3520 * 895420077, 1006, -1, 0L, 0, 0, true, false, 0L, true);
+		Class701.aClass93_Sub1_Sub7_7 = new Class93_Sub1_Sub7(Class74.aClass74_56.method1259(Class106.lang, (byte) -78), "", client.anInt3520 * 895420077, 1006, -1, 0L, 0, 0, true, false, 0L, true);
 	}
 
 	@OriginalMember(owner = "client!sf", name = "se", descriptor = "(Lclient!yf;I)V", line = 8212)
@@ -82,8 +82,8 @@ public class Class548 {
 	@OriginalMember(owner = "client!sf", name = "lb", descriptor = "(B)V", line = 12060)
 	public static final void method31016(@OriginalArg(0) byte arg0) {
 		@Pc(2) Class175 local2 = Class330.method27371(-1858814111);
-		@Pc(8) Class93_Sub22 local8 = Class102.method2588(Class446.aClass446_94, local2.aClass24_2, (byte) 45);
-		local8.aPacketBit_1.p1(0, (byte) -42);
-		local2.method24356(local8, -1509960398);
+		@Pc(8) ClientMessage local8 = Class102.createGameMessage(ClientProt.aClientProt_94, local2.clientIsaac, (byte) 45);
+		local8.packet.p1(0, (byte) -42);
+		local2.send(local8, -1509960398);
 	}
 }

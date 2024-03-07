@@ -16,7 +16,7 @@ public class Class549 {
 	static final int anInt5291 = 5;
 
 	@OriginalMember(owner = "client!sg", name = "pb", descriptor = "I")
-	public static int anInt5292;
+	public static int userPlayAge;
 
 	@OriginalMember(owner = "client!sg", name = "n", descriptor = "Lclient!sz;")
 	static Class565 aClass565_1;

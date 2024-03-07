@@ -23,8 +23,8 @@ public class Class340 {
 		arg0.anInt5891 -= -1915563430;
 		@Pc(13) int local13 = arg0.anIntArray519[arg0.anInt5891 * -1497248091];
 		@Pc(23) int local23 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 1];
-		if (Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aClass658_1 != null) {
-			Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.aClass658_1.method32769(local13, local23, Class277.aClass32_Sub12_1, (byte) 100);
+		if (Class520.selfPlayer.aClass658_1 != null) {
+			Class520.selfPlayer.aClass658_1.method32769(local13, local23, Class277.aClass32_Sub12_1, (byte) 100);
 		}
 	}
 
@@ -51,6 +51,6 @@ public class Class340 {
 
 	@OriginalMember(owner = "client!ik", name = "azw", descriptor = "(Lclient!yf;I)V", line = 14165)
 	static final void method27493(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
-		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.aClass93_Sub36_1.aClass166_Sub28_1.method16038(442562057) && Class694.aClass104_14.method20639() ? 1 : 0;
+		arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = Class51.options.aClass166_Sub28_1.method16038(442562057) && Class694.aClass104_14.method20639() ? 1 : 0;
 	}
 }

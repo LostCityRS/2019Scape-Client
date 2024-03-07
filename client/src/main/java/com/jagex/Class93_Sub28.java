@@ -365,7 +365,7 @@ public class Class93_Sub28 extends Class93 {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
 		@Pc(16) Class312 local16 = Class659.method32808(local12, 862080406);
 		@Pc(22) Class320 local22 = Class166_Sub1.aClass320Array1[local12 >> 16];
-		Class453.method28966(local16, local22, arg0, Class121.aClass93_Sub28_2 == arg0.aClass93_Sub28_4 ? Class310.aClass310_5 : Class310.aClass310_1, (byte) -102);
+		ServerProt.method28966(local16, local22, arg0, Class121.aClass93_Sub28_2 == arg0.aClass93_Sub28_4 ? Class310.aClass310_5 : Class310.aClass310_1, (byte) -102);
 	}
 
 	@OriginalMember(owner = "client!akr", name = "bcx", descriptor = "(Lclient!yf;B)V", line = 14522)

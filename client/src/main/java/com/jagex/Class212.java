@@ -199,10 +199,10 @@ public class Class212 {
 				}
 				client.anInt3547 = client.anInt3565 * -541355657;
 				@Pc(65) Class175 local65 = Class330.method27371(-2042869964);
-				@Pc(71) Class93_Sub22 local71 = Class102.method2588(Class446.aClass446_44, local65.aClass24_2, (byte) 107);
-				local71.aPacketBit_1.p1(Packet.pjstrlen(arg0, -1995313720), (byte) -49);
-				local71.aPacketBit_1.pjstr(arg0, 1019703631);
-				local65.method24356(local71, -2116172389);
+				@Pc(71) ClientMessage local71 = Class102.createGameMessage(ClientProt.aClientProt_44, local65.clientIsaac, (byte) 107);
+				local71.packet.p1(Packet.pjstrlen(arg0, -1995313720), (byte) -49);
+				local71.packet.pjstr(arg0, 1019703631);
+				local65.send(local71, -2116172389);
 				break;
 			}
 		}

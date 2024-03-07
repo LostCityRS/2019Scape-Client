@@ -67,7 +67,7 @@ public class Class387 implements Interface75 {
 
 	@OriginalMember(owner = "client!ks", name = "n", descriptor = "()I", line = 36)
 	@Override
-	public int method36920() {
+	public int getId() {
 		return this.anInt4649 * -1390671857;
 	}
 
@@ -109,7 +109,7 @@ public class Class387 implements Interface75 {
 						@Pc(52) Class132_Sub1_Sub1_Sub1 local52 = Class249.aClass239Array1[local10.anInt3263 * -1986528751 - 1].method25813(1211361205);
 						if (local52 != null) {
 							@Pc(58) Class472 local58 = local52.method24220().aClass472_61;
-							if ((int) local58.aFloat317 >= 0 && (int) local58.aFloat317 < client.aClass532_1.method30459(-953249206) * 512 && (int) local58.aFloat319 >= 0 && (int) local58.aFloat319 < client.aClass532_1.method30466((short) 128) * 512) {
+							if ((int) local58.aFloat317 >= 0 && (int) local58.aFloat317 < client.world.method30459(-953249206) * 512 && (int) local58.aFloat319 >= 0 && (int) local58.aFloat319 < client.world.method30466((short) 128) * 512) {
 								local10.method23915((int) local58.aFloat317, (int) local58.aFloat319, Class305.method26802((int) local58.aFloat317, (int) local58.aFloat319, local52.aByte100, (byte) -64) - local10.anInt3258 * 1286439089, client.anInt3485, 149362265);
 							}
 						}
@@ -118,7 +118,7 @@ public class Class387 implements Interface75 {
 						if (local121 != null) {
 							@Pc(127) Class132_Sub1_Sub1_Sub1_Sub1 local127 = (Class132_Sub1_Sub1_Sub1_Sub1) local121.anObject5;
 							local131 = local127.method24220().aClass472_61;
-							if ((int) local131.aFloat317 >= 0 && (int) local131.aFloat317 < client.aClass532_1.method30459(1489824965) * 512 && (int) local131.aFloat319 >= 0 && (int) local131.aFloat319 < client.aClass532_1.method30466((short) 128) * 512) {
+							if ((int) local131.aFloat317 >= 0 && (int) local131.aFloat317 < client.world.method30459(1489824965) * 512 && (int) local131.aFloat319 >= 0 && (int) local131.aFloat319 < client.world.method30466((short) 128) * 512) {
 								local10.method23915((int) local131.aFloat317, (int) local131.aFloat319, Class305.method26802((int) local131.aFloat317, (int) local131.aFloat319, local10.aByte100, (byte) -102) - local10.anInt3258 * 1286439089, client.anInt3485, -2057917338);
 							}
 						}
@@ -127,20 +127,20 @@ public class Class387 implements Interface75 {
 				if (local10.anInt3263 * -1986528751 < 0) {
 					@Pc(195) int local195 = -(local10.anInt3263 * -1986528751) - 1;
 					@Pc(202) Class132_Sub1_Sub1_Sub1_Sub2 local202;
-					if (local195 == client.anInt3513 * -859840571) {
-						local202 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3;
+					if (local195 == client.selfPlayerSlot * -859840571) {
+						local202 = Class520.selfPlayer;
 					} else {
 						local202 = client.aClass132_Sub1_Sub1_Sub1_Sub2Array1[local195];
 					}
 					if (local202 != null) {
 						local131 = local202.method24220().aClass472_61;
-						if ((int) local131.aFloat317 >= 0 && (int) local131.aFloat317 < client.aClass532_1.method30459(-992582904) * 512 && (int) local131.aFloat319 >= 0 && (int) local131.aFloat319 < client.aClass532_1.method30466((short) 128) * 512) {
+						if ((int) local131.aFloat317 >= 0 && (int) local131.aFloat317 < client.world.method30459(-992582904) * 512 && (int) local131.aFloat319 >= 0 && (int) local131.aFloat319 < client.world.method30466((short) 128) * 512) {
 							local10.method23915((int) local131.aFloat317, (int) local131.aFloat319, Class305.method26802((int) local131.aFloat317, (int) local131.aFloat319, local10.aByte100, (byte) -38) - local10.anInt3258 * 1286439089, client.anInt3485, -216685054);
 						}
 					}
 				}
 				local10.method23919(client.anInt3480 * 1820654295, 2124873095);
-				client.aClass532_1.method30481(-978430498).method31495(local10, true, -2048479155);
+				client.world.method30481(-978430498).method31495(local10, true, -2048479155);
 			}
 		}
 	}
