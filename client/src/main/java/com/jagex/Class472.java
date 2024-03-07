@@ -204,7 +204,7 @@ public class Class472 {
 	}
 
 	@OriginalMember(owner = "client!ox", name = "f", descriptor = "(Lclient!alw;)Lclient!ox;", line = 58)
-	public static Class472 method29542(@OriginalArg(0) Class93_Sub41 arg0) {
+	public static Class472 method29542(@OriginalArg(0) Packet arg0) {
 		@Pc(2) Class472[] local2 = aClass472Array1;
 		synchronized (aClass472Array1) {
 			if (anInt5123 == 0) {
@@ -217,7 +217,7 @@ public class Class472 {
 	}
 
 	@OriginalMember(owner = "client!ox", name = "ab", descriptor = "(Lclient!alw;)Lclient!ox;", line = 58)
-	public static Class472 method29543(@OriginalArg(0) Class93_Sub41 arg0) {
+	public static Class472 method29543(@OriginalArg(0) Packet arg0) {
 		@Pc(2) Class472[] local2 = aClass472Array1;
 		synchronized (aClass472Array1) {
 			if (anInt5123 == 0) {
@@ -268,31 +268,31 @@ public class Class472 {
 	}
 
 	@OriginalMember(owner = "client!ox", name = "<init>", descriptor = "(Lclient!alw;)V", line = 87)
-	public Class472(@OriginalArg(0) Class93_Sub41 arg0) {
-		this.aFloat317 = arg0.method22504(-1448911901);
-		this.aFloat318 = arg0.method22504(-1562569320);
-		this.aFloat319 = arg0.method22504(1008052927);
+	public Class472(@OriginalArg(0) Packet arg0) {
+		this.aFloat317 = arg0.gFloat(-1448911901);
+		this.aFloat318 = arg0.gFloat(-1562569320);
+		this.aFloat319 = arg0.gFloat(1008052927);
 	}
 
 	@OriginalMember(owner = "client!ox", name = "l", descriptor = "(Lclient!alw;)V", line = 94)
-	public void method29546(@OriginalArg(0) Class93_Sub41 arg0) {
-		this.aFloat317 = arg0.method22504(-1498497274);
-		this.aFloat318 = arg0.method22504(-1786570425);
-		this.aFloat319 = arg0.method22504(1173520798);
+	public void method29546(@OriginalArg(0) Packet arg0) {
+		this.aFloat317 = arg0.gFloat(-1498497274);
+		this.aFloat318 = arg0.gFloat(-1786570425);
+		this.aFloat319 = arg0.gFloat(1173520798);
 	}
 
 	@OriginalMember(owner = "client!ox", name = "aa", descriptor = "(Lclient!alw;)V", line = 94)
-	public void method29547(@OriginalArg(0) Class93_Sub41 arg0) {
-		this.aFloat317 = arg0.method22504(-1738742967);
-		this.aFloat318 = arg0.method22504(258335209);
-		this.aFloat319 = arg0.method22504(-512644407);
+	public void method29547(@OriginalArg(0) Packet arg0) {
+		this.aFloat317 = arg0.gFloat(-1738742967);
+		this.aFloat318 = arg0.gFloat(258335209);
+		this.aFloat319 = arg0.gFloat(-512644407);
 	}
 
 	@OriginalMember(owner = "client!ox", name = "af", descriptor = "(Lclient!alw;)V", line = 94)
-	public void method29548(@OriginalArg(0) Class93_Sub41 arg0) {
-		this.aFloat317 = arg0.method22504(292785100);
-		this.aFloat318 = arg0.method22504(662635158);
-		this.aFloat319 = arg0.method22504(-229718110);
+	public void method29548(@OriginalArg(0) Packet arg0) {
+		this.aFloat317 = arg0.gFloat(292785100);
+		this.aFloat318 = arg0.gFloat(662635158);
+		this.aFloat319 = arg0.gFloat(-229718110);
 	}
 
 	@OriginalMember(owner = "client!ox", name = "u", descriptor = "(FFF)V", line = 100)

@@ -105,7 +105,7 @@ public class Class386 {
 	public int anInt4646 = -1191219821;
 
 	@OriginalMember(owner = "client!kr", name = "<init>", descriptor = "(Lclient!alw;)V", line = 42)
-	public Class386(@OriginalArg(0) Class93_Sub41 arg0) {
+	public Class386(@OriginalArg(0) Packet arg0) {
 		this.method28233(arg0, (byte) 109);
 	}
 
@@ -1598,12 +1598,12 @@ public class Class386 {
 	}
 
 	@OriginalMember(owner = "client!kr", name = "h", descriptor = "(Lclient!alw;B)V", line = 330)
-	void method28233(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
-		@Pc(3) int local3 = arg0.method22465((short) 16384);
+	void method28233(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
+		@Pc(3) int local3 = arg0.g1((short) 16384);
 		if (local3 < 1 || local3 > 6) {
 			throw new RuntimeException("" + local3);
 		}
-		@Pc(25) int local25 = arg0.method22465((short) 16384);
+		@Pc(25) int local25 = arg0.g1((short) 16384);
 		if ((local25 & 0x1) != 0) {
 			this.aBoolean741 = true;
 		}
@@ -1618,22 +1618,22 @@ public class Class386 {
 			this.aStringArray30 = null;
 			this.aStringArray29 = null;
 		}
-		this.anInt4641 = arg0.method22483(-118643075) * 352216175;
-		this.anInt4643 = arg0.method22483(-118643075) * -1492565541;
+		this.anInt4641 = arg0.g4(-118643075) * 352216175;
+		this.anInt4643 = arg0.g4(-118643075) * -1492565541;
 		if (local3 <= 3 && this.anInt4643 * -770780589 != 0) {
 			this.anInt4643 += 1641984992;
 		}
-		this.anInt4642 = arg0.method22472(-1434290800) * -2076644465;
-		this.anInt4647 = arg0.method22465((short) 16384) * -1208367903;
-		this.aString196 = arg0.method22509(2067629806);
+		this.anInt4642 = arg0.g2(-1434290800) * -2076644465;
+		this.anInt4647 = arg0.g1((short) 16384) * -1208367903;
+		this.aString196 = arg0.gjstr(2067629806);
 		if (local3 >= 4) {
-			arg0.method22483(-118643075);
+			arg0.g4(-118643075);
 		}
-		this.aBoolean743 = arg0.method22465((short) 16384) == 1;
-		this.aByte152 = arg0.method22468(1264150025);
-		this.aByte151 = arg0.method22468(468472349);
-		this.aByte154 = arg0.method22468(1590344084);
-		this.aByte158 = arg0.method22468(1847212710);
+		this.aBoolean743 = arg0.g1((short) 16384) == 1;
+		this.aByte152 = arg0.g1b(1264150025);
+		this.aByte151 = arg0.g1b(468472349);
+		this.aByte154 = arg0.g1b(1590344084);
+		this.aByte158 = arg0.g1b(1847212710);
 		@Pc(266) int local266;
 		if (this.anInt4642 * 849728367 > 0) {
 			if (this.aBoolean741 && (this.aLongArray24 == null || this.aLongArray24.length < this.anInt4642 * 849728367)) {
@@ -1656,22 +1656,22 @@ public class Class386 {
 			}
 			for (local266 = 0; local266 < this.anInt4642 * 849728367; local266++) {
 				if (this.aBoolean741) {
-					this.aLongArray24[local266] = arg0.method22495(-1621101286);
+					this.aLongArray24[local266] = arg0.g8(-1621101286);
 				}
 				if (this.aBoolean742) {
-					this.aStringArray30[local266] = arg0.method22507((byte) 124);
+					this.aStringArray30[local266] = arg0.fastgstr((byte) 124);
 				}
-				this.aByteArray89[local266] = arg0.method22468(1141867113);
+				this.aByteArray89[local266] = arg0.g1b(1141867113);
 				if (local3 >= 2) {
-					this.anIntArray434[local266] = arg0.method22483(-118643075);
+					this.anIntArray434[local266] = arg0.g4(-118643075);
 				}
 				if (local3 >= 5) {
-					this.anIntArray435[local266] = arg0.method22472(-1434290800);
+					this.anIntArray435[local266] = arg0.g2(-1434290800);
 				} else {
 					this.anIntArray435[local266] = 0;
 				}
 				if (local3 >= 6) {
-					this.aBooleanArray30[local266] = arg0.method22465((short) 16384) == 1;
+					this.aBooleanArray30[local266] = arg0.g1((short) 16384) == 1;
 				} else {
 					this.aBooleanArray30[local266] = false;
 				}
@@ -1687,45 +1687,45 @@ public class Class386 {
 			}
 			for (local266 = 0; local266 < this.anInt4647 * 1113751329; local266++) {
 				if (this.aBoolean741) {
-					this.aLongArray25[local266] = arg0.method22495(-944039061);
+					this.aLongArray25[local266] = arg0.g8(-944039061);
 				}
 				if (this.aBoolean742) {
-					this.aStringArray29[local266] = arg0.method22507((byte) 29);
+					this.aStringArray29[local266] = arg0.fastgstr((byte) 29);
 				}
 			}
 		}
 		if (local3 < 3) {
 			return;
 		}
-		local266 = arg0.method22472(-1434290800);
+		local266 = arg0.g2(-1434290800);
 		if (local266 <= 0) {
 			return;
 		}
 		this.aClass16_33 = new Class16(local266 < 16 ? Class134_Sub2.method10207(local266, (byte) 64) : 16);
 		while (local266-- > 0) {
-			@Pc(459) int local459 = arg0.method22483(-118643075);
+			@Pc(459) int local459 = arg0.g4(-118643075);
 			@Pc(463) int local463 = local459 & 0x3FFFFFFF;
 			@Pc(467) int local467 = local459 >>> 30;
 			if (local467 == 0) {
-				@Pc(473) int local473 = arg0.method22483(-118643075);
+				@Pc(473) int local473 = arg0.g4(-118643075);
 				this.aClass16_33.method220(new Class93_Sub14(local473), (long) local463);
 			} else if (local467 == 1) {
-				@Pc(490) long local490 = arg0.method22495(1282018690);
+				@Pc(490) long local490 = arg0.g8(1282018690);
 				this.aClass16_33.method220(new Class93_Sub11(local490), (long) local463);
 			} else if (local467 == 2) {
-				@Pc(507) String local507 = arg0.method22509(1501708011);
+				@Pc(507) String local507 = arg0.gjstr(1501708011);
 				this.aClass16_33.method220(new Class93_Sub15(local507), (long) local463);
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!kr", name = "br", descriptor = "(Lclient!alw;)V", line = 330)
-	void method28234(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(3) int local3 = arg0.method22465((short) 16384);
+	void method28234(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1((short) 16384);
 		if (local3 < 1 || local3 > 6) {
 			throw new RuntimeException("" + local3);
 		}
-		@Pc(25) int local25 = arg0.method22465((short) 16384);
+		@Pc(25) int local25 = arg0.g1((short) 16384);
 		if ((local25 & 0x1) != 0) {
 			this.aBoolean741 = true;
 		}
@@ -1740,22 +1740,22 @@ public class Class386 {
 			this.aStringArray30 = null;
 			this.aStringArray29 = null;
 		}
-		this.anInt4641 = arg0.method22483(-118643075) * 352216175;
-		this.anInt4643 = arg0.method22483(-118643075) * -1492565541;
+		this.anInt4641 = arg0.g4(-118643075) * 352216175;
+		this.anInt4643 = arg0.g4(-118643075) * -1492565541;
 		if (local3 <= 3 && this.anInt4643 * -770780589 != 0) {
 			this.anInt4643 += 1641984992;
 		}
-		this.anInt4642 = arg0.method22472(-1434290800) * -2076644465;
-		this.anInt4647 = arg0.method22465((short) 16384) * -1208367903;
-		this.aString196 = arg0.method22509(220022173);
+		this.anInt4642 = arg0.g2(-1434290800) * -2076644465;
+		this.anInt4647 = arg0.g1((short) 16384) * -1208367903;
+		this.aString196 = arg0.gjstr(220022173);
 		if (local3 >= 4) {
-			arg0.method22483(-118643075);
+			arg0.g4(-118643075);
 		}
-		this.aBoolean743 = arg0.method22465((short) 16384) == 1;
-		this.aByte152 = arg0.method22468(1706285512);
-		this.aByte151 = arg0.method22468(1674253805);
-		this.aByte154 = arg0.method22468(861559558);
-		this.aByte158 = arg0.method22468(728122446);
+		this.aBoolean743 = arg0.g1((short) 16384) == 1;
+		this.aByte152 = arg0.g1b(1706285512);
+		this.aByte151 = arg0.g1b(1674253805);
+		this.aByte154 = arg0.g1b(861559558);
+		this.aByte158 = arg0.g1b(728122446);
 		@Pc(266) int local266;
 		if (this.anInt4642 * 849728367 > 0) {
 			if (this.aBoolean741 && (this.aLongArray24 == null || this.aLongArray24.length < this.anInt4642 * 849728367)) {
@@ -1778,22 +1778,22 @@ public class Class386 {
 			}
 			for (local266 = 0; local266 < this.anInt4642 * 849728367; local266++) {
 				if (this.aBoolean741) {
-					this.aLongArray24[local266] = arg0.method22495(-1553052440);
+					this.aLongArray24[local266] = arg0.g8(-1553052440);
 				}
 				if (this.aBoolean742) {
-					this.aStringArray30[local266] = arg0.method22507((byte) 81);
+					this.aStringArray30[local266] = arg0.fastgstr((byte) 81);
 				}
-				this.aByteArray89[local266] = arg0.method22468(549803572);
+				this.aByteArray89[local266] = arg0.g1b(549803572);
 				if (local3 >= 2) {
-					this.anIntArray434[local266] = arg0.method22483(-118643075);
+					this.anIntArray434[local266] = arg0.g4(-118643075);
 				}
 				if (local3 >= 5) {
-					this.anIntArray435[local266] = arg0.method22472(-1434290800);
+					this.anIntArray435[local266] = arg0.g2(-1434290800);
 				} else {
 					this.anIntArray435[local266] = 0;
 				}
 				if (local3 >= 6) {
-					this.aBooleanArray30[local266] = arg0.method22465((short) 16384) == 1;
+					this.aBooleanArray30[local266] = arg0.g1((short) 16384) == 1;
 				} else {
 					this.aBooleanArray30[local266] = false;
 				}
@@ -1809,33 +1809,33 @@ public class Class386 {
 			}
 			for (local266 = 0; local266 < this.anInt4647 * 1113751329; local266++) {
 				if (this.aBoolean741) {
-					this.aLongArray25[local266] = arg0.method22495(387340036);
+					this.aLongArray25[local266] = arg0.g8(387340036);
 				}
 				if (this.aBoolean742) {
-					this.aStringArray29[local266] = arg0.method22507((byte) 13);
+					this.aStringArray29[local266] = arg0.fastgstr((byte) 13);
 				}
 			}
 		}
 		if (local3 < 3) {
 			return;
 		}
-		local266 = arg0.method22472(-1434290800);
+		local266 = arg0.g2(-1434290800);
 		if (local266 <= 0) {
 			return;
 		}
 		this.aClass16_33 = new Class16(local266 < 16 ? Class134_Sub2.method10207(local266, (byte) 21) : 16);
 		while (local266-- > 0) {
-			@Pc(459) int local459 = arg0.method22483(-118643075);
+			@Pc(459) int local459 = arg0.g4(-118643075);
 			@Pc(463) int local463 = local459 & 0x3FFFFFFF;
 			@Pc(467) int local467 = local459 >>> 30;
 			if (local467 == 0) {
-				@Pc(473) int local473 = arg0.method22483(-118643075);
+				@Pc(473) int local473 = arg0.g4(-118643075);
 				this.aClass16_33.method220(new Class93_Sub14(local473), (long) local463);
 			} else if (local467 == 1) {
-				@Pc(490) long local490 = arg0.method22495(1654970508);
+				@Pc(490) long local490 = arg0.g8(1654970508);
 				this.aClass16_33.method220(new Class93_Sub11(local490), (long) local463);
 			} else if (local467 == 2) {
-				@Pc(507) String local507 = arg0.method22509(493379777);
+				@Pc(507) String local507 = arg0.gjstr(493379777);
 				this.aClass16_33.method220(new Class93_Sub15(local507), (long) local463);
 			}
 		}

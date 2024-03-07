@@ -148,71 +148,71 @@ public final class Class489 {
 	}
 
 	@OriginalMember(owner = "client!pq", name = "<init>", descriptor = "(Lclient!alw;Z)V", line = 44)
-	public Class489(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) boolean arg1) {
+	public Class489(@OriginalArg(0) Packet arg0, @OriginalArg(1) boolean arg1) {
 		this.method29839(arg0, arg1);
 	}
 
 	@OriginalMember(owner = "client!pq", name = "bl", descriptor = "(Lclient!alw;Z)V", line = 49)
-	void method29838(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) boolean arg1) {
+	void method29838(@OriginalArg(0) Packet arg0, @OriginalArg(1) boolean arg1) {
 		if (!arg1) {
 			for (@Pc(43) int local43 = 0; local43 < 16; local43++) {
-				this.aFloatArray116[local43] = arg0.method22504(-1580746208);
+				this.aFloatArray116[local43] = arg0.gFloat(-1580746208);
 			}
 			return;
 		}
 		@Pc(5) Class470 local5 = new Class470();
-		local5.method29391(Class464.method29281(arg0.method22475((byte) -74)));
-		local5.method29394(Class464.method29281(arg0.method22475((byte) -63)));
-		local5.method29399(Class464.method29281(arg0.method22475((byte) -52)));
-		local5.method29424((float) arg0.method22475((byte) -48), (float) arg0.method22475((byte) -80), (float) arg0.method22475((byte) -55));
+		local5.method29391(Class464.method29281(arg0.g2s((byte) -74)));
+		local5.method29394(Class464.method29281(arg0.g2s((byte) -63)));
+		local5.method29399(Class464.method29281(arg0.g2s((byte) -52)));
+		local5.method29424((float) arg0.g2s((byte) -48), (float) arg0.g2s((byte) -80), (float) arg0.g2s((byte) -55));
 		this.method29865(local5);
 	}
 
 	@OriginalMember(owner = "client!pq", name = "k", descriptor = "(Lclient!alw;Z)V", line = 49)
-	void method29839(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) boolean arg1) {
+	void method29839(@OriginalArg(0) Packet arg0, @OriginalArg(1) boolean arg1) {
 		if (!arg1) {
 			for (@Pc(43) int local43 = 0; local43 < 16; local43++) {
-				this.aFloatArray116[local43] = arg0.method22504(1460081112);
+				this.aFloatArray116[local43] = arg0.gFloat(1460081112);
 			}
 			return;
 		}
 		@Pc(5) Class470 local5 = new Class470();
-		local5.method29391(Class464.method29281(arg0.method22475((byte) -30)));
-		local5.method29394(Class464.method29281(arg0.method22475((byte) -115)));
-		local5.method29399(Class464.method29281(arg0.method22475((byte) -100)));
-		local5.method29424((float) arg0.method22475((byte) -18), (float) arg0.method22475((byte) -65), (float) arg0.method22475((byte) -26));
+		local5.method29391(Class464.method29281(arg0.g2s((byte) -30)));
+		local5.method29394(Class464.method29281(arg0.g2s((byte) -115)));
+		local5.method29399(Class464.method29281(arg0.g2s((byte) -100)));
+		local5.method29424((float) arg0.g2s((byte) -18), (float) arg0.g2s((byte) -65), (float) arg0.g2s((byte) -26));
 		this.method29865(local5);
 	}
 
 	@OriginalMember(owner = "client!pq", name = "an", descriptor = "(Lclient!alw;Z)V", line = 49)
-	void method29840(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) boolean arg1) {
+	void method29840(@OriginalArg(0) Packet arg0, @OriginalArg(1) boolean arg1) {
 		if (!arg1) {
 			for (@Pc(43) int local43 = 0; local43 < 16; local43++) {
-				this.aFloatArray116[local43] = arg0.method22504(1224159301);
+				this.aFloatArray116[local43] = arg0.gFloat(1224159301);
 			}
 			return;
 		}
 		@Pc(5) Class470 local5 = new Class470();
-		local5.method29391(Class464.method29281(arg0.method22475((byte) -127)));
-		local5.method29394(Class464.method29281(arg0.method22475((byte) -107)));
-		local5.method29399(Class464.method29281(arg0.method22475((byte) -71)));
-		local5.method29424((float) arg0.method22475((byte) -83), (float) arg0.method22475((byte) -89), (float) arg0.method22475((byte) -71));
+		local5.method29391(Class464.method29281(arg0.g2s((byte) -127)));
+		local5.method29394(Class464.method29281(arg0.g2s((byte) -107)));
+		local5.method29399(Class464.method29281(arg0.g2s((byte) -71)));
+		local5.method29424((float) arg0.g2s((byte) -83), (float) arg0.g2s((byte) -89), (float) arg0.g2s((byte) -71));
 		this.method29865(local5);
 	}
 
 	@OriginalMember(owner = "client!pq", name = "bf", descriptor = "(Lclient!alw;Z)V", line = 49)
-	void method29841(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) boolean arg1) {
+	void method29841(@OriginalArg(0) Packet arg0, @OriginalArg(1) boolean arg1) {
 		if (!arg1) {
 			for (@Pc(43) int local43 = 0; local43 < 16; local43++) {
-				this.aFloatArray116[local43] = arg0.method22504(-1074601825);
+				this.aFloatArray116[local43] = arg0.gFloat(-1074601825);
 			}
 			return;
 		}
 		@Pc(5) Class470 local5 = new Class470();
-		local5.method29391(Class464.method29281(arg0.method22475((byte) -73)));
-		local5.method29394(Class464.method29281(arg0.method22475((byte) -79)));
-		local5.method29399(Class464.method29281(arg0.method22475((byte) -17)));
-		local5.method29424((float) arg0.method22475((byte) -77), (float) arg0.method22475((byte) -108), (float) arg0.method22475((byte) -80));
+		local5.method29391(Class464.method29281(arg0.g2s((byte) -73)));
+		local5.method29394(Class464.method29281(arg0.g2s((byte) -79)));
+		local5.method29399(Class464.method29281(arg0.g2s((byte) -17)));
+		local5.method29424((float) arg0.g2s((byte) -77), (float) arg0.g2s((byte) -108), (float) arg0.g2s((byte) -80));
 		this.method29865(local5);
 	}
 

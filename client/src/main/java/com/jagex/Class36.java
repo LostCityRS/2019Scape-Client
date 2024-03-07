@@ -11,7 +11,7 @@ public class Class36 implements Interface75 {
 	public static int anInt117;
 
 	@OriginalMember(owner = "client!abi", name = "kz", descriptor = "Lclient!alw;")
-	public static Class93_Sub41 aClass93_Sub41_1;
+	public static Packet aPacket_1;
 
 	@OriginalMember(owner = "client!abi", name = "e", descriptor = "Lclient!abi;")
 	public static final Class36 aClass36_1 = new Class36(0, 0);

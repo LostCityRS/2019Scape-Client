@@ -73,9 +73,9 @@ public class Class697 implements Interface13 {
 
 	@OriginalMember(owner = "client!yy", name = "e", descriptor = "(Lclient!alw;B)V", line = 41)
 	@Override
-	public void method36654(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
+	public void method36654(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -85,9 +85,9 @@ public class Class697 implements Interface13 {
 
 	@OriginalMember(owner = "client!yy", name = "m", descriptor = "(Lclient!alw;)V", line = 41)
 	@Override
-	public void method36655(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36655(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -97,9 +97,9 @@ public class Class697 implements Interface13 {
 
 	@OriginalMember(owner = "client!yy", name = "w", descriptor = "(Lclient!alw;)V", line = 41)
 	@Override
-	public void method36658(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36658(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -109,9 +109,9 @@ public class Class697 implements Interface13 {
 
 	@OriginalMember(owner = "client!yy", name = "f", descriptor = "(Lclient!alw;)V", line = 41)
 	@Override
-	public void method36657(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36657(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -121,9 +121,9 @@ public class Class697 implements Interface13 {
 
 	@OriginalMember(owner = "client!yy", name = "k", descriptor = "(Lclient!alw;)V", line = 41)
 	@Override
-	public void method36656(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36656(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -132,21 +132,21 @@ public class Class697 implements Interface13 {
 	}
 
 	@OriginalMember(owner = "client!yy", name = "v", descriptor = "(Lclient!alw;I)V", line = 48)
-	void method36660(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method36660(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.anInt5942 = arg0.method22542(-1923170064) * 1576345649;
+			this.anInt5942 = arg0.gSmart2or4null(-1923170064) * 1576345649;
 		} else if (arg1 == 2) {
-			this.anInt5949 = arg0.method22542(-1509646141) * 456410441;
+			this.anInt5949 = arg0.gSmart2or4null(-1509646141) * 456410441;
 		} else if (arg1 == 4) {
-			this.anInt5945 = arg0.method22472(-1434290800) * 232123081;
+			this.anInt5945 = arg0.g2(-1434290800) * 232123081;
 		} else if (arg1 == 5) {
-			this.anInt5946 = arg0.method22472(-1434290800) * -650872925;
+			this.anInt5946 = arg0.g2(-1434290800) * -650872925;
 		} else if (arg1 == 6) {
-			this.anInt5947 = arg0.method22472(-1434290800) * 748175151;
+			this.anInt5947 = arg0.g2(-1434290800) * 748175151;
 		} else if (arg1 == 7) {
-			this.anInt5948 = arg0.method22465((short) 16384) * -1527566057;
+			this.anInt5948 = arg0.g1((short) 16384) * -1527566057;
 		} else if (arg1 == 8) {
-			this.anInt5944 = arg0.method22465((short) 16384) * 1111932275;
+			this.anInt5944 = arg0.g1((short) 16384) * 1111932275;
 		} else if (arg1 == 10) {
 			this.aBoolean881 = true;
 		} else if (arg1 == 9) {
@@ -154,35 +154,35 @@ public class Class697 implements Interface13 {
 			this.anInt5950 = 509162336;
 		} else if (arg1 == 15) {
 			this.aByte175 = 3;
-			this.anInt5950 = arg0.method22472(-1434290800) * -725340517;
+			this.anInt5950 = arg0.g2(-1434290800) * -725340517;
 		} else if (arg1 == 16) {
 			this.aByte175 = 3;
-			this.anInt5950 = arg0.method22483(-118643075) * -725340517;
+			this.anInt5950 = arg0.g4(-118643075) * -725340517;
 		} else {
 			@Pc(128) int local128;
 			@Pc(138) int local138;
 			if (arg1 == 40) {
-				local128 = arg0.method22465((short) 16384);
+				local128 = arg0.g1((short) 16384);
 				this.aShortArray151 = new short[local128];
 				this.aShortArray152 = new short[local128];
 				for (local138 = 0; local138 < local128; local138++) {
-					this.aShortArray151[local138] = (short) arg0.method22472(-1434290800);
-					this.aShortArray152[local138] = (short) arg0.method22472(-1434290800);
+					this.aShortArray151[local138] = (short) arg0.g2(-1434290800);
+					this.aShortArray152[local138] = (short) arg0.g2(-1434290800);
 				}
 			} else if (arg1 == 41) {
-				local128 = arg0.method22465((short) 16384);
+				local128 = arg0.g1((short) 16384);
 				this.aShortArray153 = new short[local128];
 				this.aShortArray150 = new short[local128];
 				for (local138 = 0; local138 < local128; local138++) {
-					this.aShortArray153[local138] = (short) arg0.method22472(-1434290800);
-					this.aShortArray150[local138] = (short) arg0.method22472(-1434290800);
+					this.aShortArray153[local138] = (short) arg0.g2(-1434290800);
+					this.aShortArray150[local138] = (short) arg0.g2(-1434290800);
 				}
 			} else {
 				@Pc(210) int local210;
 				@Pc(226) int local226;
 				@Pc(224) byte local224;
 				if (arg1 == 44) {
-					local128 = arg0.method22472(-1434290800);
+					local128 = arg0.g2(-1434290800);
 					local138 = 0;
 					for (local210 = local128; local210 > 0; local210 >>= 0x1) {
 						local138++;
@@ -197,7 +197,7 @@ public class Class697 implements Interface13 {
 						}
 					}
 				} else if (arg1 == 45) {
-					local128 = arg0.method22472(-1434290800);
+					local128 = arg0.g2(-1434290800);
 					local138 = 0;
 					for (local210 = local128; local210 > 0; local210 >>= 0x1) {
 						local138++;
@@ -218,21 +218,21 @@ public class Class697 implements Interface13 {
 	}
 
 	@OriginalMember(owner = "client!yy", name = "u", descriptor = "(Lclient!alw;II)V", line = 48)
-	void method36661(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	void method36661(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (arg1 == 1) {
-			this.anInt5942 = arg0.method22542(-1501880591) * 1576345649;
+			this.anInt5942 = arg0.gSmart2or4null(-1501880591) * 1576345649;
 		} else if (arg1 == 2) {
-			this.anInt5949 = arg0.method22542(-2011466936) * 456410441;
+			this.anInt5949 = arg0.gSmart2or4null(-2011466936) * 456410441;
 		} else if (arg1 == 4) {
-			this.anInt5945 = arg0.method22472(-1434290800) * 232123081;
+			this.anInt5945 = arg0.g2(-1434290800) * 232123081;
 		} else if (arg1 == 5) {
-			this.anInt5946 = arg0.method22472(-1434290800) * -650872925;
+			this.anInt5946 = arg0.g2(-1434290800) * -650872925;
 		} else if (arg1 == 6) {
-			this.anInt5947 = arg0.method22472(-1434290800) * 748175151;
+			this.anInt5947 = arg0.g2(-1434290800) * 748175151;
 		} else if (arg1 == 7) {
-			this.anInt5948 = arg0.method22465((short) 16384) * -1527566057;
+			this.anInt5948 = arg0.g1((short) 16384) * -1527566057;
 		} else if (arg1 == 8) {
-			this.anInt5944 = arg0.method22465((short) 16384) * 1111932275;
+			this.anInt5944 = arg0.g1((short) 16384) * 1111932275;
 		} else if (arg1 == 10) {
 			this.aBoolean881 = true;
 		} else if (arg1 == 9) {
@@ -240,35 +240,35 @@ public class Class697 implements Interface13 {
 			this.anInt5950 = 509162336;
 		} else if (arg1 == 15) {
 			this.aByte175 = 3;
-			this.anInt5950 = arg0.method22472(-1434290800) * -725340517;
+			this.anInt5950 = arg0.g2(-1434290800) * -725340517;
 		} else if (arg1 == 16) {
 			this.aByte175 = 3;
-			this.anInt5950 = arg0.method22483(-118643075) * -725340517;
+			this.anInt5950 = arg0.g4(-118643075) * -725340517;
 		} else {
 			@Pc(128) int local128;
 			@Pc(138) int local138;
 			if (arg1 == 40) {
-				local128 = arg0.method22465((short) 16384);
+				local128 = arg0.g1((short) 16384);
 				this.aShortArray151 = new short[local128];
 				this.aShortArray152 = new short[local128];
 				for (local138 = 0; local138 < local128; local138++) {
-					this.aShortArray151[local138] = (short) arg0.method22472(-1434290800);
-					this.aShortArray152[local138] = (short) arg0.method22472(-1434290800);
+					this.aShortArray151[local138] = (short) arg0.g2(-1434290800);
+					this.aShortArray152[local138] = (short) arg0.g2(-1434290800);
 				}
 			} else if (arg1 == 41) {
-				local128 = arg0.method22465((short) 16384);
+				local128 = arg0.g1((short) 16384);
 				this.aShortArray153 = new short[local128];
 				this.aShortArray150 = new short[local128];
 				for (local138 = 0; local138 < local128; local138++) {
-					this.aShortArray153[local138] = (short) arg0.method22472(-1434290800);
-					this.aShortArray150[local138] = (short) arg0.method22472(-1434290800);
+					this.aShortArray153[local138] = (short) arg0.g2(-1434290800);
+					this.aShortArray150[local138] = (short) arg0.g2(-1434290800);
 				}
 			} else {
 				@Pc(210) int local210;
 				@Pc(226) int local226;
 				@Pc(224) byte local224;
 				if (arg1 == 44) {
-					local128 = arg0.method22472(-1434290800);
+					local128 = arg0.g2(-1434290800);
 					local138 = 0;
 					for (local210 = local128; local210 > 0; local210 >>= 0x1) {
 						local138++;
@@ -283,7 +283,7 @@ public class Class697 implements Interface13 {
 						}
 					}
 				} else if (arg1 == 45) {
-					local128 = arg0.method22472(-1434290800);
+					local128 = arg0.g2(-1434290800);
 					local138 = 0;
 					for (local210 = local128; local210 > 0; local210 >>= 0x1) {
 						local138++;

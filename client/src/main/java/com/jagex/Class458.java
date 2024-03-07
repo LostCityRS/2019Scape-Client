@@ -45,7 +45,7 @@ public class Class458 {
 	Class472 aClass472_62;
 
 	@OriginalMember(owner = "client!oe", name = "<init>", descriptor = "(Lclient!alw;Z)V", line = 19)
-	public Class458(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) boolean arg1) {
+	public Class458(@OriginalArg(0) Packet arg0, @OriginalArg(1) boolean arg1) {
 		this.method29160(arg0, arg1);
 	}
 
@@ -63,7 +63,7 @@ public class Class458 {
 	}
 
 	@OriginalMember(owner = "client!oe", name = "e", descriptor = "(Lclient!alw;Z)V", line = 35)
-	void method29160(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) boolean arg1) {
+	void method29160(@OriginalArg(0) Packet arg0, @OriginalArg(1) boolean arg1) {
 		if (arg1) {
 			this.method29162(arg0);
 		} else {
@@ -74,7 +74,7 @@ public class Class458 {
 	}
 
 	@OriginalMember(owner = "client!oe", name = "w", descriptor = "(Lclient!alw;Z)V", line = 35)
-	void method29161(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) boolean arg1) {
+	void method29161(@OriginalArg(0) Packet arg0, @OriginalArg(1) boolean arg1) {
 		if (arg1) {
 			this.method29162(arg0);
 		} else {
@@ -85,30 +85,30 @@ public class Class458 {
 	}
 
 	@OriginalMember(owner = "client!oe", name = "n", descriptor = "(Lclient!alw;)V", line = 46)
-	void method29162(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(3) int local3 = arg0.method22465((short) 16384);
+	void method29162(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1((short) 16384);
 		@Pc(5) float local5 = 0.0F;
 		@Pc(7) float local7 = 0.0F;
 		@Pc(9) float local9 = 0.0F;
 		@Pc(11) float local11 = 1.0F;
 		if ((local3 & 0x1) != 0) {
-			local5 = (float) arg0.method22475((byte) -22) / 32768.0F;
-			local7 = (float) arg0.method22475((byte) -94) / 32768.0F;
-			local9 = (float) arg0.method22475((byte) -95) / 32768.0F;
-			local11 = (float) arg0.method22475((byte) -108) / 32768.0F;
+			local5 = (float) arg0.g2s((byte) -22) / 32768.0F;
+			local7 = (float) arg0.g2s((byte) -94) / 32768.0F;
+			local9 = (float) arg0.g2s((byte) -95) / 32768.0F;
+			local11 = (float) arg0.g2s((byte) -108) / 32768.0F;
 		}
 		this.aClass471_5 = new Class471(local5, local7, local9, local11);
 		@Pc(54) float local54 = 0.0F;
 		@Pc(56) float local56 = 0.0F;
 		@Pc(58) float local58 = 0.0F;
 		if ((local3 & 0x2) != 0) {
-			local54 = arg0.method22475((byte) -105);
+			local54 = arg0.g2s((byte) -105);
 		}
 		if ((local3 & 0x4) != 0) {
-			local56 = arg0.method22475((byte) -55);
+			local56 = arg0.g2s((byte) -55);
 		}
 		if ((local3 & 0x8) != 0) {
-			local58 = arg0.method22475((byte) -95);
+			local58 = arg0.g2s((byte) -95);
 		}
 		this.aClass472_61 = new Class472(local54, local56, local58);
 		@Pc(95) float local95 = 1.0F;
@@ -116,16 +116,16 @@ public class Class458 {
 		@Pc(99) float local99 = 1.0F;
 		if ((local3 & 0x10) == 0) {
 			if ((local3 & 0x20) != 0) {
-				local95 = (float) arg0.method22475((byte) -38) / 128.0F;
+				local95 = (float) arg0.g2s((byte) -38) / 128.0F;
 			}
 			if ((local3 & 0x40) != 0) {
-				local97 = (float) arg0.method22475((byte) -92) / 128.0F;
+				local97 = (float) arg0.g2s((byte) -92) / 128.0F;
 			}
 			if ((local3 & 0x80) != 0) {
-				local99 = (float) arg0.method22475((byte) -9) / 128.0F;
+				local99 = (float) arg0.g2s((byte) -9) / 128.0F;
 			}
 		} else {
-			@Pc(110) float local110 = (float) arg0.method22475((byte) -20) / 128.0F;
+			@Pc(110) float local110 = (float) arg0.g2s((byte) -20) / 128.0F;
 			local99 = local110;
 			local97 = local110;
 			local95 = local110;
@@ -134,30 +134,30 @@ public class Class458 {
 	}
 
 	@OriginalMember(owner = "client!oe", name = "l", descriptor = "(Lclient!alw;)V", line = 46)
-	void method29163(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(3) int local3 = arg0.method22465((short) 16384);
+	void method29163(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1((short) 16384);
 		@Pc(5) float local5 = 0.0F;
 		@Pc(7) float local7 = 0.0F;
 		@Pc(9) float local9 = 0.0F;
 		@Pc(11) float local11 = 1.0F;
 		if ((local3 & 0x1) != 0) {
-			local5 = (float) arg0.method22475((byte) -49) / 32768.0F;
-			local7 = (float) arg0.method22475((byte) -35) / 32768.0F;
-			local9 = (float) arg0.method22475((byte) -105) / 32768.0F;
-			local11 = (float) arg0.method22475((byte) -25) / 32768.0F;
+			local5 = (float) arg0.g2s((byte) -49) / 32768.0F;
+			local7 = (float) arg0.g2s((byte) -35) / 32768.0F;
+			local9 = (float) arg0.g2s((byte) -105) / 32768.0F;
+			local11 = (float) arg0.g2s((byte) -25) / 32768.0F;
 		}
 		this.aClass471_5 = new Class471(local5, local7, local9, local11);
 		@Pc(54) float local54 = 0.0F;
 		@Pc(56) float local56 = 0.0F;
 		@Pc(58) float local58 = 0.0F;
 		if ((local3 & 0x2) != 0) {
-			local54 = arg0.method22475((byte) -54);
+			local54 = arg0.g2s((byte) -54);
 		}
 		if ((local3 & 0x4) != 0) {
-			local56 = arg0.method22475((byte) -127);
+			local56 = arg0.g2s((byte) -127);
 		}
 		if ((local3 & 0x8) != 0) {
-			local58 = arg0.method22475((byte) -39);
+			local58 = arg0.g2s((byte) -39);
 		}
 		this.aClass472_61 = new Class472(local54, local56, local58);
 		@Pc(95) float local95 = 1.0F;
@@ -165,16 +165,16 @@ public class Class458 {
 		@Pc(99) float local99 = 1.0F;
 		if ((local3 & 0x10) == 0) {
 			if ((local3 & 0x20) != 0) {
-				local95 = (float) arg0.method22475((byte) -103) / 128.0F;
+				local95 = (float) arg0.g2s((byte) -103) / 128.0F;
 			}
 			if ((local3 & 0x40) != 0) {
-				local97 = (float) arg0.method22475((byte) -68) / 128.0F;
+				local97 = (float) arg0.g2s((byte) -68) / 128.0F;
 			}
 			if ((local3 & 0x80) != 0) {
-				local99 = (float) arg0.method22475((byte) -27) / 128.0F;
+				local99 = (float) arg0.g2s((byte) -27) / 128.0F;
 			}
 		} else {
-			@Pc(110) float local110 = (float) arg0.method22475((byte) -119) / 128.0F;
+			@Pc(110) float local110 = (float) arg0.g2s((byte) -119) / 128.0F;
 			local99 = local110;
 			local97 = local110;
 			local95 = local110;
@@ -183,30 +183,30 @@ public class Class458 {
 	}
 
 	@OriginalMember(owner = "client!oe", name = "u", descriptor = "(Lclient!alw;)V", line = 46)
-	void method29164(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(3) int local3 = arg0.method22465((short) 16384);
+	void method29164(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1((short) 16384);
 		@Pc(5) float local5 = 0.0F;
 		@Pc(7) float local7 = 0.0F;
 		@Pc(9) float local9 = 0.0F;
 		@Pc(11) float local11 = 1.0F;
 		if ((local3 & 0x1) != 0) {
-			local5 = (float) arg0.method22475((byte) -91) / 32768.0F;
-			local7 = (float) arg0.method22475((byte) -125) / 32768.0F;
-			local9 = (float) arg0.method22475((byte) -19) / 32768.0F;
-			local11 = (float) arg0.method22475((byte) -77) / 32768.0F;
+			local5 = (float) arg0.g2s((byte) -91) / 32768.0F;
+			local7 = (float) arg0.g2s((byte) -125) / 32768.0F;
+			local9 = (float) arg0.g2s((byte) -19) / 32768.0F;
+			local11 = (float) arg0.g2s((byte) -77) / 32768.0F;
 		}
 		this.aClass471_5 = new Class471(local5, local7, local9, local11);
 		@Pc(54) float local54 = 0.0F;
 		@Pc(56) float local56 = 0.0F;
 		@Pc(58) float local58 = 0.0F;
 		if ((local3 & 0x2) != 0) {
-			local54 = arg0.method22475((byte) -53);
+			local54 = arg0.g2s((byte) -53);
 		}
 		if ((local3 & 0x4) != 0) {
-			local56 = arg0.method22475((byte) -86);
+			local56 = arg0.g2s((byte) -86);
 		}
 		if ((local3 & 0x8) != 0) {
-			local58 = arg0.method22475((byte) -117);
+			local58 = arg0.g2s((byte) -117);
 		}
 		this.aClass472_61 = new Class472(local54, local56, local58);
 		@Pc(95) float local95 = 1.0F;
@@ -214,16 +214,16 @@ public class Class458 {
 		@Pc(99) float local99 = 1.0F;
 		if ((local3 & 0x10) == 0) {
 			if ((local3 & 0x20) != 0) {
-				local95 = (float) arg0.method22475((byte) -70) / 128.0F;
+				local95 = (float) arg0.g2s((byte) -70) / 128.0F;
 			}
 			if ((local3 & 0x40) != 0) {
-				local97 = (float) arg0.method22475((byte) -54) / 128.0F;
+				local97 = (float) arg0.g2s((byte) -54) / 128.0F;
 			}
 			if ((local3 & 0x80) != 0) {
-				local99 = (float) arg0.method22475((byte) -104) / 128.0F;
+				local99 = (float) arg0.g2s((byte) -104) / 128.0F;
 			}
 		} else {
-			@Pc(110) float local110 = (float) arg0.method22475((byte) -57) / 128.0F;
+			@Pc(110) float local110 = (float) arg0.g2s((byte) -57) / 128.0F;
 			local99 = local110;
 			local97 = local110;
 			local95 = local110;
@@ -232,30 +232,30 @@ public class Class458 {
 	}
 
 	@OriginalMember(owner = "client!oe", name = "z", descriptor = "(Lclient!alw;)V", line = 46)
-	void method29165(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(3) int local3 = arg0.method22465((short) 16384);
+	void method29165(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1((short) 16384);
 		@Pc(5) float local5 = 0.0F;
 		@Pc(7) float local7 = 0.0F;
 		@Pc(9) float local9 = 0.0F;
 		@Pc(11) float local11 = 1.0F;
 		if ((local3 & 0x1) != 0) {
-			local5 = (float) arg0.method22475((byte) -74) / 32768.0F;
-			local7 = (float) arg0.method22475((byte) -78) / 32768.0F;
-			local9 = (float) arg0.method22475((byte) -44) / 32768.0F;
-			local11 = (float) arg0.method22475((byte) -101) / 32768.0F;
+			local5 = (float) arg0.g2s((byte) -74) / 32768.0F;
+			local7 = (float) arg0.g2s((byte) -78) / 32768.0F;
+			local9 = (float) arg0.g2s((byte) -44) / 32768.0F;
+			local11 = (float) arg0.g2s((byte) -101) / 32768.0F;
 		}
 		this.aClass471_5 = new Class471(local5, local7, local9, local11);
 		@Pc(54) float local54 = 0.0F;
 		@Pc(56) float local56 = 0.0F;
 		@Pc(58) float local58 = 0.0F;
 		if ((local3 & 0x2) != 0) {
-			local54 = arg0.method22475((byte) -46);
+			local54 = arg0.g2s((byte) -46);
 		}
 		if ((local3 & 0x4) != 0) {
-			local56 = arg0.method22475((byte) -107);
+			local56 = arg0.g2s((byte) -107);
 		}
 		if ((local3 & 0x8) != 0) {
-			local58 = arg0.method22475((byte) -116);
+			local58 = arg0.g2s((byte) -116);
 		}
 		this.aClass472_61 = new Class472(local54, local56, local58);
 		@Pc(95) float local95 = 1.0F;
@@ -263,16 +263,16 @@ public class Class458 {
 		@Pc(99) float local99 = 1.0F;
 		if ((local3 & 0x10) == 0) {
 			if ((local3 & 0x20) != 0) {
-				local95 = (float) arg0.method22475((byte) -70) / 128.0F;
+				local95 = (float) arg0.g2s((byte) -70) / 128.0F;
 			}
 			if ((local3 & 0x40) != 0) {
-				local97 = (float) arg0.method22475((byte) -10) / 128.0F;
+				local97 = (float) arg0.g2s((byte) -10) / 128.0F;
 			}
 			if ((local3 & 0x80) != 0) {
-				local99 = (float) arg0.method22475((byte) -21) / 128.0F;
+				local99 = (float) arg0.g2s((byte) -21) / 128.0F;
 			}
 		} else {
-			@Pc(110) float local110 = (float) arg0.method22475((byte) -85) / 128.0F;
+			@Pc(110) float local110 = (float) arg0.g2s((byte) -85) / 128.0F;
 			local99 = local110;
 			local97 = local110;
 			local95 = local110;

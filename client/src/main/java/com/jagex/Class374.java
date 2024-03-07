@@ -33,15 +33,15 @@ public class Class374 {
 	Class22 aClass22_52 = new Class22();
 
 	@OriginalMember(owner = "client!kc", name = "<init>", descriptor = "(Lclient!alw;)V", line = 17)
-	public Class374(@OriginalArg(0) Class93_Sub41 arg0) {
+	public Class374(@OriginalArg(0) Packet arg0) {
 		this.method28025(arg0, 1141002213);
 	}
 
 	@OriginalMember(owner = "client!kc", name = "e", descriptor = "(Lclient!alw;I)V", line = 22)
-	void method28025(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		this.aLong263 = arg0.method22495(-1793289088) * -5428801191899480245L;
-		this.aLong264 = arg0.method22495(-1841165438) * -1909394539023591297L;
-		for (@Pc(17) int local17 = arg0.method22465((short) 16384); local17 != 0; local17 = arg0.method22465((short) 16384)) {
+	void method28025(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		this.aLong263 = arg0.g8(-1793289088) * -5428801191899480245L;
+		this.aLong264 = arg0.g8(-1841165438) * -1909394539023591297L;
+		for (@Pc(17) int local17 = arg0.g1((short) 16384); local17 != 0; local17 = arg0.g1((short) 16384)) {
 			@Pc(28) Class93_Sub31 local28;
 			if (local17 == 1) {
 				local28 = new Class93_Sub31_Sub5(this);
@@ -62,10 +62,10 @@ public class Class374 {
 	}
 
 	@OriginalMember(owner = "client!kc", name = "m", descriptor = "(Lclient!alw;)V", line = 22)
-	void method28026(@OriginalArg(0) Class93_Sub41 arg0) {
-		this.aLong263 = arg0.method22495(-1267017634) * -5428801191899480245L;
-		this.aLong264 = arg0.method22495(1173150065) * -1909394539023591297L;
-		for (@Pc(17) int local17 = arg0.method22465((short) 16384); local17 != 0; local17 = arg0.method22465((short) 16384)) {
+	void method28026(@OriginalArg(0) Packet arg0) {
+		this.aLong263 = arg0.g8(-1267017634) * -5428801191899480245L;
+		this.aLong264 = arg0.g8(1173150065) * -1909394539023591297L;
+		for (@Pc(17) int local17 = arg0.g1((short) 16384); local17 != 0; local17 = arg0.g1((short) 16384)) {
 			@Pc(28) Class93_Sub31 local28;
 			if (local17 == 1) {
 				local28 = new Class93_Sub31_Sub5(this);

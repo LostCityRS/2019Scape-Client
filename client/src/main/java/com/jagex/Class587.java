@@ -56,9 +56,9 @@ public class Class587 {
 	}
 
 	@OriginalMember(owner = "client!tz", name = "e", descriptor = "(Lclient!alw;II)[B", line = 20)
-	public static byte[] method31645(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) throws IOException {
-		@Pc(5) ByteArrayInputStream local5 = new ByteArrayInputStream(arg0.aByteArray58);
-		local5.skip((long) (arg0.anInt3070 * 212851357));
+	public static byte[] method31645(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) throws IOException {
+		@Pc(5) ByteArrayInputStream local5 = new ByteArrayInputStream(arg0.data);
+		local5.skip((long) (arg0.pos * 212851357));
 		return Class352.method27660(local5, arg1, 65280);
 	}
 

@@ -22,37 +22,37 @@ public class Class108_Sub1 extends Class108 {
 
 	@OriginalMember(owner = "client!aff", name = "u", descriptor = "(Lclient!alw;IS)V", line = 16)
 	@Override
-	void method7448(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) short arg2) {
+	void method7448(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) short arg2) {
 		@Pc(6) Class302 local6 = (Class302) Class107.method18116(Class539.method30785(-499262835), arg1, -1915563430);
 		if (Class302.aClass302_18 == local6) {
-			this.anInt693 = arg0.method22472(-1434290800) * -1222568711;
+			this.anInt693 = arg0.g2(-1434290800) * -1222568711;
 		}
 	}
 
 	@OriginalMember(owner = "client!aff", name = "d", descriptor = "(Lclient!alw;I)V", line = 16)
 	@Override
-	void method7449(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method7449(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		@Pc(6) Class302 local6 = (Class302) Class107.method18116(Class539.method30785(-558567392), arg1, -1915563430);
 		if (Class302.aClass302_18 == local6) {
-			this.anInt693 = arg0.method22472(-1434290800) * -1222568711;
+			this.anInt693 = arg0.g2(-1434290800) * -1222568711;
 		}
 	}
 
 	@OriginalMember(owner = "client!aff", name = "c", descriptor = "(Lclient!alw;I)V", line = 16)
 	@Override
-	void method7451(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method7451(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		@Pc(6) Class302 local6 = (Class302) Class107.method18116(Class539.method30785(-1223205404), arg1, -1915563430);
 		if (Class302.aClass302_18 == local6) {
-			this.anInt693 = arg0.method22472(-1434290800) * -1222568711;
+			this.anInt693 = arg0.g2(-1434290800) * -1222568711;
 		}
 	}
 
 	@OriginalMember(owner = "client!aff", name = "r", descriptor = "(Lclient!alw;I)V", line = 16)
 	@Override
-	void method7450(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method7450(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		@Pc(6) Class302 local6 = (Class302) Class107.method18116(Class539.method30785(-686594244), arg1, -1915563430);
 		if (Class302.aClass302_18 == local6) {
-			this.anInt693 = arg0.method22472(-1434290800) * -1222568711;
+			this.anInt693 = arg0.g2(-1434290800) * -1222568711;
 		}
 	}
 

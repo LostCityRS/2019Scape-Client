@@ -29,14 +29,14 @@ public class Class490 {
 
 	@OriginalMember(owner = "client!pr", name = "f", descriptor = "(Z[BI)V", line = 76)
 	public static void method29971(@OriginalArg(0) boolean arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) int arg2) {
-		if (Class607.aClass93_Sub41_17 == null) {
-			Class607.aClass93_Sub41_17 = new Class93_Sub41(20000);
+		if (Class607.aPacket_17 == null) {
+			Class607.aPacket_17 = new Packet(20000);
 		}
-		Class607.aClass93_Sub41_17.method22439(arg1, 0, arg1.length, 2026842986);
+		Class607.aPacket_17.pdata(arg1, 0, arg1.length, 2026842986);
 		if (!arg0) {
 			return;
 		}
-		Class653.method32705(Class607.aClass93_Sub41_17.aByteArray58, -1365603373);
+		Class653.method32705(Class607.aPacket_17.data, -1365603373);
 		Class50.aClass154_Sub1Array1 = new Class154_Sub1[Class606.anInt5557 * 2035023117];
 		@Pc(28) int local28 = 0;
 		for (@Pc(32) int local32 = Class607.anInt5560 * 1855382415; local32 <= Class361.anInt4571 * 977343673; local32++) {
@@ -47,7 +47,7 @@ public class Class490 {
 		}
 		Class50.aBoolean26 = false;
 		Class333.aLong260 = Class305.method26797(1286018654) * 7977095113539552245L;
-		Class607.aClass93_Sub41_17 = null;
+		Class607.aPacket_17 = null;
 	}
 
 	@OriginalMember(owner = "client!pr", name = "<init>", descriptor = "(Lclient!pu;Ljava/io/InputStream;Lclient!atb;Ljava/net/URL;)V", line = 106)
@@ -56,7 +56,7 @@ public class Class490 {
 		this.aByteArray94 = null;
 		if (arg1 != null) {
 			@Pc(11) short local11 = 10240;
-			@Pc(17) Class93_Sub41 local17 = new Class93_Sub41(local11, true);
+			@Pc(17) Packet local17 = new Packet(local11, true);
 			@Pc(19) int local19 = 0;
 			@Pc(23) byte[] local23 = Class723.method36937(1024, 1617702923);
 			@Pc(53) int local53;
@@ -68,22 +68,22 @@ public class Class490 {
 					local19 = -1;
 				}
 				if (local19 > 0) {
-					if (local19 + local17.anInt3070 * 212851357 >= local17.aByteArray58.length) {
-						local53 = local17.aByteArray58.length + 10240;
+					if (local19 + local17.pos * 212851357 >= local17.data.length) {
+						local53 = local17.data.length + 10240;
 						@Pc(58) byte[] local58 = Class723.method36936(local53, true, -369210105);
-						System.arraycopy(local17.aByteArray58, 0, local58, 0, local17.anInt3070 * 212851357);
-						Class723.method36940(local17.aByteArray58, (byte) 19);
-						local17.aByteArray58 = local58;
+						System.arraycopy(local17.data, 0, local58, 0, local17.pos * 212851357);
+						Class723.method36940(local17.data, (byte) 19);
+						local17.data = local58;
 					}
-					local17.method22439(local23, 0, local19, 2026842986);
+					local17.pdata(local23, 0, local19, 2026842986);
 				}
 			}
 			for (local53 = 0; local53 < arg2.anInt3187 * 493721639; local53++) {
-				local17.method22394(0, (byte) -100);
+				local17.p1(0, (byte) -100);
 			}
-			@Pc(102) byte[] local102 = new byte[local17.anInt3070 * 212851357];
-			System.arraycopy(local17.aByteArray58, 0, local102, 0, local17.anInt3070 * 212851357);
-			local17.method22392((byte) 1);
+			@Pc(102) byte[] local102 = new byte[local17.pos * 212851357];
+			System.arraycopy(local17.data, 0, local102, 0, local17.pos * 212851357);
+			local17.release((byte) 1);
 			local17 = null;
 			Class723.method36940(local23, (byte) 19);
 			@Pc(122) Object local122 = null;
@@ -168,12 +168,12 @@ public class Class490 {
 	@OriginalMember(owner = "client!pr", name = "ac", descriptor = "(B)V", line = 1123)
 	static void method29977(@OriginalArg(0) byte arg0) {
 		Class411.aClass175_3.method24351(1222194881);
-		Class411.aClass175_3.aClass93_Sub41_Sub2_2.anInt3070 = 0;
+		Class411.aClass175_3.aPacketBit_2.pos = 0;
 		Class411.aClass175_3.aClass453_2 = null;
 		Class411.aClass175_3.aClass453_1 = null;
 		Class411.aClass175_3.aClass453_4 = null;
 		Class411.aClass175_3.aClass453_3 = null;
-		Class411.aClass175_3.anInt3301 = 0;
+		Class411.aClass175_3.length = 0;
 		Class411.aClass175_3.anInt3298 = 0;
 		client.anInt3453 = 0;
 		Class380.method28117((byte) 66);

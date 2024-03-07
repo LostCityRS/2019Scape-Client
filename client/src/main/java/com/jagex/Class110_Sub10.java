@@ -24,12 +24,12 @@ public class Class110_Sub10 extends Class110 {
 	final int anInt925;
 
 	@OriginalMember(owner = "client!agg", name = "<init>", descriptor = "(Lclient!alw;)V", line = 12)
-	Class110_Sub10(@OriginalArg(0) Class93_Sub41 arg0) {
+	Class110_Sub10(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.anInt926 = arg0.method22472(-1434290800) * -2048059937;
-		this.aString29 = arg0.method22509(1285423375);
-		this.anInt927 = arg0.method22483(-118643075) * -267220097;
-		this.anInt925 = arg0.method22472(-1434290800) * 812450351;
+		this.anInt926 = arg0.g2(-1434290800) * -2048059937;
+		this.aString29 = arg0.gjstr(1285423375);
+		this.anInt927 = arg0.g4(-118643075) * -267220097;
+		this.anInt925 = arg0.g2(-1434290800) * 812450351;
 	}
 
 	@OriginalMember(owner = "client!agg", name = "n", descriptor = "(I)V", line = 20)

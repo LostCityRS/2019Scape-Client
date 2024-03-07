@@ -69,9 +69,9 @@ public abstract class Class127 implements Interface4 {
 	}
 
 	@OriginalMember(owner = "client!ka", name = "m", descriptor = "(Lclient!ase;I)V", line = 100)
-	static final void method9259(@OriginalArg(0) Class93_Sub41_Sub2 arg0, @OriginalArg(1) int arg1) {
+	static final void method9259(@OriginalArg(0) PacketBit arg0, @OriginalArg(1) int arg1) {
 		@Pc(1) int local1 = 0;
-		arg0.method22682((byte) -39);
+		arg0.accessBits((byte) -39);
 		@Pc(6) int local6;
 		@Pc(15) int local15;
 		@Pc(38) int local38;
@@ -82,7 +82,7 @@ public abstract class Class127 implements Interface4 {
 					local1--;
 					Class174.aByteArray63[local15] = (byte) (Class174.aByteArray63[local15] | 0x2);
 				} else {
-					local38 = arg0.method22686(1, -1428365453);
+					local38 = arg0.gBit(1, -1428365453);
 					if (local38 == 0) {
 						local1 = Class206.method24698(arg0, -1799819323);
 						Class174.aByteArray63[local15] = (byte) (Class174.aByteArray63[local15] | 0x2);
@@ -92,11 +92,11 @@ public abstract class Class127 implements Interface4 {
 				}
 			}
 		}
-		arg0.method22688(-711559664);
+		arg0.accessBytes(-711559664);
 		if (local1 != 0) {
 			throw new RuntimeException();
 		}
-		arg0.method22682((byte) -5);
+		arg0.accessBits((byte) -5);
 		for (local6 = 0; local6 < Class174.anInt3293 * -1081967415; local6++) {
 			local15 = Class174.anIntArray278[local6];
 			if ((Class174.aByteArray63[local15] & 0x1) != 0) {
@@ -104,7 +104,7 @@ public abstract class Class127 implements Interface4 {
 					local1--;
 					Class174.aByteArray63[local15] = (byte) (Class174.aByteArray63[local15] | 0x2);
 				} else {
-					local38 = arg0.method22686(1, 453222308);
+					local38 = arg0.gBit(1, 453222308);
 					if (local38 == 0) {
 						local1 = Class206.method24698(arg0, -972609649);
 						Class174.aByteArray63[local15] = (byte) (Class174.aByteArray63[local15] | 0x2);
@@ -114,11 +114,11 @@ public abstract class Class127 implements Interface4 {
 				}
 			}
 		}
-		arg0.method22688(830825245);
+		arg0.accessBytes(830825245);
 		if (local1 != 0) {
 			throw new RuntimeException();
 		}
-		arg0.method22682((byte) -47);
+		arg0.accessBits((byte) -47);
 		for (local6 = 0; local6 < Class174.anInt3295 * 1575920431; local6++) {
 			local15 = Class174.anIntArray277[local6];
 			if ((Class174.aByteArray63[local15] & 0x1) != 0) {
@@ -126,7 +126,7 @@ public abstract class Class127 implements Interface4 {
 					local1--;
 					Class174.aByteArray63[local15] = (byte) (Class174.aByteArray63[local15] | 0x2);
 				} else {
-					local38 = arg0.method22686(1, -515802717);
+					local38 = arg0.gBit(1, -515802717);
 					if (local38 == 0) {
 						local1 = Class206.method24698(arg0, -1341202410);
 						Class174.aByteArray63[local15] = (byte) (Class174.aByteArray63[local15] | 0x2);
@@ -136,11 +136,11 @@ public abstract class Class127 implements Interface4 {
 				}
 			}
 		}
-		arg0.method22688(-1692591558);
+		arg0.accessBytes(-1692591558);
 		if (local1 != 0) {
 			throw new RuntimeException();
 		}
-		arg0.method22682((byte) -5);
+		arg0.accessBits((byte) -5);
 		for (local6 = 0; local6 < Class174.anInt3295 * 1575920431; local6++) {
 			local15 = Class174.anIntArray277[local6];
 			if ((Class174.aByteArray63[local15] & 0x1) == 0) {
@@ -148,7 +148,7 @@ public abstract class Class127 implements Interface4 {
 					local1--;
 					Class174.aByteArray63[local15] = (byte) (Class174.aByteArray63[local15] | 0x2);
 				} else {
-					local38 = arg0.method22686(1, 200211595);
+					local38 = arg0.gBit(1, 200211595);
 					if (local38 == 0) {
 						local1 = Class206.method24698(arg0, -1665931944);
 						Class174.aByteArray63[local15] = (byte) (Class174.aByteArray63[local15] | 0x2);
@@ -158,7 +158,7 @@ public abstract class Class127 implements Interface4 {
 				}
 			}
 		}
-		arg0.method22688(-312042121);
+		arg0.accessBytes(-312042121);
 		if (local1 != 0) {
 			throw new RuntimeException();
 		}

@@ -137,9 +137,9 @@ public class Class670 {
 		if (arg1.length() > 30) {
 			arg1 = arg1.substring(0, 30);
 		}
-		local8.aClass93_Sub41_Sub2_1.method22394(Class46.method895(arg0, -2112445074) + Class46.method895(arg1, -2002128209), (byte) -97);
-		local8.aClass93_Sub41_Sub2_1.method22431(arg0, 660568065);
-		local8.aClass93_Sub41_Sub2_1.method22431(arg1, 330355015);
+		local8.aPacketBit_1.p1(Packet.pjstrlen(arg0, -2112445074) + Packet.pjstrlen(arg1, -2002128209), (byte) -97);
+		local8.aPacketBit_1.pjstr(arg0, 660568065);
+		local8.aPacketBit_1.pjstr(arg1, 330355015);
 		local2.method24356(local8, -2034693953);
 	}
 }

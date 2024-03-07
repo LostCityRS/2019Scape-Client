@@ -54,12 +54,12 @@ public class Class123_Sub1 extends Class123 {
 	}
 
 	@OriginalMember(owner = "client!ahc", name = "fz", descriptor = "(Lclient!alw;II)V", line = 36)
-	public void method9092(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(4) int local4 = arg0.anInt3070 * 212851357;
-		@Pc(8) int local8 = arg0.method22465((short) 16384);
+	public void method9092(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+		@Pc(4) int local4 = arg0.pos * 212851357;
+		@Pc(8) int local8 = arg0.g1((short) 16384);
 		this.method8932(Class347.method27579(local8 & 0x1, -541651080), (byte) -11);
 		if ((local8 & 0x8) != 0) {
-			@Pc(27) Class338 local27 = Class258.method26026(arg0.method22465((short) 16384), -2125535153);
+			@Pc(27) Class338 local27 = Class258.method26026(arg0.g1((short) 16384), -2125535153);
 			if (this.aClass338_2 != local27) {
 				try {
 					this.method8935(local27, true, 1252966408);
@@ -69,7 +69,7 @@ public class Class123_Sub1 extends Class123 {
 			}
 		}
 		if ((local8 & 0x10) != 0) {
-			@Pc(51) Class342 local51 = Class180.method24518(arg0.method22465((short) 16384), (byte) 38);
+			@Pc(51) Class342 local51 = Class180.method24518(arg0.g1((short) 16384), (byte) 38);
 			if (local51 != this.aClass342_2) {
 				try {
 					this.method8937(local51, true, -1436778339);
@@ -79,7 +79,7 @@ public class Class123_Sub1 extends Class123 {
 			}
 		}
 		if ((local8 >> 7 & 0x1) == 1) {
-			@Pc(76) int local76 = arg0.method22472(-1434290800);
+			@Pc(76) int local76 = arg0.g2(-1434290800);
 			if ((local76 >> Class354.aClass354_14.anInt4216 * -1416639217 & 0x1) == 1) {
 				this.aClass472_8.method29546(arg0);
 			}
@@ -93,35 +93,35 @@ public class Class123_Sub1 extends Class123 {
 				this.aClass472_13.method29546(arg0);
 			}
 			if ((local76 >> Class354.aClass354_3.anInt4216 * -1416639217 & 0x1) == 1) {
-				this.aFloat102 = arg0.method22504(-570252963);
-				this.aFloat104 = arg0.method22504(-1046680913);
+				this.aFloat102 = arg0.gFloat(-570252963);
+				this.aFloat104 = arg0.gFloat(-1046680913);
 			}
 			if ((local76 >> Class354.aClass354_6.anInt4216 * -1416639217 & 0x1) == 1) {
-				this.aFloat110 = arg0.method22504(-1384550254);
-				this.aFloat108 = arg0.method22504(-1250770883);
+				this.aFloat110 = arg0.gFloat(-1384550254);
+				this.aFloat108 = arg0.gFloat(-1250770883);
 			}
 			if ((local76 >> Class354.aClass354_7.anInt4216 * -1416639217 & 0x1) == 1) {
-				this.aClass359_2 = Class138_Sub4.method11516(arg0.method22465((short) 16384), -1964954149);
+				this.aClass359_2 = Class138_Sub4.method11516(arg0.g1((short) 16384), -1964954149);
 			}
 			if ((local76 >> Class354.aClass354_10.anInt4216 * -1416639217 & 0x1) == 1) {
-				this.anInt1011 = arg0.method22478((short) 26249) * -1665495249;
-				arg0.method22465((short) 16384);
+				this.anInt1011 = arg0.g3((short) 26249) * -1665495249;
+				arg0.g1((short) 16384);
 			}
 			@Pc(224) int local224;
 			if ((local76 >> Class354.aClass354_8.anInt4216 * -1416639217 & 0x1) == 1) {
-				local224 = arg0.method22465((short) 16384);
+				local224 = arg0.g1((short) 16384);
 				this.aBoolean181 = (local224 & 0x1) == 1;
 				this.aBoolean182 = (local224 & 0x2) == 2;
 			}
 			if ((local76 >> Class354.aClass354_9.anInt4216 * -1416639217 & 0x1) == 1) {
-				local224 = arg0.method22465((short) 16384);
+				local224 = arg0.g1((short) 16384);
 				for (@Pc(260) int local260 = 0; local260 < local224; local260++) {
-					@Pc(267) int local267 = arg0.method22465((short) 16384);
-					@Pc(271) int local271 = arg0.method22465((short) 16384);
+					@Pc(267) int local267 = arg0.g1((short) 16384);
+					@Pc(271) int local271 = arg0.g1((short) 16384);
 					if (local267 == 0) {
 						this.method8995(local271, -1507823127);
 					} else {
-						@Pc(284) Class335 local284 = Class365.method27901(arg0.method22465((short) 16384), (byte) -95);
+						@Pc(284) Class335 local284 = Class365.method27901(arg0.g1((short) 16384), (byte) -95);
 						@Pc(286) boolean local286 = true;
 						@Pc(290) Iterator local290 = this.aClass16_7.iterator();
 						while (local290.hasNext()) {
@@ -139,23 +139,23 @@ public class Class123_Sub1 extends Class123 {
 				}
 			}
 			if ((local76 >> Class354.aClass354_15.anInt4216 * -1416639217 & 0x1) == 1) {
-				this.anInt1014 = arg0.method22472(-1434290800) * -1956959367;
-				this.aFloat112 = arg0.method22504(1600440394);
+				this.anInt1014 = arg0.g2(-1434290800) * -1956959367;
+				this.aFloat112 = arg0.gFloat(1600440394);
 			}
 			if ((local76 >> Class354.aClass354_11.anInt4216 * -1416639217 & 0x1) == 1) {
-				this.aClass333_2 = Class93_Sub20.method13658(arg0.method22465((short) 16384), (byte) 1);
+				this.aClass333_2 = Class93_Sub20.method13658(arg0.g1((short) 16384), (byte) 1);
 			}
 			if ((local76 >> Class354.aClass354_12.anInt4216 * -1416639217 & 0x1) == 1) {
 				this.aClass472_11.method29546(arg0);
 				this.aClass472_12.method29546(arg0);
-				this.aFloat107 = arg0.method22504(-1475341436);
-				this.aFloat98 = arg0.method22504(-955692056);
+				this.aFloat107 = arg0.gFloat(-1475341436);
+				this.aFloat98 = arg0.gFloat(-955692056);
 			}
 			if ((local76 >> Class354.aClass354_1.anInt4216 * -1416639217 & 0x1) == 1) {
-				arg0.method22504(654556253);
+				arg0.gFloat(654556253);
 			}
 			if ((local76 >> Class354.aClass354_5.anInt4216 * -1416639217 & 0x1) == 1) {
-				this.aFloat101 = arg0.method22504(-1092486947);
+				this.aFloat101 = arg0.gFloat(-1092486947);
 			}
 		}
 		if (this.aClass25_2 != null && (local8 >> 5 & 0x1) == 1) {
@@ -164,8 +164,8 @@ public class Class123_Sub1 extends Class123 {
 		if (this.aClass124_2 != null && (local8 >> 6 & 0x1) == 1) {
 			this.aClass124_2.method21413(arg0, -2023846741);
 		}
-		if (arg1 != arg0.anInt3070 * 212851357 - local4) {
-			throw new RuntimeException(arg0.anInt3070 * 212851357 - local4 + "," + arg1);
+		if (arg1 != arg0.pos * 212851357 - local4) {
+			throw new RuntimeException(arg0.pos * 212851357 - local4 + "," + arg1);
 		}
 	}
 

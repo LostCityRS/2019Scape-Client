@@ -163,9 +163,9 @@ public class Class546 {
 		@Pc(13) String local13 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
 		@Pc(27) String local27 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
 		@Pc(33) Class93_Sub22 local33 = Class102.method2588(Class446.aClass446_36, client.aClass175_1.aClass24_2, (byte) 65);
-		local33.aClass93_Sub41_Sub2_1.method22395(Class46.method895(local13, -1746842495) + Class46.method895(local27, -1698473232), 2145656670);
-		local33.aClass93_Sub41_Sub2_1.method22431(local13, 588125156);
-		local33.aClass93_Sub41_Sub2_1.method22431(local27, 1144919468);
+		local33.aPacketBit_1.p2(Packet.pjstrlen(local13, -1746842495) + Packet.pjstrlen(local27, -1698473232), 2145656670);
+		local33.aPacketBit_1.pjstr(local13, 588125156);
+		local33.aPacketBit_1.pjstr(local27, 1144919468);
 		client.aClass175_1.method24356(local33, -1898577141);
 	}
 

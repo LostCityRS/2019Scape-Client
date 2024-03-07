@@ -40,17 +40,17 @@ public class Class212 {
 	}
 
 	@OriginalMember(owner = "client!cs", name = "<init>", descriptor = "(ILclient!alw;Z)V", line = 14)
-	Class212(@OriginalArg(0) int arg0, @OriginalArg(1) Class93_Sub41 arg1, @OriginalArg(2) boolean arg2) {
-		this.anInt3600 = arg1.method22475((byte) -47) * 1682249735;
+	Class212(@OriginalArg(0) int arg0, @OriginalArg(1) Packet arg1, @OriginalArg(2) boolean arg2) {
+		this.anInt3600 = arg1.g2s((byte) -47) * 1682249735;
 		this.aClass489Array8 = new Class489[arg0];
 		this.aClass489Array9 = new Class489[this.aClass489Array8.length];
 		this.aClass489Array7 = new Class489[this.aClass489Array8.length];
 		this.aFloatArrayArray23 = new float[this.aClass489Array8.length][3];
 		for (@Pc(33) int local33 = 0; local33 < this.aClass489Array8.length; local33++) {
 			this.aClass489Array8[local33] = new Class489(arg1, arg2);
-			this.aFloatArrayArray23[local33][0] = arg1.method22504(-780630327);
-			this.aFloatArrayArray23[local33][1] = arg1.method22504(-231931985);
-			this.aFloatArrayArray23[local33][2] = arg1.method22504(1890265217);
+			this.aFloatArrayArray23[local33][0] = arg1.gFloat(-780630327);
+			this.aFloatArrayArray23[local33][1] = arg1.gFloat(-231931985);
+			this.aFloatArrayArray23[local33][2] = arg1.gFloat(1890265217);
 		}
 	}
 
@@ -200,8 +200,8 @@ public class Class212 {
 				client.anInt3547 = client.anInt3565 * -541355657;
 				@Pc(65) Class175 local65 = Class330.method27371(-2042869964);
 				@Pc(71) Class93_Sub22 local71 = Class102.method2588(Class446.aClass446_44, local65.aClass24_2, (byte) 107);
-				local71.aClass93_Sub41_Sub2_1.method22394(Class46.method895(arg0, -1995313720), (byte) -49);
-				local71.aClass93_Sub41_Sub2_1.method22431(arg0, 1019703631);
+				local71.aPacketBit_1.p1(Packet.pjstrlen(arg0, -1995313720), (byte) -49);
+				local71.aPacketBit_1.pjstr(arg0, 1019703631);
 				local65.method24356(local71, -2116172389);
 				break;
 			}

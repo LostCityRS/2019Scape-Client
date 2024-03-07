@@ -81,55 +81,55 @@ public abstract class Class115 {
 	}
 
 	@OriginalMember(owner = "client!ho", name = "n", descriptor = "(Lclient!abv;Lclient!alw;II)Lclient!abw;", line = 48)
-	static Class48 method8196(@OriginalArg(0) Class47 arg0, @OriginalArg(1) Class93_Sub41 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+	static Class48 method8196(@OriginalArg(0) Class47 arg0, @OriginalArg(1) Packet arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		@Pc(4) Class48 local4 = new Class48(arg0);
-		@Pc(8) int local8 = arg1.method22465((short) 16384);
+		@Pc(8) int local8 = arg1.g1((short) 16384);
 		@Pc(16) boolean local16 = (local8 & 0x1) != 0;
 		@Pc(24) boolean local24 = (local8 & 0x2) != 0;
 		@Pc(32) boolean local32 = (local8 & 0x4) != 0;
 		@Pc(41) boolean local41 = (local8 & 0x8) != 0;
 		if (local16) {
 			if (arg2 <= 1) {
-				local4.anIntArray14[0] = arg1.method22472(-1434290800);
-				local4.anIntArray12[0] = arg1.method22472(-1434290800);
+				local4.anIntArray14[0] = arg1.g2(-1434290800);
+				local4.anIntArray12[0] = arg1.g2(-1434290800);
 			} else {
-				local4.anIntArray14[0] = arg1.method22542(-776001146);
-				local4.anIntArray12[0] = arg1.method22542(-497046281);
+				local4.anIntArray14[0] = arg1.gSmart2or4null(-776001146);
+				local4.anIntArray12[0] = arg1.gSmart2or4null(-497046281);
 			}
 			if (arg0.anInt143 * 876926327 != -1 || arg0.anInt158 * 61740559 != -1) {
 				if (arg2 <= 1) {
-					local4.anIntArray14[1] = arg1.method22472(-1434290800);
-					local4.anIntArray12[1] = arg1.method22472(-1434290800);
+					local4.anIntArray14[1] = arg1.g2(-1434290800);
+					local4.anIntArray12[1] = arg1.g2(-1434290800);
 				} else {
-					local4.anIntArray14[1] = arg1.method22542(-1520765468);
-					local4.anIntArray12[1] = arg1.method22542(-548476675);
+					local4.anIntArray14[1] = arg1.gSmart2or4null(-1520765468);
+					local4.anIntArray12[1] = arg1.gSmart2or4null(-548476675);
 				}
 			}
 			if (arg0.anInt159 * -606200001 != -1 || arg0.anInt160 * -492567931 != -1) {
 				if (arg2 <= 1) {
-					local4.anIntArray14[2] = arg1.method22472(-1434290800);
-					local4.anIntArray12[2] = arg1.method22472(-1434290800);
+					local4.anIntArray14[2] = arg1.g2(-1434290800);
+					local4.anIntArray12[2] = arg1.g2(-1434290800);
 				} else {
-					local4.anIntArray14[2] = arg1.method22542(-256435210);
-					local4.anIntArray12[2] = arg1.method22542(-1341653095);
+					local4.anIntArray14[2] = arg1.gSmart2or4null(-256435210);
+					local4.anIntArray12[2] = arg1.gSmart2or4null(-1341653095);
 				}
 			}
 		}
 		if (local24) {
 			if (arg2 <= 1) {
-				local4.anIntArray13[0] = arg1.method22472(-1434290800);
-				local4.anIntArray15[0] = arg1.method22472(-1434290800);
+				local4.anIntArray13[0] = arg1.g2(-1434290800);
+				local4.anIntArray15[0] = arg1.g2(-1434290800);
 			} else {
-				local4.anIntArray13[0] = arg1.method22542(-1405354356);
-				local4.anIntArray15[0] = arg1.method22542(-872500586);
+				local4.anIntArray13[0] = arg1.gSmart2or4null(-1405354356);
+				local4.anIntArray15[0] = arg1.gSmart2or4null(-872500586);
 			}
 			if (arg0.anInt141 * 1052917305 != -1 || arg0.anInt168 * -1920351591 != -1) {
 				if (arg2 <= 1) {
-					local4.anIntArray13[1] = arg1.method22472(-1434290800);
-					local4.anIntArray15[1] = arg1.method22472(-1434290800);
+					local4.anIntArray13[1] = arg1.g2(-1434290800);
+					local4.anIntArray15[1] = arg1.g2(-1434290800);
 				} else {
-					local4.anIntArray13[1] = arg1.method22542(-1817063843);
-					local4.anIntArray15[1] = arg1.method22542(-1454531620);
+					local4.anIntArray13[1] = arg1.gSmart2or4null(-1817063843);
+					local4.anIntArray15[1] = arg1.gSmart2or4null(-1454531620);
 				}
 			}
 		}
@@ -137,20 +137,20 @@ public abstract class Class115 {
 		@Pc(250) int[] local250;
 		@Pc(282) int local282;
 		if (local32) {
-			local247 = arg1.method22472(-1434290800);
+			local247 = arg1.g2(-1434290800);
 			local250 = new int[] { local247 & 0xF, local247 >> 4 & 0xF, local247 >> 8 & 0xF, local247 >> 12 & 0xF };
 			for (local282 = 0; local282 < 4; local282++) {
 				if (local250[local282] != 15) {
-					local4.aShortArray6[local250[local282]] = (short) arg1.method22472(-1434290800);
+					local4.aShortArray6[local250[local282]] = (short) arg1.g2(-1434290800);
 				}
 			}
 		}
 		if (local41) {
-			local247 = arg1.method22465((short) 16384);
+			local247 = arg1.g1((short) 16384);
 			local250 = new int[] { local247 & 0xF, local247 >> 4 & 0xF };
 			for (local282 = 0; local282 < 2; local282++) {
 				if (local250[local282] != 15) {
-					local4.aShortArray7[local250[local282]] = (short) arg1.method22472(-1434290800);
+					local4.aShortArray7[local250[local282]] = (short) arg1.g2(-1434290800);
 				}
 			}
 		}

@@ -17,7 +17,7 @@ public interface Interface45 {
 	Class413 method27000();
 
 	@OriginalMember(owner = "client!mu", name = "w", descriptor = "(Lclient!alw;)V")
-	void method27001(@OriginalArg(0) Class93_Sub41 arg0);
+	void method27001(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!mu", name = "cr", descriptor = "()Z")
 	boolean method27002();
@@ -38,7 +38,7 @@ public interface Interface45 {
 	void method27007(@OriginalArg(0) Interface41 arg0);
 
 	@OriginalMember(owner = "client!mu", name = "u", descriptor = "(I)Lclient!alw;")
-	Class93_Sub41 method27008(@OriginalArg(0) int arg0);
+    Packet method27008(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!mu", name = "bf", descriptor = "(Z)V")
 	void method27009(@OriginalArg(0) boolean arg0);
@@ -74,7 +74,7 @@ public interface Interface45 {
 	void method27019();
 
 	@OriginalMember(owner = "client!mu", name = "bq", descriptor = "(Lclient!alw;)V")
-	void method27020(@OriginalArg(0) Class93_Sub41 arg0);
+	void method27020(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!mu", name = "bt", descriptor = "(Lclient!mm;)V")
 	void method27021(@OriginalArg(0) Interface41 arg0);
@@ -83,10 +83,10 @@ public interface Interface45 {
 	int method27022();
 
 	@OriginalMember(owner = "client!mu", name = "bm", descriptor = "(Lclient!alw;)V")
-	void method27023(@OriginalArg(0) Class93_Sub41 arg0);
+	void method27023(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!mu", name = "bb", descriptor = "(Lclient!alw;)V")
-	void method27024(@OriginalArg(0) Class93_Sub41 arg0);
+	void method27024(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!mu", name = "be", descriptor = "()V")
 	void method27025();
@@ -95,7 +95,7 @@ public interface Interface45 {
 	void method27026();
 
 	@OriginalMember(owner = "client!mu", name = "bu", descriptor = "(I)Lclient!alw;")
-	Class93_Sub41 method27027(@OriginalArg(0) int arg0);
+    Packet method27027(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!mu", name = "l", descriptor = "()V")
 	void method27028();

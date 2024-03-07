@@ -233,12 +233,12 @@ public class Class479 {
 	}
 
 	@OriginalMember(owner = "client!pe", name = "<init>", descriptor = "(Lclient!alw;)V", line = 85)
-	public Class479(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(13) int local13 = arg0.method22528((byte) -12);
+	public Class479(@OriginalArg(0) Packet arg0) {
+		@Pc(13) int local13 = arg0.gSmart1or2((byte) -12);
 		this.aClass482Array1[0] = new Class482();
 		this.aClass482Array1[0].method29760(0, Class472.method29542(arg0));
 		this.aClass482Array1[0].method29760(1, Class472.method29542(arg0));
-		this.aFloatArray114[0] = arg0.method22504(1887624564);
+		this.aFloatArray114[0] = arg0.gFloat(1887624564);
 		@Pc(46) Class472 local46 = Class472.method29542(arg0);
 		@Pc(49) Class472 local49 = Class472.method29542(arg0);
 		@Pc(53) Class472 local53 = Class472.method29579(local46, local49);
@@ -246,14 +246,14 @@ public class Class479 {
 		local53.method29567(local46);
 		this.aClass482Array1[0].method29760(3, local46);
 		this.aClass482Array1[0].method29760(2, local53);
-		this.aFloatArray114[1] = arg0.method22504(-2041242817);
+		this.aFloatArray114[1] = arg0.gFloat(-2041242817);
 		for (@Pc(83) int local83 = 2; local83 < local13; local83++) {
 			@Pc(89) Class472 local89 = Class472.method29542(arg0);
 			@Pc(92) Class472 local92 = Class472.method29542(arg0);
 			@Pc(96) Class472 local96 = Class472.method29579(local89, local92);
 			local92.method29544();
 			local96.method29567(local89);
-			this.method29712(local89, local96, arg0.method22504(1704471531));
+			this.method29712(local89, local96, arg0.gFloat(1704471531));
 		}
 	}
 }

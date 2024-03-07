@@ -29,11 +29,11 @@ public class Class93_Sub1_Sub17_Sub1 extends Class93_Sub1_Sub17 {
 	}
 
 	@OriginalMember(owner = "client!atd", name = "<init>", descriptor = "(ILclient!alw;)V", line = 22)
-	Class93_Sub1_Sub17_Sub1(@OriginalArg(0) int arg0, @OriginalArg(1) Class93_Sub41 arg1) {
+	Class93_Sub1_Sub17_Sub1(@OriginalArg(0) int arg0, @OriginalArg(1) Packet arg1) {
 		super(arg0);
-		this.aClass349_1 = Class102.method2587(arg1.method22465((short) 16384), -1837196080);
-		this.aFloat232 = arg1.method22504(-1158908159);
-		this.aFloat231 = arg1.method22504(-1080326059);
+		this.aClass349_1 = Class102.method2587(arg1.g1((short) 16384), -1837196080);
+		this.aFloat232 = arg1.gFloat(-1158908159);
+		this.aFloat231 = arg1.gFloat(-1080326059);
 	}
 
 	@OriginalMember(owner = "client!atd", name = "n", descriptor = "(FI)V", line = 29)
@@ -154,17 +154,17 @@ public class Class93_Sub1_Sub17_Sub1 extends Class93_Sub1_Sub17 {
 
 	@OriginalMember(owner = "client!atd", name = "k", descriptor = "(Lclient!alw;I)V", line = 62)
 	@Override
-	public void method23495(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		this.aClass349_1 = Class102.method2587(arg0.method22465((short) 16384), 1309578759);
-		this.aFloat232 = arg0.method22504(2039470482);
-		this.aFloat231 = arg0.method22504(601987057);
+	public void method23495(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		this.aClass349_1 = Class102.method2587(arg0.g1((short) 16384), 1309578759);
+		this.aFloat232 = arg0.gFloat(2039470482);
+		this.aFloat231 = arg0.gFloat(601987057);
 	}
 
 	@OriginalMember(owner = "client!atd", name = "d", descriptor = "(Lclient!alw;)V", line = 62)
 	@Override
-	public void method23502(@OriginalArg(0) Class93_Sub41 arg0) {
-		this.aClass349_1 = Class102.method2587(arg0.method22465((short) 16384), -793354180);
-		this.aFloat232 = arg0.method22504(-1802420104);
-		this.aFloat231 = arg0.method22504(1757158791);
+	public void method23502(@OriginalArg(0) Packet arg0) {
+		this.aClass349_1 = Class102.method2587(arg0.g1((short) 16384), -793354180);
+		this.aFloat232 = arg0.gFloat(-1802420104);
+		this.aFloat231 = arg0.gFloat(1757158791);
 	}
 }

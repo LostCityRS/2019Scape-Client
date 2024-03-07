@@ -387,12 +387,12 @@ public class Class366 implements Interface30 {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
 		@Pc(15) Class175 local15 = Class330.method27371(-1899288836);
 		@Pc(21) Class93_Sub22 local21 = Class102.method2588(Class446.aClass446_31, local15.aClass24_2, (byte) 7);
-		local21.aClass93_Sub41_Sub2_1.method22394(0, (byte) -6);
-		@Pc(32) int local32 = local21.aClass93_Sub41_Sub2_1.anInt3070 * 212851357;
-		local21.aClass93_Sub41_Sub2_1.method22394(local12, (byte) -55);
-		local21.aClass93_Sub41_Sub2_1.method22395(arg0.aClass434_1.anInt4807 * 526894191, 2143091659);
-		arg0.aClass434_1.aClass93_Sub1_Sub18_1.method22924(local21.aClass93_Sub41_Sub2_1, arg0.aClass434_1.anIntArray445, -1891254382);
-		local21.aClass93_Sub41_Sub2_1.method22451(local21.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local32, (byte) 70);
+		local21.aPacketBit_1.p1(0, (byte) -6);
+		@Pc(32) int local32 = local21.aPacketBit_1.pos * 212851357;
+		local21.aPacketBit_1.p1(local12, (byte) -55);
+		local21.aPacketBit_1.p2(arg0.aClass434_1.anInt4807 * 526894191, 2143091659);
+		arg0.aClass434_1.aClass93_Sub1_Sub18_1.method22924(local21.aPacketBit_1, arg0.aClass434_1.anIntArray445, -1891254382);
+		local21.aPacketBit_1.psize1(local21.aPacketBit_1.pos * 212851357 - local32, (byte) 70);
 		local15.method24356(local21, -1659915406);
 	}
 

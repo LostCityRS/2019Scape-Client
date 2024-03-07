@@ -41,9 +41,9 @@ public class Class442 {
 	}
 
 	@OriginalMember(owner = "client!nm", name = "e", descriptor = "(Lclient!alw;IB)V", line = 20)
-	void method28857(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
+	void method28857(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -52,9 +52,9 @@ public class Class442 {
 	}
 
 	@OriginalMember(owner = "client!nm", name = "m", descriptor = "(Lclient!alw;I)V", line = 20)
-	void method28858(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method28858(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -63,21 +63,21 @@ public class Class442 {
 	}
 
 	@OriginalMember(owner = "client!nm", name = "n", descriptor = "(Lclient!alw;IIB)V", line = 27)
-	void method28859(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) byte arg3) {
+	void method28859(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) byte arg3) {
 		if (arg1 == 1) {
-			this.anInt4892 = arg0.method22472(-1434290800) * 1702354679;
+			this.anInt4892 = arg0.g2(-1434290800) * 1702354679;
 			if (this.anInt4892 * -153468217 == 65535) {
 				this.anInt4892 = -1702354679;
 			}
 		} else if (arg1 == 2) {
-			this.anInt4888 = (arg0.method22472(-1434290800) + 1) * 652565033;
-			this.anInt4889 = (arg0.method22472(-1434290800) + 1) * 46377107;
+			this.anInt4888 = (arg0.g2(-1434290800) + 1) * 652565033;
+			this.anInt4889 = (arg0.g2(-1434290800) + 1) * 46377107;
 		} else if (arg1 == 3) {
-			arg0.method22468(829756967);
+			arg0.g1b(829756967);
 		} else if (arg1 == 4) {
-			this.anInt4890 = arg0.method22465((short) 16384) * 1400715237;
+			this.anInt4890 = arg0.g1((short) 16384) * 1400715237;
 		} else if (arg1 == 5) {
-			this.anInt4887 = arg0.method22465((short) 16384) * 619966023;
+			this.anInt4887 = arg0.g1((short) 16384) * 619966023;
 		} else if (arg1 == 6) {
 			this.aBoolean768 = true;
 		} else if (arg1 == 7) {
@@ -86,21 +86,21 @@ public class Class442 {
 	}
 
 	@OriginalMember(owner = "client!nm", name = "f", descriptor = "(Lclient!alw;II)V", line = 27)
-	void method28860(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	void method28860(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (arg1 == 1) {
-			this.anInt4892 = arg0.method22472(-1434290800) * 1702354679;
+			this.anInt4892 = arg0.g2(-1434290800) * 1702354679;
 			if (this.anInt4892 * -153468217 == 65535) {
 				this.anInt4892 = -1702354679;
 			}
 		} else if (arg1 == 2) {
-			this.anInt4888 = (arg0.method22472(-1434290800) + 1) * 652565033;
-			this.anInt4889 = (arg0.method22472(-1434290800) + 1) * 46377107;
+			this.anInt4888 = (arg0.g2(-1434290800) + 1) * 652565033;
+			this.anInt4889 = (arg0.g2(-1434290800) + 1) * 46377107;
 		} else if (arg1 == 3) {
-			arg0.method22468(727210476);
+			arg0.g1b(727210476);
 		} else if (arg1 == 4) {
-			this.anInt4890 = arg0.method22465((short) 16384) * 1400715237;
+			this.anInt4890 = arg0.g1((short) 16384) * 1400715237;
 		} else if (arg1 == 5) {
-			this.anInt4887 = arg0.method22465((short) 16384) * 619966023;
+			this.anInt4887 = arg0.g1((short) 16384) * 619966023;
 		} else if (arg1 == 6) {
 			this.aBoolean768 = true;
 		} else if (arg1 == 7) {
@@ -109,21 +109,21 @@ public class Class442 {
 	}
 
 	@OriginalMember(owner = "client!nm", name = "k", descriptor = "(Lclient!alw;II)V", line = 27)
-	void method28861(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	void method28861(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (arg1 == 1) {
-			this.anInt4892 = arg0.method22472(-1434290800) * 1702354679;
+			this.anInt4892 = arg0.g2(-1434290800) * 1702354679;
 			if (this.anInt4892 * -153468217 == 65535) {
 				this.anInt4892 = -1702354679;
 			}
 		} else if (arg1 == 2) {
-			this.anInt4888 = (arg0.method22472(-1434290800) + 1) * 652565033;
-			this.anInt4889 = (arg0.method22472(-1434290800) + 1) * 46377107;
+			this.anInt4888 = (arg0.g2(-1434290800) + 1) * 652565033;
+			this.anInt4889 = (arg0.g2(-1434290800) + 1) * 46377107;
 		} else if (arg1 == 3) {
-			arg0.method22468(550350297);
+			arg0.g1b(550350297);
 		} else if (arg1 == 4) {
-			this.anInt4890 = arg0.method22465((short) 16384) * 1400715237;
+			this.anInt4890 = arg0.g1((short) 16384) * 1400715237;
 		} else if (arg1 == 5) {
-			this.anInt4887 = arg0.method22465((short) 16384) * 619966023;
+			this.anInt4887 = arg0.g1((short) 16384) * 619966023;
 		} else if (arg1 == 6) {
 			this.aBoolean768 = true;
 		} else if (arg1 == 7) {

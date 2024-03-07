@@ -12,14 +12,14 @@ public class Class54_Sub1 extends Class54 implements Interface63 {
 	@Override
 	public void method31895(@OriginalArg(0) int arg0) {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_93, client.aClass175_2.aClass24_2, (byte) 66);
-		local5.aClass93_Sub41_Sub2_1.method22395(this.anInt1991 * -1764070459, 2141343770);
-		local5.aClass93_Sub41_Sub2_1.method22573(this.anInt1992 * 1446181419, -1591808004);
-		local5.aClass93_Sub41_Sub2_1.method22628(this.anInt1987 * -2116840285, (byte) -53);
-		local5.aClass93_Sub41_Sub2_1.method22628(this.anInt1990 * -1891243163, (byte) -88);
-		local5.aClass93_Sub41_Sub2_1.method22395(this.anInt1986 * 513218015, 2126693736);
-		local5.aClass93_Sub41_Sub2_1.method22578(this.anInt1983 * 2047260205, (byte) -1);
-		local5.aClass93_Sub41_Sub2_1.method22403(this.anInt1989 * 2036476303, (byte) 84);
-		local5.aClass93_Sub41_Sub2_1.method22624(this.anInt1985 * 1415985581, 146527835);
+		local5.aPacketBit_1.p2(this.anInt1991 * -1764070459, 2141343770);
+		local5.aPacketBit_1.p1_alt1(this.anInt1992 * 1446181419, -1591808004);
+		local5.aPacketBit_1.p3_alt3(this.anInt1987 * -2116840285, (byte) -53);
+		local5.aPacketBit_1.p3_alt3(this.anInt1990 * -1891243163, (byte) -88);
+		local5.aPacketBit_1.p2(this.anInt1986 * 513218015, 2126693736);
+		local5.aPacketBit_1.p1_alt3(this.anInt1983 * 2047260205, (byte) -1);
+		local5.aPacketBit_1.p3(this.anInt1989 * 2036476303, (byte) 84);
+		local5.aPacketBit_1.p3_alt2(this.anInt1985 * 1415985581, 146527835);
 		client.aClass175_2.method24356(local5, -1464096514);
 	}
 
@@ -27,14 +27,14 @@ public class Class54_Sub1 extends Class54 implements Interface63 {
 	@Override
 	public void method31894() {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_93, client.aClass175_2.aClass24_2, (byte) 16);
-		local5.aClass93_Sub41_Sub2_1.method22395(this.anInt1991 * -1764070459, 2141123281);
-		local5.aClass93_Sub41_Sub2_1.method22573(this.anInt1992 * 1446181419, -1591808004);
-		local5.aClass93_Sub41_Sub2_1.method22628(this.anInt1987 * -2116840285, (byte) -117);
-		local5.aClass93_Sub41_Sub2_1.method22628(this.anInt1990 * -1891243163, (byte) -30);
-		local5.aClass93_Sub41_Sub2_1.method22395(this.anInt1986 * 513218015, 2138897964);
-		local5.aClass93_Sub41_Sub2_1.method22578(this.anInt1983 * 2047260205, (byte) -105);
-		local5.aClass93_Sub41_Sub2_1.method22403(this.anInt1989 * 2036476303, (byte) 33);
-		local5.aClass93_Sub41_Sub2_1.method22624(this.anInt1985 * 1415985581, 146527835);
+		local5.aPacketBit_1.p2(this.anInt1991 * -1764070459, 2141123281);
+		local5.aPacketBit_1.p1_alt1(this.anInt1992 * 1446181419, -1591808004);
+		local5.aPacketBit_1.p3_alt3(this.anInt1987 * -2116840285, (byte) -117);
+		local5.aPacketBit_1.p3_alt3(this.anInt1990 * -1891243163, (byte) -30);
+		local5.aPacketBit_1.p2(this.anInt1986 * 513218015, 2138897964);
+		local5.aPacketBit_1.p1_alt3(this.anInt1983 * 2047260205, (byte) -105);
+		local5.aPacketBit_1.p3(this.anInt1989 * 2036476303, (byte) 33);
+		local5.aPacketBit_1.p3_alt2(this.anInt1985 * 1415985581, 146527835);
 		client.aClass175_2.method24356(local5, -2033418298);
 	}
 
@@ -42,14 +42,14 @@ public class Class54_Sub1 extends Class54 implements Interface63 {
 	@Override
 	public void method31896() {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_93, client.aClass175_2.aClass24_2, (byte) 27);
-		local5.aClass93_Sub41_Sub2_1.method22395(this.anInt1991 * -1764070459, 2133637699);
-		local5.aClass93_Sub41_Sub2_1.method22573(this.anInt1992 * 1446181419, -1591808004);
-		local5.aClass93_Sub41_Sub2_1.method22628(this.anInt1987 * -2116840285, (byte) -7);
-		local5.aClass93_Sub41_Sub2_1.method22628(this.anInt1990 * -1891243163, (byte) -58);
-		local5.aClass93_Sub41_Sub2_1.method22395(this.anInt1986 * 513218015, 2146747451);
-		local5.aClass93_Sub41_Sub2_1.method22578(this.anInt1983 * 2047260205, (byte) -43);
-		local5.aClass93_Sub41_Sub2_1.method22403(this.anInt1989 * 2036476303, (byte) 60);
-		local5.aClass93_Sub41_Sub2_1.method22624(this.anInt1985 * 1415985581, 146527835);
+		local5.aPacketBit_1.p2(this.anInt1991 * -1764070459, 2133637699);
+		local5.aPacketBit_1.p1_alt1(this.anInt1992 * 1446181419, -1591808004);
+		local5.aPacketBit_1.p3_alt3(this.anInt1987 * -2116840285, (byte) -7);
+		local5.aPacketBit_1.p3_alt3(this.anInt1990 * -1891243163, (byte) -58);
+		local5.aPacketBit_1.p2(this.anInt1986 * 513218015, 2146747451);
+		local5.aPacketBit_1.p1_alt3(this.anInt1983 * 2047260205, (byte) -43);
+		local5.aPacketBit_1.p3(this.anInt1989 * 2036476303, (byte) 60);
+		local5.aPacketBit_1.p3_alt2(this.anInt1985 * 1415985581, 146527835);
 		client.aClass175_2.method24356(local5, -1926900012);
 	}
 
@@ -57,14 +57,14 @@ public class Class54_Sub1 extends Class54 implements Interface63 {
 	@Override
 	public void method31897() {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_93, client.aClass175_2.aClass24_2, (byte) 26);
-		local5.aClass93_Sub41_Sub2_1.method22395(this.anInt1991 * -1764070459, 2144451424);
-		local5.aClass93_Sub41_Sub2_1.method22573(this.anInt1992 * 1446181419, -1591808004);
-		local5.aClass93_Sub41_Sub2_1.method22628(this.anInt1987 * -2116840285, (byte) -2);
-		local5.aClass93_Sub41_Sub2_1.method22628(this.anInt1990 * -1891243163, (byte) -87);
-		local5.aClass93_Sub41_Sub2_1.method22395(this.anInt1986 * 513218015, 2132987643);
-		local5.aClass93_Sub41_Sub2_1.method22578(this.anInt1983 * 2047260205, (byte) -36);
-		local5.aClass93_Sub41_Sub2_1.method22403(this.anInt1989 * 2036476303, (byte) 114);
-		local5.aClass93_Sub41_Sub2_1.method22624(this.anInt1985 * 1415985581, 146527835);
+		local5.aPacketBit_1.p2(this.anInt1991 * -1764070459, 2144451424);
+		local5.aPacketBit_1.p1_alt1(this.anInt1992 * 1446181419, -1591808004);
+		local5.aPacketBit_1.p3_alt3(this.anInt1987 * -2116840285, (byte) -2);
+		local5.aPacketBit_1.p3_alt3(this.anInt1990 * -1891243163, (byte) -87);
+		local5.aPacketBit_1.p2(this.anInt1986 * 513218015, 2132987643);
+		local5.aPacketBit_1.p1_alt3(this.anInt1983 * 2047260205, (byte) -36);
+		local5.aPacketBit_1.p3(this.anInt1989 * 2036476303, (byte) 114);
+		local5.aPacketBit_1.p3_alt2(this.anInt1985 * 1415985581, 146527835);
 		client.aClass175_2.method24356(local5, -1504799530);
 	}
 
@@ -72,14 +72,14 @@ public class Class54_Sub1 extends Class54 implements Interface63 {
 	@Override
 	public void method31898() {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_93, client.aClass175_2.aClass24_2, (byte) 127);
-		local5.aClass93_Sub41_Sub2_1.method22395(this.anInt1991 * -1764070459, 2145507074);
-		local5.aClass93_Sub41_Sub2_1.method22573(this.anInt1992 * 1446181419, -1591808004);
-		local5.aClass93_Sub41_Sub2_1.method22628(this.anInt1987 * -2116840285, (byte) -65);
-		local5.aClass93_Sub41_Sub2_1.method22628(this.anInt1990 * -1891243163, (byte) 1);
-		local5.aClass93_Sub41_Sub2_1.method22395(this.anInt1986 * 513218015, 2133968699);
-		local5.aClass93_Sub41_Sub2_1.method22578(this.anInt1983 * 2047260205, (byte) -15);
-		local5.aClass93_Sub41_Sub2_1.method22403(this.anInt1989 * 2036476303, (byte) 85);
-		local5.aClass93_Sub41_Sub2_1.method22624(this.anInt1985 * 1415985581, 146527835);
+		local5.aPacketBit_1.p2(this.anInt1991 * -1764070459, 2145507074);
+		local5.aPacketBit_1.p1_alt1(this.anInt1992 * 1446181419, -1591808004);
+		local5.aPacketBit_1.p3_alt3(this.anInt1987 * -2116840285, (byte) -65);
+		local5.aPacketBit_1.p3_alt3(this.anInt1990 * -1891243163, (byte) 1);
+		local5.aPacketBit_1.p2(this.anInt1986 * 513218015, 2133968699);
+		local5.aPacketBit_1.p1_alt3(this.anInt1983 * 2047260205, (byte) -15);
+		local5.aPacketBit_1.p3(this.anInt1989 * 2036476303, (byte) 85);
+		local5.aPacketBit_1.p3_alt2(this.anInt1985 * 1415985581, 146527835);
 		client.aClass175_2.method24356(local5, -1854541100);
 	}
 

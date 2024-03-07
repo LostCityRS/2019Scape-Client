@@ -8,14 +8,12 @@ import java.awt.Font;
 import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Insets;
-import java.awt.LayoutManager;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-import java.awt.image.ImageObserver;
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -623,33 +621,33 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 		if (aFile2.exists()) {
 			try {
 				@Pc(50) Class38 local50 = new Class38(aFile2, "rw", 10000L);
-				@Pc(58) Class93_Sub41 local58 = new Class93_Sub41((int) local50.method732(1660572298));
+				@Pc(58) Packet local58 = new Packet((int) local50.method732(1660572298));
 				@Pc(84) int local84;
-				while (local58.anInt3070 * 212851357 < local58.aByteArray58.length) {
-					local84 = local50.method734(local58.aByteArray58, local58.anInt3070 * 212851357, local58.aByteArray58.length - local58.anInt3070 * 212851357, (byte) 30);
+				while (local58.pos * 212851357 < local58.data.length) {
+					local84 = local50.method734(local58.data, local58.pos * 212851357, local58.data.length - local58.pos * 212851357, (byte) 30);
 					if (local84 == -1) {
 						throw new IOException();
 					}
-					local58.anInt3070 += local84 * -1445626955;
+					local58.pos += local84 * -1445626955;
 				}
-				local58.anInt3070 = 0;
-				local84 = local58.method22465((short) 16384);
+				local58.pos = 0;
+				local84 = local58.g1((short) 16384);
 				if (local84 < 1 || local84 > 3) {
 					throw new IOException("" + local84);
 				}
 				@Pc(127) int local127 = 0;
 				if (local84 > 1) {
-					local127 = local58.method22465((short) 16384);
+					local127 = local58.g1((short) 16384);
 				}
 				if (local84 <= 2) {
-					local36 = local58.method22512(1918013460);
+					local36 = local58.gjstr2(1918013460);
 					if (local127 == 1) {
-						local38 = local58.method22512(-360628168);
+						local38 = local58.gjstr2(-360628168);
 					}
 				} else {
-					local36 = local58.method22515(-1927749946);
+					local36 = local58.gUTF8(-1927749946);
 					if (local127 == 1) {
-						local38 = local58.method22515(1319692524);
+						local38 = local58.gUTF8(1319692524);
 					}
 				}
 				local50.method728(-1482521954);
@@ -721,33 +719,33 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 		if (aFile2.exists()) {
 			try {
 				@Pc(50) Class38 local50 = new Class38(aFile2, "rw", 10000L);
-				@Pc(58) Class93_Sub41 local58 = new Class93_Sub41((int) local50.method732(1851298646));
+				@Pc(58) Packet local58 = new Packet((int) local50.method732(1851298646));
 				@Pc(84) int local84;
-				while (local58.anInt3070 * 212851357 < local58.aByteArray58.length) {
-					local84 = local50.method734(local58.aByteArray58, local58.anInt3070 * 212851357, local58.aByteArray58.length - local58.anInt3070 * 212851357, (byte) 9);
+				while (local58.pos * 212851357 < local58.data.length) {
+					local84 = local50.method734(local58.data, local58.pos * 212851357, local58.data.length - local58.pos * 212851357, (byte) 9);
 					if (local84 == -1) {
 						throw new IOException();
 					}
-					local58.anInt3070 += local84 * -1445626955;
+					local58.pos += local84 * -1445626955;
 				}
-				local58.anInt3070 = 0;
-				local84 = local58.method22465((short) 16384);
+				local58.pos = 0;
+				local84 = local58.g1((short) 16384);
 				if (local84 < 1 || local84 > 3) {
 					throw new IOException("" + local84);
 				}
 				@Pc(127) int local127 = 0;
 				if (local84 > 1) {
-					local127 = local58.method22465((short) 16384);
+					local127 = local58.g1((short) 16384);
 				}
 				if (local84 <= 2) {
-					local36 = local58.method22512(-954973916);
+					local36 = local58.gjstr2(-954973916);
 					if (local127 == 1) {
-						local38 = local58.method22512(-914566597);
+						local38 = local58.gjstr2(-914566597);
 					}
 				} else {
-					local36 = local58.method22515(-2049293466);
+					local36 = local58.gUTF8(-2049293466);
 					if (local127 == 1) {
-						local38 = local58.method22515(1078310015);
+						local38 = local58.gUTF8(1078310015);
 					}
 				}
 				local50.method728(-1215743722);
@@ -819,33 +817,33 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 		if (aFile2.exists()) {
 			try {
 				@Pc(50) Class38 local50 = new Class38(aFile2, "rw", 10000L);
-				@Pc(58) Class93_Sub41 local58 = new Class93_Sub41((int) local50.method732(1387314695));
+				@Pc(58) Packet local58 = new Packet((int) local50.method732(1387314695));
 				@Pc(84) int local84;
-				while (local58.anInt3070 * 212851357 < local58.aByteArray58.length) {
-					local84 = local50.method734(local58.aByteArray58, local58.anInt3070 * 212851357, local58.aByteArray58.length - local58.anInt3070 * 212851357, (byte) 53);
+				while (local58.pos * 212851357 < local58.data.length) {
+					local84 = local50.method734(local58.data, local58.pos * 212851357, local58.data.length - local58.pos * 212851357, (byte) 53);
 					if (local84 == -1) {
 						throw new IOException();
 					}
-					local58.anInt3070 += local84 * -1445626955;
+					local58.pos += local84 * -1445626955;
 				}
-				local58.anInt3070 = 0;
-				local84 = local58.method22465((short) 16384);
+				local58.pos = 0;
+				local84 = local58.g1((short) 16384);
 				if (local84 < 1 || local84 > 3) {
 					throw new IOException("" + local84);
 				}
 				@Pc(127) int local127 = 0;
 				if (local84 > 1) {
-					local127 = local58.method22465((short) 16384);
+					local127 = local58.g1((short) 16384);
 				}
 				if (local84 <= 2) {
-					local36 = local58.method22512(490795334);
+					local36 = local58.gjstr2(490795334);
 					if (local127 == 1) {
-						local38 = local58.method22512(368323162);
+						local38 = local58.gjstr2(368323162);
 					}
 				} else {
-					local36 = local58.method22515(-139136361);
+					local36 = local58.gUTF8(-139136361);
 					if (local127 == 1) {
-						local38 = local58.method22515(496690280);
+						local38 = local58.gUTF8(496690280);
 					}
 				}
 				local50.method728(33957482);
@@ -917,33 +915,33 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 		if (aFile2.exists()) {
 			try {
 				@Pc(50) Class38 local50 = new Class38(aFile2, "rw", 10000L);
-				@Pc(58) Class93_Sub41 local58 = new Class93_Sub41((int) local50.method732(1154194021));
+				@Pc(58) Packet local58 = new Packet((int) local50.method732(1154194021));
 				@Pc(84) int local84;
-				while (local58.anInt3070 * 212851357 < local58.aByteArray58.length) {
-					local84 = local50.method734(local58.aByteArray58, local58.anInt3070 * 212851357, local58.aByteArray58.length - local58.anInt3070 * 212851357, (byte) -67);
+				while (local58.pos * 212851357 < local58.data.length) {
+					local84 = local50.method734(local58.data, local58.pos * 212851357, local58.data.length - local58.pos * 212851357, (byte) -67);
 					if (local84 == -1) {
 						throw new IOException();
 					}
-					local58.anInt3070 += local84 * -1445626955;
+					local58.pos += local84 * -1445626955;
 				}
-				local58.anInt3070 = 0;
-				local84 = local58.method22465((short) 16384);
+				local58.pos = 0;
+				local84 = local58.g1((short) 16384);
 				if (local84 < 1 || local84 > 3) {
 					throw new IOException("" + local84);
 				}
 				@Pc(127) int local127 = 0;
 				if (local84 > 1) {
-					local127 = local58.method22465((short) 16384);
+					local127 = local58.g1((short) 16384);
 				}
 				if (local84 <= 2) {
-					local36 = local58.method22512(1036988259);
+					local36 = local58.gjstr2(1036988259);
 					if (local127 == 1) {
-						local38 = local58.method22512(1821938129);
+						local38 = local58.gjstr2(1821938129);
 					}
 				} else {
-					local36 = local58.method22515(612036406);
+					local36 = local58.gUTF8(612036406);
 					if (local127 == 1) {
-						local38 = local58.method22515(1946811762);
+						local38 = local58.gUTF8(1946811762);
 					}
 				}
 				local50.method728(-704935415);
@@ -1015,33 +1013,33 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 		if (aFile2.exists()) {
 			try {
 				@Pc(50) Class38 local50 = new Class38(aFile2, "rw", 10000L);
-				@Pc(58) Class93_Sub41 local58 = new Class93_Sub41((int) local50.method732(1265194522));
+				@Pc(58) Packet local58 = new Packet((int) local50.method732(1265194522));
 				@Pc(84) int local84;
-				while (local58.anInt3070 * 212851357 < local58.aByteArray58.length) {
-					local84 = local50.method734(local58.aByteArray58, local58.anInt3070 * 212851357, local58.aByteArray58.length - local58.anInt3070 * 212851357, (byte) -26);
+				while (local58.pos * 212851357 < local58.data.length) {
+					local84 = local50.method734(local58.data, local58.pos * 212851357, local58.data.length - local58.pos * 212851357, (byte) -26);
 					if (local84 == -1) {
 						throw new IOException();
 					}
-					local58.anInt3070 += local84 * -1445626955;
+					local58.pos += local84 * -1445626955;
 				}
-				local58.anInt3070 = 0;
-				local84 = local58.method22465((short) 16384);
+				local58.pos = 0;
+				local84 = local58.g1((short) 16384);
 				if (local84 < 1 || local84 > 3) {
 					throw new IOException("" + local84);
 				}
 				@Pc(127) int local127 = 0;
 				if (local84 > 1) {
-					local127 = local58.method22465((short) 16384);
+					local127 = local58.g1((short) 16384);
 				}
 				if (local84 <= 2) {
-					local36 = local58.method22512(1569283594);
+					local36 = local58.gjstr2(1569283594);
 					if (local127 == 1) {
-						local38 = local58.method22512(-213334342);
+						local38 = local58.gjstr2(-213334342);
 					}
 				} else {
-					local36 = local58.method22515(757385102);
+					local36 = local58.gUTF8(757385102);
 					if (local127 == 1) {
-						local38 = local58.method22515(321840681);
+						local38 = local58.gUTF8(321840681);
 					}
 				}
 				local50.method728(871620613);
@@ -1106,14 +1104,14 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 	void method24854(@OriginalArg(0) File arg0, @OriginalArg(1) File arg1, @OriginalArg(2) int arg2) {
 		try {
 			@Pc(6) Class38 local6 = new Class38(aFile2, "rw", 10000L);
-			@Pc(11) Class93_Sub41 local11 = new Class93_Sub41(500);
-			local11.method22394(3, (byte) -88);
-			local11.method22394(arg1 == null ? 0 : 1, (byte) -102);
-			local11.method22437(arg0.getPath(), -1489303680);
+			@Pc(11) Packet local11 = new Packet(500);
+			local11.p1(3, (byte) -88);
+			local11.p1(arg1 == null ? 0 : 1, (byte) -102);
+			local11.pUTF8(arg0.getPath(), -1489303680);
 			if (arg1 != null) {
-				local11.method22437(arg1.getPath(), -1489303680);
+				local11.pUTF8(arg1.getPath(), -1489303680);
 			}
-			local6.method725(local11.aByteArray58, 0, local11.anInt3070 * 212851357, 1989108324);
+			local6.method725(local11.data, 0, local11.pos * 212851357, 1989108324);
 			local6.method728(-857072319);
 		} catch (@Pc(52) IOException local52) {
 			local52.printStackTrace();
@@ -1124,14 +1122,14 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 	void method24855(@OriginalArg(0) File arg0, @OriginalArg(1) File arg1) {
 		try {
 			@Pc(6) Class38 local6 = new Class38(aFile2, "rw", 10000L);
-			@Pc(11) Class93_Sub41 local11 = new Class93_Sub41(500);
-			local11.method22394(3, (byte) -83);
-			local11.method22394(arg1 == null ? 0 : 1, (byte) -56);
-			local11.method22437(arg0.getPath(), -1489303680);
+			@Pc(11) Packet local11 = new Packet(500);
+			local11.p1(3, (byte) -83);
+			local11.p1(arg1 == null ? 0 : 1, (byte) -56);
+			local11.pUTF8(arg0.getPath(), -1489303680);
 			if (arg1 != null) {
-				local11.method22437(arg1.getPath(), -1489303680);
+				local11.pUTF8(arg1.getPath(), -1489303680);
 			}
-			local6.method725(local11.aByteArray58, 0, local11.anInt3070 * 212851357, 894179715);
+			local6.method725(local11.data, 0, local11.pos * 212851357, 894179715);
 			local6.method728(976031218);
 		} catch (@Pc(52) IOException local52) {
 			local52.printStackTrace();
@@ -1142,14 +1140,14 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 	void method24856(@OriginalArg(0) File arg0, @OriginalArg(1) File arg1) {
 		try {
 			@Pc(6) Class38 local6 = new Class38(aFile2, "rw", 10000L);
-			@Pc(11) Class93_Sub41 local11 = new Class93_Sub41(500);
-			local11.method22394(3, (byte) -6);
-			local11.method22394(arg1 == null ? 0 : 1, (byte) -118);
-			local11.method22437(arg0.getPath(), -1489303680);
+			@Pc(11) Packet local11 = new Packet(500);
+			local11.p1(3, (byte) -6);
+			local11.p1(arg1 == null ? 0 : 1, (byte) -118);
+			local11.pUTF8(arg0.getPath(), -1489303680);
 			if (arg1 != null) {
-				local11.method22437(arg1.getPath(), -1489303680);
+				local11.pUTF8(arg1.getPath(), -1489303680);
 			}
-			local6.method725(local11.aByteArray58, 0, local11.anInt3070 * 212851357, -1708741302);
+			local6.method725(local11.data, 0, local11.pos * 212851357, -1708741302);
 			local6.method728(-457505000);
 		} catch (@Pc(52) IOException local52) {
 			local52.printStackTrace();
@@ -1160,14 +1158,14 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 	void method24857(@OriginalArg(0) File arg0, @OriginalArg(1) File arg1) {
 		try {
 			@Pc(6) Class38 local6 = new Class38(aFile2, "rw", 10000L);
-			@Pc(11) Class93_Sub41 local11 = new Class93_Sub41(500);
-			local11.method22394(3, (byte) -36);
-			local11.method22394(arg1 == null ? 0 : 1, (byte) -7);
-			local11.method22437(arg0.getPath(), -1489303680);
+			@Pc(11) Packet local11 = new Packet(500);
+			local11.p1(3, (byte) -36);
+			local11.p1(arg1 == null ? 0 : 1, (byte) -7);
+			local11.pUTF8(arg0.getPath(), -1489303680);
 			if (arg1 != null) {
-				local11.method22437(arg1.getPath(), -1489303680);
+				local11.pUTF8(arg1.getPath(), -1489303680);
 			}
-			local6.method725(local11.aByteArray58, 0, local11.anInt3070 * 212851357, -1272482105);
+			local6.method725(local11.data, 0, local11.pos * 212851357, -1272482105);
 			local6.method728(257370419);
 		} catch (@Pc(52) IOException local52) {
 			local52.printStackTrace();
@@ -1282,7 +1280,7 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 	}
 
 	@OriginalMember(owner = "client!sk", name = "bb", descriptor = "(Lclient!alw;)V", line = 411)
-	public static void method24862(@OriginalArg(0) Class93_Sub41 arg0) {
+	public static void method24862(@OriginalArg(0) Packet arg0) {
 		@Pc(2) byte[] local2 = new byte[24];
 		try {
 			aClass42_4.method819(0L);
@@ -1298,29 +1296,29 @@ public abstract class Class553 implements Interface60, Runnable, FocusListener, 
 				local2[local33] = -1;
 			}
 		}
-		arg0.method22439(local2, 0, 24, 2026842986);
+		arg0.pdata(local2, 0, 24, 2026842986);
 	}
 
 	@OriginalMember(owner = "client!sk", name = "be", descriptor = "(Lclient!alw;I)V", line = 428)
-	static void method24863(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	static void method24863(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (aClass42_4 == null) {
 			return;
 		}
 		try {
 			aClass42_4.method819(0L);
-			aClass42_4.method835(arg0.aByteArray58, arg1, 24, 1992282413);
+			aClass42_4.method835(arg0.data, arg1, 24, 1992282413);
 		} catch (@Pc(14) Exception local14) {
 		}
 	}
 
 	@OriginalMember(owner = "client!sk", name = "by", descriptor = "(Lclient!alw;I)V", line = 428)
-	static void method24864(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	static void method24864(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (aClass42_4 == null) {
 			return;
 		}
 		try {
 			aClass42_4.method819(0L);
-			aClass42_4.method835(arg0.aByteArray58, arg1, 24, 1612784751);
+			aClass42_4.method835(arg0.data, arg1, 24, 1612784751);
 		} catch (@Pc(14) Exception local14) {
 		}
 	}

@@ -131,43 +131,43 @@ public class Class711 {
 	}
 
 	@OriginalMember(owner = "client!zn", name = "c", descriptor = "(Ljava/lang/Iterable;Lclient!alw;)V", line = 46)
-	public static void method36808(@OriginalArg(0) Iterable arg0, @OriginalArg(1) Class93_Sub41 arg1) {
+	public static void method36808(@OriginalArg(0) Iterable arg0, @OriginalArg(1) Packet arg1) {
 		@Pc(3) int local3 = Class384.method28154(arg0, 500666449);
-		arg1.method22456(local3, (byte) 44);
+		arg1.pSmart1or2(local3, (byte) 44);
 		if (local3 == 0) {
 			return;
 		}
 		for (@Pc(13) int local13 = 0; local13 < local3; local13++) {
-			arg1.aByteArray58[arg1.anInt3070 * 212851357 + local13] = 0;
+			arg1.data[arg1.pos * 212851357 + local13] = 0;
 		}
 		@Pc(31) Iterator local31 = arg0.iterator();
 		while (local31.hasNext()) {
 			@Pc(38) Interface75 local38 = (Interface75) local31.next();
 			@Pc(41) int local41 = local38.method36920();
 			@Pc(45) int local45 = local41 / 8;
-			arg1.aByteArray58[arg1.anInt3070 * 212851357 + local45] = (byte) (arg1.aByteArray58[arg1.anInt3070 * 212851357 + local45] | 0x1 << (local41 & 0x7));
+			arg1.data[arg1.pos * 212851357 + local45] = (byte) (arg1.data[arg1.pos * 212851357 + local45] | 0x1 << (local41 & 0x7));
 		}
-		arg1.anInt3070 += local3 * -1445626955;
+		arg1.pos += local3 * -1445626955;
 	}
 
 	@OriginalMember(owner = "client!zn", name = "r", descriptor = "(Ljava/lang/Iterable;Lclient!alw;)V", line = 46)
-	public static void method36809(@OriginalArg(0) Iterable arg0, @OriginalArg(1) Class93_Sub41 arg1) {
+	public static void method36809(@OriginalArg(0) Iterable arg0, @OriginalArg(1) Packet arg1) {
 		@Pc(3) int local3 = Class384.method28154(arg0, 235595445);
-		arg1.method22456(local3, (byte) 6);
+		arg1.pSmart1or2(local3, (byte) 6);
 		if (local3 == 0) {
 			return;
 		}
 		for (@Pc(13) int local13 = 0; local13 < local3; local13++) {
-			arg1.aByteArray58[arg1.anInt3070 * 212851357 + local13] = 0;
+			arg1.data[arg1.pos * 212851357 + local13] = 0;
 		}
 		@Pc(31) Iterator local31 = arg0.iterator();
 		while (local31.hasNext()) {
 			@Pc(38) Interface75 local38 = (Interface75) local31.next();
 			@Pc(41) int local41 = local38.method36920();
 			@Pc(45) int local45 = local41 / 8;
-			arg1.aByteArray58[arg1.anInt3070 * 212851357 + local45] = (byte) (arg1.aByteArray58[arg1.anInt3070 * 212851357 + local45] | 0x1 << (local41 & 0x7));
+			arg1.data[arg1.pos * 212851357 + local45] = (byte) (arg1.data[arg1.pos * 212851357 + local45] | 0x1 << (local41 & 0x7));
 		}
-		arg1.anInt3070 += local3 * -1445626955;
+		arg1.pos += local3 * -1445626955;
 	}
 
 	@OriginalMember(owner = "client!zn", name = "e", descriptor = "(Lclient!py;Lclient!df;Lclient!es;I)V", line = 52)

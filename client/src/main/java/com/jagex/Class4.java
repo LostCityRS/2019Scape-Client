@@ -110,16 +110,16 @@ public final class Class4 {
 	}
 
 	@OriginalMember(owner = "client!aab", name = "ae", descriptor = "(Lclient!ase;I)V", line = 1001)
-	static void method30(@OriginalArg(0) Class93_Sub41_Sub2 arg0, @OriginalArg(1) int arg1) {
+	static void method30(@OriginalArg(0) PacketBit arg0, @OriginalArg(1) int arg1) {
 		@Pc(2) Class31[] local2 = Class286.method26524((byte) 12);
 		for (@Pc(4) int local4 = 0; local4 < local2.length; local4++) {
 			@Pc(12) Class31 local12 = local2[local4];
 			if (Class31.aClass31_7 != local12) {
 				@Pc(21) Class497 local21 = (Class497) Class14.aMap1.get(local12);
 				if (local21 == null) {
-					arg0.method22406(0, (byte) 75);
+					arg0.p4(0, (byte) 75);
 				} else {
-					arg0.method22406(local21.method30048((short) -23469), (byte) -33);
+					arg0.p4(local21.method30048((short) -23469), (byte) -33);
 				}
 			}
 		}

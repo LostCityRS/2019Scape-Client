@@ -23,16 +23,16 @@ public abstract class Class124 {
 	}
 
 	@OriginalMember(owner = "client!kl", name = "b", descriptor = "(Lclient!ase;I)V", line = 879)
-	static void method21400(@OriginalArg(0) Class93_Sub41_Sub2 arg0, @OriginalArg(1) int arg1) {
-		@Pc(8) boolean local8 = arg0.method22465((short) 16384) == 1;
+	static void method21400(@OriginalArg(0) PacketBit arg0, @OriginalArg(1) int arg1) {
+		@Pc(8) boolean local8 = arg0.g1((short) 16384) == 1;
 		if (!local8) {
 			return;
 		}
 		@Pc(12) boolean local12 = false;
-		@Pc(18) int local18 = arg0.method22667(-1905559379) << 24;
-		@Pc(26) int local26 = local18 | arg0.method22667(-1795674623) << 16;
-		@Pc(34) int local34 = local26 | arg0.method22667(-1708200762) << 8;
-		@Pc(40) int local40 = local34 | arg0.method22667(-617258435);
+		@Pc(18) int local18 = arg0.g1opcode(-1905559379) << 24;
+		@Pc(26) int local26 = local18 | arg0.g1opcode(-1795674623) << 16;
+		@Pc(34) int local34 = local26 | arg0.g1opcode(-1708200762) << 8;
+		@Pc(40) int local40 = local34 | arg0.g1opcode(-617258435);
 		Class266.aClass306_1.method26809(Class413.aLong272 * 1983505324986122333L, local40, 823690709);
 	}
 
@@ -104,7 +104,7 @@ public abstract class Class124 {
 	public abstract void method21412(@OriginalArg(0) Class368 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) byte arg3);
 
 	@OriginalMember(owner = "client!kl", name = "u", descriptor = "(Lclient!alw;I)V")
-	public abstract void method21413(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1);
+	public abstract void method21413(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1);
 
 	@OriginalMember(owner = "client!kl", name = "z", descriptor = "()Z")
 	public abstract boolean method21414();
@@ -134,10 +134,10 @@ public abstract class Class124 {
 	public abstract float method21422();
 
 	@OriginalMember(owner = "client!kl", name = "q", descriptor = "(Lclient!alw;)V")
-	public abstract void method21423(@OriginalArg(0) Class93_Sub41 arg0);
+	public abstract void method21423(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!kl", name = "x", descriptor = "(Lclient!alw;)V")
-	public abstract void method21424(@OriginalArg(0) Class93_Sub41 arg0);
+	public abstract void method21424(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!kl", name = "b", descriptor = "(F[[[ILclient!qx;II)V")
 	public abstract void method21425(@OriginalArg(0) float arg0, @OriginalArg(1) int[][][] arg1, @OriginalArg(2) Class520 arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4);

@@ -597,7 +597,7 @@ public class Class453 {
 	public static final Class453 aClass453_162 = new Class453(194, 4);
 
 	@OriginalMember(owner = "client!nz", name = "gg", descriptor = "I")
-	public final int anInt5034;
+	public final int opcode;
 
 	@OriginalMember(owner = "client!nz", name = "gr", descriptor = "I")
 	public final int anInt5033;
@@ -628,7 +628,7 @@ public class Class453 {
 
 	@OriginalMember(owner = "client!nz", name = "<init>", descriptor = "(II)V", line = 209)
 	Class453(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		this.anInt5034 = arg0 * -1690226739;
+		this.opcode = arg0 * -1690226739;
 		this.anInt5033 = arg1 * -215834691;
 	}
 

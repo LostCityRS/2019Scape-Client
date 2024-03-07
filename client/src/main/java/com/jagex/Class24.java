@@ -47,7 +47,7 @@ public final class Class24 {
 	}
 
 	@OriginalMember(owner = "client!aav", name = "e", descriptor = "(I)I", line = 24)
-	public final int method504(@OriginalArg(0) int arg0) {
+	public final int nextInt(@OriginalArg(0) int arg0) {
 		if (this.anInt77 * -732254649 == 0) {
 			this.method512(-225680934);
 			this.anInt77 = 211515136;
@@ -78,7 +78,7 @@ public final class Class24 {
 	}
 
 	@OriginalMember(owner = "client!aav", name = "n", descriptor = "(I)I", line = 32)
-	public final int method507(@OriginalArg(0) int arg0) {
+	public final int peekInt(@OriginalArg(0) int arg0) {
 		if (this.anInt77 * -732254649 == 0) {
 			this.method512(434971419);
 			this.anInt77 = 211515136;

@@ -59,7 +59,7 @@ public abstract class Class93_Sub31 extends Class93 {
 	}
 
 	@OriginalMember(owner = "client!aku", name = "m", descriptor = "(Lclient!alw;)V")
-	abstract void method22009(@OriginalArg(0) Class93_Sub41 arg0);
+	abstract void method22009(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!aku", name = "n", descriptor = "(Lclient!akr;S)V")
 	abstract void method22010(@OriginalArg(0) Class93_Sub28 arg0, @OriginalArg(1) short arg1);
@@ -74,5 +74,5 @@ public abstract class Class93_Sub31 extends Class93 {
 	abstract void method22013(@OriginalArg(0) Class93_Sub28 arg0);
 
 	@OriginalMember(owner = "client!aku", name = "e", descriptor = "(Lclient!alw;I)V")
-	abstract void method22014(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1);
+	abstract void method22014(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1);
 }

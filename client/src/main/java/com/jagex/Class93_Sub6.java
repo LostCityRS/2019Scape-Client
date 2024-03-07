@@ -339,7 +339,7 @@ public class Class93_Sub6 extends Class93 {
 
 	@OriginalMember(owner = "client!ajo", name = "r", descriptor = "([II[IZI)J", line = 165)
 	long method12678(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) boolean arg3, @OriginalArg(4) int arg4) {
-		@Pc(1) long[] local1 = Class93_Sub41.aLongArray18;
+		@Pc(1) long[] local1 = Packet.crc64table;
 		@Pc(3) long local3 = -1L;
 		@Pc(19) long local19 = local3 >>> 8 ^ local1[(int) ((local3 ^ (long) (arg1 >> 8)) & 0xFFL)];
 		local3 = local19 >>> 8 ^ local1[(int) ((local19 ^ (long) arg1) & 0xFFL)];
@@ -360,7 +360,7 @@ public class Class93_Sub6 extends Class93 {
 
 	@OriginalMember(owner = "client!ajo", name = "aq", descriptor = "([II[IZ)J", line = 165)
 	long method12679(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) boolean arg3) {
-		@Pc(1) long[] local1 = Class93_Sub41.aLongArray18;
+		@Pc(1) long[] local1 = Packet.crc64table;
 		@Pc(3) long local3 = -1L;
 		@Pc(19) long local19 = local3 >>> 8 ^ local1[(int) ((local3 ^ (long) (arg1 >> 8)) & 0xFFL)];
 		local3 = local19 >>> 8 ^ local1[(int) ((local19 ^ (long) arg1) & 0xFFL)];

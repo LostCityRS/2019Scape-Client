@@ -65,8 +65,8 @@ public class Class225 {
 		aBoolean646 = false;
 		this.aClass235Array1 = new Class235[this.anInt3644 * -844291711];
 		for (@Pc(13) int local13 = 0; local13 < this.anInt3644 * -844291711; local13++) {
-			@Pc(29) Class93_Sub41 local29 = new Class93_Sub41(this.aClass497_98.method30064(0, local13, (byte) 0));
-			if (local29.aByteArray58 == null) {
+			@Pc(29) Packet local29 = new Packet(this.aClass497_98.method30064(0, local13, (byte) 0));
+			if (local29.data == null) {
 				this.aClass235Array1[local13] = null;
 			} else {
 				try {

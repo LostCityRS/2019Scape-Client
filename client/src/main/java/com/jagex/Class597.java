@@ -3,7 +3,6 @@ package com.jagex;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.image.ImageObserver;
 import java.util.Iterator;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
@@ -119,23 +118,23 @@ public class Class597 {
 	int anInt5525;
 
 	@OriginalMember(owner = "client!ul", name = "<init>", descriptor = "(Lclient!dh;ILclient!alw;I)V", line = 46)
-	public Class597(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class93_Sub41 arg2, @OriginalArg(3) int arg3) {
+	public Class597(@OriginalArg(0) Class104 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Packet arg2, @OriginalArg(3) int arg3) {
 		if (Class288.anIntArray370 == null) {
 			Class290.method26563(182292977);
 		}
-		this.anInt5520 = arg2.method22465((short) 16384) * -348646843;
+		this.anInt5520 = arg2.g1((short) 16384) * -348646843;
 		this.aBoolean821 = (this.anInt5520 * -1484967795 & 0x8) != 0;
 		this.aBoolean822 = (this.anInt5520 * -1484967795 & 0x10) != 0;
 		this.anInt5520 = (this.anInt5520 * -1484967795 & 0x7) * -348646843;
-		@Pc(56) int local56 = arg2.method22472(-1434290800) << arg3;
-		@Pc(62) int local62 = arg2.method22472(-1434290800) << arg3;
-		@Pc(68) int local68 = arg2.method22472(-1434290800) << arg3;
-		@Pc(72) int local72 = arg2.method22465((short) 16384);
+		@Pc(56) int local56 = arg2.g2(-1434290800) << arg3;
+		@Pc(62) int local62 = arg2.g2(-1434290800) << arg3;
+		@Pc(68) int local68 = arg2.g2(-1434290800) << arg3;
+		@Pc(72) int local72 = arg2.g1((short) 16384);
 		@Pc(78) int local78 = local72 * 2 + 1;
 		this.aShortArray142 = new short[local78];
 		@Pc(84) int local84;
 		for (local84 = 0; local84 < this.aShortArray142.length; local84++) {
-			@Pc(94) short local94 = (short) arg2.method22472(-1434290800);
+			@Pc(94) short local94 = (short) arg2.g2(-1434290800);
 			@Pc(98) int local98 = local94 >>> 8;
 			@Pc(102) int local102 = local94 & 0xFF;
 			if (local98 >= local78) {
@@ -147,14 +146,14 @@ public class Class597 {
 			this.aShortArray142[local84] = (short) (local98 << 8 | local102);
 		}
 		local72 = (0x1 << arg1 >> 1) + (local72 << arg1);
-		local84 = Class685.anIntArray524 == null ? Class685.anIntArray522[Class366.method27947(arg2.method22472(-1434290800), -328645812) & 0xFFFF] : Class685.anIntArray524[arg2.method22472(-1434290800)];
-		@Pc(163) int local163 = arg2.method22465((short) 16384);
+		local84 = Class685.anIntArray524 == null ? Class685.anIntArray522[Class366.method27947(arg2.g2(-1434290800), -328645812) & 0xFFFF] : Class685.anIntArray524[arg2.g2(-1434290800)];
+		@Pc(163) int local163 = arg2.g1((short) 16384);
 		this.anInt5528 = (local163 & 0x1F) * 219824953;
 		this.anInt5525 = ((local163 & 0xE0) << 3) * -102991915;
 		if (this.anInt5528 * 365017865 != 31) {
 			this.method31772(-1852746510);
 		}
-		this.anInt5507 = arg2.method22475((byte) -97) * -1667838963;
+		this.anInt5507 = arg2.g2s((byte) -97) * -1667838963;
 		this.method31766(arg0, local56, local68, local62, local72, local84, 1702353788);
 	}
 

@@ -307,12 +307,12 @@ public class Class380 implements Interface33 {
 		}
 		@Pc(654) Class175 local654 = Class330.method27371(-1833824436);
 		@Pc(660) Class93_Sub22 local660 = Class102.method2588(Class446.aClass446_97, local654.aClass24_2, (byte) 85);
-		local660.aClass93_Sub41_Sub2_1.method22394(0, (byte) -7);
-		@Pc(671) int local671 = local660.aClass93_Sub41_Sub2_1.anInt3070 * 212851357;
-		local660.aClass93_Sub41_Sub2_1.method22394(local30, (byte) -60);
-		local660.aClass93_Sub41_Sub2_1.method22394(local469, (byte) -106);
-		Class284.method26484(local660.aClass93_Sub41_Sub2_1, local13, -1497248091);
-		local660.aClass93_Sub41_Sub2_1.method22451(local660.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local671, (byte) 77);
+		local660.aPacketBit_1.p1(0, (byte) -7);
+		@Pc(671) int local671 = local660.aPacketBit_1.pos * 212851357;
+		local660.aPacketBit_1.p1(local30, (byte) -60);
+		local660.aPacketBit_1.p1(local469, (byte) -106);
+		Class284.method26484(local660.aPacketBit_1, local13, -1497248091);
+		local660.aPacketBit_1.psize1(local660.aPacketBit_1.pos * 212851357 - local671, (byte) 77);
 		local654.method24356(local660, -1650727993);
 	}
 

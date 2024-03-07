@@ -32,37 +32,37 @@ public class Class549 {
 	}
 
 	@OriginalMember(owner = "client!sg", name = "m", descriptor = "(Lclient!alw;I)[B", line = 20)
-	public static byte[] method31017(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) throws IOException {
-		@Pc(5) ByteArrayInputStream local5 = new ByteArrayInputStream(arg0.aByteArray58);
-		local5.skip((long) (arg0.anInt3070 * 212851357));
+	public static byte[] method31017(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) throws IOException {
+		@Pc(5) ByteArrayInputStream local5 = new ByteArrayInputStream(arg0.data);
+		local5.skip((long) (arg0.pos * 212851357));
 		return Class352.method27660(local5, arg1, 65280);
 	}
 
 	@OriginalMember(owner = "client!sg", name = "k", descriptor = "(Lclient!alw;I)[B", line = 20)
-	public static byte[] method31018(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) throws IOException {
-		@Pc(5) ByteArrayInputStream local5 = new ByteArrayInputStream(arg0.aByteArray58);
-		local5.skip((long) (arg0.anInt3070 * 212851357));
+	public static byte[] method31018(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) throws IOException {
+		@Pc(5) ByteArrayInputStream local5 = new ByteArrayInputStream(arg0.data);
+		local5.skip((long) (arg0.pos * 212851357));
 		return Class352.method27660(local5, arg1, 65280);
 	}
 
 	@OriginalMember(owner = "client!sg", name = "l", descriptor = "(Lclient!alw;I)[B", line = 20)
-	public static byte[] method31019(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) throws IOException {
-		@Pc(5) ByteArrayInputStream local5 = new ByteArrayInputStream(arg0.aByteArray58);
-		local5.skip((long) (arg0.anInt3070 * 212851357));
+	public static byte[] method31019(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) throws IOException {
+		@Pc(5) ByteArrayInputStream local5 = new ByteArrayInputStream(arg0.data);
+		local5.skip((long) (arg0.pos * 212851357));
 		return Class352.method27660(local5, arg1, 65280);
 	}
 
 	@OriginalMember(owner = "client!sg", name = "f", descriptor = "(Lclient!alw;I)[B", line = 20)
-	public static byte[] method31020(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) throws IOException {
-		@Pc(5) ByteArrayInputStream local5 = new ByteArrayInputStream(arg0.aByteArray58);
-		local5.skip((long) (arg0.anInt3070 * 212851357));
+	public static byte[] method31020(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) throws IOException {
+		@Pc(5) ByteArrayInputStream local5 = new ByteArrayInputStream(arg0.data);
+		local5.skip((long) (arg0.pos * 212851357));
 		return Class352.method27660(local5, arg1, 65280);
 	}
 
 	@OriginalMember(owner = "client!sg", name = "w", descriptor = "(Lclient!alw;I)[B", line = 20)
-	public static byte[] method31021(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) throws IOException {
-		@Pc(5) ByteArrayInputStream local5 = new ByteArrayInputStream(arg0.aByteArray58);
-		local5.skip((long) (arg0.anInt3070 * 212851357));
+	public static byte[] method31021(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) throws IOException {
+		@Pc(5) ByteArrayInputStream local5 = new ByteArrayInputStream(arg0.data);
+		local5.skip((long) (arg0.pos * 212851357));
 		return Class352.method27660(local5, arg1, 65280);
 	}
 

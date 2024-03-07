@@ -25,12 +25,12 @@ public class Class350 {
 	}
 
 	@OriginalMember(owner = "client!iv", name = "w", descriptor = "(Lclient!alw;Ljava/lang/String;)I", line = 18)
-	public static int method27631(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) String arg1) {
-		@Pc(4) int local4 = arg0.anInt3070 * 212851357;
+	public static int method27631(@OriginalArg(0) Packet arg0, @OriginalArg(1) String arg1) {
+		@Pc(4) int local4 = arg0.pos * 212851357;
 		@Pc(8) byte[] local8 = Class269.method26271(arg1, (byte) -17);
-		arg0.method22456(local8.length, (byte) -47);
-		arg0.anInt3070 += aClass337_1.method27451(local8, 0, local8.length, arg0.aByteArray58, arg0.anInt3070 * 212851357, -299532126) * -1445626955;
-		return arg0.anInt3070 * 212851357 - local4;
+		arg0.pSmart1or2(local8.length, (byte) -47);
+		arg0.pos += aClass337_1.method27451(local8, 0, local8.length, arg0.data, arg0.pos * 212851357, -299532126) * -1445626955;
+		return arg0.pos * 212851357 - local4;
 	}
 
 	@OriginalMember(owner = "client!iv", name = "e", descriptor = "([I[II)V", line = 19)
@@ -50,14 +50,14 @@ public class Class350 {
 	}
 
 	@OriginalMember(owner = "client!iv", name = "l", descriptor = "(Lclient!alw;I)Ljava/lang/String;", line = 31)
-	static String method27633(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	static String method27633(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		try {
-			@Pc(3) int local3 = arg0.method22528((byte) -40);
+			@Pc(3) int local3 = arg0.gSmart1or2((byte) -40);
 			if (local3 > arg1) {
 				local3 = arg1;
 			}
 			@Pc(11) byte[] local11 = new byte[local3];
-			arg0.anInt3070 += aClass337_1.method27458(arg0.aByteArray58, arg0.anInt3070 * 212851357, local11, 0, local3, (byte) 58) * -1445626955;
+			arg0.pos += aClass337_1.method27458(arg0.data, arg0.pos * 212851357, local11, 0, local3, (byte) 58) * -1445626955;
 			return Class155.method15306(local11, 0, local3, (byte) 68);
 		} catch (@Pc(39) Exception local39) {
 			return "Cabbage";
@@ -65,14 +65,14 @@ public class Class350 {
 	}
 
 	@OriginalMember(owner = "client!iv", name = "u", descriptor = "(Lclient!alw;I)Ljava/lang/String;", line = 31)
-	static String method27634(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	static String method27634(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		try {
-			@Pc(3) int local3 = arg0.method22528((byte) -70);
+			@Pc(3) int local3 = arg0.gSmart1or2((byte) -70);
 			if (local3 > arg1) {
 				local3 = arg1;
 			}
 			@Pc(11) byte[] local11 = new byte[local3];
-			arg0.anInt3070 += aClass337_1.method27458(arg0.aByteArray58, arg0.anInt3070 * 212851357, local11, 0, local3, (byte) 15) * -1445626955;
+			arg0.pos += aClass337_1.method27458(arg0.data, arg0.pos * 212851357, local11, 0, local3, (byte) 15) * -1445626955;
 			return Class155.method15306(local11, 0, local3, (byte) 15);
 		} catch (@Pc(39) Exception local39) {
 			return "Cabbage";

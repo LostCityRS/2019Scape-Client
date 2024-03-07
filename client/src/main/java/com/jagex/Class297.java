@@ -64,46 +64,46 @@ public class Class297 {
 	final Class40 aClass40_1;
 
 	@OriginalMember(owner = "client!gq", name = "<init>", descriptor = "(JLclient!alw;ZLclient!gu;)V", line = 31)
-	public Class297(@OriginalArg(0) long arg0, @OriginalArg(1) Class93_Sub41 arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) Interface27 arg3) {
+	public Class297(@OriginalArg(0) long arg0, @OriginalArg(1) Packet arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) Interface27 arg3) {
 		this.aLong252 = arg0 * -1593019501305181665L;
-		@Pc(13) int local13 = arg1.method22465((short) 16384);
+		@Pc(13) int local13 = arg1.g1((short) 16384);
 		if (local13 <= 0 || local13 > 1) {
 			throw new IllegalStateException("");
 		}
-		@Pc(27) int local27 = arg1.method22465((short) 16384);
+		@Pc(27) int local27 = arg1.g1((short) 16384);
 		this.aBoolean674 = (local27 & 0x1) != 0;
 		this.aBoolean675 = (local27 & 0x2) != 0;
 		this.aBoolean676 = (local27 & 0x4) != 0;
-		this.anInt3926 = arg1.method22483(-118643075) * -2007260593;
-		this.aLong253 = arg1.method22495(1417271561) * 2406700482966643721L;
-		this.aString158 = arg1.method22509(1568738619);
-		this.anInt3923 = arg1.method22475((byte) -9) * 786987457;
-		arg1.method22483(-118643075);
-		arg1.method22495(464392751);
-		@Pc(94) int local94 = arg1.method22472(-1434290800);
+		this.anInt3926 = arg1.g4(-118643075) * -2007260593;
+		this.aLong253 = arg1.g8(1417271561) * 2406700482966643721L;
+		this.aString158 = arg1.gjstr(1568738619);
+		this.anInt3923 = arg1.g2s((byte) -9) * 786987457;
+		arg1.g4(-118643075);
+		arg1.g8(464392751);
+		@Pc(94) int local94 = arg1.g2(-1434290800);
 		this.anArrayList3 = new ArrayList(local94);
 		@Pc(102) int local102;
 		for (local102 = 0; local102 < local94; local102++) {
 			this.anArrayList3.add(new Class304(arg1, this.aBoolean675, this.aBoolean676, arg3));
 		}
-		local102 = arg1.method22472(-1434290800);
+		local102 = arg1.g2(-1434290800);
 		this.anArrayList4 = new ArrayList(local102);
 		@Pc(132) int local132;
 		for (local132 = 0; local132 < local102; local132++) {
 			this.anArrayList4.add(new Class282(arg1, this.aBoolean675, this.aBoolean676));
 		}
 		this.aClass40_1 = new Class40(arg3.method25528((byte) 50));
-		local132 = arg1.method22472(-1434290800);
+		local132 = arg1.g2(-1434290800);
 		for (@Pc(163) int local163 = 0; local163 < local132; local163++) {
 			@Pc(173) Class466 local173 = arg3.method25528((byte) -91).method1468(arg1, (byte) 28);
 			this.aClass40_1.method776(local173.anInt5092 * -1181855333, local173.anObject19, (byte) 67);
 		}
 		if (!arg2) {
-			arg1.method22472(-1434290800);
-			arg1.method22472(-1434290800);
-			arg1.method22472(-1434290800);
-			arg1.method22472(-1434290800);
-			arg1.method22472(-1434290800);
+			arg1.g2(-1434290800);
+			arg1.g2(-1434290800);
+			arg1.g2(-1434290800);
+			arg1.g2(-1434290800);
+			arg1.g2(-1434290800);
 		}
 		this.method26637(-935677119);
 	}
@@ -180,7 +180,7 @@ public class Class297 {
 
 	@OriginalMember(owner = "client!gq", name = "w", descriptor = "(Lclient!py;II)Lclient!asy;", line = 88)
 	static Class93_Sub1_Sub20 method26625(@OriginalArg(0) Class497 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(8) Class93_Sub41 local8 = new Class93_Sub41(arg0.method30064(0, arg1, (byte) 0));
+		@Pc(8) Packet local8 = new Packet(arg0.method30064(0, arg1, (byte) 0));
 		return Class44_Sub1.method17432(local8, arg1, -1804936624);
 	}
 

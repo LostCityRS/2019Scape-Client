@@ -51,17 +51,17 @@ public class Class206 {
 	}
 
 	@OriginalMember(owner = "client!ck", name = "k", descriptor = "(Lclient!ase;I)I", line = 200)
-	static int method24698(@OriginalArg(0) Class93_Sub41_Sub2 arg0, @OriginalArg(1) int arg1) {
-		@Pc(4) int local4 = arg0.method22686(2, 655342518);
+	static int method24698(@OriginalArg(0) PacketBit arg0, @OriginalArg(1) int arg1) {
+		@Pc(4) int local4 = arg0.gBit(2, 655342518);
 		@Pc(8) int local8;
 		if (local4 == 0) {
 			local8 = 0;
 		} else if (local4 == 1) {
-			local8 = arg0.method22686(5, 602694899);
+			local8 = arg0.gBit(5, 602694899);
 		} else if (local4 == 2) {
-			local8 = arg0.method22686(8, -736876662);
+			local8 = arg0.gBit(8, -736876662);
 		} else {
-			local8 = arg0.method22686(11, -60431463);
+			local8 = arg0.gBit(11, -60431463);
 		}
 		return local8;
 	}

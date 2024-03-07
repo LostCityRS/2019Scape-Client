@@ -348,10 +348,10 @@ public class Class47 implements Interface13 {
 
 	@OriginalMember(owner = "client!abv", name = "e", descriptor = "(Lclient!alw;B)V", line = 141)
 	@Override
-	public void method36654(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
+	public void method36654(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 		this.aBoolean22 = true;
 		while (true) {
-			@Pc(6) int local6 = arg0.method22465((short) 16384);
+			@Pc(6) int local6 = arg0.g1((short) 16384);
 			if (local6 == 0) {
 				return;
 			}
@@ -361,10 +361,10 @@ public class Class47 implements Interface13 {
 
 	@OriginalMember(owner = "client!abv", name = "m", descriptor = "(Lclient!alw;)V", line = 141)
 	@Override
-	public void method36655(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36655(@OriginalArg(0) Packet arg0) {
 		this.aBoolean22 = true;
 		while (true) {
-			@Pc(6) int local6 = arg0.method22465((short) 16384);
+			@Pc(6) int local6 = arg0.g1((short) 16384);
 			if (local6 == 0) {
 				return;
 			}
@@ -374,10 +374,10 @@ public class Class47 implements Interface13 {
 
 	@OriginalMember(owner = "client!abv", name = "k", descriptor = "(Lclient!alw;)V", line = 141)
 	@Override
-	public void method36656(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36656(@OriginalArg(0) Packet arg0) {
 		this.aBoolean22 = true;
 		while (true) {
-			@Pc(6) int local6 = arg0.method22465((short) 16384);
+			@Pc(6) int local6 = arg0.g1((short) 16384);
 			if (local6 == 0) {
 				return;
 			}
@@ -387,10 +387,10 @@ public class Class47 implements Interface13 {
 
 	@OriginalMember(owner = "client!abv", name = "w", descriptor = "(Lclient!alw;)V", line = 141)
 	@Override
-	public void method36658(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36658(@OriginalArg(0) Packet arg0) {
 		this.aBoolean22 = true;
 		while (true) {
-			@Pc(6) int local6 = arg0.method22465((short) 16384);
+			@Pc(6) int local6 = arg0.g1((short) 16384);
 			if (local6 == 0) {
 				return;
 			}
@@ -400,10 +400,10 @@ public class Class47 implements Interface13 {
 
 	@OriginalMember(owner = "client!abv", name = "f", descriptor = "(Lclient!alw;)V", line = 141)
 	@Override
-	public void method36657(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36657(@OriginalArg(0) Packet arg0) {
 		this.aBoolean22 = true;
 		while (true) {
-			@Pc(6) int local6 = arg0.method22465((short) 16384);
+			@Pc(6) int local6 = arg0.g1((short) 16384);
 			if (local6 == 0) {
 				return;
 			}
@@ -412,87 +412,87 @@ public class Class47 implements Interface13 {
 	}
 
 	@OriginalMember(owner = "client!abv", name = "u", descriptor = "(Lclient!alw;II)V", line = 150)
-	void method904(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	void method904(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (arg1 == 1) {
-			this.anInt156 = arg0.method22542(-149719781) * -1467358165;
+			this.anInt156 = arg0.gSmart2or4null(-149719781) * -1467358165;
 		} else if (arg1 == 2) {
-			this.aString6 = arg0.method22509(700683068);
+			this.aString6 = arg0.gjstr(700683068);
 		} else if (arg1 == 4) {
-			this.anInt144 = arg0.method22472(-1434290800) * -1039167703;
+			this.anInt144 = arg0.g2(-1434290800) * -1039167703;
 		} else if (arg1 == 5) {
-			this.anInt145 = arg0.method22472(-1434290800) * 1107377745;
+			this.anInt145 = arg0.g2(-1434290800) * 1107377745;
 		} else if (arg1 == 6) {
-			this.anInt138 = arg0.method22472(-1434290800) * -1338726741;
+			this.anInt138 = arg0.g2(-1434290800) * -1338726741;
 		} else if (arg1 == 7) {
-			this.anInt186 = arg0.method22472(-1434290800) * 1706482097;
+			this.anInt186 = arg0.g2(-1434290800) * 1706482097;
 			if (this.anInt186 * 1104138065 > 32767) {
 				this.anInt186 -= -642711552;
 			}
 		} else if (arg1 == 8) {
-			this.anInt149 = arg0.method22472(-1434290800) * -1136287515;
+			this.anInt149 = arg0.g2(-1434290800) * -1136287515;
 			if (this.anInt149 * -1407378195 > 32767) {
 				this.anInt149 -= -1595604992;
 			}
 		} else if (arg1 == 11) {
 			this.anInt150 = -1888048375;
 		} else if (arg1 == 12) {
-			this.anInt135 = arg0.method22483(-118643075) * 625138177;
+			this.anInt135 = arg0.g4(-118643075) * 625138177;
 		} else if (arg1 == 13) {
-			this.anInt152 = arg0.method22465((short) 16384) * 37579905;
+			this.anInt152 = arg0.g1((short) 16384) * 37579905;
 		} else if (arg1 == 14) {
-			this.anInt153 = arg0.method22465((short) 16384) * 445204055;
+			this.anInt153 = arg0.g1((short) 16384) * 445204055;
 		} else if (arg1 == 15) {
 			this.aBoolean22 = false;
 		} else if (arg1 == 16) {
 			this.aBoolean21 = true;
 		} else if (arg1 == 23) {
-			this.anInt155 = arg0.method22542(-1802012282) * -369398177;
+			this.anInt155 = arg0.gSmart2or4null(-1802012282) * -369398177;
 		} else if (arg1 == 24) {
-			this.anInt143 = arg0.method22542(-114025349) * 1451267143;
+			this.anInt143 = arg0.gSmart2or4null(-114025349) * 1451267143;
 		} else if (arg1 == 25) {
-			this.anInt157 = arg0.method22542(-1590990331) * -240413759;
+			this.anInt157 = arg0.gSmart2or4null(-1590990331) * -240413759;
 		} else if (arg1 == 26) {
-			this.anInt158 = arg0.method22542(-1360747082) * 51910895;
+			this.anInt158 = arg0.gSmart2or4null(-1360747082) * 51910895;
 		} else if (arg1 == 27) {
-			this.anInt154 = arg0.method22465((short) 16384) * -2028821061;
+			this.anInt154 = arg0.g1((short) 16384) * -2028821061;
 		} else if (arg1 >= 30 && arg1 < 35) {
-			this.aStringArray4[arg1 - 30] = arg0.method22509(1972942999);
+			this.aStringArray4[arg1 - 30] = arg0.gjstr(1972942999);
 		} else if (arg1 >= 35 && arg1 < 40) {
-			this.aStringArray5[arg1 - 35] = arg0.method22509(205559793);
+			this.aStringArray5[arg1 - 35] = arg0.gjstr(205559793);
 		} else {
 			@Pc(246) int local246;
 			@Pc(256) int local256;
 			if (arg1 == 40) {
-				local246 = arg0.method22465((short) 16384);
+				local246 = arg0.g1((short) 16384);
 				this.aShortArray5 = new short[local246];
 				this.aShortArray1 = new short[local246];
 				for (local256 = 0; local256 < local246; local256++) {
-					this.aShortArray5[local256] = (short) arg0.method22472(-1434290800);
-					this.aShortArray1[local256] = (short) arg0.method22472(-1434290800);
+					this.aShortArray5[local256] = (short) arg0.g2(-1434290800);
+					this.aShortArray1[local256] = (short) arg0.g2(-1434290800);
 				}
 			} else if (arg1 == 41) {
-				local246 = arg0.method22465((short) 16384);
+				local246 = arg0.g1((short) 16384);
 				this.aShortArray2 = new short[local246];
 				this.aShortArray3 = new short[local246];
 				for (local256 = 0; local256 < local246; local256++) {
-					this.aShortArray2[local256] = (short) arg0.method22472(-1434290800);
-					this.aShortArray3[local256] = (short) arg0.method22472(-1434290800);
+					this.aShortArray2[local256] = (short) arg0.g2(-1434290800);
+					this.aShortArray3[local256] = (short) arg0.g2(-1434290800);
 				}
 			} else if (arg1 == 42) {
-				local246 = arg0.method22465((short) 16384);
+				local246 = arg0.g1((short) 16384);
 				this.aByteArray14 = new byte[local246];
 				for (local256 = 0; local256 < local246; local256++) {
-					this.aByteArray14[local256] = arg0.method22468(1982087554);
+					this.aByteArray14[local256] = arg0.g1b(1982087554);
 				}
 			} else if (arg1 == 43) {
-				this.anInt187 = arg0.method22483(-118643075) * 829649509;
+				this.anInt187 = arg0.g4(-118643075) * 829649509;
 				this.aBoolean20 = true;
 			} else {
 				@Pc(368) int local368;
 				@Pc(384) int local384;
 				@Pc(382) byte local382;
 				if (arg1 == 44) {
-					local246 = arg0.method22472(-1434290800);
+					local246 = arg0.g2(-1434290800);
 					local256 = 0;
 					for (local368 = local246; local368 > 0; local368 >>= 0x1) {
 						local256++;
@@ -507,7 +507,7 @@ public class Class47 implements Interface13 {
 						}
 					}
 				} else if (arg1 == 45) {
-					local246 = arg0.method22472(-1434290800);
+					local246 = arg0.g2(-1434290800);
 					local256 = 0;
 					for (local368 = local246; local368 > 0; local368 >>= 0x1) {
 						local256++;
@@ -524,96 +524,96 @@ public class Class47 implements Interface13 {
 				} else if (arg1 == 65) {
 					this.aBoolean19 = true;
 				} else if (arg1 == 78) {
-					this.anInt159 = arg0.method22542(-1192833055) * 113070271;
+					this.anInt159 = arg0.gSmart2or4null(-1192833055) * 113070271;
 				} else if (arg1 == 79) {
-					this.anInt160 = arg0.method22542(-1839266106) * -675961267;
+					this.anInt160 = arg0.gSmart2or4null(-1839266106) * -675961267;
 				} else if (arg1 == 90) {
-					this.anInt166 = arg0.method22542(-2127423818) * 606789207;
+					this.anInt166 = arg0.gSmart2or4null(-2127423818) * 606789207;
 				} else if (arg1 == 91) {
-					this.anInt167 = arg0.method22542(-851162217) * 1441397863;
+					this.anInt167 = arg0.gSmart2or4null(-851162217) * 1441397863;
 				} else if (arg1 == 92) {
-					this.anInt141 = arg0.method22542(-1303184436) * -175484919;
+					this.anInt141 = arg0.gSmart2or4null(-1303184436) * -175484919;
 				} else if (arg1 == 93) {
-					this.anInt168 = arg0.method22542(-1980340619) * -1659801175;
+					this.anInt168 = arg0.gSmart2or4null(-1980340619) * -1659801175;
 				} else if (arg1 == 94) {
-					this.anInt140 = arg0.method22472(-1434290800) * 674659787;
+					this.anInt140 = arg0.g2(-1434290800) * 674659787;
 				} else if (arg1 == 95) {
-					this.anInt147 = arg0.method22472(-1434290800) * 1313176447;
+					this.anInt147 = arg0.g2(-1434290800) * 1313176447;
 				} else if (arg1 == 96) {
-					this.anInt182 = arg0.method22465((short) 16384) * 1305038725;
+					this.anInt182 = arg0.g1((short) 16384) * 1305038725;
 				} else if (arg1 == 97) {
-					this.anInt171 = arg0.method22472(-1434290800) * 522076079;
+					this.anInt171 = arg0.g2(-1434290800) * 522076079;
 				} else if (arg1 == 98) {
-					this.anInt163 = arg0.method22472(-1434290800) * -1190254689;
+					this.anInt163 = arg0.g2(-1434290800) * -1190254689;
 				} else if (arg1 >= 100 && arg1 < 110) {
 					if (this.anIntArray8 == null) {
 						this.anIntArray8 = new int[10];
 						this.anIntArray10 = new int[10];
 					}
-					this.anIntArray8[arg1 - 100] = arg0.method22472(-1434290800);
-					this.anIntArray10[arg1 - 100] = arg0.method22472(-1434290800);
+					this.anIntArray8[arg1 - 100] = arg0.g2(-1434290800);
+					this.anIntArray10[arg1 - 100] = arg0.g2(-1434290800);
 				} else if (arg1 == 110) {
-					this.anInt181 = arg0.method22472(-1434290800) * 586401885;
+					this.anInt181 = arg0.g2(-1434290800) * 586401885;
 				} else if (arg1 == 111) {
-					this.anInt177 = arg0.method22472(-1434290800) * 2062482535;
+					this.anInt177 = arg0.g2(-1434290800) * 2062482535;
 				} else if (arg1 == 112) {
-					this.anInt178 = arg0.method22472(-1434290800) * -2090058247;
+					this.anInt178 = arg0.g2(-1434290800) * -2090058247;
 				} else if (arg1 == 113) {
-					this.anInt179 = arg0.method22468(970633154) * 118342919;
+					this.anInt179 = arg0.g1b(970633154) * 118342919;
 				} else if (arg1 == 114) {
-					this.anInt137 = arg0.method22468(1725670877) * -1086328935;
+					this.anInt137 = arg0.g1b(1725670877) * -1086328935;
 				} else if (arg1 == 115) {
-					this.anInt180 = arg0.method22465((short) 16384) * 364440111;
+					this.anInt180 = arg0.g1((short) 16384) * 364440111;
 				} else if (arg1 == 121) {
-					this.anInt172 = arg0.method22472(-1434290800) * 2061795405;
+					this.anInt172 = arg0.g2(-1434290800) * 2061795405;
 				} else if (arg1 == 122) {
-					this.anInt173 = arg0.method22472(-1434290800) * 1641648799;
+					this.anInt173 = arg0.g2(-1434290800) * 1641648799;
 				} else if (arg1 == 125) {
-					this.anInt142 = (arg0.method22468(2054197524) << 2) * 1484602097;
-					this.anInt161 = (arg0.method22468(1800472225) << 2) * -314344135;
-					this.anInt164 = (arg0.method22468(1453679984) << 2) * -426664723;
+					this.anInt142 = (arg0.g1b(2054197524) << 2) * 1484602097;
+					this.anInt161 = (arg0.g1b(1800472225) << 2) * -314344135;
+					this.anInt164 = (arg0.g1b(1453679984) << 2) * -426664723;
 				} else if (arg1 == 126) {
-					this.anInt146 = (arg0.method22468(1043439250) << 2) * 2081293473;
-					this.anInt169 = (arg0.method22468(970471190) << 2) * 1394802407;
-					this.anInt165 = (arg0.method22468(1062671473) << 2) * 414010663;
+					this.anInt146 = (arg0.g1b(1043439250) << 2) * 2081293473;
+					this.anInt169 = (arg0.g1b(970471190) << 2) * 1394802407;
+					this.anInt165 = (arg0.g1b(1062671473) << 2) * 414010663;
 				} else if (arg1 == 127 || arg1 == 128 || arg1 == 129 || arg1 == 130) {
-					arg0.method22465((short) 16384);
-					arg0.method22472(-1434290800);
+					arg0.g1((short) 16384);
+					arg0.g2(-1434290800);
 				} else if (arg1 == 132) {
-					local246 = arg0.method22465((short) 16384);
+					local246 = arg0.g1((short) 16384);
 					this.anIntArray11 = new int[local246];
 					for (local256 = 0; local256 < local246; local256++) {
-						this.anIntArray11[local256] = arg0.method22472(-1434290800);
+						this.anIntArray11[local256] = arg0.g2(-1434290800);
 					}
 				} else if (arg1 == 134) {
-					this.anInt183 = arg0.method22465((short) 16384) * 1710079797;
+					this.anInt183 = arg0.g1((short) 16384) * 1710079797;
 				} else if (arg1 == 139) {
-					this.anInt184 = arg0.method22472(-1434290800) * -2049056369;
+					this.anInt184 = arg0.g2(-1434290800) * -2049056369;
 				} else if (arg1 == 140) {
-					this.anInt185 = arg0.method22472(-1434290800) * -2063668823;
+					this.anInt185 = arg0.g2(-1434290800) * -2063668823;
 				} else if (arg1 >= 142 && arg1 < 147) {
 					if (this.anIntArray9 == null) {
 						this.anIntArray9 = new int[6];
 						Arrays.fill(this.anIntArray9, -1);
 					}
-					this.anIntArray9[arg1 - 142] = arg0.method22472(-1434290800);
+					this.anIntArray9[arg1 - 142] = arg0.g2(-1434290800);
 				} else if (arg1 >= 150 && arg1 < 155) {
 					if (this.anIntArray7 == null) {
 						this.anIntArray7 = new int[5];
 						Arrays.fill(this.anIntArray7, -1);
 					}
-					this.anIntArray7[arg1 - 150] = arg0.method22472(-1434290800);
+					this.anIntArray7[arg1 - 150] = arg0.g2(-1434290800);
 				} else if (arg1 != 156) {
 					if (arg1 == 157) {
 						this.aBoolean24 = true;
 					} else if (arg1 == 161) {
-						this.anInt174 = arg0.method22472(-1434290800) * 1465024513;
+						this.anInt174 = arg0.g2(-1434290800) * 1465024513;
 					} else if (arg1 == 162) {
-						this.anInt175 = arg0.method22472(-1434290800) * -1407363471;
+						this.anInt175 = arg0.g2(-1434290800) * -1407363471;
 					} else if (arg1 == 163) {
-						this.anInt176 = arg0.method22472(-1434290800) * -1994848707;
+						this.anInt176 = arg0.g2(-1434290800) * -1994848707;
 					} else if (arg1 == 164) {
-						this.aString7 = arg0.method22509(844129891);
+						this.aString7 = arg0.gjstr(844129891);
 					} else if (arg1 == 165) {
 						this.anInt150 = 518870546;
 					} else if (arg1 == 167) {
@@ -621,19 +621,19 @@ public class Class47 implements Interface13 {
 					} else if (arg1 == 168) {
 						this.aBoolean25 = false;
 					} else if (arg1 == 249) {
-						local246 = arg0.method22465((short) 16384);
+						local246 = arg0.g1((short) 16384);
 						if (this.aClass16_2 == null) {
 							local256 = Class134_Sub2.method10207(local246, (byte) 39);
 							this.aClass16_2 = new Class16(local256);
 						}
 						for (local256 = 0; local256 < local246; local256++) {
-							@Pc(1026) boolean local1026 = arg0.method22465((short) 16384) == 1;
-							local384 = arg0.method22478((short) 3323);
+							@Pc(1026) boolean local1026 = arg0.g1((short) 16384) == 1;
+							local384 = arg0.g3((short) 3323);
 							@Pc(1039) Class93 local1039;
 							if (local1026) {
-								local1039 = new Class93_Sub15(arg0.method22509(-134762211));
+								local1039 = new Class93_Sub15(arg0.gjstr(-134762211));
 							} else {
-								local1039 = new Class93_Sub14(arg0.method22483(-118643075));
+								local1039 = new Class93_Sub14(arg0.g4(-118643075));
 							}
 							this.aClass16_2.method220(local1039, (long) local384);
 						}

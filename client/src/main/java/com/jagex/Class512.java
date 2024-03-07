@@ -13,19 +13,19 @@ final class Class512 implements Interface9 {
 
 	@OriginalMember(owner = "client!qo", name = "m", descriptor = "(Lclient!alw;)Ljava/lang/Object;", line = 35)
 	@Override
-	public Object method30271(@OriginalArg(0) Class93_Sub41 arg0) {
+	public Object method30271(@OriginalArg(0) Packet arg0) {
 		return Class254.method25996(arg0, 315165959);
 	}
 
 	@OriginalMember(owner = "client!qo", name = "n", descriptor = "(Lclient!alw;)Ljava/lang/Object;", line = 35)
 	@Override
-	public Object method30270(@OriginalArg(0) Class93_Sub41 arg0) {
+	public Object method30270(@OriginalArg(0) Packet arg0) {
 		return Class254.method25996(arg0, 622103345);
 	}
 
 	@OriginalMember(owner = "client!qo", name = "e", descriptor = "(Lclient!alw;I)Ljava/lang/Object;", line = 35)
 	@Override
-	public Object method30272(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	public Object method30272(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		return Class254.method25996(arg0, -1654754142);
 	}
 

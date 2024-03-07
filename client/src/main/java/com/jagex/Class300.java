@@ -29,11 +29,11 @@ public class Class300 implements Interface25 {
 	}
 
 	@OriginalMember(owner = "client!gt", name = "<init>", descriptor = "(Lclient!gx;Lclient!alw;)V", line = 131)
-	Class300(@OriginalArg(0) Class303 arg0, @OriginalArg(1) Class93_Sub41 arg1) {
+	Class300(@OriginalArg(0) Class303 arg0, @OriginalArg(1) Packet arg1) {
 		this.this$0 = arg0;
-		@Pc(13) boolean local13 = arg1.method22465((short) 16384) != 255;
+		@Pc(13) boolean local13 = arg1.g1((short) 16384) != 255;
 		if (local13) {
-			arg1.anInt3070 -= -1445626955;
+			arg1.pos -= -1445626955;
 		}
 		this.aClass304_2 = new Class304(arg1, local13, true, arg0.anInterface27_2);
 	}

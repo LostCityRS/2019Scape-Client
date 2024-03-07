@@ -99,7 +99,7 @@ class Class63 implements Iterator {
 	@OriginalMember(owner = "client!acm", name = "ag", descriptor = "(B)V", line = 1017)
 	static void method1162(@OriginalArg(0) byte arg0) {
 		Class411.aClass175_3.method24351(-1146389155);
-		Class411.aClass175_3.aClass93_Sub41_Sub2_2.anInt3070 = 0;
+		Class411.aClass175_3.aPacketBit_2.pos = 0;
 		Class411.aClass175_3.aClass453_1 = null;
 		Class411.aClass175_3.aClass453_4 = null;
 		Class411.aClass175_3.aClass453_3 = null;

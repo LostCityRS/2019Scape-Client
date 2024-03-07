@@ -189,33 +189,33 @@ public class Class698 implements Runnable {
 	}
 
 	@OriginalMember(owner = "client!yz", name = "m", descriptor = "(Lclient!alw;I)V", line = 37)
-	static void method36695(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) int local3 = arg0.method22528((byte) -82);
+	static void method36695(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) int local3 = arg0.gSmart1or2((byte) -82);
 		Class632.aClass648Array1 = new Class648[local3];
 		@Pc(8) int local8;
 		for (local8 = 0; local8 < local3; local8++) {
 			Class632.aClass648Array1[local8] = new Class648();
-			Class632.aClass648Array1[local8].anInt5794 = arg0.method22528((byte) -22) * -58277581;
-			Class632.aClass648Array1[local8].aString237 = arg0.method22512(98739723);
+			Class632.aClass648Array1[local8].anInt5794 = arg0.gSmart1or2((byte) -22) * -58277581;
+			Class632.aClass648Array1[local8].aString237 = arg0.gjstr2(98739723);
 		}
-		Class607.anInt5560 = arg0.method22528((byte) -37) * -174531729;
-		Class361.anInt4571 = arg0.method22528((byte) -127) * -1231507063;
-		Class606.anInt5557 = arg0.method22528((byte) -121) * 470817221;
+		Class607.anInt5560 = arg0.gSmart1or2((byte) -37) * -174531729;
+		Class361.anInt4571 = arg0.gSmart1or2((byte) -127) * -1231507063;
+		Class606.anInt5557 = arg0.gSmart1or2((byte) -121) * 470817221;
 		Class632.aClass154_Sub1Array2 = new Class154_Sub1[Class361.anInt4571 * 977343673 - Class607.anInt5560 * 1855382415 + 1];
 		for (local8 = 0; local8 < Class606.anInt5557 * 2035023117; local8++) {
-			@Pc(75) int local75 = arg0.method22528((byte) -71);
+			@Pc(75) int local75 = arg0.gSmart1or2((byte) -71);
 			@Pc(83) Class154_Sub1 local83 = Class632.aClass154_Sub1Array2[local75] = new Class154_Sub1();
-			local83.anInt1651 = arg0.method22465((short) 16384) * 88439695;
-			local83.anInt1650 = arg0.method22483(-118643075) * 445350423;
-			local83.anInt1653 = arg0.method22528((byte) -35) * -875570153;
+			local83.anInt1651 = arg0.g1((short) 16384) * 88439695;
+			local83.anInt1650 = arg0.g4(-118643075) * 445350423;
+			local83.anInt1653 = arg0.gSmart1or2((byte) -35) * -875570153;
 			if (local83.anInt1653 * -2080957529 != 0) {
-				local83.aString48 = arg0.method22512(-218643179);
+				local83.aString48 = arg0.gjstr2(-218643179);
 			}
 			local83.anInt1654 = (Class607.anInt5560 * 1855382415 + local75) * 142830605;
-			local83.aString47 = arg0.method22512(-39955437);
-			local83.aString46 = arg0.method22512(885791896);
+			local83.aString47 = arg0.gjstr2(-39955437);
+			local83.aString46 = arg0.gjstr2(885791896);
 		}
-		Class632.anInt5720 = arg0.method22483(-118643075) * -537572227;
+		Class632.anInt5720 = arg0.g4(-118643075) * -537572227;
 		Class632.aBoolean851 = true;
 	}
 

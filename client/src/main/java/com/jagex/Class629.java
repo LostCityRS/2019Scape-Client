@@ -21,7 +21,7 @@ public class Class629 {
 	public int anInt5709;
 
 	@OriginalMember(owner = "client!vz", name = "<init>", descriptor = "(Lclient!alw;)V", line = 12)
-	public Class629(@OriginalArg(0) Class93_Sub41 arg0) {
+	public Class629(@OriginalArg(0) Packet arg0) {
 		this(arg0, false);
 	}
 
@@ -41,12 +41,12 @@ public class Class629 {
 	}
 
 	@OriginalMember(owner = "client!vz", name = "<init>", descriptor = "(Lclient!alw;Z)V", line = 16)
-	Class629(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) boolean arg1) {
+	Class629(@OriginalArg(0) Packet arg0, @OriginalArg(1) boolean arg1) {
 		this(arg0, arg1, true);
 	}
 
 	@OriginalMember(owner = "client!vz", name = "<init>", descriptor = "(Lclient!alw;IZ)V", line = 20)
-	public Class629(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2) {
+	public Class629(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2) {
 		this(arg0, arg1, arg2, true);
 	}
 
@@ -57,15 +57,15 @@ public class Class629 {
 	}
 
 	@OriginalMember(owner = "client!vz", name = "<init>", descriptor = "(Lclient!alw;ZZ)V", line = 24)
-	Class629(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) {
-		this(arg0, arg0.method22465((short) 16384), arg1, arg2);
+	Class629(@OriginalArg(0) Packet arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) {
+		this(arg0, arg0.g1((short) 16384), arg1, arg2);
 	}
 
 	@OriginalMember(owner = "client!vz", name = "<init>", descriptor = "(Lclient!alw;IZZ)V", line = 27)
-	Class629(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) boolean arg3) {
+	Class629(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) boolean arg3) {
 		@Pc(9) boolean local9 = (arg1 & 0x80) != 0;
 		if (arg2) {
-			@Pc(32) int local32 = arg0.method22465((short) 16384);
+			@Pc(32) int local32 = arg0.g1((short) 16384);
 			this.anInt5709 = (arg1 & 0x7F) * -660936573;
 			this.anInt5708 = local32 * 272635745;
 		} else {

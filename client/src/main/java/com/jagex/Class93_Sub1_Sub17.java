@@ -11,7 +11,7 @@ public abstract class Class93_Sub1_Sub17 extends Class93_Sub1 {
 	public final int anInt3208;
 
 	@OriginalMember(owner = "client!aso", name = "c", descriptor = "(ILclient!ie;Lclient!alw;)Lclient!aso;", line = 13)
-	public static Class93_Sub1_Sub17 method23492(@OriginalArg(0) int arg0, @OriginalArg(1) Class335 arg1, @OriginalArg(2) Class93_Sub41 arg2) {
+	public static Class93_Sub1_Sub17 method23492(@OriginalArg(0) int arg0, @OriginalArg(1) Class335 arg1, @OriginalArg(2) Packet arg2) {
 		if (Class335.aClass335_2 == arg1) {
 			return new Class93_Sub1_Sub17_Sub1(arg0, arg2);
 		} else if (Class335.aClass335_1 == arg1) {
@@ -33,7 +33,7 @@ public abstract class Class93_Sub1_Sub17 extends Class93_Sub1 {
 	public abstract void method23494(@OriginalArg(0) Class368 arg0, @OriginalArg(1) Class470 arg1, @OriginalArg(2) Class489 arg2);
 
 	@OriginalMember(owner = "client!aso", name = "k", descriptor = "(Lclient!alw;I)V")
-	public abstract void method23495(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1);
+	public abstract void method23495(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1);
 
 	@OriginalMember(owner = "client!aso", name = "f", descriptor = "(F)V")
 	public abstract void method23496(@OriginalArg(0) float arg0);
@@ -54,5 +54,5 @@ public abstract class Class93_Sub1_Sub17 extends Class93_Sub1 {
 	public abstract void method23501(@OriginalArg(0) Class368 arg0, @OriginalArg(1) Class470 arg1, @OriginalArg(2) Class489 arg2, @OriginalArg(3) int arg3);
 
 	@OriginalMember(owner = "client!aso", name = "d", descriptor = "(Lclient!alw;)V")
-	public abstract void method23502(@OriginalArg(0) Class93_Sub41 arg0);
+	public abstract void method23502(@OriginalArg(0) Packet arg0);
 }

@@ -4038,7 +4038,7 @@ public class Class104_Sub1 extends Class104 {
 			local12.method22325(1.0F);
 			local12.method22325(0.0F);
 		}
-		this.anInterface14_3 = this.method3845(20, local12.aByteArray58, local12.anInt3070 * 212851357, false);
+		this.anInterface14_3 = this.method3845(20, local12.data, local12.pos * 212851357, false);
 		this.aClass193_5 = new Class193(this.anInterface14_3, 5126, 3, 0);
 		this.aClass193_6 = new Class193(this.anInterface14_3, 5126, 2, 12);
 		this.aClass214_1.method25458(this);
@@ -4095,7 +4095,7 @@ public class Class104_Sub1 extends Class104 {
 			local12.method22325(1.0F);
 			local12.method22325(0.0F);
 		}
-		this.anInterface14_3 = this.method3845(20, local12.aByteArray58, local12.anInt3070 * 212851357, false);
+		this.anInterface14_3 = this.method3845(20, local12.data, local12.pos * 212851357, false);
 		this.aClass193_5 = new Class193(this.anInterface14_3, 5126, 3, 0);
 		this.aClass193_6 = new Class193(this.anInterface14_3, 5126, 2, 12);
 		this.aClass214_1.method25458(this);

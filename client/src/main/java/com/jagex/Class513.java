@@ -14,12 +14,12 @@ public class Class513 {
 	Class491[] aClass491Array1;
 
 	@OriginalMember(owner = "client!qp", name = "<init>", descriptor = "(Lclient!alw;Ljava/math/BigInteger;Ljava/math/BigInteger;)V", line = 133)
-	Class513(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) BigInteger arg1, @OriginalArg(2) BigInteger arg2) {
-		arg0.anInt3070 = 1361799817;
-		@Pc(8) int local8 = arg0.method22465((short) 16384);
-		arg0.anInt3070 += local8 * 313960592;
-		@Pc(26) byte[] local26 = new byte[arg0.aByteArray58.length - arg0.anInt3070 * 212851357];
-		arg0.method22518(local26, 0, local26.length, (short) 4299);
+	Class513(@OriginalArg(0) Packet arg0, @OriginalArg(1) BigInteger arg1, @OriginalArg(2) BigInteger arg2) {
+		arg0.pos = 1361799817;
+		@Pc(8) int local8 = arg0.g1((short) 16384);
+		arg0.pos += local8 * 313960592;
+		@Pc(26) byte[] local26 = new byte[arg0.data.length - arg0.pos * 212851357];
+		arg0.gdata(local26, 0, local26.length, (short) 4299);
 		@Pc(40) byte[] local40;
 		if (arg1 == null || arg2 == null || !client.ENABLE_JS5_RSA) {
 			local40 = local26;
@@ -31,7 +31,7 @@ public class Class513 {
 		if (local40.length != 65) {
 			throw new RuntimeException();
 		}
-		@Pc(77) byte[] local77 = Class53_Sub1.method14954(arg0.aByteArray58, 5, arg0.anInt3070 * 212851357 - local26.length - 5, 573616195);
+		@Pc(77) byte[] local77 = Class53_Sub1.method14954(arg0.data, 5, arg0.pos * 212851357 - local26.length - 5, 573616195);
 		@Pc(79) int local79;
 		for (local79 = 0; local79 < 64; local79++) {
 			if (local77[local79] != local40[local79 + 1]) {
@@ -40,13 +40,13 @@ public class Class513 {
 		}
 		this.aClass491Array1 = new Class491[local8];
 		for (local79 = 0; local79 < local8; local79++) {
-			arg0.anInt3070 = local79 * 313960592 + -83827138;
-			@Pc(117) int local117 = arg0.method22483(-118643075);
-			@Pc(121) int local121 = arg0.method22483(-118643075);
-			@Pc(125) int local125 = arg0.method22483(-118643075);
-			@Pc(129) int local129 = arg0.method22483(-118643075);
+			arg0.pos = local79 * 313960592 + -83827138;
+			@Pc(117) int local117 = arg0.g4(-118643075);
+			@Pc(121) int local121 = arg0.g4(-118643075);
+			@Pc(125) int local125 = arg0.g4(-118643075);
+			@Pc(129) int local129 = arg0.g4(-118643075);
 			@Pc(132) byte[] local132 = new byte[64];
-			arg0.method22518(local132, 0, 64, (short) 4470);
+			arg0.gdata(local132, 0, 64, (short) 4470);
 			this.aClass491Array1[local79] = new Class491(local117, local125, local121, local129, local132);
 		}
 	}
@@ -110,8 +110,8 @@ public class Class513 {
 				local142.method16477(-2005412477);
 			}
 		}
-		if (client.aClass175_2.anInt3301 * 2010044839 != client.aClass175_2.aClass93_Sub41_Sub2_2.anInt3070 * 212851357) {
-			throw new RuntimeException(client.aClass175_2.aClass93_Sub41_Sub2_2.anInt3070 * 212851357 + " " + client.aClass175_2.anInt3301 * 2010044839);
+		if (client.aClass175_2.length * 2010044839 != client.aClass175_2.aPacketBit_2.pos * 212851357) {
+			throw new RuntimeException(client.aClass175_2.aPacketBit_2.pos * 212851357 + " " + client.aClass175_2.length * 2010044839);
 		}
 		for (local18 = 0; local18 < client.anInt3540 * 568731113; local18++) {
 			if (client.aClass16_18.method214((long) client.anIntArray323[local18]) == null) {

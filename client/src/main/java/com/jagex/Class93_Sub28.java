@@ -81,7 +81,7 @@ public class Class93_Sub28 extends Class93 {
 	}
 
 	@OriginalMember(owner = "client!akr", name = "<init>", descriptor = "(Lclient!alw;)V", line = 28)
-	public Class93_Sub28(@OriginalArg(0) Class93_Sub41 arg0) {
+	public Class93_Sub28(@OriginalArg(0) Packet arg0) {
 		this.method13836(arg0, 1336303159);
 	}
 
@@ -197,8 +197,8 @@ public class Class93_Sub28 extends Class93 {
 	}
 
 	@OriginalMember(owner = "client!akr", name = "w", descriptor = "(Lclient!alw;I)V", line = 66)
-	void method13836(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) int local3 = arg0.method22465((short) 16384);
+	void method13836(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) int local3 = arg0.g1((short) 16384);
 		if ((local3 & 0x1) != 0) {
 			this.aBoolean339 = true;
 		}
@@ -207,15 +207,15 @@ public class Class93_Sub28 extends Class93 {
 		}
 		@Pc(21) int local21 = 2;
 		if ((local3 & 0x4) != 0) {
-			local21 = arg0.method22465((short) 16384);
+			local21 = arg0.g1((short) 16384);
 		}
-		this.aLong232 = arg0.method22495(1716787865) * -284080703297520027L;
-		this.aLong89 = arg0.method22495(-1617892798) * -8713487650679722559L;
-		this.aString44 = arg0.method22509(929635250);
-		arg0.method22465((short) 16384);
-		this.aByte56 = arg0.method22468(725992699);
-		this.aByte55 = arg0.method22468(1940838573);
-		this.anInt1602 = arg0.method22472(-1434290800) * -1125174335;
+		this.aLong232 = arg0.g8(1716787865) * -284080703297520027L;
+		this.aLong89 = arg0.g8(-1617892798) * -8713487650679722559L;
+		this.aString44 = arg0.gjstr(929635250);
+		arg0.g1((short) 16384);
+		this.aByte56 = arg0.g1b(725992699);
+		this.aByte55 = arg0.g1b(1940838573);
+		this.anInt1602 = arg0.g2(-1434290800) * -1125174335;
 		if (this.anInt1602 * -1052058559 <= 0) {
 			return;
 		}
@@ -223,23 +223,23 @@ public class Class93_Sub28 extends Class93 {
 		for (@Pc(84) int local84 = 0; local84 < this.anInt1602 * -1052058559; local84++) {
 			@Pc(94) Class373 local94 = new Class373();
 			if (this.aBoolean339) {
-				arg0.method22495(1050717539);
+				arg0.g8(1050717539);
 			}
 			if (this.aBoolean338) {
-				local94.aString191 = arg0.method22509(1071713046);
+				local94.aString191 = arg0.gjstr(1071713046);
 			}
-			local94.aByte150 = arg0.method22468(1454895866);
-			local94.anInt4597 = arg0.method22472(-1434290800) * -1542465575;
+			local94.aByte150 = arg0.g1b(1454895866);
+			local94.anInt4597 = arg0.g2(-1434290800) * -1542465575;
 			if (local21 >= 3) {
-				arg0.method22465((short) 16384);
+				arg0.g1((short) 16384);
 			}
 			this.aClass373Array1[local84] = local94;
 		}
 	}
 
 	@OriginalMember(owner = "client!akr", name = "h", descriptor = "(Lclient!alw;)V", line = 66)
-	void method13837(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(3) int local3 = arg0.method22465((short) 16384);
+	void method13837(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1((short) 16384);
 		if ((local3 & 0x1) != 0) {
 			this.aBoolean339 = true;
 		}
@@ -248,15 +248,15 @@ public class Class93_Sub28 extends Class93 {
 		}
 		@Pc(21) int local21 = 2;
 		if ((local3 & 0x4) != 0) {
-			local21 = arg0.method22465((short) 16384);
+			local21 = arg0.g1((short) 16384);
 		}
-		this.aLong232 = arg0.method22495(-1632333873) * -284080703297520027L;
-		this.aLong89 = arg0.method22495(-1460949801) * -8713487650679722559L;
-		this.aString44 = arg0.method22509(811166998);
-		arg0.method22465((short) 16384);
-		this.aByte56 = arg0.method22468(1277799625);
-		this.aByte55 = arg0.method22468(1265793076);
-		this.anInt1602 = arg0.method22472(-1434290800) * -1125174335;
+		this.aLong232 = arg0.g8(-1632333873) * -284080703297520027L;
+		this.aLong89 = arg0.g8(-1460949801) * -8713487650679722559L;
+		this.aString44 = arg0.gjstr(811166998);
+		arg0.g1((short) 16384);
+		this.aByte56 = arg0.g1b(1277799625);
+		this.aByte55 = arg0.g1b(1265793076);
+		this.anInt1602 = arg0.g2(-1434290800) * -1125174335;
 		if (this.anInt1602 * -1052058559 <= 0) {
 			return;
 		}
@@ -264,23 +264,23 @@ public class Class93_Sub28 extends Class93 {
 		for (@Pc(84) int local84 = 0; local84 < this.anInt1602 * -1052058559; local84++) {
 			@Pc(94) Class373 local94 = new Class373();
 			if (this.aBoolean339) {
-				arg0.method22495(733980518);
+				arg0.g8(733980518);
 			}
 			if (this.aBoolean338) {
-				local94.aString191 = arg0.method22509(724735356);
+				local94.aString191 = arg0.gjstr(724735356);
 			}
-			local94.aByte150 = arg0.method22468(1711724058);
-			local94.anInt4597 = arg0.method22472(-1434290800) * -1542465575;
+			local94.aByte150 = arg0.g1b(1711724058);
+			local94.anInt4597 = arg0.g2(-1434290800) * -1542465575;
 			if (local21 >= 3) {
-				arg0.method22465((short) 16384);
+				arg0.g1((short) 16384);
 			}
 			this.aClass373Array1[local84] = local94;
 		}
 	}
 
 	@OriginalMember(owner = "client!akr", name = "x", descriptor = "(Lclient!alw;)V", line = 66)
-	void method13838(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(3) int local3 = arg0.method22465((short) 16384);
+	void method13838(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1((short) 16384);
 		if ((local3 & 0x1) != 0) {
 			this.aBoolean339 = true;
 		}
@@ -289,15 +289,15 @@ public class Class93_Sub28 extends Class93 {
 		}
 		@Pc(21) int local21 = 2;
 		if ((local3 & 0x4) != 0) {
-			local21 = arg0.method22465((short) 16384);
+			local21 = arg0.g1((short) 16384);
 		}
-		this.aLong232 = arg0.method22495(1312585054) * -284080703297520027L;
-		this.aLong89 = arg0.method22495(1572409146) * -8713487650679722559L;
-		this.aString44 = arg0.method22509(1763467286);
-		arg0.method22465((short) 16384);
-		this.aByte56 = arg0.method22468(1944505585);
-		this.aByte55 = arg0.method22468(719939242);
-		this.anInt1602 = arg0.method22472(-1434290800) * -1125174335;
+		this.aLong232 = arg0.g8(1312585054) * -284080703297520027L;
+		this.aLong89 = arg0.g8(1572409146) * -8713487650679722559L;
+		this.aString44 = arg0.gjstr(1763467286);
+		arg0.g1((short) 16384);
+		this.aByte56 = arg0.g1b(1944505585);
+		this.aByte55 = arg0.g1b(719939242);
+		this.anInt1602 = arg0.g2(-1434290800) * -1125174335;
 		if (this.anInt1602 * -1052058559 <= 0) {
 			return;
 		}
@@ -305,23 +305,23 @@ public class Class93_Sub28 extends Class93 {
 		for (@Pc(84) int local84 = 0; local84 < this.anInt1602 * -1052058559; local84++) {
 			@Pc(94) Class373 local94 = new Class373();
 			if (this.aBoolean339) {
-				arg0.method22495(-496143310);
+				arg0.g8(-496143310);
 			}
 			if (this.aBoolean338) {
-				local94.aString191 = arg0.method22509(1005898774);
+				local94.aString191 = arg0.gjstr(1005898774);
 			}
-			local94.aByte150 = arg0.method22468(906235362);
-			local94.anInt4597 = arg0.method22472(-1434290800) * -1542465575;
+			local94.aByte150 = arg0.g1b(906235362);
+			local94.anInt4597 = arg0.g2(-1434290800) * -1542465575;
 			if (local21 >= 3) {
-				arg0.method22465((short) 16384);
+				arg0.g1((short) 16384);
 			}
 			this.aClass373Array1[local84] = local94;
 		}
 	}
 
 	@OriginalMember(owner = "client!akr", name = "a", descriptor = "(Lclient!alw;)V", line = 66)
-	void method13839(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(3) int local3 = arg0.method22465((short) 16384);
+	void method13839(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1((short) 16384);
 		if ((local3 & 0x1) != 0) {
 			this.aBoolean339 = true;
 		}
@@ -330,15 +330,15 @@ public class Class93_Sub28 extends Class93 {
 		}
 		@Pc(21) int local21 = 2;
 		if ((local3 & 0x4) != 0) {
-			local21 = arg0.method22465((short) 16384);
+			local21 = arg0.g1((short) 16384);
 		}
-		this.aLong232 = arg0.method22495(-147223289) * -284080703297520027L;
-		this.aLong89 = arg0.method22495(-152749174) * -8713487650679722559L;
-		this.aString44 = arg0.method22509(1298401702);
-		arg0.method22465((short) 16384);
-		this.aByte56 = arg0.method22468(564534713);
-		this.aByte55 = arg0.method22468(658939030);
-		this.anInt1602 = arg0.method22472(-1434290800) * -1125174335;
+		this.aLong232 = arg0.g8(-147223289) * -284080703297520027L;
+		this.aLong89 = arg0.g8(-152749174) * -8713487650679722559L;
+		this.aString44 = arg0.gjstr(1298401702);
+		arg0.g1((short) 16384);
+		this.aByte56 = arg0.g1b(564534713);
+		this.aByte55 = arg0.g1b(658939030);
+		this.anInt1602 = arg0.g2(-1434290800) * -1125174335;
 		if (this.anInt1602 * -1052058559 <= 0) {
 			return;
 		}
@@ -346,15 +346,15 @@ public class Class93_Sub28 extends Class93 {
 		for (@Pc(84) int local84 = 0; local84 < this.anInt1602 * -1052058559; local84++) {
 			@Pc(94) Class373 local94 = new Class373();
 			if (this.aBoolean339) {
-				arg0.method22495(1401016987);
+				arg0.g8(1401016987);
 			}
 			if (this.aBoolean338) {
-				local94.aString191 = arg0.method22509(1285384266);
+				local94.aString191 = arg0.gjstr(1285384266);
 			}
-			local94.aByte150 = arg0.method22468(1278357445);
-			local94.anInt4597 = arg0.method22472(-1434290800) * -1542465575;
+			local94.aByte150 = arg0.g1b(1278357445);
+			local94.anInt4597 = arg0.g2(-1434290800) * -1542465575;
 			if (local21 >= 3) {
-				arg0.method22465((short) 16384);
+				arg0.g1((short) 16384);
 			}
 			this.aClass373Array1[local84] = local94;
 		}

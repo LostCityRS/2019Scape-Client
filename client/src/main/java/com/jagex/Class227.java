@@ -65,9 +65,9 @@ public class Class227 {
 			throw new RuntimeException("");
 		} else if (client.aClass175_2 != null) {
 			@Pc(65) Class93_Sub22 local65 = Class102.method2588(Class446.aClass446_45, client.aClass175_2.aClass24_2, (byte) 12);
-			local65.aClass93_Sub41_Sub2_1.method22573(local18.method36920(), -1591808004);
-			local65.aClass93_Sub41_Sub2_1.method22597(local31.anInt5624 * -1994307635, -1895191206);
-			local65.aClass93_Sub41_Sub2_1.method22595(local31.anInt5623 * 270611681, (byte) -14);
+			local65.aPacketBit_1.p1_alt1(local18.method36920(), -1591808004);
+			local65.aPacketBit_1.p2_alt2(local31.anInt5624 * -1994307635, -1895191206);
+			local65.aPacketBit_1.p2_alt1(local31.anInt5623 * 270611681, (byte) -14);
 			client.aClass175_2.method24356(local65, -1630265729);
 		}
 	}

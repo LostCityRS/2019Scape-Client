@@ -27,9 +27,9 @@ public class Class243 {
 	final Class615 aClass615_1;
 
 	@OriginalMember(owner = "client!ef", name = "<init>", descriptor = "(Lclient!alw;)V", line = 18)
-	Class243(@OriginalArg(0) Class93_Sub41 arg0) {
-		this.anInt3833 = arg0.method22542(-1231296433) * 421769509;
-		this.aClass615_1 = (Class615) Class107.method18116(Class1.method5(1523069168), arg0.method22465((short) 16384), -1915563430);
+	Class243(@OriginalArg(0) Packet arg0) {
+		this.anInt3833 = arg0.gSmart2or4null(-1231296433) * 421769509;
+		this.aClass615_1 = (Class615) Class107.method18116(Class1.method5(1523069168), arg0.g1((short) 16384), -1915563430);
 	}
 
 	@OriginalMember(owner = "client!ef", name = "e", descriptor = "(IIIIB)V", line = 24)

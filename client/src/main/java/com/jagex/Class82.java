@@ -36,26 +36,26 @@ public class Class82 {
 	@OriginalMember(owner = "client!adh", name = "<init>", descriptor = "(Lclient!py;II)V", line = 18)
 	public Class82(@OriginalArg(0) Class497 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		@Pc(9) byte[] local9 = arg0.method30064(arg1, arg2 + 1, (byte) 0);
-		this.method1380(new Class93_Sub41(local9), (byte) -1);
+		this.method1380(new Packet(local9), (byte) -1);
 	}
 
 	@OriginalMember(owner = "client!adh", name = "<init>", descriptor = "(Lclient!py;I)V", line = 23)
 	public Class82(@OriginalArg(0) Class497 arg0, @OriginalArg(1) int arg1) {
 		@Pc(7) byte[] local7 = arg0.method30064(arg1, 0, (byte) 0);
-		this.method1380(new Class93_Sub41(local7), (byte) -1);
+		this.method1380(new Packet(local7), (byte) -1);
 	}
 
 	@OriginalMember(owner = "client!adh", name = "e", descriptor = "(Lclient!alw;B)V", line = 29)
-	void method1380(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
-		this.aClass500_1 = (Class500) Class107.method18116(Class500.method30156(-2085726699), arg0.method22465((short) 16384), -1915563430);
-		@Pc(13) int local13 = arg0.method22548((short) -3184);
+	void method1380(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
+		this.aClass500_1 = (Class500) Class107.method18116(Class500.method30156(-2085726699), arg0.g1((short) 16384), -1915563430);
+		@Pc(13) int local13 = arg0.gVarInt2((short) -3184);
 		this.aMap5 = new HashMap(local13);
 		while (local13-- > 0) {
 			@Pc(28) Object local28 = this.aClass500_1.method30163(arg0, (byte) 0);
-			@Pc(32) int local32 = arg0.method22548((short) -11628);
+			@Pc(32) int local32 = arg0.gVarInt2((short) -11628);
 			@Pc(36) ArrayList local36 = new ArrayList();
 			while (local32-- > 0) {
-				@Pc(43) int local43 = arg0.method22548((short) -1723);
+				@Pc(43) int local43 = arg0.gVarInt2((short) -1723);
 				local36.add(local43);
 			}
 			this.aMap5.put(local28, local36);
@@ -143,8 +143,8 @@ public class Class82 {
 				}
 				if (local35 != null) {
 					@Pc(102) Class93_Sub22 local102 = Class102.method2588(local35, client.aClass175_2.aClass24_2, (byte) 28);
-					local102.aClass93_Sub41_Sub2_1.method22395(local5[local9], 2129512639);
-					local102.aClass93_Sub41_Sub2_1.method22573(0, -1591808004);
+					local102.aPacketBit_1.p2(local5[local9], 2129512639);
+					local102.aPacketBit_1.p1_alt1(0, -1591808004);
 					client.aClass175_2.method24356(local102, -2107828542);
 				}
 				local7 = true;

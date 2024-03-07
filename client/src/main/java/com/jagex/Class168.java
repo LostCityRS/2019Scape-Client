@@ -779,10 +779,10 @@ public class Class168 {
 				if (client.anInt3435 * -849002901 == 18 || client.anInt3435 * -849002901 == 13) {
 					@Pc(1077) Class175 local1077 = Class330.method27371(-1708242123);
 					local570 = Class102.method2588(Class446.aClass446_86, local1077.aClass24_2, (byte) 23);
-					local570.aClass93_Sub41_Sub2_1.method22394(arg0.length() + 3, (byte) -71);
-					local570.aClass93_Sub41_Sub2_1.method22394(arg1 ? 1 : 0, (byte) -112);
-					local570.aClass93_Sub41_Sub2_1.method22394(arg2 ? 1 : 0, (byte) -3);
-					local570.aClass93_Sub41_Sub2_1.method22431(arg0, -1224579575);
+					local570.aPacketBit_1.p1(arg0.length() + 3, (byte) -71);
+					local570.aPacketBit_1.p1(arg1 ? 1 : 0, (byte) -112);
+					local570.aPacketBit_1.p1(arg2 ? 1 : 0, (byte) -3);
+					local570.aPacketBit_1.pjstr(arg0, -1224579575);
 					local1077.method24356(local570, -1440770000);
 				}
 			} catch (@Pc(1120) Exception local1120) {
@@ -1230,8 +1230,8 @@ public class Class168 {
 	}
 
 	@OriginalMember(owner = "client!ap", name = "i", descriptor = "(B)Lclient!alw;", line = 954)
-	static Class93_Sub41 method17626(@OriginalArg(0) byte arg0) {
-		@Pc(2) Class93_Sub41 local2 = Class346.method27567((byte) 4);
+	static Packet method17626(@OriginalArg(0) byte arg0) {
+		@Pc(2) Packet local2 = Class346.method27567((byte) 4);
 		if (client.anInt3435 * -849002901 != 14) {
 			@Pc(17) long local17;
 			if (Class411.anInt4746 * 276097583 != -1) {
@@ -1243,12 +1243,12 @@ public class Class168 {
 			}
 			Class413.aLong272 = local17 * 8666456646503961589L;
 			Class709.method36764(local2, local17);
-			local2.method22426(false, -475970197);
-			local2.method22431(Class411.aString201, 2072335141);
-			local2.method22420(Class411.aLong270 * -1009657282713816485L);
-			local2.method22420(client.aLong243 * 6484786827691107089L);
+			local2.pbool(false, -475970197);
+			local2.pjstr(Class411.aString201, 2072335141);
+			local2.p8(Class411.aLong270 * -1009657282713816485L);
+			local2.p8(client.aLong243 * 6484786827691107089L);
 		}
-		local2.method22560(Class95.aBigInteger2, Class95.aBigInteger4, (byte) -19);
+		local2.rsaenc(Class95.aBigInteger2, Class95.aBigInteger4, (byte) -19);
 		return local2;
 	}
 

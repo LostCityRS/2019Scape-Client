@@ -21,7 +21,7 @@ public class Class633 {
 	@OriginalMember(owner = "client!wc", name = "<init>", descriptor = "(Lclient!py;)V", line = 10)
 	public Class633(@OriginalArg(0) Class497 arg0) {
 		@Pc(15) byte[] local15 = arg0.method30079(Class649.aClass649_10.anInt5795 * -51136173, (byte) 38);
-		this.method32300(new Class93_Sub41(local15), 1868036314);
+		this.method32300(new Packet(local15), 1868036314);
 	}
 
 	@OriginalMember(owner = "client!wc", name = "e", descriptor = "(B)[Lclient!zg;", line = 16)
@@ -30,15 +30,15 @@ public class Class633 {
 	}
 
 	@OriginalMember(owner = "client!wc", name = "e", descriptor = "(Lclient!alw;I)V", line = 17)
-	void method32300(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method32300(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			switch(local3) {
 				case 0:
 					return;
 				case 1:
-					this.anInt5725 = arg0.method22542(-43527878) * 6838107;
-					this.anInt5724 = arg0.method22542(-11331444) * 1053266949;
+					this.anInt5725 = arg0.gSmart2or4null(-43527878) * 6838107;
+					this.anInt5724 = arg0.gSmart2or4null(-11331444) * 1053266949;
 					break;
 				default:
 					return;
@@ -47,15 +47,15 @@ public class Class633 {
 	}
 
 	@OriginalMember(owner = "client!wc", name = "k", descriptor = "(Lclient!alw;)V", line = 17)
-	void method32301(@OriginalArg(0) Class93_Sub41 arg0) {
+	void method32301(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			switch(local3) {
 				case 0:
 					return;
 				case 1:
-					this.anInt5725 = arg0.method22542(-771342481) * 6838107;
-					this.anInt5724 = arg0.method22542(-835178155) * 1053266949;
+					this.anInt5725 = arg0.gSmart2or4null(-771342481) * 6838107;
+					this.anInt5724 = arg0.gSmart2or4null(-835178155) * 1053266949;
 					break;
 				default:
 					return;
@@ -64,15 +64,15 @@ public class Class633 {
 	}
 
 	@OriginalMember(owner = "client!wc", name = "m", descriptor = "(Lclient!alw;)V", line = 17)
-	void method32302(@OriginalArg(0) Class93_Sub41 arg0) {
+	void method32302(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			switch(local3) {
 				case 0:
 					return;
 				case 1:
-					this.anInt5725 = arg0.method22542(-1933547126) * 6838107;
-					this.anInt5724 = arg0.method22542(-1324206958) * 1053266949;
+					this.anInt5725 = arg0.gSmart2or4null(-1933547126) * 6838107;
+					this.anInt5724 = arg0.gSmart2or4null(-1324206958) * 1053266949;
 					break;
 				default:
 					return;
@@ -81,15 +81,15 @@ public class Class633 {
 	}
 
 	@OriginalMember(owner = "client!wc", name = "n", descriptor = "(Lclient!alw;)V", line = 17)
-	void method32303(@OriginalArg(0) Class93_Sub41 arg0) {
+	void method32303(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			switch(local3) {
 				case 0:
 					return;
 				case 1:
-					this.anInt5725 = arg0.method22542(-1813371893) * 6838107;
-					this.anInt5724 = arg0.method22542(-2136963461) * 1053266949;
+					this.anInt5725 = arg0.gSmart2or4null(-1813371893) * 6838107;
+					this.anInt5724 = arg0.gSmart2or4null(-2136963461) * 1053266949;
 					break;
 				default:
 					return;
@@ -132,9 +132,9 @@ public class Class633 {
 			local1 = Class102.method2588(Class446.aClass446_70, client.aClass175_2.aClass24_2, (byte) 43);
 		}
 		@Pc(22) Class611 local22 = client.aClass532_1.method30455(1811251602);
-		local1.aClass93_Sub41_Sub2_1.method22395(arg1 + local22.anInt5624 * -1994307635, 2136457997);
-		local1.aClass93_Sub41_Sub2_1.method22394(Class28.method601(1440469475) ? 1 : 0, (byte) -82);
-		local1.aClass93_Sub41_Sub2_1.method22599(local22.anInt5623 * 270611681 + arg0, (short) 255);
+		local1.aPacketBit_1.p2(arg1 + local22.anInt5624 * -1994307635, 2136457997);
+		local1.aPacketBit_1.p1(Class28.method601(1440469475) ? 1 : 0, (byte) -82);
+		local1.aPacketBit_1.p2_alt3(local22.anInt5623 * 270611681 + arg0, (short) 255);
 		Class172.anInt3179 = arg0 * 2004084007;
 		Class172.anInt3174 = arg1 * -246739717;
 		Class172.aBoolean521 = false;

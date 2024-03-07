@@ -136,16 +136,16 @@ public class Class124_Sub3_Sub3 extends Class124_Sub3 {
 
 	@OriginalMember(owner = "client!aqx", name = "ac", descriptor = "(Lclient!alw;IS)V", line = 32)
 	@Override
-	void method21446(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) short arg2) {
+	void method21446(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) short arg2) {
 	}
 
 	@OriginalMember(owner = "client!aqx", name = "ar", descriptor = "(Lclient!alw;I)V", line = 32)
 	@Override
-	void method21454(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method21454(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 	}
 
 	@OriginalMember(owner = "client!aqx", name = "ap", descriptor = "(Lclient!alw;I)V", line = 32)
 	@Override
-	void method21455(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method21455(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 	}
 }

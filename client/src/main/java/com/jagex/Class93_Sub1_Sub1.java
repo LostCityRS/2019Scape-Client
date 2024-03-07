@@ -20,9 +20,9 @@ public class Class93_Sub1_Sub1 extends Class93_Sub1 implements Interface13, Inte
 
 	@OriginalMember(owner = "client!adx", name = "w", descriptor = "(Lclient!alw;)V", line = 18)
 	@Override
-	public void method36658(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36658(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -32,9 +32,9 @@ public class Class93_Sub1_Sub1 extends Class93_Sub1 implements Interface13, Inte
 
 	@OriginalMember(owner = "client!adx", name = "m", descriptor = "(Lclient!alw;)V", line = 18)
 	@Override
-	public void method36655(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36655(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -44,9 +44,9 @@ public class Class93_Sub1_Sub1 extends Class93_Sub1 implements Interface13, Inte
 
 	@OriginalMember(owner = "client!adx", name = "k", descriptor = "(Lclient!alw;)V", line = 18)
 	@Override
-	public void method36656(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36656(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -56,9 +56,9 @@ public class Class93_Sub1_Sub1 extends Class93_Sub1 implements Interface13, Inte
 
 	@OriginalMember(owner = "client!adx", name = "f", descriptor = "(Lclient!alw;)V", line = 18)
 	@Override
-	public void method36657(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36657(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -68,9 +68,9 @@ public class Class93_Sub1_Sub1 extends Class93_Sub1 implements Interface13, Inte
 
 	@OriginalMember(owner = "client!adx", name = "e", descriptor = "(Lclient!alw;B)V", line = 18)
 	@Override
-	public void method36654(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
+	public void method36654(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -79,96 +79,96 @@ public class Class93_Sub1_Sub1 extends Class93_Sub1 implements Interface13, Inte
 	}
 
 	@OriginalMember(owner = "client!adx", name = "u", descriptor = "(Lclient!alw;IS)V", line = 25)
-	void method1752(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) short arg2) {
+	void method1752(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) short arg2) {
 		if (arg1 != 249) {
 			return;
 		}
-		@Pc(6) int local6 = arg0.method22465((short) 16384);
+		@Pc(6) int local6 = arg0.g1((short) 16384);
 		@Pc(14) int local14;
 		if (this.aClass16_3 == null) {
 			local14 = Class134_Sub2.method10207(local6, (byte) 70);
 			this.aClass16_3 = new Class16(local14);
 		}
 		for (local14 = 0; local14 < local6; local14++) {
-			@Pc(34) boolean local34 = arg0.method22465((short) 16384) == 1;
-			@Pc(38) int local38 = arg0.method22478((short) 1139);
+			@Pc(34) boolean local34 = arg0.g1((short) 16384) == 1;
+			@Pc(38) int local38 = arg0.g3((short) 1139);
 			@Pc(47) Class93 local47;
 			if (local34) {
-				local47 = new Class93_Sub15(arg0.method22509(1930457749));
+				local47 = new Class93_Sub15(arg0.gjstr(1930457749));
 			} else {
-				local47 = new Class93_Sub14(arg0.method22483(-118643075));
+				local47 = new Class93_Sub14(arg0.g4(-118643075));
 			}
 			this.aClass16_3.method220(local47, (long) local38);
 		}
 	}
 
 	@OriginalMember(owner = "client!adx", name = "c", descriptor = "(Lclient!alw;I)V", line = 25)
-	void method1753(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method1753(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 != 249) {
 			return;
 		}
-		@Pc(6) int local6 = arg0.method22465((short) 16384);
+		@Pc(6) int local6 = arg0.g1((short) 16384);
 		@Pc(14) int local14;
 		if (this.aClass16_3 == null) {
 			local14 = Class134_Sub2.method10207(local6, (byte) 85);
 			this.aClass16_3 = new Class16(local14);
 		}
 		for (local14 = 0; local14 < local6; local14++) {
-			@Pc(34) boolean local34 = arg0.method22465((short) 16384) == 1;
-			@Pc(38) int local38 = arg0.method22478((short) 16098);
+			@Pc(34) boolean local34 = arg0.g1((short) 16384) == 1;
+			@Pc(38) int local38 = arg0.g3((short) 16098);
 			@Pc(47) Class93 local47;
 			if (local34) {
-				local47 = new Class93_Sub15(arg0.method22509(1239019579));
+				local47 = new Class93_Sub15(arg0.gjstr(1239019579));
 			} else {
-				local47 = new Class93_Sub14(arg0.method22483(-118643075));
+				local47 = new Class93_Sub14(arg0.g4(-118643075));
 			}
 			this.aClass16_3.method220(local47, (long) local38);
 		}
 	}
 
 	@OriginalMember(owner = "client!adx", name = "y", descriptor = "(Lclient!alw;I)V", line = 25)
-	void method1754(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method1754(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 != 249) {
 			return;
 		}
-		@Pc(6) int local6 = arg0.method22465((short) 16384);
+		@Pc(6) int local6 = arg0.g1((short) 16384);
 		@Pc(14) int local14;
 		if (this.aClass16_3 == null) {
 			local14 = Class134_Sub2.method10207(local6, (byte) 84);
 			this.aClass16_3 = new Class16(local14);
 		}
 		for (local14 = 0; local14 < local6; local14++) {
-			@Pc(34) boolean local34 = arg0.method22465((short) 16384) == 1;
-			@Pc(38) int local38 = arg0.method22478((short) 23020);
+			@Pc(34) boolean local34 = arg0.g1((short) 16384) == 1;
+			@Pc(38) int local38 = arg0.g3((short) 23020);
 			@Pc(47) Class93 local47;
 			if (local34) {
-				local47 = new Class93_Sub15(arg0.method22509(384517872));
+				local47 = new Class93_Sub15(arg0.gjstr(384517872));
 			} else {
-				local47 = new Class93_Sub14(arg0.method22483(-118643075));
+				local47 = new Class93_Sub14(arg0.g4(-118643075));
 			}
 			this.aClass16_3.method220(local47, (long) local38);
 		}
 	}
 
 	@OriginalMember(owner = "client!adx", name = "x", descriptor = "(Lclient!alw;I)V", line = 25)
-	void method1755(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method1755(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 != 249) {
 			return;
 		}
-		@Pc(6) int local6 = arg0.method22465((short) 16384);
+		@Pc(6) int local6 = arg0.g1((short) 16384);
 		@Pc(14) int local14;
 		if (this.aClass16_3 == null) {
 			local14 = Class134_Sub2.method10207(local6, (byte) 100);
 			this.aClass16_3 = new Class16(local14);
 		}
 		for (local14 = 0; local14 < local6; local14++) {
-			@Pc(34) boolean local34 = arg0.method22465((short) 16384) == 1;
-			@Pc(38) int local38 = arg0.method22478((short) 21711);
+			@Pc(34) boolean local34 = arg0.g1((short) 16384) == 1;
+			@Pc(38) int local38 = arg0.g3((short) 21711);
 			@Pc(47) Class93 local47;
 			if (local34) {
-				local47 = new Class93_Sub15(arg0.method22509(1153649975));
+				local47 = new Class93_Sub15(arg0.gjstr(1153649975));
 			} else {
-				local47 = new Class93_Sub14(arg0.method22483(-118643075));
+				local47 = new Class93_Sub14(arg0.g4(-118643075));
 			}
 			this.aClass16_3.method220(local47, (long) local38);
 		}

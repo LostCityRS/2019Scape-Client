@@ -9,11 +9,11 @@ import org.openrs2.deob.annotation.Pc;
 public class Class44_Sub1 extends Class44 {
 
 	@OriginalMember(owner = "client!aow", name = "l", descriptor = "(Lclient!alw;II)Lclient!asy;", line = 93)
-	static Class93_Sub1_Sub20 method17432(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(30) Class93_Sub1_Sub20 local30 = new Class93_Sub1_Sub20(arg1, arg0.method22509(1660144684), arg0.method22509(507085097), arg0.method22483(-118643075), arg0.method22483(-118643075), arg0.method22465((short) 16384) == 1, arg0.method22465((short) 16384), arg0.method22465((short) 16384));
-		@Pc(34) int local34 = arg0.method22465((short) 16384);
+	static Class93_Sub1_Sub20 method17432(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+		@Pc(30) Class93_Sub1_Sub20 local30 = new Class93_Sub1_Sub20(arg1, arg0.gjstr(1660144684), arg0.gjstr(507085097), arg0.g4(-118643075), arg0.g4(-118643075), arg0.g1((short) 16384) == 1, arg0.g1((short) 16384), arg0.g1((short) 16384));
+		@Pc(34) int local34 = arg0.g1((short) 16384);
 		for (@Pc(36) int local36 = 0; local36 < local34; local36++) {
-			local30.aClass22_42.method408(new Class93_Sub32(arg0.method22465((short) 16384), arg0.method22472(-1434290800), arg0.method22472(-1434290800), arg0.method22472(-1434290800), arg0.method22472(-1434290800), arg0.method22472(-1434290800), arg0.method22472(-1434290800), arg0.method22472(-1434290800), arg0.method22472(-1434290800)), 156232669);
+			local30.aClass22_42.method408(new Class93_Sub32(arg0.g1((short) 16384), arg0.g2(-1434290800), arg0.g2(-1434290800), arg0.g2(-1434290800), arg0.g2(-1434290800), arg0.g2(-1434290800), arg0.g2(-1434290800), arg0.g2(-1434290800), arg0.g2(-1434290800)), 156232669);
 		}
 		local30.method23177((short) -1937);
 		return local30;

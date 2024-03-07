@@ -26,15 +26,15 @@ public class Class250 {
 	}
 
 	@OriginalMember(owner = "client!er", name = "<init>", descriptor = "(Lclient!alw;)V", line = 13)
-	Class250(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(5) int local5 = arg0.method22528((byte) -55);
+	Class250(@OriginalArg(0) Packet arg0) {
+		@Pc(5) int local5 = arg0.gSmart1or2((byte) -55);
 		this.anIntArray355 = new int[local5];
 		this.anIntArray356 = new int[local5];
 		for (@Pc(15) int local15 = 0; local15 < local5; local15++) {
-			@Pc(22) int local22 = arg0.method22465((short) 16384);
+			@Pc(22) int local22 = arg0.g1((short) 16384);
 			this.anIntArray355[local15] = local22;
-			@Pc(31) int local31 = arg0.method22472(-1434290800);
-			@Pc(35) int local35 = arg0.method22472(-1434290800);
+			@Pc(31) int local31 = arg0.g2(-1434290800);
+			@Pc(35) int local35 = arg0.g2(-1434290800);
 			this.anIntArray356[local15] = (local31 << 16) + local35;
 		}
 	}

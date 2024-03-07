@@ -31,12 +31,12 @@ public class Class552 {
 	final Class565 this$0;
 
 	@OriginalMember(owner = "client!sj", name = "n", descriptor = "(Lclient!ase;II)V", line = 91)
-	static final void method31036(@OriginalArg(0) Class93_Sub41_Sub2 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	static final void method31036(@OriginalArg(0) PacketBit arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		Class174.anInt3292 = 0;
 		Class127.method9259(arg0, 1545630625);
 		Class1.method11(arg0, (byte) -24);
-		if (arg0.anInt3070 * 212851357 != arg1) {
-			throw new RuntimeException(arg0.anInt3070 * 212851357 + " " + arg1);
+		if (arg0.pos * 212851357 != arg1) {
+			throw new RuntimeException(arg0.pos * 212851357 + " " + arg1);
 		}
 	}
 

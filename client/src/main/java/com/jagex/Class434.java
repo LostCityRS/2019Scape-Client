@@ -18,17 +18,17 @@ public class Class434 {
 	public int anInt4807;
 
 	@OriginalMember(owner = "client!ne", name = "n", descriptor = "(Lclient!alw;)Lclient!ne;", line = 13)
-	public static Class434 method28799(@OriginalArg(0) Class93_Sub41 arg0) {
+	public static Class434 method28799(@OriginalArg(0) Packet arg0) {
 		@Pc(3) Class434 local3 = new Class434();
-		local3.anInt4807 = arg0.method22472(-1434290800) * -1924523377;
+		local3.anInt4807 = arg0.g2(-1434290800) * -1924523377;
 		local3.aClass93_Sub1_Sub18_1 = Class372.aClass58_2.method1094(local3.anInt4807 * 526894191, -737304293);
 		return local3;
 	}
 
 	@OriginalMember(owner = "client!ne", name = "m", descriptor = "(Lclient!alw;)Lclient!ne;", line = 13)
-	public static Class434 method28800(@OriginalArg(0) Class93_Sub41 arg0) {
+	public static Class434 method28800(@OriginalArg(0) Packet arg0) {
 		@Pc(3) Class434 local3 = new Class434();
-		local3.anInt4807 = arg0.method22472(-1434290800) * -1924523377;
+		local3.anInt4807 = arg0.g2(-1434290800) * -1924523377;
 		local3.aClass93_Sub1_Sub18_1 = Class372.aClass58_2.method1094(local3.anInt4807 * 526894191, -737304293);
 		return local3;
 	}

@@ -73,9 +73,9 @@ public class Class280 {
 	}
 
 	@OriginalMember(owner = "client!fz", name = "k", descriptor = "(Lclient!alw;B)Lclient!va;", line = 27)
-	static Class607 method26454(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
-		@Pc(3) int local3 = arg0.method22465((short) 16384);
-		@Pc(7) int local7 = arg0.method22465((short) 16384);
+	static Class607 method26454(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
+		@Pc(3) int local3 = arg0.g1((short) 16384);
+		@Pc(7) int local7 = arg0.g1((short) 16384);
 		return new Class607(local3, local7);
 	}
 

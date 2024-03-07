@@ -17,7 +17,7 @@ public interface Interface70 {
 	boolean method32527(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!wr", name = "ar", descriptor = "(I)Lclient!alw;")
-	Class93_Sub41 method32528(@OriginalArg(0) int arg0);
+    Packet method32528(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!wr", name = "w", descriptor = "(II)[B")
 	byte[] method32529(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1);
@@ -32,10 +32,10 @@ public interface Interface70 {
 	boolean method32532();
 
 	@OriginalMember(owner = "client!wr", name = "p", descriptor = "(Lclient!alw;B)V")
-	void method32533(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1);
+	void method32533(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1);
 
 	@OriginalMember(owner = "client!wr", name = "d", descriptor = "(II)Lclient!alw;")
-	Class93_Sub41 method32534(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1);
+    Packet method32534(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1);
 
 	@OriginalMember(owner = "client!wr", name = "r", descriptor = "(I)Z")
 	boolean method32535(@OriginalArg(0) int arg0);
@@ -98,13 +98,13 @@ public interface Interface70 {
 	int method32554();
 
 	@OriginalMember(owner = "client!wr", name = "at", descriptor = "(Lclient!alw;)V")
-	void method32555(@OriginalArg(0) Class93_Sub41 arg0);
+	void method32555(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!wr", name = "aj", descriptor = "()Z")
 	boolean method32556();
 
 	@OriginalMember(owner = "client!wr", name = "am", descriptor = "(I)Lclient!alw;")
-	Class93_Sub41 method32557(@OriginalArg(0) int arg0);
+    Packet method32557(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!wr", name = "z", descriptor = "(B)I")
 	int method32558(@OriginalArg(0) byte arg0);
@@ -140,13 +140,13 @@ public interface Interface70 {
 	void method32568(@OriginalArg(0) boolean arg0);
 
 	@OriginalMember(owner = "client!wr", name = "ad", descriptor = "(I)Lclient!alw;")
-	Class93_Sub41 method32569(@OriginalArg(0) int arg0);
+    Packet method32569(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!wr", name = "bx", descriptor = "()Z")
 	boolean method32570();
 
 	@OriginalMember(owner = "client!wr", name = "au", descriptor = "(I)Lclient!alw;")
-	Class93_Sub41 method32571(@OriginalArg(0) int arg0);
+    Packet method32571(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!wr", name = "an", descriptor = "()Z")
 	boolean method32572();

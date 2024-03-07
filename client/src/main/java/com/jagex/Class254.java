@@ -30,17 +30,17 @@ public class Class254 {
 	float aFloat280 = Float.MAX_VALUE;
 
 	@OriginalMember(owner = "client!ey", name = "e", descriptor = "(Lclient!alw;I)Lclient!hr;", line = 10)
-	public static Class321 method25996(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) int local3 = arg0.method22465((short) 16384);
+	public static Class321 method25996(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) int local3 = arg0.g1((short) 16384);
 		if (local3 == 0) {
 			return null;
 		}
 		local3--;
-		arg0.anInt3070 += -1445626955;
-		@Pc(18) int local18 = arg0.method22483(-118643075);
+		arg0.pos += -1445626955;
+		@Pc(18) int local18 = arg0.g4(-118643075);
 		@Pc(21) Object[] local21 = new Object[local3];
 		for (@Pc(23) int local23 = 0; local23 < local3; local23++) {
-			@Pc(30) int local30 = arg0.method22465((short) 16384);
+			@Pc(30) int local30 = arg0.g1((short) 16384);
 			if (local30 == 0) {
 				local21[local23] = Class500.method30160(Integer.class, -47609621).method30272(arg0, -1187347627);
 			} else if (local30 == 1) {
@@ -62,23 +62,23 @@ public class Class254 {
 	}
 
 	@OriginalMember(owner = "client!ey", name = "e", descriptor = "(Lclient!alw;II)V", line = 17)
-	void method25998(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		this.anInt3852 = arg0.method22475((byte) -97) * 1655674161;
-		this.aFloat281 = arg0.method22504(-58104609);
-		this.aFloat282 = arg0.method22504(1068792815);
-		this.aFloat283 = arg0.method22504(-805718494);
-		this.aFloat284 = arg0.method22504(48844432);
-		this.aFloat280 = arg0.method22504(1350052354);
+	void method25998(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+		this.anInt3852 = arg0.g2s((byte) -97) * 1655674161;
+		this.aFloat281 = arg0.gFloat(-58104609);
+		this.aFloat282 = arg0.gFloat(1068792815);
+		this.aFloat283 = arg0.gFloat(-805718494);
+		this.aFloat284 = arg0.gFloat(48844432);
+		this.aFloat280 = arg0.gFloat(1350052354);
 	}
 
 	@OriginalMember(owner = "client!ey", name = "n", descriptor = "(Lclient!alw;I)V", line = 17)
-	void method25999(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		this.anInt3852 = arg0.method22475((byte) -11) * 1655674161;
-		this.aFloat281 = arg0.method22504(521915274);
-		this.aFloat282 = arg0.method22504(1270832534);
-		this.aFloat283 = arg0.method22504(-1173402327);
-		this.aFloat284 = arg0.method22504(-813941282);
-		this.aFloat280 = arg0.method22504(1986596422);
+	void method25999(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		this.anInt3852 = arg0.g2s((byte) -11) * 1655674161;
+		this.aFloat281 = arg0.gFloat(521915274);
+		this.aFloat282 = arg0.gFloat(1270832534);
+		this.aFloat283 = arg0.gFloat(-1173402327);
+		this.aFloat284 = arg0.gFloat(-813941282);
+		this.aFloat280 = arg0.gFloat(1986596422);
 	}
 
 	@OriginalMember(owner = "client!ey", name = "eo", descriptor = "(II)V", line = 635)

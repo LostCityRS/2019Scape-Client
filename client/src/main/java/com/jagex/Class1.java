@@ -311,17 +311,17 @@ public class Class1 {
 	}
 
 	@OriginalMember(owner = "client!a", name = "l", descriptor = "(Lclient!ase;B)V", line = 472)
-	static final void method11(@OriginalArg(0) Class93_Sub41_Sub2 arg0, @OriginalArg(1) byte arg1) {
+	static final void method11(@OriginalArg(0) PacketBit arg0, @OriginalArg(1) byte arg1) {
 		for (@Pc(1) int local1 = 0; local1 < Class174.anInt3292 * 2140666325; local1++) {
-			arg0.method22472(-1434290800);
+			arg0.g2(-1434290800);
 			@Pc(14) int local14 = Class174.anIntArray279[local1];
 			@Pc(18) Class132_Sub1_Sub1_Sub1_Sub2 local18 = client.aClass132_Sub1_Sub1_Sub1_Sub2Array1[local14];
-			@Pc(22) int local22 = arg0.method22465((short) 16384);
+			@Pc(22) int local22 = arg0.g1((short) 16384);
 			if ((local22 & 0x40) != 0) {
-				local22 += arg0.method22465((short) 16384) << 8;
+				local22 += arg0.g1((short) 16384) << 8;
 			}
 			if ((local22 & 0x1000) != 0) {
-				local22 += arg0.method22465((short) 16384) << 16;
+				local22 += arg0.g1((short) 16384) << 16;
 			}
 			Class534.method30625(arg0, local14, local18, local22, 414306194);
 		}
@@ -408,8 +408,8 @@ public class Class1 {
 	@OriginalMember(owner = "client!a", name = "jm", descriptor = "(III)V", line = 10166)
 	public static void method17(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_100, client.aClass175_2.aClass24_2, (byte) 16);
-		local5.aClass93_Sub41_Sub2_1.method22641(arg0, (byte) -89);
-		local5.aClass93_Sub41_Sub2_1.method22597(arg1, -2116645711);
+		local5.aPacketBit_1.p4_alt3(arg0, (byte) -89);
+		local5.aPacketBit_1.p2_alt2(arg1, -2116645711);
 		client.aClass175_2.method24356(local5, -1765853382);
 	}
 

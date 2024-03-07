@@ -41,11 +41,11 @@ public class Class125_Sub1 extends Class125 {
 	}
 
 	@OriginalMember(owner = "client!ahe", name = "f", descriptor = "(Lclient!alw;)Lclient!kp;", line = 16)
-	public static Class125 method9213(@OriginalArg(0) Class93_Sub41 arg0) {
+	public static Class125 method9213(@OriginalArg(0) Packet arg0) {
 		@Pc(3) Class125 local3 = Class32_Sub4.method16727(arg0, -423624971);
-		@Pc(7) int local7 = arg0.method22483(-118643075);
-		@Pc(11) int local11 = arg0.method22483(-118643075);
-		@Pc(15) int local15 = arg0.method22542(-1869949931);
+		@Pc(7) int local7 = arg0.g4(-118643075);
+		@Pc(11) int local11 = arg0.g4(-118643075);
+		@Pc(15) int local15 = arg0.gSmart2or4null(-1869949931);
 		return new Class125_Sub1(local3.aClass390_7, local3.aClass392_7, local3.anInt2981 * 483768335, local3.anInt2982 * 2099407685, local3.anInt2983 * 1135283731, local3.anInt2980 * -1017655207, local3.anInt2985 * -1946839755, local3.anInt2986 * -1726029297, local3.anInt2984 * 291173831, local7, local11, local15);
 	}
 

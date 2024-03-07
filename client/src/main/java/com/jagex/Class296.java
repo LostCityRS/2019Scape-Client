@@ -46,9 +46,9 @@ public class Class296 implements Interface26 {
 	}
 
 	@OriginalMember(owner = "client!gp", name = "<init>", descriptor = "(Lclient!gx;Lclient!alw;)V", line = 278)
-	Class296(@OriginalArg(0) Class303 arg0, @OriginalArg(1) Class93_Sub41 arg1) {
+	Class296(@OriginalArg(0) Class303 arg0, @OriginalArg(1) Packet arg1) {
 		this.this$0 = arg0;
-		this.anInt3918 = arg1.method22472(-1434290800) * -1803100599;
+		this.anInt3918 = arg1.g2(-1434290800) * -1803100599;
 		this.aClass304_1 = new Class304(arg1, false, false, arg0.anInterface27_2);
 	}
 

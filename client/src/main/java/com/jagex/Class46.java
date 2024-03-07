@@ -124,11 +124,6 @@ public final class Class46 {
 		return Class27.method580(arg0, (int) arg0.length(), 513588792);
 	}
 
-	@OriginalMember(owner = "client!abu", name = "y", descriptor = "(Ljava/lang/String;I)I", line = 155)
-	public static int method895(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1) {
-		return arg0.length() + 1;
-	}
-
 	@OriginalMember(owner = "client!abu", name = "c", descriptor = "(Ljava/awt/image/BufferedImage;I)[I", line = 175)
 	public static int[] method896(@OriginalArg(0) BufferedImage arg0, @OriginalArg(1) int arg1) {
 		if (arg0.getType() != 10 && arg0.getType() != 0) {

@@ -27,7 +27,7 @@ public class Class433 {
 	public final int anInt4806;
 
 	@OriginalMember(owner = "client!nd", name = "m", descriptor = "(Lclient!alw;I)Ljava/lang/String;", line = 26)
-	public static String method28791(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	public static String method28791(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		return Class106.method7526(arg0, 32767, -1989207878);
 	}
 

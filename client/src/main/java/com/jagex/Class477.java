@@ -21,13 +21,13 @@ public class Class477 {
 	final int anInt5127;
 
 	@OriginalMember(owner = "client!pc", name = "<init>", descriptor = "(Lclient!alw;)V", line = 11)
-	Class477(@OriginalArg(0) Class93_Sub41 arg0) {
-		this.aClass484_1 = (Class484) Class107.method18116(Class484.method29784((short) 28722), arg0.method22465((short) 16384), -1915563430);
-		this.anInt5128 = arg0.method22483(-118643075) * -1602366477;
+	Class477(@OriginalArg(0) Packet arg0) {
+		this.aClass484_1 = (Class484) Class107.method18116(Class484.method29784((short) 28722), arg0.g1((short) 16384), -1915563430);
+		this.anInt5128 = arg0.g4(-118643075) * -1602366477;
 		if (this.aClass484_1 == Class484.aClass484_5) {
 			this.anInt5127 = this.anInt5128 * 1031860883;
 		} else {
-			this.anInt5127 = arg0.method22483(-118643075) * -82023799;
+			this.anInt5127 = arg0.g4(-118643075) * -82023799;
 		}
 	}
 

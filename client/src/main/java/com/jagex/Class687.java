@@ -1101,10 +1101,10 @@ public final class Class687 {
 			return;
 		}
 		@Pc(12) Class93_Sub22 local12 = Class102.method2588(Class446.aClass446_27, local2.aClass24_2, (byte) 65);
-		local12.aClass93_Sub41_Sub2_1.method22395(Class46.method895(arg0, -1730231884) + Class46.method895(arg1, -1834882762) + Class46.method895(arg2, -1805430696) + 1, 2143859740);
-		local12.aClass93_Sub41_Sub2_1.method22431(arg0, 1969149699);
-		local12.aClass93_Sub41_Sub2_1.method22431(arg1, -2085906164);
-		local12.aClass93_Sub41_Sub2_1.method22431(arg2, 197984071);
+		local12.aPacketBit_1.p2(Packet.pjstrlen(arg0, -1730231884) + Packet.pjstrlen(arg1, -1834882762) + Packet.pjstrlen(arg2, -1805430696) + 1, 2143859740);
+		local12.aPacketBit_1.pjstr(arg0, 1969149699);
+		local12.aPacketBit_1.pjstr(arg1, -2085906164);
+		local12.aPacketBit_1.pjstr(arg2, 197984071);
 		@Pc(46) int local46 = 0;
 		if (arg3) {
 			local46 |= 0x1;
@@ -1112,7 +1112,7 @@ public final class Class687 {
 		if (arg4) {
 			local46 |= 0x2;
 		}
-		local12.aClass93_Sub41_Sub2_1.method22394(local46, (byte) -116);
+		local12.aPacketBit_1.p1(local46, (byte) -116);
 		local2.method24356(local12, -1508239269);
 	}
 
@@ -1123,10 +1123,10 @@ public final class Class687 {
 			return;
 		}
 		@Pc(12) Class93_Sub22 local12 = Class102.method2588(Class446.aClass446_27, local2.aClass24_2, (byte) 94);
-		local12.aClass93_Sub41_Sub2_1.method22395(Class46.method895(arg0, -1607220759) + Class46.method895(arg1, -1735740094) + Class46.method895(arg2, -1769685696) + 1, 2125123499);
-		local12.aClass93_Sub41_Sub2_1.method22431(arg0, 678931585);
-		local12.aClass93_Sub41_Sub2_1.method22431(arg1, -1844761396);
-		local12.aClass93_Sub41_Sub2_1.method22431(arg2, -2134155478);
+		local12.aPacketBit_1.p2(Packet.pjstrlen(arg0, -1607220759) + Packet.pjstrlen(arg1, -1735740094) + Packet.pjstrlen(arg2, -1769685696) + 1, 2125123499);
+		local12.aPacketBit_1.pjstr(arg0, 678931585);
+		local12.aPacketBit_1.pjstr(arg1, -1844761396);
+		local12.aPacketBit_1.pjstr(arg2, -2134155478);
 		@Pc(46) int local46 = 0;
 		if (arg3) {
 			local46 |= 0x1;
@@ -1134,7 +1134,7 @@ public final class Class687 {
 		if (arg4) {
 			local46 |= 0x2;
 		}
-		local12.aClass93_Sub41_Sub2_1.method22394(local46, (byte) -68);
+		local12.aPacketBit_1.p1(local46, (byte) -68);
 		local2.method24356(local12, -2084861475);
 	}
 
@@ -1145,10 +1145,10 @@ public final class Class687 {
 			return;
 		}
 		@Pc(12) Class93_Sub22 local12 = Class102.method2588(Class446.aClass446_27, local2.aClass24_2, (byte) 56);
-		local12.aClass93_Sub41_Sub2_1.method22395(Class46.method895(arg0, -1914093216) + Class46.method895(arg1, -1580838333) + Class46.method895(arg2, -1855245118) + 1, 2132803175);
-		local12.aClass93_Sub41_Sub2_1.method22431(arg0, -1623356852);
-		local12.aClass93_Sub41_Sub2_1.method22431(arg1, 928343178);
-		local12.aClass93_Sub41_Sub2_1.method22431(arg2, 1642914859);
+		local12.aPacketBit_1.p2(Packet.pjstrlen(arg0, -1914093216) + Packet.pjstrlen(arg1, -1580838333) + Packet.pjstrlen(arg2, -1855245118) + 1, 2132803175);
+		local12.aPacketBit_1.pjstr(arg0, -1623356852);
+		local12.aPacketBit_1.pjstr(arg1, 928343178);
+		local12.aPacketBit_1.pjstr(arg2, 1642914859);
 		@Pc(46) int local46 = 0;
 		if (arg3) {
 			local46 |= 0x1;
@@ -1156,7 +1156,7 @@ public final class Class687 {
 		if (arg4) {
 			local46 |= 0x2;
 		}
-		local12.aClass93_Sub41_Sub2_1.method22394(local46, (byte) -90);
+		local12.aPacketBit_1.p1(local46, (byte) -90);
 		local2.method24356(local12, -1834947238);
 	}
 
@@ -2931,7 +2931,7 @@ public final class Class687 {
 				Class680.method33244(arg1, -86055967);
 				return;
 			case 589:
-				Class93_Sub41.method22659(arg1, 369052447);
+				method22659(arg1, 369052447);
 				return;
 			case 590:
 				Class57.method1090(arg1, (byte) 2);
@@ -3363,7 +3363,7 @@ public final class Class687 {
 				Class327.method27321(arg1, (short) -18887);
 				return;
 			case 733:
-				Class93_Sub41.method22660(arg1, 1672797993);
+				method22660(arg1, 1672797993);
 				return;
 			case 734:
 				Class520.method30342(arg1, 484484711);
@@ -7223,7 +7223,7 @@ public final class Class687 {
 				Class680.method33244(arg1, 594021539);
 				return;
 			case 589:
-				Class93_Sub41.method22659(arg1, 369052447);
+				method22659(arg1, 369052447);
 				return;
 			case 590:
 				Class57.method1090(arg1, (byte) 17);
@@ -7655,7 +7655,7 @@ public final class Class687 {
 				Class327.method27321(arg1, (short) -2774);
 				return;
 			case 733:
-				Class93_Sub41.method22660(arg1, 1561782911);
+				method22660(arg1, 1561782911);
 				return;
 			case 734:
 				Class520.method30342(arg1, 1382248776);
@@ -19615,7 +19615,7 @@ public final class Class687 {
 			local15 = Class616.method32090(local13, (byte) 8);
 		}
 		@Pc(29) Class93_Sub22 local29 = Class102.method2588(Class446.aClass446_123, client.aClass175_2.aClass24_2, (byte) 21);
-		local29.aClass93_Sub41_Sub2_1.method22406(local15, (byte) -20);
+		local29.aPacketBit_1.p4(local15, (byte) -20);
 		client.aClass175_2.method24356(local29, -1892099760);
 	}
 
@@ -19627,7 +19627,7 @@ public final class Class687 {
 			local15 = Class616.method32090(local13, (byte) 8);
 		}
 		@Pc(29) Class93_Sub22 local29 = Class102.method2588(Class446.aClass446_123, client.aClass175_2.aClass24_2, (byte) 113);
-		local29.aClass93_Sub41_Sub2_1.method22406(local15, (byte) 74);
+		local29.aPacketBit_1.p4(local15, (byte) 74);
 		client.aClass175_2.method24356(local29, -1494700982);
 	}
 
@@ -19639,7 +19639,7 @@ public final class Class687 {
 			local15 = Class616.method32090(local13, (byte) 8);
 		}
 		@Pc(29) Class93_Sub22 local29 = Class102.method2588(Class446.aClass446_123, client.aClass175_2.aClass24_2, (byte) 72);
-		local29.aClass93_Sub41_Sub2_1.method22406(local15, (byte) -15);
+		local29.aPacketBit_1.p4(local15, (byte) -15);
 		client.aClass175_2.method24356(local29, -1476194612);
 	}
 
@@ -19651,7 +19651,7 @@ public final class Class687 {
 			local15 = Class616.method32090(local13, (byte) 8);
 		}
 		@Pc(29) Class93_Sub22 local29 = Class102.method2588(Class446.aClass446_123, client.aClass175_2.aClass24_2, (byte) 81);
-		local29.aClass93_Sub41_Sub2_1.method22406(local15, (byte) -9);
+		local29.aPacketBit_1.p4(local15, (byte) -9);
 		client.aClass175_2.method24356(local29, -1911347446);
 	}
 
@@ -19659,8 +19659,8 @@ public final class Class687 {
 	static final void method34645(@OriginalArg(0) Class681 arg0) {
 		@Pc(13) String local13 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
 		@Pc(19) Class93_Sub22 local19 = Class102.method2588(Class446.aClass446_103, client.aClass175_2.aClass24_2, (byte) 73);
-		local19.aClass93_Sub41_Sub2_1.method22394(local13.length() + 1, (byte) -123);
-		local19.aClass93_Sub41_Sub2_1.method22431(local13, -1559497142);
+		local19.aPacketBit_1.p1(local13.length() + 1, (byte) -123);
+		local19.aPacketBit_1.pjstr(local13, -1559497142);
 		client.aClass175_2.method24356(local19, -2006183782);
 	}
 
@@ -19668,8 +19668,8 @@ public final class Class687 {
 	static final void method34646(@OriginalArg(0) Class681 arg0) {
 		@Pc(13) String local13 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
 		@Pc(19) Class93_Sub22 local19 = Class102.method2588(Class446.aClass446_103, client.aClass175_2.aClass24_2, (byte) 72);
-		local19.aClass93_Sub41_Sub2_1.method22394(local13.length() + 1, (byte) -23);
-		local19.aClass93_Sub41_Sub2_1.method22431(local13, 1111196188);
+		local19.aPacketBit_1.p1(local13.length() + 1, (byte) -23);
+		local19.aPacketBit_1.pjstr(local13, 1111196188);
 		client.aClass175_2.method24356(local19, -1538428567);
 	}
 
@@ -19677,8 +19677,8 @@ public final class Class687 {
 	static final void method34647(@OriginalArg(0) Class681 arg0) {
 		@Pc(13) String local13 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
 		@Pc(19) Class93_Sub22 local19 = Class102.method2588(Class446.aClass446_5, client.aClass175_2.aClass24_2, (byte) 105);
-		local19.aClass93_Sub41_Sub2_1.method22394(local13.length() + 1, (byte) -37);
-		local19.aClass93_Sub41_Sub2_1.method22431(local13, -1018062434);
+		local19.aPacketBit_1.p1(local13.length() + 1, (byte) -37);
+		local19.aPacketBit_1.pjstr(local13, -1018062434);
 		client.aClass175_2.method24356(local19, -1920530125);
 	}
 
@@ -19686,8 +19686,8 @@ public final class Class687 {
 	static final void method34648(@OriginalArg(0) Class681 arg0) {
 		@Pc(13) String local13 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
 		@Pc(19) Class93_Sub22 local19 = Class102.method2588(Class446.aClass446_5, client.aClass175_2.aClass24_2, (byte) 69);
-		local19.aClass93_Sub41_Sub2_1.method22394(local13.length() + 1, (byte) -75);
-		local19.aClass93_Sub41_Sub2_1.method22431(local13, 15845082);
+		local19.aPacketBit_1.p1(local13.length() + 1, (byte) -75);
+		local19.aPacketBit_1.pjstr(local13, 15845082);
 		client.aClass175_2.method24356(local19, -1714352717);
 	}
 
@@ -19695,8 +19695,8 @@ public final class Class687 {
 	static final void method34649(@OriginalArg(0) Class681 arg0) {
 		@Pc(13) String local13 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
 		@Pc(19) Class93_Sub22 local19 = Class102.method2588(Class446.aClass446_5, client.aClass175_2.aClass24_2, (byte) 109);
-		local19.aClass93_Sub41_Sub2_1.method22394(local13.length() + 1, (byte) -52);
-		local19.aClass93_Sub41_Sub2_1.method22431(local13, 1314195554);
+		local19.aPacketBit_1.p1(local13.length() + 1, (byte) -52);
+		local19.aPacketBit_1.pjstr(local13, 1314195554);
 		client.aClass175_2.method24356(local19, -1525388337);
 	}
 
@@ -19746,7 +19746,7 @@ public final class Class687 {
 	static final void method34655(@OriginalArg(0) Class681 arg0) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
 		@Pc(18) Class93_Sub22 local18 = Class102.method2588(Class446.aClass446_101, client.aClass175_2.aClass24_2, (byte) 122);
-		local18.aClass93_Sub41_Sub2_1.method22395(local12, 2145769739);
+		local18.aPacketBit_1.p2(local12, 2145769739);
 		client.aClass175_2.method24356(local18, -2017357151);
 	}
 
@@ -19754,7 +19754,7 @@ public final class Class687 {
 	static final void method34656(@OriginalArg(0) Class681 arg0) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
 		@Pc(18) Class93_Sub22 local18 = Class102.method2588(Class446.aClass446_101, client.aClass175_2.aClass24_2, (byte) 26);
-		local18.aClass93_Sub41_Sub2_1.method22395(local12, 2133242945);
+		local18.aPacketBit_1.p2(local12, 2133242945);
 		client.aClass175_2.method24356(local18, -1848259004);
 	}
 
@@ -19872,7 +19872,7 @@ public final class Class687 {
 	static final void method34669(@OriginalArg(0) Class681 arg0) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
 		@Pc(18) Class93_Sub22 local18 = Class102.method2588(Class446.aClass446_3, client.aClass175_2.aClass24_2, (byte) 102);
-		local18.aClass93_Sub41_Sub2_1.method22395(local12, 2131657409);
+		local18.aPacketBit_1.p2(local12, 2131657409);
 		client.aClass175_2.method24356(local18, -1938235570);
 	}
 
@@ -19880,7 +19880,7 @@ public final class Class687 {
 	static final void method34670(@OriginalArg(0) Class681 arg0) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
 		@Pc(18) Class93_Sub22 local18 = Class102.method2588(Class446.aClass446_3, client.aClass175_2.aClass24_2, (byte) 50);
-		local18.aClass93_Sub41_Sub2_1.method22395(local12, 2142524623);
+		local18.aPacketBit_1.p2(local12, 2142524623);
 		client.aClass175_2.method24356(local18, -1841743544);
 	}
 
@@ -19888,8 +19888,8 @@ public final class Class687 {
 	static final void method34671(@OriginalArg(0) Class681 arg0) {
 		@Pc(13) String local13 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
 		@Pc(19) Class93_Sub22 local19 = Class102.method2588(Class446.aClass446_112, client.aClass175_2.aClass24_2, (byte) 105);
-		local19.aClass93_Sub41_Sub2_1.method22394(local13.length() + 1, (byte) -69);
-		local19.aClass93_Sub41_Sub2_1.method22431(local13, 225238564);
+		local19.aPacketBit_1.p1(local13.length() + 1, (byte) -69);
+		local19.aPacketBit_1.pjstr(local13, 225238564);
 		client.aClass175_2.method24356(local19, -2062065762);
 	}
 
@@ -21269,8 +21269,8 @@ public final class Class687 {
 	static final void method34840(@OriginalArg(0) Class681 arg0) {
 		@Pc(13) String local13 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
 		@Pc(19) Class93_Sub22 local19 = Class102.method2588(Class446.aClass446_62, client.aClass175_1.aClass24_2, (byte) 75);
-		local19.aClass93_Sub41_Sub2_1.method22394(Class46.method895(local13, -1846139624), (byte) -50);
-		local19.aClass93_Sub41_Sub2_1.method22431(local13, 754756514);
+		local19.aPacketBit_1.p1(Packet.pjstrlen(local13, -1846139624), (byte) -50);
+		local19.aPacketBit_1.pjstr(local13, 754756514);
 		client.aClass175_1.method24356(local19, -1494182840);
 	}
 
@@ -21278,8 +21278,8 @@ public final class Class687 {
 	static final void method34841(@OriginalArg(0) Class681 arg0) {
 		@Pc(13) String local13 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
 		@Pc(19) Class93_Sub22 local19 = Class102.method2588(Class446.aClass446_62, client.aClass175_1.aClass24_2, (byte) 69);
-		local19.aClass93_Sub41_Sub2_1.method22394(Class46.method895(local13, -1614539446), (byte) -66);
-		local19.aClass93_Sub41_Sub2_1.method22431(local13, -1233114270);
+		local19.aPacketBit_1.p1(Packet.pjstrlen(local13, -1614539446), (byte) -66);
+		local19.aPacketBit_1.pjstr(local13, -1233114270);
 		client.aClass175_1.method24356(local19, -1478579685);
 	}
 
@@ -21287,8 +21287,8 @@ public final class Class687 {
 	static final void method34842(@OriginalArg(0) Class681 arg0) {
 		@Pc(13) String local13 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
 		@Pc(19) Class93_Sub22 local19 = Class102.method2588(Class446.aClass446_62, client.aClass175_1.aClass24_2, (byte) 104);
-		local19.aClass93_Sub41_Sub2_1.method22394(Class46.method895(local13, -1939645231), (byte) -43);
-		local19.aClass93_Sub41_Sub2_1.method22431(local13, -1016931895);
+		local19.aPacketBit_1.p1(Packet.pjstrlen(local13, -1939645231), (byte) -43);
+		local19.aPacketBit_1.pjstr(local13, -1016931895);
 		client.aClass175_1.method24356(local19, -1499004095);
 	}
 
@@ -21297,9 +21297,9 @@ public final class Class687 {
 		@Pc(13) String local13 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
 		@Pc(27) String local27 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
 		@Pc(33) Class93_Sub22 local33 = Class102.method2588(Class446.aClass446_36, client.aClass175_1.aClass24_2, (byte) 91);
-		local33.aClass93_Sub41_Sub2_1.method22395(Class46.method895(local13, -1950573668) + Class46.method895(local27, -1878810214), 2134514735);
-		local33.aClass93_Sub41_Sub2_1.method22431(local13, -837959904);
-		local33.aClass93_Sub41_Sub2_1.method22431(local27, -782329487);
+		local33.aPacketBit_1.p2(Packet.pjstrlen(local13, -1950573668) + Packet.pjstrlen(local27, -1878810214), 2134514735);
+		local33.aPacketBit_1.pjstr(local13, -837959904);
+		local33.aPacketBit_1.pjstr(local27, -782329487);
 		client.aClass175_1.method24356(local33, -1699716013);
 	}
 
@@ -21308,9 +21308,9 @@ public final class Class687 {
 		@Pc(13) String local13 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
 		@Pc(27) String local27 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
 		@Pc(33) Class93_Sub22 local33 = Class102.method2588(Class446.aClass446_36, client.aClass175_1.aClass24_2, (byte) 62);
-		local33.aClass93_Sub41_Sub2_1.method22395(Class46.method895(local13, -1967800309) + Class46.method895(local27, -1629261317), 2129421803);
-		local33.aClass93_Sub41_Sub2_1.method22431(local13, 1469539978);
-		local33.aClass93_Sub41_Sub2_1.method22431(local27, -1739349812);
+		local33.aPacketBit_1.p2(Packet.pjstrlen(local13, -1967800309) + Packet.pjstrlen(local27, -1629261317), 2129421803);
+		local33.aPacketBit_1.pjstr(local13, 1469539978);
+		local33.aPacketBit_1.pjstr(local27, -1739349812);
 		client.aClass175_1.method24356(local33, -1627635298);
 	}
 
@@ -21323,8 +21323,8 @@ public final class Class687 {
 		@Pc(48) boolean local48 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 1] == 1;
 		@Pc(63) boolean local63 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 2] == 1;
 		@Pc(69) Class93_Sub22 local69 = Class102.method2588(Class446.aClass446_80, client.aClass175_1.aClass24_2, (byte) 79);
-		local69.aClass93_Sub41_Sub2_1.method22395(Class46.method895(local20, -1944571185) + 1, 2137600970);
-		local69.aClass93_Sub41_Sub2_1.method22431(local20, -1892638812);
+		local69.aPacketBit_1.p2(Packet.pjstrlen(local20, -1944571185) + 1, 2137600970);
+		local69.aPacketBit_1.pjstr(local20, -1892638812);
 		@Pc(85) int local85 = 0;
 		if (local33) {
 			local85 |= 0x1;
@@ -21335,7 +21335,7 @@ public final class Class687 {
 		if (local63) {
 			local85 |= 0x4;
 		}
-		local69.aClass93_Sub41_Sub2_1.method22394(local85, (byte) -61);
+		local69.aPacketBit_1.p1(local85, (byte) -61);
 		client.aClass175_1.method24356(local69, -1865584674);
 	}
 
@@ -21348,8 +21348,8 @@ public final class Class687 {
 		@Pc(48) boolean local48 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 1] == 1;
 		@Pc(63) boolean local63 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 2] == 1;
 		@Pc(69) Class93_Sub22 local69 = Class102.method2588(Class446.aClass446_80, client.aClass175_1.aClass24_2, (byte) 117);
-		local69.aClass93_Sub41_Sub2_1.method22395(Class46.method895(local20, -1891527829) + 1, 2142368467);
-		local69.aClass93_Sub41_Sub2_1.method22431(local20, 1543868478);
+		local69.aPacketBit_1.p2(Packet.pjstrlen(local20, -1891527829) + 1, 2142368467);
+		local69.aPacketBit_1.pjstr(local20, 1543868478);
 		@Pc(85) int local85 = 0;
 		if (local33) {
 			local85 |= 0x1;
@@ -21360,7 +21360,7 @@ public final class Class687 {
 		if (local63) {
 			local85 |= 0x4;
 		}
-		local69.aClass93_Sub41_Sub2_1.method22394(local85, (byte) -85);
+		local69.aPacketBit_1.p1(local85, (byte) -85);
 		client.aClass175_1.method24356(local69, -1795778464);
 	}
 
@@ -21373,8 +21373,8 @@ public final class Class687 {
 		@Pc(48) boolean local48 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 1] == 1;
 		@Pc(63) boolean local63 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 2] == 1;
 		@Pc(69) Class93_Sub22 local69 = Class102.method2588(Class446.aClass446_80, client.aClass175_1.aClass24_2, (byte) 126);
-		local69.aClass93_Sub41_Sub2_1.method22395(Class46.method895(local20, -1922020743) + 1, 2127485888);
-		local69.aClass93_Sub41_Sub2_1.method22431(local20, -1933662206);
+		local69.aPacketBit_1.p2(Packet.pjstrlen(local20, -1922020743) + 1, 2127485888);
+		local69.aPacketBit_1.pjstr(local20, -1933662206);
 		@Pc(85) int local85 = 0;
 		if (local33) {
 			local85 |= 0x1;
@@ -21385,7 +21385,7 @@ public final class Class687 {
 		if (local63) {
 			local85 |= 0x4;
 		}
-		local69.aClass93_Sub41_Sub2_1.method22394(local85, (byte) -113);
+		local69.aPacketBit_1.p1(local85, (byte) -113);
 		client.aClass175_1.method24356(local69, -1581441084);
 	}
 
@@ -24420,9 +24420,9 @@ public final class Class687 {
 		client.anInt3552 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 2] * 630676823;
 		@Pc(46) Class175 local46 = Class330.method27371(-1765102797);
 		@Pc(52) Class93_Sub22 local52 = Class102.method2588(Class446.aClass446_75, local46.aClass24_2, (byte) 36);
-		local52.aClass93_Sub41_Sub2_1.method22394(client.anInt3561 * 2112576331, (byte) -12);
-		local52.aClass93_Sub41_Sub2_1.method22394(Class118_Sub1.aClass12_4.anInt25 * -1955231941, (byte) -29);
-		local52.aClass93_Sub41_Sub2_1.method22394(client.anInt3552 * -350691737, (byte) -96);
+		local52.aPacketBit_1.p1(client.anInt3561 * 2112576331, (byte) -12);
+		local52.aPacketBit_1.p1(Class118_Sub1.aClass12_4.anInt25 * -1955231941, (byte) -29);
+		local52.aPacketBit_1.p1(client.anInt3552 * -350691737, (byte) -96);
 		local46.method24356(local52, -2090484594);
 	}
 
@@ -24437,9 +24437,9 @@ public final class Class687 {
 		client.anInt3552 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 2] * 630676823;
 		@Pc(46) Class175 local46 = Class330.method27371(-1797533454);
 		@Pc(52) Class93_Sub22 local52 = Class102.method2588(Class446.aClass446_75, local46.aClass24_2, (byte) 99);
-		local52.aClass93_Sub41_Sub2_1.method22394(client.anInt3561 * 2112576331, (byte) -62);
-		local52.aClass93_Sub41_Sub2_1.method22394(Class118_Sub1.aClass12_4.anInt25 * -1955231941, (byte) -36);
-		local52.aClass93_Sub41_Sub2_1.method22394(client.anInt3552 * -350691737, (byte) -12);
+		local52.aPacketBit_1.p1(client.anInt3561 * 2112576331, (byte) -62);
+		local52.aPacketBit_1.p1(Class118_Sub1.aClass12_4.anInt25 * -1955231941, (byte) -36);
+		local52.aPacketBit_1.p1(client.anInt3552 * -350691737, (byte) -12);
 		local46.method24356(local52, -1990706505);
 	}
 
@@ -24459,11 +24459,11 @@ public final class Class687 {
 		}
 		@Pc(66) Class175 local66 = Class330.method27371(-1945411338);
 		@Pc(72) Class93_Sub22 local72 = Class102.method2588(Class446.aClass446_77, local66.aClass24_2, (byte) 66);
-		local72.aClass93_Sub41_Sub2_1.method22394(Class46.method895(local14, -1716284756) + 2 + Class46.method895(local25, -2143244414), (byte) -51);
-		local72.aClass93_Sub41_Sub2_1.method22431(local14, 950976455);
-		local72.aClass93_Sub41_Sub2_1.method22394(local39 - 1, (byte) -17);
-		local72.aClass93_Sub41_Sub2_1.method22394(local49, (byte) -86);
-		local72.aClass93_Sub41_Sub2_1.method22431(local25, 1930320092);
+		local72.aPacketBit_1.p1(Packet.pjstrlen(local14, -1716284756) + 2 + Packet.pjstrlen(local25, -2143244414), (byte) -51);
+		local72.aPacketBit_1.pjstr(local14, 950976455);
+		local72.aPacketBit_1.p1(local39 - 1, (byte) -17);
+		local72.aPacketBit_1.p1(local49, (byte) -86);
+		local72.aPacketBit_1.pjstr(local25, 1930320092);
 		local66.method24356(local72, -2044957509);
 	}
 
@@ -24483,11 +24483,11 @@ public final class Class687 {
 		}
 		@Pc(66) Class175 local66 = Class330.method27371(-2138065880);
 		@Pc(72) Class93_Sub22 local72 = Class102.method2588(Class446.aClass446_77, local66.aClass24_2, (byte) 52);
-		local72.aClass93_Sub41_Sub2_1.method22394(Class46.method895(local14, -2102499842) + 2 + Class46.method895(local25, -1734632428), (byte) -21);
-		local72.aClass93_Sub41_Sub2_1.method22431(local14, 1871751424);
-		local72.aClass93_Sub41_Sub2_1.method22394(local39 - 1, (byte) -58);
-		local72.aClass93_Sub41_Sub2_1.method22394(local49, (byte) -108);
-		local72.aClass93_Sub41_Sub2_1.method22431(local25, -240822347);
+		local72.aPacketBit_1.p1(Packet.pjstrlen(local14, -2102499842) + 2 + Packet.pjstrlen(local25, -1734632428), (byte) -21);
+		local72.aPacketBit_1.pjstr(local14, 1871751424);
+		local72.aPacketBit_1.p1(local39 - 1, (byte) -58);
+		local72.aPacketBit_1.p1(local49, (byte) -108);
+		local72.aPacketBit_1.pjstr(local25, -240822347);
 		local66.method24356(local72, -2091848930);
 	}
 
@@ -24802,7 +24802,7 @@ public final class Class687 {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
 		@Pc(15) Class175 local15 = Class330.method27371(-1774706848);
 		@Pc(21) Class93_Sub22 local21 = Class102.method2588(Class446.aClass446_46, local15.aClass24_2, (byte) 85);
-		local21.aClass93_Sub41_Sub2_1.method22394(local12, (byte) -71);
+		local21.aPacketBit_1.p1(local12, (byte) -71);
 		local15.method24356(local21, -1475096658);
 	}
 
@@ -24811,7 +24811,7 @@ public final class Class687 {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
 		@Pc(15) Class175 local15 = Class330.method27371(-1725352279);
 		@Pc(21) Class93_Sub22 local21 = Class102.method2588(Class446.aClass446_46, local15.aClass24_2, (byte) 51);
-		local21.aClass93_Sub41_Sub2_1.method22394(local12, (byte) -25);
+		local21.aPacketBit_1.p1(local12, (byte) -25);
 		local15.method24356(local21, -1502436098);
 	}
 
@@ -24820,7 +24820,7 @@ public final class Class687 {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
 		@Pc(15) Class175 local15 = Class330.method27371(-1650435882);
 		@Pc(21) Class93_Sub22 local21 = Class102.method2588(Class446.aClass446_46, local15.aClass24_2, (byte) 21);
-		local21.aClass93_Sub41_Sub2_1.method22394(local12, (byte) -111);
+		local21.aPacketBit_1.p1(local12, (byte) -111);
 		local15.method24356(local21, -1950076017);
 	}
 
@@ -24944,12 +24944,12 @@ public final class Class687 {
 		}
 		@Pc(654) Class175 local654 = Class330.method27371(-1960446799);
 		@Pc(660) Class93_Sub22 local660 = Class102.method2588(Class446.aClass446_97, local654.aClass24_2, (byte) 114);
-		local660.aClass93_Sub41_Sub2_1.method22394(0, (byte) -55);
-		@Pc(671) int local671 = local660.aClass93_Sub41_Sub2_1.anInt3070 * 212851357;
-		local660.aClass93_Sub41_Sub2_1.method22394(local30, (byte) -43);
-		local660.aClass93_Sub41_Sub2_1.method22394(local469, (byte) -34);
-		Class284.method26484(local660.aClass93_Sub41_Sub2_1, local13, -1497248091);
-		local660.aClass93_Sub41_Sub2_1.method22451(local660.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local671, (byte) 91);
+		local660.aPacketBit_1.p1(0, (byte) -55);
+		@Pc(671) int local671 = local660.aPacketBit_1.pos * 212851357;
+		local660.aPacketBit_1.p1(local30, (byte) -43);
+		local660.aPacketBit_1.p1(local469, (byte) -34);
+		Class284.method26484(local660.aPacketBit_1, local13, -1497248091);
+		local660.aPacketBit_1.psize1(local660.aPacketBit_1.pos * 212851357 - local671, (byte) 91);
 		local654.method24356(local660, -1962345875);
 	}
 
@@ -25073,12 +25073,12 @@ public final class Class687 {
 		}
 		@Pc(654) Class175 local654 = Class330.method27371(-1577318600);
 		@Pc(660) Class93_Sub22 local660 = Class102.method2588(Class446.aClass446_97, local654.aClass24_2, (byte) 41);
-		local660.aClass93_Sub41_Sub2_1.method22394(0, (byte) -124);
-		@Pc(671) int local671 = local660.aClass93_Sub41_Sub2_1.anInt3070 * 212851357;
-		local660.aClass93_Sub41_Sub2_1.method22394(local30, (byte) -69);
-		local660.aClass93_Sub41_Sub2_1.method22394(local469, (byte) -11);
-		Class284.method26484(local660.aClass93_Sub41_Sub2_1, local13, -1497248091);
-		local660.aClass93_Sub41_Sub2_1.method22451(local660.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local671, (byte) 39);
+		local660.aPacketBit_1.p1(0, (byte) -124);
+		@Pc(671) int local671 = local660.aPacketBit_1.pos * 212851357;
+		local660.aPacketBit_1.p1(local30, (byte) -69);
+		local660.aPacketBit_1.p1(local469, (byte) -11);
+		Class284.method26484(local660.aPacketBit_1, local13, -1497248091);
+		local660.aPacketBit_1.psize1(local660.aPacketBit_1.pos * 212851357 - local671, (byte) 39);
 		local654.method24356(local660, -2019209484);
 	}
 
@@ -25202,12 +25202,12 @@ public final class Class687 {
 		}
 		@Pc(654) Class175 local654 = Class330.method27371(-2122332595);
 		@Pc(660) Class93_Sub22 local660 = Class102.method2588(Class446.aClass446_97, local654.aClass24_2, (byte) 61);
-		local660.aClass93_Sub41_Sub2_1.method22394(0, (byte) -81);
-		@Pc(671) int local671 = local660.aClass93_Sub41_Sub2_1.anInt3070 * 212851357;
-		local660.aClass93_Sub41_Sub2_1.method22394(local30, (byte) -52);
-		local660.aClass93_Sub41_Sub2_1.method22394(local469, (byte) -30);
-		Class284.method26484(local660.aClass93_Sub41_Sub2_1, local13, -1497248091);
-		local660.aClass93_Sub41_Sub2_1.method22451(local660.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local671, (byte) 15);
+		local660.aPacketBit_1.p1(0, (byte) -81);
+		@Pc(671) int local671 = local660.aPacketBit_1.pos * 212851357;
+		local660.aPacketBit_1.p1(local30, (byte) -52);
+		local660.aPacketBit_1.p1(local469, (byte) -30);
+		Class284.method26484(local660.aPacketBit_1, local13, -1497248091);
+		local660.aPacketBit_1.psize1(local660.aPacketBit_1.pos * 212851357 - local671, (byte) 15);
 		local654.method24356(local660, -1815590449);
 	}
 
@@ -25221,11 +25221,11 @@ public final class Class687 {
 		}
 		@Pc(39) Class175 local39 = Class330.method27371(-1991508253);
 		@Pc(45) Class93_Sub22 local45 = Class102.method2588(Class446.aClass446_9, local39.aClass24_2, (byte) 43);
-		local45.aClass93_Sub41_Sub2_1.method22395(0, 2137682889);
-		@Pc(56) int local56 = local45.aClass93_Sub41_Sub2_1.anInt3070 * 212851357;
-		local45.aClass93_Sub41_Sub2_1.method22431(local14, -753495546);
-		Class284.method26484(local45.aClass93_Sub41_Sub2_1, local25, -1497248091);
-		local45.aClass93_Sub41_Sub2_1.method22445(local45.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local56, -277717513);
+		local45.aPacketBit_1.p2(0, 2137682889);
+		@Pc(56) int local56 = local45.aPacketBit_1.pos * 212851357;
+		local45.aPacketBit_1.pjstr(local14, -753495546);
+		Class284.method26484(local45.aPacketBit_1, local25, -1497248091);
+		local45.aPacketBit_1.psize2(local45.aPacketBit_1.pos * 212851357 - local56, -277717513);
 		local39.method24356(local45, -1712294184);
 	}
 
@@ -25239,11 +25239,11 @@ public final class Class687 {
 		}
 		@Pc(39) Class175 local39 = Class330.method27371(-1894418608);
 		@Pc(45) Class93_Sub22 local45 = Class102.method2588(Class446.aClass446_9, local39.aClass24_2, (byte) 59);
-		local45.aClass93_Sub41_Sub2_1.method22395(0, 2141551589);
-		@Pc(56) int local56 = local45.aClass93_Sub41_Sub2_1.anInt3070 * 212851357;
-		local45.aClass93_Sub41_Sub2_1.method22431(local14, 1959654538);
-		Class284.method26484(local45.aClass93_Sub41_Sub2_1, local25, -1497248091);
-		local45.aClass93_Sub41_Sub2_1.method22445(local45.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local56, 2032687779);
+		local45.aPacketBit_1.p2(0, 2141551589);
+		@Pc(56) int local56 = local45.aPacketBit_1.pos * 212851357;
+		local45.aPacketBit_1.pjstr(local14, 1959654538);
+		Class284.method26484(local45.aPacketBit_1, local25, -1497248091);
+		local45.aPacketBit_1.psize2(local45.aPacketBit_1.pos * 212851357 - local56, 2032687779);
 		local39.method24356(local45, -2100392026);
 	}
 
@@ -25257,11 +25257,11 @@ public final class Class687 {
 		}
 		@Pc(39) Class175 local39 = Class330.method27371(-1711984743);
 		@Pc(45) Class93_Sub22 local45 = Class102.method2588(Class446.aClass446_9, local39.aClass24_2, (byte) 5);
-		local45.aClass93_Sub41_Sub2_1.method22395(0, 2143803375);
-		@Pc(56) int local56 = local45.aClass93_Sub41_Sub2_1.anInt3070 * 212851357;
-		local45.aClass93_Sub41_Sub2_1.method22431(local14, 1406318396);
-		Class284.method26484(local45.aClass93_Sub41_Sub2_1, local25, -1497248091);
-		local45.aClass93_Sub41_Sub2_1.method22445(local45.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local56, 561239555);
+		local45.aPacketBit_1.p2(0, 2143803375);
+		@Pc(56) int local56 = local45.aPacketBit_1.pos * 212851357;
+		local45.aPacketBit_1.pjstr(local14, 1406318396);
+		Class284.method26484(local45.aPacketBit_1, local25, -1497248091);
+		local45.aPacketBit_1.psize2(local45.aPacketBit_1.pos * 212851357 - local56, 561239555);
 		local39.method24356(local45, -1492502253);
 	}
 
@@ -25275,11 +25275,11 @@ public final class Class687 {
 		}
 		@Pc(39) Class175 local39 = Class330.method27371(-1639999653);
 		@Pc(45) Class93_Sub22 local45 = Class102.method2588(Class446.aClass446_9, local39.aClass24_2, (byte) 82);
-		local45.aClass93_Sub41_Sub2_1.method22395(0, 2133442807);
-		@Pc(56) int local56 = local45.aClass93_Sub41_Sub2_1.anInt3070 * 212851357;
-		local45.aClass93_Sub41_Sub2_1.method22431(local14, -277216431);
-		Class284.method26484(local45.aClass93_Sub41_Sub2_1, local25, -1497248091);
-		local45.aClass93_Sub41_Sub2_1.method22445(local45.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local56, -1339885241);
+		local45.aPacketBit_1.p2(0, 2133442807);
+		@Pc(56) int local56 = local45.aPacketBit_1.pos * 212851357;
+		local45.aPacketBit_1.pjstr(local14, -277216431);
+		Class284.method26484(local45.aPacketBit_1, local25, -1497248091);
+		local45.aPacketBit_1.psize2(local45.aPacketBit_1.pos * 212851357 - local56, -1339885241);
 		local39.method24356(local45, -1830793527);
 	}
 
@@ -25535,12 +25535,12 @@ public final class Class687 {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
 		@Pc(15) Class175 local15 = Class330.method27371(-1514861515);
 		@Pc(21) Class93_Sub22 local21 = Class102.method2588(Class446.aClass446_31, local15.aClass24_2, (byte) 40);
-		local21.aClass93_Sub41_Sub2_1.method22394(0, (byte) -49);
-		@Pc(32) int local32 = local21.aClass93_Sub41_Sub2_1.anInt3070 * 212851357;
-		local21.aClass93_Sub41_Sub2_1.method22394(local12, (byte) -7);
-		local21.aClass93_Sub41_Sub2_1.method22395(arg0.aClass434_1.anInt4807 * 526894191, 2128208833);
-		arg0.aClass434_1.aClass93_Sub1_Sub18_1.method22924(local21.aClass93_Sub41_Sub2_1, arg0.aClass434_1.anIntArray445, -1431729270);
-		local21.aClass93_Sub41_Sub2_1.method22451(local21.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local32, (byte) 48);
+		local21.aPacketBit_1.p1(0, (byte) -49);
+		@Pc(32) int local32 = local21.aPacketBit_1.pos * 212851357;
+		local21.aPacketBit_1.p1(local12, (byte) -7);
+		local21.aPacketBit_1.p2(arg0.aClass434_1.anInt4807 * 526894191, 2128208833);
+		arg0.aClass434_1.aClass93_Sub1_Sub18_1.method22924(local21.aPacketBit_1, arg0.aClass434_1.anIntArray445, -1431729270);
+		local21.aPacketBit_1.psize1(local21.aPacketBit_1.pos * 212851357 - local32, (byte) 48);
 		local15.method24356(local21, -1864209602);
 	}
 
@@ -25549,12 +25549,12 @@ public final class Class687 {
 		@Pc(13) String local13 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
 		@Pc(16) Class175 local16 = Class330.method27371(-1910944757);
 		@Pc(22) Class93_Sub22 local22 = Class102.method2588(Class446.aClass446_43, local16.aClass24_2, (byte) 8);
-		local22.aClass93_Sub41_Sub2_1.method22394(0, (byte) -30);
-		@Pc(33) int local33 = local22.aClass93_Sub41_Sub2_1.anInt3070 * 212851357;
-		local22.aClass93_Sub41_Sub2_1.method22431(local13, 784574665);
-		local22.aClass93_Sub41_Sub2_1.method22395(arg0.aClass434_1.anInt4807 * 526894191, 2129334000);
-		arg0.aClass434_1.aClass93_Sub1_Sub18_1.method22924(local22.aClass93_Sub41_Sub2_1, arg0.aClass434_1.anIntArray445, -1822094970);
-		local22.aClass93_Sub41_Sub2_1.method22451(local22.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local33, (byte) 31);
+		local22.aPacketBit_1.p1(0, (byte) -30);
+		@Pc(33) int local33 = local22.aPacketBit_1.pos * 212851357;
+		local22.aPacketBit_1.pjstr(local13, 784574665);
+		local22.aPacketBit_1.p2(arg0.aClass434_1.anInt4807 * 526894191, 2129334000);
+		arg0.aClass434_1.aClass93_Sub1_Sub18_1.method22924(local22.aPacketBit_1, arg0.aClass434_1.anIntArray445, -1822094970);
+		local22.aPacketBit_1.psize1(local22.aPacketBit_1.pos * 212851357 - local33, (byte) 31);
 		local16.method24356(local22, -1632170827);
 	}
 
@@ -25563,12 +25563,12 @@ public final class Class687 {
 		@Pc(13) String local13 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
 		@Pc(16) Class175 local16 = Class330.method27371(-2003906721);
 		@Pc(22) Class93_Sub22 local22 = Class102.method2588(Class446.aClass446_43, local16.aClass24_2, (byte) 52);
-		local22.aClass93_Sub41_Sub2_1.method22394(0, (byte) -6);
-		@Pc(33) int local33 = local22.aClass93_Sub41_Sub2_1.anInt3070 * 212851357;
-		local22.aClass93_Sub41_Sub2_1.method22431(local13, 1693692691);
-		local22.aClass93_Sub41_Sub2_1.method22395(arg0.aClass434_1.anInt4807 * 526894191, 2138449025);
-		arg0.aClass434_1.aClass93_Sub1_Sub18_1.method22924(local22.aClass93_Sub41_Sub2_1, arg0.aClass434_1.anIntArray445, -1124664893);
-		local22.aClass93_Sub41_Sub2_1.method22451(local22.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local33, (byte) 101);
+		local22.aPacketBit_1.p1(0, (byte) -6);
+		@Pc(33) int local33 = local22.aPacketBit_1.pos * 212851357;
+		local22.aPacketBit_1.pjstr(local13, 1693692691);
+		local22.aPacketBit_1.p2(arg0.aClass434_1.anInt4807 * 526894191, 2138449025);
+		arg0.aClass434_1.aClass93_Sub1_Sub18_1.method22924(local22.aPacketBit_1, arg0.aClass434_1.anIntArray445, -1124664893);
+		local22.aPacketBit_1.psize1(local22.aPacketBit_1.pos * 212851357 - local33, (byte) 101);
 		local16.method24356(local22, -1533175321);
 	}
 
@@ -26133,6 +26133,23 @@ public final class Class687 {
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local15.anInt3169 * -1436122155 - local15.anInt3170 * 598304723;
 		}
 	}
+
+    @OriginalMember(owner = "client!alw", name = "akf", descriptor = "(Lclient!yf;I)V", line = 11539)
+    static final void method22659(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
+        @Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
+        @Pc(15) Class93_Sub1_Sub20 local15 = Class159.method14520(local12);
+        if (local15 == null) {
+            arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = 0;
+            arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = 0;
+            arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = 0;
+            arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = 0;
+        } else {
+            arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local15.anInt3166 * -332819059;
+            arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local15.anInt3170 * 598304723;
+            arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local15.anInt3167 * -1863527503;
+            arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = local15.anInt3169 * -1436122155;
+        }
+    }
 
 	@OriginalMember(owner = "client!ym", name = "eav", descriptor = "(Lclient!yf;)V", line = 11539)
 	static final void method35380(@OriginalArg(0) Class681 arg0) {
@@ -31081,7 +31098,7 @@ public final class Class687 {
 			Class50.aBoolean26 = true;
 			@Pc(76) Class175 local76 = Class330.method27371(-1663220187);
 			@Pc(82) Class93_Sub22 local82 = Class102.method2588(Class446.aClass446_79, local76.aClass24_2, (byte) 63);
-			local82.aClass93_Sub41_Sub2_1.method22406(Class632.anInt5720 * 1926204629, (byte) -45);
+			local82.aPacketBit_1.p4(Class632.anInt5720 * 1926204629, (byte) -45);
 			local76.method24356(local82, -1901889655);
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = 0;
 		}
@@ -31099,7 +31116,7 @@ public final class Class687 {
 			Class50.aBoolean26 = true;
 			@Pc(76) Class175 local76 = Class330.method27371(-1935254186);
 			@Pc(82) Class93_Sub22 local82 = Class102.method2588(Class446.aClass446_79, local76.aClass24_2, (byte) 85);
-			local82.aClass93_Sub41_Sub2_1.method22406(Class632.anInt5720 * 1926204629, (byte) -60);
+			local82.aPacketBit_1.p4(Class632.anInt5720 * 1926204629, (byte) -60);
 			local76.method24356(local82, -1953715082);
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = 0;
 		}
@@ -33650,10 +33667,10 @@ public final class Class687 {
 			return;
 		}
 		@Pc(7) Class93_Sub22 local7 = Class102.method2588(Class446.aClass446_110, client.aClass175_2.aClass24_2, (byte) 9);
-		local7.aClass93_Sub41_Sub2_1.method22395(Class582.method31411(arg1, 670663612) + 1 + Class582.method31411(arg2, -606854485), 2132027045);
-		local7.aClass93_Sub41_Sub2_1.method22434(arg1, 1516871641);
-		local7.aClass93_Sub41_Sub2_1.method22576(arg0, 1699993057);
-		local7.aClass93_Sub41_Sub2_1.method22434(arg2, 1516871641);
+		local7.aPacketBit_1.p2(Packet.pjstr2len(arg1, 670663612) + 1 + Packet.pjstr2len(arg2, -606854485), 2132027045);
+		local7.aPacketBit_1.pjstr2(arg1, 1516871641);
+		local7.aPacketBit_1.p1_alt2(arg0, 1699993057);
+		local7.aPacketBit_1.pjstr2(arg2, 1516871641);
 		client.aClass175_2.method24356(local7, -1703537662);
 	}
 
@@ -33663,10 +33680,10 @@ public final class Class687 {
 			return;
 		}
 		@Pc(7) Class93_Sub22 local7 = Class102.method2588(Class446.aClass446_110, client.aClass175_2.aClass24_2, (byte) 38);
-		local7.aClass93_Sub41_Sub2_1.method22395(Class582.method31411(arg1, -943419099) + 1 + Class582.method31411(arg2, 471122730), 2144464309);
-		local7.aClass93_Sub41_Sub2_1.method22434(arg1, 1516871641);
-		local7.aClass93_Sub41_Sub2_1.method22576(arg0, 357375212);
-		local7.aClass93_Sub41_Sub2_1.method22434(arg2, 1516871641);
+		local7.aPacketBit_1.p2(Packet.pjstr2len(arg1, -943419099) + 1 + Packet.pjstr2len(arg2, 471122730), 2144464309);
+		local7.aPacketBit_1.pjstr2(arg1, 1516871641);
+		local7.aPacketBit_1.p1_alt2(arg0, 357375212);
+		local7.aPacketBit_1.pjstr2(arg2, 1516871641);
 		client.aClass175_2.method24356(local7, -1611771540);
 	}
 
@@ -33676,10 +33693,10 @@ public final class Class687 {
 			return;
 		}
 		@Pc(7) Class93_Sub22 local7 = Class102.method2588(Class446.aClass446_110, client.aClass175_2.aClass24_2, (byte) 78);
-		local7.aClass93_Sub41_Sub2_1.method22395(Class582.method31411(arg1, 708348635) + 1 + Class582.method31411(arg2, 960176930), 2126268641);
-		local7.aClass93_Sub41_Sub2_1.method22434(arg1, 1516871641);
-		local7.aClass93_Sub41_Sub2_1.method22576(arg0, -1049170640);
-		local7.aClass93_Sub41_Sub2_1.method22434(arg2, 1516871641);
+		local7.aPacketBit_1.p2(Packet.pjstr2len(arg1, 708348635) + 1 + Packet.pjstr2len(arg2, 960176930), 2126268641);
+		local7.aPacketBit_1.pjstr2(arg1, 1516871641);
+		local7.aPacketBit_1.p1_alt2(arg0, -1049170640);
+		local7.aPacketBit_1.pjstr2(arg2, 1516871641);
 		client.aClass175_2.method24356(local7, -1725911481);
 	}
 
@@ -34051,9 +34068,9 @@ public final class Class687 {
 			throw new RuntimeException("");
 		} else if (client.aClass175_2 != null) {
 			@Pc(65) Class93_Sub22 local65 = Class102.method2588(Class446.aClass446_45, client.aClass175_2.aClass24_2, (byte) 45);
-			local65.aClass93_Sub41_Sub2_1.method22573(local18.method36920(), -1591808004);
-			local65.aClass93_Sub41_Sub2_1.method22597(local31.anInt5624 * -1994307635, -1855393362);
-			local65.aClass93_Sub41_Sub2_1.method22595(local31.anInt5623 * 270611681, (byte) -37);
+			local65.aPacketBit_1.p1_alt1(local18.method36920(), -1591808004);
+			local65.aPacketBit_1.p2_alt2(local31.anInt5624 * -1994307635, -1855393362);
+			local65.aPacketBit_1.p2_alt1(local31.anInt5623 * 270611681, (byte) -37);
 			client.aClass175_2.method24356(local65, -1732982906);
 		}
 	}
@@ -34908,6 +34925,11 @@ public final class Class687 {
 	static final void method36496(@OriginalArg(0) Class681 arg0) {
 		arg0.anInt5891 -= 1189701933;
 	}
+
+    @OriginalMember(owner = "client!alw", name = "bfh", descriptor = "(Lclient!yf;I)V", line = 15181)
+    static final void method22660(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
+        arg0.anInt5888 -= 957530791;
+    }
 
 	@OriginalMember(owner = "client!ym", name = "frf", descriptor = "(Lclient!yf;)V", line = 15181)
 	static final void method36497(@OriginalArg(0) Class681 arg0) {

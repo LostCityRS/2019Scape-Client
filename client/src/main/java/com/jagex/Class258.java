@@ -238,7 +238,7 @@ public class Class258 {
 		this.aList7.clear();
 		if (this.aClass539_6 != null && this.aClass539_6.method30821(-164470200) == Class536.aClass536_4 && !this.aBoolean667 && client.aClass175_2.aClass24_2 != null && Class106.method7570(client.anInt3435 * -849002901, -665799784)) {
 			@Pc(134) Class93_Sub22 local134 = Class102.method2588(Class446.aClass446_32, client.aClass175_2.aClass24_2, (byte) 104);
-			local134.aClass93_Sub41_Sub2_1.method22406(this.aClass539_6.method30846(1915560699).method32558((byte) 1), (byte) 9);
+			local134.aPacketBit_1.p4(this.aClass539_6.method30846(1915560699).method32558((byte) 1), (byte) 9);
 			client.aClass175_2.method24356(local134, -1501156940);
 			this.aBoolean667 = true;
 		}
@@ -364,7 +364,7 @@ public class Class258 {
 		this.aList7.clear();
 		if (this.aClass539_6 != null && this.aClass539_6.method30821(-1642355702) == Class536.aClass536_4 && !this.aBoolean667 && client.aClass175_2.aClass24_2 != null && Class106.method7570(client.anInt3435 * -849002901, 1896266931)) {
 			@Pc(134) Class93_Sub22 local134 = Class102.method2588(Class446.aClass446_32, client.aClass175_2.aClass24_2, (byte) 121);
-			local134.aClass93_Sub41_Sub2_1.method22406(this.aClass539_6.method30846(641077404).method32558((byte) -69), (byte) 118);
+			local134.aPacketBit_1.p4(this.aClass539_6.method30846(641077404).method32558((byte) -69), (byte) 118);
 			client.aClass175_2.method24356(local134, -1662428912);
 			this.aBoolean667 = true;
 		}
@@ -490,7 +490,7 @@ public class Class258 {
 		this.aList7.clear();
 		if (this.aClass539_6 != null && this.aClass539_6.method30821(1620647905) == Class536.aClass536_4 && !this.aBoolean667 && client.aClass175_2.aClass24_2 != null && Class106.method7570(client.anInt3435 * -849002901, 136992136)) {
 			@Pc(134) Class93_Sub22 local134 = Class102.method2588(Class446.aClass446_32, client.aClass175_2.aClass24_2, (byte) 53);
-			local134.aClass93_Sub41_Sub2_1.method22406(this.aClass539_6.method30846(1476839658).method32558((byte) 72), (byte) -35);
+			local134.aPacketBit_1.p4(this.aClass539_6.method30846(1476839658).method32558((byte) 72), (byte) -35);
 			client.aClass175_2.method24356(local134, -1694921473);
 			this.aBoolean667 = true;
 		}
@@ -616,7 +616,7 @@ public class Class258 {
 		this.aList7.clear();
 		if (this.aClass539_6 != null && this.aClass539_6.method30821(1964992702) == Class536.aClass536_4 && !this.aBoolean667 && client.aClass175_2.aClass24_2 != null && Class106.method7570(client.anInt3435 * -849002901, 1212476275)) {
 			@Pc(134) Class93_Sub22 local134 = Class102.method2588(Class446.aClass446_32, client.aClass175_2.aClass24_2, (byte) 6);
-			local134.aClass93_Sub41_Sub2_1.method22406(this.aClass539_6.method30846(-1197486227).method32558((byte) 46), (byte) 62);
+			local134.aPacketBit_1.p4(this.aClass539_6.method30846(-1197486227).method32558((byte) 46), (byte) 62);
 			client.aClass175_2.method24356(local134, -2097717401);
 			this.aBoolean667 = true;
 		}
@@ -1694,7 +1694,7 @@ public class Class258 {
 	void method26113(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		if (client.aClass175_2.aClass24_2 != null && Class106.method7570(client.anInt3435 * -849002901, 685006130)) {
 			@Pc(16) Class93_Sub22 local16 = Class102.method2588(Class446.aClass446_16, client.aClass175_2.aClass24_2, (byte) 68);
-			local16.aClass93_Sub41_Sub2_1.method22406(arg0, (byte) -19);
+			local16.aPacketBit_1.p4(arg0, (byte) -19);
 			client.aClass175_2.method24356(local16, -1451410802);
 		}
 	}
@@ -1703,7 +1703,7 @@ public class Class258 {
 	void method26114(@OriginalArg(0) int arg0) {
 		if (client.aClass175_2.aClass24_2 != null && Class106.method7570(client.anInt3435 * -849002901, -655128025)) {
 			@Pc(16) Class93_Sub22 local16 = Class102.method2588(Class446.aClass446_16, client.aClass175_2.aClass24_2, (byte) 20);
-			local16.aClass93_Sub41_Sub2_1.method22406(arg0, (byte) 31);
+			local16.aPacketBit_1.p4(arg0, (byte) 31);
 			client.aClass175_2.method24356(local16, -1869845611);
 		}
 	}
@@ -1712,7 +1712,7 @@ public class Class258 {
 	void method26115(@OriginalArg(0) int arg0) {
 		if (client.aClass175_2.aClass24_2 != null && Class106.method7570(client.anInt3435 * -849002901, 1843442190)) {
 			@Pc(16) Class93_Sub22 local16 = Class102.method2588(Class446.aClass446_16, client.aClass175_2.aClass24_2, (byte) 45);
-			local16.aClass93_Sub41_Sub2_1.method22406(arg0, (byte) -19);
+			local16.aPacketBit_1.p4(arg0, (byte) -19);
 			client.aClass175_2.method24356(local16, -1763428739);
 		}
 	}
@@ -1721,7 +1721,7 @@ public class Class258 {
 	void method26116(@OriginalArg(0) int arg0) {
 		if (client.aClass175_2.aClass24_2 != null && Class106.method7570(client.anInt3435 * -849002901, 1662055344)) {
 			@Pc(16) Class93_Sub22 local16 = Class102.method2588(Class446.aClass446_16, client.aClass175_2.aClass24_2, (byte) 78);
-			local16.aClass93_Sub41_Sub2_1.method22406(arg0, (byte) -4);
+			local16.aPacketBit_1.p4(arg0, (byte) -4);
 			client.aClass175_2.method24356(local16, -1869789087);
 		}
 	}
@@ -1803,7 +1803,7 @@ public class Class258 {
 		}
 		if (client.aClass175_2.aClass24_2 != null && Class106.method7570(client.anInt3435 * -849002901, 82706327)) {
 			@Pc(270) Class93_Sub22 local270 = Class102.method2588(Class446.aClass446_32, client.aClass175_2.aClass24_2, (byte) 97);
-			local270.aClass93_Sub41_Sub2_1.method22406(this.anInt3865 * -2005296631, (byte) 59);
+			local270.aPacketBit_1.p4(this.anInt3865 * -2005296631, (byte) 59);
 			client.aClass175_2.method24356(local270, -1653271315);
 		}
 	}
@@ -1870,7 +1870,7 @@ public class Class258 {
 		}
 		if (client.aClass175_2.aClass24_2 != null && Class106.method7570(client.anInt3435 * -849002901, 785427904)) {
 			@Pc(270) Class93_Sub22 local270 = Class102.method2588(Class446.aClass446_32, client.aClass175_2.aClass24_2, (byte) 78);
-			local270.aClass93_Sub41_Sub2_1.method22406(this.anInt3865 * -2005296631, (byte) -21);
+			local270.aPacketBit_1.p4(this.anInt3865 * -2005296631, (byte) -21);
 			client.aClass175_2.method24356(local270, -1594166914);
 		}
 	}
@@ -1937,7 +1937,7 @@ public class Class258 {
 		}
 		if (client.aClass175_2.aClass24_2 != null && Class106.method7570(client.anInt3435 * -849002901, 194209893)) {
 			@Pc(270) Class93_Sub22 local270 = Class102.method2588(Class446.aClass446_32, client.aClass175_2.aClass24_2, (byte) 125);
-			local270.aClass93_Sub41_Sub2_1.method22406(this.anInt3865 * -2005296631, (byte) 14);
+			local270.aPacketBit_1.p4(this.anInt3865 * -2005296631, (byte) 14);
 			client.aClass175_2.method24356(local270, -2039493224);
 		}
 	}
@@ -2004,7 +2004,7 @@ public class Class258 {
 		}
 		if (client.aClass175_2.aClass24_2 != null && Class106.method7570(client.anInt3435 * -849002901, -846112395)) {
 			@Pc(270) Class93_Sub22 local270 = Class102.method2588(Class446.aClass446_32, client.aClass175_2.aClass24_2, (byte) 5);
-			local270.aClass93_Sub41_Sub2_1.method22406(this.anInt3865 * -2005296631, (byte) 64);
+			local270.aPacketBit_1.p4(this.anInt3865 * -2005296631, (byte) 64);
 			client.aClass175_2.method24356(local270, -1738844842);
 		}
 	}

@@ -44,10 +44,10 @@ public class Class334 {
 	@OriginalMember(owner = "client!id", name = "ci", descriptor = "(Lclient!aop;[BIIIILclient!xe;Lclient!xe;I)I", line = 335)
 	public static final int method27402(@OriginalArg(0) Class32_Sub14 arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) Class656 arg6, @OriginalArg(7) Class656 arg7, @OriginalArg(8) int arg8) {
 		@Pc(1) int local1 = 0;
-		@Pc(6) Class93_Sub41 local6 = new Class93_Sub41(arg1);
+		@Pc(6) Packet local6 = new Packet(arg1);
 		@Pc(8) int local8 = -1;
 		label73: while (true) {
-			@Pc(12) int local12 = local6.method22533(2075753934);
+			@Pc(12) int local12 = local6.gExtended1or2(2075753934);
 			if (local12 == 0) {
 				return local1;
 			}
@@ -68,7 +68,7 @@ public class Class334 {
 								do {
 									@Pc(27) int local27;
 									do {
-										local27 = local6.method22528((byte) -14);
+										local27 = local6.gSmart1or2((byte) -14);
 										if (local27 == 0) {
 											continue label73;
 										}
@@ -127,12 +127,12 @@ public class Class334 {
 			return;
 		}
 		@Pc(73) Class93_Sub22 local73 = Class102.method2588(Class446.aClass446_106, local45.aClass24_2, (byte) 71);
-		local73.aClass93_Sub41_Sub2_1.method22394(Class46.method895(local4.aString167, -1710534944) + 7 + 1, (byte) -1);
-		local73.aClass93_Sub41_Sub2_1.method22431(local4.aString167, -905461201);
-		local73.aClass93_Sub41_Sub2_1.method22595(arg2, (byte) 59);
-		local73.aClass93_Sub41_Sub2_1.method22576(arg0, -1733657513);
-		local73.aClass93_Sub41_Sub2_1.method22578(local4.aClass310_7.method36920(), (byte) -109);
-		local73.aClass93_Sub41_Sub2_1.method22634(arg1, 844689790);
+		local73.aPacketBit_1.p1(Packet.pjstrlen(local4.aString167, -1710534944) + 7 + 1, (byte) -1);
+		local73.aPacketBit_1.pjstr(local4.aString167, -905461201);
+		local73.aPacketBit_1.p2_alt1(arg2, (byte) 59);
+		local73.aPacketBit_1.p1_alt2(arg0, -1733657513);
+		local73.aPacketBit_1.p1_alt3(local4.aClass310_7.method36920(), (byte) -109);
+		local73.aPacketBit_1.p4_alt2(arg1, 844689790);
 		local45.method24356(local73, -2068554359);
 	}
 }

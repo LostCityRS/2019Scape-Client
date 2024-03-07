@@ -3853,8 +3853,8 @@ public class Class454 {
 				client.anInt3501 = 52502862;
 				client.anInt3500 = 0;
 				local224 = Class102.method2588(local138, client.aClass175_2.aClass24_2, (byte) 114);
-				local224.aClass93_Sub41_Sub2_1.method22395(local28, 2130301061);
-				local224.aClass93_Sub41_Sub2_1.method22573(Class28.method601(-2075199123) ? 1 : 0, -1591808004);
+				local224.aPacketBit_1.p2(local28, 2130301061);
+				local224.aPacketBit_1.p1_alt1(Class28.method601(-2075199123) ? 1 : 0, -1591808004);
 				client.aClass175_2.method24356(local224, -1902350528);
 				Class498.method30135(local203.anIntArray240[0], local203.anIntArray239[0], -2147212226);
 			}
@@ -3879,10 +3879,10 @@ public class Class454 {
 			client.anInt3501 = 52502862;
 			client.anInt3500 = 0;
 			local224 = Class102.method2588(local255, client.aClass175_2.aClass24_2, (byte) 114);
-			local224.aClass93_Sub41_Sub2_1.method22576(Class28.method601(628347137) ? 1 : 0, -1545926488);
-			local224.aClass93_Sub41_Sub2_1.method22395(local41.anInt5624 * -1994307635 + local17, 2146010956);
-			local224.aClass93_Sub41_Sub2_1.method22406((int) (local33 >>> 32) & Integer.MAX_VALUE, (byte) 54);
-			local224.aClass93_Sub41_Sub2_1.method22599(local12 + local41.anInt5623 * 270611681, (short) 255);
+			local224.aPacketBit_1.p1_alt2(Class28.method601(628347137) ? 1 : 0, -1545926488);
+			local224.aPacketBit_1.p2(local41.anInt5624 * -1994307635 + local17, 2146010956);
+			local224.aPacketBit_1.p4((int) (local33 >>> 32) & Integer.MAX_VALUE, (byte) 54);
+			local224.aPacketBit_1.p2_alt3(local12 + local41.anInt5623 * 270611681, (short) 255);
 			client.aClass175_2.method24356(local224, -1613499023);
 			Class498.method30135(local12, local17, -1025125038);
 		}
@@ -3892,17 +3892,17 @@ public class Class454 {
 			} else {
 				local224 = Class633.method32307(local12, local17, local28, 331939565);
 				if (local28 == 1) {
-					local224.aClass93_Sub41_Sub2_1.method22394(-1, (byte) -73);
-					local224.aClass93_Sub41_Sub2_1.method22394(-1, (byte) -95);
-					local224.aClass93_Sub41_Sub2_1.method22395((int) client.aFloat253, 2138999606);
-					local224.aClass93_Sub41_Sub2_1.method22394(57, (byte) -121);
-					local224.aClass93_Sub41_Sub2_1.method22394(client.anInt3477 * -1357343303, (byte) -60);
-					local224.aClass93_Sub41_Sub2_1.method22394(client.anInt3478 * 663566609, (byte) -17);
-					local224.aClass93_Sub41_Sub2_1.method22394(89, (byte) -30);
+					local224.aPacketBit_1.p1(-1, (byte) -73);
+					local224.aPacketBit_1.p1(-1, (byte) -95);
+					local224.aPacketBit_1.p2((int) client.aFloat253, 2138999606);
+					local224.aPacketBit_1.p1(57, (byte) -121);
+					local224.aPacketBit_1.p1(client.anInt3477 * -1357343303, (byte) -60);
+					local224.aPacketBit_1.p1(client.anInt3478 * 663566609, (byte) -17);
+					local224.aPacketBit_1.p1(89, (byte) -30);
 					@Pc(439) Class472 local439 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.method24220().aClass472_61;
-					local224.aClass93_Sub41_Sub2_1.method22395((int) local439.aFloat317, 2129641558);
-					local224.aClass93_Sub41_Sub2_1.method22395((int) local439.aFloat319, 2137665423);
-					local224.aClass93_Sub41_Sub2_1.method22394(63, (byte) -99);
+					local224.aPacketBit_1.p2((int) local439.aFloat317, 2129641558);
+					local224.aPacketBit_1.p2((int) local439.aFloat319, 2137665423);
+					local224.aPacketBit_1.p1(63, (byte) -99);
 				} else {
 					client.anInt3465 = arg1 * 826123699;
 					client.anInt3499 = arg2 * -398107037;
@@ -3939,8 +3939,8 @@ public class Class454 {
 				client.anInt3501 = 52502862;
 				client.anInt3500 = 0;
 				local549 = Class102.method2588(local481, client.aClass175_2.aClass24_2, (byte) 82);
-				local549.aClass93_Sub41_Sub2_1.method22578(Class28.method601(1461312624) ? 1 : 0, (byte) -95);
-				local549.aClass93_Sub41_Sub2_1.method22597(local28, -1575553836);
+				local549.aPacketBit_1.p1_alt3(Class28.method601(1461312624) ? 1 : 0, (byte) -95);
+				local549.aPacketBit_1.p2_alt2(local28, -1575553836);
 				client.aClass175_2.method24356(local549, -2112280100);
 				Class498.method30135(local531.anIntArray240[0], local531.anIntArray239[0], -1615629317);
 			}
@@ -3952,13 +3952,13 @@ public class Class454 {
 			client.anInt3501 = 52502862;
 			client.anInt3500 = 0;
 			local599 = Class102.method2588(Class446.aClass446_116, client.aClass175_2.aClass24_2, (byte) 117);
-			local599.aClass93_Sub41_Sub2_1.method22595(local28, (byte) -8);
-			local599.aClass93_Sub41_Sub2_1.method22573(Class28.method601(1481247690) ? 1 : 0, -1591808004);
-			local599.aClass93_Sub41_Sub2_1.method22595(client.anInt3524 * -239149331, (byte) -6);
-			local599.aClass93_Sub41_Sub2_1.method22595(local17 + local41.anInt5624 * -1994307635, (byte) 18);
-			local599.aClass93_Sub41_Sub2_1.method22595(local41.anInt5623 * 270611681 + local12, (byte) 17);
-			local599.aClass93_Sub41_Sub2_1.method22634(Class148.anInt1394 * -278883695, 844689790);
-			local599.aClass93_Sub41_Sub2_1.method22599(client.anInt3523 * 1573685689, (short) 255);
+			local599.aPacketBit_1.p2_alt1(local28, (byte) -8);
+			local599.aPacketBit_1.p1_alt1(Class28.method601(1481247690) ? 1 : 0, -1591808004);
+			local599.aPacketBit_1.p2_alt1(client.anInt3524 * -239149331, (byte) -6);
+			local599.aPacketBit_1.p2_alt1(local17 + local41.anInt5624 * -1994307635, (byte) 18);
+			local599.aPacketBit_1.p2_alt1(local41.anInt5623 * 270611681 + local12, (byte) 17);
+			local599.aPacketBit_1.p4_alt2(Class148.anInt1394 * -278883695, 844689790);
+			local599.aPacketBit_1.p2_alt3(client.anInt3523 * 1573685689, (short) 255);
 			client.aClass175_2.method24356(local599, -1625557005);
 			Class498.method30135(local12, local17, -1145741278);
 		}
@@ -3971,11 +3971,11 @@ public class Class454 {
 				client.anInt3501 = 52502862;
 				client.anInt3500 = 0;
 				local549 = Class102.method2588(Class446.aClass446_118, client.aClass175_2.aClass24_2, (byte) 33);
-				local549.aClass93_Sub41_Sub2_1.method22406(Class148.anInt1394 * -278883695, (byte) -52);
-				local549.aClass93_Sub41_Sub2_1.method22395(local28, 2128785259);
-				local549.aClass93_Sub41_Sub2_1.method22573(Class28.method601(-122993242) ? 1 : 0, -1591808004);
-				local549.aClass93_Sub41_Sub2_1.method22595(client.anInt3524 * -239149331, (byte) 1);
-				local549.aClass93_Sub41_Sub2_1.method22395(client.anInt3523 * 1573685689, 2134485597);
+				local549.aPacketBit_1.p4(Class148.anInt1394 * -278883695, (byte) -52);
+				local549.aPacketBit_1.p2(local28, 2128785259);
+				local549.aPacketBit_1.p1_alt1(Class28.method601(-122993242) ? 1 : 0, -1591808004);
+				local549.aPacketBit_1.p2_alt1(client.anInt3524 * -239149331, (byte) 1);
+				local549.aPacketBit_1.p2(client.anInt3523 * 1573685689, 2134485597);
 				client.aClass175_2.method24356(local549, -1530343396);
 				Class498.method30135(local531.anIntArray240[0], local531.anIntArray239[0], -1788502670);
 			}
@@ -3986,13 +3986,13 @@ public class Class454 {
 			client.anInt3501 = 52502862;
 			client.anInt3500 = 0;
 			local599 = Class102.method2588(Class446.aClass446_23, client.aClass175_2.aClass24_2, (byte) 96);
-			local599.aClass93_Sub41_Sub2_1.method22573(Class28.method601(-787106461) ? 1 : 0, -1591808004);
-			local599.aClass93_Sub41_Sub2_1.method22595(local12 + local41.anInt5623 * 270611681, (byte) 88);
-			local599.aClass93_Sub41_Sub2_1.method22595(client.anInt3524 * -239149331, (byte) 6);
-			local599.aClass93_Sub41_Sub2_1.method22599(local17 + local41.anInt5624 * -1994307635, (short) 255);
-			local599.aClass93_Sub41_Sub2_1.method22632(Class148.anInt1394 * -278883695, 907143239);
-			local599.aClass93_Sub41_Sub2_1.method22634((int) (local33 >>> 32) & Integer.MAX_VALUE, 844689790);
-			local599.aClass93_Sub41_Sub2_1.method22395(client.anInt3523 * 1573685689, 2145958597);
+			local599.aPacketBit_1.p1_alt1(Class28.method601(-787106461) ? 1 : 0, -1591808004);
+			local599.aPacketBit_1.p2_alt1(local12 + local41.anInt5623 * 270611681, (byte) 88);
+			local599.aPacketBit_1.p2_alt1(client.anInt3524 * -239149331, (byte) 6);
+			local599.aPacketBit_1.p2_alt3(local17 + local41.anInt5624 * -1994307635, (short) 255);
+			local599.aPacketBit_1.p4_alt1(Class148.anInt1394 * -278883695, 907143239);
+			local599.aPacketBit_1.p4_alt2((int) (local33 >>> 32) & Integer.MAX_VALUE, 844689790);
+			local599.aPacketBit_1.p2(client.anInt3523 * 1573685689, 2145958597);
 			client.aClass175_2.method24356(local599, -1972237847);
 			Class498.method30135(local12, local17, -1232211797);
 		}
@@ -4005,8 +4005,8 @@ public class Class454 {
 				client.anInt3501 = -2121232217;
 				client.anInt3500 = 0;
 				local599 = Class102.method2588(Class446.aClass446_109, client.aClass175_2.aClass24_2, (byte) 34);
-				local599.aClass93_Sub41_Sub2_1.method22597(local17 + local41.anInt5624 * -1994307635, -2114480163);
-				local599.aClass93_Sub41_Sub2_1.method22599(local41.anInt5623 * 270611681 + local12, (short) 255);
+				local599.aPacketBit_1.p2_alt2(local17 + local41.anInt5624 * -1994307635, -2114480163);
+				local599.aPacketBit_1.p2_alt3(local41.anInt5623 * 270611681 + local12, (short) 255);
 				client.aClass175_2.method24356(local599, -1771404922);
 			}
 		}
@@ -4016,11 +4016,11 @@ public class Class454 {
 			client.anInt3501 = 52502862;
 			client.anInt3500 = 0;
 			local599 = Class102.method2588(Class446.aClass446_71, client.aClass175_2.aClass24_2, (byte) 82);
-			local599.aClass93_Sub41_Sub2_1.method22395(client.anInt3523 * 1573685689, 2140412535);
-			local599.aClass93_Sub41_Sub2_1.method22573(Class28.method601(628926231) ? 1 : 0, -1591808004);
-			local599.aClass93_Sub41_Sub2_1.method22595(client.anInt3524 * -239149331, (byte) -28);
-			local599.aClass93_Sub41_Sub2_1.method22599(Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anInt2768 * -1688488127, (short) 255);
-			local599.aClass93_Sub41_Sub2_1.method22634(Class148.anInt1394 * -278883695, 844689790);
+			local599.aPacketBit_1.p2(client.anInt3523 * 1573685689, 2140412535);
+			local599.aPacketBit_1.p1_alt1(Class28.method601(628926231) ? 1 : 0, -1591808004);
+			local599.aPacketBit_1.p2_alt1(client.anInt3524 * -239149331, (byte) -28);
+			local599.aPacketBit_1.p2_alt3(Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anInt2768 * -1688488127, (short) 255);
+			local599.aPacketBit_1.p4_alt2(Class148.anInt1394 * -278883695, 844689790);
 			client.aClass175_2.method24356(local599, -1567044661);
 		}
 		@Pc(971) Class446 local971 = null;
@@ -4044,10 +4044,10 @@ public class Class454 {
 			client.anInt3501 = 52502862;
 			client.anInt3500 = 0;
 			local1027 = Class102.method2588(local971, client.aClass175_2.aClass24_2, (byte) 97);
-			local1027.aClass93_Sub41_Sub2_1.method22595(local28, (byte) 52);
-			local1027.aClass93_Sub41_Sub2_1.method22595(local41.anInt5623 * 270611681 + local12, (byte) 43);
-			local1027.aClass93_Sub41_Sub2_1.method22395(local17 + local41.anInt5624 * -1994307635, 2134416245);
-			local1027.aClass93_Sub41_Sub2_1.method22578((arg3 ? 2 : 0) | (Class28.method601(174121915) ? 1 : 0), (byte) -112);
+			local1027.aPacketBit_1.p2_alt1(local28, (byte) 52);
+			local1027.aPacketBit_1.p2_alt1(local41.anInt5623 * 270611681 + local12, (byte) 43);
+			local1027.aPacketBit_1.p2(local17 + local41.anInt5624 * -1994307635, 2134416245);
+			local1027.aPacketBit_1.p1_alt3((arg3 ? 2 : 0) | (Class28.method601(174121915) ? 1 : 0), (byte) -112);
 			client.aClass175_2.method24356(local1027, -1867374362);
 			Class498.method30135(local12, local17, -1361474311);
 		}
@@ -4059,11 +4059,11 @@ public class Class454 {
 				client.anInt3501 = 52502862;
 				client.anInt3500 = 0;
 				local549 = Class102.method2588(Class446.aClass446_71, client.aClass175_2.aClass24_2, (byte) 114);
-				local549.aClass93_Sub41_Sub2_1.method22395(client.anInt3523 * 1573685689, 2136281705);
-				local549.aClass93_Sub41_Sub2_1.method22573(Class28.method601(2076332349) ? 1 : 0, -1591808004);
-				local549.aClass93_Sub41_Sub2_1.method22595(client.anInt3524 * -239149331, (byte) -11);
-				local549.aClass93_Sub41_Sub2_1.method22599(local28, (short) 255);
-				local549.aClass93_Sub41_Sub2_1.method22634(Class148.anInt1394 * -278883695, 844689790);
+				local549.aPacketBit_1.p2(client.anInt3523 * 1573685689, 2136281705);
+				local549.aPacketBit_1.p1_alt1(Class28.method601(2076332349) ? 1 : 0, -1591808004);
+				local549.aPacketBit_1.p2_alt1(client.anInt3524 * -239149331, (byte) -11);
+				local549.aPacketBit_1.p2_alt3(local28, (short) 255);
+				local549.aPacketBit_1.p4_alt2(Class148.anInt1394 * -278883695, 844689790);
 				client.aClass175_2.method24356(local549, -1588359923);
 				Class498.method30135(local1083.anIntArray240[0], local1083.anIntArray239[0], -1370515310);
 			}
@@ -4074,11 +4074,11 @@ public class Class454 {
 			client.anInt3501 = -2121232217;
 			client.anInt3500 = 0;
 			local1027 = Class102.method2588(Class446.aClass446_61, client.aClass175_2.aClass24_2, (byte) 101);
-			local1027.aClass93_Sub41_Sub2_1.method22597(local41.anInt5623 * 270611681 + local12, -1737902005);
-			local1027.aClass93_Sub41_Sub2_1.method22632(Class148.anInt1394 * -278883695, 907143239);
-			local1027.aClass93_Sub41_Sub2_1.method22395(client.anInt3524 * -239149331, 2141013306);
-			local1027.aClass93_Sub41_Sub2_1.method22597(local41.anInt5624 * -1994307635 + local17, -1733594865);
-			local1027.aClass93_Sub41_Sub2_1.method22597(client.anInt3523 * 1573685689, -1891078267);
+			local1027.aPacketBit_1.p2_alt2(local41.anInt5623 * 270611681 + local12, -1737902005);
+			local1027.aPacketBit_1.p4_alt1(Class148.anInt1394 * -278883695, 907143239);
+			local1027.aPacketBit_1.p2(client.anInt3524 * -239149331, 2141013306);
+			local1027.aPacketBit_1.p2_alt2(local41.anInt5624 * -1994307635 + local17, -1733594865);
+			local1027.aPacketBit_1.p2_alt2(client.anInt3523 * 1573685689, -1891078267);
 			client.aClass175_2.method24356(local1027, -1637031168);
 			Class498.method30135(local12, local17, -1760341848);
 		}
@@ -4169,8 +4169,8 @@ public class Class454 {
 				client.anInt3501 = 52502862;
 				client.anInt3500 = 0;
 				local224 = Class102.method2588(local138, client.aClass175_2.aClass24_2, (byte) 69);
-				local224.aClass93_Sub41_Sub2_1.method22395(local28, 2139820453);
-				local224.aClass93_Sub41_Sub2_1.method22573(Class28.method601(1063998234) ? 1 : 0, -1591808004);
+				local224.aPacketBit_1.p2(local28, 2139820453);
+				local224.aPacketBit_1.p1_alt1(Class28.method601(1063998234) ? 1 : 0, -1591808004);
 				client.aClass175_2.method24356(local224, -1486825021);
 				Class498.method30135(local203.anIntArray240[0], local203.anIntArray239[0], -1088102655);
 			}
@@ -4195,10 +4195,10 @@ public class Class454 {
 			client.anInt3501 = 52502862;
 			client.anInt3500 = 0;
 			local224 = Class102.method2588(local255, client.aClass175_2.aClass24_2, (byte) 78);
-			local224.aClass93_Sub41_Sub2_1.method22576(Class28.method601(-1307490029) ? 1 : 0, -259826773);
-			local224.aClass93_Sub41_Sub2_1.method22395(local41.anInt5624 * -1994307635 + local17, 2134467972);
-			local224.aClass93_Sub41_Sub2_1.method22406((int) (local33 >>> 32) & Integer.MAX_VALUE, (byte) -23);
-			local224.aClass93_Sub41_Sub2_1.method22599(local12 + local41.anInt5623 * 270611681, (short) 255);
+			local224.aPacketBit_1.p1_alt2(Class28.method601(-1307490029) ? 1 : 0, -259826773);
+			local224.aPacketBit_1.p2(local41.anInt5624 * -1994307635 + local17, 2134467972);
+			local224.aPacketBit_1.p4((int) (local33 >>> 32) & Integer.MAX_VALUE, (byte) -23);
+			local224.aPacketBit_1.p2_alt3(local12 + local41.anInt5623 * 270611681, (short) 255);
 			client.aClass175_2.method24356(local224, -1771182327);
 			Class498.method30135(local12, local17, -1062230491);
 		}
@@ -4208,17 +4208,17 @@ public class Class454 {
 			} else {
 				local224 = Class633.method32307(local12, local17, local28, 331939565);
 				if (local28 == 1) {
-					local224.aClass93_Sub41_Sub2_1.method22394(-1, (byte) -125);
-					local224.aClass93_Sub41_Sub2_1.method22394(-1, (byte) -4);
-					local224.aClass93_Sub41_Sub2_1.method22395((int) client.aFloat253, 2129118962);
-					local224.aClass93_Sub41_Sub2_1.method22394(57, (byte) -18);
-					local224.aClass93_Sub41_Sub2_1.method22394(client.anInt3477 * -1357343303, (byte) -80);
-					local224.aClass93_Sub41_Sub2_1.method22394(client.anInt3478 * 663566609, (byte) -34);
-					local224.aClass93_Sub41_Sub2_1.method22394(89, (byte) -44);
+					local224.aPacketBit_1.p1(-1, (byte) -125);
+					local224.aPacketBit_1.p1(-1, (byte) -4);
+					local224.aPacketBit_1.p2((int) client.aFloat253, 2129118962);
+					local224.aPacketBit_1.p1(57, (byte) -18);
+					local224.aPacketBit_1.p1(client.anInt3477 * -1357343303, (byte) -80);
+					local224.aPacketBit_1.p1(client.anInt3478 * 663566609, (byte) -34);
+					local224.aPacketBit_1.p1(89, (byte) -44);
 					@Pc(439) Class472 local439 = Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.method24220().aClass472_61;
-					local224.aClass93_Sub41_Sub2_1.method22395((int) local439.aFloat317, 2133044398);
-					local224.aClass93_Sub41_Sub2_1.method22395((int) local439.aFloat319, 2138077265);
-					local224.aClass93_Sub41_Sub2_1.method22394(63, (byte) -16);
+					local224.aPacketBit_1.p2((int) local439.aFloat317, 2133044398);
+					local224.aPacketBit_1.p2((int) local439.aFloat319, 2138077265);
+					local224.aPacketBit_1.p1(63, (byte) -16);
 				} else {
 					client.anInt3465 = arg1 * 826123699;
 					client.anInt3499 = arg2 * -398107037;
@@ -4255,8 +4255,8 @@ public class Class454 {
 				client.anInt3501 = 52502862;
 				client.anInt3500 = 0;
 				local549 = Class102.method2588(local481, client.aClass175_2.aClass24_2, (byte) 127);
-				local549.aClass93_Sub41_Sub2_1.method22578(Class28.method601(-695479632) ? 1 : 0, (byte) -25);
-				local549.aClass93_Sub41_Sub2_1.method22597(local28, -1525995641);
+				local549.aPacketBit_1.p1_alt3(Class28.method601(-695479632) ? 1 : 0, (byte) -25);
+				local549.aPacketBit_1.p2_alt2(local28, -1525995641);
 				client.aClass175_2.method24356(local549, -1892761946);
 				Class498.method30135(local531.anIntArray240[0], local531.anIntArray239[0], -1056485346);
 			}
@@ -4268,13 +4268,13 @@ public class Class454 {
 			client.anInt3501 = 52502862;
 			client.anInt3500 = 0;
 			local599 = Class102.method2588(Class446.aClass446_116, client.aClass175_2.aClass24_2, (byte) 92);
-			local599.aClass93_Sub41_Sub2_1.method22595(local28, (byte) 81);
-			local599.aClass93_Sub41_Sub2_1.method22573(Class28.method601(-40734943) ? 1 : 0, -1591808004);
-			local599.aClass93_Sub41_Sub2_1.method22595(client.anInt3524 * -239149331, (byte) 31);
-			local599.aClass93_Sub41_Sub2_1.method22595(local17 + local41.anInt5624 * -1994307635, (byte) -44);
-			local599.aClass93_Sub41_Sub2_1.method22595(local41.anInt5623 * 270611681 + local12, (byte) 35);
-			local599.aClass93_Sub41_Sub2_1.method22634(Class148.anInt1394 * -278883695, 844689790);
-			local599.aClass93_Sub41_Sub2_1.method22599(client.anInt3523 * 1573685689, (short) 255);
+			local599.aPacketBit_1.p2_alt1(local28, (byte) 81);
+			local599.aPacketBit_1.p1_alt1(Class28.method601(-40734943) ? 1 : 0, -1591808004);
+			local599.aPacketBit_1.p2_alt1(client.anInt3524 * -239149331, (byte) 31);
+			local599.aPacketBit_1.p2_alt1(local17 + local41.anInt5624 * -1994307635, (byte) -44);
+			local599.aPacketBit_1.p2_alt1(local41.anInt5623 * 270611681 + local12, (byte) 35);
+			local599.aPacketBit_1.p4_alt2(Class148.anInt1394 * -278883695, 844689790);
+			local599.aPacketBit_1.p2_alt3(client.anInt3523 * 1573685689, (short) 255);
 			client.aClass175_2.method24356(local599, -1991744431);
 			Class498.method30135(local12, local17, -1256074936);
 		}
@@ -4287,11 +4287,11 @@ public class Class454 {
 				client.anInt3501 = 52502862;
 				client.anInt3500 = 0;
 				local549 = Class102.method2588(Class446.aClass446_118, client.aClass175_2.aClass24_2, (byte) 62);
-				local549.aClass93_Sub41_Sub2_1.method22406(Class148.anInt1394 * -278883695, (byte) 35);
-				local549.aClass93_Sub41_Sub2_1.method22395(local28, 2144909462);
-				local549.aClass93_Sub41_Sub2_1.method22573(Class28.method601(833743399) ? 1 : 0, -1591808004);
-				local549.aClass93_Sub41_Sub2_1.method22595(client.anInt3524 * -239149331, (byte) 97);
-				local549.aClass93_Sub41_Sub2_1.method22395(client.anInt3523 * 1573685689, 2129837623);
+				local549.aPacketBit_1.p4(Class148.anInt1394 * -278883695, (byte) 35);
+				local549.aPacketBit_1.p2(local28, 2144909462);
+				local549.aPacketBit_1.p1_alt1(Class28.method601(833743399) ? 1 : 0, -1591808004);
+				local549.aPacketBit_1.p2_alt1(client.anInt3524 * -239149331, (byte) 97);
+				local549.aPacketBit_1.p2(client.anInt3523 * 1573685689, 2129837623);
 				client.aClass175_2.method24356(local549, -2021681814);
 				Class498.method30135(local531.anIntArray240[0], local531.anIntArray239[0], -1192129089);
 			}
@@ -4302,13 +4302,13 @@ public class Class454 {
 			client.anInt3501 = 52502862;
 			client.anInt3500 = 0;
 			local599 = Class102.method2588(Class446.aClass446_23, client.aClass175_2.aClass24_2, (byte) 58);
-			local599.aClass93_Sub41_Sub2_1.method22573(Class28.method601(-39385194) ? 1 : 0, -1591808004);
-			local599.aClass93_Sub41_Sub2_1.method22595(local12 + local41.anInt5623 * 270611681, (byte) -50);
-			local599.aClass93_Sub41_Sub2_1.method22595(client.anInt3524 * -239149331, (byte) 46);
-			local599.aClass93_Sub41_Sub2_1.method22599(local17 + local41.anInt5624 * -1994307635, (short) 255);
-			local599.aClass93_Sub41_Sub2_1.method22632(Class148.anInt1394 * -278883695, 907143239);
-			local599.aClass93_Sub41_Sub2_1.method22634((int) (local33 >>> 32) & Integer.MAX_VALUE, 844689790);
-			local599.aClass93_Sub41_Sub2_1.method22395(client.anInt3523 * 1573685689, 2143758199);
+			local599.aPacketBit_1.p1_alt1(Class28.method601(-39385194) ? 1 : 0, -1591808004);
+			local599.aPacketBit_1.p2_alt1(local12 + local41.anInt5623 * 270611681, (byte) -50);
+			local599.aPacketBit_1.p2_alt1(client.anInt3524 * -239149331, (byte) 46);
+			local599.aPacketBit_1.p2_alt3(local17 + local41.anInt5624 * -1994307635, (short) 255);
+			local599.aPacketBit_1.p4_alt1(Class148.anInt1394 * -278883695, 907143239);
+			local599.aPacketBit_1.p4_alt2((int) (local33 >>> 32) & Integer.MAX_VALUE, 844689790);
+			local599.aPacketBit_1.p2(client.anInt3523 * 1573685689, 2143758199);
 			client.aClass175_2.method24356(local599, -1751021032);
 			Class498.method30135(local12, local17, -1385314491);
 		}
@@ -4321,8 +4321,8 @@ public class Class454 {
 				client.anInt3501 = -2121232217;
 				client.anInt3500 = 0;
 				local599 = Class102.method2588(Class446.aClass446_109, client.aClass175_2.aClass24_2, (byte) 22);
-				local599.aClass93_Sub41_Sub2_1.method22597(local17 + local41.anInt5624 * -1994307635, -1980442433);
-				local599.aClass93_Sub41_Sub2_1.method22599(local41.anInt5623 * 270611681 + local12, (short) 255);
+				local599.aPacketBit_1.p2_alt2(local17 + local41.anInt5624 * -1994307635, -1980442433);
+				local599.aPacketBit_1.p2_alt3(local41.anInt5623 * 270611681 + local12, (short) 255);
 				client.aClass175_2.method24356(local599, -2115195228);
 			}
 		}
@@ -4332,11 +4332,11 @@ public class Class454 {
 			client.anInt3501 = 52502862;
 			client.anInt3500 = 0;
 			local599 = Class102.method2588(Class446.aClass446_71, client.aClass175_2.aClass24_2, (byte) 125);
-			local599.aClass93_Sub41_Sub2_1.method22395(client.anInt3523 * 1573685689, 2130728225);
-			local599.aClass93_Sub41_Sub2_1.method22573(Class28.method601(137513009) ? 1 : 0, -1591808004);
-			local599.aClass93_Sub41_Sub2_1.method22595(client.anInt3524 * -239149331, (byte) -37);
-			local599.aClass93_Sub41_Sub2_1.method22599(Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anInt2768 * -1688488127, (short) 255);
-			local599.aClass93_Sub41_Sub2_1.method22634(Class148.anInt1394 * -278883695, 844689790);
+			local599.aPacketBit_1.p2(client.anInt3523 * 1573685689, 2130728225);
+			local599.aPacketBit_1.p1_alt1(Class28.method601(137513009) ? 1 : 0, -1591808004);
+			local599.aPacketBit_1.p2_alt1(client.anInt3524 * -239149331, (byte) -37);
+			local599.aPacketBit_1.p2_alt3(Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3.anInt2768 * -1688488127, (short) 255);
+			local599.aPacketBit_1.p4_alt2(Class148.anInt1394 * -278883695, 844689790);
 			client.aClass175_2.method24356(local599, -1724767744);
 		}
 		@Pc(971) Class446 local971 = null;
@@ -4360,10 +4360,10 @@ public class Class454 {
 			client.anInt3501 = 52502862;
 			client.anInt3500 = 0;
 			local1027 = Class102.method2588(local971, client.aClass175_2.aClass24_2, (byte) 99);
-			local1027.aClass93_Sub41_Sub2_1.method22595(local28, (byte) 35);
-			local1027.aClass93_Sub41_Sub2_1.method22595(local41.anInt5623 * 270611681 + local12, (byte) -54);
-			local1027.aClass93_Sub41_Sub2_1.method22395(local17 + local41.anInt5624 * -1994307635, 2127726150);
-			local1027.aClass93_Sub41_Sub2_1.method22578((arg3 ? 2 : 0) | (Class28.method601(1125364558) ? 1 : 0), (byte) -74);
+			local1027.aPacketBit_1.p2_alt1(local28, (byte) 35);
+			local1027.aPacketBit_1.p2_alt1(local41.anInt5623 * 270611681 + local12, (byte) -54);
+			local1027.aPacketBit_1.p2(local17 + local41.anInt5624 * -1994307635, 2127726150);
+			local1027.aPacketBit_1.p1_alt3((arg3 ? 2 : 0) | (Class28.method601(1125364558) ? 1 : 0), (byte) -74);
 			client.aClass175_2.method24356(local1027, -2141477826);
 			Class498.method30135(local12, local17, -1697204419);
 		}
@@ -4375,11 +4375,11 @@ public class Class454 {
 				client.anInt3501 = 52502862;
 				client.anInt3500 = 0;
 				local549 = Class102.method2588(Class446.aClass446_71, client.aClass175_2.aClass24_2, (byte) 17);
-				local549.aClass93_Sub41_Sub2_1.method22395(client.anInt3523 * 1573685689, 2126459029);
-				local549.aClass93_Sub41_Sub2_1.method22573(Class28.method601(723618330) ? 1 : 0, -1591808004);
-				local549.aClass93_Sub41_Sub2_1.method22595(client.anInt3524 * -239149331, (byte) 6);
-				local549.aClass93_Sub41_Sub2_1.method22599(local28, (short) 255);
-				local549.aClass93_Sub41_Sub2_1.method22634(Class148.anInt1394 * -278883695, 844689790);
+				local549.aPacketBit_1.p2(client.anInt3523 * 1573685689, 2126459029);
+				local549.aPacketBit_1.p1_alt1(Class28.method601(723618330) ? 1 : 0, -1591808004);
+				local549.aPacketBit_1.p2_alt1(client.anInt3524 * -239149331, (byte) 6);
+				local549.aPacketBit_1.p2_alt3(local28, (short) 255);
+				local549.aPacketBit_1.p4_alt2(Class148.anInt1394 * -278883695, 844689790);
 				client.aClass175_2.method24356(local549, -1519075446);
 				Class498.method30135(local1083.anIntArray240[0], local1083.anIntArray239[0], -1207296781);
 			}
@@ -4390,11 +4390,11 @@ public class Class454 {
 			client.anInt3501 = -2121232217;
 			client.anInt3500 = 0;
 			local1027 = Class102.method2588(Class446.aClass446_61, client.aClass175_2.aClass24_2, (byte) 67);
-			local1027.aClass93_Sub41_Sub2_1.method22597(local41.anInt5623 * 270611681 + local12, -1588928552);
-			local1027.aClass93_Sub41_Sub2_1.method22632(Class148.anInt1394 * -278883695, 907143239);
-			local1027.aClass93_Sub41_Sub2_1.method22395(client.anInt3524 * -239149331, 2141580057);
-			local1027.aClass93_Sub41_Sub2_1.method22597(local41.anInt5624 * -1994307635 + local17, -1930005318);
-			local1027.aClass93_Sub41_Sub2_1.method22597(client.anInt3523 * 1573685689, -2068788231);
+			local1027.aPacketBit_1.p2_alt2(local41.anInt5623 * 270611681 + local12, -1588928552);
+			local1027.aPacketBit_1.p4_alt1(Class148.anInt1394 * -278883695, 907143239);
+			local1027.aPacketBit_1.p2(client.anInt3524 * -239149331, 2141580057);
+			local1027.aPacketBit_1.p2_alt2(local41.anInt5624 * -1994307635 + local17, -1930005318);
+			local1027.aPacketBit_1.p2_alt2(client.anInt3523 * 1573685689, -2068788231);
 			client.aClass175_2.method24356(local1027, -2071852635);
 			Class498.method30135(local12, local17, -2119796612);
 		}
@@ -4423,9 +4423,9 @@ public class Class454 {
 			local1 = Class102.method2588(Class446.aClass446_70, client.aClass175_2.aClass24_2, (byte) 66);
 		}
 		@Pc(22) Class611 local22 = client.aClass532_1.method30455(2102852824);
-		local1.aClass93_Sub41_Sub2_1.method22395(arg1 + local22.anInt5624 * -1994307635, 2146179269);
-		local1.aClass93_Sub41_Sub2_1.method22394(Class28.method601(2083122262) ? 1 : 0, (byte) -61);
-		local1.aClass93_Sub41_Sub2_1.method22599(local22.anInt5623 * 270611681 + arg0, (short) 255);
+		local1.aPacketBit_1.p2(arg1 + local22.anInt5624 * -1994307635, 2146179269);
+		local1.aPacketBit_1.p1(Class28.method601(2083122262) ? 1 : 0, (byte) -61);
+		local1.aPacketBit_1.p2_alt3(local22.anInt5623 * 270611681 + arg0, (short) 255);
 		Class172.anInt3179 = arg0 * 2004084007;
 		Class172.anInt3174 = arg1 * -246739717;
 		Class172.aBoolean521 = false;
@@ -4443,9 +4443,9 @@ public class Class454 {
 			local1 = Class102.method2588(Class446.aClass446_70, client.aClass175_2.aClass24_2, (byte) 84);
 		}
 		@Pc(22) Class611 local22 = client.aClass532_1.method30455(1729942663);
-		local1.aClass93_Sub41_Sub2_1.method22395(arg1 + local22.anInt5624 * -1994307635, 2139340056);
-		local1.aClass93_Sub41_Sub2_1.method22394(Class28.method601(2064116199) ? 1 : 0, (byte) -112);
-		local1.aClass93_Sub41_Sub2_1.method22599(local22.anInt5623 * 270611681 + arg0, (short) 255);
+		local1.aPacketBit_1.p2(arg1 + local22.anInt5624 * -1994307635, 2139340056);
+		local1.aPacketBit_1.p1(Class28.method601(2064116199) ? 1 : 0, (byte) -112);
+		local1.aPacketBit_1.p2_alt3(local22.anInt5623 * 270611681 + arg0, (short) 255);
 		Class172.anInt3179 = arg0 * 2004084007;
 		Class172.anInt3174 = arg1 * -246739717;
 		Class172.aBoolean521 = false;

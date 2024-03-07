@@ -84,7 +84,7 @@ public class Class709 implements Interface75 {
 	}
 
 	@OriginalMember(owner = "client!zl", name = "g", descriptor = "(Lclient!alw;J)V", line = 917)
-	static void method36764(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) long arg1) {
+	static void method36764(@OriginalArg(0) Packet arg0, @OriginalArg(1) long arg1) {
 		@Pc(9) Class36 local9;
 		if (Class411.aString199 != null && Class411.aString199.length() == 6) {
 			if (Class411.aBoolean751) {
@@ -97,18 +97,18 @@ public class Class709 implements Interface75 {
 		} else {
 			local9 = Class36.aClass36_3;
 		}
-		arg0.method22394(local9.method36920(), (byte) -45);
+		arg0.p1(local9.method36920(), (byte) -45);
 		switch(local9.anInt115 * 1351038807) {
 			case 0:
-				arg0.method22406(Class266.aClass306_1.method26813(arg1), (byte) 22);
+				arg0.p4(Class266.aClass306_1.method26813(arg1), (byte) 22);
 				break;
 			case 1:
 			case 3:
-				arg0.method22403(Integer.parseInt(Class411.aString199), (byte) 110);
-				arg0.anInt3070 += -1445626955;
+				arg0.p3(Integer.parseInt(Class411.aString199), (byte) 110);
+				arg0.pos += -1445626955;
 				break;
 			case 2:
-				arg0.anInt3070 += -1487540524;
+				arg0.pos += -1487540524;
 		}
 	}
 

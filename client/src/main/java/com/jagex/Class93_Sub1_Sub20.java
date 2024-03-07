@@ -267,22 +267,22 @@ public class Class93_Sub1_Sub20 extends Class93_Sub1 {
 
 	@OriginalMember(owner = "client!asy", name = "g", descriptor = "(Lclient!py;I)Lclient!asy;", line = 88)
 	static Class93_Sub1_Sub20 method23181(@OriginalArg(0) Class497 arg0, @OriginalArg(1) int arg1) {
-		@Pc(8) Class93_Sub41 local8 = new Class93_Sub41(arg0.method30064(0, arg1, (byte) 0));
+		@Pc(8) Packet local8 = new Packet(arg0.method30064(0, arg1, (byte) 0));
 		return Class44_Sub1.method17432(local8, arg1, -2079476285);
 	}
 
 	@OriginalMember(owner = "client!asy", name = "a", descriptor = "(Lclient!py;I)Lclient!asy;", line = 88)
 	static Class93_Sub1_Sub20 method23182(@OriginalArg(0) Class497 arg0, @OriginalArg(1) int arg1) {
-		@Pc(8) Class93_Sub41 local8 = new Class93_Sub41(arg0.method30064(0, arg1, (byte) 0));
+		@Pc(8) Packet local8 = new Packet(arg0.method30064(0, arg1, (byte) 0));
 		return Class44_Sub1.method17432(local8, arg1, -1937823645);
 	}
 
 	@OriginalMember(owner = "client!asy", name = "i", descriptor = "(Lclient!alw;I)Lclient!asy;", line = 93)
-	static Class93_Sub1_Sub20 method23183(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		@Pc(30) Class93_Sub1_Sub20 local30 = new Class93_Sub1_Sub20(arg1, arg0.method22509(1686205357), arg0.method22509(-226592148), arg0.method22483(-118643075), arg0.method22483(-118643075), arg0.method22465((short) 16384) == 1, arg0.method22465((short) 16384), arg0.method22465((short) 16384));
-		@Pc(34) int local34 = arg0.method22465((short) 16384);
+	static Class93_Sub1_Sub20 method23183(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(30) Class93_Sub1_Sub20 local30 = new Class93_Sub1_Sub20(arg1, arg0.gjstr(1686205357), arg0.gjstr(-226592148), arg0.g4(-118643075), arg0.g4(-118643075), arg0.g1((short) 16384) == 1, arg0.g1((short) 16384), arg0.g1((short) 16384));
+		@Pc(34) int local34 = arg0.g1((short) 16384);
 		for (@Pc(36) int local36 = 0; local36 < local34; local36++) {
-			local30.aClass22_42.method408(new Class93_Sub32(arg0.method22465((short) 16384), arg0.method22472(-1434290800), arg0.method22472(-1434290800), arg0.method22472(-1434290800), arg0.method22472(-1434290800), arg0.method22472(-1434290800), arg0.method22472(-1434290800), arg0.method22472(-1434290800), arg0.method22472(-1434290800)), -1324477167);
+			local30.aClass22_42.method408(new Class93_Sub32(arg0.g1((short) 16384), arg0.g2(-1434290800), arg0.g2(-1434290800), arg0.g2(-1434290800), arg0.g2(-1434290800), arg0.g2(-1434290800), arg0.g2(-1434290800), arg0.g2(-1434290800), arg0.g2(-1434290800)), -1324477167);
 		}
 		local30.method23177((short) -17799);
 		return local30;

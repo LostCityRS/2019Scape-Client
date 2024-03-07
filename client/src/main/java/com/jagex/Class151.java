@@ -73,14 +73,14 @@ public class Class151 {
 
 	@OriginalMember(owner = "client!al", name = "d", descriptor = "([BB)V", line = 633)
 	static void method13980(@OriginalArg(0) byte[] arg0, @OriginalArg(1) byte arg1) {
-		@Pc(4) Class93_Sub41 local4 = new Class93_Sub41(arg0);
+		@Pc(4) Packet local4 = new Packet(arg0);
 		while (true) {
-			@Pc(8) int local8 = local4.method22465((short) 16384);
+			@Pc(8) int local8 = local4.g1((short) 16384);
 			if (local8 == 0) {
 				return;
 			}
 			if (local8 == 1) {
-				@Pc(19) int local19 = local4.method22472(-1434290800);
+				@Pc(19) int local19 = local4.g2(-1434290800);
 				Class274.aClass258_1.method26107(local19, -1457431552);
 			}
 		}

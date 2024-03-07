@@ -17,8 +17,8 @@ public class Class614 {
 	}
 
 	@OriginalMember(owner = "client!vi", name = "n", descriptor = "(Lclient!alw;)Lclient!vt;", line = 12)
-	public static Interface67 method32066(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(5) Class623 local5 = Class351.method27640(arg0.method22465((short) 16384), 1962594255);
+	public static Interface67 method32066(@OriginalArg(0) Packet arg0) {
+		@Pc(5) Class623 local5 = Class351.method27640(arg0.g1((short) 16384), 1962594255);
 		if (Class623.aClass623_2 == local5) {
 			return Class632.method32293(arg0, -1105609638);
 		} else if (local5 == Class623.aClass623_1) {
@@ -31,8 +31,8 @@ public class Class614 {
 	}
 
 	@OriginalMember(owner = "client!vi", name = "m", descriptor = "(Lclient!alw;)Lclient!vt;", line = 12)
-	public static Interface67 method32067(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(5) Class623 local5 = Class351.method27640(arg0.method22465((short) 16384), 1962594255);
+	public static Interface67 method32067(@OriginalArg(0) Packet arg0) {
+		@Pc(5) Class623 local5 = Class351.method27640(arg0.g1((short) 16384), 1962594255);
 		if (Class623.aClass623_2 == local5) {
 			return Class632.method32293(arg0, 132834097);
 		} else if (local5 == Class623.aClass623_1) {

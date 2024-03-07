@@ -32,22 +32,22 @@ public class Class93_Sub31_Sub2 extends Class93_Sub31 {
 
 	@OriginalMember(owner = "client!arh", name = "e", descriptor = "(Lclient!alw;I)V", line = 108)
 	@Override
-	void method22014(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		this.anInt3006 = arg0.method22472(-1434290800) * -599208757;
-		this.aByte80 = arg0.method22468(1854919209);
-		this.anInt3005 = arg0.method22472(-1434290800) * -1365295607;
-		arg0.method22495(-1307679067);
-		this.aString96 = arg0.method22509(-87979501);
+	void method22014(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		this.anInt3006 = arg0.g2(-1434290800) * -599208757;
+		this.aByte80 = arg0.g1b(1854919209);
+		this.anInt3005 = arg0.g2(-1434290800) * -1365295607;
+		arg0.g8(-1307679067);
+		this.aString96 = arg0.gjstr(-87979501);
 	}
 
 	@OriginalMember(owner = "client!arh", name = "m", descriptor = "(Lclient!alw;)V", line = 108)
 	@Override
-	void method22009(@OriginalArg(0) Class93_Sub41 arg0) {
-		this.anInt3006 = arg0.method22472(-1434290800) * -599208757;
-		this.aByte80 = arg0.method22468(780829617);
-		this.anInt3005 = arg0.method22472(-1434290800) * -1365295607;
-		arg0.method22495(-1805681566);
-		this.aString96 = arg0.method22509(61956661);
+	void method22009(@OriginalArg(0) Packet arg0) {
+		this.anInt3006 = arg0.g2(-1434290800) * -599208757;
+		this.aByte80 = arg0.g1b(780829617);
+		this.anInt3005 = arg0.g2(-1434290800) * -1365295607;
+		arg0.g8(-1805681566);
+		this.aString96 = arg0.gjstr(61956661);
 	}
 
 	@OriginalMember(owner = "client!arh", name = "k", descriptor = "(Lclient!akr;)V", line = 116)

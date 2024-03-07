@@ -20,7 +20,7 @@ public class Class605 implements Interface63 {
 	@Override
 	public void method31895(@OriginalArg(0) int arg0) {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_57, client.aClass175_2.aClass24_2, (byte) 48);
-		local5.aClass93_Sub41_Sub2_1.method22395(this.anInt5554 * -1596174029, 2127823971);
+		local5.aPacketBit_1.p2(this.anInt5554 * -1596174029, 2127823971);
 		client.aClass175_2.method24356(local5, -1922171802);
 	}
 
@@ -28,7 +28,7 @@ public class Class605 implements Interface63 {
 	@Override
 	public void method31894() {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_57, client.aClass175_2.aClass24_2, (byte) 92);
-		local5.aClass93_Sub41_Sub2_1.method22395(this.anInt5554 * -1596174029, 2136098271);
+		local5.aPacketBit_1.p2(this.anInt5554 * -1596174029, 2136098271);
 		client.aClass175_2.method24356(local5, -1522138341);
 	}
 
@@ -36,7 +36,7 @@ public class Class605 implements Interface63 {
 	@Override
 	public void method31897() {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_57, client.aClass175_2.aClass24_2, (byte) 9);
-		local5.aClass93_Sub41_Sub2_1.method22395(this.anInt5554 * -1596174029, 2141013227);
+		local5.aPacketBit_1.p2(this.anInt5554 * -1596174029, 2141013227);
 		client.aClass175_2.method24356(local5, -1738368580);
 	}
 
@@ -44,7 +44,7 @@ public class Class605 implements Interface63 {
 	@Override
 	public void method31896() {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_57, client.aClass175_2.aClass24_2, (byte) 83);
-		local5.aClass93_Sub41_Sub2_1.method22395(this.anInt5554 * -1596174029, 2142194470);
+		local5.aPacketBit_1.p2(this.anInt5554 * -1596174029, 2142194470);
 		client.aClass175_2.method24356(local5, -1576299280);
 	}
 
@@ -52,7 +52,7 @@ public class Class605 implements Interface63 {
 	@Override
 	public void method31898() {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_57, client.aClass175_2.aClass24_2, (byte) 63);
-		local5.aClass93_Sub41_Sub2_1.method22395(this.anInt5554 * -1596174029, 2126729837);
+		local5.aPacketBit_1.p2(this.anInt5554 * -1596174029, 2126729837);
 		client.aClass175_2.method24356(local5, -1693886198);
 	}
 

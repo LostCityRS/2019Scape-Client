@@ -40,18 +40,18 @@ public abstract class Class102 {
 		local2.aClass446_1 = arg0;
 		local2.anInt1570 = arg0.anInt4952 * -84230039;
 		if (local2.anInt1570 * -702266491 == -1) {
-			local2.aClass93_Sub41_Sub2_1 = new Class93_Sub41_Sub2(260);
+			local2.aPacketBit_1 = new PacketBit(260);
 		} else if (local2.anInt1570 * -702266491 == -2) {
-			local2.aClass93_Sub41_Sub2_1 = new Class93_Sub41_Sub2(10000);
+			local2.aPacketBit_1 = new PacketBit(10000);
 		} else if (local2.anInt1570 * -702266491 <= 18) {
-			local2.aClass93_Sub41_Sub2_1 = new Class93_Sub41_Sub2(20);
+			local2.aPacketBit_1 = new PacketBit(20);
 		} else if (local2.anInt1570 * -702266491 <= 98) {
-			local2.aClass93_Sub41_Sub2_1 = new Class93_Sub41_Sub2(100);
+			local2.aPacketBit_1 = new PacketBit(100);
 		} else {
-			local2.aClass93_Sub41_Sub2_1 = new Class93_Sub41_Sub2(260);
+			local2.aPacketBit_1 = new PacketBit(260);
 		}
-		local2.aClass93_Sub41_Sub2_1.method22662(arg1, (byte) -28);
-		local2.aClass93_Sub41_Sub2_1.method22663(local2.aClass446_1.anInt4951 * -1222765451, -1213648128);
+		local2.aPacketBit_1.setRandom(arg1, (byte) -28);
+		local2.aPacketBit_1.p1opcode(local2.aClass446_1.anInt4951 * -1222765451, -1213648128);
 		local2.anInt1569 = 0;
 		return local2;
 	}
@@ -76,8 +76,8 @@ public abstract class Class102 {
 		}
 		@Pc(7) Class175 local7 = Class330.method27371(-1580060079);
 		@Pc(13) Class93_Sub22 local13 = method2588(Class446.aClass446_94, local7.aClass24_2, (byte) 29);
-		local13.aClass93_Sub41_Sub2_1.method22394(Class46.method895(arg0, -1857161175), (byte) -28);
-		local13.aClass93_Sub41_Sub2_1.method22431(arg0, 932008120);
+		local13.aPacketBit_1.p1(Packet.pjstrlen(arg0, -1857161175), (byte) -28);
+		local13.aPacketBit_1.pjstr(arg0, 932008120);
 		local7.method24356(local13, -2047560182);
 	}
 

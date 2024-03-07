@@ -187,8 +187,8 @@ public class Class488 {
 		}
 		@Pc(208) Class175 local208 = Class330.method27371(-1644772968);
 		@Pc(214) Class93_Sub22 local214 = Class102.method2588(Class446.aClass446_54, local208.aClass24_2, (byte) 126);
-		local214.aClass93_Sub41_Sub2_1.method22394(Class46.method895(arg0, -2103213469), (byte) -54);
-		local214.aClass93_Sub41_Sub2_1.method22431(arg0, -1639122878);
+		local214.aPacketBit_1.p1(Packet.pjstrlen(arg0, -2103213469), (byte) -54);
+		local214.aPacketBit_1.pjstr(arg0, -1639122878);
 		local208.method24356(local214, -1899542244);
 	}
 

@@ -24,14 +24,14 @@ public class Class650 {
 	public Class650(@OriginalArg(0) Class497 arg0) {
 		@Pc(9) byte[] local9 = arg0.method30079(Class649.aClass649_6.anInt5795 * -51136173, (byte) 19);
 		if (local9 != null) {
-			this.method32663(new Class93_Sub41(local9), -827422185);
+			this.method32663(new Packet(local9), -827422185);
 		}
 	}
 
 	@OriginalMember(owner = "client!wx", name = "k", descriptor = "(Lclient!alw;)V", line = 18)
-	void method32662(@OriginalArg(0) Class93_Sub41 arg0) {
+	void method32662(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -42,9 +42,9 @@ public class Class650 {
 	}
 
 	@OriginalMember(owner = "client!wx", name = "e", descriptor = "(Lclient!alw;I)V", line = 18)
-	void method32663(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method32663(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -55,9 +55,9 @@ public class Class650 {
 	}
 
 	@OriginalMember(owner = "client!wx", name = "n", descriptor = "(Lclient!alw;)V", line = 18)
-	void method32664(@OriginalArg(0) Class93_Sub41 arg0) {
+	void method32664(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -68,9 +68,9 @@ public class Class650 {
 	}
 
 	@OriginalMember(owner = "client!wx", name = "m", descriptor = "(Lclient!alw;)V", line = 18)
-	void method32665(@OriginalArg(0) Class93_Sub41 arg0) {
+	void method32665(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -81,9 +81,9 @@ public class Class650 {
 	}
 
 	@OriginalMember(owner = "client!wx", name = "f", descriptor = "(Lclient!alw;)V", line = 18)
-	void method32666(@OriginalArg(0) Class93_Sub41 arg0) {
+	void method32666(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}

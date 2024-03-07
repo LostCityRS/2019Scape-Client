@@ -30,9 +30,9 @@ public class Class661 implements Interface13 {
 
 	@OriginalMember(owner = "client!xj", name = "e", descriptor = "(Lclient!alw;B)V", line = 22)
 	@Override
-	public void method36654(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
+	public void method36654(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -42,9 +42,9 @@ public class Class661 implements Interface13 {
 
 	@OriginalMember(owner = "client!xj", name = "m", descriptor = "(Lclient!alw;)V", line = 22)
 	@Override
-	public void method36655(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36655(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -54,9 +54,9 @@ public class Class661 implements Interface13 {
 
 	@OriginalMember(owner = "client!xj", name = "k", descriptor = "(Lclient!alw;)V", line = 22)
 	@Override
-	public void method36656(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36656(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -66,9 +66,9 @@ public class Class661 implements Interface13 {
 
 	@OriginalMember(owner = "client!xj", name = "w", descriptor = "(Lclient!alw;)V", line = 22)
 	@Override
-	public void method36658(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36658(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -78,9 +78,9 @@ public class Class661 implements Interface13 {
 
 	@OriginalMember(owner = "client!xj", name = "f", descriptor = "(Lclient!alw;)V", line = 22)
 	@Override
-	public void method36657(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36657(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -89,24 +89,24 @@ public class Class661 implements Interface13 {
 	}
 
 	@OriginalMember(owner = "client!xj", name = "k", descriptor = "(Lclient!alw;B)Lclient!kp;", line = 24)
-	public static Class125 method32833(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
+	public static Class125 method32833(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 		@Pc(3) Class125 local3 = Class32_Sub4.method16727(arg0, -423624971);
-		@Pc(7) int local7 = arg0.method22542(-280326472);
-		@Pc(11) int local11 = arg0.method22542(-1674557000);
-		@Pc(15) int local15 = arg0.method22542(-1727622688);
-		@Pc(19) int local19 = arg0.method22542(-1967552013);
-		@Pc(23) int local23 = arg0.method22542(-794453534);
-		@Pc(27) int local27 = arg0.method22542(-2087916654);
+		@Pc(7) int local7 = arg0.gSmart2or4null(-280326472);
+		@Pc(11) int local11 = arg0.gSmart2or4null(-1674557000);
+		@Pc(15) int local15 = arg0.gSmart2or4null(-1727622688);
+		@Pc(19) int local19 = arg0.gSmart2or4null(-1967552013);
+		@Pc(23) int local23 = arg0.gSmart2or4null(-794453534);
+		@Pc(27) int local27 = arg0.gSmart2or4null(-2087916654);
 		return new Class125_Sub2(local3.aClass390_7, local3.aClass392_7, local3.anInt2981 * 483768335, local3.anInt2982 * 2099407685, local3.anInt2983 * 1135283731, local3.anInt2980 * -1017655207, local3.anInt2985 * -1946839755, local3.anInt2986 * -1726029297, local3.anInt2984 * 291173831, local7, local11, local15, local19, local23, local27);
 	}
 
 	@OriginalMember(owner = "client!xj", name = "u", descriptor = "(Lclient!alw;II)V", line = 29)
-	void method32834(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	void method32834(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (arg1 == 1) {
-			this.anInt5825 = arg0.method22542(-1502285807) * -1817257563;
+			this.anInt5825 = arg0.gSmart2or4null(-1502285807) * -1817257563;
 		} else if (arg1 == 2) {
-			this.anInt5826 = arg0.method22465((short) 16384) * 751866733;
-			this.anInt5827 = arg0.method22465((short) 16384) * -2078419265;
+			this.anInt5826 = arg0.g1((short) 16384) * 751866733;
+			this.anInt5827 = arg0.g1((short) 16384) * -2078419265;
 		}
 	}
 
@@ -198,38 +198,38 @@ public class Class661 implements Interface13 {
 			if (local23 == null) {
 				return false;
 			}
-			@Pc(33) Class93_Sub41 local33 = new Class93_Sub41(local23);
+			@Pc(33) Packet local33 = new Packet(local23);
 			Class437.method28816(local33, -1420512156);
-			local40 = local33.method22465((short) 16384);
+			local40 = local33.g1((short) 16384);
 			@Pc(42) int local42;
 			for (local42 = 0; local42 < local40; local42++) {
 				Class249.aClass22_51.method408(new Class93_Sub27(local33), -1304297262);
 			}
-			local42 = local33.method22528((byte) -18);
+			local42 = local33.gSmart1or2((byte) -18);
 			Class249.aClass255Array1 = new Class255[local42];
 			@Pc(63) int local63;
 			for (local63 = 0; local63 < local42; local63++) {
 				Class249.aClass255Array1[local63] = new Class255(local33);
 			}
-			local63 = local33.method22528((byte) -74);
+			local63 = local33.gSmart1or2((byte) -74);
 			Class249.aClass239Array1 = new Class239[local63];
 			@Pc(84) int local84;
 			for (local84 = 0; local84 < local63; local84++) {
 				Class249.aClass239Array1[local84] = new Class239(local33, local84);
 			}
-			local84 = local33.method22528((byte) -53);
+			local84 = local33.gSmart1or2((byte) -53);
 			Class152.aClass243Array2 = new Class243[local84];
 			@Pc(106) int local106;
 			for (local106 = 0; local106 < local84; local106++) {
 				Class152.aClass243Array2[local106] = new Class243(local33);
 			}
-			local106 = local33.method22528((byte) -100);
+			local106 = local33.gSmart1or2((byte) -100);
 			Class716.aClass250Array1 = new Class250[local106];
 			@Pc(127) int local127;
 			for (local127 = 0; local127 < local106; local127++) {
 				Class716.aClass250Array1[local127] = new Class250(local33);
 			}
-			local127 = local33.method22528((byte) -108);
+			local127 = local33.gSmart1or2((byte) -108);
 			Class249.aClass110Array1 = new Class110[local127];
 			for (@Pc(148) int local148 = 0; local148 < local127; local148++) {
 				Class249.aClass110Array1[local148] = Class18.method242(local33, -774040536);

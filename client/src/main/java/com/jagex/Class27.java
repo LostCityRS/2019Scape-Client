@@ -117,16 +117,16 @@ public class Class27 {
 
 	@OriginalMember(owner = "client!ab", name = "p", descriptor = "([BB)V", line = 623)
 	static void method587(@OriginalArg(0) byte[] arg0, @OriginalArg(1) byte arg1) {
-		@Pc(4) Class93_Sub41 local4 = new Class93_Sub41(arg0);
+		@Pc(4) Packet local4 = new Packet(arg0);
 		while (true) {
-			@Pc(8) int local8 = local4.method22465((short) 16384);
+			@Pc(8) int local8 = local4.g1((short) 16384);
 			if (local8 == 0) {
 				return;
 			}
 			if (local8 == 1) {
-				Class671.anInt5859 = local4.method22472(-1434290800) * -1748294101;
+				Class671.anInt5859 = local4.g2(-1434290800) * -1748294101;
 			} else if (local8 == 10) {
-				local4.method22472(-1434290800);
+				local4.g2(-1434290800);
 			}
 		}
 	}

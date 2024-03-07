@@ -33,7 +33,7 @@ public class Class444 implements Interface47 {
 		local6 = new Class431();
 		local6.anInt4791 = arg0 * 402822681;
 		if (local18 != null) {
-			local6.method28766(new Class93_Sub41(local18), 174301989);
+			local6.method28766(new Packet(local18), 174301989);
 		}
 		local6.method28773((byte) 8);
 		this.aClass240_83.method25838(local6, (long) arg0);
@@ -51,7 +51,7 @@ public class Class444 implements Interface47 {
 		local6 = new Class431();
 		local6.anInt4791 = arg0 * 402822681;
 		if (local18 != null) {
-			local6.method28766(new Class93_Sub41(local18), 1093622530);
+			local6.method28766(new Packet(local18), 1093622530);
 		}
 		local6.method28773((byte) 8);
 		this.aClass240_83.method25838(local6, (long) arg0);
@@ -69,7 +69,7 @@ public class Class444 implements Interface47 {
 		local6 = new Class431();
 		local6.anInt4791 = arg0 * 402822681;
 		if (local18 != null) {
-			local6.method28766(new Class93_Sub41(local18), -242259655);
+			local6.method28766(new Packet(local18), -242259655);
 		}
 		local6.method28773((byte) 8);
 		this.aClass240_83.method25838(local6, (long) arg0);

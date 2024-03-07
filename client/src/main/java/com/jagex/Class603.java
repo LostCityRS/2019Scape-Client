@@ -29,9 +29,9 @@ public class Class603 implements Interface13, Interface5 {
 
 	@OriginalMember(owner = "client!uv", name = "k", descriptor = "(Lclient!alw;)V", line = 22)
 	@Override
-	public void method36656(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36656(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -41,9 +41,9 @@ public class Class603 implements Interface13, Interface5 {
 
 	@OriginalMember(owner = "client!uv", name = "e", descriptor = "(Lclient!alw;B)V", line = 22)
 	@Override
-	public void method36654(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
+	public void method36654(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -53,9 +53,9 @@ public class Class603 implements Interface13, Interface5 {
 
 	@OriginalMember(owner = "client!uv", name = "f", descriptor = "(Lclient!alw;)V", line = 22)
 	@Override
-	public void method36657(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36657(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -65,9 +65,9 @@ public class Class603 implements Interface13, Interface5 {
 
 	@OriginalMember(owner = "client!uv", name = "w", descriptor = "(Lclient!alw;)V", line = 22)
 	@Override
-	public void method36658(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36658(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -77,9 +77,9 @@ public class Class603 implements Interface13, Interface5 {
 
 	@OriginalMember(owner = "client!uv", name = "m", descriptor = "(Lclient!alw;)V", line = 22)
 	@Override
-	public void method36655(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36655(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -88,22 +88,22 @@ public class Class603 implements Interface13, Interface5 {
 	}
 
 	@OriginalMember(owner = "client!uv", name = "u", descriptor = "(Lclient!alw;IB)V", line = 29)
-	void method31879(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
+	void method31879(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
 		if (arg1 == 1) {
-			this.anInt5550 = arg0.method22472(-1434290800) * 1895173889;
+			this.anInt5550 = arg0.g2(-1434290800) * 1895173889;
 		} else if (arg1 == 2) {
-			this.anIntArray486 = new int[arg0.method22465((short) 16384)];
+			this.anIntArray486 = new int[arg0.g1((short) 16384)];
 			for (@Pc(21) int local21 = 0; local21 < this.anIntArray486.length; local21++) {
-				this.anIntArray486[local21] = arg0.method22472(-1434290800);
+				this.anIntArray486[local21] = arg0.g2(-1434290800);
 			}
 		} else if (arg1 == 3) {
-			this.anInt5551 = arg0.method22465((short) 16384) * -1308423683;
+			this.anInt5551 = arg0.g1((short) 16384) * -1308423683;
 		} else if (arg1 == 4) {
-			this.aClass604_2 = (Class604) Class107.method18116(Class544.method30949(1742201210), arg0.method22465((short) 16384), -1915563430);
+			this.aClass604_2 = (Class604) Class107.method18116(Class544.method30949(1742201210), arg0.g1((short) 16384), -1915563430);
 		} else if (arg1 == 5) {
-			this.anInt5552 = arg0.method22542(-394123065) * -670946389;
+			this.anInt5552 = arg0.gSmart2or4null(-394123065) * -670946389;
 		} else if (arg1 == 6) {
-			arg0.method22542(-954810828);
+			arg0.gSmart2or4null(-954810828);
 		}
 	}
 
@@ -164,7 +164,7 @@ public class Class603 implements Interface13, Interface5 {
 	static final void method31882(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
 		@Pc(18) Class93_Sub22 local18 = Class102.method2588(Class446.aClass446_3, client.aClass175_2.aClass24_2, (byte) 109);
-		local18.aClass93_Sub41_Sub2_1.method22395(local12, 2143066079);
+		local18.aPacketBit_1.p2(local12, 2143066079);
 		client.aClass175_2.method24356(local18, -1476942798);
 	}
 

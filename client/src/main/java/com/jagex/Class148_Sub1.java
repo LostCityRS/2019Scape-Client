@@ -13,8 +13,8 @@ public class Class148_Sub1 extends Class148 {
 	final Class545 this$0;
 
 	@OriginalMember(owner = "client!ajb", name = "e", descriptor = "(Lclient!alw;I)Lclient!kj;", line = 13)
-	public static Class381 method11759(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) int local3 = arg0.method22483(-118643075);
+	public static Class381 method11759(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) int local3 = arg0.g4(-118643075);
 		return new Class381(local3);
 	}
 

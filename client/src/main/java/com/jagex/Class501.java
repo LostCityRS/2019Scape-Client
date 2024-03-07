@@ -16,7 +16,7 @@ public class Class501 {
 	final Class535 this$0;
 
 	@OriginalMember(owner = "client!qb", name = "e", descriptor = "Lclient!alw;")
-	Class93_Sub41 aClass93_Sub41_16;
+    Packet aPacket_16;
 
 	@OriginalMember(owner = "client!qb", name = "n", descriptor = "Z")
 	boolean aBoolean785;
@@ -45,21 +45,21 @@ public class Class501 {
 			}
 		}
 		client.anInt3463 = 1556053252;
-		Class36.aClass93_Sub41_1 = null;
+		Class36.aPacket_1 = null;
 		client.aBoolean613 = false;
 		if (Class249.anInt3843 * -213302133 > 0) {
 			Class165.method15320(Class155.aClass155_65, Class249.anInt3843 * -213302133, -1, -532799195);
 		}
 		Class287.method26542(-100950526);
 		@Pc(68) Class93_Sub22 local68 = Class102.method2588(Class446.aClass446_42, client.aClass175_2.aClass24_2, (byte) 72);
-		local68.aClass93_Sub41_Sub2_1.method22394(arg0 ? 1 : 0, (byte) -67);
+		local68.aPacketBit_1.p1(arg0 ? 1 : 0, (byte) -67);
 		client.aClass175_2.method24356(local68, -1619193338);
 	}
 
 	@OriginalMember(owner = "client!qb", name = "<init>", descriptor = "(Lclient!rq;Lclient!alw;Z)V", line = 750)
-	Class501(@OriginalArg(0) Class535 arg0, @OriginalArg(1) Class93_Sub41 arg1, @OriginalArg(2) boolean arg2) {
+	Class501(@OriginalArg(0) Class535 arg0, @OriginalArg(1) Packet arg1, @OriginalArg(2) boolean arg2) {
 		this.this$0 = arg0;
-		this.aClass93_Sub41_16 = arg1;
+		this.aPacket_16 = arg1;
 		this.aBoolean785 = arg2;
 		this.anInt5199 = 177775551;
 		this.anInt5198 = 1541616075;
@@ -67,8 +67,8 @@ public class Class501 {
 
 	@OriginalMember(owner = "client!qb", name = "n", descriptor = "()V", line = 758)
 	void method30169() {
-		if (this.aClass93_Sub41_16 != null && !this.aBoolean785) {
-			this.aClass93_Sub41_16.method22392((byte) 1);
+		if (this.aPacket_16 != null && !this.aBoolean785) {
+			this.aPacket_16.release((byte) 1);
 		}
 		this.anInt5199 = 177775551;
 		this.anInt5198 = 1541616075;
@@ -76,8 +76,8 @@ public class Class501 {
 
 	@OriginalMember(owner = "client!qb", name = "e", descriptor = "(I)V", line = 758)
 	void method30170(@OriginalArg(0) int arg0) {
-		if (this.aClass93_Sub41_16 != null && !this.aBoolean785) {
-			this.aClass93_Sub41_16.method22392((byte) 1);
+		if (this.aPacket_16 != null && !this.aBoolean785) {
+			this.aPacket_16.release((byte) 1);
 		}
 		this.anInt5199 = 177775551;
 		this.anInt5198 = 1541616075;
@@ -85,8 +85,8 @@ public class Class501 {
 
 	@OriginalMember(owner = "client!qb", name = "k", descriptor = "()V", line = 758)
 	void method30171() {
-		if (this.aClass93_Sub41_16 != null && !this.aBoolean785) {
-			this.aClass93_Sub41_16.method22392((byte) 1);
+		if (this.aPacket_16 != null && !this.aBoolean785) {
+			this.aPacket_16.release((byte) 1);
 		}
 		this.anInt5199 = 177775551;
 		this.anInt5198 = 1541616075;
@@ -94,8 +94,8 @@ public class Class501 {
 
 	@OriginalMember(owner = "client!qb", name = "m", descriptor = "()V", line = 758)
 	void method30172() {
-		if (this.aClass93_Sub41_16 != null && !this.aBoolean785) {
-			this.aClass93_Sub41_16.method22392((byte) 1);
+		if (this.aPacket_16 != null && !this.aBoolean785) {
+			this.aPacket_16.release((byte) 1);
 		}
 		this.anInt5199 = 177775551;
 		this.anInt5198 = 1541616075;

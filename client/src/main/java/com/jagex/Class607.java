@@ -12,7 +12,7 @@ public class Class607 implements Interface67 {
 	public static int anInt5560;
 
 	@OriginalMember(owner = "client!va", name = "d", descriptor = "Lclient!alw;")
-	static Class93_Sub41 aClass93_Sub41_17;
+	static Packet aPacket_17;
 
 	@OriginalMember(owner = "client!va", name = "e", descriptor = "I")
 	final int anInt5558;
@@ -63,16 +63,16 @@ public class Class607 implements Interface67 {
 	}
 
 	@OriginalMember(owner = "client!va", name = "w", descriptor = "(Lclient!alw;)Lclient!va;", line = 27)
-	static Class607 method31919(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(3) int local3 = arg0.method22465((short) 16384);
-		@Pc(7) int local7 = arg0.method22465((short) 16384);
+	static Class607 method31919(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1((short) 16384);
+		@Pc(7) int local7 = arg0.g1((short) 16384);
 		return new Class607(local3, local7);
 	}
 
 	@OriginalMember(owner = "client!va", name = "f", descriptor = "(Lclient!alw;)Lclient!va;", line = 27)
-	static Class607 method31920(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(3) int local3 = arg0.method22465((short) 16384);
-		@Pc(7) int local7 = arg0.method22465((short) 16384);
+	static Class607 method31920(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1((short) 16384);
+		@Pc(7) int local7 = arg0.g1((short) 16384);
 		return new Class607(local3, local7);
 	}
 
@@ -159,8 +159,8 @@ public class Class607 implements Interface67 {
 	static final void method31927(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(13) String local13 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
 		@Pc(19) Class93_Sub22 local19 = Class102.method2588(Class446.aClass446_62, client.aClass175_1.aClass24_2, (byte) 115);
-		local19.aClass93_Sub41_Sub2_1.method22394(Class46.method895(local13, -1912953263), (byte) -30);
-		local19.aClass93_Sub41_Sub2_1.method22431(local13, -508826280);
+		local19.aPacketBit_1.p1(Packet.pjstrlen(local13, -1912953263), (byte) -30);
+		local19.aPacketBit_1.pjstr(local13, -508826280);
 		client.aClass175_1.method24356(local19, -2037749837);
 	}
 

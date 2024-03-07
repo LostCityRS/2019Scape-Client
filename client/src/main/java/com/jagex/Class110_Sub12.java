@@ -24,27 +24,27 @@ public class Class110_Sub12 extends Class110 {
 	final int anInt945;
 
 	@OriginalMember(owner = "client!agi", name = "<init>", descriptor = "(Lclient!alw;)V", line = 15)
-	Class110_Sub12(@OriginalArg(0) Class93_Sub41 arg0) {
+	Class110_Sub12(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.anInt948 = arg0.method22472(-1434290800) * -1377937631;
-		@Pc(13) int local13 = arg0.method22465((short) 16384);
+		this.anInt948 = arg0.g2(-1434290800) * -1377937631;
+		@Pc(13) int local13 = arg0.g1((short) 16384);
 		if ((local13 & 0x1) == 0) {
 			this.anInt946 = 777313641;
 			this.anInt947 = -896594073;
 		} else {
-			this.anInt946 = arg0.method22472(-1434290800) * -777313641;
-			this.anInt947 = arg0.method22472(-1434290800) * 896594073;
+			this.anInt946 = arg0.g2(-1434290800) * -777313641;
+			this.anInt947 = arg0.g2(-1434290800) * 896594073;
 		}
 		if ((local13 & 0x2) == 0) {
 			this.anInt949 = 728641761;
 			this.anInt945 = 964142953;
 		} else {
-			this.anInt949 = arg0.method22472(-1434290800) * -728641761;
-			this.anInt945 = arg0.method22472(-1434290800) * -964142953;
+			this.anInt949 = arg0.g2(-1434290800) * -728641761;
+			this.anInt945 = arg0.g2(-1434290800) * -964142953;
 		}
 		if ((local13 & 0x4) != 0) {
-			@Pc(71) int local71 = arg0.method22472(-1434290800);
-			@Pc(75) int local75 = arg0.method22472(-1434290800);
+			@Pc(71) int local71 = arg0.g2(-1434290800);
+			@Pc(75) int local75 = arg0.g2(-1434290800);
 			@Pc(81) int local81 = local71 * 255 / local75;
 			if (local71 > 0 && local81 < 1) {
 				@Pc(88) boolean local88 = true;

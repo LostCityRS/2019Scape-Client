@@ -84,14 +84,14 @@ public class Class66 {
 	}
 
 	@OriginalMember(owner = "client!acp", name = "e", descriptor = "(Lclient!alw;I)Lclient!km;", line = 28)
-	public static Class382 method1191(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		@Pc(6) Class390 local6 = Class708.method36753(-266018790)[arg0.method22465((short) 16384)];
-		@Pc(13) Class392 local13 = Class252.method25976(501236194)[arg0.method22465((short) 16384)];
-		@Pc(17) int local17 = arg0.method22475((byte) -67);
-		@Pc(21) int local21 = arg0.method22475((byte) -103);
-		@Pc(25) int local25 = arg0.method22542(-2129557247);
-		@Pc(29) int local29 = arg0.method22483(-118643075);
-		@Pc(33) int local33 = arg0.method22465((short) 16384);
+	public static Class382 method1191(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(6) Class390 local6 = Class708.method36753(-266018790)[arg0.g1((short) 16384)];
+		@Pc(13) Class392 local13 = Class252.method25976(501236194)[arg0.g1((short) 16384)];
+		@Pc(17) int local17 = arg0.g2s((byte) -67);
+		@Pc(21) int local21 = arg0.g2s((byte) -103);
+		@Pc(25) int local25 = arg0.gSmart2or4null(-2129557247);
+		@Pc(29) int local29 = arg0.g4(-118643075);
+		@Pc(33) int local33 = arg0.g1((short) 16384);
 		return new Class382(local6, local13, local17, local21, local25, local29, local33);
 	}
 

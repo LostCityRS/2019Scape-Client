@@ -51,24 +51,24 @@ public class Class346 {
 	}
 
 	@OriginalMember(owner = "client!iq", name = "a", descriptor = "(B)Lclient!alw;", line = 893)
-	static Class93_Sub41 method27567(@OriginalArg(0) byte arg0) {
-		@Pc(4) Class93_Sub41 local4 = new Class93_Sub41(518);
+	static Packet method27567(@OriginalArg(0) byte arg0) {
+		@Pc(4) Packet local4 = new Packet(518);
 		Class411.anIntArray441 = new int[4];
 		Class411.anIntArray441[0] = Class110_Sub9.aSecureRandom1.nextInt();
 		Class411.anIntArray441[1] = Class110_Sub9.aSecureRandom1.nextInt();
 		Class411.anIntArray441[2] = Class110_Sub9.aSecureRandom1.nextInt();
 		Class411.anIntArray441[3] = Class110_Sub9.aSecureRandom1.nextInt();
-		local4.method22394(10, (byte) -6);
-		local4.method22406(Class411.anIntArray441[0], (byte) 38);
-		local4.method22406(Class411.anIntArray441[1], (byte) -73);
-		local4.method22406(Class411.anIntArray441[2], (byte) -27);
-		local4.method22406(Class411.anIntArray441[3], (byte) 35);
-		local4.method22420(Class411.aLong269 * 5489047686998946493L);
+		local4.p1(10, (byte) -6);
+		local4.p4(Class411.anIntArray441[0], (byte) 38);
+		local4.p4(Class411.anIntArray441[1], (byte) -73);
+		local4.p4(Class411.anIntArray441[2], (byte) -27);
+		local4.p4(Class411.anIntArray441[3], (byte) 35);
+		local4.p8(Class411.aLong269 * 5489047686998946493L);
 		if (client.anInt3435 * -849002901 == 14) {
-			local4.method22406(Class411.anIntArray442[0], (byte) -22);
-			local4.method22406(Class411.anIntArray442[1], (byte) -15);
-			local4.method22406(Class411.anIntArray442[2], (byte) 54);
-			local4.method22406(Class411.anIntArray442[3], (byte) 22);
+			local4.p4(Class411.anIntArray442[0], (byte) -22);
+			local4.p4(Class411.anIntArray442[1], (byte) -15);
+			local4.p4(Class411.anIntArray442[2], (byte) 54);
+			local4.p4(Class411.anIntArray442[3], (byte) 22);
 		}
 		Class411.anIntArray442 = Class411.anIntArray441;
 		return local4;

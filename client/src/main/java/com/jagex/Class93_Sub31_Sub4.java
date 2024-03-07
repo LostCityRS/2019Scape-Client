@@ -30,16 +30,16 @@ public class Class93_Sub31_Sub4 extends Class93_Sub31 {
 			return;
 		}
 		@Pc(11) Class93_Sub22 local11 = Class102.method2588(Class446.aClass446_22, client.aClass175_1.aClass24_2, (byte) 16);
-		local11.aClass93_Sub41_Sub2_1.method22395(0, 2127138865);
-		@Pc(22) int local22 = local11.aClass93_Sub41_Sub2_1.anInt3070 * 212851357;
-		local11.aClass93_Sub41_Sub2_1.method22431(arg0, -1779450730);
-		local11.aClass93_Sub41_Sub2_1.method22431(arg1, 119662850);
-		local11.aClass93_Sub41_Sub2_1.method22394(arg2, (byte) -95);
-		local11.aClass93_Sub41_Sub2_1.method22394(arg3 ? 1 : 0, (byte) -72);
-		local11.aClass93_Sub41_Sub2_1.method22431(arg4, 947002394);
-		local11.aClass93_Sub41_Sub2_1.anInt3070 += -1529454093;
-		local11.aClass93_Sub41_Sub2_1.method22555(Class676.anIntArray516, local22, local11.aClass93_Sub41_Sub2_1.anInt3070 * 212851357, (byte) -51);
-		local11.aClass93_Sub41_Sub2_1.method22445(local11.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local22, -1971347959);
+		local11.aPacketBit_1.p2(0, 2127138865);
+		@Pc(22) int local22 = local11.aPacketBit_1.pos * 212851357;
+		local11.aPacketBit_1.pjstr(arg0, -1779450730);
+		local11.aPacketBit_1.pjstr(arg1, 119662850);
+		local11.aPacketBit_1.p1(arg2, (byte) -95);
+		local11.aPacketBit_1.p1(arg3 ? 1 : 0, (byte) -72);
+		local11.aPacketBit_1.pjstr(arg4, 947002394);
+		local11.aPacketBit_1.pos += -1529454093;
+		local11.aPacketBit_1.tinyenc(Class676.anIntArray516, local22, local11.aPacketBit_1.pos * 212851357, (byte) -51);
+		local11.aPacketBit_1.psize2(local11.aPacketBit_1.pos * 212851357 - local22, -1971347959);
 		client.aClass175_1.method24356(local11, -1906063728);
 		if (arg2 < 13) {
 			client.aBoolean608 = true;
@@ -56,26 +56,26 @@ public class Class93_Sub31_Sub4 extends Class93_Sub31 {
 
 	@OriginalMember(owner = "client!arv", name = "e", descriptor = "(Lclient!alw;I)V", line = 132)
 	@Override
-	void method22014(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		arg0.method22465((short) 16384);
-		this.anInt3044 = arg0.method22472(-1434290800) * 630853483;
-		this.aByte86 = arg0.method22468(467007568);
-		this.anInt3043 = arg0.method22472(-1434290800) * -838446601;
-		arg0.method22495(-1283499375);
-		this.aString104 = arg0.method22509(-6221050);
-		arg0.method22465((short) 16384);
+	void method22014(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		arg0.g1((short) 16384);
+		this.anInt3044 = arg0.g2(-1434290800) * 630853483;
+		this.aByte86 = arg0.g1b(467007568);
+		this.anInt3043 = arg0.g2(-1434290800) * -838446601;
+		arg0.g8(-1283499375);
+		this.aString104 = arg0.gjstr(-6221050);
+		arg0.g1((short) 16384);
 	}
 
 	@OriginalMember(owner = "client!arv", name = "m", descriptor = "(Lclient!alw;)V", line = 132)
 	@Override
-	void method22009(@OriginalArg(0) Class93_Sub41 arg0) {
-		arg0.method22465((short) 16384);
-		this.anInt3044 = arg0.method22472(-1434290800) * 630853483;
-		this.aByte86 = arg0.method22468(1345582618);
-		this.anInt3043 = arg0.method22472(-1434290800) * -838446601;
-		arg0.method22495(-86909010);
-		this.aString104 = arg0.method22509(-228056302);
-		arg0.method22465((short) 16384);
+	void method22009(@OriginalArg(0) Packet arg0) {
+		arg0.g1((short) 16384);
+		this.anInt3044 = arg0.g2(-1434290800) * 630853483;
+		this.aByte86 = arg0.g1b(1345582618);
+		this.anInt3043 = arg0.g2(-1434290800) * -838446601;
+		arg0.g8(-86909010);
+		this.aString104 = arg0.gjstr(-228056302);
+		arg0.g1((short) 16384);
 	}
 
 	@OriginalMember(owner = "client!arv", name = "n", descriptor = "(Lclient!akr;S)V", line = 142)

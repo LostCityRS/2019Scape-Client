@@ -196,7 +196,7 @@ public class Class658 {
 
 	@OriginalMember(owner = "client!xg", name = "l", descriptor = "(I)V", line = 94)
 	void method32772(@OriginalArg(0) int arg0) {
-		@Pc(1) long[] local1 = Class93_Sub41.aLongArray18;
+		@Pc(1) long[] local1 = Packet.crc64table;
 		this.aLong300 = 7902130402649862347L;
 		this.aLong300 = (this.aLong300 * 3247757972139510557L >>> 8 ^ local1[(int) ((this.aLong300 * 3247757972139510557L ^ (long) (this.anInt5816 * -1790369147 >> 8)) & 0xFFL)]) * -7902130402649862347L;
 		this.aLong300 = (this.aLong300 * 3247757972139510557L >>> 8 ^ local1[(int) ((this.aLong300 * 3247757972139510557L ^ (long) (this.anInt5816 * -1790369147)) & 0xFFL)]) * -7902130402649862347L;
@@ -258,7 +258,7 @@ public class Class658 {
 
 	@OriginalMember(owner = "client!xg", name = "g", descriptor = "()V", line = 94)
 	void method32773() {
-		@Pc(1) long[] local1 = Class93_Sub41.aLongArray18;
+		@Pc(1) long[] local1 = Packet.crc64table;
 		this.aLong300 = 7902130402649862347L;
 		this.aLong300 = (this.aLong300 * 3247757972139510557L >>> 8 ^ local1[(int) ((this.aLong300 * 3247757972139510557L ^ (long) (this.anInt5816 * -1790369147 >> 8)) & 0xFFL)]) * -7902130402649862347L;
 		this.aLong300 = (this.aLong300 * 3247757972139510557L >>> 8 ^ local1[(int) ((this.aLong300 * 3247757972139510557L ^ (long) (this.anInt5816 * -1790369147)) & 0xFFL)]) * -7902130402649862347L;

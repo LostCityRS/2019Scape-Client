@@ -19,21 +19,21 @@ public class Class284 implements Interface26 {
 	final Class466 aClass466_1;
 
 	@OriginalMember(owner = "client!gc", name = "n", descriptor = "(Lclient!alw;Ljava/lang/String;I)I", line = 18)
-	public static int method26484(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) String arg1, @OriginalArg(2) int arg2) {
-		@Pc(4) int local4 = arg0.anInt3070 * 212851357;
+	public static int method26484(@OriginalArg(0) Packet arg0, @OriginalArg(1) String arg1, @OriginalArg(2) int arg2) {
+		@Pc(4) int local4 = arg0.pos * 212851357;
 		@Pc(8) byte[] local8 = Class269.method26271(arg1, (byte) -122);
-		arg0.method22456(local8.length, (byte) -26);
-		arg0.anInt3070 += Class350.aClass337_1.method27451(local8, 0, local8.length, arg0.aByteArray58, arg0.anInt3070 * 212851357, -1227975933) * -1445626955;
-		return arg0.anInt3070 * 212851357 - local4;
+		arg0.pSmart1or2(local8.length, (byte) -26);
+		arg0.pos += Class350.aClass337_1.method27451(local8, 0, local8.length, arg0.data, arg0.pos * 212851357, -1227975933) * -1445626955;
+		return arg0.pos * 212851357 - local4;
 	}
 
 	@OriginalMember(owner = "client!gc", name = "<init>", descriptor = "(Lclient!gx;Lclient!alw;)V", line = 291)
-	Class284(@OriginalArg(0) Class303 arg0, @OriginalArg(1) Class93_Sub41 arg1) {
+	Class284(@OriginalArg(0) Class303 arg0, @OriginalArg(1) Packet arg1) {
 		this.this$0 = arg0;
-		if (arg1.method22472(-1434290800) == 65535) {
+		if (arg1.g2(-1434290800) == 65535) {
 			this.aClass466_1 = null;
 		} else {
-			arg1.anInt3070 -= 1403713386;
+			arg1.pos -= 1403713386;
 			this.aClass466_1 = arg0.anInterface27_2.method25528((byte) -12).method1468(arg1, (byte) 33);
 		}
 	}

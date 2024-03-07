@@ -32,22 +32,22 @@ public class Class601 implements Interface63 {
 	@Override
 	public void method31895(@OriginalArg(0) int arg0) {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_48, client.aClass175_2.aClass24_2, (byte) 112);
-		@Pc(16) int local16 = (local5.aClass93_Sub41_Sub2_1.anInt3070 += -1445626955) * 212851357;
-		local5.aClass93_Sub41_Sub2_1.method22394(this.aClass72_3.method36920(), (byte) -109);
-		local5.aClass93_Sub41_Sub2_1.method22431(this.aString231, 1785495722);
-		local5.aClass93_Sub41_Sub2_1.method22395(this.anInt5549 * -1620060651, 2130770716);
-		local5.aClass93_Sub41_Sub2_1.method22431(Class527.aString223, 1143402571);
+		@Pc(16) int local16 = (local5.aPacketBit_1.pos += -1445626955) * 212851357;
+		local5.aPacketBit_1.p1(this.aClass72_3.method36920(), (byte) -109);
+		local5.aPacketBit_1.pjstr(this.aString231, 1785495722);
+		local5.aPacketBit_1.p2(this.anInt5549 * -1620060651, 2130770716);
+		local5.aPacketBit_1.pjstr(Class527.aString223, 1143402571);
 		if (this.aString230 == null) {
-			local5.aClass93_Sub41_Sub2_1.method22394(0, (byte) -115);
+			local5.aPacketBit_1.p1(0, (byte) -115);
 		} else {
-			local5.aClass93_Sub41_Sub2_1.method22394(1, (byte) -111);
+			local5.aPacketBit_1.p1(1, (byte) -111);
 			@Pc(53) String local53 = this.aString230;
 			if (local53.length() > 100) {
 				local53 = local53.substring(0, 100);
 			}
-			local5.aClass93_Sub41_Sub2_1.method22431(local53, 157129624);
+			local5.aPacketBit_1.pjstr(local53, 157129624);
 		}
-		local5.aClass93_Sub41_Sub2_1.method22451(local5.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local16, (byte) 64);
+		local5.aPacketBit_1.psize1(local5.aPacketBit_1.pos * 212851357 - local16, (byte) 64);
 		client.aClass175_2.method24356(local5, -2098922188);
 	}
 
@@ -55,22 +55,22 @@ public class Class601 implements Interface63 {
 	@Override
 	public void method31896() {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_48, client.aClass175_2.aClass24_2, (byte) 84);
-		@Pc(16) int local16 = (local5.aClass93_Sub41_Sub2_1.anInt3070 += -1445626955) * 212851357;
-		local5.aClass93_Sub41_Sub2_1.method22394(this.aClass72_3.method36920(), (byte) -100);
-		local5.aClass93_Sub41_Sub2_1.method22431(this.aString231, 1555231612);
-		local5.aClass93_Sub41_Sub2_1.method22395(this.anInt5549 * -1620060651, 2131304719);
-		local5.aClass93_Sub41_Sub2_1.method22431(Class527.aString223, -634106784);
+		@Pc(16) int local16 = (local5.aPacketBit_1.pos += -1445626955) * 212851357;
+		local5.aPacketBit_1.p1(this.aClass72_3.method36920(), (byte) -100);
+		local5.aPacketBit_1.pjstr(this.aString231, 1555231612);
+		local5.aPacketBit_1.p2(this.anInt5549 * -1620060651, 2131304719);
+		local5.aPacketBit_1.pjstr(Class527.aString223, -634106784);
 		if (this.aString230 == null) {
-			local5.aClass93_Sub41_Sub2_1.method22394(0, (byte) -112);
+			local5.aPacketBit_1.p1(0, (byte) -112);
 		} else {
-			local5.aClass93_Sub41_Sub2_1.method22394(1, (byte) -118);
+			local5.aPacketBit_1.p1(1, (byte) -118);
 			@Pc(53) String local53 = this.aString230;
 			if (local53.length() > 100) {
 				local53 = local53.substring(0, 100);
 			}
-			local5.aClass93_Sub41_Sub2_1.method22431(local53, 1074521866);
+			local5.aPacketBit_1.pjstr(local53, 1074521866);
 		}
-		local5.aClass93_Sub41_Sub2_1.method22451(local5.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local16, (byte) 7);
+		local5.aPacketBit_1.psize1(local5.aPacketBit_1.pos * 212851357 - local16, (byte) 7);
 		client.aClass175_2.method24356(local5, -2066726093);
 	}
 
@@ -78,22 +78,22 @@ public class Class601 implements Interface63 {
 	@Override
 	public void method31894() {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_48, client.aClass175_2.aClass24_2, (byte) 89);
-		@Pc(16) int local16 = (local5.aClass93_Sub41_Sub2_1.anInt3070 += -1445626955) * 212851357;
-		local5.aClass93_Sub41_Sub2_1.method22394(this.aClass72_3.method36920(), (byte) -88);
-		local5.aClass93_Sub41_Sub2_1.method22431(this.aString231, 2035137442);
-		local5.aClass93_Sub41_Sub2_1.method22395(this.anInt5549 * -1620060651, 2145038277);
-		local5.aClass93_Sub41_Sub2_1.method22431(Class527.aString223, -2011882673);
+		@Pc(16) int local16 = (local5.aPacketBit_1.pos += -1445626955) * 212851357;
+		local5.aPacketBit_1.p1(this.aClass72_3.method36920(), (byte) -88);
+		local5.aPacketBit_1.pjstr(this.aString231, 2035137442);
+		local5.aPacketBit_1.p2(this.anInt5549 * -1620060651, 2145038277);
+		local5.aPacketBit_1.pjstr(Class527.aString223, -2011882673);
 		if (this.aString230 == null) {
-			local5.aClass93_Sub41_Sub2_1.method22394(0, (byte) -97);
+			local5.aPacketBit_1.p1(0, (byte) -97);
 		} else {
-			local5.aClass93_Sub41_Sub2_1.method22394(1, (byte) -109);
+			local5.aPacketBit_1.p1(1, (byte) -109);
 			@Pc(53) String local53 = this.aString230;
 			if (local53.length() > 100) {
 				local53 = local53.substring(0, 100);
 			}
-			local5.aClass93_Sub41_Sub2_1.method22431(local53, 1272818467);
+			local5.aPacketBit_1.pjstr(local53, 1272818467);
 		}
-		local5.aClass93_Sub41_Sub2_1.method22451(local5.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local16, (byte) 12);
+		local5.aPacketBit_1.psize1(local5.aPacketBit_1.pos * 212851357 - local16, (byte) 12);
 		client.aClass175_2.method24356(local5, -2049922226);
 	}
 
@@ -101,22 +101,22 @@ public class Class601 implements Interface63 {
 	@Override
 	public void method31898() {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_48, client.aClass175_2.aClass24_2, (byte) 75);
-		@Pc(16) int local16 = (local5.aClass93_Sub41_Sub2_1.anInt3070 += -1445626955) * 212851357;
-		local5.aClass93_Sub41_Sub2_1.method22394(this.aClass72_3.method36920(), (byte) -32);
-		local5.aClass93_Sub41_Sub2_1.method22431(this.aString231, -1285080766);
-		local5.aClass93_Sub41_Sub2_1.method22395(this.anInt5549 * -1620060651, 2132714364);
-		local5.aClass93_Sub41_Sub2_1.method22431(Class527.aString223, -1326473836);
+		@Pc(16) int local16 = (local5.aPacketBit_1.pos += -1445626955) * 212851357;
+		local5.aPacketBit_1.p1(this.aClass72_3.method36920(), (byte) -32);
+		local5.aPacketBit_1.pjstr(this.aString231, -1285080766);
+		local5.aPacketBit_1.p2(this.anInt5549 * -1620060651, 2132714364);
+		local5.aPacketBit_1.pjstr(Class527.aString223, -1326473836);
 		if (this.aString230 == null) {
-			local5.aClass93_Sub41_Sub2_1.method22394(0, (byte) -33);
+			local5.aPacketBit_1.p1(0, (byte) -33);
 		} else {
-			local5.aClass93_Sub41_Sub2_1.method22394(1, (byte) -121);
+			local5.aPacketBit_1.p1(1, (byte) -121);
 			@Pc(53) String local53 = this.aString230;
 			if (local53.length() > 100) {
 				local53 = local53.substring(0, 100);
 			}
-			local5.aClass93_Sub41_Sub2_1.method22431(local53, -1329152785);
+			local5.aPacketBit_1.pjstr(local53, -1329152785);
 		}
-		local5.aClass93_Sub41_Sub2_1.method22451(local5.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local16, (byte) 115);
+		local5.aPacketBit_1.psize1(local5.aPacketBit_1.pos * 212851357 - local16, (byte) 115);
 		client.aClass175_2.method24356(local5, -1490431215);
 	}
 
@@ -124,22 +124,22 @@ public class Class601 implements Interface63 {
 	@Override
 	public void method31897() {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_48, client.aClass175_2.aClass24_2, (byte) 123);
-		@Pc(16) int local16 = (local5.aClass93_Sub41_Sub2_1.anInt3070 += -1445626955) * 212851357;
-		local5.aClass93_Sub41_Sub2_1.method22394(this.aClass72_3.method36920(), (byte) -84);
-		local5.aClass93_Sub41_Sub2_1.method22431(this.aString231, -321854920);
-		local5.aClass93_Sub41_Sub2_1.method22395(this.anInt5549 * -1620060651, 2146916514);
-		local5.aClass93_Sub41_Sub2_1.method22431(Class527.aString223, 616372095);
+		@Pc(16) int local16 = (local5.aPacketBit_1.pos += -1445626955) * 212851357;
+		local5.aPacketBit_1.p1(this.aClass72_3.method36920(), (byte) -84);
+		local5.aPacketBit_1.pjstr(this.aString231, -321854920);
+		local5.aPacketBit_1.p2(this.anInt5549 * -1620060651, 2146916514);
+		local5.aPacketBit_1.pjstr(Class527.aString223, 616372095);
 		if (this.aString230 == null) {
-			local5.aClass93_Sub41_Sub2_1.method22394(0, (byte) -19);
+			local5.aPacketBit_1.p1(0, (byte) -19);
 		} else {
-			local5.aClass93_Sub41_Sub2_1.method22394(1, (byte) -77);
+			local5.aPacketBit_1.p1(1, (byte) -77);
 			@Pc(53) String local53 = this.aString230;
 			if (local53.length() > 100) {
 				local53 = local53.substring(0, 100);
 			}
-			local5.aClass93_Sub41_Sub2_1.method22431(local53, 250825895);
+			local5.aPacketBit_1.pjstr(local53, 250825895);
 		}
-		local5.aClass93_Sub41_Sub2_1.method22451(local5.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local16, (byte) 90);
+		local5.aPacketBit_1.psize1(local5.aPacketBit_1.pos * 212851357 - local16, (byte) 90);
 		client.aClass175_2.method24356(local5, -1602139032);
 	}
 

@@ -17,22 +17,22 @@ public class Class108_Sub2 extends Class108 {
 
 	@OriginalMember(owner = "client!afv", name = "u", descriptor = "(Lclient!alw;IS)V", line = 12)
 	@Override
-	void method7448(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) short arg2) {
+	void method7448(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) short arg2) {
 	}
 
 	@OriginalMember(owner = "client!afv", name = "c", descriptor = "(Lclient!alw;I)V", line = 12)
 	@Override
-	void method7451(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method7451(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 	}
 
 	@OriginalMember(owner = "client!afv", name = "d", descriptor = "(Lclient!alw;I)V", line = 12)
 	@Override
-	void method7449(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method7449(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 	}
 
 	@OriginalMember(owner = "client!afv", name = "r", descriptor = "(Lclient!alw;I)V", line = 12)
 	@Override
-	void method7450(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method7450(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 	}
 
 	@OriginalMember(owner = "client!afv", name = "l", descriptor = "()V", line = 13)

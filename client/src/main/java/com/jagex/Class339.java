@@ -177,10 +177,10 @@ public class Class339 {
 	@OriginalMember(owner = "client!ij", name = "fz", descriptor = "(Lclient!ax;B)V", line = 2325)
 	static void method27486(@OriginalArg(0) Class175 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_51, arg0.aClass24_2, (byte) 46);
-		local5.aClass93_Sub41_Sub2_1.method22394(Class255.method26008(2033898723), (byte) -58);
-		local5.aClass93_Sub41_Sub2_1.method22395(client.anInt3408 * -1378711501, 2145519216);
-		local5.aClass93_Sub41_Sub2_1.method22395(client.anInt3416 * 2091353777, 2128531004);
-		local5.aClass93_Sub41_Sub2_1.method22394(Class51.aClass93_Sub36_1.aClass166_Sub39_1.method16345(-1923223686), (byte) -120);
+		local5.aPacketBit_1.p1(Class255.method26008(2033898723), (byte) -58);
+		local5.aPacketBit_1.p2(client.anInt3408 * -1378711501, 2145519216);
+		local5.aPacketBit_1.p2(client.anInt3416 * 2091353777, 2128531004);
+		local5.aPacketBit_1.p1(Class51.aClass93_Sub36_1.aClass166_Sub39_1.method16345(-1923223686), (byte) -120);
 		arg0.method24356(local5, -2013322142);
 	}
 

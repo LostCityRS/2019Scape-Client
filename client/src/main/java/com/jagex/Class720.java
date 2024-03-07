@@ -170,7 +170,7 @@ public class Class720 {
 		@Pc(2) Class93_Sub22 local2 = Class527.method30386(-1845715267);
 		local2.aClass446_1 = null;
 		local2.anInt1570 = 0;
-		local2.aClass93_Sub41_Sub2_1 = new Class93_Sub41_Sub2(5000);
+		local2.aPacketBit_1 = new PacketBit(5000);
 		return local2;
 	}
 

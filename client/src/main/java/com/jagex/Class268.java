@@ -21,9 +21,9 @@ public class Class268 implements Interface13, Interface5 {
 
 	@OriginalMember(owner = "client!fm", name = "e", descriptor = "(Lclient!alw;B)V", line = 15)
 	@Override
-	public void method36654(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
+	public void method36654(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -33,9 +33,9 @@ public class Class268 implements Interface13, Interface5 {
 
 	@OriginalMember(owner = "client!fm", name = "k", descriptor = "(Lclient!alw;)V", line = 15)
 	@Override
-	public void method36656(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36656(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -45,9 +45,9 @@ public class Class268 implements Interface13, Interface5 {
 
 	@OriginalMember(owner = "client!fm", name = "f", descriptor = "(Lclient!alw;)V", line = 15)
 	@Override
-	public void method36657(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36657(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -57,9 +57,9 @@ public class Class268 implements Interface13, Interface5 {
 
 	@OriginalMember(owner = "client!fm", name = "w", descriptor = "(Lclient!alw;)V", line = 15)
 	@Override
-	public void method36658(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36658(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -69,9 +69,9 @@ public class Class268 implements Interface13, Interface5 {
 
 	@OriginalMember(owner = "client!fm", name = "m", descriptor = "(Lclient!alw;)V", line = 15)
 	@Override
-	public void method36655(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36655(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -80,81 +80,81 @@ public class Class268 implements Interface13, Interface5 {
 	}
 
 	@OriginalMember(owner = "client!fm", name = "u", descriptor = "(Lclient!alw;II)V", line = 22)
-	void method26260(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	void method26260(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		@Pc(10) int local10;
 		@Pc(12) int local12;
 		if (arg1 == 2) {
 			this.aBooleanArray23 = new boolean[400];
-			local10 = arg0.method22528((byte) -25);
+			local10 = arg0.gSmart1or2((byte) -25);
 			for (local12 = 0; local12 < local10; local12++) {
-				this.aBooleanArray23[arg0.method22528((byte) -77)] = true;
+				this.aBooleanArray23[arg0.gSmart1or2((byte) -77)] = true;
 			}
 		} else if (arg1 == 3) {
-			arg0.method22465((short) 16384);
-			local10 = arg0.method22528((byte) -110);
+			arg0.g1((short) 16384);
+			local10 = arg0.gSmart1or2((byte) -110);
 			for (local12 = 0; local12 < local10; local12++) {
-				arg0.method22528((byte) -125);
-				arg0.method22465((short) 16384);
+				arg0.gSmart1or2((byte) -125);
+				arg0.g1((short) 16384);
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!fm", name = "c", descriptor = "(Lclient!alw;I)V", line = 22)
-	void method26261(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method26261(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		@Pc(10) int local10;
 		@Pc(12) int local12;
 		if (arg1 == 2) {
 			this.aBooleanArray23 = new boolean[400];
-			local10 = arg0.method22528((byte) -54);
+			local10 = arg0.gSmart1or2((byte) -54);
 			for (local12 = 0; local12 < local10; local12++) {
-				this.aBooleanArray23[arg0.method22528((byte) -41)] = true;
+				this.aBooleanArray23[arg0.gSmart1or2((byte) -41)] = true;
 			}
 		} else if (arg1 == 3) {
-			arg0.method22465((short) 16384);
-			local10 = arg0.method22528((byte) -88);
+			arg0.g1((short) 16384);
+			local10 = arg0.gSmart1or2((byte) -88);
 			for (local12 = 0; local12 < local10; local12++) {
-				arg0.method22528((byte) -80);
-				arg0.method22465((short) 16384);
+				arg0.gSmart1or2((byte) -80);
+				arg0.g1((short) 16384);
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!fm", name = "p", descriptor = "(Lclient!alw;I)V", line = 22)
-	void method26262(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method26262(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		@Pc(10) int local10;
 		@Pc(12) int local12;
 		if (arg1 == 2) {
 			this.aBooleanArray23 = new boolean[400];
-			local10 = arg0.method22528((byte) -3);
+			local10 = arg0.gSmart1or2((byte) -3);
 			for (local12 = 0; local12 < local10; local12++) {
-				this.aBooleanArray23[arg0.method22528((byte) -1)] = true;
+				this.aBooleanArray23[arg0.gSmart1or2((byte) -1)] = true;
 			}
 		} else if (arg1 == 3) {
-			arg0.method22465((short) 16384);
-			local10 = arg0.method22528((byte) -100);
+			arg0.g1((short) 16384);
+			local10 = arg0.gSmart1or2((byte) -100);
 			for (local12 = 0; local12 < local10; local12++) {
-				arg0.method22528((byte) -19);
-				arg0.method22465((short) 16384);
+				arg0.gSmart1or2((byte) -19);
+				arg0.g1((short) 16384);
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!fm", name = "d", descriptor = "(Lclient!alw;I)V", line = 22)
-	void method26263(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method26263(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		@Pc(10) int local10;
 		@Pc(12) int local12;
 		if (arg1 == 2) {
 			this.aBooleanArray23 = new boolean[400];
-			local10 = arg0.method22528((byte) -84);
+			local10 = arg0.gSmart1or2((byte) -84);
 			for (local12 = 0; local12 < local10; local12++) {
-				this.aBooleanArray23[arg0.method22528((byte) -51)] = true;
+				this.aBooleanArray23[arg0.gSmart1or2((byte) -51)] = true;
 			}
 		} else if (arg1 == 3) {
-			arg0.method22465((short) 16384);
-			local10 = arg0.method22528((byte) -58);
+			arg0.g1((short) 16384);
+			local10 = arg0.gSmart1or2((byte) -58);
 			for (local12 = 0; local12 < local10; local12++) {
-				arg0.method22528((byte) -74);
-				arg0.method22465((short) 16384);
+				arg0.gSmart1or2((byte) -74);
+				arg0.g1((short) 16384);
 			}
 		}
 	}
@@ -227,10 +227,10 @@ public class Class268 implements Interface13, Interface5 {
 		@Pc(52) Class93_Sub22 local52;
 		while (Class33.method677(-1408990993)) {
 			local52 = Class102.method2588(Class446.aClass446_74, client.aClass175_2.aClass24_2, (byte) 124);
-			local52.aClass93_Sub41_Sub2_1.method22394(0, (byte) -38);
-			local63 = local52.aClass93_Sub41_Sub2_1.anInt3070 * 212851357;
-			Class359.method27787(local52.aClass93_Sub41_Sub2_1, -1023210575);
-			local52.aClass93_Sub41_Sub2_1.method22451(local52.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local63, (byte) 87);
+			local52.aPacketBit_1.p1(0, (byte) -38);
+			local63 = local52.aPacketBit_1.pos * 212851357;
+			Class359.method27787(local52.aPacketBit_1, -1023210575);
+			local52.aPacketBit_1.psize1(local52.aPacketBit_1.pos * 212851357 - local63, (byte) 87);
 			client.aClass175_2.method24356(local52, -1777674683);
 		}
 		@Pc(129) int local129;
@@ -268,9 +268,9 @@ public class Class268 implements Interface13, Interface5 {
 				client.aLong245 = local134 * -5212376496802918447L;
 				client.aLong246 = local127 * 7217957106487703565L;
 			}
-			local52.aClass93_Sub41_Sub2_1.method22595(Class653.aClass678_2.anInt5886 * 1528915565, (byte) 42);
-			local52.aClass93_Sub41_Sub2_1.method22578(client.anInt3407 * 1249273355, (byte) -74);
-			local52.aClass93_Sub41_Sub2_1.method22394(local129, (byte) 3);
+			local52.aPacketBit_1.p2_alt1(Class653.aClass678_2.anInt5886 * 1528915565, (byte) 42);
+			local52.aPacketBit_1.p1_alt3(client.anInt3407 * 1249273355, (byte) -74);
+			local52.aPacketBit_1.p1(local129, (byte) 3);
 			client.aClass175_2.method24356(local52, -1641840970);
 			Class653.aClass678_2 = null;
 			Class442.aLong276 = (local127 + 30000L) * 3040038476132704983L;
@@ -400,7 +400,7 @@ public class Class268 implements Interface13, Interface5 {
 		@Pc(622) Class93_Sub22 local622;
 		if (client.aBoolean635) {
 			local622 = Class102.method2588(Class446.aClass446_10, client.aClass175_2.aClass24_2, (byte) 87);
-			local622.aClass93_Sub41_Sub2_1.method22641(Class570.anInt5397 * -554382929 << 28 | Class523.anInt5225 * -2075541317 << 14 | Class562.anInt5352 * 1760194437, (byte) -15);
+			local622.aPacketBit_1.p4_alt3(Class570.anInt5397 * -554382929 << 28 | Class523.anInt5225 * -2075541317 << 14 | Class562.anInt5352 * 1760194437, (byte) -15);
 			client.aClass175_2.method24356(local622, -1920560437);
 			client.aBoolean635 = false;
 		}

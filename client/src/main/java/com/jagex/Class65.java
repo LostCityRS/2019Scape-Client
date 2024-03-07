@@ -33,9 +33,9 @@ public class Class65 implements Interface13 {
 
 	@OriginalMember(owner = "client!aco", name = "m", descriptor = "(Lclient!alw;)V", line = 23)
 	@Override
-	public void method36655(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36655(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -45,9 +45,9 @@ public class Class65 implements Interface13 {
 
 	@OriginalMember(owner = "client!aco", name = "k", descriptor = "(Lclient!alw;)V", line = 23)
 	@Override
-	public void method36656(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36656(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -57,9 +57,9 @@ public class Class65 implements Interface13 {
 
 	@OriginalMember(owner = "client!aco", name = "f", descriptor = "(Lclient!alw;)V", line = 23)
 	@Override
-	public void method36657(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36657(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -69,9 +69,9 @@ public class Class65 implements Interface13 {
 
 	@OriginalMember(owner = "client!aco", name = "w", descriptor = "(Lclient!alw;)V", line = 23)
 	@Override
-	public void method36658(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36658(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -81,9 +81,9 @@ public class Class65 implements Interface13 {
 
 	@OriginalMember(owner = "client!aco", name = "e", descriptor = "(Lclient!alw;B)V", line = 23)
 	@Override
-	public void method36654(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
+	public void method36654(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -92,11 +92,11 @@ public class Class65 implements Interface13 {
 	}
 
 	@OriginalMember(owner = "client!aco", name = "r", descriptor = "(Lclient!alw;I)V", line = 30)
-	void method1172(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method1172(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.anInt232 = arg0.method22542(-1570042732) * 626349445;
+			this.anInt232 = arg0.gSmart2or4null(-1570042732) * 626349445;
 		} else if (arg1 == 2) {
-			this.anInt233 = arg0.method22478((short) -215) * -637469593;
+			this.anInt233 = arg0.g3((short) -215) * -637469593;
 		} else if (arg1 == 3) {
 			this.aBoolean30 = true;
 		} else if (arg1 == 4) {
@@ -106,11 +106,11 @@ public class Class65 implements Interface13 {
 	}
 
 	@OriginalMember(owner = "client!aco", name = "v", descriptor = "(Lclient!alw;I)V", line = 30)
-	void method1173(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method1173(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.anInt232 = arg0.method22542(-626459236) * 626349445;
+			this.anInt232 = arg0.gSmart2or4null(-626459236) * 626349445;
 		} else if (arg1 == 2) {
-			this.anInt233 = arg0.method22478((short) -11489) * -637469593;
+			this.anInt233 = arg0.g3((short) -11489) * -637469593;
 		} else if (arg1 == 3) {
 			this.aBoolean30 = true;
 		} else if (arg1 == 4) {
@@ -120,11 +120,11 @@ public class Class65 implements Interface13 {
 	}
 
 	@OriginalMember(owner = "client!aco", name = "o", descriptor = "(Lclient!alw;I)V", line = 30)
-	void method1174(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method1174(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.anInt232 = arg0.method22542(-300264608) * 626349445;
+			this.anInt232 = arg0.gSmart2or4null(-300264608) * 626349445;
 		} else if (arg1 == 2) {
-			this.anInt233 = arg0.method22478((short) -1811) * -637469593;
+			this.anInt233 = arg0.g3((short) -1811) * -637469593;
 		} else if (arg1 == 3) {
 			this.aBoolean30 = true;
 		} else if (arg1 == 4) {
@@ -134,11 +134,11 @@ public class Class65 implements Interface13 {
 	}
 
 	@OriginalMember(owner = "client!aco", name = "u", descriptor = "(Lclient!alw;IB)V", line = 30)
-	void method1175(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
+	void method1175(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
 		if (arg1 == 1) {
-			this.anInt232 = arg0.method22542(-269066044) * 626349445;
+			this.anInt232 = arg0.gSmart2or4null(-269066044) * 626349445;
 		} else if (arg1 == 2) {
-			this.anInt233 = arg0.method22478((short) -6815) * -637469593;
+			this.anInt233 = arg0.g3((short) -6815) * -637469593;
 		} else if (arg1 == 3) {
 			this.aBoolean30 = true;
 		} else if (arg1 == 4) {

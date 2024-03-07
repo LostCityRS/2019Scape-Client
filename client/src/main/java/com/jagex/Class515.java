@@ -10,20 +10,20 @@ final class Class515 implements Interface9 {
 
 	@OriginalMember(owner = "client!qs", name = "n", descriptor = "(Lclient!alw;)Ljava/lang/Object;", line = 20)
 	@Override
-	public Object method30270(@OriginalArg(0) Class93_Sub41 arg0) {
-		return arg0.method22495(-131010491);
+	public Object method30270(@OriginalArg(0) Packet arg0) {
+		return arg0.g8(-131010491);
 	}
 
 	@OriginalMember(owner = "client!qs", name = "e", descriptor = "(Lclient!alw;I)Ljava/lang/Object;", line = 20)
 	@Override
-	public Object method30272(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		return arg0.method22495(307981831);
+	public Object method30272(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		return arg0.g8(307981831);
 	}
 
 	@OriginalMember(owner = "client!qs", name = "m", descriptor = "(Lclient!alw;)Ljava/lang/Object;", line = 20)
 	@Override
-	public Object method30271(@OriginalArg(0) Class93_Sub41 arg0) {
-		return arg0.method22495(-1983145780);
+	public Object method30271(@OriginalArg(0) Packet arg0) {
+		return arg0.g8(-1983145780);
 	}
 
 	@OriginalMember(owner = "client!qs", name = "jj", descriptor = "(Lclient!yf;B)V", line = 6693)

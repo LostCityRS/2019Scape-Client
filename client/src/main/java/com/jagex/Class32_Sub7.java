@@ -289,10 +289,10 @@ public class Class32_Sub7 extends Class32 {
 				if (client.anInt3435 * -849002901 == 18 || client.anInt3435 * -849002901 == 13) {
 					@Pc(1077) Class175 local1077 = Class330.method27371(-2080489687);
 					local570 = Class102.method2588(Class446.aClass446_86, local1077.aClass24_2, (byte) 19);
-					local570.aClass93_Sub41_Sub2_1.method22394(arg0.length() + 3, (byte) -48);
-					local570.aClass93_Sub41_Sub2_1.method22394(arg1 ? 1 : 0, (byte) -32);
-					local570.aClass93_Sub41_Sub2_1.method22394(arg2 ? 1 : 0, (byte) -65);
-					local570.aClass93_Sub41_Sub2_1.method22431(arg0, -286626860);
+					local570.aPacketBit_1.p1(arg0.length() + 3, (byte) -48);
+					local570.aPacketBit_1.p1(arg1 ? 1 : 0, (byte) -32);
+					local570.aPacketBit_1.p1(arg2 ? 1 : 0, (byte) -65);
+					local570.aPacketBit_1.pjstr(arg0, -286626860);
 					local1077.method24356(local570, -2018191068);
 				}
 			} catch (@Pc(1120) Exception local1120) {

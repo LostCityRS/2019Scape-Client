@@ -91,30 +91,30 @@ class Class61 implements Iterator {
 				client.aClass175_1.method24364(Class516.method30278(Class50.aClass28_2.method593((byte) 1), 40000, (short) -5827), Class50.aClass28_2.aString4, 2126602668);
 				client.aClass175_1.method24351(1778124812);
 				@Pc(43) Class93_Sub22 local43 = Class720.method36909((byte) 31);
-				local43.aClass93_Sub41_Sub2_1.method22394(Class449.aClass449_6.anInt4980 * 1690737369, (byte) -94);
-				local43.aClass93_Sub41_Sub2_1.method22395(0, 2129088042);
-				local62 = local43.aClass93_Sub41_Sub2_1.anInt3070 * 212851357;
-				local43.aClass93_Sub41_Sub2_1.method22395(910, 2124806922);
-				local43.aClass93_Sub41_Sub2_1.method22395(1, 2141744574);
+				local43.aPacketBit_1.p1(Class449.aClass449_6.anInt4980 * 1690737369, (byte) -94);
+				local43.aPacketBit_1.p2(0, 2129088042);
+				local62 = local43.aPacketBit_1.pos * 212851357;
+				local43.aPacketBit_1.p2(910, 2124806922);
+				local43.aPacketBit_1.p2(1, 2141744574);
 				Class676.anIntArray516 = Class367.method27961(local43, (byte) 117);
-				@Pc(82) int local82 = local43.aClass93_Sub41_Sub2_1.anInt3070 * 212851357;
-				local43.aClass93_Sub41_Sub2_1.method22431(client.aString139, 802881230);
-				local43.aClass93_Sub41_Sub2_1.method22395(client.anInt3426 * -1765120027, 2143561161);
-				local43.aClass93_Sub41_Sub2_1.method22406(client.anInt3429 * 1672118199, (byte) 61);
-				local43.aClass93_Sub41_Sub2_1.method22406(client.anInt3428 * -1830493323, (byte) 109);
-				local43.aClass93_Sub41_Sub2_1.method22431(Class454.aString210, -569118241);
-				local43.aClass93_Sub41_Sub2_1.method22394(Class106.aClass717_8.method36920(), (byte) -97);
-				local43.aClass93_Sub41_Sub2_1.method22394(client.aClass702_4.anInt5953 * -1111983921, (byte) -80);
-				Class314.method26940(local43.aClass93_Sub41_Sub2_1, 1822213152);
+				@Pc(82) int local82 = local43.aPacketBit_1.pos * 212851357;
+				local43.aPacketBit_1.pjstr(client.aString139, 802881230);
+				local43.aPacketBit_1.p2(client.anInt3426 * -1765120027, 2143561161);
+				local43.aPacketBit_1.p4(client.anInt3429 * 1672118199, (byte) 61);
+				local43.aPacketBit_1.p4(client.anInt3428 * -1830493323, (byte) 109);
+				local43.aPacketBit_1.pjstr(Class454.aString210, -569118241);
+				local43.aPacketBit_1.p1(Class106.aClass717_8.method36920(), (byte) -97);
+				local43.aPacketBit_1.p1(client.aClass702_4.anInt5953 * -1111983921, (byte) -80);
+				Class314.method26940(local43.aPacketBit_1, 1822213152);
 				@Pc(133) String local133 = client.aString138;
-				local43.aClass93_Sub41_Sub2_1.method22394(local133 == null ? 0 : 1, (byte) -103);
+				local43.aPacketBit_1.p1(local133 == null ? 0 : 1, (byte) -103);
 				if (local133 != null) {
-					local43.aClass93_Sub41_Sub2_1.method22431(local133, 1575484636);
+					local43.aPacketBit_1.pjstr(local133, 1575484636);
 				}
-				Class125_Sub3.aClass93_Sub42_1.method15300(local43.aClass93_Sub41_Sub2_1, 1797123567);
-				local43.aClass93_Sub41_Sub2_1.anInt3070 += -1529454093;
-				local43.aClass93_Sub41_Sub2_1.method22555(Class676.anIntArray516, local82, local43.aClass93_Sub41_Sub2_1.anInt3070 * 212851357, (byte) -117);
-				local43.aClass93_Sub41_Sub2_1.method22445(local43.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local62, 1251011626);
+				Class125_Sub3.aClass93_Sub42_1.method15300(local43.aPacketBit_1, 1797123567);
+				local43.aPacketBit_1.pos += -1529454093;
+				local43.aPacketBit_1.tinyenc(Class676.anIntArray516, local82, local43.aPacketBit_1.pos * 212851357, (byte) -117);
+				local43.aPacketBit_1.psize2(local43.aPacketBit_1.pos * 212851357 - local62, 1251011626);
 				client.aClass175_1.method24356(local43, -1683542800);
 				client.aClass175_1.method24352((byte) 15);
 				Class588.aClass588_3 = Class588.aClass588_2;
@@ -127,8 +127,8 @@ class Class61 implements Iterator {
 				if (!client.aClass175_1.method24372((byte) 41).method14727(1, 30631038)) {
 					return;
 				}
-				client.aClass175_1.method24372((byte) 3).method14720(client.aClass175_1.aClass93_Sub41_Sub2_2.aByteArray58, 0, 1, (byte) -80);
-				Class676.aClass709_1 = (Class709) Class107.method18116(Class124_Sub3.method21431(-1406618035), client.aClass175_1.aClass93_Sub41_Sub2_2.aByteArray58[0] & 0xFF, -1915563430);
+				client.aClass175_1.method24372((byte) 3).method14720(client.aClass175_1.aPacketBit_2.data, 0, 1, (byte) -80);
+				Class676.aClass709_1 = (Class709) Class107.method18116(Class124_Sub3.method21431(-1406618035), client.aClass175_1.aPacketBit_2.data[0] & 0xFF, -1915563430);
 				if (Class709.aClass709_7 == Class676.aClass709_1) {
 					client.aClass175_1.aClass24_2 = new Class24(Class676.anIntArray516);
 					@Pc(247) int[] local247 = new int[4];
@@ -137,10 +137,10 @@ class Class61 implements Iterator {
 					}
 					client.aClass175_1.aClass24_3 = new Class24(local247);
 					new Class24(local247);
-					client.aClass175_1.aClass93_Sub41_Sub2_2.method22662(client.aClass175_1.aClass24_3, (byte) -60);
+					client.aClass175_1.aPacketBit_2.setRandom(client.aClass175_1.aClass24_3, (byte) -60);
 					Class481.method29756(0, 1823202236);
 					client.aClass175_1.method24351(-62093601);
-					client.aClass175_1.aClass93_Sub41_Sub2_2.anInt3070 = 0;
+					client.aClass175_1.aPacketBit_2.pos = 0;
 					client.aClass175_1.aClass453_1 = null;
 					client.aClass175_1.aClass453_4 = null;
 					client.aClass175_1.aClass453_3 = null;

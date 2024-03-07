@@ -588,10 +588,10 @@ public class Class330 {
 			return;
 		}
 		@Pc(7) Class93_Sub22 local7 = Class102.method2588(Class446.aClass446_110, client.aClass175_2.aClass24_2, (byte) 66);
-		local7.aClass93_Sub41_Sub2_1.method22395(Class582.method31411(arg1, 275898717) + 1 + Class582.method31411(arg2, -580076764), 2145636263);
-		local7.aClass93_Sub41_Sub2_1.method22434(arg1, 1516871641);
-		local7.aClass93_Sub41_Sub2_1.method22576(arg0, -1311286727);
-		local7.aClass93_Sub41_Sub2_1.method22434(arg2, 1516871641);
+		local7.aPacketBit_1.p2(Packet.pjstr2len(arg1, 275898717) + 1 + Packet.pjstr2len(arg2, -580076764), 2145636263);
+		local7.aPacketBit_1.pjstr2(arg1, 1516871641);
+		local7.aPacketBit_1.p1_alt2(arg0, -1311286727);
+		local7.aPacketBit_1.pjstr2(arg2, 1516871641);
 		client.aClass175_2.method24356(local7, -2111524569);
 	}
 }

@@ -79,10 +79,10 @@ public class Class351 {
 	}
 
 	@OriginalMember(owner = "client!iw", name = "k", descriptor = "(Lclient!alw;I)V", line = 66)
-	static void method27643(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	static void method27643(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		for (@Pc(1) int local1 = 0; local1 < Class606.anInt5557 * 2035023117; local1++) {
-			@Pc(10) int local10 = arg0.method22528((byte) -23);
-			@Pc(14) int local14 = arg0.method22472(-1434290800);
+			@Pc(10) int local10 = arg0.gSmart1or2((byte) -23);
+			@Pc(14) int local14 = arg0.g2(-1434290800);
 			if (local14 == 65535) {
 				local14 = -1;
 			}
@@ -143,11 +143,11 @@ public class Class351 {
 		}
 		@Pc(39) Class175 local39 = Class330.method27371(-1608641612);
 		@Pc(45) Class93_Sub22 local45 = Class102.method2588(Class446.aClass446_9, local39.aClass24_2, (byte) 49);
-		local45.aClass93_Sub41_Sub2_1.method22395(0, 2145264426);
-		@Pc(56) int local56 = local45.aClass93_Sub41_Sub2_1.anInt3070 * 212851357;
-		local45.aClass93_Sub41_Sub2_1.method22431(local14, -664135129);
-		Class284.method26484(local45.aClass93_Sub41_Sub2_1, local25, -1497248091);
-		local45.aClass93_Sub41_Sub2_1.method22445(local45.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local56, 857643681);
+		local45.aPacketBit_1.p2(0, 2145264426);
+		@Pc(56) int local56 = local45.aPacketBit_1.pos * 212851357;
+		local45.aPacketBit_1.pjstr(local14, -664135129);
+		Class284.method26484(local45.aPacketBit_1, local25, -1497248091);
+		local45.aPacketBit_1.psize2(local45.aPacketBit_1.pos * 212851357 - local56, 857643681);
 		local39.method24356(local45, -1594490576);
 	}
 

@@ -17,9 +17,9 @@ public class Class93_Sub1_Sub17_Sub2 extends Class93_Sub1_Sub17 {
 	}
 
 	@OriginalMember(owner = "client!atj", name = "<init>", descriptor = "(ILclient!alw;)V", line = 17)
-	Class93_Sub1_Sub17_Sub2(@OriginalArg(0) int arg0, @OriginalArg(1) Class93_Sub41 arg1) {
+	Class93_Sub1_Sub17_Sub2(@OriginalArg(0) int arg0, @OriginalArg(1) Packet arg1) {
 		super(arg0);
-		this.aFloat233 = arg1.method22504(-969577221);
+		this.aFloat233 = arg1.gFloat(-969577221);
 	}
 
 	@OriginalMember(owner = "client!atj", name = "x", descriptor = "(F)V", line = 22)
@@ -88,13 +88,13 @@ public class Class93_Sub1_Sub17_Sub2 extends Class93_Sub1_Sub17 {
 
 	@OriginalMember(owner = "client!atj", name = "k", descriptor = "(Lclient!alw;I)V", line = 32)
 	@Override
-	public void method23495(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		this.aFloat233 = arg0.method22504(-414420517);
+	public void method23495(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		this.aFloat233 = arg0.gFloat(-414420517);
 	}
 
 	@OriginalMember(owner = "client!atj", name = "d", descriptor = "(Lclient!alw;)V", line = 32)
 	@Override
-	public void method23502(@OriginalArg(0) Class93_Sub41 arg0) {
-		this.aFloat233 = arg0.method22504(1650481479);
+	public void method23502(@OriginalArg(0) Packet arg0) {
+		this.aFloat233 = arg0.gFloat(1650481479);
 	}
 }

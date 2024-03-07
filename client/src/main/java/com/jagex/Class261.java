@@ -18,10 +18,10 @@ public class Class261 implements Interface26 {
 	final boolean aBoolean668;
 
 	@OriginalMember(owner = "client!fe", name = "<init>", descriptor = "(Lclient!gx;Lclient!alw;)V", line = 232)
-	Class261(@OriginalArg(0) Class303 arg0, @OriginalArg(1) Class93_Sub41 arg1) {
+	Class261(@OriginalArg(0) Class303 arg0, @OriginalArg(1) Packet arg1) {
 		this.this$0 = arg0;
-		this.anInt3866 = arg1.method22472(-1434290800) * -1775494257;
-		this.aBoolean668 = arg1.method22465((short) 16384) == 1;
+		this.anInt3866 = arg1.g2(-1434290800) * -1775494257;
+		this.aBoolean668 = arg1.g1((short) 16384) == 1;
 	}
 
 	@OriginalMember(owner = "client!fe", name = "m", descriptor = "(Lclient!gq;)V", line = 238)

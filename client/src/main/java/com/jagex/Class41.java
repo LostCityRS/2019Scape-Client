@@ -47,7 +47,7 @@ public class Class41 implements Interface69 {
 	@OriginalMember(owner = "client!abo", name = "m", descriptor = "()J", line = 957)
 	@Override
 	public long method809() {
-		@Pc(1) long[] local1 = Class93_Sub41.aLongArray18;
+		@Pc(1) long[] local1 = Packet.crc64table;
 		@Pc(3) long local3 = -1L;
 		@Pc(20) long local20 = local3 >>> 8 ^ local1[(int) ((local3 ^ (long) (this.anInt130 * 2061353869)) & 0xFFL)];
 		@Pc(39) long local39 = local20 >>> 8 ^ local1[(int) ((local20 ^ (long) (this.anInt125 * 392439591 >> 8)) & 0xFFL)];
@@ -68,7 +68,7 @@ public class Class41 implements Interface69 {
 	@OriginalMember(owner = "client!abo", name = "f", descriptor = "()J", line = 957)
 	@Override
 	public long method812() {
-		@Pc(1) long[] local1 = Class93_Sub41.aLongArray18;
+		@Pc(1) long[] local1 = Packet.crc64table;
 		@Pc(3) long local3 = -1L;
 		@Pc(20) long local20 = local3 >>> 8 ^ local1[(int) ((local3 ^ (long) (this.anInt130 * 2061353869)) & 0xFFL)];
 		@Pc(39) long local39 = local20 >>> 8 ^ local1[(int) ((local20 ^ (long) (this.anInt125 * 392439591 >> 8)) & 0xFFL)];
@@ -89,7 +89,7 @@ public class Class41 implements Interface69 {
 	@OriginalMember(owner = "client!abo", name = "k", descriptor = "()J", line = 957)
 	@Override
 	public long method810() {
-		@Pc(1) long[] local1 = Class93_Sub41.aLongArray18;
+		@Pc(1) long[] local1 = Packet.crc64table;
 		@Pc(3) long local3 = -1L;
 		@Pc(20) long local20 = local3 >>> 8 ^ local1[(int) ((local3 ^ (long) (this.anInt130 * 2061353869)) & 0xFFL)];
 		@Pc(39) long local39 = local20 >>> 8 ^ local1[(int) ((local20 ^ (long) (this.anInt125 * 392439591 >> 8)) & 0xFFL)];
@@ -110,7 +110,7 @@ public class Class41 implements Interface69 {
 	@OriginalMember(owner = "client!abo", name = "e", descriptor = "()J", line = 957)
 	@Override
 	public long method811() {
-		@Pc(1) long[] local1 = Class93_Sub41.aLongArray18;
+		@Pc(1) long[] local1 = Packet.crc64table;
 		@Pc(3) long local3 = -1L;
 		@Pc(20) long local20 = local3 >>> 8 ^ local1[(int) ((local3 ^ (long) (this.anInt130 * 2061353869)) & 0xFFL)];
 		@Pc(39) long local39 = local20 >>> 8 ^ local1[(int) ((local20 ^ (long) (this.anInt125 * 392439591 >> 8)) & 0xFFL)];

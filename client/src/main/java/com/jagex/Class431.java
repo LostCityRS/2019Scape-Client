@@ -84,9 +84,9 @@ public class Class431 {
 	}
 
 	@OriginalMember(owner = "client!na", name = "e", descriptor = "(Lclient!alw;I)V", line = 36)
-	void method28766(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method28766(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -95,9 +95,9 @@ public class Class431 {
 	}
 
 	@OriginalMember(owner = "client!na", name = "k", descriptor = "(Lclient!alw;)V", line = 36)
-	void method28767(@OriginalArg(0) Class93_Sub41 arg0) {
+	void method28767(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -106,9 +106,9 @@ public class Class431 {
 	}
 
 	@OriginalMember(owner = "client!na", name = "f", descriptor = "(Lclient!alw;)V", line = 36)
-	void method28768(@OriginalArg(0) Class93_Sub41 arg0) {
+	void method28768(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -117,20 +117,20 @@ public class Class431 {
 	}
 
 	@OriginalMember(owner = "client!na", name = "w", descriptor = "(Lclient!alw;I)V", line = 43)
-	void method28769(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method28769(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.anInt4798 = arg0.method22472(-1434290800) * -1773110991;
+			this.anInt4798 = arg0.g2(-1434290800) * -1773110991;
 		} else if (arg1 == 2) {
-			arg0.method22465((short) 16384);
+			arg0.g1((short) 16384);
 		} else if (arg1 == 3) {
-			this.anInt4794 = arg0.method22483(-118643075) * -1190025807;
-			this.anInt4795 = arg0.method22483(-118643075) * 683389527;
-			this.anInt4796 = arg0.method22483(-118643075) * 260864033;
+			this.anInt4794 = arg0.g4(-118643075) * -1190025807;
+			this.anInt4795 = arg0.g4(-118643075) * 683389527;
+			this.anInt4796 = arg0.g4(-118643075) * 260864033;
 		} else if (arg1 == 4) {
-			this.anInt4800 = arg0.method22465((short) 16384) * -492674485;
-			this.anInt4799 = arg0.method22483(-118643075) * -897187131;
+			this.anInt4800 = arg0.g1((short) 16384) * -492674485;
+			this.anInt4799 = arg0.g4(-118643075) * -897187131;
 		} else if (arg1 == 6) {
-			this.anInt4792 = arg0.method22465((short) 16384) * 2134056573;
+			this.anInt4792 = arg0.g1((short) 16384) * 2134056573;
 		} else if (arg1 == 8) {
 			this.anInt4785 = 1676694901;
 		} else if (arg1 == 9) {
@@ -141,20 +141,20 @@ public class Class431 {
 	}
 
 	@OriginalMember(owner = "client!na", name = "n", descriptor = "(Lclient!alw;II)V", line = 43)
-	void method28770(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	void method28770(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (arg1 == 1) {
-			this.anInt4798 = arg0.method22472(-1434290800) * -1773110991;
+			this.anInt4798 = arg0.g2(-1434290800) * -1773110991;
 		} else if (arg1 == 2) {
-			arg0.method22465((short) 16384);
+			arg0.g1((short) 16384);
 		} else if (arg1 == 3) {
-			this.anInt4794 = arg0.method22483(-118643075) * -1190025807;
-			this.anInt4795 = arg0.method22483(-118643075) * 683389527;
-			this.anInt4796 = arg0.method22483(-118643075) * 260864033;
+			this.anInt4794 = arg0.g4(-118643075) * -1190025807;
+			this.anInt4795 = arg0.g4(-118643075) * 683389527;
+			this.anInt4796 = arg0.g4(-118643075) * 260864033;
 		} else if (arg1 == 4) {
-			this.anInt4800 = arg0.method22465((short) 16384) * -492674485;
-			this.anInt4799 = arg0.method22483(-118643075) * -897187131;
+			this.anInt4800 = arg0.g1((short) 16384) * -492674485;
+			this.anInt4799 = arg0.g4(-118643075) * -897187131;
 		} else if (arg1 == 6) {
-			this.anInt4792 = arg0.method22465((short) 16384) * 2134056573;
+			this.anInt4792 = arg0.g1((short) 16384) * 2134056573;
 		} else if (arg1 == 8) {
 			this.anInt4785 = 1676694901;
 		} else if (arg1 == 9) {
@@ -165,20 +165,20 @@ public class Class431 {
 	}
 
 	@OriginalMember(owner = "client!na", name = "l", descriptor = "(Lclient!alw;I)V", line = 43)
-	void method28771(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method28771(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.anInt4798 = arg0.method22472(-1434290800) * -1773110991;
+			this.anInt4798 = arg0.g2(-1434290800) * -1773110991;
 		} else if (arg1 == 2) {
-			arg0.method22465((short) 16384);
+			arg0.g1((short) 16384);
 		} else if (arg1 == 3) {
-			this.anInt4794 = arg0.method22483(-118643075) * -1190025807;
-			this.anInt4795 = arg0.method22483(-118643075) * 683389527;
-			this.anInt4796 = arg0.method22483(-118643075) * 260864033;
+			this.anInt4794 = arg0.g4(-118643075) * -1190025807;
+			this.anInt4795 = arg0.g4(-118643075) * 683389527;
+			this.anInt4796 = arg0.g4(-118643075) * 260864033;
 		} else if (arg1 == 4) {
-			this.anInt4800 = arg0.method22465((short) 16384) * -492674485;
-			this.anInt4799 = arg0.method22483(-118643075) * -897187131;
+			this.anInt4800 = arg0.g1((short) 16384) * -492674485;
+			this.anInt4799 = arg0.g4(-118643075) * -897187131;
 		} else if (arg1 == 6) {
-			this.anInt4792 = arg0.method22465((short) 16384) * 2134056573;
+			this.anInt4792 = arg0.g1((short) 16384) * 2134056573;
 		} else if (arg1 == 8) {
 			this.anInt4785 = 1676694901;
 		} else if (arg1 == 9) {
@@ -321,7 +321,7 @@ public class Class431 {
 	static final void method28779(@OriginalArg(0) Class681 arg0, @OriginalArg(1) byte arg1) {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
 		@Pc(18) Class93_Sub22 local18 = Class102.method2588(Class446.aClass446_101, client.aClass175_2.aClass24_2, (byte) 109);
-		local18.aClass93_Sub41_Sub2_1.method22395(local12, 2131625847);
+		local18.aPacketBit_1.p2(local12, 2131625847);
 		client.aClass175_2.method24356(local18, -1807660685);
 	}
 

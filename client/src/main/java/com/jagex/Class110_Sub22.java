@@ -15,15 +15,15 @@ public class Class110_Sub22 extends Class110 {
 	final int anInt994;
 
 	@OriginalMember(owner = "client!agx", name = "<init>", descriptor = "(Lclient!alw;Z)V", line = 11)
-	Class110_Sub22(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) boolean arg1) {
+	Class110_Sub22(@OriginalArg(0) Packet arg0, @OriginalArg(1) boolean arg1) {
 		super(arg0);
-		@Pc(6) int local6 = arg0.method22472(-1434290800);
+		@Pc(6) int local6 = arg0.g2(-1434290800);
 		if (arg1) {
 			this.aLong31 = ((long) local6 | 0x100000000L) * 8573495380564488061L;
 		} else {
 			this.aLong31 = (long) local6 * 8573495380564488061L;
 		}
-		this.anInt994 = arg0.method22483(-118643075) * 1601868325;
+		this.anInt994 = arg0.g4(-118643075) * 1601868325;
 	}
 
 	@OriginalMember(owner = "client!agx", name = "f", descriptor = "()V", line = 19)

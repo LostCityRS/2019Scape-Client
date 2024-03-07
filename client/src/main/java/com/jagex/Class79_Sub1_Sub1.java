@@ -71,7 +71,7 @@ public class Class79_Sub1_Sub1 extends Class79_Sub1 implements Interface11 {
 		@Pc(12) byte[] local12 = this.aClass497_13.method30064(this.aClass138_3.method11524((byte) 122).anInt5849 * -1772702343, arg0, (byte) 0);
 		@Pc(19) Class108_Sub1 local19 = new Class108_Sub1(this.aClass138_3, arg0);
 		if (local12 != null) {
-			local19.method36654(new Class93_Sub41(local12), (byte) -74);
+			local19.method36654(new Packet(local12), (byte) -74);
 		}
 		return local19;
 	}
@@ -81,7 +81,7 @@ public class Class79_Sub1_Sub1 extends Class79_Sub1 implements Interface11 {
 		@Pc(12) byte[] local12 = this.aClass497_13.method30064(this.aClass138_3.method11524((byte) 11).anInt5849 * -1772702343, arg0, (byte) 0);
 		@Pc(19) Class108_Sub1 local19 = new Class108_Sub1(this.aClass138_3, arg0);
 		if (local12 != null) {
-			local19.method36654(new Class93_Sub41(local12), (byte) -24);
+			local19.method36654(new Packet(local12), (byte) -24);
 		}
 		return local19;
 	}
@@ -91,7 +91,7 @@ public class Class79_Sub1_Sub1 extends Class79_Sub1 implements Interface11 {
 		@Pc(12) byte[] local12 = this.aClass497_13.method30064(this.aClass138_3.method11524((byte) 25).anInt5849 * -1772702343, arg0, (byte) 0);
 		@Pc(19) Class108_Sub1 local19 = new Class108_Sub1(this.aClass138_3, arg0);
 		if (local12 != null) {
-			local19.method36654(new Class93_Sub41(local12), (byte) -98);
+			local19.method36654(new Packet(local12), (byte) -98);
 		}
 		return local19;
 	}

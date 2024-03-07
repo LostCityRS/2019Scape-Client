@@ -12,12 +12,12 @@ public class Class282 {
 	String aString157;
 
 	@OriginalMember(owner = "client!ga", name = "<init>", descriptor = "(Lclient!alw;ZZ)V", line = 8)
-	Class282(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) {
+	Class282(@OriginalArg(0) Packet arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2) {
 		if (arg1) {
-			arg0.method22495(-1438943276);
+			arg0.g8(-1438943276);
 		}
 		if (arg2) {
-			this.aString157 = arg0.method22507((byte) 22);
+			this.aString157 = arg0.fastgstr((byte) 22);
 		} else {
 			this.aString157 = null;
 		}

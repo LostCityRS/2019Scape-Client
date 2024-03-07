@@ -24,9 +24,9 @@ public class Class273 implements Interface26 {
 	}
 
 	@OriginalMember(owner = "client!fr", name = "<init>", descriptor = "(Lclient!gx;Lclient!alw;)V", line = 174)
-	Class273(@OriginalArg(0) Class303 arg0, @OriginalArg(1) Class93_Sub41 arg1) {
+	Class273(@OriginalArg(0) Class303 arg0, @OriginalArg(1) Packet arg1) {
 		this.this$0 = arg0;
-		this.anInt3886 = arg1.method22472(-1434290800) * -24991761;
+		this.anInt3886 = arg1.g2(-1434290800) * -24991761;
 	}
 
 	@OriginalMember(owner = "client!fr", name = "e", descriptor = "(Lclient!gq;B)V", line = 179)

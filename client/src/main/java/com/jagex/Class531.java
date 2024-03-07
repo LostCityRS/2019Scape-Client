@@ -37,33 +37,33 @@ public class Class531 {
 	}
 
 	@OriginalMember(owner = "client!rk", name = "<init>", descriptor = "(Lclient!alw;Lclient!add;)V", line = 20)
-	public Class531(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) Class79_Sub1 arg1) {
-		this.aByte161 = arg0.method22468(1835866670);
-		this.anInt5233 = arg0.method22472(-1434290800) * 273380377;
-		this.anInt5235 = arg0.method22483(-118643075) * 1703068581;
-		this.anInt5234 = arg0.method22483(-118643075) * 760396933;
-		this.anInt5232 = arg0.method22483(-118643075) * -546075799;
-		this.anInt5236 = arg0.method22483(-118643075) * -1515193523;
+	public Class531(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class79_Sub1 arg1) {
+		this.aByte161 = arg0.g1b(1835866670);
+		this.anInt5233 = arg0.g2(-1434290800) * 273380377;
+		this.anInt5235 = arg0.g4(-118643075) * 1703068581;
+		this.anInt5234 = arg0.g4(-118643075) * 760396933;
+		this.anInt5232 = arg0.g4(-118643075) * -546075799;
+		this.anInt5236 = arg0.g4(-118643075) * -1515193523;
 		if (arg1 != null) {
 			Class79.method1453(arg0, arg1, -556610454);
 		}
 	}
 
 	@OriginalMember(owner = "client!rk", name = "k", descriptor = "(Lclient!alw;Lclient!add;)Lclient!abn;", line = 33)
-	static Class40 method30426(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) Class79_Sub1 arg1) {
+	static Class40 method30426(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class79_Sub1 arg1) {
 		@Pc(4) Class40 local4 = new Class40(arg1);
 		while (true) {
-			@Pc(8) int local8 = arg0.method22465((short) 16384);
+			@Pc(8) int local8 = arg0.g1((short) 16384);
 			if (local8 == 255) {
 				return local4;
 			}
 			@Pc(18) Class500 local18 = (Class500) Class93_Sub16.method13519(Class500.class, local8, (byte) 1);
 			while (true) {
-				@Pc(22) int local22 = arg0.method22465((short) 16384);
+				@Pc(22) int local22 = arg0.g1((short) 16384);
 				if (local22 == 255) {
 					break;
 				}
-				arg0.anInt3070 -= -1445626955;
+				arg0.pos -= -1445626955;
 				@Pc(38) Class466 local38 = arg1.method1470(arg0, local18, (byte) 1);
 				if (local38 != null) {
 					local4.method776(local38.anInt5092 * -1181855333, local38.anObject19, (byte) 36);
@@ -73,20 +73,20 @@ public class Class531 {
 	}
 
 	@OriginalMember(owner = "client!rk", name = "f", descriptor = "(Lclient!alw;Lclient!add;)Lclient!abn;", line = 33)
-	static Class40 method30427(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) Class79_Sub1 arg1) {
+	static Class40 method30427(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class79_Sub1 arg1) {
 		@Pc(4) Class40 local4 = new Class40(arg1);
 		while (true) {
-			@Pc(8) int local8 = arg0.method22465((short) 16384);
+			@Pc(8) int local8 = arg0.g1((short) 16384);
 			if (local8 == 255) {
 				return local4;
 			}
 			@Pc(18) Class500 local18 = (Class500) Class93_Sub16.method13519(Class500.class, local8, (byte) 1);
 			while (true) {
-				@Pc(22) int local22 = arg0.method22465((short) 16384);
+				@Pc(22) int local22 = arg0.g1((short) 16384);
 				if (local22 == 255) {
 					break;
 				}
-				arg0.anInt3070 -= -1445626955;
+				arg0.pos -= -1445626955;
 				@Pc(38) Class466 local38 = arg1.method1470(arg0, local18, (byte) 1);
 				if (local38 != null) {
 					local4.method776(local38.anInt5092 * -1181855333, local38.anObject19, (byte) 27);
@@ -96,20 +96,20 @@ public class Class531 {
 	}
 
 	@OriginalMember(owner = "client!rk", name = "w", descriptor = "(Lclient!alw;Lclient!add;)Lclient!abn;", line = 33)
-	static Class40 method30428(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) Class79_Sub1 arg1) {
+	static Class40 method30428(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class79_Sub1 arg1) {
 		@Pc(4) Class40 local4 = new Class40(arg1);
 		while (true) {
-			@Pc(8) int local8 = arg0.method22465((short) 16384);
+			@Pc(8) int local8 = arg0.g1((short) 16384);
 			if (local8 == 255) {
 				return local4;
 			}
 			@Pc(18) Class500 local18 = (Class500) Class93_Sub16.method13519(Class500.class, local8, (byte) 1);
 			while (true) {
-				@Pc(22) int local22 = arg0.method22465((short) 16384);
+				@Pc(22) int local22 = arg0.g1((short) 16384);
 				if (local22 == 255) {
 					break;
 				}
-				arg0.anInt3070 -= -1445626955;
+				arg0.pos -= -1445626955;
 				@Pc(38) Class466 local38 = arg1.method1470(arg0, local18, (byte) 1);
 				if (local38 != null) {
 					local4.method776(local38.anInt5092 * -1181855333, local38.anObject19, (byte) 62);

@@ -36,10 +36,10 @@ public class Class294 implements Interface26 {
 	}
 
 	@OriginalMember(owner = "client!gn", name = "<init>", descriptor = "(Lclient!gx;Lclient!alw;)V", line = 189)
-	Class294(@OriginalArg(0) Class303 arg0, @OriginalArg(1) Class93_Sub41 arg1) {
+	Class294(@OriginalArg(0) Class303 arg0, @OriginalArg(1) Packet arg1) {
 		this.this$0 = arg0;
-		this.anInt3916 = arg1.method22472(-1434290800) * -417669931;
-		this.anInt3917 = arg1.method22465((short) 16384) * -1576349769;
+		this.anInt3916 = arg1.g2(-1434290800) * -417669931;
+		this.anInt3917 = arg1.g1((short) 16384) * -1576349769;
 	}
 
 	@OriginalMember(owner = "client!gn", name = "n", descriptor = "(Lclient!gq;)V", line = 195)

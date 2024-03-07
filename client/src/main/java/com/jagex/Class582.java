@@ -140,11 +140,6 @@ public class Class582 {
 		return local0 < 4 ? local0 : 3;
 	}
 
-	@OriginalMember(owner = "client!tu", name = "h", descriptor = "(Ljava/lang/String;I)I", line = 166)
-	public static int method31411(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1) {
-		return arg0.length() + 2;
-	}
-
 	@OriginalMember(owner = "client!tu", name = "pt", descriptor = "(Lclient!yf;I)V", line = 7686)
 	static final void method31412(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(8) Class677 local8 = arg0.aBoolean875 ? arg0.aClass677_2 : arg0.aClass677_1;

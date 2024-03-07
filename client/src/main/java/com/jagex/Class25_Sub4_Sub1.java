@@ -78,16 +78,16 @@ public class Class25_Sub4_Sub1 extends Class25_Sub4 {
 
 	@OriginalMember(owner = "client!asi", name = "j", descriptor = "(Lclient!alw;I)V", line = 32)
 	@Override
-	void method23154(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method23154(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 	}
 
 	@OriginalMember(owner = "client!asi", name = "g", descriptor = "(Lclient!alw;IB)V", line = 32)
 	@Override
-	void method23151(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
+	void method23151(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
 	}
 
 	@OriginalMember(owner = "client!asi", name = "t", descriptor = "(Lclient!alw;I)V", line = 32)
 	@Override
-	void method23153(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method23153(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 	}
 }

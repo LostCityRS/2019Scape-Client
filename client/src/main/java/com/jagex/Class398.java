@@ -17,14 +17,14 @@ public class Class398 implements Interface32 {
 	}
 
 	@OriginalMember(owner = "client!li", name = "k", descriptor = "(Lclient!alw;)Lclient!li;", line = 13)
-	public static Class398 method28491(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(3) int local3 = arg0.method22542(-786810799);
+	public static Class398 method28491(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.gSmart2or4null(-786810799);
 		return new Class398(local3);
 	}
 
 	@OriginalMember(owner = "client!li", name = "m", descriptor = "(Lclient!alw;)Lclient!li;", line = 13)
-	public static Class398 method28492(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(3) int local3 = arg0.method22542(-652502672);
+	public static Class398 method28492(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.gSmart2or4null(-652502672);
 		return new Class398(local3);
 	}
 

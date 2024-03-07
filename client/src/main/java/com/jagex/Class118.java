@@ -20,8 +20,8 @@ public abstract class Class118 implements Interface4 {
 	}
 
 	@OriginalMember(owner = "client!hh", name = "e", descriptor = "(Lclient!alw;I)Lclient!vt;", line = 12)
-	public static Interface67 method8408(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		@Pc(5) Class623 local5 = Class351.method27640(arg0.method22465((short) 16384), 1962594255);
+	public static Interface67 method8408(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(5) Class623 local5 = Class351.method27640(arg0.g1((short) 16384), 1962594255);
 		if (Class623.aClass623_2 == local5) {
 			return Class632.method32293(arg0, -912817713);
 		} else if (local5 == Class623.aClass623_1) {

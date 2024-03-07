@@ -211,12 +211,12 @@ public class Class653 implements Runnable {
 
 	@OriginalMember(owner = "client!x", name = "n", descriptor = "([BI)Z", line = 27)
 	public static boolean method32705(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1) {
-		@Pc(4) Class93_Sub41 local4 = new Class93_Sub41(arg0);
-		@Pc(8) int local8 = local4.method22465((short) 16384);
+		@Pc(4) Packet local4 = new Packet(arg0);
+		@Pc(8) int local8 = local4.g1((short) 16384);
 		if (local8 != 2) {
 			return false;
 		}
-		@Pc(22) boolean local22 = local4.method22465((short) 16384) == 1;
+		@Pc(22) boolean local22 = local4.g1((short) 16384) == 1;
 		if (local22) {
 			Class698.method36695(local4, -2141126366);
 		}

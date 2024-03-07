@@ -26,9 +26,9 @@ public class Class30 implements Interface13, Interface5 {
 
 	@OriginalMember(owner = "client!abc", name = "m", descriptor = "(Lclient!alw;)V", line = 20)
 	@Override
-	public void method36655(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36655(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -38,9 +38,9 @@ public class Class30 implements Interface13, Interface5 {
 
 	@OriginalMember(owner = "client!abc", name = "k", descriptor = "(Lclient!alw;)V", line = 20)
 	@Override
-	public void method36656(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36656(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -50,9 +50,9 @@ public class Class30 implements Interface13, Interface5 {
 
 	@OriginalMember(owner = "client!abc", name = "w", descriptor = "(Lclient!alw;)V", line = 20)
 	@Override
-	public void method36658(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36658(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -62,9 +62,9 @@ public class Class30 implements Interface13, Interface5 {
 
 	@OriginalMember(owner = "client!abc", name = "e", descriptor = "(Lclient!alw;B)V", line = 20)
 	@Override
-	public void method36654(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
+	public void method36654(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -74,9 +74,9 @@ public class Class30 implements Interface13, Interface5 {
 
 	@OriginalMember(owner = "client!abc", name = "f", descriptor = "(Lclient!alw;)V", line = 20)
 	@Override
-	public void method36657(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36657(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -100,134 +100,134 @@ public class Class30 implements Interface13, Interface5 {
 	}
 
 	@OriginalMember(owner = "client!abc", name = "o", descriptor = "(Lclient!alw;I)V", line = 32)
-	void method620(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method620(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 3) {
-			@Pc(6) int local6 = arg0.method22465((short) 16384);
+			@Pc(6) int local6 = arg0.g1((short) 16384);
 			if (this.anObjectArrayArray1 == null) {
 				this.anObjectArrayArray1 = new Object[local6][];
 				this.aClass519ArrayArray1 = new Class519[local6][];
 			}
-			for (@Pc(22) int local22 = arg0.method22465((short) 16384); local22 != 255; local22 = arg0.method22465((short) 16384)) {
-				@Pc(29) int local29 = arg0.method22465((short) 16384);
+			for (@Pc(22) int local22 = arg0.g1((short) 16384); local22 != 255; local22 = arg0.g1((short) 16384)) {
+				@Pc(29) int local29 = arg0.g1((short) 16384);
 				@Pc(32) Class519[] local32 = new Class519[local29];
 				for (@Pc(34) int local34 = 0; local34 < local29; local34++) {
-					local32[local34] = (Class519) Class107.method18116(Class519.method30309(1543250623), arg0.method22528((byte) -33), -1915563430);
+					local32[local34] = (Class519) Class107.method18116(Class519.method30309(1543250623), arg0.gSmart1or2((byte) -33), -1915563430);
 				}
 				this.anObjectArrayArray1[local22] = Class166_Sub38.method16323(arg0, local32, -932100834);
 				this.aClass519ArrayArray1[local22] = local32;
 			}
 		} else if (arg1 == 4) {
-			this.anInt105 = arg0.method22548((short) 6058) * 586759731;
+			this.anInt105 = arg0.gVarInt2((short) 6058) * 586759731;
 		}
 	}
 
 	@OriginalMember(owner = "client!abc", name = "s", descriptor = "(Lclient!alw;I)V", line = 32)
-	void method621(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method621(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 3) {
-			@Pc(6) int local6 = arg0.method22465((short) 16384);
+			@Pc(6) int local6 = arg0.g1((short) 16384);
 			if (this.anObjectArrayArray1 == null) {
 				this.anObjectArrayArray1 = new Object[local6][];
 				this.aClass519ArrayArray1 = new Class519[local6][];
 			}
-			for (@Pc(22) int local22 = arg0.method22465((short) 16384); local22 != 255; local22 = arg0.method22465((short) 16384)) {
-				@Pc(29) int local29 = arg0.method22465((short) 16384);
+			for (@Pc(22) int local22 = arg0.g1((short) 16384); local22 != 255; local22 = arg0.g1((short) 16384)) {
+				@Pc(29) int local29 = arg0.g1((short) 16384);
 				@Pc(32) Class519[] local32 = new Class519[local29];
 				for (@Pc(34) int local34 = 0; local34 < local29; local34++) {
-					local32[local34] = (Class519) Class107.method18116(Class519.method30309(1860785111), arg0.method22528((byte) -58), -1915563430);
+					local32[local34] = (Class519) Class107.method18116(Class519.method30309(1860785111), arg0.gSmart1or2((byte) -58), -1915563430);
 				}
 				this.anObjectArrayArray1[local22] = Class166_Sub38.method16323(arg0, local32, -486098583);
 				this.aClass519ArrayArray1[local22] = local32;
 			}
 		} else if (arg1 == 4) {
-			this.anInt105 = arg0.method22548((short) -6368) * 586759731;
+			this.anInt105 = arg0.gVarInt2((short) -6368) * 586759731;
 		}
 	}
 
 	@OriginalMember(owner = "client!abc", name = "p", descriptor = "(Lclient!alw;II)V", line = 32)
-	void method622(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	void method622(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (arg1 == 3) {
-			@Pc(6) int local6 = arg0.method22465((short) 16384);
+			@Pc(6) int local6 = arg0.g1((short) 16384);
 			if (this.anObjectArrayArray1 == null) {
 				this.anObjectArrayArray1 = new Object[local6][];
 				this.aClass519ArrayArray1 = new Class519[local6][];
 			}
-			for (@Pc(22) int local22 = arg0.method22465((short) 16384); local22 != 255; local22 = arg0.method22465((short) 16384)) {
-				@Pc(29) int local29 = arg0.method22465((short) 16384);
+			for (@Pc(22) int local22 = arg0.g1((short) 16384); local22 != 255; local22 = arg0.g1((short) 16384)) {
+				@Pc(29) int local29 = arg0.g1((short) 16384);
 				@Pc(32) Class519[] local32 = new Class519[local29];
 				for (@Pc(34) int local34 = 0; local34 < local29; local34++) {
-					local32[local34] = (Class519) Class107.method18116(Class519.method30309(1688759182), arg0.method22528((byte) -119), -1915563430);
+					local32[local34] = (Class519) Class107.method18116(Class519.method30309(1688759182), arg0.gSmart1or2((byte) -119), -1915563430);
 				}
 				this.anObjectArrayArray1[local22] = Class166_Sub38.method16323(arg0, local32, -1452468992);
 				this.aClass519ArrayArray1[local22] = local32;
 			}
 		} else if (arg1 == 4) {
-			this.anInt105 = arg0.method22548((short) -9339) * 586759731;
+			this.anInt105 = arg0.gVarInt2((short) -9339) * 586759731;
 		}
 	}
 
 	@OriginalMember(owner = "client!abc", name = "y", descriptor = "(Lclient!alw;I)V", line = 32)
-	void method623(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method623(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 3) {
-			@Pc(6) int local6 = arg0.method22465((short) 16384);
+			@Pc(6) int local6 = arg0.g1((short) 16384);
 			if (this.anObjectArrayArray1 == null) {
 				this.anObjectArrayArray1 = new Object[local6][];
 				this.aClass519ArrayArray1 = new Class519[local6][];
 			}
-			for (@Pc(22) int local22 = arg0.method22465((short) 16384); local22 != 255; local22 = arg0.method22465((short) 16384)) {
-				@Pc(29) int local29 = arg0.method22465((short) 16384);
+			for (@Pc(22) int local22 = arg0.g1((short) 16384); local22 != 255; local22 = arg0.g1((short) 16384)) {
+				@Pc(29) int local29 = arg0.g1((short) 16384);
 				@Pc(32) Class519[] local32 = new Class519[local29];
 				for (@Pc(34) int local34 = 0; local34 < local29; local34++) {
-					local32[local34] = (Class519) Class107.method18116(Class519.method30309(1865591604), arg0.method22528((byte) -41), -1915563430);
+					local32[local34] = (Class519) Class107.method18116(Class519.method30309(1865591604), arg0.gSmart1or2((byte) -41), -1915563430);
 				}
 				this.anObjectArrayArray1[local22] = Class166_Sub38.method16323(arg0, local32, -1802627876);
 				this.aClass519ArrayArray1[local22] = local32;
 			}
 		} else if (arg1 == 4) {
-			this.anInt105 = arg0.method22548((short) -8336) * 586759731;
+			this.anInt105 = arg0.gVarInt2((short) -8336) * 586759731;
 		}
 	}
 
 	@OriginalMember(owner = "client!abc", name = "q", descriptor = "(Lclient!alw;I)V", line = 32)
-	void method624(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method624(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 3) {
-			@Pc(6) int local6 = arg0.method22465((short) 16384);
+			@Pc(6) int local6 = arg0.g1((short) 16384);
 			if (this.anObjectArrayArray1 == null) {
 				this.anObjectArrayArray1 = new Object[local6][];
 				this.aClass519ArrayArray1 = new Class519[local6][];
 			}
-			for (@Pc(22) int local22 = arg0.method22465((short) 16384); local22 != 255; local22 = arg0.method22465((short) 16384)) {
-				@Pc(29) int local29 = arg0.method22465((short) 16384);
+			for (@Pc(22) int local22 = arg0.g1((short) 16384); local22 != 255; local22 = arg0.g1((short) 16384)) {
+				@Pc(29) int local29 = arg0.g1((short) 16384);
 				@Pc(32) Class519[] local32 = new Class519[local29];
 				for (@Pc(34) int local34 = 0; local34 < local29; local34++) {
-					local32[local34] = (Class519) Class107.method18116(Class519.method30309(1507909282), arg0.method22528((byte) -83), -1915563430);
+					local32[local34] = (Class519) Class107.method18116(Class519.method30309(1507909282), arg0.gSmart1or2((byte) -83), -1915563430);
 				}
 				this.anObjectArrayArray1[local22] = Class166_Sub38.method16323(arg0, local32, -1626946471);
 				this.aClass519ArrayArray1[local22] = local32;
 			}
 		} else if (arg1 == 4) {
-			this.anInt105 = arg0.method22548((short) -6125) * 586759731;
+			this.anInt105 = arg0.gVarInt2((short) -6125) * 586759731;
 		}
 	}
 
 	@OriginalMember(owner = "client!abc", name = "x", descriptor = "(Lclient!alw;I)V", line = 32)
-	void method625(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method625(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 3) {
-			@Pc(6) int local6 = arg0.method22465((short) 16384);
+			@Pc(6) int local6 = arg0.g1((short) 16384);
 			if (this.anObjectArrayArray1 == null) {
 				this.anObjectArrayArray1 = new Object[local6][];
 				this.aClass519ArrayArray1 = new Class519[local6][];
 			}
-			for (@Pc(22) int local22 = arg0.method22465((short) 16384); local22 != 255; local22 = arg0.method22465((short) 16384)) {
-				@Pc(29) int local29 = arg0.method22465((short) 16384);
+			for (@Pc(22) int local22 = arg0.g1((short) 16384); local22 != 255; local22 = arg0.g1((short) 16384)) {
+				@Pc(29) int local29 = arg0.g1((short) 16384);
 				@Pc(32) Class519[] local32 = new Class519[local29];
 				for (@Pc(34) int local34 = 0; local34 < local29; local34++) {
-					local32[local34] = (Class519) Class107.method18116(Class519.method30309(1698160951), arg0.method22528((byte) -19), -1915563430);
+					local32[local34] = (Class519) Class107.method18116(Class519.method30309(1698160951), arg0.gSmart1or2((byte) -19), -1915563430);
 				}
 				this.anObjectArrayArray1[local22] = Class166_Sub38.method16323(arg0, local32, 712117700);
 				this.aClass519ArrayArray1[local22] = local32;
 			}
 		} else if (arg1 == 4) {
-			this.anInt105 = arg0.method22548((short) 1719) * 586759731;
+			this.anInt105 = arg0.gVarInt2((short) 1719) * 586759731;
 		}
 	}
 

@@ -43,9 +43,9 @@ public class Class496 {
 	Class93_Sub1_Sub16_Sub1 aClass93_Sub1_Sub16_Sub1_2;
 
 	@OriginalMember(owner = "client!px", name = "f", descriptor = "(Lclient!alw;I)Lclient!kp;", line = 14)
-	public static Class125 method30031(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	public static Class125 method30031(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		@Pc(4) Class125_Sub2 local4 = (Class125_Sub2) Class661.method32833(arg0, (byte) 47);
-		@Pc(8) int local8 = arg0.method22475((byte) -4);
+		@Pc(8) int local8 = arg0.g2s((byte) -4);
 		return new Class125_Sub2_Sub1(local4.aClass390_7, local4.aClass392_7, local4.anInt2981 * 483768335, local4.anInt2982 * 2099407685, local4.anInt2983 * 1135283731, local4.anInt2980 * -1017655207, local4.anInt2985 * -1946839755, local4.anInt2986 * -1726029297, local4.anInt2984 * 291173831, local4.anInt2987 * -312428519, local4.anInt2988 * 813929059, local4.anInt2990 * -2031575365, local4.anInt2991 * 79921115, local4.anInt2989 * -143127169, local4.anInt2992 * 247837873, local8);
 	}
 
@@ -78,7 +78,7 @@ public class Class496 {
 		if (this.aClass93_Sub1_Sub16_Sub3_3.aBoolean546) {
 			return false;
 		}
-		@Pc(39) Class93_Sub41 local39 = new Class93_Sub41(this.aClass93_Sub1_Sub16_Sub3_3.method23981(-1772968523));
+		@Pc(39) Packet local39 = new Packet(this.aClass93_Sub1_Sub16_Sub3_3.method23981(-1772968523));
 		this.aClass513_1 = new Class513(local39, this.aBigInteger5, this.aBigInteger6);
 		if (this.aClass143_Sub1Array1 == null) {
 			this.aClass143_Sub1Array1 = new Class143_Sub1[this.aClass513_1.aClass491Array1.length];
@@ -111,7 +111,7 @@ public class Class496 {
 		if (this.aClass93_Sub1_Sub16_Sub3_3.aBoolean546) {
 			return false;
 		}
-		@Pc(39) Class93_Sub41 local39 = new Class93_Sub41(this.aClass93_Sub1_Sub16_Sub3_3.method23981(-881786015));
+		@Pc(39) Packet local39 = new Packet(this.aClass93_Sub1_Sub16_Sub3_3.method23981(-881786015));
 		this.aClass513_1 = new Class513(local39, this.aBigInteger5, this.aBigInteger6);
 		if (this.aClass143_Sub1Array1 == null) {
 			this.aClass143_Sub1Array1 = new Class143_Sub1[this.aClass513_1.aClass491Array1.length];
@@ -244,7 +244,7 @@ public class Class496 {
 			} else if (!this.aClass93_Sub1_Sub16_Sub1_2.aBoolean546) {
 				@Pc(80) byte[] local80 = this.aClass93_Sub1_Sub16_Sub1_2.method23981(-798182070);
 				try {
-					this.aClass513_2 = new Class513(new Class93_Sub41(local80), this.aBigInteger5, this.aBigInteger6);
+					this.aClass513_2 = new Class513(new Packet(local80), this.aBigInteger5, this.aBigInteger6);
 					for (@Pc(95) int local95 = 0; local95 < this.aClass143_Sub1Array1.length; local95++) {
 						if (this.aClass143_Sub1Array1[local95] != null && this.aClass143_Sub1Array1[local95].method11103(-575379816)) {
 							@Pc(118) Class491 local118 = this.aClass513_2.aClass491Array1[local95];
@@ -288,7 +288,7 @@ public class Class496 {
 			} else if (!this.aClass93_Sub1_Sub16_Sub1_2.aBoolean546) {
 				@Pc(80) byte[] local80 = this.aClass93_Sub1_Sub16_Sub1_2.method23981(699099083);
 				try {
-					this.aClass513_2 = new Class513(new Class93_Sub41(local80), this.aBigInteger5, this.aBigInteger6);
+					this.aClass513_2 = new Class513(new Packet(local80), this.aBigInteger5, this.aBigInteger6);
 					for (@Pc(95) int local95 = 0; local95 < this.aClass143_Sub1Array1.length; local95++) {
 						if (this.aClass143_Sub1Array1[local95] != null && this.aClass143_Sub1Array1[local95].method11103(-575379816)) {
 							@Pc(118) Class491 local118 = this.aClass513_2.aClass491Array1[local95];
@@ -332,7 +332,7 @@ public class Class496 {
 			} else if (!this.aClass93_Sub1_Sub16_Sub1_2.aBoolean546) {
 				@Pc(80) byte[] local80 = this.aClass93_Sub1_Sub16_Sub1_2.method23981(-1867951098);
 				try {
-					this.aClass513_2 = new Class513(new Class93_Sub41(local80), this.aBigInteger5, this.aBigInteger6);
+					this.aClass513_2 = new Class513(new Packet(local80), this.aBigInteger5, this.aBigInteger6);
 					for (@Pc(95) int local95 = 0; local95 < this.aClass143_Sub1Array1.length; local95++) {
 						if (this.aClass143_Sub1Array1[local95] != null && this.aClass143_Sub1Array1[local95].method11103(-575379816)) {
 							@Pc(118) Class491 local118 = this.aClass513_2.aClass491Array1[local95];

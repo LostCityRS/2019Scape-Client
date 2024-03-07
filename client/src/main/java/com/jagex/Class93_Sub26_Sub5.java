@@ -24,16 +24,16 @@ public class Class93_Sub26_Sub5 extends Class93_Sub26 {
 
 	@OriginalMember(owner = "client!arg", name = "m", descriptor = "(Lclient!alw;)V", line = 294)
 	@Override
-	void method21994(@OriginalArg(0) Class93_Sub41 arg0) {
-		this.anInt3004 = arg0.method22483(-118643075) * -839262427;
-		this.aLong145 = arg0.method22495(553203210) * -16360172209341971L;
+	void method21994(@OriginalArg(0) Packet arg0) {
+		this.anInt3004 = arg0.g4(-118643075) * -839262427;
+		this.aLong145 = arg0.g8(553203210) * -16360172209341971L;
 	}
 
 	@OriginalMember(owner = "client!arg", name = "e", descriptor = "(Lclient!alw;B)V", line = 294)
 	@Override
-	void method21992(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
-		this.anInt3004 = arg0.method22483(-118643075) * -839262427;
-		this.aLong145 = arg0.method22495(-1241256000) * -16360172209341971L;
+	void method21992(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
+		this.anInt3004 = arg0.g4(-118643075) * -839262427;
+		this.aLong145 = arg0.g8(-1241256000) * -16360172209341971L;
 	}
 
 	@OriginalMember(owner = "client!arg", name = "w", descriptor = "(Lclient!kr;)V", line = 299)

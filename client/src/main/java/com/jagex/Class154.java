@@ -88,11 +88,6 @@ public abstract class Class154 {
 		return (this.anInt1650 * 803722663 & 0x8) != 0;
 	}
 
-	@OriginalMember(owner = "client!wg", name = "n", descriptor = "([BII)I", line = 54)
-	public static int method14143(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		return Class124_Sub1.method9165(arg0, 0, arg1, (byte) 16);
-	}
-
 	@OriginalMember(owner = "client!wg", name = "fx", descriptor = "(ZI)Z", line = 2462)
 	public static boolean method14144(@OriginalArg(0) boolean arg0, @OriginalArg(1) int arg1) {
 		@Pc(2) boolean local2 = Class694.aClass104_14.method20622();

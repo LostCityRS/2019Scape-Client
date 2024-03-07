@@ -197,13 +197,13 @@ public class Class176 {
 	}
 
 	@OriginalMember(owner = "client!az", name = "p", descriptor = "(Lclient!alw;II)V", line = 428)
-	static void method24386(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	static void method24386(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (Class553.aClass42_4 == null) {
 			return;
 		}
 		try {
 			Class553.aClass42_4.method819(0L);
-			Class553.aClass42_4.method835(arg0.aByteArray58, arg1, 24, -163309130);
+			Class553.aClass42_4.method835(arg0.data, arg1, 24, -163309130);
 		} catch (@Pc(14) Exception local14) {
 		}
 	}
@@ -261,9 +261,9 @@ public class Class176 {
 		}
 		@Pc(206) Class175 local206 = Class330.method27371(-1710329126);
 		@Pc(212) Class93_Sub22 local212 = Class102.method2588(Class446.aClass446_15, local206.aClass24_2, (byte) 36);
-		local212.aClass93_Sub41_Sub2_1.method22394(Class46.method895(arg0, -1907754676) + 1, (byte) -97);
-		local212.aClass93_Sub41_Sub2_1.method22431(arg0, 1814436622);
-		local212.aClass93_Sub41_Sub2_1.method22394(arg1 ? 1 : 0, (byte) -110);
+		local212.aPacketBit_1.p1(Packet.pjstrlen(arg0, -1907754676) + 1, (byte) -97);
+		local212.aPacketBit_1.pjstr(arg0, 1814436622);
+		local212.aPacketBit_1.p1(arg1 ? 1 : 0, (byte) -110);
 		local206.method24356(local212, -1741556461);
 	}
 }

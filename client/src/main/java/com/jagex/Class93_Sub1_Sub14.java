@@ -28,9 +28,9 @@ public class Class93_Sub1_Sub14 extends Class93_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!asd", name = "e", descriptor = "(Lclient!alw;I)V", line = 18)
-	void method22359(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method22359(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -39,9 +39,9 @@ public class Class93_Sub1_Sub14 extends Class93_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!asd", name = "w", descriptor = "(Lclient!alw;)V", line = 18)
-	void method22360(@OriginalArg(0) Class93_Sub41 arg0) {
+	void method22360(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -50,9 +50,9 @@ public class Class93_Sub1_Sub14 extends Class93_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!asd", name = "l", descriptor = "(Lclient!alw;)V", line = 18)
-	void method22361(@OriginalArg(0) Class93_Sub41 arg0) {
+	void method22361(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -61,9 +61,9 @@ public class Class93_Sub1_Sub14 extends Class93_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!asd", name = "u", descriptor = "(Lclient!alw;)V", line = 18)
-	void method22362(@OriginalArg(0) Class93_Sub41 arg0) {
+	void method22362(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -72,9 +72,9 @@ public class Class93_Sub1_Sub14 extends Class93_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!asd", name = "z", descriptor = "(Lclient!alw;)V", line = 18)
-	void method22363(@OriginalArg(0) Class93_Sub41 arg0) {
+	void method22363(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -83,30 +83,30 @@ public class Class93_Sub1_Sub14 extends Class93_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!asd", name = "p", descriptor = "(Lclient!alw;I)V", line = 25)
-	void method22364(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method22364(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.aString107 = arg0.method22509(1279961831);
+			this.aString107 = arg0.gjstr(1279961831);
 			return;
 		}
 		@Pc(15) int local15;
 		@Pc(25) int local25;
 		@Pc(39) byte local39;
 		if (arg1 == 2) {
-			local15 = arg0.method22465((short) 16384);
+			local15 = arg0.g1((short) 16384);
 			this.anIntArray260 = new int[local15];
 			this.aCharArray3 = new char[local15];
 			for (local25 = 0; local25 < local15; local25++) {
-				this.anIntArray260[local25] = arg0.method22472(-1434290800);
-				local39 = arg0.method22468(973127225);
+				this.anIntArray260[local25] = arg0.g2(-1434290800);
+				local39 = arg0.g1b(973127225);
 				this.aCharArray3[local25] = local39 == 0 ? 0 : Class615.method32086(local39, (short) 150);
 			}
 		} else if (arg1 == 3) {
-			local15 = arg0.method22465((short) 16384);
+			local15 = arg0.g1((short) 16384);
 			this.anIntArray261 = new int[local15];
 			this.aCharArray4 = new char[local15];
 			for (local25 = 0; local25 < local15; local25++) {
-				this.anIntArray261[local25] = arg0.method22472(-1434290800);
-				local39 = arg0.method22468(2022098971);
+				this.anIntArray261[local25] = arg0.g2(-1434290800);
+				local39 = arg0.g1b(2022098971);
 				this.aCharArray4[local25] = local39 == 0 ? 0 : Class615.method32086(local39, (short) 150);
 			}
 		} else if (arg1 == 4) {
@@ -114,30 +114,30 @@ public class Class93_Sub1_Sub14 extends Class93_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!asd", name = "r", descriptor = "(Lclient!alw;I)V", line = 25)
-	void method22365(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method22365(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.aString107 = arg0.method22509(965865831);
+			this.aString107 = arg0.gjstr(965865831);
 			return;
 		}
 		@Pc(15) int local15;
 		@Pc(25) int local25;
 		@Pc(39) byte local39;
 		if (arg1 == 2) {
-			local15 = arg0.method22465((short) 16384);
+			local15 = arg0.g1((short) 16384);
 			this.anIntArray260 = new int[local15];
 			this.aCharArray3 = new char[local15];
 			for (local25 = 0; local25 < local15; local25++) {
-				this.anIntArray260[local25] = arg0.method22472(-1434290800);
-				local39 = arg0.method22468(1561497620);
+				this.anIntArray260[local25] = arg0.g2(-1434290800);
+				local39 = arg0.g1b(1561497620);
 				this.aCharArray3[local25] = local39 == 0 ? 0 : Class615.method32086(local39, (short) 150);
 			}
 		} else if (arg1 == 3) {
-			local15 = arg0.method22465((short) 16384);
+			local15 = arg0.g1((short) 16384);
 			this.anIntArray261 = new int[local15];
 			this.aCharArray4 = new char[local15];
 			for (local25 = 0; local25 < local15; local25++) {
-				this.anIntArray261[local25] = arg0.method22472(-1434290800);
-				local39 = arg0.method22468(1784560364);
+				this.anIntArray261[local25] = arg0.g2(-1434290800);
+				local39 = arg0.g1b(1784560364);
 				this.aCharArray4[local25] = local39 == 0 ? 0 : Class615.method32086(local39, (short) 150);
 			}
 		} else if (arg1 == 4) {
@@ -145,30 +145,30 @@ public class Class93_Sub1_Sub14 extends Class93_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!asd", name = "d", descriptor = "(Lclient!alw;I)V", line = 25)
-	void method22366(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method22366(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.aString107 = arg0.method22509(-236087884);
+			this.aString107 = arg0.gjstr(-236087884);
 			return;
 		}
 		@Pc(15) int local15;
 		@Pc(25) int local25;
 		@Pc(39) byte local39;
 		if (arg1 == 2) {
-			local15 = arg0.method22465((short) 16384);
+			local15 = arg0.g1((short) 16384);
 			this.anIntArray260 = new int[local15];
 			this.aCharArray3 = new char[local15];
 			for (local25 = 0; local25 < local15; local25++) {
-				this.anIntArray260[local25] = arg0.method22472(-1434290800);
-				local39 = arg0.method22468(1232068168);
+				this.anIntArray260[local25] = arg0.g2(-1434290800);
+				local39 = arg0.g1b(1232068168);
 				this.aCharArray3[local25] = local39 == 0 ? 0 : Class615.method32086(local39, (short) 150);
 			}
 		} else if (arg1 == 3) {
-			local15 = arg0.method22465((short) 16384);
+			local15 = arg0.g1((short) 16384);
 			this.anIntArray261 = new int[local15];
 			this.aCharArray4 = new char[local15];
 			for (local25 = 0; local25 < local15; local25++) {
-				this.anIntArray261[local25] = arg0.method22472(-1434290800);
-				local39 = arg0.method22468(1367425299);
+				this.anIntArray261[local25] = arg0.g2(-1434290800);
+				local39 = arg0.g1b(1367425299);
 				this.aCharArray4[local25] = local39 == 0 ? 0 : Class615.method32086(local39, (short) 150);
 			}
 		} else if (arg1 == 4) {
@@ -176,30 +176,30 @@ public class Class93_Sub1_Sub14 extends Class93_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!asd", name = "c", descriptor = "(Lclient!alw;I)V", line = 25)
-	void method22367(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method22367(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.aString107 = arg0.method22509(2135234241);
+			this.aString107 = arg0.gjstr(2135234241);
 			return;
 		}
 		@Pc(15) int local15;
 		@Pc(25) int local25;
 		@Pc(39) byte local39;
 		if (arg1 == 2) {
-			local15 = arg0.method22465((short) 16384);
+			local15 = arg0.g1((short) 16384);
 			this.anIntArray260 = new int[local15];
 			this.aCharArray3 = new char[local15];
 			for (local25 = 0; local25 < local15; local25++) {
-				this.anIntArray260[local25] = arg0.method22472(-1434290800);
-				local39 = arg0.method22468(1894903535);
+				this.anIntArray260[local25] = arg0.g2(-1434290800);
+				local39 = arg0.g1b(1894903535);
 				this.aCharArray3[local25] = local39 == 0 ? 0 : Class615.method32086(local39, (short) 150);
 			}
 		} else if (arg1 == 3) {
-			local15 = arg0.method22465((short) 16384);
+			local15 = arg0.g1((short) 16384);
 			this.anIntArray261 = new int[local15];
 			this.aCharArray4 = new char[local15];
 			for (local25 = 0; local25 < local15; local25++) {
-				this.anIntArray261[local25] = arg0.method22472(-1434290800);
-				local39 = arg0.method22468(1438419962);
+				this.anIntArray261[local25] = arg0.g2(-1434290800);
+				local39 = arg0.g1b(1438419962);
 				this.aCharArray4[local25] = local39 == 0 ? 0 : Class615.method32086(local39, (short) 150);
 			}
 		} else if (arg1 == 4) {
@@ -207,30 +207,30 @@ public class Class93_Sub1_Sub14 extends Class93_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!asd", name = "n", descriptor = "(Lclient!alw;II)V", line = 25)
-	void method22368(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	void method22368(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (arg1 == 1) {
-			this.aString107 = arg0.method22509(1150946562);
+			this.aString107 = arg0.gjstr(1150946562);
 			return;
 		}
 		@Pc(15) int local15;
 		@Pc(25) int local25;
 		@Pc(39) byte local39;
 		if (arg1 == 2) {
-			local15 = arg0.method22465((short) 16384);
+			local15 = arg0.g1((short) 16384);
 			this.anIntArray260 = new int[local15];
 			this.aCharArray3 = new char[local15];
 			for (local25 = 0; local25 < local15; local25++) {
-				this.anIntArray260[local25] = arg0.method22472(-1434290800);
-				local39 = arg0.method22468(757982870);
+				this.anIntArray260[local25] = arg0.g2(-1434290800);
+				local39 = arg0.g1b(757982870);
 				this.aCharArray3[local25] = local39 == 0 ? 0 : Class615.method32086(local39, (short) 150);
 			}
 		} else if (arg1 == 3) {
-			local15 = arg0.method22465((short) 16384);
+			local15 = arg0.g1((short) 16384);
 			this.anIntArray261 = new int[local15];
 			this.aCharArray4 = new char[local15];
 			for (local25 = 0; local25 < local15; local25++) {
-				this.anIntArray261[local25] = arg0.method22472(-1434290800);
-				local39 = arg0.method22468(550818140);
+				this.anIntArray261[local25] = arg0.g2(-1434290800);
+				local39 = arg0.g1b(550818140);
 				this.aCharArray4[local25] = local39 == 0 ? 0 : Class615.method32086(local39, (short) 150);
 			}
 		} else if (arg1 == 4) {

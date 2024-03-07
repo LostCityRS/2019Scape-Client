@@ -43,7 +43,7 @@ public class Class478 {
 					throw new IOException();
 				}
 			}
-			local7 = new Class93_Sub36(new Class93_Sub41(local20), client.aClass702_4, 0);
+			local7 = new Class93_Sub36(new Packet(local20), client.aClass702_4, 0);
 		} catch (@Pc(60) Exception local60) {
 		}
 		try {

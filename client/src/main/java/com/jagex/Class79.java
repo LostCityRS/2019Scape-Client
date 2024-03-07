@@ -41,20 +41,20 @@ public abstract class Class79 implements Interface11 {
 	}
 
 	@OriginalMember(owner = "client!aj", name = "e", descriptor = "(Lclient!alw;Lclient!add;I)Lclient!abn;", line = 33)
-	static Class40 method1453(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) Class79_Sub1 arg1, @OriginalArg(2) int arg2) {
+	static Class40 method1453(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class79_Sub1 arg1, @OriginalArg(2) int arg2) {
 		@Pc(4) Class40 local4 = new Class40(arg1);
 		while (true) {
-			@Pc(8) int local8 = arg0.method22465((short) 16384);
+			@Pc(8) int local8 = arg0.g1((short) 16384);
 			if (local8 == 255) {
 				return local4;
 			}
 			@Pc(18) Class500 local18 = (Class500) Class93_Sub16.method13519(Class500.class, local8, (byte) 1);
 			while (true) {
-				@Pc(22) int local22 = arg0.method22465((short) 16384);
+				@Pc(22) int local22 = arg0.g1((short) 16384);
 				if (local22 == 255) {
 					break;
 				}
-				arg0.anInt3070 -= -1445626955;
+				arg0.pos -= -1445626955;
 				@Pc(38) Class466 local38 = arg1.method1470(arg0, local18, (byte) 1);
 				if (local38 != null) {
 					local4.method776(local38.anInt5092 * -1181855333, local38.anObject19, (byte) 25);

@@ -17,26 +17,26 @@ public class Class381 implements Interface32 {
 	}
 
 	@OriginalMember(owner = "client!kj", name = "m", descriptor = "(Lclient!alw;)Lclient!kj;", line = 13)
-	public static Class381 method28124(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(3) int local3 = arg0.method22483(-118643075);
+	public static Class381 method28124(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g4(-118643075);
 		return new Class381(local3);
 	}
 
 	@OriginalMember(owner = "client!kj", name = "f", descriptor = "(Lclient!alw;)Lclient!kj;", line = 13)
-	public static Class381 method28125(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(3) int local3 = arg0.method22483(-118643075);
+	public static Class381 method28125(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g4(-118643075);
 		return new Class381(local3);
 	}
 
 	@OriginalMember(owner = "client!kj", name = "k", descriptor = "(Lclient!alw;)Lclient!kj;", line = 13)
-	public static Class381 method28126(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(3) int local3 = arg0.method22483(-118643075);
+	public static Class381 method28126(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g4(-118643075);
 		return new Class381(local3);
 	}
 
 	@OriginalMember(owner = "client!kj", name = "w", descriptor = "(Lclient!alw;)Lclient!kj;", line = 13)
-	public static Class381 method28127(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(3) int local3 = arg0.method22483(-118643075);
+	public static Class381 method28127(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g4(-118643075);
 		return new Class381(local3);
 	}
 

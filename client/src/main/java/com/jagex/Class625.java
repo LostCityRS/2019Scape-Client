@@ -1505,8 +1505,8 @@ public class Class625 {
 				client.anInt3547 = client.anInt3565 * -541355657;
 				@Pc(64) Class175 local64 = Class330.method27371(-1534093073);
 				@Pc(70) Class93_Sub22 local70 = Class102.method2588(Class446.aClass446_37, local64.aClass24_2, (byte) 5);
-				local70.aClass93_Sub41_Sub2_1.method22394(Class46.method895(arg0, -1997823666), (byte) -105);
-				local70.aClass93_Sub41_Sub2_1.method22431(arg0, -1783139557);
+				local70.aPacketBit_1.p1(Packet.pjstrlen(arg0, -1997823666), (byte) -105);
+				local70.aPacketBit_1.pjstr(arg0, -1783139557);
 				local64.method24356(local70, -1947881956);
 				break;
 			}

@@ -102,7 +102,7 @@ public class Class32 implements Interface11 {
 		}
 		@Pc(27) Interface13 local27 = this.anInterface4_25.method27703(arg0, this, -1900283161);
 		if (local12 != null) {
-			local27.method36654(new Class93_Sub41(local12), (byte) -20);
+			local27.method36654(new Packet(local12), (byte) -20);
 		}
 		local27.method36653(-1193796337);
 		return local27;
@@ -117,7 +117,7 @@ public class Class32 implements Interface11 {
 		}
 		@Pc(27) Interface13 local27 = this.anInterface4_25.method27703(arg0, this, -1914216139);
 		if (local12 != null) {
-			local27.method36654(new Class93_Sub41(local12), (byte) 58);
+			local27.method36654(new Packet(local12), (byte) 58);
 		}
 		local27.method36653(216909128);
 		return local27;
@@ -132,7 +132,7 @@ public class Class32 implements Interface11 {
 		}
 		@Pc(27) Interface13 local27 = this.anInterface4_25.method27703(arg0, this, -1544200888);
 		if (local12 != null) {
-			local27.method36654(new Class93_Sub41(local12), (byte) 19);
+			local27.method36654(new Packet(local12), (byte) 19);
 		}
 		local27.method36653(-1766963711);
 		return local27;

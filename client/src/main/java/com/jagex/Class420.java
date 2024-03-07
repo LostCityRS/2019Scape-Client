@@ -339,12 +339,12 @@ public class Class420 {
 			}
 		}
 		@Pc(40) Class93_Sub22 local40 = Class102.method2588(Class446.aClass446_60, client.aClass175_2.aClass24_2, (byte) 90);
-		local40.aClass93_Sub41_Sub2_1.method22632(arg0.anInt3953 * -1549590237, 907143239);
-		local40.aClass93_Sub41_Sub2_1.method22395(arg0.anInt4045 * 307668159, 2134260399);
-		local40.aClass93_Sub41_Sub2_1.method22597(client.anInt3524 * -239149331, -1850331297);
-		local40.aClass93_Sub41_Sub2_1.method22597(arg0.anInt3970 * 532402067, -1666236355);
-		local40.aClass93_Sub41_Sub2_1.method22597(client.anInt3523 * 1573685689, -1922842379);
-		local40.aClass93_Sub41_Sub2_1.method22632(Class148.anInt1394 * -278883695, 907143239);
+		local40.aPacketBit_1.p4_alt1(arg0.anInt3953 * -1549590237, 907143239);
+		local40.aPacketBit_1.p2(arg0.anInt4045 * 307668159, 2134260399);
+		local40.aPacketBit_1.p2_alt2(client.anInt3524 * -239149331, -1850331297);
+		local40.aPacketBit_1.p2_alt2(arg0.anInt3970 * 532402067, -1666236355);
+		local40.aPacketBit_1.p2_alt2(client.anInt3523 * 1573685689, -1922842379);
+		local40.aPacketBit_1.p4_alt1(Class148.anInt1394 * -278883695, 907143239);
 		client.aClass175_2.method24356(local40, -1894315664);
 	}
 
@@ -353,7 +353,7 @@ public class Class420 {
 		@Pc(12) int local12 = arg0.anIntArray519[(arg0.anInt5891 -= 1189701933) * -1497248091];
 		@Pc(15) Class175 local15 = Class330.method27371(-1652783239);
 		@Pc(21) Class93_Sub22 local21 = Class102.method2588(Class446.aClass446_46, local15.aClass24_2, (byte) 93);
-		local21.aClass93_Sub41_Sub2_1.method22394(local12, (byte) -27);
+		local21.aPacketBit_1.p1(local12, (byte) -27);
 		local15.method24356(local21, -2010054592);
 	}
 

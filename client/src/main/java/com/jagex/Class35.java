@@ -52,9 +52,9 @@ public class Class35 {
 		if (arg1.length() > 30) {
 			arg1 = arg1.substring(0, 30);
 		}
-		local8.aClass93_Sub41_Sub2_1.method22394(Class46.method895(arg0, -1758564069) + Class46.method895(arg1, -1948018325), (byte) -24);
-		local8.aClass93_Sub41_Sub2_1.method22431(arg1, -543354089);
-		local8.aClass93_Sub41_Sub2_1.method22431(arg0, 832412331);
+		local8.aPacketBit_1.p1(Packet.pjstrlen(arg0, -1758564069) + Packet.pjstrlen(arg1, -1948018325), (byte) -24);
+		local8.aPacketBit_1.pjstr(arg1, -543354089);
+		local8.aPacketBit_1.pjstr(arg0, 832412331);
 		local2.method24356(local8, -1632121537);
 	}
 }

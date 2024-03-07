@@ -27,13 +27,13 @@ public class Class110_Sub7 extends Class110 {
 	final int anInt909;
 
 	@OriginalMember(owner = "client!agd", name = "<init>", descriptor = "(Lclient!alw;)V", line = 14)
-	Class110_Sub7(@OriginalArg(0) Class93_Sub41 arg0) {
+	Class110_Sub7(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.anInt908 = arg0.method22472(-1434290800) * -1675416095;
-		this.anInt906 = arg0.method22472(-1434290800) * -307172735;
-		this.aString28 = arg0.method22509(1044052563);
-		this.anInt907 = arg0.method22483(-118643075) * 1048079171;
-		this.anInt909 = arg0.method22472(-1434290800) * -1986684691;
+		this.anInt908 = arg0.g2(-1434290800) * -1675416095;
+		this.anInt906 = arg0.g2(-1434290800) * -307172735;
+		this.aString28 = arg0.gjstr(1044052563);
+		this.anInt907 = arg0.g4(-118643075) * 1048079171;
+		this.anInt909 = arg0.g2(-1434290800) * -1986684691;
 	}
 
 	@OriginalMember(owner = "client!agd", name = "f", descriptor = "()V", line = 23)

@@ -106,15 +106,15 @@ public abstract class Class49 {
 			local36.write("data1=req");
 			local36.flush();
 			@Pc(44) InputStream local44 = local17.getInputStream();
-			@Pc(50) Class93_Sub41 local50 = new Class93_Sub41(new byte[1000]);
+			@Pc(50) Packet local50 = new Packet(new byte[1000]);
 			do {
-				@Pc(65) int local65 = local44.read(local50.aByteArray58, local50.anInt3070 * 212851357, 1000 - local50.anInt3070 * 212851357);
+				@Pc(65) int local65 = local44.read(local50.data, local50.pos * 212851357, 1000 - local50.pos * 212851357);
 				if (local65 == -1) {
-					local50.anInt3070 = 0;
-					return local50.method22495(-2118205838);
+					local50.pos = 0;
+					return local50.g8(-2118205838);
 				}
-				local50.anInt3070 += local65 * -1445626955;
-			} while (local50.anInt3070 * 212851357 < 1000);
+				local50.pos += local65 * -1445626955;
+			} while (local50.pos * 212851357 < 1000);
 			return 0L;
 		} catch (@Pc(96) Exception local96) {
 			return 0L;

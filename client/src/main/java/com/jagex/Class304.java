@@ -52,20 +52,20 @@ public class Class304 {
 	int anInt3939;
 
 	@OriginalMember(owner = "client!gy", name = "<init>", descriptor = "(Lclient!alw;ZZLclient!gu;)V", line = 24)
-	Class304(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) Interface27 arg3) {
+	Class304(@OriginalArg(0) Packet arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) Interface27 arg3) {
 		if (arg1) {
-			this.aLong255 = arg0.method22495(498727567) * 5817403946560140893L;
+			this.aLong255 = arg0.g8(498727567) * 5817403946560140893L;
 		} else {
 			this.aLong255 = -5817403946560140893L;
 		}
 		if (arg2) {
-			this.aString159 = arg0.method22507((byte) 45);
+			this.aString159 = arg0.fastgstr((byte) 45);
 		}
-		@Pc(25) int local25 = arg0.method22465((short) 16384);
+		@Pc(25) int local25 = arg0.g1((short) 16384);
 		this.aBoolean678 = (local25 & 0x1) != 0;
 		this.aBoolean677 = (local25 & 0x2) != 0;
 		this.aClass675Array2 = new Class675[arg3.method25531((byte) 2).method32590(773227642)];
-		@Pc(56) int local56 = arg0.method22465((short) 16384);
+		@Pc(56) int local56 = arg0.g1((short) 16384);
 		if (local56 > this.aClass675Array2.length) {
 			throw new IllegalStateException("");
 		}
@@ -73,25 +73,25 @@ public class Class304 {
 		for (local68 = 0; local68 < this.aClass675Array2.length; local68++) {
 			@Pc(89) Class675 local89 = this.aClass675Array2[local68] = new Class675(arg3.method25531((byte) 2).method32591(local68, (byte) 24), true);
 			if (local68 < local56) {
-				local89.method33143(arg0.method22483(-118643075), -1199731471);
+				local89.method33143(arg0.g4(-118643075), -1199731471);
 			} else {
 				local89.method33143(0, 729579119);
 			}
 			local89.method33157(local89.method33145(708553628), 479175137);
 		}
-		local68 = arg0.method22472(-1434290800);
+		local68 = arg0.g2(-1434290800);
 		this.aClass40_2 = new Class40(arg3.method25539((byte) -2));
 		for (@Pc(125) int local125 = 0; local125 < local68; local125++) {
 			@Pc(135) Class466 local135 = arg3.method25539((byte) -13).method1468(arg0, (byte) 72);
 			this.aClass40_2.method776(local135.anInt5092 * -1181855333, local135.anObject19, (byte) 53);
 		}
-		this.anInt3935 = arg0.method22472(-1434290800) * 557760827;
+		this.anInt3935 = arg0.g2(-1434290800) * 557760827;
 		if (this.anInt3935 * -1735233549 == 65535) {
 			this.anInt3935 = -557760827;
 		}
-		this.anInt3937 = arg0.method22465((short) 16384) * -979420629;
-		this.aClass301_5 = (Class301) Class107.method18116(Class301.method26728(1436235082), arg0.method22465((short) 16384), -1915563430);
-		this.anInt3939 = arg0.method22465((short) 16384) * 1646854503;
+		this.anInt3937 = arg0.g1((short) 16384) * -979420629;
+		this.aClass301_5 = (Class301) Class107.method18116(Class301.method26728(1436235082), arg0.g1((short) 16384), -1915563430);
+		this.anInt3939 = arg0.g1((short) 16384) * 1646854503;
 	}
 
 	@OriginalMember(owner = "client!gy", name = "e", descriptor = "(I)Ljava/lang/String;", line = 54)

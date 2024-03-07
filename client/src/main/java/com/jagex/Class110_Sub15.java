@@ -27,11 +27,11 @@ public abstract class Class110_Sub15 extends Class110 {
 	}
 
 	@OriginalMember(owner = "client!agm", name = "<init>", descriptor = "(Lclient!alw;)V", line = 14)
-	Class110_Sub15(@OriginalArg(0) Class93_Sub41 arg0) {
+	Class110_Sub15(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.anInt2821 = arg0.method22472(-1434290800) * -1182122795;
-		this.anInt2822 = arg0.method22472(-1434290800) * -34475289;
-		this.anInt2823 = arg0.method22465((short) 16384) * 1877251199;
+		this.anInt2821 = arg0.g2(-1434290800) * -1182122795;
+		this.anInt2822 = arg0.g2(-1434290800) * -34475289;
+		this.anInt2823 = arg0.g1((short) 16384) * 1877251199;
 	}
 
 	@OriginalMember(owner = "client!agm", name = "w", descriptor = "()Z", line = 21)

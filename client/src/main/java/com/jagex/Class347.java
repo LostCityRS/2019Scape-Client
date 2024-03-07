@@ -97,9 +97,9 @@ public class Class347 implements Interface13 {
 
 	@OriginalMember(owner = "client!ir", name = "e", descriptor = "(Lclient!alw;B)V", line = 45)
 	@Override
-	public void method36654(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
+	public void method36654(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -109,9 +109,9 @@ public class Class347 implements Interface13 {
 
 	@OriginalMember(owner = "client!ir", name = "m", descriptor = "(Lclient!alw;)V", line = 45)
 	@Override
-	public void method36655(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36655(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -121,9 +121,9 @@ public class Class347 implements Interface13 {
 
 	@OriginalMember(owner = "client!ir", name = "k", descriptor = "(Lclient!alw;)V", line = 45)
 	@Override
-	public void method36656(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36656(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -133,9 +133,9 @@ public class Class347 implements Interface13 {
 
 	@OriginalMember(owner = "client!ir", name = "f", descriptor = "(Lclient!alw;)V", line = 45)
 	@Override
-	public void method36657(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36657(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -145,9 +145,9 @@ public class Class347 implements Interface13 {
 
 	@OriginalMember(owner = "client!ir", name = "w", descriptor = "(Lclient!alw;)V", line = 45)
 	@Override
-	public void method36658(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36658(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -156,103 +156,103 @@ public class Class347 implements Interface13 {
 	}
 
 	@OriginalMember(owner = "client!ir", name = "u", descriptor = "(Lclient!alw;II)V", line = 52)
-	void method27580(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	void method27580(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (arg1 == 1) {
-			this.aString183 = arg0.method22512(-27244283);
+			this.aString183 = arg0.gjstr2(-27244283);
 		} else if (arg1 == 2) {
-			this.aString182 = arg0.method22512(1582697485);
+			this.aString182 = arg0.gjstr2(1582697485);
 		} else {
 			@Pc(24) int local24;
 			@Pc(31) int local31;
 			if (arg1 == 3) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArrayArray56 = new int[local24][3];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArrayArray56[local31][0] = arg0.method22472(-1434290800);
-					this.anIntArrayArray56[local31][1] = arg0.method22483(-118643075);
-					this.anIntArrayArray56[local31][2] = arg0.method22483(-118643075);
+					this.anIntArrayArray56[local31][0] = arg0.g2(-1434290800);
+					this.anIntArrayArray56[local31][1] = arg0.g4(-118643075);
+					this.anIntArrayArray56[local31][2] = arg0.g4(-118643075);
 				}
 			} else if (arg1 == 4) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArrayArray55 = new int[local24][3];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArrayArray55[local31][0] = arg0.method22472(-1434290800);
-					this.anIntArrayArray55[local31][1] = arg0.method22483(-118643075);
-					this.anIntArrayArray55[local31][2] = arg0.method22483(-118643075);
+					this.anIntArrayArray55[local31][0] = arg0.g2(-1434290800);
+					this.anIntArrayArray55[local31][1] = arg0.g4(-118643075);
+					this.anIntArrayArray55[local31][2] = arg0.g4(-118643075);
 				}
 			} else if (arg1 == 5) {
-				arg0.method22472(-1434290800);
+				arg0.g2(-1434290800);
 			} else if (arg1 == 6) {
-				this.anInt4197 = arg0.method22465((short) 16384) * 1236877151;
+				this.anInt4197 = arg0.g1((short) 16384) * 1236877151;
 			} else if (arg1 == 7) {
-				this.anInt4195 = arg0.method22465((short) 16384) * -1866901877;
+				this.anInt4195 = arg0.g1((short) 16384) * -1866901877;
 			} else if (arg1 == 8) {
 				this.aBoolean725 = true;
 			} else if (arg1 == 9) {
-				this.anInt4194 = arg0.method22465((short) 16384) * -1142464977;
+				this.anInt4194 = arg0.g1((short) 16384) * -1142464977;
 			} else if (arg1 == 10) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArray420 = new int[local24];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArray420[local31] = arg0.method22483(-118643075);
+					this.anIntArray420[local31] = arg0.g4(-118643075);
 				}
 			} else if (arg1 == 12) {
-				arg0.method22483(-118643075);
+				arg0.g4(-118643075);
 			} else if (arg1 == 13) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArray419 = new int[local24];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArray419[local31] = arg0.method22472(-1434290800);
+					this.anIntArray419[local31] = arg0.g2(-1434290800);
 				}
 			} else if (arg1 == 14) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArrayArray57 = new int[local24][2];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArrayArray57[local31][0] = arg0.method22465((short) 16384);
-					this.anIntArrayArray57[local31][1] = arg0.method22465((short) 16384);
+					this.anIntArrayArray57[local31][0] = arg0.g1((short) 16384);
+					this.anIntArrayArray57[local31][1] = arg0.g1((short) 16384);
 				}
 			} else if (arg1 == 15) {
-				this.anInt4196 = arg0.method22472(-1434290800) * -1049452577;
+				this.anInt4196 = arg0.g2(-1434290800) * -1049452577;
 			} else if (arg1 == 17) {
-				this.anInt4198 = arg0.method22542(-603798258) * -890023447;
+				this.anInt4198 = arg0.gSmart2or4null(-603798258) * -890023447;
 			} else if (arg1 == 18) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArray421 = new int[local24];
 				this.anIntArray422 = new int[local24];
 				this.anIntArray418 = new int[local24];
 				this.aStringArray27 = new String[local24];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArray421[local31] = arg0.method22483(-118643075);
-					this.anIntArray422[local31] = arg0.method22483(-118643075);
-					this.anIntArray418[local31] = arg0.method22483(-118643075);
-					this.aStringArray27[local31] = arg0.method22509(351510910);
+					this.anIntArray421[local31] = arg0.g4(-118643075);
+					this.anIntArray422[local31] = arg0.g4(-118643075);
+					this.anIntArray418[local31] = arg0.g4(-118643075);
+					this.aStringArray27[local31] = arg0.gjstr(351510910);
 				}
 			} else if (arg1 == 19) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArray423 = new int[local24];
 				this.anIntArray424 = new int[local24];
 				this.anIntArray425 = new int[local24];
 				this.aStringArray26 = new String[local24];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArray423[local31] = arg0.method22483(-118643075);
-					this.anIntArray424[local31] = arg0.method22483(-118643075);
-					this.anIntArray425[local31] = arg0.method22483(-118643075);
-					this.aStringArray26[local31] = arg0.method22509(934414664);
+					this.anIntArray423[local31] = arg0.g4(-118643075);
+					this.anIntArray424[local31] = arg0.g4(-118643075);
+					this.anIntArray425[local31] = arg0.g4(-118643075);
+					this.aStringArray26[local31] = arg0.gjstr(934414664);
 				}
 			} else if (arg1 == 249) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				if (this.aClass16_31 == null) {
 					local31 = Class134_Sub2.method10207(local24, (byte) 85);
 					this.aClass16_31 = new Class16(local31);
 				}
 				for (local31 = 0; local31 < local24; local31++) {
-					@Pc(432) boolean local432 = arg0.method22465((short) 16384) == 1;
-					@Pc(436) int local436 = arg0.method22478((short) 22961);
+					@Pc(432) boolean local432 = arg0.g1((short) 16384) == 1;
+					@Pc(436) int local436 = arg0.g3((short) 22961);
 					@Pc(445) Class93 local445;
 					if (local432) {
-						local445 = new Class93_Sub15(arg0.method22509(1469063531));
+						local445 = new Class93_Sub15(arg0.gjstr(1469063531));
 					} else {
-						local445 = new Class93_Sub14(arg0.method22483(-118643075));
+						local445 = new Class93_Sub14(arg0.g4(-118643075));
 					}
 					this.aClass16_31.method220(local445, (long) local436);
 				}
@@ -261,103 +261,103 @@ public class Class347 implements Interface13 {
 	}
 
 	@OriginalMember(owner = "client!ir", name = "b", descriptor = "(Lclient!alw;I)V", line = 52)
-	void method27581(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method27581(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.aString183 = arg0.method22512(-912525942);
+			this.aString183 = arg0.gjstr2(-912525942);
 		} else if (arg1 == 2) {
-			this.aString182 = arg0.method22512(-565154774);
+			this.aString182 = arg0.gjstr2(-565154774);
 		} else {
 			@Pc(24) int local24;
 			@Pc(31) int local31;
 			if (arg1 == 3) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArrayArray56 = new int[local24][3];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArrayArray56[local31][0] = arg0.method22472(-1434290800);
-					this.anIntArrayArray56[local31][1] = arg0.method22483(-118643075);
-					this.anIntArrayArray56[local31][2] = arg0.method22483(-118643075);
+					this.anIntArrayArray56[local31][0] = arg0.g2(-1434290800);
+					this.anIntArrayArray56[local31][1] = arg0.g4(-118643075);
+					this.anIntArrayArray56[local31][2] = arg0.g4(-118643075);
 				}
 			} else if (arg1 == 4) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArrayArray55 = new int[local24][3];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArrayArray55[local31][0] = arg0.method22472(-1434290800);
-					this.anIntArrayArray55[local31][1] = arg0.method22483(-118643075);
-					this.anIntArrayArray55[local31][2] = arg0.method22483(-118643075);
+					this.anIntArrayArray55[local31][0] = arg0.g2(-1434290800);
+					this.anIntArrayArray55[local31][1] = arg0.g4(-118643075);
+					this.anIntArrayArray55[local31][2] = arg0.g4(-118643075);
 				}
 			} else if (arg1 == 5) {
-				arg0.method22472(-1434290800);
+				arg0.g2(-1434290800);
 			} else if (arg1 == 6) {
-				this.anInt4197 = arg0.method22465((short) 16384) * 1236877151;
+				this.anInt4197 = arg0.g1((short) 16384) * 1236877151;
 			} else if (arg1 == 7) {
-				this.anInt4195 = arg0.method22465((short) 16384) * -1866901877;
+				this.anInt4195 = arg0.g1((short) 16384) * -1866901877;
 			} else if (arg1 == 8) {
 				this.aBoolean725 = true;
 			} else if (arg1 == 9) {
-				this.anInt4194 = arg0.method22465((short) 16384) * -1142464977;
+				this.anInt4194 = arg0.g1((short) 16384) * -1142464977;
 			} else if (arg1 == 10) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArray420 = new int[local24];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArray420[local31] = arg0.method22483(-118643075);
+					this.anIntArray420[local31] = arg0.g4(-118643075);
 				}
 			} else if (arg1 == 12) {
-				arg0.method22483(-118643075);
+				arg0.g4(-118643075);
 			} else if (arg1 == 13) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArray419 = new int[local24];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArray419[local31] = arg0.method22472(-1434290800);
+					this.anIntArray419[local31] = arg0.g2(-1434290800);
 				}
 			} else if (arg1 == 14) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArrayArray57 = new int[local24][2];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArrayArray57[local31][0] = arg0.method22465((short) 16384);
-					this.anIntArrayArray57[local31][1] = arg0.method22465((short) 16384);
+					this.anIntArrayArray57[local31][0] = arg0.g1((short) 16384);
+					this.anIntArrayArray57[local31][1] = arg0.g1((short) 16384);
 				}
 			} else if (arg1 == 15) {
-				this.anInt4196 = arg0.method22472(-1434290800) * -1049452577;
+				this.anInt4196 = arg0.g2(-1434290800) * -1049452577;
 			} else if (arg1 == 17) {
-				this.anInt4198 = arg0.method22542(-2045806079) * -890023447;
+				this.anInt4198 = arg0.gSmart2or4null(-2045806079) * -890023447;
 			} else if (arg1 == 18) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArray421 = new int[local24];
 				this.anIntArray422 = new int[local24];
 				this.anIntArray418 = new int[local24];
 				this.aStringArray27 = new String[local24];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArray421[local31] = arg0.method22483(-118643075);
-					this.anIntArray422[local31] = arg0.method22483(-118643075);
-					this.anIntArray418[local31] = arg0.method22483(-118643075);
-					this.aStringArray27[local31] = arg0.method22509(133722226);
+					this.anIntArray421[local31] = arg0.g4(-118643075);
+					this.anIntArray422[local31] = arg0.g4(-118643075);
+					this.anIntArray418[local31] = arg0.g4(-118643075);
+					this.aStringArray27[local31] = arg0.gjstr(133722226);
 				}
 			} else if (arg1 == 19) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArray423 = new int[local24];
 				this.anIntArray424 = new int[local24];
 				this.anIntArray425 = new int[local24];
 				this.aStringArray26 = new String[local24];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArray423[local31] = arg0.method22483(-118643075);
-					this.anIntArray424[local31] = arg0.method22483(-118643075);
-					this.anIntArray425[local31] = arg0.method22483(-118643075);
-					this.aStringArray26[local31] = arg0.method22509(1448746706);
+					this.anIntArray423[local31] = arg0.g4(-118643075);
+					this.anIntArray424[local31] = arg0.g4(-118643075);
+					this.anIntArray425[local31] = arg0.g4(-118643075);
+					this.aStringArray26[local31] = arg0.gjstr(1448746706);
 				}
 			} else if (arg1 == 249) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				if (this.aClass16_31 == null) {
 					local31 = Class134_Sub2.method10207(local24, (byte) 99);
 					this.aClass16_31 = new Class16(local31);
 				}
 				for (local31 = 0; local31 < local24; local31++) {
-					@Pc(432) boolean local432 = arg0.method22465((short) 16384) == 1;
-					@Pc(436) int local436 = arg0.method22478((short) -22345);
+					@Pc(432) boolean local432 = arg0.g1((short) 16384) == 1;
+					@Pc(436) int local436 = arg0.g3((short) -22345);
 					@Pc(445) Class93 local445;
 					if (local432) {
-						local445 = new Class93_Sub15(arg0.method22509(1799458221));
+						local445 = new Class93_Sub15(arg0.gjstr(1799458221));
 					} else {
-						local445 = new Class93_Sub14(arg0.method22483(-118643075));
+						local445 = new Class93_Sub14(arg0.g4(-118643075));
 					}
 					this.aClass16_31.method220(local445, (long) local436);
 				}
@@ -366,103 +366,103 @@ public class Class347 implements Interface13 {
 	}
 
 	@OriginalMember(owner = "client!ir", name = "a", descriptor = "(Lclient!alw;I)V", line = 52)
-	void method27582(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method27582(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.aString183 = arg0.method22512(1287601349);
+			this.aString183 = arg0.gjstr2(1287601349);
 		} else if (arg1 == 2) {
-			this.aString182 = arg0.method22512(-1023304718);
+			this.aString182 = arg0.gjstr2(-1023304718);
 		} else {
 			@Pc(24) int local24;
 			@Pc(31) int local31;
 			if (arg1 == 3) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArrayArray56 = new int[local24][3];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArrayArray56[local31][0] = arg0.method22472(-1434290800);
-					this.anIntArrayArray56[local31][1] = arg0.method22483(-118643075);
-					this.anIntArrayArray56[local31][2] = arg0.method22483(-118643075);
+					this.anIntArrayArray56[local31][0] = arg0.g2(-1434290800);
+					this.anIntArrayArray56[local31][1] = arg0.g4(-118643075);
+					this.anIntArrayArray56[local31][2] = arg0.g4(-118643075);
 				}
 			} else if (arg1 == 4) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArrayArray55 = new int[local24][3];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArrayArray55[local31][0] = arg0.method22472(-1434290800);
-					this.anIntArrayArray55[local31][1] = arg0.method22483(-118643075);
-					this.anIntArrayArray55[local31][2] = arg0.method22483(-118643075);
+					this.anIntArrayArray55[local31][0] = arg0.g2(-1434290800);
+					this.anIntArrayArray55[local31][1] = arg0.g4(-118643075);
+					this.anIntArrayArray55[local31][2] = arg0.g4(-118643075);
 				}
 			} else if (arg1 == 5) {
-				arg0.method22472(-1434290800);
+				arg0.g2(-1434290800);
 			} else if (arg1 == 6) {
-				this.anInt4197 = arg0.method22465((short) 16384) * 1236877151;
+				this.anInt4197 = arg0.g1((short) 16384) * 1236877151;
 			} else if (arg1 == 7) {
-				this.anInt4195 = arg0.method22465((short) 16384) * -1866901877;
+				this.anInt4195 = arg0.g1((short) 16384) * -1866901877;
 			} else if (arg1 == 8) {
 				this.aBoolean725 = true;
 			} else if (arg1 == 9) {
-				this.anInt4194 = arg0.method22465((short) 16384) * -1142464977;
+				this.anInt4194 = arg0.g1((short) 16384) * -1142464977;
 			} else if (arg1 == 10) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArray420 = new int[local24];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArray420[local31] = arg0.method22483(-118643075);
+					this.anIntArray420[local31] = arg0.g4(-118643075);
 				}
 			} else if (arg1 == 12) {
-				arg0.method22483(-118643075);
+				arg0.g4(-118643075);
 			} else if (arg1 == 13) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArray419 = new int[local24];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArray419[local31] = arg0.method22472(-1434290800);
+					this.anIntArray419[local31] = arg0.g2(-1434290800);
 				}
 			} else if (arg1 == 14) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArrayArray57 = new int[local24][2];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArrayArray57[local31][0] = arg0.method22465((short) 16384);
-					this.anIntArrayArray57[local31][1] = arg0.method22465((short) 16384);
+					this.anIntArrayArray57[local31][0] = arg0.g1((short) 16384);
+					this.anIntArrayArray57[local31][1] = arg0.g1((short) 16384);
 				}
 			} else if (arg1 == 15) {
-				this.anInt4196 = arg0.method22472(-1434290800) * -1049452577;
+				this.anInt4196 = arg0.g2(-1434290800) * -1049452577;
 			} else if (arg1 == 17) {
-				this.anInt4198 = arg0.method22542(-1378744211) * -890023447;
+				this.anInt4198 = arg0.gSmart2or4null(-1378744211) * -890023447;
 			} else if (arg1 == 18) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArray421 = new int[local24];
 				this.anIntArray422 = new int[local24];
 				this.anIntArray418 = new int[local24];
 				this.aStringArray27 = new String[local24];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArray421[local31] = arg0.method22483(-118643075);
-					this.anIntArray422[local31] = arg0.method22483(-118643075);
-					this.anIntArray418[local31] = arg0.method22483(-118643075);
-					this.aStringArray27[local31] = arg0.method22509(857839923);
+					this.anIntArray421[local31] = arg0.g4(-118643075);
+					this.anIntArray422[local31] = arg0.g4(-118643075);
+					this.anIntArray418[local31] = arg0.g4(-118643075);
+					this.aStringArray27[local31] = arg0.gjstr(857839923);
 				}
 			} else if (arg1 == 19) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArray423 = new int[local24];
 				this.anIntArray424 = new int[local24];
 				this.anIntArray425 = new int[local24];
 				this.aStringArray26 = new String[local24];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArray423[local31] = arg0.method22483(-118643075);
-					this.anIntArray424[local31] = arg0.method22483(-118643075);
-					this.anIntArray425[local31] = arg0.method22483(-118643075);
-					this.aStringArray26[local31] = arg0.method22509(1404255233);
+					this.anIntArray423[local31] = arg0.g4(-118643075);
+					this.anIntArray424[local31] = arg0.g4(-118643075);
+					this.anIntArray425[local31] = arg0.g4(-118643075);
+					this.aStringArray26[local31] = arg0.gjstr(1404255233);
 				}
 			} else if (arg1 == 249) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				if (this.aClass16_31 == null) {
 					local31 = Class134_Sub2.method10207(local24, (byte) 29);
 					this.aClass16_31 = new Class16(local31);
 				}
 				for (local31 = 0; local31 < local24; local31++) {
-					@Pc(432) boolean local432 = arg0.method22465((short) 16384) == 1;
-					@Pc(436) int local436 = arg0.method22478((short) -14654);
+					@Pc(432) boolean local432 = arg0.g1((short) 16384) == 1;
+					@Pc(436) int local436 = arg0.g3((short) -14654);
 					@Pc(445) Class93 local445;
 					if (local432) {
-						local445 = new Class93_Sub15(arg0.method22509(1461964744));
+						local445 = new Class93_Sub15(arg0.gjstr(1461964744));
 					} else {
-						local445 = new Class93_Sub14(arg0.method22483(-118643075));
+						local445 = new Class93_Sub14(arg0.g4(-118643075));
 					}
 					this.aClass16_31.method220(local445, (long) local436);
 				}
@@ -471,103 +471,103 @@ public class Class347 implements Interface13 {
 	}
 
 	@OriginalMember(owner = "client!ir", name = "h", descriptor = "(Lclient!alw;I)V", line = 52)
-	void method27583(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method27583(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.aString183 = arg0.method22512(-587687428);
+			this.aString183 = arg0.gjstr2(-587687428);
 		} else if (arg1 == 2) {
-			this.aString182 = arg0.method22512(200249069);
+			this.aString182 = arg0.gjstr2(200249069);
 		} else {
 			@Pc(24) int local24;
 			@Pc(31) int local31;
 			if (arg1 == 3) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArrayArray56 = new int[local24][3];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArrayArray56[local31][0] = arg0.method22472(-1434290800);
-					this.anIntArrayArray56[local31][1] = arg0.method22483(-118643075);
-					this.anIntArrayArray56[local31][2] = arg0.method22483(-118643075);
+					this.anIntArrayArray56[local31][0] = arg0.g2(-1434290800);
+					this.anIntArrayArray56[local31][1] = arg0.g4(-118643075);
+					this.anIntArrayArray56[local31][2] = arg0.g4(-118643075);
 				}
 			} else if (arg1 == 4) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArrayArray55 = new int[local24][3];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArrayArray55[local31][0] = arg0.method22472(-1434290800);
-					this.anIntArrayArray55[local31][1] = arg0.method22483(-118643075);
-					this.anIntArrayArray55[local31][2] = arg0.method22483(-118643075);
+					this.anIntArrayArray55[local31][0] = arg0.g2(-1434290800);
+					this.anIntArrayArray55[local31][1] = arg0.g4(-118643075);
+					this.anIntArrayArray55[local31][2] = arg0.g4(-118643075);
 				}
 			} else if (arg1 == 5) {
-				arg0.method22472(-1434290800);
+				arg0.g2(-1434290800);
 			} else if (arg1 == 6) {
-				this.anInt4197 = arg0.method22465((short) 16384) * 1236877151;
+				this.anInt4197 = arg0.g1((short) 16384) * 1236877151;
 			} else if (arg1 == 7) {
-				this.anInt4195 = arg0.method22465((short) 16384) * -1866901877;
+				this.anInt4195 = arg0.g1((short) 16384) * -1866901877;
 			} else if (arg1 == 8) {
 				this.aBoolean725 = true;
 			} else if (arg1 == 9) {
-				this.anInt4194 = arg0.method22465((short) 16384) * -1142464977;
+				this.anInt4194 = arg0.g1((short) 16384) * -1142464977;
 			} else if (arg1 == 10) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArray420 = new int[local24];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArray420[local31] = arg0.method22483(-118643075);
+					this.anIntArray420[local31] = arg0.g4(-118643075);
 				}
 			} else if (arg1 == 12) {
-				arg0.method22483(-118643075);
+				arg0.g4(-118643075);
 			} else if (arg1 == 13) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArray419 = new int[local24];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArray419[local31] = arg0.method22472(-1434290800);
+					this.anIntArray419[local31] = arg0.g2(-1434290800);
 				}
 			} else if (arg1 == 14) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArrayArray57 = new int[local24][2];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArrayArray57[local31][0] = arg0.method22465((short) 16384);
-					this.anIntArrayArray57[local31][1] = arg0.method22465((short) 16384);
+					this.anIntArrayArray57[local31][0] = arg0.g1((short) 16384);
+					this.anIntArrayArray57[local31][1] = arg0.g1((short) 16384);
 				}
 			} else if (arg1 == 15) {
-				this.anInt4196 = arg0.method22472(-1434290800) * -1049452577;
+				this.anInt4196 = arg0.g2(-1434290800) * -1049452577;
 			} else if (arg1 == 17) {
-				this.anInt4198 = arg0.method22542(-1408240230) * -890023447;
+				this.anInt4198 = arg0.gSmart2or4null(-1408240230) * -890023447;
 			} else if (arg1 == 18) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArray421 = new int[local24];
 				this.anIntArray422 = new int[local24];
 				this.anIntArray418 = new int[local24];
 				this.aStringArray27 = new String[local24];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArray421[local31] = arg0.method22483(-118643075);
-					this.anIntArray422[local31] = arg0.method22483(-118643075);
-					this.anIntArray418[local31] = arg0.method22483(-118643075);
-					this.aStringArray27[local31] = arg0.method22509(-139085680);
+					this.anIntArray421[local31] = arg0.g4(-118643075);
+					this.anIntArray422[local31] = arg0.g4(-118643075);
+					this.anIntArray418[local31] = arg0.g4(-118643075);
+					this.aStringArray27[local31] = arg0.gjstr(-139085680);
 				}
 			} else if (arg1 == 19) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArray423 = new int[local24];
 				this.anIntArray424 = new int[local24];
 				this.anIntArray425 = new int[local24];
 				this.aStringArray26 = new String[local24];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArray423[local31] = arg0.method22483(-118643075);
-					this.anIntArray424[local31] = arg0.method22483(-118643075);
-					this.anIntArray425[local31] = arg0.method22483(-118643075);
-					this.aStringArray26[local31] = arg0.method22509(1027698164);
+					this.anIntArray423[local31] = arg0.g4(-118643075);
+					this.anIntArray424[local31] = arg0.g4(-118643075);
+					this.anIntArray425[local31] = arg0.g4(-118643075);
+					this.aStringArray26[local31] = arg0.gjstr(1027698164);
 				}
 			} else if (arg1 == 249) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				if (this.aClass16_31 == null) {
 					local31 = Class134_Sub2.method10207(local24, (byte) 78);
 					this.aClass16_31 = new Class16(local31);
 				}
 				for (local31 = 0; local31 < local24; local31++) {
-					@Pc(432) boolean local432 = arg0.method22465((short) 16384) == 1;
-					@Pc(436) int local436 = arg0.method22478((short) -3752);
+					@Pc(432) boolean local432 = arg0.g1((short) 16384) == 1;
+					@Pc(436) int local436 = arg0.g3((short) -3752);
 					@Pc(445) Class93 local445;
 					if (local432) {
-						local445 = new Class93_Sub15(arg0.method22509(1023655504));
+						local445 = new Class93_Sub15(arg0.gjstr(1023655504));
 					} else {
-						local445 = new Class93_Sub14(arg0.method22483(-118643075));
+						local445 = new Class93_Sub14(arg0.g4(-118643075));
 					}
 					this.aClass16_31.method220(local445, (long) local436);
 				}
@@ -576,103 +576,103 @@ public class Class347 implements Interface13 {
 	}
 
 	@OriginalMember(owner = "client!ir", name = "g", descriptor = "(Lclient!alw;I)V", line = 52)
-	void method27584(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method27584(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.aString183 = arg0.method22512(2039633577);
+			this.aString183 = arg0.gjstr2(2039633577);
 		} else if (arg1 == 2) {
-			this.aString182 = arg0.method22512(-75241078);
+			this.aString182 = arg0.gjstr2(-75241078);
 		} else {
 			@Pc(24) int local24;
 			@Pc(31) int local31;
 			if (arg1 == 3) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArrayArray56 = new int[local24][3];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArrayArray56[local31][0] = arg0.method22472(-1434290800);
-					this.anIntArrayArray56[local31][1] = arg0.method22483(-118643075);
-					this.anIntArrayArray56[local31][2] = arg0.method22483(-118643075);
+					this.anIntArrayArray56[local31][0] = arg0.g2(-1434290800);
+					this.anIntArrayArray56[local31][1] = arg0.g4(-118643075);
+					this.anIntArrayArray56[local31][2] = arg0.g4(-118643075);
 				}
 			} else if (arg1 == 4) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArrayArray55 = new int[local24][3];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArrayArray55[local31][0] = arg0.method22472(-1434290800);
-					this.anIntArrayArray55[local31][1] = arg0.method22483(-118643075);
-					this.anIntArrayArray55[local31][2] = arg0.method22483(-118643075);
+					this.anIntArrayArray55[local31][0] = arg0.g2(-1434290800);
+					this.anIntArrayArray55[local31][1] = arg0.g4(-118643075);
+					this.anIntArrayArray55[local31][2] = arg0.g4(-118643075);
 				}
 			} else if (arg1 == 5) {
-				arg0.method22472(-1434290800);
+				arg0.g2(-1434290800);
 			} else if (arg1 == 6) {
-				this.anInt4197 = arg0.method22465((short) 16384) * 1236877151;
+				this.anInt4197 = arg0.g1((short) 16384) * 1236877151;
 			} else if (arg1 == 7) {
-				this.anInt4195 = arg0.method22465((short) 16384) * -1866901877;
+				this.anInt4195 = arg0.g1((short) 16384) * -1866901877;
 			} else if (arg1 == 8) {
 				this.aBoolean725 = true;
 			} else if (arg1 == 9) {
-				this.anInt4194 = arg0.method22465((short) 16384) * -1142464977;
+				this.anInt4194 = arg0.g1((short) 16384) * -1142464977;
 			} else if (arg1 == 10) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArray420 = new int[local24];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArray420[local31] = arg0.method22483(-118643075);
+					this.anIntArray420[local31] = arg0.g4(-118643075);
 				}
 			} else if (arg1 == 12) {
-				arg0.method22483(-118643075);
+				arg0.g4(-118643075);
 			} else if (arg1 == 13) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArray419 = new int[local24];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArray419[local31] = arg0.method22472(-1434290800);
+					this.anIntArray419[local31] = arg0.g2(-1434290800);
 				}
 			} else if (arg1 == 14) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArrayArray57 = new int[local24][2];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArrayArray57[local31][0] = arg0.method22465((short) 16384);
-					this.anIntArrayArray57[local31][1] = arg0.method22465((short) 16384);
+					this.anIntArrayArray57[local31][0] = arg0.g1((short) 16384);
+					this.anIntArrayArray57[local31][1] = arg0.g1((short) 16384);
 				}
 			} else if (arg1 == 15) {
-				this.anInt4196 = arg0.method22472(-1434290800) * -1049452577;
+				this.anInt4196 = arg0.g2(-1434290800) * -1049452577;
 			} else if (arg1 == 17) {
-				this.anInt4198 = arg0.method22542(-1971574842) * -890023447;
+				this.anInt4198 = arg0.gSmart2or4null(-1971574842) * -890023447;
 			} else if (arg1 == 18) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArray421 = new int[local24];
 				this.anIntArray422 = new int[local24];
 				this.anIntArray418 = new int[local24];
 				this.aStringArray27 = new String[local24];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArray421[local31] = arg0.method22483(-118643075);
-					this.anIntArray422[local31] = arg0.method22483(-118643075);
-					this.anIntArray418[local31] = arg0.method22483(-118643075);
-					this.aStringArray27[local31] = arg0.method22509(1318692614);
+					this.anIntArray421[local31] = arg0.g4(-118643075);
+					this.anIntArray422[local31] = arg0.g4(-118643075);
+					this.anIntArray418[local31] = arg0.g4(-118643075);
+					this.aStringArray27[local31] = arg0.gjstr(1318692614);
 				}
 			} else if (arg1 == 19) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				this.anIntArray423 = new int[local24];
 				this.anIntArray424 = new int[local24];
 				this.anIntArray425 = new int[local24];
 				this.aStringArray26 = new String[local24];
 				for (local31 = 0; local31 < local24; local31++) {
-					this.anIntArray423[local31] = arg0.method22483(-118643075);
-					this.anIntArray424[local31] = arg0.method22483(-118643075);
-					this.anIntArray425[local31] = arg0.method22483(-118643075);
-					this.aStringArray26[local31] = arg0.method22509(440818040);
+					this.anIntArray423[local31] = arg0.g4(-118643075);
+					this.anIntArray424[local31] = arg0.g4(-118643075);
+					this.anIntArray425[local31] = arg0.g4(-118643075);
+					this.aStringArray26[local31] = arg0.gjstr(440818040);
 				}
 			} else if (arg1 == 249) {
-				local24 = arg0.method22465((short) 16384);
+				local24 = arg0.g1((short) 16384);
 				if (this.aClass16_31 == null) {
 					local31 = Class134_Sub2.method10207(local24, (byte) 90);
 					this.aClass16_31 = new Class16(local31);
 				}
 				for (local31 = 0; local31 < local24; local31++) {
-					@Pc(432) boolean local432 = arg0.method22465((short) 16384) == 1;
-					@Pc(436) int local436 = arg0.method22478((short) -8570);
+					@Pc(432) boolean local432 = arg0.g1((short) 16384) == 1;
+					@Pc(436) int local436 = arg0.g3((short) -8570);
 					@Pc(445) Class93 local445;
 					if (local432) {
-						local445 = new Class93_Sub15(arg0.method22509(2131800860));
+						local445 = new Class93_Sub15(arg0.gjstr(2131800860));
 					} else {
-						local445 = new Class93_Sub14(arg0.method22483(-118643075));
+						local445 = new Class93_Sub14(arg0.g4(-118643075));
 					}
 					this.aClass16_31.method220(local445, (long) local436);
 				}

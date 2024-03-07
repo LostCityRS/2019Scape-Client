@@ -37,8 +37,8 @@ public class Class163_Sub2 extends Class163 {
 			local41 = 1;
 		}
 		@Pc(54) Class93_Sub22 local54 = Class102.method2588(Class446.aClass446_47, client.aClass175_2.aClass24_2, (byte) 119);
-		local54.aClass93_Sub41_Sub2_1.method22406(local29 | local15 << 16, (byte) 20);
-		local54.aClass93_Sub41_Sub2_1.method22599(local11 | local41 << 15, (short) 255);
+		local54.aPacketBit_1.p4(local29 | local15 << 16, (byte) 20);
+		local54.aPacketBit_1.p2_alt3(local11 | local41 << 15, (short) 255);
 		client.aClass175_2.method24356(local54, -2063301593);
 	}
 
@@ -67,8 +67,8 @@ public class Class163_Sub2 extends Class163 {
 			local41 = 1;
 		}
 		@Pc(54) Class93_Sub22 local54 = Class102.method2588(Class446.aClass446_47, client.aClass175_2.aClass24_2, (byte) 35);
-		local54.aClass93_Sub41_Sub2_1.method22406(local29 | local15 << 16, (byte) 38);
-		local54.aClass93_Sub41_Sub2_1.method22599(local11 | local41 << 15, (short) 255);
+		local54.aPacketBit_1.p4(local29 | local15 << 16, (byte) 38);
+		local54.aPacketBit_1.p2_alt3(local11 | local41 << 15, (short) 255);
 		client.aClass175_2.method24356(local54, -1490890350);
 	}
 
@@ -97,8 +97,8 @@ public class Class163_Sub2 extends Class163 {
 			local41 = 1;
 		}
 		@Pc(54) Class93_Sub22 local54 = Class102.method2588(Class446.aClass446_47, client.aClass175_2.aClass24_2, (byte) 78);
-		local54.aClass93_Sub41_Sub2_1.method22406(local29 | local15 << 16, (byte) -2);
-		local54.aClass93_Sub41_Sub2_1.method22599(local11 | local41 << 15, (short) 255);
+		local54.aPacketBit_1.p4(local29 | local15 << 16, (byte) -2);
+		local54.aPacketBit_1.p2_alt3(local11 | local41 << 15, (short) 255);
 		client.aClass175_2.method24356(local54, -1921175465);
 	}
 
@@ -158,17 +158,17 @@ public class Class163_Sub2 extends Class163 {
 
 	@OriginalMember(owner = "client!alt", name = "w", descriptor = "(Lclient!alw;Lclient!akm;I)V", line = 46)
 	@Override
-	void method14916(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) Class93_Sub23 arg1, @OriginalArg(2) int arg2) {
+	void method14916(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class93_Sub23 arg1, @OriginalArg(2) int arg2) {
 	}
 
 	@OriginalMember(owner = "client!alt", name = "o", descriptor = "(Lclient!alw;Lclient!akm;)V", line = 46)
 	@Override
-	void method14923(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) Class93_Sub23 arg1) {
+	void method14923(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class93_Sub23 arg1) {
 	}
 
 	@OriginalMember(owner = "client!alt", name = "s", descriptor = "(Lclient!alw;Lclient!akm;)V", line = 46)
 	@Override
-	void method14924(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) Class93_Sub23 arg1) {
+	void method14924(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class93_Sub23 arg1) {
 	}
 
 	@OriginalMember(owner = "client!alt", name = "f", descriptor = "(I)I", line = 49)

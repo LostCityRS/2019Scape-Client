@@ -68,40 +68,40 @@ public class Class110_Sub11 extends Class110 {
 	}
 
 	@OriginalMember(owner = "client!agh", name = "<init>", descriptor = "(Lclient!alw;II)V", line = 30)
-	Class110_Sub11(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	Class110_Sub11(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		super(arg0);
 		@Pc(9) int local9;
 		if (arg1 == 0) {
-			local9 = arg0.method22483(-118643075);
+			local9 = arg0.g4(-118643075);
 			this.anInt933 = (local9 >>> 16) * -1303235529;
 			this.anInt934 = (local9 & 0xFFFF) * 1178864451;
 			this.anInt932 = -1889407193;
 		} else {
 			this.anInt933 = 1303235529;
 			this.anInt934 = -1178864451;
-			this.anInt932 = arg0.method22472(-1434290800) * 1889407193;
+			this.anInt932 = arg0.g2(-1434290800) * 1889407193;
 		}
 		if (arg2 == 0) {
-			local9 = arg0.method22483(-118643075);
+			local9 = arg0.g4(-118643075);
 			this.anInt937 = (local9 >>> 16) * -1867476009;
 			this.anInt929 = (local9 & 0xFFFF) * -2070099137;
 			this.anInt936 = 1747394353;
 		} else {
 			this.anInt937 = 1867476009;
 			this.anInt929 = 2070099137;
-			this.anInt936 = arg0.method22472(-1434290800) * -1747394353;
+			this.anInt936 = arg0.g2(-1434290800) * -1747394353;
 		}
 		if (arg1 == 0 && arg2 == 0) {
-			this.anInt931 = arg0.method22465((short) 16384) * -1096938529;
+			this.anInt931 = arg0.g1((short) 16384) * -1096938529;
 		} else {
 			this.anInt931 = 1096938529;
 		}
-		this.anInt938 = arg0.method22472(-1434290800) * 1126664009;
-		this.anInt935 = arg0.method22465((short) 16384) * 763612073;
-		this.anInt939 = arg0.method22465((short) 16384) * -1078377849;
-		this.anInt941 = arg0.method22478((short) 20112) * 695785621;
-		this.anInt942 = arg0.method22472(-1434290800) * 1398834857;
-		this.anInt943 = arg0.method22465((short) 16384) * -804916185;
+		this.anInt938 = arg0.g2(-1434290800) * 1126664009;
+		this.anInt935 = arg0.g1((short) 16384) * 763612073;
+		this.anInt939 = arg0.g1((short) 16384) * -1078377849;
+		this.anInt941 = arg0.g3((short) 20112) * 695785621;
+		this.anInt942 = arg0.g2(-1434290800) * 1398834857;
+		this.anInt943 = arg0.g1((short) 16384) * -804916185;
 	}
 
 	@OriginalMember(owner = "client!agh", name = "n", descriptor = "(I)V", line = 69)

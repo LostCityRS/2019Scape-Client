@@ -124,7 +124,7 @@ public class Class500 implements Interface75 {
 	}
 
 	@OriginalMember(owner = "client!qa", name = "w", descriptor = "(Lclient!alw;B)Ljava/lang/Object;", line = 78)
-	public Object method30163(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
+	public Object method30163(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 		return this.anInterface9_1.method30272(arg0, -1187347627);
 	}
 
@@ -138,8 +138,8 @@ public class Class500 implements Interface75 {
 	static final void method30165(@OriginalArg(0) Class681 arg0, @OriginalArg(1) short arg1) {
 		@Pc(13) String local13 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
 		@Pc(19) Class93_Sub22 local19 = Class102.method2588(Class446.aClass446_112, client.aClass175_2.aClass24_2, (byte) 71);
-		local19.aClass93_Sub41_Sub2_1.method22394(local13.length() + 1, (byte) -74);
-		local19.aClass93_Sub41_Sub2_1.method22431(local13, -288853937);
+		local19.aPacketBit_1.p1(local13.length() + 1, (byte) -74);
+		local19.aPacketBit_1.pjstr(local13, -288853937);
 		client.aClass175_2.method24356(local19, -1861149337);
 	}
 

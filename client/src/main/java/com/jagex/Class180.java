@@ -88,7 +88,7 @@ public class Class180 implements Interface19 {
 	}
 
 	@OriginalMember(owner = "client!bc", name = "e", descriptor = "(Lclient!abv;Lclient!alw;I)Lclient!abw;", line = 44)
-	public static Class48 method24519(@OriginalArg(0) Class47 arg0, @OriginalArg(1) Class93_Sub41 arg1, @OriginalArg(2) int arg2) {
+	public static Class48 method24519(@OriginalArg(0) Class47 arg0, @OriginalArg(1) Packet arg1, @OriginalArg(2) int arg2) {
 		return Class115.method8196(arg0, arg1, 2, 311651813);
 	}
 

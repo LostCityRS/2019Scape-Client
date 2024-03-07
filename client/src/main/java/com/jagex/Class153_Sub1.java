@@ -254,12 +254,12 @@ public class Class153_Sub1 extends Class153 implements MouseListener, MouseMotio
 			return;
 		}
 		@Pc(11) Class93_Sub22 local11 = Class102.method2588(Class446.aClass446_13, client.aClass175_1.aClass24_2, (byte) 32);
-		local11.aClass93_Sub41_Sub2_1.method22394(0, (byte) -57);
-		@Pc(22) int local22 = local11.aClass93_Sub41_Sub2_1.anInt3070 * 212851357;
-		local11.aClass93_Sub41_Sub2_1.method22431(arg0, 1388325526);
-		local11.aClass93_Sub41_Sub2_1.anInt3070 += -1529454093;
-		local11.aClass93_Sub41_Sub2_1.method22555(Class676.anIntArray516, local22, local11.aClass93_Sub41_Sub2_1.anInt3070 * 212851357, (byte) -53);
-		local11.aClass93_Sub41_Sub2_1.method22451(local11.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local22, (byte) 78);
+		local11.aPacketBit_1.p1(0, (byte) -57);
+		@Pc(22) int local22 = local11.aPacketBit_1.pos * 212851357;
+		local11.aPacketBit_1.pjstr(arg0, 1388325526);
+		local11.aPacketBit_1.pos += -1529454093;
+		local11.aPacketBit_1.tinyenc(Class676.anIntArray516, local22, local11.aPacketBit_1.pos * 212851357, (byte) -53);
+		local11.aPacketBit_1.psize1(local11.aPacketBit_1.pos * 212851357 - local22, (byte) 78);
 		client.aClass175_1.method24356(local11, -1787674322);
 		Class325.aClass715_1 = Class715.aClass715_3;
 	}

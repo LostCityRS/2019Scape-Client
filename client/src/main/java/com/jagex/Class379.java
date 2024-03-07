@@ -167,38 +167,38 @@ public class Class379 implements Interface12 {
 
 	@OriginalMember(owner = "client!kh", name = "e", descriptor = "(Lclient!alw;B)V", line = 36)
 	@Override
-	public void method36654(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
+	public void method36654(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 		this.method28085(arg0, false, -493230055);
 	}
 
 	@OriginalMember(owner = "client!kh", name = "m", descriptor = "(Lclient!alw;)V", line = 36)
 	@Override
-	public void method36655(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36655(@OriginalArg(0) Packet arg0) {
 		this.method28085(arg0, false, -493230055);
 	}
 
 	@OriginalMember(owner = "client!kh", name = "f", descriptor = "(Lclient!alw;)V", line = 36)
 	@Override
-	public void method36657(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36657(@OriginalArg(0) Packet arg0) {
 		this.method28085(arg0, false, -493230055);
 	}
 
 	@OriginalMember(owner = "client!kh", name = "k", descriptor = "(Lclient!alw;)V", line = 36)
 	@Override
-	public void method36656(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36656(@OriginalArg(0) Packet arg0) {
 		this.method28085(arg0, false, -493230055);
 	}
 
 	@OriginalMember(owner = "client!kh", name = "w", descriptor = "(Lclient!alw;)V", line = 36)
 	@Override
-	public void method36658(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36658(@OriginalArg(0) Packet arg0) {
 		this.method28085(arg0, false, -493230055);
 	}
 
 	@OriginalMember(owner = "client!kh", name = "c", descriptor = "(Lclient!alw;Z)V", line = 41)
-	void method28082(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) boolean arg1) {
+	void method28082(@OriginalArg(0) Packet arg0, @OriginalArg(1) boolean arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -207,9 +207,9 @@ public class Class379 implements Interface12 {
 	}
 
 	@OriginalMember(owner = "client!kh", name = "r", descriptor = "(Lclient!alw;Z)V", line = 41)
-	void method28083(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) boolean arg1) {
+	void method28083(@OriginalArg(0) Packet arg0, @OriginalArg(1) boolean arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -218,9 +218,9 @@ public class Class379 implements Interface12 {
 	}
 
 	@OriginalMember(owner = "client!kh", name = "v", descriptor = "(Lclient!alw;Z)V", line = 41)
-	void method28084(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) boolean arg1) {
+	void method28084(@OriginalArg(0) Packet arg0, @OriginalArg(1) boolean arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -229,9 +229,9 @@ public class Class379 implements Interface12 {
 	}
 
 	@OriginalMember(owner = "client!kh", name = "u", descriptor = "(Lclient!alw;ZI)V", line = 41)
-	void method28085(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2) {
+	void method28085(@OriginalArg(0) Packet arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -250,22 +250,22 @@ public class Class379 implements Interface12 {
 	}
 
 	@OriginalMember(owner = "client!kh", name = "o", descriptor = "(Lclient!alw;IZ)V", line = 50)
-	void method28086(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2) {
+	void method28086(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2) {
 		@Pc(6) Class387 local6 = (Class387) Class107.method18116(Class224.method25590(388455393), arg1, -1915563430);
 		switch(local6.anInt4650 * 1505518425) {
 			case 7:
-				this.anInt4619 = arg0.method22465((short) 16384) * 633542449;
-				this.anInt4621 = arg0.method22465((short) 16384) * -942339801;
+				this.anInt4619 = arg0.g1((short) 16384) * 633542449;
+				this.anInt4621 = arg0.g1((short) 16384) * -942339801;
 			case 9:
 			default:
 				break;
 			case 14:
-				@Pc(32) int local32 = arg0.method22465((short) 16384);
+				@Pc(32) int local32 = arg0.g1((short) 16384);
 				this.aClass138_73 = (Class138) Class107.method18116(Class138.method11522(910692260), local32, -1915563430);
 				if (this.aClass138_73 == null) {
 					throw new IllegalStateException("");
 				}
-				this.anInt4620 = arg0.method22542(-1512236357) * 1639192877;
+				this.anInt4620 = arg0.gSmart2or4null(-1512236357) * 1639192877;
 				if (this.aClass127_1 != null) {
 					@Pc(66) Interface11 local66 = (Interface11) this.aClass127_1.aMap16.get(this.aClass138_73);
 					if (local66 != null) {
@@ -278,22 +278,22 @@ public class Class379 implements Interface12 {
 	}
 
 	@OriginalMember(owner = "client!kh", name = "z", descriptor = "(Lclient!alw;IZI)V", line = 50)
-	void method28087(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) int arg3) {
+	void method28087(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) int arg3) {
 		@Pc(6) Class387 local6 = (Class387) Class107.method18116(Class224.method25590(50615375), arg1, -1915563430);
 		switch(local6.anInt4650 * 1505518425) {
 			case 7:
-				this.anInt4619 = arg0.method22465((short) 16384) * 633542449;
-				this.anInt4621 = arg0.method22465((short) 16384) * -942339801;
+				this.anInt4619 = arg0.g1((short) 16384) * 633542449;
+				this.anInt4621 = arg0.g1((short) 16384) * -942339801;
 			case 9:
 			default:
 				break;
 			case 14:
-				@Pc(32) int local32 = arg0.method22465((short) 16384);
+				@Pc(32) int local32 = arg0.g1((short) 16384);
 				this.aClass138_73 = (Class138) Class107.method18116(Class138.method11522(625044942), local32, -1915563430);
 				if (this.aClass138_73 == null) {
 					throw new IllegalStateException("");
 				}
-				this.anInt4620 = arg0.method22542(-865376851) * 1639192877;
+				this.anInt4620 = arg0.gSmart2or4null(-865376851) * 1639192877;
 				if (this.aClass127_1 != null) {
 					@Pc(66) Interface11 local66 = (Interface11) this.aClass127_1.aMap16.get(this.aClass138_73);
 					if (local66 != null) {

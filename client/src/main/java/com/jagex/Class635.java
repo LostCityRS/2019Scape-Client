@@ -287,7 +287,7 @@ public class Class635 implements Interface70 {
 
 	@OriginalMember(owner = "client!we", name = "p", descriptor = "(Lclient!alw;B)V", line = 85)
 	@Override
-	public void method32533(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
+	public void method32533(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 		if (this.aClass240_90 == null) {
 			return;
 		}
@@ -302,7 +302,7 @@ public class Class635 implements Interface70 {
 			@Pc(28) List local28 = this.method32437((short) 17626);
 			if (local28 != null) {
 				local28.add(arg0);
-				this.anInt5727 += arg0.aByteArray58.length * -165190447;
+				this.anInt5727 += arg0.data.length * -165190447;
 				this.method32436(local28, this.anInt5727 * -635997135, -1054317847);
 			}
 		}
@@ -310,7 +310,7 @@ public class Class635 implements Interface70 {
 
 	@OriginalMember(owner = "client!we", name = "at", descriptor = "(Lclient!alw;)V", line = 85)
 	@Override
-	public void method32555(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method32555(@OriginalArg(0) Packet arg0) {
 		if (this.aClass240_90 == null) {
 			return;
 		}
@@ -325,7 +325,7 @@ public class Class635 implements Interface70 {
 			@Pc(28) List local28 = this.method32437((short) 5618);
 			if (local28 != null) {
 				local28.add(arg0);
-				this.anInt5727 += arg0.aByteArray58.length * -165190447;
+				this.anInt5727 += arg0.data.length * -165190447;
 				this.method32436(local28, this.anInt5727 * -635997135, -1054317847);
 			}
 		}
@@ -333,11 +333,11 @@ public class Class635 implements Interface70 {
 
 	@OriginalMember(owner = "client!we", name = "d", descriptor = "(II)Lclient!alw;", line = 103)
 	@Override
-	public Class93_Sub41 method32534(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
+	public Packet method32534(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		if (this.aClass240_90 == null) {
 			return null;
 		}
-		@Pc(7) Class93_Sub41 local7 = null;
+		@Pc(7) Packet local7 = null;
 		if (this.anInterface68_1 != null) {
 			this.anInterface68_1.method26238(this, 899549436);
 		}
@@ -345,7 +345,7 @@ public class Class635 implements Interface70 {
 		synchronized (this.aClass240_90) {
 			@Pc(24) List local24 = this.method32437((short) 32662);
 			if (local24.size() > arg0) {
-				local7 = (Class93_Sub41) local24.get(arg0);
+				local7 = (Packet) local24.get(arg0);
 			}
 			return local7;
 		}
@@ -353,11 +353,11 @@ public class Class635 implements Interface70 {
 
 	@OriginalMember(owner = "client!we", name = "am", descriptor = "(I)Lclient!alw;", line = 103)
 	@Override
-	public Class93_Sub41 method32557(@OriginalArg(0) int arg0) {
+	public Packet method32557(@OriginalArg(0) int arg0) {
 		if (this.aClass240_90 == null) {
 			return null;
 		}
-		@Pc(7) Class93_Sub41 local7 = null;
+		@Pc(7) Packet local7 = null;
 		if (this.anInterface68_1 != null) {
 			this.anInterface68_1.method26238(this, -2071981878);
 		}
@@ -365,7 +365,7 @@ public class Class635 implements Interface70 {
 		synchronized (this.aClass240_90) {
 			@Pc(24) List local24 = this.method32437((short) 6573);
 			if (local24.size() > arg0) {
-				local7 = (Class93_Sub41) local24.get(arg0);
+				local7 = (Packet) local24.get(arg0);
 			}
 			return local7;
 		}
@@ -373,11 +373,11 @@ public class Class635 implements Interface70 {
 
 	@OriginalMember(owner = "client!we", name = "ar", descriptor = "(I)Lclient!alw;", line = 103)
 	@Override
-	public Class93_Sub41 method32528(@OriginalArg(0) int arg0) {
+	public Packet method32528(@OriginalArg(0) int arg0) {
 		if (this.aClass240_90 == null) {
 			return null;
 		}
-		@Pc(7) Class93_Sub41 local7 = null;
+		@Pc(7) Packet local7 = null;
 		if (this.anInterface68_1 != null) {
 			this.anInterface68_1.method26238(this, 616551172);
 		}
@@ -385,7 +385,7 @@ public class Class635 implements Interface70 {
 		synchronized (this.aClass240_90) {
 			@Pc(24) List local24 = this.method32437((short) 3000);
 			if (local24.size() > arg0) {
-				local7 = (Class93_Sub41) local24.get(arg0);
+				local7 = (Packet) local24.get(arg0);
 			}
 			return local7;
 		}
@@ -393,11 +393,11 @@ public class Class635 implements Interface70 {
 
 	@OriginalMember(owner = "client!we", name = "ad", descriptor = "(I)Lclient!alw;", line = 103)
 	@Override
-	public Class93_Sub41 method32569(@OriginalArg(0) int arg0) {
+	public Packet method32569(@OriginalArg(0) int arg0) {
 		if (this.aClass240_90 == null) {
 			return null;
 		}
-		@Pc(7) Class93_Sub41 local7 = null;
+		@Pc(7) Packet local7 = null;
 		if (this.anInterface68_1 != null) {
 			this.anInterface68_1.method26238(this, -1642349166);
 		}
@@ -405,7 +405,7 @@ public class Class635 implements Interface70 {
 		synchronized (this.aClass240_90) {
 			@Pc(24) List local24 = this.method32437((short) 30064);
 			if (local24.size() > arg0) {
-				local7 = (Class93_Sub41) local24.get(arg0);
+				local7 = (Packet) local24.get(arg0);
 			}
 			return local7;
 		}
@@ -413,11 +413,11 @@ public class Class635 implements Interface70 {
 
 	@OriginalMember(owner = "client!we", name = "au", descriptor = "(I)Lclient!alw;", line = 103)
 	@Override
-	public Class93_Sub41 method32571(@OriginalArg(0) int arg0) {
+	public Packet method32571(@OriginalArg(0) int arg0) {
 		if (this.aClass240_90 == null) {
 			return null;
 		}
-		@Pc(7) Class93_Sub41 local7 = null;
+		@Pc(7) Packet local7 = null;
 		if (this.anInterface68_1 != null) {
 			this.anInterface68_1.method26238(this, -1860385616);
 		}
@@ -425,7 +425,7 @@ public class Class635 implements Interface70 {
 		synchronized (this.aClass240_90) {
 			@Pc(24) List local24 = this.method32437((short) 18943);
 			if (local24.size() > arg0) {
-				local7 = (Class93_Sub41) local24.get(arg0);
+				local7 = (Packet) local24.get(arg0);
 			}
 			return local7;
 		}

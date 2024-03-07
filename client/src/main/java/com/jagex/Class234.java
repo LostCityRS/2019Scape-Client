@@ -131,8 +131,8 @@ public class Class234 {
 		@Pc(48) boolean local48 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 1] == 1;
 		@Pc(63) boolean local63 = arg0.anIntArray519[arg0.anInt5891 * -1497248091 + 2] == 1;
 		@Pc(69) Class93_Sub22 local69 = Class102.method2588(Class446.aClass446_80, client.aClass175_1.aClass24_2, (byte) 116);
-		local69.aClass93_Sub41_Sub2_1.method22395(Class46.method895(local20, -1764169458) + 1, 2132026922);
-		local69.aClass93_Sub41_Sub2_1.method22431(local20, 1458001794);
+		local69.aPacketBit_1.p2(Packet.pjstrlen(local20, -1764169458) + 1, 2132026922);
+		local69.aPacketBit_1.pjstr(local20, 1458001794);
 		@Pc(85) int local85 = 0;
 		if (local33) {
 			local85 |= 0x1;
@@ -143,7 +143,7 @@ public class Class234 {
 		if (local63) {
 			local85 |= 0x4;
 		}
-		local69.aClass93_Sub41_Sub2_1.method22394(local85, (byte) -36);
+		local69.aPacketBit_1.p1(local85, (byte) -36);
 		client.aClass175_1.method24356(local69, -1987932025);
 	}
 

@@ -424,9 +424,9 @@ public class Class663 {
 		}
 		@Pc(24) Class175 local24 = Class330.method27371(-1591794019);
 		@Pc(30) Class93_Sub22 local30 = Class102.method2588(Class446.aClass446_67, local24.aClass24_2, (byte) 125);
-		local30.aClass93_Sub41_Sub2_1.method22394(Class46.method895(local16.aString191, -2097123155) + 2, (byte) -85);
-		local30.aClass93_Sub41_Sub2_1.method22395(arg0, 2138344338);
-		local30.aClass93_Sub41_Sub2_1.method22431(local16.aString191, -2003140695);
+		local30.aPacketBit_1.p1(Packet.pjstrlen(local16.aString191, -2097123155) + 2, (byte) -85);
+		local30.aPacketBit_1.p2(arg0, 2138344338);
+		local30.aPacketBit_1.pjstr(local16.aString191, -2003140695);
 		local24.method24356(local30, -1777179793);
 	}
 }

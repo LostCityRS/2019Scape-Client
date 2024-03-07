@@ -22,25 +22,25 @@ public class Class86 {
 	}
 
 	@OriginalMember(owner = "client!adn", name = "e", descriptor = "(Lclient!alw;I)V", line = 24)
-	void method1490(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		this.anInterface32Array1 = new Interface32[arg0.method22465((short) 16384)];
+	void method1490(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		this.anInterface32Array1 = new Interface32[arg0.g1((short) 16384)];
 		@Pc(8) Class388[] local8 = Class352.method27653(392010971);
 		for (@Pc(10) int local10 = 0; local10 < this.anInterface32Array1.length; local10++) {
-			this.anInterface32Array1[local10] = this.method1493(arg0, local8[arg0.method22465((short) 16384)], 98630545);
+			this.anInterface32Array1[local10] = this.method1493(arg0, local8[arg0.g1((short) 16384)], 98630545);
 		}
 	}
 
 	@OriginalMember(owner = "client!adn", name = "m", descriptor = "(Lclient!alw;)V", line = 24)
-	void method1491(@OriginalArg(0) Class93_Sub41 arg0) {
-		this.anInterface32Array1 = new Interface32[arg0.method22465((short) 16384)];
+	void method1491(@OriginalArg(0) Packet arg0) {
+		this.anInterface32Array1 = new Interface32[arg0.g1((short) 16384)];
 		@Pc(8) Class388[] local8 = Class352.method27653(1352072445);
 		for (@Pc(10) int local10 = 0; local10 < this.anInterface32Array1.length; local10++) {
-			this.anInterface32Array1[local10] = this.method1493(arg0, local8[arg0.method22465((short) 16384)], 98630545);
+			this.anInterface32Array1[local10] = this.method1493(arg0, local8[arg0.g1((short) 16384)], 98630545);
 		}
 	}
 
 	@OriginalMember(owner = "client!adn", name = "k", descriptor = "(Lclient!alw;Lclient!kt;)Lclient!kk;", line = 32)
-	Interface32 method1492(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) Class388 arg1) {
+	Interface32 method1492(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class388 arg1) {
 		if (Class388.aClass388_4 == arg1) {
 			return Class148_Sub1.method11759(arg0, -1650036519);
 		} else if (arg1 == Class388.aClass388_2) {
@@ -69,7 +69,7 @@ public class Class86 {
 	}
 
 	@OriginalMember(owner = "client!adn", name = "n", descriptor = "(Lclient!alw;Lclient!kt;I)Lclient!kk;", line = 32)
-	Interface32 method1493(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) Class388 arg1, @OriginalArg(2) int arg2) {
+	Interface32 method1493(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class388 arg1, @OriginalArg(2) int arg2) {
 		if (Class388.aClass388_4 == arg1) {
 			return Class148_Sub1.method11759(arg0, -1543751312);
 		} else if (arg1 == Class388.aClass388_2) {

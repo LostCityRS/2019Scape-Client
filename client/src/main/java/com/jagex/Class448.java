@@ -89,11 +89,11 @@ public class Class448 {
 	}
 
 	@OriginalMember(owner = "client!nt", name = "k", descriptor = "(Lclient!alw;I)Lclient!vy;", line = 27)
-	public static Class628 method28920(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) int local3 = arg0.method22465((short) 16384);
+	public static Class628 method28920(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) int local3 = arg0.g1((short) 16384);
 		@Pc(6) int[] local6 = new int[local3];
 		for (@Pc(8) int local8 = 0; local8 < local3; local8++) {
-			local6[local8] = arg0.method22465((short) 16384);
+			local6[local8] = arg0.g1((short) 16384);
 		}
 		return new Class628(local6);
 	}

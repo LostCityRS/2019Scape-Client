@@ -14,10 +14,10 @@ public class Class686 implements Interface20 {
 	Class386 aClass386_4;
 
 	@OriginalMember(owner = "client!yl", name = "k", descriptor = "(Lclient!alw;IB)V", line = 125)
-	public static void method33484(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
+	public static void method33484(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
 		@Pc(3) Class93_Sub37 local3 = new Class93_Sub37();
-		local3.anInt1959 = arg0.method22465((short) 16384) * 1817313377;
-		local3.anInt1958 = arg0.method22483(-118643075) * -1260131623;
+		local3.anInt1959 = arg0.g1((short) 16384) * 1817313377;
+		local3.anInt1958 = arg0.g4(-118643075) * -1260131623;
 		local3.anIntArray194 = new int[local3.anInt1959 * -1741642847];
 		local3.anIntArray195 = new int[local3.anInt1959 * -1741642847];
 		local3.aFieldArray1 = new Field[local3.anInt1959 * -1741642847];
@@ -26,16 +26,16 @@ public class Class686 implements Interface20 {
 		local3.aByteArrayArrayArray11 = new byte[local3.anInt1959 * -1741642847][][];
 		for (@Pc(61) int local61 = 0; local61 < local3.anInt1959 * -1741642847; local61++) {
 			try {
-				@Pc(71) int local71 = arg0.method22465((short) 16384);
+				@Pc(71) int local71 = arg0.g1((short) 16384);
 				@Pc(84) String local84;
 				@Pc(88) String local88;
 				@Pc(90) int local90;
 				if (local71 == 0 || local71 == 1 || local71 == 2) {
-					local84 = arg0.method22509(-95152599);
-					local88 = arg0.method22509(151347099);
+					local84 = arg0.gjstr(-95152599);
+					local88 = arg0.gjstr(151347099);
 					local90 = 0;
 					if (local71 == 1) {
-						local90 = arg0.method22483(-118643075);
+						local90 = arg0.g4(-118643075);
 					}
 					local3.anIntArray194[local61] = local71;
 					local3.anIntArray196[local61] = local90;
@@ -44,21 +44,21 @@ public class Class686 implements Interface20 {
 					}
 					local3.aFieldArray1[local61] = Class39.method770(local84, -622366893).getDeclaredField(local88);
 				} else if (local71 == 3 || local71 == 4) {
-					local84 = arg0.method22509(1923778267);
-					local88 = arg0.method22509(1959147366);
-					local90 = arg0.method22465((short) 16384);
+					local84 = arg0.gjstr(1923778267);
+					local88 = arg0.gjstr(1959147366);
+					local90 = arg0.g1((short) 16384);
 					@Pc(147) String[] local147 = new String[local90];
 					for (@Pc(149) int local149 = 0; local149 < local90; local149++) {
-						local147[local149] = arg0.method22509(1304990363);
+						local147[local149] = arg0.gjstr(1304990363);
 					}
-					@Pc(164) String local164 = arg0.method22509(-79688576);
+					@Pc(164) String local164 = arg0.gjstr(-79688576);
 					@Pc(167) byte[][] local167 = new byte[local90][];
 					@Pc(179) int local179;
 					if (local71 == 3) {
 						for (@Pc(172) int local172 = 0; local172 < local90; local172++) {
-							local179 = arg0.method22483(-118643075);
+							local179 = arg0.g4(-118643075);
 							local167[local172] = new byte[local179];
-							arg0.method22518(local167[local172], 0, local179, (short) 27757);
+							arg0.gdata(local167[local172], 0, local179, (short) 27757);
 						}
 					}
 					local3.anIntArray194[local61] = local71;

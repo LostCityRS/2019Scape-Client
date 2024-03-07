@@ -44,8 +44,8 @@ public class Class76 {
 	}
 
 	@OriginalMember(owner = "client!ada", name = "p", descriptor = "(Lclient!alw;[Lclient!qw;)[Ljava/lang/Object;", line = 20)
-	public static Object[] method1279(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) Class519[] arg1) {
-		@Pc(3) int local3 = arg0.method22528((byte) -75);
+	public static Object[] method1279(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class519[] arg1) {
+		@Pc(3) int local3 = arg0.gSmart1or2((byte) -75);
 		@Pc(9) Object[] local9 = new Object[local3 * arg1.length];
 		for (@Pc(11) int local11 = 0; local11 < local3; local11++) {
 			for (@Pc(16) int local16 = 0; local16 < arg1.length; local16++) {
@@ -57,8 +57,8 @@ public class Class76 {
 	}
 
 	@OriginalMember(owner = "client!ada", name = "d", descriptor = "(Lclient!alw;[Lclient!qw;)[Ljava/lang/Object;", line = 20)
-	public static Object[] method1280(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) Class519[] arg1) {
-		@Pc(3) int local3 = arg0.method22528((byte) -57);
+	public static Object[] method1280(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class519[] arg1) {
+		@Pc(3) int local3 = arg0.gSmart1or2((byte) -57);
 		@Pc(9) Object[] local9 = new Object[local3 * arg1.length];
 		for (@Pc(11) int local11 = 0; local11 < local3; local11++) {
 			for (@Pc(16) int local16 = 0; local16 < arg1.length; local16++) {
@@ -70,8 +70,8 @@ public class Class76 {
 	}
 
 	@OriginalMember(owner = "client!ada", name = "c", descriptor = "(Lclient!alw;[Lclient!qw;)[Ljava/lang/Object;", line = 20)
-	public static Object[] method1281(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) Class519[] arg1) {
-		@Pc(3) int local3 = arg0.method22528((byte) -109);
+	public static Object[] method1281(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class519[] arg1) {
+		@Pc(3) int local3 = arg0.gSmart1or2((byte) -109);
 		@Pc(9) Object[] local9 = new Object[local3 * arg1.length];
 		for (@Pc(11) int local11 = 0; local11 < local3; local11++) {
 			for (@Pc(16) int local16 = 0; local16 < arg1.length; local16++) {
@@ -83,8 +83,8 @@ public class Class76 {
 	}
 
 	@OriginalMember(owner = "client!ada", name = "r", descriptor = "(Lclient!alw;[Lclient!qw;)[Ljava/lang/Object;", line = 20)
-	public static Object[] method1282(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) Class519[] arg1) {
-		@Pc(3) int local3 = arg0.method22528((byte) -36);
+	public static Object[] method1282(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class519[] arg1) {
+		@Pc(3) int local3 = arg0.gSmart1or2((byte) -36);
 		@Pc(9) Object[] local9 = new Object[local3 * arg1.length];
 		for (@Pc(11) int local11 = 0; local11 < local3; local11++) {
 			for (@Pc(16) int local16 = 0; local16 < arg1.length; local16++) {

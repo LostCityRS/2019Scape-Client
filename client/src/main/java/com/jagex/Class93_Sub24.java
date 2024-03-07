@@ -384,7 +384,7 @@ public class Class93_Sub24 extends Class93 {
 	void method13775(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1) {
 		@Pc(1) int local1 = 0;
 		@Pc(5) Class93_Sub41_Sub1 local5 = this.aClass104_Sub1_30.aClass93_Sub41_Sub1_1;
-		local5.anInt3070 = 0;
+		local5.pos = 0;
 		@Pc(27) short[] local27;
 		@Pc(21) int local21;
 		@Pc(32) int local32;
@@ -403,11 +403,11 @@ public class Class93_Sub24 extends Class93 {
 						if ((local32 & 0x1 << local38++) == 0) {
 							local40 += 3;
 						} else {
-							local5.method22395(local27[local40++] & 0xFFFF, 2142644047);
+							local5.p2(local27[local40++] & 0xFFFF, 2142644047);
 							local1++;
-							local5.method22395(local27[local40++] & 0xFFFF, 2146100159);
+							local5.p2(local27[local40++] & 0xFFFF, 2146100159);
 							local1++;
-							local5.method22395(local27[local40++] & 0xFFFF, 2138598858);
+							local5.p2(local27[local40++] & 0xFFFF, 2138598858);
 							local1++;
 						}
 					}
@@ -425,11 +425,11 @@ public class Class93_Sub24 extends Class93 {
 						if ((local32 & 0x1 << local38++) == 0) {
 							local40 += 3;
 						} else {
-							local5.method22398(local27[local40++] & 0xFFFF, -1436042249);
+							local5.ip2(local27[local40++] & 0xFFFF, -1436042249);
 							local1++;
-							local5.method22398(local27[local40++] & 0xFFFF, -1572075607);
+							local5.ip2(local27[local40++] & 0xFFFF, -1572075607);
 							local1++;
-							local5.method22398(local27[local40++] & 0xFFFF, -1950477983);
+							local5.ip2(local27[local40++] & 0xFFFF, -1950477983);
 							local1++;
 						}
 					}
@@ -439,7 +439,7 @@ public class Class93_Sub24 extends Class93 {
 		if (local1 <= 0) {
 			return;
 		}
-		this.aClass101_Sub1_1.method2561(5123, local5.aByteArray58, local5.anInt3070 * 212851357);
+		this.aClass101_Sub1_1.method2561(5123, local5.data, local5.pos * 212851357);
 		this.aClass104_Sub1_30.method3855(this.aClass99_Sub2_2.aClass193_1, this.aClass99_Sub2_2.aClass193_4, this.aClass193_13, this.aClass99_Sub2_2.aClass193_3);
 		this.aClass104_Sub1_30.method3880(this.anInt1580, (this.aClass99_Sub2_2.anInt371 & 0x7) != 0, (this.aClass99_Sub2_2.anInt371 & 0x8) != 0);
 		if (this.aClass104_Sub1_30.aBoolean72) {
@@ -460,7 +460,7 @@ public class Class93_Sub24 extends Class93 {
 	void method13776(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1) {
 		@Pc(1) int local1 = 0;
 		@Pc(5) Class93_Sub41_Sub1 local5 = this.aClass104_Sub1_30.aClass93_Sub41_Sub1_1;
-		local5.anInt3070 = 0;
+		local5.pos = 0;
 		@Pc(27) short[] local27;
 		@Pc(21) int local21;
 		@Pc(32) int local32;
@@ -479,11 +479,11 @@ public class Class93_Sub24 extends Class93 {
 						if ((local32 & 0x1 << local38++) == 0) {
 							local40 += 3;
 						} else {
-							local5.method22395(local27[local40++] & 0xFFFF, 2141581615);
+							local5.p2(local27[local40++] & 0xFFFF, 2141581615);
 							local1++;
-							local5.method22395(local27[local40++] & 0xFFFF, 2142360938);
+							local5.p2(local27[local40++] & 0xFFFF, 2142360938);
 							local1++;
-							local5.method22395(local27[local40++] & 0xFFFF, 2134228941);
+							local5.p2(local27[local40++] & 0xFFFF, 2134228941);
 							local1++;
 						}
 					}
@@ -501,11 +501,11 @@ public class Class93_Sub24 extends Class93 {
 						if ((local32 & 0x1 << local38++) == 0) {
 							local40 += 3;
 						} else {
-							local5.method22398(local27[local40++] & 0xFFFF, -1709502073);
+							local5.ip2(local27[local40++] & 0xFFFF, -1709502073);
 							local1++;
-							local5.method22398(local27[local40++] & 0xFFFF, -1911567);
+							local5.ip2(local27[local40++] & 0xFFFF, -1911567);
 							local1++;
-							local5.method22398(local27[local40++] & 0xFFFF, -1021260162);
+							local5.ip2(local27[local40++] & 0xFFFF, -1021260162);
 							local1++;
 						}
 					}
@@ -515,7 +515,7 @@ public class Class93_Sub24 extends Class93 {
 		if (local1 <= 0) {
 			return;
 		}
-		this.aClass101_Sub1_1.method2561(5123, local5.aByteArray58, local5.anInt3070 * 212851357);
+		this.aClass101_Sub1_1.method2561(5123, local5.data, local5.pos * 212851357);
 		this.aClass104_Sub1_30.method3855(this.aClass99_Sub2_2.aClass193_1, this.aClass99_Sub2_2.aClass193_4, this.aClass193_13, this.aClass99_Sub2_2.aClass193_3);
 		this.aClass104_Sub1_30.method3880(this.anInt1580, (this.aClass99_Sub2_2.anInt371 & 0x7) != 0, (this.aClass99_Sub2_2.anInt371 & 0x8) != 0);
 		if (this.aClass104_Sub1_30.aBoolean72) {
@@ -536,7 +536,7 @@ public class Class93_Sub24 extends Class93 {
 	void method13777(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1) {
 		@Pc(1) int local1 = 0;
 		@Pc(5) Class93_Sub41_Sub1 local5 = this.aClass104_Sub1_30.aClass93_Sub41_Sub1_1;
-		local5.anInt3070 = 0;
+		local5.pos = 0;
 		@Pc(27) short[] local27;
 		@Pc(21) int local21;
 		@Pc(32) int local32;
@@ -555,11 +555,11 @@ public class Class93_Sub24 extends Class93 {
 						if ((local32 & 0x1 << local38++) == 0) {
 							local40 += 3;
 						} else {
-							local5.method22395(local27[local40++] & 0xFFFF, 2129126149);
+							local5.p2(local27[local40++] & 0xFFFF, 2129126149);
 							local1++;
-							local5.method22395(local27[local40++] & 0xFFFF, 2143558021);
+							local5.p2(local27[local40++] & 0xFFFF, 2143558021);
 							local1++;
-							local5.method22395(local27[local40++] & 0xFFFF, 2145323368);
+							local5.p2(local27[local40++] & 0xFFFF, 2145323368);
 							local1++;
 						}
 					}
@@ -577,11 +577,11 @@ public class Class93_Sub24 extends Class93 {
 						if ((local32 & 0x1 << local38++) == 0) {
 							local40 += 3;
 						} else {
-							local5.method22398(local27[local40++] & 0xFFFF, -1179302735);
+							local5.ip2(local27[local40++] & 0xFFFF, -1179302735);
 							local1++;
-							local5.method22398(local27[local40++] & 0xFFFF, -755621991);
+							local5.ip2(local27[local40++] & 0xFFFF, -755621991);
 							local1++;
-							local5.method22398(local27[local40++] & 0xFFFF, -913568354);
+							local5.ip2(local27[local40++] & 0xFFFF, -913568354);
 							local1++;
 						}
 					}
@@ -591,7 +591,7 @@ public class Class93_Sub24 extends Class93 {
 		if (local1 <= 0) {
 			return;
 		}
-		this.aClass101_Sub1_1.method2561(5123, local5.aByteArray58, local5.anInt3070 * 212851357);
+		this.aClass101_Sub1_1.method2561(5123, local5.data, local5.pos * 212851357);
 		this.aClass104_Sub1_30.method3855(this.aClass99_Sub2_2.aClass193_1, this.aClass99_Sub2_2.aClass193_4, this.aClass193_13, this.aClass99_Sub2_2.aClass193_3);
 		this.aClass104_Sub1_30.method3880(this.anInt1580, (this.aClass99_Sub2_2.anInt371 & 0x7) != 0, (this.aClass99_Sub2_2.anInt371 & 0x8) != 0);
 		if (this.aClass104_Sub1_30.aBoolean72) {
@@ -612,7 +612,7 @@ public class Class93_Sub24 extends Class93 {
 	void method13778(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1) {
 		@Pc(1) int local1 = 0;
 		@Pc(5) Class93_Sub41_Sub1 local5 = this.aClass104_Sub1_30.aClass93_Sub41_Sub1_1;
-		local5.anInt3070 = 0;
+		local5.pos = 0;
 		@Pc(27) short[] local27;
 		@Pc(21) int local21;
 		@Pc(32) int local32;
@@ -631,11 +631,11 @@ public class Class93_Sub24 extends Class93 {
 						if ((local32 & 0x1 << local38++) == 0) {
 							local40 += 3;
 						} else {
-							local5.method22395(local27[local40++] & 0xFFFF, 2128652295);
+							local5.p2(local27[local40++] & 0xFFFF, 2128652295);
 							local1++;
-							local5.method22395(local27[local40++] & 0xFFFF, 2144062975);
+							local5.p2(local27[local40++] & 0xFFFF, 2144062975);
 							local1++;
-							local5.method22395(local27[local40++] & 0xFFFF, 2144122771);
+							local5.p2(local27[local40++] & 0xFFFF, 2144122771);
 							local1++;
 						}
 					}
@@ -653,11 +653,11 @@ public class Class93_Sub24 extends Class93 {
 						if ((local32 & 0x1 << local38++) == 0) {
 							local40 += 3;
 						} else {
-							local5.method22398(local27[local40++] & 0xFFFF, -784761081);
+							local5.ip2(local27[local40++] & 0xFFFF, -784761081);
 							local1++;
-							local5.method22398(local27[local40++] & 0xFFFF, -1977702818);
+							local5.ip2(local27[local40++] & 0xFFFF, -1977702818);
 							local1++;
-							local5.method22398(local27[local40++] & 0xFFFF, -2122330677);
+							local5.ip2(local27[local40++] & 0xFFFF, -2122330677);
 							local1++;
 						}
 					}
@@ -667,7 +667,7 @@ public class Class93_Sub24 extends Class93 {
 		if (local1 <= 0) {
 			return;
 		}
-		this.aClass101_Sub1_1.method2561(5123, local5.aByteArray58, local5.anInt3070 * 212851357);
+		this.aClass101_Sub1_1.method2561(5123, local5.data, local5.pos * 212851357);
 		this.aClass104_Sub1_30.method3855(this.aClass99_Sub2_2.aClass193_1, this.aClass99_Sub2_2.aClass193_4, this.aClass193_13, this.aClass99_Sub2_2.aClass193_3);
 		this.aClass104_Sub1_30.method3880(this.anInt1580, (this.aClass99_Sub2_2.anInt371 & 0x7) != 0, (this.aClass99_Sub2_2.anInt371 & 0x8) != 0);
 		if (this.aClass104_Sub1_30.aBoolean72) {

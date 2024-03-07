@@ -62,9 +62,9 @@ public class Class93_Sub1_Sub10 extends Class93_Sub1 {
 		@Pc(93) int local93;
 		for (@Pc(71) int local71 = 0; local71 < this.aByteArrayArray13.length; local71++) {
 			@Pc(81) byte[] local81 = this.aByteArrayArray13[local71];
-			@Pc(86) Class93_Sub41 local86 = new Class93_Sub41(local81);
-			local86.anInt3070 = -1445626955;
-			local93 = local86.method22472(-1434290800);
+			@Pc(86) Packet local86 = new Packet(local81);
+			local86.pos = -1445626955;
+			local93 = local86.g2(-1434290800);
 			@Pc(96) Class497 local96 = aClass497_95;
 			synchronized (aClass497_95) {
 				local69 &= aClass497_95.method30071(local93, -512225963);
@@ -83,9 +83,9 @@ public class Class93_Sub1_Sub10 extends Class93_Sub1 {
 		}
 		for (@Pc(156) int local156 = 0; local156 < local146.length; local156++) {
 			@Pc(165) byte[] local165 = this.aByteArrayArray13[local156];
-			@Pc(170) Class93_Sub41 local170 = new Class93_Sub41(local165);
-			local170.anInt3070 = -1445626955;
-			@Pc(177) int local177 = local170.method22472(-1434290800);
+			@Pc(170) Packet local170 = new Packet(local165);
+			local170.pos = -1445626955;
+			@Pc(177) int local177 = local170.g2(-1434290800);
 			@Pc(179) Class93_Sub25 local179 = null;
 			for (@Pc(184) Class93_Sub25 local184 = (Class93_Sub25) local122.method428((byte) 111); local184 != null; local184 = (Class93_Sub25) local122.method442(354409596)) {
 				if (local184.anInt1589 * -1647955937 == local177) {
@@ -128,9 +128,9 @@ public class Class93_Sub1_Sub10 extends Class93_Sub1 {
 		@Pc(93) int local93;
 		for (@Pc(71) int local71 = 0; local71 < this.aByteArrayArray13.length; local71++) {
 			@Pc(81) byte[] local81 = this.aByteArrayArray13[local71];
-			@Pc(86) Class93_Sub41 local86 = new Class93_Sub41(local81);
-			local86.anInt3070 = -1445626955;
-			local93 = local86.method22472(-1434290800);
+			@Pc(86) Packet local86 = new Packet(local81);
+			local86.pos = -1445626955;
+			local93 = local86.g2(-1434290800);
 			@Pc(96) Class497 local96 = aClass497_95;
 			synchronized (aClass497_95) {
 				local69 &= aClass497_95.method30071(local93, -512225963);
@@ -149,9 +149,9 @@ public class Class93_Sub1_Sub10 extends Class93_Sub1 {
 		}
 		for (@Pc(156) int local156 = 0; local156 < local146.length; local156++) {
 			@Pc(165) byte[] local165 = this.aByteArrayArray13[local156];
-			@Pc(170) Class93_Sub41 local170 = new Class93_Sub41(local165);
-			local170.anInt3070 = -1445626955;
-			@Pc(177) int local177 = local170.method22472(-1434290800);
+			@Pc(170) Packet local170 = new Packet(local165);
+			local170.pos = -1445626955;
+			@Pc(177) int local177 = local170.g2(-1434290800);
 			@Pc(179) Class93_Sub25 local179 = null;
 			for (@Pc(184) Class93_Sub25 local184 = (Class93_Sub25) local122.method428((byte) 25); local184 != null; local184 = (Class93_Sub25) local122.method442(1830552074)) {
 				if (local184.anInt1589 * -1647955937 == local177) {

@@ -14,10 +14,10 @@ public class Class110_Sub6 extends Class110 {
 	final int anInt896;
 
 	@OriginalMember(owner = "client!agb", name = "<init>", descriptor = "(Lclient!alw;)V", line = 11)
-	Class110_Sub6(@OriginalArg(0) Class93_Sub41 arg0) {
+	Class110_Sub6(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.anInt895 = arg0.method22472(-1434290800) * 204541157;
-		this.anInt896 = arg0.method22465((short) 16384) * 1465367167;
+		this.anInt895 = arg0.g2(-1434290800) * 204541157;
+		this.anInt896 = arg0.g1((short) 16384) * 1465367167;
 	}
 
 	@OriginalMember(owner = "client!agb", name = "n", descriptor = "(I)V", line = 17)

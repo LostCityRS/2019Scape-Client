@@ -40,7 +40,7 @@ public class Class429 {
 			local15 = Class616.method32090(local13, (byte) 8);
 		}
 		@Pc(29) Class93_Sub22 local29 = Class102.method2588(Class446.aClass446_123, client.aClass175_2.aClass24_2, (byte) 75);
-		local29.aClass93_Sub41_Sub2_1.method22406(local15, (byte) -9);
+		local29.aPacketBit_1.p4(local15, (byte) -9);
 		client.aClass175_2.method24356(local29, -1971146310);
 	}
 

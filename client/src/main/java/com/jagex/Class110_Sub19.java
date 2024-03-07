@@ -24,12 +24,12 @@ public class Class110_Sub19 extends Class110 {
 	Class539 aClass539_1;
 
 	@OriginalMember(owner = "client!agu", name = "<init>", descriptor = "(Lclient!alw;)V", line = 18)
-	Class110_Sub19(@OriginalArg(0) Class93_Sub41 arg0) {
+	Class110_Sub19(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.anInt984 = arg0.method22472(-1434290800) * 315047603;
-		this.anInt985 = arg0.method22465((short) 16384) * -1372698155;
-		this.anInt986 = arg0.method22465((short) 16384) * 757590547;
-		this.anInt987 = arg0.method22465((short) 16384) * 1568885987;
+		this.anInt984 = arg0.g2(-1434290800) * 315047603;
+		this.anInt985 = arg0.g1((short) 16384) * -1372698155;
+		this.anInt986 = arg0.g1((short) 16384) * 757590547;
+		this.anInt987 = arg0.g1((short) 16384) * 1568885987;
 		this.aClass539_1 = Class274.aClass258_1.method26097(Class275.aClass275_9, this, this.anInt984 * 1796710523, this.anInt987 * -1912842037, this.anInt985 * 2118952829, Class280.aClass280_7.method26450(-736590218), Class278.aClass278_2, 0.0F, 0.0F, null, 0, this.anInt986 * -866750437, false, -326087739);
 		if (this.aClass539_1 != null) {
 			this.aClass539_1.method30797(-1386242522);

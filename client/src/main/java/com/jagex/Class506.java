@@ -107,7 +107,7 @@ class Class506 implements Comparator {
 
 	@OriginalMember(owner = "client!qi", name = "ai", descriptor = "([BB)[B", line = 439)
 	static final byte[] method30220(@OriginalArg(0) byte[] arg0, @OriginalArg(1) byte arg1) {
-		@Pc(4) Class93_Sub41 local4 = new Class93_Sub41(arg0);
+		@Pc(4) Packet local4 = new Packet(arg0);
 		@Pc(9) Class477 local9 = new Class477(local4);
 		@Pc(13) Class484 local13 = local9.method29689((byte) -127);
 		@Pc(17) int local17 = local9.method29692(-936234138);
@@ -115,7 +115,7 @@ class Class506 implements Comparator {
 			throw new RuntimeException();
 		} else if (Class484.aClass484_5 == local13) {
 			@Pc(38) byte[] local38 = new byte[local17];
-			local4.method22518(local38, 0, local17, (short) 3634);
+			local4.gdata(local38, 0, local17, (short) 3634);
 			return local38;
 		} else {
 			@Pc(50) int local50 = local9.method29701((byte) 0);

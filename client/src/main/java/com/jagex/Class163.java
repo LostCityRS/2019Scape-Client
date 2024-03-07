@@ -48,7 +48,7 @@ public abstract class Class163 {
 						break label100;
 					}
 					@Pc(22) Class93_Sub23 local22 = (Class93_Sub23) local15.next();
-					if (local5 != null && local5.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local7 >= 252 - (this.method14915(10946480) + 6)) {
+					if (local5 != null && local5.aPacketBit_1.pos * 212851357 - local7 >= 252 - (this.method14915(10946480) + 6)) {
 						break label100;
 					}
 					local22.method23969(-987776147);
@@ -69,9 +69,9 @@ public abstract class Class163 {
 					} else {
 						if (local5 == null) {
 							local5 = this.method14917((short) -26606);
-							local5.aClass93_Sub41_Sub2_1.method22394(0, (byte) -90);
-							local7 = local5.aClass93_Sub41_Sub2_1.anInt3070 * 212851357;
-							local5.aClass93_Sub41_Sub2_1.anInt3070 += 1403713386;
+							local5.aPacketBit_1.p1(0, (byte) -90);
+							local7 = local5.aPacketBit_1.pos * 212851357;
+							local5.aPacketBit_1.pos += 1403713386;
 							local9 = 0;
 							local11 = 0;
 						}
@@ -93,41 +93,41 @@ public abstract class Class163 {
 						if (local151 < 8 && local132 >= -32 && local132 <= 31 && local139 >= -32 && local139 <= 31) {
 							local132 += 32;
 							local139 += 32;
-							local5.aClass93_Sub41_Sub2_1.method22395((local132 << 6) + (local151 << 12) + local139, 2134548296);
+							local5.aPacketBit_1.p2((local132 << 6) + (local151 << 12) + local139, 2134548296);
 						} else if (local151 < 32 && local132 >= -128 && local132 <= 127 && local139 >= -128 && local139 <= 127) {
 							local132 += 128;
 							local139 += 128;
-							local5.aClass93_Sub41_Sub2_1.method22394(local151 + 128, (byte) -44);
-							local5.aClass93_Sub41_Sub2_1.method22395((local132 << 8) + local139, 2145571769);
+							local5.aPacketBit_1.p1(local151 + 128, (byte) -44);
+							local5.aPacketBit_1.p2((local132 << 8) + local139, 2145571769);
 						} else if (local151 < 32) {
-							local5.aClass93_Sub41_Sub2_1.method22394(local151 + 192, (byte) -126);
+							local5.aPacketBit_1.p1(local151 + 192, (byte) -126);
 							if (local62 == -1 || local47 == -1) {
-								local5.aClass93_Sub41_Sub2_1.method22406(Integer.MIN_VALUE, (byte) -86);
+								local5.aPacketBit_1.p4(Integer.MIN_VALUE, (byte) -86);
 							} else {
-								local5.aClass93_Sub41_Sub2_1.method22406(local62 | local47 << 16, (byte) 54);
+								local5.aPacketBit_1.p4(local62 | local47 << 16, (byte) 54);
 							}
 						} else {
-							local5.aClass93_Sub41_Sub2_1.method22395((local151 & 0x1FFF) + 57344, 2131815629);
+							local5.aPacketBit_1.p2((local151 & 0x1FFF) + 57344, 2131815629);
 							if (local62 == -1 || local47 == -1) {
-								local5.aClass93_Sub41_Sub2_1.method22406(Integer.MIN_VALUE, (byte) 47);
+								local5.aPacketBit_1.p4(Integer.MIN_VALUE, (byte) 47);
 							} else {
-								local5.aClass93_Sub41_Sub2_1.method22406(local62 | local47 << 16, (byte) -82);
+								local5.aPacketBit_1.p4(local62 | local47 << 16, (byte) -82);
 							}
 						}
 						local11++;
-						this.method14916(local5.aClass93_Sub41_Sub2_1, local22, 2065560015);
+						this.method14916(local5.aPacketBit_1, local22, 2065560015);
 						this.aLong106 = local22.method22878((byte) 9) * 8115390464037108609L;
 						local22.method22879((byte) -40);
 					}
 				}
 			}
 			if (local5 != null) {
-				local5.aClass93_Sub41_Sub2_1.method22451(local5.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local7, (byte) 67);
-				@Pc(348) int local348 = local5.aClass93_Sub41_Sub2_1.anInt3070 * 212851357;
-				local5.aClass93_Sub41_Sub2_1.anInt3070 = local7 * -1445626955;
-				local5.aClass93_Sub41_Sub2_1.method22394(local9 / local11, (byte) -23);
-				local5.aClass93_Sub41_Sub2_1.method22394(local9 % local11, (byte) 2);
-				local5.aClass93_Sub41_Sub2_1.anInt3070 = local348 * -1445626955;
+				local5.aPacketBit_1.psize1(local5.aPacketBit_1.pos * 212851357 - local7, (byte) 67);
+				@Pc(348) int local348 = local5.aPacketBit_1.pos * 212851357;
+				local5.aPacketBit_1.pos = local7 * -1445626955;
+				local5.aPacketBit_1.p1(local9 / local11, (byte) -23);
+				local5.aPacketBit_1.p1(local9 % local11, (byte) 2);
+				local5.aPacketBit_1.pos = local348 * -1445626955;
 				client.aClass175_2.method24356(local5, -1597216232);
 			}
 		}
@@ -148,7 +148,7 @@ public abstract class Class163 {
 						break label100;
 					}
 					@Pc(22) Class93_Sub23 local22 = (Class93_Sub23) local15.next();
-					if (local5 != null && local5.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local7 >= 252 - (this.method14915(903701835) + 6)) {
+					if (local5 != null && local5.aPacketBit_1.pos * 212851357 - local7 >= 252 - (this.method14915(903701835) + 6)) {
 						break label100;
 					}
 					local22.method23969(-970643158);
@@ -169,9 +169,9 @@ public abstract class Class163 {
 					} else {
 						if (local5 == null) {
 							local5 = this.method14917((short) -15748);
-							local5.aClass93_Sub41_Sub2_1.method22394(0, (byte) -69);
-							local7 = local5.aClass93_Sub41_Sub2_1.anInt3070 * 212851357;
-							local5.aClass93_Sub41_Sub2_1.anInt3070 += 1403713386;
+							local5.aPacketBit_1.p1(0, (byte) -69);
+							local7 = local5.aPacketBit_1.pos * 212851357;
+							local5.aPacketBit_1.pos += 1403713386;
 							local9 = 0;
 							local11 = 0;
 						}
@@ -193,41 +193,41 @@ public abstract class Class163 {
 						if (local151 < 8 && local132 >= -32 && local132 <= 31 && local139 >= -32 && local139 <= 31) {
 							local132 += 32;
 							local139 += 32;
-							local5.aClass93_Sub41_Sub2_1.method22395((local132 << 6) + (local151 << 12) + local139, 2131566822);
+							local5.aPacketBit_1.p2((local132 << 6) + (local151 << 12) + local139, 2131566822);
 						} else if (local151 < 32 && local132 >= -128 && local132 <= 127 && local139 >= -128 && local139 <= 127) {
 							local132 += 128;
 							local139 += 128;
-							local5.aClass93_Sub41_Sub2_1.method22394(local151 + 128, (byte) -77);
-							local5.aClass93_Sub41_Sub2_1.method22395((local132 << 8) + local139, 2129865038);
+							local5.aPacketBit_1.p1(local151 + 128, (byte) -77);
+							local5.aPacketBit_1.p2((local132 << 8) + local139, 2129865038);
 						} else if (local151 < 32) {
-							local5.aClass93_Sub41_Sub2_1.method22394(local151 + 192, (byte) -62);
+							local5.aPacketBit_1.p1(local151 + 192, (byte) -62);
 							if (local62 == -1 || local47 == -1) {
-								local5.aClass93_Sub41_Sub2_1.method22406(Integer.MIN_VALUE, (byte) 45);
+								local5.aPacketBit_1.p4(Integer.MIN_VALUE, (byte) 45);
 							} else {
-								local5.aClass93_Sub41_Sub2_1.method22406(local62 | local47 << 16, (byte) -53);
+								local5.aPacketBit_1.p4(local62 | local47 << 16, (byte) -53);
 							}
 						} else {
-							local5.aClass93_Sub41_Sub2_1.method22395((local151 & 0x1FFF) + 57344, 2143788256);
+							local5.aPacketBit_1.p2((local151 & 0x1FFF) + 57344, 2143788256);
 							if (local62 == -1 || local47 == -1) {
-								local5.aClass93_Sub41_Sub2_1.method22406(Integer.MIN_VALUE, (byte) 17);
+								local5.aPacketBit_1.p4(Integer.MIN_VALUE, (byte) 17);
 							} else {
-								local5.aClass93_Sub41_Sub2_1.method22406(local62 | local47 << 16, (byte) 70);
+								local5.aPacketBit_1.p4(local62 | local47 << 16, (byte) 70);
 							}
 						}
 						local11++;
-						this.method14916(local5.aClass93_Sub41_Sub2_1, local22, 1997788463);
+						this.method14916(local5.aPacketBit_1, local22, 1997788463);
 						this.aLong106 = local22.method22878((byte) -84) * 8115390464037108609L;
 						local22.method22879((byte) 56);
 					}
 				}
 			}
 			if (local5 != null) {
-				local5.aClass93_Sub41_Sub2_1.method22451(local5.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local7, (byte) 33);
-				@Pc(348) int local348 = local5.aClass93_Sub41_Sub2_1.anInt3070 * 212851357;
-				local5.aClass93_Sub41_Sub2_1.anInt3070 = local7 * -1445626955;
-				local5.aClass93_Sub41_Sub2_1.method22394(local9 / local11, (byte) -114);
-				local5.aClass93_Sub41_Sub2_1.method22394(local9 % local11, (byte) -9);
-				local5.aClass93_Sub41_Sub2_1.anInt3070 = local348 * -1445626955;
+				local5.aPacketBit_1.psize1(local5.aPacketBit_1.pos * 212851357 - local7, (byte) 33);
+				@Pc(348) int local348 = local5.aPacketBit_1.pos * 212851357;
+				local5.aPacketBit_1.pos = local7 * -1445626955;
+				local5.aPacketBit_1.p1(local9 / local11, (byte) -114);
+				local5.aPacketBit_1.p1(local9 % local11, (byte) -9);
+				local5.aPacketBit_1.pos = local348 * -1445626955;
 				client.aClass175_2.method24356(local5, -1619612291);
 			}
 		}
@@ -248,7 +248,7 @@ public abstract class Class163 {
 						break label100;
 					}
 					@Pc(22) Class93_Sub23 local22 = (Class93_Sub23) local15.next();
-					if (local5 != null && local5.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local7 >= 252 - (this.method14915(-201788473) + 6)) {
+					if (local5 != null && local5.aPacketBit_1.pos * 212851357 - local7 >= 252 - (this.method14915(-201788473) + 6)) {
 						break label100;
 					}
 					local22.method23969(1370177943);
@@ -269,9 +269,9 @@ public abstract class Class163 {
 					} else {
 						if (local5 == null) {
 							local5 = this.method14917((short) -24523);
-							local5.aClass93_Sub41_Sub2_1.method22394(0, (byte) -68);
-							local7 = local5.aClass93_Sub41_Sub2_1.anInt3070 * 212851357;
-							local5.aClass93_Sub41_Sub2_1.anInt3070 += 1403713386;
+							local5.aPacketBit_1.p1(0, (byte) -68);
+							local7 = local5.aPacketBit_1.pos * 212851357;
+							local5.aPacketBit_1.pos += 1403713386;
 							local9 = 0;
 							local11 = 0;
 						}
@@ -293,41 +293,41 @@ public abstract class Class163 {
 						if (local151 < 8 && local132 >= -32 && local132 <= 31 && local139 >= -32 && local139 <= 31) {
 							local132 += 32;
 							local139 += 32;
-							local5.aClass93_Sub41_Sub2_1.method22395((local132 << 6) + (local151 << 12) + local139, 2126404920);
+							local5.aPacketBit_1.p2((local132 << 6) + (local151 << 12) + local139, 2126404920);
 						} else if (local151 < 32 && local132 >= -128 && local132 <= 127 && local139 >= -128 && local139 <= 127) {
 							local132 += 128;
 							local139 += 128;
-							local5.aClass93_Sub41_Sub2_1.method22394(local151 + 128, (byte) -9);
-							local5.aClass93_Sub41_Sub2_1.method22395((local132 << 8) + local139, 2132093201);
+							local5.aPacketBit_1.p1(local151 + 128, (byte) -9);
+							local5.aPacketBit_1.p2((local132 << 8) + local139, 2132093201);
 						} else if (local151 < 32) {
-							local5.aClass93_Sub41_Sub2_1.method22394(local151 + 192, (byte) -4);
+							local5.aPacketBit_1.p1(local151 + 192, (byte) -4);
 							if (local62 == -1 || local47 == -1) {
-								local5.aClass93_Sub41_Sub2_1.method22406(Integer.MIN_VALUE, (byte) 31);
+								local5.aPacketBit_1.p4(Integer.MIN_VALUE, (byte) 31);
 							} else {
-								local5.aClass93_Sub41_Sub2_1.method22406(local62 | local47 << 16, (byte) -22);
+								local5.aPacketBit_1.p4(local62 | local47 << 16, (byte) -22);
 							}
 						} else {
-							local5.aClass93_Sub41_Sub2_1.method22395((local151 & 0x1FFF) + 57344, 2131978540);
+							local5.aPacketBit_1.p2((local151 & 0x1FFF) + 57344, 2131978540);
 							if (local62 == -1 || local47 == -1) {
-								local5.aClass93_Sub41_Sub2_1.method22406(Integer.MIN_VALUE, (byte) 98);
+								local5.aPacketBit_1.p4(Integer.MIN_VALUE, (byte) 98);
 							} else {
-								local5.aClass93_Sub41_Sub2_1.method22406(local62 | local47 << 16, (byte) 43);
+								local5.aPacketBit_1.p4(local62 | local47 << 16, (byte) 43);
 							}
 						}
 						local11++;
-						this.method14916(local5.aClass93_Sub41_Sub2_1, local22, 1621188789);
+						this.method14916(local5.aPacketBit_1, local22, 1621188789);
 						this.aLong106 = local22.method22878((byte) 19) * 8115390464037108609L;
 						local22.method22879((byte) 48);
 					}
 				}
 			}
 			if (local5 != null) {
-				local5.aClass93_Sub41_Sub2_1.method22451(local5.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local7, (byte) 39);
-				@Pc(348) int local348 = local5.aClass93_Sub41_Sub2_1.anInt3070 * 212851357;
-				local5.aClass93_Sub41_Sub2_1.anInt3070 = local7 * -1445626955;
-				local5.aClass93_Sub41_Sub2_1.method22394(local9 / local11, (byte) -10);
-				local5.aClass93_Sub41_Sub2_1.method22394(local9 % local11, (byte) -70);
-				local5.aClass93_Sub41_Sub2_1.anInt3070 = local348 * -1445626955;
+				local5.aPacketBit_1.psize1(local5.aPacketBit_1.pos * 212851357 - local7, (byte) 39);
+				@Pc(348) int local348 = local5.aPacketBit_1.pos * 212851357;
+				local5.aPacketBit_1.pos = local7 * -1445626955;
+				local5.aPacketBit_1.p1(local9 / local11, (byte) -10);
+				local5.aPacketBit_1.p1(local9 % local11, (byte) -70);
+				local5.aPacketBit_1.pos = local348 * -1445626955;
 				client.aClass175_2.method24356(local5, -2096770119);
 			}
 		}
@@ -348,7 +348,7 @@ public abstract class Class163 {
 						break label100;
 					}
 					@Pc(22) Class93_Sub23 local22 = (Class93_Sub23) local15.next();
-					if (local5 != null && local5.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local7 >= 252 - (this.method14915(77459241) + 6)) {
+					if (local5 != null && local5.aPacketBit_1.pos * 212851357 - local7 >= 252 - (this.method14915(77459241) + 6)) {
 						break label100;
 					}
 					local22.method23969(-168416406);
@@ -369,9 +369,9 @@ public abstract class Class163 {
 					} else {
 						if (local5 == null) {
 							local5 = this.method14917((short) -13916);
-							local5.aClass93_Sub41_Sub2_1.method22394(0, (byte) -49);
-							local7 = local5.aClass93_Sub41_Sub2_1.anInt3070 * 212851357;
-							local5.aClass93_Sub41_Sub2_1.anInt3070 += 1403713386;
+							local5.aPacketBit_1.p1(0, (byte) -49);
+							local7 = local5.aPacketBit_1.pos * 212851357;
+							local5.aPacketBit_1.pos += 1403713386;
 							local9 = 0;
 							local11 = 0;
 						}
@@ -393,41 +393,41 @@ public abstract class Class163 {
 						if (local151 < 8 && local132 >= -32 && local132 <= 31 && local139 >= -32 && local139 <= 31) {
 							local132 += 32;
 							local139 += 32;
-							local5.aClass93_Sub41_Sub2_1.method22395((local132 << 6) + (local151 << 12) + local139, 2146630706);
+							local5.aPacketBit_1.p2((local132 << 6) + (local151 << 12) + local139, 2146630706);
 						} else if (local151 < 32 && local132 >= -128 && local132 <= 127 && local139 >= -128 && local139 <= 127) {
 							local132 += 128;
 							local139 += 128;
-							local5.aClass93_Sub41_Sub2_1.method22394(local151 + 128, (byte) -4);
-							local5.aClass93_Sub41_Sub2_1.method22395((local132 << 8) + local139, 2129594825);
+							local5.aPacketBit_1.p1(local151 + 128, (byte) -4);
+							local5.aPacketBit_1.p2((local132 << 8) + local139, 2129594825);
 						} else if (local151 < 32) {
-							local5.aClass93_Sub41_Sub2_1.method22394(local151 + 192, (byte) -70);
+							local5.aPacketBit_1.p1(local151 + 192, (byte) -70);
 							if (local62 == -1 || local47 == -1) {
-								local5.aClass93_Sub41_Sub2_1.method22406(Integer.MIN_VALUE, (byte) 32);
+								local5.aPacketBit_1.p4(Integer.MIN_VALUE, (byte) 32);
 							} else {
-								local5.aClass93_Sub41_Sub2_1.method22406(local62 | local47 << 16, (byte) -16);
+								local5.aPacketBit_1.p4(local62 | local47 << 16, (byte) -16);
 							}
 						} else {
-							local5.aClass93_Sub41_Sub2_1.method22395((local151 & 0x1FFF) + 57344, 2133659708);
+							local5.aPacketBit_1.p2((local151 & 0x1FFF) + 57344, 2133659708);
 							if (local62 == -1 || local47 == -1) {
-								local5.aClass93_Sub41_Sub2_1.method22406(Integer.MIN_VALUE, (byte) -83);
+								local5.aPacketBit_1.p4(Integer.MIN_VALUE, (byte) -83);
 							} else {
-								local5.aClass93_Sub41_Sub2_1.method22406(local62 | local47 << 16, (byte) -20);
+								local5.aPacketBit_1.p4(local62 | local47 << 16, (byte) -20);
 							}
 						}
 						local11++;
-						this.method14916(local5.aClass93_Sub41_Sub2_1, local22, 1992593646);
+						this.method14916(local5.aPacketBit_1, local22, 1992593646);
 						this.aLong106 = local22.method22878((byte) -89) * 8115390464037108609L;
 						local22.method22879((byte) -10);
 					}
 				}
 			}
 			if (local5 != null) {
-				local5.aClass93_Sub41_Sub2_1.method22451(local5.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local7, (byte) 109);
-				@Pc(348) int local348 = local5.aClass93_Sub41_Sub2_1.anInt3070 * 212851357;
-				local5.aClass93_Sub41_Sub2_1.anInt3070 = local7 * -1445626955;
-				local5.aClass93_Sub41_Sub2_1.method22394(local9 / local11, (byte) -111);
-				local5.aClass93_Sub41_Sub2_1.method22394(local9 % local11, (byte) -124);
-				local5.aClass93_Sub41_Sub2_1.anInt3070 = local348 * -1445626955;
+				local5.aPacketBit_1.psize1(local5.aPacketBit_1.pos * 212851357 - local7, (byte) 109);
+				@Pc(348) int local348 = local5.aPacketBit_1.pos * 212851357;
+				local5.aPacketBit_1.pos = local7 * -1445626955;
+				local5.aPacketBit_1.p1(local9 / local11, (byte) -111);
+				local5.aPacketBit_1.p1(local9 % local11, (byte) -124);
+				local5.aPacketBit_1.pos = local348 * -1445626955;
 				client.aClass175_2.method24356(local5, -1840062322);
 			}
 		}
@@ -525,7 +525,7 @@ public abstract class Class163 {
 	abstract int method14915(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!xb", name = "w", descriptor = "(Lclient!alw;Lclient!akm;I)V")
-	abstract void method14916(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) Class93_Sub23 arg1, @OriginalArg(2) int arg2);
+	abstract void method14916(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class93_Sub23 arg1, @OriginalArg(2) int arg2);
 
 	@OriginalMember(owner = "client!xb", name = "z", descriptor = "(S)Lclient!akl;")
 	abstract Class93_Sub22 method14917(@OriginalArg(0) short arg0);
@@ -546,8 +546,8 @@ public abstract class Class163 {
 	abstract boolean method14922(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!xb", name = "o", descriptor = "(Lclient!alw;Lclient!akm;)V")
-	abstract void method14923(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) Class93_Sub23 arg1);
+	abstract void method14923(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class93_Sub23 arg1);
 
 	@OriginalMember(owner = "client!xb", name = "s", descriptor = "(Lclient!alw;Lclient!akm;)V")
-	abstract void method14924(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) Class93_Sub23 arg1);
+	abstract void method14924(@OriginalArg(0) Packet arg0, @OriginalArg(1) Class93_Sub23 arg1);
 }

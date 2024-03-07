@@ -36,16 +36,16 @@ public class Class93_Sub27 extends Class93 {
 	public final int anInt1599;
 
 	@OriginalMember(owner = "client!akq", name = "<init>", descriptor = "(Lclient!alw;)V", line = 17)
-	Class93_Sub27(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(5) int local5 = arg0.method22483(-118643075);
+	Class93_Sub27(@OriginalArg(0) Packet arg0) {
+		@Pc(5) int local5 = arg0.g4(-118643075);
 		this.anInt1601 = (local5 >>> 28) * -691134935;
 		this.anInt1594 = (local5 >>> 14 & 0x3FFF) * -21672597;
 		this.anInt1595 = (local5 & 0x3FFF) * 1626693537;
-		this.anInt1597 = arg0.method22465((short) 16384) * -77027975;
-		this.anInt1600 = arg0.method22465((short) 16384) * 1117910387;
-		this.anInt1596 = arg0.method22465((short) 16384) * -491244483;
-		this.anInt1593 = arg0.method22465((short) 16384) * 418805403;
-		this.anInt1598 = arg0.method22465((short) 16384) * -1602143305;
-		this.anInt1599 = arg0.method22465((short) 16384) * 703349233;
+		this.anInt1597 = arg0.g1((short) 16384) * -77027975;
+		this.anInt1600 = arg0.g1((short) 16384) * 1117910387;
+		this.anInt1596 = arg0.g1((short) 16384) * -491244483;
+		this.anInt1593 = arg0.g1((short) 16384) * 418805403;
+		this.anInt1598 = arg0.g1((short) 16384) * -1602143305;
+		this.anInt1599 = arg0.g1((short) 16384) * 703349233;
 	}
 }

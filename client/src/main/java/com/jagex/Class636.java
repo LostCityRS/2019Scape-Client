@@ -44,13 +44,13 @@ public class Class636 {
 	@OriginalMember(owner = "client!wf", name = "<init>", descriptor = "(Lclient!py;)V", line = 21)
 	public Class636(@OriginalArg(0) Class497 arg0) {
 		@Pc(9) byte[] local9 = arg0.method30079(Class649.aClass649_7.anInt5795 * -51136173, (byte) 90);
-		this.method32443(new Class93_Sub41(local9), (byte) -113);
+		this.method32443(new Packet(local9), (byte) -113);
 	}
 
 	@OriginalMember(owner = "client!wf", name = "e", descriptor = "(Lclient!alw;B)V", line = 28)
-	void method32443(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
+	void method32443(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -77,17 +77,17 @@ public class Class636 {
 			} else if (local3 == 11) {
 				this.aBoolean854 = true;
 			} else if (local3 == 12) {
-				this.anInt5729 = arg0.method22483(-118643075) * 317135379;
+				this.anInt5729 = arg0.g4(-118643075) * 317135379;
 			} else if (local3 == 13) {
-				this.anInt5728 = arg0.method22483(-118643075) * 844544901;
+				this.anInt5728 = arg0.g4(-118643075) * 844544901;
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!wf", name = "n", descriptor = "(Lclient!alw;)V", line = 28)
-	void method32444(@OriginalArg(0) Class93_Sub41 arg0) {
+	void method32444(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -114,17 +114,17 @@ public class Class636 {
 			} else if (local3 == 11) {
 				this.aBoolean854 = true;
 			} else if (local3 == 12) {
-				this.anInt5729 = arg0.method22483(-118643075) * 317135379;
+				this.anInt5729 = arg0.g4(-118643075) * 317135379;
 			} else if (local3 == 13) {
-				this.anInt5728 = arg0.method22483(-118643075) * 844544901;
+				this.anInt5728 = arg0.g4(-118643075) * 844544901;
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!wf", name = "m", descriptor = "(Lclient!alw;)V", line = 28)
-	void method32445(@OriginalArg(0) Class93_Sub41 arg0) {
+	void method32445(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -151,9 +151,9 @@ public class Class636 {
 			} else if (local3 == 11) {
 				this.aBoolean854 = true;
 			} else if (local3 == 12) {
-				this.anInt5729 = arg0.method22483(-118643075) * 317135379;
+				this.anInt5729 = arg0.g4(-118643075) * 317135379;
 			} else if (local3 == 13) {
-				this.anInt5728 = arg0.method22483(-118643075) * 844544901;
+				this.anInt5728 = arg0.g4(-118643075) * 844544901;
 			}
 		}
 	}

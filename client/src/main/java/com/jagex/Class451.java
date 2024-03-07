@@ -31,7 +31,7 @@ public class Class451 implements Interface48 {
 		@Pc(18) byte[] local18 = this.aClass497_118.method30064(0, arg0, (byte) 0);
 		local6 = new Class442();
 		if (local18 != null) {
-			local6.method28857(new Class93_Sub41(local18), arg0, (byte) -1);
+			local6.method28857(new Packet(local18), arg0, (byte) -1);
 		}
 		this.aClass240_84.method25838(local6, (long) arg0);
 		return local6;
@@ -47,7 +47,7 @@ public class Class451 implements Interface48 {
 		@Pc(18) byte[] local18 = this.aClass497_118.method30064(0, arg0, (byte) 0);
 		local6 = new Class442();
 		if (local18 != null) {
-			local6.method28857(new Class93_Sub41(local18), arg0, (byte) -1);
+			local6.method28857(new Packet(local18), arg0, (byte) -1);
 		}
 		this.aClass240_84.method25838(local6, (long) arg0);
 		return local6;
@@ -63,7 +63,7 @@ public class Class451 implements Interface48 {
 		@Pc(18) byte[] local18 = this.aClass497_118.method30064(0, arg0, (byte) 0);
 		local6 = new Class442();
 		if (local18 != null) {
-			local6.method28857(new Class93_Sub41(local18), arg0, (byte) -1);
+			local6.method28857(new Packet(local18), arg0, (byte) -1);
 		}
 		this.aClass240_84.method25838(local6, (long) arg0);
 		return local6;

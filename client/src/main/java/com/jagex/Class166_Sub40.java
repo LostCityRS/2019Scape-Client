@@ -152,11 +152,11 @@ public class Class166_Sub40 extends Class166 {
 		}
 		@Pc(66) Class175 local66 = Class330.method27371(-1643987676);
 		@Pc(72) Class93_Sub22 local72 = Class102.method2588(Class446.aClass446_77, local66.aClass24_2, (byte) 102);
-		local72.aClass93_Sub41_Sub2_1.method22394(Class46.method895(local14, -1905129874) + 2 + Class46.method895(local25, -1698593716), (byte) -60);
-		local72.aClass93_Sub41_Sub2_1.method22431(local14, 964893669);
-		local72.aClass93_Sub41_Sub2_1.method22394(local39 - 1, (byte) -121);
-		local72.aClass93_Sub41_Sub2_1.method22394(local49, (byte) -66);
-		local72.aClass93_Sub41_Sub2_1.method22431(local25, -1781436268);
+		local72.aPacketBit_1.p1(Packet.pjstrlen(local14, -1905129874) + 2 + Packet.pjstrlen(local25, -1698593716), (byte) -60);
+		local72.aPacketBit_1.pjstr(local14, 964893669);
+		local72.aPacketBit_1.p1(local39 - 1, (byte) -121);
+		local72.aPacketBit_1.p1(local49, (byte) -66);
+		local72.aPacketBit_1.pjstr(local25, -1781436268);
 		local66.method24356(local72, -1553810752);
 	}
 

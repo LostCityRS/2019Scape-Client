@@ -2398,12 +2398,12 @@ public abstract class Class132_Sub1_Sub1_Sub1 extends Class132_Sub1_Sub1 impleme
 	@OriginalMember(owner = "client!ahm", name = "jw", descriptor = "(Lclient!hf;Lclient!hf;I)V", line = 10174)
 	static void method20031(@OriginalArg(0) Class312 arg0, @OriginalArg(1) Class312 arg1, @OriginalArg(2) int arg2) {
 		@Pc(5) Class93_Sub22 local5 = Class102.method2588(Class446.aClass446_124, client.aClass175_2.aClass24_2, (byte) 94);
-		local5.aClass93_Sub41_Sub2_1.method22395(arg1.anInt3970 * 532402067, 2141496041);
-		local5.aClass93_Sub41_Sub2_1.method22641(arg0.anInt3953 * -1549590237, (byte) -15);
-		local5.aClass93_Sub41_Sub2_1.method22595(arg1.anInt4045 * 307668159, (byte) 19);
-		local5.aClass93_Sub41_Sub2_1.method22599(arg0.anInt4045 * 307668159, (short) 255);
-		local5.aClass93_Sub41_Sub2_1.method22641(arg1.anInt3953 * -1549590237, (byte) -19);
-		local5.aClass93_Sub41_Sub2_1.method22595(arg0.anInt3970 * 532402067, (byte) -5);
+		local5.aPacketBit_1.p2(arg1.anInt3970 * 532402067, 2141496041);
+		local5.aPacketBit_1.p4_alt3(arg0.anInt3953 * -1549590237, (byte) -15);
+		local5.aPacketBit_1.p2_alt1(arg1.anInt4045 * 307668159, (byte) 19);
+		local5.aPacketBit_1.p2_alt3(arg0.anInt4045 * 307668159, (short) 255);
+		local5.aPacketBit_1.p4_alt3(arg1.anInt3953 * -1549590237, (byte) -19);
+		local5.aPacketBit_1.p2_alt1(arg0.anInt3970 * 532402067, (byte) -5);
 		client.aClass175_2.method24356(local5, -1472900530);
 	}
 

@@ -226,19 +226,19 @@ public class Class124_Sub2 extends Class124 {
 
 	@OriginalMember(owner = "client!ahh", name = "u", descriptor = "(Lclient!alw;I)V", line = 70)
 	@Override
-	public void method21413(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	public void method21413(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		this.aClass472_22.method29546(arg0);
 	}
 
 	@OriginalMember(owner = "client!ahh", name = "q", descriptor = "(Lclient!alw;)V", line = 70)
 	@Override
-	public void method21423(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method21423(@OriginalArg(0) Packet arg0) {
 		this.aClass472_22.method29546(arg0);
 	}
 
 	@OriginalMember(owner = "client!ahh", name = "x", descriptor = "(Lclient!alw;)V", line = 70)
 	@Override
-	public void method21424(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method21424(@OriginalArg(0) Packet arg0) {
 		this.aClass472_22.method29546(arg0);
 	}
 

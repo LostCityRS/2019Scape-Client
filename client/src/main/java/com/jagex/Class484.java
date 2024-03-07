@@ -87,9 +87,9 @@ public class Class484 implements Interface75 {
 
 	@OriginalMember(owner = "client!pj", name = "jt", descriptor = "(Lclient!akl;IIII)V", line = 10302)
 	static void method29789(@OriginalArg(0) Class93_Sub22 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
-		arg0.aClass93_Sub41_Sub2_1.method22599(arg3, (short) 255);
-		arg0.aClass93_Sub41_Sub2_1.method22597(arg2, -1871503550);
-		arg0.aClass93_Sub41_Sub2_1.method22406(arg1, (byte) -9);
+		arg0.aPacketBit_1.p2_alt3(arg3, (short) 255);
+		arg0.aPacketBit_1.p2_alt2(arg2, -1871503550);
+		arg0.aPacketBit_1.p4(arg1, (byte) -9);
 	}
 
 	@OriginalMember(owner = "client!pj", name = "anb", descriptor = "(Lclient!yf;B)V", line = 12364)

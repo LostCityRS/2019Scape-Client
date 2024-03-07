@@ -190,22 +190,22 @@ public class Class695 {
 
 	@OriginalMember(owner = "client!yw", name = "c", descriptor = "([B)Lclient!asc;", line = 89)
 	static Class93_Sub1_Sub13 method36635(@OriginalArg(0) byte[] arg0) {
-		return new Class93_Sub1_Sub13(new Class93_Sub41(arg0), Class506.anInterface21_4);
+		return new Class93_Sub1_Sub13(new Packet(arg0), Class506.anInterface21_4);
 	}
 
 	@OriginalMember(owner = "client!yw", name = "d", descriptor = "([B)Lclient!asc;", line = 89)
 	static Class93_Sub1_Sub13 method36636(@OriginalArg(0) byte[] arg0) {
-		return new Class93_Sub1_Sub13(new Class93_Sub41(arg0), Class506.anInterface21_4);
+		return new Class93_Sub1_Sub13(new Packet(arg0), Class506.anInterface21_4);
 	}
 
 	@OriginalMember(owner = "client!yw", name = "r", descriptor = "([B)Lclient!asc;", line = 89)
 	static Class93_Sub1_Sub13 method36637(@OriginalArg(0) byte[] arg0) {
-		return new Class93_Sub1_Sub13(new Class93_Sub41(arg0), Class506.anInterface21_4);
+		return new Class93_Sub1_Sub13(new Packet(arg0), Class506.anInterface21_4);
 	}
 
 	@OriginalMember(owner = "client!yw", name = "v", descriptor = "([B)Lclient!asc;", line = 89)
 	static Class93_Sub1_Sub13 method36638(@OriginalArg(0) byte[] arg0) {
-		return new Class93_Sub1_Sub13(new Class93_Sub41(arg0), Class506.anInterface21_4);
+		return new Class93_Sub1_Sub13(new Packet(arg0), Class506.anInterface21_4);
 	}
 
 	@OriginalMember(owner = "client!yw", name = "xa", descriptor = "(Lclient!yf;I)V", line = 9145)

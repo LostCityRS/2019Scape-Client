@@ -104,7 +104,7 @@ public class Class55 implements Interface11 {
 		@Pc(23) Object local23 = null;
 		@Pc(31) byte[] local31 = Class650.method32667(this.aClass497_86, this.aClass667_32, arg0, -1497248091);
 		if (local31 != null) {
-			this.anInterface13Array3[arg0].method36654(new Class93_Sub41(local31), (byte) -27);
+			this.anInterface13Array3[arg0].method36654(new Packet(local31), (byte) -27);
 		}
 		this.anInterface13Array3[arg0].method36653(-806493696);
 	}
@@ -123,7 +123,7 @@ public class Class55 implements Interface11 {
 		@Pc(23) Object local23 = null;
 		@Pc(31) byte[] local31 = Class650.method32667(this.aClass497_86, this.aClass667_32, arg0, -1497248091);
 		if (local31 != null) {
-			this.anInterface13Array3[arg0].method36654(new Class93_Sub41(local31), (byte) -101);
+			this.anInterface13Array3[arg0].method36654(new Packet(local31), (byte) -101);
 		}
 		this.anInterface13Array3[arg0].method36653(-1447467576);
 	}
@@ -142,7 +142,7 @@ public class Class55 implements Interface11 {
 		@Pc(23) Object local23 = null;
 		@Pc(31) byte[] local31 = Class650.method32667(this.aClass497_86, this.aClass667_32, arg0, -1497248091);
 		if (local31 != null) {
-			this.anInterface13Array3[arg0].method36654(new Class93_Sub41(local31), (byte) -9);
+			this.anInterface13Array3[arg0].method36654(new Packet(local31), (byte) -9);
 		}
 		this.anInterface13Array3[arg0].method36653(-470747290);
 	}

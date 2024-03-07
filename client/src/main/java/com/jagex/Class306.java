@@ -24,19 +24,19 @@ public class Class306 {
 
 	@OriginalMember(owner = "client!h", name = "<init>", descriptor = "()V", line = 17)
 	Class306() {
-		this((Class93_Sub41) null);
+		this((Packet) null);
 	}
 
 	@OriginalMember(owner = "client!h", name = "<init>", descriptor = "(Lclient!alw;)V", line = 20)
-	Class306(@OriginalArg(0) Class93_Sub41 arg0) {
+	Class306(@OriginalArg(0) Packet arg0) {
 		this.aLinkedHashMap1 = new LinkedHashMap();
-		if (arg0 != null && arg0.aByteArray58 != null) {
-			@Pc(16) int local16 = arg0.method22465((short) 16384);
+		if (arg0 != null && arg0.data != null) {
+			@Pc(16) int local16 = arg0.g1((short) 16384);
 			if (local16 > 0 && local16 <= 1) {
-				@Pc(26) int local26 = arg0.method22465((short) 16384);
+				@Pc(26) int local26 = arg0.g1((short) 16384);
 				for (@Pc(28) int local28 = 0; local28 < local26; local28++) {
-					@Pc(35) long local35 = arg0.method22495(-177308755);
-					@Pc(39) int local39 = arg0.method22483(-118643075);
+					@Pc(35) long local35 = arg0.g8(-177308755);
+					@Pc(39) int local39 = arg0.g4(-118643075);
 					this.aLinkedHashMap1.put(local35, local39);
 				}
 			}
@@ -49,26 +49,26 @@ public class Class306 {
 	}
 
 	@OriginalMember(owner = "client!h", name = "e", descriptor = "(Lclient!alw;B)V", line = 37)
-	void method26805(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
-		arg0.method22394(1, (byte) -73);
-		arg0.method22394(this.aLinkedHashMap1.size(), (byte) -112);
+	void method26805(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
+		arg0.p1(1, (byte) -73);
+		arg0.p1(this.aLinkedHashMap1.size(), (byte) -112);
 		@Pc(14) Iterator local14 = this.aLinkedHashMap1.entrySet().iterator();
 		while (local14.hasNext()) {
 			@Pc(21) Entry local21 = (Entry) local14.next();
-			arg0.method22420((Long) local21.getKey());
-			arg0.method22406((Integer) local21.getValue(), (byte) 33);
+			arg0.p8((Long) local21.getKey());
+			arg0.p4((Integer) local21.getValue(), (byte) 33);
 		}
 	}
 
 	@OriginalMember(owner = "client!h", name = "l", descriptor = "(Lclient!alw;)V", line = 37)
-	void method26806(@OriginalArg(0) Class93_Sub41 arg0) {
-		arg0.method22394(1, (byte) -13);
-		arg0.method22394(this.aLinkedHashMap1.size(), (byte) -19);
+	void method26806(@OriginalArg(0) Packet arg0) {
+		arg0.p1(1, (byte) -13);
+		arg0.p1(this.aLinkedHashMap1.size(), (byte) -19);
 		@Pc(14) Iterator local14 = this.aLinkedHashMap1.entrySet().iterator();
 		while (local14.hasNext()) {
 			@Pc(21) Entry local21 = (Entry) local14.next();
-			arg0.method22420((Long) local21.getKey());
-			arg0.method22406((Integer) local21.getValue(), (byte) -17);
+			arg0.p8((Long) local21.getKey());
+			arg0.p4((Integer) local21.getValue(), (byte) -17);
 		}
 	}
 
@@ -153,7 +153,7 @@ public class Class306 {
 						throw new EOFException();
 					}
 				}
-				var19 = new Class306(new Class93_Sub41(local16));
+				var19 = new Class306(new Packet(local16));
 				var12 = false;
 				break label114;
 			} catch (@Pc(61) Exception local61) {
@@ -194,9 +194,9 @@ public class Class306 {
 			try {
 				var11 = true;
 				local1 = Class166_Sub18.method15743("3", client.aClass702_4.aString241, true, 199047110);
-				@Pc(15) Class93_Sub41 local15 = new Class93_Sub41(5000);
+				@Pc(15) Packet local15 = new Packet(5000);
 				this.method26805(local15, (byte) 2);
-				local1.method725(local15.aByteArray58, 0, local15.anInt3070 * 212851357, 1540615972);
+				local1.method725(local15.data, 0, local15.pos * 212851357, 1540615972);
 				var11 = false;
 				break label88;
 			} catch (@Pc(37) Exception local37) {
@@ -236,9 +236,9 @@ public class Class306 {
 			try {
 				var10 = true;
 				local1 = Class166_Sub18.method15743("3", client.aClass702_4.aString241, true, 199047110);
-				@Pc(15) Class93_Sub41 local15 = new Class93_Sub41(5000);
+				@Pc(15) Packet local15 = new Packet(5000);
 				this.method26805(local15, (byte) 2);
-				local1.method725(local15.aByteArray58, 0, local15.anInt3070 * 212851357, -161745629);
+				local1.method725(local15.data, 0, local15.pos * 212851357, -161745629);
 				var10 = false;
 				break label88;
 			} catch (@Pc(37) Exception local37) {
@@ -278,9 +278,9 @@ public class Class306 {
 			try {
 				var10 = true;
 				local1 = Class166_Sub18.method15743("3", client.aClass702_4.aString241, true, 199047110);
-				@Pc(15) Class93_Sub41 local15 = new Class93_Sub41(5000);
+				@Pc(15) Packet local15 = new Packet(5000);
 				this.method26805(local15, (byte) 2);
-				local1.method725(local15.aByteArray58, 0, local15.anInt3070 * 212851357, 407279871);
+				local1.method725(local15.data, 0, local15.pos * 212851357, 407279871);
 				var10 = false;
 				break label88;
 			} catch (@Pc(37) Exception local37) {
@@ -320,9 +320,9 @@ public class Class306 {
 			try {
 				var10 = true;
 				local1 = Class166_Sub18.method15743("3", client.aClass702_4.aString241, true, 199047110);
-				@Pc(15) Class93_Sub41 local15 = new Class93_Sub41(5000);
+				@Pc(15) Packet local15 = new Packet(5000);
 				this.method26805(local15, (byte) 2);
-				local1.method725(local15.aByteArray58, 0, local15.anInt3070 * 212851357, 444681064);
+				local1.method725(local15.data, 0, local15.pos * 212851357, 444681064);
 				var10 = false;
 				break label88;
 			} catch (@Pc(37) Exception local37) {

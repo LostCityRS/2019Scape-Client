@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public class Class110_Sub1 extends Class110 {
 
 	@OriginalMember(owner = "client!afj", name = "<init>", descriptor = "(Lclient!alw;)V", line = 7)
-	Class110_Sub1(@OriginalArg(0) Class93_Sub41 arg0) {
+	Class110_Sub1(@OriginalArg(0) Packet arg0) {
 		super(arg0);
 	}
 

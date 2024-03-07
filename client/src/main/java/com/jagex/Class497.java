@@ -731,17 +731,17 @@ public final class Class497 {
 				local104 = Class331.method27374(this.anObjectArray43[arg0], false, 1069378239);
 			} else {
 				local104 = Class331.method27374(this.anObjectArray43[arg0], true, 1158267595);
-				@Pc(109) Class93_Sub41 local109 = new Class93_Sub41(local104);
-				local113 = local109.method22465((short) 16384);
-				local117 = local109.method22483(-118643075);
+				@Pc(109) Packet local109 = new Packet(local104);
+				local113 = local109.g1((short) 16384);
+				local117 = local109.g4(-118643075);
 				@Pc(127) int local127 = (local113 == Class484.aClass484_5.method36920() ? 5 : 9) + local117;
-				local109.method22558(arg2, 5, local127, -1984067408);
+				local109.tinydec(arg2, 5, local127, -1984067408);
 			}
 			@Pc(146) byte[] local146;
 			try {
 				local146 = Class506.method30220(local104, (byte) -100);
 			} catch (@Pc(148) RuntimeException local148) {
-				throw RuntimeException_Sub2.method23530(local148, (arg2 != null) + " " + arg0 + " " + local104.length + " " + Class154.method14143(local104, local104.length, -275987287) + " " + Class154.method14143(local104, local104.length - 2, -206037027) + " " + this.aClass486_2.anIntArray455[arg0] + " " + this.aClass486_2.anInt5145 * 391791439);
+				throw RuntimeException_Sub2.method23530(local148, (arg2 != null) + " " + arg0 + " " + local104.length + " " + Packet.getcrc(local104, local104.length, -275987287) + " " + Packet.getcrc(local104, local104.length - 2, -206037027) + " " + this.aClass486_2.anIntArray455[arg0] + " " + this.aClass486_2.anInt5145 * 391791439);
 			}
 			if (this.aBoolean784) {
 				this.anObjectArray43[arg0] = null;
@@ -752,20 +752,20 @@ public final class Class497 {
 				@Pc(261) int local261;
 				@Pc(316) int local316;
 				@Pc(318) int local318;
-				@Pc(244) Class93_Sub41 local244;
+				@Pc(244) Packet local244;
 				if (this.anInt5174 * -2037379935 == 2) {
 					local113 = local146.length;
 					local113--;
 					local117 = local146[local113] & 0xFF;
 					local113 -= local117 * local19 * 4;
-					local244 = new Class93_Sub41(local146);
+					local244 = new Packet(local146);
 					@Pc(416) int local416 = 0;
 					local254 = 0;
-					local244.anInt3070 = local113 * -1445626955;
+					local244.pos = local113 * -1445626955;
 					for (local259 = 0; local259 < local117; local259++) {
 						local261 = 0;
 						for (local316 = 0; local316 < local19; local316++) {
-							local261 += local244.method22483(-118643075);
+							local261 += local244.g4(-118643075);
 							if (local25 == null) {
 								local318 = local316;
 							} else {
@@ -782,12 +782,12 @@ public final class Class497 {
 					}
 					@Pc(471) byte[] local471 = new byte[local416];
 					local416 = 0;
-					local244.anInt3070 = local113 * -1445626955;
+					local244.pos = local113 * -1445626955;
 					local261 = 0;
 					for (local316 = 0; local316 < local117; local316++) {
 						local318 = 0;
 						for (@Pc(489) int local489 = 0; local489 < local19; local489++) {
-							local318 += local244.method22483(-118643075);
+							local318 += local244.g4(-118643075);
 							@Pc(503) int local503;
 							if (local25 == null) {
 								local503 = local489;
@@ -807,13 +807,13 @@ public final class Class497 {
 					local113--;
 					local117 = local146[local113] & 0xFF;
 					local113 -= local117 * 4 * local19;
-					local244 = new Class93_Sub41(local146);
+					local244 = new Packet(local146);
 					@Pc(247) int[] local247 = new int[local19];
-					local244.anInt3070 = local113 * -1445626955;
+					local244.pos = local113 * -1445626955;
 					for (local254 = 0; local254 < local117; local254++) {
 						local259 = 0;
 						for (local261 = 0; local261 < local19; local261++) {
-							local259 += local244.method22483(-118643075);
+							local259 += local244.g4(-118643075);
 							local247[local261] += local259;
 						}
 					}
@@ -822,12 +822,12 @@ public final class Class497 {
 						local284[local259] = new byte[local247[local259]];
 						local247[local259] = 0;
 					}
-					local244.anInt3070 = local113 * -1445626955;
+					local244.pos = local113 * -1445626955;
 					local259 = 0;
 					for (local261 = 0; local261 < local117; local261++) {
 						local316 = 0;
 						for (local318 = 0; local318 < local19; local318++) {
-							local316 += local244.method22483(-118643075);
+							local316 += local244.g4(-118643075);
 							System.arraycopy(local146, local259, local284[local318], local247[local318], local316);
 							local247[local318] += local316;
 							local259 += local316;
@@ -898,17 +898,17 @@ public final class Class497 {
 				local104 = Class331.method27374(this.anObjectArray43[arg0], false, 2090245629);
 			} else {
 				local104 = Class331.method27374(this.anObjectArray43[arg0], true, -1275986446);
-				@Pc(109) Class93_Sub41 local109 = new Class93_Sub41(local104);
-				local113 = local109.method22465((short) 16384);
-				local117 = local109.method22483(-118643075);
+				@Pc(109) Packet local109 = new Packet(local104);
+				local113 = local109.g1((short) 16384);
+				local117 = local109.g4(-118643075);
 				@Pc(127) int local127 = (local113 == Class484.aClass484_5.method36920() ? 5 : 9) + local117;
-				local109.method22558(arg2, 5, local127, -2092552953);
+				local109.tinydec(arg2, 5, local127, -2092552953);
 			}
 			@Pc(146) byte[] local146;
 			try {
 				local146 = Class506.method30220(local104, (byte) -25);
 			} catch (@Pc(148) RuntimeException local148) {
-				throw RuntimeException_Sub2.method23530(local148, (arg2 != null) + " " + arg0 + " " + local104.length + " " + Class154.method14143(local104, local104.length, -1503200612) + " " + Class154.method14143(local104, local104.length - 2, 539963248) + " " + this.aClass486_2.anIntArray455[arg0] + " " + this.aClass486_2.anInt5145 * 391791439);
+				throw RuntimeException_Sub2.method23530(local148, (arg2 != null) + " " + arg0 + " " + local104.length + " " + Packet.getcrc(local104, local104.length, -1503200612) + " " + Packet.getcrc(local104, local104.length - 2, 539963248) + " " + this.aClass486_2.anIntArray455[arg0] + " " + this.aClass486_2.anInt5145 * 391791439);
 			}
 			if (this.aBoolean784) {
 				this.anObjectArray43[arg0] = null;
@@ -919,20 +919,20 @@ public final class Class497 {
 				@Pc(261) int local261;
 				@Pc(316) int local316;
 				@Pc(318) int local318;
-				@Pc(244) Class93_Sub41 local244;
+				@Pc(244) Packet local244;
 				if (this.anInt5174 * -2037379935 == 2) {
 					local113 = local146.length;
 					local113--;
 					local117 = local146[local113] & 0xFF;
 					local113 -= local117 * local19 * 4;
-					local244 = new Class93_Sub41(local146);
+					local244 = new Packet(local146);
 					@Pc(416) int local416 = 0;
 					local254 = 0;
-					local244.anInt3070 = local113 * -1445626955;
+					local244.pos = local113 * -1445626955;
 					for (local259 = 0; local259 < local117; local259++) {
 						local261 = 0;
 						for (local316 = 0; local316 < local19; local316++) {
-							local261 += local244.method22483(-118643075);
+							local261 += local244.g4(-118643075);
 							if (local25 == null) {
 								local318 = local316;
 							} else {
@@ -949,12 +949,12 @@ public final class Class497 {
 					}
 					@Pc(471) byte[] local471 = new byte[local416];
 					local416 = 0;
-					local244.anInt3070 = local113 * -1445626955;
+					local244.pos = local113 * -1445626955;
 					local261 = 0;
 					for (local316 = 0; local316 < local117; local316++) {
 						local318 = 0;
 						for (@Pc(489) int local489 = 0; local489 < local19; local489++) {
-							local318 += local244.method22483(-118643075);
+							local318 += local244.g4(-118643075);
 							@Pc(503) int local503;
 							if (local25 == null) {
 								local503 = local489;
@@ -974,13 +974,13 @@ public final class Class497 {
 					local113--;
 					local117 = local146[local113] & 0xFF;
 					local113 -= local117 * 4 * local19;
-					local244 = new Class93_Sub41(local146);
+					local244 = new Packet(local146);
 					@Pc(247) int[] local247 = new int[local19];
-					local244.anInt3070 = local113 * -1445626955;
+					local244.pos = local113 * -1445626955;
 					for (local254 = 0; local254 < local117; local254++) {
 						local259 = 0;
 						for (local261 = 0; local261 < local19; local261++) {
-							local259 += local244.method22483(-118643075);
+							local259 += local244.g4(-118643075);
 							local247[local261] += local259;
 						}
 					}
@@ -989,12 +989,12 @@ public final class Class497 {
 						local284[local259] = new byte[local247[local259]];
 						local247[local259] = 0;
 					}
-					local244.anInt3070 = local113 * -1445626955;
+					local244.pos = local113 * -1445626955;
 					local259 = 0;
 					for (local261 = 0; local261 < local117; local261++) {
 						local316 = 0;
 						for (local318 = 0; local318 < local19; local318++) {
-							local316 += local244.method22483(-118643075);
+							local316 += local244.g4(-118643075);
 							System.arraycopy(local146, local259, local284[local318], local247[local318], local316);
 							local247[local318] += local316;
 							local259 += local316;
@@ -1065,17 +1065,17 @@ public final class Class497 {
 				local104 = Class331.method27374(this.anObjectArray43[arg0], false, -1250177665);
 			} else {
 				local104 = Class331.method27374(this.anObjectArray43[arg0], true, -274475759);
-				@Pc(109) Class93_Sub41 local109 = new Class93_Sub41(local104);
-				local113 = local109.method22465((short) 16384);
-				local117 = local109.method22483(-118643075);
+				@Pc(109) Packet local109 = new Packet(local104);
+				local113 = local109.g1((short) 16384);
+				local117 = local109.g4(-118643075);
 				@Pc(127) int local127 = (local113 == Class484.aClass484_5.method36920() ? 5 : 9) + local117;
-				local109.method22558(arg2, 5, local127, -2044400234);
+				local109.tinydec(arg2, 5, local127, -2044400234);
 			}
 			@Pc(146) byte[] local146;
 			try {
 				local146 = Class506.method30220(local104, (byte) -25);
 			} catch (@Pc(148) RuntimeException local148) {
-				throw RuntimeException_Sub2.method23530(local148, (arg2 != null) + " " + arg0 + " " + local104.length + " " + Class154.method14143(local104, local104.length, 492838196) + " " + Class154.method14143(local104, local104.length - 2, -768794211) + " " + this.aClass486_2.anIntArray455[arg0] + " " + this.aClass486_2.anInt5145 * 391791439);
+				throw RuntimeException_Sub2.method23530(local148, (arg2 != null) + " " + arg0 + " " + local104.length + " " + Packet.getcrc(local104, local104.length, 492838196) + " " + Packet.getcrc(local104, local104.length - 2, -768794211) + " " + this.aClass486_2.anIntArray455[arg0] + " " + this.aClass486_2.anInt5145 * 391791439);
 			}
 			if (this.aBoolean784) {
 				this.anObjectArray43[arg0] = null;
@@ -1086,20 +1086,20 @@ public final class Class497 {
 				@Pc(261) int local261;
 				@Pc(316) int local316;
 				@Pc(318) int local318;
-				@Pc(244) Class93_Sub41 local244;
+				@Pc(244) Packet local244;
 				if (this.anInt5174 * -2037379935 == 2) {
 					local113 = local146.length;
 					local113--;
 					local117 = local146[local113] & 0xFF;
 					local113 -= local117 * local19 * 4;
-					local244 = new Class93_Sub41(local146);
+					local244 = new Packet(local146);
 					@Pc(416) int local416 = 0;
 					local254 = 0;
-					local244.anInt3070 = local113 * -1445626955;
+					local244.pos = local113 * -1445626955;
 					for (local259 = 0; local259 < local117; local259++) {
 						local261 = 0;
 						for (local316 = 0; local316 < local19; local316++) {
-							local261 += local244.method22483(-118643075);
+							local261 += local244.g4(-118643075);
 							if (local25 == null) {
 								local318 = local316;
 							} else {
@@ -1116,12 +1116,12 @@ public final class Class497 {
 					}
 					@Pc(471) byte[] local471 = new byte[local416];
 					local416 = 0;
-					local244.anInt3070 = local113 * -1445626955;
+					local244.pos = local113 * -1445626955;
 					local261 = 0;
 					for (local316 = 0; local316 < local117; local316++) {
 						local318 = 0;
 						for (@Pc(489) int local489 = 0; local489 < local19; local489++) {
-							local318 += local244.method22483(-118643075);
+							local318 += local244.g4(-118643075);
 							@Pc(503) int local503;
 							if (local25 == null) {
 								local503 = local489;
@@ -1141,13 +1141,13 @@ public final class Class497 {
 					local113--;
 					local117 = local146[local113] & 0xFF;
 					local113 -= local117 * 4 * local19;
-					local244 = new Class93_Sub41(local146);
+					local244 = new Packet(local146);
 					@Pc(247) int[] local247 = new int[local19];
-					local244.anInt3070 = local113 * -1445626955;
+					local244.pos = local113 * -1445626955;
 					for (local254 = 0; local254 < local117; local254++) {
 						local259 = 0;
 						for (local261 = 0; local261 < local19; local261++) {
-							local259 += local244.method22483(-118643075);
+							local259 += local244.g4(-118643075);
 							local247[local261] += local259;
 						}
 					}
@@ -1156,12 +1156,12 @@ public final class Class497 {
 						local284[local259] = new byte[local247[local259]];
 						local247[local259] = 0;
 					}
-					local244.anInt3070 = local113 * -1445626955;
+					local244.pos = local113 * -1445626955;
 					local259 = 0;
 					for (local261 = 0; local261 < local117; local261++) {
 						local316 = 0;
 						for (local318 = 0; local318 < local19; local318++) {
-							local316 += local244.method22483(-118643075);
+							local316 += local244.g4(-118643075);
 							System.arraycopy(local146, local259, local284[local318], local247[local318], local316);
 							local247[local318] += local316;
 							local259 += local316;
@@ -1232,17 +1232,17 @@ public final class Class497 {
 				local104 = Class331.method27374(this.anObjectArray43[arg0], false, 1976260878);
 			} else {
 				local104 = Class331.method27374(this.anObjectArray43[arg0], true, -1072843845);
-				@Pc(109) Class93_Sub41 local109 = new Class93_Sub41(local104);
-				local113 = local109.method22465((short) 16384);
-				local117 = local109.method22483(-118643075);
+				@Pc(109) Packet local109 = new Packet(local104);
+				local113 = local109.g1((short) 16384);
+				local117 = local109.g4(-118643075);
 				@Pc(127) int local127 = (local113 == Class484.aClass484_5.method36920() ? 5 : 9) + local117;
-				local109.method22558(arg2, 5, local127, -2083254910);
+				local109.tinydec(arg2, 5, local127, -2083254910);
 			}
 			@Pc(146) byte[] local146;
 			try {
 				local146 = Class506.method30220(local104, (byte) -38);
 			} catch (@Pc(148) RuntimeException local148) {
-				throw RuntimeException_Sub2.method23530(local148, (arg2 != null) + " " + arg0 + " " + local104.length + " " + Class154.method14143(local104, local104.length, -540062567) + " " + Class154.method14143(local104, local104.length - 2, 493735020) + " " + this.aClass486_2.anIntArray455[arg0] + " " + this.aClass486_2.anInt5145 * 391791439);
+				throw RuntimeException_Sub2.method23530(local148, (arg2 != null) + " " + arg0 + " " + local104.length + " " + Packet.getcrc(local104, local104.length, -540062567) + " " + Packet.getcrc(local104, local104.length - 2, 493735020) + " " + this.aClass486_2.anIntArray455[arg0] + " " + this.aClass486_2.anInt5145 * 391791439);
 			}
 			if (this.aBoolean784) {
 				this.anObjectArray43[arg0] = null;
@@ -1253,20 +1253,20 @@ public final class Class497 {
 				@Pc(261) int local261;
 				@Pc(316) int local316;
 				@Pc(318) int local318;
-				@Pc(244) Class93_Sub41 local244;
+				@Pc(244) Packet local244;
 				if (this.anInt5174 * -2037379935 == 2) {
 					local113 = local146.length;
 					local113--;
 					local117 = local146[local113] & 0xFF;
 					local113 -= local117 * local19 * 4;
-					local244 = new Class93_Sub41(local146);
+					local244 = new Packet(local146);
 					@Pc(416) int local416 = 0;
 					local254 = 0;
-					local244.anInt3070 = local113 * -1445626955;
+					local244.pos = local113 * -1445626955;
 					for (local259 = 0; local259 < local117; local259++) {
 						local261 = 0;
 						for (local316 = 0; local316 < local19; local316++) {
-							local261 += local244.method22483(-118643075);
+							local261 += local244.g4(-118643075);
 							if (local25 == null) {
 								local318 = local316;
 							} else {
@@ -1283,12 +1283,12 @@ public final class Class497 {
 					}
 					@Pc(471) byte[] local471 = new byte[local416];
 					local416 = 0;
-					local244.anInt3070 = local113 * -1445626955;
+					local244.pos = local113 * -1445626955;
 					local261 = 0;
 					for (local316 = 0; local316 < local117; local316++) {
 						local318 = 0;
 						for (@Pc(489) int local489 = 0; local489 < local19; local489++) {
-							local318 += local244.method22483(-118643075);
+							local318 += local244.g4(-118643075);
 							@Pc(503) int local503;
 							if (local25 == null) {
 								local503 = local489;
@@ -1308,13 +1308,13 @@ public final class Class497 {
 					local113--;
 					local117 = local146[local113] & 0xFF;
 					local113 -= local117 * 4 * local19;
-					local244 = new Class93_Sub41(local146);
+					local244 = new Packet(local146);
 					@Pc(247) int[] local247 = new int[local19];
-					local244.anInt3070 = local113 * -1445626955;
+					local244.pos = local113 * -1445626955;
 					for (local254 = 0; local254 < local117; local254++) {
 						local259 = 0;
 						for (local261 = 0; local261 < local19; local261++) {
-							local259 += local244.method22483(-118643075);
+							local259 += local244.g4(-118643075);
 							local247[local261] += local259;
 						}
 					}
@@ -1323,12 +1323,12 @@ public final class Class497 {
 						local284[local259] = new byte[local247[local259]];
 						local247[local259] = 0;
 					}
-					local244.anInt3070 = local113 * -1445626955;
+					local244.pos = local113 * -1445626955;
 					local259 = 0;
 					for (local261 = 0; local261 < local117; local261++) {
 						local316 = 0;
 						for (local318 = 0; local318 < local19; local318++) {
-							local316 += local244.method22483(-118643075);
+							local316 += local244.g4(-118643075);
 							System.arraycopy(local146, local259, local284[local318], local247[local318], local316);
 							local247[local318] += local316;
 							local259 += local316;
@@ -1399,17 +1399,17 @@ public final class Class497 {
 				local104 = Class331.method27374(this.anObjectArray43[arg0], false, -1154106022);
 			} else {
 				local104 = Class331.method27374(this.anObjectArray43[arg0], true, 1964402896);
-				@Pc(109) Class93_Sub41 local109 = new Class93_Sub41(local104);
-				local113 = local109.method22465((short) 16384);
-				local117 = local109.method22483(-118643075);
+				@Pc(109) Packet local109 = new Packet(local104);
+				local113 = local109.g1((short) 16384);
+				local117 = local109.g4(-118643075);
 				@Pc(127) int local127 = (local113 == Class484.aClass484_5.method36920() ? 5 : 9) + local117;
-				local109.method22558(arg2, 5, local127, -2089227421);
+				local109.tinydec(arg2, 5, local127, -2089227421);
 			}
 			@Pc(146) byte[] local146;
 			try {
 				local146 = Class506.method30220(local104, (byte) -22);
 			} catch (@Pc(148) RuntimeException local148) {
-				throw RuntimeException_Sub2.method23530(local148, (arg2 != null) + " " + arg0 + " " + local104.length + " " + Class154.method14143(local104, local104.length, -203750692) + " " + Class154.method14143(local104, local104.length - 2, -1952842100) + " " + this.aClass486_2.anIntArray455[arg0] + " " + this.aClass486_2.anInt5145 * 391791439);
+				throw RuntimeException_Sub2.method23530(local148, (arg2 != null) + " " + arg0 + " " + local104.length + " " + Packet.getcrc(local104, local104.length, -203750692) + " " + Packet.getcrc(local104, local104.length - 2, -1952842100) + " " + this.aClass486_2.anIntArray455[arg0] + " " + this.aClass486_2.anInt5145 * 391791439);
 			}
 			if (this.aBoolean784) {
 				this.anObjectArray43[arg0] = null;
@@ -1420,20 +1420,20 @@ public final class Class497 {
 				@Pc(261) int local261;
 				@Pc(316) int local316;
 				@Pc(318) int local318;
-				@Pc(244) Class93_Sub41 local244;
+				@Pc(244) Packet local244;
 				if (this.anInt5174 * -2037379935 == 2) {
 					local113 = local146.length;
 					local113--;
 					local117 = local146[local113] & 0xFF;
 					local113 -= local117 * local19 * 4;
-					local244 = new Class93_Sub41(local146);
+					local244 = new Packet(local146);
 					@Pc(416) int local416 = 0;
 					local254 = 0;
-					local244.anInt3070 = local113 * -1445626955;
+					local244.pos = local113 * -1445626955;
 					for (local259 = 0; local259 < local117; local259++) {
 						local261 = 0;
 						for (local316 = 0; local316 < local19; local316++) {
-							local261 += local244.method22483(-118643075);
+							local261 += local244.g4(-118643075);
 							if (local25 == null) {
 								local318 = local316;
 							} else {
@@ -1450,12 +1450,12 @@ public final class Class497 {
 					}
 					@Pc(471) byte[] local471 = new byte[local416];
 					local416 = 0;
-					local244.anInt3070 = local113 * -1445626955;
+					local244.pos = local113 * -1445626955;
 					local261 = 0;
 					for (local316 = 0; local316 < local117; local316++) {
 						local318 = 0;
 						for (@Pc(489) int local489 = 0; local489 < local19; local489++) {
-							local318 += local244.method22483(-118643075);
+							local318 += local244.g4(-118643075);
 							@Pc(503) int local503;
 							if (local25 == null) {
 								local503 = local489;
@@ -1475,13 +1475,13 @@ public final class Class497 {
 					local113--;
 					local117 = local146[local113] & 0xFF;
 					local113 -= local117 * 4 * local19;
-					local244 = new Class93_Sub41(local146);
+					local244 = new Packet(local146);
 					@Pc(247) int[] local247 = new int[local19];
-					local244.anInt3070 = local113 * -1445626955;
+					local244.pos = local113 * -1445626955;
 					for (local254 = 0; local254 < local117; local254++) {
 						local259 = 0;
 						for (local261 = 0; local261 < local19; local261++) {
-							local259 += local244.method22483(-118643075);
+							local259 += local244.g4(-118643075);
 							local247[local261] += local259;
 						}
 					}
@@ -1490,12 +1490,12 @@ public final class Class497 {
 						local284[local259] = new byte[local247[local259]];
 						local247[local259] = 0;
 					}
-					local244.anInt3070 = local113 * -1445626955;
+					local244.pos = local113 * -1445626955;
 					local259 = 0;
 					for (local261 = 0; local261 < local117; local261++) {
 						local316 = 0;
 						for (local318 = 0; local318 < local19; local318++) {
-							local316 += local244.method22483(-118643075);
+							local316 += local244.g4(-118643075);
 							System.arraycopy(local146, local259, local284[local318], local247[local318], local316);
 							local247[local318] += local316;
 							local259 += local316;

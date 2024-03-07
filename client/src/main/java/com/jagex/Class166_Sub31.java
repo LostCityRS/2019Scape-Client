@@ -167,10 +167,10 @@ public class Class166_Sub31 extends Class166 {
 		@Pc(29) String local29 = local21.aString191;
 		@Pc(32) Class175 local32 = Class330.method27371(-2070490767);
 		@Pc(38) Class93_Sub22 local38 = Class102.method2588(Class446.aClass446_96, local32.aClass24_2, (byte) 33);
-		local38.aClass93_Sub41_Sub2_1.method22394(Class46.method895(local29, -1614772735) + 3, (byte) -37);
-		local38.aClass93_Sub41_Sub2_1.method22394(arg0 ? 1 : 0, (byte) -29);
-		local38.aClass93_Sub41_Sub2_1.method22395(arg1, 2136911152);
-		local38.aClass93_Sub41_Sub2_1.method22431(local29, 1257477998);
+		local38.aPacketBit_1.p1(Packet.pjstrlen(local29, -1614772735) + 3, (byte) -37);
+		local38.aPacketBit_1.p1(arg0 ? 1 : 0, (byte) -29);
+		local38.aPacketBit_1.p2(arg1, 2136911152);
+		local38.aPacketBit_1.pjstr(local29, 1257477998);
 		local32.method24356(local38, -2102181116);
 	}
 }

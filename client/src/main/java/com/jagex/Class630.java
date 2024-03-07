@@ -72,15 +72,15 @@ public class Class630 {
 			local36.write("data1=req");
 			local36.flush();
 			@Pc(44) InputStream local44 = local17.getInputStream();
-			@Pc(50) Class93_Sub41 local50 = new Class93_Sub41(new byte[1000]);
+			@Pc(50) Packet local50 = new Packet(new byte[1000]);
 			do {
-				@Pc(65) int local65 = local44.read(local50.aByteArray58, local50.anInt3070 * 212851357, 1000 - local50.anInt3070 * 212851357);
+				@Pc(65) int local65 = local44.read(local50.data, local50.pos * 212851357, 1000 - local50.pos * 212851357);
 				if (local65 == -1) {
-					local50.anInt3070 = 0;
-					return local50.method22495(-1717217003);
+					local50.pos = 0;
+					return local50.g8(-1717217003);
 				}
-				local50.anInt3070 += local65 * -1445626955;
-			} while (local50.anInt3070 * 212851357 < 1000);
+				local50.pos += local65 * -1445626955;
+			} while (local50.pos * 212851357 < 1000);
 			return 0L;
 		} catch (@Pc(96) Exception local96) {
 			return 0L;
@@ -100,15 +100,15 @@ public class Class630 {
 			local36.write("data1=req");
 			local36.flush();
 			@Pc(44) InputStream local44 = local17.getInputStream();
-			@Pc(50) Class93_Sub41 local50 = new Class93_Sub41(new byte[1000]);
+			@Pc(50) Packet local50 = new Packet(new byte[1000]);
 			do {
-				@Pc(65) int local65 = local44.read(local50.aByteArray58, local50.anInt3070 * 212851357, 1000 - local50.anInt3070 * 212851357);
+				@Pc(65) int local65 = local44.read(local50.data, local50.pos * 212851357, 1000 - local50.pos * 212851357);
 				if (local65 == -1) {
-					local50.anInt3070 = 0;
-					return local50.method22495(1609455049);
+					local50.pos = 0;
+					return local50.g8(1609455049);
 				}
-				local50.anInt3070 += local65 * -1445626955;
-			} while (local50.anInt3070 * 212851357 < 1000);
+				local50.pos += local65 * -1445626955;
+			} while (local50.pos * 212851357 < 1000);
 			return 0L;
 		} catch (@Pc(96) Exception local96) {
 			return 0L;
@@ -138,12 +138,12 @@ public class Class630 {
 			return;
 		}
 		@Pc(10) Class93_Sub22 local10 = Class102.method2588(Class446.aClass446_30, client.aClass175_1.aClass24_2, (byte) 47);
-		local10.aClass93_Sub41_Sub2_1.method22395(0, 2144093970);
-		@Pc(21) int local21 = local10.aClass93_Sub41_Sub2_1.anInt3070 * 212851357;
-		local10.aClass93_Sub41_Sub2_1.method22431(arg0, 1419926272);
-		local10.aClass93_Sub41_Sub2_1.anInt3070 += -1529454093;
-		local10.aClass93_Sub41_Sub2_1.method22555(Class676.anIntArray516, local21, local10.aClass93_Sub41_Sub2_1.anInt3070 * 212851357, (byte) -65);
-		local10.aClass93_Sub41_Sub2_1.method22445(local10.aClass93_Sub41_Sub2_1.anInt3070 * 212851357 - local21, 2020888247);
+		local10.aPacketBit_1.p2(0, 2144093970);
+		@Pc(21) int local21 = local10.aPacketBit_1.pos * 212851357;
+		local10.aPacketBit_1.pjstr(arg0, 1419926272);
+		local10.aPacketBit_1.pos += -1529454093;
+		local10.aPacketBit_1.tinyenc(Class676.anIntArray516, local21, local10.aPacketBit_1.pos * 212851357, (byte) -65);
+		local10.aPacketBit_1.psize2(local10.aPacketBit_1.pos * 212851357 - local21, 2020888247);
 		client.aClass175_1.method24356(local10, -1528137382);
 		Class103.aClass721_1 = Class721.aClass721_5;
 	}
@@ -151,48 +151,48 @@ public class Class630 {
 	@OriginalMember(owner = "client!w", name = "w", descriptor = "(JLjava/lang/String;)I", line = 66)
 	public static final int method32270(@OriginalArg(0) long arg0, @OriginalArg(1) String arg1) {
 		@Pc(3) Random local3 = new Random();
-		@Pc(8) Class93_Sub41 local8 = new Class93_Sub41(128);
-		@Pc(13) Class93_Sub41 local13 = new Class93_Sub41(128);
+		@Pc(8) Packet local8 = new Packet(128);
+		@Pc(13) Packet local13 = new Packet(128);
 		@Pc(16) int[] local16 = new int[] { local3.nextInt(), local3.nextInt(), (int) (arg0 >> 32), (int) arg0 };
-		local8.method22394(10, (byte) -38);
+		local8.p1(10, (byte) -38);
 		@Pc(44) int local44;
 		for (local44 = 0; local44 < 4; local44++) {
-			local8.method22406(local3.nextInt(), (byte) 40);
+			local8.p4(local3.nextInt(), (byte) 40);
 		}
-		local8.method22406(local16[0], (byte) 5);
-		local8.method22406(local16[1], (byte) -21);
-		local8.method22420(arg0);
-		local8.method22420(0L);
+		local8.p4(local16[0], (byte) 5);
+		local8.p4(local16[1], (byte) -21);
+		local8.p8(arg0);
+		local8.p8(0L);
 		for (local44 = 0; local44 < 4; local44++) {
-			local8.method22406(local3.nextInt(), (byte) -44);
+			local8.p4(local3.nextInt(), (byte) -44);
 		}
-		local8.method22560(aBigInteger7, aBigInteger8, (byte) -17);
-		local13.method22394(10, (byte) -66);
+		local8.rsaenc(aBigInteger7, aBigInteger8, (byte) -17);
+		local13.p1(10, (byte) -66);
 		for (local44 = 0; local44 < 3; local44++) {
-			local13.method22406(local3.nextInt(), (byte) 23);
+			local13.p4(local3.nextInt(), (byte) 23);
 		}
-		local13.method22420(local3.nextLong());
-		local13.method22417(local3.nextLong());
+		local13.p8(local3.nextLong());
+		local13.p6(local3.nextLong());
 		Class314.method26940(local13, 2128804438);
-		local13.method22420(local3.nextLong());
-		local13.method22560(aBigInteger7, aBigInteger8, (byte) -84);
-		local44 = Class46.method895(arg1, -1889900536);
+		local13.p8(local3.nextLong());
+		local13.rsaenc(aBigInteger7, aBigInteger8, (byte) -84);
+		local44 = Packet.pjstrlen(arg1, -1889900536);
 		if (local44 % 8 != 0) {
 			local44 += 8 - local44 % 8;
 		}
-		@Pc(146) Class93_Sub41 local146 = new Class93_Sub41(local44);
-		local146.method22431(arg1, -85852108);
-		local146.anInt3070 = local44 * -1445626955;
-		local146.method22549(local16, -817017705);
-		@Pc(179) Class93_Sub41 local179 = new Class93_Sub41(local13.anInt3070 * 212851357 + 5 + local8.anInt3070 * 212851357 + local146.anInt3070 * 212851357);
-		local179.method22394(2, (byte) -8);
-		local179.method22394(local8.anInt3070 * 212851357, (byte) -84);
-		local179.method22439(local8.aByteArray58, 0, local8.anInt3070 * 212851357, 2026842986);
-		local179.method22394(local13.anInt3070 * 212851357, (byte) -13);
-		local179.method22439(local13.aByteArray58, 0, local13.anInt3070 * 212851357, 2026842986);
-		local179.method22395(local146.anInt3070 * 212851357, 2132457506);
-		local179.method22439(local146.aByteArray58, 0, local146.anInt3070 * 212851357, 2026842986);
-		@Pc(239) String local239 = Class669.method32941(local179.aByteArray58, 2047889127);
+		@Pc(146) Packet local146 = new Packet(local44);
+		local146.pjstr(arg1, -85852108);
+		local146.pos = local44 * -1445626955;
+		local146.tinyenc(local16, -817017705);
+		@Pc(179) Packet local179 = new Packet(local13.pos * 212851357 + 5 + local8.pos * 212851357 + local146.pos * 212851357);
+		local179.p1(2, (byte) -8);
+		local179.p1(local8.pos * 212851357, (byte) -84);
+		local179.pdata(local8.data, 0, local8.pos * 212851357, 2026842986);
+		local179.p1(local13.pos * 212851357, (byte) -13);
+		local179.pdata(local13.data, 0, local13.pos * 212851357, 2026842986);
+		local179.p2(local146.pos * 212851357, 2132457506);
+		local179.pdata(local146.data, 0, local146.pos * 212851357, 2026842986);
+		@Pc(239) String local239 = Class669.method32941(local179.data, 2047889127);
 		try {
 			@Pc(254) URL local254 = new URL(Class119.method8605("services", false, 770935442) + "m=accountappeal/login.ws");
 			@Pc(257) URLConnection local257 = local254.openConnection();
@@ -203,13 +203,13 @@ public class Class630 {
 			local272.write("data2=" + Class25_Sub2.method16018(local239, (byte) 73) + "&dest=" + Class25_Sub2.method16018("passwordchoice.ws", (byte) 73));
 			local272.flush();
 			@Pc(295) InputStream local295 = local257.getInputStream();
-			local179 = new Class93_Sub41(new byte[1000]);
+			local179 = new Packet(new byte[1000]);
 			do {
-				@Pc(316) int local316 = local295.read(local179.aByteArray58, local179.anInt3070 * 212851357, 1000 - local179.anInt3070 * 212851357);
+				@Pc(316) int local316 = local295.read(local179.data, local179.pos * 212851357, 1000 - local179.pos * 212851357);
 				if (local316 == -1) {
 					local272.close();
 					local295.close();
-					@Pc(347) String local347 = new String(local179.aByteArray58);
+					@Pc(347) String local347 = new String(local179.data);
 					if (local347.startsWith("OFFLINE")) {
 						return 4;
 					} else if (local347.startsWith("WRONG")) {
@@ -219,11 +219,11 @@ public class Class630 {
 					} else if (local347.startsWith("Not permitted for social network accounts.")) {
 						return 6;
 					} else {
-						local179.method22553(local16, 1442669960);
-						while (local179.anInt3070 * 212851357 > 0 && local179.aByteArray58[local179.anInt3070 * 212851357 - 1] == 0) {
-							local179.anInt3070 -= -1445626955;
+						local179.tinydec(local16, 1442669960);
+						while (local179.pos * 212851357 > 0 && local179.data[local179.pos * 212851357 - 1] == 0) {
+							local179.pos -= -1445626955;
 						}
-						local347 = new String(local179.aByteArray58, 0, local179.anInt3070 * 212851357);
+						local347 = new String(local179.data, 0, local179.pos * 212851357);
 						if (Class89.method1600(local347, (byte) 1)) {
 							Class338.method27464(local347, true, client.aBoolean596, (byte) -125);
 							return 2;
@@ -232,8 +232,8 @@ public class Class630 {
 						}
 					}
 				}
-				local179.anInt3070 += local316 * -1445626955;
-			} while (local179.anInt3070 * 212851357 < 1000);
+				local179.pos += local316 * -1445626955;
+			} while (local179.pos * 212851357 < 1000);
 			return 5;
 		} catch (@Pc(423) Throwable local423) {
 			local423.printStackTrace();

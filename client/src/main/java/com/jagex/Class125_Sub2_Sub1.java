@@ -22,9 +22,9 @@ public class Class125_Sub2_Sub1 extends Class125_Sub2 {
 	}
 
 	@OriginalMember(owner = "client!aqy", name = "w", descriptor = "(Lclient!alw;)Lclient!kp;", line = 14)
-	public static Class125 method21467(@OriginalArg(0) Class93_Sub41 arg0) {
+	public static Class125 method21467(@OriginalArg(0) Packet arg0) {
 		@Pc(4) Class125_Sub2 local4 = (Class125_Sub2) Class661.method32833(arg0, (byte) 98);
-		@Pc(8) int local8 = arg0.method22475((byte) -67);
+		@Pc(8) int local8 = arg0.g2s((byte) -67);
 		return new Class125_Sub2_Sub1(local4.aClass390_7, local4.aClass392_7, local4.anInt2981 * 483768335, local4.anInt2982 * 2099407685, local4.anInt2983 * 1135283731, local4.anInt2980 * -1017655207, local4.anInt2985 * -1946839755, local4.anInt2986 * -1726029297, local4.anInt2984 * 291173831, local4.anInt2987 * -312428519, local4.anInt2988 * 813929059, local4.anInt2990 * -2031575365, local4.anInt2991 * 79921115, local4.anInt2989 * -143127169, local4.anInt2992 * 247837873, local8);
 	}
 

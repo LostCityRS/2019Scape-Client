@@ -36,12 +36,12 @@ public class Class133 implements Interface32 {
 	}
 
 	@OriginalMember(owner = "client!la", name = "m", descriptor = "(Lclient!alw;)Lclient!la;", line = 21)
-	public static Class133 method10071(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(3) int local3 = arg0.method22542(-617007490);
-		@Pc(10) Class390 local10 = Class708.method36753(36102269)[arg0.method22465((short) 16384)];
-		@Pc(17) Class392 local17 = Class252.method25976(2094587407)[arg0.method22465((short) 16384)];
-		@Pc(21) int local21 = arg0.method22475((byte) -13);
-		@Pc(25) int local25 = arg0.method22475((byte) -93);
+	public static Class133 method10071(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.gSmart2or4null(-617007490);
+		@Pc(10) Class390 local10 = Class708.method36753(36102269)[arg0.g1((short) 16384)];
+		@Pc(17) Class392 local17 = Class252.method25976(2094587407)[arg0.g1((short) 16384)];
+		@Pc(21) int local21 = arg0.g2s((byte) -13);
+		@Pc(25) int local25 = arg0.g2s((byte) -93);
 		return new Class133(local3, local10, local17, local21, local25);
 	}
 
@@ -83,7 +83,7 @@ public class Class133 implements Interface32 {
 				if (local58 != null) {
 					@Pc(70) Class312 local70 = arg2.aClass312Array3[local43] = new Class312();
 					local70.anInt3953 = (local43 + (arg0 << 16)) * -212068725;
-					local70.method26861(new Class93_Sub41(local58), -253284198);
+					local70.method26861(new Packet(local58), -253284198);
 				}
 			}
 		}

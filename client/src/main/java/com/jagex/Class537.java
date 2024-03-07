@@ -12,12 +12,12 @@ public class Class537 {
 	Class526 aClass526_11;
 
 	@OriginalMember(owner = "client!rt", name = "n", descriptor = "Lclient!ase;")
-	Class93_Sub41_Sub2 aClass93_Sub41_Sub2_3;
+	PacketBit aPacketBit_3;
 
 	@OriginalMember(owner = "client!rt", name = "<init>", descriptor = "(Lclient!rc;Lclient!ase;)V", line = 9)
-	public Class537(@OriginalArg(0) Class526 arg0, @OriginalArg(1) Class93_Sub41_Sub2 arg1) {
+	public Class537(@OriginalArg(0) Class526 arg0, @OriginalArg(1) PacketBit arg1) {
 		this.aClass526_11 = arg0;
-		this.aClass93_Sub41_Sub2_3 = arg1;
+		this.aPacketBit_3 = arg1;
 	}
 
 	@OriginalMember(owner = "client!rt", name = "apq", descriptor = "(Lclient!yf;S)V", line = 12666)

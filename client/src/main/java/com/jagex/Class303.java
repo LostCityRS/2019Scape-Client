@@ -23,11 +23,11 @@ public class Class303 {
 	final long aLong254;
 
 	@OriginalMember(owner = "client!gx", name = "<init>", descriptor = "(Lclient!alw;Lclient!gu;)V", line = 16)
-	public Class303(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) Interface27 arg1) {
+	public Class303(@OriginalArg(0) Packet arg0, @OriginalArg(1) Interface27 arg1) {
 		this.anInterface27_2 = arg1;
-		this.aLong254 = arg0.method22495(-1554374053) * -1768670706583714723L;
-		this.anInt3934 = arg0.method22483(-118643075) * -1686049987;
-		for (@Pc(30) int local30 = arg0.method22465((short) 16384); local30 != 0; local30 = arg0.method22465((short) 16384)) {
+		this.aLong254 = arg0.g8(-1554374053) * -1768670706583714723L;
+		this.anInt3934 = arg0.g4(-118643075) * -1686049987;
+		for (@Pc(30) int local30 = arg0.g1((short) 16384); local30 != 0; local30 = arg0.g1((short) 16384)) {
 			@Pc(40) Class299 local40 = (Class299) Class107.method18116(Class299.method26710((byte) 14), local30, -1915563430);
 			@Pc(51) Object local51;
 			switch(local40.anInt3927 * 443037581) {

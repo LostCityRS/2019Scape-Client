@@ -45,7 +45,7 @@ public class Class93_Sub7 extends Class93 {
 	int anInt1456;
 
 	@OriginalMember(owner = "client!ajr", name = "b", descriptor = "Lclient!alw;")
-	Class93_Sub41 aClass93_Sub41_8;
+    Packet aPacket_8;
 
 	@OriginalMember(owner = "client!ajr", name = "h", descriptor = "Lclient!asb;")
 	Class93_Sub41_Sub1 aClass93_Sub41_Sub1_2;
@@ -128,7 +128,7 @@ public class Class93_Sub7 extends Class93 {
 			}
 		}
 		if (this.anInt1456 > 0) {
-			this.aClass93_Sub41_8 = new Class93_Sub41(this.anInt1456 * 2);
+			this.aPacket_8 = new Packet(this.anInt1456 * 2);
 			this.aClass93_Sub41_Sub1_2 = new Class93_Sub41_Sub1(this.anInt1456 * 16);
 			this.aClass16_10 = new Class16(Class134_Sub2.method10207(this.anInt1456, (byte) 116));
 			local127 = 0;
@@ -189,8 +189,8 @@ public class Class93_Sub7 extends Class93 {
 				}
 				local127++;
 			}
-			this.anInterface16_3 = this.aClass104_Sub1_29.method3843(5123, this.aClass93_Sub41_8.aByteArray58, this.aClass93_Sub41_8.anInt3070 * 212851357, false);
-			this.anInterface14_5 = this.aClass104_Sub1_29.method3845(16, this.aClass93_Sub41_Sub1_2.aByteArray58, this.aClass93_Sub41_Sub1_2.anInt3070 * 212851357, false);
+			this.anInterface16_3 = this.aClass104_Sub1_29.method3843(5123, this.aPacket_8.data, this.aPacket_8.pos * 212851357, false);
+			this.anInterface14_5 = this.aClass104_Sub1_29.method3845(16, this.aClass93_Sub41_Sub1_2.data, this.aClass93_Sub41_Sub1_2.pos * 212851357, false);
 			this.aClass193_11 = new Class193(this.anInterface14_5, 5126, 3, 0);
 			this.aClass193_12 = new Class193(this.anInterface14_5, 5121, 4, 12);
 		} else {
@@ -200,7 +200,7 @@ public class Class93_Sub7 extends Class93 {
 			this.aClass193_12 = null;
 		}
 		this.aClass93_Sub41_Sub1_2 = null;
-		this.aClass93_Sub41_8 = null;
+		this.aPacket_8 = null;
 		this.aClass16_10 = null;
 		this.aFloatArrayArray14 = null;
 		this.aFloatArrayArray16 = null;
@@ -210,18 +210,18 @@ public class Class93_Sub7 extends Class93 {
 	@OriginalMember(owner = "client!ajr", name = "e", descriptor = "(S)V", line = 162)
 	void method12729(@OriginalArg(0) short arg0) {
 		if (this.aClass104_Sub1_29.aBoolean106) {
-			this.aClass93_Sub41_8.method22395(arg0, 2144235018);
+			this.aPacket_8.p2(arg0, 2144235018);
 		} else {
-			this.aClass93_Sub41_8.method22398(arg0, -1186779702);
+			this.aPacket_8.ip2(arg0, -1186779702);
 		}
 	}
 
 	@OriginalMember(owner = "client!ajr", name = "k", descriptor = "(S)V", line = 162)
 	void method12730(@OriginalArg(0) short arg0) {
 		if (this.aClass104_Sub1_29.aBoolean106) {
-			this.aClass93_Sub41_8.method22395(arg0, 2131065806);
+			this.aPacket_8.p2(arg0, 2131065806);
 		} else {
-			this.aClass93_Sub41_8.method22398(arg0, -1592249828);
+			this.aPacket_8.ip2(arg0, -1592249828);
 		}
 	}
 
@@ -332,10 +332,10 @@ public class Class93_Sub7 extends Class93 {
 			this.aClass93_Sub41_Sub1_2.method22325((float) local28);
 			this.aClass93_Sub41_Sub1_2.method22325((float) local21);
 		}
-		this.aClass93_Sub41_Sub1_2.method22394(local538, (byte) -80);
-		this.aClass93_Sub41_Sub1_2.method22394(local553, (byte) -37);
-		this.aClass93_Sub41_Sub1_2.method22394(local566, (byte) -37);
-		this.aClass93_Sub41_Sub1_2.method22394(255, (byte) -40);
+		this.aClass93_Sub41_Sub1_2.p1(local538, (byte) -80);
+		this.aClass93_Sub41_Sub1_2.p1(local553, (byte) -37);
+		this.aClass93_Sub41_Sub1_2.p1(local566, (byte) -37);
+		this.aClass93_Sub41_Sub1_2.p1(255, (byte) -40);
 		this.method12729(local70);
 	}
 
@@ -446,10 +446,10 @@ public class Class93_Sub7 extends Class93 {
 			this.aClass93_Sub41_Sub1_2.method22325((float) local28);
 			this.aClass93_Sub41_Sub1_2.method22325((float) local21);
 		}
-		this.aClass93_Sub41_Sub1_2.method22394(local538, (byte) -48);
-		this.aClass93_Sub41_Sub1_2.method22394(local553, (byte) -103);
-		this.aClass93_Sub41_Sub1_2.method22394(local566, (byte) -54);
-		this.aClass93_Sub41_Sub1_2.method22394(255, (byte) -15);
+		this.aClass93_Sub41_Sub1_2.p1(local538, (byte) -48);
+		this.aClass93_Sub41_Sub1_2.p1(local553, (byte) -103);
+		this.aClass93_Sub41_Sub1_2.p1(local566, (byte) -54);
+		this.aClass93_Sub41_Sub1_2.p1(255, (byte) -15);
 		this.method12729(local70);
 	}
 

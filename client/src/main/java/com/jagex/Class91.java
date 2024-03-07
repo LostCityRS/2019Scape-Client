@@ -23,36 +23,36 @@ public class Class91 {
 
 	@OriginalMember(owner = "client!adv", name = "e", descriptor = "([BI)[B", line = 16)
 	public byte[] method1703(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1) {
-		@Pc(4) Class93_Sub41 local4 = new Class93_Sub41(arg0);
-		local4.anInt3070 = (arg0.length - 4) * -1445626955;
-		@Pc(16) int local16 = local4.method22485((byte) -94);
+		@Pc(4) Packet local4 = new Packet(arg0);
+		local4.pos = (arg0.length - 4) * -1445626955;
+		@Pc(16) int local16 = local4.ig4((byte) -94);
 		@Pc(19) byte[] local19 = new byte[local16];
-		local4.anInt3070 = 0;
+		local4.pos = 0;
 		this.method1705(local4, local19, (short) 1043);
 		return local19;
 	}
 
 	@OriginalMember(owner = "client!adv", name = "m", descriptor = "([B)[B", line = 16)
 	public byte[] method1704(@OriginalArg(0) byte[] arg0) {
-		@Pc(4) Class93_Sub41 local4 = new Class93_Sub41(arg0);
-		local4.anInt3070 = (arg0.length - 4) * -1445626955;
-		@Pc(16) int local16 = local4.method22485((byte) -125);
+		@Pc(4) Packet local4 = new Packet(arg0);
+		local4.pos = (arg0.length - 4) * -1445626955;
+		@Pc(16) int local16 = local4.ig4((byte) -125);
 		@Pc(19) byte[] local19 = new byte[local16];
-		local4.anInt3070 = 0;
+		local4.pos = 0;
 		this.method1705(local4, local19, (short) 1043);
 		return local19;
 	}
 
 	@OriginalMember(owner = "client!adv", name = "n", descriptor = "(Lclient!alw;[BS)V", line = 26)
-	public void method1705(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) short arg2) {
-		if (arg0.aByteArray58[arg0.anInt3070 * 212851357] != 31 || arg0.aByteArray58[arg0.anInt3070 * 212851357 + 1] != -117) {
+	public void method1705(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte[] arg1, @OriginalArg(2) short arg2) {
+		if (arg0.data[arg0.pos * 212851357] != 31 || arg0.data[arg0.pos * 212851357 + 1] != -117) {
 			throw new RuntimeException("");
 		}
 		if (this.anInflater1 == null) {
 			this.anInflater1 = new Inflater(true);
 		}
 		try {
-			this.anInflater1.setInput(arg0.aByteArray58, arg0.anInt3070 * 212851357 + 10, arg0.aByteArray58.length - (arg0.anInt3070 * 212851357 + 10 + 8));
+			this.anInflater1.setInput(arg0.data, arg0.pos * 212851357 + 10, arg0.data.length - (arg0.pos * 212851357 + 10 + 8));
 			this.anInflater1.inflate(arg1);
 		} catch (@Pc(64) Exception local64) {
 			this.anInflater1.reset();

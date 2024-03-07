@@ -29,28 +29,28 @@ public class Class93_Sub31_Sub5 extends Class93_Sub31 {
 
 	@OriginalMember(owner = "client!arz", name = "e", descriptor = "(Lclient!alw;I)V", line = 61)
 	@Override
-	void method22014(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		if (arg0.method22465((short) 16384) != 255) {
-			arg0.anInt3070 -= -1445626955;
-			arg0.method22495(-839464240);
+	void method22014(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		if (arg0.g1((short) 16384) != 255) {
+			arg0.pos -= -1445626955;
+			arg0.g8(-839464240);
 		}
-		this.aString105 = arg0.method22507((byte) 89);
-		this.anInt3054 = arg0.method22472(-1434290800) * -2079533049;
-		this.aByte87 = arg0.method22468(1794019770);
-		arg0.method22495(-1139936111);
+		this.aString105 = arg0.fastgstr((byte) 89);
+		this.anInt3054 = arg0.g2(-1434290800) * -2079533049;
+		this.aByte87 = arg0.g1b(1794019770);
+		arg0.g8(-1139936111);
 	}
 
 	@OriginalMember(owner = "client!arz", name = "m", descriptor = "(Lclient!alw;)V", line = 61)
 	@Override
-	void method22009(@OriginalArg(0) Class93_Sub41 arg0) {
-		if (arg0.method22465((short) 16384) != 255) {
-			arg0.anInt3070 -= -1445626955;
-			arg0.method22495(1200200775);
+	void method22009(@OriginalArg(0) Packet arg0) {
+		if (arg0.g1((short) 16384) != 255) {
+			arg0.pos -= -1445626955;
+			arg0.g8(1200200775);
 		}
-		this.aString105 = arg0.method22507((byte) 82);
-		this.anInt3054 = arg0.method22472(-1434290800) * -2079533049;
-		this.aByte87 = arg0.method22468(1638872814);
-		arg0.method22495(1247380056);
+		this.aString105 = arg0.fastgstr((byte) 82);
+		this.anInt3054 = arg0.g2(-1434290800) * -2079533049;
+		this.aByte87 = arg0.g1b(1638872814);
+		arg0.g8(1247380056);
 	}
 
 	@OriginalMember(owner = "client!arz", name = "w", descriptor = "(Lclient!akr;)V", line = 72)

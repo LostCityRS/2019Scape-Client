@@ -191,37 +191,37 @@ public class Class124_Sub3_Sub2 extends Class124_Sub3 {
 
 	@OriginalMember(owner = "client!aqt", name = "ac", descriptor = "(Lclient!alw;IS)V", line = 53)
 	@Override
-	void method21446(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) short arg2) {
+	void method21446(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) short arg2) {
 		this.aFloatArray59 = new float[arg1];
 		this.aFloatArray58 = new float[arg1];
 		this.anInt2871 = 0;
 		for (@Pc(12) int local12 = 0; local12 < arg1; local12++) {
-			this.aFloatArray59[local12] = arg0.method22504(1002418729);
-			this.aFloatArray58[local12] = arg0.method22504(-725917367);
+			this.aFloatArray59[local12] = arg0.gFloat(1002418729);
+			this.aFloatArray58[local12] = arg0.gFloat(-725917367);
 		}
 	}
 
 	@OriginalMember(owner = "client!aqt", name = "ar", descriptor = "(Lclient!alw;I)V", line = 53)
 	@Override
-	void method21454(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method21454(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		this.aFloatArray59 = new float[arg1];
 		this.aFloatArray58 = new float[arg1];
 		this.anInt2871 = 0;
 		for (@Pc(12) int local12 = 0; local12 < arg1; local12++) {
-			this.aFloatArray59[local12] = arg0.method22504(-991162414);
-			this.aFloatArray58[local12] = arg0.method22504(-903416837);
+			this.aFloatArray59[local12] = arg0.gFloat(-991162414);
+			this.aFloatArray58[local12] = arg0.gFloat(-903416837);
 		}
 	}
 
 	@OriginalMember(owner = "client!aqt", name = "ap", descriptor = "(Lclient!alw;I)V", line = 53)
 	@Override
-	void method21455(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method21455(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		this.aFloatArray59 = new float[arg1];
 		this.aFloatArray58 = new float[arg1];
 		this.anInt2871 = 0;
 		for (@Pc(12) int local12 = 0; local12 < arg1; local12++) {
-			this.aFloatArray59[local12] = arg0.method22504(-1471601071);
-			this.aFloatArray58[local12] = arg0.method22504(-1215756767);
+			this.aFloatArray59[local12] = arg0.gFloat(-1471601071);
+			this.aFloatArray58[local12] = arg0.gFloat(-1215756767);
 		}
 	}
 }

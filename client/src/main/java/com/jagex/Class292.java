@@ -26,15 +26,15 @@ public class Class292 implements Interface26 {
 	}
 
 	@OriginalMember(owner = "client!gl", name = "<init>", descriptor = "(Lclient!gx;Lclient!alw;)V", line = 309)
-	Class292(@OriginalArg(0) Class303 arg0, @OriginalArg(1) Class93_Sub41 arg1) {
+	Class292(@OriginalArg(0) Class303 arg0, @OriginalArg(1) Packet arg1) {
 		this.this$0 = arg0;
-		@Pc(8) int local8 = arg1.method22472(-1434290800);
+		@Pc(8) int local8 = arg1.g2(-1434290800);
 		if (local8 == 65535) {
 			this.anInt3913 = -1526435553;
 			this.anInt3912 = 0;
 		} else {
 			this.anInt3913 = local8 * 1526435553;
-			this.anInt3912 = arg1.method22483(-118643075) * -768993093;
+			this.anInt3912 = arg1.g4(-118643075) * -768993093;
 		}
 	}
 

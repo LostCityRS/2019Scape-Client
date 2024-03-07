@@ -167,7 +167,7 @@ public class Class166_Sub29 extends Class166 {
 						throw new EOFException();
 					}
 				}
-				var20 = new Class306(new Class93_Sub41(local16));
+				var20 = new Class306(new Packet(local16));
 				var13 = false;
 				break label114;
 			} catch (@Pc(61) Exception local61) {

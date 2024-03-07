@@ -13,13 +13,13 @@ public abstract class Class110 {
 	public final int anInt2820;
 
 	@OriginalMember(owner = "client!ew", name = "<init>", descriptor = "(Lclient!alw;)V", line = 9)
-	Class110(@OriginalArg(0) Class93_Sub41 arg0) {
-		this.anInt2820 = arg0.method22472(-1434290800) * -488460739;
+	Class110(@OriginalArg(0) Packet arg0) {
+		this.anInt2820 = arg0.g2(-1434290800) * -488460739;
 	}
 
 	@OriginalMember(owner = "client!ew", name = "z", descriptor = "(Lclient!alw;)Lclient!ew;", line = 14)
-	static Class110 method20137(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(3) int local3 = arg0.method22465((short) 16384);
+	static Class110 method20137(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1((short) 16384);
 		@Pc(7) Class89 local7 = Class271.method26302(local3, (byte) 10);
 		@Pc(9) Class110 local9 = null;
 		switch(local7.anInt291 * -380728599) {

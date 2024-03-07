@@ -33,22 +33,22 @@ public class Class93_Sub26_Sub7 extends Class93_Sub26 {
 
 	@OriginalMember(owner = "client!arj", name = "e", descriptor = "(Lclient!alw;B)V", line = 235)
 	@Override
-	void method21992(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
-		this.aBoolean502 = arg0.method22465((short) 16384) == 1;
-		this.aByte83 = arg0.method22468(1136407478);
-		this.aByte82 = arg0.method22468(1589838347);
-		this.aByte81 = arg0.method22468(617762121);
-		this.aByte84 = arg0.method22468(759975519);
+	void method21992(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
+		this.aBoolean502 = arg0.g1((short) 16384) == 1;
+		this.aByte83 = arg0.g1b(1136407478);
+		this.aByte82 = arg0.g1b(1589838347);
+		this.aByte81 = arg0.g1b(617762121);
+		this.aByte84 = arg0.g1b(759975519);
 	}
 
 	@OriginalMember(owner = "client!arj", name = "m", descriptor = "(Lclient!alw;)V", line = 235)
 	@Override
-	void method21994(@OriginalArg(0) Class93_Sub41 arg0) {
-		this.aBoolean502 = arg0.method22465((short) 16384) == 1;
-		this.aByte83 = arg0.method22468(1609033030);
-		this.aByte82 = arg0.method22468(622198817);
-		this.aByte81 = arg0.method22468(761761363);
-		this.aByte84 = arg0.method22468(1491619550);
+	void method21994(@OriginalArg(0) Packet arg0) {
+		this.aBoolean502 = arg0.g1((short) 16384) == 1;
+		this.aByte83 = arg0.g1b(1609033030);
+		this.aByte82 = arg0.g1b(622198817);
+		this.aByte81 = arg0.g1b(761761363);
+		this.aByte84 = arg0.g1b(1491619550);
 	}
 
 	@OriginalMember(owner = "client!arj", name = "k", descriptor = "(Lclient!kr;)V", line = 243)

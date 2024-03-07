@@ -82,9 +82,9 @@ public class Class93_Sub1_Sub5 extends Class93_Sub1 {
 			}
 		}
 		@Pc(39) boolean local39 = true;
-		@Pc(45) Class93_Sub41 local45 = new Class93_Sub41(this.aByteArray56);
-		@Pc(49) int local49 = local45.method22465((short) 16384);
-		@Pc(53) int local53 = local45.method22472(-1434290800);
+		@Pc(45) Packet local45 = new Packet(this.aByteArray56);
+		@Pc(49) int local49 = local45.g1((short) 16384);
+		@Pc(53) int local53 = local45.g2(-1434290800);
 		@Pc(56) Class497 local56 = Class722.aClass497_144;
 		synchronized (Class722.aClass497_144) {
 			local39 &= Class722.aClass497_144.method30071(local53, -512225963);
@@ -102,16 +102,16 @@ public class Class93_Sub1_Sub5 extends Class93_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!ard", name = "m", descriptor = "(Lclient!alw;IB)V", line = 56)
-	void method21544(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
-		this.anInt3002 = arg0.method22472(-1434290800) * -1452663667;
-		this.anInt3000 = arg0.method22472(-1434290800) * 458944011;
-		this.anInt3003 = arg0.method22465((short) 16384) * -412893821;
-		@Pc(24) int local24 = arg0.method22472(-1434290800);
+	void method21544(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
+		this.anInt3002 = arg0.g2(-1434290800) * -1452663667;
+		this.anInt3000 = arg0.g2(-1434290800) * 458944011;
+		this.anInt3003 = arg0.g1((short) 16384) * -412893821;
+		@Pc(24) int local24 = arg0.g2(-1434290800);
 		this.aClass230ArrayArray1 = new Class230[this.aClass93_Sub25_1.anInt1590 * 1418467783][];
 		for (@Pc(34) int local34 = 0; local34 < local24; local34++) {
-			@Pc(43) Class233 local43 = Class129_Sub2_Sub1.method21481(arg0.method22465((short) 16384), (short) 166);
-			@Pc(47) int local47 = arg0.method22522(-358186793);
-			@Pc(53) Class211 local53 = Class581.method31391(arg0.method22465((short) 16384), 1241791091);
+			@Pc(43) Class233 local43 = Class129_Sub2_Sub1.method21481(arg0.g1((short) 16384), (short) 166);
+			@Pc(47) int local47 = arg0.gSmart1or2s(-358186793);
+			@Pc(53) Class211 local53 = Class581.method31391(arg0.g1((short) 16384), 1241791091);
 			@Pc(57) Class230 local57 = new Class230();
 			local57.method25629(arg0, arg1, 1143974006);
 			@Pc(67) int local67 = local43.method25730(-907590386);
@@ -130,16 +130,16 @@ public class Class93_Sub1_Sub5 extends Class93_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!ard", name = "y", descriptor = "(Lclient!alw;I)V", line = 56)
-	void method21545(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		this.anInt3002 = arg0.method22472(-1434290800) * -1452663667;
-		this.anInt3000 = arg0.method22472(-1434290800) * 458944011;
-		this.anInt3003 = arg0.method22465((short) 16384) * -412893821;
-		@Pc(24) int local24 = arg0.method22472(-1434290800);
+	void method21545(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		this.anInt3002 = arg0.g2(-1434290800) * -1452663667;
+		this.anInt3000 = arg0.g2(-1434290800) * 458944011;
+		this.anInt3003 = arg0.g1((short) 16384) * -412893821;
+		@Pc(24) int local24 = arg0.g2(-1434290800);
 		this.aClass230ArrayArray1 = new Class230[this.aClass93_Sub25_1.anInt1590 * 1418467783][];
 		for (@Pc(34) int local34 = 0; local34 < local24; local34++) {
-			@Pc(43) Class233 local43 = Class129_Sub2_Sub1.method21481(arg0.method22465((short) 16384), (short) 166);
-			@Pc(47) int local47 = arg0.method22522(-358186793);
-			@Pc(53) Class211 local53 = Class581.method31391(arg0.method22465((short) 16384), -2045176106);
+			@Pc(43) Class233 local43 = Class129_Sub2_Sub1.method21481(arg0.g1((short) 16384), (short) 166);
+			@Pc(47) int local47 = arg0.gSmart1or2s(-358186793);
+			@Pc(53) Class211 local53 = Class581.method31391(arg0.g1((short) 16384), -2045176106);
 			@Pc(57) Class230 local57 = new Class230();
 			local57.method25629(arg0, arg1, 35254018);
 			@Pc(67) int local67 = local43.method25730(-907590386);
@@ -158,16 +158,16 @@ public class Class93_Sub1_Sub5 extends Class93_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!ard", name = "x", descriptor = "(Lclient!alw;I)V", line = 56)
-	void method21546(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		this.anInt3002 = arg0.method22472(-1434290800) * -1452663667;
-		this.anInt3000 = arg0.method22472(-1434290800) * 458944011;
-		this.anInt3003 = arg0.method22465((short) 16384) * -412893821;
-		@Pc(24) int local24 = arg0.method22472(-1434290800);
+	void method21546(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		this.anInt3002 = arg0.g2(-1434290800) * -1452663667;
+		this.anInt3000 = arg0.g2(-1434290800) * 458944011;
+		this.anInt3003 = arg0.g1((short) 16384) * -412893821;
+		@Pc(24) int local24 = arg0.g2(-1434290800);
 		this.aClass230ArrayArray1 = new Class230[this.aClass93_Sub25_1.anInt1590 * 1418467783][];
 		for (@Pc(34) int local34 = 0; local34 < local24; local34++) {
-			@Pc(43) Class233 local43 = Class129_Sub2_Sub1.method21481(arg0.method22465((short) 16384), (short) 166);
-			@Pc(47) int local47 = arg0.method22522(-358186793);
-			@Pc(53) Class211 local53 = Class581.method31391(arg0.method22465((short) 16384), -1522079753);
+			@Pc(43) Class233 local43 = Class129_Sub2_Sub1.method21481(arg0.g1((short) 16384), (short) 166);
+			@Pc(47) int local47 = arg0.gSmart1or2s(-358186793);
+			@Pc(53) Class211 local53 = Class581.method31391(arg0.g1((short) 16384), -1522079753);
 			@Pc(57) Class230 local57 = new Class230();
 			local57.method25629(arg0, arg1, 726335222);
 			@Pc(67) int local67 = local43.method25730(-907590386);

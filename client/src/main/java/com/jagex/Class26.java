@@ -44,9 +44,9 @@ public class Class26 implements Interface13, Interface5 {
 
 	@OriginalMember(owner = "client!aaz", name = "w", descriptor = "(Lclient!alw;)V", line = 24)
 	@Override
-	public void method36658(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36658(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -56,9 +56,9 @@ public class Class26 implements Interface13, Interface5 {
 
 	@OriginalMember(owner = "client!aaz", name = "k", descriptor = "(Lclient!alw;)V", line = 24)
 	@Override
-	public void method36656(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36656(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -68,9 +68,9 @@ public class Class26 implements Interface13, Interface5 {
 
 	@OriginalMember(owner = "client!aaz", name = "f", descriptor = "(Lclient!alw;)V", line = 24)
 	@Override
-	public void method36657(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36657(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -80,9 +80,9 @@ public class Class26 implements Interface13, Interface5 {
 
 	@OriginalMember(owner = "client!aaz", name = "e", descriptor = "(Lclient!alw;B)V", line = 24)
 	@Override
-	public void method36654(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
+	public void method36654(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -92,9 +92,9 @@ public class Class26 implements Interface13, Interface5 {
 
 	@OriginalMember(owner = "client!aaz", name = "m", descriptor = "(Lclient!alw;)V", line = 24)
 	@Override
-	public void method36655(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36655(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -103,17 +103,17 @@ public class Class26 implements Interface13, Interface5 {
 	}
 
 	@OriginalMember(owner = "client!aaz", name = "u", descriptor = "(Lclient!alw;IB)V", line = 31)
-	void method572(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
+	void method572(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte arg2) {
 		if (arg1 == 1) {
-			this.anInt88 = arg0.method22478((short) 5787) * 1304772293;
+			this.anInt88 = arg0.g3((short) 5787) * 1304772293;
 			this.method574(this.anInt88 * -1647734771, 693908015);
 		} else if (arg1 == 2) {
-			this.anInt84 = arg0.method22472(-1434290800) * -1078353519;
+			this.anInt84 = arg0.g2(-1434290800) * -1078353519;
 			if (this.anInt84 * -990036111 == 65535) {
 				this.anInt84 = 1078353519;
 			}
 		} else if (arg1 == 3) {
-			this.anInt85 = (arg0.method22472(-1434290800) << 2) * -2018615685;
+			this.anInt85 = (arg0.g2(-1434290800) << 2) * -2018615685;
 		} else if (arg1 == 4) {
 			this.aBoolean12 = false;
 		} else if (arg1 == 5) {
@@ -122,17 +122,17 @@ public class Class26 implements Interface13, Interface5 {
 	}
 
 	@OriginalMember(owner = "client!aaz", name = "d", descriptor = "(Lclient!alw;I)V", line = 31)
-	void method573(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method573(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.anInt88 = arg0.method22478((short) -8546) * 1304772293;
+			this.anInt88 = arg0.g3((short) -8546) * 1304772293;
 			this.method574(this.anInt88 * -1647734771, 693908015);
 		} else if (arg1 == 2) {
-			this.anInt84 = arg0.method22472(-1434290800) * -1078353519;
+			this.anInt84 = arg0.g2(-1434290800) * -1078353519;
 			if (this.anInt84 * -990036111 == 65535) {
 				this.anInt84 = 1078353519;
 			}
 		} else if (arg1 == 3) {
-			this.anInt85 = (arg0.method22472(-1434290800) << 2) * -2018615685;
+			this.anInt85 = (arg0.g2(-1434290800) << 2) * -2018615685;
 		} else if (arg1 == 4) {
 			this.aBoolean12 = false;
 		} else if (arg1 == 5) {

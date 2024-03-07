@@ -27,23 +27,23 @@ public class Class93_Sub31_Sub1 extends Class93_Sub31 {
 
 	@OriginalMember(owner = "client!arf", name = "e", descriptor = "(Lclient!alw;I)V", line = 157)
 	@Override
-	void method22014(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		this.aString95 = arg0.method22507((byte) 67);
+	void method22014(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		this.aString95 = arg0.fastgstr((byte) 67);
 		if (this.aString95 != null) {
-			arg0.method22465((short) 16384);
-			this.aByte78 = arg0.method22468(979793910);
-			this.aByte79 = arg0.method22468(734349756);
+			arg0.g1((short) 16384);
+			this.aByte78 = arg0.g1b(979793910);
+			this.aByte79 = arg0.g1b(734349756);
 		}
 	}
 
 	@OriginalMember(owner = "client!arf", name = "m", descriptor = "(Lclient!alw;)V", line = 157)
 	@Override
-	void method22009(@OriginalArg(0) Class93_Sub41 arg0) {
-		this.aString95 = arg0.method22507((byte) 62);
+	void method22009(@OriginalArg(0) Packet arg0) {
+		this.aString95 = arg0.fastgstr((byte) 62);
 		if (this.aString95 != null) {
-			arg0.method22465((short) 16384);
-			this.aByte78 = arg0.method22468(1950133705);
-			this.aByte79 = arg0.method22468(2065458583);
+			arg0.g1((short) 16384);
+			this.aByte78 = arg0.g1b(1950133705);
+			this.aByte79 = arg0.g1b(2065458583);
 		}
 	}
 

@@ -17,11 +17,11 @@ public class Class110_Sub15_Sub1 extends Class110_Sub15 {
 	final int anInt2819;
 
 	@OriginalMember(owner = "client!aqm", name = "<init>", descriptor = "(Lclient!alw;)V", line = 11)
-	Class110_Sub15_Sub1(@OriginalArg(0) Class93_Sub41 arg0) {
+	Class110_Sub15_Sub1(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.anInt2817 = arg0.method22472(-1434290800) * -411027197;
-		this.anInt2818 = arg0.method22465((short) 16384) * -1021406375;
-		this.anInt2819 = arg0.method22472(-1434290800) * -1724177145;
+		this.anInt2817 = arg0.g2(-1434290800) * -411027197;
+		this.anInt2818 = arg0.g1((short) 16384) * -1021406375;
+		this.anInt2819 = arg0.g2(-1434290800) * -1724177145;
 	}
 
 	@OriginalMember(owner = "client!aqm", name = "n", descriptor = "(I)V", line = 18)

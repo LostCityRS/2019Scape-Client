@@ -54,13 +54,13 @@ public abstract class Class25 {
 	public abstract void method23122(@OriginalArg(0) float arg0, @OriginalArg(1) byte arg1);
 
 	@OriginalMember(owner = "client!aax", name = "w", descriptor = "(Lclient!alw;I)V")
-	public abstract void method23123(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1);
+	public abstract void method23123(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1);
 
 	@OriginalMember(owner = "client!aax", name = "m", descriptor = "(I)Lclient!ox;")
 	public abstract Class472 method23124(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!aax", name = "c", descriptor = "(Lclient!alw;)V")
-	public abstract void method23125(@OriginalArg(0) Class93_Sub41 arg0);
+	public abstract void method23125(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!aax", name = "k", descriptor = "(I)Lclient!ox;")
 	public abstract Class472 method23126(@OriginalArg(0) int arg0);
@@ -84,13 +84,13 @@ public abstract class Class25 {
 	public abstract void method23132(@OriginalArg(0) float arg0);
 
 	@OriginalMember(owner = "client!aax", name = "r", descriptor = "(Lclient!alw;)V")
-	public abstract void method23133(@OriginalArg(0) Class93_Sub41 arg0);
+	public abstract void method23133(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!aax", name = "v", descriptor = "(Lclient!alw;)V")
-	public abstract void method23134(@OriginalArg(0) Class93_Sub41 arg0);
+	public abstract void method23134(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!aax", name = "o", descriptor = "(Lclient!alw;)V")
-	public abstract void method23135(@OriginalArg(0) Class93_Sub41 arg0);
+	public abstract void method23135(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!aax", name = "n", descriptor = "(I)Z")
 	public abstract boolean method23136(@OriginalArg(0) int arg0);

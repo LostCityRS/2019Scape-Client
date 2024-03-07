@@ -22,8 +22,8 @@ public class Class18 implements Iterable {
 	}
 
 	@OriginalMember(owner = "client!aap", name = "e", descriptor = "(Lclient!alw;I)Lclient!ew;", line = 14)
-	static Class110 method242(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) int local3 = arg0.method22465((short) 16384);
+	static Class110 method242(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) int local3 = arg0.g1((short) 16384);
 		@Pc(7) Class89 local7 = Class271.method26302(local3, (byte) 80);
 		@Pc(9) Class110 local9 = null;
 		switch(local7.anInt291 * -380728599) {

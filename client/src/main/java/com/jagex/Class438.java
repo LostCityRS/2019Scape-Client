@@ -29,7 +29,7 @@ public class Class438 implements Interface46 {
 		@Pc(17) byte[] local17 = this.aClass497_114.method30064(0, arg0, (byte) 0);
 		local6 = new Class439();
 		if (local17 != null) {
-			local6.method28830(new Class93_Sub41(local17), (byte) 2);
+			local6.method28830(new Packet(local17), (byte) 2);
 		}
 		local6.method28838(207329962);
 		this.aClass240_82.method25838(local6, (long) arg0);
@@ -46,7 +46,7 @@ public class Class438 implements Interface46 {
 		@Pc(17) byte[] local17 = this.aClass497_114.method30064(0, arg0, (byte) 0);
 		local6 = new Class439();
 		if (local17 != null) {
-			local6.method28830(new Class93_Sub41(local17), (byte) 2);
+			local6.method28830(new Packet(local17), (byte) 2);
 		}
 		local6.method28838(207329962);
 		this.aClass240_82.method25838(local6, (long) arg0);
@@ -63,7 +63,7 @@ public class Class438 implements Interface46 {
 		@Pc(17) byte[] local17 = this.aClass497_114.method30064(0, arg0, (byte) 0);
 		local6 = new Class439();
 		if (local17 != null) {
-			local6.method28830(new Class93_Sub41(local17), (byte) 2);
+			local6.method28830(new Packet(local17), (byte) 2);
 		}
 		local6.method28838(207329962);
 		this.aClass240_82.method25838(local6, (long) arg0);
@@ -80,7 +80,7 @@ public class Class438 implements Interface46 {
 		@Pc(17) byte[] local17 = this.aClass497_114.method30064(0, arg0, (byte) 0);
 		local6 = new Class439();
 		if (local17 != null) {
-			local6.method28830(new Class93_Sub41(local17), (byte) 2);
+			local6.method28830(new Packet(local17), (byte) 2);
 		}
 		local6.method28838(207329962);
 		this.aClass240_82.method25838(local6, (long) arg0);

@@ -424,10 +424,10 @@ public class Class480 implements Runnable {
 			return;
 		}
 		@Pc(12) Class93_Sub22 local12 = Class102.method2588(Class446.aClass446_27, local2.aClass24_2, (byte) 124);
-		local12.aClass93_Sub41_Sub2_1.method22395(Class46.method895(arg0, -1553492743) + Class46.method895(arg1, -2061658131) + Class46.method895(arg2, -1984974626) + 1, 2126703870);
-		local12.aClass93_Sub41_Sub2_1.method22431(arg0, -1212929370);
-		local12.aClass93_Sub41_Sub2_1.method22431(arg1, 107167147);
-		local12.aClass93_Sub41_Sub2_1.method22431(arg2, -2062750704);
+		local12.aPacketBit_1.p2(Packet.pjstrlen(arg0, -1553492743) + Packet.pjstrlen(arg1, -2061658131) + Packet.pjstrlen(arg2, -1984974626) + 1, 2126703870);
+		local12.aPacketBit_1.pjstr(arg0, -1212929370);
+		local12.aPacketBit_1.pjstr(arg1, 107167147);
+		local12.aPacketBit_1.pjstr(arg2, -2062750704);
 		@Pc(46) int local46 = 0;
 		if (arg3) {
 			local46 |= 0x1;
@@ -435,7 +435,7 @@ public class Class480 implements Runnable {
 		if (arg4) {
 			local46 |= 0x2;
 		}
-		local12.aClass93_Sub41_Sub2_1.method22394(local46, (byte) -46);
+		local12.aPacketBit_1.p1(local46, (byte) -46);
 		local2.method24356(local12, -1817238704);
 	}
 

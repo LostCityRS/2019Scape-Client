@@ -61,12 +61,12 @@ public class Class449 {
 	}
 
 	@OriginalMember(owner = "client!nu", name = "e", descriptor = "(Lclient!alw;I)Lclient!la;", line = 21)
-	public static Class133 method28926(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) int local3 = arg0.method22542(-1215915305);
-		@Pc(10) Class390 local10 = Class708.method36753(1635987414)[arg0.method22465((short) 16384)];
-		@Pc(17) Class392 local17 = Class252.method25976(-2134249016)[arg0.method22465((short) 16384)];
-		@Pc(21) int local21 = arg0.method22475((byte) -123);
-		@Pc(25) int local25 = arg0.method22475((byte) -63);
+	public static Class133 method28926(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) int local3 = arg0.gSmart2or4null(-1215915305);
+		@Pc(10) Class390 local10 = Class708.method36753(1635987414)[arg0.g1((short) 16384)];
+		@Pc(17) Class392 local17 = Class252.method25976(-2134249016)[arg0.g1((short) 16384)];
+		@Pc(21) int local21 = arg0.g2s((byte) -123);
+		@Pc(25) int local25 = arg0.g2s((byte) -63);
 		return new Class133(local3, local10, local17, local21, local25);
 	}
 

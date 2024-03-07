@@ -123,7 +123,7 @@ public class Class93_Sub30 extends Class93 implements Interface6 {
 	}
 
 	@OriginalMember(owner = "client!akt", name = "<init>", descriptor = "(Lclient!alw;)V", line = 64)
-	public Class93_Sub30(@OriginalArg(0) Class93_Sub41 arg0) {
+	public Class93_Sub30(@OriginalArg(0) Packet arg0) {
 		this.method13862(arg0, 966153105);
 	}
 
@@ -229,43 +229,43 @@ public class Class93_Sub30 extends Class93 implements Interface6 {
 	}
 
 	@OriginalMember(owner = "client!akt", name = "at", descriptor = "(Lclient!alw;)V", line = 115)
-	void method13882(@OriginalArg(0) Class93_Sub41 arg0) {
-		arg0.method22394(this.anInt1609 * -2022654167, (byte) -103);
-		arg0.method22406(this.anInt1610 * -427776677, (byte) -22);
-		arg0.method22406(this.anInt1611 * 1802884841, (byte) -34);
-		arg0.method22406(this.anInt1612 * 671628745, (byte) 27);
+	void method13882(@OriginalArg(0) Packet arg0) {
+		arg0.p1(this.anInt1609 * -2022654167, (byte) -103);
+		arg0.p4(this.anInt1610 * -427776677, (byte) -22);
+		arg0.p4(this.anInt1611 * 1802884841, (byte) -34);
+		arg0.p4(this.anInt1612 * 671628745, (byte) 27);
 	}
 
 	@OriginalMember(owner = "client!akt", name = "y", descriptor = "(Lclient!alw;I)V", line = 115)
-	void method13883(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		arg0.method22394(this.anInt1609 * -2022654167, (byte) -84);
-		arg0.method22406(this.anInt1610 * -427776677, (byte) -111);
-		arg0.method22406(this.anInt1611 * 1802884841, (byte) -22);
-		arg0.method22406(this.anInt1612 * 671628745, (byte) -100);
+	void method13883(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		arg0.p1(this.anInt1609 * -2022654167, (byte) -84);
+		arg0.p4(this.anInt1610 * -427776677, (byte) -111);
+		arg0.p4(this.anInt1611 * 1802884841, (byte) -22);
+		arg0.p4(this.anInt1612 * 671628745, (byte) -100);
 	}
 
 	@OriginalMember(owner = "client!akt", name = "as", descriptor = "(Lclient!alw;)V", line = 115)
-	void method13884(@OriginalArg(0) Class93_Sub41 arg0) {
-		arg0.method22394(this.anInt1609 * -2022654167, (byte) -42);
-		arg0.method22406(this.anInt1610 * -427776677, (byte) 75);
-		arg0.method22406(this.anInt1611 * 1802884841, (byte) -33);
-		arg0.method22406(this.anInt1612 * 671628745, (byte) -50);
+	void method13884(@OriginalArg(0) Packet arg0) {
+		arg0.p1(this.anInt1609 * -2022654167, (byte) -42);
+		arg0.p4(this.anInt1610 * -427776677, (byte) 75);
+		arg0.p4(this.anInt1611 * 1802884841, (byte) -33);
+		arg0.p4(this.anInt1612 * 671628745, (byte) -50);
 	}
 
 	@OriginalMember(owner = "client!akt", name = "ai", descriptor = "(Lclient!alw;)V", line = 115)
-	void method13885(@OriginalArg(0) Class93_Sub41 arg0) {
-		arg0.method22394(this.anInt1609 * -2022654167, (byte) -7);
-		arg0.method22406(this.anInt1610 * -427776677, (byte) -13);
-		arg0.method22406(this.anInt1611 * 1802884841, (byte) 51);
-		arg0.method22406(this.anInt1612 * 671628745, (byte) -58);
+	void method13885(@OriginalArg(0) Packet arg0) {
+		arg0.p1(this.anInt1609 * -2022654167, (byte) -7);
+		arg0.p4(this.anInt1610 * -427776677, (byte) -13);
+		arg0.p4(this.anInt1611 * 1802884841, (byte) 51);
+		arg0.p4(this.anInt1612 * 671628745, (byte) -58);
 	}
 
 	@OriginalMember(owner = "client!akt", name = "aw", descriptor = "(Lclient!alw;)V", line = 115)
-	void method13886(@OriginalArg(0) Class93_Sub41 arg0) {
-		arg0.method22394(this.anInt1609 * -2022654167, (byte) -61);
-		arg0.method22406(this.anInt1610 * -427776677, (byte) 114);
-		arg0.method22406(this.anInt1611 * 1802884841, (byte) -28);
-		arg0.method22406(this.anInt1612 * 671628745, (byte) 81);
+	void method13886(@OriginalArg(0) Packet arg0) {
+		arg0.p1(this.anInt1609 * -2022654167, (byte) -61);
+		arg0.p4(this.anInt1610 * -427776677, (byte) 114);
+		arg0.p4(this.anInt1611 * 1802884841, (byte) -28);
+		arg0.p4(this.anInt1612 * 671628745, (byte) 81);
 	}
 
 	@OriginalMember(owner = "client!akt", name = "ad", descriptor = "()I", line = 122)
@@ -304,31 +304,31 @@ public class Class93_Sub30 extends Class93 implements Interface6 {
 
 	@OriginalMember(owner = "client!akt", name = "w", descriptor = "(Lclient!alw;)V", line = 135)
 	@Override
-	public void method13866(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method13866(@OriginalArg(0) Packet arg0) {
 		this.method13883(arg0, -1006888386);
 	}
 
 	@OriginalMember(owner = "client!akt", name = "n", descriptor = "(Lclient!alw;S)V", line = 135)
 	@Override
-	public void method13861(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) short arg1) {
+	public void method13861(@OriginalArg(0) Packet arg0, @OriginalArg(1) short arg1) {
 		this.method13883(arg0, -1006888386);
 	}
 
 	@OriginalMember(owner = "client!akt", name = "m", descriptor = "(Lclient!alw;I)V", line = 139)
 	@Override
-	public void method13862(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		this.anInt1609 = arg0.method22465((short) 16384) * 1850625305;
-		this.anInt1610 = arg0.method22483(-118643075) * -1902705965;
-		this.anInt1611 = arg0.method22483(-118643075) * -2071305895;
-		this.anInt1612 = arg0.method22483(-118643075) * 112880761;
+	public void method13862(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		this.anInt1609 = arg0.g1((short) 16384) * 1850625305;
+		this.anInt1610 = arg0.g4(-118643075) * -1902705965;
+		this.anInt1611 = arg0.g4(-118643075) * -2071305895;
+		this.anInt1612 = arg0.g4(-118643075) * 112880761;
 	}
 
 	@OriginalMember(owner = "client!akt", name = "l", descriptor = "(Lclient!alw;)V", line = 139)
 	@Override
-	public void method13864(@OriginalArg(0) Class93_Sub41 arg0) {
-		this.anInt1609 = arg0.method22465((short) 16384) * 1850625305;
-		this.anInt1610 = arg0.method22483(-118643075) * -1902705965;
-		this.anInt1611 = arg0.method22483(-118643075) * -2071305895;
-		this.anInt1612 = arg0.method22483(-118643075) * 112880761;
+	public void method13864(@OriginalArg(0) Packet arg0) {
+		this.anInt1609 = arg0.g1((short) 16384) * 1850625305;
+		this.anInt1610 = arg0.g4(-118643075) * -1902705965;
+		this.anInt1611 = arg0.g4(-118643075) * -2071305895;
+		this.anInt1612 = arg0.g4(-118643075) * 112880761;
 	}
 }

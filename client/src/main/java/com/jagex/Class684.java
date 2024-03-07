@@ -124,114 +124,114 @@ public class Class684 {
 	}
 
 	@OriginalMember(owner = "client!yj", name = "n", descriptor = "(Lclient!alw;I)Z", line = 57)
-	public boolean method33358(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) long local3 = arg0.method22495(1762565155);
+	public boolean method33358(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) long local3 = arg0.g8(1762565155);
 		if (local3 == 0L) {
-			this.anInt5897 = arg0.method22472(-1434290800) * -521668953;
+			this.anInt5897 = arg0.g2(-1434290800) * -521668953;
 			return false;
 		}
 		if ((local3 & Class680.aClass680_9.aLong307 * 7134854499111106275L) != 0L) {
-			this.anInt5904 = arg0.method22483(-118643075) * -14325749;
+			this.anInt5904 = arg0.g4(-118643075) * -14325749;
 		}
 		if ((local3 & Class680.aClass680_1.aLong307 * 7134854499111106275L) != 0L) {
-			this.aFloat358 = arg0.method22504(471391583);
+			this.aFloat358 = arg0.gFloat(471391583);
 		}
 		if ((local3 & Class680.aClass680_22.aLong307 * 7134854499111106275L) != 0L) {
-			this.aFloat356 = arg0.method22504(-64354544);
+			this.aFloat356 = arg0.gFloat(-64354544);
 		}
 		if ((local3 & Class680.aClass680_4.aLong307 * 7134854499111106275L) != 0L) {
-			this.aFloat355 = arg0.method22504(-1965021142);
+			this.aFloat355 = arg0.gFloat(-1965021142);
 		}
 		if ((local3 & Class680.aClass680_5.aLong307 * 7134854499111106275L) != 0L) {
 			this.aClass472_66 = Class472.method29542(arg0);
 		}
 		if ((local3 & Class680.aClass680_13.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-1605293267);
+			arg0.gFloat(-1605293267);
 		}
 		if ((local3 & Class680.aClass680_10.aLong307 * 7134854499111106275L) != 0L) {
-			this.anInt5896 = arg0.method22483(-118643075) * -1757047085;
+			this.anInt5896 = arg0.g4(-118643075) * -1757047085;
 		}
 		if ((local3 & Class680.aClass680_8.aLong307 * 7134854499111106275L) != 0L) {
-			this.anInt5895 = arg0.method22472(-1434290800) * 268363761;
+			this.anInt5895 = arg0.g2(-1434290800) * 268363761;
 		}
 		if ((local3 & Class680.aClass680_39.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-1542518423);
+			arg0.gFloat(-1542518423);
 		}
 		if ((local3 & Class680.aClass680_40.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-1989677016);
+			arg0.gFloat(-1989677016);
 		}
 		if ((local3 & Class680.aClass680_43.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-946274703);
+			arg0.gFloat(-946274703);
 		}
 		if ((local3 & Class680.aClass680_2.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-1342700002);
+			arg0.gFloat(-1342700002);
 		}
 		if ((local3 & Class680.aClass680_7.aLong307 * 7134854499111106275L) != 0L) {
-			this.aFloat357 = arg0.method22504(-32617529);
+			this.aFloat357 = arg0.gFloat(-32617529);
 		}
 		if ((local3 & Class680.aClass680_14.aLong307 * 7134854499111106275L) != 0L) {
-			this.aFloat359 = arg0.method22504(2063645248);
+			this.aFloat359 = arg0.gFloat(2063645248);
 		}
 		if ((local3 & Class680.aClass680_15.aLong307 * 7134854499111106275L) != 0L) {
-			this.aFloat360 = arg0.method22504(-1279287504);
+			this.aFloat360 = arg0.gFloat(-1279287504);
 		}
 		if ((local3 & Class680.aClass680_16.aLong307 * 7134854499111106275L) != 0L) {
-			this.anInt5898 = arg0.method22472(-1434290800) * 304329139;
+			this.anInt5898 = arg0.g2(-1434290800) * 304329139;
 		}
 		if ((local3 & Class680.aClass680_17.aLong307 * 7134854499111106275L) != 0L) {
-			this.anInt5899 = arg0.method22472(-1434290800) * 972166225;
-			this.anInt5900 = arg0.method22475((byte) -65) * -535776559;
-			this.anInt5901 = arg0.method22475((byte) -18) * -1145348855;
-			this.anInt5902 = arg0.method22475((byte) -38) * 1206173817;
-			this.anInt5903 = arg0.method22472(-1434290800) * 1258086185;
+			this.anInt5899 = arg0.g2(-1434290800) * 972166225;
+			this.anInt5900 = arg0.g2s((byte) -65) * -535776559;
+			this.anInt5901 = arg0.g2s((byte) -18) * -1145348855;
+			this.anInt5902 = arg0.g2s((byte) -38) * 1206173817;
+			this.anInt5903 = arg0.g2(-1434290800) * 1258086185;
 		}
 		if ((local3 & Class680.aClass680_18.aLong307 * 7134854499111106275L) != 0L) {
-			this.anIntArray521[0] = arg0.method22472(-1434290800);
-			this.aFloatArray122[0] = arg0.method22504(-337047699);
+			this.anIntArray521[0] = arg0.g2(-1434290800);
+			this.aFloatArray122[0] = arg0.gFloat(-337047699);
 		}
 		if ((local3 & Class680.aClass680_19.aLong307 * 7134854499111106275L) != 0L) {
-			this.anIntArray521[1] = arg0.method22472(-1434290800);
-			this.aFloatArray122[1] = arg0.method22504(-1442856252);
+			this.anIntArray521[1] = arg0.g2(-1434290800);
+			this.aFloatArray122[1] = arg0.gFloat(-1442856252);
 		}
 		if ((local3 & Class680.aClass680_20.aLong307 * 7134854499111106275L) != 0L) {
-			this.anIntArray521[2] = arg0.method22472(-1434290800);
-			this.aFloatArray122[2] = arg0.method22504(-1989095495);
+			this.anIntArray521[2] = arg0.g2(-1434290800);
+			this.aFloatArray122[2] = arg0.gFloat(-1989095495);
 		}
 		if ((local3 & Class680.aClass680_21.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22483(-118643075);
+			arg0.g4(-118643075);
 		}
 		if ((local3 & Class680.aClass680_31.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22483(-118643075);
+			arg0.g4(-118643075);
 		}
 		if ((local3 & Class680.aClass680_36.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-1800179463);
+			arg0.gFloat(-1800179463);
 		}
 		if ((local3 & Class680.aClass680_24.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(1677141764);
+			arg0.gFloat(1677141764);
 		}
 		if ((local3 & Class680.aClass680_25.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-749708869);
+			arg0.gFloat(-749708869);
 		}
 		if ((local3 & Class680.aClass680_26.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(306599555);
+			arg0.gFloat(306599555);
 		}
 		if ((local3 & Class680.aClass680_27.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-1418893197);
+			arg0.gFloat(-1418893197);
 		}
 		if ((local3 & Class680.aClass680_28.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22483(-118643075);
+			arg0.g4(-118643075);
 		}
 		if ((local3 & Class680.aClass680_29.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-545451687);
+			arg0.gFloat(-545451687);
 		}
 		if ((local3 & Class680.aClass680_30.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(823614235);
+			arg0.gFloat(823614235);
 		}
 		if ((local3 & Class680.aClass680_12.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(1235685919);
+			arg0.gFloat(1235685919);
 		}
 		if ((local3 & Class680.aClass680_32.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(2134751824);
+			arg0.gFloat(2134751824);
 		}
 		if ((local3 & Class680.aClass680_33.aLong307 * 7134854499111106275L) != 0L) {
 			new Class472(arg0);
@@ -243,148 +243,148 @@ public class Class684 {
 			new Class472(arg0);
 		}
 		if ((local3 & Class680.aClass680_37.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-1373669002);
+			arg0.gFloat(-1373669002);
 		}
 		if ((local3 & Class680.aClass680_3.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-105037216);
+			arg0.gFloat(-105037216);
 		}
 		if ((local3 & Class680.aClass680_38.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(1844479388);
+			arg0.gFloat(1844479388);
 		}
 		if ((local3 & Class680.aClass680_23.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(198036823);
+			arg0.gFloat(198036823);
 		}
 		if ((local3 & Class680.aClass680_45.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(1510814453);
+			arg0.gFloat(1510814453);
 		}
 		if ((local3 & Class680.aClass680_41.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(1105907221);
+			arg0.gFloat(1105907221);
 		}
 		if ((local3 & Class680.aClass680_42.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-830843492);
+			arg0.gFloat(-830843492);
 		}
 		if ((local3 & Class680.aClass680_6.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-558994342);
+			arg0.gFloat(-558994342);
 		}
 		if ((local3 & Class680.aClass680_44.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22483(-118643075);
+			arg0.g4(-118643075);
 		}
 		if ((local3 & Class680.aClass680_11.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22483(-118643075);
+			arg0.g4(-118643075);
 		}
-		this.anInt5897 = arg0.method22472(-1434290800) * -521668953;
+		this.anInt5897 = arg0.g2(-1434290800) * -521668953;
 		return true;
 	}
 
 	@OriginalMember(owner = "client!yj", name = "g", descriptor = "(Lclient!alw;)Z", line = 57)
-	public boolean method33359(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(3) long local3 = arg0.method22495(336671967);
+	public boolean method33359(@OriginalArg(0) Packet arg0) {
+		@Pc(3) long local3 = arg0.g8(336671967);
 		if (local3 == 0L) {
-			this.anInt5897 = arg0.method22472(-1434290800) * -521668953;
+			this.anInt5897 = arg0.g2(-1434290800) * -521668953;
 			return false;
 		}
 		if ((local3 & Class680.aClass680_9.aLong307 * 7134854499111106275L) != 0L) {
-			this.anInt5904 = arg0.method22483(-118643075) * -14325749;
+			this.anInt5904 = arg0.g4(-118643075) * -14325749;
 		}
 		if ((local3 & Class680.aClass680_1.aLong307 * 7134854499111106275L) != 0L) {
-			this.aFloat358 = arg0.method22504(356891643);
+			this.aFloat358 = arg0.gFloat(356891643);
 		}
 		if ((local3 & Class680.aClass680_22.aLong307 * 7134854499111106275L) != 0L) {
-			this.aFloat356 = arg0.method22504(1334333912);
+			this.aFloat356 = arg0.gFloat(1334333912);
 		}
 		if ((local3 & Class680.aClass680_4.aLong307 * 7134854499111106275L) != 0L) {
-			this.aFloat355 = arg0.method22504(-1887245744);
+			this.aFloat355 = arg0.gFloat(-1887245744);
 		}
 		if ((local3 & Class680.aClass680_5.aLong307 * 7134854499111106275L) != 0L) {
 			this.aClass472_66 = Class472.method29542(arg0);
 		}
 		if ((local3 & Class680.aClass680_13.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(1908029504);
+			arg0.gFloat(1908029504);
 		}
 		if ((local3 & Class680.aClass680_10.aLong307 * 7134854499111106275L) != 0L) {
-			this.anInt5896 = arg0.method22483(-118643075) * -1757047085;
+			this.anInt5896 = arg0.g4(-118643075) * -1757047085;
 		}
 		if ((local3 & Class680.aClass680_8.aLong307 * 7134854499111106275L) != 0L) {
-			this.anInt5895 = arg0.method22472(-1434290800) * 268363761;
+			this.anInt5895 = arg0.g2(-1434290800) * 268363761;
 		}
 		if ((local3 & Class680.aClass680_39.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(1684930371);
+			arg0.gFloat(1684930371);
 		}
 		if ((local3 & Class680.aClass680_40.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-1164621739);
+			arg0.gFloat(-1164621739);
 		}
 		if ((local3 & Class680.aClass680_43.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(1313755511);
+			arg0.gFloat(1313755511);
 		}
 		if ((local3 & Class680.aClass680_2.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(1888770555);
+			arg0.gFloat(1888770555);
 		}
 		if ((local3 & Class680.aClass680_7.aLong307 * 7134854499111106275L) != 0L) {
-			this.aFloat357 = arg0.method22504(1388008981);
+			this.aFloat357 = arg0.gFloat(1388008981);
 		}
 		if ((local3 & Class680.aClass680_14.aLong307 * 7134854499111106275L) != 0L) {
-			this.aFloat359 = arg0.method22504(-1499454135);
+			this.aFloat359 = arg0.gFloat(-1499454135);
 		}
 		if ((local3 & Class680.aClass680_15.aLong307 * 7134854499111106275L) != 0L) {
-			this.aFloat360 = arg0.method22504(561995874);
+			this.aFloat360 = arg0.gFloat(561995874);
 		}
 		if ((local3 & Class680.aClass680_16.aLong307 * 7134854499111106275L) != 0L) {
-			this.anInt5898 = arg0.method22472(-1434290800) * 304329139;
+			this.anInt5898 = arg0.g2(-1434290800) * 304329139;
 		}
 		if ((local3 & Class680.aClass680_17.aLong307 * 7134854499111106275L) != 0L) {
-			this.anInt5899 = arg0.method22472(-1434290800) * 972166225;
-			this.anInt5900 = arg0.method22475((byte) -38) * -535776559;
-			this.anInt5901 = arg0.method22475((byte) -37) * -1145348855;
-			this.anInt5902 = arg0.method22475((byte) -47) * 1206173817;
-			this.anInt5903 = arg0.method22472(-1434290800) * 1258086185;
+			this.anInt5899 = arg0.g2(-1434290800) * 972166225;
+			this.anInt5900 = arg0.g2s((byte) -38) * -535776559;
+			this.anInt5901 = arg0.g2s((byte) -37) * -1145348855;
+			this.anInt5902 = arg0.g2s((byte) -47) * 1206173817;
+			this.anInt5903 = arg0.g2(-1434290800) * 1258086185;
 		}
 		if ((local3 & Class680.aClass680_18.aLong307 * 7134854499111106275L) != 0L) {
-			this.anIntArray521[0] = arg0.method22472(-1434290800);
-			this.aFloatArray122[0] = arg0.method22504(411792530);
+			this.anIntArray521[0] = arg0.g2(-1434290800);
+			this.aFloatArray122[0] = arg0.gFloat(411792530);
 		}
 		if ((local3 & Class680.aClass680_19.aLong307 * 7134854499111106275L) != 0L) {
-			this.anIntArray521[1] = arg0.method22472(-1434290800);
-			this.aFloatArray122[1] = arg0.method22504(1669122634);
+			this.anIntArray521[1] = arg0.g2(-1434290800);
+			this.aFloatArray122[1] = arg0.gFloat(1669122634);
 		}
 		if ((local3 & Class680.aClass680_20.aLong307 * 7134854499111106275L) != 0L) {
-			this.anIntArray521[2] = arg0.method22472(-1434290800);
-			this.aFloatArray122[2] = arg0.method22504(-257529985);
+			this.anIntArray521[2] = arg0.g2(-1434290800);
+			this.aFloatArray122[2] = arg0.gFloat(-257529985);
 		}
 		if ((local3 & Class680.aClass680_21.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22483(-118643075);
+			arg0.g4(-118643075);
 		}
 		if ((local3 & Class680.aClass680_31.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22483(-118643075);
+			arg0.g4(-118643075);
 		}
 		if ((local3 & Class680.aClass680_36.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-357362190);
+			arg0.gFloat(-357362190);
 		}
 		if ((local3 & Class680.aClass680_24.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-2094475496);
+			arg0.gFloat(-2094475496);
 		}
 		if ((local3 & Class680.aClass680_25.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(2127206473);
+			arg0.gFloat(2127206473);
 		}
 		if ((local3 & Class680.aClass680_26.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-568005931);
+			arg0.gFloat(-568005931);
 		}
 		if ((local3 & Class680.aClass680_27.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-2023342953);
+			arg0.gFloat(-2023342953);
 		}
 		if ((local3 & Class680.aClass680_28.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22483(-118643075);
+			arg0.g4(-118643075);
 		}
 		if ((local3 & Class680.aClass680_29.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(1823731378);
+			arg0.gFloat(1823731378);
 		}
 		if ((local3 & Class680.aClass680_30.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(1071902988);
+			arg0.gFloat(1071902988);
 		}
 		if ((local3 & Class680.aClass680_12.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-1423934921);
+			arg0.gFloat(-1423934921);
 		}
 		if ((local3 & Class680.aClass680_32.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(674057298);
+			arg0.gFloat(674057298);
 		}
 		if ((local3 & Class680.aClass680_33.aLong307 * 7134854499111106275L) != 0L) {
 			new Class472(arg0);
@@ -396,148 +396,148 @@ public class Class684 {
 			new Class472(arg0);
 		}
 		if ((local3 & Class680.aClass680_37.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-386795373);
+			arg0.gFloat(-386795373);
 		}
 		if ((local3 & Class680.aClass680_3.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(1422064667);
+			arg0.gFloat(1422064667);
 		}
 		if ((local3 & Class680.aClass680_38.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(1173266850);
+			arg0.gFloat(1173266850);
 		}
 		if ((local3 & Class680.aClass680_23.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-297366350);
+			arg0.gFloat(-297366350);
 		}
 		if ((local3 & Class680.aClass680_45.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(2036986882);
+			arg0.gFloat(2036986882);
 		}
 		if ((local3 & Class680.aClass680_41.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(124721549);
+			arg0.gFloat(124721549);
 		}
 		if ((local3 & Class680.aClass680_42.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-1735999455);
+			arg0.gFloat(-1735999455);
 		}
 		if ((local3 & Class680.aClass680_6.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-393316646);
+			arg0.gFloat(-393316646);
 		}
 		if ((local3 & Class680.aClass680_44.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22483(-118643075);
+			arg0.g4(-118643075);
 		}
 		if ((local3 & Class680.aClass680_11.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22483(-118643075);
+			arg0.g4(-118643075);
 		}
-		this.anInt5897 = arg0.method22472(-1434290800) * -521668953;
+		this.anInt5897 = arg0.g2(-1434290800) * -521668953;
 		return true;
 	}
 
 	@OriginalMember(owner = "client!yj", name = "i", descriptor = "(Lclient!alw;)Z", line = 57)
-	public boolean method33360(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(3) long local3 = arg0.method22495(-1453861062);
+	public boolean method33360(@OriginalArg(0) Packet arg0) {
+		@Pc(3) long local3 = arg0.g8(-1453861062);
 		if (local3 == 0L) {
-			this.anInt5897 = arg0.method22472(-1434290800) * -521668953;
+			this.anInt5897 = arg0.g2(-1434290800) * -521668953;
 			return false;
 		}
 		if ((local3 & Class680.aClass680_9.aLong307 * 7134854499111106275L) != 0L) {
-			this.anInt5904 = arg0.method22483(-118643075) * -14325749;
+			this.anInt5904 = arg0.g4(-118643075) * -14325749;
 		}
 		if ((local3 & Class680.aClass680_1.aLong307 * 7134854499111106275L) != 0L) {
-			this.aFloat358 = arg0.method22504(427086929);
+			this.aFloat358 = arg0.gFloat(427086929);
 		}
 		if ((local3 & Class680.aClass680_22.aLong307 * 7134854499111106275L) != 0L) {
-			this.aFloat356 = arg0.method22504(-1835703283);
+			this.aFloat356 = arg0.gFloat(-1835703283);
 		}
 		if ((local3 & Class680.aClass680_4.aLong307 * 7134854499111106275L) != 0L) {
-			this.aFloat355 = arg0.method22504(-266118701);
+			this.aFloat355 = arg0.gFloat(-266118701);
 		}
 		if ((local3 & Class680.aClass680_5.aLong307 * 7134854499111106275L) != 0L) {
 			this.aClass472_66 = Class472.method29542(arg0);
 		}
 		if ((local3 & Class680.aClass680_13.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-1579264135);
+			arg0.gFloat(-1579264135);
 		}
 		if ((local3 & Class680.aClass680_10.aLong307 * 7134854499111106275L) != 0L) {
-			this.anInt5896 = arg0.method22483(-118643075) * -1757047085;
+			this.anInt5896 = arg0.g4(-118643075) * -1757047085;
 		}
 		if ((local3 & Class680.aClass680_8.aLong307 * 7134854499111106275L) != 0L) {
-			this.anInt5895 = arg0.method22472(-1434290800) * 268363761;
+			this.anInt5895 = arg0.g2(-1434290800) * 268363761;
 		}
 		if ((local3 & Class680.aClass680_39.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(358740711);
+			arg0.gFloat(358740711);
 		}
 		if ((local3 & Class680.aClass680_40.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-1947241773);
+			arg0.gFloat(-1947241773);
 		}
 		if ((local3 & Class680.aClass680_43.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(1694214625);
+			arg0.gFloat(1694214625);
 		}
 		if ((local3 & Class680.aClass680_2.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-1411567409);
+			arg0.gFloat(-1411567409);
 		}
 		if ((local3 & Class680.aClass680_7.aLong307 * 7134854499111106275L) != 0L) {
-			this.aFloat357 = arg0.method22504(-487079625);
+			this.aFloat357 = arg0.gFloat(-487079625);
 		}
 		if ((local3 & Class680.aClass680_14.aLong307 * 7134854499111106275L) != 0L) {
-			this.aFloat359 = arg0.method22504(2013289382);
+			this.aFloat359 = arg0.gFloat(2013289382);
 		}
 		if ((local3 & Class680.aClass680_15.aLong307 * 7134854499111106275L) != 0L) {
-			this.aFloat360 = arg0.method22504(-1797426037);
+			this.aFloat360 = arg0.gFloat(-1797426037);
 		}
 		if ((local3 & Class680.aClass680_16.aLong307 * 7134854499111106275L) != 0L) {
-			this.anInt5898 = arg0.method22472(-1434290800) * 304329139;
+			this.anInt5898 = arg0.g2(-1434290800) * 304329139;
 		}
 		if ((local3 & Class680.aClass680_17.aLong307 * 7134854499111106275L) != 0L) {
-			this.anInt5899 = arg0.method22472(-1434290800) * 972166225;
-			this.anInt5900 = arg0.method22475((byte) -44) * -535776559;
-			this.anInt5901 = arg0.method22475((byte) -44) * -1145348855;
-			this.anInt5902 = arg0.method22475((byte) -28) * 1206173817;
-			this.anInt5903 = arg0.method22472(-1434290800) * 1258086185;
+			this.anInt5899 = arg0.g2(-1434290800) * 972166225;
+			this.anInt5900 = arg0.g2s((byte) -44) * -535776559;
+			this.anInt5901 = arg0.g2s((byte) -44) * -1145348855;
+			this.anInt5902 = arg0.g2s((byte) -28) * 1206173817;
+			this.anInt5903 = arg0.g2(-1434290800) * 1258086185;
 		}
 		if ((local3 & Class680.aClass680_18.aLong307 * 7134854499111106275L) != 0L) {
-			this.anIntArray521[0] = arg0.method22472(-1434290800);
-			this.aFloatArray122[0] = arg0.method22504(-364192595);
+			this.anIntArray521[0] = arg0.g2(-1434290800);
+			this.aFloatArray122[0] = arg0.gFloat(-364192595);
 		}
 		if ((local3 & Class680.aClass680_19.aLong307 * 7134854499111106275L) != 0L) {
-			this.anIntArray521[1] = arg0.method22472(-1434290800);
-			this.aFloatArray122[1] = arg0.method22504(-1298613563);
+			this.anIntArray521[1] = arg0.g2(-1434290800);
+			this.aFloatArray122[1] = arg0.gFloat(-1298613563);
 		}
 		if ((local3 & Class680.aClass680_20.aLong307 * 7134854499111106275L) != 0L) {
-			this.anIntArray521[2] = arg0.method22472(-1434290800);
-			this.aFloatArray122[2] = arg0.method22504(-2085620513);
+			this.anIntArray521[2] = arg0.g2(-1434290800);
+			this.aFloatArray122[2] = arg0.gFloat(-2085620513);
 		}
 		if ((local3 & Class680.aClass680_21.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22483(-118643075);
+			arg0.g4(-118643075);
 		}
 		if ((local3 & Class680.aClass680_31.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22483(-118643075);
+			arg0.g4(-118643075);
 		}
 		if ((local3 & Class680.aClass680_36.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-1804658405);
+			arg0.gFloat(-1804658405);
 		}
 		if ((local3 & Class680.aClass680_24.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-607293836);
+			arg0.gFloat(-607293836);
 		}
 		if ((local3 & Class680.aClass680_25.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(290756391);
+			arg0.gFloat(290756391);
 		}
 		if ((local3 & Class680.aClass680_26.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(1766610792);
+			arg0.gFloat(1766610792);
 		}
 		if ((local3 & Class680.aClass680_27.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-1411259408);
+			arg0.gFloat(-1411259408);
 		}
 		if ((local3 & Class680.aClass680_28.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22483(-118643075);
+			arg0.g4(-118643075);
 		}
 		if ((local3 & Class680.aClass680_29.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-1236740844);
+			arg0.gFloat(-1236740844);
 		}
 		if ((local3 & Class680.aClass680_30.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-1255293952);
+			arg0.gFloat(-1255293952);
 		}
 		if ((local3 & Class680.aClass680_12.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-1350983496);
+			arg0.gFloat(-1350983496);
 		}
 		if ((local3 & Class680.aClass680_32.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(1155309684);
+			arg0.gFloat(1155309684);
 		}
 		if ((local3 & Class680.aClass680_33.aLong307 * 7134854499111106275L) != 0L) {
 			new Class472(arg0);
@@ -549,148 +549,148 @@ public class Class684 {
 			new Class472(arg0);
 		}
 		if ((local3 & Class680.aClass680_37.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-439829234);
+			arg0.gFloat(-439829234);
 		}
 		if ((local3 & Class680.aClass680_3.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(1843064582);
+			arg0.gFloat(1843064582);
 		}
 		if ((local3 & Class680.aClass680_38.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-1181223720);
+			arg0.gFloat(-1181223720);
 		}
 		if ((local3 & Class680.aClass680_23.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(1617324837);
+			arg0.gFloat(1617324837);
 		}
 		if ((local3 & Class680.aClass680_45.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(1443148402);
+			arg0.gFloat(1443148402);
 		}
 		if ((local3 & Class680.aClass680_41.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(894257149);
+			arg0.gFloat(894257149);
 		}
 		if ((local3 & Class680.aClass680_42.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-1977106336);
+			arg0.gFloat(-1977106336);
 		}
 		if ((local3 & Class680.aClass680_6.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-57031794);
+			arg0.gFloat(-57031794);
 		}
 		if ((local3 & Class680.aClass680_44.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22483(-118643075);
+			arg0.g4(-118643075);
 		}
 		if ((local3 & Class680.aClass680_11.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22483(-118643075);
+			arg0.g4(-118643075);
 		}
-		this.anInt5897 = arg0.method22472(-1434290800) * -521668953;
+		this.anInt5897 = arg0.g2(-1434290800) * -521668953;
 		return true;
 	}
 
 	@OriginalMember(owner = "client!yj", name = "j", descriptor = "(Lclient!alw;)Z", line = 57)
-	public boolean method33361(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(3) long local3 = arg0.method22495(-1082134073);
+	public boolean method33361(@OriginalArg(0) Packet arg0) {
+		@Pc(3) long local3 = arg0.g8(-1082134073);
 		if (local3 == 0L) {
-			this.anInt5897 = arg0.method22472(-1434290800) * -521668953;
+			this.anInt5897 = arg0.g2(-1434290800) * -521668953;
 			return false;
 		}
 		if ((local3 & Class680.aClass680_9.aLong307 * 7134854499111106275L) != 0L) {
-			this.anInt5904 = arg0.method22483(-118643075) * -14325749;
+			this.anInt5904 = arg0.g4(-118643075) * -14325749;
 		}
 		if ((local3 & Class680.aClass680_1.aLong307 * 7134854499111106275L) != 0L) {
-			this.aFloat358 = arg0.method22504(-410615072);
+			this.aFloat358 = arg0.gFloat(-410615072);
 		}
 		if ((local3 & Class680.aClass680_22.aLong307 * 7134854499111106275L) != 0L) {
-			this.aFloat356 = arg0.method22504(2084725433);
+			this.aFloat356 = arg0.gFloat(2084725433);
 		}
 		if ((local3 & Class680.aClass680_4.aLong307 * 7134854499111106275L) != 0L) {
-			this.aFloat355 = arg0.method22504(-1598801287);
+			this.aFloat355 = arg0.gFloat(-1598801287);
 		}
 		if ((local3 & Class680.aClass680_5.aLong307 * 7134854499111106275L) != 0L) {
 			this.aClass472_66 = Class472.method29542(arg0);
 		}
 		if ((local3 & Class680.aClass680_13.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(48750158);
+			arg0.gFloat(48750158);
 		}
 		if ((local3 & Class680.aClass680_10.aLong307 * 7134854499111106275L) != 0L) {
-			this.anInt5896 = arg0.method22483(-118643075) * -1757047085;
+			this.anInt5896 = arg0.g4(-118643075) * -1757047085;
 		}
 		if ((local3 & Class680.aClass680_8.aLong307 * 7134854499111106275L) != 0L) {
-			this.anInt5895 = arg0.method22472(-1434290800) * 268363761;
+			this.anInt5895 = arg0.g2(-1434290800) * 268363761;
 		}
 		if ((local3 & Class680.aClass680_39.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-1971658871);
+			arg0.gFloat(-1971658871);
 		}
 		if ((local3 & Class680.aClass680_40.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(271241502);
+			arg0.gFloat(271241502);
 		}
 		if ((local3 & Class680.aClass680_43.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(97265371);
+			arg0.gFloat(97265371);
 		}
 		if ((local3 & Class680.aClass680_2.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-1464584433);
+			arg0.gFloat(-1464584433);
 		}
 		if ((local3 & Class680.aClass680_7.aLong307 * 7134854499111106275L) != 0L) {
-			this.aFloat357 = arg0.method22504(-1305198801);
+			this.aFloat357 = arg0.gFloat(-1305198801);
 		}
 		if ((local3 & Class680.aClass680_14.aLong307 * 7134854499111106275L) != 0L) {
-			this.aFloat359 = arg0.method22504(1487719715);
+			this.aFloat359 = arg0.gFloat(1487719715);
 		}
 		if ((local3 & Class680.aClass680_15.aLong307 * 7134854499111106275L) != 0L) {
-			this.aFloat360 = arg0.method22504(1620105168);
+			this.aFloat360 = arg0.gFloat(1620105168);
 		}
 		if ((local3 & Class680.aClass680_16.aLong307 * 7134854499111106275L) != 0L) {
-			this.anInt5898 = arg0.method22472(-1434290800) * 304329139;
+			this.anInt5898 = arg0.g2(-1434290800) * 304329139;
 		}
 		if ((local3 & Class680.aClass680_17.aLong307 * 7134854499111106275L) != 0L) {
-			this.anInt5899 = arg0.method22472(-1434290800) * 972166225;
-			this.anInt5900 = arg0.method22475((byte) -110) * -535776559;
-			this.anInt5901 = arg0.method22475((byte) -31) * -1145348855;
-			this.anInt5902 = arg0.method22475((byte) -90) * 1206173817;
-			this.anInt5903 = arg0.method22472(-1434290800) * 1258086185;
+			this.anInt5899 = arg0.g2(-1434290800) * 972166225;
+			this.anInt5900 = arg0.g2s((byte) -110) * -535776559;
+			this.anInt5901 = arg0.g2s((byte) -31) * -1145348855;
+			this.anInt5902 = arg0.g2s((byte) -90) * 1206173817;
+			this.anInt5903 = arg0.g2(-1434290800) * 1258086185;
 		}
 		if ((local3 & Class680.aClass680_18.aLong307 * 7134854499111106275L) != 0L) {
-			this.anIntArray521[0] = arg0.method22472(-1434290800);
-			this.aFloatArray122[0] = arg0.method22504(-1659870577);
+			this.anIntArray521[0] = arg0.g2(-1434290800);
+			this.aFloatArray122[0] = arg0.gFloat(-1659870577);
 		}
 		if ((local3 & Class680.aClass680_19.aLong307 * 7134854499111106275L) != 0L) {
-			this.anIntArray521[1] = arg0.method22472(-1434290800);
-			this.aFloatArray122[1] = arg0.method22504(761790497);
+			this.anIntArray521[1] = arg0.g2(-1434290800);
+			this.aFloatArray122[1] = arg0.gFloat(761790497);
 		}
 		if ((local3 & Class680.aClass680_20.aLong307 * 7134854499111106275L) != 0L) {
-			this.anIntArray521[2] = arg0.method22472(-1434290800);
-			this.aFloatArray122[2] = arg0.method22504(738929353);
+			this.anIntArray521[2] = arg0.g2(-1434290800);
+			this.aFloatArray122[2] = arg0.gFloat(738929353);
 		}
 		if ((local3 & Class680.aClass680_21.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22483(-118643075);
+			arg0.g4(-118643075);
 		}
 		if ((local3 & Class680.aClass680_31.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22483(-118643075);
+			arg0.g4(-118643075);
 		}
 		if ((local3 & Class680.aClass680_36.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-631017425);
+			arg0.gFloat(-631017425);
 		}
 		if ((local3 & Class680.aClass680_24.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-278912871);
+			arg0.gFloat(-278912871);
 		}
 		if ((local3 & Class680.aClass680_25.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-399652290);
+			arg0.gFloat(-399652290);
 		}
 		if ((local3 & Class680.aClass680_26.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(448301607);
+			arg0.gFloat(448301607);
 		}
 		if ((local3 & Class680.aClass680_27.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-1640471200);
+			arg0.gFloat(-1640471200);
 		}
 		if ((local3 & Class680.aClass680_28.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22483(-118643075);
+			arg0.g4(-118643075);
 		}
 		if ((local3 & Class680.aClass680_29.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(1269673484);
+			arg0.gFloat(1269673484);
 		}
 		if ((local3 & Class680.aClass680_30.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-1245105926);
+			arg0.gFloat(-1245105926);
 		}
 		if ((local3 & Class680.aClass680_12.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-748762783);
+			arg0.gFloat(-748762783);
 		}
 		if ((local3 & Class680.aClass680_32.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-367443619);
+			arg0.gFloat(-367443619);
 		}
 		if ((local3 & Class680.aClass680_33.aLong307 * 7134854499111106275L) != 0L) {
 			new Class472(arg0);
@@ -702,36 +702,36 @@ public class Class684 {
 			new Class472(arg0);
 		}
 		if ((local3 & Class680.aClass680_37.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-92907822);
+			arg0.gFloat(-92907822);
 		}
 		if ((local3 & Class680.aClass680_3.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-112880301);
+			arg0.gFloat(-112880301);
 		}
 		if ((local3 & Class680.aClass680_38.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(564311723);
+			arg0.gFloat(564311723);
 		}
 		if ((local3 & Class680.aClass680_23.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-228809554);
+			arg0.gFloat(-228809554);
 		}
 		if ((local3 & Class680.aClass680_45.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(45565929);
+			arg0.gFloat(45565929);
 		}
 		if ((local3 & Class680.aClass680_41.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(-588494887);
+			arg0.gFloat(-588494887);
 		}
 		if ((local3 & Class680.aClass680_42.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(183239242);
+			arg0.gFloat(183239242);
 		}
 		if ((local3 & Class680.aClass680_6.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22504(1058834539);
+			arg0.gFloat(1058834539);
 		}
 		if ((local3 & Class680.aClass680_44.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22483(-118643075);
+			arg0.g4(-118643075);
 		}
 		if ((local3 & Class680.aClass680_11.aLong307 * 7134854499111106275L) != 0L) {
-			arg0.method22483(-118643075);
+			arg0.g4(-118643075);
 		}
-		this.anInt5897 = arg0.method22472(-1434290800) * -521668953;
+		this.anInt5897 = arg0.g2(-1434290800) * -521668953;
 		return true;
 	}
 
@@ -1082,8 +1082,8 @@ public class Class684 {
 	static final void method33423(@OriginalArg(0) Class681 arg0, @OriginalArg(1) int arg1) {
 		@Pc(13) String local13 = (String) arg0.anObjectArray45[(arg0.anInt5888 -= 957530791) * 587908375];
 		@Pc(19) Class93_Sub22 local19 = Class102.method2588(Class446.aClass446_103, client.aClass175_2.aClass24_2, (byte) 34);
-		local19.aClass93_Sub41_Sub2_1.method22394(local13.length() + 1, (byte) -107);
-		local19.aClass93_Sub41_Sub2_1.method22431(local13, -1780120468);
+		local19.aPacketBit_1.p1(local13.length() + 1, (byte) -107);
+		local19.aPacketBit_1.pjstr(local13, -1780120468);
 		client.aClass175_2.method24356(local19, -1984927484);
 	}
 

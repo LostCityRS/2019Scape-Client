@@ -36,12 +36,12 @@ public final class Class239 {
 	public final int anInt3823;
 
 	@OriginalMember(owner = "client!ea", name = "<init>", descriptor = "(Lclient!alw;I)V", line = 21)
-	Class239(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	Class239(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		this.anInt3822 = arg1 * -2003746383;
-		@Pc(19) int local19 = arg0.method22465((short) 16384);
+		@Pc(19) int local19 = arg0.g1((short) 16384);
 		switch(local19) {
 			case 0:
-				this.anInt3823 = arg0.method22542(-1189822852) * 1774798603;
+				this.anInt3823 = arg0.gSmart2or4null(-1189822852) * 1774798603;
 				break;
 			case 1:
 				this.anInt3823 = -1774798603;
@@ -49,7 +49,7 @@ public final class Class239 {
 			default:
 				this.anInt3823 = -1774798603;
 		}
-		arg0.method22509(2141727607);
+		arg0.gjstr(2141727607);
 	}
 
 	@OriginalMember(owner = "client!ea", name = "e", descriptor = "(IIIII)V", line = 39)
@@ -66,7 +66,7 @@ public final class Class239 {
 				this.aClass132_Sub1_Sub1_Sub1_Sub1_2.anInt2766 = ((Class249.anInt3840 += -1432082549) * -1421948893 - 1) * 1501413983;
 			} else {
 				this.aClass132_Sub1_Sub1_Sub1_Sub2_2 = new Class132_Sub1_Sub1_Sub1_Sub2(client.aClass532_1.method30481(-1436025319), 25);
-				this.aClass132_Sub1_Sub1_Sub1_Sub2_2.method20052(Class36.aClass93_Sub41_1, 2031771916);
+				this.aClass132_Sub1_Sub1_Sub1_Sub2_2.method20052(Class36.aPacket_1, 2031771916);
 				this.aClass132_Sub1_Sub1_Sub1_Sub2_2.anInt2768 = this.anInt3822 * 718421009;
 				this.aClass132_Sub1_Sub1_Sub1_Sub2_2.anInt2786 = client.anInt3485 * 632844529;
 				this.aClass132_Sub1_Sub1_Sub1_Sub2_2.anInt2766 = ((Class249.anInt3840 += -1432082549) * -1421948893 - 1) * 1501413983;
@@ -96,7 +96,7 @@ public final class Class239 {
 				this.aClass132_Sub1_Sub1_Sub1_Sub1_2.anInt2766 = ((Class249.anInt3840 += -1432082549) * -1421948893 - 1) * 1501413983;
 			} else {
 				this.aClass132_Sub1_Sub1_Sub1_Sub2_2 = new Class132_Sub1_Sub1_Sub1_Sub2(client.aClass532_1.method30481(-1551032622), 25);
-				this.aClass132_Sub1_Sub1_Sub1_Sub2_2.method20052(Class36.aClass93_Sub41_1, 2125155458);
+				this.aClass132_Sub1_Sub1_Sub1_Sub2_2.method20052(Class36.aPacket_1, 2125155458);
 				this.aClass132_Sub1_Sub1_Sub1_Sub2_2.anInt2768 = this.anInt3822 * 718421009;
 				this.aClass132_Sub1_Sub1_Sub1_Sub2_2.anInt2786 = client.anInt3485 * 632844529;
 				this.aClass132_Sub1_Sub1_Sub1_Sub2_2.anInt2766 = ((Class249.anInt3840 += -1432082549) * -1421948893 - 1) * 1501413983;
@@ -126,7 +126,7 @@ public final class Class239 {
 				this.aClass132_Sub1_Sub1_Sub1_Sub1_2.anInt2766 = ((Class249.anInt3840 += -1432082549) * -1421948893 - 1) * 1501413983;
 			} else {
 				this.aClass132_Sub1_Sub1_Sub1_Sub2_2 = new Class132_Sub1_Sub1_Sub1_Sub2(client.aClass532_1.method30481(-1678184848), 25);
-				this.aClass132_Sub1_Sub1_Sub1_Sub2_2.method20052(Class36.aClass93_Sub41_1, 1881477473);
+				this.aClass132_Sub1_Sub1_Sub1_Sub2_2.method20052(Class36.aPacket_1, 1881477473);
 				this.aClass132_Sub1_Sub1_Sub1_Sub2_2.anInt2768 = this.anInt3822 * 718421009;
 				this.aClass132_Sub1_Sub1_Sub1_Sub2_2.anInt2786 = client.anInt3485 * 632844529;
 				this.aClass132_Sub1_Sub1_Sub1_Sub2_2.anInt2766 = ((Class249.anInt3840 += -1432082549) * -1421948893 - 1) * 1501413983;

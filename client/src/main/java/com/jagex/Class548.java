@@ -83,7 +83,7 @@ public class Class548 {
 	public static final void method31016(@OriginalArg(0) byte arg0) {
 		@Pc(2) Class175 local2 = Class330.method27371(-1858814111);
 		@Pc(8) Class93_Sub22 local8 = Class102.method2588(Class446.aClass446_94, local2.aClass24_2, (byte) 45);
-		local8.aClass93_Sub41_Sub2_1.method22394(0, (byte) -42);
+		local8.aPacketBit_1.p1(0, (byte) -42);
 		local2.method24356(local8, -1509960398);
 	}
 }

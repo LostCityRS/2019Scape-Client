@@ -57,50 +57,50 @@ public class Class383 implements Interface32 {
 	}
 
 	@OriginalMember(owner = "client!kn", name = "m", descriptor = "(Lclient!alw;)Lclient!kn;", line = 33)
-	public static Class383 method28139(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(3) int local3 = arg0.method22465((short) 16384);
-		@Pc(10) Class390 local10 = Class708.method36753(2002255623)[arg0.method22465((short) 16384)];
-		@Pc(17) Class392 local17 = Class252.method25976(-204072310)[arg0.method22465((short) 16384)];
-		@Pc(21) int local21 = arg0.method22475((byte) -18);
-		@Pc(25) int local25 = arg0.method22475((byte) -20);
-		@Pc(29) int local29 = arg0.method22472(-1434290800);
-		@Pc(33) int local33 = arg0.method22472(-1434290800);
-		@Pc(37) int local37 = arg0.method22483(-118643075);
-		@Pc(41) int local41 = arg0.method22483(-118643075);
-		@Pc(45) int local45 = arg0.method22483(-118643075);
-		@Pc(54) boolean local54 = arg0.method22465((short) 16384) == 1;
+	public static Class383 method28139(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1((short) 16384);
+		@Pc(10) Class390 local10 = Class708.method36753(2002255623)[arg0.g1((short) 16384)];
+		@Pc(17) Class392 local17 = Class252.method25976(-204072310)[arg0.g1((short) 16384)];
+		@Pc(21) int local21 = arg0.g2s((byte) -18);
+		@Pc(25) int local25 = arg0.g2s((byte) -20);
+		@Pc(29) int local29 = arg0.g2(-1434290800);
+		@Pc(33) int local33 = arg0.g2(-1434290800);
+		@Pc(37) int local37 = arg0.g4(-118643075);
+		@Pc(41) int local41 = arg0.g4(-118643075);
+		@Pc(45) int local45 = arg0.g4(-118643075);
+		@Pc(54) boolean local54 = arg0.g1((short) 16384) == 1;
 		return new Class383(local3, local10, local17, local21, local25, local29, local33, local37, local41, local45, local54);
 	}
 
 	@OriginalMember(owner = "client!kn", name = "k", descriptor = "(Lclient!alw;)Lclient!kn;", line = 33)
-	public static Class383 method28140(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(3) int local3 = arg0.method22465((short) 16384);
-		@Pc(10) Class390 local10 = Class708.method36753(447662794)[arg0.method22465((short) 16384)];
-		@Pc(17) Class392 local17 = Class252.method25976(1103752016)[arg0.method22465((short) 16384)];
-		@Pc(21) int local21 = arg0.method22475((byte) -115);
-		@Pc(25) int local25 = arg0.method22475((byte) -68);
-		@Pc(29) int local29 = arg0.method22472(-1434290800);
-		@Pc(33) int local33 = arg0.method22472(-1434290800);
-		@Pc(37) int local37 = arg0.method22483(-118643075);
-		@Pc(41) int local41 = arg0.method22483(-118643075);
-		@Pc(45) int local45 = arg0.method22483(-118643075);
-		@Pc(54) boolean local54 = arg0.method22465((short) 16384) == 1;
+	public static Class383 method28140(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1((short) 16384);
+		@Pc(10) Class390 local10 = Class708.method36753(447662794)[arg0.g1((short) 16384)];
+		@Pc(17) Class392 local17 = Class252.method25976(1103752016)[arg0.g1((short) 16384)];
+		@Pc(21) int local21 = arg0.g2s((byte) -115);
+		@Pc(25) int local25 = arg0.g2s((byte) -68);
+		@Pc(29) int local29 = arg0.g2(-1434290800);
+		@Pc(33) int local33 = arg0.g2(-1434290800);
+		@Pc(37) int local37 = arg0.g4(-118643075);
+		@Pc(41) int local41 = arg0.g4(-118643075);
+		@Pc(45) int local45 = arg0.g4(-118643075);
+		@Pc(54) boolean local54 = arg0.g1((short) 16384) == 1;
 		return new Class383(local3, local10, local17, local21, local25, local29, local33, local37, local41, local45, local54);
 	}
 
 	@OriginalMember(owner = "client!kn", name = "f", descriptor = "(Lclient!alw;)Lclient!kn;", line = 33)
-	public static Class383 method28141(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(3) int local3 = arg0.method22465((short) 16384);
-		@Pc(10) Class390 local10 = Class708.method36753(1572096039)[arg0.method22465((short) 16384)];
-		@Pc(17) Class392 local17 = Class252.method25976(-1703594366)[arg0.method22465((short) 16384)];
-		@Pc(21) int local21 = arg0.method22475((byte) -11);
-		@Pc(25) int local25 = arg0.method22475((byte) -8);
-		@Pc(29) int local29 = arg0.method22472(-1434290800);
-		@Pc(33) int local33 = arg0.method22472(-1434290800);
-		@Pc(37) int local37 = arg0.method22483(-118643075);
-		@Pc(41) int local41 = arg0.method22483(-118643075);
-		@Pc(45) int local45 = arg0.method22483(-118643075);
-		@Pc(54) boolean local54 = arg0.method22465((short) 16384) == 1;
+	public static Class383 method28141(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1((short) 16384);
+		@Pc(10) Class390 local10 = Class708.method36753(1572096039)[arg0.g1((short) 16384)];
+		@Pc(17) Class392 local17 = Class252.method25976(-1703594366)[arg0.g1((short) 16384)];
+		@Pc(21) int local21 = arg0.g2s((byte) -11);
+		@Pc(25) int local25 = arg0.g2s((byte) -8);
+		@Pc(29) int local29 = arg0.g2(-1434290800);
+		@Pc(33) int local33 = arg0.g2(-1434290800);
+		@Pc(37) int local37 = arg0.g4(-118643075);
+		@Pc(41) int local41 = arg0.g4(-118643075);
+		@Pc(45) int local45 = arg0.g4(-118643075);
+		@Pc(54) boolean local54 = arg0.g1((short) 16384) == 1;
 		return new Class383(local3, local10, local17, local21, local25, local29, local33, local37, local41, local45, local54);
 	}
 

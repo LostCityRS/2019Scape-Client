@@ -155,31 +155,31 @@ public class Class25_Sub3 extends Class25 {
 
 	@OriginalMember(owner = "client!ani", name = "w", descriptor = "(Lclient!alw;I)V", line = 68)
 	@Override
-	public void method23123(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	public void method23123(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		this.aClass479_1 = new Class479(arg0);
 	}
 
 	@OriginalMember(owner = "client!ani", name = "c", descriptor = "(Lclient!alw;)V", line = 68)
 	@Override
-	public void method23125(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method23125(@OriginalArg(0) Packet arg0) {
 		this.aClass479_1 = new Class479(arg0);
 	}
 
 	@OriginalMember(owner = "client!ani", name = "r", descriptor = "(Lclient!alw;)V", line = 68)
 	@Override
-	public void method23133(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method23133(@OriginalArg(0) Packet arg0) {
 		this.aClass479_1 = new Class479(arg0);
 	}
 
 	@OriginalMember(owner = "client!ani", name = "v", descriptor = "(Lclient!alw;)V", line = 68)
 	@Override
-	public void method23134(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method23134(@OriginalArg(0) Packet arg0) {
 		this.aClass479_1 = new Class479(arg0);
 	}
 
 	@OriginalMember(owner = "client!ani", name = "o", descriptor = "(Lclient!alw;)V", line = 68)
 	@Override
-	public void method23135(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method23135(@OriginalArg(0) Packet arg0) {
 		this.aClass479_1 = new Class479(arg0);
 	}
 }

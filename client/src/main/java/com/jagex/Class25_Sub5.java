@@ -271,12 +271,12 @@ public class Class25_Sub5 extends Class25 {
 
 	@OriginalMember(owner = "client!anw", name = "w", descriptor = "(Lclient!alw;I)V", line = 83)
 	@Override
-	public void method23123(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		@Pc(5) Class363 local5 = Class90.method1601(arg0.method22465((short) 16384), -2127878358);
-		@Pc(9) int local9 = arg0.method22472(-1434290800);
+	public void method23123(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(5) Class363 local5 = Class90.method1601(arg0.g1((short) 16384), -2127878358);
+		@Pc(9) int local9 = arg0.g2(-1434290800);
 		this.anInterface29_2 = this.aClass123_16.method9018(-1921359625).method36705(local5, local9, (byte) 32);
 		this.aClass472_52.method29546(arg0);
-		if (arg0.method22465((short) 16384) == 1) {
+		if (arg0.g1((short) 16384) == 1) {
 			this.aBoolean367 = true;
 		} else {
 			this.aBoolean367 = false;
@@ -285,12 +285,12 @@ public class Class25_Sub5 extends Class25 {
 
 	@OriginalMember(owner = "client!anw", name = "v", descriptor = "(Lclient!alw;)V", line = 83)
 	@Override
-	public void method23134(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(5) Class363 local5 = Class90.method1601(arg0.method22465((short) 16384), -2046023789);
-		@Pc(9) int local9 = arg0.method22472(-1434290800);
+	public void method23134(@OriginalArg(0) Packet arg0) {
+		@Pc(5) Class363 local5 = Class90.method1601(arg0.g1((short) 16384), -2046023789);
+		@Pc(9) int local9 = arg0.g2(-1434290800);
 		this.anInterface29_2 = this.aClass123_16.method9018(-1636717958).method36705(local5, local9, (byte) 32);
 		this.aClass472_52.method29546(arg0);
-		if (arg0.method22465((short) 16384) == 1) {
+		if (arg0.g1((short) 16384) == 1) {
 			this.aBoolean367 = true;
 		} else {
 			this.aBoolean367 = false;
@@ -299,12 +299,12 @@ public class Class25_Sub5 extends Class25 {
 
 	@OriginalMember(owner = "client!anw", name = "c", descriptor = "(Lclient!alw;)V", line = 83)
 	@Override
-	public void method23125(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(5) Class363 local5 = Class90.method1601(arg0.method22465((short) 16384), -2004967171);
-		@Pc(9) int local9 = arg0.method22472(-1434290800);
+	public void method23125(@OriginalArg(0) Packet arg0) {
+		@Pc(5) Class363 local5 = Class90.method1601(arg0.g1((short) 16384), -2004967171);
+		@Pc(9) int local9 = arg0.g2(-1434290800);
 		this.anInterface29_2 = this.aClass123_16.method9018(-1606557995).method36705(local5, local9, (byte) 32);
 		this.aClass472_52.method29546(arg0);
-		if (arg0.method22465((short) 16384) == 1) {
+		if (arg0.g1((short) 16384) == 1) {
 			this.aBoolean367 = true;
 		} else {
 			this.aBoolean367 = false;
@@ -313,12 +313,12 @@ public class Class25_Sub5 extends Class25 {
 
 	@OriginalMember(owner = "client!anw", name = "r", descriptor = "(Lclient!alw;)V", line = 83)
 	@Override
-	public void method23133(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(5) Class363 local5 = Class90.method1601(arg0.method22465((short) 16384), -2065185880);
-		@Pc(9) int local9 = arg0.method22472(-1434290800);
+	public void method23133(@OriginalArg(0) Packet arg0) {
+		@Pc(5) Class363 local5 = Class90.method1601(arg0.g1((short) 16384), -2065185880);
+		@Pc(9) int local9 = arg0.g2(-1434290800);
 		this.anInterface29_2 = this.aClass123_16.method9018(-1608360168).method36705(local5, local9, (byte) 32);
 		this.aClass472_52.method29546(arg0);
-		if (arg0.method22465((short) 16384) == 1) {
+		if (arg0.g1((short) 16384) == 1) {
 			this.aBoolean367 = true;
 		} else {
 			this.aBoolean367 = false;
@@ -327,12 +327,12 @@ public class Class25_Sub5 extends Class25 {
 
 	@OriginalMember(owner = "client!anw", name = "o", descriptor = "(Lclient!alw;)V", line = 83)
 	@Override
-	public void method23135(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(5) Class363 local5 = Class90.method1601(arg0.method22465((short) 16384), -2019436694);
-		@Pc(9) int local9 = arg0.method22472(-1434290800);
+	public void method23135(@OriginalArg(0) Packet arg0) {
+		@Pc(5) Class363 local5 = Class90.method1601(arg0.g1((short) 16384), -2019436694);
+		@Pc(9) int local9 = arg0.g2(-1434290800);
 		this.anInterface29_2 = this.aClass123_16.method9018(-1782321774).method36705(local5, local9, (byte) 32);
 		this.aClass472_52.method29546(arg0);
-		if (arg0.method22465((short) 16384) == 1) {
+		if (arg0.g1((short) 16384) == 1) {
 			this.aBoolean367 = true;
 		} else {
 			this.aBoolean367 = false;

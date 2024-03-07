@@ -53,14 +53,14 @@ public class Class382 implements Interface32 {
 	}
 
 	@OriginalMember(owner = "client!km", name = "m", descriptor = "(Lclient!alw;)Lclient!km;", line = 28)
-	public static Class382 method28133(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(6) Class390 local6 = Class708.method36753(-657866540)[arg0.method22465((short) 16384)];
-		@Pc(13) Class392 local13 = Class252.method25976(196846681)[arg0.method22465((short) 16384)];
-		@Pc(17) int local17 = arg0.method22475((byte) -48);
-		@Pc(21) int local21 = arg0.method22475((byte) -24);
-		@Pc(25) int local25 = arg0.method22542(-1918286249);
-		@Pc(29) int local29 = arg0.method22483(-118643075);
-		@Pc(33) int local33 = arg0.method22465((short) 16384);
+	public static Class382 method28133(@OriginalArg(0) Packet arg0) {
+		@Pc(6) Class390 local6 = Class708.method36753(-657866540)[arg0.g1((short) 16384)];
+		@Pc(13) Class392 local13 = Class252.method25976(196846681)[arg0.g1((short) 16384)];
+		@Pc(17) int local17 = arg0.g2s((byte) -48);
+		@Pc(21) int local21 = arg0.g2s((byte) -24);
+		@Pc(25) int local25 = arg0.gSmart2or4null(-1918286249);
+		@Pc(29) int local29 = arg0.g4(-118643075);
+		@Pc(33) int local33 = arg0.g1((short) 16384);
 		return new Class382(local6, local13, local17, local21, local25, local29, local33);
 	}
 

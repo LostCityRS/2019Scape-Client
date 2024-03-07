@@ -104,15 +104,6 @@ public class Class124_Sub1 extends Class124 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ahd", name = "e", descriptor = "([BIIB)I", line = 45)
-	static int method9165(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) byte arg3) {
-		@Pc(1) int local1 = -1;
-		for (@Pc(3) int local3 = arg1; local3 < arg2; local3++) {
-			local1 = local1 >>> 8 ^ Class93_Sub41.anIntArray262[(local1 ^ arg0[local3]) & 0xFF];
-		}
-		return ~local1;
-	}
-
 	@OriginalMember(owner = "client!ahd", name = "b", descriptor = "(F[[[ILclient!qx;II)V", line = 48)
 	@Override
 	public void method21425(@OriginalArg(0) float arg0, @OriginalArg(1) int[][][] arg1, @OriginalArg(2) Class520 arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
@@ -838,49 +829,49 @@ public class Class124_Sub1 extends Class124 {
 
 	@OriginalMember(owner = "client!ahd", name = "q", descriptor = "(Lclient!alw;)V", line = 222)
 	@Override
-	public void method21423(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(5) Class363 local5 = Class90.method1601(arg0.method22465((short) 16384), -2018282831);
-		@Pc(9) int local9 = arg0.method22472(-1434290800);
+	public void method21423(@OriginalArg(0) Packet arg0) {
+		@Pc(5) Class363 local5 = Class90.method1601(arg0.g1((short) 16384), -2018282831);
+		@Pc(9) int local9 = arg0.g2(-1434290800);
 		this.aClass472_14.method29546(arg0);
 		this.aClass471_1.method29469(arg0);
-		if (arg0.method22465((short) 16384) == 1) {
+		if (arg0.g1((short) 16384) == 1) {
 			this.aBoolean183 = true;
 		} else {
 			this.aBoolean183 = false;
 		}
-		this.anInt1017 = arg0.method22472(-1434290800) * 822388973;
+		this.anInt1017 = arg0.g2(-1434290800) * 822388973;
 		this.anInterface29_1 = this.aClass123_13.method9018(-1680994591).method36705(local5, local9, (byte) 32);
 	}
 
 	@OriginalMember(owner = "client!ahd", name = "x", descriptor = "(Lclient!alw;)V", line = 222)
 	@Override
-	public void method21424(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(5) Class363 local5 = Class90.method1601(arg0.method22465((short) 16384), -1873131749);
-		@Pc(9) int local9 = arg0.method22472(-1434290800);
+	public void method21424(@OriginalArg(0) Packet arg0) {
+		@Pc(5) Class363 local5 = Class90.method1601(arg0.g1((short) 16384), -1873131749);
+		@Pc(9) int local9 = arg0.g2(-1434290800);
 		this.aClass472_14.method29546(arg0);
 		this.aClass471_1.method29469(arg0);
-		if (arg0.method22465((short) 16384) == 1) {
+		if (arg0.g1((short) 16384) == 1) {
 			this.aBoolean183 = true;
 		} else {
 			this.aBoolean183 = false;
 		}
-		this.anInt1017 = arg0.method22472(-1434290800) * 822388973;
+		this.anInt1017 = arg0.g2(-1434290800) * 822388973;
 		this.anInterface29_1 = this.aClass123_13.method9018(-2119740420).method36705(local5, local9, (byte) 32);
 	}
 
 	@OriginalMember(owner = "client!ahd", name = "u", descriptor = "(Lclient!alw;I)V", line = 222)
 	@Override
-	public void method21413(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		@Pc(5) Class363 local5 = Class90.method1601(arg0.method22465((short) 16384), -2019869299);
-		@Pc(9) int local9 = arg0.method22472(-1434290800);
+	public void method21413(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(5) Class363 local5 = Class90.method1601(arg0.g1((short) 16384), -2019869299);
+		@Pc(9) int local9 = arg0.g2(-1434290800);
 		this.aClass472_14.method29546(arg0);
 		this.aClass471_1.method29469(arg0);
-		if (arg0.method22465((short) 16384) == 1) {
+		if (arg0.g1((short) 16384) == 1) {
 			this.aBoolean183 = true;
 		} else {
 			this.aBoolean183 = false;
 		}
-		this.anInt1017 = arg0.method22472(-1434290800) * 822388973;
+		this.anInt1017 = arg0.g2(-1434290800) * 822388973;
 		this.anInterface29_1 = this.aClass123_13.method9018(-1864838711).method36705(local5, local9, (byte) 32);
 	}
 

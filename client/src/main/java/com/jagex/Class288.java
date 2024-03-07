@@ -72,10 +72,10 @@ public class Class288 implements Interface26 {
 	}
 
 	@OriginalMember(owner = "client!gh", name = "<init>", descriptor = "(Lclient!gx;Lclient!alw;)V", line = 204)
-	Class288(@OriginalArg(0) Class303 arg0, @OriginalArg(1) Class93_Sub41 arg1) {
+	Class288(@OriginalArg(0) Class303 arg0, @OriginalArg(1) Packet arg1) {
 		this.this$0 = arg0;
-		this.anInt3903 = arg1.method22472(-1434290800) * 1131038967;
-		this.anInt3902 = arg1.method22472(-1434290800) * 877711957;
+		this.anInt3903 = arg1.g2(-1434290800) * 1131038967;
+		this.anInt3902 = arg1.g2(-1434290800) * 877711957;
 	}
 
 	@OriginalMember(owner = "client!gh", name = "e", descriptor = "(Lclient!gq;B)V", line = 210)

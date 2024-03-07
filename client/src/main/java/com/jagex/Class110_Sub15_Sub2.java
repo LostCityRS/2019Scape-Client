@@ -21,12 +21,12 @@ public class Class110_Sub15_Sub2 extends Class110_Sub15 {
 	final int anInt2826;
 
 	@OriginalMember(owner = "client!aqn", name = "<init>", descriptor = "(Lclient!alw;)V", line = 14)
-	Class110_Sub15_Sub2(@OriginalArg(0) Class93_Sub41 arg0) {
+	Class110_Sub15_Sub2(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		@Pc(6) int local6 = arg0.method22483(-118643075);
+		@Pc(6) int local6 = arg0.g4(-118643075);
 		this.anInt2825 = (local6 >>> 16) * 1778595823;
 		this.anInt2824 = (local6 & 0xFFFF) * 159157325;
-		this.anInt2826 = arg0.method22465((short) 16384) * 256284111;
+		this.anInt2826 = arg0.g1((short) 16384) * 256284111;
 	}
 
 	@OriginalMember(owner = "client!aqn", name = "f", descriptor = "()V", line = 22)

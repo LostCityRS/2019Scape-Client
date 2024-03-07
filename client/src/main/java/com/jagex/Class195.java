@@ -67,7 +67,7 @@ public class Class195 {
 		}
 		this.anInt3364 = local25;
 		if (local25 > 0) {
-			@Pc(83) Class93_Sub41 local83 = new Class93_Sub41(local25 * 2);
+			@Pc(83) Packet local83 = new Packet(local25 * 2);
 			@Pc(114) short[] local114;
 			@Pc(118) int local118;
 			@Pc(105) int local105;
@@ -78,7 +78,7 @@ public class Class195 {
 						local114 = arg2.aShortArrayArray2[local51++];
 						if (local114 != null) {
 							for (local118 = 0; local118 < local114.length; local118++) {
-								local83.method22395(local114[local118] & 0xFFFF, 2130950967);
+								local83.p2(local114[local118] & 0xFFFF, 2130950967);
 							}
 						}
 					}
@@ -90,13 +90,13 @@ public class Class195 {
 						local114 = arg2.aShortArrayArray2[local51++];
 						if (local114 != null) {
 							for (local118 = 0; local118 < local114.length; local118++) {
-								local83.method22398(local114[local118] & 0xFFFF, -198370378);
+								local83.ip2(local114[local118] & 0xFFFF, -198370378);
 							}
 						}
 					}
 				}
 			}
-			this.anInterface16_5 = this.aClass104_Sub1_41.method3843(5123, local83.aByteArray58, local83.anInt3070 * 212851357, false);
+			this.anInterface16_5 = this.aClass104_Sub1_41.method3843(5123, local83.data, local83.pos * 212851357, false);
 			this.aClass101_Sub1_2 = new Class101_Sub1(this.aClass104_Sub1_41, 5123, null, 1);
 		} else {
 			this.aClass88_Sub2_5 = null;

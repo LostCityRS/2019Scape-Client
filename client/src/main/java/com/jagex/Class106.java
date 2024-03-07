@@ -88,14 +88,14 @@ public abstract class Class106 {
 	}
 
 	@OriginalMember(owner = "client!eu", name = "k", descriptor = "(Lclient!alw;II)Ljava/lang/String;", line = 31)
-	static String method7526(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	static String method7526(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		try {
-			@Pc(3) int local3 = arg0.method22528((byte) -79);
+			@Pc(3) int local3 = arg0.gSmart1or2((byte) -79);
 			if (local3 > arg1) {
 				local3 = arg1;
 			}
 			@Pc(11) byte[] local11 = new byte[local3];
-			arg0.anInt3070 += Class350.aClass337_1.method27458(arg0.aByteArray58, arg0.anInt3070 * 212851357, local11, 0, local3, (byte) 114) * -1445626955;
+			arg0.pos += Class350.aClass337_1.method27458(arg0.data, arg0.pos * 212851357, local11, 0, local3, (byte) 114) * -1445626955;
 			return Class155.method15306(local11, 0, local3, (byte) -75);
 		} catch (@Pc(39) Exception local39) {
 			return "Cabbage";

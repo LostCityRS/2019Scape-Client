@@ -694,9 +694,9 @@ public class Class279 {
 
 	@OriginalMember(owner = "client!fy", name = "ic", descriptor = "(IB)V", line = 9614)
 	static final void method26448(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1) {
-		@Pc(2) Class93_Sub41_Sub2 local2 = client.aClass175_2.aClass93_Sub41_Sub2_2;
-		while (local2.method22691(client.aClass175_2.anInt3301 * 2010044839, 1313572448) >= 15) {
-			@Pc(17) int local17 = local2.method22686(15, 1227115599);
+		@Pc(2) PacketBit local2 = client.aClass175_2.aPacketBit_2;
+		while (local2.bitsAvailable(client.aClass175_2.length * 2010044839, 1313572448) >= 15) {
+			@Pc(17) int local17 = local2.gBit(15, 1227115599);
 			if (local17 == 32767) {
 				break;
 			}
@@ -717,19 +717,19 @@ public class Class279 {
 			if (local38.aClass336_1 != null && local38.aClass336_1.method27441((short) 12466)) {
 				Class665.method32891(local38, 846198857);
 			}
-			@Pc(105) int local105 = local2.method22686(2, -833157368);
-			@Pc(110) int local110 = local2.method22686(arg0, -833088547);
+			@Pc(105) int local105 = local2.gBit(2, -833157368);
+			@Pc(110) int local110 = local2.gBit(arg0, -833088547);
 			if (local110 > (0x1 << arg0 - 1) - 1) {
 				local110 -= 0x1 << arg0;
 			}
-			@Pc(130) int local130 = local2.method22686(1, 311787348);
+			@Pc(130) int local130 = local2.gBit(1, 311787348);
 			if (local130 == 1) {
 				client.anIntArray306[(client.anInt3472 += -170330519) * 146012633 - 1] = local17;
 			}
-			local38.method18594((Class336) Class162.aClass32_Sub3_2.method18261(local2.method22686(15, -1414174684), 1358140749), 484412968);
-			@Pc(161) int local161 = local2.method22686(1, -1125559557);
-			@Pc(172) int local172 = local2.method22686(3, 1297161788) + 4 << 11 & 0x3FFF;
-			@Pc(177) int local177 = local2.method22686(arg0, 59162484);
+			local38.method18594((Class336) Class162.aClass32_Sub3_2.method18261(local2.gBit(15, -1414174684), 1358140749), 484412968);
+			@Pc(161) int local161 = local2.gBit(1, -1125559557);
+			@Pc(172) int local172 = local2.gBit(3, 1297161788) + 4 << 11 & 0x3FFF;
+			@Pc(177) int local177 = local2.gBit(arg0, 59162484);
 			if (local177 > (0x1 << arg0 - 1) - 1) {
 				local177 -= 0x1 << arg0;
 			}
@@ -746,7 +746,7 @@ public class Class279 {
 				local38.method18588((byte) 0);
 			}
 		}
-		local2.method22688(-1653671445);
+		local2.accessBytes(-1653671445);
 	}
 
 	@OriginalMember(owner = "client!fy", name = "avj", descriptor = "(Lclient!yf;I)V", line = 13469)

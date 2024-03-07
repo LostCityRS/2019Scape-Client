@@ -65,7 +65,7 @@ public class Class375 {
 	}
 
 	@OriginalMember(owner = "client!kd", name = "<init>", descriptor = "(Lclient!alw;)V", line = 26)
-	public Class375(@OriginalArg(0) Class93_Sub41 arg0) {
+	public Class375(@OriginalArg(0) Packet arg0) {
 		this.method28034(arg0, (byte) 0);
 	}
 
@@ -75,10 +75,10 @@ public class Class375 {
 	}
 
 	@OriginalMember(owner = "client!kd", name = "e", descriptor = "(Lclient!alw;B)V", line = 31)
-	void method28034(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
-		this.aLong265 = arg0.method22495(759431973) * 4093702548507819299L;
-		this.anInt4604 = arg0.method22483(-118643075) * 251461975;
-		for (@Pc(17) int local17 = arg0.method22465((short) 16384); local17 != 0; local17 = arg0.method22465((short) 16384)) {
+	void method28034(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
+		this.aLong265 = arg0.g8(759431973) * 4093702548507819299L;
+		this.anInt4604 = arg0.g4(-118643075) * 251461975;
+		for (@Pc(17) int local17 = arg0.g1((short) 16384); local17 != 0; local17 = arg0.g1((short) 16384)) {
 			@Pc(28) Class93_Sub26 local28;
 			if (local17 == 3) {
 				local28 = new Class93_Sub26_Sub4(this);
@@ -117,10 +117,10 @@ public class Class375 {
 	}
 
 	@OriginalMember(owner = "client!kd", name = "k", descriptor = "(Lclient!alw;)V", line = 31)
-	void method28035(@OriginalArg(0) Class93_Sub41 arg0) {
-		this.aLong265 = arg0.method22495(1032137359) * 4093702548507819299L;
-		this.anInt4604 = arg0.method22483(-118643075) * 251461975;
-		for (@Pc(17) int local17 = arg0.method22465((short) 16384); local17 != 0; local17 = arg0.method22465((short) 16384)) {
+	void method28035(@OriginalArg(0) Packet arg0) {
+		this.aLong265 = arg0.g8(1032137359) * 4093702548507819299L;
+		this.anInt4604 = arg0.g4(-118643075) * 251461975;
+		for (@Pc(17) int local17 = arg0.g1((short) 16384); local17 != 0; local17 = arg0.g1((short) 16384)) {
 			@Pc(28) Class93_Sub26 local28;
 			if (local17 == 3) {
 				local28 = new Class93_Sub26_Sub4(this);
@@ -159,10 +159,10 @@ public class Class375 {
 	}
 
 	@OriginalMember(owner = "client!kd", name = "m", descriptor = "(Lclient!alw;)V", line = 31)
-	void method28036(@OriginalArg(0) Class93_Sub41 arg0) {
-		this.aLong265 = arg0.method22495(-1938686165) * 4093702548507819299L;
-		this.anInt4604 = arg0.method22483(-118643075) * 251461975;
-		for (@Pc(17) int local17 = arg0.method22465((short) 16384); local17 != 0; local17 = arg0.method22465((short) 16384)) {
+	void method28036(@OriginalArg(0) Packet arg0) {
+		this.aLong265 = arg0.g8(-1938686165) * 4093702548507819299L;
+		this.anInt4604 = arg0.g4(-118643075) * 251461975;
+		for (@Pc(17) int local17 = arg0.g1((short) 16384); local17 != 0; local17 = arg0.g1((short) 16384)) {
 			@Pc(28) Class93_Sub26 local28;
 			if (local17 == 3) {
 				local28 = new Class93_Sub26_Sub4(this);

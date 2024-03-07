@@ -25,13 +25,13 @@ public class Class110_Sub14 extends Class110 {
 	final int anInt954;
 
 	@OriginalMember(owner = "client!agk", name = "<init>", descriptor = "(Lclient!alw;)V", line = 17)
-	Class110_Sub14(@OriginalArg(0) Class93_Sub41 arg0) {
+	Class110_Sub14(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.anInt955 = arg0.method22472(-1434290800) * -1039422713;
+		this.anInt955 = arg0.g2(-1434290800) * -1039422713;
 		this.anIntArray83 = new int[4];
-		this.anInt953 = arg0.method22542(-1410250426) * 519064321;
+		this.anInt953 = arg0.gSmart2or4null(-1410250426) * 519064321;
 		Arrays.fill(this.anIntArray83, 0, this.anIntArray83.length, this.anInt953 * -1542933247);
-		this.anInt954 = arg0.method22483(-118643075) * -1990374291;
+		this.anInt954 = arg0.g4(-118643075) * -1990374291;
 	}
 
 	@OriginalMember(owner = "client!agk", name = "f", descriptor = "()V", line = 26)

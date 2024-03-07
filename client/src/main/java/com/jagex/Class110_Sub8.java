@@ -29,14 +29,14 @@ public class Class110_Sub8 extends Class110 {
 	final int anInt916;
 
 	@OriginalMember(owner = "client!age", name = "<init>", descriptor = "(Lclient!alw;)V", line = 16)
-	Class110_Sub8(@OriginalArg(0) Class93_Sub41 arg0) {
+	Class110_Sub8(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.anInt912 = arg0.method22472(-1434290800) * 1961320037;
-		this.anInt915 = arg0.method22472(-1434290800) * -1795509975;
-		this.anInt913 = arg0.method22472(-1434290800) * 567576759;
-		this.anInt914 = arg0.method22472(-1434290800) * 34801743;
-		this.anInt911 = arg0.method22472(-1434290800) * 2109223857;
-		this.anInt916 = arg0.method22472(-1434290800) * -243407281;
+		this.anInt912 = arg0.g2(-1434290800) * 1961320037;
+		this.anInt915 = arg0.g2(-1434290800) * -1795509975;
+		this.anInt913 = arg0.g2(-1434290800) * 567576759;
+		this.anInt914 = arg0.g2(-1434290800) * 34801743;
+		this.anInt911 = arg0.g2(-1434290800) * 2109223857;
+		this.anInt916 = arg0.g2(-1434290800) * -243407281;
 	}
 
 	@OriginalMember(owner = "client!age", name = "n", descriptor = "(I)V", line = 26)

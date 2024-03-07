@@ -34,9 +34,9 @@ public abstract class Class108 implements Interface12 {
 
 	@OriginalMember(owner = "client!ec", name = "e", descriptor = "(Lclient!alw;B)V", line = 23)
 	@Override
-	public void method36654(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
+	public void method36654(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -49,17 +49,17 @@ public abstract class Class108 implements Interface12 {
 						this.aBoolean173 = false;
 						break;
 					case 1:
-						@Pc(50) int local50 = arg0.method22465((short) 16384);
+						@Pc(50) int local50 = arg0.g1((short) 16384);
 						this.aClass519_6 = (Class519) Class107.method18116(Class519.method30309(2041400837), local50, -1915563430);
 						if (this.aClass519_6 != null) {
 							break;
 						}
 						throw new IllegalStateException("");
 					case 2:
-						arg0.method22512(67383654);
+						arg0.gjstr2(67383654);
 						break;
 					case 3:
-						Class107.method18116(Class420.method28716(804770315), arg0.method22465((short) 16384), -1915563430);
+						Class107.method18116(Class420.method28716(804770315), arg0.g1((short) 16384), -1915563430);
 						break;
 					case 4:
 					default:
@@ -67,7 +67,7 @@ public abstract class Class108 implements Interface12 {
 					case 5:
 						break;
 					case 6:
-						this.aClass507_3 = (Class507) Class107.method18116(Class174.method24325((byte) 84), arg0.method22465((short) 16384), -1915563430);
+						this.aClass507_3 = (Class507) Class107.method18116(Class174.method24325((byte) 84), arg0.g1((short) 16384), -1915563430);
 				}
 			}
 		}
@@ -75,9 +75,9 @@ public abstract class Class108 implements Interface12 {
 
 	@OriginalMember(owner = "client!ec", name = "m", descriptor = "(Lclient!alw;)V", line = 23)
 	@Override
-	public void method36655(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36655(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -90,17 +90,17 @@ public abstract class Class108 implements Interface12 {
 						this.aBoolean173 = false;
 						break;
 					case 1:
-						@Pc(50) int local50 = arg0.method22465((short) 16384);
+						@Pc(50) int local50 = arg0.g1((short) 16384);
 						this.aClass519_6 = (Class519) Class107.method18116(Class519.method30309(1623296093), local50, -1915563430);
 						if (this.aClass519_6 != null) {
 							break;
 						}
 						throw new IllegalStateException("");
 					case 2:
-						arg0.method22512(1136815077);
+						arg0.gjstr2(1136815077);
 						break;
 					case 3:
-						Class107.method18116(Class420.method28716(2022493064), arg0.method22465((short) 16384), -1915563430);
+						Class107.method18116(Class420.method28716(2022493064), arg0.g1((short) 16384), -1915563430);
 						break;
 					case 4:
 					default:
@@ -108,7 +108,7 @@ public abstract class Class108 implements Interface12 {
 					case 5:
 						break;
 					case 6:
-						this.aClass507_3 = (Class507) Class107.method18116(Class174.method24325((byte) 49), arg0.method22465((short) 16384), -1915563430);
+						this.aClass507_3 = (Class507) Class107.method18116(Class174.method24325((byte) 49), arg0.g1((short) 16384), -1915563430);
 				}
 			}
 		}
@@ -116,9 +116,9 @@ public abstract class Class108 implements Interface12 {
 
 	@OriginalMember(owner = "client!ec", name = "k", descriptor = "(Lclient!alw;)V", line = 23)
 	@Override
-	public void method36656(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36656(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -131,17 +131,17 @@ public abstract class Class108 implements Interface12 {
 						this.aBoolean173 = false;
 						break;
 					case 1:
-						@Pc(50) int local50 = arg0.method22465((short) 16384);
+						@Pc(50) int local50 = arg0.g1((short) 16384);
 						this.aClass519_6 = (Class519) Class107.method18116(Class519.method30309(1533022602), local50, -1915563430);
 						if (this.aClass519_6 != null) {
 							break;
 						}
 						throw new IllegalStateException("");
 					case 2:
-						arg0.method22512(887597660);
+						arg0.gjstr2(887597660);
 						break;
 					case 3:
-						Class107.method18116(Class420.method28716(241420107), arg0.method22465((short) 16384), -1915563430);
+						Class107.method18116(Class420.method28716(241420107), arg0.g1((short) 16384), -1915563430);
 						break;
 					case 4:
 					default:
@@ -149,7 +149,7 @@ public abstract class Class108 implements Interface12 {
 					case 5:
 						break;
 					case 6:
-						this.aClass507_3 = (Class507) Class107.method18116(Class174.method24325((byte) 66), arg0.method22465((short) 16384), -1915563430);
+						this.aClass507_3 = (Class507) Class107.method18116(Class174.method24325((byte) 66), arg0.g1((short) 16384), -1915563430);
 				}
 			}
 		}
@@ -157,9 +157,9 @@ public abstract class Class108 implements Interface12 {
 
 	@OriginalMember(owner = "client!ec", name = "w", descriptor = "(Lclient!alw;)V", line = 23)
 	@Override
-	public void method36658(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36658(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -172,17 +172,17 @@ public abstract class Class108 implements Interface12 {
 						this.aBoolean173 = false;
 						break;
 					case 1:
-						@Pc(50) int local50 = arg0.method22465((short) 16384);
+						@Pc(50) int local50 = arg0.g1((short) 16384);
 						this.aClass519_6 = (Class519) Class107.method18116(Class519.method30309(1403388839), local50, -1915563430);
 						if (this.aClass519_6 != null) {
 							break;
 						}
 						throw new IllegalStateException("");
 					case 2:
-						arg0.method22512(-1074649851);
+						arg0.gjstr2(-1074649851);
 						break;
 					case 3:
-						Class107.method18116(Class420.method28716(1244045918), arg0.method22465((short) 16384), -1915563430);
+						Class107.method18116(Class420.method28716(1244045918), arg0.g1((short) 16384), -1915563430);
 						break;
 					case 4:
 					default:
@@ -190,7 +190,7 @@ public abstract class Class108 implements Interface12 {
 					case 5:
 						break;
 					case 6:
-						this.aClass507_3 = (Class507) Class107.method18116(Class174.method24325((byte) 10), arg0.method22465((short) 16384), -1915563430);
+						this.aClass507_3 = (Class507) Class107.method18116(Class174.method24325((byte) 10), arg0.g1((short) 16384), -1915563430);
 				}
 			}
 		}
@@ -198,9 +198,9 @@ public abstract class Class108 implements Interface12 {
 
 	@OriginalMember(owner = "client!ec", name = "f", descriptor = "(Lclient!alw;)V", line = 23)
 	@Override
-	public void method36657(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36657(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -213,17 +213,17 @@ public abstract class Class108 implements Interface12 {
 						this.aBoolean173 = false;
 						break;
 					case 1:
-						@Pc(50) int local50 = arg0.method22465((short) 16384);
+						@Pc(50) int local50 = arg0.g1((short) 16384);
 						this.aClass519_6 = (Class519) Class107.method18116(Class519.method30309(1223585481), local50, -1915563430);
 						if (this.aClass519_6 != null) {
 							break;
 						}
 						throw new IllegalStateException("");
 					case 2:
-						arg0.method22512(-771464017);
+						arg0.gjstr2(-771464017);
 						break;
 					case 3:
-						Class107.method18116(Class420.method28716(1624563297), arg0.method22465((short) 16384), -1915563430);
+						Class107.method18116(Class420.method28716(1624563297), arg0.g1((short) 16384), -1915563430);
 						break;
 					case 4:
 					default:
@@ -231,7 +231,7 @@ public abstract class Class108 implements Interface12 {
 					case 5:
 						break;
 					case 6:
-						this.aClass507_3 = (Class507) Class107.method18116(Class174.method24325((byte) 79), arg0.method22465((short) 16384), -1915563430);
+						this.aClass507_3 = (Class507) Class107.method18116(Class174.method24325((byte) 79), arg0.g1((short) 16384), -1915563430);
 				}
 			}
 		}
@@ -306,14 +306,14 @@ public abstract class Class108 implements Interface12 {
 	}
 
 	@OriginalMember(owner = "client!ec", name = "u", descriptor = "(Lclient!alw;IS)V")
-	abstract void method7448(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) short arg2);
+	abstract void method7448(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) short arg2);
 
 	@OriginalMember(owner = "client!ec", name = "d", descriptor = "(Lclient!alw;I)V")
-	abstract void method7449(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1);
+	abstract void method7449(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1);
 
 	@OriginalMember(owner = "client!ec", name = "r", descriptor = "(Lclient!alw;I)V")
-	abstract void method7450(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1);
+	abstract void method7450(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1);
 
 	@OriginalMember(owner = "client!ec", name = "c", descriptor = "(Lclient!alw;I)V")
-	abstract void method7451(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1);
+	abstract void method7451(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1);
 }

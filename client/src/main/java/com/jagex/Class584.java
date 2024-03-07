@@ -37,15 +37,15 @@ public class Class584 {
 		if (local18 == null) {
 			return new Class584(0);
 		}
-		@Pc(30) Class93_Sub41 local30 = new Class93_Sub41(local18);
-		@Pc(34) int local34 = local30.method22472(-1434290800);
+		@Pc(30) Packet local30 = new Packet(local18);
+		@Pc(34) int local34 = local30.g2(-1434290800);
 		@Pc(39) Class584 local39 = new Class584(local34);
 		@Pc(41) int local41 = 0;
 		while (true) {
 			while (local41 < local39.anInt5436 * 1285867561) {
-				@Pc(51) int local51 = local30.method22483(-118643075);
-				@Pc(55) int local55 = local30.method22472(-1434290800);
-				@Pc(59) int local59 = local30.method22465((short) 16384);
+				@Pc(51) int local51 = local30.g4(-118643075);
+				@Pc(55) int local55 = local30.g2(-1434290800);
+				@Pc(59) int local59 = local30.g1((short) 16384);
 				if (!arg2 && local59 == 1) {
 					local39.anInt5436 -= -2084350951;
 				} else {
@@ -68,15 +68,15 @@ public class Class584 {
 		if (local18 == null) {
 			return new Class584(0);
 		}
-		@Pc(30) Class93_Sub41 local30 = new Class93_Sub41(local18);
-		@Pc(34) int local34 = local30.method22472(-1434290800);
+		@Pc(30) Packet local30 = new Packet(local18);
+		@Pc(34) int local34 = local30.g2(-1434290800);
 		@Pc(39) Class584 local39 = new Class584(local34);
 		@Pc(41) int local41 = 0;
 		while (true) {
 			while (local41 < local39.anInt5436 * 1285867561) {
-				@Pc(51) int local51 = local30.method22483(-118643075);
-				@Pc(55) int local55 = local30.method22472(-1434290800);
-				@Pc(59) int local59 = local30.method22465((short) 16384);
+				@Pc(51) int local51 = local30.g4(-118643075);
+				@Pc(55) int local55 = local30.g2(-1434290800);
+				@Pc(59) int local59 = local30.g1((short) 16384);
 				if (!arg2 && local59 == 1) {
 					local39.anInt5436 -= -2084350951;
 				} else {

@@ -28,14 +28,14 @@ public class Class110_Sub9 extends Class110 {
 	final int anInt923;
 
 	@OriginalMember(owner = "client!agf", name = "<init>", descriptor = "(Lclient!alw;)V", line = 13)
-	Class110_Sub9(@OriginalArg(0) Class93_Sub41 arg0) {
+	Class110_Sub9(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.anInt919 = arg0.method22472(-1434290800) * 1095782231;
-		@Pc(13) int local13 = arg0.method22483(-118643075);
+		this.anInt919 = arg0.g2(-1434290800) * 1095782231;
+		@Pc(13) int local13 = arg0.g4(-118643075);
 		this.anInt920 = (local13 >>> 16) * -643042539;
 		this.anInt921 = (local13 & 0xFFFF) * -1307325291;
-		this.anInt922 = arg0.method22465((short) 16384) * -398280083;
-		this.anInt923 = arg0.method22465((short) 16384) * 1652587663;
+		this.anInt922 = arg0.g1((short) 16384) * -398280083;
+		this.anInt923 = arg0.g1((short) 16384) * 1652587663;
 	}
 
 	@OriginalMember(owner = "client!agf", name = "n", descriptor = "(I)V", line = 23)

@@ -48,9 +48,9 @@ public class Class39 implements Interface13, Interface5 {
 
 	@OriginalMember(owner = "client!abm", name = "k", descriptor = "(Lclient!alw;)V", line = 27)
 	@Override
-	public void method36656(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36656(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -60,9 +60,9 @@ public class Class39 implements Interface13, Interface5 {
 
 	@OriginalMember(owner = "client!abm", name = "f", descriptor = "(Lclient!alw;)V", line = 27)
 	@Override
-	public void method36657(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36657(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -72,9 +72,9 @@ public class Class39 implements Interface13, Interface5 {
 
 	@OriginalMember(owner = "client!abm", name = "w", descriptor = "(Lclient!alw;)V", line = 27)
 	@Override
-	public void method36658(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36658(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -84,9 +84,9 @@ public class Class39 implements Interface13, Interface5 {
 
 	@OriginalMember(owner = "client!abm", name = "m", descriptor = "(Lclient!alw;)V", line = 27)
 	@Override
-	public void method36655(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method36655(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -96,9 +96,9 @@ public class Class39 implements Interface13, Interface5 {
 
 	@OriginalMember(owner = "client!abm", name = "e", descriptor = "(Lclient!alw;B)V", line = 27)
 	@Override
-	public void method36654(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
+	public void method36654(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
@@ -107,99 +107,99 @@ public class Class39 implements Interface13, Interface5 {
 	}
 
 	@OriginalMember(owner = "client!abm", name = "u", descriptor = "(Lclient!alw;II)V", line = 34)
-	void method746(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	void method746(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		@Pc(8) char local8;
 		if (arg1 == 1) {
-			local8 = Class615.method32086(arg0.method22468(495285591), (short) 150);
+			local8 = Class615.method32086(arg0.g1b(495285591), (short) 150);
 			this.aClass519_2 = Class519.method30317(local8, (byte) 8);
 		} else if (arg1 == 2) {
-			local8 = Class615.method32086(arg0.method22468(1839076446), (short) 150);
+			local8 = Class615.method32086(arg0.g1b(1839076446), (short) 150);
 			this.aClass519_1 = Class519.method30317(local8, (byte) 8);
 		} else if (arg1 == 3) {
-			this.aString5 = arg0.method22509(-139955878);
+			this.aString5 = arg0.gjstr(-139955878);
 		} else if (arg1 == 4) {
-			this.anInt124 = arg0.method22483(-118643075) * -1904745181;
+			this.anInt124 = arg0.g4(-118643075) * -1904745181;
 		} else {
 			@Pc(83) int local83;
 			@Pc(73) int local73;
 			if (arg1 == 5 || arg1 == 6) {
-				this.anInt123 = arg0.method22472(-1434290800) * 507854409;
+				this.anInt123 = arg0.g2(-1434290800) * 507854409;
 				this.aMap2 = new HashMap(this.anInt123 * -1630596103);
 				for (local73 = 0; local73 < this.anInt123 * -1630596103; local73++) {
-					local83 = arg0.method22483(-118643075);
+					local83 = arg0.g4(-118643075);
 					@Pc(90) Object local90;
 					if (arg1 == 5) {
-						local90 = arg0.method22509(1334482136);
+						local90 = arg0.gjstr(1334482136);
 					} else {
-						local90 = Integer.valueOf(arg0.method22483(-118643075));
+						local90 = Integer.valueOf(arg0.g4(-118643075));
 					}
 					this.aMap2.put(Integer.valueOf(local83), local90);
 				}
 			} else if (arg1 == 7 || arg1 == 8) {
-				local73 = arg0.method22472(-1434290800);
-				this.anInt123 = arg0.method22472(-1434290800) * 507854409;
+				local73 = arg0.g2(-1434290800);
+				this.anInt123 = arg0.g2(-1434290800) * 507854409;
 				this.anObjectArray1 = new Object[local73];
 				for (local83 = 0; local83 < this.anInt123 * -1630596103; local83++) {
-					@Pc(143) int local143 = arg0.method22472(-1434290800);
+					@Pc(143) int local143 = arg0.g2(-1434290800);
 					if (arg1 == 7) {
-						this.anObjectArray1[local143] = arg0.method22509(1595170634);
+						this.anObjectArray1[local143] = arg0.gjstr(1595170634);
 					} else {
-						this.anObjectArray1[local143] = Integer.valueOf(arg0.method22483(-118643075));
+						this.anObjectArray1[local143] = Integer.valueOf(arg0.g4(-118643075));
 					}
 				}
 			} else if (arg1 == 101) {
-				this.aClass519_2 = (Class519) Class107.method18116(Class519.method30309(1296094007), arg0.method22528((byte) -9), -1915563430);
+				this.aClass519_2 = (Class519) Class107.method18116(Class519.method30309(1296094007), arg0.gSmart1or2((byte) -9), -1915563430);
 			} else if (arg1 == 102) {
-				this.aClass519_1 = (Class519) Class107.method18116(Class519.method30309(1382853603), arg0.method22528((byte) -91), -1915563430);
+				this.aClass519_1 = (Class519) Class107.method18116(Class519.method30309(1382853603), arg0.gSmart1or2((byte) -91), -1915563430);
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!abm", name = "x", descriptor = "(Lclient!alw;I)V", line = 34)
-	void method747(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method747(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		@Pc(8) char local8;
 		if (arg1 == 1) {
-			local8 = Class615.method32086(arg0.method22468(555189002), (short) 150);
+			local8 = Class615.method32086(arg0.g1b(555189002), (short) 150);
 			this.aClass519_2 = Class519.method30317(local8, (byte) 8);
 		} else if (arg1 == 2) {
-			local8 = Class615.method32086(arg0.method22468(1205391096), (short) 150);
+			local8 = Class615.method32086(arg0.g1b(1205391096), (short) 150);
 			this.aClass519_1 = Class519.method30317(local8, (byte) 8);
 		} else if (arg1 == 3) {
-			this.aString5 = arg0.method22509(182992110);
+			this.aString5 = arg0.gjstr(182992110);
 		} else if (arg1 == 4) {
-			this.anInt124 = arg0.method22483(-118643075) * -1904745181;
+			this.anInt124 = arg0.g4(-118643075) * -1904745181;
 		} else {
 			@Pc(83) int local83;
 			@Pc(73) int local73;
 			if (arg1 == 5 || arg1 == 6) {
-				this.anInt123 = arg0.method22472(-1434290800) * 507854409;
+				this.anInt123 = arg0.g2(-1434290800) * 507854409;
 				this.aMap2 = new HashMap(this.anInt123 * -1630596103);
 				for (local73 = 0; local73 < this.anInt123 * -1630596103; local73++) {
-					local83 = arg0.method22483(-118643075);
+					local83 = arg0.g4(-118643075);
 					@Pc(90) Object local90;
 					if (arg1 == 5) {
-						local90 = arg0.method22509(16080687);
+						local90 = arg0.gjstr(16080687);
 					} else {
-						local90 = Integer.valueOf(arg0.method22483(-118643075));
+						local90 = Integer.valueOf(arg0.g4(-118643075));
 					}
 					this.aMap2.put(Integer.valueOf(local83), local90);
 				}
 			} else if (arg1 == 7 || arg1 == 8) {
-				local73 = arg0.method22472(-1434290800);
-				this.anInt123 = arg0.method22472(-1434290800) * 507854409;
+				local73 = arg0.g2(-1434290800);
+				this.anInt123 = arg0.g2(-1434290800) * 507854409;
 				this.anObjectArray1 = new Object[local73];
 				for (local83 = 0; local83 < this.anInt123 * -1630596103; local83++) {
-					@Pc(143) int local143 = arg0.method22472(-1434290800);
+					@Pc(143) int local143 = arg0.g2(-1434290800);
 					if (arg1 == 7) {
-						this.anObjectArray1[local143] = arg0.method22509(1501588332);
+						this.anObjectArray1[local143] = arg0.gjstr(1501588332);
 					} else {
-						this.anObjectArray1[local143] = Integer.valueOf(arg0.method22483(-118643075));
+						this.anObjectArray1[local143] = Integer.valueOf(arg0.g4(-118643075));
 					}
 				}
 			} else if (arg1 == 101) {
-				this.aClass519_2 = (Class519) Class107.method18116(Class519.method30309(1675883141), arg0.method22528((byte) -112), -1915563430);
+				this.aClass519_2 = (Class519) Class107.method18116(Class519.method30309(1675883141), arg0.gSmart1or2((byte) -112), -1915563430);
 			} else if (arg1 == 102) {
-				this.aClass519_1 = (Class519) Class107.method18116(Class519.method30309(1558760533), arg0.method22528((byte) -66), -1915563430);
+				this.aClass519_1 = (Class519) Class107.method18116(Class519.method30309(1558760533), arg0.gSmart1or2((byte) -66), -1915563430);
 			}
 		}
 	}

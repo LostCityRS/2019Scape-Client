@@ -159,7 +159,7 @@ public class Class166_Sub27 extends Class166 {
 			Class50.aBoolean26 = true;
 			@Pc(76) Class175 local76 = Class330.method27371(-2084952673);
 			@Pc(82) Class93_Sub22 local82 = Class102.method2588(Class446.aClass446_79, local76.aClass24_2, (byte) 95);
-			local82.aClass93_Sub41_Sub2_1.method22406(Class632.anInt5720 * 1926204629, (byte) 45);
+			local82.aPacketBit_1.p4(Class632.anInt5720 * 1926204629, (byte) 45);
 			local76.method24356(local82, -1598204780);
 			arg0.anIntArray519[(arg0.anInt5891 += 1189701933) * -1497248091 - 1] = 0;
 		}

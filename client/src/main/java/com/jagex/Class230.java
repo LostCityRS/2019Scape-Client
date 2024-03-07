@@ -61,12 +61,12 @@ public class Class230 {
 	}
 
 	@OriginalMember(owner = "client!dn", name = "z", descriptor = "(Lclient!alw;I)I", line = 27)
-	int method25626(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) int local3 = arg0.method22472(-1434290800);
-		Class263.method26184(arg0.method22465((short) 16384), -1925978155);
-		this.aClass222_6 = Class151.method13979(arg0.method22465((short) 16384), (byte) 0);
-		this.aClass222_7 = Class151.method13979(arg0.method22465((short) 16384), (byte) 0);
-		this.aBoolean647 = arg0.method22465((short) 16384) != 0;
+	int method25626(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) int local3 = arg0.g2(-1434290800);
+		Class263.method26184(arg0.g1((short) 16384), -1925978155);
+		this.aClass222_6 = Class151.method13979(arg0.g1((short) 16384), (byte) 0);
+		this.aClass222_7 = Class151.method13979(arg0.g1((short) 16384), (byte) 0);
+		this.aBoolean647 = arg0.g1((short) 16384) != 0;
 		this.aClass254Array1 = new Class254[local3];
 		@Pc(38) Class254 local38 = null;
 		@Pc(40) int local40;
@@ -89,12 +89,12 @@ public class Class230 {
 	}
 
 	@OriginalMember(owner = "client!dn", name = "p", descriptor = "(Lclient!alw;I)I", line = 27)
-	int method25627(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) int local3 = arg0.method22472(-1434290800);
-		Class263.method26184(arg0.method22465((short) 16384), -1916519202);
-		this.aClass222_6 = Class151.method13979(arg0.method22465((short) 16384), (byte) 0);
-		this.aClass222_7 = Class151.method13979(arg0.method22465((short) 16384), (byte) 0);
-		this.aBoolean647 = arg0.method22465((short) 16384) != 0;
+	int method25627(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) int local3 = arg0.g2(-1434290800);
+		Class263.method26184(arg0.g1((short) 16384), -1916519202);
+		this.aClass222_6 = Class151.method13979(arg0.g1((short) 16384), (byte) 0);
+		this.aClass222_7 = Class151.method13979(arg0.g1((short) 16384), (byte) 0);
+		this.aBoolean647 = arg0.g1((short) 16384) != 0;
 		this.aClass254Array1 = new Class254[local3];
 		@Pc(38) Class254 local38 = null;
 		@Pc(40) int local40;
@@ -117,12 +117,12 @@ public class Class230 {
 	}
 
 	@OriginalMember(owner = "client!dn", name = "d", descriptor = "(Lclient!alw;I)I", line = 27)
-	int method25628(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) int local3 = arg0.method22472(-1434290800);
-		Class263.method26184(arg0.method22465((short) 16384), -1579061855);
-		this.aClass222_6 = Class151.method13979(arg0.method22465((short) 16384), (byte) 0);
-		this.aClass222_7 = Class151.method13979(arg0.method22465((short) 16384), (byte) 0);
-		this.aBoolean647 = arg0.method22465((short) 16384) != 0;
+	int method25628(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) int local3 = arg0.g2(-1434290800);
+		Class263.method26184(arg0.g1((short) 16384), -1579061855);
+		this.aClass222_6 = Class151.method13979(arg0.g1((short) 16384), (byte) 0);
+		this.aClass222_7 = Class151.method13979(arg0.g1((short) 16384), (byte) 0);
+		this.aBoolean647 = arg0.g1((short) 16384) != 0;
 		this.aClass254Array1 = new Class254[local3];
 		@Pc(38) Class254 local38 = null;
 		@Pc(40) int local40;
@@ -145,12 +145,12 @@ public class Class230 {
 	}
 
 	@OriginalMember(owner = "client!dn", name = "e", descriptor = "(Lclient!alw;II)I", line = 27)
-	int method25629(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(3) int local3 = arg0.method22472(-1434290800);
-		Class263.method26184(arg0.method22465((short) 16384), -1774552870);
-		this.aClass222_6 = Class151.method13979(arg0.method22465((short) 16384), (byte) 0);
-		this.aClass222_7 = Class151.method13979(arg0.method22465((short) 16384), (byte) 0);
-		this.aBoolean647 = arg0.method22465((short) 16384) != 0;
+	int method25629(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+		@Pc(3) int local3 = arg0.g2(-1434290800);
+		Class263.method26184(arg0.g1((short) 16384), -1774552870);
+		this.aClass222_6 = Class151.method13979(arg0.g1((short) 16384), (byte) 0);
+		this.aClass222_7 = Class151.method13979(arg0.g1((short) 16384), (byte) 0);
+		this.aBoolean647 = arg0.g1((short) 16384) != 0;
 		this.aClass254Array1 = new Class254[local3];
 		@Pc(38) Class254 local38 = null;
 		@Pc(40) int local40;

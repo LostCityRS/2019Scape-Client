@@ -8,11 +8,11 @@ import org.openrs2.deob.annotation.OriginalMember;
 public interface Interface9 {
 
 	@OriginalMember(owner = "client!ade", name = "n", descriptor = "(Lclient!alw;)Ljava/lang/Object;")
-	Object method30270(@OriginalArg(0) Class93_Sub41 arg0);
+	Object method30270(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!ade", name = "m", descriptor = "(Lclient!alw;)Ljava/lang/Object;")
-	Object method30271(@OriginalArg(0) Class93_Sub41 arg0);
+	Object method30271(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!ade", name = "e", descriptor = "(Lclient!alw;I)Ljava/lang/Object;")
-	Object method30272(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1);
+	Object method30272(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1);
 }

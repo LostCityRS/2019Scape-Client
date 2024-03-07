@@ -251,41 +251,41 @@ public class Class643 implements Interface70 {
 
 	@OriginalMember(owner = "client!wp", name = "p", descriptor = "(Lclient!alw;B)V", line = 68)
 	@Override
-	public void method32533(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
+	public void method32533(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 	}
 
 	@OriginalMember(owner = "client!wp", name = "at", descriptor = "(Lclient!alw;)V", line = 68)
 	@Override
-	public void method32555(@OriginalArg(0) Class93_Sub41 arg0) {
+	public void method32555(@OriginalArg(0) Packet arg0) {
 	}
 
 	@OriginalMember(owner = "client!wp", name = "d", descriptor = "(II)Lclient!alw;", line = 71)
 	@Override
-	public Class93_Sub41 method32534(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
+	public Packet method32534(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		return null;
 	}
 
 	@OriginalMember(owner = "client!wp", name = "ad", descriptor = "(I)Lclient!alw;", line = 71)
 	@Override
-	public Class93_Sub41 method32569(@OriginalArg(0) int arg0) {
+	public Packet method32569(@OriginalArg(0) int arg0) {
 		return null;
 	}
 
 	@OriginalMember(owner = "client!wp", name = "ar", descriptor = "(I)Lclient!alw;", line = 71)
 	@Override
-	public Class93_Sub41 method32528(@OriginalArg(0) int arg0) {
+	public Packet method32528(@OriginalArg(0) int arg0) {
 		return null;
 	}
 
 	@OriginalMember(owner = "client!wp", name = "au", descriptor = "(I)Lclient!alw;", line = 71)
 	@Override
-	public Class93_Sub41 method32571(@OriginalArg(0) int arg0) {
+	public Packet method32571(@OriginalArg(0) int arg0) {
 		return null;
 	}
 
 	@OriginalMember(owner = "client!wp", name = "am", descriptor = "(I)Lclient!alw;", line = 71)
 	@Override
-	public Class93_Sub41 method32557(@OriginalArg(0) int arg0) {
+	public Packet method32557(@OriginalArg(0) int arg0) {
 		return null;
 	}
 

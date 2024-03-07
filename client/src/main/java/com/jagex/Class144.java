@@ -45,7 +45,7 @@ public abstract class Class144 {
 	Class18 aClass18_6 = new Class18();
 
 	@OriginalMember(owner = "client!pp", name = "r", descriptor = "Lclient!alw;")
-	Class93_Sub41 aClass93_Sub41_5 = new Class93_Sub41(6);
+    Packet aPacket_5 = new Packet(6);
 
 	@OriginalMember(owner = "client!pp", name = "v", descriptor = "B")
 	byte aByte22 = 0;
@@ -63,10 +63,10 @@ public abstract class Class144 {
 	public volatile int anInt1339 = 1058402615;
 
 	@OriginalMember(owner = "client!pp", name = "x", descriptor = "Lclient!alw;")
-	Class93_Sub41 aClass93_Sub41_6 = new Class93_Sub41(5);
+    Packet aPacket_6 = new Packet(5);
 
 	@OriginalMember(owner = "client!pp", name = "b", descriptor = "Lclient!alw;")
-	Class93_Sub41 aClass93_Sub41_7 = new Class93_Sub41(5);
+    Packet aPacket_7 = new Packet(5);
 
 	@OriginalMember(owner = "client!pp", name = "h", descriptor = "I")
 	int anInt1342 = 0;
@@ -180,10 +180,10 @@ public abstract class Class144 {
 		@Pc(16) Class373 local16 = Class121.aClass93_Sub28_2.aClass373Array1[arg0];
 		@Pc(19) Class175 local19 = Class330.method27371(-1785088084);
 		@Pc(25) Class93_Sub22 local25 = Class102.method2588(Class446.aClass446_26, local19.aClass24_2, (byte) 45);
-		local25.aClass93_Sub41_Sub2_1.method22394(Class46.method895(local16.aString191, -2040713700) + 3, (byte) -119);
-		local25.aClass93_Sub41_Sub2_1.method22395(arg0, 2134676113);
-		local25.aClass93_Sub41_Sub2_1.method22394(arg1 ? 1 : 0, (byte) -122);
-		local25.aClass93_Sub41_Sub2_1.method22431(local16.aString191, 847251325);
+		local25.aPacketBit_1.p1(Packet.pjstrlen(local16.aString191, -2040713700) + 3, (byte) -119);
+		local25.aPacketBit_1.p2(arg0, 2134676113);
+		local25.aPacketBit_1.p1(arg1 ? 1 : 0, (byte) -122);
+		local25.aPacketBit_1.pjstr(local16.aString191, 847251325);
 		local19.method24356(local25, -2002556899);
 	}
 

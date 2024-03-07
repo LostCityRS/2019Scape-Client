@@ -60,9 +60,9 @@ public class Class5 {
 	public int anInt11;
 
 	@OriginalMember(owner = "client!aac", name = "e", descriptor = "(Lclient!alw;B)Lclient!ne;", line = 13)
-	public static Class434 method31(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1) {
+	public static Class434 method31(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1) {
 		@Pc(3) Class434 local3 = new Class434();
-		local3.anInt4807 = arg0.method22472(-1434290800) * -1924523377;
+		local3.anInt4807 = arg0.g2(-1434290800) * -1924523377;
 		local3.aClass93_Sub1_Sub18_1 = Class372.aClass58_2.method1094(local3.anInt4807 * 526894191, -737304293);
 		return local3;
 	}
@@ -120,27 +120,27 @@ public class Class5 {
 	@OriginalMember(owner = "client!aac", name = "<init>", descriptor = "([BLclient!aaw;)V", line = 41)
 	Class5(@OriginalArg(0) byte[] arg0, @OriginalArg(1) Interface1 arg1) {
 		this.anInterface1_1 = arg1;
-		@Pc(9) Class93_Sub41 local9 = new Class93_Sub41(arg0);
-		@Pc(13) int local13 = local9.method22465((short) 16384);
+		@Pc(9) Packet local9 = new Packet(arg0);
+		@Pc(13) int local13 = local9.g1((short) 16384);
 		if (local13 != 0) {
 			throw new RuntimeException("");
 		}
-		@Pc(30) boolean local30 = local9.method22465((short) 16384) == 1;
+		@Pc(30) boolean local30 = local9.g1((short) 16384) == 1;
 		this.aByteArray3 = new byte[256];
-		local9.method22518(this.aByteArray3, 0, 256, (short) 16190);
+		local9.gdata(this.aByteArray3, 0, 256, (short) 16190);
 		this.aByteArray1 = new byte[256];
-		local9.method22518(this.aByteArray1, 0, 256, (short) 11301);
+		local9.gdata(this.aByteArray1, 0, 256, (short) 11301);
 		this.aByteArray2 = new byte[256];
-		local9.method22518(this.aByteArray2, 0, 256, (short) 2803);
+		local9.gdata(this.aByteArray2, 0, 256, (short) 2803);
 		this.aShortArrayArray1 = new short[256][4];
-		this.anInt12 = local9.method22472(-1434290800) * -535085581;
-		this.anInt13 = local9.method22472(-1434290800) * 2057731677;
+		this.anInt12 = local9.g2(-1434290800) * -535085581;
+		this.anInt13 = local9.g2(-1434290800) * 2057731677;
 		@Pc(84) int local84;
 		for (local84 = 0; local84 < 256; local84++) {
-			this.aShortArrayArray1[local84][0] = (short) local9.method22472(-1434290800);
+			this.aShortArrayArray1[local84][0] = (short) local9.g2(-1434290800);
 		}
 		for (local84 = 0; local84 < 256; local84++) {
-			this.aShortArrayArray1[local84][1] = (short) local9.method22472(-1434290800);
+			this.aShortArrayArray1[local84][1] = (short) local9.g2(-1434290800);
 		}
 		for (local84 = 0; local84 < 256; local84++) {
 			this.aShortArrayArray1[local84][2] = this.aByteArray3[local84];
@@ -154,7 +154,7 @@ public class Class5 {
 				local150[local152] = new byte[this.aByteArray1[local152]];
 				@Pc(165) byte local165 = 0;
 				for (local167 = 0; local167 < local150[local152].length; local167++) {
-					local165 += local9.method22468(526491709);
+					local165 += local9.g1b(526491709);
 					local150[local152][local167] = local165;
 				}
 			}
@@ -164,7 +164,7 @@ public class Class5 {
 				local193[local195] = new byte[this.aByteArray1[local195]];
 				@Pc(208) byte local208 = 0;
 				for (@Pc(210) int local210 = 0; local210 < local193[local195].length; local210++) {
-					local208 += local9.method22468(1764571622);
+					local208 += local9.g1b(1764571622);
 					local193[local195][local210] = local208;
 				}
 			}
@@ -180,13 +180,13 @@ public class Class5 {
 			}
 			this.anInt7 = (this.aByteArray2[32] + this.aByteArray1[32]) * -744138367;
 		} else {
-			this.anInt7 = local9.method22465((short) 16384) * -744138367;
+			this.anInt7 = local9.g1((short) 16384) * -744138367;
 		}
-		this.anInt9 = local9.method22465((short) 16384) * -1209958315;
-		this.anInt8 = local9.method22465((short) 16384) * -991427611;
-		this.anInt6 = local9.method22465((short) 16384) * 1756701383;
-		this.anInt10 = local9.method22465((short) 16384) * -144696809;
-		this.anInt11 = local9.method22465((short) 16384) * -1904958279;
+		this.anInt9 = local9.g1((short) 16384) * -1209958315;
+		this.anInt8 = local9.g1((short) 16384) * -991427611;
+		this.anInt6 = local9.g1((short) 16384) * 1756701383;
+		this.anInt10 = local9.g1((short) 16384) * -144696809;
+		this.anInt11 = local9.g1((short) 16384) * -1904958279;
 		if (this.anInt11 * 286794121 != 1) {
 			this.anInt7 = this.anInt7 * -2059082111 / (this.anInt11 * 286794121) * -744138367;
 			this.anInt9 = this.anInt9 * 1796177149 / (this.anInt11 * 286794121) * -1209958315;

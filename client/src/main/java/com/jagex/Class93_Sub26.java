@@ -27,13 +27,13 @@ public abstract class Class93_Sub26 extends Class93 {
 	abstract void method21991(@OriginalArg(0) Class386 arg0);
 
 	@OriginalMember(owner = "client!akp", name = "e", descriptor = "(Lclient!alw;B)V")
-	abstract void method21992(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) byte arg1);
+	abstract void method21992(@OriginalArg(0) Packet arg0, @OriginalArg(1) byte arg1);
 
 	@OriginalMember(owner = "client!akp", name = "n", descriptor = "(Lclient!kr;I)V")
 	abstract void method21993(@OriginalArg(0) Class386 arg0, @OriginalArg(1) int arg1);
 
 	@OriginalMember(owner = "client!akp", name = "m", descriptor = "(Lclient!alw;)V")
-	abstract void method21994(@OriginalArg(0) Class93_Sub41 arg0);
+	abstract void method21994(@OriginalArg(0) Packet arg0);
 
 	@OriginalMember(owner = "client!akp", name = "k", descriptor = "(Lclient!kr;)V")
 	abstract void method21995(@OriginalArg(0) Class386 arg0);

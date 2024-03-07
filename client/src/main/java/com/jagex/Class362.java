@@ -723,14 +723,14 @@ public class Class362 {
 
 	@OriginalMember(owner = "client!ji", name = "am", descriptor = "([B)V", line = 633)
 	static void method27833(@OriginalArg(0) byte[] arg0) {
-		@Pc(4) Class93_Sub41 local4 = new Class93_Sub41(arg0);
+		@Pc(4) Packet local4 = new Packet(arg0);
 		while (true) {
-			@Pc(8) int local8 = local4.method22465((short) 16384);
+			@Pc(8) int local8 = local4.g1((short) 16384);
 			if (local8 == 0) {
 				return;
 			}
 			if (local8 == 1) {
-				@Pc(19) int local19 = local4.method22472(-1434290800);
+				@Pc(19) int local19 = local4.g2(-1434290800);
 				Class274.aClass258_1.method26107(local19, -961237108);
 			}
 		}
@@ -738,14 +738,14 @@ public class Class362 {
 
 	@OriginalMember(owner = "client!ji", name = "au", descriptor = "([B)V", line = 633)
 	static void method27834(@OriginalArg(0) byte[] arg0) {
-		@Pc(4) Class93_Sub41 local4 = new Class93_Sub41(arg0);
+		@Pc(4) Packet local4 = new Packet(arg0);
 		while (true) {
-			@Pc(8) int local8 = local4.method22465((short) 16384);
+			@Pc(8) int local8 = local4.g1((short) 16384);
 			if (local8 == 0) {
 				return;
 			}
 			if (local8 == 1) {
-				@Pc(19) int local19 = local4.method22472(-1434290800);
+				@Pc(19) int local19 = local4.g2(-1434290800);
 				Class274.aClass258_1.method26107(local19, -1255540297);
 			}
 		}
@@ -753,14 +753,14 @@ public class Class362 {
 
 	@OriginalMember(owner = "client!ji", name = "ar", descriptor = "([B)V", line = 633)
 	static void method27835(@OriginalArg(0) byte[] arg0) {
-		@Pc(4) Class93_Sub41 local4 = new Class93_Sub41(arg0);
+		@Pc(4) Packet local4 = new Packet(arg0);
 		while (true) {
-			@Pc(8) int local8 = local4.method22465((short) 16384);
+			@Pc(8) int local8 = local4.g1((short) 16384);
 			if (local8 == 0) {
 				return;
 			}
 			if (local8 == 1) {
-				@Pc(19) int local19 = local4.method22472(-1434290800);
+				@Pc(19) int local19 = local4.g2(-1434290800);
 				Class274.aClass258_1.method26107(local19, 962574703);
 			}
 		}
@@ -768,14 +768,14 @@ public class Class362 {
 
 	@OriginalMember(owner = "client!ji", name = "ap", descriptor = "([B)V", line = 633)
 	static void method27836(@OriginalArg(0) byte[] arg0) {
-		@Pc(4) Class93_Sub41 local4 = new Class93_Sub41(arg0);
+		@Pc(4) Packet local4 = new Packet(arg0);
 		while (true) {
-			@Pc(8) int local8 = local4.method22465((short) 16384);
+			@Pc(8) int local8 = local4.g1((short) 16384);
 			if (local8 == 0) {
 				return;
 			}
 			if (local8 == 1) {
-				@Pc(19) int local19 = local4.method22472(-1434290800);
+				@Pc(19) int local19 = local4.g2(-1434290800);
 				Class274.aClass258_1.method26107(local19, -637073210);
 			}
 		}

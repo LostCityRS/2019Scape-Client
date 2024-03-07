@@ -61,7 +61,7 @@ public class Class58 {
 		local6 = new Class93_Sub1_Sub18();
 		local6.aClass58_1 = this;
 		if (local22 != null) {
-			local6.method22919(new Class93_Sub41(local22), 1189701933);
+			local6.method22919(new Packet(local22), 1189701933);
 		}
 		if (arg0 >= 32768) {
 			local6.method22944((byte) 46);
@@ -85,7 +85,7 @@ public class Class58 {
 		local6 = new Class93_Sub1_Sub18();
 		local6.aClass58_1 = this;
 		if (local22 != null) {
-			local6.method22919(new Class93_Sub41(local22), 1189701933);
+			local6.method22919(new Packet(local22), 1189701933);
 		}
 		if (arg0 >= 32768) {
 			local6.method22944((byte) 12);
@@ -109,7 +109,7 @@ public class Class58 {
 		local6 = new Class93_Sub1_Sub18();
 		local6.aClass58_1 = this;
 		if (local22 != null) {
-			local6.method22919(new Class93_Sub41(local22), 1189701933);
+			local6.method22919(new Packet(local22), 1189701933);
 		}
 		if (arg0 >= 32768) {
 			local6.method22944((byte) -82);
@@ -133,7 +133,7 @@ public class Class58 {
 		local6 = new Class93_Sub1_Sub18();
 		local6.aClass58_1 = this;
 		if (local22 != null) {
-			local6.method22919(new Class93_Sub41(local22), 1189701933);
+			local6.method22919(new Packet(local22), 1189701933);
 		}
 		if (arg0 >= 32768) {
 			local6.method22944((byte) 9);

@@ -97,25 +97,25 @@ public class Class624 implements Interface67 {
 	}
 
 	@OriginalMember(owner = "client!vu", name = "f", descriptor = "(Lclient!alw;)Lclient!vu;", line = 40)
-	static Class624 method32154(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(3) int local3 = arg0.method22465((short) 16384);
-		@Pc(7) int local7 = arg0.method22465((short) 16384);
-		@Pc(11) int local11 = arg0.method22465((short) 16384);
+	static Class624 method32154(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1((short) 16384);
+		@Pc(7) int local7 = arg0.g1((short) 16384);
+		@Pc(11) int local11 = arg0.g1((short) 16384);
 		@Pc(14) int[] local14 = new int[local11];
 		for (@Pc(16) int local16 = 0; local16 < local11; local16++) {
-			local14[local16] = arg0.method22465((short) 16384);
+			local14[local16] = arg0.g1((short) 16384);
 		}
 		return new Class624(local3, local7, local14);
 	}
 
 	@OriginalMember(owner = "client!vu", name = "w", descriptor = "(Lclient!alw;)Lclient!vu;", line = 40)
-	static Class624 method32155(@OriginalArg(0) Class93_Sub41 arg0) {
-		@Pc(3) int local3 = arg0.method22465((short) 16384);
-		@Pc(7) int local7 = arg0.method22465((short) 16384);
-		@Pc(11) int local11 = arg0.method22465((short) 16384);
+	static Class624 method32155(@OriginalArg(0) Packet arg0) {
+		@Pc(3) int local3 = arg0.g1((short) 16384);
+		@Pc(7) int local7 = arg0.g1((short) 16384);
+		@Pc(11) int local11 = arg0.g1((short) 16384);
 		@Pc(14) int[] local14 = new int[local11];
 		for (@Pc(16) int local16 = 0; local16 < local11; local16++) {
-			local14[local16] = arg0.method22465((short) 16384);
+			local14[local16] = arg0.g1((short) 16384);
 		}
 		return new Class624(local3, local7, local14);
 	}

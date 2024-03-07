@@ -25,8 +25,8 @@ public class Class590 {
 	}
 
 	@OriginalMember(owner = "client!uc", name = "e", descriptor = "(Lclient!alw;I)Lclient!li;", line = 13)
-	public static Class398 method31684(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) int local3 = arg0.method22542(-1000341262);
+	public static Class398 method31684(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) int local3 = arg0.gSmart2or4null(-1000341262);
 		return new Class398(local3);
 	}
 

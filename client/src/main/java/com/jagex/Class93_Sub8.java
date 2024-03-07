@@ -562,8 +562,8 @@ public final class Class93_Sub8 extends Class93 {
 	static void method12991(@OriginalArg(0) int arg0) {
 		Class174.anInt3293 = 0;
 		for (@Pc(3) int local3 = 0; local3 < 2048; local3++) {
-			Class174.aClass93_Sub41Array2[local3] = null;
-			Class174.aClass93_Sub41Array1[local3] = null;
+			Class174.aPacketArray2[local3] = null;
+			Class174.aPacketArray1[local3] = null;
 			Class174.aByteArray64[local3] = Class707.aClass707_2.aByte176;
 			Class174.aClass200Array1[local3] = null;
 		}

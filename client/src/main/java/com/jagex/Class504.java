@@ -14,20 +14,20 @@ final class Class504 implements Interface9 {
 
 	@OriginalMember(owner = "client!qf", name = "e", descriptor = "(Lclient!alw;I)Ljava/lang/Object;", line = 25)
 	@Override
-	public Object method30272(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
-		return arg0.method22509(641571683);
+	public Object method30272(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
+		return arg0.gjstr(641571683);
 	}
 
 	@OriginalMember(owner = "client!qf", name = "m", descriptor = "(Lclient!alw;)Ljava/lang/Object;", line = 25)
 	@Override
-	public Object method30271(@OriginalArg(0) Class93_Sub41 arg0) {
-		return arg0.method22509(1005656372);
+	public Object method30271(@OriginalArg(0) Packet arg0) {
+		return arg0.gjstr(1005656372);
 	}
 
 	@OriginalMember(owner = "client!qf", name = "n", descriptor = "(Lclient!alw;)Ljava/lang/Object;", line = 25)
 	@Override
-	public Object method30270(@OriginalArg(0) Class93_Sub41 arg0) {
-		return arg0.method22509(1732561270);
+	public Object method30270(@OriginalArg(0) Packet arg0) {
+		return arg0.gjstr(1732561270);
 	}
 
 	@OriginalMember(owner = "client!qf", name = "k", descriptor = "(ZI)V", line = 89)

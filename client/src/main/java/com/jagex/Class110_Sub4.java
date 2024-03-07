@@ -24,13 +24,13 @@ public class Class110_Sub4 extends Class110 {
 	final int anInt863;
 
 	@OriginalMember(owner = "client!aft", name = "<init>", descriptor = "(Lclient!alw;)V", line = 14)
-	Class110_Sub4(@OriginalArg(0) Class93_Sub41 arg0) {
+	Class110_Sub4(@OriginalArg(0) Packet arg0) {
 		super(arg0);
-		this.anInt862 = arg0.method22472(-1434290800) * -719734379;
-		this.anInt860 = arg0.method22472(-1434290800) * -685673635;
-		this.anInt861 = arg0.method22472(-1434290800) * -772206359;
-		this.anInt859 = arg0.method22472(-1434290800) * 363761603;
-		this.anInt863 = arg0.method22472(-1434290800) * -207321745;
+		this.anInt862 = arg0.g2(-1434290800) * -719734379;
+		this.anInt860 = arg0.g2(-1434290800) * -685673635;
+		this.anInt861 = arg0.g2(-1434290800) * -772206359;
+		this.anInt859 = arg0.g2(-1434290800) * 363761603;
+		this.anInt863 = arg0.g2(-1434290800) * -207321745;
 	}
 
 	@OriginalMember(owner = "client!aft", name = "n", descriptor = "(I)V", line = 23)

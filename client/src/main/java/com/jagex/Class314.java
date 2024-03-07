@@ -190,7 +190,7 @@ public class Class314 {
 	}
 
 	@OriginalMember(owner = "client!hj", name = "z", descriptor = "(Lclient!alw;I)V", line = 411)
-	public static void method26940(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	public static void method26940(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		@Pc(2) byte[] local2 = new byte[24];
 		try {
 			Class553.aClass42_4.method819(0L);
@@ -206,7 +206,7 @@ public class Class314 {
 				local2[local33] = -1;
 			}
 		}
-		arg0.method22439(local2, 0, 24, 2026842986);
+		arg0.pdata(local2, 0, 24, 2026842986);
 	}
 
 	@OriginalMember(owner = "client!hj", name = "ey", descriptor = "(Lclient!dh;Lclient!aks;Lclient!hs;IIIII)V", line = 654)

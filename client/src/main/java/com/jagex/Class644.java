@@ -37,40 +37,40 @@ public class Class644 implements Iterable {
 		if (arg0 == null) {
 			this.aClass640Array2 = new Class640[0];
 		} else {
-			this.method32588(new Class93_Sub41(arg0), -1388469658);
+			this.method32588(new Packet(arg0), -1388469658);
 		}
 	}
 
 	@OriginalMember(owner = "client!wq", name = "u", descriptor = "(Lclient!alw;)V", line = 30)
-	void method32587(@OriginalArg(0) Class93_Sub41 arg0) {
+	void method32587(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
 			@Pc(13) int local13;
 			if (local3 == 1) {
-				local13 = arg0.method22465((short) 16384);
+				local13 = arg0.g1((short) 16384);
 				@Pc(15) int local15 = 0;
 				@Pc(19) LinkedList local19 = new LinkedList();
 				for (@Pc(21) int local21 = 0; local21 < local13; local21++) {
-					@Pc(28) int local28 = arg0.method22465((short) 16384);
-					@Pc(32) int local32 = arg0.method22472(-1434290800);
-					@Pc(36) int local36 = arg0.method22465((short) 16384);
+					@Pc(28) int local28 = arg0.g1((short) 16384);
+					@Pc(32) int local32 = arg0.g2(-1434290800);
+					@Pc(36) int local36 = arg0.g1((short) 16384);
 					@Pc(38) int local38 = 0;
 					@Pc(40) Class634 local40 = Class634.aClass634_1;
 					@Pc(42) byte local42 = 1;
 					@Pc(51) boolean local51 = (local36 & 0x1) != 0;
 					if ((local36 & 0x2) != 0) {
-						local38 = arg0.method22465((short) 16384);
+						local38 = arg0.g1((short) 16384);
 					}
 					if ((local36 & 0x4) != 0) {
-						local40 = this.aClass634Array1[arg0.method22465((short) 16384)];
+						local40 = this.aClass634Array1[arg0.g1((short) 16384)];
 					}
 					if ((local36 & 0x8) != 0) {
-						local42 = arg0.method22468(842249368);
+						local42 = arg0.g1b(842249368);
 					}
-					@Pc(87) boolean local87 = arg0.method22465((short) 16384) == 1;
+					@Pc(87) boolean local87 = arg0.g1((short) 16384) == 1;
 					local19.add(new Class640(local28, local32, local51, local87, local38, local40, local42));
 					if (local28 > local15) {
 						local15 = local28;
@@ -83,11 +83,11 @@ public class Class644 implements Iterable {
 					this.aClass640Array2[local123.method32470(-2000434639)] = local123;
 				}
 			} else if (local3 == 2) {
-				this.aClass634Array1 = new Class634[arg0.method22465((short) 16384)];
-				for (local13 = arg0.method22465((short) 16384); local13 != 255; local13 = arg0.method22465((short) 16384)) {
-					@Pc(153) int[] local153 = new int[arg0.method22472(-1434290800)];
+				this.aClass634Array1 = new Class634[arg0.g1((short) 16384)];
+				for (local13 = arg0.g1((short) 16384); local13 != 255; local13 = arg0.g1((short) 16384)) {
+					@Pc(153) int[] local153 = new int[arg0.g2(-1434290800)];
 					for (@Pc(155) int local155 = 0; local155 < local153.length; local155++) {
-						local153[local155] = arg0.method22483(-118643075);
+						local153[local155] = arg0.g4(-118643075);
 					}
 					this.aClass634Array1[local13] = new Class634(local153);
 				}
@@ -96,35 +96,35 @@ public class Class644 implements Iterable {
 	}
 
 	@OriginalMember(owner = "client!wq", name = "m", descriptor = "(Lclient!alw;I)V", line = 30)
-	void method32588(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	void method32588(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
 			@Pc(13) int local13;
 			if (local3 == 1) {
-				local13 = arg0.method22465((short) 16384);
+				local13 = arg0.g1((short) 16384);
 				@Pc(15) int local15 = 0;
 				@Pc(19) LinkedList local19 = new LinkedList();
 				for (@Pc(21) int local21 = 0; local21 < local13; local21++) {
-					@Pc(28) int local28 = arg0.method22465((short) 16384);
-					@Pc(32) int local32 = arg0.method22472(-1434290800);
-					@Pc(36) int local36 = arg0.method22465((short) 16384);
+					@Pc(28) int local28 = arg0.g1((short) 16384);
+					@Pc(32) int local32 = arg0.g2(-1434290800);
+					@Pc(36) int local36 = arg0.g1((short) 16384);
 					@Pc(38) int local38 = 0;
 					@Pc(40) Class634 local40 = Class634.aClass634_1;
 					@Pc(42) byte local42 = 1;
 					@Pc(51) boolean local51 = (local36 & 0x1) != 0;
 					if ((local36 & 0x2) != 0) {
-						local38 = arg0.method22465((short) 16384);
+						local38 = arg0.g1((short) 16384);
 					}
 					if ((local36 & 0x4) != 0) {
-						local40 = this.aClass634Array1[arg0.method22465((short) 16384)];
+						local40 = this.aClass634Array1[arg0.g1((short) 16384)];
 					}
 					if ((local36 & 0x8) != 0) {
-						local42 = arg0.method22468(1844620210);
+						local42 = arg0.g1b(1844620210);
 					}
-					@Pc(87) boolean local87 = arg0.method22465((short) 16384) == 1;
+					@Pc(87) boolean local87 = arg0.g1((short) 16384) == 1;
 					local19.add(new Class640(local28, local32, local51, local87, local38, local40, local42));
 					if (local28 > local15) {
 						local15 = local28;
@@ -137,11 +137,11 @@ public class Class644 implements Iterable {
 					this.aClass640Array2[local123.method32470(-1947180932)] = local123;
 				}
 			} else if (local3 == 2) {
-				this.aClass634Array1 = new Class634[arg0.method22465((short) 16384)];
-				for (local13 = arg0.method22465((short) 16384); local13 != 255; local13 = arg0.method22465((short) 16384)) {
-					@Pc(153) int[] local153 = new int[arg0.method22472(-1434290800)];
+				this.aClass634Array1 = new Class634[arg0.g1((short) 16384)];
+				for (local13 = arg0.g1((short) 16384); local13 != 255; local13 = arg0.g1((short) 16384)) {
+					@Pc(153) int[] local153 = new int[arg0.g2(-1434290800)];
 					for (@Pc(155) int local155 = 0; local155 < local153.length; local155++) {
-						local153[local155] = arg0.method22483(-118643075);
+						local153[local155] = arg0.g4(-118643075);
 					}
 					this.aClass634Array1[local13] = new Class634(local153);
 				}
@@ -150,35 +150,35 @@ public class Class644 implements Iterable {
 	}
 
 	@OriginalMember(owner = "client!wq", name = "l", descriptor = "(Lclient!alw;)V", line = 30)
-	void method32589(@OriginalArg(0) Class93_Sub41 arg0) {
+	void method32589(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			if (local3 == 0) {
 				return;
 			}
 			@Pc(13) int local13;
 			if (local3 == 1) {
-				local13 = arg0.method22465((short) 16384);
+				local13 = arg0.g1((short) 16384);
 				@Pc(15) int local15 = 0;
 				@Pc(19) LinkedList local19 = new LinkedList();
 				for (@Pc(21) int local21 = 0; local21 < local13; local21++) {
-					@Pc(28) int local28 = arg0.method22465((short) 16384);
-					@Pc(32) int local32 = arg0.method22472(-1434290800);
-					@Pc(36) int local36 = arg0.method22465((short) 16384);
+					@Pc(28) int local28 = arg0.g1((short) 16384);
+					@Pc(32) int local32 = arg0.g2(-1434290800);
+					@Pc(36) int local36 = arg0.g1((short) 16384);
 					@Pc(38) int local38 = 0;
 					@Pc(40) Class634 local40 = Class634.aClass634_1;
 					@Pc(42) byte local42 = 1;
 					@Pc(51) boolean local51 = (local36 & 0x1) != 0;
 					if ((local36 & 0x2) != 0) {
-						local38 = arg0.method22465((short) 16384);
+						local38 = arg0.g1((short) 16384);
 					}
 					if ((local36 & 0x4) != 0) {
-						local40 = this.aClass634Array1[arg0.method22465((short) 16384)];
+						local40 = this.aClass634Array1[arg0.g1((short) 16384)];
 					}
 					if ((local36 & 0x8) != 0) {
-						local42 = arg0.method22468(964176216);
+						local42 = arg0.g1b(964176216);
 					}
-					@Pc(87) boolean local87 = arg0.method22465((short) 16384) == 1;
+					@Pc(87) boolean local87 = arg0.g1((short) 16384) == 1;
 					local19.add(new Class640(local28, local32, local51, local87, local38, local40, local42));
 					if (local28 > local15) {
 						local15 = local28;
@@ -191,11 +191,11 @@ public class Class644 implements Iterable {
 					this.aClass640Array2[local123.method32470(-2039638677)] = local123;
 				}
 			} else if (local3 == 2) {
-				this.aClass634Array1 = new Class634[arg0.method22465((short) 16384)];
-				for (local13 = arg0.method22465((short) 16384); local13 != 255; local13 = arg0.method22465((short) 16384)) {
-					@Pc(153) int[] local153 = new int[arg0.method22472(-1434290800)];
+				this.aClass634Array1 = new Class634[arg0.g1((short) 16384)];
+				for (local13 = arg0.g1((short) 16384); local13 != 255; local13 = arg0.g1((short) 16384)) {
+					@Pc(153) int[] local153 = new int[arg0.g2(-1434290800)];
 					for (@Pc(155) int local155 = 0; local155 < local153.length; local155++) {
-						local153[local155] = arg0.method22483(-118643075);
+						local153[local155] = arg0.g4(-118643075);
 					}
 					this.aClass634Array1[local13] = new Class634(local153);
 				}

@@ -21,7 +21,7 @@ public class Class93_Sub22 extends Class93 {
 	int anInt1570;
 
 	@OriginalMember(owner = "client!akl", name = "w", descriptor = "Lclient!ase;")
-	public Class93_Sub41_Sub2 aClass93_Sub41_Sub2_1;
+	public PacketBit aPacketBit_1;
 
 	@OriginalMember(owner = "client!akl", name = "k", descriptor = "Lclient!nr;")
 	Class446 aClass446_1;
@@ -55,7 +55,7 @@ public class Class93_Sub22 extends Class93 {
 		@Pc(2) Class93_Sub22 local2 = Class527.method30386(25568396);
 		local2.aClass446_1 = null;
 		local2.anInt1570 = 0;
-		local2.aClass93_Sub41_Sub2_1 = new Class93_Sub41_Sub2(5000);
+		local2.aPacketBit_1 = new PacketBit(5000);
 		return local2;
 	}
 
@@ -64,7 +64,7 @@ public class Class93_Sub22 extends Class93 {
 		@Pc(2) Class93_Sub22 local2 = Class527.method30386(1668852778);
 		local2.aClass446_1 = null;
 		local2.anInt1570 = 0;
-		local2.aClass93_Sub41_Sub2_1 = new Class93_Sub41_Sub2(5000);
+		local2.aPacketBit_1 = new PacketBit(5000);
 		return local2;
 	}
 

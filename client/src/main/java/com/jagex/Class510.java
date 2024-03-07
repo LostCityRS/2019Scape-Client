@@ -22,19 +22,19 @@ final class Class510 implements Interface9 {
 
 	@OriginalMember(owner = "client!qm", name = "m", descriptor = "(Lclient!alw;)Ljava/lang/Object;", line = 30)
 	@Override
-	public Object method30271(@OriginalArg(0) Class93_Sub41 arg0) {
+	public Object method30271(@OriginalArg(0) Packet arg0) {
 		return new Class93_Sub30(arg0);
 	}
 
 	@OriginalMember(owner = "client!qm", name = "e", descriptor = "(Lclient!alw;I)Ljava/lang/Object;", line = 30)
 	@Override
-	public Object method30272(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	public Object method30272(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		return new Class93_Sub30(arg0);
 	}
 
 	@OriginalMember(owner = "client!qm", name = "n", descriptor = "(Lclient!alw;)Ljava/lang/Object;", line = 30)
 	@Override
-	public Object method30270(@OriginalArg(0) Class93_Sub41 arg0) {
+	public Object method30270(@OriginalArg(0) Packet arg0) {
 		return new Class93_Sub30(arg0);
 	}
 

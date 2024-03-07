@@ -35,16 +35,16 @@ public class Class567 {
 	public Class109 aClass109_8;
 
 	@OriginalMember(owner = "client!ta", name = "<init>", descriptor = "(Lclient!dh;Lclient!alw;I)V", line = 27)
-	public Class567(@OriginalArg(0) Class104 arg0, @OriginalArg(1) Class93_Sub41 arg1, @OriginalArg(2) int arg2) {
+	public Class567(@OriginalArg(0) Class104 arg0, @OriginalArg(1) Packet arg1, @OriginalArg(2) int arg2) {
 		this.anInt5386 = arg2 * -264360161;
-		this.anInt5387 = arg1.method22522(-358186793) * -2092434507;
+		this.anInt5387 = arg1.gSmart1or2s(-358186793) * -2092434507;
 		this.anIntArray468 = new int[this.anInt5387 * 554261149];
 		this.anIntArray469 = new int[this.anInt5387 * 554261149];
-		@Pc(31) int local31 = arg1.method22472(-1434290800);
-		@Pc(35) int local35 = arg1.method22472(-1434290800);
+		@Pc(31) int local31 = arg1.g2(-1434290800);
+		@Pc(35) int local35 = arg1.g2(-1434290800);
 		for (@Pc(37) int local37 = 0; local37 < this.anInt5387 * 554261149; local37++) {
-			this.anIntArray468[local37] = local31 + arg1.method22468(2042379259);
-			this.anIntArray469[local37] = local35 + arg1.method22468(1818791330);
+			this.anIntArray468[local37] = local31 + arg1.g1b(2042379259);
+			this.anIntArray469[local37] = local35 + arg1.g1b(1818791330);
 		}
 		this.aClass109_8 = this.method31260(arg0, (short) 255);
 	}

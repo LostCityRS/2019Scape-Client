@@ -53,13 +53,13 @@ public class Class437 {
 	}
 
 	@OriginalMember(owner = "client!nh", name = "n", descriptor = "(Lclient!alw;I)V", line = 124)
-	static void method28816(@OriginalArg(0) Class93_Sub41 arg0, @OriginalArg(1) int arg1) {
+	static void method28816(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		while (true) {
-			@Pc(3) int local3 = arg0.method22465((short) 16384);
+			@Pc(3) int local3 = arg0.g1((short) 16384);
 			switch(local3) {
 				case 0:
-					Class249.anInt3841 = arg0.method22472(-1434290800) * -1784392859;
-					Class249.anInt3839 = arg0.method22472(-1434290800) * -1584427833;
+					Class249.anInt3841 = arg0.g2(-1434290800) * -1784392859;
+					Class249.anInt3839 = arg0.g2(-1434290800) * -1584427833;
 					break;
 				case 255:
 					return;

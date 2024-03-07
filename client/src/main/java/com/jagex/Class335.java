@@ -69,11 +69,11 @@ public class Class335 {
 			@Pc(27) Class132_Sub1_Sub1_Sub1_Sub2 local27 = client.aClass132_Sub1_Sub1_Sub1_Sub2Array1[local16[local18]];
 			if (local27.aString82 != null && local27.aString82.equalsIgnoreCase(arg0) && (local27 == Class520.aClass132_Sub1_Sub1_Sub1_Sub2_3 && (Class253.anInt3851 * 735260021 & 0x10) != 0 || (Class253.anInt3851 * 735260021 & 0x8) != 0)) {
 				@Pc(58) Class93_Sub22 local58 = Class102.method2588(Class446.aClass446_71, client.aClass175_2.aClass24_2, (byte) 42);
-				local58.aClass93_Sub41_Sub2_1.method22395(client.anInt3523 * 1573685689, 2133965049);
-				local58.aClass93_Sub41_Sub2_1.method22573(0, -1591808004);
-				local58.aClass93_Sub41_Sub2_1.method22595(client.anInt3524 * -239149331, (byte) -49);
-				local58.aClass93_Sub41_Sub2_1.method22599(local16[local18], (short) 255);
-				local58.aClass93_Sub41_Sub2_1.method22634(Class148.anInt1394 * -278883695, 844689790);
+				local58.aPacketBit_1.p2(client.anInt3523 * 1573685689, 2133965049);
+				local58.aPacketBit_1.p1_alt1(0, -1591808004);
+				local58.aPacketBit_1.p2_alt1(client.anInt3524 * -239149331, (byte) -49);
+				local58.aPacketBit_1.p2_alt3(local16[local18], (short) 255);
+				local58.aPacketBit_1.p4_alt2(Class148.anInt1394 * -278883695, 844689790);
 				client.aClass175_2.method24356(local58, -2145186804);
 				Class498.method30135(local27.anIntArray240[0], local27.anIntArray239[0], -2062153340);
 				local10 = true;

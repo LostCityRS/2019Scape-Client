@@ -229,7 +229,7 @@ public class Class113 implements Interface20 {
 
 	@OriginalMember(owner = "client!ek", name = "k", descriptor = "([BS)Lclient!asc;", line = 89)
 	static Class93_Sub1_Sub13 method7408(@OriginalArg(0) byte[] arg0, @OriginalArg(1) short arg1) {
-		return new Class93_Sub1_Sub13(new Class93_Sub41(arg0), Class506.anInterface21_4);
+		return new Class93_Sub1_Sub13(new Packet(arg0), Class506.anInterface21_4);
 	}
 
 	@OriginalMember(owner = "client!ek", name = "mh", descriptor = "(Lclient!yf;I)V", line = 7153)
