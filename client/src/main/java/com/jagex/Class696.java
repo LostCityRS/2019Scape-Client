@@ -97,7 +97,6 @@ public class Class696 {
 			connection.serverPacketType = local84[local88];
 			connection.length = connection.serverPacketType.length * -476719005;
 		}
-		System.out.println("Received packet");
 		if (connection.length * 2010044839 == -1) {
 			if (!local3.available(1, 1593371859)) {
 				return false;
@@ -164,7 +163,6 @@ public class Class696 {
 		if (ServerProt.CLIENT_SETVARC_SMALL == connection.serverPacketType) {
 			local346 = buf.g1b_alt3(-1826116307);
 			local88 = buf.g2(-1434290800);
-			System.out.println("Varc small: " + local346 + ", " + local88);
 			Class704.incrementVerifyId((short) 255);
 			Class128_Sub1_Sub1.method19648(local88, local346, 1253955202);
 			connection.serverPacketType = null;
@@ -476,7 +474,6 @@ public class Class696 {
 						} else if (ServerProt.CLIENT_SETVARCBIT_LARGE == connection.serverPacketType) {
 							local264 = buf.g2_alt2(1918144079);
 							local88 = buf.g4_alt1(-22520354);
-							System.out.println("Varcbit large: " + local264 + ", " + local88);
 							Class704.incrementVerifyId((short) 255);
 							Class53_Sub1.method14955(local264, local88, -617627117);
 							connection.serverPacketType = null;
@@ -884,7 +881,6 @@ public class Class696 {
 											} else if (connection.serverPacketType == ServerProt.VARP_LARGE) {
 												local264 = buf.g2_alt1(1309039228);
 												local88 = buf.g4(-118643075);
-												System.out.println("Varp large: " + local264 + ", " + local88);
 												Class624.playerVariableManager.vars.setVarValueFromServer((Class108) Class21.varPlayerTypes.get(local264, -1198613208), local88, (byte) 1);
 												connection.serverPacketType = null;
 												return true;
@@ -1059,7 +1055,6 @@ public class Class696 {
 													} else if (ServerProt.CLIENT_SETVARCBIT_SMALL == connection.serverPacketType) {
 														local264 = buf.g2(-1434290800);
 														local2070 = buf.g1b_alt1((byte) 53);
-														System.out.println("Varcbit small: " + local264 + ", " + local2070);
 														Class704.incrementVerifyId((short) 255);
 														Class53_Sub1.method14955(local264, local2070, 54302526);
 														connection.serverPacketType = null;
@@ -1219,7 +1214,6 @@ public class Class696 {
 													} else if (ServerProt.CLIENT_SETVARC_LARGE == connection.serverPacketType) {
 														local264 = buf.g4_alt1(-1146276882);
 														local88 = buf.g2_alt2(1651602820);
-														System.out.println("Varc large: " + local264 + ", " + local88);
 														Class704.incrementVerifyId((short) 255);
 														Class128_Sub1_Sub1.method19648(local88, local264, -18790430);
 														connection.serverPacketType = null;
@@ -1324,7 +1318,6 @@ public class Class696 {
 														connection.serverPacketType = null;
 														return true;
 													} else if (ServerProt.RESET_CLIENT_VARCACHE == connection.serverPacketType) {
-														System.out.println("Reset client varcache");
 														Class624.playerVariableManager.vars.method32643((byte) -89);
 														client.anInt3539 += 1490119744;
 														connection.serverPacketType = null;
@@ -1431,7 +1424,6 @@ public class Class696 {
 														} else if (ServerProt.VARBIT_SMALL == connection.serverPacketType) {
 															local264 = buf.g1_alt3(1968146961);
 															local88 = buf.g2_alt2(1927896951);
-															System.out.println("Varbit small: " + local264 + ", " + local88);
 															Class624.playerVariableManager.vars.method32647((Class379) Class30.aClass32_Sub16_1.get(local88, -268898598), local264, -1052372268);
 															connection.serverPacketType = null;
 															return true;
@@ -1488,7 +1480,6 @@ public class Class696 {
 															int xtea2 = buf.g4(-118643075);
 															int unused = buf.g1((short) 16384);
 															int toplevel = buf.g2_alt3(16711680);
-															System.out.println("Open top: " + toplevel + ", " + xtea1 + ", " + xtea2 + ", " + xtea3 + ", " + xtea4);
 
 															Class704.incrementVerifyId((short) 255);
 
@@ -2170,7 +2161,6 @@ public class Class696 {
 																	} else if (ServerProt.VARP_SMALL == connection.serverPacketType) {
 																		local346 = buf.g1b(1785595826);
 																		local88 = buf.g2_alt2(1875428159);
-																		System.out.println("Varp small: " + local346 + ", " + local88);
 																		Class624.playerVariableManager.vars.setVarValueFromServer((Class108) Class21.varPlayerTypes.get(local88, -1332674925), local346, (byte) 1);
 																		connection.serverPacketType = null;
 																		return true;
@@ -2361,7 +2351,6 @@ public class Class696 {
 																	} else if (connection.serverPacketType == ServerProt.VARBIT_LARGE) {
 																		local264 = buf.g2_alt2(2138195295);
 																		local88 = buf.g4_alt1(-1979714738);
-																		System.out.println("Varbit large: " + local264 + ", " + local88);
 																		Class624.playerVariableManager.vars.method32647((Class379) Class30.aClass32_Sub16_1.get(local264, -570078248), local88, 567603138);
 																		connection.serverPacketType = null;
 																		return true;
@@ -2664,7 +2653,6 @@ public class Class696 {
 																	} else if (connection.serverPacketType == ServerProt.CLIENT_SETVARCSTR_SMALL) {
 																		local264 = buf.g2(-1434290800);
 																		local1571 = buf.gjstr(749878804);
-																		System.out.println("Varcstr small: " + local264 + ", " + local1571);
 																		Class704.incrementVerifyId((short) 255);
 																		Class709.method36763(local264, local1571, (byte) -84);
 																		connection.serverPacketType = null;
@@ -2676,14 +2664,13 @@ public class Class696 {
 																		connection.serverPacketType = null;
 																		return true;
 																	} else if (ServerProt.RUNCLIENTSCRIPT == connection.serverPacketType) {
-																		System.out.println("Run client script");
-																		local3022 = buf.gjstr(1032107588);
-																		@Pc(10015) Object[] local10015 = new Object[local3022.length() + 1];
-																		for (local382 = local3022.length() - 1; local382 >= 0; local382--) {
-																			if (local3022.charAt(local382) == 's') {
-																				local10015[local382 + 1] = buf.gjstr(835183554);
+																		String descriptor = buf.gjstr(1032107588);
+																		@Pc(10015) Object[] local10015 = new Object[descriptor.length() + 1];
+																		for (int i = descriptor.length() - 1; i >= 0; i--) {
+																			if (descriptor.charAt(i) == 's') {
+																				local10015[i + 1] = buf.gjstr(835183554);
 																			} else {
-																				local10015[local382 + 1] = Integer.valueOf(buf.g4(-118643075));
+																				local10015[i + 1] = Integer.valueOf(buf.g4(-118643075));
 																			}
 																		}
 																		local10015[0] = Integer.valueOf(buf.g4(-118643075));
@@ -2841,7 +2828,6 @@ public class Class696 {
 																	} else if (connection.serverPacketType == ServerProt.CLIENT_SETVARCSTR_LARGE) {
 																		local264 = buf.g2(-1434290800);
 																		local1571 = buf.gjstr(1338161350);
-																		System.out.println("Varcstr large: " + local264 + ", " + local1571);
 																		Class704.incrementVerifyId((short) 255);
 																		Class709.method36763(local264, local1571, (byte) 7);
 																		connection.serverPacketType = null;

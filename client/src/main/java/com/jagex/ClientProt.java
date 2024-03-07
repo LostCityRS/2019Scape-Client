@@ -345,7 +345,7 @@ public class ClientProt {
 	public static final ClientProt aClientProt_112 = new ClientProt(110, -1);
 
 	@OriginalMember(owner = "client!nr", name = "dm", descriptor = "Lclient!nr;")
-	public static final ClientProt aClientProt_113 = new ClientProt(111, 8);
+	public static final ClientProt IF_BUTTON1 = new ClientProt(111, 8);
 
 	@OriginalMember(owner = "client!nr", name = "dq", descriptor = "Lclient!nr;")
 	public static final ClientProt aClientProt_93 = new ClientProt(112, 18);

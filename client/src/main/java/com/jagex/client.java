@@ -23901,7 +23901,7 @@ public final class client extends Class553 {
 	static void method25251(@OriginalArg(0) Class175 arg0, @OriginalArg(1) Class312 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		@Pc(8) ClientMessage local8;
 		if (arg2 == 1) {
-			local8 = Class102.createGameMessage(ClientProt.aClientProt_113, arg0.clientIsaac, (byte) 14);
+			local8 = Class102.createGameMessage(ClientProt.IF_BUTTON1, arg0.clientIsaac, (byte) 14);
 			Class484.method29789(local8, arg3, arg4, arg1.anInt4045 * 307668159, 1067969079);
 			arg0.send(local8, -1592332339);
 		}
@@ -23956,7 +23956,7 @@ public final class client extends Class553 {
 	static void method25252(@OriginalArg(0) Class175 arg0, @OriginalArg(1) Class312 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		@Pc(8) ClientMessage local8;
 		if (arg2 == 1) {
-			local8 = Class102.createGameMessage(ClientProt.aClientProt_113, arg0.clientIsaac, (byte) 16);
+			local8 = Class102.createGameMessage(ClientProt.IF_BUTTON1, arg0.clientIsaac, (byte) 16);
 			Class484.method29789(local8, arg3, arg4, arg1.anInt4045 * 307668159, 1067969079);
 			arg0.send(local8, -2118378064);
 		}
