@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("asm")
-public abstract class class1197 extends class1019 {
+public abstract class WallDecorLayerEntity extends GraphEntity {
 
 	@ObfuscatedName("asm.x")
 	public short field12452;
@@ -17,7 +17,7 @@ public abstract class class1197 extends class1019 {
 	@ObfuscatedName("asm.a")
 	public Light[] field12453 = new Light[4];
 
-	public class1197(Scene arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, class420 arg8) {
+	public WallDecorLayerEntity(Scene arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, ScaleRotTrans arg8) {
 		super(arg0, arg8);
 		this.field11717 = (byte) arg4;
 		this.field11714 = (byte) arg5;
@@ -63,7 +63,7 @@ public abstract class class1197 extends class1019 {
 	}
 
 	@ObfuscatedName("asm.fq(Ldh;Lalh;IIIZB)V")
-	public final void method17377(Renderer arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void method17377(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 

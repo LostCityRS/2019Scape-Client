@@ -181,7 +181,7 @@ public class LoginManager {
 
 	@ObfuscatedName("dt.c(Ljava/lang/String;ZI)V")
 	public static void method1681(String arg0, boolean arg1) {
-		if (client.field10791 == 13 && (!method2865() && !RegistrationManager.method9610())) {
+		if (client.state == 13 && (!method2865() && !RegistrationManager.method9610())) {
 			field429 = arg0;
 			field473 = arg1;
 			client.method6972(15);
@@ -336,7 +336,7 @@ public class LoginManager {
 				var3.field11432.p4(910);
 				var3.field11432.p4(1);
 				if (Statics.field431 == 211) {
-					var3.field11432.p1(client.field10791 == 14 ? 1 : 0);
+					var3.field11432.p1(client.state == 14 ? 1 : 0);
 				}
 				Packet var5 = method4378();
 				method14049(var5, (long) field472);
@@ -419,7 +419,7 @@ public class LoginManager {
 					if (!field438) {
 						var10.p4(910);
 						var10.p4(1);
-						var10.p1(client.field10791 == 14 ? 1 : 0);
+						var10.p1(client.state == 14 ? 1 : 0);
 						int var14 = var10.pos;
 						Packet var15 = method896();
 						var10.pdata(var15.data, 0, var15.pos);
@@ -572,7 +572,7 @@ public class LoginManager {
 					field445 = 215;
 					method669(var26);
 					return;
-				} else if (Statics.field431 == 132 && var26 == 49 && client.field10791 != 9) {
+				} else if (Statics.field431 == 132 && var26 == 49 && client.state != 9) {
 					if (field476 != 52) {
 						method669(var26);
 					}
@@ -650,7 +650,7 @@ public class LoginManager {
 				method669(Statics.field11819);
 				Statics.field432.method938();
 				method10367();
-				if (Statics.method15084(client.field10791)) {
+				if (Statics.method15084(client.state)) {
 					client.method9620(true);
 					field477 = Statics.field11819;
 				}
@@ -680,7 +680,7 @@ public class LoginManager {
 				String var30 = var29.gjstr();
 				class505.method4607(var30, true, client.field10784);
 				method669(Statics.field11819);
-				if (Statics.field431 == 132 && client.field10791 != 9) {
+				if (Statics.field431 == 132 && client.state != 9) {
 					field445 = 98;
 				} else {
 					field445 = 7;
@@ -735,7 +735,7 @@ public class LoginManager {
 						method669(var35);
 						Statics.field432.method938();
 						method10367();
-						if (Statics.method15084(client.field10791)) {
+						if (Statics.method15084(client.state)) {
 							client.method9620(true);
 							field477 = var35;
 						}
@@ -776,7 +776,7 @@ public class LoginManager {
 					client.field10948 = var36.g1() == 1;
 					Statics.field10250 = var36.gjstr();
 					Statics.field1238 = var36.g6() - class213.method3655();
-					client.field10855.method7750().method18890(client.field10948);
+					client.world.method7750().method18890(client.field10948);
 					Statics.field3183.method7677().method7750().method18890(client.field10948);
 					Statics.field1842.method18901(client.field10948);
 					Statics.field7961.method18876(client.field10948);
@@ -891,9 +891,9 @@ public class LoginManager {
 				System.arraycopy(Statics.field432.field795.data, Statics.field432.field795.pos, var44.data, 0, var43);
 				Statics.field432.field795.pos += var43;
 				if (ServerProt.REBUILD_REGION == Statics.field432.field796) {
-					client.field10855.method7749(new RebuildRequest(RebuildType.field5066, var44));
+					client.world.method7749(new RebuildRequest(RebuildType.field5066, var44));
 				} else {
-					client.field10855.method7749(new RebuildRequest(RebuildType.field5071, var44));
+					client.world.method7749(new RebuildRequest(RebuildType.field5071, var44));
 				}
 				if (Statics.field432.field795.pos != var42) {
 					throw new RuntimeException(Statics.field432.field795.pos + " " + var42);
@@ -977,7 +977,7 @@ public class LoginManager {
 		var0.p4(Statics.field435[2]);
 		var0.p4(Statics.field435[3]);
 		var0.p8(Statics.field434);
-		if (client.field10791 == 14) {
+		if (client.state == 14) {
 			var0.p4(Statics.field436[0]);
 			var0.p4(Statics.field436[1]);
 			var0.p4(Statics.field436[2]);
@@ -1019,7 +1019,7 @@ public class LoginManager {
 	@ObfuscatedName("ap.i(B)Lalw;")
 	public static Packet method896() {
 		Packet var0 = method4378();
-		if (client.field10791 != 14) {
+		if (client.state != 14) {
 			long var1;
 			if (field472 != -1) {
 				var1 = field472;
@@ -1050,15 +1050,15 @@ public class LoginManager {
 
 	@ObfuscatedName("ye.t(I)V")
 	public static void method10367() {
-		if (client.method14437(client.field10791)) {
+		if (client.method14437(client.state)) {
 			if (client.field10835.method939() == null) {
 				client.method6972(17);
 			} else {
 				client.method6972(13);
 			}
-		} else if (client.field10791 == 17 || client.field10791 == 7) {
+		} else if (client.state == 17 || client.state == 7) {
 			client.method6972(4);
-		} else if (client.field10791 == 9) {
+		} else if (client.state == 9) {
 			client.method6972(4);
 		}
 	}
@@ -1100,7 +1100,7 @@ public class LoginManager {
 
 	@ObfuscatedName("hz.al(I)V")
 	public static void method4320() {
-		if (client.field10791 == 19) {
+		if (client.state == 19) {
 			client.method9872();
 		}
 		client.field10835.method938();
@@ -1172,7 +1172,7 @@ public class LoginManager {
 				client.field11057[var5][var6] = new class482();
 			}
 		}
-		client.field10855.method7816().method10019();
+		client.world.method7816().method10019();
 		client.field10902 = true;
 		LocType.field7501 = NPCType.field2694 = ObjType.field8650 = new short[256];
 		Statics.field4868 = LocalisedText.field9079.method15021(Statics.field1680);
@@ -1185,7 +1185,7 @@ public class LoginManager {
 
 	@ObfuscatedName("aiz.ai(I)Z")
 	public static boolean method16808() {
-		if (client.field10791 == 4) {
+		if (client.state == 4) {
 			return !method2865() && !RegistrationManager.method9610();
 		} else {
 			return false;

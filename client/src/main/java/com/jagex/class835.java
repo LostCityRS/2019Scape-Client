@@ -1722,21 +1722,21 @@ public class class835 extends class104 {
 	}
 
 	@ObfuscatedName("aee.d(IILara;)Lara;")
-	public class1175 method1531(int arg0, int arg1, class1175 arg2) {
+	public HardShadow method1531(int arg0, int arg1, HardShadow arg2) {
 		return null;
 	}
 
 	@ObfuscatedName("aee.c(Lara;IIIIZ)V")
-	public void method1532(class1175 arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public void method1532(HardShadow arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
 	}
 
 	@ObfuscatedName("aee.v(Lara;IIIIZ)Z")
-	public boolean method1535(class1175 arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public boolean method1535(HardShadow arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		return false;
 	}
 
 	@ObfuscatedName("aee.r(Lara;IIIIZ)V")
-	public void method1543(class1175 arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public void method1543(HardShadow arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
 	}
 
 	@ObfuscatedName("aee.o(Lakf;[I)V")

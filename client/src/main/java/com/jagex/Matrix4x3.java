@@ -69,12 +69,12 @@ public class Matrix4x3 {
 	}
 
 	@ObfuscatedName("ou.n(Loe;)V")
-	public void method6293(class420 arg0) {
+	public void method6293(ScaleRotTrans arg0) {
 		this.method6294(arg0);
 	}
 
 	@ObfuscatedName("ou.m(Loe;)V")
-	public void method6294(class420 arg0) {
+	public void method6294(ScaleRotTrans arg0) {
 		this.method6311(arg0.field4299);
 		this.method6308(arg0.field4297);
 		this.method6314(arg0.field4298);

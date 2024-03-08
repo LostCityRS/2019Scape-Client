@@ -3501,7 +3501,7 @@ public class PureJavaModel extends Model {
 	}
 
 	@ObfuscatedName("afi.ao(Lara;)Lara;")
-	public class1175 method1726(class1175 arg0) {
+	public HardShadow method1726(HardShadow arg0) {
 		return null;
 	}
 

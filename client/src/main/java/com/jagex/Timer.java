@@ -3,14 +3,14 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("sr")
-public abstract class class511 {
+public abstract class Timer {
 
 	@ObfuscatedName("nv.e(I)Lsr;")
-	public static class511 method6109() {
+	public static Timer method6109() {
 		try {
-			return new class945();
+			return new MillisTimer();
 		} catch (Throwable var1) {
-			return new class944();
+			return new NanoTimer();
 		}
 	}
 

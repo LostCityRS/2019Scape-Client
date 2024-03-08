@@ -12,7 +12,7 @@ public class class600 {
 	public int field7541;
 
 	@ObfuscatedName("vz.m")
-	public class420 field7539;
+	public ScaleRotTrans field7539;
 
 	public class600(Packet arg0) {
 		this(arg0, false);
@@ -42,7 +42,7 @@ public class class600 {
 		}
 		this.field7539 = null;
 		if (var5) {
-			this.field7539 = new class420(arg0, arg3);
+			this.field7539 = new ScaleRotTrans(arg0, arg3);
 		}
 	}
 }

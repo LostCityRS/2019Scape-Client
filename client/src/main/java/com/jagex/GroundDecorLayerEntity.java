@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("asv")
-public abstract class GroundDecorLayerEntity extends class1019 {
+public abstract class GroundDecorLayerEntity extends GraphEntity {
 
 	@ObfuscatedName("asv.x")
 	public short field12448;
@@ -14,7 +14,7 @@ public abstract class GroundDecorLayerEntity extends class1019 {
 	@ObfuscatedName("asv.h")
 	public Light[] field12447 = new Light[4];
 
-	public GroundDecorLayerEntity(Scene arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, class420 arg7) {
+	public GroundDecorLayerEntity(Scene arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ScaleRotTrans arg7) {
 		super(arg0, arg7);
 		this.field11717 = (byte) arg4;
 		this.field11714 = (byte) arg5;

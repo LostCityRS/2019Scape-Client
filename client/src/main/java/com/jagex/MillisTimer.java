@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import jaclib.nanotime.QueryPerformanceCounter;
 
 @ObfuscatedName("ajp")
-public class class945 extends class511 {
+public class MillisTimer extends Timer {
 
 	@ObfuscatedName("ajp.e")
 	public long field11124 = 0L;
@@ -24,7 +24,7 @@ public class class945 extends class511 {
 	@ObfuscatedName("ajp.w")
 	public int field11121 = 1;
 
-	public class945() {
+	public MillisTimer() {
 		this.field11126 = this.field11124 = QueryPerformanceCounter.nanoTime();
 		if (this.field11124 == 0L) {
 			throw new RuntimeException();

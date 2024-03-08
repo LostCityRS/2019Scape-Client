@@ -266,7 +266,7 @@ public class class48 {
 		Statics.field688.method18157(Statics.field688.field11539, 0);
 		Statics.field688.method18157(Statics.field688.field11515, 4);
 		client.method9516();
-		client.field10855.method7816().method10019();
+		client.world.method7816().method10019();
 		client.field10836 = true;
 	}
 
@@ -298,7 +298,7 @@ public class class48 {
 		Statics.field688.method18157(Statics.field688.field11539, 1);
 		Statics.field688.method18157(Statics.field688.field11515, 3);
 		client.method9516();
-		client.field10855.method7816().method10019();
+		client.world.method7816().method10019();
 		client.field10836 = true;
 	}
 
@@ -330,7 +330,7 @@ public class class48 {
 		Statics.field688.method18157(Statics.field688.field11539, 2);
 		Statics.field688.method18157(Statics.field688.field11515, 2);
 		client.method9516();
-		client.field10855.method7816().method10019();
+		client.world.method7816().method10019();
 		client.field10836 = true;
 	}
 
@@ -362,7 +362,7 @@ public class class48 {
 		Statics.field688.method18157(Statics.field688.field11539, 2);
 		Statics.field688.method18157(Statics.field688.field11515, 1);
 		client.method9516();
-		client.field10855.method7816().method10019();
+		client.world.method7816().method10019();
 		client.field10836 = true;
 	}
 }

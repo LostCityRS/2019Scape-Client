@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("ajz")
-public class class953 extends GroundDecorLayerEntity implements Location {
+public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements Location {
 
 	@ObfuscatedName("ajz.c")
 	public LocTypeList field11185;
@@ -13,10 +13,10 @@ public class class953 extends GroundDecorLayerEntity implements Location {
 	public Model field11192;
 
 	@ObfuscatedName("ajz.v")
-	public class1175 field11186;
+	public HardShadow field11186;
 
 	@ObfuscatedName("ajz.o")
-	public class556 field11187;
+	public EntityBounds field11187;
 
 	@ObfuscatedName("ajz.s")
 	public final int field11715;
@@ -39,7 +39,7 @@ public class class953 extends GroundDecorLayerEntity implements Location {
 	@ObfuscatedName("ajz.a")
 	public int field11194;
 
-	public class953(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, boolean arg11, class420 arg12) {
+	public StaticGroundDecorEntity(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, boolean arg11, ScaleRotTrans arg12) {
 		super(arg0, arg6, arg7, arg8, arg4, arg5, arg3.field7448, arg12);
 		this.field11185 = arg2;
 		this.field11715 = arg3.field7450;
@@ -59,11 +59,11 @@ public class class953 extends GroundDecorLayerEntity implements Location {
 		class746 var15 = this.method17436(arg1, var14, this.field11193);
 		if (var15 != null) {
 			this.field11192 = (Model) var15.field8737;
-			this.field11186 = (class1175) var15.field8738;
+			this.field11186 = (HardShadow) var15.field8738;
 			if (this.field11184 || arg3.field7525) {
 				this.field11192 = this.field11192.method1773((byte) 0, var14, false);
 				if (arg3.field7525) {
-					LocTint var16 = client.field10855.method7722();
+					LocTint var16 = client.world.method7722();
 					this.field11192.method1745(var16.field5015, var16.field5013, var16.field5014, var16.field5012);
 				}
 			}
@@ -121,10 +121,10 @@ public class class953 extends GroundDecorLayerEntity implements Location {
 	}
 
 	@ObfuscatedName("ajz.fv(Ldh;B)Luq;")
-	public class556 method17371(Renderer arg0) {
+	public EntityBounds method17371(Renderer arg0) {
 		Vector3 var2 = this.method10536().field4298;
 		if (this.field11187 == null) {
-			this.field11187 = class1019.method15111((int) var2.field4308, (int) var2.field4311, (int) var2.field4313, this.method17435(arg0, 0));
+			this.field11187 = GraphEntity.method15111((int) var2.field4308, (int) var2.field4311, (int) var2.field4313, this.method17435(arg0, 0));
 		}
 		return this.field11187;
 	}
@@ -171,9 +171,9 @@ public class class953 extends GroundDecorLayerEntity implements Location {
 	}
 
 	@ObfuscatedName("ajz.fq(Ldh;Lalh;IIIZB)V")
-	public void method17377(Renderer arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5) {
-		if (arg1 instanceof class953) {
-			class953 var7 = (class953) arg1;
+	public void method17377(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
+		if (arg1 instanceof StaticGroundDecorEntity) {
+			StaticGroundDecorEntity var7 = (StaticGroundDecorEntity) arg1;
 			if (this.field11192 != null && var7.field11192 != null) {
 				this.field11192.method1686(var7.field11192, arg2, arg3, arg4, arg5);
 			}
@@ -223,10 +223,10 @@ public class class953 extends GroundDecorLayerEntity implements Location {
 	@ObfuscatedName("ajz.l(Ldh;B)V")
 	public void method8217(Renderer arg0) {
 		Object var2 = null;
-		class1175 var4;
+		HardShadow var4;
 		if (this.field11186 == null && this.field11193) {
 			class746 var3 = this.method17436(arg0, 262144, true);
-			var4 = (class1175) (var3 == null ? null : var3.field8738);
+			var4 = (HardShadow) (var3 == null ? null : var3.field8738);
 		} else {
 			var4 = this.field11186;
 			this.field11186 = null;
@@ -240,10 +240,10 @@ public class class953 extends GroundDecorLayerEntity implements Location {
 	@ObfuscatedName("ajz.u(Ldh;B)V")
 	public void method8209(Renderer arg0) {
 		Object var2 = null;
-		class1175 var4;
+		HardShadow var4;
 		if (this.field11186 == null && this.field11193) {
 			class746 var3 = this.method17436(arg0, 262144, true);
-			var4 = (class1175) (var3 == null ? null : var3.field8738);
+			var4 = (HardShadow) (var3 == null ? null : var3.field8738);
 		} else {
 			var4 = this.field11186;
 			this.field11186 = null;

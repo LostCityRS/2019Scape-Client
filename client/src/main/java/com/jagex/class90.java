@@ -137,7 +137,7 @@ public class class90 {
 	}
 
 	@ObfuscatedName("ci.m(Lara;II)V")
-	public void method1340(class1175 arg0, int arg1, int arg2) {
+	public void method1340(HardShadow arg0, int arg1, int arg2) {
 		class1222 var4 = (class1222) arg0;
 		int var5 = var4.field12540 + 1 + arg1;
 		int var6 = var4.field12537 + 1 + arg2;
@@ -180,7 +180,7 @@ public class class90 {
 	}
 
 	@ObfuscatedName("ci.k(Lara;II)V")
-	public void method1341(class1175 arg0, int arg1, int arg2) {
+	public void method1341(HardShadow arg0, int arg1, int arg2) {
 		class1222 var4 = (class1222) arg0;
 		int var5 = var4.field12540 + 1 + arg1;
 		int var6 = var4.field12537 + 1 + arg2;
@@ -223,7 +223,7 @@ public class class90 {
 	}
 
 	@ObfuscatedName("ci.f(Lara;II)Z")
-	public boolean method1349(class1175 arg0, int arg1, int arg2) {
+	public boolean method1349(HardShadow arg0, int arg1, int arg2) {
 		class1222 var4 = (class1222) arg0;
 		int var5 = var4.field12540 + 1 + arg1;
 		int var6 = var4.field12537 + 1 + arg2;

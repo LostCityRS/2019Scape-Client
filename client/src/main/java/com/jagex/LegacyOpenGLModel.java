@@ -3089,7 +3089,7 @@ public class LegacyOpenGLModel extends Model {
 	}
 
 	@ObfuscatedName("afk.ao(Lara;)Lara;")
-	public class1175 method1726(class1175 arg0) {
+	public HardShadow method1726(HardShadow arg0) {
 		if (this.field9658 == 0) {
 			return null;
 		}

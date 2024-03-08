@@ -116,7 +116,7 @@ public class class1131 extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqc.fv(Ldh;B)Luq;")
-	public class556 method17371(Renderer arg0) {
+	public EntityBounds method17371(Renderer arg0) {
 		return null;
 	}
 
@@ -126,7 +126,7 @@ public class class1131 extends PathingEntity {
 			return null;
 		}
 		Matrix4x3 var2 = this.method10533();
-		class420 var3 = this.method10536();
+		ScaleRotTrans var3 = this.method10536();
 		Matrix4x3 var4 = arg0.method2209();
 		int var5 = this.field10395.method316();
 		class551 var6 = this.field11716.field6928[this.field11717][(int) var3.field4298.field4308 >> 9][(int) var3.field4298.field4313 >> 9];
@@ -350,7 +350,7 @@ public class class1131 extends PathingEntity {
 	@ObfuscatedName("aqc.hy(IIIZIB)V")
 	public void method19159(int arg0, int arg1, int arg2, boolean arg3, int arg4) {
 		this.field11717 = this.field11714 = (byte) arg0;
-		if (client.field10855.method7793().method7105(arg1, arg2)) {
+		if (client.world.method7793().method7105(arg1, arg2)) {
 			this.field11714++;
 		}
 		if (this.field10454.method14346() && this.field10454.method14347().field1782 == 1) {
@@ -501,7 +501,7 @@ public class class1131 extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqc.fq(Ldh;Lalh;IIIZB)V")
-	public final void method17377(Renderer arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void method17377(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 
@@ -559,7 +559,7 @@ public class class1131 extends PathingEntity {
 
 	@ObfuscatedName("aqc.m(B)Lakt;")
 	public CoordFine method4667() {
-		CoordGrid var1 = client.field10855.method7727();
+		CoordGrid var1 = client.world.method7727();
 		return CoordFine.method258(this.field11717, (int) this.method10536().field4298.field4308 + var1.field7426 * 512, -((int) this.method10536().field4298.field4311), (int) this.method10536().field4298.field4313 + var1.field7427 * 512);
 	}
 

@@ -3,16 +3,16 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ajj")
-public class class952 extends class1198 implements Location {
+public class DynamicWallEntity extends WallLayerEntity implements Location {
 
 	@ObfuscatedName("ajj.c")
-	public class516 field11179;
+	public DynamicLoc field11179;
 
 	@ObfuscatedName("ajj.r")
 	public boolean field11178;
 
 	@ObfuscatedName("ajj.v")
-	public class556 field11181;
+	public EntityBounds field11181;
 
 	@ObfuscatedName("ajj.o")
 	public static final int[] field11180 = new int[] { 1, 2, 4, 8 };
@@ -23,9 +23,9 @@ public class class952 extends class1198 implements Location {
 	@ObfuscatedName("ajj.y")
 	public boolean field11183 = true;
 
-	public class952(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, class420 arg14) {
+	public DynamicWallEntity(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, ScaleRotTrans arg14) {
 		super(arg0, arg6, arg7, arg8, arg4, arg5, method9908(arg10, arg11), arg14);
-		this.field11179 = new class516(arg1, arg2, arg3, arg10, arg11, arg5, this, arg9, arg12, arg13);
+		this.field11179 = new DynamicLoc(arg1, arg2, arg3, arg10, arg11, arg5, this, arg9, arg12, arg13);
 		this.field11178 = arg3.field7470 != 0 && !arg9;
 		this.method18363(1);
 	}
@@ -46,7 +46,7 @@ public class class952 extends class1198 implements Location {
 	}
 
 	@ObfuscatedName("ajj.fv(Ldh;B)Luq;")
-	public class556 method17371(Renderer arg0) {
+	public EntityBounds method17371(Renderer arg0) {
 		return this.field11181;
 	}
 
@@ -72,7 +72,7 @@ public class class952 extends class1198 implements Location {
 			return null;
 		}
 		Matrix4x3 var3 = this.method10533();
-		class420 var4 = this.method10536();
+		ScaleRotTrans var4 = this.method10536();
 		PickableEntity var5 = PickableEntity.method16749(this.field11178);
 		int var6 = (int) var4.field4298.field4308 >> 9;
 		int var7 = (int) var4.field4298.field4313 >> 9;
@@ -90,9 +90,9 @@ public class class952 extends class1198 implements Location {
 		}
 		this.field11183 = var2.method1731() || this.field11179.field6680 != null;
 		if (this.field11181 == null) {
-			this.field11181 = class1019.method15111((int) var4.field4298.field4308, (int) var4.field4298.field4311, (int) var4.field4298.field4313, var2);
+			this.field11181 = GraphEntity.method15111((int) var4.field4298.field4308, (int) var4.field4298.field4311, (int) var4.field4298.field4313, var2);
 		} else {
-			class1019.method8229(this.field11181, (int) var4.field4298.field4308, (int) var4.field4298.field4311, (int) var4.field4298.field4313, var2);
+			GraphEntity.method8229(this.field11181, (int) var4.field4298.field4308, (int) var4.field4298.field4311, (int) var4.field4298.field4313, var2);
 		}
 		return var5;
 	}
@@ -104,7 +104,7 @@ public class class952 extends class1198 implements Location {
 			return;
 		}
 		Matrix4x3 var3 = this.method10533();
-		class420 var4 = this.method10536();
+		ScaleRotTrans var4 = this.method10536();
 		int var5 = (int) var4.field4298.field4308 >> 9;
 		int var6 = (int) var4.field4298.field4313 >> 9;
 		this.field11179.method8239(arg0, var2, var3, var5, var5, var6, var6, false);
@@ -127,7 +127,7 @@ public class class952 extends class1198 implements Location {
 	}
 
 	@ObfuscatedName("ajj.fq(Ldh;Lalh;IIIZB)V")
-	public final void method17377(Renderer arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void method17377(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 

@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ast")
-public abstract class class1199 extends class1019 {
+public abstract class class1199 extends GraphEntity {
 
 	public class1199(Scene arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		super(arg0);
@@ -37,7 +37,7 @@ public abstract class class1199 extends class1019 {
 	}
 
 	@ObfuscatedName("ast.fq(Ldh;Lalh;IIIZB)V")
-	public final void method17377(Renderer arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void method17377(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 

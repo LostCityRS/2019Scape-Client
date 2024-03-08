@@ -17,9 +17,9 @@ public class class43 {
 		if (field735) {
 			return;
 		}
-		method3097(client.field10855.method7743().field6904);
-		if (client.field10855.method7743().field6914 != null) {
-			method3097(client.field10855.method7743().field6914);
+		method3097(client.world.method7743().field6904);
+		if (client.world.method7743().field6914 != null) {
+			method3097(client.world.method7743().field6914);
 		}
 		field735 = true;
 	}
@@ -48,7 +48,7 @@ public class class43 {
 							((Location) var5.field6967).method8205();
 						}
 						for (PrimaryLayerEntityList var6 = var5.field6964; var6 != null; var6 = var6.field7058) {
-							class1200 var7 = var6.field7057;
+							PrimaryLayerEntity var7 = var6.field7057;
 							if (var7 instanceof Location) {
 								((Location) var7).method8205();
 							}

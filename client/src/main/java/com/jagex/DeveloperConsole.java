@@ -46,7 +46,7 @@ public class DeveloperConsole {
 
 	@ObfuscatedName("cc.e(B)Z")
 	public static boolean method1584() {
-		return !Statics.method2092(client.field10791);
+		return !Statics.method2092(client.state);
 	}
 
 	@ObfuscatedName("i.n(I)V")
@@ -304,7 +304,7 @@ public class DeveloperConsole {
 				return;
 			}
 			if (arg0.equalsIgnoreCase("getcamerapos")) {
-				CoordGrid var5 = client.field10855.method7727();
+				CoordGrid var5 = client.world.method7727();
 				if (Statics.field3416 == 3) {
 					Vector3 var6 = Statics.field9155.method4714();
 					Vector3 var7 = Statics.field9155.method4711();
@@ -350,7 +350,7 @@ public class DeveloperConsole {
 					return;
 				}
 				if (arg0.startsWith("setlobby ")) {
-					if (client.field10791 != 4) {
+					if (client.state != 4) {
 						method4285("Failure");
 						return;
 					}
@@ -424,9 +424,9 @@ public class DeveloperConsole {
 					return;
 				}
 				if (arg0.equalsIgnoreCase("clientdrop")) {
-					if (client.field10791 == 18) {
+					if (client.state == 18) {
 						client.method8321();
-					} else if (client.field10791 == 3) {
+					} else if (client.state == 3) {
 						client.field10849.field808 = true;
 					}
 					return;
@@ -514,7 +514,7 @@ public class DeveloperConsole {
 					String[] var29 = class695.method17361(Statics.method17687(Cp1252.method667(var28), '\r', ""), '\n');
 					method15383(var29);
 				}
-				if (client.field10791 == 18 || client.field10791 == 13) {
+				if (client.state == 18 || client.state == 13) {
 					class49 var30 = client.method640();
 					ClientMessage var31 = Statics.method1604(ClientProt.CLIENT_CHEAT, var30.field794);
 					var31.field11432.p1(arg0.length() + 3);
@@ -528,7 +528,7 @@ public class DeveloperConsole {
 				return;
 			}
 		}
-		if (client.field10791 != 18 && client.field10791 != 13) {
+		if (client.state != 18 && client.state != 13) {
 			method4285(LocalisedText.field8949.method15021(Statics.field1680) + arg0);
 		}
 	}
@@ -546,7 +546,7 @@ public class DeveloperConsole {
 				} else if (arg0 == 11) {
 					method4285("" + GameShell.field6585);
 				} else if (arg0 == 24) {
-					class555 var1 = client.field10855.method7743().field6930;
+					class555 var1 = client.world.method7743().field6930;
 					var1.field7031 = !var1.field7031;
 				} else if (arg0 == 25) {
 					client.field10794 = true;
@@ -592,15 +592,15 @@ public class DeveloperConsole {
 				} else if (arg0 == 4) {
 					method10153();
 				} else if (arg0 == 17) {
-					client.field10855.field5056 = class213.method3655();
-					client.field10855.field5037 = true;
+					client.world.field5056 = class213.method3655();
+					client.world.field5037 = true;
 					method10153();
 				} else if (arg0 == 19) {
 					Vector3 var10 = Statics.field4490.method10536().field4298;
 					method4285(((int) var10.field4308 >> 9) + " " + ((int) var10.field4313 >> 9));
 				} else if (arg0 == 16) {
 					Vector3 var11 = Statics.field4490.method10536().field4298;
-					method4285("" + client.field10855.method7743().field6913[Statics.field4490.field11717].method1529((int) var11.field4308 >> 9, (int) var11.field4313 >> 9));
+					method4285("" + client.world.method7743().field6913[Statics.field4490.field11717].method1529((int) var11.field4308 >> 9, (int) var11.field4313 >> 9));
 				} else if (arg0 == 27) {
 					method4285(class226.field2175.method2926() + " " + class226.field2175.method2925());
 					method4285(class226.field2297.method2926() + " " + class226.field2297.method2925());
@@ -613,13 +613,13 @@ public class DeveloperConsole {
 					return;
 				} else if (arg0 == 1) {
 					client.field11005 = 0;
-					client.field10855.method7753();
+					client.world.method7753();
 				} else if (arg0 == 3) {
 					client.field11005 = 1;
-					client.field10855.method7753();
+					client.world.method7753();
 				} else if (arg0 == 15) {
 					client.field11005 = 2;
-					client.field10855.method7753();
+					client.world.method7753();
 				}
 			} catch (Exception var13) {
 				method4285(LocalisedText.field9061.method15021(Statics.field1680));
@@ -632,7 +632,7 @@ public class DeveloperConsole {
 		if (Statics.field688.field11561.method18750() == 1) {
 			Statics.field3183.method7680(new RebuildRequest(RebuildType.field5070, null));
 		} else {
-			client.field10855.method7753();
+			client.world.method7753();
 			class42.method5065();
 		}
 	}

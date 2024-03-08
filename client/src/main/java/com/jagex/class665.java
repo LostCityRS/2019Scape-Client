@@ -6,16 +6,16 @@ import deob.ObfuscatedName;
 public class class665 {
 
 	@ObfuscatedName("yq.e")
-	public class420 field8173 = new class420();
+	public ScaleRotTrans field8173 = new ScaleRotTrans();
 
 	@ObfuscatedName("yq.n")
-	public class420 field8170 = new class420();
+	public ScaleRotTrans field8170 = new ScaleRotTrans();
 
 	@ObfuscatedName("yq.m")
 	public boolean field8171 = true;
 
 	@ObfuscatedName("yq.k")
-	public class420 field8172 = new class420();
+	public ScaleRotTrans field8172 = new ScaleRotTrans();
 
 	@ObfuscatedName("yq.f")
 	public boolean field8177 = true;
@@ -50,12 +50,12 @@ public class class665 {
 	}
 
 	@ObfuscatedName("yq.ae()Loe;")
-	public final class420 method10525() {
+	public final ScaleRotTrans method10525() {
 		return this.field8173;
 	}
 
 	@ObfuscatedName("yq.ag()Loe;")
-	public final class420 method10536() {
+	public final ScaleRotTrans method10536() {
 		if (this.field8171) {
 			this.field8171 = false;
 			this.field8170.method6386(this.field8173);
@@ -67,7 +67,7 @@ public class class665 {
 	}
 
 	@ObfuscatedName("yq.ah()Loe;")
-	public final class420 method10527() {
+	public final ScaleRotTrans method10527() {
 		if (this.field8177) {
 			this.field8177 = false;
 			this.field8172.method6386(this.method10536());
@@ -86,7 +86,7 @@ public class class665 {
 	}
 
 	@ObfuscatedName("yq.ac(Loe;)V")
-	public final void method10529(class420 arg0) {
+	public final void method10529(ScaleRotTrans arg0) {
 		this.field8173.method6386(arg0);
 		this.method10535();
 		if (this.field8178 != null) {
@@ -127,11 +127,11 @@ public class class665 {
 	}
 
 	@ObfuscatedName("yq.ad(Loe;)V")
-	public final void method10534(class420 arg0) {
+	public final void method10534(ScaleRotTrans arg0) {
 		if (this.field8169 == null) {
 			this.method10529(arg0);
 		} else {
-			class420 var2 = new class420(arg0);
+			ScaleRotTrans var2 = new ScaleRotTrans(arg0);
 			var2.method6398(this.field8169.method10527());
 			this.method10529(var2);
 		}

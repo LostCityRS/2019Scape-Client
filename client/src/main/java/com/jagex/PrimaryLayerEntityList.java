@@ -7,7 +7,7 @@ import deob.Statics;
 public class PrimaryLayerEntityList {
 
 	@ObfuscatedName("uc.e")
-	public class1200 field7057;
+	public PrimaryLayerEntity field7057;
 
 	@ObfuscatedName("uc.n")
 	public PrimaryLayerEntityList field7058;
@@ -16,7 +16,7 @@ public class PrimaryLayerEntityList {
 	public static int field7059 = 0;
 
 	@ObfuscatedName("j.e(Lash;I)Luc;")
-	public static PrimaryLayerEntityList method644(class1200 arg0) {
+	public static PrimaryLayerEntityList method644(PrimaryLayerEntity arg0) {
 		PrimaryLayerEntityList var1;
 		if (Statics.field7674 == null) {
 			var1 = new PrimaryLayerEntityList();

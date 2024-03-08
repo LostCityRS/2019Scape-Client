@@ -790,7 +790,7 @@ public class class836 extends class104 {
 	}
 
 	@ObfuscatedName("aek.d(IILara;)Lara;")
-	public class1175 method1531(int arg0, int arg1, class1175 arg2) {
+	public HardShadow method1531(int arg0, int arg1, HardShadow arg2) {
 		if ((this.field9468[arg0][arg1] & 0x1) == 0) {
 			return null;
 		}
@@ -838,7 +838,7 @@ public class class836 extends class104 {
 	}
 
 	@ObfuscatedName("aek.v(Lara;IIIIZ)Z")
-	public boolean method1535(class1175 arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public boolean method1535(HardShadow arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		if (this.field9465 == null || arg0 == null) {
 			return false;
 		} else {
@@ -849,7 +849,7 @@ public class class836 extends class104 {
 	}
 
 	@ObfuscatedName("aek.c(Lara;IIIIZ)V")
-	public void method1532(class1175 arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public void method1532(HardShadow arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		if (this.field9465 != null && arg0 != null) {
 			int var7 = arg1 - (this.field9453.field9915 * arg2 >> 8) >> this.field9453.field9874;
 			int var8 = arg3 - (this.field9453.field9953 * arg2 >> 8) >> this.field9453.field9874;
@@ -858,7 +858,7 @@ public class class836 extends class104 {
 	}
 
 	@ObfuscatedName("aek.r(Lara;IIIIZ)V")
-	public void method1543(class1175 arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public void method1543(HardShadow arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		if (this.field9465 != null && arg0 != null) {
 			int var7 = arg1 - (this.field9453.field9915 * arg2 >> 8) >> this.field9453.field9874;
 			int var8 = arg3 - (this.field9453.field9953 * arg2 >> 8) >> this.field9453.field9874;

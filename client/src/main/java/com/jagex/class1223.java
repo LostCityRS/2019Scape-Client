@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ati")
-public class class1223 extends class1175 {
+public class class1223 extends HardShadow {
 
 	@ObfuscatedName("ati.u")
 	public int field12543;

@@ -12,16 +12,16 @@ public class class551 {
 	public class551 field6965;
 
 	@ObfuscatedName("tk.m")
-	public class1198 field6966;
+	public WallLayerEntity field6966;
 
 	@ObfuscatedName("tk.k")
-	public class1198 field6967;
+	public WallLayerEntity field6967;
 
 	@ObfuscatedName("tk.f")
-	public class1197 field6968;
+	public WallDecorLayerEntity field6968;
 
 	@ObfuscatedName("tk.w")
-	public class1197 field6976;
+	public WallDecorLayerEntity field6976;
 
 	@ObfuscatedName("tk.l")
 	public GroundDecorLayerEntity field6974;

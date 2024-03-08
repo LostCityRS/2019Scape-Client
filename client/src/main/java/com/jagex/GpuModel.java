@@ -3169,7 +3169,7 @@ public class GpuModel extends Model {
 	}
 
 	@ObfuscatedName("afo.ao(Lara;)Lara;")
-	public class1175 method1726(class1175 arg0) {
+	public HardShadow method1726(HardShadow arg0) {
 		if (this.field9710 == 0) {
 			return null;
 		}

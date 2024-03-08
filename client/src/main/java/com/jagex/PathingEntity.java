@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("ahm")
-public abstract class PathingEntity extends class1200 implements class273 {
+public abstract class PathingEntity extends PrimaryLayerEntity implements class273 {
 
 	@ObfuscatedName("ahm.v")
 	public int field10406;
@@ -683,10 +683,10 @@ public abstract class PathingEntity extends class1200 implements class273 {
 		} else {
 			var2 = -this.field10420;
 		}
-		class420 var3 = this.method10536();
+		ScaleRotTrans var3 = this.method10536();
 		int var4 = (int) var3.field4298.field4308 >> 9;
 		int var5 = (int) var3.field4298.field4313 >> 9;
-		if (this.field11716 != null && var4 >= 1 && var5 >= 1 && var4 <= client.field10855.method7728() - 1 && var5 <= client.field10855.method7758() - 1) {
+		if (this.field11716 != null && var4 >= 1 && var5 >= 1 && var4 <= client.world.method7728() - 1 && var5 <= client.world.method7758() - 1) {
 			class551 var6 = this.field11716.field6928[this.field11717][var4][var5];
 			if (var6 != null && var6.field6974 != null) {
 				return var6.field6974.field12448 + var2;
@@ -946,7 +946,7 @@ public abstract class PathingEntity extends class1200 implements class273 {
 	@ObfuscatedName("ahm.cw(I)Lve;")
 	public CoordGrid method16521() {
 		Vector3 var1 = this.method10536().field4298;
-		CoordGrid var2 = client.field10855.method7727();
+		CoordGrid var2 = client.world.method7727();
 		int var3 = ((int) var1.field4308 >> 9) + var2.field7426;
 		int var4 = ((int) var1.field4313 >> 9) + var2.field7427;
 		return new CoordGrid(this.field11717, var3, var4);
@@ -955,7 +955,7 @@ public abstract class PathingEntity extends class1200 implements class273 {
 	@ObfuscatedName("ahm.ct(I)Lakt;")
 	public CoordFine method16537() {
 		Vector3 var1 = this.method10536().field4298;
-		CoordGrid var2 = client.field10855.method7727();
+		CoordGrid var2 = client.world.method7727();
 		int var3 = var2.field7426 * 512 + (int) var1.field4308;
 		int var4 = (int) var1.field4311;
 		int var5 = var2.field7427 * 512 + (int) var1.field4313;

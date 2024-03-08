@@ -39,7 +39,7 @@ public class class548 {
 
 	@ObfuscatedName("tg.n(Ltl;B)V")
 	public void method8683(PickableEntity arg0) {
-		class1019 var2 = arg0.field6978;
+		GraphEntity var2 = arg0.field6978;
 		boolean var3 = true;
 		class141[] var4 = arg0.field6978.field11713;
 		for (int var5 = 0; var5 < var4.length; var5++) {

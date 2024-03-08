@@ -1,6 +1,7 @@
 package deob;
 
 import com.jagex.*;
+import com.jagex.Timer;
 import com.jagex.twitchtv.TwitchEventLiveStreams;
 import com.jagex.twitchtv.TwitchEventResult;
 import com.jagex.twitchtv.TwitchTV;
@@ -622,7 +623,7 @@ public class Statics {
 	public static String field3182;
 
 	@ObfuscatedName("ky.ji")
-	public static class490 field3183;
+	public static AsyncRebuild field3183;
 
 	@ObfuscatedName("kt.q")
 	public static MaterialList field3199;
@@ -973,7 +974,7 @@ public class Statics {
 	public static int field6593;
 
 	@ObfuscatedName("sk.f")
-	public static class511 field6594;
+	public static Timer field6594;
 
 	@ObfuscatedName("sk.v")
 	public static int field6600;
@@ -3451,19 +3452,19 @@ public class Statics {
 		class22.method5147();
 		client.method9734();
 		client.method9516();
-		if (client.field10791 == 4) {
+		if (client.state == 4) {
 			client.method6972(10);
-		} else if (client.field10791 == 13) {
+		} else if (client.state == 13) {
 			client.method6972(6);
-		} else if (client.field10791 == 15) {
+		} else if (client.state == 15) {
 			client.method6972(16);
-		} else if (client.field10791 == 18) {
+		} else if (client.state == 18) {
 			client.method6972(3);
-		} else if (client.field10791 == 11 || client.field10791 == 1) {
+		} else if (client.state == 11 || client.state == 1) {
 			class280.method18929();
-		} else if (client.field10791 == 0) {
+		} else if (client.state == 0) {
 			client.method6972(8);
-		} else if (client.field10791 == 3) {
+		} else if (client.state == 3) {
 			class975.method13908(false);
 		}
 	}
@@ -3474,7 +3475,7 @@ public class Statics {
 			field8168.method14895();
 			field8145.method14895();
 			field2628.method14895();
-			client.field10855.method7750().method14895();
+			client.world.method7750().method14895();
 			field7961.method14895();
 			field1842.method14895();
 			field8797.method14895();
@@ -3506,7 +3507,7 @@ public class Statics {
 				}
 				client.field10798 = 0;
 			}
-			client.field10855.method7816().method9984();
+			client.world.method7816().method9984();
 			class45.method2086();
 			class31.method3076();
 			field7282.method6008();
@@ -3749,17 +3750,17 @@ public class Statics {
 
 	@ObfuscatedName("adi.ip(IIIIII)I")
 	public static final int method15200(int arg0, int arg1, int arg2, int arg3, int arg4) {
-		if (client.field10855.method7743() == null) {
+		if (client.world.method7743() == null) {
 			return 0;
 		}
 		if (arg4 < 3) {
-			LinkMap var5 = client.field10855.method7793();
+			LinkMap var5 = client.world.method7793();
 			int var6 = arg0 >> 9;
 			int var7 = arg1 >> 9;
-			if (arg2 < 0 || arg3 < 0 || arg2 > client.field10855.method7728() - 1 || arg3 > client.field10855.method7758() - 1) {
+			if (arg2 < 0 || arg3 < 0 || arg2 > client.world.method7728() - 1 || arg3 > client.world.method7758() - 1) {
 				return 0;
 			}
-			if (var6 < 1 || var7 < 1 || var6 > client.field10855.method7728() - 1 || var7 > client.field10855.method7758() - 1) {
+			if (var6 < 1 || var7 < 1 || var6 > client.world.method7728() - 1 || var7 > client.world.method7758() - 1) {
 				return 0;
 			}
 			boolean var8 = (var5.field4487[1][arg0 >> 9][arg1 >> 9] & 0x2) != 0;
@@ -3781,7 +3782,7 @@ public class Statics {
 				arg4++;
 			}
 		}
-		return client.field10855.method7743().field6913[arg4].method1527(arg0, arg1);
+		return client.world.method7743().field6913[arg4].method1527(arg0, arg1);
 	}
 
 	@ObfuscatedName("nj.hp(Lyf;B)V")
@@ -4395,7 +4396,7 @@ public class Statics {
 			return;
 		}
 		class49 var6 = client.method640();
-		if (client.field10791 != 13 && client.field10791 != 18 && client.field10791 != 0) {
+		if (client.state != 13 && client.state != 18 && client.state != 0) {
 			return;
 		}
 		if (var4.field2336 == null || var4.field2337 == null) {
@@ -4481,9 +4482,9 @@ public class Statics {
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		ParamType var3 = (ParamType) field3086.get(var2);
 		if (var3.method15152()) {
-			arg0.field8218[++arg0.field8211 - 1] = ((LocType) client.field10855.method7750().get(var1)).method9479(var2, var3.field9171);
+			arg0.field8218[++arg0.field8211 - 1] = ((LocType) client.world.method7750().get(var1)).method9479(var2, var3.field9171);
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = ((LocType) client.field10855.method7750().get(var1)).method9481(var2, var3.field9172);
+			arg0.field8216[++arg0.field8226 - 1] = ((LocType) client.world.method7750().get(var1)).method9481(var2, var3.field9172);
 		}
 	}
 
@@ -4827,7 +4828,7 @@ public class Statics {
 	public static final void method7075(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		field688.method18157(field688.field11549, var1);
-		client.field10855.method7753();
+		client.world.method7753();
 		class48.method16391();
 		client.field10800 = false;
 	}

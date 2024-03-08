@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("uq")
-public class class556 {
+public class EntityBounds {
 
 	@ObfuscatedName("uq.e")
 	public int field7054;
@@ -35,7 +35,7 @@ public class class556 {
 	@ObfuscatedName("uq.p")
 	public int field7056;
 
-	public class556(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9) {
+	public EntityBounds(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9) {
 		this.field7054 = arg0;
 		this.field7051 = arg1;
 		this.field7048 = arg2;

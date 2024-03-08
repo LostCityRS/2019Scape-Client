@@ -100,13 +100,13 @@ public class Scene {
 	public final int field6932 = 5005;
 
 	@ObfuscatedName("tx.al")
-	public final class1019[] field6916;
+	public final GraphEntity[] field6916;
 
 	@ObfuscatedName("tx.ac")
-	public final class1019[] field6929;
+	public final GraphEntity[] field6929;
 
 	@ObfuscatedName("tx.ai")
-	public final class1019[] field6945;
+	public final GraphEntity[] field6945;
 
 	@ObfuscatedName("tx.aw")
 	public int field6931;
@@ -115,13 +115,13 @@ public class Scene {
 	public int field6918;
 
 	@ObfuscatedName("tx.at")
-	public final class1019[] field6933;
+	public final GraphEntity[] field6933;
 
 	@ObfuscatedName("tx.ad")
-	public final class1019[] field6934;
+	public final GraphEntity[] field6934;
 
 	@ObfuscatedName("tx.am")
-	public final class1200[] field6935;
+	public final PrimaryLayerEntity[] field6935;
 
 	@ObfuscatedName("tx.au")
 	public int field6902;
@@ -235,14 +235,14 @@ public class Scene {
 			this.field6953 = 0;
 		}
 		this.method8703(false);
-		this.field6916 = new class1019[2];
-		this.field6929 = new class1019[2];
-		this.field6945 = new class1019[2];
-		this.field6934 = new class1019[10078];
+		this.field6916 = new GraphEntity[2];
+		this.field6929 = new GraphEntity[2];
+		this.field6945 = new GraphEntity[2];
+		this.field6934 = new GraphEntity[10078];
 		this.field6931 = 0;
-		this.field6933 = new class1019[5096];
+		this.field6933 = new GraphEntity[5096];
 		this.field6918 = 0;
-		this.field6935 = new class1200[5005];
+		this.field6935 = new PrimaryLayerEntity[5005];
 		this.field6961 = 0;
 		this.field6962 = new boolean[this.field6942 + this.field6942 + 1][this.field6942 + this.field6942 + 1];
 		this.field6960 = new boolean[this.field6942 + this.field6942 + 2][this.field6942 + this.field6942 + 2];
@@ -288,7 +288,7 @@ public class Scene {
 			class551 var5 = this.field6928[var4][arg0][arg1] = this.field6928[var4 + 1][arg0][arg1];
 			if (var5 != null) {
 				for (PrimaryLayerEntityList var6 = var5.field6964; var6 != null; var6 = var6.field7058) {
-					class1200 var7 = var6.field7057;
+					PrimaryLayerEntity var7 = var6.field7057;
 					if (var7.field12471 == arg0 && var7.field12468 == arg1) {
 						var7.field11717--;
 					}
@@ -447,7 +447,7 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.x(IIILasw;Lasw;I)V")
-	public void method8719(int arg0, int arg1, int arg2, class1198 arg3, class1198 arg4) {
+	public void method8719(int arg0, int arg1, int arg2, WallLayerEntity arg3, WallLayerEntity arg4) {
 		class551 var6 = this.method8706(arg0, arg1, arg2);
 		if (var6 == null) {
 			return;
@@ -481,7 +481,7 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.b(IIILasm;Lasm;B)V")
-	public void method8752(int arg0, int arg1, int arg2, class1197 arg3, class1197 arg4) {
+	public void method8752(int arg0, int arg1, int arg2, WallDecorLayerEntity arg3, WallDecorLayerEntity arg4) {
 		class551 var6 = this.method8706(arg0, arg1, arg2);
 		if (var6 == null) {
 			return;
@@ -515,7 +515,7 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.h(Lash;ZI)Z")
-	public boolean method8768(class1200 arg0, boolean arg1) {
+	public boolean method8768(PrimaryLayerEntity arg0, boolean arg1) {
 		boolean var3 = this.field6917 == this.field6913;
 		int var4 = 0;
 		short var5 = 0;
@@ -593,8 +593,8 @@ public class Scene {
 		if (var5 == null) {
 			return;
 		}
-		class1197 var6 = var5.field6968;
-		class1197 var7 = var5.field6976;
+		WallDecorLayerEntity var6 = var5.field6968;
+		WallDecorLayerEntity var7 = var5.field6976;
 		if (var6 != null) {
 			var6.field12452 = (short) (var6.field12452 * arg3 / (0x10 << this.field6900 - 7));
 			var6.field12451 = (short) (var6.field12451 * arg3 / (0x10 << this.field6900 - 7));
@@ -608,7 +608,7 @@ public class Scene {
 	@ObfuscatedName("tx.g(I)V")
 	public void method8723() {
 		for (int var1 = 0; var1 < this.field6961; var1++) {
-			class1200 var2 = this.field6935[var1];
+			PrimaryLayerEntity var2 = this.field6935[var1];
 			this.method8708(var2, true);
 			this.field6935[var1] = null;
 		}
@@ -616,12 +616,12 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.i(IIIB)Lasw;")
-	public class1198 method8724(int arg0, int arg1, int arg2) {
+	public WallLayerEntity method8724(int arg0, int arg1, int arg2) {
 		class551 var4 = this.field6928[arg0][arg1][arg2];
 		if (var4 != null) {
 			this.method8732(var4.field6966);
 			if (var4.field6966 != null) {
-				class1198 var5 = var4.field6966;
+				WallLayerEntity var5 = var4.field6966;
 				var4.field6966 = null;
 				return var5;
 			}
@@ -630,12 +630,12 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.j(IIIB)Lasw;")
-	public class1198 method8881(int arg0, int arg1, int arg2) {
+	public WallLayerEntity method8881(int arg0, int arg1, int arg2) {
 		class551 var4 = this.field6928[arg0][arg1][arg2];
 		if (var4 != null) {
 			this.method8732(var4.field6967);
 			if (var4.field6967 != null) {
-				class1198 var5 = var4.field6967;
+				WallLayerEntity var5 = var4.field6967;
 				var4.field6967 = null;
 				return var5;
 			}
@@ -644,12 +644,12 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.t(IIII)Lasm;")
-	public class1197 method8726(int arg0, int arg1, int arg2) {
+	public WallDecorLayerEntity method8726(int arg0, int arg1, int arg2) {
 		class551 var4 = this.field6928[arg0][arg1][arg2];
 		if (var4 != null) {
 			this.method8732(var4.field6968);
 			if (var4.field6968 != null) {
-				class1197 var5 = var4.field6968;
+				WallDecorLayerEntity var5 = var4.field6968;
 				var4.field6968 = null;
 				return var5;
 			}
@@ -658,12 +658,12 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.ae(IIII)Lasm;")
-	public class1197 method8727(int arg0, int arg1, int arg2) {
+	public WallDecorLayerEntity method8727(int arg0, int arg1, int arg2) {
 		class551 var4 = this.field6928[arg0][arg1][arg2];
 		if (var4 != null) {
 			this.method8732(var4.field6976);
 			if (var4.field6976 != null) {
-				class1197 var5 = var4.field6976;
+				WallDecorLayerEntity var5 = var4.field6976;
 				var4.field6976 = null;
 				return var5;
 			}
@@ -701,13 +701,13 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.al(IIILtd;I)Lash;")
-	public class1200 method8712(int arg0, int arg1, int arg2, class553 arg3) {
+	public PrimaryLayerEntity method8712(int arg0, int arg1, int arg2, class553 arg3) {
 		class551 var5 = this.field6928[arg0][arg1][arg2];
 		if (var5 == null) {
 			return null;
 		}
 		for (PrimaryLayerEntityList var6 = var5.field6964; var6 != null; var6 = var6.field7058) {
-			class1200 var7 = var6.field7057;
+			PrimaryLayerEntity var7 = var6.field7057;
 			if ((arg3 == null || arg3.method478(var7)) && var7.field12471 == arg1 && var7.field12468 == arg2) {
 				this.method8708(var7, false);
 				return var7;
@@ -717,7 +717,7 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.ac(Lash;ZI)V")
-	public void method8708(class1200 arg0, boolean arg1) {
+	public void method8708(PrimaryLayerEntity arg0, boolean arg1) {
 		int var3 = Math.min(this.field6910 - 1, Math.max(0, arg0.field12471));
 		int var4 = Math.min(this.field6910 - 1, Math.max(0, arg0.field12472));
 		int var5 = Math.min(this.field6911 - 1, Math.max(0, arg0.field12468));
@@ -750,14 +750,14 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.ai(Lalh;B)V")
-	public void method8732(class1019 arg0) {
+	public void method8732(GraphEntity arg0) {
 		if (arg0 == null) {
 			return;
 		}
 		arg0.method10537();
 		for (int var2 = 0; var2 < 2; var2++) {
-			class1019 var3 = null;
-			for (class1019 var4 = this.field6916[var2]; var4 != null; var4 = var4.field11712) {
+			GraphEntity var3 = null;
+			for (GraphEntity var4 = this.field6916[var2]; var4 != null; var4 = var4.field11712) {
 				if (arg0 == var4) {
 					if (var3 == null) {
 						this.field6916[var2] = var4.field11712;
@@ -768,8 +768,8 @@ public class Scene {
 				}
 				var3 = var4;
 			}
-			class1019 var5 = null;
-			for (class1019 var6 = this.field6929[var2]; var6 != null; var6 = var6.field11712) {
+			GraphEntity var5 = null;
+			for (GraphEntity var6 = this.field6929[var2]; var6 != null; var6 = var6.field11712) {
 				if (arg0 == var6) {
 					if (var5 == null) {
 						this.field6929[var2] = var6.field11712;
@@ -780,8 +780,8 @@ public class Scene {
 				}
 				var5 = var6;
 			}
-			class1019 var7 = null;
-			for (class1019 var8 = this.field6945[var2]; var8 != null; var8 = var8.field11712) {
+			GraphEntity var7 = null;
+			for (GraphEntity var8 = this.field6945[var2]; var8 != null; var8 = var8.field11712) {
 				if (arg0 == var8) {
 					if (var7 == null) {
 						this.field6945[var2] = var8.field11712;
@@ -796,19 +796,19 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.aw(IIII)Lasw;")
-	public class1198 method8711(int arg0, int arg1, int arg2) {
+	public WallLayerEntity method8711(int arg0, int arg1, int arg2) {
 		class551 var4 = this.field6928[arg0][arg1][arg2];
 		return var4 == null ? null : var4.field6966;
 	}
 
 	@ObfuscatedName("tx.as(IIII)Lasw;")
-	public class1198 method8880(int arg0, int arg1, int arg2) {
+	public WallLayerEntity method8880(int arg0, int arg1, int arg2) {
 		class551 var4 = this.field6928[arg0][arg1][arg2];
 		return var4 == null ? null : var4.field6967;
 	}
 
 	@ObfuscatedName("tx.at(IIII)Lasm;")
-	public class1197 method8735(int arg0, int arg1, int arg2) {
+	public WallDecorLayerEntity method8735(int arg0, int arg1, int arg2) {
 		class551 var4 = this.field6928[arg0][arg1][arg2];
 		return var4 == null ? null : var4.field6968;
 	}
@@ -820,13 +820,13 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.am(IIILtd;B)Lash;")
-	public class1200 method8856(int arg0, int arg1, int arg2, class553 arg3) {
+	public PrimaryLayerEntity method8856(int arg0, int arg1, int arg2, class553 arg3) {
 		class551 var5 = this.field6928[arg0][arg1][arg2];
 		if (var5 == null) {
 			return null;
 		}
 		for (PrimaryLayerEntityList var6 = var5.field6964; var6 != null; var6 = var6.field7058) {
-			class1200 var7 = var6.field7057;
+			PrimaryLayerEntity var7 = var6.field7057;
 			if ((arg3 == null || arg3.method478(var7)) && var7.field12471 == arg1 && var7.field12468 == arg2) {
 				return var7;
 			}
@@ -853,8 +853,8 @@ public class Scene {
 				for (int var3 = 0; var3 < this.field6911; var3++) {
 					class551 var4 = this.field6928[var1][var2][var3];
 					if (var4 != null) {
-						class1198 var5 = var4.field6966;
-						class1198 var6 = var4.field6967;
+						WallLayerEntity var5 = var4.field6966;
+						WallLayerEntity var6 = var4.field6967;
 						if (var5 != null && var5.method17379()) {
 							this.method8842(var5, var1, var2, var3, 1, 1);
 							if (var6 != null && var6.method17379()) {
@@ -865,7 +865,7 @@ public class Scene {
 							var5.method17378();
 						}
 						for (PrimaryLayerEntityList var7 = var4.field6964; var7 != null; var7 = var7.field7058) {
-							class1200 var8 = var7.field7057;
+							PrimaryLayerEntity var8 = var7.field7057;
 							if (var8 != null && var8.method17379()) {
 								this.method8842(var8, var1, var2, var3, var8.field12472 - var8.field12471 + 1, var8.field12467 - var8.field12468 + 1);
 								var8.method17378();
@@ -883,7 +883,7 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.aq(Lalh;IIIS)V")
-	public void method8741(class1019 arg0, int arg1, int arg2, int arg3) {
+	public void method8741(GraphEntity arg0, int arg1, int arg2, int arg3) {
 		if (arg2 < this.field6910) {
 			class551 var5 = this.field6928[arg1][arg2 + 1][arg3];
 			if (var5 != null && var5.field6974 != null && var5.field6974.method17379()) {
@@ -916,7 +916,7 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.ax(Lalh;IIIII)V")
-	public void method8842(class1019 arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+	public void method8842(GraphEntity arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		boolean var7 = true;
 		int var8 = arg2;
 		int var9 = arg2 + arg4;
@@ -931,8 +931,8 @@ public class Scene {
 								class551 var15 = this.field6928[var12][var13][var14];
 								if (var15 != null) {
 									int var16 = (this.field6913[var12].method1529(var13, var14) + this.field6913[var12].method1529(var13 + 1, var14) + this.field6913[var12].method1529(var13, var14 + 1) + this.field6913[var12].method1529(var13 + 1, var14 + 1)) / 4 - (this.field6913[arg1].method1529(arg2, arg3) + this.field6913[arg1].method1529(arg2 + 1, arg3) + this.field6913[arg1].method1529(arg2, arg3 + 1) + this.field6913[arg1].method1529(arg2 + 1, arg3 + 1)) / 4;
-									class1198 var17 = var15.field6966;
-									class1198 var18 = var15.field6967;
+									WallLayerEntity var17 = var15.field6966;
+									WallLayerEntity var18 = var15.field6967;
 									if (var17 != null && var17.method17379()) {
 										arg0.method17377(this.field6907, var17, this.field6924 * (1 - arg4) + this.field6901 * (var13 - arg2), var16, this.field6924 * (1 - arg5) + this.field6901 * (var14 - arg3), var7);
 									}
@@ -940,7 +940,7 @@ public class Scene {
 										arg0.method17377(this.field6907, var18, this.field6924 * (1 - arg4) + this.field6901 * (var13 - arg2), var16, this.field6924 * (1 - arg5) + this.field6901 * (var14 - arg3), var7);
 									}
 									for (PrimaryLayerEntityList var19 = var15.field6964; var19 != null; var19 = var19.field7058) {
-										class1200 var20 = var19.field7057;
+										PrimaryLayerEntity var20 = var19.field7057;
 										if (var20 != null && var20.method17379() && (var20.field12471 == var13 || var8 == var13) && (var20.field12468 == var14 || var10 == var14)) {
 											int var21 = var20.field12472 - var20.field12471 + 1;
 											int var22 = var20.field12467 - var20.field12468 + 1;
@@ -1083,7 +1083,7 @@ public class Scene {
 		this.field6918 = 0;
 		this.field6941++;
 		if ((arg4 & 0x2) == 0) {
-			for (class1019 var7 = this.field6916[var6]; var7 != null; var7 = var7.field11712) {
+			for (GraphEntity var7 = this.field6916[var6]; var7 != null; var7 = var7.field11712) {
 				this.method8745(var7);
 				if (var7.field11715 != -1 && !this.method8748(var7, arg0, arg1, arg2, arg3)) {
 					this.field6934[++this.field6931 - 1] = var7;
@@ -1091,13 +1091,13 @@ public class Scene {
 			}
 		}
 		if ((arg4 & 0x1) == 0) {
-			for (class1019 var8 = this.field6929[var6]; var8 != null; var8 = var8.field11712) {
+			for (GraphEntity var8 = this.field6929[var6]; var8 != null; var8 = var8.field11712) {
 				this.method8745(var8);
 				if (var8.field11715 != -1 && !this.method8748(var8, arg0, arg1, arg2, arg3)) {
 					this.field6933[++this.field6918 - 1] = var8;
 				}
 			}
-			for (class1019 var9 = this.field6945[var6]; var9 != null; var9 = var9.field11712) {
+			for (GraphEntity var9 = this.field6945[var6]; var9 != null; var9 = var9.field11712) {
 				this.method8745(var9);
 				if (var9.field11715 != -1 && !this.method8748(var9, arg0, arg1, arg2, arg3)) {
 					if (var9.method16489()) {
@@ -1198,26 +1198,26 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.aj(Lalh;I)V")
-	public void method8745(class1019 arg0) {
+	public void method8745(GraphEntity arg0) {
 		Vector3 var2 = arg0.method10536().field4298;
 		this.field6907.method2525((float) var2.field4308, (float) ((int) var2.field4311 + (arg0.method16523() >> 1)), (float) var2.field4313, this.field6927);
 		arg0.field11715 = (int) this.field6927[2];
 	}
 
 	@ObfuscatedName("tx.ay([Lalh;II)V")
-	public void method8751(class1019[] arg0, int arg1, int arg2) {
+	public void method8751(GraphEntity[] arg0, int arg1, int arg2) {
 		if (arg1 >= arg2) {
 			return;
 		}
 		int var4 = (arg1 + arg2) / 2;
 		int var5 = arg1;
-		class1019 var6 = arg0[var4];
+		GraphEntity var6 = arg0[var4];
 		arg0[var4] = arg0[arg2];
 		arg0[arg2] = var6;
 		int var7 = var6.field11715;
 		for (int var8 = arg1; var8 < arg2; var8++) {
 			if (arg0[var8].field11715 > (var8 & 0x1) + var7) {
-				class1019 var9 = arg0[var8];
+				GraphEntity var9 = arg0[var8];
 				arg0[var8] = arg0[var5];
 				arg0[var5++] = var9;
 			}
@@ -1229,19 +1229,19 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.ab([Lalh;II)V")
-	public void method8747(class1019[] arg0, int arg1, int arg2) {
+	public void method8747(GraphEntity[] arg0, int arg1, int arg2) {
 		if (arg1 >= arg2) {
 			return;
 		}
 		int var4 = (arg1 + arg2) / 2;
 		int var5 = arg1;
-		class1019 var6 = arg0[var4];
+		GraphEntity var6 = arg0[var4];
 		arg0[var4] = arg0[arg2];
 		arg0[arg2] = var6;
 		int var7 = var6.field11715;
 		for (int var8 = arg1; var8 < arg2; var8++) {
 			if (arg0[var8].field11715 < (var8 & 0x1) + var7) {
-				class1019 var9 = arg0[var8];
+				GraphEntity var9 = arg0[var8];
 				arg0[var8] = arg0[var5];
 				arg0[var5++] = var9;
 			}
@@ -1253,14 +1253,14 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.az(Lalh;Z[[[BIB)Z")
-	public boolean method8748(class1019 arg0, boolean arg1, byte[][][] arg2, int arg3, byte arg4) {
+	public boolean method8748(GraphEntity arg0, boolean arg1, byte[][][] arg2, int arg3, byte arg4) {
 		if (!this.field6955) {
 			return false;
-		} else if (arg0 instanceof class1200) {
-			short var6 = ((class1200) arg0).field12472;
-			short var7 = ((class1200) arg0).field12467;
-			short var8 = ((class1200) arg0).field12471;
-			short var9 = ((class1200) arg0).field12468;
+		} else if (arg0 instanceof PrimaryLayerEntity) {
+			short var6 = ((PrimaryLayerEntity) arg0).field12472;
+			short var7 = ((PrimaryLayerEntity) arg0).field12467;
+			short var8 = ((PrimaryLayerEntity) arg0).field12471;
+			short var9 = ((PrimaryLayerEntity) arg0).field12468;
 			for (int var10 = var8; var10 <= var6; var10++) {
 				for (int var11 = var9; var11 <= var7; var11++) {
 					if (arg0.field11714 < this.field6909 && var10 >= this.field6949 && var10 < this.field6946 && var11 >= this.field6920 && var11 < this.field6948) {
@@ -1293,7 +1293,7 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.aa(Lalh;[Lakf;)V")
-	public void method8749(class1019 arg0, Light[] arg1) {
+	public void method8749(GraphEntity arg0, Light[] arg1) {
 		if (this.field6906) {
 			int var3 = arg0.method18375(arg1);
 			this.field6907.method2491(var3, arg1);
@@ -1304,9 +1304,9 @@ public class Scene {
 			Vector3 var6 = arg0.method10536().field4298;
 			int var7;
 			int var8;
-			if (arg0 instanceof class1200) {
-				var7 = ((class1200) arg0).field12471;
-				var8 = ((class1200) arg0).field12468;
+			if (arg0 instanceof PrimaryLayerEntity) {
+				var7 = ((PrimaryLayerEntity) arg0).field12471;
+				var8 = ((PrimaryLayerEntity) arg0).field12468;
 			} else {
 				var7 = (int) var6.field4308 >> this.field6900;
 				var8 = (int) var6.field4313 >> this.field6900;
@@ -1335,7 +1335,7 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.af(Lara;III[ZI)Z")
-	public boolean method8750(class1175 arg0, int arg1, int arg2, int arg3, boolean[] arg4) {
+	public boolean method8750(HardShadow arg0, int arg1, int arg2, int arg3, boolean[] arg4) {
 		boolean var6 = false;
 		if (this.field6917 != this.field6913) {
 			int var7 = this.field6915[arg1].method1527(arg2, arg3);
@@ -1358,7 +1358,7 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.ak(Lara;III[ZI)V")
-	public void method8814(class1175 arg0, int arg1, int arg2, int arg3, boolean[] arg4) {
+	public void method8814(HardShadow arg0, int arg1, int arg2, int arg3, boolean[] arg4) {
 		if (this.field6917 == this.field6913) {
 			return;
 		}
@@ -1375,7 +1375,7 @@ public class Scene {
 
 	@ObfuscatedName("tx.an(III)V")
 	public void method8870(int arg0, int arg1) {
-		class1175 var3 = null;
+		HardShadow var3 = null;
 		for (int var4 = arg0; var4 < arg1; var4++) {
 			class104 var5 = this.field6915[var4];
 			if (var5 != null) {
@@ -1513,7 +1513,7 @@ public class Scene {
 					}
 					for (int var18 = var16; var18 <= var17; var18++) {
 						byte var19 = 1;
-						class1200 var20 = this.method8856(var4, var18, var12, null);
+						PrimaryLayerEntity var20 = this.method8856(var4, var18, var12, null);
 						if (var20 != null && var20.field12469 != 0) {
 							if (var20.field12469 == 1) {
 								boolean var21 = var18 - 1 >= var16;

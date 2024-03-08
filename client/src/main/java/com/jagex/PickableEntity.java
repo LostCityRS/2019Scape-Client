@@ -11,7 +11,7 @@ public class PickableEntity {
 	public static Stack field6979 = new Stack();
 
 	@ObfuscatedName("tl.n")
-	public class1019 field6978;
+	public GraphEntity field6978;
 
 	@ObfuscatedName("tl.m")
 	public boolean field6977;

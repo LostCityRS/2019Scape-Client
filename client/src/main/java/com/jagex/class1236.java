@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("auu")
-public class class1236 extends class1200 {
+public class class1236 extends PrimaryLayerEntity {
 
 	@ObfuscatedName("auu.ae")
 	public class529 field12614;
@@ -34,7 +34,7 @@ public class class1236 extends class1200 {
 	}
 
 	@ObfuscatedName("auu.fq(Ldh;Lalh;IIIZB)V")
-	public void method17377(Renderer arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public void method17377(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
 	}
 
 	@ObfuscatedName("auu.ff(B)V")
@@ -48,7 +48,7 @@ public class class1236 extends class1200 {
 		}
 		Matrix4x3 var2 = arg0.method2209();
 		Matrix4x3 var3 = this.method10533();
-		class420 var4 = this.method10536();
+		ScaleRotTrans var4 = this.method10536();
 		var2.method6292(var3);
 		class551 var5 = this.field11716.field6928[this.field11717][(int) var4.field4298.field4308 >> 9][(int) var4.field4298.field4313 >> 9];
 		if (var5 != null && var5.field6974 != null) {
@@ -63,7 +63,7 @@ public class class1236 extends class1200 {
 	}
 
 	@ObfuscatedName("auu.fv(Ldh;B)Luq;")
-	public class556 method17371(Renderer arg0) {
+	public EntityBounds method17371(Renderer arg0) {
 		return null;
 	}
 

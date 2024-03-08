@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("ajg")
-public class class950 extends class1198 implements Location {
+public class StaticWallEntity extends WallLayerEntity implements Location {
 
 	@ObfuscatedName("ajg.c")
 	public static final int[] field11164 = new int[] { 1, 2, 4, 8 };
@@ -19,10 +19,10 @@ public class class950 extends class1198 implements Location {
 	public Model field11173;
 
 	@ObfuscatedName("ajg.s")
-	public class1175 field11163;
+	public HardShadow field11163;
 
 	@ObfuscatedName("ajg.y")
-	public class556 field11165;
+	public EntityBounds field11165;
 
 	@ObfuscatedName("ajg.q")
 	public final int field11166;
@@ -48,7 +48,7 @@ public class class950 extends class1198 implements Location {
 	@ObfuscatedName("ajg.j")
 	public int field12460;
 
-	public class950(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, boolean arg12, class420 arg13) {
+	public StaticWallEntity(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, boolean arg12, ScaleRotTrans arg13) {
 		super(arg0, arg6, arg7, arg8, arg4, arg5, method1575(arg10, arg11), arg13);
 		this.field11162 = arg2;
 		this.field11166 = arg3.field7450;
@@ -69,11 +69,11 @@ public class class950 extends class1198 implements Location {
 		class746 var16 = this.method17420(arg1, var15, this.field11172);
 		if (var16 != null) {
 			this.field11173 = (Model) var16.field8737;
-			this.field11163 = (class1175) var16.field8738;
+			this.field11163 = (HardShadow) var16.field8738;
 			if (this.field11171 || arg3.field7525) {
 				this.field11173 = this.field11173.method1773((byte) 0, var15, false);
 				if (arg3.field7525) {
-					LocTint var17 = client.field10855.method7722();
+					LocTint var17 = client.world.method7722();
 					this.field11173.method1745(var17.field5015, var17.field5013, var17.field5014, var17.field5012);
 				}
 			}
@@ -136,10 +136,10 @@ public class class950 extends class1198 implements Location {
 	}
 
 	@ObfuscatedName("ajg.fv(Ldh;B)Luq;")
-	public class556 method17371(Renderer arg0) {
+	public EntityBounds method17371(Renderer arg0) {
 		Vector3 var2 = this.method10536().field4298;
 		if (this.field11165 == null) {
-			this.field11165 = class1019.method15111((int) var2.field4308, (int) var2.field4311, (int) var2.field4313, this.method17419(arg0, 0));
+			this.field11165 = GraphEntity.method15111((int) var2.field4308, (int) var2.field4311, (int) var2.field4313, this.method17419(arg0, 0));
 		}
 		return this.field11165;
 	}
@@ -186,14 +186,14 @@ public class class950 extends class1198 implements Location {
 	}
 
 	@ObfuscatedName("ajg.fq(Ldh;Lalh;IIIZB)V")
-	public void method17377(Renderer arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5) {
-		if (arg1 instanceof class950) {
-			class950 var7 = (class950) arg1;
+	public void method17377(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
+		if (arg1 instanceof StaticWallEntity) {
+			StaticWallEntity var7 = (StaticWallEntity) arg1;
 			if (this.field11173 != null && var7.field11173 != null) {
 				this.field11173.method1686(var7.field11173, arg2, arg3, arg4, arg5);
 			}
-		} else if (arg1 instanceof class948) {
-			class948 var8 = (class948) arg1;
+		} else if (arg1 instanceof StaticSceneryEntity) {
+			StaticSceneryEntity var8 = (StaticSceneryEntity) arg1;
 			if (this.field11173 != null && var8.field11136 != null) {
 				this.field11173.method1686(var8.field11136, arg2, arg3, arg4, arg5);
 			}
@@ -243,10 +243,10 @@ public class class950 extends class1198 implements Location {
 	@ObfuscatedName("ajg.l(Ldh;B)V")
 	public void method8217(Renderer arg0) {
 		Object var2 = null;
-		class1175 var4;
+		HardShadow var4;
 		if (this.field11163 == null && this.field11172) {
 			class746 var3 = this.method17420(arg0, 262144, true);
-			var4 = (class1175) (var3 == null ? null : var3.field8738);
+			var4 = (HardShadow) (var3 == null ? null : var3.field8738);
 		} else {
 			var4 = this.field11163;
 			this.field11163 = null;
@@ -260,10 +260,10 @@ public class class950 extends class1198 implements Location {
 	@ObfuscatedName("ajg.u(Ldh;B)V")
 	public void method8209(Renderer arg0) {
 		Object var2 = null;
-		class1175 var4;
+		HardShadow var4;
 		if (this.field11163 == null && this.field11172) {
 			class746 var3 = this.method17420(arg0, 262144, true);
-			var4 = (class1175) (var3 == null ? null : var3.field8738);
+			var4 = (HardShadow) (var3 == null ? null : var3.field8738);
 		} else {
 			var4 = this.field11163;
 			this.field11163 = null;

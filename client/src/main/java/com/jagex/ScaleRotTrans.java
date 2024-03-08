@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("oe")
-public class class420 {
+public class ScaleRotTrans {
 
 	@ObfuscatedName("oe.p")
 	public class421 field4297;
@@ -14,17 +14,17 @@ public class class420 {
 	@ObfuscatedName("oe.c")
 	public Vector3 field4299;
 
-	public class420(Packet arg0, boolean arg1) {
+	public ScaleRotTrans(Packet arg0, boolean arg1) {
 		this.method6384(arg0, arg1);
 	}
 
-	public class420() {
+	public ScaleRotTrans() {
 		this.field4297 = new class421();
 		this.field4298 = new Vector3();
 		this.field4299 = new Vector3(1.0F, 1.0F, 1.0F);
 	}
 
-	public class420(class420 arg0) {
+	public ScaleRotTrans(ScaleRotTrans arg0) {
 		this();
 		this.method6386(arg0);
 	}
@@ -90,7 +90,7 @@ public class class420 {
 	}
 
 	@ObfuscatedName("oe.m(Loe;)V")
-	public void method6386(class420 arg0) {
+	public void method6386(ScaleRotTrans arg0) {
 		this.field4297.method6412(arg0.field4297);
 		this.field4298.method6492(arg0.field4298);
 		this.field4299.method6492(arg0.field4299);
@@ -107,7 +107,7 @@ public class class420 {
 	}
 
 	@ObfuscatedName("oe.f(Loe;)V")
-	public final void method6398(class420 arg0) {
+	public final void method6398(ScaleRotTrans arg0) {
 		this.field4297.method6424(arg0.field4297);
 		this.field4298.method6526(arg0.field4297);
 		this.field4298.method6497(arg0.field4298);
@@ -123,8 +123,8 @@ public class class420 {
 			return false;
 		} else if (arg0 == this) {
 			return true;
-		} else if (arg0 instanceof class420) {
-			class420 var2 = (class420) arg0;
+		} else if (arg0 instanceof ScaleRotTrans) {
+			ScaleRotTrans var2 = (ScaleRotTrans) arg0;
 			return this.field4297.equals(var2.field4297) && this.field4298.method6488(var2.field4298) && this.field4299.method6488(var2.field4299);
 		} else {
 			return false;

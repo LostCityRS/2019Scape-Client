@@ -979,7 +979,7 @@ public abstract class Model {
 	public abstract boolean method1725(int arg0, int arg1, Matrix4x3 arg2, boolean arg3, int arg4);
 
 	@ObfuscatedName("do.ao(Lara;)Lara;")
-	public abstract class1175 method1726(class1175 arg0);
+	public abstract HardShadow method1726(HardShadow arg0);
 
 	@ObfuscatedName("do.aj()I")
 	public abstract int method1727();

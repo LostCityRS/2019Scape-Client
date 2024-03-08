@@ -662,11 +662,11 @@ public class LocType implements ConfigType {
 			var20 = (class746) this.field7451.field7533.method2930(var14);
 		}
 		Model var22 = (Model) (var20 == null ? null : var20.field8737);
-		class1175 var23 = null;
+		HardShadow var23 = null;
 		if (var22 != null && arg0.method2394(var22.method1691(), var16) == 0) {
-			var23 = (class1175) var20.field8738;
+			var23 = (HardShadow) var20.field8738;
 			if (arg9 && var23 == null && !var17 && !var18) {
-				var23 = (class1175) (var20.field8738 = var22.method1726(null));
+				var23 = (HardShadow) (var20.field8738 = var22.method1726(null));
 			}
 		} else {
 			if (var22 != null) {

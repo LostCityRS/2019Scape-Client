@@ -83,7 +83,7 @@ public class class280 {
 			return;
 		}
 		for (int var2 = field2946 + 1; var2 < Statics.field2939.length; var2++) {
-			if (Statics.field2939[var2].method4912() >= 100 && field2946 == var2 - 1 && client.field10791 != 5 && Statics.field593.method4857()) {
+			if (Statics.field2939[var2].method4912() >= 100 && field2946 == var2 - 1 && client.state != 5 && Statics.field593.method4857()) {
 				try {
 					Statics.field2939[var2].method4916();
 				} catch (Exception var4) {
@@ -330,7 +330,7 @@ public class class280 {
 			Statics.field7762 = new InvTypeList(client.field10768, Statics.field1680, Statics.field11838);
 			Statics.field7943 = new LightTypeList(client.field10768, Statics.field1680, Statics.field11838);
 			Statics.field1897 = new LocTypeList(client.field10768, Statics.field1680, true, Statics.field4475, Statics.field9213);
-			client.field10855.method7733(Statics.field1897);
+			client.world.method7733(Statics.field1897);
 			Statics.field3183.method7674(new LocTypeList(client.field10768, Statics.field1680, true, Statics.field4475, Statics.field9213));
 			Statics.field5011 = new MapElementTypeList(client.field10768, Statics.field1680, Statics.field11838, Statics.field10317);
 			Statics.field4241 = new MSITypeList(client.field10768, Statics.field1680, Statics.field11838, Statics.field10317);
@@ -366,7 +366,7 @@ public class class280 {
 			class502.method13864(Statics.field9213, Statics.field7366, Statics.field7669);
 			Huffman var19 = new Huffman(Statics.field8741.method6906("huffman", ""));
 			StringEncoder.setHuffman(var19);
-			Statics.field6594 = class511.method6109();
+			Statics.field6594 = Timer.method6109();
 			Statics.field10581 = new HardwarePlatform(true);
 		}
 		if (Statics.field3419 == class277.field2918) {
@@ -377,7 +377,7 @@ public class class280 {
 			}
 		}
 		if (Statics.field3419 == class277.field2914) {
-			WorldMap.method8506(Statics.field10752, Statics.field8332, Statics.field8168, Statics.field8145, client.field10855.method7750(), Statics.field5011, Statics.field4241, Statics.field7410, Statics.field7410);
+			WorldMap.method8506(Statics.field10752, Statics.field8332, Statics.field8168, Statics.field8145, client.world.method7750(), Statics.field5011, Statics.field4241, Statics.field7410, Statics.field7410);
 		}
 		if (Statics.field3419 == class277.field2915) {
 			Statics.field7228 = new class861(Statics.field8911);

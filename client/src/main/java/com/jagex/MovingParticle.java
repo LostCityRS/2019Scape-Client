@@ -412,28 +412,28 @@ public class MovingParticle extends class1144 {
 				int var19 = this.field12159 >> 12;
 				int var20 = this.field12161 >> 12;
 				if (var16.field6966 != null) {
-					class556 var21 = var16.field6966.method17371(arg1);
+					EntityBounds var21 = var16.field6966.method17371(arg1);
 					if (var21 != null && var21.method8962(var19, var7, var20)) {
 						this.method19669();
 						return;
 					}
 				}
 				if (var16.field6967 != null) {
-					class556 var22 = var16.field6967.method17371(arg1);
+					EntityBounds var22 = var16.field6967.method17371(arg1);
 					if (var22 != null && var22.method8962(var19, var7, var20)) {
 						this.method19669();
 						return;
 					}
 				}
 				if (var16.field6974 != null) {
-					class556 var23 = var16.field6974.method17371(arg1);
+					EntityBounds var23 = var16.field6974.method17371(arg1);
 					if (var23 != null && var23.method8962(var19, var7, var20)) {
 						this.method19669();
 						return;
 					}
 				}
 				for (PrimaryLayerEntityList var24 = var16.field6964; var24 != null; var24 = var24.field7058) {
-					class556 var25 = var24.field7057.method17371(arg1);
+					EntityBounds var25 = var24.field7057.method17371(arg1);
 					if (var25 != null && var25.method8962(var19, var7, var20)) {
 						this.method19669();
 						return;

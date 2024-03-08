@@ -50,7 +50,7 @@ public class class576 {
 
 	@ObfuscatedName("ud.l(I)V")
 	public static void method9189() {
-		if (client.field10791 != 18 && client.field10791 != 3 || client.field10849 == null) {
+		if (client.state != 18 && client.state != 3 || client.field10849 == null) {
 			return;
 		}
 		while (true) {

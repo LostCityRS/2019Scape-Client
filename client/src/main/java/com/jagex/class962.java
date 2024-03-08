@@ -28,7 +28,7 @@ public final class class962 extends Node {
 	public int field11232;
 
 	@ObfuscatedName("ajt.d")
-	public class420 field11233;
+	public ScaleRotTrans field11233;
 
 	@ObfuscatedName("ajt.c")
 	public int field11234;
@@ -40,7 +40,7 @@ public final class class962 extends Node {
 	public int field11236;
 
 	@ObfuscatedName("ajt.o")
-	public class420 field11230;
+	public ScaleRotTrans field11230;
 
 	@ObfuscatedName("ajt.s")
 	public class597 field11241;
@@ -61,7 +61,7 @@ public final class class962 extends Node {
 	public static long field11243 = 1L;
 
 	@ObfuscatedName("jf.e(IIIIIIILoe;B)V")
-	public static void method4653(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, class420 arg7) {
+	public static void method4653(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ScaleRotTrans arg7) {
 		class962 var8 = null;
 		for (class962 var9 = (class962) field11237.method14191(); var9 != null; var9 = (class962) field11237.method14161()) {
 			if (var9.field11238 == arg0 && var9.field11226 == arg1 && var9.field11228 == arg2 && var9.field11229 == arg3) {
@@ -75,7 +75,7 @@ public final class class962 extends Node {
 			var8.field11229 = arg3;
 			var8.field11226 = arg1;
 			var8.field11228 = arg2;
-			if (arg1 >= 0 && arg2 >= 0 && arg1 < client.field10855.method7728() && arg2 < client.field10855.method7758()) {
+			if (arg1 >= 0 && arg2 >= 0 && arg1 < client.world.method7728() && arg2 < client.world.method7758()) {
 				method9023(var8);
 			}
 			field11237.method14153(var8);
@@ -84,7 +84,7 @@ public final class class962 extends Node {
 		var8.field11236 = arg5;
 		var8.field11235 = arg6;
 		if (arg7 != null) {
-			var8.field11230 = new class420(arg7);
+			var8.field11230 = new ScaleRotTrans(arg7);
 		}
 		var8.field11239 = true;
 		var8.field11240 = false;
@@ -121,7 +121,7 @@ public final class class962 extends Node {
 				var0.method8440();
 			} else {
 				var0.field11239 = true;
-				if (var0.field11226 >= 0 && var0.field11228 >= 0 && var0.field11226 < client.field10855.method7728() && var0.field11228 < client.field10855.method7758()) {
+				if (var0.field11226 >= 0 && var0.field11228 >= 0 && var0.field11226 < client.world.method7728() && var0.field11228 < client.world.method7758()) {
 					method9023(var0);
 				}
 			}
@@ -137,7 +137,7 @@ public final class class962 extends Node {
 
 	@ObfuscatedName("uf.k(Lajt;B)V")
 	public static final void method9023(class962 arg0) {
-		Scene var1 = client.field10855.method7743();
+		Scene var1 = client.world.method7743();
 		if (var1 == null) {
 			return;
 		}
@@ -163,16 +163,16 @@ public final class class962 extends Node {
 			arg0.field11232 = var2.method8220();
 			arg0.field11231 = var2.method8204();
 		}
-		if (var2 instanceof class1019) {
-			class1019 var3 = (class1019) var2;
-			arg0.field11230 = var3.field11711 == null ? null : new class420(var3.field11711);
+		if (var2 instanceof GraphEntity) {
+			GraphEntity var3 = (GraphEntity) var2;
+			arg0.field11230 = var3.field11711 == null ? null : new ScaleRotTrans(var3.field11711);
 		}
 	}
 
 	@ObfuscatedName("eq.w(Lajt;ZI)V")
 	public static final void method2834(class962 arg0, boolean arg1) {
 		if (arg0.field11240) {
-			if (arg0.field11227 < 0 || ClientMapLoader.method14705(client.field10855.method7750(), arg0.field11227, arg0.field11232)) {
+			if (arg0.field11227 < 0 || ClientMapLoader.method14705(client.world.method7750(), arg0.field11227, arg0.field11232)) {
 				if (arg1) {
 					method9194(arg0.field11238, arg0.field11229, arg0.field11226, arg0.field11228, null);
 				} else {
@@ -180,7 +180,7 @@ public final class class962 extends Node {
 				}
 				arg0.method8440();
 			}
-		} else if (arg0.field11239 && arg0.field11226 >= 1 && arg0.field11228 >= 1 && arg0.field11226 <= client.field10855.method7728() - 2 && arg0.field11228 <= client.field10855.method7758() - 2 && (arg0.field11234 < 0 || ClientMapLoader.method14705(client.field10855.method7750(), arg0.field11234, arg0.field11236))) {
+		} else if (arg0.field11239 && arg0.field11226 >= 1 && arg0.field11228 >= 1 && arg0.field11226 <= client.world.method7728() - 2 && arg0.field11228 <= client.world.method7758() - 2 && (arg0.field11234 < 0 || ClientMapLoader.method14705(client.world.method7750(), arg0.field11234, arg0.field11236))) {
 			if (arg1) {
 				method9194(arg0.field11238, arg0.field11229, arg0.field11226, arg0.field11228, arg0.field11241);
 			} else {
@@ -196,22 +196,22 @@ public final class class962 extends Node {
 	}
 
 	@ObfuscatedName("acv.l(IIIIIIILoe;IIB)V")
-	public static final void method15005(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, class420 arg7, int arg8, int arg9) {
-		if (arg2 < 1 || arg3 < 1 || arg2 > client.field10855.method7728() - 2 || arg3 > client.field10855.method7758() - 2) {
+	public static final void method15005(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ScaleRotTrans arg7, int arg8, int arg9) {
+		if (arg2 < 1 || arg3 < 1 || arg2 > client.world.method7728() - 2 || arg3 > client.world.method7758() - 2) {
 			return;
 		}
 		int var10 = arg0;
-		if (arg0 < 3 && client.field10855.method7793().method7105(arg2, arg3)) {
+		if (arg0 < 3 && client.world.method7793().method7105(arg2, arg3)) {
 			var10 = arg0 + 1;
 		}
-		if (client.field10855.method7743() == null) {
+		if (client.world.method7743() == null) {
 			return;
 		}
-		client.field10855.method7744().method16871(Statics.field8198, arg0, arg1, arg2, arg3);
+		client.world.method7744().method16871(Statics.field8198, arg0, arg1, arg2, arg3);
 		if (arg4 >= 0) {
 			int var11 = Statics.field688.field11526.method18489();
 			Statics.field688.method18157(Statics.field688.field11526, 1);
-			client.field10855.method7744().method16867(Statics.field8198, var10, arg0, arg2, arg3, arg4, arg5, arg6, arg8, arg9, arg7);
+			client.world.method7744().method16867(Statics.field8198, var10, arg0, arg2, arg3, arg4, arg5, arg6, arg8, arg9, arg7);
 			Statics.field688.method18157(Statics.field688.field11526, var11);
 		}
 		class42.method16444(Statics.field4490.field11717);
@@ -219,24 +219,24 @@ public final class class962 extends Node {
 
 	@ObfuscatedName("ud.u(IIIILvp;I)V")
 	public static final void method9194(int arg0, int arg1, int arg2, int arg3, class597 arg4) {
-		if (arg2 < 1 || arg3 < 1 || arg2 > client.field10855.method7728() - 2 || arg3 > client.field10855.method7758() - 2) {
+		if (arg2 < 1 || arg3 < 1 || arg2 > client.world.method7728() - 2 || arg3 > client.world.method7758() - 2) {
 			return;
 		}
-		if (client.field10855.method7743() == null) {
+		if (client.world.method7743() == null) {
 			return;
 		}
-		Location var5 = client.field10855.method7744().method16899(arg0, arg1, arg2, arg3);
+		Location var5 = client.world.method7744().method16899(arg0, arg1, arg2, arg3);
 		if (var5 == null) {
 			return;
 		}
-		if (var5 instanceof class946) {
-			((class946) var5).method17369(arg4);
-		} else if (var5 instanceof class947) {
-			((class947) var5).method17396(arg4);
-		} else if (var5 instanceof class952) {
-			((class952) var5).method17429(arg4);
-		} else if (var5 instanceof class951) {
-			((class951) var5).method17425(arg4);
+		if (var5 instanceof DynamicSceneryEntity) {
+			((DynamicSceneryEntity) var5).method17369(arg4);
+		} else if (var5 instanceof DynamicGroundDecorEntity) {
+			((DynamicGroundDecorEntity) var5).method17396(arg4);
+		} else if (var5 instanceof DynamicWallEntity) {
+			((DynamicWallEntity) var5).method17429(arg4);
+		} else if (var5 instanceof DynamicWallDecorEntity) {
+			((DynamicWallDecorEntity) var5).method17425(arg4);
 		}
 	}
 }

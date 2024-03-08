@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 import java.util.LinkedList;
 
 @ObfuscatedName("ry")
-public class class490 implements Runnable {
+public class AsyncRebuild implements Runnable {
 
 	@ObfuscatedName("ry.e")
 	public volatile boolean field5002 = false;
@@ -84,6 +84,6 @@ public class class490 implements Runnable {
 		for (boolean var2 = this.field5004.method7723(); !var2; var2 = this.field5004.method7723()) {
 		}
 		this.field5004.method7729();
-		client.field10855.method7729();
+		client.world.method7729();
 	}
 }

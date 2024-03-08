@@ -86,7 +86,7 @@ public class ObjStackEntity extends class1199 {
 	}
 
 	@ObfuscatedName("aut.fv(Ldh;B)Luq;")
-	public class556 method17371(Renderer arg0) {
+	public EntityBounds method17371(Renderer arg0) {
 		return null;
 	}
 

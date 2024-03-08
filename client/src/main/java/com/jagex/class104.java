@@ -82,16 +82,16 @@ public abstract class class104 {
 	public abstract void method1526(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, boolean[][] arg7);
 
 	@ObfuscatedName("cb.d(IILara;)Lara;")
-	public abstract class1175 method1531(int arg0, int arg1, class1175 arg2);
+	public abstract HardShadow method1531(int arg0, int arg1, HardShadow arg2);
 
 	@ObfuscatedName("cb.c(Lara;IIIIZ)V")
-	public abstract void method1532(class1175 arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5);
+	public abstract void method1532(HardShadow arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5);
 
 	@ObfuscatedName("cb.v(Lara;IIIIZ)Z")
-	public abstract boolean method1535(class1175 arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5);
+	public abstract boolean method1535(HardShadow arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5);
 
 	@ObfuscatedName("cb.r(Lara;IIIIZ)V")
-	public abstract void method1543(class1175 arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5);
+	public abstract void method1543(HardShadow arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5);
 
 	@ObfuscatedName("cb.f(III[[ZZI)V")
 	public abstract void method1548(int arg0, int arg1, int arg2, boolean[][] arg3, boolean arg4, int arg5);

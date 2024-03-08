@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("aur")
-public class class1235 extends class1200 {
+public class class1235 extends PrimaryLayerEntity {
 
 	@ObfuscatedName("aur.ae")
 	public int field12613;
@@ -66,7 +66,7 @@ public class class1235 extends class1200 {
 	}
 
 	@ObfuscatedName("aur.fv(Ldh;B)Luq;")
-	public class556 method17371(Renderer arg0) {
+	public EntityBounds method17371(Renderer arg0) {
 		return null;
 	}
 
@@ -156,7 +156,7 @@ public class class1235 extends class1200 {
 	}
 
 	@ObfuscatedName("aur.fq(Ldh;Lalh;IIIZB)V")
-	public final void method17377(Renderer arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void method17377(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 

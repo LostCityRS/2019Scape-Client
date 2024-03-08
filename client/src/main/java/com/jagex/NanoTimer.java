@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aja")
-public class class944 extends class511 {
+public class NanoTimer extends Timer {
 
 	@ObfuscatedName("aja.e")
 	public long field11119 = 0L;
@@ -23,7 +23,7 @@ public class class944 extends class511 {
 	@ObfuscatedName("aja.w")
 	public int field11117 = 1;
 
-	public class944() {
+	public NanoTimer() {
 		this.field11119 = System.nanoTime();
 		this.field11115 = System.nanoTime();
 	}

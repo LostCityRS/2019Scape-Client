@@ -3,13 +3,13 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("alh")
-public abstract class class1019 extends class665 {
+public abstract class GraphEntity extends class665 {
 
 	@ObfuscatedName("alh.c")
 	public Scene field11716;
 
 	@ObfuscatedName("alh.r")
-	public class1019 field11712;
+	public GraphEntity field11712;
 
 	@ObfuscatedName("alh.v")
 	public byte field11717;
@@ -24,13 +24,13 @@ public abstract class class1019 extends class665 {
 	public class141[] field11713;
 
 	@ObfuscatedName("alh.q")
-	public class420 field11711;
+	public ScaleRotTrans field11711;
 
-	public class1019(Scene arg0) {
-		this(arg0, (class420) null);
+	public GraphEntity(Scene arg0) {
+		this(arg0, (ScaleRotTrans) null);
 	}
 
-	public class1019(Scene arg0, class420 arg1) {
+	public GraphEntity(Scene arg0, ScaleRotTrans arg1) {
 		this.field11716 = arg0;
 		this.field11711 = arg1;
 	}
@@ -65,12 +65,12 @@ public abstract class class1019 extends class665 {
 	}
 
 	@ObfuscatedName("acl.gx(IIILdo;I)Luq;")
-	public static class556 method15111(int arg0, int arg1, int arg2, Model arg3) {
-		return arg3 == null ? null : new class556(arg0, arg1, arg2, arg3.method1727(), arg3.method1729(), arg3.method1730(), arg3.method1748(), arg3.method1695(), arg3.method1733(), arg3.method1794());
+	public static EntityBounds method15111(int arg0, int arg1, int arg2, Model arg3) {
+		return arg3 == null ? null : new EntityBounds(arg0, arg1, arg2, arg3.method1727(), arg3.method1729(), arg3.method1730(), arg3.method1748(), arg3.method1695(), arg3.method1733(), arg3.method1794());
 	}
 
 	@ObfuscatedName("sl.ge(Luq;IIILdo;I)V")
-	public static void method8229(class556 arg0, int arg1, int arg2, int arg3, Model arg4) {
+	public static void method8229(EntityBounds arg0, int arg1, int arg2, int arg3, Model arg4) {
 		if (arg4 != null) {
 			arg0.method8967(arg1, arg2, arg3, arg4.method1727(), arg4.method1729(), arg4.method1730(), arg4.method1748(), arg4.method1695(), arg4.method1733(), arg4.method1794());
 		}
@@ -108,7 +108,7 @@ public abstract class class1019 extends class665 {
 	public abstract void method17373(Renderer arg0);
 
 	@ObfuscatedName("alh.fq(Ldh;Lalh;IIIZB)V")
-	public abstract void method17377(Renderer arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5);
+	public abstract void method17377(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5);
 
 	@ObfuscatedName("alh.ga(Ldh;S)Z")
 	public abstract boolean method18360(Renderer arg0);
@@ -123,7 +123,7 @@ public abstract class class1019 extends class665 {
 	public abstract int method16523();
 
 	@ObfuscatedName("alh.fv(Ldh;B)Luq;")
-	public abstract class556 method17371(Renderer arg0);
+	public abstract EntityBounds method17371(Renderer arg0);
 
 	@ObfuscatedName("alh.gy([Lakf;S)I")
 	public abstract int method18375(Light[] arg0);

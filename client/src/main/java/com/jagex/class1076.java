@@ -7,9 +7,9 @@ import deob.Statics;
 public class class1076 extends class721 {
 
 	@ObfuscatedName("aoi.q")
-	public class1019 field11878;
+	public GraphEntity field11878;
 
-	public class1076(class1019 arg0, boolean arg1) {
+	public class1076(GraphEntity arg0, boolean arg1) {
 		super(arg1);
 		this.field11878 = arg0;
 	}

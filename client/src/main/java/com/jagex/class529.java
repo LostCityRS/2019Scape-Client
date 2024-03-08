@@ -89,8 +89,8 @@ public class class529 {
 	@ObfuscatedName("ta.k(Ltx;B)V")
 	public void method8405(Scene arg0) {
 		this.field6752 = new LinkedList();
-		LinkMap var2 = client.field10855.method7793();
-		CoordGrid var3 = client.field10855.method7727();
+		LinkMap var2 = client.world.method7793();
+		CoordGrid var3 = client.world.method7727();
 		CoordGrid var4 = new CoordGrid(Statics.field4826, this.field6750[0], this.field6753[0]);
 		for (int var5 = 1; var5 < this.field6751; var5++) {
 			CoordGrid var6 = new CoordGrid(Statics.field4826, this.field6750[var5], this.field6753[var5]);

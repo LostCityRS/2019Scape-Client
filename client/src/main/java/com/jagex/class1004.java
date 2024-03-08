@@ -133,7 +133,7 @@ public class class1004 extends WorldMap {
 			int var5 = -1;
 			int var6 = -1;
 			Vector3 var7 = Statics.field4490.method10536().field4298;
-			CoordGrid var8 = client.field10855.method7727();
+			CoordGrid var8 = client.world.method7727();
 			if (Statics.field6811.method19471(Statics.field4490.field11717, ((int) var7.field4308 >> 9) + var8.field7426, ((int) var7.field4313 >> 9) + var8.field7427, var4)) {
 				var5 = var4[1] - Statics.field6786;
 				var6 = var4[2] - Statics.field6808;

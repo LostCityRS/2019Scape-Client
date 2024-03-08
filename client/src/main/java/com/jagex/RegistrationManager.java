@@ -20,7 +20,7 @@ public class RegistrationManager {
 
 	@ObfuscatedName("dk.e(I)V")
 	public static void method2009() {
-		if (client.field10791 == 4 && (!LoginManager.method2865() && !method9610())) {
+		if (client.state == 4 && (!LoginManager.method2865() && !method9610())) {
 			client.method6972(12);
 		}
 	}
@@ -43,7 +43,7 @@ public class RegistrationManager {
 
 	@ObfuscatedName("w.k(Ljava/lang/String;B)V")
 	public static void method233(String arg0) {
-		if (client.field10791 != 0) {
+		if (client.state != 0) {
 			return;
 		}
 		ClientMessage var1 = Statics.method1604(ClientProt.CREATE_CHECK_EMAIL, client.field10835.field794);
@@ -61,7 +61,7 @@ public class RegistrationManager {
 
 	@ObfuscatedName("alb.f(Ljava/lang/String;I)V")
 	public static void method18305(String arg0) {
-		if (client.field10791 != 0) {
+		if (client.state != 0) {
 			return;
 		}
 		ClientMessage var1 = Statics.method1604(ClientProt.CREATE_CHECK_NAME, client.field10835.field794);
@@ -79,7 +79,7 @@ public class RegistrationManager {
 
 	@ObfuscatedName("ae.w(I)V")
 	public static void method648() {
-		if (client.field10791 == 0) {
+		if (client.state == 0) {
 			ClientMessage var0 = Statics.method1604(ClientProt.CREATE_SUGGEST_NAMES, client.field10835.field794);
 			client.field10835.method934(var0);
 			Statics.field585 = SuggestNameReply.field8392;
@@ -89,7 +89,7 @@ public class RegistrationManager {
 
 	@ObfuscatedName("arv.l(Ljava/lang/String;Ljava/lang/String;IZLjava/lang/String;I)V")
 	public static void method19266(String arg0, String arg1, int arg2, boolean arg3, String arg4) {
-		if (client.field10791 != 0) {
+		if (client.state != 0) {
 			return;
 		}
 		ClientMessage var5 = Statics.method1604(ClientProt.CREATE_ACCOUNT, client.field10835.field794);
@@ -115,7 +115,7 @@ public class RegistrationManager {
 
 	@ObfuscatedName("afu.u(II)V")
 	public static void method16428(int arg0) {
-		if (client.field10791 == 0) {
+		if (client.state == 0) {
 			ClientMessage var1 = Statics.method1604(ClientProt.CREATE_LOG_PROGRESS, client.field10835.field794);
 			var1.field11432.p1(arg0);
 			client.field10835.method934(var1);

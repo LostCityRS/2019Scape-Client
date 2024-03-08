@@ -514,7 +514,7 @@ public class class555 {
 	}
 
 	@ObfuscatedName("um.d(Lasw;III)Z")
-	public boolean method8928(class1198 arg0, int arg1, int arg2, int arg3) {
+	public boolean method8928(WallLayerEntity arg0, int arg1, int arg2, int arg3) {
 		if (!this.field7031 || !this.field7017) {
 			return false;
 		} else if (this.field7024.field6896 < 101) {
@@ -580,7 +580,7 @@ public class class555 {
 	}
 
 	@ObfuscatedName("um.r(IIIIILuq;)Z")
-	public boolean method8930(int arg0, int arg1, int arg2, int arg3, int arg4, class556 arg5) {
+	public boolean method8930(int arg0, int arg1, int arg2, int arg3, int arg4, EntityBounds arg5) {
 		if (!this.field7031 || !this.field7017) {
 			return false;
 		} else if (this.field7024.field6896 < 101) {
@@ -608,7 +608,7 @@ public class class555 {
 	}
 
 	@ObfuscatedName("um.v(Luq;)Z")
-	public final boolean method8953(class556 arg0) {
+	public final boolean method8953(EntityBounds arg0) {
 		return arg0 == null ? false : this.method8936(arg0.field7049, arg0.field7053, arg0.field7055, arg0.field7052 - arg0.field7049, arg0.field7047 - arg0.field7053, arg0.field7056 - arg0.field7055);
 	}
 

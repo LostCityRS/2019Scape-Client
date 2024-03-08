@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("sp")
-public class class516 {
+public class DynamicLoc {
 
 	@ObfuscatedName("sp.e")
 	public LocTypeList field6681;
@@ -13,7 +13,7 @@ public class class516 {
 	public byte field6663;
 
 	@ObfuscatedName("sp.m")
-	public class1019 field6672;
+	public GraphEntity field6672;
 
 	@ObfuscatedName("sp.k")
 	public int field6665;
@@ -52,7 +52,7 @@ public class class516 {
 	public boolean field6676;
 
 	@ObfuscatedName("sp.s")
-	public class1175 field6677;
+	public HardShadow field6677;
 
 	@ObfuscatedName("sp.y")
 	public boolean field6670 = false;
@@ -66,7 +66,7 @@ public class class516 {
 	@ObfuscatedName("sp.b")
 	public class597 field6678;
 
-	public class516(Renderer arg0, LocTypeList arg1, LocType arg2, int arg3, int arg4, int arg5, class1019 arg6, boolean arg7, int arg8, int arg9) {
+	public DynamicLoc(Renderer arg0, LocTypeList arg1, LocType arg2, int arg3, int arg4, int arg5, GraphEntity arg6, boolean arg7, int arg8, int arg9) {
 		this.field6681 = arg1;
 		this.field6665 = arg2.field7450;
 		this.field6666 = arg3;
@@ -138,7 +138,7 @@ public class class516 {
 			return null;
 		}
 		Vector3 var6 = this.field6672.method10536().field4298;
-		Scene var7 = client.field10855.method7743();
+		Scene var7 = client.world.method7743();
 		if (arg3) {
 			var7.method8814(this.field6677, this.field6663, (int) var6.field4308, (int) var6.field4313, this.field6679);
 			this.field6670 = false;
@@ -188,7 +188,7 @@ public class class516 {
 			} else {
 				this.field6669 = var10 = (Model) var11.field8737;
 				if (arg3) {
-					this.field6677 = (class1175) var11.field8738;
+					this.field6677 = (HardShadow) var11.field8738;
 					this.field6679 = null;
 					var7.method8750(this.field6677, this.field6663, (int) var6.field4308, (int) var6.field4313, null);
 					this.field6670 = true;
@@ -240,14 +240,14 @@ public class class516 {
 	public void method8242(Renderer arg0) {
 		if (this.field6677 != null) {
 			Vector3 var2 = this.field6672.method10536().field4298;
-			client.field10855.method7743().method8814(this.field6677, this.field6663, (int) var2.field4308, (int) var2.field4313, this.field6679);
+			client.world.method7743().method8814(this.field6677, this.field6663, (int) var2.field4308, (int) var2.field4313, this.field6679);
 			this.field6679 = null;
 			this.field6677 = null;
 		}
 	}
 
 	@ObfuscatedName("sp.d(Lalh;I)V")
-	public void method8243(class1019 arg0) {
+	public void method8243(GraphEntity arg0) {
 		if (this.field6671 != null && this.field6671.method14346()) {
 			this.field6671.method14367(client.field10903 - this.field6662);
 			if (this.field6671.method14375()) {

@@ -47,18 +47,18 @@ public class class40 {
 	public static final void method16435(PacketBit arg0) {
 		arg0.method19562();
 		int var1 = client.field10945;
-		class1130 var2 = Statics.field4490 = client.field10944[var1] = new class1130(client.field10855.method7743());
+		class1130 var2 = Statics.field4490 = client.field10944[var1] = new class1130(client.world.method7743());
 		var2.field10406 = var1;
 		int var3 = arg0.method19583(30);
 		byte var4 = (byte) (var3 >> 28);
 		int var5 = var3 >> 14 & 0x3FFF;
 		int var6 = var3 & 0x3FFF;
-		CoordGrid var7 = client.field10855.method7727();
+		CoordGrid var7 = client.world.method7727();
 		var2.field10450[0] = var5 - var7.field7426;
 		var2.field10448[0] = var6 - var7.field7427;
 		var2.method10538((float) ((var2.field10450[0] << 9) + (var2.method16546() << 8)), var2.method10525().field4298.field4311, (float) ((var2.field10448[0] << 9) + (var2.method16546() << 8)));
 		Statics.field4826 = var2.field11717 = var2.field11714 = var4;
-		if (client.field10855.method7793().method7105(var2.field10450[0], var2.field10448[0])) {
+		if (client.world.method7793().method7105(var2.field10450[0], var2.field10448[0])) {
 			var2.field11714++;
 		}
 		if (field706[var1] != null) {
@@ -232,7 +232,7 @@ public class class40 {
 
 	@ObfuscatedName("akz.f(Lase;IS)V")
 	public static void method17602(PacketBit arg0, int arg1) {
-		CoordGrid var2 = client.field10855.method7727();
+		CoordGrid var2 = client.world.method7727();
 		boolean var3 = arg0.method19583(1) == 1;
 		if (var3) {
 			field707[++field695 - 1] = arg1;
@@ -380,7 +380,7 @@ public class class40 {
 					var5.method19117(var21, var22, field697[arg1]);
 				}
 				var5.field11717 = var5.field11714 = (byte) (var5.field11717 + var18 & 0x3);
-				if (client.field10855.method7793().method7105(var21, var22)) {
+				if (client.world.method7793().method7105(var21, var22)) {
 					var5.field11714++;
 				}
 				if (client.field10945 == arg1 && Statics.field4826 != var5.field11717) {
@@ -401,7 +401,7 @@ public class class40 {
 					var5.method19117(var28, var29, field697[arg1]);
 				}
 				var5.field11717 = var5.field11714 = (byte) (var5.field11717 + var25 & 0x3);
-				if (client.field10855.method7793().method7105(var28, var29)) {
+				if (client.world.method7793().method7105(var28, var29)) {
 					var5.field11714++;
 				}
 				if (client.field10945 == arg1) {
@@ -428,7 +428,7 @@ public class class40 {
 				throw new RuntimeException();
 			}
 			class19 var6 = field704[arg1];
-			class1130 var7 = client.field10944[arg1] = new class1130(client.field10855.method7743());
+			class1130 var7 = client.field10944[arg1] = new class1130(client.world.method7743());
 			var7.field10406 = arg1;
 			if (field706[arg1] != null) {
 				var7.method19129(field706[arg1]);
@@ -442,14 +442,14 @@ public class class40 {
 			int var9 = var8 >> 28;
 			int var10 = var8 >> 14 & 0xFF;
 			int var11 = var8 & 0xFF;
-			CoordGrid var12 = client.field10855.method7727();
+			CoordGrid var12 = client.world.method7727();
 			int var13 = (var10 << 6) + var3 - var12.field7426;
 			int var14 = (var11 << 6) + var4 - var12.field7427;
 			var7.field12070 = var6.field525;
 			var7.field12048 = var6.field526;
 			var7.field10441[0] = field697[arg1];
 			var7.field11717 = var7.field11714 = (byte) var9;
-			if (client.field10855.method7793().method7105(var13, var14)) {
+			if (client.world.method7793().method7105(var13, var14)) {
 				var7.field11714++;
 			}
 			var7.method19118(var13, var14);

@@ -40,21 +40,21 @@ public class class675 {
 	@ObfuscatedName("yv.m(I)Lst;")
 	public Location method10761() {
 		int var1 = this.field8196.field7428;
-		CoordGrid var2 = client.field10855.method7727();
+		CoordGrid var2 = client.world.method7727();
 		int var3 = this.field8196.field7426 - var2.field7426;
 		int var4 = this.field8196.field7427 - var2.field7427;
-		if (var3 < 0 || var4 < 0 || var3 >= client.field10855.method7728() || var4 >= client.field10855.method7758() || client.field10855.method7743() == null) {
+		if (var3 < 0 || var4 < 0 || var3 >= client.world.method7728() || var4 >= client.world.method7758() || client.world.method7743() == null) {
 			return null;
 		}
 		switch(this.method10759()) {
 			case 0:
-				return (Location) client.field10855.method7743().method8711(var1, var3, var4);
+				return (Location) client.world.method7743().method8711(var1, var3, var4);
 			case 1:
-				return (Location) client.field10855.method7743().method8735(var1, var3, var4);
+				return (Location) client.world.method7743().method8735(var1, var3, var4);
 			case 2:
-				return (Location) client.field10855.method7743().method8856(var1, var3, var4, client.field11001);
+				return (Location) client.world.method7743().method8856(var1, var3, var4, client.field11001);
 			case 3:
-				return (Location) client.field10855.method7743().method8767(var1, var3, var4);
+				return (Location) client.world.method7743().method8767(var1, var3, var4);
 			default:
 				return null;
 		}

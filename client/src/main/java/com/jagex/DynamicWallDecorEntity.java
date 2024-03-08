@@ -3,23 +3,23 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ajh")
-public class class951 extends class1197 implements Location {
+public class DynamicWallDecorEntity extends WallDecorLayerEntity implements Location {
 
 	@ObfuscatedName("ajh.c")
-	public class516 field11174;
+	public DynamicLoc field11174;
 
 	@ObfuscatedName("ajh.r")
 	public boolean field11175;
 
 	@ObfuscatedName("ajh.v")
-	public class556 field11176;
+	public EntityBounds field11176;
 
 	@ObfuscatedName("ajh.o")
 	public boolean field11177 = true;
 
-	public class951(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, int arg14, int arg15, class420 arg16) {
+	public DynamicWallDecorEntity(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, int arg14, int arg15, ScaleRotTrans arg16) {
 		super(arg0, arg6, arg7, arg8, arg4, arg5, arg10, arg11, arg16);
-		this.field11174 = new class516(arg1, arg2, arg3, arg12, arg13, arg5, this, arg9, arg14, arg15);
+		this.field11174 = new DynamicLoc(arg1, arg2, arg3, arg12, arg13, arg5, this, arg9, arg14, arg15);
 		this.field11175 = arg3.field7470 != 0 && !arg9;
 		this.method18363(1);
 	}
@@ -35,7 +35,7 @@ public class class951 extends class1197 implements Location {
 	}
 
 	@ObfuscatedName("ajh.fv(Ldh;B)Luq;")
-	public class556 method17371(Renderer arg0) {
+	public EntityBounds method17371(Renderer arg0) {
 		return this.field11176;
 	}
 
@@ -63,7 +63,7 @@ public class class951 extends class1197 implements Location {
 		Matrix4x3 var3 = arg0.method2209();
 		var3.method6292(this.method10533());
 		var3.method6315((float) this.field12452, 0.0F, (float) this.field12451);
-		class420 var4 = this.method10536();
+		ScaleRotTrans var4 = this.method10536();
 		PickableEntity var5 = PickableEntity.method16749(this.field11175);
 		int var6 = (int) var4.field4298.field4308 >> 9;
 		int var7 = (int) var4.field4298.field4313 >> 9;
@@ -81,9 +81,9 @@ public class class951 extends class1197 implements Location {
 		}
 		this.field11177 = var2.method1731() || this.field11174.field6680 != null;
 		if (this.field11176 == null) {
-			this.field11176 = class1019.method15111((int) var4.field4298.field4308, (int) var4.field4298.field4311, (int) var4.field4298.field4313, var2);
+			this.field11176 = GraphEntity.method15111((int) var4.field4298.field4308, (int) var4.field4298.field4311, (int) var4.field4298.field4313, var2);
 		} else {
-			class1019.method8229(this.field11176, (int) var4.field4298.field4308, (int) var4.field4298.field4311, (int) var4.field4298.field4313, var2);
+			GraphEntity.method8229(this.field11176, (int) var4.field4298.field4308, (int) var4.field4298.field4311, (int) var4.field4298.field4313, var2);
 		}
 		return var5;
 	}
@@ -95,7 +95,7 @@ public class class951 extends class1197 implements Location {
 			return;
 		}
 		Matrix4x3 var3 = this.method10533();
-		class420 var4 = this.method10536();
+		ScaleRotTrans var4 = this.method10536();
 		int var5 = (int) var4.field4298.field4308 >> 9;
 		int var6 = (int) var4.field4298.field4313 >> 9;
 		this.field11174.method8239(arg0, var2, var3, var5, var5, var6, var6, false);

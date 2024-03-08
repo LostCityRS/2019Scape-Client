@@ -939,7 +939,7 @@ public class class837 extends class104 {
 	}
 
 	@ObfuscatedName("aem.d(IILara;)Lara;")
-	public class1175 method1531(int arg0, int arg1, class1175 arg2) {
+	public HardShadow method1531(int arg0, int arg1, HardShadow arg2) {
 		if ((this.field9504[arg0][arg1] & 0x1) == 0) {
 			return null;
 		}
@@ -985,7 +985,7 @@ public class class837 extends class104 {
 	}
 
 	@ObfuscatedName("aem.v(Lara;IIIIZ)Z")
-	public boolean method1535(class1175 arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public boolean method1535(HardShadow arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		if (this.field9505 == null || arg0 == null) {
 			return false;
 		} else {
@@ -996,7 +996,7 @@ public class class837 extends class104 {
 	}
 
 	@ObfuscatedName("aem.c(Lara;IIIIZ)V")
-	public void method1532(class1175 arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public void method1532(HardShadow arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		if (this.field9505 != null && arg0 != null) {
 			int var7 = arg1 - (this.field9516.field10130 * arg2 >> 8) >> this.field9516.field10129;
 			int var8 = arg3 - (this.field9516.field10131 * arg2 >> 8) >> this.field9516.field10129;
@@ -1005,7 +1005,7 @@ public class class837 extends class104 {
 	}
 
 	@ObfuscatedName("aem.r(Lara;IIIIZ)V")
-	public void method1543(class1175 arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public void method1543(HardShadow arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		if (this.field9505 != null && arg0 != null) {
 			int var7 = arg1 - (this.field9516.field10130 * arg2 >> 8) >> this.field9516.field10129;
 			int var8 = arg3 - (this.field9516.field10131 * arg2 >> 8) >> this.field9516.field10129;

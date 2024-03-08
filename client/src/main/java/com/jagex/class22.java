@@ -566,7 +566,7 @@ public class class22 {
 		if (arg1 < 0 || arg2 < 0 || field553 == null) {
 			return;
 		}
-		CoordGrid var3 = client.field10855.method7727();
+		CoordGrid var3 = client.world.method7727();
 		Matrix4x4 var4 = arg0.method2208();
 		method6036(arg0);
 		var4.method6609(field572);
@@ -574,7 +574,7 @@ public class class22 {
 		var4.method6611();
 		int var5 = arg1 - field563;
 		int var6 = arg2 - field559;
-		if (client.field10855.method7743() == null) {
+		if (client.world.method7743() == null) {
 			return;
 		}
 		if (!client.field10973 || (Statics.field1765 & 0x40) != 0) {
@@ -599,7 +599,7 @@ public class class22 {
 				var7 = var20 + (Statics.field4490.method16546() - 1 << 8) >> 9;
 				var8 = var21 + (Statics.field4490.method16546() - 1 << 8) >> 9;
 				byte var22 = Statics.field4490.field11717;
-				if (var22 < 3 && (client.field10855.method7793().field4487[1][var20 >> 9][var21 >> 9] & 0x2) != 0) {
+				if (var22 < 3 && (client.world.method7793().field4487[1][var20 >> 9][var21 >> 9] & 0x2) != 0) {
 					int var91 = var22 + 1;
 				}
 			}
@@ -619,7 +619,7 @@ public class class22 {
 				}
 			}
 		}
-		class548 var24 = client.field10855.method7743().field6959;
+		class548 var24 = client.world.method7743().field6959;
 		int var25 = arg1;
 		int var26 = arg2;
 		List var27 = var24.field6885;
@@ -647,9 +647,9 @@ public class class22 {
 									} while (!var29.method8889(arg0, var25, var26));
 									boolean var30 = false;
 									boolean var31 = false;
-									if (var29.field6978 instanceof class1200) {
-										var32 = ((class1200) var29.field6978).field12471;
-										var33 = ((class1200) var29.field6978).field12468;
+									if (var29.field6978 instanceof PrimaryLayerEntity) {
+										var32 = ((PrimaryLayerEntity) var29.field6978).field12471;
+										var33 = ((PrimaryLayerEntity) var29.field6978).field12468;
 									} else {
 										Vector3 var34 = var29.field6978.method10536().field4298;
 										var32 = (int) var34.field4308 >> 9;
@@ -809,7 +809,7 @@ public class class22 {
 							}
 						} while (!(var29.field6978 instanceof Location));
 						var83 = (Location) var29.field6978;
-						var84 = (LocType) client.field10855.method7750().get(var83.method8223());
+						var84 = (LocType) client.world.method7750().get(var83.method8223());
 						if (var84.field7505 != null) {
 							var84 = var84.method9477(Statics.field7410, Statics.field7410);
 						}
@@ -859,7 +859,7 @@ public class class22 {
 	public static long method6964(Location arg0, int arg1, int arg2) {
 		long var3 = 4194304L;
 		long var5 = Long.MIN_VALUE;
-		LocType var7 = (LocType) client.field10855.method7750().get(arg0.method8223());
+		LocType var7 = (LocType) client.world.method7750().get(arg0.method8223());
 		long var8 = (long) (arg1 | arg2 << 7 | arg0.method8220() << 14 | arg0.method8204() << 20 | 0x40000000);
 		if (var7.field7470 == 0) {
 			var8 |= var5;
@@ -1274,7 +1274,7 @@ public class class22 {
 				}
 			}
 		} else if (method4053(arg0.field12307)) {
-			LocType var5 = (LocType) client.field10855.method7750().get((int) (arg0.field12300 >>> 32 & 0x7FFFFFFFL));
+			LocType var5 = (LocType) client.world.method7750().get((int) (arg0.field12300 >>> 32 & 0x7FFFFFFFL));
 			if (var5.field7505 != null) {
 				var5 = var5.method9477(Statics.field7410, Statics.field7410);
 			}
@@ -1795,7 +1795,7 @@ public class class22 {
 		if (var6 >= 2000) {
 			var6 -= 2000;
 		}
-		CoordGrid var10 = client.field10855.method7727();
+		CoordGrid var10 = client.world.method7727();
 		if (var6 == 1008 || var6 == 1009 || var6 == 1010 || var6 == 1011 || var6 == 1012) {
 			Statics.method15110(var6, var7, var4);
 		}
@@ -2100,7 +2100,7 @@ public class class22 {
 		if (arg2 == 1) {
 			var3 = Statics.method1604(ClientProt.MOVE_MINIMAPCLICK, client.field10849.field794);
 		}
-		CoordGrid var4 = client.field10855.method7727();
+		CoordGrid var4 = client.world.method7727();
 		var3.field11432.p2(var4.field7427 + arg1);
 		var3.field11432.p1(method14766() ? 1 : 0);
 		var3.field11432.p2_alt3(var4.field7426 + arg0);
@@ -2138,16 +2138,16 @@ public class class22 {
 		float var11 = 0.0F;
 		float var12 = 0.0F;
 		float var13 = 0.0F;
-		Scene var14 = client.field10855.method7743();
+		Scene var14 = client.world.method7743();
 		while (var7 < 1.1F) {
 			float var15 = var7 * var8 + arg0;
 			float var16 = var7 * var9 + arg1;
 			float var17 = var7 * var10 + arg2;
 			int var18 = (int) var15 >> 9;
 			int var19 = (int) var17 >> 9;
-			if (var18 > 0 && var19 > 0 && var18 < client.field10855.method7728() && var19 < client.field10855.method7758()) {
+			if (var18 > 0 && var19 > 0 && var18 < client.world.method7728() && var19 < client.world.method7758()) {
 				int var20 = Statics.field4490.field11717;
-				if (var20 < 3 && (client.field10855.method7793().field4487[1][var18][var19] & 0x2) != 0) {
+				if (var20 < 3 && (client.world.method7793().field4487[1][var18][var19] & 0x2) != 0) {
 					var20++;
 				}
 				int var21 = var14.field6915[var20].method1527((int) var15, (int) var17);

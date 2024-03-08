@@ -3,23 +3,23 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ajs")
-public class class947 extends GroundDecorLayerEntity implements Location {
+public class DynamicGroundDecorEntity extends GroundDecorLayerEntity implements Location {
 
 	@ObfuscatedName("ajs.c")
-	public class516 field11133;
+	public DynamicLoc field11133;
 
 	@ObfuscatedName("ajs.r")
 	public boolean field11132;
 
 	@ObfuscatedName("ajs.v")
-	public class556 field11134;
+	public EntityBounds field11134;
 
 	@ObfuscatedName("ajs.o")
 	public boolean field11135 = true;
 
-	public class947(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, class420 arg13) {
+	public DynamicGroundDecorEntity(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, ScaleRotTrans arg13) {
 		super(arg0, arg6, arg7, arg8, arg4, arg5, arg3.field7448, arg13);
-		this.field11133 = new class516(arg1, arg2, arg3, class601.field7566.field7562, arg10, arg5, this, arg9, arg11, arg12);
+		this.field11133 = new DynamicLoc(arg1, arg2, arg3, class601.field7566.field7562, arg10, arg5, this, arg9, arg11, arg12);
 		this.field11132 = arg3.field7470 != 0 && !arg9;
 		this.method18363(1);
 	}
@@ -35,7 +35,7 @@ public class class947 extends GroundDecorLayerEntity implements Location {
 	}
 
 	@ObfuscatedName("ajs.fv(Ldh;B)Luq;")
-	public class556 method17371(Renderer arg0) {
+	public EntityBounds method17371(Renderer arg0) {
 		return this.field11134;
 	}
 
@@ -56,7 +56,7 @@ public class class947 extends GroundDecorLayerEntity implements Location {
 			return null;
 		}
 		Matrix4x3 var3 = this.method10533();
-		class420 var4 = this.method10536();
+		ScaleRotTrans var4 = this.method10536();
 		PickableEntity var5 = PickableEntity.method16749(this.field11132);
 		int var6 = (int) var4.field4298.field4308 >> 9;
 		int var7 = (int) var4.field4298.field4313 >> 9;
@@ -74,9 +74,9 @@ public class class947 extends GroundDecorLayerEntity implements Location {
 		}
 		this.field11135 = var2.method1731() || this.field11133.field6680 != null;
 		if (this.field11134 == null) {
-			this.field11134 = class1019.method15111((int) var4.field4298.field4308, (int) var4.field4298.field4311, (int) var4.field4298.field4313, var2);
+			this.field11134 = GraphEntity.method15111((int) var4.field4298.field4308, (int) var4.field4298.field4311, (int) var4.field4298.field4313, var2);
 		} else {
-			class1019.method8229(this.field11134, (int) var4.field4298.field4308, (int) var4.field4298.field4311, (int) var4.field4298.field4313, var2);
+			GraphEntity.method8229(this.field11134, (int) var4.field4298.field4308, (int) var4.field4298.field4311, (int) var4.field4298.field4313, var2);
 		}
 		return var5;
 	}
@@ -109,7 +109,7 @@ public class class947 extends GroundDecorLayerEntity implements Location {
 	}
 
 	@ObfuscatedName("ajs.fq(Ldh;Lalh;IIIZB)V")
-	public final void method17377(Renderer arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void method17377(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 

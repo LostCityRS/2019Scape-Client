@@ -80,14 +80,14 @@ public class class42 {
 
 	@ObfuscatedName("am.f(I)V")
 	public static void method829() {
-		int var0 = client.field10855.method7728();
-		int var1 = client.field10855.method7758();
+		int var0 = client.world.method7728();
+		int var1 = client.world.method7758();
 		Statics.field8182 = new boolean[var0 >> 3][var1 >> 3];
 	}
 
 	@ObfuscatedName("aih.w(Ldh;B)V")
 	public static void method16903(Renderer arg0) {
-		if (field722 != Statics.field4490.field11717 && client.field10855.method7743() != null) {
+		if (field722 != Statics.field4490.field11717 && client.world.method7743() != null) {
 			class213.method3655();
 			if (method14493(arg0, Statics.field4490.field11717)) {
 				field722 = Statics.field4490.field11717;
@@ -102,10 +102,10 @@ public class class42 {
 		if (!arg0.method2215()) {
 			return false;
 		}
-		int var2 = client.field10855.method7728();
-		int var3 = client.field10855.method7758();
-		LinkMap var4 = client.field10855.method7793();
-		Scene var5 = client.field10855.method7743();
+		int var2 = client.world.method7728();
+		int var3 = client.world.method7758();
+		LinkMap var4 = client.world.method7793();
+		Scene var5 = client.world.method7743();
 		int var6 = arg1;
 		if (Statics.field4490 != null) {
 			int var7 = Statics.field4490.field10450[0] >> 3;
@@ -158,7 +158,7 @@ public class class42 {
 		} else {
 			Statics.field734 = arg0.method2199(var18, 0, var17, var17, var17);
 		}
-		client.field10855.method7816().method9983();
+		client.world.method7816().method9983();
 		int var24 = ((int) (Math.random() * 20.0D) + 238 - 10 << 16) + ((int) (Math.random() * 20.0D) + 238 - 10 << 8) + ((int) (Math.random() * 20.0D) + 238 - 10) | 0xFF000000;
 		int var25 = ((int) (Math.random() * 20.0D) + 238 - 10 | 0xFF00) << 16;
 		int var26 = (int) (Math.random() * 8.0D) << 16 | (int) (Math.random() * 8.0D) << 8 | (int) (Math.random() * 8.0D);
@@ -254,10 +254,10 @@ public class class42 {
 		field727.method14152();
 		if (!field732) {
 			method16444(arg1);
-			class539 var47 = client.field10855.method7871();
+			class539 var47 = client.world.method7871();
 			if (var47 != null) {
 				Statics.field5011.method18871(1024, 64);
-				CoordGrid var48 = client.field10855.method7727();
+				CoordGrid var48 = client.world.method7727();
 				for (int var49 = 0; var49 < var47.field6777; var49++) {
 					int var50 = var47.field6776[var49];
 					if (var50 >> 28 == Statics.field4490.field11717) {
@@ -282,11 +282,11 @@ public class class42 {
 	@ObfuscatedName("agm.u(II)V")
 	public static void method16444(int arg0) {
 		field723 = 0;
-		int var1 = client.field10855.method7728();
-		int var2 = client.field10855.method7758();
-		LinkMap var3 = client.field10855.method7793();
-		Scene var4 = client.field10855.method7743();
-		LocTypeList var5 = client.field10855.method7750();
+		int var1 = client.world.method7728();
+		int var2 = client.world.method7758();
+		LinkMap var3 = client.world.method7793();
+		Scene var4 = client.world.method7743();
+		LocTypeList var5 = client.world.method7750();
 		int var6 = arg0;
 		if (Statics.field4490 != null) {
 			int var7 = Statics.field4490.field10450[0] >> 3;
@@ -337,7 +337,7 @@ public class class42 {
 
 	@ObfuscatedName("af.p(IIII)Z")
 	public static boolean method1005(int arg0, int arg1, int arg2) {
-		Scene var3 = client.field10855.method7743();
+		Scene var3 = client.world.method7743();
 		boolean var4 = true;
 		Location var5 = (Location) var3.method8711(arg0, arg1, arg2);
 		if (var5 != null) {
@@ -356,7 +356,7 @@ public class class42 {
 
 	@ObfuscatedName("ajc.d(Lst;S)Z")
 	public static boolean method17469(Location arg0) {
-		LocType var1 = (LocType) client.field10855.method7750().get(arg0.method8223());
+		LocType var1 = (LocType) client.world.method7750().get(arg0.method8223());
 		if (var1.field7486 == -1) {
 			return true;
 		} else {
@@ -367,10 +367,10 @@ public class class42 {
 
 	@ObfuscatedName("ix.c(Ldh;IIIIIIII)V")
 	public static void method4476(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
-		Scene var8 = client.field10855.method7743();
+		Scene var8 = client.world.method7743();
 		Location var9 = (Location) var8.method8711(arg1, arg2, arg3);
 		if (var9 != null) {
-			LocType var10 = (LocType) client.field10855.method7750().get(var9.method8223());
+			LocType var10 = (LocType) client.world.method7750().get(var9.method8223());
 			int var11 = var9.method8204() & 0x3;
 			int var12 = var9.method8220();
 			if (var10.field7486 == -1) {
@@ -417,7 +417,7 @@ public class class42 {
 		}
 		Location var14 = (Location) var8.method8856(arg1, arg2, arg3, client.field11001);
 		if (var14 != null) {
-			LocType var15 = (LocType) client.field10855.method7750().get(var14.method8223());
+			LocType var15 = (LocType) client.world.method7750().get(var14.method8223());
 			int var16 = var14.method8204() & 0x3;
 			int var17 = var14.method8220();
 			if (var15.field7486 != -1) {
@@ -438,7 +438,7 @@ public class class42 {
 		if (var19 == null) {
 			return;
 		}
-		LocType var20 = (LocType) client.field10855.method7750().get(var19.method8223());
+		LocType var20 = (LocType) client.world.method7750().get(var19.method8223());
 		int var21 = var19.method8204() & 0x3;
 		if (var20.field7486 != -1) {
 			Statics.method1900(arg0, var20, var21, arg4, arg5);
@@ -473,7 +473,7 @@ public class class42 {
 		}
 		arg0.method2326(field721);
 		arg0.method2263();
-		CoordGrid var6 = client.field10855.method7727();
+		CoordGrid var6 = client.world.method7727();
 		int var7;
 		int var8;
 		int var9;
@@ -495,13 +495,13 @@ public class class42 {
 			var10 = 4096 - client.field10887 * 16;
 		}
 		int var12 = var7 / 128 + 48;
-		int var13 = client.field10855.method7758() * 4 + 48 - var8 / 128;
+		int var13 = client.world.method7758() * 4 + 48 - var8 / 128;
 		if (var5 == null) {
 			Statics.field734.method1453((float) arg1.field2196 / 2.0F + (float) arg2, (float) arg1.field2197 / 2.0F + (float) arg3, (float) var12, (float) var13, var10, var9 << 2, 1, -1, 1);
 		} else {
 			Statics.field734.method1456((float) arg1.field2196 / 2.0F + (float) arg2, (float) arg1.field2197 / 2.0F + (float) arg3, (float) var12, (float) var13, var10, var9 << 2, var5, arg2, arg3);
 		}
-		class539 var14 = client.field10855.method7871();
+		class539 var14 = client.world.method7871();
 		for (class988 var15 = (class988) field727.method14191(); var15 != null; var15 = (class988) field727.method14161()) {
 			int var16 = var15.field11442;
 			int var17 = (var14.field6776[var16] >> 14 & 0x3FFF) - var6.field7426;
@@ -513,7 +513,7 @@ public class class42 {
 		for (int var21 = 0; var21 < field723; var21++) {
 			int var22 = field725[var21] * 4 + 2 - var7 / 128;
 			int var23 = field733[var21] * 4 + 2 - var8 / 128;
-			LocType var24 = (LocType) client.field10855.method7750().get(field726[var21]);
+			LocType var24 = (LocType) client.world.method7750().get(field726[var21]);
 			if (var24.field7505 != null) {
 				var24 = var24.method9477(Statics.field7410, Statics.field7410);
 				if (var24 == null || var24.field7485 == -1) {

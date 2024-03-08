@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("asw")
-public abstract class class1198 extends class1019 {
+public abstract class WallLayerEntity extends GraphEntity {
 
 	@ObfuscatedName("asw.ae")
 	public static final int[] field12454 = new int[] { 19, 55, 38, 155, 255, 110, 137, 205, 76 };
@@ -17,7 +17,7 @@ public abstract class class1198 extends class1019 {
 	@ObfuscatedName("asw.al")
 	public Light[] field12459 = new Light[4];
 
-	public class1198(Scene arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, class420 arg7) {
+	public WallLayerEntity(Scene arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ScaleRotTrans arg7) {
 		super(arg0, arg7);
 		this.field11717 = (byte) arg4;
 		this.field11714 = (byte) arg5;

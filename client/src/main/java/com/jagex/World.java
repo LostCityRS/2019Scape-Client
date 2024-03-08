@@ -340,7 +340,7 @@ public class World {
 		if (this.field5036) {
 			this.method7729();
 			this.field5060 = -1L;
-			World var1 = client.field10855;
+			World var1 = client.world;
 			this.field5049 = var1.field5049;
 			this.field5054 = var1.field5054;
 			this.field5051 = var1.field5051;
@@ -367,15 +367,15 @@ public class World {
 			this.field5059 = var1.field5059;
 			this.field5028 = var1.field5028;
 			this.field5043 = var1.field5043;
-		} else if (client.field10791 == 4) {
+		} else if (client.state == 4) {
 			client.method6972(10);
-		} else if (client.field10791 == 13) {
+		} else if (client.state == 13) {
 			client.method6972(6);
-		} else if (client.field10791 == 15) {
+		} else if (client.state == 15) {
 			client.method6972(16);
-		} else if (client.field10791 == 18) {
+		} else if (client.state == 18) {
 			client.method6972(3);
-		} else if (client.field10791 == 0) {
+		} else if (client.state == 0) {
 			client.method6972(8);
 		}
 	}
@@ -425,16 +425,16 @@ public class World {
 		}
 		this.field5049 = var6;
 		byte var10;
-		if (client.field10791 == 4) {
+		if (client.state == 4) {
 			var10 = 10;
-		} else if (client.field10791 == 15) {
+		} else if (client.state == 15) {
 			var10 = 16;
-		} else if (client.field10791 == 13) {
+		} else if (client.state == 13) {
 			var10 = 6;
-		} else if (client.field10791 == 0) {
+		} else if (client.state == 0) {
 			var10 = 8;
 		} else {
-			throw new RuntimeException("" + client.field10791);
+			throw new RuntimeException("" + client.state);
 		}
 		this.method7829(var3, var4, var10, false);
 	}
@@ -1019,7 +1019,7 @@ public class World {
 			for (int var17 = 0; var17 < client.field10839.length; var17++) {
 				class984 var18 = client.field10839[var17];
 				if (var18 != null) {
-					((class1019) var18.field11436).field11716 = null;
+					((GraphEntity) var18.field11436).field11716 = null;
 				}
 			}
 		}
@@ -1161,7 +1161,7 @@ public class World {
 		}
 		boolean var22 = false;
 		if (this.field5036) {
-			World var23 = client.field10855;
+			World var23 = client.world;
 			this.method7752(var23);
 			Statics.field3183.method7678(var23);
 			var22 = true;
@@ -1174,7 +1174,7 @@ public class World {
 				} catch (InterruptedException var44) {
 				}
 			}
-			client.field10855 = this;
+			client.world = this;
 			var23.method7763();
 			this.method7762(3);
 			this.method7854();
@@ -1197,7 +1197,7 @@ public class World {
 		}
 		client.method3128();
 		class962.method5070();
-		if (GameShell.method4419() == class506.field6580 && client.field10849.method939() != null && client.field10791 == 3) {
+		if (GameShell.method4419() == class506.field6580 && client.field10849.method939() != null && client.state == 3) {
 			ClientMessage var31 = Statics.method1604(ClientProt.DETECT_MODIFIED_CLIENT, client.field10849.field794);
 			var31.field11432.p4(1057001181);
 			client.field10849.method934(var31);
@@ -1216,13 +1216,13 @@ public class World {
 			}
 		}
 		long var38 = class213.method3655() - this.field5060;
-		if (client.field10791 == 10) {
+		if (client.state == 10) {
 			client.method6972(4);
-		} else if (client.field10791 == 6) {
+		} else if (client.state == 6) {
 			client.method6972(13);
-		} else if (client.field10791 == 16) {
+		} else if (client.state == 16) {
 			client.method6972(15);
-		} else if (client.field10791 == 8) {
+		} else if (client.state == 8) {
 			client.method6972(0);
 		} else {
 			client.method6972(18);
