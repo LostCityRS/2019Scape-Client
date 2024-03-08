@@ -9,7 +9,7 @@ public interface class273 {
 	class423 method4666();
 
 	@ObfuscatedName("jn.m(B)Lakt;")
-	class994 method4667();
+	CoordFine method4667();
 
 	@ObfuscatedName("jn.k(I)Lov;")
 	class421 method4668();

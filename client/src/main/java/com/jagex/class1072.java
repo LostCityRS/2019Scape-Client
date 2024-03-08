@@ -60,7 +60,7 @@ public abstract class class1072 extends class714 {
 			arg0 -= this.field11869[this.field11870];
 			this.field11869[this.field11870] = 0.0F;
 		}
-		float var3 = 1.0F / (float) class507.method6016();
+		float var3 = 1.0F / (float) GameShell.method6016();
 		while (arg0 > 0.0F) {
 			float var4 = var2.method6764();
 			if (this.field11873 >= var4) {

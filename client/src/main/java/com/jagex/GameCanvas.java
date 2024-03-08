@@ -5,12 +5,12 @@ import deob.ObfuscatedName;
 import java.awt.*;
 
 @ObfuscatedName("atu")
-public final class class1206 extends Canvas {
+public final class GameCanvas extends Canvas {
 
 	@ObfuscatedName("atu.e")
 	public Component field12487;
 
-	public class1206(Component arg0) {
+	public GameCanvas(Component arg0) {
 		this.field12487 = arg0;
 	}
 

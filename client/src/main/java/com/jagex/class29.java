@@ -14,7 +14,7 @@ public class class29 {
 	}
 
 	@ObfuscatedName("y.e(Lakt;I)V")
-	public static void method542(class994 arg0) {
+	public static void method542(CoordFine arg0) {
 		Statics.field604 = new class893(client.field11034);
 		Statics.field604.method4683(class268.field2828);
 		try {
@@ -99,7 +99,7 @@ public class class29 {
 			var16.field4311 *= -1.0F;
 			var2.method6497(var16);
 		}
-		class994 var17 = new class994(0, (int) var2.field4308, (int) var2.field4311, (int) var2.field4313);
+		CoordFine var17 = new CoordFine(0, (int) var2.field4308, (int) var2.field4311, (int) var2.field4313);
 		var0.method16671(var17);
 		class594 var18 = client.field10855.method7727();
 		int var19 = var18.field7426 << 9;

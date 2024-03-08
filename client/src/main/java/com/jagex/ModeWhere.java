@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @ObfuscatedName("yu")
-public class ModeWhere implements class685 {
+public class ModeWhere implements SerializableEnum {
 
 	@ObfuscatedName("yu.e")
 	public static final ModeWhere field8273 = new ModeWhere("", 0, new class684[] { class684.field8284 });

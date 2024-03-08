@@ -12,7 +12,7 @@ public abstract class class149 implements class50 {
 	public int field1706;
 
 	@ObfuscatedName("ec.m")
-	public class463 field1704;
+	public ScriptVarType field1704;
 
 	@ObfuscatedName("ec.k")
 	public class457 field1705 = class457.field4610;
@@ -42,7 +42,7 @@ public abstract class class149 implements class50 {
 						break;
 					case 1:
 						int var4 = arg0.g1();
-						this.field1704 = (class463) class686.method1897(class463.method7293(), var4);
+						this.field1704 = (ScriptVarType) class686.method1897(ScriptVarType.method7293(), var4);
 						if (this.field1704 != null) {
 							break;
 						}

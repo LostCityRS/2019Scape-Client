@@ -6,7 +6,7 @@ import java.applet.Applet;
 import java.awt.*;
 
 @ObfuscatedName("se")
-public interface class509 {
+public interface GameShellStub {
 
 	void stop();
 

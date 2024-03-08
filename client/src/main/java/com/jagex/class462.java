@@ -16,10 +16,10 @@ public final class class462 {
 	public final Map field4628;
 
 	@ObfuscatedName("qy.m")
-	public final class1205 field4629;
+	public final SortedQueue field4629;
 
 	@ObfuscatedName("qy.k")
-	public final class1205 field4630;
+	public final SortedQueue field4630;
 
 	@ObfuscatedName("qy.f")
 	public final long field4632;
@@ -41,14 +41,14 @@ public final class class462 {
 		this.field4627 = arg2;
 		if (this.field4633 == -1) {
 			this.field4628 = new HashMap(64);
-			this.field4629 = new class1205(64, this.field4631);
+			this.field4629 = new SortedQueue(64, this.field4631);
 			this.field4630 = null;
 		} else if (this.field4627 == null) {
 			throw new IllegalArgumentException("");
 		} else {
 			this.field4628 = new HashMap(this.field4633);
-			this.field4629 = new class1205(this.field4633, this.field4631);
-			this.field4630 = new class1205(this.field4633);
+			this.field4629 = new SortedQueue(this.field4633, this.field4631);
+			this.field4630 = new SortedQueue(this.field4633);
 		}
 	}
 

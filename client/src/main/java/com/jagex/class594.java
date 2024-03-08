@@ -35,7 +35,7 @@ public class class594 {
 	}
 
 	@ObfuscatedName("ve.e(Lakt;B)V")
-	public void method9434(class994 arg0) {
+	public void method9434(CoordFine arg0) {
 		this.field7428 = arg0.field11477;
 		this.field7426 = arg0.field11478 >> 9;
 		this.field7427 = arg0.field11480 >> 9;

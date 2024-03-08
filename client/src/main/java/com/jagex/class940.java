@@ -11,6 +11,6 @@ public final class class940 extends class455 {
 
 	@ObfuscatedName("aiu.w(Lec;I)Ljava/lang/Object;")
 	public Object method7212(class149 arg0) {
-		return class463.field4717 == arg0.field1704 || class463.field4635 == arg0.field1704 ? -1 : arg0.field1704.method7298();
+		return ScriptVarType.field4717 == arg0.field1704 || ScriptVarType.field4635 == arg0.field1704 ? -1 : arg0.field1704.method7298();
 	}
 }

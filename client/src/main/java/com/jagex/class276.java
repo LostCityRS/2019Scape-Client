@@ -155,12 +155,12 @@ public class class276 implements class281 {
 
 	@ObfuscatedName("jm.f(I)V")
 	public void method4890() {
-		class507.method8913(Statics.field593.method4851(), Statics.field593.method4852(), client.field10824[client.field10773], client.field10825[client.field10773], client.field10826[client.field10773]);
+		GameShell.method8913(Statics.field593.method4851(), Statics.field593.method4852(), client.field10824[client.field10773], client.field10825[client.field10773], client.field10826[client.field10773]);
 	}
 
 	@ObfuscatedName("jm.w(B)V")
 	public void method4891() {
-		class507.method2901();
+		GameShell.method2901();
 	}
 
 	@ObfuscatedName("jm.l(S)V")

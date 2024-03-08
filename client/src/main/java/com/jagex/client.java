@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.*;
 import java.util.Map.Entry;
 
-public final class client extends class507 {
+public final class client extends GameShell {
 
     public static final boolean ENABLE_RSA = false;
     public static final boolean ENABLE_JS5_RSA = false;
@@ -1360,7 +1360,7 @@ public final class client extends class507 {
 		}
 		class598.field7501 = class260.field2694 = class738.field8650 = new short[256];
 		try {
-			Statics.field3428 = class507.method7321().getToolkit().getSystemClipboard();
+			Statics.field3428 = GameShell.method7321().getToolkit().getSystemClipboard();
 		} catch (Exception var5) {
 		}
 		Statics.field11931 = class563.method15006(Statics.field10578);
@@ -1490,7 +1490,7 @@ public final class client extends class507 {
 		}
 		if (Statics.method2092(field10791)) {
 			class280.method15243();
-			class507.method135();
+			GameShell.method135();
 		} else if (method9273(field10791)) {
 			field10855.method7723();
 		}
@@ -1555,8 +1555,8 @@ public final class client extends class507 {
 		if (field10791 == 2) {
 			return;
 		}
-		long var1 = class507.method8660() / 1000000L - field10795;
-		field10795 = class507.method8660() / 1000000L;
+		long var1 = GameShell.method8660() / 1000000L - field10795;
+		field10795 = GameShell.method8660() / 1000000L;
 		if (Statics.method16436(field10791)) {
 			if (field10937 != 0L && class213.method3655() > field10937) {
 				method13880(method2845(), -1, -1, false);
@@ -2316,7 +2316,7 @@ public final class client extends class507 {
 			method13784(arg0, Statics.field688.field11542.method18539(), -1, -1, true);
 			return;
 		}
-		Container var5 = class507.method7321();
+		Container var5 = GameShell.method7321();
 		if (Statics.field12101 != null) {
 			Statics.field6593 = arg2;
 			Statics.field4827 = arg3;
@@ -2388,7 +2388,7 @@ public final class client extends class507 {
 
 	@ObfuscatedName("fs.fj(B)V")
 	public static void method3033() {
-		Container var0 = class507.method7321();
+		Container var0 = GameShell.method7321();
 		int var1 = var0.getSize().width;
 		int var2 = var0.getSize().height;
 		if (Statics.field7425 == var0) {
@@ -2414,7 +2414,7 @@ public final class client extends class507 {
 		client var0 = Statics.field8301;
 		synchronized (Statics.field8301) {
 			if (Statics.field12101 == null) {
-				Container var1 = class507.method7321();
+				Container var1 = GameShell.method7321();
 				if (var1 != null) {
 					Statics.field6593 = var1.getSize().width;
 					Statics.field4827 = var1.getSize().height;
@@ -2519,7 +2519,7 @@ public final class client extends class507 {
 			return;
 		}
 		try {
-			Container var4 = class507.method7321();
+			Container var4 = GameShell.method7321();
 			int var5 = 0;
 			int var6 = 0;
 			if (Statics.field7425 == var4) {
@@ -2788,7 +2788,7 @@ public final class client extends class507 {
 
 	@ObfuscatedName("aax.fo(I)V")
 	public static void method14147() {
-		class752 var0 = class507.method18567("2", field10768.field8333, true);
+		class752 var0 = GameShell.method18567("2", field10768.field8333, true);
 		Statics.field7228.method16418(var0);
 	}
 
@@ -3061,7 +3061,7 @@ public final class client extends class507 {
 				Statics.field637 = class213.method3655();
 			}
 			float var20 = (float) (class213.method3655() - Statics.field637);
-			int var21 = 1000 / class507.method6016();
+			int var21 = 1000 / GameShell.method6016();
 			int var22 = (int) ((double) var21 * 1.25D);
 			while (var20 > 0.0F) {
 				float var23 = Math.min(var20, (float) var22);
@@ -3715,7 +3715,7 @@ public final class client extends class507 {
 		float var2 = 1.0F - (float) ((100 - var1) * (100 - var1) * (100 - var1)) / 1000000.0F;
 		int var5;
 		if (method14298() == 3) {
-			class994 var3 = Statics.field9155.method4709().method5221();
+			CoordFine var3 = Statics.field9155.method4709().method5221();
 			class594 var4 = field10855.method7727();
 			Statics.field7447 = (int) ((double) Statics.field9155.method4718() * 2607.5945876176133D) & 0x3FFF;
 			Statics.field8586 = (int) ((double) Statics.field9155.method4719() * -2607.5945876176133D) & 0x3FFF;
@@ -4039,7 +4039,7 @@ public final class client extends class507 {
 			class594 var1 = field10855.method7727();
 			int var2 = var1.field7426 << 9;
 			int var3 = var1.field7427 << 9;
-			int var4 = 1000 / class507.method6016();
+			int var4 = 1000 / GameShell.method6016();
 			Statics.field9155.method4681((float) var4 / 1000.0F, field10855.method7744().field4540, field10855.method7793(), var2, var3);
 		}
 		Statics.field3538 = -1;
@@ -6326,7 +6326,7 @@ public final class client extends class507 {
 							if (var63.field743 == 0) {
 								var65 = true;
 							} else {
-								int var66 = class507.method6016() * 1000 / var63.field743 / 2;
+								int var66 = GameShell.method6016() * 1000 / var63.field743 / 2;
 								var65 = field10903 % (var66 * 2) < var66;
 							}
 							if (var65) {
@@ -8709,7 +8709,7 @@ public final class client extends class507 {
 		} else if (ServerProt.field3947 == arg0.field796) {
 			var2.pos += -1822849076;
 			if (var2.checkcrc()) {
-				class507.method1001(var2, var2.pos - 28);
+				GameShell.method1001(var2, var2.pos - 28);
 			}
 			arg0.field796 = null;
 			return true;
@@ -10540,7 +10540,7 @@ public final class client extends class507 {
 				int var70 = var0.data[(++var0.pos) - 1] & 0xFF;
 				for (int var71 = 0; var71 < var70; var71++) {
 					int var72 = var0.g1_alt2();
-					class470 var73 = (class470) class686.method1897(Statics.method7338(), var72);
+					BaseVarType var73 = (BaseVarType) class686.method1897(Statics.method7338(), var72);
 					class413 var74 = Statics.field8135.method15285(var0, var73);
 					var3.field10460.method14735(var74.field4240, var74.field4239);
 				}
@@ -10670,7 +10670,7 @@ public final class client extends class507 {
 				int var108 = var0.data[(++var0.pos) - 1] & 0xFF;
 				for (int var109 = 0; var109 < var108; var109++) {
 					int var110 = var0.g1_alt3();
-					class470 var111 = (class470) class686.method1897(Statics.method7338(), var110);
+					BaseVarType var111 = (BaseVarType) class686.method1897(Statics.method7338(), var110);
 					class413 var112 = Statics.field8135.method15285(var0, var111);
 					var3.field10460.method14735(var112.field4240, var112.field4239);
 				}
@@ -13326,7 +13326,7 @@ public final class client extends class507 {
 	@ObfuscatedName("ke.mg(Ljava/lang/String;B)V")
 	public static void method5135(String arg0) {
 		field10990 = arg0;
-		if (class507.method4419() == class506.field6580) {
+		if (GameShell.method4419() == class506.field6580) {
 			return;
 		}
 		try {
@@ -13346,7 +13346,7 @@ public final class client extends class507 {
 
 	@ObfuscatedName("fw.me(B)V")
 	public static void method3094() {
-		if (class507.method4419() == class506.field6580) {
+		if (GameShell.method4419() == class506.field6580) {
 			return;
 		}
 		try {

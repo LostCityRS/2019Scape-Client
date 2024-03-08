@@ -10,7 +10,7 @@ import java.util.NoSuchElementException;
 public class class385 implements Iterator {
 
 	@ObfuscatedName("ng.e")
-	public class1205 field3571;
+	public SortedQueue field3571;
 
 	@ObfuscatedName("ng.n")
 	public int field3570 = 0;
@@ -18,7 +18,7 @@ public class class385 implements Iterator {
 	@ObfuscatedName("ng.m")
 	public int field3572 = this.field3571.field12486;
 
-	public class385(class1205 arg0) {
+	public class385(SortedQueue arg0) {
 		this.field3571 = arg0;
 	}
 

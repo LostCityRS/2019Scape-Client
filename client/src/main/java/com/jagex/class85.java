@@ -48,7 +48,7 @@ public abstract class class85 {
 		OpenGL.glGenBuffersARB(1, field1126, 0);
 		this.field1122 = field1126[0];
 		this.method1311();
-		OpenGL.glBufferDataARBa(arg1, this.field1118, arg2.method49(), this.field1124 ? 35040 : 35044);
+		OpenGL.glBufferDataARBa(arg1, this.field1118, arg2.getAddress(), this.field1124 ? 35040 : 35044);
 		this.field1123.field9880 += this.field1118;
 	}
 

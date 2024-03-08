@@ -481,7 +481,7 @@ public abstract class class274 {
 	}
 
 	@ObfuscatedName("je.ar(I)Lakt;")
-	public class994 method4717() {
+	public CoordFine method4717() {
 		return this.field2863 != null && this.field2863.method5218() ? this.field2863.method5221() : null;
 	}
 

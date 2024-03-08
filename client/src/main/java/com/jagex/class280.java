@@ -468,7 +468,7 @@ public class class280 {
 
 	@ObfuscatedName("ux.c(I)V")
 	public static void method9212() {
-		class752 var0 = class507.method18567("2", client.field10768.field8333, false);
+		class752 var0 = GameShell.method18567("2", client.field10768.field8333, false);
 		Statics.field7228.method16420(var0);
 	}
 

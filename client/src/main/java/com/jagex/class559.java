@@ -172,6 +172,6 @@ public class class559 implements Runnable {
 
 	@ObfuscatedName("ua.f(I)V")
 	public void method8999() {
-		this.field7080 = new class1105();
+		this.field7080 = new BrokenInputStream();
 	}
 }

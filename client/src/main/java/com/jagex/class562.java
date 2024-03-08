@@ -155,6 +155,6 @@ public class class562 implements Runnable {
 
 	@ObfuscatedName("ug.k(I)V")
 	public void method9056() {
-		this.field7093 = new class1104();
+		this.field7093 = new BrokenOutputStream();
 	}
 }

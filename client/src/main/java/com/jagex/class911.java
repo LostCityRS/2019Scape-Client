@@ -60,7 +60,7 @@ public abstract class class911 extends class307 {
 			arg0 -= this.field10562[this.field10564];
 			this.field10562[this.field10564] = 0.0F;
 		}
-		float var7 = 1.0F / (float) class507.method6016();
+		float var7 = 1.0F / (float) GameShell.method6016();
 		while (arg0 > 0.0F) {
 			float var8 = var6.method6764();
 			if (this.field10563 >= var8) {
@@ -117,9 +117,9 @@ public abstract class class911 extends class307 {
 	}
 
 	@ObfuscatedName("ahn.f(B)Lakt;")
-	public class994 method5221() {
+	public CoordFine method5221() {
 		class423 var1 = this.method5219();
-		return new class994(0, (int) var1.field4308, (int) var1.field4311, (int) var1.field4313);
+		return new CoordFine(0, (int) var1.field4308, (int) var1.field4311, (int) var1.field4313);
 	}
 
 	@ObfuscatedName("ahn.al(I)F")

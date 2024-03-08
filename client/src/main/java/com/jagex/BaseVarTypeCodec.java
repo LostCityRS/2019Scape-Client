@@ -3,8 +3,8 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ade")
-public interface class802 {
+public interface BaseVarTypeCodec {
 
 	@ObfuscatedName("ade.e(Lalw;I)Ljava/lang/Object;")
-	Object method7308(Packet arg0);
+	Object decode(Packet arg0);
 }

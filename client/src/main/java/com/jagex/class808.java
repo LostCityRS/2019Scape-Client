@@ -51,8 +51,8 @@ public abstract class class808 extends class52 implements class414 {
 			var3 = var2 + 8;
 		} else if (arg0.field4239 instanceof String) {
 			var3 = var2 + Packet.method8398((String) arg0.field4239);
-		} else if (arg0.field4239 instanceof class785) {
-			var3 = var2 + ((class785) arg0.field4239).method15118();
+		} else if (arg0.field4239 instanceof Serializable) {
+			var3 = var2 + ((Serializable) arg0.field4239).method15118();
 		} else {
 			throw new IllegalStateException();
 		}
@@ -68,8 +68,8 @@ public abstract class class808 extends class52 implements class414 {
 			arg0.p8((Long) arg1.field4239);
 		} else if (arg1.field4239 instanceof String) {
 			arg0.pjstr2((String) arg1.field4239);
-		} else if (arg1.field4239 instanceof class785) {
-			((class785) arg1.field4239).method15114(arg0);
+		} else if (arg1.field4239 instanceof Serializable) {
+			((Serializable) arg1.field4239).method15114(arg0);
 		} else {
 			throw new IllegalStateException();
 		}
@@ -90,9 +90,9 @@ public abstract class class808 extends class52 implements class414 {
 			var4.field4239 = arg0.g8();
 		} else if (var5 == String.class) {
 			var4.field4239 = arg0.gjstr2();
-		} else if (class785.class.isAssignableFrom(var5)) {
+		} else if (Serializable.class.isAssignableFrom(var5)) {
 			try {
-				class785 var6 = (class785) var5.getDeclaredConstructor().newInstance();
+				Serializable var6 = (Serializable) var5.getDeclaredConstructor().newInstance();
 				var6.method15115(arg0);
 				var4.field4239 = var6;
 			} catch (InstantiationException var9) {
@@ -107,7 +107,7 @@ public abstract class class808 extends class52 implements class414 {
 	}
 
 	@ObfuscatedName("add.ah(Lalw;Lqa;B)Lon;")
-	public class413 method15285(Packet arg0, class470 arg1) {
+	public class413 method15285(Packet arg0, BaseVarType arg1) {
 		int var3 = arg0.g2();
 		class413 var4 = new class413(var3);
 		Class var5 = arg1.field4843;
@@ -117,9 +117,9 @@ public abstract class class808 extends class52 implements class414 {
 			var4.field4239 = arg0.g8();
 		} else if (var5 == String.class) {
 			var4.field4239 = arg0.gjstr2();
-		} else if (class785.class.isAssignableFrom(var5)) {
+		} else if (Serializable.class.isAssignableFrom(var5)) {
 			try {
-				class785 var6 = (class785) var5.getDeclaredConstructor().newInstance();
+				Serializable var6 = (Serializable) var5.getDeclaredConstructor().newInstance();
 				var6.method15115(arg0);
 				var4.field4239 = var6;
 			} catch (InstantiationException var10) {

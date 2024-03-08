@@ -12,7 +12,7 @@ import java.util.Map;
 public class class792 {
 
 	@ObfuscatedName("adh.m")
-	public class470 field9181;
+	public BaseVarType field9181;
 
 	@ObfuscatedName("adh.k")
 	public Map field9180;
@@ -29,7 +29,7 @@ public class class792 {
 
 	@ObfuscatedName("adh.e(Lalw;B)V")
 	public void method15188(Packet arg0) {
-		this.field9181 = (class470) class686.method1897(Statics.method7338(), arg0.g1());
+		this.field9181 = (BaseVarType) class686.method1897(Statics.method7338(), arg0.g1());
 		int var2 = arg0.gVarInt2();
 		this.field9180 = new HashMap(var2);
 		while (var2-- > 0) {

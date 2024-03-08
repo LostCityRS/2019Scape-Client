@@ -75,7 +75,7 @@ public class class13 {
 		}
 		var5.p8(var3.nextLong());
 		var5.p6(var3.nextLong());
-		class507.method4286(var5);
+		GameShell.method4286(var5);
 		var5.p8(var3.nextLong());
 		var5.rsaenc(field495, field496);
 		int var10 = Packet.pjstrlen(arg1);

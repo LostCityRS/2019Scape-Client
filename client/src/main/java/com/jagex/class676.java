@@ -4758,12 +4758,12 @@ public final class class676 {
 	public static final void method7070(class677 arg0) {
 		class149 var1 = (class149) arg0.field8239.field12366[arg0.field8220];
 		class152 var2 = (class152) (arg0.field8236[arg0.field8220] == 0 ? arg0.field8234.get(var1.field1702) : arg0.field8233.get(var1.field1702));
-		class470 var3 = var1.field1704.method7292();
-		if (class470.field4840 == var3) {
+		BaseVarType var3 = var1.field1704.method7292();
+		if (BaseVarType.field4840 == var3) {
 			arg0.field8216[++arg0.field8226 - 1] = var2.method679(var1);
-		} else if (class470.field4837 == var3) {
+		} else if (BaseVarType.field4837 == var3) {
 			arg0.field8224[++arg0.field8238 - 1] = var2.method2799(var1);
-		} else if (class470.field4836 == var3) {
+		} else if (BaseVarType.field4836 == var3) {
 			try {
 				String var4 = (String) var2.method2801(var1);
 				if (var4 == null) {
@@ -4782,15 +4782,15 @@ public final class class676 {
 	public static final void method6124(class677 arg0) {
 		class149 var1 = (class149) arg0.field8239.field12366[arg0.field8220];
 		class152 var2 = (class152) (arg0.field8236[arg0.field8220] == 0 ? arg0.field8234.get(var1.field1702) : arg0.field8233.get(var1.field1702));
-		class470 var3 = var1.field1704.method7292();
-		if (class470.field4840 == var3) {
+		BaseVarType var3 = var1.field1704.method7292();
+		if (BaseVarType.field4840 == var3) {
 			if (class455.field4592 == var1.field1702) {
 				class1171.method3607(var1);
 			}
 			var2.method2798(var1, arg0.field8216[--arg0.field8226]);
-		} else if (class470.field4837 == var3) {
+		} else if (BaseVarType.field4837 == var3) {
 			var2.method2800(var1, arg0.field8224[--arg0.field8238]);
-		} else if (class470.field4836 == var3) {
+		} else if (BaseVarType.field4836 == var3) {
 			if (class455.field4592 == var1.field1702) {
 				class1171.method14066(var1);
 			}
@@ -4975,7 +4975,7 @@ public final class class676 {
 		}
 		arg0.field8214[var1] = var3;
 		byte var4 = -1;
-		if (var2 == class463.field4717.method1303()) {
+		if (var2 == ScriptVarType.field4717.method1303()) {
 			var4 = 0;
 		}
 		for (int var5 = 0; var5 < var3; var5++) {
@@ -9462,32 +9462,32 @@ public final class class676 {
 
 	@ObfuscatedName("yw.xa(Lyf;I)V")
 	public static final void method10604(class677 arg0) {
-		class994 var1 = (class994) arg0.field8218[--arg0.field8211];
+		CoordFine var1 = (CoordFine) arg0.field8218[--arg0.field8211];
 		arg0.field8216[++arg0.field8226 - 1] = var1.field11478;
 	}
 
 	@ObfuscatedName("tk.xi(Lyf;I)V")
 	public static final void method8886(class677 arg0) {
-		class994 var1 = (class994) arg0.field8218[--arg0.field8211];
+		CoordFine var1 = (CoordFine) arg0.field8218[--arg0.field8211];
 		arg0.field8216[++arg0.field8226 - 1] = var1.field11479;
 	}
 
 	@ObfuscatedName("abd.xz(Lyf;I)V")
 	public static final void method14925(class677 arg0) {
-		class994 var1 = (class994) arg0.field8218[--arg0.field8211];
+		CoordFine var1 = (CoordFine) arg0.field8218[--arg0.field8211];
 		arg0.field8216[++arg0.field8226 - 1] = var1.field11480;
 	}
 
 	@ObfuscatedName("po.xh(Lyf;I)V")
 	public static final void method6869(class677 arg0) {
-		class994 var1 = (class994) arg0.field8218[--arg0.field8211];
+		CoordFine var1 = (CoordFine) arg0.field8218[--arg0.field8211];
 		arg0.field8216[++arg0.field8226 - 1] = var1.field11477;
 	}
 
 	@ObfuscatedName("h.xx(Lyf;I)V")
 	public static final void method595(class677 arg0) {
 		class594 var1 = new class594();
-		var1.method9434((class994) arg0.field8218[--arg0.field8211]);
+		var1.method9434((CoordFine) arg0.field8218[--arg0.field8211]);
 		arg0.field8216[++arg0.field8226 - 1] = var1.method9433();
 	}
 
@@ -9496,7 +9496,7 @@ public final class class676 {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		boolean var2 = arg0.field8216[arg0.field8226 + 1] == 1;
-		arg0.field8218[++arg0.field8211 - 1] = class994.method849(var1, var2);
+		arg0.field8218[++arg0.field8211 - 1] = CoordFine.method849(var1, var2);
 	}
 
 	@ObfuscatedName("kh.xr(Lyf;I)V")
@@ -9738,7 +9738,7 @@ public final class class676 {
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		class754 var3 = (class754) Statics.field8514.method962(var1);
-		if (class463.field4634 != var3.field8775) {
+		if (ScriptVarType.field4634 != var3.field8775) {
 		}
 		arg0.field8218[++arg0.field8211 - 1] = var3.method14849(var2);
 	}
@@ -9753,7 +9753,7 @@ public final class class676 {
 		class754 var5 = (class754) Statics.field8514.method962(var3);
 		if (var5.field8781.method1303() != var1 || var5.field8775.method1303() != var2) {
 			throw new RuntimeException(var3 + " " + var4);
-		} else if (var2 == class463.field4634.method1303()) {
+		} else if (var2 == ScriptVarType.field4634.method1303()) {
 			arg0.field8218[++arg0.field8211 - 1] = var5.method14849(var4);
 		} else {
 			arg0.field8216[++arg0.field8226 - 1] = var5.method14848(var4);
@@ -9784,7 +9784,7 @@ public final class class676 {
 			throw new RuntimeException();
 		}
 		class754 var3 = (class754) Statics.field8514.method962(var1);
-		if (class463.field4634 != var3.field8775) {
+		if (ScriptVarType.field4634 != var3.field8775) {
 			throw new RuntimeException();
 		}
 		arg0.field8216[++arg0.field8226 - 1] = var3.method14851(var2) ? 1 : 0;
@@ -9826,7 +9826,7 @@ public final class class676 {
 			throw new RuntimeException();
 		}
 		class754 var3 = (class754) Statics.field8514.method962(var1);
-		if (class463.field4634 != var3.field8775) {
+		if (ScriptVarType.field4634 != var3.field8775) {
 			throw new RuntimeException();
 		}
 		int[] var4 = var3.method14867(var2);
@@ -12412,7 +12412,7 @@ public final class class676 {
 		if (class725.field8531 && Statics.field12101 != null) {
 			client.method13880(Statics.field688.field11542.method18539(), -1, -1, false);
 		}
-		if (class507.method4419() == class506.field6580) {
+		if (GameShell.method4419() == class506.field6580) {
 			client.method14147();
 			System.exit(0);
 		} else {
@@ -12852,7 +12852,7 @@ public final class class676 {
 
 	@ObfuscatedName("kl.anj(Lyf;I)V")
 	public static final void method5244(class677 arg0) {
-		class994 var1 = (class994) arg0.field8218[--arg0.field8211];
+		CoordFine var1 = (CoordFine) arg0.field8218[--arg0.field8211];
 		if (Statics.field9155.method4743() != class263.field2790) {
 			throw new RuntimeException();
 		}
@@ -13292,7 +13292,7 @@ public final class class676 {
 	@ObfuscatedName("yu.apl(Lyf;I)V")
 	public static final void method13847(class677 arg0) {
 		arg0.field8226 -= 6;
-		class994 var1 = (class994) arg0.field8218[--arg0.field8211];
+		CoordFine var1 = (CoordFine) arg0.field8218[--arg0.field8211];
 		if (Statics.field9155.method4743() != class263.field2791) {
 			throw new RuntimeException();
 		}
@@ -15562,8 +15562,8 @@ public final class class676 {
 
 	@ObfuscatedName("nt.bda(Lyf;B)V")
 	public static final void method6042(class677 arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = class507.field6585;
-		arg0.field8216[++arg0.field8226 - 1] = class507.field6585;
+		arg0.field8216[++arg0.field8226 - 1] = GameShell.field6585;
+		arg0.field8216[++arg0.field8226 - 1] = GameShell.field6585;
 		arg0.field8216[++arg0.field8226 - 1] = 1;
 	}
 
@@ -15850,17 +15850,17 @@ public final class class676 {
 		int var5 = class791.method15018(var2);
 		class745 var6 = (class745) Statics.field9123.method962(var1);
 		class793 var7 = (class793) Statics.field1840.method962(var4);
-		class463[] var8 = var7.field9185[var5];
+		ScriptVarType[] var8 = var7.field9185[var5];
 		Object[] var9 = var6.method14711(var5);
 		if (var9 == null && var7.field9186 != null) {
 			var9 = var7.field9186[var5];
 		}
 		if (var9 == null) {
 			for (int var10 = 0; var10 < var8.length; var10++) {
-				class463 var11 = var8[var10];
-				if (class463.field4634 == var11) {
+				ScriptVarType var11 = var8[var10];
+				if (ScriptVarType.field4634 == var11) {
 					arg0.field8218[++arg0.field8211 - 1] = "";
-				} else if (class463.field4717 == var11 || class463.field4635 == var11) {
+				} else if (ScriptVarType.field4717 == var11 || ScriptVarType.field4635 == var11) {
 					arg0.field8216[++arg0.field8226 - 1] = 0;
 				} else {
 					arg0.field8216[++arg0.field8226 - 1] = -1;
@@ -15874,7 +15874,7 @@ public final class class676 {
 		}
 		for (int var13 = 0; var13 < var8.length; var13++) {
 			int var14 = var8.length * var3 + var13;
-			if (var8[var13] == class463.field4634) {
+			if (var8[var13] == ScriptVarType.field4634) {
 				arg0.field8218[++arg0.field8211 - 1] = var9[var14];
 			} else {
 				arg0.field8216[++arg0.field8226 - 1] = (Integer) var9[var14];

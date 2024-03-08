@@ -30,12 +30,12 @@ public final class NativeHeapBuffer implements Buffer, Source {
 	}
 
 	@ObfuscatedName("jaclib/memory/heap/NativeHeapBuffer.n()J")
-	public final long method49() {
+	public final long getAddress() {
 		return this.field412.getBufferAddress(this.field413);
 	}
 
 	@ObfuscatedName("jaclib/memory/heap/NativeHeapBuffer.e()I")
-	public final int method48() {
+	public final int getSize() {
 		return this.field411;
 	}
 

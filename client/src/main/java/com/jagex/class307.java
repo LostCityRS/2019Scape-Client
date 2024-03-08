@@ -19,7 +19,7 @@ public abstract class class307 {
 	public abstract class423 method5219();
 
 	@ObfuscatedName("kl.f(B)Lakt;")
-	public abstract class994 method5221();
+	public abstract CoordFine method5221();
 
 	@ObfuscatedName("kl.w(I)F")
 	public abstract float method5222();

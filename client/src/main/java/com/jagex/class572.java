@@ -6,28 +6,28 @@ import deob.ObfuscatedName;
 public class class572 implements class573 {
 
 	@ObfuscatedName("uh.e")
-	public static final class572 field7258 = new class572("", 10, new class463[] { class463.field4692 }, null);
+	public static final class572 field7258 = new class572("", 10, new ScriptVarType[] { ScriptVarType.field4692 }, null);
 
 	@ObfuscatedName("uh.n")
-	public static final class572 field7249 = new class572("", 11, new class463[] { class463.field4692 }, null);
+	public static final class572 field7249 = new class572("", 11, new ScriptVarType[] { ScriptVarType.field4692 }, null);
 
 	@ObfuscatedName("uh.m")
-	public static final class572 field7257 = new class572("", 12, new class463[] { class463.field4692 }, null);
+	public static final class572 field7257 = new class572("", 12, new ScriptVarType[] { ScriptVarType.field4692 }, null);
 
 	@ObfuscatedName("uh.k")
-	public static final class572 field7253 = new class572("", 13, new class463[] { class463.field4692 }, null);
+	public static final class572 field7253 = new class572("", 13, new ScriptVarType[] { ScriptVarType.field4692 }, null);
 
 	@ObfuscatedName("uh.f")
-	public static final class572 field7252 = new class572("", 14, new class463[] { class463.field4692 }, null);
+	public static final class572 field7252 = new class572("", 14, new ScriptVarType[] { ScriptVarType.field4692 }, null);
 
 	@ObfuscatedName("uh.w")
-	public static final class572 field7263 = new class572("", 15, new class463[] { class463.field4692, class463.field4717, class463.field4717 }, null);
+	public static final class572 field7263 = new class572("", 15, new ScriptVarType[] { ScriptVarType.field4692, ScriptVarType.field4717, ScriptVarType.field4717 }, null);
 
 	@ObfuscatedName("uh.l")
-	public static final class572 field7254 = new class572("", 16, new class463[] { class463.field4692, class463.field4717, class463.field4717 }, null);
+	public static final class572 field7254 = new class572("", 16, new ScriptVarType[] { ScriptVarType.field4692, ScriptVarType.field4717, ScriptVarType.field4717 }, null);
 
 	@ObfuscatedName("uh.u")
-	public static final class572 field7255 = new class572("", 17, new class463[] { class463.field4692, class463.field4717, class463.field4717 }, null);
+	public static final class572 field7255 = new class572("", 17, new ScriptVarType[] { ScriptVarType.field4692, ScriptVarType.field4717, ScriptVarType.field4717 }, null);
 
 	@ObfuscatedName("uh.z")
 	public static final class572 field7256 = new class572("", 18);
@@ -36,7 +36,7 @@ public class class572 implements class573 {
 	public static final class572 field7261 = new class572("", 19);
 
 	@ObfuscatedName("uh.d")
-	public static final class572 field7269 = new class572("", 20, new class463[] { class463.field4634, class463.field4717 }, null);
+	public static final class572 field7269 = new class572("", 20, new ScriptVarType[] { ScriptVarType.field4634, ScriptVarType.field4717 }, null);
 
 	@ObfuscatedName("uh.c")
 	public static final class572 field7259 = new class572("", 21);
@@ -45,7 +45,7 @@ public class class572 implements class573 {
 	public static final class572 field7260 = new class572("", 22);
 
 	@ObfuscatedName("uh.v")
-	public static final class572 field7251 = new class572("", 23, new class463[] { class463.field4735 }, null);
+	public static final class572 field7251 = new class572("", 23, new ScriptVarType[] { ScriptVarType.field4735 }, null);
 
 	@ObfuscatedName("uh.o")
 	public static final class572 field7262 = new class572("", 24);
@@ -83,18 +83,18 @@ public class class572 implements class573 {
 	}
 
 	public class572(String arg0, int arg1) {
-		this(arg0, arg1, false, (class463[]) null, false, (class463[]) null);
+		this(arg0, arg1, false, (ScriptVarType[]) null, false, (ScriptVarType[]) null);
 	}
 
 	public class572(String arg0, int arg1, boolean arg2, boolean arg3) {
-		this(arg0, arg1, arg2, (class463[]) null, arg3, (class463[]) null);
+		this(arg0, arg1, arg2, (ScriptVarType[]) null, arg3, (ScriptVarType[]) null);
 	}
 
-	public class572(String arg0, int arg1, class463[] arg2, class463[] arg3) {
+	public class572(String arg0, int arg1, ScriptVarType[] arg2, ScriptVarType[] arg3) {
 		this(arg0, arg1, arg2 != null, arg2, arg3 != null, arg3);
 	}
 
-	public class572(String arg0, int arg1, boolean arg2, class463[] arg3, boolean arg4, class463[] arg5) {
+	public class572(String arg0, int arg1, boolean arg2, ScriptVarType[] arg3, boolean arg4, ScriptVarType[] arg5) {
 		this.field7271 = arg1;
 	}
 

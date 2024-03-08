@@ -20,7 +20,7 @@ public class class791 {
 	}
 
 	@ObfuscatedName("anp.m(Lalw;[Lqw;I)[Ljava/lang/Object;")
-	public static Object[] method18719(Packet arg0, class463[] arg1) {
+	public static Object[] method18719(Packet arg0, ScriptVarType[] arg1) {
 		int var2 = arg0.gSmart1or2();
 		Object[] var3 = new Object[arg1.length * var2];
 		for (int var4 = 0; var4 < var2; var4++) {

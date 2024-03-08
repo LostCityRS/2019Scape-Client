@@ -5,10 +5,10 @@ import deob.ObfuscatedName;
 import java.util.*;
 
 @ObfuscatedName("att")
-public class class1205 extends AbstractQueue {
+public class SortedQueue extends AbstractQueue {
 
 	@ObfuscatedName("att.e")
-	public class384[] field12482;
+	public SortedQueueEntry[] field12482;
 
 	@ObfuscatedName("att.n")
 	public Map field12483;
@@ -22,13 +22,13 @@ public class class1205 extends AbstractQueue {
 	@ObfuscatedName("att.f")
 	public int field12486;
 
-	public class1205(int arg0) {
+	public SortedQueue(int arg0) {
 		this(arg0, (Comparator) null);
 	}
 
-	public class1205(int arg0, Comparator arg1) {
+	public SortedQueue(int arg0, Comparator arg1) {
 		this.field12486 = 0;
-		this.field12482 = new class384[arg0];
+		this.field12482 = new SortedQueueEntry[arg0];
 		this.field12483 = new HashMap();
 		this.field12485 = arg1;
 	}
@@ -36,7 +36,7 @@ public class class1205 extends AbstractQueue {
 	@ObfuscatedName("att.e(I)V")
 	public void method19607() {
 		int var1 = (this.field12482.length << 1) + 1;
-		this.field12482 = (class384[]) Arrays.copyOf(this.field12482, var1);
+		this.field12482 = (SortedQueueEntry[]) Arrays.copyOf(this.field12482, var1);
 	}
 
 	public int size() {
@@ -54,10 +54,10 @@ public class class1205 extends AbstractQueue {
 		}
 		this.field12484++;
 		if (var2 == 0) {
-			this.field12482[0] = new class384(arg0, 0);
+			this.field12482[0] = new SortedQueueEntry(arg0, 0);
 			this.field12483.put(arg0, this.field12482[0]);
 		} else {
-			this.field12482[var2] = new class384(arg0, var2);
+			this.field12482[var2] = new SortedQueueEntry(arg0, var2);
 			this.field12483.put(arg0, this.field12482[var2]);
 			this.method19608(var2);
 		}
@@ -88,7 +88,7 @@ public class class1205 extends AbstractQueue {
 	}
 
 	public boolean remove(Object arg0) {
-		class384 var2 = (class384) this.field12483.remove(arg0);
+		SortedQueueEntry var2 = (SortedQueueEntry) this.field12483.remove(arg0);
 		if (var2 == null) {
 			return false;
 		}
@@ -98,7 +98,7 @@ public class class1205 extends AbstractQueue {
 			this.field12482[this.field12484] = null;
 			return true;
 		}
-		class384 var3 = this.field12482[this.field12484];
+		SortedQueueEntry var3 = this.field12482[this.field12484];
 		this.field12482[this.field12484] = null;
 		this.field12482[var2.field3567] = var3;
 		this.field12482[var2.field3567].field3567 = var2.field3567;
@@ -111,10 +111,10 @@ public class class1205 extends AbstractQueue {
 
 	@ObfuscatedName("att.n(II)V")
 	public void method19608(int arg0) {
-		class384 var2 = this.field12482[arg0];
+		SortedQueueEntry var2 = this.field12482[arg0];
 		while (arg0 > 0) {
 			int var3 = arg0 - 1 >>> 1;
-			class384 var4 = this.field12482[var3];
+			SortedQueueEntry var4 = this.field12482[var3];
 			if (this.field12485 == null) {
 				if (((Comparable) var2.field3566).compareTo(var4.field3566) >= 0) {
 					break;
@@ -132,13 +132,13 @@ public class class1205 extends AbstractQueue {
 
 	@ObfuscatedName("att.m(II)V")
 	public void method19609(int arg0) {
-		class384 var2 = this.field12482[arg0];
+		SortedQueueEntry var2 = this.field12482[arg0];
 		int var3 = this.field12484 >>> 1;
 		while (arg0 < var3) {
 			int var4 = (arg0 << 1) + 1;
-			class384 var5 = this.field12482[var4];
+			SortedQueueEntry var5 = this.field12482[var4];
 			int var6 = (arg0 << 1) + 2;
-			class384 var7 = this.field12482[var6];
+			SortedQueueEntry var7 = this.field12482[var6];
 			int var8;
 			if (this.field12485 == null) {
 				if (var6 < this.field12484 && ((Comparable) var5.field3566).compareTo(var7.field3566) > 0) {

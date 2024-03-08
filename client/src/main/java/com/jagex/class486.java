@@ -57,8 +57,8 @@ public abstract class class486 implements class342 {
 	}
 
 	@ObfuscatedName("rv.t()J")
-	public long method7655() {
-		return this.field4987 == 0 ? this.field4986.method49() : 0L;
+	public long getAddress() {
+		return this.field4987 == 0 ? this.field4986.getAddress() : 0L;
 	}
 
 	@ObfuscatedName("rv.ae()V")
@@ -102,7 +102,7 @@ public abstract class class486 implements class342 {
 			OpenGL.glBindBufferARB(this.field4989, this.field4987);
 			OpenGL.glBufferSubDataARBa(this.field4989, arg0, arg1, arg2);
 		} else {
-			this.field4986.field412.copy(this.field4986.method49() + (long) arg0, arg2, arg1);
+			this.field4986.field412.copy(this.field4986.getAddress() + (long) arg0, arg2, arg1);
 		}
 		return true;
 	}

@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public interface class98 {
 
 	@ObfuscatedName("cf.n()J")
-	long method1408();
+	long getAddress();
 
 	@ObfuscatedName("cf.m(I[BI)V")
 	void method1410(int arg0, byte[] arg1, int arg2);

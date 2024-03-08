@@ -157,7 +157,7 @@ public class Statics {
 	public static boolean field11709;
 
 	@ObfuscatedName("alr.e")
-	public static volatile class1020 field11719;
+	public static volatile NativeMouse field11719;
 
 	@ObfuscatedName("ama.h")
 	public static class225[] field11725;
@@ -775,7 +775,7 @@ public class Statics {
 	public static class151 field4626;
 
 	@ObfuscatedName("qw.gc")
-	public static class463[] field4825;
+	public static ScriptVarType[] field4825;
 
 	@ObfuscatedName("qo.nf")
 	public static int field4826;
@@ -1908,7 +1908,7 @@ public class Statics {
 	@ObfuscatedName("ka.w(I)Z")
 	public static boolean method5216() {
 		try {
-			if (!class1020.available()) {
+			if (!NativeMouse.available()) {
 				return false;
 			}
 		} catch (Throwable var2) {
@@ -1917,7 +1917,7 @@ public class Statics {
 		if (field11719 != null) {
 			throw new IllegalStateException("");
 		}
-		field11719 = new class1020();
+		field11719 = new NativeMouse();
 		Thread var1 = new Thread(new class668());
 		var1.setDaemon(true);
 		var1.start();
@@ -2105,8 +2105,8 @@ public class Statics {
 	}
 
 	@ObfuscatedName("qa.e(I)[Lqa;")
-	public static class470[] method7338() {
-		return new class470[] { class470.field4839, class470.field4838, class470.field4836, class470.field4840, class470.field4837 };
+	public static BaseVarType[] method7338() {
+		return new BaseVarType[] { BaseVarType.field4839, BaseVarType.field4838, BaseVarType.field4836, BaseVarType.field4840, BaseVarType.field4837 };
 	}
 
 	@ObfuscatedName("wn.f(IIIIIIB)I")
@@ -2632,8 +2632,8 @@ public class Statics {
 	}
 
 	@ObfuscatedName("qw.w(CB)Lqw;")
-	public static class463 method7300(char arg0) {
-		return arg0 == 'O' ? class463.field4684 : field4825[class693.method16904(arg0) & 0xFF];
+	public static ScriptVarType method7300(char arg0) {
+		return arg0 == 'O' ? ScriptVarType.field4684 : field4825[class693.method16904(arg0) & 0xFF];
 	}
 
 	@ObfuscatedName("ks.x(Lep;Lao;B)I")
@@ -2765,7 +2765,7 @@ public class Statics {
 
 	@ObfuscatedName("kr.d(B)V")
 	public static void method5326() {
-		if (class507.field6623 > 1) {
+		if (GameShell.field6623 > 1) {
 			field688.method18157(field688.field11560, 4);
 		} else {
 			field688.method18157(field688.field11560, 2);
@@ -4100,7 +4100,7 @@ public class Statics {
 
 	@ObfuscatedName("xk.xp(Lyf;I)V")
 	public static final void method10326(class677 arg0) {
-		class994 var1 = class994.method7078((class994) arg0.field8218[--arg0.field8211]);
+		CoordFine var1 = CoordFine.method7078((CoordFine) arg0.field8218[--arg0.field8211]);
 		arg0.field8226 -= 4;
 		var1.field11477 += arg0.field8216[arg0.field8226];
 		var1.field11478 += arg0.field8216[arg0.field8226 + 1];
@@ -4204,7 +4204,7 @@ public class Statics {
 		class754 var5 = (class754) field8514.method962(var2);
 		if (var5.field8781.method1303() != var1) {
 			throw new RuntimeException();
-		} else if (var5.field8775.method1303() == class463.field4634.method1303()) {
+		} else if (var5.field8775.method1303() == ScriptVarType.field4634.method1303()) {
 			int[] var6 = var5.method14867(var4);
 			if (var3 < 0 || var6 == null || var6.length <= var3) {
 				throw new RuntimeException();
@@ -4767,7 +4767,7 @@ public class Statics {
 
 	@ObfuscatedName("agz.anl(Lyf;I)V")
 	public static final void method16461(class677 arg0) {
-		class994 var1 = (class994) arg0.field8218[--arg0.field8211];
+		CoordFine var1 = (CoordFine) arg0.field8218[--arg0.field8211];
 		if (field9155.method4780() != class266.field2816) {
 			throw new RuntimeException();
 		}
@@ -4994,7 +4994,7 @@ public class Statics {
 		int var5 = var2 & 0xFF;
 		class745 var6 = (class745) field9123.method962(var1);
 		class793 var7 = (class793) field1840.method962(var4);
-		class463[] var8 = var7.field9185[var5];
+		ScriptVarType[] var8 = var7.field9185[var5];
 		Object[] var9 = var6.method14711(var5);
 		if (var9 == null && var7.field9186 != null) {
 			var9 = var7.field9186[var5];

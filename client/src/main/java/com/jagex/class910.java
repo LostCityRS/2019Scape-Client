@@ -99,7 +99,7 @@ public class class910 extends class307 {
 		if (!this.method5218() || !this.field3084.method4730() && !this.field3084.method4731()) {
 			return;
 		}
-		class994 var5 = this.field10552.method4667();
+		CoordFine var5 = this.field10552.method4667();
 		this.field10557 = var5.field11477;
 		int var6 = this.field10557;
 		boolean var7 = true;
@@ -213,9 +213,9 @@ public class class910 extends class307 {
 	}
 
 	@ObfuscatedName("ahd.f(B)Lakt;")
-	public class994 method5221() {
+	public CoordFine method5221() {
 		class423 var1 = this.method5219();
-		class994 var2 = new class994(this.field10557, (int) var1.field4308, (int) var1.field4311, (int) var1.field4313);
+		CoordFine var2 = new CoordFine(this.field10557, (int) var1.field4308, (int) var1.field4311, (int) var1.field4313);
 		var1.method6486();
 		return var2;
 	}

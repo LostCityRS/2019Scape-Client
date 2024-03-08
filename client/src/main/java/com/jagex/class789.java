@@ -7,7 +7,7 @@ import deob.Statics;
 public class class789 implements class53, class757 {
 
 	@ObfuscatedName("adp.e")
-	public class463 field9173;
+	public ScriptVarType field9173;
 
 	@ObfuscatedName("adp.n")
 	public int field9172;
@@ -41,13 +41,13 @@ public class class789 implements class53, class757 {
 		} else if (arg1 == 5) {
 			this.field9171 = arg0.gjstr();
 		} else if (arg1 == 101) {
-			this.field9173 = (class463) class686.method1897(class463.method7293(), arg0.gSmart1or2());
+			this.field9173 = (ScriptVarType) class686.method1897(ScriptVarType.method7293(), arg0.gSmart1or2());
 		}
 	}
 
 	@ObfuscatedName("adp.p(I)Z")
 	public boolean method15152() {
-		return class463.field4634 == this.field9173;
+		return ScriptVarType.field4634 == this.field9173;
 	}
 
 	@ObfuscatedName("adp.n(I)V")

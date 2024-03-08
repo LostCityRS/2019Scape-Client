@@ -27,7 +27,7 @@ public class class86 {
 
 	@ObfuscatedName("cl.d([BI)V")
 	public void method1313(byte[] arg0, int arg1) {
-		if (this.field1128 == null || this.field1128.method48() < arg1) {
+		if (this.field1128 == null || this.field1128.getSize() < arg1) {
 			this.field1128 = this.field1127.field9876.method92(arg1, false);
 		}
 		this.field1128.method8(arg0, 0, 0, arg1);

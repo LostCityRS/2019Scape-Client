@@ -179,14 +179,14 @@ public class class998 extends class532 {
 
 	public class998(class696 arg0, int arg1) {
 		this.field11510 = arg0;
-		this.field11513 = new class710(class507.field6616, class507.field6623, Statics.field2153.toLowerCase().indexOf("arm") != -1, Statics.field2601.startsWith("win"), false);
+		this.field11513 = new class710(GameShell.field6616, GameShell.field6623, Statics.field2153.toLowerCase().indexOf("arm") != -1, Statics.field2601.startsWith("win"), false);
 		this.field11540 = new class1041(arg1, this);
 		this.method18154(true, true);
 	}
 
 	public class998(Packet arg0, class696 arg1, int arg2) {
 		this.field11510 = arg1;
-		this.field11513 = new class710(class507.field6616, class507.field6623, Statics.field2153.indexOf("arm") != -1, Statics.field2601.startsWith("win"), false);
+		this.field11513 = new class710(GameShell.field6616, GameShell.field6623, Statics.field2153.indexOf("arm") != -1, Statics.field2601.startsWith("win"), false);
 		this.field11540 = new class1041(arg2, this);
 		this.method18163(arg0);
 	}

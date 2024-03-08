@@ -451,7 +451,7 @@ public class class1130 extends class892 {
 		}
 		class116 var11 = this.field10459[0] = this.field12061.method10126(arg0, arg1, Statics.field11742, Statics.field2628, Statics.field7961, Statics.field1842, Statics.field7410, Statics.field7410, var5, var6, this.field10398, this.field10442, var9, true, Statics.field1709);
 		int var12 = Statics.method18304();
-		if (class507.field6616 < 96 && var12 > 50) {
+		if (GameShell.field6616 < 96 && var12 > 50) {
 			class43.method7319();
 		}
 		if (Statics.field1811 != ModeWhere.field8273 && var12 < 50) {
@@ -644,7 +644,7 @@ public class class1130 extends class892 {
 
 	@ObfuscatedName("aqk.hc(Ljava/lang/String;III)V")
 	public void method19124(String arg0, int arg1, int arg2) {
-		this.method16510(arg0, arg1, arg2, class507.method6016() * Statics.field11389.field7759);
+		this.method16510(arg0, arg1, arg2, GameShell.method6016() * Statics.field11389.field7759);
 	}
 
 	@ObfuscatedName("aqk.e(I)Ljl;")
@@ -658,9 +658,9 @@ public class class1130 extends class892 {
 	}
 
 	@ObfuscatedName("aqk.m(B)Lakt;")
-	public class994 method4667() {
+	public CoordFine method4667() {
 		class594 var1 = client.field10855.method7727();
-		return class994.method258(this.field11717, (int) this.method10536().field4298.field4308 + var1.field7426 * 512, -((int) this.method10536().field4298.field4311), (int) this.method10536().field4298.field4313 + var1.field7427 * 512);
+		return CoordFine.method258(this.field11717, (int) this.method10536().field4298.field4308 + var1.field7426 * 512, -((int) this.method10536().field4298.field4311), (int) this.method10536().field4298.field4313 + var1.field7427 * 512);
 	}
 
 	@ObfuscatedName("aqk.k(I)Lov;")

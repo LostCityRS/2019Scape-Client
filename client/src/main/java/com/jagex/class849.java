@@ -2605,28 +2605,28 @@ public class class849 extends class133 {
 			OpenGL.glDisableClientState(32884);
 		} else {
 			this.method15842(arg0.field1111);
-			OpenGL.glVertexPointer(arg0.field1110, arg0.field1113, this.field9852.method1295(), this.field9852.method1288() + (long) arg0.field1112);
+			OpenGL.glVertexPointer(arg0.field1110, arg0.field1113, this.field9852.method1295(), this.field9852.getAddress() + (long) arg0.field1112);
 			OpenGL.glEnableClientState(32884);
 		}
 		if (arg1 == null) {
 			OpenGL.glDisableClientState(32885);
 		} else {
 			this.method15842(arg1.field1111);
-			OpenGL.glNormalPointer(arg1.field1113, this.field9852.method1295(), this.field9852.method1288() + (long) arg1.field1112);
+			OpenGL.glNormalPointer(arg1.field1113, this.field9852.method1295(), this.field9852.getAddress() + (long) arg1.field1112);
 			OpenGL.glEnableClientState(32885);
 		}
 		if (arg2 == null) {
 			OpenGL.glDisableClientState(32886);
 		} else {
 			this.method15842(arg2.field1111);
-			OpenGL.glColorPointer(arg2.field1110, arg2.field1113, this.field9852.method1295(), this.field9852.method1288() + (long) arg2.field1112);
+			OpenGL.glColorPointer(arg2.field1110, arg2.field1113, this.field9852.method1295(), this.field9852.getAddress() + (long) arg2.field1112);
 			OpenGL.glEnableClientState(32886);
 		}
 		if (arg3 == null) {
 			OpenGL.glDisableClientState(32888);
 		} else {
 			this.method15842(arg3.field1111);
-			OpenGL.glTexCoordPointer(arg3.field1110, arg3.field1113, this.field9852.method1295(), this.field9852.method1288() + (long) arg3.field1112);
+			OpenGL.glTexCoordPointer(arg3.field1110, arg3.field1113, this.field9852.method1295(), this.field9852.getAddress() + (long) arg3.field1112);
 			OpenGL.glEnableClientState(32888);
 		}
 	}
@@ -2639,7 +2639,7 @@ public class class849 extends class133 {
 	@ObfuscatedName("afa.sg(Lcf;III)V")
 	public final void method15921(class98 arg0, int arg1, int arg2, int arg3) {
 		this.method15769(arg0);
-		OpenGL.glDrawElements(arg1, arg3, 5123, arg0.method1408() + (long) (arg2 * 2));
+		OpenGL.glDrawElements(arg1, arg3, 5123, arg0.getAddress() + (long) (arg2 * 2));
 	}
 
 	@ObfuscatedName("afa.tu()V")

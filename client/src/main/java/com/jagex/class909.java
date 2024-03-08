@@ -25,7 +25,7 @@ public class class909 extends class307 {
 	}
 
 	@ObfuscatedName("ahh.t(Lakt;I)V")
-	public void method16671(class994 arg0) {
+	public void method16671(CoordFine arg0) {
 		this.field10549.field4308 = arg0.field11478;
 		this.field10549.field4311 = arg0.field11479;
 		this.field10549.field4313 = arg0.field11480;
@@ -65,8 +65,8 @@ public class class909 extends class307 {
 	}
 
 	@ObfuscatedName("ahh.f(B)Lakt;")
-	public class994 method5221() {
-		return new class994(this.field10551, (int) this.field10548.field4308, (int) this.field10548.field4311, (int) this.field10548.field4313);
+	public CoordFine method5221() {
+		return new CoordFine(this.field10551, (int) this.field10548.field4308, (int) this.field10548.field4311, (int) this.field10548.field4313);
 	}
 
 	@ObfuscatedName("ahh.w(I)F")

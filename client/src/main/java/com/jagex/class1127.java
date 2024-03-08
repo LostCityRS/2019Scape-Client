@@ -1120,7 +1120,7 @@ public final class class1127 extends class850 {
 			class919 var9 = this.field12012[var7];
 			int var10 = 0;
 			int var11 = var9.method16793();
-			long var12 = var9.method7655();
+			long var12 = var9.getAddress();
 			var9.method7658();
 			for (int var14 = 0; var14 < var8.method5776(); var14++) {
 				class339 var15 = var8.method5777(var14);
@@ -1251,7 +1251,7 @@ public final class class1127 extends class850 {
 		class135 var9 = arg0.method5832();
 		class928 var10 = (class928) arg0;
 		var10.method7658();
-		OpenGL.glDrawElements(var7, var8, method19076(var9), var10.method7655() + (long) (var9.field1652 * arg4));
+		OpenGL.glDrawElements(var7, var8, method19076(var9), var10.getAddress() + (long) (var9.field1652 * arg4));
 	}
 
 	@ObfuscatedName("aqv.we(Lms;IIII)V")
@@ -1278,7 +1278,7 @@ public final class class1127 extends class850 {
 			var7 = arg4;
 		}
 		class135 var8 = this.field12036.method5832();
-		OpenGL.glDrawElements(var6, var7, method19076(var8), this.field12036.method7655() + (long) (var8.field1652 * arg3));
+		OpenGL.glDrawElements(var6, var7, method19076(var8), this.field12036.getAddress() + (long) (var8.field1652 * arg3));
 	}
 
 	@ObfuscatedName("aqv.d(I)V")

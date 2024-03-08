@@ -19,7 +19,7 @@ public class class1069 extends class714 {
 	}
 
 	@ObfuscatedName("anc.q(Lakt;B)V")
-	public void method18776(class994 arg0) {
+	public void method18776(CoordFine arg0) {
 		this.field11848.field4308 = arg0.field11478;
 		this.field11848.field4311 = arg0.field11479;
 		this.field11848.field4313 = arg0.field11480;

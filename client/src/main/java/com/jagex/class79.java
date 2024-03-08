@@ -9,7 +9,7 @@ public interface class79 {
 	void method1286(int arg0, byte[] arg1, int arg2);
 
 	@ObfuscatedName("bv.m()J")
-	long method1288();
+	long getAddress();
 
 	@ObfuscatedName("bv.e()I")
 	int method1294();

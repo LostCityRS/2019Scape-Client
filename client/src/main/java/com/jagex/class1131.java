@@ -538,7 +538,7 @@ public class class1131 extends class892 {
 
 	@ObfuscatedName("aqc.hc(Ljava/lang/String;III)V")
 	public void method19166(String arg0, int arg1, int arg2) {
-		int var4 = class507.method6016() * Statics.field11389.field7754;
+		int var4 = GameShell.method6016() * Statics.field11389.field7754;
 		this.method16510(arg0, arg1, arg2, var4);
 	}
 
@@ -558,9 +558,9 @@ public class class1131 extends class892 {
 	}
 
 	@ObfuscatedName("aqc.m(B)Lakt;")
-	public class994 method4667() {
+	public CoordFine method4667() {
 		class594 var1 = client.field10855.method7727();
-		return class994.method258(this.field11717, (int) this.method10536().field4298.field4308 + var1.field7426 * 512, -((int) this.method10536().field4298.field4311), (int) this.method10536().field4298.field4313 + var1.field7427 * 512);
+		return CoordFine.method258(this.field11717, (int) this.method10536().field4298.field4308 + var1.field7426 * 512, -((int) this.method10536().field4298.field4311), (int) this.method10536().field4298.field4313 + var1.field7427 * 512);
 	}
 
 	@ObfuscatedName("aqc.k(I)Lov;")

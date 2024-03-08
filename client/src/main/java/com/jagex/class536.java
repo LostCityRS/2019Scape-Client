@@ -155,7 +155,7 @@ public class class536 implements class499 {
 			throw new class1111(4, arg0);
 		}
 		try {
-			var4 = new File(var4.getCanonicalPath());
+			/*var4 = new File(var4.getCanonicalPath());
 			Class var5 = Class.forName("java.lang.Runtime");
 			Class var6 = Class.forName("java.lang.reflect.AccessibleObject");
 			Method var7 = var6.getDeclaredMethod("setAccessible", Boolean.TYPE);
@@ -164,11 +164,12 @@ public class class536 implements class499 {
 			var8.invoke(Runtime.getRuntime(), arg1, var4.getPath());
 			var7.invoke(var8, Boolean.FALSE);
 			this.field6766.put(arg0, arg1);
-		} catch (NoSuchMethodException var11) {
+		} catch (NoSuchMethodException var11) {*/
 			System.load(var4.getPath());
 			this.field6766.put(arg0, class535.class);
-		} catch (Throwable var12) {
-			throw new class1111(3, arg0, var12);
+		} catch (Throwable ex) {
+			ex.printStackTrace();
+			throw new class1111(3, arg0, ex);
 		}
 	}
 

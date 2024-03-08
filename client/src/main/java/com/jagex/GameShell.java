@@ -16,7 +16,7 @@ import java.io.RandomAccessFile;
 import java.net.URL;
 
 @ObfuscatedName("sk")
-public abstract class class507 implements class509, Runnable, FocusListener, WindowListener {
+public abstract class GameShell implements GameShellStub, Runnable, FocusListener, WindowListener {
 
 	@ObfuscatedName("sk.n")
 	public static long field6584 = 20000000L;
@@ -468,7 +468,7 @@ public abstract class class507 implements class509, Runnable, FocusListener, Win
 	public synchronized void method8030() {
 		this.method8032();
 		Container var1 = method7321();
-		Statics.field10578 = new class1206(var1);
+		Statics.field10578 = new GameCanvas(var1);
 		this.method8129(var1);
 	}
 

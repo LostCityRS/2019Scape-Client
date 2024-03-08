@@ -202,7 +202,7 @@ public class class24 {
 				var1.field11432.pjstr(Statics.field579);
 				var1.field11432.p1(Statics.field1680.method1303());
 				var1.field11432.p1(client.field10768.field8339);
-				class507.method4286(var1.field11432);
+				GameShell.method4286(var1.field11432);
 				String var4 = client.field10781;
 				var1.field11432.p1(var4 == null ? 0 : 1);
 				if (var4 != null) {

@@ -953,13 +953,13 @@ public abstract class class892 extends class1200 implements class273 {
 	}
 
 	@ObfuscatedName("ahm.ct(I)Lakt;")
-	public class994 method16537() {
+	public CoordFine method16537() {
 		class423 var1 = this.method10536().field4298;
 		class594 var2 = client.field10855.method7727();
 		int var3 = var2.field7426 * 512 + (int) var1.field4308;
 		int var4 = (int) var1.field4311;
 		int var5 = var2.field7427 * 512 + (int) var1.field4313;
-		return new class994(this.field11717, var3, var4, var5);
+		return new CoordFine(this.field11717, var3, var4, var5);
 	}
 
 	public void finalize() {

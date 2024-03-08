@@ -125,7 +125,7 @@ public class class1070 extends class714 {
 		}
 		var2.method6418();
 		class909 var6 = (class909) this.field8479.method4709();
-		class994 var7 = var6.method5221();
+		CoordFine var7 = var6.method5221();
 		class423 var8 = var7.method17853();
 		class423 var9 = class423.method6483(0.0F, 0.0F, (float) field11855);
 		var9.method6526(var2);
@@ -136,7 +136,7 @@ public class class1070 extends class714 {
 		var10.field4311 *= -1.0F;
 		var8.method6497(var10);
 		this.method18790(var8);
-		var6.method16671(new class994(var7.field11477, (int) var8.field4308, (int) var8.field4311, (int) var8.field4313));
+		var6.method16671(new CoordFine(var7.field11477, (int) var8.field4308, (int) var8.field4311, (int) var8.field4313));
 		field11852 = 0;
 		field11855 = 0;
 	}

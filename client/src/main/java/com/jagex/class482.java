@@ -46,7 +46,7 @@ public class class482 {
 			if (var3 == 255) {
 				return var2;
 			}
-			class470 var4 = (class470) class686.method17657(class470.class, var3);
+			BaseVarType var4 = (BaseVarType) class686.method17657(BaseVarType.class, var3);
 			while (true) {
 				int var5 = arg0.g1();
 				if (var5 == 255) {

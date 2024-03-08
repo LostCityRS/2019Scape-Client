@@ -197,9 +197,9 @@ public class class1000 extends class532 {
 			}
 			this.field11592 = var11;
 			this.field11608 = false;
-			this.field11577 = class507.field6616;
+			this.field11577 = GameShell.field6616;
 			if (this.field11602 > 3) {
-				this.field11611 = class507.field6623;
+				this.field11611 = GameShell.field6623;
 			} else {
 				this.field11611 = 0;
 			}

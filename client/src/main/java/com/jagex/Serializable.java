@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("acf")
-public interface class785 {
+public interface Serializable {
 
 	@ObfuscatedName("acf.n(Lalw;S)V")
 	void method15114(Packet arg0);

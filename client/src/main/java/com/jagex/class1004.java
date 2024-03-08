@@ -210,7 +210,7 @@ public class class1004 extends class541 {
 				method8542(arg0, field6797, field6798, field6842);
 				field11651 = 60;
 				class492.method6969(true);
-				class507.method135();
+				GameShell.method135();
 			} else if (method8542(arg0, field6797, field6798, field6842)) {
 				field11651 = 60;
 			}
@@ -226,7 +226,7 @@ public class class1004 extends class541 {
 			method8505();
 			field11651 = 70;
 			class492.method6969(true);
-			class507.method135();
+			GameShell.method135();
 		} else if (field11651 >= 70) {
 			int var11 = 0;
 			while (true) {
@@ -364,7 +364,7 @@ public class class1004 extends class541 {
 		if (client.field10794) {
 			int var13 = arg1 + arg3 - 5;
 			int var14 = arg2 + arg4 - 8;
-			Statics.field9184.method2682("Fps: " + class507.field6585 + " (" + class507.field6602 + " ms)", var13, var14, 16776960, -1);
+			Statics.field9184.method2682("Fps: " + GameShell.field6585 + " (" + GameShell.field6602 + " ms)", var13, var14, 16776960, -1);
 			int var18 = var14 - 15;
 			Runtime var15 = Runtime.getRuntime();
 			int var16 = (int) ((var15.totalMemory() - var15.freeMemory()) / 1024L);

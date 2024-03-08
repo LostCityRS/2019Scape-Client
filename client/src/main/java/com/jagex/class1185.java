@@ -114,7 +114,7 @@ public class class1185 extends class986 {
 			}
 			this.field12367[arg1] = arg0.g1();
 		} else if (class504.field5144 == arg2) {
-			class470 var5 = (class470) class686.method1897(Statics.method7338(), arg0.g1());
+			BaseVarType var5 = (BaseVarType) class686.method1897(Statics.method7338(), arg0.g1());
 			switch(var5.field4841) {
 				case 1:
 					if (this.field12366 == null) {

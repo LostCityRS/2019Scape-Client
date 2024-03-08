@@ -15,8 +15,8 @@ public class class827 extends class86 implements class98 {
 	}
 
 	@ObfuscatedName("aeo.n()J")
-	public long method1408() {
-		return this.field1128.method49();
+	public long getAddress() {
+		return this.field1128.getAddress();
 	}
 
 	@ObfuscatedName("aeo.m(I[BI)V")

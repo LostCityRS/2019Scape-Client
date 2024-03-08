@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class class793 implements class53, class757 {
 
 	@ObfuscatedName("adb.e")
-	public class463[][] field9185;
+	public ScriptVarType[][] field9185;
 
 	@ObfuscatedName("adb.n")
 	public Object[][] field9186;
@@ -29,14 +29,14 @@ public class class793 implements class53, class757 {
 		}
 		int var3 = arg0.g1();
 		if (this.field9185 == null) {
-			this.field9185 = new class463[var3][];
+			this.field9185 = new ScriptVarType[var3][];
 		}
 		for (int var4 = arg0.g1(); var4 != 255; var4 = arg0.g1()) {
 			int var5 = var4 & 0x7F;
 			boolean var6 = (var4 & 0x80) != 0;
-			class463[] var7 = new class463[arg0.g1()];
+			ScriptVarType[] var7 = new ScriptVarType[arg0.g1()];
 			for (int var8 = 0; var8 < var7.length; var8++) {
-				var7[var8] = (class463) class686.method1897(class463.method7293(), arg0.gSmart1or2());
+				var7[var8] = (ScriptVarType) class686.method1897(ScriptVarType.method7293(), arg0.gSmart1or2());
 			}
 			this.field9185[var5] = var7;
 			if (var6) {

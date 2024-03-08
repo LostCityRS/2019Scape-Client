@@ -10,10 +10,10 @@ import java.util.Map.Entry;
 public class class754 implements class53, class757 {
 
 	@ObfuscatedName("abm.e")
-	public class463 field8781;
+	public ScriptVarType field8781;
 
 	@ObfuscatedName("abm.n")
-	public class463 field8775;
+	public ScriptVarType field8775;
 
 	@ObfuscatedName("abm.m")
 	public String field8777 = "null";
@@ -82,9 +82,9 @@ public class class754 implements class53, class757 {
 				}
 			}
 		} else if (arg1 == 101) {
-			this.field8781 = (class463) class686.method1897(class463.method7293(), arg0.gSmart1or2());
+			this.field8781 = (ScriptVarType) class686.method1897(ScriptVarType.method7293(), arg0.gSmart1or2());
 		} else if (arg1 == 102) {
-			this.field8775 = (class463) class686.method1897(class463.method7293(), arg0.gSmart1or2());
+			this.field8775 = (ScriptVarType) class686.method1897(ScriptVarType.method7293(), arg0.gSmart1or2());
 		}
 	}
 

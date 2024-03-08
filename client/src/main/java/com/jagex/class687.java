@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 import java.util.Locale;
 
 @ObfuscatedName("zt")
-public class class687 implements class685 {
+public class class687 implements SerializableEnum {
 
 	@ObfuscatedName("zt.e")
 	public static final class687 field8296 = new class687("EN", "en", "English", ModeWhere.field8273, 0, "GB");

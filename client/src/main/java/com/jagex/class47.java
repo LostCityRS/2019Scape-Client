@@ -300,7 +300,7 @@ public class class47 {
 				return;
 			}
 			if (arg0.equals("heap")) {
-				method4285("Heap: " + class507.field6616 + "MB");
+				method4285("Heap: " + GameShell.field6616 + "MB");
 				return;
 			}
 			if (arg0.equalsIgnoreCase("getcamerapos")) {
@@ -544,7 +544,7 @@ public class class47 {
 				if (arg0 == 29) {
 					method18557();
 				} else if (arg0 == 11) {
-					method4285("" + class507.field6585);
+					method4285("" + GameShell.field6585);
 				} else if (arg0 == 24) {
 					class555 var1 = client.field10855.method7743().field6930;
 					var1.field7031 = !var1.field7031;
@@ -588,7 +588,7 @@ public class class47 {
 				} else if (arg0 == 26) {
 					Statics.field10578.setLocation(50, 50);
 				} else if (arg0 == 22) {
-					Statics.field10578.setLocation(class507.field6596, class507.field6597);
+					Statics.field10578.setLocation(GameShell.field6596, GameShell.field6597);
 				} else if (arg0 == 4) {
 					method10153();
 				} else if (arg0 == 17) {

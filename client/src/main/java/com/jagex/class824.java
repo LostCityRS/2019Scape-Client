@@ -30,8 +30,8 @@ public class class824 extends class86 implements class79 {
 	}
 
 	@ObfuscatedName("aey.m()J")
-	public long method1288() {
-		return this.field1128.method49();
+	public long getAddress() {
+		return this.field1128.getAddress();
 	}
 
 	@ObfuscatedName("aey.k(I[BI)V")

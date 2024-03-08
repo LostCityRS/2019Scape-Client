@@ -35,13 +35,13 @@ public class class648 {
 	@ObfuscatedName("cr.e(I)V")
 	public static void method1427() {
 		if (Statics.method5216()) {
-			class1020.method17426(new class647());
+			NativeMouse.method17426(new class647());
 		}
 	}
 
 	@ObfuscatedName("arw.n(I)V")
 	public static void method19265() {
-		class1020.method13850();
+		NativeMouse.method13850();
 	}
 
 	@ObfuscatedName("yu.m(S)V")

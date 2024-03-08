@@ -133,7 +133,7 @@ public class class278 implements class281 {
 		while (true) {
 			try {
 				Image var1 = Toolkit.getDefaultToolkit().createImage(arg0);
-				Container var2 = class507.method7321();
+				Container var2 = GameShell.method7321();
 				MediaTracker var3 = new MediaTracker(var2);
 				var3.addImage(var1, 0);
 				var3.waitForAll();

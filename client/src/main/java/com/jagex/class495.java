@@ -1181,7 +1181,7 @@ public class class495 {
 		} else {
 			Statics.field1798.method3149();
 			this.field5062.method9997();
-			class507.method135();
+			GameShell.method135();
 		}
 		for (int var27 = 0; var27 < 4; var27++) {
 			for (int var28 = 0; var28 < this.field5028; var28++) {
@@ -1197,7 +1197,7 @@ public class class495 {
 		}
 		client.method3128();
 		class962.method5070();
-		if (class507.method4419() == class506.field6580 && client.field10849.method939() != null && client.field10791 == 3) {
+		if (GameShell.method4419() == class506.field6580 && client.field10849.method939() != null && client.field10791 == 3) {
 			ClientMessage var31 = Statics.method1604(ClientProt.field3772, client.field10849.field794);
 			var31.field11432.p4(1057001181);
 			client.field10849.method934(var31);

@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("vg")
-public class class596 implements class685 {
+public class class596 implements SerializableEnum {
 
 	@ObfuscatedName("vg.e")
 	public static final class596 field7438 = new class596(0);

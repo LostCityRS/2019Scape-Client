@@ -15,7 +15,7 @@ public class class826 extends class85 implements class98 {
 	}
 
 	@ObfuscatedName("aec.n()J")
-	public long method1408() {
+	public long getAddress() {
 		return 0L;
 	}
 

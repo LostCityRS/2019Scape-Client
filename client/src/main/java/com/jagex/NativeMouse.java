@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 
 @ObfuscatedName("alr")
-public class class1020 extends IcmpService {
+public class NativeMouse extends IcmpService {
 
 	@ObfuscatedName("alr.n")
 	public final List field11718 = new ArrayList();

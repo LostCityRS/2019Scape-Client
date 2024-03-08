@@ -17,28 +17,28 @@ public class class686 {
 	}
 
 	@ObfuscatedName("akf.e(Ljava/lang/Class;IB)Lza;")
-	public static class685 method17657(Class arg0, int arg1) {
+	public static SerializableEnum method17657(Class arg0, int arg1) {
 		Map var2 = field8286;
 		synchronized (field8286) {
 			Map var3 = (Map) field8286.get(arg0);
 			if (var3 == null) {
 				var3 = new HashMap();
-				class685[] var4 = (class685[]) arg0.getEnumConstants();
+				SerializableEnum[] var4 = (SerializableEnum[]) arg0.getEnumConstants();
 				for (int var5 = 0; var5 < var4.length; var5++) {
-					class685 var6 = var4[var5];
+					SerializableEnum var6 = var4[var5];
 					var3.put(var6.method1303(), var6);
 				}
 				field8286.put(arg0, var3);
 			}
-			return (class685) var3.get(arg1);
+			return (SerializableEnum) var3.get(arg1);
 		}
 	}
 
 	@ObfuscatedName("dz.n([Lza;II)Lza;")
-	public static class685 method1897(class685[] arg0, int arg1) {
-		class685[] var2 = arg0;
+	public static SerializableEnum method1897(SerializableEnum[] arg0, int arg1) {
+		SerializableEnum[] var2 = arg0;
 		for (int var3 = 0; var3 < var2.length; var3++) {
-			class685 var4 = var2[var3];
+			SerializableEnum var4 = var2[var3];
 			if (arg1 == var4.method1303()) {
 				return var4;
 			}
@@ -58,7 +58,7 @@ public class class686 {
 		}
 		Iterator var4 = arg0.iterator();
 		while (var4.hasNext()) {
-			class685 var5 = (class685) var4.next();
+			SerializableEnum var5 = (SerializableEnum) var4.next();
 			int var6 = var5.method1303();
 			int var7 = var6 / 8;
 			arg1.data[arg1.pos + var7] = (byte) (arg1.data[arg1.pos + var7] | 0x1 << (var6 & 0x7));
@@ -71,7 +71,7 @@ public class class686 {
 		int var1 = -1;
 		Iterator var2 = arg0.iterator();
 		while (var2.hasNext()) {
-			class685 var3 = (class685) var2.next();
+			SerializableEnum var3 = (SerializableEnum) var2.next();
 			if (var3.method1303() > var1) {
 				var1 = var3.method1303();
 			}

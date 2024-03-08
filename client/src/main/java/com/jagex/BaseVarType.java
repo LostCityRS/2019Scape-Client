@@ -4,22 +4,22 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("qa")
-public class class470 implements class685 {
+public class BaseVarType implements SerializableEnum {
 
 	@ObfuscatedName("qa.e")
-	public static final class470 field4840 = new class470(2, 0, Integer.class, new class471());
+	public static final BaseVarType field4840 = new BaseVarType(2, 0, Integer.class, new BaseVarTypeInteger());
 
 	@ObfuscatedName("qa.n")
-	public static final class470 field4837 = new class470(4, 1, Long.class, new class469());
+	public static final BaseVarType field4837 = new BaseVarType(4, 1, Long.class, new BaseVarTypeLong());
 
 	@ObfuscatedName("qa.m")
-	public static final class470 field4836 = new class470(1, 2, String.class, new class467());
+	public static final BaseVarType field4836 = new BaseVarType(1, 2, String.class, new BaseVarTypeString());
 
 	@ObfuscatedName("qa.k")
-	public static final class470 field4839 = new class470(0, 3, class994.class, new class465());
+	public static final BaseVarType field4839 = new BaseVarType(0, 3, CoordFine.class, new BaseVarTypeCoordFine());
 
 	@ObfuscatedName("qa.f")
-	public static final class470 field4838 = new class470(3, 4, class227.class, new class464());
+	public static final BaseVarType field4838 = new BaseVarType(3, 4, ComponentHook.class, new BaseVarTypeComponentHook());
 
 	@ObfuscatedName("qa.w")
 	public final int field4841;
@@ -31,9 +31,9 @@ public class class470 implements class685 {
 	public final Class field4843;
 
 	@ObfuscatedName("qa.z")
-	public final class802 field4844;
+	public final BaseVarTypeCodec field4844;
 
-	public class470(int arg0, int arg1, Class arg2, class802 arg3) {
+	public BaseVarType(int arg0, int arg1, Class arg2, BaseVarTypeCodec arg3) {
 		this.field4841 = arg0;
 		this.field4842 = arg1;
 		this.field4843 = arg2;
@@ -41,10 +41,10 @@ public class class470 implements class685 {
 	}
 
 	@ObfuscatedName("qa.m(Ljava/lang/Class;I)Lqa;")
-	public static class470 method7337(Class arg0) {
-		class470[] var1 = Statics.method7338();
+	public static BaseVarType method7337(Class arg0) {
+		BaseVarType[] var1 = Statics.method7338();
 		for (int var2 = 0; var2 < var1.length; var2++) {
-			class470 var3 = var1[var2];
+			BaseVarType var3 = var1[var2];
 			if (var3.field4843 == arg0) {
 				return var3;
 			}
@@ -53,8 +53,8 @@ public class class470 implements class685 {
 	}
 
 	@ObfuscatedName("qa.f(Ljava/lang/Class;I)Lade;")
-	public static class802 method7336(Class arg0) {
-		class470 var1 = method7337(arg0);
+	public static BaseVarTypeCodec method7336(Class arg0) {
+		BaseVarType var1 = method7337(arg0);
 		if (var1 == null) {
 			throw new IllegalArgumentException();
 		}
@@ -68,6 +68,6 @@ public class class470 implements class685 {
 
 	@ObfuscatedName("qa.w(Lalw;B)Ljava/lang/Object;")
 	public Object method7335(Packet arg0) {
-		return this.field4844.method7308(arg0);
+		return this.field4844.decode(arg0);
 	}
 }

@@ -435,7 +435,7 @@ public class class10 {
 					var10.p2(Statics.field6586);
 					var10.p2(Statics.field6600);
 					var10.p1(Statics.field688.field11516.method18639());
-					class507.method4286(var10);
+					GameShell.method4286(var10);
 					var10.pjstr(client.field10990);
 					var10.p4(client.field10772);
 					Packet var16 = Statics.field688.method18156();
@@ -495,7 +495,7 @@ public class class10 {
 					var10.p2(Statics.field6586);
 					var10.p2(Statics.field6600);
 					var10.p1(Statics.field688.field11516.method18639());
-					class507.method4286(var10);
+					GameShell.method4286(var10);
 					var10.pjstr(client.field10990);
 					Packet var22 = Statics.field688.method18156();
 					var10.p1(var22.pos);

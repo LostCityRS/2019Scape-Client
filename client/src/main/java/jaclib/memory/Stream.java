@@ -2,7 +2,7 @@ package jaclib.memory;
 
 import deob.ObfuscatedName;
 
-public final class Stream {
+public class Stream {
 
 	@ObfuscatedName("jaclib/memory/Stream.e")
 	public Buffer field403;
@@ -31,11 +31,11 @@ public final class Stream {
 	}
 
 	public Stream(Buffer arg0) {
-		this(arg0, 0, arg0.method48());
+		this(arg0, 0, arg0.getSize());
 	}
 
 	public Stream(Buffer arg0, int arg1, int arg2) {
-		this(arg0.method48() < 4096 ? arg0.method48() : 4096);
+		this(arg0.getSize() < 4096 ? arg0.getSize() : 4096);
 		this.method54(arg0, arg1, arg2);
 	}
 
@@ -45,7 +45,7 @@ public final class Stream {
 		this.field403 = arg0;
 		this.field405 = arg1;
 		this.field404 = arg1 + arg2;
-		if (this.field404 > arg0.method48()) {
+		if (this.field404 > arg0.getSize()) {
 			throw new RuntimeException();
 		}
 	}
@@ -107,11 +107,11 @@ public final class Stream {
 	}
 
 	@ObfuscatedName("jaclib/memory/Stream.u()Z")
-	public static final boolean method61() {
+	public static boolean method61() {
 		return field408;
 	}
 
 	public static native int floatToRawIntBits(float arg0);
 
-	public static final native byte getLSB(int arg0);
+	public static native byte getLSB(int arg0);
 }

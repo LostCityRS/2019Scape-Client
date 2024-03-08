@@ -9,7 +9,7 @@ public class class745 implements class53, class757 {
 	public Object[][] field8734;
 
 	@ObfuscatedName("abc.n")
-	public class463[][] field8733;
+	public ScriptVarType[][] field8733;
 
 	@ObfuscatedName("abc.m")
 	public int field8735;
@@ -36,13 +36,13 @@ public class class745 implements class53, class757 {
 			int var3 = arg0.g1();
 			if (this.field8734 == null) {
 				this.field8734 = new Object[var3][];
-				this.field8733 = new class463[var3][];
+				this.field8733 = new ScriptVarType[var3][];
 			}
 			for (int var4 = arg0.g1(); var4 != 255; var4 = arg0.g1()) {
 				int var5 = arg0.g1();
-				class463[] var6 = new class463[var5];
+				ScriptVarType[] var6 = new ScriptVarType[var5];
 				for (int var7 = 0; var7 < var5; var7++) {
-					var6[var7] = (class463) class686.method1897(class463.method7293(), arg0.gSmart1or2());
+					var6[var7] = (ScriptVarType) class686.method1897(ScriptVarType.method7293(), arg0.gSmart1or2());
 				}
 				this.field8734[var4] = class791.method18719(arg0, var6);
 				this.field8733[var4] = var6;

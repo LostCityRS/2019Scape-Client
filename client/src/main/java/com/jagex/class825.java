@@ -30,7 +30,7 @@ public class class825 extends class85 implements class79 {
 	}
 
 	@ObfuscatedName("aex.m()J")
-	public long method1288() {
+	public long getAddress() {
 		return 0L;
 	}
 
