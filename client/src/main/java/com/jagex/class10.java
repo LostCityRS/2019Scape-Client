@@ -823,7 +823,7 @@ public class class10 {
 				}
 				if (client.field10953) {
 					try {
-						class766.method14969(Statics.field11885, "zap");
+						BrowserControl.call(Statics.field11885, "zap");
 					} catch (Throwable var49) {
 						if (client.field10770) {
 							try {
@@ -834,7 +834,7 @@ public class class10 {
 					}
 				} else {
 					try {
-						class766.method14969(Statics.field11885, "unzap");
+						BrowserControl.call(Statics.field11885, "unzap");
 					} catch (Throwable var47) {
 					}
 				}

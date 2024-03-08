@@ -84,7 +84,7 @@ public class class505 {
 			}
 		} else if (arg1 == 1) {
 			try {
-				Object var6 = class766.method14960(field6574, arg2, new Object[] { (new URL(field6574.getCodeBase(), arg0)).toString() });
+				Object var6 = BrowserControl.call(field6574, arg2, new Object[] { (new URL(field6574.getCodeBase(), arg0)).toString() });
 				return var6 != null;
 			} catch (Throwable var12) {
 				return false;
@@ -98,7 +98,7 @@ public class class505 {
 			}
 		} else if (arg1 == 3) {
 			try {
-				class766.method14969(field6574, "loggedout");
+				BrowserControl.call(field6574, "loggedout");
 			} catch (Throwable var15) {
 			}
 			try {

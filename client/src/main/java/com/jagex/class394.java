@@ -59,12 +59,12 @@ public class class394 {
 
 	@ObfuscatedName("ns.n([Ljava/lang/Object;I)Ljava/lang/Object;")
 	public Object method6097(Object[] arg0) throws Throwable {
-		return class766.method14960(Statics.field11885, this.method6087(), arg0);
+		return BrowserControl.call(Statics.field11885, this.method6087(), arg0);
 	}
 
 	@ObfuscatedName("ns.m(S)Ljava/lang/Object;")
 	public Object method6088() throws Throwable {
-		return class766.method14969(Statics.field11885, this.method6087());
+		return BrowserControl.call(Statics.field11885, this.method6087());
 	}
 
 	@ObfuscatedName("ns.k([Ljava/lang/Object;I)V")

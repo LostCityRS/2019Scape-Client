@@ -854,7 +854,7 @@ public abstract class class507 implements class509, Runnable, FocusListener, Win
 		this.field6621 = true;
 		System.out.println("error_game_" + arg0);
 		try {
-			class766.method14969(Statics.field11885, "loggedout");
+			BrowserControl.call(Statics.field11885, "loggedout");
 		} catch (Throwable var5) {
 		}
 		try {
@@ -871,7 +871,7 @@ public abstract class class507 implements class509, Runnable, FocusListener, Win
 		this.field6621 = true;
 		System.out.println("error_game_" + arg0);
 		try {
-			class766.method14969(Statics.field11885, "loggedout");
+			BrowserControl.call(Statics.field11885, "loggedout");
 		} catch (Throwable var6) {
 		}
 		try {

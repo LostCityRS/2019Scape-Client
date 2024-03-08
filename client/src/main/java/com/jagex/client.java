@@ -2686,7 +2686,7 @@ public final class client extends class507 {
 		}
 		method6972(4);
 		try {
-			class766.method14969(Statics.field11885, "loggedout");
+			BrowserControl.call(Statics.field11885, "loggedout");
 		} catch (Throwable var6) {
 		}
 	}
@@ -13339,7 +13339,7 @@ public final class client extends class507 {
 			} else {
 				var4 = var3 + "; Expires=" + method14989(class213.method3655() + 94608000000L) + "; Max-Age=" + 94608000L;
 			}
-			class766.method14961(Statics.field11885, "document.cookie=\"" + var4 + "\"");
+			BrowserControl.eval(Statics.field11885, "document.cookie=\"" + var4 + "\"");
 		} catch (Throwable var6) {
 		}
 	}
@@ -13353,7 +13353,7 @@ public final class client extends class507 {
 			String var0 = Statics.field11885.getParameter(class398.field4132.field4162);
 			int var1 = (int) (class213.method3655() / 86400000L) - 11745;
 			String var2 = "usrdob=" + var1 + "; version=1; path=/; domain=" + var0;
-			class766.method14961(Statics.field11885, "document.cookie=\"" + var2 + "\"");
+			BrowserControl.eval(Statics.field11885, "document.cookie=\"" + var2 + "\"");
 		} catch (Throwable var4) {
 		}
 	}
