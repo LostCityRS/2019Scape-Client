@@ -367,7 +367,7 @@ public class class280 {
 			Huffman var19 = new Huffman(Statics.field8741.method6906("huffman", ""));
 			StringEncoder.setHuffman(var19);
 			Statics.field6594 = class511.method6109();
-			Statics.field10581 = new class1000(true);
+			Statics.field10581 = new HardwarePlatform(true);
 		}
 		if (Statics.field3419 == class277.field2918) {
 			int var20 = class14.method15381(Statics.field10317) + Statics.field7538.method6191(true);

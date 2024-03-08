@@ -97,7 +97,7 @@ public class Statics {
 	public static Canvas field10578;
 
 	@ObfuscatedName("ahs.dv")
-	public static class1000 field10581;
+	public static HardwarePlatform field10581;
 
 	@ObfuscatedName("aij.vn")
 	public static int[] field10750;

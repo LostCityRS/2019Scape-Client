@@ -7,7 +7,7 @@ import jaclib.hardware_info.HardwareInfo;
 import java.util.HashMap;
 
 @ObfuscatedName("aly")
-public class class1000 extends class532 {
+public class HardwarePlatform extends class532 {
 
 	@ObfuscatedName("aly.z")
 	public int field11616;
@@ -84,7 +84,7 @@ public class class1000 extends class532 {
 	@ObfuscatedName("aly.bc")
 	public String field11585;
 
-	public class1000(boolean arg0) {
+	public HardwarePlatform(boolean arg0) {
 		if (arg0) {
 			if (Statics.field2601.startsWith("win")) {
 				this.field11616 = 1;
