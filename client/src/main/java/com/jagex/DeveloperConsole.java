@@ -194,8 +194,8 @@ public class DeveloperConsole {
 
 	@ObfuscatedName("ky.r(Ldh;I)V")
 	public static void method5378(Renderer arg0) {
-		if (class586.method5076() && class586.method8634()) {
-			class586.method5389(0, 0, Statics.field6586, 350);
+		if (TwitchHardwarePlatform.method5076() && TwitchHardwarePlatform.method8634()) {
+			TwitchHardwarePlatform.method5389(0, 0, Statics.field6586, 350);
 		}
 		arg0.method2168(0, 0, Statics.field6586, 350);
 		arg0.method2354(0, 0, Statics.field6586, 350, field776 * 36 << 24 | 0x332277, 1);

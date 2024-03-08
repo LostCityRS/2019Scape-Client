@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 
 @ObfuscatedName("vv")
-public class class586 {
+public class TwitchHardwarePlatform {
 
 	@ObfuscatedName("vv.e")
 	public static boolean field7377 = false;
@@ -91,7 +91,7 @@ public class class586 {
 	@ObfuscatedName("vv.ap")
 	public static boolean field7383 = false;
 
-	public class586() throws Throwable {
+	public TwitchHardwarePlatform() throws Throwable {
 		throw new Error();
 	}
 

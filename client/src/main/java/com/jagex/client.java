@@ -1433,7 +1433,7 @@ public final class client extends GameShell {
 		}
 		Statics.field11931.method9069();
 		Statics.field9182.method9087();
-		class586.method4069(Statics.field8198, var7);
+		TwitchHardwarePlatform.method4069(Statics.field8198, var7);
 		this.method16971();
 		if (Statics.field8198 != null) {
 			Statics.field8198.method2120((int) var7);
@@ -1622,7 +1622,7 @@ public final class client extends GameShell {
 		if (!Statics.method2092(field10791) && !method9273(field10791) && field10978 != -1) {
 			try {
 				Statics.field8198.method2202();
-				class586.method593(Statics.field8198, class213.method3655(), Statics.field6586, Statics.field6600);
+				TwitchHardwarePlatform.method593(Statics.field8198, class213.method3655(), Statics.field6586, Statics.field6600);
 				Statics.field8198.method2115();
 			} catch (class1106 var10) {
 				class1211.method9845(var10.getMessage() + " " + this.method8038(), var10);
@@ -1774,7 +1774,7 @@ public final class client extends GameShell {
 		}
 		field10915 = 0;
 		if (field10791 == 18 && arg0 != 3) {
-			class586.method8632();
+			TwitchHardwarePlatform.method8632();
 		}
 		if (arg0 == 14 || arg0 == 19) {
 			LoginManager.method5143();
@@ -2168,7 +2168,7 @@ public final class client extends GameShell {
 		class42.method5065();
 		class22.method5147();
 		Statics.method15000();
-		class586.method2739();
+		TwitchHardwarePlatform.method2739();
 		field10855.method7737(true);
 		class502.method7713();
 		class42.method829();
@@ -2444,7 +2444,7 @@ public final class client extends GameShell {
 					Statics.field10578.setSize(Statics.field6586, Statics.field6600);
 					if (Statics.field8198 != null) {
 						Statics.field8198.method2216(Statics.field10578, Statics.field6586, Statics.field6600);
-						class586.method7259(Statics.field8198, class213.method3655());
+						TwitchHardwarePlatform.method7259(Statics.field8198, class213.method3655());
 					}
 					if (Statics.field7425 == var1) {
 						Insets var3 = Statics.field7425.getInsets();
@@ -11163,7 +11163,7 @@ public final class client extends GameShell {
 								continue;
 							}
 							if (class226.field2163 == var11.field2185) {
-								class101 var26 = class586.method4367();
+								class101 var26 = TwitchHardwarePlatform.method4367();
 								if (var26 != null) {
 									int var27 = arg4 - arg2;
 									int var28 = arg5 - arg3;
@@ -11185,8 +11185,8 @@ public final class client extends GameShell {
 								continue;
 							}
 							if (class226.field2172 == var11.field2185) {
-								if (class586.method5076() && class586.method8634()) {
-									class586.method5389(arg2, arg3, arg4, arg5);
+								if (TwitchHardwarePlatform.method5076() && TwitchHardwarePlatform.method8634()) {
+									TwitchHardwarePlatform.method5389(arg2, arg3, arg4, arg5);
 								}
 								continue;
 							}

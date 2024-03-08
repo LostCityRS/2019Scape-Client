@@ -2282,7 +2282,7 @@ public class Statics {
 	@ObfuscatedName("qa.v(Lyf;I)V")
 	public static void method7344(class677 arg0) {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
-		arg0.field8216[++arg0.field8226 - 1] = class586.method6966(var1);
+		arg0.field8216[++arg0.field8226 - 1] = TwitchHardwarePlatform.method6966(var1);
 	}
 
 	@ObfuscatedName("vj.k(BS)C")
@@ -2534,13 +2534,13 @@ public class Statics {
 
 	@ObfuscatedName("uj.p(I)V")
 	public static void method9128() {
-		if (!class586.field7384) {
+		if (!TwitchHardwarePlatform.field7384) {
 			return;
 		}
 		int var0 = field11755.ShutdownTTV();
 		if (var0 == 0) {
 			field11755 = null;
-			class586.field7384 = false;
+			TwitchHardwarePlatform.field7384 = false;
 		}
 	}
 
@@ -2870,8 +2870,8 @@ public class Statics {
 
 	@ObfuscatedName("iy.as(III)I")
 	public static int method4596(int arg0, int arg1) {
-		class586.field7391 = new TwitchWebcamFrameData();
-		return arg0 >= 0 && arg0 < class586.field7395.length ? field11755.StartWebcamDevice(class586.field7395[arg0].field239, arg1) : -1;
+		TwitchHardwarePlatform.field7391 = new TwitchWebcamFrameData();
+		return arg0 >= 0 && arg0 < TwitchHardwarePlatform.field7395.length ? field11755.StartWebcamDevice(TwitchHardwarePlatform.field7395[arg0].field239, arg1) : -1;
 	}
 
 	@ObfuscatedName("alb.d(I)I")
@@ -2884,12 +2884,12 @@ public class Statics {
 
 	@ObfuscatedName("ks.ad(S)V")
 	public static void method5177() {
-		class586.field7395 = field11755.GetWebcamDevices();
+		TwitchHardwarePlatform.field7395 = field11755.GetWebcamDevices();
 	}
 
 	@ObfuscatedName("fq.am(I)I")
 	public static int method3123() {
-		return class586.field7395 == null ? 0 : class586.field7395.length;
+		return TwitchHardwarePlatform.field7395 == null ? 0 : TwitchHardwarePlatform.field7395.length;
 	}
 
 	@ObfuscatedName("xw.v(IB)V")
@@ -2906,8 +2906,8 @@ public class Statics {
 
 	@ObfuscatedName("dk.ap(ZZI)V")
 	public static void method2011(boolean arg0, boolean arg1) {
-		class586.field7376 = arg0;
-		class586.field7383 = arg1;
+		TwitchHardwarePlatform.field7376 = arg0;
+		TwitchHardwarePlatform.field7383 = arg1;
 	}
 
 	@ObfuscatedName("rm.q(Lhf;III)V")
