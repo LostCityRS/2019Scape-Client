@@ -20,7 +20,7 @@ public class class297 {
 	}
 
 	@ObfuscatedName("kq.e(Lkk;I)Lkx;")
-	public class302 method5137(class317 arg0) {
+	public LoadingScreenElement method5137(class317 arg0) {
 		if (arg0 == null) {
 			return null;
 		}

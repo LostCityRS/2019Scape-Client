@@ -13525,7 +13525,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("akv.arg(Lyf;I)V")
 	public static final void method17827(ClientScriptState arg0) {
-		client.method9620(false);
+		client.logout(false);
 	}
 
 	@ObfuscatedName("fx.arp(Lyf;I)V")

@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("ki")
-public class class303 implements class302 {
+public class class303 implements LoadingScreenElement {
 
 	@ObfuscatedName("ki.e")
 	public final class321 field3054;

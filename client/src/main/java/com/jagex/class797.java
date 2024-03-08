@@ -102,9 +102,9 @@ public class class797 {
 	}
 
 	@ObfuscatedName("adg.n(II)Ladn;")
-	public class798 method15217(int arg0) {
+	public LoadingScreenType method15217(int arg0) {
 		byte[] var2 = this.field9207.method6879(arg0, 0);
-		class798 var3 = new class798();
+		LoadingScreenType var3 = new LoadingScreenType();
 		var3.method15230(new Packet(var2));
 		return var3;
 	}

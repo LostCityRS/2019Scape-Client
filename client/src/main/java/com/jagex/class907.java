@@ -16,7 +16,7 @@ public class class907 extends class295 {
 	@ObfuscatedName("aho.e(I)V")
 	public void method5104() {
 		super.method5104();
-		this.field10545 = class278.method1589(this.field3028, ((class913) this.field3027).field10576);
+		this.field10545 = MainLoadingScreen.method1589(this.field3028, ((class913) this.field3027).field10576);
 	}
 
 	@ObfuscatedName("aho.p(ZIII)V")

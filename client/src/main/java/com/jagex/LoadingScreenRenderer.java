@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("jb")
-public class class275 implements Runnable {
+public class LoadingScreenRenderer implements Runnable {
 
 	@ObfuscatedName("jb.e")
 	public volatile boolean field2890;
@@ -37,7 +37,7 @@ public class class275 implements Runnable {
 	public int field2881;
 
 	@ObfuscatedName("jb.d")
-	public class277 field2889;
+	public LoadingStage field2889;
 
 	@ObfuscatedName("jb.e(I)I")
 	public int method4846() {
@@ -62,7 +62,7 @@ public class class275 implements Runnable {
 	}
 
 	@ObfuscatedName("jb.f(JLjava/lang/String;Ljava/lang/String;ILjw;S)V")
-	public synchronized void method4849(long arg0, String arg1, String arg2, int arg3, class277 arg4) {
+	public synchronized void method4849(long arg0, String arg1, String arg2, int arg3, LoadingStage arg4) {
 		this.field2886 = arg0;
 		this.field2888 = arg1;
 		this.field2882 = arg2;
@@ -106,7 +106,7 @@ public class class275 implements Runnable {
 	}
 
 	@ObfuscatedName("jb.d(I)Ljw;")
-	public class277 method4855() {
+	public LoadingStage method4855() {
 		return this.field2889;
 	}
 
@@ -168,7 +168,7 @@ public class class275 implements Runnable {
 						}
 					}
 					this.field2887 = false;
-					if (Statics.field8198 != null && !(this.field2883 instanceof PreLoadingScreen) && this.field2889.field2920 < class277.field2917.field2920) {
+					if (Statics.field8198 != null && !(this.field2883 instanceof PreLoadingScreen) && this.field2889.field2920 < LoadingStage.field2917.field2920) {
 						client.method3033();
 					}
 				} catch (Exception var19) {

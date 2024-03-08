@@ -575,7 +575,7 @@ public class Statics {
 	public static int field2937;
 
 	@ObfuscatedName("ji.e")
-	public static class277[] field2938;
+	public static LoadingStage[] field2938;
 
 	@ObfuscatedName("ji.n")
 	public static LoadingScreen[] field2939;
@@ -653,7 +653,7 @@ public class Statics {
 	public static int field3416;
 
 	@ObfuscatedName("mt.r")
-	public static class277 field3419;
+	public static LoadingStage field3419;
 
 	@ObfuscatedName("mt.gd")
 	public static class243 field3420;
@@ -917,7 +917,7 @@ public class Statics {
 	public static int field592;
 
 	@ObfuscatedName("x.l")
-	public static class275 field593;
+	public static LoadingScreenRenderer field593;
 
 	@ObfuscatedName("x.jm")
 	public static class667 field594;
@@ -3443,7 +3443,7 @@ public class Statics {
 
 	@ObfuscatedName("zg.ea(ILjava/lang/String;ZB)V")
 	public static void method14060(int arg0, String arg1, boolean arg2) {
-		class280.method8005();
+		Loading.method8005();
 		client.method7239();
 		client.method15235();
 		client.method3596(arg0, arg1, arg2);
@@ -3464,7 +3464,7 @@ public class Statics {
 		} else if (client.state == 18) {
 			client.setState(3);
 		} else if (client.state == 11 || client.state == 1) {
-			class280.method18929();
+			Loading.method18929();
 		} else if (client.state == 0) {
 			client.setState(8);
 		} else if (client.state == 3) {

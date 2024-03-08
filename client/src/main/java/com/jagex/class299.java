@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("ku")
-public class class299 implements class302 {
+public class class299 implements LoadingScreenElement {
 
 	@ObfuscatedName("ku.e")
 	public final class320 field3047;
@@ -22,7 +22,7 @@ public class class299 implements class302 {
 
 	@ObfuscatedName("ku.e(I)V")
 	public void method5104() {
-		this.field3046 = class278.method1589(this.field3045, this.field3047.field3200);
+		this.field3046 = MainLoadingScreen.method1589(this.field3045, this.field3047.field3200);
 	}
 
 	@ObfuscatedName("ku.n(ZI)V")

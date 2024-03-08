@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("adn")
-public class class798 {
+public class LoadingScreenType {
 
 	@ObfuscatedName("adn.e")
 	public class317[] field9212;

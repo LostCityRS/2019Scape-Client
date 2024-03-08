@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("ji")
-public class class280 {
+public class Loading {
 
 	@ObfuscatedName("ji.m")
 	public static int field2946 = -1;
@@ -15,16 +15,16 @@ public class class280 {
 	@ObfuscatedName("ji.q")
 	public static int field2945 = -1;
 
-	public class280() throws Throwable {
+	public Loading() throws Throwable {
 		throw new Error();
 	}
 
 	@ObfuscatedName("jb.e(I)V")
 	public static void method4883() {
 		field2944 = true;
-		Statics.field8535 = LoginManager.field470;
-		Statics.field4407 = LoginManager.field481;
-		client.method9620(false);
+		Statics.field8535 = LoginManager.username;
+		Statics.field4407 = LoginManager.password;
+		client.logout(false);
 		LoadableResourceManager.method3670();
 		Statics.field2938 = null;
 		Statics.field1833 = null;
@@ -39,14 +39,14 @@ public class class280 {
 	@ObfuscatedName("adf.m(I)V")
 	public static void method15243() {
 		if (Statics.field2938 == null) {
-			Statics.field2938 = class277.method4920();
+			Statics.field2938 = LoadingStage.method4920();
 			Statics.field3419 = Statics.field2938[0];
 			Statics.field7966 = MonotonicTime.method3655();
 		}
 		if (Statics.field593 == null) {
 			method254();
 		}
-		class277 var0 = Statics.field3419;
+		LoadingStage var0 = Statics.field3419;
 		int var1 = method7622();
 		if (Statics.field3419 == var0) {
 			Statics.field2942 = Statics.field3419.field2908.method15021(Statics.field1680);
@@ -57,7 +57,7 @@ public class class280 {
 			if (Statics.field3419.field2925) {
 				Statics.field4964 = Statics.field4964 + " - " + Statics.field9130 + "%";
 			}
-		} else if (Statics.field3419 == class277.field2919) {
+		} else if (Statics.field3419 == LoadingStage.field2919) {
 			Statics.field593 = null;
 			client.setState(4);
 			if (field2944) {
@@ -102,7 +102,7 @@ public class class280 {
 	@ObfuscatedName("l.k(B)V")
 	public static void method254() {
 		if (Statics.field3419 != null) {
-			Statics.field593 = new class275();
+			Statics.field593 = new LoadingScreenRenderer();
 			Statics.field593.method4849(Statics.field7966, Statics.field3419.field2908.method15021(Statics.field1680), Statics.field3419.field2908.method15021(Statics.field1680), Statics.field3419.field2923, Statics.field3419);
 			Statics.field2940 = new Thread(Statics.field593, "");
 			Statics.field2940.start();
@@ -157,7 +157,7 @@ public class class280 {
 				}
 			}
 		}
-		if (Statics.field3419 == class277.field2913) {
+		if (Statics.field3419 == LoadingStage.field2913) {
 			if (Statics.field1833 == null) {
 				Statics.field1833 = new Js5Client(Statics.field4489, Statics.field4436, Statics.field4479, PublicKeys.field623, PublicKeys.field625);
 			}
@@ -165,13 +165,13 @@ public class class280 {
 				return 0;
 			}
 			client.method3596(0, null, true);
-			Statics.field2941 = !class278.method4062();
+			Statics.field2941 = !MainLoadingScreen.method4062();
 			Statics.field8522 = client.method5156(Statics.field2941 ? Js5Archive.LOADING_SPRITES_RAW : Js5Archive.LOADING_SPRITES, false, 1, true, true);
 			Statics.field8532 = client.method5156(Js5Archive.LOADING_SCREENS, false, 1, true, true);
 			Statics.field7672 = client.method5156(Js5Archive.FONTMETRICS, false, 1, true, true);
 			Statics.field1587 = client.method5156(Js5Archive.DEFAULTS, true, 1, true, true);
 		}
-		if (Statics.field3419 == class277.field2911) {
+		if (Statics.field3419 == LoadingStage.field2911) {
 			boolean var1 = Statics.field8532.method6896();
 			boolean var2 = Statics.field1587.method6896();
 			int var3 = Statics.field6888[Js5Archive.LOADING_SCREENS.getArchiveId()].method16823();
@@ -195,21 +195,21 @@ public class class280 {
 			if (var9.length > 0) {
 				Statics.field2939 = new LoadingScreen[var9.length];
 				for (int var11 = 0; var11 < Statics.field2939.length; var11++) {
-					Statics.field2939[var11] = new class278(Statics.field2841.method15217(var9[var11].field9217), var9[var11].field9215, var9[var11].field9216, var10);
+					Statics.field2939[var11] = new MainLoadingScreen(Statics.field2841.method15217(var9[var11].field9217), var9[var11].field9215, var9[var11].field9216, var10);
 				}
 			}
 		}
-		if (Statics.field3419 == class277.field2904) {
+		if (Statics.field3419 == LoadingStage.field2904) {
 			Statics.field7538 = new class402(Statics.field8198, Statics.field8522, Statics.field7672, DefaultSprites.method845());
 		}
-		if (Statics.field3419 == class277.field2905) {
+		if (Statics.field3419 == LoadingStage.field2905) {
 			int var12 = Statics.field7538.method6179();
 			int var13 = Statics.field7538.method6161();
 			if (var12 < var13) {
 				return var12 * 100 / var13;
 			}
 		}
-		if (Statics.field3419 == class277.field2906) {
+		if (Statics.field3419 == LoadingStage.field2906) {
 			if (Statics.field2939 != null && Statics.field2939.length > 0) {
 				if (Statics.field2939[0].method4912() < 100) {
 					return 0;
@@ -222,7 +222,7 @@ public class class280 {
 			DefaultSprites.method7114(Statics.field8198);
 			client.setState(11);
 		}
-		if (Statics.field3419 == class277.field2907) {
+		if (Statics.field3419 == LoadingStage.field2907) {
 			Statics.field10317 = client.method5156(Js5Archive.SPRITES, false, 1, false, true);
 			Statics.field7420 = client.method5156(Js5Archive.ANIMS, false, 1, false, true);
 			Statics.field10287 = client.method5156(Js5Archive.ANIMS_KEYFRAMES, false, 1, false, true);
@@ -255,7 +255,7 @@ public class class280 {
 			Statics.field7060 = client.method5156(Js5Archive.DLLS, true, 1, false, true);
 			Statics.field2900 = client.method5156(Js5Archive.SHADERS, true, 1, true, true);
 		}
-		if (Statics.field3419 == class277.field2921) {
+		if (Statics.field3419 == LoadingStage.field2921) {
 			int var14 = 0;
 			int var15 = 0;
 			for (int var16 = 0; var16 < Statics.field6888.length; var16++) {
@@ -276,7 +276,7 @@ public class class280 {
 			DefaultSprites.method16430(Statics.field11389);
 			Statics.field7538 = new class402(Statics.field8198, Statics.field10317, Statics.field7672, DefaultSprites.method845());
 		}
-		if (Statics.field3419 == class277.field2909) {
+		if (Statics.field3419 == LoadingStage.field2909) {
 			byte[] var17 = Statics.field1587.method6894(DefaultsGroup.field7705.field7708);
 			if (var17 == null) {
 				return 0;
@@ -286,11 +286,11 @@ public class class280 {
 			method714(var17);
 			client.setState(1);
 		}
-		if (Statics.field3419 == class277.field2910 && Statics.field10577 == null) {
+		if (Statics.field3419 == LoadingStage.field2910 && Statics.field10577 == null) {
 			Statics.field10577 = new HardwarePlatformLoader(Statics.field7060);
 			class500.method14694(Statics.field10577);
 		}
-		if (Statics.field3419 == class277.field2902) {
+		if (Statics.field3419 == LoadingStage.field2902) {
 			int var18 = LoadableResourceManager.method5140();
 			if (var18 < 100) {
 				return var18;
@@ -310,7 +310,7 @@ public class class280 {
 			Statics.field2775 = new CutsceneDefaults(Statics.field1587);
 			Statics.field6792 = new WorldMapDefaults(Statics.field1587);
 		}
-		if (Statics.field3419 == class277.field2912) {
+		if (Statics.field3419 == LoadingStage.field2912) {
 			if (Statics.field11389.field7738 != -1 && !Statics.field9213.method6888(Statics.field11389.field7738, 0)) {
 				return 99;
 			}
@@ -369,17 +369,17 @@ public class class280 {
 			Statics.field6594 = Timer.method6109();
 			Statics.field10581 = new HardwarePlatform(true);
 		}
-		if (Statics.field3419 == class277.field2918) {
+		if (Statics.field3419 == LoadingStage.field2918) {
 			int var20 = DefaultSprites.method15381(Statics.field10317) + Statics.field7538.method6191(true);
 			int var21 = Statics.method14611() + Statics.field7538.method6161();
 			if (var20 < var21) {
 				return var20 * 100 / var21;
 			}
 		}
-		if (Statics.field3419 == class277.field2914) {
+		if (Statics.field3419 == LoadingStage.field2914) {
 			WorldMap.method8506(Statics.field10752, Statics.field8332, Statics.field8168, Statics.field8145, client.world.method7750(), Statics.field5011, Statics.field4241, Statics.field7410, Statics.field7410);
 		}
-		if (Statics.field3419 == class277.field2915) {
+		if (Statics.field3419 == LoadingStage.field2915) {
 			Statics.field7228 = new class861(Statics.field8911);
 			method9212();
 			Statics.field1895 = class28.method18618();
@@ -389,7 +389,7 @@ public class class280 {
 			Statics.field8741.method6900(true, true);
 			client.field10807 = true;
 		}
-		if (Statics.field3419 == class277.field2916 && Statics.field11389.field7724 != -1) {
+		if (Statics.field3419 == LoadingStage.field2916 && Statics.field11389.field7724 != -1) {
 			if (!Component.method5364(Statics.field11389.field7724, null)) {
 				return 0;
 			}
@@ -404,10 +404,10 @@ public class class280 {
 				return 0;
 			}
 		}
-		if (Statics.field3419 == class277.field2917) {
+		if (Statics.field3419 == LoadingStage.field2917) {
 			client.method7227(true);
 		}
-		if (Statics.field3419 == class277.field2903) {
+		if (Statics.field3419 == LoadingStage.field2903) {
 			Statics.field593.method4856();
 			try {
 				Statics.field2940.join();
@@ -423,7 +423,7 @@ public class class280 {
 			Statics.field8540.remove(Js5Archive.LOADING_SCREENS);
 			Statics.field8540.remove(Js5Archive.LOADING_SPRITES);
 			Statics.field8540.remove(Js5Archive.LOADING_SPRITES_RAW);
-			class278.method271();
+			MainLoadingScreen.method271();
 			client.field10779 = Statics.field688.field11536.method18740() == 1;
 			Statics.field688.method18157(Statics.field688.field11536, 1);
 			if (client.field10779) {

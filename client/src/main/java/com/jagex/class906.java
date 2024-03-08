@@ -32,12 +32,12 @@ public class class906 extends class295 {
 	public void method5104() {
 		super.method5104();
 		class912 var1 = (class912) this.field3027;
-		this.field10543 = class278.method1589(this.field3028, var1.field10569);
-		this.field10540 = class278.method1589(this.field3028, var1.field10570);
-		this.field10539 = class278.method1589(this.field3028, var1.field10572);
-		this.field10542 = class278.method1589(this.field3028, var1.field10573);
-		this.field10541 = class278.method1589(this.field3028, var1.field10571);
-		this.field10544 = class278.method1589(this.field3028, var1.field10574);
+		this.field10543 = MainLoadingScreen.method1589(this.field3028, var1.field10569);
+		this.field10540 = MainLoadingScreen.method1589(this.field3028, var1.field10570);
+		this.field10539 = MainLoadingScreen.method1589(this.field3028, var1.field10572);
+		this.field10542 = MainLoadingScreen.method1589(this.field3028, var1.field10573);
+		this.field10541 = MainLoadingScreen.method1589(this.field3028, var1.field10571);
+		this.field10544 = MainLoadingScreen.method1589(this.field3028, var1.field10574);
 	}
 
 	@ObfuscatedName("ahb.z(ZIIS)V")

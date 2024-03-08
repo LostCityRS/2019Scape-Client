@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("jk")
-public class class293 implements class302 {
+public class class293 implements LoadingScreenElement {
 
 	@ObfuscatedName("jk.e")
 	public final class322 field3019;
@@ -21,7 +21,7 @@ public class class293 implements class302 {
 
 	@ObfuscatedName("jk.e(I)V")
 	public void method5104() {
-		this.field3021 = class278.method1589(this.field3020, this.field3019.field3218);
+		this.field3021 = MainLoadingScreen.method1589(this.field3020, this.field3019.field3218);
 	}
 
 	@ObfuscatedName("jk.n(ZI)V")

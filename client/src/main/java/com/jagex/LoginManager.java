@@ -28,10 +28,10 @@ public class LoginManager {
 	public static long field437 = 0L;
 
 	@ObfuscatedName("m.ax")
-	public static String field470 = "";
+	public static String username = "";
 
 	@ObfuscatedName("m.av")
-	public static String field481 = "";
+	public static String password = "";
 
 	@ObfuscatedName("m.ao")
 	public static String field429 = "";
@@ -87,12 +87,12 @@ public class LoginManager {
 
 	@ObfuscatedName("kg.e(I)Z")
 	public static boolean method5143() {
-		return field472 == -1 ? method10320(field470, field481) : method7703();
+		return field472 == -1 ? method10320(username, password) : method7703();
 	}
 
 	@ObfuscatedName("iu.n(S)Z")
 	public static boolean method4407() {
-		return field472 == -1 ? method17521(field470, field481) : method1592();
+		return field472 == -1 ? method17521(username, password) : method1592();
 	}
 
 	@ObfuscatedName("ug.m(I)V")
@@ -129,8 +129,8 @@ public class LoginManager {
 			return;
 		}
 		method4641();
-		field470 = arg0;
-		field481 = arg1;
+		username = arg0;
+		password = arg1;
 		field429 = arg2;
 		field473 = arg3;
 		client.setState(7);
@@ -157,8 +157,8 @@ public class LoginManager {
 		}
 		client.field10835.method938();
 		method4641();
-		field470 = arg0;
-		field481 = arg1;
+		username = arg0;
+		password = arg1;
 		field429 = arg2;
 		field473 = arg3;
 		client.setState(17);
@@ -191,8 +191,8 @@ public class LoginManager {
 	@ObfuscatedName("ys.r(B)V")
 	public static void method10450() {
 		field429 = "";
-		field481 = "";
-		field470 = "";
+		password = "";
+		username = "";
 		field473 = true;
 	}
 
@@ -231,10 +231,10 @@ public class LoginManager {
 			field472 = -1;
 		}
 		field456 = arg1;
-		field470 = arg2;
-		field481 = arg3;
+		username = arg2;
+		password = arg3;
 		field439 = arg4;
-		if (!field456 && (field470.equals("") || field481.equals(""))) {
+		if (!field456 && (username.equals("") || password.equals(""))) {
 			method669(3);
 			method10367();
 			return false;
@@ -426,7 +426,7 @@ public class LoginManager {
 						var13 = var10.pos;
 						var10.p1(field439 == -1L ? 1 : 0);
 						if (field439 == -1L) {
-							var10.pjstr(field470);
+							var10.pjstr(username);
 						} else {
 							var10.p8(field439);
 						}
@@ -486,7 +486,7 @@ public class LoginManager {
 						var20 = var10.pos;
 						var10.p1(field439 == -1L ? 1 : 0);
 						if (field439 == -1L) {
-							var10.pjstr(field470);
+							var10.pjstr(username);
 						} else {
 							var10.p8(field439);
 						}
@@ -651,7 +651,7 @@ public class LoginManager {
 				Statics.field432.method938();
 				method10367();
 				if (Statics.method15084(client.state)) {
-					client.method9620(true);
+					client.logout(true);
 					field477 = Statics.field11819;
 				}
 				return;
@@ -736,7 +736,7 @@ public class LoginManager {
 						Statics.field432.method938();
 						method10367();
 						if (Statics.method15084(client.state)) {
-							client.method9620(true);
+							client.logout(true);
 							field477 = var35;
 						}
 						return;
@@ -1024,14 +1024,14 @@ public class LoginManager {
 			if (field472 != -1) {
 				var1 = field472;
 			} else if (field439 == -1L) {
-				var1 = class695.method15380(field470);
+				var1 = class695.method15380(username);
 			} else {
 				var1 = field439;
 			}
 			Statics.field3429 = var1;
 			method14049(var0, var1);
 			var0.pbool(false);
-			var0.pjstr(field481);
+			var0.pjstr(password);
 			var0.p8(field437);
 			var0.p8(client.field10810);
 		}

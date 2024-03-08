@@ -24,7 +24,7 @@ public class LoadableResourceManager {
 			if (class775.field8919.method15010().method6782() != 100) {
 				return 1;
 			}
-			if (!((DllResourceLoader) class775.field8919.method15010()).method6812() && !class280.method6040()) {
+			if (!((DllResourceLoader) class775.field8919.method15010()).method6812() && !Loading.method6040()) {
 				try {
 					Statics.field8301.method8050();
 					class648.method1427();

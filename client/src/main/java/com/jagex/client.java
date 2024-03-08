@@ -1495,7 +1495,7 @@ public final class client extends GameShell {
 			Statics.method10298();
 		}
 		if (Statics.method2092(state)) {
-			class280.method15243();
+			Loading.method15243();
 			GameShell.method135();
 		} else if (method9273(state)) {
 			world.method7723();
@@ -1523,10 +1523,10 @@ public final class client extends GameShell {
 						field10849.method941();
 						setState(14);
 					} else {
-						method9620(LoginManager.field485);
+						logout(LoginManager.field485);
 					}
 				} else {
-					method9620(false);
+					logout(false);
 				}
 			}
 		}
@@ -1588,7 +1588,7 @@ public final class client extends GameShell {
 			method9734();
 		}
 		if (Statics.method2092(state)) {
-			class280.method2010(var3);
+			Loading.method2010(var3);
 		} else if (method3538(state)) {
 			method10376();
 		} else if (method13797(state)) {
@@ -1670,7 +1670,7 @@ public final class client extends GameShell {
 		if (Statics.field7228 != null && Statics.field7228.field10252) {
 			method14147();
 		}
-		class280.method8005();
+		Loading.method8005();
 		Statics.method9128();
 		if (Statics.field8198 != null) {
 			Statics.field8198.method2578();
@@ -2179,7 +2179,7 @@ public final class client extends GameShell {
 		Statics.method14055(false);
 		DefaultSprites.method3568();
 		class1004.method18566();
-		class280.method18929();
+		Loading.method18929();
 		for (int var0 = 0; var0 < field10931.length; var0++) {
 			if (field10931[var0] != null) {
 				field10931[var0].field6754 = null;
@@ -2664,7 +2664,7 @@ public final class client extends GameShell {
 	}
 
 	@ObfuscatedName("wo.fp(ZS)V")
-	public static final void method9620(boolean arg0) {
+	public static final void logout(boolean arg0) {
 		ServerConnection[] var1 = field10850;
 		for (int var2 = 0; var2 < var1.length; var2++) {
 			ServerConnection var3 = var1[var2];
@@ -2783,7 +2783,7 @@ public final class client extends GameShell {
 	public static final void method8321() {
 		if (Statics.method15084(state) || Statics.method611(state)) {
 			field10853 = LogoutReason.field9135;
-			method9620(false);
+			logout(false);
 		} else {
 			field10853 = LogoutReason.field9141;
 			Statics.field11764 = field10849.method939();
@@ -2919,7 +2919,7 @@ public final class client extends GameShell {
 											if (state == 13 && !LoginManager.method2865() || state == 15 && LoginManager.field477 == 42 || state == 17 && (LoginManager.field476 == 49 || LoginManager.field476 == 52) || state == 0) {
 												if (state != 15 && field10835.method939() == null) {
 													field10853 = LogoutReason.field9135;
-													method9620(false);
+													logout(false);
 													return;
 												}
 												if (field10835 != null) {
@@ -2934,7 +2934,7 @@ public final class client extends GameShell {
 														if (state == 15) {
 															field10835.method938();
 														} else {
-															method9620(false);
+															logout(false);
 														}
 													}
 												}
@@ -6979,7 +6979,7 @@ public final class client extends GameShell {
 				var4 = var4 + arg0.field795.data[var5] + TextUtil.COMMA;
 			}
 			JagException.method9845(var4, var7);
-			method9620(false);
+			logout(false);
 			return true;
 		}
 	}
@@ -7234,7 +7234,7 @@ public final class client extends GameShell {
 			return true;
 		} else if (ServerProt.LOGOUT_FULL == arg0.field796) {
 			field10853 = (LogoutReason) class686.method1897(LogoutReason.method10365(), var2.g1());
-			method9620(LoginManager.field485);
+			logout(LoginManager.field485);
 			arg0.field796 = null;
 			return false;
 		} else if (ServerProt.TELEMETRY_GRID_ADD_ROW == arg0.field796) {
@@ -7737,7 +7737,7 @@ public final class client extends GameShell {
 			arg0.field796 = null;
 			return true;
 		} else if (ServerProt.JS5_RELOAD == arg0.field796) {
-			class280.method4883();
+			Loading.method4883();
 			arg0.field796 = null;
 			return false;
 		} else if (ServerProt.LOC_ANIM == arg0.field796) {
@@ -8709,7 +8709,7 @@ public final class client extends GameShell {
 			return true;
 		} else if (ServerProt.LOGOUT == arg0.field796) {
 			field10853 = (LogoutReason) class686.method1897(LogoutReason.method10365(), var2.g1());
-			method9620(false);
+			logout(false);
 			arg0.field796 = null;
 			return false;
 		} else if (ServerProt.UPDATE_UID192 == arg0.field796) {
@@ -9672,7 +9672,7 @@ public final class client extends GameShell {
 			return true;
 		} else {
 			JagException.method9845((arg0.field796 == null ? -1 : arg0.field796.field4021) + TextUtil.COMMA + (arg0.field806 == null ? -1 : arg0.field806.field4021) + TextUtil.COMMA + (arg0.field805 == null ? -1 : arg0.field805.field4021) + " " + arg0.field797, new RuntimeException());
-			method9620(false);
+			logout(false);
 			return true;
 		}
 	}
@@ -10003,7 +10003,7 @@ public final class client extends GameShell {
 			}
 		} else {
 			JagException.method9845("" + arg0, new RuntimeException());
-			method9620(false);
+			logout(false);
 		}
 	}
 

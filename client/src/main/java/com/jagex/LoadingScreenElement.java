@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("kx")
-public interface class302 {
+public interface LoadingScreenElement {
 
 	@ObfuscatedName("kx.m(I)Z")
 	boolean method5106();
