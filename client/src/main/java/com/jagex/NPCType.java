@@ -399,7 +399,7 @@ public class NPCType implements ConfigType {
 		} else if (arg1 == 127) {
 			this.field2762 = arg0.g2();
 		} else if (arg1 == 128) {
-			class686.method1897(class690.method13901(), arg0.g1());
+			class686.method1897(MoveSpeed.method13901(), arg0.g1());
 		} else if (arg1 == 134) {
 			this.field2746 = arg0.g2();
 			if (this.field2746 == 65535) {

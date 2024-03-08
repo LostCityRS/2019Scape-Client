@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("aw")
-public class class40 {
+public class ReceivePlayerPositions {
 
 	@ObfuscatedName("aw.m")
 	public static byte[] field696 = new byte[2048];
@@ -31,7 +31,7 @@ public class class40 {
 	public static int[] field700 = new int[2048];
 
 	@ObfuscatedName("aw.d")
-	public static class19[] field704 = new class19[2048];
+	public static LowResPlayerInfo[] field704 = new LowResPlayerInfo[2048];
 
 	@ObfuscatedName("aw.c")
 	public static int field695 = 0;
@@ -39,17 +39,17 @@ public class class40 {
 	@ObfuscatedName("aw.r")
 	public static int[] field707 = new int[2048];
 
-	public class40() throws Throwable {
+	public ReceivePlayerPositions() throws Throwable {
 		throw new Error();
 	}
 
 	@ObfuscatedName("aga.e(Lase;I)V")
 	public static final void method16435(PacketBit arg0) {
-		arg0.method19562();
+		arg0.accessBits();
 		int var1 = client.field10945;
 		PlayerEntity var2 = Statics.field4490 = client.field10944[var1] = new PlayerEntity(client.world.method7743());
 		var2.field10406 = var1;
-		int var3 = arg0.method19583(30);
+		int var3 = arg0.gBit(30);
 		byte var4 = (byte) (var3 >> 28);
 		int var5 = var3 >> 14 & 0x3FFF;
 		int var6 = var3 & 0x3FFF;
@@ -73,11 +73,11 @@ public class class40 {
 		field702 = 0;
 		for (int var8 = 1; var8 < 2048; var8++) {
 			if (var1 != var8) {
-				int var9 = arg0.method19583(18);
+				int var9 = arg0.gBit(18);
 				int var10 = var9 >> 16 & 0x3;
 				int var11 = var9 >> 8 & 0xFF;
 				int var12 = var9 & 0xFF;
-				class19 var13 = field704[var8] = new class19();
+				LowResPlayerInfo var13 = field704[var8] = new LowResPlayerInfo();
 				var13.field524 = (var10 << 28) + (var11 << 14) + var12;
 				var13.field523 = 0;
 				var13.field522 = -1;
@@ -87,15 +87,15 @@ public class class40 {
 				field696[var8] = 0;
 			}
 		}
-		arg0.method19564();
-		class266 var14 = Statics.field9155.method4780();
-		if (class266.field2815 == var14) {
-			class910 var15 = (class910) Statics.field9155.method4709();
+		arg0.accessBytes();
+		PositionMode var14 = Statics.field9155.method4780();
+		if (PositionMode.field2815 == var14) {
+			PositionEntity var15 = (PositionEntity) Statics.field9155.method4709();
 			var15.method16684();
 		}
-		class263 var16 = Statics.field9155.method4743();
-		if (class263.field2788 == var16) {
-			class1071 var17 = (class1071) Statics.field9155.method4797();
+		LookatMode var16 = Statics.field9155.method4743();
+		if (LookatMode.field2788 == var16) {
+			LookatEntity var17 = (LookatEntity) Statics.field9155.method4797();
 			var17.method18815();
 		}
 	}
@@ -113,7 +113,7 @@ public class class40 {
 	@ObfuscatedName("ka.m(Lase;I)V")
 	public static final void method5209(PacketBit arg0) {
 		int var1 = 0;
-		arg0.method19562();
+		arg0.accessBits();
 		for (int var2 = 0; var2 < field698; var2++) {
 			int var3 = field703[var2];
 			if ((field696[var3] & 0x1) == 0) {
@@ -121,7 +121,7 @@ public class class40 {
 					var1--;
 					field696[var3] = (byte) (field696[var3] | 0x2);
 				} else {
-					int var4 = arg0.method19583(1);
+					int var4 = arg0.gBit(1);
 					if (var4 == 0) {
 						var1 = method1598(arg0);
 						field696[var3] = (byte) (field696[var3] | 0x2);
@@ -131,11 +131,11 @@ public class class40 {
 				}
 			}
 		}
-		arg0.method19564();
+		arg0.accessBytes();
 		if (var1 != 0) {
 			throw new RuntimeException();
 		}
-		arg0.method19562();
+		arg0.accessBits();
 		for (int var5 = 0; var5 < field698; var5++) {
 			int var6 = field703[var5];
 			if ((field696[var6] & 0x1) != 0) {
@@ -143,7 +143,7 @@ public class class40 {
 					var1--;
 					field696[var6] = (byte) (field696[var6] | 0x2);
 				} else {
-					int var7 = arg0.method19583(1);
+					int var7 = arg0.gBit(1);
 					if (var7 == 0) {
 						var1 = method1598(arg0);
 						field696[var6] = (byte) (field696[var6] | 0x2);
@@ -153,11 +153,11 @@ public class class40 {
 				}
 			}
 		}
-		arg0.method19564();
+		arg0.accessBytes();
 		if (var1 != 0) {
 			throw new RuntimeException();
 		}
-		arg0.method19562();
+		arg0.accessBits();
 		for (int var8 = 0; var8 < field702; var8++) {
 			int var9 = field700[var8];
 			if ((field696[var9] & 0x1) != 0) {
@@ -165,7 +165,7 @@ public class class40 {
 					var1--;
 					field696[var9] = (byte) (field696[var9] | 0x2);
 				} else {
-					int var10 = arg0.method19583(1);
+					int var10 = arg0.gBit(1);
 					if (var10 == 0) {
 						var1 = method1598(arg0);
 						field696[var9] = (byte) (field696[var9] | 0x2);
@@ -175,11 +175,11 @@ public class class40 {
 				}
 			}
 		}
-		arg0.method19564();
+		arg0.accessBytes();
 		if (var1 != 0) {
 			throw new RuntimeException();
 		}
-		arg0.method19562();
+		arg0.accessBits();
 		for (int var11 = 0; var11 < field702; var11++) {
 			int var12 = field700[var11];
 			if ((field696[var12] & 0x1) == 0) {
@@ -187,7 +187,7 @@ public class class40 {
 					var1--;
 					field696[var12] = (byte) (field696[var12] | 0x2);
 				} else {
-					int var13 = arg0.method19583(1);
+					int var13 = arg0.gBit(1);
 					if (var13 == 0) {
 						var1 = method1598(arg0);
 						field696[var12] = (byte) (field696[var12] | 0x2);
@@ -197,7 +197,7 @@ public class class40 {
 				}
 			}
 		}
-		arg0.method19564();
+		arg0.accessBytes();
 		if (var1 != 0) {
 			throw new RuntimeException();
 		}
@@ -216,16 +216,16 @@ public class class40 {
 
 	@ObfuscatedName("ck.k(Lase;I)I")
 	public static int method1598(PacketBit arg0) {
-		int var1 = arg0.method19583(2);
+		int var1 = arg0.gBit(2);
 		int var2;
 		if (var1 == 0) {
 			var2 = 0;
 		} else if (var1 == 1) {
-			var2 = arg0.method19583(5);
+			var2 = arg0.gBit(5);
 		} else if (var1 == 2) {
-			var2 = arg0.method19583(8);
+			var2 = arg0.gBit(8);
 		} else {
-			var2 = arg0.method19583(11);
+			var2 = arg0.gBit(11);
 		}
 		return var2;
 	}
@@ -233,19 +233,19 @@ public class class40 {
 	@ObfuscatedName("akz.f(Lase;IS)V")
 	public static void method17602(PacketBit arg0, int arg1) {
 		CoordGrid var2 = client.world.method7727();
-		boolean var3 = arg0.method19583(1) == 1;
+		boolean var3 = arg0.gBit(1) == 1;
 		if (var3) {
 			field707[++field695 - 1] = arg1;
 		}
-		int var4 = arg0.method19583(2);
+		int var4 = arg0.gBit(2);
 		PlayerEntity var5 = client.field10944[arg1];
 		if (var4 == 0) {
 			if (!var3) {
 				if (client.field10945 == arg1) {
 					throw new RuntimeException();
 				}
-				class19 var6 = field704[arg1] = new class19();
-				class690.method13901();
+				LowResPlayerInfo var6 = field704[arg1] = new LowResPlayerInfo();
+				MoveSpeed.method13901();
 				var6.field524 = (var2.field7427 + var5.field10448[0] >> 6) + (var2.field7426 + var5.field10450[0] >> 6 << 14) + (var5.field11717 << 28);
 				if (var5.field12056 == -1) {
 					var6.field523 = var5.field10395.method316();
@@ -259,18 +259,18 @@ public class class40 {
 					Statics.method5142(var5);
 				}
 				client.field10944[arg1] = null;
-				if (arg0.method19583(1) != 0) {
+				if (arg0.gBit(1) != 0) {
 					method14343(arg0, arg1);
 				}
 			}
 		} else if (var4 == 1) {
-			int var7 = arg0.method19583(3);
-			int var8 = arg0.method19583(1);
+			int var7 = arg0.gBit(3);
+			int var8 = arg0.gBit(1);
 			int var9 = var5.field10450[0];
 			int var10 = var5.field10448[0];
 			if (var8 == 1) {
-				field697[arg1] = class690.field8316.field8313;
-				int var11 = arg0.method19583(2);
+				field697[arg1] = MoveSpeed.field8316.field8313;
+				int var11 = arg0.gBit(2);
 				switch(var11) {
 					case 0:
 						var5.method19117(var9, var10 + 1, field697[arg1]);
@@ -308,7 +308,7 @@ public class class40 {
 			}
 			var5.method19117(var9, var10, field697[arg1]);
 		} else if (var4 == 2) {
-			int var12 = arg0.method19583(4);
+			int var12 = arg0.gBit(4);
 			int var13 = var5.field10450[0];
 			int var14 = var5.field10448[0];
 			if (var12 == 0) {
@@ -358,9 +358,9 @@ public class class40 {
 			}
 			var5.method19117(var13, var14, field697[arg1]);
 		} else {
-			int var15 = arg0.method19583(1);
+			int var15 = arg0.gBit(1);
 			if (var15 == 0) {
-				int var16 = arg0.method19583(15);
+				int var16 = arg0.gBit(15);
 				int var17 = var16 >> 12 & 0x7;
 				int var18 = (byte) (var16 >> 10) & 0x3;
 				int var19 = var16 >> 5 & 0x1F;
@@ -373,7 +373,7 @@ public class class40 {
 				}
 				int var21 = var5.field10450[0] + var19;
 				int var22 = var5.field10448[0] + var20;
-				if (class690.field8317.field8320 == var17) {
+				if (MoveSpeed.field8317.field8320 == var17) {
 					var5.method19118(var21, var22);
 				} else {
 					field697[arg1] = (byte) (var17 - 1);
@@ -387,14 +387,14 @@ public class class40 {
 					Statics.field4826 = var5.field11717;
 				}
 			} else {
-				int var23 = arg0.method19583(3);
-				int var24 = arg0.method19583(30);
+				int var23 = arg0.gBit(3);
+				int var24 = arg0.gBit(30);
 				int var25 = var24 >> 28 & 0x3;
 				int var26 = var24 >> 14 & 0x3FFF;
 				int var27 = var24 & 0x3FFF;
 				int var28 = (var2.field7426 + var5.field10450[0] + var26 & 0x3FFF) - var2.field7426;
 				int var29 = (var2.field7427 + var5.field10448[0] + var27 & 0x3FFF) - var2.field7427;
-				if (class690.field8317.field8320 == var23) {
+				if (MoveSpeed.field8317.field8320 == var23) {
 					var5.method19118(var28, var29);
 				} else {
 					field697[arg1] = (byte) (var23 - 1);
@@ -413,21 +413,21 @@ public class class40 {
 
 	@ObfuscatedName("aap.w(Lase;II)Z")
 	public static boolean method14343(PacketBit arg0, int arg1) {
-		int var2 = arg0.method19583(2);
+		int var2 = arg0.gBit(2);
 		if (var2 == 0) {
-			if (arg0.method19583(1) != 0) {
+			if (arg0.gBit(1) != 0) {
 				method14343(arg0, arg1);
 			}
-			int var3 = arg0.method19583(6);
-			int var4 = arg0.method19583(6);
-			boolean var5 = arg0.method19583(1) == 1;
+			int var3 = arg0.gBit(6);
+			int var4 = arg0.gBit(6);
+			boolean var5 = arg0.gBit(1) == 1;
 			if (var5) {
 				field707[++field695 - 1] = arg1;
 			}
 			if (client.field10944[arg1] != null) {
 				throw new RuntimeException();
 			}
-			class19 var6 = field704[arg1];
+			LowResPlayerInfo var6 = field704[arg1];
 			PlayerEntity var7 = client.field10944[arg1] = new PlayerEntity(client.world.method7743());
 			var7.field10406 = arg1;
 			if (field706[arg1] != null) {
@@ -456,12 +456,12 @@ public class class40 {
 			field704[arg1] = null;
 			return true;
 		} else if (var2 == 1) {
-			int var15 = arg0.method19583(2);
+			int var15 = arg0.gBit(2);
 			int var16 = field704[arg1].field524;
 			field704[arg1].field524 = (((var16 >> 28) + var15 & 0x3) << 28) + (var16 & 0xFFFFFFF);
 			return false;
 		} else if (var2 == 2) {
-			int var17 = arg0.method19583(5);
+			int var17 = arg0.gBit(5);
 			int var18 = var17 >> 3 & 0x3;
 			int var19 = var17 & 0x7;
 			int var20 = field704[arg1].field524;
@@ -497,11 +497,11 @@ public class class40 {
 				var22++;
 				var23++;
 			}
-			class686.method1897(class690.method13901(), field697[arg1]);
+			class686.method1897(MoveSpeed.method13901(), field697[arg1]);
 			field704[arg1].field524 = (var21 << 28) + (var22 << 14) + var23;
 			return false;
 		} else {
-			int var24 = arg0.method19583(20);
+			int var24 = arg0.gBit(20);
 			int var25 = var24 >> 18 & 0x3;
 			int var26 = var24 >> 16 & 0x3;
 			int var27 = var24 >> 8 & 0xFF;
@@ -512,7 +512,7 @@ public class class40 {
 			int var30 = (var29 >> 28) + var26 & 0x3;
 			int var31 = (var29 >> 14) + var27 & 0xFF;
 			int var32 = var28 + var29 & 0xFF;
-			class686.method1897(class690.method13901(), var25 - 1);
+			class686.method1897(MoveSpeed.method13901(), var25 - 1);
 			field704[arg1].field524 = (var30 << 28) + (var31 << 14) + var32;
 			return false;
 		}
@@ -799,7 +799,7 @@ public class class40 {
 		for (int var0 = 0; var0 < 2048; var0++) {
 			field706[var0] = null;
 			field699[var0] = null;
-			field697[var0] = class690.field8315.field8313;
+			field697[var0] = MoveSpeed.field8315.field8313;
 			field704[var0] = null;
 		}
 	}

@@ -527,7 +527,7 @@ public class LoginManager {
 				}
 				Statics.field432.field809 = new IsaacRandom(var24);
 				new IsaacRandom(var24);
-				Statics.field432.field795.method19566(Statics.field432.field809);
+				Statics.field432.field795.setIsaac(Statics.field432.field809);
 				Statics.field435 = null;
 				field445 = 98;
 			}
@@ -674,7 +674,7 @@ public class LoginManager {
 				Statics.field432.method939().method9029(Statics.field432.field795.data, 0, Statics.field7542);
 				Statics.field432.field795.pos = 0;
 				byte[] var28 = new byte[Statics.field7542 + 1];
-				Statics.field432.field795.method19561(var28, 0, Statics.field7542);
+				Statics.field432.field795.gIsaacArrayBuffer(var28, 0, Statics.field7542);
 				Statics.field432.field795.pos = 0;
 				Packet var29 = new Packet(var28);
 				String var30 = var29.gjstr();
@@ -871,7 +871,7 @@ public class LoginManager {
 					}
 					Statics.field432.method939().method9029(var41.data, 3, 1);
 				}
-				Statics.field432.field796 = Statics.method18494()[var41.method19560()];
+				Statics.field432.field796 = Statics.method18494()[var41.gIsaac1or2()];
 				Statics.field432.field797 = var41.g2();
 				field445 = 160;
 			}
@@ -885,7 +885,7 @@ public class LoginManager {
 				field445 = 7;
 				method669(2);
 				method4320();
-				class40.method16435(Statics.field432.field795);
+				ReceivePlayerPositions.method16435(Statics.field432.field795);
 				int var43 = var42 - Statics.field432.field795.pos;
 				PacketBit var44 = new PacketBit(var43);
 				System.arraycopy(Statics.field432.field795.data, Statics.field432.field795.pos, var44.data, 0, var43);
@@ -919,7 +919,7 @@ public class LoginManager {
 				field445 = 7;
 				method669(15);
 				Statics.method6877();
-				class40.method16435(Statics.field432.field795);
+				ReceivePlayerPositions.method16435(Statics.field432.field795);
 				if (Statics.field432.field795.pos != var45) {
 					throw new RuntimeException(Statics.field432.field795.pos + " " + var45);
 				}

@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("c")
-public class class19 {
+public class LowResPlayerInfo {
 
 	@ObfuscatedName("c.e")
 	public int field524;

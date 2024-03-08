@@ -494,14 +494,14 @@ public class World {
 			this.method7854();
 		}
 		this.method7791(BuildAreaSize.method3061(var2));
-		arg0.method19562();
+		arg0.accessBits();
 		HashSet var8 = new HashSet();
 		for (int var9 = 0; var9 < 4; var9++) {
 			for (int var10 = 0; var10 < this.field5028 >> 3; var10++) {
 				for (int var11 = 0; var11 < this.field5043 >> 3; var11++) {
-					int var12 = arg0.method19583(1);
+					int var12 = arg0.gBit(1);
 					if (var12 == 1) {
-						int var13 = arg0.method19583(26);
+						int var13 = arg0.gBit(26);
 						this.field5057[var9][var10][var11] = var13;
 						int var14 = var13 >> 14 & 0x3FF;
 						int var15 = var13 >> 3 & 0x7FF;
@@ -513,7 +513,7 @@ public class World {
 				}
 			}
 		}
-		arg0.method19564();
+		arg0.accessBytes();
 		int var17 = var8.size();
 		this.field5054 = new int[var17];
 		this.field5051 = new int[var17];

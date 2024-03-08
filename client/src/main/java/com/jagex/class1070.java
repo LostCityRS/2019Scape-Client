@@ -120,7 +120,7 @@ public class class1070 extends class714 {
 			field11860 = 0;
 			field11853 = 0;
 		}
-		if (this.field8479.method4780() != class266.field2816 || field11852 == 0 && field11855 == 0) {
+		if (this.field8479.method4780() != PositionMode.field2816 || field11852 == 0 && field11855 == 0) {
 			return;
 		}
 		var2.method6418();

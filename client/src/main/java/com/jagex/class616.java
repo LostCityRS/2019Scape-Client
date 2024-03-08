@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class class616 implements class614 {
 
 	@ObfuscatedName("wp.e")
-	public class366 field7628;
+	public SoundBackend field7628;
 
 	@ObfuscatedName("wp.n")
 	public class615 field7629 = class615.field7627;
@@ -20,7 +20,7 @@ public class class616 implements class614 {
 	@ObfuscatedName("wp.f")
 	public class612 field7632;
 
-	public class616(Js5 arg0, int arg1, class366 arg2, class612 arg3) {
+	public class616(Js5 arg0, int arg1, SoundBackend arg2, class612 arg3) {
 		this.field7630 = arg0;
 		this.field7631 = arg1;
 		this.field7628 = arg2;

@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("anw")
-public class class1071 extends class714 {
+public class LookatEntity extends class714 {
 
 	@ObfuscatedName("anw.n")
 	public class273 field11867;
@@ -24,7 +24,7 @@ public class class1071 extends class714 {
 	@ObfuscatedName("anw.l")
 	public final Vector3 field11866 = new Vector3();
 
-	public class1071(class274 arg0) {
+	public LookatEntity(class274 arg0) {
 		super(arg0);
 	}
 

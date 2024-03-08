@@ -9688,7 +9688,7 @@ public final class ScriptRunner {
 		class1172 var1 = MiniMenu.method4924();
 		if (MiniMenu.method18429(var1) == 7) {
 			int var2 = (int) var1.method19368();
-			if (var2 >= 0 && var2 <= class40.field698) {
+			if (var2 >= 0 && var2 <= ReceivePlayerPositions.field698) {
 				PlayerEntity var3 = client.field10944[var2];
 				if (var3 != null) {
 					arg0.field8221 = var3;
@@ -12767,14 +12767,14 @@ public final class ScriptRunner {
 	@ObfuscatedName("nv.anu(Lyf;B)V")
 	public static final void method6117(ClientScriptState arg0) throws class1109 {
 		int var1 = arg0.field8216[--arg0.field8226];
-		Statics.field9155.method4684(class263.method3259(var1), true);
+		Statics.field9155.method4684(LookatMode.method3259(var1), true);
 		client.field10902 = true;
 	}
 
 	@ObfuscatedName("nu.ant(Lyf;B)V")
 	public static final void method6074(ClientScriptState arg0) throws class1109 {
 		int var1 = arg0.field8216[--arg0.field8226];
-		Statics.field9155.method4688(class266.method1058(var1), true);
+		Statics.field9155.method4688(PositionMode.method1058(var1), true);
 		client.field10902 = true;
 	}
 
@@ -12855,7 +12855,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("kl.anj(Lyf;I)V")
 	public static final void method5244(ClientScriptState arg0) {
 		CoordFine var1 = (CoordFine) arg0.field8218[--arg0.field8211];
-		if (Statics.field9155.method4743() != class263.field2790) {
+		if (Statics.field9155.method4743() != LookatMode.field2790) {
 			throw new RuntimeException();
 		}
 		class1069 var2 = (class1069) Statics.field9155.method4797();
@@ -12865,7 +12865,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("kj.ans(Lyf;I)V")
 	public static final void method5357(ClientScriptState arg0) {
-		if (Statics.field9155.method4780() != class266.field2816) {
+		if (Statics.field9155.method4780() != PositionMode.field2816) {
 			throw new RuntimeException();
 		}
 		arg0.field8218[++arg0.field8211 - 1] = Statics.field9155.method4717();
@@ -12878,10 +12878,10 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226 + 1];
 		int var4 = arg0.field8216[arg0.field8226 + 2];
 		boolean var5 = arg0.field8216[arg0.field8226 + 3] == 1;
-		if (Statics.field9155.method4743() != class263.field2788) {
+		if (Statics.field9155.method4743() != LookatMode.field2788) {
 			throw new RuntimeException();
 		}
-		class1071 var6 = (class1071) Statics.field9155.method4797();
+		LookatEntity var6 = (LookatEntity) Statics.field9155.method4797();
 		if (arg1 != null) {
 			var6.method18816(arg1, new Vector3((float) var2, (float) var3, (float) var4), var5);
 		}
@@ -12908,10 +12908,10 @@ public final class ScriptRunner {
 		int var6 = arg0.field8216[arg0.field8226 + 4];
 		boolean var7 = arg0.field8216[arg0.field8226 + 5] == 1;
 		int var8 = arg0.field8216[arg0.field8226 + 6];
-		if (Statics.field9155.method4780() != class266.field2815) {
+		if (Statics.field9155.method4780() != PositionMode.field2815) {
 			throw new RuntimeException();
 		}
-		class910 var9 = (class910) Statics.field9155.method4709();
+		PositionEntity var9 = (PositionEntity) Statics.field9155.method4709();
 		class421 var10 = new class421();
 		class421 var11 = new class421();
 		var10.method6414(0.0F, 1.0F, 0.0F, (float) ((double) var6 * 3.141592653589793D * 2.0D / 16384.0D));
@@ -12982,10 +12982,10 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("rp.aoc(Lyf;I)V")
 	public static final void method7475(ClientScriptState arg0) {
-		if (Statics.field9155.method4780() != class266.field2815) {
+		if (Statics.field9155.method4780() != PositionMode.field2815) {
 			throw new RuntimeException();
 		}
-		class910 var1 = (class910) Statics.field9155.method4709();
+		PositionEntity var1 = (PositionEntity) Statics.field9155.method4709();
 		arg0.field8216[++arg0.field8226 - 1] = (int) ((double) var1.method16693() * 2607.5945876176133D) & 0x3FFF;
 		arg0.field8216[++arg0.field8226 - 1] = (int) ((double) var1.method16694() * 2607.5945876176133D) & 0x3FFF;
 	}
@@ -13086,11 +13086,11 @@ public final class ScriptRunner {
 	@ObfuscatedName("aqy.aof(Lyf;B)V")
 	public static final void method19200(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		if (Statics.field9155.method4780() != class266.field2815 || Statics.field9155.method4743() != class263.field2788) {
+		if (Statics.field9155.method4780() != PositionMode.field2815 || Statics.field9155.method4743() != LookatMode.field2788) {
 			throw new RuntimeException();
 		}
-		class910 var2 = (class910) Statics.field9155.method4709();
-		class1071 var3 = (class1071) Statics.field9155.method4797();
+		PositionEntity var2 = (PositionEntity) Statics.field9155.method4709();
+		LookatEntity var3 = (LookatEntity) Statics.field9155.method4797();
 		Vector3 var4 = var2.method16691();
 		Vector3 var5 = Vector3.method6484(var4);
 		var5.field4311 += var1;
@@ -13117,11 +13117,11 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("pz.aop(Lyf;I)V")
 	public static final void method6821(ClientScriptState arg0) {
-		if (Statics.field9155.method4780() != class266.field2815 || Statics.field9155.method4743() != class263.field2788) {
+		if (Statics.field9155.method4780() != PositionMode.field2815 || Statics.field9155.method4743() != LookatMode.field2788) {
 			throw new RuntimeException();
 		}
-		Vector3 var1 = ((class910) Statics.field9155.method4709()).method16691();
-		Vector3 var2 = ((class1071) Statics.field9155.method4797()).method18819();
+		Vector3 var1 = ((PositionEntity) Statics.field9155.method4709()).method16691();
+		Vector3 var2 = ((LookatEntity) Statics.field9155.method4797()).method18819();
 		Vector3 var3 = Vector3.method6484(var1);
 		var3.method6537(var2);
 		float var4 = class688.method9272(var3.field4308, var3.field4313);
@@ -13130,11 +13130,11 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("f.aog(Lyf;I)V")
 	public static final void method222(ClientScriptState arg0) {
-		if (Statics.field9155.method4780() != class266.field2815 || Statics.field9155.method4743() != class263.field2788) {
+		if (Statics.field9155.method4780() != PositionMode.field2815 || Statics.field9155.method4743() != LookatMode.field2788) {
 			throw new RuntimeException();
 		}
-		Vector3 var1 = ((class910) Statics.field9155.method4709()).method16691();
-		Vector3 var2 = ((class1071) Statics.field9155.method4797()).method18819();
+		Vector3 var1 = ((PositionEntity) Statics.field9155.method4709()).method16691();
+		Vector3 var2 = ((LookatEntity) Statics.field9155.method4797()).method18819();
 		Vector3 var3 = Vector3.method6484(var1);
 		var3.method6537(var2);
 		arg0.field8216[++arg0.field8226 - 1] = (int) var3.method6519();
@@ -13142,7 +13142,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("qf.aot(Lyf;I)V")
 	public static final void method7323(ClientScriptState arg0) {
-		if (Statics.field9155.method4780() != class266.field2816) {
+		if (Statics.field9155.method4780() != PositionMode.field2816) {
 			throw new RuntimeException();
 		}
 		((class909) Statics.field9155.method4709()).method16672(arg0.field8216[--arg0.field8226] == 1);
@@ -13253,7 +13253,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("wg.apu(Lyf;I)V")
 	public static final void method9758(ClientScriptState arg0) {
 		arg0.field8226 -= 3;
-		if (Statics.field9155.method4743() != class263.field2791) {
+		if (Statics.field9155.method4743() != LookatMode.field2791) {
 			throw new RuntimeException();
 		}
 		((class1070) Statics.field9155.method4797()).method18785(arg0.field8216[arg0.field8226], arg0.field8216[arg0.field8226 + 1], arg0.field8216[arg0.field8226 + 2]);
@@ -13261,7 +13261,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("tt.apc(Lyf;I)V")
 	public static final void method8642(ClientScriptState arg0) {
-		if (Statics.field9155.method4743() != class263.field2791) {
+		if (Statics.field9155.method4743() != LookatMode.field2791) {
 			throw new RuntimeException();
 		}
 		((class1070) Statics.field9155.method4797()).method18783(arg0.field8216[--arg0.field8226]);
@@ -13269,7 +13269,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ga.apg(Lyf;B)V")
 	public static final void method3544(ClientScriptState arg0) {
-		if (Statics.field9155.method4743() != class263.field2791) {
+		if (Statics.field9155.method4743() != LookatMode.field2791) {
 			throw new RuntimeException();
 		}
 		((class1070) Statics.field9155.method4797()).method18789(arg0.field8216[--arg0.field8226]);
@@ -13277,7 +13277,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("e.apx(Lyf;I)V")
 	public static final void method134(ClientScriptState arg0) {
-		if (Statics.field9155.method4743() != class263.field2791) {
+		if (Statics.field9155.method4743() != LookatMode.field2791) {
 			throw new RuntimeException();
 		}
 		((class1070) Statics.field9155.method4797()).method18788(arg0.field8216[--arg0.field8226]);
@@ -13285,7 +13285,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("tl.apb(Lyf;I)V")
 	public static final void method8896(ClientScriptState arg0) {
-		if (Statics.field9155.method4743() != class263.field2791) {
+		if (Statics.field9155.method4743() != LookatMode.field2791) {
 			throw new RuntimeException();
 		}
 		((class1070) Statics.field9155.method4797()).method18784(arg0.field8216[--arg0.field8226]);
@@ -13295,7 +13295,7 @@ public final class ScriptRunner {
 	public static final void method13847(ClientScriptState arg0) {
 		arg0.field8226 -= 6;
 		CoordFine var1 = (CoordFine) arg0.field8218[--arg0.field8211];
-		if (Statics.field9155.method4743() != class263.field2791) {
+		if (Statics.field9155.method4743() != LookatMode.field2791) {
 			throw new RuntimeException();
 		}
 		((class1070) Statics.field9155.method4797()).method18780(var1.method17853(), arg0.field8216[arg0.field8226], arg0.field8216[arg0.field8226 + 1], arg0.field8216[arg0.field8226 + 2], arg0.field8216[arg0.field8226 + 3], arg0.field8216[arg0.field8226 + 4], arg0.field8216[arg0.field8226 + 5]);
@@ -15655,11 +15655,11 @@ public final class ScriptRunner {
 	@ObfuscatedName("dj.bdu(Lyf;I)V")
 	public static final void method2663(ClientScriptState arg0) {
 		arg0.field8226 -= 2;
-		class690 var1 = (class690) class686.method1897(class690.method13901(), arg0.field8216[arg0.field8226]);
+		MoveSpeed var1 = (MoveSpeed) class686.method1897(MoveSpeed.method13901(), arg0.field8216[arg0.field8226]);
 		CoordGrid var2 = new CoordGrid(arg0.field8216[arg0.field8226 + 1]);
 		if (var2.field7428 == -1) {
 			throw new RuntimeException("");
-		} else if (class690.field8314 != var1 && class690.field8315 != var1 && class690.field8316 != var1) {
+		} else if (MoveSpeed.field8314 != var1 && MoveSpeed.field8315 != var1 && MoveSpeed.field8316 != var1) {
 			throw new RuntimeException("");
 		} else if (client.field10849 != null) {
 			ClientMessage var3 = Statics.method1604(ClientProt.MOVE_SCRIPTED, client.field10849.field794);

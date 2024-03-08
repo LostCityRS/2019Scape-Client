@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class class657 {
 
 	@ObfuscatedName("xt.e")
-	public static class366 field8056 = null;
+	public static SoundBackend field8056 = null;
 
 	public class657() throws Throwable {
 		throw new Error();
@@ -17,7 +17,7 @@ public class class657 {
 		if (class363.field3413 == arg0.field8052) {
 			field8056 = new class932(arg0);
 		} else if (class363.field3414 == arg0.field8052) {
-			field8056 = new class931(arg0);
+			field8056 = new DummySoundBackend(arg0);
 		} else {
 			throw new RuntimeException();
 		}

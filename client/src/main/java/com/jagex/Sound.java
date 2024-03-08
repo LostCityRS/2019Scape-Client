@@ -10,7 +10,7 @@ import java.util.List;
 public class Sound {
 
 	@ObfuscatedName("rw.e")
-	public class366 field4876;
+	public SoundBackend field4876;
 
 	@ObfuscatedName("rw.n")
 	public class614 field4889;
@@ -66,7 +66,7 @@ public class Sound {
 	@ObfuscatedName("rw.x")
 	public float field4888;
 
-	public Sound(class366 arg0) {
+	public Sound(SoundBackend arg0) {
 		this.field4876 = arg0;
 		this.field4879 = new ArrayList();
 	}

@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("ahd")
-public class class910 extends class307 {
+public class PositionEntity extends class307 {
 
 	@ObfuscatedName("ahd.n")
 	public class273 field10552;
@@ -36,7 +36,7 @@ public class class910 extends class307 {
 	@ObfuscatedName("ahd.d")
 	public final class421 field10555 = new class421();
 
-	public class910(class274 arg0) {
+	public PositionEntity(class274 arg0) {
 		super(arg0);
 	}
 

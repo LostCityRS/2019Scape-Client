@@ -13,9 +13,9 @@ public class class364 {
 	public Map field3417 = new HashMap();
 
 	@ObfuscatedName("mb.n")
-	public class366 field3418;
+	public SoundBackend field3418;
 
-	public class364(class366 arg0) {
+	public class364(SoundBackend arg0) {
 		this.field3418 = arg0;
 	}
 

@@ -126,8 +126,8 @@ public class class648 {
 			if (Statics.field3416 != 3) {
 				var6 = (int) client.field11004 >> 3;
 				var8 = (int) client.field10895 >> 3;
-			} else if (Statics.field9155.method4780() == class266.field2815) {
-				class910 var5 = (class910) Statics.field9155.method4709();
+			} else if (Statics.field9155.method4780() == PositionMode.field2815) {
+				PositionEntity var5 = (PositionEntity) Statics.field9155.method4709();
 				var6 = class688.method9198(var5.field10554) >> 3;
 				short var7 = 1024;
 				var8 = (var7 * 3 - (class688.method2041(var5.field10554) >> 3)) % (var7 * 2);

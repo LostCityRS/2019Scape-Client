@@ -1972,7 +1972,7 @@ public class Statics {
 		} else {
 			var2.field11432 = new PacketBit(260);
 		}
-		var2.field11432.method19566(arg1);
+		var2.field11432.setIsaac(arg1);
 		var2.field11432.method19555(var2.field11435.field3806);
 		var2.field11430 = 0;
 		return var2;
@@ -4772,7 +4772,7 @@ public class Statics {
 	@ObfuscatedName("agz.anl(Lyf;I)V")
 	public static final void method16461(ClientScriptState arg0) {
 		CoordFine var1 = (CoordFine) arg0.field8218[--arg0.field8211];
-		if (field9155.method4780() != class266.field2816) {
+		if (field9155.method4780() != PositionMode.field2816) {
 			throw new RuntimeException();
 		}
 		class909 var2 = (class909) field9155.method4709();

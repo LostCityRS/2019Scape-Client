@@ -90,7 +90,7 @@ public class class480 {
 	public class365 field4921;
 
 	@ObfuscatedName("rq.ah")
-	public class366 field4923;
+	public SoundBackend field4923;
 
 	@ObfuscatedName("rq.al")
 	public boolean field4924;
@@ -158,7 +158,7 @@ public class class480 {
 	@ObfuscatedName("rq.ak")
 	public boolean field4911;
 
-	public class480(class473 arg0, int arg1, int arg2, class365 arg3, class366 arg4) {
+	public class480(class473 arg0, int arg1, int arg2, class365 arg3, SoundBackend arg4) {
 		this.field4923 = arg4;
 		this.method7480(class474.field4859);
 		this.field4907 = arg1;

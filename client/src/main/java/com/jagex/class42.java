@@ -576,8 +576,8 @@ public class class42 {
 
 	@ObfuscatedName("aff.s(IILhf;Lch;III)V")
 	public static void method16411(int arg0, int arg1, Component arg2, class103 arg3, int arg4, int arg5) {
-		int var6 = class40.field698;
-		int[] var7 = class40.field703;
+		int var6 = ReceivePlayerPositions.field698;
+		int[] var7 = ReceivePlayerPositions.field703;
 		for (int var8 = 0; var8 < var6; var8++) {
 			PlayerEntity var9 = client.field10944[var7[var8]];
 			if (var9 != null && var9.method19119() && !var9.field12071.method10195() && Statics.field4490 != var9 && Statics.field4490.field11717 == var9.field11717) {

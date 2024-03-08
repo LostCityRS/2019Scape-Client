@@ -17,13 +17,13 @@ public abstract class class274 {
 	public class269 field2844;
 
 	@ObfuscatedName("je.k")
-	public class263 field2845;
+	public LookatMode field2845;
 
 	@ObfuscatedName("je.f")
 	public class714 field2846;
 
 	@ObfuscatedName("je.w")
-	public class266 field2847;
+	public PositionMode field2847;
 
 	@ObfuscatedName("je.l")
 	public class307 field2863;
@@ -181,44 +181,44 @@ public abstract class class274 {
 	}
 
 	@ObfuscatedName("je.f(Lii;ZI)Laax;")
-	public class714 method4684(class263 arg0, boolean arg1) throws class1109 {
+	public class714 method4684(LookatMode arg0, boolean arg1) throws class1109 {
 		if (class268.field2829 == this.field2857 && !arg1) {
 			throw new class1109();
 		}
 		this.field2845 = arg0;
-		if (class263.field2788 == arg0) {
-			this.field2846 = new class1071(this);
-		} else if (class263.field2791 == arg0) {
+		if (LookatMode.field2788 == arg0) {
+			this.field2846 = new LookatEntity(this);
+		} else if (LookatMode.field2791 == arg0) {
 			this.field2846 = new class1070(this);
-		} else if (class263.field2790 == arg0) {
+		} else if (LookatMode.field2790 == arg0) {
 			this.field2846 = new class1069(this);
-		} else if (class263.field2789 == arg0) {
+		} else if (LookatMode.field2789 == arg0) {
 			this.field2846 = new class1201(this);
-		} else if (class263.field2795 == arg0) {
+		} else if (LookatMode.field2795 == arg0) {
 			this.field2846 = new class1203(this);
-		} else if (class263.field2792 == arg0) {
+		} else if (LookatMode.field2792 == arg0) {
 			this.field2846 = new class1073(this);
-		} else if (class263.field2787 == arg0) {
+		} else if (LookatMode.field2787 == arg0) {
 			this.field2846 = new class1202(this);
 		}
 		return this.field2846;
 	}
 
 	@ObfuscatedName("je.w(Lim;ZI)Lkl;")
-	public class307 method4688(class266 arg0, boolean arg1) throws class1109 {
+	public class307 method4688(PositionMode arg0, boolean arg1) throws class1109 {
 		if (class268.field2829 == this.field2857 && !arg1) {
 			throw new class1109();
 		}
 		this.field2847 = arg0;
-		if (class266.field2815 == arg0) {
-			this.field2863 = new class910(this);
-		} else if (class266.field2816 == arg0) {
+		if (PositionMode.field2815 == arg0) {
+			this.field2863 = new PositionEntity(this);
+		} else if (PositionMode.field2816 == arg0) {
 			this.field2863 = new class909(this);
-		} else if (class266.field2819 == arg0) {
+		} else if (PositionMode.field2819 == arg0) {
 			this.field2863 = new class1134(this);
-		} else if (class266.field2817 == arg0) {
+		} else if (PositionMode.field2817 == arg0) {
 			this.field2863 = new class1136(this);
-		} else if (class266.field2818 == arg0) {
+		} else if (PositionMode.field2818 == arg0) {
 			this.field2863 = new class1135(this);
 		}
 		return this.field2863;
@@ -456,12 +456,12 @@ public abstract class class274 {
 	}
 
 	@ObfuscatedName("je.as(B)Lii;")
-	public class263 method4743() {
+	public LookatMode method4743() {
 		return this.field2845;
 	}
 
 	@ObfuscatedName("je.at(I)Lim;")
-	public class266 method4780() {
+	public PositionMode method4780() {
 		return this.field2847;
 	}
 

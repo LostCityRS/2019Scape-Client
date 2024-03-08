@@ -18,8 +18,8 @@ public class class29 {
 		Statics.field604 = new class893(client.field11034);
 		Statics.field604.method4683(class268.field2828);
 		try {
-			class909 var1 = (class909) Statics.field604.method4688(class266.field2816, false);
-			class1070 var2 = (class1070) Statics.field604.method4684(class263.field2791, false);
+			class909 var1 = (class909) Statics.field604.method4688(PositionMode.field2816, false);
+			class1070 var2 = (class1070) Statics.field604.method4684(LookatMode.field2791, false);
 			var1.method16671(arg0);
 			var2.method18781(new class421(0.0F, 0.0F, 0.0F));
 			Statics.field604.method4695(Vector3.method6483(99999.0F, 99999.0F, 99999.0F));

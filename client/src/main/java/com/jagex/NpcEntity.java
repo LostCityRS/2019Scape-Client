@@ -380,7 +380,7 @@ public class NpcEntity extends PathingEntity {
 				}
 				this.field10450[0] = arg1;
 				this.field10448[0] = arg2;
-				this.field10441[0] = class690.field8315.field8313;
+				this.field10441[0] = MoveSpeed.field8315.field8313;
 				return;
 			}
 		}

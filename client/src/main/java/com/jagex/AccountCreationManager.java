@@ -242,7 +242,7 @@ public class AccountCreationManager {
 					}
 					client.field10835.field809 = new IsaacRandom(var5);
 					new IsaacRandom(var5);
-					client.field10835.field795.method19566(client.field10835.field809);
+					client.field10835.field795.setIsaac(client.field10835.field809);
 					client.setState(0);
 					client.field10835.method952();
 					client.field10835.field795.pos = 0;

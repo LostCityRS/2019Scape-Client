@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("mt")
-public abstract class class366 {
+public abstract class SoundBackend {
 
 	@ObfuscatedName("mt.n(IILnd;Lmw;IFB)Ljava/lang/Object;")
 	public abstract Object method5861(int arg0, int arg1, class372 arg2, class370 arg3, int arg4, float arg5);

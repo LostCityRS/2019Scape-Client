@@ -679,8 +679,8 @@ public class MiniMenu {
 												}
 											}
 										}
-										int var46 = class40.field698;
-										int[] var47 = class40.field703;
+										int var46 = ReceivePlayerPositions.field698;
+										int[] var47 = ReceivePlayerPositions.field703;
 										for (int var48 = 0; var48 < var46; var48++) {
 											PlayerEntity var49 = client.field10944[var47[var48]];
 											if (var49 != null && var49.field10403 != client.field10903 && var35 != var49 && var49.field10452) {
@@ -726,8 +726,8 @@ public class MiniMenu {
 											}
 										}
 									}
-									int var63 = class40.field698;
-									int[] var64 = class40.field703;
+									int var63 = ReceivePlayerPositions.field698;
+									int[] var64 = ReceivePlayerPositions.field703;
 									for (int var65 = 0; var65 < var63; var65++) {
 										PlayerEntity var66 = client.field10944[var64[var65]];
 										if (var66 != null && var66.field10403 != client.field10903 && var66.field10452) {

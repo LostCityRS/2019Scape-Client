@@ -3,28 +3,28 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ii")
-public class class263 {
+public class LookatMode {
 
 	@ObfuscatedName("ii.e")
-	public static final class263 field2790 = new class263(0, false);
+	public static final LookatMode field2790 = new LookatMode(0, false);
 
 	@ObfuscatedName("ii.n")
-	public static final class263 field2788 = new class263(1, false);
+	public static final LookatMode field2788 = new LookatMode(1, false);
 
 	@ObfuscatedName("ii.m")
-	public static final class263 field2789 = new class263(2, true);
+	public static final LookatMode field2789 = new LookatMode(2, true);
 
 	@ObfuscatedName("ii.k")
-	public static final class263 field2791 = new class263(3, false);
+	public static final LookatMode field2791 = new LookatMode(3, false);
 
 	@ObfuscatedName("ii.f")
-	public static final class263 field2795 = new class263(4, true);
+	public static final LookatMode field2795 = new LookatMode(4, true);
 
 	@ObfuscatedName("ii.w")
-	public static final class263 field2792 = new class263(5, true);
+	public static final LookatMode field2792 = new LookatMode(5, true);
 
 	@ObfuscatedName("ii.l")
-	public static final class263 field2787 = new class263(6, true);
+	public static final LookatMode field2787 = new LookatMode(6, true);
 
 	@ObfuscatedName("ii.u")
 	public final int field2794;
@@ -32,13 +32,13 @@ public class class263 {
 	@ObfuscatedName("ii.z")
 	public final boolean field2793;
 
-	public class263(int arg0, boolean arg1) {
+	public LookatMode(int arg0, boolean arg1) {
 		this.field2794 = arg0;
 		this.field2793 = arg1;
 	}
 
 	@ObfuscatedName("fb.e(II)Lii;")
-	public static class263 method3259(int arg0) {
+	public static LookatMode method3259(int arg0) {
 		if (field2790.field2794 == arg0) {
 			return field2790;
 		} else if (field2788.field2794 == arg0) {

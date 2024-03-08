@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 @ObfuscatedName("aiw")
-public class class931 extends class366 {
+public class DummySoundBackend extends SoundBackend {
 
 	@ObfuscatedName("aiw.n")
 	public HashMap field10679 = new HashMap();
@@ -28,17 +28,17 @@ public class class931 extends class366 {
 	public long field10684 = MonotonicTime.method3655();
 
 	@ObfuscatedName("aiw.u")
-	public Runnable field10685 = new class146(this);
+	public Runnable field10685 = new DummySoundBackend_Task1(this);
 
 	@ObfuscatedName("aiw.z")
-	public Runnable field10686 = new class144(this);
+	public Runnable field10686 = new DummySoundBackend_Task2(this);
 
 	@ObfuscatedName("aiw.aw(I)Ljava/util/HashMap;")
 	public HashMap method16802() {
 		return this.field10679;
 	}
 
-	public class931(class656 arg0) {
+	public DummySoundBackend(class656 arg0) {
 		Iterator var2 = arg0.field8053.keySet().iterator();
 		while (var2.hasNext()) {
 			class473 var3 = (class473) var2.next();

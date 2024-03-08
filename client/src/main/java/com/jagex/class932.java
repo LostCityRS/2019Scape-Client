@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 import java.util.*;
 
 @ObfuscatedName("aiz")
-public class class932 extends class366 {
+public class class932 extends SoundBackend {
 
 	@ObfuscatedName("aiz.n")
 	public HashMap field10688 = new HashMap();

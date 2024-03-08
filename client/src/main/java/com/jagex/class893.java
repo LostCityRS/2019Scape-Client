@@ -30,7 +30,7 @@ public class class893 extends class274 {
 		int var4 = arg0.g1();
 		this.method4683(class268.method4461(var4 & 0x1));
 		if ((var4 & 0x8) != 0) {
-			class263 var5 = class263.method3259(arg0.g1());
+			LookatMode var5 = LookatMode.method3259(arg0.g1());
 			if (this.field2845 != var5) {
 				try {
 					this.method4684(var5, true);
@@ -40,7 +40,7 @@ public class class893 extends class274 {
 			}
 		}
 		if ((var4 & 0x10) != 0) {
-			class266 var7 = class266.method1058(arg0.g1());
+			PositionMode var7 = PositionMode.method1058(arg0.g1());
 			if (this.field2847 != var7) {
 				try {
 					this.method4688(var7, true);
