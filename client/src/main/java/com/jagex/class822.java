@@ -4,10 +4,10 @@ import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
 @ObfuscatedName("aeb")
-public class class822 extends class74 {
+public class class822 extends GlEffect {
 
 	@ObfuscatedName("aeb.d")
-	public class73 field9333;
+	public RenderList field9333;
 
 	@ObfuscatedName("aeb.c")
 	public boolean field9335;
@@ -84,7 +84,7 @@ public class class822 extends class74 {
 
 	@ObfuscatedName("aeb.b()V")
 	public void method15349() {
-		this.field9333 = new class73(this.field1021, 2);
+		this.field9333 = new RenderList(this.field1021, 2);
 		this.field9333.method1245(0);
 		this.field1021.method15776(1);
 		OpenGL.glTexGeni(8192, 9472, 34065);

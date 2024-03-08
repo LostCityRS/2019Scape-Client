@@ -127,7 +127,7 @@ public class PureJavaRenderer extends Renderer {
 	@ObfuscatedName("afg.bg")
 	public Framebuffer field9775;
 
-	public PureJavaRenderer(Canvas arg0, MaterialList arg1, class143 arg2, BillboardTypeList arg3, class381 arg4, class378 arg5, int arg6, int arg7) {
+	public PureJavaRenderer(Canvas arg0, MaterialList arg1, TextureList arg2, BillboardTypeList arg3, ParticleEmitterTypeList arg4, ParticleEffectorTypeList arg5, int arg6, int arg7) {
 		this(arg1, arg2, arg3, arg4, arg5);
 		try {
 			this.method2178(arg0, arg6, arg7);
@@ -139,7 +139,7 @@ public class PureJavaRenderer extends Renderer {
 		}
 	}
 
-	public PureJavaRenderer(MaterialList arg0, class143 arg1, BillboardTypeList arg2, class381 arg3, class378 arg4) {
+	public PureJavaRenderer(MaterialList arg0, TextureList arg1, BillboardTypeList arg2, ParticleEmitterTypeList arg3, ParticleEffectorTypeList arg4) {
 		super(arg0, arg1, arg2, arg3, arg4);
 		this.field9794 = false;
 		this.field9777 = false;
@@ -165,7 +165,7 @@ public class PureJavaRenderer extends Renderer {
 			this.method15722(0);
 			class662.method10156(true, true);
 			this.field9777 = true;
-			this.field9776 = (int) class213.method3655();
+			this.field9776 = (int) MonotonicTime.method3655();
 		} catch (Throwable var7) {
 			var7.printStackTrace();
 			this.method2578();
@@ -1974,7 +1974,7 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.cy(Laac;Lde;Z)Leu;")
-	public class140 method2207(class733 arg0, class136 arg1, boolean arg2) {
+	public class140 method2207(FontMetrics arg0, class136 arg1, boolean arg2) {
 		boolean var4 = arg1.method2644();
 		boolean var5 = arg1.method2587();
 		if (arg2) {
@@ -2006,7 +2006,7 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.cj(Ldq;IIII)Ldo;")
-	public Model method2211(class120 arg0, int arg1, int arg2, int arg3, int arg4) {
+	public Model method2211(ModelUnlit arg0, int arg1, int arg2, int arg3, int arg4) {
 		return new PureJavaModel(this, arg0, arg1, arg3, arg4, arg2);
 	}
 

@@ -40,7 +40,7 @@ public class class1188 extends class993 {
 			var5.field12424 = arg1;
 			var5.field12420 = arg2;
 			var5.field12407 = arg3;
-			var5.field12422 = class213.method3655();
+			var5.field12422 = MonotonicTime.method3655();
 			return var5;
 		}
 	}

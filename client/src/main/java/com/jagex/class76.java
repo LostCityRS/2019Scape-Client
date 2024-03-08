@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class class76 {
 
 	@ObfuscatedName("bw.e")
-	public class74[] field1030;
+	public GlEffect[] field1030;
 
 	@ObfuscatedName("bw.n")
 	public int field1027 = 0;
@@ -29,13 +29,13 @@ public class class76 {
 	public class76(LegacyOpenGLRenderer arg0) {
 		this.field1029 = arg0;
 		this.field1031 = new class78(arg0);
-		this.field1030 = new class74[16];
+		this.field1030 = new GlEffect[16];
 		this.field1030[1] = new class822(arg0);
 		this.field1030[2] = new class815(arg0, this.field1031);
 		this.field1030[4] = new class819(arg0, this.field1031);
 		this.field1030[5] = new class817(arg0, this.field1031);
 		this.field1030[6] = new class818(arg0);
-		this.field1030[7] = new class816(arg0);
+		this.field1030[7] = new GlReflectionEffect(arg0);
 		this.field1030[3] = this.field1032 = new class821(arg0);
 		this.field1030[8] = new class823(arg0, this.field1031);
 		this.field1030[9] = new class820(arg0, this.field1031);

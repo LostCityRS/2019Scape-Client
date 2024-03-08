@@ -20,10 +20,10 @@ public class class648 {
 	public static boolean field7944 = true;
 
 	@ObfuscatedName("xc.k")
-	public static final class1017 field7949 = new class1017();
+	public static final AppletMouseLogger field7949 = new AppletMouseLogger();
 
 	@ObfuscatedName("xc.f")
-	public static final class1016 field7948 = new class1016();
+	public static final NativeMouseLogger field7948 = new NativeMouseLogger();
 
 	@ObfuscatedName("xc.w")
 	public static Queue field7946 = new LinkedList();

@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aen")
-public class class818 extends class74 {
+public class class818 extends GlEffect {
 
 	public class818(LegacyOpenGLRenderer arg0) {
 		super(arg0);

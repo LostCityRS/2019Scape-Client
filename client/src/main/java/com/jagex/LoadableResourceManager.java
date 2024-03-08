@@ -38,7 +38,7 @@ public class LoadableResourceManager {
 		}
 		if (field4332 == 1) {
 			Statics.field4334 = class775.method15007();
-			class775.field8944.method15011(new class430(Statics.field1587));
+			class775.field8944.method15011(new Js5ArchiveResourceLoader(Statics.field1587));
 			class775.field8934.method15011(new DllResourceLoader("jaggl"));
 			DllResourceLoader var2 = new DllResourceLoader("jagdx");
 			if (!Statics.field2601.startsWith("win")) {
@@ -48,26 +48,26 @@ public class LoadableResourceManager {
 			class775.field8920.method15011(new DllResourceLoader("sw3d"));
 			class775.field8922.method15011(new DllResourceLoader("hw3d"));
 			class775.field8921.method15011(new DllResourceLoader("RuneScape-Setup.exe", true));
-			class775.field8945.method15011(new class430(Statics.field2900));
-			class775.field8924.method15011(new class430(Statics.field10249));
-			class775.field8925.method15011(new class430(Statics.field11838));
-			class775.field8926.method15011(new class430(Statics.field4475));
-			class775.field8927.method15011(new class430(Statics.field8700));
-			class775.field8928.method15011(new class430(Statics.field4618));
-			class775.field8942.method15011(new class430(Statics.field7537));
-			class775.field8930.method15011(new class430(Statics.field8285));
-			class775.field8941.method15011(new class430(Statics.field2149));
-			class775.field8932.method15011(new class430(Statics.field3611));
-			class775.field8933.method15011(new class430(Statics.field7283));
-			class775.field8918.method15011(new class430(Statics.field4404));
-			class775.field8935.method15011(new class430(Statics.field1935));
-			class775.field8936.method15011(new class430(Statics.field6879));
-			class775.field8937.method15011(new class430(Statics.field736));
-			class775.field8943.method15011(new class429(Statics.field8741, "huffman"));
-			class775.field8939.method15011(new class430(Statics.field527));
-			class775.field8940.method15011(new class430(Statics.field5010));
-			class775.field8916.method15011(new class430(Statics.field7672));
-			class775.field8931.method15011(new class431(Statics.field10752, 0));
+			class775.field8945.method15011(new Js5ArchiveResourceLoader(Statics.field2900));
+			class775.field8924.method15011(new Js5ArchiveResourceLoader(Statics.field10249));
+			class775.field8925.method15011(new Js5ArchiveResourceLoader(Statics.field11838));
+			class775.field8926.method15011(new Js5ArchiveResourceLoader(Statics.field4475));
+			class775.field8927.method15011(new Js5ArchiveResourceLoader(Statics.field8700));
+			class775.field8928.method15011(new Js5ArchiveResourceLoader(Statics.field4618));
+			class775.field8942.method15011(new Js5ArchiveResourceLoader(Statics.field7537));
+			class775.field8930.method15011(new Js5ArchiveResourceLoader(Statics.field8285));
+			class775.field8941.method15011(new Js5ArchiveResourceLoader(Statics.field2149));
+			class775.field8932.method15011(new Js5ArchiveResourceLoader(Statics.field3611));
+			class775.field8933.method15011(new Js5ArchiveResourceLoader(Statics.field7283));
+			class775.field8918.method15011(new Js5ArchiveResourceLoader(Statics.field4404));
+			class775.field8935.method15011(new Js5ArchiveResourceLoader(Statics.field1935));
+			class775.field8936.method15011(new Js5ArchiveResourceLoader(Statics.field6879));
+			class775.field8937.method15011(new Js5ArchiveResourceLoader(Statics.field736));
+			class775.field8943.method15011(new Js5FileResourceLoader(Statics.field8741, "huffman"));
+			class775.field8939.method15011(new Js5ArchiveResourceLoader(Statics.field527));
+			class775.field8940.method15011(new Js5ArchiveResourceLoader(Statics.field5010));
+			class775.field8916.method15011(new Js5ArchiveResourceLoader(Statics.field7672));
+			class775.field8931.method15011(new Js5GroupResourceLoader(Statics.field10752, 0));
 			for (int var3 = 0; var3 < Statics.field4334.length; var3++) {
 				if (Statics.field4334[var3].method15010() == null) {
 					throw new RuntimeException();

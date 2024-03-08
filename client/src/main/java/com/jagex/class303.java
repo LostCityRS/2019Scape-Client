@@ -26,7 +26,7 @@ public class class303 implements class302 {
 
 	@ObfuscatedName("ki.e(I)V")
 	public void method5104() {
-		class733 var1 = class733.method10677(this.field3052, this.field3054.field3211, Statics.field7538);
+		FontMetrics var1 = FontMetrics.method10677(this.field3052, this.field3054.field3211, Statics.field7538);
 		this.field3055 = Statics.field8198.method2207(var1, class111.method1607(this.field3053, this.field3054.field3211), true);
 	}
 

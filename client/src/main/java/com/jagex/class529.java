@@ -49,7 +49,7 @@ public class class529 {
 
 	@ObfuscatedName("ta.e(Ldh;S)Ldo;")
 	public Model method8402(Renderer arg0) {
-		class120 var2 = class120.method1931(Statics.field9213, this.field6749, 0);
+		ModelUnlit var2 = ModelUnlit.method1931(Statics.field9213, this.field6749, 0);
 		if (var2 == null) {
 			return null;
 		} else {

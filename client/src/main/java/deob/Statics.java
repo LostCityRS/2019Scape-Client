@@ -2,6 +2,7 @@ package deob;
 
 import com.jagex.*;
 import com.jagex.Component;
+import com.jagex.FontMetrics;
 import com.jagex.Timer;
 import com.jagex.playergroup.PlayerGroup;
 import com.jagex.twitchtv.TwitchEventLiveStreams;
@@ -43,7 +44,7 @@ public class Statics {
 	public static int field10260;
 
 	@ObfuscatedName("afp.s")
-	public static class733 field10268;
+	public static FontMetrics field10268;
 
 	@ObfuscatedName("agg.fn")
 	public static Js5 field10287;
@@ -76,7 +77,7 @@ public class Statics {
 	public static Object field1046;
 
 	@ObfuscatedName("ahw.ch")
-	public static class733 field10471;
+	public static FontMetrics field10471;
 
 	@ObfuscatedName("bz.r")
 	public static Object field1048;
@@ -133,7 +134,7 @@ public class Statics {
 	public static float field1137;
 
 	@ObfuscatedName("akp.ib")
-	public static class629 field11389;
+	public static GraphicsDefaults field11389;
 
 	@ObfuscatedName("akr.wk")
 	public static GarbageCollectorMXBean field11399;
@@ -220,10 +221,10 @@ public class Statics {
 	public static class1172 field11913;
 
 	@ObfuscatedName("aph.ek")
-	public static class563 field11931;
+	public static Keyboard field11931;
 
 	@ObfuscatedName("aqn.p")
-	public static class378 field12041;
+	public static ParticleEffectorTypeList field12041;
 
 	@ObfuscatedName("aqy.a")
 	public static Frame field12101;
@@ -331,7 +332,7 @@ public class Statics {
 	public static Js5 field1707;
 
 	@ObfuscatedName("ek.ix")
-	public static class631 field1709;
+	public static WearposDefaults field1709;
 
 	@ObfuscatedName("eq.w")
 	public static class159[] field1713;
@@ -442,7 +443,7 @@ public class Statics {
 	public static int[] field1970;
 
 	@ObfuscatedName("gh.bo")
-	public static class622 field1971;
+	public static MiniMenuDefaults field1971;
 
 	@ObfuscatedName("gh.hn")
 	public static QuestTypeList field1972;
@@ -481,7 +482,7 @@ public class Statics {
 	public static int field2413;
 
 	@ObfuscatedName("hp.x")
-	public static class143 field2421;
+	public static TextureList field2421;
 
 	@ObfuscatedName("he.gb")
 	public static CursorTypeList field2427;
@@ -532,7 +533,7 @@ public class Statics {
 	public static int field2656;
 
 	@ObfuscatedName("is.o")
-	public static class733 field2657;
+	public static FontMetrics field2657;
 
 	@ObfuscatedName("iw.or")
 	public static int field2676;
@@ -541,7 +542,7 @@ public class Statics {
 	public static SkillDefaults field2767;
 
 	@ObfuscatedName("ih.il")
-	public static class625 field2775;
+	public static CutsceneDefaults field2775;
 
 	@ObfuscatedName("ic.p")
 	public static long field2826;
@@ -715,7 +716,7 @@ public class Statics {
 	public static int field4319;
 
 	@ObfuscatedName("m.k")
-	public static class49 field432;
+	public static ServerConnection field432;
 
 	@ObfuscatedName("pk.by")
 	public static String field4331;
@@ -1021,7 +1022,7 @@ public class Statics {
 	public static int[] field6767;
 
 	@ObfuscatedName("tw.v")
-	public static class733 field6778;
+	public static FontMetrics field6778;
 
 	@ObfuscatedName("tf.m")
 	public static LocTypeList field6785;
@@ -1045,7 +1046,7 @@ public class Statics {
 	public static class151 field6791;
 
 	@ObfuscatedName("tf.u")
-	public static class626 field6792;
+	public static WorldMapDefaults field6792;
 
 	@ObfuscatedName("tf.p")
 	public static Js5 field6794;
@@ -1345,7 +1346,7 @@ public class Statics {
 	public static int field7658;
 
 	@ObfuscatedName("wf.dr")
-	public static class143 field7669;
+	public static TextureList field7669;
 
 	@ObfuscatedName("wc.ff")
 	public static Js5 field7672;
@@ -1393,7 +1394,7 @@ public class Statics {
 	public static int field7883;
 
 	@ObfuscatedName("xh.iw")
-	public static class623 field7921;
+	public static TitleDefaults field7921;
 
 	@ObfuscatedName("xh.ov")
 	public static int field7922;
@@ -1588,13 +1589,13 @@ public class Statics {
 	public static class807 field8783;
 
 	@ObfuscatedName("abx.be")
-	public static class733 field8786;
+	public static FontMetrics field8786;
 
 	@ObfuscatedName("abe.hw")
 	public static SeqTypeList field8797;
 
 	@ObfuscatedName("acm.v")
-	public static class733 field8851;
+	public static FontMetrics field8851;
 
 	@ObfuscatedName("aci.wn")
 	public static Iterator field8853;
@@ -1648,7 +1649,7 @@ public class Statics {
 	public static byte[][] field9166;
 
 	@ObfuscatedName("adh.ep")
-	public static class564 field9182;
+	public static Mouse field9182;
 
 	@ObfuscatedName("adh.oe")
 	public static int field9183;
@@ -1784,7 +1785,7 @@ public class Statics {
 	}
 
 	@ObfuscatedName("fy.e(Ljava/awt/Canvas;Ldf;Les;Lnx;Lnb;Lnp;IIB)Ldh;")
-	public static Renderer method3367(Canvas arg0, MaterialList arg1, class143 arg2, BillboardTypeList arg3, class381 arg4, class378 arg5, int arg6, int arg7) {
+	public static Renderer method3367(Canvas arg0, MaterialList arg1, TextureList arg2, BillboardTypeList arg3, ParticleEmitterTypeList arg4, ParticleEffectorTypeList arg5, int arg6, int arg7) {
 		return new PureJavaRenderer(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
@@ -2040,7 +2041,7 @@ public class Statics {
 		Model var8 = (Model) HintArrow.field752.method2930(var6);
 		short var9 = 2055;
 		if (var8 == null) {
-			class120 var10 = class120.method1931(field9213, arg5, 0);
+			ModelUnlit var10 = ModelUnlit.method1931(field9213, arg5, 0);
 			if (var10 == null) {
 				return null;
 			}
@@ -2213,11 +2214,11 @@ public class Statics {
 	}
 
 	@ObfuscatedName("dh.n(ILjava/awt/Canvas;Ldf;Les;Lnx;Lnb;Lnp;Lpy;IIII)Ldh;")
-	public static synchronized Renderer method2180(int arg0, Canvas arg1, MaterialList arg2, class143 arg3, BillboardTypeList arg4, class381 arg5, class378 arg6, Js5 arg7, int arg8, int arg9, int arg10) {
+	public static synchronized Renderer method2180(int arg0, Canvas arg1, MaterialList arg2, TextureList arg3, BillboardTypeList arg4, ParticleEmitterTypeList arg5, ParticleEffectorTypeList arg6, Js5 arg7, int arg8, int arg9, int arg10) {
 		if (arg0 == 0) {
 			return method3367(arg1, arg2, arg3, arg4, arg5, arg6, arg9, arg10);
 		} else if (arg0 == 1) {
-			return class99.method1417(arg1, arg2, arg3, arg4, arg5, arg6, arg8);
+			return LegacyOpenGLRendererFactory.method1417(arg1, arg2, arg3, arg4, arg5, arg6, arg8);
 		} else if (arg0 == 5) {
 			return OpenGLRendererFactory.method7664(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		} else if (arg0 == 3) {
@@ -2278,7 +2279,7 @@ public class Statics {
 			}
 		}
 		class750.field8754 = false;
-		field2826 = class213.method3655();
+		field2826 = MonotonicTime.method3655();
 		field7415 = null;
 	}
 
@@ -2375,7 +2376,7 @@ public class Statics {
 		if (DeveloperConsole.field776 * 36 < 102) {
 			DeveloperConsole.field776 = DeveloperConsole.field776 * 36 + 6;
 		}
-		if (DeveloperConsole.field772 != -1 && field765 < class213.method3655()) {
+		if (DeveloperConsole.field772 != -1 && field765 < MonotonicTime.method3655()) {
 			for (int var0 = DeveloperConsole.field772; var0 < field2615.length; var0++) {
 				if (field2615[var0].startsWith("pause")) {
 					int var1 = 5;
@@ -2385,7 +2386,7 @@ public class Statics {
 					}
 					DeveloperConsole.method4285("Pausing for " + var1 + " seconds...");
 					DeveloperConsole.field772 = var0 + 1;
-					field765 = class213.method3655() + (long) (var1 * 1000);
+					field765 = MonotonicTime.method3655() + (long) (var1 * 1000);
 					return;
 				}
 				DeveloperConsole.field766 = field2615[var0];
@@ -2510,7 +2511,7 @@ public class Statics {
 	}
 
 	@ObfuscatedName("ads.k(Lvy;I)Z")
-	public static boolean method15214(class593 arg0) {
+	public static boolean method15214(KeyHeldBinding arg0) {
 		return MiniMenu.method3483(arg0, null);
 	}
 
@@ -2690,7 +2691,7 @@ public class Statics {
 		} else {
 			field517 = null;
 			field584 = ConnectReply.field8363;
-			client.method6972(4);
+			client.setState(4);
 		}
 	}
 
@@ -2983,8 +2984,8 @@ public class Statics {
 				} else {
 					var11 = client.field10885 + (int) client.field10895 & 0x3FFF;
 				}
-				int var12 = class417.field4270[var11];
-				int var13 = class417.field4272[var11];
+				int var12 = Trig1.field4270[var11];
+				int var13 = Trig1.field4272[var11];
 				if (field3416 != 4) {
 					var12 = var12 * 256 / (client.field10887 + 256);
 					var13 = var13 * 256 / (client.field10887 + 256);
@@ -3069,7 +3070,7 @@ public class Statics {
 			var34 = var32.method1435();
 		}
 		class140 var35 = field8321;
-		class733 var36 = field6778;
+		FontMetrics var36 = field6778;
 		if (var8.field2388 == 1) {
 			var35 = field9184;
 			var36 = field2657;
@@ -3204,8 +3205,8 @@ public class Statics {
 		} else {
 			var10 = client.field10885 + (int) client.field10895 & 0x3FFF;
 		}
-		int var11 = class417.field4270[var10];
-		int var12 = class417.field4272[var10];
+		int var11 = Trig1.field4270[var10];
+		int var12 = Trig1.field4272[var10];
 		if (field3416 != 4) {
 			var11 = var11 * 256 / (client.field10887 + 256);
 			var12 = var12 * 256 / (client.field10887 + 256);
@@ -3371,7 +3372,7 @@ public class Statics {
 		}
 		ClientInvCache.method2752();
 		client.method4046(client.method14298());
-		client.method6972(18);
+		client.setState(18);
 		for (int var3 = 0; var3 < 114; var3++) {
 			client.field11072[var3] = true;
 		}
@@ -3383,7 +3384,7 @@ public class Statics {
 	}
 
 	@ObfuscatedName("ahe.aa(IIIIIIILarn;Leu;Laac;III)V")
-	public static void method16748(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, class1174 arg7, class140 arg8, class733 arg9, int arg10, int arg11) {
+	public static void method16748(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, class1174 arg7, class140 arg8, FontMetrics arg9, int arg10, int arg11) {
 		if (arg0 > arg2 && arg0 < arg2 + arg4 && arg1 > arg6 - arg9.field8562 - 1 && arg1 < arg9.field8569 + arg6) {
 			arg10 = arg11;
 		}
@@ -3449,23 +3450,23 @@ public class Statics {
 		field7538.method6158();
 		field7538.method6157(client.field10833);
 		field7538.method6165();
-		class14.method7114(field8198);
-		class14.method5202(field8198, field10317);
+		DefaultSprites.method7114(field8198);
+		DefaultSprites.method5202(field8198, field10317);
 		MiniMenu.method5147();
 		client.method9734();
 		client.method9516();
 		if (client.state == 4) {
-			client.method6972(10);
+			client.setState(10);
 		} else if (client.state == 13) {
-			client.method6972(6);
+			client.setState(6);
 		} else if (client.state == 15) {
-			client.method6972(16);
+			client.setState(16);
 		} else if (client.state == 18) {
-			client.method6972(3);
+			client.setState(3);
 		} else if (client.state == 11 || client.state == 1) {
 			class280.method18929();
 		} else if (client.state == 0) {
-			client.method6972(8);
+			client.setState(8);
 		} else if (client.state == 3) {
 			class975.method13908(false);
 		}
@@ -4397,7 +4398,7 @@ public class Statics {
 		if (!client.method17197(var4).method17690(arg0 - 1)) {
 			return;
 		}
-		class49 var6 = client.method640();
+		ServerConnection var6 = client.method640();
 		if (client.state != 13 && client.state != 18 && client.state != 0) {
 			return;
 		}
@@ -4431,7 +4432,7 @@ public class Statics {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		arg0.field8216[++arg0.field8226 - 1] = class417.method6280(var1, var2);
+		arg0.field8216[++arg0.field8226 - 1] = Trig1.method6280(var1, var2);
 	}
 
 	@ObfuscatedName("kz.afq(Lyf;I)V")
@@ -4654,7 +4655,7 @@ public class Statics {
 		if (arg0.equals("")) {
 			return;
 		}
-		class49 var1 = client.method640();
+		ServerConnection var1 = client.method640();
 		ClientMessage var2 = method1604(ClientProt.CLAN_JOINCHAT_LEAVECHAT, var1.field794);
 		var2.field11432.p1(Packet.pjstrlen(arg0));
 		var2.field11432.pjstr(arg0);
@@ -4672,7 +4673,7 @@ public class Statics {
 			return;
 		}
 		String var4 = var3.field3087;
-		class49 var5 = client.method640();
+		ServerConnection var5 = client.method640();
 		ClientMessage var6 = method1604(ClientProt.CLANCHANNEL_KICKUSER, var5.field794);
 		var6.field11432.p1(Packet.pjstrlen(var4) + 3);
 		var6.field11432.p1(arg0 ? 1 : 0);
@@ -4740,7 +4741,7 @@ public class Statics {
 			ChatHistory.method1006(4, LocalisedText.field9098.method15021(field1680));
 			return;
 		}
-		class49 var12 = client.method640();
+		ServerConnection var12 = client.method640();
 		ClientMessage var13 = method1604(ClientProt.IGNORELIST_ADD, var12.field794);
 		var13.field11432.p1(Packet.pjstrlen(arg0) + 1);
 		var13.field11432.pjstr(arg0);

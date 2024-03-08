@@ -1024,8 +1024,8 @@ public class Component {
 	}
 
 	@ObfuscatedName("hf.v(Loi;Loq;I)Laac;")
-	public class733 method3943(class402 arg0, class401 arg1) {
-		class733 var3 = arg0.method6163(arg1, this.field2287);
+	public FontMetrics method3943(class402 arg0, class401 arg1) {
+		FontMetrics var3 = arg0.method6163(arg1, this.field2287);
 		field2338 = var3 == null;
 		return var3;
 	}
@@ -1068,7 +1068,7 @@ public class Component {
 				if (var32 != null) {
 					arg1 = arg0.method2213(arg1, var32.method1691());
 				}
-				class120 var33 = class120.method1931(Statics.field1707, this.field2294, 0);
+				ModelUnlit var33 = ModelUnlit.method1931(Statics.field1707, this.field2294, 0);
 				if (var33 == null) {
 					field2338 = true;
 					return null;

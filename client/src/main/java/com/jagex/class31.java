@@ -36,7 +36,7 @@ public class class31 {
 			int var19 = arg5 * 3 + 6;
 			byte var20 = 3;
 			int[] var21 = new int[] { 64, 96, 128 };
-			class120 var22 = new class120(var19 * var20 + 1, var19 * var20 * 2 - var19, 0);
+			ModelUnlit var22 = new ModelUnlit(var19 * var20 + 1, var19 * var20 * 2 - var19, 0);
 			int var23 = var22.method1936(0, 0, 0);
 			int[][] var24 = new int[var20][var19];
 			for (int var25 = 0; var25 < var20; var25++) {
@@ -44,8 +44,8 @@ public class class31 {
 				int var27 = var21[var25];
 				for (int var28 = 0; var28 < var19; var28++) {
 					int var29 = (var28 << 14) / var19;
-					int var30 = class417.field4270[var29] * var26 >> 14;
-					int var31 = class417.field4272[var29] * var27 >> 14;
+					int var30 = Trig1.field4270[var29] * var26 >> 14;
+					int var31 = Trig1.field4272[var29] * var27 >> 14;
 					var24[var25][var28] = var22.method1936(var30, 0, var31);
 				}
 			}
@@ -116,7 +116,7 @@ public class class31 {
 			if (var14 != null) {
 				var9 = arg0.method2213(var9, var14.method1691());
 			}
-			class120 var16 = new class120(4, 2, 2);
+			ModelUnlit var16 = new ModelUnlit(4, 2, 2);
 			short var17 = 128;
 			int[] var18 = new int[] { var16.method1936(-var17, 0, -var17), var16.method1936(var17, 0, -var17), var16.method1936(var17, 0, var17), var16.method1936(-var17, 0, var17) };
 			var16.method1966(0, 1, 2, (byte) 1, (byte) 0, (short) 0, arg7, arg6);

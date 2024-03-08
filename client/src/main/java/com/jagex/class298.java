@@ -50,10 +50,10 @@ public class class298 implements class302 {
 		}
 		int var5 = Statics.field593.method4851();
 		if (this.field3040 < 0L || var5 == 0 || this.field3038 != var5) {
-			this.field3040 = class213.method3655();
+			this.field3040 = MonotonicTime.method3655();
 			this.field3038 = var5;
 		}
-		if (this.field3039.field3168 != 1 && class213.method3655() - this.field3040 > 10000L) {
+		if (this.field3039.field3168 != 1 && MonotonicTime.method3655() - this.field3040 > 10000L) {
 			var4 = var4 + " (" + Statics.field593.method4855().field2920 + ")";
 		}
 		this.field3041.method2683(var4, var2, var3, this.field3039.field3176, -1);
@@ -73,7 +73,7 @@ public class class298 implements class302 {
 
 	@ObfuscatedName("kg.e(I)V")
 	public void method5104() {
-		class733 var1 = class733.method10677(this.field3043, this.field3039.field3175, Statics.field7538);
+		FontMetrics var1 = FontMetrics.method10677(this.field3043, this.field3039.field3175, Statics.field7538);
 		this.field3041 = Statics.field8198.method2207(var1, class111.method1607(this.field3042, this.field3039.field3175), true);
 	}
 }

@@ -58,7 +58,7 @@ public class class275 implements Runnable {
 	public synchronized void method4879(class281 arg0) {
 		this.field2880 = this.field2883;
 		this.field2883 = arg0;
-		this.field2884 = class213.method3655();
+		this.field2884 = MonotonicTime.method3655();
 	}
 
 	@ObfuscatedName("jb.f(JLjava/lang/String;Ljava/lang/String;ILjw;S)V")
@@ -117,14 +117,14 @@ public class class275 implements Runnable {
 
 	public void run() {
 		while (!this.field2890) {
-			long var1 = class213.method3655();
+			long var1 = MonotonicTime.method3655();
 			synchronized (this) {
 				try {
 					this.field2885++;
 					if (this.field2883 instanceof class276) {
 						this.field2883.method4888(this.field2887);
 					} else {
-						long var4 = class213.method3655();
+						long var4 = MonotonicTime.method3655();
 						if (Statics.field8198 == null || this.field2880 == null || this.field2880.method4895() == 0 || this.field2884 < var4 - (long) this.field2880.method4895()) {
 							if (this.field2880 != null) {
 								this.field2887 = true;
@@ -175,7 +175,7 @@ public class class275 implements Runnable {
 					continue;
 				}
 			}
-			long var15 = class213.method3655();
+			long var15 = MonotonicTime.method3655();
 			int var17 = (int) (20L - (var15 - var1));
 			if (var17 > 0) {
 				class214.method1571((long) var17);

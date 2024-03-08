@@ -33,7 +33,7 @@ public class class444 implements Callable {
 		try {
 			var1.connect();
 		} catch (IOException var4) {
-			this.this$0.field4470 = class213.method3655();
+			this.this$0.field4470 = MonotonicTime.method3655();
 			var2 = false;
 		}
 		return new class441(this.this$0, var2 ? var1.getInputStream() : null, this.field4428, this.field4429);

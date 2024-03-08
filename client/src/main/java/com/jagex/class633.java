@@ -65,7 +65,7 @@ public class class633 {
 	}
 
 	@ObfuscatedName("ah.n(Lnb;Lnp;I)V")
-	public static void method706(class381 arg0, class378 arg1) {
+	public static void method706(ParticleEmitterTypeList arg0, ParticleEffectorTypeList arg1) {
 		field7791 = 0;
 		field7797 = 0;
 		Statics.field8349 = new LinkedList();
@@ -80,7 +80,7 @@ public class class633 {
 	public static void method6866(Renderer arg0, long arg1) {
 		field7801 = field7790;
 		field7790 = 0;
-		class213.method3655();
+		MonotonicTime.method3655();
 		Iterator var3 = Statics.field8349.iterator();
 		while (var3.hasNext()) {
 			ParticleSystem var4 = (ParticleSystem) var3.next();

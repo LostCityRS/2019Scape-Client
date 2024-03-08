@@ -199,8 +199,8 @@ public class class1234 extends PrimaryLayerEntity {
 			var10 = var1.field10442[this.field12594];
 		}
 		int var11 = var10 - var9 & 0x3FFF;
-		int var12 = class417.field4270[var11];
-		int var13 = class417.field4272[var11];
+		int var12 = Trig1.field4270[var11];
+		int var13 = Trig1.field4272[var11];
 		int var14 = var7 * var13 + var8 * var12 >> 14;
 		int var15 = var8 * var13 - var7 * var12 >> 14;
 		Vector3 var17 = Vector3.method6484(this.method10536().field4298);

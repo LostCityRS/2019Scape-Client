@@ -590,7 +590,7 @@ public abstract class GpuRenderer extends Renderer {
 		Statics.method5134().method7902("jaclib");
 	}
 
-	public GpuRenderer(MaterialList arg0, class143 arg1, BillboardTypeList arg2, class381 arg3, class378 arg4, Js5 arg5, int arg6, int arg7) {
+	public GpuRenderer(MaterialList arg0, TextureList arg1, BillboardTypeList arg2, ParticleEmitterTypeList arg3, ParticleEffectorTypeList arg4, Js5 arg5, int arg6, int arg7) {
 		super(arg0, arg1, arg2, arg3, arg4);
 		new Stream();
 		this.field10058 = new GpuModel[8];
@@ -1238,7 +1238,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.cy(Laac;Lde;Z)Leu;")
-	public final class140 method2207(class733 arg0, class136 arg1, boolean arg2) {
+	public final class140 method2207(FontMetrics arg0, class136 arg1, boolean arg2) {
 		return new class858(this, arg0, arg1, arg2);
 	}
 
@@ -1252,7 +1252,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.cj(Ldq;IIII)Ldo;")
-	public final Model method2211(class120 arg0, int arg1, int arg2, int arg3, int arg4) {
+	public final Model method2211(ModelUnlit arg0, int arg1, int arg2, int arg3, int arg4) {
 		return new GpuModel(this, arg0, arg1, arg3, arg4, arg2);
 	}
 

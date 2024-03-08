@@ -201,12 +201,12 @@ public class class632 {
 					} else {
 						int var27 = this.field7784 + (int) ((double) this.field7777 * Math.random());
 						int var28 = var27 & 0x3FFF;
-						int var29 = class417.field4270[var28];
-						int var30 = class417.field4272[var28];
+						int var29 = Trig1.field4270[var28];
+						int var30 = Trig1.field4272[var28];
 						int var31 = this.field7771 + (int) ((double) this.field7787 * Math.random());
 						int var32 = var31 & 0x1FFF;
-						int var33 = class417.field4270[var32];
-						int var34 = class417.field4272[var32];
+						int var33 = Trig1.field4270[var32];
+						int var34 = Trig1.field4272[var32];
 						byte var35 = 13;
 						var24 = var30 * var33 >> var35;
 						var25 = (var34 << 1) * -1;

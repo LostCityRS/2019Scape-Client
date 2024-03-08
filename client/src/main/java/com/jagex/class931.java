@@ -25,7 +25,7 @@ public class class931 extends class366 {
 	public Thread field10683;
 
 	@ObfuscatedName("aiw.l")
-	public long field10684 = class213.method3655();
+	public long field10684 = MonotonicTime.method3655();
 
 	@ObfuscatedName("aiw.u")
 	public Runnable field10685 = new class146(this);
@@ -117,7 +117,7 @@ public class class931 extends class366 {
 
 	@ObfuscatedName("aiw.f(Ljava/lang/Object;I)I")
 	public int method5864(Object arg0) {
-		long var2 = class213.method3655();
+		long var2 = MonotonicTime.method3655();
 		int var4 = (int) (180000.0F / ((float) (var2 - this.field10684) / 1000.0F));
 		this.field10684 = var2;
 		return var4;

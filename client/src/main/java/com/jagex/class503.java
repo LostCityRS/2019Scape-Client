@@ -180,7 +180,7 @@ public class class503 {
 
 	@ObfuscatedName("sw.w(Ldh;Lsw;)V")
 	public void method7983(Renderer arg0, class503 arg1) {
-		class120 var3 = class120.method1931(Statics.field1810, this.field5135, 0);
+		ModelUnlit var3 = ModelUnlit.method1931(Statics.field1810, this.field5135, 0);
 		if (var3 == null) {
 			return;
 		}
@@ -204,16 +204,16 @@ public class class503 {
 		}
 		if (this.field5125 != 0) {
 			int var7 = -this.field5125 & 0x3FFF;
-			int var8 = class417.field4270[var7];
-			int var9 = class417.field4272[var7];
+			int var8 = Trig1.field4270[var7];
+			int var9 = Trig1.field4272[var7];
 			int var10 = var5 * var9 - var6 * var8 >> 14;
 			var6 = var5 * var8 + var6 * var9 >> 14;
 			var5 = var10;
 		}
 		if (this.field5121 != 0) {
 			int var11 = -this.field5121 & 0x3FFF;
-			int var12 = class417.field4270[var11];
-			int var13 = class417.field4272[var11];
+			int var12 = Trig1.field4270[var11];
+			int var13 = Trig1.field4272[var11];
 			int var14 = var4 * var13 + var6 * var12 >> 14;
 			var6 = var6 * var13 - var4 * var12 >> 14;
 			var4 = var14;
@@ -264,15 +264,15 @@ public class class503 {
 			}
 		}
 		if (this.field5125 != 0) {
-			int var6 = class417.field4270[this.field5125];
-			int var7 = class417.field4272[this.field5125];
+			int var6 = Trig1.field4270[this.field5125];
+			int var7 = Trig1.field4272[this.field5125];
 			int var8 = var4 * var7 - var5 * var6 >> 14;
 			var5 = var4 * var6 + var5 * var7 >> 14;
 			var4 = var8;
 		}
 		if (this.field5121 != 0) {
-			int var9 = class417.field4270[this.field5121];
-			int var10 = class417.field4272[this.field5121];
+			int var9 = Trig1.field4270[this.field5121];
+			int var10 = Trig1.field4272[this.field5121];
 			int var11 = var3 * var10 + var5 * var9 >> 14;
 			var5 = var5 * var10 - var3 * var9 >> 14;
 			var3 = var11;
@@ -310,19 +310,19 @@ public class class503 {
 		if (Statics.field5129 != null) {
 			return;
 		}
-		class120 var1 = new class120(580, 1104, 1);
+		ModelUnlit var1 = new ModelUnlit(580, 1104, 1);
 		var1.method1935((short) 0, (short) 32767, (short) 0, (short) 1024, (short) 1024, (short) 1024, (byte) 0, (byte) 0, (byte) 0);
 		var1.method1936(0, 128, 0);
 		var1.method1936(0, -128, 0);
 		for (int var2 = 0; var2 <= 24; var2++) {
 			int var3 = var2 * 8192 / 24;
-			int var4 = class417.field4270[var3];
-			int var5 = class417.field4272[var3];
+			int var4 = Trig1.field4270[var3];
+			int var5 = Trig1.field4272[var3];
 			for (int var6 = 1; var6 < 24; var6++) {
 				int var7 = var6 * 8192 / 24;
-				int var8 = class417.field4272[var7] >> 7;
-				int var9 = class417.field4270[var7] * var4 >> 21;
-				int var10 = class417.field4270[var7] * var5 >> 21;
+				int var8 = Trig1.field4272[var7] >> 7;
+				int var9 = Trig1.field4270[var7] * var4 >> 21;
+				int var10 = Trig1.field4270[var7] * var5 >> 21;
 				var1.method1936(var10, var8, -var9);
 			}
 			if (var2 > 0) {

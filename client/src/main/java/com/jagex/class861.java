@@ -180,13 +180,13 @@ public final class class861 extends class150 {
 			} catch (Exception var19) {
 			}
 		}
-		this.field10253 = class213.method3655();
+		this.field10253 = MonotonicTime.method3655();
 		this.field10252 = false;
 	}
 
 	@ObfuscatedName("afu.ag(I)V")
 	public void method16414() {
-		if (class213.method3655() < this.field10259) {
+		if (MonotonicTime.method3655() < this.field10259) {
 			return;
 		}
 		if (this.field10257 == null) {
@@ -207,7 +207,7 @@ public final class class861 extends class150 {
 		if (this.field10257 == null || this.field10258 >= this.field10257.length) {
 			return;
 		}
-		class49 var4 = client.method640();
+		ServerConnection var4 = client.method640();
 		if (var4.field791 > 1200) {
 			return;
 		}
@@ -230,7 +230,7 @@ public final class class861 extends class150 {
 			var5.field11432.data[var6] = 0;
 		}
 		var4.method934(var5);
-		this.field10259 = class213.method3655() + 1000L;
+		this.field10259 = MonotonicTime.method3655() + 1000L;
 	}
 
 	@ObfuscatedName("afu.ad(I)V")

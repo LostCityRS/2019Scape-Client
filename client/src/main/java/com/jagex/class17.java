@@ -21,7 +21,7 @@ public class class17 {
 
 	@ObfuscatedName("ih.e(I)V")
 	public static void method4589() throws RuntimeException {
-		if (!class498.field5074.startsWith("win")) {
+		if (!NativeLibraryConfig.field5074.startsWith("win")) {
 			return;
 		}
 		method18310();

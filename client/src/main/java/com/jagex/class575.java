@@ -32,7 +32,7 @@ public class class575 implements class578 {
 		var1.field11432.p1(this.field7278.getId());
 		var1.field11432.pjstr(this.field7276);
 		var1.field11432.p2(this.field7277);
-		var1.field11432.pjstr(class498.field5075);
+		var1.field11432.pjstr(NativeLibraryConfig.field5075);
 		if (this.field7275 == null) {
 			var1.field11432.p1(0);
 		} else {

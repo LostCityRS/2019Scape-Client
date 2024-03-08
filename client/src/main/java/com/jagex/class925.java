@@ -44,7 +44,7 @@ public class class925 extends class408 implements GpuTexture {
 			this.field10667 = (float) arg3 / (float) this.field10665;
 			this.field10668 = (float) arg4 / (float) this.field10666;
 		}
-		this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.field11978, this.field10665, this.field10666, 0, arg5, Direct3DRenderer.method19011(this.field4221, this.field4218), arg6);
+		this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.device, this.field10665, this.field10666, 0, arg5, Direct3DRenderer.method19011(this.field4221, this.field4218), arg6);
 	}
 
 	public class925(Direct3DRenderer arg0, int arg1, int arg2, boolean arg3, int[] arg4, int arg5, int arg6) {
@@ -66,9 +66,9 @@ public class class925 extends class408 implements GpuTexture {
 			}
 		}
 		if (arg3) {
-			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.field11978, this.field10665, this.field10666, 0, 1024, 21, 1);
+			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.device, this.field10665, this.field10666, 0, 1024, 21, 1);
 		} else {
-			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.field11978, this.field10665, this.field10666, 1, 0, 21, 1);
+			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.device, this.field10665, this.field10666, 1, 0, 21, 1);
 		}
 		if (arg6 == 0) {
 			arg6 = this.field10665;
@@ -99,9 +99,9 @@ public class class925 extends class408 implements GpuTexture {
 			}
 		}
 		if (arg4) {
-			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.field11978, this.field10665, this.field10666, 0, 1024, Direct3DRenderer.method19011(this.field4221, DataType.field1645), 1);
+			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.device, this.field10665, this.field10666, 0, 1024, Direct3DRenderer.method19011(this.field4221, DataType.field1645), 1);
 		} else {
-			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.field11978, this.field10665, this.field10666, 1, 0, Direct3DRenderer.method19011(this.field4221, DataType.field1645), 1);
+			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.device, this.field10665, this.field10666, 1, 0, Direct3DRenderer.method19011(this.field4221, DataType.field1645), 1);
 		}
 		if (arg7 == 0) {
 			arg7 = this.field10665;
@@ -140,9 +140,9 @@ public class class925 extends class408 implements GpuTexture {
 			}
 		}
 		if (arg4) {
-			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.field11978, this.field10665, this.field10666, 0, 1024, Direct3DRenderer.method19011(this.field4221, DataType.field1642), 1);
+			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.device, this.field10665, this.field10666, 0, 1024, Direct3DRenderer.method19011(this.field4221, DataType.field1642), 1);
 		} else {
-			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.field11978, this.field10665, this.field10666, 1, 0, Direct3DRenderer.method19011(this.field4221, DataType.field1642), 1);
+			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.device, this.field10665, this.field10666, 1, 0, Direct3DRenderer.method19011(this.field4221, DataType.field1642), 1);
 		}
 		if (arg7 == 0) {
 			arg7 = this.field10665;

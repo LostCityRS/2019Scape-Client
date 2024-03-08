@@ -862,14 +862,14 @@ public class LocType implements ConfigType {
 					if (var10 != null) {
 						var20 = arg0.method2213(var20, var10.method1691());
 					}
-					class120 var21 = null;
-					class120[] var22 = this.field7451.field7535;
+					ModelUnlit var21 = null;
+					ModelUnlit[] var22 = this.field7451.field7535;
 					synchronized (this.field7451.field7535) {
 						int var23 = 0;
 						while (true) {
 							if (var23 >= var14) {
 								if (var14 > 1) {
-									var21 = new class120(this.field7451.field7535, var14);
+									var21 = new ModelUnlit(this.field7451.field7535, var14);
 								}
 								break;
 							}
@@ -877,7 +877,7 @@ public class LocType implements ConfigType {
 							if (var24 == null) {
 								return null;
 							}
-							var21 = new class120(var24);
+							var21 = new ModelUnlit(var24);
 							if (var21.field1372 < 13) {
 								var21.method1947(2);
 							}

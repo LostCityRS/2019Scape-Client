@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @ObfuscatedName("oi")
-public class class402 implements class731 {
+public class class402 implements FontIconProvider {
 
 	@ObfuscatedName("oi.e")
 	public final Js5 field4200;
@@ -45,7 +45,7 @@ public class class402 implements class731 {
 		this.field4207 = new HashMap(this.field4204.length);
 		for (int var2 = 0; var2 < this.field4204.length; var2++) {
 			int var3 = this.field4204[var2];
-			class733 var4 = class733.method10677(this.field4201, var3, this);
+			FontMetrics var4 = FontMetrics.method10677(this.field4201, var3, this);
 			byte[] var5 = this.field4200.method6894(var3);
 			Object var6 = arg0.method210(var5, var4, true);
 			this.field4207.put(var2, new class746(var6, var4));
@@ -108,7 +108,7 @@ public class class402 implements class731 {
 		if (var7 == null) {
 			return null;
 		}
-		class733 var8 = this.method6164(arg0, arg1, arg2, false);
+		FontMetrics var8 = this.method6164(arg0, arg1, arg2, false);
 		if (var8 == null) {
 			return null;
 		} else {
@@ -119,30 +119,30 @@ public class class402 implements class731 {
 	}
 
 	@ObfuscatedName("oi.l(Loq;II)Laac;")
-	public class733 method6163(class401 arg0, int arg1) {
+	public FontMetrics method6163(class401 arg0, int arg1) {
 		return this.method6164(arg0, arg1, true, true);
 	}
 
 	@ObfuscatedName("oi.u(Loq;IZZB)Laac;")
-	public class733 method6164(class401 arg0, int arg1, boolean arg2, boolean arg3) {
+	public FontMetrics method6164(class401 arg0, int arg1, boolean arg2, boolean arg3) {
 		if (arg1 == -1) {
 			return null;
 		}
 		if (this.field4204 != null) {
 			for (int var5 = 0; var5 < this.field4204.length; var5++) {
 				if (this.field4204[var5] == arg1) {
-					return (class733) ((class746) this.field4207.get(var5)).field8738;
+					return (FontMetrics) ((class746) this.field4207.get(var5)).field8738;
 				}
 			}
 		}
 		if (arg3) {
 			this.field4200.method6889(arg1);
 		}
-		class733 var6 = (class733) this.field4203.method2930((long) arg1);
+		FontMetrics var6 = (FontMetrics) this.field4203.method2930((long) arg1);
 		if (var6 != null) {
 			return var6;
 		}
-		class733 var7 = class733.method10677(this.field4201, arg1, this);
+		FontMetrics var7 = FontMetrics.method10677(this.field4201, arg1, this);
 		if (var7 == null) {
 			return null;
 		} else {

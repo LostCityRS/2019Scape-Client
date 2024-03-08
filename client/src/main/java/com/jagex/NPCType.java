@@ -604,12 +604,12 @@ public class NPCType implements ConfigType {
 			if (var27) {
 				return null;
 			}
-			class120[] var31 = new class120[var26.length];
+			ModelUnlit[] var31 = new ModelUnlit[var26.length];
 			for (int var32 = 0; var32 < var26.length; var32++) {
 				if (var26[var32] != -1) {
 					Js5 var33 = this.field2695.field2770;
 					synchronized (this.field2695.field2770) {
-						var31[var32] = class120.method1931(this.field2695.field2770, var26[var32], 0);
+						var31[var32] = ModelUnlit.method1931(this.field2695.field2770, var26[var32], 0);
 					}
 					if (var31[var32] != null) {
 						if (var31[var32].field1372 < 13) {
@@ -662,11 +662,11 @@ public class NPCType implements ConfigType {
 					}
 				}
 			}
-			class120 var43;
+			ModelUnlit var43;
 			if (var31.length == 1) {
 				var43 = var31[0];
 			} else {
-				var43 = new class120(var31, var31.length);
+				var43 = new ModelUnlit(var31, var31.length);
 			}
 			var22 = arg0.method2211(var43, var25, this.field2695.field2773, this.field2725 + 64, this.field2726 + 850);
 			if (this.field2704 != null) {
@@ -743,7 +743,7 @@ public class NPCType implements ConfigType {
 					int var58 = arg8[var57] - arg9;
 					int var59 = var58 & 0x3FFF;
 					Matrix4x3 var60 = new Matrix4x3();
-					var60.method6372(0.0F, 1.0F, 0.0F, class417.method6277(var59));
+					var60.method6372(0.0F, 1.0F, 0.0F, Trig1.method6277(var59));
 					var50.method1771(var60, 0x1 << var57, false);
 				}
 			}
@@ -822,11 +822,11 @@ public class NPCType implements ConfigType {
 				if (var16) {
 					return null;
 				}
-				class120[] var20 = new class120[var15.length];
+				ModelUnlit[] var20 = new ModelUnlit[var15.length];
 				Js5 var21 = this.field2695.field2770;
 				synchronized (this.field2695.field2770) {
 					for (int var22 = 0; var22 < var15.length; var22++) {
-						var20[var22] = class120.method1931(this.field2695.field2770, var15[var22], 0);
+						var20[var22] = ModelUnlit.method1931(this.field2695.field2770, var15[var22], 0);
 					}
 				}
 				for (int var24 = 0; var24 < var15.length; var24++) {
@@ -834,11 +834,11 @@ public class NPCType implements ConfigType {
 						var20[var24].method1947(2);
 					}
 				}
-				class120 var25;
+				ModelUnlit var25;
 				if (var20.length == 1) {
 					var25 = var20[0];
 				} else {
-					var25 = new class120(var20, var20.length);
+					var25 = new ModelUnlit(var20, var20.length);
 				}
 				var12 = arg0.method2211(var25, var14, this.field2695.field2773, 64, 768);
 				if (this.field2704 != null) {

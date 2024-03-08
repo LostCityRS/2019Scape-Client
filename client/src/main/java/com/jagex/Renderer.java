@@ -17,7 +17,7 @@ public abstract class Renderer {
 	public final int field1595;
 
 	@ObfuscatedName("dh.z")
-	public final class143 field1596;
+	public final TextureList field1596;
 
 	@ObfuscatedName("dh.p")
 	public final MaterialList field1597;
@@ -26,7 +26,7 @@ public abstract class Renderer {
 	public final BillboardTypeList field1598;
 
 	@ObfuscatedName("dh.c")
-	public final class381 field1599;
+	public final ParticleEmitterTypeList field1599;
 
 	@ObfuscatedName("dh.g")
 	public int field1616 = -1;
@@ -65,7 +65,7 @@ public abstract class Renderer {
 	public float field1602 = 0.0F;
 
 	@ObfuscatedName("aac.e(ILjava/awt/Canvas;Ldf;Les;Lnx;Lnb;Lnp;Lpy;II)Ldh;")
-	public static Renderer method14575(int arg0, Canvas arg1, MaterialList arg2, class143 arg3, BillboardTypeList arg4, class381 arg5, class378 arg6, Js5 arg7, int arg8) {
+	public static Renderer method14575(int arg0, Canvas arg1, MaterialList arg2, TextureList arg3, BillboardTypeList arg4, ParticleEmitterTypeList arg5, ParticleEffectorTypeList arg6, Js5 arg7, int arg8) {
 		int var9 = 0;
 		int var10 = 0;
 		if (arg1 != null) {
@@ -86,7 +86,7 @@ public abstract class Renderer {
 		return arg0 == 0 || arg0 == 2;
 	}
 
-	public Renderer(MaterialList arg0, class143 arg1, BillboardTypeList arg2, class381 arg3, class378 arg4) {
+	public Renderer(MaterialList arg0, TextureList arg1, BillboardTypeList arg2, ParticleEmitterTypeList arg3, ParticleEffectorTypeList arg4) {
 		this.field1597 = arg0;
 		this.field1596 = arg1;
 		this.field1598 = arg2;
@@ -571,7 +571,7 @@ public abstract class Renderer {
 	public abstract void method2206(int arg0, class103 arg1, int arg2, int arg3);
 
 	@ObfuscatedName("dh.cy(Laac;Lde;Z)Leu;")
-	public abstract class140 method2207(class733 arg0, class136 arg1, boolean arg2);
+	public abstract class140 method2207(FontMetrics arg0, class136 arg1, boolean arg2);
 
 	@ObfuscatedName("dh.cc()Lpq;")
 	public abstract Matrix4x4 method2208();
@@ -580,7 +580,7 @@ public abstract class Renderer {
 	public abstract Matrix4x3 method2209();
 
 	@ObfuscatedName("dh.cj(Ldq;IIII)Ldo;")
-	public abstract Model method2211(class120 arg0, int arg1, int arg2, int arg3, int arg4);
+	public abstract Model method2211(ModelUnlit arg0, int arg1, int arg2, int arg3, int arg4);
 
 	@ObfuscatedName("dh.dd(II)I")
 	public abstract int method2213(int arg0, int arg1);

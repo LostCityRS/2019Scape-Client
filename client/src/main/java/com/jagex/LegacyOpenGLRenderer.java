@@ -524,7 +524,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	@ObfuscatedName("afa.iw")
 	public int field10029 = 0;
 
-	public LegacyOpenGLRenderer(Canvas arg0, MaterialList arg1, class143 arg2, BillboardTypeList arg3, class381 arg4, class378 arg5, int arg6) {
+	public LegacyOpenGLRenderer(Canvas arg0, MaterialList arg1, TextureList arg2, BillboardTypeList arg3, ParticleEmitterTypeList arg4, ParticleEffectorTypeList arg5, int arg6) {
 		super(arg1, arg2, arg3, arg4, arg5);
 		try {
 			try {
@@ -765,7 +765,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 		this.field9989 = this.field9901 & this.field9987;
 		this.field10004 = this.field10022.method0("GL_EXT_blend_func_separate");
 		this.field9992 = this.field9878 != null && (this.field9979 >= 32 || this.field10022.method0("GL_ARB_sync"));
-		this.field9981 = class498.field5074.startsWith("mac");
+		this.field9981 = NativeLibraryConfig.field5074.startsWith("mac");
 		OpenGL.glGetFloatv(2834, field10014, 0);
 		this.field10007 = field10014[0];
 		this.field9983 = field10014[1];
@@ -1376,7 +1376,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 			int var10 = class783.method3082(var9);
 			OpenGL.glVertex2f((float) arg2 + var6, var7);
 			for (int var11 = 16384 - var10; var11 > 0; var11 -= var10) {
-				OpenGL.glVertex2f(class91.field1159[var11] * (float) arg2 + var6, class91.field1160[var11] * (float) arg2 + var7);
+				OpenGL.glVertex2f(Trig2.field1159[var11] * (float) arg2 + var6, Trig2.field1160[var11] * (float) arg2 + var7);
 			}
 			OpenGL.glVertex2f((float) arg2 + var6, var7);
 			OpenGL.glEnd();
@@ -1824,7 +1824,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.cy(Laac;Lde;Z)Leu;")
-	public class140 method2207(class733 arg0, class136 arg1, boolean arg2) {
+	public class140 method2207(FontMetrics arg0, class136 arg1, boolean arg2) {
 		return new class857(this, arg0, arg1, arg2);
 	}
 
@@ -1833,7 +1833,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.cj(Ldq;IIII)Ldo;")
-	public Model method2211(class120 arg0, int arg1, int arg2, int arg3, int arg4) {
+	public Model method2211(ModelUnlit arg0, int arg1, int arg2, int arg3, int arg4) {
 		return new LegacyOpenGLModel(this, arg0, arg1, arg3, arg4, arg2);
 	}
 
@@ -3185,9 +3185,9 @@ public class LegacyOpenGLRenderer extends Renderer {
 			OpenGL.glDeleteLists((int) var12.field6760, var12.field11442);
 		}
 		this.field10026.method1402();
-		if (this.method2520() > 100663296 && class213.method3655() > this.field9823 + 60000L) {
+		if (this.method2520() > 100663296 && MonotonicTime.method3655() > this.field9823 + 60000L) {
 			System.gc();
-			this.field9823 = class213.method3655();
+			this.field9823 = MonotonicTime.method3655();
 		}
 		this.field9872 = var3;
 	}

@@ -31,7 +31,7 @@ public class class410 implements class412 {
 		this.field4232 = arg4;
 		this.field4230 = arg1;
 		this.field4229 = arg2;
-		this.field4233 = IDirect3DDevice.CreateRenderTarget(this.field4228.field11978, arg3, arg4, Direct3DRenderer.method19011(this.field4230, this.field4229), arg5, 0, false);
+		this.field4233 = IDirect3DDevice.CreateRenderTarget(this.field4228.device, arg3, arg4, Direct3DRenderer.method19011(this.field4230, this.field4229), arg5, 0, false);
 		this.field4228.method15985(this);
 	}
 

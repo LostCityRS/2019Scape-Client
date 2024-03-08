@@ -25,7 +25,7 @@ public class class1124 extends class845 {
 	@ObfuscatedName("apk.e()Ladq;")
 	public class813 method15649() {
 		if (this.field11947 == null) {
-			class143 var1 = this.field11946.field1596;
+			TextureList var1 = this.field11946.field1596;
 			Material var2 = this.field11946.field1597.method2043(this.field11945);
 			if (var2 == null) {
 				return null;

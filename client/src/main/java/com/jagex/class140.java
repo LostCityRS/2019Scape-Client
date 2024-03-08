@@ -8,7 +8,7 @@ import java.util.Random;
 public abstract class class140 {
 
 	@ObfuscatedName("eu.e")
-	public class733 field1667;
+	public FontMetrics field1667;
 
 	@ObfuscatedName("eu.n")
 	public Renderer field1666;
@@ -40,7 +40,7 @@ public abstract class class140 {
 	@ObfuscatedName("eu.v")
 	public static String[] field1679 = new String[100];
 
-	public class140(Renderer arg0, class733 arg1) {
+	public class140(Renderer arg0, FontMetrics arg1) {
 		this.field1666 = arg0;
 		this.field1667 = arg1;
 	}

@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class class957 extends class531 {
 
 	@ObfuscatedName("ajd.m")
-	public int field11211 = (int) (class213.method3655() / 1000L);
+	public int field11211 = (int) (MonotonicTime.method3655() / 1000L);
 
 	@ObfuscatedName("ajd.k")
 	public String field11210;

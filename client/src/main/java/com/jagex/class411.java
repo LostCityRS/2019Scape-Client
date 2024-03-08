@@ -27,7 +27,7 @@ public class class411 implements class404 {
 		this.field4236 = arg2;
 		this.field4235 = arg3;
 		this.field4234 = arg1;
-		this.field4237 = IDirect3DDevice.CreateDepthStencilSurface(this.field4238.field11978, arg2, arg3, Direct3DRenderer.method19035(this.field4234), arg4, 0, false);
+		this.field4237 = IDirect3DDevice.CreateDepthStencilSurface(this.field4238.device, arg2, arg3, Direct3DRenderer.method19035(this.field4234), arg4, 0, false);
 		this.field4238.method15985(this);
 	}
 

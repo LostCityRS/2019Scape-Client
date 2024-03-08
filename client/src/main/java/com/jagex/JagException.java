@@ -26,6 +26,8 @@ public class JagException extends RuntimeException {
 
 	@ObfuscatedName("wt.e(Ljava/lang/String;Ljava/lang/Throwable;I)V")
 	public static void method9845(String arg0, Throwable arg1) {
+		arg1.printStackTrace();
+
 		try {
 			String var2 = "";
 			if (arg1 != null) {

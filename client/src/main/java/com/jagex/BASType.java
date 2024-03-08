@@ -426,13 +426,13 @@ public class BASType implements class757, ConfigType {
 				if (var2 != 0 || var3 != 0 || var4 != 0 || var5 != 0 || var6 != 0 || var7 != 0) {
 					Matrix4x3 var8 = this.field7348[var1] = new Matrix4x3();
 					if (var7 != 0) {
-						var8.method6307(0.0F, 0.0F, 1.0F, class417.method6277(var7));
+						var8.method6307(0.0F, 0.0F, 1.0F, Trig1.method6277(var7));
 					}
 					if (var5 != 0) {
-						var8.method6307(1.0F, 0.0F, 0.0F, class417.method6277(var5));
+						var8.method6307(1.0F, 0.0F, 0.0F, Trig1.method6277(var5));
 					}
 					if (var6 != 0) {
-						var8.method6307(0.0F, 1.0F, 0.0F, class417.method6277(var6));
+						var8.method6307(0.0F, 1.0F, 0.0F, Trig1.method6277(var6));
 					}
 					var8.method6315((float) var2, (float) var3, (float) var4);
 				}

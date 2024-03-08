@@ -61,12 +61,12 @@ public class class369 {
 			if (this.field3436 != var1 && this.field3434 < 0.0F) {
 				this.field3431 = this.field3436;
 				this.field3434 = var1;
-				this.field3433 = class213.method3655();
+				this.field3433 = MonotonicTime.method3655();
 				this.field3437 = this.field3433 + 100L;
 			}
 		}
 		if (this.field3434 >= 0.0F) {
-			long var2 = class213.method3655();
+			long var2 = MonotonicTime.method3655();
 			if (var2 > this.field3437) {
 				this.field3436 = this.field3434;
 				this.field3434 = -1.0F;
@@ -102,7 +102,7 @@ public class class369 {
 		if (this.field3432 == null) {
 			this.field3434 = arg0;
 			this.field3431 = this.field3436;
-			this.field3433 = class213.method3655();
+			this.field3433 = MonotonicTime.method3655();
 			this.field3437 = this.field3433 + 100L;
 		}
 	}

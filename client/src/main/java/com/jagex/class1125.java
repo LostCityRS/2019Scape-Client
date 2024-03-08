@@ -25,7 +25,7 @@ public class class1125 extends class846 {
 	@ObfuscatedName("aps.e()Lmr;")
 	public GpuCubeTexture method15652() {
 		if (this.field11952 == null) {
-			class143 var1 = this.field11950.field1596;
+			TextureList var1 = this.field11950.field1596;
 			Material var2 = this.field11950.field1597.method2043(this.field11951);
 			if (var2 == null) {
 				return null;

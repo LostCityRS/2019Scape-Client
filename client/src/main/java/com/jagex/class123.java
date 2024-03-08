@@ -9,7 +9,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
 @ObfuscatedName("dk")
-public abstract class class123 implements class143 {
+public abstract class class123 implements TextureList {
 
 	@ObfuscatedName("dk.e")
 	public static double field1432 = -1.0D;

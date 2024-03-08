@@ -9,7 +9,7 @@ public class class1179 extends SecondaryNode {
 	public int field12339 = ChatHistory.method8480();
 
 	@ObfuscatedName("asg.u")
-	public long field12336 = class213.method3655();
+	public long field12336 = MonotonicTime.method3655();
 
 	@ObfuscatedName("asg.z")
 	public int field12331;
@@ -53,7 +53,7 @@ public class class1179 extends SecondaryNode {
 	@ObfuscatedName("asg.e(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Lnn;I)V")
 	public void method19429(int arg0, int arg1, String arg2, String arg3, String arg4, String arg5, int arg6, String arg7, ChatCrownType arg8) {
 		this.field12339 = ChatHistory.method8480();
-		this.field12336 = class213.method3655();
+		this.field12336 = MonotonicTime.method3655();
 		this.field12331 = arg0;
 		this.field12332 = arg1;
 		this.field12330 = arg2;

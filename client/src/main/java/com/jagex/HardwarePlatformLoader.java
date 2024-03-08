@@ -28,19 +28,19 @@ public class HardwarePlatformLoader implements class499 {
 	public HardwarePlatformLoader(Js5 arg0) {
 		this.field6764 = arg0;
 		String var2 = "";
-		if (class498.field5074.startsWith("win") || class498.field5074.startsWith("windows 7")) {
+		if (NativeLibraryConfig.field5074.startsWith("win") || NativeLibraryConfig.field5074.startsWith("windows 7")) {
 			var2 = var2 + "windows/";
-		} else if (class498.field5074.startsWith("linux")) {
+		} else if (NativeLibraryConfig.field5074.startsWith("linux")) {
 			var2 = var2 + "linux/";
-		} else if (class498.field5074.startsWith("mac")) {
+		} else if (NativeLibraryConfig.field5074.startsWith("mac")) {
 			var2 = var2 + "macos/";
 		}
 		String var3;
-		if (class498.field5076.startsWith("amd64") || class498.field5076.startsWith("x86_64")) {
+		if (NativeLibraryConfig.field5076.startsWith("amd64") || NativeLibraryConfig.field5076.startsWith("x86_64")) {
 			var3 = var2 + "x86_64/";
-		} else if (class498.field5076.startsWith("i386") || class498.field5076.startsWith("i486") || class498.field5076.startsWith("i586") || class498.field5076.startsWith("x86")) {
+		} else if (NativeLibraryConfig.field5076.startsWith("i386") || NativeLibraryConfig.field5076.startsWith("i486") || NativeLibraryConfig.field5076.startsWith("i586") || NativeLibraryConfig.field5076.startsWith("x86")) {
 			var3 = var2 + "x86/";
-		} else if (class498.field5076.startsWith("ppc")) {
+		} else if (NativeLibraryConfig.field5076.startsWith("ppc")) {
 			var3 = var2 + "ppc/";
 		} else {
 			var3 = var2 + "universal/";
@@ -50,11 +50,11 @@ public class HardwarePlatformLoader implements class499 {
 
 	@ObfuscatedName("nn.c(Ljava/lang/String;I)Ljava/lang/String;")
 	public static String method6049(String arg0) {
-		if (class498.field5074.startsWith("win")) {
+		if (NativeLibraryConfig.field5074.startsWith("win")) {
 			return arg0 + ".dll";
-		} else if (class498.field5074.startsWith("linux")) {
+		} else if (NativeLibraryConfig.field5074.startsWith("linux")) {
 			return "lib" + arg0 + ".so";
-		} else if (class498.field5074.startsWith("mac")) {
+		} else if (NativeLibraryConfig.field5074.startsWith("mac")) {
 			return "lib" + arg0 + ".dylib";
 		} else {
 			return null;

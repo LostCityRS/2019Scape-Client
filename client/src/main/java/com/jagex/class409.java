@@ -59,7 +59,7 @@ public class class409 implements VertexBuffer {
 			if (this.field4227 != 0L) {
 				IUnknown.Release(this.field4227);
 			}
-			this.field4227 = IDirect3DDevice.CreateVertexBuffer(this.field4225.field11978, this.field4224, var3, 0, var4);
+			this.field4227 = IDirect3DDevice.CreateVertexBuffer(this.field4225.device, this.field4224, var3, 0, var4);
 			this.field4223 = this.field4224;
 		}
 		return this.field4227 != 0L;

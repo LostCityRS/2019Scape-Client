@@ -110,7 +110,7 @@ public class MiniMenu {
 	}
 
 	@ObfuscatedName("gp.f(Lvt;Lakm;I)Z")
-	public static boolean method3483(class588 arg0, class993 arg1) {
+	public static boolean method3483(Binding arg0, class993 arg1) {
 		return arg0 != null && arg0.method9396(arg1, client.field11024, client.field10822, Statics.field11931);
 	}
 
@@ -124,7 +124,7 @@ public class MiniMenu {
 		if (client.field10862 >= 0) {
 			return;
 		}
-		class733 var0 = method16902();
+		FontMetrics var0 = method16902();
 		if (!field562) {
 			field540 = field568 != -1 && field546 >= field568 || (field564 ? 26 : 22) + field546 * field536 > Statics.field6600;
 		}
@@ -361,7 +361,7 @@ public class MiniMenu {
 				return;
 			}
 		}
-		class733 var2 = method16902();
+		FontMetrics var2 = method16902();
 		int var3 = var2.method14532(LocalisedText.field9035.method15021(Statics.field1680));
 		int var6;
 		if (field540) {
@@ -417,7 +417,7 @@ public class MiniMenu {
 		if (!field562) {
 			return;
 		}
-		class733 var2 = method16902();
+		FontMetrics var2 = method16902();
 		int var3 = 0;
 		for (class1172 var4 = (class1172) arg0.field12312.method14317(); var4 != null; var4 = (class1172) arg0.field12312.method14324()) {
 			int var5 = method4610(var4, var2);
@@ -450,8 +450,8 @@ public class MiniMenu {
 	}
 
 	@ObfuscatedName("aih.c(B)Laac;")
-	public static class733 method16902() {
-		class733 var0;
+	public static FontMetrics method16902() {
+		FontMetrics var0;
 		if (!field564) {
 			var0 = Statics.field10268;
 		} else if (Statics.field1841 == null || Statics.field8786 == null) {
@@ -1004,7 +1004,7 @@ public class MiniMenu {
 	public static int method895() {
 		if (client.field10989 == null) {
 			if (field562) {
-				class733 var0 = method16902();
+				FontMetrics var0 = method16902();
 				int var1 = Statics.field9182.method9086();
 				int var2 = Statics.field9182.method9092();
 				if (field540) {
@@ -1286,7 +1286,7 @@ public class MiniMenu {
 	}
 
 	@ObfuscatedName("vl.az(IIIIIIILarm;Leu;Laac;IIS)V")
-	public static void method9284(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, class1172 arg7, class140 arg8, class733 arg9, int arg10, int arg11) {
+	public static void method9284(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, class1172 arg7, class140 arg8, FontMetrics arg9, int arg10, int arg11) {
 		if (arg0 > arg2 && arg0 < arg2 + arg4 && arg1 > arg6 - arg9.field8562 - 1 && arg1 < arg9.field8569 + arg6 && arg7.field12308) {
 			arg10 = arg11;
 		}
@@ -1341,7 +1341,7 @@ public class MiniMenu {
 	}
 
 	@ObfuscatedName("gl.ak(Ldh;IIIIILeu;Laac;Ljava/lang/String;I)V")
-	public static void method3469(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, class140 arg6, class733 arg7, String arg8) {
+	public static void method3469(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, class140 arg6, FontMetrics arg7, String arg8) {
 		int var9 = 255 - Statics.field4488 - field567;
 		if (var9 < 0) {
 			var9 = 0;
@@ -1427,7 +1427,7 @@ public class MiniMenu {
 		} else {
 			var7 = Statics.field1841;
 		}
-		class733 var8 = method16902();
+		FontMetrics var8 = method16902();
 		method3469(arg0, Statics.field11738, Statics.field2960, Statics.field1289, Statics.field2576, var5, var7, var8, LocalisedText.field9035.method15021(Statics.field1680));
 		int var9 = 255 - Statics.field11830 - field567;
 		if (var9 < 0) {
@@ -1514,13 +1514,13 @@ public class MiniMenu {
 	}
 
 	@ObfuscatedName("aiv.bh(Larn;Laac;B)I")
-	public static int method16910(class1174 arg0, class733 arg1) {
+	public static int method16910(class1174 arg0, FontMetrics arg1) {
 		String var2 = method15244(arg0);
 		return arg1.method14533(var2, Statics.field10302);
 	}
 
 	@ObfuscatedName("ii.bx(Larm;Laac;I)I")
-	public static int method4610(class1172 arg0, class733 arg1) {
+	public static int method4610(class1172 arg0, FontMetrics arg1) {
 		String var2 = method16451(arg0);
 		int[] var3 = method7096(arg0);
 		if (var3 != null) {

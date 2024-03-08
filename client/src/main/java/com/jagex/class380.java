@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ni")
-public class class380 implements class381 {
+public class class380 implements ParticleEmitterTypeList {
 
 	@ObfuscatedName("ni.e")
 	public Js5 field3563;

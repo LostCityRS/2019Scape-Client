@@ -24,7 +24,7 @@ public abstract class class599 {
 	public final String[] field7534;
 
 	@ObfuscatedName("vh.l")
-	public class120[] field7535 = new class120[4];
+	public ModelUnlit[] field7535 = new ModelUnlit[4];
 
 	@ObfuscatedName("vh.u")
 	public class746 field7529 = new class746(null, null);
@@ -77,7 +77,7 @@ public abstract class class599 {
 		synchronized (this.field7532) {
 			this.field7532.method2924();
 		}
-		this.field7535 = new class120[4];
+		this.field7535 = new ModelUnlit[4];
 		this.field7529 = new class746(null, null);
 	}
 

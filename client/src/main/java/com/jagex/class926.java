@@ -18,9 +18,9 @@ public class class926 extends class925 implements class359 {
 	@ObfuscatedName("aio.d(IIII[II)V")
 	public void method5703(int arg0, int arg1, int arg2, int arg3, int[] arg4, int arg5) {
 		long var7 = IDirect3DTexture.GetSurfaceLevel(this.field4217, 0);
-		long var9 = IDirect3DDevice.CreateRenderTarget(this.field4219.field11978, arg2, arg3, 21, 0, 0, true);
+		long var9 = IDirect3DDevice.CreateRenderTarget(this.field4219.device, arg2, arg3, 21, 0, 0, true);
 		this.field4219.method15961(arg2 * arg3 * 4);
-		if (class0.method35(IDirect3DDevice.StretchRect(this.field4219.field11978, var7, arg0, arg1, arg2, arg3, var9, 0, 0, arg2, arg3, 1))) {
+		if (class0.method35(IDirect3DDevice.StretchRect(this.field4219.device, var7, arg0, arg1, arg2, arg3, var9, 0, 0, arg2, arg3, 1))) {
 			IDirect3DSurface.Download(var9, 0, 0, arg2, arg3, arg2 * 4, 16, this.field4219.field10046);
 			this.field4219.field10071.clear();
 			this.field4219.field10071.asIntBuffer().get(arg4);

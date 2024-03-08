@@ -156,7 +156,7 @@ public class PlayerModel {
 	}
 
 	@ObfuscatedName("xg.u(Ldh;ILaof;Laov;Laod;Laon;Lem;Lep;Laaq;Laaq;[Laaq;[IIZLwy;B)Ldo;")
-	public Model method10126(Renderer arg0, int arg1, BASTypeList arg2, IDKTypeList arg3, NPCTypeList arg4, ObjTypeList arg5, class151 arg6, class147 arg7, class721 arg8, class721 arg9, class721[] arg10, int[] arg11, int arg12, boolean arg13, class631 arg14) {
+	public Model method10126(Renderer arg0, int arg1, BASTypeList arg2, IDKTypeList arg3, NPCTypeList arg4, ObjTypeList arg5, class151 arg6, class147 arg7, class721 arg8, class721 arg9, class721[] arg10, int[] arg11, int arg12, boolean arg13, WearposDefaults arg14) {
 		if (this.field7892 != -1) {
 			return ((NPCType) arg4.get(this.field7892)).method4542(arg0, arg1, arg2, arg6, arg7, arg8, arg9, arg10, arg11, arg12, null);
 		}
@@ -259,7 +259,7 @@ public class PlayerModel {
 							return null;
 						}
 					} else {
-						class120[] var47 = new class120[var19.length];
+						ModelUnlit[] var47 = new ModelUnlit[var19.length];
 						for (int var48 = 0; var48 < var19.length; var48++) {
 							int var49 = var19[var48];
 							ObjTypeCustomisation var50 = null;
@@ -268,12 +268,12 @@ public class PlayerModel {
 								if (!var51 && this.field7887 != null && this.field7887[var48] != null) {
 									var50 = this.field7887[var48];
 								}
-								class120 var52 = ((ObjType) arg5.get(var49 & 0x3FFFFFFF)).method14650(this.field7897, var50);
+								ModelUnlit var52 = ((ObjType) arg5.get(var49 & 0x3FFFFFFF)).method14650(this.field7897, var50);
 								if (var52 != null) {
 									var47[var48] = var52;
 								}
 							} else if ((var49 & Integer.MIN_VALUE) != 0) {
-								class120 var53 = ((IDKType) arg3.get(var49 & 0x3FFFFFFF)).method5000();
+								ModelUnlit var53 = ((IDKType) arg3.get(var49 & 0x3FFFFFFF)).method5000();
 								if (var53 != null) {
 									var47[var48] = var53;
 								}
@@ -305,7 +305,7 @@ public class PlayerModel {
 								}
 							}
 						}
-						class120 var61 = new class120(var47, var47.length);
+						ModelUnlit var61 = new ModelUnlit(var47, var47.length);
 						int var62 = var16 | 0x4000;
 						var34 = arg0.method2211(var61, var62, Statics.field4037, 64, 850);
 						for (int var63 = 0; var63 < 10; var63++) {
@@ -404,7 +404,7 @@ public class PlayerModel {
 					int var75 = arg11[var74] - arg12;
 					int var76 = var75 & 0x3FFF;
 					Matrix4x3 var77 = new Matrix4x3();
-					var77.method6372(0.0F, 1.0F, 0.0F, class417.method6277(var76));
+					var77.method6372(0.0F, 1.0F, 0.0F, Trig1.method6277(var76));
 					var69.method1771(var77, 0x1 << var74, false);
 				}
 			}
@@ -459,7 +459,7 @@ public class PlayerModel {
 			if (var14) {
 				return null;
 			}
-			class120[] var18 = new class120[this.field7890.length];
+			ModelUnlit[] var18 = new ModelUnlit[this.field7890.length];
 			int var19 = 0;
 			for (int var20 = 0; var20 < this.field7890.length; var20++) {
 				int var21 = this.field7890[var20];
@@ -468,18 +468,18 @@ public class PlayerModel {
 					if (this.field7887 != null && this.field7887[var20] != null) {
 						var22 = this.field7887[var20];
 					}
-					class120 var23 = ((ObjType) arg4.get(var21 & 0x3FFFFFFF)).method14652(this.field7897, var22);
+					ModelUnlit var23 = ((ObjType) arg4.get(var21 & 0x3FFFFFFF)).method14652(this.field7897, var22);
 					if (var23 != null) {
 						var18[var19++] = var23;
 					}
 				} else if ((var21 & Integer.MIN_VALUE) != 0) {
-					class120 var24 = ((IDKType) arg2.get(var21 & 0x3FFFFFFF)).method5002();
+					ModelUnlit var24 = ((IDKType) arg2.get(var21 & 0x3FFFFFFF)).method5002();
 					if (var24 != null) {
 						var18[var19++] = var24;
 					}
 				}
 			}
-			class120 var25 = new class120(var18, var19);
+			ModelUnlit var25 = new ModelUnlit(var18, var19);
 			int var26 = var9 | 0x4000;
 			var11 = arg0.method2211(var25, var26, Statics.field4037, 64, 768);
 			for (int var27 = 0; var27 < 10; var27++) {
@@ -524,24 +524,24 @@ public class PlayerModel {
 			if (var13 != null) {
 				var9 = arg0.method2213(var9, var13.method1691());
 			}
-			class120[] var16 = new class120[3];
+			ModelUnlit[] var16 = new ModelUnlit[3];
 			int var17 = 0;
 			if (!((IDKType) arg2.get(arg5)).method5001() || !((IDKType) arg2.get(arg6)).method5001() || !((IDKType) arg2.get(arg7)).method5001()) {
 				return null;
 			}
-			class120 var18 = ((IDKType) arg2.get(arg5)).method5002();
+			ModelUnlit var18 = ((IDKType) arg2.get(arg5)).method5002();
 			if (var18 != null) {
 				var16[var17++] = var18;
 			}
-			class120 var19 = ((IDKType) arg2.get(arg6)).method5002();
+			ModelUnlit var19 = ((IDKType) arg2.get(arg6)).method5002();
 			if (var19 != null) {
 				var16[var17++] = var19;
 			}
-			class120 var20 = ((IDKType) arg2.get(arg7)).method5002();
+			ModelUnlit var20 = ((IDKType) arg2.get(arg7)).method5002();
 			if (var20 != null) {
 				var16[var17++] = var20;
 			}
-			class120 var21 = new class120(var16, var17);
+			ModelUnlit var21 = new ModelUnlit(var16, var17);
 			int var22 = var9 | 0x4000;
 			var13 = arg0.method2211(var21, var22, Statics.field4037, 64, 768);
 			for (int var23 = 0; var23 < 10; var23++) {

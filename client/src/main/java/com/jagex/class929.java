@@ -16,9 +16,9 @@ public class class929 extends class408 implements GpuCubeTexture {
 		super(arg0, TextureFormat.field1273, DataType.field1645, arg2 && arg0.field11967, arg1 * arg1 * 6);
 		this.field10676 = arg1;
 		if (this.field4220) {
-			this.field4217 = IDirect3DDevice.CreateCubeTexture(this.field4219.field11978, this.field10676, 0, 1024, 21, 1);
+			this.field4217 = IDirect3DDevice.CreateCubeTexture(this.field4219.device, this.field10676, 0, 1024, 21, 1);
 		} else {
-			this.field4217 = IDirect3DDevice.CreateCubeTexture(this.field4219.field11978, this.field10676, 1, 0, 21, 1);
+			this.field4217 = IDirect3DDevice.CreateCubeTexture(this.field4219.device, this.field10676, 1, 0, 21, 1);
 		}
 		ByteBuffer var5 = this.field4219.field10071;
 		this.field4219.method15961(this.field10676 * this.field10676 * 4);

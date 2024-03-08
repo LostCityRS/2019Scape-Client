@@ -32,7 +32,7 @@ public class ModelParticleEffector {
 	}
 
 	@ObfuscatedName("cq.e(Lnp;B)Lna;")
-	public ParticleEffectorType method1509(class378 arg0) {
+	public ParticleEffectorType method1509(ParticleEffectorTypeList arg0) {
 		return arg0.method5973(this.field1228);
 	}
 

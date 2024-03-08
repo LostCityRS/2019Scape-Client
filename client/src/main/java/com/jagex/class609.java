@@ -17,7 +17,7 @@ public final class class609 implements class152 {
 
 	@ObfuscatedName("wu.i(ZI)I")
 	public int method9623(boolean arg0) {
-		long var2 = class213.method3655();
+		long var2 = MonotonicTime.method3655();
 		for (class987 var4 = (class987) (arg0 ? this.field7610.method14500() : this.field7610.method14502()); var4 != null; var4 = (class987) this.field7610.method14502()) {
 			if ((var4.field11441 & 0x3FFFFFFFFFFFFFFFL) < var2) {
 				if ((var4.field11441 & 0x4000000000000000L) != 0L) {
@@ -54,10 +54,10 @@ public final class class609 implements class152 {
 		this.field7609[arg0.field1706] = arg1;
 		class987 var3 = (class987) this.field7610.method14495((long) arg0.field1706);
 		if (var3 == null) {
-			class987 var4 = new class987(class213.method3655() + 500L);
+			class987 var4 = new class987(MonotonicTime.method3655() + 500L);
 			this.field7610.method14501(var4, (long) arg0.field1706);
 		} else {
-			var3.field11441 = class213.method3655() + 500L;
+			var3.field11441 = MonotonicTime.method3655() + 500L;
 		}
 	}
 
@@ -69,7 +69,7 @@ public final class class609 implements class152 {
 			class987 var4 = new class987(4611686018427387905L);
 			this.field7610.method14501(var4, (long) arg0.field1706);
 		} else if (var3.field11441 != 4611686018427387905L) {
-			var3.field11441 = class213.method3655() + 500L | 0x4000000000000000L;
+			var3.field11441 = MonotonicTime.method3655() + 500L | 0x4000000000000000L;
 		}
 	}
 

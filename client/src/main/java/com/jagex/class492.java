@@ -18,9 +18,9 @@ public class class492 {
 		if (!client.method2737(client.state)) {
 			return;
 		}
-		class49[] var1 = client.field10850;
+		ServerConnection[] var1 = client.field10850;
 		for (int var2 = 0; var2 < var1.length; var2++) {
-			class49 var3 = var1[var2];
+			ServerConnection var3 = var1[var2];
 			var3.field793++;
 			if (var3.field793 < 50 && !arg0) {
 				return;

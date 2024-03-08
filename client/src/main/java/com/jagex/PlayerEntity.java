@@ -666,7 +666,7 @@ public class PlayerEntity extends PathingEntity {
 	@ObfuscatedName("aqk.k(I)Lov;")
 	public class421 method4668() {
 		class421 var1 = class421.method6469();
-		var1.method6415(class417.method6277(this.field10395.field528), 0.0F, 0.0F);
+		var1.method6415(Trig1.method6277(this.field10395.field528), 0.0F, 0.0F);
 		return var1;
 	}
 

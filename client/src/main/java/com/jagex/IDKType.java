@@ -138,11 +138,11 @@ public class IDKType implements ConfigType {
 	}
 
 	@ObfuscatedName("jv.p(I)Ldq;")
-	public class120 method5000() {
+	public ModelUnlit method5000() {
 		if (this.field2950 == null) {
 			return null;
 		}
-		class120[] var1 = new class120[this.field2950.length];
+		ModelUnlit[] var1 = new ModelUnlit[this.field2950.length];
 		Js5 var2 = this.field2955;
 		synchronized (this.field2955) {
 			int var3 = 0;
@@ -150,7 +150,7 @@ public class IDKType implements ConfigType {
 				if (var3 >= this.field2950.length) {
 					break;
 				}
-				var1[var3] = class120.method1931(this.field2955, this.field2950[var3], 0);
+				var1[var3] = ModelUnlit.method1931(this.field2955, this.field2950[var3], 0);
 				var3++;
 			}
 		}
@@ -159,11 +159,11 @@ public class IDKType implements ConfigType {
 				var1[var5].method1947(2);
 			}
 		}
-		class120 var6;
+		ModelUnlit var6;
 		if (var1.length == 1) {
 			var6 = var1[0];
 		} else {
-			var6 = new class120(var1, var1.length);
+			var6 = new ModelUnlit(var1, var1.length);
 		}
 		if (var6 == null) {
 			return null;
@@ -196,8 +196,8 @@ public class IDKType implements ConfigType {
 	}
 
 	@ObfuscatedName("jv.c(I)Ldq;")
-	public class120 method5002() {
-		class120[] var1 = new class120[5];
+	public ModelUnlit method5002() {
+		ModelUnlit[] var1 = new ModelUnlit[5];
 		int var2 = 0;
 		Js5 var3 = this.field2955;
 		synchronized (this.field2955) {
@@ -207,7 +207,7 @@ public class IDKType implements ConfigType {
 					break;
 				}
 				if (this.field2957[var4] != -1) {
-					var1[var2++] = class120.method1931(this.field2955, this.field2957[var4], 0);
+					var1[var2++] = ModelUnlit.method1931(this.field2955, this.field2957[var4], 0);
 				}
 				var4++;
 			}
@@ -217,7 +217,7 @@ public class IDKType implements ConfigType {
 				var1[var6].method1947(2);
 			}
 		}
-		class120 var7 = new class120(var1, var2);
+		ModelUnlit var7 = new ModelUnlit(var1, var2);
 		if (this.field2949 != null) {
 			for (int var8 = 0; var8 < this.field2949.length; var8++) {
 				var7.method1943(this.field2949[var8], this.field2954[var8]);

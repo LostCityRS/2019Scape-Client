@@ -4,10 +4,10 @@ import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
 @ObfuscatedName("aeu")
-public class class815 extends class74 {
+public class class815 extends GlEffect {
 
 	@ObfuscatedName("aeu.f")
-	public class73 field9284;
+	public RenderList field9284;
 
 	@ObfuscatedName("aeu.w")
 	public int field9285;
@@ -58,7 +58,7 @@ public class class815 extends class74 {
 
 	@ObfuscatedName("aeu.b()V")
 	public void method15339() {
-		this.field9284 = new class73(this.field1021, 2);
+		this.field9284 = new RenderList(this.field1021, 2);
 		this.field9284.method1245(0);
 		this.field1021.method15776(1);
 		this.field1021.method15765(-16777216);

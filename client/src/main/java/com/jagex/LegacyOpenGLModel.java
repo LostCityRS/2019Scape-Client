@@ -212,7 +212,7 @@ public class LegacyOpenGLModel extends Model {
 		this.field9663 = new class82();
 	}
 
-	public LegacyOpenGLModel(LegacyOpenGLRenderer arg0, class120 arg1, int arg2, int arg3, int arg4, int arg5) {
+	public LegacyOpenGLModel(LegacyOpenGLRenderer arg0, ModelUnlit arg1, int arg2, int arg3, int arg4, int arg5) {
 		this.field9626 = arg0;
 		this.field9627 = arg2;
 		this.field9628 = arg5;
@@ -759,7 +759,7 @@ public class LegacyOpenGLModel extends Model {
 	}
 
 	@ObfuscatedName("afk.hb(Ldq;IJIIIIFF)S")
-	public short method15568(class120 arg0, int arg1, long arg2, int arg3, int arg4, int arg5, int arg6, float arg7, float arg8) {
+	public short method15568(ModelUnlit arg0, int arg1, long arg2, int arg3, int arg4, int arg5, int arg6, float arg7, float arg8) {
 		int var11 = this.field9679[arg1];
 		int var12 = this.field9679[arg1 + 1];
 		int var13 = 0;
@@ -1269,8 +1269,8 @@ public class LegacyOpenGLModel extends Model {
 
 	@ObfuscatedName("afk.d(I)V")
 	public void method1693(int arg0) {
-		int var2 = class417.field4270[arg0];
-		int var3 = class417.field4272[arg0];
+		int var2 = Trig1.field4270[arg0];
+		int var3 = Trig1.field4272[arg0];
 		for (int var4 = 0; var4 < this.field9635; var4++) {
 			int var5 = this.field9636[var4] * var3 + this.field9619[var4] * var2 >> 14;
 			this.field9619[var4] = this.field9619[var4] * var3 - this.field9636[var4] * var2 >> 14;
@@ -1284,8 +1284,8 @@ public class LegacyOpenGLModel extends Model {
 
 	@ObfuscatedName("afk.c(I)V")
 	public void method1694(int arg0) {
-		int var2 = class417.field4270[arg0];
-		int var3 = class417.field4272[arg0];
+		int var2 = Trig1.field4270[arg0];
+		int var3 = Trig1.field4272[arg0];
 		for (int var4 = 0; var4 < this.field9635; var4++) {
 			int var5 = this.field9636[var4] * var3 + this.field9619[var4] * var2 >> 14;
 			this.field9619[var4] = this.field9619[var4] * var3 - this.field9636[var4] * var2 >> 14;
@@ -1310,8 +1310,8 @@ public class LegacyOpenGLModel extends Model {
 
 	@ObfuscatedName("afk.r(I)V")
 	public void method1852(int arg0) {
-		int var2 = class417.field4270[arg0];
-		int var3 = class417.field4272[arg0];
+		int var2 = Trig1.field4270[arg0];
+		int var3 = Trig1.field4272[arg0];
 		for (int var4 = 0; var4 < this.field9635; var4++) {
 			int var5 = this.field9637[var4] * var3 - this.field9619[var4] * var2 >> 14;
 			this.field9619[var4] = this.field9637[var4] * var2 + this.field9619[var4] * var3 >> 14;
@@ -1325,8 +1325,8 @@ public class LegacyOpenGLModel extends Model {
 
 	@ObfuscatedName("afk.v(I)V")
 	public void method1696(int arg0) {
-		int var2 = class417.field4270[arg0];
-		int var3 = class417.field4272[arg0];
+		int var2 = Trig1.field4270[arg0];
+		int var3 = Trig1.field4272[arg0];
 		for (int var4 = 0; var4 < this.field9635; var4++) {
 			int var5 = this.field9637[var4] * var2 + this.field9636[var4] * var3 >> 14;
 			this.field9637[var4] = this.field9637[var4] * var3 - this.field9636[var4] * var2 >> 14;
@@ -2032,22 +2032,22 @@ public class LegacyOpenGLModel extends Model {
 								this.field9637[var94] -= Statics.field9693;
 								this.field9619[var94] -= Statics.field9694;
 								if (arg4 != 0) {
-									int var95 = class417.field4270[arg4];
-									int var96 = class417.field4272[arg4];
+									int var95 = Trig1.field4270[arg4];
+									int var96 = Trig1.field4272[arg4];
 									int var97 = this.field9637[var94] * var95 + this.field9636[var94] * var96 + 16383 >> 14;
 									this.field9637[var94] = this.field9637[var94] * var96 - this.field9636[var94] * var95 + 16383 >> 14;
 									this.field9636[var94] = var97;
 								}
 								if (arg2 != 0) {
-									int var98 = class417.field4270[arg2];
-									int var99 = class417.field4272[arg2];
+									int var98 = Trig1.field4270[arg2];
+									int var99 = Trig1.field4272[arg2];
 									int var100 = this.field9637[var94] * var99 - this.field9619[var94] * var98 + 16383 >> 14;
 									this.field9619[var94] = this.field9637[var94] * var98 + this.field9619[var94] * var99 + 16383 >> 14;
 									this.field9637[var94] = var100;
 								}
 								if (arg3 != 0) {
-									int var101 = class417.field4270[arg3];
-									int var102 = class417.field4272[arg3];
+									int var101 = Trig1.field4270[arg3];
+									int var102 = Trig1.field4272[arg3];
 									int var103 = this.field9636[var94] * var102 + this.field9619[var94] * var101 + 16383 >> 14;
 									this.field9619[var94] = this.field9619[var94] * var102 - this.field9636[var94] * var101 + 16383 >> 14;
 									this.field9636[var94] = var103;
@@ -2072,22 +2072,22 @@ public class LegacyOpenGLModel extends Model {
 									for (int var111 = var109; var111 < var110 && this.field9680[var111] != 0; var111++) {
 										int var112 = (this.field9680[var111] & 0xFFFF) - 1;
 										if (arg4 != 0) {
-											int var113 = class417.field4270[arg4];
-											int var114 = class417.field4272[arg4];
+											int var113 = Trig1.field4270[arg4];
+											int var114 = Trig1.field4272[arg4];
 											int var115 = this.field9682[var112] * var113 + this.field9681[var112] * var114 + 16383 >> 14;
 											this.field9682[var112] = (short) (this.field9682[var112] * var114 - this.field9681[var112] * var113 + 16383 >> 14);
 											this.field9681[var112] = (short) var115;
 										}
 										if (arg2 != 0) {
-											int var116 = class417.field4270[arg2];
-											int var117 = class417.field4272[arg2];
+											int var116 = Trig1.field4270[arg2];
+											int var117 = Trig1.field4272[arg2];
 											int var118 = this.field9682[var112] * var117 - this.field9644[var112] * var116 + 16383 >> 14;
 											this.field9644[var112] = (short) (this.field9682[var112] * var116 + this.field9644[var112] * var117 + 16383 >> 14);
 											this.field9682[var112] = (short) var118;
 										}
 										if (arg3 != 0) {
-											int var119 = class417.field4270[arg3];
-											int var120 = class417.field4272[arg3];
+											int var119 = Trig1.field4270[arg3];
+											int var120 = Trig1.field4272[arg3];
 											int var121 = this.field9681[var112] * var120 + this.field9644[var112] * var119 + 16383 >> 14;
 											this.field9644[var112] = (short) (this.field9644[var112] * var120 - this.field9681[var112] * var119 + 16383 >> 14);
 											this.field9681[var112] = (short) var121;
@@ -2124,12 +2124,12 @@ public class LegacyOpenGLModel extends Model {
 					Statics.field9695 = false;
 				}
 				int[] var42 = new int[9];
-				int var43 = class417.field4272[arg2];
-				int var44 = class417.field4270[arg2];
-				int var45 = class417.field4272[arg3];
-				int var46 = class417.field4270[arg3];
-				int var47 = class417.field4272[arg4];
-				int var48 = class417.field4270[arg4];
+				int var43 = Trig1.field4272[arg2];
+				int var44 = Trig1.field4270[arg2];
+				int var45 = Trig1.field4272[arg3];
+				int var46 = Trig1.field4270[arg3];
+				int var47 = Trig1.field4272[arg4];
+				int var48 = Trig1.field4270[arg4];
 				int var49 = var44 * var47 + 8192 >> 14;
 				int var50 = var44 * var48 + 8192 >> 14;
 				var42[0] = var45 * var47 + var46 * var50 + 8192 >> 14;
@@ -2443,22 +2443,22 @@ public class LegacyOpenGLModel extends Model {
 				this.field9637[var8] -= Statics.field9693;
 				this.field9619[var8] -= Statics.field9694;
 				if (arg3 != 0) {
-					int var9 = class417.field4270[arg3];
-					int var10 = class417.field4272[arg3];
+					int var9 = Trig1.field4270[arg3];
+					int var10 = Trig1.field4272[arg3];
 					int var11 = this.field9637[var8] * var9 + this.field9636[var8] * var10 + 16383 >> 14;
 					this.field9637[var8] = this.field9637[var8] * var10 - this.field9636[var8] * var9 + 16383 >> 14;
 					this.field9636[var8] = var11;
 				}
 				if (arg1 != 0) {
-					int var12 = class417.field4270[arg1];
-					int var13 = class417.field4272[arg1];
+					int var12 = Trig1.field4270[arg1];
+					int var13 = Trig1.field4272[arg1];
 					int var14 = this.field9637[var8] * var13 - this.field9619[var8] * var12 + 16383 >> 14;
 					this.field9619[var8] = this.field9637[var8] * var12 + this.field9619[var8] * var13 + 16383 >> 14;
 					this.field9637[var8] = var14;
 				}
 				if (arg2 != 0) {
-					int var15 = class417.field4270[arg2];
-					int var16 = class417.field4272[arg2];
+					int var15 = Trig1.field4270[arg2];
+					int var16 = Trig1.field4272[arg2];
 					int var17 = this.field9636[var8] * var16 + this.field9619[var8] * var15 + 16383 >> 14;
 					this.field9619[var8] = this.field9619[var8] * var16 - this.field9636[var8] * var15 + 16383 >> 14;
 					this.field9636[var8] = var17;
@@ -2611,22 +2611,22 @@ public class LegacyOpenGLModel extends Model {
 							this.field9637[var30] -= Statics.field9693;
 							this.field9619[var30] -= Statics.field9694;
 							if (arg4 != 0) {
-								int var31 = class417.field4270[arg4];
-								int var32 = class417.field4272[arg4];
+								int var31 = Trig1.field4270[arg4];
+								int var32 = Trig1.field4272[arg4];
 								int var33 = this.field9637[var30] * var31 + this.field9636[var30] * var32 + 16383 >> 14;
 								this.field9637[var30] = this.field9637[var30] * var32 - this.field9636[var30] * var31 + 16383 >> 14;
 								this.field9636[var30] = var33;
 							}
 							if (arg2 != 0) {
-								int var34 = class417.field4270[arg2];
-								int var35 = class417.field4272[arg2];
+								int var34 = Trig1.field4270[arg2];
+								int var35 = Trig1.field4272[arg2];
 								int var36 = this.field9637[var30] * var35 - this.field9619[var30] * var34 + 16383 >> 14;
 								this.field9619[var30] = this.field9637[var30] * var34 + this.field9619[var30] * var35 + 16383 >> 14;
 								this.field9637[var30] = var36;
 							}
 							if (arg3 != 0) {
-								int var37 = class417.field4270[arg3];
-								int var38 = class417.field4272[arg3];
+								int var37 = Trig1.field4270[arg3];
+								int var38 = Trig1.field4272[arg3];
 								int var39 = this.field9636[var30] * var38 + this.field9619[var30] * var37 + 16383 >> 14;
 								this.field9619[var30] = this.field9619[var30] * var38 - this.field9636[var30] * var37 + 16383 >> 14;
 								this.field9636[var30] = var39;
@@ -2642,22 +2642,22 @@ public class LegacyOpenGLModel extends Model {
 							this.field9637[var41] -= Statics.field9693;
 							this.field9619[var41] -= Statics.field9694;
 							if (arg2 != 0) {
-								int var42 = class417.field4270[arg2];
-								int var43 = class417.field4272[arg2];
+								int var42 = Trig1.field4270[arg2];
+								int var43 = Trig1.field4272[arg2];
 								int var44 = this.field9637[var41] * var43 - this.field9619[var41] * var42 + 16383 >> 14;
 								this.field9619[var41] = this.field9637[var41] * var42 + this.field9619[var41] * var43 + 16383 >> 14;
 								this.field9637[var41] = var44;
 							}
 							if (arg4 != 0) {
-								int var45 = class417.field4270[arg4];
-								int var46 = class417.field4272[arg4];
+								int var45 = Trig1.field4270[arg4];
+								int var46 = Trig1.field4272[arg4];
 								int var47 = this.field9637[var41] * var45 + this.field9636[var41] * var46 + 16383 >> 14;
 								this.field9637[var41] = this.field9637[var41] * var46 - this.field9636[var41] * var45 + 16383 >> 14;
 								this.field9636[var41] = var47;
 							}
 							if (arg3 != 0) {
-								int var48 = class417.field4270[arg3];
-								int var49 = class417.field4272[arg3];
+								int var48 = Trig1.field4270[arg3];
+								int var49 = Trig1.field4272[arg3];
 								int var50 = this.field9636[var41] * var49 + this.field9619[var41] * var48 + 16383 >> 14;
 								this.field9619[var41] = this.field9619[var41] * var49 - this.field9636[var41] * var48 + 16383 >> 14;
 								this.field9636[var41] = var50;
@@ -2681,22 +2681,22 @@ public class LegacyOpenGLModel extends Model {
 							for (int var58 = var56; var58 < var57 && this.field9680[var58] != 0; var58++) {
 								int var59 = (this.field9680[var58] & 0xFFFF) - 1;
 								if (arg4 != 0) {
-									int var60 = class417.field4270[arg4];
-									int var61 = class417.field4272[arg4];
+									int var60 = Trig1.field4270[arg4];
+									int var61 = Trig1.field4272[arg4];
 									int var62 = this.field9682[var59] * var60 + this.field9681[var59] * var61 + 16383 >> 14;
 									this.field9682[var59] = (short) (this.field9682[var59] * var61 - this.field9681[var59] * var60 + 16383 >> 14);
 									this.field9681[var59] = (short) var62;
 								}
 								if (arg2 != 0) {
-									int var63 = class417.field4270[arg2];
-									int var64 = class417.field4272[arg2];
+									int var63 = Trig1.field4270[arg2];
+									int var64 = Trig1.field4272[arg2];
 									int var65 = this.field9682[var59] * var64 - this.field9644[var59] * var63 + 16383 >> 14;
 									this.field9644[var59] = (short) (this.field9682[var59] * var63 + this.field9644[var59] * var64 + 16383 >> 14);
 									this.field9682[var59] = (short) var65;
 								}
 								if (arg3 != 0) {
-									int var66 = class417.field4270[arg3];
-									int var67 = class417.field4272[arg3];
+									int var66 = Trig1.field4270[arg3];
+									int var67 = Trig1.field4272[arg3];
 									int var68 = this.field9681[var59] * var67 + this.field9644[var59] * var66 + 16383 >> 14;
 									this.field9644[var59] = (short) (this.field9644[var59] * var67 - this.field9681[var59] * var66 + 16383 >> 14);
 									this.field9681[var59] = (short) var68;

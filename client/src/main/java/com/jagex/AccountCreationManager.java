@@ -21,7 +21,7 @@ public class AccountCreationManager {
 	@ObfuscatedName("dk.e(I)V")
 	public static void method2009() {
 		if (client.state == 4 && (!LoginManager.method2865() && !method9610())) {
-			client.method6972(12);
+			client.setState(12);
 		}
 	}
 
@@ -243,7 +243,7 @@ public class AccountCreationManager {
 					client.field10835.field809 = new IsaacRandom(var5);
 					new IsaacRandom(var5);
 					client.field10835.field795.method19566(client.field10835.field809);
-					client.method6972(0);
+					client.setState(0);
 					client.field10835.method952();
 					client.field10835.field795.pos = 0;
 					client.field10835.field790 = null;

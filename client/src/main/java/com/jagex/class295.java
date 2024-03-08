@@ -37,7 +37,7 @@ public abstract class class295 implements class302 {
 		this.method5121(arg0, var2, var3);
 		this.method5122(arg0, var2, var3);
 		String var4 = Statics.field593.method4852();
-		if (class213.method3655() - this.field3031 > 10000L) {
+		if (MonotonicTime.method3655() - this.field3031 > 10000L) {
 			var4 = var4 + " (" + Statics.field593.method4855().field2920 + ")";
 		}
 		this.field3029.method2683(var4, this.field3027.field3163 / 2 + var2, this.field3027.field3165 + this.field3027.field3160 / 2 + var3 + 4, this.field3027.field3164, -1);
@@ -45,7 +45,7 @@ public abstract class class295 implements class302 {
 
 	@ObfuscatedName("kz.e(I)V")
 	public void method5104() {
-		class733 var1 = class733.method10677(this.field3026, this.field3027.field3166, Statics.field7538);
+		FontMetrics var1 = FontMetrics.method10677(this.field3026, this.field3027.field3166, Statics.field7538);
 		this.field3029 = Statics.field8198.method2207(var1, class111.method1607(this.field3028, this.field3027.field3166), true);
 	}
 
@@ -71,7 +71,7 @@ public abstract class class295 implements class302 {
 				long var4 = this.field3031 - Statics.field593.method4872();
 				if (var4 > 0L) {
 					long var6 = var4 * 10000L / (long) var1 * (long) (var3 - var1);
-					long var8 = (class213.method3655() - this.field3031) * 10000L;
+					long var8 = (MonotonicTime.method3655() - this.field3031) * 10000L;
 					if (var8 < var6) {
 						var2 = (int) ((long) (var3 - var1) * var8 * 100L / var6 + (long) (var1 * 100));
 					} else {
@@ -81,7 +81,7 @@ public abstract class class295 implements class302 {
 			}
 		} else {
 			this.field3030 = var1;
-			this.field3031 = class213.method3655();
+			this.field3031 = MonotonicTime.method3655();
 		}
 		return var2;
 	}

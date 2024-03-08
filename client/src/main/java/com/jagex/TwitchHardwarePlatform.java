@@ -128,8 +128,8 @@ public class TwitchHardwarePlatform {
 			return -1;
 		} else if (field7388 == 0) {
 			if (field7390 == null) {
-				if (class498.field5074.startsWith("mac ")) {
-					if (class498.field5076.startsWith("ppc")) {
+				if (NativeLibraryConfig.field5074.startsWith("mac ")) {
+					if (NativeLibraryConfig.field5076.startsWith("ppc")) {
 						field7388 = 3;
 						return -1;
 					}
@@ -141,16 +141,16 @@ public class TwitchHardwarePlatform {
 					field7371[0] = false;
 					field7371[1] = false;
 					field7371[2] = true;
-				} else if (class498.field5074.startsWith("win")) {
+				} else if (NativeLibraryConfig.field5074.startsWith("win")) {
 					field7390 = new String[6];
 					field7390[0] = "avutil-ttv-51";
 					field7390[1] = "libmp3lame-ttv";
 					field7390[2] = "swresample-ttv-0";
 					field7390[5] = "twitchtv";
-					if (class498.field5076.startsWith("amd64") || class498.field5076.startsWith("x86_64")) {
+					if (NativeLibraryConfig.field5076.startsWith("amd64") || NativeLibraryConfig.field5076.startsWith("x86_64")) {
 						field7390[3] = "libmfxsw64";
 						field7390[4] = "twitchsdk_64_release";
-					} else if (class498.field5076.startsWith("i386") || class498.field5076.startsWith("i486") || class498.field5076.startsWith("i586") || class498.field5076.startsWith("x86")) {
+					} else if (NativeLibraryConfig.field5076.startsWith("i386") || NativeLibraryConfig.field5076.startsWith("i486") || NativeLibraryConfig.field5076.startsWith("i586") || NativeLibraryConfig.field5076.startsWith("x86")) {
 						field7390[3] = "libmfxsw32";
 						field7390[4] = "twitchsdk_32_release";
 					} else {
@@ -239,7 +239,7 @@ public class TwitchHardwarePlatform {
 		if (arg1 != 0 && (arg1 < 50 || arg1 > 100)) {
 			arg1 = 0;
 		}
-		boolean var4 = class498.field5074.startsWith("mac");
+		boolean var4 = NativeLibraryConfig.field5074.startsWith("mac");
 		int[] var5 = Statics.field11755.GetRecommendedSettings(Statics.field6586, Statics.field6600, arg0, 2000, arg2, field7375, var4);
 		if (var5[0] != 0) {
 			return var5[0];
@@ -305,7 +305,7 @@ public class TwitchHardwarePlatform {
 
 	@ObfuscatedName("iy.g(B)Z")
 	public static boolean method4595() {
-		return class498.field5074.startsWith("win");
+		return NativeLibraryConfig.field5074.startsWith("win");
 	}
 
 	@ObfuscatedName("y.i(I)I")
@@ -595,7 +595,7 @@ public class TwitchHardwarePlatform {
 
 	@ObfuscatedName("lv.aj(I)Z")
 	public static boolean method5399() {
-		if (class498.field5074.startsWith("win")) {
+		if (NativeLibraryConfig.field5074.startsWith("win")) {
 			String var0 = "msvcr110.dll";
 			String var1 = "msvcp110.dll";
 			String[] var2 = new String[] { var0, var1 };
@@ -610,7 +610,7 @@ public class TwitchHardwarePlatform {
 				}
 			}
 			return true;
-		} else if (class498.field5074.startsWith("mac")) {
+		} else if (NativeLibraryConfig.field5074.startsWith("mac")) {
 			try {
 				Process var6 = Runtime.getRuntime().exec("ps -few");
 				BufferedReader var7 = new BufferedReader(new InputStreamReader(var6.getInputStream()));

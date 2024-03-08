@@ -64,8 +64,8 @@ public final class class887 extends Program {
 		if (this.field10357) {
 			return true;
 		}
-		this.field10367 = this.field10362 == null ? 0L : IDirect3DDevice.CreateVertexShader(this.field10365.field11978, this.field10362);
-		this.field10360 = this.field10358 == null ? 0L : IDirect3DDevice.CreatePixelShader(this.field10365.field11978, this.field10358);
+		this.field10367 = this.field10362 == null ? 0L : IDirect3DDevice.CreateVertexShader(this.field10365.device, this.field10362);
+		this.field10360 = this.field10358 == null ? 0L : IDirect3DDevice.CreatePixelShader(this.field10365.device, this.field10358);
 		if (this.field10367 == 0L && this.field10360 == 0L) {
 			return false;
 		}
@@ -360,13 +360,13 @@ public final class class887 extends Program {
 		if (this.field10359[0]) {
 			this.field10365.field10071.clear();
 			this.field10365.field10071.asFloatBuffer().put(this.field10366[0]);
-			IDirect3DDevice.SetVertexShaderConstantF(this.field10365.field11978, 0, this.field10365.field10046, this.field10366[0].length / 4);
+			IDirect3DDevice.SetVertexShaderConstantF(this.field10365.device, 0, this.field10365.field10046, this.field10366[0].length / 4);
 			this.field10359[0] = false;
 		}
 		if (this.field10359[1]) {
 			this.field10365.field10071.clear();
 			this.field10365.field10071.asFloatBuffer().put(this.field10366[1]);
-			IDirect3DDevice.SetPixelShaderConstantF(this.field10365.field11978, 0, this.field10365.field10046, this.field10366[1].length / 4);
+			IDirect3DDevice.SetPixelShaderConstantF(this.field10365.device, 0, this.field10365.field10046, this.field10366[1].length / 4);
 			this.field10359[1] = false;
 		}
 	}

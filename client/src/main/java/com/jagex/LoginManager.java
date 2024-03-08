@@ -133,7 +133,7 @@ public class LoginManager {
 		field481 = arg1;
 		field429 = arg2;
 		field473 = arg3;
-		client.method6972(7);
+		client.setState(7);
 	}
 
 	@ObfuscatedName("df.z(ILjava/lang/String;ZI)V")
@@ -147,7 +147,7 @@ public class LoginManager {
 		field472 = arg0;
 		field429 = arg1;
 		field473 = arg2;
-		client.method6972(7);
+		client.setState(7);
 	}
 
 	@ObfuscatedName("amr.p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZI)V")
@@ -161,7 +161,7 @@ public class LoginManager {
 		field481 = arg1;
 		field429 = arg2;
 		field473 = arg3;
-		client.method6972(17);
+		client.setState(17);
 	}
 
 	@ObfuscatedName("aji.d(ILjava/lang/String;ZS)V")
@@ -176,7 +176,7 @@ public class LoginManager {
 		field429 = arg1;
 		field473 = arg2;
 		client.field10835.method938();
-		client.method6972(17);
+		client.setState(17);
 	}
 
 	@ObfuscatedName("dt.c(Ljava/lang/String;ZI)V")
@@ -184,7 +184,7 @@ public class LoginManager {
 		if (client.state == 13 && (!method2865() && !AccountCreationManager.method9610())) {
 			field429 = arg0;
 			field473 = arg1;
-			client.method6972(15);
+			client.setState(15);
 		}
 	}
 
@@ -775,7 +775,7 @@ public class LoginManager {
 					Statics.field7406 = var36.g3s();
 					client.field10948 = var36.g1() == 1;
 					Statics.field10250 = var36.gjstr();
-					Statics.field1238 = var36.g6() - class213.method3655();
+					Statics.field1238 = var36.g6() - MonotonicTime.method3655();
 					client.world.method7750().method18890(client.field10948);
 					Statics.field3183.method7677().method7750().method18890(client.field10948);
 					Statics.field1842.method18901(client.field10948);
@@ -792,7 +792,7 @@ public class LoginManager {
 					client.field11081 = var36.g1() == 1;
 					client.field10953 = var36.g1() == 1;
 					Statics.field8322 = var36.g8();
-					Statics.field1238 = Statics.field8322 - class213.method3655() - var36.g5();
+					Statics.field1238 = Statics.field8322 - MonotonicTime.method3655() - var36.g5();
 					int var37 = var36.g1();
 					client.field11006 = (var37 & 0x1) != 0;
 					Statics.field11709 = (var37 & 0x2) != 0;
@@ -849,7 +849,7 @@ public class LoginManager {
 					field445 = 7;
 					method669(2);
 					method10282();
-					client.method6972(13);
+					client.setState(13);
 					Statics.field432.field796 = null;
 					return;
 				}
@@ -1052,14 +1052,14 @@ public class LoginManager {
 	public static void method10367() {
 		if (client.method14437(client.state)) {
 			if (client.field10835.method939() == null) {
-				client.method6972(17);
+				client.setState(17);
 			} else {
-				client.method6972(13);
+				client.setState(13);
 			}
 		} else if (client.state == 17 || client.state == 7) {
-			client.method6972(4);
+			client.setState(4);
 		} else if (client.state == 9) {
-			client.method6972(4);
+			client.setState(4);
 		}
 	}
 

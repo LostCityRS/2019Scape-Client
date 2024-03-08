@@ -9,12 +9,12 @@ public class class335 {
 	public final GpuRenderer field3269;
 
 	@ObfuscatedName("lu.n")
-	public final class143 field3268;
+	public final TextureList field3268;
 
 	@ObfuscatedName("lu.m")
 	public WeightedCache field3267 = new WeightedCache(10485760, 256);
 
-	public class335(GpuRenderer arg0, class143 arg1) {
+	public class335(GpuRenderer arg0, TextureList arg1) {
 		this.field3269 = arg0;
 		this.field3268 = arg1;
 	}

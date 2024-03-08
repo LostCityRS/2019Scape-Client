@@ -129,7 +129,7 @@ public abstract class Model {
 	}
 
 	@ObfuscatedName("do.f(Ldq;[II)Lee;")
-	public class142 method1687(class120 arg0, int[] arg1, int arg2) {
+	public class142 method1687(ModelUnlit arg0, int[] arg1, int arg2) {
 		int[] var4 = null;
 		int[] var5 = null;
 		int[] var6 = null;

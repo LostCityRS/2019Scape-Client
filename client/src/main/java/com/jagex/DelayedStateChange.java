@@ -63,7 +63,7 @@ public class DelayedStateChange extends SecondaryNode {
 			if (var1 == null) {
 				return null;
 			}
-			if (var1.method19345() > class213.method3655()) {
+			if (var1.method19345() > MonotonicTime.method3655()) {
 				return null;
 			}
 			var1.method8440();
@@ -335,7 +335,7 @@ public class DelayedStateChange extends SecondaryNode {
 
 	@ObfuscatedName("ars.aa(I)V")
 	public void method19333() {
-		this.field11440 = this.field11440 & Long.MIN_VALUE | class213.method3655() + 500L;
+		this.field11440 = this.field11440 & Long.MIN_VALUE | MonotonicTime.method3655() + 500L;
 		field12290.method14339(this);
 	}
 

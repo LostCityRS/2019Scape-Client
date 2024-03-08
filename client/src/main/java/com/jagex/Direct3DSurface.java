@@ -58,14 +58,14 @@ public class Direct3DSurface extends GpuSurface implements class406 {
 			this.field10709.BackBufferWidth = this.field10714;
 			this.field10709.BackBufferHeight = this.field10718;
 			if (this.field10717) {
-				this.field10711 = IDirect3DDevice.GetSwapChain(this.field10716.field11978, 0);
+				this.field10711 = IDirect3DDevice.GetSwapChain(this.field10716.device, 0);
 				this.field10713 = IDirect3DSwapChain.GetBackBuffer(this.field10711, 0, 0);
-				this.field10712 = IDirect3DDevice.GetDepthStencilSurface(this.field10716.field11978);
+				this.field10712 = IDirect3DDevice.GetDepthStencilSurface(this.field10716.device);
 			} else if (Direct3DRenderer.method19016(this.field10716.field11956, this.field10716.field11954, this.field10716.field11955, this.field10716.field10180, this.field10716.field11958, this.field10709)) {
 				int var1 = this.field10709.AutoDepthStencilFormat;
-				this.field10711 = IDirect3DDevice.CreateAdditionalSwapChain(this.field10716.field11978, this.field10709);
+				this.field10711 = IDirect3DDevice.CreateAdditionalSwapChain(this.field10716.device, this.field10709);
 				this.field10713 = IDirect3DSwapChain.GetBackBuffer(this.field10711, 0, 0);
-				this.field10712 = IDirect3DDevice.CreateDepthStencilSurface(this.field10716.field11978, this.field10714, this.field10718, var1, this.field10709.MultiSampleType, this.field10709.MultiSampleQuality, false);
+				this.field10712 = IDirect3DDevice.CreateDepthStencilSurface(this.field10716.device, this.field10714, this.field10718, var1, this.field10709.MultiSampleType, this.field10709.MultiSampleQuality, false);
 			} else {
 				throw new RuntimeException();
 			}
@@ -95,9 +95,9 @@ public class Direct3DSurface extends GpuSurface implements class406 {
 			}
 			this.method6220();
 		}
-		if (class0.method34(IDirect3DDevice.SetRenderTarget(this.field10716.field11978, 0, this.field10713))) {
+		if (class0.method34(IDirect3DDevice.SetRenderTarget(this.field10716.device, 0, this.field10713))) {
 			return false;
-		} else if (class0.method34(IDirect3DDevice.SetDepthStencilSurface(this.field10716.field11978, this.field10712))) {
+		} else if (class0.method34(IDirect3DDevice.SetDepthStencilSurface(this.field10716.device, this.field10712))) {
 			return false;
 		} else {
 			return super.method1630();
@@ -107,7 +107,7 @@ public class Direct3DSurface extends GpuSurface implements class406 {
 	@ObfuscatedName("aic.f()Z")
 	public boolean method1631() {
 		this.field10715 = false;
-		return class0.method35(IDirect3DDevice.SetDepthStencilSurface(this.field10716.field11978, 0L));
+		return class0.method35(IDirect3DDevice.SetDepthStencilSurface(this.field10716.device, 0L));
 	}
 
 	@ObfuscatedName("aic.a()I")

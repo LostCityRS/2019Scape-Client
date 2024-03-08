@@ -18,7 +18,7 @@ public class class894 extends class282 {
 	public Font field10467;
 
 	@ObfuscatedName("ahj.f")
-	public FontMetrics field10468;
+	public java.awt.FontMetrics field10468;
 
 	@ObfuscatedName("ahj.w")
 	public Color field10466;

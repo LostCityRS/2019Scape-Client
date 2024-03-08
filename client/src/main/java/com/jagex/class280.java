@@ -28,7 +28,7 @@ public class class280 {
 		LoadableResourceManager.method3670();
 		Statics.field2938 = null;
 		Statics.field1833 = null;
-		client.method6972(5);
+		client.setState(5);
 	}
 
 	@ObfuscatedName("nt.n(B)Z")
@@ -41,7 +41,7 @@ public class class280 {
 		if (Statics.field2938 == null) {
 			Statics.field2938 = class277.method4920();
 			Statics.field3419 = Statics.field2938[0];
-			Statics.field7966 = class213.method3655();
+			Statics.field7966 = MonotonicTime.method3655();
 		}
 		if (Statics.field593 == null) {
 			method254();
@@ -59,7 +59,7 @@ public class class280 {
 			}
 		} else if (Statics.field3419 == class277.field2919) {
 			Statics.field593 = null;
-			client.method6972(4);
+			client.setState(4);
 			if (field2944) {
 				field2944 = false;
 				LoginManager.method665(Statics.field8535, Statics.field4407, "", false);
@@ -72,7 +72,7 @@ public class class280 {
 			}
 			Statics.field9130 = var0.field2924;
 			if (Statics.field3419.field2926 || var0.field2926) {
-				Statics.field7966 = class213.method3655();
+				Statics.field7966 = MonotonicTime.method3655();
 			}
 		}
 		if (Statics.field593 == null) {
@@ -182,9 +182,9 @@ public class class280 {
 			if (var7 != 500) {
 				return var7 / 5;
 			}
-			Statics.field11389 = new class629(Statics.field1587);
-			Statics.field7921 = new class623(Statics.field1587);
-			class14.method3470(Statics.field11389);
+			Statics.field11389 = new GraphicsDefaults(Statics.field1587);
+			Statics.field7921 = new TitleDefaults(Statics.field1587);
+			DefaultSprites.method3470(Statics.field11389);
 			int var8 = Statics.field688.field11559.method18714();
 			Statics.field2841 = new class797(client.field10768, Statics.field1680, Statics.field8532);
 			class799[] var9 = Statics.field2841.method15218(var8);
@@ -200,7 +200,7 @@ public class class280 {
 			}
 		}
 		if (Statics.field3419 == class277.field2904) {
-			Statics.field7538 = new class402(Statics.field8198, Statics.field8522, Statics.field7672, class14.method845());
+			Statics.field7538 = new class402(Statics.field8198, Statics.field8522, Statics.field7672, DefaultSprites.method845());
 		}
 		if (Statics.field3419 == class277.field2905) {
 			int var12 = Statics.field7538.method6179();
@@ -219,8 +219,8 @@ public class class280 {
 				}
 			}
 			Statics.field7538.method6157(client.field10833);
-			class14.method7114(Statics.field8198);
-			client.method6972(11);
+			DefaultSprites.method7114(Statics.field8198);
+			client.setState(11);
 		}
 		if (Statics.field3419 == class277.field2907) {
 			Statics.field10317 = client.method5156(Js5Archive.SPRITES, false, 1, false, true);
@@ -273,18 +273,18 @@ public class class280 {
 				}
 				return (var14 - field2945) * 100 / (100 - field2945);
 			}
-			class14.method16430(Statics.field11389);
-			Statics.field7538 = new class402(Statics.field8198, Statics.field10317, Statics.field7672, class14.method845());
+			DefaultSprites.method16430(Statics.field11389);
+			Statics.field7538 = new class402(Statics.field8198, Statics.field10317, Statics.field7672, DefaultSprites.method845());
 		}
 		if (Statics.field3419 == class277.field2909) {
-			byte[] var17 = Statics.field1587.method6894(class628.field7705.field7708);
+			byte[] var17 = Statics.field1587.method6894(DefaultsGroup.field7705.field7708);
 			if (var17 == null) {
 				return 0;
 			}
 			Statics.field1798 = new AudioApi();
 			Statics.field1798.method3148(50, 7340032);
 			method714(var17);
-			client.method6972(1);
+			client.setState(1);
 		}
 		if (Statics.field3419 == class277.field2910 && Statics.field10577 == null) {
 			Statics.field10577 = new HardwarePlatformLoader(Statics.field7060);
@@ -295,7 +295,7 @@ public class class280 {
 			if (var18 < 100) {
 				return var18;
 			}
-			Statics.method987(Statics.field1587.method6894(class628.field7701.field7708));
+			Statics.method987(Statics.field1587.method6894(DefaultsGroup.field7701.field7708));
 			Statics.field7577 = Statics.field11389.field7731;
 			Statics.field1434 = Statics.field11389.field7729;
 			Statics.field10766 = Statics.field11389.field7714;
@@ -304,11 +304,11 @@ public class class280 {
 				client.field10941 = Statics.field11389.field7739;
 				client.field10942 = Statics.field11389.field7740;
 			}
-			Statics.field1709 = new class631(Statics.field1587);
+			Statics.field1709 = new WearposDefaults(Statics.field1587);
 			Statics.field2767 = new SkillDefaults(Statics.field1587);
-			Statics.field1971 = new class622(Statics.field1587);
-			Statics.field2775 = new class625(Statics.field1587);
-			Statics.field6792 = new class626(Statics.field1587);
+			Statics.field1971 = new MiniMenuDefaults(Statics.field1587);
+			Statics.field2775 = new CutsceneDefaults(Statics.field1587);
+			Statics.field6792 = new WorldMapDefaults(Statics.field1587);
 		}
 		if (Statics.field3419 == class277.field2912) {
 			if (Statics.field11389.field7738 != -1 && !Statics.field9213.method6888(Statics.field11389.field7738, 0)) {
@@ -370,7 +370,7 @@ public class class280 {
 			Statics.field10581 = new HardwarePlatform(true);
 		}
 		if (Statics.field3419 == class277.field2918) {
-			int var20 = class14.method15381(Statics.field10317) + Statics.field7538.method6191(true);
+			int var20 = DefaultSprites.method15381(Statics.field10317) + Statics.field7538.method6191(true);
 			int var21 = Statics.method14611() + Statics.field7538.method6161();
 			if (var20 < var21) {
 				return var20 * 100 / var21;
@@ -445,8 +445,8 @@ public class class280 {
 			}
 			client.setWindowMode(Statics.field688.field11542.method18539(), -1, -1, false);
 			Statics.field7538.method6157(client.field10833);
-			class14.method7114(Statics.field8198);
-			class14.method5202(Statics.field8198, Statics.field10317);
+			DefaultSprites.method7114(Statics.field8198);
+			DefaultSprites.method5202(Statics.field8198, Statics.field10317);
 		}
 		return method3584();
 	}

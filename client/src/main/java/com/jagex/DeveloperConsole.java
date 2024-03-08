@@ -111,7 +111,7 @@ public class DeveloperConsole {
 				method4285("Pausing for " + var2 + " seconds...");
 				Statics.field2615 = arg0;
 				field772 = var1 + 1;
-				Statics.field765 = class213.method3655() + (long) (var2 * 1000);
+				Statics.field765 = MonotonicTime.method3655() + (long) (var2 * 1000);
 				return;
 			}
 			field766 = arg0[var1];
@@ -166,7 +166,7 @@ public class DeveloperConsole {
 		if (Statics.field4845 == null) {
 			method8025();
 		}
-		client.field11088.setTime(new Date(class213.method3655()));
+		client.field11088.setTime(new Date(MonotonicTime.method3655()));
 		int var1 = client.field11088.get(11);
 		int var2 = client.field11088.get(12);
 		int var3 = client.field11088.get(13);
@@ -432,9 +432,9 @@ public class DeveloperConsole {
 					return;
 				}
 				if (arg0.equalsIgnoreCase("breakcon")) {
-					class49[] var15 = client.field10850;
+					ServerConnection[] var15 = client.field10850;
 					for (int var16 = 0; var16 < var15.length; var16++) {
-						class49 var17 = var15[var16];
+						ServerConnection var17 = var15[var16];
 						if (var17.method939() != null) {
 							var17.method939().method9032();
 						}
@@ -472,7 +472,7 @@ public class DeveloperConsole {
 				if (arg0.startsWith("setoutput ")) {
 					File var24 = new File(arg0.substring(10));
 					if (var24.exists()) {
-						var24 = new File(arg0.substring(10) + "." + class213.method3655() + ".log");
+						var24 = new File(arg0.substring(10) + "." + MonotonicTime.method3655() + ".log");
 						if (var24.exists()) {
 							method4285("file already exists!");
 							return;
@@ -515,7 +515,7 @@ public class DeveloperConsole {
 					method15383(var29);
 				}
 				if (client.state == 18 || client.state == 13) {
-					class49 var30 = client.method640();
+					ServerConnection var30 = client.method640();
 					ClientMessage var31 = Statics.method1604(ClientProt.CLIENT_CHEAT, var30.field794);
 					var31.field11432.p1(arg0.length() + 3);
 					var31.field11432.p1(arg1 ? 1 : 0);
@@ -593,7 +593,7 @@ public class DeveloperConsole {
 				} else if (arg0 == 4) {
 					method10153();
 				} else if (arg0 == 17) {
-					client.world.field5056 = class213.method3655();
+					client.world.field5056 = MonotonicTime.method3655();
 					client.world.field5037 = true;
 					method10153();
 				} else if (arg0 == 19) {

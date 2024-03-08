@@ -96,7 +96,7 @@ public class class278 implements class281 {
 
 	@ObfuscatedName("jr.z(J)Z")
 	public boolean method4894(long arg0) {
-		return class213.method3655() >= (long) this.field2931 + arg0;
+		return MonotonicTime.method3655() >= (long) this.field2931 + arg0;
 	}
 
 	@ObfuscatedName("cz.n(Lpy;IB)Lcm;")

@@ -68,9 +68,9 @@ public final class Matrix4x4 {
 			return;
 		}
 		Matrix4x3 var3 = new Matrix4x3();
-		var3.method6304(class417.method6277(arg0.g2s()));
-		var3.method6305(class417.method6277(arg0.g2s()));
-		var3.method6306(class417.method6277(arg0.g2s()));
+		var3.method6304(Trig1.method6277(arg0.g2s()));
+		var3.method6305(Trig1.method6277(arg0.g2s()));
+		var3.method6306(Trig1.method6277(arg0.g2s()));
 		var3.method6315((float) arg0.g2s(), (float) arg0.g2s(), (float) arg0.g2s());
 		this.method6609(var3);
 	}

@@ -13,7 +13,7 @@ public class Direct3DRendererFactory {
 	}
 
 	@ObfuscatedName("oa.e(Ljava/awt/Canvas;Ldf;Les;Lnx;Lnb;Lnp;Lpy;I)Ldh;")
-	public static Renderer method6218(Canvas arg0, MaterialList arg1, class143 arg2, BillboardTypeList arg3, class381 arg4, class378 arg5, Js5 arg6, int arg7) {
+	public static Renderer method6218(Canvas arg0, MaterialList arg1, TextureList arg2, BillboardTypeList arg3, ParticleEmitterTypeList arg4, ParticleEffectorTypeList arg5, Js5 arg6, int arg7) {
 		try {
 			GpuRenderer.method15968();
 			Statics.method5134().method7902("jagdx");

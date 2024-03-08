@@ -88,7 +88,7 @@ public class class42 {
 	@ObfuscatedName("aih.w(Ldh;B)V")
 	public static void method16903(Renderer arg0) {
 		if (field722 != Statics.field4490.field11717 && client.world.method7743() != null) {
-			class213.method3655();
+			MonotonicTime.method3655();
 			if (method14493(arg0, Statics.field4490.field11717)) {
 				field722 = Statics.field4490.field11717;
 			}
@@ -98,7 +98,7 @@ public class class42 {
 	@ObfuscatedName("aaz.l(Ldh;IB)Z")
 	public static boolean method14493(Renderer arg0, int arg1) {
 		arg0.method2202();
-		class213.method3655();
+		MonotonicTime.method3655();
 		if (!arg0.method2215()) {
 			return false;
 		}
@@ -683,8 +683,8 @@ public class class42 {
 		if (var13 > var12 * var12) {
 			return;
 		}
-		int var14 = class417.field4270[var11];
-		int var15 = class417.field4272[var11];
+		int var14 = Trig1.field4270[var11];
+		int var15 = Trig1.field4272[var11];
 		if (Statics.field3416 != 4) {
 			var14 = var14 * 256 / (client.field10887 + 256);
 			var15 = var15 * 256 / (client.field10887 + 256);
@@ -725,7 +725,7 @@ public class class42 {
 	}
 
 	@ObfuscatedName("gd.a(Lhf;Lch;IIIIILjava/lang/String;Leu;Laac;II)V")
-	public static void method3654(Component arg0, class103 arg1, int arg2, int arg3, int arg4, int arg5, int arg6, String arg7, class140 arg8, class733 arg9, int arg10) {
+	public static void method3654(Component arg0, class103 arg1, int arg2, int arg3, int arg4, int arg5, int arg6, String arg7, class140 arg8, FontMetrics arg9, int arg10) {
 		int var11;
 		if (Statics.field3416 == 3) {
 			var11 = (int) ((double) Statics.field9155.method4719() * 2607.5945876176133D) + client.field10885 & 0x3FFF;
@@ -739,8 +739,8 @@ public class class42 {
 		if (var13 > var12 * var12) {
 			return;
 		}
-		int var14 = class417.field4270[var11];
-		int var15 = class417.field4272[var11];
+		int var14 = Trig1.field4270[var11];
+		int var15 = Trig1.field4272[var11];
 		if (Statics.field3416 != 4) {
 			var14 = var14 * 256 / (client.field10887 + 256);
 			var15 = var15 * 256 / (client.field10887 + 256);

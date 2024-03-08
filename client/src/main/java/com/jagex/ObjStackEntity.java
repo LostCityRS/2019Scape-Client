@@ -142,13 +142,13 @@ public class ObjStackEntity extends class1199 {
 			if (var11 != 0) {
 				int var29 = (int) (Math.atan2((double) (var25 - var26), (double) var11) * 2607.5945876176133D) & 0x3FFF;
 				if (var29 != 0) {
-					var6.method6307(1.0F, 0.0F, 0.0F, class417.method6277(var29));
+					var6.method6307(1.0F, 0.0F, 0.0F, Trig1.method6277(var29));
 				}
 			}
 			if (var11 != 0) {
 				int var30 = (int) (Math.atan2((double) (var28 - var27), (double) var11) * 2607.5945876176133D) & 0x3FFF;
 				if (var30 != 0) {
-					var6.method6307(0.0F, 0.0F, 1.0F, class417.method6277(-var30));
+					var6.method6307(0.0F, 0.0F, 1.0F, Trig1.method6277(-var30));
 				}
 			}
 			int var31 = var15 + var24;

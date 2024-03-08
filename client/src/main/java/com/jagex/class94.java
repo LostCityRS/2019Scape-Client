@@ -9,12 +9,12 @@ public class class94 {
 	public final LegacyOpenGLRenderer field1187;
 
 	@ObfuscatedName("ca.n")
-	public final class143 field1186;
+	public final TextureList field1186;
 
 	@ObfuscatedName("ca.m")
 	public final WeightedCache field1185 = new WeightedCache(10485760, 256);
 
-	public class94(LegacyOpenGLRenderer arg0, class143 arg1) {
+	public class94(LegacyOpenGLRenderer arg0, TextureList arg1) {
 		this.field1187 = arg0;
 		this.field1186 = arg1;
 	}

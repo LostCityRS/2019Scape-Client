@@ -45,7 +45,7 @@ public class class920 extends VertexDeclaration {
 			}
 		}
 		this.method16795(var4, (short) 255, (short) 0, (byte) 17, (byte) 0, (byte) 0, (byte) 0);
-		this.field10621 = IDirect3DDevice.CreateVertexDeclaration(this.field10620.field11978, this.field10620.field10046);
+		this.field10621 = IDirect3DDevice.CreateVertexDeclaration(this.field10620.device, this.field10620.field10046);
 		this.field10620.method15985(this);
 	}
 

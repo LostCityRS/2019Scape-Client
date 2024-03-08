@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
 @ObfuscatedName("aer")
-public class class820 extends class74 {
+public class class820 extends GlEffect {
 
 	@ObfuscatedName("aer.k")
 	public class68 field9308;

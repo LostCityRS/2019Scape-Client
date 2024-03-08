@@ -105,12 +105,12 @@ public class class1215 extends class1119 {
 
 	@ObfuscatedName("ath.as(IJ)Z")
 	public boolean method19644(int arg0, long arg1) {
-		return class0.method35(IDirect3DDevice.SetRenderTarget(this.field12499.field11978, arg0, arg1));
+		return class0.method35(IDirect3DDevice.SetRenderTarget(this.field12499.device, arg0, arg1));
 	}
 
 	@ObfuscatedName("ath.at(J)Z")
 	public boolean method19645(long arg0) {
-		return class0.method35(IDirect3DDevice.SetDepthStencilSurface(this.field12499.field11978, arg0));
+		return class0.method35(IDirect3DDevice.SetDepthStencilSurface(this.field12499.device, arg0));
 	}
 
 	@ObfuscatedName("ath.h()Z")
@@ -152,8 +152,8 @@ public class class1215 extends class1119 {
 	@ObfuscatedName("ath.a(IIIIIIZZ)V")
 	public void method15440(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6, boolean arg7) {
 		if (arg6) {
-			long var9 = IDirect3DDevice.GetRenderTarget(this.field12499.field11978, 0);
-			IDirect3DDevice.StretchRect(this.field12499.field11978, this.field12505[0].method6216(), arg0, arg1, arg2, arg3, var9, arg4, arg5, arg2, arg3, 0);
+			long var9 = IDirect3DDevice.GetRenderTarget(this.field12499.device, 0);
+			IDirect3DDevice.StretchRect(this.field12499.device, this.field12505[0].method6216(), arg0, arg1, arg2, arg3, var9, arg4, arg5, arg2, arg3, 0);
 			IUnknown.Release(var9);
 		}
 	}

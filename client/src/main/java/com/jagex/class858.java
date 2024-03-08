@@ -19,7 +19,7 @@ public class class858 extends class140 {
 	@ObfuscatedName("afx.q")
 	public float[][] field10245;
 
-	public class858(GpuRenderer arg0, class733 arg1, class136 arg2, boolean arg3) {
+	public class858(GpuRenderer arg0, FontMetrics arg1, class136 arg2, boolean arg3) {
 		super(arg0, arg1);
 		this.field10244 = arg0;
 		int[] var5 = new int[this.field1667.field8572 * this.field1667.field8571];

@@ -259,7 +259,7 @@ public class WorldMap {
 
 	@ObfuscatedName("tf.c(Ldh;IIZ)Z")
 	public static boolean method8542(Renderer arg0, int arg1, int arg2, boolean arg3) {
-		long var4 = class213.method3655();
+		long var4 = MonotonicTime.method3655();
 		if (field6793 == 0) {
 			if (Statics.field6792.field7695 == Statics.field6811.field12359) {
 				int var6 = Statics.field6795.method6902(Statics.field6811.field12351);
@@ -283,7 +283,7 @@ public class WorldMap {
 				Statics.field6844[var11] = field6821.gSmart1or2();
 			}
 		}
-		while (field6821 != null && field6821.pos < field6821.data.length && (!arg3 || class213.method3655() < (long) field6828 + var4)) {
+		while (field6821 != null && field6821.pos < field6821.data.length && (!arg3 || MonotonicTime.method3655() < (long) field6828 + var4)) {
 			if (field6821.g1() == 0) {
 				int var12 = field6821.g1();
 				int var13 = field6821.g1();
@@ -364,7 +364,7 @@ public class WorldMap {
 			method8509(Statics.field6809, Statics.field6813, Statics.field6814, arg1, arg2);
 			Statics.field6809 = null;
 		}
-		if (arg3 && class213.method3655() >= (long) field6828 + var4) {
+		if (arg3 && MonotonicTime.method3655() >= (long) field6828 + var4) {
 			return false;
 		} else {
 			method8519();

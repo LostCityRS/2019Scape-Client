@@ -13,12 +13,12 @@ public class class857 extends class140 {
 	public final class1113 field10241;
 
 	@ObfuscatedName("afs.y")
-	public final class73 field10242;
+	public final RenderList field10242;
 
 	@ObfuscatedName("afs.q")
 	public final boolean field10240;
 
-	public class857(LegacyOpenGLRenderer arg0, class733 arg1, class136 arg2, boolean arg3) {
+	public class857(LegacyOpenGLRenderer arg0, FontMetrics arg1, class136 arg2, boolean arg3) {
 		super(arg0, arg1);
 		this.field10243 = arg0;
 		int[] var5 = new int[this.field1667.field8572 * this.field1667.field8571];
@@ -87,7 +87,7 @@ public class class857 extends class140 {
 			this.field10240 = false;
 		}
 		this.field10241.method1082(this.field1667.field8570 != 1);
-		this.field10242 = new class73(arg0, 256);
+		this.field10242 = new RenderList(arg0, 256);
 		float var28 = 1.0F / (float) this.field1667.field8571;
 		float var29 = 1.0F / (float) this.field1667.field8572;
 		for (int var30 = 0; var30 < 256; var30++) {

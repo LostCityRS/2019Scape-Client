@@ -53,7 +53,7 @@ public class class1004 extends WorldMap {
 	public static class140[][] field11659 = new class140[3][5];
 
 	@ObfuscatedName("alj.cm")
-	public static class733[][] field11660 = new class733[3][5];
+	public static FontMetrics[][] field11660 = new FontMetrics[3][5];
 
 	@ObfuscatedName("alj.cb")
 	public static HashMap field11661 = new HashMap();
@@ -109,8 +109,8 @@ public class class1004 extends WorldMap {
 		if (field11651 == 100 || Statics.field6811 == null) {
 			return;
 		}
-		class213.method3655();
-		class213.method3655();
+		MonotonicTime.method3655();
+		MonotonicTime.method3655();
 		if (field11651 < 10) {
 			for (int var2 = 0; var2 < field11659.length; var2++) {
 				for (int var3 = 0; var3 < field11659[var2].length; var3++) {

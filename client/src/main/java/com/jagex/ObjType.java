@@ -656,7 +656,7 @@ public class ObjType implements ConfigType {
 			if (this.field8682 != 128) {
 				var16 |= 0x4;
 			}
-			class120 var17 = class120.method1931(this.field8621.field8614, this.field8655, 0);
+			ModelUnlit var17 = ModelUnlit.method1931(this.field8621.field8614, this.field8655, 0);
 			if (var17 == null) {
 				return null;
 			}
@@ -742,8 +742,8 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.s(Ldh;Ldh;IIIZILeu;Lxg;Lws;B)[I")
-	public int[] method14646(Renderer arg0, Renderer arg1, int arg2, int arg3, int arg4, boolean arg5, int arg6, class140 arg7, PlayerModel arg8, class629 arg9) {
-		class120 var11 = class120.method1931(this.field8621.field8614, this.field8655, 0);
+	public int[] method14646(Renderer arg0, Renderer arg1, int arg2, int arg3, int arg4, boolean arg5, int arg6, class140 arg7, PlayerModel arg8, GraphicsDefaults arg9) {
+		ModelUnlit var11 = ModelUnlit.method1931(this.field8621.field8614, this.field8655, 0);
 		if (var11 == null) {
 			return null;
 		}
@@ -833,10 +833,10 @@ public class ObjType implements ConfigType {
 		arg0.method2222((float) (Math.random() / 10.0D) + 0.95F);
 		arg0.method2223(16777215, (float) (Math.random() / 10.0D) + 0.95F, (float) (Math.random() / 10.0D) + 0.95F, -50.0F, -10.0F, -50.0F);
 		Matrix4x3 var26 = arg0.method2209();
-		var26.method6372(0.0F, 0.0F, 1.0F, class417.method6277(-this.field8641 << 3));
-		var26.method6307(0.0F, 1.0F, 0.0F, class417.method6277(this.field8626 << 3));
-		var26.method6315((float) (this.field8695 << 2), (float) ((class417.field4270[this.field8639 << 3] * var22 >> 14) - var20.method1748() / 2 + (this.field8643 << 2)), (float) ((this.field8643 << 2) + (class417.field4272[this.field8639 << 3] * var22 >> 14)));
-		var26.method6307(1.0F, 0.0F, 0.0F, class417.method6277(this.field8639 << 3));
+		var26.method6372(0.0F, 0.0F, 1.0F, Trig1.method6277(-this.field8641 << 3));
+		var26.method6307(0.0F, 1.0F, 0.0F, Trig1.method6277(this.field8626 << 3));
+		var26.method6315((float) (this.field8695 << 2), (float) ((Trig1.field4270[this.field8639 << 3] * var22 >> 14) - var20.method1748() / 2 + (this.field8643 << 2)), (float) ((this.field8643 << 2) + (Trig1.field4272[this.field8639 << 3] * var22 >> 14)));
+		var26.method6307(1.0F, 0.0F, 0.0F, Trig1.method6277(this.field8639 << 3));
 		arg0.method2168(0, 0, 36, 32);
 		arg0.method2475(2, 0);
 		arg0.method2354(0, 0, 36, 32, 0, 0);
@@ -916,7 +916,7 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("jf.x(ILzt;Lws;I)Ljava/lang/String;")
-	public static String method4655(int arg0, Language arg1, class629 arg2) {
+	public static String method4655(int arg0, Language arg1, GraphicsDefaults arg2) {
 		if (arg0 < 100000) {
 			return Statics.method5153(arg2.field7742) + arg0 + field8699;
 		} else if (arg0 < 10000000) {
@@ -967,7 +967,7 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.a(ZLabw;I)Ldq;")
-	public final class120 method14650(boolean arg0, ObjTypeCustomisation arg1) {
+	public final ModelUnlit method14650(boolean arg0, ObjTypeCustomisation arg1) {
 		int var3;
 		int var4;
 		int var5;
@@ -993,7 +993,7 @@ public class ObjType implements ConfigType {
 		if (var3 == -1) {
 			return null;
 		}
-		class120 var6 = class120.method1931(this.field8621.field8614, var3, 0);
+		ModelUnlit var6 = ModelUnlit.method1931(this.field8621.field8614, var3, 0);
 		if (var6 == null) {
 			return null;
 		}
@@ -1001,20 +1001,20 @@ public class ObjType implements ConfigType {
 			var6.method1947(2);
 		}
 		if (var4 != -1) {
-			class120 var7 = class120.method1931(this.field8621.field8614, var4, 0);
+			ModelUnlit var7 = ModelUnlit.method1931(this.field8621.field8614, var4, 0);
 			if (var7.field1372 < 13) {
 				var7.method1947(2);
 			}
 			if (var5 == -1) {
-				class120[] var10 = new class120[] { var6, var7 };
-				var6 = new class120(var10, 2);
+				ModelUnlit[] var10 = new ModelUnlit[] { var6, var7 };
+				var6 = new ModelUnlit(var10, 2);
 			} else {
-				class120 var8 = class120.method1931(this.field8621.field8614, var5, 0);
+				ModelUnlit var8 = ModelUnlit.method1931(this.field8621.field8614, var5, 0);
 				if (var8.field1372 < 13) {
 					var8.method1947(2);
 				}
-				class120[] var9 = new class120[] { var6, var7, var8 };
-				var6 = new class120(var9, 3);
+				ModelUnlit[] var9 = new ModelUnlit[] { var6, var7, var8 };
+				var6 = new ModelUnlit(var9, 3);
 			}
 		}
 		if (!arg0 && (this.field8632 != 0 || this.field8660 != 0 || this.field8664 != 0)) {
@@ -1081,7 +1081,7 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.i(ZLabw;B)Ldq;")
-	public final class120 method14652(boolean arg0, ObjTypeCustomisation arg1) {
+	public final ModelUnlit method14652(boolean arg0, ObjTypeCustomisation arg1) {
 		int var3;
 		int var4;
 		if (arg0) {
@@ -1102,17 +1102,17 @@ public class ObjType implements ConfigType {
 		if (var3 == -1) {
 			return null;
 		}
-		class120 var5 = class120.method1931(this.field8621.field8614, var3, 0);
+		ModelUnlit var5 = ModelUnlit.method1931(this.field8621.field8614, var3, 0);
 		if (var5.field1372 < 13) {
 			var5.method1947(2);
 		}
 		if (var4 != -1) {
-			class120 var6 = class120.method1931(this.field8621.field8614, var4, 0);
+			ModelUnlit var6 = ModelUnlit.method1931(this.field8621.field8614, var4, 0);
 			if (var6.field1372 < 13) {
 				var6.method1947(2);
 			}
-			class120[] var7 = new class120[] { var5, var6 };
-			var5 = new class120(var7, 2);
+			ModelUnlit[] var7 = new ModelUnlit[] { var5, var6 };
+			var5 = new ModelUnlit(var7, 2);
 		}
 		if (this.field8666 != null) {
 			short[] var8;

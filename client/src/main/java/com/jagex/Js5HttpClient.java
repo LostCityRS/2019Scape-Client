@@ -58,13 +58,13 @@ public class Js5HttpClient {
 			boolean var7 = arg0 == 255 && arg1 == 255;
 			if (!this.field4468 && !var7) {
 				return null;
-			} else if (this.field4470 + 10000L >= class213.method3655()) {
+			} else if (this.field4470 + 10000L >= MonotonicTime.method3655()) {
 				return null;
 			} else {
 				Object var8 = null;
 				String var9;
 				if (var7) {
-					var9 = "&cb=" + class213.method3655();
+					var9 = "&cb=" + MonotonicTime.method3655();
 				} else {
 					var9 = "&c=" + arg4 + "&v=" + arg5;
 				}

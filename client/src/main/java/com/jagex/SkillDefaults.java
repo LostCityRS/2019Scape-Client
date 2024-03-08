@@ -15,7 +15,7 @@ public class SkillDefaults implements Iterable {
 	public class627[] field7649;
 
 	public SkillDefaults(Js5 arg0) {
-		this.method9777(arg0.method6894(class628.field7709.field7708));
+		this.method9777(arg0.method6894(DefaultsGroup.field7709.field7708));
 	}
 
 	@ObfuscatedName("wq.e(S)V")

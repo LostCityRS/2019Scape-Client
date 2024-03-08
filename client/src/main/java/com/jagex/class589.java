@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("vu")
-public class class589 implements class588 {
+public class class589 implements Binding {
 
 	@ObfuscatedName("vu.e")
 	public final int field7408;
@@ -21,7 +21,7 @@ public class class589 implements class588 {
 	}
 
 	@ObfuscatedName("vu.e(Lakm;[Lut;ILub;I)Z")
-	public boolean method9396(class993 arg0, class565[] arg1, int arg2, class563 arg3) {
+	public boolean method9396(class993 arg0, class565[] arg1, int arg2, Keyboard arg3) {
 		if (arg0 != null) {
 			if (this.field7408 != arg0.method17848()) {
 				return false;

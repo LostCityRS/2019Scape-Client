@@ -217,7 +217,7 @@ public class class480 {
 		} else {
 			this.field4940 = this.field4897;
 			this.field4937 = arg0;
-			this.field4939 = class213.method3655();
+			this.field4939 = MonotonicTime.method3655();
 			this.field4938 = this.field4939 + (long) arg1;
 		}
 	}
@@ -411,7 +411,7 @@ public class class480 {
 		}
 		this.method7563();
 		if (this.field4937 != this.field4897) {
-			long var1 = class213.method3655();
+			long var1 = MonotonicTime.method3655();
 			if (var1 > this.field4938) {
 				this.field4897 = this.field4937;
 			} else {

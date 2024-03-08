@@ -167,7 +167,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 		return true;
 	}
 
-	public OpenGLRenderer(OpenGL arg0, Canvas arg1, long arg2, MaterialList arg3, class143 arg4, BillboardTypeList arg5, class381 arg6, class378 arg7, Js5 arg8, int arg9) {
+	public OpenGLRenderer(OpenGL arg0, Canvas arg1, long arg2, MaterialList arg3, TextureList arg4, BillboardTypeList arg5, ParticleEmitterTypeList arg6, ParticleEffectorTypeList arg7, Js5 arg8, int arg9) {
 		super(arg3, arg4, arg5, arg6, arg7, arg8, arg9, 1);
 		new MapBuffer();
 		new MapBuffer();
@@ -236,7 +236,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 					throw new RuntimeException("");
 				}
 			}
-			class498.field5074.startsWith("mac");
+			NativeLibraryConfig.field5074.startsWith("mac");
 			this.field12027 = Stream.method61() ? 33639 : 5121;
 			if (this.field12001.indexOf("radeon") != -1 || this.field12037.indexOf("intel") != -1) {
 				int var18 = 0;
@@ -1357,9 +1357,9 @@ public final class OpenGLRenderer extends GpuRenderer {
 			class988 var13 = (class988) this.field12011.method14154();
 			OpenGL.glDeleteLists((int) var13.field6760, var13.field11442);
 		}
-		if (this.method2520() > 100663296 && class213.method3655() > this.field12006 + 60000L) {
+		if (this.method2520() > 100663296 && MonotonicTime.method3655() > this.field12006 + 60000L) {
 			System.gc();
-			this.field12006 = class213.method3655();
+			this.field12006 = MonotonicTime.method3655();
 		}
 		super.method2120(var4);
 	}

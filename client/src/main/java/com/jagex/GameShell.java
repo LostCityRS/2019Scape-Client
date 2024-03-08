@@ -207,7 +207,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		}
 		try {
 			Statics.field6629 = new FullscreenImpl();
-		} catch (Exception var26) {
+		} catch (Exception ex) {
 			Fullscreen.allowed = false;
 		}
 		Statics.field1880 = new class508();
@@ -501,7 +501,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		Statics.field10578.setFocusTraversalKeysEnabled(false);
 		field6599 = true;
 		field6606 = false;
-		field6595 = class213.method3655();
+		field6595 = MonotonicTime.method3655();
 	}
 
 	@ObfuscatedName("sk.x(I)V")
@@ -582,7 +582,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		this.method8030();
 		this.method8045();
 		Statics.field6594 = Timer.method6109();
-		while (field6609 == 0L || class213.method3655() < field6609) {
+		while (field6609 == 0L || MonotonicTime.method3655() < field6609) {
 			Statics.field6624 = Statics.field6594.method8158(field6584);
 			for (int var5 = 0; var5 < Statics.field6624; var5++) {
 				this.method8036();
@@ -594,7 +594,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 
 	@ObfuscatedName("sk.g(B)V")
 	public void method8036() {
-		long var1 = class213.method3655();
+		long var1 = MonotonicTime.method3655();
 		long var3 = field6591[Statics.field6587];
 		field6591[Statics.field6587] = var1;
 		Statics.field6587 = Statics.field6587 + 1 & 0x1F;
@@ -608,7 +608,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 
 	@ObfuscatedName("sk.i(I)V")
 	public void method8037() {
-		long var1 = class213.method3655();
+		long var1 = MonotonicTime.method3655();
 		long var3 = field6589[Statics.field6590 - 1 & 0x1F];
 		long var5 = field6589[Statics.field6590];
 		field6589[Statics.field6590] = var1;
@@ -712,13 +712,13 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 
 	public void stop() {
 		if (!field6620) {
-			field6609 = class213.method3655() + 4000L;
+			field6609 = MonotonicTime.method3655() + 4000L;
 		}
 	}
 
 	public void destroy() {
 		if (!field6620) {
-			field6609 = class213.method3655();
+			field6609 = MonotonicTime.method3655();
 			class214.method1571(5000L);
 			this.method8085(false);
 		}
@@ -733,7 +733,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			return;
 		}
 		field6599 = true;
-		if (class213.method3655() - field6595 > 1000L) {
+		if (MonotonicTime.method3655() - field6595 > 1000L) {
 			Rectangle var2 = arg0.getClipBounds();
 			if (var2 == null || var2.width >= Statics.field6593 && var2.height >= Statics.field4827) {
 				field6606 = true;

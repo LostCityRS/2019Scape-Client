@@ -245,7 +245,7 @@ public class ClientInvCache extends Node {
 			if (var16) {
 				return null;
 			}
-			class120[] var18 = new class120[var10.length];
+			ModelUnlit[] var18 = new ModelUnlit[var10.length];
 			for (int var19 = 0; var19 < var10.length; var19++) {
 				if (var10[var19] != -1) {
 					var18[var19] = ((ObjType) Statics.field1842.get(var10[var19])).method14650(arg4, null);
@@ -269,7 +269,7 @@ public class ClientInvCache extends Node {
 					}
 				}
 			}
-			class120 var27 = new class120(var18, var18.length);
+			ModelUnlit var27 = new ModelUnlit(var18, var18.length);
 			if (arg5 != null) {
 				var15 = var8 | 0x4000;
 			}

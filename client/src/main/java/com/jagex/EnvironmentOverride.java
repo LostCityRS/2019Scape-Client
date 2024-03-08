@@ -98,146 +98,146 @@ public class EnvironmentOverride {
 			this.field8122 = arg0.g2();
 			return false;
 		}
-		if ((var2 & class658.field8065.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8065.field8102) != 0L) {
 			this.field8133 = arg0.g4s();
 		}
-		if ((var2 & class658.field8057.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8057.field8102) != 0L) {
 			this.field8124 = arg0.gFloat();
 		}
-		if ((var2 & class658.field8078.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8078.field8102) != 0L) {
 			this.field8118 = arg0.gFloat();
 		}
-		if ((var2 & class658.field8060.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8060.field8102) != 0L) {
 			this.field8117 = arg0.gFloat();
 		}
-		if ((var2 & class658.field8061.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8061.field8102) != 0L) {
 			this.field8120 = Vector3.method6485(arg0);
 		}
-		if ((var2 & class658.field8069.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8069.field8102) != 0L) {
 			arg0.gFloat();
 		}
-		if ((var2 & class658.field8066.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8066.field8102) != 0L) {
 			this.field8121 = arg0.g4s();
 		}
-		if ((var2 & class658.field8064.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8064.field8102) != 0L) {
 			this.field8119 = arg0.g2();
 		}
-		if ((var2 & class658.field8095.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8095.field8102) != 0L) {
 			arg0.gFloat();
 		}
-		if ((var2 & class658.field8096.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8096.field8102) != 0L) {
 			arg0.gFloat();
 		}
-		if ((var2 & class658.field8099.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8099.field8102) != 0L) {
 			arg0.gFloat();
 		}
-		if ((var2 & class658.field8058.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8058.field8102) != 0L) {
 			arg0.gFloat();
 		}
-		if ((var2 & class658.field8063.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8063.field8102) != 0L) {
 			this.field8123 = arg0.gFloat();
 		}
-		if ((var2 & class658.field8070.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8070.field8102) != 0L) {
 			this.field8125 = arg0.gFloat();
 		}
-		if ((var2 & class658.field8071.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8071.field8102) != 0L) {
 			this.field8134 = arg0.gFloat();
 		}
-		if ((var2 & class658.field8072.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8072.field8102) != 0L) {
 			this.field8126 = arg0.g2();
 		}
-		if ((var2 & class658.field8073.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8073.field8102) != 0L) {
 			this.field8127 = arg0.g2();
 			this.field8128 = arg0.g2s();
 			this.field8129 = arg0.g2s();
 			this.field8130 = arg0.g2s();
 			this.field8131 = arg0.g2();
 		}
-		if ((var2 & class658.field8074.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8074.field8102) != 0L) {
 			this.field8132[0] = arg0.g2();
 			this.field8116[0] = arg0.gFloat();
 		}
-		if ((var2 & class658.field8075.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8075.field8102) != 0L) {
 			this.field8132[1] = arg0.g2();
 			this.field8116[1] = arg0.gFloat();
 		}
-		if ((var2 & class658.field8076.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8076.field8102) != 0L) {
 			this.field8132[2] = arg0.g2();
 			this.field8116[2] = arg0.gFloat();
 		}
-		if ((var2 & class658.field8077.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8077.field8102) != 0L) {
 			arg0.g4s();
 		}
-		if ((var2 & class658.field8087.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8087.field8102) != 0L) {
 			arg0.g4s();
 		}
-		if ((var2 & class658.field8092.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8092.field8102) != 0L) {
 			arg0.gFloat();
 		}
-		if ((var2 & class658.field8080.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8080.field8102) != 0L) {
 			arg0.gFloat();
 		}
-		if ((var2 & class658.field8081.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8081.field8102) != 0L) {
 			arg0.gFloat();
 		}
-		if ((var2 & class658.field8082.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8082.field8102) != 0L) {
 			arg0.gFloat();
 		}
-		if ((var2 & class658.field8083.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8083.field8102) != 0L) {
 			arg0.gFloat();
 		}
-		if ((var2 & class658.field8084.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8084.field8102) != 0L) {
 			arg0.g4s();
 		}
-		if ((var2 & class658.field8085.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8085.field8102) != 0L) {
 			arg0.gFloat();
 		}
-		if ((var2 & class658.field8086.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8086.field8102) != 0L) {
 			arg0.gFloat();
 		}
-		if ((var2 & class658.field8068.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8068.field8102) != 0L) {
 			arg0.gFloat();
 		}
-		if ((var2 & class658.field8088.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8088.field8102) != 0L) {
 			arg0.gFloat();
 		}
-		if ((var2 & class658.field8089.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8089.field8102) != 0L) {
 			new Vector3(arg0);
 		}
-		if ((var2 & class658.field8090.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8090.field8102) != 0L) {
 			new Vector3(arg0);
 		}
-		if ((var2 & class658.field8091.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8091.field8102) != 0L) {
 			new Vector3(arg0);
 		}
-		if ((var2 & class658.field8093.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8093.field8102) != 0L) {
 			arg0.gFloat();
 		}
-		if ((var2 & class658.field8059.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8059.field8102) != 0L) {
 			arg0.gFloat();
 		}
-		if ((var2 & class658.field8094.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8094.field8102) != 0L) {
 			arg0.gFloat();
 		}
-		if ((var2 & class658.field8079.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8079.field8102) != 0L) {
 			arg0.gFloat();
 		}
-		if ((var2 & class658.field8101.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8101.field8102) != 0L) {
 			arg0.gFloat();
 		}
-		if ((var2 & class658.field8097.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8097.field8102) != 0L) {
 			arg0.gFloat();
 		}
-		if ((var2 & class658.field8098.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8098.field8102) != 0L) {
 			arg0.gFloat();
 		}
-		if ((var2 & class658.field8062.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8062.field8102) != 0L) {
 			arg0.gFloat();
 		}
-		if ((var2 & class658.field8100.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8100.field8102) != 0L) {
 			arg0.g4s();
 		}
-		if ((var2 & class658.field8067.field8102) != 0L) {
+		if ((var2 & EnvironmentOverrideProperty.field8067.field8102) != 0L) {
 			arg0.g4s();
 		}
 		this.field8122 = arg0.g2();

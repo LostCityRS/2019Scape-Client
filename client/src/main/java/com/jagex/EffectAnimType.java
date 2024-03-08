@@ -199,7 +199,7 @@ public class EffectAnimType implements ConfigType {
 			if (this.field8253 != null) {
 				var20 |= 0x8000;
 			}
-			class120 var21 = class120.method1931(this.field8249.field8265, this.field8248, 0);
+			ModelUnlit var21 = ModelUnlit.method1931(this.field8249.field8265, this.field8248, 0);
 			if (var21 == null) {
 				return null;
 			}

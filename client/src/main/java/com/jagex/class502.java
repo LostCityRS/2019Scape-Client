@@ -76,7 +76,7 @@ public class class502 {
 	public int field5106;
 
 	@ObfuscatedName("zn.e(Lpy;Ldf;Les;I)V")
-	public static void method13864(Js5 arg0, MaterialList arg1, class143 arg2) {
+	public static void method13864(Js5 arg0, MaterialList arg1, TextureList arg2) {
 		Statics.field1810 = arg0;
 		Statics.field3199 = arg1;
 		Statics.field2421 = arg2;
@@ -198,7 +198,7 @@ public class class502 {
 			boolean var2 = Statics.field1810.method6927(this.field5093);
 			if (var2) {
 				arg0.method2223(16777215, 0.0F, 0.0F, 1.0F, 0.0F, 0.0F);
-				class120 var3 = class120.method1931(Statics.field1810, this.field5093, 0);
+				ModelUnlit var3 = ModelUnlit.method1931(Statics.field1810, this.field5093, 0);
 				this.field5103 = arg0.method2211(var3, 1099776, 0, 255, 1);
 				byte[] var4 = this.field5103.method1741();
 				if (var4 == null) {
@@ -324,9 +324,9 @@ public class class502 {
 		Matrix4x3 var6 = arg0.method2218();
 		Matrix4x3 var7 = new Matrix4x3();
 		var7.method6313(0.0F, 0.0F, 0.0F);
-		var7.method6307(0.0F, -1.0F, 0.0F, class417.method6277(-arg2 & 0x3FFF));
-		var7.method6307(-1.0F, 0.0F, 0.0F, class417.method6277(-arg1 & 0x3FFF));
-		var7.method6307(0.0F, 0.0F, -1.0F, class417.method6277(-arg3 & 0x3FFF));
+		var7.method6307(0.0F, -1.0F, 0.0F, Trig1.method6277(-arg2 & 0x3FFF));
+		var7.method6307(-1.0F, 0.0F, 0.0F, Trig1.method6277(-arg1 & 0x3FFF));
+		var7.method6307(0.0F, 0.0F, -1.0F, Trig1.method6277(-arg3 & 0x3FFF));
 		arg0.method2217(var7);
 		Matrix4x3 var8 = new Matrix4x3();
 		if (this.field5105 != arg4) {

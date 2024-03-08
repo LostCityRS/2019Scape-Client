@@ -63,7 +63,7 @@ public class ModelParticleEmitter {
 	}
 
 	@ObfuscatedName("du.e(Lnb;B)Lnj;")
-	public ParticleEmitterType method2079(class381 arg0) {
+	public ParticleEmitterType method2079(ParticleEmitterTypeList arg0) {
 		return arg0.method6004(this.field1477);
 	}
 

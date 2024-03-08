@@ -368,15 +368,15 @@ public class World {
 			this.field5028 = var1.field5028;
 			this.field5043 = var1.field5043;
 		} else if (client.state == 4) {
-			client.method6972(10);
+			client.setState(10);
 		} else if (client.state == 13) {
-			client.method6972(6);
+			client.setState(6);
 		} else if (client.state == 15) {
-			client.method6972(16);
+			client.setState(16);
 		} else if (client.state == 18) {
-			client.method6972(3);
+			client.setState(3);
 		} else if (client.state == 0) {
-			client.method6972(8);
+			client.setState(8);
 		}
 	}
 
@@ -706,8 +706,8 @@ public class World {
 		this.field5022 = arg0;
 		this.field5059 = arg1;
 		if (!this.field5036) {
-			client.method6972(arg2);
-			class41.method649(LocalisedText.field9044.method15021(Statics.field1680), true, Statics.field8198, Statics.field9184, Statics.field2657);
+			client.setState(arg2);
+			MessageBox.method649(LocalisedText.field9044.method15021(Statics.field1680), true, Statics.field8198, Statics.field9184, Statics.field2657);
 		}
 		if (this.field5018 == null) {
 			this.field5025 = new CoordGrid(0, 0, 0);
@@ -916,7 +916,7 @@ public class World {
 			class492.method6969(false);
 		}
 		if (this.field5060 == -1L) {
-			this.field5060 = class213.method3655();
+			this.field5060 = MonotonicTime.method3655();
 		}
 		this.field5044 = 0;
 		for (int var1 = 0; var1 < this.field5049; var1++) {
@@ -1003,7 +1003,7 @@ public class World {
 			return false;
 		}
 		if (!this.field5036 && RebuildStage.field5007 != this.field5026) {
-			class41.method649(LocalisedText.field9044.method15021(Statics.field1680) + TextUtil.BR + "(100%)", true, Statics.field8198, Statics.field9184, Statics.field2657);
+			MessageBox.method649(LocalisedText.field9044.method15021(Statics.field1680) + TextUtil.BR + "(100%)", true, Statics.field8198, Statics.field9184, Statics.field2657);
 		}
 		this.field5026 = RebuildStage.field5008;
 		if (!this.field5036 && Statics.field1798 != null) {
@@ -1154,7 +1154,7 @@ public class World {
 		}
 		this.field5030.method8875();
 		if (this.field5036) {
-			class213.method3655();
+			MonotonicTime.method3655();
 			while (!Statics.field8198.method2215()) {
 				this.method7765(1);
 			}
@@ -1165,7 +1165,7 @@ public class World {
 			this.method7752(var23);
 			Statics.field3183.method7678(var23);
 			var22 = true;
-			class213.method3655();
+			MonotonicTime.method3655();
 			Object var24 = client.field10858;
 			synchronized (client.field10858) {
 				client.field10856 = true;
@@ -1215,17 +1215,17 @@ public class World {
 				}
 			}
 		}
-		long var38 = class213.method3655() - this.field5060;
+		long var38 = MonotonicTime.method3655() - this.field5060;
 		if (client.state == 10) {
-			client.method6972(4);
+			client.setState(4);
 		} else if (client.state == 6) {
-			client.method6972(13);
+			client.setState(13);
 		} else if (client.state == 16) {
-			client.method6972(15);
+			client.setState(15);
 		} else if (client.state == 8) {
-			client.method6972(0);
+			client.setState(0);
 		} else {
-			client.method6972(18);
+			client.setState(18);
 			if (client.field10849.method939() != null) {
 				ClientMessage var40 = Statics.method1604(ClientProt.MAP_BUILD_COMPLETE, client.field10849.field794);
 				var40.field11432.p4((int) var38);
@@ -1233,7 +1233,7 @@ public class World {
 			}
 		}
 		if (this.field5037) {
-			DeveloperConsole.method4285(Long.toString(class213.method3655() - this.field5056));
+			DeveloperConsole.method4285(Long.toString(MonotonicTime.method3655() - this.field5056));
 			this.field5037 = false;
 		}
 		if (var22) {
