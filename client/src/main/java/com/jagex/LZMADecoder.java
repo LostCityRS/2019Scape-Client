@@ -8,13 +8,13 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 @ObfuscatedName("sz")
-public class Decoder {
+public class LZMADecoder {
 
 	@ObfuscatedName("sz.e")
-	public class501 field6693 = new class501();
+	public LZMAOutWindow field6693 = new LZMAOutWindow();
 
 	@ObfuscatedName("sz.n")
-	public class292 field6689 = new class292();
+	public LZMARangeDecoder field6689 = new LZMARangeDecoder();
 
 	@ObfuscatedName("sz.m")
 	public short[] field6700 = new short[192];
@@ -35,22 +35,22 @@ public class Decoder {
 	public short[] field6695 = new short[192];
 
 	@ObfuscatedName("sz.z")
-	public class289[] field6702 = new class289[4];
+	public LZMABitTreeDecoder[] field6702 = new LZMABitTreeDecoder[4];
 
 	@ObfuscatedName("sz.p")
 	public short[] field6697 = new short[114];
 
 	@ObfuscatedName("sz.d")
-	public class289 field6690 = new class289(4);
+	public LZMABitTreeDecoder field6690 = new LZMABitTreeDecoder(4);
 
 	@ObfuscatedName("sz.c")
-	public class526 field6699 = new class526(this);
+	public LZMALenDecoder field6699 = new LZMALenDecoder(this);
 
 	@ObfuscatedName("sz.r")
-	public class526 field6688 = new class526(this);
+	public LZMALenDecoder field6688 = new LZMALenDecoder(this);
 
 	@ObfuscatedName("sz.v")
-	public class524 field6698 = new class524(this);
+	public LZMALiteralDecoder field6698 = new LZMALiteralDecoder(this);
 
 	@ObfuscatedName("sz.o")
 	public int field6701 = -1;
@@ -61,9 +61,9 @@ public class Decoder {
 	@ObfuscatedName("sz.y")
 	public int field6704;
 
-	public Decoder() {
+	public LZMADecoder() {
 		for (int var1 = 0; var1 < 4; var1++) {
-			this.field6702[var1] = new class289(6);
+			this.field6702[var1] = new LZMABitTreeDecoder(6);
 		}
 	}
 
@@ -96,13 +96,13 @@ public class Decoder {
 	@ObfuscatedName("sz.m(I)V")
 	public void method8300() throws IOException {
 		this.field6693.method7917(false);
-		class292.method3545(this.field6700);
-		class292.method3545(this.field6695);
-		class292.method3545(this.field6691);
-		class292.method3545(this.field6692);
-		class292.method3545(this.field6696);
-		class292.method3545(this.field6694);
-		class292.method3545(this.field6697);
+		LZMARangeDecoder.method3545(this.field6700);
+		LZMARangeDecoder.method3545(this.field6695);
+		LZMARangeDecoder.method3545(this.field6691);
+		LZMARangeDecoder.method3545(this.field6692);
+		LZMARangeDecoder.method3545(this.field6696);
+		LZMARangeDecoder.method3545(this.field6694);
+		LZMARangeDecoder.method3545(this.field6697);
 		this.field6698.method8352();
 		for (int var1 = 0; var1 < 4; var1++) {
 			this.field6702[var1].method5057();
@@ -118,7 +118,7 @@ public class Decoder {
 		this.field6689.method5082(arg0);
 		this.field6693.method7933(arg1);
 		this.method8300();
-		int var5 = class528.method9417();
+		int var5 = LZMABase.method9417();
 		int var6 = 0;
 		int var7 = 0;
 		int var8 = 0;
@@ -149,12 +149,12 @@ public class Decoder {
 								var7 = var6;
 								var6 = var16;
 							} else if (this.field6689.method5086(this.field6695, (var5 << 4) + var13) == 0) {
-								var5 = class528.method3481(var5);
+								var5 = LZMABase.method3481(var5);
 								var15 = 1;
 							}
 							if (var15 == 0) {
 								var15 = this.field6688.method8362(this.field6689, var13) + 2;
-								var5 = class528.method7706(var5);
+								var5 = LZMABase.method7706(var5);
 							}
 							break label71;
 						}
@@ -162,8 +162,8 @@ public class Decoder {
 						var8 = var7;
 						var7 = var6;
 						var15 = this.field6699.method8362(this.field6689, var13) + 2;
-						var5 = class528.method10257(var5);
-						int var17 = this.field6702[class528.method7241(var15)].method5058(this.field6689);
+						var5 = LZMABase.method10257(var5);
+						int var17 = this.field6702[LZMABase.method7241(var15)].method5058(this.field6689);
 						if (var17 < 4) {
 							var6 = var17;
 							break label71;
@@ -185,13 +185,13 @@ public class Decoder {
 						break;
 					}
 					class522 var14 = this.field6698.method8347((int) var10, var12);
-					if (class528.method4525(var5)) {
+					if (LZMABase.method4525(var5)) {
 						var12 = var14.method8335(this.field6689);
 					} else {
 						var12 = var14.method8333(this.field6689, this.field6693.method7914(var6));
 					}
 					this.field6693.method7920(var12);
-					var5 = class528.method9389(var5);
+					var5 = LZMABase.method9389(var5);
 					var10++;
 				}
 				this.field6693.method7931();

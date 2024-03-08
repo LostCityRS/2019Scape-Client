@@ -3,10 +3,10 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("sj")
-public class class524 {
+public class LZMALiteralDecoder {
 
 	// $FF: synthetic field
-	public final Decoder this$0;
+	public final LZMADecoder this$0;
 
 	@ObfuscatedName("sj.e")
 	public class522[] field6718;
@@ -20,7 +20,7 @@ public class class524 {
 	@ObfuscatedName("sj.k")
 	public int field6715;
 
-	public class524(Decoder arg0) {
+	public LZMALiteralDecoder(LZMADecoder arg0) {
 		this.this$0 = arg0;
 	}
 

@@ -5,47 +5,47 @@ import deob.ObfuscatedName;
 import java.io.IOException;
 
 @ObfuscatedName("sc")
-public class class526 {
+public class LZMALenDecoder {
 
 	// $FF: synthetic field
-	public final Decoder this$0;
+	public final LZMADecoder this$0;
 
 	@ObfuscatedName("sc.e")
 	public short[] field6724;
 
 	@ObfuscatedName("sc.n")
-	public class289[] field6723;
+	public LZMABitTreeDecoder[] field6723;
 
 	@ObfuscatedName("sc.m")
-	public class289[] field6722;
+	public LZMABitTreeDecoder[] field6722;
 
 	@ObfuscatedName("sc.k")
-	public class289 field6725;
+	public LZMABitTreeDecoder field6725;
 
 	@ObfuscatedName("sc.f")
 	public int field6726;
 
-	public class526(Decoder arg0) {
+	public LZMALenDecoder(LZMADecoder arg0) {
 		this.this$0 = arg0;
 		this.field6724 = new short[2];
-		this.field6723 = new class289[16];
-		this.field6722 = new class289[16];
-		this.field6725 = new class289(8);
+		this.field6723 = new LZMABitTreeDecoder[16];
+		this.field6722 = new LZMABitTreeDecoder[16];
+		this.field6725 = new LZMABitTreeDecoder(8);
 		this.field6726 = 0;
 	}
 
 	@ObfuscatedName("sc.e(II)V")
 	public void method8360(int arg0) {
 		while (this.field6726 < arg0) {
-			this.field6723[this.field6726] = new class289(3);
-			this.field6722[this.field6726] = new class289(3);
+			this.field6723[this.field6726] = new LZMABitTreeDecoder(3);
+			this.field6722[this.field6726] = new LZMABitTreeDecoder(3);
 			this.field6726++;
 		}
 	}
 
 	@ObfuscatedName("sc.n(B)V")
 	public void method8361() {
-		class292.method3545(this.field6724);
+		LZMARangeDecoder.method3545(this.field6724);
 		for (int var1 = 0; var1 < this.field6726; var1++) {
 			this.field6723[var1].method5057();
 			this.field6722[var1].method5057();
@@ -54,7 +54,7 @@ public class class526 {
 	}
 
 	@ObfuscatedName("sc.m(Ljp;IB)I")
-	public int method8362(class292 arg0, int arg1) throws IOException {
+	public int method8362(LZMARangeDecoder arg0, int arg1) throws IOException {
 		if (arg0.method5086(this.field6724, 0) == 0) {
 			return this.field6723[arg1].method5058(arg0);
 		}

@@ -6,22 +6,22 @@ import deob.ObfuscatedName;
 public class class521 {
 
 	// $FF: synthetic field
-	public final Encoder this$0;
+	public final LZMAEncoder this$0;
 
 	@ObfuscatedName("sy.e")
-	public class291[] field6706;
+	public LZMABitTreeEncoder[] field6706;
 
 	@ObfuscatedName("sy.n")
-	public class291[] field6705;
+	public LZMABitTreeEncoder[] field6705;
 
-	public class521(Encoder arg0) {
+	public class521(LZMAEncoder arg0) {
 		this.this$0 = arg0;
-		this.field6706 = new class291[16];
-		this.field6705 = new class291[16];
-		new class291(8);
+		this.field6706 = new LZMABitTreeEncoder[16];
+		this.field6705 = new LZMABitTreeEncoder[16];
+		new LZMABitTreeEncoder(8);
 		for (int var2 = 0; var2 < 16; var2++) {
-			this.field6706[var2] = new class291(3);
-			this.field6705[var2] = new class291(3);
+			this.field6706[var2] = new LZMABitTreeEncoder(3);
+			this.field6705[var2] = new LZMABitTreeEncoder(3);
 		}
 	}
 }

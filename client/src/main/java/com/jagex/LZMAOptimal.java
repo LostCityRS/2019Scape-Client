@@ -3,12 +3,12 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("sf")
-public class class520 {
+public class LZMAOptimal {
 
 	// $FF: synthetic field
-	public final Encoder this$0;
+	public final LZMAEncoder this$0;
 
-	public class520(Encoder arg0) {
+	public LZMAOptimal(LZMAEncoder arg0) {
 		this.this$0 = arg0;
 	}
 }

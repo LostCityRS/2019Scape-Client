@@ -11,11 +11,11 @@ import java.io.InputStream;
 public class LZMA {
 
 	@ObfuscatedName("sg.n")
-	public static Decoder field6728;
+	public static LZMADecoder field6728;
 
 	static {
-		new Encoder();
-		field6728 = new Decoder();
+		new LZMAEncoder();
+		field6728 = new LZMADecoder();
 	}
 
 	public LZMA() throws Throwable {
@@ -36,7 +36,7 @@ public class LZMA {
 			throw new IOException("2");
 		}
 		ByteArrayOutputStream var3 = new ByteArrayOutputStream(arg1);
-		Decoder var4 = field6728;
+		LZMADecoder var4 = field6728;
 		synchronized (field6728) {
 			if (!field6728.method8305(var2)) {
 				throw new IOException("3");

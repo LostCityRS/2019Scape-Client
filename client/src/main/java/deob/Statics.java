@@ -2068,7 +2068,7 @@ public class Statics {
 	}
 
 	@ObfuscatedName("nc.k([SILjp;II)I")
-	public static int method6106(short[] arg0, int arg1, class292 arg2, int arg3) throws IOException {
+	public static int method6106(short[] arg0, int arg1, LZMARangeDecoder arg2, int arg3) throws IOException {
 		int var4 = 1;
 		int var5 = 0;
 		for (int var6 = 0; var6 < arg3; var6++) {

@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 @ObfuscatedName("jp")
-public class class292 {
+public class LZMARangeDecoder {
 
 	@ObfuscatedName("jp.f")
 	public int field3016;

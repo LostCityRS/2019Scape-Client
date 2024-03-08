@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("jx")
-public class class290 {
+public class LZMARangeEncoder {
 
 	@ObfuscatedName("jx.f")
 	public static int[] field3010 = new int[512];

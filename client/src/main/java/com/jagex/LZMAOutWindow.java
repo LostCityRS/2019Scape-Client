@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 @ObfuscatedName("ru")
-public class class501 {
+public class LZMAOutWindow {
 
 	@ObfuscatedName("ru.e")
 	public byte[] field5078;

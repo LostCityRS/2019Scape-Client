@@ -3,9 +3,9 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("tu")
-public class class528 {
+public class LZMABase {
 
-	public class528() throws Throwable {
+	public LZMABase() throws Throwable {
 		throw new Error();
 	}
 
