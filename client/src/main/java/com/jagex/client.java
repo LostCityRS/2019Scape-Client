@@ -1316,7 +1316,7 @@ public final class client extends GameShell {
 			var7 = var7 + "_" + var1;
 			var8 = 0;
 		}
-		this.method8066(var6, field10768.field8333, var7, var8, class759.method5115(), 910, 1, field10786);
+		this.method8066(var6, field10768.field8333, var7, var8, Js5Archive.getRequiredArrayLength(), 910, 1, field10786);
 	}
 
 	@ObfuscatedName("client.al(I)V")
@@ -2014,17 +2014,17 @@ public final class client extends GameShell {
 	}
 
 	@ObfuscatedName("ko.ez(Labd;ZIZZI)Lpy;")
-	public static class442 method5156(class759 arg0, boolean arg1, int arg2, boolean arg3, boolean arg4) {
+	public static class442 method5156(Js5Archive arg0, boolean arg1, int arg2, boolean arg3, boolean arg4) {
 		if (Statics.field6888 == null) {
-			Statics.field6888 = new class936[class759.method5115()];
+			Statics.field6888 = new class936[Js5Archive.getRequiredArrayLength()];
 			Statics.field8540 = new HashMap();
 		}
 		class560 var5 = null;
-		int var6 = arg0.method14917();
+		int var6 = arg0.getArchiveId();
 		if (field6615 != null && !Statics.field7880) {
-			var5 = new class560(var6, field6615, Statics.field7422[var6], var6 == class759.field8801.method14917() ? 8000000 : 2500000);
+			var5 = new class560(var6, field6615, Statics.field7422[var6], var6 == Js5Archive.DLLS.getArchiveId() ? 8000000 : 2500000);
 		}
-		Statics.field6888[var6] = Statics.field1833.method6835(var6, var5, Statics.field1749, arg0.method14918());
+		Statics.field6888[var6] = Statics.field1833.method6835(var6, var5, Statics.field1749, arg0.getDefaultName());
 		if (arg4) {
 			Statics.field6888[var6].method16829();
 		}

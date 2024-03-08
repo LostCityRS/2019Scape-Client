@@ -166,17 +166,17 @@ public class class280 {
 			}
 			client.method3596(0, null, true);
 			Statics.field2941 = !class278.method4062();
-			Statics.field8522 = client.method5156(Statics.field2941 ? class759.field8827 : class759.field8805, false, 1, true, true);
-			Statics.field8532 = client.method5156(class759.field8826, false, 1, true, true);
-			Statics.field7672 = client.method5156(class759.field8807, false, 1, true, true);
-			Statics.field1587 = client.method5156(class759.field8823, true, 1, true, true);
+			Statics.field8522 = client.method5156(Statics.field2941 ? Js5Archive.LOADING_SPRITES_RAW : Js5Archive.LOADING_SPRITES, false, 1, true, true);
+			Statics.field8532 = client.method5156(Js5Archive.LOADING_SCREENS, false, 1, true, true);
+			Statics.field7672 = client.method5156(Js5Archive.FONTMETRICS, false, 1, true, true);
+			Statics.field1587 = client.method5156(Js5Archive.DEFAULTS, true, 1, true, true);
 		}
 		if (Statics.field3419 == class277.field2911) {
 			boolean var1 = Statics.field8532.method6896();
 			boolean var2 = Statics.field1587.method6896();
-			int var3 = Statics.field6888[class759.field8826.method14917()].method16823();
-			int var4 = var3 + Statics.field6888[Statics.field2941 ? class759.field8827.method14917() : class759.field8805.method14917()].method16823();
-			int var5 = var4 + Statics.field6888[class759.field8807.method14917()].method16823();
+			int var3 = Statics.field6888[Js5Archive.LOADING_SCREENS.getArchiveId()].method16823();
+			int var4 = var3 + Statics.field6888[Statics.field2941 ? Js5Archive.LOADING_SPRITES_RAW.getArchiveId() : Js5Archive.LOADING_SPRITES.getArchiveId()].method16823();
+			int var5 = var4 + Statics.field6888[Js5Archive.FONTMETRICS.getArchiveId()].method16823();
 			int var6 = var5 + (var2 ? 100 : Statics.field1587.method6893());
 			int var7 = var6 + (var1 ? 100 : Statics.field8532.method6893());
 			if (var7 != 500) {
@@ -223,37 +223,37 @@ public class class280 {
 			client.method6972(11);
 		}
 		if (Statics.field3419 == class277.field2907) {
-			Statics.field10317 = client.method5156(class759.field8804, false, 1, false, true);
-			Statics.field7420 = client.method5156(class759.field8815, false, 1, false, true);
-			Statics.field10287 = client.method5156(class759.field8806, false, 1, false, true);
-			Statics.field11262 = client.method5156(class759.field8799, false, 1, false, true);
-			Statics.field11838 = client.method5156(class759.field8822, false, 1, true, true);
-			Statics.field7283 = client.method5156(class759.field8834, false, 1, true, true);
-			Statics.field527 = client.method5156(class759.field8839, false, 1, true, true);
-			Statics.field11752 = client.method5156(class759.field8816, true, 1, false, true);
-			Statics.field9213 = client.method5156(class759.field8808, false, 1, false, true);
-			Statics.field1450 = client.method5156(class759.field8836, true, 1, false, true);
-			Statics.field8741 = client.method5156(class759.field8803, false, 1, false, true);
-			Statics.field5010 = client.method5156(class759.field8800, false, 1, true, true);
-			Statics.field2613 = client.method5156(class759.field8820, true, 1, false, false);
-			Statics.field3085 = client.method5156(class759.field8829, true, 1, false, false);
-			Statics.field4475 = client.method5156(class759.field8809, false, 1, true, true);
-			Statics.field8700 = client.method5156(class759.field8842, false, 1, true, true);
-			Statics.field4618 = client.method5156(class759.field8818, false, 1, true, true);
-			Statics.field7537 = client.method5156(class759.field8812, false, 1, true, true);
-			Statics.field8285 = client.method5156(class759.field8813, false, 1, true, true);
-			Statics.field2149 = client.method5156(class759.field8814, false, 1, true, true);
-			Statics.field3611 = client.method5156(class759.field8825, false, 1, true, true);
-			Statics.field10752 = client.method5156(class759.field8798, true, 1, false, false);
-			Statics.field8332 = client.method5156(class759.field8830, true, 1, false, true);
-			Statics.field4404 = client.method5156(class759.field8817, false, 1, true, true);
-			Statics.field1935 = client.method5156(class759.field8821, false, 1, true, true);
-			Statics.field10249 = client.method5156(class759.field8819, true, 1, true, true);
-			Statics.field6879 = client.method5156(class759.field8811, false, 1, true, true);
-			Statics.field736 = client.method5156(class759.field8810, false, 1, true, true);
-			Statics.field3808 = client.method5156(class759.field8828, true, 1, false, true);
-			Statics.field7060 = client.method5156(class759.field8801, true, 1, false, true);
-			Statics.field2900 = client.method5156(class759.field8824, true, 1, true, true);
+			Statics.field10317 = client.method5156(Js5Archive.SPRITES, false, 1, false, true);
+			Statics.field7420 = client.method5156(Js5Archive.ANIMS, false, 1, false, true);
+			Statics.field10287 = client.method5156(Js5Archive.ANIMS_KEYFRAMES, false, 1, false, true);
+			Statics.field11262 = client.method5156(Js5Archive.BASES, false, 1, false, true);
+			Statics.field11838 = client.method5156(Js5Archive.CONFIG, false, 1, true, true);
+			Statics.field7283 = client.method5156(Js5Archive.DBTABLEINDEX, false, 1, true, true);
+			Statics.field527 = client.method5156(Js5Archive.INTERFACES, false, 1, true, true);
+			Statics.field11752 = client.method5156(Js5Archive.MAPS, true, 1, false, true);
+			Statics.field9213 = client.method5156(Js5Archive.MODELS, false, 1, false, true);
+			Statics.field1450 = client.method5156(Js5Archive.TEXTURES_PNG, true, 1, false, true);
+			Statics.field8741 = client.method5156(Js5Archive.BINARY, false, 1, false, true);
+			Statics.field5010 = client.method5156(Js5Archive.CLIENTSCRIPTS, false, 1, true, true);
+			Statics.field2613 = client.method5156(Js5Archive.VORBIS, true, 1, false, false);
+			Statics.field3085 = client.method5156(Js5Archive.AUDIOSTREAMS, true, 1, false, false);
+			Statics.field4475 = client.method5156(Js5Archive.CONFIG_LOC, false, 1, true, true);
+			Statics.field8700 = client.method5156(Js5Archive.CONFIG_ENUM, false, 1, true, true);
+			Statics.field4618 = client.method5156(Js5Archive.CONFIG_NPC, false, 1, true, true);
+			Statics.field7537 = client.method5156(Js5Archive.CONFIG_OBJ, false, 1, true, true);
+			Statics.field8285 = client.method5156(Js5Archive.CONFIG_SEQ, false, 1, true, true);
+			Statics.field2149 = client.method5156(Js5Archive.CONFIG_SPOT, false, 1, true, true);
+			Statics.field3611 = client.method5156(Js5Archive.CONFIG_STRUCT, false, 1, true, true);
+			Statics.field10752 = client.method5156(Js5Archive.WORLDMAP, true, 1, false, false);
+			Statics.field8332 = client.method5156(Js5Archive.WORLDMAPAREADATA, true, 1, false, true);
+			Statics.field4404 = client.method5156(Js5Archive.QUICKCHAT, false, 1, true, true);
+			Statics.field1935 = client.method5156(Js5Archive.QUICKCHAT_GLOBAL, false, 1, true, true);
+			Statics.field10249 = client.method5156(Js5Archive.MATERIALS, true, 1, true, true);
+			Statics.field6879 = client.method5156(Js5Archive.CONFIG_PARTICLE, false, 1, true, true);
+			Statics.field736 = client.method5156(Js5Archive.CONFIG_BILLBOARD, false, 1, true, true);
+			Statics.field3808 = client.method5156(Js5Archive.CUTSCENES, true, 1, false, true);
+			Statics.field7060 = client.method5156(Js5Archive.DLLS, true, 1, false, true);
+			Statics.field2900 = client.method5156(Js5Archive.SHADERS, true, 1, true, true);
 		}
 		if (Statics.field3419 == class277.field2921) {
 			int var14 = 0;
@@ -420,9 +420,9 @@ public class class280 {
 			Statics.field8532 = null;
 			Statics.field2841 = null;
 			Statics.field2939 = null;
-			Statics.field8540.remove(class759.field8826);
-			Statics.field8540.remove(class759.field8805);
-			Statics.field8540.remove(class759.field8827);
+			Statics.field8540.remove(Js5Archive.LOADING_SCREENS);
+			Statics.field8540.remove(Js5Archive.LOADING_SPRITES);
+			Statics.field8540.remove(Js5Archive.LOADING_SPRITES_RAW);
 			class278.method271();
 			client.field10779 = Statics.field688.field11536.method18740() == 1;
 			Statics.field688.method18157(Statics.field688.field11536, 1);

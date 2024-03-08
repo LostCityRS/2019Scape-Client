@@ -3329,10 +3329,10 @@ public class Statics {
 
 	@ObfuscatedName("aab.ae(Lase;I)V")
 	public static void method14463(PacketBit arg0) {
-		class759[] var1 = class759.method3566();
+		Js5Archive[] var1 = Js5Archive.method3566();
 		for (int var2 = 0; var2 < var1.length; var2++) {
-			class759 var3 = var1[var2];
-			if (class759.field8805 != var3) {
+			Js5Archive var3 = var1[var2];
+			if (Js5Archive.LOADING_SPRITES != var3) {
 				class442 var4 = (class442) field8540.get(var3);
 				if (var4 == null) {
 					arg0.p4(0);
