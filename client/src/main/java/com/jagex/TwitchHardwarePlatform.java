@@ -329,7 +329,7 @@ public class TwitchHardwarePlatform {
 				} else {
 					try {
 						var3 += Statics.field10577.method8464(field7390[var4], false);
-					} catch (class1112 var10) {
+					} catch (HardwarePlatformLoaderException var10) {
 						class576.method18474(class772.field8907, var10.field11896, var10.field11897, var10.getCause());
 						field7388 = 3;
 						return;

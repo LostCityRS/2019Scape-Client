@@ -62,7 +62,7 @@ public class HardwarePlatformLoader implements class499 {
 	}
 
 	@ObfuscatedName("ty.r(Ljava/lang/String;ZI)I")
-	public int method8464(String arg0, boolean arg1) throws class1112 {
+	public int method8464(String arg0, boolean arg1) throws HardwarePlatformLoaderException {
 		if (this.field6765.containsKey(arg0)) {
 			return 100;
 		}
@@ -75,12 +75,12 @@ public class HardwarePlatformLoader implements class499 {
 		} else {
 			var5 = method6049(arg0);
 			if (var5 == null) {
-				throw new class1112(1, arg0);
+				throw new HardwarePlatformLoaderException(1, arg0);
 			}
 			if (var3 == null) {
 				var3 = this.field6763 + var5;
 				if (this.field6764 == null || !this.field6764.method6905(var3, "")) {
-					throw new class1112(2, arg0);
+					throw new HardwarePlatformLoaderException(2, arg0);
 				}
 			}
 		}
@@ -89,17 +89,17 @@ public class HardwarePlatformLoader implements class499 {
 		}
 		byte[] var6 = this.field6764.method6906(var3, "");
 		if (var6 == null) {
-			throw new class1112(3, arg0);
+			throw new HardwarePlatformLoaderException(3, arg0);
 		}
 		Object var7 = null;
 		File var8;
 		try {
 			var8 = class510.method18852(var5);
 		} catch (RuntimeException var16) {
-			throw new class1112(4, arg0, var16);
+			throw new HardwarePlatformLoaderException(4, arg0, var16);
 		}
 		if (var8 == null) {
-			throw new class1112(5, arg0);
+			throw new HardwarePlatformLoaderException(5, arg0);
 		}
 		boolean var10 = true;
 		byte[] var11 = class751.method3587(var8);
@@ -119,7 +119,7 @@ public class HardwarePlatformLoader implements class499 {
 				var13.write(var6, 0, var6.length);
 				var13.close();
 			} catch (Throwable var15) {
-				throw new class1112(6, arg0, var15);
+				throw new HardwarePlatformLoaderException(6, arg0, var15);
 			}
 		}
 		this.method8465(arg0, var8);
