@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.clansettings.ClanSettingsDelta;
 import deob.ObfuscatedName;
 import deob.Statics;
 import jaclib.ping.Ping;
@@ -275,7 +276,7 @@ public final class client extends GameShell {
 	public static class669 field10994 = new class669();
 
 	@ObfuscatedName("client.jw")
-	public static class37 field10967 = new class37();
+	public static SecureRandomProvider field10967 = new SecureRandomProvider();
 
 	@ObfuscatedName("client.js")
 	public static class495 field10855 = new class495(false);
@@ -9313,7 +9314,7 @@ public final class client extends GameShell {
 		} else if (ServerProt.CLANSETTINGS_DELTA == arg0.field796) {
 			field10818 = field11058;
 			boolean var634 = var2.g1() == 1;
-			class310 var635 = new class310(var2);
+			ClanSettingsDelta var635 = new ClanSettingsDelta(var2);
 			class309 var636;
 			if (var634) {
 				var636 = Statics.field1890;

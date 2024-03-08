@@ -11,10 +11,10 @@ public class class410 implements class412 {
 	public final class1126 field4228;
 
 	@ObfuscatedName("of.n")
-	public final class135 field4229;
+	public final DataType field4229;
 
 	@ObfuscatedName("of.m")
-	public final class109 field4230;
+	public final TextureFormat field4230;
 
 	@ObfuscatedName("of.k")
 	public final int field4231;
@@ -25,7 +25,7 @@ public class class410 implements class412 {
 	@ObfuscatedName("of.w")
 	public long field4233;
 
-	public class410(class1126 arg0, class109 arg1, class135 arg2, int arg3, int arg4, int arg5) {
+	public class410(class1126 arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4, int arg5) {
 		this.field4228 = arg0;
 		this.field4231 = arg3;
 		this.field4232 = arg4;

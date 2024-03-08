@@ -9,7 +9,7 @@ import java.nio.ByteBuffer;
 public class class982 extends class532 {
 
 	@ObfuscatedName("akx.k")
-	public final class850 field11416;
+	public final GpuRenderer field11416;
 
 	@ObfuscatedName("akx.f")
 	public final class837 field11414;
@@ -59,7 +59,7 @@ public class class982 extends class532 {
 	@ObfuscatedName("akx.b")
 	public ByteBuffer field11429;
 
-	public class982(class850 arg0, class837 arg1, class973 arg2, int[] arg3) {
+	public class982(GpuRenderer arg0, class837 arg1, class973 arg2, int[] arg3) {
 		this.field11416 = arg0;
 		this.field11415 = arg2;
 		this.field11414 = arg1;

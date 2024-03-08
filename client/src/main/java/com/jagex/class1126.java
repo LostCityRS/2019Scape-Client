@@ -7,7 +7,7 @@ import jagdx.*;
 import java.awt.*;
 
 @ObfuscatedName("aqd")
-public class class1126 extends class850 {
+public class class1126 extends GpuRenderer {
 
 	@ObfuscatedName("aqd.hx")
 	public final int field11956;
@@ -462,18 +462,18 @@ public class class1126 extends class850 {
 	}
 
 	@ObfuscatedName("aqd.au(IILck;Ldg;I)Ldp;")
-	public class130 method2146(int arg0, int arg1, class109 arg2, class135 arg3, int arg4) {
+	public class130 method2146(int arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4) {
 		return new class410(this, arg2, arg3, arg0, arg1, arg4);
 	}
 
 	@ObfuscatedName("aqd.ar(II)Ldw;")
 	public class126 method2121(int arg0, int arg1) {
-		return new class411(this, class135.field1649, arg0, arg1, 0);
+		return new class411(this, DataType.field1649, arg0, arg1, 0);
 	}
 
 	@ObfuscatedName("aqd.ap(III)Ldw;")
 	public class126 method2356(int arg0, int arg1, int arg2) {
-		return new class411(this, class135.field1649, arg0, arg1, arg2);
+		return new class411(this, DataType.field1649, arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("aqd.aha(Loz;)Lake;")
@@ -533,9 +533,9 @@ public class class1126 extends class850 {
 	public void method19024(int arg0, int arg1) {
 		this.method2126();
 		this.method2419(arg0, arg1);
-		this.field11990 = IDirect3DDevice.CreateRenderTarget(this.field11978, arg0, arg1, method19011(class109.field1273, class135.field1645), 0, 0, false);
+		this.field11990 = IDirect3DDevice.CreateRenderTarget(this.field11978, arg0, arg1, method19011(TextureFormat.field1273, DataType.field1645), 0, 0, false);
 		for (int var3 = 0; var3 < 3; var3++) {
-			this.field11994[var3] = IDirect3DDevice.CreateOffscreenPlainSurface(this.field11978, arg0, arg1, method19011(class109.field1273, class135.field1645), 2);
+			this.field11994[var3] = IDirect3DDevice.CreateOffscreenPlainSurface(this.field11978, arg0, arg1, method19011(TextureFormat.field1273, DataType.field1645), 2);
 		}
 		this.method15961(arg0 * arg1 * 4);
 	}
@@ -793,39 +793,39 @@ public class class1126 extends class850 {
 	}
 
 	@ObfuscatedName("aqd.uq(Lck;Ldg;)Z")
-	public boolean method16026(class109 arg0, class135 arg1) {
+	public boolean method16026(TextureFormat arg0, DataType arg1) {
 		D3DDISPLAYMODE var3 = new D3DDISPLAYMODE();
 		return class0.method35(IDirect3D.GetAdapterDisplayMode(this.field11955, this.field11956, var3)) && class0.method35(IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, var3.Format, 0, 3, method19011(arg0, arg1)));
 	}
 
 	@ObfuscatedName("aqd.uc(Lck;Ldg;)Z")
-	public boolean method16289(class109 arg0, class135 arg1) {
+	public boolean method16289(TextureFormat arg0, DataType arg1) {
 		D3DDISPLAYMODE var3 = new D3DDISPLAYMODE();
 		return class0.method35(IDirect3D.GetAdapterDisplayMode(this.field11955, this.field11956, var3)) && class0.method35(IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, var3.Format, 0, 4, method19011(arg0, arg1)));
 	}
 
 	@ObfuscatedName("aqd.uz(Lck;Ldg;II)Llz;")
-	public class341 method16030(class109 arg0, class135 arg1, int arg2, int arg3) {
+	public GpuTexture method16030(TextureFormat arg0, DataType arg1, int arg2, int arg3) {
 		return new class925(this, arg0, arg1, arg2, arg3);
 	}
 
 	@ObfuscatedName("aqd.uj(IIZ[III)Llz;")
-	public class341 method16033(int arg0, int arg1, boolean arg2, int[] arg3, int arg4, int arg5) {
+	public GpuTexture method16033(int arg0, int arg1, boolean arg2, int[] arg3, int arg4, int arg5) {
 		return new class925(this, arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@ObfuscatedName("aqd.ug(Lck;IIZ[BII)Llz;")
-	public class341 method15975(class109 arg0, int arg1, int arg2, boolean arg3, byte[] arg4, int arg5, int arg6) {
+	public GpuTexture method15975(TextureFormat arg0, int arg1, int arg2, boolean arg3, byte[] arg4, int arg5, int arg6) {
 		return new class925(this, arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@ObfuscatedName("aqd.ub(Lck;IIZ[FII)Llz;")
-	public class341 method16032(class109 arg0, int arg1, int arg2, boolean arg3, float[] arg4, int arg5, int arg6) {
+	public GpuTexture method16032(TextureFormat arg0, int arg1, int arg2, boolean arg3, float[] arg4, int arg5, int arg6) {
 		return new class925(this, arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@ObfuscatedName("aqd.uy(Lck;Ldg;II)Lmo;")
-	public class359 method16089(class109 arg0, class135 arg1, int arg2, int arg3) {
+	public class359 method16089(TextureFormat arg0, DataType arg1, int arg2, int arg3) {
 		return new class926(this, arg0, arg1, arg2, arg3);
 	}
 
@@ -835,7 +835,7 @@ public class class1126 extends class850 {
 	}
 
 	@ObfuscatedName("aqd.uk(Lck;IIIZ[B)Lll;")
-	public class327 method16197(class109 arg0, int arg1, int arg2, int arg3, boolean arg4, byte[] arg5) {
+	public VolumeTexture method16197(TextureFormat arg0, int arg1, int arg2, int arg3, boolean arg4, byte[] arg5) {
 		return new class917(this, arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -1135,7 +1135,7 @@ public class class1126 extends class850 {
 
 	@ObfuscatedName("aqd.vc(Z)Lml;")
 	public final class360 method16067(boolean arg0) {
-		return new class403(this, class135.field1646, arg0);
+		return new class403(this, DataType.field1646, arg0);
 	}
 
 	@ObfuscatedName("aqd.vn(Z)Llr;")
@@ -1215,15 +1215,15 @@ public class class1126 extends class850 {
 	}
 
 	@ObfuscatedName("aqd.aix(Lck;Ldg;)I")
-	public static final int method19011(class109 arg0, class135 arg1) {
+	public static final int method19011(TextureFormat arg0, DataType arg1) {
 		switch(arg1.field1650) {
 			case 0:
-				if (class109.field1273 == arg0) {
+				if (TextureFormat.field1273 == arg0) {
 					return 116;
 				}
 				break;
 			case 3:
-				if (class109.field1273 == arg0) {
+				if (TextureFormat.field1273 == arg0) {
 					return 113;
 				}
 				break;
@@ -1254,10 +1254,10 @@ public class class1126 extends class850 {
 	}
 
 	@ObfuscatedName("aqd.ait(Ldg;)I")
-	public static final int method19035(class135 arg0) {
-		if (class135.field1646 == arg0) {
+	public static final int method19035(DataType arg0) {
+		if (DataType.field1646 == arg0) {
 			return 80;
-		} else if (class135.field1649 == arg0) {
+		} else if (DataType.field1649 == arg0) {
 			return 77;
 		} else {
 			throw new IllegalArgumentException("");

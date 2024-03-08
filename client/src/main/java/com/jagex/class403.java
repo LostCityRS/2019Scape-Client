@@ -22,12 +22,12 @@ public class class403 implements class360 {
 	public final boolean field4209;
 
 	@ObfuscatedName("ot.f")
-	public final class135 field4212;
+	public final DataType field4212;
 
 	@ObfuscatedName("ot.w")
 	public long field4213 = 0L;
 
-	public class403(class1126 arg0, class135 arg1, boolean arg2) {
+	public class403(class1126 arg0, DataType arg1, boolean arg2) {
 		this.field4211 = arg0;
 		this.field4212 = arg1;
 		this.field4209 = arg2;
@@ -40,7 +40,7 @@ public class class403 implements class360 {
 	}
 
 	@ObfuscatedName("ot.e()Ldg;")
-	public class135 method5832() {
+	public DataType method5832() {
 		return this.field4212;
 	}
 
@@ -61,7 +61,7 @@ public class class403 implements class360 {
 		} else {
 			var3 = 1;
 		}
-		this.field4213 = IDirect3DDevice.CreateIndexBuffer(this.field4211.field11978, this.field4208, var2, class135.field1646 == this.field4212 ? 101 : 102, var3);
+		this.field4213 = IDirect3DDevice.CreateIndexBuffer(this.field4211.field11978, this.field4208, var2, DataType.field1646 == this.field4212 ? 101 : 102, var3);
 		this.field4210 = this.field4208;
 	}
 

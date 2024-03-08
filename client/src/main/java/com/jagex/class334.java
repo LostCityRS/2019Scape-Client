@@ -9,7 +9,7 @@ import java.util.Vector;
 public class class334 {
 
 	@ObfuscatedName("ls.e")
-	public class850 field3247;
+	public GpuRenderer field3247;
 
 	@ObfuscatedName("ls.n")
 	public class840 field3245;
@@ -57,7 +57,7 @@ public class class334 {
 	public int field3259 = 0;
 
 	@ObfuscatedName("ls.y")
-	public class135 field3260;
+	public DataType field3260;
 
 	@ObfuscatedName("ls.q")
 	public boolean field3261;
@@ -77,9 +77,9 @@ public class class334 {
 	@ObfuscatedName("ls.g")
 	public int field3266 = 0;
 
-	public class334(class850 arg0, int arg1, int arg2) {
+	public class334(GpuRenderer arg0, int arg1, int arg2) {
 		this.field3247 = arg0;
-		this.field3260 = class135.field1645;
+		this.field3260 = DataType.field1645;
 		this.field3256 = arg1;
 		this.field3246 = arg2;
 	}
@@ -112,13 +112,13 @@ public class class334 {
 		this.method5596();
 		switch(this.field3252) {
 			case 0:
-				this.field3260 = class135.field1645;
+				this.field3260 = DataType.field1645;
 				break;
 			case 1:
-				this.field3260 = class135.field1647;
+				this.field3260 = DataType.field1647;
 				break;
 			case 2:
-				this.field3260 = class135.field1642;
+				this.field3260 = DataType.field1642;
 				break;
 			default:
 				throw new RuntimeException();
@@ -126,14 +126,14 @@ public class class334 {
 		this.field3265 = this.field3247.method2145();
 		if (this.field3247.field10180 > 1 && this.field3247.field10134 && this.field3247.field10199) {
 			this.field3245 = this.field3247.method2145();
-			this.field3253 = this.field3247.method2146(this.field3256, this.field3246, class109.field1273, this.field3260, this.field3247.field10180);
+			this.field3253 = this.field3247.method2146(this.field3256, this.field3246, TextureFormat.field1273, this.field3260, this.field3247.field10180);
 			this.field3262 = this.field3247.method2356(this.field3256, this.field3246, this.field3247.field10180);
 		}
-		this.field3244 = this.field3247.method16089(class109.field1273, this.field3260, this.field3256, this.field3246);
+		this.field3244 = this.field3247.method16089(TextureFormat.field1273, this.field3260, this.field3256, this.field3246);
 		this.field3250 = this.field3244.method5828(0);
-		this.field3248 = this.field3247.method16089(class109.field1273, this.field3260, this.field3256, this.field3246);
+		this.field3248 = this.field3247.method16089(TextureFormat.field1273, this.field3260, this.field3256, this.field3246);
 		this.field3251 = this.field3248.method5828(0);
-		this.field3249 = this.field3247.method16089(class109.field1273, this.field3260, this.field3256, this.field3246);
+		this.field3249 = this.field3247.method16089(TextureFormat.field1273, this.field3260, this.field3256, this.field3246);
 		this.field3255 = this.field3249.method5828(0);
 		this.field3254 = this.field3247.method2121(this.field3249.method5718(), this.field3249.method5696());
 		int var1 = this.field3257.size();

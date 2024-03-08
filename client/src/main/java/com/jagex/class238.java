@@ -29,7 +29,7 @@ public abstract class class238 {
 	@ObfuscatedName("ho.u")
 	public static final class251 field2571 = new class232();
 
-	public class238(class850 arg0, class239 arg1) {
+	public class238(GpuRenderer arg0, class239 arg1) {
 		this.field2570 = arg1.field2577;
 		this.field2567 = arg1.field2580.length;
 		this.field2574 = new class252(this.field2567, field2571);
@@ -248,7 +248,7 @@ public abstract class class238 {
 	}
 
 	@ObfuscatedName("ho.f(Lafc;Lhn;)Lhi;")
-	public abstract class234 method4156(class850 arg0, class233 arg1);
+	public abstract class234 method4156(GpuRenderer arg0, class233 arg1);
 
 	@ObfuscatedName("ho.d(Lhi;)Z")
 	public abstract boolean method4162(class234 arg0);

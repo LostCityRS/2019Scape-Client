@@ -59,7 +59,7 @@ public class class1138 extends class916 {
 	@ObfuscatedName("aqw.aa")
 	public int field12117;
 
-	public class1138(class850 arg0, class323 arg1) throws class1108 {
+	public class1138(GpuRenderer arg0, class323 arg1) throws class1108 {
 		super(arg0);
 		this.field12119 = arg1;
 		if (this.field12119.method5407() && arg0.method15957()) {

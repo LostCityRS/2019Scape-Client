@@ -14,7 +14,7 @@ public class class901 extends class287 {
 	@ObfuscatedName("ahq.f")
 	public class234 field10517;
 
-	public class901(class850 arg0) throws class1108 {
+	public class901(GpuRenderer arg0) throws class1108 {
 		super(arg0);
 		this.method16642();
 	}

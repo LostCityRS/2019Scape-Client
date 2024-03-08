@@ -2645,7 +2645,7 @@ public class class848 extends class133 {
 	}
 
 	@ObfuscatedName("afg.au(IILck;Ldg;I)Ldp;")
-	public class130 method2146(int arg0, int arg1, class109 arg2, class135 arg3, int arg4) {
+	public class130 method2146(int arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4) {
 		return this.method15676(arg0, arg1);
 	}
 

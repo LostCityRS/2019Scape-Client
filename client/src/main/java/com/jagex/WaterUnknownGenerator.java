@@ -3,12 +3,12 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aqs")
-public class class1143 extends class934 {
+public class WaterUnknownGenerator extends class934 {
 
 	@ObfuscatedName("aqs.h")
 	public byte[] field12155;
 
-	public class1143() {
+	public WaterUnknownGenerator() {
 		super(8, 5, 8, 8, 2, 0.1F, 0.55F, 3.0F);
 	}
 

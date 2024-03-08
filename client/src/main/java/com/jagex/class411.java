@@ -11,7 +11,7 @@ public class class411 implements class404 {
 	public final class1126 field4238;
 
 	@ObfuscatedName("oy.n")
-	public final class135 field4234;
+	public final DataType field4234;
 
 	@ObfuscatedName("oy.m")
 	public final int field4236;
@@ -22,7 +22,7 @@ public class class411 implements class404 {
 	@ObfuscatedName("oy.f")
 	public long field4237;
 
-	public class411(class1126 arg0, class135 arg1, int arg2, int arg3, int arg4) {
+	public class411(class1126 arg0, DataType arg1, int arg2, int arg3, int arg4) {
 		this.field4238 = arg0;
 		this.field4236 = arg2;
 		this.field4235 = arg3;

@@ -101,7 +101,7 @@ public class class1139 extends class916 {
 	@ObfuscatedName("aqe.bq")
 	public class234 field12128;
 
-	public class1139(class850 arg0, class323 arg1, boolean arg2) throws class1108 {
+	public class1139(GpuRenderer arg0, class323 arg1, boolean arg2) throws class1108 {
 		super(arg0);
 		new Matrix4x4();
 		this.field12122 = arg1;

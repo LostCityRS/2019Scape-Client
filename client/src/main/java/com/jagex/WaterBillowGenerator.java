@@ -3,12 +3,12 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aqu")
-public class class1141 extends class933 {
+public class WaterBillowGenerator extends class933 {
 
 	@ObfuscatedName("aqu.s")
 	public byte[] field12153;
 
-	public class1141() {
+	public WaterBillowGenerator() {
 		super(12, 5, 16, 2, 2, 0.45F);
 	}
 

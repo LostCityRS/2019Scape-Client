@@ -559,7 +559,7 @@ public class class1004 extends WorldMap {
 					var31 = var30.field619 * 255 / field11664;
 				}
 				int var32 = var31 << 24 | 0xFFFF00;
-				if (arg0 instanceof class850) {
+				if (arg0 instanceof GpuRenderer) {
 					arg0.method2301(arg1.field11449 - var24 - 7, arg1.field11451 - var27 - 7, var9.method1459() + 14, var9.method1459() + 14, var32);
 					arg0.method2301(arg1.field11449 - var24 - 5, arg1.field11451 - var27 - 5, var9.method1459() + 10, var9.method1459() + 10, var32);
 					arg0.method2301(arg1.field11449 - var24 - 3, arg1.field11451 - var27 - 3, var9.method1459() + 6, var9.method1459() + 6, var32);

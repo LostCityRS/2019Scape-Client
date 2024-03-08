@@ -1,12 +1,16 @@
-package com.jagex;
+package com.jagex.clansettings;
 
+import com.jagex.Packet;
+import com.jagex.clansettings.ClanSettingsDelta;
+import com.jagex.class309;
+import com.jagex.class978;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("arx")
-public class class1153 extends class978 {
+public class SetMemberMuted extends class978 {
 
 	// $FF: synthetic field
-	public final class310 this$0;
+	public final ClanSettingsDelta this$0;
 
 	@ObfuscatedName("arx.k")
 	public int field12218;
@@ -14,7 +18,7 @@ public class class1153 extends class978 {
 	@ObfuscatedName("arx.f")
 	public boolean field12219;
 
-	public class1153(class310 arg0) {
+	public SetMemberMuted(ClanSettingsDelta arg0) {
 		this.this$0 = arg0;
 		this.field12218 = -1;
 	}

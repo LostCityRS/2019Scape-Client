@@ -8,7 +8,7 @@ import java.nio.ByteBuffer;
 public class class337 {
 
 	@ObfuscatedName("lg.e")
-	public final class850 field3287;
+	public final GpuRenderer field3287;
 
 	@ObfuscatedName("lg.n")
 	public final class837 field3290;
@@ -34,7 +34,7 @@ public class class337 {
 	@ObfuscatedName("lg.z")
 	public class336[][] field3293;
 
-	public class337(class850 arg0, class837 arg1) {
+	public class337(GpuRenderer arg0, class837 arg1) {
 		this.field3287 = arg0;
 		this.field3290 = arg1;
 		this.field3288 = (this.field3290.field1235 * this.field3290.field1233 >> this.field3287.field10129) + 2;

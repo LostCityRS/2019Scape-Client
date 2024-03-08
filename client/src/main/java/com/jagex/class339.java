@@ -6,40 +6,40 @@ import deob.ObfuscatedName;
 public class class339 {
 
 	@ObfuscatedName("lj.e")
-	public static final class339 field3310 = new class339(4, 0, 3, class135.field1642);
+	public static final class339 field3310 = new class339(4, 0, 3, DataType.field1642);
 
 	@ObfuscatedName("lj.n")
-	public static final class339 field3301 = new class339(11, 1, 3, class135.field1642);
+	public static final class339 field3301 = new class339(11, 1, 3, DataType.field1642);
 
 	@ObfuscatedName("lj.m")
-	public static final class339 field3311 = new class339(2, 2, 4, class135.field1645);
+	public static final class339 field3311 = new class339(2, 2, 4, DataType.field1645);
 
 	@ObfuscatedName("lj.k")
-	public static final class339 field3303 = new class339(7, 3, 1, class135.field1642);
+	public static final class339 field3303 = new class339(7, 3, 1, DataType.field1642);
 
 	@ObfuscatedName("lj.f")
-	public static final class339 field3300 = new class339(5, 4, 2, class135.field1642);
+	public static final class339 field3300 = new class339(5, 4, 2, DataType.field1642);
 
 	@ObfuscatedName("lj.w")
-	public static final class339 field3305 = new class339(3, 5, 3, class135.field1642);
+	public static final class339 field3305 = new class339(3, 5, 3, DataType.field1642);
 
 	@ObfuscatedName("lj.l")
-	public static final class339 field3306 = new class339(9, 6, 4, class135.field1642);
+	public static final class339 field3306 = new class339(9, 6, 4, DataType.field1642);
 
 	@ObfuscatedName("lj.u")
-	public static final class339 field3307 = new class339(10, 7, 4, class135.field1642);
+	public static final class339 field3307 = new class339(10, 7, 4, DataType.field1642);
 
 	@ObfuscatedName("lj.z")
-	public static final class339 field3308 = new class339(1, 8, 4, class135.field1642);
+	public static final class339 field3308 = new class339(1, 8, 4, DataType.field1642);
 
 	@ObfuscatedName("lj.p")
-	public static final class339 field3309 = new class339(0, 9, 4, class135.field1642);
+	public static final class339 field3309 = new class339(0, 9, 4, DataType.field1642);
 
 	@ObfuscatedName("lj.d")
-	public static final class339 field3314 = new class339(8, 10, 3, class135.field1642);
+	public static final class339 field3314 = new class339(8, 10, 3, DataType.field1642);
 
 	@ObfuscatedName("lj.c")
-	public static final class339 field3315 = new class339(6, 11, 3, class135.field1642);
+	public static final class339 field3315 = new class339(6, 11, 3, DataType.field1642);
 
 	@ObfuscatedName("lj.r")
 	public final int field3312;
@@ -57,9 +57,9 @@ public class class339 {
 	public final int field3317;
 
 	@ObfuscatedName("lj.x")
-	public final class135 field3318;
+	public final DataType field3318;
 
-	public class339(int arg0, int arg1, int arg2, class135 arg3) {
+	public class339(int arg0, int arg1, int arg2, DataType arg3) {
 		this.field3312 = arg0;
 		this.field3316 = arg1;
 		this.field3317 = arg2;

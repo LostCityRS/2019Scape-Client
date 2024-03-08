@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public abstract class class285 {
 
 	@ObfuscatedName("jj.n")
-	public class850 field2963;
+	public GpuRenderer field2963;
 
 	@ObfuscatedName("jj.m")
 	public float[] field2964 = new float[16];
@@ -15,7 +15,7 @@ public abstract class class285 {
 	public float[] field2965 = new float[16];
 
 	@ObfuscatedName("jj.f")
-	public class341 field2966;
+	public GpuTexture field2966;
 
 	@ObfuscatedName("jj.w")
 	public class362 field2967;
@@ -71,7 +71,7 @@ public abstract class class285 {
 	@ObfuscatedName("jj.g")
 	public int field2962;
 
-	public class285(class850 arg0) {
+	public class285(GpuRenderer arg0) {
 		this.field2963 = arg0;
 	}
 

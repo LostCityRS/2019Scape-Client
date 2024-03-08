@@ -44,7 +44,7 @@ public class class923 extends class333 {
 	@ObfuscatedName("aia.o")
 	public boolean field10640;
 
-	public class923(class850 arg0) {
+	public class923(GpuRenderer arg0) {
 		super(arg0);
 	}
 
@@ -101,7 +101,7 @@ public class class923 extends class333 {
 	}
 
 	@ObfuscatedName("aia.l(ILafq;Llz;Ldw;Llz;Z)V")
-	public void method5564(int arg0, class840 arg1, class341 arg2, class126 arg3, class341 arg4, boolean arg5) {
+	public void method5564(int arg0, class840 arg1, GpuTexture arg2, class126 arg3, GpuTexture arg4, boolean arg5) {
 		float var7 = this.field3242.method15954();
 		float var8 = (float) arg1.method1627();
 		float var9 = (float) arg1.method1628();

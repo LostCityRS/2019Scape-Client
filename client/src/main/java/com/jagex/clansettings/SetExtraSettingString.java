@@ -1,12 +1,16 @@
-package com.jagex;
+package com.jagex.clansettings;
 
+import com.jagex.Packet;
+import com.jagex.clansettings.ClanSettingsDelta;
+import com.jagex.class309;
+import com.jagex.class978;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aro")
-public class class1158 extends class978 {
+public class SetExtraSettingString extends class978 {
 
 	// $FF: synthetic field
-	public final class310 this$0;
+	public final ClanSettingsDelta this$0;
 
 	@ObfuscatedName("aro.k")
 	public int field12231;
@@ -14,7 +18,7 @@ public class class1158 extends class978 {
 	@ObfuscatedName("aro.f")
 	public String field12230;
 
-	public class1158(class310 arg0) {
+	public SetExtraSettingString(ClanSettingsDelta arg0) {
 		this.this$0 = arg0;
 	}
 

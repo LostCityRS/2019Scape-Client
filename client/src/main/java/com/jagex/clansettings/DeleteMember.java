@@ -1,17 +1,21 @@
-package com.jagex;
+package com.jagex.clansettings;
 
+import com.jagex.Packet;
+import com.jagex.clansettings.ClanSettingsDelta;
+import com.jagex.class309;
+import com.jagex.class978;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ari")
-public class class1156 extends class978 {
+public class DeleteMember extends class978 {
 
 	// $FF: synthetic field
-	public final class310 this$0;
+	public final ClanSettingsDelta this$0;
 
 	@ObfuscatedName("ari.k")
 	public int field12224;
 
-	public class1156(class310 arg0) {
+	public DeleteMember(ClanSettingsDelta arg0) {
 		this.this$0 = arg0;
 		this.field12224 = -1;
 	}

@@ -20,7 +20,7 @@ public class class897 extends class285 {
 	@ObfuscatedName("ahv.bl")
 	public int[] field10501;
 
-	public class897(class850 arg0) throws class1108 {
+	public class897(GpuRenderer arg0) throws class1108 {
 		super(arg0);
 		this.method16619();
 	}

@@ -6,10 +6,10 @@ import deob.ObfuscatedName;
 public abstract class class286 {
 
 	@ObfuscatedName("jo.e")
-	public class850 field2986;
+	public GpuRenderer field2986;
 
 	@ObfuscatedName("jo.n")
-	public class341 field2991;
+	public GpuTexture field2991;
 
 	@ObfuscatedName("jo.m")
 	public final Matrix4x4 field2987 = new Matrix4x4();
@@ -26,7 +26,7 @@ public abstract class class286 {
 	@ObfuscatedName("jo.l")
 	public float field2985 = 0.0F;
 
-	public class286(class850 arg0) {
+	public class286(GpuRenderer arg0) {
 		this.field2986 = arg0;
 	}
 

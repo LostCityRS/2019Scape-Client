@@ -53,7 +53,7 @@ public class class344 {
 	@ObfuscatedName("ld.o")
 	public int field3334 = 0;
 
-	public class344(class850 arg0) {
+	public class344(GpuRenderer arg0) {
 		this.field3326 = arg0.method16065(new class345[] { new class345(new class339[] { class339.field3310, class339.field3311, class339.field3300 }), new class345(class339.field3301) });
 		this.field3333 = arg0.method16085(true);
 		this.field3329 = arg0.method16085(false);
@@ -91,7 +91,7 @@ public class class344 {
 	}
 
 	@ObfuscatedName("ld.e(Lafc;)V")
-	public void method5755(class850 arg0) {
+	public void method5755(GpuRenderer arg0) {
 		this.field3333.method5553(786336, 24);
 	}
 
@@ -101,7 +101,7 @@ public class class344 {
 	}
 
 	@ObfuscatedName("ld.m(Lafc;Ldm;)V")
-	public void method5770(class850 arg0, ParticleList arg1) {
+	public void method5770(GpuRenderer arg0, ParticleList arg1) {
 		arg0.method2219(false);
 		Statics.field3325 = arg0.field10122;
 		float var3 = arg0.field10059.field4315[2];
@@ -155,7 +155,7 @@ public class class344 {
 	}
 
 	@ObfuscatedName("ld.k(Lafc;Lajn;IIILjo;Z)V")
-	public void method5766(class850 arg0, class958 arg1, int arg2, int arg3, int arg4, class286 arg5, boolean arg6) {
+	public void method5766(GpuRenderer arg0, class958 arg1, int arg2, int arg3, int arg4, class286 arg5, boolean arg6) {
 		class958 var8 = arg1.field11213;
 		int var9 = 0;
 		int var10 = -2;
@@ -223,7 +223,7 @@ public class class344 {
 	}
 
 	@ObfuscatedName("ld.w(Lafc;IZ)V")
-	public void method5759(class850 arg0, int arg1, boolean arg2) {
+	public void method5759(GpuRenderer arg0, int arg1, boolean arg2) {
 		int var4 = 0;
 		Matrix4x4 var5 = arg0.field10059;
 		float var6 = var5.field4315[0];

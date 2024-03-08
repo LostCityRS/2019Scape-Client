@@ -10,7 +10,7 @@ import java.util.Iterator;
 public class class837 extends class104 {
 
 	@ObfuscatedName("aem.u")
-	public final class850 field9516;
+	public final GpuRenderer field9516;
 
 	@ObfuscatedName("aem.z")
 	public int field9488;
@@ -129,7 +129,7 @@ public class class837 extends class104 {
 	@ObfuscatedName("aem.ab")
 	public int[] field9526 = new int[1];
 
-	public class837(class850 arg0, int arg1, int arg2, int arg3, int arg4, int[][] arg5, int[][] arg6, int arg7) {
+	public class837(GpuRenderer arg0, int arg1, int arg2, int arg3, int arg4, int[][] arg5, int[][] arg6, int arg7) {
 		super(arg3, arg4, arg7, arg5);
 		this.field9516 = arg0;
 		this.field9488 = this.field1236 - 2;

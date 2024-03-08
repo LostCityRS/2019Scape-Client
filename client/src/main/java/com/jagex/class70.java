@@ -16,10 +16,10 @@ public abstract class class70 {
 	public final int field1009;
 
 	@ObfuscatedName("bq.p")
-	public final class109 field1002;
+	public final TextureFormat field1002;
 
 	@ObfuscatedName("bq.d")
-	public final class135 field1010;
+	public final DataType field1010;
 
 	@ObfuscatedName("bq.c")
 	public boolean field1011;
@@ -33,7 +33,7 @@ public abstract class class70 {
 	@ObfuscatedName("bq.o")
 	public static final int[] field1014 = new int[1];
 
-	public class70(class849 arg0, int arg1, class109 arg2, class135 arg3, int arg4, boolean arg5) {
+	public class70(class849 arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4, boolean arg5) {
 		this.field1006 = arg0;
 		this.field1009 = arg1;
 		this.field1002 = arg2;
@@ -188,7 +188,7 @@ public abstract class class70 {
 	}
 
 	@ObfuscatedName("bq.p(IIIILck;[B)V")
-	public static void method1107(int arg0, int arg1, int arg2, int arg3, class109 arg4, byte[] arg5) {
+	public static void method1107(int arg0, int arg1, int arg2, int arg3, TextureFormat arg4, byte[] arg5) {
 		if (arg2 > 0 && !class783.method4918(arg2)) {
 			throw new IllegalArgumentException("");
 		} else if (arg3 <= 0 || class783.method4918(arg3)) {
@@ -242,7 +242,7 @@ public abstract class class70 {
 	}
 
 	@ObfuscatedName("bq.d(IIIILck;[F)V")
-	public static void method1091(int arg0, int arg1, int arg2, int arg3, class109 arg4, float[] arg5) {
+	public static void method1091(int arg0, int arg1, int arg2, int arg3, TextureFormat arg4, float[] arg5) {
 		if (arg2 > 0 && !class783.method4918(arg2)) {
 			throw new IllegalArgumentException("");
 		} else if (arg3 <= 0 || class783.method4918(arg3)) {

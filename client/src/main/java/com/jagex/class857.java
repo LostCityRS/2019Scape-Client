@@ -49,7 +49,7 @@ public class class857 extends class140 {
 					}
 				}
 			}
-			this.field10241 = class1113.method18932(arg0, class109.field1270, class135.field1645, this.field1667.field8571, this.field1667.field8572, false, var8, class109.field1270);
+			this.field10241 = class1113.method18932(arg0, TextureFormat.field1270, DataType.field1645, this.field1667.field8571, this.field1667.field8572, false, var8, TextureFormat.field1270);
 			this.field10240 = true;
 		} else {
 			if (arg2.method2587()) {

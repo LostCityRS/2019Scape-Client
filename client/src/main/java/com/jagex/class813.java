@@ -9,7 +9,7 @@ public class class813 extends class70 {
 	@ObfuscatedName("adq.a")
 	public final int field9279;
 
-	public class813(class849 arg0, class109 arg1, class135 arg2, int arg3) {
+	public class813(class849 arg0, TextureFormat arg1, DataType arg2, int arg3) {
 		super(arg0, 34067, arg1, arg2, arg3 * arg3 * 6, false);
 		this.field9279 = arg3;
 		this.field1006.method15777(this);
@@ -19,7 +19,7 @@ public class class813 extends class70 {
 		this.method1082(true);
 	}
 
-	public class813(class849 arg0, class109 arg1, class135 arg2, int arg3, boolean arg4, int[][] arg5) {
+	public class813(class849 arg0, TextureFormat arg1, DataType arg2, int arg3, boolean arg4, int[][] arg5) {
 		super(arg0, 34067, arg1, arg2, arg3 * arg3 * 6, arg4);
 		this.field9279 = arg3;
 		this.field1006.method15777(this);
@@ -35,7 +35,7 @@ public class class813 extends class70 {
 		this.method1082(true);
 	}
 
-	public class813(class849 arg0, class109 arg1, class135 arg2, int arg3, boolean arg4, byte[][] arg5, class109 arg6) {
+	public class813(class849 arg0, TextureFormat arg1, DataType arg2, int arg3, boolean arg4, byte[][] arg5, TextureFormat arg6) {
 		super(arg0, 34067, arg1, arg2, arg3 * arg3 * 6, arg4);
 		this.field9279 = arg3;
 		this.field1006.method15777(this);

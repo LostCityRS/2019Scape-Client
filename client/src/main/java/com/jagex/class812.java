@@ -12,7 +12,7 @@ public class class812 extends class70 {
 	@ObfuscatedName("adt.y")
 	public final int field9271;
 
-	public class812(class849 arg0, int arg1, class109 arg2, class135 arg3, int arg4, int arg5) {
+	public class812(class849 arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4, int arg5) {
 		super(arg0, arg1, arg2, arg3, arg4 * arg5, false);
 		this.field9272 = arg4;
 		this.field9271 = arg5;
@@ -22,7 +22,7 @@ public class class812 extends class70 {
 	}
 
 	public class812(class849 arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		super(arg0, arg1, class109.field1271, class135.field1645, arg4 * arg5, false);
+		super(arg0, arg1, TextureFormat.field1271, DataType.field1645, arg4 * arg5, false);
 		this.field9272 = arg4;
 		this.field9271 = arg5;
 		this.field1006.method15777(this);
@@ -36,7 +36,7 @@ public class class812 extends class70 {
 	}
 
 	public class812(class849 arg0, int arg1, int arg2, int arg3, boolean arg4, int[] arg5, int arg6, int arg7, boolean arg8) {
-		super(arg0, arg1, class109.field1273, class135.field1645, arg2 * arg3, arg4);
+		super(arg0, arg1, TextureFormat.field1273, DataType.field1645, arg2 * arg3, arg4);
 		this.field9272 = arg2;
 		this.field9271 = arg3;
 		if (arg8) {
@@ -63,7 +63,7 @@ public class class812 extends class70 {
 		this.method1082(true);
 	}
 
-	public class812(class849 arg0, int arg1, class109 arg2, class135 arg3, int arg4, int arg5, boolean arg6, byte[] arg7, class109 arg8, boolean arg9) {
+	public class812(class849 arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4, int arg5, boolean arg6, byte[] arg7, TextureFormat arg8, boolean arg9) {
 		super(arg0, arg1, arg2, arg3, arg4 * arg5, arg6);
 		this.field9272 = arg4;
 		this.field9271 = arg5;
@@ -91,7 +91,7 @@ public class class812 extends class70 {
 		this.method1082(true);
 	}
 
-	public class812(class849 arg0, int arg1, class109 arg2, class135 arg3, int arg4, int arg5, boolean arg6, float[] arg7, class109 arg8) {
+	public class812(class849 arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4, int arg5, boolean arg6, float[] arg7, TextureFormat arg8) {
 		super(arg0, arg1, arg2, arg3, arg4 * arg5, arg6);
 		this.field9272 = arg4;
 		this.field9271 = arg5;
@@ -116,7 +116,7 @@ public class class812 extends class70 {
 	}
 
 	@ObfuscatedName("adt.ap(IIII[BLck;IIZ)V")
-	public void method15331(int arg0, int arg1, int arg2, int arg3, byte[] arg4, class109 arg5, int arg6, int arg7, boolean arg8) {
+	public void method15331(int arg0, int arg1, int arg2, int arg3, byte[] arg4, TextureFormat arg5, int arg6, int arg7, boolean arg8) {
 		if (arg7 == 0) {
 			arg7 = arg2;
 		}

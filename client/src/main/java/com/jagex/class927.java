@@ -18,7 +18,7 @@ public class class927 extends class485 implements class359 {
 	@ObfuscatedName("aig.y")
 	public final float field10674;
 
-	public class927(class1127 arg0, class109 arg1, class135 arg2, int arg3, int arg4) {
+	public class927(class1127 arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4) {
 		super(arg0, 3553, arg1, arg2, arg3 * arg4, false);
 		if (this.field4980.field12022) {
 			this.field10671 = arg3;
@@ -36,7 +36,7 @@ public class class927 extends class485 implements class359 {
 	}
 
 	public class927(class1127 arg0, int arg1, int arg2, boolean arg3, int[] arg4, int arg5, int arg6) {
-		super(arg0, 3553, class109.field1273, class135.field1645, arg1 * arg2, arg3);
+		super(arg0, 3553, TextureFormat.field1273, DataType.field1645, arg1 * arg2, arg3);
 		if (this.field4980.field12022) {
 			this.field10671 = arg1;
 			this.field10672 = arg2;
@@ -63,8 +63,8 @@ public class class927 extends class485 implements class359 {
 		}
 	}
 
-	public class927(class1127 arg0, class109 arg1, int arg2, int arg3, boolean arg4, byte[] arg5, int arg6, int arg7) {
-		super(arg0, 3553, arg1, class135.field1645, arg2 * arg3, arg4);
+	public class927(class1127 arg0, TextureFormat arg1, int arg2, int arg3, boolean arg4, byte[] arg5, int arg6, int arg7) {
+		super(arg0, 3553, arg1, DataType.field1645, arg2 * arg3, arg4);
 		if (this.field4980.field12022) {
 			this.field10671 = arg2;
 			this.field10672 = arg3;
@@ -87,9 +87,9 @@ public class class927 extends class485 implements class359 {
 			this.method7634(this.field4979, arg2, arg3, arg5);
 		} else {
 			OpenGL.glPixelStorei(3314, arg7);
-			if (class109.field1276 == this.field4973) {
+			if (TextureFormat.field1276 == this.field4973) {
 				OpenGL.glCompressedTexImage2Dub(this.field4979, 0, 33777, arg2, arg3, 0, arg2 * arg3 / 2, arg5, arg6);
-			} else if (class109.field1277 == this.field4973) {
+			} else if (TextureFormat.field1277 == this.field4973) {
 				OpenGL.glCompressedTexImage2Dub(this.field4979, 0, 33779, arg2, arg3, 0, arg2 * arg3, arg5, arg6);
 			} else {
 				OpenGL.glTexImage2Dub(this.field4979, 0, class1127.method19077(this.field4973, this.field4977), arg2, arg3, 0, class1127.method19085(this.field4973), 5121, arg5, arg6);
@@ -99,8 +99,8 @@ public class class927 extends class485 implements class359 {
 		OpenGL.glPixelStorei(3317, 4);
 	}
 
-	public class927(class1127 arg0, class109 arg1, int arg2, int arg3, boolean arg4, float[] arg5, int arg6, int arg7) {
-		super(arg0, 3553, arg1, class135.field1642, arg2 * arg3, arg4);
+	public class927(class1127 arg0, TextureFormat arg1, int arg2, int arg3, boolean arg4, float[] arg5, int arg6, int arg7) {
+		super(arg0, 3553, arg1, DataType.field1642, arg2 * arg3, arg4);
 		if (this.field4980.field12022) {
 			this.field10671 = arg2;
 			this.field10672 = arg3;
@@ -178,7 +178,7 @@ public class class927 extends class485 implements class359 {
 	}
 
 	@ObfuscatedName("aig.p(IIII[BLck;II)V")
-	public void method5712(int arg0, int arg1, int arg2, int arg3, byte[] arg4, class109 arg5, int arg6, int arg7) {
+	public void method5712(int arg0, int arg1, int arg2, int arg3, byte[] arg4, TextureFormat arg5, int arg6, int arg7) {
 		this.field4980.method16092(this);
 		OpenGL.glPixelStorei(3317, 1);
 		OpenGL.glPixelStorei(3314, arg7);

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 @ObfuscatedName("afc")
-public abstract class class850 extends class133 {
+public abstract class GpuRenderer extends class133 {
 
 	@ObfuscatedName("afc.at")
 	public static final Object field10206 = new Object();
@@ -318,10 +318,10 @@ public abstract class class850 extends class133 {
 	public final class335 field10188;
 
 	@ObfuscatedName("afc.eh")
-	public class341 field10140;
+	public GpuTexture field10140;
 
 	@ObfuscatedName("afc.eq")
-	public class341 field10141;
+	public GpuTexture field10141;
 
 	@ObfuscatedName("afc.eg")
 	public class831 field10057;
@@ -590,7 +590,7 @@ public abstract class class850 extends class133 {
 		Statics.method5134().method7902("jaclib");
 	}
 
-	public class850(class125 arg0, class143 arg1, class383 arg2, class381 arg3, class378 arg4, class442 arg5, int arg6, int arg7) {
+	public GpuRenderer(class125 arg0, class143 arg1, class383 arg2, class381 arg3, class378 arg4, class442 arg5, int arg6, int arg7) {
 		super(arg0, arg1, arg2, arg3, arg4);
 		new Stream();
 		this.field10058 = new class844[8];
@@ -1881,17 +1881,17 @@ public abstract class class850 extends class133 {
 	}
 
 	@ObfuscatedName("afc.ui(IIZ[I)Llz;")
-	public final class341 method16204(int arg0, int arg1, boolean arg2, int[] arg3) {
+	public final GpuTexture method16204(int arg0, int arg1, boolean arg2, int[] arg3) {
 		return this.method16033(arg0, arg1, arg2, arg3, 0, 0);
 	}
 
 	@ObfuscatedName("afc.ua(Lck;IIZ[B)Llz;")
-	public final class341 method16028(class109 arg0, int arg1, int arg2, boolean arg3, byte[] arg4) {
+	public final GpuTexture method16028(TextureFormat arg0, int arg1, int arg2, boolean arg3, byte[] arg4) {
 		return this.method15975(arg0, arg1, arg2, arg3, arg4, 0, 0);
 	}
 
 	@ObfuscatedName("afc.uf(Lck;IIZ[F)Llz;")
-	public final class341 method15992(class109 arg0, int arg1, int arg2, boolean arg3, float[] arg4) {
+	public final GpuTexture method15992(TextureFormat arg0, int arg1, int arg2, boolean arg3, float[] arg4) {
 		return this.method16032(arg0, arg1, arg2, arg3, arg4, 0, 0);
 	}
 
@@ -2398,7 +2398,7 @@ public abstract class class850 extends class133 {
 	public abstract void method15967(Matrix4x4 arg0, Matrix4x4 arg1, Matrix4x4 arg2);
 
 	@ObfuscatedName("afc.ug(Lck;IIZ[BII)Llz;")
-	public abstract class341 method15975(class109 arg0, int arg1, int arg2, boolean arg3, byte[] arg4, int arg5, int arg6);
+	public abstract GpuTexture method15975(TextureFormat arg0, int arg1, int arg2, boolean arg3, byte[] arg4, int arg5, int arg6);
 
 	@ObfuscatedName("afc.vz()V")
 	public abstract void method15978();
@@ -2437,19 +2437,19 @@ public abstract class class850 extends class133 {
 	public abstract void method16025();
 
 	@ObfuscatedName("afc.uq(Lck;Ldg;)Z")
-	public abstract boolean method16026(class109 arg0, class135 arg1);
+	public abstract boolean method16026(TextureFormat arg0, DataType arg1);
 
 	@ObfuscatedName("afc.uz(Lck;Ldg;II)Llz;")
-	public abstract class341 method16030(class109 arg0, class135 arg1, int arg2, int arg3);
+	public abstract GpuTexture method16030(TextureFormat arg0, DataType arg1, int arg2, int arg3);
 
 	@ObfuscatedName("afc.ur(ILmn;ZZ)V")
 	public abstract void method16031(int arg0, class351 arg1, boolean arg2, boolean arg3);
 
 	@ObfuscatedName("afc.ub(Lck;IIZ[FII)Llz;")
-	public abstract class341 method16032(class109 arg0, int arg1, int arg2, boolean arg3, float[] arg4, int arg5, int arg6);
+	public abstract GpuTexture method16032(TextureFormat arg0, int arg1, int arg2, boolean arg3, float[] arg4, int arg5, int arg6);
 
 	@ObfuscatedName("afc.uj(IIZ[III)Llz;")
-	public abstract class341 method16033(int arg0, int arg1, boolean arg2, int[] arg3, int arg4, int arg5);
+	public abstract GpuTexture method16033(int arg0, int arg1, boolean arg2, int[] arg3, int arg4, int arg5);
 
 	@ObfuscatedName("afc.ut(IZ[[I)Lmr;")
 	public abstract class362 method16034(int arg0, boolean arg1, int[][] arg2);
@@ -2500,7 +2500,7 @@ public abstract class class850 extends class133 {
 	public abstract class330 method16085(boolean arg0);
 
 	@ObfuscatedName("afc.uy(Lck;Ldg;II)Lmo;")
-	public abstract class359 method16089(class109 arg0, class135 arg1, int arg2, int arg3);
+	public abstract class359 method16089(TextureFormat arg0, DataType arg1, int arg2, int arg3);
 
 	@ObfuscatedName("afc.ud()V")
 	public abstract void method16091();
@@ -2521,7 +2521,7 @@ public abstract class class850 extends class133 {
 	public abstract void method16177(class332 arg0);
 
 	@ObfuscatedName("afc.uk(Lck;IIIZ[B)Lll;")
-	public abstract class327 method16197(class109 arg0, int arg1, int arg2, int arg3, boolean arg4, byte[] arg5);
+	public abstract VolumeTexture method16197(TextureFormat arg0, int arg1, int arg2, int arg3, boolean arg4, byte[] arg5);
 
 	@ObfuscatedName("afc.tg()V")
 	public abstract void method16233();
@@ -2530,7 +2530,7 @@ public abstract class class850 extends class133 {
 	public abstract void method16256();
 
 	@ObfuscatedName("afc.uc(Lck;Ldg;)Z")
-	public abstract boolean method16289(class109 arg0, class135 arg1);
+	public abstract boolean method16289(TextureFormat arg0, DataType arg1);
 
 	@ObfuscatedName("afc.vj(Z)V")
 	public abstract void method16294(boolean arg0);

@@ -23,7 +23,7 @@ public final class class903 extends class288 {
 	@ObfuscatedName("ahz.ae")
 	public class415 field10536 = new class415(0.0F, 0.0F, 0.0F, 0.0F);
 
-	public class903(class850 arg0) throws class1108 {
+	public class903(GpuRenderer arg0) throws class1108 {
 		super(arg0);
 		this.method16651();
 	}

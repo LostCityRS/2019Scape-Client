@@ -6,9 +6,9 @@ import deob.ObfuscatedName;
 public class class928 extends class486 implements class360 {
 
 	@ObfuscatedName("aid.d")
-	public class135 field10675;
+	public DataType field10675;
 
-	public class928(class1127 arg0, class135 arg1, boolean arg2) {
+	public class928(class1127 arg0, DataType arg1, boolean arg2) {
 		super(arg0, 34963, arg2);
 		this.field10675 = arg1;
 	}
@@ -19,7 +19,7 @@ public class class928 extends class486 implements class360 {
 	}
 
 	@ObfuscatedName("aid.e()Ldg;")
-	public class135 method5832() {
+	public DataType method5832() {
 		return this.field10675;
 	}
 

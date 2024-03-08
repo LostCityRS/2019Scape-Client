@@ -20,7 +20,7 @@ public class class1123 extends class845 {
 
 	public class1123(class849 arg0, int arg1) {
 		this.field11944 = arg0;
-		this.field11941 = new class813(arg0, class109.field1273, class135.field1645, arg1);
+		this.field11941 = new class813(arg0, TextureFormat.field1273, DataType.field1645, arg1);
 	}
 
 	@ObfuscatedName("apf.m()I")

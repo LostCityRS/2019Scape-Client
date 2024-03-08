@@ -7,7 +7,7 @@ import jagdx.IDirect3DVolumeTexture;
 import java.nio.ByteBuffer;
 
 @ObfuscatedName("ahy")
-public class class917 extends class408 implements class327 {
+public class class917 extends class408 implements VolumeTexture {
 
 	@ObfuscatedName("ahy.w")
 	public final int field10613;
@@ -18,8 +18,8 @@ public class class917 extends class408 implements class327 {
 	@ObfuscatedName("ahy.u")
 	public final int field10615;
 
-	public class917(class1126 arg0, class109 arg1, int arg2, int arg3, int arg4, boolean arg5, byte[] arg6) {
-		super(arg0, arg1, class135.field1645, false, arg2 * arg3 * arg4);
+	public class917(class1126 arg0, TextureFormat arg1, int arg2, int arg3, int arg4, boolean arg5, byte[] arg6) {
+		super(arg0, arg1, DataType.field1645, false, arg2 * arg3 * arg4);
 		this.field10613 = arg2;
 		this.field10614 = arg3;
 		this.field10615 = arg4;

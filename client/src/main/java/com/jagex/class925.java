@@ -7,7 +7,7 @@ import jagdx.IDirect3DTexture;
 import java.nio.ByteBuffer;
 
 @ObfuscatedName("aiy")
-public class class925 extends class408 implements class341 {
+public class class925 extends class408 implements GpuTexture {
 
 	@ObfuscatedName("aiy.w")
 	public final int field10665;
@@ -27,11 +27,11 @@ public class class925 extends class408 implements class341 {
 	@ObfuscatedName("aiy.d")
 	public boolean field10670;
 
-	public class925(class1126 arg0, class109 arg1, class135 arg2, int arg3, int arg4) {
+	public class925(class1126 arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4) {
 		this(arg0, arg1, arg2, arg3, arg4, 0, 1);
 	}
 
-	public class925(class1126 arg0, class109 arg1, class135 arg2, int arg3, int arg4, int arg5, int arg6) {
+	public class925(class1126 arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4, int arg5, int arg6) {
 		super(arg0, arg1, arg2, false, arg3 * arg4);
 		if (this.field4219.field11975) {
 			this.field10665 = arg3;
@@ -48,7 +48,7 @@ public class class925 extends class408 implements class341 {
 	}
 
 	public class925(class1126 arg0, int arg1, int arg2, boolean arg3, int[] arg4, int arg5, int arg6) {
-		super(arg0, class109.field1273, class135.field1645, arg3 && arg0.field11976, arg1 * arg2);
+		super(arg0, TextureFormat.field1273, DataType.field1645, arg3 && arg0.field11976, arg1 * arg2);
 		if (this.field4219.field11975) {
 			this.field10665 = arg1;
 			this.field10666 = arg2;
@@ -80,8 +80,8 @@ public class class925 extends class408 implements class341 {
 		IDirect3DTexture.Upload(this.field4217, 0, 0, 0, this.field10665, this.field10666, this.field4221.field1279 * arg6, 0, this.field4219.field10046);
 	}
 
-	public class925(class1126 arg0, class109 arg1, int arg2, int arg3, boolean arg4, byte[] arg5, int arg6, int arg7) {
-		super(arg0, arg1, class135.field1645, arg4 && arg0.field11976, arg2 * arg3);
+	public class925(class1126 arg0, TextureFormat arg1, int arg2, int arg3, boolean arg4, byte[] arg5, int arg6, int arg7) {
+		super(arg0, arg1, DataType.field1645, arg4 && arg0.field11976, arg2 * arg3);
 		if (this.field4219.field11975) {
 			this.field10665 = arg2;
 			this.field10666 = arg3;
@@ -99,9 +99,9 @@ public class class925 extends class408 implements class341 {
 			}
 		}
 		if (arg4) {
-			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.field11978, this.field10665, this.field10666, 0, 1024, class1126.method19011(this.field4221, class135.field1645), 1);
+			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.field11978, this.field10665, this.field10666, 0, 1024, class1126.method19011(this.field4221, DataType.field1645), 1);
 		} else {
-			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.field11978, this.field10665, this.field10666, 1, 0, class1126.method19011(this.field4221, class135.field1645), 1);
+			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.field11978, this.field10665, this.field10666, 1, 0, class1126.method19011(this.field4221, DataType.field1645), 1);
 		}
 		if (arg7 == 0) {
 			arg7 = this.field10665;
@@ -109,10 +109,10 @@ public class class925 extends class408 implements class341 {
 		this.field4219.method15961(this.field4221.field1279 * this.field10666 * arg7);
 		ByteBuffer var9 = this.field4219.field10071;
 		var9.clear();
-		if (class109.field1276 == this.field4221) {
+		if (TextureFormat.field1276 == this.field4221) {
 			var9.put(arg5, arg6, this.field10666 * this.field10665 / 2);
 			IDirect3DTexture.Upload(this.field4217, 0, 0, 0, this.field10665, this.field10666 / 4, this.field10665 / 4 * 8, 0, this.field4219.field10046);
-		} else if (class109.field1277 == this.field4221) {
+		} else if (TextureFormat.field1277 == this.field4221) {
 			var9.put(arg5, arg6, this.field10666 * this.field10665);
 			IDirect3DTexture.Upload(this.field4217, 0, 0, 0, this.field10665, this.field10666 / 4, this.field10665 / 4 * 16, 0, this.field4219.field10046);
 		} else {
@@ -121,8 +121,8 @@ public class class925 extends class408 implements class341 {
 		}
 	}
 
-	public class925(class1126 arg0, class109 arg1, int arg2, int arg3, boolean arg4, float[] arg5, int arg6, int arg7) {
-		super(arg0, arg1, class135.field1645, arg4 && arg0.field11976, arg2 * arg3);
+	public class925(class1126 arg0, TextureFormat arg1, int arg2, int arg3, boolean arg4, float[] arg5, int arg6, int arg7) {
+		super(arg0, arg1, DataType.field1645, arg4 && arg0.field11976, arg2 * arg3);
 		if (this.field4219.field11975) {
 			this.field10665 = arg2;
 			this.field10666 = arg3;
@@ -140,9 +140,9 @@ public class class925 extends class408 implements class341 {
 			}
 		}
 		if (arg4) {
-			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.field11978, this.field10665, this.field10666, 0, 1024, class1126.method19011(this.field4221, class135.field1642), 1);
+			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.field11978, this.field10665, this.field10666, 0, 1024, class1126.method19011(this.field4221, DataType.field1642), 1);
 		} else {
-			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.field11978, this.field10665, this.field10666, 1, 0, class1126.method19011(this.field4221, class135.field1642), 1);
+			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.field11978, this.field10665, this.field10666, 1, 0, class1126.method19011(this.field4221, DataType.field1642), 1);
 		}
 		if (arg7 == 0) {
 			arg7 = this.field10665;
@@ -207,7 +207,7 @@ public class class925 extends class408 implements class341 {
 
 	@ObfuscatedName("aiy.z(IIII[III)V")
 	public void method5701(int arg0, int arg1, int arg2, int arg3, int[] arg4, int arg5, int arg6) {
-		if (class109.field1273 != this.field4221 || class135.field1645 != this.field4218) {
+		if (TextureFormat.field1273 != this.field4221 || DataType.field1645 != this.field4218) {
 			throw new RuntimeException();
 		}
 		if (arg6 == 0) {
@@ -221,8 +221,8 @@ public class class925 extends class408 implements class341 {
 	}
 
 	@ObfuscatedName("aiy.p(IIII[BLck;II)V")
-	public void method5712(int arg0, int arg1, int arg2, int arg3, byte[] arg4, class109 arg5, int arg6, int arg7) {
-		if (this.field4221 != arg5 || class135.field1645 != this.field4218) {
+	public void method5712(int arg0, int arg1, int arg2, int arg3, byte[] arg4, TextureFormat arg5, int arg6, int arg7) {
+		if (this.field4221 != arg5 || DataType.field1645 != this.field4218) {
 			throw new RuntimeException();
 		}
 		if (arg7 == 0) {
@@ -237,7 +237,7 @@ public class class925 extends class408 implements class341 {
 
 	@ObfuscatedName("aiy.d(IIII[II)V")
 	public void method5703(int arg0, int arg1, int arg2, int arg3, int[] arg4, int arg5) {
-		if (class109.field1273 != this.field4221 || class135.field1645 != this.field4218) {
+		if (TextureFormat.field1273 != this.field4221 || DataType.field1645 != this.field4218) {
 			throw new RuntimeException();
 		}
 		this.field4219.method15961(arg2 * arg3 * 4);
@@ -249,7 +249,7 @@ public class class925 extends class408 implements class341 {
 
 	@ObfuscatedName("aiy.c(IIII[I[II)V")
 	public void method5704(int arg0, int arg1, int arg2, int arg3, int[] arg4, int[] arg5, int arg6) {
-		if (class109.field1273 != this.field4221 || class135.field1645 != this.field4218) {
+		if (TextureFormat.field1273 != this.field4221 || DataType.field1645 != this.field4218) {
 			throw new RuntimeException();
 		}
 		this.method5704(arg0, arg1, arg2, arg3, arg4, null, arg6);

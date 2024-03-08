@@ -20,7 +20,7 @@ public class class1223 extends class1175 {
 	@ObfuscatedName("ati.c")
 	public final byte[] field12548;
 
-	public class1223(class850 arg0, int arg1, int arg2) {
+	public class1223(GpuRenderer arg0, int arg1, int arg2) {
 		this.field12548 = new byte[arg1 * arg2];
 	}
 

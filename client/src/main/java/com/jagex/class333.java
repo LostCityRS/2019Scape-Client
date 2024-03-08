@@ -6,12 +6,12 @@ import deob.ObfuscatedName;
 public abstract class class333 {
 
 	@ObfuscatedName("lh.e")
-	public final class850 field3242;
+	public final GpuRenderer field3242;
 
 	@ObfuscatedName("lh.n")
 	public boolean field3243;
 
-	public class333(class850 arg0) {
+	public class333(GpuRenderer arg0) {
 		this.field3242 = arg0;
 	}
 
@@ -49,7 +49,7 @@ public abstract class class333 {
 	public abstract void method5562();
 
 	@ObfuscatedName("lh.l(ILafq;Llz;Ldw;Llz;Z)V")
-	public abstract void method5564(int arg0, class840 arg1, class341 arg2, class126 arg3, class341 arg4, boolean arg5);
+	public abstract void method5564(int arg0, class840 arg1, GpuTexture arg2, class126 arg3, GpuTexture arg4, boolean arg5);
 
 	@ObfuscatedName("lh.u(I)V")
 	public abstract void method5565(int arg0);

@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class class361 {
 
 	// $FF: synthetic field
-	public final class850 this$0;
+	public final GpuRenderer this$0;
 
 	@ObfuscatedName("mi.e")
 	public class330 field3412;
@@ -14,7 +14,7 @@ public class class361 {
 	@ObfuscatedName("mi.n")
 	public int field3411;
 
-	public class361(class850 arg0, int arg1) {
+	public class361(GpuRenderer arg0, int arg1) {
 		this.this$0 = arg0;
 		this.method5836();
 		this.method5840(arg1, this.field3411);

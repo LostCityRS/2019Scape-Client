@@ -15,7 +15,7 @@ public class class811 extends class70 {
 	@ObfuscatedName("adu.q")
 	public final int field9270;
 
-	public class811(class849 arg0, class109 arg1, class135 arg2, int arg3, int arg4, int arg5) {
+	public class811(class849 arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4, int arg5) {
 		super(arg0, 32879, arg1, arg2, arg3 * arg4 * arg5, false);
 		this.field9269 = arg3;
 		this.field9268 = arg4;
@@ -25,7 +25,7 @@ public class class811 extends class70 {
 		this.method1082(true);
 	}
 
-	public class811(class849 arg0, class109 arg1, class135 arg2, int arg3, int arg4, int arg5, byte[] arg6, class109 arg7) {
+	public class811(class849 arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4, int arg5, byte[] arg6, TextureFormat arg7) {
 		super(arg0, 32879, arg1, arg2, arg3 * arg4 * arg5, false);
 		this.field9269 = arg3;
 		this.field9268 = arg4;

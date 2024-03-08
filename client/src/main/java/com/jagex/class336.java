@@ -8,7 +8,7 @@ import java.nio.ByteBuffer;
 public class class336 {
 
 	@ObfuscatedName("ly.m")
-	public final class850 field3271;
+	public final GpuRenderer field3271;
 
 	@ObfuscatedName("ly.k")
 	public final class337 field3273;
@@ -32,7 +32,7 @@ public class class336 {
 	public class360 field3279;
 
 	@ObfuscatedName("ly.d")
-	public class341 field3280;
+	public GpuTexture field3280;
 
 	@ObfuscatedName("ly.c")
 	public int field3284;
@@ -46,7 +46,7 @@ public class class336 {
 	@ObfuscatedName("ly.o")
 	public byte[] field3281;
 
-	public class336(class850 arg0, class337 arg1, class837 arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
+	public class336(GpuRenderer arg0, class337 arg1, class837 arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		this.field3271 = arg0;
 		this.field3273 = arg1;
 		this.field3274 = arg6;
@@ -143,7 +143,7 @@ public class class336 {
 		this.field3277 = var2;
 		int var7 = 0;
 		int var8 = this.field3275 * var3 + this.field3274;
-		if (!this.field3271.method16026(class109.field1270, class135.field1645)) {
+		if (!this.field3271.method16026(TextureFormat.field1270, DataType.field1645)) {
 			if (this.field3283 == null) {
 				this.field3283 = new int[16384];
 			}
@@ -209,10 +209,10 @@ public class class336 {
 			var8 += this.field3273.field3288 - 128;
 		}
 		if (this.field3280 == null) {
-			this.field3280 = this.field3271.method16028(class109.field1270, 128, 128, false, this.field3281);
+			this.field3280 = this.field3271.method16028(TextureFormat.field1270, 128, 128, false, this.field3281);
 			this.field3280.method5700(false, false);
 		} else {
-			this.field3280.method5712(0, 0, 128, 128, this.field3281, class109.field1270, 0, 128);
+			this.field3280.method5712(0, 0, 128, 128, this.field3281, TextureFormat.field1270, 0, 128);
 		}
 	}
 }

@@ -475,7 +475,7 @@ public abstract class class133 {
 	public abstract class840 method2145();
 
 	@ObfuscatedName("dh.au(IILck;Ldg;I)Ldp;")
-	public abstract class130 method2146(int arg0, int arg1, class109 arg2, class135 arg3, int arg4);
+	public abstract class130 method2146(int arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4);
 
 	@ObfuscatedName("dh.aq(IIII)[I")
 	public abstract int[] method2149(int arg0, int arg1, int arg2, int arg3);

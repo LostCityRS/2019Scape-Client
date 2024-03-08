@@ -6,21 +6,21 @@ import deob.ObfuscatedName;
 public class class834 extends class103 {
 
 	@ObfuscatedName("aed.e")
-	public final class341 field9417;
+	public final GpuTexture field9417;
 
-	public class834(class850 arg0, int arg1, int arg2, byte[] arg3) {
-		this.field9417 = arg0.method16028(class109.field1270, arg1, arg2, false, arg3);
+	public class834(GpuRenderer arg0, int arg1, int arg2, byte[] arg3) {
+		this.field9417 = arg0.method16028(TextureFormat.field1270, arg1, arg2, false, arg3);
 		this.field9417.method5700(false, false);
 	}
 
-	public class834(class850 arg0, int arg1, int arg2, int[] arg3) {
+	public class834(GpuRenderer arg0, int arg1, int arg2, int[] arg3) {
 		this.field9417 = arg0.method16204(arg1, arg2, false, arg3);
 		this.field9417.method5700(false, false);
 	}
 
 	@ObfuscatedName("aed.e(Lafc;II[I[I)Laed;")
-	public static class834 method15388(class850 arg0, int arg1, int arg2, int[] arg3, int[] arg4) {
-		if (!arg0.method16026(class109.field1270, class135.field1645)) {
+	public static class834 method15388(GpuRenderer arg0, int arg1, int arg2, int[] arg3, int[] arg4) {
+		if (!arg0.method16026(TextureFormat.field1270, DataType.field1645)) {
 			int[] var9 = new int[arg1 * arg2];
 			for (int var10 = 0; var10 < arg2; var10++) {
 				int var11 = arg1 * var10 + arg3[var10];

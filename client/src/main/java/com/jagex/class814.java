@@ -9,7 +9,7 @@ public class class814 extends class70 {
 	@ObfuscatedName("aew.s")
 	public final int field9280;
 
-	public class814(class849 arg0, class109 arg1, class135 arg2, int arg3, byte[] arg4, class109 arg5) {
+	public class814(class849 arg0, TextureFormat arg1, DataType arg2, int arg3, byte[] arg4, TextureFormat arg5) {
 		super(arg0, 3552, arg1, arg2, arg3, false);
 		this.field9280 = arg3;
 		this.field1006.method15777(this);

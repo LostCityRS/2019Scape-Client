@@ -6,9 +6,9 @@ import deob.ObfuscatedName;
 public abstract class class1119 extends class840 {
 
 	@ObfuscatedName("apz.n")
-	public class850 field11923;
+	public GpuRenderer field11923;
 
-	public class1119(class850 arg0) {
+	public class1119(GpuRenderer arg0) {
 		this.field11923 = arg0;
 	}
 

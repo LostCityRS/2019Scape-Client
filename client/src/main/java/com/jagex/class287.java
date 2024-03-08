@@ -6,12 +6,12 @@ import deob.ObfuscatedName;
 public abstract class class287 {
 
 	@ObfuscatedName("jz.e")
-	public class850 field2993;
+	public GpuRenderer field2993;
 
 	@ObfuscatedName("jz.n")
-	public class341 field2992;
+	public GpuTexture field2992;
 
-	public class287(class850 arg0) {
+	public class287(GpuRenderer arg0) {
 		this.field2993 = arg0;
 	}
 

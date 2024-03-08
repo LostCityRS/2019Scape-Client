@@ -6,7 +6,7 @@ import jagdx.*;
 @ObfuscatedName("aio")
 public class class926 extends class925 implements class359 {
 
-	public class926(class1126 arg0, class109 arg1, class135 arg2, int arg3, int arg4) {
+	public class926(class1126 arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4) {
 		super(arg0, arg1, arg2, arg3, arg4, 1025, 0);
 	}
 
@@ -70,7 +70,7 @@ public class class926 extends class925 implements class359 {
 	}
 
 	@ObfuscatedName("aio.p(IIII[BLck;II)V")
-	public void method5712(int arg0, int arg1, int arg2, int arg3, byte[] arg4, class109 arg5, int arg6, int arg7) {
+	public void method5712(int arg0, int arg1, int arg2, int arg3, byte[] arg4, TextureFormat arg5, int arg6, int arg7) {
 		super.method5712(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 

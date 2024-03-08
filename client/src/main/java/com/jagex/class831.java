@@ -6,10 +6,10 @@ import deob.ObfuscatedName;
 public class class831 extends class101 {
 
 	@ObfuscatedName("aef.e")
-	public final class850 field9403;
+	public final GpuRenderer field9403;
 
 	@ObfuscatedName("aef.n")
-	public final class341 field9401;
+	public final GpuTexture field9401;
 
 	@ObfuscatedName("aef.m")
 	public final class130 field9402;
@@ -47,7 +47,7 @@ public class class831 extends class101 {
 	@ObfuscatedName("aef.v")
 	public final boolean field9413;
 
-	public class831(class850 arg0, int arg1, int arg2, boolean arg3, boolean arg4) {
+	public class831(GpuRenderer arg0, int arg1, int arg2, boolean arg3, boolean arg4) {
 		this.field9405 = false;
 		this.field9410 = 0;
 		this.field9408 = 0;
@@ -57,11 +57,11 @@ public class class831 extends class101 {
 		this.field9407 = arg1;
 		this.field9404 = arg2;
 		if (arg4) {
-			class359 var6 = arg0.method16089(arg3 ? class109.field1273 : class109.field1271, class135.field1645, arg1, arg2);
+			class359 var6 = arg0.method16089(arg3 ? TextureFormat.field1273 : TextureFormat.field1271, DataType.field1645, arg1, arg2);
 			this.field9402 = var6.method5828(0);
 			this.field9401 = var6;
 		} else {
-			this.field9401 = arg0.method16030(arg3 ? class109.field1273 : class109.field1271, class135.field1645, arg1, arg2);
+			this.field9401 = arg0.method16030(arg3 ? TextureFormat.field1273 : TextureFormat.field1271, DataType.field1645, arg1, arg2);
 			this.field9402 = null;
 		}
 		this.field9401.method5700(true, true);
@@ -71,7 +71,7 @@ public class class831 extends class101 {
 		this.field9413 = !this.field9406 && this.field9401.method5732();
 	}
 
-	public class831(class850 arg0, int arg1, int arg2, int[] arg3, int arg4, int arg5) {
+	public class831(GpuRenderer arg0, int arg1, int arg2, int[] arg3, int arg4, int arg5) {
 		this.field9405 = false;
 		this.field9410 = 0;
 		this.field9408 = 0;
@@ -89,11 +89,11 @@ public class class831 extends class101 {
 		this.field9413 = !this.field9406 && this.field9401.method5732();
 	}
 
-	public class831(class850 arg0, class341 arg1) {
+	public class831(GpuRenderer arg0, GpuTexture arg1) {
 		this(arg0, arg1, arg1.method5718(), arg1.method5696());
 	}
 
-	public class831(class850 arg0, class341 arg1, int arg2, int arg3) {
+	public class831(GpuRenderer arg0, GpuTexture arg1, int arg2, int arg3) {
 		this.field9405 = false;
 		this.field9410 = 0;
 		this.field9408 = 0;
@@ -250,7 +250,7 @@ public class class831 extends class101 {
 		var6.field3000 = this.field9403.field10197;
 		var6.field3001 = 0;
 		var6.field2994 = this.field9403.field10055;
-		class341 var11 = ((class834) arg2).field9417;
+		GpuTexture var11 = ((class834) arg2).field9417;
 		var6.field2996 = var11;
 		var6.field2999.method6612(var11.method5697((float) this.field9407), var11.method5698((float) this.field9404), 1.0F, 1.0F);
 		var6.field2999.field4315[12] = var11.method5697((float) (var7 - arg3));
@@ -533,7 +533,7 @@ public class class831 extends class101 {
 		var11.field3000 = this.field9403.field10197;
 		var11.field3001 = 0;
 		var11.field2994 = this.field9403.field10055;
-		class341 var17 = ((class834) arg7).field9417;
+		GpuTexture var17 = ((class834) arg7).field9417;
 		var11.field2996 = var17;
 		var11.field2999.method6603();
 		var11.field2999.field4315[0] = (arg2 - arg0) * var17.method5697(1.0F);

@@ -35,7 +35,7 @@ public class class830 extends class101 {
 
 	public class830(class849 arg0, int arg1, int arg2, boolean arg3) {
 		this.field9399 = arg0;
-		this.field9396 = class1113.method18934(arg0, arg3 ? class109.field1273 : class109.field1271, class135.field1645, arg1, arg2);
+		this.field9396 = class1113.method18934(arg0, arg3 ? TextureFormat.field1273 : TextureFormat.field1271, DataType.field1645, arg1, arg2);
 	}
 
 	public class830(class849 arg0, int arg1, int arg2, int arg3, int arg4) {

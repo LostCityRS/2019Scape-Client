@@ -19,10 +19,10 @@ public class class828 extends class986 implements class88 {
 	public final int field9347;
 
 	@ObfuscatedName("aeg.u")
-	public final class135 field9351;
+	public final DataType field9351;
 
 	@ObfuscatedName("aeg.z")
-	public final class109 field9352;
+	public final TextureFormat field9352;
 
 	@ObfuscatedName("aeg.p")
 	public final int field9350;
@@ -30,7 +30,7 @@ public class class828 extends class986 implements class88 {
 	@ObfuscatedName("aeg.d")
 	public static final int[] field9354 = new int[1];
 
-	public class828(class849 arg0, class109 arg1, class135 arg2, int arg3, int arg4) {
+	public class828(class849 arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4) {
 		this.field9348 = arg0;
 		this.field9349 = arg3;
 		this.field9347 = arg4;
@@ -43,7 +43,7 @@ public class class828 extends class986 implements class88 {
 		this.field9350 = this.field9352.field1279 * this.field9349 * this.field9347 * this.field9351.field1652;
 	}
 
-	public class828(class849 arg0, class109 arg1, class135 arg2, int arg3, int arg4, int arg5) {
+	public class828(class849 arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4, int arg5) {
 		this.field9348 = arg0;
 		this.field9349 = arg3;
 		this.field9347 = arg4;

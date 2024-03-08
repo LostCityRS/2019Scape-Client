@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("lz")
-public interface class341 extends class356 {
+public interface GpuTexture extends class356 {
 
 	@ObfuscatedName("lz.n()I")
 	int method5696();
@@ -33,7 +33,7 @@ public interface class341 extends class356 {
 	boolean method5708();
 
 	@ObfuscatedName("lz.p(IIII[BLck;II)V")
-	void method5712(int arg0, int arg1, int arg2, int arg3, byte[] arg4, class109 arg5, int arg6, int arg7);
+	void method5712(int arg0, int arg1, int arg2, int arg3, byte[] arg4, TextureFormat arg5, int arg6, int arg7);
 
 	@ObfuscatedName("lz.e()I")
 	int method5718();

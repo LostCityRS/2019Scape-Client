@@ -9,7 +9,7 @@ import java.nio.ByteBuffer;
 public class class354 {
 
 	@ObfuscatedName("md.e")
-	public final class850 field3389;
+	public final GpuRenderer field3389;
 
 	@ObfuscatedName("md.n")
 	public class326 field3391 = class326.field3235;
@@ -27,7 +27,7 @@ public class class354 {
 	public float[] field3386 = new float[this.field3387 * 16];
 
 	@ObfuscatedName("md.l")
-	public class341[] field3382 = new class341[this.field3387];
+	public GpuTexture[] field3382 = new GpuTexture[this.field3387];
 
 	@ObfuscatedName("md.u")
 	public int[] field3388 = new int[this.field3387];
@@ -47,7 +47,7 @@ public class class354 {
 	@ObfuscatedName("md.r")
 	public int[] field3393 = new int[4];
 
-	public class354(class850 arg0, int arg1) {
+	public class354(GpuRenderer arg0, int arg1) {
 		this.field3389 = arg0;
 		this.field3390 = this.field3389.method16085(true);
 		this.field3390.method5553(arg1 * 96, 24);
@@ -122,7 +122,7 @@ public class class354 {
 				}
 			}
 			this.field3390.method5749();
-			class341 var24 = this.field3382[var5];
+			GpuTexture var24 = this.field3382[var5];
 			int var25 = 1;
 			int var26 = 0;
 			for (int var27 = var5 + 1; var27 < var11; var27++) {
@@ -146,7 +146,7 @@ public class class354 {
 	}
 
 	@ObfuscatedName("md.m(FFFFFFFFLlz;I)V")
-	public void method5797(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, float arg6, float arg7, class341 arg8, int arg9) {
+	public void method5797(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, float arg6, float arg7, GpuTexture arg8, int arg9) {
 		if ((arg9 & 0xFF000000) == 0) {
 			return;
 		}
@@ -212,7 +212,7 @@ public class class354 {
 	}
 
 	@ObfuscatedName("md.k(FFFFFFFFFFFFFFFFLlz;I)V")
-	public void method5806(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, float arg6, float arg7, float arg8, float arg9, float arg10, float arg11, float arg12, float arg13, float arg14, float arg15, class341 arg16, int arg17) {
+	public void method5806(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, float arg6, float arg7, float arg8, float arg9, float arg10, float arg11, float arg12, float arg13, float arg14, float arg15, GpuTexture arg16, int arg17) {
 		if ((arg17 & 0xFF000000) == 0) {
 			return;
 		}
@@ -300,7 +300,7 @@ public class class354 {
 			var1[var2] = this.field3386[var2];
 		}
 		this.field3386 = var1;
-		class341[] var3 = new class341[this.field3387];
+		GpuTexture[] var3 = new GpuTexture[this.field3387];
 		int[] var4 = new int[this.field3387];
 		for (int var5 = 0; var5 < this.field3385; var5++) {
 			var3[var5] = this.field3382[var5];

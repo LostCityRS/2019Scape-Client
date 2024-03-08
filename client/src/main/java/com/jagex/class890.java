@@ -21,7 +21,7 @@ public class class890 extends class238 {
 	}
 
 	@ObfuscatedName("ago.f(Lafc;Lhn;)Lhi;")
-	public class234 method4156(class850 arg0, class233 arg1) {
+	public class234 method4156(GpuRenderer arg0, class233 arg1) {
 		return new class888((class1127) arg0, this, arg1);
 	}
 

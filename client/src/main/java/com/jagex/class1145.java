@@ -76,8 +76,8 @@ public class class1145 extends class968 {
 	}
 
 	@ObfuscatedName("aqo.p()Ldg;")
-	public class135 method17542() {
-		return class135.field1645;
+	public DataType method17542() {
+		return DataType.field1645;
 	}
 
 	@ObfuscatedName("aqo.u()I")

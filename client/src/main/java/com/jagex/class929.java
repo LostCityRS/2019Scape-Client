@@ -13,7 +13,7 @@ public class class929 extends class408 implements class362 {
 	public final int field10676;
 
 	public class929(class1126 arg0, int arg1, boolean arg2, int[][] arg3) {
-		super(arg0, class109.field1273, class135.field1645, arg2 && arg0.field11967, arg1 * arg1 * 6);
+		super(arg0, TextureFormat.field1273, DataType.field1645, arg2 && arg0.field11967, arg1 * arg1 * 6);
 		this.field10676 = arg1;
 		if (this.field4220) {
 			this.field4217 = IDirect3DDevice.CreateCubeTexture(this.field4219.field11978, this.field10676, 0, 1024, 21, 1);

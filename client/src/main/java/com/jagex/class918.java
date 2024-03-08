@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
 @ObfuscatedName("air")
-public class class918 extends class485 implements class327 {
+public class class918 extends class485 implements VolumeTexture {
 
 	@ObfuscatedName("air.v")
 	public final int field10616;
@@ -15,8 +15,8 @@ public class class918 extends class485 implements class327 {
 	@ObfuscatedName("air.s")
 	public final int field10618;
 
-	public class918(class1127 arg0, class109 arg1, int arg2, int arg3, int arg4, boolean arg5, byte[] arg6) {
-		super(arg0, 32879, arg1, class135.field1645, arg2 * arg3 * arg4, arg5);
+	public class918(class1127 arg0, TextureFormat arg1, int arg2, int arg3, int arg4, boolean arg5, byte[] arg6) {
+		super(arg0, 32879, arg1, DataType.field1645, arg2 * arg3 * arg4, arg5);
 		this.field10616 = arg2;
 		this.field10617 = arg3;
 		this.field10618 = arg4;

@@ -7,66 +7,66 @@ import deob.Statics;
 public class class323 {
 
 	@ObfuscatedName("lp.k")
-	public class850 field3223;
+	public GpuRenderer field3223;
 
 	@ObfuscatedName("lp.f")
 	public boolean field3229;
 
 	@ObfuscatedName("lp.w")
-	public class341[] field3232 = null;
+	public GpuTexture[] field3232 = null;
 
 	@ObfuscatedName("lp.l")
-	public class327 field3226 = null;
+	public VolumeTexture field3226 = null;
 
 	@ObfuscatedName("lp.u")
-	public class341[] field3227 = null;
+	public GpuTexture[] field3227 = null;
 
 	@ObfuscatedName("lp.z")
-	public class327 field3228 = null;
+	public VolumeTexture field3228 = null;
 
 	@ObfuscatedName("lp.p")
-	public class327 field3224 = null;
+	public VolumeTexture field3224 = null;
 
 	@ObfuscatedName("lp.e()V")
 	public static void method5410() {
 		if (Statics.field3230 == null) {
-			class1143 var0 = new class1143();
+			WaterUnknownGenerator var0 = new WaterUnknownGenerator();
 			byte[] var1 = var0.method19228(128, 128, 16);
 			Statics.field3230 = class703.method2821(var1, false);
 		}
 		if (Statics.field3231 == null) {
-			class1141 var2 = new class1141();
+			WaterBillowGenerator var2 = new WaterBillowGenerator();
 			byte[] var3 = var2.method19218(128, 128, 16);
 			Statics.field3231 = class703.method2821(var3, false);
 		}
 	}
 
-	public class323(class850 arg0) {
+	public class323(GpuRenderer arg0) {
 		this.field3223 = arg0;
 		this.field3229 = this.field3223.field10125;
 		if (this.field3229 && !this.field3223.field10116) {
 			this.field3229 = false;
 		}
-		if (this.field3229 && !this.field3223.method16289(class109.field1272, class135.field1645)) {
+		if (this.field3229 && !this.field3223.method16289(TextureFormat.field1272, DataType.field1645)) {
 			this.field3229 = false;
 		}
-		if (this.field3229 || this.field3223.method16026(class109.field1272, class135.field1645)) {
+		if (this.field3229 || this.field3223.method16026(TextureFormat.field1272, DataType.field1645)) {
 			method5410();
 			if (this.field3229) {
 				byte[] var6 = class703.method4540(Statics.field3230, false);
-				this.field3226 = this.field3223.method16197(class109.field1272, 128, 128, 16, true, var6);
+				this.field3226 = this.field3223.method16197(TextureFormat.field1272, 128, 128, 16, true, var6);
 				byte[] var7 = class703.method4540(Statics.field3231, false);
-				this.field3228 = this.field3223.method16197(class109.field1272, 128, 128, 16, true, var7);
+				this.field3228 = this.field3223.method16197(TextureFormat.field1272, 128, 128, 16, true, var7);
 			} else {
-				this.field3232 = new class341[16];
+				this.field3232 = new GpuTexture[16];
 				for (int var2 = 0; var2 < 16; var2++) {
 					byte[] var3 = class703.method6024(Statics.field3230, var2 * 32768, 32768);
-					this.field3232[var2] = this.field3223.method16028(class109.field1272, 128, 128, true, var3);
+					this.field3232[var2] = this.field3223.method16028(TextureFormat.field1272, 128, 128, true, var3);
 				}
-				this.field3227 = new class341[16];
+				this.field3227 = new GpuTexture[16];
 				for (int var4 = 0; var4 < 16; var4++) {
 					byte[] var5 = class703.method6024(Statics.field3231, var4 * 32768, 32768);
-					this.field3227[var4] = this.field3223.method16028(class109.field1272, 128, 128, true, var5);
+					this.field3227[var4] = this.field3223.method16028(TextureFormat.field1272, 128, 128, true, var5);
 				}
 			}
 		}
@@ -108,7 +108,7 @@ public class class323 {
 					}
 				}
 			}
-			this.field3224 = this.field3223.method16197(class109.field1273, 128, 128, 16, true, var3);
+			this.field3224 = this.field3223.method16197(TextureFormat.field1273, 128, 128, 16, true, var3);
 		}
 		return this.field3224 != null;
 	}

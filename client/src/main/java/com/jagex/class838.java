@@ -15,7 +15,7 @@ public class class838 extends class110 {
 		this.field9528 = arg0;
 		if (this.field9528.field9889) {
 			byte[] var3 = this.method15426(arg1);
-			this.field9527 = new class811(this.field9528, class109.field1273, class135.field1645, 16, 16, 16, var3, class109.field1273);
+			this.field9527 = new class811(this.field9528, TextureFormat.field1273, DataType.field1645, 16, 16, 16, var3, TextureFormat.field1273);
 		} else {
 			this.field9527 = new class812(this.field9528, 3553, 256, 16, false, arg1, 256, 0, false);
 		}

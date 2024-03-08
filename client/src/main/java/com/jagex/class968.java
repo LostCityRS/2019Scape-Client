@@ -26,8 +26,8 @@ public abstract class class968 extends class532 {
 	}
 
 	@ObfuscatedName("ajl.p()Ldg;")
-	public class135 method17542() {
-		return class135.field1645;
+	public DataType method17542() {
+		return DataType.field1645;
 	}
 
 	@ObfuscatedName("ajl.d()Z")

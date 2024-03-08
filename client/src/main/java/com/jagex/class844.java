@@ -10,7 +10,7 @@ import java.nio.ByteBuffer;
 public class class844 extends class116 {
 
 	@ObfuscatedName("afo.l")
-	public final class850 field9730;
+	public final GpuRenderer field9730;
 
 	@ObfuscatedName("afo.u")
 	public int field9725;
@@ -231,7 +231,7 @@ public class class844 extends class116 {
 	@ObfuscatedName("afo.cg")
 	public boolean field9706;
 
-	public class844(class850 arg0, int arg1, int arg2, boolean arg3, boolean arg4) {
+	public class844(GpuRenderer arg0, int arg1, int arg2, boolean arg3, boolean arg4) {
 		this.field9703 = 0;
 		this.field9704 = 0;
 		this.field9710 = 0;
@@ -276,7 +276,7 @@ public class class844 extends class116 {
 		}
 	}
 
-	public class844(class850 arg0, class120 arg1, int arg2, int arg3, int arg4, int arg5) {
+	public class844(GpuRenderer arg0, class120 arg1, int arg2, int arg3, int arg4, int arg5) {
 		this(arg0, arg2, arg5, true, false);
 		class125 var7 = arg0.field1597;
 		class383 var8 = arg0.field1598;

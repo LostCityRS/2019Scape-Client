@@ -7,10 +7,10 @@ import jaggl.OpenGL;
 public class class489 implements class130, class126, class487 {
 
 	@ObfuscatedName("rx.e")
-	public final class135 field5001;
+	public final DataType field5001;
 
 	@ObfuscatedName("rx.n")
-	public final class109 field4997;
+	public final TextureFormat field4997;
 
 	@ObfuscatedName("rx.m")
 	public final int field4998;
@@ -24,7 +24,7 @@ public class class489 implements class130, class126, class487 {
 	@ObfuscatedName("rx.w")
 	public int field4996;
 
-	public class489(class1127 arg0, class109 arg1, class135 arg2, int arg3, int arg4) {
+	public class489(class1127 arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4) {
 		this.field4997 = arg1;
 		this.field5001 = arg2;
 		this.field4998 = arg3;
@@ -37,7 +37,7 @@ public class class489 implements class130, class126, class487 {
 		OpenGL.glRenderbufferStorageEXT(36161, class1127.method19077(this.field4997, this.field5001), arg3, arg4);
 	}
 
-	public class489(class1127 arg0, class109 arg1, class135 arg2, int arg3, int arg4, int arg5) {
+	public class489(class1127 arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4, int arg5) {
 		this.field4997 = arg1;
 		this.field5001 = arg2;
 		this.field4998 = arg3;

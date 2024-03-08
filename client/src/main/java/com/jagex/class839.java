@@ -6,16 +6,16 @@ import deob.ObfuscatedName;
 public class class839 extends class110 {
 
 	@ObfuscatedName("aeq.e")
-	public final class850 field9529;
+	public final GpuRenderer field9529;
 
 	@ObfuscatedName("aeq.n")
 	public class356 field9530;
 
-	public class839(class850 arg0, int[] arg1) {
+	public class839(GpuRenderer arg0, int[] arg1) {
 		this.field9529 = arg0;
 		if (this.field9529.field10125) {
 			byte[] var3 = this.method15433(arg1);
-			this.field9530 = this.field9529.method16197(class109.field1273, 16, 16, 16, false, var3);
+			this.field9530 = this.field9529.method16197(TextureFormat.field1273, 16, 16, 16, false, var3);
 		} else {
 			this.field9530 = this.field9529.method16204(256, 16, false, arg1);
 		}

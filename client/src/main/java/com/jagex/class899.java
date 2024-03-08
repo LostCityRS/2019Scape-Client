@@ -41,7 +41,7 @@ public class class899 extends class286 {
 	@ObfuscatedName("ahr.x")
 	public class234 field10510;
 
-	public class899(class850 arg0) throws class1108 {
+	public class899(GpuRenderer arg0) throws class1108 {
 		super(arg0);
 		this.method16630();
 	}

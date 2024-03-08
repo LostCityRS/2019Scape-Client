@@ -74,9 +74,9 @@ public class class1147 extends class968 {
 			return false;
 		}
 		this.field12194 = new class1118(this.field11270);
-		this.field12196 = new class812(this.field11270, 3553, class109.field1273, this.method17542(), 256, 256);
+		this.field12196 = new class812(this.field11270, 3553, TextureFormat.field1273, this.method17542(), 256, 256);
 		this.field12196.method15312(false, false);
-		this.field12197 = new class812(this.field11270, 3553, class109.field1273, this.method17542(), 256, 256);
+		this.field12197 = new class812(this.field11270, 3553, TextureFormat.field1273, this.method17542(), 256, 256);
 		this.field12197.method15312(false, false);
 		this.field11270.method2142(this.field12194);
 		this.field12194.method15439(0, this.field12196.method15317(0));
@@ -128,7 +128,7 @@ public class class1147 extends class968 {
 						if (var9 <= 256 && var10 <= 256) {
 							break label61;
 						}
-						this.field12193[var11++] = new class812(this.field11270, 3553, class109.field1273, this.method17542(), var9, var10);
+						this.field12193[var11++] = new class812(this.field11270, 3553, TextureFormat.field1273, this.method17542(), var9, var10);
 						if (var9 > 256) {
 							var9 >>= 0x1;
 						}
@@ -305,8 +305,8 @@ public class class1147 extends class968 {
 	}
 
 	@ObfuscatedName("aqf.p()Ldg;")
-	public class135 method17542() {
-		return class135.field1647;
+	public DataType method17542() {
+		return DataType.field1647;
 	}
 
 	@ObfuscatedName("aqf.u()I")

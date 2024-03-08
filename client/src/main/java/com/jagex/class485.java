@@ -16,10 +16,10 @@ public abstract class class485 implements class356 {
 	public final int field4979;
 
 	@ObfuscatedName("rj.u")
-	public final class109 field4973;
+	public final TextureFormat field4973;
 
 	@ObfuscatedName("rj.z")
-	public final class135 field4977;
+	public final DataType field4977;
 
 	@ObfuscatedName("rj.p")
 	public boolean field4982;
@@ -33,7 +33,7 @@ public abstract class class485 implements class356 {
 	@ObfuscatedName("rj.r")
 	public static final int[] field4985 = new int[1];
 
-	public class485(class1127 arg0, int arg1, class109 arg2, class135 arg3, int arg4, boolean arg5) {
+	public class485(class1127 arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4, boolean arg5) {
 		this.field4980 = arg0;
 		this.field4979 = arg1;
 		this.field4973 = arg2;
@@ -115,7 +115,7 @@ public abstract class class485 implements class356 {
 			throw new IllegalArgumentException("");
 		} else if (arg2 > 0 && !class783.method4918(arg2)) {
 			throw new IllegalArgumentException("");
-		} else if (class109.field1273 == this.field4973) {
+		} else if (TextureFormat.field1273 == this.field4973) {
 			int var5 = 0;
 			int var6 = arg1 < arg2 ? arg1 : arg2;
 			int var7 = arg1 >> 1;

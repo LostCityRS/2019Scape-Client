@@ -36,7 +36,7 @@ public class class94 {
 			class812 var5;
 			if (arg0.field1336 && this.field1187.method2242()) {
 				float[] var4 = this.field1186.method1984(class605.field7586, arg0.field1334, arg0.field1302, 0.7F, arg1, arg1, false);
-				var5 = new class812(this.field1187, 3553, class109.field1273, class135.field1647, arg1, arg1, arg0.field1332 != 0, var4, class109.field1273);
+				var5 = new class812(this.field1187, 3553, TextureFormat.field1273, DataType.field1647, arg1, arg1, arg0.field1332 != 0, var4, TextureFormat.field1273);
 			} else {
 				int[] var6;
 				if (class603.field7575 == arg0.field1340 && class118.method261(arg0.field1308)) {

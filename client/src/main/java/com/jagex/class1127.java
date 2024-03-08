@@ -8,7 +8,7 @@ import jaggl.OpenGL;
 import java.awt.*;
 
 @ObfuscatedName("aqv")
-public final class class1127 extends class850 {
+public final class class1127 extends GpuRenderer {
 
 	@ObfuscatedName("aqv.hx")
 	public OpenGL field12020;
@@ -397,18 +397,18 @@ public final class class1127 extends class850 {
 	}
 
 	@ObfuscatedName("aqv.au(IILck;Ldg;I)Ldp;")
-	public class130 method2146(int arg0, int arg1, class109 arg2, class135 arg3, int arg4) {
+	public class130 method2146(int arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4) {
 		return new class489(this, arg2, arg3, arg0, arg1, arg4);
 	}
 
 	@ObfuscatedName("aqv.ar(II)Ldw;")
 	public class126 method2121(int arg0, int arg1) {
-		return new class489(this, class109.field1268, class135.field1649, arg0, arg1);
+		return new class489(this, TextureFormat.field1268, DataType.field1649, arg0, arg1);
 	}
 
 	@ObfuscatedName("aqv.ap(III)Ldw;")
 	public class126 method2356(int arg0, int arg1, int arg2) {
-		return new class489(this, class109.field1268, class135.field1649, arg0, arg1, arg2);
+		return new class489(this, TextureFormat.field1268, DataType.field1649, arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("aqv.aq(IIII)[I")
@@ -822,37 +822,37 @@ public final class class1127 extends class850 {
 	}
 
 	@ObfuscatedName("aqv.uq(Lck;Ldg;)Z")
-	public boolean method16026(class109 arg0, class135 arg1) {
+	public boolean method16026(TextureFormat arg0, DataType arg1) {
 		return true;
 	}
 
 	@ObfuscatedName("aqv.uc(Lck;Ldg;)Z")
-	public boolean method16289(class109 arg0, class135 arg1) {
+	public boolean method16289(TextureFormat arg0, DataType arg1) {
 		return this.field10125;
 	}
 
 	@ObfuscatedName("aqv.uz(Lck;Ldg;II)Llz;")
-	public class341 method16030(class109 arg0, class135 arg1, int arg2, int arg3) {
+	public GpuTexture method16030(TextureFormat arg0, DataType arg1, int arg2, int arg3) {
 		return this.method16089(arg0, arg1, arg2, arg3);
 	}
 
 	@ObfuscatedName("aqv.uj(IIZ[III)Llz;")
-	public class341 method16033(int arg0, int arg1, boolean arg2, int[] arg3, int arg4, int arg5) {
+	public GpuTexture method16033(int arg0, int arg1, boolean arg2, int[] arg3, int arg4, int arg5) {
 		return new class927(this, arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@ObfuscatedName("aqv.ug(Lck;IIZ[BII)Llz;")
-	public class341 method15975(class109 arg0, int arg1, int arg2, boolean arg3, byte[] arg4, int arg5, int arg6) {
+	public GpuTexture method15975(TextureFormat arg0, int arg1, int arg2, boolean arg3, byte[] arg4, int arg5, int arg6) {
 		return new class927(this, arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@ObfuscatedName("aqv.ub(Lck;IIZ[FII)Llz;")
-	public class341 method16032(class109 arg0, int arg1, int arg2, boolean arg3, float[] arg4, int arg5, int arg6) {
+	public GpuTexture method16032(TextureFormat arg0, int arg1, int arg2, boolean arg3, float[] arg4, int arg5, int arg6) {
 		return new class927(this, arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@ObfuscatedName("aqv.uy(Lck;Ldg;II)Lmo;")
-	public class359 method16089(class109 arg0, class135 arg1, int arg2, int arg3) {
+	public class359 method16089(TextureFormat arg0, DataType arg1, int arg2, int arg3) {
 		return new class927(this, arg0, arg1, arg2, arg3);
 	}
 
@@ -862,7 +862,7 @@ public final class class1127 extends class850 {
 	}
 
 	@ObfuscatedName("aqv.uk(Lck;IIIZ[B)Lll;")
-	public class327 method16197(class109 arg0, int arg1, int arg2, int arg3, boolean arg4, byte[] arg5) {
+	public VolumeTexture method16197(TextureFormat arg0, int arg1, int arg2, int arg3, boolean arg4, byte[] arg5) {
 		return new class918(this, arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -1089,7 +1089,7 @@ public final class class1127 extends class850 {
 
 	@ObfuscatedName("aqv.vc(Z)Lml;")
 	public final class360 method16067(boolean arg0) {
-		return new class928(this, class135.field1646, arg0);
+		return new class928(this, DataType.field1646, arg0);
 	}
 
 	@ObfuscatedName("aqv.vf([Llk;)Llo;")
@@ -1248,7 +1248,7 @@ public final class class1127 extends class850 {
 			var7 = 0;
 			var8 = arg5;
 		}
-		class135 var9 = arg0.method5832();
+		DataType var9 = arg0.method5832();
 		class928 var10 = (class928) arg0;
 		var10.method7658();
 		OpenGL.glDrawElements(var7, var8, method19076(var9), var10.getAddress() + (long) (var9.field1652 * arg4));
@@ -1277,7 +1277,7 @@ public final class class1127 extends class850 {
 			var6 = 0;
 			var7 = arg4;
 		}
-		class135 var8 = this.field12036.method5832();
+		DataType var8 = this.field12036.method5832();
 		OpenGL.glDrawElements(var6, var7, method19076(var8), this.field12036.getAddress() + (long) (var8.field1652 * arg3));
 	}
 
@@ -1406,7 +1406,7 @@ public final class class1127 extends class850 {
 	}
 
 	@ObfuscatedName("aqv.ahs(Ldg;)I")
-	public static final int method19076(class135 arg0) {
+	public static final int method19076(DataType arg0) {
 		switch(arg0.field1650) {
 			case 0:
 				return 5126;
@@ -1431,7 +1431,7 @@ public final class class1127 extends class850 {
 	}
 
 	@ObfuscatedName("aqv.aht(Lck;)I")
-	public static int method19085(class109 arg0) {
+	public static int method19085(TextureFormat arg0) {
 		switch(arg0.field1278) {
 			case 0:
 				return 6402;
@@ -1453,8 +1453,8 @@ public final class class1127 extends class850 {
 	}
 
 	@ObfuscatedName("aqv.ahi(Lck;Ldg;)I")
-	public static int method19077(class109 arg0, class135 arg1) {
-		if (class135.field1645 == arg1) {
+	public static int method19077(TextureFormat arg0, DataType arg1) {
+		if (DataType.field1645 == arg1) {
 			switch(arg0.field1278) {
 				case 1:
 					return 33777;
@@ -1474,7 +1474,7 @@ public final class class1127 extends class850 {
 				case 8:
 					return 33779;
 			}
-		} else if (class135.field1646 == arg1) {
+		} else if (DataType.field1646 == arg1) {
 			switch(arg0.field1278) {
 				case 0:
 					return 33189;
@@ -1493,21 +1493,21 @@ public final class class1127 extends class850 {
 				case 7:
 					return 32834;
 			}
-		} else if (class135.field1649 == arg1) {
+		} else if (DataType.field1649 == arg1) {
 			switch(arg0.field1278) {
 				case 0:
 					return 33190;
 				default:
 					throw new IllegalArgumentException();
 			}
-		} else if (class135.field1648 == arg1) {
+		} else if (DataType.field1648 == arg1) {
 			switch(arg0.field1278) {
 				case 0:
 					return 33191;
 				default:
 					throw new IllegalArgumentException();
 			}
-		} else if (class135.field1647 == arg1) {
+		} else if (DataType.field1647 == arg1) {
 			switch(arg0.field1278) {
 				case 2:
 					return 34843;
@@ -1523,7 +1523,7 @@ public final class class1127 extends class850 {
 				case 7:
 					return 34846;
 			}
-		} else if (class135.field1642 == arg1) {
+		} else if (DataType.field1642 == arg1) {
 			switch(arg0.field1278) {
 				case 2:
 					return 34837;

@@ -8,7 +8,7 @@ import java.nio.ByteBuffer;
 public class class981 extends class532 {
 
 	@ObfuscatedName("akh.k")
-	public final class850 field11409;
+	public final GpuRenderer field11409;
 
 	@ObfuscatedName("akh.f")
 	public final class837 field11401;

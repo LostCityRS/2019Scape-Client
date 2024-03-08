@@ -8,7 +8,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 @ObfuscatedName("al")
-public class class37 {
+public class SecureRandomProvider {
 
 	@ObfuscatedName("al.e")
 	public ExecutorService field639 = Executors.newSingleThreadExecutor();

@@ -9,7 +9,7 @@ public class class833 extends class103 {
 	public final class1113 field9416;
 
 	public class833(class849 arg0, int arg1, int arg2, byte[] arg3) {
-		this.field9416 = class1113.method18932(arg0, class109.field1270, class135.field1645, arg1, arg2, false, arg3, class109.field1270);
+		this.field9416 = class1113.method18932(arg0, TextureFormat.field1270, DataType.field1645, arg1, arg2, false, arg3, TextureFormat.field1270);
 		this.field9416.method15312(false, false);
 	}
 

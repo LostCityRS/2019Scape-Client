@@ -10,10 +10,10 @@ public abstract class class408 implements class329 {
 	public final class1126 field4219;
 
 	@ObfuscatedName("op.n")
-	public final class109 field4221;
+	public final TextureFormat field4221;
 
 	@ObfuscatedName("op.m")
-	public final class135 field4218;
+	public final DataType field4218;
 
 	@ObfuscatedName("op.k")
 	public boolean field4220;
@@ -21,7 +21,7 @@ public abstract class class408 implements class329 {
 	@ObfuscatedName("op.f")
 	public long field4217 = 0L;
 
-	public class408(class1126 arg0, class109 arg1, class135 arg2, boolean arg3, int arg4) {
+	public class408(class1126 arg0, TextureFormat arg1, DataType arg2, boolean arg3, int arg4) {
 		this.field4219 = arg0;
 		this.field4221 = arg1;
 		this.field4218 = arg2;

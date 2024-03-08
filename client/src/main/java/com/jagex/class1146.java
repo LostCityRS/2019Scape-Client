@@ -118,8 +118,8 @@ public class class1146 extends class968 {
 	}
 
 	@ObfuscatedName("aqi.p()Ldg;")
-	public class135 method17542() {
-		return class135.field1645;
+	public DataType method17542() {
+		return DataType.field1645;
 	}
 
 	@ObfuscatedName("aqi.u()I")

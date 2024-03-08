@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("ahu")
 public final class class902 extends class288 {
 
-	public class902(class850 arg0) {
+	public class902(GpuRenderer arg0) {
 		super(arg0);
 	}
 

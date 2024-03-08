@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class class1125 extends class846 {
 
 	@ObfuscatedName("aps.e")
-	public final class850 field11950;
+	public final GpuRenderer field11950;
 
 	@ObfuscatedName("aps.n")
 	public class362 field11952;
@@ -17,7 +17,7 @@ public class class1125 extends class846 {
 	@ObfuscatedName("aps.k")
 	public static final int[][] field11949 = new int[6][];
 
-	public class1125(class850 arg0, int arg1) {
+	public class1125(GpuRenderer arg0, int arg1) {
 		this.field11950 = arg0;
 		this.field11951 = arg1;
 	}
