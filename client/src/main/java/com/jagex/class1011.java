@@ -12,7 +12,7 @@ public class class1011 extends class769 implements class578 {
 
 	@ObfuscatedName("alv.e(I)V")
 	public void method9201() {
-		class983 var1 = Statics.method1604(class390.field3805, client.field10849.field794);
+		ClientMessage var1 = Statics.method1604(ClientProt.field3805, client.field10849.field794);
 		var1.field11432.p1_alt3(this.field8862);
 		int var2 = (this.field8869 ? 2 : 0) | (this.field8867 ? 1 : 0);
 		var1.field11432.p1_alt2(var2);

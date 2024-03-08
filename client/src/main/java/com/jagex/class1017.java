@@ -29,7 +29,7 @@ public class class1017 extends class649 {
 		if (var1.method17848() == 2) {
 			var5 = 1;
 		}
-		class983 var6 = Statics.method1604(class390.field3727, client.field10849.field794);
+		ClientMessage var6 = Statics.method1604(ClientProt.field3727, client.field10849.field794);
 		var6.field11432.p4(var4 | var3 << 16);
 		var6.field11432.p2_alt3(var2 | var5 << 15);
 		client.field10849.method934(var6);
@@ -46,8 +46,8 @@ public class class1017 extends class649 {
 	}
 
 	@ObfuscatedName("alt.z(S)Lakl;")
-	public class983 method10267() {
-		return Statics.method1604(class390.field3779, client.field10849.field794);
+	public ClientMessage method10267() {
+		return Statics.method1604(ClientProt.field3779, client.field10849.field794);
 	}
 
 	@ObfuscatedName("alt.w(Lalw;Lakm;I)V")

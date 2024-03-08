@@ -3,37 +3,37 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("akl")
-public class class983 extends class532 {
+public class ClientMessage extends class532 {
 
 	@ObfuscatedName("akl.k")
-	public class390 field11435;
+	public ClientProt field11435;
 
 	@ObfuscatedName("akl.f")
 	public int field11431;
 
 	@ObfuscatedName("akl.w")
-	public class1190 field11432;
+	public PacketBit field11432;
 
 	@ObfuscatedName("akl.l")
 	public int field11430;
 
 	@ObfuscatedName("akl.u")
-	public static class983[] field11434 = new class983[300];
+	public static ClientMessage[] field11434 = new ClientMessage[300];
 
 	@ObfuscatedName("akl.z")
 	public static int field11433 = 0;
 
 	@ObfuscatedName("rd.e(I)Lakl;")
-	public static class983 method7898() {
-		return field11433 == 0 ? new class983() : field11434[--field11433];
+	public static ClientMessage method7898() {
+		return field11433 == 0 ? new ClientMessage() : field11434[--field11433];
 	}
 
 	@ObfuscatedName("zw.m(B)Lakl;")
-	public static class983 method13920() {
-		class983 var0 = method7898();
+	public static ClientMessage method13920() {
+		ClientMessage var0 = method7898();
 		var0.field11435 = null;
 		var0.field11431 = 0;
-		var0.field11432 = new class1190(5000);
+		var0.field11432 = new PacketBit(5000);
 		return var0;
 	}
 

@@ -25,7 +25,7 @@ public abstract class class649 {
 	@ObfuscatedName("xb.e(S)V")
 	public void method10280() {
 		if (this.method10272()) {
-			class983 var1 = null;
+			ClientMessage var1 = null;
 			int var2 = 0;
 			int var3 = 0;
 			int var4 = 0;
@@ -158,7 +158,7 @@ public abstract class class649 {
 	public abstract void method10264(Packet arg0, class993 arg1);
 
 	@ObfuscatedName("xb.z(S)Lakl;")
-	public abstract class983 method10267();
+	public abstract ClientMessage method10267();
 
 	@ObfuscatedName("xb.l(I)V")
 	public abstract void method10270();

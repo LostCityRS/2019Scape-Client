@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("asl")
-public class class1192 extends class999 {
+public class class1192 extends SubInterface {
 
 	@ObfuscatedName("asl.w")
 	public final class675 field12429;

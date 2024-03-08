@@ -320,7 +320,7 @@ public class class47 {
 			method4285(class776.field9061.method15021(Statics.field1680));
 			return;
 		}
-		if (Statics.field1811 != class682.field8273 || client.field10949 >= 2) {
+		if (Statics.field1811 != ModeWhere.field8273 || client.field10949 >= 2) {
 			try {
 				if (arg0.equalsIgnoreCase("wm1")) {
 					client.method13880(1, -1, -1, false);
@@ -516,7 +516,7 @@ public class class47 {
 				}
 				if (client.field10791 == 18 || client.field10791 == 13) {
 					class49 var30 = client.method640();
-					class983 var31 = Statics.method1604(class390.field3766, var30.field794);
+					ClientMessage var31 = Statics.method1604(ClientProt.field3766, var30.field794);
 					var31.field11432.p1(arg0.length() + 3);
 					var31.field11432.p1(arg1 ? 1 : 0);
 					var31.field11432.p1(arg2 ? 1 : 0);

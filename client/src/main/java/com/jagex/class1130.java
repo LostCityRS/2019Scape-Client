@@ -212,7 +212,7 @@ public class class1130 extends class892 {
 			this.field12051 = null;
 		}
 		this.field12071 = (class643) class686.method1897(class643.method10193(), arg0.g1b());
-		if (Statics.field1811 == class682.field8273 && client.field10949 >= 2) {
+		if (Statics.field1811 == ModeWhere.field8273 && client.field10949 >= 2) {
 			this.field12071 = class643.field7918;
 		}
 		this.method19121(arg0, var3);
@@ -454,7 +454,7 @@ public class class1130 extends class892 {
 		if (class507.field6616 < 96 && var12 > 50) {
 			class43.method7319();
 		}
-		if (Statics.field1811 != class682.field8273 && var12 < 50) {
+		if (Statics.field1811 != ModeWhere.field8273 && var12 < 50) {
 			int var13 = 50 - var12;
 			while (var13 > client.field10798) {
 				Statics.field9166[client.field10798] = new byte[102400];
@@ -464,7 +464,7 @@ public class class1130 extends class892 {
 				client.field10798--;
 				Statics.field9166[client.field10798] = null;
 			}
-		} else if (Statics.field1811 != class682.field8273) {
+		} else if (Statics.field1811 != ModeWhere.field8273) {
 			Statics.field9166 = new byte[50][];
 			client.field10798 = 0;
 		}

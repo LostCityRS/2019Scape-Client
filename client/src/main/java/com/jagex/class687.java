@@ -8,25 +8,25 @@ import java.util.Locale;
 public class class687 implements class685 {
 
 	@ObfuscatedName("zt.e")
-	public static final class687 field8296 = new class687("EN", "en", "English", class682.field8273, 0, "GB");
+	public static final class687 field8296 = new class687("EN", "en", "English", ModeWhere.field8273, 0, "GB");
 
 	@ObfuscatedName("zt.n")
-	public static final class687 field8297 = new class687("DE", "de", "German", class682.field8273, 1, "DE");
+	public static final class687 field8297 = new class687("DE", "de", "German", ModeWhere.field8273, 1, "DE");
 
 	@ObfuscatedName("zt.m")
-	public static final class687 field8289 = new class687("FR", "fr", "French", class682.field8273, 2, "FR");
+	public static final class687 field8289 = new class687("FR", "fr", "French", ModeWhere.field8273, 2, "FR");
 
 	@ObfuscatedName("zt.k")
-	public static final class687 field8291 = new class687("PT", "pt", "Portuguese", class682.field8273, 3, "BR");
+	public static final class687 field8291 = new class687("PT", "pt", "Portuguese", ModeWhere.field8273, 3, "BR");
 
 	@ObfuscatedName("zt.f")
-	public static final class687 field8292 = new class687("NL", "nl", "Dutch", class682.field8268, 4, "NL");
+	public static final class687 field8292 = new class687("NL", "nl", "Dutch", ModeWhere.field8268, 4, "NL");
 
 	@ObfuscatedName("zt.w")
-	public static final class687 field8290 = new class687("ES", "es", "Spanish", class682.field8268, 5, "ES");
+	public static final class687 field8290 = new class687("ES", "es", "Spanish", ModeWhere.field8268, 5, "ES");
 
 	@ObfuscatedName("zt.l")
-	public static final class687 field8288 = new class687("ES_MX", "es-mx", "Spanish (Latin American)", class682.field8273, 6, "MX");
+	public static final class687 field8288 = new class687("ES_MX", "es-mx", "Spanish (Latin American)", ModeWhere.field8273, 6, "MX");
 
 	@ObfuscatedName("zt.u")
 	public final String field8295;
@@ -61,7 +61,7 @@ public class class687 implements class685 {
 		return new class687[] { field8291, field8292, field8296, field8297, field8290, field8288, field8289 };
 	}
 
-	public class687(String arg0, String arg1, String arg2, class682 arg3, int arg4, String arg5) {
+	public class687(String arg0, String arg1, String arg2, ModeWhere arg3, int arg4, String arg5) {
 		this.field8295 = arg0;
 		this.field8293 = arg1;
 		this.field8298 = arg4;

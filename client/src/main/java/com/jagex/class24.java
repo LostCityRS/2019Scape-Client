@@ -46,7 +46,7 @@ public class class24 {
 		if (client.field10791 != 0) {
 			return;
 		}
-		class983 var1 = Statics.method1604(class390.field3710, client.field10835.field794);
+		ClientMessage var1 = Statics.method1604(ClientProt.field3710, client.field10835.field794);
 		var1.field11432.p2(0);
 		int var2 = var1.field11432.pos;
 		var1.field11432.pjstr(arg0);
@@ -62,7 +62,7 @@ public class class24 {
 		if (client.field10791 != 0) {
 			return;
 		}
-		class983 var1 = Statics.method1604(class390.field3693, client.field10835.field794);
+		ClientMessage var1 = Statics.method1604(ClientProt.field3693, client.field10835.field794);
 		var1.field11432.p1(0);
 		int var2 = var1.field11432.pos;
 		var1.field11432.pjstr(arg0);
@@ -76,7 +76,7 @@ public class class24 {
 	@ObfuscatedName("ae.w(I)V")
 	public static void method648() {
 		if (client.field10791 == 0) {
-			class983 var0 = Statics.method1604(class390.field3743, client.field10835.field794);
+			ClientMessage var0 = Statics.method1604(ClientProt.field3743, client.field10835.field794);
 			client.field10835.method934(var0);
 			Statics.field585 = class706.field8392;
 			Statics.field618 = null;
@@ -88,7 +88,7 @@ public class class24 {
 		if (client.field10791 != 0) {
 			return;
 		}
-		class983 var5 = Statics.method1604(class390.field3702, client.field10835.field794);
+		ClientMessage var5 = Statics.method1604(ClientProt.field3702, client.field10835.field794);
 		var5.field11432.p2(0);
 		int var6 = var5.field11432.pos;
 		var5.field11432.pjstr(arg0);
@@ -110,7 +110,7 @@ public class class24 {
 	@ObfuscatedName("afu.u(II)V")
 	public static void method16428(int arg0) {
 		if (client.field10791 == 0) {
-			class983 var1 = Statics.method1604(class390.field3800, client.field10835.field794);
+			ClientMessage var1 = Statics.method1604(ClientProt.field3800, client.field10835.field794);
 			var1.field11432.p1(arg0);
 			client.field10835.method934(var1);
 		}
@@ -187,8 +187,8 @@ public class class24 {
 			if (Statics.field517 == class15.field515) {
 				client.field10835.method936(class561.method7130(Statics.field8751.method14764(), 40000), Statics.field8751.field8745);
 				client.field10835.method952();
-				class983 var1 = class983.method13920();
-				var1.field11432.p1(class391.field3815.field3812);
+				ClientMessage var1 = ClientMessage.method13920();
+				var1.field11432.p1(LoginProt.field3815.field3812);
 				var1.field11432.p2(0);
 				int var2 = var1.field11432.pos;
 				var1.field11432.p2(910);
@@ -227,13 +227,13 @@ public class class24 {
 				client.field10835.method939().method9029(client.field10835.field795.data, 0, 1);
 				Statics.field584 = (class704) class686.method1897(class704.method16743(), client.field10835.field795.data[0] & 0xFF);
 				if (Statics.field584 == class704.field8364) {
-					client.field10835.field794 = new class734(Statics.field581);
+					client.field10835.field794 = new IsaacRandom(Statics.field581);
 					int[] var5 = new int[4];
 					for (int var6 = 0; var6 < 4; var6++) {
 						var5[var6] = Statics.field581[var6] + 50;
 					}
-					client.field10835.field809 = new class734(var5);
-					new class734(var5);
+					client.field10835.field809 = new IsaacRandom(var5);
+					new IsaacRandom(var5);
 					client.field10835.field795.method19566(client.field10835.field809);
 					client.method6972(0);
 					client.field10835.method952();
@@ -256,7 +256,7 @@ public class class24 {
 	}
 
 	@ObfuscatedName("js.h(Lakl;B)[I")
-	public static int[] method4942(class983 arg0) {
+	public static int[] method4942(ClientMessage arg0) {
 		Packet var1 = new Packet(518);
 		int[] var2 = new int[4];
 		for (int var3 = 0; var3 < 4; var3++) {

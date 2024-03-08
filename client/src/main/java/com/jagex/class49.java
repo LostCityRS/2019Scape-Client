@@ -20,16 +20,16 @@ public class class49 {
 	public Packet field792 = new Packet(1700);
 
 	@ObfuscatedName("ax.f")
-	public class734 field794;
+	public IsaacRandom field794;
 
 	@ObfuscatedName("ax.w")
-	public class1190 field795 = new class1190(40000);
+	public PacketBit field795 = new PacketBit(40000);
 
 	@ObfuscatedName("ax.l")
-	public class734 field809;
+	public IsaacRandom field809;
 
 	@ObfuscatedName("ax.u")
-	public class393 field796 = null;
+	public ServerProt field796 = null;
 
 	@ObfuscatedName("ax.z")
 	public int field797 = 0;
@@ -56,13 +56,13 @@ public class class49 {
 	public int field804;
 
 	@ObfuscatedName("ax.y")
-	public class393 field790;
+	public ServerProt field790;
 
 	@ObfuscatedName("ax.q")
-	public class393 field806;
+	public ServerProt field806;
 
 	@ObfuscatedName("ax.x")
-	public class393 field805;
+	public ServerProt field805;
 
 	@ObfuscatedName("ax.b")
 	public boolean field808 = false;
@@ -90,7 +90,7 @@ public class class49 {
 		}
 		this.field792.pos = 0;
 		while (true) {
-			class983 var1 = (class983) this.field803.method14191();
+			ClientMessage var1 = (ClientMessage) this.field803.method14191();
 			if (var1 == null || var1.field11430 > this.field792.data.length - this.field792.pos) {
 				this.field800.method9030(this.field792.data, 0, this.field792.pos);
 				this.field801 += this.field792.pos;
@@ -106,7 +106,7 @@ public class class49 {
 	}
 
 	@ObfuscatedName("ax.m(Lakl;I)V")
-	public final void method934(class983 arg0) {
+	public final void method934(ClientMessage arg0) {
 		this.field803.method14153(arg0);
 		arg0.field11430 = arg0.field11432.pos;
 		arg0.field11432.pos = 0;

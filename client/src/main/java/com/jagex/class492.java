@@ -27,7 +27,7 @@ public class class492 {
 			}
 			var3.field793 = 0;
 			if (!var3.field808 && var3.method939() != null) {
-				class983 var4 = Statics.method1604(class390.field3785, var3.field794);
+				ClientMessage var4 = Statics.method1604(ClientProt.field3785, var3.field794);
 				var3.method934(var4);
 				try {
 					var3.method933();

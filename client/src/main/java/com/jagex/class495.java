@@ -440,7 +440,7 @@ public class class495 {
 	}
 
 	@ObfuscatedName("rl.as(Lase;I)V")
-	public void method7756(class1190 arg0) {
+	public void method7756(PacketBit arg0) {
 		int var2 = arg0.g2_alt2();
 		this.field5027 = arg0.g1();
 		int var3 = arg0.g1_alt3();
@@ -473,7 +473,7 @@ public class class495 {
 	}
 
 	@ObfuscatedName("rl.at(Lase;I)V")
-	public void method7776(class1190 arg0) {
+	public void method7776(PacketBit arg0) {
 		this.field5027 = arg0.g1();
 		int var2 = arg0.g1();
 		int var3 = arg0.g1();
@@ -1198,7 +1198,7 @@ public class class495 {
 		client.method3128();
 		class962.method5070();
 		if (class507.method4419() == class506.field6580 && client.field10849.method939() != null && client.field10791 == 3) {
-			class983 var31 = Statics.method1604(class390.field3772, client.field10849.field794);
+			ClientMessage var31 = Statics.method1604(ClientProt.field3772, client.field10849.field794);
 			var31.field11432.p4(1057001181);
 			client.field10849.method934(var31);
 		}
@@ -1227,7 +1227,7 @@ public class class495 {
 		} else {
 			client.method6972(18);
 			if (client.field10849.method939() != null) {
-				class983 var40 = Statics.method1604(class390.field3761, client.field10849.field794);
+				ClientMessage var40 = Statics.method1604(ClientProt.field3761, client.field10849.field794);
 				var40.field11432.p4((int) var38);
 				client.field10849.method934(var40);
 			}

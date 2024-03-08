@@ -370,7 +370,7 @@ public class Statics {
 	public static class442 field1810;
 
 	@ObfuscatedName("fz.bz")
-	public static class682 field1811;
+	public static ModeWhere field1811;
 
 	@ObfuscatedName("fj.ie")
 	public static class807 field1819;
@@ -1953,20 +1953,20 @@ public class Statics {
 	}
 
 	@ObfuscatedName("cj.n(Lnr;Laav;B)Lakl;")
-	public static class983 method1604(class390 arg0, class734 arg1) {
-		class983 var2 = class983.method7898();
+	public static ClientMessage method1604(ClientProt arg0, IsaacRandom arg1) {
+		ClientMessage var2 = ClientMessage.method7898();
 		var2.field11435 = arg0;
 		var2.field11431 = arg0.field3807;
 		if (var2.field11431 == -1) {
-			var2.field11432 = new class1190(260);
+			var2.field11432 = new PacketBit(260);
 		} else if (var2.field11431 == -2) {
-			var2.field11432 = new class1190(10000);
+			var2.field11432 = new PacketBit(10000);
 		} else if (var2.field11431 <= 18) {
-			var2.field11432 = new class1190(20);
+			var2.field11432 = new PacketBit(20);
 		} else if (var2.field11431 <= 98) {
-			var2.field11432 = new class1190(100);
+			var2.field11432 = new PacketBit(100);
 		} else {
-			var2.field11432 = new class1190(260);
+			var2.field11432 = new PacketBit(260);
 		}
 		var2.field11432.method19566(arg1);
 		var2.field11432.method19555(var2.field11435.field3806);
@@ -2609,8 +2609,8 @@ public class Statics {
 	}
 
 	@ObfuscatedName("amc.e(I)[Lnz;")
-	public static class393[] method18494() {
-		return new class393[] { class393.field3983, class393.field3827, class393.field3870, class393.field3829, class393.field3873, class393.field3966, class393.field3832, class393.field3833, class393.field3834, class393.field3867, class393.field3836, class393.field3896, class393.field3838, class393.field3839, class393.field3840, class393.field4012, class393.field3842, class393.field3843, class393.field3844, class393.field3845, class393.field3837, class393.field3847, class393.field4016, class393.field3849, class393.field3850, class393.field3851, class393.field3991, class393.field4017, class393.field3922, class393.field3855, class393.field3856, class393.field3857, class393.field3858, class393.field3977, class393.field3860, class393.field3861, class393.field3997, class393.field3863, class393.field3864, class393.field3865, class393.field3866, class393.field3938, class393.field4022, class393.field3897, class393.field3889, class393.field3871, class393.field3872, class393.field3879, class393.field3874, class393.field3875, class393.field3846, class393.field3853, class393.field3878, class393.field3947, class393.field3880, class393.field3881, class393.field3882, class393.field3883, class393.field3968, class393.field3885, class393.field3886, class393.field3887, class393.field3888, class393.field3972, class393.field3890, class393.field3891, class393.field3859, class393.field3893, class393.field3894, class393.field4000, class393.field3953, class393.field3898, class393.field3960, class393.field3876, class393.field3900, class393.field3901, class393.field3934, class393.field3826, class393.field3904, class393.field3905, class393.field3992, class393.field3907, class393.field3908, class393.field4004, class393.field3910, class393.field3911, class393.field3912, class393.field3913, class393.field3914, class393.field3915, class393.field3927, class393.field4020, class393.field3949, class393.field3919, class393.field3920, class393.field3921, class393.field3831, class393.field3923, class393.field3924, class393.field3925, class393.field3906, class393.field3854, class393.field3928, class393.field3929, class393.field3930, class393.field3931, class393.field3932, class393.field3933, class393.field3998, class393.field3935, class393.field3936, class393.field3937, class393.field3942, class393.field3939, class393.field3940, class393.field3902, class393.field4019, class393.field3981, class393.field3944, class393.field3945, class393.field3946, class393.field3958, class393.field3862, class393.field3884, class393.field3950, class393.field3951, class393.field3952, class393.field3828, class393.field3954, class393.field3955, class393.field3956, class393.field3957, class393.field3995, class393.field3959, class393.field3943, class393.field3892, class393.field3962, class393.field3963, class393.field3903, class393.field3965, class393.field4018, class393.field3967, class393.field3916, class393.field3969, class393.field3899, class393.field3971, class393.field3964, class393.field3973, class393.field3974, class393.field3975, class393.field3976, class393.field3918, class393.field3978, class393.field3979, class393.field3980, class393.field3848, class393.field3982, class393.field3948, class393.field3869, class393.field3985, class393.field3986, class393.field3987, class393.field3988, class393.field3989, class393.field3990, class393.field3877, class393.field3917, class393.field3993, class393.field3994, class393.field3970, class393.field3996, class393.field3830, class393.field3909, class393.field3999, class393.field4015, class393.field4001, class393.field4002, class393.field4003, class393.field3895, class393.field4005, class393.field4006, class393.field4007, class393.field4008, class393.field4009, class393.field4010, class393.field4011, class393.field3926, class393.field4013, class393.field4014, class393.field3852, class393.field3868, class393.field3961, class393.field3841, class393.field3835, class393.field3984 };
+	public static ServerProt[] method18494() {
+		return new ServerProt[] { ServerProt.field3983, ServerProt.field3827, ServerProt.field3870, ServerProt.field3829, ServerProt.field3873, ServerProt.field3966, ServerProt.field3832, ServerProt.field3833, ServerProt.field3834, ServerProt.field3867, ServerProt.field3836, ServerProt.field3896, ServerProt.field3838, ServerProt.field3839, ServerProt.field3840, ServerProt.field4012, ServerProt.field3842, ServerProt.field3843, ServerProt.field3844, ServerProt.field3845, ServerProt.field3837, ServerProt.field3847, ServerProt.field4016, ServerProt.field3849, ServerProt.field3850, ServerProt.field3851, ServerProt.field3991, ServerProt.field4017, ServerProt.field3922, ServerProt.field3855, ServerProt.field3856, ServerProt.field3857, ServerProt.field3858, ServerProt.field3977, ServerProt.field3860, ServerProt.field3861, ServerProt.field3997, ServerProt.field3863, ServerProt.field3864, ServerProt.field3865, ServerProt.field3866, ServerProt.field3938, ServerProt.field4022, ServerProt.field3897, ServerProt.field3889, ServerProt.field3871, ServerProt.field3872, ServerProt.field3879, ServerProt.field3874, ServerProt.field3875, ServerProt.field3846, ServerProt.field3853, ServerProt.field3878, ServerProt.field3947, ServerProt.field3880, ServerProt.field3881, ServerProt.field3882, ServerProt.field3883, ServerProt.field3968, ServerProt.field3885, ServerProt.field3886, ServerProt.field3887, ServerProt.field3888, ServerProt.field3972, ServerProt.field3890, ServerProt.field3891, ServerProt.field3859, ServerProt.field3893, ServerProt.field3894, ServerProt.field4000, ServerProt.field3953, ServerProt.field3898, ServerProt.field3960, ServerProt.field3876, ServerProt.field3900, ServerProt.field3901, ServerProt.field3934, ServerProt.field3826, ServerProt.field3904, ServerProt.field3905, ServerProt.field3992, ServerProt.field3907, ServerProt.field3908, ServerProt.field4004, ServerProt.field3910, ServerProt.field3911, ServerProt.field3912, ServerProt.field3913, ServerProt.field3914, ServerProt.field3915, ServerProt.field3927, ServerProt.field4020, ServerProt.field3949, ServerProt.field3919, ServerProt.field3920, ServerProt.field3921, ServerProt.field3831, ServerProt.field3923, ServerProt.field3924, ServerProt.field3925, ServerProt.field3906, ServerProt.field3854, ServerProt.field3928, ServerProt.field3929, ServerProt.field3930, ServerProt.field3931, ServerProt.field3932, ServerProt.field3933, ServerProt.field3998, ServerProt.field3935, ServerProt.field3936, ServerProt.field3937, ServerProt.field3942, ServerProt.field3939, ServerProt.field3940, ServerProt.field3902, ServerProt.field4019, ServerProt.field3981, ServerProt.field3944, ServerProt.field3945, ServerProt.field3946, ServerProt.field3958, ServerProt.field3862, ServerProt.field3884, ServerProt.field3950, ServerProt.field3951, ServerProt.field3952, ServerProt.field3828, ServerProt.field3954, ServerProt.field3955, ServerProt.field3956, ServerProt.field3957, ServerProt.field3995, ServerProt.field3959, ServerProt.field3943, ServerProt.field3892, ServerProt.field3962, ServerProt.field3963, ServerProt.field3903, ServerProt.field3965, ServerProt.field4018, ServerProt.field3967, ServerProt.field3916, ServerProt.field3969, ServerProt.field3899, ServerProt.field3971, ServerProt.field3964, ServerProt.field3973, ServerProt.field3974, ServerProt.field3975, ServerProt.field3976, ServerProt.field3918, ServerProt.field3978, ServerProt.field3979, ServerProt.field3980, ServerProt.field3848, ServerProt.field3982, ServerProt.field3948, ServerProt.field3869, ServerProt.field3985, ServerProt.field3986, ServerProt.field3987, ServerProt.field3988, ServerProt.field3989, ServerProt.field3990, ServerProt.field3877, ServerProt.field3917, ServerProt.field3993, ServerProt.field3994, ServerProt.field3970, ServerProt.field3996, ServerProt.field3830, ServerProt.field3909, ServerProt.field3999, ServerProt.field4015, ServerProt.field4001, ServerProt.field4002, ServerProt.field4003, ServerProt.field3895, ServerProt.field4005, ServerProt.field4006, ServerProt.field4007, ServerProt.field4008, ServerProt.field4009, ServerProt.field4010, ServerProt.field4011, ServerProt.field3926, ServerProt.field4013, ServerProt.field4014, ServerProt.field3852, ServerProt.field3868, ServerProt.field3961, ServerProt.field3841, ServerProt.field3835, ServerProt.field3984 };
 	}
 
 	@ObfuscatedName("fi.at(III)V")
@@ -3328,7 +3328,7 @@ public class Statics {
 	}
 
 	@ObfuscatedName("aab.ae(Lase;I)V")
-	public static void method14463(class1190 arg0) {
+	public static void method14463(PacketBit arg0) {
 		class759[] var1 = class759.method3566();
 		for (int var2 = 0; var2 < var1.length; var2++) {
 			class759 var3 = var1[var2];
@@ -3500,7 +3500,7 @@ public class Statics {
 			class226.method5403();
 			field7538.method6165();
 			method14941();
-			if (field1811 != class682.field8273) {
+			if (field1811 != ModeWhere.field8273) {
 				for (int var1 = 0; var1 < field9166.length; var1++) {
 					field9166[var1] = null;
 				}
@@ -4026,7 +4026,7 @@ public class Statics {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		class999 var3 = (class999) client.field10979.method14495((long) var1);
+		SubInterface var3 = (SubInterface) client.field10979.method14495((long) var1);
 		if (var3 != null && var3.field11571 == var2) {
 			arg0.field8216[++arg0.field8226 - 1] = 1;
 		} else {
@@ -4036,7 +4036,7 @@ public class Statics {
 
 	@ObfuscatedName("sq.vs(Lyf;I)V")
 	public static final void method8192(class677 arg0) {
-		class983 var1 = method1604(class390.field3788, client.field10849.field794);
+		ClientMessage var1 = method1604(ClientProt.field3788, client.field10849.field794);
 		client.field10849.method934(var1);
 	}
 
@@ -4358,7 +4358,7 @@ public class Statics {
 				class676.method1428(var2);
 			}
 		}
-		class983 var3 = method1604(class390.field3740, client.field10849.field794);
+		ClientMessage var3 = method1604(ClientProt.field3740, client.field10849.field794);
 		var3.field11432.p4_alt1(arg0.field2158);
 		var3.field11432.p2(arg0.field2334);
 		var3.field11432.p2_alt2(client.field10975);
@@ -4402,7 +4402,7 @@ public class Statics {
 			client.method7076(var6, var4, arg0, arg1, arg2);
 			return;
 		}
-		class983 var7 = method1604(class390.field3786, var6.field794);
+		ClientMessage var7 = method1604(ClientProt.field3786, var6.field794);
 		var7.field11432.p1(Packet.pjstrlen(var4.field2336) + 7 + 1);
 		var7.field11432.pjstr(var4.field2336);
 		var7.field11432.p2_alt1(arg2);
@@ -4652,7 +4652,7 @@ public class Statics {
 			return;
 		}
 		class49 var1 = client.method640();
-		class983 var2 = method1604(class390.field3774, var1.field794);
+		ClientMessage var2 = method1604(ClientProt.field3774, var1.field794);
 		var2.field11432.p1(Packet.pjstrlen(arg0));
 		var2.field11432.pjstr(arg0);
 		var1.method934(var2);
@@ -4670,7 +4670,7 @@ public class Statics {
 		}
 		String var4 = var3.field3087;
 		class49 var5 = client.method640();
-		class983 var6 = method1604(class390.field3776, var5.field794);
+		ClientMessage var6 = method1604(ClientProt.field3776, var5.field794);
 		var6.field11432.p1(Packet.pjstrlen(var4) + 3);
 		var6.field11432.p1(arg0 ? 1 : 0);
 		var6.field11432.p2(arg1);
@@ -4738,7 +4738,7 @@ public class Statics {
 			return;
 		}
 		class49 var12 = client.method640();
-		class983 var13 = method1604(class390.field3695, var12.field794);
+		ClientMessage var13 = method1604(ClientProt.field3695, var12.field794);
 		var13.field11432.p1(Packet.pjstrlen(arg0) + 1);
 		var13.field11432.pjstr(arg0);
 		var13.field11432.p1(arg1 ? 1 : 0);

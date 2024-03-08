@@ -299,8 +299,8 @@ public class class10 {
 					client.field10967 = null;
 				}
 				Statics.field432.method952();
-				class983 var1 = class983.method13920();
-				var1.field11432.p1(class391.field3821.field3812);
+				ClientMessage var1 = ClientMessage.method13920();
+				var1.field11432.p1(LoginProt.field3821.field3812);
 				Statics.field432.method934(var1);
 				Statics.field432.method933();
 				field445 = 35;
@@ -329,8 +329,8 @@ public class class10 {
 				}
 			}
 			if (field445 == 276) {
-				class983 var3 = class983.method13920();
-				var3.field11432.p1(class391.field3817.field3812);
+				ClientMessage var3 = ClientMessage.method13920();
+				var3.field11432.p1(LoginProt.field3817.field3812);
 				var3.field11432.p2(0);
 				int var4 = var3.field11432.pos;
 				var3.field11432.p4(910);
@@ -403,14 +403,14 @@ public class class10 {
 			if (field445 == 84) {
 				Statics.field432.field795.pos = 0;
 				Statics.field432.method952();
-				class983 var9 = class983.method13920();
-				class1190 var10 = var9.field11432;
+				ClientMessage var9 = ClientMessage.method13920();
+				PacketBit var10 = var9.field11432;
 				if (Statics.field431 == 211) {
-					class391 var11;
+					LoginProt var11;
 					if (field438) {
-						var11 = class391.field3819;
+						var11 = LoginProt.field3819;
 					} else {
-						var11 = class391.field3811;
+						var11 = LoginProt.field3811;
 					}
 					var10.p1(var11.field3812);
 					var10.p2(0);
@@ -466,11 +466,11 @@ public class class10 {
 					var10.tinyenc(Statics.field435, var13, var10.pos);
 					var10.psize2(var10.pos - var12);
 				} else {
-					class391 var18;
+					LoginProt var18;
 					if (field438) {
-						var18 = class391.field3819;
+						var18 = LoginProt.field3819;
 					} else {
-						var18 = class391.field3810;
+						var18 = LoginProt.field3810;
 					}
 					var10.p1(var18.field3812);
 					var10.p2(0);
@@ -516,13 +516,13 @@ public class class10 {
 				}
 				Statics.field432.method934(var9);
 				Statics.field432.method933();
-				Statics.field432.field794 = new class734(Statics.field435);
+				Statics.field432.field794 = new IsaacRandom(Statics.field435);
 				int[] var24 = new int[4];
 				for (int var25 = 0; var25 < 4; var25++) {
 					var24[var25] = Statics.field435[var25] + 50;
 				}
-				Statics.field432.field809 = new class734(var24);
-				new class734(var24);
+				Statics.field432.field809 = new IsaacRandom(var24);
+				new IsaacRandom(var24);
 				Statics.field432.field795.method19566(Statics.field432.field809);
 				Statics.field435 = null;
 				field445 = 98;
@@ -704,9 +704,9 @@ public class class10 {
 				while (true) {
 					if (Statics.field432.field795.pos >= Statics.field432.field797) {
 						if (var31) {
-							class983 var33 = class983.method13920();
-							class1190 var34 = var33.field11432;
-							var34.p1(class391.field3816.field3812);
+							ClientMessage var33 = ClientMessage.method13920();
+							PacketBit var34 = var33.field11432;
+							var34.p1(LoginProt.field3816.field3812);
 							Statics.field432.method934(var33);
 							Statics.field432.method933();
 							field445 = 138;
@@ -752,7 +752,7 @@ public class class10 {
 				field445 = 157;
 			}
 			if (field445 == 157) {
-				class1190 var36 = Statics.field432.field795;
+				PacketBit var36 = Statics.field432.field795;
 				if (Statics.field431 == 211) {
 					if (!Statics.field432.method939().method9038(Statics.field622)) {
 						return;
@@ -815,7 +815,7 @@ public class class10 {
 					Statics.field9200.field8745 = var36.gjstr2();
 					Statics.field9200.field8744 = var36.g2();
 					Statics.field9200.field8742 = var36.g2();
-					if (Statics.field1811 != class682.field8277 && (Statics.field1811 != class682.field8269 || client.field10949 < 2) && Statics.field8755.method14757(Statics.field8752)) {
+					if (Statics.field1811 != ModeWhere.field8277 && (Statics.field1811 != ModeWhere.field8269 || client.field10949 < 2) && Statics.field8755.method14757(Statics.field8752)) {
 						class750.method10337();
 					}
 				} else {
@@ -838,7 +838,7 @@ public class class10 {
 					} catch (Throwable var47) {
 					}
 				}
-				if (Statics.field1811 == class682.field8273) {
+				if (Statics.field1811 == ModeWhere.field8273) {
 					class394.field4024.method6090();
 				}
 				if (Statics.field431 != 211) {
@@ -859,7 +859,7 @@ public class class10 {
 				field445 = 188;
 			}
 			if (field445 == 188) {
-				class1190 var41 = Statics.field432.field795;
+				PacketBit var41 = Statics.field432.field795;
 				var41.pos = 0;
 				if (var41.method19573()) {
 					if (!Statics.field432.method939().method9038(1)) {
@@ -883,10 +883,10 @@ public class class10 {
 				method4320();
 				class40.method16435(Statics.field432.field795);
 				int var43 = var42 - Statics.field432.field795.pos;
-				class1190 var44 = new class1190(var43);
+				PacketBit var44 = new PacketBit(var43);
 				System.arraycopy(Statics.field432.field795.data, Statics.field432.field795.pos, var44.data, 0, var43);
 				Statics.field432.field795.pos += var43;
-				if (class393.field3867 == Statics.field432.field796) {
+				if (ServerProt.field3867 == Statics.field432.field796) {
 					client.field10855.method7749(new class494(class496.field5066, var44));
 				} else {
 					client.field10855.method7749(new class494(class496.field5071, var44));
@@ -942,7 +942,7 @@ public class class10 {
 	}
 
 	@ObfuscatedName("kl.b(Lase;I)V")
-	public static void method5247(class1190 arg0) {
+	public static void method5247(PacketBit arg0) {
 		boolean var1 = arg0.g1() == 1;
 		if (!var1) {
 			return;
@@ -1140,9 +1140,9 @@ public class class10 {
 		if (client.field10978 != -1) {
 			class226.method7602(client.field10978);
 		}
-		for (class999 var2 = (class999) client.field10979.method14500(); var2 != null; var2 = (class999) client.field10979.method14502()) {
+		for (SubInterface var2 = (SubInterface) client.field10979.method14500(); var2 != null; var2 = (SubInterface) client.field10979.method14502()) {
 			if (!var2.method8441()) {
-				var2 = (class999) client.field10979.method14500();
+				var2 = (SubInterface) client.field10979.method14500();
 				if (var2 == null) {
 					break;
 				}

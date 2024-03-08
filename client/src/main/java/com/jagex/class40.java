@@ -44,7 +44,7 @@ public class class40 {
 	}
 
 	@ObfuscatedName("aga.e(Lase;I)V")
-	public static final void method16435(class1190 arg0) {
+	public static final void method16435(PacketBit arg0) {
 		arg0.method19562();
 		int var1 = client.field10945;
 		class1130 var2 = Statics.field4490 = client.field10944[var1] = new class1130(client.field10855.method7743());
@@ -101,7 +101,7 @@ public class class40 {
 	}
 
 	@ObfuscatedName("sj.n(Lase;II)V")
-	public static final void method8355(class1190 arg0, int arg1) {
+	public static final void method8355(PacketBit arg0, int arg1) {
 		field695 = 0;
 		method5209(arg0);
 		method613(arg0);
@@ -111,7 +111,7 @@ public class class40 {
 	}
 
 	@ObfuscatedName("ka.m(Lase;I)V")
-	public static final void method5209(class1190 arg0) {
+	public static final void method5209(PacketBit arg0) {
 		int var1 = 0;
 		arg0.method19562();
 		for (int var2 = 0; var2 < field698; var2++) {
@@ -215,7 +215,7 @@ public class class40 {
 	}
 
 	@ObfuscatedName("ck.k(Lase;I)I")
-	public static int method1598(class1190 arg0) {
+	public static int method1598(PacketBit arg0) {
 		int var1 = arg0.method19583(2);
 		int var2;
 		if (var1 == 0) {
@@ -231,7 +231,7 @@ public class class40 {
 	}
 
 	@ObfuscatedName("akz.f(Lase;IS)V")
-	public static void method17602(class1190 arg0, int arg1) {
+	public static void method17602(PacketBit arg0, int arg1) {
 		class594 var2 = client.field10855.method7727();
 		boolean var3 = arg0.method19583(1) == 1;
 		if (var3) {
@@ -412,7 +412,7 @@ public class class40 {
 	}
 
 	@ObfuscatedName("aap.w(Lase;II)Z")
-	public static boolean method14343(class1190 arg0, int arg1) {
+	public static boolean method14343(PacketBit arg0, int arg1) {
 		int var2 = arg0.method19583(2);
 		if (var2 == 0) {
 			if (arg0.method19583(1) != 0) {
@@ -519,7 +519,7 @@ public class class40 {
 	}
 
 	@ObfuscatedName("a.l(Lase;B)V")
-	public static final void method613(class1190 arg0) {
+	public static final void method613(PacketBit arg0) {
 		for (int var1 = 0; var1 < field695; var1++) {
 			arg0.g2();
 			int var2 = field707[var1];
@@ -536,7 +536,7 @@ public class class40 {
 	}
 
 	@ObfuscatedName("rp.u(Lase;ILaqk;II)V")
-	public static final void method7474(class1190 arg0, int arg1, class1130 arg2, int arg3) {
+	public static final void method7474(PacketBit arg0, int arg1, class1130 arg2, int arg3) {
 		if ((arg3 & 0x80) != 0) {
 			int[] var4 = new int[4];
 			for (int var5 = 0; var5 < 4; var5++) {

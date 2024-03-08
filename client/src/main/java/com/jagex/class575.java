@@ -27,7 +27,7 @@ public class class575 implements class578 {
 
 	@ObfuscatedName("ur.e(I)V")
 	public void method9201() {
-		class983 var1 = Statics.method1604(class390.field3728, client.field10849.field794);
+		ClientMessage var1 = Statics.method1604(ClientProt.field3728, client.field10849.field794);
 		int var2 = var1.field11432.pos++;
 		var1.field11432.p1(this.field7278.method1303());
 		var1.field11432.pjstr(this.field7276);

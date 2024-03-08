@@ -101,7 +101,7 @@ public class class648 {
 		field7949.method10280();
 		field7948.method10280();
 		if (client.field10822 > 0) {
-			class983 var0 = Statics.method1604(class390.field3769, client.field10849.field794);
+			ClientMessage var0 = Statics.method1604(ClientProt.field3769, client.field10849.field794);
 			var0.field11432.p2(client.field10822 * 4);
 			for (int var1 = 0; var1 < client.field10822; var1++) {
 				class565 var2 = client.field11024[var1];
@@ -135,19 +135,19 @@ public class class648 {
 				var6 = 0;
 				var8 = 0;
 			}
-			class983 var9 = Statics.method1604(class390.field3719, client.field10849.field794);
+			ClientMessage var9 = Statics.method1604(ClientProt.field3719, client.field10849.field794);
 			var9.field11432.p2_alt3(var8);
 			var9.field11432.p2(var6);
 			client.field10849.method934(var9);
 		}
 		if (Statics.field8491 != field7944) {
 			field7944 = Statics.field8491;
-			class983 var10 = Statics.method1604(class390.field3775, client.field10849.field794);
+			ClientMessage var10 = Statics.method1604(ClientProt.field3775, client.field10849.field794);
 			var10.field11432.p1(Statics.field8491 ? 1 : 0);
 			client.field10849.method934(var10);
 		}
 		if (!client.field10800) {
-			class983 var11 = Statics.method1604(class390.field3699, client.field10849.field794);
+			ClientMessage var11 = Statics.method1604(ClientProt.field3699, client.field10849.field794);
 			var11.field11432.p1(0);
 			int var12 = var11.field11432.pos;
 			Packet var13 = Statics.field688.method18156();
@@ -160,7 +160,7 @@ public class class648 {
 			return;
 		}
 		int[] var14 = Statics.field8198.method2413();
-		class983 var15 = Statics.method1604(class390.field3791, client.field10849.field794);
+		ClientMessage var15 = Statics.method1604(ClientProt.field3791, client.field10849.field794);
 		var15.field11432.p2(0);
 		int var16 = var15.field11432.pos;
 		if (var14 == null || var14.length == 0) {

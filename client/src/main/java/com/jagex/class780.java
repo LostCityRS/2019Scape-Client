@@ -29,7 +29,7 @@ public class class780 {
 	}
 
 	@ObfuscatedName("jf.m(Lase;I)V")
-	public static void method4651(class1190 arg0) {
+	public static void method4651(PacketBit arg0) {
 		class1002 var1 = (class1002) field9148.method14191();
 		if (var1 == null) {
 			return;
