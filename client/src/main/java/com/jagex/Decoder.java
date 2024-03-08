@@ -8,7 +8,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 @ObfuscatedName("sz")
-public class class519 {
+public class Decoder {
 
 	@ObfuscatedName("sz.e")
 	public class501 field6693 = new class501();
@@ -61,7 +61,7 @@ public class class519 {
 	@ObfuscatedName("sz.y")
 	public int field6704;
 
-	public class519() {
+	public Decoder() {
 		for (int var1 = 0; var1 < 4; var1++) {
 			this.field6702[var1] = new class289(6);
 		}

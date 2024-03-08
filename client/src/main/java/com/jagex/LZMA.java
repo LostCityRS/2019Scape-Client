@@ -8,17 +8,17 @@ import java.io.IOException;
 import java.io.InputStream;
 
 @ObfuscatedName("sg")
-public class class527 {
+public class LZMA {
 
 	@ObfuscatedName("sg.n")
-	public static class519 field6728;
+	public static Decoder field6728;
 
 	static {
-		new class523();
-		field6728 = new class519();
+		new Encoder();
+		field6728 = new Decoder();
 	}
 
-	public class527() throws Throwable {
+	public LZMA() throws Throwable {
 		throw new Error();
 	}
 
@@ -36,7 +36,7 @@ public class class527 {
 			throw new IOException("2");
 		}
 		ByteArrayOutputStream var3 = new ByteArrayOutputStream(arg1);
-		class519 var4 = field6728;
+		Decoder var4 = field6728;
 		synchronized (field6728) {
 			if (!field6728.method8305(var2)) {
 				throw new IOException("3");

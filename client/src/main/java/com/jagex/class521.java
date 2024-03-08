@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class class521 {
 
 	// $FF: synthetic field
-	public final class523 this$0;
+	public final Encoder this$0;
 
 	@ObfuscatedName("sy.e")
 	public class291[] field6706;
@@ -14,7 +14,7 @@ public class class521 {
 	@ObfuscatedName("sy.n")
 	public class291[] field6705;
 
-	public class521(class523 arg0) {
+	public class521(Encoder arg0) {
 		this.this$0 = arg0;
 		this.field6706 = new class291[16];
 		this.field6705 = new class291[16];

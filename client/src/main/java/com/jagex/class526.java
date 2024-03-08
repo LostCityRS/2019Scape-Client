@@ -8,7 +8,7 @@ import java.io.IOException;
 public class class526 {
 
 	// $FF: synthetic field
-	public final class519 this$0;
+	public final Decoder this$0;
 
 	@ObfuscatedName("sc.e")
 	public short[] field6724;
@@ -25,7 +25,7 @@ public class class526 {
 	@ObfuscatedName("sc.f")
 	public int field6726;
 
-	public class526(class519 arg0) {
+	public class526(Decoder arg0) {
 		this.this$0 = arg0;
 		this.field6724 = new short[2];
 		this.field6723 = new class289[16];

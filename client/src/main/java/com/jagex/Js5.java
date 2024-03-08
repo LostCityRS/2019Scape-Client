@@ -349,7 +349,7 @@ public final class Js5 {
 				Packet var11 = new Packet(var10);
 				int var12 = var11.g1();
 				int var13 = var11.g4s();
-				int var14 = (var12 == class445.field4434.getId() ? 5 : 9) + var13;
+				int var14 = (var12 == CompressionType.field4434.getId() ? 5 : 9) + var13;
 				var11.tinydec(arg2, 5, var14);
 			}
 			byte[] var15;

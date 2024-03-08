@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("sb")
-public class class523 {
+public class Encoder {
 
 	@ObfuscatedName("sb.e")
 	public static byte[] field6713 = new byte[2048];
@@ -30,7 +30,7 @@ public class class523 {
 		}
 	}
 
-	public class523() {
+	public Encoder() {
 		class528.method9417();
 		this.field6712 = new class520[4096];
 		new class290();

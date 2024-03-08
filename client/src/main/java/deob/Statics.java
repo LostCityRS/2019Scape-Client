@@ -2827,11 +2827,11 @@ public class Statics {
 	public static final byte[] method7275(byte[] arg0) {
 		Packet var1 = new Packet(arg0);
 		class449 var2 = new class449(var1);
-		class445 var3 = var2.method7080();
+		CompressionType var3 = var2.method7080();
 		int var4 = var2.method7081();
 		if (var4 < 0 || Js5.field4419 != 0 && var4 > Js5.field4419) {
 			throw new RuntimeException();
-		} else if (class445.field4434 == var3) {
+		} else if (CompressionType.field4434 == var3) {
 			byte[] var5 = new byte[var4];
 			var1.gdata(var5, 0, var4);
 			return var5;
@@ -2841,18 +2841,18 @@ public class Statics {
 				throw new RuntimeException();
 			}
 			byte[] var7;
-			if (class445.field4430 == var3) {
+			if (CompressionType.field4430 == var3) {
 				var7 = new byte[var6];
 				BZip2.method14100(var7, var6, arg0, var4, 9);
-			} else if (class445.field4432 == var3) {
+			} else if (CompressionType.field4432 == var3) {
 				var7 = new byte[var6];
 				GZip var8 = Js5.field4409;
 				synchronized (Js5.field4409) {
 					Js5.field4409.method15245(var1, var7);
 				}
-			} else if (class445.field4431 == var3) {
+			} else if (CompressionType.LZMA == var3) {
 				try {
-					var7 = class527.method8503(var1, var6);
+					var7 = LZMA.method8503(var1, var6);
 				} catch (IOException var11) {
 					throw new RuntimeException(var11);
 				}
