@@ -7,7 +7,7 @@ import jaggl.OpenGL;
 public class class828 extends class986 implements class88 {
 
 	@ObfuscatedName("aeg.k")
-	public final class849 field9348;
+	public final LegacyOpenGLRenderer field9348;
 
 	@ObfuscatedName("aeg.f")
 	public int field9353;
@@ -30,7 +30,7 @@ public class class828 extends class986 implements class88 {
 	@ObfuscatedName("aeg.d")
 	public static final int[] field9354 = new int[1];
 
-	public class828(class849 arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4) {
+	public class828(LegacyOpenGLRenderer arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4) {
 		this.field9348 = arg0;
 		this.field9349 = arg3;
 		this.field9347 = arg4;
@@ -39,11 +39,11 @@ public class class828 extends class986 implements class88 {
 		OpenGL.glGenRenderbuffersEXT(1, field9354, 0);
 		this.field9353 = field9354[0];
 		OpenGL.glBindRenderbufferEXT(36161, this.field9353);
-		OpenGL.glRenderbufferStorageEXT(36161, class849.method15799(this.field9352, this.field9351), this.field9349, this.field9347);
+		OpenGL.glRenderbufferStorageEXT(36161, LegacyOpenGLRenderer.method15799(this.field9352, this.field9351), this.field9349, this.field9347);
 		this.field9350 = this.field9352.field1279 * this.field9349 * this.field9347 * this.field9351.field1652;
 	}
 
-	public class828(class849 arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4, int arg5) {
+	public class828(LegacyOpenGLRenderer arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4, int arg5) {
 		this.field9348 = arg0;
 		this.field9349 = arg3;
 		this.field9347 = arg4;
@@ -52,7 +52,7 @@ public class class828 extends class986 implements class88 {
 		OpenGL.glGenRenderbuffersEXT(1, field9354, 0);
 		this.field9353 = field9354[0];
 		OpenGL.glBindRenderbufferEXT(36161, this.field9353);
-		OpenGL.glRenderbufferStorageMultisampleEXT(36161, arg5, class849.method15799(this.field9352, this.field9351), this.field9349, this.field9347);
+		OpenGL.glRenderbufferStorageMultisampleEXT(36161, arg5, LegacyOpenGLRenderer.method15799(this.field9352, this.field9351), this.field9349, this.field9347);
 		this.field9350 = this.field9352.field1279 * this.field9349 * this.field9347 * this.field9351.field1652;
 	}
 

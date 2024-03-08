@@ -213,7 +213,7 @@ public class SeqType implements ConfigType {
 				for (int var13 = 0; var13 < var11; var13++) {
 					boolean var14 = arg0.g1() == 1;
 					int var15 = arg0.g3();
-					class532 var16;
+					Node var16;
 					if (var14) {
 						var16 = new class984(arg0.gjstr());
 					} else {

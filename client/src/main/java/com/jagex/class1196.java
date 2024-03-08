@@ -12,7 +12,7 @@ public abstract class class1196 extends class1019 {
 	public int field12449 = 0;
 
 	@ObfuscatedName("asv.h")
-	public class973[] field12447 = new class973[4];
+	public Light[] field12447 = new Light[4];
 
 	public class1196(class550 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, class420 arg7) {
 		super(arg0, arg7);
@@ -29,7 +29,7 @@ public abstract class class1196 extends class1019 {
 	}
 
 	@ObfuscatedName("asv.gy([Lakf;S)I")
-	public int method18375(class973[] arg0) {
+	public int method18375(Light[] arg0) {
 		if (this.field8176) {
 			Vector3 var2 = this.method10536().field4298;
 			this.field12449 = this.method18362((int) var2.field4308 >> this.field11716.field6900, (int) var2.field4313 >> this.field11716.field6900, this.field12447);

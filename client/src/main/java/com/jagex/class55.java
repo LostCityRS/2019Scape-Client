@@ -42,13 +42,13 @@ public class class55 {
 	public Matrix4x4 field829 = new Matrix4x4();
 
 	@ObfuscatedName("az.v")
-	public class419 field836 = new class419();
+	public Matrix4x3 field836 = new Matrix4x3();
 
 	@ObfuscatedName("az.o")
 	public class65 field837;
 
 	@ObfuscatedName("az.s")
-	public class419 field838 = new class419();
+	public Matrix4x3 field838 = new Matrix4x3();
 
 	@ObfuscatedName("az.y")
 	public Matrix4x4 field828 = new Matrix4x4();

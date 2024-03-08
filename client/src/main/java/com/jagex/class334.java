@@ -12,10 +12,10 @@ public class class334 {
 	public GpuRenderer field3247;
 
 	@ObfuscatedName("ls.n")
-	public class840 field3245;
+	public Framebuffer field3245;
 
 	@ObfuscatedName("ls.m")
-	public class840 field3265;
+	public Framebuffer field3265;
 
 	@ObfuscatedName("ls.k")
 	public class359 field3244;

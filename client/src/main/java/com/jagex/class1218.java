@@ -26,11 +26,11 @@ public class class1218 extends class1122 {
 	@ObfuscatedName("atx.l")
 	public boolean field12521;
 
-	public class1218(class1127 arg0, Canvas arg1) {
+	public class1218(OpenGLRenderer arg0, Canvas arg1) {
 		this(arg0, arg1, arg0.field12020.prepareSurface(arg1));
 	}
 
-	public class1218(class1127 arg0, Canvas arg1, long arg2) {
+	public class1218(OpenGLRenderer arg0, Canvas arg1, long arg2) {
 		super(arg0);
 		this.field12521 = false;
 		this.field12519 = arg1;

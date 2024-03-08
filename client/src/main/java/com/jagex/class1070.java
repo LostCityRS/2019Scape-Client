@@ -94,7 +94,7 @@ public class class1070 extends class714 {
 
 	@ObfuscatedName("anb.g(IIII)V")
 	public void method18785(int arg0, int arg1, int arg2) {
-		class419 var4 = new class419();
+		Matrix4x3 var4 = new Matrix4x3();
 		var4.method6296(0.0D, 0.0D, 0.0D, (double) arg0, (double) -arg1, (double) arg2, 0.0F, 1.0F, 0.0F);
 		Matrix3x3 var5 = new Matrix3x3();
 		var4.method6374(var5.field4307);
@@ -184,7 +184,7 @@ public class class1070 extends class714 {
 	}
 
 	@ObfuscatedName("anb.f(Lju;Lou;IIFB)V")
-	public void method14136(class270 arg0, class419 arg1, int arg2, int arg3, float arg4) {
+	public void method14136(class270 arg0, Matrix4x3 arg1, int arg2, int arg3, float arg4) {
 		Vector3 var6 = Vector3.method6484(this.field8479.method4714());
 		var6.field4308 -= arg2;
 		var6.field4313 -= arg3;

@@ -27,7 +27,7 @@ public class class1221 extends class1150 {
 		if (this.field12536 == null) {
 			this.field12536 = new int[this.field12535.method4158()];
 		}
-		class888 var2 = (class888) this.field12535.method4159(arg0);
+		OpenGLProgram var2 = (OpenGLProgram) this.field12535.method4159(arg0);
 		this.field12536[arg0] = OpenGL.glGetUniformLocation(var2.field10373, this.method19257());
 		return this.field12536[arg0] != -1;
 	}

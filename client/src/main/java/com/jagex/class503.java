@@ -230,9 +230,9 @@ public class class503 {
 		Matrix4x4 var21 = arg0.method2208();
 		var21.method6622((float) (this.field5123 / 2), (float) (this.field5123 / 2), (float) var19, (float) var19, 50.0F, 50000.0F, (float) arg0.method2135().method1627(), (float) arg0.method2135().method1628(), 1024.0F);
 		arg0.method2220(var21);
-		class419 var22 = new class419();
+		Matrix4x3 var22 = new Matrix4x3();
 		arg0.method2217(var22);
-		class419 var23 = arg0.method2209();
+		Matrix4x3 var23 = arg0.method2209();
 		var23.method6313(0.0F, 0.0F, (float) (50 - var15.method1733()));
 		var15.method1813(var23, null, 1);
 		this.field5128 = arg0.method2314(0, 0, this.field5123, this.field5123, true);
@@ -289,8 +289,8 @@ public class class503 {
 		Matrix4x4 var15 = arg0.method2208();
 		var15.method6622((float) (this.field5123 / 2), (float) (this.field5123 / 2), (float) var13, (float) var13, 50.0F, 50000.0F, (float) arg0.method2135().method1627(), (float) arg0.method2135().method1628(), 1024.0F);
 		arg0.method2220(var15);
-		arg0.method2217(new class419());
-		class419 var16 = new class419();
+		arg0.method2217(new Matrix4x3());
+		Matrix4x3 var16 = new Matrix4x3();
 		var16.method6313(0.0F, 0.0F, (float) (50 - var12.method1733()));
 		var12.method1813(var16, null, 1);
 		int var17 = this.field5123 * 13 / 16;

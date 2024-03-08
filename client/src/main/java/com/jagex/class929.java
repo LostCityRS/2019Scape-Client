@@ -7,7 +7,7 @@ import jagdx.IDirect3DDevice;
 import java.nio.ByteBuffer;
 
 @ObfuscatedName("aif")
-public class class929 extends class408 implements class362 {
+public class class929 extends class408 implements GpuCubeTexture {
 
 	@ObfuscatedName("aif.w")
 	public final int field10676;

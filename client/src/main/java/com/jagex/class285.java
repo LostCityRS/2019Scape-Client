@@ -18,7 +18,7 @@ public abstract class class285 {
 	public GpuTexture field2966;
 
 	@ObfuscatedName("jj.w")
-	public class362 field2967;
+	public GpuCubeTexture field2967;
 
 	@ObfuscatedName("jj.l")
 	public final Matrix4x4 field2982 = new Matrix4x4();

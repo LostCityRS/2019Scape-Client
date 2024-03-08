@@ -7,7 +7,7 @@ import jaggl.OpenGL;
 public class class75 {
 
 	@ObfuscatedName("bu.n")
-	public final class849 field1023;
+	public final LegacyOpenGLRenderer field1023;
 
 	@ObfuscatedName("bu.m")
 	public final int field1024;
@@ -16,7 +16,7 @@ public class class75 {
 	public static final int[] field1022 = new int[1];
 
 	@ObfuscatedName("bu.e(Lafa;ILjava/lang/String;)Lbu;")
-	public static class75 method1271(class849 arg0, int arg1, String arg2) {
+	public static class75 method1271(LegacyOpenGLRenderer arg0, int arg1, String arg2) {
 		int var3 = OpenGL.glGenProgramARB();
 		OpenGL.glBindProgramARB(arg1, var3);
 		OpenGL.glProgramStringARB(arg1, 34933, arg2);
@@ -30,7 +30,7 @@ public class class75 {
 		}
 	}
 
-	public class75(class849 arg0, int arg1, int arg2) {
+	public class75(LegacyOpenGLRenderer arg0, int arg1, int arg2) {
 		this.field1023 = arg0;
 		this.field1024 = arg2;
 	}

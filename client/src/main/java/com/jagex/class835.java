@@ -1740,6 +1740,6 @@ public class class835 extends class104 {
 	}
 
 	@ObfuscatedName("aee.o(Lakf;[I)V")
-	public void method1549(class973 arg0, int[] arg1) {
+	public void method1549(Light arg0, int[] arg1) {
 	}
 }

@@ -57,7 +57,7 @@ public class class1071 extends class714 {
 	}
 
 	@ObfuscatedName("anw.f(Lju;Lou;IIFB)V")
-	public void method14136(class270 arg0, class419 arg1, int arg2, int arg3, float arg4) {
+	public void method14136(class270 arg0, Matrix4x3 arg1, int arg2, int arg3, float arg4) {
 		Vector3 var6 = Vector3.method6484(this.field8479.method4714());
 		var6.field4308 -= arg2;
 		var6.field4313 -= arg3;

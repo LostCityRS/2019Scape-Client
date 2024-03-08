@@ -45,7 +45,7 @@ public class class1073 extends class714 {
 	}
 
 	@ObfuscatedName("ani.f(Lju;Lou;IIFB)V")
-	public void method14136(class270 arg0, class419 arg1, int arg2, int arg3, float arg4) {
+	public void method14136(class270 arg0, Matrix4x3 arg1, int arg2, int arg3, float arg4) {
 		double[] var6 = this.field8479.method4715();
 		var6[0] -= arg2;
 		var6[2] -= arg3;

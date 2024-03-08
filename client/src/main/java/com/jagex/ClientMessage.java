@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("akl")
-public class ClientMessage extends class532 {
+public class ClientMessage extends Node {
 
 	@ObfuscatedName("akl.k")
 	public ClientProt field11435;

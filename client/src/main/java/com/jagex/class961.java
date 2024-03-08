@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("ajo")
-public class class961 extends class532 {
+public class class961 extends Node {
 
 	@ObfuscatedName("ajo.k")
 	public static final IterableMap field11220 = new IterableMap(32);

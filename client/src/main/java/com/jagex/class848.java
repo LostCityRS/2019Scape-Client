@@ -59,7 +59,7 @@ public class class848 extends Renderer {
 	public int field9791;
 
 	@ObfuscatedName("afg.an")
-	public class419 field9792;
+	public Matrix4x3 field9792;
 
 	@ObfuscatedName("afg.bf")
 	public Matrix4x4 field9793;
@@ -125,7 +125,7 @@ public class class848 extends Renderer {
 	public Sprite field9786;
 
 	@ObfuscatedName("afg.bg")
-	public class840 field9775;
+	public Framebuffer field9775;
 
 	public class848(Canvas arg0, class125 arg1, class143 arg2, class383 arg3, class381 arg4, class378 arg5, int arg6, int arg7) {
 		this(arg1, arg2, arg3, arg4, arg5);
@@ -157,7 +157,7 @@ public class class848 extends Renderer {
 		this.field9812 = -1;
 		try {
 			this.field9809 = new WeightedCache(10485760, 256);
-			this.field9792 = new class419();
+			this.field9792 = new Matrix4x3();
 			this.field9793 = new Matrix4x4();
 			this.field9795 = new Matrix4x4();
 			this.field9803 = new Matrix4x4();
@@ -1827,7 +1827,7 @@ public class class848 extends Renderer {
 	}
 
 	@ObfuscatedName("afg.cn(IIIILou;Loj;)Z")
-	public boolean method2128(int arg0, int arg1, int arg2, int arg3, class419 arg4, class416 arg5) {
+	public boolean method2128(int arg0, int arg1, int arg2, int arg3, Matrix4x3 arg4, class416 arg5) {
 		Matrix4x4 var7 = this.method2208();
 		var7.method6609(arg4);
 		var7.method6720(this.field9803);
@@ -1835,7 +1835,7 @@ public class class848 extends Renderer {
 	}
 
 	@ObfuscatedName("afg.cv(Lou;Led;Loj;)V")
-	public void method2193(class419 arg0, class141 arg1, class416 arg2) {
+	public void method2193(Matrix4x3 arg0, class141 arg1, class416 arg2) {
 		Matrix4x4 var4 = this.method2208();
 		var4.method6609(arg0);
 		var4.method6720(this.field9803);
@@ -2033,7 +2033,7 @@ public class class848 extends Renderer {
 	}
 
 	@ObfuscatedName("afg.cz()Lou;")
-	public class419 method2209() {
+	public Matrix4x3 method2209() {
 		class55 var1 = this.method15674(Thread.currentThread());
 		return var1.field836;
 	}
@@ -2044,12 +2044,12 @@ public class class848 extends Renderer {
 	}
 
 	@ObfuscatedName("afg.dw(IIIIIF)Lakf;")
-	public class973 method2227(int arg0, int arg1, int arg2, int arg3, int arg4, float arg5) {
+	public Light method2227(int arg0, int arg1, int arg2, int arg3, int arg4, float arg5) {
 		return null;
 	}
 
 	@ObfuscatedName("afg.ds(I[Lakf;)V")
-	public void method2491(int arg0, class973[] arg1) {
+	public void method2491(int arg0, Light[] arg1) {
 	}
 
 	@ObfuscatedName("afg.rn(I)V")
@@ -2374,14 +2374,14 @@ public class class848 extends Renderer {
 	}
 
 	@ObfuscatedName("afg.do(Lou;)V")
-	public void method2217(class419 arg0) {
+	public void method2217(Matrix4x3 arg0) {
 		this.field9792 = arg0;
 		this.method15683();
 	}
 
 	@ObfuscatedName("afg.dz()Lou;")
-	public class419 method2218() {
-		return new class419(this.field9792);
+	public Matrix4x3 method2218() {
+		return new Matrix4x3(this.field9792);
 	}
 
 	@ObfuscatedName("afg.dm(Lpq;)V")
@@ -2635,7 +2635,7 @@ public class class848 extends Renderer {
 	}
 
 	@ObfuscatedName("afg.am()Lafq;")
-	public class840 method2145() {
+	public Framebuffer method2145() {
 		return new class1117(this);
 	}
 

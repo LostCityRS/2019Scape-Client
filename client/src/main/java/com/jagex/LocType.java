@@ -552,7 +552,7 @@ public class LocType implements ConfigType {
 							for (int var34 = 0; var34 < var32; var34++) {
 								boolean var35 = arg0.g1() == 1;
 								int var36 = arg0.g3();
-								class532 var37;
+								Node var37;
 								if (var35) {
 									var37 = new class984(arg0.gjstr().intern());
 								} else {

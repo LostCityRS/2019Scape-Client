@@ -11,7 +11,7 @@ public class class89 {
 	public float[] field1147 = new float[16];
 
 	@ObfuscatedName("cu.n")
-	public class1189 field1145 = new class1189(786336);
+	public GpuPacket field1145 = new GpuPacket(786336);
 
 	@ObfuscatedName("cu.m")
 	public class79 field1134;
@@ -59,7 +59,7 @@ public class class89 {
 	public int field1133 = 0;
 
 	@ObfuscatedName("cu.e(Lafa;)V")
-	public void method1323(class849 arg0) {
+	public void method1323(LegacyOpenGLRenderer arg0) {
 		this.field1134 = arg0.method15767(24, null, 196584, true);
 		this.field1143 = new class83(this.field1134, 5126, 2, 0);
 		this.field1135 = new class83(this.field1134, 5126, 3, 8);
@@ -67,7 +67,7 @@ public class class89 {
 	}
 
 	@ObfuscatedName("cu.n(Lafa;Ldm;)V")
-	public void method1324(class849 arg0, ParticleList arg1) {
+	public void method1324(LegacyOpenGLRenderer arg0, ParticleList arg1) {
 		if (arg0.field9903 == null) {
 			return;
 		}
@@ -161,7 +161,7 @@ public class class89 {
 	}
 
 	@ObfuscatedName("cu.m(Lafa;I)V")
-	public void method1325(class849 arg0, int arg1) {
+	public void method1325(LegacyOpenGLRenderer arg0, int arg1) {
 		OpenGL.glGetFloatv(2982, this.field1147, 0);
 		float var3 = this.field1147[0];
 		float var4 = this.field1147[4];
@@ -573,7 +573,7 @@ public class class89 {
 	}
 
 	@ObfuscatedName("cu.k(Lafa;)V")
-	public void method1326(class849 arg0) {
+	public void method1326(LegacyOpenGLRenderer arg0) {
 		Statics.field1137 = arg0.field9946;
 		arg0.method15773();
 		OpenGL.glDisable(16384);
@@ -583,7 +583,7 @@ public class class89 {
 	}
 
 	@ObfuscatedName("cu.f(Lafa;)V")
-	public void method1329(class849 arg0) {
+	public void method1329(LegacyOpenGLRenderer arg0) {
 		arg0.method15789(true);
 		OpenGL.glEnable(16384);
 		OpenGL.glEnable(16385);

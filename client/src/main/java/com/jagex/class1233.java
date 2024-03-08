@@ -7,7 +7,7 @@ import deob.Statics;
 public class class1233 extends class1199 {
 
 	@ObfuscatedName("aut.x")
-	public static class419 field12584 = new class419();
+	public static Matrix4x3 field12584 = new Matrix4x3();
 
 	@ObfuscatedName("aut.b")
 	public int field12580;
@@ -28,13 +28,13 @@ public class class1233 extends class1199 {
 	public int field12583;
 
 	@ObfuscatedName("aut.t")
-	public class419 field12571 = null;
+	public Matrix4x3 field12571 = null;
 
 	@ObfuscatedName("aut.ae")
-	public class419 field12568 = null;
+	public Matrix4x3 field12568 = null;
 
 	@ObfuscatedName("aut.ag")
-	public class419 field12577 = null;
+	public Matrix4x3 field12577 = null;
 
 	@ObfuscatedName("aut.ah")
 	public int field12578 = 0;
@@ -115,7 +115,7 @@ public class class1233 extends class1199 {
 			this.method10531(var2);
 			this.field12578 = var5;
 		}
-		class419 var6 = arg0.method2209();
+		Matrix4x3 var6 = arg0.method2209();
 		var6.method6376();
 		if (this.field12578 == 0) {
 			boolean var7 = false;
@@ -214,8 +214,8 @@ public class class1233 extends class1199 {
 	}
 
 	@ObfuscatedName("ad.n(B)Lou;")
-	public static class419 method820() {
-		class419 var0 = new class419();
+	public static Matrix4x3 method820() {
+		Matrix4x3 var0 = new Matrix4x3();
 		var0.method6372(0.0F, 1.0F, 0.0F, (float) (Math.random() * 3.141592653589793D * 2.0D));
 		float var1 = (float) (Math.random() * 0.5D + 0.5D) * 256.0F;
 		var0.method6315(var1 - 128.0F, 0.0F, 0.0F);
@@ -248,7 +248,7 @@ public class class1233 extends class1199 {
 
 	@ObfuscatedName("aut.fa(Ldh;IIB)Z")
 	public boolean method17375(Renderer arg0, int arg1, int arg2) {
-		class419 var4 = arg0.method2209();
+		Matrix4x3 var4 = arg0.method2209();
 		var4.method6293(this.method10536());
 		var4.method6315(0.0F, -10.0F, 0.0F);
 		class116 var5 = ((ObjType) Statics.field1842.get(this.field12580)).method14644(arg0, 131072, this.field12570, null, null, 0, 0, 0, 0);

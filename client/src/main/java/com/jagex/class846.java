@@ -6,5 +6,5 @@ import deob.ObfuscatedName;
 public abstract class class846 extends class117 {
 
 	@ObfuscatedName("afe.e()Lmr;")
-	public abstract class362 method15652();
+	public abstract GpuCubeTexture method15652();
 }

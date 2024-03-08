@@ -149,7 +149,7 @@ public class class950 extends class1198 implements class514 {
 		if (this.field11173 == null) {
 			return null;
 		}
-		class419 var2 = this.method10533();
+		Matrix4x3 var2 = this.method10533();
 		class552 var3 = class552.method16749(this.field11170);
 		class416 var4 = ((LocType) this.field11162.get(this.field11166)).field7468;
 		if (var4 == null) {
@@ -175,7 +175,7 @@ public class class950 extends class1198 implements class514 {
 		if (var5 == null) {
 			return false;
 		} else {
-			class419 var6 = this.method10533();
+			Matrix4x3 var6 = this.method10533();
 			return var5.method1725(arg1, arg2, var6, false, 0);
 		}
 	}

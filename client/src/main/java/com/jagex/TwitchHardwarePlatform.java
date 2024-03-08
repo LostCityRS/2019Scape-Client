@@ -352,7 +352,7 @@ public class TwitchHardwarePlatform {
 				if (var8 != null && method6878(var8, arg1)) {
 					class571 var9 = var8.method11();
 					if (var9 != null) {
-						class676.method13907(var9.getId(), var8);
+						ScriptRunner.method13907(var9.getId(), var8);
 					}
 				}
 			}

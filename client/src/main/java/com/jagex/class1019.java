@@ -46,7 +46,7 @@ public abstract class class1019 extends class665 {
 	}
 
 	@ObfuscatedName("alh.gf(II[Lakf;I)I")
-	public int method18362(int arg0, int arg1, class973[] arg2) {
+	public int method18362(int arg0, int arg1, Light[] arg2) {
 		long var4 = this.field11716.field6954[this.field11717][arg0][arg1];
 		long var6 = 0L;
 		int var8 = 0;
@@ -126,5 +126,5 @@ public abstract class class1019 extends class665 {
 	public abstract class556 method17371(Renderer arg0);
 
 	@ObfuscatedName("alh.gy([Lakf;S)I")
-	public abstract int method18375(class973[] arg0);
+	public abstract int method18375(Light[] arg0);
 }

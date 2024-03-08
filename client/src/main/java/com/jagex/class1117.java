@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("apn")
-public class class1117 extends class840 {
+public class class1117 extends Framebuffer {
 
 	@ObfuscatedName("apn.n")
 	public class848 field11909;

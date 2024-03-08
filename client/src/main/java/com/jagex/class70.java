@@ -7,7 +7,7 @@ import jaggl.OpenGL;
 public abstract class class70 {
 
 	@ObfuscatedName("bq.l")
-	public final class849 field1006;
+	public final LegacyOpenGLRenderer field1006;
 
 	@ObfuscatedName("bq.u")
 	public int field1007;
@@ -33,7 +33,7 @@ public abstract class class70 {
 	@ObfuscatedName("bq.o")
 	public static final int[] field1014 = new int[1];
 
-	public class70(class849 arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4, boolean arg5) {
+	public class70(LegacyOpenGLRenderer arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4, boolean arg5) {
 		this.field1006 = arg0;
 		this.field1009 = arg1;
 		this.field1002 = arg2;
@@ -200,7 +200,7 @@ public abstract class class70 {
 			byte[] var11 = arg5;
 			byte[] var12 = new byte[var9 * var10 * var6];
 			while (true) {
-				OpenGL.glTexImage2Dub(arg0, var7, arg1, arg2, arg3, 0, class849.method15899(arg4), 5121, var11, 0);
+				OpenGL.glTexImage2Dub(arg0, var7, arg1, arg2, arg3, 0, LegacyOpenGLRenderer.method15899(arg4), 5121, var11, 0);
 				if (var8 <= 1) {
 					return;
 				}
@@ -254,7 +254,7 @@ public abstract class class70 {
 			float[] var11 = arg5;
 			float[] var12 = new float[var9 * var10 * var6];
 			while (true) {
-				OpenGL.glTexImage2Df(arg0, var7, arg1, arg2, arg3, 0, class849.method15899(arg4), 5126, var11, 0);
+				OpenGL.glTexImage2Df(arg0, var7, arg1, arg2, arg3, 0, LegacyOpenGLRenderer.method15899(arg4), 5126, var11, 0);
 				if (var8 <= 1) {
 					return;
 				}

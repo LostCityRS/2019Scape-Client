@@ -7,22 +7,22 @@ import jaggl.OpenGL;
 public class class890 extends class238 {
 
 	@ObfuscatedName("ago.z")
-	public final class1127 field10390;
+	public final OpenGLRenderer field10390;
 
 	@ObfuscatedName("ago.p")
-	public class888 field10391;
+	public OpenGLProgram field10391;
 
 	@ObfuscatedName("ago.d")
 	public int field10392;
 
-	public class890(class1127 arg0, class239 arg1) {
+	public class890(OpenGLRenderer arg0, class239 arg1) {
 		super(arg0, arg1);
 		this.field10390 = arg0;
 	}
 
 	@ObfuscatedName("ago.f(Lafc;Lhn;)Lhi;")
 	public class234 method4156(GpuRenderer arg0, class233 arg1) {
-		return new class888((class1127) arg0, this, arg1);
+		return new OpenGLProgram((OpenGLRenderer) arg0, this, arg1);
 	}
 
 	@ObfuscatedName("ago.d(Lhi;)Z")
@@ -31,7 +31,7 @@ public class class890 extends class238 {
 			return true;
 		} else if (arg0.method4083()) {
 			boolean var2 = this.method4184();
-			this.field10391 = (class888) arg0;
+			this.field10391 = (OpenGLProgram) arg0;
 			this.field2573 = this.method4200(arg0);
 			if (this.field2573 == -1) {
 				throw new IllegalArgumentException();
@@ -76,7 +76,7 @@ public class class890 extends class238 {
 	@ObfuscatedName("ago.ap()V")
 	public void method4191() {
 		for (int var1 = 0; var1 < this.method4158(); var1++) {
-			((class888) this.method4159(var1)).method1010();
+			((OpenGLProgram) this.method4159(var1)).method1010();
 		}
 		super.method4191();
 	}

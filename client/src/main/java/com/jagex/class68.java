@@ -10,13 +10,13 @@ public class class68 {
 	public static final int[] field985 = new int[2];
 
 	@ObfuscatedName("bn.n")
-	public final class849 field986;
+	public final LegacyOpenGLRenderer field986;
 
 	@ObfuscatedName("bn.m")
 	public final int field987;
 
 	@ObfuscatedName("bn.e(Lafa;[Lbm;)Lbn;")
-	public static class68 method1065(class849 arg0, class71[] arg1) {
+	public static class68 method1065(LegacyOpenGLRenderer arg0, class71[] arg1) {
 		for (int var2 = 0; var2 < arg1.length; var2++) {
 			if (arg1[var2] == null || arg1[var2].field1019 <= 0) {
 				return null;
@@ -46,7 +46,7 @@ public class class68 {
 		return new class68(arg0, var3, arg1);
 	}
 
-	public class68(class849 arg0, int arg1, class71[] arg2) {
+	public class68(LegacyOpenGLRenderer arg0, int arg1, class71[] arg2) {
 		this.field986 = arg0;
 		this.field987 = arg1;
 	}

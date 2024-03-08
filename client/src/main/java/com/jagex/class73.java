@@ -9,7 +9,7 @@ public class class73 {
 	@ObfuscatedName("be.e")
 	public final int field1020;
 
-	public class73(class849 arg0, int arg1) {
+	public class73(LegacyOpenGLRenderer arg0, int arg1) {
 		this.field1020 = OpenGL.glGenLists(arg1);
 	}
 

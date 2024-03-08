@@ -76,7 +76,7 @@ public class class22 {
 	public static Matrix4x4 field555 = new Matrix4x4();
 
 	@ObfuscatedName("o.av")
-	public static class419 field572 = new class419();
+	public static Matrix4x3 field572 = new Matrix4x3();
 
 	@ObfuscatedName("o.ao")
 	public static boolean field564 = false;
@@ -1187,7 +1187,7 @@ public class class22 {
 	}
 
 	@ObfuscatedName("mw.ax(Lou;Lpq;IIB)V")
-	public static void method5928(class419 arg0, Matrix4x4 arg1, int arg2, int arg3) {
+	public static void method5928(Matrix4x3 arg0, Matrix4x4 arg1, int arg2, int arg3) {
 		if (field553 == null) {
 			field553 = new Matrix4x4(arg1);
 		} else {

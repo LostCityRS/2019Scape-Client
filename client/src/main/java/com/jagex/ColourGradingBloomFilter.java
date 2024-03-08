@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
 @ObfuscatedName("aqf")
-public class class1147 extends class968 {
+public class ColourGradingBloomFilter extends class968 {
 
 	@ObfuscatedName("aqf.l")
 	public static float field12205 = 0.25F;
@@ -16,10 +16,10 @@ public class class1147 extends class968 {
 	public static float field12189 = 1.0F;
 
 	@ObfuscatedName("aqf.v")
-	public class1118 field12194;
+	public LegacyOpenGLFramebuffer field12194;
 
 	@ObfuscatedName("aqf.o")
-	public class1118 field12195;
+	public LegacyOpenGLFramebuffer field12195;
 
 	@ObfuscatedName("aqf.s")
 	public class812 field12196;
@@ -54,7 +54,7 @@ public class class1147 extends class968 {
 	@ObfuscatedName("aqf.t")
 	public class68 field12206;
 
-	public class1147(class849 arg0) {
+	public ColourGradingBloomFilter(LegacyOpenGLRenderer arg0) {
 		super(arg0);
 	}
 
@@ -73,7 +73,7 @@ public class class1147 extends class968 {
 		if (!this.field11270.field9985 || !this.field11270.field10002 || !this.field11270.field9997) {
 			return false;
 		}
-		this.field12194 = new class1118(this.field11270);
+		this.field12194 = new LegacyOpenGLFramebuffer(this.field11270);
 		this.field12196 = new class812(this.field11270, 3553, TextureFormat.field1273, this.method17542(), 256, 256);
 		this.field12196.method15312(false, false);
 		this.field12197 = new class812(this.field11270, 3553, TextureFormat.field1273, this.method17542(), 256, 256);
@@ -118,7 +118,7 @@ public class class1147 extends class968 {
 			label61: while (true) {
 				if (var6 <= 256 && var7 <= 256) {
 					if (this.field12195 == null) {
-						this.field12195 = new class1118(this.field11270);
+						this.field12195 = new LegacyOpenGLFramebuffer(this.field11270);
 					}
 					this.field12193 = new class812[var8];
 					int var9 = var3;

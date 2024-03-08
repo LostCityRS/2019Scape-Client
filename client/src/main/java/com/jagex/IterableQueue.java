@@ -9,10 +9,10 @@ import java.util.Iterator;
 public class IterableQueue implements Iterable, Collection {
 
 	@ObfuscatedName("aat.e")
-	public class532 field8482 = new class532();
+	public Node field8482 = new Node();
 
 	@ObfuscatedName("aat.n")
-	public class532 field8481;
+	public Node field8481;
 
 	public IterableQueue() {
 		this.field8482.field6761 = this.field8482;
@@ -27,7 +27,7 @@ public class IterableQueue implements Iterable, Collection {
 	}
 
 	@ObfuscatedName("aat.n(Ltj;I)V")
-	public void method14153(class532 arg0) {
+	public void method14153(Node arg0) {
 		if (arg0.field6762 != null) {
 			arg0.method8440();
 		}
@@ -38,7 +38,7 @@ public class IterableQueue implements Iterable, Collection {
 	}
 
 	@ObfuscatedName("aq.m(Ltj;Ltj;B)V")
-	public static void method926(class532 arg0, class532 arg1) {
+	public static void method926(Node arg0, Node arg1) {
 		if (arg0.field6762 != null) {
 			arg0.method8440();
 		}
@@ -49,8 +49,8 @@ public class IterableQueue implements Iterable, Collection {
 	}
 
 	@ObfuscatedName("aat.k(I)Ltj;")
-	public class532 method14154() {
-		class532 var1 = this.field8482.field6761;
+	public Node method14154() {
+		Node var1 = this.field8482.field6761;
 		if (this.field8482 == var1) {
 			return null;
 		} else {
@@ -60,8 +60,8 @@ public class IterableQueue implements Iterable, Collection {
 	}
 
 	@ObfuscatedName("aat.f(Laat;Ltj;I)V")
-	public void method14155(IterableQueue arg0, class532 arg1) {
-		class532 var3 = this.field8482.field6762;
+	public void method14155(IterableQueue arg0, Node arg1) {
+		Node var3 = this.field8482.field6762;
 		this.field8482.field6762 = arg1.field6762;
 		arg1.field6762.field6761 = this.field8482;
 		if (this.field8482 != arg1) {
@@ -80,13 +80,13 @@ public class IterableQueue implements Iterable, Collection {
 	}
 
 	@ObfuscatedName("aat.l(B)Ltj;")
-	public class532 method14191() {
+	public Node method14191() {
 		return this.method14158(null);
 	}
 
 	@ObfuscatedName("aat.u(Ltj;B)Ltj;")
-	public class532 method14158(class532 arg0) {
-		class532 var2;
+	public Node method14158(Node arg0) {
+		Node var2;
 		if (arg0 == null) {
 			var2 = this.field8482.field6761;
 		} else {
@@ -102,13 +102,13 @@ public class IterableQueue implements Iterable, Collection {
 	}
 
 	@ObfuscatedName("aat.z(I)Ltj;")
-	public class532 method14159() {
+	public Node method14159() {
 		return this.method14189(null);
 	}
 
 	@ObfuscatedName("aat.r(Ltj;I)Ltj;")
-	public class532 method14189(class532 arg0) {
-		class532 var2;
+	public Node method14189(Node arg0) {
+		Node var2;
 		if (arg0 == null) {
 			var2 = this.field8482.field6762;
 		} else {
@@ -124,8 +124,8 @@ public class IterableQueue implements Iterable, Collection {
 	}
 
 	@ObfuscatedName("aat.v(I)Ltj;")
-	public class532 method14161() {
-		class532 var1 = this.field8481;
+	public Node method14161() {
+		Node var1 = this.field8481;
 		if (this.field8482 == var1) {
 			this.field8481 = null;
 			return null;
@@ -136,8 +136,8 @@ public class IterableQueue implements Iterable, Collection {
 	}
 
 	@ObfuscatedName("aat.o(I)Ltj;")
-	public class532 method14170() {
-		class532 var1 = this.field8481;
+	public Node method14170() {
+		Node var1 = this.field8481;
 		if (this.field8482 == var1) {
 			this.field8481 = null;
 			return null;
@@ -150,7 +150,7 @@ public class IterableQueue implements Iterable, Collection {
 	@ObfuscatedName("aat.s(I)I")
 	public int method14157() {
 		int var1 = 0;
-		for (class532 var2 = this.field8482.field6761; var2 != this.field8482; var2 = var2.field6761) {
+		for (Node var2 = this.field8482.field6761; var2 != this.field8482; var2 = var2.field6761) {
 			var1++;
 		}
 		return var1;
@@ -162,10 +162,10 @@ public class IterableQueue implements Iterable, Collection {
 	}
 
 	@ObfuscatedName("aat.q(I)[Ltj;")
-	public class532[] method14165() {
-		class532[] var1 = new class532[this.method14157()];
+	public Node[] method14165() {
+		Node[] var1 = new Node[this.method14157()];
 		int var2 = 0;
-		for (class532 var3 = this.field8482.field6761; var3 != this.field8482; var3 = var3.field6761) {
+		for (Node var3 = this.field8482.field6761; var3 != this.field8482; var3 = var3.field6761) {
 			var1[var2++] = var3;
 		}
 		return var1;
@@ -193,14 +193,14 @@ public class IterableQueue implements Iterable, Collection {
 
 	public Object[] toArray(Object[] arg0) {
 		int var2 = 0;
-		for (class532 var3 = this.field8482.field6761; var3 != this.field8482; var3 = var3.field6761) {
+		for (Node var3 = this.field8482.field6761; var3 != this.field8482; var3 = var3.field6761) {
 			arg0[var2++] = var3;
 		}
 		return arg0;
 	}
 
 	@ObfuscatedName("aat.x(Ltj;I)Z")
-	public boolean method14168(class532 arg0) {
+	public boolean method14168(Node arg0) {
 		this.method14153(arg0);
 		return true;
 	}
@@ -230,7 +230,7 @@ public class IterableQueue implements Iterable, Collection {
 	}
 
 	public boolean add(Object arg0) {
-		return this.method14168((class532) arg0);
+		return this.method14168((Node) arg0);
 	}
 
 	public boolean equals(Object arg0) {

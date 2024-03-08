@@ -7,7 +7,7 @@ import deob.Statics;
 public class class554 {
 
 	@ObfuscatedName("ul.g")
-	public class973 field7003;
+	public Light field7003;
 
 	@ObfuscatedName("ul.i")
 	public boolean field7004;

@@ -3,10 +3,10 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ou")
-public class class419 {
+public class Matrix4x3 {
 
 	@ObfuscatedName("ou.e")
-	public static final class419 field4282 = new class419();
+	public static final Matrix4x3 field4282 = new Matrix4x3();
 
 	@ObfuscatedName("ou.n")
 	public float field4276;
@@ -44,16 +44,16 @@ public class class419 {
 	@ObfuscatedName("ou.r")
 	public float field4280;
 
-	public class419() {
+	public Matrix4x3() {
 		this.method6376();
 	}
 
-	public class419(class419 arg0) {
+	public Matrix4x3(Matrix4x3 arg0) {
 		this.method6292(arg0);
 	}
 
 	@ObfuscatedName("ou.e(Lou;)V")
-	public void method6292(class419 arg0) {
+	public void method6292(Matrix4x3 arg0) {
 		this.field4276 = arg0.field4276;
 		this.field4279 = arg0.field4279;
 		this.field4275 = arg0.field4275;
@@ -170,7 +170,7 @@ public class class419 {
 	}
 
 	@ObfuscatedName("ou.u(Lou;)V")
-	public void method6299(class419 arg0) {
+	public void method6299(Matrix4x3 arg0) {
 		if (arg0 == this) {
 			this.method6300();
 			return;
@@ -457,7 +457,7 @@ public class class419 {
 	}
 
 	@ObfuscatedName("ou.j(Lou;)V")
-	public void method6316(class419 arg0) {
+	public void method6316(Matrix4x3 arg0) {
 		float var2 = this.field4276;
 		float var3 = this.field4277;
 		float var4 = this.field4279;
@@ -485,7 +485,7 @@ public class class419 {
 	}
 
 	@ObfuscatedName("ou.t(Lou;Lou;)V")
-	public void method6317(class419 arg0, class419 arg1) {
+	public void method6317(Matrix4x3 arg0, Matrix4x3 arg1) {
 		this.field4276 = arg0.field4278 * arg1.field4275 + arg0.field4277 * arg1.field4279 + arg0.field4276 * arg1.field4276;
 		this.field4277 = arg0.field4278 * arg1.field4283 + arg0.field4277 * arg1.field4287 + arg0.field4276 * arg1.field4277;
 		this.field4278 = arg0.field4278 * arg1.field4284 + arg0.field4277 * arg1.field4281 + arg0.field4276 * arg1.field4278;

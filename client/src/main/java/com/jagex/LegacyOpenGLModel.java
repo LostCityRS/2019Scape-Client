@@ -6,10 +6,10 @@ import jaclib.memory.Stream;
 import jaggl.OpenGL;
 
 @ObfuscatedName("afk")
-public class class843 extends class116 {
+public class LegacyOpenGLModel extends class116 {
 
 	@ObfuscatedName("afk.c")
-	public final class849 field9626;
+	public final LegacyOpenGLRenderer field9626;
 
 	@ObfuscatedName("afk.r")
 	public int field9627;
@@ -203,7 +203,7 @@ public class class843 extends class116 {
 	@ObfuscatedName("afk.bj")
 	public static final int[] field9691 = new int[8];
 
-	public class843(class849 arg0) {
+	public LegacyOpenGLModel(LegacyOpenGLRenderer arg0) {
 		this.field9626 = arg0;
 		this.field9659 = new class83(null, 5126, 3, 0);
 		this.field9664 = new class83(null, 5126, 2, 0);
@@ -212,7 +212,7 @@ public class class843 extends class116 {
 		this.field9663 = new class82();
 	}
 
-	public class843(class849 arg0, class120 arg1, int arg2, int arg3, int arg4, int arg5) {
+	public LegacyOpenGLModel(LegacyOpenGLRenderer arg0, class120 arg1, int arg2, int arg3, int arg4, int arg5) {
 		this.field9626 = arg0;
 		this.field9627 = arg2;
 		this.field9628 = arg5;
@@ -839,20 +839,20 @@ public class class843 extends class116 {
 	@ObfuscatedName("afk.l(BIZ)Ldo;")
 	public class116 method1773(byte arg0, int arg1, boolean arg2) {
 		boolean var4 = false;
-		class843 var5;
-		class843 var6;
+		LegacyOpenGLModel var5;
+		LegacyOpenGLModel var6;
 		if (arg0 > 0 && arg0 <= 8) {
 			var5 = this.field9626.field10009[arg0 - 1];
 			var6 = this.field9626.field10008[arg0 - 1];
 			var4 = true;
 		} else {
-			var6 = var5 = new class843(this.field9626);
+			var6 = var5 = new LegacyOpenGLModel(this.field9626);
 		}
 		return this.method15550(var6, var5, arg1, var4, arg2);
 	}
 
 	@ObfuscatedName("afk.hq(Lafk;Lafk;IZZ)Ldo;")
-	public class116 method15550(class843 arg0, class843 arg1, int arg2, boolean arg3, boolean arg4) {
+	public class116 method15550(LegacyOpenGLModel arg0, LegacyOpenGLModel arg1, int arg2, boolean arg3, boolean arg4) {
 		arg0.field9629 = 0;
 		arg0.field9627 = arg2;
 		arg0.field9628 = this.field9628;
@@ -1616,7 +1616,7 @@ public class class843 extends class116 {
 
 	@ObfuscatedName("afk.bo(Ldo;IIIZ)V")
 	public void method1686(class116 arg0, int arg1, int arg2, int arg3, boolean arg4) {
-		class843 var6 = (class843) arg0;
+		LegacyOpenGLModel var6 = (LegacyOpenGLModel) arg0;
 		if (this.field9670 == 0 || var6.field9670 == 0) {
 			return;
 		}
@@ -2884,11 +2884,11 @@ public class class843 extends class116 {
 	}
 
 	@ObfuscatedName("afk.aq(Lou;IZ)V")
-	public void method1771(class419 arg0, int arg1, boolean arg2) {
+	public void method1771(Matrix4x3 arg0, int arg1, boolean arg2) {
 		if (this.field9640 == null) {
 			return;
 		}
-		class419 var4 = arg0;
+		Matrix4x3 var4 = arg0;
 		if (arg2) {
 			var4 = this.field9626.field9976;
 			var4.method6299(arg0);
@@ -2915,7 +2915,7 @@ public class class843 extends class116 {
 	}
 
 	@ObfuscatedName("afk.by(Lou;)V")
-	public void method1689(class419 arg0) {
+	public void method1689(Matrix4x3 arg0) {
 		Matrix4x4 var2 = this.field9626.field9919;
 		var2.method6609(arg0);
 		if (this.field9687 != null) {
@@ -2957,7 +2957,7 @@ public class class843 extends class116 {
 	}
 
 	@ObfuscatedName("afk.av(IILou;ZI)Z")
-	public boolean method1725(int arg0, int arg1, class419 arg2, boolean arg3, int arg4) {
+	public boolean method1725(int arg0, int arg1, Matrix4x3 arg2, boolean arg3, int arg4) {
 		Matrix4x4 var6 = this.field9626.field9919;
 		var6.method6609(arg2);
 		var6.method6720(this.field9626.field10005);
@@ -3167,7 +3167,7 @@ public class class843 extends class116 {
 	}
 
 	@ObfuscatedName("afk.ax(Lou;Led;I)V")
-	public void method1813(class419 arg0, class141 arg1, int arg2) {
+	public void method1813(Matrix4x3 arg0, class141 arg1, int arg2) {
 		if ((arg2 & 0x2) != 0) {
 			OpenGL.glPolygonMode(1032, 6913);
 		}
@@ -3336,11 +3336,11 @@ public class class843 extends class116 {
 	@ObfuscatedName("afk.he(Z)V")
 	public void method15553(boolean arg0) {
 		if (this.field9626.field10016.data.length < this.field9650 * 6) {
-			this.field9626.field10016 = new class1189((this.field9650 + 100) * 6);
+			this.field9626.field10016 = new GpuPacket((this.field9650 + 100) * 6);
 		} else {
 			this.field9626.field10016.pos = 0;
 		}
-		class1189 var2 = this.field9626.field10016;
+		GpuPacket var2 = this.field9626.field10016;
 		if (this.field9626.field10017) {
 			for (int var3 = 0; var3 < this.field9650; var3++) {
 				var2.p2(this.field9653[var3]);
@@ -3409,11 +3409,11 @@ public class class843 extends class116 {
 			return;
 		}
 		if (this.field9626.field10016.data.length < this.field9658 * var6) {
-			this.field9626.field10016 = new class1189((this.field9658 + 100) * var6);
+			this.field9626.field10016 = new GpuPacket((this.field9658 + 100) * var6);
 		} else {
 			this.field9626.field10016.pos = 0;
 		}
-		class1189 var11 = this.field9626.field10016;
+		GpuPacket var11 = this.field9626.field10016;
 		if (var4) {
 			if (this.field9626.field10017) {
 				for (int var12 = 0; var12 < this.field9635; var12++) {

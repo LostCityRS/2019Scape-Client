@@ -18,7 +18,7 @@ public class class823 extends class74 {
 	@ObfuscatedName("aev.l")
 	public class78 field9344;
 
-	public class823(class849 arg0, class78 arg1) {
+	public class823(LegacyOpenGLRenderer arg0, class78 arg1) {
 		super(arg0);
 		this.field9344 = arg1;
 		if (this.field9344.field1038 != null && this.field1021.field10000 && this.field1021.field10002) {

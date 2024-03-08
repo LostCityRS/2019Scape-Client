@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("ali")
-public class class998 extends class532 {
+public class class998 extends Node {
 
 	@ObfuscatedName("ali.u")
 	public final ModeGame field11510;

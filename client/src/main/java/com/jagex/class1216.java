@@ -7,7 +7,7 @@ import jaggl.OpenGL;
 public class class1216 extends class1119 {
 
 	@ObfuscatedName("ata.k")
-	public final class1127 field12507;
+	public final OpenGLRenderer field12507;
 
 	@ObfuscatedName("ata.f")
 	public int field12506;
@@ -30,7 +30,7 @@ public class class1216 extends class1119 {
 	@ObfuscatedName("ata.d")
 	public final class487[] field12514 = new class487[4];
 
-	public class1216(class1127 arg0) {
+	public class1216(OpenGLRenderer arg0) {
 		super(arg0);
 		this.field12507 = arg0;
 		int[] var2 = new int[1];

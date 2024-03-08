@@ -10,7 +10,7 @@ import jaggl.OpenGL;
 public class class836 extends class104 {
 
 	@ObfuscatedName("aek.u")
-	public final class849 field9453;
+	public final LegacyOpenGLRenderer field9453;
 
 	@ObfuscatedName("aek.z")
 	public int field9454;
@@ -64,7 +64,7 @@ public class class836 extends class104 {
 	public IterableQueue field9470 = new IterableQueue();
 
 	@ObfuscatedName("aek.t")
-	public class532[] field9471;
+	public Node[] field9471;
 
 	@ObfuscatedName("aek.ae")
 	public class79 field9472;
@@ -105,7 +105,7 @@ public class class836 extends class104 {
 	@ObfuscatedName("aek.ar")
 	public static final float[] field9484 = new float[16];
 
-	public class836(class849 arg0, int arg1, int arg2, int arg3, int arg4, int[][] arg5, int[][] arg6, int arg7) {
+	public class836(LegacyOpenGLRenderer arg0, int arg1, int arg2, int arg3, int arg4, int[][] arg5, int[][] arg6, int arg7) {
 		super(arg3, arg4, arg7, arg5);
 		this.field9453 = arg0;
 		this.field9454 = this.field1236 - 2;
@@ -177,7 +177,7 @@ public class class836 extends class104 {
 				var16 = -1;
 			}
 			long var18 = (long) arg10.field1577 << 48 | (long) arg10.field1573 << 42 | (long) arg10.field1575 << 28 | (long) (var17 << 14) | (long) var16;
-			class532 var20;
+			Node var20;
 			for (var20 = this.field9483.method14495(var18); var20 != null; var20 = this.field9483.method14496()) {
 				class970 var21 = (class970) var20;
 				if (var21.field11296 == var16 && (float) var17 == var21.field11294 && var21.field11295.method2096(arg10)) {
@@ -274,7 +274,7 @@ public class class836 extends class104 {
 					var1[var2][var3] = (byte) ((this.field9479[var2][var3] >> 1) + (this.field9479[var2][var3 + 1] >> 3) + (this.field9479[var2][var3 - 1] >> 2) + (this.field9479[var2 - 1][var3] >> 2) + (this.field9479[var2 + 1][var3] >> 3));
 				}
 			}
-			this.field9471 = new class532[this.field9483.method14498()];
+			this.field9471 = new Node[this.field9483.method14498()];
 			this.field9483.method14497(this.field9471);
 			for (int var4 = 0; var4 < this.field9471.length; var4++) {
 				((class970) this.field9471[var4]).method17578(this.field9477);
@@ -402,7 +402,7 @@ public class class836 extends class104 {
 									var56 = this.field9453.field9946 + var72 * (var72 > 0.0F ? this.field9453.field9947 : this.field9453.field9948);
 								}
 							}
-							class532 var73 = null;
+							Node var73 = null;
 							if ((var43 & this.field9455 - 1) == 0 && (var44 & this.field9455 - 1) == 0) {
 								var73 = var10.method14495(var50);
 							}
@@ -620,7 +620,7 @@ public class class836 extends class104 {
 			this.field9453.field10019 = new int[var8];
 		}
 		if (this.field9453.field10016.data.length < this.field9459 * 2) {
-			this.field9453.field10016 = new class1189(this.field9459 * 2);
+			this.field9453.field10016 = new GpuPacket(this.field9459 * 2);
 		}
 		int var9 = arg0 - arg2;
 		int var10 = var9;
@@ -667,7 +667,7 @@ public class class836 extends class104 {
 			this.field9453.method15810(8448, 7681);
 			this.field9453.method15780(0, 34166, 770);
 			this.field9453.method15781(0, 34167, 770);
-			for (class532 var23 = this.field9470.method14191(); var23 != null; var23 = this.field9470.method14161()) {
+			for (Node var23 = this.field9470.method14191(); var23 != null; var23 = this.field9470.method14161()) {
 				class969 var24 = (class969) var23;
 				var24.method17572(arg0, arg1, arg2, arg3);
 			}
@@ -744,12 +744,12 @@ public class class836 extends class104 {
 		}
 		this.field9453.method15809(this.field9456, this.field9480, this.field9474, this.field9476);
 		if (this.field9453.field10016.data.length < this.field9459 * 2) {
-			this.field9453.field10016 = new class1189(this.field9459 * 2);
+			this.field9453.field10016 = new GpuPacket(this.field9459 * 2);
 		} else {
 			this.field9453.field10016.pos = 0;
 		}
 		int var10 = 0;
-		class1189 var11 = this.field9453.field10016;
+		GpuPacket var11 = this.field9453.field10016;
 		if (this.field9453.field10017) {
 			for (int var12 = arg4; var12 < arg6; var12++) {
 				int var13 = this.field1235 * var12 + arg3;
@@ -867,7 +867,7 @@ public class class836 extends class104 {
 	}
 
 	@ObfuscatedName("aek.o(Lakf;[I)V")
-	public void method1549(class973 arg0, int[] arg1) {
+	public void method1549(Light arg0, int[] arg1) {
 		this.field9470.method14153(new class969(this.field9453, this, arg0, arg1));
 	}
 }

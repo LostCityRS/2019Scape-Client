@@ -67,7 +67,7 @@ public class class938 extends class454 {
 								var11.method8899(var12.field9168, var12.field9170, var12.field9167, var12.field9169);
 							}
 							if (arg0.method2114() > 0) {
-								class973 var13 = var11.field7003;
+								Light var13 = var11.field7003;
 								int var14 = var13.method17605() + (arg2 << 9);
 								int var15 = var13.method17607() + (arg3 << 9);
 								int var16 = var14 >> 9;
@@ -255,7 +255,7 @@ public class class938 extends class454 {
 								var18.method8899(var19.field9168, var19.field9170, var19.field9167, var19.field9169);
 							}
 							if (arg0.method2114() > 0) {
-								class973 var20 = var18.field7003;
+								Light var20 = var18.field7003;
 								int var21 = var20.method17605() >> 9;
 								int var22 = var20.method17607() >> 9;
 								if (var18.field7006 == arg5 && var21 >= var13 && var21 < var13 + 8 && var22 >= var14 && var22 < var14 + 8) {

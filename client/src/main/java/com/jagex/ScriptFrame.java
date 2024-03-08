@@ -3,10 +3,10 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("yx")
-public class class671 {
+public class ScriptFrame {
 
 	@ObfuscatedName("yx.e")
-	public class1185 field8190;
+	public ClientScript field8190;
 
 	@ObfuscatedName("yx.n")
 	public int field8189 = -1;

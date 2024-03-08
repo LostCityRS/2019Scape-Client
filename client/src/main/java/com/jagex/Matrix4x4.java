@@ -67,7 +67,7 @@ public final class Matrix4x4 {
 			}
 			return;
 		}
-		class419 var3 = new class419();
+		Matrix4x3 var3 = new Matrix4x3();
 		var3.method6304(class417.method6277(arg0.g2s()));
 		var3.method6305(class417.method6277(arg0.g2s()));
 		var3.method6306(class417.method6277(arg0.g2s()));
@@ -254,7 +254,7 @@ public final class Matrix4x4 {
 	}
 
 	@ObfuscatedName("pq.r(Lou;)V")
-	public void method6609(class419 arg0) {
+	public void method6609(Matrix4x3 arg0) {
 		this.field4315[0] = arg0.field4276;
 		this.field4315[1] = arg0.field4277;
 		this.field4315[2] = arg0.field4278;

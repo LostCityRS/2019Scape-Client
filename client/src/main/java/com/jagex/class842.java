@@ -2827,12 +2827,12 @@ public class class842 extends class116 {
 	}
 
 	@ObfuscatedName("afi.aq(Lou;IZ)V")
-	public void method1771(class419 arg0, int arg1, boolean arg2) {
+	public void method1771(Matrix4x3 arg0, int arg1, boolean arg2) {
 		if (this.field9587 == null) {
 			return;
 		}
 		class55 var4 = this.field9572.method15674(Thread.currentThread());
-		class419 var5 = var4.field838;
+		Matrix4x3 var5 = var4.field838;
 		var5.method6292(arg0);
 		if (arg2) {
 			var5.method6300();
@@ -2851,12 +2851,12 @@ public class class842 extends class116 {
 	}
 
 	@ObfuscatedName("afi.ax(Lou;Led;I)V")
-	public void method1813(class419 arg0, class141 arg1, int arg2) {
+	public void method1813(Matrix4x3 arg0, class141 arg1, int arg2) {
 		this.method15478(arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("afi.hv(Lou;Led;I)V")
-	public void method15478(class419 arg0, class141 arg1, int arg2) {
+	public void method15478(Matrix4x3 arg0, class141 arg1, int arg2) {
 		if (this.field9549 < 1) {
 			return;
 		}
@@ -3339,7 +3339,7 @@ public class class842 extends class116 {
 	}
 
 	@ObfuscatedName("afi.av(IILou;ZI)Z")
-	public boolean method1725(int arg0, int arg1, class419 arg2, boolean arg3, int arg4) {
+	public boolean method1725(int arg0, int arg1, Matrix4x3 arg2, boolean arg3, int arg4) {
 		this.method15458(this.field9572.method15674(Thread.currentThread()));
 		Matrix4x4 var6 = this.field9534.field828;
 		var6.method6609(arg2);
@@ -3458,7 +3458,7 @@ public class class842 extends class116 {
 	}
 
 	@ObfuscatedName("afi.by(Lou;)V")
-	public void method1689(class419 arg0) {
+	public void method1689(Matrix4x3 arg0) {
 		this.method15458(this.field9572.method15674(Thread.currentThread()));
 		Matrix4x4 var2 = this.field9534.field828;
 		var2.method6609(arg0);

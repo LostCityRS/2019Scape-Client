@@ -165,7 +165,7 @@ public abstract class class238 {
 	}
 
 	@ObfuscatedName("ho.j(Laql;ILmq;I)V")
-	public final void method4252(class1150 arg0, int arg1, class356 arg2) {
+	public final void method4252(class1150 arg0, int arg1, BaseTexture arg2) {
 		this.field2568[this.field2573].method4081(arg0, arg1, arg2);
 	}
 
@@ -205,7 +205,7 @@ public abstract class class238 {
 	}
 
 	@ObfuscatedName("ho.aw(IILmq;B)V")
-	public final void method4215(int arg0, int arg1, class356 arg2) {
+	public final void method4215(int arg0, int arg1, BaseTexture arg2) {
 		this.field2568[this.field2573].method4097(arg0, arg1, arg2);
 	}
 

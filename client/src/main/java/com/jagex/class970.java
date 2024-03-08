@@ -6,10 +6,10 @@ import jaclib.memory.heap.NativeHeapBuffer;
 import jaggl.OpenGL;
 
 @ObfuscatedName("akn")
-public class class970 extends class532 {
+public class class970 extends Node {
 
 	@ObfuscatedName("akn.k")
-	public final class849 field11291;
+	public final LegacyOpenGLRenderer field11291;
 
 	@ObfuscatedName("akn.f")
 	public final class836 field11300;
@@ -149,7 +149,7 @@ public class class970 extends class532 {
 	@ObfuscatedName("akn.w([II)V")
 	public void method17583(int[] arg0, int arg1) {
 		int var3 = 0;
-		class1189 var4 = this.field11291.field10016;
+		GpuPacket var4 = this.field11291.field10016;
 		var4.pos = 0;
 		if (this.field11291.field10017) {
 			for (int var5 = 0; var5 < arg1; var5++) {

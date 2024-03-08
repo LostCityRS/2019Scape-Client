@@ -97,7 +97,7 @@ public abstract class class104 {
 	public abstract void method1548(int arg0, int arg1, int arg2, boolean[][] arg3, boolean arg4, int arg5);
 
 	@ObfuscatedName("cb.o(Lakf;[I)V")
-	public abstract void method1549(class973 arg0, int[] arg1);
+	public abstract void method1549(Light arg0, int[] arg1);
 
 	@ObfuscatedName("cb.k()V")
 	public abstract void method1555();

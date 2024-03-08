@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("mq")
-public interface class356 {
+public interface BaseTexture {
 
 	@ObfuscatedName("mq.aj()V")
 	void method5823();

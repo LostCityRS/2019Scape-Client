@@ -271,7 +271,7 @@ public class class1126 extends GpuRenderer {
 			this.field11969 = new class343[this.field10186];
 			this.field11977 = new boolean[this.field10186];
 			this.field11962 = new int[this.field10186];
-			class419 var17 = new class419();
+			Matrix4x3 var17 = new Matrix4x3();
 			var17.method6348(1.0F, -1.0F, 0.5F);
 			var17.method6315(0.0F, 0.0F, 0.5F);
 			this.field11968 = new Matrix4x4();
@@ -452,7 +452,7 @@ public class class1126 extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.am()Lafq;")
-	public class840 method2145() {
+	public Framebuffer method2145() {
 		return new class1215(this);
 	}
 
@@ -775,7 +775,7 @@ public class class1126 extends GpuRenderer {
 	public void method16025() {
 		int var1;
 		for (var1 = 0; var1 < this.field10127; var1++) {
-			class973 var2 = this.field10045[var1];
+			Light var2 = this.field10045[var1];
 			int var3 = var1 + 2;
 			int var4 = var2.method17624();
 			float var5 = var2.method17610() / 255.0F;
@@ -830,7 +830,7 @@ public class class1126 extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.ut(IZ[[I)Lmr;")
-	public class362 method16034(int arg0, boolean arg1, int[][] arg2) {
+	public GpuCubeTexture method16034(int arg0, boolean arg1, int[][] arg2) {
 		return new class929(this, arg0, arg1, arg2);
 	}
 

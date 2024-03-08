@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 import java.math.BigInteger;
 
 @ObfuscatedName("alw")
-public class Packet extends class532 {
+public class Packet extends Node {
 
 	private static final int CRC32_POLYNOMIAL = 0xEDB88320;
 

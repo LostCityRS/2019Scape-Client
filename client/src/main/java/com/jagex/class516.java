@@ -202,7 +202,7 @@ public class class516 {
 	}
 
 	@ObfuscatedName("sp.l(Ldh;Ldo;Lou;IIIIZB)V")
-	public void method8239(Renderer arg0, class116 arg1, class419 arg2, int arg3, int arg4, int arg5, int arg6, boolean arg7) {
+	public void method8239(Renderer arg0, class116 arg1, Matrix4x3 arg2, int arg3, int arg4, int arg5, int arg6, boolean arg7) {
 		class128[] var9 = arg1.method1750();
 		class102[] var10 = arg1.method1765();
 		if ((this.field6680 == null || this.field6680.field7804) && (var9 != null || var10 != null)) {

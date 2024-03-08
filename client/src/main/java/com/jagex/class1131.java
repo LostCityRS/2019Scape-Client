@@ -125,9 +125,9 @@ public class class1131 extends class892 {
 		if (this.field12083 == null || !this.method19167(arg0, 526336)) {
 			return null;
 		}
-		class419 var2 = this.method10533();
+		Matrix4x3 var2 = this.method10533();
 		class420 var3 = this.method10536();
-		class419 var4 = arg0.method2209();
+		Matrix4x3 var4 = arg0.method2209();
 		int var5 = this.field10395.method316();
 		class551 var6 = this.field11716.field6928[this.field11717][(int) var3.field4298.field4308 >> 9][(int) var3.field4298.field4313 >> 9];
 		if (var6 == null || var6.field6974 == null) {
@@ -279,7 +279,7 @@ public class class1131 extends class892 {
 		if (this.field12083 == null || !this.field10449 && !this.method19167(arg0, 0)) {
 			return;
 		}
-		class419 var2 = arg0.method2209();
+		Matrix4x3 var2 = arg0.method2209();
 		var2.method6292(this.method10533());
 		var2.method6315(0.0F, -5.0F, 0.0F);
 		this.method16576(arg0, this.field10459, var2, this.field10449);
@@ -457,7 +457,7 @@ public class class1131 extends class892 {
 		} else if (this.field12083.field2724 != null) {
 			return arg0.method2191(arg1, arg2, this.method10533(), this.field12083.field2724);
 		} else if (this.method19167(arg0, 131072)) {
-			class419 var4 = this.method10533();
+			Matrix4x3 var4 = this.method10533();
 			boolean var5 = false;
 			for (int var6 = 0; var6 < this.field10459.length; var6++) {
 				if (this.field10459[var6] != null && this.field10459[var6].field1298) {

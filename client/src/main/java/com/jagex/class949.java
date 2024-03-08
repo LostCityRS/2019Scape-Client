@@ -131,7 +131,7 @@ public class class949 extends class1197 implements class514 {
 		if (this.field11150 == null) {
 			return null;
 		}
-		class419 var2 = arg0.method2209();
+		Matrix4x3 var2 = arg0.method2209();
 		var2.method6292(this.method10533());
 		var2.method6315((float) this.field12452, 0.0F, (float) this.field12451);
 		class552 var3 = class552.method16749(this.field11157);
@@ -159,7 +159,7 @@ public class class949 extends class1197 implements class514 {
 		if (var5 == null) {
 			return false;
 		} else {
-			class419 var6 = this.method10533();
+			Matrix4x3 var6 = this.method10533();
 			return var5.method1725(arg1, arg2, var6, false, 0);
 		}
 	}

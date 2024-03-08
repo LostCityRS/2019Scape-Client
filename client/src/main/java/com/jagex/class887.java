@@ -279,7 +279,7 @@ public final class class887 extends class234 {
 	}
 
 	@ObfuscatedName("agt.c(Laql;ILmq;)V")
-	public void method4081(class1150 arg0, int arg1, class356 arg2) {
+	public void method4081(class1150 arg0, int arg1, BaseTexture arg2) {
 		this.field10365.method16038(arg1);
 		this.field10365.method16092(arg2);
 	}
@@ -350,7 +350,7 @@ public final class class887 extends class234 {
 	}
 
 	@ObfuscatedName("agt.x(IILmq;)V")
-	public void method4097(int arg0, int arg1, class356 arg2) {
+	public void method4097(int arg0, int arg1, BaseTexture arg2) {
 		this.field10365.method16038(arg1);
 		this.field10365.method16092(arg2);
 	}

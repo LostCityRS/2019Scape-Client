@@ -6,12 +6,12 @@ import deob.ObfuscatedName;
 public class class838 extends class110 {
 
 	@ObfuscatedName("aep.e")
-	public final class849 field9528;
+	public final LegacyOpenGLRenderer field9528;
 
 	@ObfuscatedName("aep.n")
 	public class70 field9527;
 
-	public class838(class849 arg0, int[] arg1) {
+	public class838(LegacyOpenGLRenderer arg0, int[] arg1) {
 		this.field9528 = arg0;
 		if (this.field9528.field9889) {
 			byte[] var3 = this.method15426(arg1);

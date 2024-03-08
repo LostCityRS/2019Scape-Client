@@ -283,7 +283,7 @@ public class MapElementType implements ConfigType {
 			for (int var11 = 0; var11 < var9; var11++) {
 				boolean var12 = arg0.g1() == 1;
 				int var13 = arg0.g3();
-				class532 var14;
+				Node var14;
 				if (var12) {
 					var14 = new class984(arg0.gjstr());
 				} else {

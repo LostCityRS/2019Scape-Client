@@ -49,7 +49,7 @@ public abstract class class333 {
 	public abstract void method5562();
 
 	@ObfuscatedName("lh.l(ILafq;Llz;Ldw;Llz;Z)V")
-	public abstract void method5564(int arg0, class840 arg1, GpuTexture arg2, class126 arg3, GpuTexture arg4, boolean arg5);
+	public abstract void method5564(int arg0, Framebuffer arg1, GpuTexture arg2, class126 arg3, GpuTexture arg4, boolean arg5);
 
 	@ObfuscatedName("lh.u(I)V")
 	public abstract void method5565(int arg0);

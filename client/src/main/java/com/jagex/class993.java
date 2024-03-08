@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("akm")
-public abstract class class993 extends class532 {
+public abstract class class993 extends Node {
 
 	@ObfuscatedName("acn.w(II)Z")
 	public static boolean method15143(int arg0) {

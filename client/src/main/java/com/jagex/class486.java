@@ -8,7 +8,7 @@ import jaggl.OpenGL;
 public abstract class class486 implements class342 {
 
 	@ObfuscatedName("rv.m")
-	public final class1127 field4988;
+	public final OpenGLRenderer field4988;
 
 	@ObfuscatedName("rv.k")
 	public final int field4989;
@@ -31,7 +31,7 @@ public abstract class class486 implements class342 {
 	@ObfuscatedName("rv.p")
 	public static final int[] field4995 = new int[1];
 
-	public class486(class1127 arg0, int arg1, boolean arg2) {
+	public class486(OpenGLRenderer arg0, int arg1, boolean arg2) {
 		this.field4988 = arg0;
 		this.field4989 = arg1;
 		this.field4990 = arg2;

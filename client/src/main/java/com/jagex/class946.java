@@ -60,7 +60,7 @@ public class class946 extends class1200 implements class514 {
 		if (var2 == null) {
 			return null;
 		}
-		class419 var3 = this.method10533();
+		Matrix4x3 var3 = this.method10533();
 		class552 var4 = class552.method16749(this.field11128);
 		this.field11131.method8239(arg0, var2, var3, this.field12471, this.field12472, this.field12468, this.field12467, true);
 		LocType var5 = this.field11131.method8237();

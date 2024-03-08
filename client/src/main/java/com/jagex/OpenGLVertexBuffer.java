@@ -3,12 +3,12 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aix")
-public class class919 extends class486 implements class330 {
+public class OpenGLVertexBuffer extends class486 implements class330 {
 
 	@ObfuscatedName("aix.d")
 	public byte field10619;
 
-	public class919(class1127 arg0, boolean arg1) {
+	public OpenGLVertexBuffer(OpenGLRenderer arg0, boolean arg1) {
 		super(arg0, 34962, arg1);
 	}
 

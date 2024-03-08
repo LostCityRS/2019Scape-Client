@@ -3,16 +3,16 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ajr")
-public class class969 extends class532 {
+public class class969 extends Node {
 
 	@ObfuscatedName("ajr.k")
-	public final class849 field11279;
+	public final LegacyOpenGLRenderer field11279;
 
 	@ObfuscatedName("ajr.f")
 	public final class836 field11273;
 
 	@ObfuscatedName("ajr.w")
-	public final class973 field11274;
+	public final Light field11274;
 
 	@ObfuscatedName("ajr.l")
 	public int field11275;
@@ -57,12 +57,12 @@ public class class969 extends class532 {
 	public Packet field11288;
 
 	@ObfuscatedName("ajr.h")
-	public class1189 field11289;
+	public GpuPacket field11289;
 
 	@ObfuscatedName("ajr.a")
 	public IterableMap field11290;
 
-	public class969(class849 arg0, class836 arg1, class973 arg2, int[] arg3) {
+	public class969(LegacyOpenGLRenderer arg0, class836 arg1, Light arg2, int[] arg3) {
 		this.field11279 = arg0;
 		this.field11274 = arg2;
 		this.field11273 = arg1;
@@ -119,7 +119,7 @@ public class class969 extends class532 {
 		}
 		if (this.field11280 > 0) {
 			this.field11288 = new Packet(this.field11280 * 2);
-			this.field11289 = new class1189(this.field11280 * 16);
+			this.field11289 = new GpuPacket(this.field11280 * 16);
 			this.field11290 = new IterableMap(class783.method16657(this.field11280));
 			int var21 = 0;
 			int var22 = 0;

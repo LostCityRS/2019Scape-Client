@@ -70,7 +70,7 @@ public class class837 extends class104 {
 	public IterableQueue field9485 = new IterableQueue();
 
 	@ObfuscatedName("aem.ag")
-	public class532[] field9496;
+	public Node[] field9496;
 
 	@ObfuscatedName("aem.ah")
 	public class330 field9508;
@@ -103,7 +103,7 @@ public class class837 extends class104 {
 	public IterableMap field9513;
 
 	@ObfuscatedName("aem.ar")
-	public class532[] field9497;
+	public Node[] field9497;
 
 	@ObfuscatedName("aem.ap")
 	public int field9519;
@@ -212,7 +212,7 @@ public class class837 extends class104 {
 				var16 = -1;
 			}
 			long var18 = (long) arg10.field1577 << 48 | (long) arg10.field1573 << 42 | (long) arg10.field1575 << 28 | (long) (var17 << 14) | (long) var16;
-			class532 var20;
+			Node var20;
 			for (var20 = this.field9513.method14495(var18); var20 != null; var20 = this.field9513.method14496()) {
 				class981 var21 = (class981) var20;
 				if (var21.field11402 == var16 && (float) var17 == var21.field11403 && var21.field11404.method2096(arg10)) {
@@ -307,7 +307,7 @@ public class class837 extends class104 {
 				var1[var2][var3] = (byte) ((this.field9514[var2][var3] >> 1) + (this.field9514[var2][var3 + 1] >> 3) + (this.field9514[var2][var3 - 1] >> 2) + (this.field9514[var2 - 1][var3] >> 2) + (this.field9514[var2 + 1][var3] >> 3));
 			}
 		}
-		this.field9497 = new class532[this.field9513.method14498()];
+		this.field9497 = new Node[this.field9513.method14498()];
 		this.field9513.method14497(this.field9497);
 		for (int var4 = 0; var4 < this.field9497.length; var4++) {
 			((class981) this.field9497[var4]).method17761(this.field9511);
@@ -393,7 +393,7 @@ public class class837 extends class104 {
 				this.field9497[this.field9519++] = var26;
 			}
 		}
-		this.field9496 = new class532[this.field9519];
+		this.field9496 = new Node[this.field9519];
 		long[] var27 = new long[this.field9519];
 		for (int var28 = 0; var28 < this.field9519; var28++) {
 			class981 var29 = (class981) this.field9497[var28];
@@ -565,7 +565,7 @@ public class class837 extends class104 {
 					var49 = this.field9516.field10122 + var65 * (var65 > 0.0F ? this.field9516.field10123 : this.field9516.field10124);
 				}
 			}
-			class532 var66 = null;
+			Node var66 = null;
 			if ((var36 & this.field9489 - 1) == 0 && (var37 & this.field9489 - 1) == 0) {
 				var66 = arg4.method14495(var43);
 			}
@@ -905,11 +905,11 @@ public class class837 extends class104 {
 		this.field9516.method16120(1, this.field9509);
 		this.field9516.method16177(this.field9493);
 		this.field9516.method16102(var9);
-		this.field9516.method2217(class419.field4282);
+		this.field9516.method2217(Matrix4x3.field4282);
 		float var21 = (float) this.field9516.method2135().method1627();
 		float var22 = (float) this.field9516.method2135().method1628();
-		class419 var23 = new class419();
-		class419 var24 = new class419();
+		Matrix4x3 var23 = new Matrix4x3();
+		Matrix4x3 var24 = new Matrix4x3();
 		var23.method6298(1.0F, 0.0F, 0.0F, 0.0F, 0.0F, 1.0F, 0.0F, 1.0F, 0.0F);
 		var24.method6348((float) arg2 / ((float) this.field1233 * 256.0F), (float) -arg2 / ((float) this.field1233 * 256.0F), 1.0F / (this.field9512 - this.field9495));
 		var24.method6315((float) arg0 - (float) (arg2 * arg3) / 256.0F, (float) (arg2 * arg6) / 256.0F + (float) arg1, -this.field9495 / (this.field9512 - this.field9495));
@@ -1014,7 +1014,7 @@ public class class837 extends class104 {
 	}
 
 	@ObfuscatedName("aem.o(Lakf;[I)V")
-	public void method1549(class973 arg0, int[] arg1) {
+	public void method1549(Light arg0, int[] arg1) {
 		this.field9485.method14153(new class982(this.field9516, this, arg0, arg1));
 	}
 }

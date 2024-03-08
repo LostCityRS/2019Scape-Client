@@ -25,7 +25,7 @@ public abstract class class714 {
 	public abstract Vector3 method14135();
 
 	@ObfuscatedName("aax.f(Lju;Lou;IIFB)V")
-	public abstract void method14136(class270 arg0, class419 arg1, int arg2, int arg3, float arg4);
+	public abstract void method14136(class270 arg0, Matrix4x3 arg1, int arg2, int arg3, float arg4);
 
 	@ObfuscatedName("aax.n(I)Z")
 	public abstract boolean method14145();

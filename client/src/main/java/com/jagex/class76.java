@@ -18,7 +18,7 @@ public class class76 {
 	public int field1026 = 0;
 
 	@ObfuscatedName("bw.f")
-	public final class849 field1029;
+	public final LegacyOpenGLRenderer field1029;
 
 	@ObfuscatedName("bw.w")
 	public final class78 field1031;
@@ -26,7 +26,7 @@ public class class76 {
 	@ObfuscatedName("bw.l")
 	public final class821 field1032;
 
-	public class76(class849 arg0) {
+	public class76(LegacyOpenGLRenderer arg0) {
 		this.field1029 = arg0;
 		this.field1031 = new class78(arg0);
 		this.field1030 = new class74[16];

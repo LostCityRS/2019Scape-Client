@@ -113,7 +113,7 @@ public class class924 extends class333 {
 	}
 
 	@ObfuscatedName("ais.l(ILafq;Llz;Ldw;Llz;Z)V")
-	public void method5564(int arg0, class840 arg1, GpuTexture arg2, class126 arg3, GpuTexture arg4, boolean arg5) {
+	public void method5564(int arg0, Framebuffer arg1, GpuTexture arg2, class126 arg3, GpuTexture arg4, boolean arg5) {
 		float var7 = this.field3242.method15954();
 		float var8 = (float) arg1.method1627();
 		float var9 = (float) arg1.method1628();
@@ -133,7 +133,7 @@ public class class924 extends class333 {
 		for (int var21 = 0; var21 < field10655; var21++) {
 			if (field10653[var21] != null) {
 				class1150 var22 = this.field10660[var21];
-				class356 var23 = field10653[var21].method15431();
+				BaseTexture var23 = field10653[var21].method15431();
 				this.field10654.method4252(var22, var21 + 1, var23);
 			}
 		}

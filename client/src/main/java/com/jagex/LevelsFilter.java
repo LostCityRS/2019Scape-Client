@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
 @ObfuscatedName("aqo")
-public class class1145 extends class968 {
+public class LevelsFilter extends class968 {
 
 	@ObfuscatedName("aqo.w")
 	public static float field12167 = 1.0F;
@@ -24,7 +24,7 @@ public class class1145 extends class968 {
 	@ObfuscatedName("aqo.c")
 	public class68 field12169;
 
-	public class1145(class849 arg0) {
+	public LevelsFilter(LegacyOpenGLRenderer arg0) {
 		super(arg0);
 	}
 

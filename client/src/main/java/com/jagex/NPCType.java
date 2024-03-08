@@ -500,7 +500,7 @@ public class NPCType implements ConfigType {
 					for (int var36 = 0; var36 < var34; var36++) {
 						boolean var37 = arg0.g1() == 1;
 						int var38 = arg0.g3();
-						class532 var39;
+						Node var39;
 						if (var37) {
 							var39 = new class984(arg0.gjstr());
 						} else {
@@ -717,7 +717,7 @@ public class NPCType implements ConfigType {
 		if (!var16 && !var51) {
 			return var50;
 		}
-		class419[] var53 = null;
+		Matrix4x3[] var53 = null;
 		if (var24 != null) {
 			var53 = var24.method9291();
 		}
@@ -742,7 +742,7 @@ public class NPCType implements ConfigType {
 				if (arg8[var57] != -1) {
 					int var58 = arg8[var57] - arg9;
 					int var59 = var58 & 0x3FFF;
-					class419 var60 = new class419();
+					Matrix4x3 var60 = new Matrix4x3();
 					var60.method6372(0.0F, 1.0F, 0.0F, class417.method6277(var59));
 					var50.method1771(var60, 0x1 << var57, false);
 				}

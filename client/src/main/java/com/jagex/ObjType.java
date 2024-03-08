@@ -271,7 +271,7 @@ public class ObjType implements ConfigType {
 			return;
 		}
 		boolean var1 = false;
-		for (class532 var2 = this.field8690.method14500(); var2 != null; var2 = this.field8690.method14502()) {
+		for (Node var2 = this.field8690.method14500(); var2 != null; var2 = this.field8690.method14502()) {
 			ParamType var3 = (ParamType) this.field8621.field8615.get((int) var2.field6760);
 			if (var3.field9174) {
 				var2.method8440();
@@ -507,7 +507,7 @@ public class ObjType implements ConfigType {
 				for (int var23 = 0; var23 < var21; var23++) {
 					boolean var24 = arg0.g1() == 1;
 					int var25 = arg0.g3();
-					class532 var26;
+					Node var26;
 					if (var24) {
 						var26 = new class984(arg0.gjstr());
 					} else {
@@ -828,11 +828,11 @@ public class ObjType implements ConfigType {
 		var24.method6703(16.0F, 16.0F, 512.0F, 512.0F, 50.0F, 2.14748365E9F, (float) arg0.method2135().method1627(), (float) arg0.method2135().method1628());
 		arg0.method2220(var24);
 		arg0.method2164(0, 0, arg0.method2135().method1627(), arg0.method2135().method1628());
-		class419 var25 = new class419();
+		Matrix4x3 var25 = new Matrix4x3();
 		arg0.method2217(var25);
 		arg0.method2222((float) (Math.random() / 10.0D) + 0.95F);
 		arg0.method2223(16777215, (float) (Math.random() / 10.0D) + 0.95F, (float) (Math.random() / 10.0D) + 0.95F, -50.0F, -10.0F, -50.0F);
-		class419 var26 = arg0.method2209();
+		Matrix4x3 var26 = arg0.method2209();
 		var26.method6372(0.0F, 0.0F, 1.0F, class417.method6277(-this.field8641 << 3));
 		var26.method6307(0.0F, 1.0F, 0.0F, class417.method6277(this.field8626 << 3));
 		var26.method6315((float) (this.field8695 << 2), (float) ((class417.field4270[this.field8639 << 3] * var22 >> 14) - var20.method1748() / 2 + (this.field8643 << 2)), (float) ((this.field8643 << 2) + (class417.field4272[this.field8639 << 3] * var22 >> 14)));

@@ -297,7 +297,7 @@ public class Vector3 {
 	}
 
 	@ObfuscatedName("ox.aw(Lou;)V")
-	public final void method6567(class419 arg0) {
+	public final void method6567(Matrix4x3 arg0) {
 		float var2 = this.field4308;
 		float var3 = this.field4311;
 		this.field4308 = this.field4313 * arg0.field4275 + arg0.field4279 * var3 + arg0.field4276 * var2 + arg0.field4285;
@@ -306,7 +306,7 @@ public class Vector3 {
 	}
 
 	@ObfuscatedName("ox.as(Lou;)V")
-	public final void method6521(class419 arg0) {
+	public final void method6521(Matrix4x3 arg0) {
 		float var2 = this.field4308;
 		float var3 = this.field4311;
 		this.field4308 = this.field4313 * arg0.field4275 + arg0.field4279 * var3 + arg0.field4276 * var2;

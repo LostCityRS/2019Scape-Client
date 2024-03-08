@@ -4,9 +4,9 @@ import deob.ObfuscatedName;
 import jaclib.memory.Stream;
 
 @ObfuscatedName("asb")
-public class class1189 extends Packet {
+public class GpuPacket extends Packet {
 
-	public class1189(int arg0) {
+	public GpuPacket(int arg0) {
 		super(arg0);
 	}
 

@@ -7,9 +7,9 @@ import jaggl.OpenGL;
 import java.awt.*;
 
 @ObfuscatedName("ra")
-public class class488 {
+public class OpenGLRendererFactory {
 
-	public class488() throws Throwable {
+	public OpenGLRendererFactory() throws Throwable {
 		throw new Error();
 	}
 
@@ -24,7 +24,7 @@ public class class488 {
 			if (var9 == 0L) {
 				throw new RuntimeException("");
 			}
-			class1127 var11 = new class1127(var8, arg0, var9, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
+			OpenGLRenderer var11 = new OpenGLRenderer(var8, arg0, var9, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 			var11.method15969();
 			return var11;
 		} catch (RuntimeException var14) {

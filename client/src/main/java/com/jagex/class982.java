@@ -6,7 +6,7 @@ import sun.misc.Unsafe;
 import java.nio.ByteBuffer;
 
 @ObfuscatedName("akx")
-public class class982 extends class532 {
+public class class982 extends Node {
 
 	@ObfuscatedName("akx.k")
 	public final GpuRenderer field11416;
@@ -15,7 +15,7 @@ public class class982 extends class532 {
 	public final class837 field11414;
 
 	@ObfuscatedName("akx.w")
-	public final class973 field11415;
+	public final Light field11415;
 
 	@ObfuscatedName("akx.l")
 	public int field11419;
@@ -59,7 +59,7 @@ public class class982 extends class532 {
 	@ObfuscatedName("akx.b")
 	public ByteBuffer field11429;
 
-	public class982(GpuRenderer arg0, class837 arg1, class973 arg2, int[] arg3) {
+	public class982(GpuRenderer arg0, class837 arg1, Light arg2, int[] arg3) {
 		this.field11416 = arg0;
 		this.field11415 = arg2;
 		this.field11414 = arg1;
@@ -209,7 +209,7 @@ public class class982 extends class532 {
 		int var11 = this.field11414.method1527(var9, var10);
 		if ((arg4 & 0x7F) == 0 || (arg5 & 0x7F) == 0) {
 			var7 = ((long) var10 & 0xFFFFL) << 16 | (long) var9 & 0xFFFFL;
-			class532 var12 = this.field11428.method14495(var7);
+			Node var12 = this.field11428.method14495(var7);
 			if (var12 != null) {
 				Unsafe var13 = this.field11416.field10110;
 				var13.putShort((long) (this.field11416.field10048 >> 1) + this.field11416.field10046 + (long) (this.field11413 * 2), ((class985) var12).field11437);

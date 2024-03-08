@@ -4,10 +4,10 @@ import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
 @ObfuscatedName("app")
-public class class1118 extends class840 {
+public class LegacyOpenGLFramebuffer extends Framebuffer {
 
 	@ObfuscatedName("app.m")
-	public final class849 field11915;
+	public final LegacyOpenGLRenderer field11915;
 
 	@ObfuscatedName("app.k")
 	public int field11916;
@@ -30,7 +30,7 @@ public class class1118 extends class840 {
 	@ObfuscatedName("app.p")
 	public final class88[] field11922 = new class88[4];
 
-	public class1118(class849 arg0) {
+	public LegacyOpenGLFramebuffer(LegacyOpenGLRenderer arg0) {
 		if (!arg0.field9985) {
 			throw new IllegalStateException("");
 		}

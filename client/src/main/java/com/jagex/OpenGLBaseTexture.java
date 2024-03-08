@@ -4,10 +4,10 @@ import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
 @ObfuscatedName("rj")
-public abstract class class485 implements class356 {
+public abstract class OpenGLBaseTexture implements BaseTexture {
 
 	@ObfuscatedName("rj.f")
-	public final class1127 field4980;
+	public final OpenGLRenderer field4980;
 
 	@ObfuscatedName("rj.w")
 	public int field4974;
@@ -33,7 +33,7 @@ public abstract class class485 implements class356 {
 	@ObfuscatedName("rj.r")
 	public static final int[] field4985 = new int[1];
 
-	public class485(class1127 arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4, boolean arg5) {
+	public OpenGLBaseTexture(OpenGLRenderer arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4, boolean arg5) {
 		this.field4980 = arg0;
 		this.field4979 = arg1;
 		this.field4973 = arg2;
@@ -123,7 +123,7 @@ public abstract class class485 implements class356 {
 			int[] var9 = arg3;
 			int[] var10 = new int[var7 * var8];
 			while (true) {
-				OpenGL.glTexImage2Di(arg0, var5, class1127.method19077(this.field4973, this.field4977), arg1, arg2, 0, 32993, this.field4980.field12027, var9, 0);
+				OpenGL.glTexImage2Di(arg0, var5, OpenGLRenderer.method19077(this.field4973, this.field4977), arg1, arg2, 0, 32993, this.field4980.field12027, var9, 0);
 				if (var6 <= 1) {
 					return;
 				}
@@ -187,7 +187,7 @@ public abstract class class485 implements class356 {
 			byte[] var10 = arg3;
 			byte[] var11 = new byte[var8 * var9 * var5];
 			while (true) {
-				OpenGL.glTexImage2Dub(arg0, var6, class1127.method19077(this.field4973, this.field4977), arg1, arg2, 0, class1127.method19085(this.field4973), 5121, var10, 0);
+				OpenGL.glTexImage2Dub(arg0, var6, OpenGLRenderer.method19077(this.field4973, this.field4977), arg1, arg2, 0, OpenGLRenderer.method19085(this.field4973), 5121, var10, 0);
 				if (var7 <= 1) {
 					return;
 				}
@@ -243,7 +243,7 @@ public abstract class class485 implements class356 {
 			float[] var10 = arg3;
 			float[] var11 = new float[var8 * var9 * var5];
 			while (true) {
-				OpenGL.glTexImage2Df(arg0, var6, class1127.method19077(this.field4973, this.field4977), arg1, arg2, 0, class1127.method19085(this.field4973), 5126, var10, 0);
+				OpenGL.glTexImage2Df(arg0, var6, OpenGLRenderer.method19077(this.field4973, this.field4977), arg1, arg2, 0, OpenGLRenderer.method19085(this.field4973), 5126, var10, 0);
 				if (var7 <= 1) {
 					return;
 				}

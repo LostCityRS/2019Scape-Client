@@ -27,7 +27,7 @@ public class class815 extends class74 {
 	@ObfuscatedName("aeu.d")
 	public static final float[] field9286 = new float[4];
 
-	public class815(class849 arg0, class78 arg1) {
+	public class815(LegacyOpenGLRenderer arg0, class78 arg1) {
 		super(arg0);
 		this.field9288 = arg1;
 		if (this.field1021.field9999 && this.field1021.field9982 >= 2) {

@@ -2959,11 +2959,11 @@ public class class844 extends class116 {
 	}
 
 	@ObfuscatedName("afo.aq(Lou;IZ)V")
-	public void method1771(class419 arg0, int arg1, boolean arg2) {
+	public void method1771(Matrix4x3 arg0, int arg1, boolean arg2) {
 		if (this.field9709 == null) {
 			return;
 		}
-		class419 var4 = arg0;
+		Matrix4x3 var4 = arg0;
 		if (arg2) {
 			var4 = this.field9730.field10065;
 			var4.method6299(arg0);
@@ -2990,7 +2990,7 @@ public class class844 extends class116 {
 	}
 
 	@ObfuscatedName("afo.by(Lou;)V")
-	public void method1689(class419 arg0) {
+	public void method1689(Matrix4x3 arg0) {
 		Matrix4x4 var2 = this.field9730.field10066;
 		var2.method6609(arg0);
 		if (this.field9755 != null) {
@@ -3032,12 +3032,12 @@ public class class844 extends class116 {
 	}
 
 	@ObfuscatedName("afo.av(IILou;ZI)Z")
-	public boolean method1725(int arg0, int arg1, class419 arg2, boolean arg3, int arg4) {
+	public boolean method1725(int arg0, int arg1, Matrix4x3 arg2, boolean arg3, int arg4) {
 		return this.method15590(arg0, arg1, 0, 0, arg2, arg3, arg4);
 	}
 
 	@ObfuscatedName("afo.he(IIIILou;ZI)Z")
-	public boolean method15590(int arg0, int arg1, int arg2, int arg3, class419 arg4, boolean arg5, int arg6) {
+	public boolean method15590(int arg0, int arg1, int arg2, int arg3, Matrix4x3 arg4, boolean arg5, int arg6) {
 		Matrix4x4 var8 = this.field9730.field10066;
 		var8.method6609(arg4);
 		var8.method6720(this.field9730.field10145);
@@ -3245,7 +3245,7 @@ public class class844 extends class116 {
 	}
 
 	@ObfuscatedName("afo.ax(Lou;Led;I)V")
-	public void method1813(class419 arg0, class141 arg1, int arg2) {
+	public void method1813(Matrix4x3 arg0, class141 arg1, int arg2) {
 		if (Statics.field9772 != null) {
 			Statics.field9772.method5554();
 		}
@@ -3349,7 +3349,7 @@ public class class844 extends class116 {
 	}
 
 	@ObfuscatedName("afo.hw(Lou;)V")
-	public void method15601(class419 arg0) {
+	public void method15601(Matrix4x3 arg0) {
 		if (this.field9721 == 0 || (!this.method15614() || !this.method15607())) {
 			return;
 		}
@@ -3425,7 +3425,7 @@ public class class844 extends class116 {
 		} else {
 			this.field9730.method16120(3, this.field9733.field3359);
 			this.field9730.method16177(this.field9730.field10202);
-			class419 var12 = this.field9730.field10065;
+			Matrix4x3 var12 = this.field9730.field10065;
 			var12.method6292(arg0);
 			var12.method6300();
 			int var13 = 0;
@@ -3441,7 +3441,7 @@ public class class844 extends class116 {
 					var13 = this.field9730.field10126;
 					Vector3 var14 = this.field9730.field10054;
 					for (int var15 = 0; var15 < var13; var15++) {
-						class973 var16 = this.field9730.field10045[var15];
+						Light var16 = this.field9730.field10045[var15];
 						int var17 = var16.method17624();
 						var14.method6492(var16.field11331);
 						var14.method6567(var12);
@@ -3534,7 +3534,7 @@ public class class844 extends class116 {
 			return;
 		}
 		this.field9730.method2219(!this.field9737);
-		class419 var2 = this.field9730.field10065;
+		Matrix4x3 var2 = this.field9730.field10065;
 		class286 var3 = this.field9730.field10151;
 		boolean var4 = this.field9730.field10169 > 0;
 		if (var4) {

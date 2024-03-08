@@ -15,7 +15,7 @@ public abstract class class1198 extends class1019 {
 	public int field12464 = 0;
 
 	@ObfuscatedName("asw.al")
-	public class973[] field12459 = new class973[4];
+	public Light[] field12459 = new Light[4];
 
 	public class1198(class550 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, class420 arg7) {
 		super(arg0, arg7);
@@ -32,7 +32,7 @@ public abstract class class1198 extends class1019 {
 	}
 
 	@ObfuscatedName("asw.gy([Lakf;S)I")
-	public int method18375(class973[] arg0) {
+	public int method18375(Light[] arg0) {
 		if (this.field8176) {
 			Vector3 var2 = this.method10536().field4298;
 			int var3 = (int) var2.field4308 >> this.field11716.field6900;

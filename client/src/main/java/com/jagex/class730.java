@@ -11,13 +11,13 @@ public class class730 implements Iterator {
 	public IterableMap field8560;
 
 	@ObfuscatedName("aah.n")
-	public class532 field8559;
+	public Node field8559;
 
 	@ObfuscatedName("aah.m")
 	public int field8557;
 
 	@ObfuscatedName("aah.k")
-	public class532 field8558 = null;
+	public Node field8558 = null;
 
 	public class730(IterableMap arg0) {
 		this.field8560 = arg0;
@@ -32,19 +32,19 @@ public class class730 implements Iterator {
 	}
 
 	@ObfuscatedName("aah.u(B)Ltj;")
-	public class532 method14520() {
+	public Node method14520() {
 		this.method14523();
-		return (class532) this.next();
+		return (Node) this.next();
 	}
 
 	public Object next() {
 		if (this.field8560.field8552[this.field8557 - 1] != this.field8559) {
-			class532 var1 = this.field8559;
+			Node var1 = this.field8559;
 			this.field8559 = var1.field6761;
 			this.field8558 = var1;
 			return var1;
 		}
-		class532 var2;
+		Node var2;
 		do {
 			if (this.field8557 >= this.field8560.field8556) {
 				return null;

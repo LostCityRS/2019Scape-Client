@@ -4,19 +4,19 @@ import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
 @ObfuscatedName("cv")
-public class class92 {
+public class PostProcessing {
 
 	@ObfuscatedName("cv.e")
-	public final class849 field1169;
+	public final LegacyOpenGLRenderer field1169;
 
 	@ObfuscatedName("cv.n")
-	public class1118 field1162;
+	public LegacyOpenGLFramebuffer field1162;
 
 	@ObfuscatedName("cv.m")
-	public class1118 field1163;
+	public LegacyOpenGLFramebuffer field1163;
 
 	@ObfuscatedName("cv.k")
-	public class1118 field1164;
+	public LegacyOpenGLFramebuffer field1164;
 
 	@ObfuscatedName("cv.f")
 	public int field1165 = 0;
@@ -69,12 +69,12 @@ public class class92 {
 	@ObfuscatedName("cv.h")
 	public DataType field1181 = DataType.field1645;
 
-	public class92(class849 arg0) {
+	public PostProcessing(LegacyOpenGLRenderer arg0) {
 		this.field1169 = arg0;
 		if (this.field1169.field9985 && this.field1169.field9965) {
-			this.field1164 = this.field1162 = new class1118(this.field1169);
+			this.field1164 = this.field1162 = new LegacyOpenGLFramebuffer(this.field1169);
 			if (this.field1169.field9967 > 1 && this.field1169.field9901 && this.field1169.field9987) {
-				this.field1164 = this.field1163 = new class1118(this.field1169);
+				this.field1164 = this.field1163 = new LegacyOpenGLFramebuffer(this.field1169);
 			}
 		}
 	}
@@ -89,7 +89,7 @@ public class class92 {
 		this.field1175 = null;
 		this.field1176 = null;
 		if (!this.field1170.method14164()) {
-			for (class532 var1 = this.field1170.method14191(); var1 != this.field1170.field8482; var1 = var1.field6761) {
+			for (Node var1 = this.field1170.method14191(); var1 != this.field1170.field8482; var1 = var1.field6761) {
 				((class968) var1).method17570();
 			}
 		}
@@ -217,7 +217,7 @@ public class class92 {
 		if (this.field1177 != arg2 || this.field1167 != arg3) {
 			this.field1177 = arg2;
 			this.field1167 = arg3;
-			for (class532 var5 = this.field1170.method14191(); var5 != this.field1170.field8482; var5 = var5.field6761) {
+			for (Node var5 = this.field1170.method14191(); var5 != this.field1170.field8482; var5 = var5.field6761) {
 				((class968) var5).method17540(this.field1177, this.field1167);
 			}
 			this.field1171 = true;

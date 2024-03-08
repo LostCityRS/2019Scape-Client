@@ -3,12 +3,12 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aid")
-public class class928 extends class486 implements class360 {
+public class OpenGLIndexBuffer extends class486 implements class360 {
 
 	@ObfuscatedName("aid.d")
 	public DataType field10675;
 
-	public class928(class1127 arg0, DataType arg1, boolean arg2) {
+	public OpenGLIndexBuffer(OpenGLRenderer arg0, DataType arg1, boolean arg2) {
 		super(arg0, 34963, arg2);
 		this.field10675 = arg1;
 	}

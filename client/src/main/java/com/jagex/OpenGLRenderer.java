@@ -8,7 +8,7 @@ import jaggl.OpenGL;
 import java.awt.*;
 
 @ObfuscatedName("aqv")
-public final class class1127 extends GpuRenderer {
+public final class OpenGLRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqv.hx")
 	public OpenGL field12020;
@@ -53,16 +53,16 @@ public final class class1127 extends GpuRenderer {
 	public int field12040;
 
 	@ObfuscatedName("aqv.ho")
-	public class919[] field12012 = new class919[16];
+	public OpenGLVertexBuffer[] field12012 = new OpenGLVertexBuffer[16];
 
 	@ObfuscatedName("aqv.hj")
-	public class928 field12036;
+	public OpenGLIndexBuffer field12036;
 
 	@ObfuscatedName("aqv.hv")
 	public int[] field12014;
 
 	@ObfuscatedName("aqv.hz")
-	public class888 field12015;
+	public OpenGLProgram field12015;
 
 	@ObfuscatedName("aqv.ij")
 	public boolean field12016;
@@ -119,7 +119,7 @@ public final class class1127 extends GpuRenderer {
 	public Sprite field12034;
 
 	@ObfuscatedName("aqv.ih")
-	public class840 field12018;
+	public Framebuffer field12018;
 
 	@ObfuscatedName("aqv.iy")
 	public int[] field12017;
@@ -167,7 +167,7 @@ public final class class1127 extends GpuRenderer {
 		return true;
 	}
 
-	public class1127(OpenGL arg0, Canvas arg1, long arg2, class125 arg3, class143 arg4, class383 arg5, class381 arg6, class378 arg7, Js5 arg8, int arg9) {
+	public OpenGLRenderer(OpenGL arg0, Canvas arg1, long arg2, class125 arg3, class143 arg4, class383 arg5, class381 arg6, class378 arg7, Js5 arg8, int arg9) {
 		super(arg3, arg4, arg5, arg6, arg7, arg8, arg9, 1);
 		new MapBuffer();
 		new MapBuffer();
@@ -392,7 +392,7 @@ public final class class1127 extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.am()Lafq;")
-	public class840 method2145() {
+	public Framebuffer method2145() {
 		return new class1216(this);
 	}
 
@@ -798,7 +798,7 @@ public final class class1127 extends GpuRenderer {
 		OpenGL.glLoadMatrixf(this.field10059.field4315, 0);
 		int var1;
 		for (var1 = 0; var1 < this.field10127; var1++) {
-			class973 var2 = this.field10045[var1];
+			Light var2 = this.field10045[var1];
 			int var3 = var2.method17624();
 			int var4 = var1 + 16386;
 			float var5 = var2.method17610() / 255.0F;
@@ -857,8 +857,8 @@ public final class class1127 extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.ut(IZ[[I)Lmr;")
-	public class362 method16034(int arg0, boolean arg1, int[][] arg2) {
-		return new class930(this, arg0, arg1, arg2);
+	public GpuCubeTexture method16034(int arg0, boolean arg1, int[][] arg2) {
+		return new OpenGLCubeTexture(this, arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("aqv.uk(Lck;IIIZ[B)Lll;")
@@ -1084,12 +1084,12 @@ public final class class1127 extends GpuRenderer {
 
 	@ObfuscatedName("aqv.vn(Z)Llr;")
 	public final class330 method16085(boolean arg0) {
-		return new class919(this, arg0);
+		return new OpenGLVertexBuffer(this, arg0);
 	}
 
 	@ObfuscatedName("aqv.vc(Z)Lml;")
 	public final class360 method16067(boolean arg0) {
-		return new class928(this, DataType.field1646, arg0);
+		return new OpenGLIndexBuffer(this, DataType.field1646, arg0);
 	}
 
 	@ObfuscatedName("aqv.vf([Llk;)Llo;")
@@ -1099,12 +1099,12 @@ public final class class1127 extends GpuRenderer {
 
 	@ObfuscatedName("aqv.wn(ILlr;)V")
 	public void method16120(int arg0, class330 arg1) {
-		this.field12012[arg0] = (class919) arg1;
+		this.field12012[arg0] = (OpenGLVertexBuffer) arg1;
 	}
 
 	@ObfuscatedName("aqv.wa(Lml;)V")
 	public void method16102(class360 arg0) {
-		this.field12036 = (class928) arg0;
+		this.field12036 = (OpenGLIndexBuffer) arg0;
 		this.field12036.method7658();
 	}
 
@@ -1117,7 +1117,7 @@ public final class class1127 extends GpuRenderer {
 		boolean var6 = false;
 		for (int var7 = 0; var7 < var2.length; var7++) {
 			class345 var8 = var2[var7];
-			class919 var9 = this.field12012[var7];
+			OpenGLVertexBuffer var9 = this.field12012[var7];
 			int var10 = 0;
 			int var11 = var9.method16793();
 			long var12 = var9.getAddress();
@@ -1249,7 +1249,7 @@ public final class class1127 extends GpuRenderer {
 			var8 = arg5;
 		}
 		DataType var9 = arg0.method5832();
-		class928 var10 = (class928) arg0;
+		OpenGLIndexBuffer var10 = (OpenGLIndexBuffer) arg0;
 		var10.method7658();
 		OpenGL.glDrawElements(var7, var8, method19076(var9), var10.getAddress() + (long) (var9.field1652 * arg4));
 	}
@@ -1346,11 +1346,11 @@ public final class class1127 extends GpuRenderer {
 			OpenGL.glDeleteLists((int) var10.field6760, var10.field11442);
 		}
 		while (!this.field12004.method14164()) {
-			class532 var11 = this.field12004.method14154();
+			Node var11 = this.field12004.method14154();
 			OpenGL.glDeleteProgram((int) var11.field6760);
 		}
 		while (!this.field12005.method14164()) {
-			class532 var12 = this.field12005.method14154();
+			Node var12 = this.field12005.method14154();
 			OpenGL.glDeleteShader((int) var12.field6760);
 		}
 		while (!this.field12011.method14164()) {
@@ -1393,14 +1393,14 @@ public final class class1127 extends GpuRenderer {
 
 	@ObfuscatedName("aqv.ahp(J)V")
 	public final synchronized void method19075(long arg0) {
-		class532 var3 = new class532();
+		Node var3 = new Node();
 		var3.field6760 = arg0;
 		this.field12005.method14153(var3);
 	}
 
 	@ObfuscatedName("aqv.ahe(I)V")
 	public final synchronized void method19087(int arg0) {
-		class532 var2 = new class532();
+		Node var2 = new Node();
 		var2.field6760 = arg0;
 		this.field12004.method14153(var2);
 	}

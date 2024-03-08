@@ -60,7 +60,7 @@ public class class951 extends class1197 implements class514 {
 		if (var2 == null) {
 			return null;
 		}
-		class419 var3 = arg0.method2209();
+		Matrix4x3 var3 = arg0.method2209();
 		var3.method6292(this.method10533());
 		var3.method6315((float) this.field12452, 0.0F, (float) this.field12451);
 		class420 var4 = this.method10536();
@@ -94,7 +94,7 @@ public class class951 extends class1197 implements class514 {
 		if (var2 == null) {
 			return;
 		}
-		class419 var3 = this.method10533();
+		Matrix4x3 var3 = this.method10533();
 		class420 var4 = this.method10536();
 		int var5 = (int) var4.field4298.field4308 >> 9;
 		int var6 = (int) var4.field4298.field4313 >> 9;

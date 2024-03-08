@@ -3,15 +3,15 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ajl")
-public abstract class class968 extends class532 {
+public abstract class class968 extends Node {
 
 	@ObfuscatedName("ajl.k")
-	public final class849 field11270;
+	public final LegacyOpenGLRenderer field11270;
 
 	@ObfuscatedName("ajl.f")
 	public boolean field11271;
 
-	public class968(class849 arg0) {
+	public class968(LegacyOpenGLRenderer arg0) {
 		this.field11270 = arg0;
 	}
 

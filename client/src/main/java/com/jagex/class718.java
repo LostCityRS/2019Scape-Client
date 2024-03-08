@@ -11,10 +11,10 @@ public class class718 implements Iterator {
 	public IterableQueue field8490;
 
 	@ObfuscatedName("aar.n")
-	public class532 field8489;
+	public Node field8489;
 
 	@ObfuscatedName("aar.m")
-	public class532 field8488 = null;
+	public Node field8488 = null;
 
 	public class718(IterableQueue arg0) {
 		this.method14283(arg0);
@@ -33,13 +33,13 @@ public class class718 implements Iterator {
 	}
 
 	@ObfuscatedName("aar.z(I)Ltj;")
-	public class532 method14294() {
+	public Node method14294() {
 		this.method14284();
-		return (class532) this.next();
+		return (Node) this.next();
 	}
 
 	public Object next() {
-		class532 var1 = this.field8489;
+		Node var1 = this.field8489;
 		if (this.field8490.field8482 == var1) {
 			var1 = null;
 			this.field8489 = null;

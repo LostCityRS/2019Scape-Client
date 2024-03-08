@@ -102,7 +102,7 @@ public class class1235 extends class1200 {
 		if (var2 == null) {
 			return null;
 		}
-		class419 var3 = this.method10533();
+		Matrix4x3 var3 = this.method10533();
 		this.method19750(arg0, var2, var3);
 		class552 var4 = class552.method16749(false);
 		var2.method1813(var3, this.field11713[0], 0);
@@ -125,7 +125,7 @@ public class class1235 extends class1200 {
 	}
 
 	@ObfuscatedName("aur.w(Ldh;Ldo;Lou;B)V")
-	public void method19750(Renderer arg0, class116 arg1, class419 arg2) {
+	public void method19750(Renderer arg0, class116 arg1, Matrix4x3 arg2) {
 		arg1.method1689(arg2);
 		class128[] var4 = arg1.method1750();
 		class102[] var5 = arg1.method1765();

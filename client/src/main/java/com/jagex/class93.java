@@ -7,12 +7,12 @@ import jaggl.OpenGL;
 public class class93 {
 
 	@ObfuscatedName("cp.n")
-	public final class849 field1183;
+	public final LegacyOpenGLRenderer field1183;
 
 	@ObfuscatedName("cp.m")
 	public class68 field1182;
 
-	public class93(class849 arg0) {
+	public class93(LegacyOpenGLRenderer arg0) {
 		this.field1183 = arg0;
 	}
 
@@ -32,7 +32,7 @@ public class class93 {
 		if (!this.method1391()) {
 			return false;
 		}
-		class1118 var4 = this.field1183.field9877;
+		LegacyOpenGLFramebuffer var4 = this.field1183.field9877;
 		class828 var5 = new class828(this.field1183, TextureFormat.field1273, DataType.field1645, arg0.field9269, arg0.field9268);
 		boolean var6 = false;
 		this.field1183.method2142(var4);

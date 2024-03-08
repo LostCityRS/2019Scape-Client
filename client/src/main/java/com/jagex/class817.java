@@ -15,7 +15,7 @@ public class class817 extends class74 {
 	@ObfuscatedName("aeh.w")
 	public static final float[] field9296 = new float[4];
 
-	public class817(class849 arg0, class78 arg1) {
+	public class817(LegacyOpenGLRenderer arg0, class78 arg1) {
 		super(arg0);
 		this.field9295 = arg1;
 		this.field9297 = new class73(arg0, 2);

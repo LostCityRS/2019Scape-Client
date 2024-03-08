@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
 @ObfuscatedName("aqi")
-public class class1146 extends class968 {
+public class ColourRemappingFilter extends class968 {
 
 	@ObfuscatedName("aqi.w")
 	public static float[] field12183 = new float[] { 0.0F, 0.0F, 0.0F };
@@ -21,7 +21,7 @@ public class class1146 extends class968 {
 	@ObfuscatedName("aqi.q")
 	public class68[] field12185 = null;
 
-	public class1146(class849 arg0) {
+	public ColourRemappingFilter(LegacyOpenGLRenderer arg0) {
 		super(arg0);
 	}
 

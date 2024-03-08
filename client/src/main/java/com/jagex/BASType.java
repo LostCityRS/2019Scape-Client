@@ -99,7 +99,7 @@ public class BASType implements class757, ConfigType {
 	public int[][] field7347;
 
 	@ObfuscatedName("vr.ac")
-	public class419[] field7348;
+	public Matrix4x3[] field7348;
 
 	@ObfuscatedName("vr.ai")
 	public int[] field7349;
@@ -401,13 +401,13 @@ public class BASType implements class757, ConfigType {
 	}
 
 	@ObfuscatedName("vr.c(B)[Lou;")
-	public class419[] method9291() {
+	public Matrix4x3[] method9291() {
 		if (this.field7348 != null) {
 			return this.field7348;
 		} else if (this.field7357 == null) {
 			return null;
 		} else {
-			this.field7348 = new class419[this.field7357.length];
+			this.field7348 = new Matrix4x3[this.field7357.length];
 			for (int var1 = 0; var1 < this.field7357.length; var1++) {
 				int var2 = 0;
 				int var3 = 0;
@@ -424,7 +424,7 @@ public class BASType implements class757, ConfigType {
 					var7 = this.field7357[var1][5] << 3;
 				}
 				if (var2 != 0 || var3 != 0 || var4 != 0 || var5 != 0 || var6 != 0 || var7 != 0) {
-					class419 var8 = this.field7348[var1] = new class419();
+					Matrix4x3 var8 = this.field7348[var1] = new Matrix4x3();
 					if (var7 != 0) {
 						var8.method6307(0.0F, 0.0F, 1.0F, class417.method6277(var7));
 					}
@@ -476,7 +476,7 @@ public class BASType implements class757, ConfigType {
 		int var6 = 0;
 		Iterator var7 = var1.iterator();
 		while (var7.hasNext()) {
-			class532 var8 = (class532) var7.next();
+			Node var8 = (Node) var7.next();
 			var5[var6++] = (int) var8.field6760;
 		}
 		return var5;
@@ -485,7 +485,7 @@ public class BASType implements class757, ConfigType {
 	@ObfuscatedName("oi.s(ILaan;I)V")
 	public static final void method6205(int arg0, IterableMap arg1) {
 		if (arg0 != -1 && arg1.method14495((long) arg0) == null) {
-			arg1.method14501(new class532(), (long) arg0);
+			arg1.method14501(new Node(), (long) arg0);
 		}
 	}
 

@@ -13,7 +13,7 @@ public abstract class class1199 extends class1019 {
 	}
 
 	@ObfuscatedName("ast.gy([Lakf;S)I")
-	public int method18375(class973[] arg0) {
+	public int method18375(Light[] arg0) {
 		Vector3 var2 = this.method10536().field4298;
 		return this.method18362((int) var2.field4308 >> this.field11716.field6900, (int) var2.field4313 >> this.field11716.field6900, arg0);
 	}

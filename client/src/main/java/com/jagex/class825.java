@@ -9,12 +9,12 @@ public class class825 extends class85 implements class79 {
 	@ObfuscatedName("aex.p")
 	public int field9346;
 
-	public class825(class849 arg0, int arg1, byte[] arg2, int arg3, boolean arg4) {
+	public class825(LegacyOpenGLRenderer arg0, int arg1, byte[] arg2, int arg3, boolean arg4) {
 		super(arg0, 34962, arg2, arg3, arg4);
 		this.field9346 = arg1;
 	}
 
-	public class825(class849 arg0, int arg1, Buffer arg2, int arg3, boolean arg4) {
+	public class825(LegacyOpenGLRenderer arg0, int arg1, Buffer arg2, int arg3, boolean arg4) {
 		super(arg0, 34962, arg2, arg3, arg4);
 		this.field9346 = arg1;
 	}

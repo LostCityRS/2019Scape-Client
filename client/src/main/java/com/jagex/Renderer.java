@@ -41,7 +41,7 @@ public abstract class Renderer {
 	public Hashtable field1613 = new Hashtable();
 
 	@ObfuscatedName("dh.ae")
-	public final class840[] field1620 = new class840[4];
+	public final Framebuffer[] field1620 = new Framebuffer[4];
 
 	@ObfuscatedName("dh.ag")
 	public int field1615;
@@ -201,7 +201,7 @@ public abstract class Renderer {
 	}
 
 	@ObfuscatedName("dh.as(Lafq;B)V")
-	public final void method2142(class840 arg0) {
+	public final void method2142(Framebuffer arg0) {
 		if (this.field1616 >= 3) {
 			throw new RuntimeException();
 		}
@@ -215,7 +215,7 @@ public abstract class Renderer {
 	}
 
 	@ObfuscatedName("dh.at(Lafq;I)V")
-	public final void method2143(class840 arg0) {
+	public final void method2143(Framebuffer arg0) {
 		if (this.field1616 < 0 || this.field1620[this.field1616] != arg0) {
 			throw new RuntimeException();
 		}
@@ -283,7 +283,7 @@ public abstract class Renderer {
 	}
 
 	@ObfuscatedName("dh.ci(IILou;Loj;I)Z")
-	public boolean method2191(int arg0, int arg1, class419 arg2, class416 arg3) {
+	public boolean method2191(int arg0, int arg1, Matrix4x3 arg2, class416 arg3) {
 		return this.method2128(arg0, arg1, 0, 0, arg2, arg3);
 	}
 
@@ -315,8 +315,8 @@ public abstract class Renderer {
 	}
 
 	@ObfuscatedName("dh.dw(IIIIIF)Lakf;")
-	public class973 method2227(int arg0, int arg1, int arg2, int arg3, int arg4, float arg5) {
-		return new class973(arg0, arg1, arg2, arg3, arg4, arg5);
+	public Light method2227(int arg0, int arg1, int arg2, int arg3, int arg4, float arg5) {
+		return new Light(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@ObfuscatedName("dh.ee(FFFI)V")
@@ -451,7 +451,7 @@ public abstract class Renderer {
 	public abstract boolean method2127();
 
 	@ObfuscatedName("dh.cn(IIIILou;Loj;)Z")
-	public abstract boolean method2128(int arg0, int arg1, int arg2, int arg3, class419 arg4, class416 arg5);
+	public abstract boolean method2128(int arg0, int arg1, int arg2, int arg3, Matrix4x3 arg4, class416 arg5);
 
 	@ObfuscatedName("dh.b()Z")
 	public abstract boolean method2129();
@@ -472,7 +472,7 @@ public abstract class Renderer {
 	public abstract class841 method2144(Canvas arg0, int arg1, int arg2);
 
 	@ObfuscatedName("dh.am()Lafq;")
-	public abstract class840 method2145();
+	public abstract Framebuffer method2145();
 
 	@ObfuscatedName("dh.au(IILck;Ldg;I)Ldp;")
 	public abstract class130 method2146(int arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4);
@@ -544,7 +544,7 @@ public abstract class Renderer {
 	public abstract void method2189(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6);
 
 	@ObfuscatedName("dh.cv(Lou;Led;Loj;)V")
-	public abstract void method2193(class419 arg0, class141 arg1, class416 arg2);
+	public abstract void method2193(Matrix4x3 arg0, class141 arg1, class416 arg2);
 
 	@ObfuscatedName("dh.r()Z")
 	public abstract boolean method2194();
@@ -577,7 +577,7 @@ public abstract class Renderer {
 	public abstract Matrix4x4 method2208();
 
 	@ObfuscatedName("dh.cz()Lou;")
-	public abstract class419 method2209();
+	public abstract Matrix4x3 method2209();
 
 	@ObfuscatedName("dh.cj(Ldq;IIII)Ldo;")
 	public abstract class116 method2211(class120 arg0, int arg1, int arg2, int arg3, int arg4);
@@ -589,10 +589,10 @@ public abstract class Renderer {
 	public abstract class104 method2214(int arg0, int arg1, int[][] arg2, int[][] arg3, int arg4, int arg5, int arg6);
 
 	@ObfuscatedName("dh.do(Lou;)V")
-	public abstract void method2217(class419 arg0);
+	public abstract void method2217(Matrix4x3 arg0);
 
 	@ObfuscatedName("dh.dz()Lou;")
-	public abstract class419 method2218();
+	public abstract Matrix4x3 method2218();
 
 	@ObfuscatedName("dh.dv(Z)V")
 	public abstract void method2219(boolean arg0);
@@ -715,7 +715,7 @@ public abstract class Renderer {
 	public abstract void method2475(int arg0, int arg1);
 
 	@ObfuscatedName("dh.ds(I[Lakf;)V")
-	public abstract void method2491(int arg0, class973[] arg1);
+	public abstract void method2491(int arg0, Light[] arg1);
 
 	@ObfuscatedName("dh.ab()I")
 	public abstract int method2502();

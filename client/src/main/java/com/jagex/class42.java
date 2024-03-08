@@ -141,7 +141,7 @@ public class class42 {
 		for (int var19 = 0; var19 < var18.length; var19++) {
 			var18[var19] = 0;
 		}
-		class840 var20 = null;
+		Framebuffer var20 = null;
 		byte var21 = 0;
 		byte var22 = 0;
 		if (field720) {

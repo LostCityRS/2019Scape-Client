@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("apz")
-public abstract class class1119 extends class840 {
+public abstract class class1119 extends Framebuffer {
 
 	@ObfuscatedName("apz.n")
 	public GpuRenderer field11923;

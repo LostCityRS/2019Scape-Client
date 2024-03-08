@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("akf")
-public class class973 extends class532 {
+public class Light extends Node {
 
 	@ObfuscatedName("akf.k")
 	public Vector3 field11331 = new Vector3();
@@ -53,7 +53,7 @@ public class class973 extends class532 {
 	@ObfuscatedName("akf.x")
 	public int field11320;
 
-	public class973(int arg0, int arg1, int arg2, int arg3, int arg4, float arg5) {
+	public Light(int arg0, int arg1, int arg2, int arg3, int arg4, float arg5) {
 		this.field11331.method6491((float) arg0, (float) arg1, (float) arg2);
 		this.field11321 = arg3;
 		this.field11322 = arg4;

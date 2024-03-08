@@ -166,7 +166,7 @@ public class class550 {
 	public final float[] field6927 = new float[3];
 
 	@ObfuscatedName("tx.an")
-	public final class973[] field6950 = new class973[8];
+	public final Light[] field6950 = new Light[8];
 
 	@ObfuscatedName("tx.bf")
 	public final int field6951 = 1;
@@ -1293,7 +1293,7 @@ public class class550 {
 	}
 
 	@ObfuscatedName("tx.aa(Lalh;[Lakf;)V")
-	public void method8749(class1019 arg0, class973[] arg1) {
+	public void method8749(class1019 arg0, Light[] arg1) {
 		if (this.field6906) {
 			int var3 = arg0.method18375(arg1);
 			this.field6907.method2491(var3, arg1);
@@ -1412,7 +1412,7 @@ public class class550 {
 		if (this.field6953 >= 65253) {
 			return;
 		}
-		class973 var2 = arg0.field7003;
+		Light var2 = arg0.field7003;
 		this.field6926[this.field6953] = arg0;
 		this.field6956[this.field6953] = false;
 		this.field6953++;
@@ -1468,7 +1468,7 @@ public class class550 {
 			this.field6957.put(arg0.field6990, var16);
 		}
 		var16.add(arg0);
-		class973 var17 = (class973) this.field6958.get(arg0.field6990);
+		Light var17 = (Light) this.field6958.get(arg0.field6990);
 		if (var17 != null) {
 			arg0.field7003.method17618(var17.method17624());
 			arg0.field7003.method17620(var17.method17656(), var17.method17615());
@@ -1482,7 +1482,7 @@ public class class550 {
 		for (int var1 = 0; var1 < this.field6953; var1++) {
 			if (!this.field6956[var1]) {
 				class554 var2 = this.field6926[var1];
-				class973 var3 = var2.field7003;
+				Light var3 = var2.field7003;
 				int var4 = var2.field7006;
 				int var5 = var3.method17608() - this.field6924;
 				int var6 = (var5 * 2 >> this.field6900) + 1;

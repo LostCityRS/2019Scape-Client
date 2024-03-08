@@ -20,7 +20,7 @@ public abstract class class234 implements class329 {
 	}
 
 	@ObfuscatedName("hi.c(Laql;ILmq;)V")
-	public abstract void method4081(class1150 arg0, int arg1, class356 arg2);
+	public abstract void method4081(class1150 arg0, int arg1, BaseTexture arg2);
 
 	@ObfuscatedName("hi.n()Z")
 	public abstract boolean method4083();
@@ -56,7 +56,7 @@ public abstract class class234 implements class329 {
 	public abstract void method4096(int arg0, Matrix4x4 arg1);
 
 	@ObfuscatedName("hi.x(IILmq;)V")
-	public abstract void method4097(int arg0, int arg1, class356 arg2);
+	public abstract void method4097(int arg0, int arg1, BaseTexture arg2);
 
 	@ObfuscatedName("hi.d(Laql;Lpq;)V")
 	public abstract void method4101(class1150 arg0, Matrix4x4 arg1);

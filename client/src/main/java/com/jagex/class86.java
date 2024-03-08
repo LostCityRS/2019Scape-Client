@@ -7,12 +7,12 @@ import jaclib.memory.Buffer;
 public class class86 {
 
 	@ObfuscatedName("cl.e")
-	public final class849 field1127;
+	public final LegacyOpenGLRenderer field1127;
 
 	@ObfuscatedName("cl.n")
 	public Buffer field1128;
 
-	public class86(class849 arg0, byte[] arg1, int arg2) {
+	public class86(LegacyOpenGLRenderer arg0, byte[] arg1, int arg2) {
 		this.field1127 = arg0;
 		this.field1128 = this.field1127.field9876.method92(arg2, false);
 		if (arg1 != null) {
@@ -20,7 +20,7 @@ public class class86 {
 		}
 	}
 
-	public class86(class849 arg0, Buffer arg1) {
+	public class86(LegacyOpenGLRenderer arg0, Buffer arg1) {
 		this.field1127 = arg0;
 		this.field1128 = arg1;
 	}

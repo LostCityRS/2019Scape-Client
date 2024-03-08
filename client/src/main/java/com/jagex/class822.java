@@ -18,7 +18,7 @@ public class class822 extends class74 {
 	@ObfuscatedName("aeb.v")
 	public class813[] field9338;
 
-	public class822(class849 arg0) {
+	public class822(LegacyOpenGLRenderer arg0) {
 		super(arg0);
 		if (arg0.field9952) {
 			byte[][] var2 = new byte[6][16384];

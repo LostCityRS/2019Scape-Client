@@ -7,10 +7,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 @ObfuscatedName("agl")
-public class class888 extends class234 {
+public class OpenGLProgram extends class234 {
 
 	@ObfuscatedName("agl.l")
-	public class1127 field10371;
+	public OpenGLRenderer field10371;
 
 	@ObfuscatedName("agl.u")
 	public class890 field10385;
@@ -57,13 +57,13 @@ public class class888 extends class234 {
 	@ObfuscatedName("agl.a")
 	public String field10386;
 
-	public class888(class1127 arg0, class890 arg1, class233 arg2) {
+	public OpenGLProgram(OpenGLRenderer arg0, class890 arg1, class233 arg2) {
 		this(arg0, arg2);
 		this.field10385 = arg1;
 		this.field10371 = arg0;
 	}
 
-	public class888(class1127 arg0, class233 arg1) {
+	public OpenGLProgram(OpenGLRenderer arg0, class233 arg1) {
 		this.field10373 = 0;
 		this.field10374 = 0;
 		this.field10375 = 0;
@@ -272,7 +272,7 @@ public class class888 extends class234 {
 	}
 
 	@ObfuscatedName("agl.c(Laql;ILmq;)V")
-	public void method4081(class1150 arg0, int arg1, class356 arg2) {
+	public void method4081(class1150 arg0, int arg1, BaseTexture arg2) {
 		int var4 = ((class1221) arg0).method19681();
 		if (var4 == -1) {
 			return;
@@ -285,7 +285,7 @@ public class class888 extends class234 {
 			this.field10371.method16092(arg2);
 		} else {
 			OpenGL.glActiveTexture(arg1 + 33984);
-			OpenGL.glBindTexture(((class485) arg2).field4979, ((class485) arg2).field4974);
+			OpenGL.glBindTexture(((OpenGLBaseTexture) arg2).field4979, ((OpenGLBaseTexture) arg2).field4974);
 		}
 		if (this.field10384.get(var4) == null || (Integer) this.field10384.get(var4) != arg1) {
 			this.field10384.put(var4, arg1);
@@ -324,7 +324,7 @@ public class class888 extends class234 {
 	}
 
 	@ObfuscatedName("agl.x(IILmq;)V")
-	public void method4097(int arg0, int arg1, class356 arg2) {
+	public void method4097(int arg0, int arg1, BaseTexture arg2) {
 		this.field10371.method16038(arg1);
 		this.field10371.method16092(arg2);
 		OpenGL.glUniform1i(arg0, arg1);

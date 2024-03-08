@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class class1124 extends class845 {
 
 	@ObfuscatedName("apk.e")
-	public final class849 field11946;
+	public final LegacyOpenGLRenderer field11946;
 
 	@ObfuscatedName("apk.n")
 	public class813 field11947;
@@ -17,7 +17,7 @@ public class class1124 extends class845 {
 	@ObfuscatedName("apk.k")
 	public static final int[][] field11948 = new int[6][];
 
-	public class1124(class849 arg0, int arg1) {
+	public class1124(LegacyOpenGLRenderer arg0, int arg1) {
 		this.field11946 = arg0;
 		this.field11945 = arg1;
 	}

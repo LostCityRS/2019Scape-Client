@@ -9,7 +9,7 @@ public class class839 extends class110 {
 	public final GpuRenderer field9529;
 
 	@ObfuscatedName("aeq.n")
-	public class356 field9530;
+	public BaseTexture field9530;
 
 	public class839(GpuRenderer arg0, int[] arg1) {
 		this.field9529 = arg0;
@@ -22,7 +22,7 @@ public class class839 extends class110 {
 	}
 
 	@ObfuscatedName("aeq.e()Lmq;")
-	public class356 method15431() {
+	public BaseTexture method15431() {
 		return this.field9530;
 	}
 

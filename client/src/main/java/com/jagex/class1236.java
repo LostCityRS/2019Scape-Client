@@ -46,8 +46,8 @@ public class class1236 extends class1200 {
 		if (this.field12614.field6754 == null) {
 			return null;
 		}
-		class419 var2 = arg0.method2209();
-		class419 var3 = this.method10533();
+		Matrix4x3 var2 = arg0.method2209();
+		Matrix4x3 var3 = this.method10533();
 		class420 var4 = this.method10536();
 		var2.method6292(var3);
 		class551 var5 = this.field11716.field6928[this.field11717][(int) var4.field4298.field4308 >> 9][(int) var4.field4298.field4313 >> 9];

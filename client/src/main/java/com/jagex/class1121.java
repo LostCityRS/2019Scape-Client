@@ -9,7 +9,7 @@ import java.awt.*;
 public class class1121 extends class841 {
 
 	@ObfuscatedName("apt.e")
-	public final class849 field11934;
+	public final LegacyOpenGLRenderer field11934;
 
 	@ObfuscatedName("apt.n")
 	public final Canvas field11938;
@@ -32,11 +32,11 @@ public class class1121 extends class841 {
 	@ObfuscatedName("apt.u")
 	public boolean field11939;
 
-	public class1121(class849 arg0, Canvas arg1) {
+	public class1121(LegacyOpenGLRenderer arg0, Canvas arg1) {
 		this(arg0, arg1, arg0.field10022.prepareSurface(arg1));
 	}
 
-	public class1121(class849 arg0, Canvas arg1, long arg2) {
+	public class1121(LegacyOpenGLRenderer arg0, Canvas arg1, long arg2) {
 		this.field11932 = false;
 		this.field11939 = false;
 		this.field11934 = arg0;

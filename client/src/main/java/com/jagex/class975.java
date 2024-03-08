@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("akc")
-public class class975 extends class532 {
+public class class975 extends Node {
 
 	@ObfuscatedName("akc.f")
 	public static IterableQueue field11346 = new IterableQueue();

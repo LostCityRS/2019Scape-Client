@@ -24,7 +24,7 @@ public class class1113 extends class812 {
 	public final boolean field11903;
 
 	@ObfuscatedName("apr.bi(Lafa;Lck;Ldg;II)Lapr;")
-	public static class1113 method18934(class849 arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4) {
+	public static class1113 method18934(LegacyOpenGLRenderer arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4) {
 		if (arg0.field9998 || class783.method4918(arg3) && class783.method4918(arg4)) {
 			return new class1113(arg0, 3553, arg1, arg2, arg3, arg4);
 		} else if (arg0.field9965) {
@@ -35,7 +35,7 @@ public class class1113 extends class812 {
 	}
 
 	@ObfuscatedName("apr.bn(Lafa;IIZ[III)Lapr;")
-	public static class1113 method18931(class849 arg0, int arg1, int arg2, boolean arg3, int[] arg4, int arg5, int arg6) {
+	public static class1113 method18931(LegacyOpenGLRenderer arg0, int arg1, int arg2, boolean arg3, int[] arg4, int arg5, int arg6) {
 		if (arg0.field9998 || class783.method4918(arg1) && class783.method4918(arg2)) {
 			return new class1113(arg0, 3553, arg1, arg2, arg3, arg4, arg5, arg6);
 		} else if (arg0.field9965) {
@@ -46,7 +46,7 @@ public class class1113 extends class812 {
 	}
 
 	@ObfuscatedName("apr.bt(Lafa;Lck;Ldg;IIZ[BLck;)Lapr;")
-	public static class1113 method18932(class849 arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4, boolean arg5, byte[] arg6, TextureFormat arg7) {
+	public static class1113 method18932(LegacyOpenGLRenderer arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4, boolean arg5, byte[] arg6, TextureFormat arg7) {
 		if (arg0.field9998 || class783.method4918(arg3) && class783.method4918(arg4)) {
 			return new class1113(arg0, 3553, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		} else if (arg0.field9965) {
@@ -57,7 +57,7 @@ public class class1113 extends class812 {
 	}
 
 	@ObfuscatedName("apr.bq(Lafa;IIII)Lapr;")
-	public static class1113 method18930(class849 arg0, int arg1, int arg2, int arg3, int arg4) {
+	public static class1113 method18930(LegacyOpenGLRenderer arg0, int arg1, int arg2, int arg3, int arg4) {
 		if (arg0.field9998 || class783.method4918(arg3) && class783.method4918(arg4)) {
 			return new class1113(arg0, 3553, arg1, arg2, arg3, arg4, true);
 		} else if (arg0.field9965) {
@@ -67,7 +67,7 @@ public class class1113 extends class812 {
 		}
 	}
 
-	public class1113(class849 arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4, int arg5) {
+	public class1113(LegacyOpenGLRenderer arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4, int arg5) {
 		super(arg0, arg1, arg2, arg3, arg4, arg5);
 		this.field11900 = arg4;
 		this.field11902 = arg5;
@@ -83,7 +83,7 @@ public class class1113 extends class812 {
 		this.field11903 = false;
 	}
 
-	public class1113(class849 arg0, int arg1, int arg2, int arg3, boolean arg4, int[] arg5, int arg6, int arg7) {
+	public class1113(LegacyOpenGLRenderer arg0, int arg1, int arg2, int arg3, boolean arg4, int[] arg5, int arg6, int arg7) {
 		super(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, true);
 		this.field11900 = arg2;
 		this.field11902 = arg3;
@@ -99,7 +99,7 @@ public class class1113 extends class812 {
 		this.field11903 = false;
 	}
 
-	public class1113(class849 arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4, int arg5, boolean arg6, byte[] arg7, TextureFormat arg8) {
+	public class1113(LegacyOpenGLRenderer arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4, int arg5, boolean arg6, byte[] arg7, TextureFormat arg8) {
 		super(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, true);
 		this.field11900 = arg4;
 		this.field11902 = arg5;
@@ -115,7 +115,7 @@ public class class1113 extends class812 {
 		this.field11903 = false;
 	}
 
-	public class1113(class849 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6) {
+	public class1113(LegacyOpenGLRenderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6) {
 		super(arg0, arg1, arg2, arg3, arg4, arg5);
 		this.field11900 = arg4;
 		this.field11902 = arg5;
@@ -131,7 +131,7 @@ public class class1113 extends class812 {
 		this.field11903 = false;
 	}
 
-	public class1113(class849 arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4, int arg5, int arg6) {
+	public class1113(LegacyOpenGLRenderer arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4, int arg5, int arg6) {
 		super(arg0, 3553, arg1, arg2, arg5, arg6);
 		this.field11900 = arg3;
 		this.field11902 = arg4;
@@ -142,7 +142,7 @@ public class class1113 extends class812 {
 		this.method15312(false, false);
 	}
 
-	public class1113(class849 arg0, int arg1, int arg2, int arg3, int arg4, int[] arg5) {
+	public class1113(LegacyOpenGLRenderer arg0, int arg1, int arg2, int arg3, int arg4, int[] arg5) {
 		super(arg0, 3553, TextureFormat.field1273, DataType.field1645, arg3, arg4);
 		this.field11900 = arg1;
 		this.field11902 = arg2;
@@ -154,7 +154,7 @@ public class class1113 extends class812 {
 		this.method15312(false, false);
 	}
 
-	public class1113(class849 arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4, int arg5, int arg6, byte[] arg7, TextureFormat arg8) {
+	public class1113(LegacyOpenGLRenderer arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4, int arg5, int arg6, byte[] arg7, TextureFormat arg8) {
 		super(arg0, 3553, arg1, arg2, arg5, arg6);
 		this.field11900 = arg3;
 		this.field11902 = arg4;
@@ -166,7 +166,7 @@ public class class1113 extends class812 {
 		this.method15312(false, false);
 	}
 
-	public class1113(class849 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, boolean arg7) {
+	public class1113(LegacyOpenGLRenderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, boolean arg7) {
 		super(arg0, 3553, arg1, arg2, arg5, arg6);
 		this.field11900 = arg3;
 		this.field11902 = arg4;

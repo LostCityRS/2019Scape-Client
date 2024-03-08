@@ -7,7 +7,7 @@ import jaggl.OpenGL;
 public class class857 extends class140 {
 
 	@ObfuscatedName("afs.o")
-	public final class849 field10243;
+	public final LegacyOpenGLRenderer field10243;
 
 	@ObfuscatedName("afs.s")
 	public final class1113 field10241;
@@ -18,7 +18,7 @@ public class class857 extends class140 {
 	@ObfuscatedName("afs.q")
 	public final boolean field10240;
 
-	public class857(class849 arg0, class733 arg1, class136 arg2, boolean arg3) {
+	public class857(LegacyOpenGLRenderer arg0, class733 arg1, class136 arg2, boolean arg3) {
 		super(arg0, arg1);
 		this.field10243 = arg0;
 		int[] var5 = new int[this.field1667.field8572 * this.field1667.field8571];

@@ -32,7 +32,7 @@ public class StructType extends class986 implements ConfigType, class757 {
 		for (int var5 = 0; var5 < var3; var5++) {
 			boolean var6 = arg0.g1() == 1;
 			int var7 = arg0.g3();
-			class532 var8;
+			Node var8;
 			if (var6) {
 				var8 = new class984(arg0.gjstr());
 			} else {

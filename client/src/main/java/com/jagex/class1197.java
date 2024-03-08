@@ -15,7 +15,7 @@ public abstract class class1197 extends class1019 {
 	public int field12450 = 0;
 
 	@ObfuscatedName("asm.a")
-	public class973[] field12453 = new class973[4];
+	public Light[] field12453 = new Light[4];
 
 	public class1197(class550 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, class420 arg8) {
 		super(arg0, arg8);
@@ -33,7 +33,7 @@ public abstract class class1197 extends class1019 {
 	}
 
 	@ObfuscatedName("asm.gy([Lakf;S)I")
-	public int method18375(class973[] arg0) {
+	public int method18375(Light[] arg0) {
 		if (this.field8176) {
 			Vector3 var2 = this.method10536().field4298;
 			this.field12450 = this.method18362((int) var2.field4308 >> this.field11716.field6900, (int) var2.field4313 >> this.field11716.field6900, this.field12453);

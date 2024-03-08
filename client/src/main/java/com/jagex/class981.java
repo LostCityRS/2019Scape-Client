@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 import java.nio.ByteBuffer;
 
 @ObfuscatedName("akh")
-public class class981 extends class532 {
+public class class981 extends Node {
 
 	@ObfuscatedName("akh.k")
 	public final GpuRenderer field11409;

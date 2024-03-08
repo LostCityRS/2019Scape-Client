@@ -438,7 +438,7 @@ public abstract class class892 extends class1200 implements class273 {
 	}
 
 	@ObfuscatedName("ahm.b(Ldh;[Ldo;Lou;ZI)V")
-	public void method16576(Renderer arg0, class116[] arg1, class419 arg2, boolean arg3) {
+	public void method16576(Renderer arg0, class116[] arg1, Matrix4x3 arg2, boolean arg3) {
 		if (!arg3) {
 			int var5 = 0;
 			int var6 = 0;
@@ -911,7 +911,7 @@ public abstract class class892 extends class1200 implements class273 {
 			return false;
 		} else {
 			this.field10462 = arg0;
-			class676.method16465(this.field10461.field2151);
+			ScriptRunner.method16465(this.field10461.field2151);
 			return true;
 		}
 	}

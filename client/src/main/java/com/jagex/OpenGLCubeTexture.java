@@ -4,9 +4,9 @@ import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
 @ObfuscatedName("ail")
-public class class930 extends class485 implements class362 {
+public class OpenGLCubeTexture extends OpenGLBaseTexture implements GpuCubeTexture {
 
-	public class930(class1127 arg0, int arg1, boolean arg2, int[][] arg3) {
+	public OpenGLCubeTexture(OpenGLRenderer arg0, int arg1, boolean arg2, int[][] arg3) {
 		super(arg0, 34067, TextureFormat.field1273, DataType.field1645, arg1 * arg1 * 6, arg2);
 		for (int var5 = 0; var5 < 6; var5++) {
 			for (int var6 = 0; var6 < arg3[var5].length; var6++) {
@@ -21,7 +21,7 @@ public class class930 extends class485 implements class362 {
 			}
 		} else {
 			for (int var9 = 0; var9 < 6; var9++) {
-				OpenGL.glTexImage2Di(var9 + 34069, 0, class1127.method19077(this.field4973, this.field4977), arg1, arg1, 0, class1127.method19085(this.field4973), this.field4980.field12027, arg3[var9], 0);
+				OpenGL.glTexImage2Di(var9 + 34069, 0, OpenGLRenderer.method19077(this.field4973, this.field4977), arg1, arg1, 0, OpenGLRenderer.method19085(this.field4973), this.field4980.field12027, arg3[var9], 0);
 			}
 		}
 	}

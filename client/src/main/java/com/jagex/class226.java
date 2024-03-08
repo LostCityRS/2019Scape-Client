@@ -1150,7 +1150,7 @@ public class class226 {
 	}
 
 	@ObfuscatedName("hf.s(Ldh;Ldo;Lou;IB)V")
-	public void method3951(Renderer arg0, class116 arg1, class419 arg2, int arg3) {
+	public void method3951(Renderer arg0, class116 arg1, Matrix4x3 arg2, int arg3) {
 		arg1.method1689(arg2);
 		class128[] var5 = arg1.method1750();
 		class102[] var6 = arg1.method1765();
@@ -1398,7 +1398,7 @@ public class class226 {
 	@ObfuscatedName("hf.ac(II)V")
 	public void method3954(int arg0) {
 		if (this.field2333 != null) {
-			class532 var2 = this.field2333.method14495((long) arg0);
+			Node var2 = this.field2333.method14495((long) arg0);
 			if (var2 != null) {
 				var2.method8440();
 			}

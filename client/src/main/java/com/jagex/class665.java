@@ -21,7 +21,7 @@ public class class665 {
 	public boolean field8177 = true;
 
 	@ObfuscatedName("yq.w")
-	public class419 field8179;
+	public Matrix4x3 field8179;
 
 	@ObfuscatedName("yq.l")
 	public boolean field8175;
@@ -41,7 +41,7 @@ public class class665 {
 	public class665() {
 		new Matrix4x4();
 		new Matrix4x4();
-		this.field8179 = new class419();
+		this.field8179 = new Matrix4x3();
 		this.field8175 = true;
 		this.field8176 = true;
 		this.field8169 = null;
@@ -77,7 +77,7 @@ public class class665 {
 	}
 
 	@ObfuscatedName("yq.al()Lou;")
-	public final class419 method10533() {
+	public final Matrix4x3 method10533() {
 		if (this.field8175) {
 			this.field8175 = false;
 			this.field8179.method6294(this.method10536());

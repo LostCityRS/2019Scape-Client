@@ -19,7 +19,7 @@ public class class1193 extends SubInterface {
 		if (var1 == null) {
 			return false;
 		} else {
-			class676.method3661(class572.field7265, this.field11571, -1, var1, this.field12430);
+			ScriptRunner.method3661(class572.field7265, this.field11571, -1, var1, this.field12430);
 			return true;
 		}
 	}

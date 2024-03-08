@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.TimeZone;
 
 @ObfuscatedName("ym")
-public final class class676 {
+public final class ScriptRunner {
 
 	@ObfuscatedName("ym.e")
 	public static final TimeZone field8201 = TimeZone.getTimeZone("UTC");
@@ -44,7 +44,7 @@ public final class class676 {
 	@ObfuscatedName("ym.c")
 	public static int field8209 = 0;
 
-	public class676() throws Throwable {
+	public ScriptRunner() throws Throwable {
 		throw new Error();
 	}
 
@@ -93,7 +93,7 @@ public final class class676 {
 	public static void method10370(class996 arg0, int arg1) {
 		Object[] var2 = arg0.field11493;
 		int var3 = (Integer) var2[0];
-		class1185 var4 = class670.method5402(var3);
+		ClientScript var4 = class670.method5402(var3);
 		if (var4 == null) {
 			return;
 		}
@@ -179,7 +179,7 @@ public final class class676 {
 
 	@ObfuscatedName("iq.d(Luh;IILyf;I)V")
 	public static void method4374(class572 arg0, int arg1, int arg2, class677 arg3) {
-		class1185 var4 = class670.method9425(arg0, arg1, arg2);
+		ClientScript var4 = class670.method9425(arg0, arg1, arg2);
 		if (var4 == null) {
 			method9399();
 			return;
@@ -200,7 +200,7 @@ public final class class676 {
 
 	@ObfuscatedName("jf.c(ILjava/lang/String;II)V")
 	public static void method4654(int arg0, String arg1, int arg2) {
-		class1185 var3 = class670.method9425(class572.field7269, arg0, -1);
+		ClientScript var3 = class670.method9425(class572.field7269, arg0, -1);
 		if (var3 == null) {
 			return;
 		}
@@ -214,7 +214,7 @@ public final class class676 {
 
 	@ObfuscatedName("zj.r(ILcom/jagex/twitchtv/TwitchEvent;B)V")
 	public static void method13907(int arg0, TwitchEvent arg1) {
-		class1185 var2 = class670.method9425(class572.field7267, arg0, -1);
+		ClientScript var2 = class670.method9425(class572.field7267, arg0, -1);
 		if (var2 == null) {
 			return;
 		}
@@ -233,7 +233,7 @@ public final class class676 {
 	}
 
 	@ObfuscatedName("adv.v(Lasc;ILyf;I)V")
-	public static void method15248(class1185 arg0, int arg1, class677 arg2) {
+	public static void method15248(ClientScript arg0, int arg1, class677 arg2) {
 		arg2.field8226 = 0;
 		arg2.field8211 = 0;
 		arg2.field8220 = -1;
@@ -4839,7 +4839,7 @@ public final class class676 {
 		if (arg0.field8222 == 0) {
 			return;
 		}
-		class671 var1 = arg0.field8223[--arg0.field8222];
+		ScriptFrame var1 = arg0.field8223[--arg0.field8222];
 		arg0.field8239 = var1.field8190;
 		arg0.field8237 = arg0.field8239.field12369;
 		arg0.field8236 = arg0.field8239.field12367;
@@ -4927,7 +4927,7 @@ public final class class676 {
 	@ObfuscatedName("amy.av(Lyf;I)V")
 	public static final void method18422(class677 arg0) {
 		int var1 = arg0.field8236[arg0.field8220];
-		class1185 var2 = class670.method5402(var1);
+		ClientScript var2 = class670.method5402(var1);
 		if (var2 == null) {
 			throw new RuntimeException();
 		}
@@ -4946,7 +4946,7 @@ public final class class676 {
 		arg0.field8226 -= var2.field12372;
 		arg0.field8211 -= var2.field12374;
 		arg0.field8238 -= var2.field12364;
-		class671 var9 = new class671();
+		ScriptFrame var9 = new ScriptFrame();
 		var9.field8190 = arg0.field8239;
 		var9.field8189 = arg0.field8220;
 		var9.field8188 = arg0.field8213;
@@ -12215,11 +12215,11 @@ public final class class676 {
 		if (class1004.field11668 == null) {
 			return;
 		}
-		class532 var3 = class1004.field11668.method14495((long) var1);
+		Node var3 = class1004.field11668.method14495((long) var1);
 		if (var3 != null && !var2) {
 			var3.method8440();
 		} else if (var3 == null && var2) {
-			class532 var4 = new class532();
+			Node var4 = new Node();
 			class1004.field11668.method14501(var4, (long) var1);
 		}
 	}
@@ -12230,7 +12230,7 @@ public final class class676 {
 		if (class1004.field11668 == null) {
 			arg0.field8216[++arg0.field8226 - 1] = 0;
 		} else {
-			class532 var2 = class1004.field11668.method14495((long) var1);
+			Node var2 = class1004.field11668.method14495((long) var1);
 			arg0.field8216[++arg0.field8226 - 1] = var2 == null ? 0 : 1;
 		}
 	}
@@ -12243,11 +12243,11 @@ public final class class676 {
 		if (class1004.field11667 == null) {
 			return;
 		}
-		class532 var3 = class1004.field11667.method14495((long) var1);
+		Node var3 = class1004.field11667.method14495((long) var1);
 		if (var3 != null && !var2) {
 			var3.method8440();
 		} else if (var3 == null && var2) {
-			class532 var4 = new class532();
+			Node var4 = new Node();
 			class1004.field11667.method14501(var4, (long) var1);
 		}
 	}
@@ -12258,7 +12258,7 @@ public final class class676 {
 		if (class1004.field11667 == null) {
 			arg0.field8216[++arg0.field8226 - 1] = 0;
 		} else {
-			class532 var2 = class1004.field11667.method14495((long) var1);
+			Node var2 = class1004.field11667.method14495((long) var1);
 			arg0.field8216[++arg0.field8226 - 1] = var2 == null ? 0 : 1;
 		}
 	}

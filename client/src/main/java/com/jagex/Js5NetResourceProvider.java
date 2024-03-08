@@ -380,7 +380,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 		if (this.field10735 == null || this.method6853() == null) {
 			return;
 		}
-		for (class532 var1 = this.field10741.method14191(); var1 != null; var1 = this.field10741.method14161()) {
+		for (Node var1 = this.field10741.method14191(); var1 != null; var1 = this.field10741.method14161()) {
 			int var2 = (int) var1.field6760;
 			if (var2 < 0 || var2 >= this.field10729.field4392 || this.field10729.field4399[var2] == 0) {
 				var1.method8440();
@@ -406,7 +406,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 			}
 			if (this.field10738) {
 				boolean var1 = true;
-				for (class532 var2 = this.field10735.method14191(); var2 != null; var2 = this.field10735.method14161()) {
+				for (Node var2 = this.field10735.method14191(); var2 != null; var2 = this.field10735.method14161()) {
 					int var3 = (int) var2.field6760;
 					if (this.field10745[var3] == 0) {
 						this.method16848(var3, 1);
@@ -429,7 +429,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 							this.method16848(this.field10739, 1);
 						}
 						if (this.field10745[this.field10739] == 0) {
-							class532 var4 = new class532();
+							Node var4 = new Node();
 							var4.field6760 = (long) (this.field10739);
 							this.field10735.method14153(var4);
 							var1 = false;
@@ -443,7 +443,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 				}
 			} else if (this.field10725) {
 				boolean var5 = true;
-				for (class532 var6 = this.field10735.method14191(); var6 != null; var6 = this.field10735.method14161()) {
+				for (Node var6 = this.field10735.method14191(); var6 != null; var6 = this.field10735.method14161()) {
 					int var7 = (int) var6.field6760;
 					if (this.field10745[var7] != 1) {
 						this.method16848(var7, 2);
@@ -466,7 +466,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 							this.method16848(this.field10739, 2);
 						}
 						if (this.field10745[this.field10739] != 1) {
-							class532 var8 = new class532();
+							Node var8 = new Node();
 							var8.field6760 = (long) (this.field10739);
 							this.field10735.method14153(var8);
 							var5 = false;
@@ -515,7 +515,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 		if (this.field10729 == null) {
 			return 0;
 		} else if (this.field10738) {
-			class532 var1 = this.field10735.method14191();
+			Node var1 = this.field10735.method14191();
 			return var1 == null ? 0 : (int) var1.field6760;
 		} else {
 			return this.field10729.field4387;
@@ -539,12 +539,12 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 		if (this.field10723 == null) {
 			return;
 		}
-		for (class532 var2 = this.field10741.method14191(); var2 != null; var2 = this.field10741.method14161()) {
+		for (Node var2 = this.field10741.method14191(); var2 != null; var2 = this.field10741.method14161()) {
 			if (var2.field6760 == (long) arg0) {
 				return;
 			}
 		}
-		class532 var3 = new class532();
+		Node var3 = new Node();
 		var3.field6760 = arg0;
 		this.field10741.method14153(var3);
 	}

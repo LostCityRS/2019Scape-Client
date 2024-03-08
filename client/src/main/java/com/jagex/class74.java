@@ -6,9 +6,9 @@ import deob.ObfuscatedName;
 public abstract class class74 {
 
 	@ObfuscatedName("by.e")
-	public final class849 field1021;
+	public final LegacyOpenGLRenderer field1021;
 
-	public class74(class849 arg0) {
+	public class74(LegacyOpenGLRenderer arg0) {
 		this.field1021 = arg0;
 	}
 

@@ -9,7 +9,7 @@ public class class1125 extends class846 {
 	public final GpuRenderer field11950;
 
 	@ObfuscatedName("aps.n")
-	public class362 field11952;
+	public GpuCubeTexture field11952;
 
 	@ObfuscatedName("aps.m")
 	public final int field11951;
@@ -23,7 +23,7 @@ public class class1125 extends class846 {
 	}
 
 	@ObfuscatedName("aps.e()Lmr;")
-	public class362 method15652() {
+	public GpuCubeTexture method15652() {
 		if (this.field11952 == null) {
 			class143 var1 = this.field11950.field1596;
 			class118 var2 = this.field11950.field1597.method2043(this.field11951);

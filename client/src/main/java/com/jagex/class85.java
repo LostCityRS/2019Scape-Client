@@ -8,7 +8,7 @@ import jaggl.OpenGL;
 public abstract class class85 {
 
 	@ObfuscatedName("bs.m")
-	public final class849 field1123;
+	public final LegacyOpenGLRenderer field1123;
 
 	@ObfuscatedName("bs.k")
 	public final int field1120;
@@ -28,7 +28,7 @@ public abstract class class85 {
 	@ObfuscatedName("bs.z")
 	public static final int[] field1126 = new int[1];
 
-	public class85(class849 arg0, int arg1, byte[] arg2, int arg3, boolean arg4) {
+	public class85(LegacyOpenGLRenderer arg0, int arg1, byte[] arg2, int arg3, boolean arg4) {
 		this.field1123 = arg0;
 		this.field1120 = arg1;
 		this.field1118 = arg3;
@@ -40,7 +40,7 @@ public abstract class class85 {
 		this.field1123.field9880 += this.field1118;
 	}
 
-	public class85(class849 arg0, int arg1, Buffer arg2, int arg3, boolean arg4) {
+	public class85(LegacyOpenGLRenderer arg0, int arg1, Buffer arg2, int arg3, boolean arg4) {
 		this.field1123 = arg0;
 		this.field1120 = arg1;
 		this.field1118 = arg3;

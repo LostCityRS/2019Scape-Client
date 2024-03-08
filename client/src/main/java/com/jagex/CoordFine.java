@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("akt")
-public class CoordFine extends class532 implements Serializable {
+public class CoordFine extends Node implements Serializable {
 
 	@ObfuscatedName("akt.k")
 	public static CoordFine[] field11476 = new CoordFine[0];

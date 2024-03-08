@@ -295,8 +295,8 @@ public class class1130 extends class892 {
 		if (this.field12061 == null || !this.method19114(arg0, 2048)) {
 			return null;
 		}
-		class419 var2 = arg0.method2209();
-		class419 var3 = this.method10533();
+		Matrix4x3 var2 = arg0.method2209();
+		Matrix4x3 var3 = this.method10533();
 		class420 var4 = this.method10536();
 		int var5 = this.field10395.method316();
 		class551 var6 = this.field11716.field6928[this.field11717][(int) var4.field4298.field4308 >> 9][(int) var4.field4298.field4313 >> 9];
@@ -409,7 +409,7 @@ public class class1130 extends class892 {
 		if (this.field12061 == null || !this.field10449 && !this.method19114(arg0, 0)) {
 			return;
 		}
-		class419 var2 = arg0.method2209();
+		Matrix4x3 var2 = arg0.method2209();
 		var2.method6293(this.method10536());
 		var2.method6315(0.0F, -5.0F, 0.0F);
 		this.method16576(arg0, this.field10459, var2, this.field10449);
@@ -419,7 +419,7 @@ public class class1130 extends class892 {
 	}
 
 	@ObfuscatedName("aqk.hh(Ldh;Lou;Ldo;JJIJ)V")
-	public void method19113(Renderer arg0, class419 arg1, class116 arg2, long arg3, long arg4, int arg5, long arg6) {
+	public void method19113(Renderer arg0, Matrix4x3 arg1, class116 arg2, long arg3, long arg4, int arg5, long arg6) {
 		long var11 = arg3 * arg3 + arg4 * arg4;
 		if (var11 < 262144L || var11 > arg6) {
 			return;
@@ -595,7 +595,7 @@ public class class1130 extends class892 {
 		if (this.field12061 == null || !this.method19114(arg0, 131072)) {
 			return false;
 		}
-		class419 var4 = this.method10533();
+		Matrix4x3 var4 = this.method10533();
 		boolean var5 = false;
 		for (int var6 = 0; var6 < this.field10459.length; var6++) {
 			if (this.field10459[var6] != null && this.field10459[var6].field1298 && this.field10459[var6].method1725(arg1, arg2, var4, true, 0)) {

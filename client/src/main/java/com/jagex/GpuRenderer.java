@@ -63,16 +63,16 @@ public abstract class GpuRenderer extends Renderer {
 	public int field10117;
 
 	@ObfuscatedName("afc.bi")
-	public class419 field10200 = new class419();
+	public Matrix4x3 field10200 = new Matrix4x3();
 
 	@ObfuscatedName("afc.bn")
 	public Matrix4x4 field10056 = new Matrix4x4();
 
 	@ObfuscatedName("afc.bt")
-	public class419 field10201 = new class419();
+	public Matrix4x3 field10201 = new Matrix4x3();
 
 	@ObfuscatedName("afc.bq")
-	public class419 field10042 = new class419();
+	public Matrix4x3 field10042 = new Matrix4x3();
 
 	@ObfuscatedName("afc.bm")
 	public Matrix4x4 field10059 = new Matrix4x4();
@@ -84,7 +84,7 @@ public abstract class GpuRenderer extends Renderer {
 	public Matrix4x4 field10190 = new Matrix4x4();
 
 	@ObfuscatedName("afc.by")
-	public class419 field10062 = new class419();
+	public Matrix4x3 field10062 = new Matrix4x3();
 
 	@ObfuscatedName("afc.bu")
 	public Matrix4x4 field10063 = new Matrix4x4();
@@ -93,7 +93,7 @@ public abstract class GpuRenderer extends Renderer {
 	public static final Matrix4x4 field10064 = new Matrix4x4();
 
 	@ObfuscatedName("afc.bo")
-	public class419 field10065 = new class419();
+	public Matrix4x3 field10065 = new Matrix4x3();
 
 	@ObfuscatedName("afc.bz")
 	public Matrix4x4 field10066 = new Matrix4x4();
@@ -273,7 +273,7 @@ public abstract class GpuRenderer extends Renderer {
 	public float field10124 = -1.0F;
 
 	@ObfuscatedName("afc.dj")
-	public class973[] field10045;
+	public Light[] field10045;
 
 	@ObfuscatedName("afc.eo")
 	public int field10126;
@@ -297,7 +297,7 @@ public abstract class GpuRenderer extends Renderer {
 	public int field10177 = 0;
 
 	@ObfuscatedName("afc.el")
-	public class356[] field10093;
+	public BaseTexture[] field10093;
 
 	@ObfuscatedName("afc.ej")
 	public Matrix4x4[] field10162;
@@ -513,7 +513,7 @@ public abstract class GpuRenderer extends Renderer {
 	public Matrix4x4 field10208;
 
 	@ObfuscatedName("afc.hl")
-	public class419 field10209;
+	public Matrix4x3 field10209;
 
 	@ObfuscatedName("afc.hg")
 	public class361 field10100;
@@ -596,7 +596,7 @@ public abstract class GpuRenderer extends Renderer {
 		this.field10058 = new class844[8];
 		this.field10207 = new class844[8];
 		this.field10208 = new Matrix4x4();
-		this.field10209 = new class419();
+		this.field10209 = new Matrix4x3();
 		try {
 			this.field10041 = arg5;
 			this.field10180 = arg6;
@@ -632,7 +632,7 @@ public abstract class GpuRenderer extends Renderer {
 
 	@ObfuscatedName("afc.ru()V")
 	public final void method15969() {
-		this.field10093 = new class356[this.field10186];
+		this.field10093 = new BaseTexture[this.field10186];
 		this.field10162 = new Matrix4x4[this.field10186];
 		this.field10135 = new class352[this.field10186];
 		this.field10136 = new class355[this.field10186];
@@ -643,7 +643,7 @@ public abstract class GpuRenderer extends Renderer {
 			this.field10135[var1] = class352.field3372;
 			this.field10162[var1] = new Matrix4x4();
 		}
-		this.field10045 = new class973[this.field10094 - 2];
+		this.field10045 = new Light[this.field10094 - 2];
 		int[] var2 = new int[] { -1 };
 		this.field10140 = this.method16033(1, 1, false, var2, 0, 0);
 		var2[0] = -16777216;
@@ -905,7 +905,7 @@ public abstract class GpuRenderer extends Renderer {
 		}
 		this.method15973();
 		this.field10188.method5644();
-		for (class532 var1 = this.field10051.method14191(); var1 != null; var1 = this.field10051.method14161()) {
+		for (Node var1 = this.field10051.method14191(); var1 != null; var1 = this.field10051.method14161()) {
 			((class1149) var1).method19240();
 		}
 		class662.method14805(false, true);
@@ -1277,7 +1277,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.cz()Lou;")
-	public final class419 method2209() {
+	public final Matrix4x3 method2209() {
 		return this.field10209;
 	}
 
@@ -1292,7 +1292,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.sz()Lmr;")
-	public final class362 method15994() {
+	public final GpuCubeTexture method15994() {
 		return this.field10161 == null ? null : this.field10161.method15652();
 	}
 
@@ -1482,7 +1482,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.do(Lou;)V")
-	public final void method2217(class419 arg0) {
+	public final void method2217(Matrix4x3 arg0) {
 		this.field10201 = arg0;
 		this.field10059.method6609(this.field10201);
 		this.field10190.method6604(this.field10059);
@@ -1497,7 +1497,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.dz()Lou;")
-	public class419 method2218() {
+	public Matrix4x3 method2218() {
 		return this.field10201;
 	}
 
@@ -1540,7 +1540,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.tr()Lou;")
-	public class419 method16003() {
+	public Matrix4x3 method16003() {
 		if (class340.field3321 != this.field10050) {
 			return this.field10200;
 		}
@@ -1778,7 +1778,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.cn(IIIILou;Loj;)Z")
-	public boolean method2128(int arg0, int arg1, int arg2, int arg3, class419 arg4, class416 arg5) {
+	public boolean method2128(int arg0, int arg1, int arg2, int arg3, Matrix4x3 arg4, class416 arg5) {
 		Matrix4x4 var7 = this.field10066;
 		var7.method6609(arg4);
 		var7.method6720(this.field10145);
@@ -1786,7 +1786,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.cv(Lou;Led;Loj;)V")
-	public void method2193(class419 arg0, class141 arg1, class416 arg2) {
+	public void method2193(Matrix4x3 arg0, class141 arg1, class416 arg2) {
 		Matrix4x4 var4 = this.field10066;
 		var4.method6609(arg0);
 		var4.method6720(this.field10145);
@@ -1808,7 +1808,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.ds(I[Lakf;)V")
-	public final void method2491(int arg0, class973[] arg1) {
+	public final void method2491(int arg0, Light[] arg1) {
 		for (int var3 = 0; var3 < arg0; var3++) {
 			this.field10045[var3] = arg1[var3];
 		}
@@ -1916,7 +1916,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.up(Lmq;)V")
-	public final void method16092(class356 arg0) {
+	public final void method16092(BaseTexture arg0) {
 		if (this.field10093[this.field10177] == arg0) {
 			return;
 		}
@@ -2172,7 +2172,7 @@ public abstract class GpuRenderer extends Renderer {
 		int var8 = arg2 - 1;
 		int var9 = arg3 - 1;
 		byte var7 = 0;
-		if (this instanceof class1127) {
+		if (this instanceof OpenGLRenderer) {
 			var7 = -1;
 		}
 		if (this.field10172 && this.field10180 != 0) {
@@ -2452,7 +2452,7 @@ public abstract class GpuRenderer extends Renderer {
 	public abstract GpuTexture method16033(int arg0, int arg1, boolean arg2, int[] arg3, int arg4, int arg5);
 
 	@ObfuscatedName("afc.ut(IZ[[I)Lmr;")
-	public abstract class362 method16034(int arg0, boolean arg1, int[][] arg2);
+	public abstract GpuCubeTexture method16034(int arg0, boolean arg1, int[][] arg2);
 
 	@ObfuscatedName("afc.uo(ILmn;Z)V")
 	public abstract void method16043(int arg0, class351 arg1, boolean arg2);

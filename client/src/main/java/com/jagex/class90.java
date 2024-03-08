@@ -7,7 +7,7 @@ import jaggl.OpenGL;
 public class class90 {
 
 	@ObfuscatedName("ci.e")
-	public final class849 field1155;
+	public final LegacyOpenGLRenderer field1155;
 
 	@ObfuscatedName("ci.n")
 	public final class836 field1151;
@@ -33,7 +33,7 @@ public class class90 {
 	@ObfuscatedName("ci.z")
 	public class69[][] field1158;
 
-	public class90(class849 arg0, class836 arg1) {
+	public class90(LegacyOpenGLRenderer arg0, class836 arg1) {
 		this.field1155 = arg0;
 		this.field1151 = arg1;
 		this.field1152 = (this.field1151.field1235 * this.field1151.field1233 >> this.field1155.field9874) + 2;
@@ -94,7 +94,7 @@ public class class90 {
 					int var19 = 0;
 					int var20 = var18 << this.field1157;
 					int var21 = var18 + 1 << this.field1157;
-					class1189 var22 = this.field1155.field10016;
+					GpuPacket var22 = this.field1155.field10016;
 					var22.pos = 0;
 					for (int var23 = var16; var23 < var17; var23++) {
 						if (var23 - arg1 >= -arg2 && var23 - arg1 <= arg2) {

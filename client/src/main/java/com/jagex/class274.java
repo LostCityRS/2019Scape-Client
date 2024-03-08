@@ -417,7 +417,7 @@ public abstract class class274 {
 	}
 
 	@ObfuscatedName("je.ah(Lju;Lou;Lpq;IIB)V")
-	public void method4707(class270 arg0, class419 arg1, Matrix4x4 arg2, int arg3, int arg4) {
+	public void method4707(class270 arg0, Matrix4x3 arg1, Matrix4x4 arg2, int arg3, int arg4) {
 		if (!this.method4744()) {
 			return;
 		}

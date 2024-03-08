@@ -55,7 +55,7 @@ public class class947 extends class1196 implements class514 {
 		if (var2 == null) {
 			return null;
 		}
-		class419 var3 = this.method10533();
+		Matrix4x3 var3 = this.method10533();
 		class420 var4 = this.method10536();
 		class552 var5 = class552.method16749(this.field11132);
 		int var6 = (int) var4.field4298.field4308 >> 9;

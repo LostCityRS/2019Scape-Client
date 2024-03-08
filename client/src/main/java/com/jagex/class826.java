@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("aec")
 public class class826 extends class85 implements class98 {
 
-	public class826(class849 arg0, int arg1, byte[] arg2, int arg3, boolean arg4) {
+	public class826(LegacyOpenGLRenderer arg0, int arg1, byte[] arg2, int arg3, boolean arg4) {
 		super(arg0, 34963, arg2, arg3, arg4);
 	}
 

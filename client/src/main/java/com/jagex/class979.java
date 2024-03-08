@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 import java.util.BitSet;
 
 @ObfuscatedName("akr")
-public class class979 extends class532 {
+public class class979 extends Node {
 
 	@ObfuscatedName("akr.k")
 	public boolean field11397;

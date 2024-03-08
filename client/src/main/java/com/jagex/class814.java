@@ -9,12 +9,12 @@ public class class814 extends class70 {
 	@ObfuscatedName("aew.s")
 	public final int field9280;
 
-	public class814(class849 arg0, TextureFormat arg1, DataType arg2, int arg3, byte[] arg4, TextureFormat arg5) {
+	public class814(LegacyOpenGLRenderer arg0, TextureFormat arg1, DataType arg2, int arg3, byte[] arg4, TextureFormat arg5) {
 		super(arg0, 3552, arg1, arg2, arg3, false);
 		this.field9280 = arg3;
 		this.field1006.method15777(this);
 		OpenGL.glPixelStorei(3317, 1);
-		OpenGL.glTexImage1Dub(this.field1009, 0, class849.method15799(this.field1002, this.field1010), this.field9280, 0, class849.method15899(arg5), 5121, arg4, 0);
+		OpenGL.glTexImage1Dub(this.field1009, 0, LegacyOpenGLRenderer.method15799(this.field1002, this.field1010), this.field9280, 0, LegacyOpenGLRenderer.method15899(arg5), 5121, arg4, 0);
 		OpenGL.glPixelStorei(3317, 4);
 		this.method1082(true);
 	}

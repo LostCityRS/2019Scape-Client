@@ -10,13 +10,13 @@ public class class71 {
 	public static final int[] field1017 = new int[2];
 
 	@ObfuscatedName("bm.k")
-	public final class849 field1018;
+	public final LegacyOpenGLRenderer field1018;
 
 	@ObfuscatedName("bm.f")
 	public final int field1019;
 
 	@ObfuscatedName("bm.e(Lafa;ILjava/lang/String;)Lbm;")
-	public static class71 method1120(class849 arg0, int arg1, String arg2) {
+	public static class71 method1120(LegacyOpenGLRenderer arg0, int arg1, String arg2) {
 		int var3 = OpenGL.glCreateShader(arg1);
 		OpenGL.glShaderSource(var3, arg2);
 		OpenGL.glCompileShader(var3);
@@ -41,7 +41,7 @@ public class class71 {
 		return new class71(arg0, var3, arg1);
 	}
 
-	public class71(class849 arg0, int arg1, int arg2) {
+	public class71(LegacyOpenGLRenderer arg0, int arg1, int arg2) {
 		this.field1018 = arg0;
 		this.field1019 = arg1;
 	}

@@ -73,7 +73,7 @@ public abstract class class916 extends class324 {
 
 	public class916(GpuRenderer arg0) {
 		super(arg0);
-		new class419();
+		new Matrix4x3();
 		this.field10611 = new Matrix4x4[this.field3233.field10186];
 		for (int var2 = 0; var2 < this.field3233.field10186; var2++) {
 			this.field10611[var2] = new Matrix4x4();
@@ -214,7 +214,7 @@ public abstract class class916 extends class324 {
 	}
 
 	@ObfuscatedName("ahi.t(ILou;)V")
-	public void method16767(int arg0, class419 arg1) {
+	public void method16767(int arg0, Matrix4x3 arg1) {
 		if (this.field10593 == null) {
 			return;
 		}
@@ -229,7 +229,7 @@ public abstract class class916 extends class324 {
 	}
 
 	@ObfuscatedName("ahi.ae(ILou;)V")
-	public void method16781(int arg0, class419 arg1) {
+	public void method16781(int arg0, Matrix4x3 arg1) {
 		if (this.field10594 != null) {
 			float[] var3 = new float[] { this.field3233.field10114[0], this.field3233.field10114[1], this.field3233.field10114[2] };
 			arg1.method6321(var3);
@@ -271,7 +271,7 @@ public abstract class class916 extends class324 {
 	}
 
 	@ObfuscatedName("ahi.al(Lou;)V")
-	public void method16771(class419 arg0) {
+	public void method16771(Matrix4x3 arg0) {
 		Matrix4x4 var2 = this.field3233.field10066;
 		var2.method6609(arg0);
 		int var3 = this.field10587.method4212();
@@ -295,7 +295,7 @@ public abstract class class916 extends class324 {
 
 	@ObfuscatedName("ahi.l()V")
 	public void method5421() {
-		this.method16771(class419.field4282);
+		this.method16771(Matrix4x3.field4282);
 	}
 
 	@ObfuscatedName("ahi.ac(I)V")

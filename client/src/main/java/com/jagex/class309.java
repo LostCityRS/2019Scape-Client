@@ -165,7 +165,7 @@ public class class309 {
 		if (this.field3115 == null) {
 			return null;
 		} else {
-			class532 var2 = this.field3115.method14495((long) arg0);
+			Node var2 = this.field3115.method14495((long) arg0);
 			return var2 != null && var2 instanceof class988 ? Integer.valueOf(((class988) var2).field11442) : null;
 		}
 	}
@@ -175,7 +175,7 @@ public class class309 {
 		if (this.field3115 == null) {
 			return null;
 		} else {
-			class532 var2 = this.field3115.method14495((long) arg0);
+			Node var2 = this.field3115.method14495((long) arg0);
 			return var2 != null && var2 instanceof class987 ? Long.valueOf(((class987) var2).field11441) : null;
 		}
 	}
@@ -185,7 +185,7 @@ public class class309 {
 		if (this.field3115 == null) {
 			return null;
 		} else {
-			class532 var2 = this.field3115.method14495((long) arg0);
+			Node var2 = this.field3115.method14495((long) arg0);
 			return var2 != null && var2 instanceof class984 ? (String) ((class984) var2).field11436 : null;
 		}
 	}
@@ -386,7 +386,7 @@ public class class309 {
 		if (this.field3115 == null) {
 			this.field3115 = new IterableMap(4);
 		} else {
-			class532 var3 = this.field3115.method14495((long) arg0);
+			Node var3 = this.field3115.method14495((long) arg0);
 			if (var3 != null) {
 				if (var3 instanceof class988) {
 					class988 var4 = (class988) var3;
@@ -413,7 +413,7 @@ public class class309 {
 		if (this.field3115 == null) {
 			this.field3115 = new IterableMap(4);
 		} else {
-			class532 var10 = this.field3115.method14495((long) arg0);
+			Node var10 = this.field3115.method14495((long) arg0);
 			if (var10 != null) {
 				if (var10 instanceof class988) {
 					class988 var11 = (class988) var10;
@@ -436,7 +436,7 @@ public class class309 {
 		if (this.field3115 == null) {
 			this.field3115 = new IterableMap(4);
 		} else {
-			class532 var4 = this.field3115.method14495((long) arg0);
+			Node var4 = this.field3115.method14495((long) arg0);
 			if (var4 != null) {
 				if (var4 instanceof class987) {
 					class987 var5 = (class987) var4;
@@ -463,7 +463,7 @@ public class class309 {
 		if (this.field3115 == null) {
 			this.field3115 = new IterableMap(4);
 		} else {
-			class532 var3 = this.field3115.method14495((long) arg0);
+			Node var3 = this.field3115.method14495((long) arg0);
 			if (var3 != null) {
 				if (var3 instanceof class984) {
 					class984 var4 = (class984) var3;

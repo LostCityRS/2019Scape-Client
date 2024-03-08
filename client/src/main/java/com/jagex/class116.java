@@ -919,7 +919,7 @@ public abstract class class116 {
 	public abstract void method1686(class116 arg0, int arg1, int arg2, int arg3, boolean arg4);
 
 	@ObfuscatedName("do.by(Lou;)V")
-	public abstract void method1689(class419 arg0);
+	public abstract void method1689(Matrix4x3 arg0);
 
 	@ObfuscatedName("do.u(I)V")
 	public abstract void method1690(int arg0);
@@ -976,7 +976,7 @@ public abstract class class116 {
 	public abstract void method1721(int arg0, int arg1, int arg2, int arg3);
 
 	@ObfuscatedName("do.av(IILou;ZI)Z")
-	public abstract boolean method1725(int arg0, int arg1, class419 arg2, boolean arg3, int arg4);
+	public abstract boolean method1725(int arg0, int arg1, Matrix4x3 arg2, boolean arg3, int arg4);
 
 	@ObfuscatedName("do.ao(Lara;)Lara;")
 	public abstract class1175 method1726(class1175 arg0);
@@ -1033,7 +1033,7 @@ public abstract class class116 {
 	public abstract class102[] method1765();
 
 	@ObfuscatedName("do.aq(Lou;IZ)V")
-	public abstract void method1771(class419 arg0, int arg1, boolean arg2);
+	public abstract void method1771(Matrix4x3 arg0, int arg1, boolean arg2);
 
 	@ObfuscatedName("do.l(BIZ)Ldo;")
 	public abstract class116 method1773(byte arg0, int arg1, boolean arg2);
@@ -1051,7 +1051,7 @@ public abstract class class116 {
 	public abstract boolean method1812();
 
 	@ObfuscatedName("do.ax(Lou;Led;I)V")
-	public abstract void method1813(class419 arg0, class141 arg1, int arg2);
+	public abstract void method1813(Matrix4x3 arg0, class141 arg1, int arg2);
 
 	@ObfuscatedName("do.p()V")
 	public abstract void method1816();

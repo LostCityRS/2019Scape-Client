@@ -3,16 +3,16 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("tj")
-public class class532 {
+public class Node {
 
 	@ObfuscatedName("tj.e")
 	public long field6760;
 
 	@ObfuscatedName("tj.n")
-	public class532 field6761;
+	public Node field6761;
 
 	@ObfuscatedName("tj.m")
-	public class532 field6762;
+	public Node field6762;
 
 	@ObfuscatedName("tj.o(I)V")
 	public void method8440() {

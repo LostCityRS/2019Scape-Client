@@ -180,7 +180,7 @@ public class QuestType implements ConfigType {
 			for (int var19 = 0; var19 < var17; var19++) {
 				boolean var20 = arg0.g1() == 1;
 				int var21 = arg0.g3();
-				class532 var22;
+				Node var22;
 				if (var20) {
 					var22 = new class984(arg0.gjstr());
 				} else {

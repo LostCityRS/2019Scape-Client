@@ -12,7 +12,7 @@ public class class816 extends class74 {
 	@ObfuscatedName("aez.f")
 	public boolean field9294 = false;
 
-	public class816(class849 arg0) {
+	public class816(LegacyOpenGLRenderer arg0) {
 		super(arg0);
 		if (arg0.field9952) {
 			this.field9291 = new class73(arg0, 2);

@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("asc")
-public class class1185 extends class986 {
+public class ClientScript extends class986 {
 
 	@ObfuscatedName("asc.l")
 	public class572 field12373;
@@ -45,7 +45,7 @@ public class class1185 extends class986 {
 	@ObfuscatedName("asc.x")
 	public final class151 field12376;
 
-	public class1185(Packet arg0, class151 arg1) {
+	public ClientScript(Packet arg0, class151 arg1) {
 		this.field12376 = arg1;
 		int var3 = this.method19494(arg0);
 		int var4 = 0;

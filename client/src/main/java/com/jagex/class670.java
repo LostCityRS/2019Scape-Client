@@ -19,8 +19,8 @@ public class class670 {
 	}
 
 	@ObfuscatedName("lv.n(II)Lasc;")
-	public static class1185 method5402(int arg0) {
-		class1185 var1 = (class1185) field8187.method2966((long) arg0);
+	public static ClientScript method5402(int arg0) {
+		ClientScript var1 = (ClientScript) field8187.method2966((long) arg0);
 		if (var1 != null) {
 			return var1;
 		}
@@ -28,7 +28,7 @@ public class class670 {
 		if (var2 == null || var2.length <= 1) {
 			return null;
 		}
-		class1185 var3;
+		ClientScript var3;
 		try {
 			var3 = method2817(var2);
 		} catch (Exception var5) {
@@ -39,23 +39,23 @@ public class class670 {
 	}
 
 	@ObfuscatedName("vs.m(Luh;IIS)Lasc;")
-	public static class1185 method9425(class572 arg0, int arg1, int arg2) {
+	public static ClientScript method9425(class572 arg0, int arg1, int arg2) {
 		int var3 = arg0.field7271 | arg1 << 10;
-		class1185 var4 = (class1185) field8187.method2966((long) var3 << 16);
+		ClientScript var4 = (ClientScript) field8187.method2966((long) var3 << 16);
 		if (var4 != null) {
 			return var4;
 		}
 		byte[] var5 = Statics.field5010.method6894(Statics.field5010.method6903(var3));
 		if (var5 == null) {
 			int var8 = arg0.field7271 | arg2 + 65536 << 10;
-			class1185 var9 = (class1185) field8187.method2966((long) var8 << 16);
+			ClientScript var9 = (ClientScript) field8187.method2966((long) var8 << 16);
 			if (var9 != null) {
 				return var9;
 			}
 			byte[] var10 = Statics.field5010.method6894(Statics.field5010.method6903(var8));
 			if (var10 == null) {
 				int var13 = arg0.field7271 | 0x3FFFC00;
-				class1185 var14 = (class1185) field8187.method2966((long) var13 << 16);
+				ClientScript var14 = (ClientScript) field8187.method2966((long) var13 << 16);
 				if (var14 != null) {
 					return var14;
 				}
@@ -65,7 +65,7 @@ public class class670 {
 				} else if (var15.length <= 1) {
 					return null;
 				} else {
-					class1185 var16;
+					ClientScript var16;
 					try {
 						var16 = method2817(var15);
 					} catch (Exception var20) {
@@ -78,7 +78,7 @@ public class class670 {
 			} else if (var10.length <= 1) {
 				return null;
 			} else {
-				class1185 var11;
+				ClientScript var11;
 				try {
 					var11 = method2817(var10);
 				} catch (Exception var19) {
@@ -91,7 +91,7 @@ public class class670 {
 		} else if (var5.length <= 1) {
 			return null;
 		} else {
-			class1185 var6;
+			ClientScript var6;
 			try {
 				var6 = method2817(var5);
 			} catch (Exception var18) {
@@ -104,7 +104,7 @@ public class class670 {
 	}
 
 	@ObfuscatedName("ek.k([BS)Lasc;")
-	public static class1185 method2817(byte[] arg0) {
-		return new class1185(new Packet(arg0), Statics.field4626);
+	public static ClientScript method2817(byte[] arg0) {
+		return new ClientScript(new Packet(arg0), Statics.field4626);
 	}
 }

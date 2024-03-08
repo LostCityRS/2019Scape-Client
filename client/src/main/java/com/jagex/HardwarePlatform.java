@@ -7,7 +7,7 @@ import jaclib.hardware_info.HardwareInfo;
 import java.util.HashMap;
 
 @ObfuscatedName("aly")
-public class HardwarePlatform extends class532 {
+public class HardwarePlatform extends Node {
 
 	@ObfuscatedName("aly.z")
 	public int field11616;

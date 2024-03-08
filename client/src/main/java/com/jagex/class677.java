@@ -45,7 +45,7 @@ public class class677 {
 	public int field8222 = 0;
 
 	@ObfuscatedName("yf.r")
-	public class671[] field8223 = new class671[50];
+	public ScriptFrame[] field8223 = new ScriptFrame[50];
 
 	@ObfuscatedName("yf.v")
 	public class678 field8217 = new class678();
@@ -96,5 +96,5 @@ public class class677 {
 	public int field8220 = -1;
 
 	@ObfuscatedName("yf.al")
-	public class1185 field8239;
+	public ClientScript field8239;
 }

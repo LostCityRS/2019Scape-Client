@@ -27,7 +27,7 @@ public abstract class class1200 extends class1019 {
 	public int field12466;
 
 	@ObfuscatedName("ash.t")
-	public class973[] field12473;
+	public Light[] field12473;
 
 	public class1200(class550 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, boolean arg10, byte arg11) {
 		this(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, (class420) null);
@@ -36,7 +36,7 @@ public abstract class class1200 extends class1019 {
 	public class1200(class550 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, boolean arg10, byte arg11, class420 arg12) {
 		super(arg0, arg12);
 		this.field12466 = 0;
-		this.field12473 = new class973[4];
+		this.field12473 = new Light[4];
 		this.field11717 = (byte) arg1;
 		this.field11714 = (byte) arg2;
 		if (arg12 != null) {
@@ -59,7 +59,7 @@ public abstract class class1200 extends class1019 {
 	}
 
 	@ObfuscatedName("ash.gy([Lakf;S)I")
-	public int method18375(class973[] arg0) {
+	public int method18375(Light[] arg0) {
 		if (this.field8176) {
 			this.field12466 = 0;
 			int var2 = Math.max(0, this.field12471);

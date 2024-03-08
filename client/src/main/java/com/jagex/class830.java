@@ -10,7 +10,7 @@ public class class830 extends Sprite {
 	public final class1113 field9396;
 
 	@ObfuscatedName("aei.n")
-	public final class849 field9399;
+	public final LegacyOpenGLRenderer field9399;
 
 	@ObfuscatedName("aei.m")
 	public class1113 field9393;
@@ -33,17 +33,17 @@ public class class830 extends Sprite {
 	@ObfuscatedName("aei.z")
 	public int field9397 = 0;
 
-	public class830(class849 arg0, int arg1, int arg2, boolean arg3) {
+	public class830(LegacyOpenGLRenderer arg0, int arg1, int arg2, boolean arg3) {
 		this.field9399 = arg0;
 		this.field9396 = class1113.method18934(arg0, arg3 ? TextureFormat.field1273 : TextureFormat.field1271, DataType.field1645, arg1, arg2);
 	}
 
-	public class830(class849 arg0, int arg1, int arg2, int arg3, int arg4) {
+	public class830(LegacyOpenGLRenderer arg0, int arg1, int arg2, int arg3, int arg4) {
 		this.field9399 = arg0;
 		this.field9396 = class1113.method18930(arg0, arg1, arg2, arg3, arg4);
 	}
 
-	public class830(class849 arg0, int arg1, int arg2, int[] arg3, int arg4, int arg5) {
+	public class830(LegacyOpenGLRenderer arg0, int arg1, int arg2, int[] arg3, int arg4, int arg5) {
 		this.field9399 = arg0;
 		this.field9396 = class1113.method18931(arg0, arg1, arg2, false, arg3, arg5, arg4);
 	}

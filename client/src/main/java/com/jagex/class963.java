@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ajw")
-public class class963 extends class532 {
+public class class963 extends Node {
 
 	@ObfuscatedName("ajw.k")
 	public int field11251 = Integer.MAX_VALUE;

@@ -12,16 +12,16 @@ public class class812 extends class70 {
 	@ObfuscatedName("adt.y")
 	public final int field9271;
 
-	public class812(class849 arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4, int arg5) {
+	public class812(LegacyOpenGLRenderer arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4, int arg5) {
 		super(arg0, arg1, arg2, arg3, arg4 * arg5, false);
 		this.field9272 = arg4;
 		this.field9271 = arg5;
 		this.field1006.method15777(this);
-		OpenGL.glTexImage2Dub(this.field1009, 0, class849.method15799(this.field1002, this.field1010), arg4, arg5, 0, class849.method15899(this.field1002), 5121, null, 0);
+		OpenGL.glTexImage2Dub(this.field1009, 0, LegacyOpenGLRenderer.method15799(this.field1002, this.field1010), arg4, arg5, 0, LegacyOpenGLRenderer.method15899(this.field1002), 5121, null, 0);
 		this.method1082(true);
 	}
 
-	public class812(class849 arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+	public class812(LegacyOpenGLRenderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		super(arg0, arg1, TextureFormat.field1271, DataType.field1645, arg4 * arg5, false);
 		this.field9272 = arg4;
 		this.field9271 = arg5;
@@ -29,13 +29,13 @@ public class class812 extends class70 {
 		class113 var7 = this.field1006.method2135();
 		if (var7 != null) {
 			int var8 = var7.method1628() - (arg3 + arg5);
-			int var9 = class849.method15799(this.field1002, this.field1010);
+			int var9 = LegacyOpenGLRenderer.method15799(this.field1002, this.field1010);
 			OpenGL.glCopyTexImage2D(this.field1009, 0, var9, arg2, var8, arg4, arg5, 0);
 		}
 		this.method1082(true);
 	}
 
-	public class812(class849 arg0, int arg1, int arg2, int arg3, boolean arg4, int[] arg5, int arg6, int arg7, boolean arg8) {
+	public class812(LegacyOpenGLRenderer arg0, int arg1, int arg2, int arg3, boolean arg4, int[] arg5, int arg6, int arg7, boolean arg8) {
 		super(arg0, arg1, TextureFormat.field1273, DataType.field1645, arg2 * arg3, arg4);
 		this.field9272 = arg2;
 		this.field9271 = arg3;
@@ -52,18 +52,18 @@ public class class812 extends class70 {
 		}
 		this.field1006.method15777(this);
 		if (this.field1009 != 34037 && arg4 && arg6 == 0 && arg7 == 0) {
-			method1109(this.field1009, class849.method15799(this.field1002, this.field1010), this.field9272, this.field9271, 32993, this.field1006.field9862, arg5);
+			method1109(this.field1009, LegacyOpenGLRenderer.method15799(this.field1002, this.field1010), this.field9272, this.field9271, 32993, this.field1006.field9862, arg5);
 			this.method1118(true);
 		} else {
 			OpenGL.glPixelStorei(3314, arg6);
-			OpenGL.glTexImage2Di(this.field1009, 0, class849.method15799(this.field1002, this.field1010), this.field9272, this.field9271, 0, 32993, this.field1006.field9862, arg5, arg7 * 4);
+			OpenGL.glTexImage2Di(this.field1009, 0, LegacyOpenGLRenderer.method15799(this.field1002, this.field1010), this.field9272, this.field9271, 0, 32993, this.field1006.field9862, arg5, arg7 * 4);
 			OpenGL.glPixelStorei(3314, 0);
 			this.method1118(false);
 		}
 		this.method1082(true);
 	}
 
-	public class812(class849 arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4, int arg5, boolean arg6, byte[] arg7, TextureFormat arg8, boolean arg9) {
+	public class812(LegacyOpenGLRenderer arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4, int arg5, boolean arg6, byte[] arg7, TextureFormat arg8, boolean arg9) {
 		super(arg0, arg1, arg2, arg3, arg4 * arg5, arg6);
 		this.field9272 = arg4;
 		this.field9271 = arg5;
@@ -81,26 +81,26 @@ public class class812 extends class70 {
 		this.field1006.method15777(this);
 		OpenGL.glPixelStorei(3317, 1);
 		if (arg6 && this.field1009 != 34037) {
-			method1107(arg1, class849.method15799(this.field1002, this.field1010), arg4, arg5, arg8, arg7);
+			method1107(arg1, LegacyOpenGLRenderer.method15799(this.field1002, this.field1010), arg4, arg5, arg8, arg7);
 			this.method1118(true);
 		} else {
-			OpenGL.glTexImage2Dub(this.field1009, 0, class849.method15799(this.field1002, this.field1010), this.field9272, this.field9271, 0, class849.method15899(arg8), 5121, arg7, 0);
+			OpenGL.glTexImage2Dub(this.field1009, 0, LegacyOpenGLRenderer.method15799(this.field1002, this.field1010), this.field9272, this.field9271, 0, LegacyOpenGLRenderer.method15899(arg8), 5121, arg7, 0);
 			this.method1118(false);
 		}
 		OpenGL.glPixelStorei(3317, 4);
 		this.method1082(true);
 	}
 
-	public class812(class849 arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4, int arg5, boolean arg6, float[] arg7, TextureFormat arg8) {
+	public class812(LegacyOpenGLRenderer arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4, int arg5, boolean arg6, float[] arg7, TextureFormat arg8) {
 		super(arg0, arg1, arg2, arg3, arg4 * arg5, arg6);
 		this.field9272 = arg4;
 		this.field9271 = arg5;
 		this.field1006.method15777(this);
 		if (arg6 && this.field1009 != 34037) {
-			method1091(arg1, class849.method15799(this.field1002, this.field1010), arg4, arg5, arg8, arg7);
+			method1091(arg1, LegacyOpenGLRenderer.method15799(this.field1002, this.field1010), arg4, arg5, arg8, arg7);
 			this.method1118(true);
 		} else {
-			OpenGL.glTexImage2Df(this.field1009, 0, class849.method15799(this.field1002, this.field1010), this.field9272, this.field9271, 0, class849.method15899(arg8), 5126, arg7, 0);
+			OpenGL.glTexImage2Df(this.field1009, 0, LegacyOpenGLRenderer.method15799(this.field1002, this.field1010), this.field9272, this.field9271, 0, LegacyOpenGLRenderer.method15899(arg8), 5126, arg7, 0);
 			this.method1118(false);
 		}
 		this.method1082(true);
@@ -139,7 +139,7 @@ public class class812 extends class70 {
 		if (arg2 != arg7) {
 			OpenGL.glPixelStorei(3314, arg7);
 		}
-		OpenGL.glTexSubImage2Dub(this.field1009, 0, arg0, this.field9271 - arg1 - arg3, arg2, arg3, class849.method15899(arg5), 5121, arg4, arg6);
+		OpenGL.glTexSubImage2Dub(this.field1009, 0, arg0, this.field9271 - arg1 - arg3, arg2, arg3, LegacyOpenGLRenderer.method15899(arg5), 5121, arg4, arg6);
 		if (arg2 != arg7) {
 			OpenGL.glPixelStorei(3314, 0);
 		}

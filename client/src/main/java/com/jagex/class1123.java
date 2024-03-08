@@ -7,7 +7,7 @@ import jaggl.OpenGL;
 public class class1123 extends class845 {
 
 	@ObfuscatedName("apf.e")
-	public final class849 field11944;
+	public final LegacyOpenGLRenderer field11944;
 
 	@ObfuscatedName("apf.n")
 	public class813 field11941;
@@ -18,7 +18,7 @@ public class class1123 extends class845 {
 	@ObfuscatedName("apf.k")
 	public static final int[] field11942 = new int[4];
 
-	public class1123(class849 arg0, int arg1) {
+	public class1123(LegacyOpenGLRenderer arg0, int arg1) {
 		this.field11944 = arg0;
 		this.field11941 = new class813(arg0, TextureFormat.field1273, DataType.field1645, arg1);
 	}
@@ -36,7 +36,7 @@ public class class1123 extends class845 {
 	@ObfuscatedName("apf.k(Ladq;Ladq;F)Z")
 	public boolean method18984(class813 arg0, class813 arg1, float arg2) {
 		boolean var4 = true;
-		class1118 var5 = this.field11944.field9877;
+		LegacyOpenGLFramebuffer var5 = this.field11944.field9877;
 		this.field11944.method2171(field11943);
 		this.field11944.method2167();
 		this.field11944.method2326(field11942);

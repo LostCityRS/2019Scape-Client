@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("lz")
-public interface GpuTexture extends class356 {
+public interface GpuTexture extends BaseTexture {
 
 	@ObfuscatedName("lz.n()I")
 	int method5696();

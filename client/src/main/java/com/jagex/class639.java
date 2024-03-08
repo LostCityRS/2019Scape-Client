@@ -378,7 +378,7 @@ public class class639 {
 		if (!var28 && !var31) {
 			return var69;
 		}
-		class419[] var70 = null;
+		Matrix4x3[] var70 = null;
 		if (var36 != null) {
 			var70 = var36.method9291();
 		}
@@ -403,7 +403,7 @@ public class class639 {
 				if (arg11[var74] != -1) {
 					int var75 = arg11[var74] - arg12;
 					int var76 = var75 & 0x3FFF;
-					class419 var77 = new class419();
+					Matrix4x3 var77 = new Matrix4x3();
 					var77.method6372(0.0F, 1.0F, 0.0F, class417.method6277(var76));
 					var69.method1771(var77, 0x1 << var74, false);
 				}

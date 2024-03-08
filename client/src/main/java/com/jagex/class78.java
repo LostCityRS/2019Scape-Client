@@ -25,7 +25,7 @@ public class class78 {
 	public class811 field1038 = null;
 
 	@ObfuscatedName("bz.e(Lafa;)V")
-	public static void method1283(class849 arg0) {
+	public static void method1283(LegacyOpenGLRenderer arg0) {
 		if (Statics.field1046 == null) {
 			class1142 var1 = new class1142();
 			byte[] var2 = var1.method19221(128, 128, 16);
@@ -43,7 +43,7 @@ public class class78 {
 		}
 	}
 
-	public class78(class849 arg0) {
+	public class78(LegacyOpenGLRenderer arg0) {
 		this.field1040 = arg0.field9889;
 		method1283(arg0);
 		if (this.field1040) {

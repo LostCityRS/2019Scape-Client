@@ -12,7 +12,7 @@ import java.awt.*;
 import java.lang.reflect.Field;
 
 @ObfuscatedName("afa")
-public class class849 extends Renderer {
+public class LegacyOpenGLRenderer extends Renderer {
 
 	@ObfuscatedName("afa.cl")
 	public OpenGL field10022;
@@ -27,16 +27,16 @@ public class class849 extends Renderer {
 	public class76 field10023;
 
 	@ObfuscatedName("afa.ci")
-	public class92 field9986;
+	public PostProcessing field9986;
 
 	@ObfuscatedName("afa.cn")
-	public class1147 field9864;
+	public ColourGradingBloomFilter field9864;
 
 	@ObfuscatedName("afa.cv")
-	public class1145 field9865;
+	public LevelsFilter field9865;
 
 	@ObfuscatedName("afa.cp")
-	public class1146 field9853;
+	public ColourRemappingFilter field9853;
 
 	@ObfuscatedName("afa.ca")
 	public class89 field9978 = new class89();
@@ -48,7 +48,7 @@ public class class849 extends Renderer {
 	public Matrix4x4 field9842 = new Matrix4x4();
 
 	@ObfuscatedName("afa.ct")
-	public class419 field9900 = new class419();
+	public Matrix4x3 field9900 = new Matrix4x3();
 
 	@ObfuscatedName("afa.cf")
 	public class93 field9871;
@@ -144,7 +144,7 @@ public class class849 extends Renderer {
 	public int field9940 = 2;
 
 	@ObfuscatedName("afa.dl")
-	public class419 field9911 = new class419();
+	public Matrix4x3 field9911 = new Matrix4x3();
 
 	@ObfuscatedName("afa.dp")
 	public Matrix4x4 field9903 = new Matrix4x4();
@@ -192,7 +192,7 @@ public class class849 extends Renderer {
 	public float field9917 = -1.0F;
 
 	@ObfuscatedName("afa.el")
-	public class419 field9976 = new class419();
+	public Matrix4x3 field9976 = new Matrix4x3();
 
 	@ObfuscatedName("afa.ej")
 	public Matrix4x4 field9919 = new Matrix4x4();
@@ -285,7 +285,7 @@ public class class849 extends Renderer {
 	public float field9948 = -1.0F;
 
 	@ObfuscatedName("afa.fc")
-	public class973[] field9949 = new class973[field9935];
+	public Light[] field9949 = new Light[field9935];
 
 	@ObfuscatedName("afa.fw")
 	public int field9909;
@@ -462,13 +462,13 @@ public class class849 extends Renderer {
 	public float field10007 = -1.0F;
 
 	@ObfuscatedName("afa.hw")
-	public class843[] field10008 = new class843[8];
+	public LegacyOpenGLModel[] field10008 = new LegacyOpenGLModel[8];
 
 	@ObfuscatedName("afa.ht")
-	public class843[] field10009 = new class843[8];
+	public LegacyOpenGLModel[] field10009 = new LegacyOpenGLModel[8];
 
 	@ObfuscatedName("afa.hc")
-	public class1118 field9877;
+	public LegacyOpenGLFramebuffer field9877;
 
 	@ObfuscatedName("afa.ho")
 	public class83 field9918;
@@ -486,7 +486,7 @@ public class class849 extends Renderer {
 	public static final float[] field9894 = new float[4];
 
 	@ObfuscatedName("afa.io")
-	public class1189 field10016 = new class1189(8192);
+	public GpuPacket field10016 = new GpuPacket(8192);
 
 	@ObfuscatedName("afa.iq")
 	public int[] field9993 = new int[1];
@@ -507,7 +507,7 @@ public class class849 extends Renderer {
 	public Sprite field9975 = null;
 
 	@ObfuscatedName("afa.it")
-	public class840 field10024 = null;
+	public Framebuffer field10024 = null;
 
 	@ObfuscatedName("afa.ix")
 	public int[] field10025 = new int[3];
@@ -524,7 +524,7 @@ public class class849 extends Renderer {
 	@ObfuscatedName("afa.iw")
 	public int field10029 = 0;
 
-	public class849(Canvas arg0, class125 arg1, class143 arg2, class383 arg3, class381 arg4, class378 arg5, int arg6) {
+	public LegacyOpenGLRenderer(Canvas arg0, class125 arg1, class143 arg2, class383 arg3, class381 arg4, class378 arg5, int arg6) {
 		super(arg1, arg2, arg3, arg4, arg5);
 		try {
 			try {
@@ -643,19 +643,19 @@ public class class849 extends Renderer {
 			this.field10026 = new class94(this, this.field1596);
 			this.method15728();
 			this.field9871 = new class93(this);
-			this.field9986 = new class92(this);
+			this.field9986 = new PostProcessing(this);
 			if (this.field9986.method1363()) {
-				this.field9864 = new class1147(this);
+				this.field9864 = new ColourGradingBloomFilter(this);
 				if (!this.field9864.method19235()) {
 					this.field9864.method17570();
 					this.field9864 = null;
 				}
-				this.field9865 = new class1145(this);
+				this.field9865 = new LevelsFilter(this);
 				if (!this.field9865.method19231()) {
 					this.field9865.method17570();
 					this.field9865 = null;
 				}
-				this.field9853 = new class1146(this);
+				this.field9853 = new ColourRemappingFilter(this);
 				if (!this.field9853.method19234()) {
 					this.field9853.method17570();
 					this.field9853 = null;
@@ -779,12 +779,12 @@ public class class849 extends Renderer {
 		new class812(this, 3553, TextureFormat.field1273, DataType.field1645, 1, 1);
 		new class812(this, 3553, TextureFormat.field1273, DataType.field1645, 1, 1);
 		for (int var1 = 0; var1 < 8; var1++) {
-			this.field10008[var1] = new class843(this);
-			this.field10009[var1] = new class843(this);
+			this.field10008[var1] = new LegacyOpenGLModel(this);
+			this.field10009[var1] = new LegacyOpenGLModel(this);
 		}
 		if (this.field9985) {
-			this.field9877 = new class1118(this);
-			new class1118(this);
+			this.field9877 = new LegacyOpenGLFramebuffer(this);
+			new LegacyOpenGLFramebuffer(this);
 		}
 	}
 
@@ -891,7 +891,7 @@ public class class849 extends Renderer {
 
 	@ObfuscatedName("afa.p()V")
 	public void method2369() {
-		for (class532 var1 = this.field9964.method14191(); var1 != null; var1 = this.field9964.method14161()) {
+		for (Node var1 = this.field9964.method14191(); var1 != null; var1 = this.field9964.method14161()) {
 			((class1148) var1).method19237();
 		}
 		if (this.field9986 != null) {
@@ -1692,7 +1692,7 @@ public class class849 extends Renderer {
 	}
 
 	@ObfuscatedName("afa.cn(IIIILou;Loj;)Z")
-	public boolean method2128(int arg0, int arg1, int arg2, int arg3, class419 arg4, class416 arg5) {
+	public boolean method2128(int arg0, int arg1, int arg2, int arg3, Matrix4x3 arg4, class416 arg5) {
 		Matrix4x4 var7 = this.field9919;
 		var7.method6609(arg4);
 		var7.method6720(this.field10005);
@@ -1700,7 +1700,7 @@ public class class849 extends Renderer {
 	}
 
 	@ObfuscatedName("afa.cv(Lou;Led;Loj;)V")
-	public void method2193(class419 arg0, class141 arg1, class416 arg2) {
+	public void method2193(Matrix4x3 arg0, class141 arg1, class416 arg2) {
 		Matrix4x4 var4 = this.field9919;
 		var4.method6609(arg0);
 		var4.method6720(this.field10005);
@@ -1720,7 +1720,7 @@ public class class849 extends Renderer {
 		if (this.field10013 != null) {
 			return;
 		}
-		class1189 var2 = new class1189(80);
+		GpuPacket var2 = new GpuPacket(80);
 		if (this.field10017) {
 			var2.method19550(-1.0F);
 			var2.method19550(-1.0F);
@@ -1834,7 +1834,7 @@ public class class849 extends Renderer {
 
 	@ObfuscatedName("afa.cj(Ldq;IIII)Ldo;")
 	public class116 method2211(class120 arg0, int arg1, int arg2, int arg3, int arg4) {
-		return new class843(this, arg0, arg1, arg3, arg4, arg2);
+		return new LegacyOpenGLModel(this, arg0, arg1, arg3, arg4, arg2);
 	}
 
 	@ObfuscatedName("afa.cd(II)I")
@@ -1858,7 +1858,7 @@ public class class849 extends Renderer {
 	}
 
 	@ObfuscatedName("afa.cz()Lou;")
-	public class419 method2209() {
+	public Matrix4x3 method2209() {
 		return this.field9900;
 	}
 
@@ -2069,7 +2069,7 @@ public class class849 extends Renderer {
 	}
 
 	@ObfuscatedName("afa.do(Lou;)V")
-	public final void method2217(class419 arg0) {
+	public final void method2217(Matrix4x3 arg0) {
 		this.field9911.method6292(arg0);
 		this.field9903.method6609(this.field9911);
 		this.field9976.method6292(arg0);
@@ -2082,8 +2082,8 @@ public class class849 extends Renderer {
 	}
 
 	@ObfuscatedName("afa.dz()Lou;")
-	public class419 method2218() {
-		return new class419(this.field9911);
+	public Matrix4x3 method2218() {
+		return new Matrix4x3(this.field9911);
 	}
 
 	@ObfuscatedName("afa.sw()V")
@@ -2195,7 +2195,7 @@ public class class849 extends Renderer {
 	}
 
 	@ObfuscatedName("afa.ds(I[Lakf;)V")
-	public void method2491(int arg0, class973[] arg1) {
+	public void method2491(int arg0, Light[] arg1) {
 		for (int var3 = 0; var3 < arg0; var3++) {
 			this.field9949[var3] = arg1[var3];
 		}
@@ -2209,7 +2209,7 @@ public class class849 extends Renderer {
 	public void method15742() {
 		int var1;
 		for (var1 = 0; var1 < this.field9898; var1++) {
-			class973 var2 = this.field9949[var1];
+			Light var2 = this.field9949[var1];
 			int var3 = var1 + 16386;
 			field9894[0] = var2.method17605();
 			field9894[1] = var2.method17606();
@@ -2440,11 +2440,11 @@ public class class849 extends Renderer {
 
 	@ObfuscatedName("afa.dg(FFFFF)V")
 	public void method2236(float arg0, float arg1, float arg2, float arg3, float arg4) {
-		class1145.field12167 = arg0;
-		class1145.field12172 = arg1;
-		class1145.field12168 = arg2;
-		class1145.field12166 = arg3;
-		class1145.field12170 = arg4;
+		LevelsFilter.field12167 = arg0;
+		LevelsFilter.field12172 = arg1;
+		LevelsFilter.field12168 = arg2;
+		LevelsFilter.field12166 = arg3;
+		LevelsFilter.field12170 = arg4;
 	}
 
 	@ObfuscatedName("afa.de([I)Lcj;")
@@ -2491,23 +2491,23 @@ public class class849 extends Renderer {
 			arg3 = arg5;
 			arg5 = 0.0F;
 		}
-		class1146.field12179[0] = (class838) arg0;
-		class1146.field12183[0] = arg1;
+		ColourRemappingFilter.field12179[0] = (class838) arg0;
+		ColourRemappingFilter.field12183[0] = arg1;
 		if (arg1 > 0.0F) {
 			var7++;
 		}
-		class1146.field12179[1] = (class838) arg2;
-		class1146.field12183[1] = arg3;
+		ColourRemappingFilter.field12179[1] = (class838) arg2;
+		ColourRemappingFilter.field12183[1] = arg3;
 		if (arg3 > 0.0F) {
 			var7++;
 		}
-		class1146.field12179[2] = (class838) arg4;
-		class1146.field12183[2] = arg5;
+		ColourRemappingFilter.field12179[2] = (class838) arg4;
+		ColourRemappingFilter.field12183[2] = arg5;
 		if (arg5 > 0.0F) {
 			var7++;
 		}
-		class1146.field12175 = var7;
-		class1146.field12174 = 1.0F - (arg1 + arg3 + arg5);
+		ColourRemappingFilter.field12175 = var7;
+		ColourRemappingFilter.field12174 = 1.0F - (arg1 + arg3 + arg5);
 	}
 
 	@ObfuscatedName("afa.ey()Z")
@@ -2539,14 +2539,14 @@ public class class849 extends Renderer {
 
 	@ObfuscatedName("afa.es(FFFFFF)V")
 	public final void method2244(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5) {
-		class1147.field12189 = arg0;
-		class1147.field12188 = arg1;
-		class1147.field12205 = arg2;
+		ColourGradingBloomFilter.field12189 = arg0;
+		ColourGradingBloomFilter.field12188 = arg1;
+		ColourGradingBloomFilter.field12205 = arg2;
 	}
 
 	@ObfuscatedName("afa.am()Lafq;")
-	public class840 method2145() {
-		return new class1118(this);
+	public Framebuffer method2145() {
+		return new LegacyOpenGLFramebuffer(this);
 	}
 
 	@ObfuscatedName("afa.ar(II)Ldw;")
@@ -3173,11 +3173,11 @@ public class class849 extends Renderer {
 			OpenGL.glDeleteLists((int) var9.field6760, var9.field11442);
 		}
 		while (!this.field9838.method14164()) {
-			class532 var10 = this.field9838.method14154();
+			Node var10 = this.field9838.method14154();
 			OpenGL.glDeleteProgramARB((int) var10.field6760);
 		}
 		while (!this.field9888.method14164()) {
-			class532 var11 = this.field9888.method14154();
+			Node var11 = this.field9888.method14154();
 			OpenGL.glDeleteShader((int) var11.field6760);
 		}
 		while (!this.field9938.method14164()) {
@@ -3221,14 +3221,14 @@ public class class849 extends Renderer {
 
 	@ObfuscatedName("afa.uj(J)V")
 	public final synchronized void method15816(long arg0) {
-		class532 var3 = new class532();
+		Node var3 = new Node();
 		var3.field6760 = arg0;
 		this.field9888.method14153(var3);
 	}
 
 	@ObfuscatedName("afa.ut(I)V")
 	public final synchronized void method15797(int arg0) {
-		class532 var2 = new class532();
+		Node var2 = new Node();
 		var2.field6760 = arg0;
 		this.field9838.method14153(var2);
 	}

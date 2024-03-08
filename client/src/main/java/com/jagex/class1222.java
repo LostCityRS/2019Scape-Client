@@ -20,7 +20,7 @@ public class class1222 extends class1175 {
 	@ObfuscatedName("atk.c")
 	public final byte[] field12542;
 
-	public class1222(class849 arg0, int arg1, int arg2) {
+	public class1222(LegacyOpenGLRenderer arg0, int arg1, int arg2) {
 		this.field12542 = new byte[arg1 * arg2];
 	}
 
