@@ -287,7 +287,7 @@ public class class280 {
 			client.method6972(1);
 		}
 		if (Statics.field3419 == class277.field2910 && Statics.field10577 == null) {
-			Statics.field10577 = new class536(Statics.field7060);
+			Statics.field10577 = new HardwarePlatformLoader(Statics.field7060);
 			class500.method14694(Statics.field10577);
 		}
 		if (Statics.field3419 == class277.field2902) {
