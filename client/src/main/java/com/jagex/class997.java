@@ -590,6 +590,10 @@ public class class997 extends class532 {
 
 	@ObfuscatedName("alw.bt(Ljava/math/BigInteger;Ljava/math/BigInteger;B)V")
 	public void method17907(BigInteger arg0, BigInteger arg1) {
+		if (!client.ENABLE_RSA) {
+			return;
+		}
+
 		int var3 = this.field11503 * 212851357;
 		this.field11503 = 0;
 		byte[] var4 = new byte[var3];

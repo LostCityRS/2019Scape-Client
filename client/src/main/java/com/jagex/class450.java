@@ -16,7 +16,7 @@ public class class450 {
 		byte[] var5 = new byte[arg0.field11502.length - arg0.field11503 * 212851357];
 		arg0.method17921(var5, 0, var5.length);
 		byte[] var8;
-		if (arg1 == null || arg2 == null) {
+		if (arg1 == null || arg2 == null || !client.ENABLE_JS5_RSA) {
 			var8 = var5;
 		} else {
 			BigInteger var6 = new BigInteger(var5);

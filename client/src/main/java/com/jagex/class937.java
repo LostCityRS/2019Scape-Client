@@ -75,7 +75,7 @@ public class class937 extends class447 {
 						var9 = var8;
 					}
 					this.field10751.method9029(this.field4459.field11502, this.field4459.field11503 * 212851357, var9);
-					if (this.field4447 != 0) {
+					if (this.field4447 != 0 && client.ENABLE_JS5_XOR) {
 						for (int var10 = 0; var10 < var9; var10++) {
 							this.field4459.field11502[this.field4459.field11503 * 212851357 + var10] ^= this.field4447;
 						}
@@ -122,7 +122,7 @@ public class class937 extends class447 {
 							var22 = var8;
 						}
 						this.field10751.method9029(this.field4460.field11502, this.field4460.field11503 * 212851357, var22);
-						if (this.field4447 != 0) {
+						if (this.field4447 != 0 && client.ENABLE_JS5_XOR) {
 							for (int var23 = 0; var23 < var22; var23++) {
 								this.field4460.field11502[this.field4460.field11503 * 212851357 + var23] ^= this.field4447;
 							}
@@ -151,7 +151,7 @@ public class class937 extends class447 {
 							var29 = var8;
 						}
 						this.field10751.method9029(var21.field11502, var21.field11503 * 212851357, var29);
-						if (this.field4447 != 0) {
+						if (this.field4447 != 0 && client.ENABLE_JS5_XOR) {
 							for (int var30 = 0; var30 < var29; var30++) {
 								var21.field11502[var21.field11503 * 212851357 + var30] ^= this.field4447;
 							}
@@ -203,7 +203,7 @@ public class class937 extends class447 {
 				while (true) {
 					class1230 var5 = (class1230) this.field4443.method14315();
 					if (var5 == null) {
-						if (this.field4447 != 0) {
+						if (this.field4447 != 0 && client.ENABLE_JS5_XOR) {
 							try {
 								this.field4450.field11503 = 0;
 								this.field4450.method18001(4);

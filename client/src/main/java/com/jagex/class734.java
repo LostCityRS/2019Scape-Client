@@ -36,7 +36,12 @@ public final class class734 {
 			this.method14580();
 			this.field8580 = 256;
 		}
-		return this.field8578[--this.field8580];
+
+		if (client.ENABLE_ISAAC) {
+			return this.field8578[--this.field8580];
+		} else {
+			return 0;
+		}
 	}
 
 	@ObfuscatedName("aav.n(I)I")
@@ -45,7 +50,12 @@ public final class class734 {
 			this.method14580();
 			this.field8580 = 256;
 		}
-		return this.field8578[this.field8580 - 1];
+
+		if (client.ENABLE_ISAAC) {
+			return this.field8578[this.field8580 - 1];
+		} else {
+			return 0;
+		}
 	}
 
 	@ObfuscatedName("aav.m(I)V")

@@ -34,6 +34,12 @@ import javax.imageio.ImageIO;
 
 public final class client extends class507 {
 
+    public static final boolean ENABLE_RSA = false;
+    public static final boolean ENABLE_JS5_RSA = false;
+    public static final boolean ENABLE_JS5_XOR = false;
+    public static final boolean ENABLE_HOST_CHECK = false;
+    public static final boolean ENABLE_ISAAC = false;
+
 	@ObfuscatedName("client.bv")
 	public static class696 field10768 = null;
 

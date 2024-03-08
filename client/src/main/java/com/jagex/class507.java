@@ -521,6 +521,10 @@ public abstract class class507 implements class509, Runnable, FocusListener, Win
 
 	@ObfuscatedName("sk.b(I)Z")
 	public final boolean method8033() {
+		if (!client.ENABLE_HOST_CHECK) {
+			return true;
+		}
+
 		String var1 = Statics.field11885.getDocumentBase().getHost().toLowerCase();
 		if (var1.equals("jagex.com") || var1.endsWith(".jagex.com")) {
 			return true;
