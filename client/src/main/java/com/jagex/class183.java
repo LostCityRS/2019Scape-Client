@@ -156,7 +156,7 @@ public class class183 {
 		}
 		this.field1867.clear();
 		if (this.field1869 != null && this.field1869.method7385() == class481.field4949 && !this.field1870 && client.field10849.field794 != null && client.method2737(client.field10791)) {
-			ClientMessage var7 = Statics.method1604(ClientProt.field3712, client.field10849.field794);
+			ClientMessage var7 = Statics.method1604(ClientProt.SOUND_SONGPRELOADED, client.field10849.field794);
 			var7.field11432.p4(this.field1869.method7386().method9680());
 			client.field10849.method934(var7);
 			this.field1870 = true;
@@ -569,7 +569,7 @@ public class class183 {
 	@ObfuscatedName("fb.ac(II)V")
 	public void method3144(int arg0) {
 		if (client.field10849.field794 != null && client.method2737(client.field10791)) {
-			ClientMessage var2 = Statics.method1604(ClientProt.field3696, client.field10849.field794);
+			ClientMessage var2 = Statics.method1604(ClientProt.SOUND_SONGEND, client.field10849.field794);
 			var2.field11432.p4(arg0);
 			client.field10849.method934(var2);
 		}
@@ -645,7 +645,7 @@ public class class183 {
 			this.field1868.method7381();
 		}
 		if (client.field10849.field794 != null && client.method2737(client.field10791)) {
-			ClientMessage var18 = Statics.method1604(ClientProt.field3712, client.field10849.field794);
+			ClientMessage var18 = Statics.method1604(ClientProt.SOUND_SONGPRELOADED, client.field10849.field794);
 			var18.field11432.p4(this.field1875);
 			client.field10849.method934(var18);
 		}

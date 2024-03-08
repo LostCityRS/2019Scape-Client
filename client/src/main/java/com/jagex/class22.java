@@ -1824,25 +1824,25 @@ public class class22 {
 		}
 		ClientProt var14 = null;
 		if (var6 == 44) {
-			var14 = ClientProt.field3799;
+			var14 = ClientProt.OPPLAYER1;
 		} else if (var6 == 45) {
-			var14 = ClientProt.field3705;
+			var14 = ClientProt.OPPLAYER2;
 		} else if (var6 == 46) {
-			var14 = ClientProt.field3758;
+			var14 = ClientProt.OPPLAYER3;
 		} else if (var6 == 47) {
-			var14 = ClientProt.field3784;
+			var14 = ClientProt.OPPLAYER4;
 		} else if (var6 == 48) {
-			var14 = ClientProt.field3686;
+			var14 = ClientProt.OPPLAYER5;
 		} else if (var6 == 49) {
-			var14 = ClientProt.field3744;
+			var14 = ClientProt.OPPLAYER6;
 		} else if (var6 == 50) {
-			var14 = ClientProt.field3720;
+			var14 = ClientProt.OPPLAYER7;
 		} else if (var6 == 51) {
-			var14 = ClientProt.field3730;
+			var14 = ClientProt.OPPLAYER8;
 		} else if (var6 == 52) {
-			var14 = ClientProt.field3771;
+			var14 = ClientProt.OPPLAYER9;
 		} else if (var6 == 53) {
-			var14 = ClientProt.field3704;
+			var14 = ClientProt.OPPLAYER10;
 		}
 		if (var14 != null) {
 			class1130 var15 = client.field10944[var7];
@@ -1860,17 +1860,17 @@ public class class22 {
 		}
 		ClientProt var17 = null;
 		if (var6 == 3) {
-			var17 = ClientProt.field3694;
+			var17 = ClientProt.OPLOC1;
 		} else if (var6 == 4) {
-			var17 = ClientProt.field3778;
+			var17 = ClientProt.OPLOC2;
 		} else if (var6 == 5) {
-			var17 = ClientProt.field3709;
+			var17 = ClientProt.OPLOC3;
 		} else if (var6 == 6) {
-			var17 = ClientProt.field3795;
+			var17 = ClientProt.OPLOC4;
 		} else if (var6 == 1001) {
-			var17 = ClientProt.field3801;
+			var17 = ClientProt.OPLOC5;
 		} else if (var6 == 1002) {
-			var17 = ClientProt.field3721;
+			var17 = ClientProt.OPLOC6;
 		}
 		if (var17 != null) {
 			client.field10866 = arg1;
@@ -1914,17 +1914,17 @@ public class class22 {
 		}
 		ClientProt var21 = null;
 		if (var6 == 9) {
-			var21 = ClientProt.field3715;
+			var21 = ClientProt.OPNPC1;
 		} else if (var6 == 10) {
-			var21 = ClientProt.field3738;
+			var21 = ClientProt.OPNPC2;
 		} else if (var6 == 11) {
-			var21 = ClientProt.field3770;
+			var21 = ClientProt.OPNPC3;
 		} else if (var6 == 12) {
-			var21 = ClientProt.field3718;
+			var21 = ClientProt.OPNPC4;
 		} else if (var6 == 13) {
-			var21 = ClientProt.field3684;
+			var21 = ClientProt.OPNPC5;
 		} else if (var6 == 1003) {
-			var21 = ClientProt.field3691;
+			var21 = ClientProt.OPNPC6;
 		}
 		if (var21 != null) {
 			class984 var22 = (class984) client.field10838.method14495((long) var7);
@@ -1946,7 +1946,7 @@ public class class22 {
 			client.field10924 = arg2;
 			client.field10926 = 2;
 			client.field10925 = 0;
-			ClientMessage var25 = Statics.method1604(ClientProt.field3796, client.field10849.field794);
+			ClientMessage var25 = Statics.method1604(ClientProt.OPOBJT, client.field10849.field794);
 			var25.field11432.p2_alt1(var7);
 			var25.field11432.p1_alt1(method14766() ? 1 : 0);
 			var25.field11432.p2_alt1(client.field10975);
@@ -1965,7 +1965,7 @@ public class class22 {
 				client.field10924 = arg2;
 				client.field10926 = 2;
 				client.field10925 = 0;
-				ClientMessage var28 = Statics.method1604(ClientProt.field3798, client.field10849.field794);
+				ClientMessage var28 = Statics.method1604(ClientProt.OPNPCT, client.field10849.field794);
 				var28.field11432.p4(Statics.field6707);
 				var28.field11432.p2(var7);
 				var28.field11432.p1_alt1(method14766() ? 1 : 0);
@@ -1980,7 +1980,7 @@ public class class22 {
 			client.field10924 = arg2;
 			client.field10926 = 2;
 			client.field10925 = 0;
-			ClientMessage var29 = Statics.method1604(ClientProt.field3703, client.field10849.field794);
+			ClientMessage var29 = Statics.method1604(ClientProt.OPLOCT, client.field10849.field794);
 			var29.field11432.p1_alt1(method14766() ? 1 : 0);
 			var29.field11432.p2_alt1(var10.field7426 + var4);
 			var29.field11432.p2_alt1(client.field10975);
@@ -1999,7 +1999,7 @@ public class class22 {
 				client.field10924 = arg2;
 				client.field10926 = 1;
 				client.field10925 = 0;
-				ClientMessage var30 = Statics.method1604(ClientProt.field3789, client.field10849.field794);
+				ClientMessage var30 = Statics.method1604(ClientProt.FACE_SQUARE, client.field10849.field794);
 				var30.field11432.p2_alt2(var10.field7427 + var5);
 				var30.field11432.p2_alt3(var10.field7426 + var4);
 				client.field10849.method934(var30);
@@ -2010,7 +2010,7 @@ public class class22 {
 			client.field10924 = arg2;
 			client.field10926 = 2;
 			client.field10925 = 0;
-			ClientMessage var31 = Statics.method1604(ClientProt.field3751, client.field10849.field794);
+			ClientMessage var31 = Statics.method1604(ClientProt.OPPLAYERT, client.field10849.field794);
 			var31.field11432.p2(client.field10974);
 			var31.field11432.p1_alt1(method14766() ? 1 : 0);
 			var31.field11432.p2_alt1(client.field10975);
@@ -2020,17 +2020,17 @@ public class class22 {
 		}
 		ClientProt var32 = null;
 		if (var6 == 18) {
-			var32 = ClientProt.field3692;
+			var32 = ClientProt.OPOBJ1;
 		} else if (var6 == 19) {
-			var32 = ClientProt.field3802;
+			var32 = ClientProt.OPOBJ2;
 		} else if (var6 == 20) {
-			var32 = ClientProt.field3708;
+			var32 = ClientProt.OPOBJ3;
 		} else if (var6 == 21) {
-			var32 = ClientProt.field3763;
+			var32 = ClientProt.OPOBJ4;
 		} else if (var6 == 22) {
-			var32 = ClientProt.field3698;
+			var32 = ClientProt.OPOBJ5;
 		} else if (var6 == 1004) {
-			var32 = ClientProt.field3682;
+			var32 = ClientProt.OPOBJ6;
 		}
 		if (var32 != null) {
 			client.field10866 = arg1;
@@ -2052,7 +2052,7 @@ public class class22 {
 				client.field10924 = arg2;
 				client.field10926 = 2;
 				client.field10925 = 0;
-				ClientMessage var35 = Statics.method1604(ClientProt.field3751, client.field10849.field794);
+				ClientMessage var35 = Statics.method1604(ClientProt.OPPLAYERT, client.field10849.field794);
 				var35.field11432.p2(client.field10974);
 				var35.field11432.p1_alt1(method14766() ? 1 : 0);
 				var35.field11432.p2_alt1(client.field10975);
@@ -2067,7 +2067,7 @@ public class class22 {
 			client.field10924 = arg2;
 			client.field10926 = 1;
 			client.field10925 = 0;
-			ClientMessage var36 = Statics.method1604(ClientProt.field3741, client.field10849.field794);
+			ClientMessage var36 = Statics.method1604(ClientProt.APCOORDT, client.field10849.field794);
 			var36.field11432.p2_alt2(var10.field7426 + var4);
 			var36.field11432.p4_alt1(Statics.field6707);
 			var36.field11432.p2(client.field10975);
@@ -2095,10 +2095,10 @@ public class class22 {
 	public static ClientMessage method9839(int arg0, int arg1, int arg2) {
 		ClientMessage var3 = null;
 		if (arg2 == 0) {
-			var3 = Statics.method1604(ClientProt.field3787, client.field10849.field794);
+			var3 = Statics.method1604(ClientProt.MOVE_GAMECLICK, client.field10849.field794);
 		}
 		if (arg2 == 1) {
-			var3 = Statics.method1604(ClientProt.field3750, client.field10849.field794);
+			var3 = Statics.method1604(ClientProt.MOVE_MINIMAPCLICK, client.field10849.field794);
 		}
 		class594 var4 = client.field10855.method7727();
 		var3.field11432.p2(var4.field7427 + arg1);

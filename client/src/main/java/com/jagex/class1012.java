@@ -8,7 +8,7 @@ public class class1012 extends class771 implements class578 {
 
 	@ObfuscatedName("alq.e(I)V")
 	public void method9201() {
-		ClientMessage var1 = Statics.method1604(ClientProt.field3773, client.field10849.field794);
+		ClientMessage var1 = Statics.method1604(ClientProt.AUTO_SETUP_RESULT, client.field10849.field794);
 		var1.field11432.p2(this.field8904);
 		var1.field11432.p1_alt1(this.field8905);
 		var1.field11432.p3_alt3(this.field8900);

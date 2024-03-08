@@ -192,7 +192,7 @@ public class class153 {
 			Statics.method830(class572.field7266, field1722, -1);
 		}
 		method3551();
-		ClientMessage var4 = Statics.method1604(ClientProt.field3722, client.field10849.field794);
+		ClientMessage var4 = Statics.method1604(ClientProt.CUTSCENE_FINISHED, client.field10849.field794);
 		var4.field11432.p1(arg0 ? 1 : 0);
 		client.field10849.method934(var4);
 	}

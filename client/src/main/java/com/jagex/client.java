@@ -2378,7 +2378,7 @@ public final class client extends GameShell {
 
 	@ObfuscatedName("ij.fz(Lax;B)V")
 	public static void method4336(class49 arg0) {
-		ClientMessage var1 = Statics.method1604(ClientProt.field3731, arg0.field794);
+		ClientMessage var1 = Statics.method1604(ClientProt.WINDOW_STATUS, arg0.field794);
 		var1.field11432.p1(method2845());
 		var1.field11432.p2(Statics.field6586);
 		var1.field11432.p2(Statics.field6600);
@@ -2919,7 +2919,7 @@ public final class client extends GameShell {
 												if (field10835 != null) {
 													field10835.field793++;
 													if (field10835.field793 > 50) {
-														ClientMessage var26 = Statics.method1604(ClientProt.field3785, field10835.field794);
+														ClientMessage var26 = Statics.method1604(ClientProt.NO_TIMEOUT, field10835.field794);
 														field10835.method934(var26);
 													}
 													try {
@@ -2983,7 +2983,7 @@ public final class client extends GameShell {
 			return;
 		}
 		while (class780.method14703()) {
-			ClientMessage var1 = Statics.method1604(ClientProt.field3754, field10849.field794);
+			ClientMessage var1 = Statics.method1604(ClientProt.REFLECTION_CHECK_REPLY, field10849.field794);
 			var1.field11432.p1(0);
 			int var2 = var1.field11432.pos;
 			class780.method4651(var1.field11432);
@@ -2995,7 +2995,7 @@ public final class client extends GameShell {
 				Statics.field594 = field10994.method10589(Statics.field8755.field8745);
 			}
 		} else if (Statics.field594.field8180 != -1) {
-			ClientMessage var3 = Statics.method1604(ClientProt.field3756, field10849.field794);
+			ClientMessage var3 = Statics.method1604(ClientProt.PING_STATISTICS, field10849.field794);
 			if (Statics.field11399 == null || !Statics.field11399.isValid()) {
 				try {
 					Iterator var4 = ManagementFactory.getGarbageCollectorMXBeans().iterator();
@@ -3153,7 +3153,7 @@ public final class client extends GameShell {
 		method5013();
 		field11058++;
 		if (field11083) {
-			ClientMessage var29 = Statics.method1604(ClientProt.field3690, field10849.field794);
+			ClientMessage var29 = Statics.method1604(ClientProt.CLICKWORLDMAP, field10849.field794);
 			var29.field11432.p4_alt3(Statics.field6866 << 28 | Statics.field530 << 14 | Statics.field5107);
 			field10849.method934(var29);
 			field11083 = false;
@@ -3271,7 +3271,7 @@ public final class client extends GameShell {
 											}
 											field10849.field793++;
 											if (field10849.field793 > 50) {
-												ClientMessage var45 = Statics.method1604(ClientProt.field3785, field10849.field794);
+												ClientMessage var45 = Statics.method1604(ClientProt.NO_TIMEOUT, field10849.field794);
 												field10849.method934(var45);
 											}
 											if (field11082) {
@@ -7044,14 +7044,14 @@ public final class client extends GameShell {
 		arg0.field805 = arg0.field806;
 		arg0.field806 = arg0.field790;
 		arg0.field790 = arg0.field796;
-		if (ServerProt.field3877 == arg0.field796) {
+		if (ServerProt.IF_SETTEXTANTIMACRO == arg0.field796) {
 			int var5 = var2.g4_alt3();
 			boolean var6 = var2.g1() == 1;
 			method14061();
 			class1171.method9874(var5, var6);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3885 == arg0.field796) {
+		} else if (ServerProt.CLANCHANNEL_FULL == arg0.field796) {
 			field11025 = field11058;
 			boolean var7 = var2.g1() == 1;
 			if (arg0.field797 != 1) {
@@ -7070,14 +7070,14 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3975 == arg0.field796) {
+		} else if (ServerProt.CLIENT_SETVARC_SMALL == arg0.field796) {
 			byte var8 = var2.g1b_alt3();
 			int var9 = var2.g2();
 			method14061();
 			class1171.method19215(var9, var8);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3901 == arg0.field796) {
+		} else if (ServerProt.TELEMETRY_GRID_FULL == arg0.field796) {
 			field11094.method3273();
 			int var10 = var2.g1();
 			for (int var11 = 0; var11 < var10; var11++) {
@@ -7107,7 +7107,7 @@ public final class client extends GameShell {
 			field11095 = false;
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3844 == arg0.field796) {
+		} else if (ServerProt.SET_MOVEACTION == arg0.field796) {
 			Statics.field4868 = arg0.field797 > 2 ? var2.gjstr() : class776.field9079.method15021(Statics.field1680);
 			field10963 = arg0.field797 > 0 ? var2.g2() : -1;
 			if (field10963 == 65535) {
@@ -7115,24 +7115,24 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3836 == arg0.field796) {
+		} else if (ServerProt.UPDATE_SITESETTINGS == arg0.field796) {
 			method5135(var2.gjstr());
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3934 == arg0.field796) {
+		} else if (ServerProt.SETDRAWORDER == arg0.field796) {
 			boolean var21 = var2.g1_alt3() == 1;
 			method14061();
 			Statics.field7446 = var21;
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3900 == arg0.field796) {
+		} else if (ServerProt.CHAT_FILTER_SETTINGS_PRIVATECHAT == arg0.field796) {
 			Statics.field10354 = class724.method3374(var2.g1());
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field4004 == arg0.field796) {
+		} else if (ServerProt.NO_TIMEOUT == arg0.field796) {
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3886 == arg0.field796) {
+		} else if (ServerProt.URL_OPEN == arg0.field796) {
 			if (class725.field8531 && Statics.field12101 != null) {
 				method13880(Statics.field688.field11542.method18539(), -1, -1, false);
 			}
@@ -7154,19 +7154,19 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3990 == arg0.field796) {
+		} else if (ServerProt.CAM_FORCEANGLE == arg0.field796) {
 			int var27 = var2.g2_alt1();
 			int var28 = var2.g2();
 			method14061();
 			method4843(var28, var27, 0);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3930 == arg0.field796) {
+		} else if (ServerProt.CAM_RESET == arg0.field796) {
 			method14061();
 			method4046(method14298());
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3842 == arg0.field796) {
+		} else if (ServerProt.UPDATE_INV_PARTIAL == arg0.field796) {
 			int var29 = var2.g2();
 			int var30 = var2.g1();
 			boolean var31 = (var30 & 0x1) != 0;
@@ -7197,11 +7197,11 @@ public final class client extends GameShell {
 			field10783[++field11012 - 1 & 0x3F] = var29;
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3939 == arg0.field796) {
+		} else if (ServerProt.TEXT_COORD == arg0.field796) {
 			method9605(ZoneProt.field3612);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3841 == arg0.field796) {
+		} else if (ServerProt.TELEMETRY_CLEAR_GRID_VALUE == arg0.field796) {
 			if (!field11095) {
 				try {
 					int var39 = var2.g1();
@@ -7215,23 +7215,23 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3944 == arg0.field796) {
+		} else if (ServerProt.OBJ_REVEAL == arg0.field796) {
 			method9605(ZoneProt.field3620);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field4018 == arg0.field796) {
+		} else if (ServerProt.IF_SETCOLOUR == arg0.field796) {
 			int var43 = var2.g2_alt2();
 			int var44 = var2.g4s();
 			method14061();
 			class1171.method3379(var44, var43);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3912 == arg0.field796) {
+		} else if (ServerProt.LOGOUT_FULL == arg0.field796) {
 			field10853 = (class778) class686.method1897(class778.method10365(), var2.g1());
 			method9620(class10.field485);
 			arg0.field796 = null;
 			return false;
-		} else if (ServerProt.field4011 == arg0.field796) {
+		} else if (ServerProt.TELEMETRY_GRID_ADD_ROW == arg0.field796) {
 			if (!field11095) {
 				try {
 					byte var45 = var2.g1b_alt1();
@@ -7245,7 +7245,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3840 == arg0.field796) {
+		} else if (ServerProt.SET_PLAYER_OP == arg0.field796) {
 			int var49 = var2.g1_alt2();
 			int var50 = var2.g2_alt3();
 			if (var50 == 65535) {
@@ -7263,7 +7263,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3891 == arg0.field796) {
+		} else if (ServerProt.UPDATE_INV_STOP_TRANSMIT == arg0.field796) {
 			int var53 = var2.g1_alt1();
 			int var54 = var2.g2();
 			boolean var55 = (var53 & 0x1) == 1;
@@ -7271,11 +7271,11 @@ public final class client extends GameShell {
 			field10783[++field11012 - 1 & 0x3F] = var54;
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field4020 == arg0.field796) {
+		} else if (ServerProt.VARCLAN_DISABLE == arg0.field796) {
 			Statics.field7698 = null;
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3896 == arg0.field796) {
+		} else if (ServerProt.NPC_ANIM_SPECIFIC == arg0.field796) {
 			int[] var56 = new int[4];
 			for (int var57 = 0; var57 < 4; var57++) {
 				var56[var57] = var2.g4_alt1();
@@ -7288,7 +7288,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3942 == arg0.field796) {
+		} else if (ServerProt.IF_SETANGLE == arg0.field796) {
 			int var61 = var2.g4_alt2();
 			int var62 = var2.g2_alt1();
 			int var63 = var2.g2_alt1();
@@ -7297,7 +7297,7 @@ public final class client extends GameShell {
 			class1171.method16746(var61, var62, var63, var64);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3854 == arg0.field796) {
+		} else if (ServerProt.CLANSETTINGS_FULL == arg0.field796) {
 			field10818 = field11058;
 			boolean var65 = var2.g1() == 1;
 			if (arg0.field797 != 1) {
@@ -7316,7 +7316,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3945 == arg0.field796) {
+		} else if (ServerProt.HINT_TRAIL == arg0.field796) {
 			int var66 = var2.g1();
 			int var67 = var2.gSmart2or4null();
 			if (field10931[var66] != null) {
@@ -7328,7 +7328,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3908 == arg0.field796) {
+		} else if (ServerProt.MESSAGE_CLANCHANNEL_SYSTEM == arg0.field796) {
 			boolean var68 = var2.g1() == 1;
 			long var69 = (long) var2.g2();
 			long var71 = (long) var2.g3();
@@ -7354,18 +7354,18 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3862 == arg0.field796) {
+		} else if (ServerProt.PLAYER_INFO == arg0.field796) {
 			class40.method8355(var2, arg0.field797);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field4000 == arg0.field796) {
+		} else if (ServerProt.CLIENT_SETVARCBIT_LARGE == arg0.field796) {
 			int var80 = var2.g2_alt2();
 			int var81 = var2.g4_alt1();
 			method14061();
 			class1171.method18309(var80, var81);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3991 == arg0.field796) {
+		} else if (ServerProt.IF_OPENSUB_ACTIVE_LOC == arg0.field796) {
 			int var82 = var2.g4_alt1();
 			class594 var83 = new class594(var2.g4_alt3());
 			int var84 = var2.g2();
@@ -7381,7 +7381,7 @@ public final class client extends GameShell {
 			method4489(var82, new class1192(var84, var85, new class675(var83, var92.field7541, var92.field7540, var91)), new int[] { var86, var87, var88, var89 }, false);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3872 == arg0.field796) {
+		} else if (ServerProt.UPDATE_FRIENDLIST == arg0.field796) {
 			while (var2.pos < arg0.field797) {
 				boolean var93 = var2.g1() == 1;
 				String var94 = var2.gjstr();
@@ -7492,7 +7492,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3848 == arg0.field796) {
+		} else if (ServerProt.IF_SETEVENTS == arg0.field796) {
 			int var118 = var2.g2_alt2();
 			if (var118 == 65535) {
 				var118 = -1;
@@ -7520,11 +7520,11 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3876 == arg0.field796) {
+		} else if (ServerProt.OBJ_COUNT == arg0.field796) {
 			method9605(ZoneProt.field3615);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3893 == arg0.field796) {
+		} else if (ServerProt.PLAYER_SNAPSHOT == arg0.field796) {
 			int var127 = var2.g1();
 			int var128 = -var127 - 2;
 			byte var129 = var2.g1b();
@@ -7537,7 +7537,7 @@ public final class client extends GameShell {
 			var130.method19121(var2, var129);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3881 == arg0.field796) {
+		} else if (ServerProt.MIDI_JINGLE == arg0.field796) {
 			int var131 = var2.g1_alt1();
 			int var132 = var2.g2_alt1();
 			if (var132 == 65535) {
@@ -7546,7 +7546,7 @@ public final class client extends GameShell {
 			Statics.field1798.method3179(var132, var131);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3910 == arg0.field796) {
+		} else if (ServerProt.LOC_ANIM_SPECIFIC == arg0.field796) {
 			int var133 = var2.g4_alt1();
 			int var134 = var133 >> 28 & 0x3;
 			int var135 = var133 >> 14 & 0x3FFF;
@@ -7562,7 +7562,7 @@ public final class client extends GameShell {
 			method8895(var134, var143, var144, var141, var140.field7541, var140.field7540, var140.field7539, var138, var137);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3845 == arg0.field796) {
+		} else if (ServerProt.CREATE_SUGGEST_NAME_ERROR == arg0.field796) {
 			int var145 = var2.g1();
 			class706 var146 = (class706) class686.method1897(class706.method9840(), var145);
 			if (var146 == null) {
@@ -7571,12 +7571,12 @@ public final class client extends GameShell {
 			class24.method4664(var146);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3902 == arg0.field796) {
+		} else if (ServerProt.VORBIS_PRELOAD_SOUND_GROUP == arg0.field796) {
 			int var147 = var2.g2();
 			Statics.field1798.method3215(var147);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3890 == arg0.field796) {
+		} else if (ServerProt.CAM_REMOVEROOF == arg0.field796) {
 			int var148 = var2.g4_alt2();
 			method14061();
 			if (var148 == -1) {
@@ -7603,18 +7603,18 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3839 == arg0.field796) {
+		} else if (ServerProt.MAP_PROJANIM == arg0.field796) {
 			method9605(ZoneProt.field3614);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3935 == arg0.field796) {
+		} else if (ServerProt.IF_SETHIDE == arg0.field796) {
 			int var154 = var2.g4s();
 			int var155 = var2.g1_alt2();
 			method14061();
 			class1171.method3570(var154, var155);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field4016 == arg0.field796) {
+		} else if (ServerProt.MESSAGE_CLANCHANNEL == arg0.field796) {
 			boolean var156 = var2.g1() == 1;
 			String var157 = var2.gjstr();
 			long var158 = (long) var2.g2();
@@ -7659,11 +7659,11 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3932 == arg0.field796) {
+		} else if (ServerProt.VARCLAN_ENABLE == arg0.field796) {
 			Statics.field7698 = new class150(Statics.field8783);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3936 == arg0.field796) {
+		} else if (ServerProt.LAST_LOGIN_INFO == arg0.field796) {
 			int var171 = var2.g4s();
 			Statics.field636 = new class25(var171);
 			Thread var172 = new Thread(Statics.field636);
@@ -7671,7 +7671,7 @@ public final class client extends GameShell {
 			var172.start();
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field4008 == arg0.field796) {
+		} else if (ServerProt.SYNTH_SOUND == arg0.field796) {
 			int var173 = var2.g2();
 			if (var173 == 65535) {
 				var173 = -1;
@@ -7683,7 +7683,7 @@ public final class client extends GameShell {
 			Statics.field1798.method3191(class173.field1832, var173, var174, var176, class168.field1805.method3034(), class174.field1835, 0.0F, 0.0F, null, 0, var177, var175);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3992 == arg0.field796) {
+		} else if (ServerProt.MESSAGE_QUICKCHAT_PRIVATE == arg0.field796) {
 			boolean var178 = var2.g1() == 1;
 			String var179 = var2.gjstr();
 			String var180 = var179;
@@ -7722,29 +7722,29 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3835 == arg0.field796) {
+		} else if (ServerProt.MAP_ANIM == arg0.field796) {
 			method9605(ZoneProt.field3613);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3950 == arg0.field796) {
+		} else if (ServerProt.LOC_PREFETCH == arg0.field796) {
 			method9605(ZoneProt.field3619);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3979 == arg0.field796) {
+		} else if (ServerProt.JS5_RELOAD == arg0.field796) {
 			class280.method4883();
 			arg0.field796 = null;
 			return false;
-		} else if (ServerProt.field3973 == arg0.field796) {
+		} else if (ServerProt.LOC_ANIM == arg0.field796) {
 			method9605(ZoneProt.field3616);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3846 == arg0.field796) {
+		} else if (ServerProt.VARP_LARGE == arg0.field796) {
 			int var192 = var2.g2_alt1();
 			int var193 = var2.g4s();
 			Statics.field7410.field632.method9625((class149) Statics.field8485.method962(var192), var193);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field4014 == arg0.field796) {
+		} else if (ServerProt.LOYALTY_UPDATE == arg0.field796) {
 			int var194 = var2.g4_alt3();
 			if (Statics.field3056 != var194) {
 				Statics.field3056 = var194;
@@ -7752,7 +7752,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3956 == arg0.field796) {
+		} else if (ServerProt.IF_SETPLAYERHEAD_IGNOREWORN == arg0.field796) {
 			int var195 = var2.g2();
 			int var196 = var2.g4_alt2();
 			int var197 = var2.g2_alt1();
@@ -7761,7 +7761,7 @@ public final class client extends GameShell {
 			class1171.method17439(var196, 7, var198 << 16 | var195, var197);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3858 == arg0.field796) {
+		} else if (ServerProt.TELEMETRY_GRID_REMOVE_COLUMN == arg0.field796) {
 			if (!field11095) {
 				try {
 					int var199 = var2.g1_alt2();
@@ -7774,12 +7774,12 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3859 == arg0.field796) {
+		} else if (ServerProt.CREATE_SUGGEST_NAME_REPLY == arg0.field796) {
 			String var202 = var2.gjstr();
 			class24.method1587(var202);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3907 == arg0.field796) {
+		} else if (ServerProt.CAM2_ENABLE == arg0.field796) {
 			boolean var203 = var2.g1() == 1;
 			if (var203) {
 				method4046(3);
@@ -7788,7 +7788,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3977 == arg0.field796) {
+		} else if (ServerProt.UPDATE_STAT == arg0.field796) {
 			int var204 = var2.g1_alt2();
 			int var205 = var2.g4_alt1();
 			int var206 = var2.g1_alt3();
@@ -7798,11 +7798,11 @@ public final class client extends GameShell {
 			field11015[++field11014 - 1 & 0x3F] = var206;
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3940 == arg0.field796) {
+		} else if (ServerProt.VORBIS_SPEECH_STOP == arg0.field796) {
 			Statics.field1798.method3203(class168.field1801.method3034());
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3946 == arg0.field796) {
+		} else if (ServerProt.MESSAGE_GAME == arg0.field796) {
 			int var207 = var2.gSmart1or2();
 			int var208 = var2.g4s();
 			int var209 = var2.g1();
@@ -7829,14 +7829,14 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3993 == arg0.field796) {
+		} else if (ServerProt.WORLDLIST_FETCH_REPLY == arg0.field796) {
 			boolean var213 = var2.g1() == 1;
 			byte[] var214 = new byte[arg0.field797 - 1];
 			var2.gdata(var214, 0, arg0.field797 - 1);
 			Statics.method6876(var213, var214);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field4006 == arg0.field796) {
+		} else if (ServerProt.IF_SETPLAYERMODEL_SNAPSHOT == arg0.field796) {
 			int var215 = var2.g4_alt3();
 			int var216 = var2.g1_alt1();
 			int var217 = -var216 - 2;
@@ -7844,13 +7844,13 @@ public final class client extends GameShell {
 			class1171.method17439(var215, 5, var217, 0);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3918 == arg0.field796) {
+		} else if (ServerProt.IF_SETPLAYERMODEL_SELF == arg0.field796) {
 			int var218 = var2.g4s();
 			method14061();
 			class1171.method17439(var218, 5, field10945, 0);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3834 == arg0.field796) {
+		} else if (ServerProt.MESSAGE_PUBLIC == arg0.field796) {
 			int var219 = var2.g2();
 			class1130 var220;
 			if (field10945 == var219) {
@@ -7901,30 +7901,30 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field4019 == arg0.field796) {
+		} else if (ServerProt.IF_SETMODEL == arg0.field796) {
 			int var229 = var2.g4_alt2();
 			int var230 = var2.g4s();
 			method14061();
 			class1171.method17439(var229, 1, var230, -1);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3880 == arg0.field796) {
+		} else if (ServerProt.CLIENT_SETVARCBIT_SMALL == arg0.field796) {
 			int var231 = var2.g2();
 			byte var232 = var2.g1b_alt1();
 			method14061();
 			class1171.method18309(var231, var232);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3913 == arg0.field796) {
+		} else if (ServerProt.CAM_SMOOTHRESET == arg0.field796) {
 			method14061();
 			method3605();
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3898 == arg0.field796) {
+		} else if (ServerProt.MAP_PROJANIM_HALFSQ == arg0.field796) {
 			method9605(ZoneProt.field3624);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3855 == arg0.field796) {
+		} else if (ServerProt.SONG_PRELOAD == arg0.field796) {
 			int var233 = var2.g2_alt1();
 			if (var233 == 65535) {
 				var233 = -1;
@@ -7932,30 +7932,30 @@ public final class client extends GameShell {
 			Statics.field1798.method3239(var233, 255);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3923 == arg0.field796) {
+		} else if (ServerProt.VORBIS_PRELOAD_SOUNDS == arg0.field796) {
 			Statics.field1798.method3200(var2.g2());
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3987 == arg0.field796) {
+		} else if (ServerProt.UPDATE_RUNENERGY == arg0.field796) {
 			field11049 = var2.g1();
 			field11027 = field11058;
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field4009 == arg0.field796) {
+		} else if (ServerProt.IF_SETGRAPHIC == arg0.field796) {
 			int var234 = var2.g4_alt2();
 			int var235 = var2.g4_alt1();
 			method14061();
 			class1171.method9637(var235, var234);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3919 == arg0.field796) {
+		} else if (ServerProt.MESSAGE_QUICKCHAT_PRIVATE_ECHO == arg0.field796) {
 			String var236 = var2.gjstr();
 			int var237 = var2.g2();
 			String var238 = Statics.field489.method14982(var237).method19507(var2);
 			class241.method15054(19, 0, var236, var236, var236, var238, null, var237, null);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3968 == arg0.field796) {
+		} else if (ServerProt.UPDATE_ZONE_PARTIAL_ENCLOSED == arg0.field796) {
 			Statics.field10260 = var2.g1_alt1();
 			Statics.field10546 = var2.g1b_alt2() << 3;
 			Statics.field1701 = var2.g1b_alt2() << 3;
@@ -7965,7 +7965,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3969 == arg0.field796) {
+		} else if (ServerProt.VORBIS_SPEECH_SOUND == arg0.field796) {
 			int var240 = var2.g2();
 			if (var240 == 65535) {
 				var240 = -1;
@@ -7976,7 +7976,7 @@ public final class client extends GameShell {
 			Statics.field1798.method3191(class173.field1832, var240, var241, var243, class168.field1801.method3034(), class174.field1835, 0.0F, 0.0F, null, 0, 256, var242);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3957 == arg0.field796) {
+		} else if (ServerProt.CREATE_ACCOUNT_REPLY == arg0.field796) {
 			int var244 = var2.g1();
 			class705 var245 = (class705) class686.method1897(class705.method4614(), var244);
 			if (var245 == null) {
@@ -7985,14 +7985,14 @@ public final class client extends GameShell {
 			Statics.method6851(var245);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3967 == arg0.field796) {
+		} else if (ServerProt.REDUCE_NPC_ATTACK_PRIORITY == arg0.field796) {
 			field10955 = (class641) class686.method1897(class641.method10149(), var2.g1_alt3());
 			if (field10955 == null) {
 				field10955 = class641.field7908;
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3894 == arg0.field796) {
+		} else if (ServerProt.TELEMETRY_GRID_REMOVE_GROUP == arg0.field796) {
 			if (!field11095) {
 				try {
 					int var246 = var2.g1();
@@ -8004,13 +8004,13 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3882 == arg0.field796) {
+		} else if (ServerProt.UPDATE_ZONE_PARTIAL_FOLLOWS == arg0.field796) {
 			Statics.field10260 = var2.g1();
 			Statics.field10546 = var2.g1b_alt2() << 3;
 			Statics.field1701 = var2.g1b() << 3;
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field4005 == arg0.field796) {
+		} else if (ServerProt.IF_SETTARGETPARAM == arg0.field796) {
 			int var248 = var2.g4s();
 			int var249 = var2.g2();
 			if (var249 == 65535) {
@@ -8038,7 +8038,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3962 == arg0.field796) {
+		} else if (ServerProt.CUTSCENE == arg0.field796) {
 			int var257 = var2.g2();
 			field11041 = -1;
 			field10862 = var257;
@@ -8054,11 +8054,11 @@ public final class client extends GameShell {
 			var2.pos += var259;
 			arg0.field796 = null;
 			return false;
-		} else if (ServerProt.field3953 == arg0.field796) {
+		} else if (ServerProt.SOUND_AREA == arg0.field796) {
 			method9605(ZoneProt.field3626);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3826 == arg0.field796) {
+		} else if (ServerProt.SOCIAL_NETWORK_LOGOUT == arg0.field796) {
 			if (class725.field8531 && Statics.field12101 != null) {
 				method13880(Statics.field688.field11542.method18539(), -1, -1, false);
 			}
@@ -8068,14 +8068,14 @@ public final class client extends GameShell {
 			class505.method4607(var261, true, field10784);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3954 == arg0.field796) {
+		} else if (ServerProt.CLIENT_SETVARC_LARGE == arg0.field796) {
 			int var262 = var2.g4_alt1();
 			int var263 = var2.g2_alt2();
 			method14061();
 			class1171.method19215(var263, var262);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3961 == arg0.field796) {
+		} else if (ServerProt.IF_MOVESUB == arg0.field796) {
 			int var264 = var2.g4_alt2();
 			int var265 = var2.g4_alt2();
 			method14061();
@@ -8102,7 +8102,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3888 == arg0.field796) {
+		} else if (ServerProt.IF_SETPLAYERHEAD_OTHER == arg0.field796) {
 			int var270 = var2.g4_alt1();
 			int var271 = var2.g2_alt2();
 			int var272 = var2.g4_alt3();
@@ -8110,12 +8110,12 @@ public final class client extends GameShell {
 			class1171.method17439(var272, 3, var271, var270);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3931 == arg0.field796) {
+		} else if (ServerProt.LOBBY_APPEARANCE == arg0.field796) {
 			byte var273 = var2.g1b();
 			Statics.field4490.method19121(var2, var273);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field4015 == arg0.field796) {
+		} else if (ServerProt.UPDATE_IGNORELIST == arg0.field796) {
 			while (var2.pos < arg0.field797) {
 				int var274 = var2.g1();
 				boolean var275 = (var274 & 0x1) == 1;
@@ -8152,20 +8152,20 @@ public final class client extends GameShell {
 			field11022 = field11058;
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field4007 == arg0.field796) {
+		} else if (ServerProt.IF_SETTEXT == arg0.field796) {
 			int var282 = var2.g4_alt1();
 			String var283 = var2.gjstr();
 			method14061();
 			class1171.method2887(var282, var283);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field4013 == arg0.field796) {
+		} else if (ServerProt.PLAYER_GROUP_DELTA == arg0.field796) {
 			field11028 = field11058;
 			class201 var284 = new class201(var2, field10837);
 			var284.method3555(Statics.field6721);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3972 == arg0.field796) {
+		} else if (ServerProt.IF_SETRECOL == arg0.field796) {
 			int var285 = var2.g4_alt1();
 			int var286 = var2.g2_alt2();
 			int var287 = var2.g2_alt1();
@@ -8174,17 +8174,17 @@ public final class client extends GameShell {
 			class1171.method18895(var285, var288, var286, var287);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3925 == arg0.field796) {
+		} else if (ServerProt.RESET_CLIENT_VARCACHE == arg0.field796) {
 			Statics.field7410.field632.method9624();
 			field11010 += 64;
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3952 == arg0.field796) {
+		} else if (ServerProt.UPDATE_DOB == arg0.field796) {
 			Statics.field7406 = var2.g3s();
 			field10951 = var2.g1() == 1;
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3983 == arg0.field796) {
+		} else if (ServerProt.TELEMETRY_GRID_ADD_GROUP == arg0.field796) {
 			if (!field11095) {
 				try {
 					int var289 = var2.g4_alt1();
@@ -8197,7 +8197,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3915 == arg0.field796) {
+		} else if (ServerProt.MESSAGE_QUICKCHAT_CLANCHANNEL == arg0.field796) {
 			boolean var292 = var2.g1() == 1;
 			String var293 = var2.gjstr();
 			long var294 = (long) var2.g2();
@@ -8239,11 +8239,11 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3963 == arg0.field796) {
+		} else if (ServerProt.MINIMAP_TOGGLE == arg0.field796) {
 			class42.field724 = var2.g1();
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field4001 == arg0.field796) {
+		} else if (ServerProt.UPDATE_ZONE_FULL_FOLLOWS == arg0.field796) {
 			Statics.field10546 = var2.g1b_alt2() << 3;
 			Statics.field10260 = var2.g1_alt2();
 			Statics.field1701 = var2.g1b_alt3() << 3;
@@ -8273,24 +8273,24 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3889 == arg0.field796) {
+		} else if (ServerProt.VARBIT_SMALL == arg0.field796) {
 			int var317 = var2.g1_alt3();
 			int var318 = var2.g2_alt2();
 			Statics.field7410.field632.method9629((class305) Statics.field8736.method962(var318), var317);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3851 == arg0.field796) {
+		} else if (ServerProt.FRIENDLIST_LOADED == arg0.field796) {
 			field11080 = 1;
 			field11022 = field11058;
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3897 == arg0.field796) {
+		} else if (ServerProt.IF_SETPLAYERHEAD == arg0.field796) {
 			int var319 = var2.g4_alt1();
 			method14061();
 			class1171.method17439(var319, 3, field10945, 0);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3985 == arg0.field796) {
+		} else if (ServerProt.PLAYER_GROUP_VARPS == arg0.field796) {
 			field10957 = field11058;
 			int var320 = var2.pos;
 			int var321 = var2.g2();
@@ -8307,7 +8307,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3984 == arg0.field796) {
+		} else if (ServerProt.JCOINS_UPDATE == arg0.field796) {
 			int var326 = var2.g4_alt2();
 			if (Statics.field2676 != var326) {
 				Statics.field2676 = var326;
@@ -8315,17 +8315,17 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3874 == arg0.field796) {
+		} else if (ServerProt.SEND_PING == arg0.field796) {
 			int var327 = var2.g4s();
 			int var328 = var2.g4s();
-			ClientMessage var329 = Statics.method1604(ClientProt.field3794, arg0.field794);
+			ClientMessage var329 = Statics.method1604(ClientProt.SEND_PING_REPLY, arg0.field794);
 			var329.field11432.p4_alt1(var327);
 			var329.field11432.p4_alt3(var328);
 			var329.field11432.p1_alt2(field6585);
 			arg0.method934(var329);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3861 == arg0.field796) {
+		} else if (ServerProt.IF_OPENTOP == arg0.field796) {
 			int var330 = var2.g4_alt2();
 			int var331 = var2.g4_alt1();
 			int var332 = var2.g4_alt2();
@@ -8343,7 +8343,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3828 == arg0.field796) {
+		} else if (ServerProt.MIDI_SONG_LOCATION == arg0.field796) {
 			int var337 = var2.g4_alt3();
 			int var338 = var2.g4s();
 			int var339 = var2.g1_alt1();
@@ -8355,7 +8355,7 @@ public final class client extends GameShell {
 			Statics.field1798.method3143(var338, var340, true, var342, var343 << 9, var344 << 9, var339 << 9, var341 << 9);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3878 == arg0.field796) {
+		} else if (ServerProt.DEBUG_SERVER_TRIGGERS == arg0.field796) {
 			int var345 = var2.g2();
 			int var346 = var2.g2();
 			int var347 = var2.g2();
@@ -8370,13 +8370,13 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3988 == arg0.field796) {
+		} else if (ServerProt.SOUND_MIXBUSS_SETLEVEL == arg0.field796) {
 			int var350 = var2.g2();
 			int var351 = var2.g2();
 			Statics.field1798.method3157(var350, var351);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field4003 == arg0.field796) {
+		} else if (ServerProt.UPDATE_REBOOT_TIMER == arg0.field796) {
 			if (Statics.method15084(field10791)) {
 				field10831 = (int) ((float) var2.g2() * 2.5F);
 			} else {
@@ -8385,7 +8385,7 @@ public final class client extends GameShell {
 			field11027 = field11058;
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3909 == arg0.field796) {
+		} else if (ServerProt.VARCLAN == arg0.field796) {
 			if (Statics.field7698 == null) {
 				Statics.field7698 = new class150(Statics.field8783);
 			}
@@ -8394,7 +8394,7 @@ public final class client extends GameShell {
 			field10841[++field11020 - 1 & 0x3F] = var352.field4240;
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field4022 == arg0.field796) {
+		} else if (ServerProt.VORBIS_SOUND_GROUP == arg0.field796) {
 			int var353 = var2.g2();
 			if (var353 == 65535) {
 				var353 = -1;
@@ -8410,12 +8410,12 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3970 == arg0.field796) {
+		} else if (ServerProt.UPDATE_RUNWEIGHT == arg0.field796) {
 			field11102 = var2.g2s();
 			field11027 = field11058;
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3867 == arg0.field796) {
+		} else if (ServerProt.REBUILD_REGION == arg0.field796) {
 			PacketBit var360 = new PacketBit(arg0.field797);
 			System.arraycopy(arg0.field795.data, arg0.field795.pos, var360.data, 0, arg0.field797);
 			method3652();
@@ -8426,7 +8426,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return false;
-		} else if (ServerProt.field3938 == arg0.field796) {
+		} else if (ServerProt.MESSAGE_PLAYER_GROUP == arg0.field796) {
 			String var361 = var2.gjstr();
 			long var362 = (long) var2.g2();
 			long var364 = (long) var2.g3();
@@ -8469,10 +8469,10 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3955 == arg0.field796) {
+		} else if (ServerProt.SERVER_TICK_END == arg0.field796) {
 			arg0.field796 = null;
 			return false;
-		} else if (ServerProt.field3904 == arg0.field796) {
+		} else if (ServerProt.HINT_ARROW == arg0.field796) {
 			int var374 = var2.g1();
 			int var375 = var374 >> 5;
 			int var376 = var374 & 0x1F;
@@ -8523,7 +8523,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3895 == arg0.field796) {
+		} else if (ServerProt.SPOTANIM_SPECIFIC == arg0.field796) {
 			int var379 = var2.g1();
 			int var380 = var2.g2_alt2();
 			int var381 = var2.g4_alt1();
@@ -8672,7 +8672,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3830 == arg0.field796) {
+		} else if (ServerProt.CAM_SHAKE == arg0.field796) {
 			int var426 = var2.g2_alt2();
 			int var427 = var2.g1_alt1();
 			int var428 = var2.g1_alt2();
@@ -8686,7 +8686,7 @@ public final class client extends GameShell {
 			field10996[var427] = var426;
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3843 == arg0.field796) {
+		} else if (ServerProt.MIDI_SONG == arg0.field796) {
 			int var431 = var2.g2_alt3();
 			if (var431 == 65535) {
 				var431 = -1;
@@ -8695,29 +8695,29 @@ public final class client extends GameShell {
 			Statics.field1798.method3235(var431, var432);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3833 == arg0.field796) {
+		} else if (ServerProt.MESSAGE_PRIVATE_ECHO == arg0.field796) {
 			String var433 = var2.gjstr();
 			String var434 = class107.method10347(Statics.method5939(var2));
 			class241.method2664(6, 0, var433, var433, var433, var434, null);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3994 == arg0.field796) {
+		} else if (ServerProt.LOGOUT == arg0.field796) {
 			field10853 = (class778) class686.method1897(class778.method10365(), var2.g1());
 			method9620(false);
 			arg0.field796 = null;
 			return false;
-		} else if (ServerProt.field3947 == arg0.field796) {
+		} else if (ServerProt.UPDATE_UID192 == arg0.field796) {
 			var2.pos += -1822849076;
 			if (var2.checkcrc()) {
 				GameShell.method1001(var2, var2.pos - 28);
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3868 == arg0.field796) {
+		} else if (ServerProt.MIDI_SONG_STOP == arg0.field796) {
 			Statics.field1798.method3178();
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3831 == arg0.field796) {
+		} else if (ServerProt.TELEMETRY_GRID_MOVE_ROW == arg0.field796) {
 			if (!field11095) {
 				try {
 					int var435 = var2.g1_alt1();
@@ -8731,7 +8731,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3958 == arg0.field796) {
+		} else if (ServerProt.IF_OPENSUB_ACTIVE_OBJ == arg0.field796) {
 			int var439 = var2.g2();
 			int var440 = var2.g4_alt3();
 			class594 var441 = new class594(var2.g4_alt2());
@@ -8745,22 +8745,22 @@ public final class client extends GameShell {
 			method4489(var442, new class1194(var439, var446, new class679(var441, var444)), new int[] { var445, var447, var440, var443 }, false);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3871 == arg0.field796) {
+		} else if (ServerProt.LOC_DEL == arg0.field796) {
 			method9605(ZoneProt.field3625);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3926 == arg0.field796) {
+		} else if (ServerProt.NPC_INFO == arg0.field796) {
 			method7099(field10855.field5027);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3933 == arg0.field796) {
+		} else if (ServerProt.POINTLIGHT_COLOUR == arg0.field796) {
 			int var448 = var2.g4_alt3();
 			int var449 = var2.g2_alt1();
 			int var450 = var2.g2_alt3();
 			field10855.method7743().method8756(var450, var448, var449);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3922 == arg0.field796) {
+		} else if (ServerProt.UPDATE_STOCKMARKET_SLOT == arg0.field796) {
 			int var451 = var2.g1();
 			int var452 = var2.g1();
 			if (var2.g1() == 0) {
@@ -8772,7 +8772,7 @@ public final class client extends GameShell {
 			field10803 = field11058;
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3986 == arg0.field796) {
+		} else if (ServerProt.TELEMETRY_GRID_REMOVE_ROW == arg0.field796) {
 			if (!field11095) {
 				try {
 					int var453 = var2.g1_alt3();
@@ -8785,7 +8785,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3971 == arg0.field796) {
+		} else if (ServerProt.MESSAGE_QUICKCHAT_FRIENDCHAT == arg0.field796) {
 			boolean var456 = var2.g1() == 1;
 			String var457 = var2.gjstr();
 			String var458 = var457;
@@ -8825,7 +8825,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3887 == arg0.field796) {
+		} else if (ServerProt.IF_OPENSUB_ACTIVE_PLAYER == arg0.field796) {
 			int var471 = var2.g4_alt2();
 			int var472 = var2.g4_alt3();
 			int var473 = var2.g4_alt2();
@@ -8838,7 +8838,7 @@ public final class client extends GameShell {
 			method4489(var473, new class1193(var478, var475, var476), new int[] { var471, var477, var472, var474 }, false);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field4002 == arg0.field796) {
+		} else if (ServerProt.MESSAGE_QUICKCHAT_PLAYER_GROUP == arg0.field796) {
 			String var479 = var2.gjstr();
 			long var480 = (long) var2.g2();
 			long var482 = (long) var2.g3();
@@ -8878,7 +8878,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3917 == arg0.field796) {
+		} else if (ServerProt.IF_CLOSESUB == arg0.field796) {
 			int var493 = var2.g4_alt2();
 			method14061();
 			SubInterface var494 = (SubInterface) field10979.method14495((long) var493);
@@ -8891,7 +8891,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field4012 == arg0.field796) {
+		} else if (ServerProt.TELEMETRY_GRID_VALUES_DELTA == arg0.field796) {
 			if (!field11095) {
 				try {
 					for (byte var495 = var2.g1b(); var495 != -1; var495 = var2.g1b()) {
@@ -8908,7 +8908,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3964 == arg0.field796) {
+		} else if (ServerProt.CLANCHANNEL_DELTA == arg0.field796) {
 			field11025 = field11058;
 			boolean var499 = var2.g1() == 1;
 			class311 var500 = new class311(var2);
@@ -8921,7 +8921,7 @@ public final class client extends GameShell {
 			var500.method5342(var501);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3997 == arg0.field796) {
+		} else if (ServerProt.MESSAGE_FRIENDCHANNEL == arg0.field796) {
 			boolean var502 = var2.g1() == 1;
 			String var503 = var2.gjstr();
 			String var504 = var503;
@@ -8964,7 +8964,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3838 == arg0.field796) {
+		} else if (ServerProt.RESET_ANIMS == arg0.field796) {
 			for (int var516 = 0; var516 < field10944.length; var516++) {
 				if (field10944[var516] != null) {
 					field10944[var516].field10427 = null;
@@ -8977,7 +8977,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3920 == arg0.field796) {
+		} else if (ServerProt.SET_MAP_FLAG == arg0.field796) {
 			int var518 = var2.g1_alt1();
 			int var519 = var2.g1();
 			if (var518 == 255) {
@@ -8987,19 +8987,19 @@ public final class client extends GameShell {
 			class1171.method14994(var518, var519);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3948 == arg0.field796) {
+		} else if (ServerProt.VARP_SMALL == arg0.field796) {
 			byte var520 = var2.g1b();
 			int var521 = var2.g2_alt2();
 			Statics.field7410.field632.method9625((class149) Statics.field8485.method962(var521), var520);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field4017 == arg0.field796) {
+		} else if (ServerProt.CLEAR_PLAYER_SNAPSHOT == arg0.field796) {
 			int var522 = var2.g1();
 			int var523 = -var522 - 2;
 			field10946.remove(var523);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3892 == arg0.field796) {
+		} else if (ServerProt.IF_SET_HTTP_IMAGE == arg0.field796) {
 			int var524 = var2.g4s();
 			int var525 = var2.g4_alt1();
 			method14061();
@@ -9007,7 +9007,7 @@ public final class client extends GameShell {
 			var526.field2188 = var525;
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3869 == arg0.field796) {
+		} else if (ServerProt.IF_SETOBJECT == arg0.field796) {
 			int var527 = var2.g2();
 			if (var527 == 65535) {
 				var527 = -1;
@@ -9021,7 +9021,7 @@ public final class client extends GameShell {
 			Statics.method9085(var528, var530.field8695, var530.field8643, var530.field8641);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3999 == arg0.field796) {
+		} else if (ServerProt.TELEMETRY_GRID_SET_ROW_PINNED == arg0.field796) {
 			if (!field11095) {
 				try {
 					int var531 = var2.g1_alt1();
@@ -9035,14 +9035,14 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3884 == arg0.field796) {
+		} else if (ServerProt.SOUND_MIXBUSS_ADD == arg0.field796) {
 			int var535 = var2.g2();
 			int var536 = var2.g2();
 			int var537 = var2.g2();
 			Statics.field1798.method3156(var535, var536, var537);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3832 == arg0.field796) {
+		} else if (ServerProt.UPDATE_INV_FULL == arg0.field796) {
 			int var538 = var2.g2();
 			int var539 = var2.g1();
 			boolean var540 = (var539 & 0x1) != 0;
@@ -9071,7 +9071,7 @@ public final class client extends GameShell {
 			field10783[++field11012 - 1 & 0x3F] = var538;
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3927 == arg0.field796) {
+		} else if (ServerProt.MESSAGE_PRIVATE == arg0.field796) {
 			boolean var549 = var2.g1() == 1;
 			String var550 = var2.gjstr();
 			String var551 = var550;
@@ -9124,11 +9124,11 @@ public final class client extends GameShell {
 			field10855.method7743().method8757(var564, var565, var563);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3974 == arg0.field796) {
+		} else if (ServerProt.STORE_SERVERPERM_VARCS_ACK == arg0.field796) {
 			Statics.field7228.method16413();
 			arg0.field796 = null;
 			return false;
-		} else if (ServerProt.field3829 == arg0.field796) {
+		} else if (ServerProt.CREATE_CHECK_EMAIL_REPLY == arg0.field796) {
 			int var566 = var2.g1();
 			class707 var567 = (class707) class686.method1897(Statics.method4289(), var566);
 			if (var567 == null) {
@@ -9137,7 +9137,7 @@ public final class client extends GameShell {
 			class24.method3581(var567);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3924 == arg0.field796) {
+		} else if (ServerProt.CAM_MOVETO == arg0.field796) {
 			int var568 = var2.g1_alt2();
 			int var569 = var2.g1_alt1();
 			int var570 = var2.g1();
@@ -9147,18 +9147,18 @@ public final class client extends GameShell {
 			method15723(var568, var570, var572, var569, var571, true);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3965 == arg0.field796) {
+		} else if (ServerProt.LOC_ADD_CHANGE == arg0.field796) {
 			method9605(ZoneProt.field3622);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3857 == arg0.field796) {
+		} else if (ServerProt.IF_SETTEXTFONT == arg0.field796) {
 			int var573 = var2.g4_alt1();
 			int var574 = var2.g4_alt3();
 			method14061();
 			class1171.method16659(var573, var574);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3864 == arg0.field796) {
+		} else if (ServerProt.IF_OPENSUB == arg0.field796) {
 			int var575 = var2.g4_alt2();
 			int var576 = var2.g4_alt1();
 			int var577 = var2.g1_alt2();
@@ -9170,28 +9170,28 @@ public final class client extends GameShell {
 			method4489(var576, new SubInterface(var579, var577), new int[] { var581, var580, var575, var578 }, false);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3879 == arg0.field796) {
+		} else if (ServerProt.SHOW_FACE_HERE == arg0.field796) {
 			int var582 = var2.g1_alt3();
 			method14061();
 			field10921 = var582;
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3916 == arg0.field796) {
+		} else if (ServerProt.VARBIT_LARGE == arg0.field796) {
 			int var583 = var2.g2_alt2();
 			int var584 = var2.g4_alt1();
 			Statics.field7410.field632.method9629((class305) Statics.field8736.method962(var583), var584);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3903 == arg0.field796) {
+		} else if (ServerProt.CHAT_FILTER_SETTINGS == arg0.field796) {
 			field11029 = var2.g1_alt2();
 			field11050 = var2.g1_alt2();
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3937 == arg0.field796) {
+		} else if (ServerProt.REFLECTION_CHECKER == arg0.field796) {
 			class780.method10680(var2, arg0.field797);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3849 == arg0.field796) {
+		} else if (ServerProt.UPDATE_FRIENDCHAT_CHANNEL_FULL == arg0.field796) {
 			field10936 = field11058;
 			if (arg0.field797 == 0) {
 				field11055 = null;
@@ -9252,7 +9252,7 @@ public final class client extends GameShell {
 			Statics.field9267 = var587;
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3873 == arg0.field796) {
+		} else if (ServerProt.PROJANIM_SPECIFIC == arg0.field796) {
 			int var595 = var2.g2_alt1();
 			byte var596 = var2.g1b_alt2();
 			int var597 = var2.g2_alt3();
@@ -9297,7 +9297,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3928 == arg0.field796) {
+		} else if (ServerProt.IF_OPENSUB_ACTIVE_NPC == arg0.field796) {
 			int var626 = var2.g2_alt3();
 			int var627 = var2.g4_alt1();
 			int var628 = var2.g4_alt3();
@@ -9310,7 +9310,7 @@ public final class client extends GameShell {
 			method4489(var633, new class1191(var626, var631, var630), new int[] { var627, var628, var632, var629 }, false);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3995 == arg0.field796) {
+		} else if (ServerProt.CLANSETTINGS_DELTA == arg0.field796) {
 			field10818 = field11058;
 			boolean var634 = var2.g1() == 1;
 			class310 var635 = new class310(var2);
@@ -9323,7 +9323,7 @@ public final class client extends GameShell {
 			var635.method5333(var636);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3980 == arg0.field796) {
+		} else if (ServerProt.CHANGE_LOBBY == arg0.field796) {
 			String var637 = var2.gjstr();
 			int var638 = var2.g2();
 			int var639 = var2.g2();
@@ -9334,11 +9334,11 @@ public final class client extends GameShell {
 			Statics.field8751.field8742 = var640;
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3860 == arg0.field796) {
+		} else if (ServerProt.LOC_CUSTOMISE == arg0.field796) {
 			method9605(ZoneProt.field3623);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3960 == arg0.field796) {
+		} else if (ServerProt.IF_SETPOSITION == arg0.field796) {
 			int var641 = var2.g2s_alt1();
 			int var642 = var2.g2s_alt2();
 			int var643 = var2.g4_alt1();
@@ -9346,19 +9346,19 @@ public final class client extends GameShell {
 			class1171.method4400(var643, var641, var642);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3943 == arg0.field796) {
+		} else if (ServerProt.REDUCE_PLAYER_ATTACK_PRIORITY == arg0.field796) {
 			field10954 = (class641) class686.method1897(class641.method10149(), var2.g1());
 			if (field10954 == null) {
 				field10954 = class641.field7908;
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3921 == arg0.field796) {
+		} else if (ServerProt.VORBIS_SOUND_GROUP_STOP == arg0.field796) {
 			int var644 = var2.g2();
 			Statics.field1798.method3153(var644);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3870 == arg0.field796) {
+		} else if (ServerProt.UPDATE_FRIENDCHAT_CHANNEL_SINGLEUSER == arg0.field796) {
 			String var645 = var2.gjstr();
 			boolean var646 = var2.g1() == 1;
 			String var647;
@@ -9436,14 +9436,14 @@ public final class client extends GameShell {
 			field10936 = field11058;
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3929 == arg0.field796) {
+		} else if (ServerProt.IF_SETANIM == arg0.field796) {
 			int var658 = var2.g4s();
 			int var659 = var2.g4_alt3();
 			method14061();
 			Statics.method3073(var658, var659);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3865 == arg0.field796) {
+		} else if (ServerProt.TELEMETRY_GRID_MOVE_COLUMN == arg0.field796) {
 			if (!field11095) {
 				try {
 					int var660 = var2.g1_alt2();
@@ -9457,14 +9457,14 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field4010 == arg0.field796) {
+		} else if (ServerProt.IF_SETCLICKMASK == arg0.field796) {
 			int var664 = var2.g4_alt3();
 			boolean var665 = var2.g1_alt2() == 1;
 			method14061();
 			class1171.method8279(var664, var665);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3837 == arg0.field796) {
+		} else if (ServerProt.TELEMETRY_GRID_ADD_COLUMN == arg0.field796) {
 			if (!field11095) {
 				try {
 					byte var666 = var2.g1b_alt1();
@@ -9478,24 +9478,24 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3875 == arg0.field796) {
+		} else if (ServerProt.OBJ_DEL == arg0.field796) {
 			method9605(ZoneProt.field3617);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3856 == arg0.field796) {
+		} else if (ServerProt.CLIENT_SETVARCSTR_SMALL == arg0.field796) {
 			int var670 = var2.g2();
 			String var671 = var2.gjstr();
 			method14061();
 			class1171.method14051(var670, var671);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3827 == arg0.field796) {
+		} else if (ServerProt.ENVIRONMENT_OVERRIDE == arg0.field796) {
 			class660 var672 = new class660();
 			boolean var673 = var672.method10382(var2);
 			field10855.method7816().method9980(field10855, var673 ? var672 : null, var672.method10380());
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3982 == arg0.field796) {
+		} else if (ServerProt.RUNCLIENTSCRIPT == arg0.field796) {
 			String var674 = var2.gjstr();
 			Object[] var675 = new Object[var674.length() + 1];
 			for (int var676 = var674.length() - 1; var676 >= 0; var676--) {
@@ -9512,16 +9512,16 @@ public final class client extends GameShell {
 			class676.method1428(var677);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3981 == arg0.field796) {
+		} else if (ServerProt.DO_CHEAT == arg0.field796) {
 			String var678 = var2.gjstr();
 			class47.method18913(var678, false, false);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3911 == arg0.field796) {
+		} else if (ServerProt.OBJ_ADD == arg0.field796) {
 			method9605(ZoneProt.field3621);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3951 == arg0.field796) {
+		} else if (ServerProt.NPC_HEADICON_SPECIFIC == arg0.field796) {
 			int var679 = var2.g4s();
 			int var680 = var2.g2s();
 			int var681 = var2.g1_alt1();
@@ -9537,27 +9537,27 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3959 == arg0.field796) {
+		} else if (ServerProt.TRIGGER_ONDIALOGABORT == arg0.field796) {
 			if (field10978 != -1) {
 				Statics.method1023(field10978, 0);
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3905 == arg0.field796) {
+		} else if (ServerProt.IF_SETSCROLLPOS == arg0.field796) {
 			int var685 = var2.g4s();
 			int var686 = var2.g2_alt2();
 			method14061();
 			class1171.method5081(var685, var686);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3852 == arg0.field796) {
+		} else if (ServerProt.IF_SETNPCHEAD == arg0.field796) {
 			int var687 = var2.g4_alt3();
 			int var688 = var2.g4_alt2();
 			method14061();
 			class1171.method17439(var687, 2, var688, -1);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3883 == arg0.field796) {
+		} else if (ServerProt.LOGOUT_TRANSFER == arg0.field796) {
 			int var689 = var2.g2();
 			String var690 = var2.gjstr();
 			int var691 = var2.g2();
@@ -9570,12 +9570,12 @@ public final class client extends GameShell {
 			method6972(19);
 			arg0.field796 = null;
 			return false;
-		} else if (ServerProt.field3949 == arg0.field796) {
+		} else if (ServerProt.VORBIS_SOUND_GROUP_START == arg0.field796) {
 			int var695 = var2.g2();
 			Statics.field1798.method3208(var695);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3866 == arg0.field796) {
+		} else if (ServerProt.PLAYER_GROUP_FULL == arg0.field796) {
 			field11028 = field11058;
 			if (arg0.field797 == 0) {
 				Statics.field6721 = null;
@@ -9584,7 +9584,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3863 == arg0.field796) {
+		} else if (ServerProt.VORBIS_SOUND == arg0.field796) {
 			int var696 = var2.g2();
 			if (var696 == 65535) {
 				var696 = -1;
@@ -9596,7 +9596,7 @@ public final class client extends GameShell {
 			Statics.field1798.method3191(class173.field1832, var696, var697, var699, class168.field1805.method3034(), class174.field1835, 0.0F, 0.0F, null, 0, var700, var698);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3966 == arg0.field796) {
+		} else if (ServerProt.CAM_LOOKAT == arg0.field796) {
 			int var701 = var2.g1_alt2();
 			int var702 = var2.g1();
 			int var703 = var2.g1_alt3();
@@ -9606,7 +9606,7 @@ public final class client extends GameShell {
 			method14706(var701, var702, var705, var704, var703);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3998 == arg0.field796) {
+		} else if (ServerProt.IF_SETRETEX == arg0.field796) {
 			int var706 = var2.g2_alt3();
 			int var707 = var2.g2_alt1();
 			int var708 = var2.g4s();
@@ -9615,7 +9615,7 @@ public final class client extends GameShell {
 			class1171.method5395(var708, var709, var706, var707);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3914 == arg0.field796) {
+		} else if (ServerProt.REBUILD_NORMAL == arg0.field796) {
 			PacketBit var710 = new PacketBit(arg0.field797);
 			System.arraycopy(arg0.field795.data, arg0.field795.pos, var710.data, 0, arg0.field797);
 			method3652();
@@ -9626,11 +9626,11 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return false;
-		} else if (ServerProt.field3976 == arg0.field796) {
+		} else if (ServerProt.SET_TARGET == arg0.field796) {
 			field10787 = var2.g2s_alt2();
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3989 == arg0.field796) {
+		} else if (ServerProt.CREATE_CHECK_NAME_REPLY == arg0.field796) {
 			int var711 = var2.g1();
 			class708 var712 = (class708) class686.method1897(class708.method6019(), var711);
 			if (var712 == null) {
@@ -9639,7 +9639,7 @@ public final class client extends GameShell {
 			class24.method717(var712);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3906 == arg0.field796) {
+		} else if (ServerProt.IF_SETPLAYERMODEL_OTHER == arg0.field796) {
 			int var713 = var2.g2_alt1();
 			int var714 = var2.g4s();
 			int var715 = var2.g4s();
@@ -9647,17 +9647,17 @@ public final class client extends GameShell {
 			class1171.method17439(var714, 5, var713, var715);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3978 == arg0.field796) {
+		} else if (ServerProt.CAMERA_UPDATE == arg0.field796) {
 			Statics.field9155.method16604(var2, arg0.field797);
 			field10907 = field11058;
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3850 == arg0.field796) {
+		} else if (ServerProt.EXECUTE_CLIENT_CHEAT == arg0.field796) {
 			int var716 = var2.g2();
 			class47.method16614(var716);
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3847 == arg0.field796) {
+		} else if (ServerProt.CLIENT_SETVARCSTR_LARGE == arg0.field796) {
 			int var717 = var2.g2();
 			String var718 = var2.gjstr();
 			method14061();
@@ -10811,25 +10811,25 @@ public final class client extends GameShell {
 			if (var6 != null && Statics.field4490 != var6 && var6.field12062 != null && var6.field12062.equalsIgnoreCase(arg1)) {
 				ClientProt var7 = null;
 				if (arg0 == 1) {
-					var7 = ClientProt.field3799;
+					var7 = ClientProt.OPPLAYER1;
 				} else if (arg0 == 2) {
-					var7 = ClientProt.field3705;
+					var7 = ClientProt.OPPLAYER2;
 				} else if (arg0 == 3) {
-					var7 = ClientProt.field3758;
+					var7 = ClientProt.OPPLAYER3;
 				} else if (arg0 == 4) {
-					var7 = ClientProt.field3784;
+					var7 = ClientProt.OPPLAYER4;
 				} else if (arg0 == 5) {
-					var7 = ClientProt.field3686;
+					var7 = ClientProt.OPPLAYER5;
 				} else if (arg0 == 6) {
-					var7 = ClientProt.field3744;
+					var7 = ClientProt.OPPLAYER6;
 				} else if (arg0 == 7) {
-					var7 = ClientProt.field3720;
+					var7 = ClientProt.OPPLAYER7;
 				} else if (arg0 == 8) {
-					var7 = ClientProt.field3730;
+					var7 = ClientProt.OPPLAYER8;
 				} else if (arg0 == 9) {
-					var7 = ClientProt.field3771;
+					var7 = ClientProt.OPPLAYER9;
 				} else if (arg0 == 10) {
-					var7 = ClientProt.field3704;
+					var7 = ClientProt.OPPLAYER10;
 				}
 				if (var7 != null) {
 					ClientMessage var8 = Statics.method1604(var7, field10849.field794);
@@ -10857,7 +10857,7 @@ public final class client extends GameShell {
 		for (int var4 = 0; var4 < var2; var4++) {
 			class1130 var5 = field10944[var3[var4]];
 			if (var5.field12062 != null && var5.field12062.equalsIgnoreCase(arg0) && (Statics.field4490 == var5 && (Statics.field1765 & 0x10) != 0 || (Statics.field1765 & 0x8) != 0)) {
-				ClientMessage var6 = Statics.method1604(ClientProt.field3751, field10849.field794);
+				ClientMessage var6 = Statics.method1604(ClientProt.OPPLAYERT, field10849.field794);
 				var6.field11432.p2(field10974);
 				var6.field11432.p1_alt1(0);
 				var6.field11432.p2_alt1(field10975);
@@ -10921,7 +10921,7 @@ public final class client extends GameShell {
 
 	@ObfuscatedName("a.jm(III)V")
 	public static void method612(int arg0, int arg1) {
-		ClientMessage var2 = Statics.method1604(ClientProt.field3780, field10849.field794);
+		ClientMessage var2 = Statics.method1604(ClientProt.RESUME_PAUSEBUTTON, field10849.field794);
 		var2.field11432.p4_alt3(arg0);
 		var2.field11432.p2_alt2(arg1);
 		field10849.method934(var2);
@@ -10929,7 +10929,7 @@ public final class client extends GameShell {
 
 	@ObfuscatedName("ahm.jw(Lhf;Lhf;I)V")
 	public static void method16600(class226 arg0, class226 arg1) {
-		ClientMessage var2 = Statics.method1604(ClientProt.field3804, field10849.field794);
+		ClientMessage var2 = Statics.method1604(ClientProt.IF_BUTTOND, field10849.field794);
 		var2.field11432.p2(arg1.field2183);
 		var2.field11432.p4_alt3(arg0.field2158);
 		var2.field11432.p2_alt1(arg1.field2334);
@@ -10942,52 +10942,52 @@ public final class client extends GameShell {
 	@ObfuscatedName("pu.ji(Lax;Lhf;IIII)V")
 	public static void method7076(class49 arg0, class226 arg1, int arg2, int arg3, int arg4) {
 		if (arg2 == 1) {
-			ClientMessage var5 = Statics.method1604(ClientProt.field3793, arg0.field794);
+			ClientMessage var5 = Statics.method1604(ClientProt.IF_BUTTON1, arg0.field794);
 			method6985(var5, arg3, arg4, arg1.field2334);
 			arg0.method934(var5);
 		}
 		if (arg2 == 2) {
-			ClientMessage var6 = Statics.method1604(ClientProt.field3729, arg0.field794);
+			ClientMessage var6 = Statics.method1604(ClientProt.IF_BUTTON2, arg0.field794);
 			method6985(var6, arg3, arg4, arg1.field2334);
 			arg0.method934(var6);
 		}
 		if (arg2 == 3) {
-			ClientMessage var7 = Statics.method1604(ClientProt.field3768, arg0.field794);
+			ClientMessage var7 = Statics.method1604(ClientProt.IF_BUTTON3, arg0.field794);
 			method6985(var7, arg3, arg4, arg1.field2334);
 			arg0.method934(var7);
 		}
 		if (arg2 == 4) {
-			ClientMessage var8 = Statics.method1604(ClientProt.field3713, arg0.field794);
+			ClientMessage var8 = Statics.method1604(ClientProt.IF_BUTTON4, arg0.field794);
 			method6985(var8, arg3, arg4, arg1.field2334);
 			arg0.method934(var8);
 		}
 		if (arg2 == 5) {
-			ClientMessage var9 = Statics.method1604(ClientProt.field3752, arg0.field794);
+			ClientMessage var9 = Statics.method1604(ClientProt.IF_BUTTON5, arg0.field794);
 			method6985(var9, arg3, arg4, arg1.field2334);
 			arg0.method934(var9);
 		}
 		if (arg2 == 6) {
-			ClientMessage var10 = Statics.method1604(ClientProt.field3765, arg0.field794);
+			ClientMessage var10 = Statics.method1604(ClientProt.IF_BUTTON6, arg0.field794);
 			method6985(var10, arg3, arg4, arg1.field2334);
 			arg0.method934(var10);
 		}
 		if (arg2 == 7) {
-			ClientMessage var11 = Statics.method1604(ClientProt.field3745, arg0.field794);
+			ClientMessage var11 = Statics.method1604(ClientProt.IF_BUTTON7, arg0.field794);
 			method6985(var11, arg3, arg4, arg1.field2334);
 			arg0.method934(var11);
 		}
 		if (arg2 == 8) {
-			ClientMessage var12 = Statics.method1604(ClientProt.field3732, arg0.field794);
+			ClientMessage var12 = Statics.method1604(ClientProt.IF_BUTTON8, arg0.field794);
 			method6985(var12, arg3, arg4, arg1.field2334);
 			arg0.method934(var12);
 		}
 		if (arg2 == 9) {
-			ClientMessage var13 = Statics.method1604(ClientProt.field3748, arg0.field794);
+			ClientMessage var13 = Statics.method1604(ClientProt.IF_BUTTON9, arg0.field794);
 			method6985(var13, arg3, arg4, arg1.field2334);
 			arg0.method934(var13);
 		}
 		if (arg2 == 10) {
-			ClientMessage var14 = Statics.method1604(ClientProt.field3749, arg0.field794);
+			ClientMessage var14 = Statics.method1604(ClientProt.IF_BUTTON10, arg0.field794);
 			method6985(var14, arg3, arg4, arg1.field2334);
 			arg0.method934(var14);
 		}
@@ -12820,7 +12820,7 @@ public final class client extends GameShell {
 
 	@ObfuscatedName("sp.km(ZI)V")
 	public static final void method8276(boolean arg0) {
-		ClientMessage var1 = Statics.method1604(ClientProt.field3739, field10849.field794);
+		ClientMessage var1 = Statics.method1604(ClientProt.CLOSE_MODAL, field10849.field794);
 		field10849.method934(var1);
 		for (SubInterface var2 = (SubInterface) field10979.method14500(); var2 != null; var2 = (SubInterface) field10979.method14502()) {
 			if (!var2.method8441()) {
@@ -12964,7 +12964,7 @@ public final class client extends GameShell {
 	@ObfuscatedName("xf.lp(Ljava/lang/String;II)V")
 	public static final void method10344(String arg0, int arg1) {
 		class49 var2 = method640();
-		ClientMessage var3 = Statics.method1604(ClientProt.field3736, var2.field794);
+		ClientMessage var3 = Statics.method1604(ClientProt.FRIEND_SETRANK, var2.field794);
 		var3.field11432.p1(Packet.pjstrlen(arg0) + 1);
 		var3.field11432.pjstr(arg0);
 		var3.field11432.p1_alt2(arg1);
@@ -12974,7 +12974,7 @@ public final class client extends GameShell {
 	@ObfuscatedName("xt.lc(Ljava/lang/String;Ljava/lang/String;I)V")
 	public static final void method10360(String arg0, String arg1) {
 		class49 var2 = method640();
-		ClientMessage var3 = Statics.method1604(ClientProt.field3746, var2.field794);
+		ClientMessage var3 = Statics.method1604(ClientProt.FRIEND_SETNOTES, var2.field794);
 		if (arg1.length() > 30) {
 			arg1 = arg1.substring(0, 30);
 		}
@@ -12987,7 +12987,7 @@ public final class client extends GameShell {
 	@ObfuscatedName("abh.lf(Ljava/lang/String;Ljava/lang/String;I)V")
 	public static final void method14701(String arg0, String arg1) {
 		class49 var2 = method640();
-		ClientMessage var3 = Statics.method1604(ClientProt.field3782, var2.field794);
+		ClientMessage var3 = Statics.method1604(ClientProt.IGNORE_SETNOTES, var2.field794);
 		if (arg1.length() > 30) {
 			arg1 = arg1.substring(0, 30);
 		}
@@ -13003,7 +13003,7 @@ public final class client extends GameShell {
 			return;
 		}
 		class49 var1 = method640();
-		ClientMessage var2 = Statics.method1604(ClientProt.field3714, var1.field794);
+		ClientMessage var2 = Statics.method1604(ClientProt.CLAN_KICKUSER, var1.field794);
 		var2.field11432.p1(Packet.pjstrlen(arg0));
 		var2.field11432.pjstr(arg0);
 		var1.method934(var2);
@@ -13012,7 +13012,7 @@ public final class client extends GameShell {
 	@ObfuscatedName("sf.lb(B)V")
 	public static final void method8328() {
 		class49 var0 = method640();
-		ClientMessage var1 = Statics.method1604(ClientProt.field3774, var0.field794);
+		ClientMessage var1 = Statics.method1604(ClientProt.CLAN_JOINCHAT_LEAVECHAT, var0.field794);
 		var1.field11432.p1(0);
 		var0.method934(var1);
 	}
@@ -13027,7 +13027,7 @@ public final class client extends GameShell {
 			return;
 		}
 		class49 var2 = method640();
-		ClientMessage var3 = Statics.method1604(ClientProt.field3747, var2.field794);
+		ClientMessage var3 = Statics.method1604(ClientProt.AFFINEDCLANSETTINGS_ADDBANNED_FROMCHANNEL, var2.field794);
 		var3.field11432.p1(Packet.pjstrlen(var1.field3087) + 2);
 		var3.field11432.p2(arg0);
 		var3.field11432.pjstr(var1.field3087);
@@ -13041,7 +13041,7 @@ public final class client extends GameShell {
 		}
 		class308 var2 = Statics.field3022.field11392[arg0];
 		class49 var3 = method640();
-		ClientMessage var4 = Statics.method1604(ClientProt.field3706, var3.field794);
+		ClientMessage var4 = Statics.method1604(ClientProt.AFFINEDCLANSETTINGS_SETMUTED_FROMCHANNEL, var3.field794);
 		var4.field11432.p1(Packet.pjstrlen(var2.field3087) + 3);
 		var4.field11432.p2(arg0);
 		var4.field11432.p1(arg1 ? 1 : 0);
@@ -13098,7 +13098,7 @@ public final class client extends GameShell {
 			return;
 		}
 		class49 var11 = method640();
-		ClientMessage var12 = Statics.method1604(ClientProt.field3734, var11.field794);
+		ClientMessage var12 = Statics.method1604(ClientProt.FRIENDLIST_ADD, var11.field794);
 		var12.field11432.p1(Packet.pjstrlen(arg0));
 		var12.field11432.pjstr(arg0);
 		var11.method934(var12);
@@ -13124,7 +13124,7 @@ public final class client extends GameShell {
 				}
 				field11022 = field11058;
 				class49 var7 = method640();
-				ClientMessage var8 = Statics.method1604(ClientProt.field3717, var7.field794);
+				ClientMessage var8 = Statics.method1604(ClientProt.FRIENDLIST_DEL, var7.field794);
 				var8.field11432.p1(Packet.pjstrlen(arg0));
 				var8.field11432.pjstr(arg0);
 				var7.method934(var8);
@@ -13153,7 +13153,7 @@ public final class client extends GameShell {
 				}
 				field11022 = field11058;
 				class49 var7 = method640();
-				ClientMessage var8 = Statics.method1604(ClientProt.field3724, var7.field794);
+				ClientMessage var8 = Statics.method1604(ClientProt.IGNORELIST_DEL, var7.field794);
 				var8.field11432.p1(Packet.pjstrlen(arg0));
 				var8.field11432.pjstr(arg0);
 				var7.method934(var8);
@@ -13234,7 +13234,7 @@ public final class client extends GameShell {
 	@ObfuscatedName("adb.lt(I)V")
 	public static void method15198() {
 		class49 var0 = method640();
-		ClientMessage var1 = Statics.method1604(ClientProt.field3767, var0.field794);
+		ClientMessage var1 = Statics.method1604(ClientProt.TRANSMITVAR_VERIFYID, var0.field794);
 		var1.field11432.p4(field10842);
 		var0.method934(var1);
 	}

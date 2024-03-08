@@ -1198,7 +1198,7 @@ public class class495 {
 		client.method3128();
 		class962.method5070();
 		if (GameShell.method4419() == class506.field6580 && client.field10849.method939() != null && client.field10791 == 3) {
-			ClientMessage var31 = Statics.method1604(ClientProt.field3772, client.field10849.field794);
+			ClientMessage var31 = Statics.method1604(ClientProt.DETECT_MODIFIED_CLIENT, client.field10849.field794);
 			var31.field11432.p4(1057001181);
 			client.field10849.method934(var31);
 		}
@@ -1227,7 +1227,7 @@ public class class495 {
 		} else {
 			client.method6972(18);
 			if (client.field10849.method939() != null) {
-				ClientMessage var40 = Statics.method1604(ClientProt.field3761, client.field10849.field794);
+				ClientMessage var40 = Statics.method1604(ClientProt.MAP_BUILD_COMPLETE, client.field10849.field794);
 				var40.field11432.p4((int) var38);
 				client.field10849.method934(var40);
 			}

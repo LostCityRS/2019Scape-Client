@@ -26,7 +26,7 @@ public class class1016 extends class649 {
 		if (var1 == null) {
 			return;
 		}
-		ClientMessage var2 = Statics.method1604(ClientProt.field3688, client.field10849.field794);
+		ClientMessage var2 = Statics.method1604(ClientProt.EVENT_NATIVE_MOUSE_CLICK, client.field10849.field794);
 		var2.field11432.p4(var1.method17831() | var1.method17832() << 16);
 		var2.field11432.p2_alt1(this.method10262(var1, 65535));
 		var2.field11432.p1_alt1(var1.method19539() << 1 | var1.method19537() & 0x1);
@@ -41,7 +41,7 @@ public class class1016 extends class649 {
 
 	@ObfuscatedName("alp.z(S)Lakl;")
 	public ClientMessage method10267() {
-		return Statics.method1604(ClientProt.field3687, client.field10849.field794);
+		return Statics.method1604(ClientProt.EVENT_NATIVE_MOUSE_MOVE, client.field10849.field794);
 	}
 
 	@ObfuscatedName("alp.j(Lalw;Lasp;I)V")

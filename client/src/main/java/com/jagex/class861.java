@@ -211,7 +211,7 @@ public final class class861 extends class150 {
 		if (var4.field791 > 1200) {
 			return;
 		}
-		ClientMessage var5 = Statics.method1604(ClientProt.field3733, var4.field794);
+		ClientMessage var5 = Statics.method1604(ClientProt.STORE_SERVERPERM_VARCS, var4.field794);
 		var5.field11432.p2(0);
 		int var6 = var5.field11432.pos;
 		var5.field11432.pos++;

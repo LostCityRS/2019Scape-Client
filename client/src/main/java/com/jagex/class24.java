@@ -46,7 +46,7 @@ public class class24 {
 		if (client.field10791 != 0) {
 			return;
 		}
-		ClientMessage var1 = Statics.method1604(ClientProt.field3710, client.field10835.field794);
+		ClientMessage var1 = Statics.method1604(ClientProt.CREATE_CHECK_EMAIL, client.field10835.field794);
 		var1.field11432.p2(0);
 		int var2 = var1.field11432.pos;
 		var1.field11432.pjstr(arg0);
@@ -62,7 +62,7 @@ public class class24 {
 		if (client.field10791 != 0) {
 			return;
 		}
-		ClientMessage var1 = Statics.method1604(ClientProt.field3693, client.field10835.field794);
+		ClientMessage var1 = Statics.method1604(ClientProt.CREATE_CHECK_NAME, client.field10835.field794);
 		var1.field11432.p1(0);
 		int var2 = var1.field11432.pos;
 		var1.field11432.pjstr(arg0);
@@ -76,7 +76,7 @@ public class class24 {
 	@ObfuscatedName("ae.w(I)V")
 	public static void method648() {
 		if (client.field10791 == 0) {
-			ClientMessage var0 = Statics.method1604(ClientProt.field3743, client.field10835.field794);
+			ClientMessage var0 = Statics.method1604(ClientProt.CREATE_SUGGEST_NAMES, client.field10835.field794);
 			client.field10835.method934(var0);
 			Statics.field585 = class706.field8392;
 			Statics.field618 = null;
@@ -88,7 +88,7 @@ public class class24 {
 		if (client.field10791 != 0) {
 			return;
 		}
-		ClientMessage var5 = Statics.method1604(ClientProt.field3702, client.field10835.field794);
+		ClientMessage var5 = Statics.method1604(ClientProt.CREATE_ACCOUNT, client.field10835.field794);
 		var5.field11432.p2(0);
 		int var6 = var5.field11432.pos;
 		var5.field11432.pjstr(arg0);
@@ -110,7 +110,7 @@ public class class24 {
 	@ObfuscatedName("afu.u(II)V")
 	public static void method16428(int arg0) {
 		if (client.field10791 == 0) {
-			ClientMessage var1 = Statics.method1604(ClientProt.field3800, client.field10835.field794);
+			ClientMessage var1 = Statics.method1604(ClientProt.CREATE_LOG_PROGRESS, client.field10835.field794);
 			var1.field11432.p1(arg0);
 			client.field10835.method934(var1);
 		}
