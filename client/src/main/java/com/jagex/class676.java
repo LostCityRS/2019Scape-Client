@@ -243,20 +243,20 @@ public final class class676 {
 		class504 var3 = null;
 		arg2.field8222 = 0;
 		arg2.field8234.clear();
-		arg2.field8234.put(VarDomainType.field4594, Statics.field7410.field632);
-		arg2.field8234.put(VarDomainType.field4592, Statics.field7228);
-		arg2.field8234.put(VarDomainType.field4600, Statics.field7698);
+		arg2.field8234.put(VarDomainType.PLAYER, Statics.field7410.field632);
+		arg2.field8234.put(VarDomainType.CLIENT, Statics.field7228);
+		arg2.field8234.put(VarDomainType.CLAN, Statics.field7698);
 		if (arg2.field8227 != null) {
-			arg2.field8234.put(VarDomainType.field4597, method991(arg2.field8227));
+			arg2.field8234.put(VarDomainType.CLAN_SETTING, method991(arg2.field8227));
 		}
 		if (arg2.field8221 instanceof class1131) {
-			arg2.field8234.put(VarDomainType.field4596, arg2.field8221.field10415);
+			arg2.field8234.put(VarDomainType.NPC, arg2.field8221.field10415);
 		}
 		if (arg2.field8221 instanceof class1130) {
-			arg2.field8233.put(VarDomainType.field4594, arg2.field8221.field10415);
+			arg2.field8233.put(VarDomainType.PLAYER, arg2.field8221.field10415);
 		}
 		if (Statics.field6721 != null) {
-			arg2.field8234.put(VarDomainType.field4599, Statics.field6721.method3394());
+			arg2.field8234.put(VarDomainType.PLAYER_GROUP, Statics.field6721.method3394());
 		}
 		try {
 			field8202 = 0;
@@ -4784,14 +4784,14 @@ public final class class676 {
 		class152 var2 = (class152) (arg0.field8236[arg0.field8220] == 0 ? arg0.field8234.get(var1.field1702) : arg0.field8233.get(var1.field1702));
 		BaseVarType var3 = var1.field1704.method7292();
 		if (BaseVarType.field4840 == var3) {
-			if (VarDomainType.field4592 == var1.field1702) {
+			if (VarDomainType.CLIENT == var1.field1702) {
 				class1171.method3607(var1);
 			}
 			var2.method2798(var1, arg0.field8216[--arg0.field8226]);
 		} else if (BaseVarType.field4837 == var3) {
 			var2.method2800(var1, arg0.field8224[--arg0.field8238]);
 		} else if (BaseVarType.field4836 == var3) {
-			if (VarDomainType.field4592 == var1.field1702) {
+			if (VarDomainType.CLIENT == var1.field1702) {
 				class1171.method14066(var1);
 			}
 			var2.method2802(var1, arg0.field8218[--arg0.field8211]);
@@ -10314,7 +10314,7 @@ public final class class676 {
 		} else {
 			arg0.field8216[++arg0.field8226 - 1] = 1;
 			arg0.field8227 = Statics.field6867;
-			arg0.field8234.put(VarDomainType.field4597, method991(arg0.field8227));
+			arg0.field8234.put(VarDomainType.CLAN_SETTING, method991(arg0.field8227));
 		}
 	}
 
@@ -10325,7 +10325,7 @@ public final class class676 {
 		} else {
 			arg0.field8216[++arg0.field8226 - 1] = 1;
 			arg0.field8227 = Statics.field1890;
-			arg0.field8234.put(VarDomainType.field4597, method991(arg0.field8227));
+			arg0.field8234.put(VarDomainType.CLAN_SETTING, method991(arg0.field8227));
 		}
 	}
 

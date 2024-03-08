@@ -6,43 +6,43 @@ import deob.ObfuscatedName;
 public class VarDomainType implements SerializableEnum {
 
 	@ObfuscatedName("qe.e")
-	public static final VarDomainType field4594 = new class941(Js5ConfigGroup.VAR_PLAYER, 0, true, true);
+	public static final VarDomainType PLAYER = new class941(Js5ConfigGroup.VAR_PLAYER, 0, true, true);
 
 	@ObfuscatedName("qe.n")
-	public static final VarDomainType field4596 = new class943(Js5ConfigGroup.VAR_NPC, 1, false, true);
+	public static final VarDomainType NPC = new class943(Js5ConfigGroup.VAR_NPC, 1, false, true);
 
 	@ObfuscatedName("qe.m")
-	public static final VarDomainType field4592 = new class940(Js5ConfigGroup.VAR_CLIENT, 2, true, true);
+	public static final VarDomainType CLIENT = new class940(Js5ConfigGroup.VAR_CLIENT, 2, true, true);
 
 	@ObfuscatedName("qe.k")
-	public static final VarDomainType field4593 = new class939(Js5ConfigGroup.VAR_WORLD, 3, false, false);
+	public static final VarDomainType WORLD = new class939(Js5ConfigGroup.VAR_WORLD, 3, false, false);
 
 	@ObfuscatedName("qe.f")
-	public static final VarDomainType field4595 = new VarDomainType(Js5ConfigGroup.VAR_REGION, 4, false, false);
+	public static final VarDomainType REGION = new VarDomainType(Js5ConfigGroup.VAR_REGION, 4, false, false);
 
 	@ObfuscatedName("qe.w")
-	public static final VarDomainType field4602 = new VarDomainType(Js5ConfigGroup.VAR_OBJECT, 5, true, true);
+	public static final VarDomainType OBJECT = new VarDomainType(Js5ConfigGroup.VAR_OBJECT, 5, true, true);
 
 	@ObfuscatedName("qe.l")
-	public static final VarDomainType field4600 = new VarDomainType(Js5ConfigGroup.VAR_CLAN, 6, true, true);
+	public static final VarDomainType CLAN = new VarDomainType(Js5ConfigGroup.VAR_CLAN, 6, true, true);
 
 	@ObfuscatedName("qe.u")
-	public static final VarDomainType field4597 = new VarDomainType(Js5ConfigGroup.VAR_CLAN_SETTING, 7, true, false);
+	public static final VarDomainType CLAN_SETTING = new VarDomainType(Js5ConfigGroup.VAR_CLAN_SETTING, 7, true, false);
 
 	@ObfuscatedName("qe.z")
-	public static final VarDomainType field4598 = new class942(Js5ConfigGroup.VAR_CONTROLLER, 8, false, false);
+	public static final VarDomainType CONTROLLER = new class942(Js5ConfigGroup.VAR_CONTROLLER, 8, false, false);
 
 	@ObfuscatedName("qe.p")
-	public static final VarDomainType field4599 = new VarDomainType(Js5ConfigGroup.VAR_PLAYER_GROUP, 9, false, true);
+	public static final VarDomainType PLAYER_GROUP = new VarDomainType(Js5ConfigGroup.VAR_PLAYER_GROUP, 9, false, true);
 
 	@ObfuscatedName("qe.d")
-	public static final VarDomainType field4590 = new VarDomainType(Js5ConfigGroup.VAR_SHARED, 10, false, false);
+	public static final VarDomainType GLOBAL = new VarDomainType(Js5ConfigGroup.VAR_GLOBAL, 10, false, false);
 
 	@ObfuscatedName("qe.c")
-	public final Js5ConfigGroup field4601;
+	public final Js5ConfigGroup js5GroupID;
 
 	@ObfuscatedName("qe.r")
-	public final int field4591;
+	public final int serialID;
 
 	// $FF: synthetic method
 	public VarDomainType(Js5ConfigGroup arg0, int arg1, boolean arg2, boolean arg3, class941 arg4) {
@@ -51,22 +51,22 @@ public class VarDomainType implements SerializableEnum {
 
 	@ObfuscatedName("qe.e(I)[Lqe;")
 	public static VarDomainType[] method7216() {
-		return new VarDomainType[] { field4599, field4597, field4598, field4590, field4594, field4592, field4595, field4602, field4593, field4596, field4600 };
+		return new VarDomainType[] {PLAYER_GROUP, CLAN_SETTING, CONTROLLER, GLOBAL, PLAYER, CLIENT, REGION, OBJECT, WORLD, NPC, CLAN};
 	}
 
 	public VarDomainType(Js5ConfigGroup arg0, int arg1, boolean arg2, boolean arg3) {
-		this.field4601 = arg0;
-		this.field4591 = arg1;
+		this.js5GroupID = arg0;
+		this.serialID = arg1;
 	}
 
 	@ObfuscatedName("qe.m(B)Lxq;")
 	public final Js5ConfigGroup method7218() {
-		return this.field4601;
+		return this.js5GroupID;
 	}
 
 	@ObfuscatedName("qe.n()I")
 	public int method1303() {
-		return this.field4591;
+		return this.serialID;
 	}
 
 	@ObfuscatedName("qe.f(Lec;B)Ljava/lang/Object;")

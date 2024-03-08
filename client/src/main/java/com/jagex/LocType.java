@@ -968,7 +968,7 @@ public class LocType implements ConfigType {
 				var3 = arg1.method678(var4);
 			}
 		} else if (this.field7507 != -1) {
-			class149 var5 = arg0.method695(VarDomainType.field4594, this.field7507);
+			class149 var5 = arg0.method695(VarDomainType.PLAYER, this.field7507);
 			if (var5 != null) {
 				var3 = arg1.method679(var5);
 			}

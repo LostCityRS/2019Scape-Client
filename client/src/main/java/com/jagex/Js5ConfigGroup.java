@@ -207,7 +207,7 @@ public class Js5ConfigGroup {
 	public static final Js5ConfigGroup field8039 = new Js5ConfigGroup(74);
 
 	@ObfuscatedName("xq.bu")
-	public static final Js5ConfigGroup VAR_SHARED = new Js5ConfigGroup(75);
+	public static final Js5ConfigGroup VAR_GLOBAL = new Js5ConfigGroup(75);
 
 	@ObfuscatedName("xq.bw")
 	public static final Js5ConfigGroup WATERTYPE = new Js5ConfigGroup(76);
