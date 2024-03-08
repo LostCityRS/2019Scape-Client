@@ -7,12 +7,12 @@ import deob.Statics;
 public class class959 extends class531 {
 
 	@ObfuscatedName("aji.m")
-	public class566 field11215;
+	public HeadbarType field11215;
 
 	@ObfuscatedName("aji.k")
 	public class716 field11214 = new class716();
 
-	public class959(class566 arg0) {
+	public class959(HeadbarType arg0) {
 		this.field11215 = arg0;
 	}
 

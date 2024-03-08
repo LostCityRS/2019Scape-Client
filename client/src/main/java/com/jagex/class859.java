@@ -8,7 +8,7 @@ public class class859 extends class149 {
 	@ObfuscatedName("aff.w")
 	public int field10248;
 
-	public class859(class455 arg0, int arg1) {
+	public class859(VarDomainType arg0, int arg1) {
 		super(arg0, arg1);
 	}
 

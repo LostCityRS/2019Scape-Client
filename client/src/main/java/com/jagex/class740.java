@@ -23,7 +23,7 @@ public class class740 {
 	@ObfuscatedName("abw.d")
 	public short[] field8715;
 
-	public class740(class738 arg0) {
+	public class740(ObjType arg0) {
 		this.field8710[0] = arg0.field8654;
 		this.field8710[1] = arg0.field8636;
 		this.field8710[2] = arg0.field8658;
@@ -45,12 +45,12 @@ public class class740 {
 	}
 
 	@ObfuscatedName("bc.e(Labv;Lalw;I)Labw;")
-	public static class740 method1061(class738 arg0, Packet arg1) {
+	public static class740 method1061(ObjType arg0, Packet arg1) {
 		return method4273(arg0, arg1, 2);
 	}
 
 	@ObfuscatedName("ho.n(Labv;Lalw;II)Labw;")
-	public static class740 method4273(class738 arg0, Packet arg1, int arg2) {
+	public static class740 method4273(ObjType arg0, Packet arg1, int arg2) {
 		class740 var3 = new class740(arg0);
 		int var4 = arg1.g1();
 		boolean var5 = (var4 & 0x1) != 0;

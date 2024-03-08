@@ -109,7 +109,7 @@ public class Statics {
 	public static short[][] field10766;
 
 	@ObfuscatedName("client.hi")
-	public static class1079 field10771;
+	public static SeqGroupTypeList field10771;
 
 	@ObfuscatedName("client.bw")
 	public static class794 field10782;
@@ -166,7 +166,7 @@ public class Statics {
 	public static int field11738;
 
 	@ObfuscatedName("amf.gz")
-	public static class1089 field11742;
+	public static BASTypeList field11742;
 
 	@ObfuscatedName("amo.fv")
 	public static class442 field11752;
@@ -256,7 +256,7 @@ public class Statics {
 	public static final int field12460 = 64;
 
 	@ObfuscatedName("atl.v")
-	public static class1080 field12490;
+	public static SeqTypeList field12490;
 
 	@ObfuscatedName("atc.n")
 	public static String field12492;
@@ -388,7 +388,7 @@ public class Statics {
 	public static class140 field1841;
 
 	@ObfuscatedName("fw.hy")
-	public static class1095 field1842;
+	public static ObjTypeList field1842;
 
 	@ObfuscatedName("fa.kx")
 	public static int field1843;
@@ -418,7 +418,7 @@ public class Statics {
 	public static class28 field1895;
 
 	@ObfuscatedName("fr.hr")
-	public static class1090 field1897;
+	public static LocTypeList field1897;
 
 	@ObfuscatedName("gq.th")
 	public static byte field1914;
@@ -442,7 +442,7 @@ public class Statics {
 	public static class622 field1971;
 
 	@ObfuscatedName("gh.hn")
-	public static class1101 field1972;
+	public static QuestTypeList field1972;
 
 	@ObfuscatedName("gv.al")
 	public static int field1981;
@@ -481,7 +481,7 @@ public class Statics {
 	public static class143 field2421;
 
 	@ObfuscatedName("he.gb")
-	public static class1091 field2427;
+	public static CursorTypeList field2427;
 
 	@ObfuscatedName("hn.ac")
 	public static int field2433;
@@ -523,7 +523,7 @@ public class Statics {
 	public static int field2627;
 
 	@ObfuscatedName("in.hx")
-	public static class1084 field2628;
+	public static IDKTypeList field2628;
 
 	@ObfuscatedName("is.lu")
 	public static int field2656;
@@ -550,7 +550,7 @@ public class Statics {
 	public static class797 field2841;
 
 	@ObfuscatedName("je.ht")
-	public static class1087 field2879;
+	public static SkyBoxTypeList field2879;
 
 	@ObfuscatedName("jm.ah")
 	public static int[] field2899;
@@ -565,7 +565,7 @@ public class Statics {
 	public static int field2935;
 
 	@ObfuscatedName("jr.hg")
-	public static class1088 field2936;
+	public static HitmarkTypeList field2936;
 
 	@ObfuscatedName("jr.um")
 	public static int field2937;
@@ -610,7 +610,7 @@ public class Statics {
 	public static class442 field3085;
 
 	@ObfuscatedName("kl.he")
-	public static class1099 field3086;
+	public static ParamTypeList field3086;
 
 	@ObfuscatedName("kr.ce")
 	public static int field3121;
@@ -688,7 +688,7 @@ public class Statics {
 	public static ModeWhat field4093;
 
 	@ObfuscatedName("on.hh")
-	public static class1097 field4241;
+	public static MSITypeList field4241;
 
 	@ObfuscatedName("ov.m")
 	public static int field4302;
@@ -796,7 +796,7 @@ public class Statics {
 	public static int field4869;
 
 	@ObfuscatedName("qb.ho")
-	public static class1093 field4874;
+	public static EffectAnimTypeList field4874;
 
 	@ObfuscatedName("k.u")
 	public static boolean field488;
@@ -805,7 +805,7 @@ public class Statics {
 	public static class768 field489;
 
 	@ObfuscatedName("rp.hd")
-	public static class1086 field4894;
+	public static HeadbarTypeList field4894;
 
 	@ObfuscatedName("f.uq")
 	public static int field490;
@@ -823,7 +823,7 @@ public class Statics {
 	public static class442 field5010;
 
 	@ObfuscatedName("rz.hs")
-	public static class1081 field5011;
+	public static MapElementTypeList field5011;
 
 	@ObfuscatedName("l.u")
 	public static int field504;
@@ -1021,7 +1021,7 @@ public class Statics {
 	public static class733 field6778;
 
 	@ObfuscatedName("tf.m")
-	public static class1090 field6785;
+	public static LocTypeList field6785;
 
 	@ObfuscatedName("tf.g")
 	public static int field6786;
@@ -1030,10 +1030,10 @@ public class Statics {
 	public static int[] field6787;
 
 	@ObfuscatedName("tf.k")
-	public static class1081 field6788;
+	public static MapElementTypeList field6788;
 
 	@ObfuscatedName("tf.f")
-	public static class1097 field6789;
+	public static MSITypeList field6789;
 
 	@ObfuscatedName("tf.w")
 	public static class147 field6790;
@@ -1144,7 +1144,7 @@ public class Statics {
 	public static class309 field6867;
 
 	@ObfuscatedName("ac.hc")
-	public static class1083 field687;
+	public static SkyDecorTypeList field687;
 
 	@ObfuscatedName("tp.gp")
 	public static class442 field6879;
@@ -1363,13 +1363,13 @@ public class Statics {
 	public static class150 field7698;
 
 	@ObfuscatedName("ww.hj")
-	public static class1102 field7713;
+	public static StructTypeList field7713;
 
 	@ObfuscatedName("ap.o")
 	public static FileOutputStream field773;
 
 	@ObfuscatedName("wi.hq")
-	public static class1100 field7762;
+	public static InvTypeList field7762;
 
 	@ObfuscatedName("xl.n")
 	public static MovingParticle[] field7794;
@@ -1399,7 +1399,7 @@ public class Statics {
 	public static int field7942;
 
 	@ObfuscatedName("xr.hf")
-	public static class1098 field7943;
+	public static LightTypeList field7943;
 
 	@ObfuscatedName("xc.ku")
 	public static int field7950;
@@ -1411,7 +1411,7 @@ public class Statics {
 	public static class26 field7957;
 
 	@ObfuscatedName("xd.hp")
-	public static class1082 field7961;
+	public static NPCTypeList field7961;
 
 	@ObfuscatedName("xj.z")
 	public static long field7966;
@@ -1429,7 +1429,7 @@ public class Statics {
 	public static class807 field8135;
 
 	@ObfuscatedName("ys.hl")
-	public static class1094 field8145;
+	public static FloorUnderlayTypeList field8145;
 
 	@ObfuscatedName("ys.bj")
 	public static int field8146;
@@ -1444,7 +1444,7 @@ public class Statics {
 	public static int[] field8151;
 
 	@ObfuscatedName("yg.hb")
-	public static class1092 field8168;
+	public static FloorOverlayTypeList field8168;
 
 	@ObfuscatedName("yp.q")
 	public static boolean[][] field8182;
@@ -1513,7 +1513,7 @@ public class Statics {
 	public static int field8492;
 
 	@ObfuscatedName("aaq.hu")
-	public static class1096 field8514;
+	public static EnumTypeList field8514;
 
 	@ObfuscatedName("aau.kf")
 	public static int field8521;
@@ -1588,7 +1588,7 @@ public class Statics {
 	public static class733 field8786;
 
 	@ObfuscatedName("abe.hw")
-	public static class1080 field8797;
+	public static SeqTypeList field8797;
 
 	@ObfuscatedName("acm.v")
 	public static class733 field8851;
@@ -2237,7 +2237,7 @@ public class Statics {
 			return 0;
 		}
 		for (int var5 = 0; var5 < var4.field11223.length; var5++) {
-			if (var4.field11223[var5] >= 0 && ((class738) field1842.get(var4.field11223[var5])).field8628 == arg1) {
+			if (var4.field11223[var5] >= 0 && ((ObjType) field1842.get(var4.field11223[var5])).field8628 == arg1) {
 				var3 += class961.method14483(arg0, var5, arg2);
 			}
 		}
@@ -2359,7 +2359,7 @@ public class Statics {
 
 	@ObfuscatedName("tx.i(Lyf;B)V")
 	public static void method8883(class677 arg0) {
-		arg0.field8216[arg0.field8226 - 1] = ((class250) field1972.get(arg0.field8216[arg0.field8226 - 1])).method4430(field7410) ? 1 : 0;
+		arg0.field8216[arg0.field8226 - 1] = ((QuestType) field1972.get(arg0.field8216[arg0.field8226 - 1])).method4430(field7410) ? 1 : 0;
 	}
 
 	@ObfuscatedName("gs.x(S)I")
@@ -2640,7 +2640,7 @@ public class Statics {
 	public static int method5179(class147 arg0, ConfigTypeList arg1) {
 		int var2 = 0;
 		for (int var3 = 0; var3 < arg1.size(); var3++) {
-			class250 var4 = (class250) arg1.get(var3);
+			QuestType var4 = (QuestType) arg1.get(var3);
 			if (var4.method4430(arg0)) {
 				var2 += var4.field2637;
 			}
@@ -2729,7 +2729,7 @@ public class Statics {
 	}
 
 	@ObfuscatedName("aom.dg(Lhs;B)Z")
-	public static boolean method18887(class228 arg0) {
+	public static boolean method18887(MapElementType arg0) {
 		if (arg0 == null) {
 			return false;
 		}
@@ -2784,8 +2784,8 @@ public class Statics {
 	}
 
 	@ObfuscatedName("dz.r(Ldh;Lvd;IIII)V")
-	public static void method1900(Renderer arg0, class598 arg1, int arg2, int arg3, int arg4) {
-		class781 var5 = (class781) field4241.get(arg1.field7486);
+	public static void method1900(Renderer arg0, LocType arg1, int arg2, int arg3, int arg4) {
+		MSIType var5 = (MSIType) field4241.get(arg1.field7486);
 		if (var5.field9151 == -1) {
 			return;
 		}
@@ -2913,7 +2913,7 @@ public class Statics {
 	@ObfuscatedName("rm.q(Lhf;III)V")
 	public static void method7624(class226 arg0, int arg1, int arg2) {
 		if (client.field10973) {
-			class789 var3 = (class789) (field7677 == -1 ? null : field3086.get(field7677));
+			ParamType var3 = (ParamType) (field7677 == -1 ? null : field3086.get(field7677));
 			if (client.method17197(arg0).method17708() && (field1765 & 0x20) != 0 && (var3 == null || arg0.method3950(field7677, var3.field9172) != var3.field9172)) {
 				class22.method3042(client.field11039, client.field10977 + " " + TextUtil.ARROW + " " + arg0.field2279, field1844, 58, arg0.field2334, 0L, arg0.field2183, arg0.field2158, true, false, (long) (arg0.field2183 << 32 | arg0.field2158), false);
 			}
@@ -2962,7 +2962,7 @@ public class Statics {
 
 	@ObfuscatedName("ace.q(Ldh;Lch;Lhf;IIIIIB)V")
 	public static void method15085(Renderer arg0, class103 arg1, class226 arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
-		class228 var8 = (class228) field5011.get(arg7);
+		MapElementType var8 = (MapElementType) field5011.get(arg7);
 		if (var8 != null && var8.field2392 != null && var8.method4030(field7410, field7410)) {
 			var8 = var8.method4024(field7410, field7410);
 		}
@@ -3165,7 +3165,7 @@ public class Statics {
 		arg0.method2354(var12, var13, var10, var11, var14, 1);
 		arg0.method2179(var12, var13, var10, var11, var14, 0);
 		for (class990 var15 = (class990) class1004.field6806.method14191(); var15 != null; var15 = (class990) class1004.field6806.method14161()) {
-			class228 var16 = (class228) field6788.get(var15.field11446);
+			MapElementType var16 = (MapElementType) field6788.get(var15.field11446);
 			if (method18887(var16)) {
 				class32 var17 = (class32) class1004.field11661.get(var15.field11446);
 				if (var17 == null) {
@@ -3296,7 +3296,7 @@ public class Statics {
 			return null;
 		}
 		for (class990 var0 = (class990) class1004.field11669.next(); var0 != null; var0 = (class990) class1004.field11669.next()) {
-			class228 var1 = (class228) field6788.get(var0.field11446);
+			MapElementType var1 = (MapElementType) field6788.get(var0.field11446);
 			if (var1 != null && var1.field2409 && var1.method4030(field6791, field6790)) {
 				return var0;
 			}
@@ -3976,7 +3976,7 @@ public class Statics {
 	@ObfuscatedName("mj.ti(Lhf;IIFIIIIIIB)V")
 	public static void method5921(class226 arg0, int arg1, int arg2, float arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9) {
 		if (arg0.field2363 == null) {
-			class260 var10 = (class260) field7961.get(arg0.field2294);
+			NPCType var10 = (NPCType) field7961.get(arg0.field2294);
 			arg0.field2363 = new class259(var10, true);
 		}
 		arg0.field2363.field2688 = class676.method5390();
@@ -4167,13 +4167,13 @@ public class Statics {
 			var7.field11263.method14153(arg3);
 			return;
 		}
-		class738 var8 = (class738) field1842.get(arg3.field11261);
+		ObjType var8 = (ObjType) field1842.get(arg3.field11261);
 		int var9 = var8.field8620;
 		if (var8.field8644 == 1) {
 			var9 = (arg3.field11260 + 1) * var9;
 		}
 		for (class965 var10 = (class965) var6.field11263.method14191(); var10 != null; var10 = (class965) var6.field11263.method14161()) {
-			class738 var11 = (class738) field1842.get(var10.field11261);
+			ObjType var11 = (ObjType) field1842.get(var10.field11261);
 			int var12 = var11.field8620;
 			if (var11.field8644 == 1) {
 				var12 = (var10.field11260 + 1) * var12;
@@ -4201,7 +4201,7 @@ public class Statics {
 		if (var2 == -1) {
 			throw new RuntimeException();
 		}
-		class754 var5 = (class754) field8514.get(var2);
+		EnumType var5 = (EnumType) field8514.get(var2);
 		if (var5.field8781.method1303() != var1) {
 			throw new RuntimeException();
 		} else if (var5.field8775.method1303() == ScriptVarType.field4634.method1303()) {
@@ -4460,7 +4460,7 @@ public class Statics {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		class738 var3 = (class738) field1842.get(var1);
+		ObjType var3 = (ObjType) field1842.get(var1);
 		if (var2 < 1 || var2 > 5 || var3.field8648[var2 - 1] == null) {
 			arg0.field8218[++arg0.field8211 - 1] = "";
 		} else {
@@ -4471,7 +4471,7 @@ public class Statics {
 	@ObfuscatedName("ajf.agb(Lyf;B)V")
 	public static final void method17524(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = ((class738) field1842.get(var1)).field8620;
+		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) field1842.get(var1)).field8620;
 	}
 
 	@ObfuscatedName("vg.ahq(Lyf;B)V")
@@ -4479,11 +4479,11 @@ public class Statics {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		class789 var3 = (class789) field3086.get(var2);
+		ParamType var3 = (ParamType) field3086.get(var2);
 		if (var3.method15152()) {
-			arg0.field8218[++arg0.field8211 - 1] = ((class598) client.field10855.method7750().get(var1)).method9479(var2, var3.field9171);
+			arg0.field8218[++arg0.field8211 - 1] = ((LocType) client.field10855.method7750().get(var1)).method9479(var2, var3.field9171);
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = ((class598) client.field10855.method7750().get(var1)).method9481(var2, var3.field9172);
+			arg0.field8216[++arg0.field8226 - 1] = ((LocType) client.field10855.method7750().get(var1)).method9481(var2, var3.field9172);
 		}
 	}
 
@@ -4883,7 +4883,7 @@ public class Statics {
 	@ObfuscatedName("sp.axe(Lyf;I)V")
 	public static final void method8277(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		class228 var2 = (class228) field5011.get(var1);
+		MapElementType var2 = (MapElementType) field5011.get(var1);
 		if (var2.field2370 == null) {
 			arg0.field8218[++arg0.field8211 - 1] = "";
 		} else {
@@ -4894,7 +4894,7 @@ public class Statics {
 	@ObfuscatedName("fi.axr(Lyf;B)V")
 	public static final void method3075(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		class228 var2 = (class228) field5011.get(var1);
+		MapElementType var2 = (MapElementType) field5011.get(var1);
 		arg0.field8216[++arg0.field8226 - 1] = var2.field2400;
 	}
 
@@ -4932,9 +4932,9 @@ public class Statics {
 	public static final void method311(class677 arg0) {
 		class1131 var1 = (class1131) arg0.field8221;
 		String var2 = var1.field12082;
-		class260 var3 = var1.field12083;
+		NPCType var3 = var1.field12083;
 		if (var3.field2735 != null) {
-			class260 var4 = var3.method4547(field7410, field7410);
+			NPCType var4 = var3.method4547(field7410, field7410);
 			if (var4 == null) {
 				var2 = "";
 			} else {
@@ -4992,8 +4992,8 @@ public class Statics {
 		int var3 = 0;
 		int var4 = var2 >>> 8;
 		int var5 = var2 & 0xFF;
-		class745 var6 = (class745) field9123.get(var1);
-		class793 var7 = (class793) field1840.get(var4);
+		DBRowType var6 = (DBRowType) field9123.get(var1);
+		DBTableType var7 = (DBTableType) field1840.get(var4);
 		ScriptVarType[] var8 = var7.field9185[var5];
 		Object[] var9 = var6.method14711(var5);
 		if (var9 == null && var7.field9186 != null) {

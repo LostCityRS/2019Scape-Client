@@ -24,7 +24,7 @@ public class class722 {
 	public boolean field8518 = false;
 
 	@ObfuscatedName("aau.e(Laos;Lfg;II[II)Z")
-	public final boolean method14431(class1080 arg0, class164 arg1, int arg2, int arg3, int[] arg4) {
+	public final boolean method14431(SeqTypeList arg0, SeqType arg1, int arg2, int arg3, int[] arg4) {
 		if (this.field8518) {
 			return true;
 		} else if (arg2 >= arg4.length) {

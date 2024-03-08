@@ -46,7 +46,7 @@ public class class975 extends class532 {
 	public int field11359;
 
 	@ObfuscatedName("akc.q")
-	public class598 field11348;
+	public LocType field11348;
 
 	@ObfuscatedName("akc.x")
 	public class1131 field11345;
@@ -141,7 +141,7 @@ public class class975 extends class532 {
 	public void method17660() {
 		int var1 = this.field11370;
 		if (this.field11348 != null) {
-			class598 var2 = this.field11348.method9477(Statics.field7410, client.field10863 == 0 ? class153.field1723 : Statics.field7410);
+			LocType var2 = this.field11348.method9477(Statics.field7410, client.field10863 == 0 ? class153.field1723 : Statics.field7410);
 			if (var2 == null) {
 				this.field11370 = -1;
 				this.field11357 = 0;
@@ -166,7 +166,7 @@ public class class975 extends class532 {
 			int var3 = method647(this.field11345);
 			if (var1 != var3) {
 				this.field11370 = var3;
-				class260 var4 = this.field11345.field12083;
+				NPCType var4 = this.field11345.field12083;
 				if (var4.field2735 != null) {
 					var4 = var4.method4547(Statics.field7410, Statics.field7410);
 				}
@@ -200,7 +200,7 @@ public class class975 extends class532 {
 	}
 
 	@ObfuscatedName("wp.k(IIIILvd;Laqc;Laqk;I)V")
-	public static void method9739(int arg0, int arg1, int arg2, int arg3, class598 arg4, class1131 arg5, class1130 arg6) {
+	public static void method9739(int arg0, int arg1, int arg2, int arg3, LocType arg4, class1131 arg5, class1130 arg6) {
 		class975 var7 = new class975();
 		var7.field11349 = arg0;
 		var7.field11358 = arg1 << 9;
@@ -236,7 +236,7 @@ public class class975 extends class532 {
 			Statics.field1798.method3160(var7.field11375);
 		} else if (arg5 != null) {
 			var7.field11345 = arg5;
-			class260 var10 = arg5.field12083;
+			NPCType var10 = arg5.field12083;
 			if (var10.field2735 != null) {
 				var7.field11367 = true;
 				var10 = var10.method4547(Statics.field7410, Statics.field7410);
@@ -275,7 +275,7 @@ public class class975 extends class532 {
 	}
 
 	@ObfuscatedName("oi.f(IIILvd;B)V")
-	public static void method6206(int arg0, int arg1, int arg2, class598 arg3) {
+	public static void method6206(int arg0, int arg1, int arg2, LocType arg3) {
 		for (class975 var4 = (class975) field11346.method14191(); var4 != null; var4 = (class975) field11346.method14161()) {
 			if (var4.field11349 == arg0 && arg1 << 9 == var4.field11358 && arg2 << 9 == var4.field11351 && var4.field11348.field7450 == arg3.field7450) {
 				if (var4.field11371 != null) {
@@ -316,7 +316,7 @@ public class class975 extends class532 {
 
 	@ObfuscatedName("t.z(Laqc;I)I")
 	public static int method647(class1131 arg0) {
-		class260 var1 = arg0.field12083;
+		NPCType var1 = arg0.field12083;
 		if (var1.field2735 != null) {
 			var1 = var1.method4547(Statics.field7410, Statics.field7410);
 			if (var1 == null) {
@@ -324,7 +324,7 @@ public class class975 extends class532 {
 			}
 		}
 		int var2 = var1.field2748;
-		class584 var3 = arg0.method16508();
+		BASType var3 = arg0.method16508();
 		int var4 = arg0.field10432.method14348();
 		if (var4 == -1 || arg0.field10432.field11877) {
 			var2 = var1.field2746;
@@ -339,7 +339,7 @@ public class class975 extends class532 {
 	@ObfuscatedName("ags.p(Laqk;I)I")
 	public static int method16456(class1130 arg0) {
 		int var1 = arg0.field12065;
-		class584 var2 = arg0.method16508();
+		BASType var2 = arg0.method16508();
 		int var3 = arg0.field10432.method14348();
 		if (var3 == -1 || arg0.field10432.field11877) {
 			var1 = arg0.field12063;
@@ -358,7 +358,7 @@ public class class975 extends class532 {
 		}
 		for (class975 var5 = (class975) field11347.method14191(); var5 != null; var5 = (class975) field11347.method14161()) {
 			byte var6 = 1;
-			class584 var7 = var5.field11345.method16508();
+			BASType var7 = var5.field11345.method16508();
 			int var8 = var5.field11345.field10432.method14348();
 			if (var8 == -1 || var5.field11345.field10432.field11877) {
 				var6 = 0;
@@ -369,7 +369,7 @@ public class class975 extends class532 {
 			}
 			if (var5.field11360 != var6) {
 				int var9 = method647(var5.field11345);
-				class260 var10 = var5.field11345.field12083;
+				NPCType var10 = var5.field11345.field12083;
 				if (var10.field2735 != null) {
 					var10 = var10.method4547(Statics.field7410, Statics.field7410);
 				}
@@ -409,7 +409,7 @@ public class class975 extends class532 {
 		}
 		for (class975 var13 = (class975) field11366.method14500(); var13 != null; var13 = (class975) field11366.method14502()) {
 			byte var14 = 1;
-			class584 var15 = var13.field11361.method16508();
+			BASType var15 = var13.field11361.method16508();
 			int var16 = var13.field11361.field10432.method14348();
 			if (var16 == -1 || var13.field11361.field10432.field11877) {
 				var14 = 0;

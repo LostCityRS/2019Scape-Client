@@ -16,7 +16,7 @@ public class class150 implements class152 {
 		this(arg0.field9260, arg1);
 	}
 
-	public class150(class455 arg0, class747 arg1) {
+	public class150(VarDomainType arg0, class747 arg1) {
 		this.field1708 = arg1;
 	}
 

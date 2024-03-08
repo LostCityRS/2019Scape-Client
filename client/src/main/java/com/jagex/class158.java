@@ -48,7 +48,7 @@ public final class class158 {
 				this.field1745 = new class1131(client.field10855.method7743(), 25);
 				this.field1745.field10406 = this.field1741;
 				this.field1745.field10440 = client.field10903;
-				this.field1745.method19156((class260) Statics.field7961.get(this.field1743));
+				this.field1745.method19156((NPCType) Statics.field7961.get(this.field1743));
 				this.field1745.method16502(this.field1745.field12083.field2699);
 				this.field1745.field10444 = this.field1745.field12083.field2731 << 3;
 				this.field1745.field10404 = ++class153.field1715 - 1;
@@ -97,16 +97,16 @@ public final class class158 {
 		if (this.field1743 < 0) {
 			return true;
 		}
-		class260 var1 = (class260) Statics.field7961.get(this.field1743);
+		NPCType var1 = (NPCType) Statics.field7961.get(this.field1743);
 		boolean var2 = var1.method4545();
 		if (this.field1747 == null) {
-			class584 var3 = (class584) Statics.field11742.get(var1.field2762);
+			BASType var3 = (BASType) Statics.field11742.get(var1.field2762);
 			this.field1747 = var3.method9293();
 		}
 		int[] var4 = this.field1747;
 		for (int var5 = 0; var5 < var4.length; var5++) {
 			int var6 = var4[var5];
-			var2 &= ((class164) Statics.field8797.get(var6)).method2991();
+			var2 &= ((SeqType) Statics.field8797.get(var6)).method2991();
 		}
 		return var2;
 	}

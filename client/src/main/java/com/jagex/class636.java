@@ -199,7 +199,7 @@ public class class636 {
 		long var5 = ((long) arg1 & 0xFFFFL) << 48 | ((long) arg2 & 0xFFFFL) << 32 | ((long) arg3 & 0xFFFFL) << 16 | (long) arg0 & 0xFFFFL;
 		class502 var7 = (class502) this.field7849.method2930(var5);
 		if (var7 == null) {
-			var7 = class568.method305(arg0, arg1, arg2, arg3, Statics.field2879, Statics.field687);
+			var7 = SkyBoxType.method305(arg0, arg1, arg2, arg3, Statics.field2879, Statics.field687);
 			this.field7849.method2921(var7, var5);
 		}
 		return var7;

@@ -17,7 +17,7 @@ public class class947 extends class1196 implements class514 {
 	@ObfuscatedName("ajs.o")
 	public boolean field11135 = true;
 
-	public class947(class550 arg0, Renderer arg1, class1090 arg2, class598 arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, class420 arg13) {
+	public class947(class550 arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, class420 arg13) {
 		super(arg0, arg6, arg7, arg8, arg4, arg5, arg3.field7448, arg13);
 		this.field11133 = new class516(arg1, arg2, arg3, class601.field7566.field7562, arg10, arg5, this, arg9, arg11, arg12);
 		this.field11132 = arg3.field7470 != 0 && !arg9;
@@ -61,7 +61,7 @@ public class class947 extends class1196 implements class514 {
 		int var6 = (int) var4.field4298.field4308 >> 9;
 		int var7 = (int) var4.field4298.field4313 >> 9;
 		this.field11133.method8239(arg0, var2, var3, var6, var6, var7, var7, true);
-		class598 var8 = this.field11133.method8237();
+		LocType var8 = this.field11133.method8237();
 		if (var8.field7468 == null) {
 			var2.method1813(var3, this.field11713[0], 0);
 		} else {
@@ -94,7 +94,7 @@ public class class947 extends class1196 implements class514 {
 
 	@ObfuscatedName("ajs.fa(Ldh;IIB)Z")
 	public boolean method17375(Renderer arg0, int arg1, int arg2) {
-		class598 var4 = this.field11133.method8237();
+		LocType var4 = this.field11133.method8237();
 		if (var4.field7468 == null) {
 			class116 var5 = this.field11133.method8238(arg0, 131072, false, false);
 			return var5 == null ? false : var5.method1725(arg1, arg2, this.method10533(), false, 0);

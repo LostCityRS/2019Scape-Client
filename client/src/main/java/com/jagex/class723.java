@@ -15,7 +15,7 @@ public class class723 {
 	public boolean field8524 = false;
 
 	@ObfuscatedName("aao.e(Laos;Lfg;B)Z")
-	public final boolean method14443(class1080 arg0, class164 arg1) {
+	public final boolean method14443(SeqTypeList arg0, SeqType arg1) {
 		if (!this.field8524) {
 			this.field8523 = arg0.method18865(arg1.field1784);
 			if (this.field8523 != null) {

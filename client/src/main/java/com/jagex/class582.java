@@ -170,7 +170,7 @@ public class class582 implements ConfigType {
 					var3 = arg1.method678(var4);
 				}
 			} else if (this.field7312 != -1) {
-				class149 var5 = arg0.method695(class455.field4594, this.field7312);
+				class149 var5 = arg0.method695(VarDomainType.field4594, this.field7312);
 				if (var5 != null) {
 					var3 = arg1.method679(var5);
 				}

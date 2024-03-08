@@ -7,10 +7,10 @@ import deob.Statics;
 public class class454 {
 
 	@ObfuscatedName("qg.e")
-	public class1092 field4548;
+	public FloorOverlayTypeList field4548;
 
 	@ObfuscatedName("qg.n")
-	public class1094 field4503;
+	public FloorUnderlayTypeList field4503;
 
 	@ObfuscatedName("qg.m")
 	public class451 field4522;
@@ -225,7 +225,7 @@ public class class454 {
 	@ObfuscatedName("qg.cx")
 	public int[] field4589 = null;
 
-	public class454(class550 arg0, int arg1, int arg2, int arg3, boolean arg4, class1092 arg5, class1094 arg6, class451 arg7) {
+	public class454(class550 arg0, int arg1, int arg2, int arg3, boolean arg4, FloorOverlayTypeList arg5, FloorUnderlayTypeList arg6, class451 arg7) {
 		this.field4577 = arg0;
 		this.field4544 = arg1;
 		this.field4513 = arg2;
@@ -548,7 +548,7 @@ public class class454 {
 					if (var9 < this.field4513) {
 						int var10 = this.field4505[var5][var9][var8] & 0x7FFF;
 						if (var10 > 0) {
-							class728 var11 = (class728) this.field4503.get(var10 - 1);
+							FloorUnderlayType var11 = (FloorUnderlayType) this.field4503.get(var10 - 1);
 							this.field4504[var8] += var11.field8546;
 							this.field4525[var8] += var11.field8541;
 							this.field4526[var8] += var11.field8545;
@@ -560,7 +560,7 @@ public class class454 {
 					if (var12 >= 0) {
 						int var13 = this.field4505[var5][var12][var8] & 0x7FFF;
 						if (var13 > 0) {
-							class728 var14 = (class728) this.field4503.get(var13 - 1);
+							FloorUnderlayType var14 = (FloorUnderlayType) this.field4503.get(var13 - 1);
 							this.field4504[var8] -= var14.field8546;
 							this.field4525[var8] -= var14.field8541;
 							this.field4526[var8] -= var14.field8545;
@@ -629,12 +629,12 @@ public class class454 {
 				byte var10 = this.field4520[arg2][var7][var8];
 				int var11 = this.field4516[arg2][var7][var8] & 0x7FFF;
 				int var12 = this.field4505[arg2][var7][var8] & 0x7FFF;
-				class663 var13 = (class663) (var11 == 0 ? null : this.field4548.get(var11 - 1));
-				class728 var14 = (class728) (var12 == 0 ? null : this.field4503.get(var12 - 1));
+				FloorOverlayType var13 = (FloorOverlayType) (var11 == 0 ? null : this.field4548.get(var11 - 1));
+				FloorUnderlayType var14 = (FloorUnderlayType) (var12 == 0 ? null : this.field4503.get(var12 - 1));
 				if (var9 == 0 && var13 == null) {
 					var9 = 12;
 				}
-				class663 var15 = var13;
+				FloorOverlayType var15 = var13;
 				if (var13 != null && var13.field8154 == -1 && var13.field8156 == -1) {
 					var15 = var13;
 					var13 = null;
@@ -777,8 +777,8 @@ public class class454 {
 				int var16 = var10[var12][var14] & 0x7FFF;
 				int var17 = var9[var12][var14] & 0x7FFF;
 				if (var16 != 0 || var17 != 0) {
-					class663 var18 = (class663) (var16 == 0 ? null : this.field4548.get(var16 - 1));
-					class728 var19 = (class728) (var17 == 0 ? null : this.field4503.get(var17 - 1));
+					FloorOverlayType var18 = (FloorOverlayType) (var16 == 0 ? null : this.field4548.get(var16 - 1));
+					FloorUnderlayType var19 = (FloorUnderlayType) (var17 == 0 ? null : this.field4503.get(var17 - 1));
 					if (this.field4573 == 0 && var18 == null) {
 						this.field4573 = 12;
 					}
@@ -788,7 +788,7 @@ public class class454 {
 					var11[2] = false;
 					var11[1] = false;
 					var11[0] = false;
-					class663 var23 = var18;
+					FloorOverlayType var23 = var18;
 					if (var18 != null) {
 						if (var18.field8154 == -1 && var18.field8156 == -1) {
 							var23 = var18;
@@ -921,7 +921,7 @@ public class class454 {
 	}
 
 	@ObfuscatedName("qg.v(Ldh;Lyn;Laaz;II[[B[[B[[S[ZI)V")
-	public void method7149(Renderer arg0, class663 arg1, class728 arg2, int arg3, int arg4, byte[][] arg5, byte[][] arg6, short[][] arg7, boolean[] arg8) {
+	public void method7149(Renderer arg0, FloorOverlayType arg1, FloorUnderlayType arg2, int arg3, int arg4, byte[][] arg5, byte[][] arg6, short[][] arg7, boolean[] arg8) {
 		boolean[] var10 = arg1 != null && arg1.field8161 ? field4527[this.field4573] : field4556[this.field4573];
 		this.method7154(arg0, arg1, arg2, arg3, arg4, this.field4513, this.field4514, arg7, arg5, arg6, arg8);
 		this.field4583 = arg1 != null && arg1.field8156 != arg1.field8154;
@@ -972,7 +972,7 @@ public class class454 {
 	}
 
 	@ObfuscatedName("qg.o(Lyn;Laaz;B)V")
-	public void method7150(class663 arg0, class728 arg1) {
+	public void method7150(FloorOverlayType arg0, FloorUnderlayType arg1) {
 		if (this.field4582) {
 			this.field4586 = field4553[this.field4573];
 			this.field4587 = field4554[this.field4573];
@@ -997,7 +997,7 @@ public class class454 {
 	}
 
 	@ObfuscatedName("qg.s(Ldh;IIILyn;[Z[I[I[I[I[I[I[I[ILcb;Lcb;Lcb;I)V")
-	public void method7151(Renderer arg0, int arg1, int arg2, int arg3, class663 arg4, boolean[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, int[] arg10, int[] arg11, int[] arg12, int[] arg13, class104 arg14, class104 arg15, class104 arg16) {
+	public void method7151(Renderer arg0, int arg1, int arg2, int arg3, FloorOverlayType arg4, boolean[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, int[] arg10, int[] arg11, int[] arg12, int[] arg13, class104 arg14, class104 arg15, class104 arg16) {
 		this.field4502 = -1;
 		this.field4508 = -1;
 		this.field4578 = 256;
@@ -1120,7 +1120,7 @@ public class class454 {
 	}
 
 	@ObfuscatedName("qg.y(Ldh;IIIIILaaz;IIII[Z[I[I[I[I[I[I[I[I[[ILcb;Lcb;Lcb;B)V")
-	public void method7152(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, class728 arg6, int arg7, int arg8, int arg9, int arg10, boolean[] arg11, int[] arg12, int[] arg13, int[] arg14, int[] arg15, int[] arg16, int[] arg17, int[] arg18, int[] arg19, int[][] arg20, class104 arg21, class104 arg22, class104 arg23) {
+	public void method7152(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, FloorUnderlayType arg6, int arg7, int arg8, int arg9, int arg10, boolean[] arg11, int[] arg12, int[] arg13, int[] arg14, int[] arg15, int[] arg16, int[] arg17, int[] arg18, int[] arg19, int[][] arg20, class104 arg21, class104 arg22, class104 arg23) {
 		if (arg6 == null) {
 			return;
 		}
@@ -1133,10 +1133,10 @@ public class class454 {
 		if (arg10 == 0) {
 			arg10 = arg7;
 		}
-		class728 var25 = (class728) this.field4503.get(arg7 - 1);
-		class728 var26 = (class728) this.field4503.get(arg8 - 1);
-		class728 var27 = (class728) this.field4503.get(arg9 - 1);
-		class728 var28 = (class728) this.field4503.get(arg10 - 1);
+		FloorUnderlayType var25 = (FloorUnderlayType) this.field4503.get(arg7 - 1);
+		FloorUnderlayType var26 = (FloorUnderlayType) this.field4503.get(arg8 - 1);
+		FloorUnderlayType var27 = (FloorUnderlayType) this.field4503.get(arg9 - 1);
+		FloorUnderlayType var28 = (FloorUnderlayType) this.field4503.get(arg10 - 1);
 		for (int var29 = 0; var29 < this.field4584; var29++) {
 			boolean var30 = false;
 			byte var31;
@@ -1278,7 +1278,7 @@ public class class454 {
 	}
 
 	@ObfuscatedName("qg.q(Lcb;Laaz;Lyn;IIIIIIII)V")
-	public void method7153(class104 arg0, class728 arg1, class663 arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9) {
+	public void method7153(class104 arg0, FloorUnderlayType arg1, FloorOverlayType arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9) {
 		int var11 = arg0.method1529(arg4, arg5);
 		int var12 = arg0.method1529(arg6, arg5);
 		int var13 = arg0.method1529(arg6, arg7);
@@ -1301,13 +1301,13 @@ public class class454 {
 	}
 
 	@ObfuscatedName("qg.x(Ldh;Lyn;Laaz;IIII[[S[[B[[B[ZI)V")
-	public final void method7154(Renderer arg0, class663 arg1, class728 arg2, int arg3, int arg4, int arg5, int arg6, short[][] arg7, byte[][] arg8, byte[][] arg9, boolean[] arg10) {
+	public final void method7154(Renderer arg0, FloorOverlayType arg1, FloorUnderlayType arg2, int arg3, int arg4, int arg5, int arg6, short[][] arg7, byte[][] arg8, byte[][] arg9, boolean[] arg10) {
 		boolean[] var12 = arg1 != null && arg1.field8161 ? field4527[this.field4573] : field4556[this.field4573];
 		if (arg4 > 0) {
 			if (arg3 > 0) {
 				int var13 = arg7[arg3 - 1][arg4 - 1] & 0x7FFF;
 				if (var13 > 0) {
-					class663 var14 = (class663) this.field4548.get(var13 - 1);
+					FloorOverlayType var14 = (FloorOverlayType) this.field4548.get(var13 - 1);
 					if (var14.field8154 != -1 && var14.field8161) {
 						byte var15 = arg8[arg3 - 1][arg4 - 1];
 						int var16 = arg9[arg3 - 1][arg4 - 1] * 2 + 4 & 0x7;
@@ -1326,7 +1326,7 @@ public class class454 {
 			if (arg3 < arg5 - 1) {
 				int var18 = arg7[arg3 + 1][arg4 - 1] & 0x7FFF;
 				if (var18 > 0) {
-					class663 var19 = (class663) this.field4548.get(var18 - 1);
+					FloorOverlayType var19 = (FloorOverlayType) this.field4548.get(var18 - 1);
 					if (var19.field8154 != -1 && var19.field8161) {
 						byte var20 = arg8[arg3 + 1][arg4 - 1];
 						int var21 = arg9[arg3 + 1][arg4 - 1] * 2 + 6 & 0x7;
@@ -1347,7 +1347,7 @@ public class class454 {
 			if (arg3 > 0) {
 				int var23 = arg7[arg3 - 1][arg4 + 1] & 0x7FFF;
 				if (var23 > 0) {
-					class663 var24 = (class663) this.field4548.get(var23 - 1);
+					FloorOverlayType var24 = (FloorOverlayType) this.field4548.get(var23 - 1);
 					if (var24.field8154 != -1 && var24.field8161) {
 						byte var25 = arg8[arg3 - 1][arg4 + 1];
 						int var26 = arg9[arg3 - 1][arg4 + 1] * 2 + 2 & 0x7;
@@ -1366,7 +1366,7 @@ public class class454 {
 			if (arg3 < arg5 - 1) {
 				int var28 = arg7[arg3 + 1][arg4 + 1] & 0x7FFF;
 				if (var28 > 0) {
-					class663 var29 = (class663) this.field4548.get(var28 - 1);
+					FloorOverlayType var29 = (FloorOverlayType) this.field4548.get(var28 - 1);
 					if (var29.field8154 != -1 && var29.field8161) {
 						byte var30 = arg8[arg3 + 1][arg4 + 1];
 						int var31 = arg9[arg3 + 1][arg4 + 1] * 2 & 0x7;
@@ -1386,7 +1386,7 @@ public class class454 {
 		if (arg4 > 0) {
 			int var33 = arg7[arg3][arg4 - 1] & 0x7FFF;
 			if (var33 > 0) {
-				class663 var34 = (class663) this.field4548.get(var33 - 1);
+				FloorOverlayType var34 = (FloorOverlayType) this.field4548.get(var33 - 1);
 				if (var34.field8154 != -1) {
 					byte var35 = arg8[arg3][arg4 - 1];
 					byte var36 = arg9[arg3][arg4 - 1];
@@ -1424,7 +1424,7 @@ public class class454 {
 		if (arg4 < arg6 - 1) {
 			int var41 = arg7[arg3][arg4 + 1] & 0x7FFF;
 			if (var41 > 0) {
-				class663 var42 = (class663) this.field4548.get(var41 - 1);
+				FloorOverlayType var42 = (FloorOverlayType) this.field4548.get(var41 - 1);
 				if (var42.field8154 != -1) {
 					byte var43 = arg8[arg3][arg4 + 1];
 					byte var44 = arg9[arg3][arg4 + 1];
@@ -1462,7 +1462,7 @@ public class class454 {
 		if (arg3 > 0) {
 			int var49 = arg7[arg3 - 1][arg4] & 0x7FFF;
 			if (var49 > 0) {
-				class663 var50 = (class663) this.field4548.get(var49 - 1);
+				FloorOverlayType var50 = (FloorOverlayType) this.field4548.get(var49 - 1);
 				if (var50.field8154 != -1) {
 					byte var51 = arg8[arg3 - 1][arg4];
 					byte var52 = arg9[arg3 - 1][arg4];
@@ -1500,7 +1500,7 @@ public class class454 {
 		if (arg3 < arg5 - 1) {
 			int var57 = arg7[arg3 + 1][arg4] & 0x7FFF;
 			if (var57 > 0) {
-				class663 var58 = (class663) this.field4548.get(var57 - 1);
+				FloorOverlayType var58 = (FloorOverlayType) this.field4548.get(var57 - 1);
 				if (var58.field8154 != -1) {
 					byte var59 = arg8[arg3 + 1][arg4];
 					byte var60 = arg9[arg3 + 1][arg4];
@@ -1557,7 +1557,7 @@ public class class454 {
 	}
 
 	@ObfuscatedName("pd.b(Ldh;Lyn;I)I")
-	public static final int method6823(Renderer arg0, class663 arg1) {
+	public static final int method6823(Renderer arg0, FloorOverlayType arg1) {
 		if (arg1.field8156 != -1) {
 			return arg1.field8156;
 		}

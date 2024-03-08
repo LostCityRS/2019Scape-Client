@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public abstract class class149 implements class50 {
 
 	@ObfuscatedName("ec.e")
-	public final class455 field1702;
+	public final VarDomainType field1702;
 
 	@ObfuscatedName("ec.n")
 	public int field1706;
@@ -20,7 +20,7 @@ public abstract class class149 implements class50 {
 	@ObfuscatedName("ec.f")
 	public boolean field1703 = true;
 
-	public class149(class455 arg0, int arg1) {
+	public class149(VarDomainType arg0, int arg1) {
 		this.field1702 = arg0;
 		this.field1706 = arg1;
 	}

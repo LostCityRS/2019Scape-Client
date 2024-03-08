@@ -3,9 +3,9 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aiu")
-public final class class940 extends class455 {
+public final class class940 extends VarDomainType {
 
-	public class940(class655 arg0, int arg1, boolean arg2, boolean arg3) {
+	public class940(Js5ConfigGroup arg0, int arg1, boolean arg2, boolean arg3) {
 		super(arg0, arg1, arg2, arg3, (class941) null);
 	}
 

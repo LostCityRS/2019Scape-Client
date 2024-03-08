@@ -13,7 +13,7 @@ public class class950 extends class1198 implements class514 {
 	public static final int[] field11160 = new int[] { 16, 32, 64, 128 };
 
 	@ObfuscatedName("ajg.v")
-	public class1090 field11162;
+	public LocTypeList field11162;
 
 	@ObfuscatedName("ajg.o")
 	public class116 field11173;
@@ -48,7 +48,7 @@ public class class950 extends class1198 implements class514 {
 	@ObfuscatedName("ajg.j")
 	public int field12460;
 
-	public class950(class550 arg0, Renderer arg1, class1090 arg2, class598 arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, boolean arg12, class420 arg13) {
+	public class950(class550 arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, boolean arg12, class420 arg13) {
 		super(arg0, arg6, arg7, arg8, arg4, arg5, method1575(arg10, arg11), arg13);
 		this.field11162 = arg2;
 		this.field11166 = arg3.field7450;
@@ -117,7 +117,7 @@ public class class950 extends class1198 implements class514 {
 
 	@ObfuscatedName("ajg.br(Ldh;IZI)Labg;")
 	public class746 method17420(Renderer arg0, int arg1, boolean arg2) {
-		class598 var4 = (class598) this.field11162.get(this.field11166);
+		LocType var4 = (LocType) this.field11162.get(this.field11166);
 		class104 var5;
 		class104 var6;
 		if (this.field11169) {
@@ -151,7 +151,7 @@ public class class950 extends class1198 implements class514 {
 		}
 		class419 var2 = this.method10533();
 		class552 var3 = class552.method16749(this.field11170);
-		class416 var4 = ((class598) this.field11162.get(this.field11166)).field7468;
+		class416 var4 = ((LocType) this.field11162.get(this.field11166)).field7468;
 		if (var4 == null) {
 			this.field11173.method1813(var2, this.field11713[0], 0);
 		} else {
@@ -167,7 +167,7 @@ public class class950 extends class1198 implements class514 {
 
 	@ObfuscatedName("ajg.fa(Ldh;IIB)Z")
 	public boolean method17375(Renderer arg0, int arg1, int arg2) {
-		class416 var4 = ((class598) this.field11162.get(this.field11166)).field7468;
+		class416 var4 = ((LocType) this.field11162.get(this.field11166)).field7468;
 		if (var4 != null) {
 			return arg0.method2191(arg1, arg2, this.method10533(), var4);
 		}

@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("afv")
 public class class860 extends class149 {
 
-	public class860(class455 arg0, int arg1) {
+	public class860(VarDomainType arg0, int arg1) {
 		super(arg0, arg1);
 	}
 

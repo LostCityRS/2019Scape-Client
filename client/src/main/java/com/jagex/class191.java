@@ -182,7 +182,7 @@ public class class191 {
 
 	@ObfuscatedName("gq.r(I)Leh;")
 	public class152 method3394() {
-		return new class150(class455.field4599, this.field1899);
+		return new class150(VarDomainType.field4599, this.field1899);
 	}
 
 	@ObfuscatedName("gq.v(Lgy;B)V")

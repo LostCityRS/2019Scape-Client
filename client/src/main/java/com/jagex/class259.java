@@ -36,7 +36,7 @@ public class class259 {
 		this.field2685 = arg6;
 	}
 
-	public class259(class260 arg0, boolean arg1) {
+	public class259(NPCType arg0, boolean arg1) {
 		if (arg1) {
 			this.field2689 = new int[arg0.field2752.length];
 			this.field2683 = new float[arg0.field2752.length];

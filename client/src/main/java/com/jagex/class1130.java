@@ -98,7 +98,7 @@ public class class1130 extends class892 {
 		this.field12060 = 0;
 		int[] var4 = new int[Statics.field1709.field7766.length];
 		class740[] var5 = new class740[Statics.field1709.field7766.length];
-		class738[] var6 = new class738[Statics.field1709.field7766.length];
+		ObjType[] var6 = new ObjType[Statics.field1709.field7766.length];
 		for (int var7 = 0; var7 < Statics.field1709.field7766.length; var7++) {
 			if (Statics.field1709.field7766[var7] != 1) {
 				int var8 = arg0.g1();
@@ -115,7 +115,7 @@ public class class1130 extends class892 {
 					if (var10 >= 2048) {
 						int var11 = var10 - 2048;
 						var4[var7] = var11 | 0x40000000;
-						var6[var7] = (class738) Statics.field1842.get(var11);
+						var6[var7] = (ObjType) Statics.field1842.get(var11);
 						int var12 = var6[var7].field8685;
 						if (var12 != 0) {
 							this.field12060 = var12;
@@ -182,7 +182,7 @@ public class class1130 extends class892 {
 		if (!this.field10432.method14346() || !this.field10432.field11877) {
 			return;
 		}
-		class584 var26 = this.method16508();
+		BASType var26 = this.method16508();
 		if (!var26.method9290(this.field10432.method14348())) {
 			this.field10432.method14362(-1);
 			this.field10432.field11877 = false;
@@ -206,7 +206,7 @@ public class class1130 extends class892 {
 		if (var6) {
 			this.field12050 = arg0.gSmart1or2();
 			int var8 = var3 == 0 ? Statics.field7921.field7671 : Statics.field7921.field7670;
-			this.field12051 = ((class754) Statics.field8514.get(var8)).method14849(this.field12050);
+			this.field12051 = ((EnumType) Statics.field8514.get(var8)).method14849(this.field12050);
 		} else {
 			this.field12050 = -1;
 			this.field12051 = null;
@@ -311,15 +311,15 @@ public class class1130 extends class892 {
 		class552 var8 = null;
 		this.field10458 = false;
 		if (Statics.field688.field11568.method18453() == 1) {
-			class584 var9 = this.method16508();
-			if (var9.field7346 && (this.field12061.field7892 == -1 || ((class260) Statics.field7961.get(this.field12061.field7892)).field2710)) {
+			BASType var9 = this.method16508();
+			if (var9.field7346 && (this.field12061.field7892 == -1 || ((NPCType) Statics.field7961.get(this.field12061.field7892)).field2710)) {
 				class721 var10 = this.field10454.method14346() && this.field10454.method14355() ? this.field10454 : null;
 				class1075 var11 = this.field10432.method14346() && (!this.field10432.field11877 || var10 == null) ? this.field10432 : null;
 				short var12 = Statics.field11389.field7728;
 				byte var13 = Statics.field11389.field7757;
 				if (this.field12061.field7892 != -1) {
-					var12 = ((class260) Statics.field7961.get(this.field12061.field7892)).field2741;
-					var13 = ((class260) Statics.field7961.get(this.field12061.field7892)).field2702;
+					var12 = ((NPCType) Statics.field7961.get(this.field12061.field7892)).field2741;
+					var13 = ((NPCType) Statics.field7961.get(this.field12061.field7892)).field2702;
 				}
 				Object var14 = null;
 				class116 var15;
@@ -436,7 +436,7 @@ public class class1130 extends class892 {
 	@ObfuscatedName("aqk.hp(Ldh;IB)Z")
 	public boolean method19114(Renderer arg0, int arg1) {
 		int var3 = arg1;
-		class584 var4 = this.method16508();
+		BASType var4 = this.method16508();
 		class721 var5 = this.field10454.method14346() && !this.field10454.method14355() ? this.field10454 : null;
 		class1075 var6 = !this.field10432.method14346() || this.field12053 || this.field10432.field11877 && var5 != null ? null : this.field10432;
 		int var7 = var4.field7342;
@@ -517,8 +517,8 @@ public class class1130 extends class892 {
 		}
 		for (int var4 = 0; var4 < this.field10422.length; var4++) {
 			if (this.field10422[var4].field6657 != -1) {
-				class680 var5 = (class680) Statics.field4874.get(this.field10422[var4].field6657);
-				if (var5.field8261 && var5.field8260 != -1 && ((class164) Statics.field8797.get(var5.field8260)).field1782 == 1) {
+				EffectAnimType var5 = (EffectAnimType) Statics.field4874.get(this.field10422[var4].field6657);
+				if (var5.field8261 && var5.field8260 != -1 && ((SeqType) Statics.field8797.get(var5.field8260)).field1782 == 1) {
 					this.field10422[var4].field6659.method14362(-1);
 					this.field10422[var4].field6657 = -1;
 				}
@@ -577,7 +577,7 @@ public class class1130 extends class892 {
 
 	@ObfuscatedName("aqk.bz(I)I")
 	public int method16546() {
-		return this.field12061 == null || this.field12061.field7892 == -1 ? super.method16546() : ((class260) Statics.field7961.get(this.field12061.field7892)).field2699;
+		return this.field12061 == null || this.field12061.field7892 == -1 ? super.method16546() : ((NPCType) Statics.field7961.get(this.field12061.field7892)).field2699;
 	}
 
 	@ObfuscatedName("aqk.bj(S)I")

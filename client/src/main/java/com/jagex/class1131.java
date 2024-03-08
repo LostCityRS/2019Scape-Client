@@ -7,7 +7,7 @@ import deob.Statics;
 public class class1131 extends class892 {
 
 	@ObfuscatedName("aqc.cn")
-	public class260 field12083;
+	public NPCType field12083;
 
 	@ObfuscatedName("aqc.cv")
 	public int field12074 = -1;
@@ -89,12 +89,12 @@ public class class1131 extends class892 {
 	}
 
 	@ObfuscatedName("aqc.hr(Lif;I)V")
-	public void method19156(class260 arg0) {
+	public void method19156(NPCType arg0) {
 		this.method19157(arg0, true, true, true);
 	}
 
 	@ObfuscatedName("aqc.hs(Lif;ZZZS)V")
-	public void method19157(class260 arg0, boolean arg1, boolean arg2, boolean arg3) {
+	public void method19157(NPCType arg0, boolean arg1, boolean arg2, boolean arg3) {
 		if (this.field12083 != arg0 && class22.field562 && class22.method8494(this.field10406)) {
 			class22.method6031();
 		}
@@ -138,8 +138,8 @@ public class class1131 extends class892 {
 		}
 		var4.method6292(var2);
 		var4.method6315(0.0F, (float) (-20 - this.field10408), 0.0F);
-		class584 var8 = this.method16508();
-		class260 var9 = this.field12083.field2735 == null ? this.field12083 : this.field12083.method4547(Statics.field7410, Statics.field7410);
+		BASType var8 = this.method16508();
+		NPCType var9 = this.field12083.field2735 == null ? this.field12083 : this.field12083.method4547(Statics.field7410, Statics.field7410);
 		boolean var10 = var9.field2724 != null;
 		this.field10458 = false;
 		class552 var11 = null;
@@ -216,7 +216,7 @@ public class class1131 extends class892 {
 	@ObfuscatedName("aqc.hh(Ldh;II)Z")
 	public boolean method19167(Renderer arg0, int arg1) {
 		int var3 = arg1;
-		class584 var4 = this.method16508();
+		BASType var4 = this.method16508();
 		class721 var5 = this.field10454.method14346() && !this.field10454.method14355() ? this.field10454 : null;
 		class1075 var6 = this.field10432.method14346() && (!this.field10432.field11877 || var5 == null) ? this.field10432 : null;
 		int var7 = var4.field7342;
@@ -230,7 +230,7 @@ public class class1131 extends class892 {
 		}
 		boolean var10 = false;
 		if (this.field10433 != 0) {
-			class260 var11 = this.field12083.field2735 == null ? this.field12083 : this.field12083.method4547(Statics.field7410, Statics.field7410);
+			NPCType var11 = this.field12083.field2735 == null ? this.field12083 : this.field12083.method4547(Statics.field7410, Statics.field7410);
 			if (var11 == null || client.field10903 >= this.field10438 + var11.field2765) {
 				this.field10433 = 0;
 			} else {
@@ -327,8 +327,8 @@ public class class1131 extends class892 {
 		}
 		for (int var5 = 0; var5 < this.field10422.length; var5++) {
 			if (this.field10422[var5].field6657 != -1) {
-				class680 var6 = (class680) Statics.field4874.get(this.field10422[var5].field6657);
-				if (var6.field8261 && var6.field8260 != -1 && ((class164) Statics.field8797.get(var6.field8260)).field1782 == 1) {
+				EffectAnimType var6 = (EffectAnimType) Statics.field4874.get(this.field10422[var5].field6657);
+				if (var6.field8261 && var6.field8260 != -1 && ((SeqType) Statics.field8797.get(var6.field8260)).field1782 == 1) {
 					this.field10422[var5].field6659.method14362(-1);
 					this.field10422[var5].field6657 = -1;
 				}
@@ -359,8 +359,8 @@ public class class1131 extends class892 {
 		}
 		for (int var6 = 0; var6 < this.field10422.length; var6++) {
 			if (this.field10422[var6].field6657 != -1) {
-				class680 var7 = (class680) Statics.field4874.get(this.field10422[var6].field6657);
-				if (var7.field8261 && var7.field8260 != -1 && ((class164) Statics.field8797.get(var7.field8260)).field1782 == 1) {
+				EffectAnimType var7 = (EffectAnimType) Statics.field4874.get(this.field10422[var6].field6657);
+				if (var7.field8261 && var7.field8260 != -1 && ((SeqType) Statics.field8797.get(var7.field8260)).field1782 == 1) {
 					this.field10422[var6].field6659.method14362(-1);
 					this.field10422[var6].field6657 = -1;
 				}
@@ -410,7 +410,7 @@ public class class1131 extends class892 {
 			return this.field12079;
 		}
 		if (this.field12083.field2735 != null) {
-			class260 var1 = this.field12083.method4547(Statics.field7410, Statics.field7410);
+			NPCType var1 = this.field12083.method4547(Statics.field7410, Statics.field7410);
 			if (var1 != null && var1.field2762 != -1) {
 				return var1.field2762;
 			}
@@ -421,7 +421,7 @@ public class class1131 extends class892 {
 	@ObfuscatedName("aqc.bs(B)I")
 	public int method16486() {
 		if (this.field12083.field2735 != null) {
-			class260 var1 = this.field12083.method4547(Statics.field7410, Statics.field7410);
+			NPCType var1 = this.field12083.method4547(Statics.field7410, Statics.field7410);
 			if (var1 != null && var1.field2706 != -1) {
 				return var1.field2706;
 			}
@@ -432,7 +432,7 @@ public class class1131 extends class892 {
 	@ObfuscatedName("aqc.bo(I)I")
 	public int method16501() {
 		if (this.field12083.field2735 != null) {
-			class260 var1 = this.field12083.method4547(Statics.field7410, Statics.field7410);
+			NPCType var1 = this.field12083.method4547(Statics.field7410, Statics.field7410);
 			if (var1 != null && var1.field2754 != -1) {
 				return var1.field2754;
 			}

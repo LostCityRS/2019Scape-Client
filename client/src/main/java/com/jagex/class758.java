@@ -11,7 +11,7 @@ public class class758 implements ConfigTypeList {
 	public final class442 field8792;
 
 	@ObfuscatedName("abe.n")
-	public final class655 field8793;
+	public final Js5ConfigGroup field8793;
 
 	@ObfuscatedName("abe.m")
 	public int field8794;
@@ -22,7 +22,7 @@ public class class758 implements ConfigTypeList {
 	@ObfuscatedName("abe.f")
 	public final ConfigTypeFactory field8796;
 
-	public class758(ModeGame arg0, Language arg1, class442 arg2, class655 arg3, int arg4, ConfigTypeFactory arg5) {
+	public class758(ModeGame arg0, Language arg1, class442 arg2, Js5ConfigGroup arg3, int arg4, ConfigTypeFactory arg5) {
 		this.field8792 = arg2;
 		this.field8793 = arg3;
 		this.field8796 = arg5;

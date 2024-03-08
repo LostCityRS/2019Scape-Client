@@ -68,7 +68,7 @@ public abstract class class737 implements ConfigTypeFactory {
 				return var14;
 			}
 		}
-		class738 var15 = (class738) arg12.get(arg2);
+		ObjType var15 = (ObjType) arg12.get(arg2);
 		if (arg3 > 1 && var15.field8629 != null) {
 			int var16 = -1;
 			for (int var17 = 0; var17 < 10; var17++) {
@@ -77,7 +77,7 @@ public abstract class class737 implements ConfigTypeFactory {
 				}
 			}
 			if (var16 != -1) {
-				var15 = (class738) arg12.get(var16);
+				var15 = (ObjType) arg12.get(var16);
 			}
 		}
 		int[] var18 = var15.method14646(arg0, arg1, arg3, arg4, arg5, arg6, arg8, arg9, arg10, arg11);

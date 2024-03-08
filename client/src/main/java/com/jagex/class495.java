@@ -74,7 +74,7 @@ public class class495 {
 	public float field5038;
 
 	@ObfuscatedName("rl.a")
-	public class1090 field5039;
+	public LocTypeList field5039;
 
 	@ObfuscatedName("rl.g")
 	public int[][] field5040;
@@ -230,7 +230,7 @@ public class class495 {
 	}
 
 	@ObfuscatedName("rl.y(I)Laop;")
-	public class1090 method7750() {
+	public LocTypeList method7750() {
 		return this.field5039;
 	}
 
@@ -260,7 +260,7 @@ public class class495 {
 	}
 
 	@ObfuscatedName("rl.g(Laop;I)V")
-	public void method7733(class1090 arg0) {
+	public void method7733(LocTypeList arg0) {
 		this.field5039 = arg0;
 	}
 
@@ -815,7 +815,7 @@ public class class495 {
 		for (class962 var28 = (class962) class962.field11237.method14191(); var28 != null; var28 = (class962) class962.field11237.method14161()) {
 			var28.field11226 -= var2;
 			var28.field11228 -= var3;
-			class598 var29 = (class598) this.field5039.get(var28.field11234);
+			LocType var29 = (LocType) this.field5039.get(var28.field11234);
 			int var30;
 			int var31;
 			if ((var28.field11235 & 0x1) == 0) {
@@ -832,7 +832,7 @@ public class class495 {
 		for (class962 var32 = (class962) class962.field11242.method14191(); var32 != null; var32 = (class962) class962.field11242.method14161()) {
 			var32.field11226 -= var2;
 			var32.field11228 -= var3;
-			class598 var33 = (class598) this.field5039.get(var32.field11234);
+			LocType var33 = (LocType) this.field5039.get(var32.field11234);
 			int var34;
 			int var35;
 			if ((var32.field11235 & 0x1) == 0) {
@@ -1404,7 +1404,7 @@ public class class495 {
 					int var11 = var8 & 0x3F;
 					int var12 = (this.field5054[var2] >> 8) * 64 - this.field5018.field7426 + var10;
 					int var13 = (this.field5054[var2] & 0xFF) * 64 - this.field5018.field7427 + var11;
-					class260 var14 = (class260) Statics.field7961.get(var5.g2());
+					NPCType var14 = (NPCType) Statics.field7961.get(var5.g2());
 					class984 var15 = (class984) client.field10838.method14495((long) var7);
 					if (var15 == null && (var14.field2743 & 0x1) > 0 && var12 >= 0 && var14.field2699 + var12 < this.field5028 && var13 >= 0 && var14.field2699 + var13 < this.field5043) {
 						class1131 var16 = new class1131(this.field5030);

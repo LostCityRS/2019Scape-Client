@@ -449,7 +449,7 @@ public class class47 {
 				}
 				if (arg0.startsWith("getclientvarp")) {
 					int var19 = Integer.parseInt(arg0.substring(14));
-					method4285("varp=" + Statics.field7410.method679(Statics.field7410.method695(class455.field4594, var19)));
+					method4285("varp=" + Statics.field7410.method679(Statics.field7410.method695(VarDomainType.field4594, var19)));
 					return;
 				}
 				if (arg0.startsWith("directlogin")) {

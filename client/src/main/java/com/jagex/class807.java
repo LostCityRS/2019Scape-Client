@@ -13,8 +13,8 @@ public class class807 extends class808 implements ConfigTypeList {
 	@ObfuscatedName("adm.m")
 	public final WeightedCache field9258 = new WeightedCache(64);
 
-	public class807(ModeGame arg0, class455 arg1, Language arg2, class442 arg3) {
-		super(arg0, arg1, arg2, arg3 == null ? 0 : arg3.method6897(arg1.method7218().field8040));
+	public class807(ModeGame arg0, VarDomainType arg1, Language arg2, class442 arg3) {
+		super(arg0, arg1, arg2, arg3 == null ? 0 : arg3.method6897(arg1.method7218().id));
 		this.field9257 = arg3;
 	}
 
@@ -33,7 +33,7 @@ public class class807 extends class808 implements ConfigTypeList {
 
 	@ObfuscatedName("adm.r(IB)Lafv;")
 	public class860 method15266(int arg0) {
-		byte[] var2 = this.field9257.method6879(this.field9260.method7218().field8040, arg0);
+		byte[] var2 = this.field9257.method6879(this.field9260.method7218().id, arg0);
 		class860 var3 = new class860(this.field9260, arg0);
 		if (var2 != null) {
 			var3.decode(new Packet(var2));

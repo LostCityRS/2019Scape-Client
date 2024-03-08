@@ -87,7 +87,7 @@ public class class1234 extends class1200 {
 		this.field12596 = false;
 		this.field12594 = arg15;
 		this.field12606 = arg16;
-		int var18 = ((class680) Statics.field4874.get(this.field12603)).field8260;
+		int var18 = ((EffectAnimType) Statics.field4874.get(this.field12603)).field8260;
 		this.field12602 = new class1076(this, false);
 		this.field12602.method14362(var18);
 		this.method18363(1);
@@ -179,7 +179,7 @@ public class class1234 extends class1200 {
 		if (this.field12594 < 0) {
 			return;
 		}
-		class584 var6 = var1.method16508();
+		BASType var6 = var1.method16508();
 		int var7 = 0;
 		int var8 = 0;
 		if (var6.field7357 != null && var6.field7357[this.field12594] != null) {
@@ -237,7 +237,7 @@ public class class1234 extends class1200 {
 
 	@ObfuscatedName("aue.f(Ldh;II)Ldo;")
 	public class116 method19727(Renderer arg0, int arg1) {
-		class680 var3 = (class680) Statics.field4874.get(this.field12603);
+		EffectAnimType var3 = (EffectAnimType) Statics.field4874.get(this.field12603);
 		return var3.method13817(arg0, arg1, this.field12602, (byte) 2);
 	}
 

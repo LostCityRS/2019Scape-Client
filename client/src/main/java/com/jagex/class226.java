@@ -1031,7 +1031,7 @@ public class class226 {
 	}
 
 	@ObfuscatedName("hf.o(Ldh;ILaof;Laov;Laod;Laon;Laos;Lem;Lep;Laaq;Lxg;I)Ldo;")
-	public class116 method3944(Renderer arg0, int arg1, class1089 arg2, class1084 arg3, class1082 arg4, class1095 arg5, class1080 arg6, class151 arg7, class147 arg8, class721 arg9, class639 arg10) {
+	public class116 method3944(Renderer arg0, int arg1, BASTypeList arg2, IDKTypeList arg3, NPCTypeList arg4, ObjTypeList arg5, SeqTypeList arg6, class151 arg7, class147 arg8, class721 arg9, class639 arg10) {
 		field2338 = false;
 		if (this.field2224 == 0) {
 			return null;
@@ -1096,7 +1096,7 @@ public class class226 {
 			var32.method1690(var12);
 			return var32;
 		} else if (this.field2224 == 2) {
-			class116 var36 = ((class260) arg4.get(this.field2294)).method4544(arg0, arg1, arg7, arg8, arg9, this.field2363);
+			class116 var36 = ((NPCType) arg4.get(this.field2294)).method4544(arg0, arg1, arg7, arg8, arg9, this.field2363);
 			if (var36 == null) {
 				field2338 = true;
 				return null;
@@ -1115,7 +1115,7 @@ public class class226 {
 				return var37;
 			}
 		} else if (this.field2224 == 4) {
-			class738 var38 = (class738) arg5.get(this.field2294);
+			ObjType var38 = (ObjType) arg5.get(this.field2294);
 			class116 var39 = var38.method14644(arg0, arg1, 10, arg10, arg9, 0, 0, 0, 0);
 			if (var39 == null) {
 				field2338 = true;
@@ -1124,7 +1124,7 @@ public class class226 {
 				return var39;
 			}
 		} else if (this.field2224 == 6) {
-			class116 var40 = ((class260) arg4.get(this.field2294)).method4542(arg0, arg1, arg2, arg7, arg8, arg9, null, null, null, 0, this.field2363);
+			class116 var40 = ((NPCType) arg4.get(this.field2294)).method4542(arg0, arg1, arg2, arg7, arg8, arg9, null, null, null, 0, this.field2363);
 			if (var40 == null) {
 				field2338 = true;
 				return null;
@@ -1163,14 +1163,14 @@ public class class226 {
 	}
 
 	@ObfuscatedName("hf.y(Laom;Laok;I)Lsv;")
-	public class502 method4012(class1087 arg0, class1083 arg1) {
+	public class502 method4012(SkyBoxTypeList arg0, SkyDecorTypeList arg1) {
 		if (this.field2339 == -1) {
 			return null;
 		}
 		long var3 = ((long) this.field2342 & 0xFFFFL) << 48 | ((long) this.field2343 & 0xFFFFL) << 32 | ((long) this.field2344 & 0xFFFFL) << 16 | (long) this.field2339 & 0xFFFFL;
 		class502 var5 = (class502) field2177.method2930(var3);
 		if (var5 == null) {
-			var5 = class568.method305(this.field2339, this.field2342, this.field2343, this.field2344, arg0, arg1);
+			var5 = SkyBoxType.method305(this.field2339, this.field2342, this.field2343, this.field2344, arg0, arg1);
 			field2177.method2921(var5, var3);
 		}
 		return var5;

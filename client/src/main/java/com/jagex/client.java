@@ -1360,7 +1360,7 @@ public final class client extends GameShell {
 		if (field10768 == ModeGame.field8335) {
 			field10809 = false;
 		}
-		class598.field7501 = class260.field2694 = class738.field8650 = new short[256];
+		LocType.field7501 = NPCType.field2694 = ObjType.field8650 = new short[256];
 		try {
 			Statics.field3428 = GameShell.method7321().getToolkit().getSystemClipboard();
 		} catch (Exception var5) {
@@ -2576,7 +2576,7 @@ public final class client extends GameShell {
 			return;
 		}
 		if (arg0 != -1) {
-			class652 var1 = (class652) Statics.field2427.get(arg0);
+			CursorType var1 = (CursorType) Statics.field2427.get(arg0);
 			class136 var2 = var1.method10302();
 			if (var2 == null) {
 				arg0 = -1;
@@ -4179,7 +4179,7 @@ public final class client extends GameShell {
 
 	@ObfuscatedName("aco.gz(Lahm;ZI)V")
 	public static final void method15071(class892 arg0, boolean arg1) {
-		class584 var2 = arg0.method16508();
+		BASType var2 = arg0.method16508();
 		if (arg0.field10400 == 0) {
 			arg0.field10453 = 0;
 			Statics.field1891 = class690.field8318.field8313;
@@ -4187,7 +4187,7 @@ public final class client extends GameShell {
 			return;
 		}
 		if (arg0.field10454.method14346() && !arg0.field10454.method14355()) {
-			class164 var3 = arg0.field10454.method14347();
+			SeqType var3 = arg0.field10454.method14347();
 			if (arg0.field10396 > 0 && var3.field1767 == 0) {
 				arg0.field10453++;
 				Statics.field1891 = class690.field8318.field8313;
@@ -4203,9 +4203,9 @@ public final class client extends GameShell {
 		}
 		for (int var4 = 0; var4 < arg0.field10422.length; var4++) {
 			if (arg0.field10422[var4].field6657 != -1 && arg0.field10422[var4].field6659.method14355()) {
-				class680 var5 = (class680) Statics.field4874.get(arg0.field10422[var4].field6657);
+				EffectAnimType var5 = (EffectAnimType) Statics.field4874.get(arg0.field10422[var4].field6657);
 				if (var5.field8261 && var5.field8260 != -1) {
-					class164 var6 = (class164) Statics.field8797.get(var5.field8260);
+					SeqType var6 = (SeqType) Statics.field8797.get(var5.field8260);
 					if (arg0.field10396 > 0 && var6.field1767 == 0) {
 						arg0.field10453++;
 						Statics.field1891 = class690.field8318.field8313;
@@ -4496,7 +4496,7 @@ public final class client extends GameShell {
 
 	@ObfuscatedName("qf.ha(Lahm;IIII)V")
 	public static void method7326(class892 arg0, int arg1, int arg2, int arg3) {
-		class584 var4 = arg0.method16508();
+		BASType var4 = arg0.method16508();
 		class1075 var5 = arg0.field10432;
 		int var6 = arg0.field10414 - arg0.field10395.field528 & 0x3FFF;
 		if (class690.field8318.field8313 == arg1) {
@@ -4598,8 +4598,8 @@ public final class client extends GameShell {
 			if (arg0.field10422[var2].field6657 != -1) {
 				class721 var3 = arg0.field10422[var2].field6659;
 				if (var3.method14355()) {
-					class680 var4 = (class680) Statics.field4874.get(arg0.field10422[var2].field6657);
-					class164 var5 = var3.method14347();
+					EffectAnimType var4 = (EffectAnimType) Statics.field4874.get(arg0.field10422[var2].field6657);
+					SeqType var5 = var3.method14347();
 					if (var4.field8261) {
 						if (var5.field1767 == 3) {
 							if (arg0.field10396 > 0 && arg0.field10429 <= field10903 && arg0.field10399 < field10903) {
@@ -4621,7 +4621,7 @@ public final class client extends GameShell {
 		class721 var6 = arg0.field10454;
 		if (var6.method14346()) {
 			label84: {
-				class164 var7 = var6.method14347();
+				SeqType var7 = var6.method14347();
 				if (var7.field1767 == 3) {
 					if (arg0.field10396 > 0 && arg0.field10429 <= field10903 && arg0.field10399 < field10903) {
 						arg0.field10427 = null;
@@ -4665,7 +4665,7 @@ public final class client extends GameShell {
 					if (var5 == -1) {
 						arg0.field10398[var8] = null;
 					} else {
-						class164 var9 = (class164) Statics.field8797.get(var5);
+						SeqType var9 = (SeqType) Statics.field8797.get(var5);
 						int var10 = var9.field1768;
 						class1204 var11 = arg0.field10398[var8];
 						if (var11 != null && var11.method14346()) {
@@ -6140,7 +6140,7 @@ public final class client extends GameShell {
 			var8 = field11011 + var6;
 		}
 		for (int var9 = 0; var9 < var8; var9++) {
-			class260 var10 = null;
+			NPCType var10 = null;
 			class892 var12;
 			if (field10863 == 0) {
 				class158 var11 = Statics.field1721[var9];
@@ -6200,7 +6200,7 @@ public final class client extends GameShell {
 					for (class959 var18 = (class959) var12.field10416.method14254(); var18 != null; var18 = (class959) var12.field10416.method14241()) {
 						class960 var19 = var18.method17457(field10903);
 						if (var19 != null) {
-							class566 var20 = var18.field11215;
+							HeadbarType var20 = var18.field11215;
 							class1130 var21 = field10944[var7[var9]];
 							class101 var22;
 							class101 var23;
@@ -8577,9 +8577,9 @@ public final class client extends GameShell {
 					int var402 = var400.field6657;
 					if (var382 != -1 && var402 != -1) {
 						if (var382 == var402) {
-							class680 var403 = (class680) Statics.field4874.get(var382);
+							EffectAnimType var403 = (EffectAnimType) Statics.field4874.get(var382);
 							if (var403.field8261 && var403.field8260 != -1) {
-								class164 var404 = (class164) Statics.field8797.get(var403.field8260);
+								SeqType var404 = (SeqType) Statics.field8797.get(var403.field8260);
 								int var405 = var404.field1768;
 								if (var405 == 0 || var405 == 2) {
 									var401 = false;
@@ -8588,11 +8588,11 @@ public final class client extends GameShell {
 								}
 							}
 						} else {
-							class680 var406 = (class680) Statics.field4874.get(var382);
-							class680 var407 = (class680) Statics.field4874.get(var402);
+							EffectAnimType var406 = (EffectAnimType) Statics.field4874.get(var382);
+							EffectAnimType var407 = (EffectAnimType) Statics.field4874.get(var402);
 							if (var406.field8260 != -1 && var407.field8260 != -1) {
-								class164 var408 = (class164) Statics.field8797.get(var406.field8260);
-								class164 var409 = (class164) Statics.field8797.get(var407.field8260);
+								SeqType var408 = (SeqType) Statics.field8797.get(var406.field8260);
+								SeqType var409 = (SeqType) Statics.field8797.get(var407.field8260);
 								if (var408.field1779 < var409.field1779) {
 									var401 = false;
 								}
@@ -8606,7 +8606,7 @@ public final class client extends GameShell {
 						if (var382 == -1) {
 							var400.field6659.method14362(-1);
 						} else {
-							class680 var410 = (class680) Statics.field4874.get(var382);
+							EffectAnimType var410 = (EffectAnimType) Statics.field4874.get(var382);
 							int var411 = var410.field8261 ? 0 : 2;
 							if (var387) {
 								var411 = 1;
@@ -8632,9 +8632,9 @@ public final class client extends GameShell {
 					int var416 = var414.field6657;
 					if (var382 != -1 && var416 != -1) {
 						if (var382 == var416) {
-							class680 var417 = (class680) Statics.field4874.get(var382);
+							EffectAnimType var417 = (EffectAnimType) Statics.field4874.get(var382);
 							if (var417.field8261 && var417.field8260 != -1) {
-								class164 var418 = (class164) Statics.field8797.get(var417.field8260);
+								SeqType var418 = (SeqType) Statics.field8797.get(var417.field8260);
 								int var419 = var418.field1768;
 								if (var419 == 0 || var419 == 2) {
 									var415 = false;
@@ -8643,11 +8643,11 @@ public final class client extends GameShell {
 								}
 							}
 						} else {
-							class680 var420 = (class680) Statics.field4874.get(var382);
-							class680 var421 = (class680) Statics.field4874.get(var416);
+							EffectAnimType var420 = (EffectAnimType) Statics.field4874.get(var382);
+							EffectAnimType var421 = (EffectAnimType) Statics.field4874.get(var416);
 							if (var420.field8260 != -1 && var421.field8260 != -1) {
-								class164 var422 = (class164) Statics.field8797.get(var420.field8260);
-								class164 var423 = (class164) Statics.field8797.get(var421.field8260);
+								SeqType var422 = (SeqType) Statics.field8797.get(var420.field8260);
+								SeqType var423 = (SeqType) Statics.field8797.get(var421.field8260);
 								if (var422.field1779 < var423.field1779) {
 									var415 = false;
 								}
@@ -8662,7 +8662,7 @@ public final class client extends GameShell {
 						if (var382 == -1) {
 							var414.field6659.method14362(-1);
 						} else {
-							class680 var424 = (class680) Statics.field4874.get(var382);
+							EffectAnimType var424 = (EffectAnimType) Statics.field4874.get(var382);
 							int var425 = var424.field8261 ? 0 : 2;
 							if (var387) {
 								var425 = 1;
@@ -9018,7 +9018,7 @@ public final class client extends GameShell {
 			int var529 = var2.g4_alt1();
 			method14061();
 			class1171.method5369(var528, var527, var529);
-			class738 var530 = (class738) Statics.field1842.get(var527);
+			ObjType var530 = (ObjType) Statics.field1842.get(var527);
 			class1171.method16746(var528, var530.field8639, var530.field8626, var530.field8638);
 			Statics.method9085(var528, var530.field8695, var530.field8643, var530.field8641);
 			arg0.field796 = null;
@@ -9823,7 +9823,7 @@ public final class client extends GameShell {
 		} else if (ZoneProt.field3619 == arg0) {
 			int var88 = var1.g4s();
 			int var89 = var1.g1();
-			((class598) field10855.method7750().get(var88)).method9473(var89);
+			((LocType) field10855.method7750().get(var88)).method9473(var89);
 		} else if (ZoneProt.field3614 == arg0) {
 			int var90 = var1.g1();
 			boolean var91 = (var90 & 0x80) != 0;
@@ -10071,7 +10071,7 @@ public final class client extends GameShell {
 				var16.field12571 = var14;
 			} else if (var16.field12580 == var12) {
 				var16.field12571 = var15;
-			} else if (((class738) Statics.field1842.get(var16.field12580)).field8697) {
+			} else if (((ObjType) Statics.field1842.get(var16.field12580)).field8697) {
 				var16.field12571 = class1233.method820();
 			} else {
 				var16.field12571 = null;
@@ -10084,7 +10084,7 @@ public final class client extends GameShell {
 				var16.field12568 = var13;
 			} else if (var16.field12569 == var12) {
 				var16.field12568 = var15;
-			} else if (((class738) Statics.field1842.get(var16.field12569)).field8697) {
+			} else if (((ObjType) Statics.field1842.get(var16.field12569)).field8697) {
 				var16.field12568 = class1233.method820();
 			} else {
 				var16.field12568 = null;
@@ -10097,7 +10097,7 @@ public final class client extends GameShell {
 				var16.field12577 = var13;
 			} else if (var16.field12573 == var11) {
 				var16.field12577 = var14;
-			} else if (((class738) Statics.field1842.get(var16.field12573)).field8697) {
+			} else if (((ObjType) Statics.field1842.get(var16.field12573)).field8697) {
 				var16.field12577 = class1233.method820();
 			} else {
 				var16.field12577 = null;
@@ -10270,7 +10270,7 @@ public final class client extends GameShell {
 			if (var9 == 1) {
 				field10844[++field10876 - 1] = var2;
 			}
-			var6.method19156((class260) Statics.field7961.get(var1.method19583(15)));
+			var6.method19156((NPCType) Statics.field7961.get(var1.method19583(15)));
 			int var10 = var1.method19583(1);
 			int var11 = var1.method19583(3) + 4 << 11 & 0x3FFF;
 			int var12 = var1.method19583(arg0);
@@ -10447,7 +10447,7 @@ public final class client extends GameShell {
 				if (var3.field12083.method4556()) {
 					class975.method10111(var3);
 				}
-				var3.method19157((class260) Statics.field7961.get(var0.gSmart2or4null()), (var4 & 0x10000) == 0, (var4 & 0x800000) == 0, true);
+				var3.method19157((NPCType) Statics.field7961.get(var0.gSmart2or4null()), (var4 & 0x10000) == 0, (var4 & 0x800000) == 0, true);
 				var3.method16502(var3.field12083.field2699);
 				var3.field10444 = var3.field12083.field2731 << 3;
 				if (var3.field12083.method4556()) {
@@ -10692,7 +10692,7 @@ public final class client extends GameShell {
 			}
 			class721 var6 = arg0.field10454;
 			if (var4 && var6.method14346()) {
-				class164 var7 = arg0.field10454.method14347();
+				SeqType var7 = arg0.field10454.method14347();
 				int var8 = var7.field1768;
 				if (var8 == 1) {
 					var6.method14389(arg2);
@@ -10707,7 +10707,7 @@ public final class client extends GameShell {
 			if (arg1[var10] != -1) {
 				var9 = false;
 			}
-			if (arg0.field10427 == null || arg0.field10427[var10] == -1 || ((class164) Statics.field8797.get(arg1[var10])).field1779 >= ((class164) Statics.field8797.get(arg0.field10427[var10])).field1779) {
+			if (arg0.field10427 == null || arg0.field10427[var10] == -1 || ((SeqType) Statics.field8797.get(arg1[var10])).field1779 >= ((SeqType) Statics.field8797.get(arg0.field10427[var10])).field1779) {
 				arg0.field10427 = arg1;
 				arg0.field10454.method14357(arg2);
 				if (arg3) {
@@ -11252,7 +11252,7 @@ public final class client extends GameShell {
 										int var43 = var11.field2210;
 										String var44 = var11.field2261;
 										if (var11.field2334 != -1) {
-											class738 var45 = (class738) Statics.field1842.get(var11.field2334);
+											ObjType var45 = (ObjType) Statics.field1842.get(var11.field2334);
 											var44 = var45.field8630;
 											if (var44 == null) {
 												var44 = "null";
@@ -11366,9 +11366,9 @@ public final class client extends GameShell {
 								}
 								int var62 = 0;
 								if (var11.field2334 != -1) {
-									class738 var63 = (class738) Statics.field1842.get(var11.field2334);
+									ObjType var63 = (ObjType) Statics.field1842.get(var11.field2334);
 									if (var63 != null) {
-										class738 var64 = var63.method14645(var11.field2335);
+										ObjType var64 = var63.method14645(var11.field2335);
 										var60 = var64.method14644(Statics.field8198, var61, 1, var11.field2246 ? Statics.field4490.field12061 : null, var11.field2170, 0, 0, 0, 0);
 										if (var60 == null) {
 											method4616(var11);
@@ -13249,7 +13249,7 @@ public final class client extends GameShell {
 		LinkedList var3 = new LinkedList();
 		LinkedList var4 = new LinkedList();
 		for (int var5 = 0; var5 < Statics.field1842.field8794; var5++) {
-			class738 var6 = (class738) Statics.field1842.get(var5);
+			ObjType var6 = (ObjType) Statics.field1842.get(var5);
 			if ((!arg1 || var6.field8645) && var6.field8663 == -1 && var6.field8675 == -1 && var6.field8694 == -1 && var6.field8689 == 0 && var6.field8630.toLowerCase().indexOf(var2) != -1) {
 				if (var3.size() >= 250) {
 					return -1;
@@ -13426,7 +13426,7 @@ public final class client extends GameShell {
 				}
 			}
 			if (var17 != null) {
-				class584 var21 = var17.method16508();
+				BASType var21 = var17.method16508();
 				if (var21.field7357 != null && var21.field7357[arg3] != null) {
 					arg4 -= var21.field7357[arg3][1];
 				}

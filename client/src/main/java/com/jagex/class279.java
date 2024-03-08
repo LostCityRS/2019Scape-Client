@@ -7,7 +7,7 @@ import deob.Statics;
 public final class class279 implements class151 {
 
 	@ObfuscatedName("js.w(Lqe;II)Lec;")
-	public class149 method695(class455 arg0, int arg1) {
+	public class149 method695(VarDomainType arg0, int arg1) {
 		return (class149) ((ConfigTypeList) Statics.field1232.get(arg0)).get(arg1);
 	}
 

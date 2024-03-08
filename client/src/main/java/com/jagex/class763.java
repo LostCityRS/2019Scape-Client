@@ -12,7 +12,7 @@ public class class763 implements ConfigTypeList {
 	public final ConfigTypeFactory field8846;
 
 	@ObfuscatedName("acd.n")
-	public final class655 field8845;
+	public final Js5ConfigGroup field8845;
 
 	@ObfuscatedName("acd.m")
 	public final class442 field8847;
@@ -26,7 +26,7 @@ public class class763 implements ConfigTypeList {
 	@ObfuscatedName("acd.w")
 	public ConfigType[] field8849;
 
-	public class763(ModeGame arg0, Language arg1, class655 arg2, class442 arg3, ConfigTypeFactory arg4, boolean arg5) {
+	public class763(ModeGame arg0, Language arg1, Js5ConfigGroup arg2, class442 arg3, ConfigTypeFactory arg4, boolean arg5) {
 		this.field8846 = arg4;
 		this.field8845 = arg2;
 		this.field8847 = arg3;

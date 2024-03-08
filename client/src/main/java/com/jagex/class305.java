@@ -25,7 +25,7 @@ public class class305 implements class50 {
 	public String field3079;
 
 	@ObfuscatedName("kh.l")
-	public class455 field3080;
+	public VarDomainType field3080;
 
 	@ObfuscatedName("kh.u")
 	public int field3075 = -1;
@@ -78,7 +78,7 @@ public class class305 implements class50 {
 				break;
 			case 14:
 				int var5 = arg0.g1();
-				this.field3080 = (class455) class686.method1897(class455.method7216(), var5);
+				this.field3080 = (VarDomainType) class686.method1897(VarDomainType.method7216(), var5);
 				if (this.field3080 == null) {
 					throw new IllegalStateException("");
 				}

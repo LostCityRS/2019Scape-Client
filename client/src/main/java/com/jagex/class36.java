@@ -50,14 +50,14 @@ public class class36 implements class147, class151, class644 {
 	}
 
 	@ObfuscatedName("ah.w(Lqe;II)Lec;")
-	public class149 method695(class455 arg0, int arg1) {
-		return class455.field4594 == arg0 ? (class149) this.field633.get(arg1) : null;
+	public class149 method695(VarDomainType arg0, int arg1) {
+		return VarDomainType.field4594 == arg0 ? (class149) this.field633.get(arg1) : null;
 	}
 
 	@ObfuscatedName("ah.l(IB)Lkh;")
 	public class305 method694(int arg0) {
 		class305 var2 = (class305) this.field634.get(arg0);
-		return class455.field4594 == var2.field3076.field1702 ? var2 : null;
+		return VarDomainType.field4594 == var2.field3076.field1702 ? var2 : null;
 	}
 
 	@ObfuscatedName("ah.u(Lec;I)I")

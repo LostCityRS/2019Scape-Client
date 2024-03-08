@@ -7,7 +7,7 @@ import deob.Statics;
 public class class516 {
 
 	@ObfuscatedName("sp.e")
-	public class1090 field6681;
+	public LocTypeList field6681;
 
 	@ObfuscatedName("sp.n")
 	public byte field6663;
@@ -66,7 +66,7 @@ public class class516 {
 	@ObfuscatedName("sp.b")
 	public class597 field6678;
 
-	public class516(Renderer arg0, class1090 arg1, class598 arg2, int arg3, int arg4, int arg5, class1019 arg6, boolean arg7, int arg8, int arg9) {
+	public class516(Renderer arg0, LocTypeList arg1, LocType arg2, int arg3, int arg4, int arg5, class1019 arg6, boolean arg7, int arg8, int arg9) {
 		this.field6681 = arg1;
 		this.field6665 = arg2.field7450;
 		this.field6666 = arg3;
@@ -109,13 +109,13 @@ public class class516 {
 	}
 
 	@ObfuscatedName("sp.f(S)Lvd;")
-	public class598 method8237() {
-		return (class598) this.field6681.get(this.field6665);
+	public LocType method8237() {
+		return (LocType) this.field6681.get(this.field6665);
 	}
 
 	@ObfuscatedName("sp.w(Ldh;IZZI)Ldo;")
 	public final class116 method8238(Renderer arg0, int arg1, boolean arg2, boolean arg3) {
-		class598 var5 = (class598) this.field6681.get(this.field6665);
+		LocType var5 = (LocType) this.field6681.get(this.field6665);
 		if (var5.field7505 != null) {
 			var5 = var5.method9477(Statics.field7410, client.field10863 == 0 ? class153.field1723 : Statics.field7410);
 		}
@@ -206,7 +206,7 @@ public class class516 {
 		class128[] var9 = arg1.method1750();
 		class102[] var10 = arg1.method1765();
 		if ((this.field6680 == null || this.field6680.field7804) && (var9 != null || var10 != null)) {
-			class598 var11 = (class598) this.field6681.get(this.field6665);
+			LocType var11 = (LocType) this.field6681.get(this.field6665);
 			if (var11.field7505 != null) {
 				var11 = var11.method9477(Statics.field7410, client.field10863 == 0 ? class153.field1723 : Statics.field7410);
 			}
@@ -280,8 +280,8 @@ public class class516 {
 		int var5 = arg1;
 		boolean var6 = false;
 		if (arg1 == -1) {
-			class598 var7 = (class598) this.field6681.get(this.field6665);
-			class598 var8 = var7;
+			LocType var7 = (LocType) this.field6681.get(this.field6665);
+			LocType var8 = var7;
 			if (var7.field7505 != null) {
 				var7 = var7.method9477(Statics.field7410, client.field10863 == 0 ? class153.field1723 : Statics.field7410);
 			}

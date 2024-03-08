@@ -7,7 +7,7 @@ import deob.Statics;
 public class class721 {
 
 	@ObfuscatedName("aaq.k")
-	public class164 field8501;
+	public SeqType field8501;
 
 	@ObfuscatedName("aaq.f")
 	public int field8502;
@@ -46,7 +46,7 @@ public class class721 {
 	public final class723 field8498;
 
 	@ObfuscatedName("nv.e(Laos;I)V")
-	public static void method6114(class1080 arg0) {
+	public static void method6114(SeqTypeList arg0) {
 		Statics.field12490 = arg0;
 	}
 
@@ -80,7 +80,7 @@ public class class721 {
 	}
 
 	@ObfuscatedName("aaq.k(I)Lfg;")
-	public final class164 method14347() {
+	public final SeqType method14347() {
 		return this.field8501;
 	}
 
@@ -123,7 +123,7 @@ public class class721 {
 			this.field8501 = null;
 		} else {
 			if (this.field8501 == null || this.field8501.field1769 != arg0) {
-				this.field8501 = (class164) Statics.field12490.get(arg0);
+				this.field8501 = (SeqType) Statics.field12490.get(arg0);
 				if (this.field8501 == null || this.field8501.field1770 == null && !this.field8501.method2985()) {
 					this.field8501 = null;
 					return;
@@ -239,8 +239,8 @@ public class class721 {
 		if (!arg1.method14372() || !arg2.method14372()) {
 			return;
 		}
-		class164 var3 = arg1.field8501;
-		class164 var4 = arg2.field8501;
+		SeqType var3 = arg1.field8501;
+		SeqType var4 = arg2.field8501;
 		if (var3.field1770 == null) {
 			if (var3.method2985()) {
 				if (var4.field1770 != null) {
@@ -317,7 +317,7 @@ public class class721 {
 				this.method14407(this.field8501, this.field8511);
 			}
 			int var2 = this.field8502 + arg0;
-			boolean var3 = this.field8501.field1772 | class164.field1775;
+			boolean var3 = this.field8501.field1772 | SeqType.field1775;
 			if (var2 > 100 && this.field8501.field1778 > 0) {
 				int var4 = this.field8501.field1770.length - this.field8501.field1778;
 				while (this.field8511 < var4 && var2 > this.field8501.field1791[this.field8511]) {
@@ -437,11 +437,11 @@ public class class721 {
 	}
 
 	@ObfuscatedName("aaq.ag(Lfg;II)V")
-	public void method14407(class164 arg0, int arg1) {
+	public void method14407(SeqType arg0, int arg1) {
 	}
 
 	@ObfuscatedName("aaq.ah(Lfg;II)V")
-	public void method14413(class164 arg0, int arg1) {
+	public void method14413(SeqType arg0, int arg1) {
 		this.method14407(arg0, arg1);
 	}
 

@@ -118,9 +118,9 @@ public class class884 extends class159 {
 
 	@ObfuscatedName("agh.k(I)Z")
 	public boolean method2891() {
-		class680 var1 = (class680) Statics.field4874.get(this.field10347);
+		EffectAnimType var1 = (EffectAnimType) Statics.field4874.get(this.field10347);
 		boolean var2 = var1.method13803();
-		class164 var3 = (class164) Statics.field8797.get(var1.field8260);
+		SeqType var3 = (SeqType) Statics.field8797.get(var1.field8260);
 		return var2 & var3.method2991();
 	}
 }

@@ -57,7 +57,7 @@ public class class639 {
 	}
 
 	@ObfuscatedName("xg.n(IILaov;I)V")
-	public void method10114(int arg0, int arg1, class1084 arg2) {
+	public void method10114(int arg0, int arg1, IDKTypeList arg2) {
 		int var4 = field7900[arg0];
 		if (arg2.get(arg1) != null) {
 			this.field7890[var4] = arg1 | Integer.MIN_VALUE;
@@ -84,7 +84,7 @@ public class class639 {
 	}
 
 	@ObfuscatedName("xg.w(IILaon;B)V")
-	public void method10112(int arg0, int arg1, class1095 arg2) {
+	public void method10112(int arg0, int arg1, ObjTypeList arg2) {
 		if (arg1 == -1) {
 			this.field7890[arg0] = 0;
 		} else if (arg2.get(arg1) == null) {
@@ -156,9 +156,9 @@ public class class639 {
 	}
 
 	@ObfuscatedName("xg.u(Ldh;ILaof;Laov;Laod;Laon;Lem;Lep;Laaq;Laaq;[Laaq;[IIZLwy;B)Ldo;")
-	public class116 method10126(Renderer arg0, int arg1, class1089 arg2, class1084 arg3, class1082 arg4, class1095 arg5, class151 arg6, class147 arg7, class721 arg8, class721 arg9, class721[] arg10, int[] arg11, int arg12, boolean arg13, class631 arg14) {
+	public class116 method10126(Renderer arg0, int arg1, BASTypeList arg2, IDKTypeList arg3, NPCTypeList arg4, ObjTypeList arg5, class151 arg6, class147 arg7, class721 arg8, class721 arg9, class721[] arg10, int[] arg11, int arg12, boolean arg13, class631 arg14) {
 		if (this.field7892 != -1) {
-			return ((class260) arg4.get(this.field7892)).method4542(arg0, arg1, arg2, arg6, arg7, arg8, arg9, arg10, arg11, arg12, null);
+			return ((NPCType) arg4.get(this.field7892)).method4542(arg0, arg1, arg2, arg6, arg7, arg8, arg9, arg10, arg11, arg12, null);
 		}
 		int var16 = arg1;
 		long var17 = this.field7888;
@@ -166,7 +166,7 @@ public class class639 {
 		boolean var20 = false;
 		boolean var21 = false;
 		if (arg8 != null) {
-			class164 var22 = arg8.method14347();
+			SeqType var22 = arg8.method14347();
 			if (var22 != null && (var22.field1780 >= 0 || var22.field1781 >= 0)) {
 				var19 = new int[this.field7890.length];
 				for (int var23 = 0; var23 < var19.length; var23++) {
@@ -236,9 +236,9 @@ public class class639 {
 		synchronized (field7901) {
 			var34 = (class116) field7901.method2930(var17);
 		}
-		class584 var36 = null;
+		BASType var36 = null;
 		if (this.field7891 != -1) {
-			var36 = (class584) arg2.get(this.field7891);
+			var36 = (BASType) arg2.get(this.field7891);
 		}
 		if (var34 == null || arg0.method2394(var34.method1691(), var16) != 0) {
 			if (var34 != null) {
@@ -268,12 +268,12 @@ public class class639 {
 								if (!var51 && this.field7887 != null && this.field7887[var48] != null) {
 									var50 = this.field7887[var48];
 								}
-								class120 var52 = ((class738) arg5.get(var49 & 0x3FFFFFFF)).method14650(this.field7897, var50);
+								class120 var52 = ((ObjType) arg5.get(var49 & 0x3FFFFFFF)).method14650(this.field7897, var50);
 								if (var52 != null) {
 									var47[var48] = var52;
 								}
 							} else if ((var49 & Integer.MIN_VALUE) != 0) {
-								class120 var53 = ((class283) arg3.get(var49 & 0x3FFFFFFF)).method5000();
+								class120 var53 = ((IDKType) arg3.get(var49 & 0x3FFFFFFF)).method5000();
 								if (var53 != null) {
 									var47[var48] = var53;
 								}
@@ -365,10 +365,10 @@ public class class639 {
 					if (!var42 && this.field7887 != null && this.field7887[var39] != null) {
 						var41 = this.field7887[var39];
 					}
-					if (!((class738) arg5.get(var40 & 0x3FFFFFFF)).method14649(this.field7897, var41)) {
+					if (!((ObjType) arg5.get(var40 & 0x3FFFFFFF)).method14649(this.field7897, var41)) {
 						var38 = true;
 					}
-				} else if ((var40 & Integer.MIN_VALUE) != 0 && !((class283) arg3.get(var40 & 0x3FFFFFFF)).method4999()) {
+				} else if ((var40 & Integer.MIN_VALUE) != 0 && !((IDKType) arg3.get(var40 & 0x3FFFFFFF)).method4999()) {
 					var38 = true;
 				}
 				var39++;
@@ -427,9 +427,9 @@ public class class639 {
 	}
 
 	@ObfuscatedName("xg.z(Ldh;ILaov;Laod;Laon;Lem;Lep;Laaq;B)Ldo;")
-	public class116 method10120(Renderer arg0, int arg1, class1084 arg2, class1082 arg3, class1095 arg4, class151 arg5, class147 arg6, class721 arg7) {
+	public class116 method10120(Renderer arg0, int arg1, IDKTypeList arg2, NPCTypeList arg3, ObjTypeList arg4, class151 arg5, class147 arg6, class721 arg7) {
 		if (this.field7892 != -1) {
-			return ((class260) arg3.get(this.field7892)).method4544(arg0, arg1, arg5, arg6, arg7, null);
+			return ((NPCType) arg3.get(this.field7892)).method4544(arg0, arg1, arg5, arg6, arg7, null);
 		}
 		int var9 = arg7 == null ? arg1 : arg1 | arg7.method14358();
 		WeightedCache var10 = field7902;
@@ -449,10 +449,10 @@ public class class639 {
 					if (this.field7887 != null && this.field7887[var15] != null) {
 						var17 = this.field7887[var15];
 					}
-					if (!((class738) arg4.get(var16 & 0x3FFFFFFF)).method14651(this.field7897, var17)) {
+					if (!((ObjType) arg4.get(var16 & 0x3FFFFFFF)).method14651(this.field7897, var17)) {
 						var14 = true;
 					}
-				} else if ((var16 & Integer.MIN_VALUE) != 0 && !((class283) arg2.get(var16 & 0x3FFFFFFF)).method5001()) {
+				} else if ((var16 & Integer.MIN_VALUE) != 0 && !((IDKType) arg2.get(var16 & 0x3FFFFFFF)).method5001()) {
 					var14 = true;
 				}
 			}
@@ -468,12 +468,12 @@ public class class639 {
 					if (this.field7887 != null && this.field7887[var20] != null) {
 						var22 = this.field7887[var20];
 					}
-					class120 var23 = ((class738) arg4.get(var21 & 0x3FFFFFFF)).method14652(this.field7897, var22);
+					class120 var23 = ((ObjType) arg4.get(var21 & 0x3FFFFFFF)).method14652(this.field7897, var22);
 					if (var23 != null) {
 						var18[var19++] = var23;
 					}
 				} else if ((var21 & Integer.MIN_VALUE) != 0) {
-					class120 var24 = ((class283) arg2.get(var21 & 0x3FFFFFFF)).method5002();
+					class120 var24 = ((IDKType) arg2.get(var21 & 0x3FFFFFFF)).method5002();
 					if (var24 != null) {
 						var18[var19++] = var24;
 					}
@@ -512,7 +512,7 @@ public class class639 {
 	}
 
 	@ObfuscatedName("xg.p(Ldh;ILaov;Laos;Laaq;IIIB)Ldo;")
-	public class116 method10130(Renderer arg0, int arg1, class1084 arg2, class1080 arg3, class721 arg4, int arg5, int arg6, int arg7) {
+	public class116 method10130(Renderer arg0, int arg1, IDKTypeList arg2, SeqTypeList arg3, class721 arg4, int arg5, int arg6, int arg7) {
 		int var9 = arg4 == null ? arg1 : arg1 | arg4.method14358();
 		long var10 = (long) arg7 << 32 | (long) (arg6 << 16) | (long) arg5;
 		WeightedCache var12 = field7902;
@@ -526,18 +526,18 @@ public class class639 {
 			}
 			class120[] var16 = new class120[3];
 			int var17 = 0;
-			if (!((class283) arg2.get(arg5)).method5001() || !((class283) arg2.get(arg6)).method5001() || !((class283) arg2.get(arg7)).method5001()) {
+			if (!((IDKType) arg2.get(arg5)).method5001() || !((IDKType) arg2.get(arg6)).method5001() || !((IDKType) arg2.get(arg7)).method5001()) {
 				return null;
 			}
-			class120 var18 = ((class283) arg2.get(arg5)).method5002();
+			class120 var18 = ((IDKType) arg2.get(arg5)).method5002();
 			if (var18 != null) {
 				var16[var17++] = var18;
 			}
-			class120 var19 = ((class283) arg2.get(arg6)).method5002();
+			class120 var19 = ((IDKType) arg2.get(arg6)).method5002();
 			if (var19 != null) {
 				var16[var17++] = var19;
 			}
-			class120 var20 = ((class283) arg2.get(arg7)).method5002();
+			class120 var20 = ((IDKType) arg2.get(arg7)).method5002();
 			if (var20 != null) {
 				var16[var17++] = var20;
 			}

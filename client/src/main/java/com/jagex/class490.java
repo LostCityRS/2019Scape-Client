@@ -17,7 +17,7 @@ public class class490 implements Runnable {
 	public class495 field5004 = new class495(true);
 
 	@ObfuscatedName("ry.e(Laop;I)V")
-	public void method7674(class1090 arg0) {
+	public void method7674(LocTypeList arg0) {
 		this.field5004.method7733(arg0);
 	}
 

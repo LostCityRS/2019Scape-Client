@@ -103,7 +103,7 @@ public class class1185 extends class986 {
 	public void method19495(Packet arg0, int arg1, class504 arg2) {
 		int var4 = this.field12369.length;
 		if (class504.field5937 == arg2 || class504.field5651 == arg2) {
-			class455 var7 = (class455) class686.method1897(class455.method7216(), arg0.g1());
+			VarDomainType var7 = (VarDomainType) class686.method1897(VarDomainType.method7216(), arg0.g1());
 			int var8 = arg0.g2();
 			if (this.field12366 == null) {
 				this.field12366 = new Object[var4];

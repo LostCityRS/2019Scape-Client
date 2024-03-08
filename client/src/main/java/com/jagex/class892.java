@@ -291,7 +291,7 @@ public abstract class class892 extends class1200 implements class273 {
 
 	@ObfuscatedName("ahm.o(IB)V")
 	public void method16490(int arg0) {
-		class584 var2 = this.method16508();
+		BASType var2 = this.method16508();
 		if (var2.field7321 == 0 && this.field10444 == 0) {
 			return;
 		}
@@ -306,7 +306,7 @@ public abstract class class892 extends class1200 implements class273 {
 
 	@ObfuscatedName("ahm.s(IZI)V")
 	public void method16491(int arg0, boolean arg1) {
-		class584 var3 = this.method16508();
+		BASType var3 = this.method16508();
 		if (arg1 || var3.field7321 != 0 || this.field10444 != 0) {
 			this.field10414 = arg0 & 0x3FFF;
 			this.field10395.method314(this.field10414);
@@ -315,7 +315,7 @@ public abstract class class892 extends class1200 implements class273 {
 
 	@ObfuscatedName("ahm.y(I)I")
 	public int method16539() {
-		class584 var1 = this.method16508();
+		BASType var1 = this.method16508();
 		int var2 = this.field10395.field528;
 		boolean var3;
 		if (var1.field7321 == 0) {
@@ -391,7 +391,7 @@ public abstract class class892 extends class1200 implements class273 {
 				this.field10442[var3] = -1;
 			}
 		}
-		class584 var4 = this.method16508();
+		BASType var4 = this.method16508();
 		int var5 = 256;
 		if (var4.field7349 != null && var4.field7349[arg0] > 0) {
 			var5 = var4.field7349[arg0];
@@ -514,9 +514,9 @@ public abstract class class892 extends class1200 implements class273 {
 		int var8 = var7.field6657;
 		if (arg0 != -1 && var8 != -1) {
 			if (arg0 == var8) {
-				class680 var9 = (class680) Statics.field4874.get(arg0);
+				EffectAnimType var9 = (EffectAnimType) Statics.field4874.get(arg0);
 				if (var9.field8261 && var9.field8260 != -1) {
-					class164 var10 = (class164) Statics.field8797.get(var9.field8260);
+					SeqType var10 = (SeqType) Statics.field8797.get(var9.field8260);
 					int var11 = var10.field1768;
 					if (var11 == 0) {
 						return;
@@ -527,11 +527,11 @@ public abstract class class892 extends class1200 implements class273 {
 					}
 				}
 			} else {
-				class680 var12 = (class680) Statics.field4874.get(arg0);
-				class680 var13 = (class680) Statics.field4874.get(var8);
+				EffectAnimType var12 = (EffectAnimType) Statics.field4874.get(arg0);
+				EffectAnimType var13 = (EffectAnimType) Statics.field4874.get(var8);
 				if (var12.field8260 != -1 && var13.field8260 != -1) {
-					class164 var14 = (class164) Statics.field8797.get(var12.field8260);
-					class164 var15 = (class164) Statics.field8797.get(var13.field8260);
+					SeqType var14 = (SeqType) Statics.field8797.get(var12.field8260);
+					SeqType var15 = (SeqType) Statics.field8797.get(var13.field8260);
 					if (var14.field1779 < var15.field1779) {
 						return;
 					}
@@ -539,7 +539,7 @@ public abstract class class892 extends class1200 implements class273 {
 			}
 		}
 		byte var16 = 0;
-		if (arg0 != -1 && !((class680) Statics.field4874.get(arg0)).field8261) {
+		if (arg0 != -1 && !((EffectAnimType) Statics.field4874.get(arg0)).field8261) {
 			var16 = 2;
 		}
 		if (arg0 != -1 && arg4) {
@@ -549,7 +549,7 @@ public abstract class class892 extends class1200 implements class273 {
 		var7.field6658 = arg3;
 		var7.field6661 = arg1 >> 16;
 		var7.field6660 = arg2;
-		var7.field6659.method14353(arg0 == -1 ? -1 : ((class680) Statics.field4874.get(arg0)).field8260, arg1 & 0xFFFF, var16, false);
+		var7.field6659.method14353(arg0 == -1 ? -1 : ((EffectAnimType) Statics.field4874.get(arg0)).field8260, arg1 & 0xFFFF, var16, false);
 	}
 
 	@ObfuscatedName("ahm.a(B)V")
@@ -627,7 +627,7 @@ public abstract class class892 extends class1200 implements class273 {
 
 	@ObfuscatedName("ahm.i(IIIIIII)V")
 	public final void method16499(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		class566 var7 = (class566) Statics.field4894.get(arg0);
+		HeadbarType var7 = (HeadbarType) Statics.field4894.get(arg0);
 		class959 var8 = null;
 		class959 var9 = null;
 		int var10 = var7.field7218;
@@ -663,7 +663,7 @@ public abstract class class892 extends class1200 implements class273 {
 
 	@ObfuscatedName("ahm.j(II)V")
 	public final void method16500(int arg0) {
-		class566 var2 = (class566) Statics.field4894.get(arg0);
+		HeadbarType var2 = (HeadbarType) Statics.field4894.get(arg0);
 		for (class959 var3 = (class959) this.field10416.method14254(); var3 != null; var3 = (class959) this.field10416.method14241()) {
 			if (var3.field11215 == var2) {
 				var3.method8433();
@@ -674,7 +674,7 @@ public abstract class class892 extends class1200 implements class273 {
 
 	@ObfuscatedName("ahm.bo(I)I")
 	public int method16501() {
-		class584 var1 = this.method16508();
+		BASType var1 = this.method16508();
 		int var2;
 		if (var1.field7360 != -1) {
 			var2 = var1.field7360;
@@ -730,7 +730,7 @@ public abstract class class892 extends class1200 implements class273 {
 	}
 
 	@ObfuscatedName("ahm.bg(Ldh;Lvr;IIIII)V")
-	public void method16506(Renderer arg0, class584 arg1, int arg2, int arg3, int arg4, int arg5) {
+	public void method16506(Renderer arg0, BASType arg1, int arg2, int arg3, int arg4, int arg5) {
 		for (int var7 = 0; var7 < this.field10422.length; var7++) {
 			byte var8 = 0;
 			if (var7 == 0) {
@@ -748,7 +748,7 @@ public abstract class class892 extends class1200 implements class273 {
 			if (var9.field6657 == -1 || var9.field6659.method14355()) {
 				this.field10459[var7 + 1] = null;
 			} else {
-				class680 var10 = (class680) Statics.field4874.get(var9.field6657);
+				EffectAnimType var10 = (EffectAnimType) Statics.field4874.get(var9.field6657);
 				int var11 = arg2;
 				if (var9.field6660 != 0) {
 					var11 = arg2 | 0x5;
@@ -870,9 +870,9 @@ public abstract class class892 extends class1200 implements class273 {
 	}
 
 	@ObfuscatedName("ahm.bp(I)Lvr;")
-	public class584 method16508() {
+	public BASType method16508() {
 		int var1 = this.method16509();
-		return var1 == -1 ? class1089.field11886 : (class584) Statics.field11742.get(var1);
+		return var1 == -1 ? BASTypeList.field11886 : (BASType) Statics.field11742.get(var1);
 	}
 
 	@ObfuscatedName("ahm.cl(B)V")

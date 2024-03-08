@@ -16,7 +16,7 @@ public class class258 {
 		this.field2681 = arg1;
 	}
 
-	public class258(class260 arg0) {
+	public class258(NPCType arg0) {
 		this.field2682 = new int[8];
 		this.field2681 = new short[8];
 		int var2 = 0;

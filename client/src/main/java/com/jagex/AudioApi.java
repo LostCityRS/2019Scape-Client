@@ -714,7 +714,7 @@ public class AudioApi {
 	}
 
 	@ObfuscatedName("fb.au(Lfg;ILalh;B)V")
-	public void method3180(class164 arg0, int arg1, class1019 arg2) {
+	public void method3180(SeqType arg0, int arg1, class1019 arg2) {
 		if (arg0 == null || arg0.field1777 == null || arg1 >= arg0.field1777.length || arg0.field1777[arg1] == null || (Statics.field4490.field11717 != arg2.field11717 || !arg2.method18359())) {
 			return;
 		}
@@ -771,7 +771,7 @@ public class AudioApi {
 	}
 
 	@ObfuscatedName("fb.ar(Lfg;II)V")
-	public void method3181(class164 arg0, int arg1) {
+	public void method3181(SeqType arg0, int arg1) {
 		if (arg0 == null || arg0.field1777 == null || arg1 >= arg0.field1777.length || arg0.field1777[arg1] == null) {
 			return;
 		}

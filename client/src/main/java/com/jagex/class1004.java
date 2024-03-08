@@ -385,7 +385,7 @@ public class class1004 extends WorldMap {
 			return;
 		}
 		for (class990 var4 = (class990) arg1.method14191(); var4 != null; var4 = (class990) arg1.method14161()) {
-			class228 var5 = (class228) Statics.field6788.get(var4.field11446);
+			MapElementType var5 = (MapElementType) Statics.field6788.get(var4.field11446);
 			if (Statics.method18887(var5)) {
 				boolean var6 = method3589(arg0, var4, var5, arg2, arg3);
 				if (var6) {
@@ -396,7 +396,7 @@ public class class1004 extends WorldMap {
 	}
 
 	@ObfuscatedName("gt.de(Ldh;Laks;Lhs;IIB)Z")
-	public static boolean method3589(Renderer arg0, class990 arg1, class228 arg2, int arg3, int arg4) {
+	public static boolean method3589(Renderer arg0, class990 arg1, MapElementType arg2, int arg3, int arg4) {
 		if (field6819 && !client.field10948 && !method8534(arg1.field11448, arg1.field11452)) {
 			return false;
 		}
@@ -625,7 +625,7 @@ public class class1004 extends WorldMap {
 	}
 
 	@ObfuscatedName("acc.dj(Ldh;Laks;Lhs;I)V")
-	public static void method14999(Renderer arg0, class990 arg1, class228 arg2) {
+	public static void method14999(Renderer arg0, class990 arg1, MapElementType arg2) {
 		class101 var3 = arg2.method4027(arg0);
 		if (var3 == null) {
 			return;
@@ -694,7 +694,7 @@ public class class1004 extends WorldMap {
 	}
 
 	@ObfuscatedName("hj.ey(Ldh;Laks;Lhs;IIIII)V")
-	public static void method4287(Renderer arg0, class990 arg1, class228 arg2, int arg3, int arg4, int arg5, int arg6) {
+	public static void method4287(Renderer arg0, class990 arg1, MapElementType arg2, int arg3, int arg4, int arg5, int arg6) {
 		int var7 = arg3 - 5;
 		int var8 = arg4 + 2;
 		if (arg2.field2377 != 0) {
@@ -760,7 +760,7 @@ public class class1004 extends WorldMap {
 									if (!var6.hasNext()) {
 										if (field11663 && Statics.field11253 != null) {
 											for (class963 var8 = (class963) Statics.field11253.method14191(); var8 != null; var8 = (class963) Statics.field11253.method14161()) {
-												class228 var9 = (class228) Statics.field6788.get(var8.field11252.field11446);
+												MapElementType var9 = (MapElementType) Statics.field6788.get(var8.field11252.field11446);
 												if (var8.method17518(arg0, arg1)) {
 													if (var9.field2381 != null) {
 														if (var9.field2381[4] != null) {
@@ -993,7 +993,7 @@ public class class1004 extends WorldMap {
 		if (var0 == null) {
 			return null;
 		} else {
-			class228 var1 = (class228) Statics.field6788.get(var0.field11446);
+			MapElementType var1 = (MapElementType) Statics.field6788.get(var0.field11446);
 			return var1 != null && var1.field2409 && var1.method4030(Statics.field6791, Statics.field6790) ? var0 : Statics.method13882();
 		}
 	}

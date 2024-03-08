@@ -243,20 +243,20 @@ public final class class676 {
 		class504 var3 = null;
 		arg2.field8222 = 0;
 		arg2.field8234.clear();
-		arg2.field8234.put(class455.field4594, Statics.field7410.field632);
-		arg2.field8234.put(class455.field4592, Statics.field7228);
-		arg2.field8234.put(class455.field4600, Statics.field7698);
+		arg2.field8234.put(VarDomainType.field4594, Statics.field7410.field632);
+		arg2.field8234.put(VarDomainType.field4592, Statics.field7228);
+		arg2.field8234.put(VarDomainType.field4600, Statics.field7698);
 		if (arg2.field8227 != null) {
-			arg2.field8234.put(class455.field4597, method991(arg2.field8227));
+			arg2.field8234.put(VarDomainType.field4597, method991(arg2.field8227));
 		}
 		if (arg2.field8221 instanceof class1131) {
-			arg2.field8234.put(class455.field4596, arg2.field8221.field10415);
+			arg2.field8234.put(VarDomainType.field4596, arg2.field8221.field10415);
 		}
 		if (arg2.field8221 instanceof class1130) {
-			arg2.field8233.put(class455.field4594, arg2.field8221.field10415);
+			arg2.field8233.put(VarDomainType.field4594, arg2.field8221.field10415);
 		}
 		if (Statics.field6721 != null) {
-			arg2.field8234.put(class455.field4599, Statics.field6721.method3394());
+			arg2.field8234.put(VarDomainType.field4599, Statics.field6721.method3394());
 		}
 		try {
 			field8202 = 0;
@@ -4784,14 +4784,14 @@ public final class class676 {
 		class152 var2 = (class152) (arg0.field8236[arg0.field8220] == 0 ? arg0.field8234.get(var1.field1702) : arg0.field8233.get(var1.field1702));
 		BaseVarType var3 = var1.field1704.method7292();
 		if (BaseVarType.field4840 == var3) {
-			if (class455.field4592 == var1.field1702) {
+			if (VarDomainType.field4592 == var1.field1702) {
 				class1171.method3607(var1);
 			}
 			var2.method2798(var1, arg0.field8216[--arg0.field8226]);
 		} else if (BaseVarType.field4837 == var3) {
 			var2.method2800(var1, arg0.field8224[--arg0.field8238]);
 		} else if (BaseVarType.field4836 == var3) {
-			if (class455.field4592 == var1.field1702) {
+			if (VarDomainType.field4592 == var1.field1702) {
 				class1171.method14066(var1);
 			}
 			var2.method2802(var1, arg0.field8218[--arg0.field8211]);
@@ -5187,14 +5187,14 @@ public final class class676 {
 		if (Statics.field4490.field12061 == null) {
 			return;
 		}
-		for (int var3 = 0; var3 < class283.field2951.length; var3++) {
-			if (class283.field2951[var3] == var1) {
+		for (int var3 = 0; var3 < IDKType.field2951.length; var3++) {
+			if (IDKType.field2951[var3] == var1) {
 				Statics.field4490.field12061.method10114(var3, var2, Statics.field2628);
 				return;
 			}
 		}
-		for (int var4 = 0; var4 < class283.field2959.length; var4++) {
-			if (class283.field2959[var4] == var1) {
+		for (int var4 = 0; var4 < IDKType.field2959.length; var4++) {
+			if (IDKType.field2959[var4] == var1) {
 				Statics.field4490.field12061.method10114(var4, var2, Statics.field2628);
 				return;
 			}
@@ -6066,7 +6066,7 @@ public final class class676 {
 		arg2.field8226 -= 2;
 		int var3 = arg2.field8216[arg2.field8226];
 		int var4 = arg2.field8216[arg2.field8226 + 1];
-		class789 var5 = (class789) Statics.field3086.get(var3);
+		ParamType var5 = (ParamType) Statics.field3086.get(var3);
 		if (var5.field9172 == var4) {
 			arg0.method3954(var3);
 		} else {
@@ -6094,7 +6094,7 @@ public final class class676 {
 	public static final void method14700(class226 arg0, class225 arg1, class677 arg2) {
 		int var3 = arg2.field8216[--arg2.field8226];
 		String var4 = (String) arg2.field8218[--arg2.field8211];
-		class789 var5 = (class789) Statics.field3086.get(var3);
+		ParamType var5 = (ParamType) Statics.field3086.get(var3);
 		if (var5.field9171.equals(var4)) {
 			arg0.method3954(var3);
 		} else {
@@ -6182,7 +6182,7 @@ public final class class676 {
 		arg0.field8226 -= 2;
 		int var3 = arg0.field8216[arg0.field8226];
 		int var4 = arg0.field8216[arg0.field8226 + 1];
-		class789 var5 = (class789) Statics.field3086.get(var3);
+		ParamType var5 = (ParamType) Statics.field3086.get(var3);
 		if (var5.field9172 == var4) {
 			var2.method3954(var3);
 		} else {
@@ -6308,7 +6308,7 @@ public final class class676 {
 		arg0.field2334 = var5;
 		arg0.field2335 = var6;
 		arg0.field2246 = arg2;
-		class738 var7 = (class738) Statics.field1842.get(var5);
+		ObjType var7 = (ObjType) Statics.field1842.get(var5);
 		arg0.field2230 = var7.field8639;
 		arg0.field2231 = var7.field8626;
 		arg0.field2331 = var7.field8641;
@@ -8504,7 +8504,7 @@ public final class class676 {
 		class678 var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		class226 var2 = var1.field8242;
 		int var3 = arg0.field8216[--arg0.field8226];
-		class789 var4 = (class789) Statics.field3086.get(var3);
+		ParamType var4 = (ParamType) Statics.field3086.get(var3);
 		if (var4.method15152()) {
 			arg0.field8218[++arg0.field8211 - 1] = var2.method3975(var3, var4.field9171);
 		} else {
@@ -8685,7 +8685,7 @@ public final class class676 {
 	@ObfuscatedName("du.tm(Lhf;IIB)V")
 	public static void method2088(class226 arg0, int arg1, int arg2) {
 		if (arg0.field2363 == null) {
-			class260 var3 = (class260) Statics.field7961.get(arg0.field2294);
+			NPCType var3 = (NPCType) Statics.field7961.get(arg0.field2294);
 			arg0.field2363 = new class259(var3, false);
 		}
 		arg0.field2363.field2688 = method5390();
@@ -8794,7 +8794,7 @@ public final class class676 {
 		if (arg0.field2224 != 6 && arg0.field2224 != 2) {
 			throw new RuntimeException("");
 		}
-		class260 var5 = (class260) Statics.field7961.get(arg0.field2294);
+		NPCType var5 = (NPCType) Statics.field7961.get(arg0.field2294);
 		if (arg0.field2363 == null) {
 			arg0.field2363 = new class259(var5, arg0.field2224 == 6);
 		}
@@ -8834,7 +8834,7 @@ public final class class676 {
 		if (arg0.field2224 != 6 && arg0.field2224 != 2) {
 			throw new RuntimeException("");
 		}
-		class260 var5 = (class260) Statics.field7961.get(arg0.field2294);
+		NPCType var5 = (NPCType) Statics.field7961.get(arg0.field2294);
 		if (arg0.field2363 == null) {
 			arg0.field2363 = new class259(var5, arg0.field2224 == 6);
 		}
@@ -9393,13 +9393,13 @@ public final class class676 {
 	@ObfuscatedName("yc.wh(Lyf;I)V")
 	public static final void method13837(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = ((class810) Statics.field7762.get(var1)).field9263;
+		arg0.field8216[++arg0.field8226 - 1] = ((InvType) Statics.field7762.get(var1)).field9263;
 	}
 
 	@ObfuscatedName("su.wd(Lyf;I)V")
 	public static final void method8294(class677 arg0) {
 		arg0.field8226 -= 2;
-		class810 var1 = (class810) Statics.field7762.get(arg0.field8216[arg0.field8226]);
+		InvType var1 = (InvType) Statics.field7762.get(arg0.field8216[arg0.field8226]);
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		int var3 = -1;
 		for (int var4 = 0; var4 < var1.field9264; var4++) {
@@ -9737,7 +9737,7 @@ public final class class676 {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		class754 var3 = (class754) Statics.field8514.get(var1);
+		EnumType var3 = (EnumType) Statics.field8514.get(var1);
 		if (ScriptVarType.field4634 != var3.field8775) {
 		}
 		arg0.field8218[++arg0.field8211 - 1] = var3.method14849(var2);
@@ -9750,7 +9750,7 @@ public final class class676 {
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		int var4 = arg0.field8216[arg0.field8226 + 3];
-		class754 var5 = (class754) Statics.field8514.get(var3);
+		EnumType var5 = (EnumType) Statics.field8514.get(var3);
 		if (var5.field8781.method1303() != var1 || var5.field8775.method1303() != var2) {
 			throw new RuntimeException(var3 + " " + var4);
 		} else if (var2 == ScriptVarType.field4634.method1303()) {
@@ -9769,7 +9769,7 @@ public final class class676 {
 		if (var2 == -1) {
 			throw new RuntimeException();
 		}
-		class754 var4 = (class754) Statics.field8514.get(var2);
+		EnumType var4 = (EnumType) Statics.field8514.get(var2);
 		if (var4.field8775.method1303() != var1) {
 			throw new RuntimeException();
 		}
@@ -9783,7 +9783,7 @@ public final class class676 {
 		if (var1 == -1) {
 			throw new RuntimeException();
 		}
-		class754 var3 = (class754) Statics.field8514.get(var1);
+		EnumType var3 = (EnumType) Statics.field8514.get(var1);
 		if (ScriptVarType.field4634 != var3.field8775) {
 			throw new RuntimeException();
 		}
@@ -9793,7 +9793,7 @@ public final class class676 {
 	@ObfuscatedName("xh.zk(Lyf;I)V")
 	public static final void method10206(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		class754 var2 = (class754) Statics.field8514.get(var1);
+		EnumType var2 = (EnumType) Statics.field8514.get(var1);
 		arg0.field8216[++arg0.field8226 - 1] = var2.method14847();
 	}
 
@@ -9806,7 +9806,7 @@ public final class class676 {
 		if (var2 == -1) {
 			throw new RuntimeException();
 		}
-		class754 var4 = (class754) Statics.field8514.get(var2);
+		EnumType var4 = (EnumType) Statics.field8514.get(var2);
 		if (var4.field8775.method1303() != var1) {
 			throw new RuntimeException();
 		}
@@ -9825,7 +9825,7 @@ public final class class676 {
 		if (var1 == -1) {
 			throw new RuntimeException();
 		}
-		class754 var3 = (class754) Statics.field8514.get(var1);
+		EnumType var3 = (EnumType) Statics.field8514.get(var1);
 		if (ScriptVarType.field4634 != var3.field8775) {
 			throw new RuntimeException();
 		}
@@ -9848,7 +9848,7 @@ public final class class676 {
 		if (var3 == -1) {
 			throw new RuntimeException();
 		}
-		class754 var6 = (class754) Statics.field8514.get(var3);
+		EnumType var6 = (EnumType) Statics.field8514.get(var3);
 		if (var6.field8781.method1303() != var2) {
 			throw new RuntimeException();
 		} else if (var6.field8775.method1303() == var1) {
@@ -10314,7 +10314,7 @@ public final class class676 {
 		} else {
 			arg0.field8216[++arg0.field8226 - 1] = 1;
 			arg0.field8227 = Statics.field6867;
-			arg0.field8234.put(class455.field4597, method991(arg0.field8227));
+			arg0.field8234.put(VarDomainType.field4597, method991(arg0.field8227));
 		}
 	}
 
@@ -10325,7 +10325,7 @@ public final class class676 {
 		} else {
 			arg0.field8216[++arg0.field8226 - 1] = 1;
 			arg0.field8227 = Statics.field1890;
-			arg0.field8234.put(class455.field4597, method991(arg0.field8227));
+			arg0.field8234.put(VarDomainType.field4597, method991(arg0.field8227));
 		}
 	}
 
@@ -11071,7 +11071,7 @@ public final class class676 {
 	@ObfuscatedName("oo.agm(Lyf;I)V")
 	public static final void method6129(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8218[++arg0.field8211 - 1] = ((class738) Statics.field1842.get(var1)).field8630;
+		arg0.field8218[++arg0.field8211 - 1] = ((ObjType) Statics.field1842.get(var1)).field8630;
 	}
 
 	@ObfuscatedName("hx.agf(Lyf;S)V")
@@ -11079,7 +11079,7 @@ public final class class676 {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		class738 var3 = (class738) Statics.field1842.get(var1);
+		ObjType var3 = (ObjType) Statics.field1842.get(var1);
 		if (var2 < 1 || var2 > 5 || var3.field8647[var2 - 1] == null) {
 			arg0.field8218[++arg0.field8211 - 1] = "";
 		} else {
@@ -11090,13 +11090,13 @@ public final class class676 {
 	@ObfuscatedName("hf.agw(Lyf;I)V")
 	public static final void method4016(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = ((class738) Statics.field1842.get(var1)).field8644 == 1 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Statics.field1842.get(var1)).field8644 == 1 ? 1 : 0;
 	}
 
 	@ObfuscatedName("aac.agn(Lyf;I)V")
 	public static final void method14576(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		class738 var2 = (class738) Statics.field1842.get(var1);
+		ObjType var2 = (ObjType) Statics.field1842.get(var1);
 		if (var2.field8663 == -1 && var2.field8673 >= 0) {
 			arg0.field8216[++arg0.field8226 - 1] = var2.field8673;
 		} else {
@@ -11107,7 +11107,7 @@ public final class class676 {
 	@ObfuscatedName("nv.agu(Lyf;I)V")
 	public static final void method6111(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		class738 var2 = (class738) Statics.field1842.get(var1);
+		ObjType var2 = (ObjType) Statics.field1842.get(var1);
 		if (var2.field8663 >= 0 && var2.field8673 >= 0) {
 			arg0.field8216[++arg0.field8226 - 1] = var2.field8673;
 		} else {
@@ -11118,7 +11118,7 @@ public final class class676 {
 	@ObfuscatedName("no.ags(Lyf;B)V")
 	public static final void method5986(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		class738 var2 = (class738) Statics.field1842.get(var1);
+		ObjType var2 = (ObjType) Statics.field1842.get(var1);
 		if (var2.field8677 == -1 && var2.field8676 >= 0) {
 			arg0.field8216[++arg0.field8226 - 1] = var2.field8676;
 		} else {
@@ -11129,7 +11129,7 @@ public final class class676 {
 	@ObfuscatedName("aj.agp(Lyf;B)V")
 	public static final void method971(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		class738 var2 = (class738) Statics.field1842.get(var1);
+		ObjType var2 = (ObjType) Statics.field1842.get(var1);
 		if (var2.field8677 >= 0 && var2.field8676 >= 0) {
 			arg0.field8216[++arg0.field8226 - 1] = var2.field8676;
 		} else {
@@ -11140,32 +11140,32 @@ public final class class676 {
 	@ObfuscatedName("nh.agz(Lyf;I)V")
 	public static final void method6119(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		class738 var2 = (class738) Statics.field1842.get(var1);
+		ObjType var2 = (ObjType) Statics.field1842.get(var1);
 		arg0.field8216[++arg0.field8226 - 1] = var2.field8679;
 	}
 
 	@ObfuscatedName("fw.agh(Lyf;I)V")
 	public static final void method3092(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = ((class738) Statics.field1842.get(var1)).field8651;
+		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Statics.field1842.get(var1)).field8651;
 	}
 
 	@ObfuscatedName("ki.agq(Lyf;I)V")
 	public static final void method5173(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = ((class738) Statics.field1842.get(var1)).field8652;
+		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Statics.field1842.get(var1)).field8652;
 	}
 
 	@ObfuscatedName("kr.agr(Lyf;I)V")
 	public static final void method5328(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = ((class738) Statics.field1842.get(var1)).field8653;
+		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Statics.field1842.get(var1)).field8653;
 	}
 
 	@ObfuscatedName("wm.agt(Lyf;I)V")
 	public static final void method9824(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = ((class738) Statics.field1842.get(var1)).field8684 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Statics.field1842.get(var1)).field8684 ? 1 : 0;
 	}
 
 	@ObfuscatedName("ul.agl(Lyf;I)V")
@@ -11173,11 +11173,11 @@ public final class class676 {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		class789 var3 = (class789) Statics.field3086.get(var2);
+		ParamType var3 = (ParamType) Statics.field3086.get(var2);
 		if (var3.method15152()) {
-			arg0.field8218[++arg0.field8211 - 1] = ((class738) Statics.field1842.get(var1)).method14654(var2, var3.field9171);
+			arg0.field8218[++arg0.field8211 - 1] = ((ObjType) Statics.field1842.get(var1)).method14654(var2, var3.field9171);
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = ((class738) Statics.field1842.get(var1)).method14677(var2, var3.field9172);
+			arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Statics.field1842.get(var1)).method14677(var2, var3.field9172);
 		}
 	}
 
@@ -11186,7 +11186,7 @@ public final class class676 {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1] - 1;
-		class738 var3 = (class738) Statics.field1842.get(var1);
+		ObjType var3 = (ObjType) Statics.field1842.get(var1);
 		arg0.field8216[++arg0.field8226 - 1] = var3.method14684(var2);
 	}
 
@@ -11214,14 +11214,14 @@ public final class class676 {
 	@ObfuscatedName("abq.ahc(Lyf;I)V")
 	public static final void method14695(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		class738 var2 = (class738) Statics.field1842.get(var1);
+		ObjType var2 = (ObjType) Statics.field1842.get(var1);
 		arg0.field8216[++arg0.field8226 - 1] = var2.field8680 ? 1 : 0;
 	}
 
 	@ObfuscatedName("xd.ahj(Lyf;I)V")
 	public static final void method10297(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		class738 var2 = (class738) Statics.field1842.get(var1);
+		ObjType var2 = (ObjType) Statics.field1842.get(var1);
 		int var3;
 		if (var2.field8680) {
 			var3 = var2.field8696;
@@ -11236,35 +11236,35 @@ public final class class676 {
 	@ObfuscatedName("tz.ahw(Lyf;S)V")
 	public static final void method8502(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		class738 var2 = (class738) Statics.field1842.get(var1);
+		ObjType var2 = (ObjType) Statics.field1842.get(var1);
 		arg0.field8216[++arg0.field8226 - 1] = var2.field8628;
 	}
 
 	@ObfuscatedName("gy.ahl(Lyf;S)V")
 	public static final void method3537(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		class738 var2 = (class738) Statics.field1842.get(var1);
+		ObjType var2 = (ObjType) Statics.field1842.get(var1);
 		arg0.field8216[++arg0.field8226 - 1] = var2.field8644 == 2 ? 1 : 0;
 	}
 
 	@ObfuscatedName("tv.ahv(Lyf;B)V")
 	public static final void method8674(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		class738 var2 = (class738) Statics.field1842.get(var1);
+		ObjType var2 = (ObjType) Statics.field1842.get(var1);
 		arg0.field8216[++arg0.field8226 - 1] = var2.field8687 ? 1 : 0;
 	}
 
 	@ObfuscatedName("nz.ahf(Lyf;I)V")
 	public static final void method6083(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		class738 var2 = (class738) Statics.field1842.get(var1);
+		ObjType var2 = (ObjType) Statics.field1842.get(var1);
 		arg0.field8216[++arg0.field8226 - 1] = var2.field8698 ? 1 : 0;
 	}
 
 	@ObfuscatedName("aal.ahr(Lyf;I)V")
 	public static final void method14485(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = ((class738) Statics.field1842.get(var1)).field8627;
+		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Statics.field1842.get(var1)).field8627;
 	}
 
 	@ObfuscatedName("a.ahk(Lyf;I)V")
@@ -11272,11 +11272,11 @@ public final class class676 {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		class789 var3 = (class789) Statics.field3086.get(var2);
+		ParamType var3 = (ParamType) Statics.field3086.get(var2);
 		if (var3.method15152()) {
-			arg0.field8218[++arg0.field8211 - 1] = ((class260) Statics.field7961.get(var1)).method4548(var2, var3.field9171);
+			arg0.field8218[++arg0.field8211 - 1] = ((NPCType) Statics.field7961.get(var1)).method4548(var2, var3.field9171);
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = ((class260) Statics.field7961.get(var1)).method4551(var2, var3.field9172);
+			arg0.field8216[++arg0.field8226 - 1] = ((NPCType) Statics.field7961.get(var1)).method4551(var2, var3.field9172);
 		}
 	}
 
@@ -11285,11 +11285,11 @@ public final class class676 {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		class789 var3 = (class789) Statics.field3086.get(var2);
+		ParamType var3 = (ParamType) Statics.field3086.get(var2);
 		if (var3.method15152()) {
-			arg0.field8218[++arg0.field8211 - 1] = ((class809) Statics.field7713.get(var1)).method15297(var2, var3.field9171);
+			arg0.field8218[++arg0.field8211 - 1] = ((StructType) Statics.field7713.get(var1)).method15297(var2, var3.field9171);
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = ((class809) Statics.field7713.get(var1)).method15296(var2, var3.field9172);
+			arg0.field8216[++arg0.field8226 - 1] = ((StructType) Statics.field7713.get(var1)).method15296(var2, var3.field9172);
 		}
 	}
 
@@ -11298,24 +11298,24 @@ public final class class676 {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		class789 var3 = (class789) Statics.field3086.get(var2);
+		ParamType var3 = (ParamType) Statics.field3086.get(var2);
 		if (var3.method15152()) {
-			arg0.field8218[++arg0.field8211 - 1] = ((class164) Statics.field8797.get(var1)).method2989(var2, var3.field9171);
+			arg0.field8218[++arg0.field8211 - 1] = ((SeqType) Statics.field8797.get(var1)).method2989(var2, var3.field9171);
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = ((class164) Statics.field8797.get(var1)).method2981(var2, var3.field9172);
+			arg0.field8216[++arg0.field8226 - 1] = ((SeqType) Statics.field8797.get(var1)).method2981(var2, var3.field9172);
 		}
 	}
 
 	@ObfuscatedName("fw.aha(Lyf;B)V")
 	public static final void method3090(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = ((class164) Statics.field8797.get(var1)).field1776;
+		arg0.field8216[++arg0.field8226 - 1] = ((SeqType) Statics.field8797.get(var1)).field1776;
 	}
 
 	@ObfuscatedName("ij.ahx(Lyf;I)V")
 	public static final void method4334(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		class584 var2 = (class584) Statics.field11742.get(var1);
+		BASType var2 = (BASType) Statics.field11742.get(var1);
 		if (var2.field7335 == null || var2.field7335.length <= 0) {
 			arg0.field8216[++arg0.field8226 - 1] = var2.field7345;
 			return;
@@ -14715,14 +14715,14 @@ public final class class676 {
 	@ObfuscatedName("aoh.axg(Lyf;I)V")
 	public static final void method18914(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		class228 var2 = (class228) Statics.field5011.get(var1);
+		MapElementType var2 = (MapElementType) Statics.field5011.get(var1);
 		arg0.field8216[++arg0.field8226 - 1] = var2.field2388;
 	}
 
 	@ObfuscatedName("fc.axf(Lyf;I)V")
 	public static final void method3088(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		class228 var2 = (class228) Statics.field5011.get(var1);
+		MapElementType var2 = (MapElementType) Statics.field5011.get(var1);
 		arg0.field8216[++arg0.field8226 - 1] = var2.field2374;
 	}
 
@@ -14731,11 +14731,11 @@ public final class class676 {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		class789 var3 = (class789) Statics.field3086.get(var2);
+		ParamType var3 = (ParamType) Statics.field3086.get(var2);
 		if (var3.method15152()) {
-			arg0.field8218[++arg0.field8211 - 1] = ((class228) Statics.field5011.get(var1)).method4029(var2, var3.field9171);
+			arg0.field8218[++arg0.field8211 - 1] = ((MapElementType) Statics.field5011.get(var1)).method4029(var2, var3.field9171);
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = ((class228) Statics.field5011.get(var1)).method4028(var2, var3.field9172);
+			arg0.field8216[++arg0.field8226 - 1] = ((MapElementType) Statics.field5011.get(var1)).method4028(var2, var3.field9172);
 		}
 	}
 
@@ -15341,7 +15341,7 @@ public final class class676 {
 	public static final void method3041(class677 arg0) {
 		class1131 var1 = (class1131) arg0.field8221;
 		boolean var2 = false;
-		class260 var3 = var1.field12083;
+		NPCType var3 = var1.field12083;
 		if (var3.field2735 != null) {
 			var3 = var3.method4547(Statics.field7410, Statics.field7410);
 		}
@@ -15354,7 +15354,7 @@ public final class class676 {
 	@ObfuscatedName("xn.bbc(Lyf;I)V")
 	public static final void method10110(class677 arg0) {
 		class1131 var1 = (class1131) arg0.field8221;
-		class260 var2 = var1.field12083;
+		NPCType var2 = var1.field12083;
 		if (var2.field2735 != null) {
 			var2 = var2.method4547(Statics.field7410, Statics.field7410);
 		}
@@ -15848,8 +15848,8 @@ public final class class676 {
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		int var4 = class791.method746(var2);
 		int var5 = class791.method15018(var2);
-		class745 var6 = (class745) Statics.field9123.get(var1);
-		class793 var7 = (class793) Statics.field1840.get(var4);
+		DBRowType var6 = (DBRowType) Statics.field9123.get(var1);
+		DBTableType var7 = (DBTableType) Statics.field1840.get(var4);
 		ScriptVarType[] var8 = var7.field9185[var5];
 		Object[] var9 = var6.method14711(var5);
 		if (var9 == null && var7.field9186 != null) {
@@ -15895,7 +15895,7 @@ public final class class676 {
 	@ObfuscatedName("ei.beb(Lyf;B)V")
 	public static final void method2751(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		class745 var2 = (class745) Statics.field9123.get(var1);
+		DBRowType var2 = (DBRowType) Statics.field9123.get(var1);
 		arg0.field8216[++arg0.field8226 - 1] = var2.field8735;
 	}
 

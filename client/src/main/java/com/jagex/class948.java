@@ -7,7 +7,7 @@ import deob.Statics;
 public class class948 extends class1200 implements class514 {
 
 	@ObfuscatedName("ajv.c")
-	public class1090 field11145;
+	public LocTypeList field11145;
 
 	@ObfuscatedName("ajv.r")
 	public class116 field11136;
@@ -45,7 +45,7 @@ public class class948 extends class1200 implements class514 {
 	@ObfuscatedName("ajv.i")
 	public int field11138;
 
-	public class948(class550 arg0, Renderer arg1, class1090 arg2, class598 arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, int arg14, int arg15, boolean arg16, boolean arg17, class420 arg18) {
+	public class948(class550 arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, int arg14, int arg15, boolean arg16, boolean arg17, class420 arg18) {
 		super(arg0, arg4, arg5, arg6, arg7, arg8, arg10, arg11, arg12, arg13, arg3.field7503 == 1, Statics.method14062(arg14, arg15), arg18);
 		this.field11145 = arg2;
 		this.field11715 = arg3.field7450;
@@ -111,7 +111,7 @@ public class class948 extends class1200 implements class514 {
 
 	@ObfuscatedName("ajv.bg(Ldh;IZI)Labg;")
 	public class746 method17400(Renderer arg0, int arg1, boolean arg2) {
-		class598 var4 = (class598) this.field11145.get(this.field11715);
+		LocType var4 = (LocType) this.field11145.get(this.field11715);
 		class104 var5;
 		class104 var6;
 		if (this.field11143) {
@@ -145,7 +145,7 @@ public class class948 extends class1200 implements class514 {
 		}
 		class419 var2 = this.method10533();
 		class552 var3 = class552.method16749(this.field11144);
-		class416 var4 = ((class598) this.field11145.get(this.field11715)).field7468;
+		class416 var4 = ((LocType) this.field11145.get(this.field11715)).field7468;
 		if (var4 == null) {
 			this.field11136.method1813(var2, this.field11713[0], 0);
 		} else {
@@ -161,7 +161,7 @@ public class class948 extends class1200 implements class514 {
 
 	@ObfuscatedName("ajv.fa(Ldh;IIB)Z")
 	public boolean method17375(Renderer arg0, int arg1, int arg2) {
-		class416 var4 = ((class598) this.field11145.get(this.field11715)).field7468;
+		class416 var4 = ((LocType) this.field11145.get(this.field11715)).field7468;
 		if (var4 != null) {
 			return arg0.method2191(arg1, arg2, this.method10533(), var4);
 		}

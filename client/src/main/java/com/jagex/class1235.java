@@ -32,7 +32,7 @@ public class class1235 extends class1200 {
 		this.field12613 = arg1;
 		this.field12608 = arg12;
 		this.field12607 = arg14;
-		class680 var16 = (class680) Statics.field4874.get(this.field12613);
+		EffectAnimType var16 = (EffectAnimType) Statics.field4874.get(this.field12613);
 		int var17 = var16.field8260;
 		if (var17 != -1) {
 			this.field12609 = new class1076(this, false);
@@ -89,7 +89,7 @@ public class class1235 extends class1200 {
 
 	@ObfuscatedName("aur.f(Ldh;IIB)Ldo;")
 	public class116 method19748(Renderer arg0, int arg1, int arg2) {
-		class680 var4 = (class680) Statics.field4874.get(arg2);
+		EffectAnimType var4 = (EffectAnimType) Statics.field4874.get(arg2);
 		class104 var5 = this.field11716.field6915[this.field11717];
 		class104 var6 = this.field11714 < 3 ? this.field11716.field6915[this.field11714 + 1] : null;
 		Vector3 var7 = this.method10536().field4298;

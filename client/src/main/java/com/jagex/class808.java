@@ -9,9 +9,9 @@ import java.util.Map;
 public abstract class class808 extends class52 implements class414 {
 
 	@ObfuscatedName("add.n")
-	public final class455 field9260;
+	public final VarDomainType field9260;
 
-	public class808(ModeGame arg0, class455 arg1, Language arg2, int arg3) {
+	public class808(ModeGame arg0, VarDomainType arg1, Language arg2, int arg3) {
 		super(arg0, arg2, arg3);
 		this.field9260 = arg1;
 	}

@@ -10,19 +10,19 @@ public class class760 {
 	}
 
 	@ObfuscatedName("sc.e(Lpy;Lxq;B)I")
-	public static int method8370(class442 arg0, class655 arg1) {
+	public static int method8370(class442 arg0, Js5ConfigGroup arg1) {
 		if (arg0 == null) {
 			return 0;
-		} else if (arg1.method10328() > 1) {
+		} else if (arg1.getGroupSize() > 1) {
 			int var2 = arg0.method6898() - 1;
-			return var2 * arg1.method10328() + arg0.method6897(var2);
+			return var2 * arg1.getGroupSize() + arg0.method6897(var2);
 		} else {
-			return arg0.method6897(arg1.field8040);
+			return arg0.method6897(arg1.id);
 		}
 	}
 
 	@ObfuscatedName("wx.n(Lpy;Lxq;II)[B")
-	public static byte[] method9853(class442 arg0, class655 arg1, int arg2) {
-		return arg1.method10328() > 1 ? arg0.method6879(arg1.method10329(arg2), arg1.method10330(arg2)) : arg0.method6879(arg1.field8040, arg2);
+	public static byte[] method9853(class442 arg0, Js5ConfigGroup arg1, int arg2) {
+		return arg1.getGroupSize() > 1 ? arg0.method6879(arg1.getClientGroupId(arg2), arg1.getClientFileId(arg2)) : arg0.method6879(arg1.id, arg2);
 	}
 }
