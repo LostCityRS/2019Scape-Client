@@ -628,7 +628,7 @@ public class class598 implements ConfigType {
 	}
 
 	@ObfuscatedName("vd.c(Ldh;IIILcb;Lcb;IIIZLvp;B)Labg;")
-	public final synchronized class746 method9475(class133 arg0, int arg1, int arg2, int arg3, class104 arg4, class104 arg5, int arg6, int arg7, int arg8, boolean arg9, class597 arg10) {
+	public final synchronized class746 method9475(Renderer arg0, int arg1, int arg2, int arg3, class104 arg4, class104 arg5, int arg6, int arg7, int arg8, boolean arg9, class597 arg10) {
 		if (class601.method14238(arg2)) {
 			arg2 = class601.field7548.field7562;
 		}
@@ -715,7 +715,7 @@ public class class598 implements ConfigType {
 	}
 
 	@ObfuscatedName("vd.r(Ldh;IIILcb;Lcb;IIILaaq;Lvp;B)Ldo;")
-	public final synchronized class116 method9470(class133 arg0, int arg1, int arg2, int arg3, class104 arg4, class104 arg5, int arg6, int arg7, int arg8, class721 arg9, class597 arg10) {
+	public final synchronized class116 method9470(Renderer arg0, int arg1, int arg2, int arg3, class104 arg4, class104 arg5, int arg6, int arg7, int arg8, class721 arg9, class597 arg10) {
 		if (class601.method14238(arg2)) {
 			arg2 = class601.field7548.field7562;
 		}
@@ -796,7 +796,7 @@ public class class598 implements ConfigType {
 	}
 
 	@ObfuscatedName("vd.v(Ldh;IIILvp;I)Ldo;")
-	public class116 method9476(class133 arg0, int arg1, int arg2, int arg3, class597 arg4) {
+	public class116 method9476(Renderer arg0, int arg1, int arg2, int arg3, class597 arg4) {
 		int var6 = this.field7481 + 64;
 		int var7 = this.field7494 * 5 + 850;
 		int var8 = arg1;

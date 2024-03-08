@@ -19,7 +19,7 @@ public abstract class class1199 extends class1019 {
 	}
 
 	@ObfuscatedName("ast.ga(Ldh;S)Z")
-	public boolean method18360(class133 arg0) {
+	public boolean method18360(Renderer arg0) {
 		Vector3 var2 = this.method10536().field4298;
 		class557 var3 = this.field11716.method8738(this.field11714, (int) var2.field4308 >> this.field11716.field6900, (int) var2.field4313 >> this.field11716.field6900);
 		return var3 != null && var3.field7057.field12470 ? this.field11716.field6930.method8950(this.field11714, (int) var2.field4308 >> this.field11716.field6900, (int) var2.field4313 >> this.field11716.field6900, var3.field7057.method16523() + this.method16523()) : this.field11716.field6930.method8927(this.field11714, (int) var2.field4308 >> this.field11716.field6900, (int) var2.field4313 >> this.field11716.field6900);
@@ -37,7 +37,7 @@ public abstract class class1199 extends class1019 {
 	}
 
 	@ObfuscatedName("ast.fq(Ldh;Lalh;IIIZB)V")
-	public final void method17377(class133 arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void method17377(Renderer arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 

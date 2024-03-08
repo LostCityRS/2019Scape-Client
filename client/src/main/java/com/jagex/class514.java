@@ -18,10 +18,10 @@ public interface class514 {
 	boolean method8207();
 
 	@ObfuscatedName("st.u(Ldh;B)V")
-	void method8209(class133 arg0);
+	void method8209(Renderer arg0);
 
 	@ObfuscatedName("st.l(Ldh;B)V")
-	void method8217(class133 arg0);
+	void method8217(Renderer arg0);
 
 	@ObfuscatedName("st.n(I)I")
 	int method8220();

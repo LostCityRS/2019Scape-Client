@@ -45,7 +45,7 @@ public class class948 extends class1200 implements class514 {
 	@ObfuscatedName("ajv.i")
 	public int field11138;
 
-	public class948(class550 arg0, class133 arg1, class1090 arg2, class598 arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, int arg14, int arg15, boolean arg16, boolean arg17, class420 arg18) {
+	public class948(class550 arg0, Renderer arg1, class1090 arg2, class598 arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, int arg14, int arg15, boolean arg16, boolean arg17, class420 arg18) {
 		super(arg0, arg4, arg5, arg6, arg7, arg8, arg10, arg11, arg12, arg13, arg3.field7503 == 1, Statics.method14062(arg14, arg15), arg18);
 		this.field11145 = arg2;
 		this.field11715 = arg3.field7450;
@@ -100,7 +100,7 @@ public class class948 extends class1200 implements class514 {
 	}
 
 	@ObfuscatedName("ajv.br(Ldh;II)Ldo;")
-	public class116 method17399(class133 arg0, int arg1) {
+	public class116 method17399(Renderer arg0, int arg1) {
 		if (this.field11136 != null && arg0.method2394(this.field11136.method1691(), arg1) == 0) {
 			return this.field11136;
 		} else {
@@ -110,7 +110,7 @@ public class class948 extends class1200 implements class514 {
 	}
 
 	@ObfuscatedName("ajv.bg(Ldh;IZI)Labg;")
-	public class746 method17400(class133 arg0, int arg1, boolean arg2) {
+	public class746 method17400(Renderer arg0, int arg1, boolean arg2) {
 		class598 var4 = (class598) this.field11145.get(this.field11715);
 		class104 var5;
 		class104 var6;
@@ -130,7 +130,7 @@ public class class948 extends class1200 implements class514 {
 	}
 
 	@ObfuscatedName("ajv.fv(Ldh;B)Luq;")
-	public class556 method17371(class133 arg0) {
+	public class556 method17371(Renderer arg0) {
 		Vector3 var2 = this.method10536().field4298;
 		if (this.field11148 == null) {
 			this.field11148 = class1019.method15111((int) var2.field4308, (int) var2.field4311, (int) var2.field4313, this.method17399(arg0, 0));
@@ -139,7 +139,7 @@ public class class948 extends class1200 implements class514 {
 	}
 
 	@ObfuscatedName("ajv.fc(Ldh;I)Ltl;")
-	public class552 method17372(class133 arg0) {
+	public class552 method17372(Renderer arg0) {
 		if (this.field11136 == null) {
 			return null;
 		}
@@ -156,11 +156,11 @@ public class class948 extends class1200 implements class514 {
 	}
 
 	@ObfuscatedName("ajv.fw(Ldh;I)V")
-	public void method17373(class133 arg0) {
+	public void method17373(Renderer arg0) {
 	}
 
 	@ObfuscatedName("ajv.fa(Ldh;IIB)Z")
-	public boolean method17375(class133 arg0, int arg1, int arg2) {
+	public boolean method17375(Renderer arg0, int arg1, int arg2) {
 		class416 var4 = ((class598) this.field11145.get(this.field11715)).field7468;
 		if (var4 != null) {
 			return arg0.method2191(arg1, arg2, this.method10533(), var4);
@@ -180,7 +180,7 @@ public class class948 extends class1200 implements class514 {
 	}
 
 	@ObfuscatedName("ajv.fq(Ldh;Lalh;IIIZB)V")
-	public void method17377(class133 arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public void method17377(Renderer arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		if (arg1 instanceof class950) {
 			class950 var7 = (class950) arg1;
 			if (this.field11136 != null && var7.field11173 != null) {
@@ -235,7 +235,7 @@ public class class948 extends class1200 implements class514 {
 	}
 
 	@ObfuscatedName("ajv.l(Ldh;B)V")
-	public void method8217(class133 arg0) {
+	public void method8217(Renderer arg0) {
 		Object var2 = null;
 		class1175 var4;
 		if (this.field11146 == null && this.field11141) {
@@ -252,7 +252,7 @@ public class class948 extends class1200 implements class514 {
 	}
 
 	@ObfuscatedName("ajv.u(Ldh;B)V")
-	public void method8209(class133 arg0) {
+	public void method8209(Renderer arg0) {
 		Object var2 = null;
 		class1175 var4;
 		if (this.field11146 == null && this.field11141) {

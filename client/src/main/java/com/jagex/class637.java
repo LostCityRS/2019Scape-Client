@@ -130,7 +130,7 @@ public class class637 {
 	}
 
 	@ObfuscatedName("xv.m(Ldh;Lxv;Lxv;FI)V")
-	public void method10094(class133 arg0, class637 arg1, class637 arg2, float arg3) {
+	public void method10094(Renderer arg0, class637 arg1, class637 arg2, float arg3) {
 		this.field7877 = class662.method19201(arg1.field7877, arg2.field7877, arg3 * 255.0F);
 		this.field7861 = (arg2.field7861 - arg1.field7861) * arg3 + arg1.field7861;
 		this.field7864 = (arg2.field7864 - arg1.field7864) * arg3 + arg1.field7864;

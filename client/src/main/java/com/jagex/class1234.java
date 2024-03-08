@@ -114,7 +114,7 @@ public class class1234 extends class1200 {
 	}
 
 	@ObfuscatedName("aue.fv(Ldh;B)Luq;")
-	public class556 method17371(class133 arg0) {
+	public class556 method17371(Renderer arg0) {
 		return null;
 	}
 
@@ -236,13 +236,13 @@ public class class1234 extends class1200 {
 	}
 
 	@ObfuscatedName("aue.f(Ldh;II)Ldo;")
-	public class116 method19727(class133 arg0, int arg1) {
+	public class116 method19727(Renderer arg0, int arg1) {
 		class680 var3 = (class680) Statics.field4874.get(this.field12603);
 		return var3.method13817(arg0, arg1, this.field12602, (byte) 2);
 	}
 
 	@ObfuscatedName("aue.fc(Ldh;I)Ltl;")
-	public class552 method17372(class133 arg0) {
+	public class552 method17372(Renderer arg0) {
 		class116 var2 = this.method19727(arg0, 2048);
 		if (var2 == null) {
 			return null;
@@ -262,7 +262,7 @@ public class class1234 extends class1200 {
 	}
 
 	@ObfuscatedName("aue.fw(Ldh;I)V")
-	public void method17373(class133 arg0) {
+	public void method17373(Renderer arg0) {
 		class116 var2 = this.method19727(arg0, 0);
 		if (var2 != null) {
 			class419 var3 = this.method10533();
@@ -280,7 +280,7 @@ public class class1234 extends class1200 {
 	}
 
 	@ObfuscatedName("aue.w(Ldh;Ldo;Lou;B)V")
-	public void method19743(class133 arg0, class116 arg1, class419 arg2) {
+	public void method19743(Renderer arg0, class116 arg1, class419 arg2) {
 		arg1.method1689(arg2);
 		class128[] var4 = arg1.method1750();
 		class102[] var5 = arg1.method1765();
@@ -301,7 +301,7 @@ public class class1234 extends class1200 {
 	}
 
 	@ObfuscatedName("aue.fa(Ldh;IIB)Z")
-	public boolean method17375(class133 arg0, int arg1, int arg2) {
+	public boolean method17375(Renderer arg0, int arg1, int arg2) {
 		return false;
 	}
 
@@ -311,7 +311,7 @@ public class class1234 extends class1200 {
 	}
 
 	@ObfuscatedName("aue.fq(Ldh;Lalh;IIIZB)V")
-	public final void method17377(class133 arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void method17377(Renderer arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 

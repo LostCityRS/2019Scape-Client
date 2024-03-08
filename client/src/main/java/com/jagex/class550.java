@@ -28,7 +28,7 @@ public class class550 {
 	public final int field6903 = 16;
 
 	@ObfuscatedName("tx.w")
-	public final class133 field6907;
+	public final Renderer field6907;
 
 	@ObfuscatedName("tx.l")
 	public class767 field6912;
@@ -204,7 +204,7 @@ public class class550 {
 	@ObfuscatedName("tx.bb")
 	public boolean[][] field6922;
 
-	public class550(class133 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6, boolean arg7) {
+	public class550(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6, boolean arg7) {
 		this.field6907 = arg0;
 		this.field6906 = this.field6907.method2114() > 0;
 		this.field6900 = arg1;

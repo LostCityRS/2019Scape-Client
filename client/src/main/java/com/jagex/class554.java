@@ -42,7 +42,7 @@ public class class554 {
 	@ObfuscatedName("ul.at")
 	public int field6990 = -1;
 
-	public class554(class133 arg0, int arg1, Packet arg2, int arg3) {
+	public class554(Renderer arg0, int arg1, Packet arg2, int arg3) {
 		if (Statics.field1970 == null) {
 			method3615();
 		}
@@ -81,7 +81,7 @@ public class class554 {
 	}
 
 	@ObfuscatedName("ul.e(Ldh;IIIIII)V")
-	public void method8900(class133 arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+	public void method8900(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		this.field7003 = arg0.method2227(arg1, arg2, arg3, arg4, arg5, 1.0F);
 	}
 

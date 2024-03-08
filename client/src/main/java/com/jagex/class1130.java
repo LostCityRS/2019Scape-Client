@@ -286,12 +286,12 @@ public class class1130 extends class892 {
 	}
 
 	@ObfuscatedName("aqk.fv(Ldh;B)Luq;")
-	public class556 method17371(class133 arg0) {
+	public class556 method17371(Renderer arg0) {
 		return null;
 	}
 
 	@ObfuscatedName("aqk.fc(Ldh;I)Ltl;")
-	public class552 method17372(class133 arg0) {
+	public class552 method17372(Renderer arg0) {
 		if (this.field12061 == null || !this.method19114(arg0, 2048)) {
 			return null;
 		}
@@ -405,7 +405,7 @@ public class class1130 extends class892 {
 	}
 
 	@ObfuscatedName("aqk.fw(Ldh;I)V")
-	public void method17373(class133 arg0) {
+	public void method17373(Renderer arg0) {
 		if (this.field12061 == null || !this.field10449 && !this.method19114(arg0, 0)) {
 			return;
 		}
@@ -419,7 +419,7 @@ public class class1130 extends class892 {
 	}
 
 	@ObfuscatedName("aqk.hh(Ldh;Lou;Ldo;JJIJ)V")
-	public void method19113(class133 arg0, class419 arg1, class116 arg2, long arg3, long arg4, int arg5, long arg6) {
+	public void method19113(Renderer arg0, class419 arg1, class116 arg2, long arg3, long arg4, int arg5, long arg6) {
 		long var11 = arg3 * arg3 + arg4 * arg4;
 		if (var11 < 262144L || var11 > arg6) {
 			return;
@@ -434,7 +434,7 @@ public class class1130 extends class892 {
 	}
 
 	@ObfuscatedName("aqk.hp(Ldh;IB)Z")
-	public boolean method19114(class133 arg0, int arg1) {
+	public boolean method19114(Renderer arg0, int arg1) {
 		int var3 = arg1;
 		class584 var4 = this.method16508();
 		class721 var5 = this.field10454.method14346() && !this.field10454.method14355() ? this.field10454 : null;
@@ -591,7 +591,7 @@ public class class1130 extends class892 {
 	}
 
 	@ObfuscatedName("aqk.fa(Ldh;IIB)Z")
-	public boolean method17375(class133 arg0, int arg1, int arg2) {
+	public boolean method17375(Renderer arg0, int arg1, int arg2) {
 		if (this.field12061 == null || !this.method19114(arg0, 131072)) {
 			return false;
 		}
@@ -615,7 +615,7 @@ public class class1130 extends class892 {
 	}
 
 	@ObfuscatedName("aqk.fq(Ldh;Lalh;IIIZB)V")
-	public final void method17377(class133 arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void method17377(Renderer arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 

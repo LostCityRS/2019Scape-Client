@@ -90,7 +90,7 @@ public abstract class class1019 extends class665 {
 	}
 
 	@ObfuscatedName("alh.fa(Ldh;IIB)Z")
-	public abstract boolean method17375(class133 arg0, int arg1, int arg2);
+	public abstract boolean method17375(Renderer arg0, int arg1, int arg2);
 
 	@ObfuscatedName("alh.fp(I)Z")
 	public abstract boolean method17379();
@@ -105,16 +105,16 @@ public abstract class class1019 extends class665 {
 	public abstract void method17378();
 
 	@ObfuscatedName("alh.fw(Ldh;I)V")
-	public abstract void method17373(class133 arg0);
+	public abstract void method17373(Renderer arg0);
 
 	@ObfuscatedName("alh.fq(Ldh;Lalh;IIIZB)V")
-	public abstract void method17377(class133 arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5);
+	public abstract void method17377(Renderer arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5);
 
 	@ObfuscatedName("alh.ga(Ldh;S)Z")
-	public abstract boolean method18360(class133 arg0);
+	public abstract boolean method18360(Renderer arg0);
 
 	@ObfuscatedName("alh.fc(Ldh;I)Ltl;")
-	public abstract class552 method17372(class133 arg0);
+	public abstract class552 method17372(Renderer arg0);
 
 	@ObfuscatedName("alh.gn(I)Z")
 	public abstract boolean method18361();
@@ -123,7 +123,7 @@ public abstract class class1019 extends class665 {
 	public abstract int method16523();
 
 	@ObfuscatedName("alh.fv(Ldh;B)Luq;")
-	public abstract class556 method17371(class133 arg0);
+	public abstract class556 method17371(Renderer arg0);
 
 	@ObfuscatedName("alh.gy([Lakf;S)I")
 	public abstract int method18375(class973[] arg0);

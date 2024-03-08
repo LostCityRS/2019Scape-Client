@@ -28,7 +28,7 @@ public class class278 implements class281 {
 	public final int field2932;
 
 	@ObfuscatedName("jr.l")
-	public class133 field2933;
+	public Renderer field2933;
 
 	@ObfuscatedName("jr.u")
 	public boolean field2929;

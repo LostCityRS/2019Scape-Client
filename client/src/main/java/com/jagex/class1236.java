@@ -14,7 +14,7 @@ public class class1236 extends class1200 {
 	}
 
 	@ObfuscatedName("auu.fa(Ldh;IIB)Z")
-	public boolean method17375(class133 arg0, int arg1, int arg2) {
+	public boolean method17375(Renderer arg0, int arg1, int arg2) {
 		return false;
 	}
 
@@ -34,7 +34,7 @@ public class class1236 extends class1200 {
 	}
 
 	@ObfuscatedName("auu.fq(Ldh;Lalh;IIIZB)V")
-	public void method17377(class133 arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public void method17377(Renderer arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5) {
 	}
 
 	@ObfuscatedName("auu.ff(B)V")
@@ -42,7 +42,7 @@ public class class1236 extends class1200 {
 	}
 
 	@ObfuscatedName("auu.fc(Ldh;I)Ltl;")
-	public class552 method17372(class133 arg0) {
+	public class552 method17372(Renderer arg0) {
 		if (this.field12614.field6754 == null) {
 			return null;
 		}
@@ -59,11 +59,11 @@ public class class1236 extends class1200 {
 	}
 
 	@ObfuscatedName("auu.fw(Ldh;I)V")
-	public void method17373(class133 arg0) {
+	public void method17373(Renderer arg0) {
 	}
 
 	@ObfuscatedName("auu.fv(Ldh;B)Luq;")
-	public class556 method17371(class133 arg0) {
+	public class556 method17371(Renderer arg0) {
 		return null;
 	}
 

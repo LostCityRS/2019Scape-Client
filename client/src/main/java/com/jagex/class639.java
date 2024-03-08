@@ -156,7 +156,7 @@ public class class639 {
 	}
 
 	@ObfuscatedName("xg.u(Ldh;ILaof;Laov;Laod;Laon;Lem;Lep;Laaq;Laaq;[Laaq;[IIZLwy;B)Ldo;")
-	public class116 method10126(class133 arg0, int arg1, class1089 arg2, class1084 arg3, class1082 arg4, class1095 arg5, class151 arg6, class147 arg7, class721 arg8, class721 arg9, class721[] arg10, int[] arg11, int arg12, boolean arg13, class631 arg14) {
+	public class116 method10126(Renderer arg0, int arg1, class1089 arg2, class1084 arg3, class1082 arg4, class1095 arg5, class151 arg6, class147 arg7, class721 arg8, class721 arg9, class721[] arg10, int[] arg11, int arg12, boolean arg13, class631 arg14) {
 		if (this.field7892 != -1) {
 			return ((class260) arg4.get(this.field7892)).method4542(arg0, arg1, arg2, arg6, arg7, arg8, arg9, arg10, arg11, arg12, null);
 		}
@@ -427,7 +427,7 @@ public class class639 {
 	}
 
 	@ObfuscatedName("xg.z(Ldh;ILaov;Laod;Laon;Lem;Lep;Laaq;B)Ldo;")
-	public class116 method10120(class133 arg0, int arg1, class1084 arg2, class1082 arg3, class1095 arg4, class151 arg5, class147 arg6, class721 arg7) {
+	public class116 method10120(Renderer arg0, int arg1, class1084 arg2, class1082 arg3, class1095 arg4, class151 arg5, class147 arg6, class721 arg7) {
 		if (this.field7892 != -1) {
 			return ((class260) arg3.get(this.field7892)).method4544(arg0, arg1, arg5, arg6, arg7, null);
 		}
@@ -512,7 +512,7 @@ public class class639 {
 	}
 
 	@ObfuscatedName("xg.p(Ldh;ILaov;Laos;Laaq;IIIB)Ldo;")
-	public class116 method10130(class133 arg0, int arg1, class1084 arg2, class1080 arg3, class721 arg4, int arg5, int arg6, int arg7) {
+	public class116 method10130(Renderer arg0, int arg1, class1084 arg2, class1080 arg3, class721 arg4, int arg5, int arg6, int arg7) {
 		int var9 = arg4 == null ? arg1 : arg1 | arg4.method14358();
 		long var10 = (long) arg7 << 32 | (long) (arg6 << 16) | (long) arg5;
 		WeightedCache var12 = field7902;

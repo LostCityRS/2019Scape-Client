@@ -33,7 +33,7 @@ public class class529 {
 	@ObfuscatedName("ta.u")
 	public boolean field6756;
 
-	public class529(class133 arg0, Packet arg1, int arg2) {
+	public class529(Renderer arg0, Packet arg1, int arg2) {
 		this.field6749 = arg2;
 		this.field6751 = arg1.gSmart1or2s();
 		this.field6750 = new int[this.field6751];
@@ -48,7 +48,7 @@ public class class529 {
 	}
 
 	@ObfuscatedName("ta.e(Ldh;S)Ldo;")
-	public class116 method8402(class133 arg0) {
+	public class116 method8402(Renderer arg0) {
 		class120 var2 = class120.method1931(Statics.field9213, this.field6749, 0);
 		if (var2 == null) {
 			return null;
@@ -138,7 +138,7 @@ public class class529 {
 	}
 
 	@ObfuscatedName("ta.u(Ldh;I)Z")
-	public boolean method8408(class133 arg0) {
+	public boolean method8408(Renderer arg0) {
 		this.field6754 = this.method8402(arg0);
 		return this.field6754 != null;
 	}

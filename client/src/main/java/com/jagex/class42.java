@@ -86,7 +86,7 @@ public class class42 {
 	}
 
 	@ObfuscatedName("aih.w(Ldh;B)V")
-	public static void method16903(class133 arg0) {
+	public static void method16903(Renderer arg0) {
 		if (field722 != Statics.field4490.field11717 && client.field10855.method7743() != null) {
 			class213.method3655();
 			if (method14493(arg0, Statics.field4490.field11717)) {
@@ -96,7 +96,7 @@ public class class42 {
 	}
 
 	@ObfuscatedName("aaz.l(Ldh;IB)Z")
-	public static boolean method14493(class133 arg0, int arg1) {
+	public static boolean method14493(Renderer arg0, int arg1) {
 		arg0.method2202();
 		class213.method3655();
 		if (!arg0.method2215()) {
@@ -366,7 +366,7 @@ public class class42 {
 	}
 
 	@ObfuscatedName("ix.c(Ldh;IIIIIIII)V")
-	public static void method4476(class133 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
+	public static void method4476(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		class550 var8 = client.field10855.method7743();
 		class514 var9 = (class514) var8.method8711(arg1, arg2, arg3);
 		if (var9 != null) {
@@ -446,7 +446,7 @@ public class class42 {
 	}
 
 	@ObfuscatedName("v.v(Ldh;Lhf;IIB)V")
-	public static void method328(class133 arg0, class226 arg1, int arg2, int arg3) {
+	public static void method328(Renderer arg0, class226 arg1, int arg2, int arg3) {
 		if (Statics.field4490 == null) {
 			return;
 		}
@@ -549,7 +549,7 @@ public class class42 {
 	}
 
 	@ObfuscatedName("je.o(Ldh;IILhf;Lch;IIB)V")
-	public static void method4838(class133 arg0, int arg1, int arg2, class226 arg3, class103 arg4, int arg5, int arg6) {
+	public static void method4838(Renderer arg0, int arg1, int arg2, class226 arg3, class103 arg4, int arg5, int arg6) {
 		for (int var7 = 0; var7 < client.field11011; var7++) {
 			class984 var8 = (class984) client.field10838.method14495((long) client.field11036[var7]);
 			if (var8 != null) {

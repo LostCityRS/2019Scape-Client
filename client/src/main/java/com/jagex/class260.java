@@ -529,12 +529,12 @@ public class class260 implements ConfigType {
 	}
 
 	@ObfuscatedName("if.z(Ldh;ILaof;Lem;Lep;Laaq;Laaq;[Laaq;[IILia;I)Ldo;")
-	public final class116 method4542(class133 arg0, int arg1, class1089 arg2, class151 arg3, class147 arg4, class721 arg5, class721 arg6, class721[] arg7, int[] arg8, int arg9, class259 arg10) {
+	public final class116 method4542(Renderer arg0, int arg1, class1089 arg2, class151 arg3, class147 arg4, class721 arg5, class721 arg6, class721[] arg7, int[] arg8, int arg9, class259 arg10) {
 		return this.method4543(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, this.field2762, true);
 	}
 
 	@ObfuscatedName("if.p(Ldh;ILaof;Lem;Lep;Laaq;Laaq;[Laaq;[IILia;IZB)Ldo;")
-	public final class116 method4543(class133 arg0, int arg1, class1089 arg2, class151 arg3, class147 arg4, class721 arg5, class721 arg6, class721[] arg7, int[] arg8, int arg9, class259 arg10, int arg11, boolean arg12) {
+	public final class116 method4543(Renderer arg0, int arg1, class1089 arg2, class151 arg3, class147 arg4, class721 arg5, class721 arg6, class721[] arg7, int[] arg8, int arg9, class259 arg10, int arg11, boolean arg12) {
 		if (this.field2735 != null) {
 			class260 var14 = this.method4547(arg3, arg4);
 			return var14 == null ? null : var14.method4543(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12);
@@ -770,7 +770,7 @@ public class class260 implements ConfigType {
 	}
 
 	@ObfuscatedName("if.d(Ldh;ILem;Lep;Laaq;Lia;S)Ldo;")
-	public final class116 method4544(class133 arg0, int arg1, class151 arg2, class147 arg3, class721 arg4, class259 arg5) {
+	public final class116 method4544(Renderer arg0, int arg1, class151 arg2, class147 arg3, class721 arg4, class259 arg5) {
 		if (this.field2735 != null) {
 			class260 var7 = this.method4547(arg2, arg3);
 			return var7 == null ? null : var7.method4544(arg0, arg1, arg2, arg3, arg4, arg5);

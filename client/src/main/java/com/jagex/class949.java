@@ -39,7 +39,7 @@ public class class949 extends class1197 implements class514 {
 	@ObfuscatedName("ajk.a")
 	public int field11151;
 
-	public class949(class550 arg0, class133 arg1, class1090 arg2, class598 arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, class420 arg14) {
+	public class949(class550 arg0, Renderer arg1, class1090 arg2, class598 arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, class420 arg14) {
 		super(arg0, arg6, arg7, arg8, arg4, arg5, arg10, arg11, arg14);
 		this.field11159 = arg2;
 		this.field11715 = arg3.field7450;
@@ -88,7 +88,7 @@ public class class949 extends class1197 implements class514 {
 	}
 
 	@ObfuscatedName("ajk.bz(Ldh;IB)Ldo;")
-	public class116 method17411(class133 arg0, int arg1) {
+	public class116 method17411(Renderer arg0, int arg1) {
 		if (this.field11150 != null && arg0.method2394(this.field11150.method1691(), arg1) == 0) {
 			return this.field11150;
 		} else {
@@ -98,7 +98,7 @@ public class class949 extends class1197 implements class514 {
 	}
 
 	@ObfuscatedName("ajk.bv(Ldh;IZI)Labg;")
-	public class746 method17414(class133 arg0, int arg1, boolean arg2) {
+	public class746 method17414(Renderer arg0, int arg1, boolean arg2) {
 		class598 var4 = (class598) this.field11159.get(this.field11715);
 		class104 var5;
 		class104 var6;
@@ -118,7 +118,7 @@ public class class949 extends class1197 implements class514 {
 	}
 
 	@ObfuscatedName("ajk.fv(Ldh;B)Luq;")
-	public class556 method17371(class133 arg0) {
+	public class556 method17371(Renderer arg0) {
 		Vector3 var2 = this.method10536().field4298;
 		if (this.field11149 == null) {
 			this.field11149 = class1019.method15111((int) var2.field4308, (int) var2.field4311, (int) var2.field4313, this.method17411(arg0, 0));
@@ -127,7 +127,7 @@ public class class949 extends class1197 implements class514 {
 	}
 
 	@ObfuscatedName("ajk.fc(Ldh;I)Ltl;")
-	public class552 method17372(class133 arg0) {
+	public class552 method17372(Renderer arg0) {
 		if (this.field11150 == null) {
 			return null;
 		}
@@ -146,11 +146,11 @@ public class class949 extends class1197 implements class514 {
 	}
 
 	@ObfuscatedName("ajk.fw(Ldh;I)V")
-	public void method17373(class133 arg0) {
+	public void method17373(Renderer arg0) {
 	}
 
 	@ObfuscatedName("ajk.fa(Ldh;IIB)Z")
-	public boolean method17375(class133 arg0, int arg1, int arg2) {
+	public boolean method17375(Renderer arg0, int arg1, int arg2) {
 		class416 var4 = ((class598) this.field11159.get(this.field11715)).field7468;
 		if (var4 != null) {
 			return arg0.method2191(arg1, arg2, this.method10533(), var4);
@@ -197,7 +197,7 @@ public class class949 extends class1197 implements class514 {
 	}
 
 	@ObfuscatedName("ajk.l(Ldh;B)V")
-	public void method8217(class133 arg0) {
+	public void method8217(Renderer arg0) {
 		Object var2 = null;
 		class1175 var4;
 		if (this.field11154 == null && this.field11158) {
@@ -214,7 +214,7 @@ public class class949 extends class1197 implements class514 {
 	}
 
 	@ObfuscatedName("ajk.u(Ldh;B)V")
-	public void method8209(class133 arg0) {
+	public void method8209(Renderer arg0) {
 		Object var2 = null;
 		class1175 var4;
 		if (this.field11154 == null && this.field11158) {

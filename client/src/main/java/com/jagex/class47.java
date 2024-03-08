@@ -193,7 +193,7 @@ public class class47 {
 	}
 
 	@ObfuscatedName("ky.r(Ldh;I)V")
-	public static void method5378(class133 arg0) {
+	public static void method5378(Renderer arg0) {
 		if (class586.method5076() && class586.method8634()) {
 			class586.method5389(0, 0, Statics.field6586, 350);
 		}

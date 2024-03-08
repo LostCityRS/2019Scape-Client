@@ -363,7 +363,7 @@ public class class228 implements ConfigType {
 	}
 
 	@ObfuscatedName("hs.p(Ldh;ZI)Lcm;")
-	public class101 method4025(class133 arg0, boolean arg1) {
+	public class101 method4025(Renderer arg0, boolean arg1) {
 		int var3 = arg1 ? this.field2403 : this.field2400;
 		int var4 = var3 | arg0.field1595 << 29;
 		class101 var5 = (class101) this.field2368.field2414.method2930((long) var4);
@@ -382,7 +382,7 @@ public class class228 implements ConfigType {
 	}
 
 	@ObfuscatedName("hs.d(Ldh;B)Lcm;")
-	public class101 method4026(class133 arg0) {
+	public class101 method4026(Renderer arg0) {
 		int var2 = this.field2384 | arg0.field1595 << 29;
 		class101 var3 = (class101) this.field2368.field2414.method2930((long) var2);
 		if (var3 != null) {
@@ -400,7 +400,7 @@ public class class228 implements ConfigType {
 	}
 
 	@ObfuscatedName("hs.c(Ldh;I)Lcm;")
-	public class101 method4027(class133 arg0) {
+	public class101 method4027(Renderer arg0) {
 		class101 var2 = (class101) this.field2368.field2414.method2930((long) (this.field2383 | 0x20000 | arg0.field1595 << 29));
 		if (var2 != null) {
 			return var2;

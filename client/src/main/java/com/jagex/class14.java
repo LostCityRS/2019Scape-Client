@@ -39,7 +39,7 @@ public class class14 {
 	}
 
 	@ObfuscatedName("qx.k(Ldh;I)V")
-	public static void method7114(class133 arg0) {
+	public static void method7114(Renderer arg0) {
 		Statics.field8321 = (class140) Statics.field7538.method6188(client.field10833, Statics.field506, true, true);
 		Statics.field6778 = Statics.field7538.method6163(client.field10833, Statics.field506);
 		Statics.field9184 = (class140) Statics.field7538.method6188(client.field10833, Statics.field505, true, true);
@@ -85,7 +85,7 @@ public class class14 {
 	}
 
 	@ObfuscatedName("kh.l(Ldh;Lpy;I)V")
-	public static void method5202(class133 arg0, class442 arg1) {
+	public static void method5202(Renderer arg0, class442 arg1) {
 		class136[] var2 = class111.method1608(arg1, Statics.field507, 0);
 		Statics.field8323 = new class101[var2.length];
 		for (int var3 = 0; var3 < var2.length; var3++) {

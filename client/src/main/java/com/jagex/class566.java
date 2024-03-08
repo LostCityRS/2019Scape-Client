@@ -88,7 +88,7 @@ public class class566 implements ConfigType {
 	}
 
 	@ObfuscatedName("uk.z(Ldh;IB)Lcm;")
-	public class101 method9150(class133 arg0, int arg1) {
+	public class101 method9150(Renderer arg0, int arg1) {
 		if (arg1 < 0) {
 			return null;
 		}
@@ -101,7 +101,7 @@ public class class566 implements ConfigType {
 	}
 
 	@ObfuscatedName("uk.p(Ldh;II)V")
-	public void method9151(class133 arg0, int arg1) {
+	public void method9151(Renderer arg0, int arg1) {
 		class442 var3 = this.field7226.field7229;
 		if (arg1 >= 0 && this.field7226.field7230.method2930((long) arg1) == null && var3.method6889(arg1)) {
 			class136 var4 = class111.method1607(var3, arg1);
@@ -110,7 +110,7 @@ public class class566 implements ConfigType {
 	}
 
 	@ObfuscatedName("uk.d(Ldh;I)V")
-	public void method9152(class133 arg0) {
+	public void method9152(Renderer arg0) {
 		this.method9151(arg0, this.field7217);
 		this.method9151(arg0, this.field7215);
 		this.method9151(arg0, this.field7224);

@@ -2045,7 +2045,7 @@ public final class client extends GameShell {
 	@ObfuscatedName("gm.ew(ILjava/lang/String;ZI)V")
 	public static void method3596(int arg0, String arg1, boolean arg2) {
 		if (arg0 == 0) {
-			Statics.field8198 = class133.method14575(0, Statics.field10578, Statics.field7366, Statics.field7669, Statics.field9211, Statics.field7282, Statics.field2013, Statics.field2900, Statics.field688.field11516.method18639() * 2);
+			Statics.field8198 = Renderer.method14575(0, Statics.field10578, Statics.field7366, Statics.field7669, Statics.field9211, Statics.field7282, Statics.field2013, Statics.field2900, Statics.field688.field11516.method18639() * 2);
 			if (arg1 != null) {
 				Statics.field8198.method2475(1, 0);
 				class733 var3 = class733.method6068(Statics.field7672, Statics.field505, 0, Statics.field7538);
@@ -2055,9 +2055,9 @@ public final class client extends GameShell {
 			}
 		} else {
 			label245: {
-				class133 var5 = null;
+				Renderer var5 = null;
 				if (arg1 != null) {
-					var5 = class133.method14575(0, Statics.field10578, Statics.field7366, Statics.field7669, Statics.field9211, Statics.field7282, Statics.field2013, Statics.field2900, 0);
+					var5 = Renderer.method14575(0, Statics.field10578, Statics.field7366, Statics.field7669, Statics.field9211, Statics.field7282, Statics.field2013, Statics.field2900, 0);
 					var5.method2475(1, 0);
 					class733 var6 = class733.method1593(Statics.field7672, Statics.field505, 0);
 					class140 var7 = var5.method2207(var6, class111.method1609(Statics.field10317, Statics.field505, 0), true);
@@ -2073,7 +2073,7 @@ public final class client extends GameShell {
 					try {
 						method7239();
 						System.gc();
-						Statics.field8198 = class133.method14575(arg0, Statics.field10578, Statics.field7366, Statics.field7669, Statics.field9211, Statics.field7282, Statics.field2013, Statics.field2900, Statics.field688.field11516.method18639() * 2);
+						Statics.field8198 = Renderer.method14575(arg0, Statics.field10578, Statics.field7366, Statics.field7669, Statics.field9211, Statics.field7282, Statics.field2013, Statics.field2900, Statics.field688.field11516.method18639() * 2);
 						Statics.field7538 = new class402(Statics.field8198, Statics.field10317, Statics.field7672, class14.method845());
 						if (Statics.field8198.method2194()) {
 							boolean var9 = true;

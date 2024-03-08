@@ -40,7 +40,7 @@ public class class938 extends class454 {
 	}
 
 	@ObfuscatedName("aih.ce(Ldh;Lalw;IIB)V")
-	public final void method16872(class133 arg0, Packet arg1, int arg2, int arg3) {
+	public final void method16872(Renderer arg0, Packet arg1, int arg2, int arg3) {
 		if (this.field4549) {
 			return;
 		}
@@ -226,7 +226,7 @@ public class class938 extends class454 {
 	}
 
 	@ObfuscatedName("aih.cu(Ldh;Lalw;IIIIIIIB)V")
-	public final void method16875(class133 arg0, Packet arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8) {
+	public final void method16875(Renderer arg0, Packet arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8) {
 		if (this.field4549) {
 			return;
 		}
@@ -449,7 +449,7 @@ public class class938 extends class454 {
 	}
 
 	@ObfuscatedName("aih.cv(Ldh;[BIII)V")
-	public final void method16888(class133 arg0, byte[] arg1, int arg2, int arg3) {
+	public final void method16888(Renderer arg0, byte[] arg1, int arg2, int arg3) {
 		Packet var5 = new Packet(arg1);
 		int var6 = -1;
 		label63: while (true) {
@@ -505,7 +505,7 @@ public class class938 extends class454 {
 	}
 
 	@ObfuscatedName("aih.cp(Ldh;[BIIIIIIII)V")
-	public final void method16868(class133 arg0, byte[] arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8) {
+	public final void method16868(Renderer arg0, byte[] arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8) {
 		Packet var10 = new Packet(arg1);
 		int var11 = -1;
 		label88: while (true) {
@@ -573,7 +573,7 @@ public class class938 extends class454 {
 	}
 
 	@ObfuscatedName("aih.ca(Ldh;IIIIIIIIILoe;I)V")
-	public final void method16867(class133 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, class420 arg10) {
+	public final void method16867(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, class420 arg10) {
 		if (arg2 < this.field10756) {
 			this.field10756 = arg2;
 		}
@@ -688,7 +688,7 @@ public class class938 extends class454 {
 	}
 
 	@ObfuscatedName("aih.cx(Ldh;IIZLvd;IIIIIIIIIZLcb;IILoe;I)Z")
-	public boolean method16869(class133 arg0, int arg1, int arg2, boolean arg3, class598 arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, int arg12, int arg13, boolean arg14, class104 arg15, int arg16, int arg17, class420 arg18) {
+	public boolean method16869(Renderer arg0, int arg1, int arg2, boolean arg3, class598 arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, int arg12, int arg13, boolean arg14, class104 arg15, int arg16, int arg17, class420 arg18) {
 		if (class601.field7554.field7562 == arg1) {
 			int var20 = arg4.field7474;
 			if (field10754 && arg4.field7474 == -1) {
@@ -860,7 +860,7 @@ public class class938 extends class454 {
 	}
 
 	@ObfuscatedName("aih.cw(Ldh;IIZLvd;IIIIIIIIILoe;B)Z")
-	public boolean method16870(class133 arg0, int arg1, int arg2, boolean arg3, class598 arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, int arg12, int arg13, class420 arg14) {
+	public boolean method16870(Renderer arg0, int arg1, int arg2, boolean arg3, class598 arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, int arg12, int arg13, class420 arg14) {
 		if (class601.field7548.field7562 == arg1) {
 			class1197 var17;
 			if (arg3) {
@@ -958,7 +958,7 @@ public class class938 extends class454 {
 	}
 
 	@ObfuscatedName("aih.ct(Ldh;IIIIB)V")
-	public void method16871(class133 arg0, int arg1, int arg2, int arg3, int arg4) {
+	public void method16871(Renderer arg0, int arg1, int arg2, int arg3, int arg4) {
 		class514 var6 = this.method16899(arg1, arg2, arg3, arg4);
 		if (var6 == null) {
 			return;
@@ -1022,7 +1022,7 @@ public class class938 extends class454 {
 	}
 
 	@ObfuscatedName("aih.co(Ldh;ZB)V")
-	public final void method16877(class133 arg0, boolean arg1) {
+	public final void method16877(Renderer arg0, boolean arg1) {
 		this.field4577.method8740();
 		if (!arg1) {
 			if (this.field4544 > 1) {

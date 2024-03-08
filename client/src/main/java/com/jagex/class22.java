@@ -552,7 +552,7 @@ public class class22 {
 	}
 
 	@ObfuscatedName("nt.b(Ldh;I)V")
-	public static void method6036(class133 arg0) {
+	public static void method6036(Renderer arg0) {
 		if (field553 != null) {
 			arg0.method2220(field553);
 			arg0.method2217(field572);
@@ -562,7 +562,7 @@ public class class22 {
 	}
 
 	@ObfuscatedName("ja.h(Ldh;IIB)V")
-	public static void method5015(class133 arg0, int arg1, int arg2) {
+	public static void method5015(Renderer arg0, int arg1, int arg2) {
 		if (arg1 < 0 || arg2 < 0 || field553 == null) {
 			return;
 		}
@@ -926,7 +926,7 @@ public class class22 {
 	}
 
 	@ObfuscatedName("qm.ae(Ldh;I)V")
-	public static void method7316(class133 arg0) {
+	public static void method7316(Renderer arg0) {
 		if (field562) {
 			method5200(arg0);
 		} else {
@@ -1204,7 +1204,7 @@ public class class22 {
 	}
 
 	@ObfuscatedName("kh.ao(Ldh;I)V")
-	public static void method5200(class133 arg0) {
+	public static void method5200(Renderer arg0) {
 		if (field564) {
 			method17807(arg0);
 		} else {
@@ -1213,7 +1213,7 @@ public class class22 {
 	}
 
 	@ObfuscatedName("vf.aj(Ldh;I)V")
-	public static void method9594(class133 arg0) {
+	public static void method9594(Renderer arg0) {
 		if (field546 < 2 && !client.field10973 || client.field10989 != null) {
 			return;
 		}
@@ -1248,7 +1248,7 @@ public class class22 {
 	}
 
 	@ObfuscatedName("hp.ay(Ldh;IIIIIII)V")
-	public static void method4064(class133 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
+	public static void method4064(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
 		arg0.method2301(arg1, arg2, arg3, arg4, arg5);
 		arg0.method2301(arg1 + 1, arg2 + 1, arg3 - 2, 16, arg6);
 		arg0.method2173(arg1 + 1, arg2 + 18, arg3 - 2, arg4 - 19, arg6);
@@ -1302,7 +1302,7 @@ public class class22 {
 	}
 
 	@ObfuscatedName("k.af(Ldh;I)V")
-	public static void method213(class133 arg0) {
+	public static void method213(Renderer arg0) {
 		int var1 = -10660793;
 		method4064(arg0, Statics.field11738, Statics.field2960, Statics.field1289, Statics.field2576, var1, -16777216);
 		Statics.field10355.method2681(class776.field9035.method15021(Statics.field1680), Statics.field11738 + 3, Statics.field2960 + 14, var1, -1);
@@ -1341,7 +1341,7 @@ public class class22 {
 	}
 
 	@ObfuscatedName("gl.ak(Ldh;IIIIILeu;Laac;Ljava/lang/String;I)V")
-	public static void method3469(class133 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, class140 arg6, class733 arg7, String arg8) {
+	public static void method3469(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, class140 arg6, class733 arg7, String arg8) {
 		int var9 = 255 - Statics.field4488 - field567;
 		if (var9 < 0) {
 			var9 = 0;
@@ -1370,7 +1370,7 @@ public class class22 {
 	}
 
 	@ObfuscatedName("tm.an(Ldh;IIIIII)V")
-	public static void method8462(class133 arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+	public static void method8462(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		if ((Statics.field1224 == null || Statics.field10568 == null || Statics.field11699 == null) && Statics.field10317.method6889(Statics.field11642) && Statics.field10317.method6889(Statics.field1748) && Statics.field10317.method6889(Statics.field1847)) {
 			class136 var6 = class111.method1609(Statics.field10317, Statics.field1748, 0);
 			Statics.field10568 = arg0.method2200(var6, true);
@@ -1399,7 +1399,7 @@ public class class22 {
 	}
 
 	@ObfuscatedName("aky.bf(Ldh;I)V")
-	public static void method17807(class133 arg0) {
+	public static void method17807(Renderer arg0) {
 		int var1 = Statics.field11738;
 		int var2 = Statics.field2960;
 		int var3 = Statics.field1289;

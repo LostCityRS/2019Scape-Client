@@ -162,7 +162,7 @@ public abstract class class1200 extends class1019 {
 	}
 
 	@ObfuscatedName("ash.ga(Ldh;S)Z")
-	public boolean method18360(class133 arg0) {
+	public boolean method18360(Renderer arg0) {
 		return this.field11716.field6930.method8930(this.field11714, this.field12471, this.field12472, this.field12468, this.field12467, this.method17371(arg0));
 	}
 

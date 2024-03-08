@@ -615,7 +615,7 @@ public class class738 implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.v(Ldh;IILxg;Laaq;IIIII)Ldo;")
-	public final class116 method14644(class133 arg0, int arg1, int arg2, class639 arg3, class721 arg4, int arg5, int arg6, int arg7, int arg8) {
+	public final class116 method14644(Renderer arg0, int arg1, int arg2, class639 arg3, class721 arg4, int arg5, int arg6, int arg7, int arg8) {
 		if (this.field8629 != null && arg2 > 1) {
 			int var10 = -1;
 			for (int var11 = 0; var11 < 10; var11++) {
@@ -742,7 +742,7 @@ public class class738 implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.s(Ldh;Ldh;IIIZILeu;Lxg;Lws;B)[I")
-	public int[] method14646(class133 arg0, class133 arg1, int arg2, int arg3, int arg4, boolean arg5, int arg6, class140 arg7, class639 arg8, class629 arg9) {
+	public int[] method14646(Renderer arg0, Renderer arg1, int arg2, int arg3, int arg4, boolean arg5, int arg6, class140 arg7, class639 arg8, class629 arg9) {
 		class120 var11 = class120.method1931(this.field8621.field8614, this.field8655, 0);
 		if (var11 == null) {
 			return null;

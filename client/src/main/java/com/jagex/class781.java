@@ -50,7 +50,7 @@ public class class781 implements ConfigType {
 	}
 
 	@ObfuscatedName("aco.z(Ldh;IZI)Lcm;")
-	public class101 method15057(class133 arg0, int arg1, boolean arg2) {
+	public class101 method15057(Renderer arg0, int arg1, boolean arg2) {
 		long var4 = (long) (this.field9151 | arg1 << 16 | (arg2 ? 262144 : 0) | arg0.field1595 << 19);
 		class101 var6 = (class101) this.field9153.field9156.method2930(var4);
 		if (var6 == null) {
@@ -62,7 +62,7 @@ public class class781 implements ConfigType {
 	}
 
 	@ObfuscatedName("aco.p(Ldh;IZB)[I")
-	public int[] method15058(class133 arg0, int arg1, boolean arg2) {
+	public int[] method15058(Renderer arg0, int arg1, boolean arg2) {
 		if (this.field9150 == null) {
 			long var4 = (long) (this.field9151 | arg1 << 16 | (arg2 ? 262144 : 0) | arg0.field1595 << 19);
 			this.method15059(arg0, arg1, arg2, var4);
@@ -73,7 +73,7 @@ public class class781 implements ConfigType {
 	}
 
 	@ObfuscatedName("aco.d(Ldh;IZJ)V")
-	public void method15059(class133 arg0, int arg1, boolean arg2, long arg3) {
+	public void method15059(Renderer arg0, int arg1, boolean arg2, long arg3) {
 		if (!this.field9153.field9157.method6889(this.field9151)) {
 			return;
 		}

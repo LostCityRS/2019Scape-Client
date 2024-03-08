@@ -63,7 +63,7 @@ public class class632 {
 	@ObfuscatedName("xm.x")
 	public boolean field7773 = false;
 
-	public class632(class133 arg0, class128 arg1, ParticleSystem arg2, long arg3) {
+	public class632(Renderer arg0, class128 arg1, ParticleSystem arg2, long arg3) {
 		this.field7788 = arg1;
 		this.field7785 = arg2;
 		this.field7774 = arg3;
@@ -113,7 +113,7 @@ public class class632 {
 	}
 
 	@ObfuscatedName("xm.n(Ldh;JIZI)V")
-	public void method9897(class133 arg0, long arg1, int arg2, boolean arg3) {
+	public void method9897(Renderer arg0, long arg1, int arg2, boolean arg3) {
 		if (this.field7778) {
 			arg3 = false;
 		} else if (class633.field7802 < this.field7772.field3504) {
@@ -286,7 +286,7 @@ public class class632 {
 	}
 
 	@ObfuscatedName("xm.m(Ltx;Ldh;J)V")
-	public void method9898(class550 arg0, class133 arg1, long arg2) {
+	public void method9898(class550 arg0, Renderer arg1, long arg2) {
 		for (MovingParticle var5 = (MovingParticle) this.field7775.method14254(); var5 != null; var5 = (MovingParticle) this.field7775.method14241()) {
 			var5.method19668(arg0, arg1, arg2);
 		}

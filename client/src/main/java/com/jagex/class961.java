@@ -205,7 +205,7 @@ public class class961 extends class532 {
 	}
 
 	@ObfuscatedName("ajo.v(Ldh;ILaaq;IZLxg;I)Ldo;")
-	public final class116 method17475(class133 arg0, int arg1, class721 arg2, int arg3, boolean arg4, class639 arg5) {
+	public final class116 method17475(Renderer arg0, int arg1, class721 arg2, int arg3, boolean arg4, class639 arg5) {
 		class116 var7 = null;
 		int var8 = arg1;
 		class584 var9 = null;

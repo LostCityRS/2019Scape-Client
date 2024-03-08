@@ -132,12 +132,12 @@ public class class503 {
 	}
 
 	@ObfuscatedName("sw.m(Ldh;Lsw;)Z")
-	public boolean method7980(class133 arg0, class503 arg1) {
+	public boolean method7980(Renderer arg0, class503 arg1) {
 		return this.field5128 != null || this.method7999(arg0, arg1);
 	}
 
 	@ObfuscatedName("sw.k(Ldh;IIIIIIIIII)V")
-	public void method7981(class133 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10) {
+	public void method7981(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10) {
 		if (this.field5128 == null) {
 			return;
 		}
@@ -162,7 +162,7 @@ public class class503 {
 	}
 
 	@ObfuscatedName("sw.f(Ldh;Lsw;)Z")
-	public boolean method7999(class133 arg0, class503 arg1) {
+	public boolean method7999(Renderer arg0, class503 arg1) {
 		if (this.field5128 == null) {
 			if (this.field5112 == 0) {
 				if (Statics.field2421.method1977(class605.field7586, this.field5135, -1, class602.field7569, 0.7F, this.field5123, this.field5123, false)) {
@@ -179,7 +179,7 @@ public class class503 {
 	}
 
 	@ObfuscatedName("sw.w(Ldh;Lsw;)V")
-	public void method7983(class133 arg0, class503 arg1) {
+	public void method7983(Renderer arg0, class503 arg1) {
 		class120 var3 = class120.method1931(Statics.field1810, this.field5135, 0);
 		if (var3 == null) {
 			return;
@@ -242,7 +242,7 @@ public class class503 {
 	}
 
 	@ObfuscatedName("sw.l(Ldh;Lsw;)V")
-	public void method7985(class133 arg0, class503 arg1) {
+	public void method7985(Renderer arg0, class503 arg1) {
 		method7992(arg0);
 		method7986(arg0);
 		arg0.method2171(field5138);
@@ -306,7 +306,7 @@ public class class503 {
 	}
 
 	@ObfuscatedName("sw.u(Ldh;)V")
-	public static void method7992(class133 arg0) {
+	public static void method7992(Renderer arg0) {
 		if (Statics.field5129 != null) {
 			return;
 		}
@@ -348,7 +348,7 @@ public class class503 {
 	}
 
 	@ObfuscatedName("sw.z(Ldh;)V")
-	public static void method7986(class133 arg0) {
+	public static void method7986(Renderer arg0) {
 		if (Statics.field5137 != null) {
 			return;
 		}

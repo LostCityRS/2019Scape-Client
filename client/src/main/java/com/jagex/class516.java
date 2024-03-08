@@ -66,7 +66,7 @@ public class class516 {
 	@ObfuscatedName("sp.b")
 	public class597 field6678;
 
-	public class516(class133 arg0, class1090 arg1, class598 arg2, int arg3, int arg4, int arg5, class1019 arg6, boolean arg7, int arg8, int arg9) {
+	public class516(Renderer arg0, class1090 arg1, class598 arg2, int arg3, int arg4, int arg5, class1019 arg6, boolean arg7, int arg8, int arg9) {
 		this.field6681 = arg1;
 		this.field6665 = arg2.field7450;
 		this.field6666 = arg3;
@@ -114,7 +114,7 @@ public class class516 {
 	}
 
 	@ObfuscatedName("sp.w(Ldh;IZZI)Ldo;")
-	public final class116 method8238(class133 arg0, int arg1, boolean arg2, boolean arg3) {
+	public final class116 method8238(Renderer arg0, int arg1, boolean arg2, boolean arg3) {
 		class598 var5 = (class598) this.field6681.get(this.field6665);
 		if (var5.field7505 != null) {
 			var5 = var5.method9477(Statics.field7410, client.field10863 == 0 ? class153.field1723 : Statics.field7410);
@@ -202,7 +202,7 @@ public class class516 {
 	}
 
 	@ObfuscatedName("sp.l(Ldh;Ldo;Lou;IIIIZB)V")
-	public void method8239(class133 arg0, class116 arg1, class419 arg2, int arg3, int arg4, int arg5, int arg6, boolean arg7) {
+	public void method8239(Renderer arg0, class116 arg1, class419 arg2, int arg3, int arg4, int arg5, int arg6, boolean arg7) {
 		class128[] var9 = arg1.method1750();
 		class102[] var10 = arg1.method1765();
 		if ((this.field6680 == null || this.field6680.field7804) && (var9 != null || var10 != null)) {
@@ -232,12 +232,12 @@ public class class516 {
 	}
 
 	@ObfuscatedName("sp.z(Ldh;I)V")
-	public void method8241(class133 arg0) {
+	public void method8241(Renderer arg0) {
 		this.method8238(arg0, 262144, true, true);
 	}
 
 	@ObfuscatedName("sp.p(Ldh;B)V")
-	public void method8242(class133 arg0) {
+	public void method8242(Renderer arg0) {
 		if (this.field6677 != null) {
 			Vector3 var2 = this.field6672.method10536().field4298;
 			client.field10855.method7743().method8814(this.field6677, this.field6663, (int) var2.field4308, (int) var2.field4313, this.field6679);

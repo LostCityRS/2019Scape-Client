@@ -27,12 +27,12 @@ public class class402 implements class731 {
 	public WeightedCache field4205;
 
 	@ObfuscatedName("oi.l")
-	public class133 field4206 = null;
+	public Renderer field4206 = null;
 
 	@ObfuscatedName("oi.u")
 	public Map field4207 = null;
 
-	public class402(class133 arg0, class442 arg1, class442 arg2, int[] arg3) {
+	public class402(Renderer arg0, class442 arg1, class442 arg2, int[] arg3) {
 		this.field4206 = arg0;
 		this.field4200 = arg1;
 		this.field4201 = arg2;
@@ -181,7 +181,7 @@ public class class402 implements class731 {
 	}
 
 	@ObfuscatedName("oi.c(Ldh;II)[Lcm;")
-	public class101[] method6185(class133 arg0, int arg1) {
+	public class101[] method6185(Renderer arg0, int arg1) {
 		if (this.field4205 == null) {
 			return null;
 		}

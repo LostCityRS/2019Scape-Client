@@ -438,7 +438,7 @@ public abstract class class892 extends class1200 implements class273 {
 	}
 
 	@ObfuscatedName("ahm.b(Ldh;[Ldo;Lou;ZI)V")
-	public void method16576(class133 arg0, class116[] arg1, class419 arg2, boolean arg3) {
+	public void method16576(Renderer arg0, class116[] arg1, class419 arg2, boolean arg3) {
 		if (!arg3) {
 			int var5 = 0;
 			int var6 = 0;
@@ -730,7 +730,7 @@ public abstract class class892 extends class1200 implements class273 {
 	}
 
 	@ObfuscatedName("ahm.bg(Ldh;Lvr;IIIII)V")
-	public void method16506(class133 arg0, class584 arg1, int arg2, int arg3, int arg4, int arg5) {
+	public void method16506(Renderer arg0, class584 arg1, int arg2, int arg3, int arg4, int arg5) {
 		for (int var7 = 0; var7 < this.field10422.length; var7++) {
 			byte var8 = 0;
 			if (var7 == 0) {

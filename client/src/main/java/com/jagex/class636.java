@@ -13,7 +13,7 @@ public class class636 {
 	public static int field7835 = 5047;
 
 	@ObfuscatedName("xu.f")
-	public final class133 field7833;
+	public final Renderer field7833;
 
 	@ObfuscatedName("xu.w")
 	public final class637[][] field7836;
@@ -90,7 +90,7 @@ public class class636 {
 	@ObfuscatedName("xu.al")
 	public float field7860;
 
-	public class636(class133 arg0, class442 arg1, int arg2, int arg3) {
+	public class636(Renderer arg0, class442 arg1, int arg2, int arg3) {
 		this.field7833 = arg0;
 		this.field7845 = arg1;
 		this.field7836 = new class637[arg2][arg3];

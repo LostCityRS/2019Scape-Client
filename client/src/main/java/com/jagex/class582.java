@@ -198,7 +198,7 @@ public class class582 implements ConfigType {
 	}
 
 	@ObfuscatedName("vb.d(Ldh;I)Lcm;")
-	public class101 method9258(class133 arg0) {
+	public class101 method9258(Renderer arg0) {
 		if (this.field7295 < 0) {
 			return null;
 		}
@@ -211,7 +211,7 @@ public class class582 implements ConfigType {
 	}
 
 	@ObfuscatedName("vb.c(Ldh;I)Lcm;")
-	public class101 method9253(class133 arg0) {
+	public class101 method9253(Renderer arg0) {
 		if (this.field7299 < 0) {
 			return null;
 		}
@@ -224,7 +224,7 @@ public class class582 implements ConfigType {
 	}
 
 	@ObfuscatedName("vb.r(Ldh;I)Lcm;")
-	public class101 method9254(class133 arg0) {
+	public class101 method9254(Renderer arg0) {
 		if (this.field7300 < 0) {
 			return null;
 		}
@@ -237,7 +237,7 @@ public class class582 implements ConfigType {
 	}
 
 	@ObfuscatedName("vb.v(Ldh;B)Lcm;")
-	public class101 method9255(class133 arg0) {
+	public class101 method9255(Renderer arg0) {
 		if (this.field7301 < 0) {
 			return null;
 		}
@@ -250,7 +250,7 @@ public class class582 implements ConfigType {
 	}
 
 	@ObfuscatedName("vb.o(Ldh;I)V")
-	public void method9256(class133 arg0) {
+	public void method9256(Renderer arg0) {
 		class442 var2 = this.field7307.field7315;
 		if (this.field7295 >= 0 && this.field7307.field7316.method2930((long) this.field7295) == null && var2.method6889(this.field7295)) {
 			class136 var3 = class111.method1607(var2, this.field7295);

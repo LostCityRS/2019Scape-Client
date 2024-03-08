@@ -10,12 +10,12 @@ public class class1095 extends class758 {
 	}
 
 	@ObfuscatedName("aon.al(Ldh;IIIIILxg;I)Lcm;")
-	public class101 method18900(class133 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, class639 arg6) {
+	public class101 method18900(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, class639 arg6) {
 		return ((class737) this.field8796).method14616(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@ObfuscatedName("aon.ac(Ldh;Ldh;IIIIZZILeu;Lxg;Lws;S)Lcm;")
-	public class101 method18905(class133 arg0, class133 arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6, boolean arg7, int arg8, class140 arg9, class639 arg10, class629 arg11) {
+	public class101 method18905(Renderer arg0, Renderer arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6, boolean arg7, int arg8, class140 arg9, class639 arg10, class629 arg11) {
 		return ((class737) this.field8796).method14617(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, this);
 	}
 

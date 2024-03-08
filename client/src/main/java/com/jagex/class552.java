@@ -35,7 +35,7 @@ public class class552 {
 	}
 
 	@ObfuscatedName("tl.k(Ldh;III)Z")
-	public boolean method8889(class133 arg0, int arg1, int arg2) {
+	public boolean method8889(Renderer arg0, int arg1, int arg2) {
 		int var4 = this.field6978.method18371();
 		if (this.field6978.field11713 != null) {
 			for (int var5 = 0; var5 < this.field6978.field11713.length; var5++) {

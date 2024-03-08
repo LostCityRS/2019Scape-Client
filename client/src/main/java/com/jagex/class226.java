@@ -979,7 +979,7 @@ public class class226 {
 	}
 
 	@ObfuscatedName("hf.c(Ldh;B)Lcm;")
-	public class101 method3941(class133 arg0) {
+	public class101 method3941(Renderer arg0) {
 		field2338 = false;
 		long var2 = ((long) this.field2219 << 40) + ((long) this.field2218 << 36) + (long) this.field2215 + ((this.field2222 ? 1L : 0L) << 35) + ((this.field2220 ? 1L : 0L) << 38) + ((this.field2213 ? 1L : 0L) << 39);
 		class101 var4 = (class101) field2175.method2930(var2);
@@ -1031,7 +1031,7 @@ public class class226 {
 	}
 
 	@ObfuscatedName("hf.o(Ldh;ILaof;Laov;Laod;Laon;Laos;Lem;Lep;Laaq;Lxg;I)Ldo;")
-	public class116 method3944(class133 arg0, int arg1, class1089 arg2, class1084 arg3, class1082 arg4, class1095 arg5, class1080 arg6, class151 arg7, class147 arg8, class721 arg9, class639 arg10) {
+	public class116 method3944(Renderer arg0, int arg1, class1089 arg2, class1084 arg3, class1082 arg4, class1095 arg5, class1080 arg6, class151 arg7, class147 arg8, class721 arg9, class639 arg10) {
 		field2338 = false;
 		if (this.field2224 == 0) {
 			return null;
@@ -1150,7 +1150,7 @@ public class class226 {
 	}
 
 	@ObfuscatedName("hf.s(Ldh;Ldo;Lou;IB)V")
-	public void method3951(class133 arg0, class116 arg1, class419 arg2, int arg3) {
+	public void method3951(Renderer arg0, class116 arg1, class419 arg2, int arg3) {
 		arg1.method1689(arg2);
 		class128[] var5 = arg1.method1750();
 		class102[] var6 = arg1.method1765();
@@ -1298,7 +1298,7 @@ public class class226 {
 	}
 
 	@ObfuscatedName("hf.t(Ldh;B)Lhx;")
-	public class224 method3970(class133 arg0) {
+	public class224 method3970(Renderer arg0) {
 		long var2 = (long) this.field2158 << 32 | (long) this.field2183 & 0xFFFFFFFFL;
 		class224 var4 = (class224) field2176.method2930(var2);
 		if (var4 != null) {

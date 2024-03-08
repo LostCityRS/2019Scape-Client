@@ -153,22 +153,22 @@ public class class680 implements ConfigType {
 	}
 
 	@ObfuscatedName("yy.z(Ldh;ILaaq;BI)Ldo;")
-	public final class116 method13817(class133 arg0, int arg1, class721 arg2, byte arg3) {
+	public final class116 method13817(Renderer arg0, int arg1, class721 arg2, byte arg3) {
 		return this.method13798(arg0, arg1, false, null, null, 0, 0, 0, 0, 0, 0, 0, arg2, arg3);
 	}
 
 	@ObfuscatedName("yy.p(Ldh;IIIIILaaq;BI)Ldo;")
-	public final class116 method13800(class133 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, class721 arg6, byte arg7) {
+	public final class116 method13800(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, class721 arg6, byte arg7) {
 		return this.field8262 == 3 ? this.method13798(arg0, arg1, true, null, null, 0, 0, 0, arg2, arg3, arg4, arg5, arg6, arg7) : this.method13798(arg0, arg1, false, null, null, 0, 0, 0, arg2, 0, 0, 0, arg6, arg7);
 	}
 
 	@ObfuscatedName("yy.d(Ldh;IILcb;Lcb;IIILaaq;BB)Ldo;")
-	public final class116 method13802(class133 arg0, int arg1, int arg2, class104 arg3, class104 arg4, int arg5, int arg6, int arg7, class721 arg8, byte arg9) {
+	public final class116 method13802(Renderer arg0, int arg1, int arg2, class104 arg3, class104 arg4, int arg5, int arg6, int arg7, class721 arg8, byte arg9) {
 		return this.method13798(arg0, arg1, true, arg3, arg4, arg5, arg6, arg7, arg2, 0, 0, 0, arg8, arg9);
 	}
 
 	@ObfuscatedName("yy.c(Ldh;IZLcb;Lcb;IIIIIIILaaq;BI)Ldo;")
-	public final class116 method13798(class133 arg0, int arg1, boolean arg2, class104 arg3, class104 arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, class721 arg12, byte arg13) {
+	public final class116 method13798(Renderer arg0, int arg1, boolean arg2, class104 arg3, class104 arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, class721 arg12, byte arg13) {
 		int var15 = arg1;
 		boolean var16 = arg2 & this.field8262 != 0;
 		if (arg12 != null) {

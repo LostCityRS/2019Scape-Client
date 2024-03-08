@@ -105,7 +105,7 @@ public class class1004 extends WorldMap {
 	}
 
 	@ObfuscatedName("uu.du(Ldh;Ldf;I)V")
-	public static final void method9231(class133 arg0, class125 arg1) {
+	public static final void method9231(Renderer arg0, class125 arg1) {
 		if (field11651 == 100 || Statics.field6811 == null) {
 			return;
 		}
@@ -336,7 +336,7 @@ public class class1004 extends WorldMap {
 	}
 
 	@ObfuscatedName("pf.dh(Ldh;IIIIS)V")
-	public static void method7008(class133 arg0, int arg1, int arg2, int arg3, int arg4) {
+	public static void method7008(Renderer arg0, int arg1, int arg2, int arg3, int arg4) {
 		arg0.method2168(arg1, arg2, arg1 + arg3, arg2 + arg4);
 		if (field11651 < 100) {
 			byte var5 = 20;
@@ -379,7 +379,7 @@ public class class1004 extends WorldMap {
 	}
 
 	@ObfuscatedName("aq.dx(Ldh;Laat;IIB)V")
-	public static void method928(class133 arg0, IterableQueue arg1, int arg2, int arg3) {
+	public static void method928(Renderer arg0, IterableQueue arg1, int arg2, int arg3) {
 		Statics.field11253.method14152();
 		if (field11658) {
 			return;
@@ -396,7 +396,7 @@ public class class1004 extends WorldMap {
 	}
 
 	@ObfuscatedName("gt.de(Ldh;Laks;Lhs;IIB)Z")
-	public static boolean method3589(class133 arg0, class990 arg1, class228 arg2, int arg3, int arg4) {
+	public static boolean method3589(Renderer arg0, class990 arg1, class228 arg2, int arg3, int arg4) {
 		if (field6819 && !client.field10948 && !method8534(arg1.field11448, arg1.field11452)) {
 			return false;
 		}
@@ -625,7 +625,7 @@ public class class1004 extends WorldMap {
 	}
 
 	@ObfuscatedName("acc.dj(Ldh;Laks;Lhs;I)V")
-	public static void method14999(class133 arg0, class990 arg1, class228 arg2) {
+	public static void method14999(Renderer arg0, class990 arg1, class228 arg2) {
 		class101 var3 = arg2.method4027(arg0);
 		if (var3 == null) {
 			return;
@@ -694,7 +694,7 @@ public class class1004 extends WorldMap {
 	}
 
 	@ObfuscatedName("hj.ey(Ldh;Laks;Lhs;IIIII)V")
-	public static void method4287(class133 arg0, class990 arg1, class228 arg2, int arg3, int arg4, int arg5, int arg6) {
+	public static void method4287(Renderer arg0, class990 arg1, class228 arg2, int arg3, int arg4, int arg5, int arg6) {
 		int var7 = arg3 - 5;
 		int var8 = arg4 + 2;
 		if (arg2.field2377 != 0) {

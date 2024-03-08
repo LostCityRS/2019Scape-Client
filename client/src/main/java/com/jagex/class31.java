@@ -14,7 +14,7 @@ public class class31 {
 	}
 
 	@ObfuscatedName("jp.e(Ldh;IIIIILdo;IIIILaaq;B)Ldo;")
-	public static class116 method5102(class133 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, class116 arg6, int arg7, int arg8, int arg9, int arg10, class721 arg11) {
+	public static class116 method5102(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, class116 arg6, int arg7, int arg8, int arg9, int arg10, class721 arg11) {
 		if (arg6 == null) {
 			return null;
 		}
@@ -97,7 +97,7 @@ public class class31 {
 	}
 
 	@ObfuscatedName("fo.n(Ldh;IIIILdo;SBLaaq;I)Ldo;")
-	public static class116 method3283(class133 arg0, int arg1, int arg2, int arg3, int arg4, class116 arg5, short arg6, byte arg7, class721 arg8) {
+	public static class116 method3283(Renderer arg0, int arg1, int arg2, int arg3, int arg4, class116 arg5, short arg6, byte arg7, class721 arg8) {
 		if (arg5 == null) {
 			return null;
 		}

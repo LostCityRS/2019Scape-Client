@@ -8,7 +8,7 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 
 @ObfuscatedName("dh")
-public abstract class class133 {
+public abstract class Renderer {
 
 	@ObfuscatedName("dh.l")
 	public static boolean[] field1594 = new boolean[8];
@@ -65,7 +65,7 @@ public abstract class class133 {
 	public float field1602 = 0.0F;
 
 	@ObfuscatedName("aac.e(ILjava/awt/Canvas;Ldf;Les;Lnx;Lnb;Lnp;Lpy;II)Ldh;")
-	public static class133 method14575(int arg0, Canvas arg1, class125 arg2, class143 arg3, class383 arg4, class381 arg5, class378 arg6, class442 arg7, int arg8) {
+	public static Renderer method14575(int arg0, Canvas arg1, class125 arg2, class143 arg3, class383 arg4, class381 arg5, class378 arg6, class442 arg7, int arg8) {
 		int var9 = 0;
 		int var10 = 0;
 		if (arg1 != null) {
@@ -86,7 +86,7 @@ public abstract class class133 {
 		return arg0 == 0 || arg0 == 2;
 	}
 
-	public class133(class125 arg0, class143 arg1, class383 arg2, class381 arg3, class378 arg4) {
+	public Renderer(class125 arg0, class143 arg1, class383 arg2, class381 arg3, class378 arg4) {
 		this.field1597 = arg0;
 		this.field1596 = arg1;
 		this.field1598 = arg2;

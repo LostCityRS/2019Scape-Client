@@ -39,7 +39,7 @@ public class class953 extends class1196 implements class514 {
 	@ObfuscatedName("ajz.a")
 	public int field11194;
 
-	public class953(class550 arg0, class133 arg1, class1090 arg2, class598 arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, boolean arg11, class420 arg12) {
+	public class953(class550 arg0, Renderer arg1, class1090 arg2, class598 arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, boolean arg11, class420 arg12) {
 		super(arg0, arg6, arg7, arg8, arg4, arg5, arg3.field7448, arg12);
 		this.field11185 = arg2;
 		this.field11715 = arg3.field7450;
@@ -91,7 +91,7 @@ public class class953 extends class1196 implements class514 {
 	}
 
 	@ObfuscatedName("ajz.bz(Ldh;IB)Ldo;")
-	public class116 method17435(class133 arg0, int arg1) {
+	public class116 method17435(Renderer arg0, int arg1) {
 		if (this.field11192 != null && arg0.method2394(this.field11192.method1691(), arg1) == 0) {
 			return this.field11192;
 		} else {
@@ -101,7 +101,7 @@ public class class953 extends class1196 implements class514 {
 	}
 
 	@ObfuscatedName("ajz.bv(Ldh;IZI)Labg;")
-	public class746 method17436(class133 arg0, int arg1, boolean arg2) {
+	public class746 method17436(Renderer arg0, int arg1, boolean arg2) {
 		class598 var4 = (class598) this.field11185.get(this.field11715);
 		class104 var5;
 		class104 var6;
@@ -121,7 +121,7 @@ public class class953 extends class1196 implements class514 {
 	}
 
 	@ObfuscatedName("ajz.fv(Ldh;B)Luq;")
-	public class556 method17371(class133 arg0) {
+	public class556 method17371(Renderer arg0) {
 		Vector3 var2 = this.method10536().field4298;
 		if (this.field11187 == null) {
 			this.field11187 = class1019.method15111((int) var2.field4308, (int) var2.field4311, (int) var2.field4313, this.method17435(arg0, 0));
@@ -130,7 +130,7 @@ public class class953 extends class1196 implements class514 {
 	}
 
 	@ObfuscatedName("ajz.fc(Ldh;I)Ltl;")
-	public class552 method17372(class133 arg0) {
+	public class552 method17372(Renderer arg0) {
 		if (this.field11192 == null) {
 			return null;
 		}
@@ -147,11 +147,11 @@ public class class953 extends class1196 implements class514 {
 	}
 
 	@ObfuscatedName("ajz.fw(Ldh;I)V")
-	public void method17373(class133 arg0) {
+	public void method17373(Renderer arg0) {
 	}
 
 	@ObfuscatedName("ajz.fa(Ldh;IIB)Z")
-	public boolean method17375(class133 arg0, int arg1, int arg2) {
+	public boolean method17375(Renderer arg0, int arg1, int arg2) {
 		class416 var4 = ((class598) this.field11185.get(this.field11715)).field7468;
 		if (var4 != null) {
 			return arg0.method2191(arg1, arg2, this.method10533(), var4);
@@ -171,7 +171,7 @@ public class class953 extends class1196 implements class514 {
 	}
 
 	@ObfuscatedName("ajz.fq(Ldh;Lalh;IIIZB)V")
-	public void method17377(class133 arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public void method17377(Renderer arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		if (arg1 instanceof class953) {
 			class953 var7 = (class953) arg1;
 			if (this.field11192 != null && var7.field11192 != null) {
@@ -221,7 +221,7 @@ public class class953 extends class1196 implements class514 {
 	}
 
 	@ObfuscatedName("ajz.l(Ldh;B)V")
-	public void method8217(class133 arg0) {
+	public void method8217(Renderer arg0) {
 		Object var2 = null;
 		class1175 var4;
 		if (this.field11186 == null && this.field11193) {
@@ -238,7 +238,7 @@ public class class953 extends class1196 implements class514 {
 	}
 
 	@ObfuscatedName("ajz.u(Ldh;B)V")
-	public void method8209(class133 arg0) {
+	public void method8209(Renderer arg0) {
 		Object var2 = null;
 		class1175 var4;
 		if (this.field11186 == null && this.field11193) {

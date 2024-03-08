@@ -260,7 +260,7 @@ public class class586 {
 	}
 
 	@ObfuscatedName("tk.s(Ldh;I)I")
-	public static int method8885(class133 arg0) {
+	public static int method8885(Renderer arg0) {
 		method4014();
 		return Statics.field11755.StopStreaming();
 	}
@@ -314,7 +314,7 @@ public class class586 {
 	}
 
 	@ObfuscatedName("hy.j(Ldh;J)V")
-	public static void method4069(class133 arg0, long arg1) {
+	public static void method4069(Renderer arg0, long arg1) {
 		if (field7388 == 3 || field7388 == 0) {
 			return;
 		}
@@ -379,7 +379,7 @@ public class class586 {
 	}
 
 	@ObfuscatedName("h.t(Ldh;JIIB)V")
-	public static void method593(class133 arg0, long arg1, int arg2, int arg3) {
+	public static void method593(Renderer arg0, long arg1, int arg2, int arg3) {
 		if (arg0.method2360() && arg0.method2502() > -1) {
 			int var5 = arg0.method2502();
 			class587 var6 = null;
@@ -451,7 +451,7 @@ public class class586 {
 	}
 
 	@ObfuscatedName("qd.ah(Ldh;J)V")
-	public static void method7259(class133 arg0, long arg1) {
+	public static void method7259(Renderer arg0, long arg1) {
 		arg0.method2126();
 		field7392.clear();
 		field7380.clear();

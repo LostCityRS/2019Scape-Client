@@ -161,7 +161,7 @@ public class class1126 extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.ahu(Ljava/awt/Canvas;Ldf;Les;Lnx;Lnb;Lnp;Lpy;Ljava/lang/Integer;)Ldh;")
-	public static class133 method19043(Canvas arg0, class125 arg1, class143 arg2, class383 arg3, class381 arg4, class378 arg5, class442 arg6, Integer arg7) {
+	public static Renderer method19043(Canvas arg0, class125 arg1, class143 arg2, class383 arg3, class381 arg4, class378 arg5, class442 arg6, Integer arg7) {
 		class1126 var8 = null;
 		try {
 			byte var9 = 0;

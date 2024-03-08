@@ -66,7 +66,7 @@ public class class1235 extends class1200 {
 	}
 
 	@ObfuscatedName("aur.fv(Ldh;B)Luq;")
-	public class556 method17371(class133 arg0) {
+	public class556 method17371(Renderer arg0) {
 		return null;
 	}
 
@@ -88,7 +88,7 @@ public class class1235 extends class1200 {
 	}
 
 	@ObfuscatedName("aur.f(Ldh;IIB)Ldo;")
-	public class116 method19748(class133 arg0, int arg1, int arg2) {
+	public class116 method19748(Renderer arg0, int arg1, int arg2) {
 		class680 var4 = (class680) Statics.field4874.get(arg2);
 		class104 var5 = this.field11716.field6915[this.field11717];
 		class104 var6 = this.field11714 < 3 ? this.field11716.field6915[this.field11714 + 1] : null;
@@ -97,7 +97,7 @@ public class class1235 extends class1200 {
 	}
 
 	@ObfuscatedName("aur.fc(Ldh;I)Ltl;")
-	public class552 method17372(class133 arg0) {
+	public class552 method17372(Renderer arg0) {
 		class116 var2 = this.method19748(arg0, (this.field12608 == 0 ? 0 : 5) | 0x800, this.field12613);
 		if (var2 == null) {
 			return null;
@@ -117,7 +117,7 @@ public class class1235 extends class1200 {
 	}
 
 	@ObfuscatedName("aur.fw(Ldh;I)V")
-	public void method17373(class133 arg0) {
+	public void method17373(Renderer arg0) {
 		class116 var2 = this.method19748(arg0, 0, this.field12613);
 		if (var2 != null) {
 			this.method19750(arg0, var2, this.method10533());
@@ -125,7 +125,7 @@ public class class1235 extends class1200 {
 	}
 
 	@ObfuscatedName("aur.w(Ldh;Ldo;Lou;B)V")
-	public void method19750(class133 arg0, class116 arg1, class419 arg2) {
+	public void method19750(Renderer arg0, class116 arg1, class419 arg2) {
 		arg1.method1689(arg2);
 		class128[] var4 = arg1.method1750();
 		class102[] var5 = arg1.method1765();
@@ -146,7 +146,7 @@ public class class1235 extends class1200 {
 	}
 
 	@ObfuscatedName("aur.fa(Ldh;IIB)Z")
-	public boolean method17375(class133 arg0, int arg1, int arg2) {
+	public boolean method17375(Renderer arg0, int arg1, int arg2) {
 		return false;
 	}
 
@@ -156,7 +156,7 @@ public class class1235 extends class1200 {
 	}
 
 	@ObfuscatedName("aur.fq(Ldh;Lalh;IIIZB)V")
-	public final void method17377(class133 arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void method17377(Renderer arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 

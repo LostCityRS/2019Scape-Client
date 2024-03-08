@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 import java.awt.*;
 
 @ObfuscatedName("afg")
-public class class848 extends class133 {
+public class class848 extends Renderer {
 
 	@ObfuscatedName("afg.at")
 	public boolean field9794;

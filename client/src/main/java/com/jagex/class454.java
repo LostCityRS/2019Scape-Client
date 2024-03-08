@@ -496,7 +496,7 @@ public class class454 {
 	}
 
 	@ObfuscatedName("qg.z(Ldh;[[[II)V")
-	public void method7144(class133 arg0, int[][][] arg1) {
+	public void method7144(Renderer arg0, int[][][] arg1) {
 		for (int var3 = 0; var3 < this.field4544; var3++) {
 			int var4 = 0;
 			int var5 = 0;
@@ -524,7 +524,7 @@ public class class454 {
 	}
 
 	@ObfuscatedName("qg.p(Ldh;Lcb;Lcb;B)V")
-	public final void method7200(class133 arg0, class104 arg1, class104 arg2) {
+	public final void method7200(Renderer arg0, class104 arg1, class104 arg2) {
 		int[][] var4 = new int[this.field4513][this.field4514];
 		if (this.field4504 == null || this.field4514 != this.field4504.length) {
 			this.field4504 = new int[this.field4514];
@@ -622,7 +622,7 @@ public class class454 {
 	}
 
 	@ObfuscatedName("qg.d(Ldh;Lcb;I[[ILcb;Lcb;I)V")
-	public void method7199(class133 arg0, class104 arg1, int arg2, int[][] arg3, class104 arg4, class104 arg5) {
+	public void method7199(Renderer arg0, class104 arg1, int arg2, int[][] arg3, class104 arg4, class104 arg5) {
 		for (int var7 = 0; var7 < this.field4513; var7++) {
 			for (int var8 = 0; var8 < this.field4514; var8++) {
 				byte var9 = this.field4562[arg2][var7][var8];
@@ -762,7 +762,7 @@ public class class454 {
 	}
 
 	@ObfuscatedName("qg.c(Ldh;Lcb;I[[ILcb;Lcb;I)V")
-	public void method7147(class133 arg0, class104 arg1, int arg2, int[][] arg3, class104 arg4, class104 arg5) {
+	public void method7147(Renderer arg0, class104 arg1, int arg2, int[][] arg3, class104 arg4, class104 arg5) {
 		byte[][] var7 = this.field4562[arg2];
 		byte[][] var8 = this.field4520[arg2];
 		short[][] var9 = this.field4505[arg2];
@@ -921,7 +921,7 @@ public class class454 {
 	}
 
 	@ObfuscatedName("qg.v(Ldh;Lyn;Laaz;II[[B[[B[[S[ZI)V")
-	public void method7149(class133 arg0, class663 arg1, class728 arg2, int arg3, int arg4, byte[][] arg5, byte[][] arg6, short[][] arg7, boolean[] arg8) {
+	public void method7149(Renderer arg0, class663 arg1, class728 arg2, int arg3, int arg4, byte[][] arg5, byte[][] arg6, short[][] arg7, boolean[] arg8) {
 		boolean[] var10 = arg1 != null && arg1.field8161 ? field4527[this.field4573] : field4556[this.field4573];
 		this.method7154(arg0, arg1, arg2, arg3, arg4, this.field4513, this.field4514, arg7, arg5, arg6, arg8);
 		this.field4583 = arg1 != null && arg1.field8156 != arg1.field8154;
@@ -997,7 +997,7 @@ public class class454 {
 	}
 
 	@ObfuscatedName("qg.s(Ldh;IIILyn;[Z[I[I[I[I[I[I[I[ILcb;Lcb;Lcb;I)V")
-	public void method7151(class133 arg0, int arg1, int arg2, int arg3, class663 arg4, boolean[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, int[] arg10, int[] arg11, int[] arg12, int[] arg13, class104 arg14, class104 arg15, class104 arg16) {
+	public void method7151(Renderer arg0, int arg1, int arg2, int arg3, class663 arg4, boolean[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, int[] arg10, int[] arg11, int[] arg12, int[] arg13, class104 arg14, class104 arg15, class104 arg16) {
 		this.field4502 = -1;
 		this.field4508 = -1;
 		this.field4578 = 256;
@@ -1120,7 +1120,7 @@ public class class454 {
 	}
 
 	@ObfuscatedName("qg.y(Ldh;IIIIILaaz;IIII[Z[I[I[I[I[I[I[I[I[[ILcb;Lcb;Lcb;B)V")
-	public void method7152(class133 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, class728 arg6, int arg7, int arg8, int arg9, int arg10, boolean[] arg11, int[] arg12, int[] arg13, int[] arg14, int[] arg15, int[] arg16, int[] arg17, int[] arg18, int[] arg19, int[][] arg20, class104 arg21, class104 arg22, class104 arg23) {
+	public void method7152(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, class728 arg6, int arg7, int arg8, int arg9, int arg10, boolean[] arg11, int[] arg12, int[] arg13, int[] arg14, int[] arg15, int[] arg16, int[] arg17, int[] arg18, int[] arg19, int[][] arg20, class104 arg21, class104 arg22, class104 arg23) {
 		if (arg6 == null) {
 			return;
 		}
@@ -1301,7 +1301,7 @@ public class class454 {
 	}
 
 	@ObfuscatedName("qg.x(Ldh;Lyn;Laaz;IIII[[S[[B[[B[ZI)V")
-	public final void method7154(class133 arg0, class663 arg1, class728 arg2, int arg3, int arg4, int arg5, int arg6, short[][] arg7, byte[][] arg8, byte[][] arg9, boolean[] arg10) {
+	public final void method7154(Renderer arg0, class663 arg1, class728 arg2, int arg3, int arg4, int arg5, int arg6, short[][] arg7, byte[][] arg8, byte[][] arg9, boolean[] arg10) {
 		boolean[] var12 = arg1 != null && arg1.field8161 ? field4527[this.field4573] : field4556[this.field4573];
 		if (arg4 > 0) {
 			if (arg3 > 0) {
@@ -1557,7 +1557,7 @@ public class class454 {
 	}
 
 	@ObfuscatedName("pd.b(Ldh;Lyn;I)I")
-	public static final int method6823(class133 arg0, class663 arg1) {
+	public static final int method6823(Renderer arg0, class663 arg1) {
 		if (arg1.field8156 != -1) {
 			return arg1.field8156;
 		}

@@ -22,7 +22,7 @@ public class class1044 extends class709 {
 
 	@ObfuscatedName("amx.e(B)I")
 	public int method14069() {
-		return this.field8417.field11540.method18546() && class133.method551(this.field8417.field11540.method18545()) ? 1 : 0;
+		return this.field8417.field11540.method18546() && Renderer.method551(this.field8417.field11540.method18545()) ? 1 : 0;
 	}
 
 	@ObfuscatedName("amx.s(B)Z")

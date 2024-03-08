@@ -42,7 +42,7 @@ public abstract class class1196 extends class1019 {
 	}
 
 	@ObfuscatedName("asv.ga(Ldh;S)Z")
-	public boolean method18360(class133 arg0) {
+	public boolean method18360(Renderer arg0) {
 		Vector3 var2 = this.method10536().field4298;
 		return this.field11716.field6930.method8927(this.field11714, (int) var2.field4308 >> this.field11716.field6900, (int) var2.field4313 >> this.field11716.field6900);
 	}

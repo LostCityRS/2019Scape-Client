@@ -12,7 +12,7 @@ import java.awt.*;
 import java.lang.reflect.Field;
 
 @ObfuscatedName("afa")
-public class class849 extends class133 {
+public class class849 extends Renderer {
 
 	@ObfuscatedName("afa.cl")
 	public OpenGL field10022;

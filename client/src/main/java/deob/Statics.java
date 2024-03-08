@@ -949,7 +949,7 @@ public class Statics {
 	public static class140 field629;
 
 	@ObfuscatedName("ag.e")
-	public static class133 field630;
+	public static Renderer field630;
 
 	@ObfuscatedName("ah.dh")
 	public static class25 field636;
@@ -1162,7 +1162,7 @@ public class Statics {
 	public static Iterator field7015;
 
 	@ObfuscatedName("um.t")
-	public static class133 field7041;
+	public static Renderer field7041;
 
 	@ObfuscatedName("uc.gn")
 	public static class442 field7060;
@@ -1453,7 +1453,7 @@ public class Statics {
 	public static int field8186;
 
 	@ObfuscatedName("yv.cd")
-	public static class133 field8198;
+	public static Renderer field8198;
 
 	@ObfuscatedName("zh.gu")
 	public static class442 field8285;
@@ -1781,7 +1781,7 @@ public class Statics {
 	}
 
 	@ObfuscatedName("fy.e(Ljava/awt/Canvas;Ldf;Les;Lnx;Lnb;Lnp;IIB)Ldh;")
-	public static class133 method3367(Canvas arg0, class125 arg1, class143 arg2, class383 arg3, class381 arg4, class378 arg5, int arg6, int arg7) {
+	public static Renderer method3367(Canvas arg0, class125 arg1, class143 arg2, class383 arg3, class381 arg4, class378 arg5, int arg6, int arg7) {
 		return new class848(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 	}
 
@@ -1980,7 +1980,7 @@ public class Statics {
 	}
 
 	@ObfuscatedName("s.n(Ldh;IILhf;II)V")
-	public static void method480(class133 arg0, int arg1, int arg2, class226 arg3, int arg4) {
+	public static void method480(Renderer arg0, int arg1, int arg2, class226 arg3, int arg4) {
 		for (int var5 = 7; var5 >= 0; var5--) {
 			for (int var6 = 127; var6 >= 0; var6--) {
 				int var7 = (arg4 & 0x3F) << 10 | (var5 & 0x7) << 7 | var6 & 0x7F;
@@ -2032,7 +2032,7 @@ public class Statics {
 	}
 
 	@ObfuscatedName("ka.e(Ldh;IIIIIB)Ldo;")
-	public static class116 method5210(class133 arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+	public static class116 method5210(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		long var6 = (long) arg5;
 		class116 var8 = (class116) class45.field752.method2930(var6);
 		short var9 = 2055;
@@ -2210,7 +2210,7 @@ public class Statics {
 	}
 
 	@ObfuscatedName("dh.n(ILjava/awt/Canvas;Ldf;Les;Lnx;Lnb;Lnp;Lpy;IIII)Ldh;")
-	public static synchronized class133 method2180(int arg0, Canvas arg1, class125 arg2, class143 arg3, class383 arg4, class381 arg5, class378 arg6, class442 arg7, int arg8, int arg9, int arg10) {
+	public static synchronized Renderer method2180(int arg0, Canvas arg1, class125 arg2, class143 arg3, class383 arg4, class381 arg5, class378 arg6, class442 arg7, int arg8, int arg9, int arg10) {
 		if (arg0 == 0) {
 			return method3367(arg1, arg2, arg3, arg4, arg5, arg6, arg9, arg10);
 		} else if (arg0 == 1) {
@@ -2218,7 +2218,7 @@ public class Statics {
 		} else if (arg0 == 5) {
 			return class488.method7664(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		} else if (arg0 == 3) {
-			return class405.method6218(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
+			return Direct3DRendererFactory.method6218(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		} else {
 			throw new IllegalArgumentException("");
 		}
@@ -2784,7 +2784,7 @@ public class Statics {
 	}
 
 	@ObfuscatedName("dz.r(Ldh;Lvd;IIII)V")
-	public static void method1900(class133 arg0, class598 arg1, int arg2, int arg3, int arg4) {
+	public static void method1900(Renderer arg0, class598 arg1, int arg2, int arg3, int arg4) {
 		class781 var5 = (class781) field4241.get(arg1.field7486);
 		if (var5.field9151 == -1) {
 			return;
@@ -2961,7 +2961,7 @@ public class Statics {
 	}
 
 	@ObfuscatedName("ace.q(Ldh;Lch;Lhf;IIIIIB)V")
-	public static void method15085(class133 arg0, class103 arg1, class226 arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
+	public static void method15085(Renderer arg0, class103 arg1, class226 arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		class228 var8 = (class228) field5011.get(arg7);
 		if (var8 != null && var8.field2392 != null && var8.method4030(field7410, field7410)) {
 			var8 = var8.method4024(field7410, field7410);
@@ -3130,7 +3130,7 @@ public class Statics {
 	}
 
 	@ObfuscatedName("gc.eu(Ldh;IIIIB)V")
-	public static final void method3549(class133 arg0, int arg1, int arg2, int arg3, int arg4) {
+	public static final void method3549(Renderer arg0, int arg1, int arg2, int arg3, int arg4) {
 		arg0.method2168(arg1, arg2, arg1 + arg3, arg2 + arg4);
 		arg0.method2301(arg1, arg2, arg3, arg4, -16777216);
 		if (class1004.field11651 < 100) {

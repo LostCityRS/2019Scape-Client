@@ -15,7 +15,7 @@ public class class1050 extends class709 {
 
 	@ObfuscatedName("and.o(I)V")
 	public void method18626() {
-		if (this.field8417.field11540.method18546() && !class133.method723(this.field8417.field11540.method18545())) {
+		if (this.field8417.field11540.method18546() && !Renderer.method723(this.field8417.field11540.method18545())) {
 			this.field8416 = 0;
 		}
 		if (this.field8417.method18165().method14090()) {
@@ -34,12 +34,12 @@ public class class1050 extends class709 {
 
 	@ObfuscatedName("and.s(I)Z")
 	public boolean method18624() {
-		return class133.method723(this.field8417.field11540.method18545());
+		return Renderer.method723(this.field8417.field11540.method18545());
 	}
 
 	@ObfuscatedName("and.n(II)I")
 	public int method14070(int arg0) {
-		return class133.method723(this.field8417.field11540.method18545()) ? 1 : 3;
+		return Renderer.method723(this.field8417.field11540.method18545()) ? 1 : 3;
 	}
 
 	@ObfuscatedName("and.k(II)V")

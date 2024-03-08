@@ -116,12 +116,12 @@ public class class1131 extends class892 {
 	}
 
 	@ObfuscatedName("aqc.fv(Ldh;B)Luq;")
-	public class556 method17371(class133 arg0) {
+	public class556 method17371(Renderer arg0) {
 		return null;
 	}
 
 	@ObfuscatedName("aqc.fc(Ldh;I)Ltl;")
-	public class552 method17372(class133 arg0) {
+	public class552 method17372(Renderer arg0) {
 		if (this.field12083 == null || !this.method19167(arg0, 526336)) {
 			return null;
 		}
@@ -214,7 +214,7 @@ public class class1131 extends class892 {
 	}
 
 	@ObfuscatedName("aqc.hh(Ldh;II)Z")
-	public boolean method19167(class133 arg0, int arg1) {
+	public boolean method19167(Renderer arg0, int arg1) {
 		int var3 = arg1;
 		class584 var4 = this.method16508();
 		class721 var5 = this.field10454.method14346() && !this.field10454.method14355() ? this.field10454 : null;
@@ -275,7 +275,7 @@ public class class1131 extends class892 {
 	}
 
 	@ObfuscatedName("aqc.fw(Ldh;I)V")
-	public void method17373(class133 arg0) {
+	public void method17373(Renderer arg0) {
 		if (this.field12083 == null || !this.field10449 && !this.method19167(arg0, 0)) {
 			return;
 		}
@@ -451,7 +451,7 @@ public class class1131 extends class892 {
 	}
 
 	@ObfuscatedName("aqc.fa(Ldh;IIB)Z")
-	public boolean method17375(class133 arg0, int arg1, int arg2) {
+	public boolean method17375(Renderer arg0, int arg1, int arg2) {
 		if (this.field12083 == null) {
 			return false;
 		} else if (this.field12083.field2724 != null) {
@@ -501,7 +501,7 @@ public class class1131 extends class892 {
 	}
 
 	@ObfuscatedName("aqc.fq(Ldh;Lalh;IIIZB)V")
-	public final void method17377(class133 arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void method17377(Renderer arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 

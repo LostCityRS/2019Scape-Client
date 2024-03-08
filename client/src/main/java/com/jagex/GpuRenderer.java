@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 @ObfuscatedName("afc")
-public abstract class GpuRenderer extends class133 {
+public abstract class GpuRenderer extends Renderer {
 
 	@ObfuscatedName("afc.at")
 	public static final Object field10206 = new Object();

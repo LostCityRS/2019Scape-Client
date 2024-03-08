@@ -72,7 +72,7 @@ public class class41 {
 	}
 
 	@ObfuscatedName("ae.m(Ljava/lang/String;ZLdh;Leu;Laac;B)V")
-	public static void method649(String arg0, boolean arg1, class133 arg2, class140 arg3, class733 arg4) {
+	public static void method649(String arg0, boolean arg1, Renderer arg2, class140 arg3, class733 arg4) {
 		boolean var5 = !Statics.field9262 || method16459();
 		if (!var5) {
 			return;

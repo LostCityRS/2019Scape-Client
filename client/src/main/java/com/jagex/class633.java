@@ -77,7 +77,7 @@ public class class633 {
 	}
 
 	@ObfuscatedName("po.m(Ldh;J)V")
-	public static void method6866(class133 arg0, long arg1) {
+	public static void method6866(Renderer arg0, long arg1) {
 		field7801 = field7790;
 		field7790 = 0;
 		class213.method3655();
@@ -94,7 +94,7 @@ public class class633 {
 	}
 
 	@ObfuscatedName("tm.k(Ltx;Ldh;B)V")
-	public static void method8460(class550 arg0, class133 arg1) {
+	public static void method8460(class550 arg0, Renderer arg1) {
 		Iterator var2 = Statics.field8349.iterator();
 		while (var2.hasNext()) {
 			ParticleSystem var3 = (ParticleSystem) var2.next();

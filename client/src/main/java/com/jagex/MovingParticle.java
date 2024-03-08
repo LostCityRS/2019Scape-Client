@@ -338,7 +338,7 @@ public class MovingParticle extends class1144 {
 	}
 
 	@ObfuscatedName("atz.l(Ltx;Ldh;J)V")
-	public void method19668(class550 arg0, class133 arg1, long arg2) {
+	public void method19668(class550 arg0, Renderer arg1, long arg2) {
 		int var5 = this.field12159 >> arg0.field6900 + 12;
 		int var6 = this.field12161 >> arg0.field6900 + 12;
 		int var7 = this.field12163 >> 12;

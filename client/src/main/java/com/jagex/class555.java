@@ -270,7 +270,7 @@ public class class555 {
 	}
 
 	@ObfuscatedName("um.w(Ldh;I)V")
-	public void method8923(class133 arg0, int arg1) {
+	public void method8923(Renderer arg0, int arg1) {
 		Statics.field7041 = arg0;
 		if (!this.field7031 || !this.field7017) {
 			this.field7033 = 0;
@@ -327,7 +327,7 @@ public class class555 {
 	}
 
 	@ObfuscatedName("um.l(Ldh;Lui;I)V")
-	public void method8918(class133 arg0, class558 arg1, int arg2) {
+	public void method8918(Renderer arg0, class558 arg1, int arg2) {
 		Statics.field7041 = arg0;
 		if (this.field7035 != null && arg1.field7067 >= arg2) {
 			for (int var4 = 0; var4 < this.field7035.length; var4++) {

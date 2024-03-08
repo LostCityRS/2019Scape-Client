@@ -27,12 +27,12 @@ public class class1048 extends class709 {
 
 	@ObfuscatedName("ane.s(I)Z")
 	public boolean method18606() {
-		return class133.method723(this.field8417.field11540.method18545());
+		return Renderer.method723(this.field8417.field11540.method18545());
 	}
 
 	@ObfuscatedName("ane.n(II)I")
 	public int method14070(int arg0) {
-		return class133.method723(this.field8417.field11540.method18545()) ? 1 : 3;
+		return Renderer.method723(this.field8417.field11540.method18545()) ? 1 : 3;
 	}
 
 	@ObfuscatedName("ane.k(II)V")

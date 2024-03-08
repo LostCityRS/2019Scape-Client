@@ -17,7 +17,7 @@ public class class947 extends class1196 implements class514 {
 	@ObfuscatedName("ajs.o")
 	public boolean field11135 = true;
 
-	public class947(class550 arg0, class133 arg1, class1090 arg2, class598 arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, class420 arg13) {
+	public class947(class550 arg0, Renderer arg1, class1090 arg2, class598 arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, class420 arg13) {
 		super(arg0, arg6, arg7, arg8, arg4, arg5, arg3.field7448, arg13);
 		this.field11133 = new class516(arg1, arg2, arg3, class601.field7566.field7562, arg10, arg5, this, arg9, arg11, arg12);
 		this.field11132 = arg3.field7470 != 0 && !arg9;
@@ -35,7 +35,7 @@ public class class947 extends class1196 implements class514 {
 	}
 
 	@ObfuscatedName("ajs.fv(Ldh;B)Luq;")
-	public class556 method17371(class133 arg0) {
+	public class556 method17371(Renderer arg0) {
 		return this.field11134;
 	}
 
@@ -50,7 +50,7 @@ public class class947 extends class1196 implements class514 {
 	}
 
 	@ObfuscatedName("ajs.fc(Ldh;I)Ltl;")
-	public class552 method17372(class133 arg0) {
+	public class552 method17372(Renderer arg0) {
 		class116 var2 = this.field11133.method8238(arg0, 2048, false, true);
 		if (var2 == null) {
 			return null;
@@ -82,7 +82,7 @@ public class class947 extends class1196 implements class514 {
 	}
 
 	@ObfuscatedName("ajs.fw(Ldh;I)V")
-	public void method17373(class133 arg0) {
+	public void method17373(Renderer arg0) {
 		class116 var2 = this.field11133.method8238(arg0, 262144, true, true);
 		if (var2 != null) {
 			Vector3 var3 = this.method10536().field4298;
@@ -93,7 +93,7 @@ public class class947 extends class1196 implements class514 {
 	}
 
 	@ObfuscatedName("ajs.fa(Ldh;IIB)Z")
-	public boolean method17375(class133 arg0, int arg1, int arg2) {
+	public boolean method17375(Renderer arg0, int arg1, int arg2) {
 		class598 var4 = this.field11133.method8237();
 		if (var4.field7468 == null) {
 			class116 var5 = this.field11133.method8238(arg0, 131072, false, false);
@@ -109,7 +109,7 @@ public class class947 extends class1196 implements class514 {
 	}
 
 	@ObfuscatedName("ajs.fq(Ldh;Lalh;IIIZB)V")
-	public final void method17377(class133 arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void method17377(Renderer arg0, class1019 arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 
@@ -153,12 +153,12 @@ public class class947 extends class1196 implements class514 {
 	}
 
 	@ObfuscatedName("ajs.l(Ldh;B)V")
-	public void method8217(class133 arg0) {
+	public void method8217(Renderer arg0) {
 		this.field11133.method8241(arg0);
 	}
 
 	@ObfuscatedName("ajs.u(Ldh;B)V")
-	public void method8209(class133 arg0) {
+	public void method8209(Renderer arg0) {
 		this.field11133.method8242(arg0);
 	}
 }

@@ -86,7 +86,7 @@ public class class1233 extends class1199 {
 	}
 
 	@ObfuscatedName("aut.fv(Ldh;B)Luq;")
-	public class556 method17371(class133 arg0) {
+	public class556 method17371(Renderer arg0) {
 		return null;
 	}
 
@@ -96,7 +96,7 @@ public class class1233 extends class1199 {
 	}
 
 	@ObfuscatedName("aut.fc(Ldh;I)Ltl;")
-	public class552 method17372(class133 arg0) {
+	public class552 method17372(Renderer arg0) {
 		Vector3 var2 = Vector3.method6484(this.method10536().field4298);
 		class557 var3 = this.field11716.method8738(this.field11717, (int) var2.field4308 >> 9, (int) var2.field4313 >> 9);
 		class1196 var4 = this.field11716.method8767(this.field11717, (int) var2.field4308 >> 9, (int) var2.field4313 >> 9);
@@ -224,7 +224,7 @@ public class class1233 extends class1199 {
 	}
 
 	@ObfuscatedName("aut.fw(Ldh;I)V")
-	public void method17373(class133 arg0) {
+	public void method17373(Renderer arg0) {
 	}
 
 	@ObfuscatedName("aut.gp(I)I")
@@ -247,7 +247,7 @@ public class class1233 extends class1199 {
 	}
 
 	@ObfuscatedName("aut.fa(Ldh;IIB)Z")
-	public boolean method17375(class133 arg0, int arg1, int arg2) {
+	public boolean method17375(Renderer arg0, int arg1, int arg2) {
 		class419 var4 = arg0.method2209();
 		var4.method6293(this.method10536());
 		var4.method6315(0.0F, -10.0F, 0.0F);
