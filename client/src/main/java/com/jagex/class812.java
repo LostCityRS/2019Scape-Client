@@ -22,7 +22,7 @@ public class class812 extends class70 {
 	}
 
 	public class812(LegacyOpenGLRenderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		super(arg0, arg1, TextureFormat.field1271, DataType.field1645, arg4 * arg5, false);
+		super(arg0, arg1, TextureFormat.field1271, DataType.UNSIGNED_INT_8, arg4 * arg5, false);
 		this.field9272 = arg4;
 		this.field9271 = arg5;
 		this.field1006.method15777(this);
@@ -36,7 +36,7 @@ public class class812 extends class70 {
 	}
 
 	public class812(LegacyOpenGLRenderer arg0, int arg1, int arg2, int arg3, boolean arg4, int[] arg5, int arg6, int arg7, boolean arg8) {
-		super(arg0, arg1, TextureFormat.field1273, DataType.field1645, arg2 * arg3, arg4);
+		super(arg0, arg1, TextureFormat.field1273, DataType.UNSIGNED_INT_8, arg2 * arg3, arg4);
 		this.field9272 = arg2;
 		this.field9271 = arg3;
 		if (arg8) {

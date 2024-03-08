@@ -15,7 +15,7 @@ public class class920 extends VertexDeclaration {
 	@ObfuscatedName("ait.m")
 	public long field10621 = 0L;
 
-	public class920(Direct3DRenderer arg0, class345[] arg1) {
+	public class920(Direct3DRenderer arg0, VertexDeclarationElement[] arg1) {
 		super(arg1);
 		this.field10620 = arg0;
 		byte var3 = 0;
@@ -23,22 +23,22 @@ public class class920 extends VertexDeclaration {
 		var4.clear();
 		for (short var5 = 0; var5 < this.field3241.length; var5++) {
 			short var6 = 0;
-			class345 var7 = this.field3241[var5];
+			VertexDeclarationElement var7 = this.field3241[var5];
 			for (int var8 = 0; var8 < var7.method5776(); var8++) {
-				class339 var9 = var7.method5777(var8);
-				if (class339.field3310 == var9) {
+				VertexDeclarationElementComponent var9 = var7.method5777(var8);
+				if (VertexDeclarationElementComponent.field3310 == var9) {
 					this.method16795(var4, var5, var6, (byte) 2, (byte) 0, (byte) 0, (byte) 0);
-				} else if (class339.field3301 == var9) {
+				} else if (VertexDeclarationElementComponent.field3301 == var9) {
 					this.method16795(var4, var5, var6, (byte) 2, (byte) 0, (byte) 3, (byte) 0);
-				} else if (class339.field3311 == var9) {
+				} else if (VertexDeclarationElementComponent.field3311 == var9) {
 					this.method16795(var4, var5, var6, (byte) 4, (byte) 0, (byte) 10, (byte) 0);
-				} else if (class339.field3303 == var9) {
+				} else if (VertexDeclarationElementComponent.field3303 == var9) {
 					this.method16795(var4, var5, var6, (byte) 0, (byte) 0, (byte) 5, var3++);
-				} else if (class339.field3300 == var9) {
+				} else if (VertexDeclarationElementComponent.field3300 == var9) {
 					this.method16795(var4, var5, var6, (byte) 1, (byte) 0, (byte) 5, var3++);
-				} else if (class339.field3305 == var9) {
+				} else if (VertexDeclarationElementComponent.field3305 == var9) {
 					this.method16795(var4, var5, var6, (byte) 2, (byte) 0, (byte) 5, var3++);
-				} else if (class339.field3306 == var9) {
+				} else if (VertexDeclarationElementComponent.field3306 == var9) {
 					this.method16795(var4, var5, var6, (byte) 3, (byte) 0, (byte) 5, var3++);
 				}
 				var6 = (short) (var9.field3313 + var6);

@@ -70,9 +70,9 @@ public class class822 extends GlEffect {
 				}
 			}
 			this.field9338 = new class813[3];
-			this.field9338[0] = new class813(this.field1021, TextureFormat.field1270, DataType.field1645, 128, false, var3, TextureFormat.field1270);
-			this.field9338[1] = new class813(this.field1021, TextureFormat.field1270, DataType.field1645, 128, false, var4, TextureFormat.field1270);
-			this.field9338[2] = new class813(this.field1021, TextureFormat.field1270, DataType.field1645, 128, false, var2, TextureFormat.field1270);
+			this.field9338[0] = new class813(this.field1021, TextureFormat.field1270, DataType.UNSIGNED_INT_8, 128, false, var3, TextureFormat.field1270);
+			this.field9338[1] = new class813(this.field1021, TextureFormat.field1270, DataType.UNSIGNED_INT_8, 128, false, var4, TextureFormat.field1270);
+			this.field9338[2] = new class813(this.field1021, TextureFormat.field1270, DataType.UNSIGNED_INT_8, 128, false, var2, TextureFormat.field1270);
 			this.method15349();
 		}
 	}

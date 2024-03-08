@@ -418,14 +418,14 @@ public class GpuFloorModel extends FloorModel {
 		this.field9521 = null;
 		if ((this.field9491 & 0x7) == 0) {
 			if (this.field9503 == null) {
-				this.field9493 = this.field9516.method16065(new class345[] { new class345(new class339[] { class339.field3310, class339.field3300 }), new class345(class339.field3311) });
+				this.field9493 = this.field9516.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.field3310, VertexDeclarationElementComponent.field3300 }), new VertexDeclarationElement(VertexDeclarationElementComponent.field3311) });
 			} else {
-				this.field9493 = this.field9516.method16065(new class345[] { new class345(new class339[] { class339.field3310, class339.field3300, class339.field3303 }), new class345(class339.field3311) });
+				this.field9493 = this.field9516.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.field3310, VertexDeclarationElementComponent.field3300, VertexDeclarationElementComponent.field3303 }), new VertexDeclarationElement(VertexDeclarationElementComponent.field3311) });
 			}
 		} else if (this.field9503 == null) {
-			this.field9493 = this.field9516.method16065(new class345[] { new class345(new class339[] { class339.field3310, class339.field3300, class339.field3301 }), new class345(class339.field3311) });
+			this.field9493 = this.field9516.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.field3310, VertexDeclarationElementComponent.field3300, VertexDeclarationElementComponent.field3301 }), new VertexDeclarationElement(VertexDeclarationElementComponent.field3311) });
 		} else {
-			this.field9493 = this.field9516.method16065(new class345[] { new class345(new class339[] { class339.field3310, class339.field3300, class339.field3303, class339.field3301 }), new class345(class339.field3311) });
+			this.field9493 = this.field9516.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.field3310, VertexDeclarationElementComponent.field3300, VertexDeclarationElementComponent.field3303, VertexDeclarationElementComponent.field3301 }), new VertexDeclarationElement(VertexDeclarationElementComponent.field3311) });
 		}
 		for (int var1 = 0; var1 < this.field9519; var1++) {
 			class981 var2 = (class981) this.field9497[var1];

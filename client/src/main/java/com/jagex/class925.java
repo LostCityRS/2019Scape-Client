@@ -48,7 +48,7 @@ public class class925 extends class408 implements GpuTexture {
 	}
 
 	public class925(Direct3DRenderer arg0, int arg1, int arg2, boolean arg3, int[] arg4, int arg5, int arg6) {
-		super(arg0, TextureFormat.field1273, DataType.field1645, arg3 && arg0.field11976, arg1 * arg2);
+		super(arg0, TextureFormat.field1273, DataType.UNSIGNED_INT_8, arg3 && arg0.field11976, arg1 * arg2);
 		if (this.field4219.field11975) {
 			this.field10665 = arg1;
 			this.field10666 = arg2;
@@ -81,7 +81,7 @@ public class class925 extends class408 implements GpuTexture {
 	}
 
 	public class925(Direct3DRenderer arg0, TextureFormat arg1, int arg2, int arg3, boolean arg4, byte[] arg5, int arg6, int arg7) {
-		super(arg0, arg1, DataType.field1645, arg4 && arg0.field11976, arg2 * arg3);
+		super(arg0, arg1, DataType.UNSIGNED_INT_8, arg4 && arg0.field11976, arg2 * arg3);
 		if (this.field4219.field11975) {
 			this.field10665 = arg2;
 			this.field10666 = arg3;
@@ -99,9 +99,9 @@ public class class925 extends class408 implements GpuTexture {
 			}
 		}
 		if (arg4) {
-			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.device, this.field10665, this.field10666, 0, 1024, Direct3DRenderer.method19011(this.field4221, DataType.field1645), 1);
+			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.device, this.field10665, this.field10666, 0, 1024, Direct3DRenderer.method19011(this.field4221, DataType.UNSIGNED_INT_8), 1);
 		} else {
-			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.device, this.field10665, this.field10666, 1, 0, Direct3DRenderer.method19011(this.field4221, DataType.field1645), 1);
+			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.device, this.field10665, this.field10666, 1, 0, Direct3DRenderer.method19011(this.field4221, DataType.UNSIGNED_INT_8), 1);
 		}
 		if (arg7 == 0) {
 			arg7 = this.field10665;
@@ -122,7 +122,7 @@ public class class925 extends class408 implements GpuTexture {
 	}
 
 	public class925(Direct3DRenderer arg0, TextureFormat arg1, int arg2, int arg3, boolean arg4, float[] arg5, int arg6, int arg7) {
-		super(arg0, arg1, DataType.field1645, arg4 && arg0.field11976, arg2 * arg3);
+		super(arg0, arg1, DataType.UNSIGNED_INT_8, arg4 && arg0.field11976, arg2 * arg3);
 		if (this.field4219.field11975) {
 			this.field10665 = arg2;
 			this.field10666 = arg3;
@@ -140,9 +140,9 @@ public class class925 extends class408 implements GpuTexture {
 			}
 		}
 		if (arg4) {
-			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.device, this.field10665, this.field10666, 0, 1024, Direct3DRenderer.method19011(this.field4221, DataType.field1642), 1);
+			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.device, this.field10665, this.field10666, 0, 1024, Direct3DRenderer.method19011(this.field4221, DataType.FLOAT_32), 1);
 		} else {
-			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.device, this.field10665, this.field10666, 1, 0, Direct3DRenderer.method19011(this.field4221, DataType.field1642), 1);
+			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.device, this.field10665, this.field10666, 1, 0, Direct3DRenderer.method19011(this.field4221, DataType.FLOAT_32), 1);
 		}
 		if (arg7 == 0) {
 			arg7 = this.field10665;
@@ -207,7 +207,7 @@ public class class925 extends class408 implements GpuTexture {
 
 	@ObfuscatedName("aiy.z(IIII[III)V")
 	public void method5701(int arg0, int arg1, int arg2, int arg3, int[] arg4, int arg5, int arg6) {
-		if (TextureFormat.field1273 != this.field4221 || DataType.field1645 != this.field4218) {
+		if (TextureFormat.field1273 != this.field4221 || DataType.UNSIGNED_INT_8 != this.field4218) {
 			throw new RuntimeException();
 		}
 		if (arg6 == 0) {
@@ -222,7 +222,7 @@ public class class925 extends class408 implements GpuTexture {
 
 	@ObfuscatedName("aiy.p(IIII[BLck;II)V")
 	public void method5712(int arg0, int arg1, int arg2, int arg3, byte[] arg4, TextureFormat arg5, int arg6, int arg7) {
-		if (this.field4221 != arg5 || DataType.field1645 != this.field4218) {
+		if (this.field4221 != arg5 || DataType.UNSIGNED_INT_8 != this.field4218) {
 			throw new RuntimeException();
 		}
 		if (arg7 == 0) {
@@ -237,7 +237,7 @@ public class class925 extends class408 implements GpuTexture {
 
 	@ObfuscatedName("aiy.d(IIII[II)V")
 	public void method5703(int arg0, int arg1, int arg2, int arg3, int[] arg4, int arg5) {
-		if (TextureFormat.field1273 != this.field4221 || DataType.field1645 != this.field4218) {
+		if (TextureFormat.field1273 != this.field4221 || DataType.UNSIGNED_INT_8 != this.field4218) {
 			throw new RuntimeException();
 		}
 		this.field4219.method15961(arg2 * arg3 * 4);
@@ -249,7 +249,7 @@ public class class925 extends class408 implements GpuTexture {
 
 	@ObfuscatedName("aiy.c(IIII[I[II)V")
 	public void method5704(int arg0, int arg1, int arg2, int arg3, int[] arg4, int[] arg5, int arg6) {
-		if (TextureFormat.field1273 != this.field4221 || DataType.field1645 != this.field4218) {
+		if (TextureFormat.field1273 != this.field4221 || DataType.UNSIGNED_INT_8 != this.field4218) {
 			throw new RuntimeException();
 		}
 		this.method5704(arg0, arg1, arg2, arg3, arg4, null, arg6);

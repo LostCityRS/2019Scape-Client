@@ -36,7 +36,7 @@ public class class927 extends OpenGLBaseTexture implements class359 {
 	}
 
 	public class927(OpenGLRenderer arg0, int arg1, int arg2, boolean arg3, int[] arg4, int arg5, int arg6) {
-		super(arg0, 3553, TextureFormat.field1273, DataType.field1645, arg1 * arg2, arg3);
+		super(arg0, 3553, TextureFormat.field1273, DataType.UNSIGNED_INT_8, arg1 * arg2, arg3);
 		if (this.field4980.field12022) {
 			this.field10671 = arg1;
 			this.field10672 = arg2;
@@ -64,7 +64,7 @@ public class class927 extends OpenGLBaseTexture implements class359 {
 	}
 
 	public class927(OpenGLRenderer arg0, TextureFormat arg1, int arg2, int arg3, boolean arg4, byte[] arg5, int arg6, int arg7) {
-		super(arg0, 3553, arg1, DataType.field1645, arg2 * arg3, arg4);
+		super(arg0, 3553, arg1, DataType.UNSIGNED_INT_8, arg2 * arg3, arg4);
 		if (this.field4980.field12022) {
 			this.field10671 = arg2;
 			this.field10672 = arg3;
@@ -100,7 +100,7 @@ public class class927 extends OpenGLBaseTexture implements class359 {
 	}
 
 	public class927(OpenGLRenderer arg0, TextureFormat arg1, int arg2, int arg3, boolean arg4, float[] arg5, int arg6, int arg7) {
-		super(arg0, 3553, arg1, DataType.field1642, arg2 * arg3, arg4);
+		super(arg0, 3553, arg1, DataType.FLOAT_32, arg2 * arg3, arg4);
 		if (this.field4980.field12022) {
 			this.field10671 = arg2;
 			this.field10672 = arg3;

@@ -649,10 +649,10 @@ public abstract class GpuRenderer extends Renderer {
 		var2[0] = -16777216;
 		this.field10141 = this.method16033(1, 1, false, var2, 0, 0);
 		this.method2195(new class1149(262144));
-		this.field10203 = this.method16065(new class345[] { new class345(new class339[] { class339.field3310, class339.field3300 }) });
-		this.field10204 = this.method16065(new class345[] { new class345(new class339[] { class339.field3310, class339.field3311 }) });
-		this.field10202 = this.method16065(new class345[] { new class345(class339.field3310), new class345(class339.field3311), new class345(class339.field3300), new class345(class339.field3301) });
-		this.field10184 = this.method16065(new class345[] { new class345(class339.field3310), new class345(class339.field3311), new class345(class339.field3300) });
+		this.field10203 = this.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.field3310, VertexDeclarationElementComponent.field3300 }) });
+		this.field10204 = this.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.field3310, VertexDeclarationElementComponent.field3311 }) });
+		this.field10202 = this.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(VertexDeclarationElementComponent.field3310), new VertexDeclarationElement(VertexDeclarationElementComponent.field3311), new VertexDeclarationElement(VertexDeclarationElementComponent.field3300), new VertexDeclarationElement(VertexDeclarationElementComponent.field3301) });
+		this.field10184 = this.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(VertexDeclarationElementComponent.field3310), new VertexDeclarationElement(VertexDeclarationElementComponent.field3311), new VertexDeclarationElement(VertexDeclarationElementComponent.field3300) });
 		for (int var3 = 0; var3 < 8; var3++) {
 			this.field10058[var3] = new GpuModel(this, 0, 0, false, false);
 			this.field10207[var3] = new GpuModel(this, 0, 0, true, true);
@@ -855,7 +855,7 @@ public abstract class GpuRenderer extends Renderer {
 		this.field10071.putFloat(0.0F);
 		this.field10071.putFloat(0.0F);
 		this.field10197.method5738(0, this.field10071.position(), this.field10046);
-		this.field10055 = this.method16065(new class345[] { new class345(new class339[] { class339.field3310, class339.field3311, class339.field3300, class339.field3300 }) });
+		this.field10055 = this.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.field3310, VertexDeclarationElementComponent.field3311, VertexDeclarationElementComponent.field3300, VertexDeclarationElementComponent.field3300 }) });
 	}
 
 	@ObfuscatedName("afc.si()V")
@@ -863,7 +863,7 @@ public abstract class GpuRenderer extends Renderer {
 		this.field10196 = this.method16085(true);
 		byte var1 = 24;
 		this.field10196.method5553(var1, 12);
-		this.field10150 = this.method16065(new class345[] { new class345(class339.field3310) });
+		this.field10150 = this.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(VertexDeclarationElementComponent.field3310) });
 	}
 
 	@ObfuscatedName("afc.se()V")
@@ -2479,7 +2479,7 @@ public abstract class GpuRenderer extends Renderer {
 	public abstract void method16059();
 
 	@ObfuscatedName("afc.vf([Llk;)Llo;")
-	public abstract VertexDeclaration method16065(class345[] arg0);
+	public abstract VertexDeclaration method16065(VertexDeclarationElement[] arg0);
 
 	@ObfuscatedName("afc.vc(Z)Lml;")
 	public abstract IndexBuffer method16067(boolean arg0);

@@ -67,7 +67,7 @@ public class PostProcessing {
 	public int field1168 = 0;
 
 	@ObfuscatedName("cv.h")
-	public DataType field1181 = DataType.field1645;
+	public DataType field1181 = DataType.UNSIGNED_INT_8;
 
 	public PostProcessing(LegacyOpenGLRenderer arg0) {
 		this.field1169 = arg0;
@@ -145,12 +145,12 @@ public class PostProcessing {
 		}
 		if (this.field1172) {
 			if (this.field1163 != null) {
-				this.field1178 = new class828(this.field1169, TextureFormat.field1268, DataType.field1649, this.field1177, this.field1167, this.field1169.field9967);
+				this.field1178 = new class828(this.field1169, TextureFormat.field1268, DataType.UNSIGNED_INT_24, this.field1177, this.field1167, this.field1169.field9967);
 			}
 			if (this.field1179) {
-				this.field1161 = new class812(this.field1169, 34037, TextureFormat.field1268, DataType.field1649, this.field1177, this.field1167);
+				this.field1161 = new class812(this.field1169, 34037, TextureFormat.field1268, DataType.UNSIGNED_INT_24, this.field1177, this.field1167);
 			} else if (this.field1178 == null) {
-				this.field1178 = new class828(this.field1169, TextureFormat.field1268, DataType.field1649, this.field1177, this.field1167);
+				this.field1178 = new class828(this.field1169, TextureFormat.field1268, DataType.UNSIGNED_INT_24, this.field1177, this.field1167);
 			}
 			this.field1172 = false;
 			this.field1173 = true;
@@ -355,7 +355,7 @@ public class PostProcessing {
 	public void method1365() {
 		int var1 = 0;
 		boolean var2 = false;
-		DataType var3 = DataType.field1645;
+		DataType var3 = DataType.UNSIGNED_INT_8;
 		for (class968 var4 = (class968) this.field1170.method14191(); var4 != null; var4 = (class968) this.field1170.method14161()) {
 			DataType var5 = var4.method17542();
 			if (var5.field1652 > var3.field1652) {

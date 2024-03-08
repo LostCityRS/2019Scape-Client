@@ -160,7 +160,7 @@ public class class69 {
 			var9 += this.field995.field1152 - 128;
 		}
 		if (this.field999 == null) {
-			this.field999 = new class812(this.field990, 3553, TextureFormat.field1270, DataType.field1645, 128, 128, false, this.field990.field10020, TextureFormat.field1270, false);
+			this.field999 = new class812(this.field990, 3553, TextureFormat.field1270, DataType.UNSIGNED_INT_8, 128, 128, false, this.field990.field10020, TextureFormat.field1270, false);
 			this.field999.method15312(false, false);
 			this.field999.method1082(true);
 		} else {

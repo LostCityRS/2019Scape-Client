@@ -6,9 +6,9 @@ import deob.ObfuscatedName;
 public abstract class VertexDeclaration implements class329 {
 
 	@ObfuscatedName("lo.e")
-	public final class345[] field3241;
+	public final VertexDeclarationElement[] field3241;
 
-	public VertexDeclaration(class345[] arg0) {
+	public VertexDeclaration(VertexDeclarationElement[] arg0) {
 		this.field3241 = arg0;
 	}
 }

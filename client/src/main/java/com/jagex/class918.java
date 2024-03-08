@@ -16,7 +16,7 @@ public class class918 extends OpenGLBaseTexture implements VolumeTexture {
 	public final int field10618;
 
 	public class918(OpenGLRenderer arg0, TextureFormat arg1, int arg2, int arg3, int arg4, boolean arg5, byte[] arg6) {
-		super(arg0, 32879, arg1, DataType.field1645, arg2 * arg3 * arg4, arg5);
+		super(arg0, 32879, arg1, DataType.UNSIGNED_INT_8, arg2 * arg3 * arg4, arg5);
 		this.field10616 = arg2;
 		this.field10617 = arg3;
 		this.field10618 = arg4;

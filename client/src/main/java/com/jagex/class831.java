@@ -57,11 +57,11 @@ public class class831 extends Sprite {
 		this.field9407 = arg1;
 		this.field9404 = arg2;
 		if (arg4) {
-			class359 var6 = arg0.method16089(arg3 ? TextureFormat.field1273 : TextureFormat.field1271, DataType.field1645, arg1, arg2);
+			class359 var6 = arg0.method16089(arg3 ? TextureFormat.field1273 : TextureFormat.field1271, DataType.UNSIGNED_INT_8, arg1, arg2);
 			this.field9402 = var6.method5828(0);
 			this.field9401 = var6;
 		} else {
-			this.field9401 = arg0.method16030(arg3 ? TextureFormat.field1273 : TextureFormat.field1271, DataType.field1645, arg1, arg2);
+			this.field9401 = arg0.method16030(arg3 ? TextureFormat.field1273 : TextureFormat.field1271, DataType.UNSIGNED_INT_8, arg1, arg2);
 			this.field9402 = null;
 		}
 		this.field9401.method5700(true, true);

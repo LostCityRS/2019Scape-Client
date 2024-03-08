@@ -54,7 +54,7 @@ public class class648 {
 
 	@ObfuscatedName("ag.k(Lakm;I)V")
 	public static void method670(class993 arg0) {
-		if (client.method2737(client.state)) {
+		if (client.isStateGame(client.state)) {
 			field7949.method10261(arg0);
 		} else {
 			arg0.method17835();

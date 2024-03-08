@@ -15,22 +15,22 @@ public class DataType {
 	public static final DataType field1651 = new DataType(2, 4);
 
 	@ObfuscatedName("dg.k")
-	public static final DataType field1645 = new DataType(7, 1);
+	public static final DataType UNSIGNED_INT_8 = new DataType(7, 1);
 
 	@ObfuscatedName("dg.f")
-	public static final DataType field1646 = new DataType(6, 2);
+	public static final DataType UNSIGNED_INT_16 = new DataType(6, 2);
 
 	@ObfuscatedName("dg.w")
-	public static final DataType field1649 = new DataType(5, 3);
+	public static final DataType UNSIGNED_INT_24 = new DataType(5, 3);
 
 	@ObfuscatedName("dg.l")
-	public static final DataType field1648 = new DataType(8, 4);
+	public static final DataType UNSIGNED_INT_32 = new DataType(8, 4);
 
 	@ObfuscatedName("dg.u")
-	public static final DataType field1647 = new DataType(3, 2);
+	public static final DataType FLOAT_16 = new DataType(3, 2);
 
 	@ObfuscatedName("dg.z")
-	public static final DataType field1642 = new DataType(0, 4);
+	public static final DataType FLOAT_32 = new DataType(0, 4);
 
 	@ObfuscatedName("dg.p")
 	public final int field1650;

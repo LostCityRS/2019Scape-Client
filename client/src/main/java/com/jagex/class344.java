@@ -54,7 +54,7 @@ public class class344 {
 	public int field3334 = 0;
 
 	public class344(GpuRenderer arg0) {
-		this.field3326 = arg0.method16065(new class345[] { new class345(new class339[] { class339.field3310, class339.field3311, class339.field3300 }), new class345(class339.field3301) });
+		this.field3326 = arg0.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.field3310, VertexDeclarationElementComponent.field3311, VertexDeclarationElementComponent.field3300 }), new VertexDeclarationElement(VertexDeclarationElementComponent.field3301) });
 		this.field3333 = arg0.method16085(true);
 		this.field3329 = arg0.method16085(false);
 		this.field3329.method5553(393168, 12);

@@ -23,9 +23,9 @@ public class class361 {
 	@ObfuscatedName("mi.e()V")
 	public void method5836() {
 		this.field3412 = this.this$0.method16085(true);
-		this.this$0.method16065(new class345[] { new class345(new class339[] { class339.field3310, class339.field3311 }) });
-		this.this$0.method16065(new class345[] { new class345(new class339[] { class339.field3310, class339.field3311 }) });
-		this.this$0.method16065(new class345[] { new class345(new class339[] { class339.field3310, class339.field3311 }) });
+		this.this$0.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.field3310, VertexDeclarationElementComponent.field3311 }) });
+		this.this$0.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.field3310, VertexDeclarationElementComponent.field3311 }) });
+		this.this$0.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.field3310, VertexDeclarationElementComponent.field3311 }) });
 		this.field3411 = 16;
 	}
 

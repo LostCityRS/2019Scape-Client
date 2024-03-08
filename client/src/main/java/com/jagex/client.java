@@ -1054,9 +1054,9 @@ public final class client extends GameShell {
 			return;
 		}
 		String var1 = "";
-		class398[] var2 = class398.method14975();
+		JavConfigParameter[] var2 = JavConfigParameter.method14975();
 		for (int var3 = 0; var3 < var2.length; var3++) {
-			class398 var4 = var2[var3];
+			JavConfigParameter var4 = var2[var3];
 			String var5 = Statics.field11885.getParameter(var4.field4162);
 			if (var5 != null) {
 				switch(Integer.parseInt(var4.field4162)) {
@@ -1509,7 +1509,7 @@ public final class client extends GameShell {
 			LoginManager.method3048();
 		} else if (state == 9) {
 			LoginManager.method3048();
-		} else if (method2737(state) && !method9273(state)) {
+		} else if (isStateGame(state) && !method9273(state)) {
 			method3006();
 		} else if (state == 14 || state == 19) {
 			LoginManager.method3048();
@@ -1767,7 +1767,7 @@ public final class client extends GameShell {
 	}
 
 	@ObfuscatedName("eu.ev(II)Z")
-	public static boolean method2737(int arg0) {
+	public static boolean isStateGame(int arg0) {
 		return arg0 == 18 || arg0 == 3 || arg0 == 9;
 	}
 
@@ -2373,7 +2373,7 @@ public final class client extends GameShell {
 		if (field10978 != -1) {
 			method9585(true);
 		}
-		if (method640().method939() != null && (method2737(state) || Statics.method15084(state))) {
+		if (method640().method939() != null && (isStateGame(state) || Statics.method15084(state))) {
 			method4336(method640());
 		}
 		for (int var8 = 0; var8 < 114; var8++) {
@@ -2478,7 +2478,7 @@ public final class client extends GameShell {
 		}
 		try {
 			if (Statics.field688 != null) {
-				class394.field4027.method6089(new Object[] { var0, var1, getWindowMode(), Statics.field688.field11539.method18581() });
+				JavascriptFunction.field4027.method6089(new Object[] { var0, var1, getWindowMode(), Statics.field688.field11539.method18581() });
 			}
 		} catch (Throwable var3) {
 		}
@@ -7152,7 +7152,7 @@ public final class client extends GameShell {
 				if (var26.length() == 0) {
 					var26 = var25;
 				}
-				if (!field11079 || Statics.field2601.startsWith("mac") || !Browser.method2898(var25, 1, class394.field4033.method6087())) {
+				if (!field11079 || Statics.field2601.startsWith("mac") || !Browser.method2898(var25, 1, JavascriptFunction.field4033.method6087())) {
 					Browser.method4607(var26, true, field10784);
 				}
 			} else {
@@ -13336,8 +13336,8 @@ public final class client extends GameShell {
 			return;
 		}
 		try {
-			String var1 = Statics.field11885.getParameter(class398.field4122.field4162);
-			String var2 = Statics.field11885.getParameter(class398.field4132.field4162);
+			String var1 = Statics.field11885.getParameter(JavConfigParameter.field4122.field4162);
+			String var2 = Statics.field11885.getParameter(JavConfigParameter.field4132.field4162);
 			String var3 = var1 + "settings=" + arg0 + "; version=1; path=/; domain=" + var2;
 			String var4;
 			if (arg0.length() == 0) {
@@ -13356,7 +13356,7 @@ public final class client extends GameShell {
 			return;
 		}
 		try {
-			String var0 = Statics.field11885.getParameter(class398.field4132.field4162);
+			String var0 = Statics.field11885.getParameter(JavConfigParameter.field4132.field4162);
 			int var1 = (int) (MonotonicTime.method3655() / 86400000L) - 11745;
 			String var2 = "usrdob=" + var1 + "; version=1; path=/; domain=" + var0;
 			BrowserControl.eval(Statics.field11885, "document.cookie=\"" + var2 + "\"");
@@ -13447,7 +13447,7 @@ public final class client extends GameShell {
 	@ObfuscatedName("fw.mq(I)V")
 	public static void method3095() {
 		if (Statics.field1811 != ModeWhere.field8277) {
-			class394.field4036.method6090();
+			JavascriptFunction.field4036.method6090();
 		}
 	}
 

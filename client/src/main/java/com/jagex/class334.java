@@ -79,7 +79,7 @@ public class class334 {
 
 	public class334(GpuRenderer arg0, int arg1, int arg2) {
 		this.field3247 = arg0;
-		this.field3260 = DataType.field1645;
+		this.field3260 = DataType.UNSIGNED_INT_8;
 		this.field3256 = arg1;
 		this.field3246 = arg2;
 	}
@@ -97,7 +97,7 @@ public class class334 {
 		var1.putFloat(1.0F);
 		var1.putFloat(2.0F);
 		this.field3263.method5738(0, var1.position(), this.field3247.field10046);
-		this.field3264 = this.field3247.method16065(new class345[] { new class345(class339.field3303) });
+		this.field3264 = this.field3247.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(VertexDeclarationElementComponent.field3303) });
 	}
 
 	@ObfuscatedName("ls.n()V")
@@ -112,13 +112,13 @@ public class class334 {
 		this.method5596();
 		switch(this.field3252) {
 			case 0:
-				this.field3260 = DataType.field1645;
+				this.field3260 = DataType.UNSIGNED_INT_8;
 				break;
 			case 1:
-				this.field3260 = DataType.field1647;
+				this.field3260 = DataType.FLOAT_16;
 				break;
 			case 2:
-				this.field3260 = DataType.field1642;
+				this.field3260 = DataType.FLOAT_32;
 				break;
 			default:
 				throw new RuntimeException();

@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("aiq")
 public class class921 extends VertexDeclaration {
 
-	public class921(class345[] arg0) {
+	public class921(VertexDeclarationElement[] arg0) {
 		super(arg0);
 	}
 

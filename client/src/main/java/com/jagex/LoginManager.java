@@ -375,7 +375,7 @@ public class LoginManager {
 				Statics.field432.field795.pos = 0;
 				String var7 = Statics.field432.field795.gjstr2();
 				Statics.field432.field795.pos = 0;
-				String var8 = class394.field4032.method6087();
+				String var8 = JavascriptFunction.field4032.method6087();
 				Browser.method6081(var7, true, var8, client.field10784);
 				field445 = 64;
 			}
@@ -843,7 +843,7 @@ public class LoginManager {
 					}
 				}
 				if (Statics.field1811 == ModeWhere.field8273) {
-					class394.field4024.method6090();
+					JavascriptFunction.field4024.method6090();
 				}
 				if (Statics.field431 != 211) {
 					field445 = 7;

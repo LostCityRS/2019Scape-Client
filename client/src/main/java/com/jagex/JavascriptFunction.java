@@ -4,51 +4,51 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("ns")
-public class class394 {
+public class JavascriptFunction {
 
 	@ObfuscatedName("ns.e")
-	public static final class394 field4036 = new class394(3);
+	public static final JavascriptFunction field4036 = new JavascriptFunction(3);
 
 	@ObfuscatedName("ns.n")
-	public static final class394 field4024 = new class394(7);
+	public static final JavascriptFunction field4024 = new JavascriptFunction(7);
 
 	@ObfuscatedName("ns.m")
-	public static final class394 field4023 = new class394(9);
+	public static final JavascriptFunction field4023 = new JavascriptFunction(9);
 
 	@ObfuscatedName("ns.k")
-	public static final class394 field4028 = new class394(11);
+	public static final JavascriptFunction field4028 = new JavascriptFunction(11);
 
 	@ObfuscatedName("ns.f")
-	public static final class394 field4027 = new class394(1);
+	public static final JavascriptFunction field4027 = new JavascriptFunction(1);
 
 	@ObfuscatedName("ns.w")
-	public static final class394 field4026 = new class394(6);
+	public static final JavascriptFunction field4026 = new JavascriptFunction(6);
 
 	@ObfuscatedName("ns.l")
-	public static final class394 field4029 = new class394(5);
+	public static final JavascriptFunction field4029 = new JavascriptFunction(5);
 
 	@ObfuscatedName("ns.u")
-	public static final class394 field4030 = new class394(2);
+	public static final JavascriptFunction field4030 = new JavascriptFunction(2);
 
 	@ObfuscatedName("ns.z")
-	public static final class394 field4031 = new class394(4);
+	public static final JavascriptFunction field4031 = new JavascriptFunction(4);
 
 	@ObfuscatedName("ns.p")
-	public static final class394 field4032 = new class394(8);
+	public static final JavascriptFunction field4032 = new JavascriptFunction(8);
 
 	@ObfuscatedName("ns.d")
-	public static final class394 field4033 = new class394(13);
+	public static final JavascriptFunction field4033 = new JavascriptFunction(13);
 
 	@ObfuscatedName("ns.c")
-	public static final class394 field4034 = new class394(10);
+	public static final JavascriptFunction field4034 = new JavascriptFunction(10);
 
 	@ObfuscatedName("ns.r")
-	public static final class394 field4035 = new class394(12);
+	public static final JavascriptFunction field4035 = new JavascriptFunction(12);
 
 	@ObfuscatedName("ns.v")
 	public final int field4025;
 
-	public class394(int arg0) {
+	public JavascriptFunction(int arg0) {
 		this.field4025 = arg0;
 	}
 

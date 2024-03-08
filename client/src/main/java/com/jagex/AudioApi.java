@@ -155,7 +155,7 @@ public class AudioApi {
 			}
 		}
 		this.field1867.clear();
-		if (this.field1869 != null && this.field1869.method7385() == class481.field4949 && !this.field1870 && client.field10849.field794 != null && client.method2737(client.state)) {
+		if (this.field1869 != null && this.field1869.method7385() == class481.field4949 && !this.field1870 && client.field10849.field794 != null && client.isStateGame(client.state)) {
 			ClientMessage var7 = Statics.method1604(ClientProt.SOUND_SONGPRELOADED, client.field10849.field794);
 			var7.field11432.p4(this.field1869.method7386().method9680());
 			client.field10849.method934(var7);
@@ -568,7 +568,7 @@ public class AudioApi {
 
 	@ObfuscatedName("fb.ac(II)V")
 	public void method3144(int arg0) {
-		if (client.field10849.field794 != null && client.method2737(client.state)) {
+		if (client.field10849.field794 != null && client.isStateGame(client.state)) {
 			ClientMessage var2 = Statics.method1604(ClientProt.SOUND_SONGEND, client.field10849.field794);
 			var2.field11432.p4(arg0);
 			client.field10849.method934(var2);
@@ -644,7 +644,7 @@ public class AudioApi {
 		if (this.field1857) {
 			this.field1868.method7381();
 		}
-		if (client.field10849.field794 != null && client.method2737(client.state)) {
+		if (client.field10849.field794 != null && client.isStateGame(client.state)) {
 			ClientMessage var18 = Statics.method1604(ClientProt.SOUND_SONGPRELOADED, client.field10849.field794);
 			var18.field11432.p4(this.field1875);
 			client.field10849.method934(var18);

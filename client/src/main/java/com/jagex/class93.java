@@ -33,7 +33,7 @@ public class class93 {
 			return false;
 		}
 		LegacyOpenGLFramebuffer var4 = this.field1183.field9877;
-		class828 var5 = new class828(this.field1183, TextureFormat.field1273, DataType.field1645, arg0.field9269, arg0.field9268);
+		class828 var5 = new class828(this.field1183, TextureFormat.field1273, DataType.UNSIGNED_INT_8, arg0.field9269, arg0.field9268);
 		boolean var6 = false;
 		this.field1183.method2142(var4);
 		var4.method15439(0, var5);

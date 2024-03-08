@@ -468,12 +468,12 @@ public class Direct3DRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqd.ar(II)Ldw;")
 	public class126 method2121(int arg0, int arg1) {
-		return new class411(this, DataType.field1649, arg0, arg1, 0);
+		return new class411(this, DataType.UNSIGNED_INT_24, arg0, arg1, 0);
 	}
 
 	@ObfuscatedName("aqd.ap(III)Ldw;")
 	public class126 method2356(int arg0, int arg1, int arg2) {
-		return new class411(this, DataType.field1649, arg0, arg1, arg2);
+		return new class411(this, DataType.UNSIGNED_INT_24, arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("aqd.aha(Loz;)Lake;")
@@ -533,9 +533,9 @@ public class Direct3DRenderer extends GpuRenderer {
 	public void method19024(int arg0, int arg1) {
 		this.method2126();
 		this.method2419(arg0, arg1);
-		this.field11990 = IDirect3DDevice.CreateRenderTarget(this.device, arg0, arg1, method19011(TextureFormat.field1273, DataType.field1645), 0, 0, false);
+		this.field11990 = IDirect3DDevice.CreateRenderTarget(this.device, arg0, arg1, method19011(TextureFormat.field1273, DataType.UNSIGNED_INT_8), 0, 0, false);
 		for (int var3 = 0; var3 < 3; var3++) {
-			this.field11994[var3] = IDirect3DDevice.CreateOffscreenPlainSurface(this.device, arg0, arg1, method19011(TextureFormat.field1273, DataType.field1645), 2);
+			this.field11994[var3] = IDirect3DDevice.CreateOffscreenPlainSurface(this.device, arg0, arg1, method19011(TextureFormat.field1273, DataType.UNSIGNED_INT_8), 2);
 		}
 		this.method15961(arg0 * arg1 * 4);
 	}
@@ -1135,7 +1135,7 @@ public class Direct3DRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqd.vc(Z)Lml;")
 	public final IndexBuffer method16067(boolean arg0) {
-		return new class403(this, DataType.field1646, arg0);
+		return new class403(this, DataType.UNSIGNED_INT_16, arg0);
 	}
 
 	@ObfuscatedName("aqd.vn(Z)Llr;")
@@ -1144,7 +1144,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.vf([Llk;)Llo;")
-	public VertexDeclaration method16065(class345[] arg0) {
+	public VertexDeclaration method16065(VertexDeclarationElement[] arg0) {
 		return new class920(this, arg0);
 	}
 
@@ -1255,9 +1255,9 @@ public class Direct3DRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqd.ait(Ldg;)I")
 	public static final int method19035(DataType arg0) {
-		if (DataType.field1646 == arg0) {
+		if (DataType.UNSIGNED_INT_16 == arg0) {
 			return 80;
-		} else if (DataType.field1649 == arg0) {
+		} else if (DataType.UNSIGNED_INT_24 == arg0) {
 			return 77;
 		} else {
 			throw new IllegalArgumentException("");

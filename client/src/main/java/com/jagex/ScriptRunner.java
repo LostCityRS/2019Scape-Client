@@ -12525,12 +12525,12 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ah.amb(Lyf;I)V")
 	public static final void method707(ClientScriptState arg0) {
-		class394.field4023.method6090();
+		JavascriptFunction.field4023.method6090();
 	}
 
 	@ObfuscatedName("adg.amu(Lyf;I)V")
 	public static final void method15226(ClientScriptState arg0) {
-		class394.field4028.method6090();
+		JavascriptFunction.field4028.method6090();
 	}
 
 	@ObfuscatedName("akw.amq(Lyf;I)V")
@@ -12578,7 +12578,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("nd.amt(Lyf;S)V")
 	public static final void method5936(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = client.method2737(client.state) ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = client.isStateGame(client.state) ? 1 : 0;
 	}
 
 	@ObfuscatedName("xm.amv(Lyf;I)V")
@@ -14902,7 +14902,7 @@ public final class ScriptRunner {
 		boolean var1 = false;
 		if (client.field11079) {
 			try {
-				Object var2 = class394.field4026.method6097(new Object[] { Statics.field7406, Statics.field4490.field12052 == 1, arg0.field8216[--arg0.field8226] });
+				Object var2 = JavascriptFunction.field4026.method6097(new Object[] { Statics.field7406, Statics.field4490.field12052 == 1, arg0.field8216[--arg0.field8226] });
 				if (var2 != null) {
 					var1 = (Boolean) var2;
 				}
@@ -14915,14 +14915,14 @@ public final class ScriptRunner {
 	@ObfuscatedName("jp.ayj(Lyf;I)V")
 	public static final void method5100(ClientScriptState arg0) {
 		if (client.field11079) {
-			class394.field4029.method6090();
+			JavascriptFunction.field4029.method6090();
 		}
 	}
 
 	@ObfuscatedName("sb.ayw(Lyf;I)V")
 	public static final void method8343(ClientScriptState arg0) {
 		if (client.field11079) {
-			class394.field4030.method6090();
+			JavascriptFunction.field4030.method6090();
 		}
 	}
 
@@ -14931,7 +14931,7 @@ public final class ScriptRunner {
 		boolean var1 = true;
 		if (client.field11079) {
 			try {
-				Object var2 = class394.field4031.method6088();
+				Object var2 = JavascriptFunction.field4031.method6088();
 				if (var2 != null) {
 					var1 = (Boolean) var2;
 				}

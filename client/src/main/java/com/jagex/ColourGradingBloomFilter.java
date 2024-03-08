@@ -306,7 +306,7 @@ public class ColourGradingBloomFilter extends class968 {
 
 	@ObfuscatedName("aqf.p()Ldg;")
 	public DataType method17542() {
-		return DataType.field1647;
+		return DataType.FLOAT_16;
 	}
 
 	@ObfuscatedName("aqf.u()I")

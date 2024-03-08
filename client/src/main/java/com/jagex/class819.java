@@ -22,7 +22,7 @@ public class class819 extends GlEffect {
 		super(arg0);
 		this.field9302 = arg1;
 		this.method15341();
-		this.field9303 = new class814(this.field1021, TextureFormat.field1270, DataType.field1645, 2, new byte[] { 0, -1 }, TextureFormat.field1270);
+		this.field9303 = new class814(this.field1021, TextureFormat.field1270, DataType.UNSIGNED_INT_8, 2, new byte[] { 0, -1 }, TextureFormat.field1270);
 		this.field9303.method15334(false);
 	}
 

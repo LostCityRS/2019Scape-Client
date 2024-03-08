@@ -775,9 +775,9 @@ public class LegacyOpenGLRenderer extends Renderer {
 	@ObfuscatedName("afa.ra()V")
 	public void method15728() {
 		this.field9973 = new class70[this.field9982];
-		this.field9974 = new class812(this, 3553, TextureFormat.field1273, DataType.field1645, 1, 1);
-		new class812(this, 3553, TextureFormat.field1273, DataType.field1645, 1, 1);
-		new class812(this, 3553, TextureFormat.field1273, DataType.field1645, 1, 1);
+		this.field9974 = new class812(this, 3553, TextureFormat.field1273, DataType.UNSIGNED_INT_8, 1, 1);
+		new class812(this, 3553, TextureFormat.field1273, DataType.UNSIGNED_INT_8, 1, 1);
+		new class812(this, 3553, TextureFormat.field1273, DataType.UNSIGNED_INT_8, 1, 1);
 		for (int var1 = 0; var1 < 8; var1++) {
 			this.field10008[var1] = new LegacyOpenGLModel(this);
 			this.field10009[var1] = new LegacyOpenGLModel(this);
@@ -2551,12 +2551,12 @@ public class LegacyOpenGLRenderer extends Renderer {
 
 	@ObfuscatedName("afa.ar(II)Ldw;")
 	public class126 method2121(int arg0, int arg1) {
-		return new class828(this, TextureFormat.field1268, DataType.field1649, arg0, arg1);
+		return new class828(this, TextureFormat.field1268, DataType.UNSIGNED_INT_24, arg0, arg1);
 	}
 
 	@ObfuscatedName("afa.ap(III)Ldw;")
 	public class126 method2356(int arg0, int arg1, int arg2) {
-		return new class828(this, TextureFormat.field1268, DataType.field1649, arg0, arg1, arg2);
+		return new class828(this, TextureFormat.field1268, DataType.UNSIGNED_INT_24, arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("afa.au(IILck;Ldg;I)Ldp;")
@@ -3272,7 +3272,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 
 	@ObfuscatedName("afa.uv(Lck;Ldg;)I")
 	public static int method15799(TextureFormat arg0, DataType arg1) {
-		if (DataType.field1645 == arg1) {
+		if (DataType.UNSIGNED_INT_8 == arg1) {
 			switch(arg0.field1278) {
 				case 2:
 					return 6407;
@@ -3288,7 +3288,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 				case 7:
 					return 6409;
 			}
-		} else if (DataType.field1646 == arg1) {
+		} else if (DataType.UNSIGNED_INT_16 == arg1) {
 			switch(arg0.field1278) {
 				case 0:
 					return 33189;
@@ -3307,14 +3307,14 @@ public class LegacyOpenGLRenderer extends Renderer {
 				case 7:
 					return 32834;
 			}
-		} else if (DataType.field1649 == arg1) {
+		} else if (DataType.UNSIGNED_INT_24 == arg1) {
 			switch(arg0.field1278) {
 				case 0:
 					return 33190;
 				default:
 					throw new IllegalArgumentException();
 			}
-		} else if (DataType.field1647 == arg1) {
+		} else if (DataType.FLOAT_16 == arg1) {
 			switch(arg0.field1278) {
 				case 2:
 					return 34843;
@@ -3330,7 +3330,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 				case 7:
 					return 34846;
 			}
-		} else if (DataType.field1642 == arg1) {
+		} else if (DataType.FLOAT_32 == arg1) {
 			switch(arg0.field1278) {
 				case 2:
 					return 34837;

@@ -403,12 +403,12 @@ public final class OpenGLRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqv.ar(II)Ldw;")
 	public class126 method2121(int arg0, int arg1) {
-		return new class489(this, TextureFormat.field1268, DataType.field1649, arg0, arg1);
+		return new class489(this, TextureFormat.field1268, DataType.UNSIGNED_INT_24, arg0, arg1);
 	}
 
 	@ObfuscatedName("aqv.ap(III)Ldw;")
 	public class126 method2356(int arg0, int arg1, int arg2) {
-		return new class489(this, TextureFormat.field1268, DataType.field1649, arg0, arg1, arg2);
+		return new class489(this, TextureFormat.field1268, DataType.UNSIGNED_INT_24, arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("aqv.aq(IIII)[I")
@@ -1089,11 +1089,11 @@ public final class OpenGLRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqv.vc(Z)Lml;")
 	public final IndexBuffer method16067(boolean arg0) {
-		return new OpenGLIndexBuffer(this, DataType.field1646, arg0);
+		return new OpenGLIndexBuffer(this, DataType.UNSIGNED_INT_16, arg0);
 	}
 
 	@ObfuscatedName("aqv.vf([Llk;)Llo;")
-	public VertexDeclaration method16065(class345[] arg0) {
+	public VertexDeclaration method16065(VertexDeclarationElement[] arg0) {
 		return new class921(arg0);
 	}
 
@@ -1110,20 +1110,20 @@ public final class OpenGLRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqv.vk(Llo;)V")
 	public void method16177(VertexDeclaration arg0) {
-		class345[] var2 = arg0.field3241;
+		VertexDeclarationElement[] var2 = arg0.field3241;
 		int var3 = 0;
 		boolean var4 = false;
 		boolean var5 = false;
 		boolean var6 = false;
 		for (int var7 = 0; var7 < var2.length; var7++) {
-			class345 var8 = var2[var7];
+			VertexDeclarationElement var8 = var2[var7];
 			OpenGLVertexBuffer var9 = this.field12012[var7];
 			int var10 = 0;
 			int var11 = var9.method16793();
 			long var12 = var9.getAddress();
 			var9.method7658();
 			for (int var14 = 0; var14 < var8.method5776(); var14++) {
-				class339 var15 = var8.method5777(var14);
+				VertexDeclarationElementComponent var15 = var8.method5777(var14);
 				switch(var15.field3312) {
 					case 2:
 						OpenGL.glColorPointer(4, 5121, var11, (long) var10 + var12);
@@ -1454,7 +1454,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqv.ahi(Lck;Ldg;)I")
 	public static int method19077(TextureFormat arg0, DataType arg1) {
-		if (DataType.field1645 == arg1) {
+		if (DataType.UNSIGNED_INT_8 == arg1) {
 			switch(arg0.field1278) {
 				case 1:
 					return 33777;
@@ -1474,7 +1474,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 				case 8:
 					return 33779;
 			}
-		} else if (DataType.field1646 == arg1) {
+		} else if (DataType.UNSIGNED_INT_16 == arg1) {
 			switch(arg0.field1278) {
 				case 0:
 					return 33189;
@@ -1493,21 +1493,21 @@ public final class OpenGLRenderer extends GpuRenderer {
 				case 7:
 					return 32834;
 			}
-		} else if (DataType.field1649 == arg1) {
+		} else if (DataType.UNSIGNED_INT_24 == arg1) {
 			switch(arg0.field1278) {
 				case 0:
 					return 33190;
 				default:
 					throw new IllegalArgumentException();
 			}
-		} else if (DataType.field1648 == arg1) {
+		} else if (DataType.UNSIGNED_INT_32 == arg1) {
 			switch(arg0.field1278) {
 				case 0:
 					return 33191;
 				default:
 					throw new IllegalArgumentException();
 			}
-		} else if (DataType.field1647 == arg1) {
+		} else if (DataType.FLOAT_16 == arg1) {
 			switch(arg0.field1278) {
 				case 2:
 					return 34843;
@@ -1523,7 +1523,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 				case 7:
 					return 34846;
 			}
-		} else if (DataType.field1642 == arg1) {
+		} else if (DataType.FLOAT_32 == arg1) {
 			switch(arg0.field1278) {
 				case 2:
 					return 34837;

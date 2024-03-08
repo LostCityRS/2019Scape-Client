@@ -47,10 +47,10 @@ public class class323 {
 		if (this.field3229 && !this.field3223.field10116) {
 			this.field3229 = false;
 		}
-		if (this.field3229 && !this.field3223.method16289(TextureFormat.field1272, DataType.field1645)) {
+		if (this.field3229 && !this.field3223.method16289(TextureFormat.field1272, DataType.UNSIGNED_INT_8)) {
 			this.field3229 = false;
 		}
-		if (this.field3229 || this.field3223.method16026(TextureFormat.field1272, DataType.field1645)) {
+		if (this.field3229 || this.field3223.method16026(TextureFormat.field1272, DataType.UNSIGNED_INT_8)) {
 			method5410();
 			if (this.field3229) {
 				byte[] var6 = class703.method4540(Statics.field3230, false);

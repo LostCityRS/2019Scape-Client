@@ -61,7 +61,7 @@ public class class403 implements IndexBuffer {
 		} else {
 			var3 = 1;
 		}
-		this.field4213 = IDirect3DDevice.CreateIndexBuffer(this.field4211.device, this.field4208, var2, DataType.field1646 == this.field4212 ? 101 : 102, var3);
+		this.field4213 = IDirect3DDevice.CreateIndexBuffer(this.field4211.device, this.field4208, var2, DataType.UNSIGNED_INT_16 == this.field4212 ? 101 : 102, var3);
 		this.field4210 = this.field4208;
 	}
 

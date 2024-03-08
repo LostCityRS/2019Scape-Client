@@ -143,7 +143,7 @@ public class class336 {
 		this.field3277 = var2;
 		int var7 = 0;
 		int var8 = this.field3275 * var3 + this.field3274;
-		if (!this.field3271.method16026(TextureFormat.field1270, DataType.field1645)) {
+		if (!this.field3271.method16026(TextureFormat.field1270, DataType.UNSIGNED_INT_8)) {
 			if (this.field3283 == null) {
 				this.field3283 = new int[16384];
 			}

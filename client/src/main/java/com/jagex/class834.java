@@ -20,7 +20,7 @@ public class class834 extends class103 {
 
 	@ObfuscatedName("aed.e(Lafc;II[I[I)Laed;")
 	public static class834 method15388(GpuRenderer arg0, int arg1, int arg2, int[] arg3, int[] arg4) {
-		if (!arg0.method16026(TextureFormat.field1270, DataType.field1645)) {
+		if (!arg0.method16026(TextureFormat.field1270, DataType.UNSIGNED_INT_8)) {
 			int[] var9 = new int[arg1 * arg2];
 			for (int var10 = 0; var10 < arg2; var10++) {
 				int var11 = arg1 * var10 + arg3[var10];

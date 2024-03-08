@@ -51,7 +51,7 @@ public class class354 {
 		this.field3389 = arg0;
 		this.field3390 = this.field3389.method16085(true);
 		this.field3390.method5553(arg1 * 96, 24);
-		this.field3381 = this.field3389.method16065(new class345[] { new class345(new class339[] { class339.field3310, class339.field3300, class339.field3311 }) });
+		this.field3381 = this.field3389.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.field3310, VertexDeclarationElementComponent.field3300, VertexDeclarationElementComponent.field3311 }) });
 		this.field3392 = this.field3389.method16067(false);
 		int var3 = arg1 * 6;
 		this.field3392.method5831(var3);

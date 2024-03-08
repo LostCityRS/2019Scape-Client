@@ -119,7 +119,7 @@ public class ColourRemappingFilter extends class968 {
 
 	@ObfuscatedName("aqi.p()Ldg;")
 	public DataType method17542() {
-		return DataType.field1645;
+		return DataType.UNSIGNED_INT_8;
 	}
 
 	@ObfuscatedName("aqi.u()I")

@@ -77,7 +77,7 @@ public class LevelsFilter extends class968 {
 
 	@ObfuscatedName("aqo.p()Ldg;")
 	public DataType method17542() {
-		return DataType.field1645;
+		return DataType.UNSIGNED_INT_8;
 	}
 
 	@ObfuscatedName("aqo.u()I")

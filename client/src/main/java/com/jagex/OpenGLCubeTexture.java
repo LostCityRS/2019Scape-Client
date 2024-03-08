@@ -7,7 +7,7 @@ import jaggl.OpenGL;
 public class OpenGLCubeTexture extends OpenGLBaseTexture implements GpuCubeTexture {
 
 	public OpenGLCubeTexture(OpenGLRenderer arg0, int arg1, boolean arg2, int[][] arg3) {
-		super(arg0, 34067, TextureFormat.field1273, DataType.field1645, arg1 * arg1 * 6, arg2);
+		super(arg0, 34067, TextureFormat.field1273, DataType.UNSIGNED_INT_8, arg1 * arg1 * 6, arg2);
 		for (int var5 = 0; var5 < 6; var5++) {
 			for (int var6 = 0; var6 < arg3[var5].length; var6++) {
 				int var7 = arg3[var5][var6];
