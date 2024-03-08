@@ -32,7 +32,7 @@ public abstract class class599 {
 	public class599(boolean arg0, Language arg1, ModeGame arg2) {
 		this.field7531 = arg0;
 		if (ModeGame.field8335 == arg2) {
-			this.field7534 = new String[] { null, null, null, null, null, class776.field9075.method15021(arg1) };
+			this.field7534 = new String[] { null, null, null, null, null, LocalisedText.field9075.method15021(arg1) };
 		} else {
 			this.field7534 = new String[] { null, null, null, null, null, null };
 		}

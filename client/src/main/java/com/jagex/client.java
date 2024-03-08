@@ -1386,7 +1386,7 @@ public final class client extends GameShell {
 		if (Statics.field1811 != ModeWhere.field8273 && Statics.field1811 != ModeWhere.field8276) {
 			field10794 = true;
 		}
-		field6598 = class776.field9044.method15021(Statics.field1680);
+		field6598 = LocalisedText.field9044.method15021(Statics.field1680);
 		Statics.field3183 = new class490();
 		(new Thread(Statics.field3183)).start();
 		Statics.field7957 = new class26();
@@ -1460,7 +1460,7 @@ public final class client extends GameShell {
 					} else if (Statics.field688.field11521.method18701() == 0 || Statics.field11931.method9080(86)) {
 						DeveloperConsole.method638();
 					} else {
-						Statics.method4943(class776.field8948.method15021(Statics.field1680));
+						Statics.method4943(LocalisedText.field8948.method15021(Statics.field1680));
 					}
 				}
 				if (field10822 < 75) {
@@ -1592,19 +1592,19 @@ public final class client extends GameShell {
 		} else if (method9273(field10791)) {
 			if (field10855.method7724() == class491.field5006) {
 				int var4 = field10855.method7725() / 2;
-				class41.method649(class776.field9044.method15021(Statics.field1680) + TextUtil.BR + "(" + var4 + "%)", true, Statics.field8198, Statics.field9184, Statics.field2657);
+				class41.method649(LocalisedText.field9044.method15021(Statics.field1680) + TextUtil.BR + "(" + var4 + "%)", true, Statics.field8198, Statics.field9184, Statics.field2657);
 			} else if (field10855.method7724() == class491.field5005) {
 				int var5 = field10855.method7726() / 2 + 50;
-				class41.method649(class776.field9044.method15021(Statics.field1680) + TextUtil.BR + "(" + var5 + "%)", true, Statics.field8198, Statics.field9184, Statics.field2657);
+				class41.method649(LocalisedText.field9044.method15021(Statics.field1680) + TextUtil.BR + "(" + var5 + "%)", true, Statics.field8198, Statics.field9184, Statics.field2657);
 			} else {
-				class41.method649(class776.field9044.method15021(Statics.field1680), true, Statics.field8198, Statics.field9184, Statics.field2657);
+				class41.method649(LocalisedText.field9044.method15021(Statics.field1680), true, Statics.field8198, Statics.field9184, Statics.field2657);
 			}
 		} else if (field10791 == 18) {
 			method18329(var1);
 		} else if (field10791 == 14) {
-			class41.method649(class776.field9046.method15021(Statics.field1680) + TextUtil.BR + class776.field9047.method15021(Statics.field1680), false, Statics.field8198, Statics.field9184, Statics.field2657);
+			class41.method649(LocalisedText.field9046.method15021(Statics.field1680) + TextUtil.BR + LocalisedText.field9047.method15021(Statics.field1680), false, Statics.field8198, Statics.field9184, Statics.field2657);
 		} else if (field10791 == 19) {
-			class41.method649(class776.field9095.method15021(Statics.field1680), false, Statics.field8198, Statics.field9184, Statics.field2657);
+			class41.method649(LocalisedText.field9095.method15021(Statics.field1680), false, Statics.field8198, Statics.field9184, Statics.field2657);
 		}
 		if (field10997 == 3) {
 			for (int var6 = 0; var6 < field11051; var6++) {
@@ -2040,7 +2040,7 @@ public final class client extends GameShell {
 
 	@ObfuscatedName("s.et(IZI)V")
 	public static void method486(int arg0, boolean arg1) {
-		Statics.method14060(arg0, class776.field9044.method15021(Statics.field1680), arg1);
+		Statics.method14060(arg0, LocalisedText.field9044.method15021(Statics.field1680), arg1);
 	}
 
 	@ObfuscatedName("gm.ew(ILjava/lang/String;ZI)V")
@@ -2233,14 +2233,14 @@ public final class client extends GameShell {
 			return 1;
 		}
 		if (arg0 != Statics.field688.field11540.method18545()) {
-			Statics.method14060(arg0, class776.field9045.method15021(Statics.field1680), true);
+			Statics.method14060(arg0, LocalisedText.field9045.method15021(Statics.field1680), true);
 			if (Statics.field688.field11540.method18545() != arg0) {
 				return -1;
 			}
 		}
 		try {
 			Dimension var2 = Statics.field10578.getSize();
-			class41.method649(class776.field9045.method15021(Statics.field1680), true, Statics.field8198, Statics.field9184, Statics.field2657);
+			class41.method649(LocalisedText.field9045.method15021(Statics.field1680), true, Statics.field8198, Statics.field9184, Statics.field2657);
 			class120 var3 = class120.method1931(Statics.field9213, Statics.field11389.field7738, 0);
 			long var4 = class213.method3655();
 			Statics.field8198.method2167();
@@ -2904,10 +2904,10 @@ public final class client extends GameShell {
 											for (class957 var25 = (class957) field10910.method14254(); var25 != null; var25 = (class957) field10910.method14241()) {
 												if ((long) var25.field11211 < class213.method3655() / 1000L - 5L) {
 													if (var25.field11209 > 0) {
-														class241.method2664(5, 0, "", "", "", var25.field11210 + class776.field8946.method15021(Statics.field1680), null);
+														class241.method2664(5, 0, "", "", "", var25.field11210 + LocalisedText.field8946.method15021(Statics.field1680), null);
 													}
 													if (var25.field11209 == 0) {
-														class241.method2664(5, 0, "", "", "", var25.field11210 + class776.field9072.method15021(Statics.field1680), null);
+														class241.method2664(5, 0, "", "", "", var25.field11210 + LocalisedText.field9072.method15021(Statics.field1680), null);
 													}
 													var25.method8433();
 												}
@@ -3208,10 +3208,10 @@ public final class client extends GameShell {
 											for (class957 var42 = (class957) field10910.method14254(); var42 != null; var42 = (class957) field10910.method14241()) {
 												if ((long) var42.field11211 < class213.method3655() / 1000L - 5L) {
 													if (var42.field11209 > 0) {
-														class241.method2664(5, 0, "", "", "", var42.field11210 + class776.field8946.method15021(Statics.field1680), null);
+														class241.method2664(5, 0, "", "", "", var42.field11210 + LocalisedText.field8946.method15021(Statics.field1680), null);
 													}
 													if (var42.field11209 == 0) {
-														class241.method2664(5, 0, "", "", "", var42.field11210 + class776.field9072.method15021(Statics.field1680), null);
+														class241.method2664(5, 0, "", "", "", var42.field11210 + LocalisedText.field9072.method15021(Statics.field1680), null);
 													}
 													var42.method8433();
 												}
@@ -4944,7 +4944,7 @@ public final class client extends GameShell {
 		}
 		if (field11023) {
 			Statics.field8198.method2301(var8, var9, var10, var11, -16777216);
-			class41.method649(class776.field9044.method15021(Statics.field1680), false, Statics.field8198, Statics.field9184, Statics.field2657);
+			class41.method649(LocalisedText.field9044.method15021(Statics.field1680), false, Statics.field8198, Statics.field9184, Statics.field2657);
 		}
 		method15141(field10792, false, (float) (var10 / 2 + var8), (float) (var11 / 2 + var9), (float) (field11078 << 1), (float) (field11078 << 1), var10, var11);
 		Statics.field8198.method2220(field10792);
@@ -7110,7 +7110,7 @@ public final class client extends GameShell {
 			arg0.field796 = null;
 			return true;
 		} else if (ServerProt.SET_MOVEACTION == arg0.field796) {
-			Statics.field4868 = arg0.field797 > 2 ? var2.gjstr() : class776.field9079.method15021(Statics.field1680);
+			Statics.field4868 = arg0.field797 > 2 ? var2.gjstr() : LocalisedText.field9079.method15021(Statics.field1680);
 			field10963 = arg0.field797 > 0 ? var2.g2() : -1;
 			if (field10963 == 65535) {
 				field10963 = -1;
@@ -10844,7 +10844,7 @@ public final class client extends GameShell {
 			}
 		}
 		if (!var4) {
-			class241.method1006(4, class776.field9073.method15021(Statics.field1680) + arg1);
+			class241.method1006(4, LocalisedText.field9073.method15021(Statics.field1680) + arg1);
 		}
 	}
 
@@ -10872,7 +10872,7 @@ public final class client extends GameShell {
 			}
 		}
 		if (!var1) {
-			class241.method1006(4, class776.field9073.method15021(Statics.field1680) + arg0);
+			class241.method1006(4, LocalisedText.field9073.method15021(Statics.field1680) + arg0);
 		}
 		if (field10973) {
 			method9403();
@@ -11262,7 +11262,7 @@ public final class client extends GameShell {
 											}
 										}
 										if (field11056 == var11) {
-											var44 = class776.field9095.method15021(Statics.field1680);
+											var44 = LocalisedText.field9095.method15021(Statics.field1680);
 											var43 = var11.field2210;
 										}
 										if (field10988) {
@@ -11601,7 +11601,7 @@ public final class client extends GameShell {
 		}
 		long var23 = var19 == 0 ? 0L : (long) var21 * 100L / (long) var19;
 		long var25 = var19 == 0 ? 0L : (long) var20 * 10000L / (long) var19;
-		String var27 = "Cache:" + class691.method1582(var25, 2, true, Language.field8296) + "% (" + var23 + "%)";
+		String var27 = "Cache:" + class691.method1582(var25, 2, true, Language.EN) + "% (" + var23 + "%)";
 		Statics.field8321.method2682(var27, var3, var4, -256, -1);
 		var4 += 12;
 	}
@@ -11613,9 +11613,9 @@ public final class client extends GameShell {
 			var1 = var1.substring(0, var2) + TextUtil.COMMA + var1.substring(var2);
 		}
 		if (var1.length() > 9) {
-			return " " + Statics.method596(65408) + var1.substring(0, var1.length() - 8) + class776.field9087.method15021(Statics.field1680) + " (" + var1 + ")" + TextUtil.ENDCOL;
+			return " " + Statics.method596(65408) + var1.substring(0, var1.length() - 8) + LocalisedText.field9087.method15021(Statics.field1680) + " (" + var1 + ")" + TextUtil.ENDCOL;
 		} else if (var1.length() > 6) {
-			return " " + Statics.method596(16777215) + var1.substring(0, var1.length() - 4) + class776.field9089.method15021(Statics.field1680) + " (" + var1 + ")" + TextUtil.ENDCOL;
+			return " " + Statics.method596(16777215) + var1.substring(0, var1.length() - 4) + LocalisedText.field9089.method15021(Statics.field1680) + " (" + var1 + ")" + TextUtil.ENDCOL;
 		} else {
 			return " " + Statics.method596(16776960) + var1 + TextUtil.ENDCOL;
 		}
@@ -12162,7 +12162,7 @@ public final class client extends GameShell {
 											continue;
 										}
 										if (field10768 == ModeGame.field8334) {
-											class22.method3042(class776.field9080.method15021(Statics.field1680), "", -1, 60, -1, 1L, var56, var57, true, false, 0L, true);
+											class22.method3042(LocalisedText.field9080.method15021(Statics.field1680), "", -1, 60, -1, 1L, var56, var57, true, false, 0L, true);
 										}
 										class22.method3042(Statics.field4868, "", field10963, 23, -1, 1L, var56, var57, true, false, 0L, true);
 										continue;
@@ -13058,7 +13058,7 @@ public final class client extends GameShell {
 			return;
 		}
 		if (field10811 >= var1) {
-			class241.method1006(4, field11006 ? class776.field8983.method15021(Statics.field1680) : class776.field8984.method15021(Statics.field1680));
+			class241.method1006(4, field11006 ? LocalisedText.field8983.method15021(Statics.field1680) : LocalisedText.field8984.method15021(Statics.field1680));
 			return;
 		}
 		String var2 = class795.method15191(arg0, Statics.field10782);
@@ -13069,13 +13069,13 @@ public final class client extends GameShell {
 			class30 var4 = field11065[var3];
 			String var5 = class795.method15191(var4.field606, Statics.field10782);
 			if (var5 != null && var5.equals(var2)) {
-				class241.method1006(4, arg0 + class776.field9101.method15021(Statics.field1680));
+				class241.method1006(4, arg0 + LocalisedText.field9101.method15021(Statics.field1680));
 				return;
 			}
 			if (var4.field607 != null) {
 				String var6 = class795.method15191(var4.field607, Statics.field10782);
 				if (var6 != null && var6.equals(var2)) {
-					class241.method1006(4, arg0 + class776.field9101.method15021(Statics.field1680));
+					class241.method1006(4, arg0 + LocalisedText.field9101.method15021(Statics.field1680));
 					return;
 				}
 			}
@@ -13084,19 +13084,19 @@ public final class client extends GameShell {
 			class27 var8 = field11086[var7];
 			String var9 = class795.method15191(var8.field598, Statics.field10782);
 			if (var9 != null && var9.equals(var2)) {
-				class241.method1006(4, class776.field9100.method15021(Statics.field1680) + arg0 + class776.field9019.method15021(Statics.field1680));
+				class241.method1006(4, LocalisedText.field9100.method15021(Statics.field1680) + arg0 + LocalisedText.field9019.method15021(Statics.field1680));
 				return;
 			}
 			if (var8.field596 != null) {
 				String var10 = class795.method15191(var8.field596, Statics.field10782);
 				if (var10 != null && var10.equals(var2)) {
-					class241.method1006(4, class776.field9100.method15021(Statics.field1680) + arg0 + class776.field9019.method15021(Statics.field1680));
+					class241.method1006(4, LocalisedText.field9100.method15021(Statics.field1680) + arg0 + LocalisedText.field9019.method15021(Statics.field1680));
 					return;
 				}
 			}
 		}
 		if (class795.method15191(Statics.field4490.field12062, Statics.field10782).equals(var2)) {
-			class241.method1006(4, class776.field9097.method15021(Statics.field1680));
+			class241.method1006(4, LocalisedText.field9097.method15021(Statics.field1680));
 			return;
 		}
 		class49 var11 = method640();

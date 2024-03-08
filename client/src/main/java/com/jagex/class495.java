@@ -707,7 +707,7 @@ public class class495 {
 		this.field5059 = arg1;
 		if (!this.field5036) {
 			client.method6972(arg2);
-			class41.method649(class776.field9044.method15021(Statics.field1680), true, Statics.field8198, Statics.field9184, Statics.field2657);
+			class41.method649(LocalisedText.field9044.method15021(Statics.field1680), true, Statics.field8198, Statics.field9184, Statics.field2657);
 		}
 		if (this.field5018 == null) {
 			this.field5025 = new class594(0, 0, 0);
@@ -1003,7 +1003,7 @@ public class class495 {
 			return false;
 		}
 		if (!this.field5036 && class491.field5007 != this.field5026) {
-			class41.method649(class776.field9044.method15021(Statics.field1680) + TextUtil.BR + "(100%)", true, Statics.field8198, Statics.field9184, Statics.field2657);
+			class41.method649(LocalisedText.field9044.method15021(Statics.field1680) + TextUtil.BR + "(100%)", true, Statics.field8198, Statics.field9184, Statics.field2657);
 		}
 		this.field5026 = class491.field5008;
 		if (!this.field5036 && Statics.field1798 != null) {

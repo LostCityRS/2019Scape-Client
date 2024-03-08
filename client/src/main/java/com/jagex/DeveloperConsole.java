@@ -69,7 +69,7 @@ public class DeveloperConsole {
 		for (int var0 = 0; var0 < Statics.field4845.length; var0++) {
 			Statics.field4845[var0] = "";
 		}
-		method4285(class776.field9052.method15021(Statics.field1680));
+		method4285(LocalisedText.field9052.method15021(Statics.field1680));
 	}
 
 	@ObfuscatedName("amd.k(B)V")
@@ -317,7 +317,7 @@ public class DeveloperConsole {
 				return;
 			}
 		} catch (Exception var37) {
-			method4285(class776.field9061.method15021(Statics.field1680));
+			method4285(LocalisedText.field9061.method15021(Statics.field1680));
 			return;
 		}
 		if (Statics.field1811 != ModeWhere.field8273 || client.field10949 >= 2) {
@@ -524,12 +524,12 @@ public class DeveloperConsole {
 					var30.method934(var31);
 				}
 			} catch (Exception var36) {
-				method4285(class776.field9061.method15021(Statics.field1680));
+				method4285(LocalisedText.field9061.method15021(Statics.field1680));
 				return;
 			}
 		}
 		if (client.field10791 != 18 && client.field10791 != 13) {
-			method4285(class776.field8949.method15021(Statics.field1680) + arg0);
+			method4285(LocalisedText.field8949.method15021(Statics.field1680) + arg0);
 		}
 	}
 
@@ -622,7 +622,7 @@ public class DeveloperConsole {
 					client.field10855.method7753();
 				}
 			} catch (Exception var13) {
-				method4285(class776.field9061.method15021(Statics.field1680));
+				method4285(LocalisedText.field9061.method15021(Statics.field1680));
 			}
 		}
 	}

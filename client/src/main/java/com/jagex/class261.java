@@ -31,7 +31,7 @@ public abstract class class261 implements ConfigTypeFactory {
 		this.field2770 = arg1;
 		this.field2772 = arg3;
 		if (ModeGame.field8335 == this.field2772) {
-			this.field2774 = new String[] { null, null, null, null, null, class776.field9075.method15021(arg2) };
+			this.field2774 = new String[] { null, null, null, null, null, LocalisedText.field9075.method15021(arg2) };
 		} else {
 			this.field2774 = new String[] { null, null, null, null, null, null };
 		}

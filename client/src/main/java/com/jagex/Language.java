@@ -8,25 +8,25 @@ import java.util.Locale;
 public class Language implements SerializableEnum {
 
 	@ObfuscatedName("zt.e")
-	public static final Language field8296 = new Language("EN", "en", "English", ModeWhere.field8273, 0, "GB");
+	public static final Language EN = new Language("EN", "en", "English", ModeWhere.field8273, 0, "GB");
 
 	@ObfuscatedName("zt.n")
-	public static final Language field8297 = new Language("DE", "de", "German", ModeWhere.field8273, 1, "DE");
+	public static final Language DE = new Language("DE", "de", "German", ModeWhere.field8273, 1, "DE");
 
 	@ObfuscatedName("zt.m")
-	public static final Language field8289 = new Language("FR", "fr", "French", ModeWhere.field8273, 2, "FR");
+	public static final Language FR = new Language("FR", "fr", "French", ModeWhere.field8273, 2, "FR");
 
 	@ObfuscatedName("zt.k")
-	public static final Language field8291 = new Language("PT", "pt", "Portuguese", ModeWhere.field8273, 3, "BR");
+	public static final Language PT = new Language("PT", "pt", "Portuguese", ModeWhere.field8273, 3, "BR");
 
 	@ObfuscatedName("zt.f")
-	public static final Language field8292 = new Language("NL", "nl", "Dutch", ModeWhere.field8268, 4, "NL");
+	public static final Language NL = new Language("NL", "nl", "Dutch", ModeWhere.field8268, 4, "NL");
 
 	@ObfuscatedName("zt.w")
-	public static final Language field8290 = new Language("ES", "es", "Spanish", ModeWhere.field8268, 5, "ES");
+	public static final Language ES = new Language("ES", "es", "Spanish", ModeWhere.field8268, 5, "ES");
 
 	@ObfuscatedName("zt.l")
-	public static final Language field8288 = new Language("ES_MX", "es-mx", "Spanish (Latin American)", ModeWhere.field8273, 6, "MX");
+	public static final Language ES_MX = new Language("ES_MX", "es-mx", "Spanish (Latin American)", ModeWhere.field8273, 6, "MX");
 
 	@ObfuscatedName("zt.u")
 	public final String field8295;
@@ -58,7 +58,7 @@ public class Language implements SerializableEnum {
 
 	@ObfuscatedName("zt.e(I)[Lzt;")
 	public static Language[] method13871() {
-		return new Language[] { field8291, field8292, field8296, field8297, field8290, field8288, field8289 };
+		return new Language[] {PT, NL, EN, DE, ES, ES_MX, FR};
 	}
 
 	public Language(String arg0, String arg1, String arg2, ModeWhere arg3, int arg4, String arg5) {

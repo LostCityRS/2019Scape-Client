@@ -520,7 +520,7 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.z(Labq;Labv;Labv;Lacz;Lzt;I)V")
-	public void method14664(class739 arg0, ObjType arg1, ObjType arg2, class776 arg3, Language arg4) {
+	public void method14664(class739 arg0, ObjType arg1, ObjType arg2, LocalisedText arg3, Language arg4) {
 		this.field8655 = arg1.field8655;
 		this.field8638 = arg1.field8638;
 		this.field8639 = arg1.field8639;
@@ -554,7 +554,7 @@ public class ObjType implements ConfigType {
 			this.field8649 = arg1.field8649;
 			this.field8619 = arg1.field8619;
 			this.field8648 = new String[5];
-			this.field8648[0] = class776.field8958.method15021(arg4);
+			this.field8648[0] = LocalisedText.field8958.method15021(arg4);
 			this.field8648[4] = arg3.method15021(arg4);
 		} else {
 			this.field8620 = 0;
@@ -601,17 +601,17 @@ public class ObjType implements ConfigType {
 
 	@ObfuscatedName("abv.d(Labv;Labv;Lzt;I)V")
 	public void method14641(ObjType arg0, ObjType arg1, Language arg2) {
-		this.method14664(class739.field8703, arg0, arg1, class776.field8954, arg2);
+		this.method14664(class739.field8703, arg0, arg1, LocalisedText.field8954, arg2);
 	}
 
 	@ObfuscatedName("abv.c(Labv;Labv;Lzt;I)V")
 	public void method14653(ObjType arg0, ObjType arg1, Language arg2) {
-		this.method14664(class739.field8704, arg0, arg1, class776.field9000, arg2);
+		this.method14664(class739.field8704, arg0, arg1, LocalisedText.field9000, arg2);
 	}
 
 	@ObfuscatedName("abv.r(Labv;Labv;Lzt;I)V")
 	public void method14643(ObjType arg0, ObjType arg1, Language arg2) {
-		this.method14664(class739.field8701, arg0, arg1, class776.field8960, arg2);
+		this.method14664(class739.field8701, arg0, arg1, LocalisedText.field8960, arg2);
 	}
 
 	@ObfuscatedName("abv.v(Ldh;IILxg;Laaq;IIIII)Ldo;")
@@ -920,9 +920,9 @@ public class ObjType implements ConfigType {
 		if (arg0 < 100000) {
 			return Statics.method5153(arg2.field7742) + arg0 + field8699;
 		} else if (arg0 < 10000000) {
-			return Statics.method5153(arg2.field7743) + arg0 / 1000 + class776.field9020.method15021(arg1) + field8699;
+			return Statics.method5153(arg2.field7743) + arg0 / 1000 + LocalisedText.field9020.method15021(arg1) + field8699;
 		} else {
-			return Statics.method5153(arg2.field7744) + arg0 / 1000000 + class776.field9013.method15021(arg1) + field8699;
+			return Statics.method5153(arg2.field7744) + arg0 / 1000000 + LocalisedText.field9013.method15021(arg1) + field8699;
 		}
 	}
 

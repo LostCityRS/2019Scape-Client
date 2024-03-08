@@ -11474,114 +11474,114 @@ public final class class676 {
 		}
 		String var2 = var1.toLowerCase();
 		byte var3 = 0;
-		if (var2.startsWith(class776.field9104.method15021(Language.field8296))) {
+		if (var2.startsWith(LocalisedText.field9104.method15021(Language.EN))) {
 			var3 = 0;
-			var1 = var1.substring(class776.field9104.method15021(Language.field8296).length());
-		} else if (var2.startsWith(class776.field9088.method15021(Language.field8296))) {
+			var1 = var1.substring(LocalisedText.field9104.method15021(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.field9088.method15021(Language.EN))) {
 			var3 = 1;
-			var1 = var1.substring(class776.field9088.method15021(Language.field8296).length());
-		} else if (var2.startsWith(class776.field8994.method15021(Language.field8296))) {
+			var1 = var1.substring(LocalisedText.field9088.method15021(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.field8994.method15021(Language.EN))) {
 			var3 = 2;
-			var1 = var1.substring(class776.field8994.method15021(Language.field8296).length());
-		} else if (var2.startsWith(class776.field9107.method15021(Language.field8296))) {
+			var1 = var1.substring(LocalisedText.field8994.method15021(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.field9107.method15021(Language.EN))) {
 			var3 = 3;
-			var1 = var1.substring(class776.field9107.method15021(Language.field8296).length());
-		} else if (var2.startsWith(class776.field9108.method15021(Language.field8296))) {
+			var1 = var1.substring(LocalisedText.field9107.method15021(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.field9108.method15021(Language.EN))) {
 			var3 = 4;
-			var1 = var1.substring(class776.field9108.method15021(Language.field8296).length());
-		} else if (var2.startsWith(class776.field9109.method15021(Language.field8296))) {
+			var1 = var1.substring(LocalisedText.field9108.method15021(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.field9109.method15021(Language.EN))) {
 			var3 = 5;
-			var1 = var1.substring(class776.field9109.method15021(Language.field8296).length());
-		} else if (var2.startsWith(class776.field9110.method15021(Language.field8296))) {
+			var1 = var1.substring(LocalisedText.field9109.method15021(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.field9110.method15021(Language.EN))) {
 			var3 = 6;
-			var1 = var1.substring(class776.field9110.method15021(Language.field8296).length());
-		} else if (var2.startsWith(class776.field9111.method15021(Language.field8296))) {
+			var1 = var1.substring(LocalisedText.field9110.method15021(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.field9111.method15021(Language.EN))) {
 			var3 = 7;
-			var1 = var1.substring(class776.field9111.method15021(Language.field8296).length());
-		} else if (var2.startsWith(class776.field8992.method15021(Language.field8296))) {
+			var1 = var1.substring(LocalisedText.field9111.method15021(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.field8992.method15021(Language.EN))) {
 			var3 = 8;
-			var1 = var1.substring(class776.field8992.method15021(Language.field8296).length());
-		} else if (var2.startsWith(class776.field9031.method15021(Language.field8296))) {
+			var1 = var1.substring(LocalisedText.field8992.method15021(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.field9031.method15021(Language.EN))) {
 			var3 = 9;
-			var1 = var1.substring(class776.field9031.method15021(Language.field8296).length());
-		} else if (var2.startsWith(class776.field9114.method15021(Language.field8296))) {
+			var1 = var1.substring(LocalisedText.field9031.method15021(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.field9114.method15021(Language.EN))) {
 			var3 = 10;
-			var1 = var1.substring(class776.field9114.method15021(Language.field8296).length());
-		} else if (var2.startsWith(class776.field8965.method15021(Language.field8296))) {
+			var1 = var1.substring(LocalisedText.field9114.method15021(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.field8965.method15021(Language.EN))) {
 			var3 = 11;
-			var1 = var1.substring(class776.field8965.method15021(Language.field8296).length());
-		} else if (Statics.field1680 != Language.field8296) {
-			if (var2.startsWith(class776.field9104.method15021(Statics.field1680))) {
+			var1 = var1.substring(LocalisedText.field8965.method15021(Language.EN).length());
+		} else if (Statics.field1680 != Language.EN) {
+			if (var2.startsWith(LocalisedText.field9104.method15021(Statics.field1680))) {
 				var3 = 0;
-				var1 = var1.substring(class776.field9104.method15021(Statics.field1680).length());
-			} else if (var2.startsWith(class776.field9088.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.field9104.method15021(Statics.field1680).length());
+			} else if (var2.startsWith(LocalisedText.field9088.method15021(Statics.field1680))) {
 				var3 = 1;
-				var1 = var1.substring(class776.field9088.method15021(Statics.field1680).length());
-			} else if (var2.startsWith(class776.field8994.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.field9088.method15021(Statics.field1680).length());
+			} else if (var2.startsWith(LocalisedText.field8994.method15021(Statics.field1680))) {
 				var3 = 2;
-				var1 = var1.substring(class776.field8994.method15021(Statics.field1680).length());
-			} else if (var2.startsWith(class776.field9107.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.field8994.method15021(Statics.field1680).length());
+			} else if (var2.startsWith(LocalisedText.field9107.method15021(Statics.field1680))) {
 				var3 = 3;
-				var1 = var1.substring(class776.field9107.method15021(Statics.field1680).length());
-			} else if (var2.startsWith(class776.field9108.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.field9107.method15021(Statics.field1680).length());
+			} else if (var2.startsWith(LocalisedText.field9108.method15021(Statics.field1680))) {
 				var3 = 4;
-				var1 = var1.substring(class776.field9108.method15021(Statics.field1680).length());
-			} else if (var2.startsWith(class776.field9109.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.field9108.method15021(Statics.field1680).length());
+			} else if (var2.startsWith(LocalisedText.field9109.method15021(Statics.field1680))) {
 				var3 = 5;
-				var1 = var1.substring(class776.field9109.method15021(Statics.field1680).length());
-			} else if (var2.startsWith(class776.field9110.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.field9109.method15021(Statics.field1680).length());
+			} else if (var2.startsWith(LocalisedText.field9110.method15021(Statics.field1680))) {
 				var3 = 6;
-				var1 = var1.substring(class776.field9110.method15021(Statics.field1680).length());
-			} else if (var2.startsWith(class776.field9111.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.field9110.method15021(Statics.field1680).length());
+			} else if (var2.startsWith(LocalisedText.field9111.method15021(Statics.field1680))) {
 				var3 = 7;
-				var1 = var1.substring(class776.field9111.method15021(Statics.field1680).length());
-			} else if (var2.startsWith(class776.field8992.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.field9111.method15021(Statics.field1680).length());
+			} else if (var2.startsWith(LocalisedText.field8992.method15021(Statics.field1680))) {
 				var3 = 8;
-				var1 = var1.substring(class776.field8992.method15021(Statics.field1680).length());
-			} else if (var2.startsWith(class776.field9031.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.field8992.method15021(Statics.field1680).length());
+			} else if (var2.startsWith(LocalisedText.field9031.method15021(Statics.field1680))) {
 				var3 = 9;
-				var1 = var1.substring(class776.field9031.method15021(Statics.field1680).length());
-			} else if (var2.startsWith(class776.field9114.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.field9031.method15021(Statics.field1680).length());
+			} else if (var2.startsWith(LocalisedText.field9114.method15021(Statics.field1680))) {
 				var3 = 10;
-				var1 = var1.substring(class776.field9114.method15021(Statics.field1680).length());
-			} else if (var2.startsWith(class776.field8965.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.field9114.method15021(Statics.field1680).length());
+			} else if (var2.startsWith(LocalisedText.field8965.method15021(Statics.field1680))) {
 				var3 = 11;
-				var1 = var1.substring(class776.field8965.method15021(Statics.field1680).length());
+				var1 = var1.substring(LocalisedText.field8965.method15021(Statics.field1680).length());
 			}
 		}
 		String var4 = var1.toLowerCase();
 		byte var5 = 0;
-		if (var4.startsWith(class776.field9116.method15021(Language.field8296))) {
+		if (var4.startsWith(LocalisedText.field9116.method15021(Language.EN))) {
 			var5 = 1;
-			var1 = var1.substring(class776.field9116.method15021(Language.field8296).length());
-		} else if (var4.startsWith(class776.field9117.method15021(Language.field8296))) {
+			var1 = var1.substring(LocalisedText.field9116.method15021(Language.EN).length());
+		} else if (var4.startsWith(LocalisedText.field9117.method15021(Language.EN))) {
 			var5 = 2;
-			var1 = var1.substring(class776.field9117.method15021(Language.field8296).length());
-		} else if (var4.startsWith(class776.field9118.method15021(Language.field8296))) {
+			var1 = var1.substring(LocalisedText.field9117.method15021(Language.EN).length());
+		} else if (var4.startsWith(LocalisedText.field9118.method15021(Language.EN))) {
 			var5 = 3;
-			var1 = var1.substring(class776.field9118.method15021(Language.field8296).length());
-		} else if (var4.startsWith(class776.field9015.method15021(Language.field8296))) {
+			var1 = var1.substring(LocalisedText.field9118.method15021(Language.EN).length());
+		} else if (var4.startsWith(LocalisedText.field9015.method15021(Language.EN))) {
 			var5 = 4;
-			var1 = var1.substring(class776.field9015.method15021(Language.field8296).length());
-		} else if (var4.startsWith(class776.field9120.method15021(Language.field8296))) {
+			var1 = var1.substring(LocalisedText.field9015.method15021(Language.EN).length());
+		} else if (var4.startsWith(LocalisedText.field9120.method15021(Language.EN))) {
 			var5 = 5;
-			var1 = var1.substring(class776.field9120.method15021(Language.field8296).length());
-		} else if (Statics.field1680 != Language.field8296) {
-			if (var4.startsWith(class776.field9116.method15021(Statics.field1680))) {
+			var1 = var1.substring(LocalisedText.field9120.method15021(Language.EN).length());
+		} else if (Statics.field1680 != Language.EN) {
+			if (var4.startsWith(LocalisedText.field9116.method15021(Statics.field1680))) {
 				var5 = 1;
-				var1 = var1.substring(class776.field9116.method15021(Statics.field1680).length());
-			} else if (var4.startsWith(class776.field9117.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.field9116.method15021(Statics.field1680).length());
+			} else if (var4.startsWith(LocalisedText.field9117.method15021(Statics.field1680))) {
 				var5 = 2;
-				var1 = var1.substring(class776.field9117.method15021(Statics.field1680).length());
-			} else if (var4.startsWith(class776.field9118.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.field9117.method15021(Statics.field1680).length());
+			} else if (var4.startsWith(LocalisedText.field9118.method15021(Statics.field1680))) {
 				var5 = 3;
-				var1 = var1.substring(class776.field9118.method15021(Statics.field1680).length());
-			} else if (var4.startsWith(class776.field9015.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.field9118.method15021(Statics.field1680).length());
+			} else if (var4.startsWith(LocalisedText.field9015.method15021(Statics.field1680))) {
 				var5 = 4;
-				var1 = var1.substring(class776.field9015.method15021(Statics.field1680).length());
-			} else if (var4.startsWith(class776.field9120.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.field9015.method15021(Statics.field1680).length());
+			} else if (var4.startsWith(LocalisedText.field9120.method15021(Statics.field1680))) {
 				var5 = 5;
-				var1 = var1.substring(class776.field9120.method15021(Statics.field1680).length());
+				var1 = var1.substring(LocalisedText.field9120.method15021(Statics.field1680).length());
 			}
 		}
 		class49 var6 = client.method640();

@@ -2938,7 +2938,7 @@ public class Statics {
 			return;
 		}
 		if (arg0.field2180 == null) {
-			class22.method3042(class776.field8963.method15021(field1680), "", -1, 30, arg0.field2334, 0L, arg0.field2183, arg0.field2158, true, false, (long) (arg0.field2183 << 32 | arg0.field2158), false);
+			class22.method3042(LocalisedText.field8963.method15021(field1680), "", -1, 30, arg0.field2334, 0L, arg0.field2183, arg0.field2158, true, false, (long) (arg0.field2183 << 32 | arg0.field2158), false);
 		} else {
 			class22.method3042(arg0.field2180, "", -1, 30, arg0.field2334, 0L, arg0.field2183, arg0.field2158, true, false, (long) (arg0.field2183 << 32 | arg0.field2158), false);
 		}
@@ -4696,7 +4696,7 @@ public class Statics {
 			return;
 		}
 		if (client.field11084 >= var2) {
-			class241.method1006(4, client.field11006 ? class776.field8950.method15021(field1680) : class776.field9113.method15021(field1680));
+			class241.method1006(4, client.field11006 ? LocalisedText.field8950.method15021(field1680) : LocalisedText.field9113.method15021(field1680));
 			return;
 		}
 		String var3 = class795.method15191(arg0, field10782);
@@ -4707,13 +4707,13 @@ public class Statics {
 			class27 var5 = client.field11086[var4];
 			String var6 = class795.method15191(var5.field598, field10782);
 			if (var6 != null && var6.equals(var3)) {
-				class241.method1006(4, arg0 + class776.field9096.method15021(field1680));
+				class241.method1006(4, arg0 + LocalisedText.field9096.method15021(field1680));
 				return;
 			}
 			if (var5.field596 != null) {
 				String var7 = class795.method15191(var5.field596, field10782);
 				if (var7 != null && var7.equals(var3)) {
-					class241.method1006(4, arg0 + class776.field9096.method15021(field1680));
+					class241.method1006(4, arg0 + LocalisedText.field9096.method15021(field1680));
 					return;
 				}
 			}
@@ -4722,19 +4722,19 @@ public class Statics {
 			class30 var9 = client.field11065[var8];
 			String var10 = class795.method15191(var9.field606, field10782);
 			if (var10 != null && var10.equals(var3)) {
-				class241.method1006(4, class776.field8952.method15021(field1680) + arg0 + class776.field8985.method15021(field1680));
+				class241.method1006(4, LocalisedText.field8952.method15021(field1680) + arg0 + LocalisedText.field8985.method15021(field1680));
 				return;
 			}
 			if (var9.field607 != null) {
 				String var11 = class795.method15191(var9.field607, field10782);
 				if (var11 != null && var11.equals(var3)) {
-					class241.method1006(4, class776.field8952.method15021(field1680) + arg0 + class776.field8985.method15021(field1680));
+					class241.method1006(4, LocalisedText.field8952.method15021(field1680) + arg0 + LocalisedText.field8985.method15021(field1680));
 					return;
 				}
 			}
 		}
 		if (class795.method15191(field4490.field12062, field10782).equals(var3)) {
-			class241.method1006(4, class776.field9098.method15021(field1680));
+			class241.method1006(4, LocalisedText.field9098.method15021(field1680));
 			return;
 		}
 		class49 var12 = client.method640();

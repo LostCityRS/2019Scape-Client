@@ -41,11 +41,11 @@ public abstract class class737 implements ConfigTypeFactory {
 		this.field8614 = arg3;
 		this.field8615 = arg4;
 		if (ModeGame.field8335 == arg0) {
-			this.field8617 = new String[] { null, null, class776.field8959.method15021(this.field8618), null, null, class776.field9075.method15021(this.field8618) };
+			this.field8617 = new String[] { null, null, LocalisedText.field8959.method15021(this.field8618), null, null, LocalisedText.field9075.method15021(this.field8618) };
 		} else {
-			this.field8617 = new String[] { null, null, class776.field8959.method15021(this.field8618), null, null, null };
+			this.field8617 = new String[] { null, null, LocalisedText.field8959.method15021(this.field8618), null, null, null };
 		}
-		this.field8616 = new String[] { null, null, null, null, class776.field8960.method15021(this.field8618) };
+		this.field8616 = new String[] { null, null, null, null, LocalisedText.field8960.method15021(this.field8618) };
 	}
 
 	@ObfuscatedName("abr.e(Ldh;IIIIILxg;I)Lcm;")
