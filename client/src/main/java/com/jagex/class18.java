@@ -17,7 +17,7 @@ public final class class18 implements class190 {
 	}
 
 	@ObfuscatedName("d.m(I)Laor;")
-	public class1085 method294() {
+	public VarBitTypeList method294() {
 		return Statics.field8736;
 	}
 

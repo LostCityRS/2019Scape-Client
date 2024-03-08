@@ -230,7 +230,7 @@ public class QuestType implements ConfigType {
 		}
 		if (this.field2630 != null) {
 			for (int var4 = 0; var4 < this.field2630.length; var4++) {
-				class305 var5 = ((class151) arg0).method694(this.field2630[var4][0]);
+				VarBitType var5 = ((class151) arg0).method694(this.field2630[var4][0]);
 				if (arg0.method678(var5) >= this.field2630[var4][1]) {
 					return true;
 				}
@@ -251,7 +251,7 @@ public class QuestType implements ConfigType {
 		}
 		if (this.field2630 != null) {
 			for (int var4 = 0; var4 < this.field2630.length; var4++) {
-				class305 var5 = ((class151) arg0).method694(this.field2630[var4][0]);
+				VarBitType var5 = ((class151) arg0).method694(this.field2630[var4][0]);
 				if (arg0.method678(var5) >= this.field2630[var4][2]) {
 					return true;
 				}
@@ -290,7 +290,7 @@ public class QuestType implements ConfigType {
 		}
 		if (this.field2646 != null) {
 			for (int var7 = 0; var7 < this.field2646.length; var7++) {
-				class305 var8 = ((class151) arg0).method694(this.field2646[var7]);
+				VarBitType var8 = ((class151) arg0).method694(this.field2646[var7]);
 				int var9 = arg0.method678(var8);
 				if (var9 < this.field2647[var7] || var9 > this.field2648[var7]) {
 					return false;
@@ -339,7 +339,7 @@ public class QuestType implements ConfigType {
 		if (this.field2646 == null || arg1 < 0 || arg1 >= this.field2646.length) {
 			return false;
 		} else {
-			class305 var3 = ((class151) arg0).method694(this.field2646[arg1]);
+			VarBitType var3 = ((class151) arg0).method694(this.field2646[arg1]);
 			int var4 = arg0.method678(var3);
 			return var4 >= this.field2647[arg1] && var4 <= this.field2648[arg1];
 		}

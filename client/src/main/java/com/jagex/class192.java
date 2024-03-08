@@ -30,8 +30,8 @@ public class class192 implements class203 {
 	public void method3371(class191 arg0) {
 		if (this.field1916 != -1) {
 			try {
-				arg0.method3394().method2804((class305) this.this$0.field1943.method294().get(this.field1916), this.field1915);
-			} catch (class1110 var3) {
+				arg0.method3394().method2804((VarBitType) this.this$0.field1943.method294().get(this.field1916), this.field1915);
+			} catch (VarBitOverflowException var3) {
 			}
 		}
 	}

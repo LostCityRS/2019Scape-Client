@@ -925,7 +925,7 @@ public class NPCType implements ConfigType {
 	public final NPCType method4547(class151 arg0, class147 arg1) {
 		int var3 = -1;
 		if (this.field2730 != -1) {
-			class305 var4 = arg0.method694(this.field2730);
+			VarBitType var4 = arg0.method694(this.field2730);
 			if (var4 != null) {
 				var3 = arg1.method678(var4);
 			}
@@ -950,7 +950,7 @@ public class NPCType implements ConfigType {
 		}
 		int var3 = -1;
 		if (this.field2730 != -1) {
-			class305 var4 = arg0.method694(this.field2730);
+			VarBitType var4 = arg0.method694(this.field2730);
 			if (var4 != null) {
 				var3 = arg1.method678(var4);
 			}

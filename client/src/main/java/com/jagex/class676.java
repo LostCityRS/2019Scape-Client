@@ -458,7 +458,7 @@ public final class class676 {
 	}
 
 	@ObfuscatedName("yx.h(Lss;Lyf;I)V")
-	public static final void method10608(class504 arg0, class677 arg1) throws class1109, class1110 {
+	public static final void method10608(class504 arg0, class677 arg1) throws class1109, VarBitOverflowException {
 		switch(arg0.field5953) {
 			case 0:
 				Statics.method4480(arg1);
@@ -4851,18 +4851,18 @@ public final class class676 {
 
 	@ObfuscatedName("xt.ai(Lyf;B)V")
 	public static final void method10362(class677 arg0) {
-		class305 var1 = (class305) arg0.field8239.field12366[arg0.field8220];
-		class152 var2 = (class152) (arg0.field8236[arg0.field8220] == 0 ? arg0.field8234.get(var1.field3076.field1702) : arg0.field8233.get(var1.field3076.field1702));
+		VarBitType var1 = (VarBitType) arg0.field8239.field12366[arg0.field8220];
+		class152 var2 = (class152) (arg0.field8236[arg0.field8220] == 0 ? arg0.field8234.get(var1.baseVar.field1702) : arg0.field8233.get(var1.baseVar.field1702));
 		arg0.field8216[++arg0.field8226 - 1] = var2.method678(var1);
 	}
 
 	@ObfuscatedName("ace.aw(Lyf;I)V")
-	public static final void method15089(class677 arg0) throws class1110 {
-		class305 var1 = (class305) arg0.field8239.field12366[arg0.field8220];
-		class152 var2 = (class152) (arg0.field8236[arg0.field8220] == 0 ? arg0.field8234.get(var1.field3076.field1702) : arg0.field8233.get(var1.field3076.field1702));
+	public static final void method15089(class677 arg0) throws VarBitOverflowException {
+		VarBitType var1 = (VarBitType) arg0.field8239.field12366[arg0.field8220];
+		class152 var2 = (class152) (arg0.field8236[arg0.field8220] == 0 ? arg0.field8234.get(var1.baseVar.field1702) : arg0.field8233.get(var1.baseVar.field1702));
 		try {
 			var2.method2804(var1, arg0.field8216[--arg0.field8226]);
-		} catch (class1110 var4) {
+		} catch (VarBitOverflowException var4) {
 			if (!(var2 instanceof class609)) {
 				throw var4;
 			}
@@ -10197,8 +10197,8 @@ public final class class676 {
 			var4.method3503(client.field10837);
 		}
 		if (!var2) {
-			class305 var6 = (class305) Statics.field8736.get(var3);
-			arg0.field8216[++arg0.field8226 - 1] = var6.method5181(var4.method3504().method14728(var6.field3076.field1706));
+			VarBitType var6 = (VarBitType) Statics.field8736.get(var3);
+			arg0.field8216[++arg0.field8226 - 1] = var6.getVarbitValue(var4.method3504().method14728(var6.baseVar.field1706));
 			return;
 		}
 		class859 var5 = (class859) Statics.field8485.get(var3);

@@ -195,15 +195,15 @@ public class class1171 extends class986 {
 
 	@ObfuscatedName("alv.al(III)V")
 	public static void method18309(int arg0, int arg1) {
-		class305 var2 = (class305) Statics.field8736.get(arg0);
-		class1171 var3 = method5072(1, (long) var2.field3076.field1706);
+		VarBitType var2 = (VarBitType) Statics.field8736.get(arg0);
+		class1171 var3 = method5072(1, (long) var2.baseVar.field1706);
 		try {
 			if (field12295) {
-				var3.field12268 = Statics.field7228.method679(var2.field3076);
+				var3.field12268 = Statics.field7228.method679(var2.baseVar);
 			}
-			var3.field12268 = var2.method5183(var3.field12268, arg1);
+			var3.field12268 = var2.setVarbitValue(var3.field12268, arg1);
 			var3.method19269();
-		} catch (class1110 var5) {
+		} catch (VarBitOverflowException var5) {
 			class1211.method9845("" + arg0, var5);
 		}
 	}

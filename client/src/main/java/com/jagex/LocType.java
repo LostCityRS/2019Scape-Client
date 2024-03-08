@@ -963,7 +963,7 @@ public class LocType implements ConfigType {
 	public final LocType method9477(class151 arg0, class147 arg1) {
 		int var3 = -1;
 		if (this.field7506 != -1) {
-			class305 var4 = arg0.method694(this.field7506);
+			VarBitType var4 = arg0.method694(this.field7506);
 			if (var4 != null) {
 				var3 = arg1.method678(var4);
 			}

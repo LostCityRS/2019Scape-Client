@@ -351,7 +351,7 @@ public class class280 {
 			Statics.field3415 = new class807(client.field10768, VarDomainType.PLAYER_GROUP, Statics.field1680, Statics.field11838);
 			Statics.field1819 = new class807(client.field10768, VarDomainType.OBJECT, Statics.field1680, Statics.field11838);
 			Statics.field1232 = class808.method15149(new class808[] { Statics.field8911, Statics.field8485, Statics.field8135, Statics.field8783, Statics.field12225, Statics.field3415, Statics.field1819 });
-			Statics.field8736 = new class1085(client.field10768, Statics.field1680, Statics.field11838, Statics.field1232);
+			Statics.field8736 = new VarBitTypeList(client.field10768, Statics.field1680, Statics.field11838, Statics.field1232);
 			Statics.field4626 = new class279();
 			class226.method3669(Statics.field527, Statics.field9213, Statics.field10317, Statics.field7672);
 			Statics.field9211 = new class382(Statics.field736);

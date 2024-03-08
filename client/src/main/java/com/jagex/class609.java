@@ -74,22 +74,22 @@ public final class class609 implements class152 {
 	}
 
 	@ObfuscatedName("wu.z(Lkh;I)I")
-	public int method678(class305 arg0) {
-		return arg0.method5181(this.field7609[arg0.field3076.field1706]);
+	public int method678(VarBitType arg0) {
+		return arg0.getVarbitValue(this.field7609[arg0.baseVar.field1706]);
 	}
 
 	@ObfuscatedName("wu.w(Lkh;II)V")
-	public void method2804(class305 arg0, int arg1) throws class1110 {
-		int var3 = arg0.method5183(this.field7609[arg0.field3076.field1706], arg1);
-		this.method2798(arg0.field3076, var3);
+	public void method2804(VarBitType arg0, int arg1) throws VarBitOverflowException {
+		int var3 = arg0.setVarbitValue(this.field7609[arg0.baseVar.field1706], arg1);
+		this.method2798(arg0.baseVar, var3);
 	}
 
 	@ObfuscatedName("wu.ae(Lkh;II)V")
-	public void method9629(class305 arg0, int arg1) {
+	public void method9629(VarBitType arg0, int arg1) {
 		try {
-			int var3 = arg0.method5183(this.field7604[arg0.field3076.field1706], arg1);
-			this.method9625(arg0.field3076, var3);
-		} catch (class1110 var5) {
+			int var3 = arg0.setVarbitValue(this.field7604[arg0.baseVar.field1706], arg1);
+			this.method9625(arg0.baseVar, var3);
+		} catch (VarBitOverflowException var5) {
 		}
 	}
 

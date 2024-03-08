@@ -1558,7 +1558,7 @@ public class Statics {
 	public static Packet field8729;
 
 	@ObfuscatedName("abc.hz")
-	public static class1085 field8736;
+	public static VarBitTypeList field8736;
 
 	@ObfuscatedName("abn.fp")
 	public static class442 field8741;
@@ -1948,8 +1948,8 @@ public class Statics {
 	}
 
 	@ObfuscatedName("dd.e(I)[Lks;")
-	public static class304[] method1624() {
-		return new class304[] { class304.field3068, class304.field3070, class304.field3067, class304.field3057, class304.field3071, class304.field3059, class304.field3062, class304.field3066, class304.field3073, class304.field3065, class304.field3069, class304.field3060, class304.field3063, class304.field3061, class304.field3064 };
+	public static VarBitTypeEncodingKey[] method1624() {
+		return new VarBitTypeEncodingKey[] { VarBitTypeEncodingKey.IGNOREOVERLAP, VarBitTypeEncodingKey.DEBUGNAME, VarBitTypeEncodingKey.VARBITNAME_HASH32, VarBitTypeEncodingKey.TRANSMITLEVELOTHER, VarBitTypeEncodingKey.field3071, VarBitTypeEncodingKey.QUESTPOINTS, VarBitTypeEncodingKey.BITS, VarBitTypeEncodingKey.WEALTHEQUIVALENT, VarBitTypeEncodingKey.WARNONDECREASE, VarBitTypeEncodingKey.TRANSMITLEVEL, VarBitTypeEncodingKey.BASEVAR, VarBitTypeEncodingKey.MASTERQUEST, VarBitTypeEncodingKey.SETVARALLOWED, VarBitTypeEncodingKey.field3061, VarBitTypeEncodingKey.SENDTOGAMELOGWORLD};
 	}
 
 	@ObfuscatedName("cj.n(Lnr;Laav;B)Lakl;")

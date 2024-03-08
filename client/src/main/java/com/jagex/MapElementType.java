@@ -321,7 +321,7 @@ public class MapElementType implements ConfigType {
 			if (this.field2371 == -1) {
 				return true;
 			}
-			class305 var6 = arg0.method694(this.field2371);
+			VarBitType var6 = arg0.method694(this.field2371);
 			var5 = arg1.method678(var6);
 		} else {
 			class149 var4 = arg0.method695(VarDomainType.PLAYER, this.field2387);
@@ -349,7 +349,7 @@ public class MapElementType implements ConfigType {
 			if (this.field2390 == -1) {
 				return true;
 			}
-			class305 var11 = arg0.method694(this.field2390);
+			VarBitType var11 = arg0.method694(this.field2390);
 			var10 = arg1.method678(var11);
 		} else {
 			class149 var9 = arg0.method695(VarDomainType.PLAYER, this.field2391);
@@ -438,7 +438,7 @@ public class MapElementType implements ConfigType {
 	public final MapElementType method4024(class151 arg0, class147 arg1) {
 		int var3 = -1;
 		if (this.field2371 != -1) {
-			class305 var4 = arg0.method694(this.field2371);
+			VarBitType var4 = arg0.method694(this.field2371);
 			if (var4 != null) {
 				var3 = arg1.method678(var4);
 			}

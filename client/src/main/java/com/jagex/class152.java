@@ -21,11 +21,11 @@ public interface class152 extends class147 {
 	void method2802(class149 arg0, Object arg1);
 
 	@ObfuscatedName("eh.w(Lkh;II)V")
-	void method2804(class305 arg0, int arg1) throws class1110;
+	void method2804(VarBitType arg0, int arg1) throws VarBitOverflowException;
 
 	@ObfuscatedName("eh.u(Lec;I)I")
 	int method679(class149 arg0);
 
 	@ObfuscatedName("eh.z(Lkh;I)I")
-	int method678(class305 arg0);
+	int method678(VarBitType arg0);
 }

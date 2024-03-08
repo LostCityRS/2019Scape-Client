@@ -47,8 +47,8 @@ public class class961 extends class532 {
 
 	@ObfuscatedName("adr.m(IIIZB)I")
 	public static int method15241(int arg0, int arg1, int arg2, boolean arg3) {
-		class305 var4 = (class305) Statics.field8736.get(arg2);
-		class149 var5 = var4.field3076;
+		VarBitType var4 = (VarBitType) Statics.field8736.get(arg2);
+		class149 var5 = var4.baseVar;
 		class961 var6 = Statics.method8358(arg0, arg3);
 		int var7;
 		if (var6 == null || arg1 < 0 || arg1 >= var6.field11224.length || var6.field11225 == null || var6.field11225[arg1] == null) {
@@ -56,7 +56,7 @@ public class class961 extends class532 {
 		} else {
 			var7 = var6.field11225[arg1].method14728(var5.field1706);
 		}
-		return var4.method5181(var7);
+		return var4.getVarbitValue(var7);
 	}
 
 	@ObfuscatedName("na.k(IIZB)I")

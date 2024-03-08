@@ -12,12 +12,12 @@ public class class36 implements class147, class151, class644 {
 	public final class806 field633;
 
 	@ObfuscatedName("ah.m")
-	public final class1085 field634;
+	public final VarBitTypeList field634;
 
 	@ObfuscatedName("ah.k")
 	public final class642[] field635;
 
-	public class36(class806 arg0, class1085 arg1, int arg2) {
+	public class36(class806 arg0, VarBitTypeList arg1, int arg2) {
 		this.field635 = new class642[arg2];
 		this.field632 = new class609();
 		this.field633 = arg0;
@@ -55,9 +55,9 @@ public class class36 implements class147, class151, class644 {
 	}
 
 	@ObfuscatedName("ah.l(IB)Lkh;")
-	public class305 method694(int arg0) {
-		class305 var2 = (class305) this.field634.get(arg0);
-		return VarDomainType.PLAYER == var2.field3076.field1702 ? var2 : null;
+	public VarBitType method694(int arg0) {
+		VarBitType var2 = (VarBitType) this.field634.get(arg0);
+		return VarDomainType.PLAYER == var2.baseVar.field1702 ? var2 : null;
 	}
 
 	@ObfuscatedName("ah.u(Lec;I)I")
@@ -66,7 +66,7 @@ public class class36 implements class147, class151, class644 {
 	}
 
 	@ObfuscatedName("ah.z(Lkh;I)I")
-	public int method678(class305 arg0) {
+	public int method678(VarBitType arg0) {
 		return this.field632.method678(arg0);
 	}
 }

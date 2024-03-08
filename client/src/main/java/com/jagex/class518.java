@@ -28,8 +28,8 @@ public class class518 implements class152 {
 	}
 
 	@ObfuscatedName("sd.z(Lkh;I)I")
-	public int method678(class305 arg0) {
-		return arg0.method5181(this.method679(arg0.field3076));
+	public int method678(VarBitType arg0) {
+		return arg0.getVarbitValue(this.method679(arg0.baseVar));
 	}
 
 	@ObfuscatedName("sd.e(Lec;II)V")
@@ -48,7 +48,7 @@ public class class518 implements class152 {
 	}
 
 	@ObfuscatedName("sd.w(Lkh;II)V")
-	public void method2804(class305 arg0, int arg1) throws class1110 {
-		this.method2798(arg0.field3076, arg0.method5183(this.method679(arg0.field3076), arg1));
+	public void method2804(VarBitType arg0, int arg1) throws VarBitOverflowException {
+		this.method2798(arg0.baseVar, arg0.setVarbitValue(this.method679(arg0.baseVar), arg1));
 	}
 }

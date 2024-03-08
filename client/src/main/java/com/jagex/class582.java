@@ -165,7 +165,7 @@ public class class582 implements ConfigType {
 			return null;
 		} else {
 			if (this.field7311 != -1) {
-				class305 var4 = arg0.method694(this.field7311);
+				VarBitType var4 = arg0.method694(this.field7311);
 				if (var4 != null) {
 					var3 = arg1.method678(var4);
 				}

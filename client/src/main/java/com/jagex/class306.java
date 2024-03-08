@@ -8,9 +8,9 @@ import java.util.Map;
 public abstract class class306 implements ConfigTypeFactory {
 
 	@ObfuscatedName("ka.e")
-	public final Map field3083;
+	public final Map listContainer;
 
 	public class306(Map arg0) {
-		this.field3083 = arg0;
+		this.listContainer = arg0;
 	}
 }

@@ -12,7 +12,7 @@ public final class class279 implements class151 {
 	}
 
 	@ObfuscatedName("js.l(IB)Lkh;")
-	public class305 method694(int arg0) {
-		return (class305) Statics.field8736.get(arg0);
+	public VarBitType method694(int arg0) {
+		return (VarBitType) Statics.field8736.get(arg0);
 	}
 }

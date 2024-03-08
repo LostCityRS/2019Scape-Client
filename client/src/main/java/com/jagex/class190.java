@@ -9,7 +9,7 @@ public interface class190 {
 	class808 method291();
 
 	@ObfuscatedName("gu.m(I)Laor;")
-	class1085 method294();
+    VarBitTypeList method294();
 
 	@ObfuscatedName("gu.k(B)Lwq;")
 	class620 method295();

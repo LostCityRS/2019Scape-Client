@@ -33,8 +33,8 @@ public class class673 implements class152 {
 	}
 
 	@ObfuscatedName("yl.z(Lkh;I)I")
-	public int method678(class305 arg0) {
-		return arg0.method5181(this.method679(arg0.field3076));
+	public int method678(VarBitType arg0) {
+		return arg0.getVarbitValue(this.method679(arg0.baseVar));
 	}
 
 	@ObfuscatedName("yl.e(Lec;II)V")
@@ -53,7 +53,7 @@ public class class673 implements class152 {
 	}
 
 	@ObfuscatedName("yl.w(Lkh;II)V")
-	public void method2804(class305 arg0, int arg1) {
+	public void method2804(VarBitType arg0, int arg1) {
 		throw new UnsupportedOperationException();
 	}
 }
