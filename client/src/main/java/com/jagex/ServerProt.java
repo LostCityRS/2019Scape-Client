@@ -438,7 +438,7 @@ public class ServerProt {
 	public static final ServerProt VORBIS_SPEECH_SOUND = new ServerProt(143, 6);
 
 	@ObfuscatedName("nz.eh")
-	public static final ServerProt field3899 = new ServerProt(144, 5);
+	public static final ServerProt POINTLIGHT_INTENSITY = new ServerProt(144, 5);
 
 	@ObfuscatedName("nz.eq")
 	public static final ServerProt MESSAGE_QUICKCHAT_FRIENDCHAT = new ServerProt(145, -1);

@@ -9116,7 +9116,7 @@ public final class client extends GameShell {
 			}
 			arg0.field796 = null;
 			return true;
-		} else if (ServerProt.field3899 == arg0.field796) {
+		} else if (ServerProt.POINTLIGHT_INTENSITY == arg0.field796) {
 			int var563 = var2.g2_alt2();
 			int var564 = var2.g2_alt2();
 			int var565 = var2.g1();
