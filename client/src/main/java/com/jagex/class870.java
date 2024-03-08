@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("agx")
-public class class870 extends class159 {
+public class class870 extends CutsceneAction {
 
 	@ObfuscatedName("agx.n")
 	public final long field10288;

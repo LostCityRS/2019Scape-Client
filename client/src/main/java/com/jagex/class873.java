@@ -6,7 +6,7 @@ import deob.Statics;
 import java.util.Arrays;
 
 @ObfuscatedName("agk")
-public class class873 extends class159 {
+public class class873 extends CutsceneAction {
 
 	@ObfuscatedName("agk.n")
 	public final int field10301;

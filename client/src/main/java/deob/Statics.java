@@ -335,7 +335,7 @@ public class Statics {
 	public static WearposDefaults field1709;
 
 	@ObfuscatedName("eq.w")
-	public static class159[] field1713;
+	public static CutsceneAction[] field1713;
 
 	@ObfuscatedName("eq.n")
 	public static class155[] field1714;
@@ -2954,7 +2954,7 @@ public class Statics {
 			return;
 		}
 		for (int var1 = 0; var1 < 50 && field7240.peekEvent() != null; var1++) {
-			class214.method1571(1L);
+			PreciseSleep.sleep(1L);
 		}
 		try {
 			if (arg0 != null) {

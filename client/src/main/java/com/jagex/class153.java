@@ -76,9 +76,9 @@ public class class153 {
 				Statics.field8358[var12] = new class160(var2);
 			}
 			int var13 = var2.gSmart1or2();
-			Statics.field1713 = new class159[var13];
+			Statics.field1713 = new CutsceneAction[var13];
 			for (int var14 = 0; var14 < var13; var14++) {
-				Statics.field1713[var14] = class159.method14342(var2);
+				Statics.field1713[var14] = CutsceneAction.method14342(var2);
 			}
 			Statics.field694 = class154.field1725;
 		}
@@ -91,9 +91,9 @@ public class class153 {
 					var15 = false;
 				}
 			}
-			class159[] var19 = Statics.field1713;
+			CutsceneAction[] var19 = Statics.field1713;
 			for (int var20 = 0; var20 < var19.length; var20++) {
-				class159 var21 = var19[var20];
+				CutsceneAction var21 = var19[var20];
 				if (!var21.method2891()) {
 					var15 = false;
 				}
@@ -175,9 +175,9 @@ public class class153 {
 		}
 		if (!arg0) {
 			if (Statics.field1713 != null) {
-				class159[] var1 = Statics.field1713;
+				CutsceneAction[] var1 = Statics.field1713;
 				for (int var2 = 0; var2 < var1.length; var2++) {
-					class159 var3 = var1[var2];
+					CutsceneAction var3 = var1[var2];
 					var3.method2896();
 				}
 			}

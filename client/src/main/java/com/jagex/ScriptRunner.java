@@ -14342,10 +14342,10 @@ public final class ScriptRunner {
 	@ObfuscatedName("nm.awm(Lyf;I)V")
 	public static final void method5958(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		Date var2 = class212.method3630(var1);
-		arg0.field8216[++arg0.field8226 - 1] = class212.method3628(var2, field8201);
-		arg0.field8216[++arg0.field8226 - 1] = class212.method3623(var2, field8201) - 1;
-		arg0.field8216[++arg0.field8226 - 1] = class212.method3627(var2, field8201);
+		Date var2 = TimeZones.getRuneDay(var1);
+		arg0.field8216[++arg0.field8226 - 1] = TimeZones.method3628(var2, field8201);
+		arg0.field8216[++arg0.field8226 - 1] = TimeZones.method3623(var2, field8201) - 1;
+		arg0.field8216[++arg0.field8226 - 1] = TimeZones.method3627(var2, field8201);
 	}
 
 	@ObfuscatedName("ks.awr(Lyf;B)V")

@@ -11,7 +11,7 @@ import java.util.TimeZone;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 @ObfuscatedName("gd")
-public final class class212 {
+public final class TimeZones {
 
 	@ObfuscatedName("gd.f")
 	public static final HashMap field2008 = new HashMap();
@@ -19,7 +19,7 @@ public final class class212 {
 	@ObfuscatedName("gd.w")
 	public static final Calendar field2009 = Calendar.getInstance(method3626("Europe/London"));
 
-	public class212() throws Throwable {
+	public TimeZones() throws Throwable {
 		throw new Error();
 	}
 
@@ -100,7 +100,7 @@ public final class class212 {
 	}
 
 	@ObfuscatedName("gd.u(II)Ljava/util/Date;")
-	public static Date method3630(int arg0) {
+	public static Date getRuneDay(int arg0) {
 		return new Date((long) (arg0 + 11745) * 86400000L);
 	}
 }

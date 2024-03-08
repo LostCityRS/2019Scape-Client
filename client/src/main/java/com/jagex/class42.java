@@ -228,7 +228,7 @@ public class class42 {
 						Statics.field734.method1439(256, 0);
 						try {
 							arg0.method2115();
-							class214.method1571(2000L);
+							PreciseSleep.sleep(2000L);
 						} catch (Exception var55) {
 						}
 					}
@@ -241,7 +241,7 @@ public class class42 {
 				Statics.field734.method1439(256, 0);
 				try {
 					arg0.method2115();
-					class214.method1571(2000L);
+					PreciseSleep.sleep(2000L);
 				} catch (Exception var54) {
 				}
 			}

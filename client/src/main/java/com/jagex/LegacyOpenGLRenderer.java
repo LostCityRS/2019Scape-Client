@@ -699,7 +699,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 			if (var1++ > 5) {
 				throw new RuntimeException("");
 			}
-			class214.method1571(1000L);
+			PreciseSleep.sleep(1000L);
 		}
 	}
 

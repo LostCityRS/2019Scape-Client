@@ -25,7 +25,7 @@ public class class546 implements Runnable {
 						class473 var3;
 						do {
 							if (!var2.hasNext()) {
-								class214.method1571(10L);
+								PreciseSleep.sleep(10L);
 								continue label36;
 							}
 							var3 = (class473) var2.next();

@@ -18,7 +18,7 @@ public abstract class Timer {
 	public final int method8158(long arg0) {
 		long var3 = this.method8159();
 		if (var3 > 0L) {
-			class214.method1571(var3);
+			PreciseSleep.sleep(var3);
 		}
 		return this.method8160(arg0);
 	}

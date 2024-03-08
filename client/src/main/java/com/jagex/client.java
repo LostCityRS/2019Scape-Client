@@ -1642,13 +1642,13 @@ public final class client extends GameShell {
 		}
 		int var9 = Statics.field688.field11560.method18735();
 		if (var9 == 0) {
-			class214.method1571(15L);
+			PreciseSleep.sleep(15L);
 		} else if (var9 == 1) {
-			class214.method1571(10L);
+			PreciseSleep.sleep(10L);
 		} else if (var9 == 2) {
-			class214.method1571(5L);
+			PreciseSleep.sleep(5L);
 		} else if (var9 == 3) {
-			class214.method1571(2L);
+			PreciseSleep.sleep(2L);
 		}
 		if (field10807) {
 			method323();
@@ -3111,7 +3111,7 @@ public final class client extends GameShell {
 				int var24 = field10903 - field11041;
 				if (field10797 < Statics.field1713.length) {
 					do {
-						class159 var25 = Statics.field1713[field10797];
+						CutsceneAction var25 = Statics.field1713[field10797];
 						if (var25.field1750 > var24) {
 							break;
 						}
@@ -13326,7 +13326,7 @@ public final class client extends GameShell {
 
 	@ObfuscatedName("acb.mx(J)Ljava/lang/String;")
 	public static String method14989(long arg0) {
-		return class212.method3647(new Date(arg0), "EEE dd-MMM-yyyy HH:mm:ss zzz");
+		return TimeZones.method3647(new Date(arg0), "EEE dd-MMM-yyyy HH:mm:ss zzz");
 	}
 
 	@ObfuscatedName("ke.mg(Ljava/lang/String;B)V")

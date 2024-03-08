@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("afj")
-public class class864 extends class159 {
+public class class864 extends CutsceneAction {
 
 	public class864(Packet arg0) {
 		super(arg0);

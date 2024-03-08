@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aft")
-public class class862 extends class159 {
+public class CamMoveCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("aft.n")
 	public final int field10264;
@@ -20,7 +20,7 @@ public class class862 extends class159 {
 	@ObfuscatedName("aft.w")
 	public final int field10265;
 
-	public class862(Packet arg0) {
+	public CamMoveCutsceneAction(Packet arg0) {
 		super(arg0);
 		this.field10264 = arg0.g2();
 		this.field10262 = arg0.g2();

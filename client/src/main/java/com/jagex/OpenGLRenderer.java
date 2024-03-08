@@ -1555,7 +1555,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 			if (var1++ > 5) {
 				throw new RuntimeException("");
 			}
-			class214.method1571(1000L);
+			PreciseSleep.sleep(1000L);
 		}
 	}
 

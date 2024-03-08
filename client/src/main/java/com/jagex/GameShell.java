@@ -719,7 +719,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	public void destroy() {
 		if (!field6620) {
 			field6609 = MonotonicTime.method3655();
-			class214.method1571(5000L);
+			PreciseSleep.sleep(5000L);
 			this.method8085(false);
 		}
 	}

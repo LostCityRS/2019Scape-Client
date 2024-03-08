@@ -198,7 +198,7 @@ public class class931 extends class366 {
 					}
 				}
 			}
-			class214.method1571(10L);
+			PreciseSleep.sleep(10L);
 		}
 		this.field10681 = true;
 		try {

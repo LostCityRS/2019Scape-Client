@@ -178,7 +178,7 @@ public class LoadingScreenRenderer implements Runnable {
 			long var15 = MonotonicTime.method3655();
 			int var17 = (int) (20L - (var15 - var1));
 			if (var17 > 0) {
-				class214.method1571((long) var17);
+				PreciseSleep.sleep((long) var17);
 			}
 		}
 	}

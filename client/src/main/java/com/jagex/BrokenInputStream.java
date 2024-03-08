@@ -8,7 +8,7 @@ import java.io.InputStream;
 public class BrokenInputStream extends InputStream {
 
 	public int read() {
-		class214.method1571(30000L);
+		PreciseSleep.sleep(30000L);
 		return -1;
 	}
 }

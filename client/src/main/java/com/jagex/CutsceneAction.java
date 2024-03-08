@@ -3,20 +3,20 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ew")
-public abstract class class159 {
+public abstract class CutsceneAction {
 
 	@ObfuscatedName("ew.e")
 	public final int field1750;
 
-	public class159(Packet arg0) {
+	public CutsceneAction(Packet arg0) {
 		this.field1750 = arg0.g2();
 	}
 
 	@ObfuscatedName("aap.e(Lalw;I)Lew;")
-	public static class159 method14342(Packet arg0) {
+	public static CutsceneAction method14342(Packet arg0) {
 		int var1 = arg0.g1();
 		class801 var2 = class801.method3108(var1);
-		class159 var3 = null;
+		CutsceneAction var3 = null;
 		switch(var2.field9249) {
 			case 0:
 				var3 = new class868(arg0);
@@ -83,7 +83,7 @@ public abstract class class159 {
 				var3 = new class880(arg0);
 				break;
 			case 23:
-				var3 = new class862(arg0);
+				var3 = new CamMoveCutsceneAction(arg0);
 				break;
 			case 24:
 				var3 = new class1129(arg0);

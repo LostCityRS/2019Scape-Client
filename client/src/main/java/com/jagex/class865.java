@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("afp")
-public class class865 extends class159 {
+public class class865 extends CutsceneAction {
 
 	@ObfuscatedName("afp.n")
 	public final int field10270;

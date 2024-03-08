@@ -59,6 +59,6 @@ public class class8 implements Runnable {
 			} catch (Throwable var3) {
 			}
 		}
-		class214.method1571(1000L);
+		PreciseSleep.sleep(1000L);
 	}
 }

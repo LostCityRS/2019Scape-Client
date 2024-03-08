@@ -35,7 +35,7 @@ public class class545 implements Runnable {
 									class544 var9 = (class544) var8.next();
 									var9.method8647();
 								}
-								class214.method1571(6L);
+								PreciseSleep.sleep(6L);
 								continue label54;
 							}
 							var5 = (class473) var4.next();
