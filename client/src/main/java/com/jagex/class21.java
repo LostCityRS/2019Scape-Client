@@ -11,7 +11,7 @@ public class class21 {
 	}
 
 	@ObfuscatedName("qi.e(Ldh;IILhf;I)V")
-	public static void method7274(Renderer arg0, int arg1, int arg2, class226 arg3) {
+	public static void method7274(Renderer arg0, int arg1, int arg2, Component arg3) {
 		byte var4 = 127;
 		byte var5 = 7;
 		for (int var6 = 63; var6 >= 0; var6--) {

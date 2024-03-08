@@ -121,7 +121,7 @@ public class ObjStackEntity extends class1199 {
 			boolean var7 = false;
 			boolean var8 = false;
 			boolean var9 = false;
-			class104 var10 = this.field11716.field6913[this.field11714];
+			FloorModel var10 = this.field11716.field6913[this.field11714];
 			int var11 = this.field12579 << 1;
 			int var13 = -var11 / 2;
 			int var14 = -var11 / 2;

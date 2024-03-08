@@ -110,7 +110,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			Statics.field9164 = Statics.field11885;
 			this.method8026(arg1, arg2, arg3, arg4, arg5, arg6);
 		} catch (Throwable var10) {
-			class1211.method9845(null, var10);
+			JagException.method9845(null, var10);
 			this.method8087("crash");
 		}
 	}
@@ -208,7 +208,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		try {
 			Statics.field6629 = new class726();
 		} catch (Exception var26) {
-			class725.field8531 = false;
+			Fullscreen.field8531 = false;
 		}
 		Statics.field1880 = new class508();
 		ThreadGroup var21 = Thread.currentThread().getThreadGroup();
@@ -547,7 +547,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		} catch (ThreadDeath var7) {
 			throw var7;
 		} catch (Throwable var8) {
-			class1211.method9845(this.method8038(), var8);
+			JagException.method9845(this.method8038(), var8);
 			this.method8087("crash");
 		} finally {
 			this.method8085(true);

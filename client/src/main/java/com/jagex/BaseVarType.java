@@ -7,7 +7,7 @@ import deob.Statics;
 public class BaseVarType implements SerializableEnum {
 
 	@ObfuscatedName("qa.e")
-	public static final BaseVarType field4840 = new BaseVarType(2, 0, Integer.class, new BaseVarTypeInteger());
+	public static final BaseVarType INTEGER = new BaseVarType(2, 0, Integer.class, new BaseVarTypeInteger());
 
 	@ObfuscatedName("qa.n")
 	public static final BaseVarType field4837 = new BaseVarType(4, 1, Long.class, new BaseVarTypeLong());

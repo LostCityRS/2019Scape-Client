@@ -186,7 +186,7 @@ public class ClanSettings {
 			return null;
 		} else {
 			Node var2 = this.field3115.method14495((long) arg0);
-			return var2 != null && var2 instanceof class984 ? (String) ((class984) var2).field11436 : null;
+			return var2 != null && var2 instanceof ObjectWrapper ? (String) ((ObjectWrapper) var2).field11436 : null;
 		}
 	}
 
@@ -465,21 +465,21 @@ public class ClanSettings {
 		} else {
 			Node var3 = this.field3115.method14495((long) arg0);
 			if (var3 != null) {
-				if (var3 instanceof class984) {
-					class984 var4 = (class984) var3;
+				if (var3 instanceof ObjectWrapper) {
+					ObjectWrapper var4 = (ObjectWrapper) var3;
 					if (var4.field11436 instanceof String) {
 						if (arg1.equals(var4.field11436)) {
 							return false;
 						}
 						var4.method8440();
-						this.field3115.method14501(new class984(arg1), var4.field6760);
+						this.field3115.method14501(new ObjectWrapper(arg1), var4.field6760);
 						return true;
 					}
 				}
 				var3.method8440();
 			}
 		}
-		this.field3115.method14501(new class984(arg1), (long) arg0);
+		this.field3115.method14501(new ObjectWrapper(arg1), (long) arg0);
 		return true;
 	}
 
@@ -599,7 +599,7 @@ public class ClanSettings {
 				this.field3115.method14501(new class987(var11), (long) var8);
 			} else if (var9 == 2) {
 				String var13 = arg0.gjstr();
-				this.field3115.method14501(new class984(var13), (long) var8);
+				this.field3115.method14501(new ObjectWrapper(var13), (long) var8);
 			}
 		}
 	}

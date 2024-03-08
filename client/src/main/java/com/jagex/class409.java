@@ -7,10 +7,10 @@ import jagdx.IUnknown;
 import jagdx.class0;
 
 @ObfuscatedName("om")
-public class class409 implements class330 {
+public class class409 implements VertexBuffer {
 
 	@ObfuscatedName("om.e")
-	public final class1126 field4225;
+	public final Direct3DRenderer field4225;
 
 	@ObfuscatedName("om.n")
 	public int field4223;
@@ -27,7 +27,7 @@ public class class409 implements class330 {
 	@ObfuscatedName("om.w")
 	public long field4227 = 0L;
 
-	public class409(class1126 arg0, boolean arg1) {
+	public class409(Direct3DRenderer arg0, boolean arg1) {
 		this.field4225 = arg0;
 		this.field4226 = arg1;
 		this.field4225.method15985(this);

@@ -12,7 +12,7 @@ public class class982 extends Node {
 	public final GpuRenderer field11416;
 
 	@ObfuscatedName("akx.f")
-	public final class837 field11414;
+	public final GpuFloorModel field11414;
 
 	@ObfuscatedName("akx.w")
 	public final Light field11415;
@@ -39,10 +39,10 @@ public class class982 extends Node {
 	public int field11413 = 0;
 
 	@ObfuscatedName("akx.v")
-	public class360 field11423;
+	public IndexBuffer field11423;
 
 	@ObfuscatedName("akx.o")
-	public class330 field11424;
+	public VertexBuffer field11424;
 
 	@ObfuscatedName("akx.s")
 	public float[][] field11425;
@@ -59,7 +59,7 @@ public class class982 extends Node {
 	@ObfuscatedName("akx.b")
 	public ByteBuffer field11429;
 
-	public class982(GpuRenderer arg0, class837 arg1, Light arg2, int[] arg3) {
+	public class982(GpuRenderer arg0, GpuFloorModel arg1, Light arg2, int[] arg3) {
 		this.field11416 = arg0;
 		this.field11415 = arg2;
 		this.field11414 = arg1;
@@ -338,7 +338,7 @@ public class class982 extends Node {
 			if (var11 > this.field11417) {
 				if (var10.position() != 0 && var9 != 0) {
 					int var16 = var10.position();
-					class360 var17 = this.field11416.method15988(var16 / 2);
+					IndexBuffer var17 = this.field11416.method15988(var16 / 2);
 					var17.method5738(0, var16, this.field11416.field10046);
 					this.method17784(arg0, var17, var9 / 3);
 					break;
@@ -365,7 +365,7 @@ public class class982 extends Node {
 	}
 
 	@ObfuscatedName("akx.k(Ljj;Lml;I)V")
-	public void method17784(class285 arg0, class360 arg1, int arg2) {
+	public void method17784(class285 arg0, IndexBuffer arg1, int arg2) {
 		arg0.field2981 = 0;
 		arg0.field2983 = this.field11420;
 		arg0.field2972 = 0;

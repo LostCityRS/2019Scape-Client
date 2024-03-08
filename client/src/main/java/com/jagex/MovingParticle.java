@@ -348,7 +348,7 @@ public class MovingParticle extends class1144 {
 		}
 		ParticleSystem var8 = this.field12526.field7785;
 		ParticleEmitterType var9 = this.field12526.field7772;
-		class104[] var10 = arg0.field6913;
+		FloorModel[] var10 = arg0.field6913;
 		int var11 = var8.field7815;
 		class551 var12 = arg0.field6928[var8.field7815][var5][var6];
 		if (var12 != null) {

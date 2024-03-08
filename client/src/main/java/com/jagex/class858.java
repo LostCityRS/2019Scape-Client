@@ -14,7 +14,7 @@ public class class858 extends class140 {
 	public final GpuTexture field10247;
 
 	@ObfuscatedName("afx.y")
-	public final class330 field10246;
+	public final VertexBuffer field10246;
 
 	@ObfuscatedName("afx.q")
 	public float[][] field10245;

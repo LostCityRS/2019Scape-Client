@@ -26,7 +26,7 @@ public class AddBanned extends class978 {
 	@ObfuscatedName("are.e(Lalw;B)V")
 	public void method17726(Packet arg0) {
 		if (arg0.g1() != 255) {
-			arg0.pos -= -1445626955;
+			arg0.pos -= 1;
 			this.field12216 = arg0.g8();
 		}
 		this.field12217 = arg0.fastgstr();

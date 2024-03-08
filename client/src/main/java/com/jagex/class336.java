@@ -11,7 +11,7 @@ public class class336 {
 	public final GpuRenderer field3271;
 
 	@ObfuscatedName("ly.k")
-	public final class337 field3273;
+	public final FloorHardShadows field3273;
 
 	@ObfuscatedName("ly.f")
 	public final int field3274;
@@ -29,7 +29,7 @@ public class class336 {
 	public final int field3278;
 
 	@ObfuscatedName("ly.p")
-	public class360 field3279;
+	public IndexBuffer field3279;
 
 	@ObfuscatedName("ly.d")
 	public GpuTexture field3280;
@@ -46,7 +46,7 @@ public class class336 {
 	@ObfuscatedName("ly.o")
 	public byte[] field3281;
 
-	public class336(GpuRenderer arg0, class337 arg1, class837 arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
+	public class336(GpuRenderer arg0, FloorHardShadows arg1, GpuFloorModel arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		this.field3271 = arg0;
 		this.field3273 = arg1;
 		this.field3274 = arg6;
@@ -103,7 +103,7 @@ public class class336 {
 	}
 
 	@ObfuscatedName("ly.n(Ljj;Lml;II)V")
-	public void method5656(class285 arg0, class360 arg1, int arg2, int arg3) {
+	public void method5656(class285 arg0, IndexBuffer arg1, int arg2, int arg3) {
 		if (arg3 <= 0) {
 			return;
 		}

@@ -6,16 +6,16 @@ import deob.ObfuscatedName;
 public abstract class Js5TcpClient {
 
 	@ObfuscatedName("pp.l")
-	public class720 field4448 = new class720();
+	public DualIterableQueue field4448 = new DualIterableQueue();
 
 	@ObfuscatedName("pp.u")
-	public class720 field4451 = new class720();
+	public DualIterableQueue field4451 = new DualIterableQueue();
 
 	@ObfuscatedName("pp.z")
-	public class720 field4449 = new class720();
+	public DualIterableQueue field4449 = new DualIterableQueue();
 
 	@ObfuscatedName("pp.p")
-	public class720 field4443 = new class720();
+	public DualIterableQueue field4443 = new DualIterableQueue();
 
 	@ObfuscatedName("pp.d")
 	public int field4441;

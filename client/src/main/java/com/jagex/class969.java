@@ -9,7 +9,7 @@ public class class969 extends Node {
 	public final LegacyOpenGLRenderer field11279;
 
 	@ObfuscatedName("ajr.f")
-	public final class836 field11273;
+	public final LegacyOpenGLFloorModel field11273;
 
 	@ObfuscatedName("ajr.w")
 	public final Light field11274;
@@ -62,7 +62,7 @@ public class class969 extends Node {
 	@ObfuscatedName("ajr.a")
 	public IterableMap field11290;
 
-	public class969(LegacyOpenGLRenderer arg0, class836 arg1, Light arg2, int[] arg3) {
+	public class969(LegacyOpenGLRenderer arg0, LegacyOpenGLFloorModel arg1, Light arg2, int[] arg3) {
 		this.field11279 = arg0;
 		this.field11274 = arg2;
 		this.field11273 = arg1;

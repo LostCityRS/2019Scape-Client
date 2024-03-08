@@ -8,15 +8,15 @@ public class class150 implements class152 {
 	@ObfuscatedName("ek.e")
 	public final class748 field1708;
 
-	public class150(class808 arg0) {
-		this(arg0, new class747(arg0));
+	public class150(VarTypeList arg0) {
+		this(arg0, new VarContainerSparse(arg0));
 	}
 
-	public class150(class808 arg0, class747 arg1) {
+	public class150(VarTypeList arg0, VarContainerSparse arg1) {
 		this(arg0.field9260, arg1);
 	}
 
-	public class150(VarDomainType arg0, class747 arg1) {
+	public class150(VarDomainType arg0, VarContainerSparse arg1) {
 		this.field1708 = arg1;
 	}
 

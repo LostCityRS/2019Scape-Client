@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class Js5DiskCache implements Runnable {
 
 	@ObfuscatedName("pf.e")
-	public class720 field4438 = new class720();
+	public DualIterableQueue field4438 = new DualIterableQueue();
 
 	@ObfuscatedName("pf.n")
 	public int field4437 = 0;
@@ -27,7 +27,7 @@ public class Js5DiskCache implements Runnable {
 	public class1228 method6997(int arg0, DiskStore arg1) {
 		class1228 var3 = new class1228();
 		var3.field12559 = 1;
-		class720 var4 = this.field4438;
+		DualIterableQueue var4 = this.field4438;
 		synchronized (this.field4438) {
 			class1228 var5 = (class1228) this.field4438.method14317();
 			while (true) {
@@ -73,7 +73,7 @@ public class Js5DiskCache implements Runnable {
 
 	@ObfuscatedName("pf.k(Latf;I)V")
 	public void method6987(class1228 arg0) {
-		class720 var2 = this.field4438;
+		DualIterableQueue var2 = this.field4438;
 		synchronized (this.field4438) {
 			this.field4438.method14339(arg0);
 			this.field4437++;
@@ -83,7 +83,7 @@ public class Js5DiskCache implements Runnable {
 
 	public void run() {
 		while (!this.field4439) {
-			class720 var1 = this.field4438;
+			DualIterableQueue var1 = this.field4438;
 			class1228 var2;
 			synchronized (this.field4438) {
 				var2 = (class1228) this.field4438.method14315();
@@ -103,7 +103,7 @@ public class Js5DiskCache implements Runnable {
 					var2.field12557 = var2.field12556.method9010((int) var2.field11440);
 				}
 			} catch (Exception var6) {
-				class1211.method9845(null, var6);
+				JagException.method9845(null, var6);
 			}
 			var2.field12344 = false;
 		}
@@ -111,7 +111,7 @@ public class Js5DiskCache implements Runnable {
 
 	@ObfuscatedName("pf.f(I)I")
 	public int method6991() {
-		class720 var1 = this.field4438;
+		DualIterableQueue var1 = this.field4438;
 		synchronized (this.field4438) {
 			return this.field4437;
 		}
@@ -120,7 +120,7 @@ public class Js5DiskCache implements Runnable {
 	@ObfuscatedName("pf.w(I)V")
 	public void method6992() {
 		this.field4439 = true;
-		class720 var1 = this.field4438;
+		DualIterableQueue var1 = this.field4438;
 		synchronized (this.field4438) {
 			this.field4438.notifyAll();
 		}

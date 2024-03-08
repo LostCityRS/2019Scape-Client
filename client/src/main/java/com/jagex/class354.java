@@ -36,13 +36,13 @@ public class class354 {
 	public int field3384;
 
 	@ObfuscatedName("md.p")
-	public class330 field3390;
+	public VertexBuffer field3390;
 
 	@ObfuscatedName("md.d")
-	public class332 field3381;
+	public VertexDeclaration field3381;
 
 	@ObfuscatedName("md.c")
-	public class360 field3392;
+	public IndexBuffer field3392;
 
 	@ObfuscatedName("md.r")
 	public int[] field3393 = new int[4];

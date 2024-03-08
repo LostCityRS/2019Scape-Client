@@ -9,7 +9,7 @@ import java.awt.*;
 public abstract class class564 {
 
 	@ObfuscatedName("pm.e(Ljava/awt/Component;ZI)Luj;")
-	public static class564 method6806(Component arg0, boolean arg1) {
+	public static class564 method6806(java.awt.Component arg0, boolean arg1) {
 		return new class1007(arg0, arg1);
 	}
 

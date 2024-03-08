@@ -90,8 +90,8 @@ public class class1235 extends PrimaryLayerEntity {
 	@ObfuscatedName("aur.f(Ldh;IIB)Ldo;")
 	public Model method19748(Renderer arg0, int arg1, int arg2) {
 		EffectAnimType var4 = (EffectAnimType) Statics.field4874.get(arg2);
-		class104 var5 = this.field11716.field6915[this.field11717];
-		class104 var6 = this.field11714 < 3 ? this.field11716.field6915[this.field11714 + 1] : null;
+		FloorModel var5 = this.field11716.field6915[this.field11717];
+		FloorModel var6 = this.field11714 < 3 ? this.field11716.field6915[this.field11714 + 1] : null;
 		Vector3 var7 = this.method10536().field4298;
 		return this.field12609 == null || this.field12609.method14375() ? var4.method13802(arg0, arg1, this.field12608 * 2048, var5, var6, (int) var7.field4308, (int) var7.field4311, (int) var7.field4313, null, (byte) 2) : var4.method13802(arg0, arg1, this.field12608 * 2048, var5, var6, (int) var7.field4308, (int) var7.field4311, (int) var7.field4313, this.field12609, (byte) 2);
 	}

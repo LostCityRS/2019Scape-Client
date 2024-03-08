@@ -125,11 +125,11 @@ public class AccountAppealManager {
 					} else {
 						var18.tinydec(var6);
 						while (var18.pos > 0 && var18.data[var18.pos - 1] == 0) {
-							var18.pos -= -1445626955;
+							var18.pos -= 1;
 						}
 						String var21 = new String(var18.data, 0, var18.pos);
 						if (method15242(var21)) {
-							class505.method4607(var21, true, client.field10784);
+							Browser.method4607(var21, true, client.field10784);
 							return 2;
 						} else {
 							return 5;

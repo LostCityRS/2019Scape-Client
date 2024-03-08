@@ -7,10 +7,10 @@ import jagdx.IUnknown;
 import jagdx.class0;
 
 @ObfuscatedName("ot")
-public class class403 implements class360 {
+public class class403 implements IndexBuffer {
 
 	@ObfuscatedName("ot.e")
-	public final class1126 field4211;
+	public final Direct3DRenderer field4211;
 
 	@ObfuscatedName("ot.n")
 	public int field4208;
@@ -27,7 +27,7 @@ public class class403 implements class360 {
 	@ObfuscatedName("ot.w")
 	public long field4213 = 0L;
 
-	public class403(class1126 arg0, DataType arg1, boolean arg2) {
+	public class403(Direct3DRenderer arg0, DataType arg1, boolean arg2) {
 		this.field4211 = arg0;
 		this.field4212 = arg1;
 		this.field4209 = arg2;

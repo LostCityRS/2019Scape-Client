@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aqq")
-public class class1142 extends class934 {
+public class class1142 extends NoiseGenerator3D_Sub2 {
 
 	@ObfuscatedName("aqq.h")
 	public byte[] field12154;

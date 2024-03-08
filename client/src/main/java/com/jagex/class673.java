@@ -26,7 +26,7 @@ public class class673 implements class152 {
 
 	@ObfuscatedName("yl.k(Lec;B)Ljava/lang/Object;")
 	public Object method2801(class149 arg0) {
-		if (ScriptVarType.field4634 != arg0.field1704) {
+		if (ScriptVarType.STRING != arg0.field1704) {
 			throw new IllegalArgumentException("");
 		}
 		return this.field8193.method5260(client.field10768.field8339 << 16 | arg0.field1706);

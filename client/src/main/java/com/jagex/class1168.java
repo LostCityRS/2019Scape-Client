@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class class1168 extends class980 {
 
 	// $FF: synthetic field
-	public final class311 this$0;
+	public final ClanChannelDelta this$0;
 
 	@ObfuscatedName("arz.k")
 	public String field12258;
@@ -17,7 +17,7 @@ public class class1168 extends class980 {
 	@ObfuscatedName("arz.w")
 	public byte field12259;
 
-	public class1168(class311 arg0) {
+	public class1168(ClanChannelDelta arg0) {
 		this.this$0 = arg0;
 		this.field12258 = null;
 	}
@@ -25,7 +25,7 @@ public class class1168 extends class980 {
 	@ObfuscatedName("arz.e(Lalw;I)V")
 	public void method17757(Packet arg0) {
 		if (arg0.g1() != 255) {
-			arg0.pos -= -1445626955;
+			arg0.pos -= 1;
 			arg0.g8();
 		}
 		this.field12258 = arg0.fastgstr();

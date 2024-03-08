@@ -47,7 +47,7 @@ public class class545 implements Runnable {
 					}
 				}
 			} catch (Exception var11) {
-				class1211.method9845(null, var11);
+				JagException.method9845(null, var11);
 				var11.printStackTrace();
 			}
 			return;

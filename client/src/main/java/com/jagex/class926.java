@@ -6,7 +6,7 @@ import jagdx.*;
 @ObfuscatedName("aio")
 public class class926 extends class925 implements class359 {
 
-	public class926(class1126 arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4) {
+	public class926(Direct3DRenderer arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4) {
 		super(arg0, arg1, arg2, arg3, arg4, 1025, 0);
 	}
 

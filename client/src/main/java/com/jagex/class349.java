@@ -12,10 +12,10 @@ public class class349 {
 	public boolean field3357;
 
 	@ObfuscatedName("mg.m")
-	public class330 field3359;
+	public VertexBuffer field3359;
 
 	@ObfuscatedName("mg.k")
-	public class330 field3356;
+	public VertexBuffer field3356;
 
 	public class349(boolean arg0) {
 		this.field3357 = arg0;

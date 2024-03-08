@@ -166,7 +166,7 @@ public class class1234 extends PrimaryLayerEntity {
 			}
 		} else {
 			int var3 = this.field12605 - 1;
-			class984 var4 = (class984) client.field10838.method14495((long) var3);
+			ObjectWrapper var4 = (ObjectWrapper) client.field10838.method14495((long) var3);
 			if (var4 != null) {
 				var1 = (PathingEntity) var4.field11436;
 			}

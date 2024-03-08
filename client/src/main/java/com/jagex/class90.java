@@ -10,7 +10,7 @@ public class class90 {
 	public final LegacyOpenGLRenderer field1155;
 
 	@ObfuscatedName("ci.n")
-	public final class836 field1151;
+	public final LegacyOpenGLFloorModel field1151;
 
 	@ObfuscatedName("ci.m")
 	public final int field1152;
@@ -33,7 +33,7 @@ public class class90 {
 	@ObfuscatedName("ci.z")
 	public class69[][] field1158;
 
-	public class90(LegacyOpenGLRenderer arg0, class836 arg1) {
+	public class90(LegacyOpenGLRenderer arg0, LegacyOpenGLFloorModel arg1) {
 		this.field1155 = arg0;
 		this.field1151 = arg1;
 		this.field1152 = (this.field1151.field1235 * this.field1151.field1233 >> this.field1155.field9874) + 2;

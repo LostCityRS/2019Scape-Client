@@ -47,7 +47,7 @@ public class class1177 extends SecondaryNode {
 		for (int var6 = 0; var6 < this.field12323.length; var6++) {
 			byte[] var7 = this.field12323[var6];
 			Packet var8 = new Packet(var7);
-			var8.pos = -1445626955;
+			var8.pos = 1;
 			int var9 = var8.g2();
 			Js5 var10 = Statics.field12326;
 			synchronized (Statics.field12326) {
@@ -68,7 +68,7 @@ public class class1177 extends SecondaryNode {
 		for (int var17 = 0; var17 < var15.length; var17++) {
 			byte[] var18 = this.field12323[var17];
 			Packet var19 = new Packet(var18);
-			var19.pos = -1445626955;
+			var19.pos = 1;
 			int var20 = var19.g2();
 			class971 var21 = null;
 			for (class971 var22 = (class971) var12.method14191(); var22 != null; var22 = (class971) var12.method14161()) {

@@ -100,8 +100,8 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 	@ObfuscatedName("ajk.bv(Ldh;IZI)Labg;")
 	public class746 method17414(Renderer arg0, int arg1, boolean arg2) {
 		LocType var4 = (LocType) this.field11159.get(this.field11715);
-		class104 var5;
-		class104 var6;
+		FloorModel var5;
+		FloorModel var6;
 		if (this.field11156) {
 			var5 = this.field11716.field6917[this.field11714];
 			var6 = this.field11716.field6915[0];

@@ -88,7 +88,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements class2
 	public class721 field10454;
 
 	@ObfuscatedName("ahm.aq")
-	public class515[] field10422;
+	public EntitySpotAnim[] field10422;
 
 	@ObfuscatedName("ahm.ax")
 	public int field10423;
@@ -205,7 +205,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements class2
 	public final class748 field10460;
 
 	@ObfuscatedName("ahm.cg")
-	public class225 field10461;
+	public Interface field10461;
 
 	@ObfuscatedName("ahm.ce")
 	public int field10462;
@@ -216,7 +216,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements class2
 	@ObfuscatedName("ahm.ci")
 	public class152 field10415;
 
-	public PathingEntity(Scene arg0, int arg1, class808 arg2) {
+	public PathingEntity(Scene arg0, int arg1, VarTypeList arg2) {
 		super(arg0, 0, 0, 0, 0, 0, 0, 0, 0, 0, false, (byte) 0);
 		this.field10406 = -1;
 		this.field10430 = 1;
@@ -262,15 +262,15 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements class2
 		this.field10448 = new int[arg1];
 		this.field10441 = new byte[arg1];
 		this.field10459 = new Model[6];
-		this.field10422 = new class515[5];
+		this.field10422 = new EntitySpotAnim[5];
 		for (int var4 = 0; var4 < 5; var4++) {
-			this.field10422[var4] = new class515(this);
+			this.field10422[var4] = new EntitySpotAnim(this);
 		}
 		this.field10398 = new class1204[Statics.field1709.field7766.length];
-		this.field10460 = new class747(arg2);
+		this.field10460 = new VarContainerSparse(arg2);
 	}
 
-	public PathingEntity(Scene arg0, class808 arg1) {
+	public PathingEntity(Scene arg0, VarTypeList arg1) {
 		this(arg0, 10, arg1);
 	}
 
@@ -510,7 +510,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements class2
 
 	@ObfuscatedName("ahm.h(IIIIZIB)V")
 	public final void method16563(int arg0, int arg1, int arg2, int arg3, boolean arg4, int arg5) {
-		class515 var7 = this.field10422[arg5];
+		EntitySpotAnim var7 = this.field10422[arg5];
 		int var8 = var7.field6657;
 		if (arg0 != -1 && var8 != -1) {
 			if (arg0 == var8) {
@@ -744,7 +744,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements class2
 			} else if (var7 == 4) {
 				var8 = 8;
 			}
-			class515 var9 = this.field10422[var7];
+			EntitySpotAnim var9 = this.field10422[var7];
 			if (var9.field6657 == -1 || var9.field6659.method14355()) {
 				this.field10459[var7 + 1] = null;
 			} else {
@@ -906,7 +906,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements class2
 		if (this.field10462 == arg0) {
 			return true;
 		}
-		this.field10461 = class226.method5405(arg0, null, null, true);
+		this.field10461 = Component.method5405(arg0, null, null, true);
 		if (this.field10461 == null) {
 			return false;
 		} else {

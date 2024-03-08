@@ -16,7 +16,7 @@ public class class35 {
 	}
 
 	@ObfuscatedName("y.e(Ldh;Lhf;I)V")
-	public static void method539(Renderer arg0, class226 arg1) {
+	public static void method539(Renderer arg0, Component arg1) {
 		boolean var2 = Statics.field1842.method18900(arg0, arg1.field2334, arg1.field2335, arg1.field2218, arg1.field2219 | 0xFF000000, arg1.field2241, arg1.field2246 ? Statics.field4490.field12061 : null) == null;
 		if (var2) {
 			field631.method14153(new class964(arg1.field2334, arg1.field2335, arg1.field2218, arg1.field2219 | 0xFF000000, arg1.field2241, arg1.field2246));

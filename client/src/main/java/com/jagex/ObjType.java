@@ -509,7 +509,7 @@ public class ObjType implements ConfigType {
 					int var25 = arg0.g3();
 					Node var26;
 					if (var24) {
-						var26 = new class984(arg0.gjstr());
+						var26 = new ObjectWrapper(arg0.gjstr());
 					} else {
 						var26 = new class988(arg0.g4s());
 					}
@@ -615,7 +615,7 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.v(Ldh;IILxg;Laaq;IIIII)Ldo;")
-	public final Model method14644(Renderer arg0, int arg1, int arg2, class639 arg3, class721 arg4, int arg5, int arg6, int arg7, int arg8) {
+	public final Model method14644(Renderer arg0, int arg1, int arg2, PlayerModel arg3, class721 arg4, int arg5, int arg6, int arg7, int arg8) {
 		if (this.field8629 != null && arg2 > 1) {
 			int var10 = -1;
 			for (int var11 = 0; var11 < 10; var11++) {
@@ -742,7 +742,7 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.s(Ldh;Ldh;IIIZILeu;Lxg;Lws;B)[I")
-	public int[] method14646(Renderer arg0, Renderer arg1, int arg2, int arg3, int arg4, boolean arg5, int arg6, class140 arg7, class639 arg8, class629 arg9) {
+	public int[] method14646(Renderer arg0, Renderer arg1, int arg2, int arg3, int arg4, boolean arg5, int arg6, class140 arg7, PlayerModel arg8, class629 arg9) {
 		class120 var11 = class120.method1931(this.field8621.field8614, this.field8655, 0);
 		if (var11 == null) {
 			return null;
@@ -927,7 +927,7 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.h(ZLabw;I)Z")
-	public final boolean method14649(boolean arg0, class740 arg1) {
+	public final boolean method14649(boolean arg0, ObjTypeCustomisation arg1) {
 		int var3;
 		int var4;
 		int var5;
@@ -967,7 +967,7 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.a(ZLabw;I)Ldq;")
-	public final class120 method14650(boolean arg0, class740 arg1) {
+	public final class120 method14650(boolean arg0, ObjTypeCustomisation arg1) {
 		int var3;
 		int var4;
 		int var5;
@@ -1049,7 +1049,7 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.g(ZLabw;I)Z")
-	public final boolean method14651(boolean arg0, class740 arg1) {
+	public final boolean method14651(boolean arg0, ObjTypeCustomisation arg1) {
 		int var3;
 		int var4;
 		if (arg0) {
@@ -1081,7 +1081,7 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.i(ZLabw;B)Ldq;")
-	public final class120 method14652(boolean arg0, class740 arg1) {
+	public final class120 method14652(boolean arg0, ObjTypeCustomisation arg1) {
 		int var3;
 		int var4;
 		if (arg0) {
@@ -1154,7 +1154,7 @@ public class ObjType implements ConfigType {
 		if (this.field8690 == null) {
 			return arg1;
 		} else {
-			class984 var3 = (class984) this.field8690.method14495((long) arg0);
+			ObjectWrapper var3 = (ObjectWrapper) this.field8690.method14495((long) arg0);
 			return var3 == null ? arg1 : (String) var3.field11436;
 		}
 	}

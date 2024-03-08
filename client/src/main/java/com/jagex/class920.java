@@ -7,15 +7,15 @@ import jagdx.IUnknown;
 import java.nio.ByteBuffer;
 
 @ObfuscatedName("ait")
-public class class920 extends class332 {
+public class class920 extends VertexDeclaration {
 
 	@ObfuscatedName("ait.n")
-	public class1126 field10620;
+	public Direct3DRenderer field10620;
 
 	@ObfuscatedName("ait.m")
 	public long field10621 = 0L;
 
-	public class920(class1126 arg0, class345[] arg1) {
+	public class920(Direct3DRenderer arg0, class345[] arg1) {
 		super(arg1);
 		this.field10620 = arg0;
 		byte var3 = 0;

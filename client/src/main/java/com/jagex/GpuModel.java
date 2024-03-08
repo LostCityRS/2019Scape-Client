@@ -1517,7 +1517,7 @@ public class GpuModel extends Model {
 	}
 
 	@ObfuscatedName("afo.q(IILcb;Lcb;III)V")
-	public void method1700(int arg0, int arg1, class104 arg2, class104 arg3, int arg4, int arg5, int arg6) {
+	public void method1700(int arg0, int arg1, FloorModel arg2, FloorModel arg3, int arg4, int arg5, int arg6) {
 		if (!this.field9718) {
 			this.method15613();
 		}
@@ -3580,7 +3580,7 @@ public class GpuModel extends Model {
 		if (this.field9756.field3237 == null) {
 			this.field9756.field3237 = this.field9730.method16067(false);
 		}
-		class360 var1 = this.field9756.field3237;
+		IndexBuffer var1 = this.field9756.field3237;
 		var1.method5831(this.field9721 * 6);
 		Unsafe var2 = this.field9730.field10110;
 		if (var2 != null) {
@@ -3634,7 +3634,7 @@ public class GpuModel extends Model {
 			if (this.field9731.field3356 == null) {
 				this.field9731.field3356 = this.field9730.method16085(this.field9735);
 			}
-			class330 var6 = this.field9731.field3356;
+			VertexBuffer var6 = this.field9731.field3356;
 			var6.method5553(this.field9710 * 12, 12);
 			Unsafe var7 = this.field9730.field10110;
 			if (var7 == null) {
@@ -3667,7 +3667,7 @@ public class GpuModel extends Model {
 			if (this.field9732.field3356 == null) {
 				this.field9732.field3356 = this.field9730.method16085(this.field9735);
 			}
-			class330 var19 = this.field9732.field3356;
+			VertexBuffer var19 = this.field9732.field3356;
 			var19.method5553(this.field9710 * 4, 4);
 			Unsafe var20 = this.field9730.field10110;
 			if (var20 == null) {
@@ -3806,7 +3806,7 @@ public class GpuModel extends Model {
 			if (this.field9733.field3356 == null) {
 				this.field9733.field3356 = this.field9730.method16085(this.field9735);
 			}
-			class330 var67 = this.field9733.field3356;
+			VertexBuffer var67 = this.field9733.field3356;
 			var67.method5553(this.field9710 * 12, 12);
 			short[] var68;
 			short[] var69;
@@ -3867,7 +3867,7 @@ public class GpuModel extends Model {
 			if (this.field9734.field3356 == null) {
 				this.field9734.field3356 = this.field9730.method16085(this.field9735);
 			}
-			class330 var85 = this.field9734.field3356;
+			VertexBuffer var85 = this.field9734.field3356;
 			var85.method5553(this.field9710 * 8, 8);
 			Unsafe var86 = this.field9730.field10110;
 			if (var86 == null) {

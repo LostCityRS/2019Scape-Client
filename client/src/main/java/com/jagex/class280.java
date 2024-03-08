@@ -305,7 +305,7 @@ public class class280 {
 				client.field10942 = Statics.field11389.field7740;
 			}
 			Statics.field1709 = new class631(Statics.field1587);
-			Statics.field2767 = new class620(Statics.field1587);
+			Statics.field2767 = new SkillDefaults(Statics.field1587);
 			Statics.field1971 = new class622(Statics.field1587);
 			Statics.field2775 = new class625(Statics.field1587);
 			Statics.field6792 = new class626(Statics.field1587);
@@ -350,10 +350,10 @@ public class class280 {
 			Statics.field12225 = new class807(client.field10768, VarDomainType.CLAN_SETTING, Statics.field1680, Statics.field11838);
 			Statics.field3415 = new class807(client.field10768, VarDomainType.PLAYER_GROUP, Statics.field1680, Statics.field11838);
 			Statics.field1819 = new class807(client.field10768, VarDomainType.OBJECT, Statics.field1680, Statics.field11838);
-			Statics.field1232 = class808.method15149(new class808[] { Statics.field8911, Statics.field8485, Statics.field8135, Statics.field8783, Statics.field12225, Statics.field3415, Statics.field1819 });
+			Statics.field1232 = VarTypeList.method15149(new VarTypeList[] { Statics.field8911, Statics.field8485, Statics.field8135, Statics.field8783, Statics.field12225, Statics.field3415, Statics.field1819 });
 			Statics.field8736 = new VarBitTypeList(client.field10768, Statics.field1680, Statics.field11838, Statics.field1232);
 			Statics.field4626 = new class279();
-			class226.method3669(Statics.field527, Statics.field9213, Statics.field10317, Statics.field7672);
+			Component.method3669(Statics.field527, Statics.field9213, Statics.field10317, Statics.field7672);
 			Statics.field9211 = new class382(Statics.field736);
 			Statics.field2013 = new class377(Statics.field6879);
 			Statics.field7282 = new class380(Statics.field6879);
@@ -390,12 +390,12 @@ public class class280 {
 			client.field10807 = true;
 		}
 		if (Statics.field3419 == class277.field2916 && Statics.field11389.field7724 != -1) {
-			if (!class226.method5364(Statics.field11389.field7724, null)) {
+			if (!Component.method5364(Statics.field11389.field7724, null)) {
 				return 0;
 			}
 			boolean var22 = true;
 			for (int var23 = 0; var23 < Statics.field11725[Statics.field11389.field7724].field2151.length; var23++) {
-				class226 var24 = Statics.field11725[Statics.field11389.field7724].field2151[var23];
+				Component var24 = Statics.field11725[Statics.field11389.field7724].field2151[var23];
 				if (var24.field2184 == 5 && var24.field2215 != -1 && !Statics.field10317.method6888(var24.field2215, 0)) {
 					var22 = false;
 				}

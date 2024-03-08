@@ -15,7 +15,7 @@ public class class1191 extends SubInterface {
 
 	@ObfuscatedName("asz.e(B)Z")
 	public boolean method18183() {
-		class984 var1 = (class984) client.field10838.method14495((long) this.field12428);
+		ObjectWrapper var1 = (ObjectWrapper) client.field10838.method14495((long) this.field12428);
 		if (var1 == null) {
 			return false;
 		} else {

@@ -8,7 +8,7 @@ import jagdx.IUnknown;
 public class class410 implements class412 {
 
 	@ObfuscatedName("of.e")
-	public final class1126 field4228;
+	public final Direct3DRenderer field4228;
 
 	@ObfuscatedName("of.n")
 	public final DataType field4229;
@@ -25,13 +25,13 @@ public class class410 implements class412 {
 	@ObfuscatedName("of.w")
 	public long field4233;
 
-	public class410(class1126 arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4, int arg5) {
+	public class410(Direct3DRenderer arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4, int arg5) {
 		this.field4228 = arg0;
 		this.field4231 = arg3;
 		this.field4232 = arg4;
 		this.field4230 = arg1;
 		this.field4229 = arg2;
-		this.field4233 = IDirect3DDevice.CreateRenderTarget(this.field4228.field11978, arg3, arg4, class1126.method19011(this.field4230, this.field4229), arg5, 0, false);
+		this.field4233 = IDirect3DDevice.CreateRenderTarget(this.field4228.field11978, arg3, arg4, Direct3DRenderer.method19011(this.field4230, this.field4229), arg5, 0, false);
 		this.field4228.method15985(this);
 	}
 

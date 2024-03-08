@@ -292,7 +292,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 			} catch (Throwable var29) {
 				throw new RuntimeException("");
 			}
-			this.method2138(arg1, new class1218(this, arg1, arg2));
+			this.method2138(arg1, new OpenGLSurface(this, arg1, arg2));
 			this.method2140(arg1);
 			this.method15987(32768, false);
 			this.method15987(32768, false);
@@ -387,8 +387,8 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.ad(Ljava/awt/Canvas;II)Lafy;")
-	public class841 method2144(Canvas arg0, int arg1, int arg2) {
-		return new class1218(this, arg0);
+	public Surface method2144(Canvas arg0, int arg1, int arg2) {
+		return new OpenGLSurface(this, arg0);
 	}
 
 	@ObfuscatedName("aqv.am()Lafq;")
@@ -1083,33 +1083,33 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.vn(Z)Llr;")
-	public final class330 method16085(boolean arg0) {
+	public final VertexBuffer method16085(boolean arg0) {
 		return new OpenGLVertexBuffer(this, arg0);
 	}
 
 	@ObfuscatedName("aqv.vc(Z)Lml;")
-	public final class360 method16067(boolean arg0) {
+	public final IndexBuffer method16067(boolean arg0) {
 		return new OpenGLIndexBuffer(this, DataType.field1646, arg0);
 	}
 
 	@ObfuscatedName("aqv.vf([Llk;)Llo;")
-	public class332 method16065(class345[] arg0) {
+	public VertexDeclaration method16065(class345[] arg0) {
 		return new class921(arg0);
 	}
 
 	@ObfuscatedName("aqv.wn(ILlr;)V")
-	public void method16120(int arg0, class330 arg1) {
+	public void method16120(int arg0, VertexBuffer arg1) {
 		this.field12012[arg0] = (OpenGLVertexBuffer) arg1;
 	}
 
 	@ObfuscatedName("aqv.wa(Lml;)V")
-	public void method16102(class360 arg0) {
+	public void method16102(IndexBuffer arg0) {
 		this.field12036 = (OpenGLIndexBuffer) arg0;
 		this.field12036.method7658();
 	}
 
 	@ObfuscatedName("aqv.vk(Llo;)V")
-	public void method16177(class332 arg0) {
+	public void method16177(VertexDeclaration arg0) {
 		class345[] var2 = arg0.field3241;
 		int var3 = 0;
 		boolean var4 = false;
@@ -1226,7 +1226,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.wj(Lml;Lms;IIII)V")
-	public final void method16078(class360 arg0, class357 arg1, int arg2, int arg3, int arg4, int arg5) {
+	public final void method16078(IndexBuffer arg0, class357 arg1, int arg2, int arg3, int arg4, int arg5) {
 		byte var7;
 		int var8;
 		if (class357.field3406 == arg1) {

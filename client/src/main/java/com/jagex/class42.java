@@ -446,7 +446,7 @@ public class class42 {
 	}
 
 	@ObfuscatedName("v.v(Ldh;Lhf;IIB)V")
-	public static void method328(Renderer arg0, class226 arg1, int arg2, int arg3) {
+	public static void method328(Renderer arg0, Component arg1, int arg2, int arg3) {
 		if (Statics.field4490 == null) {
 			return;
 		}
@@ -549,11 +549,11 @@ public class class42 {
 	}
 
 	@ObfuscatedName("je.o(Ldh;IILhf;Lch;IIB)V")
-	public static void method4838(Renderer arg0, int arg1, int arg2, class226 arg3, class103 arg4, int arg5, int arg6) {
+	public static void method4838(Renderer arg0, int arg1, int arg2, Component arg3, class103 arg4, int arg5, int arg6) {
 		for (int var7 = 0; var7 < client.field11011; var7++) {
-			class984 var8 = (class984) client.field10838.method14495((long) client.field11036[var7]);
+			ObjectWrapper var8 = (ObjectWrapper) client.field10838.method14495((long) client.field11036[var7]);
 			if (var8 != null) {
-				class1131 var9 = (class1131) var8.field11436;
+				NpcEntity var9 = (NpcEntity) var8.field11436;
 				if (var9.method19160() && Statics.field4490.field11717 == var9.field11717) {
 					NPCType var10 = var9.field12083;
 					if (var10 != null && var10.field2735 != null) {
@@ -575,18 +575,18 @@ public class class42 {
 	}
 
 	@ObfuscatedName("aff.s(IILhf;Lch;III)V")
-	public static void method16411(int arg0, int arg1, class226 arg2, class103 arg3, int arg4, int arg5) {
+	public static void method16411(int arg0, int arg1, Component arg2, class103 arg3, int arg4, int arg5) {
 		int var6 = class40.field698;
 		int[] var7 = class40.field703;
 		for (int var8 = 0; var8 < var6; var8++) {
-			class1130 var9 = client.field10944[var7[var8]];
+			PlayerEntity var9 = client.field10944[var7[var8]];
 			if (var9 != null && var9.method19119() && !var9.field12071.method10195() && Statics.field4490 != var9 && Statics.field4490.field11717 == var9.field11717) {
 				Vector3 var10 = var9.method10536().field4298;
 				int var11 = (int) var10.field4308 / 128 - arg0 / 128;
 				int var12 = (int) var10.field4313 / 128 - arg1 / 128;
 				boolean var13 = false;
 				for (int var14 = 0; var14 < client.field10811; var14++) {
-					class30 var15 = client.field11065[var14];
+					Friend var15 = client.field11065[var14];
 					if (var9.field12062.equals(var15.field606) && var15.field608 != 0) {
 						var13 = true;
 						break;
@@ -605,9 +605,9 @@ public class class42 {
 				}
 				if (var9.field12061 != null && var9.field12061.field7892 != -1 && ((NPCType) Statics.field7961.get(var9.field12061.field7892)).field2690) {
 					method715(arg2, arg3, arg4, arg5, var11, var12, Statics.field510[1]);
-				} else if (class202.field1947 == var9.field12070) {
+				} else if (CommunityPartnerType.field1947 == var9.field12070) {
 					method715(arg2, arg3, arg4, arg5, var11, var12, Statics.field510[8]);
-				} else if (class202.field1948 == var9.field12070) {
+				} else if (CommunityPartnerType.field1948 == var9.field12070) {
 					method715(arg2, arg3, arg4, arg5, var11, var12, Statics.field510[6]);
 				} else if (var18) {
 					method715(arg2, arg3, arg4, arg5, var11, var12, Statics.field510[4]);
@@ -625,15 +625,15 @@ public class class42 {
 	}
 
 	@ObfuscatedName("ia.y(IILhf;Lhx;IIS)V")
-	public static void method4538(int arg0, int arg1, class226 arg2, class224 arg3, int arg4, int arg5) {
-		class45[] var6 = client.field10851;
+	public static void method4538(int arg0, int arg1, Component arg2, class224 arg3, int arg4, int arg5) {
+		HintArrow[] var6 = client.field10851;
 		for (int var7 = 0; var7 < var6.length; var7++) {
-			class45 var8 = var6[var7];
+			HintArrow var8 = var6[var7];
 			if (var8 != null && var8.field745 != 0 && client.field10903 % 20 < 10) {
 				if (var8.field745 == 1) {
-					class984 var9 = (class984) client.field10838.method14495((long) var8.field744);
+					ObjectWrapper var9 = (ObjectWrapper) client.field10838.method14495((long) var8.field744);
 					if (var9 != null) {
-						class1131 var10 = (class1131) var9.field11436;
+						NpcEntity var10 = (NpcEntity) var9.field11436;
 						Vector3 var11 = var10.method10536().field4298;
 						int var12 = (int) var11.field4308 / 128 - arg0 / 128;
 						int var13 = (int) var11.field4313 / 128 - arg1 / 128;
@@ -648,7 +648,7 @@ public class class42 {
 					Statics.method15035(arg2, arg3, arg4, arg5, var14, var15, var8.field751, var18);
 				}
 				if (var8.field745 == 10 && var8.field744 >= 0 && var8.field744 < client.field10944.length) {
-					class1130 var20 = client.field10944[var8.field744];
+					PlayerEntity var20 = client.field10944[var8.field744];
 					if (var20 != null) {
 						Vector3 var21 = var20.method10536().field4298;
 						int var22 = (int) var21.field4308 / 128 - arg0 / 128;
@@ -661,12 +661,12 @@ public class class42 {
 	}
 
 	@ObfuscatedName("al.b(Lhf;Lch;IIIILcm;I)V")
-	public static void method715(class226 arg0, class103 arg1, int arg2, int arg3, int arg4, int arg5, Sprite arg6) {
+	public static void method715(Component arg0, class103 arg1, int arg2, int arg3, int arg4, int arg5, Sprite arg6) {
 		method4142(arg0, arg1, arg2, arg3, arg4, arg5, arg6, 100.0D, class230.field2417, class231.field2424);
 	}
 
 	@ObfuscatedName("ht.h(Lhf;Lch;IIIILcm;DLhp;Lhy;I)V")
-	public static void method4142(class226 arg0, class103 arg1, int arg2, int arg3, int arg4, int arg5, Sprite arg6, double arg7, class230 arg8, class231 arg9) {
+	public static void method4142(Component arg0, class103 arg1, int arg2, int arg3, int arg4, int arg5, Sprite arg6, double arg7, class230 arg8, class231 arg9) {
 		if (arg6 == null) {
 			return;
 		}
@@ -725,7 +725,7 @@ public class class42 {
 	}
 
 	@ObfuscatedName("gd.a(Lhf;Lch;IIIIILjava/lang/String;Leu;Laac;II)V")
-	public static void method3654(class226 arg0, class103 arg1, int arg2, int arg3, int arg4, int arg5, int arg6, String arg7, class140 arg8, class733 arg9, int arg10) {
+	public static void method3654(Component arg0, class103 arg1, int arg2, int arg3, int arg4, int arg5, int arg6, String arg7, class140 arg8, class733 arg9, int arg10) {
 		int var11;
 		if (Statics.field3416 == 3) {
 			var11 = (int) ((double) Statics.field9155.method4719() * 2607.5945876176133D) + client.field10885 & 0x3FFF;

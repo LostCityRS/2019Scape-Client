@@ -55,19 +55,19 @@ public class Scene {
 	public class551[][][] field6928;
 
 	@ObfuscatedName("tx.o")
-	public class104[] field6913;
+	public FloorModel[] field6913;
 
 	@ObfuscatedName("tx.s")
 	public class551[][][] field6904;
 
 	@ObfuscatedName("tx.y")
-	public class104[] field6915;
+	public FloorModel[] field6915;
 
 	@ObfuscatedName("tx.q")
 	public class551[][][] field6914;
 
 	@ObfuscatedName("tx.x")
-	public class104[] field6917;
+	public FloorModel[] field6917;
 
 	@ObfuscatedName("tx.b")
 	public int[][] field6923;
@@ -217,7 +217,7 @@ public class Scene {
 		this.field6912 = new class767();
 		this.field6930 = new class555(this);
 		this.field6904 = new class551[arg2][this.field6910][this.field6911];
-		this.field6915 = new class104[arg2];
+		this.field6915 = new FloorModel[arg2];
 		if (arg6) {
 			this.field6923 = new int[this.field6910][this.field6911];
 			this.field6936 = new byte[this.field6910][this.field6911];
@@ -226,7 +226,7 @@ public class Scene {
 			this.field6963 = new byte[this.field6910][this.field6911];
 			this.field6905 = new byte[this.field6910][this.field6911];
 			this.field6914 = new class551[1][this.field6910][this.field6911];
-			this.field6917 = new class104[1];
+			this.field6917 = new FloorModel[1];
 		}
 		if (arg7) {
 			this.field6954 = new long[arg2][arg3][arg4];
@@ -349,7 +349,7 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.z(ILcb;I)V")
-	public void method8709(int arg0, class104 arg1) {
+	public void method8709(int arg0, FloorModel arg1) {
 		this.field6913[arg0] = arg1;
 	}
 
@@ -1340,7 +1340,7 @@ public class Scene {
 		if (this.field6917 != this.field6913) {
 			int var7 = this.field6915[arg1].method1527(arg2, arg3);
 			for (int var8 = 0; var8 <= arg1; var8++) {
-				class104 var9 = this.field6915[var8];
+				FloorModel var9 = this.field6915[var8];
 				if (var9 != null) {
 					int var10 = var7 - var9.method1527(arg2, arg3);
 					if (arg4 != null) {
@@ -1365,7 +1365,7 @@ public class Scene {
 		int var6 = this.field6915[arg1].method1527(arg2, arg3);
 		for (int var7 = 0; var7 <= arg1; var7++) {
 			if (arg4 == null || arg4[var7]) {
-				class104 var8 = this.field6915[var7];
+				FloorModel var8 = this.field6915[var7];
 				if (var8 != null) {
 					var8.method1543(arg0, arg2, var6 - var8.method1527(arg2, arg3), arg3, 0, false);
 				}
@@ -1377,7 +1377,7 @@ public class Scene {
 	public void method8870(int arg0, int arg1) {
 		HardShadow var3 = null;
 		for (int var4 = arg0; var4 < arg1; var4++) {
-			class104 var5 = this.field6915[var4];
+			FloorModel var5 = this.field6915[var4];
 			if (var5 != null) {
 				for (int var6 = 0; var6 < this.field6911; var6++) {
 					for (int var7 = 0; var7 < this.field6910; var7++) {
@@ -1386,7 +1386,7 @@ public class Scene {
 							int var8 = var7 << this.field6900;
 							int var9 = var6 << this.field6900;
 							for (int var10 = var4 - 1; var10 >= 0; var10--) {
-								class104 var11 = this.field6915[var10];
+								FloorModel var11 = this.field6915[var10];
 								if (var11 != null) {
 									int var12 = var5.method1529(var7, var6) - var11.method1529(var7, var6);
 									int var13 = var5.method1529(var7 + 1, var6) - var11.method1529(var7 + 1, var6);

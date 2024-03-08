@@ -9,7 +9,7 @@ public class class361 {
 	public final GpuRenderer this$0;
 
 	@ObfuscatedName("mi.e")
-	public class330 field3412;
+	public VertexBuffer field3412;
 
 	@ObfuscatedName("mi.n")
 	public int field3411;

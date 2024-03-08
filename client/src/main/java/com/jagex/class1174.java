@@ -10,14 +10,14 @@ public class class1174 extends SecondaryNode {
 	public final String field12311;
 
 	@ObfuscatedName("arn.u")
-	public final class720 field12312;
+	public final DualIterableQueue field12312;
 
 	@ObfuscatedName("arn.z")
 	public int field12310;
 
 	public class1174(String arg0) {
 		this.field12311 = arg0;
-		this.field12312 = new class720();
+		this.field12312 = new DualIterableQueue();
 	}
 
 	@ObfuscatedName("arn.e(I)I")
@@ -31,7 +31,7 @@ public class class1174 extends SecondaryNode {
 		arg0.method17806();
 		class1172 var3 = (class1172) this.field12312.method14317();
 		while (var3 != null) {
-			if (class22.method18853(arg0.field12307, var3.field12307)) {
+			if (MiniMenu.method18853(arg0.field12307, var3.field12307)) {
 				Statics.method9574(arg0, var3);
 				this.field12310++;
 				return !var2;
@@ -54,8 +54,8 @@ public class class1174 extends SecondaryNode {
 		}
 		this.method8440();
 		this.method17806();
-		class22.field543--;
-		class22.field534.method2921(this, arg0.field12305);
+		MiniMenu.field543--;
+		MiniMenu.field534.method2921(this, arg0.field12305);
 		return false;
 	}
 }

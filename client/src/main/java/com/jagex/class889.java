@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public final class class889 extends class238 {
 
 	@ObfuscatedName("agc.z")
-	public final class1126 field10388;
+	public final Direct3DRenderer field10388;
 
 	@ObfuscatedName("agc.p")
 	public class887 field10389;
@@ -14,7 +14,7 @@ public final class class889 extends class238 {
 	@ObfuscatedName("agc.d")
 	public boolean field10387;
 
-	public class889(class1126 arg0, class239 arg1) {
+	public class889(Direct3DRenderer arg0, class239 arg1) {
 		super(arg0, arg1);
 		this.field10388 = arg0;
 		this.field10387 = false;
@@ -22,7 +22,7 @@ public final class class889 extends class238 {
 
 	@ObfuscatedName("agc.f(Lafc;Lhn;)Lhi;")
 	public class234 method4156(GpuRenderer arg0, class233 arg1) {
-		return new class887((class1126) arg0, this, arg1);
+		return new class887((Direct3DRenderer) arg0, this, arg1);
 	}
 
 	@ObfuscatedName("agc.d(Lhi;)Z")

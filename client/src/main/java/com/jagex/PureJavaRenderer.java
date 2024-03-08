@@ -353,8 +353,8 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.ad(Ljava/awt/Canvas;II)Lafy;")
-	public class841 method2144(Canvas arg0, int arg1, int arg2) {
-		return class1120.method18912(this, arg0, arg1, arg2);
+	public Surface method2144(Canvas arg0, int arg1, int arg2) {
+		return PureJavaSurface.method18912(this, arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("afg.rt(II[I[F)V")
@@ -2022,8 +2022,8 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.dr(II[[I[[IIII)Lcb;")
-	public class104 method2214(int arg0, int arg1, int[][] arg2, int[][] arg3, int arg4, int arg5, int arg6) {
-		return new class835(this, arg5, arg6, arg0, arg1, arg2, arg3, arg4);
+	public FloorModel method2214(int arg0, int arg1, int[][] arg2, int[][] arg3, int arg4, int arg5, int arg6) {
+		return new PureJavaFloorModel(this, arg5, arg6, arg0, arg1, arg2, arg3, arg4);
 	}
 
 	@ObfuscatedName("afg.cc()Lpq;")

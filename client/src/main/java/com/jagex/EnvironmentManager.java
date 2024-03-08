@@ -46,7 +46,7 @@ public class EnvironmentManager {
 	public class637 field7854;
 
 	@ObfuscatedName("xu.s")
-	public class660 field7831;
+	public EnvironmentOverride field7831;
 
 	@ObfuscatedName("xu.y")
 	public final Vector3 field7847 = new Vector3(-50.0F, -60.0F, -50.0F);
@@ -139,7 +139,7 @@ public class EnvironmentManager {
 	}
 
 	@ObfuscatedName("xu.m(Lrl;Lyj;II)V")
-	public void method9980(World arg0, class660 arg1, int arg2) {
+	public void method9980(World arg0, EnvironmentOverride arg1, int arg2) {
 		this.field7831 = arg1;
 		class637 var4 = this.method10049(arg0);
 		if (this.field7831 == null) {
@@ -156,7 +156,7 @@ public class EnvironmentManager {
 	}
 
 	@ObfuscatedName("xu.k(I)Lyj;")
-	public class660 method9981() {
+	public EnvironmentOverride method9981() {
 		return this.field7831;
 	}
 

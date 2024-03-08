@@ -6,28 +6,28 @@ import deob.ObfuscatedName;
 public class ClientTriggerType implements class573 {
 
 	@ObfuscatedName("uh.e")
-	public static final ClientTriggerType field7258 = new ClientTriggerType("", 10, new ScriptVarType[] { ScriptVarType.field4692 }, null);
+	public static final ClientTriggerType field7258 = new ClientTriggerType("", 10, new ScriptVarType[] { ScriptVarType.MAPELEMENT}, null);
 
 	@ObfuscatedName("uh.n")
-	public static final ClientTriggerType field7249 = new ClientTriggerType("", 11, new ScriptVarType[] { ScriptVarType.field4692 }, null);
+	public static final ClientTriggerType field7249 = new ClientTriggerType("", 11, new ScriptVarType[] { ScriptVarType.MAPELEMENT}, null);
 
 	@ObfuscatedName("uh.m")
-	public static final ClientTriggerType field7257 = new ClientTriggerType("", 12, new ScriptVarType[] { ScriptVarType.field4692 }, null);
+	public static final ClientTriggerType field7257 = new ClientTriggerType("", 12, new ScriptVarType[] { ScriptVarType.MAPELEMENT}, null);
 
 	@ObfuscatedName("uh.k")
-	public static final ClientTriggerType field7253 = new ClientTriggerType("", 13, new ScriptVarType[] { ScriptVarType.field4692 }, null);
+	public static final ClientTriggerType field7253 = new ClientTriggerType("", 13, new ScriptVarType[] { ScriptVarType.MAPELEMENT}, null);
 
 	@ObfuscatedName("uh.f")
-	public static final ClientTriggerType field7252 = new ClientTriggerType("", 14, new ScriptVarType[] { ScriptVarType.field4692 }, null);
+	public static final ClientTriggerType field7252 = new ClientTriggerType("", 14, new ScriptVarType[] { ScriptVarType.MAPELEMENT}, null);
 
 	@ObfuscatedName("uh.w")
-	public static final ClientTriggerType field7263 = new ClientTriggerType("", 15, new ScriptVarType[] { ScriptVarType.field4692, ScriptVarType.field4717, ScriptVarType.field4717 }, null);
+	public static final ClientTriggerType field7263 = new ClientTriggerType("", 15, new ScriptVarType[] { ScriptVarType.MAPELEMENT, ScriptVarType.INT, ScriptVarType.INT}, null);
 
 	@ObfuscatedName("uh.l")
-	public static final ClientTriggerType field7254 = new ClientTriggerType("", 16, new ScriptVarType[] { ScriptVarType.field4692, ScriptVarType.field4717, ScriptVarType.field4717 }, null);
+	public static final ClientTriggerType field7254 = new ClientTriggerType("", 16, new ScriptVarType[] { ScriptVarType.MAPELEMENT, ScriptVarType.INT, ScriptVarType.INT}, null);
 
 	@ObfuscatedName("uh.u")
-	public static final ClientTriggerType field7255 = new ClientTriggerType("", 17, new ScriptVarType[] { ScriptVarType.field4692, ScriptVarType.field4717, ScriptVarType.field4717 }, null);
+	public static final ClientTriggerType field7255 = new ClientTriggerType("", 17, new ScriptVarType[] { ScriptVarType.MAPELEMENT, ScriptVarType.INT, ScriptVarType.INT}, null);
 
 	@ObfuscatedName("uh.z")
 	public static final ClientTriggerType field7256 = new ClientTriggerType("", 18);
@@ -36,7 +36,7 @@ public class ClientTriggerType implements class573 {
 	public static final ClientTriggerType field7261 = new ClientTriggerType("", 19);
 
 	@ObfuscatedName("uh.d")
-	public static final ClientTriggerType field7269 = new ClientTriggerType("", 20, new ScriptVarType[] { ScriptVarType.field4634, ScriptVarType.field4717 }, null);
+	public static final ClientTriggerType field7269 = new ClientTriggerType("", 20, new ScriptVarType[] { ScriptVarType.STRING, ScriptVarType.INT}, null);
 
 	@ObfuscatedName("uh.c")
 	public static final ClientTriggerType field7259 = new ClientTriggerType("", 21);
@@ -45,7 +45,7 @@ public class ClientTriggerType implements class573 {
 	public static final ClientTriggerType field7260 = new ClientTriggerType("", 22);
 
 	@ObfuscatedName("uh.v")
-	public static final ClientTriggerType field7251 = new ClientTriggerType("", 23, new ScriptVarType[] { ScriptVarType.field4735 }, null);
+	public static final ClientTriggerType field7251 = new ClientTriggerType("", 23, new ScriptVarType[] { ScriptVarType.PLAYER_UID}, null);
 
 	@ObfuscatedName("uh.o")
 	public static final ClientTriggerType field7262 = new ClientTriggerType("", 24);

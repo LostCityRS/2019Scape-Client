@@ -9,16 +9,16 @@ import java.nio.ByteBuffer;
 public class class344 {
 
 	@ObfuscatedName("ld.e")
-	public class330 field3333;
+	public VertexBuffer field3333;
 
 	@ObfuscatedName("ld.n")
-	public class330 field3329;
+	public VertexBuffer field3329;
 
 	@ObfuscatedName("ld.m")
-	public class332 field3326;
+	public VertexDeclaration field3326;
 
 	@ObfuscatedName("ld.k")
-	public class360 field3327;
+	public IndexBuffer field3327;
 
 	@ObfuscatedName("ld.f")
 	public final int field3328 = 64;

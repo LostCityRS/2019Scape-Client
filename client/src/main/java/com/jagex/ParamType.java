@@ -47,7 +47,7 @@ public class ParamType implements ConfigType, class757 {
 
 	@ObfuscatedName("adp.p(I)Z")
 	public boolean method15152() {
-		return ScriptVarType.field4634 == this.field9173;
+		return ScriptVarType.STRING == this.field9173;
 	}
 
 	@ObfuscatedName("adp.n(I)V")

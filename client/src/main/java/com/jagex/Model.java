@@ -291,7 +291,7 @@ public abstract class Model {
 	}
 
 	@ObfuscatedName("do.x(Lcb;IIIIIII)V")
-	public void method1701(class104 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
+	public void method1701(FloorModel arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		boolean var9 = false;
 		boolean var10 = false;
 		boolean var11 = false;
@@ -946,7 +946,7 @@ public abstract class Model {
 	public abstract void method1699(int arg0, int arg1, int arg2);
 
 	@ObfuscatedName("do.q(IILcb;Lcb;III)V")
-	public abstract void method1700(int arg0, int arg1, class104 arg2, class104 arg3, int arg4, int arg5, int arg6);
+	public abstract void method1700(int arg0, int arg1, FloorModel arg2, FloorModel arg3, int arg4, int arg5, int arg6);
 
 	@ObfuscatedName("do.b()V")
 	public abstract void method1702();

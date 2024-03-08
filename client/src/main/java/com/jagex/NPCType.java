@@ -502,7 +502,7 @@ public class NPCType implements ConfigType {
 						int var38 = arg0.g3();
 						Node var39;
 						if (var37) {
-							var39 = new class984(arg0.gjstr());
+							var39 = new ObjectWrapper(arg0.gjstr());
 						} else {
 							var39 = new class988(arg0.g4s());
 						}
@@ -529,12 +529,12 @@ public class NPCType implements ConfigType {
 	}
 
 	@ObfuscatedName("if.z(Ldh;ILaof;Lem;Lep;Laaq;Laaq;[Laaq;[IILia;I)Ldo;")
-	public final Model method4542(Renderer arg0, int arg1, BASTypeList arg2, class151 arg3, class147 arg4, class721 arg5, class721 arg6, class721[] arg7, int[] arg8, int arg9, class259 arg10) {
+	public final Model method4542(Renderer arg0, int arg1, BASTypeList arg2, class151 arg3, class147 arg4, class721 arg5, class721 arg6, class721[] arg7, int[] arg8, int arg9, NpcTypeCustomization arg10) {
 		return this.method4543(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, this.field2762, true);
 	}
 
 	@ObfuscatedName("if.p(Ldh;ILaof;Lem;Lep;Laaq;Laaq;[Laaq;[IILia;IZB)Ldo;")
-	public final Model method4543(Renderer arg0, int arg1, BASTypeList arg2, class151 arg3, class147 arg4, class721 arg5, class721 arg6, class721[] arg7, int[] arg8, int arg9, class259 arg10, int arg11, boolean arg12) {
+	public final Model method4543(Renderer arg0, int arg1, BASTypeList arg2, class151 arg3, class147 arg4, class721 arg5, class721 arg6, class721[] arg7, int[] arg8, int arg9, NpcTypeCustomization arg10, int arg11, boolean arg12) {
 		if (this.field2735 != null) {
 			NPCType var14 = this.method4547(arg3, arg4);
 			return var14 == null ? null : var14.method4543(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12);
@@ -770,7 +770,7 @@ public class NPCType implements ConfigType {
 	}
 
 	@ObfuscatedName("if.d(Ldh;ILem;Lep;Laaq;Lia;S)Ldo;")
-	public final Model method4544(Renderer arg0, int arg1, class151 arg2, class147 arg3, class721 arg4, class259 arg5) {
+	public final Model method4544(Renderer arg0, int arg1, class151 arg2, class147 arg3, class721 arg4, NpcTypeCustomization arg5) {
 		if (this.field2735 != null) {
 			NPCType var7 = this.method4547(arg2, arg3);
 			return var7 == null ? null : var7.method4544(arg0, arg1, arg2, arg3, arg4, arg5);
@@ -916,7 +916,7 @@ public class NPCType implements ConfigType {
 		if (this.field2753 == null) {
 			return arg1;
 		} else {
-			class984 var3 = (class984) this.field2753.method14495((long) arg0);
+			ObjectWrapper var3 = (ObjectWrapper) this.field2753.method14495((long) arg0);
 			return var3 == null ? arg1 : (String) var3.field11436;
 		}
 	}

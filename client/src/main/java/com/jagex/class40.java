@@ -47,7 +47,7 @@ public class class40 {
 	public static final void method16435(PacketBit arg0) {
 		arg0.method19562();
 		int var1 = client.field10945;
-		class1130 var2 = Statics.field4490 = client.field10944[var1] = new class1130(client.world.method7743());
+		PlayerEntity var2 = Statics.field4490 = client.field10944[var1] = new PlayerEntity(client.world.method7743());
 		var2.field10406 = var1;
 		int var3 = arg0.method19583(30);
 		byte var4 = (byte) (var3 >> 28);
@@ -81,7 +81,7 @@ public class class40 {
 				var13.field524 = (var10 << 28) + (var11 << 14) + var12;
 				var13.field523 = 0;
 				var13.field522 = -1;
-				var13.field525 = class202.field1950;
+				var13.field525 = CommunityPartnerType.field1950;
 				var13.field526 = false;
 				field700[++field702 - 1] = var8;
 				field696[var8] = 0;
@@ -205,7 +205,7 @@ public class class40 {
 		field702 = 0;
 		for (int var14 = 1; var14 < 2048; var14++) {
 			field696[var14] = (byte) (field696[var14] >> 1);
-			class1130 var15 = client.field10944[var14];
+			PlayerEntity var15 = client.field10944[var14];
 			if (var15 == null) {
 				field700[++field702 - 1] = var14;
 			} else {
@@ -238,7 +238,7 @@ public class class40 {
 			field707[++field695 - 1] = arg1;
 		}
 		int var4 = arg0.method19583(2);
-		class1130 var5 = client.field10944[arg1];
+		PlayerEntity var5 = client.field10944[arg1];
 		if (var4 == 0) {
 			if (!var3) {
 				if (client.field10945 == arg1) {
@@ -428,7 +428,7 @@ public class class40 {
 				throw new RuntimeException();
 			}
 			class19 var6 = field704[arg1];
-			class1130 var7 = client.field10944[arg1] = new class1130(client.world.method7743());
+			PlayerEntity var7 = client.field10944[arg1] = new PlayerEntity(client.world.method7743());
 			var7.field10406 = arg1;
 			if (field706[arg1] != null) {
 				var7.method19129(field706[arg1]);
@@ -523,7 +523,7 @@ public class class40 {
 		for (int var1 = 0; var1 < field695; var1++) {
 			arg0.g2();
 			int var2 = field707[var1];
-			class1130 var3 = client.field10944[var2];
+			PlayerEntity var3 = client.field10944[var2];
 			int var4 = arg0.g1();
 			if ((var4 & 0x40) != 0) {
 				var4 += arg0.g1() << 8;
@@ -536,7 +536,7 @@ public class class40 {
 	}
 
 	@ObfuscatedName("rp.u(Lase;ILaqk;II)V")
-	public static final void method7474(PacketBit arg0, int arg1, class1130 arg2, int arg3) {
+	public static final void method7474(PacketBit arg0, int arg1, PlayerEntity arg2, int arg3) {
 		if ((arg3 & 0x80) != 0) {
 			int[] var4 = new int[4];
 			for (int var5 = 0; var5 < 4; var5++) {
@@ -551,7 +551,7 @@ public class class40 {
 			for (int var8 = 0; var8 < var7; var8++) {
 				int var9 = arg0.g1_alt3();
 				BaseVarType var10 = (BaseVarType) class686.method1897(Statics.method7338(), var9);
-				class413 var11 = Statics.field8485.method15285(arg0, var10);
+				VarValue var11 = Statics.field8485.method15285(arg0, var10);
 				arg2.field10460.method14735(var11.field4240, var11.field4239);
 			}
 		}
@@ -701,14 +701,14 @@ public class class40 {
 			for (int var63 = 0; var63 < var62; var63++) {
 				int var64 = arg0.g1_alt3();
 				BaseVarType var65 = (BaseVarType) class686.method1897(Statics.method7338(), var64);
-				class413 var66 = Statics.field8485.method15285(arg0, var65);
+				VarValue var66 = Statics.field8485.method15285(arg0, var65);
 				arg2.field10460.method14735(var66.field4240, var66.field4239);
 			}
 		}
 		if ((arg3 & 0x200) != 0) {
 			String var67 = arg0.gjstr();
 			if (Statics.field4490 == arg2) {
-				class241.method2664(2, 0, arg2.method19115(true), arg2.method19116(false), arg2.field12057, var67, null);
+				ChatHistory.method2664(2, 0, arg2.method19115(true), arg2.method19116(false), arg2.field12057, var67, null);
 			}
 			arg2.method19124(var67, 0, 0);
 		}
@@ -747,9 +747,9 @@ public class class40 {
 			arg2.field10464 = client.field10903 + arg0.g2();
 		}
 		if ((arg3 & 0x400) != 0) {
-			arg2.field12070 = (class202) class686.method1897(class202.method3559(), arg0.g1_alt2());
+			arg2.field12070 = (CommunityPartnerType) class686.method1897(CommunityPartnerType.method3559(), arg0.g1_alt2());
 			if (arg2.field12070 == null) {
-				arg2.field12070 = class202.field1950;
+				arg2.field12070 = CommunityPartnerType.field1950;
 			}
 		}
 		if ((arg3 & 0x100) != 0) {
@@ -771,7 +771,7 @@ public class class40 {
 			String var75 = arg0.gjstr();
 			int var76 = arg0.g1();
 			if ((var76 & 0x1) != 0) {
-				class241.method2664(2, var76, arg2.method19115(true), arg2.method19116(false), arg2.field12057, var75, null);
+				ChatHistory.method2664(2, var76, arg2.method19115(true), arg2.method19116(false), arg2.field12057, var75, null);
 			}
 			arg2.method19124(var75, 0, 0);
 		}

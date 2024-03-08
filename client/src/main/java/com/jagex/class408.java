@@ -7,7 +7,7 @@ import jagdx.IUnknown;
 public abstract class class408 implements class329 {
 
 	@ObfuscatedName("op.e")
-	public final class1126 field4219;
+	public final Direct3DRenderer field4219;
 
 	@ObfuscatedName("op.n")
 	public final TextureFormat field4221;
@@ -21,7 +21,7 @@ public abstract class class408 implements class329 {
 	@ObfuscatedName("op.f")
 	public long field4217 = 0L;
 
-	public class408(class1126 arg0, TextureFormat arg1, DataType arg2, boolean arg3, int arg4) {
+	public class408(Direct3DRenderer arg0, TextureFormat arg1, DataType arg2, boolean arg3, int arg4) {
 		this.field4219 = arg0;
 		this.field4221 = arg1;
 		this.field4218 = arg2;

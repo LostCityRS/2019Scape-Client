@@ -143,8 +143,8 @@ public class DynamicLoc {
 			var7.method8814(this.field6677, this.field6663, (int) var6.field4308, (int) var6.field4313, this.field6679);
 			this.field6670 = false;
 		}
-		class104 var8 = var7.field6913[this.field6663];
-		class104 var9;
+		FloorModel var8 = var7.field6913[this.field6663];
+		FloorModel var9;
 		if (this.field6668) {
 			var9 = var7.field6915[0];
 		} else {

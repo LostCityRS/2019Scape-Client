@@ -112,8 +112,8 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 	@ObfuscatedName("ajv.bg(Ldh;IZI)Labg;")
 	public class746 method17400(Renderer arg0, int arg1, boolean arg2) {
 		LocType var4 = (LocType) this.field11145.get(this.field11715);
-		class104 var5;
-		class104 var6;
+		FloorModel var5;
+		FloorModel var6;
 		if (this.field11143) {
 			var5 = this.field11716.field6917[this.field11714];
 			var6 = this.field11716.field6915[0];

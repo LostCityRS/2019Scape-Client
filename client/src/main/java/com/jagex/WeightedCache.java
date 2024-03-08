@@ -15,7 +15,7 @@ public final class WeightedCache {
 	public IterableMap field1757;
 
 	@ObfuscatedName("eb.k")
-	public class720 field1755;
+	public DualIterableQueue field1755;
 
 	@ObfuscatedName("eb.f")
 	public class161 field1759;
@@ -30,7 +30,7 @@ public final class WeightedCache {
 	}
 
 	public WeightedCache(int arg0, int arg1) {
-		this.field1755 = new class720();
+		this.field1755 = new DualIterableQueue();
 		this.field1758 = arg0;
 		this.field1756 = arg0;
 		int var3;
@@ -123,7 +123,7 @@ public final class WeightedCache {
 			} else if (++var2.field11440 > (long) arg0) {
 				class1224 var3 = new class1224(var2.method19423(), var2.field12328);
 				this.field1757.method14501(var3, var2.field6760);
-				class720.method10144(var3, var2);
+				DualIterableQueue.method10144(var3, var2);
 				var2.method8440();
 				var2.method17806();
 			}

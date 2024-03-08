@@ -24,13 +24,13 @@ public abstract class class288 {
 	public final Matrix4x4 field2999 = new Matrix4x4();
 
 	@ObfuscatedName("jc.l")
-	public class330 field3000;
+	public VertexBuffer field3000;
 
 	@ObfuscatedName("jc.u")
 	public int field3001;
 
 	@ObfuscatedName("jc.z")
-	public class332 field2994;
+	public VertexDeclaration field2994;
 
 	public class288(GpuRenderer arg0) {
 		this.field3002 = arg0;

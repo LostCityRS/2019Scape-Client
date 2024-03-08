@@ -8,7 +8,7 @@ import jagdx.IUnknown;
 public class class411 implements class404 {
 
 	@ObfuscatedName("oy.e")
-	public final class1126 field4238;
+	public final Direct3DRenderer field4238;
 
 	@ObfuscatedName("oy.n")
 	public final DataType field4234;
@@ -22,12 +22,12 @@ public class class411 implements class404 {
 	@ObfuscatedName("oy.f")
 	public long field4237;
 
-	public class411(class1126 arg0, DataType arg1, int arg2, int arg3, int arg4) {
+	public class411(Direct3DRenderer arg0, DataType arg1, int arg2, int arg3, int arg4) {
 		this.field4238 = arg0;
 		this.field4236 = arg2;
 		this.field4235 = arg3;
 		this.field4234 = arg1;
-		this.field4237 = IDirect3DDevice.CreateDepthStencilSurface(this.field4238.field11978, arg2, arg3, class1126.method19035(this.field4234), arg4, 0, false);
+		this.field4237 = IDirect3DDevice.CreateDepthStencilSurface(this.field4238.field11978, arg2, arg3, Direct3DRenderer.method19035(this.field4234), arg4, 0, false);
 		this.field4238.method15985(this);
 	}
 

@@ -15,7 +15,7 @@ public class class1193 extends SubInterface {
 
 	@ObfuscatedName("asu.e(B)Z")
 	public boolean method18183() {
-		class1130 var1 = client.field10944[this.field12430];
+		PlayerEntity var1 = client.field10944[this.field12430];
 		if (var1 == null) {
 			return false;
 		} else {

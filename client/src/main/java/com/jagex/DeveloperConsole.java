@@ -340,7 +340,7 @@ public class DeveloperConsole {
 					}
 					return;
 				}
-				if (class725.field8531 && arg0.equalsIgnoreCase("wm3")) {
+				if (Fullscreen.field8531 && arg0.equalsIgnoreCase("wm3")) {
 					client.method13880(3, 1024, 768, false);
 					if (client.method2845() == 3) {
 						method4285("Success");
@@ -602,8 +602,8 @@ public class DeveloperConsole {
 					Vector3 var11 = Statics.field4490.method10536().field4298;
 					method4285("" + client.world.method7743().field6913[Statics.field4490.field11717].method1529((int) var11.field4308 >> 9, (int) var11.field4313 >> 9));
 				} else if (arg0 == 27) {
-					method4285(class226.field2175.method2926() + " " + class226.field2175.method2925());
-					method4285(class226.field2297.method2926() + " " + class226.field2297.method2925());
+					method4285(Component.field2175.method2926() + " " + Component.field2175.method2925());
+					method4285(Component.field2297.method2926() + " " + Component.field2297.method2925());
 				} else if (arg0 == 8) {
 					Statics.method14055(false);
 				} else if (arg0 == 13) {

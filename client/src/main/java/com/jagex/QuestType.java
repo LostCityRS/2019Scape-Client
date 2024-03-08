@@ -182,7 +182,7 @@ public class QuestType implements ConfigType {
 				int var21 = arg0.g3();
 				Node var22;
 				if (var20) {
-					var22 = new class984(arg0.gjstr());
+					var22 = new ObjectWrapper(arg0.gjstr());
 				} else {
 					var22 = new class988(arg0.g4s());
 				}
@@ -213,7 +213,7 @@ public class QuestType implements ConfigType {
 		if (this.field2650 == null) {
 			return arg1;
 		} else {
-			class984 var3 = (class984) this.field2650.method14495((long) arg0);
+			ObjectWrapper var3 = (ObjectWrapper) this.field2650.method14495((long) arg0);
 			return var3 == null ? arg1 : (String) var3.field11436;
 		}
 	}

@@ -66,10 +66,10 @@ public class class334 {
 	public Vector field3257 = new Vector();
 
 	@ObfuscatedName("ls.b")
-	public class330 field3263;
+	public VertexBuffer field3263;
 
 	@ObfuscatedName("ls.h")
-	public class332 field3264;
+	public VertexDeclaration field3264;
 
 	@ObfuscatedName("ls.a")
 	public int field3252 = 0;

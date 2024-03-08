@@ -18,7 +18,7 @@ public final class class163 {
 	public IterableMap field1764;
 
 	@ObfuscatedName("ex.f")
-	public class720 field1763 = new class720();
+	public DualIterableQueue field1763 = new DualIterableQueue();
 
 	public class163(int arg0) {
 		this.field1761 = arg0;

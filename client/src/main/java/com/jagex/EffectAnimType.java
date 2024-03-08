@@ -163,12 +163,12 @@ public class EffectAnimType implements ConfigType {
 	}
 
 	@ObfuscatedName("yy.d(Ldh;IILcb;Lcb;IIILaaq;BB)Ldo;")
-	public final Model method13802(Renderer arg0, int arg1, int arg2, class104 arg3, class104 arg4, int arg5, int arg6, int arg7, class721 arg8, byte arg9) {
+	public final Model method13802(Renderer arg0, int arg1, int arg2, FloorModel arg3, FloorModel arg4, int arg5, int arg6, int arg7, class721 arg8, byte arg9) {
 		return this.method13798(arg0, arg1, true, arg3, arg4, arg5, arg6, arg7, arg2, 0, 0, 0, arg8, arg9);
 	}
 
 	@ObfuscatedName("yy.c(Ldh;IZLcb;Lcb;IIIIIIILaaq;BI)Ldo;")
-	public final Model method13798(Renderer arg0, int arg1, boolean arg2, class104 arg3, class104 arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, class721 arg12, byte arg13) {
+	public final Model method13798(Renderer arg0, int arg1, boolean arg2, FloorModel arg3, FloorModel arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, class721 arg12, byte arg13) {
 		int var15 = arg1;
 		boolean var16 = arg2 & this.field8262 != 0;
 		if (arg12 != null) {

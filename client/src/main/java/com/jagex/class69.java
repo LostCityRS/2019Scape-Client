@@ -35,7 +35,7 @@ public class class69 {
 	@ObfuscatedName("bt.c")
 	public class812 field999;
 
-	public class69(LegacyOpenGLRenderer arg0, class90 arg1, class836 arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
+	public class69(LegacyOpenGLRenderer arg0, class90 arg1, LegacyOpenGLFloorModel arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		this.field990 = arg0;
 		this.field995 = arg1;
 		this.field991 = arg6;

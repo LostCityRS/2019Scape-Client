@@ -12,7 +12,7 @@ public class class970 extends Node {
 	public final LegacyOpenGLRenderer field11291;
 
 	@ObfuscatedName("akn.f")
-	public final class836 field11300;
+	public final LegacyOpenGLFloorModel field11300;
 
 	@ObfuscatedName("akn.w")
 	public final int field11296;
@@ -38,7 +38,7 @@ public class class970 extends Node {
 	@ObfuscatedName("akn.r")
 	public Stream field11293;
 
-	public class970(class836 arg0, int arg1, int arg2, class131 arg3) {
+	public class970(LegacyOpenGLFloorModel arg0, int arg1, int arg2, class131 arg3) {
 		this.field11300 = arg0;
 		this.field11291 = this.field11300.field9453;
 		this.field11296 = arg1;

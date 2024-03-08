@@ -30,7 +30,7 @@ public class AddMemberV2 extends class978 {
 	@ObfuscatedName("arc.e(Lalw;B)V")
 	public void method17726(Packet arg0) {
 		if (arg0.g1() != 255) {
-			arg0.pos -= -1445626955;
+			arg0.pos -= 1;
 			this.field12240 = arg0.g8();
 		}
 		this.field12239 = arg0.fastgstr();

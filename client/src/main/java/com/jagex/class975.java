@@ -49,10 +49,10 @@ public class class975 extends Node {
 	public LocType field11348;
 
 	@ObfuscatedName("akc.x")
-	public class1131 field11345;
+	public NpcEntity field11345;
 
 	@ObfuscatedName("akc.b")
-	public class1130 field11361;
+	public PlayerEntity field11361;
 
 	@ObfuscatedName("akc.j")
 	public int field11360 = 0;
@@ -200,7 +200,7 @@ public class class975 extends Node {
 	}
 
 	@ObfuscatedName("wp.k(IIIILvd;Laqc;Laqk;I)V")
-	public static void method9739(int arg0, int arg1, int arg2, int arg3, LocType arg4, class1131 arg5, class1130 arg6) {
+	public static void method9739(int arg0, int arg1, int arg2, int arg3, LocType arg4, NpcEntity arg5, PlayerEntity arg6) {
 		class975 var7 = new class975();
 		var7.field11349 = arg0;
 		var7.field11358 = arg1 << 9;
@@ -290,7 +290,7 @@ public class class975 extends Node {
 	}
 
 	@ObfuscatedName("xn.w(Laqc;I)V")
-	public static void method10111(class1131 arg0) {
+	public static void method10111(NpcEntity arg0) {
 		for (class975 var1 = (class975) field11347.method14191(); var1 != null; var1 = (class975) field11347.method14161()) {
 			if (var1.field11345 == arg0) {
 				if (var1.field11371 != null) {
@@ -305,7 +305,7 @@ public class class975 extends Node {
 	}
 
 	@ObfuscatedName("xj.u(Laqk;I)V")
-	public static void method10310(class1130 arg0) {
+	public static void method10310(PlayerEntity arg0) {
 		class975 var1 = (class975) field11366.method14495((long) arg0.field10406);
 		if (var1 == null) {
 			method9739(arg0.field11717, arg0.field10450[0], arg0.field10448[0], 0, null, null, arg0);
@@ -315,7 +315,7 @@ public class class975 extends Node {
 	}
 
 	@ObfuscatedName("t.z(Laqc;I)I")
-	public static int method647(class1131 arg0) {
+	public static int method647(NpcEntity arg0) {
 		NPCType var1 = arg0.field12083;
 		if (var1.field2735 != null) {
 			var1 = var1.method4547(Statics.field7410, Statics.field7410);
@@ -337,7 +337,7 @@ public class class975 extends Node {
 	}
 
 	@ObfuscatedName("ags.p(Laqk;I)I")
-	public static int method16456(class1130 arg0) {
+	public static int method16456(PlayerEntity arg0) {
 		int var1 = arg0.field12065;
 		BASType var2 = arg0.method16508();
 		int var3 = arg0.field10432.method14348();

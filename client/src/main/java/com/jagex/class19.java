@@ -15,7 +15,7 @@ public class class19 {
 	public int field522;
 
 	@ObfuscatedName("c.k")
-	public class202 field525 = class202.field1950;
+	public CommunityPartnerType field525 = CommunityPartnerType.field1950;
 
 	@ObfuscatedName("c.f")
 	public boolean field526;

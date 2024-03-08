@@ -12,7 +12,7 @@ public class class242 {
 	public int field2600;
 
 	@ObfuscatedName("ij.e(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILnn;I)Lasg;")
-	public class1179 method4323(int arg0, int arg1, String arg2, String arg3, String arg4, String arg5, String arg6, int arg7, class387 arg8) {
+	public class1179 method4323(int arg0, int arg1, String arg2, String arg3, String arg4, String arg5, String arg6, int arg7, ChatCrownType arg8) {
 		class1179 var10 = this.field2598[99];
 		for (int var11 = this.field2600; var11 > 0; var11--) {
 			if (var11 != 100) {

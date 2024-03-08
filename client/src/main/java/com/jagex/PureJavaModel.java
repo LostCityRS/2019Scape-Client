@@ -1700,7 +1700,7 @@ public class PureJavaModel extends Model {
 	}
 
 	@ObfuscatedName("afi.q(IILcb;Lcb;III)V")
-	public void method1700(int arg0, int arg1, class104 arg2, class104 arg3, int arg4, int arg5, int arg6) {
+	public void method1700(int arg0, int arg1, FloorModel arg2, FloorModel arg3, int arg4, int arg5, int arg6) {
 		if (arg0 == 3) {
 			if ((this.field9616 & 0x7) != 7) {
 				throw new IllegalStateException();

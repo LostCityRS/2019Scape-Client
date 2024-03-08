@@ -474,34 +474,34 @@ public abstract class GpuRenderer extends Renderer {
 	public boolean field10074;
 
 	@ObfuscatedName("afc.gm")
-	public class330 field10196;
+	public VertexBuffer field10196;
 
 	@ObfuscatedName("afc.gv")
-	public class330 field10197;
+	public VertexBuffer field10197;
 
 	@ObfuscatedName("afc.gj")
-	public class330 field10195;
+	public VertexBuffer field10195;
 
 	@ObfuscatedName("afc.gw")
-	public class332 field10150;
+	public VertexDeclaration field10150;
 
 	@ObfuscatedName("afc.gd")
-	public class332 field10055;
+	public VertexDeclaration field10055;
 
 	@ObfuscatedName("afc.gz")
-	public class332 field10184;
+	public VertexDeclaration field10184;
 
 	@ObfuscatedName("afc.gb")
-	public class332 field10202;
+	public VertexDeclaration field10202;
 
 	@ObfuscatedName("afc.gi")
-	public class332 field10203;
+	public VertexDeclaration field10203;
 
 	@ObfuscatedName("afc.hm")
-	public class332 field10204;
+	public VertexDeclaration field10204;
 
 	@ObfuscatedName("afc.ha")
-	public class360 field10077;
+	public IndexBuffer field10077;
 
 	@ObfuscatedName("afc.hk")
 	public GpuModel[] field10058;
@@ -1195,7 +1195,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.sd(I)Lml;")
-	public final class360 method15988(int arg0) {
+	public final IndexBuffer method15988(int arg0) {
 		if (this.field10077.method5743() < arg0 * 2) {
 			this.field10077.method5831(arg0);
 		}
@@ -1267,8 +1267,8 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.dr(II[[I[[IIII)Lcb;")
-	public final class104 method2214(int arg0, int arg1, int[][] arg2, int[][] arg3, int arg4, int arg5, int arg6) {
-		return new class837(this, arg5, arg6, arg0, arg1, arg2, arg3, arg4);
+	public final FloorModel method2214(int arg0, int arg1, int[][] arg2, int[][] arg3, int arg4, int arg5, int arg6) {
+		return new GpuFloorModel(this, arg5, arg6, arg0, arg1, arg2, arg3, arg4);
 	}
 
 	@ObfuscatedName("afc.cc()Lpq;")
@@ -2479,16 +2479,16 @@ public abstract class GpuRenderer extends Renderer {
 	public abstract void method16059();
 
 	@ObfuscatedName("afc.vf([Llk;)Llo;")
-	public abstract class332 method16065(class345[] arg0);
+	public abstract VertexDeclaration method16065(class345[] arg0);
 
 	@ObfuscatedName("afc.vc(Z)Lml;")
-	public abstract class360 method16067(boolean arg0);
+	public abstract IndexBuffer method16067(boolean arg0);
 
 	@ObfuscatedName("afc.wz(Lms;II)V")
 	public abstract void method16077(class357 arg0, int arg1, int arg2);
 
 	@ObfuscatedName("afc.wj(Lml;Lms;IIII)V")
-	public abstract void method16078(class360 arg0, class357 arg1, int arg2, int arg3, int arg4, int arg5);
+	public abstract void method16078(IndexBuffer arg0, class357 arg1, int arg2, int arg3, int arg4, int arg5);
 
 	@ObfuscatedName("afc.we(Lms;IIII)V")
 	public abstract void method16079(class357 arg0, int arg1, int arg2, int arg3, int arg4);
@@ -2497,7 +2497,7 @@ public abstract class GpuRenderer extends Renderer {
 	public abstract void method16081(int arg0);
 
 	@ObfuscatedName("afc.vn(Z)Llr;")
-	public abstract class330 method16085(boolean arg0);
+	public abstract VertexBuffer method16085(boolean arg0);
 
 	@ObfuscatedName("afc.uy(Lck;Ldg;II)Lmo;")
 	public abstract class359 method16089(TextureFormat arg0, DataType arg1, int arg2, int arg3);
@@ -2506,10 +2506,10 @@ public abstract class GpuRenderer extends Renderer {
 	public abstract void method16091();
 
 	@ObfuscatedName("afc.wa(Lml;)V")
-	public abstract void method16102(class360 arg0);
+	public abstract void method16102(IndexBuffer arg0);
 
 	@ObfuscatedName("afc.wn(ILlr;)V")
-	public abstract void method16120(int arg0, class330 arg1);
+	public abstract void method16120(int arg0, VertexBuffer arg1);
 
 	@ObfuscatedName("afc.vh()V")
 	public abstract void method16123();
@@ -2518,7 +2518,7 @@ public abstract class GpuRenderer extends Renderer {
 	public abstract void method16175();
 
 	@ObfuscatedName("afc.vk(Llo;)V")
-	public abstract void method16177(class332 arg0);
+	public abstract void method16177(VertexDeclaration arg0);
 
 	@ObfuscatedName("afc.uk(Lck;IIIZ[B)Lll;")
 	public abstract VolumeTexture method16197(TextureFormat arg0, int arg1, int arg2, int arg3, boolean arg4, byte[] arg5);

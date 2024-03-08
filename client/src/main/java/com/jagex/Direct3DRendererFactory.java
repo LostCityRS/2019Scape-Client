@@ -17,7 +17,7 @@ public class Direct3DRendererFactory {
 		try {
 			GpuRenderer.method15968();
 			Statics.method5134().method7902("jagdx");
-			return class1126.method19043(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
+			return Direct3DRenderer.method19043(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		} catch (RuntimeException var10) {
 			var10.printStackTrace();
 			throw var10;

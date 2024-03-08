@@ -196,8 +196,8 @@ public class WorldMap {
 	}
 
 	@ObfuscatedName("tf.u(II)Laap;")
-	public static class720 method8513(int arg0, int arg1) {
-		class720 var2 = new class720();
+	public static DualIterableQueue method8513(int arg0, int arg1) {
+		DualIterableQueue var2 = new DualIterableQueue();
 		for (WorldMapAreaMetadata var3 = (WorldMapAreaMetadata) field6796.method14500(); var3 != null; var3 = (WorldMapAreaMetadata) field6796.method14502()) {
 			if (var3.field12350 && var3.method19469(arg0, arg1)) {
 				var2.method14339(var3);

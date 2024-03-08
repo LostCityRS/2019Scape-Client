@@ -12,10 +12,10 @@ public class class328 {
 	public boolean field3240;
 
 	@ObfuscatedName("lb.m")
-	public class360 field3239;
+	public IndexBuffer field3239;
 
 	@ObfuscatedName("lb.k")
-	public class360 field3237;
+	public IndexBuffer field3237;
 
 	public class328(boolean arg0) {
 		this.field3240 = arg0;

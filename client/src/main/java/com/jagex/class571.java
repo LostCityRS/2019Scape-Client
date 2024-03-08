@@ -6,16 +6,16 @@ import deob.ObfuscatedName;
 public class class571 implements SerializableEnum, class570 {
 
 	@ObfuscatedName("ud.e")
-	public static final class571 field7244 = new class571(0, "", new ScriptVarType[] { ScriptVarType.field4717, ScriptVarType.field4634 });
+	public static final class571 field7244 = new class571(0, "", new ScriptVarType[] { ScriptVarType.INT, ScriptVarType.STRING});
 
 	@ObfuscatedName("ud.n")
-	public static final class571 field7243 = new class571(1, "", new ScriptVarType[] { ScriptVarType.field4717, ScriptVarType.field4717 });
+	public static final class571 field7243 = new class571(1, "", new ScriptVarType[] { ScriptVarType.INT, ScriptVarType.INT});
 
 	@ObfuscatedName("ud.m")
-	public static final class571 field7247 = new class571(2, "", new ScriptVarType[] { ScriptVarType.field4634, ScriptVarType.field4634 });
+	public static final class571 field7247 = new class571(2, "", new ScriptVarType[] { ScriptVarType.STRING, ScriptVarType.STRING});
 
 	@ObfuscatedName("ud.k")
-	public static final class571 field7245 = new class571(3, "", new ScriptVarType[] { ScriptVarType.field4717, ScriptVarType.field4717, ScriptVarType.field4634 });
+	public static final class571 field7245 = new class571(3, "", new ScriptVarType[] { ScriptVarType.INT, ScriptVarType.INT, ScriptVarType.STRING});
 
 	@ObfuscatedName("ud.f")
 	public final int field7246;

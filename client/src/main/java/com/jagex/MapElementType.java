@@ -285,7 +285,7 @@ public class MapElementType implements ConfigType {
 				int var13 = arg0.g3();
 				Node var14;
 				if (var12) {
-					var14 = new class984(arg0.gjstr());
+					var14 = new ObjectWrapper(arg0.gjstr());
 				} else {
 					var14 = new class988(arg0.g4s());
 				}
@@ -429,7 +429,7 @@ public class MapElementType implements ConfigType {
 		if (this.field2411 == null) {
 			return arg1;
 		} else {
-			class984 var3 = (class984) this.field2411.method14495((long) arg0);
+			ObjectWrapper var3 = (ObjectWrapper) this.field2411.method14495((long) arg0);
 			return var3 == null ? arg1 : (String) var3.field11436;
 		}
 	}

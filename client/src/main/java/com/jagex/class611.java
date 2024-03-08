@@ -15,7 +15,7 @@ public class class611 {
 	public IterableMap field7613;
 
 	@ObfuscatedName("wz.k")
-	public class720 field7614 = new class720();
+	public DualIterableQueue field7614 = new DualIterableQueue();
 
 	public class611(int arg0) {
 		this.field7612 = arg0;
@@ -108,7 +108,7 @@ public class class611 {
 			} else if (++var2.field11440 > (long) arg0) {
 				class1232 var3 = new class1232(var2.field12362, var2.method19487(), var2.field12363);
 				this.field7613.method14501(var3, var2.field6760);
-				class720.method10144(var3, var2);
+				DualIterableQueue.method10144(var3, var2);
 				var2.method8440();
 				var2.method17806();
 			}

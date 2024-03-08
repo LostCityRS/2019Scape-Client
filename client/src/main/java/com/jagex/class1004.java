@@ -764,19 +764,19 @@ public class class1004 extends WorldMap {
 												if (var8.method17518(arg0, arg1)) {
 													if (var9.field2381 != null) {
 														if (var9.field2381[4] != null) {
-															class22.method3042(var9.field2381[4], var9.field2382, -1, 1012, -1, (long) var8.field11252.field11446, var9.field2374, 0, true, false, (long) var8.field11252.field11446, false);
+															MiniMenu.method3042(var9.field2381[4], var9.field2382, -1, 1012, -1, (long) var8.field11252.field11446, var9.field2374, 0, true, false, (long) var8.field11252.field11446, false);
 														}
 														if (var9.field2381[3] != null) {
-															class22.method3042(var9.field2381[3], var9.field2382, -1, 1011, -1, (long) var8.field11252.field11446, var9.field2374, 0, true, false, (long) var8.field11252.field11446, false);
+															MiniMenu.method3042(var9.field2381[3], var9.field2382, -1, 1011, -1, (long) var8.field11252.field11446, var9.field2374, 0, true, false, (long) var8.field11252.field11446, false);
 														}
 														if (var9.field2381[2] != null) {
-															class22.method3042(var9.field2381[2], var9.field2382, -1, 1010, -1, (long) var8.field11252.field11446, var9.field2374, 0, true, false, (long) var8.field11252.field11446, false);
+															MiniMenu.method3042(var9.field2381[2], var9.field2382, -1, 1010, -1, (long) var8.field11252.field11446, var9.field2374, 0, true, false, (long) var8.field11252.field11446, false);
 														}
 														if (var9.field2381[1] != null) {
-															class22.method3042(var9.field2381[1], var9.field2382, -1, 1009, -1, (long) var8.field11252.field11446, var9.field2374, 0, true, false, (long) var8.field11252.field11446, false);
+															MiniMenu.method3042(var9.field2381[1], var9.field2382, -1, 1009, -1, (long) var8.field11252.field11446, var9.field2374, 0, true, false, (long) var8.field11252.field11446, false);
 														}
 														if (var9.field2381[0] != null) {
-															class22.method3042(var9.field2381[0], var9.field2382, -1, 1008, -1, (long) var8.field11252.field11446, var9.field2374, 0, true, false, (long) var8.field11252.field11446, false);
+															MiniMenu.method3042(var9.field2381[0], var9.field2382, -1, 1008, -1, (long) var8.field11252.field11446, var9.field2374, 0, true, false, (long) var8.field11252.field11446, false);
 														}
 													}
 													if (!var8.field11252.field11450) {

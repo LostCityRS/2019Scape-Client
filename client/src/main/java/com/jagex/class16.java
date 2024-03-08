@@ -11,7 +11,7 @@ public class class16 implements class271 {
 			return client.field10944[arg1];
 		}
 		if (class272.field2839 == arg0) {
-			class984 var3 = (class984) client.field10838.method14495((long) arg1);
+			ObjectWrapper var3 = (ObjectWrapper) client.field10838.method14495((long) arg1);
 			if (var3 != null) {
 				return (class273) var3.field11436;
 			}

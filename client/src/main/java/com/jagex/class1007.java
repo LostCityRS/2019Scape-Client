@@ -34,18 +34,18 @@ public class class1007 extends class564 implements MouseListener, MouseMotionLis
 	public IterableQueue field11696 = new IterableQueue();
 
 	@ObfuscatedName("alb.c")
-	public Component field11697;
+	public java.awt.Component field11697;
 
 	@ObfuscatedName("alb.r")
 	public boolean field11687;
 
-	public class1007(Component arg0, boolean arg1) {
+	public class1007(java.awt.Component arg0, boolean arg1) {
 		this.method18295(arg0);
 		this.field11687 = arg1;
 	}
 
 	@ObfuscatedName("alb.ao(Ljava/awt/Component;I)V")
-	public void method18295(Component arg0) {
+	public void method18295(java.awt.Component arg0) {
 		this.method18297();
 		this.field11697 = arg0;
 		this.field11697.addMouseListener(this);

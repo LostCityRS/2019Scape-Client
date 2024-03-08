@@ -18,12 +18,12 @@ public class class917 extends class408 implements VolumeTexture {
 	@ObfuscatedName("ahy.u")
 	public final int field10615;
 
-	public class917(class1126 arg0, TextureFormat arg1, int arg2, int arg3, int arg4, boolean arg5, byte[] arg6) {
+	public class917(Direct3DRenderer arg0, TextureFormat arg1, int arg2, int arg3, int arg4, boolean arg5, byte[] arg6) {
 		super(arg0, arg1, DataType.field1645, false, arg2 * arg3 * arg4);
 		this.field10613 = arg2;
 		this.field10614 = arg3;
 		this.field10615 = arg4;
-		this.field4217 = IDirect3DDevice.CreateVolumeTexture(this.field4219.field11978, arg2, arg3, arg4, 1, 0, class1126.method19011(arg1, this.field4218), 1);
+		this.field4217 = IDirect3DDevice.CreateVolumeTexture(this.field4219.field11978, arg2, arg3, arg4, 1, 0, Direct3DRenderer.method19011(arg1, this.field4218), 1);
 		this.field4219.method15961(this.field10614 * this.field10613 * arg1.field1279);
 		ByteBuffer var8 = this.field4219.field10071;
 		var8.clear();

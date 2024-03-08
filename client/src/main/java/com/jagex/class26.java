@@ -54,7 +54,7 @@ public class class26 implements Runnable {
 					var2.field739 = true;
 				}
 			} catch (Exception var13) {
-				class1211.method9845(null, var13);
+				JagException.method9845(null, var13);
 			}
 		}
 	}

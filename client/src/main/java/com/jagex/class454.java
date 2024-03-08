@@ -524,7 +524,7 @@ public class class454 {
 	}
 
 	@ObfuscatedName("qg.p(Ldh;Lcb;Lcb;B)V")
-	public final void method7200(Renderer arg0, class104 arg1, class104 arg2) {
+	public final void method7200(Renderer arg0, FloorModel arg1, FloorModel arg2) {
 		int[][] var4 = new int[this.field4513][this.field4514];
 		if (this.field4504 == null || this.field4514 != this.field4504.length) {
 			this.field4504 = new int[this.field4514];
@@ -622,7 +622,7 @@ public class class454 {
 	}
 
 	@ObfuscatedName("qg.d(Ldh;Lcb;I[[ILcb;Lcb;I)V")
-	public void method7199(Renderer arg0, class104 arg1, int arg2, int[][] arg3, class104 arg4, class104 arg5) {
+	public void method7199(Renderer arg0, FloorModel arg1, int arg2, int[][] arg3, FloorModel arg4, FloorModel arg5) {
 		for (int var7 = 0; var7 < this.field4513; var7++) {
 			for (int var8 = 0; var8 < this.field4514; var8++) {
 				byte var9 = this.field4562[arg2][var7][var8];
@@ -762,7 +762,7 @@ public class class454 {
 	}
 
 	@ObfuscatedName("qg.c(Ldh;Lcb;I[[ILcb;Lcb;I)V")
-	public void method7147(Renderer arg0, class104 arg1, int arg2, int[][] arg3, class104 arg4, class104 arg5) {
+	public void method7147(Renderer arg0, FloorModel arg1, int arg2, int[][] arg3, FloorModel arg4, FloorModel arg5) {
 		byte[][] var7 = this.field4562[arg2];
 		byte[][] var8 = this.field4520[arg2];
 		short[][] var9 = this.field4505[arg2];
@@ -859,7 +859,7 @@ public class class454 {
 	}
 
 	@ObfuscatedName("qg.r(IIIIILcb;[[SB)I")
-	public int method7145(int arg0, int arg1, int arg2, int arg3, int arg4, class104 arg5, short[][] arg6) {
+	public int method7145(int arg0, int arg1, int arg2, int arg3, int arg4, FloorModel arg5, short[][] arg6) {
 		if (this.field4573 != 0 && this.field4573 != 12 || arg1 <= 0 || arg2 <= 0 || arg1 >= this.field4513 || arg2 >= this.field4514) {
 			return this.field4574;
 		}
@@ -997,7 +997,7 @@ public class class454 {
 	}
 
 	@ObfuscatedName("qg.s(Ldh;IIILyn;[Z[I[I[I[I[I[I[I[ILcb;Lcb;Lcb;I)V")
-	public void method7151(Renderer arg0, int arg1, int arg2, int arg3, FloorOverlayType arg4, boolean[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, int[] arg10, int[] arg11, int[] arg12, int[] arg13, class104 arg14, class104 arg15, class104 arg16) {
+	public void method7151(Renderer arg0, int arg1, int arg2, int arg3, FloorOverlayType arg4, boolean[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, int[] arg10, int[] arg11, int[] arg12, int[] arg13, FloorModel arg14, FloorModel arg15, FloorModel arg16) {
 		this.field4502 = -1;
 		this.field4508 = -1;
 		this.field4578 = 256;
@@ -1120,7 +1120,7 @@ public class class454 {
 	}
 
 	@ObfuscatedName("qg.y(Ldh;IIIIILaaz;IIII[Z[I[I[I[I[I[I[I[I[[ILcb;Lcb;Lcb;B)V")
-	public void method7152(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, FloorUnderlayType arg6, int arg7, int arg8, int arg9, int arg10, boolean[] arg11, int[] arg12, int[] arg13, int[] arg14, int[] arg15, int[] arg16, int[] arg17, int[] arg18, int[] arg19, int[][] arg20, class104 arg21, class104 arg22, class104 arg23) {
+	public void method7152(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, FloorUnderlayType arg6, int arg7, int arg8, int arg9, int arg10, boolean[] arg11, int[] arg12, int[] arg13, int[] arg14, int[] arg15, int[] arg16, int[] arg17, int[] arg18, int[] arg19, int[][] arg20, FloorModel arg21, FloorModel arg22, FloorModel arg23) {
 		if (arg6 == null) {
 			return;
 		}
@@ -1278,7 +1278,7 @@ public class class454 {
 	}
 
 	@ObfuscatedName("qg.q(Lcb;Laaz;Lyn;IIIIIIII)V")
-	public void method7153(class104 arg0, FloorUnderlayType arg1, FloorOverlayType arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9) {
+	public void method7153(FloorModel arg0, FloorUnderlayType arg1, FloorOverlayType arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9) {
 		int var11 = arg0.method1529(arg4, arg5);
 		int var12 = arg0.method1529(arg6, arg5);
 		int var13 = arg0.method1529(arg6, arg7);

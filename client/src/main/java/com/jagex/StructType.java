@@ -34,7 +34,7 @@ public class StructType extends SecondaryNode implements ConfigType, class757 {
 			int var7 = arg0.g3();
 			Node var8;
 			if (var6) {
-				var8 = new class984(arg0.gjstr());
+				var8 = new ObjectWrapper(arg0.gjstr());
 			} else {
 				var8 = new class988(arg0.g4s());
 			}
@@ -57,7 +57,7 @@ public class StructType extends SecondaryNode implements ConfigType, class757 {
 		if (this.field9261 == null) {
 			return arg1;
 		} else {
-			class984 var3 = (class984) this.field9261.method14495((long) arg0);
+			ObjectWrapper var3 = (ObjectWrapper) this.field9261.method14495((long) arg0);
 			return var3 == null ? arg1 : (String) var3.field11436;
 		}
 	}

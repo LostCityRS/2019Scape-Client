@@ -554,7 +554,7 @@ public class LocType implements ConfigType {
 								int var36 = arg0.g3();
 								Node var37;
 								if (var35) {
-									var37 = new class984(arg0.gjstr().intern());
+									var37 = new ObjectWrapper(arg0.gjstr().intern());
 								} else {
 									var37 = new class988(arg0.g4s());
 								}
@@ -628,7 +628,7 @@ public class LocType implements ConfigType {
 	}
 
 	@ObfuscatedName("vd.c(Ldh;IIILcb;Lcb;IIIZLvp;B)Labg;")
-	public final synchronized class746 method9475(Renderer arg0, int arg1, int arg2, int arg3, class104 arg4, class104 arg5, int arg6, int arg7, int arg8, boolean arg9, class597 arg10) {
+	public final synchronized class746 method9475(Renderer arg0, int arg1, int arg2, int arg3, FloorModel arg4, FloorModel arg5, int arg6, int arg7, int arg8, boolean arg9, class597 arg10) {
 		if (class601.method14238(arg2)) {
 			arg2 = class601.field7548.field7562;
 		}
@@ -715,7 +715,7 @@ public class LocType implements ConfigType {
 	}
 
 	@ObfuscatedName("vd.r(Ldh;IIILcb;Lcb;IIILaaq;Lvp;B)Ldo;")
-	public final synchronized Model method9470(Renderer arg0, int arg1, int arg2, int arg3, class104 arg4, class104 arg5, int arg6, int arg7, int arg8, class721 arg9, class597 arg10) {
+	public final synchronized Model method9470(Renderer arg0, int arg1, int arg2, int arg3, FloorModel arg4, FloorModel arg5, int arg6, int arg7, int arg8, class721 arg9, class597 arg10) {
 		if (class601.method14238(arg2)) {
 			arg2 = class601.field7548.field7562;
 		}
@@ -996,7 +996,7 @@ public class LocType implements ConfigType {
 		if (this.field7519 == null) {
 			return arg1;
 		} else {
-			class984 var3 = (class984) this.field7519.method14495((long) arg0);
+			ObjectWrapper var3 = (ObjectWrapper) this.field7519.method14495((long) arg0);
 			return var3 == null ? arg1 : (String) var3.field11436;
 		}
 	}

@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 import java.util.Iterator;
 
 @ObfuscatedName("adj")
-public class class806 extends class808 implements ConfigTypeList {
+public class class806 extends VarTypeList implements ConfigTypeList {
 
 	@ObfuscatedName("adj.n")
 	public final Js5 field9255;

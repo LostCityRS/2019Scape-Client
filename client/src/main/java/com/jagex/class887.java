@@ -14,7 +14,7 @@ public final class class887 extends class234 {
 	public boolean field10357;
 
 	@ObfuscatedName("agt.w")
-	public class1126 field10365;
+	public Direct3DRenderer field10365;
 
 	@ObfuscatedName("agt.l")
 	public long field10367;
@@ -37,13 +37,13 @@ public final class class887 extends class234 {
 	@ObfuscatedName("agt.o")
 	public final boolean[] field10359;
 
-	public class887(class1126 arg0, class889 arg1, class233 arg2) {
+	public class887(Direct3DRenderer arg0, class889 arg1, class233 arg2) {
 		this(arg0, arg2);
 		this.field10365 = arg0;
 		this.field10363 = arg1;
 	}
 
-	public class887(class1126 arg0, class233 arg1) {
+	public class887(Direct3DRenderer arg0, class233 arg1) {
 		this.field10357 = false;
 		this.field10366 = new float[2][];
 		this.field10359 = new boolean[2];

@@ -37,7 +37,7 @@ public class class144 implements Runnable {
 					}
 				}
 			} catch (Exception var7) {
-				class1211.method9845(null, var7);
+				JagException.method9845(null, var7);
 			}
 			return;
 		}

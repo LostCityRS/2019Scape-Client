@@ -35,7 +35,7 @@ public abstract class Renderer {
 	public class113 field1614;
 
 	@ObfuscatedName("dh.j")
-	public class841 field1612;
+	public Surface field1612;
 
 	@ObfuscatedName("dh.t")
 	public Hashtable field1613 = new Hashtable();
@@ -116,7 +116,7 @@ public abstract class Renderer {
 		Enumeration var1 = this.field1613.keys();
 		while (var1.hasMoreElements()) {
 			Canvas var2 = (Canvas) var1.nextElement();
-			class841 var3 = (class841) this.field1613.get(var2);
+			Surface var3 = (Surface) this.field1613.get(var2);
 			var3.method1629();
 		}
 		this.method2369();
@@ -143,7 +143,7 @@ public abstract class Renderer {
 	}
 
 	@ObfuscatedName("dh.ag(I)Lafy;")
-	public final class841 method2136() {
+	public final Surface method2136() {
 		return this.field1612;
 	}
 
@@ -156,7 +156,7 @@ public abstract class Renderer {
 	}
 
 	@ObfuscatedName("dh.al(Ljava/awt/Canvas;Lafy;B)V")
-	public final void method2138(Canvas arg0, class841 arg1) {
+	public final void method2138(Canvas arg0, Surface arg1) {
 		if (arg1 == null) {
 			throw new RuntimeException("");
 		}
@@ -166,7 +166,7 @@ public abstract class Renderer {
 	@ObfuscatedName("dh.ac(Ljava/awt/Canvas;I)V")
 	public final void method2192(Canvas arg0) {
 		if (this.field1613.containsKey(arg0)) {
-			class841 var2 = (class841) this.field1613.get(arg0);
+			Surface var2 = (Surface) this.field1613.get(arg0);
 			var2.method1629();
 			this.field1613.remove(arg0);
 		}
@@ -174,7 +174,7 @@ public abstract class Renderer {
 
 	@ObfuscatedName("dh.ai(Ljava/awt/Canvas;B)V")
 	public final void method2140(Canvas arg0) {
-		class841 var2 = (class841) this.field1613.get(arg0);
+		Surface var2 = (Surface) this.field1613.get(arg0);
 		if (var2 == null) {
 			throw new RuntimeException();
 		} else if (this.field1616 <= 0 && this.field1612 == this.field1614) {
@@ -193,7 +193,7 @@ public abstract class Renderer {
 
 	@ObfuscatedName("dh.aw(Ljava/awt/Canvas;III)V")
 	public final void method2216(Canvas arg0, int arg1, int arg2) {
-		class841 var4 = (class841) this.field1613.get(arg0);
+		Surface var4 = (Surface) this.field1613.get(arg0);
 		if (var4 == null) {
 			throw new RuntimeException("");
 		}
@@ -469,7 +469,7 @@ public abstract class Renderer {
 	public abstract boolean method2141();
 
 	@ObfuscatedName("dh.ad(Ljava/awt/Canvas;II)Lafy;")
-	public abstract class841 method2144(Canvas arg0, int arg1, int arg2);
+	public abstract Surface method2144(Canvas arg0, int arg1, int arg2);
 
 	@ObfuscatedName("dh.am()Lafq;")
 	public abstract Framebuffer method2145();
@@ -586,7 +586,7 @@ public abstract class Renderer {
 	public abstract int method2213(int arg0, int arg1);
 
 	@ObfuscatedName("dh.dr(II[[I[[IIII)Lcb;")
-	public abstract class104 method2214(int arg0, int arg1, int[][] arg2, int[][] arg3, int arg4, int arg5, int arg6);
+	public abstract FloorModel method2214(int arg0, int arg1, int[][] arg2, int[][] arg3, int arg4, int arg5, int arg6);
 
 	@ObfuscatedName("dh.do(Lou;)V")
 	public abstract void method2217(Matrix4x3 arg0);

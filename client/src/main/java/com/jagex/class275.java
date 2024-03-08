@@ -163,7 +163,7 @@ public class class275 implements Runnable {
 								Statics.field8198.method2115();
 							}
 						} catch (class1106 var18) {
-							class1211.method9845(var18.getMessage() + Statics.field8301.method8038(), var18);
+							JagException.method9845(var18.getMessage() + Statics.field8301.method8038(), var18);
 							client.method486(0, true);
 						}
 					}

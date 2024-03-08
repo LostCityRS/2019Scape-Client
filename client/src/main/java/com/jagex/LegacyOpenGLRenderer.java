@@ -664,7 +664,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 				this.field9986.method1375();
 				this.field9986 = null;
 			}
-			this.method2138(arg0, new class1121(this, arg0, var10));
+			this.method2138(arg0, new LegacyOpenGLSurface(this, arg0, var10));
 			this.method2140(arg0);
 			if (this.field9981) {
 				int var29 = arg0.getLocation().x;
@@ -1007,8 +1007,8 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.ad(Ljava/awt/Canvas;II)Lafy;")
-	public class841 method2144(Canvas arg0, int arg1, int arg2) {
-		return new class1121(this, arg0);
+	public Surface method2144(Canvas arg0, int arg1, int arg2) {
+		return new LegacyOpenGLSurface(this, arg0);
 	}
 
 	@ObfuscatedName("afa.rg()V")
@@ -1848,8 +1848,8 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.dr(II[[I[[IIII)Lcb;")
-	public class104 method2214(int arg0, int arg1, int[][] arg2, int[][] arg3, int arg4, int arg5, int arg6) {
-		return new class836(this, arg5, arg6, arg0, arg1, arg2, arg3, arg4);
+	public FloorModel method2214(int arg0, int arg1, int[][] arg2, int[][] arg3, int arg4, int arg5, int arg6) {
+		return new LegacyOpenGLFloorModel(this, arg5, arg6, arg0, arg1, arg2, arg3, arg4);
 	}
 
 	@ObfuscatedName("afa.cc()Lpq;")

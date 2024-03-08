@@ -181,7 +181,7 @@ public class LoginManager {
 
 	@ObfuscatedName("dt.c(Ljava/lang/String;ZI)V")
 	public static void method1681(String arg0, boolean arg1) {
-		if (client.state == 13 && (!method2865() && !RegistrationManager.method9610())) {
+		if (client.state == 13 && (!method2865() && !AccountCreationManager.method9610())) {
 			field429 = arg0;
 			field473 = arg1;
 			client.method6972(15);
@@ -376,7 +376,7 @@ public class LoginManager {
 				String var7 = Statics.field432.field795.gjstr2();
 				Statics.field432.field795.pos = 0;
 				String var8 = class394.field4032.method6087();
-				class505.method6081(var7, true, var8, client.field10784);
+				Browser.method6081(var7, true, var8, client.field10784);
 				field445 = 64;
 			}
 			if (field445 == 64) {
@@ -678,7 +678,7 @@ public class LoginManager {
 				Statics.field432.field795.pos = 0;
 				Packet var29 = new Packet(var28);
 				String var30 = var29.gjstr();
-				class505.method4607(var30, true, client.field10784);
+				Browser.method4607(var30, true, client.field10784);
 				method669(Statics.field11819);
 				if (Statics.field431 == 132 && client.state != 9) {
 					field445 = 98;
@@ -719,7 +719,7 @@ public class LoginManager {
 						}
 						break;
 					}
-					class413 var32 = Statics.field8911.method15284(Statics.field432.field795);
+					VarValue var32 = Statics.field8911.method15284(Statics.field432.field795);
 					Statics.field7228.field1708.method14735(var32.field4240, var32.field4239);
 				}
 			}
@@ -1089,7 +1089,7 @@ public class LoginManager {
 			Statics.field7410.field635[var0] = var1;
 		}
 		Statics.field7410.field632.method9624();
-		class1171.method716();
+		DelayedStateChange.method716();
 		client.method4336(Statics.field432);
 	}
 
@@ -1142,7 +1142,7 @@ public class LoginManager {
 		Statics.field8576 = 0;
 		Statics.field708 = 0;
 		if (client.field10978 != -1) {
-			class226.method7602(client.field10978);
+			Component.method7602(client.field10978);
 		}
 		for (SubInterface var2 = (SubInterface) client.field10979.method14500(); var2 != null; var2 = (SubInterface) client.field10979.method14502()) {
 			if (!var2.method8441()) {
@@ -1155,14 +1155,14 @@ public class LoginManager {
 		}
 		client.field10978 = -1;
 		client.field10979 = new IterableMap(8);
-		class226.method5075();
+		Component.method5075();
 		client.field11056 = null;
 		for (int var3 = 0; var3 < 8; var3++) {
 			client.field10961[var3] = null;
 			client.field10962[var3] = false;
 			client.field10832[var3] = -1;
 		}
-		class961.method2752();
+		ClientInvCache.method2752();
 		client.field11023 = true;
 		for (int var4 = 0; var4 < 114; var4++) {
 			client.field11072[var4] = true;
@@ -1178,7 +1178,7 @@ public class LoginManager {
 		Statics.field4868 = LocalisedText.field9079.method15021(Statics.field1680);
 		Statics.field688.method18157(Statics.field688.field11534, Statics.field688.field11533.method18496());
 		client.field10842 = 0;
-		class22.method5175();
+		MiniMenu.method5175();
 		Statics.field594 = null;
 		Statics.field3457 = 0L;
 	}
@@ -1186,7 +1186,7 @@ public class LoginManager {
 	@ObfuscatedName("aiz.ai(I)Z")
 	public static boolean method16808() {
 		if (client.state == 4) {
-			return !method2865() && !RegistrationManager.method9610();
+			return !method2865() && !AccountCreationManager.method9610();
 		} else {
 			return false;
 		}

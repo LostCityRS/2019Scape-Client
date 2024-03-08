@@ -8,7 +8,7 @@ import java.awt.*;
 public abstract class class563 {
 
 	@ObfuscatedName("acg.e(Ljava/awt/Component;I)Lub;")
-	public static class563 method15006(Component arg0) {
+	public static class563 method15006(java.awt.Component arg0) {
 		return new class1006(arg0);
 	}
 

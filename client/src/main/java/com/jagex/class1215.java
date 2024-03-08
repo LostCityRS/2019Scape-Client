@@ -9,7 +9,7 @@ import jagdx.class0;
 public class class1215 extends class1119 {
 
 	@ObfuscatedName("ath.k")
-	public final class1126 field12499;
+	public final Direct3DRenderer field12499;
 
 	@ObfuscatedName("ath.f")
 	public int field12500;
@@ -29,7 +29,7 @@ public class class1215 extends class1119 {
 	@ObfuscatedName("ath.p")
 	public final class412[] field12505 = new class412[4];
 
-	public class1215(class1126 arg0) {
+	public class1215(Direct3DRenderer arg0) {
 		super(arg0);
 		this.field12499 = arg0;
 	}

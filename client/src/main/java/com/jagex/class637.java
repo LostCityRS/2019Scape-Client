@@ -342,7 +342,7 @@ public class class637 {
 	}
 
 	@ObfuscatedName("xv.p(Lxu;Lyj;I)V")
-	public void method10063(EnvironmentManager arg0, class660 arg1) {
+	public void method10063(EnvironmentManager arg0, EnvironmentOverride arg1) {
 		if (Statics.field688.field11528.method18389() == 1 && Statics.field8198.method2114() > 0) {
 			if (arg1.method10429() != -1) {
 				this.field7877 = arg1.method10429();

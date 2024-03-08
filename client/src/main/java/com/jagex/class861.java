@@ -27,7 +27,7 @@ public final class class861 extends class150 {
 	public long field10259 = -1L;
 
 	@ObfuscatedName("afu.u")
-	public class413[] field10257;
+	public VarValue[] field10257;
 
 	@ObfuscatedName("afu.z")
 	public int field10258 = 0;
@@ -35,7 +35,7 @@ public final class class861 extends class150 {
 	@ObfuscatedName("afu.p")
 	public final class457[] field10251;
 
-	public class861(class808 arg0) {
+	public class861(VarTypeList arg0) {
 		super(arg0);
 		this.field10251 = new class457[arg0.size()];
 		for (int var2 = 0; var2 < arg0.size(); var2++) {
@@ -130,7 +130,7 @@ public final class class861 extends class150 {
 						return;
 					}
 					for (int var12 = 0; var12 < var10; var12++) {
-						class413 var13 = Statics.field8911.method15284(var5);
+						VarValue var13 = Statics.field8911.method15284(var5);
 						if (this.field10251[var13.field4240] == class457.field4609 && ((class149) Statics.field8911.get(var13.field4240)).field1704.method7292().field4843.isAssignableFrom(var13.field4239.getClass())) {
 							this.field1708.method14735(var13.field4240, var13.field4239);
 						}
@@ -156,7 +156,7 @@ public final class class861 extends class150 {
 			int var3 = 0;
 			Iterator var4 = this.field1708.iterator();
 			while (var4.hasNext()) {
-				class413 var5 = (class413) var4.next();
+				VarValue var5 = (VarValue) var4.next();
 				if (this.field10251[var5.field4240] == class457.field4609) {
 					var2 += Statics.field8911.method15282(var5);
 					var3++;
@@ -167,7 +167,7 @@ public final class class861 extends class150 {
 			var6.p2(var3);
 			Iterator var7 = this.field1708.iterator();
 			while (var7.hasNext()) {
-				class413 var8 = (class413) var7.next();
+				VarValue var8 = (VarValue) var7.next();
 				if (this.field10251[var8.field4240] == class457.field4609) {
 					Statics.field8911.method15283(var6, var8);
 				}
@@ -193,12 +193,12 @@ public final class class861 extends class150 {
 			if (!this.field10254) {
 				return;
 			}
-			this.field10257 = new class413[this.field10255.size()];
+			this.field10257 = new VarValue[this.field10255.size()];
 			int var1 = 0;
 			Iterator var2 = this.field10255.iterator();
 			while (var2.hasNext()) {
 				int var3 = (Integer) var2.next();
-				this.field10257[var1++] = new class413(var3, this.field1708.method14738(var3));
+				this.field10257[var1++] = new VarValue(var3, this.field1708.method14738(var3));
 			}
 			this.field10258 = 0;
 			this.field10254 = false;
@@ -216,7 +216,7 @@ public final class class861 extends class150 {
 		int var6 = var5.field11432.pos;
 		var5.field11432.pos++;
 		while (this.field10258 < this.field10257.length) {
-			class413 var7 = this.field10257[this.field10258];
+			VarValue var7 = this.field10257[this.field10258];
 			if (var5.field11432.pos + var4.field791 + Statics.field8911.method15282(var7) > 1500) {
 				break;
 			}

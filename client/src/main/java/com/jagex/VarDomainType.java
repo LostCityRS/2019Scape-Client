@@ -6,16 +6,16 @@ import deob.ObfuscatedName;
 public class VarDomainType implements SerializableEnum {
 
 	@ObfuscatedName("qe.e")
-	public static final VarDomainType PLAYER = new class941(Js5ConfigGroup.VAR_PLAYER, 0, true, true);
+	public static final VarDomainType PLAYER = new VarDomainTypePlayer(Js5ConfigGroup.VAR_PLAYER, 0, true, true);
 
 	@ObfuscatedName("qe.n")
-	public static final VarDomainType NPC = new class943(Js5ConfigGroup.VAR_NPC, 1, false, true);
+	public static final VarDomainType NPC = new VarDomainTypeNpc(Js5ConfigGroup.VAR_NPC, 1, false, true);
 
 	@ObfuscatedName("qe.m")
-	public static final VarDomainType CLIENT = new class940(Js5ConfigGroup.VAR_CLIENT, 2, true, true);
+	public static final VarDomainType CLIENT = new VarDomainTypeClient(Js5ConfigGroup.VAR_CLIENT, 2, true, true);
 
 	@ObfuscatedName("qe.k")
-	public static final VarDomainType WORLD = new class939(Js5ConfigGroup.VAR_WORLD, 3, false, false);
+	public static final VarDomainType WORLD = new VarDomainTypeWorld(Js5ConfigGroup.VAR_WORLD, 3, false, false);
 
 	@ObfuscatedName("qe.f")
 	public static final VarDomainType REGION = new VarDomainType(Js5ConfigGroup.VAR_REGION, 4, false, false);
@@ -30,7 +30,7 @@ public class VarDomainType implements SerializableEnum {
 	public static final VarDomainType CLAN_SETTING = new VarDomainType(Js5ConfigGroup.VAR_CLAN_SETTING, 7, true, false);
 
 	@ObfuscatedName("qe.z")
-	public static final VarDomainType CONTROLLER = new class942(Js5ConfigGroup.VAR_CONTROLLER, 8, false, false);
+	public static final VarDomainType CONTROLLER = new VarDomaniTypeController(Js5ConfigGroup.VAR_CONTROLLER, 8, false, false);
 
 	@ObfuscatedName("qe.p")
 	public static final VarDomainType PLAYER_GROUP = new VarDomainType(Js5ConfigGroup.VAR_PLAYER_GROUP, 9, false, true);
@@ -45,7 +45,7 @@ public class VarDomainType implements SerializableEnum {
 	public final int serialID;
 
 	// $FF: synthetic method
-	public VarDomainType(Js5ConfigGroup arg0, int arg1, boolean arg2, boolean arg3, class941 arg4) {
+	public VarDomainType(Js5ConfigGroup arg0, int arg1, boolean arg2, boolean arg3, VarDomainTypePlayer arg4) {
 		this(arg0, arg1, arg2, arg3);
 	}
 

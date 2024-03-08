@@ -390,7 +390,7 @@ public class ClientMapLoader extends class454 {
 			int var12 = 0;
 			boolean var13 = false;
 			while (true) {
-				class600 var15;
+				LocPositionAdjustment var15;
 				int var19;
 				LocType var20;
 				int var22;
@@ -407,7 +407,7 @@ public class ClientMapLoader extends class454 {
 										if (var14 == 0) {
 											continue label70;
 										}
-										var15 = new class600(var9);
+										var15 = new LocPositionAdjustment(var9);
 									} while (var13);
 									var12 += var14 - 1;
 									int var16 = var12 & 0x3F;
@@ -461,7 +461,7 @@ public class ClientMapLoader extends class454 {
 			int var8 = 0;
 			while (true) {
 				int var12;
-				class600 var13;
+				LocPositionAdjustment var13;
 				int var14;
 				int var15;
 				int var20;
@@ -479,7 +479,7 @@ public class ClientMapLoader extends class454 {
 									int var10 = var8 & 0x3F;
 									int var11 = var8 >> 6 & 0x3F;
 									var12 = var8 >> 12;
-									var13 = new class600(var5);
+									var13 = new LocPositionAdjustment(var5);
 									var14 = arg2 + var11;
 									var15 = arg3 + var10;
 									LocType var16 = (LocType) this.field10765.get(var6);
@@ -516,7 +516,7 @@ public class ClientMapLoader extends class454 {
 			var11 += var12;
 			int var13 = 0;
 			while (true) {
-				class600 var18;
+				LocPositionAdjustment var18;
 				int var22;
 				int var23;
 				int var25;
@@ -542,7 +542,7 @@ public class ClientMapLoader extends class454 {
 														var15 = var13 & 0x3F;
 														var16 = var13 >> 6 & 0x3F;
 														var17 = var13 >> 12;
-														var18 = new class600(var10);
+														var18 = new LocPositionAdjustment(var10);
 													} while (arg5 != var17);
 												} while (var16 < arg6);
 											} while (var16 >= arg6 + 8);
@@ -608,7 +608,7 @@ public class ClientMapLoader extends class454 {
 			var17 = arg4;
 			var18 = arg4 + 1;
 		}
-		class104 var19 = this.field4577.field6913[arg1];
+		FloorModel var19 = this.field4577.field6913[arg1];
 		int var20;
 		if (class601.field7563.field7562 == arg7 || class601.field7564.field7562 == arg7) {
 			var20 = var19.method1530(var15, var17) + var19.method1530(var16, var17) + var19.method1530(var15, var18) + var19.method1530(var16, var18) >> 2;
@@ -688,7 +688,7 @@ public class ClientMapLoader extends class454 {
 	}
 
 	@ObfuscatedName("aih.cx(Ldh;IIZLvd;IIIIIIIIIZLcb;IILoe;I)Z")
-	public boolean method16869(Renderer arg0, int arg1, int arg2, boolean arg3, LocType arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, int arg12, int arg13, boolean arg14, class104 arg15, int arg16, int arg17, ScaleRotTrans arg18) {
+	public boolean method16869(Renderer arg0, int arg1, int arg2, boolean arg3, LocType arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, int arg12, int arg13, boolean arg14, FloorModel arg15, int arg16, int arg17, ScaleRotTrans arg18) {
 		if (class601.field7554.field7562 == arg1) {
 			int var20 = arg4.field7474;
 			if (field10754 && arg4.field7474 == -1) {

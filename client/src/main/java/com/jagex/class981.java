@@ -11,7 +11,7 @@ public class class981 extends Node {
 	public final GpuRenderer field11409;
 
 	@ObfuscatedName("akh.f")
-	public final class837 field11401;
+	public final GpuFloorModel field11401;
 
 	@ObfuscatedName("akh.w")
 	public final int field11402;
@@ -23,7 +23,7 @@ public class class981 extends Node {
 	public class131 field11404;
 
 	@ObfuscatedName("akh.z")
-	public class330 field11405;
+	public VertexBuffer field11405;
 
 	@ObfuscatedName("akh.p")
 	public int field11406 = 0;
@@ -46,7 +46,7 @@ public class class981 extends Node {
 	@ObfuscatedName("akh.s")
 	public ByteBuffer field11410;
 
-	public class981(class837 arg0, int arg1, int arg2, class131 arg3) {
+	public class981(GpuFloorModel arg0, int arg1, int arg2, class131 arg3) {
 		this.field11401 = arg0;
 		this.field11409 = this.field11401.field9516;
 		this.field11402 = arg1;

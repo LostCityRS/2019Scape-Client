@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aix")
-public class OpenGLVertexBuffer extends class486 implements class330 {
+public class OpenGLVertexBuffer extends class486 implements VertexBuffer {
 
 	@ObfuscatedName("aix.d")
 	public byte field10619;

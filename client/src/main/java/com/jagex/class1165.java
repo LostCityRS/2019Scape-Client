@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class class1165 extends class980 {
 
 	// $FF: synthetic field
-	public final class311 this$0;
+	public final ClanChannelDelta this$0;
 
 	@ObfuscatedName("arh.k")
 	public int field12252;
@@ -20,7 +20,7 @@ public class class1165 extends class980 {
 	@ObfuscatedName("arh.l")
 	public String field12251;
 
-	public class1165(class311 arg0) {
+	public class1165(ClanChannelDelta arg0) {
 		this.this$0 = arg0;
 		this.field12252 = -1;
 	}

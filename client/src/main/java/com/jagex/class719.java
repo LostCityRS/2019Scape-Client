@@ -8,7 +8,7 @@ import java.util.Iterator;
 public class class719 implements Iterator {
 
 	@ObfuscatedName("aai.e")
-	public class720 field8495;
+	public DualIterableQueue field8495;
 
 	@ObfuscatedName("aai.n")
 	public SecondaryNode field8494;
@@ -16,7 +16,7 @@ public class class719 implements Iterator {
 	@ObfuscatedName("aai.m")
 	public SecondaryNode field8493 = null;
 
-	public class719(class720 arg0) {
+	public class719(DualIterableQueue arg0) {
 		this.field8495 = arg0;
 		this.field8494 = this.field8495.field8497.field11439;
 		this.field8493 = null;

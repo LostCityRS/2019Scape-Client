@@ -293,7 +293,7 @@ public class World {
 
 	@ObfuscatedName("rl.ae(ZI)V")
 	public void method7737(boolean arg0) {
-		class660 var2 = null;
+		EnvironmentOverride var2 = null;
 		if (this.field5062 != null && arg0) {
 			var2 = this.field5062.method9981();
 		}
@@ -681,8 +681,8 @@ public class World {
 		if (RebuildType.field5066 == this.field5019 || RebuildType.field5068 == this.field5019 || this.field5020 != this.field5019 && (RebuildType.field5071 == this.field5019 || RebuildType.field5071 == this.field5020)) {
 			Iterator var1 = client.field10838.iterator();
 			while (var1.hasNext()) {
-				class984 var2 = (class984) var1.next();
-				class975.method10111((class1131) var2.field11436);
+				ObjectWrapper var2 = (ObjectWrapper) var1.next();
+				class975.method10111((NpcEntity) var2.field11436);
 			}
 			client.field11011 = 0;
 			client.field10906 = 0;
@@ -729,9 +729,9 @@ public class World {
 		int var3 = this.field5018.field7427 - this.field5025.field7427;
 		if (arg0 == 3) {
 			for (int var4 = 0; var4 < client.field10906; var4++) {
-				class984 var5 = client.field10839[var4];
+				ObjectWrapper var5 = client.field10839[var4];
 				if (var5 != null) {
-					class1131 var6 = (class1131) var5.field11436;
+					NpcEntity var6 = (NpcEntity) var5.field11436;
 					for (int var7 = 0; var7 < var6.field10450.length; var7++) {
 						var6.field10450[var7] -= var2;
 						var6.field10448[var7] -= var3;
@@ -749,9 +749,9 @@ public class World {
 			int var10 = this.field5028 - 512;
 			int var11 = this.field5043 - 512;
 			for (int var12 = 0; var12 < client.field10906; var12++) {
-				class984 var13 = client.field10839[var12];
+				ObjectWrapper var13 = client.field10839[var12];
 				if (var13 != null) {
-					class1131 var14 = (class1131) var13.field11436;
+					NpcEntity var14 = (NpcEntity) var13.field11436;
 					Vector3 var15 = Vector3.method6484(var14.method10536().field4298);
 					var15.field4308 -= var2 * 512;
 					var15.field4313 -= var3 * 512;
@@ -785,13 +785,13 @@ public class World {
 				int var18 = 0;
 				Iterator var19 = client.field10838.iterator();
 				while (var19.hasNext()) {
-					class984 var20 = (class984) var19.next();
+					ObjectWrapper var20 = (ObjectWrapper) var19.next();
 					client.field10839[var18++] = var20;
 				}
 			}
 		}
 		for (int var21 = 0; var21 < 2048; var21++) {
-			class1130 var22 = client.field10944[var21];
+			PlayerEntity var22 = client.field10944[var21];
 			if (var22 != null) {
 				for (int var23 = 0; var23 < var22.field10450.length; var23++) {
 					var22.field10450[var23] -= var2;
@@ -804,9 +804,9 @@ public class World {
 				var24.method6486();
 			}
 		}
-		class45[] var25 = client.field10851;
+		HintArrow[] var25 = client.field10851;
 		for (int var26 = 0; var26 < var25.length; var26++) {
-			class45 var27 = var25[var26];
+			HintArrow var27 = var25[var26];
 			if (var27 != null) {
 				var27.field746 = var27.field746 * 262144 - var2 * 512;
 				var27.field747 = var27.field747 * 262144 - var3 * 262144;
@@ -886,7 +886,7 @@ public class World {
 				this.field5062.method10019();
 			}
 		}
-		class22.method5175();
+		MiniMenu.method5175();
 		class42.method5065();
 		client.field10966.method14499();
 		client.field10965.method14152();
@@ -1011,13 +1011,13 @@ public class World {
 		}
 		if (!this.field5036) {
 			for (int var15 = 0; var15 < 2048; var15++) {
-				class1130 var16 = client.field10944[var15];
+				PlayerEntity var16 = client.field10944[var15];
 				if (var16 != null) {
 					var16.field11716 = null;
 				}
 			}
 			for (int var17 = 0; var17 < client.field10839.length; var17++) {
-				class984 var18 = client.field10839[var17];
+				ObjectWrapper var18 = client.field10839[var17];
 				if (var18 != null) {
 					((GraphEntity) var18.field11436).field11716 = null;
 				}
@@ -1405,11 +1405,11 @@ public class World {
 					int var12 = (this.field5054[var2] >> 8) * 64 - this.field5018.field7426 + var10;
 					int var13 = (this.field5054[var2] & 0xFF) * 64 - this.field5018.field7427 + var11;
 					NPCType var14 = (NPCType) Statics.field7961.get(var5.g2());
-					class984 var15 = (class984) client.field10838.method14495((long) var7);
+					ObjectWrapper var15 = (ObjectWrapper) client.field10838.method14495((long) var7);
 					if (var15 == null && (var14.field2743 & 0x1) > 0 && var12 >= 0 && var14.field2699 + var12 < this.field5028 && var13 >= 0 && var14.field2699 + var13 < this.field5043) {
-						class1131 var16 = new class1131(this.field5030);
+						NpcEntity var16 = new NpcEntity(this.field5030);
 						var16.field10406 = var7;
-						class984 var17 = new class984(var16);
+						ObjectWrapper var17 = new ObjectWrapper(var16);
 						client.field10838.method14501(var17, (long) var7);
 						client.field10839[++client.field10906 - 1] = var17;
 						client.field11036[++client.field11011 - 1] = var7;

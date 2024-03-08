@@ -16,10 +16,10 @@ public final class class158 {
 	public boolean field1744 = false;
 
 	@ObfuscatedName("ea.f")
-	public class1131 field1745 = null;
+	public NpcEntity field1745 = null;
 
 	@ObfuscatedName("ea.w")
-	public class1130 field1742 = null;
+	public PlayerEntity field1742 = null;
 
 	@ObfuscatedName("ea.l")
 	public int[] field1747;
@@ -45,7 +45,7 @@ public final class class158 {
 		if (!this.field1744) {
 			this.field1744 = true;
 			if (this.field1743 >= 0) {
-				this.field1745 = new class1131(client.world.method7743(), 25);
+				this.field1745 = new NpcEntity(client.world.method7743(), 25);
 				this.field1745.field10406 = this.field1741;
 				this.field1745.field10440 = client.field10903;
 				this.field1745.method19156((NPCType) Statics.field7961.get(this.field1743));
@@ -53,7 +53,7 @@ public final class class158 {
 				this.field1745.field10444 = this.field1745.field12083.field2731 << 3;
 				this.field1745.field10404 = ++class153.field1715 - 1;
 			} else {
-				this.field1742 = new class1130(client.world.method7743(), 25);
+				this.field1742 = new PlayerEntity(client.world.method7743(), 25);
 				this.field1742.method19129(Statics.field8729);
 				this.field1742.field10406 = this.field1741;
 				this.field1742.field10440 = client.field10903;

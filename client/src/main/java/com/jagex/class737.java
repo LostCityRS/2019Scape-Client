@@ -49,7 +49,7 @@ public abstract class class737 implements ConfigTypeFactory {
 	}
 
 	@ObfuscatedName("abr.e(Ldh;IIIIILxg;I)Lcm;")
-	public Sprite method14616(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, class639 arg6) {
+	public Sprite method14616(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, PlayerModel arg6) {
 		this.field8609.field8607 = arg0.field1595;
 		this.field8609.field8602 = arg1;
 		this.field8609.field8604 = arg2;
@@ -61,7 +61,7 @@ public abstract class class737 implements ConfigTypeFactory {
 	}
 
 	@ObfuscatedName("abr.n(Ldh;Ldh;IIIIZZILeu;Lxg;Lws;Lao;I)Lcm;")
-	public Sprite method14617(Renderer arg0, Renderer arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6, boolean arg7, int arg8, class140 arg9, class639 arg10, class629 arg11, ConfigTypeList arg12) {
+	public Sprite method14617(Renderer arg0, Renderer arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6, boolean arg7, int arg8, class140 arg9, PlayerModel arg10, class629 arg11, ConfigTypeList arg12) {
 		if (!arg7) {
 			Sprite var14 = this.method14616(arg1, arg2, arg3, arg4, arg5, arg8, arg10);
 			if (var14 != null) {

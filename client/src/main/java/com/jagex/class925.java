@@ -27,11 +27,11 @@ public class class925 extends class408 implements GpuTexture {
 	@ObfuscatedName("aiy.d")
 	public boolean field10670;
 
-	public class925(class1126 arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4) {
+	public class925(Direct3DRenderer arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4) {
 		this(arg0, arg1, arg2, arg3, arg4, 0, 1);
 	}
 
-	public class925(class1126 arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4, int arg5, int arg6) {
+	public class925(Direct3DRenderer arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4, int arg5, int arg6) {
 		super(arg0, arg1, arg2, false, arg3 * arg4);
 		if (this.field4219.field11975) {
 			this.field10665 = arg3;
@@ -44,10 +44,10 @@ public class class925 extends class408 implements GpuTexture {
 			this.field10667 = (float) arg3 / (float) this.field10665;
 			this.field10668 = (float) arg4 / (float) this.field10666;
 		}
-		this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.field11978, this.field10665, this.field10666, 0, arg5, class1126.method19011(this.field4221, this.field4218), arg6);
+		this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.field11978, this.field10665, this.field10666, 0, arg5, Direct3DRenderer.method19011(this.field4221, this.field4218), arg6);
 	}
 
-	public class925(class1126 arg0, int arg1, int arg2, boolean arg3, int[] arg4, int arg5, int arg6) {
+	public class925(Direct3DRenderer arg0, int arg1, int arg2, boolean arg3, int[] arg4, int arg5, int arg6) {
 		super(arg0, TextureFormat.field1273, DataType.field1645, arg3 && arg0.field11976, arg1 * arg2);
 		if (this.field4219.field11975) {
 			this.field10665 = arg1;
@@ -80,7 +80,7 @@ public class class925 extends class408 implements GpuTexture {
 		IDirect3DTexture.Upload(this.field4217, 0, 0, 0, this.field10665, this.field10666, this.field4221.field1279 * arg6, 0, this.field4219.field10046);
 	}
 
-	public class925(class1126 arg0, TextureFormat arg1, int arg2, int arg3, boolean arg4, byte[] arg5, int arg6, int arg7) {
+	public class925(Direct3DRenderer arg0, TextureFormat arg1, int arg2, int arg3, boolean arg4, byte[] arg5, int arg6, int arg7) {
 		super(arg0, arg1, DataType.field1645, arg4 && arg0.field11976, arg2 * arg3);
 		if (this.field4219.field11975) {
 			this.field10665 = arg2;
@@ -99,9 +99,9 @@ public class class925 extends class408 implements GpuTexture {
 			}
 		}
 		if (arg4) {
-			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.field11978, this.field10665, this.field10666, 0, 1024, class1126.method19011(this.field4221, DataType.field1645), 1);
+			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.field11978, this.field10665, this.field10666, 0, 1024, Direct3DRenderer.method19011(this.field4221, DataType.field1645), 1);
 		} else {
-			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.field11978, this.field10665, this.field10666, 1, 0, class1126.method19011(this.field4221, DataType.field1645), 1);
+			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.field11978, this.field10665, this.field10666, 1, 0, Direct3DRenderer.method19011(this.field4221, DataType.field1645), 1);
 		}
 		if (arg7 == 0) {
 			arg7 = this.field10665;
@@ -121,7 +121,7 @@ public class class925 extends class408 implements GpuTexture {
 		}
 	}
 
-	public class925(class1126 arg0, TextureFormat arg1, int arg2, int arg3, boolean arg4, float[] arg5, int arg6, int arg7) {
+	public class925(Direct3DRenderer arg0, TextureFormat arg1, int arg2, int arg3, boolean arg4, float[] arg5, int arg6, int arg7) {
 		super(arg0, arg1, DataType.field1645, arg4 && arg0.field11976, arg2 * arg3);
 		if (this.field4219.field11975) {
 			this.field10665 = arg2;
@@ -140,9 +140,9 @@ public class class925 extends class408 implements GpuTexture {
 			}
 		}
 		if (arg4) {
-			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.field11978, this.field10665, this.field10666, 0, 1024, class1126.method19011(this.field4221, DataType.field1642), 1);
+			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.field11978, this.field10665, this.field10666, 0, 1024, Direct3DRenderer.method19011(this.field4221, DataType.field1642), 1);
 		} else {
-			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.field11978, this.field10665, this.field10666, 1, 0, class1126.method19011(this.field4221, DataType.field1642), 1);
+			this.field4217 = IDirect3DDevice.CreateTexture(this.field4219.field11978, this.field10665, this.field10666, 1, 0, Direct3DRenderer.method19011(this.field4221, DataType.field1642), 1);
 		}
 		if (arg7 == 0) {
 			arg7 = this.field10665;

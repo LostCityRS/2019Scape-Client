@@ -26,7 +26,7 @@ public class class482 {
 	public class482() {
 	}
 
-	public class482(Packet arg0, class808 arg1) {
+	public class482(Packet arg0, VarTypeList arg1) {
 		this.field4957 = arg0.g1b();
 		this.field4959 = arg0.g2();
 		this.field4961 = arg0.g4s();
@@ -39,8 +39,8 @@ public class class482 {
 	}
 
 	@ObfuscatedName("aj.e(Lalw;Ladd;I)Labn;")
-	public static class747 method972(Packet arg0, class808 arg1) {
-		class747 var2 = new class747(arg1);
+	public static VarContainerSparse method972(Packet arg0, VarTypeList arg1) {
+		VarContainerSparse var2 = new VarContainerSparse(arg1);
 		while (true) {
 			int var3 = arg0.g1();
 			if (var3 == 255) {
@@ -52,8 +52,8 @@ public class class482 {
 				if (var5 == 255) {
 					break;
 				}
-				arg0.pos -= -1445626955;
-				class413 var6 = arg1.method15285(arg0, var4);
+				arg0.pos -= 1;
+				VarValue var6 = arg1.method15285(arg0, var4);
 				if (var6 != null) {
 					var2.method14735(var6.field4240, var6.field4239);
 				}
