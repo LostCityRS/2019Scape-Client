@@ -1195,7 +1195,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.rc(Ljava/lang/String;)Lho;")
-	public class238 method15964(String arg0) {
+	public Shader method15964(String arg0) {
 		byte[] var2 = this.method19009(arg0);
 		if (var2 == null) {
 			return null;

@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("lh")
-public abstract class class333 {
+public abstract class PostProcessEffect {
 
 	@ObfuscatedName("lh.e")
 	public final GpuRenderer field3242;
@@ -11,7 +11,7 @@ public abstract class class333 {
 	@ObfuscatedName("lh.n")
 	public boolean field3243;
 
-	public class333(GpuRenderer arg0) {
+	public PostProcessEffect(GpuRenderer arg0) {
 		this.field3242 = arg0;
 	}
 

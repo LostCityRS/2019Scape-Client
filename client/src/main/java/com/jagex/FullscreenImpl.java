@@ -6,7 +6,7 @@ import java.awt.*;
 import java.lang.reflect.Field;
 
 @ObfuscatedName("aae")
-public class class726 {
+public class FullscreenImpl {
 
 	@ObfuscatedName("aae.e")
 	public GraphicsDevice field8534;
@@ -14,7 +14,7 @@ public class class726 {
 	@ObfuscatedName("aae.n")
 	public DisplayMode field8533;
 
-	public class726() throws Exception {
+	public FullscreenImpl() throws Exception {
 		GraphicsEnvironment var1 = GraphicsEnvironment.getLocalGraphicsEnvironment();
 		this.field8534 = var1.getDefaultScreenDevice();
 		if (!this.field8534.isFullScreenSupported()) {

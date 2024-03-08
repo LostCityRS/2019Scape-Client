@@ -3,28 +3,28 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aia")
-public class class923 extends class333 {
+public class class923 extends PostProcessEffect {
 
 	@ObfuscatedName("aia.m")
-	public class238 field10645;
+	public Shader field10645;
 
 	@ObfuscatedName("aia.k")
-	public class234 field10641;
+	public Program field10641;
 
 	@ObfuscatedName("aia.f")
-	public class1150 field10649;
+	public ProgramUniform field10649;
 
 	@ObfuscatedName("aia.w")
-	public class1150 field10652;
+	public ProgramUniform field10652;
 
 	@ObfuscatedName("aia.l")
-	public class1150 field10644;
+	public ProgramUniform field10644;
 
 	@ObfuscatedName("aia.u")
-	public class1150 field10646;
+	public ProgramUniform field10646;
 
 	@ObfuscatedName("aia.z")
-	public class1150 field10648;
+	public ProgramUniform field10648;
 
 	@ObfuscatedName("aia.p")
 	public static float field10647 = 1.0F;

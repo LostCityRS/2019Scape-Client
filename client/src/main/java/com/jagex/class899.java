@@ -6,40 +6,40 @@ import deob.ObfuscatedName;
 public class class899 extends class286 {
 
 	@ObfuscatedName("ahr.u")
-	public class238 field10505;
+	public Shader field10505;
 
 	@ObfuscatedName("ahr.z")
-	public class1150 field10512;
+	public ProgramUniform field10512;
 
 	@ObfuscatedName("ahr.p")
 	public final Matrix4x4 field10506 = new Matrix4x4();
 
 	@ObfuscatedName("ahr.d")
-	public class1150 field10507;
+	public ProgramUniform field10507;
 
 	@ObfuscatedName("ahr.c")
-	public class1150 field10504;
+	public ProgramUniform field10504;
 
 	@ObfuscatedName("ahr.r")
-	public class1150 field10508;
+	public ProgramUniform field10508;
 
 	@ObfuscatedName("ahr.v")
-	public class1150 field10509;
+	public ProgramUniform field10509;
 
 	@ObfuscatedName("ahr.o")
-	public class1150 field10503;
+	public ProgramUniform field10503;
 
 	@ObfuscatedName("ahr.s")
-	public class1150 field10511;
+	public ProgramUniform field10511;
 
 	@ObfuscatedName("ahr.y")
-	public class234 field10514;
+	public Program field10514;
 
 	@ObfuscatedName("ahr.q")
-	public class234 field10513;
+	public Program field10513;
 
 	@ObfuscatedName("ahr.x")
-	public class234 field10510;
+	public Program field10510;
 
 	public class899(GpuRenderer arg0) throws class1108 {
 		super(arg0);

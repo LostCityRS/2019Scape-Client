@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aql")
-public abstract class class1150 extends class977 {
+public abstract class ProgramUniform extends class977 {
 
 	@ObfuscatedName("aql.w")
 	public class236 field12211;
@@ -20,7 +20,7 @@ public abstract class class1150 extends class977 {
 	@ObfuscatedName("aql.p")
 	public class236 field12213;
 
-	public class1150(class240 arg0) {
+	public ProgramUniform(class240 arg0) {
 		this.field12211 = arg0.field2592;
 		this.field12210 = arg0.field2586;
 		this.field12209 = arg0.field2590;

@@ -6,13 +6,13 @@ import deob.ObfuscatedName;
 public class class901 extends class287 {
 
 	@ObfuscatedName("ahq.m")
-	public class238 field10515;
+	public Shader field10515;
 
 	@ObfuscatedName("ahq.k")
-	public class1150 field10516;
+	public ProgramUniform field10516;
 
 	@ObfuscatedName("ahq.f")
-	public class234 field10517;
+	public Program field10517;
 
 	public class901(GpuRenderer arg0) throws class1108 {
 		super(arg0);

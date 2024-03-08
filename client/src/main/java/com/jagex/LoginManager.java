@@ -431,7 +431,7 @@ public class LoginManager {
 							var10.p8(field439);
 						}
 					}
-					var10.p1(client.method2845());
+					var10.p1(client.getWindowMode());
 					var10.p2(Statics.field6586);
 					var10.p2(Statics.field6600);
 					var10.p1(Statics.field688.field11516.method18639());
@@ -493,7 +493,7 @@ public class LoginManager {
 					}
 					var10.p1(client.field10768.field8339);
 					var10.p1(Statics.field1680.getId());
-					var10.p1(client.method2845());
+					var10.p1(client.getWindowMode());
 					var10.p2(Statics.field6586);
 					var10.p2(Statics.field6600);
 					var10.p1(Statics.field688.field11516.method18639());

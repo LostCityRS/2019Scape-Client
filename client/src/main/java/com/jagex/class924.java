@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ais")
-public class class924 extends class333 {
+public class class924 extends PostProcessEffect {
 
 	@ObfuscatedName("ais.m")
 	public static float[] field10663 = new float[] { 0.0F, 0.0F, 0.0F };
@@ -18,25 +18,25 @@ public class class924 extends class333 {
 	public static class839[] field10653 = new class839[] { null, null, null };
 
 	@ObfuscatedName("ais.l")
-	public class238 field10654;
+	public Shader field10654;
 
 	@ObfuscatedName("ais.u")
-	public class1150 field10658;
+	public ProgramUniform field10658;
 
 	@ObfuscatedName("ais.z")
-	public class234[] field10659 = null;
+	public Program[] field10659 = null;
 
 	@ObfuscatedName("ais.p")
-	public class1150[] field10660 = null;
+	public ProgramUniform[] field10660 = null;
 
 	@ObfuscatedName("ais.d")
-	public class1150 field10661;
+	public ProgramUniform field10661;
 
 	@ObfuscatedName("ais.c")
-	public class1150 field10662;
+	public ProgramUniform field10662;
 
 	@ObfuscatedName("ais.r")
-	public class1150 field10657;
+	public ProgramUniform field10657;
 
 	@ObfuscatedName("ais.v")
 	public boolean field10664;
@@ -66,8 +66,8 @@ public class class924 extends class333 {
 		}
 		try {
 			this.field10658 = this.field10654.method4157("sceneTex");
-			this.field10659 = new class234[3];
-			this.field10660 = new class1150[3];
+			this.field10659 = new Program[3];
+			this.field10660 = new ProgramUniform[3];
 			if (this.field3242.field10125) {
 				this.field10659[0] = this.field10654.method4227("techRemap3D_1");
 				this.field10659[1] = this.field10654.method4227("techRemap3D_2");
@@ -124,7 +124,7 @@ public class class924 extends class333 {
 		int var15 = (int) var9;
 		int var16 = arg5 ? this.field3242.method2136().method1627() : var14;
 		int var17 = arg5 ? this.field3242.method2136().method1628() : var15;
-		class234 var18 = this.field10659[field10655 - 1];
+		Program var18 = this.field10659[field10655 - 1];
 		this.field10654.method4162(var18);
 		this.field10654.method4244();
 		this.field10654.method4169(this.field10661, field10656, field10663[0], field10663[1], field10663[2]);
@@ -132,7 +132,7 @@ public class class924 extends class333 {
 		Object var20 = null;
 		for (int var21 = 0; var21 < field10655; var21++) {
 			if (field10653[var21] != null) {
-				class1150 var22 = this.field10660[var21];
+				ProgramUniform var22 = this.field10660[var21];
 				BaseTexture var23 = field10653[var21].method15431();
 				this.field10654.method4252(var22, var21 + 1, var23);
 			}

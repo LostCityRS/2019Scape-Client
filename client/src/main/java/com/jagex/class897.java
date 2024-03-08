@@ -6,13 +6,13 @@ import deob.ObfuscatedName;
 public class class897 extends class285 {
 
 	@ObfuscatedName("ahv.i")
-	public class238 field10479;
+	public Shader field10479;
 
 	@ObfuscatedName("ahv.ak")
 	public final Matrix4x4 field10499 = new Matrix4x4();
 
 	@ObfuscatedName("ahv.an")
-	public final class234[] field10500 = new class234[19];
+	public final Program[] field10500 = new Program[19];
 
 	@ObfuscatedName("ahv.bf")
 	public final int[][] field10473 = new int[19][17];
@@ -28,23 +28,23 @@ public class class897 extends class285 {
 	@ObfuscatedName("ahv.a(I)Z")
 	public boolean method16619() throws class1108 {
 		this.field10479 = this.field2963.method15964("Model");
-		class1150 var1 = this.field10479.method4157("DiffuseSampler");
-		class1150 var2 = this.field10479.method4157("EnvironmentSampler");
-		class1150 var3 = this.field10479.method4157("PointLightsPosAndRadiusInv");
-		class1150 var4 = this.field10479.method4157("PointLightsDiffuseColour");
-		class1150 var5 = this.field10479.method4157("WVPMatrix");
-		class1150 var6 = this.field10479.method4157("TexCoordMatrix");
-		class1150 var7 = this.field10479.method4157("HeightFogPlane");
-		class1150 var8 = this.field10479.method4157("HeightFogColour");
-		class1150 var9 = this.field10479.method4157("DistanceFogPlane");
-		class1150 var10 = this.field10479.method4157("DistanceFogColour");
-		class1150 var11 = this.field10479.method4157("SunDir");
-		class1150 var12 = this.field10479.method4157("SunColour");
-		class1150 var13 = this.field10479.method4157("AntiSunColour");
-		class1150 var14 = this.field10479.method4157("AmbientColour");
-		class1150 var15 = this.field10479.method4157("EyePos");
-		class1150 var16 = this.field10479.method4157("SpecularExponent");
-		class1150 var17 = this.field10479.method4157("WorldMatrix");
+		ProgramUniform var1 = this.field10479.method4157("DiffuseSampler");
+		ProgramUniform var2 = this.field10479.method4157("EnvironmentSampler");
+		ProgramUniform var3 = this.field10479.method4157("PointLightsPosAndRadiusInv");
+		ProgramUniform var4 = this.field10479.method4157("PointLightsDiffuseColour");
+		ProgramUniform var5 = this.field10479.method4157("WVPMatrix");
+		ProgramUniform var6 = this.field10479.method4157("TexCoordMatrix");
+		ProgramUniform var7 = this.field10479.method4157("HeightFogPlane");
+		ProgramUniform var8 = this.field10479.method4157("HeightFogColour");
+		ProgramUniform var9 = this.field10479.method4157("DistanceFogPlane");
+		ProgramUniform var10 = this.field10479.method4157("DistanceFogColour");
+		ProgramUniform var11 = this.field10479.method4157("SunDir");
+		ProgramUniform var12 = this.field10479.method4157("SunColour");
+		ProgramUniform var13 = this.field10479.method4157("AntiSunColour");
+		ProgramUniform var14 = this.field10479.method4157("AmbientColour");
+		ProgramUniform var15 = this.field10479.method4157("EyePos");
+		ProgramUniform var16 = this.field10479.method4157("SpecularExponent");
+		ProgramUniform var17 = this.field10479.method4157("WorldMatrix");
 		this.field10500[0] = this.field10479.method4227("Unlit");
 		this.field10500[1] = this.field10479.method4227("Unlit_IgnoreAlpha");
 		this.field10500[17] = this.field10479.method4227("UnderwaterGround");

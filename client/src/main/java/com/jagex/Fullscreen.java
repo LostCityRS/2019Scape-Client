@@ -8,14 +8,14 @@ import java.awt.*;
 public final class Fullscreen {
 
 	@ObfuscatedName("aab.e")
-	public static boolean field8531 = true;
+	public static boolean allowed = true;
 
 	public Fullscreen() throws Throwable {
 		throw new Error();
 	}
 
 	@ObfuscatedName("vz.e(Laae;I)[Laal;")
-	public static class727[] method9554(class726 arg0) {
+	public static class727[] method9554(FullscreenImpl arg0) {
 		int[] var1 = arg0.method14465();
 		class727[] var2 = new class727[var1.length >> 2];
 		for (int var3 = 0; var3 < var2.length; var3++) {
@@ -30,7 +30,7 @@ public final class Fullscreen {
 	}
 
 	@ObfuscatedName("if.n(Laae;IIIII)Ljava/awt/Frame;")
-	public static Frame method4572(class726 arg0, int arg1, int arg2, int arg3, int arg4) {
+	public static Frame method4572(FullscreenImpl arg0, int arg1, int arg2, int arg3, int arg4) {
 		if (arg3 == 0) {
 			class727[] var5 = method9554(arg0);
 			if (var5 == null) {
@@ -54,7 +54,7 @@ public final class Fullscreen {
 	}
 
 	@ObfuscatedName("ho.m(Laae;Ljava/awt/Frame;I)V")
-	public static void method4277(class726 arg0, Frame arg1) {
+	public static void method4277(FullscreenImpl arg0, Frame arg1) {
 		arg0.method14467();
 		arg1.setVisible(false);
 		arg1.dispose();

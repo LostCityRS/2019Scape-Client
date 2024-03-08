@@ -12325,14 +12325,14 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("wy.alj(Lyf;I)V")
 	public static final void method9894(ClientScriptState arg0) {
-		if (Fullscreen.field8531 && Statics.field12101 != null) {
-			client.method13880(Statics.field688.field11542.method18539(), -1, -1, false);
+		if (Fullscreen.allowed && Statics.field12101 != null) {
+			client.setWindowMode(Statics.field688.field11542.method18539(), -1, -1, false);
 		}
 	}
 
 	@ObfuscatedName("acb.all(Lyf;I)V")
 	public static final void method14991(ClientScriptState arg0) {
-		if (Fullscreen.field8531) {
+		if (Fullscreen.allowed) {
 			class727[] var1 = client.method16741();
 			arg0.field8216[++arg0.field8226 - 1] = var1.length;
 		} else {
@@ -12344,7 +12344,7 @@ public final class ScriptRunner {
 	public static final void method2863(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		if (var1 >= 1 && var1 <= 2) {
-			client.method13880(var1, -1, -1, false);
+			client.setWindowMode(var1, -1, -1, false);
 		}
 	}
 
@@ -12409,8 +12409,8 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("eg.alt(Lyf;I)V")
 	public static final void method2838(ClientScriptState arg0) {
-		if (Fullscreen.field8531 && Statics.field12101 != null) {
-			client.method13880(Statics.field688.field11542.method18539(), -1, -1, false);
+		if (Fullscreen.allowed && Statics.field12101 != null) {
+			client.setWindowMode(Statics.field688.field11542.method18539(), -1, -1, false);
 		}
 		if (GameShell.method4419() == class506.field6580) {
 			client.method14147();
@@ -12434,8 +12434,8 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ud.alh(Lyf;I)V")
 	public static final void method9193(ClientScriptState arg0) {
-		if (Fullscreen.field8531 && Statics.field12101 != null) {
-			client.method13880(Statics.field688.field11542.method18539(), -1, -1, false);
+		if (Fullscreen.allowed && Statics.field12101 != null) {
+			client.setWindowMode(Statics.field688.field11542.method18539(), -1, -1, false);
 		}
 		String var1 = (String) arg0.field8218[--arg0.field8211];
 		boolean var2 = arg0.field8216[--arg0.field8226] == 1;

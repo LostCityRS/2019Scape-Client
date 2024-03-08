@@ -9,37 +9,37 @@ public class class1138 extends class916 {
 	public final class323 field12119;
 
 	@ObfuscatedName("aqw.aw")
-	public class1150 field12103;
+	public ProgramUniform field12103;
 
 	@ObfuscatedName("aqw.as")
-	public class1150 field12104;
+	public ProgramUniform field12104;
 
 	@ObfuscatedName("aqw.at")
-	public class234 field12105;
+	public Program field12105;
 
 	@ObfuscatedName("aqw.ad")
-	public class234 field12102;
+	public Program field12102;
 
 	@ObfuscatedName("aqw.am")
-	public class1150 field12107;
+	public ProgramUniform field12107;
 
 	@ObfuscatedName("aqw.au")
 	public final Matrix4x4 field12108 = new Matrix4x4();
 
 	@ObfuscatedName("aqw.ar")
-	public class1150 field12118;
+	public ProgramUniform field12118;
 
 	@ObfuscatedName("aqw.ap")
 	public final Matrix4x4 field12106 = new Matrix4x4();
 
 	@ObfuscatedName("aqw.aq")
-	public class1150 field12111;
+	public ProgramUniform field12111;
 
 	@ObfuscatedName("aqw.ax")
 	public final float[] field12112 = new float[4];
 
 	@ObfuscatedName("aqw.av")
-	public class1150 field12113;
+	public ProgramUniform field12113;
 
 	@ObfuscatedName("aqw.ao")
 	public final float[] field12114 = new float[4];

@@ -6,10 +6,10 @@ import deob.ObfuscatedName;
 public final class class903 extends class288 {
 
 	@ObfuscatedName("ahz.p")
-	public class238 field10532;
+	public Shader field10532;
 
 	@ObfuscatedName("ahz.g")
-	public final class234[] field10527 = new class234[3];
+	public final Program[] field10527 = new Program[3];
 
 	@ObfuscatedName("ahz.i")
 	public final int[][] field10533 = new int[3][7];
@@ -31,13 +31,13 @@ public final class class903 extends class288 {
 	@ObfuscatedName("ahz.u(B)Z")
 	public boolean method16651() throws class1108 {
 		this.field10532 = this.field3002.method15964("Sprite");
-		class1150 var1 = this.field10532.method4157("WVPMatrix");
-		class1150 var2 = this.field10532.method4157("SpriteSampler");
-		class1150 var3 = this.field10532.method4157("MaskSampler");
-		class1150 var4 = this.field10532.method4157("MulColour");
-		class1150 var5 = this.field10532.method4157("AddColour");
-		class1150 var6 = this.field10532.method4157("SpriteTexCoordMatrix");
-		class1150 var7 = this.field10532.method4157("MaskTexCoordMatrix");
+		ProgramUniform var1 = this.field10532.method4157("WVPMatrix");
+		ProgramUniform var2 = this.field10532.method4157("SpriteSampler");
+		ProgramUniform var3 = this.field10532.method4157("MaskSampler");
+		ProgramUniform var4 = this.field10532.method4157("MulColour");
+		ProgramUniform var5 = this.field10532.method4157("AddColour");
+		ProgramUniform var6 = this.field10532.method4157("SpriteTexCoordMatrix");
+		ProgramUniform var7 = this.field10532.method4157("MaskTexCoordMatrix");
 		this.field10527[0] = this.field10532.method4227("Normal");
 		this.field10527[1] = this.field10532.method4227("Masked");
 		this.field10527[2] = this.field10532.method4227("AlphaTex");

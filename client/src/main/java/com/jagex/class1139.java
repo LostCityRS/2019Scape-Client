@@ -12,25 +12,25 @@ public class class1139 extends class916 {
 	public final class323 field12122;
 
 	@ObfuscatedName("aqe.as")
-	public class1150 field12121;
+	public ProgramUniform field12121;
 
 	@ObfuscatedName("aqe.at")
-	public class1150 field12123;
+	public ProgramUniform field12123;
 
 	@ObfuscatedName("aqe.ad")
-	public class1150 field12125;
+	public ProgramUniform field12125;
 
 	@ObfuscatedName("aqe.am")
 	public final Matrix4x4 field12143 = new Matrix4x4();
 
 	@ObfuscatedName("aqe.au")
-	public class1150 field12126;
+	public ProgramUniform field12126;
 
 	@ObfuscatedName("aqe.ar")
 	public final Matrix4x4 field12127 = new Matrix4x4();
 
 	@ObfuscatedName("aqe.ap")
-	public class1150 field12141;
+	public ProgramUniform field12141;
 
 	@ObfuscatedName("aqe.aq")
 	public final Vector3 field12129 = new Vector3();
@@ -39,43 +39,43 @@ public class class1139 extends class916 {
 	public int field12147;
 
 	@ObfuscatedName("aqe.av")
-	public class1150 field12142;
+	public ProgramUniform field12142;
 
 	@ObfuscatedName("aqe.ao")
 	public final class415 field12132 = new class415();
 
 	@ObfuscatedName("aqe.aj")
-	public class1150 field12133;
+	public ProgramUniform field12133;
 
 	@ObfuscatedName("aqe.ay")
 	public final class415 field12134 = new class415();
 
 	@ObfuscatedName("aqe.ab")
-	public class1150 field12135;
+	public ProgramUniform field12135;
 
 	@ObfuscatedName("aqe.az")
 	public final class415 field12136 = new class415();
 
 	@ObfuscatedName("aqe.aa")
-	public class1150 field12137;
+	public ProgramUniform field12137;
 
 	@ObfuscatedName("aqe.af")
 	public final class415 field12138 = new class415();
 
 	@ObfuscatedName("aqe.ak")
-	public class1150 field12139;
+	public ProgramUniform field12139;
 
 	@ObfuscatedName("aqe.an")
 	public final Vector3 field12140 = new Vector3();
 
 	@ObfuscatedName("aqe.bf")
-	public class1150 field12151;
+	public ProgramUniform field12151;
 
 	@ObfuscatedName("aqe.bl")
 	public final class415 field12124 = new class415();
 
 	@ObfuscatedName("aqe.bk")
-	public class1150 field12149;
+	public ProgramUniform field12149;
 
 	@ObfuscatedName("aqe.bh")
 	public final Vector3 field12144 = new Vector3();
@@ -99,7 +99,7 @@ public class class1139 extends class916 {
 	public boolean field12150;
 
 	@ObfuscatedName("aqe.bq")
-	public class234 field12128;
+	public Program field12128;
 
 	public class1139(GpuRenderer arg0, class323 arg1, boolean arg2) throws class1108 {
 		super(arg0);

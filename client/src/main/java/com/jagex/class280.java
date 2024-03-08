@@ -443,7 +443,7 @@ public class class280 {
 					class576.method6971(class770.field8882);
 				}
 			}
-			client.method13880(Statics.field688.field11542.method18539(), -1, -1, false);
+			client.setWindowMode(Statics.field688.field11542.method18539(), -1, -1, false);
 			Statics.field7538.method6157(client.field10833);
 			class14.method7114(Statics.field8198);
 			class14.method5202(Statics.field8198, Statics.field10317);

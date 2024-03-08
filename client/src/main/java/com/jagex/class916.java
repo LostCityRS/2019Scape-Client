@@ -6,55 +6,55 @@ import deob.ObfuscatedName;
 public abstract class class916 extends class324 {
 
 	@ObfuscatedName("ahi.n")
-	public class238 field10587;
+	public Shader field10587;
 
 	@ObfuscatedName("ahi.m")
-	public class1150 field10604;
+	public ProgramUniform field10604;
 
 	@ObfuscatedName("ahi.k")
-	public class1150 field10607;
+	public ProgramUniform field10607;
 
 	@ObfuscatedName("ahi.f")
-	public class1150 field10586;
+	public ProgramUniform field10586;
 
 	@ObfuscatedName("ahi.w")
-	public class1150 field10605;
+	public ProgramUniform field10605;
 
 	@ObfuscatedName("ahi.l")
-	public class1150 field10588;
+	public ProgramUniform field10588;
 
 	@ObfuscatedName("ahi.u")
-	public class1150 field10600;
+	public ProgramUniform field10600;
 
 	@ObfuscatedName("ahi.z")
-	public class1150 field10590;
+	public ProgramUniform field10590;
 
 	@ObfuscatedName("ahi.p")
-	public class1150 field10591;
+	public ProgramUniform field10591;
 
 	@ObfuscatedName("ahi.d")
-	public class1150 field10592;
+	public ProgramUniform field10592;
 
 	@ObfuscatedName("ahi.c")
-	public class1150 field10593;
+	public ProgramUniform field10593;
 
 	@ObfuscatedName("ahi.r")
-	public class1150 field10594;
+	public ProgramUniform field10594;
 
 	@ObfuscatedName("ahi.v")
-	public class1150 field10595;
+	public ProgramUniform field10595;
 
 	@ObfuscatedName("ahi.o")
-	public class1150 field10598;
+	public ProgramUniform field10598;
 
 	@ObfuscatedName("ahi.s")
-	public class1150 field10597;
+	public ProgramUniform field10597;
 
 	@ObfuscatedName("ahi.y")
-	public class1150 field10589;
+	public ProgramUniform field10589;
 
 	@ObfuscatedName("ahi.q")
-	public class1150 field10585;
+	public ProgramUniform field10585;
 
 	@ObfuscatedName("ahi.ae")
 	public int field10596;
@@ -103,7 +103,7 @@ public abstract class class916 extends class324 {
 		this.field10594 = this.field10587.method4188("sunDirectionOS");
 		if (this.method16762()) {
 			if (this.field10587.method4163() == null) {
-				class234 var2 = this.field10587.method4217();
+				Program var2 = this.field10587.method4217();
 				if (var2 == null) {
 					throw new class1108(this.field10587.method4186() + "");
 				}

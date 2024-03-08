@@ -991,7 +991,7 @@ public class Statics {
 	public static File field6626;
 
 	@ObfuscatedName("sn.al")
-	public static class726 field6629;
+	public static FullscreenImpl field6629;
 
 	@ObfuscatedName("sh.qn")
 	public static int field6656;
@@ -4583,8 +4583,8 @@ public class Statics {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		if (Fullscreen.field8531) {
-			client.method13880(3, var1, var2, false);
+		if (Fullscreen.allowed) {
+			client.setWindowMode(3, var1, var2, false);
 			arg0.field8216[++arg0.field8226 - 1] = field12101 == null ? 0 : 1;
 		} else {
 			arg0.field8216[++arg0.field8226 - 1] = 0;
@@ -4594,7 +4594,7 @@ public class Statics {
 	@ObfuscatedName("wt.alg(Lyf;B)V")
 	public static final void method9842(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		if (Fullscreen.field8531) {
+		if (Fullscreen.allowed) {
 			class727[] var2 = client.method16741();
 			arg0.field8216[++arg0.field8226 - 1] = var2[var1].field8537;
 			arg0.field8216[++arg0.field8226 - 1] = var2[var1].field8538;
@@ -4609,7 +4609,7 @@ public class Statics {
 		int var1 = field8186;
 		int var2 = field9256;
 		int var3 = -1;
-		if (Fullscreen.field8531) {
+		if (Fullscreen.allowed) {
 			class727[] var4 = client.method16741();
 			for (int var5 = 0; var5 < var4.length; var5++) {
 				class727 var6 = var4[var5];
@@ -4624,7 +4624,7 @@ public class Statics {
 
 	@ObfuscatedName("qi.ale(Lyf;S)V")
 	public static final void method7273(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = client.method2845();
+		arg0.field8216[++arg0.field8226 - 1] = client.getWindowMode();
 	}
 
 	@ObfuscatedName("tk.kv(Lhf;III)V")

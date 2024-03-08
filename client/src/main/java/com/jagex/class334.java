@@ -138,13 +138,13 @@ public class class334 {
 		this.field3254 = this.field3247.method2121(this.field3249.method5718(), this.field3249.method5696());
 		int var1 = this.field3257.size();
 		for (int var2 = 0; var2 < var1; var2++) {
-			class333 var3 = (class333) this.field3257.elementAt(var2);
+			PostProcessEffect var3 = (PostProcessEffect) this.field3257.elementAt(var2);
 			var3.method5574(this.field3256, this.field3246);
 		}
 	}
 
 	@ObfuscatedName("ls.k(Llh;)Z")
-	public boolean method5599(class333 arg0) {
+	public boolean method5599(PostProcessEffect arg0) {
 		Vector var2 = new Vector();
 		boolean var3 = false;
 		for (int var4 = 0; var4 < this.field3257.size(); var4++) {
@@ -165,7 +165,7 @@ public class class334 {
 	}
 
 	@ObfuscatedName("ls.f(Ljava/util/Vector;ILlh;)Z")
-	public boolean method5604(Vector arg0, int arg1, class333 arg2) {
+	public boolean method5604(Vector arg0, int arg1, PostProcessEffect arg2) {
 		if (!arg2.method5559() && !arg2.method5572()) {
 			return false;
 		}
@@ -180,22 +180,22 @@ public class class334 {
 	}
 
 	@ObfuscatedName("ls.w(Llh;)V")
-	public void method5606(class333 arg0) {
+	public void method5606(PostProcessEffect arg0) {
 		arg0.method5562();
 		arg0.field3243 = false;
 		this.field3257.removeElement(arg0);
 	}
 
 	@ObfuscatedName("ls.l(I)Llh;")
-	public class333 method5633(int arg0) {
-		return (class333) this.field3257.elementAt(arg0);
+	public PostProcessEffect method5633(int arg0) {
+		return (PostProcessEffect) this.field3257.elementAt(arg0);
 	}
 
 	@ObfuscatedName("ls.u()Z")
 	public boolean method5603() {
 		int var1 = this.field3257.size();
 		for (int var2 = 0; var2 < var1; var2++) {
-			if (!((class333) this.field3257.elementAt(var2)).method5571()) {
+			if (!((PostProcessEffect) this.field3257.elementAt(var2)).method5571()) {
 				return false;
 			}
 		}
@@ -264,10 +264,10 @@ public class class334 {
 		int var3 = this.field3257.size();
 		Vector var4 = this.field3257;
 		for (int var5 = 0; var5 < var3; var5++) {
-			if (((class333) this.field3257.elementAt(var5)).method5571()) {
+			if (((PostProcessEffect) this.field3257.elementAt(var5)).method5571()) {
 				var4 = new Vector();
 				for (int var6 = 0; var6 < var3; var6++) {
-					if (!((class333) this.field3257.elementAt(var6)).method5571()) {
+					if (!((PostProcessEffect) this.field3257.elementAt(var6)).method5571()) {
 						var4.addElement(this.field3257.elementAt(var6));
 					}
 				}
@@ -277,7 +277,7 @@ public class class334 {
 		}
 		this.field3249.method5708();
 		for (int var7 = 0; var7 < var3; var7++) {
-			class333 var8 = (class333) var4.elementAt(var7);
+			PostProcessEffect var8 = (PostProcessEffect) var4.elementAt(var7);
 			int var9 = var8.method5566();
 			boolean var10 = var3 - 1 == var7;
 			boolean var11 = false;
@@ -356,7 +356,7 @@ public class class334 {
 		}
 		int var1 = this.field3257.size();
 		for (int var2 = 0; var2 < var1; var2++) {
-			class333 var3 = (class333) this.field3257.elementAt(var2);
+			PostProcessEffect var3 = (PostProcessEffect) this.field3257.elementAt(var2);
 			var3.method5562();
 		}
 	}

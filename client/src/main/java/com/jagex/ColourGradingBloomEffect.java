@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aii")
-public class class922 extends class333 {
+public class ColourGradingBloomEffect extends PostProcessEffect {
 
 	@ObfuscatedName("aii.k")
 	public static float field10623 = 0.25F;
@@ -18,45 +18,45 @@ public class class922 extends class333 {
 	public static float field10626 = 1.0F;
 
 	@ObfuscatedName("aii.u")
-	public class238 field10627;
+	public Shader field10627;
 
 	@ObfuscatedName("aii.z")
-	public class234 field10628;
+	public Program field10628;
 
 	@ObfuscatedName("aii.p")
-	public class234 field10632;
+	public Program field10632;
 
 	@ObfuscatedName("aii.d")
-	public class234 field10622;
+	public Program field10622;
 
 	@ObfuscatedName("aii.c")
-	public class234 field10631;
+	public Program field10631;
 
 	@ObfuscatedName("aii.r")
-	public class234 field10637;
+	public Program field10637;
 
 	@ObfuscatedName("aii.v")
-	public class1150 field10633;
+	public ProgramUniform field10633;
 
 	@ObfuscatedName("aii.o")
-	public class1150 field10634;
+	public ProgramUniform field10634;
 
 	@ObfuscatedName("aii.s")
-	public class1150 field10630;
+	public ProgramUniform field10630;
 
 	@ObfuscatedName("aii.y")
-	public class1150 field10636;
+	public ProgramUniform field10636;
 
 	@ObfuscatedName("aii.q")
-	public class1150 field10629;
+	public ProgramUniform field10629;
 
 	@ObfuscatedName("aii.x")
-	public class1150 field10635;
+	public ProgramUniform field10635;
 
 	@ObfuscatedName("aii.b")
 	public boolean field10639;
 
-	public class922(GpuRenderer arg0) {
+	public ColourGradingBloomEffect(GpuRenderer arg0) {
 		super(arg0);
 	}
 

@@ -5,7 +5,7 @@ import jagdx.IDirect3DDevice;
 import jagdx.IUnknown;
 
 @ObfuscatedName("agt")
-public final class class887 extends class234 {
+public final class class887 extends Program {
 
 	@ObfuscatedName("agt.k")
 	public class889 field10363;
@@ -79,11 +79,11 @@ public final class class887 extends class234 {
 		int var3 = this.field10363.method4189();
 		int var4 = this.field10363.method4190();
 		for (int var5 = 0; var5 < var3; var5++) {
-			class1150 var6 = this.field10363.method4160(var5);
+			ProgramUniform var6 = this.field10363.method4160(var5);
 			var6.method19245(var1);
 		}
 		for (int var7 = 0; var7 < var4; var7++) {
-			class1150 var8 = this.field10363.method4187(var7);
+			ProgramUniform var8 = this.field10363.method4187(var7);
 			var8.method19245(var1);
 		}
 		int var9 = 0;
@@ -144,7 +144,7 @@ public final class class887 extends class234 {
 	}
 
 	@ObfuscatedName("agt.k(Laql;F)V")
-	public void method4084(class1150 arg0, float arg1) {
+	public void method4084(ProgramUniform arg0, float arg1) {
 		int var3 = ((class1220) arg0).method19676();
 		int var4 = ((class1220) arg0).method19677();
 		if (arg0.method19247() != class236.field2525 && arg0.method19247() != class236.field2509) {
@@ -163,7 +163,7 @@ public final class class887 extends class234 {
 	}
 
 	@ObfuscatedName("agt.f(Laql;FF)V")
-	public void method4085(class1150 arg0, float arg1, float arg2) {
+	public void method4085(ProgramUniform arg0, float arg1, float arg2) {
 		int var4 = ((class1220) arg0).method19676();
 		int var5 = ((class1220) arg0).method19677();
 		if (arg0.method19247() != class236.field2495) {
@@ -184,7 +184,7 @@ public final class class887 extends class234 {
 	}
 
 	@ObfuscatedName("agt.w(Laql;FFF)V")
-	public void method4108(class1150 arg0, float arg1, float arg2, float arg3) {
+	public void method4108(ProgramUniform arg0, float arg1, float arg2, float arg3) {
 		int var5 = ((class1220) arg0).method19676();
 		int var6 = ((class1220) arg0).method19677();
 		if (arg0.method19247() != class236.field2540) {
@@ -208,7 +208,7 @@ public final class class887 extends class234 {
 	}
 
 	@ObfuscatedName("agt.l(Laql;FFFF)V")
-	public void method4087(class1150 arg0, float arg1, float arg2, float arg3, float arg4) {
+	public void method4087(ProgramUniform arg0, float arg1, float arg2, float arg3, float arg4) {
 		int var6 = ((class1220) arg0).method19676();
 		int var7 = ((class1220) arg0).method19677();
 		if (arg0.method19247() != class236.field2466) {
@@ -234,7 +234,7 @@ public final class class887 extends class234 {
 	}
 
 	@ObfuscatedName("agt.p(Laql;Lpq;)V")
-	public void method4089(class1150 arg0, Matrix4x4 arg1) {
+	public void method4089(ProgramUniform arg0, Matrix4x4 arg1) {
 		int var3 = ((class1220) arg0).method19676();
 		int var4 = ((class1220) arg0).method19677();
 		if (arg0.method19247() != class236.field2480) {
@@ -249,7 +249,7 @@ public final class class887 extends class234 {
 	}
 
 	@ObfuscatedName("agt.d(Laql;Lpq;)V")
-	public void method4101(class1150 arg0, Matrix4x4 arg1) {
+	public void method4101(ProgramUniform arg0, Matrix4x4 arg1) {
 		int var3 = ((class1220) arg0).method19676();
 		int var4 = ((class1220) arg0).method19677();
 		if (arg0.method19247() != class236.field2482) {
@@ -264,7 +264,7 @@ public final class class887 extends class234 {
 	}
 
 	@ObfuscatedName("agt.z(Laql;[FI)V")
-	public void method4086(class1150 arg0, float[] arg1, int arg2) {
+	public void method4086(ProgramUniform arg0, float[] arg1, int arg2) {
 		int var4 = ((class1220) arg0).method19676();
 		int var5 = ((class1220) arg0).method19677();
 		if (arg0.method19247() != class236.field2441) {
@@ -279,7 +279,7 @@ public final class class887 extends class234 {
 	}
 
 	@ObfuscatedName("agt.c(Laql;ILmq;)V")
-	public void method4081(class1150 arg0, int arg1, BaseTexture arg2) {
+	public void method4081(ProgramUniform arg0, int arg1, BaseTexture arg2) {
 		this.field10365.method16038(arg1);
 		this.field10365.method16092(arg2);
 	}

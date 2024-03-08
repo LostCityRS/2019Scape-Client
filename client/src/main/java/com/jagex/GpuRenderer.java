@@ -366,7 +366,7 @@ public abstract class GpuRenderer extends Renderer {
 	public class334 field10155;
 
 	@ObfuscatedName("afc.fi")
-	public final class333[] field10080 = new class333[4];
+	public final PostProcessEffect[] field10080 = new PostProcessEffect[4];
 
 	@ObfuscatedName("afc.ft")
 	public class846 field10161;
@@ -701,7 +701,7 @@ public abstract class GpuRenderer extends Renderer {
 				var3 = this.field1614.method1628();
 			}
 			this.field10155 = new class334(this, var2, var3);
-			this.field10080[3] = new class922(this);
+			this.field10080[3] = new ColourGradingBloomEffect(this);
 			this.field10080[1] = new class923(this);
 			this.field10080[2] = new class924(this);
 			if (this.field10080[3].method5558()) {
@@ -1171,10 +1171,10 @@ public abstract class GpuRenderer extends Renderer {
 
 	@ObfuscatedName("afc.es(FFFFFF)V")
 	public final void method2244(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5) {
-		class922.field10625 = arg0;
-		class922.field10624 = arg1;
-		class922.field10623 = arg2;
-		class922.field10626 = arg5;
+		ColourGradingBloomEffect.field10625 = arg0;
+		ColourGradingBloomEffect.field10624 = arg1;
+		ColourGradingBloomEffect.field10623 = arg2;
+		ColourGradingBloomEffect.field10626 = arg5;
 	}
 
 	@ObfuscatedName("afc.cp(I)Lakz;")
@@ -2392,7 +2392,7 @@ public abstract class GpuRenderer extends Renderer {
 	public abstract boolean method15959(boolean arg0);
 
 	@ObfuscatedName("afc.rc(Ljava/lang/String;)Lho;")
-	public abstract class238 method15964(String arg0);
+	public abstract Shader method15964(String arg0);
 
 	@ObfuscatedName("afc.rn(Lpq;Lpq;Lpq;)V")
 	public abstract void method15967(Matrix4x4 arg0, Matrix4x4 arg1, Matrix4x4 arg2);

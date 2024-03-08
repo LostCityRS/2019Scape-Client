@@ -29,6 +29,7 @@ public final class client extends GameShell {
     public static final boolean ENABLE_HOST_CHECK = false;
     public static final boolean ENABLE_ISAAC = false;
 	public static final boolean ENABLE_TINYENC = false;
+	public static final boolean ALLOW_COMMANDS_ANYWHERE = true;
 
 	@ObfuscatedName("client.bv")
 	public static ModeGame field10768 = null;
@@ -1564,7 +1565,7 @@ public final class client extends GameShell {
 		field10795 = GameShell.method8660() / 1000000L;
 		if (Statics.method16436(state)) {
 			if (field10937 != 0L && class213.method3655() > field10937) {
-				method13880(method2845(), -1, -1, false);
+				setWindowMode(getWindowMode(), -1, -1, false);
 			} else if (!Statics.field8198.method2123() && field6606) {
 				method15024();
 			}
@@ -1572,8 +1573,8 @@ public final class client extends GameShell {
 		if (Statics.field12101 == null) {
 			method3033();
 		}
-		if (Fullscreen.field8531 && Statics.field12101 != null && !Statics.field8491 && Statics.method16436(state)) {
-			method13880(Statics.field688.field11542.method18539(), -1, -1, false);
+		if (Fullscreen.allowed && Statics.field12101 != null && !Statics.field8491 && Statics.method16436(state)) {
+			setWindowMode(Statics.field688.field11542.method18539(), -1, -1, false);
 		}
 		boolean var3 = false;
 		if (field6599) {
@@ -1583,7 +1584,7 @@ public final class client extends GameShell {
 		if (var3) {
 			method8024();
 		}
-		if (Statics.field8198 != null && Statics.field8198.method2123() || method2845() != 1) {
+		if (Statics.field8198 != null && Statics.field8198.method2123() || getWindowMode() != 1) {
 			method9734();
 		}
 		if (Statics.method2092(state)) {
@@ -1674,7 +1675,7 @@ public final class client extends GameShell {
 		if (Statics.field8198 != null) {
 			Statics.field8198.method2578();
 		}
-		if (Fullscreen.field8531 && Statics.field12101 != null) {
+		if (Fullscreen.allowed && Statics.field12101 != null) {
 			Fullscreen.method4277(Statics.field6629, Statics.field12101);
 			Statics.field12101 = null;
 		}
@@ -1720,7 +1721,7 @@ public final class client extends GameShell {
 			} else {
 				var1 = var1 + Statics.field4826 + TextUtil.COMMA + (var2.field7426 + Statics.field4490.field10450[0]) + TextUtil.COMMA + (var2.field7427 + Statics.field4490.field10448[0]) + " ";
 			}
-			var1 = var1 + Statics.field688.field11540.method18545() + " " + Statics.field688.field11537.method18639() + " " + method2845() + " " + Statics.field6586 + TextUtil.COMMA + Statics.field6600 + " ";
+			var1 = var1 + Statics.field688.field11540.method18545() + " " + Statics.field688.field11537.method18639() + " " + getWindowMode() + " " + Statics.field6586 + TextUtil.COMMA + Statics.field6600 + " ";
 			var1 = var1 + Statics.field688.field11528.method18389() + " ";
 			var1 = var1 + Statics.field688.field11529.method18515() + " ";
 			var1 = var1 + Statics.field688.field11541.method18522() + " ";
@@ -2280,8 +2281,8 @@ public final class client extends GameShell {
 	}
 
 	@ObfuscatedName("ez.fm(I)I")
-	public static int method2845() {
-		if (Fullscreen.field8531 && Statics.field12101 != null) {
+	public static int getWindowMode() {
+		if (Fullscreen.allowed && Statics.field12101 != null) {
 			return 3;
 		} else if (field10960) {
 			return 2;
@@ -2291,9 +2292,9 @@ public final class client extends GameShell {
 	}
 
 	@ObfuscatedName("zt.fu(IIIZB)V")
-	public static void method13880(int arg0, int arg1, int arg2, boolean arg3) {
+	public static void setWindowMode(int arg0, int arg1, int arg2, boolean arg3) {
 		field10937 = 0L;
-		int var4 = method2845();
+		int var4 = getWindowMode();
 		if (arg0 == 3 || var4 == 3) {
 			arg3 = true;
 		}
@@ -2305,11 +2306,11 @@ public final class client extends GameShell {
 
 	@ObfuscatedName("ym.fs(IIIIZB)V")
 	public static void method13784(int arg0, int arg1, int arg2, int arg3, boolean arg4) {
-		if (Fullscreen.field8531 && Statics.field12101 != null && (arg1 != 3 || Statics.field8186 != arg2 || Statics.field9256 != arg3)) {
+		if (Fullscreen.allowed && Statics.field12101 != null && (arg1 != 3 || Statics.field8186 != arg2 || Statics.field9256 != arg3)) {
 			Fullscreen.method4277(Statics.field6629, Statics.field12101);
 			Statics.field12101 = null;
 		}
-		if (Fullscreen.field8531 && arg1 == 3 && Statics.field12101 == null) {
+		if (Fullscreen.allowed && arg1 == 3 && Statics.field12101 == null) {
 			Statics.field12101 = Fullscreen.method4572(Statics.field6629, arg2, arg3, 0, 0);
 			if (Statics.field12101 != null) {
 				Statics.field8186 = arg2;
@@ -2317,7 +2318,7 @@ public final class client extends GameShell {
 				class48.method16391();
 			}
 		}
-		if (arg1 == 3 && (!Fullscreen.field8531 || Statics.field12101 == null)) {
+		if (arg1 == 3 && (!Fullscreen.allowed || Statics.field12101 == null)) {
 			method13784(arg0, Statics.field688.field11542.method18539(), -1, -1, true);
 			return;
 		}
@@ -2384,7 +2385,7 @@ public final class client extends GameShell {
 	@ObfuscatedName("ij.fz(Lax;B)V")
 	public static void method4336(class49 arg0) {
 		ClientMessage var1 = Statics.method1604(ClientProt.WINDOW_STATUS, arg0.field794);
-		var1.field11432.p1(method2845());
+		var1.field11432.p1(getWindowMode());
 		var1.field11432.p2(Statics.field6586);
 		var1.field11432.p2(Statics.field6600);
 		var1.field11432.p1(Statics.field688.field11516.method18639());
@@ -2434,7 +2435,7 @@ public final class client extends GameShell {
 					if (Statics.field4827 <= 0) {
 						Statics.field4827 = 1;
 					}
-					if (method2845() == 1) {
+					if (getWindowMode() == 1) {
 						Statics.field6586 = field10941;
 						field6596 = (Statics.field6593 - field10941) / 2;
 						Statics.field6600 = field10942;
@@ -2477,7 +2478,7 @@ public final class client extends GameShell {
 		}
 		try {
 			if (Statics.field688 != null) {
-				class394.field4027.method6089(new Object[] { var0, var1, method2845(), Statics.field688.field11539.method18581() });
+				class394.field4027.method6089(new Object[] { var0, var1, getWindowMode(), Statics.field688.field11539.method18581() });
 			}
 		} catch (Throwable var3) {
 		}
@@ -7138,8 +7139,8 @@ public final class client extends GameShell {
 			arg0.field796 = null;
 			return true;
 		} else if (ServerProt.URL_OPEN == arg0.field796) {
-			if (Fullscreen.field8531 && Statics.field12101 != null) {
-				method13880(Statics.field688.field11542.method18539(), -1, -1, false);
+			if (Fullscreen.allowed && Statics.field12101 != null) {
+				setWindowMode(Statics.field688.field11542.method18539(), -1, -1, false);
 			}
 			byte[] var22 = new byte[arg0.field797 - 1];
 			boolean var23 = var2.g1() == 1;
@@ -8064,8 +8065,8 @@ public final class client extends GameShell {
 			arg0.field796 = null;
 			return true;
 		} else if (ServerProt.SOCIAL_NETWORK_LOGOUT == arg0.field796) {
-			if (Fullscreen.field8531 && Statics.field12101 != null) {
-				method13880(Statics.field688.field11542.method18539(), -1, -1, false);
+			if (Fullscreen.allowed && Statics.field12101 != null) {
+				setWindowMode(Statics.field688.field11542.method18539(), -1, -1, false);
 			}
 			byte[] var260 = new byte[arg0.field797];
 			var2.method19561(var260, 0, arg0.field797);

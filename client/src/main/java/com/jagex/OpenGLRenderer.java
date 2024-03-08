@@ -142,7 +142,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.rc(Ljava/lang/String;)Lho;")
-	public class238 method15964(String arg0) {
+	public Shader method15964(String arg0) {
 		byte[] var2 = this.method19089(arg0);
 		if (var2 == null) {
 			return null;

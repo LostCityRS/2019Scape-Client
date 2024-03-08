@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
 @ObfuscatedName("ago")
-public class class890 extends class238 {
+public class class890 extends Shader {
 
 	@ObfuscatedName("ago.z")
 	public final OpenGLRenderer field10390;
@@ -21,12 +21,12 @@ public class class890 extends class238 {
 	}
 
 	@ObfuscatedName("ago.f(Lafc;Lhn;)Lhi;")
-	public class234 method4156(GpuRenderer arg0, class233 arg1) {
+	public Program method4156(GpuRenderer arg0, class233 arg1) {
 		return new OpenGLProgram((OpenGLRenderer) arg0, this, arg1);
 	}
 
 	@ObfuscatedName("ago.d(Lhi;)Z")
-	public boolean method4162(class234 arg0) {
+	public boolean method4162(Program arg0) {
 		if (this.field10391 == arg0) {
 			return true;
 		} else if (arg0.method4083()) {
@@ -48,7 +48,7 @@ public class class890 extends class238 {
 	}
 
 	@ObfuscatedName("ago.v(Lhv;)Laql;")
-	public class1150 method4165(class240 arg0) {
+	public ProgramUniform method4165(class240 arg0) {
 		return new class1221(this, arg0);
 	}
 

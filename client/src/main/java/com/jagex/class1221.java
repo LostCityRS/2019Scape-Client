@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
 @ObfuscatedName("atr")
-public class class1221 extends class1150 {
+public class class1221 extends ProgramUniform {
 
 	@ObfuscatedName("atr.d")
 	public class890 field12535;

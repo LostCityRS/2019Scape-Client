@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("agc")
-public final class class889 extends class238 {
+public final class class889 extends Shader {
 
 	@ObfuscatedName("agc.z")
 	public final Direct3DRenderer field10388;
@@ -21,12 +21,12 @@ public final class class889 extends class238 {
 	}
 
 	@ObfuscatedName("agc.f(Lafc;Lhn;)Lhi;")
-	public class234 method4156(GpuRenderer arg0, class233 arg1) {
+	public Program method4156(GpuRenderer arg0, class233 arg1) {
 		return new class887((Direct3DRenderer) arg0, this, arg1);
 	}
 
 	@ObfuscatedName("agc.d(Lhi;)Z")
-	public boolean method4162(class234 arg0) {
+	public boolean method4162(Program arg0) {
 		if (this.field10389 == arg0) {
 			return true;
 		} else if (arg0.method4083()) {
@@ -47,7 +47,7 @@ public final class class889 extends class238 {
 	}
 
 	@ObfuscatedName("agc.v(Lhv;)Laql;")
-	public class1150 method4165(class240 arg0) {
+	public ProgramUniform method4165(class240 arg0) {
 		return new class1220(this, arg0);
 	}
 

@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @ObfuscatedName("agl")
-public class OpenGLProgram extends class234 {
+public class OpenGLProgram extends Program {
 
 	@ObfuscatedName("agl.l")
 	public OpenGLRenderer field10371;
@@ -170,13 +170,13 @@ public class OpenGLProgram extends class234 {
 			return false;
 		}
 		for (int var3 = 0; var3 < this.field10385.method4189(); var3++) {
-			class1150 var4 = this.field10385.method4160(var3);
+			ProgramUniform var4 = this.field10385.method4160(var3);
 			if (var4 != null) {
 				var4.method19245(var1);
 			}
 		}
 		for (int var5 = 0; var5 < this.field10385.method4190(); var5++) {
-			class1150 var6 = this.field10385.method4187(var5);
+			ProgramUniform var6 = this.field10385.method4187(var5);
 			if (var6 != null) {
 				var6.method19245(var1);
 			}
@@ -188,7 +188,7 @@ public class OpenGLProgram extends class234 {
 	}
 
 	@ObfuscatedName("agl.k(Laql;F)V")
-	public void method4084(class1150 arg0, float arg1) {
+	public void method4084(ProgramUniform arg0, float arg1) {
 		int var3 = ((class1221) arg0).method19681();
 		if (var3 == -1 || this.field10368.get(var3) != null && (Float) this.field10368.get(var3) == arg1) {
 			return;
@@ -201,7 +201,7 @@ public class OpenGLProgram extends class234 {
 	}
 
 	@ObfuscatedName("agl.f(Laql;FF)V")
-	public void method4085(class1150 arg0, float arg1, float arg2) {
+	public void method4085(ProgramUniform arg0, float arg1, float arg2) {
 		int var4 = ((class1221) arg0).method19681();
 		if (var4 == -1 || this.field10368.get(var4) != null && this.field10381.get(var4) != null && (Float) this.field10368.get(var4) == arg1 && (Float) this.field10381.get(var4) == arg2) {
 			return;
@@ -215,7 +215,7 @@ public class OpenGLProgram extends class234 {
 	}
 
 	@ObfuscatedName("agl.w(Laql;FFF)V")
-	public void method4108(class1150 arg0, float arg1, float arg2, float arg3) {
+	public void method4108(ProgramUniform arg0, float arg1, float arg2, float arg3) {
 		int var5 = ((class1221) arg0).method19681();
 		if (var5 == -1 || this.field10368.get(var5) != null && this.field10381.get(var5) != null && this.field10383.get(var5) != null && (Float) this.field10368.get(var5) == arg1 && (Float) this.field10381.get(var5) == arg2 && (Float) this.field10383.get(var5) == arg3) {
 			return;
@@ -230,7 +230,7 @@ public class OpenGLProgram extends class234 {
 	}
 
 	@ObfuscatedName("agl.l(Laql;FFFF)V")
-	public void method4087(class1150 arg0, float arg1, float arg2, float arg3, float arg4) {
+	public void method4087(ProgramUniform arg0, float arg1, float arg2, float arg3, float arg4) {
 		int var6 = ((class1221) arg0).method19681();
 		if (var6 == -1 || this.field10368.get(var6) != null && this.field10381.get(var6) != null && this.field10383.get(var6) != null && this.field10382.get(var6) != null && (Float) this.field10368.get(var6) == arg1 && (Float) this.field10381.get(var6) == arg2 && (Float) this.field10383.get(var6) == arg3 && (Float) this.field10382.get(var6) == arg4) {
 			return;
@@ -246,7 +246,7 @@ public class OpenGLProgram extends class234 {
 	}
 
 	@ObfuscatedName("agl.z(Laql;[FI)V")
-	public void method4086(class1150 arg0, float[] arg1, int arg2) {
+	public void method4086(ProgramUniform arg0, float[] arg1, int arg2) {
 		int var4 = ((class1221) arg0).method19681();
 		if (var4 != -1) {
 			OpenGL.glUniform4fv(var4, arg2, arg1, 0);
@@ -254,7 +254,7 @@ public class OpenGLProgram extends class234 {
 	}
 
 	@ObfuscatedName("agl.p(Laql;Lpq;)V")
-	public void method4089(class1150 arg0, Matrix4x4 arg1) {
+	public void method4089(ProgramUniform arg0, Matrix4x4 arg1) {
 		assert arg0.method19247() == class236.field2480;
 		int var3 = ((class1221) arg0).method19681();
 		if (var3 != -1) {
@@ -263,7 +263,7 @@ public class OpenGLProgram extends class234 {
 	}
 
 	@ObfuscatedName("agl.d(Laql;Lpq;)V")
-	public void method4101(class1150 arg0, Matrix4x4 arg1) {
+	public void method4101(ProgramUniform arg0, Matrix4x4 arg1) {
 		assert arg0.method19247() == class236.field2482;
 		int var3 = ((class1221) arg0).method19681();
 		if (var3 != -1) {
@@ -272,7 +272,7 @@ public class OpenGLProgram extends class234 {
 	}
 
 	@ObfuscatedName("agl.c(Laql;ILmq;)V")
-	public void method4081(class1150 arg0, int arg1, BaseTexture arg2) {
+	public void method4081(ProgramUniform arg0, int arg1, BaseTexture arg2) {
 		int var4 = ((class1221) arg0).method19681();
 		if (var4 == -1) {
 			return;

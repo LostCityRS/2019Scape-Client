@@ -206,9 +206,9 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			Statics.field7422[var19] = new BufferedFile(new FileOnDisk(class510.method18852("main_file_cache.idx" + var19), "rw", 1048576L), 6000, 0);
 		}
 		try {
-			Statics.field6629 = new class726();
+			Statics.field6629 = new FullscreenImpl();
 		} catch (Exception var26) {
-			Fullscreen.field8531 = false;
+			Fullscreen.allowed = false;
 		}
 		Statics.field1880 = new class508();
 		ThreadGroup var21 = Thread.currentThread().getThreadGroup();

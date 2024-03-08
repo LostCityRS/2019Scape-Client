@@ -320,11 +320,11 @@ public class DeveloperConsole {
 			method4285(LocalisedText.field9061.method15021(Statics.field1680));
 			return;
 		}
-		if (Statics.field1811 != ModeWhere.field8273 || client.field10949 >= 2) {
+		if (Statics.field1811 != ModeWhere.field8273 || client.field10949 >= 2 || client.ALLOW_COMMANDS_ANYWHERE) {
 			try {
 				if (arg0.equalsIgnoreCase("wm1")) {
-					client.method13880(1, -1, -1, false);
-					if (client.method2845() == 1) {
+					client.setWindowMode(1, -1, -1, false);
+					if (client.getWindowMode() == 1) {
 						method4285("Success");
 					} else {
 						method4285("Failure");
@@ -332,17 +332,17 @@ public class DeveloperConsole {
 					return;
 				}
 				if (arg0.equalsIgnoreCase("wm2")) {
-					client.method13880(2, -1, -1, false);
-					if (client.method2845() == 2) {
+					client.setWindowMode(2, -1, -1, false);
+					if (client.getWindowMode() == 2) {
 						method4285("Success");
 					} else {
 						method4285("Failure");
 					}
 					return;
 				}
-				if (Fullscreen.field8531 && arg0.equalsIgnoreCase("wm3")) {
-					client.method13880(3, 1024, 768, false);
-					if (client.method2845() == 3) {
+				if (Fullscreen.allowed && arg0.equalsIgnoreCase("wm3")) {
+					client.setWindowMode(3, 1024, 768, false);
+					if (client.getWindowMode() == 3) {
 						method4285("Success");
 					} else {
 						method4285("Failure");
@@ -523,12 +523,13 @@ public class DeveloperConsole {
 					var31.field11432.pjstr(arg0);
 					var30.method934(var31);
 				}
-			} catch (Exception var36) {
+			} catch (Exception ex) {
+				ex.printStackTrace();
 				method4285(LocalisedText.field9061.method15021(Statics.field1680));
 				return;
 			}
 		}
-		if (client.state != 18 && client.state != 13) {
+		if (client.state != 18 && client.state != 13 && !client.ALLOW_COMMANDS_ANYWHERE) {
 			method4285(LocalisedText.field8949.method15021(Statics.field1680) + arg0);
 		}
 	}
