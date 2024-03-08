@@ -50,18 +50,18 @@ public class class36 implements class147, class151, class644 {
 	}
 
 	@ObfuscatedName("ah.w(Lqe;II)Lec;")
-	public class149 method695(VarDomainType arg0, int arg1) {
-		return VarDomainType.PLAYER == arg0 ? (class149) this.field633.get(arg1) : null;
+	public VarType method695(VarDomainType arg0, int arg1) {
+		return VarDomainType.PLAYER == arg0 ? (VarType) this.field633.get(arg1) : null;
 	}
 
 	@ObfuscatedName("ah.l(IB)Lkh;")
 	public VarBitType method694(int arg0) {
 		VarBitType var2 = (VarBitType) this.field634.get(arg0);
-		return VarDomainType.PLAYER == var2.baseVar.field1702 ? var2 : null;
+		return VarDomainType.PLAYER == var2.baseVar.domain ? var2 : null;
 	}
 
 	@ObfuscatedName("ah.u(Lec;I)I")
-	public int method679(class149 arg0) {
+	public int method679(VarType arg0) {
 		return this.field632.method679(arg0);
 	}
 

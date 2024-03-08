@@ -14,7 +14,7 @@ public class class806 extends VarTypeList implements ConfigTypeList {
 	public final WeightedCache field9254 = new WeightedCache(64);
 
 	public class806(ModeGame arg0, VarDomainType arg1, Language arg2, Js5 arg3) {
-		super(arg0, arg1, arg2, arg3 == null ? 0 : arg3.method6897(arg1.method7218().id));
+		super(arg0, arg1, arg2, arg3 == null ? 0 : arg3.method6897(arg1.getJs5GroupID().id));
 		this.field9255 = arg3;
 	}
 
@@ -22,7 +22,7 @@ public class class806 extends VarTypeList implements ConfigTypeList {
 	public ConfigType get(int arg0) {
 		WeightedCache var2 = this.field9254;
 		synchronized (this.field9254) {
-			class859 var3 = (class859) this.field9254.method2930((long) arg0);
+			VarPlayerType var3 = (VarPlayerType) this.field9254.method2930((long) arg0);
 			if (var3 == null) {
 				var3 = this.method15255(arg0);
 				this.field9254.method2921(var3, (long) arg0);
@@ -32,9 +32,9 @@ public class class806 extends VarTypeList implements ConfigTypeList {
 	}
 
 	@ObfuscatedName("adj.r(II)Laff;")
-	public class859 method15255(int arg0) {
-		byte[] var2 = this.field9255.method6879(this.field9260.method7218().id, arg0);
-		class859 var3 = new class859(this.field9260, arg0);
+	public VarPlayerType method15255(int arg0) {
+		byte[] var2 = this.field9255.method6879(this.field9260.getJs5GroupID().id, arg0);
+		VarPlayerType var3 = new VarPlayerType(this.field9260, arg0);
 		if (var2 != null) {
 			var3.decode(new Packet(var2));
 		}

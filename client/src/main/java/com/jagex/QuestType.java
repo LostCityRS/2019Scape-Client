@@ -222,7 +222,7 @@ public class QuestType implements ConfigType {
 	public boolean method4429(class147 arg0) {
 		if (this.field2632 != null) {
 			for (int var2 = 0; var2 < this.field2632.length; var2++) {
-				class149 var3 = ((class151) arg0).method695(VarDomainType.PLAYER, this.field2632[var2][0]);
+				VarType var3 = ((class151) arg0).method695(VarDomainType.PLAYER, this.field2632[var2][0]);
 				if (arg0.method679(var3) >= this.field2632[var2][1]) {
 					return true;
 				}
@@ -243,7 +243,7 @@ public class QuestType implements ConfigType {
 	public boolean method4430(class147 arg0) {
 		if (this.field2632 != null) {
 			for (int var2 = 0; var2 < this.field2632.length; var2++) {
-				class149 var3 = ((class151) arg0).method695(VarDomainType.PLAYER, this.field2632[var2][0]);
+				VarType var3 = ((class151) arg0).method695(VarDomainType.PLAYER, this.field2632[var2][0]);
 				if (arg0.method679(var3) >= this.field2632[var2][2]) {
 					return true;
 				}
@@ -281,7 +281,7 @@ public class QuestType implements ConfigType {
 		}
 		if (this.field2642 != null) {
 			for (int var4 = 0; var4 < this.field2642.length; var4++) {
-				class149 var5 = ((class151) arg0).method695(VarDomainType.PLAYER, this.field2642[var4]);
+				VarType var5 = ((class151) arg0).method695(VarDomainType.PLAYER, this.field2642[var4]);
 				int var6 = arg0.method679(var5);
 				if (var6 < this.field2643[var4] || var6 > this.field2629[var4]) {
 					return false;
@@ -328,7 +328,7 @@ public class QuestType implements ConfigType {
 		if (this.field2642 == null || arg1 < 0 || arg1 >= this.field2642.length) {
 			return false;
 		} else {
-			class149 var3 = ((class151) arg0).method695(VarDomainType.PLAYER, this.field2642[arg1]);
+			VarType var3 = ((class151) arg0).method695(VarDomainType.PLAYER, this.field2642[arg1]);
 			int var4 = arg0.method679(var3);
 			return var4 >= this.field2643[arg1] && var4 <= this.field2629[arg1];
 		}

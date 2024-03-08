@@ -48,13 +48,13 @@ public class ClientInvCache extends Node {
 	@ObfuscatedName("adr.m(IIIZB)I")
 	public static int method15241(int arg0, int arg1, int arg2, boolean arg3) {
 		VarBitType var4 = (VarBitType) Statics.field8736.get(arg2);
-		class149 var5 = var4.baseVar;
+		VarType var5 = var4.baseVar;
 		ClientInvCache var6 = Statics.method8358(arg0, arg3);
 		int var7;
 		if (var6 == null || arg1 < 0 || arg1 >= var6.field11224.length || var6.field11225 == null || var6.field11225[arg1] == null) {
-			var7 = (Integer) var5.method2782();
+			var7 = (Integer) var5.getDefaultValue();
 		} else {
-			var7 = var6.field11225[arg1].method14728(var5.field1706);
+			var7 = var6.field11225[arg1].method14728(var5.id);
 		}
 		return var4.getVarbitValue(var7);
 	}

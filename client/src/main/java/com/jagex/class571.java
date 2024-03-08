@@ -30,7 +30,7 @@ public class class571 implements SerializableEnum, class570 {
 		int var5 = 0;
 		while (var5 < var4.length) {
 			ScriptVarType var6 = var4[var5];
-			switch(var6.field4823.field4841) {
+			switch(var6.baseType.id) {
 				case 1:
 				case 2:
 				case 3:

@@ -778,8 +778,8 @@ public class LoginManager {
 					Statics.field1238 = var36.g6() - MonotonicTime.method3655();
 					client.world.method7750().method18890(client.field10948);
 					Statics.field3183.method7677().method7750().method18890(client.field10948);
-					Statics.field1842.method18901(client.field10948);
-					Statics.field7961.method18876(client.field10948);
+					Statics.field1842.setAllowMembers(client.field10948);
+					Statics.field7961.setAllowMembers(client.field10948);
 				} else if (Statics.field432.method939().method9038(Statics.field622)) {
 					Statics.field432.method939().method9029(var36.data, 0, Statics.field622);
 					var36.pos = 0;

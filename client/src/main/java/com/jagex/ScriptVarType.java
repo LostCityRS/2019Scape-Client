@@ -568,16 +568,16 @@ public class ScriptVarType implements SerializableEnum, class466 {
 	public static final ScriptVarType field4820 = new ScriptVarType(null, -1, '*');
 
 	@ObfuscatedName("qw.gp")
-	public final int field4669;
+	public final int serialID;
 
 	@ObfuscatedName("qw.gy")
-	public final char field4667;
+	public final char legacyChar;
 
 	@ObfuscatedName("qw.ga")
-	public final BaseVarType field4823;
+	public final BaseVarType baseType;
 
 	@ObfuscatedName("qw.gn")
-	public Object field4824;
+	public Object defaultValue;
 
 	@ObfuscatedName("qw.e(I)[Lqw;")
 	public static ScriptVarType[] method7293() {
@@ -593,10 +593,10 @@ public class ScriptVarType implements SerializableEnum, class466 {
 	}
 
 	public ScriptVarType(int arg0, char arg1, BaseVarType arg2, Object arg3, String arg4, class468[] arg5) {
-		this.field4669 = arg0;
-		this.field4667 = arg1;
-		this.field4823 = arg2;
-		this.field4824 = arg3;
+		this.serialID = arg0;
+		this.legacyChar = arg1;
+		this.baseType = arg2;
+		this.defaultValue = arg3;
 		if (arg4 != null && arg4.length() > 0) {
 		}
 		method7291(this);
@@ -604,24 +604,24 @@ public class ScriptVarType implements SerializableEnum, class466 {
 
 	@ObfuscatedName("qw.m(Lqw;B)V")
 	public static void method7291(ScriptVarType arg0) {
-		if (Statics.field4825 == null) {
-			Statics.field4825 = new ScriptVarType[256];
+		if (Statics.varByLegacyChar == null) {
+			Statics.varByLegacyChar = new ScriptVarType[256];
 		}
-		Statics.field4825[Cp1252.method16904(arg0.field4667) & 0xFF] = arg0;
+		Statics.varByLegacyChar[Cp1252.method16904(arg0.legacyChar) & 0xFF] = arg0;
 	}
 
 	@ObfuscatedName("qw.f(B)Lqa;")
-	public BaseVarType method7292() {
-		return this.field4823;
+	public BaseVarType getVarBaseType() {
+		return this.baseType;
 	}
 
 	@ObfuscatedName("qw.n()I")
 	public int getId() {
-		return this.field4669;
+		return this.serialID;
 	}
 
 	@ObfuscatedName("qw.l(I)Ljava/lang/Object;")
-	public Object method7298() {
-		return this.field4824;
+	public Object getDefaultValue() {
+		return this.defaultValue;
 	}
 }

@@ -9,5 +9,5 @@ public interface class147 {
 	int method678(VarBitType arg0);
 
 	@ObfuscatedName("ep.u(Lec;I)I")
-	int method679(class149 arg0);
+	int method679(VarType arg0);
 }

@@ -23,7 +23,7 @@ public class class210 implements Iterator {
 
 	public Object next() {
 		int var1 = ++this.field1982 - 1;
-		class859 var2 = (class859) this.this$0.field9254.method2930((long) var1);
+		VarPlayerType var2 = (VarPlayerType) this.this$0.field9254.method2930((long) var1);
 		return var2 == null ? this.this$0.method15255(var1) : var2;
 	}
 

@@ -2028,7 +2028,7 @@ public final class client extends GameShell {
 		if (field6615 != null && !Statics.field7880) {
 			var5 = new DiskStore(var6, field6615, Statics.field7422[var6], var6 == Js5Archive.DLLS.getArchiveId() ? 8000000 : 2500000);
 		}
-		Statics.field6888[var6] = Statics.field1833.method6835(var6, var5, Statics.field1749, arg0.getDefaultName());
+		Statics.field6888[var6] = Statics.field1833.method6835(var6, var5, Statics.field1749, arg0.method14918());
 		if (arg4) {
 			Statics.field6888[var6].method16829();
 		}
@@ -3329,11 +3329,11 @@ public final class client extends GameShell {
 			int var2 = var1.method19276();
 			long var3 = var1.method19271();
 			if (var2 == 1) {
-				class149 var5 = (class149) Statics.field8911.get((int) var3);
+				VarType var5 = (VarType) Statics.field8911.get((int) var3);
 				Statics.field7228.method2798(var5, var1.field12268);
 				field11019[++field11016 - 1 & 0x3F] = (int) var3;
 			} else if (var2 == 2) {
-				class149 var6 = (class149) Statics.field8911.get((int) var3);
+				VarType var6 = (VarType) Statics.field8911.get((int) var3);
 				Statics.field7228.method2802(var6, var1.field12269);
 				field11017[++field11018 - 1 & 0x3F] = (int) var3;
 			} else if (var2 == 3) {
@@ -7747,7 +7747,7 @@ public final class client extends GameShell {
 		} else if (ServerProt.VARP_LARGE == arg0.field796) {
 			int var192 = var2.g2_alt1();
 			int var193 = var2.g4s();
-			Statics.field7410.field632.method9625((class149) Statics.field8485.get(var192), var193);
+			Statics.field7410.field632.method9625((VarType) Statics.field8485.get(var192), var193);
 			arg0.field796 = null;
 			return true;
 		} else if (ServerProt.LOYALTY_UPDATE == arg0.field796) {
@@ -8996,7 +8996,7 @@ public final class client extends GameShell {
 		} else if (ServerProt.VARP_SMALL == arg0.field796) {
 			byte var520 = var2.g1b();
 			int var521 = var2.g2_alt2();
-			Statics.field7410.field632.method9625((class149) Statics.field8485.get(var521), var520);
+			Statics.field7410.field632.method9625((VarType) Statics.field8485.get(var521), var520);
 			arg0.field796 = null;
 			return true;
 		} else if (ServerProt.CLEAR_PLAYER_SNAPSHOT == arg0.field796) {
@@ -12784,11 +12784,11 @@ public final class client extends GameShell {
 	@ObfuscatedName("ank.kn(II)V")
 	public static final void method18736(int arg0) {
 		class975.method15185();
-		int var1 = ((class859) Statics.field8485.get(arg0)).field10248;
+		int var1 = ((VarPlayerType) Statics.field8485.get(arg0)).clientCode;
 		if (var1 == 0) {
 			return;
 		}
-		int var2 = Statics.field7410.method679((class149) Statics.field8485.get(arg0));
+		int var2 = Statics.field7410.method679((VarType) Statics.field8485.get(arg0));
 		if (var1 == 5) {
 			field10968 = var2;
 		}

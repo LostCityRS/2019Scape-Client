@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("kh")
-public class VarBitType implements class50 {
+public class VarBitType implements VarConfigType {
 
 	@ObfuscatedName("kh.e")
 	public int id;
@@ -13,7 +13,7 @@ public class VarBitType implements class50 {
 	public VarBitTypeFactory field3077;
 
 	@ObfuscatedName("kh.m")
-	public class149 baseVar;
+	public VarType baseVar;
 
 	@ObfuscatedName("kh.k")
 	public int startBit;
@@ -86,7 +86,7 @@ public class VarBitType implements class50 {
 				if (this.field3077 != null) {
 					ConfigTypeList var6 = (ConfigTypeList) this.field3077.listContainer.get(this.field3080);
 					if (var6 != null) {
-						this.baseVar = (class149) var6.get(this.field3075);
+						this.baseVar = (VarType) var6.get(this.field3075);
 					} else if (!arg2) {
 						throw new IllegalStateException("");
 					}

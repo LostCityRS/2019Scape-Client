@@ -26,7 +26,7 @@ public class class791 {
 		for (int var4 = 0; var4 < var2; var4++) {
 			for (int var5 = 0; var5 < arg1.length; var5++) {
 				int var6 = arg1.length * var4 + var5;
-				var3[var6] = arg1[var5].field4823.method7335(arg0);
+				var3[var6] = arg1[var5].baseType.method7335(arg0);
 			}
 		}
 		return var3;

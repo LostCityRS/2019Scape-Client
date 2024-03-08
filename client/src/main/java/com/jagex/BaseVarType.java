@@ -22,21 +22,21 @@ public class BaseVarType implements SerializableEnum {
 	public static final BaseVarType field4838 = new BaseVarType(3, 4, ComponentHook.class, new BaseVarTypeComponentHook());
 
 	@ObfuscatedName("qa.w")
-	public final int field4841;
+	public final int id;
 
 	@ObfuscatedName("qa.l")
 	public final int field4842;
 
 	@ObfuscatedName("qa.u")
-	public final Class field4843;
+	public final Class javaClass;
 
 	@ObfuscatedName("qa.z")
 	public final BaseVarTypeCodec field4844;
 
 	public BaseVarType(int arg0, int arg1, Class arg2, BaseVarTypeCodec arg3) {
-		this.field4841 = arg0;
+		this.id = arg0;
 		this.field4842 = arg1;
-		this.field4843 = arg2;
+		this.javaClass = arg2;
 		this.field4844 = arg3;
 	}
 
@@ -45,7 +45,7 @@ public class BaseVarType implements SerializableEnum {
 		BaseVarType[] var1 = Statics.method7338();
 		for (int var2 = 0; var2 < var1.length; var2++) {
 			BaseVarType var3 = var1[var2];
-			if (var3.field4843 == arg0) {
+			if (var3.javaClass == arg0) {
 				return var3;
 			}
 		}

@@ -135,7 +135,7 @@ public class Js5Archive {
 	public final int archiveId;
 
 	@ObfuscatedName("abd.ao")
-	public final boolean defaultName;
+	public final boolean field8841;
 
 	@ObfuscatedName("abd.aj")
 	public static int requiredArrayLength = -1;
@@ -147,7 +147,7 @@ public class Js5Archive {
 
 	public Js5Archive(int arg0, String arg1, boolean arg2, boolean arg3, boolean arg4) {
 		this.archiveId = arg0;
-		this.defaultName = arg4;
+		this.field8841 = arg4;
 	}
 
 	@ObfuscatedName("abd.n(I)I")
@@ -156,8 +156,8 @@ public class Js5Archive {
 	}
 
 	@ObfuscatedName("abd.m(I)Z")
-	public boolean getDefaultName() {
-		return this.defaultName;
+	public boolean method14918() {
+		return this.field8841;
 	}
 
 	@ObfuscatedName("jk.k(I)I")

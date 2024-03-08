@@ -60,7 +60,7 @@ public class VarDomainType implements SerializableEnum {
 	}
 
 	@ObfuscatedName("qe.m(B)Lxq;")
-	public final Js5ConfigGroup method7218() {
+	public final Js5ConfigGroup getJs5GroupID() {
 		return this.js5GroupID;
 	}
 
@@ -70,12 +70,12 @@ public class VarDomainType implements SerializableEnum {
 	}
 
 	@ObfuscatedName("qe.f(Lec;B)Ljava/lang/Object;")
-	public Object method7211(class149 arg0) {
-		return arg0.field1703 ? this.method7212(arg0) : arg0.field1704.method7298();
+	public Object method7211(VarType arg0) {
+		return arg0.field1703 ? this.getDefaultValue(arg0) : arg0.dataType.getDefaultValue();
 	}
 
 	@ObfuscatedName("qe.w(Lec;I)Ljava/lang/Object;")
-	public Object method7212(class149 arg0) {
-		return arg0.field1704.method7298();
+	public Object getDefaultValue(VarType arg0) {
+		return arg0.dataType.getDefaultValue();
 	}
 }

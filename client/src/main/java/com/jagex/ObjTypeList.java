@@ -20,7 +20,7 @@ public class ObjTypeList extends class758 {
 	}
 
 	@ObfuscatedName("aon.ai(ZI)V")
-	public void method18901(boolean arg0) {
+	public void setAllowMembers(boolean arg0) {
 		((ObjTypeFactory) this.field8796).method14618(arg0);
 		super.method14895();
 	}

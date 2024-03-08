@@ -3,5 +3,5 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("av")
-public interface class50 extends ConfigType {
+public interface VarConfigType extends ConfigType {
 }

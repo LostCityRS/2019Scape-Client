@@ -115,7 +115,7 @@ public class ClientScript extends SecondaryNode {
 			this.field12367[arg1] = arg0.g1();
 		} else if (ClientScriptCommand.field5144 == arg2) {
 			BaseVarType var5 = (BaseVarType) class686.method1897(Statics.method7338(), arg0.g1());
-			switch(var5.field4841) {
+			switch(var5.id) {
 				case 1:
 					if (this.field12366 == null) {
 						this.field12366 = new Object[var4];

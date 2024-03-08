@@ -12,7 +12,7 @@ public class ObjType implements ConfigType {
 	public static short[] field8650 = new short[256];
 
 	@ObfuscatedName("abv.l")
-	public ConfigTypeList field8625;
+	public ConfigTypeList myList;
 
 	@ObfuscatedName("abv.u")
 	public ObjTypeFactory field8621;
@@ -238,7 +238,7 @@ public class ObjType implements ConfigType {
 
 	public ObjType(int arg0, ConfigTypeList arg1, ObjTypeFactory arg2) {
 		this.field8627 = arg0;
-		this.field8625 = arg1;
+		this.myList = arg1;
 		this.field8621 = arg2;
 		this.field8647 = (String[]) this.field8621.field8617.clone();
 		this.field8648 = (String[]) this.field8621.field8616.clone();
@@ -247,18 +247,18 @@ public class ObjType implements ConfigType {
 	@ObfuscatedName("abv.n(I)V")
 	public void postDecode() {
 		if (this.field8663 != -1) {
-			this.method14640((ObjType) this.field8625.get(this.field8663), (ObjType) this.field8625.get(this.field8673), this.field8621.field8618);
+			this.method14640((ObjType) this.myList.get(this.field8663), (ObjType) this.myList.get(this.field8673), this.field8621.languageId);
 		} else if (this.field8675 != -1) {
-			this.method14641((ObjType) this.field8625.get(this.field8675), (ObjType) this.field8625.get(this.field8674), this.field8621.field8618);
+			this.method14641((ObjType) this.myList.get(this.field8675), (ObjType) this.myList.get(this.field8674), this.field8621.languageId);
 		} else if (this.field8694 != -1) {
-			this.method14653((ObjType) this.field8625.get(this.field8694), (ObjType) this.field8625.get(this.field8693), this.field8621.field8618);
+			this.method14653((ObjType) this.myList.get(this.field8694), (ObjType) this.myList.get(this.field8693), this.field8621.languageId);
 		} else if (this.field8677 != -1) {
-			this.method14643((ObjType) this.field8625.get(this.field8677), (ObjType) this.field8625.get(this.field8676), this.field8621.field8618);
+			this.method14643((ObjType) this.myList.get(this.field8677), (ObjType) this.myList.get(this.field8676), this.field8621.languageId);
 		}
 		if (this.field8689 != 0) {
 			this.field8687 = false;
 		}
-		if (this.field8621.field8610 || !this.field8684) {
+		if (this.field8621.allowMembers || !this.field8684) {
 			return;
 		}
 		this.field8685 = 0;
@@ -272,7 +272,7 @@ public class ObjType implements ConfigType {
 		}
 		boolean var1 = false;
 		for (Node var2 = this.field8690.method14500(); var2 != null; var2 = this.field8690.method14502()) {
-			ParamType var3 = (ParamType) this.field8621.field8615.get((int) var2.field6760);
+			ParamType var3 = (ParamType) this.field8621.paramTL.get((int) var2.field6760);
 			if (var3.field9174) {
 				var2.method8440();
 			} else {
@@ -624,7 +624,7 @@ public class ObjType implements ConfigType {
 				}
 			}
 			if (var10 != -1) {
-				return ((ObjType) this.field8625.get(var10)).method14644(arg0, arg1, 1, arg3, arg4, arg5, arg6, arg7, arg8);
+				return ((ObjType) this.myList.get(var10)).method14644(arg0, arg1, 1, arg3, arg4, arg5, arg6, arg7, arg8);
 			}
 		}
 		int var12 = arg1;
@@ -735,7 +735,7 @@ public class ObjType implements ConfigType {
 				}
 			}
 			if (var2 != -1) {
-				return (ObjType) this.field8625.get(var2);
+				return (ObjType) this.myList.get(var2);
 			}
 		}
 		return this;
@@ -795,22 +795,22 @@ public class ObjType implements ConfigType {
 		}
 		Sprite var21 = null;
 		if (this.field8663 != -1) {
-			var21 = this.field8621.method14617(arg0, arg1, this.field8673, 10, 1, 0, true, true, 0, arg7, arg8, arg9, this.field8625);
+			var21 = this.field8621.method14617(arg0, arg1, this.field8673, 10, 1, 0, true, true, 0, arg7, arg8, arg9, this.myList);
 			if (var21 == null) {
 				return null;
 			}
 		} else if (this.field8675 != -1) {
-			var21 = this.field8621.method14617(arg0, arg1, this.field8674, arg2, arg3, arg4, false, true, 0, arg7, arg8, arg9, this.field8625);
+			var21 = this.field8621.method14617(arg0, arg1, this.field8674, arg2, arg3, arg4, false, true, 0, arg7, arg8, arg9, this.myList);
 			if (var21 == null) {
 				return null;
 			}
 		} else if (this.field8694 != -1) {
-			var21 = this.field8621.method14617(arg0, arg1, this.field8693, arg2, arg3, arg4, false, true, 0, arg7, arg8, arg9, this.field8625);
+			var21 = this.field8621.method14617(arg0, arg1, this.field8693, arg2, arg3, arg4, false, true, 0, arg7, arg8, arg9, this.myList);
 			if (var21 == null) {
 				return null;
 			}
 		} else if (this.field8677 != -1) {
-			var21 = this.field8621.method14617(arg0, arg1, this.field8676, 10, 1, 0, true, true, 0, arg7, arg8, arg9, this.field8625);
+			var21 = this.field8621.method14617(arg0, arg1, this.field8676, 10, 1, 0, true, true, 0, arg7, arg8, arg9, this.myList);
 			if (var21 == null) {
 				return null;
 			}
@@ -866,7 +866,7 @@ public class ObjType implements ConfigType {
 			var21.method1439(0, 0);
 		}
 		if (arg6 == 1 || arg6 == 2 && (this.field8644 == 1 || arg2 != 1) && arg2 != -1) {
-			arg7.method2681(method4655(arg2, this.field8621.field8618, arg9), 0, 9, -256, -16777215);
+			arg7.method2681(method4655(arg2, this.field8621.languageId, arg9), 0, 9, -256, -16777215);
 		}
 		int[] var28 = arg0.method2149(0, 0, 36, 32);
 		for (int var29 = 0; var29 < var28.length; var29++) {

@@ -6,10 +6,10 @@ import deob.ObfuscatedName;
 public abstract class ObjTypeFactory implements ConfigTypeFactory {
 
 	@ObfuscatedName("abr.e")
-	public final Language field8618;
+	public final Language languageId;
 
 	@ObfuscatedName("abr.n")
-	public boolean field8610;
+	public boolean allowMembers;
 
 	@ObfuscatedName("abr.m")
 	public final Js5 field8614;
@@ -24,7 +24,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 	public final class736 field8609 = new class736();
 
 	@ObfuscatedName("abr.l")
-	public final ConfigTypeList field8615;
+	public final ConfigTypeList paramTL;
 
 	@ObfuscatedName("abr.u")
 	public int field8611;
@@ -36,16 +36,16 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 	public final String[] field8616;
 
 	public ObjTypeFactory(ModeGame arg0, Language arg1, boolean arg2, Js5 arg3, ConfigTypeList arg4) {
-		this.field8618 = arg1;
-		this.field8610 = arg2;
+		this.languageId = arg1;
+		this.allowMembers = arg2;
 		this.field8614 = arg3;
-		this.field8615 = arg4;
+		this.paramTL = arg4;
 		if (ModeGame.field8335 == arg0) {
-			this.field8617 = new String[] { null, null, LocalisedText.field8959.method15021(this.field8618), null, null, LocalisedText.field9075.method15021(this.field8618) };
+			this.field8617 = new String[] { null, null, LocalisedText.field8959.method15021(this.languageId), null, null, LocalisedText.field9075.method15021(this.languageId) };
 		} else {
-			this.field8617 = new String[] { null, null, LocalisedText.field8959.method15021(this.field8618), null, null, null };
+			this.field8617 = new String[] { null, null, LocalisedText.field8959.method15021(this.languageId), null, null, null };
 		}
-		this.field8616 = new String[] { null, null, null, null, LocalisedText.field8960.method15021(this.field8618) };
+		this.field8616 = new String[] { null, null, null, null, LocalisedText.field8960.method15021(this.languageId) };
 	}
 
 	@ObfuscatedName("abr.e(Ldh;IIIIILxg;I)Lcm;")
@@ -106,8 +106,8 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 
 	@ObfuscatedName("abr.m(ZB)V")
 	public void method14618(boolean arg0) {
-		if (this.field8610 != arg0) {
-			this.field8610 = arg0;
+		if (this.allowMembers != arg0) {
+			this.allowMembers = arg0;
 			this.method14623();
 		}
 	}

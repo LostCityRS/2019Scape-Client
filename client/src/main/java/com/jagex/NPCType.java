@@ -930,7 +930,7 @@ public class NPCType implements ConfigType {
 				var3 = arg1.method678(var4);
 			}
 		} else if (this.field2755 != -1) {
-			class149 var5 = arg0.method695(VarDomainType.PLAYER, this.field2755);
+			VarType var5 = arg0.method695(VarDomainType.PLAYER, this.field2755);
 			if (var5 != null) {
 				var3 = arg1.method679(var5);
 			}
@@ -955,7 +955,7 @@ public class NPCType implements ConfigType {
 				var3 = arg1.method678(var4);
 			}
 		} else if (this.field2755 != -1) {
-			class149 var5 = arg0.method695(VarDomainType.PLAYER, this.field2755);
+			VarType var5 = arg0.method695(VarDomainType.PLAYER, this.field2755);
 			if (var5 != null) {
 				var3 = arg1.method679(var5);
 			}

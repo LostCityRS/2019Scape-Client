@@ -10,7 +10,7 @@ public final class VarDomainTypeClient extends VarDomainType {
 	}
 
 	@ObfuscatedName("aiu.w(Lec;I)Ljava/lang/Object;")
-	public Object method7212(class149 arg0) {
-		return ScriptVarType.INT == arg0.field1704 || ScriptVarType.BOOLEAN == arg0.field1704 ? -1 : arg0.field1704.method7298();
+	public Object getDefaultValue(VarType arg0) {
+		return ScriptVarType.INT == arg0.dataType || ScriptVarType.BOOLEAN == arg0.dataType ? -1 : arg0.dataType.getDefaultValue();
 	}
 }

@@ -3,26 +3,26 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ec")
-public abstract class class149 implements class50 {
+public abstract class VarType implements VarConfigType {
 
 	@ObfuscatedName("ec.e")
-	public final VarDomainType field1702;
+	public final VarDomainType domain;
 
 	@ObfuscatedName("ec.n")
-	public int field1706;
+	public int id;
 
 	@ObfuscatedName("ec.m")
-	public ScriptVarType field1704;
+	public ScriptVarType dataType;
 
 	@ObfuscatedName("ec.k")
-	public class457 field1705 = class457.field4610;
+	public VarLifetime lifeTime = VarLifetime.TEMPORARY;
 
 	@ObfuscatedName("ec.f")
 	public boolean field1703 = true;
 
-	public class149(VarDomainType arg0, int arg1) {
-		this.field1702 = arg0;
-		this.field1706 = arg1;
+	public VarType(VarDomainType arg0, int arg1) {
+		this.domain = arg0;
+		this.id = arg1;
 	}
 
 	@ObfuscatedName("ec.e(Lalw;B)V")
@@ -32,9 +32,9 @@ public abstract class class149 implements class50 {
 			if (var2 == 0) {
 				return;
 			}
-			class148 var3 = (class148) class686.method1897(class148.method15457(), var2);
+			VarTypeEncodingKey var3 = (VarTypeEncodingKey) class686.method1897(VarTypeEncodingKey.method15457(), var2);
 			if (var3 == null) {
-				this.method2780(arg0, var2);
+				this.decode(arg0, var2);
 			} else {
 				switch(var3.field1694) {
 					case 0:
@@ -42,8 +42,8 @@ public abstract class class149 implements class50 {
 						break;
 					case 1:
 						int var4 = arg0.g1();
-						this.field1704 = (ScriptVarType) class686.method1897(ScriptVarType.method7293(), var4);
-						if (this.field1704 != null) {
+						this.dataType = (ScriptVarType) class686.method1897(ScriptVarType.method7293(), var4);
+						if (this.dataType != null) {
 							break;
 						}
 						throw new IllegalStateException("");
@@ -59,22 +59,22 @@ public abstract class class149 implements class50 {
 					case 5:
 						break;
 					case 6:
-						this.field1705 = (class457) class686.method1897(class457.method748(), arg0.g1());
+						this.lifeTime = (VarLifetime) class686.method1897(VarLifetime.method748(), arg0.g1());
 				}
 			}
 		}
 	}
 
 	@ObfuscatedName("ec.z(B)Z")
-	public boolean method2781() {
-		return this.field1702 != null && this.field1704 != null;
+	public boolean isValidDefinition() {
+		return this.domain != null && this.dataType != null;
 	}
 
 	@ObfuscatedName("ec.p(B)Ljava/lang/Object;")
-	public Object method2782() {
-		return this.field1702.method7211(this);
+	public Object getDefaultValue() {
+		return this.domain.method7211(this);
 	}
 
 	@ObfuscatedName("ec.u(Lalw;IS)V")
-	public abstract void method2780(Packet arg0, int arg1);
+	public abstract void decode(Packet arg0, int arg1);
 }

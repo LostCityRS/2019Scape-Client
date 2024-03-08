@@ -25,7 +25,7 @@ public class DeleteMember implements PlayerGroupDeltaEntry {
 	@ObfuscatedName("gc.e(Lgq;B)V")
 	public void method3371(PlayerGroup arg0) {
 		if (this.field1939 != null) {
-			arg0.method3394().method2802((class149) this.this$0.field1943.method291().get(this.field1939.field4240), this.field1939.field4239);
+			arg0.method3394().method2802((VarType) this.this$0.field1943.method291().get(this.field1939.field4240), this.field1939.field4239);
 		}
 	}
 }

@@ -37,8 +37,8 @@ public abstract class VarTypeList extends class52 implements class414 {
 
 	@ObfuscatedName("add.u(IB)Ljava/lang/Object;")
 	public Object method6245(int arg0) {
-		class149 var2 = (class149) this.get(arg0);
-		return var2 != null && var2.method2781() ? var2.method2782() : null;
+		VarType var2 = (VarType) this.get(arg0);
+		return var2 != null && var2.isValidDefinition() ? var2.getDefaultValue() : null;
 	}
 
 	@ObfuscatedName("add.t(Lon;B)I")
@@ -78,12 +78,12 @@ public abstract class VarTypeList extends class52 implements class414 {
 	@ObfuscatedName("add.ag(Lalw;B)Lon;")
 	public VarValue method15284(Packet arg0) {
 		int var2 = arg0.g2();
-		class149 var3 = (class149) this.get(var2);
-		if (!var3.method2781()) {
+		VarType var3 = (VarType) this.get(var2);
+		if (!var3.isValidDefinition()) {
 			throw new IllegalStateException("");
 		}
 		VarValue var4 = new VarValue(var2);
-		Class var5 = var3.field1704.method7292().field4843;
+		Class var5 = var3.dataType.getVarBaseType().javaClass;
 		if (var5 == Integer.class) {
 			var4.field4239 = arg0.g4s();
 		} else if (var5 == Long.class) {
@@ -110,7 +110,7 @@ public abstract class VarTypeList extends class52 implements class414 {
 	public VarValue method15285(Packet arg0, BaseVarType arg1) {
 		int var3 = arg0.g2();
 		VarValue var4 = new VarValue(var3);
-		Class var5 = arg1.field4843;
+		Class var5 = arg1.javaClass;
 		if (var5 == Integer.class) {
 			var4.field4239 = arg0.g4s();
 		} else if (var5 == Long.class) {
@@ -130,8 +130,8 @@ public abstract class VarTypeList extends class52 implements class414 {
 		} else {
 			throw new IllegalStateException();
 		}
-		class149 var9 = (class149) this.get(var3);
-		return var9.method2781() && var9.field1704.method7292() == arg1 ? var4 : null;
+		VarType var9 = (VarType) this.get(var3);
+		return var9.isValidDefinition() && var9.dataType.getVarBaseType() == arg1 ? var4 : null;
 	}
 
 	@ObfuscatedName("add.e(II)Lay;")

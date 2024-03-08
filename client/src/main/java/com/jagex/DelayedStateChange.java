@@ -73,14 +73,14 @@ public class DelayedStateChange extends SecondaryNode {
 	}
 
 	@ObfuscatedName("gv.k(Lec;I)V")
-	public static void method3607(class149 arg0) {
-		DelayedStateChange var1 = method5072(1, (long) arg0.field1706);
+	public static void method3607(VarType arg0) {
+		DelayedStateChange var1 = method5072(1, (long) arg0.id);
 		var1.method19333();
 	}
 
 	@ObfuscatedName("zr.f(Lec;B)V")
-	public static void method14066(class149 arg0) {
-		DelayedStateChange var1 = method5072(2, (long) arg0.field1706);
+	public static void method14066(VarType arg0) {
+		DelayedStateChange var1 = method5072(2, (long) arg0.id);
 		var1.method19333();
 	}
 
@@ -196,7 +196,7 @@ public class DelayedStateChange extends SecondaryNode {
 	@ObfuscatedName("alv.al(III)V")
 	public static void method18309(int arg0, int arg1) {
 		VarBitType var2 = (VarBitType) Statics.field8736.get(arg0);
-		DelayedStateChange var3 = method5072(1, (long) var2.baseVar.field1706);
+		DelayedStateChange var3 = method5072(1, (long) var2.baseVar.id);
 		try {
 			if (field12295) {
 				var3.field12268 = Statics.field7228.method679(var2.baseVar);

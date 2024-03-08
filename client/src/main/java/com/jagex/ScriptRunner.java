@@ -4757,9 +4757,9 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("pu.g(Lyf;B)V")
 	public static final void method7070(ClientScriptState arg0) {
-		class149 var1 = (class149) arg0.field8239.field12366[arg0.field8220];
-		class152 var2 = (class152) (arg0.field8236[arg0.field8220] == 0 ? arg0.field8234.get(var1.field1702) : arg0.field8233.get(var1.field1702));
-		BaseVarType var3 = var1.field1704.method7292();
+		VarType var1 = (VarType) arg0.field8239.field12366[arg0.field8220];
+		class152 var2 = (class152) (arg0.field8236[arg0.field8220] == 0 ? arg0.field8234.get(var1.domain) : arg0.field8233.get(var1.domain));
+		BaseVarType var3 = var1.dataType.getVarBaseType();
 		if (BaseVarType.INTEGER == var3) {
 			arg0.field8216[++arg0.field8226 - 1] = var2.method679(var1);
 		} else if (BaseVarType.field4837 == var3) {
@@ -4782,18 +4782,18 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("oh.i(Lyf;I)V")
 	public static final void method6124(ClientScriptState arg0) {
-		class149 var1 = (class149) arg0.field8239.field12366[arg0.field8220];
-		class152 var2 = (class152) (arg0.field8236[arg0.field8220] == 0 ? arg0.field8234.get(var1.field1702) : arg0.field8233.get(var1.field1702));
-		BaseVarType var3 = var1.field1704.method7292();
+		VarType var1 = (VarType) arg0.field8239.field12366[arg0.field8220];
+		class152 var2 = (class152) (arg0.field8236[arg0.field8220] == 0 ? arg0.field8234.get(var1.domain) : arg0.field8233.get(var1.domain));
+		BaseVarType var3 = var1.dataType.getVarBaseType();
 		if (BaseVarType.INTEGER == var3) {
-			if (VarDomainType.CLIENT == var1.field1702) {
+			if (VarDomainType.CLIENT == var1.domain) {
 				DelayedStateChange.method3607(var1);
 			}
 			var2.method2798(var1, arg0.field8216[--arg0.field8226]);
 		} else if (BaseVarType.field4837 == var3) {
 			var2.method2800(var1, arg0.field8224[--arg0.field8238]);
 		} else if (BaseVarType.field4836 == var3) {
-			if (VarDomainType.CLIENT == var1.field1702) {
+			if (VarDomainType.CLIENT == var1.domain) {
 				DelayedStateChange.method14066(var1);
 			}
 			var2.method2802(var1, arg0.field8218[--arg0.field8211]);
@@ -4854,14 +4854,14 @@ public final class ScriptRunner {
 	@ObfuscatedName("xt.ai(Lyf;B)V")
 	public static final void method10362(ClientScriptState arg0) {
 		VarBitType var1 = (VarBitType) arg0.field8239.field12366[arg0.field8220];
-		class152 var2 = (class152) (arg0.field8236[arg0.field8220] == 0 ? arg0.field8234.get(var1.baseVar.field1702) : arg0.field8233.get(var1.baseVar.field1702));
+		class152 var2 = (class152) (arg0.field8236[arg0.field8220] == 0 ? arg0.field8234.get(var1.baseVar.domain) : arg0.field8233.get(var1.baseVar.domain));
 		arg0.field8216[++arg0.field8226 - 1] = var2.method678(var1);
 	}
 
 	@ObfuscatedName("ace.aw(Lyf;I)V")
 	public static final void method15089(ClientScriptState arg0) throws VarBitOverflowException {
 		VarBitType var1 = (VarBitType) arg0.field8239.field12366[arg0.field8220];
-		class152 var2 = (class152) (arg0.field8236[arg0.field8220] == 0 ? arg0.field8234.get(var1.baseVar.field1702) : arg0.field8233.get(var1.baseVar.field1702));
+		class152 var2 = (class152) (arg0.field8236[arg0.field8220] == 0 ? arg0.field8234.get(var1.baseVar.domain) : arg0.field8233.get(var1.baseVar.domain));
 		try {
 			var2.method2804(var1, arg0.field8216[--arg0.field8226]);
 		} catch (VarBitOverflowException var4) {
@@ -10200,19 +10200,19 @@ public final class ScriptRunner {
 		}
 		if (!var2) {
 			VarBitType var6 = (VarBitType) Statics.field8736.get(var3);
-			arg0.field8216[++arg0.field8226 - 1] = var6.getVarbitValue(var4.method3504().method14728(var6.baseVar.field1706));
+			arg0.field8216[++arg0.field8226 - 1] = var6.getVarbitValue(var4.method3504().method14728(var6.baseVar.id));
 			return;
 		}
-		class859 var5 = (class859) Statics.field8485.get(var3);
-		switch(var5.field1704.field4823.field4841) {
+		VarPlayerType var5 = (VarPlayerType) Statics.field8485.get(var3);
+		switch(var5.dataType.baseType.id) {
 			case 2:
-				arg0.field8216[++arg0.field8226 - 1] = var4.method3504().method14728(var5.field1706);
+				arg0.field8216[++arg0.field8226 - 1] = var4.method3504().method14728(var5.id);
 				break;
 			case 4:
-				arg0.field8224[++arg0.field8238 - 1] = var4.method3504().method14730(var5.field1706);
+				arg0.field8224[++arg0.field8238 - 1] = var4.method3504().method14730(var5.id);
 				break;
 			default:
-				arg0.field8218[++arg0.field8211 - 1] = var4.method3504().method14738(var5.field1706);
+				arg0.field8218[++arg0.field8211 - 1] = var4.method3504().method14738(var5.id);
 		}
 	}
 

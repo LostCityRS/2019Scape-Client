@@ -170,7 +170,7 @@ public class HitmarkType implements ConfigType {
 					var3 = arg1.method678(var4);
 				}
 			} else if (this.field7312 != -1) {
-				class149 var5 = arg0.method695(VarDomainType.PLAYER, this.field7312);
+				VarType var5 = arg0.method695(VarDomainType.PLAYER, this.field7312);
 				if (var5 != null) {
 					var3 = arg1.method679(var5);
 				}

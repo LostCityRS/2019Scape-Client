@@ -10,7 +10,7 @@ public class NPCTypeList extends class758 {
 	}
 
 	@ObfuscatedName("aod.al(ZI)V")
-	public void method18876(boolean arg0) {
+	public void setAllowMembers(boolean arg0) {
 		((NPCTypeFactory) this.field8796).method4579(arg0);
 		super.method14895();
 	}

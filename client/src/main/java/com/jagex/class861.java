@@ -33,44 +33,44 @@ public final class class861 extends class150 {
 	public int field10258 = 0;
 
 	@ObfuscatedName("afu.p")
-	public final class457[] field10251;
+	public final VarLifetime[] field10251;
 
 	public class861(VarTypeList arg0) {
 		super(arg0);
-		this.field10251 = new class457[arg0.size()];
+		this.field10251 = new VarLifetime[arg0.size()];
 		for (int var2 = 0; var2 < arg0.size(); var2++) {
-			this.field10251[var2] = ((class149) arg0.get(var2)).field1705;
+			this.field10251[var2] = ((VarType) arg0.get(var2)).lifeTime;
 		}
 		this.field10255 = new HashSet(arg0.size());
 	}
 
 	@ObfuscatedName("afu.e(Lec;II)V")
-	public void method2798(class149 arg0, int arg1) {
-		if (this.field10251[arg0.field1706] == class457.field4609) {
+	public void method2798(VarType arg0, int arg1) {
+		if (this.field10251[arg0.id] == VarLifetime.PERMANENT) {
 			this.field10252 = true;
-		} else if (this.field10251[arg0.field1706] == class457.field4611 && this.method679(arg0) != arg1) {
+		} else if (this.field10251[arg0.id] == VarLifetime.SERVER_PERMANENT && this.method679(arg0) != arg1) {
 			this.field10254 = true;
-			this.field10255.add(arg0.field1706);
+			this.field10255.add(arg0.id);
 		}
 		super.method2798(arg0, arg1);
 	}
 
 	@ObfuscatedName("afu.m(Lec;J)V")
-	public void method2800(class149 arg0, long arg1) {
-		if (this.field10251[arg0.field1706] == class457.field4609) {
+	public void method2800(VarType arg0, long arg1) {
+		if (this.field10251[arg0.id] == VarLifetime.PERMANENT) {
 			this.field10252 = true;
-		} else if (this.field10251[arg0.field1706] == class457.field4611 && this.method2799(arg0) != arg1) {
+		} else if (this.field10251[arg0.id] == VarLifetime.SERVER_PERMANENT && this.method2799(arg0) != arg1) {
 			this.field10254 = true;
-			this.field10255.add(arg0.field1706);
+			this.field10255.add(arg0.id);
 		}
 		super.method2800(arg0, arg1);
 	}
 
 	@ObfuscatedName("afu.f(Lec;Ljava/lang/Object;I)V")
-	public void method2802(class149 arg0, Object arg1) {
-		if (this.field10251[arg0.field1706] == class457.field4609) {
+	public void method2802(VarType arg0, Object arg1) {
+		if (this.field10251[arg0.id] == VarLifetime.PERMANENT) {
 			this.field10252 = true;
-		} else if (this.field10251[arg0.field1706] == class457.field4611) {
+		} else if (this.field10251[arg0.id] == VarLifetime.SERVER_PERMANENT) {
 			if (arg1 instanceof String) {
 				String var3 = (String) arg1;
 				if (var3.length() > 80) {
@@ -80,10 +80,10 @@ public final class class861 extends class150 {
 			Object var4 = this.method2801(arg0);
 			if (arg1 != null && var4 != null && !arg1.equals(var4)) {
 				this.field10254 = true;
-				this.field10255.add(arg0.field1706);
+				this.field10255.add(arg0.id);
 			} else if ((var4 == null) != (arg1 == null)) {
 				this.field10254 = true;
-				this.field10255.add(arg0.field1706);
+				this.field10255.add(arg0.id);
 			}
 		}
 		super.method2802(arg0, arg1);
@@ -92,7 +92,7 @@ public final class class861 extends class150 {
 	@ObfuscatedName("afu.i(I)V")
 	public void method16415() {
 		for (int var1 = 0; var1 < this.field10251.length; var1++) {
-			if (this.field10251[var1] == class457.field4610 || this.field10251[var1] == class457.field4611) {
+			if (this.field10251[var1] == VarLifetime.TEMPORARY || this.field10251[var1] == VarLifetime.SERVER_PERMANENT) {
 				this.field1708.method14734(var1);
 			}
 		}
@@ -131,7 +131,7 @@ public final class class861 extends class150 {
 					}
 					for (int var12 = 0; var12 < var10; var12++) {
 						VarValue var13 = Statics.field8911.method15284(var5);
-						if (this.field10251[var13.field4240] == class457.field4609 && ((class149) Statics.field8911.get(var13.field4240)).field1704.method7292().field4843.isAssignableFrom(var13.field4239.getClass())) {
+						if (this.field10251[var13.field4240] == VarLifetime.PERMANENT && ((VarType) Statics.field8911.get(var13.field4240)).dataType.getVarBaseType().javaClass.isAssignableFrom(var13.field4239.getClass())) {
 							this.field1708.method14735(var13.field4240, var13.field4239);
 						}
 					}
@@ -157,7 +157,7 @@ public final class class861 extends class150 {
 			Iterator var4 = this.field1708.iterator();
 			while (var4.hasNext()) {
 				VarValue var5 = (VarValue) var4.next();
-				if (this.field10251[var5.field4240] == class457.field4609) {
+				if (this.field10251[var5.field4240] == VarLifetime.PERMANENT) {
 					var2 += Statics.field8911.method15282(var5);
 					var3++;
 				}
@@ -168,7 +168,7 @@ public final class class861 extends class150 {
 			Iterator var7 = this.field1708.iterator();
 			while (var7.hasNext()) {
 				VarValue var8 = (VarValue) var7.next();
-				if (this.field10251[var8.field4240] == class457.field4609) {
+				if (this.field10251[var8.field4240] == VarLifetime.PERMANENT) {
 					Statics.field8911.method15283(var6, var8);
 				}
 			}

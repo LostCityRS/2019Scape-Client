@@ -779,7 +779,7 @@ public class Statics {
 	public static class151 field4626;
 
 	@ObfuscatedName("qw.gc")
-	public static ScriptVarType[] field4825;
+	public static ScriptVarType[] varByLegacyChar;
 
 	@ObfuscatedName("qo.nf")
 	public static int field4826;
@@ -2637,7 +2637,7 @@ public class Statics {
 
 	@ObfuscatedName("qw.w(CB)Lqw;")
 	public static ScriptVarType method7300(char arg0) {
-		return arg0 == 'O' ? ScriptVarType.OBJ : field4825[Cp1252.method16904(arg0) & 0xFF];
+		return arg0 == 'O' ? ScriptVarType.OBJ : varByLegacyChar[Cp1252.method16904(arg0) & 0xFF];
 	}
 
 	@ObfuscatedName("ks.x(Lep;Lao;B)I")

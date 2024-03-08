@@ -35,7 +35,7 @@ public final class class609 implements class152 {
 	@ObfuscatedName("wu.j(B)V")
 	public void method9624() {
 		for (int var1 = 0; var1 < Statics.field8485.size(); var1++) {
-			class859 var2 = (class859) Statics.field8485.get(var1);
+			VarPlayerType var2 = (VarPlayerType) Statics.field8485.get(var1);
 			if (var2 != null) {
 				this.field7604[var1] = 0;
 				this.field7609[var1] = 0;
@@ -45,29 +45,29 @@ public final class class609 implements class152 {
 	}
 
 	@ObfuscatedName("wu.u(Lec;I)I")
-	public int method679(class149 arg0) {
-		return this.field7609[arg0.field1706];
+	public int method679(VarType arg0) {
+		return this.field7609[arg0.id];
 	}
 
 	@ObfuscatedName("wu.e(Lec;II)V")
-	public void method2798(class149 arg0, int arg1) {
-		this.field7609[arg0.field1706] = arg1;
-		class987 var3 = (class987) this.field7610.method14495((long) arg0.field1706);
+	public void method2798(VarType arg0, int arg1) {
+		this.field7609[arg0.id] = arg1;
+		class987 var3 = (class987) this.field7610.method14495((long) arg0.id);
 		if (var3 == null) {
 			class987 var4 = new class987(MonotonicTime.method3655() + 500L);
-			this.field7610.method14501(var4, (long) arg0.field1706);
+			this.field7610.method14501(var4, (long) arg0.id);
 		} else {
 			var3.field11441 = MonotonicTime.method3655() + 500L;
 		}
 	}
 
 	@ObfuscatedName("wu.t(Lec;IB)V")
-	public void method9625(class149 arg0, int arg1) {
-		this.field7604[arg0.field1706] = arg1;
-		class987 var3 = (class987) this.field7610.method14495((long) arg0.field1706);
+	public void method9625(VarType arg0, int arg1) {
+		this.field7604[arg0.id] = arg1;
+		class987 var3 = (class987) this.field7610.method14495((long) arg0.id);
 		if (var3 == null) {
 			class987 var4 = new class987(4611686018427387905L);
-			this.field7610.method14501(var4, (long) arg0.field1706);
+			this.field7610.method14501(var4, (long) arg0.id);
 		} else if (var3.field11441 != 4611686018427387905L) {
 			var3.field11441 = MonotonicTime.method3655() + 500L | 0x4000000000000000L;
 		}
@@ -75,41 +75,41 @@ public final class class609 implements class152 {
 
 	@ObfuscatedName("wu.z(Lkh;I)I")
 	public int method678(VarBitType arg0) {
-		return arg0.getVarbitValue(this.field7609[arg0.baseVar.field1706]);
+		return arg0.getVarbitValue(this.field7609[arg0.baseVar.id]);
 	}
 
 	@ObfuscatedName("wu.w(Lkh;II)V")
 	public void method2804(VarBitType arg0, int arg1) throws VarBitOverflowException {
-		int var3 = arg0.setVarbitValue(this.field7609[arg0.baseVar.field1706], arg1);
+		int var3 = arg0.setVarbitValue(this.field7609[arg0.baseVar.id], arg1);
 		this.method2798(arg0.baseVar, var3);
 	}
 
 	@ObfuscatedName("wu.ae(Lkh;II)V")
 	public void method9629(VarBitType arg0, int arg1) {
 		try {
-			int var3 = arg0.setVarbitValue(this.field7604[arg0.baseVar.field1706], arg1);
+			int var3 = arg0.setVarbitValue(this.field7604[arg0.baseVar.id], arg1);
 			this.method9625(arg0.baseVar, var3);
 		} catch (VarBitOverflowException var5) {
 		}
 	}
 
 	@ObfuscatedName("wu.n(Lec;I)J")
-	public long method2799(class149 arg0) {
+	public long method2799(VarType arg0) {
 		throw new UnsupportedOperationException();
 	}
 
 	@ObfuscatedName("wu.m(Lec;J)V")
-	public void method2800(class149 arg0, long arg1) {
+	public void method2800(VarType arg0, long arg1) {
 		throw new UnsupportedOperationException();
 	}
 
 	@ObfuscatedName("wu.k(Lec;B)Ljava/lang/Object;")
-	public Object method2801(class149 arg0) {
+	public Object method2801(VarType arg0) {
 		throw new UnsupportedOperationException();
 	}
 
 	@ObfuscatedName("wu.f(Lec;Ljava/lang/Object;I)V")
-	public void method2802(class149 arg0, Object arg1) {
+	public void method2802(VarType arg0, Object arg1) {
 		throw new UnsupportedOperationException();
 	}
 }

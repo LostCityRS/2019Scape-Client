@@ -21,33 +21,33 @@ public class class150 implements class152 {
 	}
 
 	@ObfuscatedName("ek.u(Lec;I)I")
-	public int method679(class149 arg0) {
-		return this.field1708.method14728(arg0.field1706);
+	public int method679(VarType arg0) {
+		return this.field1708.method14728(arg0.id);
 	}
 
 	@ObfuscatedName("ek.e(Lec;II)V")
-	public void method2798(class149 arg0, int arg1) {
-		this.field1708.method14729(arg0.field1706, arg1);
+	public void method2798(VarType arg0, int arg1) {
+		this.field1708.method14729(arg0.id, arg1);
 	}
 
 	@ObfuscatedName("ek.n(Lec;I)J")
-	public long method2799(class149 arg0) {
-		return this.field1708.method14730(arg0.field1706);
+	public long method2799(VarType arg0) {
+		return this.field1708.method14730(arg0.id);
 	}
 
 	@ObfuscatedName("ek.m(Lec;J)V")
-	public void method2800(class149 arg0, long arg1) {
-		this.field1708.method14742(arg0.field1706, arg1);
+	public void method2800(VarType arg0, long arg1) {
+		this.field1708.method14742(arg0.id, arg1);
 	}
 
 	@ObfuscatedName("ek.k(Lec;B)Ljava/lang/Object;")
-	public Object method2801(class149 arg0) {
-		return this.field1708.method14738(arg0.field1706);
+	public Object method2801(VarType arg0) {
+		return this.field1708.method14738(arg0.id);
 	}
 
 	@ObfuscatedName("ek.f(Lec;Ljava/lang/Object;I)V")
-	public void method2802(class149 arg0, Object arg1) {
-		this.field1708.method14735(arg0.field1706, arg1);
+	public void method2802(VarType arg0, Object arg1) {
+		this.field1708.method14735(arg0.id, arg1);
 	}
 
 	@ObfuscatedName("ek.z(Lkh;I)I")

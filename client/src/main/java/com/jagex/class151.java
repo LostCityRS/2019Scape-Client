@@ -9,5 +9,5 @@ public interface class151 {
     VarBitType method694(int arg0);
 
 	@ObfuscatedName("em.w(Lqe;II)Lec;")
-	class149 method695(VarDomainType arg0, int arg1);
+    VarType method695(VarDomainType arg0, int arg1);
 }
