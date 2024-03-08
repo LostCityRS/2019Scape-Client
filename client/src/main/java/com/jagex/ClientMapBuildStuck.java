@@ -4,9 +4,9 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("alv")
-public class class1011 extends class769 implements class578 {
+public class ClientMapBuildStuck extends MapBuildStuck implements SendablePacket {
 
-	public class1011(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6, boolean arg7, int arg8) {
+	public ClientMapBuildStuck(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6, boolean arg7, int arg8) {
 		super(arg0, arg1, arg2 > 65535 ? 65535 : arg2, arg3, arg4 > 255 ? 255 : arg4, arg5, arg6, arg7, arg8 > 255 ? 255 : arg8);
 	}
 

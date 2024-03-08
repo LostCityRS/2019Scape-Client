@@ -152,7 +152,7 @@ public class class280 {
 				if (client.field11067[var0].method9131() == 's' || client.field11067[var0].method9131() == 'S') {
 					Statics.field688.method18157(Statics.field688.field11536, 1);
 					client.field10812 = true;
-					class576.method6971(class770.field8880);
+					class576.method6971(ToolkitType.field8880);
 					break;
 				}
 			}
@@ -319,8 +319,8 @@ public class class280 {
 			Statics.field3086 = new ParamTypeList(client.field10768, Statics.field1680, Statics.field11838);
 			Statics.field11742 = new BASTypeList(client.field10768, Statics.field1680, Statics.field11838);
 			Statics.field2427 = new CursorTypeList(client.field10768, Statics.field1680, Statics.field11838, Statics.field10317);
-			Statics.field9123 = new class758(client.field10768, Statics.field1680, Statics.field11838, Js5ConfigGroup.DBROWTYPE, 64, new class762(DBRowType.class));
-			Statics.field1840 = new class758(client.field10768, Statics.field1680, Statics.field11838, Js5ConfigGroup.DBTABLETYPE, 16, new class762(DBTableType.class));
+			Statics.field9123 = new class758(client.field10768, Statics.field1680, Statics.field11838, Js5ConfigGroup.DBROWTYPE, 64, new BasicTypeFactory(DBRowType.class));
+			Statics.field1840 = new class758(client.field10768, Statics.field1680, Statics.field11838, Js5ConfigGroup.DBTABLETYPE, 16, new BasicTypeFactory(DBTableType.class));
 			Statics.field8514 = new EnumTypeList(client.field10768, Statics.field1680, Statics.field8700);
 			Statics.field8168 = new FloorOverlayTypeList(client.field10768, Statics.field1680, Statics.field11838);
 			Statics.field8145 = new FloorUnderlayTypeList(client.field10768, Statics.field1680, Statics.field11838);
@@ -435,12 +435,12 @@ public class class280 {
 			if (client.field10779) {
 				client.method486(0, false);
 				if (!client.field10812) {
-					class576.method6971(class770.field8881);
+					class576.method6971(ToolkitType.field8881);
 				}
 			} else {
 				client.method486(Statics.field688.field11524.method18545(), false);
 				if (Statics.field688.field11524.method18545() == 0) {
-					class576.method6971(class770.field8882);
+					class576.method6971(ToolkitType.field8882);
 				}
 			}
 			client.setWindowMode(Statics.field688.field11542.method18539(), -1, -1, false);

@@ -9,7 +9,7 @@ public class SeqType implements ConfigType {
 	public static boolean field1775 = false;
 
 	@ObfuscatedName("fg.n")
-	public class166 field1774;
+	public SeqTypeFactory field1774;
 
 	@ObfuscatedName("fg.m")
 	public int field1769;
@@ -83,7 +83,7 @@ public class SeqType implements ConfigType {
 	@ObfuscatedName("fg.t")
 	public int field1783 = -1;
 
-	public SeqType(int arg0, class166 arg1) {
+	public SeqType(int arg0, SeqTypeFactory arg1) {
 		this.field1769 = arg0;
 		this.field1774 = arg1;
 	}

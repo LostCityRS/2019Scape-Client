@@ -4,12 +4,12 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("ux")
-public class class574 implements class578 {
+public class ClientDirectXFailure implements SendablePacket {
 
 	@ObfuscatedName("ux.e")
 	public final int field7274;
 
-	public class574(int arg0) {
+	public ClientDirectXFailure(int arg0) {
 		this.field7274 = arg0;
 	}
 

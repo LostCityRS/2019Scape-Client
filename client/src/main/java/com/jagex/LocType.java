@@ -15,7 +15,7 @@ public class LocType implements ConfigType {
 	public int field7450;
 
 	@ObfuscatedName("vd.k")
-	public class599 field7451;
+	public LocTypeFactory field7451;
 
 	@ObfuscatedName("vd.f")
 	public ConfigTypeList field7452;
@@ -245,7 +245,7 @@ public class LocType implements ConfigType {
 	@ObfuscatedName("vd.cg")
 	public class416 field7468;
 
-	public LocType(int arg0, class599 arg1, ConfigTypeList arg2) {
+	public LocType(int arg0, LocTypeFactory arg1, ConfigTypeList arg2) {
 		this.field7450 = arg0;
 		this.field7451 = arg1;
 		this.field7452 = arg2;

@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("vl")
-public abstract class class583 {
+public abstract class HitmarkTypeFactory {
 
 	@ObfuscatedName("vl.e")
 	public final Js5 field7315;
@@ -11,7 +11,7 @@ public abstract class class583 {
 	@ObfuscatedName("vl.n")
 	public final WeightedCache field7316 = new WeightedCache(20);
 
-	public class583(Js5 arg0) {
+	public HitmarkTypeFactory(Js5 arg0) {
 		this.field7315 = arg0;
 	}
 

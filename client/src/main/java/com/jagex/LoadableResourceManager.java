@@ -30,7 +30,7 @@ public class LoadableResourceManager {
 					class648.method1427();
 					Ping.init();
 				} catch (class1111 var21) {
-					class576.method18474(class772.field8908, var21.field11894, var21.field11895, var21.getCause());
+					class576.method18474(NativeLibraryFailureType.field8908, var21.field11894, var21.field11895, var21.getCause());
 				} catch (Throwable var22) {
 				}
 			}

@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class EffectAnimType implements ConfigType {
 
 	@ObfuscatedName("yy.n")
-	public final class681 field8249;
+	public final EffectAnimTypeFactory field8249;
 
 	@ObfuscatedName("yy.m")
 	public final int field8247;
@@ -59,7 +59,7 @@ public class EffectAnimType implements ConfigType {
 	@ObfuscatedName("yy.x")
 	public int field8263 = -1;
 
-	public EffectAnimType(int arg0, class681 arg1) {
+	public EffectAnimType(int arg0, EffectAnimTypeFactory arg1) {
 		this.field8247 = arg0;
 		this.field8249 = arg1;
 	}

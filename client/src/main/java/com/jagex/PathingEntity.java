@@ -573,7 +573,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements class2
 		int var11 = -1;
 		int var12 = 0;
 		if (arg0 >= 0) {
-			class582 var13 = (class582) Statics.field2936.get(arg0);
+			HitmarkType var13 = (HitmarkType) Statics.field2936.get(arg0);
 			var11 = var13.field7309;
 			var12 = var13.field7297;
 		}

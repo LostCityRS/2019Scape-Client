@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class CursorType implements ConfigType {
 
 	@ObfuscatedName("xj.e")
-	public final class651 field7962;
+	public final CursorTypeFactory field7962;
 
 	@ObfuscatedName("xj.n")
 	public int field7963;
@@ -17,7 +17,7 @@ public class CursorType implements ConfigType {
 	@ObfuscatedName("xj.k")
 	public int field7965;
 
-	public CursorType(int arg0, class651 arg1) {
+	public CursorType(int arg0, CursorTypeFactory arg1) {
 		this.field7962 = arg1;
 	}
 

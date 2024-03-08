@@ -3,12 +3,12 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aca")
-public class class762 implements ConfigTypeFactory {
+public class BasicTypeFactory implements ConfigTypeFactory {
 
 	@ObfuscatedName("aca.e")
 	public final Class field8843;
 
-	public class762(Class arg0) {
+	public BasicTypeFactory(Class arg0) {
 		this.field8843 = arg0;
 	}
 

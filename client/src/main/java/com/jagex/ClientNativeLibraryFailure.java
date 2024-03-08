@@ -4,10 +4,10 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("ur")
-public class class575 implements class578 {
+public class ClientNativeLibraryFailure implements SendablePacket {
 
 	@ObfuscatedName("ur.e")
-	public final class772 field7278;
+	public final NativeLibraryFailureType field7278;
 
 	@ObfuscatedName("ur.n")
 	public final String field7276;
@@ -18,7 +18,7 @@ public class class575 implements class578 {
 	@ObfuscatedName("ur.k")
 	public final String field7275;
 
-	public class575(class772 arg0, String arg1, int arg2, Throwable arg3) {
+	public ClientNativeLibraryFailure(NativeLibraryFailureType arg0, String arg1, int arg2, Throwable arg3) {
 		this.field7278 = arg0;
 		this.field7276 = arg1;
 		this.field7277 = arg2;

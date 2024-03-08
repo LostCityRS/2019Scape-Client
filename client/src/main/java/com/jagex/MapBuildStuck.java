@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("acb")
-public abstract class class769 {
+public abstract class MapBuildStuck {
 
 	@ObfuscatedName("acb.e")
 	public final int field8870;
@@ -32,7 +32,7 @@ public abstract class class769 {
 	@ObfuscatedName("acb.z")
 	public final int field8868;
 
-	public class769(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6, boolean arg7, int arg8) {
+	public MapBuildStuck(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6, boolean arg7, int arg8) {
 		this.field8870 = arg0;
 		this.field8863 = arg1;
 		this.field8864 = arg2 > 65535 ? 65535 : arg2;

@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("alq")
-public class class1012 extends class771 implements class578 {
+public class ClientAutoSetupResult extends AutoSetupResult implements SendablePacket {
 
 	@ObfuscatedName("alq.e(I)V")
 	public void method9201() {

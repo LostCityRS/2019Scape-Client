@@ -10,7 +10,7 @@ public class VarBitType implements class50 {
 	public int id;
 
 	@ObfuscatedName("kh.n")
-	public class306 field3077;
+	public VarBitTypeFactory field3077;
 
 	@ObfuscatedName("kh.m")
 	public class149 baseVar;
@@ -41,7 +41,7 @@ public class VarBitType implements class50 {
 		}
 	}
 
-	public VarBitType(int arg0, class306 arg1) {
+	public VarBitType(int arg0, VarBitTypeFactory arg1) {
 		this.id = arg0;
 		this.field3077 = arg1;
 	}

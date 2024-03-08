@@ -11,7 +11,7 @@ public class NPCType implements ConfigType {
 	public static short[] field2694 = new short[256];
 
 	@ObfuscatedName("if.w")
-	public class261 field2695;
+	public NPCTypeFactory field2695;
 
 	@ObfuscatedName("if.l")
 	public ConfigTypeList field2696;
@@ -220,7 +220,7 @@ public class NPCType implements ConfigType {
 	@ObfuscatedName("if.bj")
 	public boolean field2690 = false;
 
-	public NPCType(int arg0, class261 arg1, ConfigTypeList arg2) {
+	public NPCType(int arg0, NPCTypeFactory arg1, ConfigTypeList arg2) {
 		this.field2732 = arg0;
 		this.field2695 = arg1;
 		this.field2696 = arg2;

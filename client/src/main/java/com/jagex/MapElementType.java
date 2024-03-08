@@ -7,7 +7,7 @@ import deob.Statics;
 public class MapElementType implements ConfigType {
 
 	@ObfuscatedName("hs.e")
-	public final class229 field2368;
+	public final MapElementTypeFactory field2368;
 
 	@ObfuscatedName("hs.n")
 	public final ConfigTypeList field2412;
@@ -141,7 +141,7 @@ public class MapElementType implements ConfigType {
 	@ObfuscatedName("hs.az")
 	public int field2384 = -1;
 
-	public MapElementType(int arg0, ConfigTypeList arg1, class229 arg2) {
+	public MapElementType(int arg0, ConfigTypeList arg1, MapElementTypeFactory arg2) {
 		this.field2367 = arg0;
 		this.field2412 = arg1;
 		this.field2368 = arg2;

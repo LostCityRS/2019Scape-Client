@@ -32,7 +32,7 @@ public class DllResourceLoader implements ResourceLoader {
 		try {
 			return Statics.field10577.method8464(this.field4336, this.field4335);
 		} catch (HardwarePlatformLoaderException var2) {
-			class576.method18474(class772.field8907, var2.field11896, var2.field11897, var2.getCause());
+			class576.method18474(NativeLibraryFailureType.field8907, var2.field11896, var2.field11897, var2.getCause());
 			this.field4337 = true;
 			return 100;
 		}

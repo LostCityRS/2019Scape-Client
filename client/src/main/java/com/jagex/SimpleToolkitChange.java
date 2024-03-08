@@ -4,12 +4,12 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("uo")
-public class class577 implements class578 {
+public class SimpleToolkitChange implements SendablePacket {
 
 	@ObfuscatedName("uo.e")
-	public final class770 field7281;
+	public final ToolkitType field7281;
 
-	public class577(class770 arg0) {
+	public SimpleToolkitChange(ToolkitType arg0) {
 		this.field7281 = arg0;
 	}
 

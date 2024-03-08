@@ -3,13 +3,13 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("vb")
-public class class582 implements ConfigType {
+public class HitmarkType implements ConfigType {
 
 	@ObfuscatedName("vb.e")
 	public final ConfigTypeList field7303;
 
 	@ObfuscatedName("vb.n")
-	public final class583 field7307;
+	public final HitmarkTypeFactory field7307;
 
 	@ObfuscatedName("vb.u")
 	public boolean field7294 = false;
@@ -74,7 +74,7 @@ public class class582 implements ConfigType {
 	@ObfuscatedName("vb.ag")
 	public int field7314 = 1;
 
-	public class582(int arg0, class583 arg1, ConfigTypeList arg2) {
+	public HitmarkType(int arg0, HitmarkTypeFactory arg1, ConfigTypeList arg2) {
 		this.field7307 = arg1;
 		this.field7303 = arg2;
 	}
@@ -157,7 +157,7 @@ public class class582 implements ConfigType {
 	}
 
 	@ObfuscatedName("vb.z(Lem;Lep;I)Lvb;")
-	public final class582 method9251(class151 arg0, class147 arg1) {
+	public final HitmarkType method9251(class151 arg0, class147 arg1) {
 		int var3 = -1;
 		if (this.field7298 == null) {
 			return this;
@@ -176,10 +176,10 @@ public class class582 implements ConfigType {
 				}
 			}
 			if (var3 >= 0 && var3 < this.field7298.length - 1) {
-				return this.field7298[var3] == -1 ? null : (class582) this.field7303.get(this.field7298[var3]);
+				return this.field7298[var3] == -1 ? null : (HitmarkType) this.field7303.get(this.field7298[var3]);
 			} else {
 				int var6 = this.field7298[this.field7298.length - 1];
-				return var6 == -1 ? null : (class582) this.field7303.get(var6);
+				return var6 == -1 ? null : (HitmarkType) this.field7303.get(var6);
 			}
 		}
 	}

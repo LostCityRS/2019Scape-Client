@@ -6,30 +6,30 @@ import deob.ObfuscatedName;
 public class MapElementTypeList extends class758 {
 
 	public MapElementTypeList(ModeGame arg0, Language arg1, Js5 arg2, Js5 arg3) {
-		super(arg0, arg1, arg2, Js5ConfigGroup.MELTYPE, 128, new MapElementTypeFactory(arg3, 64));
+		super(arg0, arg1, arg2, Js5ConfigGroup.MELTYPE, 128, new BasicMapElementTypeFactory(arg3, 64));
 	}
 
 	@ObfuscatedName("aoc.al(III)V")
 	public void method18871(int arg0, int arg1) {
 		super.method14910(arg0);
-		((class229) this.field8796).field2414 = new WeightedCache(arg1);
+		((MapElementTypeFactory) this.field8796).field2414 = new WeightedCache(arg1);
 	}
 
 	@ObfuscatedName("aoc.r(I)V")
 	public void method14895() {
 		super.method14895();
-		((class229) this.field8796).field2414.method2924();
+		((MapElementTypeFactory) this.field8796).field2414.method2924();
 	}
 
 	@ObfuscatedName("aoc.v(II)V")
 	public void method14896(int arg0) {
 		super.method14896(arg0);
-		((class229) this.field8796).field2414.method2923(arg0);
+		((MapElementTypeFactory) this.field8796).field2414.method2923(arg0);
 	}
 
 	@ObfuscatedName("aoc.o(I)V")
 	public void method14899() {
 		super.method14899();
-		((class229) this.field8796).field2414.method2928();
+		((MapElementTypeFactory) this.field8796).field2414.method2928();
 	}
 }

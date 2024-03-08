@@ -6,6 +6,6 @@ import deob.ObfuscatedName;
 public class SkyBoxTypeList extends class758 {
 
 	public SkyBoxTypeList(ModeGame arg0, Language arg1, Js5 arg2) {
-		super(arg0, arg1, arg2, Js5ConfigGroup.SKYBOXTYPE, 16, new class762(SkyBoxType.class));
+		super(arg0, arg1, arg2, Js5ConfigGroup.SKYBOXTYPE, 16, new BasicTypeFactory(SkyBoxType.class));
 	}
 }

@@ -1347,12 +1347,12 @@ public final class client extends GameShell {
 			case 3:
 				class48.field788 = true;
 				Statics.field688.method18157(Statics.field688.field11536, 0);
-				class576.method6971(class770.field8885);
+				class576.method6971(ToolkitType.field8885);
 				break;
 			case 4:
 				class48.field786 = true;
 				Statics.field688.method18157(Statics.field688.field11536, 0);
-				class576.method6971(class770.field8872);
+				class576.method6971(ToolkitType.field8872);
 		}
 		if (Statics.field8752.field8745 == null) {
 			Statics.field8752.field8745 = Statics.field11885.getCodeBase().getHost();
@@ -2098,10 +2098,10 @@ public final class client extends GameShell {
 					} catch (Throwable var31) {
 						switch(arg0) {
 							case 1:
-								class576.method6971(class770.field8883);
+								class576.method6971(ToolkitType.field8883);
 								break;
 							case 3:
-								class576.method6971(class770.field8876);
+								class576.method6971(ToolkitType.field8876);
 								break;
 						}
 						if (var31 instanceof class1208) {
@@ -6363,13 +6363,13 @@ public final class client extends GameShell {
 				for (int var68 = 0; var68 < Statics.field11389.field7758; var68++) {
 					int var69 = var12.field10421[var68];
 					int var70 = var12.field10411[var68];
-					class582 var71 = null;
+					HitmarkType var71 = null;
 					int var72 = 0;
 					if (var70 >= 0) {
 						if (var69 <= field10903) {
 							continue;
 						}
-						var71 = (class582) Statics.field2936.get(var12.field10411[var68]);
+						var71 = (HitmarkType) Statics.field2936.get(var12.field10411[var68]);
 						var72 = var71.field7297;
 						if (var71 != null && var71.field7298 != null) {
 							var71 = var71.method9251(Statics.field7410, Statics.field7410);
@@ -6382,9 +6382,9 @@ public final class client extends GameShell {
 						continue;
 					}
 					int var73 = var12.field10456[var68];
-					class582 var74 = null;
+					HitmarkType var74 = null;
 					if (var73 >= 0) {
-						var74 = (class582) Statics.field2936.get(var73);
+						var74 = (HitmarkType) Statics.field2936.get(var73);
 						if (var74 != null && var74.field7298 != null) {
 							var74 = var74.method9251(Statics.field7410, Statics.field7410);
 						}

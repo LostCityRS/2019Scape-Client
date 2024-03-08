@@ -66,14 +66,14 @@ public class class48 {
 
 	@ObfuscatedName("hj.m(I)I")
 	public static int method4288() {
-		class1012 var0 = method4063();
+		ClientAutoSetupResult var0 = method4063();
 		class576.method4995(var0);
 		return var0.method14996();
 	}
 
 	@ObfuscatedName("hp.k(B)Lalq;")
-	public static class1012 method4063() {
-		class1012 var0 = new class1012();
+	public static ClientAutoSetupResult method4063() {
+		ClientAutoSetupResult var0 = new ClientAutoSetupResult();
 		boolean var1 = false;
 		boolean var2 = false;
 		boolean var3 = false;
@@ -177,7 +177,7 @@ public class class48 {
 	}
 
 	@ObfuscatedName("alz.f(Lalq;I)V")
-	public static void method18306(class1012 arg0) {
+	public static void method18306(ClientAutoSetupResult arg0) {
 		arg0.method18314(0);
 		byte var2;
 		if (GameShell.field6616 >= 96) {
@@ -212,7 +212,7 @@ public class class48 {
 	}
 
 	@ObfuscatedName("et.w(Lalq;IIB)V")
-	public static void method2859(class1012 arg0, int arg1, int arg2) {
+	public static void method2859(ClientAutoSetupResult arg0, int arg1, int arg2) {
 		arg0.method18314(arg1);
 		byte var3;
 		if (arg2 > 100000) {

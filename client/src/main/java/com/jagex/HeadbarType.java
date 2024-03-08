@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class HeadbarType implements ConfigType {
 
 	@ObfuscatedName("uk.e")
-	public final class567 field7226;
+	public final HeadbarTypeFactory field7226;
 
 	@ObfuscatedName("uk.m")
 	public int field7223 = 255;
@@ -41,7 +41,7 @@ public class HeadbarType implements ConfigType {
 	@ObfuscatedName("uk.r")
 	public int field7221 = -1;
 
-	public HeadbarType(int arg0, class567 arg1) {
+	public HeadbarType(int arg0, HeadbarTypeFactory arg1) {
 		this.field7226 = arg1;
 	}
 

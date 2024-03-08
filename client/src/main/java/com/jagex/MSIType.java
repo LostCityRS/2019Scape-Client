@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class MSIType implements ConfigType {
 
 	@ObfuscatedName("aco.e")
-	public class782 field9153;
+	public MSITypeFactory field9153;
 
 	@ObfuscatedName("aco.n")
 	public int field9151;
@@ -20,7 +20,7 @@ public class MSIType implements ConfigType {
 	@ObfuscatedName("aco.f")
 	public int[] field9150;
 
-	public MSIType(int arg0, class782 arg1) {
+	public MSIType(int arg0, MSITypeFactory arg1) {
 		this.field9153 = arg1;
 	}
 

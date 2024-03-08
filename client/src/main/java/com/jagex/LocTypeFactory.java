@@ -2,40 +2,120 @@ package com.jagex;
 
 import deob.ObfuscatedName;
 
-@ObfuscatedName("alf")
-public class LocTypeFactory extends class599 implements ConfigTypeFactory {
+@ObfuscatedName("vh")
+public abstract class LocTypeFactory {
 
-	@ObfuscatedName("alf.z")
-	public final Js5 field11701;
+	@ObfuscatedName("vh.e")
+	public boolean field7531;
 
-	public LocTypeFactory(boolean arg0, Js5 arg1, Language arg2, ModeGame arg3) {
-		super(arg0, arg2, arg3);
-		this.field11701 = arg1;
-	}
+	@ObfuscatedName("vh.n")
+	public final WeightedCache field7530 = new WeightedCache(500);
 
-	@ObfuscatedName("alf.v(ILao;I)Lay;")
-	public ConfigType create(int arg0, ConfigTypeList arg1) {
-		return new LocType(arg0, this, arg1);
-	}
+	@ObfuscatedName("vh.m")
+	public final WeightedCache field7533 = new WeightedCache(30);
 
-	@ObfuscatedName("alf.o(B)Ljava/lang/Class;")
-	public Class type() {
-		return LocType.class;
-	}
+	@ObfuscatedName("vh.k")
+	public final WeightedCache field7532 = new WeightedCache(50);
 
-	@ObfuscatedName("alf.w(II)[B")
-	public byte[] method9530(int arg0) {
-		Js5 var2 = this.field11701;
-		synchronized (this.field11701) {
-			return this.field11701.method6879(arg0, 0);
+	@ObfuscatedName("vh.f")
+	public int field7536;
+
+	@ObfuscatedName("vh.w")
+	public final String[] field7534;
+
+	@ObfuscatedName("vh.l")
+	public ModelUnlit[] field7535 = new ModelUnlit[4];
+
+	@ObfuscatedName("vh.u")
+	public class746 field7529 = new class746(null, null);
+
+	public LocTypeFactory(boolean arg0, Language arg1, ModeGame arg2) {
+		this.field7531 = arg0;
+		if (ModeGame.field8335 == arg2) {
+			this.field7534 = new String[] { null, null, null, null, null, LocalisedText.field9075.method15021(arg1) };
+		} else {
+			this.field7534 = new String[] { null, null, null, null, null, null };
 		}
 	}
 
-	@ObfuscatedName("alf.l(IS)Z")
-	public boolean method9525(int arg0) {
-		Js5 var2 = this.field11701;
-		synchronized (this.field11701) {
-			return this.field11701.method6888(arg0, 0);
+	@ObfuscatedName("vh.e(ZI)V")
+	public void method9519(boolean arg0) {
+		if (this.field7531 != arg0) {
+			this.field7531 = arg0;
+			this.method9521();
 		}
 	}
+
+	@ObfuscatedName("vh.n(IB)V")
+	public void method9541(int arg0) {
+		this.field7536 = arg0;
+		WeightedCache var2 = this.field7530;
+		synchronized (this.field7530) {
+			this.field7530.method2924();
+		}
+		WeightedCache var4 = this.field7533;
+		synchronized (this.field7533) {
+			this.field7533.method2924();
+		}
+		WeightedCache var6 = this.field7532;
+		synchronized (this.field7532) {
+			this.field7532.method2924();
+		}
+	}
+
+	@ObfuscatedName("vh.m(I)V")
+	public void method9521() {
+		WeightedCache var1 = this.field7530;
+		synchronized (this.field7530) {
+			this.field7530.method2924();
+		}
+		WeightedCache var3 = this.field7533;
+		synchronized (this.field7533) {
+			this.field7533.method2924();
+		}
+		WeightedCache var5 = this.field7532;
+		synchronized (this.field7532) {
+			this.field7532.method2924();
+		}
+		this.field7535 = new ModelUnlit[4];
+		this.field7529 = new class746(null, null);
+	}
+
+	@ObfuscatedName("vh.k(IB)V")
+	public void method9522(int arg0) {
+		WeightedCache var2 = this.field7530;
+		synchronized (this.field7530) {
+			this.field7530.method2923(arg0);
+		}
+		WeightedCache var4 = this.field7533;
+		synchronized (this.field7533) {
+			this.field7533.method2923(arg0);
+		}
+		WeightedCache var6 = this.field7532;
+		synchronized (this.field7532) {
+			this.field7532.method2923(arg0);
+		}
+	}
+
+	@ObfuscatedName("vh.f(I)V")
+	public void method9520() {
+		WeightedCache var1 = this.field7530;
+		synchronized (this.field7530) {
+			this.field7530.method2928();
+		}
+		WeightedCache var3 = this.field7533;
+		synchronized (this.field7533) {
+			this.field7533.method2928();
+		}
+		WeightedCache var5 = this.field7532;
+		synchronized (this.field7532) {
+			this.field7532.method2928();
+		}
+	}
+
+	@ObfuscatedName("vh.l(IS)Z")
+	public abstract boolean method9525(int arg0);
+
+	@ObfuscatedName("vh.w(II)[B")
+	public abstract byte[] method9530(int arg0);
 }

@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("acc")
-public abstract class class771 {
+public abstract class AutoSetupResult {
 
 	@ObfuscatedName("acc.r")
 	public int field8899 = -1;

@@ -15,7 +15,7 @@ public class ObjType implements ConfigType {
 	public ConfigTypeList field8625;
 
 	@ObfuscatedName("abv.u")
-	public class737 field8621;
+	public ObjTypeFactory field8621;
 
 	@ObfuscatedName("abv.z")
 	public int field8627;
@@ -236,7 +236,7 @@ public class ObjType implements ConfigType {
 	@ObfuscatedName("abv.ce")
 	public static String field8699 = "</col>";
 
-	public ObjType(int arg0, ConfigTypeList arg1, class737 arg2) {
+	public ObjType(int arg0, ConfigTypeList arg1, ObjTypeFactory arg2) {
 		this.field8627 = arg0;
 		this.field8625 = arg1;
 		this.field8621 = arg2;
