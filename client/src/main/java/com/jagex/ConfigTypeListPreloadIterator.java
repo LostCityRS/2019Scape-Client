@@ -5,15 +5,15 @@ import deob.ObfuscatedName;
 import java.util.Iterator;
 
 @ObfuscatedName("ack")
-public class class764 implements Iterator {
+public class ConfigTypeListPreloadIterator implements Iterator {
 
 	// $FF: synthetic field
-	public final class763 this$0;
+	public final ConfigTypeListPreload this$0;
 
 	@ObfuscatedName("ack.e")
 	public int field8850;
 
-	public class764(class763 arg0) {
+	public ConfigTypeListPreloadIterator(ConfigTypeListPreload arg0) {
 		this.this$0 = arg0;
 	}
 

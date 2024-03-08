@@ -6,7 +6,7 @@ import java.lang.reflect.Array;
 import java.util.Iterator;
 
 @ObfuscatedName("acd")
-public class class763 implements ConfigTypeList {
+public class ConfigTypeListPreload implements ConfigTypeList {
 
 	@ObfuscatedName("acd.e")
 	public final ConfigTypeFactory field8846;
@@ -26,7 +26,7 @@ public class class763 implements ConfigTypeList {
 	@ObfuscatedName("acd.w")
 	public ConfigType[] field8849;
 
-	public class763(ModeGame arg0, Language arg1, Js5ConfigGroup arg2, Js5 arg3, ConfigTypeFactory arg4, boolean arg5) {
+	public ConfigTypeListPreload(ModeGame arg0, Language arg1, Js5ConfigGroup arg2, Js5 arg3, ConfigTypeFactory arg4, boolean arg5) {
 		this.field8846 = arg4;
 		this.field8845 = arg2;
 		this.field8847 = arg3;
@@ -79,6 +79,6 @@ public class class763 implements ConfigTypeList {
 	}
 
 	public Iterator iterator() {
-		return new class764(this);
+		return new ConfigTypeListPreloadIterator(this);
 	}
 }
