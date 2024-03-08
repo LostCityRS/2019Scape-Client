@@ -2864,7 +2864,7 @@ public class Statics {
 		TwitchEventResult var2 = new TwitchEventResult(arg0, arg1);
 		class571 var3 = var2.method11();
 		if (var3 != null) {
-			class676.method13907(var3.method1303(), var2);
+			class676.method13907(var3.getId(), var2);
 		}
 	}
 
@@ -4202,9 +4202,9 @@ public class Statics {
 			throw new RuntimeException();
 		}
 		EnumType var5 = (EnumType) field8514.get(var2);
-		if (var5.field8781.method1303() != var1) {
+		if (var5.field8781.getId() != var1) {
 			throw new RuntimeException();
-		} else if (var5.field8775.method1303() == ScriptVarType.field4634.method1303()) {
+		} else if (var5.field8775.getId() == ScriptVarType.field4634.getId()) {
 			int[] var6 = var5.method14867(var4);
 			if (var3 < 0 || var6 == null || var6.length <= var3) {
 				throw new RuntimeException();
@@ -4407,7 +4407,7 @@ public class Statics {
 		var7.field11432.pjstr(var4.field2336);
 		var7.field11432.p2_alt1(arg2);
 		var7.field11432.p1_alt2(arg0);
-		var7.field11432.p1_alt3(var4.field2337.method1303());
+		var7.field11432.p1_alt3(var4.field2337.getId());
 		var7.field11432.p4_alt2(arg1);
 		var6.method934(var7);
 	}

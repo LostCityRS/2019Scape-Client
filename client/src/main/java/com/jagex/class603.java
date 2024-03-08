@@ -22,7 +22,7 @@ public class class603 implements SerializableEnum {
 	}
 
 	@ObfuscatedName("vn.n()I")
-	public int method1303() {
+	public int getId() {
 		return this.field7576;
 	}
 }

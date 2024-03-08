@@ -62,7 +62,7 @@ public class BaseVarType implements SerializableEnum {
 	}
 
 	@ObfuscatedName("qa.n()I")
-	public int method1303() {
+	public int getId() {
 		return this.field4842;
 	}
 

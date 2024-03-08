@@ -24,7 +24,7 @@ public class class569 implements SerializableEnum {
 	}
 
 	@ObfuscatedName("uw.n()I")
-	public int method1303() {
+	public int getId() {
 		return this.field7238;
 	}
 }

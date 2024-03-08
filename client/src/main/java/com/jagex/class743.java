@@ -29,7 +29,7 @@ public class class743 implements SerializableEnum {
 	}
 
 	@ObfuscatedName("abi.n()I")
-	public int method1303() {
+	public int getId() {
 		return this.field8727;
 	}
 }

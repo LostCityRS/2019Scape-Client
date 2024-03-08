@@ -6,5 +6,5 @@ import deob.ObfuscatedName;
 public interface SerializableEnum {
 
 	@ObfuscatedName("za.n()I")
-	int method1303();
+	int getId();
 }

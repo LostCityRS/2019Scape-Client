@@ -65,7 +65,7 @@ public class VarDomainType implements SerializableEnum {
 	}
 
 	@ObfuscatedName("qe.n()I")
-	public int method1303() {
+	public int getId() {
 		return this.serialID;
 	}
 

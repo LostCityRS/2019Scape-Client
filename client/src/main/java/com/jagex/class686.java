@@ -26,7 +26,7 @@ public class class686 {
 				SerializableEnum[] var4 = (SerializableEnum[]) arg0.getEnumConstants();
 				for (int var5 = 0; var5 < var4.length; var5++) {
 					SerializableEnum var6 = var4[var5];
-					var3.put(var6.method1303(), var6);
+					var3.put(var6.getId(), var6);
 				}
 				field8286.put(arg0, var3);
 			}
@@ -39,7 +39,7 @@ public class class686 {
 		SerializableEnum[] var2 = arg0;
 		for (int var3 = 0; var3 < var2.length; var3++) {
 			SerializableEnum var4 = var2[var3];
-			if (arg1 == var4.method1303()) {
+			if (arg1 == var4.getId()) {
 				return var4;
 			}
 		}
@@ -59,7 +59,7 @@ public class class686 {
 		Iterator var4 = arg0.iterator();
 		while (var4.hasNext()) {
 			SerializableEnum var5 = (SerializableEnum) var4.next();
-			int var6 = var5.method1303();
+			int var6 = var5.getId();
 			int var7 = var6 / 8;
 			arg1.data[arg1.pos + var7] = (byte) (arg1.data[arg1.pos + var7] | 0x1 << (var6 & 0x7));
 		}
@@ -72,8 +72,8 @@ public class class686 {
 		Iterator var2 = arg0.iterator();
 		while (var2.hasNext()) {
 			SerializableEnum var3 = (SerializableEnum) var2.next();
-			if (var3.method1303() > var1) {
-				var1 = var3.method1303();
+			if (var3.getId() > var1) {
+				var1 = var3.getId();
 			}
 		}
 		return (var1 + 8) / 8;

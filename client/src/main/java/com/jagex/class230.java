@@ -31,7 +31,7 @@ public class class230 implements SerializableEnum {
 	}
 
 	@ObfuscatedName("hp.n()I")
-	public int method1303() {
+	public int getId() {
 		return this.field2416;
 	}
 }

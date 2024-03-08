@@ -342,7 +342,7 @@ public class LoginManager {
 				method14049(var5, (long) field472);
 				Statics.field3429 = field472;
 				var5.p1(field472);
-				var5.p1(Statics.field1680.method1303());
+				var5.p1(Statics.field1680.getId());
 				var5.p4(client.field10772);
 				for (int var6 = 0; var6 < 5; var6++) {
 					var5.p4(Statics.field10311.nextInt());
@@ -492,7 +492,7 @@ public class LoginManager {
 						}
 					}
 					var10.p1(client.field10768.field8339);
-					var10.p1(Statics.field1680.method1303());
+					var10.p1(Statics.field1680.getId());
 					var10.p1(client.method2845());
 					var10.p2(Statics.field6586);
 					var10.p2(Statics.field6600);
@@ -1001,7 +1001,7 @@ public class LoginManager {
 		} else {
 			var3 = class743.field8724;
 		}
-		arg0.p1(var3.method1303());
+		arg0.p1(var3.getId());
 		switch(var3.field8725) {
 			case 0:
 				arg0.p4(Statics.field1895.method577(arg1));

@@ -352,7 +352,7 @@ public class class586 {
 				if (var8 != null && method6878(var8, arg1)) {
 					class571 var9 = var8.method11();
 					if (var9 != null) {
-						class676.method13907(var9.method1303(), var8);
+						class676.method13907(var9.getId(), var8);
 					}
 				}
 			}

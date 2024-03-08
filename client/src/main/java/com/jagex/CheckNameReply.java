@@ -45,7 +45,7 @@ public class CheckNameReply implements SerializableEnum {
 	}
 
 	@ObfuscatedName("zr.n()I")
-	public int method1303() {
+	public int getId() {
 		return this.field8413;
 	}
 }

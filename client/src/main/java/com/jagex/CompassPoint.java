@@ -46,7 +46,7 @@ public class CompassPoint implements SerializableEnum {
 	}
 
 	@ObfuscatedName("zi.n()I")
-	public int method1303() {
+	public int getId() {
 		return this.field8312;
 	}
 

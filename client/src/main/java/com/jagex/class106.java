@@ -49,7 +49,7 @@ public class class106 implements SerializableEnum {
 	}
 
 	@ObfuscatedName("cy.n()I")
-	public int method1303() {
+	public int getId() {
 		return this.field1255;
 	}
 

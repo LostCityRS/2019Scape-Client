@@ -78,7 +78,7 @@ public class Language implements SerializableEnum {
 	}
 
 	@ObfuscatedName("zt.n()I")
-	public int method1303() {
+	public int getId() {
 		return this.field8298;
 	}
 

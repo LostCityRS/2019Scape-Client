@@ -42,7 +42,7 @@ public class class571 implements SerializableEnum, class570 {
 	}
 
 	@ObfuscatedName("ud.n()I")
-	public int method1303() {
+	public int getId() {
 		return this.field7246;
 	}
 }

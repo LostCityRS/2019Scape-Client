@@ -77,7 +77,7 @@ public class class100 implements SerializableEnum {
 	}
 
 	@ObfuscatedName("cr.n()I")
-	public int method1303() {
+	public int getId() {
 		return this.field1222;
 	}
 

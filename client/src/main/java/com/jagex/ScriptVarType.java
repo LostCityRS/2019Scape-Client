@@ -616,7 +616,7 @@ public class ScriptVarType implements SerializableEnum, class466 {
 	}
 
 	@ObfuscatedName("qw.n()I")
-	public int method1303() {
+	public int getId() {
 		return this.field4669;
 	}
 

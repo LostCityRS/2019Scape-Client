@@ -1417,7 +1417,7 @@ public class class495 {
 						var16.method19156(var14);
 						var16.method16502(var16.field12083.field2699);
 						var16.field10444 = var16.field12083.field2731 << 3;
-						var16.method16491(var16.field12083.field2727.method13895().method1303() << 11 & 0x3FFF, true);
+						var16.method16491(var16.field12083.field2727.method13895().getId() << 11 & 0x3FFF, true);
 						var16.method19159(var9, var12, var13, true, var16.method16546());
 					}
 				}

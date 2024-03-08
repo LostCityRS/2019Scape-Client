@@ -34,7 +34,7 @@ public class class445 implements SerializableEnum {
 	}
 
 	@ObfuscatedName("pj.n()I")
-	public int method1303() {
+	public int getId() {
 		return this.field4433;
 	}
 }

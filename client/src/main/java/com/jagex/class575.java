@@ -29,7 +29,7 @@ public class class575 implements class578 {
 	public void method9201() {
 		ClientMessage var1 = Statics.method1604(ClientProt.NATIVE_LIBRARY_FAILURE, client.field10849.field794);
 		int var2 = var1.field11432.pos++;
-		var1.field11432.p1(this.field7278.method1303());
+		var1.field11432.p1(this.field7278.getId());
 		var1.field11432.pjstr(this.field7276);
 		var1.field11432.p2(this.field7277);
 		var1.field11432.pjstr(class498.field5075);

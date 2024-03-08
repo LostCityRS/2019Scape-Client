@@ -76,7 +76,7 @@ public class ModeWhere implements SerializableEnum {
 	}
 
 	@ObfuscatedName("yu.n()I")
-	public int method1303() {
+	public int getId() {
 		return this.field8280;
 	}
 

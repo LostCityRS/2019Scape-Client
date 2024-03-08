@@ -19,7 +19,7 @@ public class ModeAccountType implements SerializableEnum {
 	}
 
 	@ObfuscatedName("zu.n()I")
-	public int method1303() {
+	public int getId() {
 		return this.field8342;
 	}
 }

@@ -48,7 +48,7 @@ public class ConnectReply implements SerializableEnum {
 	}
 
 	@ObfuscatedName("zl.n()I")
-	public int method1303() {
+	public int getId() {
 		return this.field8369;
 	}
 }

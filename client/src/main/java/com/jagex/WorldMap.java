@@ -39,28 +39,28 @@ public class WorldMap {
 	public static int[][] field6800 = new int[][] { { 2, 2, 0, 0, 0, 0 }, { 2, 2, 2, 0, 0, 0 }, { 1, 2, 2, 2, 0, 0 }, { 1, 1, 1, 2, 2, 0 }, { 1, 1, 1, 2, 2, 2 }, { 1, 1, 1, 1, 2, 2 } };
 
 	@ObfuscatedName("tf.au")
-	public static final int field6822 = CompassPoint.field8311.method1303();
+	public static final int field6822 = CompassPoint.field8311.getId();
 
 	@ObfuscatedName("tf.ar")
-	public static final int field6823 = CompassPoint.field8305.method1303();
+	public static final int field6823 = CompassPoint.field8305.getId();
 
 	@ObfuscatedName("tf.ap")
-	public static final int field6824 = CompassPoint.field8303.method1303();
+	public static final int field6824 = CompassPoint.field8303.getId();
 
 	@ObfuscatedName("tf.aq")
-	public static final int field6825 = CompassPoint.field8306.method1303();
+	public static final int field6825 = CompassPoint.field8306.getId();
 
 	@ObfuscatedName("tf.ax")
-	public static final int field6826 = CompassPoint.field8307.method1303();
+	public static final int field6826 = CompassPoint.field8307.getId();
 
 	@ObfuscatedName("tf.av")
-	public static final int field6827 = CompassPoint.field8308.method1303();
+	public static final int field6827 = CompassPoint.field8308.getId();
 
 	@ObfuscatedName("tf.ao")
-	public static final int field6843 = CompassPoint.field8309.method1303();
+	public static final int field6843 = CompassPoint.field8309.getId();
 
 	@ObfuscatedName("tf.aj")
-	public static final int field6829 = CompassPoint.field8310.method1303();
+	public static final int field6829 = CompassPoint.field8310.getId();
 
 	@ObfuscatedName("tf.ab")
 	public static WeightedCache field6831 = new WeightedCache(4096, 256);
@@ -124,7 +124,7 @@ public class WorldMap {
 		Statics.field6791 = arg7;
 		Statics.field6790 = arg8;
 		field6796.method14499();
-		int[] var9 = Statics.field6794.method6895(class654.field7968.method1303());
+		int[] var9 = Statics.field6794.method6895(class654.field7968.getId());
 		if (var9 != null) {
 			for (int var10 = 0; var10 < var9.length; var10++) {
 				class1183 var11 = class1183.method3468(Statics.field6794, var9[var10]);

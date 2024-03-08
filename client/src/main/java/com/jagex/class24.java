@@ -206,7 +206,7 @@ public class class24 {
 				var1.field11432.p4(client.field10776);
 				var1.field11432.p4(client.field10775);
 				var1.field11432.pjstr(Statics.field579);
-				var1.field11432.p1(Statics.field1680.method1303());
+				var1.field11432.p1(Statics.field1680.getId());
 				var1.field11432.p1(client.field10768.field8339);
 				GameShell.method4286(var1.field11432);
 				String var4 = client.field10781;

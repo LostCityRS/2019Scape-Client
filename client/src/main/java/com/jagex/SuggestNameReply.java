@@ -33,7 +33,7 @@ public class SuggestNameReply implements SerializableEnum {
 	}
 
 	@ObfuscatedName("zg.n()I")
-	public int method1303() {
+	public int getId() {
 		return this.field8396;
 	}
 }

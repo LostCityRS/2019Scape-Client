@@ -91,7 +91,7 @@ public class class601 implements SerializableEnum {
 	}
 
 	@ObfuscatedName("vj.n()I")
-	public int method1303() {
+	public int getId() {
 		return this.field7562;
 	}
 

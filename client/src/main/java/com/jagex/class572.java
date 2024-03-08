@@ -99,7 +99,7 @@ public class class572 implements class573 {
 	}
 
 	@ObfuscatedName("uh.n()I")
-	public int method1303() {
+	public int getId() {
 		return this.field7271;
 	}
 }

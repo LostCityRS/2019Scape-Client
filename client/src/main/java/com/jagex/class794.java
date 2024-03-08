@@ -54,7 +54,7 @@ public class class794 implements SerializableEnum {
 	}
 
 	@ObfuscatedName("adi.n()I")
-	public int method1303() {
+	public int getId() {
 		return this.field9188;
 	}
 
