@@ -1233,7 +1233,7 @@ public class class495 {
 			}
 		}
 		if (this.field5037) {
-			class47.method4285(Long.toString(class213.method3655() - this.field5056));
+			DeveloperConsole.method4285(Long.toString(class213.method3655() - this.field5056));
 			this.field5037 = false;
 		}
 		if (var22) {

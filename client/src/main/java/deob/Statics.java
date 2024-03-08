@@ -2369,34 +2369,34 @@ public class Statics {
 
 	@ObfuscatedName("xd.u(B)V")
 	public static void method10298() {
-		if (class47.field776 * 36 < 102) {
-			class47.field776 = class47.field776 * 36 + 6;
+		if (DeveloperConsole.field776 * 36 < 102) {
+			DeveloperConsole.field776 = DeveloperConsole.field776 * 36 + 6;
 		}
-		if (class47.field772 != -1 && field765 < class213.method3655()) {
-			for (int var0 = class47.field772; var0 < field2615.length; var0++) {
+		if (DeveloperConsole.field772 != -1 && field765 < class213.method3655()) {
+			for (int var0 = DeveloperConsole.field772; var0 < field2615.length; var0++) {
 				if (field2615[var0].startsWith("pause")) {
 					int var1 = 5;
 					try {
 						var1 = Integer.parseInt(field2615[var0].substring(6));
 					} catch (Exception var14) {
 					}
-					class47.method4285("Pausing for " + var1 + " seconds...");
-					class47.field772 = var0 + 1;
+					DeveloperConsole.method4285("Pausing for " + var1 + " seconds...");
+					DeveloperConsole.field772 = var0 + 1;
 					field765 = class213.method3655() + (long) (var1 * 1000);
 					return;
 				}
-				class47.field766 = field2615[var0];
-				class47.method14718(false);
+				DeveloperConsole.field766 = field2615[var0];
+				DeveloperConsole.method14718(false);
 			}
-			class47.field772 = -1;
+			DeveloperConsole.field772 = -1;
 		}
 		if (client.field10817 != 0) {
-			class47.field771 -= client.field10817 * 5;
-			if (class47.field771 >= class47.field764) {
-				class47.field771 = class47.field764 - 1;
+			DeveloperConsole.field771 -= client.field10817 * 5;
+			if (DeveloperConsole.field771 >= DeveloperConsole.field764) {
+				DeveloperConsole.field771 = DeveloperConsole.field764 - 1;
 			}
-			if (class47.field771 < 0) {
-				class47.field771 = 0;
+			if (DeveloperConsole.field771 < 0) {
+				DeveloperConsole.field771 = 0;
 			}
 			client.field10817 = 0;
 		}
@@ -2406,10 +2406,10 @@ public class Statics {
 			char var6 = var4.method9131();
 			int var7 = var4.method9134();
 			if (var5 == 84) {
-				class47.method14718(false);
+				DeveloperConsole.method14718(false);
 			}
 			if (var5 == 80) {
-				class47.method14718(true);
+				DeveloperConsole.method14718(true);
 			} else if (var5 == 66 && (var7 & 0x4) != 0) {
 				if (field3428 != null) {
 					String var8 = "";
@@ -2428,36 +2428,36 @@ public class Statics {
 							String var11 = (String) var10.getTransferData(DataFlavor.stringFlavor);
 							if (var11 != null) {
 								String[] var12 = class695.method17361(var11, '\n');
-								class47.method15383(var12);
+								DeveloperConsole.method15383(var12);
 							}
 						}
 					} catch (Exception var15) {
 					}
 				}
-			} else if (var5 == 85 && class47.field769 > 0) {
-				class47.field766 = class47.field766.substring(0, class47.field769 - 1) + class47.field766.substring(class47.field769);
-				class47.field769--;
-			} else if (var5 == 101 && class47.field769 < class47.field766.length()) {
-				class47.field766 = class47.field766.substring(0, class47.field769) + class47.field766.substring(class47.field769 + 1);
-			} else if (var5 == 96 && class47.field769 > 0) {
-				class47.field769--;
-			} else if (var5 == 97 && class47.field769 < class47.field766.length()) {
-				class47.field769++;
+			} else if (var5 == 85 && DeveloperConsole.field769 > 0) {
+				DeveloperConsole.field766 = DeveloperConsole.field766.substring(0, DeveloperConsole.field769 - 1) + DeveloperConsole.field766.substring(DeveloperConsole.field769);
+				DeveloperConsole.field769--;
+			} else if (var5 == 101 && DeveloperConsole.field769 < DeveloperConsole.field766.length()) {
+				DeveloperConsole.field766 = DeveloperConsole.field766.substring(0, DeveloperConsole.field769) + DeveloperConsole.field766.substring(DeveloperConsole.field769 + 1);
+			} else if (var5 == 96 && DeveloperConsole.field769 > 0) {
+				DeveloperConsole.field769--;
+			} else if (var5 == 97 && DeveloperConsole.field769 < DeveloperConsole.field766.length()) {
+				DeveloperConsole.field769++;
 			} else if (var5 == 102) {
-				class47.field769 = 0;
+				DeveloperConsole.field769 = 0;
 			} else if (var5 == 103) {
-				class47.field769 = class47.field766.length();
-			} else if (var5 == 104 && class47.field767 < field4845.length) {
-				class47.field767++;
-				class47.method3085();
-				class47.field769 = class47.field766.length();
-			} else if (var5 == 105 && class47.field767 > 0) {
-				class47.field767--;
-				class47.method3085();
-				class47.field769 = class47.field766.length();
+				DeveloperConsole.field769 = DeveloperConsole.field766.length();
+			} else if (var5 == 104 && DeveloperConsole.field767 < field4845.length) {
+				DeveloperConsole.field767++;
+				DeveloperConsole.method3085();
+				DeveloperConsole.field769 = DeveloperConsole.field766.length();
+			} else if (var5 == 105 && DeveloperConsole.field767 > 0) {
+				DeveloperConsole.field767--;
+				DeveloperConsole.method3085();
+				DeveloperConsole.field769 = DeveloperConsole.field766.length();
 			} else if (class695.method2883(var6) || "\\/.:, _-+[]~@".indexOf(var6) != -1) {
-				class47.field766 = class47.field766.substring(0, class47.field769) + client.field11067[var3].method9131() + class47.field766.substring(class47.field769);
-				class47.field769++;
+				DeveloperConsole.field766 = DeveloperConsole.field766.substring(0, DeveloperConsole.field769) + client.field11067[var3].method9131() + DeveloperConsole.field766.substring(DeveloperConsole.field769);
+				DeveloperConsole.field769++;
 			}
 		}
 		client.field10819 = 0;

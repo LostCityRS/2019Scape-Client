@@ -9210,9 +9210,9 @@ public final class class676 {
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		String var3 = (String) arg0.field8218[--arg0.field8211];
 		if (var1 == 99) {
-			class47.method4285(var3);
+			DeveloperConsole.method4285(var3);
 		} else if (var1 == 98) {
-			class47.method722(var3);
+			DeveloperConsole.method722(var3);
 		} else {
 			class241.method2664(var1, var2, "", "", "", var3, null);
 		}
@@ -12518,7 +12518,7 @@ public final class class676 {
 
 	@ObfuscatedName("na.amn(Lyf;I)V")
 	public static final void method5996(class677 arg0) {
-		class47.method18913((String) arg0.field8218[--arg0.field8211], false, false);
+		DeveloperConsole.method18913((String) arg0.field8218[--arg0.field8211], false, false);
 	}
 
 	@ObfuscatedName("ah.amb(Lyf;I)V")

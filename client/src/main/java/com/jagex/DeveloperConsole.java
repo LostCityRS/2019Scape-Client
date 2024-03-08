@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.Date;
 
 @ObfuscatedName("ap")
-public class class47 {
+public class DeveloperConsole {
 
 	@ObfuscatedName("ap.f")
 	public static int field764 = 0;
@@ -40,7 +40,7 @@ public class class47 {
 	public static void method16752() {
 	}
 
-	public class47() throws Throwable {
+	public DeveloperConsole() throws Throwable {
 		throw new Error();
 	}
 
