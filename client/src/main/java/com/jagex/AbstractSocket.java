@@ -16,7 +16,7 @@ public abstract class AbstractSocket {
 
 	@ObfuscatedName("mz.e(Ljava/lang/String;II)Labx;")
 	public static AbstractSocket method5846(String arg0, int arg1) {
-		class1078 var2 = new class1078();
+		ProxySocket var2 = new ProxySocket();
 		var2.field8785 = arg0;
 		var2.field8784 = arg1;
 		return var2;
