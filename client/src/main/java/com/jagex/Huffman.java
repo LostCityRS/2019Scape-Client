@@ -3,30 +3,30 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ig")
-public class class245 {
+public class Huffman {
 
 	@ObfuscatedName("ig.e")
-	public int[] field2611;
+	public int[] encoded;
 
 	@ObfuscatedName("ig.n")
-	public byte[] field2612;
+	public byte[] table;
 
 	@ObfuscatedName("ig.m")
-	public int[] field2610;
+	public int[] decoded;
 
-	public class245(byte[] arg0) {
-		int var2 = arg0.length;
-		this.field2611 = new int[var2];
-		this.field2612 = arg0;
+	public Huffman(byte[] table) {
+		int var2 = table.length;
+		this.encoded = new int[var2];
+		this.table = table;
 		int[] var3 = new int[33];
-		this.field2610 = new int[8];
+		this.decoded = new int[8];
 		int var4 = 0;
 		for (int var5 = 0; var5 < var2; var5++) {
-			byte var6 = arg0[var5];
+			byte var6 = table[var5];
 			if (var6 != 0) {
 				int var7 = 0x1 << 32 - var6;
 				int var8 = var3[var6];
-				this.field2611[var5] = var8;
+				this.encoded[var5] = var8;
 				int var9;
 				if ((var8 & var7) == 0) {
 					var9 = var8 | var7;
@@ -57,21 +57,21 @@ public class class245 {
 					if ((var8 & var16) == 0) {
 						var14++;
 					} else {
-						if (this.field2610[var14] == 0) {
-							this.field2610[var14] = var4;
+						if (this.decoded[var14] == 0) {
+							this.decoded[var14] = var4;
 						}
-						var14 = this.field2610[var14];
+						var14 = this.decoded[var14];
 					}
-					if (var14 >= this.field2610.length) {
-						int[] var17 = new int[this.field2610.length * 2];
-						for (int var18 = 0; var18 < this.field2610.length; var18++) {
-							var17[var18] = this.field2610[var18];
+					if (var14 >= this.decoded.length) {
+						int[] var17 = new int[this.decoded.length * 2];
+						for (int var18 = 0; var18 < this.decoded.length; var18++) {
+							var17[var18] = this.decoded[var18];
 						}
-						this.field2610 = var17;
+						this.decoded = var17;
 					}
 					int var19 = var16 >>> 1;
 				}
-				this.field2610[var14] = ~var5;
+				this.decoded[var14] = ~var5;
 				if (var14 >= var4) {
 					var4 = var14 + 1;
 				}
@@ -80,14 +80,14 @@ public class class245 {
 	}
 
 	@ObfuscatedName("ig.e([BII[BII)I")
-	public int method4381(byte[] arg0, int arg1, int arg2, byte[] arg3, int arg4) {
+	public int compress(byte[] arg0, int arg1, int arg2, byte[] arg3, int arg4) {
 		int var6 = 0;
 		int var7 = arg4 << 3;
 		int var8 = arg1 + arg2;
 		while (arg1 < var8) {
 			int var9 = arg0[arg1] & 0xFF;
-			int var10 = this.field2611[var9];
-			byte var11 = this.field2612[var9];
+			int var10 = this.encoded[var9];
+			byte var11 = this.table[var9];
 			if (var11 == 0) {
 				throw new RuntimeException("" + var9);
 			}
@@ -124,7 +124,7 @@ public class class245 {
 	}
 
 	@ObfuscatedName("ig.n([BI[BIIB)I")
-	public int method4387(byte[] arg0, int arg1, byte[] arg2, int arg3, int arg4) {
+	public int decompress(byte[] arg0, int arg1, byte[] arg2, int arg3, int arg4) {
 		if (arg4 == 0) {
 			return 0;
 		}
@@ -134,12 +134,12 @@ public class class245 {
 		while (true) {
 			byte var9 = arg0[var8];
 			if (var9 < 0) {
-				var6 = this.field2610[var6];
+				var6 = this.decoded[var6];
 			} else {
 				var6++;
 			}
 			int var10;
-			if ((var10 = this.field2610[var6]) < 0) {
+			if ((var10 = this.decoded[var6]) < 0) {
 				arg2[arg3++] = (byte) ~var10;
 				if (arg3 >= var7) {
 					break;
@@ -149,10 +149,10 @@ public class class245 {
 			if ((var9 & 0x40) == 0) {
 				var6++;
 			} else {
-				var6 = this.field2610[var6];
+				var6 = this.decoded[var6];
 			}
 			int var11;
-			if ((var11 = this.field2610[var6]) < 0) {
+			if ((var11 = this.decoded[var6]) < 0) {
 				arg2[arg3++] = (byte) ~var11;
 				if (arg3 >= var7) {
 					break;
@@ -162,10 +162,10 @@ public class class245 {
 			if ((var9 & 0x20) == 0) {
 				var6++;
 			} else {
-				var6 = this.field2610[var6];
+				var6 = this.decoded[var6];
 			}
 			int var12;
-			if ((var12 = this.field2610[var6]) < 0) {
+			if ((var12 = this.decoded[var6]) < 0) {
 				arg2[arg3++] = (byte) ~var12;
 				if (arg3 >= var7) {
 					break;
@@ -175,10 +175,10 @@ public class class245 {
 			if ((var9 & 0x10) == 0) {
 				var6++;
 			} else {
-				var6 = this.field2610[var6];
+				var6 = this.decoded[var6];
 			}
 			int var13;
-			if ((var13 = this.field2610[var6]) < 0) {
+			if ((var13 = this.decoded[var6]) < 0) {
 				arg2[arg3++] = (byte) ~var13;
 				if (arg3 >= var7) {
 					break;
@@ -188,10 +188,10 @@ public class class245 {
 			if ((var9 & 0x8) == 0) {
 				var6++;
 			} else {
-				var6 = this.field2610[var6];
+				var6 = this.decoded[var6];
 			}
 			int var14;
-			if ((var14 = this.field2610[var6]) < 0) {
+			if ((var14 = this.decoded[var6]) < 0) {
 				arg2[arg3++] = (byte) ~var14;
 				if (arg3 >= var7) {
 					break;
@@ -201,10 +201,10 @@ public class class245 {
 			if ((var9 & 0x4) == 0) {
 				var6++;
 			} else {
-				var6 = this.field2610[var6];
+				var6 = this.decoded[var6];
 			}
 			int var15;
-			if ((var15 = this.field2610[var6]) < 0) {
+			if ((var15 = this.decoded[var6]) < 0) {
 				arg2[arg3++] = (byte) ~var15;
 				if (arg3 >= var7) {
 					break;
@@ -214,10 +214,10 @@ public class class245 {
 			if ((var9 & 0x2) == 0) {
 				var6++;
 			} else {
-				var6 = this.field2610[var6];
+				var6 = this.decoded[var6];
 			}
 			int var16;
-			if ((var16 = this.field2610[var6]) < 0) {
+			if ((var16 = this.decoded[var6]) < 0) {
 				arg2[arg3++] = (byte) ~var16;
 				if (arg3 >= var7) {
 					break;
@@ -227,10 +227,10 @@ public class class245 {
 			if ((var9 & 0x1) == 0) {
 				var6++;
 			} else {
-				var6 = this.field2610[var6];
+				var6 = this.decoded[var6];
 			}
 			int var17;
-			if ((var17 = this.field2610[var6]) < 0) {
+			if ((var17 = this.decoded[var6]) < 0) {
 				arg2[arg3++] = (byte) ~var17;
 				if (arg3 >= var7) {
 					break;

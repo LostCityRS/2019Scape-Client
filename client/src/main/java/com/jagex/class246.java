@@ -11,17 +11,17 @@ public class class246 {
 	}
 
 	@ObfuscatedName("ij.e(Lig;B)V")
-	public static void method4338(class245 arg0) {
-		Statics.field2614 = arg0;
+	public static void setHuffman(Huffman huffman) {
+		Statics.huffman = huffman;
 	}
 
 	@ObfuscatedName("gc.n(Lalw;Ljava/lang/String;I)I")
-	public static int method3547(Packet arg0, String arg1) {
-		int var2 = arg0.pos;
+	public static int method3547(Packet packet, String arg1) {
+		int var2 = packet.pos;
 		byte[] var3 = Cp1252.method3064(arg1);
-		arg0.pSmart1or2s(var3.length);
-		arg0.pos += Statics.field2614.method4381(var3, 0, var3.length, arg0.data, arg0.pos);
-		return arg0.pos - var2;
+		packet.pSmart1or2s(var3.length);
+		packet.pos += Statics.huffman.compress(var3, 0, var3.length, packet.data, packet.pos);
+		return packet.pos - var2;
 	}
 
 	@ObfuscatedName("eu.k(Lalw;II)Ljava/lang/String;")
@@ -32,7 +32,7 @@ public class class246 {
 				var2 = arg1;
 			}
 			byte[] var3 = new byte[var2];
-			arg0.pos += Statics.field2614.method4387(arg0.data, arg0.pos, var3, 0, var2);
+			arg0.pos += Statics.huffman.decompress(arg0.data, arg0.pos, var3, 0, var2);
 			return Cp1252.method9199(var3, 0, var2);
 		} catch (Exception var6) {
 			return "Cabbage";

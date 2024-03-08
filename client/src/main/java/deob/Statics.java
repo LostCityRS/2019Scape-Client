@@ -511,7 +511,7 @@ public class Statics {
 	public static class442 field2613;
 
 	@ObfuscatedName("iv.e")
-	public static class245 field2614;
+	public static Huffman huffman;
 
 	@ObfuscatedName("iv.v")
 	public static String[] field2615;
