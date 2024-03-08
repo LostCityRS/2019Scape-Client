@@ -292,7 +292,7 @@ public class class844 extends class116 {
 				}
 				int var10003 = this.field9716;
 				int var10001 = this.field9716;
-				this.field9716 = (var10003 + 1) * 3;
+				this.field9716 = (var10003 + 1);
 				var9[var10001] = var10;
 				this.field9753[arg1.field1415[var10]]++;
 				this.field9753[arg1.field1386[var10]]++;
@@ -411,7 +411,7 @@ public class class844 extends class116 {
 				this.field9757[var37] = new class338(var43);
 			}
 		}
-		int var44 = this.field9716;
+		int var44 = this.field9716 * 3;
 		this.field9711 = new short[var44];
 		this.field9698 = new short[var44];
 		this.field9723 = new short[var44];
