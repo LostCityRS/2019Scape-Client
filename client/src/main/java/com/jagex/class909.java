@@ -37,7 +37,7 @@ public class class909 extends class307 {
 	}
 
 	@ObfuscatedName("ahh.e(F[[[ILqx;IIB)V")
-	public void method5238(float arg0, int[][][] arg1, class451 arg2, int arg3, int arg4) {
+	public void method5238(float arg0, int[][][] arg1, LinkMap arg2, int arg3, int arg4) {
 		if (this.field10550) {
 			this.method16681(arg1, arg2, arg3, arg4);
 		}
@@ -92,7 +92,7 @@ public class class909 extends class307 {
 	}
 
 	@ObfuscatedName("ahh.ag([[[ILqx;III)V")
-	public void method16681(int[][][] arg0, class451 arg1, int arg2, int arg3) {
+	public void method16681(int[][][] arg0, LinkMap arg1, int arg2, int arg3) {
 		if (!this.method5218() || !this.field3084.method4730() && !this.field3084.method4731() || !this.field3084.method4731() || arg0 == null) {
 			return;
 		}

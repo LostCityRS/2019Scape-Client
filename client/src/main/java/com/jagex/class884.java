@@ -90,7 +90,7 @@ public class class884 extends class159 {
 			var2 = this.field10343 * 512 + 256;
 			var3 = this.field10340;
 		} else {
-			class892 var4 = Statics.field1721[this.field10341].method2870();
+			PathingEntity var4 = Statics.field1721[this.field10341].method2870();
 			Vector3 var5 = var4.method10536().field4298;
 			var1 = (int) var5.field4308;
 			var2 = (int) var5.field4313;
@@ -102,7 +102,7 @@ public class class884 extends class159 {
 			var6 = this.field10346 * 512 + 256;
 			var7 = this.field10338 * 512 + 256;
 		} else {
-			class892 var8 = Statics.field1721[this.field10345].method2870();
+			PathingEntity var8 = Statics.field1721[this.field10345].method2870();
 			Vector3 var9 = var8.method10536().field4298;
 			var6 = (int) var9.field4308;
 			var7 = (int) var9.field4313;

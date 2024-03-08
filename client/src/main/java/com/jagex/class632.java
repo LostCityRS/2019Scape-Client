@@ -7,10 +7,10 @@ import deob.Statics;
 public class class632 {
 
 	@ObfuscatedName("xm.e")
-	public final class128 field7788;
+	public final ModelParticleEmitter field7788;
 
 	@ObfuscatedName("xm.n")
-	public class376 field7772;
+	public ParticleEmitterType field7772;
 
 	@ObfuscatedName("xm.m")
 	public final ParticleSystem field7785;
@@ -63,7 +63,7 @@ public class class632 {
 	@ObfuscatedName("xm.x")
 	public boolean field7773 = false;
 
-	public class632(Renderer arg0, class128 arg1, ParticleSystem arg2, long arg3) {
+	public class632(Renderer arg0, ModelParticleEmitter arg1, ParticleSystem arg2, long arg3) {
 		this.field7788 = arg1;
 		this.field7785 = arg2;
 		this.field7774 = arg3;
@@ -286,7 +286,7 @@ public class class632 {
 	}
 
 	@ObfuscatedName("xm.m(Ltx;Ldh;J)V")
-	public void method9898(class550 arg0, Renderer arg1, long arg2) {
+	public void method9898(Scene arg0, Renderer arg1, long arg2) {
 		for (MovingParticle var5 = (MovingParticle) this.field7775.method14254(); var5 != null; var5 = (MovingParticle) this.field7775.method14241()) {
 			var5.method19668(arg0, arg1, arg2);
 		}

@@ -16,13 +16,13 @@ public class class377 implements class378 {
 	}
 
 	@ObfuscatedName("no.e(II)Lna;")
-	public class379 method5973(int arg0) {
-		class379 var2 = (class379) this.field3537.method2930((long) arg0);
+	public ParticleEffectorType method5973(int arg0) {
+		ParticleEffectorType var2 = (ParticleEffectorType) this.field3537.method2930((long) arg0);
 		if (var2 != null) {
 			return var2;
 		}
 		byte[] var3 = this.field3536.method6879(1, arg0);
-		class379 var4 = new class379();
+		ParticleEffectorType var4 = new ParticleEffectorType();
 		var4.field3548 = arg0;
 		if (var3 != null) {
 			var4.method5988(new Packet(var3));

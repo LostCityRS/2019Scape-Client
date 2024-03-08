@@ -661,7 +661,7 @@ public class LocType implements ConfigType {
 		synchronized (this.field7451.field7533) {
 			var20 = (class746) this.field7451.field7533.method2930(var14);
 		}
-		class116 var22 = (class116) (var20 == null ? null : var20.field8737);
+		Model var22 = (Model) (var20 == null ? null : var20.field8737);
 		class1175 var23 = null;
 		if (var22 != null && arg0.method2394(var22.method1691(), var16) == 0) {
 			var23 = (class1175) var20.field8738;
@@ -693,7 +693,7 @@ public class LocType implements ConfigType {
 				this.field7451.field7533.method2921(var25, var14);
 			}
 		}
-		class116 var28;
+		Model var28;
 		if (var17 || var18) {
 			var28 = var22.method1773((byte) 0, var16, true);
 			if (var17) {
@@ -715,7 +715,7 @@ public class LocType implements ConfigType {
 	}
 
 	@ObfuscatedName("vd.r(Ldh;IIILcb;Lcb;IIILaaq;Lvp;B)Ldo;")
-	public final synchronized class116 method9470(Renderer arg0, int arg1, int arg2, int arg3, class104 arg4, class104 arg5, int arg6, int arg7, int arg8, class721 arg9, class597 arg10) {
+	public final synchronized Model method9470(Renderer arg0, int arg1, int arg2, int arg3, class104 arg4, class104 arg5, int arg6, int arg7, int arg8, class721 arg9, class597 arg10) {
 		if (class601.method14238(arg2)) {
 			arg2 = class601.field7548.field7562;
 		}
@@ -745,9 +745,9 @@ public class LocType implements ConfigType {
 			arg1 |= 0x5;
 		}
 		WeightedCache var17 = this.field7451.field7532;
-		class116 var18;
+		Model var18;
 		synchronized (this.field7451.field7532) {
-			var18 = (class116) this.field7451.field7532.method2930(var15);
+			var18 = (Model) this.field7451.field7532.method2930(var15);
 		}
 		if (var18 == null || arg0.method2394(var18.method1691(), arg1) != 0) {
 			if (var18 != null) {
@@ -796,7 +796,7 @@ public class LocType implements ConfigType {
 	}
 
 	@ObfuscatedName("vd.v(Ldh;IIILvp;I)Ldo;")
-	public class116 method9476(Renderer arg0, int arg1, int arg2, int arg3, class597 arg4) {
+	public Model method9476(Renderer arg0, int arg1, int arg2, int arg3, class597 arg4) {
 		int var6 = this.field7481 + 64;
 		int var7 = this.field7494 * 5 + 850;
 		int var8 = arg1;
@@ -826,7 +826,7 @@ public class LocType implements ConfigType {
 		if (this.field7493 != 0) {
 			arg1 |= 0x80000;
 		}
-		class116 var10 = null;
+		Model var10 = null;
 		if (this.field7513 != null) {
 			int var11 = -1;
 			for (int var12 = 0; var12 < this.field7513.length; var12++) {
@@ -847,7 +847,7 @@ public class LocType implements ConfigType {
 				}
 				WeightedCache var18 = this.field7451.field7530;
 				synchronized (this.field7451.field7530) {
-					var10 = (class116) this.field7451.field7530.method2930(var15);
+					var10 = (Model) this.field7451.field7530.method2930(var15);
 				}
 				if (var10 != null) {
 					if (var6 != var10.method1862()) {
@@ -898,7 +898,7 @@ public class LocType implements ConfigType {
 		if (var10 == null) {
 			return null;
 		}
-		class116 var28 = var10.method1773((byte) 0, arg1, true);
+		Model var28 = var10.method1773((byte) 0, arg1, true);
 		if (var6 != var10.method1862()) {
 			var28.method1893(var6);
 		}

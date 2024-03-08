@@ -198,7 +198,7 @@ public class class721 {
 	}
 
 	@ObfuscatedName("aaq.s(Ldo;II)V")
-	public final void method14359(class116 arg0, int arg1) {
+	public final void method14359(Model arg0, int arg1) {
 		if (this.field8501 == null) {
 			return;
 		}
@@ -215,7 +215,7 @@ public class class721 {
 	}
 
 	@ObfuscatedName("aaq.y(Ldo;IIB)V")
-	public final void method14360(class116 arg0, int arg1, int arg2) {
+	public final void method14360(Model arg0, int arg1, int arg2) {
 		if (this.field8501.field1770 != null && this.method14372()) {
 			arg0.method1706(this.field8513.field8520, this.field8513.field8516, this.field8513.field8519, this.field8513.field8517, this.field8502, this.field8501.field1791[this.field8511], arg1, arg2, this.field8501.field1786, null);
 			if (this.field8500 && this.field8501.field1771 != null && this.field8512.field8518) {
@@ -225,7 +225,7 @@ public class class721 {
 	}
 
 	@ObfuscatedName("aaq.q(Ldo;B)V")
-	public final void method14361(class116 arg0) {
+	public final void method14361(Model arg0) {
 		if (this.field8501.field1770 != null && this.method14372()) {
 			arg0.method1878(this.field8513.field8520, this.field8513.field8516);
 			if (this.field8500 && this.field8501.field1771 != null && this.field8512.field8518) {
@@ -235,7 +235,7 @@ public class class721 {
 	}
 
 	@ObfuscatedName("dy.x(Ldo;Laaq;Laaq;I)V")
-	public static final void method2099(class116 arg0, class721 arg1, class721 arg2) {
+	public static final void method2099(Model arg0, class721 arg1, class721 arg2) {
 		if (!arg1.method14372() || !arg2.method14372()) {
 			return;
 		}

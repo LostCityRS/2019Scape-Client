@@ -68,7 +68,7 @@ public class class970 extends Node {
 	@ObfuscatedName("akn.k(IIIF)V")
 	public void method17582(int arg0, int arg1, int arg2, float arg3) {
 		if (this.field11296 != -1) {
-			class118 var5 = this.field11291.field1597.method2043(this.field11296);
+			Material var5 = this.field11291.field1597.method2043(this.field11296);
 			int var6 = var5.field1364 & 0xFF;
 			if (var6 != 0 && var5.field1308 != 4) {
 				int var7;

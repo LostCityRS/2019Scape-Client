@@ -8,7 +8,7 @@ public class class1236 extends class1200 {
 	@ObfuscatedName("auu.ae")
 	public class529 field12614;
 
-	public class1236(class550 arg0, class529 arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
+	public class1236(Scene arg0, class529 arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
 		super(arg0, arg2, arg3, arg4, arg5, arg6, arg4 >> 9, arg4 >> 9, arg6 >> 9, arg6 >> 9, false, (byte) 0);
 		this.field12614 = arg1;
 	}
@@ -42,7 +42,7 @@ public class class1236 extends class1200 {
 	}
 
 	@ObfuscatedName("auu.fc(Ldh;I)Ltl;")
-	public class552 method17372(Renderer arg0) {
+	public PickableEntity method17372(Renderer arg0) {
 		if (this.field12614.field6754 == null) {
 			return null;
 		}

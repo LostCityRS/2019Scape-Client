@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class class855 extends class140 {
 
 	@ObfuscatedName("afd.o")
-	public class848 field10236;
+	public PureJavaRenderer field10236;
 
 	@ObfuscatedName("afd.s")
 	public byte[][] field10237;
@@ -14,7 +14,7 @@ public class class855 extends class140 {
 	@ObfuscatedName("afd.y")
 	public int[] field10235;
 
-	public class855(class848 arg0, class733 arg1, class852 arg2) {
+	public class855(PureJavaRenderer arg0, class733 arg1, class852 arg2) {
 		super(arg0, arg1);
 		this.field10236 = arg0;
 		this.field10237 = new byte[256][];

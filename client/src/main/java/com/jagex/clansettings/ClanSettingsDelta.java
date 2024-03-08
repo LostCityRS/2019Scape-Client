@@ -62,7 +62,7 @@ public class ClanSettingsDelta {
 	}
 
 	@ObfuscatedName("kd.n(Lkr;I)V")
-	public void method5333(class309 arg0) {
+	public void method5333(ClanSettings arg0) {
 		if (this.field3133 != arg0.field3113 || this.field3123 != arg0.field3094) {
 			throw new RuntimeException("");
 		}

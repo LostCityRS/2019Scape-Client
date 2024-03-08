@@ -28,7 +28,7 @@ public class class633 {
 	public static int field7801 = 0;
 
 	@ObfuscatedName("xl.d")
-	public static class379[] field7795 = new class379[16];
+	public static ParticleEffectorType[] field7795 = new ParticleEffectorType[16];
 
 	@ObfuscatedName("xl.c")
 	public static int field7798 = 0;
@@ -53,7 +53,7 @@ public class class633 {
 	public static int method9543(int arg0) {
 		class988 var1 = (class988) field7799.method14495((long) arg0);
 		if (var1 == null) {
-			class379 var2 = Statics.field12041.method5973(arg0);
+			ParticleEffectorType var2 = Statics.field12041.method5973(arg0);
 			if (var2 == null || var2.field3549 != 2) {
 				return -1;
 			}
@@ -94,7 +94,7 @@ public class class633 {
 	}
 
 	@ObfuscatedName("tm.k(Ltx;Ldh;B)V")
-	public static void method8460(class550 arg0, Renderer arg1) {
+	public static void method8460(Scene arg0, Renderer arg1) {
 		Iterator var2 = Statics.field8349.iterator();
 		while (var2.hasNext()) {
 			ParticleSystem var3 = (ParticleSystem) var2.next();

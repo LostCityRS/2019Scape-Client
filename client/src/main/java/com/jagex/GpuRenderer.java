@@ -504,10 +504,10 @@ public abstract class GpuRenderer extends Renderer {
 	public class360 field10077;
 
 	@ObfuscatedName("afc.hk")
-	public class844[] field10058;
+	public GpuModel[] field10058;
 
 	@ObfuscatedName("afc.hu")
-	public class844[] field10207;
+	public GpuModel[] field10207;
 
 	@ObfuscatedName("afc.hb")
 	public Matrix4x4 field10208;
@@ -590,11 +590,11 @@ public abstract class GpuRenderer extends Renderer {
 		Statics.method5134().method7902("jaclib");
 	}
 
-	public GpuRenderer(class125 arg0, class143 arg1, class383 arg2, class381 arg3, class378 arg4, Js5 arg5, int arg6, int arg7) {
+	public GpuRenderer(MaterialList arg0, class143 arg1, BillboardTypeList arg2, class381 arg3, class378 arg4, Js5 arg5, int arg6, int arg7) {
 		super(arg0, arg1, arg2, arg3, arg4);
 		new Stream();
-		this.field10058 = new class844[8];
-		this.field10207 = new class844[8];
+		this.field10058 = new GpuModel[8];
+		this.field10207 = new GpuModel[8];
 		this.field10208 = new Matrix4x4();
 		this.field10209 = new Matrix4x3();
 		try {
@@ -654,8 +654,8 @@ public abstract class GpuRenderer extends Renderer {
 		this.field10202 = this.method16065(new class345[] { new class345(class339.field3310), new class345(class339.field3311), new class345(class339.field3300), new class345(class339.field3301) });
 		this.field10184 = this.method16065(new class345[] { new class345(class339.field3310), new class345(class339.field3311), new class345(class339.field3300) });
 		for (int var3 = 0; var3 < 8; var3++) {
-			this.field10058[var3] = new class844(this, 0, 0, false, false);
-			this.field10207[var3] = new class844(this, 0, 0, true, true);
+			this.field10058[var3] = new GpuModel(this, 0, 0, false, false);
+			this.field10207[var3] = new GpuModel(this, 0, 0, true, true);
 		}
 		this.method15970();
 		this.field10077 = this.method16067(true);
@@ -1252,8 +1252,8 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.cj(Ldq;IIII)Ldo;")
-	public final class116 method2211(class120 arg0, int arg1, int arg2, int arg3, int arg4) {
-		return new class844(this, arg0, arg1, arg3, arg4, arg2);
+	public final Model method2211(class120 arg0, int arg1, int arg2, int arg3, int arg4) {
+		return new GpuModel(this, arg0, arg1, arg3, arg4, arg2);
 	}
 
 	@ObfuscatedName("afc.cd(II)I")

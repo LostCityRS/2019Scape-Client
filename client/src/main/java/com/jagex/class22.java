@@ -539,7 +539,7 @@ public class class22 {
 	}
 
 	@ObfuscatedName("ew.x(Lahm;B)V")
-	public static void method2897(class892 arg0) {
+	public static void method2897(PathingEntity arg0) {
 		if (arg0 instanceof class1131) {
 			class1131 var1 = (class1131) arg0;
 			if (var1.field12083 != null) {
@@ -566,7 +566,7 @@ public class class22 {
 		if (arg1 < 0 || arg2 < 0 || field553 == null) {
 			return;
 		}
-		class594 var3 = client.field10855.method7727();
+		CoordGrid var3 = client.field10855.method7727();
 		Matrix4x4 var4 = arg0.method2208();
 		method6036(arg0);
 		var4.method6609(field572);
@@ -627,11 +627,11 @@ public class class22 {
 		while (true) {
 			int var32;
 			int var33;
-			class514 var83;
+			Location var83;
 			LocType var84;
 			String[] var86;
 			do {
-				class552 var29;
+				PickableEntity var29;
 				do {
 					do {
 						do {
@@ -642,7 +642,7 @@ public class class22 {
 											if (!var28.hasNext()) {
 												return;
 											}
-											var29 = (class552) var28.next();
+											var29 = (PickableEntity) var28.next();
 										} while (!client.field10809 && Statics.field4490.field11717 != var29.field6978.field11717);
 									} while (!var29.method8889(arg0, var25, var26));
 									boolean var30 = false;
@@ -747,7 +747,7 @@ public class class22 {
 									break;
 								}
 							}
-							if (var29.field6978 instanceof class1233) {
+							if (var29.field6978 instanceof ObjStackEntity) {
 								int var70 = var3.field7426 + var32;
 								int var71 = var3.field7427 + var33;
 								class966 var72 = (class966) client.field10964.method14495((long) (var29.field6978.field11717 << 28 | var71 << 14 | var70));
@@ -807,8 +807,8 @@ public class class22 {
 									}
 								}
 							}
-						} while (!(var29.field6978 instanceof class514));
-						var83 = (class514) var29.field6978;
+						} while (!(var29.field6978 instanceof Location));
+						var83 = (Location) var29.field6978;
 						var84 = (LocType) client.field10855.method7750().get(var83.method8223());
 						if (var84.field7505 != null) {
 							var84 = var84.method9477(Statics.field7410, Statics.field7410);
@@ -856,7 +856,7 @@ public class class22 {
 	}
 
 	@ObfuscatedName("py.a(Lst;III)J")
-	public static long method6964(class514 arg0, int arg1, int arg2) {
+	public static long method6964(Location arg0, int arg1, int arg2) {
 		long var3 = 4194304L;
 		long var5 = Long.MIN_VALUE;
 		LocType var7 = (LocType) client.field10855.method7750().get(arg0.method8223());
@@ -1795,7 +1795,7 @@ public class class22 {
 		if (var6 >= 2000) {
 			var6 -= 2000;
 		}
-		class594 var10 = client.field10855.method7727();
+		CoordGrid var10 = client.field10855.method7727();
 		if (var6 == 1008 || var6 == 1009 || var6 == 1010 || var6 == 1011 || var6 == 1012) {
 			Statics.method15110(var6, var7, var4);
 		}
@@ -2100,7 +2100,7 @@ public class class22 {
 		if (arg2 == 1) {
 			var3 = Statics.method1604(ClientProt.MOVE_MINIMAPCLICK, client.field10849.field794);
 		}
-		class594 var4 = client.field10855.method7727();
+		CoordGrid var4 = client.field10855.method7727();
 		var3.field11432.p2(var4.field7427 + arg1);
 		var3.field11432.p1(method14766() ? 1 : 0);
 		var3.field11432.p2_alt3(var4.field7426 + arg0);
@@ -2138,7 +2138,7 @@ public class class22 {
 		float var11 = 0.0F;
 		float var12 = 0.0F;
 		float var13 = 0.0F;
-		class550 var14 = client.field10855.method7743();
+		Scene var14 = client.field10855.method7743();
 		while (var7 < 1.1F) {
 			float var15 = var7 * var8 + arg0;
 			float var16 = var7 * var9 + arg1;

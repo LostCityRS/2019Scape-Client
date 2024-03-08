@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ajj")
-public class class952 extends class1198 implements class514 {
+public class class952 extends class1198 implements Location {
 
 	@ObfuscatedName("ajj.c")
 	public class516 field11179;
@@ -23,7 +23,7 @@ public class class952 extends class1198 implements class514 {
 	@ObfuscatedName("ajj.y")
 	public boolean field11183 = true;
 
-	public class952(class550 arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, class420 arg14) {
+	public class952(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, class420 arg14) {
 		super(arg0, arg6, arg7, arg8, arg4, arg5, method9908(arg10, arg11), arg14);
 		this.field11179 = new class516(arg1, arg2, arg3, arg10, arg11, arg5, this, arg9, arg12, arg13);
 		this.field11178 = arg3.field7470 != 0 && !arg9;
@@ -66,14 +66,14 @@ public class class952 extends class1198 implements class514 {
 	}
 
 	@ObfuscatedName("ajj.fc(Ldh;I)Ltl;")
-	public class552 method17372(Renderer arg0) {
-		class116 var2 = this.field11179.method8238(arg0, 2048, false, true);
+	public PickableEntity method17372(Renderer arg0) {
+		Model var2 = this.field11179.method8238(arg0, 2048, false, true);
 		if (var2 == null) {
 			return null;
 		}
 		Matrix4x3 var3 = this.method10533();
 		class420 var4 = this.method10536();
-		class552 var5 = class552.method16749(this.field11178);
+		PickableEntity var5 = PickableEntity.method16749(this.field11178);
 		int var6 = (int) var4.field4298.field4308 >> 9;
 		int var7 = (int) var4.field4298.field4313 >> 9;
 		this.field11179.method8239(arg0, var2, var3, var6, var6, var7, var7, true);
@@ -99,7 +99,7 @@ public class class952 extends class1198 implements class514 {
 
 	@ObfuscatedName("ajj.fw(Ldh;I)V")
 	public void method17373(Renderer arg0) {
-		class116 var2 = this.field11179.method8238(arg0, 262144, true, true);
+		Model var2 = this.field11179.method8238(arg0, 262144, true, true);
 		if (var2 == null) {
 			return;
 		}
@@ -114,7 +114,7 @@ public class class952 extends class1198 implements class514 {
 	public boolean method17375(Renderer arg0, int arg1, int arg2) {
 		LocType var4 = this.field11179.method8237();
 		if (var4.field7468 == null) {
-			class116 var5 = this.field11179.method8238(arg0, 131072, false, false);
+			Model var5 = this.field11179.method8238(arg0, 131072, false, false);
 			return var5 == null ? false : var5.method1725(arg1, arg2, this.method10533(), false, 0);
 		} else {
 			return arg0.method2191(arg1, arg2, this.method10533(), var4.field7468);

@@ -28,7 +28,7 @@ public class class516 {
 	public boolean field6668 = false;
 
 	@ObfuscatedName("sp.u")
-	public class116 field6669;
+	public Model field6669;
 
 	@ObfuscatedName("sp.z")
 	public class721 field6664;
@@ -114,7 +114,7 @@ public class class516 {
 	}
 
 	@ObfuscatedName("sp.w(Ldh;IZZI)Ldo;")
-	public final class116 method8238(Renderer arg0, int arg1, boolean arg2, boolean arg3) {
+	public final Model method8238(Renderer arg0, int arg1, boolean arg2, boolean arg3) {
 		LocType var5 = (LocType) this.field6681.get(this.field6665);
 		if (var5.field7505 != null) {
 			var5 = var5.method9477(Statics.field7410, client.field10863 == 0 ? class153.field1723 : Statics.field7410);
@@ -138,7 +138,7 @@ public class class516 {
 			return null;
 		}
 		Vector3 var6 = this.field6672.method10536().field4298;
-		class550 var7 = client.field10855.method7743();
+		Scene var7 = client.field10855.method7743();
 		if (arg3) {
 			var7.method8814(this.field6677, this.field6663, (int) var6.field4308, (int) var6.field4313, this.field6679);
 			this.field6670 = false;
@@ -150,7 +150,7 @@ public class class516 {
 		} else {
 			var9 = this.field6663 < 3 ? var7.field6913[this.field6663 + 1] : null;
 		}
-		class116 var10 = null;
+		Model var10 = null;
 		if (this.field6664.method14346()) {
 			if (arg3) {
 				arg1 |= 0x40000;
@@ -186,7 +186,7 @@ public class class516 {
 				this.field6669 = null;
 				this.field6674 = 0;
 			} else {
-				this.field6669 = var10 = (class116) var11.field8737;
+				this.field6669 = var10 = (Model) var11.field8737;
 				if (arg3) {
 					this.field6677 = (class1175) var11.field8738;
 					this.field6679 = null;
@@ -202,9 +202,9 @@ public class class516 {
 	}
 
 	@ObfuscatedName("sp.l(Ldh;Ldo;Lou;IIIIZB)V")
-	public void method8239(Renderer arg0, class116 arg1, Matrix4x3 arg2, int arg3, int arg4, int arg5, int arg6, boolean arg7) {
-		class128[] var9 = arg1.method1750();
-		class102[] var10 = arg1.method1765();
+	public void method8239(Renderer arg0, Model arg1, Matrix4x3 arg2, int arg3, int arg4, int arg5, int arg6, boolean arg7) {
+		ModelParticleEmitter[] var9 = arg1.method1750();
+		ModelParticleEffector[] var10 = arg1.method1765();
 		if ((this.field6680 == null || this.field6680.field7804) && (var9 != null || var10 != null)) {
 			LocType var11 = (LocType) this.field6681.get(this.field6665);
 			if (var11.field7505 != null) {

@@ -151,7 +151,7 @@ public class class836 extends class104 {
 
 	@ObfuscatedName("aek.n(II[I[I[I[I[I[I[I[ILdy;Z)V")
 	public void method1557(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, int[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, class131 arg10, boolean arg11) {
-		class125 var13 = this.field9453.field1597;
+		MaterialList var13 = this.field9453.field1597;
 		if (arg5 != null && this.field9467 == null) {
 			this.field9467 = new int[this.field1235][this.field1234][];
 		}

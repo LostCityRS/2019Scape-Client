@@ -14,7 +14,7 @@ public class class31 {
 	}
 
 	@ObfuscatedName("jp.e(Ldh;IIIIILdo;IIIILaaq;B)Ldo;")
-	public static class116 method5102(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, class116 arg6, int arg7, int arg8, int arg9, int arg10, class721 arg11) {
+	public static Model method5102(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, Model arg6, int arg7, int arg8, int arg9, int arg10, class721 arg11) {
 		if (arg6 == null) {
 			return null;
 		}
@@ -25,9 +25,9 @@ public class class31 {
 		}
 		long var14 = ((long) arg8 << 48) + ((long) arg7 << 32) + (long) ((arg10 << 24) + (arg9 << 16) + arg5);
 		WeightedCache var16 = field617;
-		class116 var17;
+		Model var17;
 		synchronized (field617) {
-			var17 = (class116) field617.method2930(var14);
+			var17 = (Model) field617.method2930(var14);
 		}
 		if (var17 == null || arg0.method2394(var17.method1691(), var12) != 0) {
 			if (var17 != null) {
@@ -73,7 +73,7 @@ public class class31 {
 		int var41 = arg6.method1730();
 		int var42 = arg6.method1733();
 		int var43 = arg6.method1794();
-		class116 var44;
+		Model var44;
 		if (arg11 == null) {
 			var44 = var17.method1773((byte) 3, var12, true);
 			var44.method1699(var41 - var40 >> 1, 128, var43 - var42 >> 1);
@@ -97,7 +97,7 @@ public class class31 {
 	}
 
 	@ObfuscatedName("fo.n(Ldh;IIIILdo;SBLaaq;I)Ldo;")
-	public static class116 method3283(Renderer arg0, int arg1, int arg2, int arg3, int arg4, class116 arg5, short arg6, byte arg7, class721 arg8) {
+	public static Model method3283(Renderer arg0, int arg1, int arg2, int arg3, int arg4, Model arg5, short arg6, byte arg7, class721 arg8) {
 		if (arg5 == null) {
 			return null;
 		}
@@ -108,9 +108,9 @@ public class class31 {
 		}
 		long var11 = (long) ((arg6 & 0xFFFF) << 8 | arg7);
 		WeightedCache var13 = field617;
-		class116 var14;
+		Model var14;
 		synchronized (field617) {
-			var14 = (class116) field617.method2930(var11);
+			var14 = (Model) field617.method2930(var11);
 		}
 		if (var14 == null || arg0.method2394(var14.method1691(), var9) != 0) {
 			if (var14 != null) {
@@ -133,7 +133,7 @@ public class class31 {
 		int var22 = arg5.method1730();
 		int var23 = arg5.method1733();
 		int var24 = arg5.method1794();
-		class116 var25;
+		Model var25;
 		if (arg8 == null) {
 			var25 = var14.method1773((byte) 3, var9, true);
 			var25.method1699(var22 - var21 >> 1, 128, var24 - var23 >> 1);

@@ -85,7 +85,7 @@ public class class646 {
 		return null;
 	}
 
-	public static final void add(class677 arg0, short arg1) {
+	public static final void add(ClientScriptState arg0, short arg1) {
 		arg0.field8226 -= 2;
 		int var2 = arg0.field8216[arg0.field8226];
 		int var3 = arg0.field8216[arg0.field8226 + 1];

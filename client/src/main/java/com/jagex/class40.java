@@ -53,7 +53,7 @@ public class class40 {
 		byte var4 = (byte) (var3 >> 28);
 		int var5 = var3 >> 14 & 0x3FFF;
 		int var6 = var3 & 0x3FFF;
-		class594 var7 = client.field10855.method7727();
+		CoordGrid var7 = client.field10855.method7727();
 		var2.field10450[0] = var5 - var7.field7426;
 		var2.field10448[0] = var6 - var7.field7427;
 		var2.method10538((float) ((var2.field10450[0] << 9) + (var2.method16546() << 8)), var2.method10525().field4298.field4311, (float) ((var2.field10448[0] << 9) + (var2.method16546() << 8)));
@@ -232,7 +232,7 @@ public class class40 {
 
 	@ObfuscatedName("akz.f(Lase;IS)V")
 	public static void method17602(PacketBit arg0, int arg1) {
-		class594 var2 = client.field10855.method7727();
+		CoordGrid var2 = client.field10855.method7727();
 		boolean var3 = arg0.method19583(1) == 1;
 		if (var3) {
 			field707[++field695 - 1] = arg1;
@@ -442,7 +442,7 @@ public class class40 {
 			int var9 = var8 >> 28;
 			int var10 = var8 >> 14 & 0xFF;
 			int var11 = var8 & 0xFF;
-			class594 var12 = client.field10855.method7727();
+			CoordGrid var12 = client.field10855.method7727();
 			int var13 = (var10 << 6) + var3 - var12.field7426;
 			int var14 = (var11 << 6) + var4 - var12.field7427;
 			var7.field12070 = var6.field525;

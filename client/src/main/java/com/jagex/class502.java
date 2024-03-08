@@ -55,7 +55,7 @@ public class class502 {
 	public int field5093;
 
 	@ObfuscatedName("sv.h")
-	public class116 field5103;
+	public Model field5103;
 
 	@ObfuscatedName("sv.a")
 	public byte[] field5101;
@@ -76,7 +76,7 @@ public class class502 {
 	public int field5106;
 
 	@ObfuscatedName("zn.e(Lpy;Ldf;Les;I)V")
-	public static void method13864(Js5 arg0, class125 arg1, class143 arg2) {
+	public static void method13864(Js5 arg0, MaterialList arg1, class143 arg2) {
 		Statics.field1810 = arg0;
 		Statics.field3199 = arg1;
 		Statics.field2421 = arg2;
@@ -252,7 +252,7 @@ public class class502 {
 			if (this.field5084 == -1 || this.field5085 == 0) {
 				arg0.method2354(arg2, arg3, arg4, arg5, var14 << 24 | arg9, arg10 ? 0 : 1);
 			} else {
-				class118 var15 = Statics.field3199.method2043(this.field5084);
+				Material var15 = Statics.field3199.method2043(this.field5084);
 				if (this.field5095 == null && Statics.field2421.method1977(class605.field7586, var15.field1334, -1, class603.field7573 == var15.field1340 ? class602.field7569 : class602.field7568, 0.7F, this.field5085, this.field5085, false)) {
 					int[] var16 = class603.field7573 == var15.field1340 ? Statics.field2421.method1983(class605.field7586, var15.field1334, 0.7F, this.field5085, this.field5085, false) : Statics.field2421.method1986(class605.field7586, var15.field1334, 0.7F, this.field5085, this.field5085, false);
 					this.field5096 = var16[0];

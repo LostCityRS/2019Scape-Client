@@ -185,7 +185,7 @@ public class class344 {
 			}
 			arg5.field2991 = null;
 			if (var10 >= 0) {
-				class118 var16 = arg0.field1597.method2043(var10);
+				Material var16 = arg0.field1597.method2043(var10);
 				if (var16.field1330) {
 					arg5.field2991 = arg0.field10188.method5639(var16);
 				}

@@ -16,24 +16,24 @@ public class class1043 extends class709 {
 	@ObfuscatedName("aml.o(B)V")
 	public void method18568() {
 		if (this.field8417.method18165().method14090()) {
-			this.field8416 = class254.field2658.field2664;
+			this.field8416 = BuildAreaSize.field2658.field2664;
 			return;
 		}
 		int var1 = this.field8417.method18165().method14082();
 		if (var1 < 245) {
-			this.field8416 = class254.field2663.field2664;
+			this.field8416 = BuildAreaSize.field2663.field2664;
 		}
-		if (class254.field2662.field2664 == this.field8416 && var1 < 500) {
-			this.field8416 = class254.field2660.field2664;
+		if (BuildAreaSize.field2662.field2664 == this.field8416 && var1 < 500) {
+			this.field8416 = BuildAreaSize.field2660.field2664;
 		}
-		if (this.field8416 < class254.field2663.field2664 || this.field8416 > class254.field2661.field2664) {
+		if (this.field8416 < BuildAreaSize.field2663.field2664 || this.field8416 > BuildAreaSize.field2661.field2664) {
 			this.field8416 = this.method14069();
 		}
 	}
 
 	@ObfuscatedName("aml.e(B)I")
 	public int method14069() {
-		return this.field8417.method18165().method14090() ? class254.field2658.field2664 : class254.field2663.field2664;
+		return this.field8417.method18165().method14090() ? BuildAreaSize.field2658.field2664 : BuildAreaSize.field2663.field2664;
 	}
 
 	@ObfuscatedName("aml.s(I)Z")
@@ -54,7 +54,7 @@ public class class1043 extends class709 {
 		int var2 = this.field8417.method18165().method14082();
 		if (var2 < 245) {
 			return 3;
-		} else if (class254.field2662.field2664 == arg0 && var2 < 500) {
+		} else if (BuildAreaSize.field2662.field2664 == arg0 && var2 < 500) {
 			return 3;
 		} else {
 			return 1;

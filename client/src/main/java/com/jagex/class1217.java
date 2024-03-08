@@ -12,7 +12,7 @@ public final class class1217 extends class1120 {
 	@ObfuscatedName("ats.u")
 	public Image field12515;
 
-	public class1217(class848 arg0, Canvas arg1, int arg2, int arg3) {
+	public class1217(PureJavaRenderer arg0, Canvas arg1, int arg2, int arg3) {
 		super(arg0, arg1, arg2, arg3);
 		new Rectangle();
 		this.method18971();

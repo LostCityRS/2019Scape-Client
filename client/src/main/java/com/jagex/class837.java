@@ -186,7 +186,7 @@ public class class837 extends class104 {
 
 	@ObfuscatedName("aem.n(II[I[I[I[I[I[I[I[ILdy;Z)V")
 	public void method1557(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, int[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, class131 arg10, boolean arg11) {
-		class125 var13 = this.field9516.field1597;
+		MaterialList var13 = this.field9516.field1597;
 		if (arg5 != null && this.field9503 == null) {
 			this.field9503 = new int[this.field1235][this.field1234][];
 		}
@@ -728,9 +728,9 @@ public class class837 extends class104 {
 						if (var26.field11402 == -1) {
 							var22.field2966 = this.field9516.field10140;
 						} else {
-							class118 var28 = this.field9516.field1597.method2043(var26.field11402);
+							Material var28 = this.field9516.field1597.method2043(var26.field11402);
 							var22.field2966 = this.field9516.field10188.method5639(var28);
-							var27 = !class118.method261(var28.field1308);
+							var27 = !Material.method261(var28.field1308);
 						}
 						this.field9516.method16120(1, var26.field11405);
 						this.field9516.method16177(this.field9493);
@@ -765,7 +765,7 @@ public class class837 extends class104 {
 						if (var31.field11402 == -1) {
 							var22.field2966 = this.field9516.field10140;
 						} else {
-							class118 var34 = this.field9516.field1597.method2043(var31.field11402);
+							Material var34 = this.field9516.field1597.method2043(var31.field11402);
 							var33 = var34.field1308;
 							var22.field2966 = this.field9516.field10188.method5639(var34);
 							var22.method5036(var34.field1305);
@@ -800,7 +800,7 @@ public class class837 extends class104 {
 									var35.field12143.method6604(this.field9516.field10081);
 									var35.field12127.method6612(1.0F / ((float) var31.field11404.field1576 * var31.field11403), 1.0F / ((float) var31.field11404.field1576 * var31.field11403), 1.0F, 1.0F);
 									var35.field12129.method6491(this.field9516.field10035.field4315[12], this.field9516.field10035.field4315[13], this.field9516.field10035.field4315[14]);
-									class118 var36 = this.field9516.field1597.method2043(var31.field11402);
+									Material var36 = this.field9516.field1597.method2043(var31.field11402);
 									var35.field12147 = var36.field1305;
 									var35.field12145 = var31.field11400;
 									var35.field12146 = var31.field11407 - var31.field11400 + 1;
@@ -823,7 +823,7 @@ public class class837 extends class104 {
 								}
 								break;
 							case 6:
-								var22.method5019(!class118.method261(var33));
+								var22.method5019(!Material.method261(var33));
 								break;
 							case 7:
 								var22.field2969.method6491(this.field9516.field10035.field4315[12], this.field9516.field10035.field4315[13], this.field9516.field10035.field4315[14]);

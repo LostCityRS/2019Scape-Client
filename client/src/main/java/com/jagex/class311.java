@@ -43,7 +43,7 @@ public class class311 {
 	}
 
 	@ObfuscatedName("kc.n(Lakr;B)V")
-	public void method5342(class979 arg0) {
+	public void method5342(ClanChannel arg0) {
 		if (this.field3140 != arg0.field6760 || this.field3146 != arg0.field11395) {
 			throw new RuntimeException("");
 		}

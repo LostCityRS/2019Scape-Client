@@ -129,13 +129,13 @@ public class class120 {
 	public byte[] field1414;
 
 	@ObfuscatedName("dq.ab")
-	public class128[] field1403;
+	public ModelParticleEmitter[] field1403;
 
 	@ObfuscatedName("dq.az")
-	public class102[] field1416;
+	public ModelParticleEffector[] field1416;
 
 	@ObfuscatedName("dq.aa")
-	public class137[] field1412;
+	public ModelBillboard[] field1412;
 
 	@ObfuscatedName("dq.e(Lpy;II)Ldq;")
 	public static class120 method1931(Js5 arg0, int arg1, int arg2) {
@@ -432,7 +432,7 @@ public class class120 {
 			if (var12) {
 				int var93 = var2.g1();
 				if (var93 > 0) {
-					this.field1403 = new class128[var93];
+					this.field1403 = new ModelParticleEmitter[var93];
 					for (int var94 = 0; var94 < var93; var94++) {
 						int var95 = var2.g2();
 						int var96 = var2.g2();
@@ -442,23 +442,23 @@ public class class120 {
 						} else {
 							var97 = (byte) var18;
 						}
-						this.field1403[var94] = new class128(var95, var96, this.field1415[var96], this.field1386[var96], this.field1400[var96], var97);
+						this.field1403[var94] = new ModelParticleEmitter(var95, var96, this.field1415[var96], this.field1386[var96], this.field1400[var96], var97);
 					}
 				}
 				int var98 = var2.g1();
 				if (var98 > 0) {
-					this.field1416 = new class102[var98];
+					this.field1416 = new ModelParticleEffector[var98];
 					for (int var99 = 0; var99 < var98; var99++) {
 						int var100 = var2.g2();
 						int var101 = var2.g2();
-						this.field1416[var99] = new class102(var100, var101);
+						this.field1416[var99] = new ModelParticleEffector(var100, var101);
 					}
 				}
 			}
 			if (var13) {
 				int var102 = var2.g1();
 				if (var102 > 0) {
-					this.field1412 = new class137[var102];
+					this.field1412 = new ModelBillboard[var102];
 					for (int var103 = 0; var103 < var102; var103++) {
 						int var104 = var2.g2();
 						int var105 = var2.g2();
@@ -472,7 +472,7 @@ public class class120 {
 							}
 						}
 						byte var107 = var2.g1b();
-						this.field1412[var103] = new class137(var104, var105, var106, var107);
+						this.field1412[var103] = new ModelBillboard(var104, var105, var106, var107);
 					}
 				}
 			}
@@ -603,13 +603,13 @@ public class class120 {
 			this.field1369 = new int[this.field1387];
 		}
 		if (var5 > 0) {
-			this.field1412 = new class137[var5];
+			this.field1412 = new ModelBillboard[var5];
 		}
 		if (var3 > 0) {
-			this.field1403 = new class128[var3];
+			this.field1403 = new ModelParticleEmitter[var3];
 		}
 		if (var4 > 0) {
-			this.field1416 = new class102[var4];
+			this.field1416 = new ModelParticleEffector[var4];
 		}
 		if (this.field1381 > 0) {
 			this.field1385 = new float[this.field1381];
@@ -639,7 +639,7 @@ public class class120 {
 				boolean[] var26 = new boolean[var24.field1373];
 				if (var24.field1412 != null) {
 					for (int var27 = 0; var27 < var24.field1412.length; var27++) {
-						class137 var28 = var24.field1412[var27];
+						ModelBillboard var28 = var24.field1412[var27];
 						this.field1412[var21++] = var28.method2659(var28.field1654 + this.field1384);
 					}
 				}

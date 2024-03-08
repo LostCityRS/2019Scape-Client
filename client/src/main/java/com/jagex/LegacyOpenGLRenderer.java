@@ -524,7 +524,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	@ObfuscatedName("afa.iw")
 	public int field10029 = 0;
 
-	public LegacyOpenGLRenderer(Canvas arg0, class125 arg1, class143 arg2, class383 arg3, class381 arg4, class378 arg5, int arg6) {
+	public LegacyOpenGLRenderer(Canvas arg0, MaterialList arg1, class143 arg2, BillboardTypeList arg3, class381 arg4, class378 arg5, int arg6) {
 		super(arg1, arg2, arg3, arg4, arg5);
 		try {
 			try {
@@ -1833,7 +1833,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.cj(Ldq;IIII)Ldo;")
-	public class116 method2211(class120 arg0, int arg1, int arg2, int arg3, int arg4) {
+	public Model method2211(class120 arg0, int arg1, int arg2, int arg3, int arg4) {
 		return new LegacyOpenGLModel(this, arg0, arg1, arg3, arg4, arg2);
 	}
 
@@ -2727,7 +2727,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 			if (arg0 < 0) {
 				this.method15785();
 			} else {
-				class118 var10 = this.field1597.method2043(arg0);
+				Material var10 = this.field1597.method2043(arg0);
 				if (var10.field1330) {
 					var4 = this.field10026.method1404(var10);
 					if (var10.field1317 == 0.0F && var10.field1338 == 0.0F) {

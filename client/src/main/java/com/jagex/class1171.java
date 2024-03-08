@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("ars")
-public class class1171 extends class986 {
+public class class1171 extends SecondaryNode {
 
 	@ObfuscatedName("ars.l")
 	public int field12268;

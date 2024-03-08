@@ -6,9 +6,9 @@ import deob.ObfuscatedName;
 public class class518 implements class152 {
 
 	@ObfuscatedName("sd.e")
-	public class892 field6687;
+	public PathingEntity field6687;
 
-	public class518(class892 arg0) {
+	public class518(PathingEntity arg0) {
 		this.field6687 = arg0;
 	}
 

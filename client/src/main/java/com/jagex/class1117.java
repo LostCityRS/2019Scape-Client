@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class class1117 extends Framebuffer {
 
 	@ObfuscatedName("apn.n")
-	public class848 field11909;
+	public PureJavaRenderer field11909;
 
 	@ObfuscatedName("apn.m")
 	public class66 field11912;
@@ -20,7 +20,7 @@ public class class1117 extends Framebuffer {
 	@ObfuscatedName("apn.w")
 	public int field11908 = 0;
 
-	public class1117(class848 arg0) {
+	public class1117(PureJavaRenderer arg0) {
 		this.field11909 = arg0;
 	}
 

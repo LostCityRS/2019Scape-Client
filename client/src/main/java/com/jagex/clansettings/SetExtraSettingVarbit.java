@@ -1,8 +1,7 @@
 package com.jagex.clansettings;
 
 import com.jagex.Packet;
-import com.jagex.clansettings.ClanSettingsDelta;
-import com.jagex.class309;
+import com.jagex.ClanSettings;
 import com.jagex.class978;
 import deob.ObfuscatedName;
 
@@ -37,7 +36,7 @@ public class SetExtraSettingVarbit extends class978 {
 	}
 
 	@ObfuscatedName("arw.n(Lkr;I)V")
-	public void method17727(class309 arg0) {
+	public void method17727(ClanSettings arg0) {
 		arg0.method5271(this.field12245, this.field12248, this.field12246, this.field12247);
 	}
 }

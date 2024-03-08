@@ -189,7 +189,7 @@ public class class153 {
 		Statics.field8729 = null;
 		client.field10877 = false;
 		if (field1722 > 0) {
-			Statics.method830(class572.field7266, field1722, -1);
+			Statics.method830(ClientTriggerType.field7266, field1722, -1);
 		}
 		method3551();
 		ClientMessage var4 = Statics.method1604(ClientProt.CUTSCENE_FINISHED, client.field10849.field794);

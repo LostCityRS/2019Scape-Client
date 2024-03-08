@@ -41,7 +41,7 @@ public class class910 extends class307 {
 	}
 
 	@ObfuscatedName("ahd.t(Ljn;Lox;Lov;ZI[[[ILqx;III)V")
-	public void method16683(class273 arg0, Vector3 arg1, class421 arg2, boolean arg3, int arg4, int[][][] arg5, class451 arg6, int arg7, int arg8) {
+	public void method16683(class273 arg0, Vector3 arg1, class421 arg2, boolean arg3, int arg4, int[][][] arg5, LinkMap arg6, int arg7, int arg8) {
 		this.field10552 = arg0;
 		this.field10553.method6492(arg1);
 		this.field10554.method6412(arg2);
@@ -59,7 +59,7 @@ public class class910 extends class307 {
 	}
 
 	@ObfuscatedName("ahd.e(F[[[ILqx;IIB)V")
-	public void method5238(float arg0, int[][][] arg1, class451 arg2, int arg3, int arg4) {
+	public void method5238(float arg0, int[][][] arg1, LinkMap arg2, int arg3, int arg4) {
 		if (this.field10552 == null) {
 			return;
 		}
@@ -95,7 +95,7 @@ public class class910 extends class307 {
 	}
 
 	@ObfuscatedName("ahd.ah([[[ILqx;IIB)V")
-	public void method16686(int[][][] arg0, class451 arg1, int arg2, int arg3) {
+	public void method16686(int[][][] arg0, LinkMap arg1, int arg2, int arg3) {
 		if (!this.method5218() || !this.field3084.method4730() && !this.field3084.method4731()) {
 			return;
 		}
@@ -152,7 +152,7 @@ public class class910 extends class307 {
 	}
 
 	@ObfuscatedName("ahd.al([[[ILqx;IIIZI)F")
-	public float method16687(int[][][] arg0, class451 arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public float method16687(int[][][] arg0, LinkMap arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		class421 var7 = this.method16685();
 		Vector3 var8 = this.method16696(var7);
 		var7.method6407();

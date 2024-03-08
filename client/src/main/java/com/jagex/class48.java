@@ -255,7 +255,7 @@ public class class48 {
 		Statics.field688.method18157(Statics.field688.field11537, 0);
 		Statics.field688.method18157(Statics.field688.field11516, 0);
 		Statics.field688.method18157(Statics.field688.field11532, 2);
-		Statics.field688.method18157(Statics.field688.field11520, class254.field2663.field2664);
+		Statics.field688.method18157(Statics.field688.field11520, BuildAreaSize.field2663.field2664);
 		Statics.field688.method18157(Statics.field688.field11519, 0);
 		if (Statics.field8198 != null && Statics.field8198.method2266() && Statics.field8198.method2242()) {
 			Statics.field8198.method2273();
@@ -287,7 +287,7 @@ public class class48 {
 		Statics.field688.method18157(Statics.field688.field11537, 0);
 		Statics.field688.method18157(Statics.field688.field11516, 0);
 		Statics.field688.method18157(Statics.field688.field11532, 1);
-		Statics.field688.method18157(Statics.field688.field11520, class254.field2663.field2664);
+		Statics.field688.method18157(Statics.field688.field11520, BuildAreaSize.field2663.field2664);
 		Statics.field688.method18157(Statics.field688.field11519, 0);
 		if (Statics.field8198 != null && Statics.field8198.method2266() && Statics.field8198.method2242()) {
 			Statics.field8198.method2273();
@@ -319,7 +319,7 @@ public class class48 {
 		Statics.field688.method18157(Statics.field688.field11537, 0);
 		Statics.field688.method18157(Statics.field688.field11516, 0);
 		Statics.field688.method18157(Statics.field688.field11532, 0);
-		Statics.field688.method18157(Statics.field688.field11520, class254.field2663.field2664);
+		Statics.field688.method18157(Statics.field688.field11520, BuildAreaSize.field2663.field2664);
 		Statics.field688.method18157(Statics.field688.field11519, 0);
 		if (Statics.field8198 != null && Statics.field8198.method2266() && Statics.field8198.method2242()) {
 			Statics.field8198.method2273();
@@ -351,7 +351,7 @@ public class class48 {
 		Statics.field688.method18157(Statics.field688.field11537, 0);
 		Statics.field688.method18157(Statics.field688.field11516, 0);
 		Statics.field688.method18157(Statics.field688.field11532, 0);
-		Statics.field688.method18157(Statics.field688.field11520, class254.field2663.field2664);
+		Statics.field688.method18157(Statics.field688.field11520, BuildAreaSize.field2663.field2664);
 		Statics.field688.method18157(Statics.field688.field11519, 0);
 		if (Statics.field8198 != null && Statics.field8198.method2266() && Statics.field8198.method2242()) {
 			Statics.field8198.method2273();

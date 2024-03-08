@@ -6,9 +6,9 @@ import deob.ObfuscatedName;
 public class class673 implements class152 {
 
 	@ObfuscatedName("yl.e")
-	public class309 field8193;
+	public ClanSettings field8193;
 
-	public class673(class309 arg0) {
+	public class673(ClanSettings arg0) {
 		this.field8193 = arg0;
 	}
 

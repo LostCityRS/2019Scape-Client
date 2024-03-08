@@ -13,7 +13,7 @@ public class class555 {
 	public boolean field7017 = true;
 
 	@ObfuscatedName("um.w")
-	public class550 field7038;
+	public Scene field7038;
 
 	@ObfuscatedName("um.l")
 	public class549 field7024;
@@ -87,7 +87,7 @@ public class class555 {
 	@ObfuscatedName("um.ac")
 	public boolean field7046 = true;
 
-	public class555(class550 arg0) {
+	public class555(Scene arg0) {
 		this.field7016 = arg0.field6901;
 		this.field7025 = arg0.field6901;
 		this.field7038 = arg0;

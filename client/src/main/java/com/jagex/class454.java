@@ -13,10 +13,10 @@ public class class454 {
 	public FloorUnderlayTypeList field4503;
 
 	@ObfuscatedName("qg.m")
-	public class451 field4522;
+	public LinkMap field4522;
 
 	@ObfuscatedName("qg.k")
-	public class550 field4577;
+	public Scene field4577;
 
 	@ObfuscatedName("qg.w")
 	public int field4515 = 0;
@@ -225,7 +225,7 @@ public class class454 {
 	@ObfuscatedName("qg.cx")
 	public int[] field4589 = null;
 
-	public class454(class550 arg0, int arg1, int arg2, int arg3, boolean arg4, FloorOverlayTypeList arg5, FloorUnderlayTypeList arg6, class451 arg7) {
+	public class454(Scene arg0, int arg1, int arg2, int arg3, boolean arg4, FloorOverlayTypeList arg5, FloorUnderlayTypeList arg6, LinkMap arg7) {
 		this.field4577 = arg0;
 		this.field4544 = arg1;
 		this.field4513 = arg2;
@@ -1562,7 +1562,7 @@ public class class454 {
 			return arg1.field8156;
 		}
 		if (arg1.field8155 != -1) {
-			class118 var2 = arg0.field1597.method2043(arg1.field8155);
+			Material var2 = arg0.field1597.method2043(arg1.field8155);
 			if (!var2.field1342) {
 				return var2.field1366;
 			}

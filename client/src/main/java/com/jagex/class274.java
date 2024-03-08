@@ -150,7 +150,7 @@ public abstract class class274 {
 	}
 
 	@ObfuscatedName("je.n(F[[[ILqx;III)V")
-	public void method4681(float arg0, int[][][] arg1, class451 arg2, int arg3, int arg4) {
+	public void method4681(float arg0, int[][][] arg1, LinkMap arg2, int arg3, int arg4) {
 		if (this.field2846 != null) {
 			this.field2846.method14131(arg0);
 		}

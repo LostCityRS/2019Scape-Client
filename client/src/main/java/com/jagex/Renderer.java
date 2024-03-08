@@ -20,10 +20,10 @@ public abstract class Renderer {
 	public final class143 field1596;
 
 	@ObfuscatedName("dh.p")
-	public final class125 field1597;
+	public final MaterialList field1597;
 
 	@ObfuscatedName("dh.d")
-	public final class383 field1598;
+	public final BillboardTypeList field1598;
 
 	@ObfuscatedName("dh.c")
 	public final class381 field1599;
@@ -65,7 +65,7 @@ public abstract class Renderer {
 	public float field1602 = 0.0F;
 
 	@ObfuscatedName("aac.e(ILjava/awt/Canvas;Ldf;Les;Lnx;Lnb;Lnp;Lpy;II)Ldh;")
-	public static Renderer method14575(int arg0, Canvas arg1, class125 arg2, class143 arg3, class383 arg4, class381 arg5, class378 arg6, Js5 arg7, int arg8) {
+	public static Renderer method14575(int arg0, Canvas arg1, MaterialList arg2, class143 arg3, BillboardTypeList arg4, class381 arg5, class378 arg6, Js5 arg7, int arg8) {
 		int var9 = 0;
 		int var10 = 0;
 		if (arg1 != null) {
@@ -86,7 +86,7 @@ public abstract class Renderer {
 		return arg0 == 0 || arg0 == 2;
 	}
 
-	public Renderer(class125 arg0, class143 arg1, class383 arg2, class381 arg3, class378 arg4) {
+	public Renderer(MaterialList arg0, class143 arg1, BillboardTypeList arg2, class381 arg3, class378 arg4) {
 		this.field1597 = arg0;
 		this.field1596 = arg1;
 		this.field1598 = arg2;
@@ -580,7 +580,7 @@ public abstract class Renderer {
 	public abstract Matrix4x3 method2209();
 
 	@ObfuscatedName("dh.cj(Ldq;IIII)Ldo;")
-	public abstract class116 method2211(class120 arg0, int arg1, int arg2, int arg3, int arg4);
+	public abstract Model method2211(class120 arg0, int arg1, int arg2, int arg3, int arg4);
 
 	@ObfuscatedName("dh.dd(II)I")
 	public abstract int method2213(int arg0, int arg1);

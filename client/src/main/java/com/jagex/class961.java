@@ -205,8 +205,8 @@ public class class961 extends Node {
 	}
 
 	@ObfuscatedName("ajo.v(Ldh;ILaaq;IZLxg;I)Ldo;")
-	public final class116 method17475(Renderer arg0, int arg1, class721 arg2, int arg3, boolean arg4, class639 arg5) {
-		class116 var7 = null;
+	public final Model method17475(Renderer arg0, int arg1, class721 arg2, int arg3, boolean arg4, class639 arg5) {
+		Model var7 = null;
 		int var8 = arg1;
 		BASType var9 = null;
 		if (arg3 != -1) {
@@ -229,7 +229,7 @@ public class class961 extends Node {
 		}
 		long var13 = this.method17471(var10, arg3, arg5 == null ? null : arg5.field7894, arg4);
 		if (field11221 != null) {
-			var7 = (class116) field11221.method2930(var13);
+			var7 = (Model) field11221.method2930(var13);
 		}
 		if (var7 == null || arg0.method2394(var7.method1691(), var8) != 0) {
 			if (var7 != null) {
@@ -307,7 +307,7 @@ public class class961 extends Node {
 		if (arg2 == null) {
 			return var7;
 		} else {
-			class116 var32 = var7.method1773((byte) 1, var8, true);
+			Model var32 = var7.method1773((byte) 1, var8, true);
 			arg2.method14359(var32, 0);
 			return var32;
 		}

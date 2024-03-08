@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
 @ObfuscatedName("aeg")
-public class class828 extends class986 implements class88 {
+public class class828 extends SecondaryNode implements class88 {
 
 	@ObfuscatedName("aeg.k")
 	public final LegacyOpenGLRenderer field9348;

@@ -100,7 +100,7 @@ public class MovingParticle extends class1144 {
 		int var5 = this.field12163 >> 12;
 		int var6 = this.field12161 >> 12;
 		ParticleSystem var7 = this.field12526.field7785;
-		class376 var8 = this.field12526.field7772;
+		ParticleEmitterType var8 = this.field12526.field7772;
 		if (var8.field3478 != 0) {
 			if (this.field12524 - this.field12525 <= var8.field3524) {
 				int var9 = var8.field3530 * arg1 + (this.field12527 >> 16 & 0xFF) + (this.field12158 >> 8 & 0xFF00);
@@ -171,7 +171,7 @@ public class MovingParticle extends class1144 {
 			Iterator var32 = var7.field7803.iterator();
 			label226: while (true) {
 				class995 var33;
-				class379 var34;
+				ParticleEffectorType var34;
 				do {
 					if (!var32.hasNext()) {
 						break label226;
@@ -241,7 +241,7 @@ public class MovingParticle extends class1144 {
 						if (var58 == null) {
 							continue label207;
 						}
-						class379 var59 = var58.field11483;
+						ParticleEffectorType var59 = var58.field11483;
 						double var60 = (double) (var4 - var58.field11484);
 						double var62 = (double) (var5 - var58.field11481);
 						double var64 = (double) (var6 - var58.field11482);
@@ -305,7 +305,7 @@ public class MovingParticle extends class1144 {
 				}
 			}
 			for (int var81 = 0; var81 < var8.field3489.length; var81++) {
-				class379 var82 = class633.field7795[var8.field3489[var81]];
+				ParticleEffectorType var82 = class633.field7795[var8.field3489[var81]];
 				if (var82.field3542 == 0) {
 					var13 += var82.field3551 * arg1;
 					var15 += var82.field3552 * arg1;
@@ -338,7 +338,7 @@ public class MovingParticle extends class1144 {
 	}
 
 	@ObfuscatedName("atz.l(Ltx;Ldh;J)V")
-	public void method19668(class550 arg0, Renderer arg1, long arg2) {
+	public void method19668(Scene arg0, Renderer arg1, long arg2) {
 		int var5 = this.field12159 >> arg0.field6900 + 12;
 		int var6 = this.field12161 >> arg0.field6900 + 12;
 		int var7 = this.field12163 >> 12;
@@ -347,7 +347,7 @@ public class MovingParticle extends class1144 {
 			return;
 		}
 		ParticleSystem var8 = this.field12526.field7785;
-		class376 var9 = this.field12526.field7772;
+		ParticleEmitterType var9 = this.field12526.field7772;
 		class104[] var10 = arg0.field6913;
 		int var11 = var8.field7815;
 		class551 var12 = arg0.field6928[var8.field7815][var5][var6];
@@ -432,7 +432,7 @@ public class MovingParticle extends class1144 {
 						return;
 					}
 				}
-				for (class557 var24 = var16.field6964; var24 != null; var24 = var24.field7058) {
+				for (PrimaryLayerEntityList var24 = var16.field6964; var24 != null; var24 = var24.field7058) {
 					class556 var25 = var24.field7057.method17371(arg1);
 					if (var25 != null && var25.method8962(var19, var7, var20)) {
 						this.method19669();

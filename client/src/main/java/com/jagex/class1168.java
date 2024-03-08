@@ -35,7 +35,7 @@ public class class1168 extends class980 {
 	}
 
 	@ObfuscatedName("arz.n(Lakr;S)V")
-	public void method17753(class979 arg0) {
+	public void method17753(ClanChannel arg0) {
 		class308 var2 = new class308();
 		var2.field3087 = this.field12258;
 		var2.field3088 = this.field12257;

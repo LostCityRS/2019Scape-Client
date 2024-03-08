@@ -6,7 +6,7 @@ import jaclib.memory.Stream;
 import jaggl.OpenGL;
 
 @ObfuscatedName("afk")
-public class LegacyOpenGLModel extends class116 {
+public class LegacyOpenGLModel extends Model {
 
 	@ObfuscatedName("afk.c")
 	public final LegacyOpenGLRenderer field9626;
@@ -174,10 +174,10 @@ public class LegacyOpenGLModel extends class116 {
 	public short[] field9680;
 
 	@ObfuscatedName("afk.by")
-	public class128[] field9687;
+	public ModelParticleEmitter[] field9687;
 
 	@ObfuscatedName("afk.bu")
-	public class102[] field9641;
+	public ModelParticleEffector[] field9641;
 
 	@ObfuscatedName("afk.bw")
 	public int field9660;
@@ -231,14 +231,14 @@ public class LegacyOpenGLModel extends class116 {
 		if (class72.method1139(arg2, arg5)) {
 			this.field9663 = new class82();
 		}
-		class125 var7 = arg0.field1597;
-		class383 var8 = arg0.field1598;
+		MaterialList var7 = arg0.field1597;
+		BillboardTypeList var8 = arg0.field1598;
 		int[] var9 = new int[arg1.field1384];
 		this.field9679 = new int[arg1.field1374 + 1];
 		for (int var10 = 0; var10 < arg1.field1384; var10++) {
 			if (arg1.field1391 == null || arg1.field1391[var10] != 2) {
 				if (arg1.field1396 != null && arg1.field1396[var10] != -1) {
-					class118 var11 = var7.method2043(arg1.field1396[var10] & 0xFFFF);
+					Material var11 = var7.method2043(arg1.field1396[var10] & 0xFFFF);
 					if (((this.field9628 & 0x40) == 0 || !var11.field1342) && var11.field1361) {
 						continue;
 					}
@@ -257,7 +257,7 @@ public class LegacyOpenGLModel extends class116 {
 		boolean var13 = (this.field9627 & 0x100) != 0;
 		for (int var14 = 0; var14 < this.field9670; var14++) {
 			int var15 = var9[var14];
-			class118 var16 = null;
+			Material var16 = null;
 			int var17 = 0;
 			byte var18 = 0;
 			byte var19 = 0;
@@ -265,14 +265,14 @@ public class LegacyOpenGLModel extends class116 {
 			if (arg1.field1412 != null) {
 				boolean var21 = false;
 				for (int var22 = 0; var22 < arg1.field1412.length; var22++) {
-					class137 var23 = arg1.field1412[var22];
+					ModelBillboard var23 = arg1.field1412[var22];
 					if (var23.field1654 == var15) {
-						class375 var24 = var8.method6015(var23.field1653);
+						BillboardType var24 = var8.method6015(var23.field1653);
 						if (var24.field3456) {
 							var21 = true;
 						}
 						if (var24.field3455 != -1) {
-							class118 var25 = var7.method2043(var24.field3455);
+							Material var25 = var7.method2043(var24.field3455);
 							if (class603.field7573 == var25.field1340) {
 								this.field9632 = true;
 							}
@@ -288,9 +288,9 @@ public class LegacyOpenGLModel extends class116 {
 			if (arg1.field1403 != null) {
 				boolean var26 = false;
 				for (int var27 = 0; var27 < arg1.field1403.length; var27++) {
-					class128 var28 = arg1.field1403[var27];
+					ModelParticleEmitter var28 = arg1.field1403[var27];
 					if (var28.field1463 == var15) {
-						class376 var29 = this.field9626.field1599.method6004(var28.field1477);
+						ParticleEmitterType var29 = this.field9626.field1599.method6004(var28.field1477);
 						if (var29.field3510) {
 							var26 = true;
 						}
@@ -349,8 +349,8 @@ public class LegacyOpenGLModel extends class116 {
 			this.field9656 = new class96[this.field9660];
 			this.field9639 = new class80[this.field9660];
 			for (int var37 = 0; var37 < this.field9660; var37++) {
-				class137 var38 = arg1.field1412[var37];
-				class375 var39 = var8.method6015(var38.field1653);
+				ModelBillboard var38 = arg1.field1412[var37];
+				BillboardType var39 = var8.method6015(var38.field1653);
 				int var40 = -1;
 				for (int var41 = 0; var41 < this.field9670; var41++) {
 					if (var38.field1654 == var9[var41]) {
@@ -837,7 +837,7 @@ public class LegacyOpenGLModel extends class116 {
 	}
 
 	@ObfuscatedName("afk.l(BIZ)Ldo;")
-	public class116 method1773(byte arg0, int arg1, boolean arg2) {
+	public Model method1773(byte arg0, int arg1, boolean arg2) {
 		boolean var4 = false;
 		LegacyOpenGLModel var5;
 		LegacyOpenGLModel var6;
@@ -852,7 +852,7 @@ public class LegacyOpenGLModel extends class116 {
 	}
 
 	@ObfuscatedName("afk.hq(Lafk;Lafk;IZZ)Ldo;")
-	public class116 method15550(LegacyOpenGLModel arg0, LegacyOpenGLModel arg1, int arg2, boolean arg3, boolean arg4) {
+	public Model method15550(LegacyOpenGLModel arg0, LegacyOpenGLModel arg1, int arg2, boolean arg3, boolean arg4) {
 		arg0.field9629 = 0;
 		arg0.field9627 = arg2;
 		arg0.field9628 = this.field9628;
@@ -1615,7 +1615,7 @@ public class LegacyOpenGLModel extends class116 {
 	}
 
 	@ObfuscatedName("afk.bo(Ldo;IIIZ)V")
-	public void method1686(class116 arg0, int arg1, int arg2, int arg3, boolean arg4) {
+	public void method1686(Model arg0, int arg1, int arg2, int arg3, boolean arg4) {
 		LegacyOpenGLModel var6 = (LegacyOpenGLModel) arg0;
 		if (this.field9670 == 0 || var6.field9670 == 0) {
 			return;
@@ -1839,7 +1839,7 @@ public class LegacyOpenGLModel extends class116 {
 
 	@ObfuscatedName("afk.bt(SS)V")
 	public void method1744(short arg0, short arg1) {
-		class125 var3 = this.field9626.field1597;
+		MaterialList var3 = this.field9626.field1597;
 		for (int var4 = 0; var4 < this.field9670; var4++) {
 			if (this.field9685[var4] == arg0) {
 				this.field9685[var4] = arg1;
@@ -1848,14 +1848,14 @@ public class LegacyOpenGLModel extends class116 {
 		byte var5 = 0;
 		byte var6 = 0;
 		if (arg0 != -1) {
-			class118 var7 = var3.method2043(arg0 & 0xFFFF);
+			Material var7 = var3.method2043(arg0 & 0xFFFF);
 			var5 = var7.field1364;
 			var6 = var7.field1363;
 		}
 		byte var8 = 0;
 		byte var9 = 0;
 		if (arg1 != -1) {
-			class118 var10 = var3.method2043(arg1 & 0xFFFF);
+			Material var10 = var3.method2043(arg1 & 0xFFFF);
 			var8 = var10.field1364;
 			var9 = var10.field1363;
 			if (var10.field1317 != 0.0F || var10.field1338 != 0.0F) {
@@ -1914,7 +1914,7 @@ public class LegacyOpenGLModel extends class116 {
 		}
 		for (int var1 = 0; var1 < this.field9685.length; var1++) {
 			if (this.field9685[var1] != -1) {
-				class118 var2 = this.field9626.field1597.method2043(this.field9685[var1] & 0xFFFF);
+				Material var2 = this.field9626.field1597.method2043(this.field9685[var1] & 0xFFFF);
 				if (var2.field1330 && !this.field9626.field10026.method1397(class605.field7586, var2, -1)) {
 					return false;
 				}
@@ -2905,12 +2905,12 @@ public class LegacyOpenGLModel extends class116 {
 	}
 
 	@ObfuscatedName("afk.bw()[Lcq;")
-	public class102[] method1765() {
+	public ModelParticleEffector[] method1765() {
 		return this.field9641;
 	}
 
 	@ObfuscatedName("afk.bu()[Ldu;")
-	public class128[] method1750() {
+	public ModelParticleEmitter[] method1750() {
 		return this.field9687;
 	}
 
@@ -2920,8 +2920,8 @@ public class LegacyOpenGLModel extends class116 {
 		var2.method6609(arg0);
 		if (this.field9687 != null) {
 			for (int var3 = 0; var3 < this.field9687.length; var3++) {
-				class128 var4 = this.field9687[var3];
-				class128 var5 = var4;
+				ModelParticleEmitter var4 = this.field9687[var3];
+				ModelParticleEmitter var5 = var4;
 				if (var4.field1465 != null) {
 					var5 = var4.field1465;
 				}
@@ -2940,8 +2940,8 @@ public class LegacyOpenGLModel extends class116 {
 			return;
 		}
 		for (int var6 = 0; var6 < this.field9641.length; var6++) {
-			class102 var7 = this.field9641[var6];
-			class102 var8 = var7;
+			ModelParticleEffector var7 = this.field9641[var6];
+			ModelParticleEffector var8 = var7;
 			if (var7.field1230 != null) {
 				var8 = var7.field1230;
 			}
@@ -3687,7 +3687,7 @@ public class LegacyOpenGLModel extends class116 {
 	public int method15548(int arg0, short arg1, int arg2, byte arg3) {
 		int var5 = Statics.field8151[method15559(arg0, arg2)];
 		if (arg1 != -1) {
-			class118 var6 = this.field9626.field1597.method2043(arg1 & 0xFFFF);
+			Material var6 = this.field9626.field1597.method2043(arg1 & 0xFFFF);
 			int var7 = var6.field1364 & 0xFF;
 			if (var7 != 0) {
 				int var8;

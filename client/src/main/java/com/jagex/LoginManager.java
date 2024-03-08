@@ -891,9 +891,9 @@ public class LoginManager {
 				System.arraycopy(Statics.field432.field795.data, Statics.field432.field795.pos, var44.data, 0, var43);
 				Statics.field432.field795.pos += var43;
 				if (ServerProt.REBUILD_REGION == Statics.field432.field796) {
-					client.field10855.method7749(new class494(class496.field5066, var44));
+					client.field10855.method7749(new RebuildRequest(RebuildType.field5066, var44));
 				} else {
-					client.field10855.method7749(new class494(class496.field5071, var44));
+					client.field10855.method7749(new RebuildRequest(RebuildType.field5071, var44));
 				}
 				if (Statics.field432.field795.pos != var42) {
 					throw new RuntimeException(Statics.field432.field795.pos + " " + var42);

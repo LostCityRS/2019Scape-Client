@@ -1031,7 +1031,7 @@ public class class226 {
 	}
 
 	@ObfuscatedName("hf.o(Ldh;ILaof;Laov;Laod;Laon;Laos;Lem;Lep;Laaq;Lxg;I)Ldo;")
-	public class116 method3944(Renderer arg0, int arg1, BASTypeList arg2, IDKTypeList arg3, NPCTypeList arg4, ObjTypeList arg5, SeqTypeList arg6, class151 arg7, class147 arg8, class721 arg9, class639 arg10) {
+	public Model method3944(Renderer arg0, int arg1, BASTypeList arg2, IDKTypeList arg3, NPCTypeList arg4, ObjTypeList arg5, SeqTypeList arg6, class151 arg7, class147 arg8, class721 arg9, class639 arg10) {
 		field2338 = false;
 		if (this.field2224 == 0) {
 			return null;
@@ -1063,7 +1063,7 @@ public class class226 {
 				arg1 |= 0x8000;
 			}
 			long var30 = (long) arg0.field1595 << 59 | (long) this.field2224 << 55 | (long) this.field2294 << 38 | var13 & 0x3FFFFFFFFFL;
-			class116 var32 = (class116) field2297.method2930(var30);
+			Model var32 = (Model) field2297.method2930(var30);
 			if (var32 == null || arg0.method2394(var32.method1691(), arg1) != 0) {
 				if (var32 != null) {
 					arg1 = arg0.method2213(arg1, var32.method1691());
@@ -1096,7 +1096,7 @@ public class class226 {
 			var32.method1690(var12);
 			return var32;
 		} else if (this.field2224 == 2) {
-			class116 var36 = ((NPCType) arg4.get(this.field2294)).method4544(arg0, arg1, arg7, arg8, arg9, this.field2363);
+			Model var36 = ((NPCType) arg4.get(this.field2294)).method4544(arg0, arg1, arg7, arg8, arg9, this.field2363);
 			if (var36 == null) {
 				field2338 = true;
 				return null;
@@ -1107,7 +1107,7 @@ public class class226 {
 			if (arg10 == null) {
 				return null;
 			}
-			class116 var37 = arg10.method10120(arg0, arg1, arg3, arg4, arg5, arg7, arg8, arg9);
+			Model var37 = arg10.method10120(arg0, arg1, arg3, arg4, arg5, arg7, arg8, arg9);
 			if (var37 == null) {
 				field2338 = true;
 				return null;
@@ -1116,7 +1116,7 @@ public class class226 {
 			}
 		} else if (this.field2224 == 4) {
 			ObjType var38 = (ObjType) arg5.get(this.field2294);
-			class116 var39 = var38.method14644(arg0, arg1, 10, arg10, arg9, 0, 0, 0, 0);
+			Model var39 = var38.method14644(arg0, arg1, 10, arg10, arg9, 0, 0, 0, 0);
 			if (var39 == null) {
 				field2338 = true;
 				return null;
@@ -1124,7 +1124,7 @@ public class class226 {
 				return var39;
 			}
 		} else if (this.field2224 == 6) {
-			class116 var40 = ((NPCType) arg4.get(this.field2294)).method4542(arg0, arg1, arg2, arg7, arg8, arg9, null, null, null, 0, this.field2363);
+			Model var40 = ((NPCType) arg4.get(this.field2294)).method4542(arg0, arg1, arg2, arg7, arg8, arg9, null, null, null, 0, this.field2363);
 			if (var40 == null) {
 				field2338 = true;
 				return null;
@@ -1139,7 +1139,7 @@ public class class226 {
 			int var41 = this.field2294 >>> 16;
 			int var42 = this.field2294 & 0xFFFF;
 			int var43 = this.field2298;
-			class116 var44 = arg10.method10130(arg0, arg1, arg3, arg6, arg9, var41, var42, var43);
+			Model var44 = arg10.method10130(arg0, arg1, arg3, arg6, arg9, var41, var42, var43);
 			if (var44 == null) {
 				field2338 = true;
 				return null;
@@ -1150,10 +1150,10 @@ public class class226 {
 	}
 
 	@ObfuscatedName("hf.s(Ldh;Ldo;Lou;IB)V")
-	public void method3951(Renderer arg0, class116 arg1, Matrix4x3 arg2, int arg3) {
+	public void method3951(Renderer arg0, Model arg1, Matrix4x3 arg2, int arg3) {
 		arg1.method1689(arg2);
-		class128[] var5 = arg1.method1750();
-		class102[] var6 = arg1.method1765();
+		ModelParticleEmitter[] var5 = arg1.method1750();
+		ModelParticleEffector[] var6 = arg1.method1765();
 		if ((this.field2254 == null || this.field2254.field7804) && (var5 != null || var6 != null)) {
 			this.field2254 = ParticleSystem.method9962(arg3, false);
 		}

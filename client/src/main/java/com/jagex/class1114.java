@@ -9,12 +9,12 @@ public class class1114 extends class829 {
 	@ObfuscatedName("apo.am")
 	public int[] field11904;
 
-	public class1114(class848 arg0, int arg1, int arg2) {
+	public class1114(PureJavaRenderer arg0, int arg1, int arg2) {
 		super(arg0, arg1, arg2);
 		this.field11904 = new int[arg1 * arg2];
 	}
 
-	public class1114(class848 arg0, int[] arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6) {
+	public class1114(PureJavaRenderer arg0, int[] arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6) {
 		super(arg0, arg4, arg5);
 		if (arg6) {
 			this.field11904 = new int[arg4 * arg5];
@@ -36,7 +36,7 @@ public class class1114 extends class829 {
 		}
 	}
 
-	public class1114(class848 arg0, int[] arg1, int arg2, int arg3) {
+	public class1114(PureJavaRenderer arg0, int[] arg1, int arg2, int arg3) {
 		super(arg0, arg2, arg3);
 		this.field11904 = arg1;
 	}

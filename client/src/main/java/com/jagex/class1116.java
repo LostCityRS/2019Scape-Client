@@ -12,7 +12,7 @@ public class class1116 extends class829 {
 	@ObfuscatedName("apd.au")
 	public int[] field11906;
 
-	public class1116(class848 arg0, byte[] arg1, int[] arg2, int arg3, int arg4) {
+	public class1116(PureJavaRenderer arg0, byte[] arg1, int[] arg2, int arg3, int arg4) {
 		super(arg0, arg3, arg4);
 		this.field11907 = arg1;
 		this.field11906 = arg2;

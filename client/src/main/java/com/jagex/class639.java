@@ -156,7 +156,7 @@ public class class639 {
 	}
 
 	@ObfuscatedName("xg.u(Ldh;ILaof;Laov;Laod;Laon;Lem;Lep;Laaq;Laaq;[Laaq;[IIZLwy;B)Ldo;")
-	public class116 method10126(Renderer arg0, int arg1, BASTypeList arg2, IDKTypeList arg3, NPCTypeList arg4, ObjTypeList arg5, class151 arg6, class147 arg7, class721 arg8, class721 arg9, class721[] arg10, int[] arg11, int arg12, boolean arg13, class631 arg14) {
+	public Model method10126(Renderer arg0, int arg1, BASTypeList arg2, IDKTypeList arg3, NPCTypeList arg4, ObjTypeList arg5, class151 arg6, class147 arg7, class721 arg8, class721 arg9, class721[] arg10, int[] arg11, int arg12, boolean arg13, class631 arg14) {
 		if (this.field7892 != -1) {
 			return ((NPCType) arg4.get(this.field7892)).method4542(arg0, arg1, arg2, arg6, arg7, arg8, arg9, arg10, arg11, arg12, null);
 		}
@@ -232,9 +232,9 @@ public class class639 {
 			}
 		}
 		WeightedCache var33 = field7901;
-		class116 var34;
+		Model var34;
 		synchronized (field7901) {
-			var34 = (class116) field7901.method2930(var17);
+			var34 = (Model) field7901.method2930(var17);
 		}
 		BASType var36 = null;
 		if (this.field7891 != -1) {
@@ -252,7 +252,7 @@ public class class639 {
 						if (this.field7899 != -1L) {
 							WeightedCache var45 = field7901;
 							synchronized (field7901) {
-								var34 = (class116) field7901.method2930(this.field7899);
+								var34 = (Model) field7901.method2930(this.field7899);
 							}
 						}
 						if (var34 == null || arg0.method2394(var34.method1691(), var16) != 0) {
@@ -374,7 +374,7 @@ public class class639 {
 				var39++;
 			}
 		}
-		class116 var69 = var34.method1773((byte) 4, var16, true);
+		Model var69 = var34.method1773((byte) 4, var16, true);
 		if (!var28 && !var31) {
 			return var69;
 		}
@@ -427,15 +427,15 @@ public class class639 {
 	}
 
 	@ObfuscatedName("xg.z(Ldh;ILaov;Laod;Laon;Lem;Lep;Laaq;B)Ldo;")
-	public class116 method10120(Renderer arg0, int arg1, IDKTypeList arg2, NPCTypeList arg3, ObjTypeList arg4, class151 arg5, class147 arg6, class721 arg7) {
+	public Model method10120(Renderer arg0, int arg1, IDKTypeList arg2, NPCTypeList arg3, ObjTypeList arg4, class151 arg5, class147 arg6, class721 arg7) {
 		if (this.field7892 != -1) {
 			return ((NPCType) arg3.get(this.field7892)).method4544(arg0, arg1, arg5, arg6, arg7, null);
 		}
 		int var9 = arg7 == null ? arg1 : arg1 | arg7.method14358();
 		WeightedCache var10 = field7902;
-		class116 var11;
+		Model var11;
 		synchronized (field7902) {
-			var11 = (class116) field7902.method2930(this.field7888);
+			var11 = (Model) field7902.method2930(this.field7888);
 		}
 		if (var11 == null || arg0.method2394(var11.method1691(), var9) != 0) {
 			if (var11 != null) {
@@ -505,20 +505,20 @@ public class class639 {
 		if (arg7 == null) {
 			return var11;
 		} else {
-			class116 var33 = var11.method1773((byte) 4, var9, true);
+			Model var33 = var11.method1773((byte) 4, var9, true);
 			arg7.method14359(var33, 0);
 			return var33;
 		}
 	}
 
 	@ObfuscatedName("xg.p(Ldh;ILaov;Laos;Laaq;IIIB)Ldo;")
-	public class116 method10130(Renderer arg0, int arg1, IDKTypeList arg2, SeqTypeList arg3, class721 arg4, int arg5, int arg6, int arg7) {
+	public Model method10130(Renderer arg0, int arg1, IDKTypeList arg2, SeqTypeList arg3, class721 arg4, int arg5, int arg6, int arg7) {
 		int var9 = arg4 == null ? arg1 : arg1 | arg4.method14358();
 		long var10 = (long) arg7 << 32 | (long) (arg6 << 16) | (long) arg5;
 		WeightedCache var12 = field7902;
-		class116 var13;
+		Model var13;
 		synchronized (field7902) {
-			var13 = (class116) field7902.method2930(var10);
+			var13 = (Model) field7902.method2930(var10);
 		}
 		if (var13 == null || arg0.method2394(var13.method1691(), var9) != 0) {
 			if (var13 != null) {
@@ -567,7 +567,7 @@ public class class639 {
 		if (arg4 == null) {
 			return var13;
 		} else {
-			class116 var29 = var13.method1773((byte) 4, var9, true);
+			Model var29 = var13.method1773((byte) 4, var9, true);
 			arg4.method14359(var29, 0);
 			return var29;
 		}

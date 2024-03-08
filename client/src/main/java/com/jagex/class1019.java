@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public abstract class class1019 extends class665 {
 
 	@ObfuscatedName("alh.c")
-	public class550 field11716;
+	public Scene field11716;
 
 	@ObfuscatedName("alh.r")
 	public class1019 field11712;
@@ -26,11 +26,11 @@ public abstract class class1019 extends class665 {
 	@ObfuscatedName("alh.q")
 	public class420 field11711;
 
-	public class1019(class550 arg0) {
+	public class1019(Scene arg0) {
 		this(arg0, (class420) null);
 	}
 
-	public class1019(class550 arg0, class420 arg1) {
+	public class1019(Scene arg0, class420 arg1) {
 		this.field11716 = arg0;
 		this.field11711 = arg1;
 	}
@@ -65,12 +65,12 @@ public abstract class class1019 extends class665 {
 	}
 
 	@ObfuscatedName("acl.gx(IIILdo;I)Luq;")
-	public static class556 method15111(int arg0, int arg1, int arg2, class116 arg3) {
+	public static class556 method15111(int arg0, int arg1, int arg2, Model arg3) {
 		return arg3 == null ? null : new class556(arg0, arg1, arg2, arg3.method1727(), arg3.method1729(), arg3.method1730(), arg3.method1748(), arg3.method1695(), arg3.method1733(), arg3.method1794());
 	}
 
 	@ObfuscatedName("sl.ge(Luq;IIILdo;I)V")
-	public static void method8229(class556 arg0, int arg1, int arg2, int arg3, class116 arg4) {
+	public static void method8229(class556 arg0, int arg1, int arg2, int arg3, Model arg4) {
 		if (arg4 != null) {
 			arg0.method8967(arg1, arg2, arg3, arg4.method1727(), arg4.method1729(), arg4.method1730(), arg4.method1748(), arg4.method1695(), arg4.method1733(), arg4.method1794());
 		}
@@ -114,7 +114,7 @@ public abstract class class1019 extends class665 {
 	public abstract boolean method18360(Renderer arg0);
 
 	@ObfuscatedName("alh.fc(Ldh;I)Ltl;")
-	public abstract class552 method17372(Renderer arg0);
+	public abstract PickableEntity method17372(Renderer arg0);
 
 	@ObfuscatedName("alh.gn(I)Z")
 	public abstract boolean method18361();

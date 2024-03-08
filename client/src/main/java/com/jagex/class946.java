@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("ajy")
-public class class946 extends class1200 implements class514 {
+public class class946 extends class1200 implements Location {
 
 	@ObfuscatedName("ajy.c")
 	public class516 field11131;
@@ -21,7 +21,7 @@ public class class946 extends class1200 implements class514 {
 	@ObfuscatedName("ajy.s")
 	public final boolean field11130;
 
-	public class946(class550 arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, int arg14, int arg15, int arg16, int arg17, boolean arg18, class420 arg19) {
+	public class946(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, int arg14, int arg15, int arg16, int arg17, boolean arg18, class420 arg19) {
 		super(arg0, arg4, arg5, arg6, arg7, arg8, arg10, arg11, arg12, arg13, arg3.field7503 == 1, Statics.method6824(arg14, arg15), arg19);
 		this.field11131 = new class516(arg1, arg2, arg3, arg14, arg15, arg5, this, arg9, arg16, arg17);
 		this.field11128 = arg3.field7470 != 0 && !arg9;
@@ -55,13 +55,13 @@ public class class946 extends class1200 implements class514 {
 	}
 
 	@ObfuscatedName("ajy.fc(Ldh;I)Ltl;")
-	public class552 method17372(Renderer arg0) {
-		class116 var2 = this.field11131.method8238(arg0, 2048, false, true);
+	public PickableEntity method17372(Renderer arg0) {
+		Model var2 = this.field11131.method8238(arg0, 2048, false, true);
 		if (var2 == null) {
 			return null;
 		}
 		Matrix4x3 var3 = this.method10533();
-		class552 var4 = class552.method16749(this.field11128);
+		PickableEntity var4 = PickableEntity.method16749(this.field11128);
 		this.field11131.method8239(arg0, var2, var3, this.field12471, this.field12472, this.field12468, this.field12467, true);
 		LocType var5 = this.field11131.method8237();
 		if (var5.field7468 == null) {
@@ -86,7 +86,7 @@ public class class946 extends class1200 implements class514 {
 
 	@ObfuscatedName("ajy.fw(Ldh;I)V")
 	public void method17373(Renderer arg0) {
-		class116 var2 = this.field11131.method8238(arg0, 262144, true, true);
+		Model var2 = this.field11131.method8238(arg0, 262144, true, true);
 		if (var2 != null) {
 			this.field11131.method8239(arg0, var2, this.method10533(), this.field12471, this.field12472, this.field12468, this.field12467, false);
 		}
@@ -101,7 +101,7 @@ public class class946 extends class1200 implements class514 {
 	public boolean method17375(Renderer arg0, int arg1, int arg2) {
 		LocType var4 = this.field11131.method8237();
 		if (var4.field7468 == null) {
-			class116 var5 = this.field11131.method8238(arg0, 131072, false, false);
+			Model var5 = this.field11131.method8238(arg0, 131072, false, false);
 			return var5 == null ? false : var5.method1725(arg1, arg2, this.method10533(), false, 0);
 		} else {
 			return arg0.method2191(arg1, arg2, this.method10533(), var4.field7468);

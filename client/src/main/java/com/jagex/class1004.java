@@ -105,7 +105,7 @@ public class class1004 extends WorldMap {
 	}
 
 	@ObfuscatedName("uu.du(Ldh;Ldf;I)V")
-	public static final void method9231(Renderer arg0, class125 arg1) {
+	public static final void method9231(Renderer arg0, MaterialList arg1) {
 		if (field11651 == 100 || Statics.field6811 == null) {
 			return;
 		}
@@ -133,7 +133,7 @@ public class class1004 extends WorldMap {
 			int var5 = -1;
 			int var6 = -1;
 			Vector3 var7 = Statics.field4490.method10536().field4298;
-			class594 var8 = client.field10855.method7727();
+			CoordGrid var8 = client.field10855.method7727();
 			if (Statics.field6811.method19471(Statics.field4490.field11717, ((int) var7.field4308 >> 9) + var8.field7426, ((int) var7.field4313 >> 9) + var8.field7427, var4)) {
 				var5 = var4[1] - Statics.field6786;
 				var6 = var4[2] - Statics.field6808;
@@ -781,14 +781,14 @@ public class class1004 extends WorldMap {
 													}
 													if (!var8.field11252.field11450) {
 														var8.field11252.field11450 = true;
-														Statics.method830(class572.field7263, var8.field11252.field11446, var9.field2374);
+														Statics.method830(ClientTriggerType.field7263, var8.field11252.field11446, var9.field2374);
 													}
 													if (var8.field11252.field11450) {
-														Statics.method830(class572.field7255, var8.field11252.field11446, var9.field2374);
+														Statics.method830(ClientTriggerType.field7255, var8.field11252.field11446, var9.field2374);
 													}
 												} else if (var8.field11252.field11450) {
 													var8.field11252.field11450 = false;
-													Statics.method830(class572.field7254, var8.field11252.field11446, var9.field2374);
+													Statics.method830(ClientTriggerType.field7254, var8.field11252.field11446, var9.field2374);
 												}
 											}
 										}
@@ -821,7 +821,7 @@ public class class1004 extends WorldMap {
 
 	@ObfuscatedName("fl.es(IIIZI)V")
 	public static void method3141(int arg0, int arg1, int arg2, boolean arg3) {
-		class1183 var4 = Statics.field6811;
+		WorldMapAreaMetadata var4 = Statics.field6811;
 		method8521(arg0);
 		field6842 = false;
 		if (Statics.field6811 != var4) {
@@ -838,14 +838,14 @@ public class class1004 extends WorldMap {
 	}
 
 	@ObfuscatedName("akb.el(B)Lasy;")
-	public static class1183 method17877() {
+	public static WorldMapAreaMetadata method17877() {
 		return Statics.field6811;
 	}
 
 	@ObfuscatedName("ft.ej(ZB)V")
 	public static void method3079(boolean arg0) {
-		class594 var1 = Statics.field4490.method16521();
-		class1183 var2 = method8511(var1.field7426, var1.field7427);
+		CoordGrid var1 = Statics.field4490.method16521();
+		WorldMapAreaMetadata var2 = method8511(var1.field7426, var1.field7427);
 		if (var2 == null) {
 			var2 = method8512(Statics.field6792.field7695);
 		}

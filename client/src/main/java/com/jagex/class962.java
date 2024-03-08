@@ -137,22 +137,22 @@ public final class class962 extends Node {
 
 	@ObfuscatedName("uf.k(Lajt;B)V")
 	public static final void method9023(class962 arg0) {
-		class550 var1 = client.field10855.method7743();
+		Scene var1 = client.field10855.method7743();
 		if (var1 == null) {
 			return;
 		}
-		class514 var2 = null;
+		Location var2 = null;
 		if (arg0.field11229 == 0) {
-			var2 = (class514) var1.method8711(arg0.field11238, arg0.field11226, arg0.field11228);
+			var2 = (Location) var1.method8711(arg0.field11238, arg0.field11226, arg0.field11228);
 		}
 		if (arg0.field11229 == 1) {
-			var2 = (class514) var1.method8735(arg0.field11238, arg0.field11226, arg0.field11228);
+			var2 = (Location) var1.method8735(arg0.field11238, arg0.field11226, arg0.field11228);
 		}
 		if (arg0.field11229 == 2) {
-			var2 = (class514) var1.method8856(arg0.field11238, arg0.field11226, arg0.field11228, client.field11001);
+			var2 = (Location) var1.method8856(arg0.field11238, arg0.field11226, arg0.field11228, client.field11001);
 		}
 		if (arg0.field11229 == 3) {
-			var2 = (class514) var1.method8767(arg0.field11238, arg0.field11226, arg0.field11228);
+			var2 = (Location) var1.method8767(arg0.field11238, arg0.field11226, arg0.field11228);
 		}
 		if (var2 == null) {
 			arg0.field11227 = -1;
@@ -172,7 +172,7 @@ public final class class962 extends Node {
 	@ObfuscatedName("eq.w(Lajt;ZI)V")
 	public static final void method2834(class962 arg0, boolean arg1) {
 		if (arg0.field11240) {
-			if (arg0.field11227 < 0 || class938.method14705(client.field10855.method7750(), arg0.field11227, arg0.field11232)) {
+			if (arg0.field11227 < 0 || ClientMapLoader.method14705(client.field10855.method7750(), arg0.field11227, arg0.field11232)) {
 				if (arg1) {
 					method9194(arg0.field11238, arg0.field11229, arg0.field11226, arg0.field11228, null);
 				} else {
@@ -180,7 +180,7 @@ public final class class962 extends Node {
 				}
 				arg0.method8440();
 			}
-		} else if (arg0.field11239 && arg0.field11226 >= 1 && arg0.field11228 >= 1 && arg0.field11226 <= client.field10855.method7728() - 2 && arg0.field11228 <= client.field10855.method7758() - 2 && (arg0.field11234 < 0 || class938.method14705(client.field10855.method7750(), arg0.field11234, arg0.field11236))) {
+		} else if (arg0.field11239 && arg0.field11226 >= 1 && arg0.field11228 >= 1 && arg0.field11226 <= client.field10855.method7728() - 2 && arg0.field11228 <= client.field10855.method7758() - 2 && (arg0.field11234 < 0 || ClientMapLoader.method14705(client.field10855.method7750(), arg0.field11234, arg0.field11236))) {
 			if (arg1) {
 				method9194(arg0.field11238, arg0.field11229, arg0.field11226, arg0.field11228, arg0.field11241);
 			} else {
@@ -225,7 +225,7 @@ public final class class962 extends Node {
 		if (client.field10855.method7743() == null) {
 			return;
 		}
-		class514 var5 = client.field10855.method7744().method16899(arg0, arg1, arg2, arg3);
+		Location var5 = client.field10855.method7744().method16899(arg0, arg1, arg2, arg3);
 		if (var5 == null) {
 			return;
 		}

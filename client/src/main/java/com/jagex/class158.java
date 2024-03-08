@@ -88,7 +88,7 @@ public final class class158 {
 	}
 
 	@ObfuscatedName("ea.k(I)Lahm;")
-	public class892 method2870() {
+	public PathingEntity method2870() {
 		return this.field1745 == null ? this.field1742 : this.field1745;
 	}
 

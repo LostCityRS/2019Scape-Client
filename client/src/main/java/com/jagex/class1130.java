@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("aqk")
-public class class1130 extends class892 {
+public class class1130 extends PathingEntity {
 
 	@ObfuscatedName("aqk.cn")
 	public String field12057;
@@ -81,12 +81,12 @@ public class class1130 extends class892 {
 	@ObfuscatedName("aqk.dt")
 	public boolean field12048 = false;
 
-	public class1130(class550 arg0) {
+	public class1130(Scene arg0) {
 		super(arg0, Statics.field8485);
 		this.method19112();
 	}
 
-	public class1130(class550 arg0, int arg1) {
+	public class1130(Scene arg0, int arg1) {
 		super(arg0, arg1, Statics.field8485);
 		this.method19112();
 	}
@@ -291,7 +291,7 @@ public class class1130 extends class892 {
 	}
 
 	@ObfuscatedName("aqk.fc(Ldh;I)Ltl;")
-	public class552 method17372(Renderer arg0) {
+	public PickableEntity method17372(Renderer arg0) {
 		if (this.field12061 == null || !this.method19114(arg0, 2048)) {
 			return null;
 		}
@@ -308,7 +308,7 @@ public class class1130 extends class892 {
 		}
 		var2.method6292(var3);
 		var2.method6315(0.0F, (float) (-20 - this.field10408), 0.0F);
-		class552 var8 = null;
+		PickableEntity var8 = null;
 		this.field10458 = false;
 		if (Statics.field688.field11568.method18453() == 1) {
 			BASType var9 = this.method16508();
@@ -322,7 +322,7 @@ public class class1130 extends class892 {
 					var13 = ((NPCType) Statics.field7961.get(this.field12061.field7892)).field2702;
 				}
 				Object var14 = null;
-				class116 var15;
+				Model var15;
 				if (var12 > -1 && Statics.field688.field11538.method18426() == 1) {
 					var15 = class31.method3283(arg0, var5, this.field10405, this.field12466, this.field10407, this.field10459[0], var12, var13, var11 == null ? var10 : var11);
 				} else {
@@ -332,7 +332,7 @@ public class class1130 extends class892 {
 					if (this.field11713 == null || this.field11713.length < this.field10459.length + 1) {
 						this.method18363(this.field10459.length + 1);
 					}
-					var8 = class552.method16749(true);
+					var8 = PickableEntity.method16749(true);
 					this.field10458 = true;
 					arg0.method2219(false);
 					var15.method1813(var2, this.field11713[this.field10459.length], 0);
@@ -380,7 +380,7 @@ public class class1130 extends class892 {
 			this.method18363(this.field10459.length);
 		}
 		if (var8 == null) {
-			var8 = class552.method16749(true);
+			var8 = PickableEntity.method16749(true);
 		}
 		this.method16576(arg0, this.field10459, var2, false);
 		for (int var36 = 0; var36 < this.field10459.length; var36++) {
@@ -419,13 +419,13 @@ public class class1130 extends class892 {
 	}
 
 	@ObfuscatedName("aqk.hh(Ldh;Lou;Ldo;JJIJ)V")
-	public void method19113(Renderer arg0, Matrix4x3 arg1, class116 arg2, long arg3, long arg4, int arg5, long arg6) {
+	public void method19113(Renderer arg0, Matrix4x3 arg1, Model arg2, long arg3, long arg4, int arg5, long arg6) {
 		long var11 = arg3 * arg3 + arg4 * arg4;
 		if (var11 < 262144L || var11 > arg6) {
 			return;
 		}
 		int var13 = (int) (Math.atan2((double) arg3, (double) arg4) * 2607.5945876176133D - (double) this.field10395.method316()) & 0x3FFF;
-		class116 var14 = Statics.method5210(arg0, var13, this.field10405, this.field12466, this.field10407, arg5);
+		Model var14 = Statics.method5210(arg0, var13, this.field10405, this.field12466, this.field10407, arg5);
 		if (var14 != null) {
 			arg0.method2219(false);
 			var14.method1813(arg1, null, 0);
@@ -449,7 +449,7 @@ public class class1130 extends class892 {
 		if (var10) {
 			arg1 |= 0x80000;
 		}
-		class116 var11 = this.field10459[0] = this.field12061.method10126(arg0, arg1, Statics.field11742, Statics.field2628, Statics.field7961, Statics.field1842, Statics.field7410, Statics.field7410, var5, var6, this.field10398, this.field10442, var9, true, Statics.field1709);
+		Model var11 = this.field10459[0] = this.field12061.method10126(arg0, arg1, Statics.field11742, Statics.field2628, Statics.field7961, Statics.field1842, Statics.field7410, Statics.field7410, var5, var6, this.field10398, this.field10442, var9, true, Statics.field1709);
 		int var12 = Statics.method18304();
 		if (GameShell.field6616 < 96 && var12 > 50) {
 			class43.method7319();
@@ -659,7 +659,7 @@ public class class1130 extends class892 {
 
 	@ObfuscatedName("aqk.m(B)Lakt;")
 	public CoordFine method4667() {
-		class594 var1 = client.field10855.method7727();
+		CoordGrid var1 = client.field10855.method7727();
 		return CoordFine.method258(this.field11717, (int) this.method10536().field4298.field4308 + var1.field7426 * 512, -((int) this.method10536().field4298.field4311), (int) this.method10536().field4298.field4313 + var1.field7427 * 512);
 	}
 

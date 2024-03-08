@@ -6,5 +6,5 @@ import deob.ObfuscatedName;
 public interface class378 {
 
 	@ObfuscatedName("np.e(II)Lna;")
-	class379 method5973(int arg0);
+    ParticleEffectorType method5973(int arg0);
 }

@@ -158,7 +158,7 @@ public class ParticleSystem {
 	}
 
 	@ObfuscatedName("xy.z(Ldh;J[Ldu;[Lcq;Z)V")
-	public void method9936(Renderer arg0, long arg1, class128[] arg2, class102[] arg3, boolean arg4) {
+	public void method9936(Renderer arg0, long arg1, ModelParticleEmitter[] arg2, ModelParticleEffector[] arg3, boolean arg4) {
 		if (!this.field7804) {
 			this.method9937(arg0, arg2, arg4);
 			this.method9938(arg3, arg4);
@@ -167,7 +167,7 @@ public class ParticleSystem {
 	}
 
 	@ObfuscatedName("xy.p(Ldh;[Ldu;Z)V")
-	public void method9937(Renderer arg0, class128[] arg1, boolean arg2) {
+	public void method9937(Renderer arg0, ModelParticleEmitter[] arg1, boolean arg2) {
 		for (int var4 = 0; var4 < 64; var4++) {
 			field7817[var4] = false;
 		}
@@ -209,7 +209,7 @@ public class ParticleSystem {
 	}
 
 	@ObfuscatedName("xy.d([Lcq;Z)V")
-	public void method9938(class102[] arg0, boolean arg1) {
+	public void method9938(ModelParticleEffector[] arg0, boolean arg1) {
 		for (int var3 = 0; var3 < 16; var3++) {
 			field7818[var3] = false;
 		}
@@ -274,7 +274,7 @@ public class ParticleSystem {
 	}
 
 	@ObfuscatedName("xy.v(Ltx;Ldh;)V")
-	public void method9941(class550 arg0, Renderer arg1) {
+	public void method9941(Scene arg0, Renderer arg1) {
 		this.field7816.field1367.method14279();
 		Iterator var3 = this.field7809.iterator();
 		while (var3.hasNext()) {

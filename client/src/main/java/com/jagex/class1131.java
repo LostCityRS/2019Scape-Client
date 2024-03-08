@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("aqc")
-public class class1131 extends class892 {
+public class class1131 extends PathingEntity {
 
 	@ObfuscatedName("aqc.cn")
 	public NPCType field12083;
@@ -60,12 +60,12 @@ public class class1131 extends class892 {
 	@ObfuscatedName("aqc.cz")
 	public boolean field12085;
 
-	public class1131(class550 arg0) {
+	public class1131(Scene arg0) {
 		super(arg0, Statics.field8135);
 		this.method19184();
 	}
 
-	public class1131(class550 arg0, int arg1) {
+	public class1131(Scene arg0, int arg1) {
 		super(arg0, arg1, Statics.field8135);
 		this.method19184();
 	}
@@ -121,7 +121,7 @@ public class class1131 extends class892 {
 	}
 
 	@ObfuscatedName("aqc.fc(Ldh;I)Ltl;")
-	public class552 method17372(Renderer arg0) {
+	public PickableEntity method17372(Renderer arg0) {
 		if (this.field12083 == null || !this.method19167(arg0, 526336)) {
 			return null;
 		}
@@ -142,7 +142,7 @@ public class class1131 extends class892 {
 		NPCType var9 = this.field12083.field2735 == null ? this.field12083 : this.field12083.method4547(Statics.field7410, Statics.field7410);
 		boolean var10 = var9.field2724 != null;
 		this.field10458 = false;
-		class552 var11 = null;
+		PickableEntity var11 = null;
 		if (Statics.field688.field11568.method18453() == 1 && var9.field2710 && var8.field7346) {
 			class721 var12 = this.field10454.method14346() && this.field10454.method14355() ? this.field10454 : null;
 			class1075 var13 = this.field10432.method14346() && (!this.field10432.field11877 || var12 == null) ? this.field10432 : null;
@@ -152,14 +152,14 @@ public class class1131 extends class892 {
 				var14 = this.field12083.field2741;
 				var15 = this.field12083.field2702;
 			}
-			class116 var16;
+			Model var16;
 			if (var14 > -1 && Statics.field688.field11538.method18426() == 1) {
 				var16 = class31.method3283(arg0, var5, this.field10405, this.field12466, this.field10407, this.field10459[0], var14, var15, var13 == null ? var12 : var13);
 			} else {
 				var16 = class31.method5102(arg0, var5, this.field10405, this.field12466, this.field10407, this.field12083.field2699, this.field10459[0], this.field12083.field2737 & 0xFFFF, this.field12083.field2729 & 0xFFFF, this.field12083.field2739 & 0xFF, this.field12083.field2740 & 0xFF, var13 == null ? var12 : var13);
 			}
 			if (var16 != null) {
-				var11 = class552.method16749(this.method19162());
+				var11 = PickableEntity.method16749(this.method19162());
 				this.field10458 = true;
 				arg0.method2219(false);
 				if (var10) {
@@ -182,7 +182,7 @@ public class class1131 extends class892 {
 			this.method18363(this.field10459.length);
 		}
 		if (var11 == null) {
-			var11 = class552.method16749(this.method19162());
+			var11 = PickableEntity.method16749(this.method19162());
 		}
 		this.method16576(arg0, this.field10459, var4, false);
 		for (int var17 = 0; var17 < this.field10459.length; var17++) {
@@ -242,7 +242,7 @@ public class class1131 extends class892 {
 			arg1 |= 0x100;
 		}
 		int var12 = this.field10395.method316();
-		class116 var13 = this.field10459[0] = this.field12083.method4543(arg0, arg1, Statics.field11742, Statics.field7410, Statics.field7410, var5, var6, this.field10398, this.field10442, var12, this.field12076, this.method16509(), false);
+		Model var13 = this.field10459[0] = this.field12083.method4543(arg0, arg1, Statics.field11742, Statics.field7410, Statics.field7410, var5, var6, this.field10398, this.field10442, var12, this.field12076, this.method16509(), false);
 		if (var13 == null) {
 			return false;
 		}
@@ -559,7 +559,7 @@ public class class1131 extends class892 {
 
 	@ObfuscatedName("aqc.m(B)Lakt;")
 	public CoordFine method4667() {
-		class594 var1 = client.field10855.method7727();
+		CoordGrid var1 = client.field10855.method7727();
 		return CoordFine.method258(this.field11717, (int) this.method10536().field4298.field4308 + var1.field7426 * 512, -((int) this.method10536().field4298.field4311), (int) this.method10536().field4298.field4313 + var1.field7427 * 512);
 	}
 

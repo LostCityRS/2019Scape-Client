@@ -34,5 +34,5 @@ public abstract class class307 {
 	public abstract double[] method5230();
 
 	@ObfuscatedName("kl.e(F[[[ILqx;IIB)V")
-	public abstract void method5238(float arg0, int[][][] arg1, class451 arg2, int arg3, int arg4);
+	public abstract void method5238(float arg0, int[][][] arg1, LinkMap arg2, int arg3, int arg4);
 }

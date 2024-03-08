@@ -127,7 +127,7 @@ public class WorldMap {
 		int[] var9 = Statics.field6794.method6895(class654.field7968.getId());
 		if (var9 != null) {
 			for (int var10 = 0; var10 < var9.length; var10++) {
-				class1183 var11 = class1183.method3468(Statics.field6794, var9[var10]);
+				WorldMapAreaMetadata var11 = WorldMapAreaMetadata.method3468(Statics.field6794, var9[var10]);
 				field6796.method14501(var11, (long) var11.field12359);
 			}
 		}
@@ -162,7 +162,7 @@ public class WorldMap {
 
 	@ObfuscatedName("tf.k(I)V")
 	public static void method8521(int arg0) {
-		class1183 var1 = (class1183) field6796.method14495((long) arg0);
+		WorldMapAreaMetadata var1 = (WorldMapAreaMetadata) field6796.method14495((long) arg0);
 		if (var1 != null && Statics.field6811 != var1) {
 			Statics.field6811 = var1;
 			field6819 = Statics.field6792.field7690 == Statics.field6811.field12359;
@@ -170,7 +170,7 @@ public class WorldMap {
 	}
 
 	@ObfuscatedName("tf.f(Lasy;)Z")
-	public static boolean method8510(class1183 arg0) {
+	public static boolean method8510(WorldMapAreaMetadata arg0) {
 		if (arg0 == null || Statics.field6811 == arg0) {
 			return false;
 		} else {
@@ -181,8 +181,8 @@ public class WorldMap {
 	}
 
 	@ObfuscatedName("tf.w(II)Lasy;")
-	public static class1183 method8511(int arg0, int arg1) {
-		for (class1183 var2 = (class1183) field6796.method14500(); var2 != null; var2 = (class1183) field6796.method14502()) {
+	public static WorldMapAreaMetadata method8511(int arg0, int arg1) {
+		for (WorldMapAreaMetadata var2 = (WorldMapAreaMetadata) field6796.method14500(); var2 != null; var2 = (WorldMapAreaMetadata) field6796.method14502()) {
 			if (var2.field12350 && var2.method19469(arg0, arg1)) {
 				return var2;
 			}
@@ -191,14 +191,14 @@ public class WorldMap {
 	}
 
 	@ObfuscatedName("tf.l(I)Lasy;")
-	public static class1183 method8512(int arg0) {
-		return (class1183) field6796.method14495((long) arg0);
+	public static WorldMapAreaMetadata method8512(int arg0) {
+		return (WorldMapAreaMetadata) field6796.method14495((long) arg0);
 	}
 
 	@ObfuscatedName("tf.u(II)Laap;")
 	public static class720 method8513(int arg0, int arg1) {
 		class720 var2 = new class720();
-		for (class1183 var3 = (class1183) field6796.method14500(); var3 != null; var3 = (class1183) field6796.method14502()) {
+		for (WorldMapAreaMetadata var3 = (WorldMapAreaMetadata) field6796.method14500(); var3 != null; var3 = (WorldMapAreaMetadata) field6796.method14502()) {
 			if (var3.field12350 && var3.method19469(arg0, arg1)) {
 				var2.method14339(var3);
 			}
@@ -207,19 +207,19 @@ public class WorldMap {
 	}
 
 	@ObfuscatedName("tf.z(Ldf;II)V")
-	public static void method8514(class125 arg0, int arg1, int arg2) {
+	public static void method8514(MaterialList arg0, int arg1, int arg2) {
 		for (int var3 = 0; var3 < field6839.size(); var3++) {
 			Statics.field6854[var3 + 1] = method8515(arg0, var3, arg1, arg2);
 		}
 	}
 
 	@ObfuscatedName("tf.p(Ldf;III)I")
-	public static int method8515(class125 arg0, int arg1, int arg2, int arg3) {
+	public static int method8515(MaterialList arg0, int arg1, int arg2, int arg3) {
 		return method8587(field6839, arg0, arg1, arg2, arg3);
 	}
 
 	@ObfuscatedName("tf.d(Lao;Ldf;III)I")
-	public static int method8587(ConfigTypeList arg0, class125 arg1, int arg2, int arg3, int arg4) {
+	public static int method8587(ConfigTypeList arg0, MaterialList arg1, int arg2, int arg3, int arg4) {
 		FloorOverlayType var5 = (FloorOverlayType) arg0.get(arg2);
 		if (var5 == null) {
 			return 0;

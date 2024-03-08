@@ -51,7 +51,7 @@ public class class868 extends class159 {
 
 	@ObfuscatedName("agi.n(I)V")
 	public void method2890() {
-		class892 var1 = Statics.field1721[this.field10281].method2870();
+		PathingEntity var1 = Statics.field1721[this.field10281].method2870();
 		var1.method16498(this.field10279, this.field10280, this.field10282, this.field10278, client.field10903, 0);
 	}
 }

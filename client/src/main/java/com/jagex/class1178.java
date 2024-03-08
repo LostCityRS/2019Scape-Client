@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("asa")
-public abstract class class1178 extends class986 {
+public abstract class class1178 extends SecondaryNode {
 
 	@ObfuscatedName("asa.l")
 	public final int field12328;

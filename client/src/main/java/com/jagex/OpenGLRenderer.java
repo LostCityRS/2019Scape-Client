@@ -167,7 +167,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 		return true;
 	}
 
-	public OpenGLRenderer(OpenGL arg0, Canvas arg1, long arg2, class125 arg3, class143 arg4, class383 arg5, class381 arg6, class378 arg7, Js5 arg8, int arg9) {
+	public OpenGLRenderer(OpenGL arg0, Canvas arg1, long arg2, MaterialList arg3, class143 arg4, BillboardTypeList arg5, class381 arg6, class378 arg7, Js5 arg8, int arg9) {
 		super(arg3, arg4, arg5, arg6, arg7, arg8, arg9, 1);
 		new MapBuffer();
 		new MapBuffer();

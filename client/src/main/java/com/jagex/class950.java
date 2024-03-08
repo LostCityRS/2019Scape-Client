@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("ajg")
-public class class950 extends class1198 implements class514 {
+public class class950 extends class1198 implements Location {
 
 	@ObfuscatedName("ajg.c")
 	public static final int[] field11164 = new int[] { 1, 2, 4, 8 };
@@ -16,7 +16,7 @@ public class class950 extends class1198 implements class514 {
 	public LocTypeList field11162;
 
 	@ObfuscatedName("ajg.o")
-	public class116 field11173;
+	public Model field11173;
 
 	@ObfuscatedName("ajg.s")
 	public class1175 field11163;
@@ -48,7 +48,7 @@ public class class950 extends class1198 implements class514 {
 	@ObfuscatedName("ajg.j")
 	public int field12460;
 
-	public class950(class550 arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, boolean arg12, class420 arg13) {
+	public class950(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, boolean arg12, class420 arg13) {
 		super(arg0, arg6, arg7, arg8, arg4, arg5, method1575(arg10, arg11), arg13);
 		this.field11162 = arg2;
 		this.field11166 = arg3.field7450;
@@ -68,12 +68,12 @@ public class class950 extends class1198 implements class514 {
 		}
 		class746 var16 = this.method17420(arg1, var15, this.field11172);
 		if (var16 != null) {
-			this.field11173 = (class116) var16.field8737;
+			this.field11173 = (Model) var16.field8737;
 			this.field11163 = (class1175) var16.field8738;
 			if (this.field11171 || arg3.field7525) {
 				this.field11173 = this.field11173.method1773((byte) 0, var15, false);
 				if (arg3.field7525) {
-					class493 var17 = client.field10855.method7722();
+					LocTint var17 = client.field10855.method7722();
 					this.field11173.method1745(var17.field5015, var17.field5013, var17.field5014, var17.field5012);
 				}
 			}
@@ -106,12 +106,12 @@ public class class950 extends class1198 implements class514 {
 	}
 
 	@ObfuscatedName("ajg.bv(Ldh;II)Ldo;")
-	public class116 method17419(Renderer arg0, int arg1) {
+	public Model method17419(Renderer arg0, int arg1) {
 		if (this.field11173 != null && arg0.method2394(this.field11173.method1691(), arg1) == 0) {
 			return this.field11173;
 		} else {
 			class746 var3 = this.method17420(arg0, arg1, false);
-			return var3 == null ? null : (class116) var3.field8737;
+			return var3 == null ? null : (Model) var3.field8737;
 		}
 	}
 
@@ -145,12 +145,12 @@ public class class950 extends class1198 implements class514 {
 	}
 
 	@ObfuscatedName("ajg.fc(Ldh;I)Ltl;")
-	public class552 method17372(Renderer arg0) {
+	public PickableEntity method17372(Renderer arg0) {
 		if (this.field11173 == null) {
 			return null;
 		}
 		Matrix4x3 var2 = this.method10533();
-		class552 var3 = class552.method16749(this.field11170);
+		PickableEntity var3 = PickableEntity.method16749(this.field11170);
 		class416 var4 = ((LocType) this.field11162.get(this.field11166)).field7468;
 		if (var4 == null) {
 			this.field11173.method1813(var2, this.field11713[0], 0);
@@ -171,7 +171,7 @@ public class class950 extends class1198 implements class514 {
 		if (var4 != null) {
 			return arg0.method2191(arg1, arg2, this.method10533(), var4);
 		}
-		class116 var5 = this.method17419(arg0, 131072);
+		Model var5 = this.method17419(arg0, 131072);
 		if (var5 == null) {
 			return false;
 		} else {

@@ -31,14 +31,14 @@ public class class548 {
 	public void method8680() {
 		Iterator var1 = this.field6885.iterator();
 		while (var1.hasNext()) {
-			class552 var2 = (class552) var1.next();
+			PickableEntity var2 = (PickableEntity) var1.next();
 			var1.remove();
 			Statics.method3657(var2);
 		}
 	}
 
 	@ObfuscatedName("tg.n(Ltl;B)V")
-	public void method8683(class552 arg0) {
+	public void method8683(PickableEntity arg0) {
 		class1019 var2 = arg0.field6978;
 		boolean var3 = true;
 		class141[] var4 = arg0.field6978.field11713;
@@ -55,7 +55,7 @@ public class class548 {
 		if (this.field6884) {
 			Iterator var6 = this.field6885.iterator();
 			while (var6.hasNext()) {
-				class552 var7 = (class552) var6.next();
+				PickableEntity var7 = (PickableEntity) var6.next();
 				if (var7.field6978 == var2) {
 					var6.remove();
 					Statics.method3657(var7);
@@ -63,13 +63,13 @@ public class class548 {
 			}
 		}
 		ListIterator var8 = this.field6885.listIterator();
-		class552 var9;
+		PickableEntity var9;
 		do {
 			if (!var8.hasNext()) {
 				this.field6885.add(arg0);
 				return;
 			}
-			var9 = (class552) var8.next();
+			var9 = (PickableEntity) var8.next();
 		} while (var2.field11715 < var9.field6978.field11715);
 		var8.previous();
 		var8.add(arg0);

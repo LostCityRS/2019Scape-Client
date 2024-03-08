@@ -10,9 +10,9 @@ public class class1075 extends class721 {
 	public boolean field11877 = false;
 
 	@ObfuscatedName("aoy.x")
-	public class892 field11876;
+	public PathingEntity field11876;
 
-	public class1075(class892 arg0, boolean arg1) {
+	public class1075(PathingEntity arg0, boolean arg1) {
 		super(arg1);
 		this.field11876 = arg0;
 	}

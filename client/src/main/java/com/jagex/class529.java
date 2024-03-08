@@ -25,7 +25,7 @@ public class class529 {
 	public final int[] field6753;
 
 	@ObfuscatedName("ta.w")
-	public class116 field6754;
+	public Model field6754;
 
 	@ObfuscatedName("ta.l")
 	public LinkedList field6752;
@@ -48,7 +48,7 @@ public class class529 {
 	}
 
 	@ObfuscatedName("ta.e(Ldh;S)Ldo;")
-	public class116 method8402(Renderer arg0) {
+	public Model method8402(Renderer arg0) {
 		class120 var2 = class120.method1931(Statics.field9213, this.field6749, 0);
 		if (var2 == null) {
 			return null;
@@ -61,7 +61,7 @@ public class class529 {
 	}
 
 	@ObfuscatedName("ta.n(Ltx;B)V")
-	public void method8412(class550 arg0) {
+	public void method8412(Scene arg0) {
 		if (arg0 == null || this.field6751 <= 0) {
 			return;
 		}
@@ -75,7 +75,7 @@ public class class529 {
 	}
 
 	@ObfuscatedName("ta.m(Ltx;B)V")
-	public void method8404(class550 arg0) {
+	public void method8404(Scene arg0) {
 		if (arg0 == null || this.field6752 == null) {
 			return;
 		}
@@ -87,13 +87,13 @@ public class class529 {
 	}
 
 	@ObfuscatedName("ta.k(Ltx;B)V")
-	public void method8405(class550 arg0) {
+	public void method8405(Scene arg0) {
 		this.field6752 = new LinkedList();
-		class451 var2 = client.field10855.method7793();
-		class594 var3 = client.field10855.method7727();
-		class594 var4 = new class594(Statics.field4826, this.field6750[0], this.field6753[0]);
+		LinkMap var2 = client.field10855.method7793();
+		CoordGrid var3 = client.field10855.method7727();
+		CoordGrid var4 = new CoordGrid(Statics.field4826, this.field6750[0], this.field6753[0]);
 		for (int var5 = 1; var5 < this.field6751; var5++) {
-			class594 var6 = new class594(Statics.field4826, this.field6750[var5], this.field6753[var5]);
+			CoordGrid var6 = new CoordGrid(Statics.field4826, this.field6750[var5], this.field6753[var5]);
 			while (var4.field7426 != var6.field7426 || var4.field7427 != var6.field7427) {
 				if (var4.field7426 < var6.field7426) {
 					var4.field7426++;

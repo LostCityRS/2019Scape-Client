@@ -9,5 +9,5 @@ public abstract class class978 extends Node {
 	public abstract void method17726(Packet arg0);
 
 	@ObfuscatedName("akp.n(Lkr;I)V")
-	public abstract void method17727(class309 arg0);
+	public abstract void method17727(ClanSettings arg0);
 }

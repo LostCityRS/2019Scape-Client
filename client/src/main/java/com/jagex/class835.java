@@ -7,7 +7,7 @@ import deob.Statics;
 public class class835 extends class104 {
 
 	@ObfuscatedName("aee.d")
-	public final class848 field9423;
+	public final PureJavaRenderer field9423;
 
 	@ObfuscatedName("aee.c")
 	public final int field9427;
@@ -81,7 +81,7 @@ public class class835 extends class104 {
 	@ObfuscatedName("aee.at")
 	public byte[][] field9447;
 
-	public class835(class848 arg0, int arg1, int arg2, int arg3, int arg4, int[][] arg5, int[][] arg6, int arg7) {
+	public class835(PureJavaRenderer arg0, int arg1, int arg2, int arg3, int arg4, int[][] arg5, int[][] arg6, int arg7) {
 		super(arg3, arg4, arg7, arg5);
 		this.field9423 = arg0;
 		this.field9427 = arg2;
@@ -179,7 +179,7 @@ public class class835 extends class104 {
 				}
 				int var33 = arg11[var32];
 				if (var33 != -1) {
-					class118 var34 = this.field9423.field1597.method2043(var33);
+					Material var34 = this.field9423.field1597.method2043(var33);
 					if (!var34.field1342) {
 						var30 = true;
 						if (this.method15396(var34.field1308) || var34.field1317 != 0.0F || var34.field1338 != 0.0F) {
@@ -241,7 +241,7 @@ public class class835 extends class104 {
 			if (this.field1237[arg0 + 1][arg1] == this.field1237[arg0][arg1] && this.field1237[arg0 + 1][arg1 + 1] == this.field1237[arg0][arg1] && this.field1237[arg0][arg1 + 1] == this.field1237[arg0][arg1]) {
 				var36.field925 = (byte) (var36.field925 | 0x1);
 			}
-			class118 var39 = null;
+			Material var39 = null;
 			if (var38 != -1) {
 				var39 = this.field9423.field1597.method2043(var38);
 			}
@@ -356,7 +356,7 @@ public class class835 extends class104 {
 					}
 					int var28 = -16777216;
 					if (arg8[var17] != -1) {
-						class118 var29 = this.field9423.field1597.method2043(arg8[var17]);
+						Material var29 = this.field9423.field1597.method2043(arg8[var17]);
 						if (var29.field1330 && this.method15396(var29.field1308)) {
 							var28 = -1694498816;
 						}
@@ -779,7 +779,7 @@ public class class835 extends class104 {
 
 	@ObfuscatedName("aee.ao(III)V")
 	public void method15392(int arg0, int arg1, int arg2) {
-		class55 var4 = this.field9423.method15674(Thread.currentThread());
+		PureJavaRendererContext var4 = this.field9423.method15674(Thread.currentThread());
 		var4.field837.field935 = 0;
 		if (this.field9438 != null) {
 			this.method15405(arg0, arg1, var4.field867, var4, var4.field837, var4.field863, var4.field827, var4.field831, var4.field866, var4.field859, arg2);
@@ -791,7 +791,7 @@ public class class835 extends class104 {
 	}
 
 	@ObfuscatedName("aee.aj(IILbd;[F[F[F[F[FI)V")
-	public void method15393(int arg0, int arg1, class65 arg2, float[] arg3, float[] arg4, float[] arg5, float[] arg6, float[] arg7, int arg8) {
+	public void method15393(int arg0, int arg1, Rasteriser arg2, float[] arg3, float[] arg4, float[] arg5, float[] arg6, float[] arg7, int arg8) {
 		class64 var10 = this.field9425[arg0][arg1];
 		if (var10 == null) {
 			class59 var66 = this.field9443[arg0][arg1];
@@ -855,7 +855,7 @@ public class class835 extends class104 {
 							arg2.field936 = var79 < 0.0F || var80 < 0.0F || var81 < 0.0F || var79 > (float) arg2.field945 || var80 > (float) arg2.field945 || var81 > (float) arg2.field945;
 							boolean var85 = false;
 							if (var66.field880[var75] != -1) {
-								class118 var86 = this.field9423.field1597.method2043(var66.field880[var75] & 0xFFFF);
+								Material var86 = this.field9423.field1597.method2043(var66.field880[var75] & 0xFFFF);
 								var85 = var86.field1330;
 							}
 							if (var85) {
@@ -994,7 +994,7 @@ public class class835 extends class104 {
 			}
 			boolean var64 = false;
 			if (var10.field926 != -1) {
-				class118 var65 = this.field9423.field1597.method2043(var10.field926 & 0xFFFF);
+				Material var65 = this.field9423.field1597.method2043(var10.field926 & 0xFFFF);
 				var64 = var65.field1330;
 			}
 			if ((var36 - var46) * (var39 - var44) - (var34 - var44) * (var41 - var46) > 0.0F) {
@@ -1017,7 +1017,7 @@ public class class835 extends class104 {
 	}
 
 	@ObfuscatedName("aee.ay(IIZLaz;Lbd;[F[F[F[F[FI)V")
-	public void method15405(int arg0, int arg1, boolean arg2, class55 arg3, class65 arg4, float[] arg5, float[] arg6, float[] arg7, float[] arg8, float[] arg9, int arg10) {
+	public void method15405(int arg0, int arg1, boolean arg2, PureJavaRendererContext arg3, Rasteriser arg4, float[] arg5, float[] arg6, float[] arg7, float[] arg8, float[] arg9, int arg10) {
 		class62 var12 = this.field9438[arg0][arg1];
 		if (var12 == null) {
 			class63 var99 = this.field9428[arg0][arg1];
@@ -1110,7 +1110,7 @@ public class class835 extends class104 {
 						float var123 = arg9[var114] + arg9[var115] + arg9[var116];
 						if ((var117 - var118) * (var122 - var121) - (var119 - var118) * (var120 - var121) > 0.0F) {
 							arg4.field936 = var117 < 0.0F || var118 < 0.0F || var119 < 0.0F || var117 > (float) arg4.field945 || var118 > (float) arg4.field945 || var119 > (float) arg4.field945;
-							class118 var124 = null;
+							Material var124 = null;
 							boolean var125 = false;
 							if (var99.field924[var113] != -1) {
 								var124 = this.field9423.field1597.method2043(var99.field924[var113] & 0xFFFF);
@@ -1378,7 +1378,7 @@ public class class835 extends class104 {
 				float var56 = (float) var16 * this.field9439 + (float) var13 * this.field9431 + var41 + this.field9446;
 				var57 = arg4.field942 * var56 / var31 + arg4.field941;
 			}
-			class118 var90 = null;
+			Material var90 = null;
 			boolean var91 = false;
 			if (var12.field913 != -1) {
 				var90 = this.field9423.field1597.method2043(var12.field913 & 0xFFFF);
@@ -1460,7 +1460,7 @@ public class class835 extends class104 {
 	}
 
 	@ObfuscatedName("aee.ab(IIZLaz;Lbd;[F[F[F[F[FI)V")
-	public void method15394(int arg0, int arg1, boolean arg2, class55 arg3, class65 arg4, float[] arg5, float[] arg6, float[] arg7, float[] arg8, float[] arg9, int arg10) {
+	public void method15394(int arg0, int arg1, boolean arg2, PureJavaRendererContext arg3, Rasteriser arg4, float[] arg5, float[] arg6, float[] arg7, float[] arg8, float[] arg9, int arg10) {
 		class67 var12 = this.field9429[arg0][arg1];
 		if (arg10 != 0 && (arg10 & 0x2) != 0 || var12 == null) {
 			return;
@@ -1555,8 +1555,8 @@ public class class835 extends class104 {
 
 	@ObfuscatedName("aee.w(IIIIIII[[Z)V")
 	public void method1526(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, boolean[][] arg7) {
-		class55 var9 = this.field9423.method15674(Thread.currentThread());
-		class65 var10 = var9.field837;
+		PureJavaRendererContext var9 = this.field9423.method15674(Thread.currentThread());
+		Rasteriser var10 = var9.field837;
 		var10.field935 = 0;
 		var10.field936 = true;
 		this.field9423.method15687();
@@ -1568,7 +1568,7 @@ public class class835 extends class104 {
 	}
 
 	@ObfuscatedName("aee.aa(IIIIIII[[ZLaz;Lbd;[F[F)V")
-	public void method15401(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, boolean[][] arg7, class55 arg8, class65 arg9, float[] arg10, float[] arg11) {
+	public void method15401(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, boolean[][] arg7, PureJavaRendererContext arg8, Rasteriser arg9, float[] arg10, float[] arg11) {
 		int var13 = (arg6 - arg4) * arg2 / 256;
 		int var14 = arg2 >> 8;
 		boolean var15 = arg8.field834;
@@ -1633,7 +1633,7 @@ public class class835 extends class104 {
 	}
 
 	@ObfuscatedName("aee.af(IIIIIII[[ZLaz;Lbd;[F[F)V")
-	public void method15395(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, boolean[][] arg7, class55 arg8, class65 arg9, float[] arg10, float[] arg11) {
+	public void method15395(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, boolean[][] arg7, PureJavaRendererContext arg8, Rasteriser arg9, float[] arg10, float[] arg11) {
 		int var13 = (arg6 - arg4) * arg2 / 256;
 		int var14 = arg2 >> 8;
 		boolean var15 = arg8.field834;

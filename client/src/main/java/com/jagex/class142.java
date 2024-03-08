@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class class142 {
 
 	// $FF: synthetic field
-	public final class116 this$0;
+	public final Model this$0;
 
 	@ObfuscatedName("ee.e")
 	public int[] field1688;
@@ -20,7 +20,7 @@ public class class142 {
 	@ObfuscatedName("ee.k")
 	public float[][] field1691;
 
-	public class142(class116 arg0, int[] arg1, int[] arg2, int[] arg3, float[][] arg4) {
+	public class142(Model arg0, int[] arg1, int[] arg2, int[] arg3, float[][] arg4) {
 		this.this$0 = arg0;
 		this.field1688 = arg1;
 		this.field1690 = arg2;

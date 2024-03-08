@@ -1,7 +1,7 @@
 package com.jagex.clansettings;
 
 import com.jagex.Packet;
-import com.jagex.class309;
+import com.jagex.ClanSettings;
 import com.jagex.class978;
 import deob.ObfuscatedName;
 
@@ -33,7 +33,7 @@ public class AddMemberV1 extends class978 {
 	}
 
 	@ObfuscatedName("aqj.n(Lkr;I)V")
-	public void method17727(class309 arg0) {
+	public void method17727(ClanSettings arg0) {
 		arg0.method5262(this.field12214, this.field12215, 0);
 	}
 }

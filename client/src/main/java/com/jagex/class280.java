@@ -314,7 +314,7 @@ public class class280 {
 			if (Statics.field11389.field7738 != -1 && !Statics.field9213.method6888(Statics.field11389.field7738, 0)) {
 				return 99;
 			}
-			Statics.field7366 = new class125(Statics.field10249);
+			Statics.field7366 = new MaterialList(Statics.field10249);
 			Statics.field7669 = new class847(Statics.field1450);
 			Statics.field3086 = new ParamTypeList(client.field10768, Statics.field1680, Statics.field11838);
 			Statics.field11742 = new BASTypeList(client.field10768, Statics.field1680, Statics.field11838);

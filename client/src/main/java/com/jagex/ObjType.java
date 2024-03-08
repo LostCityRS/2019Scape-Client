@@ -615,7 +615,7 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.v(Ldh;IILxg;Laaq;IIIII)Ldo;")
-	public final class116 method14644(Renderer arg0, int arg1, int arg2, class639 arg3, class721 arg4, int arg5, int arg6, int arg7, int arg8) {
+	public final Model method14644(Renderer arg0, int arg1, int arg2, class639 arg3, class721 arg4, int arg5, int arg6, int arg7, int arg8) {
 		if (this.field8629 != null && arg2 > 1) {
 			int var10 = -1;
 			for (int var11 = 0; var11 < 10; var11++) {
@@ -632,9 +632,9 @@ public class ObjType implements ConfigType {
 			var12 = arg1 | arg4.method14358();
 		}
 		WeightedCache var13 = this.field8621.field8612;
-		class116 var14;
+		Model var14;
 		synchronized (this.field8621.field8612) {
-			var14 = (class116) this.field8621.field8612.method2930((long) (this.field8627 | arg0.field1595 << 29));
+			var14 = (Model) this.field8621.field8612.method2930((long) (this.field8627 | arg0.field1595 << 29));
 		}
 		if (var14 == null || arg0.method2394(var14.method1691(), var12) != 0) {
 			if (var14 != null) {
@@ -786,7 +786,7 @@ public class ObjType implements ConfigType {
 			var19 = true;
 			var18 |= 0x7;
 		}
-		class116 var20 = arg0.method2211(var11, var18, 64, this.field8683 + 64, this.field8624 + 768);
+		Model var20 = arg0.method2211(var11, var18, 64, this.field8683 + 64, this.field8624 + 768);
 		if (!var20.method1746()) {
 			return null;
 		}

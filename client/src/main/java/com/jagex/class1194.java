@@ -15,11 +15,11 @@ public class class1194 extends SubInterface {
 
 	@ObfuscatedName("asn.e(B)Z")
 	public boolean method18183() {
-		class1233 var1 = this.field12431.method13793();
+		ObjStackEntity var1 = this.field12431.method13793();
 		if (var1 == null) {
 			return false;
 		} else {
-			ScriptRunner.method9018(class572.field7248, this.field11571, -1, this.field12431, var1);
+			ScriptRunner.method9018(ClientTriggerType.field7248, this.field11571, -1, this.field12431, var1);
 			return true;
 		}
 	}

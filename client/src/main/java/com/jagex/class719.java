@@ -11,10 +11,10 @@ public class class719 implements Iterator {
 	public class720 field8495;
 
 	@ObfuscatedName("aai.n")
-	public class986 field8494;
+	public SecondaryNode field8494;
 
 	@ObfuscatedName("aai.m")
-	public class986 field8493 = null;
+	public SecondaryNode field8493 = null;
 
 	public class719(class720 arg0) {
 		this.field8495 = arg0;
@@ -29,13 +29,13 @@ public class class719 implements Iterator {
 	}
 
 	@ObfuscatedName("aai.u(I)Laky;")
-	public class986 method14301() {
+	public SecondaryNode method14301() {
 		this.method14300();
-		return (class986) this.next();
+		return (SecondaryNode) this.next();
 	}
 
 	public Object next() {
-		class986 var1 = this.field8494;
+		SecondaryNode var1 = this.field8494;
 		if (this.field8495.field8497 == var1) {
 			var1 = null;
 			this.field8494 = null;

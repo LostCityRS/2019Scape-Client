@@ -31,7 +31,7 @@ public class class873 extends class159 {
 
 	@ObfuscatedName("agk.n(I)V")
 	public void method2890() {
-		class892 var1 = Statics.field1721[this.field10301].method2870();
+		PathingEntity var1 = Statics.field1721[this.field10301].method2870();
 		if (this.field10300 == 0) {
 			client.method9423(var1, this.field10298, 0, false);
 		} else {

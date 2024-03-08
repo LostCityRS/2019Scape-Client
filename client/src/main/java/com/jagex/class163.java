@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public final class class163 {
 
 	@ObfuscatedName("ex.e")
-	public class986 field1760 = new class986();
+	public SecondaryNode field1760 = new SecondaryNode();
 
 	@ObfuscatedName("ex.n")
 	public int field1761;
@@ -30,8 +30,8 @@ public final class class163 {
 	}
 
 	@ObfuscatedName("ex.e(J)Laky;")
-	public class986 method2966(long arg0) {
-		class986 var3 = (class986) this.field1764.method14495(arg0);
+	public SecondaryNode method2966(long arg0) {
+		SecondaryNode var3 = (SecondaryNode) this.field1764.method14495(arg0);
 		if (var3 != null) {
 			this.field1763.method14339(var3);
 		}
@@ -39,13 +39,13 @@ public final class class163 {
 	}
 
 	@ObfuscatedName("ex.n(Laky;J)V")
-	public void method2968(class986 arg0, long arg1) {
+	public void method2968(SecondaryNode arg0, long arg1) {
 		if (this.field1762 == 0) {
-			class986 var4 = this.field1763.method14315();
+			SecondaryNode var4 = this.field1763.method14315();
 			var4.method8440();
 			var4.method17806();
 			if (this.field1760 == var4) {
-				class986 var5 = this.field1763.method14315();
+				SecondaryNode var5 = this.field1763.method14315();
 				var5.method8440();
 				var5.method17806();
 			}
@@ -60,7 +60,7 @@ public final class class163 {
 	public void method2969() {
 		this.field1763.method14316();
 		this.field1764.method14499();
-		this.field1760 = new class986();
+		this.field1760 = new SecondaryNode();
 		this.field1762 = this.field1761;
 	}
 }

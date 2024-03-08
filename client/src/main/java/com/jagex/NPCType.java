@@ -529,12 +529,12 @@ public class NPCType implements ConfigType {
 	}
 
 	@ObfuscatedName("if.z(Ldh;ILaof;Lem;Lep;Laaq;Laaq;[Laaq;[IILia;I)Ldo;")
-	public final class116 method4542(Renderer arg0, int arg1, BASTypeList arg2, class151 arg3, class147 arg4, class721 arg5, class721 arg6, class721[] arg7, int[] arg8, int arg9, class259 arg10) {
+	public final Model method4542(Renderer arg0, int arg1, BASTypeList arg2, class151 arg3, class147 arg4, class721 arg5, class721 arg6, class721[] arg7, int[] arg8, int arg9, class259 arg10) {
 		return this.method4543(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, this.field2762, true);
 	}
 
 	@ObfuscatedName("if.p(Ldh;ILaof;Lem;Lep;Laaq;Laaq;[Laaq;[IILia;IZB)Ldo;")
-	public final class116 method4543(Renderer arg0, int arg1, BASTypeList arg2, class151 arg3, class147 arg4, class721 arg5, class721 arg6, class721[] arg7, int[] arg8, int arg9, class259 arg10, int arg11, boolean arg12) {
+	public final Model method4543(Renderer arg0, int arg1, BASTypeList arg2, class151 arg3, class147 arg4, class721 arg5, class721 arg6, class721[] arg7, int[] arg8, int arg9, class259 arg10, int arg11, boolean arg12) {
 		if (this.field2735 != null) {
 			NPCType var14 = this.method4547(arg3, arg4);
 			return var14 == null ? null : var14.method4543(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12);
@@ -567,9 +567,9 @@ public class NPCType implements ConfigType {
 			var19 |= arg10.field2688 << 24;
 		}
 		WeightedCache var21 = this.field2695.field2771;
-		class116 var22;
+		Model var22;
 		synchronized (this.field2695.field2771) {
-			var22 = (class116) this.field2695.field2771.method2930(var19);
+			var22 = (Model) this.field2695.field2771.method2930(var19);
 		}
 		BASType var24 = null;
 		if (!arg12 && arg11 != -1) {
@@ -705,7 +705,7 @@ public class NPCType implements ConfigType {
 				this.field2695.field2771.method2921(var22, var19);
 			}
 		}
-		class116 var50 = var22.method1773((byte) 4, var15, true);
+		Model var50 = var22.method1773((byte) 4, var15, true);
 		boolean var51 = false;
 		if (arg8 != null) {
 			for (int var52 = 0; var52 < 12; var52++) {
@@ -770,7 +770,7 @@ public class NPCType implements ConfigType {
 	}
 
 	@ObfuscatedName("if.d(Ldh;ILem;Lep;Laaq;Lia;S)Ldo;")
-	public final class116 method4544(Renderer arg0, int arg1, class151 arg2, class147 arg3, class721 arg4, class259 arg5) {
+	public final Model method4544(Renderer arg0, int arg1, class151 arg2, class147 arg3, class721 arg4, class259 arg5) {
 		if (this.field2735 != null) {
 			NPCType var7 = this.method4547(arg2, arg3);
 			return var7 == null ? null : var7.method4544(arg0, arg1, arg2, arg3, arg4, arg5);
@@ -786,9 +786,9 @@ public class NPCType implements ConfigType {
 				var9 |= arg5.field2688 << 24;
 			}
 			WeightedCache var11 = this.field2695.field2768;
-			class116 var12;
+			Model var12;
 			synchronized (this.field2695.field2768) {
-				var12 = (class116) this.field2695.field2768.method2930(var9);
+				var12 = (Model) this.field2695.field2768.method2930(var9);
 			}
 			if (var12 == null || (var12.method1691() & var8) != var8) {
 				if (var12 != null) {

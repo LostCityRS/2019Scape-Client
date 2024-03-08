@@ -28,7 +28,7 @@ public class class160 {
 	public void method2906(class158 arg0, int arg1) {
 		int var3 = this.field1754[0];
 		arg0.method2866(arg1, var3 >>> 16, var3 & 0xFFFF);
-		class892 var4 = arg0.method2870();
+		PathingEntity var4 = arg0.method2870();
 		var4.field10400 = 0;
 		for (int var5 = this.field1751.length - 1; var5 >= 0; var5--) {
 			int var6 = this.field1751[var5];

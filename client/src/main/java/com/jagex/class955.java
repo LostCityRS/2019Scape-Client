@@ -12,7 +12,7 @@ public class class955 extends class531 {
 	public static int field11196 = 0;
 
 	@ObfuscatedName("ajq.f")
-	public class892 field11197;
+	public PathingEntity field11197;
 
 	@ObfuscatedName("ajq.w")
 	public int field11199;

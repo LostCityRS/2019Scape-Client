@@ -8,7 +8,7 @@ import java.awt.*;
 public abstract class class1120 extends class841 {
 
 	@ObfuscatedName("aph.e")
-	public final class848 field11930;
+	public final PureJavaRenderer field11930;
 
 	@ObfuscatedName("aph.n")
 	public final Canvas field11926;
@@ -29,11 +29,11 @@ public abstract class class1120 extends class841 {
 	public boolean field11924;
 
 	@ObfuscatedName("aoh.x(Lafg;Ljava/awt/Canvas;III)Laph;")
-	public static class1120 method18912(class848 arg0, Canvas arg1, int arg2, int arg3) {
+	public static class1120 method18912(PureJavaRenderer arg0, Canvas arg1, int arg2, int arg3) {
 		return new class1217(arg0, arg1, arg2, arg3);
 	}
 
-	public class1120(class848 arg0, Canvas arg1, int arg2, int arg3) {
+	public class1120(PureJavaRenderer arg0, Canvas arg1, int arg2, int arg3) {
 		this.field11926 = arg1;
 		this.field11930 = arg0;
 		this.field11925 = arg2;

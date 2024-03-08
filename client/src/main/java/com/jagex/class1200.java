@@ -29,11 +29,11 @@ public abstract class class1200 extends class1019 {
 	@ObfuscatedName("ash.t")
 	public Light[] field12473;
 
-	public class1200(class550 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, boolean arg10, byte arg11) {
+	public class1200(Scene arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, boolean arg10, byte arg11) {
 		this(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, (class420) null);
 	}
 
-	public class1200(class550 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, boolean arg10, byte arg11, class420 arg12) {
+	public class1200(Scene arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, boolean arg10, byte arg11, class420 arg12) {
 		super(arg0, arg12);
 		this.field12466 = 0;
 		this.field12473 = new Light[4];

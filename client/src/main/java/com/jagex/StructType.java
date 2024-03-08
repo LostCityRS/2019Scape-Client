@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("adx")
-public class StructType extends class986 implements ConfigType, class757 {
+public class StructType extends SecondaryNode implements ConfigType, class757 {
 
 	@ObfuscatedName("adx.k")
 	public IterableMap field9261;

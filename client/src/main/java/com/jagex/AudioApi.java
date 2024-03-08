@@ -743,8 +743,8 @@ public class AudioApi {
 			}
 			if (arg0.field1783 != -1) {
 				int var11 = 0;
-				if (arg2 instanceof class892) {
-					var11 = ((class892) arg2).method16578();
+				if (arg2 instanceof PathingEntity) {
+					var11 = ((PathingEntity) arg2).method16578();
 				} else if (arg2 instanceof class1235) {
 					var11 = ((class1235) arg2).method19745();
 				} else if (arg2 instanceof class1234) {

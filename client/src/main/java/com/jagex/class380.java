@@ -16,13 +16,13 @@ public class class380 implements class381 {
 	}
 
 	@ObfuscatedName("ni.e(II)Lnj;")
-	public synchronized class376 method6004(int arg0) {
-		class376 var2 = (class376) this.field3562.method2930((long) arg0);
+	public synchronized ParticleEmitterType method6004(int arg0) {
+		ParticleEmitterType var2 = (ParticleEmitterType) this.field3562.method2930((long) arg0);
 		if (var2 != null) {
 			return var2;
 		}
 		byte[] var3 = this.field3563.method6879(0, arg0);
-		class376 var4 = new class376();
+		ParticleEmitterType var4 = new ParticleEmitterType();
 		if (var3 != null) {
 			var4.method5960(new Packet(var3));
 		}

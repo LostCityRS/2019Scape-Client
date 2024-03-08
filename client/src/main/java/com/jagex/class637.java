@@ -67,7 +67,7 @@ public class class637 {
 		this.method10077();
 	}
 
-	public class637(Packet arg0, class636 arg1) {
+	public class637(Packet arg0, EnvironmentManager arg1) {
 		this.method10065(arg0, arg1);
 	}
 
@@ -243,7 +243,7 @@ public class class637 {
 	}
 
 	@ObfuscatedName("xv.k(Lalw;Lxu;B)V")
-	public void method10065(Packet arg0, class636 arg1) {
+	public void method10065(Packet arg0, EnvironmentManager arg1) {
 		int var3 = arg0.g1();
 		if (Statics.field688.field11528.method18389() == 1 && Statics.field8198.method2114() > 0) {
 			if ((var3 & class661.field8143.field8144) == 0) {
@@ -326,7 +326,7 @@ public class class637 {
 	}
 
 	@ObfuscatedName("xv.u(Lalw;Lxu;I)V")
-	public void method10070(Packet arg0, class636 arg1) {
+	public void method10070(Packet arg0, EnvironmentManager arg1) {
 		int var3 = arg0.g2();
 		int var4 = arg0.g2s();
 		int var5 = arg0.g2s();
@@ -342,7 +342,7 @@ public class class637 {
 	}
 
 	@ObfuscatedName("xv.p(Lxu;Lyj;I)V")
-	public void method10063(class636 arg0, class660 arg1) {
+	public void method10063(EnvironmentManager arg0, class660 arg1) {
 		if (Statics.field688.field11528.method18389() == 1 && Statics.field8198.method2114() > 0) {
 			if (arg1.method10429() != -1) {
 				this.field7877 = arg1.method10429();

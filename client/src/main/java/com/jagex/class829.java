@@ -7,7 +7,7 @@ import deob.Statics;
 public abstract class class829 extends Sprite {
 
 	@ObfuscatedName("ael.e")
-	public class848 field9373;
+	public PureJavaRenderer field9373;
 
 	@ObfuscatedName("ael.n")
 	public int field9356;
@@ -54,7 +54,7 @@ public abstract class class829 extends Sprite {
 	@ObfuscatedName("ael.ad")
 	public static int field9379 = 0;
 
-	public class829(class848 arg0, int arg1, int arg2) {
+	public class829(PureJavaRenderer arg0, int arg1, int arg2) {
 		this.field9373 = arg0;
 		this.field9356 = arg1;
 		this.field9372 = arg2;

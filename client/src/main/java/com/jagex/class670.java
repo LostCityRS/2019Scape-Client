@@ -39,7 +39,7 @@ public class class670 {
 	}
 
 	@ObfuscatedName("vs.m(Luh;IIS)Lasc;")
-	public static ClientScript method9425(class572 arg0, int arg1, int arg2) {
+	public static ClientScript method9425(ClientTriggerType arg0, int arg1, int arg2) {
 		int var3 = arg0.field7271 | arg1 << 10;
 		ClientScript var4 = (ClientScript) field8187.method2966((long) var3 << 16);
 		if (var4 != null) {

@@ -20,7 +20,7 @@ public class class515 {
 	@ObfuscatedName("sl.f")
 	public int field6658;
 
-	public class515(class892 arg0) {
+	public class515(PathingEntity arg0) {
 		this.field6659 = new class1076(arg0, false);
 	}
 }

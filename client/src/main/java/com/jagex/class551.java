@@ -24,13 +24,13 @@ public class class551 {
 	public class1197 field6976;
 
 	@ObfuscatedName("tk.l")
-	public class1196 field6974;
+	public GroundDecorLayerEntity field6974;
 
 	@ObfuscatedName("tk.u")
 	public class1199 field6971;
 
 	@ObfuscatedName("tk.z")
-	public class557 field6964;
+	public PrimaryLayerEntityList field6964;
 
 	@ObfuscatedName("tk.p")
 	public short field6973;

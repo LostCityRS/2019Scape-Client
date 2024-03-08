@@ -221,7 +221,7 @@ public class class503 {
 		arg0.method2222(1.0F);
 		arg0.method2223(this.field5111, 1.0F, 1.0F, (float) var4, (float) var5, (float) var6);
 		var3.method1946(this.field5126 & 0x3FFF, this.field5127 & 0x3FFF, this.field5124 & 0x3FFF);
-		class116 var15 = arg0.method2211(var3, 2048, 0, 64, 768);
+		Model var15 = arg0.method2211(var3, 2048, 0, 64, 768);
 		int var16 = var15.method1730() - var15.method1729();
 		int var17 = var15.method1695() - var15.method1748();
 		int var18 = var16 > var17 ? var16 : var17;
@@ -277,7 +277,7 @@ public class class503 {
 			var5 = var5 * var10 - var3 * var9 >> 14;
 			var3 = var11;
 		}
-		class116 var12 = Statics.field5129.method1773((byte) 0, 51200, true);
+		Model var12 = Statics.field5129.method1773((byte) 0, 51200, true);
 		var12.method1744((short) 0, (short) this.field5135);
 		arg0.method2222(1.0F);
 		arg0.method2223(16777215, 1.0F, 1.0F, (float) var3, (float) var4, (float) var5);

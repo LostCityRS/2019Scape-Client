@@ -7,10 +7,10 @@ import deob.Statics;
 public class class995 extends Node {
 
 	@ObfuscatedName("akb.k")
-	public final class102 field11488;
+	public final ModelParticleEffector field11488;
 
 	@ObfuscatedName("akb.f")
-	public final class379 field11483;
+	public final ParticleEffectorType field11483;
 
 	@ObfuscatedName("akb.w")
 	public int field11484;
@@ -30,7 +30,7 @@ public class class995 extends Node {
 	@ObfuscatedName("akb.d")
 	public static float[] field11485 = new float[3];
 
-	public class995(class102 arg0, ParticleSystem arg1) {
+	public class995(ModelParticleEffector arg0, ParticleSystem arg1) {
 		this.field11488 = arg0;
 		this.field11483 = this.field11488.method1509(Statics.field12041);
 		this.method17872();

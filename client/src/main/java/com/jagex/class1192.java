@@ -15,11 +15,11 @@ public class class1192 extends SubInterface {
 
 	@ObfuscatedName("asl.e(B)Z")
 	public boolean method18183() {
-		class514 var1 = this.field12429.method10760();
+		Location var1 = this.field12429.method10760();
 		if (var1 == null) {
 			return false;
 		} else {
-			ScriptRunner.method15112(class572.field7264, this.field11571, -1, var1);
+			ScriptRunner.method15112(ClientTriggerType.field7264, this.field11571, -1, var1);
 			return true;
 		}
 	}

@@ -304,12 +304,12 @@ public class DeveloperConsole {
 				return;
 			}
 			if (arg0.equalsIgnoreCase("getcamerapos")) {
-				class594 var5 = client.field10855.method7727();
+				CoordGrid var5 = client.field10855.method7727();
 				if (Statics.field3416 == 3) {
 					Vector3 var6 = Statics.field9155.method4714();
 					Vector3 var7 = Statics.field9155.method4711();
-					method4285("Pos: " + (new class594(Statics.field4490.field11717, (int) var6.field4308 >> 9, (int) var6.field4313 >> 9)).toString() + " Height: " + (client.method3660((int) var6.field4308 - (var5.field7426 << 9), (int) var6.field4313 - (var5.field7427 << 9), Statics.field4490.field11717) + (int) var6.field4311));
-					method4285("Look: " + (new class594(Statics.field4490.field11717, (int) var7.field4308 >> 9, (int) var7.field4313 >> 9)).toString() + " Height: " + (client.method3660((int) var7.field4308 - (var5.field7426 << 9), (int) var6.field4313 - (var5.field7427 << 9), Statics.field4490.field11717) + (int) var6.field4311));
+					method4285("Pos: " + (new CoordGrid(Statics.field4490.field11717, (int) var6.field4308 >> 9, (int) var6.field4313 >> 9)).toString() + " Height: " + (client.method3660((int) var6.field4308 - (var5.field7426 << 9), (int) var6.field4313 - (var5.field7427 << 9), Statics.field4490.field11717) + (int) var6.field4311));
+					method4285("Look: " + (new CoordGrid(Statics.field4490.field11717, (int) var7.field4308 >> 9, (int) var7.field4313 >> 9)).toString() + " Height: " + (client.method3660((int) var7.field4308 - (var5.field7426 << 9), (int) var6.field4313 - (var5.field7427 << 9), Statics.field4490.field11717) + (int) var6.field4311));
 				} else {
 					method4285("Pos: " + Statics.field4490.field11717 + "," + ((Statics.field7956 >> 9) + var5.field7426 >> 6) + "," + ((Statics.field1881 >> 9) + var5.field7427 >> 6) + "," + ((Statics.field7956 >> 9) + var5.field7426 & 0x3F) + "," + ((Statics.field1881 >> 9) + var5.field7427 & 0x3F) + " Height: " + (client.method3660(Statics.field7956, Statics.field1881, Statics.field4490.field11717) - Statics.field10518));
 					method4285("Look: " + Statics.field4490.field11717 + "," + (Statics.field6714 + var5.field7426 >> 6) + "," + (Statics.field2626 + var5.field7427 >> 6) + "," + (Statics.field6714 + var5.field7426 & 0x3F) + "," + (Statics.field2626 + var5.field7427 & 0x3F) + " Height: " + (client.method3660(Statics.field6714, Statics.field2626, Statics.field4490.field11717) - Statics.field1983));
@@ -630,7 +630,7 @@ public class DeveloperConsole {
 	@ObfuscatedName("xi.q(B)V")
 	public static void method10153() {
 		if (Statics.field688.field11561.method18750() == 1) {
-			Statics.field3183.method7680(new class494(class496.field5070, null));
+			Statics.field3183.method7680(new RebuildRequest(RebuildType.field5070, null));
 		} else {
 			client.field10855.method7753();
 			class42.method5065();

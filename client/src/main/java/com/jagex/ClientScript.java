@@ -4,16 +4,16 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("asc")
-public class ClientScript extends class986 {
+public class ClientScript extends SecondaryNode {
 
 	@ObfuscatedName("asc.l")
-	public class572 field12373;
+	public ClientTriggerType field12373;
 
 	@ObfuscatedName("asc.u")
 	public String field12365;
 
 	@ObfuscatedName("asc.z")
-	public class504[] field12369;
+	public ClientScriptCommand[] field12369;
 
 	@ObfuscatedName("asc.p")
 	public int[] field12367;
@@ -49,16 +49,16 @@ public class ClientScript extends class986 {
 		this.field12376 = arg1;
 		int var3 = this.method19494(arg0);
 		int var4 = 0;
-		class504[] var5 = class504.method7897();
+		ClientScriptCommand[] var5 = ClientScriptCommand.method7897();
 		while (arg0.pos < var3) {
-			class504 var6 = this.method19493(arg0, var5);
+			ClientScriptCommand var6 = this.method19493(arg0, var5);
 			this.method19495(arg0, var4, var6);
 			var4++;
 		}
 	}
 
 	@ObfuscatedName("asc.e(Lalw;[Lss;I)Lss;")
-	public class504 method19493(Packet arg0, class504[] arg1) {
+	public ClientScriptCommand method19493(Packet arg0, ClientScriptCommand[] arg1) {
 		int var3 = arg0.g2();
 		if (var3 < 0 || var3 >= arg1.length) {
 			throw new RuntimeException("");
@@ -95,14 +95,14 @@ public class ClientScript extends class986 {
 		}
 		arg0.pos = 0;
 		this.field12365 = arg0.fastgstr();
-		this.field12369 = new class504[var4];
+		this.field12369 = new ClientScriptCommand[var4];
 		return var3;
 	}
 
 	@ObfuscatedName("asc.m(Lalw;ILss;I)V")
-	public void method19495(Packet arg0, int arg1, class504 arg2) {
+	public void method19495(Packet arg0, int arg1, ClientScriptCommand arg2) {
 		int var4 = this.field12369.length;
-		if (class504.field5937 == arg2 || class504.field5651 == arg2) {
+		if (ClientScriptCommand.field5937 == arg2 || ClientScriptCommand.field5651 == arg2) {
 			VarDomainType var7 = (VarDomainType) class686.method1897(VarDomainType.method7216(), arg0.g1());
 			int var8 = arg0.g2();
 			if (this.field12366 == null) {
@@ -113,7 +113,7 @@ public class ClientScript extends class986 {
 				this.field12367 = new int[var4];
 			}
 			this.field12367[arg1] = arg0.g1();
-		} else if (class504.field5144 == arg2) {
+		} else if (ClientScriptCommand.field5144 == arg2) {
 			BaseVarType var5 = (BaseVarType) class686.method1897(Statics.method7338(), arg0.g1());
 			switch(var5.field4841) {
 				case 1:
@@ -126,7 +126,7 @@ public class ClientScript extends class986 {
 					if (this.field12367 == null) {
 						this.field12367 = new int[var4];
 					}
-					arg2 = class504.field5463;
+					arg2 = ClientScriptCommand.field5463;
 					this.field12367[arg1] = arg0.g4s();
 					break;
 				case 3:
@@ -136,10 +136,10 @@ public class ClientScript extends class986 {
 					if (this.field12366 == null) {
 						this.field12366 = new Object[var4];
 					}
-					arg2 = class504.field5164;
+					arg2 = ClientScriptCommand.field5164;
 					this.field12366[arg1] = arg0.g8();
 			}
-		} else if (class504.field5142 == arg2 || class504.field5143 == arg2) {
+		} else if (ClientScriptCommand.field5142 == arg2 || ClientScriptCommand.field5143 == arg2) {
 			int var6 = arg0.g2();
 			if (this.field12366 == null) {
 				this.field12366 = new Object[var4];

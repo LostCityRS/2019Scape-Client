@@ -8,10 +8,10 @@ import java.util.Iterator;
 public class class720 implements Iterable {
 
 	@ObfuscatedName("aap.e")
-	public class986 field8497 = new class986();
+	public SecondaryNode field8497 = new SecondaryNode();
 
 	@ObfuscatedName("aap.n")
-	public class986 field8496;
+	public SecondaryNode field8496;
 
 	public class720() {
 		this.field8497.field11439 = this.field8497;
@@ -26,7 +26,7 @@ public class class720 implements Iterable {
 	}
 
 	@ObfuscatedName("aap.n(Laky;I)V")
-	public void method14339(class986 arg0) {
+	public void method14339(SecondaryNode arg0) {
 		if (arg0.field11438 != null) {
 			arg0.method17806();
 		}
@@ -37,7 +37,7 @@ public class class720 implements Iterable {
 	}
 
 	@ObfuscatedName("xg.k(Laky;Laky;I)V")
-	public static void method10144(class986 arg0, class986 arg1) {
+	public static void method10144(SecondaryNode arg0, SecondaryNode arg1) {
 		if (arg0.field11438 != null) {
 			arg0.method17806();
 		}
@@ -48,8 +48,8 @@ public class class720 implements Iterable {
 	}
 
 	@ObfuscatedName("aap.f(B)Laky;")
-	public class986 method14315() {
-		class986 var1 = this.field8497.field11439;
+	public SecondaryNode method14315() {
+		SecondaryNode var1 = this.field8497.field11439;
 		if (this.field8497 == var1) {
 			return null;
 		} else {
@@ -59,13 +59,13 @@ public class class720 implements Iterable {
 	}
 
 	@ObfuscatedName("aap.w(I)Laky;")
-	public class986 method14317() {
+	public SecondaryNode method14317() {
 		return this.method14318(null);
 	}
 
 	@ObfuscatedName("aap.l(Laky;I)Laky;")
-	public class986 method14318(class986 arg0) {
-		class986 var2;
+	public SecondaryNode method14318(SecondaryNode arg0) {
+		SecondaryNode var2;
 		if (arg0 == null) {
 			var2 = this.field8497.field11439;
 		} else {
@@ -81,8 +81,8 @@ public class class720 implements Iterable {
 	}
 
 	@ObfuscatedName("aap.u(I)Laky;")
-	public class986 method14324() {
-		class986 var1 = this.field8496;
+	public SecondaryNode method14324() {
+		SecondaryNode var1 = this.field8496;
 		if (this.field8497 == var1) {
 			this.field8496 = null;
 			return null;
@@ -95,7 +95,7 @@ public class class720 implements Iterable {
 	@ObfuscatedName("aap.z(I)I")
 	public int method14320() {
 		int var1 = 0;
-		for (class986 var2 = this.field8497.field11439; var2 != this.field8497; var2 = var2.field11439) {
+		for (SecondaryNode var2 = this.field8497.field11439; var2 != this.field8497; var2 = var2.field11439) {
 			var1++;
 		}
 		return var1;

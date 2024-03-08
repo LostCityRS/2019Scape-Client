@@ -17,7 +17,7 @@ public abstract class class1198 extends class1019 {
 	@ObfuscatedName("asw.al")
 	public Light[] field12459 = new Light[4];
 
-	public class1198(class550 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, class420 arg7) {
+	public class1198(Scene arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, class420 arg7) {
 		super(arg0, arg7);
 		this.field11717 = (byte) arg4;
 		this.field11714 = (byte) arg5;

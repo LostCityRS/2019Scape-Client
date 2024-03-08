@@ -14,7 +14,7 @@ public class class490 implements Runnable {
 	public LinkedList field5003 = new LinkedList();
 
 	@ObfuscatedName("ry.m")
-	public class495 field5004 = new class495(true);
+	public World field5004 = new World(true);
 
 	@ObfuscatedName("ry.e(Laop;I)V")
 	public void method7674(LocTypeList arg0) {
@@ -22,7 +22,7 @@ public class class490 implements Runnable {
 	}
 
 	@ObfuscatedName("ry.n(Lrt;B)V")
-	public void method7680(class494 arg0) {
+	public void method7680(RebuildRequest arg0) {
 		LinkedList var2 = this.field5003;
 		synchronized (this.field5003) {
 			this.field5003.add(arg0);
@@ -36,12 +36,12 @@ public class class490 implements Runnable {
 	}
 
 	@ObfuscatedName("ry.k(I)Lrl;")
-	public class495 method7677() {
+	public World method7677() {
 		return this.field5004;
 	}
 
 	@ObfuscatedName("ry.f(Lrl;I)V")
-	public void method7678(class495 arg0) {
+	public void method7678(World arg0) {
 		this.field5004 = arg0;
 	}
 
@@ -55,13 +55,13 @@ public class class490 implements Runnable {
 	public void method7688() {
 		Object var1 = null;
 		LinkedList var2 = this.field5003;
-		class494 var4;
+		RebuildRequest var4;
 		synchronized (this.field5003) {
 			try {
 				this.field5003.wait();
 			} catch (InterruptedException var14) {
 			}
-			var4 = (class494) this.field5003.pollFirst();
+			var4 = (RebuildRequest) this.field5003.pollFirst();
 		}
 		try {
 			if (var4 != null) {
@@ -75,8 +75,8 @@ public class class490 implements Runnable {
 	}
 
 	@ObfuscatedName("ry.l(Lrt;I)V")
-	public void method7689(class494 arg0) {
-		if (class496.field5070 == arg0.field5017) {
+	public void method7689(RebuildRequest arg0) {
+		if (RebuildType.field5070 == arg0.field5017) {
 			this.field5004.method7753();
 		} else {
 			this.field5004.method7749(arg0);

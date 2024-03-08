@@ -161,7 +161,7 @@ public class class1126 extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.ahu(Ljava/awt/Canvas;Ldf;Les;Lnx;Lnb;Lnp;Lpy;Ljava/lang/Integer;)Ldh;")
-	public static Renderer method19043(Canvas arg0, class125 arg1, class143 arg2, class383 arg3, class381 arg4, class378 arg5, Js5 arg6, Integer arg7) {
+	public static Renderer method19043(Canvas arg0, MaterialList arg1, class143 arg2, BillboardTypeList arg3, class381 arg4, class378 arg5, Js5 arg6, Integer arg7) {
 		class1126 var8 = null;
 		try {
 			byte var9 = 0;
@@ -233,7 +233,7 @@ public class class1126 extends GpuRenderer {
 		}
 	}
 
-	public class1126(int arg0, int arg1, long arg2, long arg3, D3DDISPLAYMODE arg4, D3DPRESENT_PARAMETERS arg5, D3DCAPS arg6, class125 arg7, class143 arg8, class383 arg9, class381 arg10, class378 arg11, Js5 arg12, int arg13) {
+	public class1126(int arg0, int arg1, long arg2, long arg3, D3DDISPLAYMODE arg4, D3DPRESENT_PARAMETERS arg5, D3DCAPS arg6, MaterialList arg7, class143 arg8, BillboardTypeList arg9, class381 arg10, class378 arg11, Js5 arg12, int arg13) {
 		super(arg7, arg8, arg9, arg10, arg11, arg12, arg13, 0);
 		try {
 			this.field11956 = arg0;

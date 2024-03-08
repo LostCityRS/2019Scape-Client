@@ -101,7 +101,7 @@ public class class29 {
 		}
 		CoordFine var17 = new CoordFine(0, (int) var2.field4308, (int) var2.field4311, (int) var2.field4313);
 		var0.method16671(var17);
-		class594 var18 = client.field10855.method7727();
+		CoordGrid var18 = client.field10855.method7727();
 		int var19 = var18.field7426 << 9;
 		int var20 = var18.field7427 << 9;
 		Statics.field604.method4681(0.02F, client.field10855.method7744().field4540, client.field10855.method7793(), var19, var20);
