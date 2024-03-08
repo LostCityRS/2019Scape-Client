@@ -1,0 +1,82 @@
+package com.jagex;
+
+import com.jagex.deob.ObfuscatedName;
+import java.io.DataInputStream;
+import java.io.IOException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.LinkedList;
+import java.util.Queue;
+
+@ObfuscatedName("x")
+public class class26 implements Runnable {
+
+	@ObfuscatedName("x.e")
+	public final Thread field591 = new Thread(this);
+
+	@ObfuscatedName("x.n")
+	public volatile boolean field590;
+
+	@ObfuscatedName("x.m")
+	public Queue field589 = new LinkedList();
+
+	public class26() {
+		this.field591.setPriority(1);
+		this.field591.start();
+	}
+
+	public void run() {
+		while (!this.field590) {
+			try {
+				class44 var2;
+				synchronized (this) {
+					var2 = (class44) this.field589.poll();
+					if (var2 == null) {
+						try {
+							this.wait();
+						} catch (InterruptedException var10) {
+						}
+						continue;
+					}
+				}
+				try {
+					URLConnection var5 = var2.field738.openConnection();
+					var5.setConnectTimeout(30000);
+					int var6 = var5.getContentLength();
+					if (var6 >= 0) {
+						byte[] var7 = new byte[var6];
+						(new DataInputStream(var5.getInputStream())).readFully(var7);
+						var2.field737 = var7;
+					}
+					var2.field739 = true;
+				} catch (IOException var11) {
+					var2.field739 = true;
+				}
+			} catch (Exception var13) {
+				class1211.method9845(null, var13);
+			}
+		}
+	}
+
+	@ObfuscatedName("x.e(Ljava/net/URL;I)Lam;")
+	public class44 method563(URL arg0) {
+		class44 var2 = new class44(arg0);
+		synchronized (this) {
+			this.field589.add(var2);
+			this.notify();
+			return var2;
+		}
+	}
+
+	@ObfuscatedName("x.n(B)V")
+	public void method559() {
+		this.field590 = true;
+		try {
+			synchronized (this) {
+				this.notify();
+			}
+			this.field591.join();
+		} catch (InterruptedException var5) {
+		}
+	}
+}

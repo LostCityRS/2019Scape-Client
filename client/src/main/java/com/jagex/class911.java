@@ -1,0 +1,166 @@
+package com.jagex;
+
+import com.jagex.deob.ObfuscatedName;
+
+@ObfuscatedName("ahn")
+public abstract class class911 extends class307 {
+
+	@ObfuscatedName("ahn.n")
+	public class428[] field10565;
+
+	@ObfuscatedName("ahn.m")
+	public float[] field10562;
+
+	@ObfuscatedName("ahn.k")
+	public int field10564 = 0;
+
+	@ObfuscatedName("ahn.f")
+	public float field10563 = 0.0F;
+
+	@ObfuscatedName("ahn.w")
+	public float field10566 = 0.0F;
+
+	@ObfuscatedName("ahn.l")
+	public int[] field10567;
+
+	public class911(class274 arg0) {
+		super(arg0);
+	}
+
+	@ObfuscatedName("ahn.t(Lpe;IFI)V")
+	public void method16720(class428 arg0, int arg1, float arg2) {
+		if (this.field10565 == null) {
+			this.field10565 = new class428[] { arg0 };
+			this.field10562 = new float[] { arg2 };
+			this.field10567 = new int[] { arg1 };
+			return;
+		}
+		class428[] var4 = new class428[this.field10565.length + 1];
+		float[] var5 = new float[this.field10565.length + 1];
+		int[] var6 = new int[this.field10565.length + 1];
+		System.arraycopy(this.field10565, 0, var4, 0, this.field10565.length);
+		System.arraycopy(this.field10562, 0, var5, 0, this.field10565.length);
+		System.arraycopy(this.field10567, 0, var6, 0, this.field10565.length);
+		this.field10565 = var4;
+		this.field10562 = var5;
+		this.field10567 = var6;
+		this.field10565[this.field10565.length - 1] = arg0;
+		this.field10562[this.field10562.length - 1] = arg2;
+		this.field10567[this.field10567.length - 1] = arg1;
+	}
+
+	@ObfuscatedName("ahn.e(F[[[ILqx;IIB)V")
+	public void method5238(float arg0, int[][][] arg1, class451 arg2, int arg3, int arg4) {
+		class428 var6 = this.field10565[this.field10564];
+		if (this.field10562[this.field10564] > 0.0F) {
+			if (this.field10562[this.field10564] >= arg0) {
+				this.field10562[this.field10564 * 1487384747 * -1041839613] -= arg0;
+				return;
+			}
+			arg0 -= this.field10562[this.field10564];
+			this.field10562[this.field10564] = 0.0F;
+		}
+		float var7 = 1.0F / (float) class507.method6016();
+		while (arg0 > 0.0F) {
+			float var8 = var6.method6764();
+			if (this.field10563 >= var8) {
+				if (this.field10564 + 1 == this.field10565.length) {
+					return;
+				}
+				if (this.field10562[this.field10564 + 1] >= arg0) {
+					this.field10562[this.field10564 + 1] -= arg0;
+					return;
+				}
+				this.field10564++;
+				arg0 -= this.field10562[this.field10564];
+				this.field10562[this.field10564] = 0.0F;
+				this.method16723();
+				this.field10563 = 0.0F;
+				this.field10566 = 0.0F;
+				var6 = this.field10565[this.field10564];
+				var8 = var6.method6764();
+			}
+			while (arg0 > 0.0F && this.field10563 < var8) {
+				this.field10566 = this.method16722(var8, this.field10566, Math.min(arg0, var7));
+				arg0 -= var7;
+				this.method16721(this.field10566, var8);
+			}
+		}
+	}
+
+	@ObfuscatedName("ahn.ae(FFI)V")
+	public void method16721(float arg0, float arg1) {
+		this.field10563 += arg0;
+		if (this.field10563 > arg1) {
+			this.field10563 = arg1;
+		}
+	}
+
+	@ObfuscatedName("ahn.n(I)Z")
+	public boolean method5218() {
+		return this.field10565 != null;
+	}
+
+	@ObfuscatedName("ahn.m(B)Lox;")
+	public class423 method5219() {
+		class423 var1 = class423.method6482();
+		double[] var2 = this.field10565[this.field10564].method6765(this.field10563);
+		var1.field4308 = (float) var2[0];
+		var1.field4311 = (float) var2[1];
+		var1.field4313 = (float) var2[2];
+		return var1;
+	}
+
+	@ObfuscatedName("ahn.k(I)[D")
+	public double[] method5230() {
+		return this.field10565[this.field10564].method6765(this.field10563);
+	}
+
+	@ObfuscatedName("ahn.f(B)Lakt;")
+	public class994 method5221() {
+		class423 var1 = this.method5219();
+		return new class994(0, (int) var1.field4308, (int) var1.field4311, (int) var1.field4313);
+	}
+
+	@ObfuscatedName("ahn.al(I)F")
+	public float method16733() {
+		return this.field10565[this.field10564].method6771(this.field10563);
+	}
+
+	@ObfuscatedName("ahn.w(I)F")
+	public float method5222() {
+		return this.field10565[this.field10564].method6762(this.field10563);
+	}
+
+	@ObfuscatedName("ahn.l(Lju;IIB)V")
+	public void method5223(class270 arg0, int arg1, int arg2) {
+		class423 var4 = this.method5219();
+		arg0.field2835 = (int) var4.field4308 - arg1;
+		arg0.field2836 = (int) -var4.field4311;
+		arg0.field2837 = (int) var4.field4313 - arg2;
+	}
+
+	@ObfuscatedName("ahn.u(Lalw;I)V")
+	public void method5224(class997 arg0) {
+		this.field10563 = 0.0F;
+		this.field10566 = 0.0F;
+		this.field10564 = 0;
+		int var2 = arg0.method17904();
+		this.field10565 = new class428[var2];
+		this.field10562 = new float[var2];
+		for (int var3 = 0; var3 < var2; var3++) {
+			this.field10565[var3] = new class428(arg0);
+			this.field10562[var3] = arg0.method17916();
+		}
+		this.method16724(arg0, var2);
+	}
+
+	@ObfuscatedName("ahn.ag(FFFB)F")
+	public abstract float method16722(float arg0, float arg1, float arg2);
+
+	@ObfuscatedName("ahn.ah(I)V")
+	public abstract void method16723();
+
+	@ObfuscatedName("ahn.ac(Lalw;IS)V")
+	public abstract void method16724(class997 arg0, int arg1);
+}
