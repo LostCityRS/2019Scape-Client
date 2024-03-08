@@ -12,7 +12,7 @@ import java.util.Iterator;
 import java.util.List;
 
 @ObfuscatedName("jm")
-public class class276 implements class281 {
+public class PreLoadingScreen implements LoadingScreen {
 
 	@ObfuscatedName("jm.e")
 	public boolean field2895;

@@ -8,7 +8,7 @@ import java.awt.*;
 public class class1132 extends class895 {
 
 	// $FF: synthetic field
-	public final class276 this$0;
+	public final PreLoadingScreen this$0;
 
 	@ObfuscatedName("aqz.k")
 	public float field12091;
@@ -16,7 +16,7 @@ public class class1132 extends class895 {
 	@ObfuscatedName("aqz.f")
 	public float field12092;
 
-	public class1132(class276 arg0, Image arg1, int arg2, int arg3, float arg4) {
+	public class1132(PreLoadingScreen arg0, Image arg1, int arg2, int arg3, float arg4) {
 		super(arg0, arg1, arg2, arg3);
 		this.this$0 = arg0;
 		this.field12091 = arg4;

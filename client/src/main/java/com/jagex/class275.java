@@ -13,10 +13,10 @@ public class class275 implements Runnable {
 	public boolean field2887;
 
 	@ObfuscatedName("jb.m")
-	public class281 field2883 = new class276();
+	public LoadingScreen field2883 = new PreLoadingScreen();
 
 	@ObfuscatedName("jb.k")
-	public class281 field2880 = null;
+	public LoadingScreen field2880 = null;
 
 	@ObfuscatedName("jb.f")
 	public long field2884;
@@ -55,7 +55,7 @@ public class class275 implements Runnable {
 	}
 
 	@ObfuscatedName("jb.k(Ljt;S)V")
-	public synchronized void method4879(class281 arg0) {
+	public synchronized void method4879(LoadingScreen arg0) {
 		this.field2880 = this.field2883;
 		this.field2883 = arg0;
 		this.field2884 = MonotonicTime.method3655();
@@ -121,7 +121,7 @@ public class class275 implements Runnable {
 			synchronized (this) {
 				try {
 					this.field2885++;
-					if (this.field2883 instanceof class276) {
+					if (this.field2883 instanceof PreLoadingScreen) {
 						this.field2883.method4888(this.field2887);
 					} else {
 						long var4 = MonotonicTime.method3655();
@@ -159,7 +159,7 @@ public class class275 implements Runnable {
 							var10.method1443(0, 0, 0, var8, 1);
 						}
 						try {
-							if (Statics.field8198 != null && !(this.field2883 instanceof class276)) {
+							if (Statics.field8198 != null && !(this.field2883 instanceof PreLoadingScreen)) {
 								Statics.field8198.method2115();
 							}
 						} catch (class1106 var18) {
@@ -168,7 +168,7 @@ public class class275 implements Runnable {
 						}
 					}
 					this.field2887 = false;
-					if (Statics.field8198 != null && !(this.field2883 instanceof class276) && this.field2889.field2920 < class277.field2917.field2920) {
+					if (Statics.field8198 != null && !(this.field2883 instanceof PreLoadingScreen) && this.field2889.field2920 < class277.field2917.field2920) {
 						client.method3033();
 					}
 				} catch (Exception var19) {

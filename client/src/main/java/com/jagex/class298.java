@@ -74,6 +74,6 @@ public class class298 implements class302 {
 	@ObfuscatedName("kg.e(I)V")
 	public void method5104() {
 		FontMetrics var1 = FontMetrics.method10677(this.field3043, this.field3039.field3175, Statics.field7538);
-		this.field3041 = Statics.field8198.method2207(var1, class111.method1607(this.field3042, this.field3039.field3175), true);
+		this.field3041 = Statics.field8198.method2207(var1, SpriteDataProvider.method1607(this.field3042, this.field3039.field3175), true);
 	}
 }

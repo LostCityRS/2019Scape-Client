@@ -46,7 +46,7 @@ public abstract class class295 implements class302 {
 	@ObfuscatedName("kz.e(I)V")
 	public void method5104() {
 		FontMetrics var1 = FontMetrics.method10677(this.field3026, this.field3027.field3166, Statics.field7538);
-		this.field3029 = Statics.field8198.method2207(var1, class111.method1607(this.field3028, this.field3027.field3166), true);
+		this.field3029 = Statics.field8198.method2207(var1, SpriteDataProvider.method1607(this.field3028, this.field3027.field3166), true);
 	}
 
 	@ObfuscatedName("kz.m(I)Z")

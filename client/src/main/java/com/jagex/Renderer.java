@@ -562,7 +562,7 @@ public abstract class Renderer {
 	public abstract void method2198(ParticleList arg0);
 
 	@ObfuscatedName("dh.co(Lde;Z)Lcm;")
-	public abstract Sprite method2200(class136 arg0, boolean arg1);
+	public abstract Sprite method2200(SpriteData arg0, boolean arg1);
 
 	@ObfuscatedName("dh.cb(II[I[I)Lch;")
 	public abstract class103 method2205(int arg0, int arg1, int[] arg2, int[] arg3);
@@ -571,7 +571,7 @@ public abstract class Renderer {
 	public abstract void method2206(int arg0, class103 arg1, int arg2, int arg3);
 
 	@ObfuscatedName("dh.cy(Laac;Lde;Z)Leu;")
-	public abstract class140 method2207(FontMetrics arg0, class136 arg1, boolean arg2);
+	public abstract class140 method2207(FontMetrics arg0, SpriteData arg1, boolean arg2);
 
 	@ObfuscatedName("dh.cc()Lpq;")
 	public abstract Matrix4x4 method2208();

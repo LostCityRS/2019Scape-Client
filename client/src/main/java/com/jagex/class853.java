@@ -14,7 +14,7 @@ public class class853 extends class140 {
 	@ObfuscatedName("afh.y")
 	public Sprite[] field10231;
 
-	public class853(PureJavaRenderer arg0, FontMetrics arg1, class851 arg2) {
+	public class853(PureJavaRenderer arg0, FontMetrics arg1, FullSpriteData arg2) {
 		super(arg0, arg1);
 		this.field10229 = arg0;
 		this.field10229 = arg0;

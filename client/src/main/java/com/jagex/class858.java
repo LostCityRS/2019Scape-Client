@@ -19,7 +19,7 @@ public class class858 extends class140 {
 	@ObfuscatedName("afx.q")
 	public float[][] field10245;
 
-	public class858(GpuRenderer arg0, FontMetrics arg1, class136 arg2, boolean arg3) {
+	public class858(GpuRenderer arg0, FontMetrics arg1, SpriteData arg2, boolean arg3) {
 		super(arg0, arg1);
 		this.field10244 = arg0;
 		int[] var5 = new int[this.field1667.field8572 * this.field1667.field8571];
@@ -27,7 +27,7 @@ public class class858 extends class140 {
 			Object var6 = null;
 			byte[] var8;
 			if (arg2.method2587()) {
-				class852 var7 = (class852) arg2;
+				PalettedSpriteData var7 = (PalettedSpriteData) arg2;
 				var8 = var7.method2644() ? var7.field10228 : var7.field10227;
 				if (!var7.method2644()) {
 					for (int var9 = 0; var9 < var8.length; var9++) {
@@ -35,7 +35,7 @@ public class class858 extends class140 {
 					}
 				}
 			} else {
-				class851 var10 = (class851) arg2;
+				FullSpriteData var10 = (FullSpriteData) arg2;
 				int[] var11 = var10.method2604(false);
 				var8 = new byte[var11.length];
 				if (var10.method2644()) {
@@ -54,7 +54,7 @@ public class class858 extends class140 {
 				var5[var16] = var8[var16] << 24 | 0xFFFFFF;
 			}
 		} else if (arg2.method2587()) {
-			class852 var17 = (class852) arg2;
+			PalettedSpriteData var17 = (PalettedSpriteData) arg2;
 			int[] var18 = var17.field10226;
 			byte[] var19 = var17.field10228;
 			byte[] var20 = var17.field10227;
@@ -71,7 +71,7 @@ public class class858 extends class140 {
 				}
 			}
 		} else {
-			class851 var24 = (class851) arg2;
+			FullSpriteData var24 = (FullSpriteData) arg2;
 			int[] var25 = var24.method2604(false);
 			if (var24.method2644()) {
 				for (int var28 = 0; var28 < var5.length; var28++) {

@@ -370,7 +370,7 @@ public class MapElementType implements ConfigType {
 		if (var5 != null) {
 			return var5;
 		} else if (this.field2368.field2415.method6889(var3)) {
-			class136 var6 = class111.method1609(this.field2368.field2415, var3, 0);
+			SpriteData var6 = SpriteDataProvider.method1609(this.field2368.field2415, var3, 0);
 			if (var6 != null) {
 				var5 = arg0.method2200(var6, true);
 				this.field2368.field2414.method2921(var5, (long) var4);
@@ -388,7 +388,7 @@ public class MapElementType implements ConfigType {
 		if (var3 != null) {
 			return var3;
 		} else if (this.field2368.field2415.method6889(this.field2384)) {
-			class136 var4 = class111.method1609(this.field2368.field2415, this.field2384, 0);
+			SpriteData var4 = SpriteDataProvider.method1609(this.field2368.field2415, this.field2384, 0);
 			if (var4 != null) {
 				var3 = arg0.method2200(var4, true);
 				this.field2368.field2414.method2921(var3, (long) var2);
@@ -406,7 +406,7 @@ public class MapElementType implements ConfigType {
 			return var2;
 		}
 		this.field2368.field2415.method6889(this.field2383);
-		class136 var3 = class111.method1609(this.field2368.field2415, this.field2383, 0);
+		SpriteData var3 = SpriteDataProvider.method1609(this.field2368.field2415, this.field2383, 0);
 		if (var3 != null) {
 			var2 = arg0.method2200(var3, true);
 			this.field2368.field2414.method2921(var2, (long) (this.field2383 | 0x20000 | arg0.field1595 << 29));

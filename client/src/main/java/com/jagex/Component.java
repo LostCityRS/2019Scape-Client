@@ -986,7 +986,7 @@ public class Component {
 		if (var4 != null) {
 			return var4;
 		}
-		class136 var5 = class111.method1609(Statics.field8370, this.field2215, 0);
+		SpriteData var5 = SpriteDataProvider.method1609(Statics.field8370, this.field2215, 0);
 		if (var5 == null) {
 			field2338 = true;
 			return null;
@@ -1310,7 +1310,7 @@ public class Component {
 				return var4;
 			}
 		}
-		class136 var5 = class111.method1609(Statics.field8370, this.field2215, 0);
+		SpriteData var5 = SpriteDataProvider.method1609(Statics.field8370, this.field2215, 0);
 		if (var5 == null) {
 			return null;
 		}

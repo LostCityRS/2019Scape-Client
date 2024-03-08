@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("afr")
-public class class852 extends class136 {
+public class PalettedSpriteData extends SpriteData {
 
 	@ObfuscatedName("afr.e")
 	public int field10220;

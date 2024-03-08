@@ -2054,7 +2054,7 @@ public final class client extends GameShell {
 			if (arg1 != null) {
 				Statics.field8198.method2475(1, 0);
 				FontMetrics var3 = FontMetrics.method6068(Statics.field7672, Statics.field505, 0, Statics.field7538);
-				class140 var4 = Statics.field8198.method2207(var3, class111.method1609(Statics.field10317, Statics.field505, 0), true);
+				class140 var4 = Statics.field8198.method2207(var3, SpriteDataProvider.method1609(Statics.field10317, Statics.field505, 0), true);
 				method8024();
 				MessageBox.method649(arg1, true, Statics.field8198, var4, var3);
 			}
@@ -2065,7 +2065,7 @@ public final class client extends GameShell {
 					var5 = Renderer.method14575(0, Statics.field10578, Statics.field7366, Statics.field7669, Statics.field9211, Statics.field7282, Statics.field2013, Statics.field2900, 0);
 					var5.method2475(1, 0);
 					FontMetrics var6 = FontMetrics.method1593(Statics.field7672, Statics.field505, 0);
-					class140 var7 = var5.method2207(var6, class111.method1609(Statics.field10317, Statics.field505, 0), true);
+					class140 var7 = var5.method2207(var6, SpriteDataProvider.method1609(Statics.field10317, Statics.field505, 0), true);
 					method8024();
 					MessageBox.method649(arg1, true, var5, var7, var6);
 					try {
@@ -2581,7 +2581,7 @@ public final class client extends GameShell {
 		}
 		if (arg0 != -1) {
 			CursorType var1 = (CursorType) Statics.field2427.get(arg0);
-			class136 var2 = var1.method10302();
+			SpriteData var2 = var1.method10302();
 			if (var2 == null) {
 				arg0 = -1;
 			} else {
@@ -6275,7 +6275,7 @@ public final class client extends GameShell {
 								long var41 = (long) (var40 << 8 | var39);
 								Sprite var43 = (Sprite) field10894.method2930(var41);
 								if (var43 == null) {
-									class136[] var44 = class111.method1608(Statics.field10317, var40, 0);
+									SpriteData[] var44 = SpriteDataProvider.method1608(Statics.field10317, var40, 0);
 									if (var44 == null) {
 										continue;
 									}
@@ -6300,7 +6300,7 @@ public final class client extends GameShell {
 									long var50 = (long) (var46[var48] << 8 | var47[var48]);
 									Sprite var52 = (Sprite) field10894.method2930(var50);
 									if (var52 == null) {
-										class136[] var53 = class111.method1608(Statics.field10317, var46[var48], 0);
+										SpriteData[] var53 = SpriteDataProvider.method1608(Statics.field10317, var46[var48], 0);
 										if (var53 == null) {
 											continue;
 										}
@@ -6789,7 +6789,7 @@ public final class client extends GameShell {
 		Object var10 = null;
 		Sprite var11 = (Sprite) field10830.method2930((long) var9);
 		if (var11 == null) {
-			class136[] var12 = class111.method1608(Statics.field10317, var9, 0);
+			SpriteData[] var12 = SpriteDataProvider.method1608(Statics.field10317, var9, 0);
 			if (var12 == null) {
 				return;
 			}

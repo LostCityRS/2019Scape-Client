@@ -3,41 +3,41 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("cd")
-public class class111 {
+public class SpriteDataProvider {
 
-	public class111() throws Throwable {
+	public SpriteDataProvider() throws Throwable {
 		throw new Error();
 	}
 
 	@ObfuscatedName("cd.e(Lpy;II)Lde;")
-	public static class136 method1609(Js5 arg0, int arg1, int arg2) {
+	public static SpriteData method1609(Js5 arg0, int arg1, int arg2) {
 		byte[] var3 = arg0.method6879(arg1, arg2);
 		return var3 == null ? null : method1615(var3)[0];
 	}
 
 	@ObfuscatedName("cd.n(Lpy;I)Lde;")
-	public static class136 method1607(Js5 arg0, int arg1) {
+	public static SpriteData method1607(Js5 arg0, int arg1) {
 		byte[] var2 = arg0.method6894(arg1);
 		return var2 == null ? null : method1615(var2)[0];
 	}
 
 	@ObfuscatedName("cd.m(Lpy;II)[Lde;")
-	public static class136[] method1608(Js5 arg0, int arg1, int arg2) {
+	public static SpriteData[] method1608(Js5 arg0, int arg1, int arg2) {
 		byte[] var3 = arg0.method6879(arg1, arg2);
 		return var3 == null ? null : method1615(var3);
 	}
 
 	@ObfuscatedName("cd.k([B)[Lde;")
-	public static class136[] method1615(byte[] arg0) {
+	public static SpriteData[] method1615(byte[] arg0) {
 		Packet var1 = new Packet(arg0);
 		var1.pos = (arg0.length - 2);
 		int var2 = var1.g2();
 		int var3 = var2 >> 15;
 		int var4 = var2 & 0x7FFF;
 		if (var3 == 0) {
-			class852[] var5 = new class852[var4];
+			PalettedSpriteData[] var5 = new PalettedSpriteData[var4];
 			for (int var6 = 0; var6 < var4; var6++) {
-				var5[var6] = new class852();
+				var5[var6] = new PalettedSpriteData();
 			}
 			var1.pos = (arg0.length - 7 - var4 * 8);
 			int var7 = var1.g2();
@@ -56,7 +56,7 @@ public class class111 {
 				var5[var13].field10221 = var1.g2();
 			}
 			for (int var14 = 0; var14 < var4; var14++) {
-				class852 var15 = var5[var14];
+				PalettedSpriteData var15 = var5[var14];
 				var15.field10223 = var7 - var15.field10220 - var15.field10222;
 				var15.field10225 = var8 - var15.field10221 - var15.field10224;
 			}
@@ -73,7 +73,7 @@ public class class111 {
 			}
 			var1.pos = 0;
 			for (int var19 = 0; var19 < var4; var19++) {
-				class852 var20 = var5[var19];
+				PalettedSpriteData var20 = var5[var19];
 				int var21 = var20.field10221 * var20.field10220;
 				var20.field10227 = new byte[var21];
 				int var22 = var1.g1();
@@ -118,7 +118,7 @@ public class class111 {
 			}
 			return var5;
 		} else {
-			class851[] var35 = new class851[var4];
+			FullSpriteData[] var35 = new FullSpriteData[var4];
 			var1.pos = 0;
 			int var36 = var1.g1();
 			if (var36 == 0) {
@@ -139,7 +139,7 @@ public class class111 {
 							var41[var43] |= var1.g1() << 24;
 						}
 					}
-					var35[var40] = new class851(var38, var39, var41);
+					var35[var40] = new FullSpriteData(var38, var39, var41);
 				}
 				return var35;
 			} else if (var36 == 1) {

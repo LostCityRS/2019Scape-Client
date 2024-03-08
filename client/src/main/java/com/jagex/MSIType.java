@@ -77,7 +77,7 @@ public class MSIType implements ConfigType {
 		if (!this.field9153.field9157.method6889(this.field9151)) {
 			return;
 		}
-		class136 var6 = class111.method1609(this.field9153.field9157, this.field9151, 0);
+		SpriteData var6 = SpriteDataProvider.method1609(this.field9153.field9157, this.field9151, 0);
 		if (var6 != null) {
 			var6.method2595();
 			if (arg2) {

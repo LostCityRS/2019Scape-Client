@@ -43,12 +43,12 @@ public class CursorType implements ConfigType {
 	}
 
 	@ObfuscatedName("xj.z(I)Lde;")
-	public synchronized class136 method10302() {
-		class136 var1 = (class136) this.field7962.field7959.method2930((long) this.field7963);
+	public synchronized SpriteData method10302() {
+		SpriteData var1 = (SpriteData) this.field7962.field7959.method2930((long) this.field7963);
 		if (var1 != null) {
 			return var1;
 		}
-		class136 var2 = class111.method1609(this.field7962.field7960, this.field7963, 0);
+		SpriteData var2 = SpriteDataProvider.method1609(this.field7962.field7960, this.field7963, 0);
 		if (var2 != null) {
 			this.field7962.field7959.method2921(var2, (long) this.field7963);
 		}

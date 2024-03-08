@@ -1348,8 +1348,8 @@ public class MiniMenu {
 		}
 		if (Statics.field9253 == null || Statics.field8480 == null) {
 			if (Statics.field10317.method6889(Statics.field12340) && Statics.field10317.method6889(Statics.field740)) {
-				Statics.field9253 = arg0.method2200(class111.method1609(Statics.field10317, Statics.field12340, 0), true);
-				class136 var10 = class111.method1609(Statics.field10317, Statics.field740, 0);
+				Statics.field9253 = arg0.method2200(SpriteDataProvider.method1609(Statics.field10317, Statics.field12340, 0), true);
+				SpriteData var10 = SpriteDataProvider.method1609(Statics.field10317, Statics.field740, 0);
 				Statics.field8480 = arg0.method2200(var10, true);
 				var10.method2601();
 				Statics.field3568 = arg0.method2200(var10, true);
@@ -1372,12 +1372,12 @@ public class MiniMenu {
 	@ObfuscatedName("tm.an(Ldh;IIIIII)V")
 	public static void method8462(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		if ((Statics.field1224 == null || Statics.field10568 == null || Statics.field11699 == null) && Statics.field10317.method6889(Statics.field11642) && Statics.field10317.method6889(Statics.field1748) && Statics.field10317.method6889(Statics.field1847)) {
-			class136 var6 = class111.method1609(Statics.field10317, Statics.field1748, 0);
+			SpriteData var6 = SpriteDataProvider.method1609(Statics.field10317, Statics.field1748, 0);
 			Statics.field10568 = arg0.method2200(var6, true);
 			var6.method2601();
 			Statics.field566 = arg0.method2200(var6, true);
-			Statics.field1224 = arg0.method2200(class111.method1609(Statics.field10317, Statics.field11642, 0), true);
-			class136 var7 = class111.method1609(Statics.field10317, Statics.field1847, 0);
+			Statics.field1224 = arg0.method2200(SpriteDataProvider.method1609(Statics.field10317, Statics.field11642, 0), true);
+			SpriteData var7 = SpriteDataProvider.method1609(Statics.field10317, Statics.field1847, 0);
 			Statics.field11699 = arg0.method2200(var7, true);
 			var7.method2601();
 			Statics.field11831 = arg0.method2200(var7, true);

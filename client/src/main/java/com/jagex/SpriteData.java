@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("de")
-public abstract class class136 {
+public abstract class SpriteData {
 
 	@ObfuscatedName("de.e()Z")
 	public abstract boolean method2587();

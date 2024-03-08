@@ -11,7 +11,7 @@ public class class856 extends class140 {
 	@ObfuscatedName("afl.s")
 	public byte[][] field10239;
 
-	public class856(PureJavaRenderer arg0, FontMetrics arg1, class852 arg2) {
+	public class856(PureJavaRenderer arg0, FontMetrics arg1, PalettedSpriteData arg2) {
 		super(arg0, arg1);
 		this.field10238 = arg0;
 		this.field10239 = new byte[256][];
@@ -31,7 +31,7 @@ public class class856 extends class140 {
 		}
 	}
 
-	public class856(PureJavaRenderer arg0, FontMetrics arg1, class851 arg2) {
+	public class856(PureJavaRenderer arg0, FontMetrics arg1, FullSpriteData arg2) {
 		super(arg0, arg1);
 		this.field10238 = arg0;
 		int[] var4 = arg2.method2604(false);

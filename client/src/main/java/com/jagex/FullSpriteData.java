@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("afb")
-public class class851 extends class136 {
+public class FullSpriteData extends SpriteData {
 
 	@ObfuscatedName("afb.e")
 	public int field10213;
@@ -29,7 +29,7 @@ public class class851 extends class136 {
 	@ObfuscatedName("afb.u")
 	public boolean field10219 = false;
 
-	public class851(int arg0, int arg1, int[] arg2) {
+	public FullSpriteData(int arg0, int arg1, int[] arg2) {
 		this.field10213 = arg0;
 		this.field10218 = arg1;
 		this.field10216 = arg2;

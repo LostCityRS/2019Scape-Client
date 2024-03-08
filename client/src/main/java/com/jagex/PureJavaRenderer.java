@@ -1873,12 +1873,12 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.co(Lde;Z)Lcm;")
-	public Sprite method2200(class136 arg0, boolean arg1) {
+	public Sprite method2200(SpriteData arg0, boolean arg1) {
 		int var3 = arg0.method2639();
 		int var4 = arg0.method2631();
 		class829 var12;
 		if (arg1 && !arg0.method2644() && arg0.method2587()) {
-			class852 var5 = (class852) arg0;
+			PalettedSpriteData var5 = (PalettedSpriteData) arg0;
 			int[] var6 = new int[var5.field10226.length];
 			byte[] var7 = new byte[var3 * var4];
 			for (int var8 = 0; var8 < var4; var8++) {
@@ -1974,23 +1974,23 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.cy(Laac;Lde;Z)Leu;")
-	public class140 method2207(FontMetrics arg0, class136 arg1, boolean arg2) {
+	public class140 method2207(FontMetrics arg0, SpriteData arg1, boolean arg2) {
 		boolean var4 = arg1.method2644();
 		boolean var5 = arg1.method2587();
 		if (arg2) {
 			if (var5) {
-				return var4 ? new class854(this, arg0, (class852) arg1) : new class856(this, arg0, (class852) arg1);
+				return var4 ? new class854(this, arg0, (PalettedSpriteData) arg1) : new class856(this, arg0, (PalettedSpriteData) arg1);
 			} else if (var4) {
-				return new class854(this, arg0, (class851) arg1);
+				return new class854(this, arg0, (FullSpriteData) arg1);
 			} else {
-				return new class856(this, arg0, (class851) arg1);
+				return new class856(this, arg0, (FullSpriteData) arg1);
 			}
 		} else if (!var5) {
-			return new class853(this, arg0, (class851) arg1);
+			return new class853(this, arg0, (FullSpriteData) arg1);
 		} else if (var4) {
 			throw new IllegalArgumentException("");
 		} else {
-			return new class855(this, arg0, (class852) arg1);
+			return new class855(this, arg0, (PalettedSpriteData) arg1);
 		}
 	}
 

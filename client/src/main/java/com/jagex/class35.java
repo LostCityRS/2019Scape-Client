@@ -41,7 +41,7 @@ public class class35 {
 			Canvas var2 = new Canvas();
 			var2.setSize(36, 32);
 			Statics.field630 = Renderer.method14575(0, var2, Statics.field7366, Statics.field7669, Statics.field9211, Statics.field7282, Statics.field2013, Statics.field2900, 0);
-			Statics.field629 = Statics.field630.method2207(FontMetrics.method1593(Statics.field7672, Statics.field506, 0), class111.method1609(Statics.field10317, Statics.field506, 0), true);
+			Statics.field629 = Statics.field630.method2207(FontMetrics.method1593(Statics.field7672, Statics.field506, 0), SpriteDataProvider.method1609(Statics.field10317, Statics.field506, 0), true);
 		}
 		for (class964 var3 = (class964) field631.method14191(); var3 != null; var3 = (class964) field631.method14161()) {
 			Statics.field1842.method18905(Statics.field630, arg0, var3.field11256, var3.field11255, var3.field11258, var3.field11257, false, false, var3.field11254, Statics.field629, var3.field11259 ? Statics.field4490.field12061 : null, Statics.field11389);

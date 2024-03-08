@@ -1213,7 +1213,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.co(Lde;Z)Lcm;")
-	public final Sprite method2200(class136 arg0, boolean arg1) {
+	public final Sprite method2200(SpriteData arg0, boolean arg1) {
 		Sprite var4;
 		if (arg0.method2639() == 0 || arg0.method2631() == 0) {
 			var4 = this.method2199(new int[] { 0 }, 0, 1, 1, 1);
@@ -1238,7 +1238,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.cy(Laac;Lde;Z)Leu;")
-	public final class140 method2207(FontMetrics arg0, class136 arg1, boolean arg2) {
+	public final class140 method2207(FontMetrics arg0, SpriteData arg1, boolean arg2) {
 		return new class858(this, arg0, arg1, arg2);
 	}
 

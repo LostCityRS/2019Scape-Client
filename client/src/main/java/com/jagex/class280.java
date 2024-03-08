@@ -129,9 +129,9 @@ public class class280 {
 		if (Statics.field2939 == null) {
 			return;
 		}
-		class281[] var0 = Statics.field2939;
+		LoadingScreen[] var0 = Statics.field2939;
 		for (int var1 = 0; var1 < var0.length; var1++) {
-			class281 var2 = var0[var1];
+			LoadingScreen var2 = var0[var1];
 			var2.method4916();
 		}
 	}
@@ -193,7 +193,7 @@ public class class280 {
 			}
 			class297 var10 = new class297(Statics.field8522, Statics.field7672);
 			if (var9.length > 0) {
-				Statics.field2939 = new class281[var9.length];
+				Statics.field2939 = new LoadingScreen[var9.length];
 				for (int var11 = 0; var11 < Statics.field2939.length; var11++) {
 					Statics.field2939[var11] = new class278(Statics.field2841.method15217(var9[var11].field9217), var9[var11].field9215, var9[var11].field9216, var10);
 				}

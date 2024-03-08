@@ -14,7 +14,7 @@ public class class855 extends class140 {
 	@ObfuscatedName("afd.y")
 	public int[] field10235;
 
-	public class855(PureJavaRenderer arg0, FontMetrics arg1, class852 arg2) {
+	public class855(PureJavaRenderer arg0, FontMetrics arg1, PalettedSpriteData arg2) {
 		super(arg0, arg1);
 		this.field10236 = arg0;
 		this.field10237 = new byte[256][];

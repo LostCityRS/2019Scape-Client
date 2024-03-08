@@ -8,12 +8,12 @@ import java.awt.*;
 public class class895 extends class282 {
 
 	// $FF: synthetic field
-	public final class276 this$0;
+	public final PreLoadingScreen this$0;
 
 	@ObfuscatedName("ahw.m")
 	public Image field10470;
 
-	public class895(class276 arg0, Image arg1, int arg2, int arg3) {
+	public class895(PreLoadingScreen arg0, Image arg1, int arg2, int arg3) {
 		super(arg0, arg2, arg3);
 		this.this$0 = arg0;
 		this.field10470 = arg1;

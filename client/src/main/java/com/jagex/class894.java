@@ -9,7 +9,7 @@ import java.awt.*;
 public class class894 extends class282 {
 
 	// $FF: synthetic field
-	public final class276 this$0;
+	public final PreLoadingScreen this$0;
 
 	@ObfuscatedName("ahj.m")
 	public boolean field10469;
@@ -23,7 +23,7 @@ public class class894 extends class282 {
 	@ObfuscatedName("ahj.w")
 	public Color field10466;
 
-	public class894(class276 arg0, boolean arg1, String arg2, int arg3, int arg4, int arg5, int arg6) {
+	public class894(PreLoadingScreen arg0, boolean arg1, String arg2, int arg3, int arg4, int arg5, int arg6) {
 		super(arg0, arg5, arg6);
 		this.this$0 = arg0;
 		this.field10469 = arg1;

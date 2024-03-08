@@ -578,7 +578,7 @@ public class Statics {
 	public static class277[] field2938;
 
 	@ObfuscatedName("ji.n")
-	public static class281[] field2939;
+	public static LoadingScreen[] field2939;
 
 	@ObfuscatedName("ji.u")
 	public static Thread field2940;
@@ -815,7 +815,7 @@ public class Statics {
 	public static int field490;
 
 	@ObfuscatedName("rk.r")
-	public static class136 field4963;
+	public static SpriteData field4963;
 
 	@ObfuscatedName("rk.p")
 	public static String field4964;
@@ -1184,7 +1184,7 @@ public class Statics {
 	public static int field7091;
 
 	@ObfuscatedName("as.c")
-	public static class136 field710;
+	public static SpriteData field710;
 
 	@ObfuscatedName("ug.s")
 	public static class1172 field7100;
@@ -1199,13 +1199,13 @@ public class Statics {
 	public static int field713;
 
 	@ObfuscatedName("as.d")
-	public static class136 field714;
+	public static SpriteData field714;
 
 	@ObfuscatedName("as.n")
 	public static class316 field715;
 
 	@ObfuscatedName("as.o")
-	public static class852 field716;
+	public static PalettedSpriteData field716;
 
 	@ObfuscatedName("as.cq")
 	public static class140 field717;

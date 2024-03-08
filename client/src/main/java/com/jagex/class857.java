@@ -18,7 +18,7 @@ public class class857 extends class140 {
 	@ObfuscatedName("afs.q")
 	public final boolean field10240;
 
-	public class857(LegacyOpenGLRenderer arg0, FontMetrics arg1, class136 arg2, boolean arg3) {
+	public class857(LegacyOpenGLRenderer arg0, FontMetrics arg1, SpriteData arg2, boolean arg3) {
 		super(arg0, arg1);
 		this.field10243 = arg0;
 		int[] var5 = new int[this.field1667.field8572 * this.field1667.field8571];
@@ -26,7 +26,7 @@ public class class857 extends class140 {
 			Object var6 = null;
 			byte[] var8;
 			if (arg2.method2587()) {
-				class852 var7 = (class852) arg2;
+				PalettedSpriteData var7 = (PalettedSpriteData) arg2;
 				var8 = var7.method2644() ? var7.field10228 : var7.field10227;
 				if (!var7.method2644()) {
 					for (int var9 = 0; var9 < var8.length; var9++) {
@@ -34,7 +34,7 @@ public class class857 extends class140 {
 					}
 				}
 			} else {
-				class851 var10 = (class851) arg2;
+				FullSpriteData var10 = (FullSpriteData) arg2;
 				int[] var11 = var10.method2604(false);
 				var8 = new byte[var11.length];
 				if (var10.method2644()) {
@@ -53,7 +53,7 @@ public class class857 extends class140 {
 			this.field10240 = true;
 		} else {
 			if (arg2.method2587()) {
-				class852 var16 = (class852) arg2;
+				PalettedSpriteData var16 = (PalettedSpriteData) arg2;
 				int[] var17 = var16.field10226;
 				byte[] var18 = var16.field10228;
 				byte[] var19 = var16.field10227;
@@ -70,7 +70,7 @@ public class class857 extends class140 {
 					}
 				}
 			} else {
-				class851 var23 = (class851) arg2;
+				FullSpriteData var23 = (FullSpriteData) arg2;
 				int[] var24 = var23.method2604(false);
 				if (var23.method2644()) {
 					for (int var27 = 0; var27 < var5.length; var27++) {

@@ -198,7 +198,7 @@ public class class402 implements FontIconProvider {
 		}
 		Sprite[] var3 = (Sprite[]) this.field4205.method2930((long) arg1);
 		if (var3 == null) {
-			class136[] var4 = class111.method1608(this.field4200, arg1, 0);
+			SpriteData[] var4 = SpriteDataProvider.method1608(this.field4200, arg1, 0);
 			if (var4 != null && var4.length > 0) {
 				var3 = new Sprite[var4.length];
 				for (int var5 = 0; var5 < var4.length; var5++) {

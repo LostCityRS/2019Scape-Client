@@ -211,7 +211,7 @@ public class EnvironmentManager {
 		if (var2 != null) {
 			return var2;
 		}
-		class136 var3 = class111.method1607(this.field7845, arg0);
+		SpriteData var3 = SpriteDataProvider.method1607(this.field7845, arg0);
 		if (var3 != null && var3.method2639() == 256 && var3.method2631() == 16) {
 			int[] var4 = var3.method2604(false);
 			var2 = this.field7833.method2237(var4);

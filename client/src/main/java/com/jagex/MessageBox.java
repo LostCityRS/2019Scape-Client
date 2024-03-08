@@ -35,21 +35,21 @@ public class MessageBox {
 		boolean var0 = true;
 		if (Statics.field714 == null) {
 			if (Statics.field10317.method6889(Statics.field7091)) {
-				Statics.field714 = class111.method1607(Statics.field10317, Statics.field7091);
+				Statics.field714 = SpriteDataProvider.method1607(Statics.field10317, Statics.field7091);
 			} else {
 				var0 = false;
 			}
 		}
 		if (Statics.field710 == null) {
 			if (Statics.field10317.method6889(Statics.field1921)) {
-				Statics.field710 = class111.method1607(Statics.field10317, Statics.field1921);
+				Statics.field710 = SpriteDataProvider.method1607(Statics.field10317, Statics.field1921);
 			} else {
 				var0 = false;
 			}
 		}
 		if (Statics.field4963 == null) {
 			if (Statics.field10317.method6889(Statics.field7424)) {
-				Statics.field4963 = class111.method1607(Statics.field10317, Statics.field7424);
+				Statics.field4963 = SpriteDataProvider.method1607(Statics.field10317, Statics.field7424);
 			} else {
 				var0 = false;
 			}
@@ -63,7 +63,7 @@ public class MessageBox {
 		}
 		if (Statics.field716 == null) {
 			if (Statics.field10317.method6889(Statics.field713)) {
-				Statics.field716 = (class852) class111.method1607(Statics.field10317, Statics.field713);
+				Statics.field716 = (PalettedSpriteData) SpriteDataProvider.method1607(Statics.field10317, Statics.field713);
 			} else {
 				var0 = false;
 			}

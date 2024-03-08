@@ -104,7 +104,7 @@ public class HeadbarType implements ConfigType {
 	public void method9151(Renderer arg0, int arg1) {
 		Js5 var3 = this.field7226.field7229;
 		if (arg1 >= 0 && this.field7226.field7230.method2930((long) arg1) == null && var3.method6889(arg1)) {
-			class136 var4 = class111.method1607(var3, arg1);
+			SpriteData var4 = SpriteDataProvider.method1607(var3, arg1);
 			this.field7226.field7230.method2921(arg0.method2200(var4, true), (long) arg1);
 		}
 	}

@@ -1776,7 +1776,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.co(Lde;Z)Lcm;")
-	public Sprite method2200(class136 arg0, boolean arg1) {
+	public Sprite method2200(SpriteData arg0, boolean arg1) {
 		int[] var3 = arg0.method2604(false);
 		Sprite var4 = this.method2199(var3, 0, arg0.method2639(), arg0.method2639(), arg0.method2631());
 		var4.method1431(arg0.method2591(), arg0.method2593(), arg0.method2603(), arg0.method2651());
@@ -1824,7 +1824,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.cy(Laac;Lde;Z)Leu;")
-	public class140 method2207(FontMetrics arg0, class136 arg1, boolean arg2) {
+	public class140 method2207(FontMetrics arg0, SpriteData arg1, boolean arg2) {
 		return new class857(this, arg0, arg1, arg2);
 	}
 
