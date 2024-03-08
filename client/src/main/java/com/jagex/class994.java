@@ -1,7 +1,7 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import com.jagex.deob.Statics;
+import deob.ObfuscatedName;
+import deob.Statics;
 
 @ObfuscatedName("akt")
 public class class994 extends class532 implements class785 {

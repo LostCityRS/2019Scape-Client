@@ -1,6 +1,6 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
+import deob.ObfuscatedName;
 
 @ObfuscatedName("adb")
 public class class793 implements class53, class757 {

@@ -1,6 +1,6 @@
 package jagdx;
 
-import com.jagex.deob.ObfuscatedName;
+import deob.ObfuscatedName;
 
 public final class IDirect3DDevice extends IUnknown {
 

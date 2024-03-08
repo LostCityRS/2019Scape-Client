@@ -1,6 +1,6 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
+import deob.ObfuscatedName;
 
 @ObfuscatedName("aca")
 public class class762 implements class761 {

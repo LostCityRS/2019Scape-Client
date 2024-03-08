@@ -1,6 +1,6 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
+import deob.ObfuscatedName;
 
 @ObfuscatedName("uv")
 public class class568 implements class53, class757 {

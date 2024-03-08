@@ -1,6 +1,6 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
+import deob.ObfuscatedName;
 
 @ObfuscatedName("amo")
 public class class1034 extends class709 {

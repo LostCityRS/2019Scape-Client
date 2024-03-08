@@ -1,6 +1,6 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
+import deob.ObfuscatedName;
 
 @ObfuscatedName("nq")
 public class class389 {

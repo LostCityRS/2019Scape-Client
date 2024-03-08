@@ -1,6 +1,7 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
+import deob.ObfuscatedName;
+
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
 import java.math.BigInteger;

@@ -1,7 +1,8 @@
 package jaggl;
 
-import com.jagex.deob.ObfuscatedName;
-import java.awt.Canvas;
+import deob.ObfuscatedName;
+
+import java.awt.*;
 import java.util.Hashtable;
 
 public class OpenGL {

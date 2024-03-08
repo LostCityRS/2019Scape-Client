@@ -1,9 +1,10 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import com.jagex.deob.Statics;
-import java.nio.ByteBuffer;
+import deob.ObfuscatedName;
+import deob.Statics;
 import sun.misc.Unsafe;
+
+import java.nio.ByteBuffer;
 
 @ObfuscatedName("afo")
 public class class844 extends class116 {

@@ -1,6 +1,6 @@
 package jaclib.memory;
 
-import com.jagex.deob.ObfuscatedName;
+import deob.ObfuscatedName;
 
 public final class Stream {
 

@@ -1,13 +1,9 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import com.jagex.deob.Statics;
-import java.io.BufferedReader;
-import java.io.DataInputStream;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.StringReader;
-import java.io.StringWriter;
+import deob.ObfuscatedName;
+import deob.Statics;
+
+import java.io.*;
 import java.net.URL;
 
 @ObfuscatedName("atc")

@@ -1,13 +1,10 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import com.jagex.deob.Statics;
-import java.awt.Component;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
-import java.awt.event.MouseWheelEvent;
-import java.awt.event.MouseWheelListener;
+import deob.ObfuscatedName;
+import deob.Statics;
+
+import java.awt.*;
+import java.awt.event.*;
 
 @ObfuscatedName("alb")
 public class class1007 extends class564 implements MouseListener, MouseMotionListener, MouseWheelListener {

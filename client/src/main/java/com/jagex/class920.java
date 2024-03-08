@@ -1,8 +1,9 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
+import deob.ObfuscatedName;
 import jagdx.IDirect3DDevice;
 import jagdx.IUnknown;
+
 import java.nio.ByteBuffer;
 
 @ObfuscatedName("ait")

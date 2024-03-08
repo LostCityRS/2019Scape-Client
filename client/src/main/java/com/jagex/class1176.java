@@ -1,7 +1,7 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import com.jagex.deob.Statics;
+import deob.ObfuscatedName;
+import deob.Statics;
 
 @ObfuscatedName("ard")
 public class class1176 extends class986 {

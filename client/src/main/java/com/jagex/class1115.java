@@ -1,7 +1,7 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import com.jagex.deob.Statics;
+import deob.ObfuscatedName;
+import deob.Statics;
 
 @ObfuscatedName("apv")
 public class class1115 extends class829 {

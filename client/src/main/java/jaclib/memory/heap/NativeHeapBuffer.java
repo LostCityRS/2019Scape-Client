@@ -1,6 +1,6 @@
 package jaclib.memory.heap;
 
-import com.jagex.deob.ObfuscatedName;
+import deob.ObfuscatedName;
 import jaclib.memory.Buffer;
 import jaclib.memory.Source;
 

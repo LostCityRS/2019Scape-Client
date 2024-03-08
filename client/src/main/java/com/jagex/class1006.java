@@ -1,7 +1,8 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import java.awt.Component;
+import deob.ObfuscatedName;
+
+import java.awt.*;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.KeyEvent;

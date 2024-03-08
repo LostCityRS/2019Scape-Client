@@ -1,6 +1,7 @@
 package com.jagex.twitchtv;
 
-import com.jagex.deob.ObfuscatedName;
+import deob.ObfuscatedName;
+
 import java.util.LinkedList;
 
 public class TwitchWebcamDevice {

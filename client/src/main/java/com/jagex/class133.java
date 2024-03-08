@@ -1,9 +1,9 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import com.jagex.deob.Statics;
-import java.awt.Canvas;
-import java.awt.Dimension;
+import deob.ObfuscatedName;
+import deob.Statics;
+
+import java.awt.*;
 import java.util.Enumeration;
 import java.util.Hashtable;
 

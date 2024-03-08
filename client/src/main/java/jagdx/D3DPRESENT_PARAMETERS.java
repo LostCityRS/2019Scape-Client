@@ -1,6 +1,6 @@
 package jagdx;
 
-import java.awt.Component;
+import java.awt.*;
 
 public class D3DPRESENT_PARAMETERS {
 

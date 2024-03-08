@@ -1,12 +1,8 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import java.io.BufferedInputStream;
-import java.io.DataInputStream;
-import java.io.EOFException;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import deob.ObfuscatedName;
+
+import java.io.*;
 
 @ObfuscatedName("abu")
 public final class class751 {

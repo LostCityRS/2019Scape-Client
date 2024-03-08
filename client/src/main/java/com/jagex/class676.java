@@ -1,9 +1,10 @@
 package com.jagex;
 
+import deob.ObfuscatedName;
+import deob.Statics;
 import com.jagex.twitchtv.TwitchEvent;
-import com.jagex.deob.ObfuscatedName;
-import com.jagex.deob.Statics;
-import java.awt.Point;
+
+import java.awt.*;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
 import java.util.ArrayList;

@@ -1,6 +1,7 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
+import deob.ObfuscatedName;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.lang.reflect.Field;

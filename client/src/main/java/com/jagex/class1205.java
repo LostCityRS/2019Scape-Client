@@ -1,12 +1,8 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import java.util.AbstractQueue;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import deob.ObfuscatedName;
+
+import java.util.*;
 
 @ObfuscatedName("att")
 public class class1205 extends AbstractQueue {

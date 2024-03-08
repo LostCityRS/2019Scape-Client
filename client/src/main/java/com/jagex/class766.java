@@ -1,8 +1,9 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import java.applet.Applet;
+import deob.ObfuscatedName;
 import netscape.javascript.JSObject;
+
+import java.applet.Applet;
 
 @ObfuscatedName("act")
 public class class766 {

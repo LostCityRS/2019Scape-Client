@@ -1,11 +1,9 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import com.jagex.deob.Statics;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
+import deob.ObfuscatedName;
+import deob.Statics;
+
+import java.awt.*;
 
 @ObfuscatedName("ahj")
 public class class894 extends class282 {

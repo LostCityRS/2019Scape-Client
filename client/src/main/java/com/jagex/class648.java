@@ -1,13 +1,11 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import com.jagex.deob.Statics;
-import java.awt.Point;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
+import deob.ObfuscatedName;
+import deob.Statics;
+
+import java.awt.*;
 import java.util.Queue;
+import java.util.*;
 
 @ObfuscatedName("xc")
 public class class648 {

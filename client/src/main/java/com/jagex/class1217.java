@@ -1,15 +1,9 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import java.awt.Canvas;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.Rectangle;
-import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferInt;
-import java.awt.image.DirectColorModel;
-import java.awt.image.Raster;
-import java.awt.image.WritableRaster;
+import deob.ObfuscatedName;
+
+import java.awt.*;
+import java.awt.image.*;
 import java.util.Hashtable;
 
 @ObfuscatedName("ats")

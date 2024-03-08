@@ -1,6 +1,6 @@
 package jagdx;
 
-import com.jagex.deob.ObfuscatedName;
+import deob.ObfuscatedName;
 
 @ObfuscatedName("jagdx/u")
 public class class7 extends RuntimeException {

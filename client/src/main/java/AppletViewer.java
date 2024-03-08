@@ -1,3 +1,5 @@
+import com.jagex.client;
+
 import javax.swing.*;
 import java.applet.Applet;
 import java.applet.AppletStub;
@@ -5,8 +7,6 @@ import java.awt.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Properties;
-
-import com.jagex.client;
 
 // properly, you'd use JagexAppletViewer, but this is handy for quick testing
 public class AppletViewer extends Applet implements AppletStub {

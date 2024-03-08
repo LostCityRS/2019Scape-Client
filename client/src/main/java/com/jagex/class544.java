@@ -1,14 +1,15 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import deob.ObfuscatedName;
+
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.DataLine.Info;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.SourceDataLine;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 @ObfuscatedName("ts")
 public class class544 {

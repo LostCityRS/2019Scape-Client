@@ -1,10 +1,11 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
+import deob.ObfuscatedName;
 import jaclib.memory.Stream;
 import jaggl.MapBuffer;
 import jaggl.OpenGL;
-import java.awt.Canvas;
+
+import java.awt.*;
 
 @ObfuscatedName("aqv")
 public final class class1127 extends class850 {

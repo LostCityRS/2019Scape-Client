@@ -1,6 +1,7 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
+import deob.ObfuscatedName;
+
 import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;

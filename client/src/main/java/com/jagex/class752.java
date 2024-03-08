@@ -1,11 +1,8 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import java.io.EOFException;
-import java.io.File;
-import java.io.IOException;
-import java.io.RandomAccessFile;
-import java.io.SyncFailedException;
+import deob.ObfuscatedName;
+
+import java.io.*;
 
 @ObfuscatedName("abl")
 public final class class752 {

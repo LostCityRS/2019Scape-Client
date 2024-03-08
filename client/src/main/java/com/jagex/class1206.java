@@ -1,9 +1,8 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import java.awt.Canvas;
-import java.awt.Component;
-import java.awt.Graphics;
+import deob.ObfuscatedName;
+
+import java.awt.*;
 
 @ObfuscatedName("atu")
 public final class class1206 extends Canvas {

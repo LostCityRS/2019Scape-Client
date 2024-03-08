@@ -1,21 +1,10 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import com.jagex.deob.Statics;
-import jagdx.D3DADAPTER_IDENTIFIER;
-import jagdx.D3DCAPS;
-import jagdx.D3DDISPLAYMODE;
-import jagdx.D3DLIGHT;
-import jagdx.D3DPRESENT_PARAMETERS;
-import jagdx.IDirect3D;
-import jagdx.IDirect3DDevice;
-import jagdx.IDirect3DEventQuery;
-import jagdx.IDirect3DSurface;
-import jagdx.IUnknown;
-import jagdx.class0;
-import jagdx.class2;
-import jagdx.class7;
-import java.awt.Canvas;
+import deob.ObfuscatedName;
+import deob.Statics;
+import jagdx.*;
+
+import java.awt.*;
 
 @ObfuscatedName("aqd")
 public class class1126 extends class850 {

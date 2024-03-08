@@ -1,7 +1,8 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import java.awt.Frame;
+import deob.ObfuscatedName;
+
+import java.awt.*;
 
 @ObfuscatedName("aab")
 public final class class725 {

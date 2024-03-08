@@ -1,6 +1,6 @@
 package jagdx;
 
-import com.jagex.deob.ObfuscatedName;
+import deob.ObfuscatedName;
 
 @ObfuscatedName("jagdx/w")
 public class class5 {

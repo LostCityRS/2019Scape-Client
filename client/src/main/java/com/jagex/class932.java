@@ -1,11 +1,8 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
+import deob.ObfuscatedName;
+
+import java.util.*;
 
 @ObfuscatedName("aiz")
 public class class932 extends class366 {

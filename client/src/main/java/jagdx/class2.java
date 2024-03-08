@@ -1,7 +1,7 @@
 package jagdx;
 
-import com.jagex.deob.ObfuscatedName;
-import com.jagex.deob.Statics;
+import deob.ObfuscatedName;
+import deob.Statics;
 
 @ObfuscatedName("jagdx/m")
 public class class2 {

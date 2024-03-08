@@ -1,8 +1,9 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import java.nio.ByteBuffer;
+import deob.ObfuscatedName;
 import sun.misc.Unsafe;
+
+import java.nio.ByteBuffer;
 
 @ObfuscatedName("akx")
 public class class982 extends class532 {

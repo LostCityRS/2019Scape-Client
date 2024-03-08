@@ -1,6 +1,6 @@
 package jaclib.ping;
 
-import com.jagex.deob.ObfuscatedName;
+import deob.ObfuscatedName;
 
 public class Ping {
 

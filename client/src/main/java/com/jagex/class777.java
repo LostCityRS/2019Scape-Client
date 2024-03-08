@@ -1,7 +1,8 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import com.jagex.deob.Statics;
+import deob.ObfuscatedName;
+import deob.Statics;
+
 import java.util.Random;
 
 @ObfuscatedName("acp")

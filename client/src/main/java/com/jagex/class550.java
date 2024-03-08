@@ -1,7 +1,8 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import com.jagex.deob.Statics;
+import deob.ObfuscatedName;
+import deob.Statics;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;

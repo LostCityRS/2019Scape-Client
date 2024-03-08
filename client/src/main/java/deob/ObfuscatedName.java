@@ -1,4 +1,4 @@
-package com.jagex.deob;
+package deob;
 
 public @interface ObfuscatedName {
 

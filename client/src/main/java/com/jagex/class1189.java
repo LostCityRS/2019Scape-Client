@@ -1,6 +1,6 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
+import deob.ObfuscatedName;
 import jaclib.memory.Stream;
 
 @ObfuscatedName("asb")

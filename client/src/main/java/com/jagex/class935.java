@@ -1,12 +1,9 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import jagdx.D3DPRESENT_PARAMETERS;
-import jagdx.IDirect3DDevice;
-import jagdx.IDirect3DSwapChain;
-import jagdx.IUnknown;
-import jagdx.class0;
-import java.awt.Canvas;
+import deob.ObfuscatedName;
+import jagdx.*;
+
+import java.awt.*;
 
 @ObfuscatedName("aic")
 public class class935 extends class1122 implements class406 {

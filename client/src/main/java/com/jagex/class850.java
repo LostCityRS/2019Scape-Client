@@ -1,17 +1,18 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import com.jagex.deob.Statics;
+import deob.ObfuscatedName;
+import deob.Statics;
 import jaclib.memory.DirectBufferHelper;
 import jaclib.memory.Stream;
 import jaclib.memory.heap.NativeHeap;
 import jaclib.memory.heap.NativeHeapBuffer;
+import sun.misc.Unsafe;
+
 import java.lang.reflect.Field;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayList;
 import java.util.Iterator;
-import sun.misc.Unsafe;
 
 @ObfuscatedName("afc")
 public abstract class class850 extends class133 {

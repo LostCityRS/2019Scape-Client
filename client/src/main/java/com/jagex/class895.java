@@ -1,8 +1,8 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import java.awt.Graphics;
-import java.awt.Image;
+import deob.ObfuscatedName;
+
+import java.awt.*;
 
 @ObfuscatedName("ahw")
 public class class895 extends class282 {

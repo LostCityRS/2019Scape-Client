@@ -1,7 +1,8 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import java.awt.Point;
+import deob.ObfuscatedName;
+
+import java.awt.*;
 
 @ObfuscatedName("aac")
 public class class733 {

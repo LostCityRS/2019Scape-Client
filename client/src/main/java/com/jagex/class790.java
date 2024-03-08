@@ -1,6 +1,7 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
+import deob.ObfuscatedName;
+
 import java.lang.ref.ReferenceQueue;
 import java.util.ArrayList;
 

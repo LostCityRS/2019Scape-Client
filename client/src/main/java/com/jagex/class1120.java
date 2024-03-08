@@ -1,7 +1,8 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import java.awt.Canvas;
+import deob.ObfuscatedName;
+
+import java.awt.*;
 
 @ObfuscatedName("aph")
 public abstract class class1120 extends class841 {

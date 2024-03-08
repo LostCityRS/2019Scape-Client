@@ -1,7 +1,8 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
+import deob.ObfuscatedName;
 import jaggl.OpenGL;
+
 import java.util.HashMap;
 import java.util.Map;
 

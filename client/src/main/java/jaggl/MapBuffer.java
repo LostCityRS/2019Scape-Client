@@ -1,6 +1,6 @@
 package jaggl;
 
-import com.jagex.deob.ObfuscatedName;
+import deob.ObfuscatedName;
 import jaclib.memory.NativeBuffer;
 
 public class MapBuffer extends NativeBuffer {

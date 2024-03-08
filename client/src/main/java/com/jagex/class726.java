@@ -1,10 +1,8 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import java.awt.DisplayMode;
-import java.awt.Frame;
-import java.awt.GraphicsDevice;
-import java.awt.GraphicsEnvironment;
+import deob.ObfuscatedName;
+
+import java.awt.*;
 import java.lang.reflect.Field;
 
 @ObfuscatedName("aae")

@@ -1,7 +1,7 @@
 package com.jagex.twitchtv;
 
 import com.jagex.class571;
-import com.jagex.deob.ObfuscatedName;
+import deob.ObfuscatedName;
 
 public abstract class TwitchEvent {
 

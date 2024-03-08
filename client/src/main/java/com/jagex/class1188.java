@@ -1,8 +1,9 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import com.jagex.deob.Statics;
-import java.awt.Point;
+import deob.ObfuscatedName;
+import deob.Statics;
+
+import java.awt.*;
 
 @ObfuscatedName("asp")
 public class class1188 extends class993 {

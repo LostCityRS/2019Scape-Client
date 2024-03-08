@@ -1,8 +1,9 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import com.jagex.deob.Statics;
-import java.awt.Canvas;
+import deob.ObfuscatedName;
+import deob.Statics;
+
+import java.awt.*;
 
 @ObfuscatedName("ag")
 public class class35 {

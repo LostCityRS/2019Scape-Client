@@ -1,9 +1,9 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
+import deob.ObfuscatedName;
 import jaggl.OpenGL;
-import java.awt.Canvas;
-import java.awt.Dimension;
+
+import java.awt.*;
 
 @ObfuscatedName("atx")
 public class class1218 extends class1122 {

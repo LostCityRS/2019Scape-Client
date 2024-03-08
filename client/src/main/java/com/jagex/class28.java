@@ -1,6 +1,7 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
+import deob.ObfuscatedName;
+
 import java.io.EOFException;
 import java.util.Iterator;
 import java.util.LinkedHashMap;

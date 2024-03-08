@@ -1,9 +1,8 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import java.awt.Component;
-import java.awt.Point;
-import java.awt.Robot;
+import deob.ObfuscatedName;
+
+import java.awt.*;
 import java.awt.image.BufferedImage;
 
 @ObfuscatedName("si")

@@ -1,11 +1,7 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import jagdx.IDirect3DDevice;
-import jagdx.IDirect3DSurface;
-import jagdx.IDirect3DTexture;
-import jagdx.IUnknown;
-import jagdx.class0;
+import deob.ObfuscatedName;
+import jagdx.*;
 
 @ObfuscatedName("aio")
 public class class926 extends class925 implements class359 {

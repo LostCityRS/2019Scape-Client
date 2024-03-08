@@ -1,7 +1,8 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import java.awt.Canvas;
+import deob.ObfuscatedName;
+
+import java.awt.*;
 
 @ObfuscatedName("co")
 public class class99 {

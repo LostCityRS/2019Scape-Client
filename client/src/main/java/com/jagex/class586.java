@@ -1,13 +1,9 @@
 package com.jagex;
 
-import com.jagex.twitchtv.TwitchEvent;
-import com.jagex.twitchtv.TwitchEventLiveStreams;
-import com.jagex.twitchtv.TwitchEventResult;
-import com.jagex.twitchtv.TwitchTV;
-import com.jagex.twitchtv.TwitchWebcamDevice;
-import com.jagex.twitchtv.TwitchWebcamFrameData;
-import com.jagex.deob.ObfuscatedName;
-import com.jagex.deob.Statics;
+import deob.ObfuscatedName;
+import deob.Statics;
+import com.jagex.twitchtv.*;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;

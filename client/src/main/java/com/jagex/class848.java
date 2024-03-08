@@ -1,7 +1,8 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import java.awt.Canvas;
+import deob.ObfuscatedName;
+
+import java.awt.*;
 
 @ObfuscatedName("afg")
 public class class848 extends class133 {

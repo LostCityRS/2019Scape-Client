@@ -1,14 +1,15 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import com.jagex.deob.Statics;
+import deob.ObfuscatedName;
+import deob.Statics;
 import jaclib.memory.Buffer;
 import jaclib.memory.Stream;
 import jaclib.memory.heap.NativeHeap;
 import jaggl.OpenGL;
-import java.awt.Canvas;
-import java.lang.reflect.Field;
 import sun.misc.Unsafe;
+
+import java.awt.*;
+import java.lang.reflect.Field;
 
 @ObfuscatedName("afa")
 public class class849 extends class133 {

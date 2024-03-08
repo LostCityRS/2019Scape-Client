@@ -1,7 +1,8 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
+import deob.ObfuscatedName;
 import jaclib.ping.Ping;
+
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 

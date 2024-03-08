@@ -1,6 +1,6 @@
 package com.jagex.twitchtv;
 
-import com.jagex.deob.ObfuscatedName;
+import deob.ObfuscatedName;
 
 public class TwitchWebcamFrameData {
 

@@ -1,9 +1,9 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
+import deob.ObfuscatedName;
 import jaggl.OpenGL;
-import java.awt.Canvas;
-import java.awt.Dimension;
+
+import java.awt.*;
 
 @ObfuscatedName("apt")
 public class class1121 extends class841 {

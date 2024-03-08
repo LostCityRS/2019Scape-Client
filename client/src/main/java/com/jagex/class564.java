@@ -1,8 +1,9 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import com.jagex.deob.Statics;
-import java.awt.Component;
+import deob.ObfuscatedName;
+import deob.Statics;
+
+import java.awt.*;
 
 @ObfuscatedName("uj")
 public abstract class class564 {

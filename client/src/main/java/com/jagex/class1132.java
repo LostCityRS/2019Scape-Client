@@ -1,9 +1,8 @@
 package com.jagex;
 
-import com.jagex.deob.ObfuscatedName;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
+import deob.ObfuscatedName;
+
+import java.awt.*;
 
 @ObfuscatedName("aqz")
 public class class1132 extends class895 {
