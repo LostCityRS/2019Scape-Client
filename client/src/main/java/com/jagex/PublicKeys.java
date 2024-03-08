@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 import java.math.BigInteger;
 
 @ObfuscatedName("ae")
-public class class34 {
+public class PublicKeys {
 
 	@ObfuscatedName("ae.e")
 	public static final BigInteger field624 = new BigInteger("10001", 16);
@@ -24,7 +24,7 @@ public class class34 {
 		new BigInteger("d09a9575024fa1cd1357b43840ad0090a4fd8dcd2d5f7dc03eae42886072413c9b51b8c49d770bef272515a1d352bb28eb9433f7f1eb11c6e97de1901a25ebd1", 16);
 	}
 
-	public class34() throws Throwable {
+	public PublicKeys() throws Throwable {
 		throw new Error();
 	}
 }

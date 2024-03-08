@@ -159,7 +159,7 @@ public class class280 {
 		}
 		if (Statics.field3419 == class277.field2913) {
 			if (Statics.field1833 == null) {
-				Statics.field1833 = new class437(Statics.field4489, Statics.field4436, Statics.field4479, class34.field623, class34.field625);
+				Statics.field1833 = new class437(Statics.field4489, Statics.field4436, Statics.field4479, PublicKeys.field623, PublicKeys.field625);
 			}
 			if (!Statics.field1833.method6834()) {
 				return 0;

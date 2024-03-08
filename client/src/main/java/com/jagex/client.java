@@ -25,6 +25,7 @@ public final class client extends GameShell {
     public static final boolean ENABLE_JS5_XOR = false;
     public static final boolean ENABLE_HOST_CHECK = false;
     public static final boolean ENABLE_ISAAC = false;
+	public static final boolean ENABLE_TINYENC = false;
 
 	@ObfuscatedName("client.bv")
 	public static ModeGame field10768 = null;

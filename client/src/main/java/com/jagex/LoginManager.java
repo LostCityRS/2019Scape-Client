@@ -350,7 +350,7 @@ public class LoginManager {
 				var5.p8(client.field10810);
 				var5.p1(client.field10768.field8339);
 				var5.p1(Statics.field10311.nextInt());
-				var5.rsaenc(class34.field624, class34.field626);
+				var5.rsaenc(PublicKeys.field624, PublicKeys.field626);
 				var3.field11432.pdata(var5.data, 0, var5.pos);
 				var3.field11432.psize2(var3.field11432.pos - var4);
 				Statics.field432.method934(var3);
@@ -463,7 +463,9 @@ public class LoginManager {
 					var10.p1(Statics.field9200 != null && Statics.field9200.field8746 == Statics.field8755.field8746 ? 0 : 1);
 					var10.p2(Statics.field8751.field8746);
 					Statics.method14463(var10);
-					var10.tinyenc(Statics.field435, var13, var10.pos);
+					if (client.ENABLE_TINYENC) {
+						var10.tinyenc(Statics.field435, var13, var10.pos);
+					}
 					var10.psize2(var10.pos - var12);
 				} else {
 					LoginProt var18;
@@ -511,7 +513,9 @@ public class LoginManager {
 					var10.p1(Statics.field2627 & 0x1);
 					var10.pbool(false);
 					Statics.method14463(var10);
-					var10.tinyenc(Statics.field435, var20, var10.pos);
+					if (client.ENABLE_TINYENC) {
+						var10.tinyenc(Statics.field435, var20, var10.pos);
+					}
 					var10.psize2(var10.pos - var19);
 				}
 				Statics.field432.method934(var9);
@@ -1031,7 +1035,7 @@ public class LoginManager {
 			var0.p8(field437);
 			var0.p8(client.field10810);
 		}
-		var0.rsaenc(class34.field624, class34.field626);
+		var0.rsaenc(PublicKeys.field624, PublicKeys.field626);
 		return var0;
 	}
 

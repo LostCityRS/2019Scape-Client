@@ -11,7 +11,7 @@ import java.net.URLConnection;
 import java.util.Random;
 
 @ObfuscatedName("w")
-public class class13 {
+public class AccountAppealManager {
 
 	@ObfuscatedName("w.f")
 	public static final BigInteger field495 = new BigInteger("80782894952180643741752986186714059433953886149239752893425047584684715842049");
@@ -19,7 +19,7 @@ public class class13 {
 	@ObfuscatedName("w.w")
 	public static final BigInteger field496 = new BigInteger("7237300117305667488707183861728052766358166655052137727439795191253340127955075499635575104901523446809299097934591732635674173519120047404024393881551683");
 
-	public class13() throws Throwable {
+	public AccountAppealManager() throws Throwable {
 		throw new Error();
 	}
 
@@ -85,7 +85,9 @@ public class class13 {
 		Packet var11 = new Packet(var10);
 		var11.pjstr(arg1);
 		var11.pos = var10;
-		var11.tinyenc(var6);
+		if (client.ENABLE_TINYENC) {
+			var11.tinyenc(var6);
+		}
 		Packet var12 = new Packet(var11.pos + var5.pos + var4.pos + 5);
 		var12.p1(2);
 		var12.p1(var4.pos);

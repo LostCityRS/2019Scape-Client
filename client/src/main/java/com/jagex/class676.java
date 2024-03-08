@@ -13616,11 +13616,11 @@ public final class class676 {
 	@ObfuscatedName("kr.arv(Lyf;I)V")
 	public static final void method5330(class677 arg0) {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
-		long var2 = class13.method14886();
+		long var2 = AccountAppealManager.method14886();
 		if (var2 == 0L) {
 			arg0.field8216[++arg0.field8226 - 1] = 5;
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = class13.method14753(var2, var1);
+			arg0.field8216[++arg0.field8226 - 1] = AccountAppealManager.method14753(var2, var1);
 		}
 	}
 
