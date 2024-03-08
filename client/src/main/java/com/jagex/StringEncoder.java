@@ -4,9 +4,9 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("iv")
-public class class246 {
+public class StringEncoder {
 
-	public class246() throws Throwable {
+	public StringEncoder() throws Throwable {
 		throw new Error();
 	}
 
@@ -16,7 +16,7 @@ public class class246 {
 	}
 
 	@ObfuscatedName("gc.n(Lalw;Ljava/lang/String;I)I")
-	public static int method3547(Packet packet, String arg1) {
+	public static int encode(Packet packet, String arg1) {
 		int var2 = packet.pos;
 		byte[] var3 = Cp1252.method3064(arg1);
 		packet.pSmart1or2s(var3.length);
@@ -25,7 +25,7 @@ public class class246 {
 	}
 
 	@ObfuscatedName("eu.k(Lalw;II)Ljava/lang/String;")
-	public static String method2738(Packet arg0, int arg1) {
+	public static String decode(Packet arg0, int arg1) {
 		try {
 			int var2 = arg0.gSmart1or2();
 			if (var2 > arg1) {

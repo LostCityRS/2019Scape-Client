@@ -11590,7 +11590,7 @@ public final class class676 {
 		int var8 = var7.field11432.pos;
 		var7.field11432.p1(var3);
 		var7.field11432.p1(var5);
-		class246.method3547(var7.field11432, var1);
+		StringEncoder.encode(var7.field11432, var1);
 		var7.field11432.psize1(var7.field11432.pos - var8);
 		var6.method934(var7);
 	}
@@ -11608,7 +11608,7 @@ public final class class676 {
 		var4.field11432.p2(0);
 		int var5 = var4.field11432.pos;
 		var4.field11432.pjstr(var1);
-		class246.method3547(var4.field11432, var2);
+		StringEncoder.encode(var4.field11432, var2);
 		var4.field11432.psize2(var4.field11432.pos - var5);
 		var3.method934(var4);
 	}

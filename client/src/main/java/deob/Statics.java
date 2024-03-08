@@ -1939,7 +1939,7 @@ public class Statics {
 
 	@ObfuscatedName("nd.m(Lalw;I)Ljava/lang/String;")
 	public static String method5939(Packet arg0) {
-		return class246.method2738(arg0, 32767);
+		return StringEncoder.decode(arg0, 32767);
 	}
 
 	@ObfuscatedName("amx.n(I)I")

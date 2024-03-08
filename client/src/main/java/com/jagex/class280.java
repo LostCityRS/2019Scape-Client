@@ -365,7 +365,7 @@ public class class280 {
 			class633.method706(Statics.field7282, Statics.field2013);
 			class502.method13864(Statics.field9213, Statics.field7366, Statics.field7669);
 			Huffman var19 = new Huffman(Statics.field8741.method6906("huffman", ""));
-			class246.setHuffman(var19);
+			StringEncoder.setHuffman(var19);
 			Statics.field6594 = class511.method6109();
 			Statics.field10581 = new class1000(true);
 		}
