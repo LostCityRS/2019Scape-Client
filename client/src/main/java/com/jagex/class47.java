@@ -64,7 +64,7 @@ public class class47 {
 	@ObfuscatedName("sm.m(S)V")
 	public static void method8025() {
 		Statics.field768 = Statics.field10268.field8569 + Statics.field10268.field8562 + 2;
-		Statics.field763 = Statics.field2657.field8569 * 2 + Statics.field2657.field8562 * 2 + 4;
+		Statics.field763 = Statics.field2657.field8569 + Statics.field2657.field8562 + 2;
 		Statics.field4845 = new String[500];
 		for (int var0 = 0; var0 < Statics.field4845.length; var0++) {
 			Statics.field4845[var0] = "";
@@ -199,9 +199,9 @@ public class class47 {
 		}
 		arg0.method2168(0, 0, Statics.field6586, 350);
 		arg0.method2354(0, 0, Statics.field6586, 350, field776 * 36 << 24 | 0x332277, 1);
-		int var1 = 350 / (Statics.field763 * 2);
+		int var1 = 350 / Statics.field763;
 		if (field764 > 0) {
-			int var2 = 346 - Statics.field763 * 2 - 4;
+			int var2 = 346 - Statics.field763 - 4;
 			int var3 = var1 * var2 / (field764 + var1 - 1);
 			int var4 = 4;
 			if (field764 > 1) {
@@ -214,7 +214,7 @@ public class class47 {
 				for (int var8 = 0; var8 < var6.length; var8++) {
 					int var9 = var7 * var8 + 8;
 					arg0.method2168(var9, 0, var7 + var9 - 8, 350);
-					Statics.field9184.method2681(method14312(var6[var8]), var9, 350 - Statics.field768 - 2 - Statics.field2657.field8569 - Statics.field763 * 2 * (var5 - field771), -1, -16777216);
+					Statics.field9184.method2681(method14312(var6[var8]), var9, 350 - Statics.field768 - 2 - Statics.field2657.field8569 - Statics.field763 * (var5 - field771), -1, -16777216);
 				}
 			}
 		}
