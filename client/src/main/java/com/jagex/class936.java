@@ -47,7 +47,7 @@ public class class936 extends class440 {
 	public int field10740 = 0;
 
 	@ObfuscatedName("aij.y")
-	public class729 field10731 = new class729(16);
+	public IterableMap field10731 = new IterableMap(16);
 
 	@ObfuscatedName("aij.q")
 	public boolean field10725;
@@ -62,10 +62,10 @@ public class class936 extends class440 {
 	public int field10739 = 0;
 
 	@ObfuscatedName("aij.a")
-	public class715 field10735;
+	public IterableQueue field10735;
 
 	@ObfuscatedName("aij.g")
-	public class715 field10741 = new class715();
+	public IterableQueue field10741 = new IterableQueue();
 
 	@ObfuscatedName("aij.i")
 	public boolean field10748;
@@ -83,7 +83,7 @@ public class class936 extends class440 {
 			this.field10738 = false;
 		} else {
 			this.field10738 = true;
-			this.field10735 = new class715();
+			this.field10735 = new IterableQueue();
 		}
 		this.field10724 = arg2;
 		this.field10720 = arg3;
@@ -530,7 +530,7 @@ public class class936 extends class440 {
 		this.field10725 = true;
 		this.field10737 = true;
 		if (this.field10735 == null) {
-			this.field10735 = new class715();
+			this.field10735 = new IterableQueue();
 		}
 	}
 

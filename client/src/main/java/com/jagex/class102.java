@@ -24,7 +24,7 @@ public class class102 {
 	public int field1227;
 
 	@ObfuscatedName("cq.l")
-	public class426 field1231;
+	public Matrix4x4 field1231;
 
 	public class102(int arg0, int arg1) {
 		this.field1228 = arg0;

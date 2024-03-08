@@ -69,7 +69,7 @@ public class class947 extends class1196 implements class514 {
 			arg0.method2193(var3, this.field11713[0], var8.field7468);
 		}
 		if (this.field11133.field6680 != null) {
-			class119 var9 = this.field11133.field6680.method9965();
+			ParticleList var9 = this.field11133.field6680.method9965();
 			arg0.method2198(var9);
 		}
 		this.field11135 = var2.method1731() || this.field11133.field6680 != null;
@@ -85,7 +85,7 @@ public class class947 extends class1196 implements class514 {
 	public void method17373(class133 arg0) {
 		class116 var2 = this.field11133.method8238(arg0, 262144, true, true);
 		if (var2 != null) {
-			class423 var3 = this.method10536().field4298;
+			Vector3 var3 = this.method10536().field4298;
 			int var4 = (int) var3.field4308 >> 9;
 			int var5 = (int) var3.field4313 >> 9;
 			this.field11133.method8239(arg0, var2, this.method10533(), var4, var4, var5, var5, false);

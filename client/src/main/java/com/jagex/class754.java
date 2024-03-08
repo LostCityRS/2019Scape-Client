@@ -7,7 +7,7 @@ import java.util.*;
 import java.util.Map.Entry;
 
 @ObfuscatedName("abm")
-public class class754 implements class53, class757 {
+public class class754 implements ConfigType, class757 {
 
 	@ObfuscatedName("abm.e")
 	public ScriptVarType field8781;
@@ -34,7 +34,7 @@ public class class754 implements class53, class757 {
 	public HashMap field8782;
 
 	@ObfuscatedName("abm.e(Lalw;B)V")
-	public void method976(Packet arg0) {
+	public void decode(Packet arg0) {
 		while (true) {
 			int var2 = arg0.g1();
 			if (var2 == 0) {
@@ -191,7 +191,7 @@ public class class754 implements class53, class757 {
 	}
 
 	@ObfuscatedName("abm.n(I)V")
-	public void method975() {
+	public void postDecode() {
 	}
 
 	@ObfuscatedName("abm.z(IB)V")

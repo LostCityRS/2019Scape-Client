@@ -197,7 +197,7 @@ public class class586 {
 		if (var2 == 0) {
 			field7384 = true;
 		} else {
-			class1211.method9845(10 + class9.field423 + var2, new RuntimeException());
+			class1211.method9845(10 + TextUtil.COMMA + var2, new RuntimeException());
 		}
 		return 2;
 	}

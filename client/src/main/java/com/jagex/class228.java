@@ -4,13 +4,13 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("hs")
-public class class228 implements class53 {
+public class class228 implements ConfigType {
 
 	@ObfuscatedName("hs.e")
 	public final class229 field2368;
 
 	@ObfuscatedName("hs.n")
-	public final class51 field2412;
+	public final ConfigTypeList field2412;
 
 	@ObfuscatedName("hs.m")
 	public final int field2367;
@@ -136,19 +136,19 @@ public class class228 implements class53 {
 	public int field2374 = -1;
 
 	@ObfuscatedName("hs.ab")
-	public class729 field2411;
+	public IterableMap field2411;
 
 	@ObfuscatedName("hs.az")
 	public int field2384 = -1;
 
-	public class228(int arg0, class51 arg1, class229 arg2) {
+	public class228(int arg0, ConfigTypeList arg1, class229 arg2) {
 		this.field2367 = arg0;
 		this.field2412 = arg1;
 		this.field2368 = arg2;
 	}
 
 	@ObfuscatedName("hs.e(Lalw;B)V")
-	public void method976(Packet arg0) {
+	public void decode(Packet arg0) {
 		while (true) {
 			int var2 = arg0.g1();
 			if (var2 == 0) {
@@ -278,7 +278,7 @@ public class class228 implements class53 {
 			int var9 = arg0.g1();
 			if (this.field2411 == null) {
 				int var10 = class783.method16657(var9);
-				this.field2411 = new class729(var10);
+				this.field2411 = new IterableMap(var10);
 			}
 			for (int var11 = 0; var11 < var9; var11++) {
 				boolean var12 = arg0.g1() == 1;
@@ -295,7 +295,7 @@ public class class228 implements class53 {
 	}
 
 	@ObfuscatedName("hs.n(I)V")
-	public void method975() {
+	public void postDecode() {
 		if (this.field2393 == null) {
 			return;
 		}
@@ -449,10 +449,10 @@ public class class228 implements class53 {
 			}
 		}
 		if (var3 >= 0 && var3 < this.field2392.length - 1) {
-			return this.field2392[var3] == -1 ? null : (class228) this.field2412.method962(this.field2392[var3]);
+			return this.field2392[var3] == -1 ? null : (class228) this.field2412.get(this.field2392[var3]);
 		} else {
 			int var6 = this.field2392[this.field2392.length - 1];
-			return var6 == -1 ? null : (class228) this.field2412.method962(var6);
+			return var6 == -1 ? null : (class228) this.field2412.get(var6);
 		}
 	}
 }

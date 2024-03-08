@@ -26,7 +26,7 @@ public class class866 extends class159 {
 
 	@ObfuscatedName("agv.k(I)Z")
 	public boolean method2891() {
-		class164 var1 = (class164) Statics.field8797.method962(this.field10274);
+		class164 var1 = (class164) Statics.field8797.get(this.field10274);
 		return var1.method2991();
 	}
 }

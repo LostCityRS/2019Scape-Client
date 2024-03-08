@@ -254,7 +254,7 @@ public class class888 extends class234 {
 	}
 
 	@ObfuscatedName("agl.p(Laql;Lpq;)V")
-	public void method4089(class1150 arg0, class426 arg1) {
+	public void method4089(class1150 arg0, Matrix4x4 arg1) {
 		assert arg0.method19247() == class236.field2480;
 		int var3 = ((class1221) arg0).method19681();
 		if (var3 != -1) {
@@ -263,7 +263,7 @@ public class class888 extends class234 {
 	}
 
 	@ObfuscatedName("agl.d(Laql;Lpq;)V")
-	public void method4101(class1150 arg0, class426 arg1) {
+	public void method4101(class1150 arg0, Matrix4x4 arg1) {
 		assert arg0.method19247() == class236.field2482;
 		int var3 = ((class1221) arg0).method19681();
 		if (var3 != -1) {
@@ -309,17 +309,17 @@ public class class888 extends class234 {
 	}
 
 	@ObfuscatedName("agl.s(ILpq;)V")
-	public void method4094(int arg0, class426 arg1) {
+	public void method4094(int arg0, Matrix4x4 arg1) {
 		OpenGL.glUniform3fv(arg0, 3, arg1.method6699(field10380), 0);
 	}
 
 	@ObfuscatedName("agl.y(ILpq;)V")
-	public void method4095(int arg0, class426 arg1) {
+	public void method4095(int arg0, Matrix4x4 arg1) {
 		OpenGL.glUniform2fv(arg0, 4, arg1.method6682(field10380), 0);
 	}
 
 	@ObfuscatedName("agl.q(ILpq;)V")
-	public void method4096(int arg0, class426 arg1) {
+	public void method4096(int arg0, Matrix4x4 arg1) {
 		OpenGL.glUniform4fv(arg0, 4, arg1.method6594(field10380), 0);
 	}
 

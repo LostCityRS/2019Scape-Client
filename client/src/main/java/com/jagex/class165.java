@@ -3,13 +3,13 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("fm")
-public class class165 implements class53, class757 {
+public class class165 implements ConfigType, class757 {
 
 	@ObfuscatedName("fm.e")
 	public boolean[] field1793;
 
 	@ObfuscatedName("fm.e(Lalw;B)V")
-	public void method976(Packet arg0) {
+	public void decode(Packet arg0) {
 		while (true) {
 			int var2 = arg0.g1();
 			if (var2 == 0) {
@@ -38,7 +38,7 @@ public class class165 implements class53, class757 {
 	}
 
 	@ObfuscatedName("fm.n(I)V")
-	public void method975() {
+	public void postDecode() {
 	}
 
 	@ObfuscatedName("fm.z(IB)V")

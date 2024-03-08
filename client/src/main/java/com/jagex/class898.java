@@ -10,7 +10,7 @@ public final class class898 extends class286 {
 	}
 
 	@ObfuscatedName("ahf.e(Lpq;)V")
-	public void method5038(class426 arg0) {
+	public void method5038(Matrix4x4 arg0) {
 		this.field2986.method15967(arg0, this.field2986.field10059, this.field2986.field10079);
 	}
 

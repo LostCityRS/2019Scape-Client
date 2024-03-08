@@ -39,7 +39,7 @@ public class class55 {
 	public boolean field834 = true;
 
 	@ObfuscatedName("az.r")
-	public class426 field829 = new class426();
+	public Matrix4x4 field829 = new Matrix4x4();
 
 	@ObfuscatedName("az.v")
 	public class419 field836 = new class419();
@@ -51,10 +51,10 @@ public class class55 {
 	public class419 field838 = new class419();
 
 	@ObfuscatedName("az.y")
-	public class426 field828 = new class426();
+	public Matrix4x4 field828 = new Matrix4x4();
 
 	@ObfuscatedName("az.q")
-	public class426 field868 = new class426();
+	public Matrix4x4 field868 = new Matrix4x4();
 
 	@ObfuscatedName("az.x")
 	public int[] field841 = new int[class842.field9547];

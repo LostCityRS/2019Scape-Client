@@ -12,7 +12,7 @@ public class class899 extends class286 {
 	public class1150 field10512;
 
 	@ObfuscatedName("ahr.p")
-	public final class426 field10506 = new class426();
+	public final Matrix4x4 field10506 = new Matrix4x4();
 
 	@ObfuscatedName("ahr.d")
 	public class1150 field10507;
@@ -69,7 +69,7 @@ public class class899 extends class286 {
 	}
 
 	@ObfuscatedName("ahr.e(Lpq;)V")
-	public void method5038(class426 arg0) {
+	public void method5038(Matrix4x4 arg0) {
 		this.field10506.method6604(arg0);
 		this.field10506.method6720(this.field2986.field10081);
 	}

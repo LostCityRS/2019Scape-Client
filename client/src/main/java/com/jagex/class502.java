@@ -297,8 +297,8 @@ public class class502 {
 				}
 			}
 		} else if (arg11) {
-			class426 var23 = arg0.method2355();
-			class426 var24 = arg0.method2355();
+			Matrix4x4 var23 = arg0.method2355();
+			Matrix4x4 var24 = arg0.method2355();
 			var23.field4315[2] = var23.field4315[3];
 			var23.field4315[6] = var23.field4315[7];
 			var23.field4315[10] = var23.field4315[11];

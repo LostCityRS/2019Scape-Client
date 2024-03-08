@@ -12,7 +12,7 @@ public class class311 {
 	public long field3146 = -1L;
 
 	@ObfuscatedName("kc.m")
-	public class715 field3141 = new class715();
+	public IterableQueue field3141 = new IterableQueue();
 
 	public class311(Packet arg0) {
 		this.method5343(arg0);

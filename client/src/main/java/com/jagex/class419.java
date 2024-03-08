@@ -408,7 +408,7 @@ public class class419 {
 	}
 
 	@ObfuscatedName("ou.b(Lox;)V")
-	public void method6311(class423 arg0) {
+	public void method6311(Vector3 arg0) {
 		this.method6348(arg0.field4308, arg0.field4311, arg0.field4313);
 	}
 
@@ -445,7 +445,7 @@ public class class419 {
 	}
 
 	@ObfuscatedName("ou.g(Lox;)V")
-	public void method6314(class423 arg0) {
+	public void method6314(Vector3 arg0) {
 		this.method6315(arg0.field4308, arg0.field4311, arg0.field4313);
 	}
 

@@ -26,7 +26,7 @@ public class class36 implements class147, class151, class644 {
 
 	@ObfuscatedName("ah.e(IB)I")
 	public int method671(int arg0) {
-		return this.field635[arg0].method10163(client.field10948 ? class697.field8343 : class697.field8344);
+		return this.field635[arg0].method10163(client.field10948 ? ModeAccountType.field8343 : ModeAccountType.field8344);
 	}
 
 	@ObfuscatedName("ah.n(II)I")
@@ -36,7 +36,7 @@ public class class36 implements class147, class151, class644 {
 
 	@ObfuscatedName("ah.m(II)I")
 	public int method674(int arg0) {
-		return this.field635[arg0].method10158(client.field10948 ? class697.field8343 : class697.field8344);
+		return this.field635[arg0].method10158(client.field10948 ? ModeAccountType.field8343 : ModeAccountType.field8344);
 	}
 
 	@ObfuscatedName("ah.k(II)I")
@@ -51,12 +51,12 @@ public class class36 implements class147, class151, class644 {
 
 	@ObfuscatedName("ah.w(Lqe;II)Lec;")
 	public class149 method695(class455 arg0, int arg1) {
-		return class455.field4594 == arg0 ? (class149) this.field633.method962(arg1) : null;
+		return class455.field4594 == arg0 ? (class149) this.field633.get(arg1) : null;
 	}
 
 	@ObfuscatedName("ah.l(IB)Lkh;")
 	public class305 method694(int arg0) {
-		class305 var2 = (class305) this.field634.method962(arg0);
+		class305 var2 = (class305) this.field634.get(arg0);
 		return class455.field4594 == var2.field3076.field1702 ? var2 : null;
 	}
 

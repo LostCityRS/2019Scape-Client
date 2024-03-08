@@ -9,7 +9,7 @@ public abstract class class651 {
 	public class442 field7960;
 
 	@ObfuscatedName("xd.n")
-	public final class162 field7959 = new class162(2);
+	public final WeightedCache field7959 = new WeightedCache(2);
 
 	public class651(class442 arg0) {
 		this.field7960 = arg0;
@@ -17,7 +17,7 @@ public abstract class class651 {
 
 	@ObfuscatedName("xd.e(I)V")
 	public void method10287() {
-		class162 var1 = this.field7959;
+		WeightedCache var1 = this.field7959;
 		synchronized (this.field7959) {
 			this.field7959.method2924();
 		}
@@ -25,7 +25,7 @@ public abstract class class651 {
 
 	@ObfuscatedName("xd.n(II)V")
 	public void method10291(int arg0) {
-		class162 var2 = this.field7959;
+		WeightedCache var2 = this.field7959;
 		synchronized (this.field7959) {
 			this.field7959.method2923(arg0);
 		}
@@ -33,7 +33,7 @@ public abstract class class651 {
 
 	@ObfuscatedName("xd.m(I)V")
 	public void method10289() {
-		class162 var1 = this.field7959;
+		WeightedCache var1 = this.field7959;
 		synchronized (this.field7959) {
 			this.field7959.method2928();
 		}

@@ -39,7 +39,7 @@ public interface class614 {
 	void method9671(boolean arg0);
 
 	@ObfuscatedName("wr.n(B)Lrw;")
-	class476 method9710();
+	Sound method9710();
 
 	@ObfuscatedName("wr.s(S)Z")
 	boolean method9687();

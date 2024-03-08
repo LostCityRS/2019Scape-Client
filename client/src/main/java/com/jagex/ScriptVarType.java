@@ -607,7 +607,7 @@ public class ScriptVarType implements SerializableEnum, class466 {
 		if (Statics.field4825 == null) {
 			Statics.field4825 = new ScriptVarType[256];
 		}
-		Statics.field4825[class693.method16904(arg0.field4667) & 0xFF] = arg0;
+		Statics.field4825[Cp1252.method16904(arg0.field4667) & 0xFF] = arg0;
 	}
 
 	@ObfuscatedName("qw.f(B)Lqa;")

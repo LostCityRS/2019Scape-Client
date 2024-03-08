@@ -850,7 +850,7 @@ public abstract class class116 {
 			if (arg1 == null) {
 				return;
 			}
-			class426 var19 = class426.method6641();
+			Matrix4x4 var19 = Matrix4x4.method6641();
 			var19.method6608(arg5, arg4, arg6);
 			if (arg1.field1239 != null) {
 				var19.method6720(arg1.field1239.method1565(arg2));

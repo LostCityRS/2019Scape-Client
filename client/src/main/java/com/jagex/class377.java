@@ -9,7 +9,7 @@ public class class377 implements class378 {
 	public class442 field3536;
 
 	@ObfuscatedName("no.n")
-	public class162 field3537 = new class162(64);
+	public WeightedCache field3537 = new WeightedCache(64);
 
 	public class377(class442 arg0) {
 		this.field3536 = arg0;

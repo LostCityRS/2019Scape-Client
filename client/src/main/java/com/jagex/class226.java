@@ -61,16 +61,16 @@ public class class226 {
 	public static int field2172 = 1411;
 
 	@ObfuscatedName("hf.t")
-	public static class162 field2175 = new class162(6000000, 200);
+	public static WeightedCache field2175 = new WeightedCache(6000000, 200);
 
 	@ObfuscatedName("hf.ae")
-	public static class162 field2176 = new class162(8);
+	public static WeightedCache field2176 = new WeightedCache(8);
 
 	@ObfuscatedName("hf.ag")
-	public static class162 field2177 = new class162(4);
+	public static WeightedCache field2177 = new WeightedCache(4);
 
 	@ObfuscatedName("hf.ah")
-	public static class162 field2297 = new class162(50);
+	public static WeightedCache field2297 = new WeightedCache(50);
 
 	@ObfuscatedName("hf.ac")
 	public static boolean field2338 = false;
@@ -523,7 +523,7 @@ public class class226 {
 	public Object[] field2332;
 
 	@ObfuscatedName("hf.gl")
-	public class729 field2333;
+	public IterableMap field2333;
 
 	@ObfuscatedName("hf.go")
 	public int field2334 = -1;
@@ -610,7 +610,7 @@ public class class226 {
 	public int[] field2361;
 
 	@ObfuscatedName("hf.hl")
-	public class634 field2254;
+	public ParticleSystem field2254;
 
 	@ObfuscatedName("hf.hg")
 	public class259 field2363;
@@ -1096,7 +1096,7 @@ public class class226 {
 			var32.method1690(var12);
 			return var32;
 		} else if (this.field2224 == 2) {
-			class116 var36 = ((class260) arg4.method962(this.field2294)).method4544(arg0, arg1, arg7, arg8, arg9, this.field2363);
+			class116 var36 = ((class260) arg4.get(this.field2294)).method4544(arg0, arg1, arg7, arg8, arg9, this.field2363);
 			if (var36 == null) {
 				field2338 = true;
 				return null;
@@ -1115,7 +1115,7 @@ public class class226 {
 				return var37;
 			}
 		} else if (this.field2224 == 4) {
-			class738 var38 = (class738) arg5.method962(this.field2294);
+			class738 var38 = (class738) arg5.get(this.field2294);
 			class116 var39 = var38.method14644(arg0, arg1, 10, arg10, arg9, 0, 0, 0, 0);
 			if (var39 == null) {
 				field2338 = true;
@@ -1124,7 +1124,7 @@ public class class226 {
 				return var39;
 			}
 		} else if (this.field2224 == 6) {
-			class116 var40 = ((class260) arg4.method962(this.field2294)).method4542(arg0, arg1, arg2, arg7, arg8, arg9, null, null, null, 0, this.field2363);
+			class116 var40 = ((class260) arg4.get(this.field2294)).method4542(arg0, arg1, arg2, arg7, arg8, arg9, null, null, null, 0, this.field2363);
 			if (var40 == null) {
 				field2338 = true;
 				return null;
@@ -1155,7 +1155,7 @@ public class class226 {
 		class128[] var5 = arg1.method1750();
 		class102[] var6 = arg1.method1765();
 		if ((this.field2254 == null || this.field2254.field7804) && (var5 != null || var6 != null)) {
-			this.field2254 = class634.method9962(arg3, false);
+			this.field2254 = ParticleSystem.method9962(arg3, false);
 		}
 		if (this.field2254 != null) {
 			this.field2254.method9936(arg0, (long) arg3, var5, var6, false);
@@ -1369,7 +1369,7 @@ public class class226 {
 	@ObfuscatedName("hf.ah(III)V")
 	public void method3952(int arg0, int arg1) {
 		if (this.field2333 == null) {
-			this.field2333 = new class729(16);
+			this.field2333 = new IterableMap(16);
 			this.field2333.method14501(new class988(arg1), (long) arg0);
 			return;
 		}
@@ -1384,7 +1384,7 @@ public class class226 {
 	@ObfuscatedName("hf.al(ILjava/lang/String;I)V")
 	public void method4003(int arg0, String arg1) {
 		if (this.field2333 == null) {
-			this.field2333 = new class729(16);
+			this.field2333 = new IterableMap(16);
 			this.field2333.method14501(new class984(arg1), (long) arg0);
 			return;
 		}

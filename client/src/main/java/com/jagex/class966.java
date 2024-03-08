@@ -6,5 +6,5 @@ import deob.ObfuscatedName;
 public class class966 extends class532 {
 
 	@ObfuscatedName("ajm.k")
-	public class715 field11263 = new class715();
+	public IterableQueue field11263 = new IterableQueue();
 }

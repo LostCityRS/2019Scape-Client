@@ -16,7 +16,7 @@ public class class797 {
 	@ObfuscatedName("adg.k")
 	public final int field9209;
 
-	public class797(class696 arg0, class687 arg1, class442 arg2) {
+	public class797(ModeGame arg0, Language arg1, class442 arg2) {
 		this.field9207 = arg2;
 		Packet var4 = new Packet(this.field9207.method6879(0, 0));
 		int var5 = var4.data == null || var4.data.length < 1 ? -1 : var4.g1();

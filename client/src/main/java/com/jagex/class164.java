@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("fg")
-public class class164 implements class53 {
+public class class164 implements ConfigType {
 
 	@ObfuscatedName("fg.e")
 	public static boolean field1775 = false;
@@ -78,7 +78,7 @@ public class class164 implements class53 {
 	public int[] field1790;
 
 	@ObfuscatedName("fg.j")
-	public class729 field1785;
+	public IterableMap field1785;
 
 	@ObfuscatedName("fg.t")
 	public int field1783 = -1;
@@ -89,7 +89,7 @@ public class class164 implements class53 {
 	}
 
 	@ObfuscatedName("fg.e(Lalw;B)V")
-	public void method976(Packet arg0) {
+	public void decode(Packet arg0) {
 		while (true) {
 			int var2 = arg0.g1();
 			if (var2 == 0) {
@@ -200,7 +200,7 @@ public class class164 implements class53 {
 			} else if (arg1 == 24) {
 				this.field1787 = arg0.g2();
 				if (this.field1774 != null) {
-					this.field1792 = (class165) this.field1774.field1795.method962(this.field1787);
+					this.field1792 = (class165) this.field1774.field1795.get(this.field1787);
 				}
 			} else if (arg1 == 25) {
 				this.field1784 = arg0.g2();
@@ -208,7 +208,7 @@ public class class164 implements class53 {
 				int var11 = arg0.g1();
 				if (this.field1785 == null) {
 					int var12 = class783.method16657(var11);
-					this.field1785 = new class729(var12);
+					this.field1785 = new IterableMap(var12);
 				}
 				for (int var13 = 0; var13 < var11; var13++) {
 					boolean var14 = arg0.g1() == 1;
@@ -226,7 +226,7 @@ public class class164 implements class53 {
 	}
 
 	@ObfuscatedName("fg.n(I)V")
-	public void method975() {
+	public void postDecode() {
 		if (this.field1767 == -1) {
 			if (this.field1792 == null || this.field1792.field1793 == null) {
 				this.field1767 = 0;

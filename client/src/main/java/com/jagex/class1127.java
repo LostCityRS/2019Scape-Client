@@ -14,25 +14,25 @@ public final class class1127 extends class850 {
 	public OpenGL field12020;
 
 	@ObfuscatedName("aqv.hq")
-	public class715 field12011 = new class715();
+	public IterableQueue field12011 = new IterableQueue();
 
 	@ObfuscatedName("aqv.hf")
-	public class715 field12000 = new class715();
+	public IterableQueue field12000 = new IterableQueue();
 
 	@ObfuscatedName("aqv.hr")
-	public class715 field12023 = new class715();
+	public IterableQueue field12023 = new IterableQueue();
 
 	@ObfuscatedName("aqv.hs")
-	public class715 field12035 = new class715();
+	public IterableQueue field12035 = new IterableQueue();
 
 	@ObfuscatedName("aqv.hh")
-	public class715 field12003 = new class715();
+	public IterableQueue field12003 = new IterableQueue();
 
 	@ObfuscatedName("aqv.hp")
-	public class715 field12004 = new class715();
+	public IterableQueue field12004 = new IterableQueue();
 
 	@ObfuscatedName("aqv.hy")
-	public class715 field12005 = new class715();
+	public IterableQueue field12005 = new IterableQueue();
 
 	@ObfuscatedName("aqv.he")
 	public long field12006;
@@ -706,7 +706,7 @@ public final class class1127 extends class850 {
 	}
 
 	@ObfuscatedName("aqv.rn(Lpq;Lpq;Lpq;)V")
-	public void method15967(class426 arg0, class426 arg1, class426 arg2) {
+	public void method15967(Matrix4x4 arg0, Matrix4x4 arg1, Matrix4x4 arg2) {
 		OpenGL.glMatrixMode(5888);
 		this.field10066.method6606(arg0, arg1);
 		OpenGL.glLoadMatrixf(this.field10066.field4315, 0);
@@ -715,7 +715,7 @@ public final class class1127 extends class850 {
 	}
 
 	@ObfuscatedName("aqv.ti(Lpq;)V")
-	public void method16006(class426 arg0) {
+	public void method16006(Matrix4x4 arg0) {
 		float[] var2 = arg0.field4315;
 		var2[1] = -var2[1];
 		var2[5] = -var2[5];

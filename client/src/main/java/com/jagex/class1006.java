@@ -12,10 +12,10 @@ import java.awt.event.KeyListener;
 public final class class1006 extends class563 implements KeyListener, FocusListener {
 
 	@ObfuscatedName("alg.do")
-	public class715 field11681 = new class715();
+	public IterableQueue field11681 = new IterableQueue();
 
 	@ObfuscatedName("alg.dz")
-	public class715 field11682 = new class715();
+	public IterableQueue field11682 = new IterableQueue();
 
 	@ObfuscatedName("alg.dv")
 	public boolean[] field11683 = new boolean[112];
@@ -184,7 +184,7 @@ public final class class1006 extends class563 implements KeyListener, FocusListe
 
 	public synchronized void keyTyped(KeyEvent arg0) {
 		char var2 = arg0.getKeyChar();
-		if (var2 != 65535 && class693.method231(var2)) {
+		if (var2 != 65535 && Cp1252.method231(var2)) {
 			this.method18264(3, var2, -1);
 			arg0.consume();
 		}

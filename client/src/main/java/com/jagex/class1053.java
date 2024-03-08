@@ -15,7 +15,7 @@ public class class1053 extends class709 {
 
 	@ObfuscatedName("anm.o(I)V")
 	public void method18643() {
-		if (this.field8417.method18159() == class696.field8334) {
+		if (this.field8417.method18159() == ModeGame.field8334) {
 			this.field8416 = 2;
 		}
 		if (this.field8416 < 0 || this.field8416 > 2) {

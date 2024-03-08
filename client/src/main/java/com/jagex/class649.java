@@ -8,7 +8,7 @@ import java.util.Iterator;
 public abstract class class649 {
 
 	@ObfuscatedName("xb.e")
-	public final class715 field7955 = new class715();
+	public final IterableQueue field7955 = new IterableQueue();
 
 	@ObfuscatedName("xb.n")
 	public long field7952 = -1L;

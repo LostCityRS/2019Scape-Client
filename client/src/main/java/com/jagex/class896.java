@@ -10,7 +10,7 @@ public class class896 extends class285 {
 	}
 
 	@ObfuscatedName("ahl.n(Lpq;)V")
-	public void method5018(class426 arg0) {
+	public void method5018(Matrix4x4 arg0) {
 		this.field2963.method15967(arg0, this.field2963.field10059, this.field2963.field10079);
 	}
 

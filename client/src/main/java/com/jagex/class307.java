@@ -16,7 +16,7 @@ public abstract class class307 {
 	public abstract boolean method5218();
 
 	@ObfuscatedName("kl.m(B)Lox;")
-	public abstract class423 method5219();
+	public abstract Vector3 method5219();
 
 	@ObfuscatedName("kl.f(B)Lakt;")
 	public abstract CoordFine method5221();

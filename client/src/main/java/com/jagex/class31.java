@@ -7,7 +7,7 @@ import deob.Statics;
 public class class31 {
 
 	@ObfuscatedName("i.e")
-	public static class162 field617 = new class162(32);
+	public static WeightedCache field617 = new WeightedCache(32);
 
 	public class31() throws Throwable {
 		throw new Error();
@@ -24,7 +24,7 @@ public class class31 {
 			var12 = var13 & 0xFFFFFDFF;
 		}
 		long var14 = ((long) arg8 << 48) + ((long) arg7 << 32) + (long) ((arg10 << 24) + (arg9 << 16) + arg5);
-		class162 var16 = field617;
+		WeightedCache var16 = field617;
 		class116 var17;
 		synchronized (field617) {
 			var17 = (class116) field617.method2930(var14);
@@ -64,7 +64,7 @@ public class class31 {
 				}
 			}
 			var17 = arg0.method2211(var22, var12, Statics.field616, 64, 768);
-			class162 var38 = field617;
+			WeightedCache var38 = field617;
 			synchronized (field617) {
 				field617.method2921(var17, var14);
 			}
@@ -107,7 +107,7 @@ public class class31 {
 			var9 = var10 & 0xFFFFFDFF;
 		}
 		long var11 = (long) ((arg6 & 0xFFFF) << 8 | arg7);
-		class162 var13 = field617;
+		WeightedCache var13 = field617;
 		class116 var14;
 		synchronized (field617) {
 			var14 = (class116) field617.method2930(var11);
@@ -124,7 +124,7 @@ public class class31 {
 			var16.method1938((short) 1, (short) 2, (short) 0);
 			var16.method1938((short) 2, (short) 3, (short) 0);
 			var14 = arg0.method2211(var16, var9, Statics.field616, 64, 768);
-			class162 var19 = field617;
+			WeightedCache var19 = field617;
 			synchronized (field617) {
 				field617.method2921(var14, var11);
 			}
@@ -159,7 +159,7 @@ public class class31 {
 	@ObfuscatedName("ajb.m(II)V")
 	public static void method17441(int arg0) {
 		Statics.field616 = arg0;
-		class162 var1 = field617;
+		WeightedCache var1 = field617;
 		synchronized (field617) {
 			field617.method2924();
 		}
@@ -167,7 +167,7 @@ public class class31 {
 
 	@ObfuscatedName("ft.k(I)V")
 	public static void method3076() {
-		class162 var0 = field617;
+		WeightedCache var0 = field617;
 		synchronized (field617) {
 			field617.method2924();
 		}
@@ -175,7 +175,7 @@ public class class31 {
 
 	@ObfuscatedName("vg.f(IB)V")
 	public static void method9467(int arg0) {
-		class162 var1 = field617;
+		WeightedCache var1 = field617;
 		synchronized (field617) {
 			field617.method2923(arg0);
 		}
@@ -183,7 +183,7 @@ public class class31 {
 
 	@ObfuscatedName("kh.w(B)V")
 	public static void method5201() {
-		class162 var0 = field617;
+		WeightedCache var0 = field617;
 		synchronized (field617) {
 			field617.method2928();
 		}

@@ -22,10 +22,10 @@ public class class280 {
 	@ObfuscatedName("jb.e(I)V")
 	public static void method4883() {
 		field2944 = true;
-		Statics.field8535 = class10.field470;
-		Statics.field4407 = class10.field481;
+		Statics.field8535 = LoginManager.field470;
+		Statics.field4407 = LoginManager.field481;
 		client.method9620(false);
-		class432.method3670();
+		LoadableResourceManager.method3670();
 		Statics.field2938 = null;
 		Statics.field1833 = null;
 		client.method6972(5);
@@ -62,7 +62,7 @@ public class class280 {
 			client.method6972(4);
 			if (field2944) {
 				field2944 = false;
-				class10.method665(Statics.field8535, Statics.field4407, "", false);
+				LoginManager.method665(Statics.field8535, Statics.field4407, "", false);
 			}
 		} else {
 			Statics.field2942 = var0.field2922.method15021(Statics.field1680);
@@ -281,7 +281,7 @@ public class class280 {
 			if (var17 == null) {
 				return 0;
 			}
-			Statics.field1798 = new class183();
+			Statics.field1798 = new AudioApi();
 			Statics.field1798.method3148(50, 7340032);
 			method714(var17);
 			client.method6972(1);
@@ -291,7 +291,7 @@ public class class280 {
 			class500.method14694(Statics.field10577);
 		}
 		if (Statics.field3419 == class277.field2902) {
-			int var18 = class432.method5140();
+			int var18 = LoadableResourceManager.method5140();
 			if (var18 < 100) {
 				return var18;
 			}
@@ -377,7 +377,7 @@ public class class280 {
 			}
 		}
 		if (Statics.field3419 == class277.field2914) {
-			class541.method8506(Statics.field10752, Statics.field8332, Statics.field8168, Statics.field8145, client.field10855.method7750(), Statics.field5011, Statics.field4241, Statics.field7410, Statics.field7410);
+			WorldMap.method8506(Statics.field10752, Statics.field8332, Statics.field8168, Statics.field8145, client.field10855.method7750(), Statics.field5011, Statics.field4241, Statics.field7410, Statics.field7410);
 		}
 		if (Statics.field3419 == class277.field2915) {
 			Statics.field7228 = new class861(Statics.field8911);

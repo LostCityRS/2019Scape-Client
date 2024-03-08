@@ -715,7 +715,7 @@ public class class495 {
 			this.field5025 = this.field5018;
 		}
 		this.field5018 = new class594(0, (this.field5022 - (this.field5028 >> 4)) * 8, (this.field5059 - (this.field5043 >> 4)) * 8);
-		this.field5035 = class541.method8511(this.field5028 / 2 + this.field5018.field7426, this.field5028 / 2 + this.field5018.field7427);
+		this.field5035 = WorldMap.method8511(this.field5028 / 2 + this.field5018.field7426, this.field5028 / 2 + this.field5018.field7427);
 		this.field5058 = null;
 		this.field5060 = -1L;
 		if (!this.field5036) {
@@ -736,7 +736,7 @@ public class class495 {
 						var6.field10450[var7] -= var2;
 						var6.field10448[var7] -= var3;
 					}
-					class423 var8 = class423.method6484(var6.method10536().field4298);
+					Vector3 var8 = Vector3.method6484(var6.method10536().field4298);
 					var8.field4308 -= var2 * 512;
 					var8.field4313 -= var3 * 512;
 					var6.method10531(var8);
@@ -752,7 +752,7 @@ public class class495 {
 				class984 var13 = client.field10839[var12];
 				if (var13 != null) {
 					class1131 var14 = (class1131) var13.field11436;
-					class423 var15 = class423.method6484(var14.method10536().field4298);
+					Vector3 var15 = Vector3.method6484(var14.method10536().field4298);
 					var15.field4308 -= var2 * 512;
 					var15.field4313 -= var3 * 512;
 					var14.method10531(var15);
@@ -797,7 +797,7 @@ public class class495 {
 					var22.field10450[var23] -= var2;
 					var22.field10448[var23] -= var3;
 				}
-				class423 var24 = class423.method6484(var22.method10536().field4298);
+				Vector3 var24 = Vector3.method6484(var22.method10536().field4298);
 				var24.field4308 -= var2 * 512;
 				var24.field4313 -= var3 * 512;
 				var22.method10531(var24);
@@ -815,7 +815,7 @@ public class class495 {
 		for (class962 var28 = (class962) class962.field11237.method14191(); var28 != null; var28 = (class962) class962.field11237.method14161()) {
 			var28.field11226 -= var2;
 			var28.field11228 -= var3;
-			class598 var29 = (class598) this.field5039.method962(var28.field11234);
+			class598 var29 = (class598) this.field5039.get(var28.field11234);
 			int var30;
 			int var31;
 			if ((var28.field11235 & 0x1) == 0) {
@@ -832,7 +832,7 @@ public class class495 {
 		for (class962 var32 = (class962) class962.field11242.method14191(); var32 != null; var32 = (class962) class962.field11242.method14161()) {
 			var32.field11226 -= var2;
 			var32.field11228 -= var3;
-			class598 var33 = (class598) this.field5039.method962(var32.field11234);
+			class598 var33 = (class598) this.field5039.get(var32.field11234);
 			int var34;
 			int var35;
 			if ((var32.field11235 & 0x1) == 0) {
@@ -1003,7 +1003,7 @@ public class class495 {
 			return false;
 		}
 		if (!this.field5036 && class491.field5007 != this.field5026) {
-			class41.method649(class776.field9044.method15021(Statics.field1680) + class9.field426 + "(100%)", true, Statics.field8198, Statics.field9184, Statics.field2657);
+			class41.method649(class776.field9044.method15021(Statics.field1680) + TextUtil.BR + "(100%)", true, Statics.field8198, Statics.field9184, Statics.field2657);
 		}
 		this.field5026 = class491.field5008;
 		if (!this.field5036 && Statics.field1798 != null) {
@@ -1404,7 +1404,7 @@ public class class495 {
 					int var11 = var8 & 0x3F;
 					int var12 = (this.field5054[var2] >> 8) * 64 - this.field5018.field7426 + var10;
 					int var13 = (this.field5054[var2] & 0xFF) * 64 - this.field5018.field7427 + var11;
-					class260 var14 = (class260) Statics.field7961.method962(var5.g2());
+					class260 var14 = (class260) Statics.field7961.get(var5.g2());
 					class984 var15 = (class984) client.field10838.method14495((long) var7);
 					if (var15 == null && (var14.field2743 & 0x1) > 0 && var12 >= 0 && var14.field2699 + var12 < this.field5028 && var13 >= 0 && var14.field2699 + var13 < this.field5043) {
 						class1131 var16 = new class1131(this.field5030);

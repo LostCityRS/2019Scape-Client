@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("uv")
-public class class568 implements class53, class757 {
+public class class568 implements ConfigType, class757 {
 
 	@ObfuscatedName("uv.e")
 	public int field7233 = 0;
@@ -21,7 +21,7 @@ public class class568 implements class53, class757 {
 	public int field7236 = 0;
 
 	@ObfuscatedName("uv.e(Lalw;B)V")
-	public void method976(Packet arg0) {
+	public void decode(Packet arg0) {
 		while (true) {
 			int var2 = arg0.g1();
 			if (var2 == 0) {
@@ -56,17 +56,17 @@ public class class568 implements class53, class757 {
 	}
 
 	@ObfuscatedName("uv.n(I)V")
-	public void method975() {
+	public void postDecode() {
 	}
 
 	@ObfuscatedName("d.p(IIIILao;Lao;I)Lsv;")
-	public static class502 method305(int arg0, int arg1, int arg2, int arg3, class51 arg4, class51 arg5) {
+	public static class502 method305(int arg0, int arg1, int arg2, int arg3, ConfigTypeList arg4, ConfigTypeList arg5) {
 		class503[] var6 = null;
-		class568 var7 = (class568) arg4.method962(arg0);
+		class568 var7 = (class568) arg4.get(arg0);
 		if (var7.field7232 != null) {
 			var6 = new class503[var7.field7232.length];
 			for (int var8 = 0; var8 < var6.length; var8++) {
-				class262 var9 = (class262) arg5.method962(var7.field7232[var8]);
+				class262 var9 = (class262) arg5.get(var7.field7232[var8]);
 				var6[var8] = new class503(var9.field2780, var9.field2778, var9.field2783, var9.field2779, var9.field2777, var9.field2776, var9.field2782, var9.field2781, var9.field2784, var9.field2785, var9.field2786);
 			}
 		}

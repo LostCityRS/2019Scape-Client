@@ -101,7 +101,7 @@ public class class821 extends class74 {
 
 	@ObfuscatedName("aes.b()V")
 	public void method15343() {
-		class426 var1 = this.field1021.field9903;
+		Matrix4x4 var1 = this.field1021.field9903;
 		if (this.field9317) {
 			OpenGL.glBindProgramARB(34336, this.field1021.field10028 == Integer.MAX_VALUE ? this.field9315.field1024 : this.field9321.field1024);
 		} else {

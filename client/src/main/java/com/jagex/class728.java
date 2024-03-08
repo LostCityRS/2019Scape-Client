@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aaz")
-public class class728 implements class53, class757 {
+public class class728 implements ConfigType, class757 {
 
 	@ObfuscatedName("aaz.e")
 	public int field8547 = 0;
@@ -33,7 +33,7 @@ public class class728 implements class53, class757 {
 	public int field8549;
 
 	@ObfuscatedName("aaz.e(Lalw;B)V")
-	public void method976(Packet arg0) {
+	public void decode(Packet arg0) {
 		while (true) {
 			int var2 = arg0.g1();
 			if (var2 == 0) {
@@ -124,7 +124,7 @@ public class class728 implements class53, class757 {
 	}
 
 	@ObfuscatedName("aaz.n(I)V")
-	public void method975() {
+	public void postDecode() {
 	}
 
 	@ObfuscatedName("aaz.z(IB)V")

@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("aox")
 public class class1097 extends class758 {
 
-	public class1097(class696 arg0, class687 arg1, class442 arg2, class442 arg3) {
+	public class1097(ModeGame arg0, Language arg1, class442 arg2, class442 arg3) {
 		super(arg0, arg1, arg2, class655.field8006, 64, new class1103(arg3, 64));
 	}
 

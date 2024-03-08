@@ -7,10 +7,10 @@ import deob.Statics;
 public class class961 extends class532 {
 
 	@ObfuscatedName("ajo.k")
-	public static final class729 field11220 = new class729(32);
+	public static final IterableMap field11220 = new IterableMap(32);
 
 	@ObfuscatedName("ajo.f")
-	public static final class162 field11221 = new class162(10);
+	public static final WeightedCache field11221 = new WeightedCache(10);
 
 	@ObfuscatedName("ajo.l")
 	public int[] field11223 = new int[] { -1 };
@@ -47,7 +47,7 @@ public class class961 extends class532 {
 
 	@ObfuscatedName("adr.m(IIIZB)I")
 	public static int method15241(int arg0, int arg1, int arg2, boolean arg3) {
-		class305 var4 = (class305) Statics.field8736.method962(arg2);
+		class305 var4 = (class305) Statics.field8736.get(arg2);
 		class149 var5 = var4.field3076;
 		class961 var6 = Statics.method8358(arg0, arg3);
 		int var7;
@@ -86,8 +86,8 @@ public class class961 extends class532 {
 		int var5 = 0;
 		for (int var6 = 0; var6 < var4.field11223.length; var6++) {
 			if (var4.field11223[var6] >= 0 && var4.field11223[var6] < Statics.field1842.field8794) {
-				class738 var7 = (class738) Statics.field1842.method962(var4.field11223[var6]);
-				int var8 = var7.method14677(arg1, ((class789) Statics.field3086.method962(arg1)).field9172);
+				class738 var7 = (class738) Statics.field1842.get(var4.field11223[var6]);
+				int var8 = var7.method14677(arg1, ((class789) Statics.field3086.get(arg1)).field9172);
 				if (arg2) {
 					var5 += var4.field11224[var6] * var8;
 				} else if (var4.field11224[var6] > 0) {
@@ -105,7 +105,7 @@ public class class961 extends class532 {
 		}
 		class961 var2 = Statics.method8358(arg0, arg1);
 		if (var2 == null) {
-			return ((class810) Statics.field7762.method962(arg0)).field9263;
+			return ((class810) Statics.field7762.get(arg0)).field9263;
 		}
 		int var3 = 0;
 		for (int var4 = 0; var4 < var2.field11223.length; var4++) {
@@ -113,7 +113,7 @@ public class class961 extends class532 {
 				var3++;
 			}
 		}
-		return var3 + (((class810) Statics.field7762.method962(arg0)).field9263 - var2.field11223.length);
+		return var3 + (((class810) Statics.field7762.get(arg0)).field9263 - var2.field11223.length);
 	}
 
 	@ObfuscatedName("hg.z(IIIILabn;ZI)V")
@@ -210,7 +210,7 @@ public class class961 extends class532 {
 		int var8 = arg1;
 		class584 var9 = null;
 		if (arg3 != -1) {
-			var9 = (class584) Statics.field11742.method962(arg3);
+			var9 = (class584) Statics.field11742.get(arg3);
 		}
 		int[] var10 = this.field11223;
 		if (var9 != null && var9.field7318 != null) {
@@ -238,7 +238,7 @@ public class class961 extends class532 {
 			int var15 = var8;
 			boolean var16 = false;
 			for (int var17 = 0; var17 < var10.length; var17++) {
-				if (var10[var17] != -1 && !((class738) Statics.field1842.method962(var10[var17])).method14649(arg4, null)) {
+				if (var10[var17] != -1 && !((class738) Statics.field1842.get(var10[var17])).method14649(arg4, null)) {
 					var16 = true;
 				}
 			}
@@ -248,7 +248,7 @@ public class class961 extends class532 {
 			class120[] var18 = new class120[var10.length];
 			for (int var19 = 0; var19 < var10.length; var19++) {
 				if (var10[var19] != -1) {
-					var18[var19] = ((class738) Statics.field1842.method962(var10[var19])).method14650(arg4, null);
+					var18[var19] = ((class738) Statics.field1842.get(var10[var19])).method14650(arg4, null);
 				}
 			}
 			if (var9 != null && var9.field7357 != null) {

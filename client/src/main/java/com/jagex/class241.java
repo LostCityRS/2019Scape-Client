@@ -12,7 +12,7 @@ public class class241 {
 	public static final Map field2594 = new HashMap();
 
 	@ObfuscatedName("hz.n")
-	public static final class729 field2597 = new class729(1024);
+	public static final IterableMap field2597 = new IterableMap(1024);
 
 	@ObfuscatedName("hz.m")
 	public static final class720 field2596 = new class720();

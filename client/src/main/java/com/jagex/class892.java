@@ -190,7 +190,7 @@ public abstract class class892 extends class1200 implements class273 {
 	public int field10455;
 
 	@ObfuscatedName("ahm.ba")
-	public class634 field10393;
+	public ParticleSystem field10393;
 
 	@ObfuscatedName("ahm.bp")
 	public boolean field10449;
@@ -466,7 +466,7 @@ public abstract class class892 extends class1200 implements class273 {
 				}
 			}
 			if ((this.field10393 == null || this.field10393.field7804) && (var6 > 0 || var8 > 0)) {
-				this.field10393 = class634.method9962(client.field10903, true);
+				this.field10393 = ParticleSystem.method9962(client.field10903, true);
 			}
 			if (this.field10393 != null) {
 				Object var14 = null;
@@ -514,9 +514,9 @@ public abstract class class892 extends class1200 implements class273 {
 		int var8 = var7.field6657;
 		if (arg0 != -1 && var8 != -1) {
 			if (arg0 == var8) {
-				class680 var9 = (class680) Statics.field4874.method962(arg0);
+				class680 var9 = (class680) Statics.field4874.get(arg0);
 				if (var9.field8261 && var9.field8260 != -1) {
-					class164 var10 = (class164) Statics.field8797.method962(var9.field8260);
+					class164 var10 = (class164) Statics.field8797.get(var9.field8260);
 					int var11 = var10.field1768;
 					if (var11 == 0) {
 						return;
@@ -527,11 +527,11 @@ public abstract class class892 extends class1200 implements class273 {
 					}
 				}
 			} else {
-				class680 var12 = (class680) Statics.field4874.method962(arg0);
-				class680 var13 = (class680) Statics.field4874.method962(var8);
+				class680 var12 = (class680) Statics.field4874.get(arg0);
+				class680 var13 = (class680) Statics.field4874.get(var8);
 				if (var12.field8260 != -1 && var13.field8260 != -1) {
-					class164 var14 = (class164) Statics.field8797.method962(var12.field8260);
-					class164 var15 = (class164) Statics.field8797.method962(var13.field8260);
+					class164 var14 = (class164) Statics.field8797.get(var12.field8260);
+					class164 var15 = (class164) Statics.field8797.get(var13.field8260);
 					if (var14.field1779 < var15.field1779) {
 						return;
 					}
@@ -539,7 +539,7 @@ public abstract class class892 extends class1200 implements class273 {
 			}
 		}
 		byte var16 = 0;
-		if (arg0 != -1 && !((class680) Statics.field4874.method962(arg0)).field8261) {
+		if (arg0 != -1 && !((class680) Statics.field4874.get(arg0)).field8261) {
 			var16 = 2;
 		}
 		if (arg0 != -1 && arg4) {
@@ -549,7 +549,7 @@ public abstract class class892 extends class1200 implements class273 {
 		var7.field6658 = arg3;
 		var7.field6661 = arg1 >> 16;
 		var7.field6660 = arg2;
-		var7.field6659.method14353(arg0 == -1 ? -1 : ((class680) Statics.field4874.method962(arg0)).field8260, arg1 & 0xFFFF, var16, false);
+		var7.field6659.method14353(arg0 == -1 ? -1 : ((class680) Statics.field4874.get(arg0)).field8260, arg1 & 0xFFFF, var16, false);
 	}
 
 	@ObfuscatedName("ahm.a(B)V")
@@ -573,7 +573,7 @@ public abstract class class892 extends class1200 implements class273 {
 		int var11 = -1;
 		int var12 = 0;
 		if (arg0 >= 0) {
-			class582 var13 = (class582) Statics.field2936.method962(arg0);
+			class582 var13 = (class582) Statics.field2936.get(arg0);
 			var11 = var13.field7309;
 			var12 = var13.field7297;
 		}
@@ -627,7 +627,7 @@ public abstract class class892 extends class1200 implements class273 {
 
 	@ObfuscatedName("ahm.i(IIIIIII)V")
 	public final void method16499(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		class566 var7 = (class566) Statics.field4894.method962(arg0);
+		class566 var7 = (class566) Statics.field4894.get(arg0);
 		class959 var8 = null;
 		class959 var9 = null;
 		int var10 = var7.field7218;
@@ -663,7 +663,7 @@ public abstract class class892 extends class1200 implements class273 {
 
 	@ObfuscatedName("ahm.j(II)V")
 	public final void method16500(int arg0) {
-		class566 var2 = (class566) Statics.field4894.method962(arg0);
+		class566 var2 = (class566) Statics.field4894.get(arg0);
 		for (class959 var3 = (class959) this.field10416.method14254(); var3 != null; var3 = (class959) this.field10416.method14241()) {
 			if (var3.field11215 == var2) {
 				var3.method8433();
@@ -708,7 +708,7 @@ public abstract class class892 extends class1200 implements class273 {
 	@ObfuscatedName("ahm.bv(I)V")
 	public void method16529() {
 		int var1 = (this.field10430 - 1 << 8) + 240;
-		class423 var2 = this.method10536().field4298;
+		Vector3 var2 = this.method10536().field4298;
 		this.field12471 = (short) ((int) var2.field4308 - var1 >> 9);
 		this.field12468 = (short) ((int) var2.field4313 - var1 >> 9);
 		this.field12472 = (short) ((int) var2.field4308 + var1 >> 9);
@@ -748,7 +748,7 @@ public abstract class class892 extends class1200 implements class273 {
 			if (var9.field6657 == -1 || var9.field6659.method14355()) {
 				this.field10459[var7 + 1] = null;
 			} else {
-				class680 var10 = (class680) Statics.field4874.method962(var9.field6657);
+				class680 var10 = (class680) Statics.field4874.get(var9.field6657);
 				int var11 = arg2;
 				if (var9.field6660 != 0) {
 					var11 = arg2 | 0x5;
@@ -811,7 +811,7 @@ public abstract class class892 extends class1200 implements class273 {
 
 	@ObfuscatedName("ahm.ba(IIIIIB)V")
 	public void method16507(int arg0, int arg1, int arg2, int arg3, int arg4) {
-		class423 var6 = this.method10536().field4298;
+		Vector3 var6 = this.method10536().field4298;
 		int var7 = this.field12472 + this.field12471 >> 1;
 		int var8 = this.field12468 + this.field12467 >> 1;
 		int var9 = class417.field4270[arg0];
@@ -872,7 +872,7 @@ public abstract class class892 extends class1200 implements class273 {
 	@ObfuscatedName("ahm.bp(I)Lvr;")
 	public class584 method16508() {
 		int var1 = this.method16509();
-		return var1 == -1 ? class1089.field11886 : (class584) Statics.field11742.method962(var1);
+		return var1 == -1 ? class1089.field11886 : (class584) Statics.field11742.get(var1);
 	}
 
 	@ObfuscatedName("ahm.cl(B)V")
@@ -945,7 +945,7 @@ public abstract class class892 extends class1200 implements class273 {
 
 	@ObfuscatedName("ahm.cw(I)Lve;")
 	public class594 method16521() {
-		class423 var1 = this.method10536().field4298;
+		Vector3 var1 = this.method10536().field4298;
 		class594 var2 = client.field10855.method7727();
 		int var3 = ((int) var1.field4308 >> 9) + var2.field7426;
 		int var4 = ((int) var1.field4313 >> 9) + var2.field7427;
@@ -954,7 +954,7 @@ public abstract class class892 extends class1200 implements class273 {
 
 	@ObfuscatedName("ahm.ct(I)Lakt;")
 	public CoordFine method16537() {
-		class423 var1 = this.method10536().field4298;
+		Vector3 var1 = this.method10536().field4298;
 		class594 var2 = client.field10855.method7727();
 		int var3 = var2.field7426 * 512 + (int) var1.field4308;
 		int var4 = (int) var1.field4311;

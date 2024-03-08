@@ -10,12 +10,12 @@ public class class1103 extends class782 {
 	}
 
 	@ObfuscatedName("apq.v(ILao;I)Lay;")
-	public class53 method4414(int arg0, class51 arg1) {
+	public ConfigType create(int arg0, ConfigTypeList arg1) {
 		return new class781(arg0, this);
 	}
 
 	@ObfuscatedName("apq.o(B)Ljava/lang/Class;")
-	public Class method4415() {
+	public Class type() {
 		return class781.class;
 	}
 }

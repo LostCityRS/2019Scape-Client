@@ -47,7 +47,7 @@ public class class305 implements class50 {
 	}
 
 	@ObfuscatedName("kh.e(Lalw;B)V")
-	public void method976(Packet arg0) {
+	public void decode(Packet arg0) {
 		this.method5190(arg0, false);
 	}
 
@@ -63,7 +63,7 @@ public class class305 implements class50 {
 	}
 
 	@ObfuscatedName("kh.n(I)V")
-	public void method975() {
+	public void postDecode() {
 	}
 
 	@ObfuscatedName("kh.z(Lalw;IZI)V")
@@ -84,9 +84,9 @@ public class class305 implements class50 {
 				}
 				this.field3075 = arg0.gSmart2or4null();
 				if (this.field3077 != null) {
-					class51 var6 = (class51) this.field3077.field3083.get(this.field3080);
+					ConfigTypeList var6 = (ConfigTypeList) this.field3077.field3083.get(this.field3080);
 					if (var6 != null) {
-						this.field3076 = (class149) var6.method962(this.field3075);
+						this.field3076 = (class149) var6.get(this.field3075);
 					} else if (!arg2) {
 						throw new IllegalStateException("");
 					}

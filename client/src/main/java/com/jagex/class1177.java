@@ -57,7 +57,7 @@ public class class1177 extends class986 {
 		if (!var5) {
 			return false;
 		}
-		class715 var12 = new class715();
+		IterableQueue var12 = new IterableQueue();
 		class442 var13 = Statics.field12325;
 		int[] var15;
 		synchronized (Statics.field12325) {

@@ -548,7 +548,7 @@ public class class454 {
 					if (var9 < this.field4513) {
 						int var10 = this.field4505[var5][var9][var8] & 0x7FFF;
 						if (var10 > 0) {
-							class728 var11 = (class728) this.field4503.method962(var10 - 1);
+							class728 var11 = (class728) this.field4503.get(var10 - 1);
 							this.field4504[var8] += var11.field8546;
 							this.field4525[var8] += var11.field8541;
 							this.field4526[var8] += var11.field8545;
@@ -560,7 +560,7 @@ public class class454 {
 					if (var12 >= 0) {
 						int var13 = this.field4505[var5][var12][var8] & 0x7FFF;
 						if (var13 > 0) {
-							class728 var14 = (class728) this.field4503.method962(var13 - 1);
+							class728 var14 = (class728) this.field4503.get(var13 - 1);
 							this.field4504[var8] -= var14.field8546;
 							this.field4525[var8] -= var14.field8541;
 							this.field4526[var8] -= var14.field8545;
@@ -629,8 +629,8 @@ public class class454 {
 				byte var10 = this.field4520[arg2][var7][var8];
 				int var11 = this.field4516[arg2][var7][var8] & 0x7FFF;
 				int var12 = this.field4505[arg2][var7][var8] & 0x7FFF;
-				class663 var13 = (class663) (var11 == 0 ? null : this.field4548.method962(var11 - 1));
-				class728 var14 = (class728) (var12 == 0 ? null : this.field4503.method962(var12 - 1));
+				class663 var13 = (class663) (var11 == 0 ? null : this.field4548.get(var11 - 1));
+				class728 var14 = (class728) (var12 == 0 ? null : this.field4503.get(var12 - 1));
 				if (var9 == 0 && var13 == null) {
 					var9 = 12;
 				}
@@ -777,8 +777,8 @@ public class class454 {
 				int var16 = var10[var12][var14] & 0x7FFF;
 				int var17 = var9[var12][var14] & 0x7FFF;
 				if (var16 != 0 || var17 != 0) {
-					class663 var18 = (class663) (var16 == 0 ? null : this.field4548.method962(var16 - 1));
-					class728 var19 = (class728) (var17 == 0 ? null : this.field4503.method962(var17 - 1));
+					class663 var18 = (class663) (var16 == 0 ? null : this.field4548.get(var16 - 1));
+					class728 var19 = (class728) (var17 == 0 ? null : this.field4503.get(var17 - 1));
 					if (this.field4573 == 0 && var18 == null) {
 						this.field4573 = 12;
 					}
@@ -1133,10 +1133,10 @@ public class class454 {
 		if (arg10 == 0) {
 			arg10 = arg7;
 		}
-		class728 var25 = (class728) this.field4503.method962(arg7 - 1);
-		class728 var26 = (class728) this.field4503.method962(arg8 - 1);
-		class728 var27 = (class728) this.field4503.method962(arg9 - 1);
-		class728 var28 = (class728) this.field4503.method962(arg10 - 1);
+		class728 var25 = (class728) this.field4503.get(arg7 - 1);
+		class728 var26 = (class728) this.field4503.get(arg8 - 1);
+		class728 var27 = (class728) this.field4503.get(arg9 - 1);
+		class728 var28 = (class728) this.field4503.get(arg10 - 1);
 		for (int var29 = 0; var29 < this.field4584; var29++) {
 			boolean var30 = false;
 			byte var31;
@@ -1307,7 +1307,7 @@ public class class454 {
 			if (arg3 > 0) {
 				int var13 = arg7[arg3 - 1][arg4 - 1] & 0x7FFF;
 				if (var13 > 0) {
-					class663 var14 = (class663) this.field4548.method962(var13 - 1);
+					class663 var14 = (class663) this.field4548.get(var13 - 1);
 					if (var14.field8154 != -1 && var14.field8161) {
 						byte var15 = arg8[arg3 - 1][arg4 - 1];
 						int var16 = arg9[arg3 - 1][arg4 - 1] * 2 + 4 & 0x7;
@@ -1326,7 +1326,7 @@ public class class454 {
 			if (arg3 < arg5 - 1) {
 				int var18 = arg7[arg3 + 1][arg4 - 1] & 0x7FFF;
 				if (var18 > 0) {
-					class663 var19 = (class663) this.field4548.method962(var18 - 1);
+					class663 var19 = (class663) this.field4548.get(var18 - 1);
 					if (var19.field8154 != -1 && var19.field8161) {
 						byte var20 = arg8[arg3 + 1][arg4 - 1];
 						int var21 = arg9[arg3 + 1][arg4 - 1] * 2 + 6 & 0x7;
@@ -1347,7 +1347,7 @@ public class class454 {
 			if (arg3 > 0) {
 				int var23 = arg7[arg3 - 1][arg4 + 1] & 0x7FFF;
 				if (var23 > 0) {
-					class663 var24 = (class663) this.field4548.method962(var23 - 1);
+					class663 var24 = (class663) this.field4548.get(var23 - 1);
 					if (var24.field8154 != -1 && var24.field8161) {
 						byte var25 = arg8[arg3 - 1][arg4 + 1];
 						int var26 = arg9[arg3 - 1][arg4 + 1] * 2 + 2 & 0x7;
@@ -1366,7 +1366,7 @@ public class class454 {
 			if (arg3 < arg5 - 1) {
 				int var28 = arg7[arg3 + 1][arg4 + 1] & 0x7FFF;
 				if (var28 > 0) {
-					class663 var29 = (class663) this.field4548.method962(var28 - 1);
+					class663 var29 = (class663) this.field4548.get(var28 - 1);
 					if (var29.field8154 != -1 && var29.field8161) {
 						byte var30 = arg8[arg3 + 1][arg4 + 1];
 						int var31 = arg9[arg3 + 1][arg4 + 1] * 2 & 0x7;
@@ -1386,7 +1386,7 @@ public class class454 {
 		if (arg4 > 0) {
 			int var33 = arg7[arg3][arg4 - 1] & 0x7FFF;
 			if (var33 > 0) {
-				class663 var34 = (class663) this.field4548.method962(var33 - 1);
+				class663 var34 = (class663) this.field4548.get(var33 - 1);
 				if (var34.field8154 != -1) {
 					byte var35 = arg8[arg3][arg4 - 1];
 					byte var36 = arg9[arg3][arg4 - 1];
@@ -1424,7 +1424,7 @@ public class class454 {
 		if (arg4 < arg6 - 1) {
 			int var41 = arg7[arg3][arg4 + 1] & 0x7FFF;
 			if (var41 > 0) {
-				class663 var42 = (class663) this.field4548.method962(var41 - 1);
+				class663 var42 = (class663) this.field4548.get(var41 - 1);
 				if (var42.field8154 != -1) {
 					byte var43 = arg8[arg3][arg4 + 1];
 					byte var44 = arg9[arg3][arg4 + 1];
@@ -1462,7 +1462,7 @@ public class class454 {
 		if (arg3 > 0) {
 			int var49 = arg7[arg3 - 1][arg4] & 0x7FFF;
 			if (var49 > 0) {
-				class663 var50 = (class663) this.field4548.method962(var49 - 1);
+				class663 var50 = (class663) this.field4548.get(var49 - 1);
 				if (var50.field8154 != -1) {
 					byte var51 = arg8[arg3 - 1][arg4];
 					byte var52 = arg9[arg3 - 1][arg4];
@@ -1500,7 +1500,7 @@ public class class454 {
 		if (arg3 < arg5 - 1) {
 			int var57 = arg7[arg3 + 1][arg4] & 0x7FFF;
 			if (var57 > 0) {
-				class663 var58 = (class663) this.field4548.method962(var57 - 1);
+				class663 var58 = (class663) this.field4548.get(var57 - 1);
 				if (var58.field8154 != -1) {
 					byte var59 = arg8[arg3 + 1][arg4];
 					byte var60 = arg9[arg3 + 1][arg4];

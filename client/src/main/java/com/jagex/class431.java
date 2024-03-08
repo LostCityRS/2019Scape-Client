@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("pk")
-public class class431 implements class774 {
+public class class431 implements ResourceLoader {
 
 	@ObfuscatedName("pk.e")
 	public final class442 field4329;

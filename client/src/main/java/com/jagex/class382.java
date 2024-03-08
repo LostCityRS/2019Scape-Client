@@ -9,7 +9,7 @@ public class class382 implements class383 {
 	public class442 field3564;
 
 	@ObfuscatedName("nw.n")
-	public class162 field3565 = new class162(64);
+	public WeightedCache field3565 = new WeightedCache(64);
 
 	public class382(class442 arg0) {
 		this.field3564 = arg0;

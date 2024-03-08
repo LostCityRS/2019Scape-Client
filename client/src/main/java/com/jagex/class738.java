@@ -6,13 +6,13 @@ import deob.Statics;
 import java.util.Arrays;
 
 @ObfuscatedName("abv")
-public class class738 implements class53 {
+public class class738 implements ConfigType {
 
 	@ObfuscatedName("abv.w")
 	public static short[] field8650 = new short[256];
 
 	@ObfuscatedName("abv.l")
-	public class51 field8625;
+	public ConfigTypeList field8625;
 
 	@ObfuscatedName("abv.u")
 	public class737 field8621;
@@ -207,7 +207,7 @@ public class class738 implements class53 {
 	public int field8689 = 0;
 
 	@ObfuscatedName("abv.bv")
-	public class729 field8690;
+	public IterableMap field8690;
 
 	@ObfuscatedName("abv.br")
 	public int[] field8691;
@@ -236,7 +236,7 @@ public class class738 implements class53 {
 	@ObfuscatedName("abv.ce")
 	public static String field8699 = "</col>";
 
-	public class738(int arg0, class51 arg1, class737 arg2) {
+	public class738(int arg0, ConfigTypeList arg1, class737 arg2) {
 		this.field8627 = arg0;
 		this.field8625 = arg1;
 		this.field8621 = arg2;
@@ -245,15 +245,15 @@ public class class738 implements class53 {
 	}
 
 	@ObfuscatedName("abv.n(I)V")
-	public void method975() {
+	public void postDecode() {
 		if (this.field8663 != -1) {
-			this.method14640((class738) this.field8625.method962(this.field8663), (class738) this.field8625.method962(this.field8673), this.field8621.field8618);
+			this.method14640((class738) this.field8625.get(this.field8663), (class738) this.field8625.get(this.field8673), this.field8621.field8618);
 		} else if (this.field8675 != -1) {
-			this.method14641((class738) this.field8625.method962(this.field8675), (class738) this.field8625.method962(this.field8674), this.field8621.field8618);
+			this.method14641((class738) this.field8625.get(this.field8675), (class738) this.field8625.get(this.field8674), this.field8621.field8618);
 		} else if (this.field8694 != -1) {
-			this.method14653((class738) this.field8625.method962(this.field8694), (class738) this.field8625.method962(this.field8693), this.field8621.field8618);
+			this.method14653((class738) this.field8625.get(this.field8694), (class738) this.field8625.get(this.field8693), this.field8621.field8618);
 		} else if (this.field8677 != -1) {
-			this.method14643((class738) this.field8625.method962(this.field8677), (class738) this.field8625.method962(this.field8676), this.field8621.field8618);
+			this.method14643((class738) this.field8625.get(this.field8677), (class738) this.field8625.get(this.field8676), this.field8621.field8618);
 		}
 		if (this.field8689 != 0) {
 			this.field8687 = false;
@@ -272,7 +272,7 @@ public class class738 implements class53 {
 		}
 		boolean var1 = false;
 		for (class532 var2 = this.field8690.method14500(); var2 != null; var2 = this.field8690.method14502()) {
-			class789 var3 = (class789) this.field8621.field8615.method962((int) var2.field6760);
+			class789 var3 = (class789) this.field8621.field8615.get((int) var2.field6760);
 			if (var3.field9174) {
 				var2.method8440();
 			} else {
@@ -285,7 +285,7 @@ public class class738 implements class53 {
 	}
 
 	@ObfuscatedName("abv.e(Lalw;B)V")
-	public void method976(Packet arg0) {
+	public void decode(Packet arg0) {
 		this.field8687 = true;
 		while (true) {
 			int var2 = arg0.g1();
@@ -502,7 +502,7 @@ public class class738 implements class53 {
 				int var21 = arg0.g1();
 				if (this.field8690 == null) {
 					int var22 = class783.method16657(var21);
-					this.field8690 = new class729(var22);
+					this.field8690 = new IterableMap(var22);
 				}
 				for (int var23 = 0; var23 < var21; var23++) {
 					boolean var24 = arg0.g1() == 1;
@@ -520,7 +520,7 @@ public class class738 implements class53 {
 	}
 
 	@ObfuscatedName("abv.z(Labq;Labv;Labv;Lacz;Lzt;I)V")
-	public void method14664(class739 arg0, class738 arg1, class738 arg2, class776 arg3, class687 arg4) {
+	public void method14664(class739 arg0, class738 arg1, class738 arg2, class776 arg3, Language arg4) {
 		this.field8655 = arg1.field8655;
 		this.field8638 = arg1.field8638;
 		this.field8639 = arg1.field8639;
@@ -595,22 +595,22 @@ public class class738 implements class53 {
 	}
 
 	@ObfuscatedName("abv.p(Labv;Labv;Lzt;S)V")
-	public void method14640(class738 arg0, class738 arg1, class687 arg2) {
+	public void method14640(class738 arg0, class738 arg1, Language arg2) {
 		this.method14664(class739.field8702, arg0, arg1, null, arg2);
 	}
 
 	@ObfuscatedName("abv.d(Labv;Labv;Lzt;I)V")
-	public void method14641(class738 arg0, class738 arg1, class687 arg2) {
+	public void method14641(class738 arg0, class738 arg1, Language arg2) {
 		this.method14664(class739.field8703, arg0, arg1, class776.field8954, arg2);
 	}
 
 	@ObfuscatedName("abv.c(Labv;Labv;Lzt;I)V")
-	public void method14653(class738 arg0, class738 arg1, class687 arg2) {
+	public void method14653(class738 arg0, class738 arg1, Language arg2) {
 		this.method14664(class739.field8704, arg0, arg1, class776.field9000, arg2);
 	}
 
 	@ObfuscatedName("abv.r(Labv;Labv;Lzt;I)V")
-	public void method14643(class738 arg0, class738 arg1, class687 arg2) {
+	public void method14643(class738 arg0, class738 arg1, Language arg2) {
 		this.method14664(class739.field8701, arg0, arg1, class776.field8960, arg2);
 	}
 
@@ -624,14 +624,14 @@ public class class738 implements class53 {
 				}
 			}
 			if (var10 != -1) {
-				return ((class738) this.field8625.method962(var10)).method14644(arg0, arg1, 1, arg3, arg4, arg5, arg6, arg7, arg8);
+				return ((class738) this.field8625.get(var10)).method14644(arg0, arg1, 1, arg3, arg4, arg5, arg6, arg7, arg8);
 			}
 		}
 		int var12 = arg1;
 		if (arg4 != null) {
 			var12 = arg1 | arg4.method14358();
 		}
-		class162 var13 = this.field8621.field8612;
+		WeightedCache var13 = this.field8621.field8612;
 		class116 var14;
 		synchronized (this.field8621.field8612) {
 			var14 = (class116) this.field8621.field8612.method2930((long) (this.field8627 | arg0.field1595 << 29));
@@ -707,7 +707,7 @@ public class class738 implements class53 {
 				}
 			}
 			var14.method1690(var12);
-			class162 var24 = this.field8621.field8612;
+			WeightedCache var24 = this.field8621.field8612;
 			synchronized (this.field8621.field8612) {
 				this.field8621.field8612.method2921(var14, (long) (this.field8627 | arg0.field1595 << 29));
 			}
@@ -735,7 +735,7 @@ public class class738 implements class53 {
 				}
 			}
 			if (var2 != -1) {
-				return (class738) this.field8625.method962(var2);
+				return (class738) this.field8625.get(var2);
 			}
 		}
 		return this;
@@ -823,8 +823,8 @@ public class class738 implements class53 {
 		} else {
 			var22 = this.field8638 << 2;
 		}
-		class426 var23 = arg0.method2355();
-		class426 var24 = arg0.method2208();
+		Matrix4x4 var23 = arg0.method2355();
+		Matrix4x4 var24 = arg0.method2208();
 		var24.method6703(16.0F, 16.0F, 512.0F, 512.0F, 50.0F, 2.14748365E9F, (float) arg0.method2135().method1627(), (float) arg0.method2135().method1628());
 		arg0.method2220(var24);
 		arg0.method2164(0, 0, arg0.method2135().method1627(), arg0.method2135().method1628());
@@ -916,7 +916,7 @@ public class class738 implements class53 {
 	}
 
 	@ObfuscatedName("jf.x(ILzt;Lws;I)Ljava/lang/String;")
-	public static String method4655(int arg0, class687 arg1, class629 arg2) {
+	public static String method4655(int arg0, Language arg1, class629 arg2) {
 		if (arg0 < 100000) {
 			return Statics.method5153(arg2.field7742) + arg0 + field8699;
 		} else if (arg0 < 10000000) {

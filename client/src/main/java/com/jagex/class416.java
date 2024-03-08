@@ -33,7 +33,7 @@ public class class416 {
 	public static final float[] field4254 = new float[8];
 
 	@ObfuscatedName("oj.e(IIIILpq;FFFF)Z")
-	public boolean method6275(int arg0, int arg1, int arg2, int arg3, class426 arg4, float arg5, float arg6, float arg7, float arg8) {
+	public boolean method6275(int arg0, int arg1, int arg2, int arg3, Matrix4x4 arg4, float arg5, float arg6, float arg7, float arg8) {
 		boolean var10 = false;
 		float var11 = Float.MAX_VALUE;
 		float var12 = -3.4028235E38F;

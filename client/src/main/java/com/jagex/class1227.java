@@ -38,7 +38,7 @@ public class class1227 extends class1180 {
 	}
 
 	@ObfuscatedName("atd.m(Lju;Lou;Lpq;I)V")
-	public void method19440(class270 arg0, class419 arg1, class426 arg2) {
+	public void method19440(class270 arg0, class419 arg1, Matrix4x4 arg2) {
 		float var4 = (float) Math.sin((double) this.field12552);
 		float var5 = this.field12555 * var4;
 		if (class248.field2625 == this.field12553) {

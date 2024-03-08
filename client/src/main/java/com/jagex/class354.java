@@ -96,7 +96,7 @@ public class class354 {
 		Unsafe var2 = this.field3389.field10110;
 		ByteBuffer var3 = this.field3389.field10071;
 		var3.clear();
-		this.field3389.method16046().method6604(class426.field4317);
+		this.field3389.method16046().method6604(Matrix4x4.field4317);
 		this.field3389.method16174(class352.field3370);
 		int var4 = (this.field3385 + this.field3384 - 1) / this.field3384;
 		int var5 = 0;

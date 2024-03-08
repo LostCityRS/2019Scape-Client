@@ -60,7 +60,7 @@ public class class969 extends class532 {
 	public class1189 field11289;
 
 	@ObfuscatedName("ajr.a")
-	public class729 field11290;
+	public IterableMap field11290;
 
 	public class969(class849 arg0, class836 arg1, class973 arg2, int[] arg3) {
 		this.field11279 = arg0;
@@ -120,7 +120,7 @@ public class class969 extends class532 {
 		if (this.field11280 > 0) {
 			this.field11288 = new Packet(this.field11280 * 2);
 			this.field11289 = new class1189(this.field11280 * 16);
-			this.field11290 = new class729(class783.method16657(this.field11280));
+			this.field11290 = new IterableMap(class783.method16657(this.field11280));
 			int var21 = 0;
 			int var22 = 0;
 			for (int var23 = this.field11277; var23 <= this.field11278; var23++) {

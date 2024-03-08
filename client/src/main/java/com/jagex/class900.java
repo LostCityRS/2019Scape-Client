@@ -11,7 +11,7 @@ public class class900 extends class287 {
 
 	@ObfuscatedName("ahk.e()V")
 	public void method5047() {
-		this.field2993.method15967(class426.field4317, class426.field4317, class426.field4317);
+		this.field2993.method15967(Matrix4x4.field4317, Matrix4x4.field4317, Matrix4x4.field4317);
 		this.field2993.method16038(0);
 		this.field2993.method16092(this.field2992);
 		this.field2993.method16041(0, class351.field3365);

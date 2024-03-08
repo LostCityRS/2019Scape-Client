@@ -30,7 +30,7 @@ public class class995 extends class532 {
 	@ObfuscatedName("akb.d")
 	public static float[] field11485 = new float[3];
 
-	public class995(class102 arg0, class634 arg1) {
+	public class995(class102 arg0, ParticleSystem arg1) {
 		this.field11488 = arg0;
 		this.field11483 = this.field11488.method1509(Statics.field12041);
 		this.method17872();

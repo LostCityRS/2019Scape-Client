@@ -93,7 +93,7 @@ public class class775 {
 	public int field8917;
 
 	@ObfuscatedName("acg.al")
-	public class774 field8923;
+	public ResourceLoader field8923;
 
 	@ObfuscatedName("acg.e(B)[Lacg;")
 	public static class775[] method15007() {
@@ -116,12 +116,12 @@ public class class775 {
 	}
 
 	@ObfuscatedName("acg.k(I)Lacu;")
-	public class774 method15010() {
+	public ResourceLoader method15010() {
 		return this.field8923;
 	}
 
 	@ObfuscatedName("acg.f(Lacu;I)V")
-	public void method15011(class774 arg0) {
+	public void method15011(ResourceLoader arg0) {
 		if (arg0.method6781() != this.field8929) {
 			throw new IllegalArgumentException();
 		}

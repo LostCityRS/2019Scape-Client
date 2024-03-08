@@ -23,9 +23,9 @@ public class class765 implements Iterator {
 
 	public Object next() {
 		int var1 = ++this.field8852 - 1;
-		class162 var2 = this.this$0.field8795;
+		WeightedCache var2 = this.this$0.field8795;
 		synchronized (this.this$0.field8795) {
-			class53 var3 = (class53) this.this$0.field8795.method2930((long) var1);
+			ConfigType var3 = (ConfigType) this.this$0.field8795.method2930((long) var1);
 			if (var3 != null) {
 				return var3;
 			}

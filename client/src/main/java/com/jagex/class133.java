@@ -559,7 +559,7 @@ public abstract class class133 {
 	public abstract class101 method2197(int arg0, int arg1, boolean arg2, boolean arg3);
 
 	@ObfuscatedName("dh.dt(Ldm;)V")
-	public abstract void method2198(class119 arg0);
+	public abstract void method2198(ParticleList arg0);
 
 	@ObfuscatedName("dh.co(Lde;Z)Lcm;")
 	public abstract class101 method2200(class136 arg0, boolean arg1);
@@ -574,7 +574,7 @@ public abstract class class133 {
 	public abstract class140 method2207(class733 arg0, class136 arg1, boolean arg2);
 
 	@ObfuscatedName("dh.cc()Lpq;")
-	public abstract class426 method2208();
+	public abstract Matrix4x4 method2208();
 
 	@ObfuscatedName("dh.cz()Lou;")
 	public abstract class419 method2209();
@@ -598,7 +598,7 @@ public abstract class class133 {
 	public abstract void method2219(boolean arg0);
 
 	@ObfuscatedName("dh.dm(Lpq;)V")
-	public abstract void method2220(class426 arg0);
+	public abstract void method2220(Matrix4x4 arg0);
 
 	@ObfuscatedName("dh.cp(I)Lakz;")
 	public abstract class972 method2221(int arg0);
@@ -688,7 +688,7 @@ public abstract class class133 {
 	public abstract void method2354(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5);
 
 	@ObfuscatedName("dh.dq()Lpq;")
-	public abstract class426 method2355();
+	public abstract Matrix4x4 method2355();
 
 	@ObfuscatedName("dh.ap(III)Ldw;")
 	public abstract class126 method2356(int arg0, int arg1, int arg2);

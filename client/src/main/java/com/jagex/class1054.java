@@ -15,7 +15,7 @@ public class class1054 extends class709 {
 
 	@ObfuscatedName("any.o(I)V")
 	public void method18653() {
-		if (this.field8417.method18159() != class696.field8335) {
+		if (this.field8417.method18159() != ModeGame.field8335) {
 			this.field8416 = 1;
 		}
 		if (this.field8416 != 0 && this.field8416 != 1) {
@@ -30,12 +30,12 @@ public class class1054 extends class709 {
 
 	@ObfuscatedName("any.s(I)Z")
 	public boolean method18650() {
-		return this.field8417.method18159() == class696.field8335;
+		return this.field8417.method18159() == ModeGame.field8335;
 	}
 
 	@ObfuscatedName("any.n(II)I")
 	public int method14070(int arg0) {
-		if (this.field8417.method18159() != class696.field8335) {
+		if (this.field8417.method18159() != ModeGame.field8335) {
 			return 3;
 		}
 		if (arg0 == 0) {

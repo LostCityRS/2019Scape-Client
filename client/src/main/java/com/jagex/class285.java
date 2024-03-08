@@ -21,10 +21,10 @@ public abstract class class285 {
 	public class362 field2967;
 
 	@ObfuscatedName("jj.l")
-	public final class426 field2982 = new class426();
+	public final Matrix4x4 field2982 = new Matrix4x4();
 
 	@ObfuscatedName("jj.u")
-	public final class423 field2969 = new class423();
+	public final Vector3 field2969 = new Vector3();
 
 	@ObfuscatedName("jj.z")
 	public float field2970;
@@ -36,28 +36,28 @@ public abstract class class285 {
 	public final class415 field2979 = new class415();
 
 	@ObfuscatedName("jj.c")
-	public final class423 field2973 = new class423();
+	public final Vector3 field2973 = new Vector3();
 
 	@ObfuscatedName("jj.r")
 	public final class415 field2984 = new class415();
 
 	@ObfuscatedName("jj.v")
-	public final class423 field2975 = new class423();
+	public final Vector3 field2975 = new Vector3();
 
 	@ObfuscatedName("jj.o")
-	public final class423 field2976 = new class423();
+	public final Vector3 field2976 = new Vector3();
 
 	@ObfuscatedName("jj.s")
-	public final class423 field2977 = new class423();
+	public final Vector3 field2977 = new Vector3();
 
 	@ObfuscatedName("jj.y")
-	public final class423 field2978 = new class423();
+	public final Vector3 field2978 = new Vector3();
 
 	@ObfuscatedName("jj.q")
-	public final class423 field2968 = new class423();
+	public final Vector3 field2968 = new Vector3();
 
 	@ObfuscatedName("jj.x")
-	public final class426 field2980 = new class426();
+	public final Matrix4x4 field2980 = new Matrix4x4();
 
 	@ObfuscatedName("jj.b")
 	public int field2981;
@@ -93,7 +93,7 @@ public abstract class class285 {
 	}
 
 	@ObfuscatedName("jj.n(Lpq;)V")
-	public abstract void method5018(class426 arg0);
+	public abstract void method5018(Matrix4x4 arg0);
 
 	@ObfuscatedName("jj.m(Z)V")
 	public abstract void method5019(boolean arg0);

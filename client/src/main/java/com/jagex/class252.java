@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class class252 {
 
 	@ObfuscatedName("ix.e")
-	public class729 field2653;
+	public IterableMap field2653;
 
 	@ObfuscatedName("ix.n")
 	public class977[] field2652;
@@ -18,7 +18,7 @@ public class class252 {
 		int var3;
 		for (var3 = 1; var3 < arg0; var3 += var3) {
 		}
-		this.field2653 = new class729(var3);
+		this.field2653 = new IterableMap(var3);
 		this.field2652 = new class977[var3];
 		this.field2654 = arg1;
 	}
@@ -59,7 +59,7 @@ public class class252 {
 			int var5;
 			for (var5 = this.field2652.length; var5 <= arg0; var5 += var5) {
 			}
-			this.field2653 = new class729(var5);
+			this.field2653 = new IterableMap(var5);
 			for (int var6 = 0; var6 < this.field2652.length; var6++) {
 				class977 var7 = this.field2652[var6];
 				if (var7 != null) {

@@ -52,10 +52,10 @@ public final class class962 extends class532 {
 	public boolean field11240 = false;
 
 	@ObfuscatedName("ajt.x")
-	public static class715 field11237 = new class715();
+	public static IterableQueue field11237 = new IterableQueue();
 
 	@ObfuscatedName("ajt.b")
-	public static class715 field11242 = new class715();
+	public static IterableQueue field11242 = new IterableQueue();
 
 	@ObfuscatedName("ajt.h")
 	public static long field11243 = 1L;

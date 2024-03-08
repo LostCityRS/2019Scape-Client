@@ -30,5 +30,5 @@ public abstract class class1180 extends class986 {
 	public abstract void method19434(Packet arg0);
 
 	@ObfuscatedName("aso.m(Lju;Lou;Lpq;I)V")
-	public abstract void method19440(class270 arg0, class419 arg1, class426 arg2);
+	public abstract void method19440(class270 arg0, class419 arg1, Matrix4x4 arg2);
 }

@@ -67,7 +67,7 @@ public class class89 {
 	}
 
 	@ObfuscatedName("cu.n(Lafa;Ldm;)V")
-	public void method1324(class849 arg0, class119 arg1) {
+	public void method1324(class849 arg0, ParticleList arg1) {
 		if (arg0.field9903 == null) {
 			return;
 		}

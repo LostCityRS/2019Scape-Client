@@ -7,10 +7,10 @@ import deob.Statics;
 public class class153 {
 
 	@ObfuscatedName("eq.e")
-	public static class715 field1712 = new class715();
+	public static IterableQueue field1712 = new IterableQueue();
 
 	@ObfuscatedName("eq.l")
-	public static class729 field1718 = new class729(32);
+	public static IterableMap field1718 = new IterableMap(32);
 
 	@ObfuscatedName("eq.u")
 	public static int field1715 = 1;

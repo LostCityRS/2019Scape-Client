@@ -28,7 +28,7 @@ public class class1126 extends class850 {
 	public final D3DDISPLAYMODE field11958;
 
 	@ObfuscatedName("aqd.hp")
-	public class715 field11959 = new class715();
+	public IterableQueue field11959 = new IterableQueue();
 
 	@ObfuscatedName("aqd.hy")
 	public boolean field11960 = false;
@@ -64,7 +64,7 @@ public class class1126 extends class850 {
 	public int[] field11962;
 
 	@ObfuscatedName("aqd.ij")
-	public class426 field11968;
+	public Matrix4x4 field11968;
 
 	@ObfuscatedName("aqd.io")
 	public class887 field11972;
@@ -274,7 +274,7 @@ public class class1126 extends class850 {
 			class419 var17 = new class419();
 			var17.method6348(1.0F, -1.0F, 0.5F);
 			var17.method6315(0.0F, 0.0F, 0.5F);
-			this.field11968 = new class426();
+			this.field11968 = new Matrix4x4();
 			this.field11968.method6609(var17);
 			IDirect3DDevice.BeginScene(this.field11978);
 		} catch (Throwable var19) {
@@ -694,14 +694,14 @@ public class class1126 extends class850 {
 	}
 
 	@ObfuscatedName("aqd.rn(Lpq;Lpq;Lpq;)V")
-	public void method15967(class426 arg0, class426 arg1, class426 arg2) {
+	public void method15967(Matrix4x4 arg0, Matrix4x4 arg1, Matrix4x4 arg2) {
 		IDirect3DDevice.SetTransform(this.field11978, 256, arg0.field4315);
 		IDirect3DDevice.SetTransform(this.field11978, 2, arg1.field4315);
 		IDirect3DDevice.SetTransform(this.field11978, 3, arg2.field4315);
 	}
 
 	@ObfuscatedName("aqd.ti(Lpq;)V")
-	public void method16006(class426 arg0) {
+	public void method16006(Matrix4x4 arg0) {
 		arg0.method6720(this.field11968);
 	}
 

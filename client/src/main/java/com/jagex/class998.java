@@ -7,7 +7,7 @@ import deob.Statics;
 public class class998 extends class532 {
 
 	@ObfuscatedName("ali.u")
-	public final class696 field11510;
+	public final ModeGame field11510;
 
 	@ObfuscatedName("ali.z")
 	public final class710 field11513;
@@ -177,14 +177,14 @@ public class class998 extends class532 {
 	@ObfuscatedName("ali.bm")
 	public class1066 field11557;
 
-	public class998(class696 arg0, int arg1) {
+	public class998(ModeGame arg0, int arg1) {
 		this.field11510 = arg0;
 		this.field11513 = new class710(GameShell.field6616, GameShell.field6623, Statics.field2153.toLowerCase().indexOf("arm") != -1, Statics.field2601.startsWith("win"), false);
 		this.field11540 = new class1041(arg1, this);
 		this.method18154(true, true);
 	}
 
-	public class998(Packet arg0, class696 arg1, int arg2) {
+	public class998(Packet arg0, ModeGame arg1, int arg2) {
 		this.field11510 = arg1;
 		this.field11513 = new class710(GameShell.field6616, GameShell.field6623, Statics.field2153.indexOf("arm") != -1, Statics.field2601.startsWith("win"), false);
 		this.field11540 = new class1041(arg2, this);
@@ -704,7 +704,7 @@ public class class998 extends class532 {
 	}
 
 	@ObfuscatedName("ali.u(B)Lzd;")
-	public class696 method18159() {
+	public ModeGame method18159() {
 		return this.field11510;
 	}
 

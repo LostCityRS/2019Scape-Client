@@ -38,8 +38,8 @@ public class class1202 extends class1072 {
 	}
 
 	@ObfuscatedName("ass.m(I)Lox;")
-	public class423 method14133() {
-		class423 var1 = class423.method6482();
+	public Vector3 method14133() {
+		Vector3 var1 = Vector3.method6482();
 		double[] var2 = this.field11872[this.field12476].method6767(this.field11873);
 		var1.field4308 = (float) var2[0];
 		var1.field4311 = (float) var2[1];
@@ -53,7 +53,7 @@ public class class1202 extends class1072 {
 	}
 
 	@ObfuscatedName("ass.k(I)Lox;")
-	public class423 method14135() {
+	public Vector3 method14135() {
 		return this.method14133();
 	}
 

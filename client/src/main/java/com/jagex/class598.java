@@ -6,7 +6,7 @@ import deob.Statics;
 import java.util.Arrays;
 
 @ObfuscatedName("vd")
-public class class598 implements class53 {
+public class class598 implements ConfigType {
 
 	@ObfuscatedName("vd.n")
 	public static short[] field7501 = new short[256];
@@ -18,7 +18,7 @@ public class class598 implements class53 {
 	public class599 field7451;
 
 	@ObfuscatedName("vd.f")
-	public class51 field7452;
+	public ConfigTypeList field7452;
 
 	@ObfuscatedName("vd.w")
 	public byte[] field7513;
@@ -219,7 +219,7 @@ public class class598 implements class53 {
 	public boolean field7518 = false;
 
 	@ObfuscatedName("vd.bv")
-	public class729 field7519;
+	public IterableMap field7519;
 
 	@ObfuscatedName("vd.br")
 	public boolean field7520 = false;
@@ -245,7 +245,7 @@ public class class598 implements class53 {
 	@ObfuscatedName("vd.cg")
 	public class416 field7468;
 
-	public class598(int arg0, class599 arg1, class51 arg2) {
+	public class598(int arg0, class599 arg1, ConfigTypeList arg2) {
 		this.field7450 = arg0;
 		this.field7451 = arg1;
 		this.field7452 = arg2;
@@ -253,7 +253,7 @@ public class class598 implements class53 {
 	}
 
 	@ObfuscatedName("vd.e(Lalw;B)V")
-	public void method976(Packet arg0) {
+	public void decode(Packet arg0) {
 		while (true) {
 			int var2 = arg0.g1();
 			if (var2 == 0) {
@@ -264,7 +264,7 @@ public class class598 implements class53 {
 	}
 
 	@ObfuscatedName("vd.n(I)V")
-	public void method975() {
+	public void postDecode() {
 		this.method9472();
 		if (this.field7455) {
 			this.field7467 = 0;
@@ -547,7 +547,7 @@ public class class598 implements class53 {
 							int var32 = arg0.g1();
 							if (this.field7519 == null) {
 								int var33 = class783.method16657(var32);
-								this.field7519 = new class729(var33);
+								this.field7519 = new IterableMap(var33);
 							}
 							for (int var34 = 0; var34 < var32; var34++) {
 								boolean var35 = arg0.g1() == 1;
@@ -656,7 +656,7 @@ public class class598 implements class53 {
 		}
 		boolean var17 = this.field7471 != 0 && (arg4 != null || arg5 != null);
 		boolean var18 = this.field7522 != 0 || this.field7449 != 0 || this.field7500 != 0;
-		class162 var19 = this.field7451.field7533;
+		WeightedCache var19 = this.field7451.field7533;
 		class746 var20;
 		synchronized (this.field7451.field7533) {
 			var20 = (class746) this.field7451.field7533.method2930(var14);
@@ -688,7 +688,7 @@ public class class598 implements class53 {
 			}
 			var22.method1690(var16);
 			class746 var25 = new class746(var22, var23);
-			class162 var26 = this.field7451.field7533;
+			WeightedCache var26 = this.field7451.field7533;
 			synchronized (this.field7451.field7533) {
 				this.field7451.field7533.method2921(var25, var14);
 			}
@@ -744,7 +744,7 @@ public class class598 implements class53 {
 		if (class601.field7563.field7562 == arg2 && arg3 > 3) {
 			arg1 |= 0x5;
 		}
-		class162 var17 = this.field7451.field7532;
+		WeightedCache var17 = this.field7451.field7532;
 		class116 var18;
 		synchronized (this.field7451.field7532) {
 			var18 = (class116) this.field7451.field7532.method2930(var15);
@@ -757,7 +757,7 @@ public class class598 implements class53 {
 			if (var18 == null) {
 				return null;
 			}
-			class162 var20 = this.field7451.field7532;
+			WeightedCache var20 = this.field7451.field7532;
 			synchronized (this.field7451.field7532) {
 				this.field7451.field7532.method2921(var18, var15);
 			}
@@ -845,7 +845,7 @@ public class class598 implements class53 {
 				for (int var17 = 0; var17 < var14; var17++) {
 					var15 = var15 * 67783L + (long) var13[var17];
 				}
-				class162 var18 = this.field7451.field7530;
+				WeightedCache var18 = this.field7451.field7530;
 				synchronized (this.field7451.field7530) {
 					var10 = (class116) this.field7451.field7530.method2930(var15);
 				}
@@ -888,7 +888,7 @@ public class class598 implements class53 {
 						}
 					}
 					var10 = arg0.method2211(var21, var20, this.field7451.field7536, var6, var7);
-					class162 var26 = this.field7451.field7530;
+					WeightedCache var26 = this.field7451.field7530;
 					synchronized (this.field7451.field7530) {
 						this.field7451.field7530.method2921(var10, var15);
 					}
@@ -974,10 +974,10 @@ public class class598 implements class53 {
 			}
 		}
 		if (var3 >= 0 && var3 < this.field7505.length - 1) {
-			return this.field7505[var3] == -1 ? null : (class598) this.field7452.method962(this.field7505[var3]);
+			return this.field7505[var3] == -1 ? null : (class598) this.field7452.get(this.field7505[var3]);
 		} else {
 			int var6 = this.field7505[this.field7505.length - 1];
-			return var6 == -1 ? null : (class598) this.field7452.method962(var6);
+			return var6 == -1 ? null : (class598) this.field7452.get(var6);
 		}
 	}
 
@@ -1008,7 +1008,7 @@ public class class598 implements class53 {
 		}
 		for (int var1 = 0; var1 < this.field7505.length; var1++) {
 			if (this.field7505[var1] != -1) {
-				class598 var2 = (class598) this.field7452.method962(this.field7505[var1]);
+				class598 var2 = (class598) this.field7452.get(this.field7505[var1]);
 				if (var2.field7508 != -1 || var2.field7514 != null) {
 					return true;
 				}

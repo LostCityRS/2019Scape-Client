@@ -10,26 +10,26 @@ public class class1071 extends class714 {
 	public class273 field11867;
 
 	@ObfuscatedName("anw.m")
-	public final class423 field11863 = new class423();
+	public final Vector3 field11863 = new Vector3();
 
 	@ObfuscatedName("anw.k")
 	public boolean field11864;
 
 	@ObfuscatedName("anw.f")
-	public final class423 field11865 = new class423(Float.NaN, Float.NaN, Float.NaN);
+	public final Vector3 field11865 = new Vector3(Float.NaN, Float.NaN, Float.NaN);
 
 	@ObfuscatedName("anw.w")
-	public final class423 field11862 = new class423(Float.NaN, Float.NaN, Float.NaN);
+	public final Vector3 field11862 = new Vector3(Float.NaN, Float.NaN, Float.NaN);
 
 	@ObfuscatedName("anw.l")
-	public final class423 field11866 = new class423();
+	public final Vector3 field11866 = new Vector3();
 
 	public class1071(class274 arg0) {
 		super(arg0);
 	}
 
 	@ObfuscatedName("anw.q(Ljn;Lox;ZI)V")
-	public void method18816(class273 arg0, class423 arg1, boolean arg2) {
+	public void method18816(class273 arg0, Vector3 arg1, boolean arg2) {
 		this.field11867 = arg0;
 		this.field11863.method6492(arg1);
 		this.field11864 = arg2;
@@ -58,11 +58,11 @@ public class class1071 extends class714 {
 
 	@ObfuscatedName("anw.f(Lju;Lou;IIFB)V")
 	public void method14136(class270 arg0, class419 arg1, int arg2, int arg3, float arg4) {
-		class423 var6 = class423.method6484(this.field8479.method4714());
+		Vector3 var6 = Vector3.method6484(this.field8479.method4714());
 		var6.field4308 -= arg2;
 		var6.field4313 -= arg3;
 		var6.field4311 *= -1.0F;
-		class423 var7 = this.method14133();
+		Vector3 var7 = this.method14133();
 		var7.field4308 -= arg2;
 		var7.field4313 -= arg3;
 		var7.field4311 *= -1.0F;
@@ -72,9 +72,9 @@ public class class1071 extends class714 {
 	}
 
 	@ObfuscatedName("anw.m(I)Lox;")
-	public class423 method14133() {
-		class423 var1 = class423.method6484(this.field11865);
-		class423 var2 = class423.method6484(this.field11863);
+	public Vector3 method14133() {
+		Vector3 var1 = Vector3.method6484(this.field11865);
+		Vector3 var2 = Vector3.method6484(this.field11863);
 		if (this.field11864) {
 			var2.method6526(this.field11867.method4668());
 		}
@@ -84,9 +84,9 @@ public class class1071 extends class714 {
 	}
 
 	@ObfuscatedName("anw.k(I)Lox;")
-	public class423 method14135() {
-		class423 var1 = class423.method6484(this.field11862);
-		class423 var2 = class423.method6484(this.field11863);
+	public Vector3 method14135() {
+		Vector3 var1 = Vector3.method6484(this.field11862);
+		Vector3 var2 = Vector3.method6484(this.field11863);
 		if (this.field11864) {
 			var2.method6526(this.field11867.method4668());
 		}
@@ -96,7 +96,7 @@ public class class1071 extends class714 {
 	}
 
 	@ObfuscatedName("anw.b(I)Lox;")
-	public class423 method18819() {
+	public Vector3 method18819() {
 		return this.field11865;
 	}
 

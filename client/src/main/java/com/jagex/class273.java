@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public interface class273 {
 
 	@ObfuscatedName("jn.f(B)Lox;")
-	class423 method4666();
+	Vector3 method4666();
 
 	@ObfuscatedName("jn.m(B)Lakt;")
 	CoordFine method4667();

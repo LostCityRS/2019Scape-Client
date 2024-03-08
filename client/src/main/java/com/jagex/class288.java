@@ -15,13 +15,13 @@ public abstract class class288 {
 	public class341 field2996;
 
 	@ObfuscatedName("jc.k")
-	public final class426 field2995 = new class426();
+	public final Matrix4x4 field2995 = new Matrix4x4();
 
 	@ObfuscatedName("jc.f")
-	public final class426 field2998 = new class426();
+	public final Matrix4x4 field2998 = new Matrix4x4();
 
 	@ObfuscatedName("jc.w")
-	public final class426 field2999 = new class426();
+	public final Matrix4x4 field2999 = new Matrix4x4();
 
 	@ObfuscatedName("jc.l")
 	public class330 field3000;

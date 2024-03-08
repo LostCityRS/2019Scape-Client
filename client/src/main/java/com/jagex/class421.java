@@ -129,7 +129,7 @@ public final class class421 {
 	}
 
 	@ObfuscatedName("ov.z(Lox;F)V")
-	public void method6413(class423 arg0, float arg1) {
+	public void method6413(Vector3 arg0, float arg1) {
 		this.method6414(arg0.field4308, arg0.field4311, arg0.field4313, arg1);
 	}
 

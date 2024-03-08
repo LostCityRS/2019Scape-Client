@@ -8,7 +8,7 @@ import java.util.Iterator;
 public class class718 implements Iterator {
 
 	@ObfuscatedName("aar.e")
-	public class715 field8490;
+	public IterableQueue field8490;
 
 	@ObfuscatedName("aar.n")
 	public class532 field8489;
@@ -16,12 +16,12 @@ public class class718 implements Iterator {
 	@ObfuscatedName("aar.m")
 	public class532 field8488 = null;
 
-	public class718(class715 arg0) {
+	public class718(IterableQueue arg0) {
 		this.method14283(arg0);
 	}
 
 	@ObfuscatedName("aar.l(Laat;I)V")
-	public void method14283(class715 arg0) {
+	public void method14283(IterableQueue arg0) {
 		this.field8490 = arg0;
 		this.method14284();
 	}

@@ -48,14 +48,14 @@ public class class156 {
 		if (this.field1735 < 0) {
 			return true;
 		}
-		class598 var1 = (class598) Statics.field1897.method962(this.field1735);
+		class598 var1 = (class598) Statics.field1897.get(this.field1735);
 		boolean var2 = var1.method9473(this.field1736.field7562);
 		int[] var3 = var1.method9484();
 		if (var3 != null) {
 			int[] var4 = var3;
 			for (int var5 = 0; var5 < var4.length; var5++) {
 				int var6 = var4[var5];
-				var2 &= ((class164) Statics.field8797.method962(var6)).method2991();
+				var2 &= ((class164) Statics.field8797.get(var6)).method2991();
 			}
 		}
 		return var2;

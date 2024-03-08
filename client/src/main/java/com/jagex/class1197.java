@@ -35,7 +35,7 @@ public abstract class class1197 extends class1019 {
 	@ObfuscatedName("asm.gy([Lakf;S)I")
 	public int method18375(class973[] arg0) {
 		if (this.field8176) {
-			class423 var2 = this.method10536().field4298;
+			Vector3 var2 = this.method10536().field4298;
 			this.field12450 = this.method18362((int) var2.field4308 >> this.field11716.field6900, (int) var2.field4313 >> this.field11716.field6900, this.field12453);
 			this.field8176 = false;
 		}
@@ -47,13 +47,13 @@ public abstract class class1197 extends class1019 {
 
 	@ObfuscatedName("asm.ga(Ldh;S)Z")
 	public boolean method18360(class133 arg0) {
-		class423 var2 = this.method10536().field4298;
+		Vector3 var2 = this.method10536().field4298;
 		return this.field11716.field6930.method8950(this.field11714, (int) var2.field4308 >> this.field11716.field6900, (int) var2.field4313 >> this.field11716.field6900, this.method16523());
 	}
 
 	@ObfuscatedName("asm.gn(I)Z")
 	public boolean method18361() {
-		class423 var1 = this.method10536().field4298;
+		Vector3 var1 = this.method10536().field4298;
 		return this.field11716.field6962[this.field11716.field6942 + (((int) var1.field4308 >> this.field11716.field6900) - this.field11716.field6902)][this.field11716.field6942 + (((int) var1.field4313 >> this.field11716.field6900) - this.field11716.field6947)];
 	}
 

@@ -7,13 +7,13 @@ import deob.Statics;
 public class class975 extends class532 {
 
 	@ObfuscatedName("akc.f")
-	public static class715 field11346 = new class715();
+	public static IterableQueue field11346 = new IterableQueue();
 
 	@ObfuscatedName("akc.w")
-	public static class715 field11347 = new class715();
+	public static IterableQueue field11347 = new IterableQueue();
 
 	@ObfuscatedName("akc.l")
-	public static class729 field11366 = new class729(16);
+	public static IterableMap field11366 = new IterableMap(16);
 
 	@ObfuscatedName("akc.u")
 	public int field11349;
@@ -31,10 +31,10 @@ public class class975 extends class532 {
 	public int field11353;
 
 	@ObfuscatedName("akc.r")
-	public class423 field11350 = new class423(0.0F, 0.0F, 0.0F);
+	public Vector3 field11350 = new Vector3(0.0F, 0.0F, 0.0F);
 
 	@ObfuscatedName("akc.v")
-	public class423 field11355 = new class423(0.0F, 0.0F, 0.0F);
+	public Vector3 field11355 = new Vector3(0.0F, 0.0F, 0.0F);
 
 	@ObfuscatedName("akc.o")
 	public int field11356;
@@ -70,10 +70,10 @@ public class class975 extends class532 {
 	public int field11370;
 
 	@ObfuscatedName("akc.al")
-	public class476 field11371;
+	public Sound field11371;
 
 	@ObfuscatedName("akc.ac")
-	public class476 field11372;
+	public Sound field11372;
 
 	@ObfuscatedName("akc.ai")
 	public int field11373;
@@ -399,7 +399,7 @@ public class class975 extends class532 {
 					}
 				}
 			}
-			class423 var12 = var5.field11345.method10536().field4298;
+			Vector3 var12 = var5.field11345.method10536().field4298;
 			var5.field11358 = (int) var12.field4308;
 			var5.field11352 = (int) var12.field4308 + (var5.field11345.method16546() << 8);
 			var5.field11351 = (int) var12.field4313;
@@ -443,7 +443,7 @@ public class class975 extends class532 {
 					}
 				}
 			}
-			class423 var19 = var13.field11361.method10536().field4298;
+			Vector3 var19 = var13.field11361.method10536().field4298;
 			var13.field11358 = (int) var19.field4308;
 			var13.field11352 = (int) var19.field4308 + (var13.field11361.method16546() << 8);
 			var13.field11351 = (int) var19.field4313;
@@ -475,7 +475,7 @@ public class class975 extends class532 {
 				int var8 = (int) ((float) (arg0.field11353 - arg0.field11351) * 0.5F + (float) arg0.field11351);
 				arg0.field11350.field4308 = var7;
 				arg0.field11350.field4313 = var8;
-				arg0.field11371 = Statics.field1798.method3236(class173.field1821, arg0, arg0.field11370, -1, 0, class168.field1808.method3034(), class174.field1838, (float) arg0.field11356, (float) arg0.field11357, arg0.field11350, 0, var6, false);
+				arg0.field11371 = Statics.field1798.method3236(class173.field1821, arg0, arg0.field11370, -1, 0, SubBussType.field1808.method3034(), class174.field1838, (float) arg0.field11356, (float) arg0.field11357, arg0.field11350, 0, var6, false);
 				if (arg0.field11371 != null) {
 					float var9 = (float) var5 / 255.0F;
 					arg0.field11371.method7403(var9, 150);
@@ -498,7 +498,7 @@ public class class975 extends class532 {
 				int var15 = (int) ((float) (arg0.field11353 - arg0.field11351) * 0.5F + (float) arg0.field11351);
 				arg0.field11355.field4308 = var14;
 				arg0.field11355.field4313 = var15;
-				arg0.field11372 = Statics.field1798.method3236(class173.field1822, arg0, arg0.field11375[var13], 0, var5, class168.field1799.method3034(), class174.field1838, (float) arg0.field11356, (float) (arg0.field11357 + arg0.field11356), arg0.field11355, 0, var12, false);
+				arg0.field11372 = Statics.field1798.method3236(class173.field1822, arg0, arg0.field11375[var13], 0, var5, SubBussType.field1799.method3034(), class174.field1838, (float) arg0.field11356, (float) (arg0.field11357 + arg0.field11356), arg0.field11355, 0, var12, false);
 				if (arg0.field11372 != null) {
 					arg0.field11372.method7441();
 				}

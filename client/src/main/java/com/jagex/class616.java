@@ -41,8 +41,8 @@ public class class616 implements class614 {
 	}
 
 	@ObfuscatedName("wp.n(B)Lrw;")
-	public class476 method9710() {
-		class476 var1 = new class476(this.field7628);
+	public Sound method9710() {
+		Sound var1 = new Sound(this.field7628);
 		var1.method7376(this);
 		return var1;
 	}

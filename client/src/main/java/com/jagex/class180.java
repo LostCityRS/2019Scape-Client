@@ -9,23 +9,23 @@ import java.util.List;
 public class class180 {
 
 	// $FF: synthetic field
-	public final class183 this$0;
+	public final AudioApi this$0;
 
 	@ObfuscatedName("fq.e")
 	public List field1845;
 
-	public class180(class183 arg0) {
+	public class180(AudioApi arg0) {
 		this.this$0 = arg0;
 		this.field1845 = new ArrayList();
 	}
 
 	@ObfuscatedName("fq.e(Lrw;I)V")
-	public void method3110(class476 arg0) {
+	public void method3110(Sound arg0) {
 		this.field1845.add(arg0);
 	}
 
 	@ObfuscatedName("fq.n(Lrw;I)V")
-	public void method3114(class476 arg0) {
+	public void method3114(Sound arg0) {
 		this.field1845.remove(arg0);
 	}
 
@@ -35,7 +35,7 @@ public class class180 {
 	}
 
 	@ObfuscatedName("fq.k(Lrw;I)Z")
-	public boolean method3113(class476 arg0) {
+	public boolean method3113(Sound arg0) {
 		return this.field1845.contains(arg0);
 	}
 }

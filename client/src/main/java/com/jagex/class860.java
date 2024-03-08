@@ -14,6 +14,6 @@ public class class860 extends class149 {
 	}
 
 	@ObfuscatedName("afv.n(I)V")
-	public void method975() {
+	public void postDecode() {
 	}
 }

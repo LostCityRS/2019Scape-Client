@@ -61,7 +61,7 @@ public class class516 {
 	public boolean[] field6679;
 
 	@ObfuscatedName("sp.x")
-	public class634 field6680;
+	public ParticleSystem field6680;
 
 	@ObfuscatedName("sp.b")
 	public class597 field6678;
@@ -110,12 +110,12 @@ public class class516 {
 
 	@ObfuscatedName("sp.f(S)Lvd;")
 	public class598 method8237() {
-		return (class598) this.field6681.method962(this.field6665);
+		return (class598) this.field6681.get(this.field6665);
 	}
 
 	@ObfuscatedName("sp.w(Ldh;IZZI)Ldo;")
 	public final class116 method8238(class133 arg0, int arg1, boolean arg2, boolean arg3) {
-		class598 var5 = (class598) this.field6681.method962(this.field6665);
+		class598 var5 = (class598) this.field6681.get(this.field6665);
 		if (var5.field7505 != null) {
 			var5 = var5.method9477(Statics.field7410, client.field10863 == 0 ? class153.field1723 : Statics.field7410);
 		}
@@ -137,7 +137,7 @@ public class class516 {
 			this.field6673 = var5.field7450;
 			return null;
 		}
-		class423 var6 = this.field6672.method10536().field4298;
+		Vector3 var6 = this.field6672.method10536().field4298;
 		class550 var7 = client.field10855.method7743();
 		if (arg3) {
 			var7.method8814(this.field6677, this.field6663, (int) var6.field4308, (int) var6.field4313, this.field6679);
@@ -206,12 +206,12 @@ public class class516 {
 		class128[] var9 = arg1.method1750();
 		class102[] var10 = arg1.method1765();
 		if ((this.field6680 == null || this.field6680.field7804) && (var9 != null || var10 != null)) {
-			class598 var11 = (class598) this.field6681.method962(this.field6665);
+			class598 var11 = (class598) this.field6681.get(this.field6665);
 			if (var11.field7505 != null) {
 				var11 = var11.method9477(Statics.field7410, client.field10863 == 0 ? class153.field1723 : Statics.field7410);
 			}
 			if (var11 != null) {
-				this.field6680 = class634.method9962(client.field10903, true);
+				this.field6680 = ParticleSystem.method9962(client.field10903, true);
 			}
 		}
 		if (this.field6680 == null) {
@@ -239,7 +239,7 @@ public class class516 {
 	@ObfuscatedName("sp.p(Ldh;B)V")
 	public void method8242(class133 arg0) {
 		if (this.field6677 != null) {
-			class423 var2 = this.field6672.method10536().field4298;
+			Vector3 var2 = this.field6672.method10536().field4298;
 			client.field10855.method7743().method8814(this.field6677, this.field6663, (int) var2.field4308, (int) var2.field4313, this.field6679);
 			this.field6679 = null;
 			this.field6677 = null;
@@ -280,7 +280,7 @@ public class class516 {
 		int var5 = arg1;
 		boolean var6 = false;
 		if (arg1 == -1) {
-			class598 var7 = (class598) this.field6681.method962(this.field6665);
+			class598 var7 = (class598) this.field6681.get(this.field6665);
 			class598 var8 = var7;
 			if (var7.field7505 != null) {
 				var7 = var7.method9477(Statics.field7410, client.field10863 == 0 ? class153.field1723 : Statics.field7410);

@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("adb")
-public class class793 implements class53, class757 {
+public class class793 implements ConfigType, class757 {
 
 	@ObfuscatedName("adb.e")
 	public ScriptVarType[][] field9185;
@@ -12,7 +12,7 @@ public class class793 implements class53, class757 {
 	public Object[][] field9186;
 
 	@ObfuscatedName("adb.e(Lalw;B)V")
-	public void method976(Packet arg0) {
+	public void decode(Packet arg0) {
 		while (true) {
 			int var2 = arg0.g1();
 			if (var2 == 0) {
@@ -49,7 +49,7 @@ public class class793 implements class53, class757 {
 	}
 
 	@ObfuscatedName("adb.n(I)V")
-	public void method975() {
+	public void postDecode() {
 	}
 
 	@ObfuscatedName("adb.z(IB)V")

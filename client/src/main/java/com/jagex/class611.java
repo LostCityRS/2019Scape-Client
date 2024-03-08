@@ -12,7 +12,7 @@ public class class611 {
 	public int field7611;
 
 	@ObfuscatedName("wz.m")
-	public class729 field7613;
+	public IterableMap field7613;
 
 	@ObfuscatedName("wz.k")
 	public class720 field7614 = new class720();
@@ -23,7 +23,7 @@ public class class611 {
 		int var2;
 		for (var2 = 1; var2 + var2 < arg0; var2 += var2) {
 		}
-		this.field7613 = new class729(var2);
+		this.field7613 = new IterableMap(var2);
 	}
 
 	@ObfuscatedName("wz.e(Lwk;)Ljava/lang/Object;")

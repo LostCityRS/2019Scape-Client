@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ja")
-public class class284 implements class761 {
+public class class284 implements ConfigTypeFactory {
 
 	@ObfuscatedName("ja.e")
 	public final class442 field2961;
@@ -13,12 +13,12 @@ public class class284 implements class761 {
 	}
 
 	@ObfuscatedName("ja.v(ILao;I)Lay;")
-	public class53 method4414(int arg0, class51 arg1) {
+	public ConfigType create(int arg0, ConfigTypeList arg1) {
 		return new class283(arg0, this.field2961);
 	}
 
 	@ObfuscatedName("ja.o(B)Ljava/lang/Class;")
-	public Class method4415() {
+	public Class type() {
 		return class283.class;
 	}
 }

@@ -10,7 +10,7 @@ public class class691 {
 	}
 
 	@ObfuscatedName("pn.e(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lzt;I)I")
-	public static int method6827(CharSequence arg0, CharSequence arg1, class687 arg2) {
+	public static int method6827(CharSequence arg0, CharSequence arg1, Language arg2) {
 		int var3 = arg0.length();
 		int var4 = arg1.length();
 		int var5 = 0;
@@ -54,7 +54,7 @@ public class class691 {
 		for (int var10 = 0; var10 < var9; var10++) {
 			int var11;
 			int var12;
-			if (class687.field8289 == arg2) {
+			if (Language.field8289 == arg2) {
 				var11 = var3 - 1 - var10;
 				var12 = var4 - 1 - var10;
 			} else {
@@ -86,7 +86,7 @@ public class class691 {
 	}
 
 	@ObfuscatedName("aak.n(CLzt;I)C")
-	public static char method14099(char arg0, class687 arg1) {
+	public static char method14099(char arg0, Language arg1) {
 		if (arg0 >= 192 && arg0 <= 255) {
 			if (arg0 >= 192 && arg0 <= 198) {
 				return 'A';
@@ -100,7 +100,7 @@ public class class691 {
 			if (arg0 >= 204 && arg0 <= 207) {
 				return 'I';
 			}
-			if (arg0 == 209 && class687.field8290 != arg1) {
+			if (arg0 == 209 && Language.field8290 != arg1) {
 				return 'N';
 			}
 			if (arg0 >= 210 && arg0 <= 214) {
@@ -127,7 +127,7 @@ public class class691 {
 			if (arg0 >= 236 && arg0 <= 239) {
 				return 'i';
 			}
-			if (arg0 == 241 && class687.field8290 != arg1) {
+			if (arg0 == 241 && Language.field8290 != arg1) {
 				return 'n';
 			}
 			if (arg0 >= 242 && arg0 <= 246) {
@@ -167,27 +167,27 @@ public class class691 {
 	}
 
 	@ObfuscatedName("ad.k(CLzt;I)I")
-	public static int method817(char arg0, class687 arg1) {
+	public static int method817(char arg0, Language arg1) {
 		int var2 = arg0 << 4;
 		if (Character.isUpperCase(arg0) || Character.isTitleCase(arg0)) {
 			arg0 = Character.toLowerCase(arg0);
 			var2 = (arg0 << 4) + 1;
 		}
-		if (arg0 == 241 && class687.field8290 == arg1) {
+		if (arg0 == 241 && Language.field8290 == arg1) {
 			var2 = 1762;
 		}
 		return var2;
 	}
 
 	@ObfuscatedName("cy.f(JIZLzt;I)Ljava/lang/String;")
-	public static String method1582(long arg0, int arg1, boolean arg2, class687 arg3) {
+	public static String method1582(long arg0, int arg1, boolean arg2, Language arg3) {
 		char var5 = ',';
 		char var6 = '.';
-		if (class687.field8296 == arg3) {
+		if (Language.field8296 == arg3) {
 			var5 = '.';
 			var6 = ',';
 		}
-		if (class687.field8289 == arg3) {
+		if (Language.field8289 == arg3) {
 			var6 = 160;
 		}
 		boolean var7 = false;

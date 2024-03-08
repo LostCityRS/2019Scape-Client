@@ -19,7 +19,7 @@ public class class880 extends class159 {
 	public final int field10326;
 
 	@ObfuscatedName("agu.w")
-	public class476 field10327;
+	public Sound field10327;
 
 	public class880(Packet arg0) {
 		super(arg0);
@@ -27,7 +27,7 @@ public class class880 extends class159 {
 		this.field10324 = arg0.g1();
 		this.field10325 = arg0.g1();
 		this.field10326 = arg0.g1();
-		this.field10327 = Statics.field1798.method3236(class173.field1828, this, this.field10323, this.field10326, this.field10324, class168.field1805.method3034(), class174.field1835, 0.0F, 0.0F, null, 0, this.field10325, false);
+		this.field10327 = Statics.field1798.method3236(class173.field1828, this, this.field10323, this.field10326, this.field10324, SubBussType.field1805.method3034(), class174.field1835, 0.0F, 0.0F, null, 0, this.field10325, false);
 		if (this.field10327 != null) {
 			this.field10327.method7392();
 		}

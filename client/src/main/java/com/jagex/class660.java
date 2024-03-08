@@ -18,7 +18,7 @@ public class class660 {
 	public float field8117;
 
 	@ObfuscatedName("yj.f")
-	public class423 field8120;
+	public Vector3 field8120;
 
 	@ObfuscatedName("yj.w")
 	public int field8121;
@@ -111,7 +111,7 @@ public class class660 {
 			this.field8117 = arg0.gFloat();
 		}
 		if ((var2 & class658.field8061.field8102) != 0L) {
-			this.field8120 = class423.method6485(arg0);
+			this.field8120 = Vector3.method6485(arg0);
 		}
 		if ((var2 & class658.field8069.field8102) != 0L) {
 			arg0.gFloat();
@@ -202,13 +202,13 @@ public class class660 {
 			arg0.gFloat();
 		}
 		if ((var2 & class658.field8089.field8102) != 0L) {
-			new class423(arg0);
+			new Vector3(arg0);
 		}
 		if ((var2 & class658.field8090.field8102) != 0L) {
-			new class423(arg0);
+			new Vector3(arg0);
 		}
 		if ((var2 & class658.field8091.field8102) != 0L) {
-			new class423(arg0);
+			new Vector3(arg0);
 		}
 		if ((var2 & class658.field8093.field8102) != 0L) {
 			arg0.gFloat();
@@ -265,7 +265,7 @@ public class class660 {
 	}
 
 	@ObfuscatedName("yj.l(I)Lox;")
-	public class423 method10383() {
+	public Vector3 method10383() {
 		return this.field8120;
 	}
 

@@ -226,8 +226,8 @@ public class class503 {
 		int var17 = var15.method1695() - var15.method1748();
 		int var18 = var16 > var17 ? var16 : var17;
 		int var19 = this.field5123 * 1024 / var18;
-		class426 var20 = arg0.method2355();
-		class426 var21 = arg0.method2208();
+		Matrix4x4 var20 = arg0.method2355();
+		Matrix4x4 var21 = arg0.method2208();
 		var21.method6622((float) (this.field5123 / 2), (float) (this.field5123 / 2), (float) var19, (float) var19, 50.0F, 50000.0F, (float) arg0.method2135().method1627(), (float) arg0.method2135().method1628(), 1024.0F);
 		arg0.method2220(var21);
 		class419 var22 = new class419();
@@ -285,8 +285,8 @@ public class class503 {
 		if (this.field5111 != 0) {
 			var13 = var13 * 13 / 16;
 		}
-		class426 var14 = arg0.method2355();
-		class426 var15 = arg0.method2208();
+		Matrix4x4 var14 = arg0.method2355();
+		Matrix4x4 var15 = arg0.method2208();
 		var15.method6622((float) (this.field5123 / 2), (float) (this.field5123 / 2), (float) var13, (float) var13, 50.0F, 50000.0F, (float) arg0.method2135().method1627(), (float) arg0.method2135().method1628(), 1024.0F);
 		arg0.method2220(var15);
 		arg0.method2217(new class419());

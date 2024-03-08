@@ -25,16 +25,16 @@ public final class class212 {
 
 	@ObfuscatedName("gd.e(Ljava/util/Date;Ljava/lang/String;I)Ljava/lang/String;")
 	public static String method3647(Date arg0, String arg1) {
-		return method3624(arg0, arg1, method3625(), class687.field8296);
+		return method3624(arg0, arg1, method3625(), Language.field8296);
 	}
 
 	@ObfuscatedName("gd.n(Ljava/util/Date;Ljava/lang/String;Ljava/util/TimeZone;Lzt;I)Ljava/lang/String;")
-	public static String method3624(Date arg0, String arg1, TimeZone arg2, class687 arg3) {
+	public static String method3624(Date arg0, String arg1, TimeZone arg2, Language arg3) {
 		if (Statics.field2010 == null) {
 			Statics.field2010 = new HashMap(7);
-			class687[] var4 = class687.method13871();
+			Language[] var4 = Language.method13871();
 			for (int var5 = 0; var5 < var4.length; var5++) {
-				class687 var6 = var4[var5];
+				Language var6 = var4[var5];
 				Statics.field2010.put(var6, new ConcurrentLinkedQueue());
 			}
 		}

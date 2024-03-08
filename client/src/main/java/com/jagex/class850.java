@@ -51,7 +51,7 @@ public abstract class class850 extends class133 {
 	public NativeHeap field10154;
 
 	@ObfuscatedName("afc.bh")
-	public class715 field10051 = new class715();
+	public IterableQueue field10051 = new IterableQueue();
 
 	@ObfuscatedName("afc.bx")
 	public int field10052;
@@ -66,7 +66,7 @@ public abstract class class850 extends class133 {
 	public class419 field10200 = new class419();
 
 	@ObfuscatedName("afc.bn")
-	public class426 field10056 = new class426();
+	public Matrix4x4 field10056 = new Matrix4x4();
 
 	@ObfuscatedName("afc.bt")
 	public class419 field10201 = new class419();
@@ -75,34 +75,34 @@ public abstract class class850 extends class133 {
 	public class419 field10042 = new class419();
 
 	@ObfuscatedName("afc.bm")
-	public class426 field10059 = new class426();
+	public Matrix4x4 field10059 = new Matrix4x4();
 
 	@ObfuscatedName("afc.bb")
-	public class426 field10035 = new class426();
+	public Matrix4x4 field10035 = new Matrix4x4();
 
 	@ObfuscatedName("afc.be")
-	public class426 field10190 = new class426();
+	public Matrix4x4 field10190 = new Matrix4x4();
 
 	@ObfuscatedName("afc.by")
 	public class419 field10062 = new class419();
 
 	@ObfuscatedName("afc.bu")
-	public class426 field10063 = new class426();
+	public Matrix4x4 field10063 = new Matrix4x4();
 
 	@ObfuscatedName("afc.bw")
-	public static final class426 field10064 = new class426();
+	public static final Matrix4x4 field10064 = new Matrix4x4();
 
 	@ObfuscatedName("afc.bo")
 	public class419 field10065 = new class419();
 
 	@ObfuscatedName("afc.bz")
-	public class426 field10066 = new class426();
+	public Matrix4x4 field10066 = new Matrix4x4();
 
 	@ObfuscatedName("afc.bv")
-	public class426 field10039 = new class426();
+	public Matrix4x4 field10039 = new Matrix4x4();
 
 	@ObfuscatedName("afc.br")
-	public class423 field10054 = new class423();
+	public Vector3 field10054 = new Vector3();
 
 	@ObfuscatedName("afc.bg")
 	public float[] field10069 = new float[4];
@@ -117,31 +117,31 @@ public abstract class class850 extends class133 {
 	public boolean field10121 = false;
 
 	@ObfuscatedName("afc.bs")
-	public class426 field10073 = new class426();
+	public Matrix4x4 field10073 = new Matrix4x4();
 
 	@ObfuscatedName("afc.cl")
-	public class426 field10068 = new class426();
+	public Matrix4x4 field10068 = new Matrix4x4();
 
 	@ObfuscatedName("afc.cg")
 	public boolean field10194 = false;
 
 	@ObfuscatedName("afc.ce")
-	public class426 field10076 = new class426();
+	public Matrix4x4 field10076 = new Matrix4x4();
 
 	@ObfuscatedName("afc.cu")
-	public class426 field10168 = new class426();
+	public Matrix4x4 field10168 = new Matrix4x4();
 
 	@ObfuscatedName("afc.ci")
-	public class426 field10078 = this.field10168;
+	public Matrix4x4 field10078 = this.field10168;
 
 	@ObfuscatedName("afc.cn")
-	public class426 field10079 = new class426();
+	public Matrix4x4 field10079 = new Matrix4x4();
 
 	@ObfuscatedName("afc.cv")
-	public class426 field10145 = new class426();
+	public Matrix4x4 field10145 = new Matrix4x4();
 
 	@ObfuscatedName("afc.cp")
-	public class426 field10081 = new class426();
+	public Matrix4x4 field10081 = new Matrix4x4();
 
 	@ObfuscatedName("afc.ca")
 	public float[][] field10061 = new float[6][4];
@@ -300,7 +300,7 @@ public abstract class class850 extends class133 {
 	public class356[] field10093;
 
 	@ObfuscatedName("afc.ej")
-	public class426[] field10162;
+	public Matrix4x4[] field10162;
 
 	@ObfuscatedName("afc.ep")
 	public class352[] field10135;
@@ -510,7 +510,7 @@ public abstract class class850 extends class133 {
 	public class844[] field10207;
 
 	@ObfuscatedName("afc.hb")
-	public class426 field10208;
+	public Matrix4x4 field10208;
 
 	@ObfuscatedName("afc.hl")
 	public class419 field10209;
@@ -595,7 +595,7 @@ public abstract class class850 extends class133 {
 		new Stream();
 		this.field10058 = new class844[8];
 		this.field10207 = new class844[8];
-		this.field10208 = new class426();
+		this.field10208 = new Matrix4x4();
 		this.field10209 = new class419();
 		try {
 			this.field10041 = arg5;
@@ -633,7 +633,7 @@ public abstract class class850 extends class133 {
 	@ObfuscatedName("afc.ru()V")
 	public final void method15969() {
 		this.field10093 = new class356[this.field10186];
-		this.field10162 = new class426[this.field10186];
+		this.field10162 = new Matrix4x4[this.field10186];
 		this.field10135 = new class352[this.field10186];
 		this.field10136 = new class355[this.field10186];
 		this.field10137 = new class355[this.field10186];
@@ -641,7 +641,7 @@ public abstract class class850 extends class133 {
 			this.field10137[var1] = class355.field3395;
 			this.field10136[var1] = class355.field3395;
 			this.field10135[var1] = class352.field3372;
-			this.field10162[var1] = new class426();
+			this.field10162[var1] = new Matrix4x4();
 		}
 		this.field10045 = new class973[this.field10094 - 2];
 		int[] var2 = new int[] { -1 };
@@ -1272,7 +1272,7 @@ public abstract class class850 extends class133 {
 	}
 
 	@ObfuscatedName("afc.cc()Lpq;")
-	public final class426 method2208() {
+	public final Matrix4x4 method2208() {
 		return this.field10208;
 	}
 
@@ -1472,12 +1472,12 @@ public abstract class class850 extends class133 {
 	}
 
 	@ObfuscatedName("afc.so()Lpq;")
-	public final class426 method16000() {
+	public final Matrix4x4 method16000() {
 		return class340.field3321 == this.field10050 ? this.field10059 : field10064;
 	}
 
 	@ObfuscatedName("afc.sc()Lpq;")
-	public final class426 method16035() {
+	public final Matrix4x4 method16035() {
 		return class340.field3321 == this.field10050 ? this.field10035 : field10064;
 	}
 
@@ -1502,7 +1502,7 @@ public abstract class class850 extends class133 {
 	}
 
 	@ObfuscatedName("afc.dm(Lpq;)V")
-	public final void method2220(class426 arg0) {
+	public final void method2220(Matrix4x4 arg0) {
 		this.field10076.method6604(arg0);
 		this.method16001();
 		if (class340.field3321 == this.field10050) {
@@ -1525,7 +1525,7 @@ public abstract class class850 extends class133 {
 	}
 
 	@ObfuscatedName("afc.dq()Lpq;")
-	public final class426 method2355() {
+	public final Matrix4x4 method2355() {
 		return this.field10076;
 	}
 
@@ -1535,7 +1535,7 @@ public abstract class class850 extends class133 {
 	}
 
 	@ObfuscatedName("afc.ta()Lpq;")
-	public class426 method16002() {
+	public Matrix4x4 method16002() {
 		return this.field10056;
 	}
 
@@ -1554,7 +1554,7 @@ public abstract class class850 extends class133 {
 	}
 
 	@ObfuscatedName("afc.tc()Lpq;")
-	public class426 method16244() {
+	public Matrix4x4 method16244() {
 		if (class340.field3321 == this.field10050) {
 			if (!this.field10070) {
 				this.method16003();
@@ -1566,12 +1566,12 @@ public abstract class class850 extends class133 {
 	}
 
 	@ObfuscatedName("afc.tj()Lpq;")
-	public final class426 method16228() {
+	public final Matrix4x4 method16228() {
 		return this.field10081;
 	}
 
 	@ObfuscatedName("afc.te()Lpq;")
-	public final class426 method16005() {
+	public final Matrix4x4 method16005() {
 		return this.field10079;
 	}
 
@@ -1654,7 +1654,7 @@ public abstract class class850 extends class133 {
 			var1 = this.field1614.method1627();
 			var2 = this.field1614.method1628();
 		}
-		class426 var3 = this.field10073;
+		Matrix4x4 var3 = this.field10073;
 		if (var1 == 0 || var2 == 0) {
 			var3.method6603();
 		} else {
@@ -1779,7 +1779,7 @@ public abstract class class850 extends class133 {
 
 	@ObfuscatedName("afc.cn(IIIILou;Loj;)Z")
 	public boolean method2128(int arg0, int arg1, int arg2, int arg3, class419 arg4, class416 arg5) {
-		class426 var7 = this.field10066;
+		Matrix4x4 var7 = this.field10066;
 		var7.method6609(arg4);
 		var7.method6720(this.field10145);
 		return arg5.method6275(arg0, arg1, arg2, arg3, var7, this.field10083, this.field10085, this.field10084, this.field10086);
@@ -1787,7 +1787,7 @@ public abstract class class850 extends class133 {
 
 	@ObfuscatedName("afc.cv(Lou;Led;Loj;)V")
 	public void method2193(class419 arg0, class141 arg1, class416 arg2) {
-		class426 var4 = this.field10066;
+		Matrix4x4 var4 = this.field10066;
 		var4.method6609(arg0);
 		var4.method6720(this.field10145);
 		arg1.method2746(arg2, this.field10076, var4, this.field10083, this.field10085, this.field10084, this.field10086);
@@ -1986,12 +1986,12 @@ public abstract class class850 extends class133 {
 	}
 
 	@ObfuscatedName("afc.ue()Lpq;")
-	public final class426 method16045() {
+	public final Matrix4x4 method16045() {
 		return this.field10162[this.field10177];
 	}
 
 	@ObfuscatedName("afc.vq()Lpq;")
-	public final class426 method16046() {
+	public final Matrix4x4 method16046() {
 		return this.field10162[this.field10177];
 	}
 
@@ -2319,7 +2319,7 @@ public abstract class class850 extends class133 {
 	}
 
 	@ObfuscatedName("afc.dt(Ldm;)V")
-	public final void method2198(class119 arg0) {
+	public final void method2198(ParticleList arg0) {
 		this.field10198.method5770(this, arg0);
 	}
 
@@ -2395,7 +2395,7 @@ public abstract class class850 extends class133 {
 	public abstract class238 method15964(String arg0);
 
 	@ObfuscatedName("afc.rn(Lpq;Lpq;Lpq;)V")
-	public abstract void method15967(class426 arg0, class426 arg1, class426 arg2);
+	public abstract void method15967(Matrix4x4 arg0, Matrix4x4 arg1, Matrix4x4 arg2);
 
 	@ObfuscatedName("afc.ug(Lck;IIZ[BII)Llz;")
 	public abstract class341 method15975(class109 arg0, int arg1, int arg2, boolean arg3, byte[] arg4, int arg5, int arg6);
@@ -2416,7 +2416,7 @@ public abstract class class850 extends class133 {
 	public abstract void method15999();
 
 	@ObfuscatedName("afc.ti(Lpq;)V")
-	public abstract void method16006(class426 arg0);
+	public abstract void method16006(Matrix4x4 arg0);
 
 	@ObfuscatedName("afc.tp()V")
 	public abstract void method16016();

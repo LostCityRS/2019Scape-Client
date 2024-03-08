@@ -20,7 +20,7 @@ public class class805 {
 			} else if (var4 == ' ') {
 				var2.append('+');
 			} else {
-				byte var5 = class693.method16904(var4);
+				byte var5 = Cp1252.method16904(var4);
 				var2.append('%');
 				int var6 = var5 >> 4 & 0xF;
 				if (var6 >= 10) {

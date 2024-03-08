@@ -11,7 +11,7 @@ import java.lang.reflect.Method;
 public class class780 {
 
 	@ObfuscatedName("acj.e")
-	public static class715 field9148 = new class715();
+	public static IterableQueue field9148 = new IterableQueue();
 
 	public class780() throws Throwable {
 		throw new Error();
@@ -19,7 +19,7 @@ public class class780 {
 
 	@ObfuscatedName("hh.e(I)V")
 	public static void method4052() {
-		field9148 = new class715();
+		field9148 = new IterableQueue();
 	}
 
 	@ObfuscatedName("abf.n(I)Z")

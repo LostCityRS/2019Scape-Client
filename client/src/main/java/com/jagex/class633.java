@@ -34,10 +34,10 @@ public class class633 {
 	public static int field7798 = 0;
 
 	@ObfuscatedName("xl.r")
-	public static class729 field7799 = new class729(16);
+	public static IterableMap field7799 = new IterableMap(16);
 
 	@ObfuscatedName("xl.v")
-	public static class729 field7800 = new class729(8);
+	public static IterableMap field7800 = new IterableMap(8);
 
 	@ObfuscatedName("xl.o")
 	public static int field7796 = 0;
@@ -69,8 +69,8 @@ public class class633 {
 		field7791 = 0;
 		field7797 = 0;
 		Statics.field8349 = new LinkedList();
-		Statics.field7794 = new class1219[1024];
-		Statics.field1920 = new class634[class121.field1419[field7802] + 1];
+		Statics.field7794 = new MovingParticle[1024];
+		Statics.field1920 = new ParticleSystem[class121.field1419[field7802] + 1];
 		field7793 = 0;
 		field7792 = 0;
 		Statics.field12041 = arg1;
@@ -83,7 +83,7 @@ public class class633 {
 		class213.method3655();
 		Iterator var3 = Statics.field8349.iterator();
 		while (var3.hasNext()) {
-			class634 var4 = (class634) var3.next();
+			ParticleSystem var4 = (ParticleSystem) var3.next();
 			boolean var5 = var4.method9934(arg0, arg1);
 			if (!var5) {
 				var3.remove();
@@ -97,7 +97,7 @@ public class class633 {
 	public static void method8460(class550 arg0, class133 arg1) {
 		Iterator var2 = Statics.field8349.iterator();
 		while (var2.hasNext()) {
-			class634 var3 = (class634) var2.next();
+			ParticleSystem var3 = (ParticleSystem) var2.next();
 			if (var3.field7807) {
 				var3.method9941(arg0, arg1);
 			}
@@ -106,11 +106,11 @@ public class class633 {
 
 	@ObfuscatedName("ge.f(B)V")
 	public static void method3561() {
-		field7800 = new class729(8);
+		field7800 = new IterableMap(8);
 		field7796 = 0;
 		Iterator var0 = Statics.field8349.iterator();
 		while (var0.hasNext()) {
-			class634 var1 = (class634) var0.next();
+			ParticleSystem var1 = (ParticleSystem) var0.next();
 			var1.method9968();
 		}
 	}
@@ -121,7 +121,7 @@ public class class633 {
 			arg0 = 0;
 		}
 		field7802 = arg0;
-		Statics.field1920 = new class634[class121.field1419[field7802] + 1];
+		Statics.field1920 = new ParticleSystem[class121.field1419[field7802] + 1];
 		field7793 = 0;
 		field7792 = 0;
 	}

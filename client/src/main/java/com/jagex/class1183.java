@@ -15,7 +15,7 @@ public class class1183 extends class986 {
 	public String field12352;
 
 	@ObfuscatedName("asy.p")
-	public class715 field12353;
+	public IterableQueue field12353;
 
 	@ObfuscatedName("asy.d")
 	public int field12354;
@@ -53,7 +53,7 @@ public class class1183 extends class986 {
 			this.field12356 = 0;
 		}
 		class254.method3061(arg7);
-		this.field12353 = new class715();
+		this.field12353 = new IterableQueue();
 	}
 
 	@ObfuscatedName("asy.e(III)Z")

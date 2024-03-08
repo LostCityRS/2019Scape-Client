@@ -97,7 +97,7 @@ public class class1233 extends class1199 {
 
 	@ObfuscatedName("aut.fc(Ldh;I)Ltl;")
 	public class552 method17372(class133 arg0) {
-		class423 var2 = class423.method6484(this.method10536().field4298);
+		Vector3 var2 = Vector3.method6484(this.method10536().field4298);
 		class557 var3 = this.field11716.method8738(this.field11717, (int) var2.field4308 >> 9, (int) var2.field4313 >> 9);
 		class1196 var4 = this.field11716.method8767(this.field11717, (int) var2.field4308 >> 9, (int) var2.field4313 >> 9);
 		int var5 = 0;
@@ -161,13 +161,13 @@ public class class1233 extends class1199 {
 			}
 		}
 		var2.method6486();
-		class423 var33 = this.method10536().field4298;
+		Vector3 var33 = this.method10536().field4298;
 		var6.method6315(var33.field4308, var33.field4311 - 10.0F, var33.field4313);
 		class552 var34 = class552.method16749(true);
 		this.field12576 = false;
 		this.field12579 = 0;
 		if (this.field12573 != -1) {
-			class116 var35 = ((class738) Statics.field1842.method962(this.field12573)).method14644(arg0, 526336, this.field12583, null, null, this.field12581, this.field12582, this.field12574, this.field12575);
+			class116 var35 = ((class738) Statics.field1842.get(this.field12573)).method14644(arg0, 526336, this.field12583, null, null, this.field12581, this.field12582, this.field12574, this.field12575);
 			if (var35 != null) {
 				if (this.field12577 == null) {
 					field12584.method6376();
@@ -181,7 +181,7 @@ public class class1233 extends class1199 {
 			}
 		}
 		if (this.field12569 != -1) {
-			class116 var36 = ((class738) Statics.field1842.method962(this.field12569)).method14644(arg0, 526336, this.field12572, null, null, this.field12581, this.field12582, this.field12574, this.field12575);
+			class116 var36 = ((class738) Statics.field1842.get(this.field12569)).method14644(arg0, 526336, this.field12572, null, null, this.field12581, this.field12582, this.field12574, this.field12575);
 			if (var36 != null) {
 				if (this.field12568 == null) {
 					field12584.method6376();
@@ -196,7 +196,7 @@ public class class1233 extends class1199 {
 				}
 			}
 		}
-		class116 var37 = ((class738) Statics.field1842.method962(this.field12580)).method14644(arg0, 526336, this.field12570, null, null, this.field12581, this.field12582, this.field12574, this.field12575);
+		class116 var37 = ((class738) Statics.field1842.get(this.field12580)).method14644(arg0, 526336, this.field12570, null, null, this.field12581, this.field12582, this.field12574, this.field12575);
 		if (var37 != null) {
 			if (this.field12571 == null) {
 				field12584.method6376();
@@ -229,16 +229,16 @@ public class class1233 extends class1199 {
 
 	@ObfuscatedName("aut.gp(I)I")
 	public int method18371() {
-		class738 var1 = (class738) Statics.field1842.method962(this.field12580);
+		class738 var1 = (class738) Statics.field1842.get(this.field12580);
 		int var2 = var1.field8692;
 		if (this.field12569 != -1) {
-			class738 var3 = (class738) Statics.field1842.method962(this.field12569);
+			class738 var3 = (class738) Statics.field1842.get(this.field12569);
 			if (var3.field8692 > var2) {
 				var2 = var3.field8692;
 			}
 		}
 		if (this.field12573 != -1) {
-			class738 var4 = (class738) Statics.field1842.method962(this.field12573);
+			class738 var4 = (class738) Statics.field1842.get(this.field12573);
 			if (var4.field8692 > var2) {
 				var2 = var4.field8692;
 			}
@@ -251,7 +251,7 @@ public class class1233 extends class1199 {
 		class419 var4 = arg0.method2209();
 		var4.method6293(this.method10536());
 		var4.method6315(0.0F, -10.0F, 0.0F);
-		class116 var5 = ((class738) Statics.field1842.method962(this.field12580)).method14644(arg0, 131072, this.field12570, null, null, 0, 0, 0, 0);
+		class116 var5 = ((class738) Statics.field1842.get(this.field12580)).method14644(arg0, 131072, this.field12570, null, null, 0, 0, 0, 0);
 		if (var5 != null) {
 			if (this.field12571 == null) {
 				field12584.method6376();
@@ -264,7 +264,7 @@ public class class1233 extends class1199 {
 			}
 		}
 		if (this.field12569 != -1) {
-			class116 var6 = ((class738) Statics.field1842.method962(this.field12569)).method14644(arg0, 131072, this.field12572, null, null, 0, 0, 0, 0);
+			class116 var6 = ((class738) Statics.field1842.get(this.field12569)).method14644(arg0, 131072, this.field12572, null, null, 0, 0, 0, 0);
 			if (var6 != null) {
 				if (this.field12568 == null) {
 					field12584.method6376();
@@ -278,7 +278,7 @@ public class class1233 extends class1199 {
 			}
 		}
 		if (this.field12573 != -1) {
-			class116 var7 = ((class738) Statics.field1842.method962(this.field12573)).method14644(arg0, 131072, this.field12583, null, null, 0, 0, 0, 0);
+			class116 var7 = ((class738) Statics.field1842.get(this.field12573)).method14644(arg0, 131072, this.field12583, null, null, 0, 0, 0, 0);
 			if (var7 != null) {
 				if (this.field12577 == null) {
 					field12584.method6376();

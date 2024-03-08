@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("adp")
-public class class789 implements class53, class757 {
+public class class789 implements ConfigType, class757 {
 
 	@ObfuscatedName("adp.e")
 	public ScriptVarType field9173;
@@ -19,7 +19,7 @@ public class class789 implements class53, class757 {
 	public boolean field9174 = true;
 
 	@ObfuscatedName("adp.e(Lalw;B)V")
-	public void method976(Packet arg0) {
+	public void decode(Packet arg0) {
 		while (true) {
 			int var2 = arg0.g1();
 			if (var2 == 0) {
@@ -51,7 +51,7 @@ public class class789 implements class53, class757 {
 	}
 
 	@ObfuscatedName("adp.n(I)V")
-	public void method975() {
+	public void postDecode() {
 	}
 
 	@ObfuscatedName("adp.z(IB)V")

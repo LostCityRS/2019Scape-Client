@@ -200,7 +200,7 @@ public class class218 implements class365 {
 	public static List field2057 = new ArrayList();
 
 	@ObfuscatedName("hk.bm")
-	public static class162 field2067 = new class162(524288, 1024);
+	public static WeightedCache field2067 = new WeightedCache(524288, 1024);
 
 	@ObfuscatedName("hk.bb")
 	public byte[] field2108;
@@ -394,7 +394,7 @@ public class class218 implements class365 {
 
 	@ObfuscatedName("hk.a(I)Lhb;")
 	public class220 method3836(int arg0) {
-		class162 var2 = field2067;
+		WeightedCache var2 = field2067;
 		synchronized (field2067) {
 			Object var3 = null;
 			class220 var4 = (class220) field2067.method2950();
@@ -446,7 +446,7 @@ public class class218 implements class365 {
 	@ObfuscatedName("hk.g(Lhb;)V")
 	public void method3742(class220 arg0) {
 		if (arg0 != null) {
-			class162 var2 = field2067;
+			WeightedCache var2 = field2067;
 			synchronized (field2067) {
 				arg0.field2125 = false;
 			}

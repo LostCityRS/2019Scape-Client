@@ -75,8 +75,8 @@ public class class750 {
 		}
 		Statics.field8751.field8745 = arg0;
 		Statics.field8751.field8746 = arg1 + 1099;
-		Statics.field8751.field8744 = class699.method2912(Statics.field1811, class698.field8346, Statics.field8751.field8746);
-		Statics.field8751.field8742 = class699.method10147(Statics.field1811, class698.field8346, Statics.field8751.field8746);
+		Statics.field8751.field8744 = ServerPorts.method2912(Statics.field1811, class698.field8346, Statics.field8751.field8746);
+		Statics.field8751.field8742 = ServerPorts.method10147(Statics.field1811, class698.field8346, Statics.field8751.field8746);
 	}
 
 	@ObfuscatedName("xq.k(I)V")

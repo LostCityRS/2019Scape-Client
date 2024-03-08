@@ -2916,7 +2916,7 @@ public class class843 extends class116 {
 
 	@ObfuscatedName("afk.by(Lou;)V")
 	public void method1689(class419 arg0) {
-		class426 var2 = this.field9626.field9919;
+		Matrix4x4 var2 = this.field9626.field9919;
 		var2.method6609(arg0);
 		if (this.field9687 != null) {
 			for (int var3 = 0; var3 < this.field9687.length; var3++) {
@@ -2946,7 +2946,7 @@ public class class843 extends class116 {
 				var8 = var7.field1230;
 			}
 			if (var7.field1231 == null) {
-				var7.field1231 = new class426(var2);
+				var7.field1231 = new Matrix4x4(var2);
 			} else {
 				var7.field1231.method6604(var2);
 			}
@@ -2958,7 +2958,7 @@ public class class843 extends class116 {
 
 	@ObfuscatedName("afk.av(IILou;ZI)Z")
 	public boolean method1725(int arg0, int arg1, class419 arg2, boolean arg3, int arg4) {
-		class426 var6 = this.field9626.field9919;
+		Matrix4x4 var6 = this.field9626.field9919;
 		var6.method6609(arg2);
 		var6.method6720(this.field9626.field10005);
 		boolean var7 = false;
@@ -3174,9 +3174,9 @@ public class class843 extends class116 {
 		if (this.field9658 == 0) {
 			return;
 		}
-		class426 var4 = this.field9626.field9939;
-		class426 var5 = this.field9626.field9919;
-		class426 var6 = this.field9626.field9920;
+		Matrix4x4 var4 = this.field9626.field9939;
+		Matrix4x4 var5 = this.field9626.field9919;
+		Matrix4x4 var6 = this.field9626.field9920;
 		var5.method6609(arg0);
 		var6.method6604(var5);
 		var6.method6720(this.field9626.field10005);
@@ -3300,11 +3300,11 @@ public class class843 extends class116 {
 	}
 
 	@ObfuscatedName("afk.hy(Lpq;)V")
-	public void method15557(class426 arg0) {
+	public void method15557(Matrix4x4 arg0) {
 		if (this.field9656 == null) {
 			return;
 		}
-		class426 var2 = this.field9626.field9842;
+		Matrix4x4 var2 = this.field9626.field9842;
 		this.field9626.method15744();
 		this.field9626.method2219(!this.field9632);
 		this.field9626.method15764(false);

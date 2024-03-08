@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("aop")
 public class class1090 extends class758 {
 
-	public class1090(class696 arg0, class687 arg1, boolean arg2, class442 arg3, class442 arg4) {
+	public class1090(ModeGame arg0, Language arg1, boolean arg2, class442 arg3, class442 arg4) {
 		super(arg0, arg1, arg3, class655.field7994, 256, new class1014(arg2, arg4, arg1, arg0));
 	}
 

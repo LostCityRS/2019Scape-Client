@@ -49,16 +49,16 @@ public class class636 {
 	public class660 field7831;
 
 	@ObfuscatedName("xu.y")
-	public final class423 field7847 = new class423(-50.0F, -60.0F, -50.0F);
+	public final Vector3 field7847 = new Vector3(-50.0F, -60.0F, -50.0F);
 
 	@ObfuscatedName("xu.q")
-	public final class162 field7848 = new class162(8);
+	public final WeightedCache field7848 = new WeightedCache(8);
 
 	@ObfuscatedName("xu.x")
-	public final class162 field7849 = new class162(8);
+	public final WeightedCache field7849 = new WeightedCache(8);
 
 	@ObfuscatedName("xu.b")
-	public final class162 field7850 = new class162(8);
+	public final WeightedCache field7850 = new WeightedCache(8);
 
 	@ObfuscatedName("xu.h")
 	public final class442 field7845;

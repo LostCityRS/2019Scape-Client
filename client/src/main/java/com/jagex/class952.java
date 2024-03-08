@@ -85,7 +85,7 @@ public class class952 extends class1198 implements class514 {
 			arg0.method2193(var3, this.field11713[0], var8.field7468);
 		}
 		if (this.field11179.field6680 != null) {
-			class119 var9 = this.field11179.field6680.method9965();
+			ParticleList var9 = this.field11179.field6680.method9965();
 			arg0.method2198(var9);
 		}
 		this.field11183 = var2.method1731() || this.field11179.field6680 != null;

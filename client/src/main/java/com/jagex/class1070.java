@@ -75,8 +75,8 @@ public class class1070 extends class714 {
 	}
 
 	@ObfuscatedName("anb.m(I)Lox;")
-	public class423 method14133() {
-		class423 var1 = new class423(0.0F, 0.0F, 1000.0F);
+	public Vector3 method14133() {
+		Vector3 var1 = new Vector3(0.0F, 0.0F, 1000.0F);
 		var1.method6526(class421.method6419(this.field11856));
 		var1.field4311 *= -1.0F;
 		var1.method6497(this.field8479.method4714());
@@ -84,8 +84,8 @@ public class class1070 extends class714 {
 	}
 
 	@ObfuscatedName("anb.k(I)Lox;")
-	public class423 method14135() {
-		class423 var1 = new class423(0.0F, 0.0F, 1000.0F);
+	public Vector3 method14135() {
+		Vector3 var1 = new Vector3(0.0F, 0.0F, 1000.0F);
 		var1.method6526(class421.method6419(this.field11850));
 		var1.field4311 *= -1.0F;
 		var1.method6497(this.field8479.method4714());
@@ -96,7 +96,7 @@ public class class1070 extends class714 {
 	public void method18785(int arg0, int arg1, int arg2) {
 		class419 var4 = new class419();
 		var4.method6296(0.0D, 0.0D, 0.0D, (double) arg0, (double) -arg1, (double) arg2, 0.0F, 1.0F, 0.0F);
-		class422 var5 = new class422();
+		Matrix3x3 var5 = new Matrix3x3();
 		var4.method6374(var5.field4307);
 		class421 var6 = var5.method6476();
 		var6.method6418();
@@ -110,7 +110,7 @@ public class class1070 extends class714 {
 			class421 var3 = class421.method6469();
 			var3.method6414(1.0F, 0.0F, 0.0F, (float) ((double) field11860 * 3.141592653589793D * 2.0D) / 16384.0F);
 			var2.method6424(var3);
-			class423 var4 = class423.method6483(0.0F, 1.0F, 0.0F);
+			Vector3 var4 = Vector3.method6483(0.0F, 1.0F, 0.0F);
 			var4.method6526(var2);
 			class421 var5 = class421.method6469();
 			var4.method6513();
@@ -126,12 +126,12 @@ public class class1070 extends class714 {
 		var2.method6418();
 		class909 var6 = (class909) this.field8479.method4709();
 		CoordFine var7 = var6.method5221();
-		class423 var8 = var7.method17853();
-		class423 var9 = class423.method6483(0.0F, 0.0F, (float) field11855);
+		Vector3 var8 = var7.method17853();
+		Vector3 var9 = Vector3.method6483(0.0F, 0.0F, (float) field11855);
 		var9.method6526(var2);
 		var9.field4311 *= -1.0F;
 		var8.method6497(var9);
-		class423 var10 = class423.method6483((float) field11852, 0.0F, 0.0F);
+		Vector3 var10 = Vector3.method6483((float) field11852, 0.0F, 0.0F);
 		var10.method6526(var2);
 		var10.field4311 *= -1.0F;
 		var8.method6497(var10);
@@ -142,7 +142,7 @@ public class class1070 extends class714 {
 	}
 
 	@ObfuscatedName("anb.i(Lox;B)V")
-	public void method18790(class423 arg0) {
+	public void method18790(Vector3 arg0) {
 		if (field11857 != -1.0F && arg0.field4308 < field11857) {
 			arg0.field4308 = field11857;
 		}
@@ -164,7 +164,7 @@ public class class1070 extends class714 {
 	}
 
 	@ObfuscatedName("anb.j(Lox;IIIIIIB)V")
-	public void method18780(class423 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
+	public void method18780(Vector3 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
 		field11857 = arg1 == -1 ? -1.0F : arg0.field4308 - (float) (arg1 * 512);
 		field11851 = arg2 == -1 ? -1.0F : (float) (arg2 * 512) + arg0.field4308;
 		field11858 = arg5 == -1 ? -1.0F : -arg0.field4311 - (float) (arg5 * 512);
@@ -185,7 +185,7 @@ public class class1070 extends class714 {
 
 	@ObfuscatedName("anb.f(Lju;Lou;IIFB)V")
 	public void method14136(class270 arg0, class419 arg1, int arg2, int arg3, float arg4) {
-		class423 var6 = class423.method6484(this.field8479.method4714());
+		Vector3 var6 = Vector3.method6484(this.field8479.method4714());
 		var6.field4308 -= arg2;
 		var6.field4313 -= arg3;
 		var6.field4311 *= -1.0F;

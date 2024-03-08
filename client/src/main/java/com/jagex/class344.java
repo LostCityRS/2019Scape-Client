@@ -101,7 +101,7 @@ public class class344 {
 	}
 
 	@ObfuscatedName("ld.m(Lafc;Ldm;)V")
-	public void method5770(class850 arg0, class119 arg1) {
+	public void method5770(class850 arg0, ParticleList arg1) {
 		arg0.method2219(false);
 		Statics.field3325 = arg0.field10122;
 		float var3 = arg0.field10059.field4315[2];
@@ -134,7 +134,7 @@ public class class344 {
 		}
 		arg0.method16102(this.field3327);
 		class286 var16 = arg0.field10151;
-		var16.method5038(class426.field4317);
+		var16.method5038(Matrix4x4.field4317);
 		var16.field2987.method6603();
 		var16.field2988 = -1;
 		boolean var17 = arg0.field10169 > 0;
@@ -225,7 +225,7 @@ public class class344 {
 	@ObfuscatedName("ld.w(Lafc;IZ)V")
 	public void method5759(class850 arg0, int arg1, boolean arg2) {
 		int var4 = 0;
-		class426 var5 = arg0.field10059;
+		Matrix4x4 var5 = arg0.field10059;
 		float var6 = var5.field4315[0];
 		float var7 = var5.field4315[4];
 		float var8 = var5.field4315[8];

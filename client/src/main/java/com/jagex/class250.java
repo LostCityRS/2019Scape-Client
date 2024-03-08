@@ -4,10 +4,10 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("ir")
-public class class250 implements class53 {
+public class class250 implements ConfigType {
 
 	@ObfuscatedName("ir.e")
-	public class51 field2649;
+	public ConfigTypeList field2649;
 
 	@ObfuscatedName("ir.n")
 	public String field2633;
@@ -70,17 +70,17 @@ public class class250 implements class53 {
 	public String[] field2634;
 
 	@ObfuscatedName("ir.a")
-	public class729 field2650;
+	public IterableMap field2650;
 
 	@ObfuscatedName("ir.g")
 	public int field2651 = -1;
 
-	public class250(int arg0, class51 arg1) {
+	public class250(int arg0, ConfigTypeList arg1) {
 		this.field2649 = arg1;
 	}
 
 	@ObfuscatedName("ir.e(Lalw;B)V")
-	public void method976(Packet arg0) {
+	public void decode(Packet arg0) {
 		while (true) {
 			int var2 = arg0.g1();
 			if (var2 == 0) {
@@ -175,7 +175,7 @@ public class class250 implements class53 {
 			int var17 = arg0.g1();
 			if (this.field2650 == null) {
 				int var18 = class783.method16657(var17);
-				this.field2650 = new class729(var18);
+				this.field2650 = new IterableMap(var18);
 			}
 			for (int var19 = 0; var19 < var17; var19++) {
 				boolean var20 = arg0.g1() == 1;
@@ -192,7 +192,7 @@ public class class250 implements class53 {
 	}
 
 	@ObfuscatedName("ir.n(I)V")
-	public void method975() {
+	public void postDecode() {
 		if (this.field2631 == null) {
 			this.field2631 = this.field2633;
 		}
@@ -274,7 +274,7 @@ public class class250 implements class53 {
 		}
 		if (this.field2635 != null) {
 			for (int var3 = 0; var3 < this.field2635.length; var3++) {
-				if (!((class250) this.field2649.method962(this.field2635[var3])).method4430(arg0)) {
+				if (!((class250) this.field2649.get(this.field2635[var3])).method4430(arg0)) {
 					return false;
 				}
 			}
@@ -319,7 +319,7 @@ public class class250 implements class53 {
 		if (this.field2635 == null || arg1 < 0 || arg1 >= this.field2635.length) {
 			return false;
 		} else {
-			return ((class250) this.field2649.method962(this.field2635[arg1])).method4430(arg0);
+			return ((class250) this.field2649.get(this.field2635[arg1])).method4430(arg0);
 		}
 	}
 

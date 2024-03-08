@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 
 @ObfuscatedName("vr")
-public class class584 implements class757, class53 {
+public class class584 implements class757, ConfigType {
 
 	@ObfuscatedName("vr.e")
 	public int field7345;
@@ -225,7 +225,7 @@ public class class584 implements class757, class53 {
 	}
 
 	@ObfuscatedName("vr.e(Lalw;B)V")
-	public void method976(Packet arg0) {
+	public void decode(Packet arg0) {
 		while (true) {
 			int var2 = arg0.g1();
 			if (var2 == 0) {
@@ -363,7 +363,7 @@ public class class584 implements class757, class53 {
 	}
 
 	@ObfuscatedName("vr.n(I)V")
-	public void method975() {
+	public void postDecode() {
 	}
 
 	@ObfuscatedName("vr.p(I)I")
@@ -443,7 +443,7 @@ public class class584 implements class757, class53 {
 
 	@ObfuscatedName("vr.o(I)[I")
 	public int[] method9293() {
-		class729 var1 = new class729(16);
+		IterableMap var1 = new IterableMap(16);
 		method6205(this.field7345, var1);
 		if (this.field7335 != null) {
 			int[] var2 = this.field7335;
@@ -483,7 +483,7 @@ public class class584 implements class757, class53 {
 	}
 
 	@ObfuscatedName("oi.s(ILaan;I)V")
-	public static final void method6205(int arg0, class729 arg1) {
+	public static final void method6205(int arg0, IterableMap arg1) {
 		if (arg0 != -1 && arg1.method14495((long) arg0) == null) {
 			arg1.method14501(new class532(), (long) arg0);
 		}

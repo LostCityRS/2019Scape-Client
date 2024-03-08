@@ -7,13 +7,13 @@ import deob.Statics;
 public final class class609 implements class152 {
 
 	@ObfuscatedName("wu.f")
-	public int[] field7604 = new int[Statics.field8485.method963()];
+	public int[] field7604 = new int[Statics.field8485.size()];
 
 	@ObfuscatedName("wu.w")
-	public int[] field7609 = new int[Statics.field8485.method963()];
+	public int[] field7609 = new int[Statics.field8485.size()];
 
 	@ObfuscatedName("wu.l")
-	public class729 field7610 = new class729(128);
+	public IterableMap field7610 = new IterableMap(128);
 
 	@ObfuscatedName("wu.i(ZI)I")
 	public int method9623(boolean arg0) {
@@ -34,14 +34,14 @@ public final class class609 implements class152 {
 
 	@ObfuscatedName("wu.j(B)V")
 	public void method9624() {
-		for (int var1 = 0; var1 < Statics.field8485.method963(); var1++) {
-			class859 var2 = (class859) Statics.field8485.method962(var1);
+		for (int var1 = 0; var1 < Statics.field8485.size(); var1++) {
+			class859 var2 = (class859) Statics.field8485.get(var1);
 			if (var2 != null) {
 				this.field7604[var1] = 0;
 				this.field7609[var1] = 0;
 			}
 		}
-		this.field7610 = new class729(128);
+		this.field7610 = new IterableMap(128);
 	}
 
 	@ObfuscatedName("wu.u(Lec;I)I")

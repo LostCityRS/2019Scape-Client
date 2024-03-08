@@ -99,7 +99,7 @@ public class class949 extends class1197 implements class514 {
 
 	@ObfuscatedName("ajk.bv(Ldh;IZI)Labg;")
 	public class746 method17414(class133 arg0, int arg1, boolean arg2) {
-		class598 var4 = (class598) this.field11159.method962(this.field11715);
+		class598 var4 = (class598) this.field11159.get(this.field11715);
 		class104 var5;
 		class104 var6;
 		if (this.field11156) {
@@ -113,13 +113,13 @@ public class class949 extends class1197 implements class514 {
 				var6 = null;
 			}
 		}
-		class423 var7 = this.method10536().field4298;
+		Vector3 var7 = this.method10536().field4298;
 		return var4.method9475(arg0, arg1, this.field11152, this.field11155, var5, var6, (int) var7.field4308, this.field11151, (int) var7.field4313, arg2, null);
 	}
 
 	@ObfuscatedName("ajk.fv(Ldh;B)Luq;")
 	public class556 method17371(class133 arg0) {
-		class423 var2 = this.method10536().field4298;
+		Vector3 var2 = this.method10536().field4298;
 		if (this.field11149 == null) {
 			this.field11149 = class1019.method15111((int) var2.field4308, (int) var2.field4311, (int) var2.field4313, this.method17411(arg0, 0));
 		}
@@ -135,7 +135,7 @@ public class class949 extends class1197 implements class514 {
 		var2.method6292(this.method10533());
 		var2.method6315((float) this.field12452, 0.0F, (float) this.field12451);
 		class552 var3 = class552.method16749(this.field11157);
-		class416 var4 = ((class598) this.field11159.method962(this.field11715)).field7468;
+		class416 var4 = ((class598) this.field11159.get(this.field11715)).field7468;
 		if (var4 == null) {
 			this.field11150.method1813(var2, this.field11713[0], 0);
 		} else {
@@ -151,7 +151,7 @@ public class class949 extends class1197 implements class514 {
 
 	@ObfuscatedName("ajk.fa(Ldh;IIB)Z")
 	public boolean method17375(class133 arg0, int arg1, int arg2) {
-		class416 var4 = ((class598) this.field11159.method962(this.field11715)).field7468;
+		class416 var4 = ((class598) this.field11159.get(this.field11715)).field7468;
 		if (var4 != null) {
 			return arg0.method2191(arg1, arg2, this.method10533(), var4);
 		}
@@ -207,7 +207,7 @@ public class class949 extends class1197 implements class514 {
 			var4 = this.field11154;
 			this.field11154 = null;
 		}
-		class423 var5 = this.method10536().field4298;
+		Vector3 var5 = this.method10536().field4298;
 		if (var4 != null) {
 			this.field11716.method8750(var4, this.field11714, (int) var5.field4308, (int) var5.field4313, null);
 		}
@@ -224,7 +224,7 @@ public class class949 extends class1197 implements class514 {
 			var4 = this.field11154;
 			this.field11154 = null;
 		}
-		class423 var5 = this.method10536().field4298;
+		Vector3 var5 = this.method10536().field4298;
 		if (var4 != null) {
 			this.field11716.method8814(var4, this.field11714, (int) var5.field4308, (int) var5.field4313, null);
 		}

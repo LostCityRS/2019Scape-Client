@@ -201,7 +201,7 @@ public final class class695 {
 		int var1 = arg0.length();
 		int var2 = 0;
 		for (int var3 = 0; var3 < var1; var3++) {
-			var2 = (var2 << 5) - var2 + class693.method16904(arg0.charAt(var3));
+			var2 = (var2 << 5) - var2 + Cp1252.method16904(arg0.charAt(var3));
 		}
 		return var2;
 	}

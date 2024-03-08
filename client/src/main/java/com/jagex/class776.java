@@ -540,15 +540,15 @@ public class class776 {
 	public final Map field9070 = new HashMap(7);
 
 	public class776(String arg0, String arg1, String arg2, String arg3, String arg4) {
-		this.field9070.put(class687.field8296, arg0);
-		this.field9070.put(class687.field8297, arg1);
-		this.field9070.put(class687.field8289, arg2);
-		this.field9070.put(class687.field8291, arg3);
-		this.field9070.put(class687.field8288, arg4);
+		this.field9070.put(Language.field8296, arg0);
+		this.field9070.put(Language.field8297, arg1);
+		this.field9070.put(Language.field8289, arg2);
+		this.field9070.put(Language.field8291, arg3);
+		this.field9070.put(Language.field8288, arg4);
 	}
 
 	@ObfuscatedName("acz.e(Lzt;B)Ljava/lang/String;")
-	public String method15021(class687 arg0) {
+	public String method15021(Language arg0) {
 		return (String) this.field9070.get(arg0);
 	}
 }

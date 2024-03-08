@@ -38,8 +38,8 @@ public class class1135 extends class911 {
 	}
 
 	@ObfuscatedName("aqt.m(B)Lox;")
-	public class423 method5219() {
-		class423 var1 = class423.method6482();
+	public Vector3 method5219() {
+		Vector3 var1 = Vector3.method6482();
 		double[] var2 = this.field10565[this.field12095].method6767(this.field10563);
 		var1.field4308 = (float) var2[0];
 		var1.field4311 = (float) var2[1];

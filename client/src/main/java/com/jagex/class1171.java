@@ -25,7 +25,7 @@ public class class1171 extends class986 {
 	public static class720 field12290 = new class720();
 
 	@ObfuscatedName("ars.aw")
-	public static class729 field12291 = new class729(16);
+	public static IterableMap field12291 = new IterableMap(16);
 
 	@ObfuscatedName("ars.am")
 	public static boolean field12295 = false;
@@ -195,7 +195,7 @@ public class class1171 extends class986 {
 
 	@ObfuscatedName("alv.al(III)V")
 	public static void method18309(int arg0, int arg1) {
-		class305 var2 = (class305) Statics.field8736.method962(arg0);
+		class305 var2 = (class305) Statics.field8736.get(arg0);
 		class1171 var3 = method5072(1, (long) var2.field3076.field1706);
 		try {
 			if (field12295) {

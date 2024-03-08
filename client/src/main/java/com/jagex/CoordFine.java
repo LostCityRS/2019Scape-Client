@@ -130,8 +130,8 @@ public class CoordFine extends class532 implements Serializable {
 	}
 
 	@ObfuscatedName("akt.v(I)Lox;")
-	public class423 method17853() {
-		return new class423((float) this.field11478, (float) this.field11479, (float) this.field11480);
+	public Vector3 method17853() {
+		return new Vector3((float) this.field11478, (float) this.field11479, (float) this.field11480);
 	}
 
 	@ObfuscatedName("akt.y(Lalw;I)V")

@@ -31,8 +31,8 @@ public class class642 {
 	}
 
 	@ObfuscatedName("xz.n(Lzu;B)I")
-	public int method10163(class697 arg0) {
-		if (class697.field8344 == arg0 && this.field7911.method9796() && this.field7911.method9813()) {
+	public int method10163(ModeAccountType arg0) {
+		if (ModeAccountType.field8344 == arg0 && this.field7911.method9796() && this.field7911.method9813()) {
 			int var2 = this.field7911.method9797();
 			if (!this.field7915) {
 				var2 /= 10;
@@ -63,8 +63,8 @@ public class class642 {
 	}
 
 	@ObfuscatedName("xz.f(Lzu;B)I")
-	public int method10158(class697 arg0) {
-		if (class697.field8344 == arg0 && this.field7911.method9796() && this.field7911.method9813()) {
+	public int method10158(ModeAccountType arg0) {
+		if (ModeAccountType.field8344 == arg0 && this.field7911.method9796() && this.field7911.method9813()) {
 			int var2 = this.field7911.method9798();
 			if (this.field7913 > var2) {
 				return var2;

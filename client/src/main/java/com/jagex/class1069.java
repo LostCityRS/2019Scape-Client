@@ -6,13 +6,13 @@ import deob.ObfuscatedName;
 public class class1069 extends class714 {
 
 	@ObfuscatedName("anc.n")
-	public final class423 field11847 = new class423(Float.NaN, Float.NaN, Float.NaN);
+	public final Vector3 field11847 = new Vector3(Float.NaN, Float.NaN, Float.NaN);
 
 	@ObfuscatedName("anc.m")
-	public final class423 field11848 = new class423(Float.NaN, Float.NaN, Float.NaN);
+	public final Vector3 field11848 = new Vector3(Float.NaN, Float.NaN, Float.NaN);
 
 	@ObfuscatedName("anc.k")
-	public final class423 field11849 = new class423();
+	public final Vector3 field11849 = new Vector3();
 
 	public class1069(class274 arg0) {
 		super(arg0);
@@ -41,11 +41,11 @@ public class class1069 extends class714 {
 
 	@ObfuscatedName("anc.f(Lju;Lou;IIFB)V")
 	public void method14136(class270 arg0, class419 arg1, int arg2, int arg3, float arg4) {
-		class423 var6 = class423.method6484(this.field8479.method4714());
+		Vector3 var6 = Vector3.method6484(this.field8479.method4714());
 		var6.field4308 -= arg2;
 		var6.field4313 -= arg3;
 		var6.field4311 *= -1.0F;
-		class423 var7 = class423.method6484(this.field11847);
+		Vector3 var7 = Vector3.method6484(this.field11847);
 		var7.field4308 -= arg2;
 		var7.field4313 -= arg3;
 		var7.field4311 *= -1.0F;
@@ -55,13 +55,13 @@ public class class1069 extends class714 {
 	}
 
 	@ObfuscatedName("anc.m(I)Lox;")
-	public class423 method14133() {
-		return class423.method6484(this.field11847);
+	public Vector3 method14133() {
+		return Vector3.method6484(this.field11847);
 	}
 
 	@ObfuscatedName("anc.k(I)Lox;")
-	public class423 method14135() {
-		return class423.method6484(this.field11848);
+	public Vector3 method14135() {
+		return Vector3.method6484(this.field11848);
 	}
 
 	@ObfuscatedName("anc.w(Lalw;I)V")

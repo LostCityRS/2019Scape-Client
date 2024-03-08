@@ -68,7 +68,7 @@ public class class415 {
 	}
 
 	@ObfuscatedName("og.l(Lpq;)V")
-	public final void method6265(class426 arg0) {
+	public final void method6265(Matrix4x4 arg0) {
 		float var2 = this.field4244;
 		float var3 = this.field4243;
 		float var4 = this.field4242;

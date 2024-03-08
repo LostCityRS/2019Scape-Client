@@ -200,7 +200,7 @@ public class class1131 extends class892 {
 			}
 		}
 		if (this.field10393 != null) {
-			class119 var18 = this.field10393.method9965();
+			ParticleList var18 = this.field10393.method9965();
 			arg0.method2198(var18);
 		}
 		for (int var19 = 0; var19 < this.field10459.length; var19++) {
@@ -289,7 +289,7 @@ public class class1131 extends class892 {
 	}
 
 	@ObfuscatedName("aqc.hp(Lzi;II)V")
-	public final void method19168(class689 arg0, int arg1) {
+	public final void method19168(CompassPoint arg0, int arg1) {
 		int var3 = this.field10450[0];
 		int var4 = this.field10448[0];
 		switch(arg0.field8304) {
@@ -327,8 +327,8 @@ public class class1131 extends class892 {
 		}
 		for (int var5 = 0; var5 < this.field10422.length; var5++) {
 			if (this.field10422[var5].field6657 != -1) {
-				class680 var6 = (class680) Statics.field4874.method962(this.field10422[var5].field6657);
-				if (var6.field8261 && var6.field8260 != -1 && ((class164) Statics.field8797.method962(var6.field8260)).field1782 == 1) {
+				class680 var6 = (class680) Statics.field4874.get(this.field10422[var5].field6657);
+				if (var6.field8261 && var6.field8260 != -1 && ((class164) Statics.field8797.get(var6.field8260)).field1782 == 1) {
 					this.field10422[var5].field6659.method14362(-1);
 					this.field10422[var5].field6657 = -1;
 				}
@@ -359,8 +359,8 @@ public class class1131 extends class892 {
 		}
 		for (int var6 = 0; var6 < this.field10422.length; var6++) {
 			if (this.field10422[var6].field6657 != -1) {
-				class680 var7 = (class680) Statics.field4874.method962(this.field10422[var6].field6657);
-				if (var7.field8261 && var7.field8260 != -1 && ((class164) Statics.field8797.method962(var7.field8260)).field1782 == 1) {
+				class680 var7 = (class680) Statics.field4874.get(this.field10422[var6].field6657);
+				if (var7.field8261 && var7.field8260 != -1 && ((class164) Statics.field8797.get(var7.field8260)).field1782 == 1) {
 					this.field10422[var6].field6659.method14362(-1);
 					this.field10422[var6].field6657 = -1;
 				}
@@ -389,7 +389,7 @@ public class class1131 extends class892 {
 		this.field10453 = 0;
 		this.field10450[0] = arg1;
 		this.field10448[0] = arg2;
-		class423 var11 = class423.method6484(this.method10536().field4298);
+		Vector3 var11 = Vector3.method6484(this.method10536().field4298);
 		var11.field4308 = (this.field10450[0] << 9) + (arg4 << 8);
 		var11.field4313 = (this.field10448[0] << 9) + (arg4 << 8);
 		this.method10531(var11);
@@ -571,8 +571,8 @@ public class class1131 extends class892 {
 	}
 
 	@ObfuscatedName("aqc.f(B)Lox;")
-	public class423 method4666() {
-		return class423.method6482();
+	public Vector3 method4666() {
+		return Vector3.method6482();
 	}
 
 	@ObfuscatedName("aqc.gc(I)Z")

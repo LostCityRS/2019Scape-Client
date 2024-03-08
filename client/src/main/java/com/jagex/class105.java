@@ -15,22 +15,22 @@ public class class105 {
 	public float[][] field1241;
 
 	@ObfuscatedName("cs.k")
-	public final class426[] field1243;
+	public final Matrix4x4[] field1243;
 
 	@ObfuscatedName("cs.f")
-	public class426[] field1244;
+	public Matrix4x4[] field1244;
 
 	@ObfuscatedName("cs.w")
-	public class426[] field1240;
+	public Matrix4x4[] field1240;
 
 	public class105(int arg0, Packet arg1, boolean arg2) {
 		this.field1242 = arg1.g2s();
-		this.field1243 = new class426[arg0];
-		this.field1244 = new class426[this.field1243.length];
-		this.field1240 = new class426[this.field1243.length];
+		this.field1243 = new Matrix4x4[arg0];
+		this.field1244 = new Matrix4x4[this.field1243.length];
+		this.field1240 = new Matrix4x4[this.field1243.length];
 		this.field1241 = new float[this.field1243.length][3];
 		for (int var4 = 0; var4 < this.field1243.length; var4++) {
-			this.field1243[var4] = new class426(arg1, arg2);
+			this.field1243[var4] = new Matrix4x4(arg1, arg2);
 			this.field1241[var4][0] = arg1.gFloat();
 			this.field1241[var4][1] = arg1.gFloat();
 			this.field1241[var4][2] = arg1.gFloat();
@@ -38,25 +38,25 @@ public class class105 {
 	}
 
 	@ObfuscatedName("cs.e(IB)Lpq;")
-	public class426 method1570(int arg0) {
+	public Matrix4x4 method1570(int arg0) {
 		return this.field1243[arg0];
 	}
 
 	@ObfuscatedName("cs.n(IB)Lpq;")
-	public class426 method1564(int arg0) {
+	public Matrix4x4 method1564(int arg0) {
 		if (this.field1244[arg0] == null) {
-			this.field1244[arg0] = new class426(this.method1570(arg0));
+			this.field1244[arg0] = new Matrix4x4(this.method1570(arg0));
 			this.field1244[arg0].method6611();
 		}
 		return this.field1244[arg0];
 	}
 
 	@ObfuscatedName("cs.m(II)Lpq;")
-	public class426 method1565(int arg0) {
+	public Matrix4x4 method1565(int arg0) {
 		if (this.field1240[arg0] == null) {
-			this.field1240[arg0] = new class426(this.method1570(arg0));
+			this.field1240[arg0] = new Matrix4x4(this.method1570(arg0));
 			if (this.field1239 == null) {
-				this.field1240[arg0].method6720(class426.field4317);
+				this.field1240[arg0].method6720(Matrix4x4.field4317);
 			} else {
 				this.field1240[arg0].method6720(this.field1239.method1565(arg0));
 			}

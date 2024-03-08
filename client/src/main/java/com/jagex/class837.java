@@ -67,7 +67,7 @@ public class class837 extends class104 {
 	public class337 field9505;
 
 	@ObfuscatedName("aem.ae")
-	public class715 field9485 = new class715();
+	public IterableQueue field9485 = new IterableQueue();
 
 	@ObfuscatedName("aem.ag")
 	public class532[] field9496;
@@ -100,7 +100,7 @@ public class class837 extends class104 {
 	public float[][] field9487;
 
 	@ObfuscatedName("aem.au")
-	public class729 field9513;
+	public IterableMap field9513;
 
 	@ObfuscatedName("aem.ar")
 	public class532[] field9497;
@@ -169,7 +169,7 @@ public class class837 extends class104 {
 		}
 		this.field9495--;
 		this.field9512++;
-		this.field9513 = new class729(128);
+		this.field9513 = new IterableMap(128);
 		if ((this.field9491 & 0x10) != 0) {
 			this.field9505 = new class337(this.field9516, this);
 		}
@@ -326,7 +326,7 @@ public class class837 extends class104 {
 		if (var6 < 1) {
 			var6 = 1;
 		}
-		class729 var7 = new class729(var6);
+		IterableMap var7 = new IterableMap(var6);
 		class981[] var8 = new class981[this.field9498];
 		for (int var9 = 0; var9 < this.field1235; var9++) {
 			for (int var10 = 0; var10 < this.field1234; var10++) {
@@ -457,7 +457,7 @@ public class class837 extends class104 {
 	}
 
 	@ObfuscatedName("aem.aj(II[[B[Lakh;Laan;[Lakh;)V")
-	public void method15415(int arg0, int arg1, byte[][] arg2, class981[] arg3, class729 arg4, class981[] arg5) {
+	public void method15415(int arg0, int arg1, byte[][] arg2, class981[] arg3, IterableMap arg4, class981[] arg5) {
 		if (this.field9510[arg0][arg1] == null) {
 			return;
 		}
@@ -709,7 +709,7 @@ public class class837 extends class104 {
 			var23.method5738(0, var21, this.field9516.field10046);
 			this.field9516.method16120(0, this.field9508);
 			this.field9516.method16102(var23);
-			var22.method5018(class426.field4317);
+			var22.method5018(Matrix4x4.field4317);
 			if ((this.field9491 & 0x7) == 0) {
 				int var24 = 0;
 				for (int var25 = 0; var25 < this.field9496.length; var25++) {
@@ -839,7 +839,7 @@ public class class837 extends class104 {
 		if (!this.field9485.method14164()) {
 			this.field9516.method16054(128);
 			this.field9516.method16361(false);
-			class423 var37 = new class423(var22.field2975);
+			Vector3 var37 = new Vector3(var22.field2975);
 			var22.field2975.method6491(0.0F, 0.0F, 0.0F);
 			Iterator var38 = this.field9485.iterator();
 			while (var38.hasNext()) {
@@ -855,7 +855,7 @@ public class class837 extends class104 {
 		this.field9516.method16120(0, this.field9508);
 		this.field9516.method16120(1, this.field9509);
 		this.field9516.method16177(this.field9493);
-		class426 var40 = this.field9516.field10066;
+		Matrix4x4 var40 = this.field9516.field10066;
 		var40.method6603();
 		var40.field4315[13] = -1.0F;
 		var22.method5018(var40);
@@ -918,7 +918,7 @@ public class class837 extends class104 {
 		this.field9516.field10065.method6317(var23, var24);
 		this.field9516.field10066.method6609(this.field9516.field10065);
 		this.field9516.method2220(this.field9516.field10066);
-		var20.method5018(class426.field4317);
+		var20.method5018(Matrix4x4.field4317);
 		var20.field2984.method6247(0.0F, 0.0F, 0.0F, 0.0F);
 		var20.field2975.method6491(0.0F, 0.0F, 0.0F);
 		var20.field2979.method6247(0.0F, 0.0F, 0.0F, 0.0F);

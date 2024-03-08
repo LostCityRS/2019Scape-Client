@@ -18,7 +18,7 @@ public class class246 {
 	@ObfuscatedName("gc.n(Lalw;Ljava/lang/String;I)I")
 	public static int method3547(Packet arg0, String arg1) {
 		int var2 = arg0.pos;
-		byte[] var3 = class693.method3064(arg1);
+		byte[] var3 = Cp1252.method3064(arg1);
 		arg0.pSmart1or2s(var3.length);
 		arg0.pos += Statics.field2614.method4381(var3, 0, var3.length, arg0.data, arg0.pos);
 		return arg0.pos - var2;
@@ -33,7 +33,7 @@ public class class246 {
 			}
 			byte[] var3 = new byte[var2];
 			arg0.pos += Statics.field2614.method4387(arg0.data, arg0.pos, var3, 0, var2);
-			return class693.method9199(var3, 0, var2);
+			return Cp1252.method9199(var3, 0, var2);
 		} catch (Exception var6) {
 			return "Cabbage";
 		}

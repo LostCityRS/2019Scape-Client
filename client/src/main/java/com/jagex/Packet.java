@@ -190,7 +190,7 @@ public class Packet extends class532 {
 			throw new IllegalArgumentException("");
 		}
 
-		this.pos += class693.method5981(str, 0, str.length(), this.data, this.pos);
+		this.pos += Cp1252.method5981(str, 0, str.length(), this.data, this.pos);
 		this.data[(++this.pos) - 1] = 0;
 	}
 
@@ -207,16 +207,16 @@ public class Packet extends class532 {
 		}
 
 		this.data[(++this.pos) - 1] = 0;
-		this.pos += class693.method5981(str, 0, str.length(), this.data, this.pos);
+		this.pos += Cp1252.method5981(str, 0, str.length(), this.data, this.pos);
 		this.data[(++this.pos) - 1] = 0;
 	}
 
 	@ObfuscatedName("alw.g(Ljava/lang/CharSequence;I)V")
 	public void pUTF8(CharSequence arg0) {
-		int var2 = class653.method8499(arg0);
+		int var2 = Utf8.method8499(arg0);
 		this.data[(++this.pos) - 1] = 0;
 		this.pVarInt(var2);
-		this.pos += class653.method18328(this.data, this.pos, arg0);
+		this.pos += Utf8.method18328(this.data, this.pos, arg0);
 	}
 
 	@ObfuscatedName("alw.i([BIII)V")
@@ -415,7 +415,7 @@ public class Packet extends class532 {
 		while (this.data[(++this.pos) - 1] != 0) {
 		}
 		int length = this.pos - start - 1;
-		return length == 0 ? "" : class693.method9199(this.data, start, length);
+		return length == 0 ? "" : Cp1252.method9199(this.data, start, length);
 	}
 
 	@ObfuscatedName("alw.ab(I)Ljava/lang/String;")
@@ -428,7 +428,7 @@ public class Packet extends class532 {
 		while (this.data[(++this.pos) - 1] != 0) {
 		}
 		int length = this.pos - start - 1;
-		return length == 0 ? "" : class693.method9199(this.data, start, length);
+		return length == 0 ? "" : Cp1252.method9199(this.data, start, length);
 	}
 
 	@ObfuscatedName("alw.az(I)Ljava/lang/String;")
@@ -441,7 +441,7 @@ public class Packet extends class532 {
 		if (this.pos + var2 > this.data.length) {
 			throw new IllegalStateException("");
 		}
-		String var3 = class653.method10345(this.data, this.pos, var2);
+		String var3 = Utf8.method10345(this.data, this.pos, var2);
 		this.pos += var2;
 		return var3;
 	}

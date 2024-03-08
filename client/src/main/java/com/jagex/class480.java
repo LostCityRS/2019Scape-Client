@@ -284,8 +284,8 @@ public class class480 {
 			for (int var15 = 0; var15 < this.field4910.length; var15++) {
 				this.field4910[var15] = 1.0F;
 			}
-			if (this.field4905 instanceof class476) {
-				class614 var16 = ((class476) this.field4905).method7386();
+			if (this.field4905 instanceof Sound) {
+				class614 var16 = ((Sound) this.field4905).method7386();
 				this.field4942 = var16.method9702();
 				this.field4943 = !this.field4942;
 			}
@@ -712,10 +712,10 @@ public class class480 {
 
 	@ObfuscatedName("rq.ai(Lalw;B)V")
 	public void method7510(Packet arg0) {
-		if (this.field4905 == null || !(this.field4905 instanceof class476)) {
+		if (this.field4905 == null || !(this.field4905 instanceof Sound)) {
 			return;
 		}
-		class476 var2 = (class476) this.field4905;
+		Sound var2 = (Sound) this.field4905;
 		class614 var3 = var2.method7386();
 		byte[] var4 = new byte[arg0.pos];
 		System.arraycopy(arg0.data, 0, var4, 0, arg0.pos);
@@ -726,10 +726,10 @@ public class class480 {
 
 	@ObfuscatedName("rq.aw(II)Lalw;")
 	public Packet method7511(int arg0) {
-		if (this.field4905 == null || !(this.field4905 instanceof class476)) {
+		if (this.field4905 == null || !(this.field4905 instanceof Sound)) {
 			return null;
 		}
-		class476 var2 = (class476) this.field4905;
+		Sound var2 = (Sound) this.field4905;
 		class614 var3 = var2.method7386();
 		Packet var4 = var3.method9686(arg0);
 		Packet var5 = new Packet(var4.pos, true);
@@ -739,8 +739,8 @@ public class class480 {
 
 	@ObfuscatedName("rq.as(II)Z")
 	public boolean method7512(int arg0) {
-		if (this.field4905 != null && this.field4905 instanceof class476) {
-			class476 var2 = (class476) this.field4905;
+		if (this.field4905 != null && this.field4905 instanceof Sound) {
+			Sound var2 = (Sound) this.field4905;
 			class614 var3 = var2.method7386();
 			return var3.method9683(arg0);
 		} else {
@@ -750,8 +750,8 @@ public class class480 {
 
 	@ObfuscatedName("rq.at(I)I")
 	public int method7561() {
-		if (this.field4905 != null && this.field4905 instanceof class476) {
-			class476 var1 = (class476) this.field4905;
+		if (this.field4905 != null && this.field4905 instanceof Sound) {
+			Sound var1 = (Sound) this.field4905;
 			class614 var2 = var1.method7386();
 			return var2.method9685();
 		} else {
@@ -762,8 +762,8 @@ public class class480 {
 	@ObfuscatedName("rq.ad(I)Z")
 	public boolean method7514() {
 		synchronized (this) {
-			if (this.field4905 != null && this.field4905 instanceof class476) {
-				class476 var2 = (class476) this.field4905;
+			if (this.field4905 != null && this.field4905 instanceof Sound) {
+				Sound var2 = (Sound) this.field4905;
 				class614 var3 = var2.method7386();
 				if (var3 != null) {
 					return var3.method9687();
@@ -776,8 +776,8 @@ public class class480 {
 	@ObfuscatedName("rq.am(I)V")
 	public void method7496() {
 		synchronized (this) {
-			if (this.field4905 != null && this.field4905 instanceof class476) {
-				class476 var2 = (class476) this.field4905;
+			if (this.field4905 != null && this.field4905 instanceof Sound) {
+				Sound var2 = (Sound) this.field4905;
 				class614 var3 = var2.method7386();
 				if (var3 != null) {
 					var3.method9671(true);

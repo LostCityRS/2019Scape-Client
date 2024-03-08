@@ -179,7 +179,7 @@ public class class47 {
 			Statics.field4845[0] = var4 + ": " + var5[var6];
 			if (Statics.field773 != null) {
 				try {
-					Statics.field773.write(class693.method3064(Statics.field4845[0] + "\n"));
+					Statics.field773.write(Cp1252.method3064(Statics.field4845[0] + "\n"));
 				} catch (IOException var9) {
 				}
 			}
@@ -306,8 +306,8 @@ public class class47 {
 			if (arg0.equalsIgnoreCase("getcamerapos")) {
 				class594 var5 = client.field10855.method7727();
 				if (Statics.field3416 == 3) {
-					class423 var6 = Statics.field9155.method4714();
-					class423 var7 = Statics.field9155.method4711();
+					Vector3 var6 = Statics.field9155.method4714();
+					Vector3 var7 = Statics.field9155.method4711();
 					method4285("Pos: " + (new class594(Statics.field4490.field11717, (int) var6.field4308 >> 9, (int) var6.field4313 >> 9)).toString() + " Height: " + (client.method3660((int) var6.field4308 - (var5.field7426 << 9), (int) var6.field4313 - (var5.field7427 << 9), Statics.field4490.field11717) + (int) var6.field4311));
 					method4285("Look: " + (new class594(Statics.field4490.field11717, (int) var7.field4308 >> 9, (int) var7.field4313 >> 9)).toString() + " Height: " + (client.method3660((int) var7.field4308 - (var5.field7426 << 9), (int) var6.field4313 - (var5.field7427 << 9), Statics.field4490.field11717) + (int) var6.field4311));
 				} else {
@@ -455,10 +455,10 @@ public class class47 {
 				if (arg0.startsWith("directlogin")) {
 					String[] var20 = class695.method17361(arg0.substring(12), ' ');
 					if (var20.length == 2 || var20.length == 3) {
-						if (class10.method2865()) {
-							class10.method14129();
+						if (LoginManager.method2865()) {
+							LoginManager.method14129();
 						}
-						class10.method665(var20[0], var20[1], var20.length > 2 ? var20[2] : "", true);
+						LoginManager.method665(var20[0], var20[1], var20.length > 2 ? var20[2] : "", true);
 					}
 					return;
 				}
@@ -466,7 +466,7 @@ public class class47 {
 					String[] var21 = class695.method17361(arg0.substring(8), ' ');
 					int var22 = Integer.parseInt(var21[0]);
 					String var23 = var21.length > 1 ? var21[1] : "";
-					class10.method2050(var22, var23, true);
+					LoginManager.method2050(var22, var23, true);
 					return;
 				}
 				if (arg0.startsWith("setoutput ")) {
@@ -511,7 +511,7 @@ public class class47 {
 						method4285("Failed to read file");
 						return;
 					}
-					String[] var29 = class695.method17361(Statics.method17687(class693.method667(var28), '\r', ""), '\n');
+					String[] var29 = class695.method17361(Statics.method17687(Cp1252.method667(var28), '\r', ""), '\n');
 					method15383(var29);
 				}
 				if (client.field10791 == 18 || client.field10791 == 13) {
@@ -596,10 +596,10 @@ public class class47 {
 					client.field10855.field5037 = true;
 					method10153();
 				} else if (arg0 == 19) {
-					class423 var10 = Statics.field4490.method10536().field4298;
+					Vector3 var10 = Statics.field4490.method10536().field4298;
 					method4285(((int) var10.field4308 >> 9) + " " + ((int) var10.field4313 >> 9));
 				} else if (arg0 == 16) {
-					class423 var11 = Statics.field4490.method10536().field4298;
+					Vector3 var11 = Statics.field4490.method10536().field4298;
 					method4285("" + client.field10855.method7743().field6913[Statics.field4490.field11717].method1529((int) var11.field4308 >> 9, (int) var11.field4313 >> 9));
 				} else if (arg0 == 27) {
 					method4285(class226.field2175.method2926() + " " + class226.field2175.method2925());

@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("xj")
-public class class652 implements class53 {
+public class class652 implements ConfigType {
 
 	@ObfuscatedName("xj.e")
 	public final class651 field7962;
@@ -22,7 +22,7 @@ public class class652 implements class53 {
 	}
 
 	@ObfuscatedName("xj.e(Lalw;B)V")
-	public void method976(Packet arg0) {
+	public void decode(Packet arg0) {
 		while (true) {
 			int var2 = arg0.g1();
 			if (var2 == 0) {
@@ -56,6 +56,6 @@ public class class652 implements class53 {
 	}
 
 	@ObfuscatedName("xj.n(I)V")
-	public void method975() {
+	public void postDecode() {
 	}
 }

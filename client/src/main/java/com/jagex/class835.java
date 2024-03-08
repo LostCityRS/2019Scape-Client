@@ -747,7 +747,7 @@ public class class835 extends class104 {
 		if (this.field9423.field9778 == null || this.field9423.field9781 == null) {
 			throw new IllegalStateException("");
 		}
-		class426 var7 = this.field9423.field9803;
+		Matrix4x4 var7 = this.field9423.field9803;
 		this.field9430 = var7.field4315[0];
 		this.field9431 = var7.field4315[1];
 		this.field9432 = var7.field4315[2];

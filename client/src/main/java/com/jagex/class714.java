@@ -19,10 +19,10 @@ public abstract class class714 {
 	public abstract void method14132(Packet arg0);
 
 	@ObfuscatedName("aax.m(I)Lox;")
-	public abstract class423 method14133();
+	public abstract Vector3 method14133();
 
 	@ObfuscatedName("aax.k(I)Lox;")
-	public abstract class423 method14135();
+	public abstract Vector3 method14135();
 
 	@ObfuscatedName("aax.f(Lju;Lou;IIFB)V")
 	public abstract void method14136(class270 arg0, class419 arg1, int arg2, int arg3, float arg4);

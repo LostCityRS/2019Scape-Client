@@ -18,7 +18,7 @@ public class class638 implements Iterator {
 	}
 
 	public boolean hasNext() {
-		return this.field7882 < this.this$0.method963();
+		return this.field7882 < this.this$0.size();
 	}
 
 	public Object next() {

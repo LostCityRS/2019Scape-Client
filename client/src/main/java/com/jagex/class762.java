@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aca")
-public class class762 implements class761 {
+public class class762 implements ConfigTypeFactory {
 
 	@ObfuscatedName("aca.e")
 	public final Class field8843;
@@ -13,9 +13,9 @@ public class class762 implements class761 {
 	}
 
 	@ObfuscatedName("aca.v(ILao;I)Lay;")
-	public class53 method4414(int arg0, class51 arg1) {
+	public ConfigType create(int arg0, ConfigTypeList arg1) {
 		try {
-			class53 var3 = (class53) this.field8843.getDeclaredConstructor().newInstance();
+			ConfigType var3 = (ConfigType) this.field8843.getDeclaredConstructor().newInstance();
 			((class757) var3).method2998(arg0);
 			return var3;
 		} catch (Exception var5) {
@@ -25,7 +25,7 @@ public class class762 implements class761 {
 	}
 
 	@ObfuscatedName("aca.o(B)Ljava/lang/Class;")
-	public Class method4415() {
+	public Class type() {
 		return this.field8843;
 	}
 }

@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("yy")
-public class class680 implements class53 {
+public class class680 implements ConfigType {
 
 	@ObfuscatedName("yy.n")
 	public final class681 field8249;
@@ -65,7 +65,7 @@ public class class680 implements class53 {
 	}
 
 	@ObfuscatedName("yy.e(Lalw;B)V")
-	public void method976(Packet arg0) {
+	public void decode(Packet arg0) {
 		while (true) {
 			int var2 = arg0.g1();
 			if (var2 == 0) {
@@ -183,7 +183,7 @@ public class class680 implements class53 {
 		if (var16) {
 			var15 |= 0x7;
 		}
-		class162 var17 = this.field8249.field8266;
+		WeightedCache var17 = this.field8249.field8266;
 		class116 var18;
 		synchronized (this.field8249.field8266) {
 			var18 = (class116) this.field8249.field8266.method2930((long) (this.field8247 | arg0.field1595 << 29));
@@ -218,7 +218,7 @@ public class class680 implements class53 {
 				}
 			}
 			var18.method1690(var15);
-			class162 var24 = this.field8249.field8266;
+			WeightedCache var24 = this.field8249.field8266;
 			synchronized (this.field8249.field8266) {
 				this.field8249.field8266.method2921(var18, (long) (this.field8247 | arg0.field1595 << 29));
 			}
@@ -270,6 +270,6 @@ public class class680 implements class53 {
 	}
 
 	@ObfuscatedName("yy.n(I)V")
-	public void method975() {
+	public void postDecode() {
 	}
 }

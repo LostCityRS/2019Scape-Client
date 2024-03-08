@@ -331,7 +331,7 @@ public abstract class class140 {
 		int var11 = -1;
 		int var12 = arg0.length();
 		for (int var13 = 0; var13 < var12; var13++) {
-			char var14 = (char) (class693.method16904(arg0.charAt(var13)) & 0xFF);
+			char var14 = (char) (Cp1252.method16904(arg0.charAt(var13)) & 0xFF);
 			if (var14 == '<') {
 				var10 = var13;
 			} else {
@@ -444,7 +444,7 @@ public abstract class class140 {
 		int var11 = 0;
 		int var12 = arg0.length();
 		for (int var13 = 0; var13 < var12; var13++) {
-			char var14 = (char) (class693.method16904(arg0.charAt(var13)) & 0xFF);
+			char var14 = (char) (Cp1252.method16904(arg0.charAt(var13)) & 0xFF);
 			if (var14 == '<') {
 				var9 = var13;
 			} else {

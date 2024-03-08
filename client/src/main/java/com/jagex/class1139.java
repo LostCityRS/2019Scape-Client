@@ -21,19 +21,19 @@ public class class1139 extends class916 {
 	public class1150 field12125;
 
 	@ObfuscatedName("aqe.am")
-	public final class426 field12143 = new class426();
+	public final Matrix4x4 field12143 = new Matrix4x4();
 
 	@ObfuscatedName("aqe.au")
 	public class1150 field12126;
 
 	@ObfuscatedName("aqe.ar")
-	public final class426 field12127 = new class426();
+	public final Matrix4x4 field12127 = new Matrix4x4();
 
 	@ObfuscatedName("aqe.ap")
 	public class1150 field12141;
 
 	@ObfuscatedName("aqe.aq")
-	public final class423 field12129 = new class423();
+	public final Vector3 field12129 = new Vector3();
 
 	@ObfuscatedName("aqe.ax")
 	public int field12147;
@@ -66,7 +66,7 @@ public class class1139 extends class916 {
 	public class1150 field12139;
 
 	@ObfuscatedName("aqe.an")
-	public final class423 field12140 = new class423();
+	public final Vector3 field12140 = new Vector3();
 
 	@ObfuscatedName("aqe.bf")
 	public class1150 field12151;
@@ -78,7 +78,7 @@ public class class1139 extends class916 {
 	public class1150 field12149;
 
 	@ObfuscatedName("aqe.bh")
-	public final class423 field12144 = new class423();
+	public final Vector3 field12144 = new Vector3();
 
 	@ObfuscatedName("aqe.bx")
 	public int field12145;
@@ -103,7 +103,7 @@ public class class1139 extends class916 {
 
 	public class1139(class850 arg0, class323 arg1, boolean arg2) throws class1108 {
 		super(arg0);
-		new class426();
+		new Matrix4x4();
 		this.field12122 = arg1;
 		this.field12150 = arg2;
 		if (arg0.method15957() && arg0.method15958()) {
@@ -141,8 +141,8 @@ public class class1139 extends class916 {
 	}
 
 	@ObfuscatedName("aqe.i(Lpq;)V")
-	public void method16765(class426 arg0) {
-		class426 var2 = new class426();
+	public void method16765(Matrix4x4 arg0) {
+		Matrix4x4 var2 = new Matrix4x4();
 		var2.method6612(this.field12130, this.field12130, 1.0F, 1.0F);
 		var2.method6606(arg0, var2);
 		super.method16765(var2);

@@ -34,7 +34,7 @@ public class class92 {
 	public boolean field1180;
 
 	@ObfuscatedName("cv.p")
-	public class715 field1170 = new class715();
+	public IterableQueue field1170 = new IterableQueue();
 
 	@ObfuscatedName("cv.d")
 	public boolean field1171 = true;

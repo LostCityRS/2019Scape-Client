@@ -9,7 +9,7 @@ import java.awt.*;
 public class class35 {
 
 	@ObfuscatedName("ag.m")
-	public static class715 field631 = new class715();
+	public static IterableQueue field631 = new IterableQueue();
 
 	public class35() throws Throwable {
 		throw new Error();

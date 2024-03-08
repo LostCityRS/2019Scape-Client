@@ -67,7 +67,7 @@ public class class1234 extends class1200 {
 	public boolean field12604 = false;
 
 	@ObfuscatedName("aue.ab")
-	public class634 field12585;
+	public ParticleSystem field12585;
 
 	@ObfuscatedName("aue.az")
 	public int field12606 = 0;
@@ -87,7 +87,7 @@ public class class1234 extends class1200 {
 		this.field12596 = false;
 		this.field12594 = arg15;
 		this.field12606 = arg16;
-		int var18 = ((class680) Statics.field4874.method962(this.field12603)).field8260;
+		int var18 = ((class680) Statics.field4874.get(this.field12603)).field8260;
 		this.field12602 = new class1076(this, false);
 		this.field12602.method14362(var18);
 		this.method18363(1);
@@ -120,7 +120,7 @@ public class class1234 extends class1200 {
 
 	@ObfuscatedName("aue.n(IIIII)V")
 	public final void method19725(int arg0, int arg1, int arg2, int arg3) {
-		class423 var5 = class423.method6484(this.method10536().field4298);
+		Vector3 var5 = Vector3.method6484(this.method10536().field4298);
 		if (!this.field12596) {
 			float var6 = (float) arg0 - var5.field4308;
 			float var7 = (float) arg1 - var5.field4313;
@@ -174,7 +174,7 @@ public class class1234 extends class1200 {
 		if (var1 == null) {
 			return;
 		}
-		class423 var5 = var1.method10536().field4298;
+		Vector3 var5 = var1.method10536().field4298;
 		this.method10538(var5.field4308, (float) (client.method3660((int) var5.field4308, (int) var5.field4313, this.field11717) - this.field12599), var5.field4313);
 		if (this.field12594 < 0) {
 			return;
@@ -203,7 +203,7 @@ public class class1234 extends class1200 {
 		int var13 = class417.field4272[var11];
 		int var14 = var7 * var13 + var8 * var12 >> 14;
 		int var15 = var8 * var13 - var7 * var12 >> 14;
-		class423 var17 = class423.method6484(this.method10536().field4298);
+		Vector3 var17 = Vector3.method6484(this.method10536().field4298);
 		var17.field4308 += var14;
 		var17.field4313 += var15;
 		this.method10531(var17);
@@ -237,7 +237,7 @@ public class class1234 extends class1200 {
 
 	@ObfuscatedName("aue.f(Ldh;II)Ldo;")
 	public class116 method19727(class133 arg0, int arg1) {
-		class680 var3 = (class680) Statics.field4874.method962(this.field12603);
+		class680 var3 = (class680) Statics.field4874.get(this.field12603);
 		return var3.method13817(arg0, arg1, this.field12602, (byte) 2);
 	}
 
@@ -252,7 +252,7 @@ public class class1234 extends class1200 {
 		class552 var4 = class552.method16749(false);
 		var2.method1813(var3, this.field11713[0], 0);
 		if (this.field12585 != null) {
-			class119 var5 = this.field12585.method9965();
+			ParticleList var5 = this.field12585.method9965();
 			arg0.method2198(var5);
 		}
 		this.field12604 = var2.method1731();
@@ -274,7 +274,7 @@ public class class1234 extends class1200 {
 
 	@ObfuscatedName("aue.bv(I)V")
 	public void method16529() {
-		class423 var1 = this.method10536().field4298;
+		Vector3 var1 = this.method10536().field4298;
 		this.field12471 = this.field12472 = (short) (var1.field4308 / 512.0F);
 		this.field12468 = this.field12467 = (short) (var1.field4313 / 512.0F);
 	}
@@ -285,7 +285,7 @@ public class class1234 extends class1200 {
 		class128[] var4 = arg1.method1750();
 		class102[] var5 = arg1.method1765();
 		if ((this.field12585 == null || this.field12585.field7804) && (var4 != null || var5 != null)) {
-			this.field12585 = class634.method9962(client.field10903, true);
+			this.field12585 = ParticleSystem.method9962(client.field10903, true);
 		}
 		if (this.field12585 != null) {
 			this.field12585.method9936(arg0, (long) client.field10903, var4, var5, false);

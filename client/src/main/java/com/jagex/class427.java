@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class class427 {
 
 	@ObfuscatedName("ph.e")
-	public final class423[] field4323 = new class423[4];
+	public final Vector3[] field4323 = new Vector3[4];
 
 	@ObfuscatedName("ph.n")
 	public float field4322;
@@ -16,7 +16,7 @@ public class class427 {
 
 	public class427() {
 		for (int var1 = 0; var1 < 4; var1++) {
-			this.field4323[var1] = new class423();
+			this.field4323[var1] = new Vector3();
 		}
 		this.method6739();
 	}
@@ -28,13 +28,13 @@ public class class427 {
 	}
 
 	@ObfuscatedName("ph.n(ILox;)V")
-	public void method6740(int arg0, class423 arg1) {
+	public void method6740(int arg0, Vector3 arg1) {
 		this.field4323[arg0].method6492(arg1);
 		this.method6739();
 	}
 
 	@ObfuscatedName("ph.m(I)Lox;")
-	public class423 method6748(int arg0) {
+	public Vector3 method6748(int arg0) {
 		return this.field4323[arg0];
 	}
 
@@ -99,7 +99,7 @@ public class class427 {
 		byte var1 = 20;
 		double[] var2 = this.method6755(0.0F);
 		float var3 = 0.0F;
-		class423 var4 = class423.method6482();
+		Vector3 var4 = Vector3.method6482();
 		for (int var5 = 1; var5 <= var1; var5++) {
 			double[] var6 = this.method6755((float) var5 / (float) var1);
 			var4.field4308 = (float) (var6[0] - var2[0]);

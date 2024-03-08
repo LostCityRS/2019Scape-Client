@@ -521,7 +521,7 @@ public class class831 extends class101 {
 			var11.field2995.field4315[12] = arg0 + this.field9403.method15954();
 			var11.field2995.field4315[13] = arg1 + this.field9403.method15954();
 		}
-		class426 var16 = this.field9403.field10066;
+		Matrix4x4 var16 = this.field9403.field10066;
 		var16.method6603();
 		var16.field4315[0] = 2.0F / var12;
 		var16.field4315[5] = 2.0F / var13;

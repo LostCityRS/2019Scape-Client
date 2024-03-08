@@ -63,10 +63,10 @@ public abstract class class916 extends class324 {
 	public int[] field10609;
 
 	@ObfuscatedName("ahi.ah")
-	public static final class426 field10610 = new class426();
+	public static final Matrix4x4 field10610 = new Matrix4x4();
 
 	@ObfuscatedName("ahi.al")
-	public class426[] field10611;
+	public Matrix4x4[] field10611;
 
 	@ObfuscatedName("ahi.ac")
 	public float[] field10612 = new float[3];
@@ -74,9 +74,9 @@ public abstract class class916 extends class324 {
 	public class916(class850 arg0) {
 		super(arg0);
 		new class419();
-		this.field10611 = new class426[this.field3233.field10186];
+		this.field10611 = new Matrix4x4[this.field3233.field10186];
 		for (int var2 = 0; var2 < this.field3233.field10186; var2++) {
-			this.field10611[var2] = new class426();
+			this.field10611[var2] = new Matrix4x4();
 		}
 	}
 
@@ -156,7 +156,7 @@ public abstract class class916 extends class324 {
 	}
 
 	@ObfuscatedName("ahi.i(Lpq;)V")
-	public void method16765(class426 arg0) {
+	public void method16765(Matrix4x4 arg0) {
 		if (this.field10587 == null || !this.field10587.method4184() || this.field3233.method16037() != 0) {
 			return;
 		}
@@ -218,7 +218,7 @@ public abstract class class916 extends class324 {
 		if (this.field10593 == null) {
 			return;
 		}
-		class426 var3 = this.field3233.method16035();
+		Matrix4x4 var3 = this.field3233.method16035();
 		float[] var4 = new float[] { var3.field4315[12], var3.field4315[13], var3.field4315[14] };
 		float[] var5 = new float[] { 0.0F, 0.0F, 0.0F };
 		var3.method6670(var5);
@@ -272,7 +272,7 @@ public abstract class class916 extends class324 {
 
 	@ObfuscatedName("ahi.al(Lou;)V")
 	public void method16771(class419 arg0) {
-		class426 var2 = this.field3233.field10066;
+		Matrix4x4 var2 = this.field3233.field10066;
 		var2.method6609(arg0);
 		int var3 = this.field10587.method4212();
 		if (this.field10607 != null) {

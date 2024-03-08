@@ -28,7 +28,7 @@ public class class1226 extends class1180 {
 	}
 
 	@ObfuscatedName("atj.m(Lju;Lou;Lpq;I)V")
-	public void method19440(class270 arg0, class419 arg1, class426 arg2) {
+	public void method19440(class270 arg0, class419 arg1, Matrix4x4 arg2) {
 		arg1.method6307(0.0F, 0.0F, 1.0F, this.field12551);
 	}
 

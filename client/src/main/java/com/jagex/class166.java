@@ -3,18 +3,18 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("fu")
-public abstract class class166 implements class761 {
+public abstract class class166 implements ConfigTypeFactory {
 
 	@ObfuscatedName("fu.e")
-	public final class51 field1795;
+	public final ConfigTypeList field1795;
 
 	@ObfuscatedName("fu.n")
-	public final class162 field1794 = new class162(100);
+	public final WeightedCache field1794 = new WeightedCache(100);
 
 	@ObfuscatedName("fu.m")
-	public final class162 field1796 = new class162(100);
+	public final WeightedCache field1796 = new WeightedCache(100);
 
-	public class166(class51 arg0, class442 arg1, class442 arg2, class442 arg3) {
+	public class166(ConfigTypeList arg0, class442 arg1, class442 arg2, class442 arg3) {
 		this.field1795 = arg0;
 		class1177.method9393(arg1, arg3, 2);
 		class1176.method9558(arg2, arg3);
@@ -22,7 +22,7 @@ public abstract class class166 implements class761 {
 
 	@ObfuscatedName("fu.e(IB)Larr;")
 	public class1177 method3020(int arg0) {
-		class162 var2 = this.field1794;
+		WeightedCache var2 = this.field1794;
 		synchronized (this.field1794) {
 			class1177 var3 = (class1177) this.field1794.method2930((long) arg0);
 			if (var3 == null) {
@@ -35,7 +35,7 @@ public abstract class class166 implements class761 {
 
 	@ObfuscatedName("fu.n(IB)Lard;")
 	public class1176 method3010(int arg0) {
-		class162 var2 = this.field1796;
+		WeightedCache var2 = this.field1796;
 		synchronized (this.field1796) {
 			class1176 var3 = (class1176) this.field1796.method2930((long) arg0);
 			if (var3 == null) {
@@ -48,7 +48,7 @@ public abstract class class166 implements class761 {
 
 	@ObfuscatedName("fu.m(I)V")
 	public void method3011() {
-		class162 var1 = this.field1794;
+		WeightedCache var1 = this.field1794;
 		synchronized (this.field1794) {
 			this.field1794.method2924();
 		}
@@ -56,7 +56,7 @@ public abstract class class166 implements class761 {
 
 	@ObfuscatedName("fu.k(II)V")
 	public void method3012(int arg0) {
-		class162 var2 = this.field1794;
+		WeightedCache var2 = this.field1794;
 		synchronized (this.field1794) {
 			this.field1794.method2923(arg0);
 		}
@@ -64,7 +64,7 @@ public abstract class class166 implements class761 {
 
 	@ObfuscatedName("fu.f(I)V")
 	public void method3019() {
-		class162 var1 = this.field1794;
+		WeightedCache var1 = this.field1794;
 		synchronized (this.field1794) {
 			this.field1794.method2928();
 		}

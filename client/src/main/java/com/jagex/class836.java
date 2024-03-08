@@ -61,7 +61,7 @@ public class class836 extends class104 {
 	public class90 field9465;
 
 	@ObfuscatedName("aek.j")
-	public class715 field9470 = new class715();
+	public IterableQueue field9470 = new IterableQueue();
 
 	@ObfuscatedName("aek.t")
 	public class532[] field9471;
@@ -100,7 +100,7 @@ public class class836 extends class104 {
 	public float[][] field9482;
 
 	@ObfuscatedName("aek.au")
-	public class729 field9483;
+	public IterableMap field9483;
 
 	@ObfuscatedName("aek.ar")
 	public static final float[] field9484 = new float[16];
@@ -134,7 +134,7 @@ public class class836 extends class104 {
 				this.field9482[var10][var9] = (float) var12 * var13;
 			}
 		}
-		this.field9483 = new class729(128);
+		this.field9483 = new IterableMap(128);
 		if ((this.field9457 & 0x10) != 0) {
 			this.field9465 = new class90(this.field9453, this);
 		}
@@ -293,7 +293,7 @@ public class class836 extends class104 {
 			if (var9 < 1) {
 				var9 = 1;
 			}
-			class729 var10 = new class729(var9);
+			IterableMap var10 = new IterableMap(var9);
 			class970[] var11 = new class970[this.field9478];
 			for (int var12 = 0; var12 < this.field1235; var12++) {
 				for (int var13 = 0; var13 < this.field1234; var13++) {

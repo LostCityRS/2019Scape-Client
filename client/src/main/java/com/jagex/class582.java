@@ -3,10 +3,10 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("vb")
-public class class582 implements class53 {
+public class class582 implements ConfigType {
 
 	@ObfuscatedName("vb.e")
-	public final class51 field7303;
+	public final ConfigTypeList field7303;
 
 	@ObfuscatedName("vb.n")
 	public final class583 field7307;
@@ -74,13 +74,13 @@ public class class582 implements class53 {
 	@ObfuscatedName("vb.ag")
 	public int field7314 = 1;
 
-	public class582(int arg0, class583 arg1, class51 arg2) {
+	public class582(int arg0, class583 arg1, ConfigTypeList arg2) {
 		this.field7307 = arg1;
 		this.field7303 = arg2;
 	}
 
 	@ObfuscatedName("vb.e(Lalw;B)V")
-	public void method976(Packet arg0) {
+	public void decode(Packet arg0) {
 		while (true) {
 			int var2 = arg0.g1();
 			if (var2 == 0) {
@@ -176,10 +176,10 @@ public class class582 implements class53 {
 				}
 			}
 			if (var3 >= 0 && var3 < this.field7298.length - 1) {
-				return this.field7298[var3] == -1 ? null : (class582) this.field7303.method962(this.field7298[var3]);
+				return this.field7298[var3] == -1 ? null : (class582) this.field7303.get(this.field7298[var3]);
 			} else {
 				int var6 = this.field7298[this.field7298.length - 1];
-				return var6 == -1 ? null : (class582) this.field7303.method962(var6);
+				return var6 == -1 ? null : (class582) this.field7303.get(var6);
 			}
 		}
 	}
@@ -271,6 +271,6 @@ public class class582 implements class53 {
 	}
 
 	@ObfuscatedName("vb.n(I)V")
-	public void method975() {
+	public void postDecode() {
 	}
 }

@@ -3,13 +3,13 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("adx")
-public class class809 extends class986 implements class53, class757 {
+public class class809 extends class986 implements ConfigType, class757 {
 
 	@ObfuscatedName("adx.k")
-	public class729 field9261;
+	public IterableMap field9261;
 
 	@ObfuscatedName("adx.e(Lalw;B)V")
-	public void method976(Packet arg0) {
+	public void decode(Packet arg0) {
 		while (true) {
 			int var2 = arg0.g1();
 			if (var2 == 0) {
@@ -27,7 +27,7 @@ public class class809 extends class986 implements class53, class757 {
 		int var3 = arg0.g1();
 		if (this.field9261 == null) {
 			int var4 = class783.method16657(var3);
-			this.field9261 = new class729(var4);
+			this.field9261 = new IterableMap(var4);
 		}
 		for (int var5 = 0; var5 < var3; var5++) {
 			boolean var6 = arg0.g1() == 1;
@@ -67,6 +67,6 @@ public class class809 extends class986 implements class53, class757 {
 	}
 
 	@ObfuscatedName("adx.n(I)V")
-	public void method975() {
+	public void postDecode() {
 	}
 }

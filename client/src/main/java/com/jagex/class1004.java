@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.Map.Entry;
 
 @ObfuscatedName("alj")
-public class class1004 extends class541 {
+public class class1004 extends WorldMap {
 
 	@ObfuscatedName("alj.bv")
 	public static int field11657 = 0;
@@ -74,13 +74,13 @@ public class class1004 extends class541 {
 	public static boolean field11658 = false;
 
 	@ObfuscatedName("alj.cd")
-	public static class729 field11667 = new class729(8);
+	public static IterableMap field11667 = new IterableMap(8);
 
 	@ObfuscatedName("alj.dd")
-	public static class729 field11668 = new class729(8);
+	public static IterableMap field11668 = new IterableMap(8);
 
 	@ObfuscatedName("alj.dr")
-	public static class718 field11669 = new class718(new class715());
+	public static class718 field11669 = new class718(new IterableQueue());
 
 	@ObfuscatedName("alj.da")
 	public static boolean field11670 = false;
@@ -132,7 +132,7 @@ public class class1004 extends class541 {
 			int[] var4 = new int[3];
 			int var5 = -1;
 			int var6 = -1;
-			class423 var7 = Statics.field4490.method10536().field4298;
+			Vector3 var7 = Statics.field4490.method10536().field4298;
 			class594 var8 = client.field10855.method7727();
 			if (Statics.field6811.method19471(Statics.field4490.field11717, ((int) var7.field4308 >> 9) + var8.field7426, ((int) var7.field4313 >> 9) + var8.field7427, var4)) {
 				var5 = var4[1] - Statics.field6786;
@@ -183,7 +183,7 @@ public class class1004 extends class541 {
 			Statics.field6799 = class537.method18477(Statics.field6840);
 			method4643();
 			method8619();
-			Statics.field11253 = new class715();
+			Statics.field11253 = new IterableQueue();
 			field6797 += (int) (Math.random() * 5.0D) - 2;
 			if (field6797 < -8) {
 				field6797 = -8;
@@ -359,7 +359,7 @@ public class class1004 extends class541 {
 		field6833 = field6831;
 		method8620(Statics.field6786 + var8, Statics.field6808 + var9, Statics.field6786 + var10, Statics.field6808 + var11, arg1, arg2, arg1 + arg3, arg2 + arg4 + 1);
 		method8523(arg0, !field11655, !field11652, client.field10948, false);
-		class715 var12 = method8602(arg0);
+		IterableQueue var12 = method8602(arg0);
 		method928(arg0, var12, 0, 0);
 		if (client.field10794) {
 			int var13 = arg1 + arg3 - 5;
@@ -379,13 +379,13 @@ public class class1004 extends class541 {
 	}
 
 	@ObfuscatedName("aq.dx(Ldh;Laat;IIB)V")
-	public static void method928(class133 arg0, class715 arg1, int arg2, int arg3) {
+	public static void method928(class133 arg0, IterableQueue arg1, int arg2, int arg3) {
 		Statics.field11253.method14152();
 		if (field11658) {
 			return;
 		}
 		for (class990 var4 = (class990) arg1.method14191(); var4 != null; var4 = (class990) arg1.method14161()) {
-			class228 var5 = (class228) Statics.field6788.method962(var4.field11446);
+			class228 var5 = (class228) Statics.field6788.get(var4.field11446);
 			if (Statics.method18887(var5)) {
 				boolean var6 = method3589(arg0, var4, var5, arg2, arg3);
 				if (var6) {
@@ -760,7 +760,7 @@ public class class1004 extends class541 {
 									if (!var6.hasNext()) {
 										if (field11663 && Statics.field11253 != null) {
 											for (class963 var8 = (class963) Statics.field11253.method14191(); var8 != null; var8 = (class963) Statics.field11253.method14161()) {
-												class228 var9 = (class228) Statics.field6788.method962(var8.field11252.field11446);
+												class228 var9 = (class228) Statics.field6788.get(var8.field11252.field11446);
 												if (var8.method17518(arg0, arg1)) {
 													if (var9.field2381 != null) {
 														if (var9.field2381[4] != null) {
@@ -993,7 +993,7 @@ public class class1004 extends class541 {
 		if (var0 == null) {
 			return null;
 		} else {
-			class228 var1 = (class228) Statics.field6788.method962(var0.field11446);
+			class228 var1 = (class228) Statics.field6788.get(var0.field11446);
 			return var1 != null && var1.field2409 && var1.method4030(Statics.field6791, Statics.field6790) ? var0 : Statics.method13882();
 		}
 	}

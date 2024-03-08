@@ -3,23 +3,23 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("alf")
-public class class1014 extends class599 implements class761 {
+public class class1014 extends class599 implements ConfigTypeFactory {
 
 	@ObfuscatedName("alf.z")
 	public final class442 field11701;
 
-	public class1014(boolean arg0, class442 arg1, class687 arg2, class696 arg3) {
+	public class1014(boolean arg0, class442 arg1, Language arg2, ModeGame arg3) {
 		super(arg0, arg2, arg3);
 		this.field11701 = arg1;
 	}
 
 	@ObfuscatedName("alf.v(ILao;I)Lay;")
-	public class53 method4414(int arg0, class51 arg1) {
+	public ConfigType create(int arg0, ConfigTypeList arg1) {
 		return new class598(arg0, this, arg1);
 	}
 
 	@ObfuscatedName("alf.o(B)Ljava/lang/Class;")
-	public Class method4415() {
+	public Class type() {
 		return class598.class;
 	}
 

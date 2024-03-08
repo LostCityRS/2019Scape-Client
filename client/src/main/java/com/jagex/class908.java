@@ -12,12 +12,12 @@ public class class908 extends class306 {
 	}
 
 	@ObfuscatedName("ahg.v(ILao;I)Lay;")
-	public class53 method4414(int arg0, class51 arg1) {
+	public ConfigType create(int arg0, ConfigTypeList arg1) {
 		return new class305(arg0, this);
 	}
 
 	@ObfuscatedName("ahg.o(B)Ljava/lang/Class;")
-	public Class method4415() {
+	public Class type() {
 		return class305.class;
 	}
 }

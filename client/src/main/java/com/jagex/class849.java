@@ -42,10 +42,10 @@ public class class849 extends class133 {
 	public class89 field9978 = new class89();
 
 	@ObfuscatedName("afa.cx")
-	public class426 field9866 = new class426();
+	public Matrix4x4 field9866 = new Matrix4x4();
 
 	@ObfuscatedName("afa.cw")
-	public class426 field9842 = new class426();
+	public Matrix4x4 field9842 = new Matrix4x4();
 
 	@ObfuscatedName("afa.ct")
 	public class419 field9900 = new class419();
@@ -69,7 +69,7 @@ public class class849 extends class133 {
 	public NativeHeap field9876;
 
 	@ObfuscatedName("afa.cb")
-	public class715 field9964 = new class715();
+	public IterableQueue field9964 = new IterableQueue();
 
 	@ObfuscatedName("afa.cs")
 	public Unsafe field9878 = null;
@@ -84,25 +84,25 @@ public class class849 extends class133 {
 	public int field9881;
 
 	@ObfuscatedName("afa.ck")
-	public class715 field9938 = new class715();
+	public IterableQueue field9938 = new IterableQueue();
 
 	@ObfuscatedName("afa.cj")
-	public class715 field9883 = new class715();
+	public IterableQueue field9883 = new IterableQueue();
 
 	@ObfuscatedName("afa.cd")
-	public class715 field9884 = new class715();
+	public IterableQueue field9884 = new IterableQueue();
 
 	@ObfuscatedName("afa.dd")
-	public class715 field9885 = new class715();
+	public IterableQueue field9885 = new IterableQueue();
 
 	@ObfuscatedName("afa.dr")
-	public class715 field9886 = new class715();
+	public IterableQueue field9886 = new IterableQueue();
 
 	@ObfuscatedName("afa.da")
-	public class715 field9838 = new class715();
+	public IterableQueue field9838 = new IterableQueue();
 
 	@ObfuscatedName("afa.dt")
-	public class715 field9888 = new class715();
+	public IterableQueue field9888 = new IterableQueue();
 
 	@ObfuscatedName("afa.do")
 	public long field9823;
@@ -147,19 +147,19 @@ public class class849 extends class133 {
 	public class419 field9911 = new class419();
 
 	@ObfuscatedName("afa.dp")
-	public class426 field9903 = new class426();
+	public Matrix4x4 field9903 = new Matrix4x4();
 
 	@ObfuscatedName("afa.dy")
-	public class426 field9904 = new class426();
+	public Matrix4x4 field9904 = new Matrix4x4();
 
 	@ObfuscatedName("afa.db")
-	public class426 field9939 = new class426();
+	public Matrix4x4 field9939 = new Matrix4x4();
 
 	@ObfuscatedName("afa.dh")
-	public class426 field9906 = new class426();
+	public Matrix4x4 field9906 = new Matrix4x4();
 
 	@ObfuscatedName("afa.dx")
-	public class426 field10005 = new class426();
+	public Matrix4x4 field10005 = new Matrix4x4();
 
 	@ObfuscatedName("afa.dg")
 	public float[][] field10015 = new float[6][4];
@@ -195,10 +195,10 @@ public class class849 extends class133 {
 	public class419 field9976 = new class419();
 
 	@ObfuscatedName("afa.ej")
-	public class426 field9919 = new class426();
+	public Matrix4x4 field9919 = new Matrix4x4();
 
 	@ObfuscatedName("afa.ep")
-	public class426 field9920 = new class426();
+	public Matrix4x4 field9920 = new Matrix4x4();
 
 	@ObfuscatedName("afa.ev")
 	public float[] field9844 = new float[16];
@@ -1693,7 +1693,7 @@ public class class849 extends class133 {
 
 	@ObfuscatedName("afa.cn(IIIILou;Loj;)Z")
 	public boolean method2128(int arg0, int arg1, int arg2, int arg3, class419 arg4, class416 arg5) {
-		class426 var7 = this.field9919;
+		Matrix4x4 var7 = this.field9919;
 		var7.method6609(arg4);
 		var7.method6720(this.field10005);
 		return arg5.method6275(arg0, arg1, arg2, arg3, var7, this.field9910, this.field9912, this.field9867, this.field9882);
@@ -1701,7 +1701,7 @@ public class class849 extends class133 {
 
 	@ObfuscatedName("afa.cv(Lou;Led;Loj;)V")
 	public void method2193(class419 arg0, class141 arg1, class416 arg2) {
-		class426 var4 = this.field9919;
+		Matrix4x4 var4 = this.field9919;
 		var4.method6609(arg0);
 		var4.method6720(this.field10005);
 		arg1.method2746(arg2, this.field9939, var4, this.field9910, this.field9912, this.field9867, this.field9882);
@@ -1853,7 +1853,7 @@ public class class849 extends class133 {
 	}
 
 	@ObfuscatedName("afa.cc()Lpq;")
-	public class426 method2208() {
+	public Matrix4x4 method2208() {
 		return this.field9866;
 	}
 
@@ -1863,7 +1863,7 @@ public class class849 extends class133 {
 	}
 
 	@ObfuscatedName("afa.dt(Ldm;)V")
-	public void method2198(class119 arg0) {
+	public void method2198(ParticleList arg0) {
 		this.field9978.method1324(this, arg0);
 	}
 
@@ -2053,13 +2053,13 @@ public class class849 extends class133 {
 	}
 
 	@ObfuscatedName("afa.rb(Lpq;)V")
-	public final void method15818(class426 arg0) {
+	public final void method15818(Matrix4x4 arg0) {
 		OpenGL.glPushMatrix();
 		OpenGL.glMultMatrixf(arg0.field4315, 0);
 	}
 
 	@ObfuscatedName("afa.ru(Lpq;)V")
-	public final void method15928(class426 arg0) {
+	public final void method15928(Matrix4x4 arg0) {
 		OpenGL.glLoadMatrixf(arg0.field4315, 0);
 	}
 
@@ -2098,15 +2098,15 @@ public class class849 extends class133 {
 	}
 
 	@ObfuscatedName("afa.dm(Lpq;)V")
-	public final void method2220(class426 arg0) {
+	public final void method2220(Matrix4x4 arg0) {
 		this.field9939.method6604(arg0);
 		this.method15752();
 		this.method15751();
 	}
 
 	@ObfuscatedName("afa.dq()Lpq;")
-	public final class426 method2355() {
-		return new class426(this.field9939);
+	public final Matrix4x4 method2355() {
+		return new Matrix4x4(this.field9939);
 	}
 
 	@ObfuscatedName("afa.ss()V")

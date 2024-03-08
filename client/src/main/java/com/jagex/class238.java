@@ -131,7 +131,7 @@ public abstract class class238 {
 	}
 
 	@ObfuscatedName("ho.x(Laql;Lox;I)V")
-	public final void method4246(class1150 arg0, class423 arg1) {
+	public final void method4246(class1150 arg0, Vector3 arg1) {
 		this.field2568[this.field2573].method4108(arg0, arg1.field4308, arg1.field4311, arg1.field4313);
 	}
 
@@ -155,12 +155,12 @@ public abstract class class238 {
 	}
 
 	@ObfuscatedName("ho.g(Laql;Lpq;I)V")
-	public final void method4201(class1150 arg0, class426 arg1) {
+	public final void method4201(class1150 arg0, Matrix4x4 arg1) {
 		this.field2568[this.field2573].method4089(arg0, arg1);
 	}
 
 	@ObfuscatedName("ho.i(Laql;Lpq;I)V")
-	public final void method4166(class1150 arg0, class426 arg1) {
+	public final void method4166(class1150 arg0, Matrix4x4 arg1) {
 		this.field2568[this.field2573].method4101(arg0, arg1);
 	}
 
@@ -180,7 +180,7 @@ public abstract class class238 {
 	}
 
 	@ObfuscatedName("ho.ag(ILox;B)V")
-	public final void method4179(int arg0, class423 arg1) {
+	public final void method4179(int arg0, Vector3 arg1) {
 		this.field2568[this.field2573].method4088(arg0, arg1.field4308, arg1.field4311, arg1.field4313);
 	}
 
@@ -190,17 +190,17 @@ public abstract class class238 {
 	}
 
 	@ObfuscatedName("ho.al(ILpq;I)V")
-	public final void method4181(int arg0, class426 arg1) {
+	public final void method4181(int arg0, Matrix4x4 arg1) {
 		this.field2568[this.field2573].method4094(arg0, arg1);
 	}
 
 	@ObfuscatedName("ho.ac(ILpq;I)V")
-	public final void method4182(int arg0, class426 arg1) {
+	public final void method4182(int arg0, Matrix4x4 arg1) {
 		this.field2568[this.field2573].method4095(arg0, arg1);
 	}
 
 	@ObfuscatedName("ho.ai(ILpq;I)V")
-	public final void method4183(int arg0, class426 arg1) {
+	public final void method4183(int arg0, Matrix4x4 arg1) {
 		this.field2568[this.field2573].method4096(arg0, arg1);
 	}
 

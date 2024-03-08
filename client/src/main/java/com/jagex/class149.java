@@ -26,7 +26,7 @@ public abstract class class149 implements class50 {
 	}
 
 	@ObfuscatedName("ec.e(Lalw;B)V")
-	public void method976(Packet arg0) {
+	public void decode(Packet arg0) {
 		while (true) {
 			int var2 = arg0.g1();
 			if (var2 == 0) {

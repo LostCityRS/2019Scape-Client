@@ -2991,7 +2991,7 @@ public class class844 extends class116 {
 
 	@ObfuscatedName("afo.by(Lou;)V")
 	public void method1689(class419 arg0) {
-		class426 var2 = this.field9730.field10066;
+		Matrix4x4 var2 = this.field9730.field10066;
 		var2.method6609(arg0);
 		if (this.field9755 != null) {
 			for (int var3 = 0; var3 < this.field9755.length; var3++) {
@@ -3021,7 +3021,7 @@ public class class844 extends class116 {
 				var8 = var7.field1230;
 			}
 			if (var7.field1231 == null) {
-				var7.field1231 = new class426(var2);
+				var7.field1231 = new Matrix4x4(var2);
 			} else {
 				var7.field1231.method6604(var2);
 			}
@@ -3038,7 +3038,7 @@ public class class844 extends class116 {
 
 	@ObfuscatedName("afo.he(IIIILou;ZI)Z")
 	public boolean method15590(int arg0, int arg1, int arg2, int arg3, class419 arg4, boolean arg5, int arg6) {
-		class426 var8 = this.field9730.field10066;
+		Matrix4x4 var8 = this.field9730.field10066;
 		var8.method6609(arg4);
 		var8.method6720(this.field9730.field10145);
 		boolean var9 = false;
@@ -3255,9 +3255,9 @@ public class class844 extends class116 {
 		if (this.field9710 == 0) {
 			return;
 		}
-		class426 var4 = this.field9730.field10076;
-		class426 var5 = this.field9730.field10066;
-		class426 var6 = this.field9730.field10039;
+		Matrix4x4 var4 = this.field9730.field10076;
+		Matrix4x4 var5 = this.field9730.field10066;
+		Matrix4x4 var6 = this.field9730.field10039;
 		var5.method6609(arg0);
 		var6.method6604(var5);
 		var6.method6720(this.field9730.field10145);
@@ -3439,7 +3439,7 @@ public class class844 extends class116 {
 				var2.field2968.method6491(this.field9730.field10142 * this.field9730.field10122, this.field9730.field10122 * this.field9730.field10120, this.field9730.field10210 * this.field9730.field10122);
 				if (this.field9730.field10126 > 0) {
 					var13 = this.field9730.field10126;
-					class423 var14 = this.field9730.field10054;
+					Vector3 var14 = this.field9730.field10054;
 					for (int var15 = 0; var15 < var13; var15++) {
 						class973 var16 = this.field9730.field10045[var15];
 						int var17 = var16.method17624();
@@ -3529,7 +3529,7 @@ public class class844 extends class116 {
 	}
 
 	@ObfuscatedName("afo.ht(Lpq;)V")
-	public void method15604(class426 arg0) {
+	public void method15604(Matrix4x4 arg0) {
 		if (this.field9758 == null) {
 			return;
 		}
@@ -3828,7 +3828,7 @@ public class class844 extends class116 {
 				ByteBuffer var82 = this.field9730.field10071;
 				var82.clear();
 				for (int var83 = 0; var83 < this.field9710; var83++) {
-					class423 var84 = new class423((float) var68[var83], (float) var69[var83], (float) var70[var83]);
+					Vector3 var84 = new Vector3((float) var68[var83], (float) var69[var83], (float) var70[var83]);
 					if (var84.method6519() != 0.0F) {
 						if (var71[var83] > 1) {
 							var84.method6511((float) var71[var83]);
@@ -3844,7 +3844,7 @@ public class class844 extends class116 {
 				int var73 = this.field9710 * 12;
 				long var74 = var67.method5737(0, var73);
 				for (int var76 = 0; var76 < this.field9710; var76++) {
-					class423 var77 = new class423((float) var68[var76], (float) var69[var76], (float) var70[var76]);
+					Vector3 var77 = new Vector3((float) var68[var76], (float) var69[var76], (float) var70[var76]);
 					if (var77.method6519() != 0.0F) {
 						if (var71[var76] > 1) {
 							var77.method6511((float) var71[var76]);

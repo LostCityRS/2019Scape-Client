@@ -63,7 +63,7 @@ public class class938 extends class454 {
 						for (int var10 = 0; var10 < var9; var10++) {
 							class554 var11 = new class554(arg0, this.field4577.field6900, arg1, 2);
 							if (var11.field7014 == 31) {
-								class788 var12 = (class788) Statics.field7943.method962(arg1.g2());
+								class788 var12 = (class788) Statics.field7943.get(arg1.g2());
 								var11.method8899(var12.field9168, var12.field9170, var12.field9167, var12.field9169);
 							}
 							if (arg0.method2114() > 0) {
@@ -251,7 +251,7 @@ public class class938 extends class454 {
 						for (int var17 = 0; var17 < var16; var17++) {
 							class554 var18 = new class554(arg0, this.field4577.field6900, arg1, 2);
 							if (var18.field7014 == 31) {
-								class788 var19 = (class788) Statics.field7943.method962(arg1.g2());
+								class788 var19 = (class788) Statics.field7943.get(arg1.g2());
 								var18.method8899(var19.field9168, var19.field9170, var19.field9167, var19.field9169);
 							}
 							if (arg0.method2114() > 0) {
@@ -414,7 +414,7 @@ public class class938 extends class454 {
 									int var17 = var12 >> 6 & 0x3F;
 									var18 = arg2 + var17;
 									var19 = arg3 + var16;
-									var20 = (class598) arg0.method962(var10);
+									var20 = (class598) arg0.get(var10);
 									if ((var15.field7540 & 0x1) == 0) {
 										var21 = var20.field7499;
 										var22 = var20.field7492;
@@ -438,7 +438,7 @@ public class class938 extends class454 {
 
 	@ObfuscatedName("abb.cn(Laop;III)Z")
 	public static final boolean method14705(class1090 arg0, int arg1, int arg2) {
-		class598 var3 = (class598) arg0.method962(arg1);
+		class598 var3 = (class598) arg0.get(arg1);
 		if (arg2 == 11) {
 			arg2 = 10;
 		}
@@ -482,7 +482,7 @@ public class class938 extends class454 {
 									var13 = new class600(var5);
 									var14 = arg2 + var11;
 									var15 = arg3 + var10;
-									class598 var16 = (class598) this.field10765.method962(var6);
+									class598 var16 = (class598) this.field10765.get(var6);
 									int var17;
 									int var18;
 									if ((var13.field7540 & 0x1) == 0) {
@@ -548,7 +548,7 @@ public class class938 extends class454 {
 											} while (var16 >= arg6 + 8);
 										} while (var15 < arg7);
 									} while (var15 >= arg7 + 8);
-									class598 var19 = (class598) this.field10765.method962(var11);
+									class598 var19 = (class598) this.field10765.get(var11);
 									int var20;
 									int var21;
 									if ((var18.field7540 & 0x1) == 0) {
@@ -577,7 +577,7 @@ public class class938 extends class454 {
 		if (arg2 < this.field10756) {
 			this.field10756 = arg2;
 		}
-		class598 var12 = (class598) this.field10765.method962(arg5);
+		class598 var12 = (class598) this.field10765.get(arg5);
 		if (Statics.field688.field11538.method18426() == 0 && var12.field7516) {
 			return;
 		}
@@ -878,7 +878,7 @@ public class class938 extends class454 {
 			int var18 = 65;
 			class514 var19 = (class514) this.field4577.method8711(arg7, arg12, arg13);
 			if (var19 != null) {
-				var18 = ((class598) this.field10765.method962(var19.method8223())).field7480 + 1;
+				var18 = ((class598) this.field10765.get(var19.method8223())).field7480 + 1;
 			}
 			class1197 var21;
 			if (arg3) {
@@ -896,7 +896,7 @@ public class class938 extends class454 {
 			int var22 = 33;
 			class514 var23 = (class514) this.field4577.method8711(arg7, arg12, arg13);
 			if (var23 != null) {
-				var22 = ((class598) this.field10765.method962(var23.method8223())).field7480 / 2 + 1;
+				var22 = ((class598) this.field10765.get(var23.method8223())).field7480 / 2 + 1;
 			}
 			class1197 var25;
 			if (arg3) {
@@ -929,7 +929,7 @@ public class class938 extends class454 {
 			int var30 = 33;
 			class514 var31 = (class514) this.field4577.method8711(arg7, arg12, arg13);
 			if (var31 != null) {
-				var30 = ((class598) this.field10765.method962(var31.method8223())).field7480 / 2 + 1;
+				var30 = ((class598) this.field10765.get(var31.method8223())).field7480 / 2 + 1;
 			}
 			class1197 var34;
 			class1197 var35;
@@ -963,7 +963,7 @@ public class class938 extends class454 {
 		if (var6 == null) {
 			return;
 		}
-		class598 var7 = (class598) this.field10765.method962(var6.method8223());
+		class598 var7 = (class598) this.field10765.get(var6.method8223());
 		int var8 = var6.method8220();
 		int var9 = var6.method8204();
 		if (var7.method9480()) {

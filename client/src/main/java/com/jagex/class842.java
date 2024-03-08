@@ -2837,7 +2837,7 @@ public class class842 extends class116 {
 		if (arg2) {
 			var5.method6300();
 		}
-		class426 var6 = var4.field828;
+		Matrix4x4 var6 = var4.field828;
 		var6.method6609(var5);
 		float[] var7 = new float[3];
 		for (int var8 = 0; var8 < this.field9549; var8++) {
@@ -2861,10 +2861,10 @@ public class class842 extends class116 {
 			return;
 		}
 		class55 var4 = this.field9572.method15674(Thread.currentThread());
-		class426 var5 = var4.field828;
+		Matrix4x4 var5 = var4.field828;
 		var5.method6609(arg0);
-		class426 var6 = this.field9572.field9793;
-		class426 var7 = this.field9572.field9795;
+		Matrix4x4 var6 = this.field9572.field9793;
+		Matrix4x4 var7 = this.field9572.field9795;
 		if (!this.field9592) {
 			this.method15488();
 		}
@@ -2911,7 +2911,7 @@ public class class842 extends class116 {
 			}
 		}
 		this.method15458(var4);
-		class426 var29 = this.field9534.field868;
+		Matrix4x4 var29 = this.field9534.field868;
 		var29.method6604(var5);
 		var29.method6720(this.field9572.field9803);
 		if ((arg2 & 0x2) == 0) {
@@ -3277,7 +3277,7 @@ public class class842 extends class116 {
 		short var6 = this.field9558[arg3];
 		short var7 = this.field9559[arg3];
 		short var8 = this.field9560[arg3];
-		class426 var9 = this.field9572.field9795;
+		Matrix4x4 var9 = this.field9572.field9795;
 		float var10 = var9.field4315[10];
 		float var11 = var9.field4315[14];
 		float var12 = var9.field4315[11];
@@ -3341,9 +3341,9 @@ public class class842 extends class116 {
 	@ObfuscatedName("afi.av(IILou;ZI)Z")
 	public boolean method1725(int arg0, int arg1, class419 arg2, boolean arg3, int arg4) {
 		this.method15458(this.field9572.method15674(Thread.currentThread()));
-		class426 var6 = this.field9534.field828;
+		Matrix4x4 var6 = this.field9534.field828;
 		var6.method6609(arg2);
-		class426 var7 = this.field9534.field868;
+		Matrix4x4 var7 = this.field9534.field868;
 		var7.method6604(var6);
 		var7.method6720(this.field9572.field9803);
 		boolean var8 = false;
@@ -3460,7 +3460,7 @@ public class class842 extends class116 {
 	@ObfuscatedName("afi.by(Lou;)V")
 	public void method1689(class419 arg0) {
 		this.method15458(this.field9572.method15674(Thread.currentThread()));
-		class426 var2 = this.field9534.field828;
+		Matrix4x4 var2 = this.field9534.field828;
 		var2.method6609(arg0);
 		if (this.field9586 != null) {
 			for (int var3 = 0; var3 < this.field9586.length; var3++) {
@@ -3490,7 +3490,7 @@ public class class842 extends class116 {
 				var8 = var7.field1230;
 			}
 			if (var7.field1231 == null) {
-				var7.field1231 = new class426(var2);
+				var7.field1231 = new Matrix4x4(var2);
 			} else {
 				var7.field1231.method6604(var2);
 			}

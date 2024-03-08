@@ -15,16 +15,16 @@ public class class402 implements class731 {
 	public final class442 field4201;
 
 	@ObfuscatedName("oi.m")
-	public final class162 field4202 = new class162(20);
+	public final WeightedCache field4202 = new WeightedCache(20);
 
 	@ObfuscatedName("oi.k")
-	public final class162 field4203 = new class162(20);
+	public final WeightedCache field4203 = new WeightedCache(20);
 
 	@ObfuscatedName("oi.f")
 	public final int[] field4204;
 
 	@ObfuscatedName("oi.w")
-	public class162 field4205;
+	public WeightedCache field4205;
 
 	@ObfuscatedName("oi.l")
 	public class133 field4206 = null;
@@ -37,7 +37,7 @@ public class class402 implements class731 {
 		this.field4200 = arg1;
 		this.field4201 = arg2;
 		this.field4204 = arg3;
-		this.field4205 = new class162(20);
+		this.field4205 = new WeightedCache(20);
 	}
 
 	@ObfuscatedName("oi.e(Loq;I)V")

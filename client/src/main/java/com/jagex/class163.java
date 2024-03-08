@@ -15,7 +15,7 @@ public final class class163 {
 	public int field1762;
 
 	@ObfuscatedName("ex.k")
-	public class729 field1764;
+	public IterableMap field1764;
 
 	@ObfuscatedName("ex.f")
 	public class720 field1763 = new class720();
@@ -26,7 +26,7 @@ public final class class163 {
 		int var2;
 		for (var2 = 1; var2 + var2 < arg0; var2 += var2) {
 		}
-		this.field1764 = new class729(var2);
+		this.field1764 = new IterableMap(var2);
 	}
 
 	@ObfuscatedName("ex.e(J)Laky;")

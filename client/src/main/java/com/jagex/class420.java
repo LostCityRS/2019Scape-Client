@@ -9,10 +9,10 @@ public class class420 {
 	public class421 field4297;
 
 	@ObfuscatedName("oe.d")
-	public class423 field4298;
+	public Vector3 field4298;
 
 	@ObfuscatedName("oe.c")
-	public class423 field4299;
+	public Vector3 field4299;
 
 	public class420(Packet arg0, boolean arg1) {
 		this.method6384(arg0, arg1);
@@ -20,8 +20,8 @@ public class class420 {
 
 	public class420() {
 		this.field4297 = new class421();
-		this.field4298 = new class423();
-		this.field4299 = new class423(1.0F, 1.0F, 1.0F);
+		this.field4298 = new Vector3();
+		this.field4299 = new Vector3(1.0F, 1.0F, 1.0F);
 	}
 
 	public class420(class420 arg0) {
@@ -35,8 +35,8 @@ public class class420 {
 			this.method6391(arg0);
 		} else {
 			this.field4297 = new class421(arg0);
-			this.field4298 = new class423(arg0);
-			this.field4299 = new class423(arg0);
+			this.field4298 = new Vector3(arg0);
+			this.field4299 = new Vector3(arg0);
 		}
 	}
 
@@ -66,7 +66,7 @@ public class class420 {
 		if ((var2 & 0x8) != 0) {
 			var9 = arg0.g2s();
 		}
-		this.field4298 = new class423(var7, var8, var9);
+		this.field4298 = new Vector3(var7, var8, var9);
 		float var10 = 1.0F;
 		float var11 = 1.0F;
 		float var12 = 1.0F;
@@ -86,7 +86,7 @@ public class class420 {
 			var11 = var13;
 			var10 = var13;
 		}
-		this.field4299 = new class423(var10, var11, var12);
+		this.field4299 = new Vector3(var10, var11, var12);
 	}
 
 	@ObfuscatedName("oe.m(Loe;)V")

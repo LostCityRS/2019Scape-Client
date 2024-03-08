@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 import java.util.Arrays;
 
 @ObfuscatedName("if")
-public class class260 implements class53 {
+public class class260 implements ConfigType {
 
 	@ObfuscatedName("if.f")
 	public static short[] field2694 = new short[256];
@@ -14,7 +14,7 @@ public class class260 implements class53 {
 	public class261 field2695;
 
 	@ObfuscatedName("if.l")
-	public class51 field2696;
+	public ConfigTypeList field2696;
 
 	@ObfuscatedName("if.u")
 	public int field2732;
@@ -179,13 +179,13 @@ public class class260 implements class53 {
 	public int field2742 = 255;
 
 	@ObfuscatedName("if.bm")
-	public class729 field2753;
+	public IterableMap field2753;
 
 	@ObfuscatedName("if.bb")
 	public int field2754 = -1;
 
 	@ObfuscatedName("if.be")
-	public class689 field2727 = class689.field8307;
+	public CompassPoint field2727 = CompassPoint.field8307;
 
 	@ObfuscatedName("if.by")
 	public int field2763 = -1;
@@ -220,7 +220,7 @@ public class class260 implements class53 {
 	@ObfuscatedName("if.bj")
 	public boolean field2690 = false;
 
-	public class260(int arg0, class261 arg1, class51 arg2) {
+	public class260(int arg0, class261 arg1, ConfigTypeList arg2) {
 		this.field2732 = arg0;
 		this.field2695 = arg1;
 		this.field2696 = arg2;
@@ -228,7 +228,7 @@ public class class260 implements class53 {
 	}
 
 	@ObfuscatedName("if.e(Lalw;B)V")
-	public void method976(Packet arg0) {
+	public void decode(Packet arg0) {
 		while (true) {
 			int var2 = arg0.g1();
 			if (var2 == 0) {
@@ -395,7 +395,7 @@ public class class260 implements class53 {
 		} else if (arg1 == 123) {
 			this.field2754 = arg0.g2();
 		} else if (arg1 == 125) {
-			this.field2727 = (class689) class686.method1897(class689.method9573(), arg0.g1b());
+			this.field2727 = (CompassPoint) class686.method1897(CompassPoint.method9573(), arg0.g1b());
 		} else if (arg1 == 127) {
 			this.field2762 = arg0.g2();
 		} else if (arg1 == 128) {
@@ -495,7 +495,7 @@ public class class260 implements class53 {
 					int var34 = arg0.g1();
 					if (this.field2753 == null) {
 						int var35 = class783.method16657(var34);
-						this.field2753 = new class729(var35);
+						this.field2753 = new IterableMap(var35);
 					}
 					for (int var36 = 0; var36 < var34; var36++) {
 						boolean var37 = arg0.g1() == 1;
@@ -514,14 +514,14 @@ public class class260 implements class53 {
 	}
 
 	@ObfuscatedName("if.n(I)V")
-	public void method975() {
+	public void postDecode() {
 		if (this.field2752 == null) {
 			this.field2752 = new int[0];
 		}
 		if (this.field2758 != -1) {
 			return;
 		}
-		if (this.field2695 == null || class696.field8335 == this.field2695.field2772) {
+		if (this.field2695 == null || ModeGame.field8335 == this.field2695.field2772) {
 			this.field2758 = 1;
 		} else {
 			this.field2758 = 0;
@@ -566,16 +566,16 @@ public class class260 implements class53 {
 		if (arg10 != null) {
 			var19 |= arg10.field2688 << 24;
 		}
-		class162 var21 = this.field2695.field2771;
+		WeightedCache var21 = this.field2695.field2771;
 		class116 var22;
 		synchronized (this.field2695.field2771) {
 			var22 = (class116) this.field2695.field2771.method2930(var19);
 		}
 		class584 var24 = null;
 		if (!arg12 && arg11 != -1) {
-			var24 = (class584) arg2.method962(arg11);
+			var24 = (class584) arg2.get(arg11);
 		} else if (this.field2762 != -1) {
-			var24 = (class584) arg2.method962(this.field2762);
+			var24 = (class584) arg2.get(this.field2762);
 		}
 		if (var22 == null || (var22.method1691() & var15) != var15) {
 			if (var22 != null) {
@@ -700,7 +700,7 @@ public class class260 implements class53 {
 			}
 			var22.method1736();
 			var22.method1690(var15);
-			class162 var48 = this.field2695.field2771;
+			WeightedCache var48 = this.field2695.field2771;
 			synchronized (this.field2695.field2771) {
 				this.field2695.field2771.method2921(var22, var19);
 			}
@@ -785,7 +785,7 @@ public class class260 implements class53 {
 			if (arg5 != null) {
 				var9 |= arg5.field2688 << 24;
 			}
-			class162 var11 = this.field2695.field2768;
+			WeightedCache var11 = this.field2695.field2768;
 			class116 var12;
 			synchronized (this.field2695.field2768) {
 				var12 = (class116) this.field2695.field2768.method2930(var9);
@@ -871,7 +871,7 @@ public class class260 implements class53 {
 					var12.method1745(this.field2711, this.field2712, this.field2698, this.field2714 & 0xFF);
 				}
 				var12.method1690(var8);
-				class162 var30 = this.field2695.field2768;
+				WeightedCache var30 = this.field2695.field2768;
 				synchronized (this.field2695.field2768) {
 					this.field2695.field2768.method2921(var12, var9);
 				}
@@ -936,10 +936,10 @@ public class class260 implements class53 {
 			}
 		}
 		if (var3 >= 0 && var3 < this.field2735.length - 1) {
-			return this.field2735[var3] == -1 ? null : (class260) this.field2696.method962(this.field2735[var3]);
+			return this.field2735[var3] == -1 ? null : (class260) this.field2696.get(this.field2735[var3]);
 		} else {
 			int var6 = this.field2735[this.field2735.length - 1];
-			return var6 == -1 ? null : (class260) this.field2696.method962(var6);
+			return var6 == -1 ? null : (class260) this.field2696.get(var6);
 		}
 	}
 
@@ -975,7 +975,7 @@ public class class260 implements class53 {
 		}
 		for (int var1 = 0; var1 < this.field2735.length; var1++) {
 			if (this.field2735[var1] != -1) {
-				class260 var2 = (class260) this.field2696.method962(this.field2735[var1]);
+				class260 var2 = (class260) this.field2696.get(this.field2735[var1]);
 				if (var2.field2746 != -1 || var2.field2748 != -1 || var2.field2749 != -1) {
 					return true;
 				}

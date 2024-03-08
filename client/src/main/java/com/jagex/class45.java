@@ -37,7 +37,7 @@ public class class45 {
 	public int field743;
 
 	@ObfuscatedName("au.d")
-	public static class162 field752 = new class162(4);
+	public static WeightedCache field752 = new WeightedCache(4);
 
 	@ObfuscatedName("tt.n(II)V")
 	public static void method8643(int arg0) {

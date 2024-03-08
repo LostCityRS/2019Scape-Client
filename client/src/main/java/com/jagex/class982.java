@@ -54,7 +54,7 @@ public class class982 extends class532 {
 	public float[][] field11422;
 
 	@ObfuscatedName("akx.x")
-	public class729 field11428;
+	public IterableMap field11428;
 
 	@ObfuscatedName("akx.b")
 	public ByteBuffer field11429;
@@ -115,7 +115,7 @@ public class class982 extends class532 {
 			}
 		}
 		if (this.field11421 > 0) {
-			this.field11428 = new class729(class783.method16657(this.field11421));
+			this.field11428 = new IterableMap(class783.method16657(this.field11421));
 			this.field11429 = this.field11416.field10071;
 			this.field11429.clear();
 			this.field11429.position(this.field11416.field10048 >> 1);

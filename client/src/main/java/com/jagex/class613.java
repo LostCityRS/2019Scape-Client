@@ -33,12 +33,12 @@ public class class613 implements class614 {
 	public int field7622;
 
 	@ObfuscatedName("we.z")
-	public class162 field7623;
+	public WeightedCache field7623;
 
 	@ObfuscatedName("we.p")
 	public boolean field7624;
 
-	public class613(class442 arg0, int arg1, class366 arg2, class612 arg3, class162 arg4) {
+	public class613(class442 arg0, int arg1, class366 arg2, class612 arg3, WeightedCache arg4) {
 		this.field7621 = arg0;
 		this.field7615 = arg1;
 		this.field7617 = arg2;
@@ -66,8 +66,8 @@ public class class613 implements class614 {
 	}
 
 	@ObfuscatedName("we.n(B)Lrw;")
-	public class476 method9710() {
-		class476 var1 = new class476(this.field7617);
+	public Sound method9710() {
+		Sound var1 = new Sound(this.field7617);
 		var1.method7376(this);
 		return var1;
 	}
@@ -120,7 +120,7 @@ public class class613 implements class614 {
 		if (this.field7618) {
 			throw new RuntimeException("");
 		}
-		class162 var2 = this.field7623;
+		WeightedCache var2 = this.field7623;
 		synchronized (this.field7623) {
 			List var3 = this.method9689();
 			if (var3 != null) {
@@ -140,7 +140,7 @@ public class class613 implements class614 {
 		if (this.field7619 != null) {
 			this.field7619.method3131(this);
 		}
-		class162 var3 = this.field7623;
+		WeightedCache var3 = this.field7623;
 		synchronized (this.field7623) {
 			List var4 = this.method9689();
 			if (var4.size() > arg0) {
@@ -156,7 +156,7 @@ public class class613 implements class614 {
 			return false;
 		}
 		boolean var2 = false;
-		class162 var3 = this.field7623;
+		WeightedCache var3 = this.field7623;
 		synchronized (this.field7623) {
 			List var4 = this.method9689();
 			if (var4 != null && var4.size() > arg0) {
@@ -177,7 +177,7 @@ public class class613 implements class614 {
 			return 0;
 		}
 		int var1 = 0;
-		class162 var2 = this.field7623;
+		WeightedCache var2 = this.field7623;
 		synchronized (this.field7623) {
 			List var3 = this.method9689();
 			if (var3 != null) {
@@ -212,7 +212,7 @@ public class class613 implements class614 {
 		if (this.field7623 == null || arg0 == null || arg1 < 0) {
 			return;
 		}
-		class162 var3 = this.field7623;
+		WeightedCache var3 = this.field7623;
 		synchronized (this.field7623) {
 			this.field7623.method2957((long) this.field7615);
 			if (arg1 <= this.field7623.method2925()) {
@@ -231,7 +231,7 @@ public class class613 implements class614 {
 			return null;
 		}
 		Object var1 = null;
-		class162 var2 = this.field7623;
+		WeightedCache var2 = this.field7623;
 		synchronized (this.field7623) {
 			List var3 = (List) this.field7623.method2930((long) this.field7615);
 			if (var3 == null && this.field7624) {

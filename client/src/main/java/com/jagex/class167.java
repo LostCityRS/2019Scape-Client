@@ -8,9 +8,9 @@ import java.util.Iterator;
 public class class167 implements class161 {
 
 	// $FF: synthetic field
-	public final class183 this$0;
+	public final AudioApi this$0;
 
-	public class167(class183 arg0) {
+	public class167(AudioApi arg0) {
 		this.this$0 = arg0;
 	}
 
@@ -18,7 +18,7 @@ public class class167 implements class161 {
 	public void method3027(class614 arg0) {
 		Iterator var2 = this.this$0.method3150().iterator();
 		while (var2.hasNext()) {
-			class476 var3 = (class476) var2.next();
+			Sound var3 = (Sound) var2.next();
 			if (var3.method7386() == arg0) {
 				var3.method7377();
 				var2.remove();

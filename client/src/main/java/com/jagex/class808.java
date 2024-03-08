@@ -11,13 +11,13 @@ public abstract class class808 extends class52 implements class414 {
 	@ObfuscatedName("add.n")
 	public final class455 field9260;
 
-	public class808(class696 arg0, class455 arg1, class687 arg2, int arg3) {
+	public class808(ModeGame arg0, class455 arg1, Language arg2, int arg3) {
 		super(arg0, arg2, arg3);
 		this.field9260 = arg1;
 	}
 
 	@ObfuscatedName("add.n(I)I")
-	public int method963() {
+	public int size() {
 		return this.field811;
 	}
 
@@ -37,7 +37,7 @@ public abstract class class808 extends class52 implements class414 {
 
 	@ObfuscatedName("add.u(IB)Ljava/lang/Object;")
 	public Object method6245(int arg0) {
-		class149 var2 = (class149) this.method962(arg0);
+		class149 var2 = (class149) this.get(arg0);
 		return var2 != null && var2.method2781() ? var2.method2782() : null;
 	}
 
@@ -78,7 +78,7 @@ public abstract class class808 extends class52 implements class414 {
 	@ObfuscatedName("add.ag(Lalw;B)Lon;")
 	public class413 method15284(Packet arg0) {
 		int var2 = arg0.g2();
-		class149 var3 = (class149) this.method962(var2);
+		class149 var3 = (class149) this.get(var2);
 		if (!var3.method2781()) {
 			throw new IllegalStateException("");
 		}
@@ -130,10 +130,10 @@ public abstract class class808 extends class52 implements class414 {
 		} else {
 			throw new IllegalStateException();
 		}
-		class149 var9 = (class149) this.method962(var3);
+		class149 var9 = (class149) this.get(var3);
 		return var9.method2781() && var9.field1704.method7292() == arg1 ? var4 : null;
 	}
 
 	@ObfuscatedName("add.e(II)Lay;")
-	public abstract class53 method962(int arg0);
+	public abstract ConfigType get(int arg0);
 }

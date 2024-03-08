@@ -12,9 +12,9 @@ public class class458 {
 	public final class442 field4614;
 
 	@ObfuscatedName("qr.m")
-	public final class162 field4615 = new class162(64);
+	public final WeightedCache field4615 = new WeightedCache(64);
 
-	public class458(class687 arg0, class442 arg1, class442 arg2) {
+	public class458(Language arg0, class442 arg1, class442 arg2) {
 		this.field4616 = arg1;
 		this.field4614 = arg2;
 		if (this.field4616 != null) {

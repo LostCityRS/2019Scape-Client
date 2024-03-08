@@ -78,7 +78,7 @@ public class class309 {
 	public String[] field3114;
 
 	@ObfuscatedName("kr.t")
-	public class729 field3115;
+	public IterableMap field3115;
 
 	public class309(Packet arg0) {
 		this.method5274(arg0);
@@ -384,7 +384,7 @@ public class class309 {
 	@ObfuscatedName("kr.y(III)Z")
 	public boolean method5270(int arg0, int arg1) {
 		if (this.field3115 == null) {
-			this.field3115 = new class729(4);
+			this.field3115 = new IterableMap(4);
 		} else {
 			class532 var3 = this.field3115.method14495((long) arg0);
 			if (var3 != null) {
@@ -411,7 +411,7 @@ public class class309 {
 		int var8 = arg1 << arg2;
 		int var9 = var8 & var7;
 		if (this.field3115 == null) {
-			this.field3115 = new class729(4);
+			this.field3115 = new IterableMap(4);
 		} else {
 			class532 var10 = this.field3115.method14495((long) arg0);
 			if (var10 != null) {
@@ -434,7 +434,7 @@ public class class309 {
 	@ObfuscatedName("kr.x(IJ)Z")
 	public boolean method5272(int arg0, long arg1) {
 		if (this.field3115 == null) {
-			this.field3115 = new class729(4);
+			this.field3115 = new IterableMap(4);
 		} else {
 			class532 var4 = this.field3115.method14495((long) arg0);
 			if (var4 != null) {
@@ -461,7 +461,7 @@ public class class309 {
 			arg1 = arg1.substring(0, 80);
 		}
 		if (this.field3115 == null) {
-			this.field3115 = new class729(4);
+			this.field3115 = new IterableMap(4);
 		} else {
 			class532 var3 = this.field3115.method14495((long) arg0);
 			if (var3 != null) {
@@ -586,7 +586,7 @@ public class class309 {
 		if (var6 <= 0) {
 			return;
 		}
-		this.field3115 = new class729(var6 < 16 ? class783.method16657(var6) : 16);
+		this.field3115 = new IterableMap(var6 < 16 ? class783.method16657(var6) : 16);
 		while (var6-- > 0) {
 			int var7 = arg0.g4s();
 			int var8 = var7 & 0x3FFFFFFF;

@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public abstract class class911 extends class307 {
 
 	@ObfuscatedName("ahn.n")
-	public class428[] field10565;
+	public Spline[] field10565;
 
 	@ObfuscatedName("ahn.m")
 	public float[] field10562;
@@ -28,14 +28,14 @@ public abstract class class911 extends class307 {
 	}
 
 	@ObfuscatedName("ahn.t(Lpe;IFI)V")
-	public void method16720(class428 arg0, int arg1, float arg2) {
+	public void method16720(Spline arg0, int arg1, float arg2) {
 		if (this.field10565 == null) {
-			this.field10565 = new class428[] { arg0 };
+			this.field10565 = new Spline[] { arg0 };
 			this.field10562 = new float[] { arg2 };
 			this.field10567 = new int[] { arg1 };
 			return;
 		}
-		class428[] var4 = new class428[this.field10565.length + 1];
+		Spline[] var4 = new Spline[this.field10565.length + 1];
 		float[] var5 = new float[this.field10565.length + 1];
 		int[] var6 = new int[this.field10565.length + 1];
 		System.arraycopy(this.field10565, 0, var4, 0, this.field10565.length);
@@ -51,7 +51,7 @@ public abstract class class911 extends class307 {
 
 	@ObfuscatedName("ahn.e(F[[[ILqx;IIB)V")
 	public void method5238(float arg0, int[][][] arg1, class451 arg2, int arg3, int arg4) {
-		class428 var6 = this.field10565[this.field10564];
+		Spline var6 = this.field10565[this.field10564];
 		if (this.field10562[this.field10564] > 0.0F) {
 			if (this.field10562[this.field10564] >= arg0) {
 				this.field10562[this.field10564] -= arg0;
@@ -102,8 +102,8 @@ public abstract class class911 extends class307 {
 	}
 
 	@ObfuscatedName("ahn.m(B)Lox;")
-	public class423 method5219() {
-		class423 var1 = class423.method6482();
+	public Vector3 method5219() {
+		Vector3 var1 = Vector3.method6482();
 		double[] var2 = this.field10565[this.field10564].method6765(this.field10563);
 		var1.field4308 = (float) var2[0];
 		var1.field4311 = (float) var2[1];
@@ -118,7 +118,7 @@ public abstract class class911 extends class307 {
 
 	@ObfuscatedName("ahn.f(B)Lakt;")
 	public CoordFine method5221() {
-		class423 var1 = this.method5219();
+		Vector3 var1 = this.method5219();
 		return new CoordFine(0, (int) var1.field4308, (int) var1.field4311, (int) var1.field4313);
 	}
 
@@ -134,7 +134,7 @@ public abstract class class911 extends class307 {
 
 	@ObfuscatedName("ahn.l(Lju;IIB)V")
 	public void method5223(class270 arg0, int arg1, int arg2) {
-		class423 var4 = this.method5219();
+		Vector3 var4 = this.method5219();
 		arg0.field2835 = (int) var4.field4308 - arg1;
 		arg0.field2836 = (int) -var4.field4311;
 		arg0.field2837 = (int) var4.field4313 - arg2;
@@ -146,10 +146,10 @@ public abstract class class911 extends class307 {
 		this.field10566 = 0.0F;
 		this.field10564 = 0;
 		int var2 = arg0.g1();
-		this.field10565 = new class428[var2];
+		this.field10565 = new Spline[var2];
 		this.field10562 = new float[var2];
 		for (int var3 = 0; var3 < var2; var3++) {
-			this.field10565[var3] = new class428(arg0);
+			this.field10565[var3] = new Spline(arg0);
 			this.field10562[var3] = arg0.gFloat();
 		}
 		this.method16724(arg0, var2);

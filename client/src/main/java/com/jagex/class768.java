@@ -18,12 +18,12 @@ public class class768 {
 	public int field8857 = 0;
 
 	@ObfuscatedName("ach.f")
-	public final class162 field8855 = new class162(64);
+	public final WeightedCache field8855 = new WeightedCache(64);
 
 	@ObfuscatedName("ach.u")
 	public class645 field8861 = null;
 
-	public class768(class687 arg0, class442 arg1, class442 arg2, class645 arg3) {
+	public class768(Language arg0, class442 arg1, class442 arg2, class645 arg3) {
 		this.field8860 = arg1;
 		this.field8858 = arg2;
 		this.field8861 = arg3;

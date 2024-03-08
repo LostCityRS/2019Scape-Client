@@ -115,7 +115,7 @@ public class class1130 extends class892 {
 					if (var10 >= 2048) {
 						int var11 = var10 - 2048;
 						var4[var7] = var11 | 0x40000000;
-						var6[var7] = (class738) Statics.field1842.method962(var11);
+						var6[var7] = (class738) Statics.field1842.get(var11);
 						int var12 = var6[var7].field8685;
 						if (var12 != 0) {
 							this.field12060 = var12;
@@ -162,7 +162,7 @@ public class class1130 extends class892 {
 		int[] var23 = this.field12061.field7894;
 		this.field12061.method10113(this.method16509(), var4, var5, var16, var19, this.field12052 == 1, var3);
 		if (var3 != var22) {
-			class423 var24 = class423.method6484(this.method10536().field4298);
+			Vector3 var24 = Vector3.method6484(this.method10536().field4298);
 			var24.field4308 = (this.field10450[0] << 9) + (this.method16546() << 8);
 			var24.field4313 = (this.field10448[0] << 9) + (this.method16546() << 8);
 			this.method10531(var24);
@@ -198,7 +198,7 @@ public class class1130 extends class892 {
 		int var5 = super.method16546();
 		this.method16502((var2 >> 3 & 0x7) + 1);
 		boolean var6 = (var2 & 0x40) != 0;
-		class423 var7 = class423.method6484(this.method10536().field4298);
+		Vector3 var7 = Vector3.method6484(this.method10536().field4298);
 		var7.field4308 += this.method16546() - var5 << 8;
 		var7.field4313 += this.method16546() - var5 << 8;
 		this.method10531(var7);
@@ -206,7 +206,7 @@ public class class1130 extends class892 {
 		if (var6) {
 			this.field12050 = arg0.gSmart1or2();
 			int var8 = var3 == 0 ? Statics.field7921.field7671 : Statics.field7921.field7670;
-			this.field12051 = ((class754) Statics.field8514.method962(var8)).method14849(this.field12050);
+			this.field12051 = ((class754) Statics.field8514.get(var8)).method14849(this.field12050);
 		} else {
 			this.field12050 = -1;
 			this.field12051 = null;
@@ -312,14 +312,14 @@ public class class1130 extends class892 {
 		this.field10458 = false;
 		if (Statics.field688.field11568.method18453() == 1) {
 			class584 var9 = this.method16508();
-			if (var9.field7346 && (this.field12061.field7892 == -1 || ((class260) Statics.field7961.method962(this.field12061.field7892)).field2710)) {
+			if (var9.field7346 && (this.field12061.field7892 == -1 || ((class260) Statics.field7961.get(this.field12061.field7892)).field2710)) {
 				class721 var10 = this.field10454.method14346() && this.field10454.method14355() ? this.field10454 : null;
 				class1075 var11 = this.field10432.method14346() && (!this.field10432.field11877 || var10 == null) ? this.field10432 : null;
 				short var12 = Statics.field11389.field7728;
 				byte var13 = Statics.field11389.field7757;
 				if (this.field12061.field7892 != -1) {
-					var12 = ((class260) Statics.field7961.method962(this.field12061.field7892)).field2741;
-					var13 = ((class260) Statics.field7961.method962(this.field12061.field7892)).field2702;
+					var12 = ((class260) Statics.field7961.get(this.field12061.field7892)).field2741;
+					var13 = ((class260) Statics.field7961.get(this.field12061.field7892)).field2702;
 				}
 				Object var14 = null;
 				class116 var15;
@@ -348,14 +348,14 @@ public class class1130 extends class892 {
 						class984 var18 = (class984) client.field10838.method14495((long) var17.field744);
 						if (var18 != null) {
 							class1131 var19 = (class1131) var18.field11436;
-							class423 var20 = class423.method6528(var19.method10536().field4298, Statics.field4490.method10536().field4298);
+							Vector3 var20 = Vector3.method6528(var19.method10536().field4298, Statics.field4490.method10536().field4298);
 							int var21 = (int) var20.field4308;
 							int var22 = (int) var20.field4313;
 							this.method19113(arg0, var2, this.field10459[0], (long) var21, (long) var22, var17.field750, 92160000L);
 						}
 					}
 					if (var17.field745 == 2) {
-						class423 var23 = Statics.field4490.method10536().field4298;
+						Vector3 var23 = Statics.field4490.method10536().field4298;
 						long var24 = (long) (var17.field746 * 262144 - (int) var23.field4308);
 						long var26 = (long) (var17.field747 * 512 - (int) var23.field4313);
 						long var28 = (long) (var17.field748 << 9);
@@ -365,7 +365,7 @@ public class class1130 extends class892 {
 					if (var17.field745 == 10 && var17.field744 >= 0 && var17.field744 < client.field10944.length) {
 						class1130 var32 = client.field10944[var17.field744];
 						if (var32 != null) {
-							class423 var33 = class423.method6528(var32.method10536().field4298, Statics.field4490.method10536().field4298);
+							Vector3 var33 = Vector3.method6528(var32.method10536().field4298, Statics.field4490.method10536().field4298);
 							int var34 = (int) var33.field4308;
 							int var35 = (int) var33.field4313;
 							this.method19113(arg0, var2, this.field10459[0], (long) var34, (long) var35, var17.field750, 92160000L);
@@ -391,7 +391,7 @@ public class class1130 extends class892 {
 			}
 		}
 		if (this.field10393 != null) {
-			class119 var37 = this.field10393.method9965();
+			ParticleList var37 = this.field10393.method9965();
 			arg0.method2198(var37);
 		}
 		for (int var38 = 0; var38 < this.field10459.length; var38++) {
@@ -501,7 +501,7 @@ public class class1130 extends class892 {
 	@ObfuscatedName("aqk.hy(ZB)Ljava/lang/String;")
 	public String method19115(boolean arg0) {
 		String var2 = arg0 ? this.field12057 : this.field12062;
-		return this.field12051 == null ? var2 : this.field12051.replaceAll(class9.field428, var2);
+		return this.field12051 == null ? var2 : this.field12051.replaceAll(TextUtil.NAME, var2);
 	}
 
 	@ObfuscatedName("aqk.he(ZI)Ljava/lang/String;")
@@ -517,8 +517,8 @@ public class class1130 extends class892 {
 		}
 		for (int var4 = 0; var4 < this.field10422.length; var4++) {
 			if (this.field10422[var4].field6657 != -1) {
-				class680 var5 = (class680) Statics.field4874.method962(this.field10422[var4].field6657);
-				if (var5.field8261 && var5.field8260 != -1 && ((class164) Statics.field8797.method962(var5.field8260)).field1782 == 1) {
+				class680 var5 = (class680) Statics.field4874.get(this.field10422[var4].field6657);
+				if (var5.field8261 && var5.field8260 != -1 && ((class164) Statics.field8797.get(var5.field8260)).field1782 == 1) {
 					this.field10422[var4].field6659.method14362(-1);
 					this.field10422[var4].field6657 = -1;
 				}
@@ -542,7 +542,7 @@ public class class1130 extends class892 {
 		this.field10450[0] = arg0;
 		this.field10448[0] = arg1;
 		int var3 = this.method16546();
-		class423 var4 = class423.method6484(this.method10536().field4298);
+		Vector3 var4 = Vector3.method6484(this.method10536().field4298);
 		var4.field4308 = this.field10450[0] * 512 + var3 * 256;
 		var4.field4313 = this.field10448[0] * 512 + var3 * 256;
 		this.method10531(var4);
@@ -577,7 +577,7 @@ public class class1130 extends class892 {
 
 	@ObfuscatedName("aqk.bz(I)I")
 	public int method16546() {
-		return this.field12061 == null || this.field12061.field7892 == -1 ? super.method16546() : ((class260) Statics.field7961.method962(this.field12061.field7892)).field2699;
+		return this.field12061 == null || this.field12061.field7892 == -1 ? super.method16546() : ((class260) Statics.field7961.get(this.field12061.field7892)).field2699;
 	}
 
 	@ObfuscatedName("aqk.bj(S)I")
@@ -671,8 +671,8 @@ public class class1130 extends class892 {
 	}
 
 	@ObfuscatedName("aqk.f(B)Lox;")
-	public class423 method4666() {
-		return class423.method6482();
+	public Vector3 method4666() {
+		return Vector3.method6482();
 	}
 
 	@ObfuscatedName("aqk.cx(I)I")

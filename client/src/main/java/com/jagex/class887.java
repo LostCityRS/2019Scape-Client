@@ -234,7 +234,7 @@ public final class class887 extends class234 {
 	}
 
 	@ObfuscatedName("agt.p(Laql;Lpq;)V")
-	public void method4089(class1150 arg0, class426 arg1) {
+	public void method4089(class1150 arg0, Matrix4x4 arg1) {
 		int var3 = ((class1220) arg0).method19676();
 		int var4 = ((class1220) arg0).method19677();
 		if (arg0.method19247() != class236.field2480) {
@@ -249,7 +249,7 @@ public final class class887 extends class234 {
 	}
 
 	@ObfuscatedName("agt.d(Laql;Lpq;)V")
-	public void method4101(class1150 arg0, class426 arg1) {
+	public void method4101(class1150 arg0, Matrix4x4 arg1) {
 		int var3 = ((class1220) arg0).method19676();
 		int var4 = ((class1220) arg0).method19677();
 		if (arg0.method19247() != class236.field2482) {
@@ -306,7 +306,7 @@ public final class class887 extends class234 {
 	}
 
 	@ObfuscatedName("agt.s(ILpq;)V")
-	public void method4094(int arg0, class426 arg1) {
+	public void method4094(int arg0, Matrix4x4 arg1) {
 		int var3 = arg0 >> 16;
 		int var4 = (arg0 & 0xFFFF) * 4;
 		System.arraycopy(arg1.method6620(field10361), 0, this.field10366[var3], var4, 12);
@@ -314,7 +314,7 @@ public final class class887 extends class234 {
 	}
 
 	@ObfuscatedName("agt.y(ILpq;)V")
-	public void method4095(int arg0, class426 arg1) {
+	public void method4095(int arg0, Matrix4x4 arg1) {
 		int var3 = arg0 >> 16;
 		int var4 = (arg0 & 0xFFFF) * 4;
 		System.arraycopy(arg1.method6637(field10361), 0, this.field10366[var3], var4, 8);
@@ -322,7 +322,7 @@ public final class class887 extends class234 {
 	}
 
 	@ObfuscatedName("agt.q(ILpq;)V")
-	public void method4096(int arg0, class426 arg1) {
+	public void method4096(int arg0, Matrix4x4 arg1) {
 		int var3 = arg0 >> 16;
 		int var4 = (arg0 & 0xFFFF) * 4;
 		System.arraycopy(arg1.method6620(field10361), 0, this.field10366[var3], var4, 16);

@@ -39,8 +39,8 @@ public class class665 {
 	public class665 field8174;
 
 	public class665() {
-		new class426();
-		new class426();
+		new Matrix4x4();
+		new Matrix4x4();
 		this.field8179 = new class419();
 		this.field8175 = true;
 		this.field8176 = true;
@@ -104,7 +104,7 @@ public class class665 {
 	}
 
 	@ObfuscatedName("yq.aw(Lox;)V")
-	public final void method10531(class423 arg0) {
+	public final void method10531(Vector3 arg0) {
 		this.field8173.field4298.method6492(arg0);
 		this.method10535();
 		if (this.field8178 != null) {

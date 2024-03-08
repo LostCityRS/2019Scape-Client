@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 import java.util.Map;
 
 @ObfuscatedName("ka")
-public abstract class class306 implements class761 {
+public abstract class class306 implements ConfigTypeFactory {
 
 	@ObfuscatedName("ka.e")
 	public final Map field3083;

@@ -11,7 +11,7 @@ public class class49 {
 	public class561 field800;
 
 	@ObfuscatedName("ax.n")
-	public class715 field803 = new class715();
+	public IterableQueue field803 = new IterableQueue();
 
 	@ObfuscatedName("ax.m")
 	public int field791 = 0;

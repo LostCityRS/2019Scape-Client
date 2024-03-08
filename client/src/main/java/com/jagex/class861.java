@@ -37,11 +37,11 @@ public final class class861 extends class150 {
 
 	public class861(class808 arg0) {
 		super(arg0);
-		this.field10251 = new class457[arg0.method963()];
-		for (int var2 = 0; var2 < arg0.method963(); var2++) {
-			this.field10251[var2] = ((class149) arg0.method962(var2)).field1705;
+		this.field10251 = new class457[arg0.size()];
+		for (int var2 = 0; var2 < arg0.size(); var2++) {
+			this.field10251[var2] = ((class149) arg0.get(var2)).field1705;
 		}
-		this.field10255 = new HashSet(arg0.method963());
+		this.field10255 = new HashSet(arg0.size());
 	}
 
 	@ObfuscatedName("afu.e(Lec;II)V")
@@ -131,7 +131,7 @@ public final class class861 extends class150 {
 					}
 					for (int var12 = 0; var12 < var10; var12++) {
 						class413 var13 = Statics.field8911.method15284(var5);
-						if (this.field10251[var13.field4240] == class457.field4609 && ((class149) Statics.field8911.method962(var13.field4240)).field1704.method7292().field4843.isAssignableFrom(var13.field4239.getClass())) {
+						if (this.field10251[var13.field4240] == class457.field4609 && ((class149) Statics.field8911.get(var13.field4240)).field1704.method7292().field4843.isAssignableFrom(var13.field4239.getClass())) {
 							this.field1708.method14735(var13.field4240, var13.field4239);
 						}
 					}

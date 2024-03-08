@@ -19,7 +19,7 @@ public class class1007 extends class564 implements MouseListener, MouseMotionLis
 	public int field11692;
 
 	@ObfuscatedName("alb.l")
-	public class715 field11695 = new class715();
+	public IterableQueue field11695 = new IterableQueue();
 
 	@ObfuscatedName("alb.u")
 	public int field11693;
@@ -31,7 +31,7 @@ public class class1007 extends class564 implements MouseListener, MouseMotionLis
 	public int field11698;
 
 	@ObfuscatedName("alb.d")
-	public class715 field11696 = new class715();
+	public IterableQueue field11696 = new IterableQueue();
 
 	@ObfuscatedName("alb.c")
 	public Component field11697;
@@ -97,7 +97,7 @@ public class class1007 extends class564 implements MouseListener, MouseMotionLis
 		this.field11689 = this.field11693;
 		this.field11690 = this.field11694;
 		this.field11692 = this.field11698;
-		class715 var1 = this.field11695;
+		IterableQueue var1 = this.field11695;
 		this.field11695 = this.field11696;
 		this.field11696 = var1;
 		this.field11696.method14152();

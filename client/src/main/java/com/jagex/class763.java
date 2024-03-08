@@ -6,10 +6,10 @@ import java.lang.reflect.Array;
 import java.util.Iterator;
 
 @ObfuscatedName("acd")
-public class class763 implements class51 {
+public class class763 implements ConfigTypeList {
 
 	@ObfuscatedName("acd.e")
-	public final class761 field8846;
+	public final ConfigTypeFactory field8846;
 
 	@ObfuscatedName("acd.n")
 	public final class655 field8845;
@@ -21,17 +21,17 @@ public class class763 implements class51 {
 	public int field8848;
 
 	@ObfuscatedName("acd.f")
-	public class53 field8844;
+	public ConfigType field8844;
 
 	@ObfuscatedName("acd.w")
-	public class53[] field8849;
+	public ConfigType[] field8849;
 
-	public class763(class696 arg0, class687 arg1, class655 arg2, class442 arg3, class761 arg4, boolean arg5) {
+	public class763(ModeGame arg0, Language arg1, class655 arg2, class442 arg3, ConfigTypeFactory arg4, boolean arg5) {
 		this.field8846 = arg4;
 		this.field8845 = arg2;
 		this.field8847 = arg3;
 		this.field8848 = class760.method8370(this.field8847, this.field8845);
-		this.field8849 = (class53[]) Array.newInstance(this.field8846.method4415(), this.field8848);
+		this.field8849 = (ConfigType[]) Array.newInstance(this.field8846.type(), this.field8848);
 		if (arg5) {
 			for (int var7 = 0; var7 < this.field8848; var7++) {
 				this.method14936(var7);
@@ -40,10 +40,10 @@ public class class763 implements class51 {
 	}
 
 	@ObfuscatedName("acd.e(II)Lay;")
-	public class53 method962(int arg0) {
+	public ConfigType get(int arg0) {
 		if (arg0 < 0) {
 			if (this.field8844 == null) {
-				this.field8844 = this.field8846.method4414(-1, this);
+				this.field8844 = this.field8846.create(-1, this);
 			}
 			return this.field8844;
 		} else {
@@ -60,7 +60,7 @@ public class class763 implements class51 {
 			return;
 		}
 		try {
-			this.field8849[arg0] = this.field8846.method4414(arg0, this);
+			this.field8849[arg0] = this.field8846.create(arg0, this);
 		} catch (Exception var5) {
 			var5.printStackTrace();
 			return;
@@ -68,13 +68,13 @@ public class class763 implements class51 {
 		Object var3 = null;
 		byte[] var4 = class760.method9853(this.field8847, this.field8845, arg0);
 		if (var4 != null) {
-			this.field8849[arg0].method976(new Packet(var4));
+			this.field8849[arg0].decode(new Packet(var4));
 		}
-		this.field8849[arg0].method975();
+		this.field8849[arg0].postDecode();
 	}
 
 	@ObfuscatedName("acd.n(I)I")
-	public int method963() {
+	public int size() {
 		return this.field8849.length;
 	}
 

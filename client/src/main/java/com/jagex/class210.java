@@ -18,7 +18,7 @@ public class class210 implements Iterator {
 	}
 
 	public boolean hasNext() {
-		return this.field1982 < this.this$0.method963();
+		return this.field1982 < this.this$0.size();
 	}
 
 	public Object next() {

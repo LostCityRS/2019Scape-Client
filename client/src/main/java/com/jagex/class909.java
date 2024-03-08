@@ -9,13 +9,13 @@ public class class909 extends class307 {
 	public int field10551;
 
 	@ObfuscatedName("ahh.m")
-	public final class423 field10548 = new class423(Float.NaN, Float.NaN, Float.NaN);
+	public final Vector3 field10548 = new Vector3(Float.NaN, Float.NaN, Float.NaN);
 
 	@ObfuscatedName("ahh.k")
-	public final class423 field10549 = new class423(Float.NaN, Float.NaN, Float.NaN);
+	public final Vector3 field10549 = new Vector3(Float.NaN, Float.NaN, Float.NaN);
 
 	@ObfuscatedName("ahh.f")
-	public final class423 field10547 = new class423();
+	public final Vector3 field10547 = new Vector3();
 
 	@ObfuscatedName("ahh.w")
 	public boolean field10550 = false;
@@ -50,14 +50,14 @@ public class class909 extends class307 {
 	}
 
 	@ObfuscatedName("ahh.m(B)Lox;")
-	public class423 method5219() {
-		return class423.method6484(this.field10548);
+	public Vector3 method5219() {
+		return Vector3.method6484(this.field10548);
 	}
 
 	@ObfuscatedName("ahh.k(I)[D")
 	public double[] method5230() {
 		double[] var1 = new double[3];
-		class423 var2 = this.method5219();
+		Vector3 var2 = this.method5219();
 		var1[0] = var2.field4308;
 		var1[1] = var2.field4311;
 		var1[2] = var2.field4313;

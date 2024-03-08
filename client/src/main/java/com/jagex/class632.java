@@ -13,7 +13,7 @@ public class class632 {
 	public class376 field7772;
 
 	@ObfuscatedName("xm.m")
-	public final class634 field7785;
+	public final ParticleSystem field7785;
 
 	@ObfuscatedName("xm.k")
 	public int field7786 = 0;
@@ -63,7 +63,7 @@ public class class632 {
 	@ObfuscatedName("xm.x")
 	public boolean field7773 = false;
 
-	public class632(class133 arg0, class128 arg1, class634 arg2, long arg3) {
+	public class632(class133 arg0, class128 arg1, ParticleSystem arg2, long arg3) {
 		this.field7788 = arg1;
 		this.field7785 = arg2;
 		this.field7774 = arg3;
@@ -137,7 +137,7 @@ public class class632 {
 			}
 		}
 		this.field7776 = 0;
-		for (class1219 var7 = (class1219) this.field7775.method14254(); var7 != null; var7 = (class1219) this.field7775.method14241()) {
+		for (MovingParticle var7 = (MovingParticle) this.field7775.method14254(); var7 != null; var7 = (MovingParticle) this.field7775.method14241()) {
 			var7.method19667(arg1, arg2);
 			this.field7776++;
 		}
@@ -248,9 +248,9 @@ public class class632 {
 					if (!arg0.method2129() && !this.field7772.field3506) {
 						var50 = -1;
 					}
-					class1219 var51;
+					MovingParticle var51;
 					if (class633.field7797 == class633.field7791) {
-						var51 = new class1219(this, var39, var40, var41, var24, var25, var26, var42, var43, var49, var44, var45, var46, var50, this.field7772.field3499, this.field7772.field3496);
+						var51 = new MovingParticle(this, var39, var40, var41, var24, var25, var26, var42, var43, var49, var44, var45, var46, var50, this.field7772.field3499, this.field7772.field3496);
 					} else {
 						var51 = Statics.field7794[class633.field7791];
 						class633.field7791 = class633.field7791 + 1 & 0x3FF;
@@ -287,7 +287,7 @@ public class class632 {
 
 	@ObfuscatedName("xm.m(Ltx;Ldh;J)V")
 	public void method9898(class550 arg0, class133 arg1, long arg2) {
-		for (class1219 var5 = (class1219) this.field7775.method14254(); var5 != null; var5 = (class1219) this.field7775.method14241()) {
+		for (MovingParticle var5 = (MovingParticle) this.field7775.method14254(); var5 != null; var5 = (MovingParticle) this.field7775.method14241()) {
 			var5.method19668(arg0, arg1, arg2);
 		}
 	}

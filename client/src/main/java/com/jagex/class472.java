@@ -6,9 +6,9 @@ import deob.ObfuscatedName;
 public class class472 implements class477 {
 
 	// $FF: synthetic field
-	public final class476 this$0;
+	public final Sound this$0;
 
-	public class472(class476 arg0) {
+	public class472(Sound arg0) {
 		this.this$0 = arg0;
 	}
 

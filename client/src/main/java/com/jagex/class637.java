@@ -19,7 +19,7 @@ public class class637 {
 	public float field7864;
 
 	@ObfuscatedName("xv.f")
-	public class423 field7865;
+	public Vector3 field7865;
 
 	@ObfuscatedName("xv.w")
 	public int field7866;
@@ -74,7 +74,7 @@ public class class637 {
 	@ObfuscatedName("xv.e(B)V")
 	public void method10077() {
 		this.field7877 = 16777215;
-		this.field7865 = class423.method6483(-50.0F, -60.0F, -50.0F);
+		this.field7865 = Vector3.method6483(-50.0F, -60.0F, -50.0F);
 		this.field7871 = 1.1523438F;
 		this.field7861 = 0.69921875F;
 		this.field7864 = 1.2F;
@@ -285,9 +285,9 @@ public class class637 {
 			this.field7871 = 1.1523438F;
 		}
 		if ((var3 & class661.field8140.field8144) == 0) {
-			this.field7865 = class423.method6483(-50.0F, -60.0F, -50.0F);
+			this.field7865 = Vector3.method6483(-50.0F, -60.0F, -50.0F);
 		} else {
-			this.field7865 = class423.method6483((float) arg0.g2s(), (float) arg0.g2s(), (float) arg0.g2s());
+			this.field7865 = Vector3.method6483((float) arg0.g2s(), (float) arg0.g2s(), (float) arg0.g2s());
 		}
 		if ((var3 & class661.field8141.field8144) == 0) {
 			this.field7866 = 13156520;

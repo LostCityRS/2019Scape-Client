@@ -62,13 +62,13 @@ public class class848 extends class133 {
 	public class419 field9792;
 
 	@ObfuscatedName("afg.bf")
-	public class426 field9793;
+	public Matrix4x4 field9793;
 
 	@ObfuscatedName("afg.bl")
-	public class426 field9795;
+	public Matrix4x4 field9795;
 
 	@ObfuscatedName("afg.bk")
-	public class426 field9803;
+	public Matrix4x4 field9803;
 
 	@ObfuscatedName("afg.bh")
 	public float[][] field9796;
@@ -110,10 +110,10 @@ public class class848 extends class133 {
 	public class55[] field9808;
 
 	@ObfuscatedName("afg.bw")
-	public class162 field9809;
+	public WeightedCache field9809;
 
 	@ObfuscatedName("afg.bo")
-	public class162 field9810;
+	public WeightedCache field9810;
 
 	@ObfuscatedName("afg.bz")
 	public class101 field9811;
@@ -153,14 +153,14 @@ public class class848 extends class133 {
 		this.field9796 = new float[6][4];
 		this.field9813 = 1.0F;
 		this.field9799 = 0.0F;
-		this.field9810 = new class162(16);
+		this.field9810 = new WeightedCache(16);
 		this.field9812 = -1;
 		try {
-			this.field9809 = new class162(10485760, 256);
+			this.field9809 = new WeightedCache(10485760, 256);
 			this.field9792 = new class419();
-			this.field9793 = new class426();
-			this.field9795 = new class426();
-			this.field9803 = new class426();
+			this.field9793 = new Matrix4x4();
+			this.field9795 = new Matrix4x4();
+			this.field9803 = new Matrix4x4();
 			this.method15670(1);
 			this.method15722(0);
 			class662.method10156(true, true);
@@ -232,7 +232,7 @@ public class class848 extends class133 {
 
 	@ObfuscatedName("afg.rh(I)[I")
 	public int[] method15655(int arg0) {
-		class162 var2 = this.field9809;
+		WeightedCache var2 = this.field9809;
 		class967 var4;
 		synchronized (this.field9809) {
 			class118 var3 = this.field1597.method2043(arg0);
@@ -1828,7 +1828,7 @@ public class class848 extends class133 {
 
 	@ObfuscatedName("afg.cn(IIIILou;Loj;)Z")
 	public boolean method2128(int arg0, int arg1, int arg2, int arg3, class419 arg4, class416 arg5) {
-		class426 var7 = this.method2208();
+		Matrix4x4 var7 = this.method2208();
 		var7.method6609(arg4);
 		var7.method6720(this.field9803);
 		return arg5.method6275(arg0, arg1, arg2, arg3, var7, this.field9814, this.field9806, this.field9789, this.field9802);
@@ -1836,7 +1836,7 @@ public class class848 extends class133 {
 
 	@ObfuscatedName("afg.cv(Lou;Led;Loj;)V")
 	public void method2193(class419 arg0, class141 arg1, class416 arg2) {
-		class426 var4 = this.method2208();
+		Matrix4x4 var4 = this.method2208();
 		var4.method6609(arg0);
 		var4.method6720(this.field9803);
 		arg1.method2746(arg2, this.field9795, var4, this.field9814, this.field9806, this.field9789, this.field9802);
@@ -2027,7 +2027,7 @@ public class class848 extends class133 {
 	}
 
 	@ObfuscatedName("afg.cc()Lpq;")
-	public class426 method2208() {
+	public Matrix4x4 method2208() {
 		class55 var1 = this.method15674(Thread.currentThread());
 		return var1.field829;
 	}
@@ -2077,12 +2077,12 @@ public class class848 extends class133 {
 	}
 
 	@ObfuscatedName("afg.dt(Ldm;)V")
-	public void method2198(class119 arg0) {
+	public void method2198(ParticleList arg0) {
 		this.method15671(this.field9778 != null, this.field9781 != null, false, arg0);
 	}
 
 	@ObfuscatedName("afg.sv(ZZZLdm;)V")
-	public void method15671(boolean arg0, boolean arg1, boolean arg2, class119 arg3) {
+	public void method15671(boolean arg0, boolean arg1, boolean arg2, ParticleList arg3) {
 		class55 var5 = this.method15674(Thread.currentThread());
 		for (class1144 var6 = (class1144) arg3.field1367.method14271(); var6 != null; var6 = (class1144) arg3.field1367.method14272()) {
 			int var7 = var6.field12159 >> 12;
@@ -2385,14 +2385,14 @@ public class class848 extends class133 {
 	}
 
 	@ObfuscatedName("afg.dm(Lpq;)V")
-	public void method2220(class426 arg0) {
+	public void method2220(Matrix4x4 arg0) {
 		this.field9795.method6604(arg0);
 		this.method15683();
 	}
 
 	@ObfuscatedName("afg.dq()Lpq;")
-	public class426 method2355() {
-		return new class426(this.field9795);
+	public Matrix4x4 method2355() {
+		return new Matrix4x4(this.field9795);
 	}
 
 	@ObfuscatedName("afg.dc(F)V")

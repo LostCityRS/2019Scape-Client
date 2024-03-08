@@ -24,13 +24,13 @@ public class class1138 extends class916 {
 	public class1150 field12107;
 
 	@ObfuscatedName("aqw.au")
-	public final class426 field12108 = new class426();
+	public final Matrix4x4 field12108 = new Matrix4x4();
 
 	@ObfuscatedName("aqw.ar")
 	public class1150 field12118;
 
 	@ObfuscatedName("aqw.ap")
-	public final class426 field12106 = new class426();
+	public final Matrix4x4 field12106 = new Matrix4x4();
 
 	@ObfuscatedName("aqw.aq")
 	public class1150 field12111;
