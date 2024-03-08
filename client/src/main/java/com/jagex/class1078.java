@@ -13,7 +13,7 @@ import java.nio.charset.Charset;
 import java.util.List;
 
 @ObfuscatedName("aob")
-public class class1078 extends class755 {
+public class class1078 extends AbstractSocket {
 
 	@ObfuscatedName("aob.m")
 	public final ProxySelector field11880 = ProxySelector.getDefault();

@@ -29,7 +29,7 @@ public class class749 {
 
 	@ObfuscatedName("aba.e(B)Ljava/net/Socket;")
 	public Socket method14764() throws IOException {
-		return this.field8743 ? class755.method5846(this.field8745, this.field8747 ? this.field8742 : this.field8744).method14876() : new Socket(InetAddress.getByName(this.field8745), this.field8747 ? this.field8742 : this.field8744);
+		return this.field8743 ? AbstractSocket.method5846(this.field8745, this.field8747 ? this.field8742 : this.field8744).method14876() : new Socket(InetAddress.getByName(this.field8745), this.field8747 ? this.field8742 : this.field8744);
 	}
 
 	@ObfuscatedName("aba.n(S)V")

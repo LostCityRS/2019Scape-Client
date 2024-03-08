@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.net.Socket;
 
 @ObfuscatedName("abx")
-public abstract class class755 {
+public abstract class AbstractSocket {
 
 	@ObfuscatedName("abx.e")
 	public String field8785;
@@ -15,7 +15,7 @@ public abstract class class755 {
 	public int field8784;
 
 	@ObfuscatedName("mz.e(Ljava/lang/String;II)Labx;")
-	public static class755 method5846(String arg0, int arg1) {
+	public static AbstractSocket method5846(String arg0, int arg1) {
 		class1078 var2 = new class1078();
 		var2.field8785 = arg0;
 		var2.field8784 = arg1;
