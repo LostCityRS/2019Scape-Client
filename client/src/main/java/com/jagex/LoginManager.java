@@ -181,7 +181,7 @@ public class LoginManager {
 
 	@ObfuscatedName("dt.c(Ljava/lang/String;ZI)V")
 	public static void method1681(String arg0, boolean arg1) {
-		if (client.field10791 == 13 && (!method2865() && !class24.method9610())) {
+		if (client.field10791 == 13 && (!method2865() && !RegistrationManager.method9610())) {
 			field429 = arg0;
 			field473 = arg1;
 			client.method6972(15);
@@ -1186,7 +1186,7 @@ public class LoginManager {
 	@ObfuscatedName("aiz.ai(I)Z")
 	public static boolean method16808() {
 		if (client.field10791 == 4) {
-			return !method2865() && !class24.method9610();
+			return !method2865() && !RegistrationManager.method9610();
 		} else {
 			return false;
 		}

@@ -13314,30 +13314,30 @@ public final class class676 {
 	@ObfuscatedName("ag.apv(Lyf;I)V")
 	public static final void method668(class677 arg0) {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
-		class24.method233(var1);
+		RegistrationManager.method233(var1);
 	}
 
 	@ObfuscatedName("pc.apd(Lyf;B)V")
 	public static final void method7094(class677 arg0) {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
-		class24.method18305(var1);
+		RegistrationManager.method18305(var1);
 	}
 
 	@ObfuscatedName("ki.app(Lyf;B)V")
 	public static final void method5176(class677 arg0) {
-		class24.method2009();
+		RegistrationManager.method2009();
 	}
 
 	@ObfuscatedName("ags.apz(Lyf;I)V")
 	public static final void method16458(class677 arg0) {
 		arg0.field8211 -= 3;
 		arg0.field8226 -= 2;
-		class24.method19266((String) arg0.field8218[arg0.field8211], (String) arg0.field8218[arg0.field8211 + 1], arg0.field8216[arg0.field8226], arg0.field8216[arg0.field8226 + 1] == 1, (String) arg0.field8218[arg0.field8211 + 2]);
+		RegistrationManager.method19266((String) arg0.field8218[arg0.field8211], (String) arg0.field8218[arg0.field8211 + 1], arg0.field8216[arg0.field8226], arg0.field8216[arg0.field8226 + 1] == 1, (String) arg0.field8218[arg0.field8211 + 2]);
 	}
 
 	@ObfuscatedName("sp.aph(Lyf;I)V")
 	public static final void method8278(class677 arg0) {
-		class24.method16428(arg0.field8216[--arg0.field8226]);
+		RegistrationManager.method16428(arg0.field8216[--arg0.field8226]);
 	}
 
 	@ObfuscatedName("yu.apa(Lyf;I)V")
@@ -13352,23 +13352,23 @@ public final class class676 {
 
 	@ObfuscatedName("ahz.apk(Lyf;B)V")
 	public static final void method16655(class677 arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = class24.method18475().getId();
+		arg0.field8216[++arg0.field8226 - 1] = RegistrationManager.method18475().getId();
 	}
 
 	@ObfuscatedName("acl.aps(Lyf;I)V")
 	public static final void method15109(class677 arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = class24.method9583().getId();
+		arg0.field8216[++arg0.field8226 - 1] = RegistrationManager.method9583().getId();
 	}
 
 	@ObfuscatedName("ge.aqd(Lyf;B)V")
 	public static final void method3572(class677 arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = class24.method16613().getId();
+		arg0.field8216[++arg0.field8226 - 1] = RegistrationManager.method16613().getId();
 	}
 
 	@ObfuscatedName("ake.aqv(Lyf;I)V")
 	public static final void method17804(class677 arg0) {
-		SuggestNameReply var1 = class24.method16742();
-		String var2 = class24.method10209();
+		SuggestNameReply var1 = RegistrationManager.method16742();
+		String var2 = RegistrationManager.method10209();
 		if (var2 == null) {
 			var2 = "";
 		}
@@ -13378,7 +13378,7 @@ public final class class676 {
 
 	@ObfuscatedName("qf.aqn(Lyf;I)V")
 	public static final void method7325(class677 arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = class24.method2858().getId();
+		arg0.field8216[++arg0.field8226 - 1] = RegistrationManager.method2858().getId();
 	}
 
 	@ObfuscatedName("if.aqm(Lyf;B)V")

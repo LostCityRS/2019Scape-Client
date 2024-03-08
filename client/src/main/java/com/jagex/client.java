@@ -1498,7 +1498,7 @@ public final class client extends GameShell {
 		}
 		if (Statics.method611(field10791) && !method9273(field10791)) {
 			this.method16920();
-			class24.method14952();
+			RegistrationManager.method14952();
 			LoginManager.method3048();
 		} else if (Statics.method15084(field10791) && !method9273(field10791)) {
 			this.method16920();
@@ -1805,7 +1805,7 @@ public final class client extends GameShell {
 				return;
 			}
 		} else if (arg0 == 12) {
-			class24.method18476();
+			RegistrationManager.method18476();
 		}
 		if (method9273(arg0)) {
 			field10855.method7729();
@@ -2853,7 +2853,7 @@ public final class client extends GameShell {
 				}
 			}
 		}
-		if ((field10791 == 4 || field10791 == 15 || field10791 == 13 || field10791 == 0) && (!LoginManager.method2865() || field10791 == 15 && LoginManager.field477 == 42 || field10791 == 17 && (LoginManager.field476 == 49 || LoginManager.field476 == 52)) && !class24.method9610()) {
+		if ((field10791 == 4 || field10791 == 15 || field10791 == 13 || field10791 == 0) && (!LoginManager.method2865() || field10791 == 15 && LoginManager.field477 == 42 || field10791 == 17 && (LoginManager.field476 == 49 || LoginManager.field476 == 52)) && !RegistrationManager.method9610()) {
 			if (Statics.field3416 == 5) {
 				method18478();
 			} else {
@@ -7570,7 +7570,7 @@ public final class client extends GameShell {
 			if (var146 == null) {
 				var146 = SuggestNameReply.field8393;
 			}
-			class24.method4664(var146);
+			RegistrationManager.method4664(var146);
 			arg0.field796 = null;
 			return true;
 		} else if (ServerProt.VORBIS_PRELOAD_SOUND_GROUP == arg0.field796) {
@@ -7778,7 +7778,7 @@ public final class client extends GameShell {
 			return true;
 		} else if (ServerProt.CREATE_SUGGEST_NAME_REPLY == arg0.field796) {
 			String var202 = var2.gjstr();
-			class24.method1587(var202);
+			RegistrationManager.method1587(var202);
 			arg0.field796 = null;
 			return true;
 		} else if (ServerProt.CAM2_ENABLE == arg0.field796) {
@@ -9136,7 +9136,7 @@ public final class client extends GameShell {
 			if (var567 == null) {
 				var567 = CheckEmailReply.field8402;
 			}
-			class24.method3581(var567);
+			RegistrationManager.method3581(var567);
 			arg0.field796 = null;
 			return true;
 		} else if (ServerProt.CAM_MOVETO == arg0.field796) {
@@ -9638,7 +9638,7 @@ public final class client extends GameShell {
 			if (var712 == null) {
 				var712 = CheckNameReply.field8404;
 			}
-			class24.method717(var712);
+			RegistrationManager.method717(var712);
 			arg0.field796 = null;
 			return true;
 		} else if (ServerProt.IF_SETPLAYERMODEL_OTHER == arg0.field796) {

@@ -2679,10 +2679,10 @@ public class Statics {
 	@ObfuscatedName("ajh.a(I)V")
 	public static void method17428() {
 		client.field10835.method938();
-		if (class24.field580 < 2) {
+		if (RegistrationManager.field580 < 2) {
 			field8751.method14758();
-			class24.field583 = 0;
-			class24.field580++;
+			RegistrationManager.field583 = 0;
+			RegistrationManager.field580++;
 			field517 = class15.field515;
 		} else {
 			field517 = null;
@@ -4804,7 +4804,7 @@ public class Statics {
 
 	@ObfuscatedName("aaj.apn(Lyf;I)V")
 	public static final void method14453(class677 arg0) {
-		class24.method648();
+		RegistrationManager.method648();
 	}
 
 	@ObfuscatedName("xn.apt(Lyf;I)V")

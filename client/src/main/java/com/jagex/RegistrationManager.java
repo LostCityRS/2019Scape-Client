@@ -6,7 +6,7 @@ import deob.Statics;
 import java.io.IOException;
 
 @ObfuscatedName("y")
-public class class24 {
+public class RegistrationManager {
 
 	@ObfuscatedName("y.m")
 	public static int field583 = 0;
@@ -14,7 +14,7 @@ public class class24 {
 	@ObfuscatedName("y.k")
 	public static int field580 = 0;
 
-	public class24() throws Throwable {
+	public RegistrationManager() throws Throwable {
 		throw new Error();
 	}
 
