@@ -423,7 +423,7 @@ public class class454 {
 				arg0.method18123();
 			}
 			if ((var14 & 0x2) != 0) {
-				arg0.field11503 += -1445626955;
+				arg0.field11503++;
 			}
 			if ((var14 & 0x4) != 0) {
 				arg0.method18123();
@@ -450,7 +450,7 @@ public class class454 {
 		}
 		if ((var11 & 0x2) != 0) {
 			if (this.field4549 || arg9) {
-				arg0.field11503 += -1445626955;
+				arg0.field11503++;
 			} else {
 				this.field4522.field4487[arg1][arg2][arg3] = arg0.method17905();
 			}
@@ -671,7 +671,7 @@ public class class454 {
 							this.field4574++;
 						}
 						if (!this.field4549 && arg2 == 0) {
-							this.field4577.method8716(var7, var8, var13.field8158, var13.field8159 * 677626600, var13.field8164, var13.field8165, var13.field8166, var13.field8167);
+							this.field4577.method8716(var7, var8, var13.field8158, var13.field8159, var13.field8164, var13.field8165, var13.field8166, var13.field8167);
 						}
 					}
 					if (var14 != null) {
@@ -1105,7 +1105,7 @@ public class class454 {
 				this.field4575++;
 			}
 			if (!this.field4549 && arg1 == 0) {
-				this.field4577.method8716(arg2, arg3, arg4.field8158, arg4.field8159 * 677626600, arg4.field8164, arg4.field8165, arg4.field8166, arg4.field8167);
+				this.field4577.method8716(arg2, arg3, arg4.field8158, arg4.field8159, arg4.field8164, arg4.field8165, arg4.field8166, arg4.field8167);
 			}
 			if (this.field4573 != 12 && arg4.field8154 != -1 && arg4.field8162) {
 				this.field4507 = true;

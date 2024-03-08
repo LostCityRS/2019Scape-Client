@@ -70,18 +70,18 @@ public class class937 extends class447 {
 				}
 				this.field4441 = 0;
 				if (this.field4462 == null) {
-					int var9 = 5 - this.field4459.field11503 * 212851357;
+					int var9 = 5 - this.field4459.field11503;
 					if (var9 > var8) {
 						var9 = var8;
 					}
-					this.field10751.method9029(this.field4459.field11502, this.field4459.field11503 * 212851357, var9);
+					this.field10751.method9029(this.field4459.field11502, this.field4459.field11503, var9);
 					if (this.field4447 != 0 && client.ENABLE_JS5_XOR) {
 						for (int var10 = 0; var10 < var9; var10++) {
-							this.field4459.field11502[this.field4459.field11503 * 212851357 + var10] ^= this.field4447;
+							this.field4459.field11502[this.field4459.field11503 + var10] ^= this.field4447;
 						}
 					}
-					this.field4459.field11503 += var9 * -1445626955;
-					if (this.field4459.field11503 * 212851357 >= 5) {
+					this.field4459.field11503 += var9;
+					if (this.field4459.field11503 >= 5) {
 						this.field4459.field11503 = 0;
 						int var11 = this.field4459.method17904();
 						int var12 = this.field4459.method17910();
@@ -117,18 +117,18 @@ public class class937 extends class447 {
 				} else {
 					class997 var21 = this.field4462.field12564;
 					if (var21 == null) {
-						int var22 = 5 - this.field4460.field11503 * 212851357;
+						int var22 = 5 - this.field4460.field11503;
 						if (var22 > var8) {
 							var22 = var8;
 						}
-						this.field10751.method9029(this.field4460.field11502, this.field4460.field11503 * 212851357, var22);
+						this.field10751.method9029(this.field4460.field11502, this.field4460.field11503, var22);
 						if (this.field4447 != 0 && client.ENABLE_JS5_XOR) {
 							for (int var23 = 0; var23 < var22; var23++) {
-								this.field4460.field11502[this.field4460.field11503 * 212851357 + var23] ^= this.field4447;
+								this.field4460.field11502[this.field4460.field11503 + var23] ^= this.field4447;
 							}
 						}
-						this.field4460.field11503 += var22 * -1445626955;
-						if (this.field4460.field11503 * 212851357 >= 5) {
+						this.field4460.field11503 += var22;
+						if (this.field4460.field11503 >= 5) {
 							this.field4460.field11503 = 0;
 							int var24 = this.field4460.method17904();
 							int var25 = this.field4460.method17910();
@@ -144,21 +144,21 @@ public class class937 extends class447 {
 					} else {
 						int var28 = var21.field11502.length - this.field4462.field12565;
 						int var29 = 102400 - this.field4461;
-						if (var29 > var28 - var21.field11503 * 212851357) {
-							var29 = var28 - var21.field11503 * 212851357;
+						if (var29 > var28 - var21.field11503) {
+							var29 = var28 - var21.field11503;
 						}
 						if (var29 > var8) {
 							var29 = var8;
 						}
-						this.field10751.method9029(var21.field11502, var21.field11503 * 212851357, var29);
+						this.field10751.method9029(var21.field11502, var21.field11503, var29);
 						if (this.field4447 != 0 && client.ENABLE_JS5_XOR) {
 							for (int var30 = 0; var30 < var29; var30++) {
-								var21.field11502[var21.field11503 * 212851357 + var30] ^= this.field4447;
+								var21.field11502[var21.field11503 + var30] ^= this.field4447;
 							}
 						}
-						var21.field11503 += var29 * -1445626955;
+						var21.field11503 += var29;
 						this.field4461 += var29;
-						if (var21.field11503 * 212851357 == var28) {
+						if (var21.field11503 == var28) {
 							this.field4462.method17806();
 							this.field4462.field12344 = false;
 							this.field4462 = null;

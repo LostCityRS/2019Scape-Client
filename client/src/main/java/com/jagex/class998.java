@@ -246,7 +246,7 @@ public class class998 extends class532 {
 				}
 				this.field11568 = new class1029(arg0.method17904(), this);
 				if (var2 <= 25) {
-					arg0.field11503 += -1445626955;
+					arg0.field11503++;
 				}
 				this.field11538 = new class1027(arg0.method17904(), this);
 				this.field11524 = new class1041(arg0.method17904(), this);
@@ -473,10 +473,10 @@ public class class998 extends class532 {
 	@ObfuscatedName("ali.m(Lalw;IB)V")
 	public void method18155(class997 arg0, int arg1) {
 		this.field11549 = new class1025(arg0.method17904(), this);
-		arg0.field11503 += -1445626955;
+		arg0.field11503++;
 		this.field11533 = new class1034(arg0.method17904() + 1, this);
 		this.field11526 = new class1033(arg0.method17904(), this);
-		arg0.field11503 += -1445626955;
+		arg0.field11503++;
 		this.field11546 = new class1053(arg0.method17904(), this);
 		this.field11523 = new class1026(arg0.method17904(), this);
 		arg0.method17904();

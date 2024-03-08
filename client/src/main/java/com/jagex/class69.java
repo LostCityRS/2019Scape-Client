@@ -81,7 +81,7 @@ public class class69 {
 					}
 				}
 			}
-			this.field997 = this.field990.method15766(5123, var17.field11502, var17.field11503 * 212851357, false);
+			this.field997 = this.field990.method15766(5123, var17.field11502, var17.field11503, false);
 			this.field998 = new class827(this.field990, 5123, null, 1);
 		} else {
 			this.field999 = null;

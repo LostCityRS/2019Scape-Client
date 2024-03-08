@@ -968,14 +968,14 @@ public class class550 {
 		this.field6940 = arg2;
 		this.field6949 = this.field6902 - this.field6942;
 		if (this.field6949 < 0) {
-			this.field6943 = -(this.field6949 * 336067085) * 1250813125;
+			this.field6943 = -(this.field6949);
 			this.field6949 = 0;
 		} else {
 			this.field6943 = 0;
 		}
 		this.field6920 = this.field6947 - this.field6942;
 		if (this.field6920 < 0) {
-			this.field6944 = -(this.field6920 * 10268461) * 742291621;
+			this.field6944 = -(this.field6920);
 			this.field6920 = 0;
 		} else {
 			this.field6944 = 0;

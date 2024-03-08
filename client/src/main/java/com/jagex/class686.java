@@ -53,16 +53,16 @@ public class class686 {
 			return;
 		}
 		for (int var3 = 0; var3 < var2; var3++) {
-			arg1.field11502[arg1.field11503 * 212851357 + var3] = 0;
+			arg1.field11502[arg1.field11503 + var3] = 0;
 		}
 		Iterator var4 = arg0.iterator();
 		while (var4.hasNext()) {
 			class685 var5 = (class685) var4.next();
 			int var6 = var5.method1303();
 			int var7 = var6 / 8;
-			arg1.field11502[arg1.field11503 * 212851357 + var7] = (byte) (arg1.field11502[arg1.field11503 * 212851357 + var7] | 0x1 << (var6 & 0x7));
+			arg1.field11502[arg1.field11503 + var7] = (byte) (arg1.field11502[arg1.field11503 + var7] | 0x1 << (var6 & 0x7));
 		}
-		arg1.field11503 += var2 * -1445626955;
+		arg1.field11503 += var2;
 	}
 
 	@ObfuscatedName("ko.k(Ljava/lang/Iterable;I)I")

@@ -90,9 +90,9 @@ public class class49 {
 		this.field792.field11503 = 0;
 		while (true) {
 			class983 var1 = (class983) this.field803.method14191();
-			if (var1 == null || var1.field11430 > this.field792.field11502.length - this.field792.field11503 * 212851357) {
-				this.field800.method9030(this.field792.field11502, 0, this.field792.field11503 * 212851357);
-				this.field801 += this.field792.field11503 * 212851357;
+			if (var1 == null || var1.field11430 > this.field792.field11502.length - this.field792.field11503) {
+				this.field800.method9030(this.field792.field11502, 0, this.field792.field11503);
+				this.field801 += this.field792.field11503;
 				this.field793 = 0;
 				break;
 			}
@@ -107,7 +107,7 @@ public class class49 {
 	@ObfuscatedName("ax.m(Lakl;I)V")
 	public final void method934(class983 arg0) {
 		this.field803.method14153(arg0);
-		arg0.field11430 = arg0.field11432.field11503 * 212851357;
+		arg0.field11430 = arg0.field11432.field11503;
 		arg0.field11432.field11503 = 0;
 		this.field791 += arg0.field11430;
 	}

@@ -38,7 +38,7 @@ public class class780 {
 		if (var1 == null) {
 			return;
 		}
-		int var2 = arg0.field11503 * 212851357;
+		int var2 = arg0.field11503;
 		arg0.method17886(var1.field11634);
 		for (int var3 = 0; var3 < var1.field11635; var3++) {
 			if (var1.field11637[var3] == 0) {

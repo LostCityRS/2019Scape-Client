@@ -16,7 +16,7 @@ public class class199 implements class203 {
 		if (arg1.method17906() == 65535) {
 			this.field1939 = null;
 		} else {
-			arg1.field11503 -= 1403713386;
+			arg1.field11503 -= 2;
 			this.field1939 = arg0.field1943.method291().method15284(arg1);
 		}
 	}

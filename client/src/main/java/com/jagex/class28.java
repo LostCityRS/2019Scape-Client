@@ -100,7 +100,7 @@ public class class28 {
 			var1 = class507.method18567("3", client.field10768.field8333, true);
 			class997 var2 = new class997(5000);
 			this.method580(var2);
-			var1.method14808(var2.field11502, 0, var2.field11503 * 212851357);
+			var1.method14808(var2.field11502, 0, var2.field11503);
 		} catch (Exception var14) {
 		} finally {
 			try {

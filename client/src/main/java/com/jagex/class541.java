@@ -286,7 +286,7 @@ public class class541 {
 				Statics.field6844[var11] = field6821.method18123();
 			}
 		}
-		while (field6821 != null && field6821.field11503 * 212851357 < field6821.field11502.length && (!arg3 || class213.method3655() < (long) field6828 + var4)) {
+		while (field6821 != null && field6821.field11503 < field6821.field11502.length && (!arg3 || class213.method3655() < (long) field6828 + var4)) {
 			if (field6821.method17904() == 0) {
 				int var12 = field6821.method17904();
 				int var13 = field6821.method17904();
@@ -321,8 +321,8 @@ public class class541 {
 			}
 		}
 		if (field6821 != null) {
-			field6793 = field6821.field11503 * 212851357;
-			if (field6821.field11503 * 212851357 < field6821.field11502.length) {
+			field6793 = field6821.field11503;
+			if (field6821.field11503 < field6821.field11502.length) {
 				return false;
 			}
 		}

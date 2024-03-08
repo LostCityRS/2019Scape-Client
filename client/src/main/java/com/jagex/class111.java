@@ -30,7 +30,7 @@ public class class111 {
 	@ObfuscatedName("cd.k([B)[Lde;")
 	public static class136[] method1615(byte[] arg0) {
 		class997 var1 = new class997(arg0);
-		var1.field11503 = (arg0.length - 2) * -1445626955;
+		var1.field11503 = (arg0.length - 2);
 		int var2 = var1.method17906();
 		int var3 = var2 >> 15;
 		int var4 = var2 & 0x7FFF;
@@ -39,7 +39,7 @@ public class class111 {
 			for (int var6 = 0; var6 < var4; var6++) {
 				var5[var6] = new class852();
 			}
-			var1.field11503 = (arg0.length - 7 - var4 * 8) * -1445626955;
+			var1.field11503 = (arg0.length - 7 - var4 * 8);
 			int var7 = var1.method17906();
 			int var8 = var1.method17906();
 			int var9 = (var1.method17904() & 0xFF) + 1;
@@ -60,7 +60,7 @@ public class class111 {
 				var15.field10223 = var7 - var15.field10220 - var15.field10222;
 				var15.field10225 = var8 - var15.field10221 - var15.field10224;
 			}
-			var1.field11503 = (arg0.length - 7 - var4 * 8 - (var9 - 1) * 3) * -1445626955;
+			var1.field11503 = (arg0.length - 7 - var4 * 8 - (var9 - 1) * 3);
 			int[] var16 = new int[var9];
 			for (int var17 = 1; var17 < var9; var17++) {
 				var16[var17] = var1.method17908();

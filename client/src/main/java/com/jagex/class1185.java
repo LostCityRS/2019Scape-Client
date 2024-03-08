@@ -50,7 +50,7 @@ public class class1185 extends class986 {
 		int var3 = this.method19494(arg0);
 		int var4 = 0;
 		class504[] var5 = class504.method7897();
-		while (arg0.field11503 * 212851357 < var3) {
+		while (arg0.field11503 < var3) {
 			class504 var6 = this.method19493(arg0, var5);
 			this.method19495(arg0, var4, var6);
 			var4++;
@@ -68,10 +68,10 @@ public class class1185 extends class986 {
 
 	@ObfuscatedName("asc.n(Lalw;I)I")
 	public int method19494(class997 arg0) {
-		arg0.field11503 = (arg0.field11502.length - 2) * -1445626955;
+		arg0.field11503 = (arg0.field11502.length - 2);
 		int var2 = arg0.method17906();
 		int var3 = arg0.field11502.length - 2 - var2 - 16;
-		arg0.field11503 = var3 * -1445626955;
+		arg0.field11503 = var3;
 		int var4 = arg0.method17910();
 		this.field12370 = arg0.method17906();
 		this.field12368 = arg0.method17906();

@@ -13,18 +13,18 @@ public class class1189 extends class997 {
 	@ObfuscatedName("asb.jg(F)V")
 	public void method19550(float arg0) {
 		int var2 = Stream.floatToRawIntBits(arg0);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (var2 >> 24);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (var2 >> 16);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (var2 >> 8);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) var2;
+		this.field11502[(++this.field11503) - 1] = (byte) (var2 >> 24);
+		this.field11502[(++this.field11503) - 1] = (byte) (var2 >> 16);
+		this.field11502[(++this.field11503) - 1] = (byte) (var2 >> 8);
+		this.field11502[(++this.field11503) - 1] = (byte) var2;
 	}
 
 	@ObfuscatedName("asb.jx(F)V")
 	public void method19553(float arg0) {
 		int var2 = Stream.floatToRawIntBits(arg0);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) var2;
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (var2 >> 8);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (var2 >> 16);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (var2 >> 24);
+		this.field11502[(++this.field11503) - 1] = (byte) var2;
+		this.field11502[(++this.field11503) - 1] = (byte) (var2 >> 8);
+		this.field11502[(++this.field11503) - 1] = (byte) (var2 >> 16);
+		this.field11502[(++this.field11503) - 1] = (byte) (var2 >> 24);
 	}
 }

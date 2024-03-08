@@ -15,7 +15,7 @@ public class class227 {
 			return null;
 		}
 		var1--;
-		arg0.field11503 += -1445626955;
+		arg0.field11503++;
 		int var2 = arg0.method17910();
 		Object[] var3 = new Object[var1];
 		for (int var4 = 0; var4 < var1; var4++) {

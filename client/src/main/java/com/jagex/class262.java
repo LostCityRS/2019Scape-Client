@@ -9,7 +9,7 @@ public class class262 implements class53, class757 {
 	public int field2780;
 
 	@ObfuscatedName("iy.n")
-	public int field2776 = 1385777912 * -1875676513;
+	public int field2776 = 0;
 
 	@ObfuscatedName("iy.m")
 	public int field2783;
@@ -24,7 +24,7 @@ public class class262 implements class53, class757 {
 	public boolean field2781;
 
 	@ObfuscatedName("iy.l")
-	public int field2782 = 1996845577 * -1567865913;
+	public int field2782 = 16777216;
 
 	@ObfuscatedName("iy.u")
 	public int field2778;

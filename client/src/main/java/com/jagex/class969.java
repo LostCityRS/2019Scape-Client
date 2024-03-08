@@ -179,8 +179,8 @@ public class class969 extends class532 {
 				}
 				var21++;
 			}
-			this.field11281 = this.field11279.method15766(5123, this.field11288.field11502, this.field11288.field11503 * 212851357, false);
-			this.field11282 = this.field11279.method15767(16, this.field11289.field11502, this.field11289.field11503 * 212851357, false);
+			this.field11281 = this.field11279.method15766(5123, this.field11288.field11502, this.field11288.field11503, false);
+			this.field11282 = this.field11279.method15767(16, this.field11289.field11502, this.field11289.field11503, false);
 			this.field11283 = new class83(this.field11282, 5126, 3, 0);
 			this.field11284 = new class83(this.field11282, 5121, 4, 12);
 		} else {

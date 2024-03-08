@@ -151,10 +151,10 @@ public class class648 {
 		if (!client.field10800) {
 			class983 var11 = Statics.method1604(class390.field3699, client.field10849.field794);
 			var11.field11432.method18001(0);
-			int var12 = var11.field11432.field11503 * 212851357;
+			int var12 = var11.field11432.field11503;
 			class997 var13 = Statics.field688.method18156();
-			var11.field11432.method17896(var13.field11502, 0, var13.field11503 * 212851357);
-			var11.field11432.method18028(var11.field11432.field11503 * 212851357 - var12);
+			var11.field11432.method17896(var13.field11502, 0, var13.field11503);
+			var11.field11432.method18028(var11.field11432.field11503 - var12);
 			client.field10849.method934(var11);
 			client.field10800 = true;
 		}
@@ -164,7 +164,7 @@ public class class648 {
 		int[] var14 = Statics.field8198.method2413();
 		class983 var15 = Statics.method1604(class390.field3791, client.field10849.field794);
 		var15.field11432.method17945(0);
-		int var16 = var15.field11432.field11503 * 212851357;
+		int var16 = var15.field11432.field11503;
 		if (var14 == null || var14.length == 0) {
 			var15.field11432.method18001(0);
 		} else {
@@ -214,7 +214,7 @@ public class class648 {
 				var20++;
 			}
 		}
-		var15.field11432.method17898(var15.field11432.field11503 * 212851357 - var16);
+		var15.field11432.method17898(var15.field11432.field11503 - var16);
 		client.field10849.method934(var15);
 		client.field10801 = true;
 	}

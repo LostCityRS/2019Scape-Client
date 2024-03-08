@@ -52,7 +52,7 @@ public class class48 {
 		try {
 			var0 = class507.method18567("", client.field10768.field8333, true);
 			class997 var1 = Statics.field688.method18156();
-			var0.method14808(var1.field11502, 0, var1.field11503 * 212851357);
+			var0.method14808(var1.field11502, 0, var1.field11503);
 		} catch (Exception var5) {
 		}
 		try {

@@ -6,13 +6,13 @@ import com.jagex.deob.ObfuscatedName;
 public class class728 implements class53, class757 {
 
 	@ObfuscatedName("aaz.e")
-	public int field8547 = 0 * -1647734771;
+	public int field8547 = 0;
 
 	@ObfuscatedName("aaz.n")
-	public int field8542 = 1078353519 * -990036111;
+	public int field8542 = 0;
 
 	@ObfuscatedName("aaz.m")
-	public int field8543 = 1555887616 * 1408290995;
+	public int field8543 = 512;
 
 	@ObfuscatedName("aaz.k")
 	public boolean field8544 = true;

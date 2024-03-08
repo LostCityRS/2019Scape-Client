@@ -54,7 +54,7 @@ public abstract class class911 extends class307 {
 		class428 var6 = this.field10565[this.field10564];
 		if (this.field10562[this.field10564] > 0.0F) {
 			if (this.field10562[this.field10564] >= arg0) {
-				this.field10562[this.field10564 * 1487384747 * -1041839613] -= arg0;
+				this.field10562[this.field10564] -= arg0;
 				return;
 			}
 			arg0 -= this.field10562[this.field10564];

@@ -35,7 +35,7 @@ public abstract class class649 {
 						break label102;
 					}
 					class993 var6 = (class993) var5.next();
-					if (var1 != null && var1.field11432.field11503 * 212851357 - var2 >= 252 - (this.method10263() + 6)) {
+					if (var1 != null && var1.field11432.field11503 - var2 >= 252 - (this.method10263() + 6)) {
 						break label102;
 					}
 					var6.method8440();
@@ -57,8 +57,8 @@ public abstract class class649 {
 						if (var1 == null) {
 							var1 = this.method10267();
 							var1.field11432.method18001(0);
-							var2 = var1.field11432.field11503 * 212851357;
-							var1.field11432.field11503 += 1403713386;
+							var2 = var1.field11432.field11503;
+							var1.field11432.field11503 += 2;
 							var3 = 0;
 							var4 = 0;
 						}
@@ -109,12 +109,12 @@ public abstract class class649 {
 				}
 			}
 			if (var1 != null) {
-				var1.field11432.method18028(var1.field11432.field11503 * 212851357 - var2);
-				int var12 = var1.field11432.field11503 * 212851357;
-				var1.field11432.field11503 = var2 * -1445626955;
+				var1.field11432.method18028(var1.field11432.field11503 - var2);
+				int var12 = var1.field11432.field11503;
+				var1.field11432.field11503 = var2;
 				var1.field11432.method18001(var3 / var4);
 				var1.field11432.method18001(var3 % var4);
-				var1.field11432.field11503 = var12 * -1445626955;
+				var1.field11432.field11503 = var12;
 				client.field10849.method934(var1);
 			}
 		}

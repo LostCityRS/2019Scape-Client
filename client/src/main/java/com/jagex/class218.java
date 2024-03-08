@@ -1180,20 +1180,20 @@ public class class218 implements class365 {
 
 	@ObfuscatedName("hk.ao()V")
 	public synchronized void method3842() {
-		int var1 = this.field2112 == null ? 0 : this.field2112.field11503 * 212851357;
+		int var1 = this.field2112 == null ? 0 : this.field2112.field11503;
 		int var2 = 0;
 		Iterator var3 = this.field2085.iterator();
 		while (var3.hasNext()) {
 			class997 var4 = (class997) var3.next();
-			var2 += var4.field11503 * 212851357;
+			var2 += var4.field11503;
 		}
 		if (this.field2112 == null) {
 			this.field2112 = this.method3796(var2);
 			this.field2082 = 0;
 			var1 = 0;
-		} else if (this.field2112.field11502.length - this.field2112.field11503 * 212851357 < var2) {
+		} else if (this.field2112.field11502.length - this.field2112.field11503 < var2) {
 			class997 var5 = this.method3796(this.field2082 + var2);
-			var5.method17896(this.field2112.field11502, this.field2112.field11503 * 212851357 - this.field2084 * 212851357, this.field2082);
+			var5.method17896(this.field2112.field11502, this.field2112.field11503 - this.field2084, this.field2082);
 			this.field2112.method18142();
 			this.field2112 = var5;
 			var1 = this.field2084;
@@ -1201,8 +1201,8 @@ public class class218 implements class365 {
 		Iterator var6 = this.field2085.iterator();
 		while (var6.hasNext()) {
 			class997 var7 = (class997) var6.next();
-			this.field2112.method17896(var7.field11502, 0, var7.field11503 * 212851357);
-			this.field2082 += var7.field11503 * 212851357;
+			this.field2112.method17896(var7.field11502, 0, var7.field11503);
+			this.field2082 += var7.field11503;
 			var7.method18142();
 		}
 		this.field2112.field11503 = var1 - this.field2084;
@@ -1210,12 +1210,12 @@ public class class218 implements class365 {
 		this.field2085.clear();
 		label286: while (true) {
 			if (this.field2090) {
-				if (this.field2112.field11503 * 212851357 < this.field2112.field11502.length) {
+				if (this.field2112.field11503 < this.field2112.field11502.length) {
 					if (this.field2087 && (float) (this.field2105 / this.method3732()) > this.field2059) {
 						return;
 					}
 					if (this.field2112 != null && this.field2082 >= 27) {
-						int var8 = this.field2112.field11503 * 212851357;
+						int var8 = this.field2112.field11503;
 						byte var9 = 0;
 						int var10 = 0;
 						if (!this.method3748(this.field2112)) {
@@ -1231,13 +1231,13 @@ public class class218 implements class365 {
 						int var11 = this.field2112.method17904();
 						int var12 = this.field2112.method17904() & 0xFF | (this.field2112.method17904() & 0xFF) << 8 | (this.field2112.method17904() & 0xFF) << 16 | this.field2112.method17904() << 24;
 						int var13 = var12 - var9;
-						this.field2112.field11503 += -1655194800;
+						this.field2112.field11503 += 16;
 						int var14 = this.field2112.method17904();
-						int var15 = this.field2112.field11503 * 212851357;
+						int var15 = this.field2112.field11503;
 						int var16 = var14 + var15;
 						if (var16 > this.field2082 + var8) {
-							this.field2112.field11503 = (this.field2082 + var8) * -1445626955;
-							this.field2084 = (this.field2112.field11503 * 212851357 - var8) * -1445626955;
+							this.field2112.field11503 = (this.field2082 + var8);
+							this.field2084 = (this.field2112.field11503 - var8);
 							this.field2090 = false;
 						}
 						int var17 = var16;
@@ -1248,8 +1248,8 @@ public class class218 implements class365 {
 								var16 += var20;
 								var18 += var20;
 								if (var16 > this.field2082 + var8) {
-									this.field2112.field11503 = (this.field2082 + var8) * -1445626955;
-									this.field2084 = (this.field2112.field11503 * 212851357 - var8) * -1445626955;
+									this.field2112.field11503 = (this.field2082 + var8);
+									this.field2084 = (this.field2112.field11503 - var8);
 									this.field2090 = false;
 									break;
 								}
@@ -1390,7 +1390,7 @@ public class class218 implements class365 {
 										}
 										List var47 = this.field2078;
 										synchronized (this.field2078) {
-											this.field2105 += this.method3730(var38.field11503 * 212851357) / this.method3722();
+											this.field2105 += this.method3730(var38.field11503) / this.method3722();
 											this.field2078.add(var38);
 										}
 									}
@@ -1398,14 +1398,14 @@ public class class218 implements class365 {
 									Object var49 = null;
 								}
 							}
-							this.field2112.field11503 = var16 * -1445626955;
+							this.field2112.field11503 = var16;
 							this.field2082 -= var16 - var8;
 							continue label286;
 						}
 					}
 					if (this.field2112 != null) {
-						this.field2084 = this.field2082 * -1445626955;
-						this.field2112.field11503 += this.field2082 * -1445626955;
+						this.field2084 = this.field2082;
+						this.field2112.field11503 += this.field2082;
 					}
 					this.field2090 = false;
 					return;
@@ -1472,17 +1472,17 @@ public class class218 implements class365 {
 		synchronized (this.field2078) {
 			while (!this.field2078.isEmpty()) {
 				class997 var5 = (class997) this.field2078.remove(0);
-				this.field2105 -= this.method3730(var5.field11503 * 212851357) / this.method3722();
+				this.field2105 -= this.method3730(var5.field11503) / this.method3722();
 				int var6 = this.method3731(var3);
-				int var7 = var5.field11503 * 212851357 < var6 ? var5.field11503 * 212851357 : var6;
+				int var7 = var5.field11503 < var6 ? var5.field11503 : var6;
 				var2.method17896(var5.field11502, 0, var7);
 				var3 -= this.method3730(var7);
-				int var8 = var5.field11503 * 212851357 - var7;
+				int var8 = var5.field11503 - var7;
 				if (var8 == 0) {
 					var5.method18142();
 				} else {
 					System.arraycopy(var5.field11502, var7, var5.field11502, 0, var8);
-					var5.field11503 = var8 * -1445626955;
+					var5.field11503 = var8;
 					this.field2105 += this.method3730(var8) / this.method3722();
 					this.field2078.add(0, var5);
 				}

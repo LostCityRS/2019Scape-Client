@@ -10,10 +10,10 @@ public class class450 {
 	public class438[] field4480;
 
 	public class450(class997 arg0, BigInteger arg1, BigInteger arg2) {
-		arg0.field11503 = 1361799817;
+		arg0.field11503 = 5;
 		int var4 = arg0.method17904();
-		arg0.field11503 += var4 * 313960592;
-		byte[] var5 = new byte[arg0.field11502.length - arg0.field11503 * 212851357];
+		arg0.field11503 += var4 * 80;
+		byte[] var5 = new byte[arg0.field11502.length - arg0.field11503];
 		arg0.method17921(var5, 0, var5.length);
 		byte[] var8;
 		if (arg1 == null || arg2 == null || !client.ENABLE_JS5_RSA) {
@@ -26,7 +26,7 @@ public class class450 {
 		if (var8.length != 65) {
 			throw new RuntimeException();
 		}
-		byte[] var9 = class735.method18308(arg0.field11502, 5, arg0.field11503 * 212851357 - var5.length - 5);
+		byte[] var9 = class735.method18308(arg0.field11502, 5, arg0.field11503 - var5.length - 5);
 		for (int var10 = 0; var10 < 64; var10++) {
 			if (var8[var10 + 1] != var9[var10]) {
 				throw new RuntimeException();
@@ -34,7 +34,7 @@ public class class450 {
 		}
 		this.field4480 = new class438[var4];
 		for (int var11 = 0; var11 < var4; var11++) {
-			arg0.field11503 = var11 * 313960592 + -83827138;
+			arg0.field11503 = var11 * 80 + 6;
 			int var12 = arg0.method17910();
 			int var13 = arg0.method17910();
 			int var14 = arg0.method17910();

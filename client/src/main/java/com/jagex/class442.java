@@ -381,7 +381,7 @@ public final class class442 {
 				class997 var36 = new class997(var15);
 				int var37 = 0;
 				int var38 = 0;
-				var36.field11503 = var35 * -1445626955;
+				var36.field11503 = var35;
 				for (int var39 = 0; var39 < var34; var39++) {
 					int var40 = 0;
 					for (int var41 = 0; var41 < var4; var41++) {
@@ -403,7 +403,7 @@ public final class class442 {
 				}
 				byte[] var43 = new byte[var37];
 				int var44 = 0;
-				var36.field11503 = var35 * -1445626955;
+				var36.field11503 = var35;
 				int var45 = 0;
 				for (int var46 = 0; var46 < var34; var46++) {
 					int var47 = 0;
@@ -430,7 +430,7 @@ public final class class442 {
 				int var19 = var52 - var4 * var18 * 4;
 				class997 var20 = new class997(var15);
 				int[] var21 = new int[var4];
-				var20.field11503 = var19 * -1445626955;
+				var20.field11503 = var19;
 				for (int var22 = 0; var22 < var18; var22++) {
 					int var23 = 0;
 					for (int var24 = 0; var24 < var4; var24++) {
@@ -443,7 +443,7 @@ public final class class442 {
 					var25[var26] = new byte[var21[var26]];
 					var21[var26] = 0;
 				}
-				var20.field11503 = var19 * -1445626955;
+				var20.field11503 = var19;
 				int var27 = 0;
 				for (int var28 = 0; var28 < var18; var28++) {
 					int var29 = 0;

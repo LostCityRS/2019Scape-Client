@@ -25,7 +25,7 @@ public class class893 extends class274 {
 
 	@ObfuscatedName("ahc.fz(Lalw;II)V")
 	public void method16604(class997 arg0, int arg1) {
-		int var3 = arg0.field11503 * 212851357;
+		int var3 = arg0.field11503;
 		int var4 = arg0.method17904();
 		this.method4683(class268.method4461(var4 & 0x1));
 		if ((var4 & 0x8) != 0) {
@@ -133,8 +133,8 @@ public class class893 extends class274 {
 		if (this.field2863 != null && (var4 >> 6 & 0x1) == 1) {
 			this.field2863.method5224(arg0);
 		}
-		if (arg0.field11503 * 212851357 - var3 != arg1) {
-			throw new RuntimeException(arg0.field11503 * 212851357 - var3 + "," + arg1);
+		if (arg0.field11503 - var3 != arg1) {
+			throw new RuntimeException(arg0.field11503 - var3 + "," + arg1);
 		}
 	}
 }

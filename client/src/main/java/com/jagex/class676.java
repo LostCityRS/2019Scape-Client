@@ -11586,11 +11586,11 @@ public final class class676 {
 		class49 var6 = client.method640();
 		class983 var7 = Statics.method1604(class390.field3777, var6.field794);
 		var7.field11432.method18001(0);
-		int var8 = var7.field11432.field11503 * 212851357;
+		int var8 = var7.field11432.field11503;
 		var7.field11432.method18001(var3);
 		var7.field11432.method18001(var5);
 		class246.method3547(var7.field11432, var1);
-		var7.field11432.method18028(var7.field11432.field11503 * 212851357 - var8);
+		var7.field11432.method18028(var7.field11432.field11503 - var8);
 		var6.method934(var7);
 	}
 
@@ -11605,10 +11605,10 @@ public final class class676 {
 		class49 var3 = client.method640();
 		class983 var4 = Statics.method1604(class390.field3689, var3.field794);
 		var4.field11432.method17945(0);
-		int var5 = var4.field11432.field11503 * 212851357;
+		int var5 = var4.field11432.field11503;
 		var4.field11432.method17893(var1);
 		class246.method3547(var4.field11432, var2);
-		var4.field11432.method17898(var4.field11432.field11503 * 212851357 - var5);
+		var4.field11432.method17898(var4.field11432.field11503 - var5);
 		var3.method934(var4);
 	}
 
@@ -11745,11 +11745,11 @@ public final class class676 {
 		class49 var2 = client.method640();
 		class983 var3 = Statics.method1604(class390.field3711, var2.field794);
 		var3.field11432.method18001(0);
-		int var4 = var3.field11432.field11503 * 212851357;
+		int var4 = var3.field11432.field11503;
 		var3.field11432.method18001(var1);
 		var3.field11432.method17945(arg0.field8240.field3448);
 		arg0.field8240.field3447.method19508(var3.field11432, arg0.field8240.field3446);
-		var3.field11432.method18028(var3.field11432.field11503 * 212851357 - var4);
+		var3.field11432.method18028(var3.field11432.field11503 - var4);
 		var2.method934(var3);
 	}
 
@@ -11759,11 +11759,11 @@ public final class class676 {
 		class49 var2 = client.method640();
 		class983 var3 = Statics.method1604(class390.field3723, var2.field794);
 		var3.field11432.method18001(0);
-		int var4 = var3.field11432.field11503 * 212851357;
+		int var4 = var3.field11432.field11503;
 		var3.field11432.method17893(var1);
 		var3.field11432.method17945(arg0.field8240.field3448);
 		arg0.field8240.field3447.method19508(var3.field11432, arg0.field8240.field3446);
-		var3.field11432.method18028(var3.field11432.field11503 * 212851357 - var4);
+		var3.field11432.method18028(var3.field11432.field11503 - var4);
 		var2.method934(var3);
 	}
 

@@ -83,73 +83,73 @@ public class class997 extends class532 {
 
 	@ObfuscatedName("alw.k(IB)V")
 	public void method18001(int arg0) {
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) arg0;
+		this.field11502[(++this.field11503) - 1] = (byte) arg0;
 	}
 
 	@ObfuscatedName("alw.f(II)V")
 	public void method17945(int arg0) {
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 8);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) arg0;
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 8);
+		this.field11502[(++this.field11503) - 1] = (byte) arg0;
 	}
 
 	@ObfuscatedName("alw.w(II)V")
 	public void method17884(int arg0) {
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) arg0;
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 8);
+		this.field11502[(++this.field11503) - 1] = (byte) arg0;
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 8);
 	}
 
 	@ObfuscatedName("alw.l(IB)V")
 	public void method17885(int arg0) {
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 16);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 8);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) arg0;
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 16);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 8);
+		this.field11502[(++this.field11503) - 1] = (byte) arg0;
 	}
 
 	@ObfuscatedName("alw.u(IB)V")
 	public void method17886(int arg0) {
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 24);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 16);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 8);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) arg0;
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 24);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 16);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 8);
+		this.field11502[(++this.field11503) - 1] = (byte) arg0;
 	}
 
 	@ObfuscatedName("alw.z(II)V")
 	public void method17887(int arg0) {
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) arg0;
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 8);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 16);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 24);
+		this.field11502[(++this.field11503) - 1] = (byte) arg0;
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 8);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 16);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 24);
 	}
 
 	@ObfuscatedName("alw.p(J)V")
 	public void method17888(long arg0) {
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 32);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 24);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 16);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 8);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) arg0;
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 32);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 24);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 16);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 8);
+		this.field11502[(++this.field11503) - 1] = (byte) arg0;
 	}
 
 	@ObfuscatedName("alw.d(J)V")
 	public void method17889(long arg0) {
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 40);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 32);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 24);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 16);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 8);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) arg0;
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 40);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 32);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 24);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 16);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 8);
+		this.field11502[(++this.field11503) - 1] = (byte) arg0;
 	}
 
 	@ObfuscatedName("alw.c(J)V")
 	public void method17890(long arg0) {
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 56);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 48);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 40);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 32);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 24);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 16);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 8);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) arg0;
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 56);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 48);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 40);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 32);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 24);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 16);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 8);
+		this.field11502[(++this.field11503) - 1] = (byte) arg0;
 	}
 
 	@ObfuscatedName("alw.r(JII)V")
@@ -159,7 +159,7 @@ public class class997 extends class532 {
 			throw new IllegalArgumentException();
 		}
 		for (int var4 = var5 * 8; var4 >= 0; var4 -= 8) {
-			this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> var4);
+			this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> var4);
 		}
 	}
 
@@ -179,8 +179,8 @@ public class class997 extends class532 {
 		if (var2 >= 0) {
 			throw new IllegalArgumentException("");
 		}
-		this.field11503 += class693.method5981(arg0, 0, arg0.length(), this.field11502, this.field11503 * 212851357) * -1445626955;
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = 0;
+		this.field11503 += class693.method5981(arg0, 0, arg0.length(), this.field11502, this.field11503);
+		this.field11502[(++this.field11503) - 1] = 0;
 	}
 
 	@ObfuscatedName("alw.a(Ljava/lang/String;I)V")
@@ -189,29 +189,29 @@ public class class997 extends class532 {
 		if (var2 >= 0) {
 			throw new IllegalArgumentException("");
 		}
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = 0;
-		this.field11503 += class693.method5981(arg0, 0, arg0.length(), this.field11502, this.field11503 * 212851357) * -1445626955;
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = 0;
+		this.field11502[(++this.field11503) - 1] = 0;
+		this.field11503 += class693.method5981(arg0, 0, arg0.length(), this.field11502, this.field11503);
+		this.field11502[(++this.field11503) - 1] = 0;
 	}
 
 	@ObfuscatedName("alw.g(Ljava/lang/CharSequence;I)V")
 	public void method17895(CharSequence arg0) {
 		int var2 = class653.method8499(arg0);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = 0;
+		this.field11502[(++this.field11503) - 1] = 0;
 		this.method17903(var2);
-		this.field11503 += class653.method18328(this.field11502, this.field11503 * 212851357, arg0) * -1445626955;
+		this.field11503 += class653.method18328(this.field11502, this.field11503, arg0);
 	}
 
 	@ObfuscatedName("alw.i([BIII)V")
 	public void method17896(byte[] arg0, int arg1, int arg2) {
 		for (int var4 = arg1; var4 < arg1 + arg2; var4++) {
-			this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = arg0[var4];
+			this.field11502[(++this.field11503) - 1] = arg0[var4];
 		}
 	}
 
 	@ObfuscatedName("alw.j(Lalw;B)V")
 	public void method18111(class997 arg0) {
-		this.method17896(arg0.field11502, 0, arg0.field11503 * 212851357);
+		this.method17896(arg0.field11502, 0, arg0.field11503);
 	}
 
 	@ObfuscatedName("alw.t(II)V")
@@ -219,8 +219,8 @@ public class class997 extends class532 {
 		if (arg0 < 0 || arg0 > 65535) {
 			throw new IllegalArgumentException();
 		}
-		this.field11502[this.field11503 * 212851357 - arg0 - 2] = (byte) (arg0 >> 8);
-		this.field11502[this.field11503 * 212851357 - arg0 - 1] = (byte) arg0;
+		this.field11502[this.field11503 - arg0 - 2] = (byte) (arg0 >> 8);
+		this.field11502[this.field11503 - arg0 - 1] = (byte) arg0;
 	}
 
 	@ObfuscatedName("alw.ae(IB)V")
@@ -228,7 +228,7 @@ public class class997 extends class532 {
 		if (arg0 < 0 || arg0 > 255) {
 			throw new IllegalArgumentException();
 		}
-		this.field11502[this.field11503 * 212851357 - arg0 - 1] = (byte) arg0;
+		this.field11502[this.field11503 - arg0 - 1] = (byte) arg0;
 	}
 
 	@ObfuscatedName("alw.ag(II)V")
@@ -263,7 +263,7 @@ public class class997 extends class532 {
 			this.method17945(arg0);
 		} else {
 			this.method17886(arg0);
-			this.field11502[this.field11503 * 212851357 - 4] = (byte) (this.field11502[this.field11503 * 212851357 - 4] | 0x80);
+			this.field11502[this.field11503 - 4] = (byte) (this.field11502[this.field11503 - 4] | 0x80);
 		}
 	}
 
@@ -286,24 +286,24 @@ public class class997 extends class532 {
 
 	@ObfuscatedName("alw.ai(S)I")
 	public int method17904() {
-		return this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] & 0xFF;
+		return this.field11502[(++this.field11503) - 1] & 0xFF;
 	}
 
 	@ObfuscatedName("alw.aw(I)B")
 	public byte method17905() {
-		return this.field11502[(this.field11503 += -1445626955) * 212851357 - 1];
+		return this.field11502[(++this.field11503) - 1];
 	}
 
 	@ObfuscatedName("alw.as(I)I")
 	public int method17906() {
-		this.field11503 += 1403713386;
-		return ((this.field11502[this.field11503 * 212851357 - 2] & 0xFF) << 8) + (this.field11502[this.field11503 * 212851357 - 1] & 0xFF);
+		this.field11503 += 2;
+		return ((this.field11502[this.field11503 - 2] & 0xFF) << 8) + (this.field11502[this.field11503 - 1] & 0xFF);
 	}
 
 	@ObfuscatedName("alw.at(B)I")
 	public int method17973() {
-		this.field11503 += 1403713386;
-		int var1 = ((this.field11502[this.field11503 * 212851357 - 2] & 0xFF) << 8) + (this.field11502[this.field11503 * 212851357 - 1] & 0xFF);
+		this.field11503 += 2;
+		int var1 = ((this.field11502[this.field11503 - 2] & 0xFF) << 8) + (this.field11502[this.field11503 - 1] & 0xFF);
 		if (var1 > 32767) {
 			var1 -= 65536;
 		}
@@ -312,14 +312,14 @@ public class class997 extends class532 {
 
 	@ObfuscatedName("alw.ad(S)I")
 	public int method17908() {
-		this.field11503 += -41913569;
-		return (this.field11502[this.field11503 * 212851357 - 1] & 0xFF) + ((this.field11502[this.field11503 * 212851357 - 3] & 0xFF) << 16) + ((this.field11502[this.field11503 * 212851357 - 2] & 0xFF) << 8);
+		this.field11503 += 3;
+		return (this.field11502[this.field11503 - 1] & 0xFF) + ((this.field11502[this.field11503 - 3] & 0xFF) << 16) + ((this.field11502[this.field11503 - 2] & 0xFF) << 8);
 	}
 
 	@ObfuscatedName("alw.am(I)I")
 	public int method17899() {
-		this.field11503 += -41913569;
-		int var1 = (this.field11502[this.field11503 * 212851357 - 1] & 0xFF) + ((this.field11502[this.field11503 * 212851357 - 3] & 0xFF) << 16) + ((this.field11502[this.field11503 * 212851357 - 2] & 0xFF) << 8);
+		this.field11503 += 3;
+		int var1 = (this.field11502[this.field11503 - 1] & 0xFF) + ((this.field11502[this.field11503 - 3] & 0xFF) << 16) + ((this.field11502[this.field11503 - 2] & 0xFF) << 8);
 		if (var1 > 8388607) {
 			var1 -= 16777216;
 		}
@@ -328,14 +328,14 @@ public class class997 extends class532 {
 
 	@ObfuscatedName("alw.au(I)I")
 	public int method17910() {
-		this.field11503 += -1487540524;
-		return (this.field11502[this.field11503 * 212851357 - 1] & 0xFF) + ((this.field11502[this.field11503 * 212851357 - 2] & 0xFF) << 8) + ((this.field11502[this.field11503 * 212851357 - 3] & 0xFF) << 16) + ((this.field11502[this.field11503 * 212851357 - 4] & 0xFF) << 24);
+		this.field11503 += 4;
+		return (this.field11502[this.field11503 - 1] & 0xFF) + ((this.field11502[this.field11503 - 2] & 0xFF) << 8) + ((this.field11502[this.field11503 - 3] & 0xFF) << 16) + ((this.field11502[this.field11503 - 4] & 0xFF) << 24);
 	}
 
 	@ObfuscatedName("alw.ar(B)I")
 	public int method17911() {
-		this.field11503 += -1487540524;
-		return (this.field11502[this.field11503 * 212851357 - 4] & 0xFF) + ((this.field11502[this.field11503 * 212851357 - 3] & 0xFF) << 8) + ((this.field11502[this.field11503 * 212851357 - 2] & 0xFF) << 16) + ((this.field11502[this.field11503 * 212851357 - 1] & 0xFF) << 24);
+		this.field11503 += 4;
+		return (this.field11502[this.field11503 - 4] & 0xFF) + ((this.field11502[this.field11503 - 3] & 0xFF) << 8) + ((this.field11502[this.field11503 - 2] & 0xFF) << 16) + ((this.field11502[this.field11503 - 1] & 0xFF) << 24);
 	}
 
 	@ObfuscatedName("alw.ap(I)J")
@@ -368,7 +368,7 @@ public class class997 extends class532 {
 		int var2 = var5 * 8;
 		long var3 = 0L;
 		while (var2 >= 0) {
-			var3 |= ((long) this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] & 0xFFL) << var2;
+			var3 |= ((long) this.field11502[(++this.field11503) - 1] & 0xFFL) << var2;
 			var2 -= 8;
 		}
 		return var3;
@@ -381,8 +381,8 @@ public class class997 extends class532 {
 
 	@ObfuscatedName("alw.aj(B)Ljava/lang/String;")
 	public String method17917() {
-		if (this.field11502[this.field11503 * 212851357] == 0) {
-			this.field11503 += -1445626955;
+		if (this.field11502[this.field11503] == 0) {
+			++this.field11503;
 			return null;
 		} else {
 			return this.method17918();
@@ -391,63 +391,63 @@ public class class997 extends class532 {
 
 	@ObfuscatedName("alw.ay(I)Ljava/lang/String;")
 	public String method17918() {
-		int var1 = this.field11503 * 212851357;
-		while (this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] != 0) {
+		int var1 = this.field11503;
+		while (this.field11502[(++this.field11503) - 1] != 0) {
 		}
-		int var2 = this.field11503 * 212851357 - var1 - 1;
+		int var2 = this.field11503 - var1 - 1;
 		return var2 == 0 ? "" : class693.method9199(this.field11502, var1, var2);
 	}
 
 	@ObfuscatedName("alw.ab(I)Ljava/lang/String;")
 	public String method17919() {
-		byte var1 = this.field11502[(this.field11503 += -1445626955) * 212851357 - 1];
+		byte var1 = this.field11502[(++this.field11503) - 1];
 		if (var1 != 0) {
 			throw new IllegalStateException("");
 		}
-		int var2 = this.field11503 * 212851357;
-		while (this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] != 0) {
+		int var2 = this.field11503;
+		while (this.field11502[(++this.field11503) - 1] != 0) {
 		}
-		int var3 = this.field11503 * 212851357 - var2 - 1;
+		int var3 = this.field11503 - var2 - 1;
 		return var3 == 0 ? "" : class693.method9199(this.field11502, var2, var3);
 	}
 
 	@ObfuscatedName("alw.az(I)Ljava/lang/String;")
 	public String method17920() {
-		byte var1 = this.field11502[(this.field11503 += -1445626955) * 212851357 - 1];
+		byte var1 = this.field11502[(++this.field11503) - 1];
 		if (var1 != 0) {
 			throw new IllegalStateException("");
 		}
 		int var2 = this.method17928();
-		if (this.field11503 * 212851357 + var2 > this.field11502.length) {
+		if (this.field11503 + var2 > this.field11502.length) {
 			throw new IllegalStateException("");
 		}
-		String var3 = class653.method10345(this.field11502, this.field11503 * 212851357, var2);
-		this.field11503 += var2 * -1445626955;
+		String var3 = class653.method10345(this.field11502, this.field11503, var2);
+		this.field11503 += var2;
 		return var3;
 	}
 
 	@ObfuscatedName("alw.aa([BIIS)V")
 	public void method17921(byte[] arg0, int arg1, int arg2) {
 		for (int var4 = arg1; var4 < arg1 + arg2; var4++) {
-			arg0[var4] = this.field11502[(this.field11503 += -1445626955) * 212851357 - 1];
+			arg0[var4] = this.field11502[(++this.field11503) - 1];
 		}
 	}
 
 	@ObfuscatedName("alw.af(I)I")
 	public int method17922() {
-		int var1 = this.field11502[this.field11503 * 212851357] & 0xFF;
+		int var1 = this.field11502[this.field11503] & 0xFF;
 		return var1 < 128 ? this.method17904() - 64 : this.method17906() - 49152;
 	}
 
 	@ObfuscatedName("alw.ak(B)I")
 	public int method18123() {
-		int var1 = this.field11502[this.field11503 * 212851357] & 0xFF;
+		int var1 = this.field11502[this.field11503] & 0xFF;
 		return var1 < 128 ? this.method17904() : this.method17906() - 32768;
 	}
 
 	@ObfuscatedName("alw.an(B)I")
 	public int method17924() {
-		int var1 = this.field11502[this.field11503 * 212851357] & 0xFF;
+		int var1 = this.field11502[this.field11503] & 0xFF;
 		return var1 < 128 ? this.method17904() - 1 : this.method17906() - 32769;
 	}
 
@@ -463,12 +463,12 @@ public class class997 extends class532 {
 
 	@ObfuscatedName("alw.bl(I)I")
 	public int method17926() {
-		return this.field11502[this.field11503 * 212851357] < 0 ? this.method17910() & Integer.MAX_VALUE : this.method17906();
+		return this.field11502[this.field11503] < 0 ? this.method17910() & Integer.MAX_VALUE : this.method17906();
 	}
 
 	@ObfuscatedName("alw.bk(I)I")
 	public int method17927() {
-		if (this.field11502[this.field11503 * 212851357] < 0) {
+		if (this.field11502[this.field11503] < 0) {
 			return this.method17910() & Integer.MAX_VALUE;
 		} else {
 			int var1 = this.method17906();
@@ -478,11 +478,11 @@ public class class997 extends class532 {
 
 	@ObfuscatedName("alw.bh(I)I")
 	public int method17928() {
-		byte var1 = this.field11502[(this.field11503 += -1445626955) * 212851357 - 1];
+		byte var1 = this.field11502[(++this.field11503) - 1];
 		int var2 = 0;
 		while (var1 < 0) {
 			var2 = (var2 | var1 & 0x7F) << 7;
-			var1 = this.field11502[(this.field11503 += -1445626955) * 212851357 - 1];
+			var1 = this.field11502[(++this.field11503) - 1];
 		}
 		return var2 | var1;
 	}
@@ -502,7 +502,7 @@ public class class997 extends class532 {
 
 	@ObfuscatedName("alw.bd([II)V")
 	public void method17966(int[] arg0) {
-		int var2 = this.field11503 * 212851357 / 8;
+		int var2 = this.field11503 / 8;
 		this.field11503 = 0;
 		for (int var3 = 0; var3 < var2; var3++) {
 			int var4 = this.method17910();
@@ -515,7 +515,7 @@ public class class997 extends class532 {
 				var6 += var7;
 				var5 += (var4 << 4 ^ var4 >>> 5) + var4 ^ arg0[var6 >>> 11 & 0x3] + var6;
 			}
-			this.field11503 -= 1319886248;
+			this.field11503 -= 8;
 			this.method17886(var4);
 			this.method17886(var5);
 		}
@@ -523,7 +523,7 @@ public class class997 extends class532 {
 
 	@ObfuscatedName("alw.bc([II)V")
 	public void method17931(int[] arg0) {
-		int var2 = this.field11503 * 212851357 / 8;
+		int var2 = this.field11503 / 8;
 		this.field11503 = 0;
 		for (int var3 = 0; var3 < var2; var3++) {
 			int var4 = this.method17910();
@@ -536,7 +536,7 @@ public class class997 extends class532 {
 				var6 -= var7;
 				var4 -= (var5 << 4 ^ var5 >>> 5) + var5 ^ arg0[var6 & 0x3] + var6;
 			}
-			this.field11503 -= 1319886248;
+			this.field11503 -= 8;
 			this.method17886(var4);
 			this.method17886(var5);
 		}
@@ -544,8 +544,8 @@ public class class997 extends class532 {
 
 	@ObfuscatedName("alw.bi([IIIB)V")
 	public void method17932(int[] arg0, int arg1, int arg2) {
-		int var4 = this.field11503 * 212851357;
-		this.field11503 = arg1 * -1445626955;
+		int var4 = this.field11503;
+		this.field11503 = arg1;
 		int var5 = (arg2 - arg1) / 8;
 		for (int var6 = 0; var6 < var5; var6++) {
 			int var7 = this.method17910();
@@ -558,17 +558,17 @@ public class class997 extends class532 {
 				var9 += var10;
 				var8 += (var7 << 4 ^ var7 >>> 5) + var7 ^ arg0[var9 >>> 11 & 0x3] + var9;
 			}
-			this.field11503 -= 1319886248;
+			this.field11503 -= 8;
 			this.method17886(var7);
 			this.method17886(var8);
 		}
-		this.field11503 = var4 * -1445626955;
+		this.field11503 = var4;
 	}
 
 	@ObfuscatedName("alw.bn([IIII)V")
 	public void method17933(int[] arg0, int arg1, int arg2) {
-		int var4 = this.field11503 * 212851357;
-		this.field11503 = arg1 * -1445626955;
+		int var4 = this.field11503;
+		this.field11503 = arg1;
 		int var5 = (arg2 - arg1) / 8;
 		for (int var6 = 0; var6 < var5; var6++) {
 			int var7 = this.method17910();
@@ -581,11 +581,11 @@ public class class997 extends class532 {
 				var9 -= var10;
 				var7 -= (var8 << 4 ^ var8 >>> 5) + var8 ^ arg0[var9 & 0x3] + var9;
 			}
-			this.field11503 -= 1319886248;
+			this.field11503 -= 8;
 			this.method17886(var7);
 			this.method17886(var8);
 		}
-		this.field11503 = var4 * -1445626955;
+		this.field11503 = var4;
 	}
 
 	@ObfuscatedName("alw.bt(Ljava/math/BigInteger;Ljava/math/BigInteger;B)V")
@@ -594,7 +594,7 @@ public class class997 extends class532 {
 			return;
 		}
 
-		int var3 = this.field11503 * 212851357;
+		int var3 = this.field11503;
 		this.field11503 = 0;
 		byte[] var4 = new byte[var3];
 		this.method17921(var4, 0, var3);
@@ -608,104 +608,104 @@ public class class997 extends class532 {
 
 	@ObfuscatedName("alw.bq(II)I")
 	public int method17997(int arg0) {
-		int var2 = method16714(this.field11502, arg0, this.field11503 * 212851357);
+		int var2 = method16714(this.field11502, arg0, this.field11503);
 		this.method17886(var2);
 		return var2;
 	}
 
 	@ObfuscatedName("alw.bm(I)Z")
 	public boolean method18148() {
-		this.field11503 -= -1487540524;
-		int var1 = method16714(this.field11502, 0, this.field11503 * 212851357);
+		this.field11503 -= 4;
+		int var1 = method16714(this.field11502, 0, this.field11503);
 		int var2 = this.method17910();
 		return var1 == var2;
 	}
 
 	@ObfuscatedName("alw.bb(II)V")
 	public void method17937(int arg0) {
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 + 128);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 + 128);
 	}
 
 	@ObfuscatedName("alw.be(II)V")
 	public void method17938(int arg0) {
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) -arg0;
+		this.field11502[(++this.field11503) - 1] = (byte) -arg0;
 	}
 
 	@ObfuscatedName("alw.by(IB)V")
 	public void method17939(int arg0) {
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (128 - arg0);
+		this.field11502[(++this.field11503) - 1] = (byte) (128 - arg0);
 	}
 
 	@ObfuscatedName("alw.bu(I)I")
 	public int method17940() {
-		return this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] - 128 & 0xFF;
+		return this.field11502[(++this.field11503) - 1] - 128 & 0xFF;
 	}
 
 	@ObfuscatedName("alw.bw(I)I")
 	public int method17988() {
-		return -this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] & 0xFF;
+		return -this.field11502[(++this.field11503) - 1] & 0xFF;
 	}
 
 	@ObfuscatedName("alw.bo(I)I")
 	public int method17990() {
-		return 128 - this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] & 0xFF;
+		return 128 - this.field11502[(++this.field11503) - 1] & 0xFF;
 	}
 
 	@ObfuscatedName("alw.bz(B)B")
 	public byte method17942() {
-		return (byte) (this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] - 128);
+		return (byte) (this.field11502[(++this.field11503) - 1] - 128);
 	}
 
 	@ObfuscatedName("alw.bv(I)B")
 	public byte method17880() {
-		return (byte) -this.field11502[(this.field11503 += -1445626955) * 212851357 - 1];
+		return (byte) -this.field11502[(++this.field11503) - 1];
 	}
 
 	@ObfuscatedName("alw.br(I)B")
 	public byte method17994() {
-		return (byte) (128 - this.field11502[(this.field11503 += -1445626955) * 212851357 - 1]);
+		return (byte) (128 - this.field11502[(++this.field11503) - 1]);
 	}
 
 	@ObfuscatedName("alw.bg(IB)V")
 	public void method18081(int arg0) {
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) arg0;
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 8);
+		this.field11502[(++this.field11503) - 1] = (byte) arg0;
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 8);
 	}
 
 	@ObfuscatedName("alw.ba(II)V")
 	public void method17949(int arg0) {
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 8);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 + 128);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 8);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 + 128);
 	}
 
 	@ObfuscatedName("alw.bp(IS)V")
 	public void method17947(int arg0) {
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 + 128);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 8);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 + 128);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 8);
 	}
 
 	@ObfuscatedName("alw.bj(I)I")
 	public int method17948() {
-		this.field11503 += 1403713386;
-		return ((this.field11502[this.field11503 * 212851357 - 1] & 0xFF) << 8) + (this.field11502[this.field11503 * 212851357 - 2] & 0xFF);
+		this.field11503 += 2;
+		return ((this.field11502[this.field11503 - 1] & 0xFF) << 8) + (this.field11502[this.field11503 - 2] & 0xFF);
 	}
 
 	@ObfuscatedName("alw.bs(I)I")
 	public int method17934() {
-		this.field11503 += 1403713386;
-		return ((this.field11502[this.field11503 * 212851357 - 2] & 0xFF) << 8) + (this.field11502[this.field11503 * 212851357 - 1] - 128 & 0xFF);
+		this.field11503 += 2;
+		return ((this.field11502[this.field11503 - 2] & 0xFF) << 8) + (this.field11502[this.field11503 - 1] - 128 & 0xFF);
 	}
 
 	@ObfuscatedName("alw.cl(I)I")
 	public int method17950() {
-		this.field11503 += 1403713386;
-		return ((this.field11502[this.field11503 * 212851357 - 1] & 0xFF) << 8) + (this.field11502[this.field11503 * 212851357 - 2] - 128 & 0xFF);
+		this.field11503 += 2;
+		return ((this.field11502[this.field11503 - 1] & 0xFF) << 8) + (this.field11502[this.field11503 - 2] - 128 & 0xFF);
 	}
 
 	@ObfuscatedName("alw.cg(I)I")
 	public int method17951() {
-		this.field11503 += 1403713386;
-		int var1 = ((this.field11502[this.field11503 * 212851357 - 1] & 0xFF) << 8) + (this.field11502[this.field11503 * 212851357 - 2] & 0xFF);
+		this.field11503 += 2;
+		int var1 = ((this.field11502[this.field11503 - 1] & 0xFF) << 8) + (this.field11502[this.field11503 - 2] & 0xFF);
 		if (var1 > 32767) {
 			var1 -= 65536;
 		}
@@ -714,8 +714,8 @@ public class class997 extends class532 {
 
 	@ObfuscatedName("alw.ce(I)I")
 	public int method17881() {
-		this.field11503 += 1403713386;
-		int var1 = ((this.field11502[this.field11503 * 212851357 - 2] & 0xFF) << 8) + (this.field11502[this.field11503 * 212851357 - 1] - 128 & 0xFF);
+		this.field11503 += 2;
+		int var1 = ((this.field11502[this.field11503 - 2] & 0xFF) << 8) + (this.field11502[this.field11503 - 1] - 128 & 0xFF);
 		if (var1 > 32767) {
 			var1 -= 65536;
 		}
@@ -724,77 +724,77 @@ public class class997 extends class532 {
 
 	@ObfuscatedName("alw.cu(II)V")
 	public void method18122(int arg0) {
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 16);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) arg0;
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 8);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 16);
+		this.field11502[(++this.field11503) - 1] = (byte) arg0;
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 8);
 	}
 
 	@ObfuscatedName("alw.ci(IB)V")
 	public void method17935(int arg0) {
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 8);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 16);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) arg0;
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 8);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 16);
+		this.field11502[(++this.field11503) - 1] = (byte) arg0;
 	}
 
 	@ObfuscatedName("alw.cn(S)I")
 	public int method17967() {
-		this.field11503 += -41913569;
-		return (this.field11502[this.field11503 * 212851357 - 1] & 0xFF) + ((this.field11502[this.field11503 * 212851357 - 3] & 0xFF) << 8) + ((this.field11502[this.field11503 * 212851357 - 2] & 0xFF) << 16);
+		this.field11503 += 3;
+		return (this.field11502[this.field11503 - 1] & 0xFF) + ((this.field11502[this.field11503 - 3] & 0xFF) << 8) + ((this.field11502[this.field11503 - 2] & 0xFF) << 16);
 	}
 
 	@ObfuscatedName("alw.cv(II)V")
 	public void method17956(int arg0) {
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) arg0;
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 8);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 16);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 24);
+		this.field11502[(++this.field11503) - 1] = (byte) arg0;
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 8);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 16);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 24);
 	}
 
 	@ObfuscatedName("alw.cp(II)V")
 	public void method17957(int arg0) {
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 8);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) arg0;
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 24);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 16);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 8);
+		this.field11502[(++this.field11503) - 1] = (byte) arg0;
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 24);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 16);
 	}
 
 	@ObfuscatedName("alw.ca(IB)V")
 	public void method17958(int arg0) {
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 16);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 24);
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) arg0;
-		this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] = (byte) (arg0 >> 8);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 16);
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 24);
+		this.field11502[(++this.field11503) - 1] = (byte) arg0;
+		this.field11502[(++this.field11503) - 1] = (byte) (arg0 >> 8);
 	}
 
 	@ObfuscatedName("alw.cx(I)I")
 	public int method17959() {
-		this.field11503 += -1487540524;
-		return (this.field11502[this.field11503 * 212851357 - 4] & 0xFF) + ((this.field11502[this.field11503 * 212851357 - 3] & 0xFF) << 8) + ((this.field11502[this.field11503 * 212851357 - 2] & 0xFF) << 16) + ((this.field11502[this.field11503 * 212851357 - 1] & 0xFF) << 24);
+		this.field11503 += 4;
+		return (this.field11502[this.field11503 - 4] & 0xFF) + ((this.field11502[this.field11503 - 3] & 0xFF) << 8) + ((this.field11502[this.field11503 - 2] & 0xFF) << 16) + ((this.field11502[this.field11503 - 1] & 0xFF) << 24);
 	}
 
 	@ObfuscatedName("alw.cw(I)I")
 	public int method17999() {
-		this.field11503 += -1487540524;
-		return (this.field11502[this.field11503 * 212851357 - 3] & 0xFF) + ((this.field11502[this.field11503 * 212851357 - 4] & 0xFF) << 8) + ((this.field11502[this.field11503 * 212851357 - 1] & 0xFF) << 16) + ((this.field11502[this.field11503 * 212851357 - 2] & 0xFF) << 24);
+		this.field11503 += 4;
+		return (this.field11502[this.field11503 - 3] & 0xFF) + ((this.field11502[this.field11503 - 4] & 0xFF) << 8) + ((this.field11502[this.field11503 - 1] & 0xFF) << 16) + ((this.field11502[this.field11503 - 2] & 0xFF) << 24);
 	}
 
 	@ObfuscatedName("alw.ct(I)I")
 	public int method18029() {
-		this.field11503 += -1487540524;
-		return (this.field11502[this.field11503 * 212851357 - 2] & 0xFF) + ((this.field11502[this.field11503 * 212851357 - 1] & 0xFF) << 8) + ((this.field11502[this.field11503 * 212851357 - 4] & 0xFF) << 16) + ((this.field11502[this.field11503 * 212851357 - 3] & 0xFF) << 24);
+		this.field11503 += 4;
+		return (this.field11502[this.field11503 - 2] & 0xFF) + ((this.field11502[this.field11503 - 1] & 0xFF) << 8) + ((this.field11502[this.field11503 - 4] & 0xFF) << 16) + ((this.field11502[this.field11503 - 3] & 0xFF) << 24);
 	}
 
 	@ObfuscatedName("alw.cf([BIIB)V")
 	public void method17962(byte[] arg0, int arg1, int arg2) {
 		for (int var4 = arg1 + arg2 - 1; var4 >= arg1; var4--) {
-			arg0[var4] = this.field11502[(this.field11503 += -1445626955) * 212851357 - 1];
+			arg0[var4] = this.field11502[(++this.field11503) - 1];
 		}
 	}
 
 	@ObfuscatedName("alw.co([BIII)V")
 	public void method18022(byte[] arg0, int arg1, int arg2) {
 		for (int var4 = arg1; var4 < arg1 + arg2; var4++) {
-			arg0[var4] = (byte) (this.field11502[(this.field11503 += -1445626955) * 212851357 - 1] - 128);
+			arg0[var4] = (byte) (this.field11502[(++this.field11503) - 1] - 128);
 		}
 	}
 }

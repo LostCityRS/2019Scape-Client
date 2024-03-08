@@ -147,7 +147,7 @@ public class class735 {
 			if (var12 < 0 || var12 >= 256) {
 				throw new RuntimeException();
 			}
-			this.field8595[this.field8598 * -1461397227 * 1094495805] = (byte) (this.field8595[this.field8598 * -1461397227 * 1094495805] | var12 >>> var6);
+			this.field8595[this.field8598] = (byte) (this.field8595[this.field8598] | var12 >>> var6);
 			this.field8598++;
 			this.field8596 += 8 - var6;
 			if (this.field8596 == 512) {
@@ -163,12 +163,12 @@ public class class735 {
 		int var13;
 		if (arg1 > 0L) {
 			var13 = arg0[var4] << var5 & 0xFF;
-			this.field8595[this.field8598 * -1461397227 * 1094495805] = (byte) (this.field8595[this.field8598 * -1461397227 * 1094495805] | var13 >>> var6);
+			this.field8595[this.field8598] = (byte) (this.field8595[this.field8598] | var13 >>> var6);
 		} else {
 			var13 = 0;
 		}
 		if ((long) var6 + arg1 < 8L) {
-			this.field8596 = (int) ((long) (this.field8596 * -1106523889) + arg1 * -1106523889L) * -1831991825;
+			this.field8596 = (int) ((long) (this.field8596) + arg1);
 			return;
 		}
 		this.field8598++;
@@ -185,7 +185,7 @@ public class class735 {
 
 	@ObfuscatedName("aam.k([BII)V")
 	public void method14598(byte[] arg0, int arg1) {
-		this.field8595[this.field8598 * -1461397227 * 1094495805] = (byte) (this.field8595[this.field8598 * -1461397227 * 1094495805] | 0x80 >>> (this.field8596 & 0x7));
+		this.field8595[this.field8598] = (byte) (this.field8595[this.field8598] | 0x80 >>> (this.field8596 & 0x7));
 		this.field8598++;
 		if (this.field8598 > 32) {
 			while (true) {

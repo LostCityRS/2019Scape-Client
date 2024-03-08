@@ -199,7 +199,7 @@ public class class970 extends class532 {
 		if (var3 <= 0) {
 			return;
 		}
-		this.field11297.method1410(5123, var4.field11502, var4.field11503 * 212851357);
+		this.field11297.method1410(5123, var4.field11502, var4.field11503);
 		this.field11291.method15809(this.field11300.field9456, this.field11300.field9480, this.field11298, this.field11300.field9476);
 		this.field11291.method15795(this.field11296, (this.field11300.field9457 & 0x7) != 0, (this.field11300.field9457 & 0x8) != 0);
 		if (this.field11291.field9840) {

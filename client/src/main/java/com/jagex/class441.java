@@ -31,10 +31,10 @@ public class class441 {
 					var7 = -1;
 				}
 				if (var7 > 0) {
-					if (var6.field11503 * 212851357 + var7 >= var6.field11502.length) {
+					if (var6.field11503 + var7 >= var6.field11502.length) {
 						int var10 = var6.field11502.length + 10240;
 						byte[] var11 = Statics.method14028(var10, true);
-						System.arraycopy(var6.field11502, 0, var11, 0, var6.field11503 * 212851357);
+						System.arraycopy(var6.field11502, 0, var11, 0, var6.field11503);
 						class702.method14031(var6.field11502);
 						var6.field11502 = var11;
 					}
@@ -44,8 +44,8 @@ public class class441 {
 			for (int var12 = 0; var12 < arg2.field12563; var12++) {
 				var6.method18001(0);
 			}
-			byte[] var13 = new byte[var6.field11503 * 212851357];
-			System.arraycopy(var6.field11502, 0, var13, 0, var6.field11503 * 212851357);
+			byte[] var13 = new byte[var6.field11503];
+			System.arraycopy(var6.field11502, 0, var13, 0, var6.field11503);
 			var6.method18142();
 			Object var14 = null;
 			class702.method14031(var8);

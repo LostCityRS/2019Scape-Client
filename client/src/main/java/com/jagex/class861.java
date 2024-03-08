@@ -118,14 +118,14 @@ public final class class861 extends class150 {
 				}
 			}
 			class997 var5 = new class997(var2);
-			if (var5.field11502.length - var5.field11503 * 212851357 >= 1) {
+			if (var5.field11502.length - var5.field11503 >= 1) {
 				int var7 = var5.method17904();
 				if (var7 >= 0 && var7 <= 1) {
-					if (var5.field11502.length - var5.field11503 * 212851357 < 2) {
+					if (var5.field11502.length - var5.field11503 < 2) {
 						return;
 					}
 					int var10 = var5.method17906();
-					if (var5.field11502.length - var5.field11503 * 212851357 < var10 * 6) {
+					if (var5.field11502.length - var5.field11503 < var10 * 6) {
 						return;
 					}
 					for (int var12 = 0; var12 < var10; var12++) {
@@ -171,7 +171,7 @@ public final class class861 extends class150 {
 					Statics.field8911.method15283(var6, var8);
 				}
 			}
-			arg0.method14808(var6.field11502, 0, var6.field11503 * 212851357);
+			arg0.method14808(var6.field11502, 0, var6.field11503);
 		} catch (Exception var20) {
 		} finally {
 			try {
@@ -212,17 +212,17 @@ public final class class861 extends class150 {
 		}
 		class983 var5 = Statics.method1604(class390.field3733, var4.field794);
 		var5.field11432.method17945(0);
-		int var6 = var5.field11432.field11503 * 212851357;
-		var5.field11432.field11503 += -1445626955;
+		int var6 = var5.field11432.field11503;
+		var5.field11432.field11503++;
 		while (this.field10258 < this.field10257.length) {
 			class413 var7 = this.field10257[this.field10258];
-			if (var5.field11432.field11503 * 212851357 + var4.field791 + Statics.field8911.method15282(var7) > 1500) {
+			if (var5.field11432.field11503 + var4.field791 + Statics.field8911.method15282(var7) > 1500) {
 				break;
 			}
 			Statics.field8911.method15283(var5.field11432, var7);
 			this.field10258++;
 		}
-		var5.field11432.method17898(var5.field11432.field11503 * 212851357 - var6);
+		var5.field11432.method17898(var5.field11432.field11503 - var6);
 		if (this.field10258 >= this.field10257.length) {
 			var5.field11432.field11502[var6] = 1;
 		} else {

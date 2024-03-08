@@ -255,7 +255,7 @@ public class class753 {
 			this.field8774 = this.field8769;
 		}
 		this.field8773.method14808(this.field8768, 0, this.field8770);
-		this.field8774 += (long) (this.field8770 * -690117763) * -966644267L;
+		this.field8774 += (long) (this.field8770);
 		if (this.field8774 > this.field8763) {
 			this.field8763 = this.field8774;
 		}

@@ -44,12 +44,12 @@ public class class938 extends class454 {
 		if (this.field4549) {
 			return;
 		}
-		arg1.field11503 += 1319886248;
+		arg1.field11503 += 8;
 		boolean var5 = false;
 		class637 var6 = null;
 		boolean var7 = false;
 		while (true) {
-			while (arg1.field11503 * 212851357 < arg1.field11502.length) {
+			while (arg1.field11503 < arg1.field11502.length) {
 				int var8 = arg1.method17904();
 				if (var8 == 0) {
 					if (var6 == null) {
@@ -230,14 +230,14 @@ public class class938 extends class454 {
 		if (this.field4549) {
 			return;
 		}
-		arg1.field11503 += 1319886248;
+		arg1.field11503 += 8;
 		boolean var10 = false;
 		class637 var11 = null;
 		boolean var12 = false;
 		int var13 = (arg6 & 0x7) * 8;
 		int var14 = (arg7 & 0x7) * 8;
 		while (true) {
-			while (arg1.field11503 * 212851357 < arg1.field11502.length) {
+			while (arg1.field11503 < arg1.field11502.length) {
 				int var15 = arg1.method17904();
 				if (var15 == 0) {
 					if (var11 == null) {

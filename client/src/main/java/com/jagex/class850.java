@@ -1829,7 +1829,7 @@ public abstract class class850 extends class133 {
 		float var8 = arg1 * 0.5F;
 		float var9 = arg2 * 0.5F;
 		if (var7 || this.field10123 != var8 || this.field10124 != var9) {
-			this.field10118 = arg0 * 33488896;
+			this.field10118 = arg0;
 			this.field10123 = var8;
 			this.field10124 = var9;
 			if (var7) {

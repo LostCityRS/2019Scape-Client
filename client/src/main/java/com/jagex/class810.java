@@ -6,7 +6,7 @@ import com.jagex.deob.ObfuscatedName;
 public class class810 extends class986 implements class53, class757 {
 
 	@ObfuscatedName("ady.k")
-	public int field9264 = 0 * 795395889;
+	public int field9264 = 0;
 
 	@ObfuscatedName("ady.f")
 	public int[] field9266;
@@ -15,7 +15,7 @@ public class class810 extends class986 implements class53, class757 {
 	public int[] field9265;
 
 	@ObfuscatedName("ady.l")
-	public int field9263 = 0 * 820091969;
+	public int field9263 = 0;
 
 	@ObfuscatedName("ady.e(Lalw;B)V")
 	public void method976(class997 arg0) {

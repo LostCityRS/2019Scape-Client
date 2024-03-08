@@ -565,10 +565,10 @@ public class class89 {
 				}
 			}
 		}
-		if (this.field1145.field11503 * 212851357 != 0) {
-			this.field1134.method1286(24, this.field1145.field11502, this.field1145.field11503 * 212851357);
+		if (this.field1145.field11503 != 0) {
+			this.field1134.method1286(24, this.field1145.field11502, this.field1145.field11503);
 			arg0.method15809(this.field1135, null, this.field1136, this.field1143);
-			arg0.method15801(7, 0, this.field1145.field11503 * 212851357 / 24);
+			arg0.method15801(7, 0, this.field1145.field11503 / 24);
 		}
 	}
 

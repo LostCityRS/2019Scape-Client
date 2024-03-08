@@ -150,9 +150,9 @@ public class class721 {
 					this.field8511 = 0;
 					this.field8502 = 0;
 				}
-				this.field8506 = this.field8511 * -1138701553 + -1138701553;
-				if (this.field8506 * -907361297 < 0 || this.field8506 * -907361297 >= this.field8501.field1770.length) {
-					this.field8506 = 1138701553;
+				this.field8506 = this.field8511 + 1;
+				if (this.field8506 < 0 || this.field8506 >= this.field8501.field1770.length) {
+					this.field8506 = 0;
 				}
 				if (this.field8503 == 0) {
 					this.method14407(this.field8501, this.field8511);
@@ -278,7 +278,7 @@ public class class721 {
 			return;
 		}
 		this.field8511 = 0;
-		this.field8506 = (this.field8501.field1770.length > 1 ? 1 : -1) * -1138701553;
+		this.field8506 = this.field8501.field1770.length > 1 ? 1 : -1;
 		this.field8502 = 0;
 		this.field8507 = false;
 		this.field8503 = arg0;
@@ -334,15 +334,15 @@ public class class721 {
 					}
 					var2 %= var5;
 				}
-				this.field8506 = this.field8511 * -1138701553 + -1138701553;
-				if (this.field8506 * -907361297 >= this.field8501.field1770.length) {
+				this.field8506 = this.field8511 + 1;
+				if (this.field8506 >= this.field8501.field1770.length) {
 					if (this.field8501.field1778 == -1 && this.field8505) {
 						this.field8506 = 0;
 					} else {
-						this.field8506 -= this.field8501.field1778 * -1138701553;
+						this.field8506 -= this.field8501.field1778;
 					}
-					if (this.field8506 * -907361297 < 0 || this.field8506 * -907361297 >= this.field8501.field1770.length) {
-						this.field8506 = 1138701553;
+					if (this.field8506 < 0 || this.field8506 >= this.field8501.field1770.length) {
+						this.field8506 = 0;
 					}
 				}
 				var3 = true;
@@ -363,15 +363,15 @@ public class class721 {
 					}
 				}
 				this.method14407(this.field8501, this.field8511);
-				this.field8506 = this.field8511 * -1138701553 + -1138701553;
-				if (this.field8506 * -907361297 >= this.field8501.field1770.length) {
+				this.field8506 = this.field8511 + 1;
+				if (this.field8506 >= this.field8501.field1770.length) {
 					if (this.field8501.field1778 == -1 && this.field8505) {
 						this.field8506 = 0;
 					} else {
-						this.field8506 -= this.field8501.field1778 * -1138701553;
+						this.field8506 -= this.field8501.field1778;
 					}
-					if (this.field8506 * -907361297 < 0 || this.field8506 * -907361297 >= this.field8501.field1770.length) {
-						this.field8506 = 1138701553;
+					if (this.field8506 < 0 || this.field8506 >= this.field8501.field1770.length) {
+						this.field8506 = 0;
 					}
 				}
 			}
@@ -455,9 +455,9 @@ public class class721 {
 		if (this.field8501.method2985()) {
 			var2 = this.field8498.method14443(Statics.field12490, this.field8501);
 		} else {
-			var2 = this.field8513.method14431(Statics.field12490, this.field8501, this.field8511, this.field8506 * -907361297, this.field8501.field1770);
+			var2 = this.field8513.method14431(Statics.field12490, this.field8501, this.field8511, this.field8506, this.field8501.field1770);
 			if (var2 && this.field8500 && this.field8501.field1771 != null) {
-				this.field8512.method14431(Statics.field12490, this.field8501, this.field8511, this.field8506 * -907361297, this.field8501.field1771);
+				this.field8512.method14431(Statics.field12490, this.field8501, this.field8511, this.field8506, this.field8501.field1771);
 			}
 		}
 		return var2;

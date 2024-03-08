@@ -22,12 +22,12 @@ public class class66 implements class126 {
 
 	@ObfuscatedName("bc.e()I")
 	public int method1015() {
-		return this.field971 * -721630437 * -1487890669;
+		return this.field971;
 	}
 
 	@ObfuscatedName("bc.n()I")
 	public int method1009() {
-		return this.field972 * 1475083349 * 139010301;
+		return this.field972;
 	}
 
 	@ObfuscatedName("bc.m()V")

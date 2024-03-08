@@ -62,12 +62,12 @@ public class class134 {
 			class997 var3 = new class997(arg0);
 			class997 var4 = new class997(arg0);
 			int var5 = var3.method17904();
-			var3.field11503 += 1403713386;
+			var3.field11503 += 2;
 			int var6 = var3.method17906();
 			int var7 = 0;
 			int var8 = -1;
 			int var9 = -1;
-			var4.field11503 = (var3.field11503 * 212851357 + var6) * -1445626955;
+			var4.field11503 = (var3.field11503 + var6);
 			for (int var10 = 0; var10 < var6; var10++) {
 				int var11 = this.field1628.field11314[var10];
 				if (var11 == 0) {
@@ -141,7 +141,7 @@ public class class134 {
 					var7++;
 				}
 			}
-			if (var4.field11503 * 212851357 != arg0.length) {
+			if (var4.field11503 != arg0.length) {
 				throw new RuntimeException();
 			}
 			this.field1631 = var7;

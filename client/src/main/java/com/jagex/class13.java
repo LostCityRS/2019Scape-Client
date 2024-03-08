@@ -37,13 +37,13 @@ public class class13 {
 			InputStream var3 = var1.getInputStream();
 			class997 var4 = new class997(new byte[1000]);
 			do {
-				int var5 = var3.read(var4.field11502, var4.field11503 * 212851357, 1000 - var4.field11503 * 212851357);
+				int var5 = var3.read(var4.field11502, var4.field11503, 1000 - var4.field11503);
 				if (var5 == -1) {
 					var4.field11503 = 0;
 					return var4.method17914();
 				}
-				var4.field11503 += var5 * -1445626955;
-			} while (var4.field11503 * 212851357 < 1000);
+				var4.field11503 += var5;
+			} while (var4.field11503 < 1000);
 			return 0L;
 		} catch (Exception var9) {
 			return 0L;
@@ -83,16 +83,16 @@ public class class13 {
 		}
 		class997 var11 = new class997(var10);
 		var11.method17893(arg1);
-		var11.field11503 = var10 * -1445626955;
+		var11.field11503 = var10;
 		var11.method17966(var6);
-		class997 var12 = new class997(var11.field11503 * 212851357 + var5.field11503 * 212851357 + var4.field11503 * 212851357 + 5);
+		class997 var12 = new class997(var11.field11503 + var5.field11503 + var4.field11503 + 5);
 		var12.method18001(2);
-		var12.method18001(var4.field11503 * 212851357);
-		var12.method17896(var4.field11502, 0, var4.field11503 * 212851357);
-		var12.method18001(var5.field11503 * 212851357);
-		var12.method17896(var5.field11502, 0, var5.field11503 * 212851357);
-		var12.method17945(var11.field11503 * 212851357);
-		var12.method17896(var11.field11502, 0, var11.field11503 * 212851357);
+		var12.method18001(var4.field11503);
+		var12.method17896(var4.field11502, 0, var4.field11503);
+		var12.method18001(var5.field11503);
+		var12.method17896(var5.field11502, 0, var5.field11503);
+		var12.method17945(var11.field11503);
+		var12.method17896(var11.field11502, 0, var11.field11503);
 		String var13 = class694.method10220(var12.field11502);
 		try {
 			URL var14 = new URL(client.method4591("services", false) + "m=accountappeal/login.ws");
@@ -106,7 +106,7 @@ public class class13 {
 			InputStream var17 = var15.getInputStream();
 			class997 var18 = new class997(new byte[1000]);
 			do {
-				int var19 = var17.read(var18.field11502, var18.field11503 * 212851357, 1000 - var18.field11503 * 212851357);
+				int var19 = var17.read(var18.field11502, var18.field11503, 1000 - var18.field11503);
 				if (var19 == -1) {
 					var16.close();
 					var17.close();
@@ -121,10 +121,10 @@ public class class13 {
 						return 6;
 					} else {
 						var18.method17931(var6);
-						while (var18.field11503 * 212851357 > 0 && var18.field11502[var18.field11503 * 212851357 - 1] == 0) {
+						while (var18.field11503 > 0 && var18.field11502[var18.field11503 - 1] == 0) {
 							var18.field11503 -= -1445626955;
 						}
-						String var21 = new String(var18.field11502, 0, var18.field11503 * 212851357);
+						String var21 = new String(var18.field11502, 0, var18.field11503);
 						if (method15242(var21)) {
 							class505.method4607(var21, true, client.field10784);
 							return 2;
@@ -133,8 +133,8 @@ public class class13 {
 						}
 					}
 				}
-				var18.field11503 += var19 * -1445626955;
-			} while (var18.field11503 * 212851357 < 1000);
+				var18.field11503 += var19;
+			} while (var18.field11503 < 1000);
 			return 5;
 		} catch (Throwable var23) {
 			var23.printStackTrace();

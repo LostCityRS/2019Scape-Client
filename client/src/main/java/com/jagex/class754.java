@@ -32,7 +32,7 @@ public class class754 implements class53, class757 {
 	public Object[] field8780;
 
 	@ObfuscatedName("abm.l")
-	public int field8776 = 0 * -1630596103;
+	public int field8776 = 0;
 
 	@ObfuscatedName("abm.u")
 	public HashMap field8782;

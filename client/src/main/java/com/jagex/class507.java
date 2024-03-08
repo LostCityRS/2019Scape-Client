@@ -245,12 +245,12 @@ public abstract class class507 implements class509, Runnable, FocusListener, Win
 			try {
 				class752 var8 = new class752(Statics.field6608, "rw", 10000L);
 				class997 var9 = new class997((int) var8.method14821());
-				while (var9.field11503 * 212851357 < var9.field11502.length) {
-					int var10 = var8.method14812(var9.field11502, var9.field11503 * 212851357, var9.field11502.length - var9.field11503 * 212851357);
+				while (var9.field11503 < var9.field11502.length) {
+					int var10 = var8.method14812(var9.field11502, var9.field11503, var9.field11502.length - var9.field11503);
 					if (var10 == -1) {
 						throw new IOException();
 					}
-					var9.field11503 += var10 * -1445626955;
+					var9.field11503 += var10;
 				}
 				var9.field11503 = 0;
 				int var11 = var9.method17904();
@@ -341,7 +341,7 @@ public abstract class class507 implements class509, Runnable, FocusListener, Win
 			if (arg1 != null) {
 				var4.method17895(arg1.getPath());
 			}
-			var3.method14808(var4.field11502, 0, var4.field11503 * 212851357);
+			var3.method14808(var4.field11502, 0, var4.field11503);
 			var3.method14818();
 		} catch (IOException var6) {
 			var6.printStackTrace();

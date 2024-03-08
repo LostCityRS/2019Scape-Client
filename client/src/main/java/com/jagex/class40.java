@@ -105,8 +105,8 @@ public class class40 {
 		field695 = 0;
 		method5209(arg0);
 		method613(arg0);
-		if (arg0.field11503 * 212851357 != arg1) {
-			throw new RuntimeException(arg0.field11503 * 212851357 + " " + arg1);
+		if (arg0.field11503 != arg1) {
+			throw new RuntimeException(arg0.field11503 + " " + arg1);
 		}
 	}
 
@@ -546,8 +546,8 @@ public class class40 {
 			client.method9423(arg2, var4, var6, false);
 		}
 		if ((arg3 & 0x40000) != 0) {
-			arg0.field11503 += 1403713386;
-			int var7 = arg0.field11502[(arg0.field11503 += -1445626955) * 212851357 - 1] & 0xFF;
+			arg0.field11503 += 2;
+			int var7 = arg0.field11502[(++arg0.field11503) - 1] & 0xFF;
 			for (int var8 = 0; var8 < var7; var8++) {
 				int var9 = arg0.method17990();
 				class470 var10 = (class470) class686.method1897(Statics.method7338(), var9);
@@ -696,8 +696,8 @@ public class class40 {
 		}
 		if ((arg3 & 0x20000) != 0) {
 			arg2.field10460.method14749();
-			arg0.field11503 += 1403713386;
-			int var62 = arg0.field11502[(arg0.field11503 += -1445626955) * 212851357 - 1] & 0xFF;
+			arg0.field11503 += 2;
+			int var62 = arg0.field11502[(++arg0.field11503) - 1] & 0xFF;
 			for (int var63 = 0; var63 < var62; var63++) {
 				int var64 = arg0.method17990();
 				class470 var65 = (class470) class686.method1897(Statics.method7338(), var64);

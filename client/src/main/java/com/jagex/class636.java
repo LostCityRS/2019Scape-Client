@@ -303,7 +303,7 @@ public class class636 {
 			return;
 		}
 		long var1 = class213.method3655();
-		this.field7838 = (int) ((long) (this.field7838 * 1162824399) - (var1 - this.field7839) * 1162824399L) * 2008775727;
+		this.field7838 = (int) ((long) (this.field7838) - (var1 - this.field7839));
 		if (this.field7838 > 0) {
 			this.field7841.method10094(this.field7833, this.field7843, this.field7844, (float) (this.field7837 - this.field7838) / (float) this.field7837);
 		} else {

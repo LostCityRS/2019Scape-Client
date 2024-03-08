@@ -784,7 +784,7 @@ public class class836 extends class104 {
 			}
 		}
 		if (var10 > 0) {
-			class827 var22 = new class827(this.field9453, 5123, var11.field11502, var11.field11503 * 212851357);
+			class827 var22 = new class827(this.field9453, 5123, var11.field11502, var11.field11503);
 			this.field9453.method15921(var22, 4, 0, var10);
 		}
 	}

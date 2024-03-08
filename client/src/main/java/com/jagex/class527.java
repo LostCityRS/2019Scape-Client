@@ -24,7 +24,7 @@ public class class527 {
 	@ObfuscatedName("tz.e(Lalw;II)[B")
 	public static byte[] method8503(class997 arg0, int arg1) throws IOException {
 		ByteArrayInputStream var2 = new ByteArrayInputStream(arg0.field11502);
-		var2.skip((long) (arg0.field11503 * 212851357));
+		var2.skip((long) (arg0.field11503));
 		return method4477(var2, arg1);
 	}
 

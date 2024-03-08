@@ -6,10 +6,10 @@ import com.jagex.deob.ObfuscatedName;
 public class class568 implements class53, class757 {
 
 	@ObfuscatedName("uv.e")
-	public int field7233 = -1895173889 * 887812353;
+	public int field7233 = 0;
 
 	@ObfuscatedName("uv.n")
-	public int field7234 = 1308423683 * 430971733;
+	public int field7234 = 0;
 
 	@ObfuscatedName("uv.m")
 	public int[] field7232;
@@ -18,7 +18,7 @@ public class class568 implements class53, class757 {
 	public class569 field7235 = class569.field7239;
 
 	@ObfuscatedName("uv.f")
-	public int field7236 = 670946389 * -871926013;
+	public int field7236 = 0;
 
 	@ObfuscatedName("uv.e(Lalw;B)V")
 	public void method976(class997 arg0) {

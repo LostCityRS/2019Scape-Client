@@ -429,7 +429,7 @@ public class class936 extends class440 {
 						}
 						if (this.field10745[this.field10739] == 0) {
 							class532 var4 = new class532();
-							var4.field6760 = (long) (this.field10739 * 1382496569) * -257432311L;
+							var4.field6760 = (long) (this.field10739);
 							this.field10735.method14153(var4);
 							var1 = false;
 						}
@@ -466,7 +466,7 @@ public class class936 extends class440 {
 						}
 						if (this.field10745[this.field10739] != 1) {
 							class532 var8 = new class532();
-							var8.field6760 = (long) (this.field10739 * 1382496569) * -257432311L;
+							var8.field6760 = (long) (this.field10739);
 							this.field10735.method14153(var8);
 							var5 = false;
 						}

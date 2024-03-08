@@ -9,46 +9,46 @@ public class class663 implements class53, class757 {
 	public int field8152;
 
 	@ObfuscatedName("yn.m")
-	public int field8154 = 0 * 592157171;
+	public int field8154 = 0;
 
 	@ObfuscatedName("yn.k")
-	public int field8155 = -1685253883 * -462296013;
+	public int field8155 = 0;
 
 	@ObfuscatedName("yn.f")
 	public boolean field8157 = true;
 
 	@ObfuscatedName("yn.w")
-	public int field8156 = -690404605 * 1773420629;
+	public int field8156 = 0;
 
 	@ObfuscatedName("yn.l")
-	public int field8163 = 183582208 * -2047499425;
+	public int field8163 = 512;
 
 	@ObfuscatedName("yn.u")
 	public boolean field8162 = true;
 
 	@ObfuscatedName("yn.z")
-	public int field8160 = 1907344776 * -205172655;
+	public int field8160 = 0;
 
 	@ObfuscatedName("yn.p")
 	public boolean field8161 = false;
 
 	@ObfuscatedName("yn.d")
-	public int field8158 = 1233755641 * 1502845029;
+	public int field8158 = 1190656;
 
 	@ObfuscatedName("yn.c")
-	public int field8159 = 2059861312;
+	public int field8159 = 921050624;
 
 	@ObfuscatedName("yn.r")
-	public int field8164 = -1677496433 * -503537775;
+	public int field8164 = 256;
 
 	@ObfuscatedName("yn.v")
-	public int field8165 = -535383117 * -129782971;
+	public int field8165 = 64;
 
 	@ObfuscatedName("yn.o")
-	public int field8166 = 0 * -703195503;
+	public int field8166 = 0;
 
 	@ObfuscatedName("yn.s")
-	public int field8167 = -1934904128 * 1714018651;
+	public int field8167 = 0;
 
 	@ObfuscatedName("yn.e(Lalw;B)V")
 	public void method976(class997 arg0) {
@@ -88,7 +88,7 @@ public class class663 implements class53, class757 {
 			} else if (arg1 == 13) {
 				this.field8158 = arg0.method17908();
 			} else if (arg1 == 14) {
-				this.field8159 = (arg0.method17904() << 2) * -2115298315;
+				this.field8159 = arg0.method17904() << 2;
 			} else if (arg1 == 16) {
 				this.field8164 = arg0.method17904();
 			} else if (arg1 == 20) {
