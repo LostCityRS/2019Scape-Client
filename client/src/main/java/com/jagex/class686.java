@@ -47,23 +47,23 @@ public class class686 {
 	}
 
 	@ObfuscatedName("g.m(Ljava/lang/Iterable;Lalw;I)V")
-	public static void method618(Iterable arg0, class997 arg1) {
+	public static void method618(Iterable arg0, Packet arg1) {
 		int var2 = method5155(arg0);
-		arg1.method18130(var2);
+		arg1.pSmart1or2s(var2);
 		if (var2 == 0) {
 			return;
 		}
 		for (int var3 = 0; var3 < var2; var3++) {
-			arg1.field11502[arg1.field11503 + var3] = 0;
+			arg1.data[arg1.pos + var3] = 0;
 		}
 		Iterator var4 = arg0.iterator();
 		while (var4.hasNext()) {
 			class685 var5 = (class685) var4.next();
 			int var6 = var5.method1303();
 			int var7 = var6 / 8;
-			arg1.field11502[arg1.field11503 + var7] = (byte) (arg1.field11502[arg1.field11503 + var7] | 0x1 << (var6 & 0x7));
+			arg1.data[arg1.pos + var7] = (byte) (arg1.data[arg1.pos + var7] | 0x1 << (var6 & 0x7));
 		}
-		arg1.field11503 += var2;
+		arg1.pos += var2;
 	}
 
 	@ObfuscatedName("ko.k(Ljava/lang/Iterable;I)I")

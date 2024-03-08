@@ -14,9 +14,9 @@ public class class915 extends class322 {
 	}
 
 	@ObfuscatedName("aha.k(Lalw;I)Lla;")
-	public static class322 method16658(class997 arg0) {
+	public static class322 method16658(Packet arg0) {
 		class322 var1 = class322.method6073(arg0);
-		int var2 = arg0.method17899();
+		int var2 = arg0.g3s();
 		return new class915(var1.field3218, var1.field3215, var1.field3214, var1.field3216, var1.field3217, var2);
 	}
 

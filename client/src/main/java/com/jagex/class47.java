@@ -517,10 +517,10 @@ public class class47 {
 				if (client.field10791 == 18 || client.field10791 == 13) {
 					class49 var30 = client.method640();
 					class983 var31 = Statics.method1604(class390.field3766, var30.field794);
-					var31.field11432.method18001(arg0.length() + 3);
-					var31.field11432.method18001(arg1 ? 1 : 0);
-					var31.field11432.method18001(arg2 ? 1 : 0);
-					var31.field11432.method17893(arg0);
+					var31.field11432.p1(arg0.length() + 3);
+					var31.field11432.p1(arg1 ? 1 : 0);
+					var31.field11432.p1(arg2 ? 1 : 0);
+					var31.field11432.pjstr(arg0);
 					var30.method934(var31);
 				}
 			} catch (Exception var36) {

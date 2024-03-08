@@ -36,7 +36,7 @@ public class class806 extends class808 implements class51 {
 		byte[] var2 = this.field9255.method6879(this.field9260.method7218().field8040, arg0);
 		class859 var3 = new class859(this.field9260, arg0);
 		if (var2 != null) {
-			var3.method976(new class997(var2));
+			var3.method976(new Packet(var2));
 		}
 		return var3;
 	}

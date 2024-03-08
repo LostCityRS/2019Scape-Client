@@ -308,7 +308,7 @@ public class class454 {
 	}
 
 	@ObfuscatedName("qg.f(Lalw;IIIIB)V")
-	public final void method7170(class997 arg0, int arg1, int arg2, int arg3, int arg4) {
+	public final void method7170(Packet arg0, int arg1, int arg2, int arg3, int arg4) {
 		int var6 = arg1 + arg3;
 		int var7 = arg2 + arg4;
 		for (int var8 = 0; var8 < this.field4544; var8++) {
@@ -321,7 +321,7 @@ public class class454 {
 	}
 
 	@ObfuscatedName("qg.w(Lalw;IIIIIIII)V")
-	public final void method7161(class997 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
+	public final void method7161(Packet arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		int var9 = (arg5 & 0x7) * 8;
 		int var10 = (arg6 & 0x7) * 8;
 		int var11 = (arg5 & 0xFFFFFFF8) << 3;
@@ -407,7 +407,7 @@ public class class454 {
 	}
 
 	@ObfuscatedName("qg.l(Lalw;IIIIIIIIZB)V")
-	public final void method7140(class997 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9) {
+	public final void method7140(Packet arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9) {
 		if (arg8 == 1) {
 			arg5 = 1;
 		} else if (arg8 == 2) {
@@ -417,53 +417,53 @@ public class class454 {
 			arg4 = 1;
 		}
 		if (arg2 < 0 || arg2 >= this.field4513 || arg3 < 0 || arg3 >= this.field4514) {
-			int var14 = arg0.method17904();
+			int var14 = arg0.g1();
 			if ((var14 & 0x1) != 0) {
-				arg0.method17904();
-				arg0.method18123();
+				arg0.g1();
+				arg0.gSmart1or2();
 			}
 			if ((var14 & 0x2) != 0) {
-				arg0.field11503++;
+				arg0.pos++;
 			}
 			if ((var14 & 0x4) != 0) {
-				arg0.method18123();
+				arg0.gSmart1or2();
 			}
 			if ((var14 & 0x8) != 0) {
-				arg0.method17904();
+				arg0.g1();
 			}
 			return;
 		}
 		if (!this.field4549 && !arg9) {
 			this.field4522.field4487[arg1][arg2][arg3] = 0;
 		}
-		int var11 = arg0.method17904();
+		int var11 = arg0.g1();
 		if ((var11 & 0x1) != 0) {
 			if (arg9) {
-				arg0.method17904();
-				arg0.method18123();
+				arg0.g1();
+				arg0.gSmart1or2();
 			} else {
-				int var12 = arg0.method17904();
-				this.field4516[arg1][arg2][arg3] = (short) arg0.method18123();
+				int var12 = arg0.g1();
+				this.field4516[arg1][arg2][arg3] = (short) arg0.gSmart1or2();
 				this.field4562[arg1][arg2][arg3] = (byte) (var12 >> 2);
 				this.field4520[arg1][arg2][arg3] = (byte) (arg8 + var12 & 0x3);
 			}
 		}
 		if ((var11 & 0x2) != 0) {
 			if (this.field4549 || arg9) {
-				arg0.field11503++;
+				arg0.pos++;
 			} else {
-				this.field4522.field4487[arg1][arg2][arg3] = arg0.method17905();
+				this.field4522.field4487[arg1][arg2][arg3] = arg0.g1b();
 			}
 		}
 		if ((var11 & 0x4) != 0) {
 			if (arg9) {
-				arg0.method18123();
+				arg0.gSmart1or2();
 			} else {
-				this.field4505[arg1][arg2][arg3] = (short) arg0.method18123();
+				this.field4505[arg1][arg2][arg3] = (short) arg0.gSmart1or2();
 			}
 		}
 		if ((var11 & 0x8) != 0) {
-			int var13 = arg0.method17904();
+			int var13 = arg0.g1();
 			if (this.field4549) {
 				this.field4540[0][arg2 + arg4][arg3 + arg5] = var13 * 8 << 2;
 			} else {

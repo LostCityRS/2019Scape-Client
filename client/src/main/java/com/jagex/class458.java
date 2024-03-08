@@ -39,7 +39,7 @@ public class class458 {
 		}
 		class1182 var4 = new class1182();
 		if (var3 != null) {
-			var4.method19449(new class997(var3));
+			var4.method19449(new Packet(var3));
 		}
 		if (arg0 >= 32768) {
 			var4.method19452();

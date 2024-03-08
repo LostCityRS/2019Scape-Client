@@ -22,9 +22,9 @@ public class class1182 extends class986 {
 	public char[] field12347;
 
 	@ObfuscatedName("asd.e(Lalw;I)V")
-	public void method19449(class997 arg0) {
+	public void method19449(Packet arg0) {
 		while (true) {
-			int var2 = arg0.method17904();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
@@ -33,25 +33,25 @@ public class class1182 extends class986 {
 	}
 
 	@ObfuscatedName("asd.n(Lalw;II)V")
-	public void method19467(class997 arg0, int arg1) {
+	public void method19467(Packet arg0, int arg1) {
 		if (arg1 == 1) {
-			this.field12348 = arg0.method17918();
+			this.field12348 = arg0.gjstr();
 		} else if (arg1 == 2) {
-			int var3 = arg0.method17904();
+			int var3 = arg0.g1();
 			this.field12346 = new int[var3];
 			this.field12345 = new char[var3];
 			for (int var4 = 0; var4 < var3; var4++) {
-				this.field12346[var4] = arg0.method17906();
-				byte var5 = arg0.method17905();
+				this.field12346[var4] = arg0.g2();
+				byte var5 = arg0.g1b();
 				this.field12345[var4] = var5 == 0 ? 0 : Statics.method9576(var5);
 			}
 		} else if (arg1 == 3) {
-			int var6 = arg0.method17904();
+			int var6 = arg0.g1();
 			this.field12349 = new int[var6];
 			this.field12347 = new char[var6];
 			for (int var7 = 0; var7 < var6; var7++) {
-				this.field12349[var7] = arg0.method17906();
-				byte var8 = arg0.method17905();
+				this.field12349[var7] = arg0.g2();
+				byte var8 = arg0.g1b();
 				this.field12347[var7] = var8 == 0 ? 0 : Statics.method9576(var8);
 			}
 		} else if (arg1 == 4) {

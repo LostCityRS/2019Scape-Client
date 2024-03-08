@@ -25,11 +25,11 @@ public class class593 implements class588 {
 	}
 
 	@ObfuscatedName("nt.k(Lalw;I)Lvy;")
-	public static class593 method6037(class997 arg0) {
-		int var1 = arg0.method17904();
+	public static class593 method6037(Packet arg0) {
+		int var1 = arg0.g1();
 		int[] var2 = new int[var1];
 		for (int var3 = 0; var3 < var1; var3++) {
-			var2[var3] = arg0.method17904();
+			var2[var3] = arg0.g1();
 		}
 		return new class593(var2);
 	}

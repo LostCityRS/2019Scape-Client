@@ -10,8 +10,8 @@ public class class590 {
 	}
 
 	@ObfuscatedName("hh.e(Lalw;I)Lvt;")
-	public static class588 method4055(class997 arg0) {
-		class592 var1 = class592.method4512(arg0.method17904());
+	public static class588 method4055(Packet arg0) {
+		class592 var1 = class592.method4512(arg0.g1());
 		if (class592.field7417 == var1) {
 			return class589.method9770(arg0);
 		} else if (class592.field7416 == var1) {

@@ -18,10 +18,10 @@ public class class914 extends class314 {
 	}
 
 	@ObfuscatedName("yd.k(Lalw;I)Lkp;")
-	public static class314 method13796(class997 arg0) {
+	public static class314 method13796(Packet arg0) {
 		class314 var1 = class314.method18899(arg0);
-		int var2 = arg0.method17910();
-		int var3 = arg0.method17910();
+		int var2 = arg0.g4s();
+		int var3 = arg0.g4s();
 		return new class914(var1.field3167, var1.field3159, var1.field3161, var1.field3162, var1.field3163, var1.field3160, var1.field3165, var1.field3166, var1.field3164, var2, var3);
 	}
 

@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ase")
-public class class1190 extends class997 {
+public class class1190 extends Packet {
 
 	@ObfuscatedName("ase.c")
 	public class734 field12426;
@@ -25,36 +25,36 @@ public class class1190 extends class997 {
 
 	@ObfuscatedName("ase.jx(II)V")
 	public void method19555(int arg0) {
-		this.field11502[(++this.field11503) - 1] = (byte) (arg0 + this.field12426.method14578());
+		this.data[(++this.pos) - 1] = (byte) (arg0 + this.field12426.method14578());
 	}
 
 	@ObfuscatedName("ase.jh(I)I")
 	public int method19558() {
-		return this.field11502[(++this.field11503) - 1] - this.field12426.method14578() & 0xFF;
+		return this.data[(++this.pos) - 1] - this.field12426.method14578() & 0xFF;
 	}
 
 	@ObfuscatedName("ase.jp(I)Z")
 	public boolean method19573() {
-		int var1 = this.field11502[this.field11503] - this.field12426.method14579() & 0xFF;
+		int var1 = this.data[this.pos] - this.field12426.method14579() & 0xFF;
 		return var1 >= 128;
 	}
 
 	@ObfuscatedName("ase.jk(I)I")
 	public int method19560() {
-		int var1 = this.field11502[(++this.field11503) - 1] - this.field12426.method14578() & 0xFF;
-		return var1 < 128 ? var1 : (var1 - 128 << 8) + (this.field11502[(++this.field11503) - 1] - this.field12426.method14578() & 0xFF);
+		int var1 = this.data[(++this.pos) - 1] - this.field12426.method14578() & 0xFF;
+		return var1 < 128 ? var1 : (var1 - 128 << 8) + (this.data[(++this.pos) - 1] - this.field12426.method14578() & 0xFF);
 	}
 
 	@ObfuscatedName("ase.kw([BIII)V")
 	public void method19561(byte[] arg0, int arg1, int arg2) {
 		for (int var4 = 0; var4 < arg2; var4++) {
-			arg0[arg1 + var4] = (byte) (this.field11502[(++this.field11503) - 1] - this.field12426.method14578());
+			arg0[arg1 + var4] = (byte) (this.data[(++this.pos) - 1] - this.field12426.method14578());
 		}
 	}
 
 	@ObfuscatedName("ase.kz(B)V")
 	public void method19562() {
-		this.field12427 = this.field11503 * 8;
+		this.field12427 = this.pos * 8;
 	}
 
 	@ObfuscatedName("ase.ke(II)I")
@@ -64,22 +64,22 @@ public class class1190 extends class997 {
 		int var4 = 0;
 		this.field12427 += arg0;
 		while (arg0 > var3) {
-			var4 += (this.field11502[var2++] & field12425[var3]) << arg0 - var3;
+			var4 += (this.data[var2++] & field12425[var3]) << arg0 - var3;
 			arg0 -= var3;
 			var3 = 8;
 		}
 		int var5;
 		if (arg0 == var3) {
-			var5 = (this.field11502[var2] & field12425[var3]) + var4;
+			var5 = (this.data[var2] & field12425[var3]) + var4;
 		} else {
-			var5 = (this.field11502[var2] >> var3 - arg0 & field12425[arg0]) + var4;
+			var5 = (this.data[var2] >> var3 - arg0 & field12425[arg0]) + var4;
 		}
 		return var5;
 	}
 
 	@ObfuscatedName("ase.kq(I)V")
 	public void method19564() {
-		this.field11503 = (this.field12427 + 7) / 8;
+		this.pos = (this.field12427 + 7) / 8;
 	}
 
 	@ObfuscatedName("ase.kg(II)I")

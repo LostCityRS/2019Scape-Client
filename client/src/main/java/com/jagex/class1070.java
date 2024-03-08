@@ -196,7 +196,7 @@ public class class1070 extends class714 {
 	}
 
 	@ObfuscatedName("anb.w(Lalw;I)V")
-	public void method14132(class997 arg0) {
+	public void method14132(Packet arg0) {
 		this.field11856.method6410(arg0);
 	}
 }

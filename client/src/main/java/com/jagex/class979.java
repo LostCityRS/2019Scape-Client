@@ -47,7 +47,7 @@ public class class979 extends class532 {
 		}
 	}
 
-	public class979(class997 arg0) {
+	public class979(Packet arg0) {
 		this.method17737(arg0);
 	}
 
@@ -97,8 +97,8 @@ public class class979 extends class532 {
 	}
 
 	@ObfuscatedName("akr.w(Lalw;I)V")
-	public void method17737(class997 arg0) {
-		int var2 = arg0.method17904();
+	public void method17737(Packet arg0) {
+		int var2 = arg0.g1();
 		if ((var2 & 0x1) != 0) {
 			this.field11397 = true;
 		}
@@ -107,15 +107,15 @@ public class class979 extends class532 {
 		}
 		int var3 = 2;
 		if ((var2 & 0x4) != 0) {
-			var3 = arg0.method17904();
+			var3 = arg0.g1();
 		}
-		this.field6760 = arg0.method17914();
-		this.field11395 = arg0.method17914();
-		this.field11396 = arg0.method17918();
-		arg0.method17904();
-		this.field11398 = arg0.method17905();
-		this.field11391 = arg0.method17905();
-		this.field11393 = arg0.method17906();
+		this.field6760 = arg0.g8();
+		this.field11395 = arg0.g8();
+		this.field11396 = arg0.gjstr();
+		arg0.g1();
+		this.field11398 = arg0.g1b();
+		this.field11391 = arg0.g1b();
+		this.field11393 = arg0.g2();
 		if (this.field11393 <= 0) {
 			return;
 		}
@@ -123,15 +123,15 @@ public class class979 extends class532 {
 		for (int var4 = 0; var4 < this.field11393; var4++) {
 			class308 var5 = new class308();
 			if (this.field11397) {
-				arg0.method17914();
+				arg0.g8();
 			}
 			if (this.field11390) {
-				var5.field3087 = arg0.method17918();
+				var5.field3087 = arg0.gjstr();
 			}
-			var5.field3089 = arg0.method17905();
-			var5.field3088 = arg0.method17906();
+			var5.field3089 = arg0.g1b();
+			var5.field3088 = arg0.g2();
 			if (var3 >= 3) {
-				arg0.method17904();
+				arg0.g1();
 			}
 			this.field11392[var4] = var5;
 		}

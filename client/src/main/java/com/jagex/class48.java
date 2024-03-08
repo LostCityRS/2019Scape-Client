@@ -35,7 +35,7 @@ public class class48 {
 					throw new IOException();
 				}
 			}
-			var1 = new class998(new class997(var2), client.field10768, 0);
+			var1 = new class998(new Packet(var2), client.field10768, 0);
 		} catch (Exception var8) {
 		}
 		try {
@@ -52,8 +52,8 @@ public class class48 {
 		class752 var0 = null;
 		try {
 			var0 = class507.method18567("", client.field10768.field8333, true);
-			class997 var1 = Statics.field688.method18156();
-			var0.method14808(var1.field11502, 0, var1.field11503);
+			Packet var1 = Statics.field688.method18156();
+			var0.method14808(var1.data, 0, var1.pos);
 		} catch (Exception var5) {
 		}
 		try {

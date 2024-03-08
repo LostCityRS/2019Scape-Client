@@ -24,12 +24,12 @@ public final class class158 {
 	@ObfuscatedName("ea.l")
 	public int[] field1747;
 
-	public class158(class997 arg0, int arg1) {
+	public class158(Packet arg0, int arg1) {
 		this.field1741 = arg1;
-		int var3 = arg0.method17904();
+		int var3 = arg0.g1();
 		switch(var3) {
 			case 0:
-				this.field1743 = arg0.method17927();
+				this.field1743 = arg0.gSmart2or4null();
 				break;
 			case 1:
 				this.field1743 = -1;
@@ -37,7 +37,7 @@ public final class class158 {
 			default:
 				this.field1743 = -1;
 		}
-		arg0.method17918();
+		arg0.gjstr();
 	}
 
 	@ObfuscatedName("ea.e(IIIII)V")

@@ -186,7 +186,7 @@ public class class961 extends class532 {
 
 	@ObfuscatedName("ajo.r([II[IZI)J")
 	public long method17471(int[] arg0, int arg1, int[] arg2, boolean arg3) {
-		long[] var5 = class997.field11507;
+		long[] var5 = Packet.crc64table;
 		long var6 = -1L;
 		long var8 = var6 >>> 8 ^ var5[(int) ((var6 ^ (long) (arg1 >> 8)) & 0xFFL)];
 		long var10 = var8 >>> 8 ^ var5[(int) ((var8 ^ (long) arg1) & 0xFFL)];

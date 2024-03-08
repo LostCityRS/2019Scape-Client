@@ -97,19 +97,19 @@ public final class class421 {
 		this.method6415(arg0, arg1, arg2);
 	}
 
-	public class421(class997 arg0) {
-		this.field4301 = arg0.method17916();
-		this.field4304 = arg0.method17916();
-		this.field4305 = arg0.method17916();
-		this.field4300 = arg0.method17916();
+	public class421(Packet arg0) {
+		this.field4301 = arg0.gFloat();
+		this.field4304 = arg0.gFloat();
+		this.field4305 = arg0.gFloat();
+		this.field4300 = arg0.gFloat();
 	}
 
 	@ObfuscatedName("ov.w(Lalw;)V")
-	public void method6410(class997 arg0) {
-		this.field4301 = arg0.method17916();
-		this.field4304 = arg0.method17916();
-		this.field4305 = arg0.method17916();
-		this.field4300 = arg0.method17916();
+	public void method6410(Packet arg0) {
+		this.field4301 = arg0.gFloat();
+		this.field4304 = arg0.gFloat();
+		this.field4305 = arg0.gFloat();
+		this.field4300 = arg0.gFloat();
 	}
 
 	@ObfuscatedName("ov.l(FFFF)V")

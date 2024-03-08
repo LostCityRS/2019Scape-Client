@@ -15,11 +15,11 @@ public class class882 extends class159 {
 	@ObfuscatedName("agp.k")
 	public final int field10332;
 
-	public class882(class997 arg0) {
+	public class882(Packet arg0) {
 		super(arg0);
-		this.field10330 = arg0.method17906();
-		this.field10331 = arg0.method17906();
-		this.field10332 = arg0.method17904();
+		this.field10330 = arg0.g2();
+		this.field10331 = arg0.g2();
+		this.field10332 = arg0.g1();
 	}
 
 	@ObfuscatedName("agp.n(I)V")

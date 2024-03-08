@@ -14,26 +14,26 @@ public class class600 {
 	@ObfuscatedName("vz.m")
 	public class420 field7539;
 
-	public class600(class997 arg0) {
+	public class600(Packet arg0) {
 		this(arg0, false);
 	}
 
-	public class600(class997 arg0, boolean arg1) {
+	public class600(Packet arg0, boolean arg1) {
 		this(arg0, arg1, true);
 	}
 
-	public class600(class997 arg0, int arg1, boolean arg2) {
+	public class600(Packet arg0, int arg1, boolean arg2) {
 		this(arg0, arg1, arg2, true);
 	}
 
-	public class600(class997 arg0, boolean arg1, boolean arg2) {
-		this(arg0, arg0.method17904(), arg1, arg2);
+	public class600(Packet arg0, boolean arg1, boolean arg2) {
+		this(arg0, arg0.g1(), arg1, arg2);
 	}
 
-	public class600(class997 arg0, int arg1, boolean arg2, boolean arg3) {
+	public class600(Packet arg0, int arg1, boolean arg2, boolean arg3) {
 		boolean var5 = (arg1 & 0x80) != 0;
 		if (arg2) {
-			int var6 = arg0.method17904();
+			int var6 = arg0.g1();
 			this.field7541 = arg1 & 0x7F;
 			this.field7540 = var6;
 		} else {

@@ -228,9 +228,9 @@ public class class376 {
 	public int field3535;
 
 	@ObfuscatedName("nj.e(Lalw;B)V")
-	public void method5960(class997 arg0) {
+	public void method5960(Packet arg0) {
 		while (true) {
-			int var2 = arg0.method17904();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
@@ -239,105 +239,105 @@ public class class376 {
 	}
 
 	@ObfuscatedName("nj.n(Lalw;II)V")
-	public void method5968(class997 arg0, int arg1) {
+	public void method5968(Packet arg0, int arg1) {
 		if (arg1 == 1) {
-			this.field3461 = (short) arg0.method17906();
-			this.field3462 = (short) arg0.method17906();
-			this.field3498 = (short) arg0.method17906();
-			this.field3464 = (short) arg0.method17906();
+			this.field3461 = (short) arg0.g2();
+			this.field3462 = (short) arg0.g2();
+			this.field3498 = (short) arg0.g2();
+			this.field3464 = (short) arg0.g2();
 			byte var3 = 3;
 			this.field3461 = (short) (this.field3461 << var3);
 			this.field3462 = (short) (this.field3462 << var3);
 			this.field3498 = (short) (this.field3498 << var3);
 			this.field3464 = (short) (this.field3464 << var3);
 		} else if (arg1 == 2) {
-			arg0.method17904();
+			arg0.g1();
 		} else if (arg1 == 3) {
-			this.field3514 = arg0.method17910();
-			this.field3505 = arg0.method17910();
+			this.field3514 = arg0.g4s();
+			this.field3505 = arg0.g4s();
 		} else if (arg1 == 4) {
-			this.field3467 = arg0.method17904();
-			this.field3492 = arg0.method17905();
+			this.field3467 = arg0.g1();
+			this.field3492 = arg0.g1b();
 		} else if (arg1 == 5) {
-			this.field3501 = this.field3472 = arg0.method17906() << 12 << 2;
+			this.field3501 = this.field3472 = arg0.g2() << 12 << 2;
 		} else if (arg1 == 6) {
-			this.field3475 = arg0.method17910();
-			this.field3476 = arg0.method17910();
+			this.field3475 = arg0.g4s();
+			this.field3476 = arg0.g4s();
 		} else if (arg1 == 7) {
-			this.field3482 = arg0.method17906();
-			this.field3483 = arg0.method17906();
+			this.field3482 = arg0.g2();
+			this.field3483 = arg0.g2();
 		} else if (arg1 == 8) {
-			this.field3468 = arg0.method17906();
-			this.field3485 = arg0.method17906();
+			this.field3468 = arg0.g2();
+			this.field3485 = arg0.g2();
 		} else if (arg1 == 9) {
-			int var4 = arg0.method17904();
+			int var4 = arg0.g1();
 			this.field3486 = new int[var4];
 			for (int var5 = 0; var5 < var4; var5++) {
-				this.field3486[var5] = arg0.method17906();
+				this.field3486[var5] = arg0.g2();
 			}
 		} else if (arg1 == 10) {
-			int var6 = arg0.method17904();
+			int var6 = arg0.g1();
 			this.field3512 = new int[var6];
 			for (int var7 = 0; var7 < var6; var7++) {
-				this.field3512[var7] = arg0.method17906();
+				this.field3512[var7] = arg0.g2();
 			}
 		} else if (arg1 == 12) {
-			this.field3491 = arg0.method17905();
+			this.field3491 = arg0.g1b();
 		} else if (arg1 == 13) {
-			this.field3493 = arg0.method17905();
+			this.field3493 = arg0.g1b();
 		} else if (arg1 == 14) {
-			this.field3458 = arg0.method17906();
+			this.field3458 = arg0.g2();
 		} else if (arg1 == 15) {
-			this.field3515 = arg0.method17906();
+			this.field3515 = arg0.g2();
 		} else if (arg1 == 16) {
-			this.field3494 = arg0.method17904() == 1;
-			this.field3532 = arg0.method17906();
-			this.field3497 = arg0.method17906();
-			this.field3495 = arg0.method17904() == 1;
+			this.field3494 = arg0.g1() == 1;
+			this.field3532 = arg0.g2();
+			this.field3497 = arg0.g2();
+			this.field3495 = arg0.g1() == 1;
 		} else if (arg1 == 17) {
-			this.field3460 = arg0.method17906();
+			this.field3460 = arg0.g2();
 		} else if (arg1 == 18) {
-			this.field3478 = arg0.method17910();
+			this.field3478 = arg0.g4s();
 		} else if (arg1 == 19) {
-			this.field3504 = arg0.method17904();
+			this.field3504 = arg0.g1();
 		} else if (arg1 == 20) {
-			this.field3466 = arg0.method17904();
+			this.field3466 = arg0.g1();
 		} else if (arg1 == 21) {
-			this.field3480 = arg0.method17904();
+			this.field3480 = arg0.g1();
 		} else if (arg1 == 22) {
-			this.field3469 = arg0.method17910();
+			this.field3469 = arg0.g4s();
 		} else if (arg1 == 23) {
-			this.field3470 = arg0.method17904();
+			this.field3470 = arg0.g1();
 		} else if (arg1 == 24) {
 			this.field3477 = false;
 		} else if (arg1 == 25) {
-			int var8 = arg0.method17904();
+			int var8 = arg0.g1();
 			this.field3487 = new int[var8];
 			for (int var9 = 0; var9 < var8; var9++) {
-				this.field3487[var9] = arg0.method17906();
+				this.field3487[var9] = arg0.g2();
 			}
 		} else if (arg1 == 26) {
 			this.field3499 = false;
 		} else if (arg1 == 27) {
-			this.field3473 = arg0.method17906() << 12 << 2;
+			this.field3473 = arg0.g2() << 12 << 2;
 		} else if (arg1 == 28) {
-			this.field3531 = arg0.method17904();
+			this.field3531 = arg0.g1();
 		} else {
 			int var10003;
 			if (arg1 == 29) {
-				if (arg0.method17904() == 0) {
-					var10003 = arg0.method17973();
+				if (arg0.g1() == 0) {
+					var10003 = arg0.g2s();
 					this.field3471 = var10003 * 64;
 					this.field3533 = var10003 * 64;
 				} else {
-					this.field3533 = arg0.method17973() * 64;
-					this.field3471 = arg0.method17973() * 64;
+					this.field3533 = arg0.g2s() * 64;
+					this.field3471 = arg0.g2s() * 64;
 				}
 			} else if (arg1 == 30) {
 				this.field3506 = true;
 			} else if (arg1 == 31) {
-				this.field3501 = arg0.method17906() << 12 << 2;
-				this.field3472 = arg0.method17906() << 12 << 2;
+				this.field3501 = arg0.g2() << 12 << 2;
+				this.field3472 = arg0.g2() << 12 << 2;
 			} else if (arg1 == 32) {
 				this.field3496 = false;
 			} else if (arg1 == 33) {
@@ -345,14 +345,14 @@ public class class376 {
 			} else if (arg1 == 34) {
 				this.field3526 = false;
 			} else if (arg1 == 35) {
-				if (arg0.method17904() == 0) {
-					var10003 = arg0.method17973();
+				if (arg0.g1() == 0) {
+					var10003 = arg0.g2s();
 					this.field3502 = var10003 * 8;
 					this.field3525 = var10003 * 8;
 				} else {
-					this.field3525 = arg0.method17973() * 8;
-					this.field3502 = arg0.method17973() * 8;
-					this.field3503 = arg0.method17904();
+					this.field3525 = arg0.g2s() * 8;
+					this.field3502 = arg0.g2s() * 8;
+					this.field3503 = arg0.g1();
 				}
 			} else if (arg1 == 36) {
 				this.field3510 = true;

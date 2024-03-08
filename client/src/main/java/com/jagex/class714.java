@@ -16,7 +16,7 @@ public abstract class class714 {
 	public abstract void method14131(float arg0);
 
 	@ObfuscatedName("aax.w(Lalw;I)V")
-	public abstract void method14132(class997 arg0);
+	public abstract void method14132(Packet arg0);
 
 	@ObfuscatedName("aax.m(I)Lox;")
 	public abstract class423 method14133();

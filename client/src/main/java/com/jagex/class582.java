@@ -80,9 +80,9 @@ public class class582 implements class53 {
 	}
 
 	@ObfuscatedName("vb.e(Lalw;B)V")
-	public void method976(class997 arg0) {
+	public void method976(Packet arg0) {
 		while (true) {
-			int var2 = arg0.method17904();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
@@ -91,68 +91,68 @@ public class class582 implements class53 {
 	}
 
 	@ObfuscatedName("vb.u(Lalw;II)V")
-	public void method9257(class997 arg0, int arg1) {
+	public void method9257(Packet arg0, int arg1) {
 		if (arg1 == 1) {
-			this.field7310 = arg0.method17927();
+			this.field7310 = arg0.gSmart2or4null();
 		} else if (arg1 == 2) {
-			this.field7296 = arg0.method17908();
+			this.field7296 = arg0.g3();
 			this.field7294 = true;
 		} else if (arg1 == 3) {
-			this.field7295 = arg0.method17927();
+			this.field7295 = arg0.gSmart2or4null();
 		} else if (arg1 == 4) {
-			this.field7300 = arg0.method17927();
+			this.field7300 = arg0.gSmart2or4null();
 		} else if (arg1 == 5) {
-			this.field7299 = arg0.method17927();
+			this.field7299 = arg0.gSmart2or4null();
 		} else if (arg1 == 6) {
-			this.field7301 = arg0.method17927();
+			this.field7301 = arg0.gSmart2or4null();
 		} else if (arg1 == 7) {
-			this.field7302 = arg0.method17973();
+			this.field7302 = arg0.g2s();
 		} else if (arg1 == 8) {
-			this.field7305 = arg0.method17919();
+			this.field7305 = arg0.gjstr2();
 		} else if (arg1 == 9) {
-			this.field7297 = arg0.method17906();
+			this.field7297 = arg0.g2();
 		} else if (arg1 == 10) {
-			this.field7306 = arg0.method17973();
+			this.field7306 = arg0.g2s();
 		} else if (arg1 == 11) {
 			this.field7304 = 0;
 		} else if (arg1 == 12) {
-			this.field7309 = arg0.method17904();
+			this.field7309 = arg0.g1();
 		} else if (arg1 == 13) {
-			this.field7289 = arg0.method17973();
+			this.field7289 = arg0.g2s();
 		} else if (arg1 == 14) {
-			this.field7304 = arg0.method17906();
+			this.field7304 = arg0.g2();
 		} else if (arg1 == 16) {
-			this.field7308 = arg0.method17973();
-			this.field7288 = arg0.method17973();
+			this.field7308 = arg0.g2s();
+			this.field7288 = arg0.g2s();
 		} else if (arg1 == 17 || arg1 == 18) {
-			this.field7311 = arg0.method17906();
+			this.field7311 = arg0.g2();
 			if (this.field7311 == 65535) {
 				this.field7311 = -1;
 			}
-			this.field7312 = arg0.method17906();
+			this.field7312 = arg0.g2();
 			if (this.field7312 == 65535) {
 				this.field7312 = -1;
 			}
 			int var3 = -1;
 			if (arg1 == 18) {
-				var3 = arg0.method17906();
+				var3 = arg0.g2();
 				if (var3 == 65535) {
 					var3 = -1;
 				}
 			}
-			int var4 = arg0.method17904();
+			int var4 = arg0.g1();
 			this.field7298 = new int[var4 + 2];
 			for (int var5 = 0; var5 <= var4; var5++) {
-				this.field7298[var5] = arg0.method17906();
+				this.field7298[var5] = arg0.g2();
 				if (this.field7298[var5] == 65535) {
 					this.field7298[var5] = -1;
 				}
 			}
 			this.field7298[var4 + 1] = var3;
 		} else if (arg1 == 19) {
-			this.field7313 = arg0.method17906();
+			this.field7313 = arg0.g2();
 		} else if (arg1 == 20) {
-			this.field7314 = arg0.method17906();
+			this.field7314 = arg0.g2();
 		}
 	}
 

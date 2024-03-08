@@ -24,7 +24,7 @@ public class class380 implements class381 {
 		byte[] var3 = this.field3563.method6879(0, arg0);
 		class376 var4 = new class376();
 		if (var3 != null) {
-			var4.method5960(new class997(var3));
+			var4.method5960(new Packet(var3));
 		}
 		var4.method5965();
 		this.field3562.method2921(var4, (long) arg0);

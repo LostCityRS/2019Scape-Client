@@ -9,9 +9,9 @@ public class class165 implements class53, class757 {
 	public boolean[] field1793;
 
 	@ObfuscatedName("fm.e(Lalw;B)V")
-	public void method976(class997 arg0) {
+	public void method976(Packet arg0) {
 		while (true) {
-			int var2 = arg0.method17904();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
@@ -20,19 +20,19 @@ public class class165 implements class53, class757 {
 	}
 
 	@ObfuscatedName("fm.u(Lalw;II)V")
-	public void method2997(class997 arg0, int arg1) {
+	public void method2997(Packet arg0, int arg1) {
 		if (arg1 == 2) {
 			this.field1793 = new boolean[400];
-			int var3 = arg0.method18123();
+			int var3 = arg0.gSmart1or2();
 			for (int var4 = 0; var4 < var3; var4++) {
-				this.field1793[arg0.method18123()] = true;
+				this.field1793[arg0.gSmart1or2()] = true;
 			}
 		} else if (arg1 == 3) {
-			arg0.method17904();
-			int var5 = arg0.method18123();
+			arg0.g1();
+			int var5 = arg0.gSmart1or2();
 			for (int var6 = 0; var6 < var5; var6++) {
-				arg0.method18123();
-				arg0.method17904();
+				arg0.gSmart1or2();
+				arg0.g1();
 			}
 		}
 	}

@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("afj")
 public class class864 extends class159 {
 
-	public class864(class997 arg0) {
+	public class864(Packet arg0) {
 		super(arg0);
 	}
 

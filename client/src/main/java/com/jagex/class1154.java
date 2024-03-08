@@ -19,9 +19,9 @@ public class class1154 extends class978 {
 	}
 
 	@ObfuscatedName("arg.e(Lalw;B)V")
-	public void method17726(class997 arg0) {
-		this.field12220 = arg0.method17910();
-		this.field12221 = arg0.method17914();
+	public void method17726(Packet arg0) {
+		this.field12220 = arg0.g4s();
+		this.field12221 = arg0.g8();
 	}
 
 	@ObfuscatedName("arg.n(Lkr;I)V")

@@ -33,33 +33,33 @@ public class class626 {
 		byte[] var2 = arg0.method6894(class628.field7710.field7708);
 		if (var2 == null) {
 		}
-		this.method9854(new class997(var2));
+		this.method9854(new Packet(var2));
 	}
 
 	@ObfuscatedName("wh.e(Lalw;S)V")
-	public void method9854(class997 arg0) {
+	public void method9854(Packet arg0) {
 		while (true) {
-			int var2 = arg0.method17904();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
 			if (var2 == 1) {
-				this.field7690 = arg0.method17910();
+				this.field7690 = arg0.g4s();
 			} else if (var2 == 2) {
-				this.field7691 = arg0.method17910();
+				this.field7691 = arg0.g4s();
 			} else if (var2 == 3) {
-				this.field7692 = arg0.method17910();
+				this.field7692 = arg0.g4s();
 			} else if (var2 == 4) {
-				this.field7693 = arg0.method17904();
+				this.field7693 = arg0.g1();
 			} else if (var2 == 5) {
-				this.field7694 = arg0.method17904();
+				this.field7694 = arg0.g1();
 			} else if (var2 == 6) {
-				this.field7695 = arg0.method17910();
+				this.field7695 = arg0.g4s();
 			} else if (var2 == 7) {
-				this.field7686 = arg0.method17910();
+				this.field7686 = arg0.g4s();
 			} else if (var2 >= 100) {
 				var2 -= 100;
-				this.field7697[var2 & (int) (Math.pow(2.0D, 3.0D) - 1.0D)][var2 >> 3] = arg0.method17906();
+				this.field7697[var2 & (int) (Math.pow(2.0D, 3.0D) - 1.0D)][var2 >> 3] = arg0.g2();
 			}
 		}
 	}

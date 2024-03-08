@@ -19,25 +19,25 @@ public class class804 {
 
 	@ObfuscatedName("adv.e([BI)[B")
 	public byte[] method15246(byte[] arg0) {
-		class997 var2 = new class997(arg0);
-		var2.field11503 = (arg0.length - 4);
-		int var3 = var2.method17911();
+		Packet var2 = new Packet(arg0);
+		var2.pos = (arg0.length - 4);
+		int var3 = var2.ig4s();
 		byte[] var4 = new byte[var3];
-		var2.field11503 = 0;
+		var2.pos = 0;
 		this.method15245(var2, var4);
 		return var4;
 	}
 
 	@ObfuscatedName("adv.n(Lalw;[BS)V")
-	public void method15245(class997 arg0, byte[] arg1) {
-		if (arg0.field11502[arg0.field11503] != 31 || arg0.field11502[arg0.field11503 + 1] != -117) {
+	public void method15245(Packet arg0, byte[] arg1) {
+		if (arg0.data[arg0.pos] != 31 || arg0.data[arg0.pos + 1] != -117) {
 			throw new RuntimeException("");
 		}
 		if (this.field9252 == null) {
 			this.field9252 = new Inflater(true);
 		}
 		try {
-			this.field9252.setInput(arg0.field11502, arg0.field11503 + 10, arg0.field11502.length - (arg0.field11503 + 10 + 8));
+			this.field9252.setInput(arg0.data, arg0.pos + 10, arg0.data.length - (arg0.pos + 10 + 8));
 			this.field9252.inflate(arg1);
 		} catch (Exception var4) {
 			this.field9252.reset();

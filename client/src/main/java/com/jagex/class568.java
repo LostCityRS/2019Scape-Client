@@ -21,9 +21,9 @@ public class class568 implements class53, class757 {
 	public int field7236 = 0;
 
 	@ObfuscatedName("uv.e(Lalw;B)V")
-	public void method976(class997 arg0) {
+	public void method976(Packet arg0) {
 		while (true) {
-			int var2 = arg0.method17904();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
@@ -32,22 +32,22 @@ public class class568 implements class53, class757 {
 	}
 
 	@ObfuscatedName("uv.u(Lalw;IB)V")
-	public void method9176(class997 arg0, int arg1) {
+	public void method9176(Packet arg0, int arg1) {
 		if (arg1 == 1) {
-			this.field7233 = arg0.method17906();
+			this.field7233 = arg0.g2();
 		} else if (arg1 == 2) {
-			this.field7232 = new int[arg0.method17904()];
+			this.field7232 = new int[arg0.g1()];
 			for (int var3 = 0; var3 < this.field7232.length; var3++) {
-				this.field7232[var3] = arg0.method17906();
+				this.field7232[var3] = arg0.g2();
 			}
 		} else if (arg1 == 3) {
-			this.field7234 = arg0.method17904();
+			this.field7234 = arg0.g1();
 		} else if (arg1 == 4) {
-			this.field7235 = (class569) class686.method1897(class569.method8341(), arg0.method17904());
+			this.field7235 = (class569) class686.method1897(class569.method8341(), arg0.g1());
 		} else if (arg1 == 5) {
-			this.field7236 = arg0.method17927();
+			this.field7236 = arg0.gSmart2or4null();
 		} else if (arg1 == 6) {
-			arg0.method17927();
+			arg0.gSmart2or4null();
 		}
 	}
 

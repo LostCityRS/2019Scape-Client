@@ -18,9 +18,9 @@ public class class810 extends class986 implements class53, class757 {
 	public int field9263 = 0;
 
 	@ObfuscatedName("ady.e(Lalw;B)V")
-	public void method976(class997 arg0) {
+	public void method976(Packet arg0) {
 		while (true) {
-			int var2 = arg0.method17904();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
@@ -29,16 +29,16 @@ public class class810 extends class986 implements class53, class757 {
 	}
 
 	@ObfuscatedName("ady.u(Lalw;II)V")
-	public void method15306(class997 arg0, int arg1) {
+	public void method15306(Packet arg0, int arg1) {
 		if (arg1 == 2) {
-			this.field9263 = arg0.method17906();
+			this.field9263 = arg0.g2();
 		} else if (arg1 == 4) {
-			this.field9264 = arg0.method17904();
+			this.field9264 = arg0.g1();
 			this.field9266 = new int[this.field9264];
 			this.field9265 = new int[this.field9264];
 			for (int var3 = 0; var3 < this.field9264; var3++) {
-				this.field9266[var3] = arg0.method17906();
-				this.field9265[var3] = arg0.method17906();
+				this.field9266[var3] = arg0.g2();
+				this.field9265[var3] = arg0.g2();
 			}
 		}
 	}

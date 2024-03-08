@@ -97,12 +97,12 @@ public class class428 {
 		}
 	}
 
-	public class428(class997 arg0) {
-		int var2 = arg0.method18123();
+	public class428(Packet arg0) {
+		int var2 = arg0.gSmart1or2();
 		this.field4324[0] = new class427();
 		this.field4324[0].method6740(0, class423.method6485(arg0));
 		this.field4324[0].method6740(1, class423.method6485(arg0));
-		this.field4325[0] = arg0.method17916();
+		this.field4325[0] = arg0.gFloat();
 		class423 var3 = class423.method6485(arg0);
 		class423 var4 = class423.method6485(arg0);
 		class423 var5 = class423.method6528(var3, var4);
@@ -110,14 +110,14 @@ public class class428 {
 		var5.method6497(var3);
 		this.field4324[0].method6740(3, var3);
 		this.field4324[0].method6740(2, var5);
-		this.field4325[1] = arg0.method17916();
+		this.field4325[1] = arg0.gFloat();
 		for (int var7 = 2; var7 < var2; var7++) {
 			class423 var8 = class423.method6485(arg0);
 			class423 var9 = class423.method6485(arg0);
 			class423 var10 = class423.method6528(var8, var9);
 			var9.method6486();
 			var10.method6497(var8);
-			this.method6774(var8, var10, arg0.method17916());
+			this.method6774(var8, var10, arg0.gFloat());
 		}
 	}
 }

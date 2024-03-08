@@ -50,7 +50,7 @@ public class class768 {
 		class1186 var4 = new class1186();
 		var4.field12380 = this;
 		if (var3 != null) {
-			var4.method19526(new class997(var3));
+			var4.method19526(new Packet(var3));
 		}
 		if (arg0 >= 32768) {
 			var4.method19511();

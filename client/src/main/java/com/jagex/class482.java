@@ -26,33 +26,33 @@ public class class482 {
 	public class482() {
 	}
 
-	public class482(class997 arg0, class808 arg1) {
-		this.field4957 = arg0.method17905();
-		this.field4959 = arg0.method17906();
-		this.field4961 = arg0.method17910();
-		this.field4960 = arg0.method17910();
-		this.field4958 = arg0.method17910();
-		this.field4962 = arg0.method17910();
+	public class482(Packet arg0, class808 arg1) {
+		this.field4957 = arg0.g1b();
+		this.field4959 = arg0.g2();
+		this.field4961 = arg0.g4s();
+		this.field4960 = arg0.g4s();
+		this.field4958 = arg0.g4s();
+		this.field4962 = arg0.g4s();
 		if (arg1 != null) {
 			method972(arg0, arg1);
 		}
 	}
 
 	@ObfuscatedName("aj.e(Lalw;Ladd;I)Labn;")
-	public static class747 method972(class997 arg0, class808 arg1) {
+	public static class747 method972(Packet arg0, class808 arg1) {
 		class747 var2 = new class747(arg1);
 		while (true) {
-			int var3 = arg0.method17904();
+			int var3 = arg0.g1();
 			if (var3 == 255) {
 				return var2;
 			}
 			class470 var4 = (class470) class686.method17657(class470.class, var3);
 			while (true) {
-				int var5 = arg0.method17904();
+				int var5 = arg0.g1();
 				if (var5 == 255) {
 					break;
 				}
-				arg0.field11503 -= -1445626955;
+				arg0.pos -= -1445626955;
 				class413 var6 = arg1.method15285(arg0, var4);
 				if (var6 != null) {
 					var2.method14735(var6.field4240, var6.field4239);

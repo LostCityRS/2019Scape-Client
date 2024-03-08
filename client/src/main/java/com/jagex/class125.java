@@ -37,8 +37,8 @@ public class class125 {
 		field1454 = false;
 		this.field1453 = new class118[this.field1451];
 		for (int var1 = 0; var1 < this.field1451; var1++) {
-			class997 var2 = new class997(this.field1452.method6879(0, var1));
-			if (var2.field11502 == null) {
+			Packet var2 = new Packet(this.field1452.method6879(0, var1));
+			if (var2.data == null) {
 				this.field1453[var1] = null;
 			} else {
 				try {

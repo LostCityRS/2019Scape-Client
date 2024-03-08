@@ -26,9 +26,9 @@ public abstract class class149 implements class50 {
 	}
 
 	@ObfuscatedName("ec.e(Lalw;B)V")
-	public void method976(class997 arg0) {
+	public void method976(Packet arg0) {
 		while (true) {
-			int var2 = arg0.method17904();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
@@ -41,17 +41,17 @@ public abstract class class149 implements class50 {
 						this.field1703 = false;
 						break;
 					case 1:
-						int var4 = arg0.method17904();
+						int var4 = arg0.g1();
 						this.field1704 = (class463) class686.method1897(class463.method7293(), var4);
 						if (this.field1704 != null) {
 							break;
 						}
 						throw new IllegalStateException("");
 					case 2:
-						arg0.method17919();
+						arg0.gjstr2();
 						break;
 					case 3:
-						class686.method1897(class456.method5925(), arg0.method17904());
+						class686.method1897(class456.method5925(), arg0.g1());
 						break;
 					case 4:
 					default:
@@ -59,7 +59,7 @@ public abstract class class149 implements class50 {
 					case 5:
 						break;
 					case 6:
-						this.field1705 = (class457) class686.method1897(class457.method748(), arg0.method17904());
+						this.field1705 = (class457) class686.method1897(class457.method748(), arg0.g1());
 				}
 			}
 		}
@@ -76,5 +76,5 @@ public abstract class class149 implements class50 {
 	}
 
 	@ObfuscatedName("ec.u(Lalw;IS)V")
-	public abstract void method2780(class997 arg0, int arg1);
+	public abstract void method2780(Packet arg0, int arg1);
 }

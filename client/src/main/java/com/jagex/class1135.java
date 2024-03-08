@@ -63,13 +63,13 @@ public class class1135 extends class911 {
 	}
 
 	@ObfuscatedName("aqt.ac(Lalw;IS)V")
-	public void method16724(class997 arg0, int arg1) {
+	public void method16724(Packet arg0, int arg1) {
 		this.field12094 = new float[arg1];
 		this.field12093 = new float[arg1];
 		this.field12095 = 0;
 		for (int var3 = 0; var3 < arg1; var3++) {
-			this.field12094[var3] = arg0.method17916();
-			this.field12093[var3] = arg0.method17916();
+			this.field12094[var3] = arg0.gFloat();
+			this.field12093[var3] = arg0.gFloat();
 		}
 	}
 }

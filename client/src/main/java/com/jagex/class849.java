@@ -1764,7 +1764,7 @@ public class class849 extends class133 {
 			var2.method19553(1.0F);
 			var2.method19553(0.0F);
 		}
-		this.field10013 = this.method15767(20, var2.field11502, var2.field11503, false);
+		this.field10013 = this.method15767(20, var2.data, var2.pos, false);
 		this.field9918 = new class83(this.field10013, 5126, 3, 0);
 		this.field10012 = new class83(this.field10013, 5126, 2, 12);
 		this.field9978.method1323(this);

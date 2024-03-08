@@ -27,9 +27,9 @@ public class class1016 extends class649 {
 			return;
 		}
 		class983 var2 = Statics.method1604(class390.field3688, client.field10849.field794);
-		var2.field11432.method17886(var1.method17831() | var1.method17832() << 16);
-		var2.field11432.method18081(this.method10262(var1, 65535));
-		var2.field11432.method17937(var1.method19539() << 1 | var1.method19537() & 0x1);
+		var2.field11432.p4(var1.method17831() | var1.method17832() << 16);
+		var2.field11432.p2_alt1(this.method10262(var1, 65535));
+		var2.field11432.p1_alt1(var1.method19539() << 1 | var1.method19537() & 0x1);
 		client.field10849.method934(var2);
 		var1.method17835();
 	}
@@ -45,8 +45,8 @@ public class class1016 extends class649 {
 	}
 
 	@ObfuscatedName("alp.j(Lalw;Lasp;I)V")
-	public void method18345(class997 arg0, class1188 arg1) {
-		arg0.method18001(arg1.method19537());
+	public void method18345(Packet arg0, class1188 arg1) {
+		arg0.p1(arg1.method19537());
 	}
 
 	@ObfuscatedName("alp.f(I)I")
@@ -55,7 +55,7 @@ public class class1016 extends class649 {
 	}
 
 	@ObfuscatedName("alp.w(Lalw;Lakm;I)V")
-	public void method10264(class997 arg0, class993 arg1) {
+	public void method10264(Packet arg0, class993 arg1) {
 		this.method18345(arg0, (class1188) arg1);
 	}
 }

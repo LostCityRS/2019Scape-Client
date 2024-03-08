@@ -102,7 +102,7 @@ public class class648 {
 		field7948.method10280();
 		if (client.field10822 > 0) {
 			class983 var0 = Statics.method1604(class390.field3769, client.field10849.field794);
-			var0.field11432.method17945(client.field10822 * 4);
+			var0.field11432.p2(client.field10822 * 4);
 			for (int var1 = 0; var1 < client.field10822; var1++) {
 				class565 var2 = client.field11024[var1];
 				long var3 = var2.method9133() - field7947;
@@ -110,8 +110,8 @@ public class class648 {
 					var3 = 16777215L;
 				}
 				field7947 = var2.method9133();
-				var0.field11432.method18001(var2.method9141());
-				var0.field11432.method17885((int) var3);
+				var0.field11432.p1(var2.method9141());
+				var0.field11432.p3((int) var3);
 			}
 			client.field10849.method934(var0);
 		}
@@ -136,23 +136,23 @@ public class class648 {
 				var8 = 0;
 			}
 			class983 var9 = Statics.method1604(class390.field3719, client.field10849.field794);
-			var9.field11432.method17947(var8);
-			var9.field11432.method17945(var6);
+			var9.field11432.p2_alt3(var8);
+			var9.field11432.p2(var6);
 			client.field10849.method934(var9);
 		}
 		if (Statics.field8491 != field7944) {
 			field7944 = Statics.field8491;
 			class983 var10 = Statics.method1604(class390.field3775, client.field10849.field794);
-			var10.field11432.method18001(Statics.field8491 ? 1 : 0);
+			var10.field11432.p1(Statics.field8491 ? 1 : 0);
 			client.field10849.method934(var10);
 		}
 		if (!client.field10800) {
 			class983 var11 = Statics.method1604(class390.field3699, client.field10849.field794);
-			var11.field11432.method18001(0);
-			int var12 = var11.field11432.field11503;
-			class997 var13 = Statics.field688.method18156();
-			var11.field11432.method17896(var13.field11502, 0, var13.field11503);
-			var11.field11432.method18028(var11.field11432.field11503 - var12);
+			var11.field11432.p1(0);
+			int var12 = var11.field11432.pos;
+			Packet var13 = Statics.field688.method18156();
+			var11.field11432.pdata(var13.data, 0, var13.pos);
+			var11.field11432.psize1(var11.field11432.pos - var12);
 			client.field10849.method934(var11);
 			client.field10800 = true;
 		}
@@ -161,12 +161,12 @@ public class class648 {
 		}
 		int[] var14 = Statics.field8198.method2413();
 		class983 var15 = Statics.method1604(class390.field3791, client.field10849.field794);
-		var15.field11432.method17945(0);
-		int var16 = var15.field11432.field11503;
+		var15.field11432.p2(0);
+		int var16 = var15.field11432.pos;
 		if (var14 == null || var14.length == 0) {
-			var15.field11432.method18001(0);
+			var15.field11432.p1(0);
 		} else {
-			var15.field11432.method18001(1);
+			var15.field11432.p1(1);
 			class81[] var17 = class81.method1304();
 			HashSet var18 = new HashSet();
 			ArrayList var19 = new ArrayList();
@@ -174,7 +174,7 @@ public class class648 {
 			label94: while (true) {
 				if (var20 >= var14.length) {
 					class686.method618(var18, var15.field11432);
-					var15.field11432.method18143(var19.size());
+					var15.field11432.pSmart1or2(var19.size());
 					if (var19.size() <= 0) {
 						break;
 					}
@@ -186,7 +186,7 @@ public class class648 {
 							var23 = var25;
 						}
 					}
-					var15.field11432.method17902(var23);
+					var15.field11432.pSmart2or4(var23);
 					Iterator var26 = var19.iterator();
 					while (true) {
 						if (!var26.hasNext()) {
@@ -194,7 +194,7 @@ public class class648 {
 						}
 						Integer var27 = (Integer) var26.next();
 						if (var27 != var23) {
-							var15.field11432.method17902(var27 - var23);
+							var15.field11432.pSmart2or4(var27 - var23);
 						}
 					}
 				}
@@ -212,7 +212,7 @@ public class class648 {
 				var20++;
 			}
 		}
-		var15.field11432.method17898(var15.field11432.field11503 - var16);
+		var15.field11432.psize2(var15.field11432.pos - var16);
 		client.field10849.method934(var15);
 		client.field10801 = true;
 	}

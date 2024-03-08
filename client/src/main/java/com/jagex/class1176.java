@@ -61,9 +61,9 @@ public class class1176 extends class986 {
 			}
 		}
 		boolean var3 = true;
-		class997 var4 = new class997(this.field12314);
-		int var5 = var4.method17904();
-		int var6 = var4.method17906();
+		Packet var4 = new Packet(this.field12314);
+		int var5 = var4.g1();
+		int var6 = var4.g2();
 		class442 var7 = Statics.field8302;
 		boolean var8;
 		synchronized (Statics.field8302) {
@@ -82,16 +82,16 @@ public class class1176 extends class986 {
 	}
 
 	@ObfuscatedName("ard.m(Lalw;IB)V")
-	public void method19379(class997 arg0, int arg1) {
-		this.field12316 = arg0.method17906();
-		this.field12313 = arg0.method17906();
-		this.field12319 = arg0.method17904();
-		int var3 = arg0.method17906();
+	public void method19379(Packet arg0, int arg1) {
+		this.field12316 = arg0.g2();
+		this.field12313 = arg0.g2();
+		this.field12319 = arg0.g1();
+		int var3 = arg0.g2();
 		this.field12322 = new class124[this.field12317.field11313][];
 		for (int var4 = 0; var4 < var3; var4++) {
-			class115 var5 = class115.method19197(arg0.method17904());
-			int var6 = arg0.method17922();
-			class100 var7 = class100.method8644(arg0.method17904());
+			class115 var5 = class115.method19197(arg0.g1());
+			int var6 = arg0.gSmart1or2s();
+			class100 var7 = class100.method8644(arg0.g1());
 			class124 var8 = new class124();
 			var8.method2036(arg0, arg1);
 			int var9 = var5.method1674();

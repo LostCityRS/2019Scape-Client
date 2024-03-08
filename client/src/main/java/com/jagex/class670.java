@@ -105,6 +105,6 @@ public class class670 {
 
 	@ObfuscatedName("ek.k([BS)Lasc;")
 	public static class1185 method2817(byte[] arg0) {
-		return new class1185(new class997(arg0), Statics.field4626);
+		return new class1185(new Packet(arg0), Statics.field4626);
 	}
 }

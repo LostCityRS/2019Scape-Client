@@ -34,9 +34,9 @@ public class class754 implements class53, class757 {
 	public HashMap field8782;
 
 	@ObfuscatedName("abm.e(Lalw;B)V")
-	public void method976(class997 arg0) {
+	public void method976(Packet arg0) {
 		while (true) {
-			int var2 = arg0.method17904();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
@@ -45,46 +45,46 @@ public class class754 implements class53, class757 {
 	}
 
 	@ObfuscatedName("abm.u(Lalw;II)V")
-	public void method14852(class997 arg0, int arg1) {
+	public void method14852(Packet arg0, int arg1) {
 		if (arg1 == 1) {
-			char var3 = Statics.method9576(arg0.method17905());
+			char var3 = Statics.method9576(arg0.g1b());
 			this.field8781 = Statics.method7300(var3);
 		} else if (arg1 == 2) {
-			char var4 = Statics.method9576(arg0.method17905());
+			char var4 = Statics.method9576(arg0.g1b());
 			this.field8775 = Statics.method7300(var4);
 		} else if (arg1 == 3) {
-			this.field8777 = arg0.method17918();
+			this.field8777 = arg0.gjstr();
 		} else if (arg1 == 4) {
-			this.field8778 = arg0.method17910();
+			this.field8778 = arg0.g4s();
 		} else if (arg1 == 5 || arg1 == 6) {
-			this.field8776 = arg0.method17906();
+			this.field8776 = arg0.g2();
 			this.field8779 = new HashMap(this.field8776);
 			for (int var8 = 0; var8 < this.field8776; var8++) {
-				int var9 = arg0.method17910();
+				int var9 = arg0.g4s();
 				Object var10;
 				if (arg1 == 5) {
-					var10 = arg0.method17918();
+					var10 = arg0.gjstr();
 				} else {
-					var10 = Integer.valueOf(arg0.method17910());
+					var10 = Integer.valueOf(arg0.g4s());
 				}
 				this.field8779.put(Integer.valueOf(var9), var10);
 			}
 		} else if (arg1 == 7 || arg1 == 8) {
-			int var5 = arg0.method17906();
-			this.field8776 = arg0.method17906();
+			int var5 = arg0.g2();
+			this.field8776 = arg0.g2();
 			this.field8780 = new Object[var5];
 			for (int var6 = 0; var6 < this.field8776; var6++) {
-				int var7 = arg0.method17906();
+				int var7 = arg0.g2();
 				if (arg1 == 7) {
-					this.field8780[var7] = arg0.method17918();
+					this.field8780[var7] = arg0.gjstr();
 				} else {
-					this.field8780[var7] = Integer.valueOf(arg0.method17910());
+					this.field8780[var7] = Integer.valueOf(arg0.g4s());
 				}
 			}
 		} else if (arg1 == 101) {
-			this.field8781 = (class463) class686.method1897(class463.method7293(), arg0.method18123());
+			this.field8781 = (class463) class686.method1897(class463.method7293(), arg0.gSmart1or2());
 		} else if (arg1 == 102) {
-			this.field8775 = (class463) class686.method1897(class463.method7293(), arg0.method18123());
+			this.field8775 = (class463) class686.method1897(class463.method7293(), arg0.gSmart1or2());
 		}
 	}
 

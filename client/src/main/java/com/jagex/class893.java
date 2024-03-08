@@ -25,12 +25,12 @@ public class class893 extends class274 {
 	}
 
 	@ObfuscatedName("ahc.fz(Lalw;II)V")
-	public void method16604(class997 arg0, int arg1) {
-		int var3 = arg0.field11503;
-		int var4 = arg0.method17904();
+	public void method16604(Packet arg0, int arg1) {
+		int var3 = arg0.pos;
+		int var4 = arg0.g1();
 		this.method4683(class268.method4461(var4 & 0x1));
 		if ((var4 & 0x8) != 0) {
-			class263 var5 = class263.method3259(arg0.method17904());
+			class263 var5 = class263.method3259(arg0.g1());
 			if (this.field2845 != var5) {
 				try {
 					this.method4684(var5, true);
@@ -40,7 +40,7 @@ public class class893 extends class274 {
 			}
 		}
 		if ((var4 & 0x10) != 0) {
-			class266 var7 = class266.method1058(arg0.method17904());
+			class266 var7 = class266.method1058(arg0.g1());
 			if (this.field2847 != var7) {
 				try {
 					this.method4688(var7, true);
@@ -50,7 +50,7 @@ public class class893 extends class274 {
 			}
 		}
 		if ((var4 >> 7 & 0x1) == 1) {
-			int var9 = arg0.method17906();
+			int var9 = arg0.g2();
 			if ((var9 >> class264.field2810.field2803 & 0x1) == 1) {
 				this.field2853.method6490(arg0);
 			}
@@ -64,34 +64,34 @@ public class class893 extends class274 {
 				this.field2867.method6490(arg0);
 			}
 			if ((var9 >> class264.field2798.field2803 & 0x1) == 1) {
-				this.field2855 = arg0.method17916();
-				this.field2859 = arg0.method17916();
+				this.field2855 = arg0.gFloat();
+				this.field2859 = arg0.gFloat();
 			}
 			if ((var9 >> class264.field2801.field2803 & 0x1) == 1) {
-				this.field2872 = arg0.method17916();
-				this.field2868 = arg0.method17916();
+				this.field2872 = arg0.gFloat();
+				this.field2868 = arg0.gFloat();
 			}
 			if ((var9 >> class264.field2802.field2803 & 0x1) == 1) {
-				this.field2844 = class269.method16906(arg0.method17904());
+				this.field2844 = class269.method16906(arg0.g1());
 			}
 			if ((var9 >> class264.field2806.field2803 & 0x1) == 1) {
-				this.field2851 = arg0.method17908();
-				arg0.method17904();
+				this.field2851 = arg0.g3();
+				arg0.g1();
 			}
 			if ((var9 >> class264.field2804.field2803 & 0x1) == 1) {
-				int var10 = arg0.method17904();
+				int var10 = arg0.g1();
 				this.field2862 = (var10 & 0x1) == 1;
 				this.field2875 = (var10 & 0x2) == 2;
 			}
 			if ((var9 >> class264.field2805.field2803 & 0x1) == 1) {
-				int var11 = arg0.method17904();
+				int var11 = arg0.g1();
 				for (int var12 = 0; var12 < var11; var12++) {
-					int var13 = arg0.method17904();
-					int var14 = arg0.method17904();
+					int var13 = arg0.g1();
+					int var14 = arg0.g1();
 					if (var13 == 0) {
 						this.method4703(var14);
 					} else {
-						class247 var15 = Statics.method5101(arg0.method17904());
+						class247 var15 = Statics.method5101(arg0.g1());
 						boolean var16 = true;
 						Iterator var17 = this.field2878.iterator();
 						while (var17.hasNext()) {
@@ -109,23 +109,23 @@ public class class893 extends class274 {
 				}
 			}
 			if ((var9 >> class264.field2811.field2803 & 0x1) == 1) {
-				this.field2876 = arg0.method17906();
-				this.field2877 = arg0.method17916();
+				this.field2876 = arg0.g2();
+				this.field2877 = arg0.gFloat();
 			}
 			if ((var9 >> class264.field2807.field2803 & 0x1) == 1) {
-				this.field2842 = class267.method17805(arg0.method17904());
+				this.field2842 = class267.method17805(arg0.g1());
 			}
 			if ((var9 >> class264.field2808.field2803 & 0x1) == 1) {
 				this.field2864.method6490(arg0);
 				this.field2865.method6490(arg0);
-				this.field2866 = arg0.method17916();
-				this.field2843 = arg0.method17916();
+				this.field2866 = arg0.gFloat();
+				this.field2843 = arg0.gFloat();
 			}
 			if ((var9 >> class264.field2796.field2803 & 0x1) == 1) {
-				arg0.method17916();
+				arg0.gFloat();
 			}
 			if ((var9 >> class264.field2800.field2803 & 0x1) == 1) {
-				this.field2852 = arg0.method17916();
+				this.field2852 = arg0.gFloat();
 			}
 		}
 		if (this.field2846 != null && (var4 >> 5 & 0x1) == 1) {
@@ -134,8 +134,8 @@ public class class893 extends class274 {
 		if (this.field2863 != null && (var4 >> 6 & 0x1) == 1) {
 			this.field2863.method5224(arg0);
 		}
-		if (arg0.field11503 - var3 != arg1) {
-			throw new RuntimeException(arg0.field11503 - var3 + "," + arg1);
+		if (arg0.pos - var3 != arg1) {
+			throw new RuntimeException(arg0.pos - var3 + "," + arg1);
 		}
 	}
 }

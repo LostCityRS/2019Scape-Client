@@ -45,39 +45,39 @@ public class class884 extends class159 {
 	@ObfuscatedName("agh.s")
 	public final int field10352;
 
-	public class884(class997 arg0, int arg1, int arg2) {
+	public class884(Packet arg0, int arg1, int arg2) {
 		super(arg0);
 		if (arg1 == 0) {
-			int var4 = arg0.method17910();
+			int var4 = arg0.g4s();
 			this.field10342 = var4 >>> 16;
 			this.field10343 = var4 & 0xFFFF;
 			this.field10341 = -1;
 		} else {
 			this.field10342 = -1;
 			this.field10343 = -1;
-			this.field10341 = arg0.method17906();
+			this.field10341 = arg0.g2();
 		}
 		if (arg2 == 0) {
-			int var5 = arg0.method17910();
+			int var5 = arg0.g4s();
 			this.field10346 = (var5 >>> 16) * 262144;
 			this.field10338 = (var5 & 0xFFFF) * 262144;
 			this.field10345 = -1;
 		} else {
 			this.field10346 = -262144;
 			this.field10338 = -262144;
-			this.field10345 = arg0.method17906();
+			this.field10345 = arg0.g2();
 		}
 		if (arg1 == 0 && arg2 == 0) {
-			this.field10340 = arg0.method17904();
+			this.field10340 = arg0.g1();
 		} else {
 			this.field10340 = -1;
 		}
-		this.field10347 = arg0.method17906();
-		this.field10344 = arg0.method17904();
-		this.field10348 = arg0.method17904();
-		this.field10350 = arg0.method17908();
-		this.field10351 = arg0.method17906();
-		this.field10352 = arg0.method17904();
+		this.field10347 = arg0.g2();
+		this.field10344 = arg0.g1();
+		this.field10348 = arg0.g1();
+		this.field10350 = arg0.g3();
+		this.field10351 = arg0.g2();
+		this.field10352 = arg0.g1();
 	}
 
 	@ObfuscatedName("agh.n(I)V")

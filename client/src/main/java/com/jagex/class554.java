@@ -42,22 +42,22 @@ public class class554 {
 	@ObfuscatedName("ul.at")
 	public int field6990 = -1;
 
-	public class554(class133 arg0, int arg1, class997 arg2, int arg3) {
+	public class554(class133 arg0, int arg1, Packet arg2, int arg3) {
 		if (Statics.field1970 == null) {
 			method3615();
 		}
-		this.field7006 = arg2.method17904();
+		this.field7006 = arg2.g1();
 		this.field7004 = (this.field7006 & 0x8) != 0;
 		this.field7005 = (this.field7006 & 0x10) != 0;
 		this.field7006 &= 0x7;
-		int var5 = arg2.method17906() << arg3;
-		int var6 = arg2.method17906() << arg3;
-		int var7 = arg2.method17906() << arg3;
-		int var8 = arg2.method17904();
+		int var5 = arg2.g2() << arg3;
+		int var6 = arg2.g2() << arg3;
+		int var7 = arg2.g2() << arg3;
+		int var8 = arg2.g1();
 		int var9 = var8 * 2 + 1;
 		this.field6981 = new short[var9];
 		for (int var10 = 0; var10 < this.field6981.length; var10++) {
-			short var11 = (short) arg2.method17906();
+			short var11 = (short) arg2.g2();
 			int var12 = var11 >>> 8;
 			int var13 = var11 & 0xFF;
 			if (var12 >= var9) {
@@ -69,14 +69,14 @@ public class class554 {
 			this.field6981[var10] = (short) (var12 << 8 | var13);
 		}
 		int var14 = (var8 << arg1) + (0x1 << arg1 >> 1);
-		int var15 = Statics.field8151 == null ? Statics.field8149[class662.method4937(arg2.method17906()) & 0xFFFF] : Statics.field8151[arg2.method17906()];
-		int var16 = arg2.method17904();
+		int var15 = Statics.field8151 == null ? Statics.field8149[class662.method4937(arg2.g2()) & 0xFFFF] : Statics.field8151[arg2.g2()];
+		int var16 = arg2.g1();
 		this.field7014 = var16 & 0x1F;
 		this.field7011 = (var16 & 0xE0) << 3;
 		if (this.field7014 != 31) {
 			this.method8910();
 		}
-		this.field6990 = arg2.method17973();
+		this.field6990 = arg2.g2s();
 		this.method8900(arg0, var5, var7, var6, var14, var15);
 	}
 

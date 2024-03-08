@@ -37,6 +37,6 @@ public class class1201 extends class1072 {
 	}
 
 	@ObfuscatedName("asi.g(Lalw;IB)V")
-	public void method18839(class997 arg0, int arg1) {
+	public void method18839(Packet arg0, int arg1) {
 	}
 }

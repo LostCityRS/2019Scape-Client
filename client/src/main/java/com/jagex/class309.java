@@ -80,7 +80,7 @@ public class class309 {
 	@ObfuscatedName("kr.t")
 	public class729 field3115;
 
-	public class309(class997 arg0) {
+	public class309(Packet arg0) {
 		this.method5274(arg0);
 	}
 
@@ -484,12 +484,12 @@ public class class309 {
 	}
 
 	@ObfuscatedName("kr.h(Lalw;B)V")
-	public void method5274(class997 arg0) {
-		int var2 = arg0.method17904();
+	public void method5274(Packet arg0) {
+		int var2 = arg0.g1();
 		if (var2 < 1 || var2 > 6) {
 			throw new RuntimeException("" + var2);
 		}
-		int var3 = arg0.method17904();
+		int var3 = arg0.g1();
 		if ((var3 & 0x1) != 0) {
 			this.field3091 = true;
 		}
@@ -504,22 +504,22 @@ public class class309 {
 			this.field3120 = null;
 			this.field3114 = null;
 		}
-		this.field3094 = arg0.method17910();
-		this.field3096 = arg0.method17910();
+		this.field3094 = arg0.g4s();
+		this.field3096 = arg0.g4s();
 		if (var2 <= 3 && this.field3096 != 0) {
 			this.field3096 += 16912800;
 		}
-		this.field3095 = arg0.method17906();
-		this.field3111 = arg0.method17904();
-		this.field3093 = arg0.method17918();
+		this.field3095 = arg0.g2();
+		this.field3111 = arg0.g1();
+		this.field3093 = arg0.gjstr();
 		if (var2 >= 4) {
-			arg0.method17910();
+			arg0.g4s();
 		}
-		this.field3097 = arg0.method17904() == 1;
-		this.field3098 = arg0.method17905();
-		this.field3090 = arg0.method17905();
-		this.field3100 = arg0.method17905();
-		this.field3117 = arg0.method17905();
+		this.field3097 = arg0.g1() == 1;
+		this.field3098 = arg0.g1b();
+		this.field3090 = arg0.g1b();
+		this.field3100 = arg0.g1b();
+		this.field3117 = arg0.g1b();
 		if (this.field3095 > 0) {
 			if (this.field3091 && (this.field3103 == null || this.field3103.length < this.field3095)) {
 				this.field3103 = new long[this.field3095];
@@ -541,22 +541,22 @@ public class class309 {
 			}
 			for (int var4 = 0; var4 < this.field3095; var4++) {
 				if (this.field3091) {
-					this.field3103[var4] = arg0.method17914();
+					this.field3103[var4] = arg0.g8();
 				}
 				if (this.field3092) {
-					this.field3120[var4] = arg0.method17917();
+					this.field3120[var4] = arg0.fastgstr();
 				}
-				this.field3104[var4] = arg0.method17905();
+				this.field3104[var4] = arg0.g1b();
 				if (var2 >= 2) {
-					this.field3106[var4] = arg0.method17910();
+					this.field3106[var4] = arg0.g4s();
 				}
 				if (var2 >= 5) {
-					this.field3107[var4] = arg0.method17906();
+					this.field3107[var4] = arg0.g2();
 				} else {
 					this.field3107[var4] = 0;
 				}
 				if (var2 >= 6) {
-					this.field3108[var4] = arg0.method17904() == 1;
+					this.field3108[var4] = arg0.g1() == 1;
 				} else {
 					this.field3108[var4] = false;
 				}
@@ -572,33 +572,33 @@ public class class309 {
 			}
 			for (int var5 = 0; var5 < this.field3111; var5++) {
 				if (this.field3091) {
-					this.field3112[var5] = arg0.method17914();
+					this.field3112[var5] = arg0.g8();
 				}
 				if (this.field3092) {
-					this.field3114[var5] = arg0.method17917();
+					this.field3114[var5] = arg0.fastgstr();
 				}
 			}
 		}
 		if (var2 < 3) {
 			return;
 		}
-		int var6 = arg0.method17906();
+		int var6 = arg0.g2();
 		if (var6 <= 0) {
 			return;
 		}
 		this.field3115 = new class729(var6 < 16 ? class783.method16657(var6) : 16);
 		while (var6-- > 0) {
-			int var7 = arg0.method17910();
+			int var7 = arg0.g4s();
 			int var8 = var7 & 0x3FFFFFFF;
 			int var9 = var7 >>> 30;
 			if (var9 == 0) {
-				int var10 = arg0.method17910();
+				int var10 = arg0.g4s();
 				this.field3115.method14501(new class988(var10), (long) var8);
 			} else if (var9 == 1) {
-				long var11 = arg0.method17914();
+				long var11 = arg0.g8();
 				this.field3115.method14501(new class987(var11), (long) var8);
 			} else if (var9 == 2) {
-				String var13 = arg0.method17918();
+				String var13 = arg0.gjstr();
 				this.field3115.method14501(new class984(var13), (long) var8);
 			}
 		}

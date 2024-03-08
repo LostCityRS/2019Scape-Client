@@ -59,21 +59,21 @@ public class class134 {
 	public class134(byte[] arg0, class971 arg1) {
 		this.field1628 = arg1;
 		try {
-			class997 var3 = new class997(arg0);
-			class997 var4 = new class997(arg0);
-			int var5 = var3.method17904();
-			var3.field11503 += 2;
-			int var6 = var3.method17906();
+			Packet var3 = new Packet(arg0);
+			Packet var4 = new Packet(arg0);
+			int var5 = var3.g1();
+			var3.pos += 2;
+			int var6 = var3.g2();
 			int var7 = 0;
 			int var8 = -1;
 			int var9 = -1;
-			var4.field11503 = (var3.field11503 + var6);
+			var4.pos = (var3.pos + var6);
 			for (int var10 = 0; var10 < var6; var10++) {
 				int var11 = this.field1628.field11314[var10];
 				if (var11 == 0) {
 					var8 = var10;
 				}
-				int var12 = var3.method17904();
+				int var12 = var3.g1();
 				if (var12 > 0) {
 					if (var11 == 0) {
 						var9 = var10;
@@ -87,36 +87,36 @@ public class class134 {
 						if ((var12 & 0x1) == 0) {
 							field1623[var7] = var13;
 						} else {
-							field1623[var7] = (short) var4.method17922();
-							var4.method17922();
+							field1623[var7] = (short) var4.gSmart1or2s();
+							var4.gSmart1or2s();
 						}
 						if ((var12 & 0x2) == 0) {
 							field1633[var7] = var13;
 						} else {
-							field1633[var7] = (short) var4.method17922();
-							var4.method17922();
+							field1633[var7] = (short) var4.gSmart1or2s();
+							var4.gSmart1or2s();
 						}
 						if ((var12 & 0x4) == 0) {
 							field1625[var7] = var13;
 						} else {
-							field1625[var7] = (short) var4.method17922();
-							var4.method17922();
+							field1625[var7] = (short) var4.gSmart1or2s();
+							var4.gSmart1or2s();
 						}
 					} else {
 						if ((var12 & 0x1) == 0) {
 							field1623[var7] = var13;
 						} else {
-							field1623[var7] = (short) var4.method17922();
+							field1623[var7] = (short) var4.gSmart1or2s();
 						}
 						if ((var12 & 0x2) == 0) {
 							field1633[var7] = var13;
 						} else {
-							field1633[var7] = (short) var4.method17922();
+							field1633[var7] = (short) var4.gSmart1or2s();
 						}
 						if ((var12 & 0x4) == 0) {
 							field1625[var7] = var13;
 						} else {
-							field1625[var7] = (short) var4.method17922();
+							field1625[var7] = (short) var4.gSmart1or2s();
 						}
 					}
 					field1624[var7] = (byte) (var12 >>> 3 & 0x3);
@@ -141,7 +141,7 @@ public class class134 {
 					var7++;
 				}
 			}
-			if (var4.field11503 != arg0.length) {
+			if (var4.pos != arg0.length) {
 				throw new RuntimeException();
 			}
 			this.field1631 = var7;

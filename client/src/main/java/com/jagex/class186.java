@@ -14,10 +14,10 @@ public class class186 implements class203 {
 	@ObfuscatedName("fe.n")
 	public final boolean field1892;
 
-	public class186(class201 arg0, class997 arg1) {
+	public class186(class201 arg0, Packet arg1) {
 		this.this$0 = arg0;
-		this.field1893 = arg1.method17906();
-		this.field1892 = arg1.method17904() == 1;
+		this.field1893 = arg1.g2();
+		this.field1892 = arg1.g1() == 1;
 	}
 
 	@ObfuscatedName("fe.e(Lgq;B)V")

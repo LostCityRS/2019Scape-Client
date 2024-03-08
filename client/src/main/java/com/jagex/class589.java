@@ -43,13 +43,13 @@ public class class589 implements class588 {
 	}
 
 	@ObfuscatedName("wb.k(Lalw;I)Lvu;")
-	public static class589 method9770(class997 arg0) {
-		int var1 = arg0.method17904();
-		int var2 = arg0.method17904();
-		int var3 = arg0.method17904();
+	public static class589 method9770(Packet arg0) {
+		int var1 = arg0.g1();
+		int var2 = arg0.g1();
+		int var3 = arg0.g1();
 		int[] var4 = new int[var3];
 		for (int var5 = 0; var5 < var3; var5++) {
-			var4[var5] = arg0.method17904();
+			var4[var5] = arg0.g1();
 		}
 		return new class589(var1, var2, var4);
 	}

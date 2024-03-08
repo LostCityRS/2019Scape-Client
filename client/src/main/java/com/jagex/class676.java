@@ -434,10 +434,10 @@ public final class class676 {
 			return;
 		}
 		class983 var6 = Statics.method1604(class390.field3707, var5.field794);
-		var6.field11432.method17945(class997.method14803(arg0) + class997.method14803(arg1) + class997.method14803(arg2) + 1);
-		var6.field11432.method17893(arg0);
-		var6.field11432.method17893(arg1);
-		var6.field11432.method17893(arg2);
+		var6.field11432.p2(Packet.pjstrlen(arg0) + Packet.pjstrlen(arg1) + Packet.pjstrlen(arg2) + 1);
+		var6.field11432.pjstr(arg0);
+		var6.field11432.pjstr(arg1);
+		var6.field11432.pjstr(arg2);
 		int var7 = 0;
 		if (arg3) {
 			var7 |= 0x1;
@@ -445,7 +445,7 @@ public final class class676 {
 		if (arg4) {
 			var7 |= 0x2;
 		}
-		var6.field11432.method18001(var7);
+		var6.field11432.p1(var7);
 		var5.method934(var6);
 	}
 
@@ -9124,7 +9124,7 @@ public final class class676 {
 			var2 = class695.method9595(var1);
 		}
 		class983 var3 = Statics.method1604(class390.field3803, client.field10849.field794);
-		var3.field11432.method17886(var2);
+		var3.field11432.p4(var2);
 		client.field10849.method934(var3);
 	}
 
@@ -9132,8 +9132,8 @@ public final class class676 {
 	public static final void method10446(class677 arg0) {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
 		class983 var2 = Statics.method1604(class390.field3783, client.field10849.field794);
-		var2.field11432.method18001(var1.length() + 1);
-		var2.field11432.method17893(var1);
+		var2.field11432.p1(var1.length() + 1);
+		var2.field11432.pjstr(var1);
 		client.field10849.method934(var2);
 	}
 
@@ -9141,8 +9141,8 @@ public final class class676 {
 	public static final void method7349(class677 arg0) {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
 		class983 var2 = Statics.method1604(class390.field3685, client.field10849.field794);
-		var2.field11432.method18001(var1.length() + 1);
-		var2.field11432.method17893(var1);
+		var2.field11432.p1(var1.length() + 1);
+		var2.field11432.pjstr(var1);
 		client.field10849.method934(var2);
 	}
 
@@ -9176,7 +9176,7 @@ public final class class676 {
 	public static final void method5998(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		class983 var2 = Statics.method1604(class390.field3781, client.field10849.field794);
-		var2.field11432.method17945(var1);
+		var2.field11432.p2(var1);
 		client.field10849.method934(var2);
 	}
 
@@ -9230,7 +9230,7 @@ public final class class676 {
 	public static final void method9179(class677 arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		class983 var2 = Statics.method1604(class390.field3683, client.field10849.field794);
-		var2.field11432.method17945(var1);
+		var2.field11432.p2(var1);
 		client.field10849.method934(var2);
 	}
 
@@ -9238,8 +9238,8 @@ public final class class676 {
 	public static final void method7343(class677 arg0) {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
 		class983 var2 = Statics.method1604(class390.field3792, client.field10849.field794);
-		var2.field11432.method18001(var1.length() + 1);
-		var2.field11432.method17893(var1);
+		var2.field11432.p1(var1.length() + 1);
+		var2.field11432.pjstr(var1);
 		client.field10849.method934(var2);
 	}
 
@@ -9866,8 +9866,8 @@ public final class class676 {
 	public static final void method9416(class677 arg0) {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
 		class983 var2 = Statics.method1604(class390.field3742, client.field10835.field794);
-		var2.field11432.method18001(class997.method14803(var1));
-		var2.field11432.method17893(var1);
+		var2.field11432.p1(Packet.pjstrlen(var1));
+		var2.field11432.pjstr(var1);
 		client.field10835.method934(var2);
 	}
 
@@ -9876,9 +9876,9 @@ public final class class676 {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
 		String var2 = (String) arg0.field8218[--arg0.field8211];
 		class983 var3 = Statics.method1604(class390.field3716, client.field10835.field794);
-		var3.field11432.method17945(class997.method14803(var1) + class997.method14803(var2));
-		var3.field11432.method17893(var1);
-		var3.field11432.method17893(var2);
+		var3.field11432.p2(Packet.pjstrlen(var1) + Packet.pjstrlen(var2));
+		var3.field11432.pjstr(var1);
+		var3.field11432.pjstr(var2);
 		client.field10835.method934(var3);
 	}
 
@@ -9891,8 +9891,8 @@ public final class class676 {
 		boolean var3 = arg0.field8216[arg0.field8226 + 1] == 1;
 		boolean var4 = arg0.field8216[arg0.field8226 + 2] == 1;
 		class983 var5 = Statics.method1604(class390.field3760, client.field10835.field794);
-		var5.field11432.method17945(class997.method14803(var1) + 1);
-		var5.field11432.method17893(var1);
+		var5.field11432.p2(Packet.pjstrlen(var1) + 1);
+		var5.field11432.pjstr(var1);
 		int var6 = 0;
 		if (var2) {
 			var6 |= 0x1;
@@ -9903,7 +9903,7 @@ public final class class676 {
 		if (var4) {
 			var6 |= 0x4;
 		}
-		var5.field11432.method18001(var6);
+		var5.field11432.p1(var6);
 		client.field10835.method934(var5);
 	}
 
@@ -11347,9 +11347,9 @@ public final class class676 {
 		client.field11029 = arg0.field8216[arg0.field8226 + 2];
 		class49 var1 = client.method640();
 		class983 var2 = Statics.method1604(class390.field3755, var1.field794);
-		var2.field11432.method18001(client.field11050);
-		var2.field11432.method18001(Statics.field10354.field8530);
-		var2.field11432.method18001(client.field11029);
+		var2.field11432.p1(client.field11050);
+		var2.field11432.p1(Statics.field10354.field8530);
+		var2.field11432.p1(client.field11029);
 		var1.method934(var2);
 	}
 
@@ -11369,11 +11369,11 @@ public final class class676 {
 		}
 		class49 var5 = client.method640();
 		class983 var6 = Statics.method1604(class390.field3757, var5.field794);
-		var6.field11432.method18001(class997.method14803(var1) + 2 + class997.method14803(var2));
-		var6.field11432.method17893(var1);
-		var6.field11432.method18001(var3 - 1);
-		var6.field11432.method18001(var4);
-		var6.field11432.method17893(var2);
+		var6.field11432.p1(Packet.pjstrlen(var1) + 2 + Packet.pjstrlen(var2));
+		var6.field11432.pjstr(var1);
+		var6.field11432.p1(var3 - 1);
+		var6.field11432.p1(var4);
+		var6.field11432.pjstr(var2);
 		var5.method934(var6);
 	}
 
@@ -11462,7 +11462,7 @@ public final class class676 {
 		int var1 = arg0.field8216[--arg0.field8226];
 		class49 var2 = client.method640();
 		class983 var3 = Statics.method1604(class390.field3726, var2.field794);
-		var3.field11432.method18001(var1);
+		var3.field11432.p1(var1);
 		var2.method934(var3);
 	}
 
@@ -11586,12 +11586,12 @@ public final class class676 {
 		}
 		class49 var6 = client.method640();
 		class983 var7 = Statics.method1604(class390.field3777, var6.field794);
-		var7.field11432.method18001(0);
-		int var8 = var7.field11432.field11503;
-		var7.field11432.method18001(var3);
-		var7.field11432.method18001(var5);
+		var7.field11432.p1(0);
+		int var8 = var7.field11432.pos;
+		var7.field11432.p1(var3);
+		var7.field11432.p1(var5);
 		class246.method3547(var7.field11432, var1);
-		var7.field11432.method18028(var7.field11432.field11503 - var8);
+		var7.field11432.psize1(var7.field11432.pos - var8);
 		var6.method934(var7);
 	}
 
@@ -11605,11 +11605,11 @@ public final class class676 {
 		}
 		class49 var3 = client.method640();
 		class983 var4 = Statics.method1604(class390.field3689, var3.field794);
-		var4.field11432.method17945(0);
-		int var5 = var4.field11432.field11503;
-		var4.field11432.method17893(var1);
+		var4.field11432.p2(0);
+		int var5 = var4.field11432.pos;
+		var4.field11432.pjstr(var1);
 		class246.method3547(var4.field11432, var2);
-		var4.field11432.method17898(var4.field11432.field11503 - var5);
+		var4.field11432.psize2(var4.field11432.pos - var5);
 		var3.method934(var4);
 	}
 
@@ -11745,12 +11745,12 @@ public final class class676 {
 		int var1 = arg0.field8216[--arg0.field8226];
 		class49 var2 = client.method640();
 		class983 var3 = Statics.method1604(class390.field3711, var2.field794);
-		var3.field11432.method18001(0);
-		int var4 = var3.field11432.field11503;
-		var3.field11432.method18001(var1);
-		var3.field11432.method17945(arg0.field8240.field3448);
+		var3.field11432.p1(0);
+		int var4 = var3.field11432.pos;
+		var3.field11432.p1(var1);
+		var3.field11432.p2(arg0.field8240.field3448);
 		arg0.field8240.field3447.method19508(var3.field11432, arg0.field8240.field3446);
-		var3.field11432.method18028(var3.field11432.field11503 - var4);
+		var3.field11432.psize1(var3.field11432.pos - var4);
 		var2.method934(var3);
 	}
 
@@ -11759,12 +11759,12 @@ public final class class676 {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
 		class49 var2 = client.method640();
 		class983 var3 = Statics.method1604(class390.field3723, var2.field794);
-		var3.field11432.method18001(0);
-		int var4 = var3.field11432.field11503;
-		var3.field11432.method17893(var1);
-		var3.field11432.method17945(arg0.field8240.field3448);
+		var3.field11432.p1(0);
+		int var4 = var3.field11432.pos;
+		var3.field11432.pjstr(var1);
+		var3.field11432.p2(arg0.field8240.field3448);
 		arg0.field8240.field3447.method19508(var3.field11432, arg0.field8240.field3446);
-		var3.field11432.method18028(var3.field11432.field11503 - var4);
+		var3.field11432.psize1(var3.field11432.pos - var4);
 		var2.method934(var3);
 	}
 
@@ -14364,7 +14364,7 @@ public final class class676 {
 			class750.field8754 = true;
 			class49 var1 = client.method640();
 			class983 var2 = Statics.method1604(class390.field3759, var1.field794);
-			var2.field11432.method17886(Statics.field7642);
+			var2.field11432.p4(Statics.field7642);
 			var1.method934(var2);
 			arg0.field8216[++arg0.field8226 - 1] = 0;
 		}
@@ -15473,10 +15473,10 @@ public final class class676 {
 			return;
 		}
 		class983 var3 = Statics.method1604(class390.field3790, client.field10849.field794);
-		var3.field11432.method17945(Statics.method8398(arg1) + 1 + Statics.method8398(arg2));
-		var3.field11432.method17894(arg1);
-		var3.field11432.method17938(arg0);
-		var3.field11432.method17894(arg2);
+		var3.field11432.p2(Packet.method8398(arg1) + 1 + Packet.method8398(arg2));
+		var3.field11432.pjstr2(arg1);
+		var3.field11432.p1_alt2(arg0);
+		var3.field11432.pjstr2(arg2);
 		client.field10849.method934(var3);
 	}
 
@@ -15661,9 +15661,9 @@ public final class class676 {
 			throw new RuntimeException("");
 		} else if (client.field10849 != null) {
 			class983 var3 = Statics.method1604(class390.field3725, client.field10849.field794);
-			var3.field11432.method17937(var1.method1303());
-			var3.field11432.method17949(var2.field7427);
-			var3.field11432.method18081(var2.field7426);
+			var3.field11432.p1_alt1(var1.method1303());
+			var3.field11432.p2_alt2(var2.field7427);
+			var3.field11432.p2_alt1(var2.field7426);
 			client.field10849.method934(var3);
 		}
 	}

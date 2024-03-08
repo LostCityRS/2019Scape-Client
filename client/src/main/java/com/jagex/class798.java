@@ -10,16 +10,16 @@ public class class798 {
 	public class317[] field9212;
 
 	@ObfuscatedName("adn.e(Lalw;I)V")
-	public void method15230(class997 arg0) {
-		this.field9212 = new class317[arg0.method17904()];
+	public void method15230(Packet arg0) {
+		this.field9212 = new class317[arg0.g1()];
 		class319[] var2 = class319.method4482();
 		for (int var3 = 0; var3 < this.field9212.length; var3++) {
-			this.field9212[var3] = this.method15231(arg0, var2[arg0.method17904()]);
+			this.field9212[var3] = this.method15231(arg0, var2[arg0.g1()]);
 		}
 	}
 
 	@ObfuscatedName("adn.n(Lalw;Lkt;I)Lkk;")
-	public class317 method15231(class997 arg0, class319 arg1) {
+	public class317 method15231(Packet arg0, class319 arg1) {
 		if (class319.field3190 == arg1) {
 			return class312.method17440(arg0);
 		} else if (class319.field3188 == arg1) {

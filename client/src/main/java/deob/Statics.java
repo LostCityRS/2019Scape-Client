@@ -876,9 +876,6 @@ public class Statics {
 	@ObfuscatedName("u.f")
 	public static class15 field517;
 
-	@ObfuscatedName("u.l")
-	public static int[] field518;
-
 	@ObfuscatedName("p.n")
 	public static Process field520;
 
@@ -1276,7 +1273,7 @@ public class Statics {
 	public static int field7414;
 
 	@ObfuscatedName("va.d")
-	public static class997 field7415;
+	public static Packet field7415;
 
 	@ObfuscatedName("vs.fd")
 	public static class442 field7420;
@@ -1491,12 +1488,6 @@ public class Statics {
 	@ObfuscatedName("zc.e")
 	public static List field8349;
 
-	@ObfuscatedName("zz.u")
-	public static int[] field8350;
-
-	@ObfuscatedName("zz.z")
-	public static byte[][][] field8357;
-
 	@ObfuscatedName("zs.f")
 	public static class160[] field8358;
 
@@ -1564,7 +1555,7 @@ public class Statics {
 	public static int field8728;
 
 	@ObfuscatedName("abi.kz")
-	public static class997 field8729;
+	public static Packet field8729;
 
 	@ObfuscatedName("abc.hz")
 	public static class1085 field8736;
@@ -1947,7 +1938,7 @@ public class Statics {
 	}
 
 	@ObfuscatedName("nd.m(Lalw;I)Ljava/lang/String;")
-	public static String method5939(class997 arg0) {
+	public static String method5939(Packet arg0) {
 		return class246.method2738(arg0, 32767);
 	}
 
@@ -2002,14 +1993,14 @@ public class Statics {
 	}
 
 	@ObfuscatedName("xj.k(Lalw;B)Lkp;")
-	public static class314 method10312(class997 arg0) {
+	public static class314 method10312(Packet arg0) {
 		class314 var1 = class314.method18899(arg0);
-		int var2 = arg0.method17927();
-		int var3 = arg0.method17927();
-		int var4 = arg0.method17927();
-		int var5 = arg0.method17927();
-		int var6 = arg0.method17927();
-		int var7 = arg0.method17927();
+		int var2 = arg0.gSmart2or4null();
+		int var3 = arg0.gSmart2or4null();
+		int var4 = arg0.gSmart2or4null();
+		int var5 = arg0.gSmart2or4null();
+		int var6 = arg0.gSmart2or4null();
+		int var7 = arg0.gSmart2or4null();
 		return new class912(var1.field3167, var1.field3159, var1.field3161, var1.field3162, var1.field3163, var1.field3160, var1.field3165, var1.field3166, var1.field3164, var2, var3, var4, var5, var6, var7);
 	}
 
@@ -2093,41 +2084,6 @@ public class Statics {
 		}
 	}
 
-	@ObfuscatedName("zz.n(IZI)[B")
-	public static synchronized byte[] method14028(int arg0, boolean arg1) {
-		if ((arg0 == 100 || arg0 < 100 && arg1) && class702.field8355 > 0) {
-			byte[] var2 = class702.field8353[--class702.field8355];
-			class702.field8353[class702.field8355] = null;
-			return var2;
-		} else if ((arg0 == 5000 || arg0 < 5000 && arg1) && class702.field8351 > 0) {
-			byte[] var3 = class702.field8354[--class702.field8351];
-			class702.field8354[class702.field8351] = null;
-			return var3;
-		} else if ((arg0 == 30000 || arg0 < 30000 && arg1) && class702.field8352 > 0) {
-			byte[] var4 = class702.field8356[--class702.field8352];
-			class702.field8356[class702.field8352] = null;
-			return var4;
-		} else {
-			if (field8357 != null) {
-				for (int var5 = 0; var5 < field518.length; var5++) {
-					if ((field518[var5] == arg0 || arg0 < field518[var5] && arg1) && field8350[var5] > 0) {
-						byte[] var6 = field8357[var5][--field8350[var5]];
-						field8357[var5][field8350[var5]] = null;
-						return var6;
-					}
-				}
-			}
-			if (arg1 && field518 != null) {
-				for (int var7 = 0; var7 < field518.length; var7++) {
-					if (arg0 <= field518[var7] && field8350[var7] < field8357[var7].length) {
-						return new byte[field518[var7]];
-					}
-				}
-			}
-			return new byte[arg0];
-		}
-	}
-
 	@ObfuscatedName("adz.k(Ltc;Ltc;B)V")
 	public static void method15212(class531 arg0, class531 arg1) {
 		if (arg0.field6758 != null) {
@@ -2178,20 +2134,20 @@ public class Statics {
 	}
 
 	@ObfuscatedName("eq.e(Lalw;B)Llv;")
-	public static class321 method2836(class997 arg0) {
-		String var1 = arg0.method17918();
-		class318 var2 = class318.method13948()[arg0.method17904()];
-		class316 var3 = class316.method2774()[arg0.method17904()];
-		int var4 = arg0.method17973();
-		int var5 = arg0.method17973();
-		int var6 = arg0.method17904();
-		int var7 = arg0.method17904();
-		int var8 = arg0.method17904();
-		int var9 = arg0.method17906();
-		int var10 = arg0.method17906();
-		int var11 = arg0.method17927();
-		int var12 = arg0.method17910();
-		int var13 = arg0.method17910();
+	public static class321 method2836(Packet arg0) {
+		String var1 = arg0.gjstr();
+		class318 var2 = class318.method13948()[arg0.g1()];
+		class316 var3 = class316.method2774()[arg0.g1()];
+		int var4 = arg0.g2s();
+		int var5 = arg0.g2s();
+		int var6 = arg0.g1();
+		int var7 = arg0.g1();
+		int var8 = arg0.g1();
+		int var9 = arg0.g2();
+		int var10 = arg0.g2();
+		int var11 = arg0.gSmart2or4null();
+		int var12 = arg0.g4s();
+		int var13 = arg0.g4s();
 		return new class321(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12, var13);
 	}
 
@@ -2303,13 +2259,13 @@ public class Statics {
 	@ObfuscatedName("pr.f(Z[BI)V")
 	public static void method6876(boolean arg0, byte[] arg1) {
 		if (field7415 == null) {
-			field7415 = new class997(20000);
+			field7415 = new Packet(20000);
 		}
-		field7415.method17896(arg1, 0, arg1.length);
+		field7415.pdata(arg1, 0, arg1.length);
 		if (!arg0) {
 			return;
 		}
-		class619.method570(field7415.field11502);
+		class619.method570(field7415.data);
 		class750.field8748 = new class1015[field533];
 		int var2 = 0;
 		for (int var3 = field7414; var3 <= field3011; var3++) {
@@ -2553,11 +2509,6 @@ public class Statics {
 	@ObfuscatedName("ads.k(Lvy;I)Z")
 	public static boolean method15214(class593 arg0) {
 		return class22.method3483(arg0, null);
-	}
-
-	@ObfuscatedName("tu.h(Ljava/lang/String;I)I")
-	public static int method8398(String arg0) {
-		return arg0.length() + 2;
 	}
 
 	@ObfuscatedName("abu.c(Ljava/awt/image/BufferedImage;I)[I")
@@ -2870,7 +2821,7 @@ public class Statics {
 
 	@ObfuscatedName("qi.ai([BB)[B")
 	public static final byte[] method7275(byte[] arg0) {
-		class997 var1 = new class997(arg0);
+		Packet var1 = new Packet(arg0);
 		class449 var2 = new class449(var1);
 		class445 var3 = var2.method7080();
 		int var4 = var2.method7081();
@@ -2878,7 +2829,7 @@ public class Statics {
 			throw new RuntimeException();
 		} else if (class445.field4434 == var3) {
 			byte[] var5 = new byte[var4];
-			var1.method17921(var5, 0, var4);
+			var1.gdata(var5, 0, var4);
 			return var5;
 		} else {
 			int var6 = var2.method7091();
@@ -3134,16 +3085,16 @@ public class Statics {
 
 	@ObfuscatedName("ab.p([BB)V")
 	public static void method987(byte[] arg0) {
-		class997 var1 = new class997(arg0);
+		Packet var1 = new Packet(arg0);
 		while (true) {
-			int var2 = var1.method17904();
+			int var2 = var1.g1();
 			if (var2 == 0) {
 				return;
 			}
 			if (var2 == 1) {
-				class636.field7859 = var1.method17906();
+				class636.field7859 = var1.g2();
 			} else if (var2 == 10) {
-				var1.method17906();
+				var1.g2();
 			}
 		}
 	}
@@ -3384,9 +3335,9 @@ public class Statics {
 			if (class759.field8805 != var3) {
 				class442 var4 = (class442) field8540.get(var3);
 				if (var4 == null) {
-					arg0.method17886(0);
+					arg0.p4(0);
 				} else {
-					arg0.method17886(var4.method6881());
+					arg0.p4(var4.method6881());
 				}
 			}
 		}
@@ -3395,7 +3346,7 @@ public class Statics {
 	@ObfuscatedName("pr.ac(B)V")
 	public static void method6877() {
 		field432.method952();
-		field432.field795.field11503 = 0;
+		field432.field795.pos = 0;
 		field432.field796 = null;
 		field432.field790 = null;
 		field432.field806 = null;
@@ -4408,12 +4359,12 @@ public class Statics {
 			}
 		}
 		class983 var3 = method1604(class390.field3740, client.field10849.field794);
-		var3.field11432.method17956(arg0.field2158);
-		var3.field11432.method17945(arg0.field2334);
-		var3.field11432.method17949(client.field10975);
-		var3.field11432.method17949(arg0.field2183);
-		var3.field11432.method17949(client.field10974);
-		var3.field11432.method17956(field6707);
+		var3.field11432.p4_alt1(arg0.field2158);
+		var3.field11432.p2(arg0.field2334);
+		var3.field11432.p2_alt2(client.field10975);
+		var3.field11432.p2_alt2(arg0.field2183);
+		var3.field11432.p2_alt2(client.field10974);
+		var3.field11432.p4_alt1(field6707);
 		client.field10849.method934(var3);
 	}
 
@@ -4452,12 +4403,12 @@ public class Statics {
 			return;
 		}
 		class983 var7 = method1604(class390.field3786, var6.field794);
-		var7.field11432.method18001(class997.method14803(var4.field2336) + 7 + 1);
-		var7.field11432.method17893(var4.field2336);
-		var7.field11432.method18081(arg2);
-		var7.field11432.method17938(arg0);
-		var7.field11432.method17939(var4.field2337.method1303());
-		var7.field11432.method17957(arg1);
+		var7.field11432.p1(Packet.pjstrlen(var4.field2336) + 7 + 1);
+		var7.field11432.pjstr(var4.field2336);
+		var7.field11432.p2_alt1(arg2);
+		var7.field11432.p1_alt2(arg0);
+		var7.field11432.p1_alt3(var4.field2337.method1303());
+		var7.field11432.p4_alt2(arg1);
 		var6.method934(var7);
 	}
 
@@ -4702,8 +4653,8 @@ public class Statics {
 		}
 		class49 var1 = client.method640();
 		class983 var2 = method1604(class390.field3774, var1.field794);
-		var2.field11432.method18001(class997.method14803(arg0));
-		var2.field11432.method17893(arg0);
+		var2.field11432.p1(Packet.pjstrlen(arg0));
+		var2.field11432.pjstr(arg0);
 		var1.method934(var2);
 	}
 
@@ -4720,10 +4671,10 @@ public class Statics {
 		String var4 = var3.field3087;
 		class49 var5 = client.method640();
 		class983 var6 = method1604(class390.field3776, var5.field794);
-		var6.field11432.method18001(class997.method14803(var4) + 3);
-		var6.field11432.method18001(arg0 ? 1 : 0);
-		var6.field11432.method17945(arg1);
-		var6.field11432.method17893(var4);
+		var6.field11432.p1(Packet.pjstrlen(var4) + 3);
+		var6.field11432.p1(arg0 ? 1 : 0);
+		var6.field11432.p2(arg1);
+		var6.field11432.pjstr(var4);
 		var5.method934(var6);
 	}
 
@@ -4788,9 +4739,9 @@ public class Statics {
 		}
 		class49 var12 = client.method640();
 		class983 var13 = method1604(class390.field3695, var12.field794);
-		var13.field11432.method18001(class997.method14803(arg0) + 1);
-		var13.field11432.method17893(arg0);
-		var13.field11432.method18001(arg1 ? 1 : 0);
+		var13.field11432.p1(Packet.pjstrlen(arg0) + 1);
+		var13.field11432.pjstr(arg0);
+		var13.field11432.p1(arg1 ? 1 : 0);
 		var12.method934(var13);
 	}
 

@@ -67,7 +67,7 @@ public class class470 implements class685 {
 	}
 
 	@ObfuscatedName("qa.w(Lalw;B)Ljava/lang/Object;")
-	public Object method7335(class997 arg0) {
+	public Object method7335(Packet arg0) {
 		return this.field4844.method7308(arg0);
 	}
 }

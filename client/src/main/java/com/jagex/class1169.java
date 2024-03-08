@@ -26,14 +26,14 @@ public class class1169 extends class980 {
 	}
 
 	@ObfuscatedName("arv.e(Lalw;I)V")
-	public void method17757(class997 arg0) {
-		arg0.method17904();
-		this.field12263 = arg0.method17906();
-		this.field12261 = arg0.method17905();
-		this.field12262 = arg0.method17906();
-		arg0.method17914();
-		this.field12260 = arg0.method17918();
-		arg0.method17904();
+	public void method17757(Packet arg0) {
+		arg0.g1();
+		this.field12263 = arg0.g2();
+		this.field12261 = arg0.g1b();
+		this.field12262 = arg0.g2();
+		arg0.g8();
+		this.field12260 = arg0.gjstr();
+		arg0.g1();
 	}
 
 	@ObfuscatedName("arv.n(Lakr;S)V")

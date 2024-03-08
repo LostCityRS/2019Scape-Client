@@ -1,7 +1,6 @@
 package com.jagex;
 
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("rq")
 public class class480 {
@@ -253,15 +252,15 @@ public class class480 {
 			if (var11 == null) {
 				return var11 != null;
 			}
-			class997 var12 = new class997(var11);
-			if (var12.method17904() != 74 || var12.method17904() != 65 || var12.method17904() != 71 || var12.method17904() != 65) {
+			Packet var12 = new Packet(var11);
+			if (var12.g1() != 74 || var12.g1() != 65 || var12.g1() != 71 || var12.g1() != 65) {
 				throw new RuntimeException("");
 			}
-			this.field4928 = var12.method17910();
-			this.field4922 = var12.method17910();
-			this.field4914 = var12.method17910();
-			this.field4913 = var12.method17910();
-			this.field4926 = var12.method17910();
+			this.field4928 = var12.g4s();
+			this.field4922 = var12.g4s();
+			this.field4914 = var12.g4s();
+			this.field4913 = var12.g4s();
+			this.field4926 = var12.g4s();
 			if (this.field4918 == null) {
 				this.field4918 = this.field4923.method5861(this.field4913, this.field4914, this.field4921.method3733(), this.field4921.method3734(), this.field4907, this.field4902);
 				if (this.field4918 == null) {
@@ -272,14 +271,14 @@ public class class480 {
 			this.field4936 = new int[this.field4926];
 			this.field4917 = new int[this.field4926];
 			this.field4944 = new int[this.field4926];
-			int var13 = this.field4926 * 8 + var12.field11503;
+			int var13 = this.field4926 * 8 + var12.pos;
 			for (int var14 = 0; var14 < this.field4926; var14++) {
 				this.field4936[var14] = var13;
-				this.field4917[var14] = var12.method17910();
-				this.field4944[var14] = var12.method17910();
+				this.field4917[var14] = var12.g4s();
+				this.field4944[var14] = var12.g4s();
 				var13 += this.field4917[var14];
 			}
-			this.field4919 = var12.field11503;
+			this.field4919 = var12.pos;
 			this.field4908 = new class475[this.field4895];
 			this.field4910 = new float[2];
 			for (int var15 = 0; var15 < this.field4910.length; var15++) {
@@ -294,11 +293,11 @@ public class class480 {
 			if (this.field4903 == null) {
 				this.field4924 = true;
 			} else {
-				int var17 = var12.field11502.length - this.field4919;
-				byte[] var18 = Statics.method14028(var17, true);
-				System.arraycopy(var12.field11502, this.field4919, var18, 0, var17);
-				var12.field11502 = var18;
-				var12.field11503 = var17;
+				int var17 = var12.data.length - this.field4919;
+				byte[] var18 = ByteArrayPool.alloc(var17, true);
+				System.arraycopy(var12.data, this.field4919, var18, 0, var17);
+				var12.data = var18;
+				var12.pos = var17;
 				this.field4921.method3726(var12);
 				this.field4904++;
 			}
@@ -444,8 +443,8 @@ public class class480 {
 							} else {
 								byte[] var8 = this.field4903.method7354(this.field4944[this.field4904]);
 								if (var8 != null) {
-									class997 var9 = new class997(var8);
-									var9.field11503 = var8.length;
+									Packet var9 = new Packet(var8);
+									var9.pos = var8.length;
 									this.field4921.method3726(var9);
 									this.method7506(false);
 									this.field4904++;
@@ -463,14 +462,14 @@ public class class480 {
 						int var4 = this.field4917[this.field4931];
 						int var6 = this.field4934 + var4 > var4 ? this.field4936[this.field4931] + var4 : this.field4906 + var4;
 						this.field4934 += this.field4906 + var4 > this.field4901.length ? this.field4901.length - this.field4906 : var4;
-						class997 var7 = new class997(var6 - this.field4906, true);
+						Packet var7 = new Packet(var6 - this.field4906, true);
 						if (this.field4901 == null) {
 							throw new RuntimeException("");
 						}
-						if (var7.field11502 == null) {
+						if (var7.data == null) {
 							throw new RuntimeException("");
 						}
-						var7.method17896(this.field4901, this.field4906, var6 - this.field4906);
+						var7.pdata(this.field4901, this.field4906, var6 - this.field4906);
 						this.field4921.method3726(var7);
 						this.method7506(false);
 						if (this.field4934 >= var4) {
@@ -551,11 +550,11 @@ public class class480 {
 		if (this.field4921.method3868()) {
 			if (this.field4942 && this.method7512(this.field4941)) {
 				if (this.field4908[this.field4932] == null) {
-					class997 var3 = this.method7511(this.field4941);
+					Packet var3 = this.method7511(this.field4941);
 					if (var3 != null) {
 						this.field4908[this.field4932] = new class475(this, var3, false);
 						int var4 = this.field4921.method3722();
-						int var5 = this.field4921.method3730(this.field4908[this.field4932].field4873.field11503 / var4);
+						int var5 = this.field4921.method3730(this.field4908[this.field4932].field4873.pos / var4);
 						this.field4945 += var5;
 						if (!this.field4943 && this.field4900 && this.field4925 > 0) {
 							if (this.field4945 < this.field4928) {
@@ -584,9 +583,9 @@ public class class480 {
 				int var9 = this.field4921.method3730(this.field4907);
 				if (!this.field4930 && this.field4908[this.field4932] == null) {
 					if (class367.field3426 != var2 && var8 > 0) {
-						class997 var10 = this.method7515(var9);
+						Packet var10 = this.method7515(var9);
 						this.field4908[this.field4932] = var10 == null ? null : new class475(this, var10, false);
-						int var11 = this.field4908[this.field4932] == null ? 0 : this.field4908[this.field4932].field4873.field11503;
+						int var11 = this.field4908[this.field4932] == null ? 0 : this.field4908[this.field4932].field4873.pos;
 						int var12 = this.field4921.method3722();
 						int var13 = this.field4921.method3730(var11 / var12);
 						this.field4929 += var13;
@@ -658,19 +657,19 @@ public class class480 {
 			if (!this.field4911 && this.field4918 != null) {
 				int var2 = this.field4923.method5864(this.field4918);
 				if (var2 > 0 && (this.field4908 != null && this.field4908[this.field4909] != null && this.field4915)) {
-					int var3 = this.field4927 + var2 > this.field4908[this.field4909].field4873.field11503 ? this.field4908[this.field4909].field4873.field11503 - this.field4927 : var2;
+					int var3 = this.field4927 + var2 > this.field4908[this.field4909].field4873.pos ? this.field4908[this.field4909].field4873.pos - this.field4927 : var2;
 					if (this.field4927 < this.field4908[this.field4909].field4872 && this.field4927 + var3 > this.field4908[this.field4909].field4872 && this.field4908[this.field4909].field4872 >= 0) {
 						this.field4927 += this.field4908[this.field4909].field4872 - this.field4927;
-						var3 = this.field4927 + var2 > this.field4908[this.field4909].field4873.field11503 ? this.field4908[this.field4909].field4873.field11503 - this.field4927 : var2;
+						var3 = this.field4927 + var2 > this.field4908[this.field4909].field4873.pos ? this.field4908[this.field4909].field4873.pos - this.field4927 : var2;
 					}
 					if (this.field4927 + var3 > this.field4908[this.field4909].field4870 && this.field4908[this.field4909].field4870 >= 0) {
 						var3 = this.field4908[this.field4909].field4870 - this.field4927;
 					}
-					this.method7549(this.field4908[this.field4909].field4873.field11502, this.field4927, this.field4927 + var3);
-					this.field4923.method5875(this.field4918, this.field4908[this.field4909].field4873.field11502, this.field4927, var3);
+					this.method7549(this.field4908[this.field4909].field4873.data, this.field4927, this.field4927 + var3);
+					this.field4923.method5875(this.field4918, this.field4908[this.field4909].field4873.data, this.field4927, var3);
 					this.field4927 += var3;
 					int var10000 = var2 - var3;
-					if (this.field4927 >= this.field4908[this.field4909].field4873.field11503 || this.field4927 >= this.field4908[this.field4909].field4870 && this.field4908[this.field4909].field4870 >= 0) {
+					if (this.field4927 >= this.field4908[this.field4909].field4873.pos || this.field4927 >= this.field4908[this.field4909].field4870 && this.field4908[this.field4909].field4870 >= 0) {
 						this.field4908[this.field4909].method7369();
 						this.field4908[this.field4909] = null;
 						this.field4909++;
@@ -707,34 +706,34 @@ public class class480 {
 	}
 
 	@ObfuscatedName("rq.ac(IS)Lalw;")
-	public class997 method7515(int arg0) {
+	public Packet method7515(int arg0) {
 		return this.field4921.method3728(arg0);
 	}
 
 	@ObfuscatedName("rq.ai(Lalw;B)V")
-	public void method7510(class997 arg0) {
+	public void method7510(Packet arg0) {
 		if (this.field4905 == null || !(this.field4905 instanceof class476)) {
 			return;
 		}
 		class476 var2 = (class476) this.field4905;
 		class614 var3 = var2.method7386();
-		byte[] var4 = new byte[arg0.field11503];
-		System.arraycopy(arg0.field11502, 0, var4, 0, arg0.field11503);
-		class997 var5 = new class997(var4);
-		var5.field11503 = arg0.field11503;
+		byte[] var4 = new byte[arg0.pos];
+		System.arraycopy(arg0.data, 0, var4, 0, arg0.pos);
+		Packet var5 = new Packet(var4);
+		var5.pos = arg0.pos;
 		var3.method9681(var5);
 	}
 
 	@ObfuscatedName("rq.aw(II)Lalw;")
-	public class997 method7511(int arg0) {
+	public Packet method7511(int arg0) {
 		if (this.field4905 == null || !(this.field4905 instanceof class476)) {
 			return null;
 		}
 		class476 var2 = (class476) this.field4905;
 		class614 var3 = var2.method7386();
-		class997 var4 = var3.method9686(arg0);
-		class997 var5 = new class997(var4.field11503, true);
-		var5.method18111(var4);
+		Packet var4 = var3.method9686(arg0);
+		Packet var5 = new Packet(var4.pos, true);
+		var5.pdata(var4);
 		return var5;
 	}
 

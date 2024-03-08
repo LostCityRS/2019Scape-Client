@@ -25,13 +25,13 @@ public class class1161 extends class978 {
 	}
 
 	@ObfuscatedName("arc.e(Lalw;B)V")
-	public void method17726(class997 arg0) {
-		if (arg0.method17904() != 255) {
-			arg0.field11503 -= -1445626955;
-			this.field12240 = arg0.method17914();
+	public void method17726(Packet arg0) {
+		if (arg0.g1() != 255) {
+			arg0.pos -= -1445626955;
+			this.field12240 = arg0.g8();
 		}
-		this.field12239 = arg0.method17917();
-		this.field12238 = arg0.method17906();
+		this.field12239 = arg0.fastgstr();
+		this.field12238 = arg0.g2();
 	}
 
 	@ObfuscatedName("arc.n(Lkr;I)V")

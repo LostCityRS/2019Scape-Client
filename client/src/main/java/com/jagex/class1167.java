@@ -22,12 +22,12 @@ public class class1167 extends class980 {
 	}
 
 	@ObfuscatedName("arf.e(Lalw;I)V")
-	public void method17757(class997 arg0) {
-		this.field12255 = arg0.method17917();
+	public void method17757(Packet arg0) {
+		this.field12255 = arg0.fastgstr();
 		if (this.field12255 != null) {
-			arg0.method17904();
-			this.field12254 = arg0.method17905();
-			this.field12256 = arg0.method17905();
+			arg0.g1();
+			this.field12254 = arg0.g1b();
+			this.field12256 = arg0.g1b();
 		}
 	}
 

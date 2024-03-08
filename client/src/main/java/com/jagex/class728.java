@@ -33,9 +33,9 @@ public class class728 implements class53, class757 {
 	public int field8549;
 
 	@ObfuscatedName("aaz.e(Lalw;B)V")
-	public void method976(class997 arg0) {
+	public void method976(Packet arg0) {
 		while (true) {
-			int var2 = arg0.method17904();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
@@ -44,17 +44,17 @@ public class class728 implements class53, class757 {
 	}
 
 	@ObfuscatedName("aaz.u(Lalw;IB)V")
-	public void method14486(class997 arg0, int arg1) {
+	public void method14486(Packet arg0, int arg1) {
 		if (arg1 == 1) {
-			this.field8547 = arg0.method17908();
+			this.field8547 = arg0.g3();
 			this.method14487(this.field8547);
 		} else if (arg1 == 2) {
-			this.field8542 = arg0.method17906();
+			this.field8542 = arg0.g2();
 			if (this.field8542 == 65535) {
 				this.field8542 = -1;
 			}
 		} else if (arg1 == 3) {
-			this.field8543 = arg0.method17906() << 2;
+			this.field8543 = arg0.g2() << 2;
 		} else if (arg1 == 4) {
 			this.field8544 = false;
 		} else if (arg1 == 5) {

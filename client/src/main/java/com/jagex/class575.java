@@ -28,22 +28,22 @@ public class class575 implements class578 {
 	@ObfuscatedName("ur.e(I)V")
 	public void method9201() {
 		class983 var1 = Statics.method1604(class390.field3728, client.field10849.field794);
-		int var2 = var1.field11432.field11503++;
-		var1.field11432.method18001(this.field7278.method1303());
-		var1.field11432.method17893(this.field7276);
-		var1.field11432.method17945(this.field7277);
-		var1.field11432.method17893(class498.field5075);
+		int var2 = var1.field11432.pos++;
+		var1.field11432.p1(this.field7278.method1303());
+		var1.field11432.pjstr(this.field7276);
+		var1.field11432.p2(this.field7277);
+		var1.field11432.pjstr(class498.field5075);
 		if (this.field7275 == null) {
-			var1.field11432.method18001(0);
+			var1.field11432.p1(0);
 		} else {
-			var1.field11432.method18001(1);
+			var1.field11432.p1(1);
 			String var3 = this.field7275;
 			if (var3.length() > 100) {
 				var3 = var3.substring(0, 100);
 			}
-			var1.field11432.method17893(var3);
+			var1.field11432.pjstr(var3);
 		}
-		var1.field11432.method18028(var1.field11432.field11503 - var2);
+		var1.field11432.psize1(var1.field11432.pos - var2);
 		client.field10849.method934(var1);
 	}
 }

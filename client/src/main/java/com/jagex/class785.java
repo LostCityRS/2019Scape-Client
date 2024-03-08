@@ -6,10 +6,10 @@ import deob.ObfuscatedName;
 public interface class785 {
 
 	@ObfuscatedName("acf.n(Lalw;S)V")
-	void method15114(class997 arg0);
+	void method15114(Packet arg0);
 
 	@ObfuscatedName("acf.m(Lalw;I)V")
-	void method15115(class997 arg0);
+	void method15115(Packet arg0);
 
 	@ObfuscatedName("acf.e(B)I")
 	int method15118();

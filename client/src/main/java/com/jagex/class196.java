@@ -40,45 +40,45 @@ public class class196 {
 	@ObfuscatedName("gy.r")
 	public class747 field1934;
 
-	public class196(class997 arg0, boolean arg1, boolean arg2, class190 arg3) {
+	public class196(Packet arg0, boolean arg1, boolean arg2, class190 arg3) {
 		if (arg1) {
-			this.field1924 = arg0.method17914();
+			this.field1924 = arg0.g8();
 		} else {
 			this.field1924 = -1L;
 		}
 		if (arg2) {
-			this.field1928 = arg0.method17917();
+			this.field1928 = arg0.fastgstr();
 		}
-		int var5 = arg0.method17904();
+		int var5 = arg0.g1();
 		this.field1930 = (var5 & 0x1) != 0;
 		this.field1929 = (var5 & 0x2) != 0;
 		this.field1927 = new class642[arg3.method295().method9784()];
-		int var6 = arg0.method17904();
+		int var6 = arg0.g1();
 		if (var6 > this.field1927.length) {
 			throw new IllegalStateException("");
 		}
 		for (int var7 = 0; var7 < this.field1927.length; var7++) {
 			class642 var8 = this.field1927[var7] = new class642(arg3.method295().method9778(var7), true);
 			if (var7 < var6) {
-				var8.method10160(arg0.method17910());
+				var8.method10160(arg0.g4s());
 			} else {
 				var8.method10160(0);
 			}
 			var8.method10164(var8.method10161());
 		}
-		int var9 = arg0.method17906();
+		int var9 = arg0.g2();
 		this.field1926 = new class747(arg3.method293());
 		for (int var10 = 0; var10 < var9; var10++) {
 			class413 var11 = arg3.method293().method15284(arg0);
 			this.field1926.method14735(var11.field4240, var11.field4239);
 		}
-		this.field1922 = arg0.method17906();
+		this.field1922 = arg0.g2();
 		if (this.field1922 == 65535) {
 			this.field1922 = -1;
 		}
-		this.field1925 = arg0.method17904();
-		this.field1932 = (class209) class686.method1897(class209.method3603(), arg0.method17904());
-		this.field1933 = arg0.method17904();
+		this.field1925 = arg0.g1();
+		this.field1932 = (class209) class686.method1897(class209.method3603(), arg0.g1());
+		this.field1933 = arg0.g1();
 	}
 
 	@ObfuscatedName("gy.e(I)Ljava/lang/String;")

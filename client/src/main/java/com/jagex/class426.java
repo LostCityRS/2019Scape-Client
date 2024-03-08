@@ -55,23 +55,23 @@ public final class class426 {
 		this.method6604(arg0);
 	}
 
-	public class426(class997 arg0, boolean arg1) {
+	public class426(Packet arg0, boolean arg1) {
 		this.method6600(arg0, arg1);
 	}
 
 	@ObfuscatedName("pq.k(Lalw;Z)V")
-	public void method6600(class997 arg0, boolean arg1) {
+	public void method6600(Packet arg0, boolean arg1) {
 		if (!arg1) {
 			for (int var4 = 0; var4 < 16; var4++) {
-				this.field4315[var4] = arg0.method17916();
+				this.field4315[var4] = arg0.gFloat();
 			}
 			return;
 		}
 		class419 var3 = new class419();
-		var3.method6304(class417.method6277(arg0.method17973()));
-		var3.method6305(class417.method6277(arg0.method17973()));
-		var3.method6306(class417.method6277(arg0.method17973()));
-		var3.method6315((float) arg0.method17973(), (float) arg0.method17973(), (float) arg0.method17973());
+		var3.method6304(class417.method6277(arg0.g2s()));
+		var3.method6305(class417.method6277(arg0.g2s()));
+		var3.method6306(class417.method6277(arg0.g2s()));
+		var3.method6315((float) arg0.g2s(), (float) arg0.g2s(), (float) arg0.g2s());
 		this.method6609(var3);
 	}
 

@@ -37,14 +37,14 @@ public class class315 implements class317 {
 	}
 
 	@ObfuscatedName("acp.e(Lalw;I)Lkm;")
-	public static class315 method15034(class997 arg0) {
-		class318 var1 = class318.method13948()[arg0.method17904()];
-		class316 var2 = class316.method2774()[arg0.method17904()];
-		int var3 = arg0.method17973();
-		int var4 = arg0.method17973();
-		int var5 = arg0.method17927();
-		int var6 = arg0.method17910();
-		int var7 = arg0.method17904();
+	public static class315 method15034(Packet arg0) {
+		class318 var1 = class318.method13948()[arg0.g1()];
+		class316 var2 = class316.method2774()[arg0.g1()];
+		int var3 = arg0.g2s();
+		int var4 = arg0.g2s();
+		int var5 = arg0.gSmart2or4null();
+		int var6 = arg0.g4s();
+		int var7 = arg0.g1();
 		return new class315(var1, var2, var3, var4, var5, var6, var7);
 	}
 

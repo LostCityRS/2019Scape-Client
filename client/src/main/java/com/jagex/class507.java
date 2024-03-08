@@ -238,32 +238,32 @@ public abstract class class507 implements class509, Runnable, FocusListener, Win
 		if (Statics.field6608.exists()) {
 			try {
 				class752 var8 = new class752(Statics.field6608, "rw", 10000L);
-				class997 var9 = new class997((int) var8.method14821());
-				while (var9.field11503 < var9.field11502.length) {
-					int var10 = var8.method14812(var9.field11502, var9.field11503, var9.field11502.length - var9.field11503);
+				Packet var9 = new Packet((int) var8.method14821());
+				while (var9.pos < var9.data.length) {
+					int var10 = var8.method14812(var9.data, var9.pos, var9.data.length - var9.pos);
 					if (var10 == -1) {
 						throw new IOException();
 					}
-					var9.field11503 += var10;
+					var9.pos += var10;
 				}
-				var9.field11503 = 0;
-				int var11 = var9.method17904();
+				var9.pos = 0;
+				int var11 = var9.g1();
 				if (var11 < 1 || var11 > 3) {
 					throw new IOException("" + var11);
 				}
 				int var12 = 0;
 				if (var11 > 1) {
-					var12 = var9.method17904();
+					var12 = var9.g1();
 				}
 				if (var11 <= 2) {
-					var5 = var9.method17919();
+					var5 = var9.gjstr2();
 					if (var12 == 1) {
-						var6 = var9.method17919();
+						var6 = var9.gjstr2();
 					}
 				} else {
-					var5 = var9.method17920();
+					var5 = var9.gUTF8();
 					if (var12 == 1) {
-						var6 = var9.method17920();
+						var6 = var9.gUTF8();
 					}
 				}
 				var8.method14818();
@@ -328,14 +328,14 @@ public abstract class class507 implements class509, Runnable, FocusListener, Win
 	public void method8027(File arg0, File arg1) {
 		try {
 			class752 var3 = new class752(Statics.field6608, "rw", 10000L);
-			class997 var4 = new class997(500);
-			var4.method18001(3);
-			var4.method18001(arg1 == null ? 0 : 1);
-			var4.method17895(arg0.getPath());
+			Packet var4 = new Packet(500);
+			var4.p1(3);
+			var4.p1(arg1 == null ? 0 : 1);
+			var4.pUTF8(arg0.getPath());
 			if (arg1 != null) {
-				var4.method17895(arg1.getPath());
+				var4.pUTF8(arg1.getPath());
 			}
-			var3.method14808(var4.field11502, 0, var4.field11503);
+			var3.method14808(var4.data, 0, var4.pos);
 			var3.method14818();
 		} catch (IOException var6) {
 			var6.printStackTrace();
@@ -420,7 +420,7 @@ public abstract class class507 implements class509, Runnable, FocusListener, Win
 	}
 
 	@ObfuscatedName("hj.z(Lalw;I)V")
-	public static void method4286(class997 arg0) {
+	public static void method4286(Packet arg0) {
 		byte[] var1 = new byte[24];
 		try {
 			field6613.method14824(0L);
@@ -436,17 +436,17 @@ public abstract class class507 implements class509, Runnable, FocusListener, Win
 				var1[var4] = -1;
 			}
 		}
-		arg0.method17896(var1, 0, 24);
+		arg0.pdata(var1, 0, 24);
 	}
 
 	@ObfuscatedName("az.p(Lalw;II)V")
-	public static void method1001(class997 arg0, int arg1) {
+	public static void method1001(Packet arg0, int arg1) {
 		if (field6613 == null) {
 			return;
 		}
 		try {
 			field6613.method14824(0L);
-			field6613.method14828(arg0.field11502, arg1, 24);
+			field6613.method14828(arg0.data, arg1, 24);
 		} catch (Exception var3) {
 		}
 	}

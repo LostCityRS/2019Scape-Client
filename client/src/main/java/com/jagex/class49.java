@@ -17,7 +17,7 @@ public class class49 {
 	public int field791 = 0;
 
 	@ObfuscatedName("ax.k")
-	public class997 field792 = new class997(1700);
+	public Packet field792 = new Packet(1700);
 
 	@ObfuscatedName("ax.f")
 	public class734 field794;
@@ -88,19 +88,19 @@ public class class49 {
 		if (this.field800 == null || this.field791 <= 0) {
 			return;
 		}
-		this.field792.field11503 = 0;
+		this.field792.pos = 0;
 		while (true) {
 			class983 var1 = (class983) this.field803.method14191();
-			if (var1 == null || var1.field11430 > this.field792.field11502.length - this.field792.field11503) {
-				this.field800.method9030(this.field792.field11502, 0, this.field792.field11503);
-				this.field801 += this.field792.field11503;
+			if (var1 == null || var1.field11430 > this.field792.data.length - this.field792.pos) {
+				this.field800.method9030(this.field792.data, 0, this.field792.pos);
+				this.field801 += this.field792.pos;
 				this.field793 = 0;
 				break;
 			}
-			this.field792.method17896(var1.field11432.field11502, 0, var1.field11430);
+			this.field792.pdata(var1.field11432.data, 0, var1.field11430);
 			this.field791 -= var1.field11430;
 			var1.method8440();
-			var1.field11432.method18142();
+			var1.field11432.release();
 			var1.method17793();
 		}
 	}
@@ -108,8 +108,8 @@ public class class49 {
 	@ObfuscatedName("ax.m(Lakl;I)V")
 	public final void method934(class983 arg0) {
 		this.field803.method14153(arg0);
-		arg0.field11430 = arg0.field11432.field11503;
-		arg0.field11432.field11503 = 0;
+		arg0.field11430 = arg0.field11432.pos;
+		arg0.field11432.pos = 0;
 		this.field791 += arg0.field11430;
 	}
 

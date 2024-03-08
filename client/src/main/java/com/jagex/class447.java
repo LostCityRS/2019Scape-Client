@@ -24,7 +24,7 @@ public abstract class class447 {
 	public long field4452;
 
 	@ObfuscatedName("pp.r")
-	public class997 field4450 = new class997(6);
+	public Packet field4450 = new Packet(6);
 
 	@ObfuscatedName("pp.v")
 	public byte field4447 = 0;
@@ -42,10 +42,10 @@ public abstract class class447 {
 	public volatile int field4456 = -1;
 
 	@ObfuscatedName("pp.x")
-	public class997 field4459 = new class997(5);
+	public Packet field4459 = new Packet(5);
 
 	@ObfuscatedName("pp.b")
-	public class997 field4460 = new class997(5);
+	public Packet field4460 = new Packet(5);
 
 	@ObfuscatedName("pp.h")
 	public int field4461 = 0;

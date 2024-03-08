@@ -20,9 +20,9 @@ public class class1153 extends class978 {
 	}
 
 	@ObfuscatedName("arx.e(Lalw;B)V")
-	public void method17726(class997 arg0) {
-		this.field12218 = arg0.method17906();
-		this.field12219 = arg0.method17904() == 1;
+	public void method17726(Packet arg0) {
+		this.field12218 = arg0.g2();
+		this.field12219 = arg0.g1() == 1;
 	}
 
 	@ObfuscatedName("arx.n(Lkr;I)V")

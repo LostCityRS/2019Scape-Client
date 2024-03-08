@@ -9,5 +9,5 @@ public interface class53 {
 	void method975();
 
 	@ObfuscatedName("ay.e(Lalw;B)V")
-	void method976(class997 arg0);
+	void method976(Packet arg0);
 }

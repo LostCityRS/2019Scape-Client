@@ -14,18 +14,18 @@ public class class28 {
 	public LinkedHashMap field600;
 
 	public class28() {
-		this((class997) null);
+		this((Packet) null);
 	}
 
-	public class28(class997 arg0) {
+	public class28(Packet arg0) {
 		this.field600 = new LinkedHashMap();
-		if (arg0 != null && arg0.field11502 != null) {
-			int var2 = arg0.method17904();
+		if (arg0 != null && arg0.data != null) {
+			int var2 = arg0.g1();
 			if (var2 > 0 && var2 <= 1) {
-				int var3 = arg0.method17904();
+				int var3 = arg0.g1();
 				for (int var4 = 0; var4 < var3; var4++) {
-					long var5 = arg0.method17914();
-					int var7 = arg0.method17910();
+					long var5 = arg0.g8();
+					int var7 = arg0.g4s();
 					this.field600.put(var5, var7);
 				}
 			}
@@ -33,14 +33,14 @@ public class class28 {
 	}
 
 	@ObfuscatedName("h.e(Lalw;B)V")
-	public void method580(class997 arg0) {
-		arg0.method18001(1);
-		arg0.method18001(this.field600.size());
+	public void method580(Packet arg0) {
+		arg0.p1(1);
+		arg0.p1(this.field600.size());
 		Iterator var2 = this.field600.entrySet().iterator();
 		while (var2.hasNext()) {
 			Entry var3 = (Entry) var2.next();
-			arg0.method17890((Long) var3.getKey());
-			arg0.method17886((Integer) var3.getValue());
+			arg0.p8((Long) var3.getKey());
+			arg0.p4((Integer) var3.getValue());
 		}
 	}
 
@@ -79,7 +79,7 @@ public class class28 {
 					throw new EOFException();
 				}
 			}
-			class28 var4 = new class28(new class997(var1));
+			class28 var4 = new class28(new Packet(var1));
 			return var4;
 		} catch (Exception var17) {
 			var7 = new class28();
@@ -99,9 +99,9 @@ public class class28 {
 		class752 var1 = null;
 		try {
 			var1 = class507.method18567("3", client.field10768.field8333, true);
-			class997 var2 = new class997(5000);
+			Packet var2 = new Packet(5000);
 			this.method580(var2);
-			var1.method14808(var2.field11502, 0, var2.field11503);
+			var1.method14808(var2.data, 0, var2.pos);
 		} catch (Exception var14) {
 		} finally {
 			try {

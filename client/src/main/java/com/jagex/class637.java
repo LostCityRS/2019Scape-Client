@@ -67,7 +67,7 @@ public class class637 {
 		this.method10077();
 	}
 
-	public class637(class997 arg0, class636 arg1) {
+	public class637(Packet arg0, class636 arg1) {
 		this.method10065(arg0, arg1);
 	}
 
@@ -243,41 +243,41 @@ public class class637 {
 	}
 
 	@ObfuscatedName("xv.k(Lalw;Lxu;B)V")
-	public void method10065(class997 arg0, class636 arg1) {
-		int var3 = arg0.method17904();
+	public void method10065(Packet arg0, class636 arg1) {
+		int var3 = arg0.g1();
 		if (Statics.field688.field11528.method18389() == 1 && Statics.field8198.method2114() > 0) {
 			if ((var3 & class661.field8143.field8144) == 0) {
 				this.field7877 = 16777215;
 			} else {
-				this.field7877 = arg0.method17910();
+				this.field7877 = arg0.g4s();
 			}
 			if ((var3 & class661.field8139.field8144) == 0) {
 				this.field7871 = 1.1523438F;
 			} else {
-				this.field7871 = (float) arg0.method17906() / 256.0F;
+				this.field7871 = (float) arg0.g2() / 256.0F;
 			}
 			if ((var3 & class661.field8138.field8144) == 0) {
 				this.field7861 = 0.69921875F;
 			} else {
-				this.field7861 = (float) arg0.method17906() / 256.0F;
+				this.field7861 = (float) arg0.g2() / 256.0F;
 			}
 			if ((var3 & class661.field8137.field8144) == 0) {
 				this.field7864 = 1.2F;
 			} else {
-				this.field7864 = (float) arg0.method17906() / 256.0F;
+				this.field7864 = (float) arg0.g2() / 256.0F;
 			}
 		} else {
 			if ((var3 & class661.field8143.field8144) != 0) {
-				arg0.method17910();
+				arg0.g4s();
 			}
 			if ((var3 & class661.field8139.field8144) != 0) {
-				arg0.method17906();
+				arg0.g2();
 			}
 			if ((var3 & class661.field8138.field8144) != 0) {
-				arg0.method17906();
+				arg0.g2();
 			}
 			if ((var3 & class661.field8137.field8144) != 0) {
-				arg0.method17906();
+				arg0.g2();
 			}
 			this.field7877 = 16777215;
 			this.field7864 = 1.2F;
@@ -287,51 +287,51 @@ public class class637 {
 		if ((var3 & class661.field8140.field8144) == 0) {
 			this.field7865 = class423.method6483(-50.0F, -60.0F, -50.0F);
 		} else {
-			this.field7865 = class423.method6483((float) arg0.method17973(), (float) arg0.method17973(), (float) arg0.method17973());
+			this.field7865 = class423.method6483((float) arg0.g2s(), (float) arg0.g2s(), (float) arg0.g2s());
 		}
 		if ((var3 & class661.field8141.field8144) == 0) {
 			this.field7866 = 13156520;
 		} else {
-			this.field7866 = arg0.method17910();
+			this.field7866 = arg0.g4s();
 		}
 		if ((var3 & class661.field8142.field8144) == 0) {
 			this.field7867 = 0;
 		} else {
-			this.field7867 = arg0.method17906();
+			this.field7867 = arg0.g2();
 		}
 		if ((var3 & class661.field8136.field8144) == 0) {
 			this.field7868 = Statics.field7832;
 		} else {
-			int var4 = arg0.method17906();
+			int var4 = arg0.g2();
 			this.field7868 = arg1.method9985(var4);
 		}
 	}
 
 	@ObfuscatedName("xv.f(Lalw;I)V")
-	public void method10067(class997 arg0) {
-		this.field7862 = arg0.method17916();
-		this.field7870 = arg0.method17916();
-		this.field7874 = arg0.method17916();
+	public void method10067(Packet arg0) {
+		this.field7862 = arg0.gFloat();
+		this.field7870 = arg0.gFloat();
+		this.field7874 = arg0.gFloat();
 	}
 
 	@ObfuscatedName("xv.w(Lalw;I)V")
-	public void method10068(class997 arg0) {
+	public void method10068(Packet arg0) {
 		this.method10069(arg0, 0);
 	}
 
 	@ObfuscatedName("xv.l(Lalw;II)V")
-	public void method10069(class997 arg0, int arg1) {
-		this.field7878[arg1] = arg0.method17906();
-		this.field7879[arg1] = arg0.method17916();
+	public void method10069(Packet arg0, int arg1) {
+		this.field7878[arg1] = arg0.g2();
+		this.field7879[arg1] = arg0.gFloat();
 	}
 
 	@ObfuscatedName("xv.u(Lalw;Lxu;I)V")
-	public void method10070(class997 arg0, class636 arg1) {
-		int var3 = arg0.method17906();
-		int var4 = arg0.method17973();
-		int var5 = arg0.method17973();
-		int var6 = arg0.method17973();
-		int var7 = arg0.method17906();
+	public void method10070(Packet arg0, class636 arg1) {
+		int var3 = arg0.g2();
+		int var4 = arg0.g2s();
+		int var5 = arg0.g2s();
+		int var6 = arg0.g2s();
+		int var7 = arg0.g2();
 		Statics.field3023 = var7;
 		this.field7863 = arg1.method9986(var3, var4, var5, var6);
 	}

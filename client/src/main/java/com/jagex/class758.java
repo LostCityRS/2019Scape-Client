@@ -57,7 +57,7 @@ public class class758 implements class51 {
 		}
 		class53 var5 = this.field8796.method4414(arg0, this);
 		if (var3 != null) {
-			var5.method976(new class997(var3));
+			var5.method976(new Packet(var3));
 		}
 		var5.method975();
 		return var5;

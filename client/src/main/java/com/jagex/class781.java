@@ -25,9 +25,9 @@ public class class781 implements class53 {
 	}
 
 	@ObfuscatedName("aco.e(Lalw;B)V")
-	public void method976(class997 arg0) {
+	public void method976(Packet arg0) {
 		while (true) {
-			int var2 = arg0.method17904();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
@@ -36,11 +36,11 @@ public class class781 implements class53 {
 	}
 
 	@ObfuscatedName("aco.u(Lalw;IB)V")
-	public void method15066(class997 arg0, int arg1) {
+	public void method15066(Packet arg0, int arg1) {
 		if (arg1 == 1) {
-			this.field9151 = arg0.method17927();
+			this.field9151 = arg0.gSmart2or4null();
 		} else if (arg1 == 2) {
-			this.field9154 = arg0.method17908();
+			this.field9154 = arg0.g3();
 		} else if (arg1 == 3) {
 			this.field9152 = true;
 		} else if (arg1 == 4) {

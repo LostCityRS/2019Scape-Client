@@ -17,12 +17,12 @@ public class class1166 extends class980 {
 	}
 
 	@ObfuscatedName("aru.e(Lalw;I)V")
-	public void method17757(class997 arg0) {
-		this.field12253 = arg0.method17906();
-		arg0.method17904();
-		if (arg0.method17904() != 255) {
-			arg0.field11503 -= -1445626955;
-			arg0.method17914();
+	public void method17757(Packet arg0) {
+		this.field12253 = arg0.g2();
+		arg0.g1();
+		if (arg0.g1() != 255) {
+			arg0.pos -= -1445626955;
+			arg0.g8();
 		}
 	}
 

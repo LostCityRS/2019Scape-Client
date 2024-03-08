@@ -14,10 +14,10 @@ public class class208 implements class203 {
 	@ObfuscatedName("gm.n")
 	public final int field1973;
 
-	public class208(class201 arg0, class997 arg1) {
+	public class208(class201 arg0, Packet arg1) {
 		this.this$0 = arg0;
-		this.field1974 = arg1.method17906();
-		this.field1973 = arg1.method17904();
+		this.field1974 = arg1.g2();
+		this.field1973 = arg1.g1();
 	}
 
 	@ObfuscatedName("gm.e(Lgq;B)V")

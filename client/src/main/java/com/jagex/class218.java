@@ -122,7 +122,7 @@ public class class218 implements class365 {
 	public List field2085 = new ArrayList();
 
 	@ObfuscatedName("hk.au")
-	public class997 field2112 = null;
+	public Packet field2112 = null;
 
 	@ObfuscatedName("hk.ar")
 	public int field2082 = 0;
@@ -264,10 +264,10 @@ public class class218 implements class365 {
 	}
 
 	@ObfuscatedName("hk.w(Lalw;)V")
-	public void method3726(class997 arg0) {
+	public void method3726(Packet arg0) {
 		if (this.method3843() == class367.field3425 || this.method3843() == class367.field3426) {
 			if (arg0 != null) {
-				arg0.method18142();
+				arg0.release();
 			}
 		} else if (arg0 == null) {
 			boolean var2 = this.field2104 && (this.field2096 > 0 && this.field2097 < this.field2096 || this.field2096 < 0);
@@ -297,7 +297,7 @@ public class class218 implements class365 {
 	}
 
 	@ObfuscatedName("hk.u(I)Lalw;")
-	public class997 method3728(int arg0) {
+	public Packet method3728(int arg0) {
 		return this.method3768(arg0);
 	}
 
@@ -496,15 +496,15 @@ public class class218 implements class365 {
 		this.field2101 = 0;
 		Iterator var2 = this.field2085.iterator();
 		while (var2.hasNext()) {
-			class997 var3 = (class997) var2.next();
-			var3.method18142();
+			Packet var3 = (Packet) var2.next();
+			var3.release();
 		}
 		this.field2085.clear();
 		this.field2090 = false;
 		if (this.field2112 != null) {
-			class997 var4 = this.field2112;
+			Packet var4 = this.field2112;
 			synchronized (this.field2112) {
-				this.field2112.method18142();
+				this.field2112.release();
 				this.field2112 = null;
 			}
 		}
@@ -519,8 +519,8 @@ public class class218 implements class365 {
 						this.field2078.clear();
 						break;
 					}
-					class997 var8 = (class997) var7.next();
-					var8.method18142();
+					Packet var8 = (Packet) var7.next();
+					var8.release();
 				}
 			}
 			this.field2105 = 0;
@@ -533,8 +533,8 @@ public class class218 implements class365 {
 					this.field2050.clear();
 					break;
 				}
-				class997 var12 = (class997) var11.next();
-				var12.method18142();
+				Packet var12 = (Packet) var11.next();
+				var12.release();
 			}
 		}
 		this.field2044 = false;
@@ -571,7 +571,7 @@ public class class218 implements class365 {
 	}
 
 	@ObfuscatedName("hk.ae(Lalw;)V")
-	public void method3871(class997 arg0) {
+	public void method3871(Packet arg0) {
 		this.field2085.add(arg0);
 	}
 
@@ -581,8 +581,8 @@ public class class218 implements class365 {
 	}
 
 	@ObfuscatedName("hk.ah(Lalw;)Z")
-	public boolean method3748(class997 arg0) {
-		return arg0.method17904() == 79 && arg0.method17904() == 103 && arg0.method17904() == 103 && arg0.method17904() == 83;
+	public boolean method3748(Packet arg0) {
+		return arg0.g1() == 79 && arg0.g1() == 103 && arg0.g1() == 103 && arg0.g1() == 83;
 	}
 
 	@ObfuscatedName("hk.al([BII)Z")
@@ -1156,7 +1156,7 @@ public class class218 implements class365 {
 			return;
 		}
 		if (!this.method3747()) {
-			class997 var1 = (class997) (this.field2050 == null || this.field2050.isEmpty() ? null : this.field2050.get(0));
+			Packet var1 = (Packet) (this.field2050 == null || this.field2050.isEmpty() ? null : this.field2050.get(0));
 			if (var1 == null) {
 				if (!this.field2044) {
 					this.method3840(class367.field3424);
@@ -1174,49 +1174,49 @@ public class class218 implements class365 {
 	}
 
 	@ObfuscatedName("hk.av(Lalw;)V")
-	public synchronized void method3762(class997 arg0) {
+	public synchronized void method3762(Packet arg0) {
 		this.field2050.add(arg0);
 		this.method3840(class367.field3422);
 	}
 
 	@ObfuscatedName("hk.ao()V")
 	public synchronized void method3842() {
-		int var1 = this.field2112 == null ? 0 : this.field2112.field11503;
+		int var1 = this.field2112 == null ? 0 : this.field2112.pos;
 		int var2 = 0;
 		Iterator var3 = this.field2085.iterator();
 		while (var3.hasNext()) {
-			class997 var4 = (class997) var3.next();
-			var2 += var4.field11503;
+			Packet var4 = (Packet) var3.next();
+			var2 += var4.pos;
 		}
 		if (this.field2112 == null) {
 			this.field2112 = this.method3796(var2);
 			this.field2082 = 0;
 			var1 = 0;
-		} else if (this.field2112.field11502.length - this.field2112.field11503 < var2) {
-			class997 var5 = this.method3796(this.field2082 + var2);
-			var5.method17896(this.field2112.field11502, this.field2112.field11503 - this.field2084, this.field2082);
-			this.field2112.method18142();
+		} else if (this.field2112.data.length - this.field2112.pos < var2) {
+			Packet var5 = this.method3796(this.field2082 + var2);
+			var5.pdata(this.field2112.data, this.field2112.pos - this.field2084, this.field2082);
+			this.field2112.release();
 			this.field2112 = var5;
 			var1 = this.field2084;
 		}
 		Iterator var6 = this.field2085.iterator();
 		while (var6.hasNext()) {
-			class997 var7 = (class997) var6.next();
-			this.field2112.method17896(var7.field11502, 0, var7.field11503);
-			this.field2082 += var7.field11503;
-			var7.method18142();
+			Packet var7 = (Packet) var6.next();
+			this.field2112.pdata(var7.data, 0, var7.pos);
+			this.field2082 += var7.pos;
+			var7.release();
 		}
-		this.field2112.field11503 = var1 - this.field2084;
+		this.field2112.pos = var1 - this.field2084;
 		this.field2084 = 0;
 		this.field2085.clear();
 		label286: while (true) {
 			if (this.field2090) {
-				if (this.field2112.field11503 < this.field2112.field11502.length) {
+				if (this.field2112.pos < this.field2112.data.length) {
 					if (this.field2087 && (float) (this.field2105 / this.method3732()) > this.field2059) {
 						return;
 					}
 					if (this.field2112 != null && this.field2082 >= 27) {
-						int var8 = this.field2112.field11503;
+						int var8 = this.field2112.pos;
 						byte var9 = 0;
 						int var10 = 0;
 						if (!this.method3748(this.field2112)) {
@@ -1228,29 +1228,29 @@ public class class218 implements class365 {
 						}
 						this.field2098.clear();
 						this.field2099.clear();
-						this.field2112.method17904();
-						int var11 = this.field2112.method17904();
-						int var12 = this.field2112.method17904() & 0xFF | (this.field2112.method17904() & 0xFF) << 8 | (this.field2112.method17904() & 0xFF) << 16 | this.field2112.method17904() << 24;
+						this.field2112.g1();
+						int var11 = this.field2112.g1();
+						int var12 = this.field2112.g1() & 0xFF | (this.field2112.g1() & 0xFF) << 8 | (this.field2112.g1() & 0xFF) << 16 | this.field2112.g1() << 24;
 						int var13 = var12 - var9;
-						this.field2112.field11503 += 16;
-						int var14 = this.field2112.method17904();
-						int var15 = this.field2112.field11503;
+						this.field2112.pos += 16;
+						int var14 = this.field2112.g1();
+						int var15 = this.field2112.pos;
 						int var16 = var14 + var15;
 						if (var16 > this.field2082 + var8) {
-							this.field2112.field11503 = (this.field2082 + var8);
-							this.field2084 = (this.field2112.field11503 - var8);
+							this.field2112.pos = (this.field2082 + var8);
+							this.field2084 = (this.field2112.pos - var8);
 							this.field2090 = false;
 						}
 						int var17 = var16;
 						int var18 = 0;
 						if (this.field2090) {
 							for (int var19 = 0; var19 < var14; var19++) {
-								int var20 = this.field2112.field11502[var15++] & 0xFF;
+								int var20 = this.field2112.data[var15++] & 0xFF;
 								var16 += var20;
 								var18 += var20;
 								if (var16 > this.field2082 + var8) {
-									this.field2112.field11503 = (this.field2082 + var8);
-									this.field2084 = (this.field2112.field11503 - var8);
+									this.field2112.pos = (this.field2082 + var8);
+									this.field2084 = (this.field2112.pos - var8);
 									this.field2090 = false;
 									break;
 								}
@@ -1280,7 +1280,7 @@ public class class218 implements class365 {
 									var25 = true;
 								} else {
 									this.field2100.set(null);
-									boolean var28 = this.method3776(this.field2112.field11502, var26, var27, this.field2100);
+									boolean var28 = this.method3776(this.field2112.data, var26, var27, this.field2100);
 									class220[] var29 = (class220[]) this.field2100.get();
 									if (!var28 || this.field2092 && this.field2095 < this.field2093 && var22 < this.field2094) {
 										if (this.method3868()) {
@@ -1331,7 +1331,7 @@ public class class218 implements class365 {
 											int var37 = this.method3722() - this.method3849();
 											var32 += var32 / this.method3849() * var37;
 										}
-										class997 var38 = this.method3796(var32);
+										Packet var38 = this.method3796(var32);
 										for (int var39 = var31; var39 < var30; var39++) {
 											boolean var40 = this.field2092;
 											if (this.field2096 != 0) {
@@ -1366,23 +1366,23 @@ public class class218 implements class365 {
 													if (class372.field3441 == this.field2052) {
 														int var43 = this.method3879(var42);
 														if (class370.field3439 == this.field2053) {
-															var38.method17884(var43);
+															var38.ip2(var43);
 														} else {
-															var38.method17945(var43);
+															var38.p2(var43);
 														}
 													} else if (class372.field3440 == this.field2052) {
 														int var44 = this.method3765(var42);
 														if (class370.field3439 == this.field2053) {
-															var38.method17884(var44);
+															var38.ip2(var44);
 														} else {
-															var38.method17945(var44);
+															var38.p2(var44);
 														}
 													} else if (class372.field3442 == this.field2052) {
 														int var45 = this.method3872(var42);
-														var38.method18001(var45);
+														var38.p1(var45);
 													} else if (class372.field3443 == this.field2052) {
 														int var46 = this.method3767(var42);
-														var38.method18001(var46);
+														var38.p1(var46);
 													}
 												}
 												this.field2088++;
@@ -1391,7 +1391,7 @@ public class class218 implements class365 {
 										}
 										List var47 = this.field2078;
 										synchronized (this.field2078) {
-											this.field2105 += this.method3730(var38.field11503) / this.method3722();
+											this.field2105 += this.method3730(var38.pos) / this.method3722();
 											this.field2078.add(var38);
 										}
 									}
@@ -1399,14 +1399,14 @@ public class class218 implements class365 {
 									Object var49 = null;
 								}
 							}
-							this.field2112.field11503 = var16;
+							this.field2112.pos = var16;
 							this.field2082 -= var16 - var8;
 							continue label286;
 						}
 					}
 					if (this.field2112 != null) {
 						this.field2084 = this.field2082;
-						this.field2112.field11503 += this.field2082;
+						this.field2112.pos += this.field2082;
 					}
 					this.field2090 = false;
 					return;
@@ -1466,24 +1466,24 @@ public class class218 implements class365 {
 	}
 
 	@ObfuscatedName("hk.aa(I)Lalw;")
-	public class997 method3768(int arg0) {
-		class997 var2 = this.method3796(this.method3731(arg0));
+	public Packet method3768(int arg0) {
+		Packet var2 = this.method3796(this.method3731(arg0));
 		int var3 = arg0;
 		List var4 = this.field2078;
 		synchronized (this.field2078) {
 			while (!this.field2078.isEmpty()) {
-				class997 var5 = (class997) this.field2078.remove(0);
-				this.field2105 -= this.method3730(var5.field11503) / this.method3722();
+				Packet var5 = (Packet) this.field2078.remove(0);
+				this.field2105 -= this.method3730(var5.pos) / this.method3722();
 				int var6 = this.method3731(var3);
-				int var7 = var5.field11503 < var6 ? var5.field11503 : var6;
-				var2.method17896(var5.field11502, 0, var7);
+				int var7 = var5.pos < var6 ? var5.pos : var6;
+				var2.pdata(var5.data, 0, var7);
 				var3 -= this.method3730(var7);
-				int var8 = var5.field11503 - var7;
+				int var8 = var5.pos - var7;
 				if (var8 == 0) {
-					var5.method18142();
+					var5.release();
 				} else {
-					System.arraycopy(var5.field11502, var7, var5.field11502, 0, var8);
-					var5.field11503 = var8;
+					System.arraycopy(var5.data, var7, var5.data, 0, var8);
+					var5.pos = var8;
 					this.field2105 += this.method3730(var8) / this.method3722();
 					this.field2078.add(0, var5);
 				}
@@ -1499,8 +1499,8 @@ public class class218 implements class365 {
 	}
 
 	@ObfuscatedName("hk.af(I)Lalw;")
-	public class997 method3796(int arg0) {
-		return new class997(arg0, true);
+	public Packet method3796(int arg0) {
+		return new Packet(arg0, true);
 	}
 
 	@ObfuscatedName("hk.ak()I")

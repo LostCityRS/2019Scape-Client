@@ -11,9 +11,9 @@ public class class189 implements class203 {
 	@ObfuscatedName("fr.e")
 	public final int field1896;
 
-	public class189(class201 arg0, class997 arg1) {
+	public class189(class201 arg0, Packet arg1) {
 		this.this$0 = arg0;
-		this.field1896 = arg1.method17906();
+		this.field1896 = arg1.g2();
 	}
 
 	@ObfuscatedName("fr.e(Lgq;B)V")

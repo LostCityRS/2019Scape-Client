@@ -11,14 +11,14 @@ public class class625 {
 	public class625(class442 arg0) {
 		byte[] var2 = arg0.method6894(class628.field7706.field7708);
 		if (var2 != null) {
-			this.method9847(new class997(var2));
+			this.method9847(new Packet(var2));
 		}
 	}
 
 	@ObfuscatedName("wx.e(Lalw;I)V")
-	public void method9847(class997 arg0) {
+	public void method9847(Packet arg0) {
 		while (true) {
-			int var2 = arg0.method17904();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}

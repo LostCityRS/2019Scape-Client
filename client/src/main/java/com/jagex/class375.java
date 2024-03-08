@@ -27,9 +27,9 @@ public class class375 {
 	public boolean field3456 = false;
 
 	@ObfuscatedName("nm.e(Lalw;IB)V")
-	public void method5954(class997 arg0, int arg1) {
+	public void method5954(Packet arg0, int arg1) {
 		while (true) {
-			int var3 = arg0.method17904();
+			int var3 = arg0.g1();
 			if (var3 == 0) {
 				return;
 			}
@@ -38,21 +38,21 @@ public class class375 {
 	}
 
 	@ObfuscatedName("nm.n(Lalw;IIB)V")
-	public void method5953(class997 arg0, int arg1, int arg2) {
+	public void method5953(Packet arg0, int arg1, int arg2) {
 		if (arg1 == 1) {
-			this.field3455 = arg0.method17906();
+			this.field3455 = arg0.g2();
 			if (this.field3455 == 65535) {
 				this.field3455 = -1;
 			}
 		} else if (arg1 == 2) {
-			this.field3451 = arg0.method17906() + 1;
-			this.field3452 = arg0.method17906() + 1;
+			this.field3451 = arg0.g2() + 1;
+			this.field3452 = arg0.g2() + 1;
 		} else if (arg1 == 3) {
-			arg0.method17905();
+			arg0.g1b();
 		} else if (arg1 == 4) {
-			this.field3453 = arg0.method17904();
+			this.field3453 = arg0.g1();
 		} else if (arg1 == 5) {
-			this.field3450 = arg0.method17904();
+			this.field3450 = arg0.g1();
 		} else if (arg1 == 6) {
 			this.field3449 = true;
 		} else if (arg1 == 7) {

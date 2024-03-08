@@ -26,8 +26,8 @@ public class class155 {
 	@ObfuscatedName("ez.l")
 	public final int[] field1733;
 
-	public class155(class997 arg0) {
-		int var2 = arg0.method18123();
+	public class155(Packet arg0) {
+		int var2 = arg0.gSmart1or2();
 		this.field1727 = new int[var2];
 		this.field1728 = new int[var2];
 		this.field1729 = new int[var2];
@@ -36,13 +36,13 @@ public class class155 {
 		this.field1732 = new int[var2];
 		this.field1733 = new int[var2];
 		for (int var3 = 0; var3 < var2; var3++) {
-			this.field1727[var3] = arg0.method17906() - 5120;
-			this.field1729[var3] = arg0.method17906() - 5120;
-			this.field1728[var3] = arg0.method17973();
-			this.field1731[var3] = arg0.method17906() - 5120;
-			this.field1733[var3] = arg0.method17906() - 5120;
-			this.field1732[var3] = arg0.method17973();
-			this.field1730[var3] = arg0.method17973();
+			this.field1727[var3] = arg0.g2() - 5120;
+			this.field1729[var3] = arg0.g2() - 5120;
+			this.field1728[var3] = arg0.g2s();
+			this.field1731[var3] = arg0.g2() - 5120;
+			this.field1733[var3] = arg0.g2() - 5120;
+			this.field1732[var3] = arg0.g2s();
+			this.field1730[var3] = arg0.g2s();
 		}
 	}
 

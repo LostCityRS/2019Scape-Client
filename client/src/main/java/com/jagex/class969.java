@@ -54,7 +54,7 @@ public class class969 extends class532 {
 	public float[][] field11276;
 
 	@ObfuscatedName("ajr.b")
-	public class997 field11288;
+	public Packet field11288;
 
 	@ObfuscatedName("ajr.h")
 	public class1189 field11289;
@@ -118,7 +118,7 @@ public class class969 extends class532 {
 			}
 		}
 		if (this.field11280 > 0) {
-			this.field11288 = new class997(this.field11280 * 2);
+			this.field11288 = new Packet(this.field11280 * 2);
 			this.field11289 = new class1189(this.field11280 * 16);
 			this.field11290 = new class729(class783.method16657(this.field11280));
 			int var21 = 0;
@@ -179,8 +179,8 @@ public class class969 extends class532 {
 				}
 				var21++;
 			}
-			this.field11281 = this.field11279.method15766(5123, this.field11288.field11502, this.field11288.field11503, false);
-			this.field11282 = this.field11279.method15767(16, this.field11289.field11502, this.field11289.field11503, false);
+			this.field11281 = this.field11279.method15766(5123, this.field11288.data, this.field11288.pos, false);
+			this.field11282 = this.field11279.method15767(16, this.field11289.data, this.field11289.pos, false);
 			this.field11283 = new class83(this.field11282, 5126, 3, 0);
 			this.field11284 = new class83(this.field11282, 5121, 4, 12);
 		} else {
@@ -200,9 +200,9 @@ public class class969 extends class532 {
 	@ObfuscatedName("ajr.e(S)V")
 	public void method17571(short arg0) {
 		if (this.field11279.field10017) {
-			this.field11288.method17945(arg0);
+			this.field11288.p2(arg0);
 		} else {
-			this.field11288.method17884(arg0);
+			this.field11288.ip2(arg0);
 		}
 	}
 
@@ -305,10 +305,10 @@ public class class969 extends class532 {
 			this.field11289.method19553((float) var11);
 			this.field11289.method19553((float) var10);
 		}
-		this.field11289.method18001(var44);
-		this.field11289.method18001(var45);
-		this.field11289.method18001(var46);
-		this.field11289.method18001(255);
+		this.field11289.p1(var44);
+		this.field11289.p1(var45);
+		this.field11289.p1(var46);
+		this.field11289.p1(255);
 		this.method17571(var13);
 	}
 

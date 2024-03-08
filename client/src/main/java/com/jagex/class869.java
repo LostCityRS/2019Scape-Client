@@ -18,12 +18,12 @@ public class class869 extends class159 {
 	@ObfuscatedName("agg.f")
 	public final int field10283;
 
-	public class869(class997 arg0) {
+	public class869(Packet arg0) {
 		super(arg0);
-		this.field10284 = arg0.method17906();
-		this.field10286 = arg0.method17918();
-		this.field10285 = arg0.method17910();
-		this.field10283 = arg0.method17906();
+		this.field10284 = arg0.g2();
+		this.field10286 = arg0.gjstr();
+		this.field10285 = arg0.g4s();
+		this.field10283 = arg0.g2();
 	}
 
 	@ObfuscatedName("agg.n(I)V")

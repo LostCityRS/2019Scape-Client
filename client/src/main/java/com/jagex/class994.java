@@ -78,7 +78,7 @@ public class class994 extends class532 implements class785 {
 		this.field11480 = arg0.field11480;
 	}
 
-	public class994(class997 arg0) {
+	public class994(Packet arg0) {
 		this.method15115(arg0);
 	}
 
@@ -135,11 +135,11 @@ public class class994 extends class532 implements class785 {
 	}
 
 	@ObfuscatedName("akt.y(Lalw;I)V")
-	public void method17852(class997 arg0) {
-		arg0.method18001(this.field11477);
-		arg0.method17886(this.field11478);
-		arg0.method17886(this.field11479);
-		arg0.method17886(this.field11480);
+	public void method17852(Packet arg0) {
+		arg0.p1(this.field11477);
+		arg0.p4(this.field11478);
+		arg0.p4(this.field11479);
+		arg0.p4(this.field11480);
 	}
 
 	public String toString() {
@@ -152,15 +152,15 @@ public class class994 extends class532 implements class785 {
 	}
 
 	@ObfuscatedName("akt.n(Lalw;S)V")
-	public void method15114(class997 arg0) {
+	public void method15114(Packet arg0) {
 		this.method17852(arg0);
 	}
 
 	@ObfuscatedName("akt.m(Lalw;I)V")
-	public void method15115(class997 arg0) {
-		this.field11477 = arg0.method17904();
-		this.field11478 = arg0.method17910();
-		this.field11479 = arg0.method17910();
-		this.field11480 = arg0.method17910();
+	public void method15115(Packet arg0) {
+		this.field11477 = arg0.g1();
+		this.field11478 = arg0.g4s();
+		this.field11479 = arg0.g4s();
+		this.field11480 = arg0.g4s();
 	}
 }

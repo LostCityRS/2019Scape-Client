@@ -46,9 +46,9 @@ public class class1177 extends class986 {
 		boolean var5 = true;
 		for (int var6 = 0; var6 < this.field12323.length; var6++) {
 			byte[] var7 = this.field12323[var6];
-			class997 var8 = new class997(var7);
-			var8.field11503 = -1445626955;
-			int var9 = var8.method17906();
+			Packet var8 = new Packet(var7);
+			var8.pos = -1445626955;
+			int var9 = var8.g2();
 			class442 var10 = Statics.field12326;
 			synchronized (Statics.field12326) {
 				var5 &= Statics.field12326.method6889(var9);
@@ -67,9 +67,9 @@ public class class1177 extends class986 {
 		}
 		for (int var17 = 0; var17 < var15.length; var17++) {
 			byte[] var18 = this.field12323[var17];
-			class997 var19 = new class997(var18);
-			var19.field11503 = -1445626955;
-			int var20 = var19.method17906();
+			Packet var19 = new Packet(var18);
+			var19.pos = -1445626955;
+			int var20 = var19.g2();
 			class971 var21 = null;
 			for (class971 var22 = (class971) var12.method14191(); var22 != null; var22 = (class971) var12.method14161()) {
 				if (var22.field11312 == var20) {

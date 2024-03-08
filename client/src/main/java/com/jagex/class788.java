@@ -18,9 +18,9 @@ public class class788 implements class53, class757 {
 	public int field9170 = 2048;
 
 	@ObfuscatedName("adl.e(Lalw;B)V")
-	public void method976(class997 arg0) {
+	public void method976(Packet arg0) {
 		while (true) {
-			int var2 = arg0.method17904();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
@@ -29,15 +29,15 @@ public class class788 implements class53, class757 {
 	}
 
 	@ObfuscatedName("adl.u(Lalw;II)V")
-	public void method15145(class997 arg0, int arg1) {
+	public void method15145(Packet arg0, int arg1) {
 		if (arg1 == 1) {
-			this.field9168 = arg0.method17904();
+			this.field9168 = arg0.g1();
 		} else if (arg1 == 2) {
-			this.field9170 = arg0.method17906();
+			this.field9170 = arg0.g2();
 		} else if (arg1 == 3) {
-			this.field9167 = arg0.method17906();
+			this.field9167 = arg0.g2();
 		} else if (arg1 == 4) {
-			this.field9169 = arg0.method17973();
+			this.field9169 = arg0.g2s();
 		}
 	}
 

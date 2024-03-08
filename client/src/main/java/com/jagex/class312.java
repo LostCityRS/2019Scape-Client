@@ -13,8 +13,8 @@ public class class312 implements class317 {
 	}
 
 	@ObfuscatedName("ajb.e(Lalw;I)Lkj;")
-	public static class312 method17440(class997 arg0) {
-		int var1 = arg0.method17910();
+	public static class312 method17440(Packet arg0) {
+		int var1 = arg0.g4s();
 		return new class312(var1);
 	}
 

@@ -141,16 +141,16 @@ public abstract class class911 extends class307 {
 	}
 
 	@ObfuscatedName("ahn.u(Lalw;I)V")
-	public void method5224(class997 arg0) {
+	public void method5224(Packet arg0) {
 		this.field10563 = 0.0F;
 		this.field10566 = 0.0F;
 		this.field10564 = 0;
-		int var2 = arg0.method17904();
+		int var2 = arg0.g1();
 		this.field10565 = new class428[var2];
 		this.field10562 = new float[var2];
 		for (int var3 = 0; var3 < var2; var3++) {
 			this.field10565[var3] = new class428(arg0);
-			this.field10562[var3] = arg0.method17916();
+			this.field10562[var3] = arg0.gFloat();
 		}
 		this.method16724(arg0, var2);
 	}
@@ -162,5 +162,5 @@ public abstract class class911 extends class307 {
 	public abstract void method16723();
 
 	@ObfuscatedName("ahn.ac(Lalw;IS)V")
-	public abstract void method16724(class997 arg0, int arg1);
+	public abstract void method16724(Packet arg0, int arg1);
 }

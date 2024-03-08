@@ -71,26 +71,26 @@ public class class733 {
 
 	public class733(byte[] arg0, class731 arg1) {
 		this.field8575 = arg1;
-		class997 var3 = new class997(arg0);
-		int var4 = var3.method17904();
+		Packet var3 = new Packet(arg0);
+		int var4 = var3.g1();
 		if (var4 != 0) {
 			throw new RuntimeException("");
 		}
-		boolean var5 = var3.method17904() == 1;
+		boolean var5 = var3.g1() == 1;
 		this.field8574 = new byte[256];
-		var3.method17921(this.field8574, 0, 256);
+		var3.gdata(this.field8574, 0, 256);
 		this.field8564 = new byte[256];
-		var3.method17921(this.field8564, 0, 256);
+		var3.gdata(this.field8564, 0, 256);
 		this.field8565 = new byte[256];
-		var3.method17921(this.field8565, 0, 256);
+		var3.gdata(this.field8565, 0, 256);
 		this.field8573 = new short[256][4];
-		this.field8571 = var3.method17906();
-		this.field8572 = var3.method17906();
+		this.field8571 = var3.g2();
+		this.field8572 = var3.g2();
 		for (int var6 = 0; var6 < 256; var6++) {
-			this.field8573[var6][0] = (short) var3.method17906();
+			this.field8573[var6][0] = (short) var3.g2();
 		}
 		for (int var7 = 0; var7 < 256; var7++) {
-			this.field8573[var7][1] = (short) var3.method17906();
+			this.field8573[var7][1] = (short) var3.g2();
 		}
 		for (int var8 = 0; var8 < 256; var8++) {
 			this.field8573[var8][2] = this.field8574[var8];
@@ -102,7 +102,7 @@ public class class733 {
 				var9[var10] = new byte[this.field8564[var10]];
 				byte var11 = 0;
 				for (int var12 = 0; var12 < var9[var10].length; var12++) {
-					var11 += var3.method17905();
+					var11 += var3.g1b();
 					var9[var10][var12] = var11;
 				}
 			}
@@ -111,7 +111,7 @@ public class class733 {
 				var13[var14] = new byte[this.field8564[var14]];
 				byte var15 = 0;
 				for (int var16 = 0; var16 < var13[var14].length; var16++) {
-					var15 += var3.method17905();
+					var15 += var3.g1b();
 					var13[var14][var16] = var15;
 				}
 			}
@@ -127,13 +127,13 @@ public class class733 {
 			}
 			this.field8566 = this.field8565[32] + this.field8564[32];
 		} else {
-			this.field8566 = var3.method17904();
+			this.field8566 = var3.g1();
 		}
-		this.field8568 = var3.method17904();
-		this.field8567 = var3.method17904();
-		this.field8562 = var3.method17904();
-		this.field8569 = var3.method17904();
-		this.field8570 = var3.method17904();
+		this.field8568 = var3.g1();
+		this.field8567 = var3.g1();
+		this.field8562 = var3.g1();
+		this.field8569 = var3.g1();
+		this.field8570 = var3.g1();
 		if (this.field8570 != 1) {
 			this.field8566 /= this.field8570;
 			this.field8568 /= this.field8570;

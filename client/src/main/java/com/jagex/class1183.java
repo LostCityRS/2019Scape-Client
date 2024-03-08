@@ -123,16 +123,16 @@ public class class1183 extends class986 {
 
 	@ObfuscatedName("gq.w(Lpy;II)Lasy;")
 	public static class1183 method3468(class442 arg0, int arg1) {
-		class997 var2 = new class997(arg0.method6879(0, arg1));
+		Packet var2 = new Packet(arg0.method6879(0, arg1));
 		return method18854(var2, arg1);
 	}
 
 	@ObfuscatedName("aow.l(Lalw;II)Lasy;")
-	public static class1183 method18854(class997 arg0, int arg1) {
-		class1183 var2 = new class1183(arg1, arg0.method17918(), arg0.method17918(), arg0.method17910(), arg0.method17910(), arg0.method17904() == 1, arg0.method17904(), arg0.method17904());
-		int var3 = arg0.method17904();
+	public static class1183 method18854(Packet arg0, int arg1) {
+		class1183 var2 = new class1183(arg1, arg0.gjstr(), arg0.gjstr(), arg0.g4s(), arg0.g4s(), arg0.g1() == 1, arg0.g1(), arg0.g1());
+		int var3 = arg0.g1();
 		for (int var4 = 0; var4 < var3; var4++) {
-			var2.field12353.method14153(new class991(arg0.method17904(), arg0.method17906(), arg0.method17906(), arg0.method17906(), arg0.method17906(), arg0.method17906(), arg0.method17906(), arg0.method17906(), arg0.method17906()));
+			var2.field12353.method14153(new class991(arg0.g1(), arg0.g2(), arg0.g2(), arg0.g2(), arg0.g2(), arg0.g2(), arg0.g2(), arg0.g2(), arg0.g2()));
 		}
 		var2.method19472();
 		return var2;

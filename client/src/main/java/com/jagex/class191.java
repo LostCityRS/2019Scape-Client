@@ -46,44 +46,44 @@ public class class191 {
 	@ObfuscatedName("gq.s")
 	public int field1913;
 
-	public class191(long arg0, class997 arg1, boolean arg2, class190 arg3) {
+	public class191(long arg0, Packet arg1, boolean arg2, class190 arg3) {
 		this.field1902 = arg0;
-		int var6 = arg1.method17904();
+		int var6 = arg1.g1();
 		if (var6 <= 0 || var6 > 1) {
 			throw new IllegalStateException("");
 		}
-		int var7 = arg1.method17904();
+		int var7 = arg1.g1();
 		this.field1905 = (var7 & 0x1) != 0;
 		this.field1910 = (var7 & 0x2) != 0;
 		this.field1911 = (var7 & 0x4) != 0;
-		this.field1913 = arg1.method17910();
-		this.field1903 = arg1.method17914();
-		this.field1904 = arg1.method17918();
-		this.field1906 = arg1.method17973();
-		arg1.method17910();
-		arg1.method17914();
-		int var8 = arg1.method17906();
+		this.field1913 = arg1.g4s();
+		this.field1903 = arg1.g8();
+		this.field1904 = arg1.gjstr();
+		this.field1906 = arg1.g2s();
+		arg1.g4s();
+		arg1.g8();
+		int var8 = arg1.g2();
 		this.field1908 = new ArrayList(var8);
 		for (int var9 = 0; var9 < var8; var9++) {
 			this.field1908.add(new class196(arg1, this.field1910, this.field1911, arg3));
 		}
-		int var10 = arg1.method17906();
+		int var10 = arg1.g2();
 		this.field1912 = new ArrayList(var10);
 		for (int var11 = 0; var11 < var10; var11++) {
 			this.field1912.add(new class197(arg1, this.field1910, this.field1911));
 		}
 		this.field1899 = new class747(arg3.method291());
-		int var12 = arg1.method17906();
+		int var12 = arg1.g2();
 		for (int var13 = 0; var13 < var12; var13++) {
 			class413 var14 = arg3.method291().method15284(arg1);
 			this.field1899.method14735(var14.field4240, var14.field4239);
 		}
 		if (!arg2) {
-			arg1.method17906();
-			arg1.method17906();
-			arg1.method17906();
-			arg1.method17906();
-			arg1.method17906();
+			arg1.g2();
+			arg1.g2();
+			arg1.g2();
+			arg1.g2();
+			arg1.g2();
 		}
 		this.method3383();
 	}

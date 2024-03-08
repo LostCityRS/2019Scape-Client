@@ -37,13 +37,13 @@ public class class622 {
 
 	public class622(class442 arg0) {
 		byte[] var2 = arg0.method6894(class628.field7707.field7708);
-		this.method9825(new class997(var2));
+		this.method9825(new Packet(var2));
 	}
 
 	@ObfuscatedName("wf.e(Lalw;B)V")
-	public void method9825(class997 arg0) {
+	public void method9825(Packet arg0) {
 		while (true) {
-			int var2 = arg0.method17904();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
@@ -70,9 +70,9 @@ public class class622 {
 			} else if (var2 == 11) {
 				this.field7668 = true;
 			} else if (var2 == 12) {
-				this.field7665 = arg0.method17910();
+				this.field7665 = arg0.g4s();
 			} else if (var2 == 13) {
-				this.field7661 = arg0.method17910();
+				this.field7661 = arg0.g4s();
 			}
 		}
 	}

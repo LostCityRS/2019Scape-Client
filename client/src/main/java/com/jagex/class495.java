@@ -441,12 +441,12 @@ public class class495 {
 
 	@ObfuscatedName("rl.as(Lase;I)V")
 	public void method7756(class1190 arg0) {
-		int var2 = arg0.method17934();
-		this.field5027 = arg0.method17904();
-		int var3 = arg0.method17990();
-		int var4 = arg0.method17904();
-		int var5 = arg0.method17934();
-		boolean var6 = arg0.method17990() == 1;
+		int var2 = arg0.g2_alt2();
+		this.field5027 = arg0.g1();
+		int var3 = arg0.g1_alt3();
+		int var4 = arg0.g1();
+		int var5 = arg0.g2_alt2();
+		boolean var6 = arg0.g1_alt3() == 1;
 		if (!this.field5036) {
 			this.method7854();
 		}
@@ -474,9 +474,9 @@ public class class495 {
 
 	@ObfuscatedName("rl.at(Lase;I)V")
 	public void method7776(class1190 arg0) {
-		this.field5027 = arg0.method17904();
-		int var2 = arg0.method17904();
-		int var3 = arg0.method17904();
+		this.field5027 = arg0.g1();
+		int var2 = arg0.g1();
+		int var3 = arg0.g1();
 		if (var3 == 1) {
 			this.field5019 = class496.field5066;
 		} else if (var3 == 2) {
@@ -486,9 +486,9 @@ public class class495 {
 		} else if (var3 == 4) {
 			this.field5019 = class496.field5069;
 		}
-		int var4 = arg0.method17906();
-		int var5 = arg0.method17948();
-		int var6 = arg0.method17940();
+		int var4 = arg0.g2();
+		int var5 = arg0.g2_alt1();
+		int var6 = arg0.g1_alt1();
 		boolean var7 = (var6 & 0x1) != 0;
 		if (!this.field5036) {
 			this.method7854();
@@ -1199,7 +1199,7 @@ public class class495 {
 		class962.method5070();
 		if (class507.method4419() == class506.field6580 && client.field10849.method939() != null && client.field10791 == 3) {
 			class983 var31 = Statics.method1604(class390.field3772, client.field10849.field794);
-			var31.field11432.method17886(1057001181);
+			var31.field11432.p4(1057001181);
 			client.field10849.method934(var31);
 		}
 		if (!this.field5019.method7887()) {
@@ -1228,7 +1228,7 @@ public class class495 {
 			client.method6972(18);
 			if (client.field10849.method939() != null) {
 				class983 var40 = Statics.method1604(class390.field3761, client.field10849.field794);
-				var40.field11432.method17886((int) var38);
+				var40.field11432.p4((int) var38);
 				client.field10849.method934(var40);
 			}
 		}
@@ -1259,7 +1259,7 @@ public class class495 {
 		for (int var4 = 0; var4 < var3; var4++) {
 			byte[] var5 = arg1[var4];
 			if (var5 != null) {
-				class997 var6 = new class997(var5);
+				Packet var6 = new Packet(var5);
 				int var7 = this.field5054[var4] >> 8;
 				int var8 = this.field5054[var4] & 0xFF;
 				int var9 = var7 * 64 - this.field5018.field7426;
@@ -1302,7 +1302,7 @@ public class class495 {
 							int var11 = (var9 / 8 << 8) + var10 / 8;
 							for (int var12 = 0; var12 < this.field5054.length; var12++) {
 								if (this.field5054[var12] == var11 && arg1[var12] != null) {
-									class997 var13 = new class997(arg1[var12]);
+									Packet var13 = new Packet(arg1[var12]);
 									arg0.method7161(var13, var3, var4 * 8, var5 * 8, var7, var9, var10, var8);
 									arg0.method16875(Statics.field8198, var13, var3, var4 * 8, var5 * 8, var7, var9, var10, var8);
 									break;
@@ -1394,17 +1394,17 @@ public class class495 {
 					client.field10859[client.field10938] = this.field5054[var2];
 					var3 = ++client.field10938 - 1;
 				}
-				class997 var5 = new class997(this.field5024[var2]);
+				Packet var5 = new Packet(this.field5024[var2]);
 				int var6 = 0;
-				while (var5.field11503 < this.field5024[var2].length && var6 < 511 && client.field11011 < 1023) {
+				while (var5.pos < this.field5024[var2].length && var6 < 511 && client.field11011 < 1023) {
 					int var7 = var3 | var6++ << 6;
-					int var8 = var5.method17906();
+					int var8 = var5.g2();
 					int var9 = var8 >> 14;
 					int var10 = var8 >> 7 & 0x3F;
 					int var11 = var8 & 0x3F;
 					int var12 = (this.field5054[var2] >> 8) * 64 - this.field5018.field7426 + var10;
 					int var13 = (this.field5054[var2] & 0xFF) * 64 - this.field5018.field7427 + var11;
-					class260 var14 = (class260) Statics.field7961.method962(var5.method17906());
+					class260 var14 = (class260) Statics.field7961.method962(var5.g2());
 					class984 var15 = (class984) client.field10838.method14495((long) var7);
 					if (var15 == null && (var14.field2743 & 0x1) > 0 && var12 >= 0 && var14.field2699 + var12 < this.field5028 && var13 >= 0 && var14.field2699 + var13 < this.field5043) {
 						class1131 var16 = new class1131(this.field5030);

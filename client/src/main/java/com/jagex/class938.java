@@ -40,17 +40,17 @@ public class class938 extends class454 {
 	}
 
 	@ObfuscatedName("aih.ce(Ldh;Lalw;IIB)V")
-	public final void method16872(class133 arg0, class997 arg1, int arg2, int arg3) {
+	public final void method16872(class133 arg0, Packet arg1, int arg2, int arg3) {
 		if (this.field4549) {
 			return;
 		}
-		arg1.field11503 += 8;
+		arg1.pos += 8;
 		boolean var5 = false;
 		class637 var6 = null;
 		boolean var7 = false;
 		while (true) {
-			while (arg1.field11503 < arg1.field11502.length) {
-				int var8 = arg1.method17904();
+			while (arg1.pos < arg1.data.length) {
+				int var8 = arg1.g1();
 				if (var8 == 0) {
 					if (var6 == null) {
 						var6 = new class637(arg1, this.field10764);
@@ -58,12 +58,12 @@ public class class938 extends class454 {
 						var6.method10065(arg1, this.field10764);
 					}
 				} else if (var8 == 1) {
-					int var9 = arg1.method17904();
+					int var9 = arg1.g1();
 					if (var9 > 0) {
 						for (int var10 = 0; var10 < var9; var10++) {
 							class554 var11 = new class554(arg0, this.field4577.field6900, arg1, 2);
 							if (var11.field7014 == 31) {
-								class788 var12 = (class788) Statics.field7943.method962(arg1.method17906());
+								class788 var12 = (class788) Statics.field7943.method962(arg1.g2());
 								var11.method8899(var12.field9168, var12.field9170, var12.field9167, var12.field9169);
 							}
 							if (arg0.method2114() > 0) {
@@ -99,7 +99,7 @@ public class class938 extends class454 {
 						this.field4517 = new byte[4][][];
 					}
 					for (int var18 = 0; var18 < 4; var18++) {
-						byte var19 = arg1.method17905();
+						byte var19 = arg1.g1b();
 						if (var19 == 0 && this.field4517[var18] != null) {
 							int var20 = arg2;
 							int var21 = arg2 + 64;
@@ -138,7 +138,7 @@ public class class938 extends class454 {
 							}
 							for (int var24 = 0; var24 < 64; var24 += 4) {
 								for (int var25 = 0; var25 < 64; var25 += 4) {
-									byte var26 = arg1.method17905();
+									byte var26 = arg1.g1b();
 									for (int var27 = arg2 + var24; var27 < arg2 + var24 + 4; var27++) {
 										for (int var28 = arg3 + var25; var28 < arg3 + var25 + 4; var28++) {
 											if (var27 >= 0 && var27 < this.field4513 && var28 >= 0 && var28 < this.field4514) {
@@ -226,19 +226,19 @@ public class class938 extends class454 {
 	}
 
 	@ObfuscatedName("aih.cu(Ldh;Lalw;IIIIIIIB)V")
-	public final void method16875(class133 arg0, class997 arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8) {
+	public final void method16875(class133 arg0, Packet arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8) {
 		if (this.field4549) {
 			return;
 		}
-		arg1.field11503 += 8;
+		arg1.pos += 8;
 		boolean var10 = false;
 		class637 var11 = null;
 		boolean var12 = false;
 		int var13 = (arg6 & 0x7) * 8;
 		int var14 = (arg7 & 0x7) * 8;
 		while (true) {
-			while (arg1.field11503 < arg1.field11502.length) {
-				int var15 = arg1.method17904();
+			while (arg1.pos < arg1.data.length) {
+				int var15 = arg1.g1();
 				if (var15 == 0) {
 					if (var11 == null) {
 						var11 = new class637(arg1, this.field10764);
@@ -246,12 +246,12 @@ public class class938 extends class454 {
 						var11.method10065(arg1, this.field10764);
 					}
 				} else if (var15 == 1) {
-					int var16 = arg1.method17904();
+					int var16 = arg1.g1();
 					if (var16 > 0) {
 						for (int var17 = 0; var17 < var16; var17++) {
 							class554 var18 = new class554(arg0, this.field4577.field6900, arg1, 2);
 							if (var18.field7014 == 31) {
-								class788 var19 = (class788) Statics.field7943.method962(arg1.method17906());
+								class788 var19 = (class788) Statics.field7943.method962(arg1.g2());
 								var18.method8899(var19.field9168, var19.field9170, var19.field9167, var19.field9169);
 							}
 							if (arg0.method2114() > 0) {
@@ -292,7 +292,7 @@ public class class938 extends class454 {
 						this.field4517 = new byte[4][][];
 					}
 					for (int var27 = 0; var27 < 4; var27++) {
-						byte var28 = arg1.method17905();
+						byte var28 = arg1.g1b();
 						if (var28 == 0 && this.field4517[arg2] != null) {
 							if (var27 <= arg5) {
 								int var29 = arg3;
@@ -333,7 +333,7 @@ public class class938 extends class454 {
 							}
 							for (int var33 = 0; var33 < 64; var33 += 4) {
 								for (int var34 = 0; var34 < 64; var34 += 4) {
-									byte var35 = arg1.method17905();
+									byte var35 = arg1.g1b();
 									if (var27 <= arg5) {
 										for (int var36 = var33; var36 < var33 + 4; var36++) {
 											for (int var37 = var34; var37 < var34 + 4; var37++) {
@@ -379,10 +379,10 @@ public class class938 extends class454 {
 	@ObfuscatedName("id.ci(Laop;[BIIIILxe;Lxe;I)I")
 	public static final int method4526(class1090 arg0, byte[] arg1, int arg2, int arg3, int arg4, int arg5, class650 arg6, class650 arg7) {
 		int var8 = 0;
-		class997 var9 = new class997(arg1);
+		Packet var9 = new Packet(arg1);
 		int var10 = -1;
 		label70: while (true) {
-			int var11 = var9.method17955();
+			int var11 = var9.gExtended1or2();
 			if (var11 == 0) {
 				return var8;
 			}
@@ -403,7 +403,7 @@ public class class938 extends class454 {
 								do {
 									int var14;
 									do {
-										var14 = var9.method18123();
+										var14 = var9.gSmart1or2();
 										if (var14 == 0) {
 											continue label70;
 										}
@@ -450,10 +450,10 @@ public class class938 extends class454 {
 
 	@ObfuscatedName("aih.cv(Ldh;[BIII)V")
 	public final void method16888(class133 arg0, byte[] arg1, int arg2, int arg3) {
-		class997 var5 = new class997(arg1);
+		Packet var5 = new Packet(arg1);
 		int var6 = -1;
 		label63: while (true) {
-			int var7 = var5.method17955();
+			int var7 = var5.gExtended1or2();
 			if (var7 == 0) {
 				return;
 			}
@@ -471,7 +471,7 @@ public class class938 extends class454 {
 						do {
 							do {
 								do {
-									int var9 = var5.method18123();
+									int var9 = var5.gSmart1or2();
 									if (var9 == 0) {
 										continue label63;
 									}
@@ -506,10 +506,10 @@ public class class938 extends class454 {
 
 	@ObfuscatedName("aih.cp(Ldh;[BIIIIIIII)V")
 	public final void method16868(class133 arg0, byte[] arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8) {
-		class997 var10 = new class997(arg1);
+		Packet var10 = new Packet(arg1);
 		int var11 = -1;
 		label88: while (true) {
-			int var12 = var10.method17955();
+			int var12 = var10.gExtended1or2();
 			if (var12 == 0) {
 				return;
 			}
@@ -534,7 +534,7 @@ public class class938 extends class454 {
 												int var17;
 												do {
 													do {
-														int var14 = var10.method18123();
+														int var14 = var10.gSmart1or2();
 														if (var14 == 0) {
 															continue label88;
 														}

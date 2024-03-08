@@ -8,13 +8,13 @@ public abstract class class159 {
 	@ObfuscatedName("ew.e")
 	public final int field1750;
 
-	public class159(class997 arg0) {
-		this.field1750 = arg0.method17906();
+	public class159(Packet arg0) {
+		this.field1750 = arg0.g2();
 	}
 
 	@ObfuscatedName("aap.e(Lalw;I)Lew;")
-	public static class159 method14342(class997 arg0) {
-		int var1 = arg0.method17904();
+	public static class159 method14342(Packet arg0) {
+		int var1 = arg0.g1();
 		class801 var2 = class801.method3108(var1);
 		class159 var3 = null;
 		switch(var2.field9249) {

@@ -92,7 +92,7 @@ public class class1130 extends class892 {
 	}
 
 	@ObfuscatedName("aqk.hq(Lalw;BI)V")
-	public void method19121(class997 arg0, byte arg1) {
+	public void method19121(Packet arg0, byte arg1) {
 		this.field12052 = arg1;
 		int var3 = -1;
 		this.field12060 = 0;
@@ -101,15 +101,15 @@ public class class1130 extends class892 {
 		class738[] var6 = new class738[Statics.field1709.field7766.length];
 		for (int var7 = 0; var7 < Statics.field1709.field7766.length; var7++) {
 			if (Statics.field1709.field7766[var7] != 1) {
-				int var8 = arg0.method17904();
+				int var8 = arg0.g1();
 				if (var8 == 0) {
 					var4[var7] = 0;
 				} else {
-					int var9 = arg0.method17904();
+					int var9 = arg0.g1();
 					int var10 = (var8 << 8) + var9;
 					if (var7 == 0 && var10 == 65535) {
-						var3 = arg0.method17927();
-						this.field12060 = arg0.method17904();
+						var3 = arg0.gSmart2or4null();
+						this.field12060 = arg0.g1();
 						break;
 					}
 					if (var10 >= 2048) {
@@ -127,7 +127,7 @@ public class class1130 extends class892 {
 			}
 		}
 		if (var3 == -1) {
-			int var13 = arg0.method17906();
+			int var13 = arg0.g2();
 			int var14 = 0;
 			for (int var15 = 0; var15 < Statics.field1709.field7766.length; var15++) {
 				if (Statics.field1709.field7766[var15] == 0) {
@@ -140,7 +140,7 @@ public class class1130 extends class892 {
 		}
 		int[] var16 = new int[10];
 		for (int var17 = 0; var17 < 10; var17++) {
-			int var18 = arg0.method17904();
+			int var18 = arg0.g1();
 			if (Statics.field1434.length < 1 || var18 < 0 || var18 >= Statics.field1434[var17][0].length) {
 				var18 = 0;
 			}
@@ -148,13 +148,13 @@ public class class1130 extends class892 {
 		}
 		int[] var19 = new int[10];
 		for (int var20 = 0; var20 < 10; var20++) {
-			int var21 = arg0.method17904();
+			int var21 = arg0.g1();
 			if (Statics.field9259.length < 1 || var21 < 0 || var21 >= Statics.field9259[var20][0].length) {
 				var21 = 0;
 			}
 			var19[var20] = var21;
 		}
-		this.field12069 = arg0.method17906();
+		this.field12069 = arg0.g2();
 		if (this.field12061 == null) {
 			this.field12061 = new class639();
 		}
@@ -190,9 +190,9 @@ public class class1130 extends class892 {
 	}
 
 	@ObfuscatedName("aqk.hf(Lalw;I)V")
-	public final void method19129(class997 arg0) {
-		arg0.field11503 = 0;
-		int var2 = arg0.method17904();
+	public final void method19129(Packet arg0) {
+		arg0.pos = 0;
+		int var2 = arg0.g1();
 		byte var3 = (byte) (var2 & 0x1);
 		boolean var4 = (var2 & 0x4) != 0;
 		int var5 = super.method16546();
@@ -204,26 +204,26 @@ public class class1130 extends class892 {
 		this.method10531(var7);
 		var7.method6486();
 		if (var6) {
-			this.field12050 = arg0.method18123();
+			this.field12050 = arg0.gSmart1or2();
 			int var8 = var3 == 0 ? Statics.field7921.field7671 : Statics.field7921.field7670;
 			this.field12051 = ((class754) Statics.field8514.method962(var8)).method14849(this.field12050);
 		} else {
 			this.field12050 = -1;
 			this.field12051 = null;
 		}
-		this.field12071 = (class643) class686.method1897(class643.method10193(), arg0.method17905());
+		this.field12071 = (class643) class686.method1897(class643.method10193(), arg0.g1b());
 		if (Statics.field1811 == class682.field8273 && client.field10949 >= 2) {
 			this.field12071 = class643.field7918;
 		}
 		this.method19121(arg0, var3);
-		this.field12057 = arg0.method17918();
+		this.field12057 = arg0.gjstr();
 		this.field12062 = this.field12057;
 		if (Statics.field4490 == this) {
 			Statics.field12492 = this.field12057;
 		}
-		this.field12064 = arg0.method17904();
+		this.field12064 = arg0.g1();
 		if (var4) {
-			this.field12059 = arg0.method17906();
+			this.field12059 = arg0.g2();
 			if (this.field12059 == 65535) {
 				this.field12059 = -1;
 			}
@@ -231,14 +231,14 @@ public class class1130 extends class892 {
 			this.field12058 = -1;
 		} else {
 			this.field12059 = 0;
-			this.field12072 = arg0.method17904();
-			this.field12058 = arg0.method17904();
+			this.field12072 = arg0.g1();
+			this.field12058 = arg0.g1();
 			if (this.field12058 == 255) {
 				this.field12058 = -1;
 			}
 		}
 		int var9 = this.field12067;
-		this.field12067 = arg0.method17904();
+		this.field12067 = arg0.g1();
 		if (this.field12067 == 0) {
 			Statics.method5142(this);
 			return;
@@ -248,27 +248,27 @@ public class class1130 extends class892 {
 		int var12 = this.field12065;
 		int var13 = this.field12066;
 		int var14 = this.field12068;
-		this.field12063 = arg0.method17906();
-		this.field12049 = arg0.method17906();
-		this.field12065 = arg0.method17906();
-		this.field12066 = arg0.method17906();
-		this.field12068 = arg0.method17904();
+		this.field12063 = arg0.g2();
+		this.field12049 = arg0.g2();
+		this.field12065 = arg0.g2();
+		this.field12066 = arg0.g2();
+		this.field12068 = arg0.g1();
 		if (this.field12067 != var9 || this.field12063 != var10 || this.field12049 != var11 || this.field12065 != var12 || this.field12066 != var13 || this.field12068 != var14) {
 			class975.method10310(this);
 		}
 	}
 
 	@ObfuscatedName("aqk.hr(Lalw;I)V")
-	public void method19111(class997 arg0) {
-		arg0.field11503 = 0;
-		int var2 = arg0.method17904();
+	public void method19111(Packet arg0) {
+		arg0.pos = 0;
+		int var2 = arg0.g1();
 		for (int var3 = 0; var3 < this.field12054.length; var3++) {
 			if ((var2 & 0x1 << var3) == 0) {
 				this.field12054[var3] = -1;
 				this.field12055[var3] = -1;
 			} else {
-				int var4 = arg0.method17904();
-				int var5 = arg0.method17906();
+				int var4 = arg0.g1();
+				int var5 = arg0.g2();
 				this.field12054[var3] = var4;
 				this.field12055[var3] = var5;
 			}

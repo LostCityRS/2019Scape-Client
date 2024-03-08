@@ -26,11 +26,11 @@ public class class1157 extends class978 {
 	}
 
 	@ObfuscatedName("ary.e(Lalw;B)V")
-	public void method17726(class997 arg0) {
-		this.field12229 = arg0.method17906();
-		this.field12226 = arg0.method17910();
-		this.field12227 = arg0.method17904();
-		this.field12228 = arg0.method17904();
+	public void method17726(Packet arg0) {
+		this.field12229 = arg0.g2();
+		this.field12226 = arg0.g4s();
+		this.field12227 = arg0.g1();
+		this.field12228 = arg0.g1();
 	}
 
 	@ObfuscatedName("ary.n(Lkr;I)V")

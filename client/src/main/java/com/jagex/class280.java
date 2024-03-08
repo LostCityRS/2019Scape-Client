@@ -453,14 +453,14 @@ public class class280 {
 
 	@ObfuscatedName("al.d([BB)V")
 	public static void method714(byte[] arg0) {
-		class997 var1 = new class997(arg0);
+		Packet var1 = new Packet(arg0);
 		while (true) {
-			int var2 = var1.method17904();
+			int var2 = var1.g1();
 			if (var2 == 0) {
 				return;
 			}
 			if (var2 == 1) {
-				int var3 = var1.method17906();
+				int var3 = var1.g2();
 				Statics.field1798.method3171(var3);
 			}
 		}

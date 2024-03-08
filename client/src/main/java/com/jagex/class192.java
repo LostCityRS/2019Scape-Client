@@ -14,15 +14,15 @@ public class class192 implements class203 {
 	@ObfuscatedName("gl.n")
 	public final int field1915;
 
-	public class192(class201 arg0, class997 arg1) {
+	public class192(class201 arg0, Packet arg1) {
 		this.this$0 = arg0;
-		int var3 = arg1.method17906();
+		int var3 = arg1.g2();
 		if (var3 == 65535) {
 			this.field1916 = -1;
 			this.field1915 = 0;
 		} else {
 			this.field1916 = var3;
-			this.field1915 = arg1.method17910();
+			this.field1915 = arg1.g4s();
 		}
 	}
 

@@ -29,12 +29,12 @@ public class class322 implements class317 {
 	}
 
 	@ObfuscatedName("nu.e(Lalw;I)Lla;")
-	public static class322 method6073(class997 arg0) {
-		int var1 = arg0.method17927();
-		class318 var2 = class318.method13948()[arg0.method17904()];
-		class316 var3 = class316.method2774()[arg0.method17904()];
-		int var4 = arg0.method17973();
-		int var5 = arg0.method17973();
+	public static class322 method6073(Packet arg0) {
+		int var1 = arg0.gSmart2or4null();
+		class318 var2 = class318.method13948()[arg0.g1()];
+		class316 var3 = class316.method2774()[arg0.g1()];
+		int var4 = arg0.g2s();
+		int var5 = arg0.g2s();
 		return new class322(var1, var2, var3, var4, var5);
 	}
 

@@ -68,7 +68,7 @@ public class class763 implements class51 {
 		Object var3 = null;
 		byte[] var4 = class760.method9853(this.field8847, this.field8845, arg0);
 		if (var4 != null) {
-			this.field8849[arg0].method976(new class997(var4));
+			this.field8849[arg0].method976(new Packet(var4));
 		}
 		this.field8849[arg0].method975();
 	}

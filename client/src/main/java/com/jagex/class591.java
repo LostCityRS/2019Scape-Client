@@ -28,9 +28,9 @@ public class class591 implements class588 {
 	}
 
 	@ObfuscatedName("fz.k(Lalw;B)Lva;")
-	public static class591 method3038(class997 arg0) {
-		int var1 = arg0.method17904();
-		int var2 = arg0.method17904();
+	public static class591 method3038(Packet arg0) {
+		int var1 = arg0.g1();
+		int var2 = arg0.g1();
 		return new class591(var1, var2);
 	}
 }

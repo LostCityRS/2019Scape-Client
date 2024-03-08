@@ -6,5 +6,5 @@ import deob.ObfuscatedName;
 public interface class802 {
 
 	@ObfuscatedName("ade.e(Lalw;I)Ljava/lang/Object;")
-	Object method7308(class997 arg0);
+	Object method7308(Packet arg0);
 }

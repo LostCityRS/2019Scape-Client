@@ -21,12 +21,12 @@ public class class883 extends class159 {
 	@ObfuscatedName("agz.w")
 	public class476 field10335;
 
-	public class883(class997 arg0) {
+	public class883(Packet arg0) {
 		super(arg0);
-		this.field10337 = arg0.method17906();
-		this.field10334 = arg0.method17904();
-		this.field10333 = arg0.method17904();
-		this.field10336 = arg0.method17904();
+		this.field10337 = arg0.g2();
+		this.field10334 = arg0.g1();
+		this.field10333 = arg0.g1();
+		this.field10336 = arg0.g1();
 		this.field10335 = Statics.field1798.method3236(class173.field1828, this, this.field10337, this.field10336, this.field10334, class168.field1805.method3034(), class174.field1835, 0.0F, 0.0F, null, 0, this.field10333, false);
 		if (this.field10335 != null) {
 			this.field10335.method7392();

@@ -9,5 +9,5 @@ public abstract class class980 extends class532 {
 	public abstract void method17753(class979 arg0);
 
 	@ObfuscatedName("aku.e(Lalw;I)V")
-	public abstract void method17757(class997 arg0);
+	public abstract void method17757(Packet arg0);
 }

@@ -47,14 +47,14 @@ public class class305 implements class50 {
 	}
 
 	@ObfuscatedName("kh.e(Lalw;B)V")
-	public void method976(class997 arg0) {
+	public void method976(Packet arg0) {
 		this.method5190(arg0, false);
 	}
 
 	@ObfuscatedName("kh.u(Lalw;ZI)V")
-	public void method5190(class997 arg0, boolean arg1) {
+	public void method5190(Packet arg0, boolean arg1) {
 		while (true) {
-			int var3 = arg0.method17904();
+			int var3 = arg0.g1();
 			if (var3 == 0) {
 				return;
 			}
@@ -67,22 +67,22 @@ public class class305 implements class50 {
 	}
 
 	@ObfuscatedName("kh.z(Lalw;IZI)V")
-	public void method5184(class997 arg0, int arg1, boolean arg2) {
+	public void method5184(Packet arg0, int arg1, boolean arg2) {
 		class304 var4 = (class304) class686.method1897(Statics.method1624(), arg1);
 		switch(var4.field3072) {
 			case 7:
-				this.field3074 = arg0.method17904();
-				this.field3078 = arg0.method17904();
+				this.field3074 = arg0.g1();
+				this.field3078 = arg0.g1();
 			case 9:
 			default:
 				break;
 			case 14:
-				int var5 = arg0.method17904();
+				int var5 = arg0.g1();
 				this.field3080 = (class455) class686.method1897(class455.method7216(), var5);
 				if (this.field3080 == null) {
 					throw new IllegalStateException("");
 				}
-				this.field3075 = arg0.method17927();
+				this.field3075 = arg0.gSmart2or4null();
 				if (this.field3077 != null) {
 					class51 var6 = (class51) this.field3077.field3083.get(this.field3080);
 					if (var6 != null) {

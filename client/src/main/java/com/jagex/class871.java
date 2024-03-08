@@ -9,9 +9,9 @@ public class class871 extends class159 {
 	@ObfuscatedName("agj.n")
 	public final int field10290;
 
-	public class871(class997 arg0) {
+	public class871(Packet arg0) {
 		super(arg0);
-		this.field10290 = arg0.method17906();
+		this.field10290 = arg0.g2();
 	}
 
 	@ObfuscatedName("agj.n(I)V")

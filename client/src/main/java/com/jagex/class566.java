@@ -46,9 +46,9 @@ public class class566 implements class53 {
 	}
 
 	@ObfuscatedName("uk.e(Lalw;B)V")
-	public void method976(class997 arg0) {
+	public void method976(Packet arg0) {
 		while (true) {
-			int var2 = arg0.method17904();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
@@ -57,33 +57,33 @@ public class class566 implements class53 {
 	}
 
 	@ObfuscatedName("uk.u(Lalw;II)V")
-	public void method9149(class997 arg0, int arg1) {
+	public void method9149(Packet arg0, int arg1) {
 		if (arg1 == 1) {
-			arg0.method17906();
+			arg0.g2();
 		} else if (arg1 == 2) {
-			this.field7223 = arg0.method17904();
+			this.field7223 = arg0.g1();
 		} else if (arg1 == 3) {
-			this.field7218 = arg0.method17904();
+			this.field7218 = arg0.g1();
 		} else if (arg1 == 4) {
 			this.field7219 = 0;
 		} else if (arg1 == 5) {
-			this.field7227 = arg0.method17906();
+			this.field7227 = arg0.g2();
 		} else if (arg1 == 6) {
-			arg0.method17904();
+			arg0.g1();
 		} else if (arg1 == 7) {
-			this.field7217 = arg0.method17927();
+			this.field7217 = arg0.gSmart2or4null();
 		} else if (arg1 == 8) {
-			this.field7215 = arg0.method17927();
+			this.field7215 = arg0.gSmart2or4null();
 		} else if (arg1 == 9) {
-			this.field7224 = arg0.method17927();
+			this.field7224 = arg0.gSmart2or4null();
 		} else if (arg1 == 10) {
-			this.field7225 = arg0.method17927();
+			this.field7225 = arg0.gSmart2or4null();
 		} else if (arg1 == 11) {
-			this.field7219 = arg0.method17906();
+			this.field7219 = arg0.g2();
 		} else if (arg1 == 12) {
-			this.field7222 = arg0.method17927();
+			this.field7222 = arg0.gSmart2or4null();
 		} else if (arg1 == 13) {
-			this.field7221 = arg0.method17927();
+			this.field7221 = arg0.gSmart2or4null();
 		}
 	}
 

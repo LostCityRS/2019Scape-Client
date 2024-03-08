@@ -619,7 +619,7 @@ public class class836 extends class104 {
 		if (this.field9453.field10019.length < var8) {
 			this.field9453.field10019 = new int[var8];
 		}
-		if (this.field9453.field10016.field11502.length < this.field9459 * 2) {
+		if (this.field9453.field10016.data.length < this.field9459 * 2) {
 			this.field9453.field10016 = new class1189(this.field9459 * 2);
 		}
 		int var9 = arg0 - arg2;
@@ -743,10 +743,10 @@ public class class836 extends class104 {
 			this.field9453.method15758();
 		}
 		this.field9453.method15809(this.field9456, this.field9480, this.field9474, this.field9476);
-		if (this.field9453.field10016.field11502.length < this.field9459 * 2) {
+		if (this.field9453.field10016.data.length < this.field9459 * 2) {
 			this.field9453.field10016 = new class1189(this.field9459 * 2);
 		} else {
-			this.field9453.field10016.field11503 = 0;
+			this.field9453.field10016.pos = 0;
 		}
 		int var10 = 0;
 		class1189 var11 = this.field9453.field10016;
@@ -758,7 +758,7 @@ public class class836 extends class104 {
 						short[] var15 = this.field9460[var13];
 						if (var15 != null) {
 							for (int var16 = 0; var16 < var15.length; var16++) {
-								var11.method17945(var15[var16] & 0xFFFF);
+								var11.p2(var15[var16] & 0xFFFF);
 								var10++;
 							}
 						}
@@ -774,7 +774,7 @@ public class class836 extends class104 {
 						short[] var20 = this.field9460[var18];
 						if (var20 != null) {
 							for (int var21 = 0; var21 < var20.length; var21++) {
-								var11.method17884(var20[var21] & 0xFFFF);
+								var11.ip2(var20[var21] & 0xFFFF);
 								var10++;
 							}
 						}
@@ -784,7 +784,7 @@ public class class836 extends class104 {
 			}
 		}
 		if (var10 > 0) {
-			class827 var22 = new class827(this.field9453, 5123, var11.field11502, var11.field11503);
+			class827 var22 = new class827(this.field9453, 5123, var11.data, var11.pos);
 			this.field9453.method15921(var22, 4, 0, var10);
 		}
 	}

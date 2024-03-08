@@ -19,9 +19,9 @@ public class class789 implements class53, class757 {
 	public boolean field9174 = true;
 
 	@ObfuscatedName("adp.e(Lalw;B)V")
-	public void method976(class997 arg0) {
+	public void method976(Packet arg0) {
 		while (true) {
-			int var2 = arg0.method17904();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
@@ -30,18 +30,18 @@ public class class789 implements class53, class757 {
 	}
 
 	@ObfuscatedName("adp.u(Lalw;II)V")
-	public void method15151(class997 arg0, int arg1) {
+	public void method15151(Packet arg0, int arg1) {
 		if (arg1 == 1) {
-			char var3 = Statics.method9576(arg0.method17905());
+			char var3 = Statics.method9576(arg0.g1b());
 			this.field9173 = Statics.method7300(var3);
 		} else if (arg1 == 2) {
-			this.field9172 = arg0.method17910();
+			this.field9172 = arg0.g4s();
 		} else if (arg1 == 4) {
 			this.field9174 = false;
 		} else if (arg1 == 5) {
-			this.field9171 = arg0.method17918();
+			this.field9171 = arg0.gjstr();
 		} else if (arg1 == 101) {
-			this.field9173 = (class463) class686.method1897(class463.method7293(), arg0.method18123());
+			this.field9173 = (class463) class686.method1897(class463.method7293(), arg0.gSmart1or2());
 		}
 	}
 

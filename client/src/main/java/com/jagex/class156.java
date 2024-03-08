@@ -24,9 +24,9 @@ public class class156 {
 	@ObfuscatedName("ef.w")
 	public int field1738;
 
-	public class156(class997 arg0) {
-		this.field1735 = arg0.method17927();
-		this.field1736 = (class601) class686.method1897(class601.method606(), arg0.method17904());
+	public class156(Packet arg0) {
+		this.field1735 = arg0.gSmart2or4null();
+		this.field1736 = (class601) class686.method1897(class601.method606(), arg0.g1());
 	}
 
 	@ObfuscatedName("ef.e(IIIIB)V")

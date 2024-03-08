@@ -17,8 +17,8 @@ public class class1156 extends class978 {
 	}
 
 	@ObfuscatedName("ari.e(Lalw;B)V")
-	public void method17726(class997 arg0) {
-		this.field12224 = arg0.method17906();
+	public void method17726(Packet arg0) {
+		this.field12224 = arg0.g2();
 	}
 
 	@ObfuscatedName("ari.n(Lkr;I)V")

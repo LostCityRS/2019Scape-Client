@@ -45,16 +45,16 @@ public class class314 implements class317 {
 	}
 
 	@ObfuscatedName("aoe.e(Lalw;I)Lkp;")
-	public static class314 method18899(class997 arg0) {
-		class318 var1 = class318.method13948()[arg0.method17904()];
-		class316 var2 = class316.method2774()[arg0.method17904()];
-		int var3 = arg0.method17973();
-		int var4 = arg0.method17973();
-		int var5 = arg0.method17906();
-		int var6 = arg0.method17906();
-		int var7 = arg0.method17973();
-		int var8 = arg0.method17927();
-		int var9 = arg0.method17910();
+	public static class314 method18899(Packet arg0) {
+		class318 var1 = class318.method13948()[arg0.g1()];
+		class316 var2 = class316.method2774()[arg0.g1()];
+		int var3 = arg0.g2s();
+		int var4 = arg0.g2s();
+		int var5 = arg0.g2();
+		int var6 = arg0.g2();
+		int var7 = arg0.g2s();
+		int var8 = arg0.gSmart2or4null();
+		int var9 = arg0.g4s();
 		return new class314(var1, var2, var3, var4, var5, var6, var7, var8, var9);
 	}
 

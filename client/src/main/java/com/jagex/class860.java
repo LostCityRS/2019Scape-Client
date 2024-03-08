@@ -10,7 +10,7 @@ public class class860 extends class149 {
 	}
 
 	@ObfuscatedName("afv.u(Lalw;IS)V")
-	public void method2780(class997 arg0, int arg1) {
+	public void method2780(Packet arg0, int arg1) {
 	}
 
 	@ObfuscatedName("afv.n(I)V")

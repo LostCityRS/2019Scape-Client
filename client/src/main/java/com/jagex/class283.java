@@ -43,9 +43,9 @@ public class class283 implements class53 {
 	}
 
 	@ObfuscatedName("jv.e(Lalw;B)V")
-	public void method976(class997 arg0) {
+	public void method976(Packet arg0) {
 		while (true) {
-			int var2 = arg0.method17904();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
@@ -54,34 +54,34 @@ public class class283 implements class53 {
 	}
 
 	@ObfuscatedName("jv.u(Lalw;II)V")
-	public void method4997(class997 arg0, int arg1) {
+	public void method4997(Packet arg0, int arg1) {
 		if (arg1 == 1) {
-			arg0.method17904();
+			arg0.g1();
 		} else if (arg1 == 2) {
-			int var3 = arg0.method17904();
+			int var3 = arg0.g1();
 			this.field2950 = new int[var3];
 			for (int var4 = 0; var4 < var3; var4++) {
-				this.field2950[var4] = arg0.method17927();
+				this.field2950[var4] = arg0.gSmart2or4null();
 			}
 		} else if (arg1 != 3) {
 			if (arg1 == 40) {
-				int var5 = arg0.method17904();
+				int var5 = arg0.g1();
 				this.field2949 = new short[var5];
 				this.field2954 = new short[var5];
 				for (int var6 = 0; var6 < var5; var6++) {
-					this.field2949[var6] = (short) arg0.method17906();
-					this.field2954[var6] = (short) arg0.method17906();
+					this.field2949[var6] = (short) arg0.g2();
+					this.field2954[var6] = (short) arg0.g2();
 				}
 			} else if (arg1 == 41) {
-				int var7 = arg0.method17904();
+				int var7 = arg0.g1();
 				this.field2958 = new short[var7];
 				this.field2953 = new short[var7];
 				for (int var8 = 0; var8 < var7; var8++) {
-					this.field2958[var8] = (short) arg0.method17906();
-					this.field2953[var8] = (short) arg0.method17906();
+					this.field2958[var8] = (short) arg0.g2();
+					this.field2953[var8] = (short) arg0.g2();
 				}
 			} else if (arg1 == 44) {
-				int var9 = arg0.method17906();
+				int var9 = arg0.g2();
 				int var10 = 0;
 				for (int var11 = var9; var11 > 0; var11 >>= 0x1) {
 					var10++;
@@ -96,7 +96,7 @@ public class class283 implements class53 {
 					}
 				}
 			} else if (arg1 == 45) {
-				int var14 = arg0.method17906();
+				int var14 = arg0.g2();
 				int var15 = 0;
 				for (int var16 = var14; var16 > 0; var16 >>= 0x1) {
 					var15++;
@@ -111,7 +111,7 @@ public class class283 implements class53 {
 					}
 				}
 			} else if (arg1 >= 60 && arg1 < 70) {
-				this.field2957[arg1 - 60] = arg0.method17927();
+				this.field2957[arg1 - 60] = arg0.gSmart2or4null();
 			}
 		}
 	}

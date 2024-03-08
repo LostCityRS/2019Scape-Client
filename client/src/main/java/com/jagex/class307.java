@@ -28,7 +28,7 @@ public abstract class class307 {
 	public abstract void method5223(class270 arg0, int arg1, int arg2);
 
 	@ObfuscatedName("kl.u(Lalw;I)V")
-	public abstract void method5224(class997 arg0);
+	public abstract void method5224(Packet arg0);
 
 	@ObfuscatedName("kl.k(I)[D")
 	public abstract double[] method5230();

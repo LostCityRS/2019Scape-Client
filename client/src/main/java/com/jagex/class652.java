@@ -22,9 +22,9 @@ public class class652 implements class53 {
 	}
 
 	@ObfuscatedName("xj.e(Lalw;B)V")
-	public void method976(class997 arg0) {
+	public void method976(Packet arg0) {
 		while (true) {
-			int var2 = arg0.method17904();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
@@ -33,12 +33,12 @@ public class class652 implements class53 {
 	}
 
 	@ObfuscatedName("xj.u(Lalw;II)V")
-	public void method10303(class997 arg0, int arg1) {
+	public void method10303(Packet arg0, int arg1) {
 		if (arg1 == 1) {
-			this.field7963 = arg0.method17927();
+			this.field7963 = arg0.gSmart2or4null();
 		} else if (arg1 == 2) {
-			this.field7964 = arg0.method17904();
-			this.field7965 = arg0.method17904();
+			this.field7964 = arg0.g1();
+			this.field7965 = arg0.g1();
 		}
 	}
 

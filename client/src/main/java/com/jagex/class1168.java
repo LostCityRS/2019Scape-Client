@@ -23,15 +23,15 @@ public class class1168 extends class980 {
 	}
 
 	@ObfuscatedName("arz.e(Lalw;I)V")
-	public void method17757(class997 arg0) {
-		if (arg0.method17904() != 255) {
-			arg0.field11503 -= -1445626955;
-			arg0.method17914();
+	public void method17757(Packet arg0) {
+		if (arg0.g1() != 255) {
+			arg0.pos -= -1445626955;
+			arg0.g8();
 		}
-		this.field12258 = arg0.method17917();
-		this.field12257 = arg0.method17906();
-		this.field12259 = arg0.method17905();
-		arg0.method17914();
+		this.field12258 = arg0.fastgstr();
+		this.field12257 = arg0.g2();
+		this.field12259 = arg0.g1b();
+		arg0.g8();
 	}
 
 	@ObfuscatedName("arz.n(Lakr;S)V")

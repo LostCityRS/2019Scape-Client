@@ -9,7 +9,7 @@ public abstract class class1180 extends class986 {
 	public final int field12341;
 
 	@ObfuscatedName("ary.e(ILie;Lalw;I)Laso;")
-	public static class1180 method19262(int arg0, class247 arg1, class997 arg2) {
+	public static class1180 method19262(int arg0, class247 arg1, Packet arg2) {
 		if (class247.field2618 == arg1) {
 			return new class1227(arg0, arg2);
 		} else if (class247.field2616 == arg1) {
@@ -27,7 +27,7 @@ public abstract class class1180 extends class986 {
 	public abstract void method19431(float arg0);
 
 	@ObfuscatedName("aso.k(Lalw;I)V")
-	public abstract void method19434(class997 arg0);
+	public abstract void method19434(Packet arg0);
 
 	@ObfuscatedName("aso.m(Lju;Lou;Lpq;I)V")
 	public abstract void method19440(class270 arg0, class419 arg1, class426 arg2);

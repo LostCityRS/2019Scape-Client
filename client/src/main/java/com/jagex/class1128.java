@@ -14,12 +14,12 @@ public class class1128 extends class874 {
 	@ObfuscatedName("aqn.l")
 	public final int field12044;
 
-	public class1128(class997 arg0) {
+	public class1128(Packet arg0) {
 		super(arg0);
-		int var2 = arg0.method17910();
+		int var2 = arg0.g4s();
 		this.field12043 = var2 >>> 16;
 		this.field12042 = var2 & 0xFFFF;
-		this.field12044 = arg0.method17904();
+		this.field12044 = arg0.g1();
 	}
 
 	@ObfuscatedName("aqn.n(I)V")

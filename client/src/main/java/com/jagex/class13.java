@@ -36,15 +36,15 @@ public class class13 {
 			var2.write("data1=req");
 			var2.flush();
 			InputStream var3 = var1.getInputStream();
-			class997 var4 = new class997(new byte[1000]);
+			Packet var4 = new Packet(new byte[1000]);
 			do {
-				int var5 = var3.read(var4.field11502, var4.field11503, 1000 - var4.field11503);
+				int var5 = var3.read(var4.data, var4.pos, 1000 - var4.pos);
 				if (var5 == -1) {
-					var4.field11503 = 0;
-					return var4.method17914();
+					var4.pos = 0;
+					return var4.g8();
 				}
-				var4.field11503 += var5;
-			} while (var4.field11503 < 1000);
+				var4.pos += var5;
+			} while (var4.pos < 1000);
 			return 0L;
 		} catch (Exception var9) {
 			return 0L;
@@ -54,47 +54,47 @@ public class class13 {
 	@ObfuscatedName("abn.n(JLjava/lang/String;B)I")
 	public static final int method14753(long arg0, String arg1) {
 		Random var3 = new Random();
-		class997 var4 = new class997(128);
-		class997 var5 = new class997(128);
+		Packet var4 = new Packet(128);
+		Packet var5 = new Packet(128);
 		int[] var6 = new int[] { var3.nextInt(), var3.nextInt(), (int) (arg0 >> 32), (int) arg0 };
-		var4.method18001(10);
+		var4.p1(10);
 		for (int var7 = 0; var7 < 4; var7++) {
-			var4.method17886(var3.nextInt());
+			var4.p4(var3.nextInt());
 		}
-		var4.method17886(var6[0]);
-		var4.method17886(var6[1]);
-		var4.method17890(arg0);
-		var4.method17890(0L);
+		var4.p4(var6[0]);
+		var4.p4(var6[1]);
+		var4.p8(arg0);
+		var4.p8(0L);
 		for (int var8 = 0; var8 < 4; var8++) {
-			var4.method17886(var3.nextInt());
+			var4.p4(var3.nextInt());
 		}
-		var4.method17907(field495, field496);
-		var5.method18001(10);
+		var4.rsaenc(field495, field496);
+		var5.p1(10);
 		for (int var9 = 0; var9 < 3; var9++) {
-			var5.method17886(var3.nextInt());
+			var5.p4(var3.nextInt());
 		}
-		var5.method17890(var3.nextLong());
-		var5.method17889(var3.nextLong());
+		var5.p8(var3.nextLong());
+		var5.p6(var3.nextLong());
 		class507.method4286(var5);
-		var5.method17890(var3.nextLong());
-		var5.method17907(field495, field496);
-		int var10 = class997.method14803(arg1);
+		var5.p8(var3.nextLong());
+		var5.rsaenc(field495, field496);
+		int var10 = Packet.pjstrlen(arg1);
 		if (var10 % 8 != 0) {
 			var10 += 8 - var10 % 8;
 		}
-		class997 var11 = new class997(var10);
-		var11.method17893(arg1);
-		var11.field11503 = var10;
-		var11.method17966(var6);
-		class997 var12 = new class997(var11.field11503 + var5.field11503 + var4.field11503 + 5);
-		var12.method18001(2);
-		var12.method18001(var4.field11503);
-		var12.method17896(var4.field11502, 0, var4.field11503);
-		var12.method18001(var5.field11503);
-		var12.method17896(var5.field11502, 0, var5.field11503);
-		var12.method17945(var11.field11503);
-		var12.method17896(var11.field11502, 0, var11.field11503);
-		String var13 = class694.method10220(var12.field11502);
+		Packet var11 = new Packet(var10);
+		var11.pjstr(arg1);
+		var11.pos = var10;
+		var11.tinyenc(var6);
+		Packet var12 = new Packet(var11.pos + var5.pos + var4.pos + 5);
+		var12.p1(2);
+		var12.p1(var4.pos);
+		var12.pdata(var4.data, 0, var4.pos);
+		var12.p1(var5.pos);
+		var12.pdata(var5.data, 0, var5.pos);
+		var12.p2(var11.pos);
+		var12.pdata(var11.data, 0, var11.pos);
+		String var13 = class694.method10220(var12.data);
 		try {
 			URL var14 = new URL(client.method4591("services", false) + "m=accountappeal/login.ws");
 			URLConnection var15 = var14.openConnection();
@@ -105,13 +105,13 @@ public class class13 {
 			var16.write("data2=" + class805.method18779(var13) + "&dest=" + class805.method18779("passwordchoice.ws"));
 			var16.flush();
 			InputStream var17 = var15.getInputStream();
-			class997 var18 = new class997(new byte[1000]);
+			Packet var18 = new Packet(new byte[1000]);
 			do {
-				int var19 = var17.read(var18.field11502, var18.field11503, 1000 - var18.field11503);
+				int var19 = var17.read(var18.data, var18.pos, 1000 - var18.pos);
 				if (var19 == -1) {
 					var16.close();
 					var17.close();
-					String var20 = new String(var18.field11502);
+					String var20 = new String(var18.data);
 					if (var20.startsWith("OFFLINE")) {
 						return 4;
 					} else if (var20.startsWith("WRONG")) {
@@ -121,11 +121,11 @@ public class class13 {
 					} else if (var20.startsWith("Not permitted for social network accounts.")) {
 						return 6;
 					} else {
-						var18.method17931(var6);
-						while (var18.field11503 > 0 && var18.field11502[var18.field11503 - 1] == 0) {
-							var18.field11503 -= -1445626955;
+						var18.tinydec(var6);
+						while (var18.pos > 0 && var18.data[var18.pos - 1] == 0) {
+							var18.pos -= -1445626955;
 						}
-						String var21 = new String(var18.field11502, 0, var18.field11503);
+						String var21 = new String(var18.data, 0, var18.pos);
 						if (method15242(var21)) {
 							class505.method4607(var21, true, client.field10784);
 							return 2;
@@ -134,8 +134,8 @@ public class class13 {
 						}
 					}
 				}
-				var18.field11503 += var19;
-			} while (var18.field11503 < 1000);
+				var18.pos += var19;
+			} while (var18.pos < 1000);
 			return 5;
 		} catch (Throwable var23) {
 			var23.printStackTrace();

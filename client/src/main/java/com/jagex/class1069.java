@@ -65,7 +65,7 @@ public class class1069 extends class714 {
 	}
 
 	@ObfuscatedName("anc.w(Lalw;I)V")
-	public void method14132(class997 arg0) {
+	public void method14132(Packet arg0) {
 		this.field11848.method6490(arg0);
 	}
 }

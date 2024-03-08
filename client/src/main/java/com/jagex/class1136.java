@@ -39,15 +39,15 @@ public class class1136 extends class911 {
 	}
 
 	@ObfuscatedName("aqh.ac(Lalw;IS)V")
-	public void method16724(class997 arg0, int arg1) {
+	public void method16724(Packet arg0, int arg1) {
 		this.field12098 = new float[arg1];
 		this.field12097 = new float[arg1];
 		this.field12099 = new float[arg1];
 		this.field12096 = 0;
 		for (int var3 = 0; var3 < arg1; var3++) {
-			this.field12098[var3] = arg0.method17916();
-			this.field12097[var3] = arg0.method17916();
-			this.field12099[var3] = arg0.method17916();
+			this.field12098[var3] = arg0.gFloat();
+			this.field12097[var3] = arg0.gFloat();
+			this.field12099[var3] = arg0.gFloat();
 		}
 	}
 }

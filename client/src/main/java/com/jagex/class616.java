@@ -86,11 +86,11 @@ public class class616 implements class614 {
 	}
 
 	@ObfuscatedName("wp.p(Lalw;B)V")
-	public void method9681(class997 arg0) {
+	public void method9681(Packet arg0) {
 	}
 
 	@ObfuscatedName("wp.d(II)Lalw;")
-	public class997 method9686(int arg0) {
+	public Packet method9686(int arg0) {
 		return null;
 	}
 

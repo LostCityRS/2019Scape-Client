@@ -11,15 +11,15 @@ public class class160 {
 	@ObfuscatedName("er.k")
 	public final int[] field1754;
 
-	public class160(class997 arg0) {
-		int var2 = arg0.method18123();
+	public class160(Packet arg0) {
+		int var2 = arg0.gSmart1or2();
 		this.field1751 = new int[var2];
 		this.field1754 = new int[var2];
 		for (int var3 = 0; var3 < var2; var3++) {
-			int var4 = arg0.method17904();
+			int var4 = arg0.g1();
 			this.field1751[var3] = var4;
-			int var5 = arg0.method17906();
-			int var6 = arg0.method17906();
+			int var5 = arg0.g2();
+			int var6 = arg0.g2();
 			this.field1754[var3] = (var5 << 16) + var6;
 		}
 	}

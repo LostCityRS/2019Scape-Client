@@ -21,14 +21,14 @@ public class class865 extends class159 {
 	@ObfuscatedName("afp.w")
 	public final int field10272;
 
-	public class865(class997 arg0) {
+	public class865(Packet arg0) {
 		super(arg0);
-		this.field10270 = arg0.method17906();
-		int var2 = arg0.method17910();
+		this.field10270 = arg0.g2();
+		int var2 = arg0.g4s();
 		this.field10269 = var2 >>> 16;
 		this.field10273 = var2 & 0xFFFF;
-		this.field10271 = arg0.method17904();
-		this.field10272 = arg0.method17922();
+		this.field10271 = arg0.g1();
+		this.field10272 = arg0.gSmart1or2s();
 	}
 
 	@ObfuscatedName("afp.n(I)V")

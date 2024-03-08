@@ -1324,7 +1324,7 @@ public final class client extends class507 {
 		var1.dispose();
 		Statics.field1734 = new class226();
 		method6793();
-		class702.method4398(new int[] { 20, 260, 2048, 5120, 10240, 75000, 100000, 153600 }, new int[] { 1000, 100, 1000, 250, 500, 100, 100, 10 });
+		ByteArrayPool.method4398(new int[] { 20, 260, 2048, 5120, 10240, 75000, 100000, 153600 }, new int[] { 1000, 100, 1000, 250, 500, 100, 100, 10 });
 		class423.method6481(100);
 		class421.method6406(10);
 		class426.method6651(20);
@@ -1881,14 +1881,14 @@ public final class client extends class507 {
 			if (field10827 == 1) {
 				Statics.field7571 = class561.method7130(Statics.field9774, 131072);
 				int var1 = field10789.length() + 10;
-				class997 var2 = new class997(var1 + 2);
-				var2.method18001(class391.field3820.field3812);
-				var2.method18001(var1);
-				var2.method17886(910);
-				var2.method17886(1);
-				var2.method17893(field10789);
-				var2.method18001(Statics.field1680.field8298);
-				Statics.field7571.method9030(var2.field11502, 0, var1 + 2);
+				Packet var2 = new Packet(var1 + 2);
+				var2.p1(class391.field3820.field3812);
+				var2.p1(var1);
+				var2.p4(910);
+				var2.p4(1);
+				var2.pjstr(field10789);
+				var2.p1(Statics.field1680.field8298);
+				Statics.field7571.method9030(var2.data, 0, var1 + 2);
 				field10827++;
 				Statics.field10353 = class213.method3655();
 			}
@@ -1910,10 +1910,10 @@ public final class client extends class507 {
 				class775[] var5 = class775.method15007();
 				int var6 = var5.length * 4;
 				if (Statics.field7571.method9038(var6)) {
-					class997 var7 = new class997(var6);
-					Statics.field7571.method9029(var7.field11502, 0, var7.field11502.length);
+					Packet var7 = new Packet(var6);
+					Statics.field7571.method9029(var7.data, 0, var7.data.length);
 					for (int var8 = 0; var8 < var5.length; var8++) {
-						var5[var8].method15009(var7.method17910());
+						var5[var8].method15009(var7.g4s());
 					}
 					boolean var9 = Statics.method2092(field10791) || Statics.method611(field10791) || Statics.method15084(field10791);
 					Statics.field4489.method7017(Statics.field7571, !var9);
@@ -2379,10 +2379,10 @@ public final class client extends class507 {
 	@ObfuscatedName("ij.fz(Lax;B)V")
 	public static void method4336(class49 arg0) {
 		class983 var1 = Statics.method1604(class390.field3731, arg0.field794);
-		var1.field11432.method18001(method2845());
-		var1.field11432.method17945(Statics.field6586);
-		var1.field11432.method17945(Statics.field6600);
-		var1.field11432.method18001(Statics.field688.field11516.method18639());
+		var1.field11432.p1(method2845());
+		var1.field11432.p2(Statics.field6586);
+		var1.field11432.p2(Statics.field6600);
+		var1.field11432.p1(Statics.field688.field11516.method18639());
 		arg0.method934(var1);
 	}
 
@@ -2984,10 +2984,10 @@ public final class client extends class507 {
 		}
 		while (class780.method14703()) {
 			class983 var1 = Statics.method1604(class390.field3754, field10849.field794);
-			var1.field11432.method18001(0);
-			int var2 = var1.field11432.field11503;
+			var1.field11432.p1(0);
+			int var2 = var1.field11432.pos;
 			class780.method4651(var1.field11432);
-			var1.field11432.method18028(var1.field11432.field11503 - var2);
+			var1.field11432.psize1(var1.field11432.pos - var2);
 			field10849.method934(var1);
 		}
 		if (Statics.field594 == null) {
@@ -3024,9 +3024,9 @@ public final class client extends class507 {
 				field11090 = var10;
 				field11091 = var7;
 			}
-			var3.field11432.method18081(Statics.field594.field8180);
-			var3.field11432.method17939(field6585);
-			var3.field11432.method18001(var9);
+			var3.field11432.p2_alt1(Statics.field594.field8180);
+			var3.field11432.p1_alt3(field6585);
+			var3.field11432.p1(var9);
 			field10849.method934(var3);
 			Statics.field594 = null;
 			Statics.field3457 = var7 + 30000L;
@@ -3154,7 +3154,7 @@ public final class client extends class507 {
 		field11058++;
 		if (field11083) {
 			class983 var29 = Statics.method1604(class390.field3690, field10849.field794);
-			var29.field11432.method17958(Statics.field6866 << 28 | Statics.field530 << 14 | Statics.field5107);
+			var29.field11432.p4_alt3(Statics.field6866 << 28 | Statics.field530 << 14 | Statics.field5107);
 			field10849.method934(var29);
 			field11083 = false;
 		}
@@ -6970,7 +6970,7 @@ public final class client extends class507 {
 			class594 var3 = field10855.method7727();
 			String var4 = (arg0.field796 == null ? -1 : arg0.field796.field4021) + class9.field423 + (arg0.field806 == null ? -1 : arg0.field806.field4021) + class9.field423 + (arg0.field805 == null ? -1 : arg0.field805.field4021) + " " + arg0.field797 + class9.field423 + (var3.field7426 + Statics.field4490.field10450[0]) + class9.field423 + (var3.field7427 + Statics.field4490.field10448[0]) + " ";
 			for (int var5 = 0; var5 < arg0.field797 && var5 < 50; var5++) {
-				var4 = var4 + arg0.field795.field11502[var5] + class9.field423;
+				var4 = var4 + arg0.field795.data[var5] + class9.field423;
 			}
 			class1211.method9845(var4, var7);
 			method9620(false);
@@ -6990,17 +6990,17 @@ public final class client extends class507 {
 				if (!var1.method9038(1)) {
 					return false;
 				}
-				var1.method9029(arg0.field795.field11502, 0, 1);
+				var1.method9029(arg0.field795.data, 0, 1);
 				arg0.field802++;
 				arg0.field789 = 0;
 				arg0.field799 = false;
 			}
-			var2.field11503 = 0;
+			var2.pos = 0;
 			if (var2.method19573()) {
 				if (!var1.method9038(1)) {
 					return false;
 				}
-				var1.method9029(arg0.field795.field11502, 1, 1);
+				var1.method9029(arg0.field795.data, 1, 1);
 				arg0.field802++;
 				arg0.field789 = 0;
 			}
@@ -7008,7 +7008,7 @@ public final class client extends class507 {
 			class393[] var3 = Statics.method18494();
 			int var4 = var2.method19560();
 			if (var4 < 0 || var4 >= var3.length) {
-				throw new IOException(var4 + " " + var2.field11503);
+				throw new IOException(var4 + " " + var2.pos);
 			}
 			arg0.field796 = var3[var4];
 			arg0.field797 = arg0.field796.field3941;
@@ -7017,8 +7017,8 @@ public final class client extends class507 {
 			if (!var1.method9038(1)) {
 				return false;
 			}
-			var1.method9029(var2.field11502, 0, 1);
-			arg0.field797 = var2.field11502[0] & 0xFF;
+			var1.method9029(var2.data, 0, 1);
+			arg0.field797 = var2.data[0] & 0xFF;
 			arg0.field802++;
 			arg0.field789 = 0;
 		}
@@ -7026,9 +7026,9 @@ public final class client extends class507 {
 			if (!var1.method9038(2)) {
 				return false;
 			}
-			var1.method9029(var2.field11502, 0, 2);
-			var2.field11503 = 0;
-			arg0.field797 = var2.method17906();
+			var1.method9029(var2.data, 0, 2);
+			var2.pos = 0;
+			arg0.field797 = var2.g2();
 			arg0.field802 += 2;
 			arg0.field789 = 0;
 		}
@@ -7036,8 +7036,8 @@ public final class client extends class507 {
 			if (!var1.method9038(arg0.field797)) {
 				return false;
 			}
-			var2.field11503 = 0;
-			var1.method9029(var2.field11502, 0, arg0.field797);
+			var2.pos = 0;
+			var1.method9029(var2.data, 0, arg0.field797);
 			arg0.field802 += arg0.field797;
 			arg0.field789 = 0;
 		}
@@ -7045,15 +7045,15 @@ public final class client extends class507 {
 		arg0.field806 = arg0.field790;
 		arg0.field790 = arg0.field796;
 		if (class393.field3877 == arg0.field796) {
-			int var5 = var2.method18029();
-			boolean var6 = var2.method17904() == 1;
+			int var5 = var2.g4_alt3();
+			boolean var6 = var2.g1() == 1;
 			method14061();
 			class1171.method9874(var5, var6);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3885 == arg0.field796) {
 			field11025 = field11058;
-			boolean var7 = var2.method17904() == 1;
+			boolean var7 = var2.g1() == 1;
 			if (arg0.field797 != 1) {
 				if (var7) {
 					Statics.field3022 = new class979(var2);
@@ -7071,35 +7071,35 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3975 == arg0.field796) {
-			byte var8 = var2.method17994();
-			int var9 = var2.method17906();
+			byte var8 = var2.g1b_alt3();
+			int var9 = var2.g2();
 			method14061();
 			class1171.method19215(var9, var8);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3901 == arg0.field796) {
 			field11094.method3273();
-			int var10 = var2.method17904();
+			int var10 = var2.g1();
 			for (int var11 = 0; var11 < var10; var11++) {
-				int var12 = var2.method17910();
+				int var12 = var2.g4s();
 				class185 var13 = new class185(var12);
 				field11094.method3270(var13);
-				int var14 = var2.method17904();
+				int var14 = var2.g1();
 				for (int var15 = 0; var15 < var14; var15++) {
-					var13.method3298(var2.method17910());
+					var13.method3298(var2.g4s());
 				}
-				int var16 = var2.method17904();
+				int var16 = var2.g1();
 				for (int var17 = 0; var17 < var16; var17++) {
-					var13.method3320(var2.method17910());
+					var13.method3320(var2.g4s());
 				}
 				for (int var18 = 0; var18 < var14; var18++) {
-					byte var19 = var2.method17905();
+					byte var19 = var2.g1b();
 					var13.method3319(var18, var19);
 					for (int var20 = 0; var20 < var16; var20++) {
-						if (var2.method17904() == 0) {
+						if (var2.g1() == 0) {
 							var13.method3307(var18, var20, null);
 						} else {
-							var13.method3307(var18, var20, var2.method17910());
+							var13.method3307(var18, var20, var2.g4s());
 						}
 					}
 				}
@@ -7108,25 +7108,25 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3844 == arg0.field796) {
-			Statics.field4868 = arg0.field797 > 2 ? var2.method17918() : class776.field9079.method15021(Statics.field1680);
-			field10963 = arg0.field797 > 0 ? var2.method17906() : -1;
+			Statics.field4868 = arg0.field797 > 2 ? var2.gjstr() : class776.field9079.method15021(Statics.field1680);
+			field10963 = arg0.field797 > 0 ? var2.g2() : -1;
 			if (field10963 == 65535) {
 				field10963 = -1;
 			}
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3836 == arg0.field796) {
-			method5135(var2.method17918());
+			method5135(var2.gjstr());
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3934 == arg0.field796) {
-			boolean var21 = var2.method17990() == 1;
+			boolean var21 = var2.g1_alt3() == 1;
 			method14061();
 			Statics.field7446 = var21;
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3900 == arg0.field796) {
-			Statics.field10354 = class724.method3374(var2.method17904());
+			Statics.field10354 = class724.method3374(var2.g1());
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field4004 == arg0.field796) {
@@ -7137,12 +7137,12 @@ public final class client extends class507 {
 				method13880(Statics.field688.field11542.method18539(), -1, -1, false);
 			}
 			byte[] var22 = new byte[arg0.field797 - 1];
-			boolean var23 = var2.method17904() == 1;
+			boolean var23 = var2.g1() == 1;
 			var2.method19561(var22, 0, arg0.field797 - 1);
-			class997 var24 = new class997(var22);
-			String var25 = var24.method17918();
+			Packet var24 = new Packet(var22);
+			String var25 = var24.gjstr();
 			if (var23) {
-				String var26 = var24.method17918();
+				String var26 = var24.gjstr();
 				if (var26.length() == 0) {
 					var26 = var25;
 				}
@@ -7155,8 +7155,8 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3990 == arg0.field796) {
-			int var27 = var2.method17948();
-			int var28 = var2.method17906();
+			int var27 = var2.g2_alt1();
+			int var28 = var2.g2();
 			method14061();
 			method4843(var28, var27, 0);
 			arg0.field796 = null;
@@ -7167,22 +7167,22 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3842 == arg0.field796) {
-			int var29 = var2.method17906();
-			int var30 = var2.method17904();
+			int var29 = var2.g2();
+			int var30 = var2.g1();
 			boolean var31 = (var30 & 0x1) != 0;
 			boolean var32 = (var30 & 0x2) != 0;
-			while (var2.field11503 < arg0.field797) {
-				int var33 = var2.method18123();
-				int var34 = var2.method17906();
+			while (var2.pos < arg0.field797) {
+				int var33 = var2.gSmart1or2();
+				int var34 = var2.g2();
 				int var35 = 0;
 				class747 var36 = null;
 				if (var34 != 0) {
-					var35 = var2.method17904();
+					var35 = var2.g1();
 					if (var35 == 255) {
-						var35 = var2.method17910();
+						var35 = var2.g4s();
 					}
 					if (var32) {
-						int var37 = var2.method17904();
+						int var37 = var2.g1();
 						if (var37 > 0) {
 							var36 = new class747(Statics.field1819);
 							while (var37-- > 0) {
@@ -7204,9 +7204,9 @@ public final class client extends class507 {
 		} else if (class393.field3841 == arg0.field796) {
 			if (!field11095) {
 				try {
-					int var39 = var2.method17904();
-					int var40 = var2.method17990();
-					int var41 = var2.method17990();
+					int var39 = var2.g1();
+					int var40 = var2.g1_alt3();
+					int var41 = var2.g1_alt3();
 					field11094.method3263(var39).method3307(var40, var41, null);
 				} catch (RuntimeException var719) {
 					class1211.method9845(null, var719);
@@ -7220,23 +7220,23 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field4018 == arg0.field796) {
-			int var43 = var2.method17934();
-			int var44 = var2.method17910();
+			int var43 = var2.g2_alt2();
+			int var44 = var2.g4s();
 			method14061();
 			class1171.method3379(var44, var43);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3912 == arg0.field796) {
-			field10853 = (class778) class686.method1897(class778.method10365(), var2.method17904());
+			field10853 = (class778) class686.method1897(class778.method10365(), var2.g1());
 			method9620(class10.field485);
 			arg0.field796 = null;
 			return false;
 		} else if (class393.field4011 == arg0.field796) {
 			if (!field11095) {
 				try {
-					byte var45 = var2.method17942();
-					int var46 = var2.method17910();
-					int var47 = var2.method17990();
+					byte var45 = var2.g1b_alt1();
+					int var46 = var2.g4s();
+					int var47 = var2.g1_alt3();
 					field11094.method3263(var47).method3301(var46, var45);
 				} catch (RuntimeException var720) {
 					class1211.method9845(null, var720);
@@ -7246,13 +7246,13 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3840 == arg0.field796) {
-			int var49 = var2.method17988();
-			int var50 = var2.method17950();
+			int var49 = var2.g1_alt2();
+			int var50 = var2.g2_alt3();
 			if (var50 == 65535) {
 				var50 = -1;
 			}
-			String var51 = var2.method17918();
-			int var52 = var2.method17990();
+			String var51 = var2.gjstr();
+			int var52 = var2.g1_alt3();
 			if (var49 >= 1 && var49 <= 8) {
 				if (var51.equalsIgnoreCase("null")) {
 					var51 = null;
@@ -7264,8 +7264,8 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3891 == arg0.field796) {
-			int var53 = var2.method17940();
-			int var54 = var2.method17906();
+			int var53 = var2.g1_alt1();
+			int var54 = var2.g2();
 			boolean var55 = (var53 & 0x1) == 1;
 			class961.method10309(var54, var55);
 			field10783[++field11012 - 1 & 0x3F] = var54;
@@ -7278,10 +7278,10 @@ public final class client extends class507 {
 		} else if (class393.field3896 == arg0.field796) {
 			int[] var56 = new int[4];
 			for (int var57 = 0; var57 < 4; var57++) {
-				var56[var57] = var2.method17959();
+				var56[var57] = var2.g4_alt1();
 			}
-			int var58 = var2.method17906();
-			int var59 = var2.method17988();
+			int var58 = var2.g2();
+			int var59 = var2.g1_alt2();
 			class984 var60 = (class984) field10838.method14495((long) var58);
 			if (var60 != null) {
 				method9423((class892) var60.field11436, var56, var59, true);
@@ -7289,17 +7289,17 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3942 == arg0.field796) {
-			int var61 = var2.method17999();
-			int var62 = var2.method17948();
-			int var63 = var2.method17948();
-			int var64 = var2.method17934();
+			int var61 = var2.g4_alt2();
+			int var62 = var2.g2_alt1();
+			int var63 = var2.g2_alt1();
+			int var64 = var2.g2_alt2();
 			method14061();
 			class1171.method16746(var61, var62, var63, var64);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3854 == arg0.field796) {
 			field10818 = field11058;
-			boolean var65 = var2.method17904() == 1;
+			boolean var65 = var2.g1() == 1;
 			if (arg0.field797 != 1) {
 				if (var65) {
 					Statics.field1890 = new class309(var2);
@@ -7317,8 +7317,8 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3945 == arg0.field796) {
-			int var66 = var2.method17904();
-			int var67 = var2.method17927();
+			int var66 = var2.g1();
+			int var67 = var2.gSmart2or4null();
 			if (field10931[var66] != null) {
 				field10931[var66].method8404(field10855.method7743());
 				field10931[var66] = null;
@@ -7329,9 +7329,9 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3908 == arg0.field796) {
-			boolean var68 = var2.method17904() == 1;
-			long var69 = (long) var2.method17906();
-			long var71 = (long) var2.method17908();
+			boolean var68 = var2.g1() == 1;
+			long var69 = (long) var2.g2();
+			long var71 = (long) var2.g3();
 			long var73 = (var69 << 32) + var71;
 			boolean var75 = false;
 			class979 var76 = var68 ? Statics.field3022 : Statics.field1766;
@@ -7359,47 +7359,47 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field4000 == arg0.field796) {
-			int var80 = var2.method17934();
-			int var81 = var2.method17959();
+			int var80 = var2.g2_alt2();
+			int var81 = var2.g4_alt1();
 			method14061();
 			class1171.method18309(var80, var81);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3991 == arg0.field796) {
-			int var82 = var2.method17959();
-			class594 var83 = new class594(var2.method18029());
-			int var84 = var2.method17906();
-			int var85 = var2.method17990();
-			int var86 = var2.method18029();
-			int var87 = var2.method17910();
-			int var88 = var2.method17999();
-			int var89 = var2.method18029();
-			int var90 = var2.method17904();
-			int var91 = var2.method17910();
+			int var82 = var2.g4_alt1();
+			class594 var83 = new class594(var2.g4_alt3());
+			int var84 = var2.g2();
+			int var85 = var2.g1_alt3();
+			int var86 = var2.g4_alt3();
+			int var87 = var2.g4s();
+			int var88 = var2.g4_alt2();
+			int var89 = var2.g4_alt3();
+			int var90 = var2.g1();
+			int var91 = var2.g4s();
 			class600 var92 = new class600(var2, var90, false);
 			method14061();
 			method4489(var82, new class1192(var84, var85, new class675(var83, var92.field7541, var92.field7540, var91)), new int[] { var86, var87, var88, var89 }, false);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3872 == arg0.field796) {
-			while (var2.field11503 < arg0.field797) {
-				boolean var93 = var2.method17904() == 1;
-				String var94 = var2.method17918();
-				String var95 = var2.method17918();
-				int var96 = var2.method17906();
-				int var97 = var2.method17904();
-				int var98 = var2.method17904();
+			while (var2.pos < arg0.field797) {
+				boolean var93 = var2.g1() == 1;
+				String var94 = var2.gjstr();
+				String var95 = var2.gjstr();
+				int var96 = var2.g2();
+				int var97 = var2.g1();
+				int var98 = var2.g1();
 				boolean var99 = (var98 & 0x2) != 0;
 				boolean var100 = (var98 & 0x1) != 0;
 				String var101 = "";
 				int var102 = -1;
 				int var103 = 0;
 				if (var96 > 0) {
-					var101 = var2.method17918();
-					var102 = var2.method17904();
-					var103 = var2.method17910();
+					var101 = var2.gjstr();
+					var102 = var2.g1();
+					var103 = var2.g4s();
 				}
-				String var104 = var2.method17918();
+				String var104 = var2.gjstr();
 				for (int var105 = 0; var105 < field10811; var105++) {
 					class30 var106 = field11065[var105];
 					if (var93) {
@@ -7493,16 +7493,16 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3848 == arg0.field796) {
-			int var118 = var2.method17934();
+			int var118 = var2.g2_alt2();
 			if (var118 == 65535) {
 				var118 = -1;
 			}
-			int var119 = var2.method17910();
-			int var120 = var2.method17950();
+			int var119 = var2.g4s();
+			int var120 = var2.g2_alt3();
 			if (var120 == 65535) {
 				var120 = -1;
 			}
-			int var121 = var2.method17959();
+			int var121 = var2.g4_alt1();
 			method14061();
 			for (int var122 = var118; var122 <= var120; var122++) {
 				long var123 = ((long) var121 << 32) + (long) var122;
@@ -7525,9 +7525,9 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3893 == arg0.field796) {
-			int var127 = var2.method17904();
+			int var127 = var2.g1();
 			int var128 = -var127 - 2;
-			byte var129 = var2.method17905();
+			byte var129 = var2.g1b();
 			class1130 var130 = (class1130) field10946.get(var128);
 			if (var130 == null) {
 				var130 = new class1130(null);
@@ -7538,8 +7538,8 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3881 == arg0.field796) {
-			int var131 = var2.method17940();
-			int var132 = var2.method17948();
+			int var131 = var2.g1_alt1();
+			int var132 = var2.g2_alt1();
 			if (var132 == 65535) {
 				var132 = -1;
 			}
@@ -7547,13 +7547,13 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3910 == arg0.field796) {
-			int var133 = var2.method17959();
+			int var133 = var2.g4_alt1();
 			int var134 = var133 >> 28 & 0x3;
 			int var135 = var133 >> 14 & 0x3FFF;
 			int var136 = var133 & 0x3FFF;
-			int var137 = var2.method17904();
-			int var138 = var2.method17910();
-			int var139 = var2.method17904();
+			int var137 = var2.g1();
+			int var138 = var2.g4s();
+			int var139 = var2.g1();
 			class600 var140 = new class600(var2, var139, false);
 			int var141 = field10914[var140.field7541];
 			class594 var142 = field10855.method7727();
@@ -7563,7 +7563,7 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3845 == arg0.field796) {
-			int var145 = var2.method17904();
+			int var145 = var2.g1();
 			class706 var146 = (class706) class686.method1897(class706.method9840(), var145);
 			if (var146 == null) {
 				var146 = class706.field8393;
@@ -7572,12 +7572,12 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3902 == arg0.field796) {
-			int var147 = var2.method17906();
+			int var147 = var2.g2();
 			Statics.field1798.method3215(var147);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3890 == arg0.field796) {
-			int var148 = var2.method17999();
+			int var148 = var2.g4_alt2();
 			method14061();
 			if (var148 == -1) {
 				Statics.field810 = -1;
@@ -7608,18 +7608,18 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3935 == arg0.field796) {
-			int var154 = var2.method17910();
-			int var155 = var2.method17988();
+			int var154 = var2.g4s();
+			int var155 = var2.g1_alt2();
 			method14061();
 			class1171.method3570(var154, var155);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field4016 == arg0.field796) {
-			boolean var156 = var2.method17904() == 1;
-			String var157 = var2.method17918();
-			long var158 = (long) var2.method17906();
-			long var160 = (long) var2.method17908();
-			class387 var162 = (class387) class686.method1897(class387.method6043(), var2.method17904());
+			boolean var156 = var2.g1() == 1;
+			String var157 = var2.gjstr();
+			long var158 = (long) var2.g2();
+			long var160 = (long) var2.g3();
+			class387 var162 = (class387) class686.method1897(class387.method6043(), var2.g1());
 			long var163 = (var158 << 32) + var160;
 			boolean var165 = false;
 			Object var166 = null;
@@ -7664,7 +7664,7 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3936 == arg0.field796) {
-			int var171 = var2.method17910();
+			int var171 = var2.g4s();
 			Statics.field636 = new class25(var171);
 			Thread var172 = new Thread(Statics.field636);
 			var172.setPriority(1);
@@ -7672,28 +7672,28 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field4008 == arg0.field796) {
-			int var173 = var2.method17906();
+			int var173 = var2.g2();
 			if (var173 == 65535) {
 				var173 = -1;
 			}
-			int var174 = var2.method17904();
-			int var175 = var2.method17906();
-			int var176 = var2.method17904();
-			int var177 = var2.method17906();
+			int var174 = var2.g1();
+			int var175 = var2.g2();
+			int var176 = var2.g1();
+			int var177 = var2.g2();
 			Statics.field1798.method3191(class173.field1832, var173, var174, var176, class168.field1805.method3034(), class174.field1835, 0.0F, 0.0F, null, 0, var177, var175);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3992 == arg0.field796) {
-			boolean var178 = var2.method17904() == 1;
-			String var179 = var2.method17918();
+			boolean var178 = var2.g1() == 1;
+			String var179 = var2.gjstr();
 			String var180 = var179;
 			if (var178) {
-				var180 = var2.method17918();
+				var180 = var2.gjstr();
 			}
-			long var181 = (long) var2.method17906();
-			long var183 = (long) var2.method17908();
-			class387 var185 = (class387) class686.method1897(class387.method6043(), var2.method17904());
-			int var186 = var2.method17906();
+			long var181 = (long) var2.g2();
+			long var183 = (long) var2.g3();
+			class387 var185 = (class387) class686.method1897(class387.method6043(), var2.g1());
+			int var186 = var2.g2();
 			long var187 = (var181 << 32) + var183;
 			boolean var189 = false;
 			int var190 = 0;
@@ -7739,13 +7739,13 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3846 == arg0.field796) {
-			int var192 = var2.method17948();
-			int var193 = var2.method17910();
+			int var192 = var2.g2_alt1();
+			int var193 = var2.g4s();
 			Statics.field7410.field632.method9625((class149) Statics.field8485.method962(var192), var193);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field4014 == arg0.field796) {
-			int var194 = var2.method18029();
+			int var194 = var2.g4_alt3();
 			if (Statics.field3056 != var194) {
 				Statics.field3056 = var194;
 				Statics.method830(class572.field7259, -1, -1);
@@ -7753,10 +7753,10 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3956 == arg0.field796) {
-			int var195 = var2.method17906();
-			int var196 = var2.method17999();
-			int var197 = var2.method17948();
-			int var198 = var2.method17948();
+			int var195 = var2.g2();
+			int var196 = var2.g4_alt2();
+			int var197 = var2.g2_alt1();
+			int var198 = var2.g2_alt1();
 			method14061();
 			class1171.method17439(var196, 7, var198 << 16 | var195, var197);
 			arg0.field796 = null;
@@ -7764,8 +7764,8 @@ public final class client extends class507 {
 		} else if (class393.field3858 == arg0.field796) {
 			if (!field11095) {
 				try {
-					int var199 = var2.method17988();
-					int var200 = var2.method17990();
+					int var199 = var2.g1_alt2();
+					int var200 = var2.g1_alt3();
 					field11094.method3263(var199).method3322(var200);
 				} catch (RuntimeException var721) {
 					class1211.method9845(null, var721);
@@ -7775,12 +7775,12 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3859 == arg0.field796) {
-			String var202 = var2.method17918();
+			String var202 = var2.gjstr();
 			class24.method1587(var202);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3907 == arg0.field796) {
-			boolean var203 = var2.method17904() == 1;
+			boolean var203 = var2.g1() == 1;
 			if (var203) {
 				method4046(3);
 			} else {
@@ -7789,9 +7789,9 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3977 == arg0.field796) {
-			int var204 = var2.method17988();
-			int var205 = var2.method17959();
-			int var206 = var2.method17990();
+			int var204 = var2.g1_alt2();
+			int var205 = var2.g4_alt1();
+			int var206 = var2.g1_alt3();
 			Statics.field2767.method9778(var206);
 			Statics.field7410.field635[var206].method10160(var205);
 			Statics.field7410.field635[var206].method10164(var204);
@@ -7803,20 +7803,20 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3946 == arg0.field796) {
-			int var207 = var2.method18123();
-			int var208 = var2.method17910();
-			int var209 = var2.method17904();
+			int var207 = var2.gSmart1or2();
+			int var208 = var2.g4s();
+			int var209 = var2.g1();
 			String var210 = "";
 			String var211 = var210;
 			if ((var209 & 0x1) != 0) {
-				var210 = var2.method17918();
+				var210 = var2.gjstr();
 				if ((var209 & 0x2) == 0) {
 					var211 = var210;
 				} else {
-					var211 = var2.method17918();
+					var211 = var2.gjstr();
 				}
 			}
-			String var212 = var2.method17918();
+			String var212 = var2.gjstr();
 			if (var207 == 99) {
 				class47.method4285(var212);
 			} else if (var207 == 98) {
@@ -7830,28 +7830,28 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3993 == arg0.field796) {
-			boolean var213 = var2.method17904() == 1;
+			boolean var213 = var2.g1() == 1;
 			byte[] var214 = new byte[arg0.field797 - 1];
-			var2.method17921(var214, 0, arg0.field797 - 1);
+			var2.gdata(var214, 0, arg0.field797 - 1);
 			Statics.method6876(var213, var214);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field4006 == arg0.field796) {
-			int var215 = var2.method18029();
-			int var216 = var2.method17940();
+			int var215 = var2.g4_alt3();
+			int var216 = var2.g1_alt1();
 			int var217 = -var216 - 2;
 			method14061();
 			class1171.method17439(var215, 5, var217, 0);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3918 == arg0.field796) {
-			int var218 = var2.method17910();
+			int var218 = var2.g4s();
 			method14061();
 			class1171.method17439(var218, 5, field10945, 0);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3834 == arg0.field796) {
-			int var219 = var2.method17906();
+			int var219 = var2.g2();
 			class1130 var220;
 			if (field10945 == var219) {
 				var220 = Statics.field4490;
@@ -7862,8 +7862,8 @@ public final class client extends class507 {
 				arg0.field796 = null;
 				return true;
 			}
-			int var221 = var2.method17906();
-			class387 var222 = (class387) class686.method1897(class387.method6043(), var2.method17904());
+			int var221 = var2.g2();
+			class387 var222 = (class387) class686.method1897(class387.method6043(), var2.g1());
 			boolean var223 = (var221 & 0x8000) != 0;
 			if (var220.field12062 != null && var220.field12061 != null) {
 				boolean var224 = false;
@@ -7902,15 +7902,15 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field4019 == arg0.field796) {
-			int var229 = var2.method17999();
-			int var230 = var2.method17910();
+			int var229 = var2.g4_alt2();
+			int var230 = var2.g4s();
 			method14061();
 			class1171.method17439(var229, 1, var230, -1);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3880 == arg0.field796) {
-			int var231 = var2.method17906();
-			byte var232 = var2.method17942();
+			int var231 = var2.g2();
+			byte var232 = var2.g1b_alt1();
 			method14061();
 			class1171.method18309(var231, var232);
 			arg0.field796 = null;
@@ -7925,7 +7925,7 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3855 == arg0.field796) {
-			int var233 = var2.method17948();
+			int var233 = var2.g2_alt1();
 			if (var233 == 65535) {
 				var233 = -1;
 			}
@@ -7933,51 +7933,51 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3923 == arg0.field796) {
-			Statics.field1798.method3200(var2.method17906());
+			Statics.field1798.method3200(var2.g2());
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3987 == arg0.field796) {
-			field11049 = var2.method17904();
+			field11049 = var2.g1();
 			field11027 = field11058;
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field4009 == arg0.field796) {
-			int var234 = var2.method17999();
-			int var235 = var2.method17959();
+			int var234 = var2.g4_alt2();
+			int var235 = var2.g4_alt1();
 			method14061();
 			class1171.method9637(var235, var234);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3919 == arg0.field796) {
-			String var236 = var2.method17918();
-			int var237 = var2.method17906();
+			String var236 = var2.gjstr();
+			int var237 = var2.g2();
 			String var238 = Statics.field489.method14982(var237).method19507(var2);
 			class241.method15054(19, 0, var236, var236, var236, var238, null, var237, null);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3968 == arg0.field796) {
-			Statics.field10260 = var2.method17940();
-			Statics.field10546 = var2.method17880() << 3;
-			Statics.field1701 = var2.method17880() << 3;
-			while (var2.field11503 < arg0.field797) {
-				class388 var239 = class388.method5195()[var2.method17904()];
+			Statics.field10260 = var2.g1_alt1();
+			Statics.field10546 = var2.g1b_alt2() << 3;
+			Statics.field1701 = var2.g1b_alt2() << 3;
+			while (var2.pos < arg0.field797) {
+				class388 var239 = class388.method5195()[var2.g1()];
 				method9605(var239);
 			}
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3969 == arg0.field796) {
-			int var240 = var2.method17906();
+			int var240 = var2.g2();
 			if (var240 == 65535) {
 				var240 = -1;
 			}
-			int var241 = var2.method17904();
-			int var242 = var2.method17906();
-			int var243 = var2.method17904();
+			int var241 = var2.g1();
+			int var242 = var2.g2();
+			int var243 = var2.g1();
 			Statics.field1798.method3191(class173.field1832, var240, var241, var243, class168.field1801.method3034(), class174.field1835, 0.0F, 0.0F, null, 0, 256, var242);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3957 == arg0.field796) {
-			int var244 = var2.method17904();
+			int var244 = var2.g1();
 			class705 var245 = (class705) class686.method1897(class705.method4614(), var244);
 			if (var245 == null) {
 				var245 = class705.field8378;
@@ -7986,7 +7986,7 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3967 == arg0.field796) {
-			field10955 = (class641) class686.method1897(class641.method10149(), var2.method17990());
+			field10955 = (class641) class686.method1897(class641.method10149(), var2.g1_alt3());
 			if (field10955 == null) {
 				field10955 = class641.field7908;
 			}
@@ -7995,7 +7995,7 @@ public final class client extends class507 {
 		} else if (class393.field3894 == arg0.field796) {
 			if (!field11095) {
 				try {
-					int var246 = var2.method17904();
+					int var246 = var2.g1();
 					field11094.method3266(var246);
 				} catch (RuntimeException var722) {
 					class1211.method9845(null, var722);
@@ -8005,19 +8005,19 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3882 == arg0.field796) {
-			Statics.field10260 = var2.method17904();
-			Statics.field10546 = var2.method17880() << 3;
-			Statics.field1701 = var2.method17905() << 3;
+			Statics.field10260 = var2.g1();
+			Statics.field10546 = var2.g1b_alt2() << 3;
+			Statics.field1701 = var2.g1b() << 3;
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field4005 == arg0.field796) {
-			int var248 = var2.method17910();
-			int var249 = var2.method17906();
+			int var248 = var2.g4s();
+			int var249 = var2.g2();
 			if (var249 == 65535) {
 				var249 = -1;
 			}
-			int var250 = var2.method17934();
-			int var251 = var2.method17934();
+			int var250 = var2.g2_alt2();
+			int var251 = var2.g2_alt2();
 			if (var251 == 65535) {
 				var251 = -1;
 			}
@@ -8039,19 +8039,19 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3962 == arg0.field796) {
-			int var257 = var2.method17906();
+			int var257 = var2.g2();
 			field11041 = -1;
 			field10862 = var257;
 			field10863 = 2;
 			Statics.field3808.method6889(field10862);
 			class22.method6031();
 			class22.method3074();
-			int var258 = var2.method17906();
+			int var258 = var2.g2();
 			field10769 = var258;
-			int var259 = var2.method17904();
-			Statics.field8729 = new class997(var259);
-			Statics.field8729.method17896(var2.field11502, var2.field11503, var259);
-			var2.field11503 += var259;
+			int var259 = var2.g1();
+			Statics.field8729 = new Packet(var259);
+			Statics.field8729.pdata(var2.data, var2.pos, var259);
+			var2.pos += var259;
 			arg0.field796 = null;
 			return false;
 		} else if (class393.field3953 == arg0.field796) {
@@ -8069,15 +8069,15 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3954 == arg0.field796) {
-			int var262 = var2.method17959();
-			int var263 = var2.method17934();
+			int var262 = var2.g4_alt1();
+			int var263 = var2.g2_alt2();
 			method14061();
 			class1171.method19215(var263, var262);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3961 == arg0.field796) {
-			int var264 = var2.method17999();
-			int var265 = var2.method17999();
+			int var264 = var2.g4_alt2();
+			int var265 = var2.g4_alt2();
 			method14061();
 			class999 var266 = (class999) field10979.method14495((long) var264);
 			class999 var267 = (class999) field10979.method14495((long) var265);
@@ -8103,25 +8103,25 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3888 == arg0.field796) {
-			int var270 = var2.method17959();
-			int var271 = var2.method17934();
-			int var272 = var2.method18029();
+			int var270 = var2.g4_alt1();
+			int var271 = var2.g2_alt2();
+			int var272 = var2.g4_alt3();
 			method14061();
 			class1171.method17439(var272, 3, var271, var270);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3931 == arg0.field796) {
-			byte var273 = var2.method17905();
+			byte var273 = var2.g1b();
 			Statics.field4490.method19121(var2, var273);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field4015 == arg0.field796) {
-			while (var2.field11503 < arg0.field797) {
-				int var274 = var2.method17904();
+			while (var2.pos < arg0.field797) {
+				int var274 = var2.g1();
 				boolean var275 = (var274 & 0x1) == 1;
-				String var276 = var2.method17918();
-				String var277 = var2.method17918();
-				String var278 = var2.method17918();
+				String var276 = var2.gjstr();
+				String var277 = var2.gjstr();
+				String var278 = var2.gjstr();
 				for (int var279 = 0; var279 < field11084; var279++) {
 					class27 var280 = field11086[var279];
 					if (var275) {
@@ -8153,8 +8153,8 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field4007 == arg0.field796) {
-			int var282 = var2.method17959();
-			String var283 = var2.method17918();
+			int var282 = var2.g4_alt1();
+			String var283 = var2.gjstr();
 			method14061();
 			class1171.method2887(var282, var283);
 			arg0.field796 = null;
@@ -8166,10 +8166,10 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3972 == arg0.field796) {
-			int var285 = var2.method17959();
-			int var286 = var2.method17934();
-			int var287 = var2.method17948();
-			int var288 = var2.method17940();
+			int var285 = var2.g4_alt1();
+			int var286 = var2.g2_alt2();
+			int var287 = var2.g2_alt1();
+			int var288 = var2.g1_alt1();
 			method14061();
 			class1171.method18895(var285, var288, var286, var287);
 			arg0.field796 = null;
@@ -8180,15 +8180,15 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3952 == arg0.field796) {
-			Statics.field7406 = var2.method17899();
-			field10951 = var2.method17904() == 1;
+			Statics.field7406 = var2.g3s();
+			field10951 = var2.g1() == 1;
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3983 == arg0.field796) {
 			if (!field11095) {
 				try {
-					int var289 = var2.method17959();
-					byte var290 = var2.method17942();
+					int var289 = var2.g4_alt1();
+					byte var290 = var2.g1b_alt1();
 					field11094.method3265(new class185(var289), var290);
 				} catch (RuntimeException var723) {
 					class1211.method9845(null, var723);
@@ -8198,12 +8198,12 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3915 == arg0.field796) {
-			boolean var292 = var2.method17904() == 1;
-			String var293 = var2.method17918();
-			long var294 = (long) var2.method17906();
-			long var296 = (long) var2.method17908();
-			class387 var298 = (class387) class686.method1897(class387.method6043(), var2.method17904());
-			int var299 = var2.method17906();
+			boolean var292 = var2.g1() == 1;
+			String var293 = var2.gjstr();
+			long var294 = (long) var2.g2();
+			long var296 = (long) var2.g3();
+			class387 var298 = (class387) class686.method1897(class387.method6043(), var2.g1());
+			int var299 = var2.g2();
 			long var300 = (var294 << 32) + var296;
 			boolean var302 = false;
 			Object var303 = null;
@@ -8240,13 +8240,13 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3963 == arg0.field796) {
-			class42.field724 = var2.method17904();
+			class42.field724 = var2.g1();
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field4001 == arg0.field796) {
-			Statics.field10546 = var2.method17880() << 3;
-			Statics.field10260 = var2.method17988();
-			Statics.field1701 = var2.method17994() << 3;
+			Statics.field10546 = var2.g1b_alt2() << 3;
+			Statics.field10260 = var2.g1_alt2();
+			Statics.field1701 = var2.g1b_alt3() << 3;
 			class594 var308 = field10855.method7727();
 			for (class966 var309 = (class966) field10964.method14500(); var309 != null; var309 = (class966) field10964.method14502()) {
 				int var310 = (int) (var309.field6760 >> 28 & 0x3L);
@@ -8274,8 +8274,8 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3889 == arg0.field796) {
-			int var317 = var2.method17990();
-			int var318 = var2.method17934();
+			int var317 = var2.g1_alt3();
+			int var318 = var2.g2_alt2();
 			Statics.field7410.field632.method9629((class305) Statics.field8736.method962(var318), var317);
 			arg0.field796 = null;
 			return true;
@@ -8285,30 +8285,30 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3897 == arg0.field796) {
-			int var319 = var2.method17959();
+			int var319 = var2.g4_alt1();
 			method14061();
 			class1171.method17439(var319, 3, field10945, 0);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3985 == arg0.field796) {
 			field10957 = field11058;
-			int var320 = var2.field11503;
-			int var321 = var2.method17906();
-			boolean var322 = var2.method17904() == 1;
+			int var320 = var2.pos;
+			int var321 = var2.g2();
+			boolean var322 = var2.g1() == 1;
 			class196 var323 = Statics.field6721.method3392(var321);
 			class747 var324 = var323.method3504();
 			if (var324 == null || var322) {
 				var323.method3503(field10837);
 				var324 = var323.method3504();
 			}
-			while (arg0.field797 - (var2.field11503 - var320) > 0) {
+			while (arg0.field797 - (var2.pos - var320) > 0) {
 				class413 var325 = Statics.field8485.method15284(var2);
 				var324.method14735(var325.field4240, var325.field4239);
 			}
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3984 == arg0.field796) {
-			int var326 = var2.method17999();
+			int var326 = var2.g4_alt2();
 			if (Statics.field2676 != var326) {
 				Statics.field2676 = var326;
 				Statics.method830(class572.field7261, -1, -1);
@@ -8316,22 +8316,22 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3874 == arg0.field796) {
-			int var327 = var2.method17910();
-			int var328 = var2.method17910();
+			int var327 = var2.g4s();
+			int var328 = var2.g4s();
 			class983 var329 = Statics.method1604(class390.field3794, arg0.field794);
-			var329.field11432.method17956(var327);
-			var329.field11432.method17958(var328);
-			var329.field11432.method17938(field6585);
+			var329.field11432.p4_alt1(var327);
+			var329.field11432.p4_alt3(var328);
+			var329.field11432.p1_alt2(field6585);
 			arg0.method934(var329);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3861 == arg0.field796) {
-			int var330 = var2.method17999();
-			int var331 = var2.method17959();
-			int var332 = var2.method17999();
-			int var333 = var2.method17910();
-			var2.method17904();
-			int var334 = var2.method17950();
+			int var330 = var2.g4_alt2();
+			int var331 = var2.g4_alt1();
+			int var332 = var2.g4_alt2();
+			int var333 = var2.g4s();
+			var2.g1();
+			int var334 = var2.g2_alt3();
 			method14061();
 			int[] var335 = new int[] { var332, var333, var331, var330 };
 			field10978 = var334;
@@ -8344,11 +8344,11 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3828 == arg0.field796) {
-			int var337 = var2.method18029();
-			int var338 = var2.method17910();
-			int var339 = var2.method17940();
-			int var340 = var2.method17904();
-			int var341 = var2.method17988();
+			int var337 = var2.g4_alt3();
+			int var338 = var2.g4s();
+			int var339 = var2.g1_alt1();
+			int var340 = var2.g1();
+			int var341 = var2.g1_alt2();
 			int var342 = var337 >> 28;
 			int var343 = var337 >> 14 & 0x3FFF;
 			int var344 = var337 & 0x3FFF;
@@ -8356,13 +8356,13 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3878 == arg0.field796) {
-			int var345 = var2.method17906();
-			int var346 = var2.method17906();
-			int var347 = var2.method17906();
+			int var345 = var2.g2();
+			int var346 = var2.g2();
+			int var347 = var2.g2();
 			method14061();
 			if (Statics.field11725[var345] != null) {
 				for (int var348 = var346; var348 < var347; var348++) {
-					int var349 = var2.method17908();
+					int var349 = var2.g3();
 					if (var348 < Statics.field11725[var345].field2151.length && Statics.field11725[var345].field2151[var348] != null) {
 						Statics.field11725[var345].field2151[var348].field2181 = var349;
 					}
@@ -8371,16 +8371,16 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3988 == arg0.field796) {
-			int var350 = var2.method17906();
-			int var351 = var2.method17906();
+			int var350 = var2.g2();
+			int var351 = var2.g2();
 			Statics.field1798.method3157(var350, var351);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field4003 == arg0.field796) {
 			if (Statics.method15084(field10791)) {
-				field10831 = (int) ((float) var2.method17906() * 2.5F);
+				field10831 = (int) ((float) var2.g2() * 2.5F);
 			} else {
-				field10831 = var2.method17906() * 30;
+				field10831 = var2.g2() * 30;
 			}
 			field11027 = field11058;
 			arg0.field796 = null;
@@ -8395,15 +8395,15 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field4022 == arg0.field796) {
-			int var353 = var2.method17906();
+			int var353 = var2.g2();
 			if (var353 == 65535) {
 				var353 = -1;
 			}
-			int var354 = var2.method17904();
-			int var355 = var2.method17906();
-			int var356 = var2.method17904();
-			int var357 = var2.method17906();
-			int var358 = var2.method17906();
+			int var354 = var2.g1();
+			int var355 = var2.g2();
+			int var356 = var2.g1();
+			int var357 = var2.g2();
+			int var358 = var2.g2();
 			class476 var359 = Statics.field1798.method3236(class173.field1832, Statics.field1798, var353, var354, var356, class168.field1805.method3034(), class174.field1835, 0.0F, 0.0F, null, 0, var357, false);
 			if (var359 != null) {
 				Statics.field1798.method3251(var359, var358, var355);
@@ -8411,13 +8411,13 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3970 == arg0.field796) {
-			field11102 = var2.method17973();
+			field11102 = var2.g2s();
 			field11027 = field11058;
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3867 == arg0.field796) {
 			class1190 var360 = new class1190(arg0.field797);
-			System.arraycopy(arg0.field795.field11502, arg0.field795.field11503, var360.field11502, 0, arg0.field797);
+			System.arraycopy(arg0.field795.data, arg0.field795.pos, var360.data, 0, arg0.field797);
 			method3652();
 			if (Statics.field688.field11561.method18750() == 1) {
 				Statics.field3183.method7680(new class494(class496.field5066, var360));
@@ -8427,11 +8427,11 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return false;
 		} else if (class393.field3938 == arg0.field796) {
-			String var361 = var2.method17918();
-			long var362 = (long) var2.method17906();
-			long var364 = (long) var2.method17908();
-			class387 var366 = (class387) class686.method1897(class387.method6043(), var2.method17904());
-			boolean var367 = var2.method17904() == 1;
+			String var361 = var2.gjstr();
+			long var362 = (long) var2.g2();
+			long var364 = (long) var2.g3();
+			class387 var366 = (class387) class686.method1897(class387.method6043(), var2.g1());
+			boolean var367 = var2.g1() == 1;
 			long var368 = (var362 << 32) + var364;
 			boolean var370 = false;
 			if (Statics.field6721 == null) {
@@ -8473,7 +8473,7 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return false;
 		} else if (class393.field3904 == arg0.field796) {
-			int var374 = var2.method17904();
+			int var374 = var2.g1();
 			int var375 = var374 >> 5;
 			int var376 = var374 & 0x1F;
 			if (var376 == 0) {
@@ -8483,12 +8483,12 @@ public final class client extends class507 {
 			}
 			class45 var377 = new class45();
 			var377.field745 = var376;
-			var377.field751 = var2.method17904();
+			var377.field751 = var2.g1();
 			if (var377.field751 >= 0 && var377.field751 < Statics.field8323.length) {
 				if (var377.field745 == 1 || var377.field745 == 10) {
-					var377.field744 = var2.method17906();
-					var377.field743 = var2.method17906();
-					var2.field11503 += 4;
+					var377.field744 = var2.g2();
+					var377.field743 = var2.g2();
+					var2.pos += 4;
 				} else if (var377.field745 >= 2 && var377.field745 <= 6) {
 					if (var377.field745 == 2) {
 						var377.field746 = 256;
@@ -8511,28 +8511,28 @@ public final class client extends class507 {
 						var377.field747 = 262144;
 					}
 					var377.field745 = 2;
-					var377.field749 = var2.method17904();
+					var377.field749 = var2.g1();
 					class594 var378 = field10855.method7727();
-					var377.field746 = var377.field746 * 262144 + (var2.method17906() - var378.field7426 << 9);
-					var377.field747 = var377.field747 * 262144 + (var2.method17906() - var378.field7427 << 9) * 512;
-					var377.field742 = (var2.method17904() << 2) * 4;
-					var377.field748 = var2.method17906();
+					var377.field746 = var377.field746 * 262144 + (var2.g2() - var378.field7426 << 9);
+					var377.field747 = var377.field747 * 262144 + (var2.g2() - var378.field7427 << 9) * 512;
+					var377.field742 = (var2.g1() << 2) * 4;
+					var377.field748 = var2.g2();
 				}
-				var377.field750 = var2.method17910();
+				var377.field750 = var2.g4s();
 				field10851[var375] = var377;
 			}
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3895 == arg0.field796) {
-			int var379 = var2.method17904();
-			int var380 = var2.method17934();
-			int var381 = var2.method17959();
-			int var382 = var2.method17906();
+			int var379 = var2.g1();
+			int var380 = var2.g2_alt2();
+			int var381 = var2.g4_alt1();
+			int var382 = var2.g2();
 			if (var382 == 65535) {
 				var382 = -1;
 			}
-			int var383 = var2.method17906();
-			int var384 = var2.method17988();
+			int var383 = var2.g2();
+			int var384 = var2.g1_alt2();
 			int var385 = var379 & 0x7;
 			int var386 = var379 >> 3 & 0xF;
 			if (var386 == 15) {
@@ -8673,11 +8673,11 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3830 == arg0.field796) {
-			int var426 = var2.method17934();
-			int var427 = var2.method17940();
-			int var428 = var2.method17988();
-			int var429 = var2.method17990();
-			int var430 = var2.method17904();
+			int var426 = var2.g2_alt2();
+			int var427 = var2.g1_alt1();
+			int var428 = var2.g1_alt2();
+			int var429 = var2.g1_alt3();
+			int var430 = var2.g1();
 			method14061();
 			field10983[var427] = true;
 			field11062[var427] = var428;
@@ -8687,29 +8687,29 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3843 == arg0.field796) {
-			int var431 = var2.method17950();
+			int var431 = var2.g2_alt3();
 			if (var431 == 65535) {
 				var431 = -1;
 			}
-			int var432 = var2.method17988();
+			int var432 = var2.g1_alt2();
 			Statics.field1798.method3235(var431, var432);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3833 == arg0.field796) {
-			String var433 = var2.method17918();
+			String var433 = var2.gjstr();
 			String var434 = class107.method10347(Statics.method5939(var2));
 			class241.method2664(6, 0, var433, var433, var433, var434, null);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3994 == arg0.field796) {
-			field10853 = (class778) class686.method1897(class778.method10365(), var2.method17904());
+			field10853 = (class778) class686.method1897(class778.method10365(), var2.g1());
 			method9620(false);
 			arg0.field796 = null;
 			return false;
 		} else if (class393.field3947 == arg0.field796) {
-			var2.field11503 += -1822849076;
-			if (var2.method18148()) {
-				class507.method1001(var2, var2.field11503 - 28);
+			var2.pos += -1822849076;
+			if (var2.checkcrc()) {
+				class507.method1001(var2, var2.pos - 28);
 			}
 			arg0.field796 = null;
 			return true;
@@ -8720,9 +8720,9 @@ public final class client extends class507 {
 		} else if (class393.field3831 == arg0.field796) {
 			if (!field11095) {
 				try {
-					int var435 = var2.method17940();
-					int var436 = var2.method17990();
-					int var437 = var2.method17904();
+					int var435 = var2.g1_alt1();
+					int var436 = var2.g1_alt3();
+					int var437 = var2.g1();
 					field11094.method3263(var436).method3325(var437, var435);
 				} catch (RuntimeException var724) {
 					class1211.method9845(null, var724);
@@ -8732,15 +8732,15 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3958 == arg0.field796) {
-			int var439 = var2.method17906();
-			int var440 = var2.method18029();
-			class594 var441 = new class594(var2.method17999());
-			int var442 = var2.method17959();
-			int var443 = var2.method17910();
-			int var444 = var2.method17948();
-			int var445 = var2.method18029();
-			int var446 = var2.method17940();
-			int var447 = var2.method17999();
+			int var439 = var2.g2();
+			int var440 = var2.g4_alt3();
+			class594 var441 = new class594(var2.g4_alt2());
+			int var442 = var2.g4_alt1();
+			int var443 = var2.g4s();
+			int var444 = var2.g2_alt1();
+			int var445 = var2.g4_alt3();
+			int var446 = var2.g1_alt1();
+			int var447 = var2.g4_alt2();
 			method14061();
 			method4489(var442, new class1194(var439, var446, new class679(var441, var444)), new int[] { var445, var447, var440, var443 }, false);
 			arg0.field796 = null;
@@ -8754,19 +8754,19 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3933 == arg0.field796) {
-			int var448 = var2.method18029();
-			int var449 = var2.method17948();
-			int var450 = var2.method17950();
+			int var448 = var2.g4_alt3();
+			int var449 = var2.g2_alt1();
+			int var450 = var2.g2_alt3();
 			field10855.method7743().method8756(var450, var448, var449);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3922 == arg0.field796) {
-			int var451 = var2.method17904();
-			int var452 = var2.method17904();
-			if (var2.method17904() == 0) {
+			int var451 = var2.g1();
+			int var452 = var2.g1();
+			if (var2.g1() == 0) {
 				field11057[var451][var452] = new class482();
 			} else {
-				var2.field11503 -= -1445626955;
+				var2.pos -= -1445626955;
 				field11057[var451][var452] = new class482(var2, null);
 			}
 			field10803 = field11058;
@@ -8775,8 +8775,8 @@ public final class client extends class507 {
 		} else if (class393.field3986 == arg0.field796) {
 			if (!field11095) {
 				try {
-					int var453 = var2.method17990();
-					int var454 = var2.method17904();
+					int var453 = var2.g1_alt3();
+					int var454 = var2.g1();
 					field11094.method3263(var453).method3303(var454);
 				} catch (RuntimeException var725) {
 					class1211.method9845(null, var725);
@@ -8786,17 +8786,17 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3971 == arg0.field796) {
-			boolean var456 = var2.method17904() == 1;
-			String var457 = var2.method17918();
+			boolean var456 = var2.g1() == 1;
+			String var457 = var2.gjstr();
 			String var458 = var457;
 			if (var456) {
-				var458 = var2.method17918();
+				var458 = var2.gjstr();
 			}
-			String var459 = var2.method17918();
-			long var460 = (long) var2.method17906();
-			long var462 = (long) var2.method17908();
-			class387 var464 = (class387) class686.method1897(class387.method6043(), var2.method17904());
-			int var465 = var2.method17906();
+			String var459 = var2.gjstr();
+			long var460 = (long) var2.g2();
+			long var462 = (long) var2.g3();
+			class387 var464 = (class387) class686.method1897(class387.method6043(), var2.g1());
+			int var465 = var2.g2();
 			long var466 = (var460 << 32) + var462;
 			boolean var468 = false;
 			int var469 = 0;
@@ -8826,25 +8826,25 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3887 == arg0.field796) {
-			int var471 = var2.method17999();
-			int var472 = var2.method18029();
-			int var473 = var2.method17999();
-			int var474 = var2.method17910();
-			int var475 = var2.method17904();
-			int var476 = var2.method17906();
-			int var477 = var2.method18029();
-			int var478 = var2.method17950();
+			int var471 = var2.g4_alt2();
+			int var472 = var2.g4_alt3();
+			int var473 = var2.g4_alt2();
+			int var474 = var2.g4s();
+			int var475 = var2.g1();
+			int var476 = var2.g2();
+			int var477 = var2.g4_alt3();
+			int var478 = var2.g2_alt3();
 			method14061();
 			method4489(var473, new class1193(var478, var475, var476), new int[] { var471, var477, var472, var474 }, false);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field4002 == arg0.field796) {
-			String var479 = var2.method17918();
-			long var480 = (long) var2.method17906();
-			long var482 = (long) var2.method17908();
-			class387 var484 = (class387) class686.method1897(class387.method6043(), var2.method17904());
-			boolean var485 = var2.method17904() == 1;
-			int var486 = var2.method17906();
+			String var479 = var2.gjstr();
+			long var480 = (long) var2.g2();
+			long var482 = (long) var2.g3();
+			class387 var484 = (class387) class686.method1897(class387.method6043(), var2.g1());
+			boolean var485 = var2.g1() == 1;
+			int var486 = var2.g2();
 			long var487 = (var480 << 32) + var482;
 			boolean var489 = false;
 			if (Statics.field6721 == null) {
@@ -8879,7 +8879,7 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3917 == arg0.field796) {
-			int var493 = var2.method17999();
+			int var493 = var2.g4_alt2();
 			method14061();
 			class999 var494 = (class999) field10979.method14495((long) var493);
 			if (var494 != null) {
@@ -8894,10 +8894,10 @@ public final class client extends class507 {
 		} else if (class393.field4012 == arg0.field796) {
 			if (!field11095) {
 				try {
-					for (byte var495 = var2.method17905(); var495 != -1; var495 = var2.method17905()) {
-						for (byte var496 = var2.method17905(); var496 != -1; var496 = var2.method17905()) {
-							for (byte var497 = var2.method17905(); var497 != -1; var497 = var2.method17905()) {
-								field11094.method3263(var495).method3307(var496, var497, var2.method17910());
+					for (byte var495 = var2.g1b(); var495 != -1; var495 = var2.g1b()) {
+						for (byte var496 = var2.g1b(); var496 != -1; var496 = var2.g1b()) {
+							for (byte var497 = var2.g1b(); var497 != -1; var497 = var2.g1b()) {
+								field11094.method3263(var495).method3307(var496, var497, var2.g4s());
 							}
 						}
 					}
@@ -8910,7 +8910,7 @@ public final class client extends class507 {
 			return true;
 		} else if (class393.field3964 == arg0.field796) {
 			field11025 = field11058;
-			boolean var499 = var2.method17904() == 1;
+			boolean var499 = var2.g1() == 1;
 			class311 var500 = new class311(var2);
 			class979 var501;
 			if (var499) {
@@ -8922,16 +8922,16 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3997 == arg0.field796) {
-			boolean var502 = var2.method17904() == 1;
-			String var503 = var2.method17918();
+			boolean var502 = var2.g1() == 1;
+			String var503 = var2.gjstr();
 			String var504 = var503;
 			if (var502) {
-				var504 = var2.method17918();
+				var504 = var2.gjstr();
 			}
-			String var505 = var2.method17918();
-			long var506 = (long) var2.method17906();
-			long var508 = (long) var2.method17908();
-			class387 var510 = (class387) class686.method1897(class387.method6043(), var2.method17904());
+			String var505 = var2.gjstr();
+			long var506 = (long) var2.g2();
+			long var508 = (long) var2.g3();
+			class387 var510 = (class387) class686.method1897(class387.method6043(), var2.g1());
 			long var511 = (var506 << 32) + var508;
 			boolean var513 = false;
 			int var514 = 0;
@@ -8978,8 +8978,8 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3920 == arg0.field796) {
-			int var518 = var2.method17940();
-			int var519 = var2.method17904();
+			int var518 = var2.g1_alt1();
+			int var519 = var2.g1();
 			if (var518 == 255) {
 				var518 = -1;
 				var519 = -1;
@@ -8988,32 +8988,32 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3948 == arg0.field796) {
-			byte var520 = var2.method17905();
-			int var521 = var2.method17934();
+			byte var520 = var2.g1b();
+			int var521 = var2.g2_alt2();
 			Statics.field7410.field632.method9625((class149) Statics.field8485.method962(var521), var520);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field4017 == arg0.field796) {
-			int var522 = var2.method17904();
+			int var522 = var2.g1();
 			int var523 = -var522 - 2;
 			field10946.remove(var523);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3892 == arg0.field796) {
-			int var524 = var2.method17910();
-			int var525 = var2.method17959();
+			int var524 = var2.g4s();
+			int var525 = var2.g4_alt1();
 			method14061();
 			class226 var526 = class226.method10202(var524);
 			var526.field2188 = var525;
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3869 == arg0.field796) {
-			int var527 = var2.method17906();
+			int var527 = var2.g2();
 			if (var527 == 65535) {
 				var527 = -1;
 			}
-			int var528 = var2.method18029();
-			int var529 = var2.method17959();
+			int var528 = var2.g4_alt3();
+			int var529 = var2.g4_alt1();
 			method14061();
 			class1171.method5369(var528, var527, var529);
 			class738 var530 = (class738) Statics.field1842.method962(var527);
@@ -9024,9 +9024,9 @@ public final class client extends class507 {
 		} else if (class393.field3999 == arg0.field796) {
 			if (!field11095) {
 				try {
-					int var531 = var2.method17940();
-					int var532 = var2.method17940();
-					boolean var533 = var2.method17990() == 1;
+					int var531 = var2.g1_alt1();
+					int var532 = var2.g1_alt1();
+					boolean var533 = var2.g1_alt3() == 1;
 					field11094.method3263(var532).method3293(var531, var533);
 				} catch (RuntimeException var726) {
 					class1211.method9845(null, var726);
@@ -9036,28 +9036,28 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3884 == arg0.field796) {
-			int var535 = var2.method17906();
-			int var536 = var2.method17906();
-			int var537 = var2.method17906();
+			int var535 = var2.g2();
+			int var536 = var2.g2();
+			int var537 = var2.g2();
 			Statics.field1798.method3156(var535, var536, var537);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3832 == arg0.field796) {
-			int var538 = var2.method17906();
-			int var539 = var2.method17904();
+			int var538 = var2.g2();
+			int var539 = var2.g1();
 			boolean var540 = (var539 & 0x1) != 0;
 			boolean var541 = (var539 & 0x2) != 0;
 			class961.method7228(var538, var540);
-			int var542 = var2.method17906();
+			int var542 = var2.g2();
 			for (int var543 = 0; var543 < var542; var543++) {
-				int var544 = var2.method17906();
-				int var545 = var2.method17904();
+				int var544 = var2.g2();
+				int var545 = var2.g1();
 				if (var545 == 255) {
-					var545 = var2.method17910();
+					var545 = var2.g4s();
 				}
 				class747 var546 = null;
 				if (var541) {
-					int var547 = var2.method17904();
+					int var547 = var2.g1();
 					if (var547 > 0) {
 						var546 = new class747(Statics.field1819);
 						while (var547-- > 0) {
@@ -9072,15 +9072,15 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3927 == arg0.field796) {
-			boolean var549 = var2.method17904() == 1;
-			String var550 = var2.method17918();
+			boolean var549 = var2.g1() == 1;
+			String var550 = var2.gjstr();
 			String var551 = var550;
 			if (var549) {
-				var551 = var2.method17918();
+				var551 = var2.gjstr();
 			}
-			long var552 = (long) var2.method17906();
-			long var554 = (long) var2.method17908();
-			class387 var556 = (class387) class686.method1897(class387.method6043(), var2.method17904());
+			long var552 = (long) var2.g2();
+			long var554 = (long) var2.g3();
+			class387 var556 = (class387) class686.method1897(class387.method6043(), var2.g1());
 			long var557 = (var552 << 32) + var554;
 			boolean var559 = false;
 			int var560 = 0;
@@ -9115,9 +9115,9 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3899 == arg0.field796) {
-			int var563 = var2.method17934();
-			int var564 = var2.method17934();
-			int var565 = var2.method17904();
+			int var563 = var2.g2_alt2();
+			int var564 = var2.g2_alt2();
+			int var565 = var2.g1();
 			if (var565 == 255) {
 				var565 = -1;
 			}
@@ -9129,7 +9129,7 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return false;
 		} else if (class393.field3829 == arg0.field796) {
-			int var566 = var2.method17904();
+			int var566 = var2.g1();
 			class707 var567 = (class707) class686.method1897(Statics.method4289(), var566);
 			if (var567 == null) {
 				var567 = class707.field8402;
@@ -9138,11 +9138,11 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3924 == arg0.field796) {
-			int var568 = var2.method17988();
-			int var569 = var2.method17940();
-			int var570 = var2.method17904();
-			int var571 = var2.method17990();
-			int var572 = var2.method17906() << 2;
+			int var568 = var2.g1_alt2();
+			int var569 = var2.g1_alt1();
+			int var570 = var2.g1();
+			int var571 = var2.g1_alt3();
+			int var572 = var2.g2() << 2;
 			method14061();
 			method15723(var568, var570, var572, var569, var571, true);
 			arg0.field796 = null;
@@ -9152,39 +9152,39 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3857 == arg0.field796) {
-			int var573 = var2.method17959();
-			int var574 = var2.method18029();
+			int var573 = var2.g4_alt1();
+			int var574 = var2.g4_alt3();
 			method14061();
 			class1171.method16659(var573, var574);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3864 == arg0.field796) {
-			int var575 = var2.method17999();
-			int var576 = var2.method17959();
-			int var577 = var2.method17988();
-			int var578 = var2.method17910();
-			int var579 = var2.method17906();
-			int var580 = var2.method17999();
-			int var581 = var2.method17999();
+			int var575 = var2.g4_alt2();
+			int var576 = var2.g4_alt1();
+			int var577 = var2.g1_alt2();
+			int var578 = var2.g4s();
+			int var579 = var2.g2();
+			int var580 = var2.g4_alt2();
+			int var581 = var2.g4_alt2();
 			method14061();
 			method4489(var576, new class999(var579, var577), new int[] { var581, var580, var575, var578 }, false);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3879 == arg0.field796) {
-			int var582 = var2.method17990();
+			int var582 = var2.g1_alt3();
 			method14061();
 			field10921 = var582;
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3916 == arg0.field796) {
-			int var583 = var2.method17934();
-			int var584 = var2.method17959();
+			int var583 = var2.g2_alt2();
+			int var584 = var2.g4_alt1();
 			Statics.field7410.field632.method9629((class305) Statics.field8736.method962(var583), var584);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3903 == arg0.field796) {
-			field11029 = var2.method17988();
-			field11050 = var2.method17988();
+			field11029 = var2.g1_alt2();
+			field11050 = var2.g1_alt2();
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3937 == arg0.field796) {
@@ -9201,14 +9201,14 @@ public final class client extends class507 {
 				arg0.field796 = null;
 				return true;
 			}
-			field11030 = var2.method17918();
-			boolean var585 = var2.method17904() == 1;
+			field11030 = var2.gjstr();
+			boolean var585 = var2.g1() == 1;
 			if (var585) {
-				var2.method17918();
+				var2.gjstr();
 			}
-			field11055 = var2.method17918();
-			Statics.field2154 = var2.method17905();
-			int var586 = var2.method17904();
+			field11055 = var2.gjstr();
+			Statics.field2154 = var2.g1b();
+			int var586 = var2.g1();
 			if (var586 == 255) {
 				arg0.field796 = null;
 				return true;
@@ -9217,17 +9217,17 @@ public final class client extends class507 {
 			class46[] var587 = new class46[100];
 			for (int var588 = 0; var588 < Statics.field7421; var588++) {
 				var587[var588] = new class46();
-				var587[var588].field756 = var2.method17918();
-				boolean var589 = var2.method17904() == 1;
+				var587[var588].field756 = var2.gjstr();
+				boolean var589 = var2.g1() == 1;
 				if (var589) {
-					var587[var588].field757 = var2.method17918();
+					var587[var588].field757 = var2.gjstr();
 				} else {
 					var587[var588].field757 = var587[var588].field756;
 				}
 				var587[var588].field755 = class795.method15191(var587[var588].field757, Statics.field10782);
-				var587[var588].field758 = var2.method17906();
-				var587[var588].field760 = var2.method17905();
-				var587[var588].field759 = var2.method17918();
+				var587[var588].field758 = var2.g2();
+				var587[var588].field760 = var2.g1b();
+				var587[var588].field759 = var2.gjstr();
 				if (var587[var588].field757.equals(Statics.field4490.field12062)) {
 					Statics.field1914 = var587[var588].field760;
 				}
@@ -9253,24 +9253,24 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3873 == arg0.field796) {
-			int var595 = var2.method17948();
-			byte var596 = var2.method17880();
-			int var597 = var2.method17950();
-			int var598 = var2.method17906();
-			int var599 = var2.method17934();
-			int var600 = var2.method17988();
+			int var595 = var2.g2_alt1();
+			byte var596 = var2.g1b_alt2();
+			int var597 = var2.g2_alt3();
+			int var598 = var2.g2();
+			int var599 = var2.g2_alt2();
+			int var600 = var2.g1_alt2();
 			if (var600 == 255) {
 				var600 = -1;
 			}
-			int var601 = var2.method17951();
-			int var602 = var2.method17990();
-			int var603 = var2.method17904();
-			int var604 = var2.method17951();
-			int var605 = var2.method17906();
-			byte var606 = var2.method17994();
-			int var607 = var2.method17940() * 4;
-			int var608 = var2.method17904();
-			int var609 = var2.method17948();
+			int var601 = var2.g2s_alt1();
+			int var602 = var2.g1_alt3();
+			int var603 = var2.g1();
+			int var604 = var2.g2s_alt1();
+			int var605 = var2.g2();
+			byte var606 = var2.g1b_alt3();
+			int var607 = var2.g1_alt1() * 4;
+			int var608 = var2.g1();
+			int var609 = var2.g2_alt1();
 			boolean var610 = (var602 & 0x1) != 0;
 			boolean var611 = (var602 & 0x2) != 0;
 			int var612 = var611 ? var602 >> 2 : -1;
@@ -9298,21 +9298,21 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3928 == arg0.field796) {
-			int var626 = var2.method17950();
-			int var627 = var2.method17959();
-			int var628 = var2.method18029();
-			int var629 = var2.method18029();
-			int var630 = var2.method17948();
-			int var631 = var2.method17904();
-			int var632 = var2.method17910();
-			int var633 = var2.method17959();
+			int var626 = var2.g2_alt3();
+			int var627 = var2.g4_alt1();
+			int var628 = var2.g4_alt3();
+			int var629 = var2.g4_alt3();
+			int var630 = var2.g2_alt1();
+			int var631 = var2.g1();
+			int var632 = var2.g4s();
+			int var633 = var2.g4_alt1();
 			method14061();
 			method4489(var633, new class1191(var626, var631, var630), new int[] { var627, var628, var632, var629 }, false);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3995 == arg0.field796) {
 			field10818 = field11058;
-			boolean var634 = var2.method17904() == 1;
+			boolean var634 = var2.g1() == 1;
 			class310 var635 = new class310(var2);
 			class309 var636;
 			if (var634) {
@@ -9324,10 +9324,10 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3980 == arg0.field796) {
-			String var637 = var2.method17918();
-			int var638 = var2.method17906();
-			int var639 = var2.method17906();
-			int var640 = var2.method17906();
+			String var637 = var2.gjstr();
+			int var638 = var2.g2();
+			int var639 = var2.g2();
+			int var640 = var2.g2();
 			Statics.field8751.field8745 = var637;
 			Statics.field8751.field8746 = var638;
 			Statics.field8751.field8744 = var639;
@@ -9339,36 +9339,36 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3960 == arg0.field796) {
-			int var641 = var2.method17951();
-			int var642 = var2.method17881();
-			int var643 = var2.method17959();
+			int var641 = var2.g2s_alt1();
+			int var642 = var2.g2s_alt2();
+			int var643 = var2.g4_alt1();
 			method14061();
 			class1171.method4400(var643, var641, var642);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3943 == arg0.field796) {
-			field10954 = (class641) class686.method1897(class641.method10149(), var2.method17904());
+			field10954 = (class641) class686.method1897(class641.method10149(), var2.g1());
 			if (field10954 == null) {
 				field10954 = class641.field7908;
 			}
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3921 == arg0.field796) {
-			int var644 = var2.method17906();
+			int var644 = var2.g2();
 			Statics.field1798.method3153(var644);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3870 == arg0.field796) {
-			String var645 = var2.method17918();
-			boolean var646 = var2.method17904() == 1;
+			String var645 = var2.gjstr();
+			boolean var646 = var2.g1() == 1;
 			String var647;
 			if (var646) {
-				var647 = var2.method17918();
+				var647 = var2.gjstr();
 			} else {
 				var647 = var645;
 			}
-			int var648 = var2.method17906();
-			byte var649 = var2.method17905();
+			int var648 = var2.g2();
+			byte var649 = var2.g1b();
 			boolean var650 = false;
 			if (var649 == -128) {
 				var650 = true;
@@ -9391,7 +9391,7 @@ public final class client extends class507 {
 					Statics.field9267[Statics.field7421] = null;
 				}
 			} else {
-				String var653 = var2.method17918();
+				String var653 = var2.gjstr();
 				class46 var654 = new class46();
 				var654.field756 = var645;
 				var654.field757 = var647;
@@ -9437,8 +9437,8 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3929 == arg0.field796) {
-			int var658 = var2.method17910();
-			int var659 = var2.method18029();
+			int var658 = var2.g4s();
+			int var659 = var2.g4_alt3();
 			method14061();
 			Statics.method3073(var658, var659);
 			arg0.field796 = null;
@@ -9446,9 +9446,9 @@ public final class client extends class507 {
 		} else if (class393.field3865 == arg0.field796) {
 			if (!field11095) {
 				try {
-					int var660 = var2.method17988();
-					int var661 = var2.method17904();
-					int var662 = var2.method17904();
+					int var660 = var2.g1_alt2();
+					int var661 = var2.g1();
+					int var662 = var2.g1();
 					field11094.method3263(var661).method3356(var660, var662);
 				} catch (RuntimeException var727) {
 					class1211.method9845(null, var727);
@@ -9458,8 +9458,8 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field4010 == arg0.field796) {
-			int var664 = var2.method18029();
-			boolean var665 = var2.method17988() == 1;
+			int var664 = var2.g4_alt3();
+			boolean var665 = var2.g1_alt2() == 1;
 			method14061();
 			class1171.method8279(var664, var665);
 			arg0.field796 = null;
@@ -9467,9 +9467,9 @@ public final class client extends class507 {
 		} else if (class393.field3837 == arg0.field796) {
 			if (!field11095) {
 				try {
-					byte var666 = var2.method17942();
-					int var667 = var2.method17910();
-					int var668 = var2.method17990();
+					byte var666 = var2.g1b_alt1();
+					int var667 = var2.g4s();
+					int var668 = var2.g1_alt3();
 					field11094.method3263(var668).method3296(var667, var666);
 				} catch (RuntimeException var728) {
 					class1211.method9845(null, var728);
@@ -9483,8 +9483,8 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3856 == arg0.field796) {
-			int var670 = var2.method17906();
-			String var671 = var2.method17918();
+			int var670 = var2.g2();
+			String var671 = var2.gjstr();
 			method14061();
 			class1171.method14051(var670, var671);
 			arg0.field796 = null;
@@ -9496,16 +9496,16 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3982 == arg0.field796) {
-			String var674 = var2.method17918();
+			String var674 = var2.gjstr();
 			Object[] var675 = new Object[var674.length() + 1];
 			for (int var676 = var674.length() - 1; var676 >= 0; var676--) {
 				if (var674.charAt(var676) == 's') {
-					var675[var676 + 1] = var2.method17918();
+					var675[var676 + 1] = var2.gjstr();
 				} else {
-					var675[var676 + 1] = Integer.valueOf(var2.method17910());
+					var675[var676 + 1] = Integer.valueOf(var2.g4s());
 				}
 			}
-			var675[0] = Integer.valueOf(var2.method17910());
+			var675[0] = Integer.valueOf(var2.g4s());
 			method14061();
 			class996 var677 = new class996();
 			var677.field11493 = var675;
@@ -9513,7 +9513,7 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3981 == arg0.field796) {
-			String var678 = var2.method17918();
+			String var678 = var2.gjstr();
 			class47.method18913(var678, false, false);
 			arg0.field796 = null;
 			return true;
@@ -9522,10 +9522,10 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3951 == arg0.field796) {
-			int var679 = var2.method17910();
-			int var680 = var2.method17973();
-			int var681 = var2.method17940();
-			int var682 = var2.method17950();
+			int var679 = var2.g4s();
+			int var680 = var2.g2s();
+			int var681 = var2.g1_alt1();
+			int var682 = var2.g2_alt3();
 			class984 var683 = (class984) field10838.method14495((long) var682);
 			if (var683 != null) {
 				class1131 var684 = (class1131) var683.field11436;
@@ -9544,25 +9544,25 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3905 == arg0.field796) {
-			int var685 = var2.method17910();
-			int var686 = var2.method17934();
+			int var685 = var2.g4s();
+			int var686 = var2.g2_alt2();
 			method14061();
 			class1171.method5081(var685, var686);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3852 == arg0.field796) {
-			int var687 = var2.method18029();
-			int var688 = var2.method17999();
+			int var687 = var2.g4_alt3();
+			int var688 = var2.g4_alt2();
 			method14061();
 			class1171.method17439(var687, 2, var688, -1);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3883 == arg0.field796) {
-			int var689 = var2.method17906();
-			String var690 = var2.method17918();
-			int var691 = var2.method17906();
-			int var692 = var2.method17906();
-			boolean var693 = var2.method17904() == 1;
+			int var689 = var2.g2();
+			String var690 = var2.gjstr();
+			int var691 = var2.g2();
+			int var692 = var2.g2();
+			boolean var693 = var2.g1() == 1;
 			Statics.field8753 = Statics.field8755;
 			Statics.field488 = var693;
 			class750.method9401(var689, var690, var691, var692);
@@ -9571,7 +9571,7 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return false;
 		} else if (class393.field3949 == arg0.field796) {
-			int var695 = var2.method17906();
+			int var695 = var2.g2();
 			Statics.field1798.method3208(var695);
 			arg0.field796 = null;
 			return true;
@@ -9585,39 +9585,39 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3863 == arg0.field796) {
-			int var696 = var2.method17906();
+			int var696 = var2.g2();
 			if (var696 == 65535) {
 				var696 = -1;
 			}
-			int var697 = var2.method17904();
-			int var698 = var2.method17906();
-			int var699 = var2.method17904();
-			int var700 = var2.method17906();
+			int var697 = var2.g1();
+			int var698 = var2.g2();
+			int var699 = var2.g1();
+			int var700 = var2.g2();
 			Statics.field1798.method3191(class173.field1832, var696, var697, var699, class168.field1805.method3034(), class174.field1835, 0.0F, 0.0F, null, 0, var700, var698);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3966 == arg0.field796) {
-			int var701 = var2.method17988();
-			int var702 = var2.method17904();
-			int var703 = var2.method17990();
-			int var704 = var2.method17988();
-			int var705 = var2.method17934() << 2;
+			int var701 = var2.g1_alt2();
+			int var702 = var2.g1();
+			int var703 = var2.g1_alt3();
+			int var704 = var2.g1_alt2();
+			int var705 = var2.g2_alt2() << 2;
 			method14061();
 			method14706(var701, var702, var705, var704, var703);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3998 == arg0.field796) {
-			int var706 = var2.method17950();
-			int var707 = var2.method17948();
-			int var708 = var2.method17910();
-			int var709 = var2.method17940();
+			int var706 = var2.g2_alt3();
+			int var707 = var2.g2_alt1();
+			int var708 = var2.g4s();
+			int var709 = var2.g1_alt1();
 			method14061();
 			class1171.method5395(var708, var709, var706, var707);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3914 == arg0.field796) {
 			class1190 var710 = new class1190(arg0.field797);
-			System.arraycopy(arg0.field795.field11502, arg0.field795.field11503, var710.field11502, 0, arg0.field797);
+			System.arraycopy(arg0.field795.data, arg0.field795.pos, var710.data, 0, arg0.field797);
 			method3652();
 			if (Statics.field688.field11561.method18750() == 1) {
 				Statics.field3183.method7680(new class494(class496.field5071, var710));
@@ -9627,11 +9627,11 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return false;
 		} else if (class393.field3976 == arg0.field796) {
-			field10787 = var2.method17881();
+			field10787 = var2.g2s_alt2();
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3989 == arg0.field796) {
-			int var711 = var2.method17904();
+			int var711 = var2.g1();
 			class708 var712 = (class708) class686.method1897(class708.method6019(), var711);
 			if (var712 == null) {
 				var712 = class708.field8404;
@@ -9640,9 +9640,9 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3906 == arg0.field796) {
-			int var713 = var2.method17948();
-			int var714 = var2.method17910();
-			int var715 = var2.method17910();
+			int var713 = var2.g2_alt1();
+			int var714 = var2.g4s();
+			int var715 = var2.g4s();
 			method14061();
 			class1171.method17439(var714, 5, var713, var715);
 			arg0.field796 = null;
@@ -9653,13 +9653,13 @@ public final class client extends class507 {
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3850 == arg0.field796) {
-			int var716 = var2.method17906();
+			int var716 = var2.g2();
 			class47.method16614(var716);
 			arg0.field796 = null;
 			return true;
 		} else if (class393.field3847 == arg0.field796) {
-			int var717 = var2.method17906();
-			String var718 = var2.method17918();
+			int var717 = var2.g2();
+			String var718 = var2.gjstr();
 			method14061();
 			class1171.method14051(var717, var718);
 			arg0.field796 = null;
@@ -9675,15 +9675,15 @@ public final class client extends class507 {
 	public static final void method9605(class388 arg0) {
 		class1190 var1 = field10849.field795;
 		if (class388.field3615 == arg0) {
-			int var2 = var1.method17904();
+			int var2 = var1.g1();
 			class594 var3 = field10855.method7727();
 			int var4 = (var2 & 0x7) + Statics.field10546;
 			int var5 = var3.field7427 + var4;
 			int var6 = (var2 >> 4 & 0x7) + Statics.field1701;
 			int var7 = var3.field7426 + var6;
-			int var8 = var1.method17906();
-			int var9 = var1.method17906();
-			int var10 = var1.method17906();
+			int var8 = var1.g2();
+			int var9 = var1.g2();
+			int var10 = var1.g2();
 			if (field10964 != null) {
 				class966 var11 = (class966) field10964.method14495((long) (Statics.field10260 << 28 | var5 << 14 | var7));
 				if (var11 != null) {
@@ -9701,8 +9701,8 @@ public final class client extends class507 {
 				}
 			}
 		} else if (class388.field3625 == arg0) {
-			int var13 = var1.method17904();
-			int var14 = var1.method17990();
+			int var13 = var1.g1();
+			int var14 = var1.g1_alt3();
 			int var15 = (var14 >> 4 & 0x7) + Statics.field1701;
 			int var16 = (var14 & 0x7) + Statics.field10546;
 			class600 var17 = new class600(var1, var13, false);
@@ -9711,19 +9711,19 @@ public final class client extends class507 {
 				class962.method4653(Statics.field10260, var15, var16, var18, -1, var17.field7541, var17.field7540, var17.field7539);
 			}
 		} else if (class388.field3626 == arg0) {
-			int var19 = var1.method17904();
+			int var19 = var1.g1();
 			int var20 = (var19 >> 4 & 0x7) + Statics.field1701;
 			int var21 = (var19 & 0x7) + Statics.field10546;
-			int var22 = var1.method17906();
+			int var22 = var1.g2();
 			if (var22 == 65535) {
 				var22 = -1;
 			}
-			int var23 = var1.method17904();
+			int var23 = var1.g1();
 			int var24 = var23 >> 4 & 0xF;
 			int var25 = var23 & 0x7;
-			int var26 = var1.method17904();
-			int var27 = var1.method17904();
-			int var28 = var1.method17906();
+			int var26 = var1.g1();
+			int var27 = var1.g1();
+			int var28 = var1.g2();
 			if (field10855.method7828() != class496.field5064 && (var20 >= 0 && var21 >= 0 && var20 < field10855.method7728() && var21 < field10855.method7758())) {
 				int var29 = var24 + 1;
 				if (Statics.field4490.field10450[0] >= var20 - var29 && Statics.field4490.field10450[0] <= var20 + var29 && Statics.field4490.field10448[0] >= var21 - var29 && Statics.field4490.field10448[0] <= var21 + var29) {
@@ -9733,20 +9733,20 @@ public final class client extends class507 {
 				}
 			}
 		} else if (class388.field3618 == arg0) {
-			int var32 = var1.method17904();
+			int var32 = var1.g1();
 			int var33 = (var32 >> 4 & 0x7) + Statics.field1701;
 			int var34 = (var32 & 0x7) + Statics.field10546;
-			int var35 = var1.method17906();
+			int var35 = var1.g2();
 			if (var35 == 65535) {
 				var35 = -1;
 			}
-			int var36 = var1.method17904();
+			int var36 = var1.g1();
 			int var37 = var36 >> 4 & 0xF;
 			int var38 = var36 & 0x7;
-			int var39 = var1.method17904();
-			int var40 = var1.method17904();
-			int var41 = var1.method17906();
-			boolean var42 = var1.method17904() == 1;
+			int var39 = var1.g1();
+			int var40 = var1.g1();
+			int var41 = var1.g2();
+			boolean var42 = var1.g1() == 1;
 			if (field10855.method7828() != class496.field5064 && (var33 >= 0 && var34 >= 0 && var33 < field10855.method7728() && var34 < field10855.method7758())) {
 				int var43 = var37 + 1;
 				if (Statics.field4490.field10450[0] >= var33 - var43 && Statics.field4490.field10450[0] <= var33 + var43 && Statics.field4490.field10448[0] >= var34 - var43 && Statics.field4490.field10448[0] <= var34 + var43) {
@@ -9757,34 +9757,34 @@ public final class client extends class507 {
 				}
 			}
 		} else if (class388.field3624 == arg0) {
-			int var47 = var1.method17904();
+			int var47 = var1.g1();
 			int var48 = (var47 >> 4 & 0xF) + Statics.field1701 * 2;
 			int var49 = (var47 & 0xF) + Statics.field10546 * 2;
-			int var50 = var1.method17904();
+			int var50 = var1.g1();
 			boolean var51 = (var50 & 0x1) != 0;
 			boolean var52 = (var50 & 0x2) != 0;
 			int var53 = var52 ? var50 >> 2 : -1;
-			int var54 = var48 + var1.method17905();
-			int var55 = var49 + var1.method17905();
-			int var56 = var1.method17973();
-			int var57 = var1.method17973();
-			int var58 = var1.method17906();
-			int var59 = var1.method17904();
+			int var54 = var48 + var1.g1b();
+			int var55 = var49 + var1.g1b();
+			int var56 = var1.g2s();
+			int var57 = var1.g2s();
+			int var58 = var1.g2();
+			int var59 = var1.g1();
 			int var60;
 			if (var52) {
 				var60 = (byte) var59;
 			} else {
 				var60 = var59 * 4;
 			}
-			int var61 = var1.method17904() * 4;
-			int var62 = var1.method17906();
-			int var63 = var1.method17906();
-			int var64 = var1.method17904();
-			int var65 = var1.method17906();
+			int var61 = var1.g1() * 4;
+			int var62 = var1.g2();
+			int var63 = var1.g2();
+			int var64 = var1.g1();
+			int var65 = var1.g2();
 			if (var64 == 255) {
 				var64 = -1;
 			}
-			int var66 = var1.method17973();
+			int var66 = var1.g2s();
 			if (field10855.method7828() != class496.field5064 && (var48 >= 0 && var49 >= 0 && var48 < field10855.method7728() * 2 && var49 < field10855.method7728() * 2 && var54 >= 0 && var55 >= 0 && var54 < field10855.method7758() * 2 && var55 < field10855.method7758() * 2 && var58 != 65535)) {
 				int var67 = var48 * 256;
 				int var68 = var49 * 256;
@@ -9796,21 +9796,21 @@ public final class client extends class507 {
 				method3621(var58, var56, var57, var53, var71, var72, var67, var68, var69, var70, var62, var63, var64, var73, var51, var66, Statics.field10260);
 			}
 		} else if (class388.field3612 == arg0) {
-			var1.method17904();
-			int var74 = var1.method17904();
+			var1.g1();
+			int var74 = var1.g1();
 			int var75 = (var74 >> 4 & 0x7) + Statics.field1701;
 			int var76 = (var74 & 0x7) + Statics.field10546;
-			int var77 = var1.method17906();
-			int var78 = var1.method17904();
-			int var79 = var1.method17908();
-			String var80 = var1.method17918();
+			int var77 = var1.g2();
+			int var78 = var1.g1();
+			int var79 = var1.g3();
+			String var80 = var1.gjstr();
 			if (field10855.method7828() != class496.field5064) {
 				method8476(Statics.field10260, var75, var76, var78, var77, var79, var80);
 			}
 		} else if (class388.field3622 == arg0) {
-			int var81 = var1.method17904();
-			int var82 = var1.method18029();
-			int var83 = var1.method17988();
+			int var81 = var1.g1();
+			int var82 = var1.g4_alt3();
+			int var83 = var1.g1_alt2();
 			int var84 = (var83 >> 4 & 0x7) + Statics.field1701;
 			int var85 = (var83 & 0x7) + Statics.field10546;
 			class600 var86 = new class600(var1, var81, false);
@@ -9819,25 +9819,25 @@ public final class client extends class507 {
 				class962.method4653(Statics.field10260, var84, var85, var87, var82, var86.field7541, var86.field7540, var86.field7539);
 			}
 		} else if (class388.field3619 == arg0) {
-			int var88 = var1.method17910();
-			int var89 = var1.method17904();
+			int var88 = var1.g4s();
+			int var89 = var1.g1();
 			((class598) field10855.method7750().method962(var88)).method9473(var89);
 		} else if (class388.field3614 == arg0) {
-			int var90 = var1.method17904();
+			int var90 = var1.g1();
 			boolean var91 = (var90 & 0x80) != 0;
 			int var92 = (var90 >> 3 & 0x7) + Statics.field1701;
 			int var93 = (var90 & 0x7) + Statics.field10546;
-			int var94 = var92 + var1.method17905();
-			int var95 = var93 + var1.method17905();
-			int var96 = var1.method17973();
-			int var97 = var1.method17906();
-			int var98 = var1.method17904() * 4;
-			int var99 = var1.method17904() * 4;
-			int var100 = var1.method17906();
-			int var101 = var1.method17906();
-			int var102 = var1.method17904();
-			int var103 = var1.method17906();
-			int var104 = var1.method17973();
+			int var94 = var92 + var1.g1b();
+			int var95 = var93 + var1.g1b();
+			int var96 = var1.g2s();
+			int var97 = var1.g2();
+			int var98 = var1.g1() * 4;
+			int var99 = var1.g1() * 4;
+			int var100 = var1.g2();
+			int var101 = var1.g2();
+			int var102 = var1.g1();
+			int var103 = var1.g2();
+			int var104 = var1.g2s();
 			if (var102 == 255) {
 				var102 = -1;
 			}
@@ -9854,8 +9854,8 @@ public final class client extends class507 {
 				field10965.method14153(new class1173(var112));
 			}
 		} else if (class388.field3617 == arg0) {
-			int var113 = var1.method17906();
-			int var114 = var1.method17990();
+			int var113 = var1.g2();
+			int var114 = var1.g1_alt3();
 			class594 var115 = field10855.method7727();
 			int var116 = (var114 & 0x7) + Statics.field10546;
 			int var117 = var115.field7427 + var116;
@@ -9877,15 +9877,15 @@ public final class client extends class507 {
 				}
 			}
 		} else if (class388.field3620 == arg0) {
-			int var122 = var1.method17950();
-			int var123 = var1.method17904();
+			int var122 = var1.g2_alt3();
+			int var123 = var1.g1();
 			class594 var124 = field10855.method7727();
 			int var125 = (var123 & 0x7) + Statics.field10546;
 			int var126 = var124.field7427 + var125;
 			int var127 = (var123 >> 4 & 0x7) + Statics.field1701;
 			int var128 = var124.field7426 + var127;
-			int var129 = var1.method17934();
-			int var130 = var1.method17906();
+			int var129 = var1.g2_alt2();
+			int var130 = var1.g2();
 			if (field10945 != var130) {
 				boolean var131 = var127 >= 0 && var125 >= 0 && var127 < field10855.method7728() && var125 < field10855.method7758();
 				if (var131 || field10855.method7828().method7888()) {
@@ -9896,22 +9896,22 @@ public final class client extends class507 {
 				}
 			}
 		} else if (class388.field3616 == arg0) {
-			int var132 = var1.method17959();
-			int var133 = var1.method17940();
-			int var134 = var1.method17990();
+			int var132 = var1.g4_alt1();
+			int var133 = var1.g1_alt1();
+			int var134 = var1.g1_alt3();
 			int var135 = (var134 >> 4 & 0x7) + Statics.field1701;
 			int var136 = (var134 & 0x7) + Statics.field10546;
-			int var137 = var1.method17990();
+			int var137 = var1.g1_alt3();
 			class600 var138 = new class600(var1, var133, false);
 			int var139 = field10914[var138.field7541];
 			if (field10855.method7828() != class496.field5064) {
 				method8895(Statics.field10260, var135, var136, var139, var138.field7541, var138.field7540, var138.field7539, var132, var137);
 			}
 		} else if (class388.field3623 == arg0) {
-			int var140 = var1.method17904();
-			int var141 = var1.method18029();
-			int var142 = var1.method17988();
-			int var143 = var1.method17990();
+			int var140 = var1.g1();
+			int var141 = var1.g4_alt3();
+			int var142 = var1.g1_alt2();
+			int var143 = var1.g1_alt3();
 			int var144 = (var143 >> 4 & 0x7) + Statics.field1701;
 			int var145 = (var143 & 0x7) + Statics.field10546;
 			class600 var146 = new class600(var1, var142, false);
@@ -9924,43 +9924,43 @@ public final class client extends class507 {
 			} else {
 				int[] var148 = null;
 				if ((var140 & 0x2) == 2) {
-					int var149 = var1.method17904();
+					int var149 = var1.g1();
 					var148 = new int[var149];
 					for (int var150 = 0; var150 < var149; var150++) {
-						var148[var150] = var1.method17910();
+						var148[var150] = var1.g4s();
 					}
 				}
 				short[] var151 = null;
 				if ((var140 & 0x4) == 4) {
-					int var152 = var1.method17904();
+					int var152 = var1.g1();
 					var151 = new short[var152];
 					for (int var153 = 0; var153 < var152; var153++) {
-						var151[var153] = (short) var1.method17906();
+						var151[var153] = (short) var1.g2();
 					}
 				}
 				short[] var154 = null;
 				if ((var140 & 0x8) == 8) {
-					int var155 = var1.method17904();
+					int var155 = var1.g1();
 					var154 = new short[var155];
 					for (int var156 = 0; var156 < var155; var156++) {
-						var154[var156] = (short) var1.method17906();
+						var154[var156] = (short) var1.g2();
 					}
 				}
 				class962.method6816(Statics.field10260, var144, var145, var147, var141, var146.field7541, new class597(class962.field11243, var148, var151, var154));
 				class962.field11243++;
 			}
 		} else if (class388.field3613 == arg0) {
-			int var157 = var1.method17904();
+			int var157 = var1.g1();
 			int var158 = (var157 >> 4 & 0x7) + Statics.field1701;
 			int var159 = (var157 & 0x7) + Statics.field10546;
-			int var160 = var1.method17906();
+			int var160 = var1.g2();
 			if (var160 == 65535) {
 				var160 = -1;
 			}
-			int var161 = var1.method17906();
-			int var162 = var1.method17906();
-			int var163 = var1.method17904();
-			int var164 = var1.method17973();
+			int var161 = var1.g2();
+			int var162 = var1.g2();
+			int var163 = var1.g1();
+			int var164 = var1.g2s();
 			if (field10855.method7828() != class496.field5064 && (var158 >= 0 && var159 >= 0 && var158 < field10855.method7728() && var159 < field10855.method7758())) {
 				if (var160 == -1) {
 					class1170 var165 = (class1170) field10966.method14495((long) (var158 << 16 | var159));
@@ -9980,14 +9980,14 @@ public final class client extends class507 {
 				}
 			}
 		} else if (class388.field3621 == arg0) {
-			int var170 = var1.method17990();
+			int var170 = var1.g1_alt3();
 			class594 var171 = field10855.method7727();
 			int var172 = (var170 & 0x7) + Statics.field10546;
 			int var173 = var171.field7427 + var172;
 			int var174 = (var170 >> 4 & 0x7) + Statics.field1701;
 			int var175 = var171.field7426 + var174;
-			int var176 = var1.method17950();
-			int var177 = var1.method17948();
+			int var176 = var1.g2_alt3();
+			int var177 = var1.g2_alt1();
 			boolean var178 = var174 >= 0 && var172 >= 0 && var174 < field10855.method7728() && var172 < field10855.method7758();
 			if (var178 || field10855.method7828().method7888()) {
 				Statics.method540(Statics.field10260, var175, var173, new class965(var176, var177));
@@ -10158,8 +10158,8 @@ public final class client extends class507 {
 				var14.method18815();
 			}
 		}
-		if (field10849.field797 != field10849.field795.field11503) {
-			throw new RuntimeException(field10849.field795.field11503 + " " + field10849.field797);
+		if (field10849.field797 != field10849.field795.pos) {
+			throw new RuntimeException(field10849.field795.pos + " " + field10849.field797);
 		}
 		for (int var15 = 0; var15 < field11011; var15++) {
 			if (field10838.method14495((long) field11036[var15]) == null) {
@@ -10297,24 +10297,24 @@ public final class client extends class507 {
 		for (int var1 = 0; var1 < field10876; var1++) {
 			int var2 = field10844[var1];
 			class1131 var3 = (class1131) ((class984) field10838.method14495((long) var2)).field11436;
-			var0.method17906();
-			int var4 = var0.method17904();
+			var0.g2();
+			int var4 = var0.g1();
 			if ((var4 & 0x2) != 0) {
-				var4 += var0.method17904() << 8;
+				var4 += var0.g1() << 8;
 			}
 			if ((var4 & 0x200) != 0) {
-				var4 += var0.method17904() << 16;
+				var4 += var0.g1() << 16;
 			}
 			if ((var4 & 0x100000) != 0) {
-				var4 += var0.method17904() << 24;
+				var4 += var0.g1() << 24;
 			}
 			if ((var4 & 0x4000000) != 0) {
-				int var5 = var0.method17948();
-				int var6 = var0.method18029();
+				int var5 = var0.g2_alt1();
+				int var6 = var0.g4_alt3();
 				if (var5 == 65535) {
 					var5 = -1;
 				}
-				int var7 = var0.method17904();
+				int var7 = var0.g1();
 				int var8 = var7 & 0x7;
 				int var9 = var7 >> 3 & 0xF;
 				if (var9 == 15) {
@@ -10324,12 +10324,12 @@ public final class client extends class507 {
 				var3.method16563(var5, var6, var8, var9, var10, 3);
 			}
 			if ((var4 & 0x2000) != 0) {
-				int var11 = var0.method17948();
-				int var12 = var0.method18029();
+				int var11 = var0.g2_alt1();
+				int var12 = var0.g4_alt3();
 				if (var11 == 65535) {
 					var11 = -1;
 				}
-				int var13 = var0.method17990();
+				int var13 = var0.g1_alt3();
 				int var14 = var13 & 0x7;
 				int var15 = var13 >> 3 & 0xF;
 				if (var15 == 15) {
@@ -10339,40 +10339,40 @@ public final class client extends class507 {
 				var3.method16563(var11, var12, var14, var15, var16, 1);
 			}
 			if ((var4 & 0x1000) != 0) {
-				int var17 = var0.method17990();
+				int var17 = var0.g1_alt3();
 				int[] var18 = new int[var17];
 				int[] var19 = new int[var17];
 				int[] var20 = new int[var17];
 				for (int var21 = 0; var21 < var17; var21++) {
-					int var22 = var0.method17927();
+					int var22 = var0.gSmart2or4null();
 					var18[var21] = var22;
-					var19[var21] = var0.method17904();
-					var20[var21] = var0.method17934();
+					var19[var21] = var0.g1();
+					var20[var21] = var0.g2_alt2();
 				}
 				method16758(var3, var18, var19, var20);
 			}
 			if ((var4 & 0x4000) != 0) {
-				int var23 = var0.method17990();
+				int var23 = var0.g1_alt3();
 				int[] var24 = new int[var23];
 				int[] var25 = new int[var23];
 				for (int var26 = 0; var26 < var23; var26++) {
-					int var27 = var0.method17934();
+					int var27 = var0.g2_alt2();
 					if ((var27 & 0xC000) == 49152) {
-						int var28 = var0.method17950();
+						int var28 = var0.g2_alt3();
 						var24[var26] = var27 << 16 | var28;
 					} else {
 						var24[var26] = var27;
 					}
-					var25[var26] = var0.method17906();
+					var25[var26] = var0.g2();
 				}
 				var3.method16493(var24, var25);
 			}
 			if ((var4 & 0x1000000) != 0) {
-				var3.field12090 = var0.method17940();
+				var3.field12090 = var0.g1_alt1();
 			}
 			if ((var4 & 0x1) != 0) {
-				var3.field12074 = var0.method17948();
-				var3.field12075 = var0.method17948();
+				var3.field12074 = var0.g2_alt1();
+				var3.field12075 = var0.g2_alt1();
 			}
 			if ((var4 & 0x80000) != 0) {
 				int var29 = 0;
@@ -10383,29 +10383,29 @@ public final class client extends class507 {
 				if (var3.field12083.field2708 != null) {
 					var29 = var3.field12083.field2708.length;
 				}
-				int var31 = var0.method17904();
+				int var31 = var0.g1();
 				if ((var31 & 0x1) != 1) {
-					var0.field11503 += 2;
+					var0.pos += 2;
 					int[] var32 = null;
 					if ((var31 & 0x2) == 2) {
-						int var33 = var0.method17904();
+						int var33 = var0.g1();
 						var32 = new int[var33];
 						for (int var34 = 0; var34 < var33; var34++) {
-							var32[var34] = var0.method17927();
+							var32[var34] = var0.gSmart2or4null();
 						}
 					}
 					short[] var35 = null;
 					if ((var31 & 0x4) == 4) {
 						var35 = new short[var29];
 						for (int var36 = 0; var36 < var29; var36++) {
-							var35[var36] = (short) var0.method17948();
+							var35[var36] = (short) var0.g2_alt1();
 						}
 					}
 					short[] var37 = null;
 					if ((var31 & 0x8) == 8) {
 						var37 = new short[var30];
 						for (int var38 = 0; var38 < var30; var38++) {
-							var37[var38] = (short) var0.method17950();
+							var37[var38] = (short) var0.g2_alt3();
 						}
 					}
 					long var39 = (long) (++class1131.field12078 - 1);
@@ -10413,12 +10413,12 @@ public final class client extends class507 {
 				}
 			}
 			if ((var4 & 0x2000000) != 0) {
-				int var41 = var0.method17906();
-				int var42 = var0.method18029();
+				int var41 = var0.g2();
+				int var42 = var0.g4_alt3();
 				if (var41 == 65535) {
 					var41 = -1;
 				}
-				int var43 = var0.method17988();
+				int var43 = var0.g1_alt2();
 				int var44 = var43 & 0x7;
 				int var45 = var43 >> 3 & 0xF;
 				if (var45 == 15) {
@@ -10430,13 +10430,13 @@ public final class client extends class507 {
 			if ((var4 & 0x40) != 0) {
 				int[] var47 = new int[4];
 				for (int var48 = 0; var48 < 4; var48++) {
-					var47[var48] = var0.method17927();
+					var47[var48] = var0.gSmart2or4null();
 				}
-				int var49 = var0.method17988();
+				int var49 = var0.g1_alt2();
 				method9423(var3, var47, var49, true);
 			}
 			if ((var4 & 0x800000) != 0) {
-				var3.field12081 = var0.method17950();
+				var3.field12081 = var0.g2_alt3();
 				if (var3.field12081 == 65535) {
 					var3.field12081 = var3.field12083.field2719;
 				}
@@ -10445,7 +10445,7 @@ public final class client extends class507 {
 				if (var3.field12083.method4556()) {
 					class975.method10111(var3);
 				}
-				var3.method19157((class260) Statics.field7961.method962(var0.method17927()), (var4 & 0x10000) == 0, (var4 & 0x800000) == 0, true);
+				var3.method19157((class260) Statics.field7961.method962(var0.gSmart2or4null()), (var4 & 0x10000) == 0, (var4 & 0x800000) == 0, true);
 				var3.method16502(var3.field12083.field2699);
 				var3.field10444 = var3.field12083.field2731 << 3;
 				if (var3.field12083.method4556()) {
@@ -10453,15 +10453,15 @@ public final class client extends class507 {
 				}
 			}
 			if ((var4 & 0x8000) != 0) {
-				var3.field10423 = var0.method17880() * 262144;
-				var3.field10425 = var0.method17942() * 262144;
-				var3.field10457 = var0.method17942() * 262144;
-				var3.field10426 = var0.method17880() * 262144;
-				var3.field10419 = var0.method17994();
-				var3.field10428 = var0.method17994();
-				var3.field10429 = var0.method17906() + field10903;
-				var3.field10399 = var0.method17948() + field10903;
-				var3.field10431 = var0.method17948();
+				var3.field10423 = var0.g1b_alt2() * 262144;
+				var3.field10425 = var0.g1b_alt1() * 262144;
+				var3.field10457 = var0.g1b_alt1() * 262144;
+				var3.field10426 = var0.g1b_alt2() * 262144;
+				var3.field10419 = var0.g1b_alt3();
+				var3.field10428 = var0.g1b_alt3();
+				var3.field10429 = var0.g2() + field10903;
+				var3.field10399 = var0.g2_alt1() + field10903;
+				var3.field10431 = var0.g2_alt1();
 				var3.field10400 = 1;
 				var3.field10396 = 0;
 				var3.field10423 = var3.field10423 * 262144 + var3.field10450[0] * 262144;
@@ -10472,63 +10472,63 @@ public final class client extends class507 {
 				var3.field10428 += var3.field11717;
 			}
 			if ((var4 & 0x10000000) != 0) {
-				var3.field10434 = var0.method17880();
-				var3.field10435 = var0.method17942();
-				var3.field10436 = var0.method17905();
-				var3.field10437 = (byte) var0.method17904();
-				var3.field10446 = field10903 + var0.method17906();
-				var3.field10464 = field10903 + var0.method17948();
+				var3.field10434 = var0.g1b_alt2();
+				var3.field10435 = var0.g1b_alt1();
+				var3.field10436 = var0.g1b();
+				var3.field10437 = (byte) var0.g1();
+				var3.field10446 = field10903 + var0.g2();
+				var3.field10464 = field10903 + var0.g2_alt1();
 			}
 			if ((var4 & 0x20) != 0) {
-				var3.field10417 = var0.method17950();
+				var3.field10417 = var0.g2_alt3();
 				if (var3.field10417 == 65535) {
 					var3.field10417 = -1;
 				}
 			}
 			if ((var4 & 0x40000) != 0) {
-				int var50 = var0.field11502[(++var0.field11503) - 1] & 0xFF;
+				int var50 = var0.data[(++var0.pos) - 1] & 0xFF;
 				for (int var51 = 0; var51 < var50; var51++) {
-					int var52 = var0.method17904();
-					int var53 = var0.method17999();
-					int var54 = var0.method17967();
+					int var52 = var0.g1();
+					int var53 = var0.g4_alt2();
+					int var54 = var0.g3_alt3();
 					var3.method19165(var52, var53, var54);
 				}
 			}
 			if ((var4 & 0x8) != 0) {
-				int var55 = var0.method17940();
+				int var55 = var0.g1_alt1();
 				if (var55 > 0) {
 					for (int var56 = 0; var56 < var55; var56++) {
 						int var57 = -1;
 						boolean var58 = true;
 						int var59 = -1;
-						int var60 = var0.method18123();
+						int var60 = var0.gSmart1or2();
 						int var61;
 						if (var60 == 32767) {
-							var60 = var0.method18123();
-							var61 = var0.method18123();
-							var57 = var0.method18123();
-							var59 = var0.method18123();
+							var60 = var0.gSmart1or2();
+							var61 = var0.gSmart1or2();
+							var57 = var0.gSmart1or2();
+							var59 = var0.gSmart1or2();
 						} else if (var60 == 32766) {
 							var60 = -1;
-							var61 = var0.method17988();
+							var61 = var0.g1_alt2();
 						} else {
-							var61 = var0.method18123();
+							var61 = var0.gSmart1or2();
 						}
-						int var62 = var0.method18123();
+						int var62 = var0.gSmart1or2();
 						var3.method16498(var60, var61, var57, var59, field10903, var62);
 					}
 				}
-				int var63 = var0.method17940();
+				int var63 = var0.g1_alt1();
 				if (var63 > 0) {
 					for (int var64 = 0; var64 < var63; var64++) {
-						int var65 = var0.method18123();
-						int var66 = var0.method18123();
+						int var65 = var0.gSmart1or2();
+						int var66 = var0.gSmart1or2();
 						if (var66 == 32767) {
 							var3.method16500(var65);
 						} else {
-							int var67 = var0.method18123();
-							int var68 = var0.method17990();
-							int var69 = var66 > 0 ? var0.method17904() : var68;
+							int var67 = var0.gSmart1or2();
+							int var68 = var0.g1_alt3();
+							int var69 = var66 > 0 ? var0.g1() : var68;
 							var3.method16499(var65, field10903, var66, var67, var68, var69);
 						}
 					}
@@ -10536,17 +10536,17 @@ public final class client extends class507 {
 			}
 			if ((var4 & 0x200000) != 0) {
 				var3.field10460.method14749();
-				var0.field11503 += 2;
-				int var70 = var0.field11502[(++var0.field11503) - 1] & 0xFF;
+				var0.pos += 2;
+				int var70 = var0.data[(++var0.pos) - 1] & 0xFF;
 				for (int var71 = 0; var71 < var70; var71++) {
-					int var72 = var0.method17988();
+					int var72 = var0.g1_alt2();
 					class470 var73 = (class470) class686.method1897(Statics.method7338(), var72);
 					class413 var74 = Statics.field8135.method15285(var0, var73);
 					var3.field10460.method14735(var74.field4240, var74.field4239);
 				}
 			}
 			if ((var4 & 0x20000) != 0) {
-				int var75 = var0.method17940();
+				int var75 = var0.g1_alt1();
 				int[] var76 = new int[8];
 				short[] var77 = new short[8];
 				for (int var78 = 0; var78 < 8; var78++) {
@@ -10554,28 +10554,28 @@ public final class client extends class507 {
 						var76[var78] = -1;
 						var77[var78] = -1;
 					} else {
-						var76[var78] = var0.method17927();
-						var77[var78] = (short) var0.method17924();
+						var76[var78] = var0.gSmart2or4null();
+						var77[var78] = (short) var0.gSmart1or2null();
 					}
 				}
 				var3.field12080 = new class258(var76, var77);
 			}
 			if ((var4 & 0x800) != 0) {
-				var3.field12079 = var0.method17950();
+				var3.field12079 = var0.g2_alt3();
 				if (var3.field12079 == 65535) {
 					var3.field12079 = -1;
 				}
 			}
 			if ((var4 & 0x4) != 0) {
-				var3.method19166(var0.method17918(), 0, 0);
+				var3.method19166(var0.gjstr(), 0, 0);
 			}
 			if ((var4 & 0x80) != 0) {
-				int var79 = var0.method17906();
-				int var80 = var0.method18029();
+				int var79 = var0.g2();
+				int var80 = var0.g4_alt3();
 				if (var79 == 65535) {
 					var79 = -1;
 				}
-				int var81 = var0.method17940();
+				int var81 = var0.g1_alt1();
 				int var82 = var81 & 0x7;
 				int var83 = var81 >> 3 & 0xF;
 				if (var83 == 15) {
@@ -10593,17 +10593,17 @@ public final class client extends class507 {
 				if (var3.field12083.field2708 != null) {
 					var86 = var3.field12083.field2708.length;
 				}
-				int var87 = var0.method17988();
+				int var87 = var0.g1_alt2();
 				if ((var87 & 0x1) == 1) {
 					var3.field12076 = null;
 				} else {
-					var0.field11503 += 2;
+					var0.pos += 2;
 					int[] var88 = null;
 					float[] var89 = null;
 					int[][] var90 = null;
 					int[][] var91 = null;
 					if ((var87 & 0x2) == 2) {
-						int var92 = var0.method17988();
+						int var92 = var0.g1_alt2();
 						var88 = new int[var92];
 						if ((var87 & 0x10) == 16) {
 							var89 = new float[var92];
@@ -10611,14 +10611,14 @@ public final class client extends class507 {
 							var91 = new int[var92][3];
 						}
 						for (int var93 = 0; var93 < var92; var93++) {
-							var88[var93] = var0.method17927();
+							var88[var93] = var0.gSmart2or4null();
 							if ((var87 & 0x10) == 16 && var88[var93] != -1) {
-								var89[var93] = var0.method17916();
+								var89[var93] = var0.gFloat();
 								for (int var94 = 0; var94 < 3; var94++) {
-									var90[var93][var94] = var0.method17951();
+									var90[var93][var94] = var0.g2s_alt1();
 								}
 								for (int var95 = 0; var95 < 3; var95++) {
-									var91[var93][var95] = var0.method17973();
+									var91[var93][var95] = var0.g2s();
 								}
 							}
 						}
@@ -10627,14 +10627,14 @@ public final class client extends class507 {
 					if ((var87 & 0x4) == 4) {
 						var96 = new short[var85];
 						for (int var97 = 0; var97 < var85; var97++) {
-							var96[var97] = (short) var0.method17906();
+							var96[var97] = (short) var0.g2();
 						}
 					}
 					short[] var98 = null;
 					if ((var87 & 0x8) == 8) {
 						var98 = new short[var86];
 						for (int var99 = 0; var99 < var86; var99++) {
-							var98[var99] = (short) var0.method17906();
+							var98[var99] = (short) var0.g2();
 						}
 					}
 					long var100 = (long) (++class1131.field12077 - 1);
@@ -10642,21 +10642,21 @@ public final class client extends class507 {
 				}
 			}
 			if ((var4 & 0x10000) != 0) {
-				var3.field12082 = var0.method17918();
+				var3.field12082 = var0.gjstr();
 				if ("".equals(var3.field12082) || var3.field12082.equals(var3.field12083.field2703)) {
 					var3.field12082 = var3.field12083.field2703;
 				}
 			}
 			if ((var4 & 0x20000000) != 0) {
-				var3.field10401 = var0.method17904() == 1;
+				var3.field10401 = var0.g1() == 1;
 			}
 			if ((var4 & 0x8000000) != 0) {
-				int var102 = var0.method17906();
-				int var103 = var0.method18029();
+				int var102 = var0.g2();
+				int var103 = var0.g4_alt3();
 				if (var102 == 65535) {
 					var102 = -1;
 				}
-				int var104 = var0.method17904();
+				int var104 = var0.g1();
 				int var105 = var104 & 0x7;
 				int var106 = var104 >> 3 & 0xF;
 				if (var106 == 15) {
@@ -10666,10 +10666,10 @@ public final class client extends class507 {
 				var3.method16563(var102, var103, var105, var106, var107, 2);
 			}
 			if ((var4 & 0x400000) != 0) {
-				var0.field11503 += 2;
-				int var108 = var0.field11502[(++var0.field11503) - 1] & 0xFF;
+				var0.pos += 2;
+				int var108 = var0.data[(++var0.pos) - 1] & 0xFF;
 				for (int var109 = 0; var109 < var108; var109++) {
-					int var110 = var0.method17990();
+					int var110 = var0.g1_alt3();
 					class470 var111 = (class470) class686.method1897(Statics.method7338(), var110);
 					class413 var112 = Statics.field8135.method15285(var0, var111);
 					var3.field10460.method14735(var112.field4240, var112.field4239);
@@ -10833,8 +10833,8 @@ public final class client extends class507 {
 				}
 				if (var7 != null) {
 					class983 var8 = Statics.method1604(var7, field10849.field794);
-					var8.field11432.method17945(var3[var5]);
-					var8.field11432.method17937(0);
+					var8.field11432.p2(var3[var5]);
+					var8.field11432.p1_alt1(0);
 					field10849.method934(var8);
 				}
 				var4 = true;
@@ -10858,11 +10858,11 @@ public final class client extends class507 {
 			class1130 var5 = field10944[var3[var4]];
 			if (var5.field12062 != null && var5.field12062.equalsIgnoreCase(arg0) && (Statics.field4490 == var5 && (Statics.field1765 & 0x10) != 0 || (Statics.field1765 & 0x8) != 0)) {
 				class983 var6 = Statics.method1604(class390.field3751, field10849.field794);
-				var6.field11432.method17945(field10974);
-				var6.field11432.method17937(0);
-				var6.field11432.method18081(field10975);
-				var6.field11432.method17947(var3[var4]);
-				var6.field11432.method17957(Statics.field6707);
+				var6.field11432.p2(field10974);
+				var6.field11432.p1_alt1(0);
+				var6.field11432.p2_alt1(field10975);
+				var6.field11432.p2_alt3(var3[var4]);
+				var6.field11432.p4_alt2(Statics.field6707);
 				field10849.method934(var6);
 				method6820(var5.field10450[0], var5.field10448[0]);
 				var1 = true;
@@ -10922,20 +10922,20 @@ public final class client extends class507 {
 	@ObfuscatedName("a.jm(III)V")
 	public static void method612(int arg0, int arg1) {
 		class983 var2 = Statics.method1604(class390.field3780, field10849.field794);
-		var2.field11432.method17958(arg0);
-		var2.field11432.method17949(arg1);
+		var2.field11432.p4_alt3(arg0);
+		var2.field11432.p2_alt2(arg1);
 		field10849.method934(var2);
 	}
 
 	@ObfuscatedName("ahm.jw(Lhf;Lhf;I)V")
 	public static void method16600(class226 arg0, class226 arg1) {
 		class983 var2 = Statics.method1604(class390.field3804, field10849.field794);
-		var2.field11432.method17945(arg1.field2183);
-		var2.field11432.method17958(arg0.field2158);
-		var2.field11432.method18081(arg1.field2334);
-		var2.field11432.method17947(arg0.field2334);
-		var2.field11432.method17958(arg1.field2158);
-		var2.field11432.method18081(arg0.field2183);
+		var2.field11432.p2(arg1.field2183);
+		var2.field11432.p4_alt3(arg0.field2158);
+		var2.field11432.p2_alt1(arg1.field2334);
+		var2.field11432.p2_alt3(arg0.field2334);
+		var2.field11432.p4_alt3(arg1.field2158);
+		var2.field11432.p2_alt1(arg0.field2183);
 		field10849.method934(var2);
 	}
 
@@ -10995,9 +10995,9 @@ public final class client extends class507 {
 
 	@ObfuscatedName("pj.jt(Lakl;IIII)V")
 	public static void method6985(class983 arg0, int arg1, int arg2, int arg3) {
-		arg0.field11432.method17947(arg3);
-		arg0.field11432.method17949(arg2);
-		arg0.field11432.method17886(arg1);
+		arg0.field11432.p2_alt3(arg3);
+		arg0.field11432.p2_alt2(arg2);
+		arg0.field11432.p4(arg1);
 	}
 
 	@ObfuscatedName("adm.jq(I)V")
@@ -12965,9 +12965,9 @@ public final class client extends class507 {
 	public static final void method10344(String arg0, int arg1) {
 		class49 var2 = method640();
 		class983 var3 = Statics.method1604(class390.field3736, var2.field794);
-		var3.field11432.method18001(class997.method14803(arg0) + 1);
-		var3.field11432.method17893(arg0);
-		var3.field11432.method17938(arg1);
+		var3.field11432.p1(Packet.pjstrlen(arg0) + 1);
+		var3.field11432.pjstr(arg0);
+		var3.field11432.p1_alt2(arg1);
 		var2.method934(var3);
 	}
 
@@ -12978,9 +12978,9 @@ public final class client extends class507 {
 		if (arg1.length() > 30) {
 			arg1 = arg1.substring(0, 30);
 		}
-		var3.field11432.method18001(class997.method14803(arg0) + class997.method14803(arg1));
-		var3.field11432.method17893(arg0);
-		var3.field11432.method17893(arg1);
+		var3.field11432.p1(Packet.pjstrlen(arg0) + Packet.pjstrlen(arg1));
+		var3.field11432.pjstr(arg0);
+		var3.field11432.pjstr(arg1);
 		var2.method934(var3);
 	}
 
@@ -12991,9 +12991,9 @@ public final class client extends class507 {
 		if (arg1.length() > 30) {
 			arg1 = arg1.substring(0, 30);
 		}
-		var3.field11432.method18001(class997.method14803(arg0) + class997.method14803(arg1));
-		var3.field11432.method17893(arg1);
-		var3.field11432.method17893(arg0);
+		var3.field11432.p1(Packet.pjstrlen(arg0) + Packet.pjstrlen(arg1));
+		var3.field11432.pjstr(arg1);
+		var3.field11432.pjstr(arg0);
 		var2.method934(var3);
 	}
 
@@ -13004,8 +13004,8 @@ public final class client extends class507 {
 		}
 		class49 var1 = method640();
 		class983 var2 = Statics.method1604(class390.field3714, var1.field794);
-		var2.field11432.method18001(class997.method14803(arg0));
-		var2.field11432.method17893(arg0);
+		var2.field11432.p1(Packet.pjstrlen(arg0));
+		var2.field11432.pjstr(arg0);
 		var1.method934(var2);
 	}
 
@@ -13013,7 +13013,7 @@ public final class client extends class507 {
 	public static final void method8328() {
 		class49 var0 = method640();
 		class983 var1 = Statics.method1604(class390.field3774, var0.field794);
-		var1.field11432.method18001(0);
+		var1.field11432.p1(0);
 		var0.method934(var1);
 	}
 
@@ -13028,9 +13028,9 @@ public final class client extends class507 {
 		}
 		class49 var2 = method640();
 		class983 var3 = Statics.method1604(class390.field3747, var2.field794);
-		var3.field11432.method18001(class997.method14803(var1.field3087) + 2);
-		var3.field11432.method17945(arg0);
-		var3.field11432.method17893(var1.field3087);
+		var3.field11432.p1(Packet.pjstrlen(var1.field3087) + 2);
+		var3.field11432.p2(arg0);
+		var3.field11432.pjstr(var1.field3087);
 		var2.method934(var3);
 	}
 
@@ -13042,10 +13042,10 @@ public final class client extends class507 {
 		class308 var2 = Statics.field3022.field11392[arg0];
 		class49 var3 = method640();
 		class983 var4 = Statics.method1604(class390.field3706, var3.field794);
-		var4.field11432.method18001(class997.method14803(var2.field3087) + 3);
-		var4.field11432.method17945(arg0);
-		var4.field11432.method18001(arg1 ? 1 : 0);
-		var4.field11432.method17893(var2.field3087);
+		var4.field11432.p1(Packet.pjstrlen(var2.field3087) + 3);
+		var4.field11432.p2(arg0);
+		var4.field11432.p1(arg1 ? 1 : 0);
+		var4.field11432.pjstr(var2.field3087);
 		var3.method934(var4);
 	}
 
@@ -13099,8 +13099,8 @@ public final class client extends class507 {
 		}
 		class49 var11 = method640();
 		class983 var12 = Statics.method1604(class390.field3734, var11.field794);
-		var12.field11432.method18001(class997.method14803(arg0));
-		var12.field11432.method17893(arg0);
+		var12.field11432.p1(Packet.pjstrlen(arg0));
+		var12.field11432.pjstr(arg0);
 		var11.method934(var12);
 	}
 
@@ -13125,8 +13125,8 @@ public final class client extends class507 {
 				field11022 = field11058;
 				class49 var7 = method640();
 				class983 var8 = Statics.method1604(class390.field3717, var7.field794);
-				var8.field11432.method18001(class997.method14803(arg0));
-				var8.field11432.method17893(arg0);
+				var8.field11432.p1(Packet.pjstrlen(arg0));
+				var8.field11432.pjstr(arg0);
 				var7.method934(var8);
 				break;
 			}
@@ -13154,8 +13154,8 @@ public final class client extends class507 {
 				field11022 = field11058;
 				class49 var7 = method640();
 				class983 var8 = Statics.method1604(class390.field3724, var7.field794);
-				var8.field11432.method18001(class997.method14803(arg0));
-				var8.field11432.method17893(arg0);
+				var8.field11432.p1(Packet.pjstrlen(arg0));
+				var8.field11432.pjstr(arg0);
 				var7.method934(var8);
 				break;
 			}
@@ -13235,7 +13235,7 @@ public final class client extends class507 {
 	public static void method15198() {
 		class49 var0 = method640();
 		class983 var1 = Statics.method1604(class390.field3767, var0.field794);
-		var1.field11432.method17886(field10842);
+		var1.field11432.p4(field10842);
 		var0.method934(var1);
 	}
 

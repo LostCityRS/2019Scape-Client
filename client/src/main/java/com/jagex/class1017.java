@@ -30,8 +30,8 @@ public class class1017 extends class649 {
 			var5 = 1;
 		}
 		class983 var6 = Statics.method1604(class390.field3727, client.field10849.field794);
-		var6.field11432.method17886(var4 | var3 << 16);
-		var6.field11432.method17947(var2 | var5 << 15);
+		var6.field11432.p4(var4 | var3 << 16);
+		var6.field11432.p2_alt3(var2 | var5 << 15);
 		client.field10849.method934(var6);
 	}
 
@@ -51,7 +51,7 @@ public class class1017 extends class649 {
 	}
 
 	@ObfuscatedName("alt.w(Lalw;Lakm;I)V")
-	public void method10264(class997 arg0, class993 arg1) {
+	public void method10264(Packet arg0, class993 arg1) {
 	}
 
 	@ObfuscatedName("alt.f(I)I")

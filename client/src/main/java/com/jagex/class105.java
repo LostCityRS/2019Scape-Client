@@ -23,17 +23,17 @@ public class class105 {
 	@ObfuscatedName("cs.w")
 	public class426[] field1240;
 
-	public class105(int arg0, class997 arg1, boolean arg2) {
-		this.field1242 = arg1.method17973();
+	public class105(int arg0, Packet arg1, boolean arg2) {
+		this.field1242 = arg1.g2s();
 		this.field1243 = new class426[arg0];
 		this.field1244 = new class426[this.field1243.length];
 		this.field1240 = new class426[this.field1243.length];
 		this.field1241 = new float[this.field1243.length][3];
 		for (int var4 = 0; var4 < this.field1243.length; var4++) {
 			this.field1243[var4] = new class426(arg1, arg2);
-			this.field1241[var4][0] = arg1.method17916();
-			this.field1241[var4][1] = arg1.method17916();
-			this.field1241[var4][2] = arg1.method17916();
+			this.field1241[var4][0] = arg1.gFloat();
+			this.field1241[var4][1] = arg1.gFloat();
+			this.field1241[var4][2] = arg1.gFloat();
 		}
 	}
 

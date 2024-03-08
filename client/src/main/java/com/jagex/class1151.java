@@ -21,12 +21,12 @@ public class class1151 extends class978 {
 	}
 
 	@ObfuscatedName("aqj.e(Lalw;B)V")
-	public void method17726(class997 arg0) {
-		if (arg0.method17904() != 255) {
-			arg0.field11503 -= -1445626955;
-			this.field12214 = arg0.method17914();
+	public void method17726(Packet arg0) {
+		if (arg0.g1() != 255) {
+			arg0.pos -= -1445626955;
+			this.field12214 = arg0.g8();
 		}
-		this.field12215 = arg0.method17917();
+		this.field12215 = arg0.fastgstr();
 	}
 
 	@ObfuscatedName("aqj.n(Lkr;I)V")

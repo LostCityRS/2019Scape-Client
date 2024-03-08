@@ -21,10 +21,10 @@ public interface class614 {
 	class473 method9679();
 
 	@ObfuscatedName("wr.p(Lalw;B)V")
-	void method9681(class997 arg0);
+	void method9681(Packet arg0);
 
 	@ObfuscatedName("wr.d(II)Lalw;")
-	class997 method9686(int arg0);
+	Packet method9686(int arg0);
 
 	@ObfuscatedName("wr.r(I)Z")
 	boolean method9702();

@@ -27,12 +27,12 @@ public class class139 {
 	public class139 field1665;
 
 	@ObfuscatedName("ey.e(Lalw;II)V")
-	public void method2673(class997 arg0, int arg1) {
-		this.field1663 = arg0.method17973();
-		this.field1660 = arg0.method17916();
-		this.field1661 = arg0.method17916();
-		this.field1662 = arg0.method17916();
-		this.field1664 = arg0.method17916();
-		this.field1659 = arg0.method17916();
+	public void method2673(Packet arg0, int arg1) {
+		this.field1663 = arg0.g2s();
+		this.field1660 = arg0.gFloat();
+		this.field1661 = arg0.gFloat();
+		this.field1662 = arg0.gFloat();
+		this.field1664 = arg0.gFloat();
+		this.field1659 = arg0.gFloat();
 	}
 }

@@ -68,7 +68,7 @@ public class class437 {
 		if (this.field4374.field12344) {
 			return false;
 		}
-		class997 var1 = new class997(this.field4374.method19444());
+		Packet var1 = new Packet(this.field4374.method19444());
 		this.field4376 = new class450(var1, this.field4370, this.field4373);
 		if (this.field4379 == null) {
 			this.field4379 = new class936[this.field4376.field4480.length];
@@ -135,7 +135,7 @@ public class class437 {
 			} else if (!this.field4375.field12344) {
 				byte[] var3 = this.field4375.method19444();
 				try {
-					this.field4377 = new class450(new class997(var3), this.field4370, this.field4373);
+					this.field4377 = new class450(new Packet(var3), this.field4370, this.field4373);
 					for (int var4 = 0; var4 < this.field4379.length; var4++) {
 						if (this.field4379[var4] != null && this.field4379[var4].method16830()) {
 							class438 var5 = this.field4377.field4480[var4];

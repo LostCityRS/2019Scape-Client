@@ -20,13 +20,13 @@ public class class873 extends class159 {
 	@ObfuscatedName("agk.f")
 	public final int[] field10298;
 
-	public class873(class997 arg0) {
+	public class873(Packet arg0) {
 		super(arg0);
-		this.field10301 = arg0.method17906();
+		this.field10301 = arg0.g2();
 		this.field10298 = new int[4];
-		this.field10299 = arg0.method17927();
+		this.field10299 = arg0.gSmart2or4null();
 		Arrays.fill(this.field10298, 0, this.field10298.length, this.field10299);
-		this.field10300 = arg0.method17910();
+		this.field10300 = arg0.g4s();
 	}
 
 	@ObfuscatedName("agk.n(I)V")

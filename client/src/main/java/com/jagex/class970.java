@@ -150,7 +150,7 @@ public class class970 extends class532 {
 	public void method17583(int[] arg0, int arg1) {
 		int var3 = 0;
 		class1189 var4 = this.field11291.field10016;
-		var4.field11503 = 0;
+		var4.pos = 0;
 		if (this.field11291.field10017) {
 			for (int var5 = 0; var5 < arg1; var5++) {
 				int var6 = arg0[var5];
@@ -163,11 +163,11 @@ public class class970 extends class532 {
 						if ((var8 & 0x1 << var9++) == 0) {
 							var10 += 3;
 						} else {
-							var4.method17945(var7[var10++] & 0xFFFF);
+							var4.p2(var7[var10++] & 0xFFFF);
 							var3++;
-							var4.method17945(var7[var10++] & 0xFFFF);
+							var4.p2(var7[var10++] & 0xFFFF);
 							var3++;
-							var4.method17945(var7[var10++] & 0xFFFF);
+							var4.p2(var7[var10++] & 0xFFFF);
 							var3++;
 						}
 					}
@@ -185,11 +185,11 @@ public class class970 extends class532 {
 						if ((var14 & 0x1 << var15++) == 0) {
 							var16 += 3;
 						} else {
-							var4.method17884(var13[var16++] & 0xFFFF);
+							var4.ip2(var13[var16++] & 0xFFFF);
 							var3++;
-							var4.method17884(var13[var16++] & 0xFFFF);
+							var4.ip2(var13[var16++] & 0xFFFF);
 							var3++;
-							var4.method17884(var13[var16++] & 0xFFFF);
+							var4.ip2(var13[var16++] & 0xFFFF);
 							var3++;
 						}
 					}
@@ -199,7 +199,7 @@ public class class970 extends class532 {
 		if (var3 <= 0) {
 			return;
 		}
-		this.field11297.method1410(5123, var4.field11502, var4.field11503);
+		this.field11297.method1410(5123, var4.data, var4.pos);
 		this.field11291.method15809(this.field11300.field9456, this.field11300.field9480, this.field11298, this.field11300.field9476);
 		this.field11291.method15795(this.field11296, (this.field11300.field9457 & 0x7) != 0, (this.field11300.field9457 & 0x8) != 0);
 		if (this.field11291.field9840) {

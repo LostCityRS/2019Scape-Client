@@ -82,7 +82,7 @@ public class class909 extends class307 {
 	}
 
 	@ObfuscatedName("ahh.u(Lalw;I)V")
-	public void method5224(class997 arg0) {
+	public void method5224(Packet arg0) {
 		this.field10549.method6490(arg0);
 	}
 

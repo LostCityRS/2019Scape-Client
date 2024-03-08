@@ -28,7 +28,7 @@ public class class736 implements class610 {
 
 	@ObfuscatedName("abo.e()J")
 	public long method9641() {
-		long[] var1 = class997.field11507;
+		long[] var1 = Packet.crc64table;
 		long var2 = -1L;
 		long var4 = var2 >>> 8 ^ var1[(int) ((var2 ^ (long) this.field8607) & 0xFFL)];
 		long var6 = var4 >>> 8 ^ var1[(int) ((var4 ^ (long) (this.field8602 >> 8)) & 0xFFL)];

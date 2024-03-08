@@ -22,13 +22,13 @@ public class class631 {
 
 	public class631(class442 arg0) {
 		byte[] var2 = arg0.method6894(class628.field7712.field7708);
-		this.method9890(new class997(var2));
+		this.method9890(new Packet(var2));
 	}
 
 	@ObfuscatedName("wy.e(Lalw;B)V")
-	public void method9890(class997 arg0) {
+	public void method9890(Packet arg0) {
 		while (true) {
-			int var2 = arg0.method17904();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				if (this.field7766 == null) {
 					throw new RuntimeException("");
@@ -36,26 +36,26 @@ public class class631 {
 				return;
 			}
 			if (var2 == 1) {
-				int var3 = arg0.method17904();
+				int var3 = arg0.g1();
 				this.field7766 = new int[var3];
 				for (int var4 = 0; var4 < this.field7766.length; var4++) {
-					this.field7766[var4] = arg0.method17904();
+					this.field7766[var4] = arg0.g1();
 					if (this.field7766[var4] != 0 && this.field7766[var4] == 2) {
 					}
 				}
 			} else if (var2 == 3) {
-				this.field7763 = arg0.method17904();
+				this.field7763 = arg0.g1();
 			} else if (var2 == 4) {
-				this.field7770 = arg0.method17904();
+				this.field7770 = arg0.g1();
 			} else if (var2 == 5) {
-				this.field7769 = new int[arg0.method17904()];
+				this.field7769 = new int[arg0.g1()];
 				for (int var5 = 0; var5 < this.field7769.length; var5++) {
-					this.field7769[var5] = arg0.method17904();
+					this.field7769[var5] = arg0.g1();
 				}
 			} else if (var2 == 6) {
-				this.field7767 = new int[arg0.method17904()];
+				this.field7767 = new int[arg0.g1()];
 				for (int var6 = 0; var6 < this.field7767.length; var6++) {
-					this.field7767[var6] = arg0.method17904();
+					this.field7767[var6] = arg0.g1();
 				}
 			}
 		}

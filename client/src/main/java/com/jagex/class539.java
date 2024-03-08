@@ -30,15 +30,15 @@ public class class539 {
 		if (var4 == null) {
 			return new class539(0);
 		}
-		class997 var5 = new class997(var4);
-		int var6 = var5.method17906();
+		Packet var5 = new Packet(var4);
+		int var6 = var5.g2();
 		class539 var7 = new class539(var6);
 		int var8 = 0;
 		while (true) {
 			while (var8 < var7.field6777) {
-				int var9 = var5.method17910();
-				int var10 = var5.method17906();
-				int var11 = var5.method17904();
+				int var9 = var5.g4s();
+				int var10 = var5.g2();
+				int var11 = var5.g1();
 				if (!arg2 && var11 == 1) {
 					var7.field6777--;
 				} else {

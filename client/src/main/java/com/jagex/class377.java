@@ -25,7 +25,7 @@ public class class377 implements class378 {
 		class379 var4 = new class379();
 		var4.field3548 = arg0;
 		if (var3 != null) {
-			var4.method5988(new class997(var3));
+			var4.method5988(new Packet(var3));
 		}
 		var4.method5990();
 		this.field3537.method2921(var4, (long) arg0);

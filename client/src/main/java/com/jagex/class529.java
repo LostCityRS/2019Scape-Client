@@ -33,16 +33,16 @@ public class class529 {
 	@ObfuscatedName("ta.u")
 	public boolean field6756;
 
-	public class529(class133 arg0, class997 arg1, int arg2) {
+	public class529(class133 arg0, Packet arg1, int arg2) {
 		this.field6749 = arg2;
-		this.field6751 = arg1.method17922();
+		this.field6751 = arg1.gSmart1or2s();
 		this.field6750 = new int[this.field6751];
 		this.field6753 = new int[this.field6751];
-		int var4 = arg1.method17906();
-		int var5 = arg1.method17906();
+		int var4 = arg1.g2();
+		int var5 = arg1.g2();
 		for (int var6 = 0; var6 < this.field6751; var6++) {
-			this.field6750[var6] = var4 + arg1.method17905();
-			this.field6753[var6] = var5 + arg1.method17905();
+			this.field6750[var6] = var4 + arg1.g1b();
+			this.field6753[var6] = var5 + arg1.g1b();
 		}
 		this.field6754 = this.method8402(arg0);
 	}

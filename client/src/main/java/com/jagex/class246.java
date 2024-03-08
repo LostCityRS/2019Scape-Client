@@ -16,23 +16,23 @@ public class class246 {
 	}
 
 	@ObfuscatedName("gc.n(Lalw;Ljava/lang/String;I)I")
-	public static int method3547(class997 arg0, String arg1) {
-		int var2 = arg0.field11503;
+	public static int method3547(Packet arg0, String arg1) {
+		int var2 = arg0.pos;
 		byte[] var3 = class693.method3064(arg1);
-		arg0.method18130(var3.length);
-		arg0.field11503 += Statics.field2614.method4381(var3, 0, var3.length, arg0.field11502, arg0.field11503);
-		return arg0.field11503 - var2;
+		arg0.pSmart1or2s(var3.length);
+		arg0.pos += Statics.field2614.method4381(var3, 0, var3.length, arg0.data, arg0.pos);
+		return arg0.pos - var2;
 	}
 
 	@ObfuscatedName("eu.k(Lalw;II)Ljava/lang/String;")
-	public static String method2738(class997 arg0, int arg1) {
+	public static String method2738(Packet arg0, int arg1) {
 		try {
-			int var2 = arg0.method18123();
+			int var2 = arg0.gSmart1or2();
 			if (var2 > arg1) {
 				var2 = arg1;
 			}
 			byte[] var3 = new byte[var2];
-			arg0.field11503 += Statics.field2614.method4387(arg0.field11502, arg0.field11503, var3, 0, var2);
+			arg0.pos += Statics.field2614.method4387(arg0.data, arg0.pos, var3, 0, var2);
 			return class693.method9199(var3, 0, var2);
 		} catch (Exception var6) {
 			return "Cabbage";

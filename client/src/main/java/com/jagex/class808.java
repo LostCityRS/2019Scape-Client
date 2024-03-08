@@ -1,7 +1,6 @@
 package com.jagex;
 
 import deob.ObfuscatedName;
-import deob.Statics;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -51,7 +50,7 @@ public abstract class class808 extends class52 implements class414 {
 		} else if (arg0.field4239 instanceof Long) {
 			var3 = var2 + 8;
 		} else if (arg0.field4239 instanceof String) {
-			var3 = var2 + Statics.method8398((String) arg0.field4239);
+			var3 = var2 + Packet.method8398((String) arg0.field4239);
 		} else if (arg0.field4239 instanceof class785) {
 			var3 = var2 + ((class785) arg0.field4239).method15118();
 		} else {
@@ -61,14 +60,14 @@ public abstract class class808 extends class52 implements class414 {
 	}
 
 	@ObfuscatedName("add.ae(Lalw;Lon;I)V")
-	public void method15283(class997 arg0, class413 arg1) {
-		arg0.method17945(arg1.field4240);
+	public void method15283(Packet arg0, class413 arg1) {
+		arg0.p2(arg1.field4240);
 		if (arg1.field4239 instanceof Integer) {
-			arg0.method17886((Integer) arg1.field4239);
+			arg0.p4((Integer) arg1.field4239);
 		} else if (arg1.field4239 instanceof Long) {
-			arg0.method17890((Long) arg1.field4239);
+			arg0.p8((Long) arg1.field4239);
 		} else if (arg1.field4239 instanceof String) {
-			arg0.method17894((String) arg1.field4239);
+			arg0.pjstr2((String) arg1.field4239);
 		} else if (arg1.field4239 instanceof class785) {
 			((class785) arg1.field4239).method15114(arg0);
 		} else {
@@ -77,8 +76,8 @@ public abstract class class808 extends class52 implements class414 {
 	}
 
 	@ObfuscatedName("add.ag(Lalw;B)Lon;")
-	public class413 method15284(class997 arg0) {
-		int var2 = arg0.method17906();
+	public class413 method15284(Packet arg0) {
+		int var2 = arg0.g2();
 		class149 var3 = (class149) this.method962(var2);
 		if (!var3.method2781()) {
 			throw new IllegalStateException("");
@@ -86,11 +85,11 @@ public abstract class class808 extends class52 implements class414 {
 		class413 var4 = new class413(var2);
 		Class var5 = var3.field1704.method7292().field4843;
 		if (var5 == Integer.class) {
-			var4.field4239 = arg0.method17910();
+			var4.field4239 = arg0.g4s();
 		} else if (var5 == Long.class) {
-			var4.field4239 = arg0.method17914();
+			var4.field4239 = arg0.g8();
 		} else if (var5 == String.class) {
-			var4.field4239 = arg0.method17919();
+			var4.field4239 = arg0.gjstr2();
 		} else if (class785.class.isAssignableFrom(var5)) {
 			try {
 				class785 var6 = (class785) var5.getDeclaredConstructor().newInstance();
@@ -108,16 +107,16 @@ public abstract class class808 extends class52 implements class414 {
 	}
 
 	@ObfuscatedName("add.ah(Lalw;Lqa;B)Lon;")
-	public class413 method15285(class997 arg0, class470 arg1) {
-		int var3 = arg0.method17906();
+	public class413 method15285(Packet arg0, class470 arg1) {
+		int var3 = arg0.g2();
 		class413 var4 = new class413(var3);
 		Class var5 = arg1.field4843;
 		if (var5 == Integer.class) {
-			var4.field4239 = arg0.method17910();
+			var4.field4239 = arg0.g4s();
 		} else if (var5 == Long.class) {
-			var4.field4239 = arg0.method17914();
+			var4.field4239 = arg0.g8();
 		} else if (var5 == String.class) {
-			var4.field4239 = arg0.method17919();
+			var4.field4239 = arg0.gjstr2();
 		} else if (class785.class.isAssignableFrom(var5)) {
 			try {
 				class785 var6 = (class785) var5.getDeclaredConstructor().newInstance();

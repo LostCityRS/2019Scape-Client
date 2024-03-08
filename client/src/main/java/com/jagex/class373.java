@@ -16,9 +16,9 @@ public class class373 {
 	public int[] field3446;
 
 	@ObfuscatedName("aac.e(Lalw;B)Lne;")
-	public static class373 method14572(class997 arg0) {
+	public static class373 method14572(Packet arg0) {
 		class373 var1 = new class373();
-		var1.field3448 = arg0.method17906();
+		var1.field3448 = arg0.g2();
 		var1.field3447 = Statics.field489.method14982(var1.field3448);
 		return var1;
 	}

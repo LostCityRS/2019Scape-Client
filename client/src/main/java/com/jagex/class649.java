@@ -36,7 +36,7 @@ public abstract class class649 {
 						break label102;
 					}
 					class993 var6 = (class993) var5.next();
-					if (var1 != null && var1.field11432.field11503 - var2 >= 252 - (this.method10263() + 6)) {
+					if (var1 != null && var1.field11432.pos - var2 >= 252 - (this.method10263() + 6)) {
 						break label102;
 					}
 					var6.method8440();
@@ -57,9 +57,9 @@ public abstract class class649 {
 					} else {
 						if (var1 == null) {
 							var1 = this.method10267();
-							var1.field11432.method18001(0);
-							var2 = var1.field11432.field11503;
-							var1.field11432.field11503 += 2;
+							var1.field11432.p1(0);
+							var2 = var1.field11432.pos;
+							var1.field11432.pos += 2;
 							var3 = 0;
 							var4 = 0;
 						}
@@ -81,25 +81,25 @@ public abstract class class649 {
 						if (var11 < 8 && var9 >= -32 && var9 <= 31 && var10 >= -32 && var10 <= 31) {
 							var9 += 32;
 							var10 += 32;
-							var1.field11432.method17945((var9 << 6) + (var11 << 12) + var10);
+							var1.field11432.p2((var9 << 6) + (var11 << 12) + var10);
 						} else if (var11 < 32 && var9 >= -128 && var9 <= 127 && var10 >= -128 && var10 <= 127) {
 							var9 += 128;
 							var10 += 128;
-							var1.field11432.method18001(var11 + 128);
-							var1.field11432.method17945((var9 << 8) + var10);
+							var1.field11432.p1(var11 + 128);
+							var1.field11432.p2((var9 << 8) + var10);
 						} else if (var11 < 32) {
-							var1.field11432.method18001(var11 + 192);
+							var1.field11432.p1(var11 + 192);
 							if (var8 == -1 || var7 == -1) {
-								var1.field11432.method17886(Integer.MIN_VALUE);
+								var1.field11432.p4(Integer.MIN_VALUE);
 							} else {
-								var1.field11432.method17886(var8 | var7 << 16);
+								var1.field11432.p4(var8 | var7 << 16);
 							}
 						} else {
-							var1.field11432.method17945((var11 & 0x1FFF) + 57344);
+							var1.field11432.p2((var11 & 0x1FFF) + 57344);
 							if (var8 == -1 || var7 == -1) {
-								var1.field11432.method17886(Integer.MIN_VALUE);
+								var1.field11432.p4(Integer.MIN_VALUE);
 							} else {
-								var1.field11432.method17886(var8 | var7 << 16);
+								var1.field11432.p4(var8 | var7 << 16);
 							}
 						}
 						var4++;
@@ -110,12 +110,12 @@ public abstract class class649 {
 				}
 			}
 			if (var1 != null) {
-				var1.field11432.method18028(var1.field11432.field11503 - var2);
-				int var12 = var1.field11432.field11503;
-				var1.field11432.field11503 = var2;
-				var1.field11432.method18001(var3 / var4);
-				var1.field11432.method18001(var3 % var4);
-				var1.field11432.field11503 = var12;
+				var1.field11432.psize1(var1.field11432.pos - var2);
+				int var12 = var1.field11432.pos;
+				var1.field11432.pos = var2;
+				var1.field11432.p1(var3 / var4);
+				var1.field11432.p1(var3 % var4);
+				var1.field11432.pos = var12;
 				client.field10849.method934(var1);
 			}
 		}
@@ -155,7 +155,7 @@ public abstract class class649 {
 	public abstract int method10263();
 
 	@ObfuscatedName("xb.w(Lalw;Lakm;I)V")
-	public abstract void method10264(class997 arg0, class993 arg1);
+	public abstract void method10264(Packet arg0, class993 arg1);
 
 	@ObfuscatedName("xb.z(S)Lakl;")
 	public abstract class983 method10267();

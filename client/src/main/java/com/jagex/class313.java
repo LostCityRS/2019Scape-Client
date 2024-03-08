@@ -53,18 +53,18 @@ public class class313 implements class317 {
 	}
 
 	@ObfuscatedName("on.e(Lalw;I)Lkn;")
-	public static class313 method6241(class997 arg0) {
-		int var1 = arg0.method17904();
-		class318 var2 = class318.method13948()[arg0.method17904()];
-		class316 var3 = class316.method2774()[arg0.method17904()];
-		int var4 = arg0.method17973();
-		int var5 = arg0.method17973();
-		int var6 = arg0.method17906();
-		int var7 = arg0.method17906();
-		int var8 = arg0.method17910();
-		int var9 = arg0.method17910();
-		int var10 = arg0.method17910();
-		boolean var11 = arg0.method17904() == 1;
+	public static class313 method6241(Packet arg0) {
+		int var1 = arg0.g1();
+		class318 var2 = class318.method13948()[arg0.g1()];
+		class316 var3 = class316.method2774()[arg0.g1()];
+		int var4 = arg0.g2s();
+		int var5 = arg0.g2s();
+		int var6 = arg0.g2();
+		int var7 = arg0.g2();
+		int var8 = arg0.g4s();
+		int var9 = arg0.g4s();
+		int var10 = arg0.g4s();
+		boolean var11 = arg0.g1() == 1;
 		return new class313(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11);
 	}
 

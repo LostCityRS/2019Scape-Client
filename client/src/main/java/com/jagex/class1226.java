@@ -13,9 +13,9 @@ public class class1226 extends class1180 {
 		this.field12551 = arg1;
 	}
 
-	public class1226(int arg0, class997 arg1) {
+	public class1226(int arg0, Packet arg1) {
 		super(arg0);
-		this.field12551 = arg1.method17916();
+		this.field12551 = arg1.gFloat();
 	}
 
 	@ObfuscatedName("atj.r(FI)V")
@@ -33,7 +33,7 @@ public class class1226 extends class1180 {
 	}
 
 	@ObfuscatedName("atj.k(Lalw;I)V")
-	public void method19434(class997 arg0) {
-		this.field12551 = arg0.method17916();
+	public void method19434(Packet arg0) {
+		this.field12551 = arg0.gFloat();
 	}
 }

@@ -110,7 +110,7 @@ public class class613 implements class614 {
 	}
 
 	@ObfuscatedName("we.p(Lalw;B)V")
-	public void method9681(class997 arg0) {
+	public void method9681(Packet arg0) {
 		if (this.field7623 == null) {
 			return;
 		}
@@ -125,18 +125,18 @@ public class class613 implements class614 {
 			List var3 = this.method9689();
 			if (var3 != null) {
 				var3.add(arg0);
-				this.field7622 += arg0.field11502.length;
+				this.field7622 += arg0.data.length;
 				this.method9688(var3, this.field7622);
 			}
 		}
 	}
 
 	@ObfuscatedName("we.d(II)Lalw;")
-	public class997 method9686(int arg0) {
+	public Packet method9686(int arg0) {
 		if (this.field7623 == null) {
 			return null;
 		}
-		class997 var2 = null;
+		Packet var2 = null;
 		if (this.field7619 != null) {
 			this.field7619.method3131(this);
 		}
@@ -144,7 +144,7 @@ public class class613 implements class614 {
 		synchronized (this.field7623) {
 			List var4 = this.method9689();
 			if (var4.size() > arg0) {
-				var2 = (class997) var4.get(arg0);
+				var2 = (Packet) var4.get(arg0);
 			}
 			return var2;
 		}

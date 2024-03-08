@@ -24,14 +24,14 @@ public class class872 extends class159 {
 	@ObfuscatedName("age.l")
 	public final int field10296;
 
-	public class872(class997 arg0) {
+	public class872(Packet arg0) {
 		super(arg0);
-		this.field10292 = arg0.method17906();
-		this.field10295 = arg0.method17906();
-		this.field10293 = arg0.method17906();
-		this.field10294 = arg0.method17906();
-		this.field10291 = arg0.method17906();
-		this.field10296 = arg0.method17906();
+		this.field10292 = arg0.g2();
+		this.field10295 = arg0.g2();
+		this.field10293 = arg0.g2();
+		this.field10294 = arg0.g2();
+		this.field10291 = arg0.g2();
+		this.field10296 = arg0.g2();
 	}
 
 	@ObfuscatedName("age.n(I)V")

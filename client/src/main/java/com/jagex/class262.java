@@ -39,9 +39,9 @@ public class class262 implements class53, class757 {
 	public int field2786;
 
 	@ObfuscatedName("iy.e(Lalw;B)V")
-	public void method976(class997 arg0) {
+	public void method976(Packet arg0) {
 		while (true) {
-			int var2 = arg0.method17904();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
@@ -50,25 +50,25 @@ public class class262 implements class53, class757 {
 	}
 
 	@ObfuscatedName("iy.u(Lalw;IB)V")
-	public void method4593(class997 arg0, int arg1) {
+	public void method4593(Packet arg0, int arg1) {
 		if (arg1 == 1) {
-			this.field2776 = arg0.method17906();
+			this.field2776 = arg0.g2();
 		} else if (arg1 == 2) {
 			this.field2781 = true;
 		} else if (arg1 == 3) {
-			this.field2783 = arg0.method17973();
-			this.field2779 = arg0.method17973();
-			this.field2777 = arg0.method17973();
+			this.field2783 = arg0.g2s();
+			this.field2779 = arg0.g2s();
+			this.field2777 = arg0.g2s();
 		} else if (arg1 == 4) {
-			this.field2780 = arg0.method17904();
+			this.field2780 = arg0.g1();
 		} else if (arg1 == 5) {
-			this.field2778 = arg0.method17927();
+			this.field2778 = arg0.gSmart2or4null();
 		} else if (arg1 == 6) {
-			this.field2782 = arg0.method17908();
+			this.field2782 = arg0.g3();
 		} else if (arg1 == 7) {
-			this.field2784 = arg0.method17973();
-			this.field2785 = arg0.method17973();
-			this.field2786 = arg0.method17973();
+			this.field2784 = arg0.g2s();
+			this.field2785 = arg0.g2s();
+			this.field2786 = arg0.g2s();
 		}
 	}
 

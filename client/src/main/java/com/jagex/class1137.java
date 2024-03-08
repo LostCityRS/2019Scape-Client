@@ -15,9 +15,9 @@ public class class1137 extends class912 {
 	}
 
 	@ObfuscatedName("px.f(Lalw;I)Lkp;")
-	public static class314 method6845(class997 arg0) {
+	public static class314 method6845(Packet arg0) {
 		class912 var1 = (class912) Statics.method10312(arg0);
-		int var2 = arg0.method17973();
+		int var2 = arg0.g2s();
 		return new class1137(var1.field3167, var1.field3159, var1.field3161, var1.field3162, var1.field3163, var1.field3160, var1.field3165, var1.field3166, var1.field3164, var1.field10569, var1.field10570, var1.field10572, var1.field10573, var1.field10571, var1.field10574, var2);
 	}
 

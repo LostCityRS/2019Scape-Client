@@ -9,17 +9,17 @@ public class class227 {
 	}
 
 	@ObfuscatedName("ey.e(Lalw;I)Lhr;")
-	public static class227 method2679(class997 arg0) {
-		int var1 = arg0.method17904();
+	public static class227 method2679(Packet arg0) {
+		int var1 = arg0.g1();
 		if (var1 == 0) {
 			return null;
 		}
 		var1--;
-		arg0.field11503++;
-		int var2 = arg0.method17910();
+		arg0.pos++;
+		int var2 = arg0.g4s();
 		Object[] var3 = new Object[var1];
 		for (int var4 = 0; var4 < var1; var4++) {
-			int var5 = arg0.method17904();
+			int var5 = arg0.g1();
 			if (var5 == 0) {
 				var3[var4] = class470.method7336(Integer.class).method7308(arg0);
 			} else if (var5 == 1) {

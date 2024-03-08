@@ -224,12 +224,12 @@ public class class1000 extends class532 {
 					}
 					class756 var24 = (class756) var16.get(0);
 					if (var24 != null) {
-						class997 var25 = new class997(13);
-						var25.method17887(var24.field8788);
-						var25.method17887(var24.field8791);
-						var25.method17887(var24.field8790);
-						var25.field11503 = 0;
-						this.field11623 = var25.method17918();
+						Packet var25 = new Packet(13);
+						var25.ip4(var24.field8788);
+						var25.ip4(var24.field8791);
+						var25.ip4(var24.field8790);
+						var25.pos = 0;
+						this.field11623 = var25.gjstr();
 					}
 					class756 var26 = (class756) var16.get(1);
 					if (var26 != null) {
@@ -243,18 +243,18 @@ public class class1000 extends class532 {
 					if (var28 != null) {
 						this.field11625[2] = var28.field8791;
 					}
-					class997 var29 = new class997(49);
+					Packet var29 = new Packet(49);
 					for (int var30 = -2147483646; var30 <= -2147483644; var30++) {
 						class756 var31 = (class756) var16.get(var30);
 						if (var31 != null) {
-							var29.method17887(var31.field8787);
-							var29.method17887(var31.field8788);
-							var29.method17887(var31.field8790);
-							var29.method17887(var31.field8791);
+							var29.ip4(var31.field8787);
+							var29.ip4(var31.field8788);
+							var29.ip4(var31.field8790);
+							var29.ip4(var31.field8791);
 						}
 					}
-					var29.field11503 = 0;
-					this.field11624 = var29.method17918();
+					var29.pos = 0;
+					this.field11624 = var29.gjstr();
 				}
 				String[][] var32 = HardwareInfo.getDXDiagDisplayDevicesProps();
 				if (var32 != null && var32.length > 0 && var32[0] != null) {
@@ -337,46 +337,46 @@ public class class1000 extends class532 {
 	}
 
 	@ObfuscatedName("aly.n(Lalw;I)V")
-	public void method18188(class997 arg0) {
-		arg0.method18001(8);
-		arg0.method18001(this.field11616);
-		arg0.method18001(this.field11578 ? 1 : 0);
-		arg0.method17945(this.field11598);
-		arg0.method18001(this.field11604);
-		arg0.method18001(this.field11602);
-		arg0.method18001(this.field11606);
-		arg0.method18001(this.field11592);
-		arg0.method18001(this.field11608 ? 1 : 0);
-		arg0.method17945(this.field11577);
-		arg0.method18001(this.field11611);
-		arg0.method17885(this.field11613);
-		arg0.method17945(this.field11614);
-		arg0.method17894(this.field11597);
-		arg0.method17894(this.field11627);
-		arg0.method17894(this.field11617);
-		arg0.method17894(this.field11618);
-		arg0.method18001(this.field11620);
-		arg0.method17945(this.field11619);
-		arg0.method17894(this.field11623);
-		arg0.method17894(this.field11624);
-		arg0.method18001(this.field11589);
-		arg0.method18001(this.field11622);
+	public void method18188(Packet arg0) {
+		arg0.p1(8);
+		arg0.p1(this.field11616);
+		arg0.p1(this.field11578 ? 1 : 0);
+		arg0.p2(this.field11598);
+		arg0.p1(this.field11604);
+		arg0.p1(this.field11602);
+		arg0.p1(this.field11606);
+		arg0.p1(this.field11592);
+		arg0.p1(this.field11608 ? 1 : 0);
+		arg0.p2(this.field11577);
+		arg0.p1(this.field11611);
+		arg0.p3(this.field11613);
+		arg0.p2(this.field11614);
+		arg0.pjstr2(this.field11597);
+		arg0.pjstr2(this.field11627);
+		arg0.pjstr2(this.field11617);
+		arg0.pjstr2(this.field11618);
+		arg0.p1(this.field11620);
+		arg0.p2(this.field11619);
+		arg0.pjstr2(this.field11623);
+		arg0.pjstr2(this.field11624);
+		arg0.p1(this.field11589);
+		arg0.p1(this.field11622);
 		for (int var2 = 0; var2 < this.field11625.length; var2++) {
-			arg0.method17886(this.field11625[var2]);
+			arg0.p4(this.field11625[var2]);
 		}
-		arg0.method17886(this.field11626);
-		arg0.method17894(this.field11585);
+		arg0.p4(this.field11626);
+		arg0.pjstr2(this.field11585);
 	}
 
 	@ObfuscatedName("aly.m(I)I")
 	public int method18189() {
 		byte var1 = 39;
-		int var2 = var1 + Statics.method8398(this.field11597);
-		int var3 = var2 + Statics.method8398(this.field11627);
-		int var4 = var3 + Statics.method8398(this.field11617);
-		int var5 = var4 + Statics.method8398(this.field11618);
-		int var6 = var5 + Statics.method8398(this.field11623);
-		int var7 = var6 + Statics.method8398(this.field11624);
-		return var7 + Statics.method8398(this.field11585);
+		int var2 = var1 + Packet.method8398(this.field11597);
+		int var3 = var2 + Packet.method8398(this.field11627);
+		int var4 = var3 + Packet.method8398(this.field11617);
+		int var5 = var4 + Packet.method8398(this.field11618);
+		int var6 = var5 + Packet.method8398(this.field11623);
+		int var7 = var6 + Packet.method8398(this.field11624);
+		return var7 + Packet.method8398(this.field11585);
 	}
 }

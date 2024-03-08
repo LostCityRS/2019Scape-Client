@@ -25,11 +25,11 @@ public class class1227 extends class1180 {
 		this.field12554 = arg3;
 	}
 
-	public class1227(int arg0, class997 arg1) {
+	public class1227(int arg0, Packet arg1) {
 		super(arg0);
-		this.field12553 = Statics.method1599(arg1.method17904());
-		this.field12555 = arg1.method17916();
-		this.field12554 = arg1.method17916();
+		this.field12553 = Statics.method1599(arg1.g1());
+		this.field12555 = arg1.gFloat();
+		this.field12554 = arg1.gFloat();
 	}
 
 	@ObfuscatedName("atd.n(FI)V")
@@ -60,9 +60,9 @@ public class class1227 extends class1180 {
 	}
 
 	@ObfuscatedName("atd.k(Lalw;I)V")
-	public void method19434(class997 arg0) {
-		this.field12553 = Statics.method1599(arg0.method17904());
-		this.field12555 = arg0.method17916();
-		this.field12554 = arg0.method17916();
+	public void method19434(Packet arg0) {
+		this.field12553 = Statics.method1599(arg0.g1());
+		this.field12555 = arg0.gFloat();
+		this.field12554 = arg0.gFloat();
 	}
 }

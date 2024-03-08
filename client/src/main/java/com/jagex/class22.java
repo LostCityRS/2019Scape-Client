@@ -1852,8 +1852,8 @@ public class class22 {
 				client.field10926 = 2;
 				client.field10925 = 0;
 				class983 var16 = Statics.method1604(var14, client.field10849.field794);
-				var16.field11432.method17945(var7);
-				var16.field11432.method17937(method14766() ? 1 : 0);
+				var16.field11432.p2(var7);
+				var16.field11432.p1_alt1(method14766() ? 1 : 0);
 				client.field10849.method934(var16);
 				client.method6820(var15.field10450[0], var15.field10448[0]);
 			}
@@ -1878,10 +1878,10 @@ public class class22 {
 			client.field10926 = 2;
 			client.field10925 = 0;
 			class983 var18 = Statics.method1604(var17, client.field10849.field794);
-			var18.field11432.method17938(method14766() ? 1 : 0);
-			var18.field11432.method17945(var10.field7427 + var5);
-			var18.field11432.method17886((int) (var8 >>> 32) & Integer.MAX_VALUE);
-			var18.field11432.method17947(var10.field7426 + var4);
+			var18.field11432.p1_alt2(method14766() ? 1 : 0);
+			var18.field11432.p2(var10.field7427 + var5);
+			var18.field11432.p4((int) (var8 >>> 32) & Integer.MAX_VALUE);
+			var18.field11432.p2_alt3(var10.field7426 + var4);
 			client.field10849.method934(var18);
 			client.method6820(var4, var5);
 		}
@@ -1891,17 +1891,17 @@ public class class22 {
 			} else {
 				class983 var19 = method9839(var4, var5, var7);
 				if (var7 == 1) {
-					var19.field11432.method18001(-1);
-					var19.field11432.method18001(-1);
-					var19.field11432.method17945((int) client.field10895);
-					var19.field11432.method18001(57);
-					var19.field11432.method18001(client.field10885);
-					var19.field11432.method18001(client.field10887);
-					var19.field11432.method18001(89);
+					var19.field11432.p1(-1);
+					var19.field11432.p1(-1);
+					var19.field11432.p2((int) client.field10895);
+					var19.field11432.p1(57);
+					var19.field11432.p1(client.field10885);
+					var19.field11432.p1(client.field10887);
+					var19.field11432.p1(89);
 					class423 var20 = Statics.field4490.method10536().field4298;
-					var19.field11432.method17945((int) var20.field4308);
-					var19.field11432.method17945((int) var20.field4313);
-					var19.field11432.method18001(63);
+					var19.field11432.p2((int) var20.field4308);
+					var19.field11432.p2((int) var20.field4313);
+					var19.field11432.p1(63);
 				} else {
 					client.field10866 = arg1;
 					client.field10924 = arg2;
@@ -1935,8 +1935,8 @@ public class class22 {
 				client.field10926 = 2;
 				client.field10925 = 0;
 				class983 var24 = Statics.method1604(var21, client.field10849.field794);
-				var24.field11432.method17939(method14766() ? 1 : 0);
-				var24.field11432.method17949(var7);
+				var24.field11432.p1_alt3(method14766() ? 1 : 0);
+				var24.field11432.p2_alt2(var7);
 				client.field10849.method934(var24);
 				client.method6820(var23.field10450[0], var23.field10448[0]);
 			}
@@ -1947,13 +1947,13 @@ public class class22 {
 			client.field10926 = 2;
 			client.field10925 = 0;
 			class983 var25 = Statics.method1604(class390.field3796, client.field10849.field794);
-			var25.field11432.method18081(var7);
-			var25.field11432.method17937(method14766() ? 1 : 0);
-			var25.field11432.method18081(client.field10975);
-			var25.field11432.method18081(var10.field7427 + var5);
-			var25.field11432.method18081(var10.field7426 + var4);
-			var25.field11432.method17957(Statics.field6707);
-			var25.field11432.method17947(client.field10974);
+			var25.field11432.p2_alt1(var7);
+			var25.field11432.p1_alt1(method14766() ? 1 : 0);
+			var25.field11432.p2_alt1(client.field10975);
+			var25.field11432.p2_alt1(var10.field7427 + var5);
+			var25.field11432.p2_alt1(var10.field7426 + var4);
+			var25.field11432.p4_alt2(Statics.field6707);
+			var25.field11432.p2_alt3(client.field10974);
 			client.field10849.method934(var25);
 			client.method6820(var4, var5);
 		}
@@ -1966,11 +1966,11 @@ public class class22 {
 				client.field10926 = 2;
 				client.field10925 = 0;
 				class983 var28 = Statics.method1604(class390.field3798, client.field10849.field794);
-				var28.field11432.method17886(Statics.field6707);
-				var28.field11432.method17945(var7);
-				var28.field11432.method17937(method14766() ? 1 : 0);
-				var28.field11432.method18081(client.field10975);
-				var28.field11432.method17945(client.field10974);
+				var28.field11432.p4(Statics.field6707);
+				var28.field11432.p2(var7);
+				var28.field11432.p1_alt1(method14766() ? 1 : 0);
+				var28.field11432.p2_alt1(client.field10975);
+				var28.field11432.p2(client.field10974);
 				client.field10849.method934(var28);
 				client.method6820(var27.field10450[0], var27.field10448[0]);
 			}
@@ -1981,13 +1981,13 @@ public class class22 {
 			client.field10926 = 2;
 			client.field10925 = 0;
 			class983 var29 = Statics.method1604(class390.field3703, client.field10849.field794);
-			var29.field11432.method17937(method14766() ? 1 : 0);
-			var29.field11432.method18081(var10.field7426 + var4);
-			var29.field11432.method18081(client.field10975);
-			var29.field11432.method17947(var10.field7427 + var5);
-			var29.field11432.method17956(Statics.field6707);
-			var29.field11432.method17957((int) (var8 >>> 32) & Integer.MAX_VALUE);
-			var29.field11432.method17945(client.field10974);
+			var29.field11432.p1_alt1(method14766() ? 1 : 0);
+			var29.field11432.p2_alt1(var10.field7426 + var4);
+			var29.field11432.p2_alt1(client.field10975);
+			var29.field11432.p2_alt3(var10.field7427 + var5);
+			var29.field11432.p4_alt1(Statics.field6707);
+			var29.field11432.p4_alt2((int) (var8 >>> 32) & Integer.MAX_VALUE);
+			var29.field11432.p2(client.field10974);
 			client.field10849.method934(var29);
 			client.method6820(var4, var5);
 		}
@@ -2000,8 +2000,8 @@ public class class22 {
 				client.field10926 = 1;
 				client.field10925 = 0;
 				class983 var30 = Statics.method1604(class390.field3789, client.field10849.field794);
-				var30.field11432.method17949(var10.field7427 + var5);
-				var30.field11432.method17947(var10.field7426 + var4);
+				var30.field11432.p2_alt2(var10.field7427 + var5);
+				var30.field11432.p2_alt3(var10.field7426 + var4);
 				client.field10849.method934(var30);
 			}
 		}
@@ -2011,11 +2011,11 @@ public class class22 {
 			client.field10926 = 2;
 			client.field10925 = 0;
 			class983 var31 = Statics.method1604(class390.field3751, client.field10849.field794);
-			var31.field11432.method17945(client.field10974);
-			var31.field11432.method17937(method14766() ? 1 : 0);
-			var31.field11432.method18081(client.field10975);
-			var31.field11432.method17947(Statics.field4490.field10406);
-			var31.field11432.method17957(Statics.field6707);
+			var31.field11432.p2(client.field10974);
+			var31.field11432.p1_alt1(method14766() ? 1 : 0);
+			var31.field11432.p2_alt1(client.field10975);
+			var31.field11432.p2_alt3(Statics.field4490.field10406);
+			var31.field11432.p4_alt2(Statics.field6707);
 			client.field10849.method934(var31);
 		}
 		class390 var32 = null;
@@ -2038,10 +2038,10 @@ public class class22 {
 			client.field10926 = 2;
 			client.field10925 = 0;
 			class983 var33 = Statics.method1604(var32, client.field10849.field794);
-			var33.field11432.method18081(var7);
-			var33.field11432.method18081(var10.field7426 + var4);
-			var33.field11432.method17945(var10.field7427 + var5);
-			var33.field11432.method17939((arg3 ? 2 : 0) | (method14766() ? 1 : 0));
+			var33.field11432.p2_alt1(var7);
+			var33.field11432.p2_alt1(var10.field7426 + var4);
+			var33.field11432.p2(var10.field7427 + var5);
+			var33.field11432.p1_alt3((arg3 ? 2 : 0) | (method14766() ? 1 : 0));
 			client.field10849.method934(var33);
 			client.method6820(var4, var5);
 		}
@@ -2053,11 +2053,11 @@ public class class22 {
 				client.field10926 = 2;
 				client.field10925 = 0;
 				class983 var35 = Statics.method1604(class390.field3751, client.field10849.field794);
-				var35.field11432.method17945(client.field10974);
-				var35.field11432.method17937(method14766() ? 1 : 0);
-				var35.field11432.method18081(client.field10975);
-				var35.field11432.method17947(var7);
-				var35.field11432.method17957(Statics.field6707);
+				var35.field11432.p2(client.field10974);
+				var35.field11432.p1_alt1(method14766() ? 1 : 0);
+				var35.field11432.p2_alt1(client.field10975);
+				var35.field11432.p2_alt3(var7);
+				var35.field11432.p4_alt2(Statics.field6707);
 				client.field10849.method934(var35);
 				client.method6820(var34.field10450[0], var34.field10448[0]);
 			}
@@ -2068,11 +2068,11 @@ public class class22 {
 			client.field10926 = 1;
 			client.field10925 = 0;
 			class983 var36 = Statics.method1604(class390.field3741, client.field10849.field794);
-			var36.field11432.method17949(var10.field7426 + var4);
-			var36.field11432.method17956(Statics.field6707);
-			var36.field11432.method17945(client.field10975);
-			var36.field11432.method17949(var10.field7427 + var5);
-			var36.field11432.method17949(client.field10974);
+			var36.field11432.p2_alt2(var10.field7426 + var4);
+			var36.field11432.p4_alt1(Statics.field6707);
+			var36.field11432.p2(client.field10975);
+			var36.field11432.p2_alt2(var10.field7427 + var5);
+			var36.field11432.p2_alt2(client.field10974);
 			client.field10849.method934(var36);
 			client.method6820(var4, var5);
 		}
@@ -2101,9 +2101,9 @@ public class class22 {
 			var3 = Statics.method1604(class390.field3750, client.field10849.field794);
 		}
 		class594 var4 = client.field10855.method7727();
-		var3.field11432.method17945(var4.field7427 + arg1);
-		var3.field11432.method18001(method14766() ? 1 : 0);
-		var3.field11432.method17947(var4.field7426 + arg0);
+		var3.field11432.p2(var4.field7427 + arg1);
+		var3.field11432.p1(method14766() ? 1 : 0);
+		var3.field11432.p2_alt3(var4.field7426 + arg0);
 		class42.field731 = arg0;
 		class42.field718 = arg1;
 		class42.field730 = false;

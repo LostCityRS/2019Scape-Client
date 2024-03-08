@@ -55,7 +55,7 @@ public class class69 {
 		}
 		this.field996 = var10;
 		if (var10 > 0) {
-			class997 var17 = new class997(var10 * 2);
+			Packet var17 = new Packet(var10 * 2);
 			if (this.field990.field10017) {
 				for (int var18 = 0; var18 < var9; var18++) {
 					int var19 = arg2.field1235 * (var12 + var18) + var11;
@@ -63,7 +63,7 @@ public class class69 {
 						short[] var21 = arg2.field9460[var19++];
 						if (var21 != null) {
 							for (int var22 = 0; var22 < var21.length; var22++) {
-								var17.method17945(var21[var22] & 0xFFFF);
+								var17.p2(var21[var22] & 0xFFFF);
 							}
 						}
 					}
@@ -75,13 +75,13 @@ public class class69 {
 						short[] var26 = arg2.field9460[var24++];
 						if (var26 != null) {
 							for (int var27 = 0; var27 < var26.length; var27++) {
-								var17.method17884(var26[var27] & 0xFFFF);
+								var17.ip2(var26[var27] & 0xFFFF);
 							}
 						}
 					}
 				}
 			}
-			this.field997 = this.field990.method15766(5123, var17.field11502, var17.field11503, false);
+			this.field997 = this.field990.method15766(5123, var17.data, var17.pos, false);
 			this.field998 = new class827(this.field990, 5123, null, 1);
 		} else {
 			this.field999 = null;

@@ -70,7 +70,7 @@ public class class1073 extends class714 {
 	}
 
 	@ObfuscatedName("ani.w(Lalw;I)V")
-	public void method14132(class997 arg0) {
+	public void method14132(Packet arg0) {
 		this.field11874 = new class428(arg0);
 	}
 }

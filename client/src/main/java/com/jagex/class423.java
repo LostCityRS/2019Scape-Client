@@ -71,7 +71,7 @@ public class class423 {
 	}
 
 	@ObfuscatedName("ox.f(Lalw;)Lox;")
-	public static class423 method6485(class997 arg0) {
+	public static class423 method6485(Packet arg0) {
 		class423[] var1 = field4309;
 		synchronized (field4309) {
 			if (Statics.field4310 == 0) {
@@ -108,17 +108,17 @@ public class class423 {
 		this.field4313 = arg0.field4313;
 	}
 
-	public class423(class997 arg0) {
-		this.field4308 = arg0.method17916();
-		this.field4311 = arg0.method17916();
-		this.field4313 = arg0.method17916();
+	public class423(Packet arg0) {
+		this.field4308 = arg0.gFloat();
+		this.field4311 = arg0.gFloat();
+		this.field4313 = arg0.gFloat();
 	}
 
 	@ObfuscatedName("ox.l(Lalw;)V")
-	public void method6490(class997 arg0) {
-		this.field4308 = arg0.method17916();
-		this.field4311 = arg0.method17916();
-		this.field4313 = arg0.method17916();
+	public void method6490(Packet arg0) {
+		this.field4308 = arg0.gFloat();
+		this.field4311 = arg0.gFloat();
+		this.field4313 = arg0.gFloat();
 	}
 
 	@ObfuscatedName("ox.u(FFF)V")

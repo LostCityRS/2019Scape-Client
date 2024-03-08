@@ -13,8 +13,8 @@ public class class320 implements class317 {
 	}
 
 	@ObfuscatedName("uc.e(Lalw;I)Lli;")
-	public static class320 method8975(class997 arg0) {
-		int var1 = arg0.method17927();
+	public static class320 method8975(Packet arg0) {
+		int var1 = arg0.gSmart2or4null();
 		return new class320(var1);
 	}
 

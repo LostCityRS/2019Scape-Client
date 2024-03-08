@@ -20,13 +20,13 @@ public class class862 extends class159 {
 	@ObfuscatedName("aft.w")
 	public final int field10265;
 
-	public class862(class997 arg0) {
+	public class862(Packet arg0) {
 		super(arg0);
-		this.field10264 = arg0.method17906();
-		this.field10262 = arg0.method17906();
-		this.field10263 = arg0.method17906();
-		this.field10261 = arg0.method17906();
-		this.field10265 = arg0.method17906();
+		this.field10264 = arg0.g2();
+		this.field10262 = arg0.g2();
+		this.field10263 = arg0.g2();
+		this.field10261 = arg0.g2();
+		this.field10265 = arg0.g2();
 	}
 
 	@ObfuscatedName("aft.n(I)V")

@@ -255,17 +255,17 @@ public class class910 extends class307 {
 	}
 
 	@ObfuscatedName("ahd.u(Lalw;I)V")
-	public void method5224(class997 arg0) {
-		class272 var2 = Statics.method15213(arg0.method17904());
-		int var3 = arg0.method17906();
+	public void method5224(Packet arg0) {
+		class272 var2 = Statics.method15213(arg0.g1());
+		int var3 = arg0.g2();
 		this.field10553.method6490(arg0);
 		this.field10554.method6410(arg0);
-		if (arg0.method17904() == 1) {
+		if (arg0.g1() == 1) {
 			this.field10556 = true;
 		} else {
 			this.field10556 = false;
 		}
-		this.field10561 = arg0.method17906();
+		this.field10561 = arg0.g2();
 		this.field10552 = this.field3084.method4697().method268(var2, var3);
 	}
 }

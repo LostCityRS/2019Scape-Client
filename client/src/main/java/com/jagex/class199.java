@@ -11,12 +11,12 @@ public class class199 implements class203 {
 	@ObfuscatedName("gc.e")
 	public final class413 field1939;
 
-	public class199(class201 arg0, class997 arg1) {
+	public class199(class201 arg0, Packet arg1) {
 		this.this$0 = arg0;
-		if (arg1.method17906() == 65535) {
+		if (arg1.g2() == 65535) {
 			this.field1939 = null;
 		} else {
-			arg1.field11503 -= 2;
+			arg1.pos -= 2;
 			this.field1939 = arg0.field1943.method291().method15284(arg1);
 		}
 	}

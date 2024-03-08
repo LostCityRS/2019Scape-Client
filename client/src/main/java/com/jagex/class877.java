@@ -12,10 +12,10 @@ public class class877 extends class159 {
 	@ObfuscatedName("agb.m")
 	public final int field10319;
 
-	public class877(class997 arg0) {
+	public class877(Packet arg0) {
 		super(arg0);
-		this.field10318 = arg0.method17906();
-		this.field10319 = arg0.method17904();
+		this.field10318 = arg0.g2();
+		this.field10319 = arg0.g1();
 	}
 
 	@ObfuscatedName("agb.n(I)V")

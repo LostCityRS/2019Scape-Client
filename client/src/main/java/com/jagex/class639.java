@@ -97,7 +97,7 @@ public class class639 {
 
 	@ObfuscatedName("xg.l(I)V")
 	public void method10118() {
-		long[] var1 = class997.field11507;
+		long[] var1 = Packet.crc64table;
 		this.field7888 = -1L;
 		this.field7888 = this.field7888 >>> 8 ^ var1[(int) ((this.field7888 ^ (long) (this.field7891 >> 8)) & 0xFFL)];
 		this.field7888 = this.field7888 >>> 8 ^ var1[(int) ((this.field7888 ^ (long) this.field7891) & 0xFFL)];

@@ -118,15 +118,15 @@ public final class class861 extends class150 {
 					throw new EOFException();
 				}
 			}
-			class997 var5 = new class997(var2);
-			if (var5.field11502.length - var5.field11503 >= 1) {
-				int var7 = var5.method17904();
+			Packet var5 = new Packet(var2);
+			if (var5.data.length - var5.pos >= 1) {
+				int var7 = var5.g1();
 				if (var7 >= 0 && var7 <= 1) {
-					if (var5.field11502.length - var5.field11503 < 2) {
+					if (var5.data.length - var5.pos < 2) {
 						return;
 					}
-					int var10 = var5.method17906();
-					if (var5.field11502.length - var5.field11503 < var10 * 6) {
+					int var10 = var5.g2();
+					if (var5.data.length - var5.pos < var10 * 6) {
 						return;
 					}
 					for (int var12 = 0; var12 < var10; var12++) {
@@ -162,9 +162,9 @@ public final class class861 extends class150 {
 					var3++;
 				}
 			}
-			class997 var6 = new class997(var2);
-			var6.method18001(1);
-			var6.method17945(var3);
+			Packet var6 = new Packet(var2);
+			var6.p1(1);
+			var6.p2(var3);
 			Iterator var7 = this.field1708.iterator();
 			while (var7.hasNext()) {
 				class413 var8 = (class413) var7.next();
@@ -172,7 +172,7 @@ public final class class861 extends class150 {
 					Statics.field8911.method15283(var6, var8);
 				}
 			}
-			arg0.method14808(var6.field11502, 0, var6.field11503);
+			arg0.method14808(var6.data, 0, var6.pos);
 		} catch (Exception var20) {
 		} finally {
 			try {
@@ -212,22 +212,22 @@ public final class class861 extends class150 {
 			return;
 		}
 		class983 var5 = Statics.method1604(class390.field3733, var4.field794);
-		var5.field11432.method17945(0);
-		int var6 = var5.field11432.field11503;
-		var5.field11432.field11503++;
+		var5.field11432.p2(0);
+		int var6 = var5.field11432.pos;
+		var5.field11432.pos++;
 		while (this.field10258 < this.field10257.length) {
 			class413 var7 = this.field10257[this.field10258];
-			if (var5.field11432.field11503 + var4.field791 + Statics.field8911.method15282(var7) > 1500) {
+			if (var5.field11432.pos + var4.field791 + Statics.field8911.method15282(var7) > 1500) {
 				break;
 			}
 			Statics.field8911.method15283(var5.field11432, var7);
 			this.field10258++;
 		}
-		var5.field11432.method17898(var5.field11432.field11503 - var6);
+		var5.field11432.psize2(var5.field11432.pos - var6);
 		if (this.field10258 >= this.field10257.length) {
-			var5.field11432.field11502[var6] = 1;
+			var5.field11432.data[var6] = 1;
 		} else {
-			var5.field11432.field11502[var6] = 0;
+			var5.field11432.data[var6] = 0;
 		}
 		var4.method934(var5);
 		this.field10259 = class213.method3655() + 1000L;

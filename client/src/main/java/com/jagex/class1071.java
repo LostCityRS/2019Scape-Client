@@ -101,12 +101,12 @@ public class class1071 extends class714 {
 	}
 
 	@ObfuscatedName("anw.w(Lalw;I)V")
-	public void method14132(class997 arg0) {
-		class272 var2 = Statics.method15213(arg0.method17904());
-		int var3 = arg0.method17906();
+	public void method14132(Packet arg0) {
+		class272 var2 = Statics.method15213(arg0.g1());
+		int var3 = arg0.g2();
 		this.field11867 = this.field8479.method4697().method268(var2, var3);
 		this.field11863.method6490(arg0);
-		if (arg0.method17904() == 1) {
+		if (arg0.g1() == 1) {
 			this.field11864 = true;
 		} else {
 			this.field11864 = false;

@@ -84,10 +84,10 @@ public class class541 {
 	public static int field6828 = 5;
 
 	@ObfuscatedName("tf.bh")
-	public static class997 field6821 = null;
+	public static Packet field6821 = null;
 
 	@ObfuscatedName("tf.bx")
-	public static class997 field6841 = null;
+	public static Packet field6841 = null;
 
 	@ObfuscatedName("tf.bd")
 	public static boolean field6842 = true;
@@ -264,31 +264,31 @@ public class class541 {
 			if (Statics.field6792.field7695 == Statics.field6811.field12359) {
 				int var6 = Statics.field6795.method6902(Statics.field6811.field12351);
 				if (field6841 == null) {
-					field6841 = new class997(Statics.field6795.method6879(var6, 0));
+					field6841 = new Packet(Statics.field6795.method6879(var6, 0));
 				}
 				field6821 = field6841;
-				field6821.field11503 = 0;
+				field6821.pos = 0;
 			} else {
 				int var7 = Statics.field6795.method6902(Statics.field6811.field12351);
-				field6821 = new class997(Statics.field6795.method6879(var7, 0));
+				field6821 = new Packet(Statics.field6795.method6879(var7, 0));
 			}
-			int var8 = field6821.method17904();
+			int var8 = field6821.g1();
 			Statics.field6787 = new int[var8];
 			for (int var9 = 0; var9 < var8; var9++) {
-				Statics.field6787[var9] = field6821.method18123();
+				Statics.field6787[var9] = field6821.gSmart1or2();
 			}
-			int var10 = field6821.method17904();
+			int var10 = field6821.g1();
 			Statics.field6844 = new int[var10];
 			for (int var11 = 0; var11 < var10; var11++) {
-				Statics.field6844[var11] = field6821.method18123();
+				Statics.field6844[var11] = field6821.gSmart1or2();
 			}
 		}
-		while (field6821 != null && field6821.field11503 < field6821.field11502.length && (!arg3 || class213.method3655() < (long) field6828 + var4)) {
-			if (field6821.method17904() == 0) {
-				int var12 = field6821.method17904();
-				int var13 = field6821.method17904();
+		while (field6821 != null && field6821.pos < field6821.data.length && (!arg3 || class213.method3655() < (long) field6828 + var4)) {
+			if (field6821.g1() == 0) {
+				int var12 = field6821.g1();
+				int var13 = field6821.g1();
 				for (int var14 = 0; var14 < 8; var14++) {
-					int var15 = field6821.method17904();
+					int var15 = field6821.g1();
 					int var16 = var12 * 8 + var14 - Statics.field6786 / 8;
 					for (int var17 = 0; var17 < 8; var17++) {
 						int var18 = var13 * 8 + var17 - Statics.field6808 / 8;
@@ -303,11 +303,11 @@ public class class541 {
 					}
 				}
 			} else {
-				int var23 = field6821.method17904();
-				int var24 = field6821.method17904();
-				int var25 = field6821.method17904();
-				int var26 = field6821.method17904();
-				Statics.field6820[var23 * 8 + var25 - Statics.field6786 / 8][var24 * 8 + var26 - Statics.field6808 / 8] = field6821.method17904() != 0;
+				int var23 = field6821.g1();
+				int var24 = field6821.g1();
+				int var25 = field6821.g1();
+				int var26 = field6821.g1();
+				Statics.field6820[var23 * 8 + var25 - Statics.field6786 / 8][var24 * 8 + var26 - Statics.field6808 / 8] = field6821.g1() != 0;
 				for (int var27 = 0; var27 < 8; var27++) {
 					for (int var28 = 0; var28 < 8; var28++) {
 						int var29 = var23 * 64 + var25 * 8 + var27 - Statics.field6786;
@@ -318,8 +318,8 @@ public class class541 {
 			}
 		}
 		if (field6821 != null) {
-			field6793 = field6821.field11503;
-			if (field6821.field11503 < field6821.field11502.length) {
+			field6793 = field6821.pos;
+			if (field6821.pos < field6821.data.length) {
 				return false;
 			}
 		}
@@ -373,8 +373,8 @@ public class class541 {
 	}
 
 	@ObfuscatedName("tf.r(Ldh;Lalw;IIII[I[I)V")
-	public static void method8518(class133 arg0, class997 arg1, int arg2, int arg3, int arg4, int arg5, int[] arg6, int[] arg7) {
-		int var8 = arg1.method17904();
+	public static void method8518(class133 arg0, Packet arg1, int arg2, int arg3, int arg4, int arg5, int[] arg6, int[] arg7) {
+		int var8 = arg1.g1();
 		if ((var8 & 0x1) == 0) {
 			boolean var9 = (var8 & 0x2) == 0;
 			int var10 = var8 >> 2 & 0x3F;
@@ -383,7 +383,7 @@ public class class541 {
 			}
 			int var11;
 			if (var10 == 63) {
-				var11 = arg1.method18123();
+				var11 = arg1.gSmart1or2();
 			} else if (var9) {
 				var11 = arg6[var10];
 			} else {
@@ -395,7 +395,7 @@ public class class541 {
 			} else {
 				Statics.field6815[Statics.field6812 * arg5 + arg4] = (short) var11;
 				Statics.field6802[Statics.field6812 * arg5 + arg4] = 0;
-				Statics.field6809[Statics.field6812 * arg5 + arg4] = (short) arg1.method18123();
+				Statics.field6809[Statics.field6812 * arg5 + arg4] = (short) arg1.gSmart1or2();
 			}
 			return;
 		}
@@ -403,30 +403,30 @@ public class class541 {
 		boolean var13 = (var8 & 0x8) != 0;
 		boolean var14 = (var8 & 0x10) != 0;
 		for (int var15 = 0; var15 < var12; var15++) {
-			int var16 = arg1.method18123();
+			int var16 = arg1.gSmart1or2();
 			int var17 = 0;
 			int var18 = 0;
 			if (var13) {
-				var17 = arg1.method18123();
-				var18 = arg1.method17904();
+				var17 = arg1.gSmart1or2();
+				var18 = arg1.g1();
 			}
 			int var19 = 0;
 			if (var14) {
-				var19 = arg1.method17904();
+				var19 = arg1.g1();
 			}
 			if (var15 == 0) {
 				Statics.field6809[Statics.field6812 * arg5 + arg4] = (short) var16;
 				Statics.field6815[Statics.field6812 * arg5 + arg4] = (short) var17;
 				Statics.field6802[Statics.field6812 * arg5 + arg4] = (byte) var18;
 				if (var19 == 1) {
-					Statics.field6817[Statics.field6812 * arg5 + arg4] = Integer.valueOf(arg1.method17927());
-					Statics.field6818[Statics.field6812 * arg5 + arg4] = arg1.method17905();
+					Statics.field6817[Statics.field6812 * arg5 + arg4] = Integer.valueOf(arg1.gSmart2or4null());
+					Statics.field6818[Statics.field6812 * arg5 + arg4] = arg1.g1b();
 				} else if (var19 > 1) {
 					int[] var20 = new int[var19];
 					byte[] var21 = new byte[var19];
 					for (int var22 = 0; var22 < var19; var22++) {
-						var20[var22] = arg1.method17927();
-						var21[var22] = arg1.method17905();
+						var20[var22] = arg1.gSmart2or4null();
+						var21[var22] = arg1.g1b();
 					}
 					Statics.field6817[Statics.field6812 * arg5 + arg4] = new class989(var20, var21);
 				}
@@ -437,8 +437,8 @@ public class class541 {
 					var23 = new int[var19];
 					var24 = new byte[var19];
 					for (int var25 = 0; var25 < var19; var25++) {
-						var23[var25] = arg1.method17927();
-						var24[var25] = arg1.method17905();
+						var23[var25] = arg1.gSmart2or4null();
+						var24[var25] = arg1.g1b();
 					}
 				}
 				if (Statics.field6830[var15 - 1][arg2 - (Statics.field6786 >> 6)][arg3 - (Statics.field6808 >> 6)] == null) {

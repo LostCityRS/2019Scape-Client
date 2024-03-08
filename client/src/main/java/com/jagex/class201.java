@@ -20,11 +20,11 @@ public class class201 {
 	@ObfuscatedName("gx.k")
 	public LinkedList field1942 = new LinkedList();
 
-	public class201(class997 arg0, class190 arg1) {
+	public class201(Packet arg0, class190 arg1) {
 		this.field1943 = arg1;
-		this.field1945 = arg0.method17914();
-		this.field1944 = arg0.method17910();
-		for (int var3 = arg0.method17904(); var3 != 0; var3 = arg0.method17904()) {
+		this.field1945 = arg0.g8();
+		this.field1944 = arg0.g4s();
+		for (int var3 = arg0.g1(); var3 != 0; var3 = arg0.g1()) {
 			class205 var4 = (class205) class686.method1897(class205.method3580(), var3);
 			Object var5;
 			switch(var4.field1955) {

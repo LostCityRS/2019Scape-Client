@@ -10,12 +10,12 @@ public class class450 {
 	@ObfuscatedName("qp.e")
 	public class438[] field4480;
 
-	public class450(class997 arg0, BigInteger arg1, BigInteger arg2) {
-		arg0.field11503 = 5;
-		int var4 = arg0.method17904();
-		arg0.field11503 += var4 * 80;
-		byte[] var5 = new byte[arg0.field11502.length - arg0.field11503];
-		arg0.method17921(var5, 0, var5.length);
+	public class450(Packet arg0, BigInteger arg1, BigInteger arg2) {
+		arg0.pos = 5;
+		int var4 = arg0.g1();
+		arg0.pos += var4 * 80;
+		byte[] var5 = new byte[arg0.data.length - arg0.pos];
+		arg0.gdata(var5, 0, var5.length);
 		byte[] var8;
 		if (arg1 == null || arg2 == null || !client.ENABLE_JS5_RSA) {
 			var8 = var5;
@@ -27,7 +27,7 @@ public class class450 {
 		if (var8.length != 65) {
 			throw new RuntimeException();
 		}
-		byte[] var9 = class735.method18308(arg0.field11502, 5, arg0.field11503 - var5.length - 5);
+		byte[] var9 = class735.method18308(arg0.data, 5, arg0.pos - var5.length - 5);
 		for (int var10 = 0; var10 < 64; var10++) {
 			if (var8[var10 + 1] != var9[var10]) {
 				throw new RuntimeException();
@@ -35,13 +35,13 @@ public class class450 {
 		}
 		this.field4480 = new class438[var4];
 		for (int var11 = 0; var11 < var4; var11++) {
-			arg0.field11503 = var11 * 80 + 6;
-			int var12 = arg0.method17910();
-			int var13 = arg0.method17910();
-			int var14 = arg0.method17910();
-			int var15 = arg0.method17910();
+			arg0.pos = var11 * 80 + 6;
+			int var12 = arg0.g4s();
+			int var13 = arg0.g4s();
+			int var14 = arg0.g4s();
+			int var15 = arg0.g4s();
 			byte[] var16 = new byte[64];
-			arg0.method17921(var16, 0, 64);
+			arg0.gdata(var16, 0, 64);
 			this.field4480[var11] = new class438(var12, var14, var13, var15, var16);
 		}
 	}

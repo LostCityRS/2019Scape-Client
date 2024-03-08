@@ -13,10 +13,10 @@ public class class40 {
 	public static byte[] field697 = new byte[2048];
 
 	@ObfuscatedName("aw.f")
-	public static class997[] field706 = new class997[2048];
+	public static Packet[] field706 = new Packet[2048];
 
 	@ObfuscatedName("aw.w")
-	public static class997[] field699 = new class997[2048];
+	public static Packet[] field699 = new Packet[2048];
 
 	@ObfuscatedName("aw.l")
 	public static int field698 = 0;
@@ -105,8 +105,8 @@ public class class40 {
 		field695 = 0;
 		method5209(arg0);
 		method613(arg0);
-		if (arg0.field11503 != arg1) {
-			throw new RuntimeException(arg0.field11503 + " " + arg1);
+		if (arg0.pos != arg1) {
+			throw new RuntimeException(arg0.pos + " " + arg1);
 		}
 	}
 
@@ -521,15 +521,15 @@ public class class40 {
 	@ObfuscatedName("a.l(Lase;B)V")
 	public static final void method613(class1190 arg0) {
 		for (int var1 = 0; var1 < field695; var1++) {
-			arg0.method17906();
+			arg0.g2();
 			int var2 = field707[var1];
 			class1130 var3 = client.field10944[var2];
-			int var4 = arg0.method17904();
+			int var4 = arg0.g1();
 			if ((var4 & 0x40) != 0) {
-				var4 += arg0.method17904() << 8;
+				var4 += arg0.g1() << 8;
 			}
 			if ((var4 & 0x1000) != 0) {
-				var4 += arg0.method17904() << 16;
+				var4 += arg0.g1() << 16;
 			}
 			method7474(arg0, var2, var3, var4);
 		}
@@ -540,90 +540,90 @@ public class class40 {
 		if ((arg3 & 0x80) != 0) {
 			int[] var4 = new int[4];
 			for (int var5 = 0; var5 < 4; var5++) {
-				var4[var5] = arg0.method17927();
+				var4[var5] = arg0.gSmart2or4null();
 			}
-			int var6 = arg0.method17988();
+			int var6 = arg0.g1_alt2();
 			client.method9423(arg2, var4, var6, false);
 		}
 		if ((arg3 & 0x40000) != 0) {
-			arg0.field11503 += 2;
-			int var7 = arg0.field11502[(++arg0.field11503) - 1] & 0xFF;
+			arg0.pos += 2;
+			int var7 = arg0.data[(++arg0.pos) - 1] & 0xFF;
 			for (int var8 = 0; var8 < var7; var8++) {
-				int var9 = arg0.method17990();
+				int var9 = arg0.g1_alt3();
 				class470 var10 = (class470) class686.method1897(Statics.method7338(), var9);
 				class413 var11 = Statics.field8485.method15285(arg0, var10);
 				arg2.field10460.method14735(var11.field4240, var11.field4239);
 			}
 		}
 		if ((arg3 & 0x10) != 0) {
-			arg2.field12056 = arg0.method17950();
+			arg2.field12056 = arg0.g2_alt3();
 			if (arg2.field10400 == 0) {
 				arg2.method16490(arg2.field12056);
 				arg2.field12056 = -1;
 			}
 		}
 		if ((arg3 & 0x10000) != 0) {
-			arg2.field12048 = arg0.method17990() == 1;
+			arg2.field12048 = arg0.g1_alt3() == 1;
 		}
 		if ((arg3 & 0x20) != 0) {
-			int var12 = arg0.method17940();
+			int var12 = arg0.g1_alt1();
 			if (var12 > 0) {
 				for (int var13 = 0; var13 < var12; var13++) {
 					int var14 = -1;
 					boolean var15 = true;
 					int var16 = -1;
-					int var17 = arg0.method18123();
+					int var17 = arg0.gSmart1or2();
 					int var18;
 					if (var17 == 32767) {
-						var17 = arg0.method18123();
-						var18 = arg0.method18123();
-						var14 = arg0.method18123();
-						var16 = arg0.method18123();
+						var17 = arg0.gSmart1or2();
+						var18 = arg0.gSmart1or2();
+						var14 = arg0.gSmart1or2();
+						var16 = arg0.gSmart1or2();
 					} else if (var17 == 32766) {
 						var17 = -1;
-						var18 = arg0.method17904();
+						var18 = arg0.g1();
 					} else {
-						var18 = arg0.method18123();
+						var18 = arg0.gSmart1or2();
 					}
-					int var19 = arg0.method18123();
+					int var19 = arg0.gSmart1or2();
 					arg2.method16498(var17, var18, var14, var16, client.field10903, var19);
 				}
 			}
-			int var20 = arg0.method17990();
+			int var20 = arg0.g1_alt3();
 			if (var20 > 0) {
 				for (int var21 = 0; var21 < var20; var21++) {
-					int var22 = arg0.method18123();
-					int var23 = arg0.method18123();
+					int var22 = arg0.gSmart1or2();
+					int var23 = arg0.gSmart1or2();
 					if (var23 == 32767) {
 						arg2.method16500(var22);
 					} else {
-						int var24 = arg0.method18123();
-						int var25 = arg0.method17990();
-						int var26 = var23 > 0 ? arg0.method17988() : var25;
+						int var24 = arg0.gSmart1or2();
+						int var25 = arg0.g1_alt3();
+						int var26 = var23 > 0 ? arg0.g1_alt2() : var25;
 						arg2.method16499(var22, client.field10903, var23, var24, var25, var26);
 					}
 				}
 			}
 		}
 		if ((arg3 & 0x8000) != 0) {
-			int var27 = arg0.method17990();
+			int var27 = arg0.g1_alt3();
 			int[] var28 = new int[var27];
 			int[] var29 = new int[var27];
 			int[] var30 = new int[var27];
 			for (int var31 = 0; var31 < var27; var31++) {
-				var28[var31] = arg0.method17927();
-				var29[var31] = arg0.method17940();
-				var30[var31] = arg0.method17950();
+				var28[var31] = arg0.gSmart2or4null();
+				var29[var31] = arg0.g1_alt1();
+				var30[var31] = arg0.g2_alt3();
 			}
 			client.method16758(arg2, var28, var29, var30);
 		}
 		if ((arg3 & 0x100000) != 0) {
-			int var32 = arg0.method17950();
-			int var33 = arg0.method17959();
+			int var32 = arg0.g2_alt3();
+			int var33 = arg0.g4_alt1();
 			if (var32 == 65535) {
 				var32 = -1;
 			}
-			int var34 = arg0.method17940();
+			int var34 = arg0.g1_alt1();
 			int var35 = var34 & 0x7;
 			int var36 = var34 >> 3 & 0xF;
 			if (var36 == 15) {
@@ -633,36 +633,36 @@ public class class40 {
 			arg2.method16563(var32, var33, var35, var36, var37, 4);
 		}
 		if ((arg3 & 0x4) != 0) {
-			int var38 = arg0.method17940();
+			int var38 = arg0.g1_alt1();
 			byte[] var39 = new byte[var38];
-			class997 var40 = new class997(var39);
-			arg0.method18022(var39, 0, var38);
+			Packet var40 = new Packet(var39);
+			arg0.gdata_alt2(var39, 0, var38);
 			field706[arg1] = var40;
 			arg2.method19129(var40);
 		}
 		if ((arg3 & 0x80000) != 0) {
-			int var41 = arg0.method17940();
+			int var41 = arg0.g1_alt1();
 			int[] var42 = new int[var41];
 			int[] var43 = new int[var41];
 			for (int var44 = 0; var44 < var41; var44++) {
-				int var45 = arg0.method17948();
+				int var45 = arg0.g2_alt1();
 				if ((var45 & 0xC000) == 49152) {
-					int var46 = arg0.method17948();
+					int var46 = arg0.g2_alt1();
 					var42[var44] = var45 << 16 | var46;
 				} else {
 					var42[var44] = var45;
 				}
-				var43[var44] = arg0.method17934();
+				var43[var44] = arg0.g2_alt2();
 			}
 			arg2.method16493(var42, var43);
 		}
 		if ((arg3 & 0x2000) != 0) {
-			int var47 = arg0.method17906();
-			int var48 = arg0.method17999();
+			int var47 = arg0.g2();
+			int var48 = arg0.g4_alt2();
 			if (var47 == 65535) {
 				var47 = -1;
 			}
-			int var49 = arg0.method17940();
+			int var49 = arg0.g1_alt1();
 			int var50 = var49 & 0x7;
 			int var51 = var49 >> 3 & 0xF;
 			if (var51 == 15) {
@@ -672,12 +672,12 @@ public class class40 {
 			arg2.method16563(var47, var48, var50, var51, var52, 2);
 		}
 		if ((arg3 & 0x2) != 0) {
-			int var53 = arg0.method17950();
-			int var54 = arg0.method18029();
+			int var53 = arg0.g2_alt3();
+			int var54 = arg0.g4_alt3();
 			if (var53 == 65535) {
 				var53 = -1;
 			}
-			int var55 = arg0.method17940();
+			int var55 = arg0.g1_alt1();
 			int var56 = var55 & 0x7;
 			int var57 = var55 >> 3 & 0xF;
 			if (var57 == 15) {
@@ -687,41 +687,41 @@ public class class40 {
 			arg2.method16563(var53, var54, var56, var57, var58, 0);
 		}
 		if ((arg3 & 0x800) != 0) {
-			int var59 = arg0.method17904();
+			int var59 = arg0.g1();
 			byte[] var60 = new byte[var59];
-			class997 var61 = new class997(var60);
-			arg0.method17962(var60, 0, var59);
+			Packet var61 = new Packet(var60);
+			arg0.gdata_alt1(var60, 0, var59);
 			field699[arg1] = var61;
 			arg2.method19111(var61);
 		}
 		if ((arg3 & 0x20000) != 0) {
 			arg2.field10460.method14749();
-			arg0.field11503 += 2;
-			int var62 = arg0.field11502[(++arg0.field11503) - 1] & 0xFF;
+			arg0.pos += 2;
+			int var62 = arg0.data[(++arg0.pos) - 1] & 0xFF;
 			for (int var63 = 0; var63 < var62; var63++) {
-				int var64 = arg0.method17990();
+				int var64 = arg0.g1_alt3();
 				class470 var65 = (class470) class686.method1897(Statics.method7338(), var64);
 				class413 var66 = Statics.field8485.method15285(arg0, var65);
 				arg2.field10460.method14735(var66.field4240, var66.field4239);
 			}
 		}
 		if ((arg3 & 0x200) != 0) {
-			String var67 = arg0.method17918();
+			String var67 = arg0.gjstr();
 			if (Statics.field4490 == arg2) {
 				class241.method2664(2, 0, arg2.method19115(true), arg2.method19116(false), arg2.field12057, var67, null);
 			}
 			arg2.method19124(var67, 0, 0);
 		}
 		if ((arg3 & 0x8) != 0) {
-			arg2.field10423 = arg0.method17880() * 262144;
-			arg2.field10425 = arg0.method17905() * 262144;
-			arg2.field10457 = arg0.method17880() * 262144;
-			arg2.field10426 = arg0.method17942() * 262144;
-			arg2.field10419 = arg0.method17942();
-			arg2.field10428 = arg0.method17905();
-			arg2.field10429 = arg0.method17950() + client.field10903;
-			arg2.field10399 = arg0.method17948() + client.field10903;
-			arg2.field10431 = arg0.method17948();
+			arg2.field10423 = arg0.g1b_alt2() * 262144;
+			arg2.field10425 = arg0.g1b() * 262144;
+			arg2.field10457 = arg0.g1b_alt2() * 262144;
+			arg2.field10426 = arg0.g1b_alt1() * 262144;
+			arg2.field10419 = arg0.g1b_alt1();
+			arg2.field10428 = arg0.g1b();
+			arg2.field10429 = arg0.g2_alt3() + client.field10903;
+			arg2.field10399 = arg0.g2_alt1() + client.field10903;
+			arg2.field10431 = arg0.g2_alt1();
 			arg2.field10400 = 1;
 			arg2.field10396 = 0;
 			arg2.field10423 = arg2.field10423 * 262144 + arg2.field10450[0] * 262144;
@@ -732,33 +732,33 @@ public class class40 {
 			arg2.field10428 += arg2.field11717;
 		}
 		if ((arg3 & 0x1) != 0) {
-			int var68 = arg0.method17906();
+			int var68 = arg0.g2();
 			if (var68 == 65535) {
 				var68 = -1;
 			}
 			arg2.field10417 = var68;
 		}
 		if ((arg3 & 0x800000) != 0) {
-			arg2.field10434 = arg0.method17880();
-			arg2.field10435 = arg0.method17994();
-			arg2.field10436 = arg0.method17880();
-			arg2.field10437 = (byte) arg0.method17940();
-			arg2.field10446 = client.field10903 + arg0.method17906();
-			arg2.field10464 = client.field10903 + arg0.method17906();
+			arg2.field10434 = arg0.g1b_alt2();
+			arg2.field10435 = arg0.g1b_alt3();
+			arg2.field10436 = arg0.g1b_alt2();
+			arg2.field10437 = (byte) arg0.g1_alt1();
+			arg2.field10446 = client.field10903 + arg0.g2();
+			arg2.field10464 = client.field10903 + arg0.g2();
 		}
 		if ((arg3 & 0x400) != 0) {
-			arg2.field12070 = (class202) class686.method1897(class202.method3559(), arg0.method17988());
+			arg2.field12070 = (class202) class686.method1897(class202.method3559(), arg0.g1_alt2());
 			if (arg2.field12070 == null) {
 				arg2.field12070 = class202.field1950;
 			}
 		}
 		if ((arg3 & 0x100) != 0) {
-			int var69 = arg0.method17950();
-			int var70 = arg0.method17999();
+			int var69 = arg0.g2_alt3();
+			int var70 = arg0.g4_alt2();
 			if (var69 == 65535) {
 				var69 = -1;
 			}
-			int var71 = arg0.method17988();
+			int var71 = arg0.g1_alt2();
 			int var72 = var71 & 0x7;
 			int var73 = var71 >> 3 & 0xF;
 			if (var73 == 15) {
@@ -768,8 +768,8 @@ public class class40 {
 			arg2.method16563(var69, var70, var72, var73, var74, 1);
 		}
 		if ((arg3 & 0x200000) != 0) {
-			String var75 = arg0.method17918();
-			int var76 = arg0.method17904();
+			String var75 = arg0.gjstr();
+			int var76 = arg0.g1();
 			if ((var76 & 0x1) != 0) {
 				class241.method2664(2, var76, arg2.method19115(true), arg2.method19116(false), arg2.field12057, var75, null);
 			}
@@ -778,12 +778,12 @@ public class class40 {
 		if ((arg3 & 0x400000) == 0) {
 			return;
 		}
-		int var77 = arg0.method17950();
-		int var78 = arg0.method17910();
+		int var77 = arg0.g2_alt3();
+		int var78 = arg0.g4s();
 		if (var77 == 65535) {
 			var77 = -1;
 		}
-		int var79 = arg0.method17940();
+		int var79 = arg0.g1_alt1();
 		int var80 = var79 & 0x7;
 		int var81 = var79 >> 3 & 0xF;
 		if (var81 == 15) {

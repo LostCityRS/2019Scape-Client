@@ -12,10 +12,10 @@ public class class866 extends class159 {
 	@ObfuscatedName("agv.m")
 	public final int field10274;
 
-	public class866(class997 arg0) {
+	public class866(Packet arg0) {
 		super(arg0);
-		this.field10275 = arg0.method17906();
-		this.field10274 = arg0.method17927();
+		this.field10275 = arg0.g2();
+		this.field10274 = arg0.gSmart2or4null();
 	}
 
 	@ObfuscatedName("agv.n(I)V")

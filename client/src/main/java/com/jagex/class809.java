@@ -9,9 +9,9 @@ public class class809 extends class986 implements class53, class757 {
 	public class729 field9261;
 
 	@ObfuscatedName("adx.e(Lalw;B)V")
-	public void method976(class997 arg0) {
+	public void method976(Packet arg0) {
 		while (true) {
-			int var2 = arg0.method17904();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
@@ -20,23 +20,23 @@ public class class809 extends class986 implements class53, class757 {
 	}
 
 	@ObfuscatedName("adx.u(Lalw;IS)V")
-	public void method15295(class997 arg0, int arg1) {
+	public void method15295(Packet arg0, int arg1) {
 		if (arg1 != 249) {
 			return;
 		}
-		int var3 = arg0.method17904();
+		int var3 = arg0.g1();
 		if (this.field9261 == null) {
 			int var4 = class783.method16657(var3);
 			this.field9261 = new class729(var4);
 		}
 		for (int var5 = 0; var5 < var3; var5++) {
-			boolean var6 = arg0.method17904() == 1;
-			int var7 = arg0.method17908();
+			boolean var6 = arg0.g1() == 1;
+			int var7 = arg0.g3();
 			class532 var8;
 			if (var6) {
-				var8 = new class984(arg0.method17918());
+				var8 = new class984(arg0.gjstr());
 			} else {
-				var8 = new class988(arg0.method17910());
+				var8 = new class988(arg0.g4s());
 			}
 			this.field9261.method14501(var8, (long) var7);
 		}

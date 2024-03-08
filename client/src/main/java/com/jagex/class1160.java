@@ -28,12 +28,12 @@ public class class1160 extends class978 {
 	}
 
 	@ObfuscatedName("arj.e(Lalw;B)V")
-	public void method17726(class997 arg0) {
-		this.field12237 = arg0.method17904() == 1;
-		this.field12235 = arg0.method17905();
-		this.field12234 = arg0.method17905();
-		this.field12233 = arg0.method17905();
-		this.field12236 = arg0.method17905();
+	public void method17726(Packet arg0) {
+		this.field12237 = arg0.g1() == 1;
+		this.field12235 = arg0.g1b();
+		this.field12234 = arg0.g1b();
+		this.field12233 = arg0.g1b();
+		this.field12236 = arg0.g1b();
 	}
 
 	@ObfuscatedName("arj.n(Lkr;I)V")

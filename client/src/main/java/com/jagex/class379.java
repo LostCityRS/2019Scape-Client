@@ -48,9 +48,9 @@ public class class379 {
 	public int field3554;
 
 	@ObfuscatedName("na.e(Lalw;I)V")
-	public void method5988(class997 arg0) {
+	public void method5988(Packet arg0) {
 		while (true) {
-			int var2 = arg0.method17904();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
@@ -59,20 +59,20 @@ public class class379 {
 	}
 
 	@ObfuscatedName("na.n(Lalw;II)V")
-	public void method5989(class997 arg0, int arg1) {
+	public void method5989(Packet arg0, int arg1) {
 		if (arg1 == 1) {
-			this.field3555 = arg0.method17906();
+			this.field3555 = arg0.g2();
 		} else if (arg1 == 2) {
-			arg0.method17904();
+			arg0.g1();
 		} else if (arg1 == 3) {
-			this.field3551 = arg0.method17910();
-			this.field3552 = arg0.method17910();
-			this.field3553 = arg0.method17910();
+			this.field3551 = arg0.g4s();
+			this.field3552 = arg0.g4s();
+			this.field3553 = arg0.g4s();
 		} else if (arg1 == 4) {
-			this.field3557 = arg0.method17904();
-			this.field3556 = arg0.method17910();
+			this.field3557 = arg0.g1();
+			this.field3556 = arg0.g4s();
 		} else if (arg1 == 6) {
-			this.field3549 = arg0.method17904();
+			this.field3549 = arg0.g1();
 		} else if (arg1 == 8) {
 			this.field3542 = 1;
 		} else if (arg1 == 9) {

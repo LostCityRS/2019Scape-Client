@@ -49,33 +49,33 @@ public class class153 {
 			if (var1 == null) {
 				return false;
 			}
-			class997 var2 = new class997(var1);
+			Packet var2 = new Packet(var1);
 			method6121(var2);
-			int var3 = var2.method17904();
+			int var3 = var2.g1();
 			for (int var4 = 0; var4 < var3; var4++) {
 				field1712.method14153(new class974(var2));
 			}
-			int var5 = var2.method18123();
+			int var5 = var2.gSmart1or2();
 			Statics.field1714 = new class155[var5];
 			for (int var6 = 0; var6 < var5; var6++) {
 				Statics.field1714[var6] = new class155(var2);
 			}
-			int var7 = var2.method18123();
+			int var7 = var2.gSmart1or2();
 			Statics.field1721 = new class158[var7];
 			for (int var8 = 0; var8 < var7; var8++) {
 				Statics.field1721[var8] = new class158(var2, var8);
 			}
-			int var9 = var2.method18123();
+			int var9 = var2.gSmart1or2();
 			Statics.field7317 = new class156[var9];
 			for (int var10 = 0; var10 < var9; var10++) {
 				Statics.field7317[var10] = new class156(var2);
 			}
-			int var11 = var2.method18123();
+			int var11 = var2.gSmart1or2();
 			Statics.field8358 = new class160[var11];
 			for (int var12 = 0; var12 < var11; var12++) {
 				Statics.field8358[var12] = new class160(var2);
 			}
-			int var13 = var2.method18123();
+			int var13 = var2.gSmart1or2();
 			Statics.field1713 = new class159[var13];
 			for (int var14 = 0; var14 < var13; var14++) {
 				Statics.field1713[var14] = class159.method14342(var2);
@@ -114,13 +114,13 @@ public class class153 {
 	}
 
 	@ObfuscatedName("nh.n(Lalw;I)V")
-	public static void method6121(class997 arg0) {
+	public static void method6121(Packet arg0) {
 		while (true) {
-			int var1 = arg0.method17904();
+			int var1 = arg0.g1();
 			switch(var1) {
 				case 0:
-					field1716 = arg0.method17906();
-					field1710 = arg0.method17906();
+					field1716 = arg0.g2();
+					field1710 = arg0.g2();
 					break;
 				case 255:
 					return;
@@ -193,7 +193,7 @@ public class class153 {
 		}
 		method3551();
 		class983 var4 = Statics.method1604(class390.field3722, client.field10849.field794);
-		var4.field11432.method18001(arg0 ? 1 : 0);
+		var4.field11432.p1(arg0 ? 1 : 0);
 		client.field10849.method934(var4);
 	}
 }

@@ -346,17 +346,17 @@ public final class class442 {
 				var10 = class703.method4540(this.field4418[arg0], false);
 			} else {
 				var10 = class703.method4540(this.field4418[arg0], true);
-				class997 var11 = new class997(var10);
-				int var12 = var11.method17904();
-				int var13 = var11.method17910();
+				Packet var11 = new Packet(var10);
+				int var12 = var11.g1();
+				int var13 = var11.g4s();
 				int var14 = (var12 == class445.field4434.method1303() ? 5 : 9) + var13;
-				var11.method17933(arg2, 5, var14);
+				var11.tinydec(arg2, 5, var14);
 			}
 			byte[] var15;
 			try {
 				var15 = Statics.method7275(var10);
 			} catch (RuntimeException var51) {
-				throw Statics.method19636(var51, (arg2 != null) + " " + arg0 + " " + var10.length + " " + class997.method9757(var10, var10.length) + " " + class997.method9757(var10, var10.length - 2) + " " + this.field4416.field4393[arg0] + " " + this.field4416.field4385);
+				throw Statics.method19636(var51, (arg2 != null) + " " + arg0 + " " + var10.length + " " + Packet.getcrc(var10, var10.length) + " " + Packet.getcrc(var10, var10.length - 2) + " " + this.field4416.field4393[arg0] + " " + this.field4416.field4385);
 			}
 			if (this.field4412) {
 				this.field4418[arg0] = null;
@@ -378,14 +378,14 @@ public final class class442 {
 				int var53 = var33 - 1;
 				int var34 = var15[var53] & 0xFF;
 				int var35 = var53 - var4 * var34 * 4;
-				class997 var36 = new class997(var15);
+				Packet var36 = new Packet(var15);
 				int var37 = 0;
 				int var38 = 0;
-				var36.field11503 = var35;
+				var36.pos = var35;
 				for (int var39 = 0; var39 < var34; var39++) {
 					int var40 = 0;
 					for (int var41 = 0; var41 < var4; var41++) {
-						var40 += var36.method17910();
+						var40 += var36.g4s();
 						int var42;
 						if (var5 == null) {
 							var42 = var41;
@@ -403,12 +403,12 @@ public final class class442 {
 				}
 				byte[] var43 = new byte[var37];
 				int var44 = 0;
-				var36.field11503 = var35;
+				var36.pos = var35;
 				int var45 = 0;
 				for (int var46 = 0; var46 < var34; var46++) {
 					int var47 = 0;
 					for (int var48 = 0; var48 < var4; var48++) {
-						var47 += var36.method17910();
+						var47 += var36.g4s();
 						int var49;
 						if (var5 == null) {
 							var49 = var48;
@@ -428,13 +428,13 @@ public final class class442 {
 				int var52 = var17 - 1;
 				int var18 = var15[var52] & 0xFF;
 				int var19 = var52 - var4 * var18 * 4;
-				class997 var20 = new class997(var15);
+				Packet var20 = new Packet(var15);
 				int[] var21 = new int[var4];
-				var20.field11503 = var19;
+				var20.pos = var19;
 				for (int var22 = 0; var22 < var18; var22++) {
 					int var23 = 0;
 					for (int var24 = 0; var24 < var4; var24++) {
-						var23 += var20.method17910();
+						var23 += var20.g4s();
 						var21[var24] += var23;
 					}
 				}
@@ -443,12 +443,12 @@ public final class class442 {
 					var25[var26] = new byte[var21[var26]];
 					var21[var26] = 0;
 				}
-				var20.field11503 = var19;
+				var20.pos = var19;
 				int var27 = 0;
 				for (int var28 = 0; var28 < var18; var28++) {
 					int var29 = 0;
 					for (int var30 = 0; var30 < var4; var30++) {
-						var29 += var20.method17910();
+						var29 += var20.g4s();
 						System.arraycopy(var15, var27, var25[var30], var21[var30], var29);
 						var21[var30] += var29;
 						var27 += var29;
