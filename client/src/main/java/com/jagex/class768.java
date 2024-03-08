@@ -6,10 +6,10 @@ import deob.ObfuscatedName;
 public class class768 {
 
 	@ObfuscatedName("ach.e")
-	public final class442 field8860;
+	public final Js5 field8860;
 
 	@ObfuscatedName("ach.n")
-	public final class442 field8858;
+	public final Js5 field8858;
 
 	@ObfuscatedName("ach.m")
 	public int field8856 = 0;
@@ -23,7 +23,7 @@ public class class768 {
 	@ObfuscatedName("ach.u")
 	public class645 field8861 = null;
 
-	public class768(Language arg0, class442 arg1, class442 arg2, class645 arg3) {
+	public class768(Language arg0, Js5 arg1, Js5 arg2, class645 arg3) {
 		this.field8860 = arg1;
 		this.field8858 = arg2;
 		this.field8861 = arg3;

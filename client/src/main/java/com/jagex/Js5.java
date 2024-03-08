@@ -4,10 +4,10 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("py")
-public final class class442 {
+public final class Js5 {
 
 	@ObfuscatedName("py.e")
-	public class439 field4416 = null;
+	public Js5ArchiveIndex field4416 = null;
 
 	@ObfuscatedName("py.n")
 	public Object[] field4418;
@@ -16,7 +16,7 @@ public final class class442 {
 	public Object[][] field4410;
 
 	@ObfuscatedName("py.k")
-	public static class804 field4409 = new class804();
+	public static GZip field4409 = new GZip();
 
 	@ObfuscatedName("py.f")
 	public boolean field4412;
@@ -25,7 +25,7 @@ public final class class442 {
 	public int field4415;
 
 	@ObfuscatedName("py.p")
-	public class440 field4417;
+	public Js5ResourceProvider field4417;
 
 	@ObfuscatedName("py.d")
 	public static boolean field4411 = false;
@@ -33,7 +33,7 @@ public final class class442 {
 	@ObfuscatedName("py.c")
 	public static int field4419 = 0;
 
-	public class442(class440 arg0, boolean arg1, int arg2) {
+	public Js5(Js5ResourceProvider arg0, boolean arg1, int arg2) {
 		if (arg2 < 0 || arg2 > 2) {
 			throw new IllegalArgumentException("");
 		}

@@ -6,12 +6,12 @@ import deob.ObfuscatedName;
 public abstract class class782 implements ConfigTypeFactory {
 
 	@ObfuscatedName("ace.e")
-	public final class442 field9157;
+	public final Js5 field9157;
 
 	@ObfuscatedName("ace.n")
 	public WeightedCache field9156;
 
-	public class782(class442 arg0, int arg1) {
+	public class782(Js5 arg0, int arg1) {
 		this.field9157 = arg0;
 		this.field9156 = new WeightedCache(arg1);
 	}

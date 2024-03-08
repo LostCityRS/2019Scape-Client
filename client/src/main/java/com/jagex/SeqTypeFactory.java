@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("agq")
 public class SeqTypeFactory extends class166 {
 
-	public SeqTypeFactory(ConfigTypeList arg0, class442 arg1, class442 arg2, class442 arg3) {
+	public SeqTypeFactory(ConfigTypeList arg0, Js5 arg1, Js5 arg2, Js5 arg3) {
 		super(arg0, arg1, arg2, arg3);
 	}
 

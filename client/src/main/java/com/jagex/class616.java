@@ -15,12 +15,12 @@ public class class616 implements class614 {
 	public int field7631;
 
 	@ObfuscatedName("wp.k")
-	public class442 field7630;
+	public Js5 field7630;
 
 	@ObfuscatedName("wp.f")
 	public class612 field7632;
 
-	public class616(class442 arg0, int arg1, class366 arg2, class612 arg3) {
+	public class616(Js5 arg0, int arg1, class366 arg2, class612 arg3) {
 		this.field7630 = arg0;
 		this.field7631 = arg1;
 		this.field7628 = arg2;

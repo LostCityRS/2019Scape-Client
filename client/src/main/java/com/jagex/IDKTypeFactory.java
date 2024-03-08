@@ -6,9 +6,9 @@ import deob.ObfuscatedName;
 public class IDKTypeFactory implements ConfigTypeFactory {
 
 	@ObfuscatedName("ja.e")
-	public final class442 field2961;
+	public final Js5 field2961;
 
-	public IDKTypeFactory(class442 arg0) {
+	public IDKTypeFactory(Js5 arg0) {
 		this.field2961 = arg0;
 	}
 

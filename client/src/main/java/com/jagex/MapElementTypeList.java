@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("aoc")
 public class MapElementTypeList extends class758 {
 
-	public MapElementTypeList(ModeGame arg0, Language arg1, class442 arg2, class442 arg3) {
+	public MapElementTypeList(ModeGame arg0, Language arg1, Js5 arg2, Js5 arg3) {
 		super(arg0, arg1, arg2, Js5ConfigGroup.MELTYPE, 128, new MapElementTypeFactory(arg3, 64));
 	}
 

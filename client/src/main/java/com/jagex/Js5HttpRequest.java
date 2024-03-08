@@ -6,7 +6,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 @ObfuscatedName("atb")
-public class class1229 extends class1181 {
+public class Js5HttpRequest extends Js5Request {
 
 	@ObfuscatedName("atb.p")
 	public Future field12562;
@@ -14,7 +14,7 @@ public class class1229 extends class1181 {
 	@ObfuscatedName("atb.d")
 	public final int field12563;
 
-	public class1229(int arg0) {
+	public Js5HttpRequest(int arg0) {
 		this.field12563 = arg0;
 	}
 

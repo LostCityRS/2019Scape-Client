@@ -12,12 +12,12 @@ public class class125 {
 	public int field1451;
 
 	@ObfuscatedName("df.m")
-	public class442 field1452;
+	public Js5 field1452;
 
 	@ObfuscatedName("df.k")
 	public static boolean field1454 = true;
 
-	public class125(class442 arg0) {
+	public class125(Js5 arg0) {
 		this.field1452 = arg0;
 		this.field1451 = arg0.method6897(0);
 		this.method2045();

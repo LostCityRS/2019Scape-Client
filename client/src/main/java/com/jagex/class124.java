@@ -13,10 +13,10 @@ public class class124 {
 	public boolean field1444;
 
 	@ObfuscatedName("dn.m")
-	public class132 field1437;
+	public TransformInfinityType field1437;
 
 	@ObfuscatedName("dn.k")
-	public class132 field1438;
+	public TransformInfinityType field1438;
 
 	@ObfuscatedName("dn.f")
 	public class139[] field1439;

@@ -6,9 +6,9 @@ import deob.ObfuscatedName;
 public class class847 extends class123 {
 
 	@ObfuscatedName("afm.m")
-	public class442 field9773;
+	public Js5 field9773;
 
-	public class847(class442 arg0) {
+	public class847(Js5 arg0) {
 		this.field9773 = arg0;
 	}
 

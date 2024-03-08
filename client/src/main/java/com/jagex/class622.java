@@ -35,7 +35,7 @@ public class class622 {
 	@ObfuscatedName("wf.p")
 	public boolean field7668;
 
-	public class622(class442 arg0) {
+	public class622(Js5 arg0) {
 		byte[] var2 = arg0.method6894(class628.field7707.field7708);
 		this.method9825(new Packet(var2));
 	}

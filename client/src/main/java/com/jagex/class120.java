@@ -138,7 +138,7 @@ public class class120 {
 	public class137[] field1412;
 
 	@ObfuscatedName("dq.e(Lpy;II)Ldq;")
-	public static class120 method1931(class442 arg0, int arg1, int arg2) {
+	public static class120 method1931(Js5 arg0, int arg1, int arg2) {
 		byte[] var3 = arg0.method6879(arg1, arg2);
 		return var3 == null ? null : new class120(var3);
 	}

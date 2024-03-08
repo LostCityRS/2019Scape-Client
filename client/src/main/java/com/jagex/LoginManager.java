@@ -289,9 +289,9 @@ public class LoginManager {
 			}
 			if (field445 == 14) {
 				if (Statics.field431 == 211) {
-					Statics.field432.method936(class561.method7130(Statics.field8755.method14764(), 40000), Statics.field8755.field8745);
+					Statics.field432.method936(Stream.method7130(Statics.field8755.method14764(), 40000), Statics.field8755.field8745);
 				} else {
-					Statics.field432.method936(class561.method7130(Statics.field8751.method14764(), 40000), Statics.field8751.field8745);
+					Statics.field432.method936(Stream.method7130(Statics.field8751.method14764(), 40000), Statics.field8751.field8745);
 				}
 				if (Statics.field10311 == null) {
 					Statics.field10311 = client.field10967.method709();

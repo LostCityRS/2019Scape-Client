@@ -661,12 +661,12 @@ public class class42 {
 	}
 
 	@ObfuscatedName("al.b(Lhf;Lch;IIIILcm;I)V")
-	public static void method715(class226 arg0, class103 arg1, int arg2, int arg3, int arg4, int arg5, class101 arg6) {
+	public static void method715(class226 arg0, class103 arg1, int arg2, int arg3, int arg4, int arg5, Sprite arg6) {
 		method4142(arg0, arg1, arg2, arg3, arg4, arg5, arg6, 100.0D, class230.field2417, class231.field2424);
 	}
 
 	@ObfuscatedName("ht.h(Lhf;Lch;IIIILcm;DLhp;Lhy;I)V")
-	public static void method4142(class226 arg0, class103 arg1, int arg2, int arg3, int arg4, int arg5, class101 arg6, double arg7, class230 arg8, class231 arg9) {
+	public static void method4142(class226 arg0, class103 arg1, int arg2, int arg3, int arg4, int arg5, Sprite arg6, double arg7, class230 arg8, class231 arg9) {
 		if (arg6 == null) {
 			return;
 		}

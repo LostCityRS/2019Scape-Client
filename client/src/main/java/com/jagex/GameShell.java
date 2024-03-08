@@ -61,13 +61,13 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	public static volatile boolean field6604 = true;
 
 	@ObfuscatedName("sk.aj")
-	public static class753 field6613 = null;
+	public static BufferedFile field6613 = null;
 
 	@ObfuscatedName("sk.ay")
-	public static class753 field6615 = null;
+	public static BufferedFile field6615 = null;
 
 	@ObfuscatedName("sk.ab")
-	public static class753 field6619 = null;
+	public static BufferedFile field6619 = null;
 
 	@ObfuscatedName("sk.bl")
 	public static class506 field6618 = null;
@@ -199,11 +199,11 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		}
 		class510.method3546(Statics.field6579);
 		method141();
-		field6615 = new class753(new class752(class510.method18852("main_file_cache.dat2"), "rw", 3221225472L), 5200, 0);
-		field6619 = new class753(new class752(class510.method18852("main_file_cache.idx255"), "rw", 1048576L), 6000, 0);
-		Statics.field7422 = new class753[Statics.field599];
+		field6615 = new BufferedFile(new FileOnDisk(class510.method18852("main_file_cache.dat2"), "rw", 3221225472L), 5200, 0);
+		field6619 = new BufferedFile(new FileOnDisk(class510.method18852("main_file_cache.idx255"), "rw", 1048576L), 6000, 0);
+		Statics.field7422 = new BufferedFile[Statics.field599];
 		for (int var19 = 0; var19 < Statics.field599; var19++) {
-			Statics.field7422[var19] = new class753(new class752(class510.method18852("main_file_cache.idx" + var19), "rw", 1048576L), 6000, 0);
+			Statics.field7422[var19] = new BufferedFile(new FileOnDisk(class510.method18852("main_file_cache.idx" + var19), "rw", 1048576L), 6000, 0);
 		}
 		try {
 			Statics.field6629 = new class726();
@@ -237,7 +237,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		boolean var7 = false;
 		if (Statics.field6608.exists()) {
 			try {
-				class752 var8 = new class752(Statics.field6608, "rw", 10000L);
+				FileOnDisk var8 = new FileOnDisk(Statics.field6608, "rw", 10000L);
 				Packet var9 = new Packet((int) var8.method14821());
 				while (var9.pos < var9.data.length) {
 					int var10 = var8.method14812(var9.data, var9.pos, var9.data.length - var9.pos);
@@ -327,7 +327,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	@ObfuscatedName("sk.k(Ljava/io/File;Ljava/io/File;I)V")
 	public void method8027(File arg0, File arg1) {
 		try {
-			class752 var3 = new class752(Statics.field6608, "rw", 10000L);
+			FileOnDisk var3 = new FileOnDisk(Statics.field6608, "rw", 10000L);
 			Packet var4 = new Packet(500);
 			var4.p1(3);
 			var4.p1(arg1 == null ? 0 : 1);
@@ -361,11 +361,11 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	}
 
 	@ObfuscatedName("amr.l(Ljava/lang/String;Ljava/lang/String;ZI)Labl;")
-	public static class752 method18567(String arg0, String arg1, boolean arg2) {
+	public static FileOnDisk method18567(String arg0, String arg1, boolean arg2) {
 		File var3 = new File(Statics.field6579, "preferences" + arg0 + ".dat");
 		if (var3.exists()) {
 			try {
-				return new class752(var3, "rw", 10000L);
+				return new FileOnDisk(var3, "rw", 10000L);
 			} catch (IOException var14) {
 			}
 		}
@@ -378,12 +378,12 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		File var7 = new File(Statics.field4331, "jagex_" + arg1 + "_preferences" + arg0 + var6 + ".dat");
 		if (!arg2 && var7.exists()) {
 			try {
-				return new class752(var7, "rw", 10000L);
+				return new FileOnDisk(var7, "rw", 10000L);
 			} catch (IOException var13) {
 			}
 		}
 		try {
-			return new class752(var3, "rw", 10000L);
+			return new FileOnDisk(var3, "rw", 10000L);
 		} catch (IOException var12) {
 			throw new RuntimeException();
 		}
@@ -394,13 +394,13 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		try {
 			File var0 = new File(Statics.field4331, "random.dat");
 			if (var0.exists()) {
-				field6613 = new class753(new class752(var0, "rw", 25L), 24, 0);
+				field6613 = new BufferedFile(new FileOnDisk(var0, "rw", 25L), 24, 0);
 			} else {
 				label34: for (int var1 = 0; var1 < Statics.field3219.length; var1++) {
 					for (int var2 = 0; var2 < Statics.field586.length; var2++) {
 						File var3 = new File(Statics.field586[var2] + Statics.field3219[var1] + File.separatorChar + "random.dat");
 						if (var3.exists()) {
-							field6613 = new class753(new class752(var3, "rw", 25L), 24, 0);
+							field6613 = new BufferedFile(new FileOnDisk(var3, "rw", 25L), 24, 0);
 							break label34;
 						}
 					}
@@ -413,7 +413,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 				var4.write(var5);
 				var4.seek(0L);
 				var4.close();
-				field6613 = new class753(new class752(var0, "rw", 25L), 24, 0);
+				field6613 = new BufferedFile(new FileOnDisk(var0, "rw", 25L), 24, 0);
 			}
 		} catch (IOException var7) {
 		}

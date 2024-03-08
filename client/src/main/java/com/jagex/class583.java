@@ -6,12 +6,12 @@ import deob.ObfuscatedName;
 public abstract class class583 {
 
 	@ObfuscatedName("vl.e")
-	public final class442 field7315;
+	public final Js5 field7315;
 
 	@ObfuscatedName("vl.n")
 	public final WeightedCache field7316 = new WeightedCache(20);
 
-	public class583(class442 arg0) {
+	public class583(Js5 arg0) {
 		this.field7315 = arg0;
 	}
 

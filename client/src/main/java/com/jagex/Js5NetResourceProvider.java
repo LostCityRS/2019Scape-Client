@@ -5,28 +5,28 @@ import deob.ObfuscatedName;
 import java.util.zip.CRC32;
 
 @ObfuscatedName("aij")
-public class class936 extends class440 {
+public class Js5NetResourceProvider extends Js5ResourceProvider {
 
 	@ObfuscatedName("aij.e")
 	public int field10733;
 
 	@ObfuscatedName("aij.n")
-	public class447 field10720;
+	public Js5TcpClient field10720;
 
 	@ObfuscatedName("aij.m")
-	public class448 field10721;
+	public Js5HttpClient field10721;
 
 	@ObfuscatedName("aij.k")
-	public class446 field10744;
+	public Js5DiskCache field10744;
 
 	@ObfuscatedName("aij.f")
-	public class560 field10723;
+	public DiskStore field10723;
 
 	@ObfuscatedName("aij.w")
-	public class560 field10724;
+	public DiskStore field10724;
 
 	@ObfuscatedName("aij.l")
-	public class1181 field10743;
+	public Js5Request field10743;
 
 	@ObfuscatedName("aij.u")
 	public int field10722;
@@ -38,7 +38,7 @@ public class class936 extends class440 {
 	public int field10728;
 
 	@ObfuscatedName("aij.d")
-	public class439 field10729;
+	public Js5ArchiveIndex field10729;
 
 	@ObfuscatedName("aij.o")
 	public byte[] field10745;
@@ -76,7 +76,7 @@ public class class936 extends class440 {
 	@ObfuscatedName("aij.ag")
 	public static CRC32 field10746 = new CRC32();
 
-	public class936(int arg0, class560 arg1, class560 arg2, class447 arg3, class448 arg4, class446 arg5, int arg6, byte[] arg7, int arg8, boolean arg9, int arg10) {
+	public Js5NetResourceProvider(int arg0, DiskStore arg1, DiskStore arg2, Js5TcpClient arg3, Js5HttpClient arg4, Js5DiskCache arg5, int arg6, byte[] arg7, int arg8, boolean arg9, int arg10) {
 		this.field10733 = arg0;
 		this.field10723 = arg1;
 		if (this.field10723 == null) {
@@ -140,7 +140,7 @@ public class class936 extends class440 {
 	}
 
 	@ObfuscatedName("aij.e(B)Lpl;")
-	public class439 method6853() {
+	public Js5ArchiveIndex method6853() {
 		if (this.field10729 != null) {
 			return this.field10729;
 		}
@@ -159,7 +159,7 @@ public class class936 extends class440 {
 				if (var1 == null) {
 					throw new RuntimeException();
 				}
-				this.field10729 = new class439(var1, this.field10722, this.field10727);
+				this.field10729 = new Js5ArchiveIndex(var1, this.field10722, this.field10727);
 				if (this.field10729.field4396 != this.field10728) {
 					throw new RuntimeException();
 				}
@@ -177,7 +177,7 @@ public class class936 extends class440 {
 				if (var1 == null) {
 					throw new RuntimeException();
 				}
-				this.field10729 = new class439(var1, this.field10722, this.field10727);
+				this.field10729 = new Js5ArchiveIndex(var1, this.field10722, this.field10727);
 			} catch (RuntimeException var5) {
 				this.field10720.method7015(255, this.field10733);
 				this.field10729 = null;
@@ -202,7 +202,7 @@ public class class936 extends class440 {
 
 	@ObfuscatedName("aij.n(II)[B")
 	public byte[] method6854(int arg0) {
-		class1181 var2 = this.method16848(arg0, 0);
+		Js5Request var2 = this.method16848(arg0, 0);
 		if (var2 == null) {
 			return null;
 		} else {
@@ -213,8 +213,8 @@ public class class936 extends class440 {
 	}
 
 	@ObfuscatedName("aij.q(IIB)Lask;")
-	public class1181 method16848(int arg0, int arg1) {
-		class1181 var3 = (class1181) this.field10731.method14495((long) arg0);
+	public Js5Request method16848(int arg0, int arg1) {
+		Js5Request var3 = (Js5Request) this.field10731.method14495((long) arg0);
 		if (var3 != null && arg1 == 0 && !var3.field12342 && var3.field12344) {
 			var3.method8440();
 			var3 = null;
@@ -296,11 +296,11 @@ public class class936 extends class440 {
 				if (var3.field12342) {
 					if (this.field10721 == null) {
 						if (!this.field10720.method7012()) {
-							class1230 var19 = this.field10720.method7011(this.field10733, arg0, (byte) 2, true);
+							Js5NetRequest var19 = this.field10720.method7011(this.field10733, arg0, (byte) 2, true);
 							this.field10731.method14501(var19, (long) arg0);
 						}
 					} else if (!this.field10721.method7048()) {
-						class1229 var18 = this.field10721.method7068(this.field10733, arg0, (byte) 2, true, this.field10729.field4393[arg0], this.field10729.field4398[arg0]);
+						Js5HttpRequest var18 = this.field10721.method7068(this.field10733, arg0, (byte) 2, true, this.field10729.field4393[arg0], this.field10729.field4398[arg0]);
 						if (var18 != null) {
 							this.field10731.method14501(var18, (long) arg0);
 						}
@@ -361,11 +361,11 @@ public class class936 extends class440 {
 			if (var3.field12342) {
 				if (this.field10721 == null) {
 					if (!this.field10720.method7012()) {
-						class1230 var12 = this.field10720.method7011(this.field10733, arg0, (byte) 2, true);
+						Js5NetRequest var12 = this.field10720.method7011(this.field10733, arg0, (byte) 2, true);
 						this.field10731.method14501(var12, (long) arg0);
 					}
 				} else if (!this.field10721.method7048()) {
-					class1229 var11 = this.field10721.method7068(this.field10733, arg0, (byte) 2, true, this.field10729.field4393[arg0], this.field10729.field4398[arg0]);
+					Js5HttpRequest var11 = this.field10721.method7068(this.field10733, arg0, (byte) 2, true, this.field10729.field4393[arg0], this.field10729.field4398[arg0]);
 					if (var11 != null) {
 						this.field10731.method14501(var11, (long) arg0);
 					}
@@ -485,7 +485,7 @@ public class class936 extends class440 {
 		if (!this.field10748 || class213.method3655() < this.field10734) {
 			return;
 		}
-		for (class1181 var9 = (class1181) this.field10731.method14500(); var9 != null; var9 = (class1181) this.field10731.method14502()) {
+		for (Js5Request var9 = (Js5Request) this.field10731.method14500(); var9 != null; var9 = (Js5Request) this.field10731.method14502()) {
 			if (!var9.field12344) {
 				if (var9.field12343) {
 					if (!var9.field12342) {
@@ -551,7 +551,7 @@ public class class936 extends class440 {
 
 	@ObfuscatedName("aij.k(II)I")
 	public int method6855(int arg0) {
-		class1181 var2 = (class1181) this.field10731.method14495((long) arg0);
+		Js5Request var2 = (Js5Request) this.field10731.method14495((long) arg0);
 		return var2 == null ? 0 : var2.method19446();
 	}
 

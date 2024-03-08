@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.net.Socket;
 
 @ObfuscatedName("all")
-public class class1005 extends class561 {
+public class class1005 extends Stream {
 
 	@ObfuscatedName("all.e")
 	public Socket field11677;

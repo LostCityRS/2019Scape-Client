@@ -10,12 +10,12 @@ import java.net.URL;
 public class class441 {
 
 	// $FF: synthetic field
-	public final class448 this$0;
+	public final Js5HttpClient this$0;
 
 	@ObfuscatedName("pr.e")
 	public byte[] field4405;
 
-	public class441(class448 arg0, InputStream arg1, class1229 arg2, URL arg3) {
+	public class441(Js5HttpClient arg0, InputStream arg1, Js5HttpRequest arg2, URL arg3) {
 		this.this$0 = arg0;
 		this.field4405 = null;
 		if (arg1 != null) {

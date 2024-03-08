@@ -416,7 +416,7 @@ public class class1004 extends WorldMap {
 			var8 = Statics.field6852 - (arg1.field11452 + arg2.field2395 - Statics.field6848) * (Statics.field6852 - Statics.field6837) / (Statics.field6846 - Statics.field6848);
 			var7 = Statics.field6852 - (arg1.field11452 + arg2.field2397 - Statics.field6848) * (Statics.field6852 - Statics.field6837) / (Statics.field6846 - Statics.field6848);
 		}
-		class101 var9 = null;
+		Sprite var9 = null;
 		int var10 = 0;
 		int var11 = 0;
 		int var12 = 0;
@@ -468,7 +468,7 @@ public class class1004 extends WorldMap {
 				}
 			}
 		}
-		class101 var14 = null;
+		Sprite var14 = null;
 		if (arg2.field2384 != -1) {
 			var14 = arg2.method4026(arg0);
 		}
@@ -626,7 +626,7 @@ public class class1004 extends WorldMap {
 
 	@ObfuscatedName("acc.dj(Ldh;Laks;Lhs;I)V")
 	public static void method14999(Renderer arg0, class990 arg1, MapElementType arg2) {
-		class101 var3 = arg2.method4027(arg0);
+		Sprite var3 = arg2.method4027(arg0);
 		if (var3 == null) {
 			return;
 		}

@@ -14,7 +14,7 @@ public class class620 implements Iterable {
 	@ObfuscatedName("wq.n")
 	public class627[] field7649;
 
-	public class620(class442 arg0) {
+	public class620(Js5 arg0) {
 		this.method9777(arg0.method6894(class628.field7709.field7708));
 	}
 

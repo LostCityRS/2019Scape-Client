@@ -31,7 +31,7 @@ public class Statics {
 	public static int field10232;
 
 	@ObfuscatedName("aff.fa")
-	public static class442 field10249;
+	public static Js5 field10249;
 
 	@ObfuscatedName("afv.dl")
 	public static String field10250;
@@ -43,19 +43,19 @@ public class Statics {
 	public static class733 field10268;
 
 	@ObfuscatedName("agg.fn")
-	public static class442 field10287;
+	public static Js5 field10287;
 
 	@ObfuscatedName("age.ko")
 	public static int field10297;
 
 	@ObfuscatedName("agk.ae")
-	public static class101[] field10302;
+	public static Sprite[] field10302;
 
 	@ObfuscatedName("agf.jr")
 	public static SecureRandom field10311;
 
 	@ObfuscatedName("agd.fw")
-	public static class442 field10317;
+	public static Js5 field10317;
 
 	@ObfuscatedName("agq.fz")
 	public static long field10353;
@@ -88,7 +88,7 @@ public class Statics {
 	public static int field10546;
 
 	@ObfuscatedName("ahn.bd")
-	public static class101 field10568;
+	public static Sprite field10568;
 
 	@ObfuscatedName("ahe.gv")
 	public static HardwarePlatformLoader field10577;
@@ -103,7 +103,7 @@ public class Statics {
 	public static int[] field10750;
 
 	@ObfuscatedName("aik.gx")
-	public static class442 field10752;
+	public static Js5 field10752;
 
 	@ObfuscatedName("aip.x")
 	public static short[][] field10766;
@@ -121,7 +121,7 @@ public class Statics {
 	public static IterableQueue field11253;
 
 	@ObfuscatedName("ajf.fi")
-	public static class442 field11262;
+	public static Js5 field11262;
 
 	@ObfuscatedName("aje.z")
 	public static int[] field11269;
@@ -145,7 +145,7 @@ public class Statics {
 	public static int field11654;
 
 	@ObfuscatedName("alv.bn")
-	public static class101 field11699;
+	public static Sprite field11699;
 
 	@ObfuscatedName("ala.r")
 	public static short field11700;
@@ -169,19 +169,19 @@ public class Statics {
 	public static BASTypeList field11742;
 
 	@ObfuscatedName("amo.fv")
-	public static class442 field11752;
+	public static Js5 field11752;
 
 	@ObfuscatedName("amm.x")
 	public static TwitchTV field11755;
 
 	@ObfuscatedName("amt.jd")
-	public static class561 field11764;
+	public static Stream field11764;
 
 	@ObfuscatedName("aml.r")
 	public static int field11775;
 
 	@ObfuscatedName("ann.j")
-	public static class101[] field11793;
+	public static Sprite[] field11793;
 
 	@ObfuscatedName("anq.al")
 	public static int field11802;
@@ -193,10 +193,10 @@ public class Statics {
 	public static int field11830;
 
 	@ObfuscatedName("ank.bt")
-	public static class101 field11831;
+	public static Sprite field11831;
 
 	@ObfuscatedName("anx.ft")
-	public static class442 field11838;
+	public static Js5 field11838;
 
 	@ObfuscatedName("aov.ph")
 	public static boolean field11883;
@@ -229,7 +229,7 @@ public class Statics {
 	public static class807 field12225;
 
 	@ObfuscatedName("cr.bi")
-	public static class101 field1224;
+	public static Sprite field1224;
 
 	@ObfuscatedName("arc.r")
 	public static int field12241;
@@ -238,10 +238,10 @@ public class Statics {
 	public static Map field1232;
 
 	@ObfuscatedName("arr.l")
-	public static class442 field12325;
+	public static Js5 field12325;
 
 	@ObfuscatedName("arr.u")
-	public static class442 field12326;
+	public static Js5 field12326;
 
 	@ObfuscatedName("asg.af")
 	public static int field12340;
@@ -286,7 +286,7 @@ public class Statics {
 	public static short[][][] field1434;
 
 	@ObfuscatedName("dn.fy")
-	public static class442 field1450;
+	public static Js5 field1450;
 
 	@ObfuscatedName("ds.w")
 	public static int field1455;
@@ -313,7 +313,7 @@ public class Statics {
 	public static int field1462;
 
 	@ObfuscatedName("db.ga")
-	public static class442 field1587;
+	public static Js5 field1587;
 
 	@ObfuscatedName("eu.br")
 	public static Language field1680;
@@ -325,7 +325,7 @@ public class Statics {
 	public static int field1701;
 
 	@ObfuscatedName("ec.i")
-	public static class442 field1707;
+	public static Js5 field1707;
 
 	@ObfuscatedName("ek.ix")
 	public static class631 field1709;
@@ -352,7 +352,7 @@ public class Statics {
 	public static int field1748;
 
 	@ObfuscatedName("ea.gs")
-	public static class560 field1749;
+	public static DiskStore field1749;
 
 	@ObfuscatedName("ex.pg")
 	public static int field1765;
@@ -367,7 +367,7 @@ public class Statics {
 	public static AudioApi field1798;
 
 	@ObfuscatedName("fz.y")
-	public static class442 field1810;
+	public static Js5 field1810;
 
 	@ObfuscatedName("fz.bz")
 	public static ModeWhere field1811;
@@ -376,7 +376,7 @@ public class Statics {
 	public static class807 field1819;
 
 	@ObfuscatedName("ft.fm")
-	public static class437 field1833;
+	public static Js5Client field1833;
 
 	@ObfuscatedName("fx.oc")
 	public static int field1839;
@@ -430,10 +430,10 @@ public class Statics {
 	public static int field1921;
 
 	@ObfuscatedName("gy.gk")
-	public static class442 field1935;
+	public static Js5 field1935;
 
 	@ObfuscatedName("gc.ah")
-	public static class101 field1940;
+	public static Sprite field1940;
 
 	@ObfuscatedName("gh.as")
 	public static int[] field1970;
@@ -463,7 +463,7 @@ public class Statics {
 	public static class377 field2013;
 
 	@ObfuscatedName("hx.gq")
-	public static class442 field2149;
+	public static Js5 field2149;
 
 	@ObfuscatedName("hq.bb")
 	public static String field2153;
@@ -508,7 +508,7 @@ public class Statics {
 	public static int field2606;
 
 	@ObfuscatedName("ig.fl")
-	public static class442 field2613;
+	public static Js5 field2613;
 
 	@ObfuscatedName("iv.e")
 	public static Huffman huffman;
@@ -556,7 +556,7 @@ public class Statics {
 	public static int[] field2899;
 
 	@ObfuscatedName("jm.gc")
-	public static class442 field2900;
+	public static Js5 field2900;
 
 	@ObfuscatedName("jm.bm")
 	public static int field2901;
@@ -607,7 +607,7 @@ public class Statics {
 	public static int field3056;
 
 	@ObfuscatedName("kl.fb")
-	public static class442 field3085;
+	public static Js5 field3085;
 
 	@ObfuscatedName("kl.he")
 	public static ParamTypeList field3086;
@@ -667,16 +667,16 @@ public class Statics {
 	public static int field3538;
 
 	@ObfuscatedName("nl.bh")
-	public static class101 field3568;
+	public static Sprite field3568;
 
 	@ObfuscatedName("nl.lt")
 	public static int field3569;
 
 	@ObfuscatedName("nn.gl")
-	public static class442 field3611;
+	public static Js5 field3611;
 
 	@ObfuscatedName("nr.gf")
-	public static class442 field3808;
+	public static Js5 field3808;
 
 	@ObfuscatedName("nu.ir")
 	public static class458 field3823;
@@ -730,7 +730,7 @@ public class Statics {
 	public static int[] field436;
 
 	@ObfuscatedName("pl.go")
-	public static class442 field4404;
+	public static Js5 field4404;
 
 	@ObfuscatedName("pr.l")
 	public static CreateAccountReply field4406;
@@ -742,19 +742,19 @@ public class Statics {
 	public static int field4427;
 
 	@ObfuscatedName("pj.ex")
-	public static class448 field4436;
+	public static Js5HttpClient field4436;
 
 	@ObfuscatedName("pu.fe")
-	public static class442 field4475;
+	public static Js5 field4475;
 
 	@ObfuscatedName("pc.fg")
-	public static class446 field4479;
+	public static Js5DiskCache field4479;
 
 	@ObfuscatedName("qx.ay")
 	public static int field4488;
 
 	@ObfuscatedName("qx.eb")
-	public static class447 field4489;
+	public static Js5TcpClient field4489;
 
 	@ObfuscatedName("qx.ns")
 	public static class1130 field4490;
@@ -769,7 +769,7 @@ public class Statics {
 	public static int field4608;
 
 	@ObfuscatedName("qr.fh")
-	public static class442 field4618;
+	public static Js5 field4618;
 
 	@ObfuscatedName("qi.in")
 	public static class151 field4626;
@@ -820,7 +820,7 @@ public class Statics {
 	public static int field5009;
 
 	@ObfuscatedName("rz.fq")
-	public static class442 field5010;
+	public static Js5 field5010;
 
 	@ObfuscatedName("rz.hs")
 	public static MapElementTypeList field5011;
@@ -847,7 +847,7 @@ public class Statics {
 	public static int field509;
 
 	@ObfuscatedName("l.t")
-	public static class101[] field510;
+	public static Sprite[] field510;
 
 	@ObfuscatedName("sv.rj")
 	public static int field5107;
@@ -856,7 +856,7 @@ public class Statics {
 	public static int field511;
 
 	@ObfuscatedName("sw.ah")
-	public static class101 field5118;
+	public static Sprite field5118;
 
 	@ObfuscatedName("l.d")
 	public static int field512;
@@ -865,10 +865,10 @@ public class Statics {
 	public static class116 field5129;
 
 	@ObfuscatedName("l.h")
-	public static class101[] field513;
+	public static Sprite[] field513;
 
 	@ObfuscatedName("sw.al")
-	public static class101 field5137;
+	public static Sprite field5137;
 
 	@ObfuscatedName("l.f")
 	public static int field514;
@@ -880,7 +880,7 @@ public class Statics {
 	public static Process field520;
 
 	@ObfuscatedName("c.fx")
-	public static class442 field527;
+	public static Js5 field527;
 
 	@ObfuscatedName("r.rm")
 	public static int field530;
@@ -892,7 +892,7 @@ public class Statics {
 	public static int field554;
 
 	@ObfuscatedName("o.bc")
-	public static class101 field566;
+	public static Sprite field566;
 
 	@ObfuscatedName("o.cp")
 	public static String field579;
@@ -1003,7 +1003,7 @@ public class Statics {
 	public static int field6714;
 
 	@ObfuscatedName("sj.al")
-	public static class101[] field6719;
+	public static Sprite[] field6719;
 
 	@ObfuscatedName("sj.pt")
 	public static int field6720;
@@ -1045,10 +1045,10 @@ public class Statics {
 	public static class626 field6792;
 
 	@ObfuscatedName("tf.p")
-	public static class442 field6794;
+	public static Js5 field6794;
 
 	@ObfuscatedName("tf.d")
-	public static class442 field6795;
+	public static Js5 field6795;
 
 	@ObfuscatedName("tf.o")
 	public static byte[][][] field6799;
@@ -1147,13 +1147,13 @@ public class Statics {
 	public static SkyDecorTypeList field687;
 
 	@ObfuscatedName("tp.gp")
-	public static class442 field6879;
+	public static Js5 field6879;
 
 	@ObfuscatedName("ac.dz")
 	public static class998 field688;
 
 	@ObfuscatedName("tg.fj")
-	public static class936[] field6888;
+	public static Js5NetResourceProvider[] field6888;
 
 	@ObfuscatedName("ai.q")
 	public static class154 field694;
@@ -1165,13 +1165,13 @@ public class Statics {
 	public static Renderer field7041;
 
 	@ObfuscatedName("uc.gn")
-	public static class442 field7060;
+	public static Js5 field7060;
 
 	@ObfuscatedName("aw.uz")
 	public static int field708;
 
 	@ObfuscatedName("ua.g")
-	public static class442 field7085;
+	public static Js5 field7085;
 
 	@ObfuscatedName("as.e")
 	public static class318 field709;
@@ -1207,7 +1207,7 @@ public class Statics {
 	public static class140 field717;
 
 	@ObfuscatedName("uj.ag")
-	public static class101 field7207;
+	public static Sprite field7207;
 
 	@ObfuscatedName("uk.sr")
 	public static class861 field7228;
@@ -1219,7 +1219,7 @@ public class Statics {
 	public static EventQueue field7240;
 
 	@ObfuscatedName("uw.cw")
-	public static class101 field7241;
+	public static Sprite field7241;
 
 	@ObfuscatedName("uh.vf")
 	public static int field7272;
@@ -1231,7 +1231,7 @@ public class Statics {
 	public static class380 field7282;
 
 	@ObfuscatedName("vq.fo")
-	public static class442 field7283;
+	public static Js5 field7283;
 
 	@ObfuscatedName("vx.k")
 	public static int field7284;
@@ -1246,10 +1246,10 @@ public class Statics {
 	public static class156[] field7317;
 
 	@ObfuscatedName("at.y")
-	public static class101 field734;
+	public static Sprite field734;
 
 	@ObfuscatedName("ad.gy")
-	public static class442 field736;
+	public static Js5 field736;
 
 	@ObfuscatedName("vo.dd")
 	public static class125 field7366;
@@ -1267,7 +1267,7 @@ public class Statics {
 	public static class36 field7410;
 
 	@ObfuscatedName("vi.l")
-	public static class442 field7411;
+	public static Js5 field7411;
 
 	@ObfuscatedName("va.w")
 	public static int field7414;
@@ -1276,13 +1276,13 @@ public class Statics {
 	public static Packet field7415;
 
 	@ObfuscatedName("vs.fd")
-	public static class442 field7420;
+	public static Js5 field7420;
 
 	@ObfuscatedName("vs.ts")
 	public static int field7421;
 
 	@ObfuscatedName("vs.az")
-	public static class753[] field7422;
+	public static BufferedFile[] field7422;
 
 	@ObfuscatedName("vy.z")
 	public static int field7424;
@@ -1300,7 +1300,7 @@ public class Statics {
 	public static int field753;
 
 	@ObfuscatedName("vh.fr")
-	public static class442 field7537;
+	public static Js5 field7537;
 
 	@ObfuscatedName("vh.gj")
 	public static class402 field7538;
@@ -1312,7 +1312,7 @@ public class Statics {
 	public static int field7542;
 
 	@ObfuscatedName("vc.en")
-	public static class561 field7571;
+	public static Stream field7571;
 
 	@ObfuscatedName("vc.p")
 	public static int field7572;
@@ -1345,7 +1345,7 @@ public class Statics {
 	public static class143 field7669;
 
 	@ObfuscatedName("wc.ff")
-	public static class442 field7672;
+	public static Js5 field7672;
 
 	@ObfuscatedName("wx.k")
 	public static class557 field7674;
@@ -1456,7 +1456,7 @@ public class Statics {
 	public static Renderer field8198;
 
 	@ObfuscatedName("zh.gu")
-	public static class442 field8285;
+	public static Js5 field8285;
 
 	@ObfuscatedName("zn.rs")
 	public static int field8287;
@@ -1465,7 +1465,7 @@ public class Statics {
 	public static client field8301;
 
 	@ObfuscatedName("zy.u")
-	public static class442 field8302;
+	public static Js5 field8302;
 
 	@ObfuscatedName("zj.y")
 	public static class140 field8321;
@@ -1474,13 +1474,13 @@ public class Statics {
 	public static long field8322;
 
 	@ObfuscatedName("zj.b")
-	public static class101[] field8323;
+	public static Sprite[] field8323;
 
 	@ObfuscatedName("zo.cl")
 	public static String field8327;
 
 	@ObfuscatedName("zm.ge")
-	public static class442 field8332;
+	public static Js5 field8332;
 
 	@ObfuscatedName("zc.m")
 	public static class1172 field8348;
@@ -1492,7 +1492,7 @@ public class Statics {
 	public static class160[] field8358;
 
 	@ObfuscatedName("zl.j")
-	public static class442 field8370;
+	public static Js5 field8370;
 
 	@ObfuscatedName("aag.a")
 	public static boolean[] field8424;
@@ -1501,7 +1501,7 @@ public class Statics {
 	public static int field8463;
 
 	@ObfuscatedName("aax.bk")
-	public static class101 field8480;
+	public static Sprite field8480;
 
 	@ObfuscatedName("aas.ij")
 	public static class806 field8485;
@@ -1519,13 +1519,13 @@ public class Statics {
 	public static int field8521;
 
 	@ObfuscatedName("aao.f")
-	public static class442 field8522;
+	public static Js5 field8522;
 
 	@ObfuscatedName("aao.ag")
 	public static int field8526;
 
 	@ObfuscatedName("aae.w")
-	public static class442 field8532;
+	public static Js5 field8532;
 
 	@ObfuscatedName("aae.s")
 	public static String field8535;
@@ -1543,7 +1543,7 @@ public class Statics {
 	public static int field8586;
 
 	@ObfuscatedName("abv.fk")
-	public static class442 field8700;
+	public static Js5 field8700;
 
 	@ObfuscatedName("af.u")
 	public static CheckEmailReply field872;
@@ -1561,7 +1561,7 @@ public class Statics {
 	public static VarBitTypeList field8736;
 
 	@ObfuscatedName("abn.fp")
-	public static class442 field8741;
+	public static Js5 field8741;
 
 	@ObfuscatedName("abz.n")
 	public static class749 field8749;
@@ -1630,7 +1630,7 @@ public class Statics {
 	public static Font field9147;
 
 	@ObfuscatedName("acj.a")
-	public static class101[] field9149;
+	public static Sprite[] field9149;
 
 	@ObfuscatedName("aco.uh")
 	public static class893 field9155;
@@ -1663,13 +1663,13 @@ public class Statics {
 	public static class382 field9211;
 
 	@ObfuscatedName("adn.fc")
-	public static class442 field9213;
+	public static Js5 field9213;
 
 	@ObfuscatedName("adn.ub")
 	public static int field9214;
 
 	@ObfuscatedName("adw.bx")
-	public static class101 field9253;
+	public static Sprite field9253;
 
 	@ObfuscatedName("adj.s")
 	public static int field9256;
@@ -2210,7 +2210,7 @@ public class Statics {
 	}
 
 	@ObfuscatedName("dh.n(ILjava/awt/Canvas;Ldf;Les;Lnx;Lnb;Lnp;Lpy;IIII)Ldh;")
-	public static synchronized Renderer method2180(int arg0, Canvas arg1, class125 arg2, class143 arg3, class383 arg4, class381 arg5, class378 arg6, class442 arg7, int arg8, int arg9, int arg10) {
+	public static synchronized Renderer method2180(int arg0, Canvas arg1, class125 arg2, class143 arg3, class383 arg4, class381 arg5, class378 arg6, Js5 arg7, int arg8, int arg9, int arg10) {
 		if (arg0 == 0) {
 			return method3367(arg1, arg2, arg3, arg4, arg5, arg6, arg9, arg10);
 		} else if (arg0 == 1) {
@@ -2498,10 +2498,10 @@ public class Statics {
 	}
 
 	@ObfuscatedName("al.m(IB)Ldb;")
-	public static class132 method713(int arg0) {
-		class132 var1 = (class132) class686.method1897(class132.method9164(), arg0);
+	public static TransformInfinityType method713(int arg0) {
+		TransformInfinityType var1 = (TransformInfinityType) class686.method1897(TransformInfinityType.method9164(), arg0);
 		if (var1 == null) {
-			var1 = class132.field1581;
+			var1 = TransformInfinityType.field1581;
 		}
 		return var1;
 	}
@@ -2796,7 +2796,7 @@ public class Statics {
 		} else {
 			var7 = 0;
 		}
-		class101 var8 = var5.method15057(arg0, var7, arg1.field7504);
+		Sprite var8 = var5.method15057(arg0, var7, arg1.field7504);
 		if (var8 == null) {
 			return;
 		}
@@ -2825,7 +2825,7 @@ public class Statics {
 		class449 var2 = new class449(var1);
 		class445 var3 = var2.method7080();
 		int var4 = var2.method7081();
-		if (var4 < 0 || class442.field4419 != 0 && var4 > class442.field4419) {
+		if (var4 < 0 || Js5.field4419 != 0 && var4 > Js5.field4419) {
 			throw new RuntimeException();
 		} else if (class445.field4434 == var3) {
 			byte[] var5 = new byte[var4];
@@ -2833,7 +2833,7 @@ public class Statics {
 			return var5;
 		} else {
 			int var6 = var2.method7091();
-			if (var6 < 0 || class442.field4419 != 0 && var6 > class442.field4419) {
+			if (var6 < 0 || Js5.field4419 != 0 && var6 > Js5.field4419) {
 				throw new RuntimeException();
 			}
 			byte[] var7;
@@ -2842,9 +2842,9 @@ public class Statics {
 				BZip2.method14100(var7, var6, arg0, var4, 9);
 			} else if (class445.field4432 == var3) {
 				var7 = new byte[var6];
-				class804 var8 = class442.field4409;
-				synchronized (class442.field4409) {
-					class442.field4409.method15245(var1, var7);
+				GZip var8 = Js5.field4409;
+				synchronized (Js5.field4409) {
+					Js5.field4409.method15245(var1, var7);
 				}
 			} else if (class445.field4431 == var3) {
 				try {
@@ -3050,7 +3050,7 @@ public class Statics {
 				arg0.method2183(var9[var9.length - 2], var9[var9.length - 1], var9[0], var9[1], var8.field2406[var8.field2407[var8.field2407.length - 1] & 0xFF], 1, arg1, arg3, arg4);
 			}
 		}
-		class101 var32 = null;
+		Sprite var32 = null;
 		if (var8.field2400 != -1) {
 			var32 = var8.method4025(arg0, false);
 			if (var32 != null) {
@@ -3209,7 +3209,7 @@ public class Statics {
 		}
 		int var13 = arg4 * var12 + arg5 * var11 >> 14;
 		int var14 = arg5 * var12 - arg4 * var11 >> 14;
-		class101 var15 = field513[arg6];
+		Sprite var15 = field513[arg6];
 		int var16 = var15.method1459();
 		int var17 = var15.method1435();
 		int var18 = arg0.field2196 / 2 + var13 - var16 / 2;
@@ -3333,7 +3333,7 @@ public class Statics {
 		for (int var2 = 0; var2 < var1.length; var2++) {
 			Js5Archive var3 = var1[var2];
 			if (Js5Archive.LOADING_SPRITES != var3) {
-				class442 var4 = (class442) field8540.get(var3);
+				Js5 var4 = (Js5) field8540.get(var3);
 				if (var4 == null) {
 					arg0.p4(0);
 				} else {

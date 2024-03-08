@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("aog")
 public class CursorTypeList extends class758 {
 
-	public CursorTypeList(ModeGame arg0, Language arg1, class442 arg2, class442 arg3) {
+	public CursorTypeList(ModeGame arg0, Language arg1, Js5 arg2, Js5 arg3) {
 		super(arg0, arg1, arg2, Js5ConfigGroup.CURSORTYPE, 64, new CursorTypeFactory(arg3));
 	}
 

@@ -29,7 +29,7 @@ public class class626 {
 	@ObfuscatedName("wh.b")
 	public int[][] field7697 = new int[3][5];
 
-	public class626(class442 arg0) {
+	public class626(Js5 arg0) {
 		byte[] var2 = arg0.method6894(class628.field7710.field7708);
 		if (var2 == null) {
 		}

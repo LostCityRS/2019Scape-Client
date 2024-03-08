@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class IDKType implements ConfigType {
 
 	@ObfuscatedName("jv.e")
-	public final class442 field2955;
+	public final Js5 field2955;
 
 	@ObfuscatedName("jv.n")
 	public int[] field2950;
@@ -38,7 +38,7 @@ public class IDKType implements ConfigType {
 	@ObfuscatedName("jv.d")
 	public static final int[] field2959 = new int[] { 7, 8, 9, 10, 11, 12, 13, 15 };
 
-	public IDKType(int arg0, class442 arg1) {
+	public IDKType(int arg0, Js5 arg1) {
 		this.field2955 = arg1;
 	}
 
@@ -126,7 +126,7 @@ public class IDKType implements ConfigType {
 			return true;
 		}
 		boolean var1 = true;
-		class442 var2 = this.field2955;
+		Js5 var2 = this.field2955;
 		synchronized (this.field2955) {
 			for (int var3 = 0; var3 < this.field2950.length; var3++) {
 				if (!this.field2955.method6888(this.field2950[var3], 0)) {
@@ -143,7 +143,7 @@ public class IDKType implements ConfigType {
 			return null;
 		}
 		class120[] var1 = new class120[this.field2950.length];
-		class442 var2 = this.field2955;
+		Js5 var2 = this.field2955;
 		synchronized (this.field2955) {
 			int var3 = 0;
 			while (true) {
@@ -184,7 +184,7 @@ public class IDKType implements ConfigType {
 	@ObfuscatedName("jv.d(I)Z")
 	public boolean method5001() {
 		boolean var1 = true;
-		class442 var2 = this.field2955;
+		Js5 var2 = this.field2955;
 		synchronized (this.field2955) {
 			for (int var3 = 0; var3 < 5; var3++) {
 				if (this.field2957[var3] != -1 && !this.field2955.method6888(this.field2957[var3], 0)) {
@@ -199,7 +199,7 @@ public class IDKType implements ConfigType {
 	public class120 method5002() {
 		class120[] var1 = new class120[5];
 		int var2 = 0;
-		class442 var3 = this.field2955;
+		Js5 var3 = this.field2955;
 		synchronized (this.field2955) {
 			int var4 = 0;
 			while (true) {

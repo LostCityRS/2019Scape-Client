@@ -5,16 +5,16 @@ import deob.ObfuscatedName;
 import java.math.BigInteger;
 
 @ObfuscatedName("px")
-public class class437 {
+public class Js5Client {
 
 	@ObfuscatedName("px.e")
-	public class447 field4371;
+	public Js5TcpClient field4371;
 
 	@ObfuscatedName("px.n")
-	public class448 field4372;
+	public Js5HttpClient field4372;
 
 	@ObfuscatedName("px.m")
-	public class446 field4369;
+	public Js5DiskCache field4369;
 
 	@ObfuscatedName("px.k")
 	public BigInteger field4370;
@@ -23,24 +23,24 @@ public class class437 {
 	public BigInteger field4373;
 
 	@ObfuscatedName("px.w")
-	public class1230 field4374;
+	public Js5NetRequest field4374;
 
 	@ObfuscatedName("px.l")
-	public class1229 field4375;
+	public Js5HttpRequest field4375;
 
 	@ObfuscatedName("px.u")
-	public class450 field4376;
+	public Js5MasterIndex field4376;
 
 	@ObfuscatedName("px.z")
-	public class450 field4377;
+	public Js5MasterIndex field4377;
 
 	@ObfuscatedName("px.p")
 	public boolean field4378 = false;
 
 	@ObfuscatedName("px.d")
-	public class936[] field4379;
+	public Js5NetResourceProvider[] field4379;
 
-	public class437(class447 arg0, class448 arg1, class446 arg2, BigInteger arg3, BigInteger arg4) {
+	public Js5Client(Js5TcpClient arg0, Js5HttpClient arg1, Js5DiskCache arg2, BigInteger arg3, BigInteger arg4) {
 		this.field4371 = arg0;
 		this.field4372 = arg1;
 		this.field4369 = arg2;
@@ -69,9 +69,9 @@ public class class437 {
 			return false;
 		}
 		Packet var1 = new Packet(this.field4374.method19444());
-		this.field4376 = new class450(var1, this.field4370, this.field4373);
+		this.field4376 = new Js5MasterIndex(var1, this.field4370, this.field4373);
 		if (this.field4379 == null) {
-			this.field4379 = new class936[this.field4376.field4480.length];
+			this.field4379 = new Js5NetResourceProvider[this.field4376.field4480.length];
 		} else {
 			for (int var2 = 0; var2 < this.field4379.length; var2++) {
 				if (this.field4379[var2] != null) {
@@ -88,19 +88,19 @@ public class class437 {
 	}
 
 	@ObfuscatedName("px.n(ILuf;Luf;ZB)Laij;")
-	public class936 method6835(int arg0, class560 arg1, class560 arg2, boolean arg3) {
+	public Js5NetResourceProvider method6835(int arg0, DiskStore arg1, DiskStore arg2, boolean arg3) {
 		return this.method6836(arg0, arg1, arg2, true, arg3);
 	}
 
 	@ObfuscatedName("px.m(ILuf;Luf;ZZI)Laij;")
-	public class936 method6836(int arg0, class560 arg1, class560 arg2, boolean arg3, boolean arg4) {
+	public Js5NetResourceProvider method6836(int arg0, DiskStore arg1, DiskStore arg2, boolean arg3, boolean arg4) {
 		if (this.field4376 == null) {
 			throw new RuntimeException();
 		} else if (arg0 < 0 || arg0 >= this.field4379.length) {
 			throw new RuntimeException();
 		} else if (this.field4379[arg0] == null) {
 			class438 var6 = this.field4376.field4480[arg0];
-			class936 var7 = new class936(arg0, arg1, arg2, this.field4371, arg4 ? this.field4372 : null, this.field4369, var6.field4383, var6.field4382, var6.field4380, arg3, var6.field4381);
+			Js5NetResourceProvider var7 = new Js5NetResourceProvider(arg0, arg1, arg2, this.field4371, arg4 ? this.field4372 : null, this.field4369, var6.field4383, var6.field4382, var6.field4380, arg3, var6.field4381);
 			this.field4379[arg0] = var7;
 			if (this.field4377 != null && arg4) {
 				class438 var8 = this.field4377.field4480[arg0];
@@ -135,7 +135,7 @@ public class class437 {
 			} else if (!this.field4375.field12344) {
 				byte[] var3 = this.field4375.method19444();
 				try {
-					this.field4377 = new class450(new Packet(var3), this.field4370, this.field4373);
+					this.field4377 = new Js5MasterIndex(new Packet(var3), this.field4370, this.field4373);
 					for (int var4 = 0; var4 < this.field4379.length; var4++) {
 						if (this.field4379[var4] != null && this.field4379[var4].method16830()) {
 							class438 var5 = this.field4377.field4480[var4];

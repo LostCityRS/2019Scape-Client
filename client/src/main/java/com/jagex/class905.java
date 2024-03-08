@@ -6,7 +6,7 @@ import deob.Statics;
 @ObfuscatedName("ahx")
 public class class905 extends class295 {
 
-	public class905(class442 arg0, class442 arg1, class914 arg2) {
+	public class905(Js5 arg0, Js5 arg1, class914 arg2) {
 		super(arg0, arg1, arg2);
 	}
 

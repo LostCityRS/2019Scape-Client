@@ -46,7 +46,7 @@ public class class503 {
 	public int field5130;
 
 	@ObfuscatedName("sw.q")
-	public class101 field5128;
+	public Sprite field5128;
 
 	@ObfuscatedName("sw.x")
 	public int field5126;

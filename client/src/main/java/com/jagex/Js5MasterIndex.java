@@ -5,12 +5,12 @@ import deob.ObfuscatedName;
 import java.math.BigInteger;
 
 @ObfuscatedName("qp")
-public class class450 {
+public class Js5MasterIndex {
 
 	@ObfuscatedName("qp.e")
 	public class438[] field4480;
 
-	public class450(Packet arg0, BigInteger arg1, BigInteger arg2) {
+	public Js5MasterIndex(Packet arg0, BigInteger arg1, BigInteger arg2) {
 		arg0.pos = 5;
 		int var4 = arg0.g1();
 		arg0.pos += var4 * 80;

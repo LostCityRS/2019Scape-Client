@@ -18,7 +18,7 @@ public class class613 implements class614 {
 	public int field7615;
 
 	@ObfuscatedName("we.k")
-	public class442 field7621;
+	public Js5 field7621;
 
 	@ObfuscatedName("we.f")
 	public class612 field7619;
@@ -38,7 +38,7 @@ public class class613 implements class614 {
 	@ObfuscatedName("we.p")
 	public boolean field7624;
 
-	public class613(class442 arg0, int arg1, class366 arg2, class612 arg3, WeightedCache arg4) {
+	public class613(Js5 arg0, int arg1, class366 arg2, class612 arg3, WeightedCache arg4) {
 		this.field7621 = arg0;
 		this.field7615 = arg1;
 		this.field7617 = arg2;

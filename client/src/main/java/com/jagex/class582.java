@@ -198,60 +198,60 @@ public class class582 implements ConfigType {
 	}
 
 	@ObfuscatedName("vb.d(Ldh;I)Lcm;")
-	public class101 method9258(Renderer arg0) {
+	public Sprite method9258(Renderer arg0) {
 		if (this.field7295 < 0) {
 			return null;
 		}
-		class101 var2 = (class101) this.field7307.field7316.method2930((long) this.field7295);
+		Sprite var2 = (Sprite) this.field7307.field7316.method2930((long) this.field7295);
 		if (var2 == null) {
 			this.method9256(arg0);
-			var2 = (class101) this.field7307.field7316.method2930((long) this.field7295);
+			var2 = (Sprite) this.field7307.field7316.method2930((long) this.field7295);
 		}
 		return var2;
 	}
 
 	@ObfuscatedName("vb.c(Ldh;I)Lcm;")
-	public class101 method9253(Renderer arg0) {
+	public Sprite method9253(Renderer arg0) {
 		if (this.field7299 < 0) {
 			return null;
 		}
-		class101 var2 = (class101) this.field7307.field7316.method2930((long) this.field7299);
+		Sprite var2 = (Sprite) this.field7307.field7316.method2930((long) this.field7299);
 		if (var2 == null) {
 			this.method9256(arg0);
-			var2 = (class101) this.field7307.field7316.method2930((long) this.field7299);
+			var2 = (Sprite) this.field7307.field7316.method2930((long) this.field7299);
 		}
 		return var2;
 	}
 
 	@ObfuscatedName("vb.r(Ldh;I)Lcm;")
-	public class101 method9254(Renderer arg0) {
+	public Sprite method9254(Renderer arg0) {
 		if (this.field7300 < 0) {
 			return null;
 		}
-		class101 var2 = (class101) this.field7307.field7316.method2930((long) this.field7300);
+		Sprite var2 = (Sprite) this.field7307.field7316.method2930((long) this.field7300);
 		if (var2 == null) {
 			this.method9256(arg0);
-			var2 = (class101) this.field7307.field7316.method2930((long) this.field7300);
+			var2 = (Sprite) this.field7307.field7316.method2930((long) this.field7300);
 		}
 		return var2;
 	}
 
 	@ObfuscatedName("vb.v(Ldh;B)Lcm;")
-	public class101 method9255(Renderer arg0) {
+	public Sprite method9255(Renderer arg0) {
 		if (this.field7301 < 0) {
 			return null;
 		}
-		class101 var2 = (class101) this.field7307.field7316.method2930((long) this.field7301);
+		Sprite var2 = (Sprite) this.field7307.field7316.method2930((long) this.field7301);
 		if (var2 == null) {
 			this.method9256(arg0);
-			var2 = (class101) this.field7307.field7316.method2930((long) this.field7301);
+			var2 = (Sprite) this.field7307.field7316.method2930((long) this.field7301);
 		}
 		return var2;
 	}
 
 	@ObfuscatedName("vb.o(Ldh;I)V")
 	public void method9256(Renderer arg0) {
-		class442 var2 = this.field7307.field7315;
+		Js5 var2 = this.field7307.field7315;
 		if (this.field7295 >= 0 && this.field7307.field7316.method2930((long) this.field7295) == null && var2.method6889(this.field7295)) {
 			class136 var3 = class111.method1607(var2, this.field7295);
 			this.field7307.field7316.method2921(arg0.method2200(var3, true), (long) this.field7295);

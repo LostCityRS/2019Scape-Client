@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("aod")
 public class NPCTypeList extends class758 {
 
-	public NPCTypeList(ModeGame arg0, Language arg1, boolean arg2, class442 arg3, class442 arg4) {
+	public NPCTypeList(ModeGame arg0, Language arg1, boolean arg2, Js5 arg3, Js5 arg4) {
 		super(arg0, arg1, arg3, Js5ConfigGroup.NPCTYPE, 64, new NPCTypeFactory(arg2, arg4, arg1, arg0));
 	}
 

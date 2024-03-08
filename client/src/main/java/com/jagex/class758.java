@@ -8,7 +8,7 @@ import java.util.Iterator;
 public class class758 implements ConfigTypeList {
 
 	@ObfuscatedName("abe.e")
-	public final class442 field8792;
+	public final Js5 field8792;
 
 	@ObfuscatedName("abe.n")
 	public final Js5ConfigGroup field8793;
@@ -22,7 +22,7 @@ public class class758 implements ConfigTypeList {
 	@ObfuscatedName("abe.f")
 	public final ConfigTypeFactory field8796;
 
-	public class758(ModeGame arg0, Language arg1, class442 arg2, Js5ConfigGroup arg3, int arg4, ConfigTypeFactory arg5) {
+	public class758(ModeGame arg0, Language arg1, Js5 arg2, Js5ConfigGroup arg3, int arg4, ConfigTypeFactory arg5) {
 		this.field8792 = arg2;
 		this.field8793 = arg3;
 		this.field8796 = arg5;
@@ -50,7 +50,7 @@ public class class758 implements ConfigTypeList {
 
 	@ObfuscatedName("abe.u(II)Lay;")
 	public ConfigType method14909(int arg0) {
-		class442 var2 = this.field8792;
+		Js5 var2 = this.field8792;
 		byte[] var3;
 		synchronized (this.field8792) {
 			var3 = class760.method9853(this.field8792, this.field8793, arg0);

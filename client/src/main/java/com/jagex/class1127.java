@@ -113,10 +113,10 @@ public final class class1127 extends GpuRenderer {
 	public final float[] field12031;
 
 	@ObfuscatedName("aqv.ia")
-	public class101 field12033;
+	public Sprite field12033;
 
 	@ObfuscatedName("aqv.if")
-	public class101 field12034;
+	public Sprite field12034;
 
 	@ObfuscatedName("aqv.ih")
 	public class840 field12018;
@@ -167,7 +167,7 @@ public final class class1127 extends GpuRenderer {
 		return true;
 	}
 
-	public class1127(OpenGL arg0, Canvas arg1, long arg2, class125 arg3, class143 arg4, class383 arg5, class381 arg6, class378 arg7, class442 arg8, int arg9) {
+	public class1127(OpenGL arg0, Canvas arg1, long arg2, class125 arg3, class143 arg4, class383 arg5, class381 arg6, class378 arg7, Js5 arg8, int arg9) {
 		super(arg3, arg4, arg5, arg6, arg7, arg8, arg9, 1);
 		new MapBuffer();
 		new MapBuffer();

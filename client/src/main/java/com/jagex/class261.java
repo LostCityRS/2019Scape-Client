@@ -12,7 +12,7 @@ public abstract class class261 implements ConfigTypeFactory {
 	public boolean field2769;
 
 	@ObfuscatedName("ih.m")
-	public final class442 field2770;
+	public final Js5 field2770;
 
 	@ObfuscatedName("ih.k")
 	public final WeightedCache field2771 = new WeightedCache(50);
@@ -26,7 +26,7 @@ public abstract class class261 implements ConfigTypeFactory {
 	@ObfuscatedName("ih.l")
 	public final String[] field2774;
 
-	public class261(boolean arg0, class442 arg1, Language arg2, ModeGame arg3) {
+	public class261(boolean arg0, Js5 arg1, Language arg2, ModeGame arg3) {
 		this.field2769 = arg0;
 		this.field2770 = arg1;
 		this.field2772 = arg3;

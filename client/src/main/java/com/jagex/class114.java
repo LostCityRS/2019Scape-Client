@@ -21,9 +21,9 @@ public class class114 {
 		if (arg0 == null || arg0.method2015() == 0) {
 			return 0.0F;
 		} else if (arg1 < (float) arg0.field1439[0].field1663) {
-			return class132.field1581 == arg0.field1437 ? arg0.field1439[0].field1660 : method7313(arg0, arg1, true);
+			return TransformInfinityType.field1581 == arg0.field1437 ? arg0.field1439[0].field1660 : method7313(arg0, arg1, true);
 		} else if (arg1 > (float) arg0.field1439[arg0.method2015() - 1].field1663) {
-			return class132.field1581 == arg0.field1438 ? arg0.field1439[arg0.method2015() - 1].field1660 : method7313(arg0, arg1, false);
+			return TransformInfinityType.field1581 == arg0.field1438 ? arg0.field1439[arg0.method2015() - 1].field1660 : method7313(arg0, arg1, false);
 		} else if (arg0.field1444) {
 			return arg0.field1439[0].field1660;
 		} else {
@@ -135,15 +135,15 @@ public class class114 {
 		double var17 = (double) var15;
 		float var19 = (float) (var15 - var17);
 		if (arg2) {
-			if (class132.field1580 == arg0.field1437) {
+			if (TransformInfinityType.field1580 == arg0.field1437) {
 				if ((double) var19 == 0.0D) {
 					var12 = var5 - var12;
 				} else {
 					var12 += var4;
 				}
-			} else if (class132.field1582 == arg0.field1437 || class132.field1583 == arg0.field1437) {
+			} else if (TransformInfinityType.field1582 == arg0.field1437 || TransformInfinityType.field1583 == arg0.field1437) {
 				var12 = var5 - var12;
-			} else if (class132.field1585 == arg0.field1437) {
+			} else if (TransformInfinityType.field1585 == arg0.field1437) {
 				float var20 = var4 - arg1;
 				float var21 = arg0.field1439[0].field1661;
 				float var22 = arg0.field1439[0].field1662;
@@ -153,15 +153,15 @@ public class class114 {
 				}
 				return var23;
 			}
-		} else if (class132.field1580 == arg0.field1438) {
+		} else if (TransformInfinityType.field1580 == arg0.field1438) {
 			if ((double) var19 == 0.0D) {
 				var12 += var4;
 			} else {
 				var12 = var5 - var12;
 			}
-		} else if (class132.field1582 == arg0.field1438 || class132.field1583 == arg0.field1438) {
+		} else if (TransformInfinityType.field1582 == arg0.field1438 || TransformInfinityType.field1583 == arg0.field1438) {
 			var12 += var4;
-		} else if (class132.field1585 == arg0.field1438) {
+		} else if (TransformInfinityType.field1585 == arg0.field1438) {
 			float var24 = arg1 - var5;
 			float var25 = arg0.field1439[arg0.method2015() - 1].field1664;
 			float var26 = arg0.field1439[arg0.method2015() - 1].field1659;
@@ -172,10 +172,10 @@ public class class114 {
 			return var27;
 		}
 		float var28 = method9083(arg0, var12);
-		if (arg2 && class132.field1583 == arg0.field1437) {
+		if (arg2 && TransformInfinityType.field1583 == arg0.field1437) {
 			float var29 = arg0.field1439[arg0.method2015() - 1].field1660 - arg0.field1439[0].field1660;
 			var28 = (float) ((double) var28 - (double) var29 * var13);
-		} else if (!arg2 && class132.field1583 == arg0.field1438) {
+		} else if (!arg2 && TransformInfinityType.field1583 == arg0.field1438) {
 			float var30 = arg0.field1439[arg0.method2015() - 1].field1660 - arg0.field1439[0].field1660;
 			var28 = (float) ((double) var30 * var13 + (double) var28);
 		}

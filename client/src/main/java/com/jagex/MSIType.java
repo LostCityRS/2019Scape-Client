@@ -50,12 +50,12 @@ public class MSIType implements ConfigType {
 	}
 
 	@ObfuscatedName("aco.z(Ldh;IZI)Lcm;")
-	public class101 method15057(Renderer arg0, int arg1, boolean arg2) {
+	public Sprite method15057(Renderer arg0, int arg1, boolean arg2) {
 		long var4 = (long) (this.field9151 | arg1 << 16 | (arg2 ? 262144 : 0) | arg0.field1595 << 19);
-		class101 var6 = (class101) this.field9153.field9156.method2930(var4);
+		Sprite var6 = (Sprite) this.field9153.field9156.method2930(var4);
 		if (var6 == null) {
 			this.method15059(arg0, arg1, arg2, var4);
-			return (class101) this.field9153.field9156.method2930(var4);
+			return (Sprite) this.field9153.field9156.method2930(var4);
 		} else {
 			return var6;
 		}
@@ -109,7 +109,7 @@ public class MSIType implements ConfigType {
 				}
 			}
 		}
-		class101 var19 = arg0.method2200(var6, true);
+		Sprite var19 = arg0.method2200(var6, true);
 		if (var19 != null) {
 			this.field9153.field9156.method2921(var19, arg3);
 		}

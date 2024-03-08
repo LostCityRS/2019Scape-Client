@@ -191,7 +191,7 @@ public class RegistrationManager {
 				Statics.method17428();
 			}
 			if (Statics.field517 == class15.field515) {
-				client.field10835.method936(class561.method7130(Statics.field8751.method14764(), 40000), Statics.field8751.field8745);
+				client.field10835.method936(Stream.method7130(Statics.field8751.method14764(), 40000), Statics.field8751.field8745);
 				client.field10835.method952();
 				ClientMessage var1 = ClientMessage.method13920();
 				var1.field11432.p1(LoginProt.field3815.field3812);

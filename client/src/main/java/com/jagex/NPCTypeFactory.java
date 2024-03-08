@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("agy")
 public class NPCTypeFactory extends class261 {
 
-	public NPCTypeFactory(boolean arg0, class442 arg1, Language arg2, ModeGame arg3) {
+	public NPCTypeFactory(boolean arg0, Js5 arg1, Language arg2, ModeGame arg3) {
 		super(arg0, arg1, arg2, arg3);
 	}
 

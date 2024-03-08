@@ -5,16 +5,16 @@ import deob.ObfuscatedName;
 import java.util.zip.Inflater;
 
 @ObfuscatedName("adv")
-public class class804 {
+public class GZip {
 
 	@ObfuscatedName("adv.e")
 	public Inflater field9252;
 
-	public class804() {
+	public GZip() {
 		this(-1, 1000000, 1000000);
 	}
 
-	public class804(int arg0, int arg1, int arg2) {
+	public GZip(int arg0, int arg1, int arg2) {
 	}
 
 	@ObfuscatedName("adv.e([BI)[B")

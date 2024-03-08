@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("alx")
 public class EffectAnimTypeFactory extends class681 {
 
-	public EffectAnimTypeFactory(class442 arg0) {
+	public EffectAnimTypeFactory(Js5 arg0) {
 		super(arg0);
 	}
 

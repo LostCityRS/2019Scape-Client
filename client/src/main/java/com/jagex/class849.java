@@ -501,10 +501,10 @@ public class class849 extends Renderer {
 	public final byte[] field10020 = new byte[16384];
 
 	@ObfuscatedName("afa.in")
-	public class101 field9854 = null;
+	public Sprite field9854 = null;
 
 	@ObfuscatedName("afa.ir")
-	public class101 field9975 = null;
+	public Sprite field9975 = null;
 
 	@ObfuscatedName("afa.it")
 	public class840 field10024 = null;
@@ -1771,25 +1771,25 @@ public class class849 extends Renderer {
 	}
 
 	@ObfuscatedName("afa.cw(IIZZ)Lcm;")
-	public class101 method2197(int arg0, int arg1, boolean arg2, boolean arg3) {
+	public Sprite method2197(int arg0, int arg1, boolean arg2, boolean arg3) {
 		return new class830(this, arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("afa.co(Lde;Z)Lcm;")
-	public class101 method2200(class136 arg0, boolean arg1) {
+	public Sprite method2200(class136 arg0, boolean arg1) {
 		int[] var3 = arg0.method2604(false);
-		class101 var4 = this.method2199(var3, 0, arg0.method2639(), arg0.method2639(), arg0.method2631());
+		Sprite var4 = this.method2199(var3, 0, arg0.method2639(), arg0.method2639(), arg0.method2631());
 		var4.method1431(arg0.method2591(), arg0.method2593(), arg0.method2603(), arg0.method2651());
 		return var4;
 	}
 
 	@ObfuscatedName("afa.ct([IIIIIZ)Lcm;")
-	public class101 method2188(int[] arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public Sprite method2188(int[] arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		return new class830(this, arg3, arg4, arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("afa.cr(IIIIZ)Lcm;")
-	public class101 method2314(int arg0, int arg1, int arg2, int arg3, boolean arg4) {
+	public Sprite method2314(int arg0, int arg1, int arg2, int arg3, boolean arg4) {
 		return new class830(this, arg0, arg1, arg2, arg3);
 	}
 

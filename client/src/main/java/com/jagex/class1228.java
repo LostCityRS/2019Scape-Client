@@ -3,13 +3,13 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("atf")
-public class class1228 extends class1181 {
+public class class1228 extends Js5Request {
 
 	@ObfuscatedName("atf.r")
 	public int field12559;
 
 	@ObfuscatedName("atf.v")
-	public class560 field12556;
+	public DiskStore field12556;
 
 	@ObfuscatedName("atf.o")
 	public byte[] field12557;

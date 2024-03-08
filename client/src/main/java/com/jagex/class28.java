@@ -67,7 +67,7 @@ public class class28 {
 
 	@ObfuscatedName("ane.f(I)Lh;")
 	public static class28 method18618() {
-		class752 var0 = null;
+		FileOnDisk var0 = null;
 		class28 var7;
 		try {
 			var0 = GameShell.method18567("3", client.field10768.field8333, false);
@@ -96,7 +96,7 @@ public class class28 {
 
 	@ObfuscatedName("h.w(B)V")
 	public void method578() {
-		class752 var1 = null;
+		FileOnDisk var1 = null;
 		try {
 			var1 = GameShell.method18567("3", client.field10768.field8333, true);
 			Packet var2 = new Packet(5000);

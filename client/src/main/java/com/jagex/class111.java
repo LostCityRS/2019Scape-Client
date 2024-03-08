@@ -10,19 +10,19 @@ public class class111 {
 	}
 
 	@ObfuscatedName("cd.e(Lpy;II)Lde;")
-	public static class136 method1609(class442 arg0, int arg1, int arg2) {
+	public static class136 method1609(Js5 arg0, int arg1, int arg2) {
 		byte[] var3 = arg0.method6879(arg1, arg2);
 		return var3 == null ? null : method1615(var3)[0];
 	}
 
 	@ObfuscatedName("cd.n(Lpy;I)Lde;")
-	public static class136 method1607(class442 arg0, int arg1) {
+	public static class136 method1607(Js5 arg0, int arg1) {
 		byte[] var2 = arg0.method6894(arg1);
 		return var2 == null ? null : method1615(var2)[0];
 	}
 
 	@ObfuscatedName("cd.m(Lpy;II)[Lde;")
-	public static class136[] method1608(class442 arg0, int arg1, int arg2) {
+	public static class136[] method1608(Js5 arg0, int arg1, int arg2) {
 		byte[] var3 = arg0.method6879(arg1, arg2);
 		return var3 == null ? null : method1615(var3);
 	}

@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("aox")
 public class MSITypeList extends class758 {
 
-	public MSITypeList(ModeGame arg0, Language arg1, class442 arg2, class442 arg3) {
+	public MSITypeList(ModeGame arg0, Language arg1, Js5 arg2, Js5 arg3) {
 		super(arg0, arg1, arg2, Js5ConfigGroup.MSITYPE, 64, new MSITypeFactory(arg3, 64));
 	}
 

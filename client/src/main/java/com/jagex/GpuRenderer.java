@@ -24,7 +24,7 @@ public abstract class GpuRenderer extends Renderer {
 	public class790 field10031 = new class790();
 
 	@ObfuscatedName("afc.ay")
-	public final class442 field10041;
+	public final Js5 field10041;
 
 	@ObfuscatedName("afc.ab")
 	public boolean field10099;
@@ -590,7 +590,7 @@ public abstract class GpuRenderer extends Renderer {
 		Statics.method5134().method7902("jaclib");
 	}
 
-	public GpuRenderer(class125 arg0, class143 arg1, class383 arg2, class381 arg3, class378 arg4, class442 arg5, int arg6, int arg7) {
+	public GpuRenderer(class125 arg0, class143 arg1, class383 arg2, class381 arg3, class378 arg4, Js5 arg5, int arg6, int arg7) {
 		super(arg0, arg1, arg2, arg3, arg4);
 		new Stream();
 		this.field10058 = new class844[8];
@@ -1208,13 +1208,13 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.cw(IIZZ)Lcm;")
-	public final class101 method2197(int arg0, int arg1, boolean arg2, boolean arg3) {
+	public final Sprite method2197(int arg0, int arg1, boolean arg2, boolean arg3) {
 		return new class831(this, arg0, arg1, arg2, arg3);
 	}
 
 	@ObfuscatedName("afc.co(Lde;Z)Lcm;")
-	public final class101 method2200(class136 arg0, boolean arg1) {
-		class101 var4;
+	public final Sprite method2200(class136 arg0, boolean arg1) {
+		Sprite var4;
 		if (arg0.method2639() == 0 || arg0.method2631() == 0) {
 			var4 = this.method2199(new int[] { 0 }, 0, 1, 1, 1);
 		} else {
@@ -1226,12 +1226,12 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.ct([IIIIIZ)Lcm;")
-	public final class101 method2188(int[] arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public final Sprite method2188(int[] arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		return new class831(this, arg3, arg4, arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("afc.cr(IIIIZ)Lcm;")
-	public final class101 method2314(int arg0, int arg1, int arg2, int arg3, boolean arg4) {
+	public final Sprite method2314(int arg0, int arg1, int arg2, int arg3, boolean arg4) {
 		class831 var6 = new class831(this, arg2, arg3, arg4, false);
 		var6.method1440(0, 0, arg2, arg3, arg0, arg1);
 		return var6;

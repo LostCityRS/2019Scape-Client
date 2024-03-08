@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("pl")
-public class class439 {
+public class Js5ArchiveIndex {
 
 	@ObfuscatedName("pl.n")
 	public int field4385;
@@ -25,7 +25,7 @@ public class class439 {
 	public int[] field4390;
 
 	@ObfuscatedName("pl.u")
-	public class253 field4391;
+	public IntTreeMap field4391;
 
 	@ObfuscatedName("pl.z")
 	public int field4392;
@@ -58,12 +58,12 @@ public class class439 {
 	public int[][] field4401;
 
 	@ObfuscatedName("pl.x")
-	public class253[] field4402;
+	public IntTreeMap[] field4402;
 
 	@ObfuscatedName("pl.b")
 	public int[] field4403;
 
-	public class439(byte[] arg0, int arg1, byte[] arg2) {
+	public Js5ArchiveIndex(byte[] arg0, int arg1, byte[] arg2) {
 		this.field4385 = Packet.getcrc(arg0, arg0.length);
 		if (this.field4385 != arg1) {
 			throw new RuntimeException();
@@ -142,7 +142,7 @@ public class class439 {
 			for (int var14 = 0; var14 < this.field4387; var14++) {
 				this.field4390[this.field4394[var14]] = var2.g4s();
 			}
-			this.field4391 = new class253(this.field4390);
+			this.field4391 = new IntTreeMap(this.field4390);
 		}
 		for (int var15 = 0; var15 < this.field4387; var15++) {
 			this.field4393[this.field4394[var15]] = var2.g4s();
@@ -217,7 +217,7 @@ public class class439 {
 			return;
 		}
 		this.field4401 = new int[var10 + 1][];
-		this.field4402 = new class253[var10 + 1];
+		this.field4402 = new IntTreeMap[var10 + 1];
 		for (int var37 = 0; var37 < this.field4387; var37++) {
 			int var38 = this.field4394[var37];
 			int var39 = this.field4399[var38];
@@ -234,7 +234,7 @@ public class class439 {
 				}
 				this.field4401[var38][var42] = var2.g4s();
 			}
-			this.field4402[var38] = new class253(this.field4401[var38]);
+			this.field4402[var38] = new IntTreeMap(this.field4401[var38]);
 		}
 	}
 }

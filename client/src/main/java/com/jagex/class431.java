@@ -6,12 +6,12 @@ import deob.ObfuscatedName;
 public class class431 implements ResourceLoader {
 
 	@ObfuscatedName("pk.e")
-	public final class442 field4329;
+	public final Js5 field4329;
 
 	@ObfuscatedName("pk.n")
 	public final int field4330;
 
-	public class431(class442 arg0, int arg1) {
+	public class431(Js5 arg0, int arg1) {
 		this.field4329 = arg0;
 		this.field4330 = arg1;
 	}

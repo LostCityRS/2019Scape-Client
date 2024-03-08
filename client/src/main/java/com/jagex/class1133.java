@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("aqp")
 public class class1133 extends class906 {
 
-	public class1133(class442 arg0, class442 arg1, class1137 arg2) {
+	public class1133(Js5 arg0, Js5 arg1, class1137 arg2) {
 		super(arg0, arg1, arg2);
 	}
 

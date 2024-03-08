@@ -14,7 +14,7 @@ public class class488 {
 	}
 
 	@ObfuscatedName("ra.e(Ljava/awt/Canvas;Ldf;Les;Lnx;Lnb;Lnp;Lpy;I)Ldh;")
-	public static Renderer method7664(Canvas arg0, class125 arg1, class143 arg2, class383 arg3, class381 arg4, class378 arg5, class442 arg6, int arg7) {
+	public static Renderer method7664(Canvas arg0, class125 arg1, class143 arg2, class383 arg3, class381 arg4, class378 arg5, Js5 arg6, int arg7) {
 		try {
 			GpuRenderer.method15968();
 			Statics.method5134().method7902("jaggl");

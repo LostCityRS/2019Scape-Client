@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("ala")
 public class class1013 extends class583 implements ConfigTypeFactory {
 
-	public class1013(class442 arg0) {
+	public class1013(Js5 arg0) {
 		super(arg0);
 	}
 

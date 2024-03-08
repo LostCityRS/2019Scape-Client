@@ -100,8 +100,8 @@ public class class278 implements class281 {
 	}
 
 	@ObfuscatedName("cz.n(Lpy;IB)Lcm;")
-	public static class101 method1589(class442 arg0, int arg1) {
-		class101 var2 = (class101) field2930.method2930((long) arg1);
+	public static Sprite method1589(Js5 arg0, int arg1) {
+		Sprite var2 = (Sprite) field2930.method2930((long) arg1);
 		if (var2 == null) {
 			if (Statics.field2941) {
 				var2 = Statics.field8198.method2200(class111.method1607(arg0, arg1), true);
@@ -116,7 +116,7 @@ public class class278 implements class281 {
 	@ObfuscatedName("hp.k(B)Z")
 	public static boolean method4062() {
 		try {
-			class804 var0 = new class804();
+			GZip var0 = new GZip();
 			byte[] var1 = var0.method15246(field2927);
 			method3594(var1);
 			return true;
@@ -126,7 +126,7 @@ public class class278 implements class281 {
 	}
 
 	@ObfuscatedName("gh.f([BI)Lcm;")
-	public static class101 method3594(byte[] arg0) {
+	public static Sprite method3594(byte[] arg0) {
 		if (arg0 == null) {
 			throw new RuntimeException("");
 		}

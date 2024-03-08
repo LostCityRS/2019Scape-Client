@@ -159,7 +159,7 @@ public class class280 {
 		}
 		if (Statics.field3419 == class277.field2913) {
 			if (Statics.field1833 == null) {
-				Statics.field1833 = new class437(Statics.field4489, Statics.field4436, Statics.field4479, PublicKeys.field623, PublicKeys.field625);
+				Statics.field1833 = new Js5Client(Statics.field4489, Statics.field4436, Statics.field4479, PublicKeys.field623, PublicKeys.field625);
 			}
 			if (!Statics.field1833.method6834()) {
 				return 0;
@@ -468,7 +468,7 @@ public class class280 {
 
 	@ObfuscatedName("ux.c(I)V")
 	public static void method9212() {
-		class752 var0 = GameShell.method18567("2", client.field10768.field8333, false);
+		FileOnDisk var0 = GameShell.method18567("2", client.field10768.field8333, false);
 		Statics.field7228.method16420(var0);
 	}
 

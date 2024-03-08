@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ask")
-public abstract class class1181 extends class986 {
+public abstract class Js5Request extends class986 {
 
 	@ObfuscatedName("ask.l")
 	public boolean field12342;

@@ -616,7 +616,7 @@ public class class226 {
 	public class259 field2363;
 
 	@ObfuscatedName("gb.e(Lpy;Lpy;Lpy;Lpy;I)V")
-	public static void method3669(class442 arg0, class442 arg1, class442 arg2, class442 arg3) {
+	public static void method3669(Js5 arg0, Js5 arg1, Js5 arg2, Js5 arg3) {
 		Statics.field7085 = arg0;
 		Statics.field1707 = arg1;
 		Statics.field8370 = arg2;
@@ -979,10 +979,10 @@ public class class226 {
 	}
 
 	@ObfuscatedName("hf.c(Ldh;B)Lcm;")
-	public class101 method3941(Renderer arg0) {
+	public Sprite method3941(Renderer arg0) {
 		field2338 = false;
 		long var2 = ((long) this.field2219 << 40) + ((long) this.field2218 << 36) + (long) this.field2215 + ((this.field2222 ? 1L : 0L) << 35) + ((this.field2220 ? 1L : 0L) << 38) + ((this.field2213 ? 1L : 0L) << 39);
-		class101 var4 = (class101) field2175.method2930(var2);
+		Sprite var4 = (Sprite) field2175.method2930(var2);
 		if (var4 != null) {
 			return var4;
 		}
@@ -1011,7 +1011,7 @@ public class class226 {
 		if (this.field2219 != 0) {
 			var5.method2600(this.field2219 | 0xFF000000);
 		}
-		class101 var6 = arg0.method2200(var5, true);
+		Sprite var6 = arg0.method2200(var5, true);
 		field2175.method2922(var6, var2, var6.method1459() * var6.method1435() * 4);
 		return var6;
 	}

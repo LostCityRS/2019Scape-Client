@@ -6,16 +6,16 @@ import java.io.EOFException;
 import java.io.IOException;
 
 @ObfuscatedName("uf")
-public final class class560 {
+public final class DiskStore {
 
 	@ObfuscatedName("uf.e")
 	public static byte[] field7090 = new byte[520];
 
 	@ObfuscatedName("uf.n")
-	public class753 field7087 = null;
+	public BufferedFile field7087 = null;
 
 	@ObfuscatedName("uf.m")
-	public class753 field7088 = null;
+	public BufferedFile field7088 = null;
 
 	@ObfuscatedName("uf.k")
 	public int field7086;
@@ -23,7 +23,7 @@ public final class class560 {
 	@ObfuscatedName("uf.f")
 	public int field7089 = 65000;
 
-	public class560(int arg0, class753 arg1, class753 arg2, int arg3) {
+	public DiskStore(int arg0, BufferedFile arg1, BufferedFile arg2, int arg3) {
 		this.field7086 = arg0;
 		this.field7087 = arg1;
 		this.field7088 = arg2;
@@ -32,7 +32,7 @@ public final class class560 {
 
 	@ObfuscatedName("uf.e(II)[B")
 	public byte[] method9010(int arg0) {
-		class753 var2 = this.field7087;
+		BufferedFile var2 = this.field7087;
 		synchronized (this.field7087) {
 			Object var10000;
 			try {
@@ -114,7 +114,7 @@ public final class class560 {
 
 	@ObfuscatedName("uf.n(I[BII)Z")
 	public boolean method9011(int arg0, byte[] arg1, int arg2) {
-		class753 var4 = this.field7087;
+		BufferedFile var4 = this.field7087;
 		synchronized (this.field7087) {
 			if (arg2 < 0 || arg2 > this.field7089) {
 				throw new IllegalArgumentException("" + this.field7086 + ',' + arg0 + ',' + arg2);
@@ -129,7 +129,7 @@ public final class class560 {
 
 	@ObfuscatedName("uf.m(I[BIZB)Z")
 	public boolean method9012(int arg0, byte[] arg1, int arg2, boolean arg3) {
-		class753 var5 = this.field7087;
+		BufferedFile var5 = this.field7087;
 		synchronized (this.field7087) {
 			try {
 				int var6;

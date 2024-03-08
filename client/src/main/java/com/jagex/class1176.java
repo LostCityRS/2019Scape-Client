@@ -37,7 +37,7 @@ public class class1176 extends class986 {
 	public boolean field12318;
 
 	@ObfuscatedName("vz.e(Lpy;Lpy;B)V")
-	public static void method9558(class442 arg0, class442 arg1) {
+	public static void method9558(Js5 arg0, Js5 arg1) {
 		Statics.field7411 = arg0;
 		Statics.field8302 = arg1;
 	}
@@ -52,7 +52,7 @@ public class class1176 extends class986 {
 			return true;
 		}
 		if (this.field12314 == null) {
-			class442 var1 = Statics.field7411;
+			Js5 var1 = Statics.field7411;
 			synchronized (Statics.field7411) {
 				this.field12314 = Statics.field7411.method6894(this.field12315);
 				if (this.field12314 == null) {
@@ -64,7 +64,7 @@ public class class1176 extends class986 {
 		Packet var4 = new Packet(this.field12314);
 		int var5 = var4.g1();
 		int var6 = var4.g2();
-		class442 var7 = Statics.field8302;
+		Js5 var7 = Statics.field8302;
 		boolean var8;
 		synchronized (Statics.field8302) {
 			var8 = var3 & Statics.field8302.method6889(var6);
@@ -72,7 +72,7 @@ public class class1176 extends class986 {
 		if (!var8) {
 			return false;
 		}
-		class442 var10 = Statics.field7411;
+		Js5 var10 = Statics.field7411;
 		synchronized (Statics.field7411) {
 			this.field12317 = new class971(var6, Statics.field8302.method6894(var6));
 			this.method19379(var4, var5);
@@ -89,9 +89,9 @@ public class class1176 extends class986 {
 		int var3 = arg0.g2();
 		this.field12322 = new class124[this.field12317.field11313][];
 		for (int var4 = 0; var4 < var3; var4++) {
-			class115 var5 = class115.method19197(arg0.g1());
+			TransformType var5 = TransformType.method19197(arg0.g1());
 			int var6 = arg0.gSmart1or2s();
-			class100 var7 = class100.method8644(arg0.g1());
+			TransformComponentType var7 = TransformComponentType.method8644(arg0.g1());
 			class124 var8 = new class124();
 			var8.method2036(arg0, arg1);
 			int var9 = var5.method1674();
@@ -99,11 +99,11 @@ public class class1176 extends class986 {
 				this.field12322[var6] = new class124[var9];
 			}
 			this.field12322[var6][var7.method1421()] = var8;
-			if (class115.field1297 == var5) {
+			if (TransformType.field1297 == var5) {
 				this.field12318 = true;
-			} else if (class115.field1291 == var5) {
+			} else if (TransformType.field1291 == var5) {
 				this.field12320 = true;
-			} else if (class115.field1294 == var5) {
+			} else if (TransformType.field1294 == var5) {
 				this.field12321 = true;
 			}
 		}

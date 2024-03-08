@@ -8,7 +8,7 @@ public class class625 {
 	@ObfuscatedName("wx.e")
 	public class588 field7675;
 
-	public class625(class442 arg0) {
+	public class625(Js5 arg0) {
 		byte[] var2 = arg0.method6894(class628.field7706.field7708);
 		if (var2 != null) {
 			this.method9847(new Packet(var2));

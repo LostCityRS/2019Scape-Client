@@ -1354,9 +1354,9 @@ public final class client extends GameShell {
 			Statics.field8752.field8745 = Statics.field11885.getCodeBase().getHost();
 		}
 		Statics.field8755 = Statics.field8752;
-		Statics.field4479 = new class446();
-		Statics.field4489 = new class937();
-		Statics.field4436 = new class448(Statics.field8758.field8745, Statics.field8758.field8744, field10768.field8339);
+		Statics.field4479 = new Js5DiskCache();
+		Statics.field4489 = new ClientJs5TcpClient();
+		Statics.field4436 = new Js5HttpClient(Statics.field8758.field8745, Statics.field8758.field8744, field10768.field8339);
 		if (field10768 == ModeGame.field8335) {
 			field10809 = false;
 		}
@@ -1368,7 +1368,7 @@ public final class client extends GameShell {
 		Statics.field11931 = class563.method15006(Statics.field10578);
 		Statics.field9182 = class564.method6806(Statics.field10578, true);
 		if (field6615 != null) {
-			Statics.field1749 = new class560(255, field6615, field6619, 2000000);
+			Statics.field1749 = new DiskStore(255, field6615, field6619, 2000000);
 		}
 		Statics.field9155 = new class893(field11034);
 		try {
@@ -1541,7 +1541,7 @@ public final class client extends GameShell {
 					try {
 						BufferedImage var18 = ImageIO.read(new ByteArrayInputStream(var17));
 						int[] var19 = Statics.method14804(var18);
-						class101 var20 = Statics.field8198.method2199(var19, 0, var18.getWidth(), var18.getWidth(), var18.getHeight());
+						Sprite var20 = Statics.field8198.method2199(var19, 0, var18.getWidth(), var18.getWidth(), var18.getHeight());
 						field11013.method2921(var20, (long) (Integer) var15.getKey());
 					} catch (IOException var22) {
 						class1211.method9845(Statics.field8301.method8038(), var22);
@@ -1881,7 +1881,7 @@ public final class client extends GameShell {
 				field10827++;
 			}
 			if (field10827 == 1) {
-				Statics.field7571 = class561.method7130(Statics.field9774, 131072);
+				Statics.field7571 = Stream.method7130(Statics.field9774, 131072);
 				int var1 = field10789.length() + 10;
 				Packet var2 = new Packet(var1 + 2);
 				var2.p1(LoginProt.field3820.field3812);
@@ -2014,21 +2014,21 @@ public final class client extends GameShell {
 	}
 
 	@ObfuscatedName("ko.ez(Labd;ZIZZI)Lpy;")
-	public static class442 method5156(Js5Archive arg0, boolean arg1, int arg2, boolean arg3, boolean arg4) {
+	public static Js5 method5156(Js5Archive arg0, boolean arg1, int arg2, boolean arg3, boolean arg4) {
 		if (Statics.field6888 == null) {
-			Statics.field6888 = new class936[Js5Archive.getRequiredArrayLength()];
+			Statics.field6888 = new Js5NetResourceProvider[Js5Archive.getRequiredArrayLength()];
 			Statics.field8540 = new HashMap();
 		}
-		class560 var5 = null;
+		DiskStore var5 = null;
 		int var6 = arg0.getArchiveId();
 		if (field6615 != null && !Statics.field7880) {
-			var5 = new class560(var6, field6615, Statics.field7422[var6], var6 == Js5Archive.DLLS.getArchiveId() ? 8000000 : 2500000);
+			var5 = new DiskStore(var6, field6615, Statics.field7422[var6], var6 == Js5Archive.DLLS.getArchiveId() ? 8000000 : 2500000);
 		}
 		Statics.field6888[var6] = Statics.field1833.method6835(var6, var5, Statics.field1749, arg0.getDefaultName());
 		if (arg4) {
 			Statics.field6888[var6].method16829();
 		}
-		class442 var7 = new class442(Statics.field6888[var6], arg1, arg2);
+		Js5 var7 = new Js5(Statics.field6888[var6], arg1, arg2);
 		Statics.field8540.put(arg0, var7);
 		return var7;
 	}
@@ -2790,7 +2790,7 @@ public final class client extends GameShell {
 
 	@ObfuscatedName("aax.fo(I)V")
 	public static void method14147() {
-		class752 var0 = GameShell.method18567("2", field10768.field8333, true);
+		FileOnDisk var0 = GameShell.method18567("2", field10768.field8333, true);
 		Statics.field7228.method16418(var0);
 	}
 
@@ -6119,7 +6119,7 @@ public final class client extends GameShell {
 			if (var8 != null && var8.field745 == 2) {
 				method18486(var8.field749, var8.field746 * 262144, var8.field747 * 512, 0, var8.field742 * 2, false, false);
 				if (field10922[0] > -1.0F && field10903 % 20 < 10) {
-					class101 var9 = Statics.field8323[var8.field751];
+					Sprite var9 = Statics.field8323[var8.field751];
 					int var10 = (int) (field10922[0] + (float) arg0 - 12.0F);
 					int var11 = (int) (field10922[1] + (float) arg1 - 28.0F);
 					var9.method1439(var10, var11);
@@ -6202,8 +6202,8 @@ public final class client extends GameShell {
 						if (var19 != null) {
 							HeadbarType var20 = var18.field11215;
 							class1130 var21 = field10944[var7[var9]];
-							class101 var22;
-							class101 var23;
+							Sprite var22;
+							Sprite var23;
 							if (var21 == null || class202.field1950 == var21.field12070) {
 								var22 = var20.method9150(Statics.field8198, var20.field7215);
 								var23 = var20.method9150(Statics.field8198, var20.field7217);
@@ -6269,7 +6269,7 @@ public final class client extends GameShell {
 								int var39 = var36.field12054[var37];
 								int var40 = var36.field12055[var37];
 								long var41 = (long) (var40 << 8 | var39);
-								class101 var43 = (class101) field10894.method2930(var41);
+								Sprite var43 = (Sprite) field10894.method2930(var41);
 								if (var43 == null) {
 									class136[] var44 = class111.method1608(Statics.field10317, var40, 0);
 									if (var44 == null) {
@@ -6294,7 +6294,7 @@ public final class client extends GameShell {
 								if (var47[var48] >= 0 && var46[var48] >= 0) {
 									Object var49 = null;
 									long var50 = (long) (var46[var48] << 8 | var47[var48]);
-									class101 var52 = (class101) field10894.method2930(var50);
+									Sprite var52 = (Sprite) field10894.method2930(var50);
 									if (var52 == null) {
 										class136[] var53 = class111.method1608(Statics.field10317, var46[var48], 0);
 										if (var53 == null) {
@@ -6320,7 +6320,7 @@ public final class client extends GameShell {
 					for (int var62 = 0; var62 < var61.length; var62++) {
 						class45 var63 = var61[var62];
 						if (var63 != null && var63.field745 == 1 && var63.field744 == field11036[var9 - var6]) {
-							class101 var64 = Statics.field8323[var63.field751];
+							Sprite var64 = Statics.field8323[var63.field751];
 							if (var64.method1435() > var60) {
 								var60 = var64.method1435();
 							}
@@ -6345,7 +6345,7 @@ public final class client extends GameShell {
 					for (int var56 = 0; var56 < var55.length; var56++) {
 						class45 var57 = var55[var56];
 						if (var57 != null && var57.field745 == 10 && var57.field744 == var7[var9]) {
-							class101 var58 = Statics.field8323[var57.field751];
+							Sprite var58 = Statics.field8323[var57.field751];
 							if (var58.method1435() > var54) {
 								var54 = var58.method1435();
 							}
@@ -6406,10 +6406,10 @@ public final class client extends GameShell {
 								int var85 = 0;
 								int var86 = 0;
 								int var87 = 0;
-								class101 var88 = null;
-								class101 var89 = null;
-								class101 var90 = null;
-								class101 var91 = null;
+								Sprite var88 = null;
+								Sprite var89 = null;
+								Sprite var90 = null;
+								Sprite var91 = null;
 								int var92 = 0;
 								int var93 = 0;
 								int var94 = 0;
@@ -6418,25 +6418,25 @@ public final class client extends GameShell {
 								int var97 = 0;
 								int var98 = 0;
 								int var99 = 0;
-								class101 var100 = var71.method9258(Statics.field8198);
+								Sprite var100 = var71.method9258(Statics.field8198);
 								if (var100 != null) {
 									var80 = var100.method1459();
 									var100.method1432(field11113);
 									var84 = field11113[0];
 								}
-								class101 var101 = var71.method9253(Statics.field8198);
+								Sprite var101 = var71.method9253(Statics.field8198);
 								if (var101 != null) {
 									var81 = var101.method1459();
 									var101.method1432(field11113);
 									var85 = field11113[0];
 								}
-								class101 var102 = var71.method9254(Statics.field8198);
+								Sprite var102 = var71.method9254(Statics.field8198);
 								if (var102 != null) {
 									var82 = var102.method1459();
 									var102.method1432(field11113);
 									var86 = field11113[0];
 								}
-								class101 var103 = var71.method9255(Statics.field8198);
+								Sprite var103 = var71.method9255(Statics.field8198);
 								if (var103 != null) {
 									var83 = var103.method1459();
 									var103.method1432(field11113);
@@ -6783,7 +6783,7 @@ public final class client extends GameShell {
 			return;
 		}
 		Object var10 = null;
-		class101 var11 = (class101) field10830.method2930((long) var9);
+		Sprite var11 = (Sprite) field10830.method2930((long) var9);
 		if (var11 == null) {
 			class136[] var12 = class111.method1608(Statics.field10317, var9, 0);
 			if (var12 == null) {
@@ -6816,11 +6816,11 @@ public final class client extends GameShell {
 		int var4 = field10866;
 		int var5 = field10924;
 		if (field10926 == 1) {
-			class101 var6 = Statics.field11793[field10925 * 400 / 100];
+			Sprite var6 = Statics.field11793[field10925 * 400 / 100];
 			var6.method1439(var4 - 8, var5 - 8);
 		}
 		if (field10926 == 2) {
-			class101 var7 = Statics.field11793[field10925 * 400 / 100 + 4];
+			Sprite var7 = Statics.field11793[field10925 * 400 / 100 + 4];
 			var7.method1439(var4 - 8, var5 - 8);
 		}
 	}
@@ -6982,7 +6982,7 @@ public final class client extends GameShell {
 
 	@ObfuscatedName("yx.ih(Lax;B)Z")
 	public static final boolean method10616(class49 arg0) throws IOException {
-		class561 var1 = arg0.method939();
+		Stream var1 = arg0.method939();
 		PacketBit var2 = arg0.field795;
 		if (var1 == null) {
 			return false;
@@ -11163,7 +11163,7 @@ public final class client extends GameShell {
 								continue;
 							}
 							if (class226.field2163 == var11.field2185) {
-								class101 var26 = TwitchHardwarePlatform.method4367();
+								Sprite var26 = TwitchHardwarePlatform.method4367();
 								if (var26 != null) {
 									int var27 = arg4 - arg2;
 									int var28 = arg5 - arg3;
@@ -11285,14 +11285,14 @@ public final class client extends GameShell {
 								if (var11.field2339 >= 0) {
 									var11.method4012(Statics.field2879, Statics.field687).method7945(Statics.field8198, 0, var13, var14, var11.field2196, var11.field2197, var11.field2348 << 3, var11.field2162 << 3, 0, 0);
 								} else {
-									class101 var48;
+									Sprite var48;
 									if (var11.field2334 != -1) {
 										class639 var47 = var11.field2246 ? Statics.field4490.field12061 : null;
 										var48 = Statics.field1842.method18900(Statics.field8198, var11.field2334, var11.field2335, var11.field2218, var11.field2219 | 0xFF000000, var11.field2241, var47);
 									} else if (var11.field2188 == -1) {
 										var48 = var11.method3941(Statics.field8198);
 									} else {
-										var48 = (class101) field11013.method2930((long) var11.field2188);
+										var48 = (Sprite) field11013.method2930((long) var11.field2188);
 										if (var48 == null && !field11093.containsKey(var11.field2188)) {
 											try {
 												field11093.put(var11.field2188, Statics.field7957.method563(new URL(field10947 + "/img/image_" + var11.field2188 + ".png?a=" + class213.method3655())));

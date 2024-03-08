@@ -8,7 +8,7 @@ import java.io.IOException;
 public class class49 {
 
 	@ObfuscatedName("ax.e")
-	public class561 field800;
+	public Stream field800;
 
 	@ObfuscatedName("ax.n")
 	public IterableQueue field803 = new IterableQueue();
@@ -124,7 +124,7 @@ public class class49 {
 	}
 
 	@ObfuscatedName("ax.f(Luz;Ljava/lang/String;I)V")
-	public void method936(class561 arg0, String arg1) {
+	public void method936(Stream arg0, String arg1) {
 		this.field800 = arg0;
 		this.field807.method115(arg1);
 	}
@@ -145,7 +145,7 @@ public class class49 {
 	}
 
 	@ObfuscatedName("ax.u(B)Luz;")
-	public class561 method939() {
+	public Stream method939() {
 		return this.field800;
 	}
 }

@@ -88,21 +88,21 @@ public class HeadbarType implements ConfigType {
 	}
 
 	@ObfuscatedName("uk.z(Ldh;IB)Lcm;")
-	public class101 method9150(Renderer arg0, int arg1) {
+	public Sprite method9150(Renderer arg0, int arg1) {
 		if (arg1 < 0) {
 			return null;
 		}
-		class101 var3 = (class101) this.field7226.field7230.method2930((long) arg1);
+		Sprite var3 = (Sprite) this.field7226.field7230.method2930((long) arg1);
 		if (var3 == null) {
 			this.method9152(arg0);
-			var3 = (class101) this.field7226.field7230.method2930((long) arg1);
+			var3 = (Sprite) this.field7226.field7230.method2930((long) arg1);
 		}
 		return var3;
 	}
 
 	@ObfuscatedName("uk.p(Ldh;II)V")
 	public void method9151(Renderer arg0, int arg1) {
-		class442 var3 = this.field7226.field7229;
+		Js5 var3 = this.field7226.field7229;
 		if (arg1 >= 0 && this.field7226.field7230.method2930((long) arg1) == null && var3.method6889(arg1)) {
 			class136 var4 = class111.method1607(var3, arg1);
 			this.field7226.field7230.method2921(arg0.method2200(var4, true), (long) arg1);

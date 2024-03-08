@@ -10,10 +10,10 @@ public class class298 implements class302 {
 	public final class315 field3039;
 
 	@ObfuscatedName("kg.n")
-	public final class442 field3042;
+	public final Js5 field3042;
 
 	@ObfuscatedName("kg.m")
-	public final class442 field3043;
+	public final Js5 field3043;
 
 	@ObfuscatedName("kg.k")
 	public class140 field3041;
@@ -24,7 +24,7 @@ public class class298 implements class302 {
 	@ObfuscatedName("kg.w")
 	public int field3038;
 
-	public class298(class442 arg0, class442 arg1, class315 arg2) {
+	public class298(Js5 arg0, Js5 arg1, class315 arg2) {
 		this.field3042 = arg0;
 		this.field3043 = arg1;
 		this.field3039 = arg2;

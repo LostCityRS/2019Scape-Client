@@ -116,13 +116,13 @@ public class class848 extends Renderer {
 	public WeightedCache field9810;
 
 	@ObfuscatedName("afg.bz")
-	public class101 field9811;
+	public Sprite field9811;
 
 	@ObfuscatedName("afg.bv")
 	public int field9812;
 
 	@ObfuscatedName("afg.br")
-	public class101 field9786;
+	public Sprite field9786;
 
 	@ObfuscatedName("afg.bg")
 	public class840 field9775;
@@ -1852,12 +1852,12 @@ public class class848 extends Renderer {
 	}
 
 	@ObfuscatedName("afg.cw(IIZZ)Lcm;")
-	public class101 method2197(int arg0, int arg1, boolean arg2, boolean arg3) {
+	public Sprite method2197(int arg0, int arg1, boolean arg2, boolean arg3) {
 		return arg2 ? new class1115(this, arg0, arg1) : new class1114(this, arg0, arg1);
 	}
 
 	@ObfuscatedName("afg.ct([IIIIIZ)Lcm;")
-	public class101 method2188(int[] arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public Sprite method2188(int[] arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		boolean var7 = false;
 		int var8 = arg1;
 		for (int var9 = 0; var9 < arg4; var9++) {
@@ -1873,7 +1873,7 @@ public class class848 extends Renderer {
 	}
 
 	@ObfuscatedName("afg.co(Lde;Z)Lcm;")
-	public class101 method2200(class136 arg0, boolean arg1) {
+	public Sprite method2200(class136 arg0, boolean arg1) {
 		int var3 = arg0.method2639();
 		int var4 = arg0.method2631();
 		class829 var12;
@@ -1904,7 +1904,7 @@ public class class848 extends Renderer {
 	}
 
 	@ObfuscatedName("afg.cr(IIIIZ)Lcm;")
-	public class101 method2314(int arg0, int arg1, int arg2, int arg3, boolean arg4) {
+	public Sprite method2314(int arg0, int arg1, int arg2, int arg3, boolean arg4) {
 		if (this.field9778 == null) {
 			throw new IllegalStateException("");
 		}
@@ -2118,7 +2118,7 @@ public class class848 extends Renderer {
 			return;
 		}
 		if (this.field9812 != var9) {
-			class101 var12 = (class101) this.field9810.method2930((long) var9);
+			Sprite var12 = (Sprite) this.field9810.method2930((long) var9);
 			if (var12 == null) {
 				class118 var13 = this.field1597.method2043(var9);
 				int[] var14 = this.method15655(var9);
@@ -2145,7 +2145,7 @@ public class class848 extends Renderer {
 			class118 var13 = this.field1597.method2043(arg8);
 			if (!var13.field1342) {
 				if (this.field9812 != arg8) {
-					class101 var14 = (class101) this.field9810.method2930((long) arg8);
+					Sprite var14 = (Sprite) this.field9810.method2930((long) arg8);
 					if (var14 == null) {
 						int[] var15 = this.method15655(arg8);
 						if (var15 == null) {

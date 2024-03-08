@@ -9,7 +9,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 @ObfuscatedName("pu")
-public class class448 {
+public class Js5HttpClient {
 
 	@ObfuscatedName("pu.e")
 	public String field4474;
@@ -32,7 +32,7 @@ public class class448 {
 	@ObfuscatedName("pu.c")
 	public boolean field4468 = false;
 
-	public class448(String arg0, int arg1, int arg2) {
+	public Js5HttpClient(String arg0, int arg1, int arg2) {
 		this.field4474 = arg0;
 		this.field4465 = arg1;
 		this.field4473 = arg2;
@@ -44,12 +44,12 @@ public class class448 {
 	}
 
 	@ObfuscatedName("pu.n(I)Latb;")
-	public class1229 method7049() {
+	public Js5HttpRequest method7049() {
 		return this.method7068(255, 255, (byte) 0, true, 0, 0);
 	}
 
 	@ObfuscatedName("pu.m(IIBZIII)Latb;")
-	public class1229 method7068(int arg0, int arg1, byte arg2, boolean arg3, int arg4, int arg5) {
+	public Js5HttpRequest method7068(int arg0, int arg1, byte arg2, boolean arg3, int arg4, int arg5) {
 		if (arg0 < 0 || arg1 < 0) {
 			throw new RuntimeException(arg0 + "," + arg1);
 		} else if (this.method7048()) {
@@ -74,7 +74,7 @@ public class class448 {
 				} catch (MalformedURLException var14) {
 					return null;
 				}
-				class1229 var12 = new class1229(arg2);
+				Js5HttpRequest var12 = new Js5HttpRequest(arg2);
 				var12.field12342 = arg3;
 				this.field4467++;
 				Future var13 = this.field4469.submit(new class444(this, var10, var12));

@@ -11,15 +11,15 @@ import java.util.concurrent.Callable;
 public class class444 implements Callable {
 
 	// $FF: synthetic field
-	public final class448 this$0;
+	public final Js5HttpClient this$0;
 
 	@ObfuscatedName("pv.e")
 	public URL field4429;
 
 	@ObfuscatedName("pv.n")
-	public class1229 field4428;
+	public Js5HttpRequest field4428;
 
-	public class444(class448 arg0, URL arg1, class1229 arg2) {
+	public class444(Js5HttpClient arg0, URL arg1, Js5HttpRequest arg2) {
 		this.this$0 = arg0;
 		this.field4429 = arg1;
 		this.field4428 = arg2;

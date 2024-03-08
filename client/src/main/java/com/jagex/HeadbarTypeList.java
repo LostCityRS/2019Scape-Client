@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("aol")
 public class HeadbarTypeList extends class758 {
 
-	public HeadbarTypeList(ModeGame arg0, Language arg1, class442 arg2, class442 arg3) {
+	public HeadbarTypeList(ModeGame arg0, Language arg1, Js5 arg2, Js5 arg3) {
 		super(arg0, arg1, arg2, Js5ConfigGroup.HEADBARTYPE, 64, new HeadbarTypeFactory(arg3));
 	}
 

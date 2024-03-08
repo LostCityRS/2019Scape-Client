@@ -14,7 +14,7 @@ public abstract class class166 implements ConfigTypeFactory {
 	@ObfuscatedName("fu.m")
 	public final WeightedCache field1796 = new WeightedCache(100);
 
-	public class166(ConfigTypeList arg0, class442 arg1, class442 arg2, class442 arg3) {
+	public class166(ConfigTypeList arg0, Js5 arg1, Js5 arg2, Js5 arg3) {
 		this.field1795 = arg0;
 		class1177.method9393(arg1, arg3, 2);
 		class1176.method9558(arg2, arg3);

@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("aoj")
 public class HitmarkTypeList extends class758 {
 
-	public HitmarkTypeList(ModeGame arg0, Language arg1, class442 arg2, class442 arg3) {
+	public HitmarkTypeList(ModeGame arg0, Language arg1, Js5 arg2, Js5 arg3) {
 		super(arg0, arg1, arg2, Js5ConfigGroup.HITMARKTYPE, 64, new class1013(arg3));
 	}
 

@@ -6,15 +6,15 @@ import deob.ObfuscatedName;
 public class class458 {
 
 	@ObfuscatedName("qr.e")
-	public final class442 field4616;
+	public final Js5 field4616;
 
 	@ObfuscatedName("qr.n")
-	public final class442 field4614;
+	public final Js5 field4614;
 
 	@ObfuscatedName("qr.m")
 	public final WeightedCache field4615 = new WeightedCache(64);
 
-	public class458(Language arg0, class442 arg1, class442 arg2) {
+	public class458(Language arg0, Js5 arg1, Js5 arg2) {
 		this.field4616 = arg1;
 		this.field4614 = arg2;
 		if (this.field4616 != null) {

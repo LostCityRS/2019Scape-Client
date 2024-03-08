@@ -793,7 +793,7 @@ public class ObjType implements ConfigType {
 		if (var19) {
 			var20.method1699(this.field8686, this.field8681, this.field8682);
 		}
-		class101 var21 = null;
+		Sprite var21 = null;
 		if (this.field8663 != -1) {
 			var21 = this.field8621.method14617(arg0, arg1, this.field8673, 10, 1, 0, true, true, 0, arg7, arg8, arg9, this.field8625);
 			if (var21 == null) {

@@ -65,7 +65,7 @@ public abstract class Renderer {
 	public float field1602 = 0.0F;
 
 	@ObfuscatedName("aac.e(ILjava/awt/Canvas;Ldf;Les;Lnx;Lnb;Lnp;Lpy;II)Ldh;")
-	public static Renderer method14575(int arg0, Canvas arg1, class125 arg2, class143 arg3, class383 arg4, class381 arg5, class378 arg6, class442 arg7, int arg8) {
+	public static Renderer method14575(int arg0, Canvas arg1, class125 arg2, class143 arg3, class383 arg4, class381 arg5, class378 arg6, Js5 arg7, int arg8) {
 		int var9 = 0;
 		int var10 = 0;
 		if (arg1 != null) {
@@ -288,12 +288,12 @@ public abstract class Renderer {
 	}
 
 	@ObfuscatedName("dh.cx(IIZI)Lcm;")
-	public class101 method2365(int arg0, int arg1, boolean arg2) {
+	public Sprite method2365(int arg0, int arg1, boolean arg2) {
 		return this.method2197(arg0, arg1, arg2, false);
 	}
 
 	@ObfuscatedName("dh.cf([IIIIII)Lcm;")
-	public class101 method2199(int[] arg0, int arg1, int arg2, int arg3, int arg4) {
+	public Sprite method2199(int[] arg0, int arg1, int arg2, int arg3, int arg4) {
 		return this.method2188(arg0, arg1, arg2, arg3, arg4, true);
 	}
 
@@ -538,7 +538,7 @@ public abstract class Renderer {
 	public abstract void method2187(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8);
 
 	@ObfuscatedName("dh.ct([IIIIIZ)Lcm;")
-	public abstract class101 method2188(int[] arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5);
+	public abstract Sprite method2188(int[] arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5);
 
 	@ObfuscatedName("dh.ce(IIIIIII)V")
 	public abstract void method2189(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6);
@@ -556,13 +556,13 @@ public abstract class Renderer {
 	public abstract boolean method2196();
 
 	@ObfuscatedName("dh.cw(IIZZ)Lcm;")
-	public abstract class101 method2197(int arg0, int arg1, boolean arg2, boolean arg3);
+	public abstract Sprite method2197(int arg0, int arg1, boolean arg2, boolean arg3);
 
 	@ObfuscatedName("dh.dt(Ldm;)V")
 	public abstract void method2198(ParticleList arg0);
 
 	@ObfuscatedName("dh.co(Lde;Z)Lcm;")
-	public abstract class101 method2200(class136 arg0, boolean arg1);
+	public abstract Sprite method2200(class136 arg0, boolean arg1);
 
 	@ObfuscatedName("dh.cb(II[I[I)Lch;")
 	public abstract class103 method2205(int arg0, int arg1, int[] arg2, int[] arg3);
@@ -673,7 +673,7 @@ public abstract class Renderer {
 	public abstract boolean method2304();
 
 	@ObfuscatedName("dh.cr(IIIIZ)Lcm;")
-	public abstract class101 method2314(int arg0, int arg1, int arg2, int arg3, boolean arg4);
+	public abstract Sprite method2314(int arg0, int arg1, int arg2, int arg3, boolean arg4);
 
 	@ObfuscatedName("dh.bx([I)V")
 	public abstract void method2326(int[] arg0);

@@ -6,9 +6,9 @@ import deob.ObfuscatedName;
 public class LocTypeFactory extends class599 implements ConfigTypeFactory {
 
 	@ObfuscatedName("alf.z")
-	public final class442 field11701;
+	public final Js5 field11701;
 
-	public LocTypeFactory(boolean arg0, class442 arg1, Language arg2, ModeGame arg3) {
+	public LocTypeFactory(boolean arg0, Js5 arg1, Language arg2, ModeGame arg3) {
 		super(arg0, arg2, arg3);
 		this.field11701 = arg1;
 	}
@@ -25,7 +25,7 @@ public class LocTypeFactory extends class599 implements ConfigTypeFactory {
 
 	@ObfuscatedName("alf.w(II)[B")
 	public byte[] method9530(int arg0) {
-		class442 var2 = this.field11701;
+		Js5 var2 = this.field11701;
 		synchronized (this.field11701) {
 			return this.field11701.method6879(arg0, 0);
 		}
@@ -33,7 +33,7 @@ public class LocTypeFactory extends class599 implements ConfigTypeFactory {
 
 	@ObfuscatedName("alf.l(IS)Z")
 	public boolean method9525(int arg0) {
-		class442 var2 = this.field11701;
+		Js5 var2 = this.field11701;
 		synchronized (this.field11701) {
 			return this.field11701.method6888(arg0, 0);
 		}

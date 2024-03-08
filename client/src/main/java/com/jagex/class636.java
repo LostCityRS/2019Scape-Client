@@ -61,7 +61,7 @@ public class class636 {
 	public final WeightedCache field7850 = new WeightedCache(8);
 
 	@ObfuscatedName("xu.h")
-	public final class442 field7845;
+	public final Js5 field7845;
 
 	@ObfuscatedName("xu.a")
 	public boolean field7852 = false;
@@ -90,7 +90,7 @@ public class class636 {
 	@ObfuscatedName("xu.al")
 	public float field7860;
 
-	public class636(Renderer arg0, class442 arg1, int arg2, int arg3) {
+	public class636(Renderer arg0, Js5 arg1, int arg2, int arg3) {
 		this.field7833 = arg0;
 		this.field7845 = arg1;
 		this.field7836 = new class637[arg2][arg3];

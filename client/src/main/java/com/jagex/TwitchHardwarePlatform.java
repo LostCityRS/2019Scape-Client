@@ -83,7 +83,7 @@ public class TwitchHardwarePlatform {
 	public static long field7367 = 0L;
 
 	@ObfuscatedName("vv.au")
-	public static class101 field7397 = null;
+	public static Sprite field7397 = null;
 
 	@ObfuscatedName("vv.ar")
 	public static boolean field7376 = false;
@@ -106,7 +106,7 @@ public class TwitchHardwarePlatform {
 	}
 
 	@ObfuscatedName("io.m(I)Lcm;")
-	public static class101 method4367() {
+	public static Sprite method4367() {
 		return field7397;
 	}
 

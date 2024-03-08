@@ -3,12 +3,12 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("is")
-public class class253 {
+public class IntTreeMap {
 
 	@ObfuscatedName("is.e")
 	public int[] field2655;
 
-	public class253(int[] arg0) {
+	public IntTreeMap(int[] arg0) {
 		int var2;
 		for (var2 = 1; var2 <= (arg0.length >> 1) + arg0.length; var2 <<= 0x1) {
 		}

@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("aop")
 public class LocTypeList extends class758 {
 
-	public LocTypeList(ModeGame arg0, Language arg1, boolean arg2, class442 arg3, class442 arg4) {
+	public LocTypeList(ModeGame arg0, Language arg1, boolean arg2, Js5 arg3, Js5 arg4) {
 		super(arg0, arg1, arg3, Js5ConfigGroup.LOCTYPE, 256, new LocTypeFactory(arg2, arg4, arg1, arg0));
 	}
 

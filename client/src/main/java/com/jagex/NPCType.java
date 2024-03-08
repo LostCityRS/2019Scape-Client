@@ -593,7 +593,7 @@ public class NPCType implements ConfigType {
 			}
 			int[] var26 = arg10 == null || arg10.field2689 == null ? this.field2752 : arg10.field2689;
 			boolean var27 = false;
-			class442 var28 = this.field2695.field2770;
+			Js5 var28 = this.field2695.field2770;
 			synchronized (this.field2695.field2770) {
 				for (int var29 = 0; var29 < var26.length; var29++) {
 					if (var26[var29] != -1 && !this.field2695.field2770.method6888(var26[var29], 0)) {
@@ -607,7 +607,7 @@ public class NPCType implements ConfigType {
 			class120[] var31 = new class120[var26.length];
 			for (int var32 = 0; var32 < var26.length; var32++) {
 				if (var26[var32] != -1) {
-					class442 var33 = this.field2695.field2770;
+					Js5 var33 = this.field2695.field2770;
 					synchronized (this.field2695.field2770) {
 						var31[var32] = class120.method1931(this.field2695.field2770, var26[var32], 0);
 					}
@@ -806,7 +806,7 @@ public class NPCType implements ConfigType {
 				}
 				int[] var15 = arg5 == null || arg5.field2689 == null ? this.field2701 : arg5.field2689;
 				boolean var16 = false;
-				class442 var17 = this.field2695.field2770;
+				Js5 var17 = this.field2695.field2770;
 				synchronized (this.field2695.field2770) {
 					int var18 = 0;
 					while (true) {
@@ -823,7 +823,7 @@ public class NPCType implements ConfigType {
 					return null;
 				}
 				class120[] var20 = new class120[var15.length];
-				class442 var21 = this.field2695.field2770;
+				Js5 var21 = this.field2695.field2770;
 				synchronized (this.field2695.field2770) {
 					for (int var22 = 0; var22 < var15.length; var22++) {
 						var20[var22] = class120.method1931(this.field2695.field2770, var15[var22], 0);

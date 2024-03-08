@@ -16,7 +16,7 @@ public class class1177 extends class986 {
 	public class134[] field12327;
 
 	@ObfuscatedName("vw.e(Lpy;Lpy;II)V")
-	public static void method9393(class442 arg0, class442 arg1, int arg2) {
+	public static void method9393(Js5 arg0, Js5 arg1, int arg2) {
 		Statics.field12325 = arg0;
 		Statics.field12326 = arg1;
 	}
@@ -31,7 +31,7 @@ public class class1177 extends class986 {
 			return true;
 		}
 		if (this.field12323 == null) {
-			class442 var1 = Statics.field12325;
+			Js5 var1 = Statics.field12325;
 			synchronized (Statics.field12325) {
 				if (!Statics.field12325.method6927(this.field12324)) {
 					return false;
@@ -49,7 +49,7 @@ public class class1177 extends class986 {
 			Packet var8 = new Packet(var7);
 			var8.pos = -1445626955;
 			int var9 = var8.g2();
-			class442 var10 = Statics.field12326;
+			Js5 var10 = Statics.field12326;
 			synchronized (Statics.field12326) {
 				var5 &= Statics.field12326.method6889(var9);
 			}
@@ -58,7 +58,7 @@ public class class1177 extends class986 {
 			return false;
 		}
 		IterableQueue var12 = new IterableQueue();
-		class442 var13 = Statics.field12325;
+		Js5 var13 = Statics.field12325;
 		int[] var15;
 		synchronized (Statics.field12325) {
 			int var14 = Statics.field12325.method6897(this.field12324);
@@ -78,7 +78,7 @@ public class class1177 extends class986 {
 				}
 			}
 			if (var21 == null) {
-				class442 var23 = Statics.field12326;
+				Js5 var23 = Statics.field12326;
 				synchronized (Statics.field12326) {
 					var21 = new class971(var20, Statics.field12326.method6894(var20));
 				}

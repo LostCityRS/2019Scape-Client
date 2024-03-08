@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("aow")
 public class ObjTypeFactory extends class737 {
 
-	public ObjTypeFactory(ModeGame arg0, Language arg1, boolean arg2, class442 arg3, ConfigTypeList arg4) {
+	public ObjTypeFactory(ModeGame arg0, Language arg1, boolean arg2, Js5 arg3, ConfigTypeList arg4) {
 		super(arg0, arg1, arg2, arg3, arg4);
 	}
 

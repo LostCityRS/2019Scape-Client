@@ -23,7 +23,7 @@ public class class48 {
 
 	@ObfuscatedName("pd.e(I)Lali;")
 	public static class998 method6822() {
-		class752 var0 = null;
+		FileOnDisk var0 = null;
 		class998 var1 = new class998(client.field10768, 0);
 		try {
 			var0 = GameShell.method18567("", client.field10768.field8333, false);
@@ -49,7 +49,7 @@ public class class48 {
 
 	@ObfuscatedName("afd.n(I)V")
 	public static void method16391() {
-		class752 var0 = null;
+		FileOnDisk var0 = null;
 		try {
 			var0 = GameShell.method18567("", client.field10768.field8333, true);
 			Packet var1 = Statics.field688.method18156();

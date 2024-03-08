@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("alo")
 public class CursorTypeFactory extends class651 implements ConfigTypeFactory {
 
-	public CursorTypeFactory(class442 arg0) {
+	public CursorTypeFactory(Js5 arg0) {
 		super(arg0);
 	}
 

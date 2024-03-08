@@ -12,7 +12,7 @@ public abstract class class737 implements ConfigTypeFactory {
 	public boolean field8610;
 
 	@ObfuscatedName("abr.m")
-	public final class442 field8614;
+	public final Js5 field8614;
 
 	@ObfuscatedName("abr.k")
 	public final WeightedCache field8612 = new WeightedCache(50);
@@ -35,7 +35,7 @@ public abstract class class737 implements ConfigTypeFactory {
 	@ObfuscatedName("abr.p")
 	public final String[] field8616;
 
-	public class737(ModeGame arg0, Language arg1, boolean arg2, class442 arg3, ConfigTypeList arg4) {
+	public class737(ModeGame arg0, Language arg1, boolean arg2, Js5 arg3, ConfigTypeList arg4) {
 		this.field8618 = arg1;
 		this.field8610 = arg2;
 		this.field8614 = arg3;
@@ -49,7 +49,7 @@ public abstract class class737 implements ConfigTypeFactory {
 	}
 
 	@ObfuscatedName("abr.e(Ldh;IIIIILxg;I)Lcm;")
-	public class101 method14616(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, class639 arg6) {
+	public Sprite method14616(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, class639 arg6) {
 		this.field8609.field8607 = arg0.field1595;
 		this.field8609.field8602 = arg1;
 		this.field8609.field8604 = arg2;
@@ -57,13 +57,13 @@ public abstract class class737 implements ConfigTypeFactory {
 		this.field8609.field8606 = arg4;
 		this.field8609.field8603 = arg5;
 		this.field8609.field8608 = arg6 != null;
-		return (class101) this.field8613.method9646(this.field8609);
+		return (Sprite) this.field8613.method9646(this.field8609);
 	}
 
 	@ObfuscatedName("abr.n(Ldh;Ldh;IIIIZZILeu;Lxg;Lws;Lao;I)Lcm;")
-	public class101 method14617(Renderer arg0, Renderer arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6, boolean arg7, int arg8, class140 arg9, class639 arg10, class629 arg11, ConfigTypeList arg12) {
+	public Sprite method14617(Renderer arg0, Renderer arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6, boolean arg7, int arg8, class140 arg9, class639 arg10, class629 arg11, ConfigTypeList arg12) {
 		if (!arg7) {
-			class101 var14 = this.method14616(arg1, arg2, arg3, arg4, arg5, arg8, arg10);
+			Sprite var14 = this.method14616(arg1, arg2, arg3, arg4, arg5, arg8, arg10);
 			if (var14 != null) {
 				return var14;
 			}
@@ -84,7 +84,7 @@ public abstract class class737 implements ConfigTypeFactory {
 		if (var18 == null) {
 			return null;
 		}
-		class101 var19;
+		Sprite var19;
 		if (arg7) {
 			var19 = arg0.method2199(var18, 0, 36, 36, 32);
 		} else {

@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("aoh")
 public class EnumTypeList extends class758 {
 
-	public EnumTypeList(ModeGame arg0, Language arg1, class442 arg2) {
+	public EnumTypeList(ModeGame arg0, Language arg1, Js5 arg2) {
 		super(arg0, arg1, arg2, Js5ConfigGroup.ENUMTYPE, 128, new class762(EnumType.class));
 	}
 }

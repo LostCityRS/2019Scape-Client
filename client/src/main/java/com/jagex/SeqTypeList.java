@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("aos")
 public class SeqTypeList extends class758 {
 
-	public SeqTypeList(ModeGame arg0, Language arg1, class442 arg2, class442 arg3, class442 arg4, class442 arg5, SeqGroupTypeList arg6) {
+	public SeqTypeList(ModeGame arg0, Language arg1, Js5 arg2, Js5 arg3, Js5 arg4, Js5 arg5, SeqGroupTypeList arg6) {
 		super(arg0, arg1, arg2, Js5ConfigGroup.SEQTYPE, 64, new SeqTypeFactory(arg6, arg3, arg4, arg5));
 	}
 

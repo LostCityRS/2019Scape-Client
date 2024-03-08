@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("pp")
-public abstract class class447 {
+public abstract class Js5TcpClient {
 
 	@ObfuscatedName("pp.l")
 	public class720 field4448 = new class720();
@@ -51,12 +51,12 @@ public abstract class class447 {
 	public int field4461 = 0;
 
 	@ObfuscatedName("pp.a")
-	public class1230 field4462 = null;
+	public Js5NetRequest field4462 = null;
 
 	@ObfuscatedName("pp.e(IIBZI)Lauq;")
-	public class1230 method7011(int arg0, int arg1, byte arg2, boolean arg3) {
+	public Js5NetRequest method7011(int arg0, int arg1, byte arg2, boolean arg3) {
 		long var5 = ((long) arg0 << 32) + (long) arg1;
-		class1230 var7 = new class1230();
+		Js5NetRequest var7 = new Js5NetRequest();
 		var7.field11440 = var5;
 		var7.field12565 = arg2;
 		var7.field12342 = arg3;

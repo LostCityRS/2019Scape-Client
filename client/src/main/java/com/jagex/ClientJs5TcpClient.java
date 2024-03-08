@@ -6,10 +6,10 @@ import java.io.IOException;
 import java.util.Iterator;
 
 @ObfuscatedName("aik")
-public class class937 extends class447 {
+public class ClientJs5TcpClient extends Js5TcpClient {
 
 	@ObfuscatedName("aik.g")
-	public class561 field10751;
+	public Stream field10751;
 
 	@ObfuscatedName("aik.w(IIB)V")
 	public void method7015(int arg0, int arg1) {
@@ -47,14 +47,14 @@ public class class937 extends class447 {
 			return this.method7021() == 0 && this.method7013() == 0;
 		}
 		try {
-			for (class1230 var5 = (class1230) this.field4448.method14317(); var5 != null; var5 = (class1230) this.field4448.method14324()) {
+			for (Js5NetRequest var5 = (Js5NetRequest) this.field4448.method14317(); var5 != null; var5 = (Js5NetRequest) this.field4448.method14324()) {
 				this.field4450.pos = 0;
 				this.field4450.p1(1);
 				this.field4450.p5(var5.field11440);
 				this.field10751.method9030(this.field4450.data, 0, this.field4450.data.length);
 				this.field4451.method14339(var5);
 			}
-			for (class1230 var6 = (class1230) this.field4449.method14317(); var6 != null; var6 = (class1230) this.field4449.method14324()) {
+			for (Js5NetRequest var6 = (Js5NetRequest) this.field4449.method14317(); var6 != null; var6 = (Js5NetRequest) this.field4449.method14324()) {
 				this.field4450.pos = 0;
 				this.field4450.p1(0);
 				this.field4450.p5(var6.field11440);
@@ -92,7 +92,7 @@ public class class937 extends class447 {
 						if (var13) {
 							Iterator var17 = this.field4443.iterator();
 							while (var17.hasNext()) {
-								class1230 var18 = (class1230) var17.next();
+								Js5NetRequest var18 = (Js5NetRequest) var17.next();
 								if (var18.field11440 == var15) {
 									this.field4462 = var18;
 									break;
@@ -101,7 +101,7 @@ public class class937 extends class447 {
 						} else {
 							Iterator var19 = this.field4451.iterator();
 							while (var19.hasNext()) {
-								class1230 var20 = (class1230) var19.next();
+								Js5NetRequest var20 = (Js5NetRequest) var19.next();
 								if (var20.field11440 == var15) {
 									this.field4462 = var20;
 									break;
@@ -192,17 +192,17 @@ public class class937 extends class447 {
 			}
 			this.field10751 = null;
 		}
-		this.field10751 = (class561) arg0;
+		this.field10751 = (Stream) arg0;
 		this.method16859();
 		this.method7010(arg1);
 		this.field4459.pos = 0;
 		this.field4460.pos = 0;
 		this.field4462 = null;
 		while (true) {
-			class1230 var4 = (class1230) this.field4451.method14315();
+			Js5NetRequest var4 = (Js5NetRequest) this.field4451.method14315();
 			if (var4 == null) {
 				while (true) {
-					class1230 var5 = (class1230) this.field4443.method14315();
+					Js5NetRequest var5 = (Js5NetRequest) this.field4443.method14315();
 					if (var5 == null) {
 						if (this.field4447 != 0 && client.ENABLE_JS5_XOR) {
 							try {

@@ -113,7 +113,7 @@ public class WorldMap {
 	}
 
 	@ObfuscatedName("tf.e(Lpy;Lpy;Laoa;Laoe;Laop;Laoc;Laox;Lem;Lep;)V")
-	public static void method8506(class442 arg0, class442 arg1, FloorOverlayTypeList arg2, FloorUnderlayTypeList arg3, LocTypeList arg4, MapElementTypeList arg5, MSITypeList arg6, class151 arg7, class147 arg8) {
+	public static void method8506(Js5 arg0, Js5 arg1, FloorOverlayTypeList arg2, FloorUnderlayTypeList arg3, LocTypeList arg4, MapElementTypeList arg5, MSITypeList arg6, class151 arg7, class147 arg8) {
 		Statics.field6794 = arg0;
 		Statics.field6795 = arg1;
 		field6839 = arg2;
@@ -724,7 +724,7 @@ public class WorldMap {
 					var37 = var38 - var39;
 				}
 				int var40 = var38 - var37;
-				class101 var41 = (class101) field6833.method2930((long) var36);
+				Sprite var41 = (Sprite) field6833.method2930((long) var36);
 				if (var41 == null) {
 					throw new RuntimeException();
 				}
@@ -739,7 +739,7 @@ public class WorldMap {
 
 	@ObfuscatedName("tf.b(Ldh;IIII)V")
 	public static void method8536(Renderer arg0, int arg1, int arg2, int arg3, int arg4) {
-		class101 var5 = (class101) field6833.method2930(-1L);
+		Sprite var5 = (Sprite) field6833.method2930(-1L);
 		if (var5 == null || var5.method1459() != arg3) {
 			int var6;
 			if (Statics.field6811.field12355 == -1) {
@@ -1030,7 +1030,7 @@ public class WorldMap {
 			int var9 = var8.field7486;
 			if (var9 != -1) {
 				MSIType var10 = (MSIType) Statics.field6789.get(var9);
-				class101 var11 = var10.method15057(arg0, var8.field7487 ? arg6[var7] >> 6 & 0x3 : 0, var8.field7504 ? var8.field7490 : false);
+				Sprite var11 = var10.method15057(arg0, var8.field7487 ? arg6[var7] >> 6 & 0x3 : 0, var8.field7504 ? var8.field7490 : false);
 				int[] var12 = var10.method15058(arg0, var8.field7487 ? arg6[var7] >> 6 & 0x3 : 0, var8.field7504 ? var8.field7490 : false);
 				if (var11 != null) {
 					int var13 = var11.method1434();
@@ -1173,7 +1173,7 @@ public class WorldMap {
 
 	@ObfuscatedName("tf.ac(J)I")
 	public static int method8588(long arg0) {
-		class101 var2 = (class101) field6833.method2930(arg0);
+		Sprite var2 = (Sprite) field6833.method2930(arg0);
 		return var2 == null ? -1 : var2.method1459();
 	}
 

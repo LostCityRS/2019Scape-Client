@@ -53,18 +53,18 @@ public class class733 {
 	public final class731 field8575;
 
 	@ObfuscatedName("cz.e(Lpy;III)Laac;")
-	public static class733 method1593(class442 arg0, int arg1, int arg2) {
+	public static class733 method1593(Js5 arg0, int arg1, int arg2) {
 		return method6068(arg0, arg1, arg2, null);
 	}
 
 	@ObfuscatedName("nr.n(Lpy;IILaaw;I)Laac;")
-	public static class733 method6068(class442 arg0, int arg1, int arg2, class731 arg3) {
+	public static class733 method6068(Js5 arg0, int arg1, int arg2, class731 arg3) {
 		byte[] var4 = arg0.method6879(arg1, arg2);
 		return var4 == null ? null : new class733(var4, arg3);
 	}
 
 	@ObfuscatedName("yr.m(Lpy;ILaaw;I)Laac;")
-	public static class733 method10677(class442 arg0, int arg1, class731 arg2) {
+	public static class733 method10677(Js5 arg0, int arg1, class731 arg2) {
 		byte[] var3 = arg0.method6894(arg1);
 		return var3 == null ? null : new class733(var3, arg2);
 	}
@@ -217,7 +217,7 @@ public class class733 {
 	}
 
 	@ObfuscatedName("aac.d(Ljava/lang/String;[Laay;B)I")
-	public int method14533(String arg0, class732[] arg1) {
+	public int method14533(String arg0, FontGlyph[] arg1) {
 		if (arg0 == null) {
 			return 0;
 		}
@@ -291,7 +291,7 @@ public class class733 {
 	}
 
 	@ObfuscatedName("aac.c(Ljava/lang/String;I[Laay;I)Ljava/lang/String;")
-	public String method14534(String arg0, int arg1, class732[] arg2) {
+	public String method14534(String arg0, int arg1, FontGlyph[] arg2) {
 		if (this.method14533(arg0, arg2) <= arg1) {
 			return arg0;
 		}
@@ -383,12 +383,12 @@ public class class733 {
 	}
 
 	@ObfuscatedName("aac.r(Ljava/lang/String;[I[Ljava/lang/String;[Laay;B)I")
-	public int method14535(String arg0, int[] arg1, String[] arg2, class732[] arg3) {
+	public int method14535(String arg0, int[] arg1, String[] arg2, FontGlyph[] arg3) {
 		return this.method14536(arg0, arg1, arg2, arg3, true);
 	}
 
 	@ObfuscatedName("aac.v(Ljava/lang/String;[I[Ljava/lang/String;[Laay;ZI)I")
-	public int method14536(String arg0, int[] arg1, String[] arg2, class732[] arg3, boolean arg4) {
+	public int method14536(String arg0, int[] arg1, String[] arg2, FontGlyph[] arg3, boolean arg4) {
 		if (arg0 == null) {
 			return 0;
 		}
@@ -555,7 +555,7 @@ public class class733 {
 	}
 
 	@ObfuscatedName("aac.o(Ljava/lang/String;I[Laay;I)I")
-	public int method14551(String arg0, int arg1, class732[] arg2) {
+	public int method14551(String arg0, int arg1, FontGlyph[] arg2) {
 		int var4 = this.method14535(arg0, new int[] { arg1 }, field8561, arg2);
 		int var5 = 0;
 		for (int var6 = 0; var6 < var4; var6++) {
@@ -568,18 +568,18 @@ public class class733 {
 	}
 
 	@ObfuscatedName("aac.s(Ljava/lang/String;I[Laay;I)I")
-	public int method14538(String arg0, int arg1, class732[] arg2) {
+	public int method14538(String arg0, int arg1, FontGlyph[] arg2) {
 		return this.method14535(arg0, new int[] { arg1 }, field8561, arg2);
 	}
 
 	@ObfuscatedName("aac.y(Ljava/lang/String;I[Laay;IB)Ljava/lang/String;")
-	public String method14539(String arg0, int arg1, class732[] arg2, int arg3) {
+	public String method14539(String arg0, int arg1, FontGlyph[] arg2, int arg3) {
 		int var5 = this.method14535(arg0, new int[] { arg1 }, field8561, arg2);
 		return arg3 >= 0 && arg3 < var5 ? field8561[arg3] : null;
 	}
 
 	@ObfuscatedName("aac.q(Ljava/lang/String;II[Laay;B)I")
-	public int method14545(String arg0, int arg1, int arg2, class732[] arg3) {
+	public int method14545(String arg0, int arg1, int arg2, FontGlyph[] arg3) {
 		if (arg2 == 0) {
 			arg2 = this.field8566;
 		}
@@ -589,7 +589,7 @@ public class class733 {
 	}
 
 	@ObfuscatedName("aac.x(Ljava/lang/String;III[Laay;I)Ljava/awt/Point;")
-	public Point method14541(String arg0, int arg1, int arg2, int arg3, class732[] arg4) {
+	public Point method14541(String arg0, int arg1, int arg2, int arg3, FontGlyph[] arg4) {
 		if (arg3 <= 0) {
 			return new Point(0, this.field8562 + arg2);
 		}
@@ -620,7 +620,7 @@ public class class733 {
 	}
 
 	@ObfuscatedName("aac.b(Ljava/lang/String;IIII[Laay;I)I")
-	public int method14542(String arg0, int arg1, int arg2, int arg3, int arg4, class732[] arg5) {
+	public int method14542(String arg0, int arg1, int arg2, int arg3, int arg4, FontGlyph[] arg5) {
 		if (arg2 == 0) {
 			arg2 = this.field8566;
 		}

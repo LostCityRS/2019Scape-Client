@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("auq")
-public class class1230 extends class1181 {
+public class Js5NetRequest extends Js5Request {
 
 	@ObfuscatedName("auq.p")
 	public Packet field12564;

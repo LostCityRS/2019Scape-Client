@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("apq")
 public class MSITypeFactory extends class782 {
 
-	public MSITypeFactory(class442 arg0, int arg1) {
+	public MSITypeFactory(Js5 arg0, int arg1) {
 		super(arg0, arg1);
 	}
 

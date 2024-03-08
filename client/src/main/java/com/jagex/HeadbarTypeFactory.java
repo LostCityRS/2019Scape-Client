@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("ale")
 public class HeadbarTypeFactory extends class567 implements ConfigTypeFactory {
 
-	public HeadbarTypeFactory(class442 arg0) {
+	public HeadbarTypeFactory(Js5 arg0) {
 		super(arg0);
 	}
 

@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("pf")
-public class class446 implements Runnable {
+public class Js5DiskCache implements Runnable {
 
 	@ObfuscatedName("pf.e")
 	public class720 field4438 = new class720();
@@ -17,14 +17,14 @@ public class class446 implements Runnable {
 	@ObfuscatedName("pf.k")
 	public Thread field4440 = new Thread(this);
 
-	public class446() {
+	public Js5DiskCache() {
 		this.field4440.setDaemon(true);
 		this.field4440.start();
 		this.field4440.setPriority(1);
 	}
 
 	@ObfuscatedName("pf.e(ILuf;S)Latf;")
-	public class1228 method6997(int arg0, class560 arg1) {
+	public class1228 method6997(int arg0, DiskStore arg1) {
 		class1228 var3 = new class1228();
 		var3.field12559 = 1;
 		class720 var4 = this.field4438;
@@ -49,7 +49,7 @@ public class class446 implements Runnable {
 	}
 
 	@ObfuscatedName("pf.n(I[BLuf;I)Latf;")
-	public class1228 method6988(int arg0, byte[] arg1, class560 arg2) {
+	public class1228 method6988(int arg0, byte[] arg1, DiskStore arg2) {
 		class1228 var4 = new class1228();
 		var4.field12559 = 2;
 		var4.field11440 = arg0;
@@ -61,7 +61,7 @@ public class class446 implements Runnable {
 	}
 
 	@ObfuscatedName("pf.m(ILuf;B)Latf;")
-	public class1228 method6996(int arg0, class560 arg1) {
+	public class1228 method6996(int arg0, DiskStore arg1) {
 		class1228 var3 = new class1228();
 		var3.field12559 = 3;
 		var3.field11440 = arg0;

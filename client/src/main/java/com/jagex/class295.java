@@ -7,10 +7,10 @@ import deob.Statics;
 public abstract class class295 implements class302 {
 
 	@ObfuscatedName("kz.e")
-	public final class442 field3028;
+	public final Js5 field3028;
 
 	@ObfuscatedName("kz.n")
-	public final class442 field3026;
+	public final Js5 field3026;
 
 	@ObfuscatedName("kz.m")
 	public final class314 field3027;
@@ -24,7 +24,7 @@ public abstract class class295 implements class302 {
 	@ObfuscatedName("kz.w")
 	public long field3031;
 
-	public class295(class442 arg0, class442 arg1, class314 arg2) {
+	public class295(Js5 arg0, Js5 arg1, class314 arg2) {
 		this.field3028 = arg0;
 		this.field3026 = arg1;
 		this.field3027 = arg2;

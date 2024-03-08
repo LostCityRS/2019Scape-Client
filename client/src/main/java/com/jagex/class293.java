@@ -9,12 +9,12 @@ public class class293 implements class302 {
 	public final class322 field3019;
 
 	@ObfuscatedName("jk.n")
-	public final class442 field3020;
+	public final Js5 field3020;
 
 	@ObfuscatedName("jk.m")
-	public class101 field3021;
+	public Sprite field3021;
 
-	public class293(class442 arg0, class322 arg1) {
+	public class293(Js5 arg0, class322 arg1) {
 		this.field3020 = arg0;
 		this.field3019 = arg1;
 	}

@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aef")
-public class class831 extends class101 {
+public class class831 extends Sprite {
 
 	@ObfuscatedName("aef.e")
 	public final GpuRenderer field9403;

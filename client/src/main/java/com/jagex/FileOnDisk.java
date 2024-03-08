@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 import java.io.*;
 
 @ObfuscatedName("abl")
-public final class class752 {
+public final class FileOnDisk {
 
 	@ObfuscatedName("abl.e")
 	public RandomAccessFile field8761;
@@ -16,7 +16,7 @@ public final class class752 {
 	@ObfuscatedName("abl.m")
 	public long field8760;
 
-	public class752(File arg0, String arg1, long arg2) throws IOException {
+	public FileOnDisk(File arg0, String arg1, long arg2) throws IOException {
 		if (arg2 == -1L) {
 			arg2 = Long.MAX_VALUE;
 		}

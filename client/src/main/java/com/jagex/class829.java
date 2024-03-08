@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("ael")
-public abstract class class829 extends class101 {
+public abstract class class829 extends Sprite {
 
 	@ObfuscatedName("ael.e")
 	public class848 field9373;

@@ -108,7 +108,7 @@ public final class class861 extends class150 {
 	}
 
 	@ObfuscatedName("afu.t(Labl;B)V")
-	public void method16420(class752 arg0) {
+	public void method16420(FileOnDisk arg0) {
 		try {
 			byte[] var2 = new byte[(int) arg0.method14821()];
 			int var4;
@@ -150,7 +150,7 @@ public final class class861 extends class150 {
 	}
 
 	@ObfuscatedName("afu.ae(Labl;B)V")
-	public void method16418(class752 arg0) {
+	public void method16418(FileOnDisk arg0) {
 		try {
 			int var2 = 3;
 			int var3 = 0;

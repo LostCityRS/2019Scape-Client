@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("cm")
-public abstract class class101 implements class732 {
+public abstract class Sprite implements FontGlyph {
 
 	@ObfuscatedName("cm.c(II)V")
 	public final void method1439(int arg0, int arg1) {

@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
 @ObfuscatedName("aei")
-public class class830 extends class101 {
+public class class830 extends Sprite {
 
 	@ObfuscatedName("aei.e")
 	public final class1113 field9396;

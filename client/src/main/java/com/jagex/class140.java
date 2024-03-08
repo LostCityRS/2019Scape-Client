@@ -70,12 +70,12 @@ public abstract class class140 {
 	}
 
 	@ObfuscatedName("eu.k(Ljava/lang/String;IIIIIIIII[Lcm;[ILch;IIS)I")
-	public int method2720(String arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, class101[] arg10, int[] arg11, class103 arg12, int arg13, int arg14) {
+	public int method2720(String arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, Sprite[] arg10, int[] arg11, class103 arg12, int arg13, int arg14) {
 		return this.method2685(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, 0, arg10, arg11, arg12, arg13, arg14);
 	}
 
 	@ObfuscatedName("eu.f(Ljava/lang/String;IIIIIIIIII[Lcm;[ILch;III)I")
-	public int method2685(String arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, class101[] arg11, int[] arg12, class103 arg13, int arg14, int arg15) {
+	public int method2685(String arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, Sprite[] arg11, int[] arg12, class103 arg13, int arg14, int arg15) {
 		if (arg0 == null) {
 			return 0;
 		}
@@ -186,7 +186,7 @@ public abstract class class140 {
 	}
 
 	@ObfuscatedName("eu.z(Ljava/lang/String;IIIILjava/util/Random;I[Lcm;[IB)I")
-	public int method2689(String arg0, int arg1, int arg2, int arg3, int arg4, Random arg5, int arg6, class101[] arg7, int[] arg8) {
+	public int method2689(String arg0, int arg1, int arg2, int arg3, int arg4, Random arg5, int arg6, Sprite[] arg7, int[] arg8) {
 		if (arg0 == null) {
 			return 0;
 		}
@@ -207,7 +207,7 @@ public abstract class class140 {
 	}
 
 	@ObfuscatedName("eu.p(Ljava/lang/String;IIIIIIIILjava/util/Random;I[I[Lcm;[II)I")
-	public int method2700(String arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, Random arg9, int arg10, int[] arg11, class101[] arg12, int[] arg13) {
+	public int method2700(String arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, Random arg9, int arg10, int[] arg11, Sprite[] arg12, int[] arg13) {
 		if (arg0 == null) {
 			return 0;
 		}
@@ -325,7 +325,7 @@ public abstract class class140 {
 	}
 
 	@ObfuscatedName("eu.v(Ljava/lang/String;II[Lcm;[ILch;III)V")
-	public void method2694(String arg0, int arg1, int arg2, class101[] arg3, int[] arg4, class103 arg5, int arg6, int arg7) {
+	public void method2694(String arg0, int arg1, int arg2, Sprite[] arg3, int[] arg4, class103 arg5, int arg6, int arg7) {
 		int var9 = arg2 - this.field1667.field8566;
 		int var10 = -1;
 		int var11 = -1;
@@ -357,7 +357,7 @@ public abstract class class140 {
 							if (var15.startsWith("img=")) {
 								try {
 									int var16 = class695.method9595(var15.substring(4));
-									class101 var17 = arg3[var16];
+									Sprite var17 = arg3[var16];
 									int var18 = arg4 == null ? var17.method1436() : arg4[var16];
 									if ((field1674 & -16777216) == -16777216) {
 										var17.method1443(arg1, this.field1667.field8566 + var9 - var18, 1, -1, 1);
@@ -382,7 +382,7 @@ public abstract class class140 {
 										var23 = class695.method9595(var15.substring(7, var22));
 										var21 = class695.method9595(var15.substring(var22 + 1));
 									}
-									class101[] var24 = this.field1667.field8575.method6185(this.field1666, var23);
+									Sprite[] var24 = this.field1667.field8575.method6185(this.field1666, var23);
 									if (var24 != null) {
 										int var25 = Math.min(var24[var21].method1436(), this.field1667.field8569 + this.field1667.field8562);
 										if ((field1674 & -16777216) == -16777216) {
@@ -437,7 +437,7 @@ public abstract class class140 {
 	}
 
 	@ObfuscatedName("eu.o(Ljava/lang/String;II[Lcm;[I[I[II)V")
-	public void method2695(String arg0, int arg1, int arg2, class101[] arg3, int[] arg4, int[] arg5, int[] arg6) {
+	public void method2695(String arg0, int arg1, int arg2, Sprite[] arg3, int[] arg4, int[] arg5, int[] arg6) {
 		int var8 = arg2 - this.field1667.field8566;
 		int var9 = -1;
 		int var10 = -1;
@@ -483,7 +483,7 @@ public abstract class class140 {
 									}
 									var11++;
 									int var18 = class695.method9595(var15.substring(4));
-									class101 var19 = arg3[var18];
+									Sprite var19 = arg3[var18];
 									int var20 = arg4 == null ? var19.method1436() : arg4[var18];
 									var19.method1443(arg1 + var16, this.field1667.field8566 + var8 - var20 + var17, 1, -1, 1);
 									arg1 += arg3[var18].method1434();
@@ -517,7 +517,7 @@ public abstract class class140 {
 										var27 = arg6[var11];
 									}
 									var11++;
-									class101[] var28 = this.field1667.field8575.method6185(this.field1666, var25);
+									Sprite[] var28 = this.field1667.field8575.method6185(this.field1666, var25);
 									if (var28 != null) {
 										int var29 = Math.min(var28[var23].method1436(), this.field1667.field8569 + this.field1667.field8562);
 										var28[var23].method1443(arg1 + var26, this.field1667.field8566 + var8 + 3 - var29 + var27, 1, -1, 1);

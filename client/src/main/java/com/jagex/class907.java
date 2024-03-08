@@ -7,9 +7,9 @@ import deob.Statics;
 public class class907 extends class295 {
 
 	@ObfuscatedName("aho.l")
-	public class101 field10545;
+	public Sprite field10545;
 
-	public class907(class442 arg0, class442 arg1, class913 arg2) {
+	public class907(Js5 arg0, Js5 arg1, class913 arg2) {
 		super(arg0, arg1, arg2);
 	}
 

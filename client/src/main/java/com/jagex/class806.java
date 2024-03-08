@@ -8,12 +8,12 @@ import java.util.Iterator;
 public class class806 extends class808 implements ConfigTypeList {
 
 	@ObfuscatedName("adj.n")
-	public final class442 field9255;
+	public final Js5 field9255;
 
 	@ObfuscatedName("adj.m")
 	public final WeightedCache field9254 = new WeightedCache(64);
 
-	public class806(ModeGame arg0, VarDomainType arg1, Language arg2, class442 arg3) {
+	public class806(ModeGame arg0, VarDomainType arg1, Language arg2, Js5 arg3) {
 		super(arg0, arg1, arg2, arg3 == null ? 0 : arg3.method6897(arg1.method7218().id));
 		this.field9255 = arg3;
 	}

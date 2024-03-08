@@ -6,10 +6,10 @@ import java.io.EOFException;
 import java.io.IOException;
 
 @ObfuscatedName("abp")
-public class class753 {
+public class BufferedFile {
 
 	@ObfuscatedName("abp.n")
-	public class752 field8773;
+	public FileOnDisk field8773;
 
 	@ObfuscatedName("abp.m")
 	public byte[] field8765;
@@ -41,7 +41,7 @@ public class class753 {
 	@ObfuscatedName("abp.c")
 	public long field8774;
 
-	public class753(class752 arg0, int arg1, int arg2) throws IOException {
+	public BufferedFile(FileOnDisk arg0, int arg1, int arg2) throws IOException {
 		this.field8773 = arg0;
 		this.field8767 = this.field8763 = arg0.method14821();
 		this.field8765 = new byte[arg1];

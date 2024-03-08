@@ -11,7 +11,7 @@ public class class623 {
 	@ObfuscatedName("wc.n")
 	public int field7670 = -1;
 
-	public class623(class442 arg0) {
+	public class623(Js5 arg0) {
 		byte[] var2 = arg0.method6894(class628.field7711.field7708);
 		this.method9831(new Packet(var2));
 	}

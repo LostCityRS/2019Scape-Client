@@ -7,24 +7,24 @@ import deob.Statics;
 public class class906 extends class295 {
 
 	@ObfuscatedName("ahb.l")
-	public class101 field10543;
+	public Sprite field10543;
 
 	@ObfuscatedName("ahb.u")
-	public class101 field10540;
+	public Sprite field10540;
 
 	@ObfuscatedName("ahb.z")
-	public class101 field10539;
+	public Sprite field10539;
 
 	@ObfuscatedName("ahb.p")
-	public class101 field10542;
+	public Sprite field10542;
 
 	@ObfuscatedName("ahb.d")
-	public class101 field10541;
+	public Sprite field10541;
 
 	@ObfuscatedName("ahb.c")
-	public class101 field10544;
+	public Sprite field10544;
 
-	public class906(class442 arg0, class442 arg1, class912 arg2) {
+	public class906(Js5 arg0, Js5 arg1, class912 arg2) {
 		super(arg0, arg1, arg2);
 	}
 

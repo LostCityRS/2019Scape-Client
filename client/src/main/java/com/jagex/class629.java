@@ -131,7 +131,7 @@ public class class629 {
 	@ObfuscatedName("ws.ay")
 	public int field7741 = -1;
 
-	public class629(class442 arg0) {
+	public class629(Js5 arg0) {
 		byte[] var2 = arg0.method6894(class628.field7703.field7708);
 		this.method9876(new Packet(var2));
 	}

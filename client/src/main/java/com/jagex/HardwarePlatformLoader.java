@@ -14,7 +14,7 @@ import java.util.Vector;
 public class HardwarePlatformLoader implements class499 {
 
 	@ObfuscatedName("ty.e")
-	public final class442 field6764;
+	public final Js5 field6764;
 
 	@ObfuscatedName("ty.n")
 	public final String field6763;
@@ -25,7 +25,7 @@ public class HardwarePlatformLoader implements class499 {
 	@ObfuscatedName("ty.k")
 	public Hashtable field6766 = new Hashtable();
 
-	public HardwarePlatformLoader(class442 arg0) {
+	public HardwarePlatformLoader(Js5 arg0) {
 		this.field6764 = arg0;
 		String var2 = "";
 		if (class498.field5074.startsWith("win") || class498.field5074.startsWith("windows 7")) {

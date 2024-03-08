@@ -21,7 +21,7 @@ public class class539 {
 	}
 
 	@ObfuscatedName("nn.e(Lpy;Ljava/lang/String;ZB)Ltw;")
-	public static class539 method6046(class442 arg0, String arg1, boolean arg2) {
+	public static class539 method6046(Js5 arg0, String arg1, boolean arg2) {
 		int var3 = arg0.method6902(arg1);
 		if (var3 == -1) {
 			return new class539(0);

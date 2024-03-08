@@ -6,15 +6,15 @@ import deob.ObfuscatedName;
 public class class297 {
 
 	@ObfuscatedName("kq.e")
-	public final class442 field3035;
+	public final Js5 field3035;
 
 	@ObfuscatedName("kq.n")
-	public final class442 field3036;
+	public final Js5 field3036;
 
 	@ObfuscatedName("kq.m")
 	public class301 field3037;
 
-	public class297(class442 arg0, class442 arg1) {
+	public class297(Js5 arg0, Js5 arg1) {
 		this.field3035 = arg0;
 		this.field3036 = arg1;
 	}

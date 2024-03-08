@@ -39,7 +39,7 @@ public class class657 {
 	}
 
 	@ObfuscatedName("nq.k(Lpy;ILwj;ZLeb;I)Lwr;")
-	public static class614 method6064(class442 arg0, int arg1, class612 arg2, boolean arg3, WeightedCache arg4) {
+	public static class614 method6064(Js5 arg0, int arg1, class612 arg2, boolean arg3, WeightedCache arg4) {
 		if (field8056 == null) {
 			return null;
 		} else {

@@ -17,12 +17,12 @@ public class class792 {
 	@ObfuscatedName("adh.k")
 	public Map field9180;
 
-	public class792(class442 arg0, int arg1, int arg2) {
+	public class792(Js5 arg0, int arg1, int arg2) {
 		byte[] var4 = arg0.method6879(arg1, arg2 + 1);
 		this.method15188(new Packet(var4));
 	}
 
-	public class792(class442 arg0, int arg1) {
+	public class792(Js5 arg0, int arg1) {
 		byte[] var3 = arg0.method6879(arg1, 0);
 		this.method15188(new Packet(var3));
 	}

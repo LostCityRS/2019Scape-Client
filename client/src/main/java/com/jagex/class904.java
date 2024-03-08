@@ -8,7 +8,7 @@ public class class904 extends class293 {
 	@ObfuscatedName("aha.k")
 	public int field10537 = 0;
 
-	public class904(class442 arg0, class915 arg1) {
+	public class904(Js5 arg0, class915 arg1) {
 		super(arg0, arg1);
 	}
 

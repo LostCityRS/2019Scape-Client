@@ -6,15 +6,15 @@ import java.io.IOException;
 import java.net.Socket;
 
 @ObfuscatedName("uz")
-public abstract class class561 {
+public abstract class Stream {
 
 	@ObfuscatedName("qt.e(Ljava/net/Socket;IS)Luz;")
-	public static class561 method7130(Socket arg0, int arg1) throws IOException {
+	public static Stream method7130(Socket arg0, int arg1) throws IOException {
 		return method3025(arg0, arg1, arg1);
 	}
 
 	@ObfuscatedName("fu.n(Ljava/net/Socket;III)Luz;")
-	public static class561 method3025(Socket arg0, int arg1, int arg2) throws IOException {
+	public static Stream method3025(Socket arg0, int arg1, int arg2) throws IOException {
 		return new class1005(arg0, arg1, arg2);
 	}
 

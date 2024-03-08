@@ -10,15 +10,15 @@ public class class303 implements class302 {
 	public final class321 field3054;
 
 	@ObfuscatedName("ki.n")
-	public final class442 field3053;
+	public final Js5 field3053;
 
 	@ObfuscatedName("ki.m")
-	public final class442 field3052;
+	public final Js5 field3052;
 
 	@ObfuscatedName("ki.k")
 	public class140 field3055;
 
-	public class303(class442 arg0, class442 arg1, class321 arg2) {
+	public class303(Js5 arg0, Js5 arg1, class321 arg2) {
 		this.field3054 = arg2;
 		this.field3053 = arg0;
 		this.field3052 = arg1;

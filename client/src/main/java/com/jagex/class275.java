@@ -145,7 +145,7 @@ public class class275 implements Runnable {
 							int var9 = var7 << 24 | 0xFFFFFF;
 							client.method8024();
 							Statics.field8198.method2475(1, 0);
-							class101 var10 = Statics.field8198.method2365(Statics.field6586, Statics.field6600, true);
+							Sprite var10 = Statics.field8198.method2365(Statics.field6586, Statics.field6600, true);
 							class840 var11 = Statics.field8198.method2145();
 							var11.method15439(0, var10.method1437());
 							Statics.field8198.method2142(var11);

@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public abstract class class681 implements ConfigTypeFactory {
 
 	@ObfuscatedName("yc.e")
-	public final class442 field8265;
+	public final Js5 field8265;
 
 	@ObfuscatedName("yc.n")
 	public final WeightedCache field8266 = new WeightedCache(60);
@@ -14,7 +14,7 @@ public abstract class class681 implements ConfigTypeFactory {
 	@ObfuscatedName("yc.m")
 	public int field8264;
 
-	public class681(class442 arg0) {
+	public class681(Js5 arg0) {
 		this.field8265 = arg0;
 	}
 

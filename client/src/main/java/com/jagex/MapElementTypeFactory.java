@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("agr")
 public class MapElementTypeFactory extends class229 {
 
-	public MapElementTypeFactory(class442 arg0, int arg1) {
+	public MapElementTypeFactory(Js5 arg0, int arg1) {
 		super(arg0, arg1);
 	}
 

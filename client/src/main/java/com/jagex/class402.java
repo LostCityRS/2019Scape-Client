@@ -9,10 +9,10 @@ import java.util.Map;
 public class class402 implements class731 {
 
 	@ObfuscatedName("oi.e")
-	public final class442 field4200;
+	public final Js5 field4200;
 
 	@ObfuscatedName("oi.n")
-	public final class442 field4201;
+	public final Js5 field4201;
 
 	@ObfuscatedName("oi.m")
 	public final WeightedCache field4202 = new WeightedCache(20);
@@ -32,7 +32,7 @@ public class class402 implements class731 {
 	@ObfuscatedName("oi.u")
 	public Map field4207 = null;
 
-	public class402(Renderer arg0, class442 arg1, class442 arg2, int[] arg3) {
+	public class402(Renderer arg0, Js5 arg1, Js5 arg2, int[] arg3) {
 		this.field4206 = arg0;
 		this.field4200 = arg1;
 		this.field4201 = arg2;
@@ -181,7 +181,7 @@ public class class402 implements class731 {
 	}
 
 	@ObfuscatedName("oi.c(Ldh;II)[Lcm;")
-	public class101[] method6185(Renderer arg0, int arg1) {
+	public Sprite[] method6185(Renderer arg0, int arg1) {
 		if (this.field4205 == null) {
 			return null;
 		}
@@ -196,11 +196,11 @@ public class class402 implements class731 {
 		if (arg0 == null) {
 			return null;
 		}
-		class101[] var3 = (class101[]) this.field4205.method2930((long) arg1);
+		Sprite[] var3 = (Sprite[]) this.field4205.method2930((long) arg1);
 		if (var3 == null) {
 			class136[] var4 = class111.method1608(this.field4200, arg1, 0);
 			if (var4 != null && var4.length > 0) {
-				var3 = new class101[var4.length];
+				var3 = new Sprite[var4.length];
 				for (int var5 = 0; var5 < var4.length; var5++) {
 					var3[var5] = arg0.method2200(var4[var5], true);
 				}
@@ -212,7 +212,7 @@ public class class402 implements class731 {
 
 	@ObfuscatedName("oi.r(II)I")
 	public int method6160(int arg0) {
-		class101[] var2 = this.method6185(this.field4206, arg0);
+		Sprite[] var2 = this.method6185(this.field4206, arg0);
 		return var2 == null ? 0 : var2[0].method1434();
 	}
 }

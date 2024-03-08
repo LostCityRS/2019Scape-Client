@@ -37,7 +37,7 @@ public class class502 {
 	public final int field5091;
 
 	@ObfuscatedName("sv.c")
-	public class101 field5095;
+	public Sprite field5095;
 
 	@ObfuscatedName("sv.r")
 	public class569 field5099;
@@ -76,7 +76,7 @@ public class class502 {
 	public int field5106;
 
 	@ObfuscatedName("zn.e(Lpy;Ldf;Les;I)V")
-	public static void method13864(class442 arg0, class125 arg1, class143 arg2) {
+	public static void method13864(Js5 arg0, class125 arg1, class143 arg2) {
 		Statics.field1810 = arg0;
 		Statics.field3199 = arg1;
 		Statics.field2421 = arg2;

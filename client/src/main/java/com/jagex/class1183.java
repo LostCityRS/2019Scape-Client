@@ -122,7 +122,7 @@ public class class1183 extends class986 {
 	}
 
 	@ObfuscatedName("gq.w(Lpy;II)Lasy;")
-	public static class1183 method3468(class442 arg0, int arg1) {
+	public static class1183 method3468(Js5 arg0, int arg1) {
 		Packet var2 = new Packet(arg0.method6879(0, arg1));
 		return method18854(var2, arg1);
 	}

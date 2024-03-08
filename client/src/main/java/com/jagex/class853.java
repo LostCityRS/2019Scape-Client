@@ -9,10 +9,10 @@ public class class853 extends class140 {
 	public class848 field10229;
 
 	@ObfuscatedName("afh.s")
-	public class101[] field10230;
+	public Sprite[] field10230;
 
 	@ObfuscatedName("afh.y")
-	public class101[] field10231;
+	public Sprite[] field10231;
 
 	public class853(class848 arg0, class733 arg1, class851 arg2) {
 		super(arg0, arg1);
@@ -25,8 +25,8 @@ public class class853 extends class140 {
 			byte var8 = (byte) ((var7 & 0xFF) + (var7 >> 16 & 0xFF) * 3 + (var7 >> 8 & 0xFF) * 4 >> 3);
 			var5[var6] = var5[var6] & 0xFF000000 | var8 << 16 | var8 << 8 | var8;
 		}
-		this.field10230 = new class101[256];
-		this.field10231 = new class101[256];
+		this.field10230 = new Sprite[256];
+		this.field10231 = new Sprite[256];
 		for (int var9 = 0; var9 < 256; var9++) {
 			int var10 = this.field1667.method14558(var9);
 			int var11 = this.field1667.method14529(var9);

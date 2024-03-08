@@ -20,7 +20,7 @@ public class class631 {
 	@ObfuscatedName("wy.u")
 	public int[] field7767;
 
-	public class631(class442 arg0) {
+	public class631(Js5 arg0) {
 		byte[] var2 = arg0.method6894(class628.field7712.field7708);
 		this.method9890(new Packet(var2));
 	}
