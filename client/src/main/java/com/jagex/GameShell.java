@@ -82,10 +82,10 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	public boolean field6621 = false;
 
 	@ObfuscatedName("sk.bd")
-	public static int field6616 = -1;
+	public static int maxMemory = -1;
 
 	@ObfuscatedName("sk.bc")
-	public static int field6623 = 1;
+	public static int availableProcessors = 1;
 
 	@ObfuscatedName("sk.bi")
 	public boolean field6601 = false;
@@ -121,58 +121,58 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		Statics.field2935 = arg2;
 		Statics.field12493 = arg4;
 		Statics.field12494 = arg5;
-		Statics.field3182 = "Unknown";
-		Statics.field628 = "1.1";
+		Statics.javaVendor = "Unknown";
+		Statics.javaVersion = "1.1";
 		try {
-			Statics.field3182 = System.getProperty("java.vendor");
-			Statics.field628 = System.getProperty("java.version");
+			Statics.javaVendor = System.getProperty("java.vendor");
+			Statics.javaVersion = System.getProperty("java.version");
 		} catch (Exception var33) {
 		}
 		try {
-			Statics.field11708 = System.getProperty("os.name");
+			Statics.osName = System.getProperty("os.name");
 		} catch (Exception var32) {
-			Statics.field11708 = "Unknown";
+			Statics.osName = "Unknown";
 		}
-		Statics.field2601 = Statics.field11708.toLowerCase();
+		Statics.osNameLowercase = Statics.osName.toLowerCase();
 		try {
-			Statics.field2153 = System.getProperty("os.arch").toLowerCase();
+			Statics.osArch = System.getProperty("os.arch").toLowerCase();
 		} catch (Exception var31) {
-			Statics.field2153 = "";
+			Statics.osArch = "";
 		}
 		try {
-			Statics.field7881 = System.getProperty("os.version").toLowerCase();
+			Statics.osVersion = System.getProperty("os.version").toLowerCase();
 		} catch (Exception var30) {
-			Statics.field7881 = "";
+			Statics.osVersion = "";
 		}
 		try {
-			Statics.field4331 = System.getProperty("user.home");
-			if (Statics.field4331 != null) {
-				Statics.field4331 = Statics.field4331 + "/";
+			Statics.osHome = System.getProperty("user.home");
+			if (Statics.osHome != null) {
+				Statics.osHome = Statics.osHome + "/";
 			}
 		} catch (Exception var29) {
 		}
 		try {
-			if (Statics.field2601.startsWith("win")) {
-				if (Statics.field4331 == null) {
-					Statics.field4331 = System.getenv("USERPROFILE");
+			if (Statics.osNameLowercase.startsWith("win")) {
+				if (Statics.osHome == null) {
+					Statics.osHome = System.getenv("USERPROFILE");
 				}
-			} else if (Statics.field4331 == null) {
-				Statics.field4331 = System.getenv("HOME");
+			} else if (Statics.osHome == null) {
+				Statics.osHome = System.getenv("HOME");
 			}
-			if (Statics.field4331 != null) {
-				Statics.field4331 = Statics.field4331 + "/";
+			if (Statics.osHome != null) {
+				Statics.osHome = Statics.osHome + "/";
 			}
 		} catch (Exception var28) {
 		}
-		if (Statics.field4331 == null) {
-			Statics.field4331 = "~/";
+		if (Statics.osHome == null) {
+			Statics.osHome = "~/";
 		}
 		try {
-			Statics.field7240 = Toolkit.getDefaultToolkit().getSystemEventQueue();
+			Statics.osEventQueue = Toolkit.getDefaultToolkit().getSystemEventQueue();
 		} catch (Throwable var27) {
 		}
-		Statics.field586 = new String[] { "c:/rscache/", "/rscache/", "c:/windows/", "c:/winnt/", "c:/", Statics.field4331, "/tmp/", "" };
-		Statics.field3219 = new String[] { ".jagex_cache_" + Statics.field2935, ".file_store_" + Statics.field2935 };
+		Statics.osCacheDir = new String[] { "c:/rscache/", "/rscache/", "c:/windows/", "c:/winnt/", "c:/", Statics.osHome, "/tmp/", "" };
+		Statics.osCacheName = new String[] { ".jagex_cache_" + Statics.field2935, ".file_store_" + Statics.field2935 };
 		int var14 = 0;
 		label131: while (var14 < 4) {
 			Statics.field6579 = this.method8034(arg0, arg1, var14);
@@ -231,7 +231,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	@ObfuscatedName("sk.m(Ljava/lang/String;Ljava/lang/String;II)Ljava/io/File;")
 	public File method8034(String arg0, String arg1, int arg2) {
 		String var4 = arg2 == 0 ? "" : "" + arg2;
-		Statics.field6608 = new File(Statics.field4331, "jagex_cl_" + arg0 + "_" + arg1 + var4 + ".dat");
+		Statics.field6608 = new File(Statics.osHome, "jagex_cl_" + arg0 + "_" + arg1 + var4 + ".dat");
 		String var5 = null;
 		String var6 = null;
 		boolean var7 = false;
@@ -284,9 +284,9 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			}
 		}
 		if (var5 == null && arg2 == 0) {
-			label103: for (int var16 = 0; var16 < Statics.field3219.length; var16++) {
-				for (int var17 = 0; var17 < Statics.field586.length; var17++) {
-					File var18 = new File(Statics.field586[var17] + Statics.field3219[var16] + File.separatorChar + arg0 + File.separatorChar);
+			label103: for (int var16 = 0; var16 < Statics.osCacheName.length; var16++) {
+				for (int var17 = 0; var17 < Statics.osCacheDir.length; var17++) {
+					File var18 = new File(Statics.osCacheDir[var17] + Statics.osCacheName[var16] + File.separatorChar + arg0 + File.separatorChar);
 					if (var18.exists() && this.method8028(new File(var18, "test.dat"), true)) {
 						var5 = var18.toString();
 						var7 = true;
@@ -296,7 +296,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			}
 		}
 		if (var5 == null) {
-			var5 = Statics.field4331 + File.separatorChar + "jagexcache" + var4 + File.separatorChar + arg0 + File.separatorChar + arg1 + File.separatorChar;
+			var5 = Statics.osHome + File.separatorChar + "jagexcache" + var4 + File.separatorChar + arg0 + File.separatorChar + arg1 + File.separatorChar;
 			var7 = true;
 		}
 		if (var6 != null) {
@@ -375,7 +375,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		} else if (Statics.field2935 == 34) {
 			var6 = "_wip";
 		}
-		File var7 = new File(Statics.field4331, "jagex_" + arg1 + "_preferences" + arg0 + var6 + ".dat");
+		File var7 = new File(Statics.osHome, "jagex_" + arg1 + "_preferences" + arg0 + var6 + ".dat");
 		if (!arg2 && var7.exists()) {
 			try {
 				return new FileOnDisk(var7, "rw", 10000L);
@@ -392,13 +392,13 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	@ObfuscatedName("n.u(I)V")
 	public static void method141() {
 		try {
-			File var0 = new File(Statics.field4331, "random.dat");
+			File var0 = new File(Statics.osHome, "random.dat");
 			if (var0.exists()) {
 				field6613 = new BufferedFile(new FileOnDisk(var0, "rw", 25L), 24, 0);
 			} else {
-				label34: for (int var1 = 0; var1 < Statics.field3219.length; var1++) {
-					for (int var2 = 0; var2 < Statics.field586.length; var2++) {
-						File var3 = new File(Statics.field586[var2] + Statics.field3219[var1] + File.separatorChar + "random.dat");
+				label34: for (int var1 = 0; var1 < Statics.osCacheName.length; var1++) {
+					for (int var2 = 0; var2 < Statics.osCacheDir.length; var2++) {
+						File var3 = new File(Statics.osCacheDir[var2] + Statics.osCacheName[var1] + File.separatorChar + "random.dat");
 						if (var3.exists()) {
 							field6613 = new BufferedFile(new FileOnDisk(var3, "rw", 25L), 24, 0);
 							break label34;
@@ -556,10 +556,10 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 
 	@ObfuscatedName("sk.h(I)V")
 	public void method8035() {
-		if (Statics.field3182 != null) {
-			String var1 = Statics.field3182.toLowerCase();
+		if (Statics.javaVendor != null) {
+			String var1 = Statics.javaVendor.toLowerCase();
 			if (var1.indexOf("sun") != -1 || var1.indexOf("apple") != -1) {
-				String var2 = Statics.field628;
+				String var2 = Statics.javaVersion;
 				if (var2.equals("1.1") || var2.startsWith("1.1.") || var2.equals("1.2") || var2.startsWith("1.2.") || var2.equals("1.3") || var2.startsWith("1.3.") || var2.equals("1.4") || var2.startsWith("1.4.") || var2.equals("1.5") || var2.startsWith("1.5.") || var2.equals("1.6.0")) {
 					this.method8087("wrongjava");
 					return;
@@ -577,8 +577,8 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			}
 		}
 		method7321().setFocusCycleRoot(true);
-		field6616 = (int) (Runtime.getRuntime().maxMemory() / 1048576L) + 1;
-		field6623 = Runtime.getRuntime().availableProcessors();
+		maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1048576L) + 1;
+		availableProcessors = Runtime.getRuntime().availableProcessors();
 		this.method8030();
 		this.method8045();
 		Statics.field6594 = Timer.method6109();
@@ -889,7 +889,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		try {
 			QueryPerformanceCounter.init();
 		} catch (Throwable var2) {
-			if (Statics.field2601.startsWith("win")) {
+			if (Statics.osNameLowercase.startsWith("win")) {
 				throw new class1111(128, "jaclib");
 			}
 		}

@@ -287,7 +287,7 @@ public class Loading {
 			client.setState(1);
 		}
 		if (Statics.field3419 == LoadingStage.field2910 && Statics.field10577 == null) {
-			Statics.field10577 = new class536(Statics.field7060);
+			Statics.field10577 = new HardwarePlatformLoader(Statics.field7060);
 			class500.method14694(Statics.field10577);
 		}
 		if (Statics.field3419 == LoadingStage.field2902) {
@@ -428,7 +428,7 @@ public class Loading {
 			Statics.field688.method18157(Statics.field688.unknown6, 1);
 			if (client.field10779) {
 				Statics.field688.method18157(Statics.field688.displayMode, 0);
-			} else if (Statics.field688.displayMode.field11771 && Statics.field10581.field11613 < 512 && Statics.field10581.field11613 != 0) {
+			} else if (Statics.field688.displayMode.field11771 && Statics.field10581.cpuInfoRam < 512 && Statics.field10581.cpuInfoRam != 0) {
 				Statics.field688.method18157(Statics.field688.displayMode, 0);
 			}
 			class48.method16391();

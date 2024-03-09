@@ -79,7 +79,7 @@ public class class48 {
 		boolean var3 = false;
 		boolean var4;
 		boolean var5;
-		if (Statics.field2601.startsWith("win")) {
+		if (Statics.osNameLowercase.startsWith("win")) {
 			var2 = true;
 			var4 = true;
 			var5 = true;
@@ -180,7 +180,7 @@ public class class48 {
 	public static void method18306(ClientAutoSetupResult arg0) {
 		arg0.method18314(0);
 		byte var2;
-		if (GameShell.field6616 >= 96) {
+		if (GameShell.maxMemory >= 96) {
 			int var1 = class33.method270();
 			if (var1 <= 100) {
 				method9619();

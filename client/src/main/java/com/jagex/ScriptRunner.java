@@ -14116,7 +14116,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ec.auy(Lyf;I)V")
 	public static final void method2795(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Statics.field10581.field11613 < 512 || client.field10779 || client.field10796 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Statics.field10581.cpuInfoRam < 512 || client.field10779 || client.field10796 ? 1 : 0;
 	}
 
 	@ObfuscatedName("wp.aug(Lyf;I)V")
@@ -15633,7 +15633,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("adj.bdc(Lyf;I)V")
 	public static final void method15265(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Statics.field10581.field11613;
+		arg0.field8216[++arg0.field8226 - 1] = Statics.field10581.cpuInfoRam;
 	}
 
 	@ObfuscatedName("aow.bdn(Lyf;I)V")

@@ -300,7 +300,7 @@ public class DeveloperConsole {
 				return;
 			}
 			if (arg0.equals("heap")) {
-				method4285("Heap: " + GameShell.field6616 + "MB");
+				method4285("Heap: " + GameShell.maxMemory + "MB");
 				return;
 			}
 			if (arg0.equalsIgnoreCase("getcamerapos")) {

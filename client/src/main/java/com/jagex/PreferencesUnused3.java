@@ -33,7 +33,6 @@ public class PreferencesUnused3 extends PreferencesOption {
 	@ObfuscatedName("amm.k(II)V")
 	public void method14072(int arg0) {
 		this.field8416 = arg0;
-		System.out.println("field8416");
 	}
 
 	@ObfuscatedName("amm.s(I)I")

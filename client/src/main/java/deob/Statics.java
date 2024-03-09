@@ -95,7 +95,7 @@ public class Statics {
 	public static Sprite field10568;
 
 	@ObfuscatedName("ahe.gv")
-	public static class536 field10577;
+	public static HardwarePlatformLoader field10577;
 
 	@ObfuscatedName("ahs.g")
 	public static Canvas field10578;
@@ -155,7 +155,7 @@ public class Statics {
 	public static short field11700;
 
 	@ObfuscatedName("alc.bm")
-	public static String field11708;
+	public static String osName;
 
 	@ObfuscatedName("alc.ok")
 	public static boolean field11709;
@@ -470,7 +470,7 @@ public class Statics {
 	public static Js5 field2149;
 
 	@ObfuscatedName("hq.bb")
-	public static String field2153;
+	public static String osArch;
 
 	@ObfuscatedName("hq.tf")
 	public static byte field2154;
@@ -506,7 +506,7 @@ public class Statics {
 	public static CheckNameReply field2589;
 
 	@ObfuscatedName("ij.bq")
-	public static String field2601;
+	public static String osNameLowercase;
 
 	@ObfuscatedName("io.cl")
 	public static int field2606;
@@ -623,7 +623,7 @@ public class Statics {
 	public static Spline field3178;
 
 	@ObfuscatedName("ky.bn")
-	public static String field3182;
+	public static String javaVendor;
 
 	@ObfuscatedName("ky.ji")
 	public static AsyncRebuild field3183;
@@ -632,7 +632,7 @@ public class Statics {
 	public static MaterialList field3199;
 
 	@ObfuscatedName("la.ak")
-	public static String[] field3219;
+	public static String[] osCacheName;
 
 	@ObfuscatedName("lp.r")
 	public static Object field3225;
@@ -719,7 +719,7 @@ public class Statics {
 	public static ServerConnection field432;
 
 	@ObfuscatedName("pk.by")
-	public static String field4331;
+	public static String osHome;
 
 	@ObfuscatedName("pm.e")
 	public static class775[] field4334;
@@ -911,7 +911,7 @@ public class Statics {
 	public static SuggestNameReply field585;
 
 	@ObfuscatedName("y.af")
-	public static String[] field586;
+	public static String[] osCacheDir;
 
 	@ObfuscatedName("x.w")
 	public static int field592;
@@ -947,7 +947,7 @@ public class Statics {
 	public static int field627;
 
 	@ObfuscatedName("ae.bt")
-	public static String field628;
+	public static String javaVersion;
 
 	@ObfuscatedName("ag.n")
 	public static class140 field629;
@@ -1220,7 +1220,7 @@ public class Statics {
 	public static int field7231;
 
 	@ObfuscatedName("uw.bu")
-	public static EventQueue field7240;
+	public static EventQueue osEventQueue;
 
 	@ObfuscatedName("uw.cw")
 	public static Sprite field7241;
@@ -1388,7 +1388,7 @@ public class Statics {
 	public static boolean field7880;
 
 	@ObfuscatedName("xv.be")
-	public static String field7881;
+	public static String osVersion;
 
 	@ObfuscatedName("xn.r")
 	public static int field7883;
@@ -2769,7 +2769,7 @@ public class Statics {
 
 	@ObfuscatedName("kr.d(B)V")
 	public static void method5326() {
-		if (GameShell.field6623 > 1) {
+		if (GameShell.availableProcessors > 1) {
 			field688.method18157(field688.cpuUsage, 4);
 		} else {
 			field688.method18157(field688.cpuUsage, 2);
@@ -2950,15 +2950,15 @@ public class Statics {
 
 	@ObfuscatedName("f.a(Ljava/lang/Object;I)V")
 	public static void method218(Object arg0) {
-		if (field7240 == null) {
+		if (osEventQueue == null) {
 			return;
 		}
-		for (int var1 = 0; var1 < 50 && field7240.peekEvent() != null; var1++) {
+		for (int var1 = 0; var1 < 50 && osEventQueue.peekEvent() != null; var1++) {
 			PreciseSleep.sleep(1L);
 		}
 		try {
 			if (arg0 != null) {
-				field7240.postEvent(new ActionEvent(arg0, 1001, "dummy"));
+				osEventQueue.postEvent(new ActionEvent(arg0, 1001, "dummy"));
 			}
 		} catch (Exception var3) {
 		}

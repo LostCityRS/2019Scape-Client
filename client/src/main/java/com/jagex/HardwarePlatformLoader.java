@@ -11,7 +11,7 @@ import java.util.Hashtable;
 import java.util.Vector;
 
 @ObfuscatedName("ty")
-public class class536 implements class499 {
+public class HardwarePlatformLoader implements class499 {
 
 	@ObfuscatedName("ty.e")
 	public final Js5 field6764;
@@ -25,7 +25,7 @@ public class class536 implements class499 {
 	@ObfuscatedName("ty.k")
 	public Hashtable field6766 = new Hashtable();
 
-	public class536(Js5 arg0) {
+	public HardwarePlatformLoader(Js5 arg0) {
 		this.field6764 = arg0;
 		String var2 = "";
 		if (NativeLibraryConfig.field5074.startsWith("win") || NativeLibraryConfig.field5074.startsWith("windows 7")) {

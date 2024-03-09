@@ -1386,7 +1386,7 @@ public final class client extends GameShell {
 			Statics.field9155.method4690(Vector3.method6483(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY));
 		} catch (class1109 var4) {
 		}
-		Browser.method9163(Statics.field11885, Statics.field2601);
+		Browser.method9163(Statics.field11885, Statics.osNameLowercase);
 		if (Statics.field1811 != ModeWhere.field8273 && Statics.field1811 != ModeWhere.field8276) {
 			field10794 = true;
 		}
@@ -1728,12 +1728,12 @@ public final class client extends GameShell {
 			var1 = var1 + Statics.field688.textures.method18426() + " ";
 			var1 = var1 + Statics.field688.bloom.method18625() + " ";
 			var1 = var1 + "0 ";
-			var1 = var1 + field6616 + " ";
+			var1 = var1 + maxMemory + " ";
 			var1 = var1 + state + " ";
 			if (Statics.field10581 == null) {
 				var1 = var1 + -1;
 			} else {
-				var1 = var1 + Statics.field10581.field11613;
+				var1 = var1 + Statics.field10581.cpuInfoRam;
 			}
 			var1 = var1 + " ";
 			if (field10789 == null) {
@@ -2083,7 +2083,7 @@ public final class client extends GameShell {
 						if (Statics.field8198.method2194()) {
 							boolean var9 = true;
 							try {
-								var9 = Statics.field10581.field11613 > 256;
+								var9 = Statics.field10581.cpuInfoRam > 256;
 							} catch (Throwable var29) {
 							}
 							class972 var11;
@@ -7152,7 +7152,7 @@ public final class client extends GameShell {
 				if (var26.length() == 0) {
 					var26 = var25;
 				}
-				if (!field11079 || Statics.field2601.startsWith("mac") || !Browser.method2898(var25, 1, JavascriptFunction.field4033.method6087())) {
+				if (!field11079 || Statics.osNameLowercase.startsWith("mac") || !Browser.method2898(var25, 1, JavascriptFunction.field4033.method6087())) {
 					Browser.method4607(var26, true, field10784);
 				}
 			} else {
