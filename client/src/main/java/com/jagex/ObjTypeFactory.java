@@ -40,7 +40,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 		this.allowMembers = arg2;
 		this.field8614 = arg3;
 		this.paramTL = arg4;
-		if (ModeGame.field8335 == arg0) {
+		if (ModeGame.RUNESCAPE == arg0) {
 			this.field8617 = new String[] { null, null, LocalisedText.field8959.method15021(this.languageId), null, null, LocalisedText.field9075.method15021(this.languageId) };
 		} else {
 			this.field8617 = new String[] { null, null, LocalisedText.field8959.method15021(this.languageId), null, null, null };

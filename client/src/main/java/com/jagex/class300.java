@@ -16,7 +16,7 @@ public class class300 implements LoadingScreenElement {
 	@ObfuscatedName("ko.n(ZI)V")
 	public void method5105(boolean arg0) {
 		if (arg0) {
-			Statics.field8198.method2354(0, 0, Statics.field6586, Statics.field6600, this.field3048.field3147, 0);
+			Statics.field8198.method2354(0, 0, Statics.canvasWid, Statics.canvasHei, this.field3048.field3147, 0);
 		}
 	}
 

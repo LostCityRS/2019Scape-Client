@@ -179,14 +179,14 @@ public class Preferences extends Node {
 
 	public Preferences(ModeGame arg0, int arg1) {
 		this.field11510 = arg0;
-		this.field11513 = new class710(GameShell.maxMemory, GameShell.availableProcessors, Statics.osArch.toLowerCase().indexOf("arm") != -1, Statics.osNameLowercase.startsWith("win"), false);
+		this.field11513 = new class710(GameShell.maxmemory, GameShell.cpucount, Statics.osArchRaw.toLowerCase().indexOf("arm") != -1, Statics.osName.startsWith("win"), false);
 		this.displayMode2 = new PreferencesDisplayMode(arg1, this);
 		this.method18154(true, true);
 	}
 
 	public Preferences(Packet arg0, ModeGame arg1, int arg2) {
 		this.field11510 = arg1;
-		this.field11513 = new class710(GameShell.maxMemory, GameShell.availableProcessors, Statics.osArch.indexOf("arm") != -1, Statics.osNameLowercase.startsWith("win"), false);
+		this.field11513 = new class710(GameShell.maxmemory, GameShell.cpucount, Statics.osArchRaw.indexOf("arm") != -1, Statics.osName.startsWith("win"), false);
 		this.displayMode2 = new PreferencesDisplayMode(arg2, this);
 		this.method18163(arg0);
 	}

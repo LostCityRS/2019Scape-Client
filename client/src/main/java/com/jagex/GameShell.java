@@ -22,10 +22,10 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	public static long field6584 = 20000000L;
 
 	@ObfuscatedName("sk.m")
-	public static int field6585 = 0;
+	public static int fps = 0;
 
 	@ObfuscatedName("sk.k")
-	public static int field6602 = 0;
+	public static int fpsAverage = 0;
 
 	@ObfuscatedName("sk.l")
 	public static long[] field6589 = new long[32];
@@ -34,58 +34,58 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	public static long[] field6591 = new long[32];
 
 	@ObfuscatedName("sk.y")
-	public static int field6596 = 0;
+	public static int leftMargin = 0;
 
 	@ObfuscatedName("sk.q")
-	public static int field6597 = 0;
+	public static int topMargin = 0;
 
 	@ObfuscatedName("sk.b")
 	public static String field6598 = null;
 
 	@ObfuscatedName("sk.j")
-	public static volatile boolean field6599 = true;
+	public static volatile boolean fullredraw = true;
 
 	@ObfuscatedName("sk.ae")
 	public static int field6614 = 500;
 
 	@ObfuscatedName("sk.ag")
-	public static volatile boolean field6606 = false;
+	public static volatile boolean canvasReplaceRecommended = false;
 
 	@ObfuscatedName("sk.ah")
-	public static volatile long field6595 = 0L;
+	public static volatile long lastCanvasReplace = 0L;
 
 	@ObfuscatedName("sk.ac")
 	public static boolean field6603 = false;
 
 	@ObfuscatedName("sk.ai")
-	public static volatile boolean field6604 = true;
+	public static volatile boolean focus_in = true;
 
 	@ObfuscatedName("sk.aj")
-	public static BufferedFile field6613 = null;
+	public static BufferedFile uidDat = null;
 
 	@ObfuscatedName("sk.ay")
-	public static BufferedFile field6615 = null;
+	public static BufferedFile cacheDat = null;
 
 	@ObfuscatedName("sk.ab")
-	public static BufferedFile field6619 = null;
+	public static BufferedFile masterIndex = null;
 
 	@ObfuscatedName("sk.bl")
-	public static class506 field6618 = null;
+	public static GameShell3$Environment environment = null;
 
 	@ObfuscatedName("sk.bk")
-	public static long field6609 = 0L;
+	public static long killtime = 0L;
 
 	@ObfuscatedName("sk.bh")
-	public static boolean field6620 = false;
+	public static boolean shutdown = false;
 
 	@ObfuscatedName("sk.bx")
-	public boolean field6621 = false;
+	public boolean alreadyerrored = false;
 
 	@ObfuscatedName("sk.bd")
-	public static int maxMemory = -1;
+	public static int maxmemory = -1;
 
 	@ObfuscatedName("sk.bc")
-	public static int availableProcessors = 1;
+	public static int cpucount = 1;
 
 	@ObfuscatedName("sk.bi")
 	public boolean field6601 = false;
@@ -95,30 +95,30 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	}
 
 	@ObfuscatedName("sk.e(Lsq;Ljava/lang/String;Ljava/lang/String;IIIIZI)V")
-	public final void method8066(class512 arg0, String arg1, String arg2, int arg3, int arg4, int arg5, int arg6, boolean arg7) {
+	public final void startApplet(GameShell3$FrameParameters arg0, String arg1, String arg2, int arg3, int arg4, int arg5, int arg6, boolean arg7) {
 		try {
-			this.method8051(class506.field6581, arg7);
-			Statics.field6593 = Statics.field6586 = arg0.method8179();
-			Statics.field4827 = Statics.field6600 = arg0.method8180();
-			field6596 = 0;
-			field6597 = 0;
-			if (method4419() == class506.field6582) {
-				Statics.field6593 += arg0.method8181() * 2;
-				Statics.field4827 += arg0.method8182() * 2;
-				this.method8029(arg0.method8183());
+			this.setEnvironment(GameShell3$Environment.APPLET, arg7);
+			Statics.frameWid = Statics.canvasWid = arg0.getWidth();
+			Statics.frameHei = Statics.canvasHei = arg0.getHeight();
+			leftMargin = 0;
+			topMargin = 0;
+			if (getEnvironment() == GameShell3$Environment.APPLET_WITH_EXTERNAL_FRAME) {
+				Statics.frameWid += arg0.getXMargin() * 2;
+				Statics.frameHei += arg0.getYMargin() * 2;
+				this.createAndShowFrame(arg0.getTitle());
 			}
 			Statics.field9164 = Statics.field11885;
-			this.method8026(arg1, arg2, arg3, arg4, arg5, arg6);
+			this.startCommon(arg1, arg2, arg3, arg4, arg5, arg6);
 		} catch (Throwable var10) {
 			JagException.method9845(null, var10);
-			this.method8087("crash");
+			this.error("crash");
 		}
 	}
 
 	@ObfuscatedName("sk.n(Ljava/lang/String;Ljava/lang/String;IIIII)V")
-	public final void method8026(String arg0, String arg1, int arg2, int arg3, int arg4, int arg5) throws Exception {
-		Statics.field599 = arg3;
-		Statics.field2935 = arg2;
+	public final void startCommon(String arg0, String arg1, int arg2, int arg3, int arg4, int arg5) throws Exception {
+		Statics.archiveCount = arg3;
+		Statics.historicCacheId = arg2;
 		Statics.field12493 = arg4;
 		Statics.field12494 = arg5;
 		Statics.javaVendor = "Unknown";
@@ -129,57 +129,57 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		} catch (Exception var33) {
 		}
 		try {
-			Statics.osName = System.getProperty("os.name");
+			Statics.osNameRaw = System.getProperty("os.name");
 		} catch (Exception var32) {
-			Statics.osName = "Unknown";
+			Statics.osNameRaw = "Unknown";
 		}
-		Statics.osNameLowercase = Statics.osName.toLowerCase();
+		Statics.osName = Statics.osNameRaw.toLowerCase();
 		try {
-			Statics.osArch = System.getProperty("os.arch").toLowerCase();
+			Statics.osArchRaw = System.getProperty("os.arch").toLowerCase();
 		} catch (Exception var31) {
-			Statics.osArch = "";
+			Statics.osArchRaw = "";
 		}
 		try {
-			Statics.osVersion = System.getProperty("os.version").toLowerCase();
+			Statics.osVersionRaw = System.getProperty("os.version").toLowerCase();
 		} catch (Exception var30) {
-			Statics.osVersion = "";
+			Statics.osVersionRaw = "";
 		}
 		try {
-			Statics.osHome = System.getProperty("user.home");
-			if (Statics.osHome != null) {
-				Statics.osHome = Statics.osHome + "/";
+			Statics.homeDir = System.getProperty("user.home");
+			if (Statics.homeDir != null) {
+				Statics.homeDir = Statics.homeDir + "/";
 			}
 		} catch (Exception var29) {
 		}
 		try {
-			if (Statics.osNameLowercase.startsWith("win")) {
-				if (Statics.osHome == null) {
-					Statics.osHome = System.getenv("USERPROFILE");
+			if (Statics.osName.startsWith("win")) {
+				if (Statics.homeDir == null) {
+					Statics.homeDir = System.getenv("USERPROFILE");
 				}
-			} else if (Statics.osHome == null) {
-				Statics.osHome = System.getenv("HOME");
+			} else if (Statics.homeDir == null) {
+				Statics.homeDir = System.getenv("HOME");
 			}
-			if (Statics.osHome != null) {
-				Statics.osHome = Statics.osHome + "/";
+			if (Statics.homeDir != null) {
+				Statics.homeDir = Statics.homeDir + "/";
 			}
 		} catch (Exception var28) {
 		}
-		if (Statics.osHome == null) {
-			Statics.osHome = "~/";
+		if (Statics.homeDir == null) {
+			Statics.homeDir = "~/";
 		}
 		try {
-			Statics.osEventQueue = Toolkit.getDefaultToolkit().getSystemEventQueue();
+			Statics.eventQueue = Toolkit.getDefaultToolkit().getSystemEventQueue();
 		} catch (Throwable var27) {
 		}
-		Statics.osCacheDir = new String[] { "c:/rscache/", "/rscache/", "c:/windows/", "c:/winnt/", "c:/", Statics.osHome, "/tmp/", "" };
-		Statics.osCacheName = new String[] { ".jagex_cache_" + Statics.field2935, ".file_store_" + Statics.field2935 };
+		Statics.historicCacheLocations = new String[] { "c:/rscache/", "/rscache/", "c:/windows/", "c:/winnt/", "c:/", Statics.homeDir, "/tmp/", "" };
+		Statics.historicCacheDirectories = new String[] { ".jagex_cache_" + Statics.historicCacheId, ".file_store_" + Statics.historicCacheId};
 		int var14 = 0;
 		label131: while (var14 < 4) {
-			Statics.field6579 = this.method8034(arg0, arg1, var14);
-			if (!Statics.field6579.exists()) {
-				Statics.field6579.mkdirs();
+			Statics.cacheDirectory = this.getCacheDirectory(arg0, arg1, var14);
+			if (!Statics.cacheDirectory.exists()) {
+				Statics.cacheDirectory.mkdirs();
 			}
-			File[] var15 = Statics.field6579.listFiles();
+			File[] var15 = Statics.cacheDirectory.listFiles();
 			if (var15 == null) {
 				break;
 			}
@@ -190,27 +190,27 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 					break label131;
 				}
 				File var18 = var16[var17];
-				if (!this.method8028(var18, false)) {
+				if (!this.checkWritable(var18, false)) {
 					var14++;
 					break;
 				}
 				var17++;
 			}
 		}
-		class510.method3546(Statics.field6579);
-		method141();
-		field6615 = new BufferedFile(new FileOnDisk(class510.method18852("main_file_cache.dat2"), "rw", 3221225472L), 5200, 0);
-		field6619 = new BufferedFile(new FileOnDisk(class510.method18852("main_file_cache.idx255"), "rw", 1048576L), 6000, 0);
-		Statics.field7422 = new BufferedFile[Statics.field599];
-		for (int var19 = 0; var19 < Statics.field599; var19++) {
-			Statics.field7422[var19] = new BufferedFile(new FileOnDisk(class510.method18852("main_file_cache.idx" + var19), "rw", 1048576L), 6000, 0);
+		class510.method3546(Statics.cacheDirectory);
+		openUID();
+		cacheDat = new BufferedFile(new FileOnDisk(class510.method18852("main_file_cache.dat2"), "rw", 3221225472L), 5200, 0);
+		masterIndex = new BufferedFile(new FileOnDisk(class510.method18852("main_file_cache.idx255"), "rw", 1048576L), 6000, 0);
+		Statics.cacheIndex = new BufferedFile[Statics.archiveCount];
+		for (int var19 = 0; var19 < Statics.archiveCount; var19++) {
+			Statics.cacheIndex[var19] = new BufferedFile(new FileOnDisk(class510.method18852("main_file_cache.idx" + var19), "rw", 1048576L), 6000, 0);
 		}
 		try {
-			Statics.field6629 = new FullscreenImpl();
+			Statics.fsimp14 = new FullscreenImpl();
 		} catch (Exception ex) {
 			Fullscreen.allowed = false;
 		}
-		Statics.field1880 = new class508();
+		Statics.mouseImp = new class508();
 		ThreadGroup var21 = Thread.currentThread().getThreadGroup();
 		for (ThreadGroup var22 = var21.getParent(); var22 != null; var22 = var22.getParent()) {
 			var21 = var22;
@@ -229,15 +229,15 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	}
 
 	@ObfuscatedName("sk.m(Ljava/lang/String;Ljava/lang/String;II)Ljava/io/File;")
-	public File method8034(String arg0, String arg1, int arg2) {
+	public File getCacheDirectory(String arg0, String arg1, int arg2) {
 		String var4 = arg2 == 0 ? "" : "" + arg2;
-		Statics.field6608 = new File(Statics.osHome, "jagex_cl_" + arg0 + "_" + arg1 + var4 + ".dat");
+		Statics.cacheLocator = new File(Statics.homeDir, "jagex_cl_" + arg0 + "_" + arg1 + var4 + ".dat");
 		String var5 = null;
 		String var6 = null;
 		boolean var7 = false;
-		if (Statics.field6608.exists()) {
+		if (Statics.cacheLocator.exists()) {
 			try {
-				FileOnDisk var8 = new FileOnDisk(Statics.field6608, "rw", 10000L);
+				FileOnDisk var8 = new FileOnDisk(Statics.cacheLocator, "rw", 10000L);
 				Packet var9 = new Packet((int) var8.method14821());
 				while (var9.pos < var9.data.length) {
 					int var10 = var8.method14812(var9.data, var9.pos, var9.data.length - var9.pos);
@@ -278,16 +278,16 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			}
 			if (var5 != null) {
 				File var15 = new File(var5, "test.dat");
-				if (!this.method8028(var15, true)) {
+				if (!this.checkWritable(var15, true)) {
 					var5 = null;
 				}
 			}
 		}
 		if (var5 == null && arg2 == 0) {
-			label103: for (int var16 = 0; var16 < Statics.osCacheName.length; var16++) {
-				for (int var17 = 0; var17 < Statics.osCacheDir.length; var17++) {
-					File var18 = new File(Statics.osCacheDir[var17] + Statics.osCacheName[var16] + File.separatorChar + arg0 + File.separatorChar);
-					if (var18.exists() && this.method8028(new File(var18, "test.dat"), true)) {
+			label103: for (int var16 = 0; var16 < Statics.historicCacheDirectories.length; var16++) {
+				for (int var17 = 0; var17 < Statics.historicCacheLocations.length; var17++) {
+					File var18 = new File(Statics.historicCacheLocations[var17] + Statics.historicCacheDirectories[var16] + File.separatorChar + arg0 + File.separatorChar);
+					if (var18.exists() && this.checkWritable(new File(var18, "test.dat"), true)) {
 						var5 = var18.toString();
 						var7 = true;
 						break label103;
@@ -296,7 +296,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			}
 		}
 		if (var5 == null) {
-			var5 = Statics.osHome + File.separatorChar + "jagexcache" + var4 + File.separatorChar + arg0 + File.separatorChar + arg1 + File.separatorChar;
+			var5 = Statics.homeDir + File.separatorChar + "jagexcache" + var4 + File.separatorChar + arg0 + File.separatorChar + arg1 + File.separatorChar;
 			var7 = true;
 		}
 		if (var6 != null) {
@@ -319,15 +319,15 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			var7 = true;
 		}
 		if (var7) {
-			this.method8027(new File(var5), null);
+			this.writeCacheLocator(new File(var5), null);
 		}
 		return new File(var5);
 	}
 
 	@ObfuscatedName("sk.k(Ljava/io/File;Ljava/io/File;I)V")
-	public void method8027(File arg0, File arg1) {
+	public void writeCacheLocator(File arg0, File arg1) {
 		try {
-			FileOnDisk var3 = new FileOnDisk(Statics.field6608, "rw", 10000L);
+			FileOnDisk var3 = new FileOnDisk(Statics.cacheLocator, "rw", 10000L);
 			Packet var4 = new Packet(500);
 			var4.p1(3);
 			var4.p1(arg1 == null ? 0 : 1);
@@ -343,7 +343,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	}
 
 	@ObfuscatedName("sk.f(Ljava/io/File;ZB)Z")
-	public boolean method8028(File arg0, boolean arg1) {
+	public boolean checkWritable(File arg0, boolean arg1) {
 		try {
 			RandomAccessFile var3 = new RandomAccessFile(arg0, "rw");
 			int var4 = var3.read();
@@ -361,8 +361,8 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	}
 
 	@ObfuscatedName("amr.l(Ljava/lang/String;Ljava/lang/String;ZI)Labl;")
-	public static FileOnDisk method18567(String arg0, String arg1, boolean arg2) {
-		File var3 = new File(Statics.field6579, "preferences" + arg0 + ".dat");
+	public static FileOnDisk openPrefs(String arg0, String arg1, boolean arg2) {
+		File var3 = new File(Statics.cacheDirectory, "preferences" + arg0 + ".dat");
 		if (var3.exists()) {
 			try {
 				return new FileOnDisk(var3, "rw", 10000L);
@@ -370,12 +370,12 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			}
 		}
 		String var6 = "";
-		if (Statics.field2935 == 33) {
+		if (Statics.historicCacheId == 33) {
 			var6 = "_rc";
-		} else if (Statics.field2935 == 34) {
+		} else if (Statics.historicCacheId == 34) {
 			var6 = "_wip";
 		}
-		File var7 = new File(Statics.osHome, "jagex_" + arg1 + "_preferences" + arg0 + var6 + ".dat");
+		File var7 = new File(Statics.homeDir, "jagex_" + arg1 + "_preferences" + arg0 + var6 + ".dat");
 		if (!arg2 && var7.exists()) {
 			try {
 				return new FileOnDisk(var7, "rw", 10000L);
@@ -390,41 +390,41 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	}
 
 	@ObfuscatedName("n.u(I)V")
-	public static void method141() {
+	public static void openUID() {
 		try {
-			File var0 = new File(Statics.osHome, "random.dat");
+			File var0 = new File(Statics.homeDir, "random.dat");
 			if (var0.exists()) {
-				field6613 = new BufferedFile(new FileOnDisk(var0, "rw", 25L), 24, 0);
+				uidDat = new BufferedFile(new FileOnDisk(var0, "rw", 25L), 24, 0);
 			} else {
-				label34: for (int var1 = 0; var1 < Statics.osCacheName.length; var1++) {
-					for (int var2 = 0; var2 < Statics.osCacheDir.length; var2++) {
-						File var3 = new File(Statics.osCacheDir[var2] + Statics.osCacheName[var1] + File.separatorChar + "random.dat");
+				label34: for (int var1 = 0; var1 < Statics.historicCacheDirectories.length; var1++) {
+					for (int var2 = 0; var2 < Statics.historicCacheLocations.length; var2++) {
+						File var3 = new File(Statics.historicCacheLocations[var2] + Statics.historicCacheDirectories[var1] + File.separatorChar + "random.dat");
 						if (var3.exists()) {
-							field6613 = new BufferedFile(new FileOnDisk(var3, "rw", 25L), 24, 0);
+							uidDat = new BufferedFile(new FileOnDisk(var3, "rw", 25L), 24, 0);
 							break label34;
 						}
 					}
 				}
 			}
-			if (field6613 == null) {
+			if (uidDat == null) {
 				RandomAccessFile var4 = new RandomAccessFile(var0, "rw");
 				int var5 = var4.read();
 				var4.seek(0L);
 				var4.write(var5);
 				var4.seek(0L);
 				var4.close();
-				field6613 = new BufferedFile(new FileOnDisk(var0, "rw", 25L), 24, 0);
+				uidDat = new BufferedFile(new FileOnDisk(var0, "rw", 25L), 24, 0);
 			}
 		} catch (IOException var7) {
 		}
 	}
 
 	@ObfuscatedName("hj.z(Lalw;I)V")
-	public static void method4286(Packet arg0) {
+	public static void pushUID192(Packet arg0) {
 		byte[] var1 = new byte[24];
 		try {
-			field6613.method14824(0L);
-			field6613.method14826(var1);
+			uidDat.method14824(0L);
+			uidDat.method14826(var1);
 			int var2;
 			for (var2 = 0; var2 < 24 && var1[var2] == 0; var2++) {
 			}
@@ -440,81 +440,81 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	}
 
 	@ObfuscatedName("az.p(Lalw;II)V")
-	public static void method1001(Packet arg0, int arg1) {
-		if (field6613 == null) {
+	public static void storeUID192(Packet arg0, int arg1) {
+		if (uidDat == null) {
 			return;
 		}
 		try {
-			field6613.method14824(0L);
-			field6613.method14828(arg0.data, arg1, 24);
+			uidDat.method14824(0L);
+			uidDat.method14828(arg0.data, arg1, 24);
 		} catch (Exception var3) {
 		}
 	}
 
 	@ObfuscatedName("sk.d(Ljava/lang/String;B)V")
-	public synchronized void method8029(String arg0) {
-		Statics.field7425 = new Frame();
-		Statics.field7425.setTitle(arg0);
-		Statics.field7425.setResizable(true);
-		Statics.field7425.addWindowListener(this);
-		Statics.field7425.setBackground(Color.black);
-		Statics.field7425.setVisible(true);
-		Statics.field7425.toFront();
-		Insets var2 = Statics.field7425.getInsets();
-		Statics.field7425.setSize(Statics.field6593 + var2.left + var2.right, Statics.field4827 + var2.top + var2.bottom);
+	public synchronized void createAndShowFrame(String arg0) {
+		Statics.frame = new Frame();
+		Statics.frame.setTitle(arg0);
+		Statics.frame.setResizable(true);
+		Statics.frame.addWindowListener(this);
+		Statics.frame.setBackground(Color.black);
+		Statics.frame.setVisible(true);
+		Statics.frame.toFront();
+		Insets var2 = Statics.frame.getInsets();
+		Statics.frame.setSize(Statics.frameWid + var2.left + var2.right, Statics.frameHei + var2.top + var2.bottom);
 	}
 
 	@ObfuscatedName("sk.s(I)V")
-	public synchronized void method8030() {
-		this.method8032();
+	public synchronized void addcanvas() {
+		this.removeCanvas();
 		Container var1 = method7321();
-		Statics.field10578 = new GameCanvas(var1);
-		this.method8129(var1);
+		Statics.canvas = new GameCanvas(var1);
+		this.addCanvas(var1);
 	}
 
 	@ObfuscatedName("qf.y(I)Ljava/awt/Container;")
 	public static Container method7321() {
-		if (Statics.field12101 == null) {
-			return Statics.field7425 == null ? Statics.field11885 : Statics.field7425;
+		if (Statics.fsframe == null) {
+			return Statics.frame == null ? Statics.field11885 : Statics.frame;
 		} else {
-			return Statics.field12101;
+			return Statics.fsframe;
 		}
 	}
 
 	@ObfuscatedName("sk.q(Ljava/awt/Container;I)V")
-	public void method8129(Container arg0) {
+	public void addCanvas(Container arg0) {
 		arg0.setBackground(Color.black);
 		arg0.setLayout(null);
-		arg0.add(Statics.field10578);
-		Statics.field10578.setSize(Statics.field6586, Statics.field6600);
-		Statics.field10578.setVisible(true);
-		if (Statics.field7425 == arg0) {
-			Insets var2 = Statics.field7425.getInsets();
-			Statics.field10578.setLocation(field6596 + var2.left, field6597 + var2.top);
+		arg0.add(Statics.canvas);
+		Statics.canvas.setSize(Statics.canvasWid, Statics.canvasHei);
+		Statics.canvas.setVisible(true);
+		if (Statics.frame == arg0) {
+			Insets var2 = Statics.frame.getInsets();
+			Statics.canvas.setLocation(leftMargin + var2.left, topMargin + var2.top);
 		} else {
-			Statics.field10578.setLocation(field6596, field6597);
+			Statics.canvas.setLocation(leftMargin, topMargin);
 		}
-		Statics.field10578.addFocusListener(this);
-		Statics.field10578.requestFocus();
-		Statics.field8491 = true;
-		field6604 = true;
-		Statics.field10578.setFocusTraversalKeysEnabled(false);
-		field6599 = true;
-		field6606 = false;
-		field6595 = MonotonicTime.method3655();
+		Statics.canvas.addFocusListener(this);
+		Statics.canvas.requestFocus();
+		Statics.focus = true;
+		focus_in = true;
+		Statics.canvas.setFocusTraversalKeysEnabled(false);
+		fullredraw = true;
+		canvasReplaceRecommended = false;
+		lastCanvasReplace = MonotonicTime.method3655();
 	}
 
 	@ObfuscatedName("sk.x(I)V")
-	public void method8032() {
-		if (Statics.field10578 != null) {
-			Statics.field10578.removeFocusListener(this);
-			Statics.field10578.getParent().setBackground(Color.black);
-			Statics.field10578.getParent().remove(Statics.field10578);
+	public void removeCanvas() {
+		if (Statics.canvas != null) {
+			Statics.canvas.removeFocusListener(this);
+			Statics.canvas.getParent().setBackground(Color.black);
+			Statics.canvas.getParent().remove(Statics.canvas);
 		}
 	}
 
 	@ObfuscatedName("sk.b(I)Z")
-	public final boolean method8033() {
+	public final boolean checkhost() {
 		if (!client.ENABLE_HOST_CHECK) {
 			return true;
 		}
@@ -535,7 +535,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			if (var1.endsWith("192.168.1.")) {
 				return true;
 			} else {
-				this.method8087("invalidhost");
+				this.error("invalidhost");
 				return false;
 			}
 		}
@@ -543,25 +543,25 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 
 	public void run() {
 		try {
-			this.method8035();
+			this.run_inner();
 		} catch (ThreadDeath var7) {
 			throw var7;
 		} catch (Throwable var8) {
 			JagException.method9845(this.method8038(), var8);
-			this.method8087("crash");
+			this.error("crash");
 		} finally {
-			this.method8085(true);
+			this.shutdown(true);
 		}
 	}
 
 	@ObfuscatedName("sk.h(I)V")
-	public void method8035() {
+	public void run_inner() {
 		if (Statics.javaVendor != null) {
 			String var1 = Statics.javaVendor.toLowerCase();
 			if (var1.indexOf("sun") != -1 || var1.indexOf("apple") != -1) {
 				String var2 = Statics.javaVersion;
 				if (var2.equals("1.1") || var2.startsWith("1.1.") || var2.equals("1.2") || var2.startsWith("1.2.") || var2.equals("1.3") || var2.startsWith("1.3.") || var2.equals("1.4") || var2.startsWith("1.4.") || var2.equals("1.5") || var2.startsWith("1.5.") || var2.equals("1.6.0")) {
-					this.method8087("wrongjava");
+					this.error("wrongjava");
 					return;
 				}
 				if (var2.startsWith("1.6.0_")) {
@@ -570,30 +570,30 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 					}
 					String var4 = var2.substring(6, var3);
 					if (class695.method9836(var4) && class695.method9595(var4) < 10) {
-						this.method8087("wrongjava");
+						this.error("wrongjava");
 						return;
 					}
 				}
 			}
 		}
 		method7321().setFocusCycleRoot(true);
-		maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1048576L) + 1;
-		availableProcessors = Runtime.getRuntime().availableProcessors();
-		this.method8030();
-		this.method8045();
+		maxmemory = (int) (Runtime.getRuntime().maxMemory() / 1048576L) + 1;
+		cpucount = Runtime.getRuntime().availableProcessors();
+		this.addcanvas();
+		this.maininit();
 		Statics.field6594 = Timer.method6109();
-		while (field6609 == 0L || MonotonicTime.method3655() < field6609) {
+		while (killtime == 0L || MonotonicTime.method3655() < killtime) {
 			Statics.field6624 = Statics.field6594.method8158(field6584);
 			for (int var5 = 0; var5 < Statics.field6624; var5++) {
-				this.method8036();
+				this.mainloopwrapper();
 			}
-			this.method8037();
-			Statics.method218(Statics.field10578);
+			this.mainredrawwrapper();
+			Statics.method218(Statics.canvas);
 		}
 	}
 
 	@ObfuscatedName("sk.g(B)V")
-	public void method8036() {
+	public void mainloopwrapper() {
 		long var1 = MonotonicTime.method3655();
 		long var3 = field6591[Statics.field6587];
 		field6591[Statics.field6587] = var1;
@@ -601,13 +601,13 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		if (var3 != 0L && var1 > var3) {
 		}
 		synchronized (this) {
-			Statics.field8491 = field6604;
+			Statics.focus = focus_in;
 		}
-		this.method8046();
+		this.mainloop();
 	}
 
 	@ObfuscatedName("sk.i(I)V")
-	public void method8037() {
+	public void mainredrawwrapper() {
 		long var1 = MonotonicTime.method3655();
 		long var3 = field6589[Statics.field6590 - 1 & 0x1F];
 		long var5 = field6589[Statics.field6590];
@@ -615,22 +615,22 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		Statics.field6590 = Statics.field6590 + 1 & 0x1F;
 		if (var5 != 0L && var1 > var5) {
 			int var7 = (int) (var1 - var5);
-			field6602 = (int) (var1 - var3);
-			field6585 = ((var7 >> 1) + 32000) / var7;
+			fpsAverage = (int) (var1 - var3);
+			fps = ((var7 >> 1) + 32000) / var7;
 		}
 		if (++field6614 - 1 > 50) {
 			field6614 -= 50;
-			field6599 = true;
-			Statics.field10578.setSize(Statics.field6586, Statics.field6600);
-			Statics.field10578.setVisible(true);
-			if (Statics.field7425 != null && Statics.field12101 == null) {
-				Insets var8 = Statics.field7425.getInsets();
-				Statics.field10578.setLocation(field6596 + var8.left, field6597 + var8.top);
+			fullredraw = true;
+			Statics.canvas.setSize(Statics.canvasWid, Statics.canvasHei);
+			Statics.canvas.setVisible(true);
+			if (Statics.frame != null && Statics.fsframe == null) {
+				Insets var8 = Statics.frame.getInsets();
+				Statics.canvas.setLocation(leftMargin + var8.left, topMargin + var8.top);
 			} else {
-				Statics.field10578.setLocation(field6596, field6597);
+				Statics.canvas.setLocation(leftMargin, topMargin);
 			}
 		}
-		this.method8047();
+		this.mainredraw();
 	}
 
 	@ObfuscatedName("sk.j(B)Ljava/lang/String;")
@@ -639,24 +639,24 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	}
 
 	@ObfuscatedName("sk.t(ZI)V")
-	public final void method8085(boolean arg0) {
+	public final void shutdown(boolean arg0) {
 		synchronized (this) {
-			if (field6620) {
+			if (shutdown) {
 				return;
 			}
-			field6620 = true;
+			shutdown = true;
 		}
 		try {
-			this.method8048();
+			this.mainquit();
 		} catch (Exception var11) {
 		}
 		try {
-			field6615.method14834();
-			for (int var5 = 0; var5 < Statics.field599; var5++) {
-				Statics.field7422[var5].method14834();
+			cacheDat.method14834();
+			for (int var5 = 0; var5 < Statics.archiveCount; var5++) {
+				Statics.cacheIndex[var5].method14834();
 			}
-			field6619.method14834();
-			field6613.method14834();
+			masterIndex.method14834();
+			uidDat.method14834();
 		} catch (Exception var12) {
 		}
 		if (this.field6601) {
@@ -668,17 +668,17 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		if (class500.method14526()) {
 			Statics.method5134().method7909();
 		}
-		if (Statics.field10578 != null) {
+		if (Statics.canvas != null) {
 			try {
-				Statics.field10578.removeFocusListener(this);
-				Statics.field10578.getParent().remove(Statics.field10578);
+				Statics.canvas.removeFocusListener(this);
+				Statics.canvas.getParent().remove(Statics.canvas);
 			} catch (Exception var9) {
 			}
 		}
-		if (Statics.field7425 != null) {
-			Statics.field7425.setVisible(false);
-			Statics.field7425.dispose();
-			Statics.field7425 = null;
+		if (Statics.frame != null) {
+			Statics.frame.setVisible(false);
+			Statics.frame.dispose();
+			Statics.frame = null;
 		}
 	}
 
@@ -705,22 +705,22 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	}
 
 	public void start() {
-		if (!field6620) {
-			field6609 = 0L;
+		if (!shutdown) {
+			killtime = 0L;
 		}
 	}
 
 	public void stop() {
-		if (!field6620) {
-			field6609 = MonotonicTime.method3655() + 4000L;
+		if (!shutdown) {
+			killtime = MonotonicTime.method3655() + 4000L;
 		}
 	}
 
 	public void destroy() {
-		if (!field6620) {
-			field6609 = MonotonicTime.method3655();
+		if (!shutdown) {
+			killtime = MonotonicTime.method3655();
 			PreciseSleep.sleep(5000L);
-			this.method8085(false);
+			this.shutdown(false);
 		}
 	}
 
@@ -729,25 +729,25 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	}
 
 	public final synchronized void paint(Graphics arg0) {
-		if (field6620) {
+		if (shutdown) {
 			return;
 		}
-		field6599 = true;
-		if (MonotonicTime.method3655() - field6595 > 1000L) {
+		fullredraw = true;
+		if (MonotonicTime.method3655() - lastCanvasReplace > 1000L) {
 			Rectangle var2 = arg0.getClipBounds();
-			if (var2 == null || var2.width >= Statics.field6593 && var2.height >= Statics.field4827) {
-				field6606 = true;
+			if (var2 == null || var2.width >= Statics.frameWid && var2.height >= Statics.frameHei) {
+				canvasReplaceRecommended = true;
 			}
 		}
 	}
 
 	public final void focusGained(FocusEvent arg0) {
-		field6604 = true;
-		field6599 = true;
+		focus_in = true;
+		fullredraw = true;
 	}
 
 	public final void focusLost(FocusEvent arg0) {
-		field6604 = false;
+		focus_in = false;
 	}
 
 	public final void windowActivated(WindowEvent arg0) {
@@ -776,7 +776,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	@ObfuscatedName("ul.as(ILjava/lang/String;Ljava/awt/Color;Ljava/awt/Color;Ljava/awt/Color;I)V")
 	public static final void method8913(int arg0, String arg1, Color arg2, Color arg3, Color arg4) {
 		try {
-			Graphics var5 = Statics.field10578.getGraphics();
+			Graphics var5 = Statics.canvas.getGraphics();
 			if (Statics.field9147 == null) {
 				Statics.field9147 = new Font("Helvetica", 1, 13);
 			}
@@ -791,13 +791,13 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			}
 			try {
 				if (Statics.field2575 == null) {
-					Statics.field2575 = Statics.field10578.createImage(Statics.field6586, Statics.field6600);
+					Statics.field2575 = Statics.canvas.createImage(Statics.canvasWid, Statics.canvasHei);
 				}
 				Graphics var6 = Statics.field2575.getGraphics();
 				var6.setColor(Color.black);
-				var6.fillRect(0, 0, Statics.field6586, Statics.field6600);
-				int var7 = Statics.field6586 / 2 - 152;
-				int var8 = Statics.field6600 / 2 - 18;
+				var6.fillRect(0, 0, Statics.canvasWid, Statics.canvasHei);
+				int var7 = Statics.canvasWid / 2 - 152;
+				int var8 = Statics.canvasHei / 2 - 18;
 				var6.setColor(arg3);
 				var6.drawRect(var7, var8, 303, 33);
 				var6.setColor(arg2);
@@ -811,14 +811,14 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 				if (field6598 != null) {
 					var6.setFont(Statics.field9147);
 					var6.setColor(arg4);
-					var6.drawString(field6598, Statics.field6586 / 2 - field6598.length() * 6 / 2, Statics.field6600 / 2 - 26);
+					var6.drawString(field6598, Statics.canvasWid / 2 - field6598.length() * 6 / 2, Statics.canvasHei / 2 - 26);
 				}
 				var5.drawImage(Statics.field2575, 0, 0, null);
 			} catch (Exception var13) {
 				var5.setColor(Color.black);
-				var5.fillRect(0, 0, Statics.field6586, Statics.field6600);
-				int var10 = Statics.field6586 / 2 - 152;
-				int var11 = Statics.field6600 / 2 - 18;
+				var5.fillRect(0, 0, Statics.canvasWid, Statics.canvasHei);
+				int var10 = Statics.canvasWid / 2 - 152;
+				int var11 = Statics.canvasHei / 2 - 18;
 				var5.setColor(arg3);
 				var5.drawRect(var10, var11, 303, 33);
 				var5.setColor(arg2);
@@ -831,12 +831,12 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 				if (field6598 != null) {
 					var5.setFont(Statics.field9147);
 					var5.setColor(arg4);
-					var5.drawString(field6598, Statics.field6586 / 2 - field6598.length() * 6 / 2, Statics.field6600 / 2 - 26);
+					var5.drawString(field6598, Statics.canvasWid / 2 - field6598.length() * 6 / 2, Statics.canvasHei / 2 - 26);
 				}
 				var5.drawString(arg1, var10 + (304 - arg1.length() * 6) / 2, var11 + 22);
 			}
 		} catch (Exception var14) {
-			Statics.field10578.repaint();
+			Statics.canvas.repaint();
 		}
 	}
 
@@ -847,11 +847,11 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	}
 
 	@ObfuscatedName("sk.ad(Ljava/lang/String;I)V")
-	public void method8087(String arg0) {
-		if (this.field6621) {
+	public void error(String arg0) {
+		if (this.alreadyerrored) {
 			return;
 		}
-		this.field6621 = true;
+		this.alreadyerrored = true;
 		System.out.println("error_game_" + arg0);
 		try {
 			BrowserControl.call(Statics.field11885, "loggedout");
@@ -865,10 +865,10 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 
 	@ObfuscatedName("sk.am(Ljava/lang/String;Ljava/lang/String;B)V")
 	public void method8071(String arg0, String arg1) {
-		if (this.field6621) {
+		if (this.alreadyerrored) {
 			return;
 		}
-		this.field6621 = true;
+		this.alreadyerrored = true;
 		System.out.println("error_game_" + arg0);
 		try {
 			BrowserControl.call(Statics.field11885, "loggedout");
@@ -889,7 +889,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		try {
 			QueryPerformanceCounter.init();
 		} catch (Throwable var2) {
-			if (Statics.osNameLowercase.startsWith("win")) {
+			if (Statics.osName.startsWith("win")) {
 				throw new class1111(128, "jaclib");
 			}
 		}
@@ -897,13 +897,13 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	}
 
 	@ObfuscatedName("sk.ar(Lsm;ZI)V")
-	public void method8051(class506 arg0, boolean arg1) {
+	public void setEnvironment(GameShell3$Environment arg0, boolean arg1) {
 		if (arg0 == null) {
 			throw new NullPointerException();
-		} else if (class506.field6581 == arg0 || class506.field6580 == arg0) {
-			field6618 = arg0;
-			if (field6618 != class506.field6580 && arg1) {
-				field6618 = class506.field6582;
+		} else if (GameShell3$Environment.APPLET == arg0 || GameShell3$Environment.APPLICATION == arg0) {
+			environment = arg0;
+			if (environment != GameShell3$Environment.APPLICATION && arg1) {
+				environment = GameShell3$Environment.APPLET_WITH_EXTERNAL_FRAME;
 			}
 		} else {
 			throw new IllegalStateException();
@@ -911,21 +911,21 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	}
 
 	@ObfuscatedName("in.ap(B)Lsm;")
-	public static class506 method4419() {
-		return field6618;
+	public static GameShell3$Environment getEnvironment() {
+		return environment;
 	}
 
 	@ObfuscatedName("sk.al(I)V")
-	public abstract void method8045();
+	public abstract void maininit();
 
 	@ObfuscatedName("sk.ac(I)V")
-	public abstract void method8046();
+	public abstract void mainloop();
 
 	@ObfuscatedName("sk.ai(I)V")
-	public abstract void method8047();
+	public abstract void mainredraw();
 
 	@ObfuscatedName("sk.aw(B)V")
-	public abstract void method8048();
+	public abstract void mainquit();
 
 	public abstract void init();
 }

@@ -364,7 +364,7 @@ public class class1004 extends WorldMap {
 		if (client.field10794) {
 			int var13 = arg1 + arg3 - 5;
 			int var14 = arg2 + arg4 - 8;
-			Statics.field9184.method2682("Fps: " + GameShell.field6585 + " (" + GameShell.field6602 + " ms)", var13, var14, 16776960, -1);
+			Statics.field9184.method2682("Fps: " + GameShell.fps + " (" + GameShell.fpsAverage + " ms)", var13, var14, 16776960, -1);
 			int var18 = var14 - 15;
 			Runtime var15 = Runtime.getRuntime();
 			int var16 = (int) ((var15.totalMemory() - var15.freeMemory()) / 1024L);
@@ -483,8 +483,8 @@ public class class1004 extends WorldMap {
 		if (arg2.field2370 != null) {
 			Statics.method2678(arg2.field2388);
 			if (Statics.field717 != null) {
-				var22 = Statics.field10471.method14545(arg2.field2370, Statics.field6586, 0, null);
-				var17 = Statics.field10471.method14551(arg2.field2370, Statics.field6586, null);
+				var22 = Statics.field10471.method14545(arg2.field2370, Statics.canvasWid, 0, null);
+				var17 = Statics.field10471.method14551(arg2.field2370, Statics.canvasWid, null);
 				var15 = arg2.field2410 * (Statics.field6851 - Statics.field6801) / (Statics.field6847 - Statics.field6845) + (arg1.field11449 - var17 / 2);
 				int var23 = arg1.field11451 - arg2.field2394 * (Statics.field6852 - Statics.field6837) / (Statics.field6846 - Statics.field6848);
 				if (var9 == null) {
@@ -640,8 +640,8 @@ public class class1004 extends WorldMap {
 		int var8 = 0;
 		int var9 = 0;
 		if (arg2.field2370 != null) {
-			var9 = Statics.field10471.method14545(arg2.field2370, Statics.field6586, 0, null);
-			var8 = Statics.field10471.method14551(arg2.field2370, Statics.field6586, null);
+			var9 = Statics.field10471.method14545(arg2.field2370, Statics.canvasWid, 0, null);
+			var8 = Statics.field10471.method14551(arg2.field2370, Statics.canvasWid, null);
 		}
 		int var10 = var4 / 2 + arg1.field11449;
 		int var11 = arg1.field11451;

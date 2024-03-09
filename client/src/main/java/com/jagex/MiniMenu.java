@@ -126,7 +126,7 @@ public class MiniMenu {
 		}
 		FontMetrics var0 = method16902();
 		if (!field562) {
-			field540 = field568 != -1 && field546 >= field568 || (field564 ? 26 : 22) + field546 * field536 > Statics.field6600;
+			field540 = field568 != -1 && field546 >= field568 || (field564 ? 26 : 22) + field546 * field536 > Statics.canvasHei;
 		}
 		field538.method14152();
 		field552.method14152();
@@ -392,15 +392,15 @@ public class MiniMenu {
 		}
 		var3 += 10;
 		int var9 = arg0 - var3 / 2;
-		if (var3 + var9 > Statics.field6586) {
-			var9 = Statics.field6586 - var3;
+		if (var3 + var9 > Statics.canvasWid) {
+			var9 = Statics.canvasWid - var3;
 		}
 		if (var9 < 0) {
 			var9 = 0;
 		}
 		int var10 = arg1;
-		if (var6 + arg1 > Statics.field6600) {
-			var10 = Statics.field6600 - var6;
+		if (var6 + arg1 > Statics.canvasHei) {
+			var10 = Statics.canvasHei - var6;
 		}
 		if (var10 < 0) {
 			var10 = 0;
@@ -429,7 +429,7 @@ public class MiniMenu {
 		int var6 = field536 * arg0.field12310 + 21;
 		Statics.field3005 = field536 * arg0.field12310 + (field564 ? 26 : 22);
 		int var7 = Statics.field1289 + Statics.field11738;
-		if (var3 + var7 > Statics.field6586) {
+		if (var3 + var7 > Statics.canvasWid) {
 			var7 = Statics.field11738 - var3;
 		}
 		if (var7 < 0) {
@@ -437,8 +437,8 @@ public class MiniMenu {
 		}
 		int var8 = field564 ? var2.field8562 + 20 + 1 : 31;
 		int var9 = var2.field8562 + (arg1 - var8) + 1;
-		if (var6 + var9 > Statics.field6600) {
-			var9 = Statics.field6600 - var6;
+		if (var6 + var9 > Statics.canvasHei) {
+			var9 = Statics.canvasHei - var6;
 		}
 		if (var9 < 0) {
 			var9 = 0;
@@ -1411,8 +1411,8 @@ public class MiniMenu {
 			if (Statics.field1841 != null && Statics.field8786 != null) {
 				method6031();
 				int var6 = var3 / 2 + var1;
-				if (var3 + var6 > Statics.field6586) {
-					var6 = Statics.field6586 - var3;
+				if (var3 + var6 > Statics.canvasWid) {
+					var6 = Statics.canvasWid - var3;
 				}
 				if (var6 < 0) {
 					var6 = 0;
@@ -1595,7 +1595,7 @@ public class MiniMenu {
 			return;
 		}
 		if (arg0.field12081 != 0) {
-			String var4 = client.field10768 == ModeGame.field8334 ? LocalisedText.field9083.method15021(Statics.field1680) : LocalisedText.field9081.method15021(Statics.field1680);
+			String var4 = client.field10768 == ModeGame.STELLARDAWN ? LocalisedText.field9083.method15021(Statics.field1680) : LocalisedText.field9081.method15021(Statics.field1680);
 			var3 = var3 + Statics.method17760(arg0.field12081, Statics.field4490.field12064) + TextUtil.OPEN_PARENTHESIS + var4 + arg0.field12081 + TextUtil.CLOSE_PARENTHESIS;
 		}
 		if (client.field10973 && !arg1) {
@@ -1698,7 +1698,7 @@ public class MiniMenu {
 						var2 = false;
 					}
 				}
-				String var5 = client.field10768 == ModeGame.field8334 ? LocalisedText.field9083.method15021(Statics.field1680) : LocalisedText.field9081.method15021(Statics.field1680);
+				String var5 = client.field10768 == ModeGame.STELLARDAWN ? LocalisedText.field9083.method15021(Statics.field1680) : LocalisedText.field9081.method15021(Statics.field1680);
 				if (arg0.field12064 >= arg0.field12072) {
 					var6 = arg0.method19115(true) + (var2 ? Statics.method17760(arg0.field12064, Statics.field4490.field12064) : Statics.method596(16777215)) + TextUtil.OPEN_PARENTHESIS + var5 + arg0.field12064 + TextUtil.CLOSE_PARENTHESIS;
 				} else {
@@ -1716,7 +1716,7 @@ public class MiniMenu {
 					var7 = true;
 					var6 = ((NPCType) Statics.field7961.get(arg0.field12061.field7892)).field2703;
 					if (var8.field2719 != 0) {
-						String var9 = client.field10768 == ModeGame.field8334 ? LocalisedText.field9083.method15021(Statics.field1680) : LocalisedText.field9081.method15021(Statics.field1680);
+						String var9 = client.field10768 == ModeGame.STELLARDAWN ? LocalisedText.field9083.method15021(Statics.field1680) : LocalisedText.field9081.method15021(Statics.field1680);
 						var6 = var6 + Statics.method17760(var8.field2719, Statics.field4490.field12064) + TextUtil.OPEN_PARENTHESIS + var9 + var8.field2719 + TextUtil.CLOSE_PARENTHESIS;
 					}
 				}

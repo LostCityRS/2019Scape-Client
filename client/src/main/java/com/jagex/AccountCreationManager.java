@@ -191,7 +191,7 @@ public class AccountCreationManager {
 				Statics.method17428();
 			}
 			if (Statics.field517 == class15.field515) {
-				client.field10835.method936(Stream.method7130(Statics.field8751.method14764(), 40000), Statics.field8751.field8745);
+				client.field10835.method936(Stream.method7130(Statics.lobby.method14764(), 40000), Statics.lobby.host);
 				client.field10835.method952();
 				ClientMessage var1 = ClientMessage.method13920();
 				var1.field11432.p1(LoginProt.field3815.field3812);
@@ -208,7 +208,7 @@ public class AccountCreationManager {
 				var1.field11432.pjstr(Statics.field579);
 				var1.field11432.p1(Statics.field1680.getId());
 				var1.field11432.p1(client.field10768.field8339);
-				GameShell.method4286(var1.field11432);
+				GameShell.pushUID192(var1.field11432);
 				String var4 = client.field10781;
 				var1.field11432.p1(var4 == null ? 0 : 1);
 				if (var4 != null) {

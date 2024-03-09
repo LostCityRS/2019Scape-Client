@@ -22,7 +22,7 @@ public class class316 {
 
 	@ObfuscatedName("ky.n(IIS)I")
 	public int method5375(int arg0, int arg1) {
-		int var3 = Statics.field6600 > arg1 ? Statics.field6600 : arg1;
+		int var3 = Statics.canvasHei > arg1 ? Statics.canvasHei : arg1;
 		if (field3181 == this) {
 			return 0;
 		} else if (field3179 == this) {

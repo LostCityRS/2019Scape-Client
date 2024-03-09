@@ -6,19 +6,19 @@ import deob.ObfuscatedName;
 public class ModeWhat {
 
 	@ObfuscatedName("aaa.e")
-	public static final ModeWhat field8473 = new ModeWhat("LIVE", 0);
+	public static final ModeWhat LIVE = new ModeWhat("LIVE", 0);
 
 	@ObfuscatedName("aaa.n")
-	public static final ModeWhat field8472 = new ModeWhat("BUILDLIVE", 3);
+	public static final ModeWhat BUILDLIVE = new ModeWhat("BUILDLIVE", 3);
 
 	@ObfuscatedName("aaa.m")
-	public static final ModeWhat field8474 = new ModeWhat("RC", 1);
+	public static final ModeWhat RC = new ModeWhat("RC", 1);
 
 	@ObfuscatedName("aaa.k")
-	public static final ModeWhat field8475 = new ModeWhat("WIP", 2);
+	public static final ModeWhat WIP = new ModeWhat("WIP", 2);
 
 	@ObfuscatedName("aaa.f")
-	public static final ModeWhat field8476 = new ModeWhat("INTBETA", 4);
+	public static final ModeWhat INTBETA = new ModeWhat("INTBETA", 4);
 
 	@ObfuscatedName("aaa.w")
 	public final String field8478;
@@ -28,7 +28,7 @@ public class ModeWhat {
 
 	@ObfuscatedName("rg.e(B)[Laaa;")
 	public static ModeWhat[] method7705() {
-		return new ModeWhat[] { field8475, field8472, field8473, field8474, field8476 };
+		return new ModeWhat[] {WIP, BUILDLIVE, LIVE, RC, INTBETA};
 	}
 
 	public ModeWhat(String arg0, int arg1) {

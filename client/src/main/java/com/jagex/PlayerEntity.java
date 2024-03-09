@@ -451,7 +451,7 @@ public class PlayerEntity extends PathingEntity {
 		}
 		Model var11 = this.field10459[0] = this.field12061.method10126(arg0, arg1, Statics.field11742, Statics.field2628, Statics.field7961, Statics.field1842, Statics.field7410, Statics.field7410, var5, var6, this.field10398, this.field10442, var9, true, Statics.field1709);
 		int var12 = Statics.method18304();
-		if (GameShell.maxMemory < 96 && var12 > 50) {
+		if (GameShell.maxmemory < 96 && var12 > 50) {
 			class43.method7319();
 		}
 		if (Statics.field1811 != ModeWhere.field8273 && var12 < 50) {

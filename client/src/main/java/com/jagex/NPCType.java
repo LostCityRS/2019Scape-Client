@@ -521,7 +521,7 @@ public class NPCType implements ConfigType {
 		if (this.field2758 != -1) {
 			return;
 		}
-		if (this.field2695 == null || ModeGame.field8335 == this.field2695.field2772) {
+		if (this.field2695 == null || ModeGame.RUNESCAPE == this.field2695.field2772) {
 			this.field2758 = 1;
 		} else {
 			this.field2758 = 0;

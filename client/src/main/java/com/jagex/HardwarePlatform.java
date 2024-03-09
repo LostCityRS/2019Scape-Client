@@ -86,60 +86,60 @@ public class HardwarePlatform extends Node {
 
 	public HardwarePlatform(boolean arg0) {
 		if (arg0) {
-			if (Statics.osNameLowercase.startsWith("win")) {
+			if (Statics.osName.startsWith("win")) {
 				this.operatingSystem = 1;
-			} else if (Statics.osNameLowercase.startsWith("mac")) {
+			} else if (Statics.osName.startsWith("mac")) {
 				this.operatingSystem = 2;
-			} else if (Statics.osNameLowercase.startsWith("linux")) {
+			} else if (Statics.osName.startsWith("linux")) {
 				this.operatingSystem = 3;
 			} else {
 				this.operatingSystem = 4;
 			}
-			if (Statics.osArch.startsWith("amd64") || Statics.osArch.startsWith("x86_64")) {
+			if (Statics.osArchRaw.startsWith("amd64") || Statics.osArchRaw.startsWith("x86_64")) {
 				this.osArch64 = true;
 			} else {
 				this.osArch64 = false;
 			}
 			if (this.operatingSystem == 1) {
-				if (Statics.osVersion.indexOf("4.0") != -1) {
+				if (Statics.osVersionRaw.indexOf("4.0") != -1) {
 					this.osVersion = 1;
-				} else if (Statics.osVersion.indexOf("4.1") != -1) {
+				} else if (Statics.osVersionRaw.indexOf("4.1") != -1) {
 					this.osVersion = 2;
-				} else if (Statics.osVersion.indexOf("4.9") != -1) {
+				} else if (Statics.osVersionRaw.indexOf("4.9") != -1) {
 					this.osVersion = 3;
-				} else if (Statics.osVersion.indexOf("5.0") != -1) {
+				} else if (Statics.osVersionRaw.indexOf("5.0") != -1) {
 					this.osVersion = 4;
-				} else if (Statics.osVersion.indexOf("5.1") != -1) {
+				} else if (Statics.osVersionRaw.indexOf("5.1") != -1) {
 					this.osVersion = 5;
-				} else if (Statics.osVersion.indexOf("5.2") != -1) {
+				} else if (Statics.osVersionRaw.indexOf("5.2") != -1) {
 					this.osVersion = 8;
-				} else if (Statics.osVersion.indexOf("6.0") != -1) {
+				} else if (Statics.osVersionRaw.indexOf("6.0") != -1) {
 					this.osVersion = 6;
-				} else if (Statics.osVersion.indexOf("6.1") != -1) {
+				} else if (Statics.osVersionRaw.indexOf("6.1") != -1) {
 					this.osVersion = 7;
-				} else if (Statics.osVersion.indexOf("6.2") != -1) {
+				} else if (Statics.osVersionRaw.indexOf("6.2") != -1) {
 					this.osVersion = 9;
-				} else if (Statics.osVersion.indexOf("6.3") != -1) {
+				} else if (Statics.osVersionRaw.indexOf("6.3") != -1) {
 					this.osVersion = 10;
-				} else if (Statics.osVersion.indexOf("10.0") != -1) {
+				} else if (Statics.osVersionRaw.indexOf("10.0") != -1) {
 					this.osVersion = 11;
 				}
 			} else if (this.operatingSystem == 2) {
-				if (Statics.osVersion.indexOf("10.4") != -1) {
+				if (Statics.osVersionRaw.indexOf("10.4") != -1) {
 					this.osVersion = 20;
-				} else if (Statics.osVersion.indexOf("10.5") != -1) {
+				} else if (Statics.osVersionRaw.indexOf("10.5") != -1) {
 					this.osVersion = 21;
-				} else if (Statics.osVersion.indexOf("10.6") != -1) {
+				} else if (Statics.osVersionRaw.indexOf("10.6") != -1) {
 					this.osVersion = 22;
-				} else if (Statics.osVersion.indexOf("10.7") != -1) {
+				} else if (Statics.osVersionRaw.indexOf("10.7") != -1) {
 					this.osVersion = 23;
-				} else if (Statics.osVersion.indexOf("10.8") != -1) {
+				} else if (Statics.osVersionRaw.indexOf("10.8") != -1) {
 					this.osVersion = 24;
-				} else if (Statics.osVersion.indexOf("10.9") != -1) {
+				} else if (Statics.osVersionRaw.indexOf("10.9") != -1) {
 					this.osVersion = 25;
-				} else if (Statics.osVersion.indexOf("10.10") != -1) {
+				} else if (Statics.osVersionRaw.indexOf("10.10") != -1) {
 					this.osVersion = 26;
-				} else if (Statics.osVersion.indexOf("10.11") != -1) {
+				} else if (Statics.osVersionRaw.indexOf("10.11") != -1) {
 					this.osVersion = 27;
 				}
 			}
@@ -197,9 +197,9 @@ public class HardwarePlatform extends Node {
 			}
 			this.javaVersionPatch = var11;
 			this.unused = false;
-			this.maxMemory = GameShell.maxMemory;
+			this.maxMemory = GameShell.maxmemory;
 			if (this.javaVersionMajor > 3) {
-				this.availableProcessors = GameShell.availableProcessors;
+				this.availableProcessors = GameShell.cpucount;
 			} else {
 				this.availableProcessors = 0;
 			}

@@ -75,7 +75,7 @@ public class AccountAppealManager {
 		}
 		var5.p8(var3.nextLong());
 		var5.p6(var3.nextLong());
-		GameShell.method4286(var5);
+		GameShell.pushUID192(var5);
 		var5.p8(var3.nextLong());
 		var5.rsaenc(field495, field496);
 		int var10 = Packet.pjstrlen(arg1);

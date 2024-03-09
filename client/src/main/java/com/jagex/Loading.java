@@ -468,7 +468,7 @@ public class Loading {
 
 	@ObfuscatedName("ux.c(I)V")
 	public static void method9212() {
-		FileOnDisk var0 = GameShell.method18567("2", client.field10768.field8333, false);
+		FileOnDisk var0 = GameShell.openPrefs("2", client.field10768.field8333, false);
 		Statics.field7228.method16420(var0);
 	}
 

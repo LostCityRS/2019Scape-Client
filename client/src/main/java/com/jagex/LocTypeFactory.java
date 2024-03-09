@@ -31,7 +31,7 @@ public abstract class LocTypeFactory {
 
 	public LocTypeFactory(boolean arg0, Language arg1, ModeGame arg2) {
 		this.field7531 = arg0;
-		if (ModeGame.field8335 == arg2) {
+		if (ModeGame.RUNESCAPE == arg2) {
 			this.field7534 = new String[] { null, null, null, null, null, LocalisedText.field9075.method15021(arg1) };
 		} else {
 			this.field7534 = new String[] { null, null, null, null, null, null };

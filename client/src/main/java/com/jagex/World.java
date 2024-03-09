@@ -1197,7 +1197,7 @@ public class World {
 		}
 		client.method3128();
 		class962.method5070();
-		if (GameShell.method4419() == class506.field6580 && client.field10849.method939() != null && client.state == 3) {
+		if (GameShell.getEnvironment() == GameShell3$Environment.APPLICATION && client.field10849.method939() != null && client.state == 3) {
 			ClientMessage var31 = Statics.method1604(ClientProt.DETECT_MODIFIED_CLIENT, client.field10849.field794);
 			var31.field11432.p4(1057001181);
 			client.field10849.method934(var31);

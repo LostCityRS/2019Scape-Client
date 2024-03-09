@@ -30,8 +30,8 @@ public class class299 implements LoadingScreenElement {
 		if (!arg0) {
 			return;
 		}
-		int var2 = Statics.field6586 > client.field10941 ? Statics.field6586 : client.field10941;
-		int var3 = Statics.field6600 > client.field10942 ? Statics.field6600 : client.field10942;
+		int var2 = Statics.canvasWid > client.field10941 ? Statics.canvasWid : client.field10941;
+		int var3 = Statics.canvasHei > client.field10942 ? Statics.canvasHei : client.field10942;
 		int var4 = this.field3046.method1434();
 		int var5 = this.field3046.method1436();
 		int var6 = 0;

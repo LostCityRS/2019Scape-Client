@@ -6,31 +6,31 @@ import deob.ObfuscatedName;
 public class class794 implements SerializableEnum {
 
 	@ObfuscatedName("adi.e")
-	public static final class794 field9193 = new class794(0, 0, "", "");
+	public static final class794 RUNESCAPE = new class794(0, 0, "", "");
 
 	@ObfuscatedName("adi.n")
-	public static final class794 field9197 = new class794(5, 1, "", "");
+	public static final class794 FUNORB = new class794(5, 1, "", "");
 
 	@ObfuscatedName("adi.m")
-	public static final class794 field9189 = new class794(6, 2, "", "");
+	public static final class794 WAR_OF_LEGENDS = new class794(6, 2, "", "");
 
 	@ObfuscatedName("adi.k")
-	public static final class794 field9190 = new class794(8, 3, "", "");
+	public static final class794 STELLAR_DAWN = new class794(8, 3, "", "");
 
 	@ObfuscatedName("adi.f")
-	public static final class794 field9191 = new class794(7, 4, "", "");
+	public static final class794 EIGHT_REALMS = new class794(7, 4, "", "");
 
 	@ObfuscatedName("adi.w")
-	public static final class794 field9192 = new class794(2, 5, "", "");
+	public static final class794 TRANSFORMERS = new class794(2, 5, "", "");
 
 	@ObfuscatedName("adi.l")
-	public static final class794 field9195 = new class794(3, 6, "", "");
+	public static final class794 SCRATCH = new class794(3, 6, "", "");
 
 	@ObfuscatedName("adi.u")
 	public static final class794 field9194 = new class794(4, 7, "", "");
 
 	@ObfuscatedName("adi.z")
-	public static final class794 field9187 = new class794(1, -1, "", "", true, new class794[] { field9193, field9197, field9189, field9191, field9190 });
+	public static final class794 LEGACY = new class794(1, -1, "", "", true, new class794[] {RUNESCAPE, FUNORB, WAR_OF_LEGENDS, EIGHT_REALMS, STELLAR_DAWN});
 
 	@ObfuscatedName("adi.p")
 	public final int field9196;

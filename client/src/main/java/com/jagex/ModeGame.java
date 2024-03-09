@@ -7,22 +7,22 @@ import deob.Statics;
 public class ModeGame {
 
 	@ObfuscatedName("zd.e")
-	public static final ModeGame field8335 = new ModeGame("runescape", "RuneScape", 0, class794.field9193);
+	public static final ModeGame RUNESCAPE = new ModeGame("runescape", "RuneScape", 0, class794.RUNESCAPE);
 
 	@ObfuscatedName("zd.n")
-	public static final ModeGame field8334 = new ModeGame("stellardawn", "Stellar Dawn", 1, class794.field9190);
+	public static final ModeGame STELLARDAWN = new ModeGame("stellardawn", "Stellar Dawn", 1, class794.STELLAR_DAWN);
 
 	@ObfuscatedName("zd.m")
-	public static final ModeGame field8338 = new ModeGame("game3", "Game 3", 2, class794.field9193);
+	public static final ModeGame ALTERNATEREALITY = new ModeGame("game3", "Game 3", 2, class794.RUNESCAPE);
 
 	@ObfuscatedName("zd.k")
-	public static final ModeGame field8336 = new ModeGame("game4", "Game 4", 3, class794.field9192);
+	public static final ModeGame TRANSFORMERS = new ModeGame("game4", "Game 4", 3, class794.TRANSFORMERS);
 
 	@ObfuscatedName("zd.f")
-	public static final ModeGame field8337 = new ModeGame("game5", "Game 5", 4, class794.field9195);
+	public static final ModeGame SCRATCH = new ModeGame("game5", "Game 5", 4, class794.SCRATCH);
 
 	@ObfuscatedName("zd.w")
-	public static final ModeGame field8340 = new ModeGame("oldscape", "RuneScape 2007", 5, class794.field9193);
+	public static final ModeGame OLDSCAPE = new ModeGame("oldscape", "RuneScape 2007", 5, class794.RUNESCAPE);
 
 	@ObfuscatedName("zd.l")
 	public final String field8333;

@@ -70,7 +70,7 @@ public class class28 {
 		FileOnDisk var0 = null;
 		class28 var7;
 		try {
-			var0 = GameShell.method18567("3", client.field10768.field8333, false);
+			var0 = GameShell.openPrefs("3", client.field10768.field8333, false);
 			byte[] var1 = new byte[(int) var0.method14821()];
 			int var3;
 			for (int var2 = 0; var2 < var1.length; var2 += var3) {
@@ -98,7 +98,7 @@ public class class28 {
 	public void method578() {
 		FileOnDisk var1 = null;
 		try {
-			var1 = GameShell.method18567("3", client.field10768.field8333, true);
+			var1 = GameShell.openPrefs("3", client.field10768.field8333, true);
 			Packet var2 = new Packet(5000);
 			this.method580(var2);
 			var1.method14808(var2.data, 0, var2.pos);

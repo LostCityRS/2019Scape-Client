@@ -66,8 +66,8 @@ public class class648 {
 		Queue var0 = field7946;
 		synchronized (field7946) {
 			Point var1;
-			if (Statics.field10578.isShowing()) {
-				var1 = Statics.field10578.getLocationOnScreen();
+			if (Statics.canvas.isShowing()) {
+				var1 = Statics.canvas.getLocationOnScreen();
 			} else {
 				var1 = null;
 			}
@@ -77,9 +77,9 @@ public class class648 {
 					if (var2 == null) {
 						return;
 					}
-					if (var1 != null && Statics.field10578.isShowing() && Statics.field8491) {
+					if (var1 != null && Statics.canvas.isShowing() && Statics.focus) {
 						var2.method19541(var1);
-						if (!var2.method19540() && var2.method17831() < Statics.field6586 && var2.method17832() < Statics.field6600 && var2.method17831() >= 0 && var2.method17832() >= 0) {
+						if (!var2.method19540() && var2.method17831() < Statics.canvasWid && var2.method17832() < Statics.canvasHei && var2.method17831() >= 0 && var2.method17832() >= 0) {
 							int var3 = var2.method17848();
 							if (var2.method17848() == -1) {
 								field7948.method10261(var2);
@@ -140,10 +140,10 @@ public class class648 {
 			var9.field11432.p2(var6);
 			client.field10849.method934(var9);
 		}
-		if (Statics.field8491 != field7944) {
-			field7944 = Statics.field8491;
+		if (Statics.focus != field7944) {
+			field7944 = Statics.focus;
 			ClientMessage var10 = Statics.method1604(ClientProt.EVENT_APPLET_FOCUS, client.field10849.field794);
-			var10.field11432.p1(Statics.field8491 ? 1 : 0);
+			var10.field11432.p1(Statics.focus ? 1 : 0);
 			client.field10849.method934(var10);
 		}
 		if (!client.field10800) {

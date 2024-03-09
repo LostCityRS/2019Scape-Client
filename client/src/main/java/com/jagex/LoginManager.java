@@ -281,7 +281,7 @@ public class LoginManager {
 				if (Statics.field431 == 211) {
 					Statics.field8755.method14758();
 				} else {
-					Statics.field8751.method14758();
+					Statics.lobby.method14758();
 				}
 				field478 = 0;
 				field475++;
@@ -289,9 +289,9 @@ public class LoginManager {
 			}
 			if (field445 == 14) {
 				if (Statics.field431 == 211) {
-					Statics.field432.method936(Stream.method7130(Statics.field8755.method14764(), 40000), Statics.field8755.field8745);
+					Statics.field432.method936(Stream.method7130(Statics.field8755.method14764(), 40000), Statics.field8755.host);
 				} else {
-					Statics.field432.method936(Stream.method7130(Statics.field8751.method14764(), 40000), Statics.field8751.field8745);
+					Statics.field432.method936(Stream.method7130(Statics.lobby.method14764(), 40000), Statics.lobby.host);
 				}
 				if (Statics.field10311 == null) {
 					Statics.field10311 = client.field10967.method709();
@@ -432,10 +432,10 @@ public class LoginManager {
 						}
 					}
 					var10.p1(client.getWindowMode());
-					var10.p2(Statics.field6586);
-					var10.p2(Statics.field6600);
+					var10.p2(Statics.canvasWid);
+					var10.p2(Statics.canvasHei);
 					var10.p1(Statics.field688.unknown2.method18639());
-					GameShell.method4286(var10);
+					GameShell.pushUID192(var10);
 					var10.pjstr(client.field10990);
 					var10.p4(client.field10772);
 					Packet var16 = Statics.field688.method18156();
@@ -460,8 +460,8 @@ public class LoginManager {
 					var10.p1(Statics.field2627 & 0x1);
 					var10.p4(client.field10788);
 					var10.pjstr(client.field10789);
-					var10.p1(Statics.field9200 != null && Statics.field9200.field8746 == Statics.field8755.field8746 ? 0 : 1);
-					var10.p2(Statics.field8751.field8746);
+					var10.p1(Statics.field9200 != null && Statics.field9200.node == Statics.field8755.node ? 0 : 1);
+					var10.p2(Statics.lobby.node);
 					Statics.method14463(var10);
 					if (client.ENABLE_TINYENC) {
 						var10.tinyenc(Statics.field435, var13, var10.pos);
@@ -494,10 +494,10 @@ public class LoginManager {
 					var10.p1(client.field10768.field8339);
 					var10.p1(Statics.field1680.getId());
 					var10.p1(client.getWindowMode());
-					var10.p2(Statics.field6586);
-					var10.p2(Statics.field6600);
+					var10.p2(Statics.canvasWid);
+					var10.p2(Statics.canvasHei);
 					var10.p1(Statics.field688.unknown2.method18639());
-					GameShell.method4286(var10);
+					GameShell.pushUID192(var10);
 					var10.pjstr(client.field10990);
 					Packet var22 = Statics.field688.method18156();
 					var10.p1(var22.pos);
@@ -812,14 +812,14 @@ public class LoginManager {
 					Statics.field5009 = var36.g1();
 					Statics.field6729 = var36.g4s();
 					Statics.field9200 = new class749();
-					Statics.field9200.field8746 = var36.g2();
-					if (Statics.field9200.field8746 == 65535) {
-						Statics.field9200.field8746 = -1;
+					Statics.field9200.node = var36.g2();
+					if (Statics.field9200.node == 65535) {
+						Statics.field9200.node = -1;
 					}
-					Statics.field9200.field8745 = var36.gjstr2();
-					Statics.field9200.field8744 = var36.g2();
-					Statics.field9200.field8742 = var36.g2();
-					if (Statics.field1811 != ModeWhere.field8277 && (Statics.field1811 != ModeWhere.field8269 || client.field10949 < 2) && Statics.field8755.method14757(Statics.field8752)) {
+					Statics.field9200.host = var36.gjstr2();
+					Statics.field9200.port = var36.g2();
+					Statics.field9200.port2 = var36.g2();
+					if (Statics.field1811 != ModeWhere.field8277 && (Statics.field1811 != ModeWhere.field8269 || client.field10949 < 2) && Statics.field8755.method14757(Statics.world)) {
 						class750.method10337();
 					}
 				} else {
@@ -932,7 +932,7 @@ public class LoginManager {
 				if (Statics.field431 == 211) {
 					Statics.field8755.method14758();
 				} else {
-					Statics.field8751.method14758();
+					Statics.lobby.method14758();
 				}
 				field478 = 0;
 				field475++;
@@ -1105,7 +1105,7 @@ public class LoginManager {
 		}
 		client.field10835.method938();
 		method14959();
-		Statics.field8491 = true;
+		Statics.focus = true;
 		class780.method4052();
 		for (int var0 = 0; var0 < client.field10851.length; var0++) {
 			client.field10851[var0] = null;

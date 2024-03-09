@@ -22,7 +22,7 @@ public class class318 {
 
 	@ObfuscatedName("kv.n(III)I")
 	public int method5382(int arg0, int arg1) {
-		int var3 = Statics.field6586 > arg1 ? Statics.field6586 : arg1;
+		int var3 = Statics.canvasWid > arg1 ? Statics.canvasWid : arg1;
 		if (field3186 == this) {
 			return 0;
 		} else if (field3185 == this) {

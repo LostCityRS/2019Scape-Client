@@ -7708,8 +7708,8 @@ public final class ScriptRunner {
 	public static final void method15039(ClientScriptState arg0) {
 		arg0.field8216[++arg0.field8226 - 1] = 0;
 		arg0.field8216[++arg0.field8226 - 1] = 0;
-		arg0.field8216[++arg0.field8226 - 1] = Statics.field6586;
-		arg0.field8216[++arg0.field8226 - 1] = Statics.field6600;
+		arg0.field8216[++arg0.field8226 - 1] = Statics.canvasWid;
+		arg0.field8216[++arg0.field8226 - 1] = Statics.canvasHei;
 	}
 
 	@ObfuscatedName("yx.oh(Lhf;Lhq;Lyf;I)V")
@@ -9567,7 +9567,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("vp.ye(Lyf;I)V")
 	public static final void method9468(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Statics.field8755.field8746;
+		arg0.field8216[++arg0.field8226 - 1] = Statics.field8755.node;
 	}
 
 	@ObfuscatedName("xs.yj(Lyf;B)V")
@@ -12327,7 +12327,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("wy.alj(Lyf;I)V")
 	public static final void method9894(ClientScriptState arg0) {
-		if (Fullscreen.allowed && Statics.field12101 != null) {
+		if (Fullscreen.allowed && Statics.fsframe != null) {
 			client.setWindowMode(Statics.field688.maxScreenSize.method18539(), -1, -1, false);
 		}
 	}
@@ -12411,10 +12411,10 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("eg.alt(Lyf;I)V")
 	public static final void method2838(ClientScriptState arg0) {
-		if (Fullscreen.allowed && Statics.field12101 != null) {
+		if (Fullscreen.allowed && Statics.fsframe != null) {
 			client.setWindowMode(Statics.field688.maxScreenSize.method18539(), -1, -1, false);
 		}
-		if (GameShell.method4419() == class506.field6580) {
+		if (GameShell.getEnvironment() == GameShell3$Environment.APPLICATION) {
 			client.method14147();
 			System.exit(0);
 		} else {
@@ -12436,7 +12436,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ud.alh(Lyf;I)V")
 	public static final void method9193(ClientScriptState arg0) {
-		if (Fullscreen.allowed && Statics.field12101 != null) {
+		if (Fullscreen.allowed && Statics.fsframe != null) {
 			client.setWindowMode(Statics.field688.maxScreenSize.method18539(), -1, -1, false);
 		}
 		String var1 = (String) arg0.field8218[--arg0.field8211];
@@ -15266,8 +15266,8 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ajj.bbj(Lyf;I)V")
 	public static final void method17434(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Statics.field6586;
-		arg0.field8216[++arg0.field8226 - 1] = Statics.field6600;
+		arg0.field8216[++arg0.field8226 - 1] = Statics.canvasWid;
+		arg0.field8216[++arg0.field8226 - 1] = Statics.canvasHei;
 	}
 
 	@ObfuscatedName("s.bbo(Lyf;I)V")
@@ -15564,8 +15564,8 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("nt.bda(Lyf;B)V")
 	public static final void method6042(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = GameShell.field6585;
-		arg0.field8216[++arg0.field8226 - 1] = GameShell.field6585;
+		arg0.field8216[++arg0.field8226 - 1] = GameShell.fps;
+		arg0.field8216[++arg0.field8226 - 1] = GameShell.fps;
 		arg0.field8216[++arg0.field8226 - 1] = 1;
 	}
 

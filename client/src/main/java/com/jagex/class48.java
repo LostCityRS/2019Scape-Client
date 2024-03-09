@@ -26,7 +26,7 @@ public class class48 {
 		FileOnDisk var0 = null;
 		Preferences var1 = new Preferences(client.field10768, 0);
 		try {
-			var0 = GameShell.method18567("", client.field10768.field8333, false);
+			var0 = GameShell.openPrefs("", client.field10768.field8333, false);
 			byte[] var2 = new byte[(int) var0.method14821()];
 			int var4;
 			for (int var3 = 0; var3 < var2.length; var3 += var4) {
@@ -51,7 +51,7 @@ public class class48 {
 	public static void method16391() {
 		FileOnDisk var0 = null;
 		try {
-			var0 = GameShell.method18567("", client.field10768.field8333, true);
+			var0 = GameShell.openPrefs("", client.field10768.field8333, true);
 			Packet var1 = Statics.field688.method18156();
 			var0.method14808(var1.data, 0, var1.pos);
 		} catch (Exception var5) {
@@ -79,7 +79,7 @@ public class class48 {
 		boolean var3 = false;
 		boolean var4;
 		boolean var5;
-		if (Statics.osNameLowercase.startsWith("win")) {
+		if (Statics.osName.startsWith("win")) {
 			var2 = true;
 			var4 = true;
 			var5 = true;
@@ -180,7 +180,7 @@ public class class48 {
 	public static void method18306(ClientAutoSetupResult arg0) {
 		arg0.method18314(0);
 		byte var2;
-		if (GameShell.maxMemory >= 96) {
+		if (GameShell.maxmemory >= 96) {
 			int var1 = class33.method270();
 			if (var1 <= 100) {
 				method9619();

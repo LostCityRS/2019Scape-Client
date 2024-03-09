@@ -15,7 +15,7 @@ public class PreferencesIdleAnimations extends PreferencesOption {
 
 	@ObfuscatedName("anm.o(I)V")
 	public void method18643() {
-		if (this.field8417.method18159() == ModeGame.field8334) {
+		if (this.field8417.method18159() == ModeGame.STELLARDAWN) {
 			this.field8416 = 2;
 		}
 		if (this.field8416 < 0 || this.field8416 > 2) {

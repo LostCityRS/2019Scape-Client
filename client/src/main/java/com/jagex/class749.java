@@ -10,16 +10,16 @@ import java.net.Socket;
 public class class749 {
 
 	@ObfuscatedName("aba.e")
-	public int field8746;
+	public int node;
 
 	@ObfuscatedName("aba.n")
-	public String field8745;
+	public String host;
 
 	@ObfuscatedName("aba.m")
-	public int field8744;
+	public int port;
 
 	@ObfuscatedName("aba.k")
-	public int field8742;
+	public int port2;
 
 	@ObfuscatedName("aba.f")
 	public boolean field8747 = true;
@@ -29,7 +29,7 @@ public class class749 {
 
 	@ObfuscatedName("aba.e(B)Ljava/net/Socket;")
 	public Socket method14764() throws IOException {
-		return this.field8743 ? AbstractSocket.method5846(this.field8745, this.field8747 ? this.field8742 : this.field8744).method14876() : new Socket(InetAddress.getByName(this.field8745), this.field8747 ? this.field8742 : this.field8744);
+		return this.field8743 ? AbstractSocket.method5846(this.host, this.field8747 ? this.port2 : this.port).method14876() : new Socket(InetAddress.getByName(this.host), this.field8747 ? this.port2 : this.port);
 	}
 
 	@ObfuscatedName("aba.n(S)V")
@@ -49,7 +49,7 @@ public class class749 {
 		if (arg0 == null) {
 			return false;
 		} else {
-			return this.field8746 == arg0.field8746 && this.field8745.equals(arg0.field8745) && this.field8744 == arg0.field8744 && this.field8742 == arg0.field8742;
+			return this.node == arg0.node && this.host.equals(arg0.host) && this.port == arg0.port && this.port2 == arg0.port2;
 		}
 	}
 }

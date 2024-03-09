@@ -40,12 +40,12 @@ public class PreLoadingScreen implements LoadingScreen {
 
 	@ObfuscatedName("jm.e(II)I")
 	public final int method4893(int arg0) {
-		return this.field2894 ? (Statics.field6586 - arg0) / 2 : 0;
+		return this.field2894 ? (Statics.canvasWid - arg0) / 2 : 0;
 	}
 
 	@ObfuscatedName("jm.n(II)I")
 	public final int method4887(int arg0) {
-		return this.field2893 ? (Statics.field6600 - arg0) / 2 : 0;
+		return this.field2893 ? (Statics.canvasHei - arg0) / 2 : 0;
 	}
 
 	@ObfuscatedName("jm.m(ZI)V")
@@ -57,7 +57,7 @@ public class PreLoadingScreen implements LoadingScreen {
 				if (var2.length < 3) {
 					this.field2895 = true;
 				} else {
-					MediaTracker var3 = new MediaTracker(Statics.field10578);
+					MediaTracker var3 = new MediaTracker(Statics.canvas);
 					int var4 = 0;
 					for (int var5 = 0; var5 < var2.length; var5++) {
 						String[] var6 = class695.method17361(var2[var5].trim(), '=');
@@ -104,20 +104,20 @@ public class PreLoadingScreen implements LoadingScreen {
 			this.method4890();
 			return;
 		}
-		Graphics var15 = Statics.field10578.getGraphics();
+		Graphics var15 = Statics.canvas.getGraphics();
 		if (var15 == null) {
-			Statics.field10578.repaint();
+			Statics.canvas.repaint();
 			return;
 		}
 		try {
 			this.field2896 = "" + Statics.field593.method4851() + "%";
 			this.field2897 = Statics.field593.method4852();
 			if (Statics.field2575 == null) {
-				Statics.field2575 = Statics.field10578.createImage(Statics.field6586, Statics.field6600);
+				Statics.field2575 = Statics.canvas.createImage(Statics.canvasWid, Statics.canvasHei);
 			}
 			Graphics var16 = Statics.field2575.getGraphics();
 			var16.setColor(Color.BLACK);
-			var16.fillRect(0, 0, Statics.field6586, Statics.field6600);
+			var16.fillRect(0, 0, Statics.canvasWid, Statics.canvasHei);
 			Iterator var17 = this.field2892.iterator();
 			while (var17.hasNext()) {
 				class282 var18 = (class282) var17.next();

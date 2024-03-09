@@ -41,8 +41,8 @@ public class class301 implements Runnable {
 
 	public void run() {
 		try {
-			int var1 = ServerPorts.method14998(Statics.field1811, class698.field8347, Statics.field8752.field8746);
-			BufferedReader var2 = new BufferedReader(new InputStreamReader(new DataInputStream((new URL("http://" + Statics.field8752.field8745 + ":" + var1 + "/news.ws?game=" + client.field10768.field8339)).openStream())));
+			int var1 = ServerPorts.method14998(Statics.field1811, class698.field8347, Statics.world.node);
+			BufferedReader var2 = new BufferedReader(new InputStreamReader(new DataInputStream((new URL("http://" + Statics.world.host + ":" + var1 + "/news.ws?game=" + client.field10768.field8339)).openStream())));
 			String var3 = var2.readLine();
 			ArrayList var4 = new ArrayList();
 			while (var3 != null) {

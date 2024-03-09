@@ -28,7 +28,7 @@ public class class894 extends class282 {
 		this.this$0 = arg0;
 		this.field10469 = arg1;
 		this.field10467 = new Font(arg2, 0, arg3);
-		this.field10468 = Statics.field10578.getFontMetrics(this.field10467);
+		this.field10468 = Statics.canvas.getFontMetrics(this.field10467);
 		this.field10466 = new Color(arg4);
 	}
 

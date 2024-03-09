@@ -48,25 +48,25 @@ public class AppletViewer extends Applet implements AppletStub {
 		// Connection 1
 		client_parameters.put("28", "http://" + HOST_ADDRESS);
 
-		// Connection 2
+		// Connection 2 (content)
 		client_parameters.put("23", HOST_ADDRESS);
 		client_parameters.put("12", "43594");
 		client_parameters.put("30", "443");
 		client_parameters.put("32", "1200");
 
-		// Connection 3
+		// Connection 3 (httpContent)
 		client_parameters.put("14", HOST_ADDRESS);
 		client_parameters.put("44", "80");
-		client_parameters.put("45", "0");
 		client_parameters.put("53", "443");
+		client_parameters.put("45", "0");
 
-		// Connection 4
+		// Connection 4 (lobby)
 		client_parameters.put("43", HOST_ADDRESS);
 		client_parameters.put("29", "43594");
 		client_parameters.put("41", "443");
 		client_parameters.put("54", "1132"); // differs
 
-		// Connection 5
+		// Connection 5 (world)
 		client_parameters.put("8", "43594");
 		client_parameters.put("19", "443");
 		client_parameters.put("50", "7");

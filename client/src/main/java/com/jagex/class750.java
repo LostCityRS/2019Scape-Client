@@ -61,28 +61,28 @@ public class class750 {
 	@ObfuscatedName("vu.n(ILjava/lang/String;III)Z")
 	public static boolean method9401(int arg0, String arg1, int arg2, int arg3) {
 		Statics.field8755 = new class749();
-		Statics.field8755.field8746 = arg0;
-		Statics.field8755.field8745 = arg1;
-		Statics.field8755.field8744 = arg2;
-		Statics.field8755.field8742 = arg3;
+		Statics.field8755.node = arg0;
+		Statics.field8755.host = arg1;
+		Statics.field8755.port = arg2;
+		Statics.field8755.port2 = arg3;
 		return true;
 	}
 
 	@ObfuscatedName("dy.m(Ljava/lang/String;II)V")
 	public static void method2105(String arg0, int arg1) {
-		if (Statics.field8751 == null) {
-			Statics.field8751 = new class749();
+		if (Statics.lobby == null) {
+			Statics.lobby = new class749();
 		}
-		Statics.field8751.field8745 = arg0;
-		Statics.field8751.field8746 = arg1 + 1099;
-		Statics.field8751.field8744 = ServerPorts.method2912(Statics.field1811, class698.field8346, Statics.field8751.field8746);
-		Statics.field8751.field8742 = ServerPorts.method10147(Statics.field1811, class698.field8346, Statics.field8751.field8746);
+		Statics.lobby.host = arg0;
+		Statics.lobby.node = arg1 + 1099;
+		Statics.lobby.port = ServerPorts.method2912(Statics.field1811, class698.field8346, Statics.lobby.node);
+		Statics.lobby.port2 = ServerPorts.method10147(Statics.field1811, class698.field8346, Statics.lobby.node);
 	}
 
 	@ObfuscatedName("xq.k(I)V")
 	public static void method10337() {
-		if (Statics.field9200.field8746 != -1) {
-			method9401(Statics.field9200.field8746, Statics.field9200.field8745, Statics.field9200.field8744, Statics.field9200.field8742);
+		if (Statics.field9200.node != -1) {
+			method9401(Statics.field9200.node, Statics.field9200.host, Statics.field9200.port, Statics.field9200.port2);
 		}
 	}
 
@@ -99,7 +99,7 @@ public class class750 {
 
 	@ObfuscatedName("o.u(I)Lalc;")
 	public static class1015 method477() {
-		return class619.method4944(Statics.field8755.field8746);
+		return class619.method4944(Statics.field8755.node);
 	}
 
 	@ObfuscatedName("kt.z(IZIZB)V")
