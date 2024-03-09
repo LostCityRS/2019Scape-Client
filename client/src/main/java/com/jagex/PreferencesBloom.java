@@ -18,7 +18,7 @@ public class PreferencesBloom extends PreferencesOption {
 		if (this.field8417.displayMode2.method18546() && !Renderer.method723(this.field8417.displayMode2.method18545())) {
 			this.field8416 = 0;
 		}
-		if (this.field8417.method18165().method14090()) {
+		if (this.field8417.hardwareInfo().unused()) {
 			if (this.field8416 < 0 || this.field8416 > 3) {
 				this.field8416 = this.method14069();
 			}

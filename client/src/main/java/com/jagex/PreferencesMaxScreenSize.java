@@ -22,7 +22,7 @@ public class PreferencesMaxScreenSize extends PreferencesOption {
 
 	@ObfuscatedName("amw.e(B)I")
 	public int method14069() {
-		return this.field8417.method18165().method14083() ? 3 : 2;
+		return this.field8417.hardwareInfo().osArchArm() ? 3 : 2;
 	}
 
 	@ObfuscatedName("amw.n(II)I")

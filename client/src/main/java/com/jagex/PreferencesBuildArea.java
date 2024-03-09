@@ -15,11 +15,11 @@ public class PreferencesBuildArea extends PreferencesOption {
 
 	@ObfuscatedName("aml.o(B)V")
 	public void method18568() {
-		if (this.field8417.method18165().method14090()) {
+		if (this.field8417.hardwareInfo().unused()) {
 			this.field8416 = BuildAreaSize.field2658.field2664;
 			return;
 		}
-		int var1 = this.field8417.method18165().method14082();
+		int var1 = this.field8417.hardwareInfo().maxmemory();
 		if (var1 < 245) {
 			this.field8416 = BuildAreaSize.field2663.field2664;
 		}
@@ -33,25 +33,25 @@ public class PreferencesBuildArea extends PreferencesOption {
 
 	@ObfuscatedName("aml.e(B)I")
 	public int method14069() {
-		return this.field8417.method18165().method14090() ? BuildAreaSize.field2658.field2664 : BuildAreaSize.field2663.field2664;
+		return this.field8417.hardwareInfo().unused() ? BuildAreaSize.field2658.field2664 : BuildAreaSize.field2663.field2664;
 	}
 
 	@ObfuscatedName("aml.s(I)Z")
 	public boolean method18569() {
-		if (this.field8417.method18165().method14090()) {
+		if (this.field8417.hardwareInfo().unused()) {
 			return false;
 		} else {
-			int var1 = this.field8417.method18165().method14082();
+			int var1 = this.field8417.hardwareInfo().maxmemory();
 			return var1 >= 245;
 		}
 	}
 
 	@ObfuscatedName("aml.n(II)I")
 	public int method14070(int arg0) {
-		if (this.field8417.method18165().method14090()) {
+		if (this.field8417.hardwareInfo().unused()) {
 			return 3;
 		}
-		int var2 = this.field8417.method18165().method14082();
+		int var2 = this.field8417.hardwareInfo().maxmemory();
 		if (var2 < 245) {
 			return 3;
 		} else if (BuildAreaSize.field2662.field2664 == arg0 && var2 < 500) {

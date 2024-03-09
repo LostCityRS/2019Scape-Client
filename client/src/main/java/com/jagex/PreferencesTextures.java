@@ -15,10 +15,10 @@ public class PreferencesTextures extends PreferencesOption {
 
 	@ObfuscatedName("amn.o(B)V")
 	public void method18423() {
-		if (this.field8417.method18159() != ModeGame.RUNESCAPE) {
+		if (this.field8417.modeGame() != ModeGame.RUNESCAPE) {
 			this.field8416 = 1;
 		}
-		if (this.field8417.method18165().method14090()) {
+		if (this.field8417.hardwareInfo().unused()) {
 			if (this.field8416 < 0 || this.field8416 > 2) {
 				this.field8416 = this.method14069();
 			}
@@ -34,12 +34,12 @@ public class PreferencesTextures extends PreferencesOption {
 
 	@ObfuscatedName("amn.s(B)Z")
 	public boolean method18425() {
-		return this.field8417.method18159() == ModeGame.RUNESCAPE;
+		return this.field8417.modeGame() == ModeGame.RUNESCAPE;
 	}
 
 	@ObfuscatedName("amn.n(II)I")
 	public int method14070(int arg0) {
-		if (this.field8417.method18159() == ModeGame.RUNESCAPE) {
+		if (this.field8417.modeGame() == ModeGame.RUNESCAPE) {
 			return arg0 == 0 || this.field8417.groundBlending.method18651() == 1 ? 1 : 2;
 		} else {
 			return 3;

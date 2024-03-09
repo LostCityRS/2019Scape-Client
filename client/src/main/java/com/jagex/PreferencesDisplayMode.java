@@ -30,7 +30,7 @@ public class PreferencesDisplayMode extends PreferencesOption {
 	@ObfuscatedName("amd.e(B)I")
 	public int method14069() {
 		this.field11771 = true;
-		return this.field8417.method18165().method14084() ? 3 : 1;
+		return this.field8417.hardwareInfo().osArchWindows() ? 3 : 1;
 	}
 
 	@ObfuscatedName("amd.s(B)Z")

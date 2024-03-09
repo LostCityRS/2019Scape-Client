@@ -22,7 +22,7 @@ public class PreferencesCpuUsage extends PreferencesOption {
 
 	@ObfuscatedName("ank.e(B)I")
 	public int method14069() {
-		return this.field8417.method18165().method14085() > 1 ? 4 : 2;
+		return this.field8417.hardwareInfo().cpucount() > 1 ? 4 : 2;
 	}
 
 	@ObfuscatedName("ank.n(II)I")

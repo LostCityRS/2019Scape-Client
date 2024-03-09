@@ -15,7 +15,7 @@ public class PreferencesGroundDecoration extends PreferencesOption {
 
 	@ObfuscatedName("amc.o(S)V")
 	public void method18490() {
-		if (this.field8417.method18159() != ModeGame.RUNESCAPE) {
+		if (this.field8417.modeGame() != ModeGame.RUNESCAPE) {
 			this.field8416 = 1;
 		}
 		if (this.field8416 != 0 && this.field8416 != 1) {
@@ -30,12 +30,12 @@ public class PreferencesGroundDecoration extends PreferencesOption {
 
 	@ObfuscatedName("amc.s(B)Z")
 	public boolean method18488() {
-		return this.field8417.method18159() == ModeGame.RUNESCAPE;
+		return this.field8417.modeGame() == ModeGame.RUNESCAPE;
 	}
 
 	@ObfuscatedName("amc.n(II)I")
 	public int method14070(int arg0) {
-		return this.field8417.method18159() == ModeGame.RUNESCAPE ? 1 : 3;
+		return this.field8417.modeGame() == ModeGame.RUNESCAPE ? 1 : 3;
 	}
 
 	@ObfuscatedName("amc.k(II)V")

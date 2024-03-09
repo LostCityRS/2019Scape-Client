@@ -7,10 +7,10 @@ import deob.Statics;
 public class Preferences extends Node {
 
 	@ObfuscatedName("ali.u")
-	public final ModeGame field11510;
+	public final ModeGame modeGame;
 
 	@ObfuscatedName("ali.z")
-	public final class710 field11513;
+	public final PreferencesHardwareInfo hardwareInfo;
 
 	@ObfuscatedName("ali.p")
 	public PreferencesUnknown0 unknown;
@@ -178,15 +178,15 @@ public class Preferences extends Node {
 	public PreferencesUnknown9 unknown9;
 
 	public Preferences(ModeGame arg0, int arg1) {
-		this.field11510 = arg0;
-		this.field11513 = new class710(GameShell.maxmemory, GameShell.cpucount, Statics.osArchRaw.toLowerCase().indexOf("arm") != -1, Statics.osName.startsWith("win"), false);
+		this.modeGame = arg0;
+		this.hardwareInfo = new PreferencesHardwareInfo(GameShell.maxmemory, GameShell.cpucount, Statics.osArchRaw.toLowerCase().indexOf("arm") != -1, Statics.osName.startsWith("win"), false);
 		this.displayMode2 = new PreferencesDisplayMode(arg1, this);
 		this.method18154(true, true);
 	}
 
 	public Preferences(Packet arg0, ModeGame arg1, int arg2) {
-		this.field11510 = arg1;
-		this.field11513 = new class710(GameShell.maxmemory, GameShell.cpucount, Statics.osArchRaw.indexOf("arm") != -1, Statics.osName.startsWith("win"), false);
+		this.modeGame = arg1;
+		this.hardwareInfo = new PreferencesHardwareInfo(GameShell.maxmemory, GameShell.cpucount, Statics.osArchRaw.indexOf("arm") != -1, Statics.osName.startsWith("win"), false);
 		this.displayMode2 = new PreferencesDisplayMode(arg2, this);
 		this.method18163(arg0);
 	}
@@ -704,12 +704,12 @@ public class Preferences extends Node {
 	}
 
 	@ObfuscatedName("ali.u(B)Lzd;")
-	public ModeGame method18159() {
-		return this.field11510;
+	public ModeGame modeGame() {
+		return this.modeGame;
 	}
 
 	@ObfuscatedName("ali.z(I)Laag;")
-	public class710 method18165() {
-		return this.field11513;
+	public PreferencesHardwareInfo hardwareInfo() {
+		return this.hardwareInfo;
 	}
 }

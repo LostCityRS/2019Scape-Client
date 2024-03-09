@@ -15,7 +15,7 @@ public class PreferencesGroundBlending extends PreferencesOption {
 
 	@ObfuscatedName("any.o(I)V")
 	public void method18653() {
-		if (this.field8417.method18159() != ModeGame.RUNESCAPE) {
+		if (this.field8417.modeGame() != ModeGame.RUNESCAPE) {
 			this.field8416 = 1;
 		}
 		if (this.field8416 != 0 && this.field8416 != 1) {
@@ -30,12 +30,12 @@ public class PreferencesGroundBlending extends PreferencesOption {
 
 	@ObfuscatedName("any.s(I)Z")
 	public boolean method18650() {
-		return this.field8417.method18159() == ModeGame.RUNESCAPE;
+		return this.field8417.modeGame() == ModeGame.RUNESCAPE;
 	}
 
 	@ObfuscatedName("any.n(II)I")
 	public int method14070(int arg0) {
-		if (this.field8417.method18159() != ModeGame.RUNESCAPE) {
+		if (this.field8417.modeGame() != ModeGame.RUNESCAPE) {
 			return 3;
 		}
 		if (arg0 == 0) {

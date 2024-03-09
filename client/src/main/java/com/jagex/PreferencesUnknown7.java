@@ -19,7 +19,7 @@ public class PreferencesUnknown7 extends PreferencesOption {
 		if (var1 != 3 && var1 != 5) {
 			this.field8416 = 0;
 		}
-		if (this.field8417.method18165().method14085() < 2) {
+		if (this.field8417.hardwareInfo().cpucount() < 2) {
 			this.field8416 = 0;
 		}
 		if (this.field8416 != 0 && this.field8416 != 1) {
@@ -37,7 +37,7 @@ public class PreferencesUnknown7 extends PreferencesOption {
 	public int method14070(int arg0) {
 		if (arg0 == 0) {
 			return 1;
-		} else if (this.field8417.method18165().method14085() < 2) {
+		} else if (this.field8417.hardwareInfo().cpucount() < 2) {
 			return 3;
 		} else {
 			int var2 = this.field8417.displayMode.method18545();

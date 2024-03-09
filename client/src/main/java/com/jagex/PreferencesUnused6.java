@@ -15,7 +15,7 @@ public class PreferencesUnused6 extends PreferencesOption {
 
 	@ObfuscatedName("ami.o(I)V")
 	public void method18592() {
-		if (!this.field8417.method18165().method14090()) {
+		if (!this.field8417.hardwareInfo().unused()) {
 			this.field8416 = this.method14069();
 		} else if (this.field8416 < -1 || this.field8416 > 3) {
 			this.field8416 = this.method14069();
@@ -24,7 +24,7 @@ public class PreferencesUnused6 extends PreferencesOption {
 
 	@ObfuscatedName("ami.e(B)I")
 	public int method14069() {
-		return this.field8417.method18165().method14090() ? 0 : 1;
+		return this.field8417.hardwareInfo().unused() ? 0 : 1;
 	}
 
 	@ObfuscatedName("ami.n(II)I")
