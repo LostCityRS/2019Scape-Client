@@ -15,6 +15,6 @@ public class BackgroundEffectsVolumeProvider implements class368 {
 
 	@ObfuscatedName("ff.e(I)F")
 	public float method3084() {
-		return (float) Statics.field688.field11511.method18763() / 255.0F;
+		return (float) Statics.field688.themeMusicVolume1.method18763() / 255.0F;
 	}
 }

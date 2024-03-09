@@ -209,10 +209,10 @@ public final class class962 extends Node {
 		}
 		client.world.method7744().method16871(Statics.field8198, arg0, arg1, arg2, arg3);
 		if (arg4 >= 0) {
-			int var11 = Statics.field688.field11526.method18489();
-			Statics.field688.method18157(Statics.field688.field11526, 1);
+			int var11 = Statics.field688.groundDecoration.method18489();
+			Statics.field688.method18157(Statics.field688.groundDecoration, 1);
 			client.world.method7744().method16867(Statics.field8198, var10, arg0, arg2, arg3, arg4, arg5, arg6, arg8, arg9, arg7);
-			Statics.field688.method18157(Statics.field688.field11526, var11);
+			Statics.field688.method18157(Statics.field688.groundDecoration, var11);
 		}
 		class42.method16444(Statics.field4490.field11717);
 	}

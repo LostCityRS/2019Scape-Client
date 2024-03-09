@@ -15,6 +15,6 @@ public class SpeechVolumeProvider implements class368 {
 
 	@ObfuscatedName("fa.e(I)F")
 	public float method3084() {
-		return (float) Statics.field688.field11565.method18763() / 255.0F;
+		return (float) Statics.field688.themeMusicVolume2.method18763() / 255.0F;
 	}
 }

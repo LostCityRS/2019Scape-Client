@@ -459,7 +459,7 @@ public class class975 extends Node {
 			return;
 		}
 		int var5 = arg0.field11359 * 262144;
-		if (arg0.field11357 != 0 && Statics.field688.field11511.method18763() != 0 && arg0.field11349 == arg1) {
+		if (arg0.field11357 != 0 && Statics.field688.themeMusicVolume1.method18763() != 0 && arg0.field11349 == arg1) {
 			if (arg0.field11371 != null && (arg0.field11371.method7385() == class481.field4953 || arg0.field11371.method7385() == class481.field4947)) {
 				Statics.field1798.method3185(arg0.field11371);
 				arg0.field11371 = null;

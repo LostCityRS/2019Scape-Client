@@ -95,7 +95,7 @@ public class Statics {
 	public static Sprite field10568;
 
 	@ObfuscatedName("ahe.gv")
-	public static HardwarePlatformLoader field10577;
+	public static class536 field10577;
 
 	@ObfuscatedName("ahs.g")
 	public static Canvas field10578;
@@ -1154,7 +1154,7 @@ public class Statics {
 	public static Js5 field6879;
 
 	@ObfuscatedName("ac.dz")
-	public static class998 field688;
+	public static Preferences field688;
 
 	@ObfuscatedName("tg.fj")
 	public static Js5NetResourceProvider[] field6888;
@@ -2770,9 +2770,9 @@ public class Statics {
 	@ObfuscatedName("kr.d(B)V")
 	public static void method5326() {
 		if (GameShell.field6623 > 1) {
-			field688.method18157(field688.field11560, 4);
+			field688.method18157(field688.cpuUsage, 4);
 		} else {
-			field688.method18157(field688.field11560, 2);
+			field688.method18157(field688.cpuUsage, 2);
 		}
 	}
 
@@ -4830,7 +4830,7 @@ public class Statics {
 	@ObfuscatedName("pu.arq(Lyf;I)V")
 	public static final void method7075(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		field688.method18157(field688.field11549, var1);
+		field688.method18157(field688.brightness, var1);
 		client.world.method7753();
 		class48.method16391();
 		client.field10800 = false;
@@ -4838,7 +4838,7 @@ public class Statics {
 
 	@ObfuscatedName("any.arn(Lyf;I)V")
 	public static final void method18661(ClientScriptState arg0) {
-		field688.method18157(field688.field11523, arg0.field8216[--arg0.field8226] == 1 ? 1 : 0);
+		field688.method18157(field688.flickeringEffects, arg0.field8216[--arg0.field8226] == 1 ? 1 : 0);
 		class48.method16391();
 		client.field10800 = false;
 	}
@@ -4846,9 +4846,9 @@ public class Statics {
 	@ObfuscatedName("pd.asr(Lyf;B)V")
 	public static final void method6825(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		int var2 = field688.field11566.method18763();
+		int var2 = field688.themeMusicVolume3.method18763();
 		if (var1 != var2) {
-			field688.method18157(field688.field11566, var1);
+			field688.method18157(field688.themeMusicVolume3, var1);
 			class48.method16391();
 			client.field10800 = false;
 		}
@@ -4856,23 +4856,23 @@ public class Statics {
 
 	@ObfuscatedName("py.asz(Lyf;I)V")
 	public static final void method6965(ClientScriptState arg0) {
-		field688.method18157(field688.field11556, arg0.field8216[--arg0.field8226] == 0 ? 0 : 1);
+		field688.method18157(field688.customCursors, arg0.field8216[--arg0.field8226] == 0 ? 0 : 1);
 		class48.method16391();
 	}
 
 	@ObfuscatedName("ul.atz(Lyf;I)V")
 	public static final void method8916(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = field688.field11549.method18408();
+		arg0.field8216[++arg0.field8226 - 1] = field688.brightness.method18408();
 	}
 
 	@ObfuscatedName("ji.ate(Lyf;B)V")
 	public static final void method4980(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = field688.field11529.method18515();
+		arg0.field8216[++arg0.field8226 - 1] = field688.sceneryShadows.method18515();
 	}
 
 	@ObfuscatedName("ty.avp(Lyf;I)V")
 	public static final void method8477(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = field688.field11514.method18665();
+		arg0.field8216[++arg0.field8226 - 1] = field688.unknown.method18665();
 	}
 
 	@ObfuscatedName("rp.awi(Lyf;I)V")
@@ -4914,14 +4914,14 @@ public class Statics {
 
 	@ObfuscatedName("ik.azw(Lyf;I)V")
 	public static final void method4620(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = field688.field11519.method18624() && field8198.method2266() ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = field688.bloom.method18624() && field8198.method2266() ? 1 : 0;
 	}
 
 	@ObfuscatedName("rd.bay(Lyf;B)V")
 	public static final void method7894(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		if (field8198.method2141()) {
-			arg0.field8216[++arg0.field8226 - 1] = field688.field11537.method14070(var1);
+			arg0.field8216[++arg0.field8226 - 1] = field688.unknown1.method14070(var1);
 		} else {
 			arg0.field8216[++arg0.field8226 - 1] = 3;
 		}

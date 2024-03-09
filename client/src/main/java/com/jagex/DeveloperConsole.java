@@ -287,7 +287,7 @@ public class DeveloperConsole {
 			}
 			if (arg0.equals("renderer")) {
 				class108 var3 = Statics.field8198.method2272();
-				method4285("Toolkit ID: " + Statics.field688.field11540.method18545());
+				method4285("Toolkit ID: " + Statics.field688.displayMode2.method18545());
 				method4285("Vendor: " + var3.field1261);
 				method4285("Name: " + var3.field1257);
 				method4285("Version: " + var3.field1263);
@@ -377,9 +377,9 @@ public class DeveloperConsole {
 				}
 				if (arg0.equalsIgnoreCase("tk0")) {
 					client.method486(0, false);
-					if (Statics.field688.field11540.method18545() == 0) {
+					if (Statics.field688.displayMode2.method18545() == 0) {
 						method4285("Success");
-						Statics.field688.method18157(Statics.field688.field11524, 0);
+						Statics.field688.method18157(Statics.field688.displayMode, 0);
 						class48.method16391();
 						client.field10800 = false;
 					} else {
@@ -389,9 +389,9 @@ public class DeveloperConsole {
 				}
 				if (arg0.equalsIgnoreCase("tk1")) {
 					client.method486(1, false);
-					if (Statics.field688.field11540.method18545() == 1) {
+					if (Statics.field688.displayMode2.method18545() == 1) {
 						method4285("Success");
-						Statics.field688.method18157(Statics.field688.field11524, 1);
+						Statics.field688.method18157(Statics.field688.displayMode, 1);
 						class48.method16391();
 						client.field10800 = false;
 					} else {
@@ -401,9 +401,9 @@ public class DeveloperConsole {
 				}
 				if (arg0.equalsIgnoreCase("tk3")) {
 					client.method486(3, false);
-					if (Statics.field688.field11540.method18545() == 3) {
+					if (Statics.field688.displayMode2.method18545() == 3) {
 						method4285("Success");
-						Statics.field688.method18157(Statics.field688.field11524, 3);
+						Statics.field688.method18157(Statics.field688.displayMode, 3);
 						class48.method16391();
 						client.field10800 = false;
 					} else {
@@ -413,9 +413,9 @@ public class DeveloperConsole {
 				}
 				if (arg0.equalsIgnoreCase("tk5")) {
 					client.method486(5, false);
-					if (Statics.field688.field11540.method18545() == 5) {
+					if (Statics.field688.displayMode2.method18545() == 5) {
 						method4285("Success");
-						Statics.field688.method18157(Statics.field688.field11524, 5);
+						Statics.field688.method18157(Statics.field688.displayMode, 5);
 						class48.method16391();
 						client.field10800 = false;
 					} else {
@@ -630,7 +630,7 @@ public class DeveloperConsole {
 
 	@ObfuscatedName("xi.q(B)V")
 	public static void method10153() {
-		if (Statics.field688.field11561.method18750() == 1) {
+		if (Statics.field688.unknown7.method18750() == 1) {
 			Statics.field3183.method7680(new RebuildRequest(RebuildType.field5070, null));
 		} else {
 			client.world.method7753();

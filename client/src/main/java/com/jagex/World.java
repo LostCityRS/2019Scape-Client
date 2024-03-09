@@ -396,7 +396,7 @@ public class World {
 
 	@ObfuscatedName("rl.aw(B)V")
 	public void method7773() {
-		this.method7791(BuildAreaSize.method3061(Statics.field688.field11520.method18570()));
+		this.method7791(BuildAreaSize.method3061(Statics.field688.buildArea.method18570()));
 		int var1 = this.field5018.field7426;
 		int var2 = this.field5018.field7427;
 		int var3 = (Statics.field7956 >> 12) + (var1 >> 3);
@@ -1027,7 +1027,7 @@ public class World {
 			Statics.method14055(true);
 		}
 		boolean var19 = false;
-		if (Statics.field688.field11541.method18522() == 2) {
+		if (Statics.field688.waterDetail.method18522() == 2) {
 			for (int var20 = 0; var20 < this.field5049; var20++) {
 				if (this.field5031[var20] != null || this.field5055[var20] != null) {
 					var19 = true;
@@ -1035,7 +1035,7 @@ public class World {
 				}
 			}
 		}
-		int var21 = class256.method17395(Statics.field688.field11522.method18688()).field2675 * 8;
+		int var21 = class256.method17395(Statics.field688.buildAreaSize.method18688()).field2675 * 8;
 		if (Statics.field8198.method2130()) {
 			var21++;
 		}
@@ -1054,11 +1054,11 @@ public class World {
 		this.field5038 = -0.05F + (float) (Math.random() / 10.0D);
 		this.field5023 = new ClientMapLoader(this.field5030, this.field5039, 4, this.field5028, this.field5043, false, this.field5032, this.field5062);
 		this.field5023.method7136();
-		this.field5023.field4515 = Statics.field688.field11529.method18515();
-		this.field5023.field4571 = Statics.field688.field11541.method18522() == 2;
-		this.field5023.field4542 = Statics.field688.field11528.method18389() == 1;
-		this.field5023.field4539 = Statics.field688.field11525.method18651() == 1;
-		this.field5023.field4511 = Statics.field688.field11538.method18426() == 1;
+		this.field5023.field4515 = Statics.field688.sceneryShadows.method18515();
+		this.field5023.field4571 = Statics.field688.waterDetail.method18522() == 2;
+		this.field5023.field4542 = Statics.field688.lightingDetail.method18389() == 1;
+		this.field5023.field4539 = Statics.field688.groundBlending.method18651() == 1;
+		this.field5023.field4511 = Statics.field688.textures.method18426() == 1;
 		if (this.field5019.method7887()) {
 			this.method7767(this.field5023, this.field5052);
 		} else {
@@ -1073,11 +1073,11 @@ public class World {
 			this.field5030.method8703(true);
 			this.field5033 = new ClientMapLoader(this.field5030, this.field5039, 1, this.field5028, this.field5043, true, this.field5032, this.field5062);
 			this.field5033.method7136();
-			this.field5033.field4515 = Statics.field688.field11529.method18515();
-			this.field5033.field4571 = Statics.field688.field11541.method18522() == 2;
-			this.field5033.field4542 = Statics.field688.field11528.method18389() == 1;
-			this.field5033.field4539 = Statics.field688.field11525.method18651() == 1;
-			this.field5033.field4511 = Statics.field688.field11538.method18426() == 1;
+			this.field5033.field4515 = Statics.field688.sceneryShadows.method18515();
+			this.field5033.field4571 = Statics.field688.waterDetail.method18522() == 2;
+			this.field5033.field4542 = Statics.field688.lightingDetail.method18389() == 1;
+			this.field5033.field4539 = Statics.field688.groundBlending.method18651() == 1;
+			this.field5033.field4511 = Statics.field688.textures.method18426() == 1;
 			if (this.field5019.method7887()) {
 				this.method7767(this.field5033, this.field5055);
 				if (!this.field5036) {

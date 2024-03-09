@@ -310,7 +310,7 @@ public class PlayerEntity extends PathingEntity {
 		var2.method6315(0.0F, (float) (-20 - this.field10408), 0.0F);
 		PickableEntity var8 = null;
 		this.field10458 = false;
-		if (Statics.field688.field11568.method18453() == 1) {
+		if (Statics.field688.characterShadows.method18453() == 1) {
 			BASType var9 = this.method16508();
 			if (var9.field7346 && (this.field12061.field7892 == -1 || ((NPCType) Statics.field7961.get(this.field12061.field7892)).field2710)) {
 				class721 var10 = this.field10454.method14346() && this.field10454.method14355() ? this.field10454 : null;
@@ -323,7 +323,7 @@ public class PlayerEntity extends PathingEntity {
 				}
 				Object var14 = null;
 				Model var15;
-				if (var12 > -1 && Statics.field688.field11538.method18426() == 1) {
+				if (var12 > -1 && Statics.field688.textures.method18426() == 1) {
 					var15 = class31.method3283(arg0, var5, this.field10405, this.field12466, this.field10407, this.field10459[0], var12, var13, var11 == null ? var10 : var11);
 				} else {
 					var15 = class31.method5102(arg0, var5, this.field10405, this.field12466, this.field10407, 1, this.field10459[0], 0, 0, 160, 240, var11 == null ? var10 : var11);

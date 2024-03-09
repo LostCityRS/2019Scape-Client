@@ -245,7 +245,7 @@ public class class637 {
 	@ObfuscatedName("xv.k(Lalw;Lxu;B)V")
 	public void method10065(Packet arg0, EnvironmentManager arg1) {
 		int var3 = arg0.g1();
-		if (Statics.field688.field11528.method18389() == 1 && Statics.field8198.method2114() > 0) {
+		if (Statics.field688.lightingDetail.method18389() == 1 && Statics.field8198.method2114() > 0) {
 			if ((var3 & class661.field8143.field8144) == 0) {
 				this.field7877 = 16777215;
 			} else {
@@ -343,7 +343,7 @@ public class class637 {
 
 	@ObfuscatedName("xv.p(Lxu;Lyj;I)V")
 	public void method10063(EnvironmentManager arg0, EnvironmentOverride arg1) {
-		if (Statics.field688.field11528.method18389() == 1 && Statics.field8198.method2114() > 0) {
+		if (Statics.field688.lightingDetail.method18389() == 1 && Statics.field8198.method2114() > 0) {
 			if (arg1.method10429() != -1) {
 				this.field7877 = arg1.method10429();
 			}

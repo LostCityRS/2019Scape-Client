@@ -156,7 +156,7 @@ public class class648 {
 			client.field10849.method934(var11);
 			client.field10800 = true;
 		}
-		if (client.field10801 || Statics.field688.field11524.method18545() != 1) {
+		if (client.field10801 || Statics.field688.displayMode.method18545() != 1) {
 			return;
 		}
 		int[] var14 = Statics.field8198.method2413();

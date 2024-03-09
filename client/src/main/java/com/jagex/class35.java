@@ -29,7 +29,7 @@ public class class35 {
 		if (field631.method14157() == 0) {
 			return;
 		}
-		if (Statics.field688.field11540.method18545() == 0) {
+		if (Statics.field688.displayMode2.method18545() == 0) {
 			for (class964 var1 = (class964) field631.method14191(); var1 != null; var1 = (class964) field631.method14161()) {
 				Statics.field1842.method18905(arg0, arg0, var1.field11256, var1.field11255, var1.field11258, var1.field11257, false, false, var1.field11254, Statics.field8321, var1.field11259 ? Statics.field4490.field12061 : null, Statics.field11389);
 				var1.method8440();

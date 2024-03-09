@@ -15,6 +15,6 @@ public class MainMusicVolumeProvider implements class368 {
 
 	@ObfuscatedName("fc.e(I)F")
 	public float method3084() {
-		return (float) Statics.field688.field11566.method18763() / 255.0F;
+		return (float) Statics.field688.themeMusicVolume3.method18763() / 255.0F;
 	}
 }

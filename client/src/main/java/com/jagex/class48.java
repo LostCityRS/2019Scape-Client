@@ -22,9 +22,9 @@ public class class48 {
 	}
 
 	@ObfuscatedName("pd.e(I)Lali;")
-	public static class998 method6822() {
+	public static Preferences method6822() {
 		FileOnDisk var0 = null;
-		class998 var1 = new class998(client.field10768, 0);
+		Preferences var1 = new Preferences(client.field10768, 0);
 		try {
 			var0 = GameShell.method18567("", client.field10768.field8333, false);
 			byte[] var2 = new byte[(int) var0.method14821()];
@@ -35,7 +35,7 @@ public class class48 {
 					throw new IOException();
 				}
 			}
-			var1 = new class998(new Packet(var2), client.field10768, 0);
+			var1 = new Preferences(new Packet(var2), client.field10768, 0);
 		} catch (Exception var8) {
 		}
 		try {
@@ -108,10 +108,10 @@ public class class48 {
 		int var8 = -1;
 		if (var2) {
 			try {
-				Statics.field688.method18157(Statics.field688.field11536, 3);
+				Statics.field688.method18157(Statics.field688.unknown6, 3);
 				method16391();
 				var7 = client.method15172(3, 1000);
-				if (Statics.field688.field11540.method18545() == 3) {
+				if (Statics.field688.displayMode2.method18545() == 3) {
 					var0.method18313(4);
 					class108 var9 = Statics.field8198.method2272();
 					long var10 = var9.field1265 & 0xFFFFFFFFFFFFL;
@@ -137,10 +137,10 @@ public class class48 {
 		}
 		if (var5) {
 			try {
-				Statics.field688.method18157(Statics.field688.field11536, 5);
+				Statics.field688.method18157(Statics.field688.unknown6, 5);
 				method16391();
 				var8 = client.method15172(5, 1000);
-				if (Statics.field688.field11540.method18545() == 5) {
+				if (Statics.field688.displayMode2.method18545() == 5) {
 					var0.method18313(8192);
 				}
 			} catch (Exception var19) {
@@ -149,17 +149,17 @@ public class class48 {
 		}
 		if (var4) {
 			try {
-				Statics.field688.method18157(Statics.field688.field11536, 4);
+				Statics.field688.method18157(Statics.field688.unknown6, 4);
 				method16391();
 				var6 = client.method15172(1, 1000);
-				if (Statics.field688.field11540.method18545() == 1) {
+				if (Statics.field688.displayMode2.method18545() == 1) {
 					var0.method18313(2);
 				}
 			} catch (Exception var18) {
 				var0.method18313(2048);
 			}
 		}
-		Statics.field688.method18157(Statics.field688.field11536, 0);
+		Statics.field688.method18157(Statics.field688.unknown6, 0);
 		if (var6 == -1 && var7 == -1) {
 			method18306(var0);
 			return var0;
@@ -201,10 +201,10 @@ public class class48 {
 			var2 = 1;
 			arg0.method18313(64);
 		}
-		if (Statics.field688.field11540.method18545() == 0) {
-			Statics.field688.method18177(Statics.field688.field11540, true);
+		if (Statics.field688.displayMode2.method18545() == 0) {
+			Statics.field688.method18177(Statics.field688.displayMode2, true);
 		} else {
-			Statics.field688.method18157(Statics.field688.field11524, 0);
+			Statics.field688.method18157(Statics.field688.displayMode, 0);
 			client.method486(0, false);
 		}
 		method16391();
@@ -228,10 +228,10 @@ public class class48 {
 			method131(true);
 			var3 = 1;
 		}
-		if (Statics.field688.field11540.method18545() == arg1) {
-			Statics.field688.method18177(Statics.field688.field11540, true);
+		if (Statics.field688.displayMode2.method18545() == arg1) {
+			Statics.field688.method18177(Statics.field688.displayMode2, true);
 		} else {
-			Statics.field688.method18157(Statics.field688.field11524, arg1);
+			Statics.field688.method18157(Statics.field688.displayMode, arg1);
 			client.method486(arg1, false);
 		}
 		method16391();
@@ -240,31 +240,31 @@ public class class48 {
 
 	@ObfuscatedName("wo.l(B)V")
 	public static void method9619() {
-		Statics.field688.method18157(Statics.field688.field11533, 2);
-		Statics.field688.method18157(Statics.field688.field11534, 2);
-		Statics.field688.method18157(Statics.field688.field11526, 1);
-		Statics.field688.method18157(Statics.field688.field11525, 1);
-		Statics.field688.method18157(Statics.field688.field11546, 1);
-		Statics.field688.method18157(Statics.field688.field11523, 1);
-		Statics.field688.method18157(Statics.field688.field11568, 1);
-		Statics.field688.method18157(Statics.field688.field11538, 1);
-		Statics.field688.method18157(Statics.field688.field11529, 2);
-		Statics.field688.method18157(Statics.field688.field11528, 1);
-		Statics.field688.method18157(Statics.field688.field11541, 2);
-		Statics.field688.method18157(Statics.field688.field11564, 1);
-		Statics.field688.method18157(Statics.field688.field11537, 0);
-		Statics.field688.method18157(Statics.field688.field11516, 0);
-		Statics.field688.method18157(Statics.field688.field11532, 2);
-		Statics.field688.method18157(Statics.field688.field11520, BuildAreaSize.field2663.field2664);
-		Statics.field688.method18157(Statics.field688.field11519, 0);
+		Statics.field688.method18157(Statics.field688.removeRoofs, 2);
+		Statics.field688.method18157(Statics.field688.removeRoofs2, 2);
+		Statics.field688.method18157(Statics.field688.groundDecoration, 1);
+		Statics.field688.method18157(Statics.field688.groundBlending, 1);
+		Statics.field688.method18157(Statics.field688.idleAnimations, 1);
+		Statics.field688.method18157(Statics.field688.flickeringEffects, 1);
+		Statics.field688.method18157(Statics.field688.characterShadows, 1);
+		Statics.field688.method18157(Statics.field688.textures, 1);
+		Statics.field688.method18157(Statics.field688.sceneryShadows, 2);
+		Statics.field688.method18157(Statics.field688.lightingDetail, 1);
+		Statics.field688.method18157(Statics.field688.waterDetail, 2);
+		Statics.field688.method18157(Statics.field688.fog, 1);
+		Statics.field688.method18157(Statics.field688.unknown1, 0);
+		Statics.field688.method18157(Statics.field688.unknown2, 0);
+		Statics.field688.method18157(Statics.field688.particles, 2);
+		Statics.field688.method18157(Statics.field688.buildArea, BuildAreaSize.field2663.field2664);
+		Statics.field688.method18157(Statics.field688.bloom, 0);
 		if (Statics.field8198 != null && Statics.field8198.method2266() && Statics.field8198.method2242()) {
 			Statics.field8198.method2273();
 		}
-		Statics.field688.method18157(Statics.field688.field11508, 1);
-		Statics.field688.method18157(Statics.field688.field11514, 1);
+		Statics.field688.method18157(Statics.field688.skyboxes, 1);
+		Statics.field688.method18157(Statics.field688.unknown, 1);
 		Statics.method5326();
-		Statics.field688.method18157(Statics.field688.field11539, 0);
-		Statics.field688.method18157(Statics.field688.field11515, 4);
+		Statics.field688.method18157(Statics.field688.screenSize, 0);
+		Statics.field688.method18157(Statics.field688.preset, 4);
 		client.method9516();
 		client.world.method7816().method10019();
 		client.field10836 = true;
@@ -272,31 +272,31 @@ public class class48 {
 
 	@ObfuscatedName("ty.u(B)V")
 	public static void method8479() {
-		Statics.field688.method18157(Statics.field688.field11533, 2);
-		Statics.field688.method18157(Statics.field688.field11534, 2);
-		Statics.field688.method18157(Statics.field688.field11526, 1);
-		Statics.field688.method18157(Statics.field688.field11525, 1);
-		Statics.field688.method18157(Statics.field688.field11546, 1);
-		Statics.field688.method18157(Statics.field688.field11523, 1);
-		Statics.field688.method18157(Statics.field688.field11568, 1);
-		Statics.field688.method18157(Statics.field688.field11538, 1);
-		Statics.field688.method18157(Statics.field688.field11529, 1);
-		Statics.field688.method18157(Statics.field688.field11528, 1);
-		Statics.field688.method18157(Statics.field688.field11541, 0);
-		Statics.field688.method18157(Statics.field688.field11564, 1);
-		Statics.field688.method18157(Statics.field688.field11537, 0);
-		Statics.field688.method18157(Statics.field688.field11516, 0);
-		Statics.field688.method18157(Statics.field688.field11532, 1);
-		Statics.field688.method18157(Statics.field688.field11520, BuildAreaSize.field2663.field2664);
-		Statics.field688.method18157(Statics.field688.field11519, 0);
+		Statics.field688.method18157(Statics.field688.removeRoofs, 2);
+		Statics.field688.method18157(Statics.field688.removeRoofs2, 2);
+		Statics.field688.method18157(Statics.field688.groundDecoration, 1);
+		Statics.field688.method18157(Statics.field688.groundBlending, 1);
+		Statics.field688.method18157(Statics.field688.idleAnimations, 1);
+		Statics.field688.method18157(Statics.field688.flickeringEffects, 1);
+		Statics.field688.method18157(Statics.field688.characterShadows, 1);
+		Statics.field688.method18157(Statics.field688.textures, 1);
+		Statics.field688.method18157(Statics.field688.sceneryShadows, 1);
+		Statics.field688.method18157(Statics.field688.lightingDetail, 1);
+		Statics.field688.method18157(Statics.field688.waterDetail, 0);
+		Statics.field688.method18157(Statics.field688.fog, 1);
+		Statics.field688.method18157(Statics.field688.unknown1, 0);
+		Statics.field688.method18157(Statics.field688.unknown2, 0);
+		Statics.field688.method18157(Statics.field688.particles, 1);
+		Statics.field688.method18157(Statics.field688.buildArea, BuildAreaSize.field2663.field2664);
+		Statics.field688.method18157(Statics.field688.bloom, 0);
 		if (Statics.field8198 != null && Statics.field8198.method2266() && Statics.field8198.method2242()) {
 			Statics.field8198.method2273();
 		}
-		Statics.field688.method18157(Statics.field688.field11508, 1);
-		Statics.field688.method18157(Statics.field688.field11514, 1);
+		Statics.field688.method18157(Statics.field688.skyboxes, 1);
+		Statics.field688.method18157(Statics.field688.unknown, 1);
 		Statics.method5326();
-		Statics.field688.method18157(Statics.field688.field11539, 1);
-		Statics.field688.method18157(Statics.field688.field11515, 3);
+		Statics.field688.method18157(Statics.field688.screenSize, 1);
+		Statics.field688.method18157(Statics.field688.preset, 3);
 		client.method9516();
 		client.world.method7816().method10019();
 		client.field10836 = true;
@@ -304,31 +304,31 @@ public class class48 {
 
 	@ObfuscatedName("fd.z(I)V")
 	public static void method3056() {
-		Statics.field688.method18157(Statics.field688.field11533, 1);
-		Statics.field688.method18157(Statics.field688.field11534, 1);
-		Statics.field688.method18157(Statics.field688.field11526, 1);
-		Statics.field688.method18157(Statics.field688.field11525, 1);
-		Statics.field688.method18157(Statics.field688.field11546, 0);
-		Statics.field688.method18157(Statics.field688.field11523, 0);
-		Statics.field688.method18157(Statics.field688.field11568, 0);
-		Statics.field688.method18157(Statics.field688.field11529, 0);
-		Statics.field688.method18157(Statics.field688.field11538, 0);
-		Statics.field688.method18157(Statics.field688.field11528, 0);
-		Statics.field688.method18157(Statics.field688.field11541, 0);
-		Statics.field688.method18157(Statics.field688.field11564, 0);
-		Statics.field688.method18157(Statics.field688.field11537, 0);
-		Statics.field688.method18157(Statics.field688.field11516, 0);
-		Statics.field688.method18157(Statics.field688.field11532, 0);
-		Statics.field688.method18157(Statics.field688.field11520, BuildAreaSize.field2663.field2664);
-		Statics.field688.method18157(Statics.field688.field11519, 0);
+		Statics.field688.method18157(Statics.field688.removeRoofs, 1);
+		Statics.field688.method18157(Statics.field688.removeRoofs2, 1);
+		Statics.field688.method18157(Statics.field688.groundDecoration, 1);
+		Statics.field688.method18157(Statics.field688.groundBlending, 1);
+		Statics.field688.method18157(Statics.field688.idleAnimations, 0);
+		Statics.field688.method18157(Statics.field688.flickeringEffects, 0);
+		Statics.field688.method18157(Statics.field688.characterShadows, 0);
+		Statics.field688.method18157(Statics.field688.sceneryShadows, 0);
+		Statics.field688.method18157(Statics.field688.textures, 0);
+		Statics.field688.method18157(Statics.field688.lightingDetail, 0);
+		Statics.field688.method18157(Statics.field688.waterDetail, 0);
+		Statics.field688.method18157(Statics.field688.fog, 0);
+		Statics.field688.method18157(Statics.field688.unknown1, 0);
+		Statics.field688.method18157(Statics.field688.unknown2, 0);
+		Statics.field688.method18157(Statics.field688.particles, 0);
+		Statics.field688.method18157(Statics.field688.buildArea, BuildAreaSize.field2663.field2664);
+		Statics.field688.method18157(Statics.field688.bloom, 0);
 		if (Statics.field8198 != null && Statics.field8198.method2266() && Statics.field8198.method2242()) {
 			Statics.field8198.method2273();
 		}
-		Statics.field688.method18157(Statics.field688.field11508, 0);
-		Statics.field688.method18157(Statics.field688.field11514, 0);
+		Statics.field688.method18157(Statics.field688.skyboxes, 0);
+		Statics.field688.method18157(Statics.field688.unknown, 0);
 		Statics.method5326();
-		Statics.field688.method18157(Statics.field688.field11539, 2);
-		Statics.field688.method18157(Statics.field688.field11515, 2);
+		Statics.field688.method18157(Statics.field688.screenSize, 2);
+		Statics.field688.method18157(Statics.field688.preset, 2);
 		client.method9516();
 		client.world.method7816().method10019();
 		client.field10836 = true;
@@ -336,31 +336,31 @@ public class class48 {
 
 	@ObfuscatedName("e.p(ZI)V")
 	public static void method131(boolean arg0) {
-		Statics.field688.method18157(Statics.field688.field11533, 1);
-		Statics.field688.method18157(Statics.field688.field11534, 1);
-		Statics.field688.method18157(Statics.field688.field11526, 0);
-		Statics.field688.method18157(Statics.field688.field11564, 0);
-		Statics.field688.method18157(Statics.field688.field11525, 0);
-		Statics.field688.method18157(Statics.field688.field11546, 0);
-		Statics.field688.method18157(Statics.field688.field11523, 0);
-		Statics.field688.method18157(Statics.field688.field11568, 0);
-		Statics.field688.method18157(Statics.field688.field11529, 0);
-		Statics.field688.method18157(Statics.field688.field11538, 0);
-		Statics.field688.method18157(Statics.field688.field11528, 0);
-		Statics.field688.method18157(Statics.field688.field11541, 0);
-		Statics.field688.method18157(Statics.field688.field11537, 0);
-		Statics.field688.method18157(Statics.field688.field11516, 0);
-		Statics.field688.method18157(Statics.field688.field11532, 0);
-		Statics.field688.method18157(Statics.field688.field11520, BuildAreaSize.field2663.field2664);
-		Statics.field688.method18157(Statics.field688.field11519, 0);
+		Statics.field688.method18157(Statics.field688.removeRoofs, 1);
+		Statics.field688.method18157(Statics.field688.removeRoofs2, 1);
+		Statics.field688.method18157(Statics.field688.groundDecoration, 0);
+		Statics.field688.method18157(Statics.field688.fog, 0);
+		Statics.field688.method18157(Statics.field688.groundBlending, 0);
+		Statics.field688.method18157(Statics.field688.idleAnimations, 0);
+		Statics.field688.method18157(Statics.field688.flickeringEffects, 0);
+		Statics.field688.method18157(Statics.field688.characterShadows, 0);
+		Statics.field688.method18157(Statics.field688.sceneryShadows, 0);
+		Statics.field688.method18157(Statics.field688.textures, 0);
+		Statics.field688.method18157(Statics.field688.lightingDetail, 0);
+		Statics.field688.method18157(Statics.field688.waterDetail, 0);
+		Statics.field688.method18157(Statics.field688.unknown1, 0);
+		Statics.field688.method18157(Statics.field688.unknown2, 0);
+		Statics.field688.method18157(Statics.field688.particles, 0);
+		Statics.field688.method18157(Statics.field688.buildArea, BuildAreaSize.field2663.field2664);
+		Statics.field688.method18157(Statics.field688.bloom, 0);
 		if (Statics.field8198 != null && Statics.field8198.method2266() && Statics.field8198.method2242()) {
 			Statics.field8198.method2273();
 		}
-		Statics.field688.method18157(Statics.field688.field11508, 0);
-		Statics.field688.method18157(Statics.field688.field11514, 0);
+		Statics.field688.method18157(Statics.field688.skyboxes, 0);
+		Statics.field688.method18157(Statics.field688.unknown, 0);
 		Statics.method5326();
-		Statics.field688.method18157(Statics.field688.field11539, 2);
-		Statics.field688.method18157(Statics.field688.field11515, 1);
+		Statics.field688.method18157(Statics.field688.screenSize, 2);
+		Statics.field688.method18157(Statics.field688.preset, 1);
 		client.method9516();
 		client.world.method7816().method10019();
 		client.field10836 = true;

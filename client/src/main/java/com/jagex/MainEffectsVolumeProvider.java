@@ -15,6 +15,6 @@ public class MainEffectsVolumeProvider implements class368 {
 
 	@ObfuscatedName("fv.e(I)F")
 	public float method3084() {
-		return (float) Statics.field688.field11563.method18763() / 255.0F;
+		return (float) Statics.field688.themeMusicVolume.method18763() / 255.0F;
 	}
 }

@@ -426,7 +426,7 @@ public class ClientMapLoader extends class454 {
 							} while (var19 >= arg5);
 						} while (var18 + var21 < 0);
 					} while (var19 + var22 < 0);
-				} while (class601.field7566.field7562 == var15.field7541 && Statics.field688.field11526.method18489() == 0 && var20.field7470 == 0 && var20.field7467 != 1 && !var20.field7502);
+				} while (class601.field7566.field7562 == var15.field7541 && Statics.field688.groundDecoration.method18489() == 0 && var20.field7470 == 0 && var20.field7467 != 1 && !var20.field7502);
 				if (!var20.method9489(arg7)) {
 					arg6.field7958 = var10;
 					var8++;
@@ -578,7 +578,7 @@ public class ClientMapLoader extends class454 {
 			this.field10756 = arg2;
 		}
 		LocType var12 = (LocType) this.field10765.get(arg5);
-		if (Statics.field688.field11538.method18426() == 0 && var12.field7516) {
+		if (Statics.field688.textures.method18426() == 0 && var12.field7516) {
 			return;
 		}
 		int var13;
@@ -621,12 +621,12 @@ public class ClientMapLoader extends class454 {
 		if (var12.method9480()) {
 			class975.method9739(arg2, arg3, arg4, arg6, var12, null, null);
 		}
-		boolean var24 = arg8 == -1 && (!var12.method9504() || var12.field7479 && Statics.field688.field11514.method18665() == 0) && var12.field7505 == null && !var12.field7520 && !var12.field7524;
+		boolean var24 = arg8 == -1 && (!var12.method9504() || var12.field7479 && Statics.field688.unknown.method18665() == 0) && var12.field7505 == null && !var12.field7520 && !var12.field7524;
 		if (field10755 && (Statics.method8381(arg7) && var12.field7474 != 1 || !(!class601.method615(arg7) || var12.field7474 != 0))) {
 			return;
 		}
 		if (class601.field7566.field7562 == arg7) {
-			if (Statics.field688.field11526.method18489() != 0 || var12.field7470 != 0 || var12.field7467 == 1 || var12.field7502) {
+			if (Statics.field688.groundDecoration.method18489() != 0 || var12.field7470 != 0 || var12.field7467 == 1 || var12.field7502) {
 				GroundDecorLayerEntity var26;
 				if (var24) {
 					StaticGroundDecorEntity var25 = new StaticGroundDecorEntity(this.field4577, arg0, this.field10765, var12, arg2, arg1, var21, var20, var22, this.field4549, arg6, var23, arg10);

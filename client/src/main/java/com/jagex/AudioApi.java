@@ -735,10 +735,10 @@ public class AudioApi {
 		int var10 = arg0.field1788 == null ? 255 : arg0.field1788[arg1];
 		if (var7 != 0) {
 			if (Statics.field4490 == arg2) {
-				if (Statics.field688.field11563.method18763() == 0) {
+				if (Statics.field688.themeMusicVolume.method18763() == 0) {
 					return;
 				}
-			} else if (Statics.field688.field11511.method18763() == 0) {
+			} else if (Statics.field688.themeMusicVolume1.method18763() == 0) {
 				return;
 			}
 			if (arg0.field1783 != -1) {

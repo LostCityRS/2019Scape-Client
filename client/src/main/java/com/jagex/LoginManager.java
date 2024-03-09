@@ -434,7 +434,7 @@ public class LoginManager {
 					var10.p1(client.getWindowMode());
 					var10.p2(Statics.field6586);
 					var10.p2(Statics.field6600);
-					var10.p1(Statics.field688.field11516.method18639());
+					var10.p1(Statics.field688.unknown2.method18639());
 					GameShell.method4286(var10);
 					var10.pjstr(client.field10990);
 					var10.p4(client.field10772);
@@ -496,7 +496,7 @@ public class LoginManager {
 					var10.p1(client.getWindowMode());
 					var10.p2(Statics.field6586);
 					var10.p2(Statics.field6600);
-					var10.p1(Statics.field688.field11516.method18639());
+					var10.p1(Statics.field688.unknown2.method18639());
 					GameShell.method4286(var10);
 					var10.pjstr(client.field10990);
 					Packet var22 = Statics.field688.method18156();
@@ -1176,7 +1176,7 @@ public class LoginManager {
 		client.field10902 = true;
 		LocType.field7501 = NPCType.field2694 = ObjType.field8650 = new short[256];
 		Statics.field4868 = LocalisedText.field9079.method15021(Statics.field1680);
-		Statics.field688.method18157(Statics.field688.field11534, Statics.field688.field11533.method18496());
+		Statics.field688.method18157(Statics.field688.removeRoofs2, Statics.field688.removeRoofs.method18496());
 		client.field10842 = 0;
 		MiniMenu.method5175();
 		Statics.field594 = null;

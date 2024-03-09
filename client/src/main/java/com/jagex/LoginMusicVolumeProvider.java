@@ -15,6 +15,6 @@ public class LoginMusicVolumeProvider implements class368 {
 
 	@ObfuscatedName("fp.e(I)F")
 	public float method3084() {
-		return (float) Statics.field688.field11567.method18763() / 255.0F;
+		return (float) Statics.field688.themeMusicVolume4.method18763() / 255.0F;
 	}
 }
