@@ -2384,12 +2384,12 @@ public class Statics {
 						var1 = Integer.parseInt(field2615[var0].substring(6));
 					} catch (Exception var14) {
 					}
-					DeveloperConsole.method4285("Pausing for " + var1 + " seconds...");
+					DeveloperConsole.addline("Pausing for " + var1 + " seconds...");
 					DeveloperConsole.field772 = var0 + 1;
 					field765 = MonotonicTime.method3655() + (long) (var1 * 1000);
 					return;
 				}
-				DeveloperConsole.field766 = field2615[var0];
+				DeveloperConsole.currententry = field2615[var0];
 				DeveloperConsole.method14718(false);
 			}
 			DeveloperConsole.field772 = -1;
@@ -2438,30 +2438,30 @@ public class Statics {
 					} catch (Exception var15) {
 					}
 				}
-			} else if (var5 == 85 && DeveloperConsole.field769 > 0) {
-				DeveloperConsole.field766 = DeveloperConsole.field766.substring(0, DeveloperConsole.field769 - 1) + DeveloperConsole.field766.substring(DeveloperConsole.field769);
-				DeveloperConsole.field769--;
-			} else if (var5 == 101 && DeveloperConsole.field769 < DeveloperConsole.field766.length()) {
-				DeveloperConsole.field766 = DeveloperConsole.field766.substring(0, DeveloperConsole.field769) + DeveloperConsole.field766.substring(DeveloperConsole.field769 + 1);
-			} else if (var5 == 96 && DeveloperConsole.field769 > 0) {
-				DeveloperConsole.field769--;
-			} else if (var5 == 97 && DeveloperConsole.field769 < DeveloperConsole.field766.length()) {
-				DeveloperConsole.field769++;
+			} else if (var5 == 85 && DeveloperConsole.commandcharpointer > 0) {
+				DeveloperConsole.currententry = DeveloperConsole.currententry.substring(0, DeveloperConsole.commandcharpointer - 1) + DeveloperConsole.currententry.substring(DeveloperConsole.commandcharpointer);
+				DeveloperConsole.commandcharpointer--;
+			} else if (var5 == 101 && DeveloperConsole.commandcharpointer < DeveloperConsole.currententry.length()) {
+				DeveloperConsole.currententry = DeveloperConsole.currententry.substring(0, DeveloperConsole.commandcharpointer) + DeveloperConsole.currententry.substring(DeveloperConsole.commandcharpointer + 1);
+			} else if (var5 == 96 && DeveloperConsole.commandcharpointer > 0) {
+				DeveloperConsole.commandcharpointer--;
+			} else if (var5 == 97 && DeveloperConsole.commandcharpointer < DeveloperConsole.currententry.length()) {
+				DeveloperConsole.commandcharpointer++;
 			} else if (var5 == 102) {
-				DeveloperConsole.field769 = 0;
+				DeveloperConsole.commandcharpointer = 0;
 			} else if (var5 == 103) {
-				DeveloperConsole.field769 = DeveloperConsole.field766.length();
-			} else if (var5 == 104 && DeveloperConsole.field767 < field4845.length) {
-				DeveloperConsole.field767++;
+				DeveloperConsole.commandcharpointer = DeveloperConsole.currententry.length();
+			} else if (var5 == 104 && DeveloperConsole.commandpointer < field4845.length) {
+				DeveloperConsole.commandpointer++;
 				DeveloperConsole.method3085();
-				DeveloperConsole.field769 = DeveloperConsole.field766.length();
-			} else if (var5 == 105 && DeveloperConsole.field767 > 0) {
-				DeveloperConsole.field767--;
+				DeveloperConsole.commandcharpointer = DeveloperConsole.currententry.length();
+			} else if (var5 == 105 && DeveloperConsole.commandpointer > 0) {
+				DeveloperConsole.commandpointer--;
 				DeveloperConsole.method3085();
-				DeveloperConsole.field769 = DeveloperConsole.field766.length();
+				DeveloperConsole.commandcharpointer = DeveloperConsole.currententry.length();
 			} else if (class695.method2883(var6) || "\\/.:, _-+[]~@".indexOf(var6) != -1) {
-				DeveloperConsole.field766 = DeveloperConsole.field766.substring(0, DeveloperConsole.field769) + client.field11067[var3].method9131() + DeveloperConsole.field766.substring(DeveloperConsole.field769);
-				DeveloperConsole.field769++;
+				DeveloperConsole.currententry = DeveloperConsole.currententry.substring(0, DeveloperConsole.commandcharpointer) + client.field11067[var3].method9131() + DeveloperConsole.currententry.substring(DeveloperConsole.commandcharpointer);
+				DeveloperConsole.commandcharpointer++;
 			}
 		}
 		client.field10819 = 0;
@@ -2942,7 +2942,7 @@ public class Statics {
 			return;
 		}
 		if (arg0.field2180 == null) {
-			MiniMenu.method3042(LocalisedText.field8963.method15021(field1680), "", -1, 30, arg0.field2334, 0L, arg0.field2183, arg0.field2158, true, false, (long) (arg0.field2183 << 32 | arg0.field2158), false);
+			MiniMenu.method3042(LocalisedText.CONTINUE.method15021(field1680), "", -1, 30, arg0.field2334, 0L, arg0.field2183, arg0.field2158, true, false, (long) (arg0.field2183 << 32 | arg0.field2158), false);
 		} else {
 			MiniMenu.method3042(arg0.field2180, "", -1, 30, arg0.field2334, 0L, arg0.field2183, arg0.field2158, true, false, (long) (arg0.field2183 << 32 | arg0.field2158), false);
 		}
@@ -4700,7 +4700,7 @@ public class Statics {
 			return;
 		}
 		if (client.field11084 >= var2) {
-			ChatHistory.method1006(4, client.field11006 ? LocalisedText.field8950.method15021(field1680) : LocalisedText.field9113.method15021(field1680));
+			ChatHistory.method1006(4, client.field11006 ? LocalisedText.IGNORELISTFULL_MEMBERS.method15021(field1680) : LocalisedText.IGNORELISTFULL.method15021(field1680));
 			return;
 		}
 		String var3 = class795.method15191(arg0, field10782);
@@ -4711,13 +4711,13 @@ public class Statics {
 			class27 var5 = client.field11086[var4];
 			String var6 = class795.method15191(var5.field598, field10782);
 			if (var6 != null && var6.equals(var3)) {
-				ChatHistory.method1006(4, arg0 + LocalisedText.field9096.method15021(field1680));
+				ChatHistory.method1006(4, arg0 + LocalisedText.IGNORELISTDUPE.method15021(field1680));
 				return;
 			}
 			if (var5.field596 != null) {
 				String var7 = class795.method15191(var5.field596, field10782);
 				if (var7 != null && var7.equals(var3)) {
-					ChatHistory.method1006(4, arg0 + LocalisedText.field9096.method15021(field1680));
+					ChatHistory.method1006(4, arg0 + LocalisedText.IGNORELISTDUPE.method15021(field1680));
 					return;
 				}
 			}
@@ -4726,19 +4726,19 @@ public class Statics {
 			Friend var9 = client.field11065[var8];
 			String var10 = class795.method15191(var9.field606, field10782);
 			if (var10 != null && var10.equals(var3)) {
-				ChatHistory.method1006(4, LocalisedText.field8952.method15021(field1680) + arg0 + LocalisedText.field8985.method15021(field1680));
+				ChatHistory.method1006(4, LocalisedText.REMOVEFRIEND1.method15021(field1680) + arg0 + LocalisedText.REMOVEFRIEND2.method15021(field1680));
 				return;
 			}
 			if (var9.field607 != null) {
 				String var11 = class795.method15191(var9.field607, field10782);
 				if (var11 != null && var11.equals(var3)) {
-					ChatHistory.method1006(4, LocalisedText.field8952.method15021(field1680) + arg0 + LocalisedText.field8985.method15021(field1680));
+					ChatHistory.method1006(4, LocalisedText.REMOVEFRIEND1.method15021(field1680) + arg0 + LocalisedText.REMOVEFRIEND2.method15021(field1680));
 					return;
 				}
 			}
 		}
 		if (class795.method15191(field4490.field12062, field10782).equals(var3)) {
-			ChatHistory.method1006(4, LocalisedText.field9098.method15021(field1680));
+			ChatHistory.method1006(4, LocalisedText.IGNORECANTADDSELF.method15021(field1680));
 			return;
 		}
 		ServerConnection var12 = client.method640();

@@ -345,7 +345,7 @@ public class class1004 extends WorldMap {
 			arg0.method2354(arg1, arg2, arg3, arg4, -16777216, 0);
 			arg0.method2179(var6 - 152, var7, 304, 34, client.field10825[client.field10773].getRGB(), 0);
 			arg0.method2354(var6 - 150, var7 + 2, field11651 * 3, 30, client.field10824[client.field10773].getRGB(), 0);
-			Statics.field10355.method2683(LocalisedText.field9077.method15021(Statics.field1680), var6, var5 + var7, client.field10826[client.field10773].getRGB(), -1);
+			Statics.field10355.method2683(LocalisedText.LOADINGDOTDOTDOT.method15021(Statics.field1680), var6, var5 + var7, client.field10826[client.field10773].getRGB(), -1);
 			return;
 		}
 		int var8 = Statics.field11443 - (int) ((float) arg3 / Statics.field6803);

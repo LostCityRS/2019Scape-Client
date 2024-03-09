@@ -255,7 +255,7 @@ public class TwitchHardwarePlatform {
 		if (arg1 != 0) {
 			var8 = arg1 * var8 / 100;
 		}
-		DeveloperConsole.method4285("Stream - Input: " + Statics.canvasWid + "x" + Statics.canvasHei + " (" + var9 + "kbps)" + " => " + "Output: " + var6 + "x" + var7 + " [" + (arg0 == 0 ? "auto" : arg0 + "%") + "] (" + var8 + "kbps [" + (arg1 == 0 ? "auto" : arg1 + "%") + "])");
+		DeveloperConsole.addline("Stream - Input: " + Statics.canvasWid + "x" + Statics.canvasHei + " (" + var9 + "kbps)" + " => " + "Output: " + var6 + "x" + var7 + " [" + (arg0 == 0 ? "auto" : arg0 + "%") + "] (" + var8 + "kbps [" + (arg1 == 0 ? "auto" : arg1 + "%") + "])");
 		return Statics.field11755.StartStreaming(var6, var7, arg2, var8, arg1 != 0, field7375, field7398, arg3);
 	}
 

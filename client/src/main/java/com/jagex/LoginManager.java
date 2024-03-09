@@ -1175,7 +1175,7 @@ public class LoginManager {
 		client.world.method7816().method10019();
 		client.field10902 = true;
 		LocType.field7501 = NPCType.field2694 = ObjType.field8650 = new short[256];
-		Statics.field4868 = LocalisedText.field9079.method15021(Statics.field1680);
+		Statics.field4868 = LocalisedText.WALKHERE.method15021(Statics.field1680);
 		Statics.field688.method18157(Statics.field688.removeRoofs2, Statics.field688.removeRoofs.method18496());
 		client.field10842 = 0;
 		MiniMenu.method5175();

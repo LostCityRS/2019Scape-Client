@@ -6,58 +6,58 @@ import deob.ObfuscatedName;
 public class LoadingStage {
 
 	@ObfuscatedName("jw.e")
-	public static final LoadingStage field2913 = new LoadingStage(0, LocalisedText.field9030, 2);
+	public static final LoadingStage field2913 = new LoadingStage(0, LocalisedText.CHECKING_FOR_UPDATES, 2);
 
 	@ObfuscatedName("jw.n")
-	public static final LoadingStage field2911 = new LoadingStage(1, LocalisedText.field9030, LocalisedText.field9030, 2, 3);
+	public static final LoadingStage field2911 = new LoadingStage(1, LocalisedText.CHECKING_FOR_UPDATES, LocalisedText.CHECKING_FOR_UPDATES, 2, 3);
 
 	@ObfuscatedName("jw.m")
-	public static final LoadingStage field2904 = new LoadingStage(2, LocalisedText.field9030, 3);
+	public static final LoadingStage field2904 = new LoadingStage(2, LocalisedText.CHECKING_FOR_UPDATES, 3);
 
 	@ObfuscatedName("jw.k")
-	public static final LoadingStage field2905 = new LoadingStage(3, LocalisedText.field9030, LocalisedText.field9030, 3, 4);
+	public static final LoadingStage field2905 = new LoadingStage(3, LocalisedText.CHECKING_FOR_UPDATES, LocalisedText.CHECKING_FOR_UPDATES, 3, 4);
 
 	@ObfuscatedName("jw.f")
-	public static final LoadingStage field2906 = new LoadingStage(4, LocalisedText.field9030, 4);
+	public static final LoadingStage field2906 = new LoadingStage(4, LocalisedText.CHECKING_FOR_UPDATES, 4);
 
 	@ObfuscatedName("jw.w")
-	public static final LoadingStage field2907 = new LoadingStage(5, LocalisedText.field9030, LocalisedText.field9030, 4, 5);
+	public static final LoadingStage field2907 = new LoadingStage(5, LocalisedText.CHECKING_FOR_UPDATES, LocalisedText.CHECKING_FOR_UPDATES, 4, 5);
 
 	@ObfuscatedName("jw.l")
-	public static final LoadingStage field2921 = new LoadingStage(6, LocalisedText.field9030, LocalisedText.field9030, 5, 98, true, true);
+	public static final LoadingStage field2921 = new LoadingStage(6, LocalisedText.CHECKING_FOR_UPDATES, LocalisedText.CHECKING_FOR_UPDATES, 5, 98, true, true);
 
 	@ObfuscatedName("jw.u")
-	public static final LoadingStage field2909 = new LoadingStage(7, LocalisedText.field9030, 99);
+	public static final LoadingStage field2909 = new LoadingStage(7, LocalisedText.CHECKING_FOR_UPDATES, 99);
 
 	@ObfuscatedName("jw.z")
-	public static final LoadingStage field2910 = new LoadingStage(8, LocalisedText.field9030, 100);
+	public static final LoadingStage field2910 = new LoadingStage(8, LocalisedText.CHECKING_FOR_UPDATES, 100);
 
 	@ObfuscatedName("jw.p")
-	public static final LoadingStage field2902 = new LoadingStage(9, LocalisedText.field9049, LocalisedText.field9049, 0, 92, true, true);
+	public static final LoadingStage field2902 = new LoadingStage(9, LocalisedText.DOWNLOADING_UPDATES, LocalisedText.DOWNLOADING_UPDATES, 0, 92, true, true);
 
 	@ObfuscatedName("jw.d")
-	public static final LoadingStage field2912 = new LoadingStage(10, LocalisedText.field9049, LocalisedText.field9049, 92, 93);
+	public static final LoadingStage field2912 = new LoadingStage(10, LocalisedText.DOWNLOADING_UPDATES, LocalisedText.DOWNLOADING_UPDATES, 92, 93);
 
 	@ObfuscatedName("jw.c")
-	public static final LoadingStage field2918 = new LoadingStage(11, LocalisedText.field9049, LocalisedText.field9049, 94, 95);
+	public static final LoadingStage field2918 = new LoadingStage(11, LocalisedText.DOWNLOADING_UPDATES, LocalisedText.DOWNLOADING_UPDATES, 94, 95);
 
 	@ObfuscatedName("jw.r")
-	public static final LoadingStage field2914 = new LoadingStage(12, LocalisedText.field9049, LocalisedText.field9049, 96, 97);
+	public static final LoadingStage field2914 = new LoadingStage(12, LocalisedText.DOWNLOADING_UPDATES, LocalisedText.DOWNLOADING_UPDATES, 96, 97);
 
 	@ObfuscatedName("jw.v")
-	public static final LoadingStage field2915 = new LoadingStage(13, LocalisedText.field9049, 97);
+	public static final LoadingStage field2915 = new LoadingStage(13, LocalisedText.DOWNLOADING_UPDATES, 97);
 
 	@ObfuscatedName("jw.o")
-	public static final LoadingStage field2916 = new LoadingStage(14, LocalisedText.field9049, 97);
+	public static final LoadingStage field2916 = new LoadingStage(14, LocalisedText.DOWNLOADING_UPDATES, 97);
 
 	@ObfuscatedName("jw.s")
-	public static final LoadingStage field2917 = new LoadingStage(15, LocalisedText.field9049, 100);
+	public static final LoadingStage field2917 = new LoadingStage(15, LocalisedText.DOWNLOADING_UPDATES, 100);
 
 	@ObfuscatedName("jw.y")
-	public static final LoadingStage field2903 = new LoadingStage(16, LocalisedText.field9049, 100);
+	public static final LoadingStage field2903 = new LoadingStage(16, LocalisedText.DOWNLOADING_UPDATES, 100);
 
 	@ObfuscatedName("jw.q")
-	public static final LoadingStage field2919 = new LoadingStage(17, LocalisedText.field9049, 100);
+	public static final LoadingStage field2919 = new LoadingStage(17, LocalisedText.DOWNLOADING_UPDATES, 100);
 
 	@ObfuscatedName("jw.x")
 	public final int field2920;

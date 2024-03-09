@@ -601,17 +601,17 @@ public class ObjType implements ConfigType {
 
 	@ObfuscatedName("abv.d(Labv;Labv;Lzt;I)V")
 	public void method14641(ObjType arg0, ObjType arg1, Language arg2) {
-		this.method14664(class739.field8703, arg0, arg1, LocalisedText.field8954, arg2);
+		this.method14664(class739.field8703, arg0, arg1, LocalisedText.LENT_ITEM_RETURN, arg2);
 	}
 
 	@ObfuscatedName("abv.c(Labv;Labv;Lzt;I)V")
 	public void method14653(ObjType arg0, ObjType arg1, Language arg2) {
-		this.method14664(class739.field8704, arg0, arg1, LocalisedText.field9000, arg2);
+		this.method14664(class739.field8704, arg0, arg1, LocalisedText.BOUGHT_ITEM_DISCARD, arg2);
 	}
 
 	@ObfuscatedName("abv.r(Labv;Labv;Lzt;I)V")
 	public void method14643(ObjType arg0, ObjType arg1, Language arg2) {
-		this.method14664(class739.field8701, arg0, arg1, LocalisedText.field8960, arg2);
+		this.method14664(class739.field8701, arg0, arg1, LocalisedText.DROP, arg2);
 	}
 
 	@ObfuscatedName("abv.v(Ldh;IILxg;Laaq;IIIII)Ldo;")
@@ -920,9 +920,9 @@ public class ObjType implements ConfigType {
 		if (arg0 < 100000) {
 			return Statics.method5153(arg2.field7742) + arg0 + field8699;
 		} else if (arg0 < 10000000) {
-			return Statics.method5153(arg2.field7743) + arg0 / 1000 + LocalisedText.field9020.method15021(arg1) + field8699;
+			return Statics.method5153(arg2.field7743) + arg0 / 1000 + LocalisedText.THOUSAND_SHORT.method15021(arg1) + field8699;
 		} else {
-			return Statics.method5153(arg2.field7744) + arg0 / 1000000 + LocalisedText.field9013.method15021(arg1) + field8699;
+			return Statics.method5153(arg2.field7744) + arg0 / 1000000 + LocalisedText.MILLION_SHORT.method15021(arg1) + field8699;
 		}
 	}
 

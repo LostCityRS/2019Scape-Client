@@ -9212,7 +9212,7 @@ public final class ScriptRunner {
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		String var3 = (String) arg0.field8218[--arg0.field8211];
 		if (var1 == 99) {
-			DeveloperConsole.method4285(var3);
+			DeveloperConsole.addline(var3);
 		} else if (var1 == 98) {
 			DeveloperConsole.method722(var3);
 		} else {
@@ -11476,114 +11476,114 @@ public final class ScriptRunner {
 		}
 		String var2 = var1.toLowerCase();
 		byte var3 = 0;
-		if (var2.startsWith(LocalisedText.field9104.method15021(Language.EN))) {
+		if (var2.startsWith(LocalisedText.CHATCOL0.method15021(Language.EN))) {
 			var3 = 0;
-			var1 = var1.substring(LocalisedText.field9104.method15021(Language.EN).length());
-		} else if (var2.startsWith(LocalisedText.field9088.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATCOL0.method15021(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.CHATCOL1.method15021(Language.EN))) {
 			var3 = 1;
-			var1 = var1.substring(LocalisedText.field9088.method15021(Language.EN).length());
-		} else if (var2.startsWith(LocalisedText.field8994.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATCOL1.method15021(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.CHATCOL2.method15021(Language.EN))) {
 			var3 = 2;
-			var1 = var1.substring(LocalisedText.field8994.method15021(Language.EN).length());
-		} else if (var2.startsWith(LocalisedText.field9107.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATCOL2.method15021(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.CHATCOL3.method15021(Language.EN))) {
 			var3 = 3;
-			var1 = var1.substring(LocalisedText.field9107.method15021(Language.EN).length());
-		} else if (var2.startsWith(LocalisedText.field9108.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATCOL3.method15021(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.CHATCOL4.method15021(Language.EN))) {
 			var3 = 4;
-			var1 = var1.substring(LocalisedText.field9108.method15021(Language.EN).length());
-		} else if (var2.startsWith(LocalisedText.field9109.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATCOL4.method15021(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.CHATCOL5.method15021(Language.EN))) {
 			var3 = 5;
-			var1 = var1.substring(LocalisedText.field9109.method15021(Language.EN).length());
-		} else if (var2.startsWith(LocalisedText.field9110.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATCOL5.method15021(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.CHATCOL6.method15021(Language.EN))) {
 			var3 = 6;
-			var1 = var1.substring(LocalisedText.field9110.method15021(Language.EN).length());
-		} else if (var2.startsWith(LocalisedText.field9111.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATCOL6.method15021(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.CHATCOL7.method15021(Language.EN))) {
 			var3 = 7;
-			var1 = var1.substring(LocalisedText.field9111.method15021(Language.EN).length());
-		} else if (var2.startsWith(LocalisedText.field8992.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATCOL7.method15021(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.CHATCOL8.method15021(Language.EN))) {
 			var3 = 8;
-			var1 = var1.substring(LocalisedText.field8992.method15021(Language.EN).length());
-		} else if (var2.startsWith(LocalisedText.field9031.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATCOL8.method15021(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.CHATCOL9.method15021(Language.EN))) {
 			var3 = 9;
-			var1 = var1.substring(LocalisedText.field9031.method15021(Language.EN).length());
-		} else if (var2.startsWith(LocalisedText.field9114.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATCOL9.method15021(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.CHATCOL10.method15021(Language.EN))) {
 			var3 = 10;
-			var1 = var1.substring(LocalisedText.field9114.method15021(Language.EN).length());
-		} else if (var2.startsWith(LocalisedText.field8965.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATCOL10.method15021(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.CHATCOL11.method15021(Language.EN))) {
 			var3 = 11;
-			var1 = var1.substring(LocalisedText.field8965.method15021(Language.EN).length());
+			var1 = var1.substring(LocalisedText.CHATCOL11.method15021(Language.EN).length());
 		} else if (Statics.field1680 != Language.EN) {
-			if (var2.startsWith(LocalisedText.field9104.method15021(Statics.field1680))) {
+			if (var2.startsWith(LocalisedText.CHATCOL0.method15021(Statics.field1680))) {
 				var3 = 0;
-				var1 = var1.substring(LocalisedText.field9104.method15021(Statics.field1680).length());
-			} else if (var2.startsWith(LocalisedText.field9088.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.CHATCOL0.method15021(Statics.field1680).length());
+			} else if (var2.startsWith(LocalisedText.CHATCOL1.method15021(Statics.field1680))) {
 				var3 = 1;
-				var1 = var1.substring(LocalisedText.field9088.method15021(Statics.field1680).length());
-			} else if (var2.startsWith(LocalisedText.field8994.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.CHATCOL1.method15021(Statics.field1680).length());
+			} else if (var2.startsWith(LocalisedText.CHATCOL2.method15021(Statics.field1680))) {
 				var3 = 2;
-				var1 = var1.substring(LocalisedText.field8994.method15021(Statics.field1680).length());
-			} else if (var2.startsWith(LocalisedText.field9107.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.CHATCOL2.method15021(Statics.field1680).length());
+			} else if (var2.startsWith(LocalisedText.CHATCOL3.method15021(Statics.field1680))) {
 				var3 = 3;
-				var1 = var1.substring(LocalisedText.field9107.method15021(Statics.field1680).length());
-			} else if (var2.startsWith(LocalisedText.field9108.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.CHATCOL3.method15021(Statics.field1680).length());
+			} else if (var2.startsWith(LocalisedText.CHATCOL4.method15021(Statics.field1680))) {
 				var3 = 4;
-				var1 = var1.substring(LocalisedText.field9108.method15021(Statics.field1680).length());
-			} else if (var2.startsWith(LocalisedText.field9109.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.CHATCOL4.method15021(Statics.field1680).length());
+			} else if (var2.startsWith(LocalisedText.CHATCOL5.method15021(Statics.field1680))) {
 				var3 = 5;
-				var1 = var1.substring(LocalisedText.field9109.method15021(Statics.field1680).length());
-			} else if (var2.startsWith(LocalisedText.field9110.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.CHATCOL5.method15021(Statics.field1680).length());
+			} else if (var2.startsWith(LocalisedText.CHATCOL6.method15021(Statics.field1680))) {
 				var3 = 6;
-				var1 = var1.substring(LocalisedText.field9110.method15021(Statics.field1680).length());
-			} else if (var2.startsWith(LocalisedText.field9111.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.CHATCOL6.method15021(Statics.field1680).length());
+			} else if (var2.startsWith(LocalisedText.CHATCOL7.method15021(Statics.field1680))) {
 				var3 = 7;
-				var1 = var1.substring(LocalisedText.field9111.method15021(Statics.field1680).length());
-			} else if (var2.startsWith(LocalisedText.field8992.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.CHATCOL7.method15021(Statics.field1680).length());
+			} else if (var2.startsWith(LocalisedText.CHATCOL8.method15021(Statics.field1680))) {
 				var3 = 8;
-				var1 = var1.substring(LocalisedText.field8992.method15021(Statics.field1680).length());
-			} else if (var2.startsWith(LocalisedText.field9031.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.CHATCOL8.method15021(Statics.field1680).length());
+			} else if (var2.startsWith(LocalisedText.CHATCOL9.method15021(Statics.field1680))) {
 				var3 = 9;
-				var1 = var1.substring(LocalisedText.field9031.method15021(Statics.field1680).length());
-			} else if (var2.startsWith(LocalisedText.field9114.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.CHATCOL9.method15021(Statics.field1680).length());
+			} else if (var2.startsWith(LocalisedText.CHATCOL10.method15021(Statics.field1680))) {
 				var3 = 10;
-				var1 = var1.substring(LocalisedText.field9114.method15021(Statics.field1680).length());
-			} else if (var2.startsWith(LocalisedText.field8965.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.CHATCOL10.method15021(Statics.field1680).length());
+			} else if (var2.startsWith(LocalisedText.CHATCOL11.method15021(Statics.field1680))) {
 				var3 = 11;
-				var1 = var1.substring(LocalisedText.field8965.method15021(Statics.field1680).length());
+				var1 = var1.substring(LocalisedText.CHATCOL11.method15021(Statics.field1680).length());
 			}
 		}
 		String var4 = var1.toLowerCase();
 		byte var5 = 0;
-		if (var4.startsWith(LocalisedText.field9116.method15021(Language.EN))) {
+		if (var4.startsWith(LocalisedText.CHATEFFECT1.method15021(Language.EN))) {
 			var5 = 1;
-			var1 = var1.substring(LocalisedText.field9116.method15021(Language.EN).length());
-		} else if (var4.startsWith(LocalisedText.field9117.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATEFFECT1.method15021(Language.EN).length());
+		} else if (var4.startsWith(LocalisedText.CHATEFFECT2.method15021(Language.EN))) {
 			var5 = 2;
-			var1 = var1.substring(LocalisedText.field9117.method15021(Language.EN).length());
-		} else if (var4.startsWith(LocalisedText.field9118.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATEFFECT2.method15021(Language.EN).length());
+		} else if (var4.startsWith(LocalisedText.CHATEFFECT3.method15021(Language.EN))) {
 			var5 = 3;
-			var1 = var1.substring(LocalisedText.field9118.method15021(Language.EN).length());
-		} else if (var4.startsWith(LocalisedText.field9015.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATEFFECT3.method15021(Language.EN).length());
+		} else if (var4.startsWith(LocalisedText.CHATEFFECT4.method15021(Language.EN))) {
 			var5 = 4;
-			var1 = var1.substring(LocalisedText.field9015.method15021(Language.EN).length());
-		} else if (var4.startsWith(LocalisedText.field9120.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATEFFECT4.method15021(Language.EN).length());
+		} else if (var4.startsWith(LocalisedText.CHATEFFECT5.method15021(Language.EN))) {
 			var5 = 5;
-			var1 = var1.substring(LocalisedText.field9120.method15021(Language.EN).length());
+			var1 = var1.substring(LocalisedText.CHATEFFECT5.method15021(Language.EN).length());
 		} else if (Statics.field1680 != Language.EN) {
-			if (var4.startsWith(LocalisedText.field9116.method15021(Statics.field1680))) {
+			if (var4.startsWith(LocalisedText.CHATEFFECT1.method15021(Statics.field1680))) {
 				var5 = 1;
-				var1 = var1.substring(LocalisedText.field9116.method15021(Statics.field1680).length());
-			} else if (var4.startsWith(LocalisedText.field9117.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.CHATEFFECT1.method15021(Statics.field1680).length());
+			} else if (var4.startsWith(LocalisedText.CHATEFFECT2.method15021(Statics.field1680))) {
 				var5 = 2;
-				var1 = var1.substring(LocalisedText.field9117.method15021(Statics.field1680).length());
-			} else if (var4.startsWith(LocalisedText.field9118.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.CHATEFFECT2.method15021(Statics.field1680).length());
+			} else if (var4.startsWith(LocalisedText.CHATEFFECT3.method15021(Statics.field1680))) {
 				var5 = 3;
-				var1 = var1.substring(LocalisedText.field9118.method15021(Statics.field1680).length());
-			} else if (var4.startsWith(LocalisedText.field9015.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.CHATEFFECT3.method15021(Statics.field1680).length());
+			} else if (var4.startsWith(LocalisedText.CHATEFFECT4.method15021(Statics.field1680))) {
 				var5 = 4;
-				var1 = var1.substring(LocalisedText.field9015.method15021(Statics.field1680).length());
-			} else if (var4.startsWith(LocalisedText.field9120.method15021(Statics.field1680))) {
+				var1 = var1.substring(LocalisedText.CHATEFFECT4.method15021(Statics.field1680).length());
+			} else if (var4.startsWith(LocalisedText.CHATEFFECT5.method15021(Statics.field1680))) {
 				var5 = 5;
-				var1 = var1.substring(LocalisedText.field9120.method15021(Statics.field1680).length());
+				var1 = var1.substring(LocalisedText.CHATEFFECT5.method15021(Statics.field1680).length());
 			}
 		}
 		ServerConnection var6 = client.method640();

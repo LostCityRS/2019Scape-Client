@@ -41,11 +41,11 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 		this.field8614 = arg3;
 		this.paramTL = arg4;
 		if (ModeGame.RUNESCAPE == arg0) {
-			this.field8617 = new String[] { null, null, LocalisedText.field8959.method15021(this.languageId), null, null, LocalisedText.field9075.method15021(this.languageId) };
+			this.field8617 = new String[] { null, null, LocalisedText.TAKE.method15021(this.languageId), null, null, LocalisedText.EXAMINE.method15021(this.languageId) };
 		} else {
-			this.field8617 = new String[] { null, null, LocalisedText.field8959.method15021(this.languageId), null, null, null };
+			this.field8617 = new String[] { null, null, LocalisedText.TAKE.method15021(this.languageId), null, null, null };
 		}
-		this.field8616 = new String[] { null, null, null, null, LocalisedText.field8960.method15021(this.languageId) };
+		this.field8616 = new String[] { null, null, null, null, LocalisedText.DROP.method15021(this.languageId) };
 	}
 
 	@ObfuscatedName("abr.e(Ldh;IIIIILxg;I)Lcm;")
