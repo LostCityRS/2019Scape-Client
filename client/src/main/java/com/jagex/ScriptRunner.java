@@ -14436,7 +14436,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("f.awx(Lyf;I)V")
 	public static final void method220(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		class1015 var2 = class619.method4944(var1);
+		class1015 var2 = WorldList.method4944(var1);
 		if (var2 != null) {
 			arg0.field8216[++arg0.field8226 - 1] = var2.field7639;
 			arg0.field8218[++arg0.field8211 - 1] = var2.field11704;

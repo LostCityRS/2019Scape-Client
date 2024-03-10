@@ -4,12 +4,12 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("wb")
-public class class619 {
+public class WorldList {
 
 	@ObfuscatedName("wb.k")
 	public static boolean field7645 = false;
 
-	public class619() throws Throwable {
+	public WorldList() throws Throwable {
 		throw new Error();
 	}
 

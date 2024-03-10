@@ -38,7 +38,7 @@ public class class750 {
 		}
 		while (true) {
 			while (field8757 < Statics.field3011) {
-				class1015 var0 = class619.method4944(field8757);
+				class1015 var0 = WorldList.method4944(field8757);
 				if (var0 != null && var0.field11707 == -1) {
 					if (field8750 == null) {
 						field8750 = client.field10994.method10589(var0.field11703);
@@ -99,7 +99,7 @@ public class class750 {
 
 	@ObfuscatedName("o.u(I)Lalc;")
 	public static class1015 method477() {
-		return class619.method4944(Statics.field8755.node);
+		return WorldList.method4944(Statics.field8755.node);
 	}
 
 	@ObfuscatedName("kt.z(IZIZB)V")

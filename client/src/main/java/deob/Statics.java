@@ -2269,11 +2269,11 @@ public class Statics {
 		if (!arg0) {
 			return;
 		}
-		class619.method570(field7415.data);
+		WorldList.method570(field7415.data);
 		class750.field8748 = new class1015[field533];
 		int var2 = 0;
 		for (int var3 = field7414; var3 <= field3011; var3++) {
-			class1015 var4 = class619.method4944(var3);
+			class1015 var4 = WorldList.method4944(var3);
 			if (var4 != null) {
 				class750.field8748[var2++] = var4;
 			}
