@@ -1106,7 +1106,7 @@ public class LoginManager {
 		client.field10835.method938();
 		method14959();
 		Statics.focus = true;
-		class780.method4052();
+		ClassCheck.method4052();
 		for (int var0 = 0; var0 < client.field10851.length; var0++) {
 			client.field10851[var0] = null;
 		}

@@ -2988,11 +2988,11 @@ public final class client extends GameShell {
 		if (state != 18) {
 			return;
 		}
-		while (class780.method14703()) {
+		while (ClassCheck.method14703()) {
 			ClientMessage var1 = Statics.method1604(ClientProt.REFLECTION_CHECK_REPLY, field10849.field794);
 			var1.field11432.p1(0);
 			int var2 = var1.field11432.pos;
-			class780.method4651(var1.field11432);
+			ClassCheck.method4651(var1.field11432);
 			var1.field11432.psize1(var1.field11432.pos - var2);
 			field10849.method934(var1);
 		}
@@ -9194,7 +9194,7 @@ public final class client extends GameShell {
 			arg0.field796 = null;
 			return true;
 		} else if (ServerProt.REFLECTION_CHECKER == arg0.field796) {
-			class780.method10680(var2, arg0.field797);
+			ClassCheck.method10680(var2, arg0.field797);
 			arg0.field796 = null;
 			return true;
 		} else if (ServerProt.UPDATE_FRIENDCHAT_CHANNEL_FULL == arg0.field796) {

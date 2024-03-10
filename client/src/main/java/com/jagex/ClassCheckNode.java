@@ -6,7 +6,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 @ObfuscatedName("alk")
-public class class1002 extends Node {
+public class ClassCheckNode extends Node {
 
 	@ObfuscatedName("alk.k")
 	public int field11634;
