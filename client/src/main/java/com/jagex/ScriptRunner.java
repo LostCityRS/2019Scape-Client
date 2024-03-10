@@ -11384,18 +11384,18 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		class1179 var3 = ChatHistory.method7310(var1, var2);
+		ChatLine var3 = ChatHistory.method7310(var1, var2);
 		if (var3 != null) {
-			arg0.field8216[++arg0.field8226 - 1] = var3.field12339;
-			arg0.field8218[++arg0.field8211 - 1] = class786.method16609(var3.field12336, Statics.field1680.field8298);
-			arg0.field8216[++arg0.field8226 - 1] = var3.field12332;
-			arg0.field8218[++arg0.field8211 - 1] = var3.field12330 == null ? "" : var3.field12330;
-			arg0.field8218[++arg0.field8211 - 1] = var3.field12334 == null ? "" : var3.field12334;
-			arg0.field8218[++arg0.field8211 - 1] = var3.field12335 == null ? "" : var3.field12335;
-			arg0.field8218[++arg0.field8211 - 1] = var3.field12329 == null ? "" : var3.field12329;
-			arg0.field8216[++arg0.field8226 - 1] = var3.field12337;
-			arg0.field8218[++arg0.field8211 - 1] = var3.field12338 == null ? "" : var3.field12338;
-			arg0.field8216[++arg0.field8226 - 1] = var3.field12333 == null ? -1 : var3.field12333.getId();
+			arg0.field8216[++arg0.field8226 - 1] = var3.uid;
+			arg0.field8218[++arg0.field8211 - 1] = class786.method16609(var3.time, Statics.field1680.field8298);
+			arg0.field8216[++arg0.field8226 - 1] = var3.flags;
+			arg0.field8218[++arg0.field8211 - 1] = var3.name == null ? "" : var3.name;
+			arg0.field8218[++arg0.field8211 - 1] = var3.nameUnfiltered == null ? "" : var3.nameUnfiltered;
+			arg0.field8218[++arg0.field8211 - 1] = var3.nameSimple == null ? "" : var3.nameSimple;
+			arg0.field8218[++arg0.field8211 - 1] = var3.clan == null ? "" : var3.clan;
+			arg0.field8216[++arg0.field8226 - 1] = var3.phrase;
+			arg0.field8218[++arg0.field8211 - 1] = var3.message == null ? "" : var3.message;
+			arg0.field8216[++arg0.field8226 - 1] = var3.crown == null ? -1 : var3.crown.getId();
 			return;
 		}
 		arg0.field8216[++arg0.field8226 - 1] = -1;
@@ -11414,18 +11414,18 @@ public final class ScriptRunner {
 	public static final void method5982(ClientScriptState arg0) {
 		arg0.field8226--;
 		int var1 = arg0.field8216[arg0.field8226];
-		class1179 var2 = ChatHistory.method304(var1);
+		ChatLine var2 = ChatHistory.method304(var1);
 		if (var2 != null) {
-			arg0.field8216[++arg0.field8226 - 1] = var2.field12331;
-			arg0.field8218[++arg0.field8211 - 1] = class786.method16609(var2.field12336, Statics.field1680.field8298);
-			arg0.field8216[++arg0.field8226 - 1] = var2.field12332;
-			arg0.field8218[++arg0.field8211 - 1] = var2.field12330 == null ? "" : var2.field12330;
-			arg0.field8218[++arg0.field8211 - 1] = var2.field12334 == null ? "" : var2.field12334;
-			arg0.field8218[++arg0.field8211 - 1] = var2.field12335 == null ? "" : var2.field12335;
-			arg0.field8218[++arg0.field8211 - 1] = var2.field12329 == null ? "" : var2.field12329;
-			arg0.field8216[++arg0.field8226 - 1] = var2.field12337;
-			arg0.field8218[++arg0.field8211 - 1] = var2.field12338 == null ? "" : var2.field12338;
-			arg0.field8216[++arg0.field8226 - 1] = var2.field12333 == null ? -1 : var2.field12333.getId();
+			arg0.field8216[++arg0.field8226 - 1] = var2.type;
+			arg0.field8218[++arg0.field8211 - 1] = class786.method16609(var2.time, Statics.field1680.field8298);
+			arg0.field8216[++arg0.field8226 - 1] = var2.flags;
+			arg0.field8218[++arg0.field8211 - 1] = var2.name == null ? "" : var2.name;
+			arg0.field8218[++arg0.field8211 - 1] = var2.nameUnfiltered == null ? "" : var2.nameUnfiltered;
+			arg0.field8218[++arg0.field8211 - 1] = var2.nameSimple == null ? "" : var2.nameSimple;
+			arg0.field8218[++arg0.field8211 - 1] = var2.clan == null ? "" : var2.clan;
+			arg0.field8216[++arg0.field8226 - 1] = var2.phrase;
+			arg0.field8218[++arg0.field8211 - 1] = var2.message == null ? "" : var2.message;
+			arg0.field8216[++arg0.field8226 - 1] = var2.crown == null ? -1 : var2.crown.getId();
 			return;
 		}
 		arg0.field8216[++arg0.field8226 - 1] = -1;
