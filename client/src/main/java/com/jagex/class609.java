@@ -18,7 +18,7 @@ public final class class609 implements class152 {
 	@ObfuscatedName("wu.i(ZI)I")
 	public int method9623(boolean arg0) {
 		long var2 = MonotonicTime.method3655();
-		for (class987 var4 = (class987) (arg0 ? this.field7610.method14500() : this.field7610.method14502()); var4 != null; var4 = (class987) this.field7610.method14502()) {
+		for (ClanSettingsNode var4 = (ClanSettingsNode) (arg0 ? this.field7610.method14500() : this.field7610.method14502()); var4 != null; var4 = (ClanSettingsNode) this.field7610.method14502()) {
 			if ((var4.field11441 & 0x3FFFFFFFFFFFFFFFL) < var2) {
 				if ((var4.field11441 & 0x4000000000000000L) != 0L) {
 					int var5 = (int) var4.field6760;
@@ -52,9 +52,9 @@ public final class class609 implements class152 {
 	@ObfuscatedName("wu.e(Lec;II)V")
 	public void method2798(VarType arg0, int arg1) {
 		this.field7609[arg0.id] = arg1;
-		class987 var3 = (class987) this.field7610.method14495((long) arg0.id);
+		ClanSettingsNode var3 = (ClanSettingsNode) this.field7610.method14495((long) arg0.id);
 		if (var3 == null) {
-			class987 var4 = new class987(MonotonicTime.method3655() + 500L);
+			ClanSettingsNode var4 = new ClanSettingsNode(MonotonicTime.method3655() + 500L);
 			this.field7610.method14501(var4, (long) arg0.id);
 		} else {
 			var3.field11441 = MonotonicTime.method3655() + 500L;
@@ -64,9 +64,9 @@ public final class class609 implements class152 {
 	@ObfuscatedName("wu.t(Lec;IB)V")
 	public void method9625(VarType arg0, int arg1) {
 		this.field7604[arg0.id] = arg1;
-		class987 var3 = (class987) this.field7610.method14495((long) arg0.id);
+		ClanSettingsNode var3 = (ClanSettingsNode) this.field7610.method14495((long) arg0.id);
 		if (var3 == null) {
-			class987 var4 = new class987(4611686018427387905L);
+			ClanSettingsNode var4 = new ClanSettingsNode(4611686018427387905L);
 			this.field7610.method14501(var4, (long) arg0.id);
 		} else if (var3.field11441 != 4611686018427387905L) {
 			var3.field11441 = MonotonicTime.method3655() + 500L | 0x4000000000000000L;
