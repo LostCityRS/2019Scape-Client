@@ -381,7 +381,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.l(II)V")
-	public void method2116(int arg0, int arg1) throws class1106 {
+	public void method2116(int arg0, int arg1) throws RendererException {
 		if (this.field11960) {
 			if (!this.method19019(this.field1612.method1627(), this.field1612.method1628())) {
 				return;

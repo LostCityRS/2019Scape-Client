@@ -106,7 +106,7 @@ public abstract class Renderer {
 	}
 
 	@ObfuscatedName("dh.w(I)V")
-	public final void method2115() throws class1106 {
+	public final void method2115() throws RendererException {
 		this.method2116(0, 0);
 	}
 
@@ -424,7 +424,7 @@ public abstract class Renderer {
 	public abstract int method2114();
 
 	@ObfuscatedName("dh.l(II)V")
-	public abstract void method2116(int arg0, int arg1) throws class1106;
+	public abstract void method2116(int arg0, int arg1) throws RendererException;
 
 	@ObfuscatedName("dh.u()V")
 	public abstract void method2117();

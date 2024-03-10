@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 import java.util.Iterator;
 
 @ObfuscatedName("aar")
-public class class718 implements Iterator {
+public class IterableQueueIterator implements Iterator {
 
 	@ObfuscatedName("aar.e")
 	public IterableQueue field8490;
@@ -16,7 +16,7 @@ public class class718 implements Iterator {
 	@ObfuscatedName("aar.m")
 	public Node field8488 = null;
 
-	public class718(IterableQueue arg0) {
+	public IterableQueueIterator(IterableQueue arg0) {
 		this.method14283(arg0);
 	}
 

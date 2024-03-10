@@ -54,7 +54,7 @@ public abstract class ProgramUniform extends class977 {
 	@ObfuscatedName("aql.f(I)I")
 	public int method19256() {
 		if (class236.field2441 != this.field12211) {
-			throw new class1237(this, this.field12211.toString().toLowerCase());
+			throw new OpenGLError(this, this.field12211.toString().toLowerCase());
 		}
 		return this.field12212;
 	}

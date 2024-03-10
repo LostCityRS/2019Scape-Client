@@ -359,7 +359,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.l(II)V")
-	public void method2116(int arg0, int arg1) throws class1106 {
+	public void method2116(int arg0, int arg1) throws RendererException {
 		this.field1612.method15451();
 		if (this.field1596 != null) {
 			this.field1596.method1982();

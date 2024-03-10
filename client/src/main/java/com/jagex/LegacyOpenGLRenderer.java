@@ -874,7 +874,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.l(II)V")
-	public void method2116(int arg0, int arg1) throws class1106 {
+	public void method2116(int arg0, int arg1) throws RendererException {
 		try {
 			this.field1612.method15451();
 		} catch (Exception var4) {

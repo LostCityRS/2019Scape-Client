@@ -80,7 +80,7 @@ public class class1004 extends WorldMap {
 	public static IterableMap field11668 = new IterableMap(8);
 
 	@ObfuscatedName("alj.dr")
-	public static class718 field11669 = new class718(new IterableQueue());
+	public static IterableQueueIterator field11669 = new IterableQueueIterator(new IterableQueue());
 
 	@ObfuscatedName("alj.da")
 	public static boolean field11670 = false;

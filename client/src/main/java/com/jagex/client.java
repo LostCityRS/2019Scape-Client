@@ -1628,7 +1628,7 @@ public final class client extends GameShell {
 				Statics.field8198.method2202();
 				TwitchHardwarePlatform.method593(Statics.field8198, MonotonicTime.method3655(), Statics.canvasWid, Statics.canvasHei);
 				Statics.field8198.method2115();
-			} catch (class1106 var10) {
+			} catch (RendererException var10) {
 				JagException.method9845(var10.getMessage() + " " + this.method8038(), var10);
 				switch(Statics.field688.displayMode2.method18545()) {
 					case 3:

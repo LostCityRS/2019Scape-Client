@@ -148,7 +148,7 @@ public final class class887 extends Program {
 		int var3 = ((class1220) arg0).method19676();
 		int var4 = ((class1220) arg0).method19677();
 		if (arg0.method19247() != class236.field2525 && arg0.method19247() != class236.field2509) {
-			throw new class1237(arg0, "");
+			throw new OpenGLError(arg0, "");
 		}
 		if (var3 >= 0) {
 			int var5 = var3 * 4;
@@ -167,7 +167,7 @@ public final class class887 extends Program {
 		int var4 = ((class1220) arg0).method19676();
 		int var5 = ((class1220) arg0).method19677();
 		if (arg0.method19247() != class236.field2495) {
-			throw new class1237(arg0, "");
+			throw new OpenGLError(arg0, "");
 		}
 		if (var4 >= 0) {
 			int var6 = var4 * 4;
@@ -188,7 +188,7 @@ public final class class887 extends Program {
 		int var5 = ((class1220) arg0).method19676();
 		int var6 = ((class1220) arg0).method19677();
 		if (arg0.method19247() != class236.field2540) {
-			throw new class1237(arg0, "");
+			throw new OpenGLError(arg0, "");
 		}
 		if (var5 >= 0) {
 			int var7 = var5 * 4;
@@ -212,7 +212,7 @@ public final class class887 extends Program {
 		int var6 = ((class1220) arg0).method19676();
 		int var7 = ((class1220) arg0).method19677();
 		if (arg0.method19247() != class236.field2466) {
-			throw new class1237(arg0, "");
+			throw new OpenGLError(arg0, "");
 		}
 		if (var6 >= 0) {
 			int var8 = var6 * 4;
@@ -238,7 +238,7 @@ public final class class887 extends Program {
 		int var3 = ((class1220) arg0).method19676();
 		int var4 = ((class1220) arg0).method19677();
 		if (arg0.method19247() != class236.field2480) {
-			throw new class1237(arg0, "");
+			throw new OpenGLError(arg0, "");
 		}
 		if (var3 >= 0) {
 			this.method16468(var3, arg1.method6637(field10361), 8);
@@ -253,7 +253,7 @@ public final class class887 extends Program {
 		int var3 = ((class1220) arg0).method19676();
 		int var4 = ((class1220) arg0).method19677();
 		if (arg0.method19247() != class236.field2482) {
-			throw new class1237(arg0, "");
+			throw new OpenGLError(arg0, "");
 		}
 		if (var3 >= 0) {
 			this.method16468(var3, arg1.method6620(field10361), 16);
@@ -268,7 +268,7 @@ public final class class887 extends Program {
 		int var4 = ((class1220) arg0).method19676();
 		int var5 = ((class1220) arg0).method19677();
 		if (arg0.method19247() != class236.field2441) {
-			throw new class1237(arg0, "");
+			throw new OpenGLError(arg0, "");
 		}
 		if (var4 >= 0) {
 			this.method16468(var4, arg1, arg2);

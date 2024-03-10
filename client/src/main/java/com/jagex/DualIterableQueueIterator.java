@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 import java.util.Iterator;
 
 @ObfuscatedName("aai")
-public class class719 implements Iterator {
+public class DualIterableQueueIterator implements Iterator {
 
 	@ObfuscatedName("aai.e")
 	public DualIterableQueue field8495;
@@ -16,7 +16,7 @@ public class class719 implements Iterator {
 	@ObfuscatedName("aai.m")
 	public SecondaryNode field8493 = null;
 
-	public class719(DualIterableQueue arg0) {
+	public DualIterableQueueIterator(DualIterableQueue arg0) {
 		this.field8495 = arg0;
 		this.field8494 = this.field8495.field8497.field11439;
 		this.field8493 = null;
