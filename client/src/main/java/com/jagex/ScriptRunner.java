@@ -14374,7 +14374,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("fw.awo(Lyf;B)V")
 	public static final void method3096(ClientScriptState arg0) {
-		WorldListEntry var1 = class750.method13782();
+		WorldListEntryInfo var1 = class750.method13782();
 		if (var1 != null) {
 			arg0.field8216[++arg0.field8226 - 1] = var1.field11705;
 			arg0.field8216[++arg0.field8226 - 1] = var1.field7639;
@@ -14398,7 +14398,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("wh.awv(Lyf;B)V")
 	public static final void method9860(ClientScriptState arg0) {
-		WorldListEntry var1 = class750.method6048();
+		WorldListEntryInfo var1 = class750.method6048();
 		if (var1 != null) {
 			arg0.field8216[++arg0.field8226 - 1] = var1.field11705;
 			arg0.field8216[++arg0.field8226 - 1] = var1.field7639;
@@ -14436,7 +14436,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("f.awx(Lyf;I)V")
 	public static final void method220(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		WorldListEntry var2 = WorldList.method4944(var1);
+		WorldListEntryInfo var2 = WorldList.method4944(var1);
 		if (var2 != null) {
 			arg0.field8216[++arg0.field8226 - 1] = var2.field7639;
 			arg0.field8218[++arg0.field8211 - 1] = var2.field11704;
@@ -14480,7 +14480,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("dc.awz(Lyf;B)V")
 	public static final void method1973(ClientScriptState arg0) {
-		WorldListEntry var1 = class750.method477();
+		WorldListEntryInfo var1 = class750.method477();
 		arg0.field8216[++arg0.field8226 - 1] = var1 == null ? 0 : var1.field7639;
 	}
 

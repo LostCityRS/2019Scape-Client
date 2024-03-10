@@ -14,7 +14,7 @@ public class WorldList {
 	}
 
 	@ObfuscatedName("js.e(IB)Lalc;")
-	public static WorldListEntry method4944(int arg0) {
+	public static WorldListEntryInfo method4944(int arg0) {
 		return field7645 && arg0 >= Statics.field7414 && arg0 <= Statics.field3011 ? Statics.field7644[arg0 - Statics.field7414] : null;
 	}
 
@@ -36,19 +36,19 @@ public class WorldList {
 	@ObfuscatedName("yz.m(Lalw;I)V")
 	public static void method10593(Packet arg0) {
 		int var1 = arg0.gSmart1or2();
-		Statics.field7647 = new class617[var1];
+		Statics.field7647 = new WorldListEntryCountry[var1];
 		for (int var2 = 0; var2 < var1; var2++) {
-			Statics.field7647[var2] = new class617();
+			Statics.field7647[var2] = new WorldListEntryCountry();
 			Statics.field7647[var2].field7634 = arg0.gSmart1or2();
 			Statics.field7647[var2].field7633 = arg0.gjstr2();
 		}
 		Statics.field7414 = arg0.gSmart1or2();
 		Statics.field3011 = arg0.gSmart1or2();
 		Statics.field533 = arg0.gSmart1or2();
-		Statics.field7644 = new WorldListEntry[Statics.field3011 - Statics.field7414 + 1];
+		Statics.field7644 = new WorldListEntryInfo[Statics.field3011 - Statics.field7414 + 1];
 		for (int var3 = 0; var3 < Statics.field533; var3++) {
 			int var4 = arg0.gSmart1or2();
-			WorldListEntry var5 = Statics.field7644[var4] = new WorldListEntry();
+			WorldListEntryInfo var5 = Statics.field7644[var4] = new WorldListEntryInfo();
 			var5.field7640 = arg0.g1();
 			var5.field7639 = arg0.g4s();
 			var5.field11702 = arg0.gSmart1or2();

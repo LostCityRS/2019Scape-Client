@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("alc")
-public class WorldListEntry extends class618 {
+public class WorldListEntryInfo extends class618 {
 
 	@ObfuscatedName("alc.u")
 	public int field11705;
@@ -25,7 +25,7 @@ public class WorldListEntry extends class618 {
 	public String field11706;
 
 	@ObfuscatedName("alc.c(I)Lwv;")
-	public class617 method18342() {
+	public WorldListEntryCountry method18342() {
 		return Statics.field7647[this.field7640];
 	}
 

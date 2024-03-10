@@ -1334,10 +1334,10 @@ public class Statics {
 	public static int field7642;
 
 	@ObfuscatedName("wb.f")
-	public static WorldListEntry[] field7644;
+	public static WorldListEntryInfo[] field7644;
 
 	@ObfuscatedName("wb.z")
-	public static class617[] field7647;
+	public static WorldListEntryCountry[] field7647;
 
 	@ObfuscatedName("ap.c")
 	public static long field765;
@@ -2270,10 +2270,10 @@ public class Statics {
 			return;
 		}
 		WorldList.method570(field7415.data);
-		class750.field8748 = new WorldListEntry[field533];
+		class750.field8748 = new WorldListEntryInfo[field533];
 		int var2 = 0;
 		for (int var3 = field7414; var3 <= field3011; var3++) {
-			WorldListEntry var4 = WorldList.method4944(var3);
+			WorldListEntryInfo var4 = WorldList.method4944(var3);
 			if (var4 != null) {
 				class750.field8748[var2++] = var4;
 			}

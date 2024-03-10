@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("wv")
-public class class617 {
+public class WorldListEntryCountry {
 
 	@ObfuscatedName("wv.e")
 	public String field7633;
