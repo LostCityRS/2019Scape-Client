@@ -195,7 +195,7 @@ public class OpenGLProgram extends Program {
 		}
 		this.field10368.put(var3, arg1);
 		if (arg0.method19247() != class236.field2525 && arg0.method19247() != class236.field2509) {
-			throw new class1237(arg0, "");
+			throw new OpenGLError(arg0, "");
 		}
 		OpenGL.glUniform1f(var3, arg1);
 	}
@@ -209,7 +209,7 @@ public class OpenGLProgram extends Program {
 		this.field10368.put(var4, arg1);
 		this.field10381.put(var4, arg2);
 		if (arg0.method19247() != class236.field2495) {
-			throw new class1237(arg0, "");
+			throw new OpenGLError(arg0, "");
 		}
 		OpenGL.glUniform2f(var4, arg1, arg2);
 	}
@@ -224,7 +224,7 @@ public class OpenGLProgram extends Program {
 		this.field10381.put(var5, arg2);
 		this.field10383.put(var5, arg3);
 		if (arg0.method19247() != class236.field2540) {
-			throw new class1237(arg0, "");
+			throw new OpenGLError(arg0, "");
 		}
 		OpenGL.glUniform3f(var5, arg1, arg2, arg3);
 	}
@@ -240,7 +240,7 @@ public class OpenGLProgram extends Program {
 		this.field10383.put(var6, arg3);
 		this.field10382.put(var6, arg4);
 		if (arg0.method19247() != class236.field2466) {
-			throw new class1237(arg0, "");
+			throw new OpenGLError(arg0, "");
 		}
 		OpenGL.glUniform4f(var6, arg1, arg2, arg3, arg4);
 	}

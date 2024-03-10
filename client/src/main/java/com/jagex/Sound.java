@@ -16,7 +16,7 @@ public class Sound {
 	public class614 field4889;
 
 	@ObfuscatedName("rw.m")
-	public class481 field4877 = class481.field4952;
+	public SoundVolume field4877 = SoundVolume.field4952;
 
 	@ObfuscatedName("rw.k")
 	public boolean field4878 = false;
@@ -74,7 +74,7 @@ public class Sound {
 	@ObfuscatedName("rw.e(I)V")
 	public void method7375() {
 		this.field4889 = null;
-		this.field4877 = class481.field4952;
+		this.field4877 = SoundVolume.field4952;
 		this.field4878 = false;
 		this.field4879.clear();
 		this.field4893 = null;
@@ -97,12 +97,12 @@ public class Sound {
 	public void method7376(class614 arg0) {
 		this.field4889 = arg0;
 		this.field4885 = 0.0F;
-		this.field4877 = class481.field4946;
+		this.field4877 = SoundVolume.field4946;
 	}
 
 	@ObfuscatedName("rw.m(I)V")
 	public void method7377() {
-		if (class481.field4947 != this.field4877 && class481.field4953 != this.field4877) {
+		if (SoundVolume.field4947 != this.field4877 && SoundVolume.field4953 != this.field4877) {
 			this.method7380(0);
 		}
 		Iterator var1 = this.field4879.iterator();
@@ -115,36 +115,36 @@ public class Sound {
 			}
 		}
 		this.method7375();
-		this.field4877 = class481.field4955;
+		this.field4877 = SoundVolume.field4955;
 	}
 
 	@ObfuscatedName("rw.k(I)V")
 	public void method7392() {
-		if (!this.field4878 && (class481.field4954 != this.field4877 && class481.field4955 != this.field4877 && class481.field4952 != this.field4877 && class481.field4951 != this.field4877 && (this.field4877.field4956 <= class481.field4946.field4956 || this.field4877.field4956 >= class481.field4947.field4956))) {
-			this.field4877 = class481.field4948;
+		if (!this.field4878 && (SoundVolume.field4954 != this.field4877 && SoundVolume.field4955 != this.field4877 && SoundVolume.field4952 != this.field4877 && SoundVolume.field4951 != this.field4877 && (this.field4877.field4956 <= SoundVolume.field4946.field4956 || this.field4877.field4956 >= SoundVolume.field4947.field4956))) {
+			this.field4877 = SoundVolume.field4948;
 		}
 	}
 
 	@ObfuscatedName("rw.f(I)V")
 	public void method7441() {
-		if (class481.field4954 == this.field4877 || class481.field4955 == this.field4877 || class481.field4952 == this.field4877 || class481.field4951 == this.field4877) {
+		if (SoundVolume.field4954 == this.field4877 || SoundVolume.field4955 == this.field4877 || SoundVolume.field4952 == this.field4877 || SoundVolume.field4951 == this.field4877) {
 			return;
 		}
-		if ((class481.field4948 == this.field4877 || class481.field4949 == this.field4877) && !this.field4878) {
+		if ((SoundVolume.field4948 == this.field4877 || SoundVolume.field4949 == this.field4877) && !this.field4878) {
 			this.field4878 = true;
-		} else if (this.field4877.field4956 < class481.field4948.field4956 || this.field4877.field4956 >= class481.field4947.field4956) {
-			this.field4877 = class481.field4948;
+		} else if (this.field4877.field4956 < SoundVolume.field4948.field4956 || this.field4877.field4956 >= SoundVolume.field4947.field4956) {
+			this.field4877 = SoundVolume.field4948;
 			this.field4878 = true;
 		}
 	}
 
 	@ObfuscatedName("rw.w(IB)V")
 	public void method7380(int arg0) {
-		if (this.field4877.field4956 >= class481.field4947.field4956) {
+		if (this.field4877.field4956 >= SoundVolume.field4947.field4956) {
 			return;
 		}
-		if (this.field4877.field4956 < class481.field4950.field4956) {
-			this.field4877 = class481.field4947;
+		if (this.field4877.field4956 < SoundVolume.field4950.field4956) {
+			this.field4877 = SoundVolume.field4947;
 			this.field4878 = false;
 		} else if (arg0 <= 0) {
 			Iterator var2 = this.field4879.iterator();
@@ -156,10 +156,10 @@ public class Sound {
 					var2.remove();
 				}
 			}
-			this.field4877 = class481.field4947;
+			this.field4877 = SoundVolume.field4947;
 			this.field4878 = false;
 		} else {
-			this.field4877 = class481.field4951;
+			this.field4877 = SoundVolume.field4951;
 			Iterator var4 = this.field4879.iterator();
 			while (var4.hasNext()) {
 				class480 var5 = (class480) var4.next();
@@ -175,7 +175,7 @@ public class Sound {
 	@ObfuscatedName("rw.l(B)V")
 	public void method7381() {
 		Iterator var1 = this.field4879.iterator();
-		this.field4877 = class481.field4947;
+		this.field4877 = SoundVolume.field4947;
 		while (var1.hasNext()) {
 			class480 var2 = (class480) var1.next();
 			if (var2.method7516() == this) {
@@ -187,7 +187,7 @@ public class Sound {
 	@ObfuscatedName("rw.u(I)V")
 	public void method7382() {
 		Iterator var1 = this.field4879.iterator();
-		this.field4877 = class481.field4948;
+		this.field4877 = SoundVolume.field4948;
 		while (var1.hasNext()) {
 			class480 var2 = (class480) var1.next();
 			if (var2.method7516() == this) {
@@ -203,20 +203,20 @@ public class Sound {
 
 	@ObfuscatedName("rw.p(B)V")
 	public void method7384() {
-		if (class481.field4948 == this.field4877) {
+		if (SoundVolume.field4948 == this.field4877) {
 			class615 var1 = this.field4889.method9674();
 			if (class615.field7626 == var1) {
-				this.field4877 = class481.field4949;
+				this.field4877 = SoundVolume.field4949;
 			}
 		}
-		if (class481.field4949 == this.field4877 && this.field4878) {
+		if (SoundVolume.field4949 == this.field4877 && this.field4878) {
 			class480 var2 = this.field4876.method5865(this.field4889.method9679());
 			if (var2 != null) {
 				boolean var3 = this.field4889.method9675();
 				class472 var4 = new class472(this);
 				boolean var5 = var2.method7487(var3 ? null : this.field4889.method9673(0), var3 ? var4 : null, this.field4890, this.field4892 > 0 ? 0.0F : this.field4885, false, this.field4882, this.field4880, this.field4888, this);
 				if (var5) {
-					this.field4877 = class481.field4950;
+					this.field4877 = SoundVolume.field4950;
 					var2.method7536(this.field4886);
 					var2.method7485(this.field4885, this.field4892);
 					var2.method7488();
@@ -224,7 +224,7 @@ public class Sound {
 					this.field4878 = false;
 				} else {
 					if (var2.method7550() == class474.field4865) {
-						this.field4877 = class481.field4953;
+						this.field4877 = SoundVolume.field4953;
 					}
 					var2.method7484();
 				}
@@ -236,7 +236,7 @@ public class Sound {
 			while (var6.hasNext()) {
 				class480 var8 = (class480) var6.next();
 				if (var8.method7516() == this) {
-					if (class481.field4951 == this.field4877) {
+					if (SoundVolume.field4951 == this.field4877) {
 						if (var8.method7486() == 0.0F) {
 							var8.method7489();
 						} else {
@@ -253,11 +253,11 @@ public class Sound {
 					var6.remove();
 				}
 			}
-			if (var7 && this.field4877.field4956 >= class481.field4950.field4956 && this.field4877.field4956 < class481.field4947.field4956) {
-				if (class481.field4951 == this.field4877) {
-					this.field4877 = class481.field4947;
+			if (var7 && this.field4877.field4956 >= SoundVolume.field4950.field4956 && this.field4877.field4956 < SoundVolume.field4947.field4956) {
+				if (SoundVolume.field4951 == this.field4877) {
+					this.field4877 = SoundVolume.field4947;
 				} else {
-					this.field4877 = class481.field4953;
+					this.field4877 = SoundVolume.field4953;
 				}
 			}
 			return;
@@ -265,7 +265,7 @@ public class Sound {
 	}
 
 	@ObfuscatedName("rw.d(I)Lrs;")
-	public class481 method7385() {
+	public SoundVolume method7385() {
 		return this.field4877;
 	}
 

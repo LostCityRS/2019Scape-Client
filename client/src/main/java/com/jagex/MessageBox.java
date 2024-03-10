@@ -130,7 +130,7 @@ public class MessageBox {
 		try {
 			arg2.method2202();
 			arg2.method2115();
-		} catch (class1106 var22) {
+		} catch (RendererException var22) {
 		}
 	}
 }

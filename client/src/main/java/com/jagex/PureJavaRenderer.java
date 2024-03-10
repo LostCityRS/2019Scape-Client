@@ -179,7 +179,7 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.l(II)V")
-	public void method2116(int arg0, int arg1) throws class1106 {
+	public void method2116(int arg0, int arg1) throws RendererException {
 		this.field1612.method15450(arg0, arg1);
 		if (this.field1596 != null) {
 			this.field1596.method1982();

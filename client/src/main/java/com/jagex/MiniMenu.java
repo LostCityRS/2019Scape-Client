@@ -238,7 +238,7 @@ public class MiniMenu {
 					}
 					if (var28 != -1) {
 						int var33 = 0;
-						class719 var34 = new class719(field550);
+						DualIterableQueueIterator var34 = new DualIterableQueueIterator(field550);
 						for (class1174 var35 = (class1174) var34.method14301(); var35 != null; var35 = (class1174) var34.next()) {
 							if (var28 == var33) {
 								if (var35.field12310 > 1) {
@@ -268,7 +268,7 @@ public class MiniMenu {
 			}
 			if (var6 != -1) {
 				int var10 = 0;
-				class719 var11 = new class719(field541.field12312);
+				DualIterableQueueIterator var11 = new DualIterableQueueIterator(field541.field12312);
 				for (class1172 var12 = (class1172) var11.method14301(); var12 != null; var12 = (class1172) var11.next()) {
 					if (var6 == var10) {
 						method923(var12, var4, var5, true);
@@ -298,7 +298,7 @@ public class MiniMenu {
 				}
 				if (var20 != -1) {
 					int var24 = 0;
-					class719 var25 = new class719(field550);
+					DualIterableQueueIterator var25 = new DualIterableQueueIterator(field550);
 					for (class1174 var26 = (class1174) var25.method14301(); var26 != null; var26 = (class1174) var25.next()) {
 						if (var20 == var24) {
 							method923((class1172) var26.field12312.field8497.field11439, var4, var5, true);
@@ -325,7 +325,7 @@ public class MiniMenu {
 				}
 				if (var13 != -1) {
 					int var17 = 0;
-					class718 var18 = new class718(field542);
+					IterableQueueIterator var18 = new IterableQueueIterator(field542);
 					for (class1172 var19 = (class1172) var18.method14294(); var19 != null; var19 = (class1172) var18.next()) {
 						if (var13 == var17) {
 							method923(var19, var4, var5, true);
@@ -1025,7 +1025,7 @@ public class MiniMenu {
 						}
 						if (var10 != -1) {
 							int var14 = 0;
-							class719 var15 = new class719(field550);
+							DualIterableQueueIterator var15 = new DualIterableQueueIterator(field550);
 							for (class1174 var16 = (class1174) var15.method14301(); var16 != null; var16 = (class1174) var15.next()) {
 								if (var14++ == var10) {
 									return ((class1172) var16.field12312.field8497.field11439).field12298;
@@ -1049,7 +1049,7 @@ public class MiniMenu {
 						}
 						if (var17 != -1) {
 							int var21 = 0;
-							class719 var22 = new class719(field541.field12312);
+							DualIterableQueueIterator var22 = new DualIterableQueueIterator(field541.field12312);
 							for (class1172 var23 = (class1172) var22.method14301(); var23 != null; var23 = (class1172) var22.next()) {
 								if (var21++ == var17) {
 									return var23.field12298;
@@ -1074,7 +1074,7 @@ public class MiniMenu {
 					}
 					if (var3 != -1) {
 						int var7 = 0;
-						class718 var8 = new class718(field542);
+						IterableQueueIterator var8 = new IterableQueueIterator(field542);
 						for (class1172 var9 = (class1172) var8.method14294(); var9 != null; var9 = (class1172) var8.next()) {
 							if (var7++ == var3) {
 								return var9.field12298;

@@ -460,7 +460,7 @@ public class class975 extends Node {
 		}
 		int var5 = arg0.field11359 * 262144;
 		if (arg0.field11357 != 0 && Statics.field688.themeMusicVolume1.method18763() != 0 && arg0.field11349 == arg1) {
-			if (arg0.field11371 != null && (arg0.field11371.method7385() == class481.field4953 || arg0.field11371.method7385() == class481.field4947)) {
+			if (arg0.field11371 != null && (arg0.field11371.method7385() == SoundVolume.field4953 || arg0.field11371.method7385() == SoundVolume.field4947)) {
 				Statics.field1798.method3185(arg0.field11371);
 				arg0.field11371 = null;
 			}
@@ -487,7 +487,7 @@ public class class975 extends Node {
 				int var17 = (int) ((float) (arg0.field11353 - arg0.field11351) * 0.5F + (float) arg0.field11351);
 				arg0.field11355.field4308 = var16;
 				arg0.field11355.field4313 = var17;
-				if (arg0.field11372.method7385() == class481.field4953 || arg0.field11372.method7385() == class481.field4947) {
+				if (arg0.field11372.method7385() == SoundVolume.field4953 || arg0.field11372.method7385() == SoundVolume.field4947) {
 					Statics.field1798.method3185(arg0.field11372);
 					arg0.field11372 = null;
 				}

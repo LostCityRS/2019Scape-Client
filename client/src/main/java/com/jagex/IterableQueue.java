@@ -172,7 +172,7 @@ public class IterableQueue implements Iterable, Collection {
 	}
 
 	public Iterator iterator() {
-		return new class718(this);
+		return new IterableQueueIterator(this);
 	}
 
 	public int size() {

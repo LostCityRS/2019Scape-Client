@@ -162,7 +162,7 @@ public class LoadingScreenRenderer implements Runnable {
 							if (Statics.field8198 != null && !(this.field2883 instanceof PreLoadingScreen)) {
 								Statics.field8198.method2115();
 							}
-						} catch (class1106 var18) {
+						} catch (RendererException var18) {
 							JagException.method9845(var18.getMessage() + Statics.field8301.method8038(), var18);
 							client.method486(0, true);
 						}

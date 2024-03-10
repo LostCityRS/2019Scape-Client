@@ -634,9 +634,9 @@ public class GpuFloorModel extends FloorModel {
 				if (var40 != -1) {
 					arg5[var80] = var7[var35];
 				}
-				arg4.method14501(new class985(var34[var35]), var43);
+				arg4.method14501(new FloorModelNode(var34[var35]), var43);
 			} else {
-				var34[var35] = ((class985) var66).field11437;
+				var34[var35] = ((FloorModelNode) var66).field11437;
 				var80 = var34[var35] & 0xFFFF;
 				if (var40 != -1 && var7[var35].field6760 < arg5[var80].field6760) {
 					arg5[var80] = var7[var35];

@@ -488,9 +488,9 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 								if (var47 != -1) {
 									var8[var84] = var14[var42];
 								}
-								var10.method14501(new class985(var41[var42]), var50);
+								var10.method14501(new FloorModelNode(var41[var42]), var50);
 							} else {
-								var41[var42] = ((class985) var73).field11437;
+								var41[var42] = ((FloorModelNode) var73).field11437;
 								var84 = var41[var42] & 0xFFFF;
 								if (var47 != -1 && var14[var42].field6760 < var8[var84].field6760) {
 									var8[var84] = var14[var42];

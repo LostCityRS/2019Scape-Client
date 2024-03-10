@@ -155,7 +155,7 @@ public class AudioApi {
 			}
 		}
 		this.field1867.clear();
-		if (this.field1869 != null && this.field1869.method7385() == class481.field4949 && !this.field1870 && client.field10849.field794 != null && client.isStateGame(client.state)) {
+		if (this.field1869 != null && this.field1869.method7385() == SoundVolume.field4949 && !this.field1870 && client.field10849.field794 != null && client.isStateGame(client.state)) {
 			ClientMessage var7 = Statics.method1604(ClientProt.SOUND_SONGPRELOADED, client.field10849.field794);
 			var7.field11432.p4(this.field1869.method7386().method9680());
 			client.field10849.method934(var7);
@@ -165,7 +165,7 @@ public class AudioApi {
 		while (true) {
 			label163: while (true) {
 				Sound var9;
-				class481 var10;
+				SoundVolume var10;
 				do {
 					if (!var8.hasNext()) {
 						return;
@@ -175,7 +175,7 @@ public class AudioApi {
 					var9.method7384();
 					var10 = var9.method7385();
 				} while (var9.method7387() != this);
-				if (class481.field4947 == var10 || class481.field4953 == var10) {
+				if (SoundVolume.field4947 == var10 || SoundVolume.field4953 == var10) {
 					if (var9.method7458() != class173.field1824 && var9.method7458() != class173.field1826) {
 						Iterator var12 = this.field1851.keySet().iterator();
 						while (var12.hasNext()) {
@@ -219,8 +219,8 @@ public class AudioApi {
 									var18 = (Sound) var17.next();
 								} while (var18.method7458() != class173.field1824);
 								var19 = var18.method7386().method9680();
-							} while ((this.field1875 != var19 || var18.method7385() != class481.field4947) && var18.method7385() != class481.field4946 && var18.method7385() != class481.field4948 && var18.method7385() != class481.field4949);
-							if (var18.method7385() == class481.field4947) {
+							} while ((this.field1875 != var19 || var18.method7385() != SoundVolume.field4947) && var18.method7385() != SoundVolume.field4946 && var18.method7385() != SoundVolume.field4948 && var18.method7385() != SoundVolume.field4949);
+							if (var18.method7385() == SoundVolume.field4947) {
 								var18.method7382();
 							} else {
 								var18.method7441();
@@ -236,7 +236,7 @@ public class AudioApi {
 							}
 						}
 					}
-				} else if (var9.method7385() != class481.field4951 && var9.method7419() == SubBussType.field1800.method3034()) {
+				} else if (var9.method7385() != SoundVolume.field4951 && var9.method7419() == SubBussType.field1800.method3034()) {
 					boolean var11 = this.method3189(SubBussType.field1800.method3034()) > 1.0E-4F;
 					if (!var11) {
 						var9.method7380(150);
@@ -450,7 +450,7 @@ public class AudioApi {
 			}
 			var4 = (Sound) var3.next();
 			var2++;
-		} while (var4.method7385() != class481.field4955);
+		} while (var4.method7385() != SoundVolume.field4955);
 		var4.method7376(arg0);
 		return var4;
 	}
@@ -615,7 +615,7 @@ public class AudioApi {
 		this.field1868 = null;
 		this.field1875 = -1;
 		Sound var13 = null;
-		if (this.field1869 != null && this.field1869.method7386() != null && this.field1869.method7386().method9680() == arg0 && this.field1869.method7385() == class481.field4949) {
+		if (this.field1869 != null && this.field1869.method7386() != null && this.field1869.method7386().method9680() == arg0 && this.field1869.method7385() == SoundVolume.field4949) {
 			var13 = this.field1869;
 			this.field1869 = null;
 			this.field1870 = false;
@@ -660,7 +660,7 @@ public class AudioApi {
 				return null;
 			}
 			var2 = (Sound) var1.next();
-		} while (var2.method7458() != class173.field1824 || var2.method7385() != class481.field4950);
+		} while (var2.method7458() != class173.field1824 || var2.method7385() != SoundVolume.field4950);
 		return var2;
 	}
 

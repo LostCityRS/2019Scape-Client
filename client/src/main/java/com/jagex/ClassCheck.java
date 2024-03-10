@@ -8,12 +8,12 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 @ObfuscatedName("acj")
-public class class780 {
+public class ClassCheck {
 
 	@ObfuscatedName("acj.e")
 	public static IterableQueue field9148 = new IterableQueue();
 
-	public class780() throws Throwable {
+	public ClassCheck() throws Throwable {
 		throw new Error();
 	}
 
@@ -24,13 +24,13 @@ public class class780 {
 
 	@ObfuscatedName("abf.n(I)Z")
 	public static boolean method14703() {
-		class1002 var0 = (class1002) field9148.method14191();
+		ClassCheckNode var0 = (ClassCheckNode) field9148.method14191();
 		return var0 != null;
 	}
 
 	@ObfuscatedName("jf.m(Lase;I)V")
 	public static void method4651(PacketBit arg0) {
-		class1002 var1 = (class1002) field9148.method14191();
+		ClassCheckNode var1 = (ClassCheckNode) field9148.method14191();
 		if (var1 == null) {
 			return;
 		}
@@ -116,7 +116,7 @@ public class class780 {
 
 	@ObfuscatedName("yl.k(Lalw;IB)V")
 	public static void method10680(Packet arg0, int arg1) {
-		class1002 var2 = new class1002();
+		ClassCheckNode var2 = new ClassCheckNode();
 		var2.field11635 = arg0.g1();
 		var2.field11634 = arg0.g4s();
 		var2.field11636 = new int[var2.field11635];

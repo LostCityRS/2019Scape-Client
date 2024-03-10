@@ -428,7 +428,7 @@ public class WorldMap {
 						var20[var22] = arg1.gSmart2or4null();
 						var21[var22] = arg1.g1b();
 					}
-					Statics.field6817[Statics.field6812 * arg5 + arg4] = new class989(var20, var21);
+					Statics.field6817[Statics.field6812 * arg5 + arg4] = new WorldMapNode(var20, var21);
 				}
 			} else {
 				int[] var23 = null;
@@ -457,8 +457,8 @@ public class WorldMap {
 			for (int var1 = 0; var1 < Statics.field6810; var1++) {
 				Object var2 = Statics.field6817[Statics.field6812 * var1 + var0];
 				if (var2 != null) {
-					if (var2 instanceof class989) {
-						class989 var3 = (class989) var2;
+					if (var2 instanceof WorldMapNode) {
+						WorldMapNode var3 = (WorldMapNode) var2;
 						if (var3 != null) {
 							for (int var4 = 0; var4 < var3.field11444.length; var4++) {
 								LocType var5 = (LocType) Statics.field6785.get(var3.field11444[var4]);
@@ -799,8 +799,8 @@ public class WorldMap {
 				}
 				if (var26 == null) {
 					method8612(Statics.field6838, var14, var15, var27, var28, arg2, var18, var24, var25, Statics.field6802[var19], null, null, true);
-				} else if (var26 instanceof class989) {
-					class989 var29 = (class989) var26;
+				} else if (var26 instanceof WorldMapNode) {
+					WorldMapNode var29 = (WorldMapNode) var26;
 					if (var29 != null) {
 						method8612(Statics.field6838, var14, var15, var27, var28, arg2, var18, var24, var25, Statics.field6802[var19], var29.field11444, var29.field11445, true);
 					}
@@ -1007,8 +1007,8 @@ public class WorldMap {
 		if (var8 == null) {
 			return;
 		}
-		if (var8 instanceof class989) {
-			class989 var9 = (class989) var8;
+		if (var8 instanceof WorldMapNode) {
+			WorldMapNode var9 = (WorldMapNode) var8;
 			if (var9 != null) {
 				method8529(arg0, arg1, arg2, arg3, arg4, var9.field11444, var9.field11445);
 			}
