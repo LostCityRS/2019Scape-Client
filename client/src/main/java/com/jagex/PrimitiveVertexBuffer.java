@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("mi")
-public class class361 {
+public class PrimitiveVertexBuffer {
 
 	// $FF: synthetic field
 	public final GpuRenderer this$0;
@@ -14,7 +14,7 @@ public class class361 {
 	@ObfuscatedName("mi.n")
 	public int field3411;
 
-	public class361(GpuRenderer arg0, int arg1) {
+	public PrimitiveVertexBuffer(GpuRenderer arg0, int arg1) {
 		this.this$0 = arg0;
 		this.method5836();
 		this.method5840(arg1, this.field3411);

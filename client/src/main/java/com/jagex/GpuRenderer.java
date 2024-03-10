@@ -516,7 +516,7 @@ public abstract class GpuRenderer extends Renderer {
 	public Matrix4x3 field10209;
 
 	@ObfuscatedName("afc.hg")
-	public class361 field10100;
+	public PrimitiveVertexBuffer field10100;
 
 	@ObfuscatedName("afc.hd")
 	public boolean field10182;
@@ -801,7 +801,7 @@ public abstract class GpuRenderer extends Renderer {
 		this.method15974();
 		this.method16125();
 		this.method15976();
-		this.field10100 = new class361(this, 1024);
+		this.field10100 = new PrimitiveVertexBuffer(this, 1024);
 		this.field10198.method5755(this);
 		if (this.field10159) {
 			this.field10146 = new class354(this, 1024);
