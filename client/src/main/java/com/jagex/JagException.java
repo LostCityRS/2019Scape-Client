@@ -25,7 +25,7 @@ public class JagException extends RuntimeException {
 	}
 
 	@ObfuscatedName("wt.e(Ljava/lang/String;Ljava/lang/Throwable;I)V")
-	public static void method9845(String arg0, Throwable arg1) {
+	public static void report(String arg0, Throwable arg1) {
 		arg1.printStackTrace();
 
 		try {
@@ -57,10 +57,15 @@ public class JagException extends RuntimeException {
 				var6 = System.getProperty("java.version");
 			} catch (Exception var11) {
 			}
-			URL var8 = new URL(var4, "clienterror.ws?c=" + Statics.field12493 + "&cs=" + Statics.field12494 + "&u=" + (Statics.field12492 == null ? "" + Statics.field12496 : class805.method18779(Statics.field12492)) + "&v1=" + class805.method18779(var5) + "&v2=" + class805.method18779(var6) + "&e=" + var3);
-			DataInputStream var9 = new DataInputStream(var8.openStream());
-			var9.read();
-			var9.close();
+
+			try {
+				URL var8 = new URL(var4, "clienterror.ws?c=" + Statics.field12493 + "&cs=" + Statics.field12494 + "&u=" + (Statics.field12492 == null ? "" + Statics.field12496 : class805.method18779(Statics.field12492)) + "&v1=" + class805.method18779(var5) + "&v2=" + class805.method18779(var6) + "&e=" + var3);
+				DataInputStream var9 = new DataInputStream(var8.openStream());
+				var9.read();
+				var9.close();
+			} catch (IOException var12) {
+				System.err.println("Failed to report exception to clienterror.ws");
+			}
 		} catch (Exception var12) {
 			var12.printStackTrace();
 		}

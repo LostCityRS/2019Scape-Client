@@ -54,7 +54,7 @@ public class HttpClient implements Runnable {
 					var2.field739 = true;
 				}
 			} catch (Exception var13) {
-				JagException.method9845(null, var13);
+				JagException.report(null, var13);
 			}
 		}
 	}

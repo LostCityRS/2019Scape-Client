@@ -1085,7 +1085,7 @@ public final class client extends GameShell {
 						break;
 					case 7:
 					default:
-						JagException.method9845("", new RuntimeException());
+						JagException.report("", new RuntimeException());
 						break;
 					case 8:
 						if (Statics.world == null) {
@@ -1548,7 +1548,7 @@ public final class client extends GameShell {
 						Sprite var20 = Statics.field8198.method2199(var19, 0, var18.getWidth(), var18.getWidth(), var18.getHeight());
 						field11013.method2921(var20, (long) (Integer) var15.getKey());
 					} catch (IOException var22) {
-						JagException.method9845(Statics.field8301.method8038(), var22);
+						JagException.report(Statics.field8301.method8038(), var22);
 					}
 				}
 				var14.remove();
@@ -1629,7 +1629,7 @@ public final class client extends GameShell {
 				TwitchHardwarePlatform.method593(Statics.field8198, MonotonicTime.method3655(), Statics.canvasWid, Statics.canvasHei);
 				Statics.field8198.method2115();
 			} catch (RendererException var10) {
-				JagException.method9845(var10.getMessage() + " " + this.method8038(), var10);
+				JagException.report(var10.getMessage() + " " + this.method8038(), var10);
 				switch(Statics.field688.displayMode2.method18545()) {
 					case 3:
 						GraphicsPacketQueue.method473(var10.method18925());
@@ -5147,7 +5147,7 @@ public final class client extends GameShell {
 		}
 		if (var13 == 0 && var14 == 0 || var13 <= -world.method7728() || var13 >= world.method7728() || var14 <= -world.method7758() || var14 >= world.method7758()) {
 			if (Statics.field3416 != 3) {
-				JagException.method9845(var8 + TextUtil.COMMA + var9 + " " + var10 + TextUtil.COMMA + var11 + " " + var3.field7426 + TextUtil.COMMA + var3.field7427, new RuntimeException());
+				JagException.report(var8 + TextUtil.COMMA + var9 + " " + var10 + TextUtil.COMMA + var11 + " " + var3.field7426 + TextUtil.COMMA + var3.field7427, new RuntimeException());
 			}
 			return;
 		}
@@ -5406,7 +5406,7 @@ public final class client extends GameShell {
 			return;
 		}
 		if (Statics.field3416 != 3) {
-			JagException.method9845(var15 + TextUtil.COMMA + var16 + " " + var17 + TextUtil.COMMA + var18 + " " + var10.field7426 + TextUtil.COMMA + var10.field7427, new RuntimeException());
+			JagException.report(var15 + TextUtil.COMMA + var16 + " " + var17 + TextUtil.COMMA + var18 + " " + var10.field7426 + TextUtil.COMMA + var10.field7427, new RuntimeException());
 		}
 		return;
 	}
@@ -6978,7 +6978,7 @@ public final class client extends GameShell {
 			for (int var5 = 0; var5 < arg0.field797 && var5 < 50; var5++) {
 				var4 = var4 + arg0.field795.data[var5] + TextUtil.COMMA;
 			}
-			JagException.method9845(var4, var7);
+			JagException.report(var4, var7);
 			logout(false);
 			return true;
 		}
@@ -7215,7 +7215,7 @@ public final class client extends GameShell {
 					int var41 = var2.g1_alt3();
 					field11094.method3263(var39).method3307(var40, var41, null);
 				} catch (RuntimeException var719) {
-					JagException.method9845(null, var719);
+					JagException.report(null, var719);
 					method4499(arg0);
 				}
 			}
@@ -7245,7 +7245,7 @@ public final class client extends GameShell {
 					int var47 = var2.g1_alt3();
 					field11094.method3263(var47).method3301(var46, var45);
 				} catch (RuntimeException var720) {
-					JagException.method9845(null, var720);
+					JagException.report(null, var720);
 					method4499(arg0);
 				}
 			}
@@ -7774,7 +7774,7 @@ public final class client extends GameShell {
 					int var200 = var2.g1_alt3();
 					field11094.method3263(var199).method3322(var200);
 				} catch (RuntimeException var721) {
-					JagException.method9845(null, var721);
+					JagException.report(null, var721);
 					method4499(arg0);
 				}
 			}
@@ -8004,7 +8004,7 @@ public final class client extends GameShell {
 					int var246 = var2.g1();
 					field11094.method3266(var246);
 				} catch (RuntimeException var722) {
-					JagException.method9845(null, var722);
+					JagException.report(null, var722);
 					method4499(arg0);
 				}
 			}
@@ -8197,7 +8197,7 @@ public final class client extends GameShell {
 					byte var290 = var2.g1b_alt1();
 					field11094.method3265(new class185(var289), var290);
 				} catch (RuntimeException var723) {
-					JagException.method9845(null, var723);
+					JagException.report(null, var723);
 					method4499(arg0);
 				}
 			}
@@ -8731,7 +8731,7 @@ public final class client extends GameShell {
 					int var437 = var2.g1();
 					field11094.method3263(var436).method3325(var437, var435);
 				} catch (RuntimeException var724) {
-					JagException.method9845(null, var724);
+					JagException.report(null, var724);
 					method4499(arg0);
 				}
 			}
@@ -8785,7 +8785,7 @@ public final class client extends GameShell {
 					int var454 = var2.g1();
 					field11094.method3263(var453).method3303(var454);
 				} catch (RuntimeException var725) {
-					JagException.method9845(null, var725);
+					JagException.report(null, var725);
 					method4499(arg0);
 				}
 			}
@@ -8908,7 +8908,7 @@ public final class client extends GameShell {
 						}
 					}
 				} catch (RuntimeException var729) {
-					JagException.method9845(null, var729);
+					JagException.report(null, var729);
 					method4499(arg0);
 				}
 			}
@@ -9035,7 +9035,7 @@ public final class client extends GameShell {
 					boolean var533 = var2.g1_alt3() == 1;
 					field11094.method3263(var532).method3293(var531, var533);
 				} catch (RuntimeException var726) {
-					JagException.method9845(null, var726);
+					JagException.report(null, var726);
 					method4499(arg0);
 				}
 			}
@@ -9457,7 +9457,7 @@ public final class client extends GameShell {
 					int var662 = var2.g1();
 					field11094.method3263(var661).method3356(var660, var662);
 				} catch (RuntimeException var727) {
-					JagException.method9845(null, var727);
+					JagException.report(null, var727);
 					method4499(arg0);
 				}
 			}
@@ -9478,7 +9478,7 @@ public final class client extends GameShell {
 					int var668 = var2.g1_alt3();
 					field11094.method3263(var668).method3296(var667, var666);
 				} catch (RuntimeException var728) {
-					JagException.method9845(null, var728);
+					JagException.report(null, var728);
 					method4499(arg0);
 				}
 			}
@@ -9671,7 +9671,7 @@ public final class client extends GameShell {
 			arg0.field796 = null;
 			return true;
 		} else {
-			JagException.method9845((arg0.field796 == null ? -1 : arg0.field796.field4021) + TextUtil.COMMA + (arg0.field806 == null ? -1 : arg0.field806.field4021) + TextUtil.COMMA + (arg0.field805 == null ? -1 : arg0.field805.field4021) + " " + arg0.field797, new RuntimeException());
+			JagException.report((arg0.field796 == null ? -1 : arg0.field796.field4021) + TextUtil.COMMA + (arg0.field806 == null ? -1 : arg0.field806.field4021) + TextUtil.COMMA + (arg0.field805 == null ? -1 : arg0.field805.field4021) + " " + arg0.field797, new RuntimeException());
 			logout(false);
 			return true;
 		}
@@ -10002,7 +10002,7 @@ public final class client extends GameShell {
 				}
 			}
 		} else {
-			JagException.method9845("" + arg0, new RuntimeException());
+			JagException.report("" + arg0, new RuntimeException());
 			logout(false);
 		}
 	}
@@ -11301,7 +11301,7 @@ public final class client extends GameShell {
 											try {
 												field11093.put(var11.field2188, Statics.field7957.method563(new URL(field10947 + "/img/image_" + var11.field2188 + ".png?a=" + MonotonicTime.method3655())));
 											} catch (MalformedURLException var86) {
-												JagException.method9845(null, var86);
+												JagException.report(null, var86);
 											}
 										}
 									}

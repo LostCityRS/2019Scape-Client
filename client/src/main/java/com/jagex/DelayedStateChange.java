@@ -204,7 +204,7 @@ public class DelayedStateChange extends SecondaryNode {
 			var3.field12268 = var2.setVarbitValue(var3.field12268, arg1);
 			var3.method19269();
 		} catch (VarBitOverflowException var5) {
-			JagException.method9845("" + arg0, var5);
+			JagException.report("" + arg0, var5);
 		}
 	}
 

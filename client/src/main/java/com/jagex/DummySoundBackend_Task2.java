@@ -37,7 +37,7 @@ public class DummySoundBackend_Task2 implements Runnable {
 					}
 				}
 			} catch (Exception var7) {
-				JagException.method9845(null, var7);
+				JagException.report(null, var7);
 			}
 			return;
 		}

@@ -25,15 +25,19 @@ public class ProxySocket extends AbstractSocket {
 			System.setProperty("java.net.useSystemProxies", "true");
 		}
 		boolean var2 = this.field8784 == 443;
-		List var3;
-		List var4;
+		List var3 = null;
+		List var4 = null;
 		try {
-			var3 = this.field11880.select(new URI((var2 ? "https" : "http") + "://" + this.field8785));
-			var4 = this.field11880.select(new URI((var2 ? "http" : "https") + "://" + this.field8785));
-		} catch (URISyntaxException var17) {
-			return this.method14873();
+			try {
+				var3 = this.field11880.select(new URI((var2 ? "https" : "http") + "://" + this.field8785));
+				var4 = this.field11880.select(new URI((var2 ? "http" : "https") + "://" + this.field8785));
+			} catch (URISyntaxException var17) {
+				return this.method14873();
+			}
+			var3.addAll(var4);
+		} catch (UnsupportedOperationException ex) {
+			ex.printStackTrace();
 		}
-		var3.addAll(var4);
 		Object[] var6 = var3.toArray();
 		class1214 var7 = null;
 		Object[] var8 = var6;

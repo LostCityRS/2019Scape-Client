@@ -103,7 +103,7 @@ public class Js5DiskCache implements Runnable {
 					var2.field12557 = var2.field12556.method9010((int) var2.field11440);
 				}
 			} catch (Exception var6) {
-				JagException.method9845(null, var6);
+				JagException.report(null, var6);
 			}
 			var2.field12344 = false;
 		}

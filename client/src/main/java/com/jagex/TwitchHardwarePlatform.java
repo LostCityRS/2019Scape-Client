@@ -197,7 +197,7 @@ public class TwitchHardwarePlatform {
 		if (var2 == 0) {
 			field7384 = true;
 		} else {
-			JagException.method9845(10 + TextUtil.COMMA + var2, new RuntimeException());
+			JagException.report(10 + TextUtil.COMMA + var2, new RuntimeException());
 		}
 		return 2;
 	}

@@ -295,7 +295,7 @@ public final class ScriptRunner {
 			var4.append("").append(arg0.field8223[var5].field8190.field6760).append(" ");
 		}
 		var4.append("").append(arg1.field5953);
-		JagException.method9845(var4.toString(), arg2);
+		JagException.report(var4.toString(), arg2);
 	}
 
 	@ObfuscatedName("ki.s(Lhq;IIIZLyf;I)V")
