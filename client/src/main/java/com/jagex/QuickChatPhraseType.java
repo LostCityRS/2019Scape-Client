@@ -3,10 +3,10 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("asq")
-public class class1186 extends SecondaryNode {
+public class QuickChatPhraseType extends SecondaryNode {
 
 	@ObfuscatedName("asq.l")
-	public class768 field12380;
+	public QuickChatPhraseTypeList field12380;
 
 	@ObfuscatedName("asq.u")
 	public String[] field12379;

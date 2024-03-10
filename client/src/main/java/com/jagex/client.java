@@ -13284,7 +13284,7 @@ public final class client extends GameShell {
 		int var5 = arg1 ? 32768 : 0;
 		int var6 = var5 + (arg1 ? Statics.field489.field8857 : Statics.field489.field8856);
 		for (int var7 = var5; var7 < var6; var7++) {
-			class1186 var8 = Statics.field489.method14982(var7);
+			QuickChatPhraseType var8 = Statics.field489.method14982(var7);
 			if (var8.field12382 && var8.method19534().toLowerCase().indexOf(var2) != -1) {
 				if (var3.size() >= 50) {
 					return -1;

@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("asd")
-public class class1182 extends SecondaryNode {
+public class QuickChatCatType extends SecondaryNode {
 
 	@ObfuscatedName("asd.l")
 	public String field12348;

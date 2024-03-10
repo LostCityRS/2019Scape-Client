@@ -10,7 +10,7 @@ public class ChatPhrase {
 	public int field3448;
 
 	@ObfuscatedName("ne.n")
-	public class1186 field3447;
+	public QuickChatPhraseType field3447;
 
 	@ObfuscatedName("ne.m")
 	public int[] field3446;

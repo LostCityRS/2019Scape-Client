@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("qr")
-public class class458 {
+public class QuickChatCatTypeList {
 
 	@ObfuscatedName("qr.e")
 	public final Js5 field4616;
@@ -14,7 +14,7 @@ public class class458 {
 	@ObfuscatedName("qr.m")
 	public final WeightedCache field4615 = new WeightedCache(64);
 
-	public class458(Language arg0, Js5 arg1, Js5 arg2) {
+	public QuickChatCatTypeList(Language arg0, Js5 arg1, Js5 arg2) {
 		this.field4616 = arg1;
 		this.field4614 = arg2;
 		if (this.field4616 != null) {
@@ -26,8 +26,8 @@ public class class458 {
 	}
 
 	@ObfuscatedName("qr.e(IB)Lasd;")
-	public class1182 method7243(int arg0) {
-		class1182 var2 = (class1182) this.field4615.method2930((long) arg0);
+	public QuickChatCatType list(int arg0) {
+		QuickChatCatType var2 = (QuickChatCatType) this.field4615.method2930((long) arg0);
 		if (var2 != null) {
 			return var2;
 		}
@@ -37,7 +37,7 @@ public class class458 {
 		} else {
 			var3 = this.field4616.method6879(0, arg0);
 		}
-		class1182 var4 = new class1182();
+		QuickChatCatType var4 = new QuickChatCatType();
 		if (var3 != null) {
 			var4.method19449(new Packet(var3));
 		}

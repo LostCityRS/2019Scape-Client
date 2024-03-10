@@ -357,8 +357,8 @@ public class Loading {
 			Statics.field9211 = new class382(Statics.field736);
 			Statics.field2013 = new class377(Statics.field6879);
 			Statics.field7282 = new class380(Statics.field6879);
-			Statics.field3823 = new class458(Statics.field1680, Statics.field4404, Statics.field1935);
-			Statics.field489 = new class768(Statics.field1680, Statics.field4404, Statics.field1935, new class374());
+			Statics.field3823 = new QuickChatCatTypeList(Statics.field1680, Statics.field4404, Statics.field1935);
+			Statics.field489 = new QuickChatPhraseTypeList(Statics.field1680, Statics.field4404, Statics.field1935, new class374());
 			Statics.field7410 = new class36(Statics.field8485, Statics.field8736, Statics.field2767.method9784());
 			client.method9516();
 			class721.method6114(Statics.field8797);

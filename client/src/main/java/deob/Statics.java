@@ -683,7 +683,7 @@ public class Statics {
 	public static Js5 field3808;
 
 	@ObfuscatedName("nu.ir")
-	public static class458 field3823;
+	public static QuickChatCatTypeList field3823;
 
 	@ObfuscatedName("ns.i")
 	public static int field4037;
@@ -806,7 +806,7 @@ public class Statics {
 	public static boolean field488;
 
 	@ObfuscatedName("k.it")
-	public static class768 field489;
+	public static QuickChatPhraseTypeList field489;
 
 	@ObfuscatedName("rp.hd")
 	public static HeadbarTypeList field4894;
@@ -4496,7 +4496,7 @@ public class Statics {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		arg0.field8216[++arg0.field8226 - 1] = field3823.method7243(var1).field12347[var2];
+		arg0.field8216[++arg0.field8226 - 1] = field3823.list(var1).field12347[var2];
 	}
 
 	@ObfuscatedName("rc.aip(Lyf;I)V")

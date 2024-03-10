@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ach")
-public class class768 {
+public class QuickChatPhraseTypeList {
 
 	@ObfuscatedName("ach.e")
 	public final Js5 field8860;
@@ -23,7 +23,7 @@ public class class768 {
 	@ObfuscatedName("ach.u")
 	public class645 field8861 = null;
 
-	public class768(Language arg0, Js5 arg1, Js5 arg2, class645 arg3) {
+	public QuickChatPhraseTypeList(Language arg0, Js5 arg1, Js5 arg2, class645 arg3) {
 		this.field8860 = arg1;
 		this.field8858 = arg2;
 		this.field8861 = arg3;
@@ -36,8 +36,8 @@ public class class768 {
 	}
 
 	@ObfuscatedName("ach.e(II)Lasq;")
-	public class1186 method14982(int arg0) {
-		class1186 var2 = (class1186) this.field8855.method2930((long) arg0);
+	public QuickChatPhraseType method14982(int arg0) {
+		QuickChatPhraseType var2 = (QuickChatPhraseType) this.field8855.method2930((long) arg0);
 		if (var2 != null) {
 			return var2;
 		}
@@ -47,7 +47,7 @@ public class class768 {
 		} else {
 			var3 = this.field8860.method6879(1, arg0);
 		}
-		class1186 var4 = new class1186();
+		QuickChatPhraseType var4 = new QuickChatPhraseType();
 		var4.field12380 = this;
 		if (var3 != null) {
 			var4.method19526(new Packet(var3));
