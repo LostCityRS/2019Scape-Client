@@ -278,7 +278,7 @@ public final class client extends GameShell {
 	public static boolean field11082 = false;
 
 	@ObfuscatedName("client.je")
-	public static class669 field10994 = new class669();
+	public static InetAddressLookupRequest field10994 = new InetAddressLookupRequest();
 
 	@ObfuscatedName("client.jw")
 	public static SecureRandomProvider field10967 = new SecureRandomProvider();

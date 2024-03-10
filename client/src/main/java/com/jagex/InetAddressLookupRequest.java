@@ -8,7 +8,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 @ObfuscatedName("yz")
-public class class669 implements Runnable {
+public class InetAddressLookupRequest implements Runnable {
 
 	@ObfuscatedName("yz.e")
 	public final Object field8183 = new Object();
@@ -19,7 +19,7 @@ public class class669 implements Runnable {
 	@ObfuscatedName("yz.m")
 	public final Queue field8185 = new LinkedList();
 
-	public class669() {
+	public InetAddressLookupRequest() {
 		this.field8184.setDaemon(true);
 		this.field8184.start();
 	}
