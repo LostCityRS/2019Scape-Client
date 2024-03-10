@@ -94,7 +94,7 @@ public final class Js5 {
 		if (this.field4412) {
 			this.field4418[arg0] = this.field4417.method6854(arg0);
 		} else {
-			this.field4418[arg0] = class703.method2821(this.field4417.method6854(arg0), false);
+			this.field4418[arg0] = ByteArrayCopier.method2821(this.field4417.method6854(arg0), false);
 		}
 	}
 
@@ -128,7 +128,7 @@ public final class Js5 {
 			throw new RuntimeException("");
 		}
 		if (this.field4410[arg0][arg1] != null) {
-			var4 = class703.method4540(this.field4410[arg0][arg1], false);
+			var4 = ByteArrayCopier.method4540(this.field4410[arg0][arg1], false);
 			if (var4 == null) {
 				throw new RuntimeException("");
 			}
@@ -343,9 +343,9 @@ public final class Js5 {
 			}
 			byte[] var10;
 			if (arg2 == null || arg2[0] == 0 && arg2[1] == 0 && arg2[2] == 0 && arg2[3] == 0) {
-				var10 = class703.method4540(this.field4418[arg0], false);
+				var10 = ByteArrayCopier.method4540(this.field4418[arg0], false);
 			} else {
-				var10 = class703.method4540(this.field4418[arg0], true);
+				var10 = ByteArrayCopier.method4540(this.field4418[arg0], true);
 				Packet var11 = new Packet(var10);
 				int var12 = var11.g1();
 				int var13 = var11.g4s();
@@ -369,7 +369,7 @@ public final class Js5 {
 					var50 = var5[0];
 				}
 				if (this.field4415 == 0) {
-					var6[var50] = class703.method2821(var15, false);
+					var6[var50] = ByteArrayCopier.method2821(var15, false);
 				} else {
 					var6[var50] = var15;
 				}
@@ -462,7 +462,7 @@ public final class Js5 {
 						var32 = var5[var31];
 					}
 					if (this.field4415 == 0) {
-						var6[var32] = class703.method2821(var25[var31], false);
+						var6[var32] = ByteArrayCopier.method2821(var25[var31], false);
 					} else {
 						var6[var32] = var25[var31];
 					}

@@ -115,9 +115,9 @@ public class class503 {
 			this.field5128 = null;
 			return false;
 		}
-		int var12 = class783.method16657(this.field5130);
+		int var12 = IntMath.method16657(this.field5130);
 		if (var12 > arg3) {
-			var12 = class783.method3082(arg3);
+			var12 = IntMath.method3082(arg3);
 		}
 		if (var12 > 512) {
 			var12 = 512;

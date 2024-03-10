@@ -123,7 +123,7 @@ public class class797 {
 		class799[] var5 = new class799[var2.field9205.length];
 		System.arraycopy(var2.field9205, 0, var5, 0, var5.length);
 		for (int var6 = var3; var6 < var5.length; var6++) {
-			int var7 = class783.method14985(var4, var5.length - var3) + var3;
+			int var7 = IntMath.method14985(var4, var5.length - var3) + var3;
 			class799 var8 = var2.field9205[var6];
 			var5[var6] = var5[var7];
 			var5[var7] = var8;

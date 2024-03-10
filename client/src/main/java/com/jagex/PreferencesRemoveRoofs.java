@@ -5,11 +5,11 @@ import deob.ObfuscatedName;
 @ObfuscatedName("amo")
 public class PreferencesRemoveRoofs extends PreferencesOption {
 
-	public PreferencesRemoveRoofs(Preferences arg0) {
+	public PreferencesRemoveRoofs(ClientOptions arg0) {
 		super(arg0);
 	}
 
-	public PreferencesRemoveRoofs(int arg0, Preferences arg1) {
+	public PreferencesRemoveRoofs(int arg0, ClientOptions arg1) {
 		super(arg0, arg1);
 	}
 

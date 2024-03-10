@@ -25,45 +25,45 @@ public class class1113 extends class812 {
 
 	@ObfuscatedName("apr.bi(Lafa;Lck;Ldg;II)Lapr;")
 	public static class1113 method18934(LegacyOpenGLRenderer arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4) {
-		if (arg0.field9998 || class783.method4918(arg3) && class783.method4918(arg4)) {
+		if (arg0.field9998 || IntMath.method4918(arg3) && IntMath.method4918(arg4)) {
 			return new class1113(arg0, 3553, arg1, arg2, arg3, arg4);
 		} else if (arg0.field9965) {
 			return new class1113(arg0, 34037, arg1, arg2, arg3, arg4);
 		} else {
-			return new class1113(arg0, arg1, arg2, arg3, arg4, class783.method16657(arg3), class783.method16657(arg4));
+			return new class1113(arg0, arg1, arg2, arg3, arg4, IntMath.method16657(arg3), IntMath.method16657(arg4));
 		}
 	}
 
 	@ObfuscatedName("apr.bn(Lafa;IIZ[III)Lapr;")
 	public static class1113 method18931(LegacyOpenGLRenderer arg0, int arg1, int arg2, boolean arg3, int[] arg4, int arg5, int arg6) {
-		if (arg0.field9998 || class783.method4918(arg1) && class783.method4918(arg2)) {
+		if (arg0.field9998 || IntMath.method4918(arg1) && IntMath.method4918(arg2)) {
 			return new class1113(arg0, 3553, arg1, arg2, arg3, arg4, arg5, arg6);
 		} else if (arg0.field9965) {
 			return new class1113(arg0, 34037, arg1, arg2, arg3, arg4, arg5, arg6);
 		} else {
-			return new class1113(arg0, arg1, arg2, class783.method16657(arg1), class783.method16657(arg2), arg4);
+			return new class1113(arg0, arg1, arg2, IntMath.method16657(arg1), IntMath.method16657(arg2), arg4);
 		}
 	}
 
 	@ObfuscatedName("apr.bt(Lafa;Lck;Ldg;IIZ[BLck;)Lapr;")
 	public static class1113 method18932(LegacyOpenGLRenderer arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4, boolean arg5, byte[] arg6, TextureFormat arg7) {
-		if (arg0.field9998 || class783.method4918(arg3) && class783.method4918(arg4)) {
+		if (arg0.field9998 || IntMath.method4918(arg3) && IntMath.method4918(arg4)) {
 			return new class1113(arg0, 3553, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		} else if (arg0.field9965) {
 			return new class1113(arg0, 34037, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		} else {
-			return new class1113(arg0, arg1, arg2, arg3, arg4, class783.method16657(arg3), class783.method16657(arg4), arg6, arg7);
+			return new class1113(arg0, arg1, arg2, arg3, arg4, IntMath.method16657(arg3), IntMath.method16657(arg4), arg6, arg7);
 		}
 	}
 
 	@ObfuscatedName("apr.bq(Lafa;IIII)Lapr;")
 	public static class1113 method18930(LegacyOpenGLRenderer arg0, int arg1, int arg2, int arg3, int arg4) {
-		if (arg0.field9998 || class783.method4918(arg3) && class783.method4918(arg4)) {
+		if (arg0.field9998 || IntMath.method4918(arg3) && IntMath.method4918(arg4)) {
 			return new class1113(arg0, 3553, arg1, arg2, arg3, arg4, true);
 		} else if (arg0.field9965) {
 			return new class1113(arg0, 34037, arg1, arg2, arg3, arg4, true);
 		} else {
-			return new class1113(arg0, arg1, arg2, arg3, arg4, class783.method16657(arg3), class783.method16657(arg4), true);
+			return new class1113(arg0, arg1, arg2, arg3, arg4, IntMath.method16657(arg3), IntMath.method16657(arg4), true);
 		}
 	}
 

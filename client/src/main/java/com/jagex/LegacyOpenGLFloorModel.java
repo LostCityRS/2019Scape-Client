@@ -289,7 +289,7 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 			NativeHeapBuffer var6 = this.field9453.field9876.method92(this.field9477 * var5, false);
 			Stream var7 = new Stream(var6);
 			class970[] var8 = new class970[this.field9477];
-			int var9 = class783.method3082(this.field9477 / 4);
+			int var9 = IntMath.method3082(this.field9477 / 4);
 			if (var9 < 1) {
 				var9 = 1;
 			}
@@ -581,7 +581,7 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 				var101[var102] = var103.field6760;
 				var103.method17597(this.field9466);
 			}
-			class664.method10210(var101, this.field9471);
+			Algorithms.method10210(var101, this.field9471);
 			if (this.field9465 != null) {
 				this.field9465.method1337();
 			}

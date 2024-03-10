@@ -195,9 +195,9 @@ public class EnvironmentManager {
 	}
 
 	@ObfuscatedName("xu.z(IIIII)Lsv;")
-	public class502 method9986(int arg0, int arg1, int arg2, int arg3) {
+	public SkyBox method9986(int arg0, int arg1, int arg2, int arg3) {
 		long var5 = ((long) arg1 & 0xFFFFL) << 48 | ((long) arg2 & 0xFFFFL) << 32 | ((long) arg3 & 0xFFFFL) << 16 | (long) arg0 & 0xFFFFL;
-		class502 var7 = (class502) this.field7849.method2930(var5);
+		SkyBox var7 = (SkyBox) this.field7849.method2930(var5);
 		if (var7 == null) {
 			var7 = SkyBoxType.method305(arg0, arg1, arg2, arg3, Statics.field2879, Statics.field687);
 			this.field7849.method2921(var7, var5);

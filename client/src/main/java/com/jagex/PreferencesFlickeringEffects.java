@@ -5,11 +5,11 @@ import deob.ObfuscatedName;
 @ObfuscatedName("amy")
 public class PreferencesFlickeringEffects extends PreferencesOption {
 
-	public PreferencesFlickeringEffects(Preferences arg0) {
+	public PreferencesFlickeringEffects(ClientOptions arg0) {
 		super(arg0);
 	}
 
-	public PreferencesFlickeringEffects(int arg0, Preferences arg1) {
+	public PreferencesFlickeringEffects(int arg0, ClientOptions arg1) {
 		super(arg0, arg1);
 	}
 

@@ -26,7 +26,7 @@ public class StructType extends SecondaryNode implements ConfigType, class757 {
 		}
 		int var3 = arg0.g1();
 		if (this.field9261 == null) {
-			int var4 = class783.method16657(var3);
+			int var4 = IntMath.method16657(var3);
 			this.field9261 = new IterableMap(var4);
 		}
 		for (int var5 = 0; var5 < var3; var5++) {

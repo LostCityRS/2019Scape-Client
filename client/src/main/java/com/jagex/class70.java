@@ -126,9 +126,9 @@ public abstract class class70 {
 
 	@ObfuscatedName("bq.z(IIIIII[I)V")
 	public static void method1109(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int[] arg6) {
-		if (arg2 > 0 && !class783.method4918(arg2)) {
+		if (arg2 > 0 && !IntMath.method4918(arg2)) {
 			throw new IllegalArgumentException("");
-		} else if (arg3 > 0 && !class783.method4918(arg3)) {
+		} else if (arg3 > 0 && !IntMath.method4918(arg3)) {
 			throw new IllegalArgumentException("");
 		} else if (arg4 == 32993) {
 			int var7 = 0;
@@ -189,9 +189,9 @@ public abstract class class70 {
 
 	@ObfuscatedName("bq.p(IIIILck;[B)V")
 	public static void method1107(int arg0, int arg1, int arg2, int arg3, TextureFormat arg4, byte[] arg5) {
-		if (arg2 > 0 && !class783.method4918(arg2)) {
+		if (arg2 > 0 && !IntMath.method4918(arg2)) {
 			throw new IllegalArgumentException("");
-		} else if (arg3 <= 0 || class783.method4918(arg3)) {
+		} else if (arg3 <= 0 || IntMath.method4918(arg3)) {
 			int var6 = arg4.field1279;
 			int var7 = 0;
 			int var8 = arg2 < arg3 ? arg2 : arg3;
@@ -243,9 +243,9 @@ public abstract class class70 {
 
 	@ObfuscatedName("bq.d(IIIILck;[F)V")
 	public static void method1091(int arg0, int arg1, int arg2, int arg3, TextureFormat arg4, float[] arg5) {
-		if (arg2 > 0 && !class783.method4918(arg2)) {
+		if (arg2 > 0 && !IntMath.method4918(arg2)) {
 			throw new IllegalArgumentException("");
-		} else if (arg3 <= 0 || class783.method4918(arg3)) {
+		} else if (arg3 <= 0 || IntMath.method4918(arg3)) {
 			int var6 = arg4.field1279;
 			int var7 = 0;
 			int var8 = arg2 < arg3 ? arg2 : arg3;

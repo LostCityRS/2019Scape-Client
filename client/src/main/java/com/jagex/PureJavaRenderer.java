@@ -174,8 +174,8 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.f()Lcz;")
-	public class108 method2272() {
-		return new class108(0, "Pure Java", 1, "CPU", 0L, false);
+	public RendererInfo method2272() {
+		return new RendererInfo(0, "Pure Java", 1, "CPU", 0L, false);
 	}
 
 	@ObfuscatedName("afg.l(II)V")

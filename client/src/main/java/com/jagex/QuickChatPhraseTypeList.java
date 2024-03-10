@@ -21,9 +21,9 @@ public class QuickChatPhraseTypeList {
 	public final WeightedCache field8855 = new WeightedCache(64);
 
 	@ObfuscatedName("ach.u")
-	public class645 field8861 = null;
+	public QuickChatDynamicProvider field8861 = null;
 
-	public QuickChatPhraseTypeList(Language arg0, Js5 arg1, Js5 arg2, class645 arg3) {
+	public QuickChatPhraseTypeList(Language arg0, Js5 arg1, Js5 arg2, QuickChatDynamicProvider arg3) {
 		this.field8860 = arg1;
 		this.field8858 = arg2;
 		this.field8861 = arg3;
@@ -60,7 +60,7 @@ public class QuickChatPhraseTypeList {
 	}
 
 	@ObfuscatedName("ach.n(Lxs;[IJ)Ljava/lang/String;")
-	public String method14978(class646 arg0, int[] arg1, long arg2) {
+	public String method14978(QuickChatDynamicCommand arg0, int[] arg1, long arg2) {
 		if (this.field8861 != null) {
 			String var5 = this.field8861.method5945(arg0, arg1, arg2);
 			if (var5 != null) {

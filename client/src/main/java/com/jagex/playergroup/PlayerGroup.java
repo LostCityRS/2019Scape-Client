@@ -182,8 +182,8 @@ public class PlayerGroup {
 	}
 
 	@ObfuscatedName("gq.r(I)Leh;")
-	public class152 method3394() {
-		return new class150(VarDomainType.PLAYER_GROUP, this.field1899);
+	public VarDomain method3394() {
+		return new SparseVarDomain(VarDomainType.PLAYER_GROUP, this.field1899);
 	}
 
 	@ObfuscatedName("gq.v(Lgy;B)V")

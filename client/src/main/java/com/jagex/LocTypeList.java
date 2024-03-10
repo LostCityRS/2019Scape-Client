@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aop")
-public class LocTypeList extends class758 {
+public class LocTypeList extends CachingConfigTypeList {
 
 	public LocTypeList(ModeGame arg0, Language arg1, boolean arg2, Js5 arg3, Js5 arg4) {
 		super(arg0, arg1, arg3, Js5ConfigGroup.LOCTYPE, 256, new BasicLocTypeFactory(arg2, arg4, arg1, arg0));

@@ -21,9 +21,9 @@ public class class217 {
 	public final int field2042;
 
 	@ObfuscatedName("ha.w")
-	public final class219[] field2038;
+	public final VorbisCodebook[] field2038;
 
-	public class217(int arg0, int arg1, int arg2, int arg3, int arg4, class219[] arg5) {
+	public class217(int arg0, int arg1, int arg2, int arg3, int arg4, VorbisCodebook[] arg5) {
 		this.field2039 = arg0;
 		this.field2041 = arg1;
 		this.field2040 = arg2;

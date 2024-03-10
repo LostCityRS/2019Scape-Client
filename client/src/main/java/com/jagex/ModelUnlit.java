@@ -742,7 +742,7 @@ public class ModelUnlit {
 		}
 		this.field1374 = this.field1373;
 		if (this.field1381 > 0) {
-			class664.method14525(var15, this.field1385, this.field1383);
+			Algorithms.method14525(var15, this.field1385, this.field1383);
 			int var45 = 0;
 			int var46 = 0;
 			while (var45 < this.field1373) {

@@ -2500,7 +2500,7 @@ public abstract class GpuRenderer extends Renderer {
 	public abstract VertexBuffer method16085(boolean arg0);
 
 	@ObfuscatedName("afc.uy(Lck;Ldg;II)Lmo;")
-	public abstract class359 method16089(TextureFormat arg0, DataType arg1, int arg2, int arg3);
+	public abstract Texture2 method16089(TextureFormat arg0, DataType arg1, int arg2, int arg3);
 
 	@ObfuscatedName("afc.ud()V")
 	public abstract void method16091();

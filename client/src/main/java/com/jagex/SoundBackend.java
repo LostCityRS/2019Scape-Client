@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public abstract class SoundBackend {
 
 	@ObfuscatedName("mt.n(IILnd;Lmw;IFB)Ljava/lang/Object;")
-	public abstract Object method5861(int arg0, int arg1, class372 arg2, class370 arg3, int arg4, float arg5);
+	public abstract Object method5861(int arg0, int arg1, AudioFormat arg2, AudioEndianness arg3, int arg4, float arg5);
 
 	@ObfuscatedName("mt.m(Ljava/lang/Object;I)V")
 	public abstract void method5863(Object arg0);
@@ -18,7 +18,7 @@ public abstract class SoundBackend {
 	public abstract class480 method5865(class473 arg0);
 
 	@ObfuscatedName("mt.l(Lmj;I)Ljava/lang/Object;")
-	public abstract Object method5866(class369 arg0);
+	public abstract Object method5866(AudioBuss arg0);
 
 	@ObfuscatedName("mt.z(B)V")
 	public abstract void method5868();

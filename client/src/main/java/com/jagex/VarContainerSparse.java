@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 @ObfuscatedName("abn")
-public class VarContainerSparse implements class748 {
+public class VarContainerSparse implements VarContainer {
 
 	@ObfuscatedName("abn.e")
 	public Map field8740;

@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aot")
-public class EffectAnimTypeList extends class758 {
+public class EffectAnimTypeList extends CachingConfigTypeList {
 
 	public EffectAnimTypeList(ModeGame arg0, Language arg1, Js5 arg2, Js5 arg3) {
 		super(arg0, arg1, arg2, Js5ConfigGroup.SPOTTYPE, 64, new BasicEffectAnimTypeFactory(arg3));

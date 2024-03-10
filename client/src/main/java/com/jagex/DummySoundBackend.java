@@ -49,8 +49,8 @@ public class DummySoundBackend extends SoundBackend {
 			class473 var5 = (class473) var4.next();
 			class480[] var6 = (class480[]) this.field10679.get(var5);
 			for (int var7 = 0; var7 < var6.length; var7++) {
-				class218 var8 = new class218(2.0F);
-				var8.method3774(0, class372.field3441, class370.field3439, 2);
+				VorbisDecoder var8 = new VorbisDecoder(2.0F);
+				var8.method3774(0, AudioFormat.field3441, AudioEndianness.field3439, 2);
 				var6[var7] = new class480(var5, 32768, 3, var8, this);
 			}
 		}
@@ -124,7 +124,7 @@ public class DummySoundBackend extends SoundBackend {
 	}
 
 	@ObfuscatedName("aiw.n(IILnd;Lmw;IFB)Ljava/lang/Object;")
-	public Object method5861(int arg0, int arg1, class372 arg2, class370 arg3, int arg4, float arg5) {
+	public Object method5861(int arg0, int arg1, AudioFormat arg2, AudioEndianness arg3, int arg4, float arg5) {
 		return new Object();
 	}
 
@@ -157,7 +157,7 @@ public class DummySoundBackend extends SoundBackend {
 	}
 
 	@ObfuscatedName("aiw.l(Lmj;I)Ljava/lang/Object;")
-	public Object method5866(class369 arg0) {
+	public Object method5866(AudioBuss arg0) {
 		return null;
 	}
 

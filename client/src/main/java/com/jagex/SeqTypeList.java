@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aos")
-public class SeqTypeList extends class758 {
+public class SeqTypeList extends CachingConfigTypeList {
 
 	public SeqTypeList(ModeGame arg0, Language arg1, Js5 arg2, Js5 arg3, Js5 arg4, Js5 arg5, SeqGroupTypeList arg6) {
 		super(arg0, arg1, arg2, Js5ConfigGroup.SEQTYPE, 64, new BasicSeqTypeFactory(arg6, arg3, arg4, arg5));

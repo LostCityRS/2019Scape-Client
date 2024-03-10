@@ -546,7 +546,7 @@ public class LocType implements ConfigType {
 						} else if (arg1 == 249) {
 							int var32 = arg0.g1();
 							if (this.field7519 == null) {
-								int var33 = class783.method16657(var32);
+								int var33 = IntMath.method16657(var32);
 								this.field7519 = new IterableMap(var33);
 							}
 							for (int var34 = 0; var34 < var32; var34++) {
@@ -628,7 +628,7 @@ public class LocType implements ConfigType {
 	}
 
 	@ObfuscatedName("vd.c(Ldh;IIILcb;Lcb;IIIZLvp;B)Labg;")
-	public final synchronized class746 method9475(Renderer arg0, int arg1, int arg2, int arg3, FloorModel arg4, FloorModel arg5, int arg6, int arg7, int arg8, boolean arg9, class597 arg10) {
+	public final synchronized Pair method9475(Renderer arg0, int arg1, int arg2, int arg3, FloorModel arg4, FloorModel arg5, int arg6, int arg7, int arg8, boolean arg9, class597 arg10) {
 		if (class601.method14238(arg2)) {
 			arg2 = class601.field7548.field7562;
 		}
@@ -657,9 +657,9 @@ public class LocType implements ConfigType {
 		boolean var17 = this.field7471 != 0 && (arg4 != null || arg5 != null);
 		boolean var18 = this.field7522 != 0 || this.field7449 != 0 || this.field7500 != 0;
 		WeightedCache var19 = this.field7451.field7533;
-		class746 var20;
+		Pair var20;
 		synchronized (this.field7451.field7533) {
-			var20 = (class746) this.field7451.field7533.method2930(var14);
+			var20 = (Pair) this.field7451.field7533.method2930(var14);
 		}
 		Model var22 = (Model) (var20 == null ? null : var20.field8737);
 		HardShadow var23 = null;
@@ -687,7 +687,7 @@ public class LocType implements ConfigType {
 				var23 = var22.method1726(null);
 			}
 			var22.method1690(var16);
-			class746 var25 = new class746(var22, var23);
+			Pair var25 = new Pair(var22, var23);
 			WeightedCache var26 = this.field7451.field7533;
 			synchronized (this.field7451.field7533) {
 				this.field7451.field7533.method2921(var25, var14);

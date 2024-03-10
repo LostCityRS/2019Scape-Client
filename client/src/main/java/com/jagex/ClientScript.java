@@ -84,7 +84,7 @@ public class ClientScript extends SecondaryNode {
 			this.field12375 = new IterableMap[var5];
 			for (int var6 = 0; var6 < var5; var6++) {
 				int var7 = arg0.g2();
-				IterableMap var8 = new IterableMap(var7 > 0 ? class783.method16657(var7) : 1);
+				IterableMap var8 = new IterableMap(var7 > 0 ? IntMath.method16657(var7) : 1);
 				this.field12375[var6] = var8;
 				while (var7-- > 0) {
 					int var9 = arg0.g4s();

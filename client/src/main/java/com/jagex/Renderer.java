@@ -661,7 +661,7 @@ public abstract class Renderer {
 	public abstract boolean method2266();
 
 	@ObfuscatedName("dh.f()Lcz;")
-	public abstract class108 method2272();
+	public abstract RendererInfo method2272();
 
 	@ObfuscatedName("dh.eu()V")
 	public abstract void method2273();

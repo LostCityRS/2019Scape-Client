@@ -861,7 +861,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.f()Lcz;")
-	public class108 method2272() {
+	public RendererInfo method2272() {
 		int var1 = -1;
 		if (this.field9996.indexOf("nvidia") != -1) {
 			var1 = 4318;
@@ -870,7 +870,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 		} else if (this.field9996.indexOf("ati") != -1) {
 			var1 = 4098;
 		}
-		return new class108(var1, "OpenGL", this.field9979, this.field9977, 0L, false);
+		return new RendererInfo(var1, "OpenGL", this.field9979, this.field9977, 0L, false);
 	}
 
 	@ObfuscatedName("afa.l(II)V")
@@ -1373,7 +1373,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 			} else if (var9 > 512) {
 				var9 = 512;
 			}
-			int var10 = class783.method3082(var9);
+			int var10 = IntMath.method3082(var9);
 			OpenGL.glVertex2f((float) arg2 + var6, var7);
 			for (int var11 = 16384 - var10; var11 > 0; var11 -= var10) {
 				OpenGL.glVertex2f(Trig2.field1159[var11] * (float) arg2 + var6, Trig2.field1160[var11] * (float) arg2 + var7);

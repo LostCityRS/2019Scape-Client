@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aox")
-public class MSITypeList extends class758 {
+public class MSITypeList extends CachingConfigTypeList {
 
 	public MSITypeList(ModeGame arg0, Language arg1, Js5 arg2, Js5 arg3) {
 		super(arg0, arg1, arg2, Js5ConfigGroup.MSITYPE, 64, new BasicMSITypeFactory(arg3, 64));

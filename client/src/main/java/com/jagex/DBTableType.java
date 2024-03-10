@@ -43,7 +43,7 @@ public class DBTableType implements ConfigType, class757 {
 				if (this.field9186 == null) {
 					this.field9186 = new Object[this.field9185.length][];
 				}
-				this.field9186[var5] = class791.method18719(arg0, var7);
+				this.field9186[var5] = DbTableUtil.method18719(arg0, var7);
 			}
 		}
 	}

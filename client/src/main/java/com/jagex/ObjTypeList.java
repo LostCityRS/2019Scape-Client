@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aon")
-public class ObjTypeList extends class758 {
+public class ObjTypeList extends CachingConfigTypeList {
 
 	public ObjTypeList(ModeGame arg0, Language arg1, boolean arg2, ConfigTypeList arg3, Js5 arg4, Js5 arg5) {
 		super(arg0, arg1, arg4, Js5ConfigGroup.OBJTYPE, 64, new BasicObjTypeFactory(arg0, arg1, arg2, arg5, arg3));

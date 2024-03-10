@@ -30,7 +30,7 @@ public class class344 {
 	public final int field3330 = 1600;
 
 	@ObfuscatedName("ld.u")
-	public final int field3331 = class783.method8327(1600);
+	public final int field3331 = IntMath.method8327(1600);
 
 	@ObfuscatedName("ld.z")
 	public final int field3332 = 64;
@@ -126,7 +126,7 @@ public class class344 {
 		int var14 = var9 - var8;
 		int var15;
 		if (var14 + 2 > 1600) {
-			var15 = class783.method8327(var14) + 1 - this.field3331;
+			var15 = IntMath.method8327(var14) + 1 - this.field3331;
 			var14 = (var14 >> var15) + 2;
 		} else {
 			var15 = 0;

@@ -44,7 +44,7 @@ public class DBRowType implements ConfigType, class757 {
 				for (int var7 = 0; var7 < var5; var7++) {
 					var6[var7] = (ScriptVarType) class686.method1897(ScriptVarType.method7293(), arg0.gSmart1or2());
 				}
-				this.field8734[var4] = class791.method18719(arg0, var6);
+				this.field8734[var4] = DbTableUtil.method18719(arg0, var6);
 				this.field8733[var4] = var6;
 			}
 		} else if (arg1 == 4) {

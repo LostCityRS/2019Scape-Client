@@ -111,9 +111,9 @@ public abstract class OpenGLBaseTexture implements BaseTexture {
 	public void method7638(int arg0, int arg1, int arg2, int[] arg3) {
 		if (this.field4974 == 0) {
 			throw new IllegalStateException("");
-		} else if (arg1 > 0 && !class783.method4918(arg1)) {
+		} else if (arg1 > 0 && !IntMath.method4918(arg1)) {
 			throw new IllegalArgumentException("");
-		} else if (arg2 > 0 && !class783.method4918(arg2)) {
+		} else if (arg2 > 0 && !IntMath.method4918(arg2)) {
 			throw new IllegalArgumentException("");
 		} else if (TextureFormat.field1273 == this.field4973) {
 			int var5 = 0;
@@ -176,9 +176,9 @@ public abstract class OpenGLBaseTexture implements BaseTexture {
 	public void method7634(int arg0, int arg1, int arg2, byte[] arg3) {
 		if (this.field4974 == 0) {
 			throw new IllegalStateException("");
-		} else if (arg1 > 0 && !class783.method4918(arg1)) {
+		} else if (arg1 > 0 && !IntMath.method4918(arg1)) {
 			throw new IllegalArgumentException("");
-		} else if (arg2 <= 0 || class783.method4918(arg2)) {
+		} else if (arg2 <= 0 || IntMath.method4918(arg2)) {
 			int var5 = this.field4973.field1279;
 			int var6 = 0;
 			int var7 = arg1 < arg2 ? arg1 : arg2;
@@ -232,9 +232,9 @@ public abstract class OpenGLBaseTexture implements BaseTexture {
 	public void method7635(int arg0, int arg1, int arg2, float[] arg3) {
 		if (this.field4974 == 0) {
 			throw new IllegalStateException("");
-		} else if (arg1 > 0 && !class783.method4918(arg1)) {
+		} else if (arg1 > 0 && !IntMath.method4918(arg1)) {
 			throw new IllegalArgumentException("");
-		} else if (arg2 <= 0 || class783.method4918(arg2)) {
+		} else if (arg2 <= 0 || IntMath.method4918(arg2)) {
 			int var5 = this.field4973.field1279;
 			int var6 = 0;
 			int var7 = arg1 < arg2 ? arg1 : arg2;

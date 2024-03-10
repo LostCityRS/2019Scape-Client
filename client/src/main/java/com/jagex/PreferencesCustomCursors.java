@@ -5,11 +5,11 @@ import deob.ObfuscatedName;
 @ObfuscatedName("ans")
 public class PreferencesCustomCursors extends PreferencesOption {
 
-	public PreferencesCustomCursors(Preferences arg0) {
+	public PreferencesCustomCursors(ClientOptions arg0) {
 		super(arg0);
 	}
 
-	public PreferencesCustomCursors(int arg0, Preferences arg1) {
+	public PreferencesCustomCursors(int arg0, ClientOptions arg1) {
 		super(arg1);
 	}
 

@@ -203,7 +203,7 @@ public class ClanSettings {
 				}
 				this.field3118[var2] = var2++;
 			}
-			class664.method4054(var1, this.field3118);
+			Algorithms.method4054(var1, this.field3118);
 		}
 		return this.field3118;
 	}
@@ -586,7 +586,7 @@ public class ClanSettings {
 		if (var6 <= 0) {
 			return;
 		}
-		this.field3115 = new IterableMap(var6 < 16 ? class783.method16657(var6) : 16);
+		this.field3115 = new IterableMap(var6 < 16 ? IntMath.method16657(var6) : 16);
 		while (var6-- > 0) {
 			int var7 = arg0.g4s();
 			int var8 = var7 & 0x3FFFFFFF;

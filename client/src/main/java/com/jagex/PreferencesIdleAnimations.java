@@ -5,11 +5,11 @@ import deob.ObfuscatedName;
 @ObfuscatedName("anm")
 public class PreferencesIdleAnimations extends PreferencesOption {
 
-	public PreferencesIdleAnimations(Preferences arg0) {
+	public PreferencesIdleAnimations(ClientOptions arg0) {
 		super(arg0);
 	}
 
-	public PreferencesIdleAnimations(int arg0, Preferences arg1) {
+	public PreferencesIdleAnimations(int arg0, ClientOptions arg1) {
 		super(arg0, arg1);
 	}
 

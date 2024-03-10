@@ -65,7 +65,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 		if (arg3.field7525) {
 			var20 |= 0x80000;
 		}
-		class746 var21 = this.method17400(arg1, var20, this.field11141);
+		Pair var21 = this.method17400(arg1, var20, this.field11141);
 		if (var21 != null) {
 			this.field11136 = (Model) var21.field8737;
 			this.field11146 = (HardShadow) var21.field8738;
@@ -104,13 +104,13 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 		if (this.field11136 != null && arg0.method2394(this.field11136.method1691(), arg1) == 0) {
 			return this.field11136;
 		} else {
-			class746 var3 = this.method17400(arg0, arg1, false);
+			Pair var3 = this.method17400(arg0, arg1, false);
 			return var3 == null ? null : (Model) var3.field8737;
 		}
 	}
 
 	@ObfuscatedName("ajv.bg(Ldh;IZI)Labg;")
-	public class746 method17400(Renderer arg0, int arg1, boolean arg2) {
+	public Pair method17400(Renderer arg0, int arg1, boolean arg2) {
 		LocType var4 = (LocType) this.field11145.get(this.field11715);
 		FloorModel var5;
 		FloorModel var6;
@@ -239,7 +239,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 		Object var2 = null;
 		HardShadow var4;
 		if (this.field11146 == null && this.field11141) {
-			class746 var3 = this.method17400(arg0, 262144, true);
+			Pair var3 = this.method17400(arg0, 262144, true);
 			var4 = (HardShadow) (var3 == null ? null : var3.field8738);
 		} else {
 			var4 = this.field11146;
@@ -256,7 +256,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 		Object var2 = null;
 		HardShadow var4;
 		if (this.field11146 == null && this.field11141) {
-			class746 var3 = this.method17400(arg0, 262144, true);
+			Pair var3 = this.method17400(arg0, 262144, true);
 			var4 = (HardShadow) (var3 == null ? null : var3.field8738);
 		} else {
 			var4 = this.field11146;

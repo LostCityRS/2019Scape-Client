@@ -277,7 +277,7 @@ public class MapElementType implements ConfigType {
 		} else if (arg1 == 249) {
 			int var9 = arg0.g1();
 			if (this.field2411 == null) {
-				int var10 = class783.method16657(var9);
+				int var10 = IntMath.method16657(var9);
 				this.field2411 = new IterableMap(var10);
 			}
 			for (int var11 = 0; var11 < var9; var11++) {

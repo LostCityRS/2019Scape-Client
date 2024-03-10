@@ -374,10 +374,10 @@ public class Direct3DRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.f()Lcz;")
-	public class108 method2272() {
+	public RendererInfo method2272() {
 		D3DADAPTER_IDENTIFIER var1 = new D3DADAPTER_IDENTIFIER();
 		IDirect3D.GetAdapterIdentifier(this.field11955, this.field11956, 0, var1);
-		return new class108(var1.VendorID, this.method16279() ? "Direct3D FF" : "Direct3D", 9, var1.Description, var1.DriverVersion, this.method16279());
+		return new RendererInfo(var1.VendorID, this.method16279() ? "Direct3D FF" : "Direct3D", 9, var1.Description, var1.DriverVersion, this.method16279());
 	}
 
 	@ObfuscatedName("aqd.l(II)V")
@@ -806,26 +806,26 @@ public class Direct3DRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqd.uz(Lck;Ldg;II)Llz;")
 	public GpuTexture method16030(TextureFormat arg0, DataType arg1, int arg2, int arg3) {
-		return new class925(this, arg0, arg1, arg2, arg3);
+		return new Direct3DTexture(this, arg0, arg1, arg2, arg3);
 	}
 
 	@ObfuscatedName("aqd.uj(IIZ[III)Llz;")
 	public GpuTexture method16033(int arg0, int arg1, boolean arg2, int[] arg3, int arg4, int arg5) {
-		return new class925(this, arg0, arg1, arg2, arg3, arg4, arg5);
+		return new Direct3DTexture(this, arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@ObfuscatedName("aqd.ug(Lck;IIZ[BII)Llz;")
 	public GpuTexture method15975(TextureFormat arg0, int arg1, int arg2, boolean arg3, byte[] arg4, int arg5, int arg6) {
-		return new class925(this, arg0, arg1, arg2, arg3, arg4, arg5, arg6);
+		return new Direct3DTexture(this, arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@ObfuscatedName("aqd.ub(Lck;IIZ[FII)Llz;")
 	public GpuTexture method16032(TextureFormat arg0, int arg1, int arg2, boolean arg3, float[] arg4, int arg5, int arg6) {
-		return new class925(this, arg0, arg1, arg2, arg3, arg4, arg5, arg6);
+		return new Direct3DTexture(this, arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@ObfuscatedName("aqd.uy(Lck;Ldg;II)Lmo;")
-	public class359 method16089(TextureFormat arg0, DataType arg1, int arg2, int arg3) {
+	public Texture2 method16089(TextureFormat arg0, DataType arg1, int arg2, int arg3) {
 		return new class926(this, arg0, arg1, arg2, arg3);
 	}
 
@@ -850,7 +850,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.ahp(Laiy;)V")
-	public final void method19002(class925 arg0) {
+	public final void method19002(Direct3DTexture arg0) {
 		this.method19001(arg0);
 		if (this.field11965[this.field10177] != arg0.field10669) {
 			IDirect3DDevice.SetSamplerState(this.device, this.field10177, 1, arg0.field10669 ? 1 : 3);
@@ -1135,12 +1135,12 @@ public class Direct3DRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqd.vc(Z)Lml;")
 	public final IndexBuffer method16067(boolean arg0) {
-		return new class403(this, DataType.UNSIGNED_INT_16, arg0);
+		return new Direct3DIndexBuffer(this, DataType.UNSIGNED_INT_16, arg0);
 	}
 
 	@ObfuscatedName("aqd.vn(Z)Llr;")
 	public final VertexBuffer method16085(boolean arg0) {
-		return new class409(this, arg0);
+		return new Direct3DVertexBuffer(this, arg0);
 	}
 
 	@ObfuscatedName("aqd.vf([Llk;)Llo;")
@@ -1156,13 +1156,13 @@ public class Direct3DRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqd.wn(ILlr;)V")
 	public void method16120(int arg0, VertexBuffer arg1) {
-		class409 var3 = (class409) arg1;
+		Direct3DVertexBuffer var3 = (Direct3DVertexBuffer) arg1;
 		IDirect3DDevice.SetStreamSource(this.device, arg0, var3.field4227, 0, var3.method6229());
 	}
 
 	@ObfuscatedName("aqd.wa(Lml;)V")
 	public void method16102(IndexBuffer arg0) {
-		IDirect3DDevice.SetIndices(this.device, ((class403) arg0).field4213);
+		IDirect3DDevice.SetIndices(this.device, ((Direct3DIndexBuffer) arg0).field4213);
 	}
 
 	@ObfuscatedName("aqd.wz(Lms;II)V")
@@ -1178,7 +1178,7 @@ public class Direct3DRenderer extends GpuRenderer {
 		if (this.field11972 != null) {
 			this.field11972.method16476();
 		}
-		IDirect3DDevice.DrawIndexedPrimitiveIB(this.device, ((class403) arg0).field4213, 4, 0, arg2, arg3, arg4, arg5);
+		IDirect3DDevice.DrawIndexedPrimitiveIB(this.device, ((Direct3DIndexBuffer) arg0).field4213, 4, 0, arg2, arg3, arg4, arg5);
 	}
 
 	@ObfuscatedName("aqd.we(Lms;IIII)V")

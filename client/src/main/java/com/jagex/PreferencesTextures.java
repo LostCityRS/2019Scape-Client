@@ -5,11 +5,11 @@ import deob.ObfuscatedName;
 @ObfuscatedName("amn")
 public class PreferencesTextures extends PreferencesOption {
 
-	public PreferencesTextures(Preferences arg0) {
+	public PreferencesTextures(ClientOptions arg0) {
 		super(arg0);
 	}
 
-	public PreferencesTextures(int arg0, Preferences arg1) {
+	public PreferencesTextures(int arg0, ClientOptions arg1) {
 		super(arg0, arg1);
 	}
 

@@ -6,16 +6,16 @@ import deob.ObfuscatedName;
 public interface class365 {
 
 	@ObfuscatedName("mu.o(ILnd;Lmw;I)V")
-	void method3774(int arg0, class372 arg1, class370 arg2, int arg3);
+	void method3774(int arg0, AudioFormat arg1, AudioEndianness arg2, int arg3);
 
 	@ObfuscatedName("mu.w(Lalw;)V")
 	void method3726(Packet arg0);
 
 	@ObfuscatedName("mu.r()Lnd;")
-	class372 method3733();
+	AudioFormat method3733();
 
 	@ObfuscatedName("mu.v()Lmw;")
-	class370 method3734();
+	AudioEndianness method3734();
 
 	@ObfuscatedName("mu.q()I")
 	int method3722();

@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("ff")
-public class BackgroundEffectsVolumeProvider implements class368 {
+public class BackgroundEffectsVolumeProvider implements VolumeProvider {
 
 	// $FF: synthetic field
 	public final AudioApi this$0;

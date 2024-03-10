@@ -5,11 +5,11 @@ import deob.ObfuscatedName;
 @ObfuscatedName("amx")
 public class PreferencesScreenSize extends PreferencesOption {
 
-	public PreferencesScreenSize(Preferences arg0) {
+	public PreferencesScreenSize(ClientOptions arg0) {
 		super(arg0);
 	}
 
-	public PreferencesScreenSize(int arg0, Preferences arg1) {
+	public PreferencesScreenSize(int arg0, ClientOptions arg1) {
 		super(arg0, arg1);
 	}
 

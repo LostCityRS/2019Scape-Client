@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aof")
-public class BASTypeList extends class758 {
+public class BASTypeList extends CachingConfigTypeList {
 
 	@ObfuscatedName("aof.w")
 	public static BASType field11886 = new BASType(-1);

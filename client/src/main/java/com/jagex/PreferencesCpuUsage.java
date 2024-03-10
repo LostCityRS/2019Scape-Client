@@ -5,11 +5,11 @@ import deob.ObfuscatedName;
 @ObfuscatedName("ank")
 public class PreferencesCpuUsage extends PreferencesOption {
 
-	public PreferencesCpuUsage(Preferences arg0) {
+	public PreferencesCpuUsage(ClientOptions arg0) {
 		super(arg0);
 	}
 
-	public PreferencesCpuUsage(int arg0, Preferences arg1) {
+	public PreferencesCpuUsage(int arg0, ClientOptions arg1) {
 		super(arg0, arg1);
 	}
 

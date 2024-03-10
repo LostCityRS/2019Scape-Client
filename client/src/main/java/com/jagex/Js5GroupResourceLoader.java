@@ -22,7 +22,7 @@ public class Js5GroupResourceLoader implements ResourceLoader {
 	}
 
 	@ObfuscatedName("pk.n(B)Lacv;")
-	public class773 method6781() {
-		return class773.field8912;
+	public LoadableResourceType method6781() {
+		return LoadableResourceType.field8912;
 	}
 }

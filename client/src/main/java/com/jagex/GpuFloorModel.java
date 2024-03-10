@@ -322,7 +322,7 @@ public class GpuFloorModel extends FloorModel {
 		this.field9520 = this.field9516.method16151(this.field9511 * 4);
 		this.field9521 = this.field9516.method16151(this.field9522 * this.field9511);
 		class981[] var5 = new class981[this.field9511];
-		int var6 = class783.method3082(this.field9511 / 4);
+		int var6 = IntMath.method3082(this.field9511 / 4);
 		if (var6 < 1) {
 			var6 = 1;
 		}
@@ -400,7 +400,7 @@ public class GpuFloorModel extends FloorModel {
 			var27[var28] = var29.field6760;
 			this.field9496[var28] = var29;
 		}
-		class664.method10210(var27, this.field9496);
+		Algorithms.method10210(var27, this.field9496);
 		this.method15413();
 	}
 

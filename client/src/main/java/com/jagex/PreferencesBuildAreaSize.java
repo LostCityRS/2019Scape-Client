@@ -5,11 +5,11 @@ import deob.ObfuscatedName;
 @ObfuscatedName("anv")
 public class PreferencesBuildAreaSize extends PreferencesOption {
 
-	public PreferencesBuildAreaSize(Preferences arg0) {
+	public PreferencesBuildAreaSize(ClientOptions arg0) {
 		super(arg0);
 	}
 
-	public PreferencesBuildAreaSize(int arg0, Preferences arg1) {
+	public PreferencesBuildAreaSize(int arg0, ClientOptions arg1) {
 		super(arg0, arg1);
 	}
 

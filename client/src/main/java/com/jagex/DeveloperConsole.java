@@ -286,7 +286,7 @@ public class DeveloperConsole {
 				return;
 			}
 			if (arg0.equals("renderer")) {
-				class108 var3 = Statics.field8198.method2272();
+				RendererInfo var3 = Statics.field8198.method2272();
 				addline("Toolkit ID: " + Statics.field688.displayMode2.method18545());
 				addline("Vendor: " + var3.field1261);
 				addline("Name: " + var3.field1257);
@@ -371,7 +371,7 @@ public class DeveloperConsole {
 						return;
 					}
 					String var14 = var11.substring(var12 + 1).trim() + ".runescape.com";
-					class750.method2105(var14, var9);
+					WorldSwitcher.method2105(var14, var9);
 					addline("Success");
 					return;
 				}
@@ -380,7 +380,7 @@ public class DeveloperConsole {
 					if (Statics.field688.displayMode2.method18545() == 0) {
 						addline("Success");
 						Statics.field688.method18157(Statics.field688.displayMode, 0);
-						class48.method16391();
+						Preferences.method16391();
 						client.field10800 = false;
 					} else {
 						addline("Failure");
@@ -392,7 +392,7 @@ public class DeveloperConsole {
 					if (Statics.field688.displayMode2.method18545() == 1) {
 						addline("Success");
 						Statics.field688.method18157(Statics.field688.displayMode, 1);
-						class48.method16391();
+						Preferences.method16391();
 						client.field10800 = false;
 					} else {
 						addline("Failure");
@@ -404,7 +404,7 @@ public class DeveloperConsole {
 					if (Statics.field688.displayMode2.method18545() == 3) {
 						addline("Success");
 						Statics.field688.method18157(Statics.field688.displayMode, 3);
-						class48.method16391();
+						Preferences.method16391();
 						client.field10800 = false;
 					} else {
 						addline("Failure");
@@ -416,7 +416,7 @@ public class DeveloperConsole {
 					if (Statics.field688.displayMode2.method18545() == 5) {
 						addline("Success");
 						Statics.field688.method18157(Statics.field688.displayMode, 5);
-						class48.method16391();
+						Preferences.method16391();
 						client.field10800 = false;
 					} else {
 						addline("Failure");
@@ -506,7 +506,7 @@ public class DeveloperConsole {
 						addline("No such file");
 						return;
 					}
-					byte[] var28 = class751.method3587(var27);
+					byte[] var28 = FileUtil.method3587(var27);
 					if (var28 == null) {
 						addline("Failed to read file");
 						return;

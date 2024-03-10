@@ -174,7 +174,7 @@ public class QuestType implements ConfigType {
 		} else if (arg1 == 249) {
 			int var17 = arg0.g1();
 			if (this.field2650 == null) {
-				int var18 = class783.method16657(var17);
+				int var18 = IntMath.method16657(var17);
 				this.field2650 = new IterableMap(var18);
 			}
 			for (int var19 = 0; var19 < var17; var19++) {

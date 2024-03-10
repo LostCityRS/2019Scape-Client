@@ -8,12 +8,12 @@ import java.util.Iterator;
 public class class765 implements Iterator {
 
 	// $FF: synthetic field
-	public final class758 this$0;
+	public final CachingConfigTypeList this$0;
 
 	@ObfuscatedName("acm.e")
 	public int field8852;
 
-	public class765(class758 arg0) {
+	public class765(CachingConfigTypeList arg0) {
 		this.this$0 = arg0;
 	}
 

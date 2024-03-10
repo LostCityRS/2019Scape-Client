@@ -811,7 +811,7 @@ public class LoginManager {
 					Statics.field4490.field12062 = Statics.field4490.field12057 = Statics.field12492 = var36.gjstr2();
 					Statics.field5009 = var36.g1();
 					Statics.field6729 = var36.g4s();
-					Statics.field9200 = new class749();
+					Statics.field9200 = new ServerAddress();
 					Statics.field9200.node = var36.g2();
 					if (Statics.field9200.node == 65535) {
 						Statics.field9200.node = -1;
@@ -820,7 +820,7 @@ public class LoginManager {
 					Statics.field9200.port = var36.g2();
 					Statics.field9200.port2 = var36.g2();
 					if (Statics.field1811 != ModeWhere.field8277 && (Statics.field1811 != ModeWhere.field8269 || client.field10949 < 2) && Statics.field8755.method14757(Statics.world)) {
-						class750.method10337();
+						WorldSwitcher.method10337();
 					}
 				} else {
 					return;

@@ -32,12 +32,12 @@ public class class323 {
 		if (Statics.field3230 == null) {
 			WaterUnknownGenerator var0 = new WaterUnknownGenerator();
 			byte[] var1 = var0.method19228(128, 128, 16);
-			Statics.field3230 = class703.method2821(var1, false);
+			Statics.field3230 = ByteArrayCopier.method2821(var1, false);
 		}
 		if (Statics.field3231 == null) {
 			WaterBillowGenerator var2 = new WaterBillowGenerator();
 			byte[] var3 = var2.method19218(128, 128, 16);
-			Statics.field3231 = class703.method2821(var3, false);
+			Statics.field3231 = ByteArrayCopier.method2821(var3, false);
 		}
 	}
 
@@ -53,19 +53,19 @@ public class class323 {
 		if (this.field3229 || this.field3223.method16026(TextureFormat.field1272, DataType.UNSIGNED_INT_8)) {
 			method5410();
 			if (this.field3229) {
-				byte[] var6 = class703.method4540(Statics.field3230, false);
+				byte[] var6 = ByteArrayCopier.method4540(Statics.field3230, false);
 				this.field3226 = this.field3223.method16197(TextureFormat.field1272, 128, 128, 16, true, var6);
-				byte[] var7 = class703.method4540(Statics.field3231, false);
+				byte[] var7 = ByteArrayCopier.method4540(Statics.field3231, false);
 				this.field3228 = this.field3223.method16197(TextureFormat.field1272, 128, 128, 16, true, var7);
 			} else {
 				this.field3232 = new GpuTexture[16];
 				for (int var2 = 0; var2 < 16; var2++) {
-					byte[] var3 = class703.method6024(Statics.field3230, var2 * 32768, 32768);
+					byte[] var3 = ByteArrayCopier.method6024(Statics.field3230, var2 * 32768, 32768);
 					this.field3232[var2] = this.field3223.method16028(TextureFormat.field1272, 128, 128, true, var3);
 				}
 				this.field3227 = new GpuTexture[16];
 				for (int var4 = 0; var4 < 16; var4++) {
-					byte[] var5 = class703.method6024(Statics.field3231, var4 * 32768, 32768);
+					byte[] var5 = ByteArrayCopier.method6024(Statics.field3231, var4 * 32768, 32768);
 					this.field3227[var4] = this.field3223.method16028(TextureFormat.field1272, 128, 128, true, var5);
 				}
 			}
@@ -85,9 +85,9 @@ public class class323 {
 		if (this.field3224 == null) {
 			if (Statics.field3225 == null) {
 				byte[] var1 = class534.method8451(128, 128, 16, 8, new class1003(419684), 4.0F, 4.0F, 16.0F, 0.5F, 0.6F);
-				Statics.field3225 = class703.method2821(var1, false);
+				Statics.field3225 = ByteArrayCopier.method2821(var1, false);
 			}
-			byte[] var2 = class703.method4540(Statics.field3225, false);
+			byte[] var2 = ByteArrayCopier.method4540(Statics.field3225, false);
 			byte[] var3 = new byte[var2.length * 4];
 			int var4 = 0;
 			for (int var5 = 0; var5 < 16; var5++) {

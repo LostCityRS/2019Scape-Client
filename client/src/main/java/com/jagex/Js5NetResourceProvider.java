@@ -279,7 +279,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 				}
 				if (this.field10729.field4395 != null && this.field10729.field4395[arg0] != null) {
 					byte[] var14 = this.field10729.field4395[arg0];
-					byte[] var15 = class735.method18308(var4, 0, var4.length - 2);
+					byte[] var15 = Whirlpool.method18308(var4, 0, var4.length - 2);
 					for (int var16 = 0; var16 < 64; var16++) {
 						if (var14[var16] != var15[var16]) {
 							throw new RuntimeException();
@@ -334,7 +334,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 			}
 			if (this.field10729.field4395 != null && this.field10729.field4395[arg0] != null) {
 				byte[] var6 = this.field10729.field4395[arg0];
-				byte[] var7 = class735.method18308(var4, 0, var4.length - 2);
+				byte[] var7 = Whirlpool.method18308(var4, 0, var4.length - 2);
 				for (int var8 = 0; var8 < 64; var8++) {
 					if (var6[var8] != var7[var8]) {
 						throw new RuntimeException();

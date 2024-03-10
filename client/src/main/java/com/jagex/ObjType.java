@@ -501,7 +501,7 @@ public class ObjType implements ConfigType {
 			} else if (arg1 == 249) {
 				int var21 = arg0.g1();
 				if (this.field8690 == null) {
-					int var22 = class783.method16657(var21);
+					int var22 = IntMath.method16657(var21);
 					this.field8690 = new IterableMap(var22);
 				}
 				for (int var23 = 0; var23 < var21; var23++) {

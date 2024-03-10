@@ -5,11 +5,11 @@ import deob.ObfuscatedName;
 @ObfuscatedName("amt")
 public class PreferencesWaterDetail extends PreferencesOption {
 
-	public PreferencesWaterDetail(Preferences arg0) {
+	public PreferencesWaterDetail(ClientOptions arg0) {
 		super(arg0);
 	}
 
-	public PreferencesWaterDetail(int arg0, Preferences arg1) {
+	public PreferencesWaterDetail(int arg0, ClientOptions arg1) {
 		super(arg0, arg1);
 	}
 

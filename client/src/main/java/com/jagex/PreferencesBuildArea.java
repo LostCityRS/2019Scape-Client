@@ -5,11 +5,11 @@ import deob.ObfuscatedName;
 @ObfuscatedName("aml")
 public class PreferencesBuildArea extends PreferencesOption {
 
-	public PreferencesBuildArea(Preferences arg0) {
+	public PreferencesBuildArea(ClientOptions arg0) {
 		super(arg0);
 	}
 
-	public PreferencesBuildArea(int arg0, Preferences arg1) {
+	public PreferencesBuildArea(int arg0, ClientOptions arg1) {
 		super(arg0, arg1);
 	}
 

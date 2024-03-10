@@ -5,12 +5,12 @@ import deob.ObfuscatedName;
 @ObfuscatedName("amf")
 public class PreferencesParticles extends PreferencesOption {
 
-	public PreferencesParticles(Preferences arg0) {
+	public PreferencesParticles(ClientOptions arg0) {
 		super(arg0);
 		class633.method4293(this.field8416);
 	}
 
-	public PreferencesParticles(int arg0, Preferences arg1) {
+	public PreferencesParticles(int arg0, ClientOptions arg1) {
 		super(arg0, arg1);
 		class633.method4293(this.field8416);
 	}

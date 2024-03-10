@@ -5,11 +5,11 @@ import deob.ObfuscatedName;
 @ObfuscatedName("and")
 public class PreferencesBloom extends PreferencesOption {
 
-	public PreferencesBloom(Preferences arg0) {
+	public PreferencesBloom(ClientOptions arg0) {
 		super(arg0);
 	}
 
-	public PreferencesBloom(int arg0, Preferences arg1) {
+	public PreferencesBloom(int arg0, ClientOptions arg1) {
 		super(arg0, arg1);
 	}
 

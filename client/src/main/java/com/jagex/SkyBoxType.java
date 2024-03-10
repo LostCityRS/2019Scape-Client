@@ -15,7 +15,7 @@ public class SkyBoxType implements ConfigType, class757 {
 	public int[] field7232;
 
 	@ObfuscatedName("uv.k")
-	public class569 field7235 = class569.field7239;
+	public SkyBoxFillMode field7235 = SkyBoxFillMode.field7239;
 
 	@ObfuscatedName("uv.f")
 	public int field7236 = 0;
@@ -43,7 +43,7 @@ public class SkyBoxType implements ConfigType, class757 {
 		} else if (arg1 == 3) {
 			this.field7234 = arg0.g1();
 		} else if (arg1 == 4) {
-			this.field7235 = (class569) class686.method1897(class569.method8341(), arg0.g1());
+			this.field7235 = (SkyBoxFillMode) class686.method1897(SkyBoxFillMode.method8341(), arg0.g1());
 		} else if (arg1 == 5) {
 			this.field7236 = arg0.gSmart2or4null();
 		} else if (arg1 == 6) {
@@ -60,7 +60,7 @@ public class SkyBoxType implements ConfigType, class757 {
 	}
 
 	@ObfuscatedName("d.p(IIIILao;Lao;I)Lsv;")
-	public static class502 method305(int arg0, int arg1, int arg2, int arg3, ConfigTypeList arg4, ConfigTypeList arg5) {
+	public static SkyBox method305(int arg0, int arg1, int arg2, int arg3, ConfigTypeList arg4, ConfigTypeList arg5) {
 		class503[] var6 = null;
 		SkyBoxType var7 = (SkyBoxType) arg4.get(arg0);
 		if (var7.field7232 != null) {
@@ -70,6 +70,6 @@ public class SkyBoxType implements ConfigType, class757 {
 				var6[var8] = new class503(var9.field2780, var9.field2778, var9.field2783, var9.field2779, var9.field2777, var9.field2776, var9.field2782, var9.field2781, var9.field2784, var9.field2785, var9.field2786);
 			}
 		}
-		return new class502(var7.field7233, var6, var7.field7234, arg1, arg2, arg3, var7.field7235, var7.field7236);
+		return new SkyBox(var7.field7233, var6, var7.field7234, arg1, arg2, arg3, var7.field7235, var7.field7236);
 	}
 }

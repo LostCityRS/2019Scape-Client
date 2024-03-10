@@ -48,14 +48,14 @@ public class class657 {
 	}
 
 	@ObfuscatedName("afj.f(IIFLma;I)V")
-	public static void method16432(int arg0, int arg1, float arg2, class368 arg3) {
+	public static void method16432(int arg0, int arg1, float arg2, VolumeProvider arg3) {
 		if (field8056 != null) {
 			field8056.method5880().method5848(arg0, arg1, arg2, arg3);
 		}
 	}
 
 	@ObfuscatedName("lv.w(II)Lmj;")
-	public static class369 method5401(int arg0) {
+	public static AudioBuss method5401(int arg0) {
 		return field8056 == null ? null : field8056.method5880().method5851(arg0);
 	}
 }

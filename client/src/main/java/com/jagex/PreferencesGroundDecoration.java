@@ -5,11 +5,11 @@ import deob.ObfuscatedName;
 @ObfuscatedName("amc")
 public class PreferencesGroundDecoration extends PreferencesOption {
 
-	public PreferencesGroundDecoration(Preferences arg0) {
+	public PreferencesGroundDecoration(ClientOptions arg0) {
 		super(arg0);
 	}
 
-	public PreferencesGroundDecoration(int arg0, Preferences arg1) {
+	public PreferencesGroundDecoration(int arg0, ClientOptions arg1) {
 		super(arg0, arg1);
 	}
 

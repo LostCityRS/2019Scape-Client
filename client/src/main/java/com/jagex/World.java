@@ -993,8 +993,8 @@ public class World {
 			if (this.field5046 != var3) {
 				this.field5048 = client.field10903;
 			} else if (this.field5048 != 0 && client.field10903 - this.field5048 == 1000) {
-				class576.method5144(var5.field7958, var4.field7958, this.field5046);
-				class576.method9189();
+				GraphicsPacketQueue.method5144(var5.field7958, var4.field7958, this.field5046);
+				GraphicsPacketQueue.method9189();
 			}
 			if (this.field5047 < this.field5046) {
 				this.field5047 = this.field5046;

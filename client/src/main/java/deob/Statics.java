@@ -65,7 +65,7 @@ public class Statics {
 	public static long field10353;
 
 	@ObfuscatedName("agr.ti")
-	public static class724 field10354;
+	public static PrivateChatFilter field10354;
 
 	@ObfuscatedName("agr.x")
 	public static class140 field10355;
@@ -230,7 +230,7 @@ public class Statics {
 	public static Frame fsframe;
 
 	@ObfuscatedName("ari.ig")
-	public static class807 field12225;
+	public static VarBasicTypeListClient field12225;
 
 	@ObfuscatedName("cr.bi")
 	public static Sprite field1224;
@@ -377,7 +377,7 @@ public class Statics {
 	public static ModeWhere field1811;
 
 	@ObfuscatedName("fj.ie")
-	public static class807 field1819;
+	public static VarBasicTypeListClient field1819;
 
 	@ObfuscatedName("ft.fm")
 	public static Js5Client field1833;
@@ -386,7 +386,7 @@ public class Statics {
 	public static int field1839;
 
 	@ObfuscatedName("fv.hm")
-	public static class758 field1840;
+	public static CachingConfigTypeList field1840;
 
 	@ObfuscatedName("fv.bb")
 	public static class140 field1841;
@@ -464,7 +464,7 @@ public class Statics {
 	public static long field2012;
 
 	@ObfuscatedName("gb.do")
-	public static class377 field2013;
+	public static BasicParticleEffectorTypeList field2013;
 
 	@ObfuscatedName("hx.gq")
 	public static Js5 field2149;
@@ -647,7 +647,7 @@ public class Statics {
 	public static float field3325;
 
 	@ObfuscatedName("mz.iv")
-	public static class807 field3415;
+	public static VarBasicTypeListClient field3415;
 
 	@ObfuscatedName("mz.tk")
 	public static int field3416;
@@ -722,7 +722,7 @@ public class Statics {
 	public static String homeDir;
 
 	@ObfuscatedName("pm.e")
-	public static class775[] field4334;
+	public static LoadableResource[] field4334;
 
 	@ObfuscatedName("m.w")
 	public static long field434;
@@ -920,7 +920,7 @@ public class Statics {
 	public static LoadingScreenRenderer field593;
 
 	@ObfuscatedName("x.jm")
-	public static class667 field594;
+	public static PingRequest field594;
 
 	@ObfuscatedName("b.ap")
 	public static int archiveCount;
@@ -1154,7 +1154,7 @@ public class Statics {
 	public static Js5 field6879;
 
 	@ObfuscatedName("ac.dz")
-	public static Preferences field688;
+	public static ClientOptions field688;
 
 	@ObfuscatedName("tg.fj")
 	public static Js5NetResourceProvider[] field6888;
@@ -1214,7 +1214,7 @@ public class Statics {
 	public static Sprite field7207;
 
 	@ObfuscatedName("uk.sr")
-	public static class861 field7228;
+	public static ClientVariableManager field7228;
 
 	@ObfuscatedName("uy.ut")
 	public static int field7231;
@@ -1232,7 +1232,7 @@ public class Statics {
 	public static WorldMapAreaMetadata field7280;
 
 	@ObfuscatedName("uo.dt")
-	public static class380 field7282;
+	public static BasicParticleEmitterTypeList field7282;
 
 	@ObfuscatedName("vq.fo")
 	public static Js5 field7283;
@@ -1307,7 +1307,7 @@ public class Statics {
 	public static Js5 field7537;
 
 	@ObfuscatedName("vh.gj")
-	public static class402 field7538;
+	public static FontProvider field7538;
 
 	@ObfuscatedName("au.vk")
 	public static List field754;
@@ -1364,7 +1364,7 @@ public class Statics {
 	public static int field768;
 
 	@ObfuscatedName("wh.sq")
-	public static class150 field7698;
+	public static SparseVarDomain field7698;
 
 	@ObfuscatedName("ww.hj")
 	public static StructTypeList field7713;
@@ -1382,7 +1382,7 @@ public class Statics {
 	public static class117 field7832;
 
 	@ObfuscatedName("xu.m")
-	public static class502 field7846;
+	public static SkyBox field7846;
 
 	@ObfuscatedName("xv.el")
 	public static boolean field7880;
@@ -1430,7 +1430,7 @@ public class Statics {
 	public static int field810;
 
 	@ObfuscatedName("yj.iq")
-	public static class807 field8135;
+	public static VarBasicTypeListClient field8135;
 
 	@ObfuscatedName("ys.hl")
 	public static FloorUnderlayTypeList field8145;
@@ -1568,25 +1568,25 @@ public class Statics {
 	public static Js5 field8741;
 
 	@ObfuscatedName("abz.n")
-	public static class749 content;
+	public static ServerAddress content;
 
 	@ObfuscatedName("abz.e")
-	public static class749 lobby;
+	public static ServerAddress lobby;
 
 	@ObfuscatedName("abz.f")
-	public static class749 world;
+	public static ServerAddress world;
 
 	@ObfuscatedName("abz.l")
-	public static class749 field8753;
+	public static ServerAddress field8753;
 
 	@ObfuscatedName("abz.k")
-	public static class749 field8755;
+	public static ServerAddress field8755;
 
 	@ObfuscatedName("abz.m")
-	public static class749 httpContent;
+	public static ServerAddress httpContent;
 
 	@ObfuscatedName("abm.io")
-	public static class807 field8783;
+	public static VarBasicTypeListClient field8783;
 
 	@ObfuscatedName("abx.be")
 	public static FontMetrics field8786;
@@ -1607,13 +1607,13 @@ public class Statics {
 	public static int field8910;
 
 	@ObfuscatedName("acw.hv")
-	public static class807 field8911;
+	public static VarBasicTypeListClient field8911;
 
 	@ObfuscatedName("bf.al")
 	public static int[] field894;
 
 	@ObfuscatedName("acz.gi")
-	public static class758 field9123;
+	public static CachingConfigTypeList field9123;
 
 	@ObfuscatedName("acp.k")
 	public static int[] field9124;
@@ -1658,13 +1658,13 @@ public class Statics {
 	public static class140 field9184;
 
 	@ObfuscatedName("adz.w")
-	public static class749 field9200;
+	public static ServerAddress field9200;
 
 	@ObfuscatedName("adg.l")
 	public static int field9210;
 
 	@ObfuscatedName("adg.da")
-	public static class382 field9211;
+	public static BasicBillboardTypeList field9211;
 
 	@ObfuscatedName("adn.fc")
 	public static Js5 field9213;
@@ -2169,12 +2169,12 @@ public class Statics {
 		} else if (arg0 == arg1) {
 			return true;
 		} else {
-			class369 var2 = class657.field8056.method5880().method5851(arg0);
-			class369 var3 = class657.field8056.method5880().method5851(arg1);
-			class369 var4 = var2;
+			AudioBuss var2 = class657.field8056.method5880().method5851(arg0);
+			AudioBuss var3 = class657.field8056.method5880().method5851(arg1);
+			AudioBuss var4 = var2;
 			do {
 				if (var4 == null) {
-					class369 var5 = var3;
+					AudioBuss var5 = var3;
 					do {
 						if (var5 == null) {
 							return false;
@@ -2199,11 +2199,11 @@ public class Statics {
 	public static String method4984(long arg0, int arg1, boolean arg2) {
 		Calendar var4;
 		if (arg2) {
-			class786.method485(arg0);
-			var4 = class786.field9163;
+			TimeFormatter.method485(arg0);
+			var4 = TimeFormatter.field9163;
 		} else {
-			class786.method4389(arg0);
-			var4 = class786.field9161;
+			TimeFormatter.method4389(arg0);
+			var4 = TimeFormatter.field9161;
 		}
 		int var5 = var4.get(5);
 		int var6 = var4.get(2) + 1;
@@ -2270,15 +2270,15 @@ public class Statics {
 			return;
 		}
 		WorldList.method570(field7415.data);
-		class750.field8748 = new WorldListEntryInfo[field533];
+		WorldSwitcher.field8748 = new WorldListEntryInfo[field533];
 		int var2 = 0;
 		for (int var3 = field7414; var3 <= field3011; var3++) {
 			WorldListEntryInfo var4 = WorldList.method4944(var3);
 			if (var4 != null) {
-				class750.field8748[var2++] = var4;
+				WorldSwitcher.field8748[var2++] = var4;
 			}
 		}
-		class750.field8754 = false;
+		WorldSwitcher.field8754 = false;
 		field2826 = MonotonicTime.method3655();
 		field7415 = null;
 	}
@@ -4832,14 +4832,14 @@ public class Statics {
 		int var1 = arg0.field8216[--arg0.field8226];
 		field688.method18157(field688.brightness, var1);
 		client.world.method7753();
-		class48.method16391();
+		Preferences.method16391();
 		client.field10800 = false;
 	}
 
 	@ObfuscatedName("any.arn(Lyf;I)V")
 	public static final void method18661(ClientScriptState arg0) {
 		field688.method18157(field688.flickeringEffects, arg0.field8216[--arg0.field8226] == 1 ? 1 : 0);
-		class48.method16391();
+		Preferences.method16391();
 		client.field10800 = false;
 	}
 
@@ -4849,7 +4849,7 @@ public class Statics {
 		int var2 = field688.themeMusicVolume3.method18763();
 		if (var1 != var2) {
 			field688.method18157(field688.themeMusicVolume3, var1);
-			class48.method16391();
+			Preferences.method16391();
 			client.field10800 = false;
 		}
 	}
@@ -4857,7 +4857,7 @@ public class Statics {
 	@ObfuscatedName("py.asz(Lyf;I)V")
 	public static final void method6965(ClientScriptState arg0) {
 		field688.method18157(field688.customCursors, arg0.field8216[--arg0.field8226] == 0 ? 0 : 1);
-		class48.method16391();
+		Preferences.method16391();
 	}
 
 	@ObfuscatedName("ul.atz(Lyf;I)V")
@@ -5017,7 +5017,7 @@ public class Statics {
 		class792 var3 = client.method146(var1);
 		if (var3 == null) {
 			throw new RuntimeException();
-		} else if (class791.method746(var1) != client.field10767) {
+		} else if (DbTableUtil.method746(var1) != client.field10767) {
 			throw new RuntimeException();
 		} else if (field754 == null && field754.isEmpty()) {
 			throw new RuntimeException();

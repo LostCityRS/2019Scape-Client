@@ -27,7 +27,7 @@ public class Js5MasterIndex {
 		if (var8.length != 65) {
 			throw new RuntimeException();
 		}
-		byte[] var9 = class735.method18308(arg0.data, 5, arg0.pos - var5.length - 5);
+		byte[] var9 = Whirlpool.method18308(arg0.data, 5, arg0.pos - var5.length - 5);
 		for (int var10 = 0; var10 < 64; var10++) {
 			if (var8[var10 + 1] != var9[var10]) {
 				throw new RuntimeException();

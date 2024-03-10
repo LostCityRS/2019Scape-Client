@@ -102,7 +102,7 @@ public class HardwarePlatformLoader implements class499 {
 			throw new HardwarePlatformLoaderException(5, arg0);
 		}
 		boolean var10 = true;
-		byte[] var11 = class751.method3587(var8);
+		byte[] var11 = FileUtil.method3587(var8);
 		if (var11 != null && var6.length == var11.length) {
 			for (int var12 = 0; var12 < var11.length; var12++) {
 				if (var6[var12] != var11[var12]) {

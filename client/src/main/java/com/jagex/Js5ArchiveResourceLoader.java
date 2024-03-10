@@ -18,7 +18,7 @@ public class Js5ArchiveResourceLoader implements ResourceLoader {
 	}
 
 	@ObfuscatedName("pw.n(B)Lacv;")
-	public class773 method6781() {
-		return class773.field8914;
+	public LoadableResourceType method6781() {
+		return LoadableResourceType.field8914;
 	}
 }

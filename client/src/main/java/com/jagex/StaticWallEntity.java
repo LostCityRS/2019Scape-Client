@@ -66,7 +66,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 		if (arg3.field7525) {
 			var15 |= 0x80000;
 		}
-		class746 var16 = this.method17420(arg1, var15, this.field11172);
+		Pair var16 = this.method17420(arg1, var15, this.field11172);
 		if (var16 != null) {
 			this.field11173 = (Model) var16.field8737;
 			this.field11163 = (HardShadow) var16.field8738;
@@ -110,13 +110,13 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 		if (this.field11173 != null && arg0.method2394(this.field11173.method1691(), arg1) == 0) {
 			return this.field11173;
 		} else {
-			class746 var3 = this.method17420(arg0, arg1, false);
+			Pair var3 = this.method17420(arg0, arg1, false);
 			return var3 == null ? null : (Model) var3.field8737;
 		}
 	}
 
 	@ObfuscatedName("ajg.br(Ldh;IZI)Labg;")
-	public class746 method17420(Renderer arg0, int arg1, boolean arg2) {
+	public Pair method17420(Renderer arg0, int arg1, boolean arg2) {
 		LocType var4 = (LocType) this.field11162.get(this.field11166);
 		FloorModel var5;
 		FloorModel var6;
@@ -245,7 +245,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 		Object var2 = null;
 		HardShadow var4;
 		if (this.field11163 == null && this.field11172) {
-			class746 var3 = this.method17420(arg0, 262144, true);
+			Pair var3 = this.method17420(arg0, 262144, true);
 			var4 = (HardShadow) (var3 == null ? null : var3.field8738);
 		} else {
 			var4 = this.field11163;
@@ -262,7 +262,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 		Object var2 = null;
 		HardShadow var4;
 		if (this.field11163 == null && this.field11172) {
-			class746 var3 = this.method17420(arg0, 262144, true);
+			Pair var3 = this.method17420(arg0, 262144, true);
 			var4 = (HardShadow) (var3 == null ? null : var3.field8738);
 		} else {
 			var4 = this.field11163;

@@ -6,17 +6,17 @@ import deob.ObfuscatedName;
 public abstract class PreferencesOption {
 
 	@ObfuscatedName("zf.k")
-	public Preferences field8417;
+	public ClientOptions field8417;
 
 	@ObfuscatedName("zf.f")
 	public int field8416;
 
-	public PreferencesOption(Preferences arg0) {
+	public PreferencesOption(ClientOptions arg0) {
 		this.field8417 = arg0;
 		this.field8416 = this.method14069();
 	}
 
-	public PreferencesOption(int arg0, Preferences arg1) {
+	public PreferencesOption(int arg0, ClientOptions arg1) {
 		this.field8416 = arg0;
 		this.field8417 = arg1;
 	}

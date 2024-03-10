@@ -56,7 +56,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 		if (arg3.field7525) {
 			var14 |= 0x80000;
 		}
-		class746 var15 = this.method17436(arg1, var14, this.field11193);
+		Pair var15 = this.method17436(arg1, var14, this.field11193);
 		if (var15 != null) {
 			this.field11192 = (Model) var15.field8737;
 			this.field11186 = (HardShadow) var15.field8738;
@@ -95,13 +95,13 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 		if (this.field11192 != null && arg0.method2394(this.field11192.method1691(), arg1) == 0) {
 			return this.field11192;
 		} else {
-			class746 var3 = this.method17436(arg0, arg1, false);
+			Pair var3 = this.method17436(arg0, arg1, false);
 			return var3 == null ? null : (Model) var3.field8737;
 		}
 	}
 
 	@ObfuscatedName("ajz.bv(Ldh;IZI)Labg;")
-	public class746 method17436(Renderer arg0, int arg1, boolean arg2) {
+	public Pair method17436(Renderer arg0, int arg1, boolean arg2) {
 		LocType var4 = (LocType) this.field11185.get(this.field11715);
 		FloorModel var5;
 		FloorModel var6;
@@ -225,7 +225,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 		Object var2 = null;
 		HardShadow var4;
 		if (this.field11186 == null && this.field11193) {
-			class746 var3 = this.method17436(arg0, 262144, true);
+			Pair var3 = this.method17436(arg0, 262144, true);
 			var4 = (HardShadow) (var3 == null ? null : var3.field8738);
 		} else {
 			var4 = this.field11186;
@@ -242,7 +242,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 		Object var2 = null;
 		HardShadow var4;
 		if (this.field11186 == null && this.field11193) {
-			class746 var3 = this.method17436(arg0, 262144, true);
+			Pair var3 = this.method17436(arg0, 262144, true);
 			var4 = (HardShadow) (var3 == null ? null : var3.field8738);
 		} else {
 			var4 = this.field11186;

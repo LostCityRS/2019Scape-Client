@@ -207,7 +207,7 @@ public class SeqType implements ConfigType {
 			} else if (arg1 == 249) {
 				int var11 = arg0.g1();
 				if (this.field1785 == null) {
-					int var12 = class783.method16657(var11);
+					int var12 = IntMath.method16657(var11);
 					this.field1785 = new IterableMap(var12);
 				}
 				for (int var13 = 0; var13 < var11; var13++) {

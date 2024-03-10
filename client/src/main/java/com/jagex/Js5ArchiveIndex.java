@@ -72,7 +72,7 @@ public class Js5ArchiveIndex {
 			if (arg2.length != 64) {
 				throw new RuntimeException();
 			}
-			this.field4384 = class735.method18308(arg0, 0, arg0.length);
+			this.field4384 = Whirlpool.method18308(arg0, 0, arg0.length);
 			for (int var4 = 0; var4 < 64; var4++) {
 				if (this.field4384[var4] != arg2[var4]) {
 					throw new RuntimeException();

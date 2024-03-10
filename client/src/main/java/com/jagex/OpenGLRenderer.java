@@ -346,7 +346,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.f()Lcz;")
-	public class108 method2272() {
+	public RendererInfo method2272() {
 		int var1 = -1;
 		if (this.field12037.indexOf("nvidia") != -1) {
 			var1 = 4318;
@@ -355,7 +355,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 		} else if (this.field12037.indexOf("ati") != -1) {
 			var1 = 4098;
 		}
-		return new class108(var1, this.method16279() ? "OpenGL FF" : "OpenGL", this.field11999, this.field12001, 0L, this.method16279());
+		return new RendererInfo(var1, this.method16279() ? "OpenGL FF" : "OpenGL", this.field11999, this.field12001, 0L, this.method16279());
 	}
 
 	@ObfuscatedName("aqv.l(II)V")
@@ -852,7 +852,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.uy(Lck;Ldg;II)Lmo;")
-	public class359 method16089(TextureFormat arg0, DataType arg1, int arg2, int arg3) {
+	public Texture2 method16089(TextureFormat arg0, DataType arg1, int arg2, int arg3) {
 		return new class927(this, arg0, arg1, arg2, arg3);
 	}
 

@@ -164,7 +164,7 @@ public abstract class NoiseGenerator3D {
 		}
 		for (int var3 = 0; var3 < 255; var3++) {
 			int var4 = 255 - var3;
-			int var5 = class783.method14985(var1, var4);
+			int var5 = IntMath.method14985(var1, var4);
 			short var6 = this.field4193[var5];
 			this.field4193[var5] = this.field4193[var4];
 			this.field4193[var4] = this.field4193[var4 + 256] = var6;

@@ -179,7 +179,7 @@ public class DynamicLoc {
 			if (this.field6669 != null) {
 				arg1 |= this.field6669.method1691();
 			}
-			class746 var11 = var5.method9475(arg0, arg1, this.field6666 == 11 ? 10 : this.field6666, this.field6666 == 11 ? this.field6667 + 4 : this.field6667, var8, var9, (int) var6.field4308, var8.method1527((int) var6.field4308, (int) var6.field4313), (int) var6.field4313, arg3, this.field6678);
+			Pair var11 = var5.method9475(arg0, arg1, this.field6666 == 11 ? 10 : this.field6666, this.field6666 == 11 ? this.field6667 + 4 : this.field6667, var8, var9, (int) var6.field4308, var8.method1527((int) var6.field4308, (int) var6.field4313), (int) var6.field4313, arg3, this.field6678);
 			if (var11 == null) {
 				this.field6679 = null;
 				this.field6677 = null;

@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("wu")
-public final class VarPlayerDomain implements class152 {
+public final class VarPlayerDomain implements VarDomain {
 
 	@ObfuscatedName("wu.f")
 	public int[] field7604 = new int[Statics.field8485.size()];

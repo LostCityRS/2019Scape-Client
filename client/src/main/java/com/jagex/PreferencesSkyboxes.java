@@ -5,11 +5,11 @@ import deob.ObfuscatedName;
 @ObfuscatedName("ane")
 public class PreferencesSkyboxes extends PreferencesOption {
 
-	public PreferencesSkyboxes(Preferences arg0) {
+	public PreferencesSkyboxes(ClientOptions arg0) {
 		super(arg0);
 	}
 
-	public PreferencesSkyboxes(int arg0, Preferences arg1) {
+	public PreferencesSkyboxes(int arg0, ClientOptions arg1) {
 		super(arg0, arg1);
 	}
 

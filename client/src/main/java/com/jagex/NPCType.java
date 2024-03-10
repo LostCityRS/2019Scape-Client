@@ -494,7 +494,7 @@ public class NPCType implements ConfigType {
 				} else if (arg1 == 249) {
 					int var34 = arg0.g1();
 					if (this.field2753 == null) {
-						int var35 = class783.method16657(var34);
+						int var35 = IntMath.method16657(var34);
 						this.field2753 = new IterableMap(var35);
 					}
 					for (int var36 = 0; var36 < var34; var36++) {

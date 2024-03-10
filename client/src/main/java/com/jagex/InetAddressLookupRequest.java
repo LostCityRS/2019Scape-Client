@@ -25,13 +25,13 @@ public class InetAddressLookupRequest implements Runnable {
 	}
 
 	@ObfuscatedName("yz.e(Ljava/lang/String;B)Lyb;")
-	public class667 method10589(String arg0) {
+	public PingRequest method10589(String arg0) {
 		if (this.field8184 == null) {
 			throw new IllegalStateException("");
 		} else if (arg0 == null) {
 			throw new IllegalArgumentException("");
 		} else {
-			class667 var2 = new class667(arg0);
+			PingRequest var2 = new PingRequest(arg0);
 			this.method10575(var2);
 			return var2;
 		}
@@ -62,7 +62,7 @@ public class InetAddressLookupRequest implements Runnable {
 	public void run() {
 		while (true) {
 			Queue var1 = this.field8185;
-			class667 var4;
+			PingRequest var4;
 			synchronized (this.field8185) {
 				Object var2;
 				for (var2 = this.field8185.poll(); var2 == null; var2 = this.field8185.poll()) {
@@ -74,7 +74,7 @@ public class InetAddressLookupRequest implements Runnable {
 				if (this.field8183 == var2) {
 					return;
 				}
-				var4 = (class667) var2;
+				var4 = (PingRequest) var2;
 			}
 			int var7;
 			try {

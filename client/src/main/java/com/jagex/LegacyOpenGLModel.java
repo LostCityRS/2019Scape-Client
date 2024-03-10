@@ -334,7 +334,7 @@ public class LegacyOpenGLModel extends Model {
 			this.field9632 |= var31;
 			this.field9633 |= var16 != null && (var16.field1317 != 0.0F || var16.field1338 != 0.0F);
 		}
-		class664.method5114(var12, var9);
+		Algorithms.method5114(var12, var9);
 		this.field9634 = arg1.field1373;
 		this.field9635 = arg1.field1374;
 		this.field9636 = arg1.field1375;

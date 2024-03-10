@@ -31,7 +31,7 @@ public class Scene {
 	public final Renderer field6907;
 
 	@ObfuscatedName("tx.l")
-	public class767 field6912;
+	public SceneDebugging field6912;
 
 	@ObfuscatedName("tx.u")
 	public final boolean field6906;
@@ -214,7 +214,7 @@ public class Scene {
 		this.field6910 = arg3;
 		this.field6911 = arg4;
 		this.field6942 = arg5;
-		this.field6912 = new class767();
+		this.field6912 = new SceneDebugging();
 		this.field6930 = new class555(this);
 		this.field6904 = new class551[arg2][this.field6910][this.field6911];
 		this.field6915 = new FloorModel[arg2];

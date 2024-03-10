@@ -9,7 +9,7 @@ import java.util.Random;
 public class class777 {
 
 	@ObfuscatedName("acp.w")
-	public static class462 field9129 = new class462(16, class459.field4619);
+	public static PrioritizedCache field9129 = new PrioritizedCache(16, PrioritizedCacheMode.field4619);
 
 	public class777() throws Throwable {
 		throw new Error();
@@ -49,7 +49,7 @@ public class class777 {
 			}
 			for (int var4 = 0; var4 < 255; var4++) {
 				int var5 = 255 - var4;
-				int var6 = class783.method14985(var2, var5);
+				int var6 = IntMath.method14985(var2, var5);
 				byte var7 = var1[var6];
 				var1[var6] = var1[var5];
 				var1[var5] = var1[511 - var4] = var7;

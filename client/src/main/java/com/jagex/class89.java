@@ -35,7 +35,7 @@ public class class89 {
 	public final int field1140 = 1600;
 
 	@ObfuscatedName("cu.p")
-	public final int field1149 = class783.method8327(1600);
+	public final int field1149 = IntMath.method8327(1600);
 
 	@ObfuscatedName("cu.d")
 	public final int field1141 = 64;
@@ -95,7 +95,7 @@ public class class89 {
 			int var14 = var9 - var8;
 			int var15;
 			if (var14 + 2 > 1600) {
-				var15 = class783.method8327(var14) + 1 - this.field1149;
+				var15 = IntMath.method8327(var14) + 1 - this.field1149;
 				var14 = (var14 >> var15) + 2;
 			} else {
 				var15 = 0;

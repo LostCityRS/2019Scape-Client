@@ -50,7 +50,7 @@ public class QuickChatPhraseType extends SecondaryNode {
 			this.field12378 = new int[var5][];
 			for (int var6 = 0; var6 < var5; var6++) {
 				int var7 = arg0.g2();
-				class646 var8 = class646.method8897(var7);
+				QuickChatDynamicCommand var8 = QuickChatDynamicCommand.method8897(var7);
 				if (var8 != null) {
 					this.field12377[var6] = var7;
 					this.field12378[var6] = new int[var8.field7923];
@@ -83,7 +83,7 @@ public class QuickChatPhraseType extends SecondaryNode {
 		if (this.field12377 != null) {
 			for (int var3 = 0; var3 < this.field12377.length; var3++) {
 				var2.append(this.field12379[var3]);
-				var2.append(this.field12380.method14978(this.method19509(var3), this.field12378[var3], arg0.gVarLong(class646.method8897(this.field12377[var3]).field7940)));
+				var2.append(this.field12380.method14978(this.method19509(var3), this.field12378[var3], arg0.gVarLong(QuickChatDynamicCommand.method8897(this.field12377[var3]).field7940)));
 			}
 		}
 		var2.append(this.field12379[this.field12379.length - 1]);
@@ -112,8 +112,8 @@ public class QuickChatPhraseType extends SecondaryNode {
 	}
 
 	@ObfuscatedName("asq.l(IB)Lxs;")
-	public class646 method19509(int arg0) {
-		return this.field12377 == null || arg0 < 0 || arg0 > this.field12377.length ? null : class646.method8897(this.field12377[arg0]);
+	public QuickChatDynamicCommand method19509(int arg0) {
+		return this.field12377 == null || arg0 < 0 || arg0 > this.field12377.length ? null : QuickChatDynamicCommand.method8897(this.field12377[arg0]);
 	}
 
 	@ObfuscatedName("asq.u(III)I")

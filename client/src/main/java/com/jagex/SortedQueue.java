@@ -181,6 +181,6 @@ public class SortedQueue extends AbstractQueue {
 	}
 
 	public Iterator iterator() {
-		return new class385(this);
+		return new SortedQueueIterator(this);
 	}
 }

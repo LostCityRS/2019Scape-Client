@@ -350,7 +350,7 @@ public class PureJavaModel extends Model {
 			var11[var13] = ((long) var32 << 32) + (long) var34;
 			this.field9548 |= var30;
 		}
-		class664.method5114(var11, var9);
+		Algorithms.method5114(var11, var9);
 		if (arg1.field1412 != null) {
 			this.field9588 = arg1.field1412.length;
 			this.field9589 = new Billboard[this.field9588];

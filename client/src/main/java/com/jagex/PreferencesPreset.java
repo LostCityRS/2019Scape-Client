@@ -5,11 +5,11 @@ import deob.ObfuscatedName;
 @ObfuscatedName("anr")
 public class PreferencesPreset extends PreferencesOption {
 
-	public PreferencesPreset(Preferences arg0) {
+	public PreferencesPreset(ClientOptions arg0) {
 		super(arg0);
 	}
 
-	public PreferencesPreset(int arg0, Preferences arg1) {
+	public PreferencesPreset(int arg0, ClientOptions arg1) {
 		super(arg0, arg1);
 	}
 

@@ -53,7 +53,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 		if (arg3.field7525) {
 			var16 |= 0x80000;
 		}
-		class746 var17 = this.method17414(arg1, var16, this.field11158);
+		Pair var17 = this.method17414(arg1, var16, this.field11158);
 		if (var17 != null) {
 			this.field11150 = (Model) var17.field8737;
 			this.field11154 = (HardShadow) var17.field8738;
@@ -92,13 +92,13 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 		if (this.field11150 != null && arg0.method2394(this.field11150.method1691(), arg1) == 0) {
 			return this.field11150;
 		} else {
-			class746 var3 = this.method17414(arg0, arg1, false);
+			Pair var3 = this.method17414(arg0, arg1, false);
 			return var3 == null ? null : (Model) var3.field8737;
 		}
 	}
 
 	@ObfuscatedName("ajk.bv(Ldh;IZI)Labg;")
-	public class746 method17414(Renderer arg0, int arg1, boolean arg2) {
+	public Pair method17414(Renderer arg0, int arg1, boolean arg2) {
 		LocType var4 = (LocType) this.field11159.get(this.field11715);
 		FloorModel var5;
 		FloorModel var6;
@@ -201,7 +201,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 		Object var2 = null;
 		HardShadow var4;
 		if (this.field11154 == null && this.field11158) {
-			class746 var3 = this.method17414(arg0, 262144, true);
+			Pair var3 = this.method17414(arg0, 262144, true);
 			var4 = (HardShadow) (var3 == null ? null : var3.field8738);
 		} else {
 			var4 = this.field11154;
@@ -218,7 +218,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 		Object var2 = null;
 		HardShadow var4;
 		if (this.field11154 == null && this.field11158) {
-			class746 var3 = this.method17414(arg0, 262144, true);
+			Pair var3 = this.method17414(arg0, 262144, true);
 			var4 = (HardShadow) (var3 == null ? null : var3.field8738);
 		} else {
 			var4 = this.field11154;

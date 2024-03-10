@@ -5,11 +5,11 @@ import deob.ObfuscatedName;
 @ObfuscatedName("ams")
 public class PreferencesLightingDetail extends PreferencesOption {
 
-	public PreferencesLightingDetail(Preferences arg0) {
+	public PreferencesLightingDetail(ClientOptions arg0) {
 		super(arg0);
 	}
 
-	public PreferencesLightingDetail(int arg0, Preferences arg1) {
+	public PreferencesLightingDetail(int arg0, ClientOptions arg1) {
 		super(arg0, arg1);
 	}
 

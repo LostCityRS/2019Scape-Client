@@ -98,8 +98,8 @@ public class ColourGradingBloomFilter extends class968 {
 	public void method17540(int arg0, int arg1) {
 		this.field12190 = arg0;
 		this.field12200 = arg1;
-		int var3 = class783.method3082(this.field12190);
-		int var4 = class783.method3082(this.field12200);
+		int var3 = IntMath.method3082(this.field12190);
+		int var4 = IntMath.method3082(this.field12200);
 		if (this.field12201 == var3 && this.field12202 == var4) {
 			return;
 		}
@@ -193,8 +193,8 @@ public class ColourGradingBloomFilter extends class968 {
 			OpenGL.glEnd();
 		} else {
 			this.field11270.method2142(this.field12195);
-			int var6 = class783.method3082(this.field12190);
-			int var7 = class783.method3082(this.field12200);
+			int var6 = IntMath.method3082(this.field12190);
+			int var7 = IntMath.method3082(this.field12200);
 			int var8 = 0;
 			while (var6 > 256 || var7 > 256) {
 				OpenGL.glViewport(0, 0, var6, var7);

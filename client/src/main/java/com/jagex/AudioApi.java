@@ -347,7 +347,7 @@ public class AudioApi {
 
 	@ObfuscatedName("fb.o(III)V")
 	public void method3157(int arg0, int arg1) {
-		class369 var3 = class657.method5401(arg0);
+		AudioBuss var3 = class657.method5401(arg0);
 		if (var3 != null) {
 			float var4 = (float) arg1 * 1.5258789E-5F;
 			var3.method5897(var4);
@@ -356,7 +356,7 @@ public class AudioApi {
 
 	@ObfuscatedName("fb.s(II)F")
 	public float method3189(int arg0) {
-		class369 var2 = class657.method5401(arg0);
+		AudioBuss var2 = class657.method5401(arg0);
 		float var3 = 1.0F;
 		while (var2 != null) {
 			var3 *= var2.method5902();

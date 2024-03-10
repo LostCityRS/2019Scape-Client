@@ -18,13 +18,13 @@ public class class334 {
 	public Framebuffer field3265;
 
 	@ObfuscatedName("ls.k")
-	public class359 field3244;
+	public Texture2 field3244;
 
 	@ObfuscatedName("ls.f")
-	public class359 field3248;
+	public Texture2 field3248;
 
 	@ObfuscatedName("ls.w")
-	public class359 field3249;
+	public Texture2 field3249;
 
 	@ObfuscatedName("ls.l")
 	public class130 field3250;
@@ -291,7 +291,7 @@ public class class334 {
 					var11 = true;
 					this.field3265.method15439(0, this.field3255);
 				}
-				class359 var13 = this.field3244;
+				Texture2 var13 = this.field3244;
 				if (var12 == 0) {
 					var13 = this.field3249;
 				}
@@ -301,7 +301,7 @@ public class class334 {
 				if (var11) {
 					this.field3249.method5708();
 				}
-				class359 var14 = this.field3244;
+				Texture2 var14 = this.field3244;
 				this.field3244 = this.field3248;
 				this.field3248 = var14;
 				class130 var15 = this.field3250;

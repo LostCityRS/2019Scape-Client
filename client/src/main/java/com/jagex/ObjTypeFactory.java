@@ -21,7 +21,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 	public final class611 field8613 = new class611(250);
 
 	@ObfuscatedName("abr.w")
-	public final class736 field8609 = new class736();
+	public final IconCacheKey field8609 = new IconCacheKey();
 
 	@ObfuscatedName("abr.l")
 	public final ConfigTypeList paramTL;
@@ -91,7 +91,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 			var19 = arg1.method2199(var18, 0, 36, 36, 32);
 		}
 		if (!arg7) {
-			class736 var20 = new class736();
+			IconCacheKey var20 = new IconCacheKey();
 			var20.field8607 = arg1.field1595;
 			var20.field8602 = arg2;
 			var20.field8604 = arg3;

@@ -5,11 +5,11 @@ import deob.ObfuscatedName;
 @ObfuscatedName("ant")
 public class PreferencesUnknown8 extends PreferencesOption {
 
-	public PreferencesUnknown8(Preferences arg0) {
+	public PreferencesUnknown8(ClientOptions arg0) {
 		super(arg0);
 	}
 
-	public PreferencesUnknown8(int arg0, Preferences arg1) {
+	public PreferencesUnknown8(int arg0, ClientOptions arg1) {
 		super(arg0, arg1);
 	}
 

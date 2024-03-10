@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("sd")
-public class class518 implements class152 {
+public class class518 implements VarDomain {
 
 	@ObfuscatedName("sd.e")
 	public PathingEntity field6687;

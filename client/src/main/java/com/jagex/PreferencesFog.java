@@ -5,11 +5,11 @@ import deob.ObfuscatedName;
 @ObfuscatedName("amb")
 public class PreferencesFog extends PreferencesOption {
 
-	public PreferencesFog(Preferences arg0) {
+	public PreferencesFog(ClientOptions arg0) {
 		super(arg0);
 	}
 
-	public PreferencesFog(int arg0, Preferences arg1) {
+	public PreferencesFog(int arg0, ClientOptions arg1) {
 		super(arg0, arg1);
 	}
 

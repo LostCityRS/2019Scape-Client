@@ -5,11 +5,11 @@ import deob.ObfuscatedName;
 @ObfuscatedName("amg")
 public class PreferencesBrightness extends PreferencesOption {
 
-	public PreferencesBrightness(Preferences arg0) {
+	public PreferencesBrightness(ClientOptions arg0) {
 		super(arg0);
 	}
 
-	public PreferencesBrightness(int arg0, Preferences arg1) {
+	public PreferencesBrightness(int arg0, ClientOptions arg1) {
 		super(arg0, arg1);
 	}
 

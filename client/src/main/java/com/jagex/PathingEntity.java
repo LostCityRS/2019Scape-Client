@@ -202,7 +202,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	public Model[] field10459;
 
 	@ObfuscatedName("ahm.cl")
-	public final class748 field10460;
+	public final VarContainer field10460;
 
 	@ObfuscatedName("ahm.cg")
 	public Interface field10461;
@@ -214,7 +214,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	public int field10439;
 
 	@ObfuscatedName("ahm.ci")
-	public class152 field10415;
+	public VarDomain field10415;
 
 	public PathingEntity(Scene arg0, int arg1, VarTypeList arg2) {
 		super(arg0, 0, 0, 0, 0, 0, 0, 0, 0, 0, false, (byte) 0);

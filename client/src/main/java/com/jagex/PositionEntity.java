@@ -232,12 +232,12 @@ public class PositionEntity extends Position {
 
 	@ObfuscatedName("ahd.as(B)F")
 	public float method16693() {
-		return class688.method16445(this.field10554);
+		return CameraHelpers.method16445(this.field10554);
 	}
 
 	@ObfuscatedName("ahd.at(I)F")
 	public float method16694() {
-		return class688.method4498(this.field10554);
+		return CameraHelpers.method4498(this.field10554);
 	}
 
 	@ObfuscatedName("ahd.w(I)F")

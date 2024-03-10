@@ -32,7 +32,7 @@ public class DllResourceLoader implements ResourceLoader {
 		try {
 			return Statics.field10577.method8464(this.field4336, this.field4335);
 		} catch (HardwarePlatformLoaderException var2) {
-			class576.method18474(NativeLibraryFailureType.field8907, var2.field11896, var2.field11897, var2.getCause());
+			GraphicsPacketQueue.method18474(NativeLibraryFailureType.field8907, var2.field11896, var2.field11897, var2.getCause());
 			this.field4337 = true;
 			return 100;
 		}
@@ -49,7 +49,7 @@ public class DllResourceLoader implements ResourceLoader {
 	}
 
 	@ObfuscatedName("pa.n(B)Lacv;")
-	public class773 method6781() {
-		return class773.field8915;
+	public LoadableResourceType method6781() {
+		return LoadableResourceType.field8915;
 	}
 }

@@ -47,8 +47,8 @@ public class class932 extends SoundBackend {
 			class473 var5 = (class473) var4.next();
 			class480[] var6 = (class480[]) this.field10688.get(var5);
 			for (int var7 = 0; var7 < var6.length; var7++) {
-				class218 var8 = new class218(2.0F);
-				var8.method3774(0, class372.field3441, class370.field3439, 2);
+				VorbisDecoder var8 = new VorbisDecoder(2.0F);
+				var8.method3774(0, AudioFormat.field3441, AudioEndianness.field3439, 2);
 				var6[var7] = new class480(var5, 8192, 3, var8, this);
 			}
 		}
@@ -154,9 +154,9 @@ public class class932 extends SoundBackend {
 	}
 
 	@ObfuscatedName("aiz.n(IILnd;Lmw;IFB)Ljava/lang/Object;")
-	public Object method5861(int arg0, int arg1, class372 arg2, class370 arg3, int arg4, float arg5) {
+	public Object method5861(int arg0, int arg1, AudioFormat arg2, AudioEndianness arg3, int arg4, float arg5) {
 		class544 var7 = this.method16806((float) arg1 * arg5);
-		class542 var8 = new class542(this, var7, arg4, (float) arg1 * arg5, arg2.field3445, arg0 < 2 ? 2 : arg0, class372.field3441 == arg2 || class372.field3442 == arg2, class370.field3438 == arg3);
+		class542 var8 = new class542(this, var7, arg4, (float) arg1 * arg5, arg2.field3445, arg0 < 2 ? 2 : arg0, AudioFormat.field3441 == arg2 || AudioFormat.field3442 == arg2, AudioEndianness.field3438 == arg3);
 		class544 var9 = var8.field6863;
 		synchronized (var8.field6863) {
 			var8.field6863.method8649(var8);
@@ -209,7 +209,7 @@ public class class932 extends SoundBackend {
 	}
 
 	@ObfuscatedName("aiz.l(Lmj;I)Ljava/lang/Object;")
-	public Object method5866(class369 arg0) {
+	public Object method5866(AudioBuss arg0) {
 		return null;
 	}
 

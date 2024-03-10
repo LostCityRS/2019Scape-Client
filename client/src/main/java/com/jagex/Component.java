@@ -1017,14 +1017,14 @@ public class Component {
 	}
 
 	@ObfuscatedName("hf.r(Loi;Loq;S)Leu;")
-	public class140 method3942(class402 arg0, FontFactory arg1) {
+	public class140 method3942(FontProvider arg0, FontFactory arg1) {
 		class140 var3 = (class140) arg0.method6188(arg1, this.field2287, false, this.field2275);
 		field2338 = var3 == null;
 		return var3;
 	}
 
 	@ObfuscatedName("hf.v(Loi;Loq;I)Laac;")
-	public FontMetrics method3943(class402 arg0, FontFactory arg1) {
+	public FontMetrics method3943(FontProvider arg0, FontFactory arg1) {
 		FontMetrics var3 = arg0.method6163(arg1, this.field2287);
 		field2338 = var3 == null;
 		return var3;
@@ -1163,12 +1163,12 @@ public class Component {
 	}
 
 	@ObfuscatedName("hf.y(Laom;Laok;I)Lsv;")
-	public class502 method4012(SkyBoxTypeList arg0, SkyDecorTypeList arg1) {
+	public SkyBox method4012(SkyBoxTypeList arg0, SkyDecorTypeList arg1) {
 		if (this.field2339 == -1) {
 			return null;
 		}
 		long var3 = ((long) this.field2342 & 0xFFFFL) << 48 | ((long) this.field2343 & 0xFFFFL) << 32 | ((long) this.field2344 & 0xFFFFL) << 16 | (long) this.field2339 & 0xFFFFL;
-		class502 var5 = (class502) field2177.method2930(var3);
+		SkyBox var5 = (SkyBox) field2177.method2930(var3);
 		if (var5 == null) {
 			var5 = SkyBoxType.method305(this.field2339, this.field2342, this.field2343, this.field2344, arg0, arg1);
 			field2177.method2921(var5, var3);

@@ -152,7 +152,7 @@ public class Loading {
 				if (client.field11067[var0].method9131() == 's' || client.field11067[var0].method9131() == 'S') {
 					Statics.field688.method18157(Statics.field688.unknown6, 1);
 					client.field10812 = true;
-					class576.method6971(ToolkitType.field8880);
+					GraphicsPacketQueue.method6971(ToolkitType.field8880);
 					break;
 				}
 			}
@@ -200,7 +200,7 @@ public class Loading {
 			}
 		}
 		if (Statics.field3419 == LoadingStage.field2904) {
-			Statics.field7538 = new class402(Statics.field8198, Statics.field8522, Statics.field7672, DefaultSprites.method845());
+			Statics.field7538 = new FontProvider(Statics.field8198, Statics.field8522, Statics.field7672, DefaultSprites.method845());
 		}
 		if (Statics.field3419 == LoadingStage.field2905) {
 			int var12 = Statics.field7538.method6179();
@@ -274,7 +274,7 @@ public class Loading {
 				return (var14 - field2945) * 100 / (100 - field2945);
 			}
 			DefaultSprites.method16430(Statics.field11389);
-			Statics.field7538 = new class402(Statics.field8198, Statics.field10317, Statics.field7672, DefaultSprites.method845());
+			Statics.field7538 = new FontProvider(Statics.field8198, Statics.field10317, Statics.field7672, DefaultSprites.method845());
 		}
 		if (Statics.field3419 == LoadingStage.field2909) {
 			byte[] var17 = Statics.field1587.method6894(DefaultsGroup.field7705.field7708);
@@ -315,12 +315,12 @@ public class Loading {
 				return 99;
 			}
 			Statics.field7366 = new MaterialList(Statics.field10249);
-			Statics.field7669 = new class847(Statics.field1450);
+			Statics.field7669 = new BasicTextureList(Statics.field1450);
 			Statics.field3086 = new ParamTypeList(client.field10768, Statics.field1680, Statics.field11838);
 			Statics.field11742 = new BASTypeList(client.field10768, Statics.field1680, Statics.field11838);
 			Statics.field2427 = new CursorTypeList(client.field10768, Statics.field1680, Statics.field11838, Statics.field10317);
-			Statics.field9123 = new class758(client.field10768, Statics.field1680, Statics.field11838, Js5ConfigGroup.DBROWTYPE, 64, new BasicTypeFactory(DBRowType.class));
-			Statics.field1840 = new class758(client.field10768, Statics.field1680, Statics.field11838, Js5ConfigGroup.DBTABLETYPE, 16, new BasicTypeFactory(DBTableType.class));
+			Statics.field9123 = new CachingConfigTypeList(client.field10768, Statics.field1680, Statics.field11838, Js5ConfigGroup.DBROWTYPE, 64, new BasicTypeFactory(DBRowType.class));
+			Statics.field1840 = new CachingConfigTypeList(client.field10768, Statics.field1680, Statics.field11838, Js5ConfigGroup.DBTABLETYPE, 16, new BasicTypeFactory(DBTableType.class));
 			Statics.field8514 = new EnumTypeList(client.field10768, Statics.field1680, Statics.field8700);
 			Statics.field8168 = new FloorOverlayTypeList(client.field10768, Statics.field1680, Statics.field11838);
 			Statics.field8145 = new FloorUnderlayTypeList(client.field10768, Statics.field1680, Statics.field11838);
@@ -343,27 +343,27 @@ public class Loading {
 			Statics.field687 = new SkyDecorTypeList(client.field10768, Statics.field1680, Statics.field11838);
 			Statics.field4874 = new EffectAnimTypeList(client.field10768, Statics.field1680, Statics.field2149, Statics.field9213);
 			Statics.field7713 = new StructTypeList(client.field10768, Statics.field1680, Statics.field3611, true);
-			Statics.field8911 = new class807(client.field10768, VarDomainType.CLIENT, Statics.field1680, Statics.field11838);
+			Statics.field8911 = new VarBasicTypeListClient(client.field10768, VarDomainType.CLIENT, Statics.field1680, Statics.field11838);
 			Statics.field8485 = new VarPlayerTypeListClient(client.field10768, VarDomainType.PLAYER, Statics.field1680, Statics.field11838);
-			Statics.field8135 = new class807(client.field10768, VarDomainType.NPC, Statics.field1680, Statics.field11838);
-			Statics.field8783 = new class807(client.field10768, VarDomainType.CLAN, Statics.field1680, Statics.field11838);
-			Statics.field12225 = new class807(client.field10768, VarDomainType.CLAN_SETTING, Statics.field1680, Statics.field11838);
-			Statics.field3415 = new class807(client.field10768, VarDomainType.PLAYER_GROUP, Statics.field1680, Statics.field11838);
-			Statics.field1819 = new class807(client.field10768, VarDomainType.OBJECT, Statics.field1680, Statics.field11838);
+			Statics.field8135 = new VarBasicTypeListClient(client.field10768, VarDomainType.NPC, Statics.field1680, Statics.field11838);
+			Statics.field8783 = new VarBasicTypeListClient(client.field10768, VarDomainType.CLAN, Statics.field1680, Statics.field11838);
+			Statics.field12225 = new VarBasicTypeListClient(client.field10768, VarDomainType.CLAN_SETTING, Statics.field1680, Statics.field11838);
+			Statics.field3415 = new VarBasicTypeListClient(client.field10768, VarDomainType.PLAYER_GROUP, Statics.field1680, Statics.field11838);
+			Statics.field1819 = new VarBasicTypeListClient(client.field10768, VarDomainType.OBJECT, Statics.field1680, Statics.field11838);
 			Statics.field1232 = VarTypeList.method15149(new VarTypeList[] { Statics.field8911, Statics.field8485, Statics.field8135, Statics.field8783, Statics.field12225, Statics.field3415, Statics.field1819 });
 			Statics.field8736 = new VarBitTypeList(client.field10768, Statics.field1680, Statics.field11838, Statics.field1232);
-			Statics.field4626 = new class279();
+			Statics.field4626 = new VariableTypeProviderClient();
 			Component.method3669(Statics.field527, Statics.field9213, Statics.field10317, Statics.field7672);
-			Statics.field9211 = new class382(Statics.field736);
-			Statics.field2013 = new class377(Statics.field6879);
-			Statics.field7282 = new class380(Statics.field6879);
+			Statics.field9211 = new BasicBillboardTypeList(Statics.field736);
+			Statics.field2013 = new BasicParticleEffectorTypeList(Statics.field6879);
+			Statics.field7282 = new BasicParticleEmitterTypeList(Statics.field6879);
 			Statics.field3823 = new QuickChatCatTypeList(Statics.field1680, Statics.field4404, Statics.field1935);
-			Statics.field489 = new QuickChatPhraseTypeList(Statics.field1680, Statics.field4404, Statics.field1935, new class374());
+			Statics.field489 = new QuickChatPhraseTypeList(Statics.field1680, Statics.field4404, Statics.field1935, new ClientDynamicProvider());
 			Statics.field7410 = new PlayerVariableManager(Statics.field8485, Statics.field8736, Statics.field2767.method9784());
 			client.method9516();
 			AnimationWrapper.method6114(Statics.field8797);
 			class633.method706(Statics.field7282, Statics.field2013);
-			class502.method13864(Statics.field9213, Statics.field7366, Statics.field7669);
+			SkyBox.method13864(Statics.field9213, Statics.field7366, Statics.field7669);
 			Huffman var19 = new Huffman(Statics.field8741.method6906("huffman", ""));
 			StringEncoder.setHuffman(var19);
 			Statics.field6594 = Timer.method6109();
@@ -380,7 +380,7 @@ public class Loading {
 			WorldMap.method8506(Statics.field10752, Statics.field8332, Statics.field8168, Statics.field8145, client.world.method7750(), Statics.field5011, Statics.field4241, Statics.field7410, Statics.field7410);
 		}
 		if (Statics.field3419 == LoadingStage.field2915) {
-			Statics.field7228 = new class861(Statics.field8911);
+			Statics.field7228 = new ClientVariableManager(Statics.field8911);
 			method9212();
 			Statics.field1895 = TotpPreferences.method18618();
 			Statics.field11752.method6900(false, true);
@@ -431,16 +431,16 @@ public class Loading {
 			} else if (Statics.field688.displayMode.field11771 && Statics.field10581.cpuInfoRam < 512 && Statics.field10581.cpuInfoRam != 0) {
 				Statics.field688.method18157(Statics.field688.displayMode, 0);
 			}
-			class48.method16391();
+			Preferences.method16391();
 			if (client.field10779) {
 				client.method486(0, false);
 				if (!client.field10812) {
-					class576.method6971(ToolkitType.field8881);
+					GraphicsPacketQueue.method6971(ToolkitType.field8881);
 				}
 			} else {
 				client.method486(Statics.field688.displayMode.method18545(), false);
 				if (Statics.field688.displayMode.method18545() == 0) {
-					class576.method6971(ToolkitType.field8882);
+					GraphicsPacketQueue.method6971(ToolkitType.field8882);
 				}
 			}
 			client.setWindowMode(Statics.field688.maxScreenSize.method18539(), -1, -1, false);

@@ -5,11 +5,11 @@ import deob.ObfuscatedName;
 @ObfuscatedName("anl")
 public class PreferencesThemeMusicVolume extends PreferencesOption {
 
-	public PreferencesThemeMusicVolume(Preferences arg0) {
+	public PreferencesThemeMusicVolume(ClientOptions arg0) {
 		super(arg0);
 	}
 
-	public PreferencesThemeMusicVolume(int arg0, Preferences arg1) {
+	public PreferencesThemeMusicVolume(int arg0, ClientOptions arg1) {
 		super(arg0, arg1);
 	}
 

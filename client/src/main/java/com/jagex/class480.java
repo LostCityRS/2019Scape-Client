@@ -356,7 +356,7 @@ public class class480 {
 
 	@ObfuscatedName("rq.v(B)V")
 	public void method7492() {
-		class369 var1 = this.field4923.method5880().method5851(this.field4896);
+		AudioBuss var1 = this.field4923.method5880().method5851(this.field4896);
 		this.field4898 = var1 == null ? 1.0F : var1.method5901();
 		float var2 = var1 == null ? 0.1F : var1.method5899();
 		float var3 = this.field4897 * var2;

@@ -5,11 +5,11 @@ import deob.ObfuscatedName;
 @ObfuscatedName("amw")
 public class PreferencesMaxScreenSize extends PreferencesOption {
 
-	public PreferencesMaxScreenSize(Preferences arg0) {
+	public PreferencesMaxScreenSize(ClientOptions arg0) {
 		super(arg0);
 	}
 
-	public PreferencesMaxScreenSize(int arg0, Preferences arg1) {
+	public PreferencesMaxScreenSize(int arg0, ClientOptions arg1) {
 		super(arg0, arg1);
 	}
 

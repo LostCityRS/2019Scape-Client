@@ -40,7 +40,7 @@ public class class637 {
 	public float field7874;
 
 	@ObfuscatedName("xv.c")
-	public class502 field7863;
+	public SkyBox field7863;
 
 	@ObfuscatedName("xv.r")
 	public float field7873 = 1.0F;
@@ -226,7 +226,7 @@ public class class637 {
 				for (int var25 = 0; var25 < var15; var25++) {
 					var23 += var17[var25];
 				}
-				class664.method228(var17, var16, 0, var15 - 1);
+				Algorithms.method228(var17, var16, 0, var15 - 1);
 				for (int var26 = 0; var26 < 3; var26++) {
 					var24 += var17[var26];
 				}
@@ -407,7 +407,7 @@ public class class637 {
 	}
 
 	@ObfuscatedName("xv.c(I)Lsv;")
-	public class502 method10074() {
+	public SkyBox method10074() {
 		return this.field7863;
 	}
 }

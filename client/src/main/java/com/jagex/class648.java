@@ -128,9 +128,9 @@ public class class648 {
 				var8 = (int) client.field10895 >> 3;
 			} else if (Statics.field9155.method4780() == PositionMode.field2815) {
 				PositionEntity var5 = (PositionEntity) Statics.field9155.method4709();
-				var6 = class688.method9198(var5.field10554) >> 3;
+				var6 = CameraHelpers.method9198(var5.field10554) >> 3;
 				short var7 = 1024;
-				var8 = (var7 * 3 - (class688.method2041(var5.field10554) >> 3)) % (var7 * 2);
+				var8 = (var7 * 3 - (CameraHelpers.method2041(var5.field10554) >> 3)) % (var7 * 2);
 			} else {
 				var6 = 0;
 				var8 = 0;

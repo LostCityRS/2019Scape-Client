@@ -5,11 +5,11 @@ import deob.ObfuscatedName;
 @ObfuscatedName("amu")
 public class PreferencesCharacterShadows extends PreferencesOption {
 
-	public PreferencesCharacterShadows(Preferences arg0) {
+	public PreferencesCharacterShadows(ClientOptions arg0) {
 		super(arg0);
 	}
 
-	public PreferencesCharacterShadows(int arg0, Preferences arg1) {
+	public PreferencesCharacterShadows(int arg0, ClientOptions arg1) {
 		super(arg0, arg1);
 	}
 

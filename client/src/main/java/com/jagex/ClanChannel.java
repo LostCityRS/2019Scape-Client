@@ -61,7 +61,7 @@ public class ClanChannel extends Node {
 				var1[var2] = this.field11392[var2].field3087;
 				this.field11394[var2] = var2++;
 			}
-			class664.method4054(var1, this.field11394);
+			Algorithms.method4054(var1, this.field11394);
 		}
 		return this.field11394;
 	}

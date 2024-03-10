@@ -9,5 +9,5 @@ public interface ResourceLoader {
 	int method6782();
 
 	@ObfuscatedName("acu.n(B)Lacv;")
-	class773 method6781();
+	LoadableResourceType method6781();
 }

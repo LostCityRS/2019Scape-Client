@@ -27,7 +27,7 @@ public abstract class LocTypeFactory {
 	public ModelUnlit[] field7535 = new ModelUnlit[4];
 
 	@ObfuscatedName("vh.u")
-	public class746 field7529 = new class746(null, null);
+	public Pair field7529 = new Pair(null, null);
 
 	public LocTypeFactory(boolean arg0, Language arg1, ModeGame arg2) {
 		this.field7531 = arg0;
@@ -78,7 +78,7 @@ public abstract class LocTypeFactory {
 			this.field7532.method2924();
 		}
 		this.field7535 = new ModelUnlit[4];
-		this.field7529 = new class746(null, null);
+		this.field7529 = new Pair(null, null);
 	}
 
 	@ObfuscatedName("vh.k(IB)V")

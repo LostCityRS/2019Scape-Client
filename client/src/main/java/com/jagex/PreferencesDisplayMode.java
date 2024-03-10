@@ -12,11 +12,11 @@ public class PreferencesDisplayMode extends PreferencesOption {
 	@ObfuscatedName("amd.l")
 	public boolean field11771 = false;
 
-	public PreferencesDisplayMode(Preferences arg0) {
+	public PreferencesDisplayMode(ClientOptions arg0) {
 		super(arg0);
 	}
 
-	public PreferencesDisplayMode(int arg0, Preferences arg1) {
+	public PreferencesDisplayMode(int arg0, ClientOptions arg1) {
 		super(arg0, arg1);
 	}
 

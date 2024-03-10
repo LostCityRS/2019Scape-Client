@@ -378,7 +378,7 @@ public class GpuModel extends Model {
 			this.field9737 |= var31;
 			this.field9699 |= var16 != null && (var16.field1317 != 0.0F || var16.field1338 != 0.0F);
 		}
-		class664.method5114(var12, var9);
+		Algorithms.method5114(var12, var9);
 		this.field9703 = arg1.field1373;
 		this.field9704 = arg1.field1374;
 		this.field9705 = arg1.field1375;
