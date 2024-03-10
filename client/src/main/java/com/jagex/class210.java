@@ -8,12 +8,12 @@ import java.util.Iterator;
 public class class210 implements Iterator {
 
 	// $FF: synthetic field
-	public final class806 this$0;
+	public final VarPlayerTypeListClient this$0;
 
 	@ObfuscatedName("gj.e")
 	public int field1982;
 
-	public class210(class806 arg0) {
+	public class210(VarPlayerTypeListClient arg0) {
 		this.this$0 = arg0;
 	}
 

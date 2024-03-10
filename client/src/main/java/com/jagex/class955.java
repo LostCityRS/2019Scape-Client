@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class class955 extends class531 {
 
 	@ObfuscatedName("ajq.m")
-	public static class716 field11198 = new class716();
+	public static LinkQueue field11198 = new LinkQueue();
 
 	@ObfuscatedName("ajq.k")
 	public static int field11196 = 0;

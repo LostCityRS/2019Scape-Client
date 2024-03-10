@@ -108,7 +108,7 @@ public class FloorOverlayType implements ConfigType, class757 {
 
 	@ObfuscatedName("uk.p(II)I")
 	public static int method9160(int arg0) {
-		return arg0 == 16711935 ? -1 : class662.method10521(arg0);
+		return arg0 == 16711935 ? -1 : ColourUtils.method10521(arg0);
 	}
 
 	@ObfuscatedName("yn.z(IB)V")

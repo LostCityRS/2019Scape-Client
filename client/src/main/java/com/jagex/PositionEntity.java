@@ -7,13 +7,13 @@ import deob.Statics;
 public class PositionEntity extends class307 {
 
 	@ObfuscatedName("ahd.n")
-	public class273 field10552;
+	public CameraTrackable field10552;
 
 	@ObfuscatedName("ahd.m")
 	public final Vector3 field10553 = new Vector3();
 
 	@ObfuscatedName("ahd.k")
-	public final class421 field10554 = new class421();
+	public final Quaternion field10554 = new Quaternion();
 
 	@ObfuscatedName("ahd.f")
 	public boolean field10556;
@@ -34,14 +34,14 @@ public class PositionEntity extends class307 {
 	public final Vector3 field10560 = new Vector3();
 
 	@ObfuscatedName("ahd.d")
-	public final class421 field10555 = new class421();
+	public final Quaternion field10555 = new Quaternion();
 
-	public PositionEntity(class274 arg0) {
+	public PositionEntity(Camera arg0) {
 		super(arg0);
 	}
 
 	@ObfuscatedName("ahd.t(Ljn;Lox;Lov;ZI[[[ILqx;III)V")
-	public void method16683(class273 arg0, Vector3 arg1, class421 arg2, boolean arg3, int arg4, int[][][] arg5, LinkMap arg6, int arg7, int arg8) {
+	public void method16683(CameraTrackable arg0, Vector3 arg1, Quaternion arg2, boolean arg3, int arg4, int[][][] arg5, LinkMap arg6, int arg7, int arg8) {
 		this.field10552 = arg0;
 		this.field10553.method6492(arg1);
 		this.field10554.method6412(arg2);
@@ -64,7 +64,7 @@ public class PositionEntity extends class307 {
 			return;
 		}
 		this.method16686(arg1, arg2, arg3, arg4);
-		class421 var6 = this.method16685();
+		Quaternion var6 = this.method16685();
 		this.field10555.method6428(var6, this.field3084.method4724());
 		if (Float.isNaN(this.field10555.field4301)) {
 			this.field10555.method6412(var6);
@@ -75,19 +75,19 @@ public class PositionEntity extends class307 {
 	}
 
 	@ObfuscatedName("ahd.ag(B)Lov;")
-	public class421 method16685() {
-		class421 var1 = class421.method6443(this.field10554);
+	public Quaternion method16685() {
+		Quaternion var1 = Quaternion.method6443(this.field10554);
 		if (this.field10556) {
 			Vector3 var2 = this.field10552.method4666();
 			if (var2.method6519() < (float) this.field10561) {
 				var2 = Vector3.method6483(0.0F, 0.0F, 1.0F);
-				class421 var3 = this.field10552.method4668();
+				Quaternion var3 = this.field10552.method4668();
 				var2.method6526(var3);
 			}
 			var2.field4311 = 0.0F;
 			float var4 = (float) Math.atan2((double) var2.field4308, (double) var2.field4313);
 			var2.method6486();
-			class421 var5 = new class421();
+			Quaternion var5 = new Quaternion();
 			var5.method6414(0.0F, 1.0F, 0.0F, var4);
 			var1.method6424(var5);
 		}
@@ -133,7 +133,7 @@ public class PositionEntity extends class307 {
 			}
 			Vector3 var16 = Vector3.method6483(1.0F, 0.0F, 0.0F);
 			var16.method6526(this.field10554);
-			class421 var17 = class421.method6469();
+			Quaternion var17 = Quaternion.method6469();
 			var17.method6413(var16, var15);
 			this.field10554.method6424(var17);
 			this.field10554.method6447();
@@ -153,7 +153,7 @@ public class PositionEntity extends class307 {
 
 	@ObfuscatedName("ahd.al([[[ILqx;IIIZI)F")
 	public float method16687(int[][][] arg0, LinkMap arg1, int arg2, int arg3, int arg4, boolean arg5) {
-		class421 var7 = this.method16685();
+		Quaternion var7 = this.method16685();
 		Vector3 var8 = this.method16696(var7);
 		var7.method6407();
 		int var9 = (int) var8.field4308 - arg2 >> 9;
@@ -180,7 +180,7 @@ public class PositionEntity extends class307 {
 	}
 
 	@ObfuscatedName("ahd.ac(Lov;I)Lox;")
-	public Vector3 method16696(class421 arg0) {
+	public Vector3 method16696(Quaternion arg0) {
 		Vector3 var2 = Vector3.method6484(this.field10553);
 		var2.method6526(arg0);
 		Vector3 var3 = Vector3.method6499(this.field10559, var2);
@@ -256,7 +256,7 @@ public class PositionEntity extends class307 {
 
 	@ObfuscatedName("ahd.u(Lalw;I)V")
 	public void method5224(Packet arg0) {
-		class272 var2 = Statics.method15213(arg0.g1());
+		CameraTrackableType var2 = Statics.method15213(arg0.g1());
 		int var3 = arg0.g2();
 		this.field10553.method6490(arg0);
 		this.field10554.method6410(arg0);

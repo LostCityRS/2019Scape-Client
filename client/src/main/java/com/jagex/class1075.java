@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("aoy")
-public class class1075 extends class721 {
+public class class1075 extends AnimationWrapper {
 
 	@ObfuscatedName("aoy.q")
 	public boolean field11877 = false;

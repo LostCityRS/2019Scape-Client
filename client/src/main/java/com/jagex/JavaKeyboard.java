@@ -80,8 +80,8 @@ public final class JavaKeyboard extends Keyboard implements KeyListener, FocusLi
 	}
 
 	@ObfuscatedName("alg.k(I)Lut;")
-	public class565 method9075() {
-		return (class565) this.field11681.method14154();
+	public KeyboardEvent method9075() {
+		return (KeyboardEvent) this.field11681.method14154();
 	}
 
 	@ObfuscatedName("alg.m(II)Z")

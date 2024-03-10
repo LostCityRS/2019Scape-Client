@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("atj")
-public class class1226 extends class1180 {
+public class class1226 extends CameraEffect {
 
 	@ObfuscatedName("atj.u")
 	public float field12551 = 0.0F;

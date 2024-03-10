@@ -41,7 +41,7 @@ public class class402 implements FontIconProvider {
 	}
 
 	@ObfuscatedName("oi.e(Loq;I)V")
-	public void method6157(class401 arg0) {
+	public void method6157(FontFactory arg0) {
 		this.field4207 = new HashMap(this.field4204.length);
 		for (int var2 = 0; var2 < this.field4204.length; var2++) {
 			int var3 = this.field4204[var2];
@@ -89,7 +89,7 @@ public class class402 implements FontIconProvider {
 	}
 
 	@ObfuscatedName("oi.w(Loq;IZZI)Ljava/lang/Object;")
-	public Object method6188(class401 arg0, int arg1, boolean arg2, boolean arg3) {
+	public Object method6188(FontFactory arg0, int arg1, boolean arg2, boolean arg3) {
 		if (arg1 == -1) {
 			return null;
 		}
@@ -119,12 +119,12 @@ public class class402 implements FontIconProvider {
 	}
 
 	@ObfuscatedName("oi.l(Loq;II)Laac;")
-	public FontMetrics method6163(class401 arg0, int arg1) {
+	public FontMetrics method6163(FontFactory arg0, int arg1) {
 		return this.method6164(arg0, arg1, true, true);
 	}
 
 	@ObfuscatedName("oi.u(Loq;IZZB)Laac;")
-	public FontMetrics method6164(class401 arg0, int arg1, boolean arg2, boolean arg3) {
+	public FontMetrics method6164(FontFactory arg0, int arg1, boolean arg2, boolean arg3) {
 		if (arg1 == -1) {
 			return null;
 		}

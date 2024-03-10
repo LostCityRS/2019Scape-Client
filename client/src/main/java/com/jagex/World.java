@@ -669,7 +669,7 @@ public class World {
 		this.field5029 = new byte[4][this.field5028][this.field5043];
 		this.field5032 = new LinkMap(4, this.field5028, this.field5043);
 		this.method7737(false);
-		class42.method829();
+		Minimap.method829();
 		this.field5021 = arg0;
 	}
 
@@ -862,9 +862,9 @@ public class World {
 				}
 			}
 		}
-		if (class42.field731 != 0) {
-			class42.field731 -= var2;
-			class42.field718 -= var3;
+		if (Minimap.field731 != 0) {
+			Minimap.field731 -= var2;
+			Minimap.field718 -= var3;
 		}
 		class975.method13908(false);
 		if (arg0 == 3) {
@@ -887,7 +887,7 @@ public class World {
 			}
 		}
 		MiniMenu.method5175();
-		class42.method5065();
+		Minimap.method5065();
 		client.field10966.method14499();
 		client.field10965.method14152();
 		client.field10864.method14242();

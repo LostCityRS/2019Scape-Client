@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class EntitySpotAnim {
 
 	@ObfuscatedName("sl.e")
-	public final class721 field6659;
+	public final AnimationWrapper field6659;
 
 	@ObfuscatedName("sl.n")
 	public int field6657 = -1;

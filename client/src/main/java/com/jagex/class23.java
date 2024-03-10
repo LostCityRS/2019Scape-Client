@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("s")
-public final class class23 implements class553 {
+public final class class23 implements PrimaryLayerEntityPredicate {
 
 	@ObfuscatedName("s.e(Lash;I)Z")
 	public boolean method478(PrimaryLayerEntity arg0) {

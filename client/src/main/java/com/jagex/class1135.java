@@ -14,7 +14,7 @@ public class class1135 extends class911 {
 	@ObfuscatedName("aqt.p")
 	public int field12095 = 0;
 
-	public class1135(class274 arg0) {
+	public class1135(Camera arg0) {
 		super(arg0);
 	}
 

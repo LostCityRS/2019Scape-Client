@@ -69,7 +69,7 @@ public class class554 {
 			this.field6981[var10] = (short) (var12 << 8 | var13);
 		}
 		int var14 = (var8 << arg1) + (0x1 << arg1 >> 1);
-		int var15 = Statics.field8151 == null ? Statics.field8149[class662.method4937(arg2.g2()) & 0xFFFF] : Statics.field8151[arg2.g2()];
+		int var15 = Statics.field8151 == null ? Statics.field8149[ColourUtils.method4937(arg2.g2()) & 0xFFFF] : Statics.field8151[arg2.g2()];
 		int var16 = arg2.g1();
 		this.field7014 = var16 & 0x1F;
 		this.field7011 = (var16 & 0xE0) << 3;

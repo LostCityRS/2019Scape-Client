@@ -16,9 +16,9 @@ public class class21 {
 		byte var5 = 7;
 		for (int var6 = 63; var6 >= 0; var6--) {
 			int var7 = (var6 & 0x3F) << 10 | (var5 & 0x7) << 7 | var4 & 0x7F;
-			class662.method10156(false, true);
+			ColourUtils.method10156(false, true);
 			int var8 = Statics.field8149[var7];
-			class662.method14805(false, true);
+			ColourUtils.method14805(false, true);
 			arg0.method2354(arg1, (arg3.field2197 * (63 - var6) >> 6) + arg2, arg3.field2196, (arg3.field2197 >> 6) + 1, var8 | 0xFF000000, 0);
 		}
 	}

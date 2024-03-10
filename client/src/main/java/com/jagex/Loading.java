@@ -344,7 +344,7 @@ public class Loading {
 			Statics.field4874 = new EffectAnimTypeList(client.field10768, Statics.field1680, Statics.field2149, Statics.field9213);
 			Statics.field7713 = new StructTypeList(client.field10768, Statics.field1680, Statics.field3611, true);
 			Statics.field8911 = new class807(client.field10768, VarDomainType.CLIENT, Statics.field1680, Statics.field11838);
-			Statics.field8485 = new class806(client.field10768, VarDomainType.PLAYER, Statics.field1680, Statics.field11838);
+			Statics.field8485 = new VarPlayerTypeListClient(client.field10768, VarDomainType.PLAYER, Statics.field1680, Statics.field11838);
 			Statics.field8135 = new class807(client.field10768, VarDomainType.NPC, Statics.field1680, Statics.field11838);
 			Statics.field8783 = new class807(client.field10768, VarDomainType.CLAN, Statics.field1680, Statics.field11838);
 			Statics.field12225 = new class807(client.field10768, VarDomainType.CLAN_SETTING, Statics.field1680, Statics.field11838);
@@ -359,9 +359,9 @@ public class Loading {
 			Statics.field7282 = new class380(Statics.field6879);
 			Statics.field3823 = new QuickChatCatTypeList(Statics.field1680, Statics.field4404, Statics.field1935);
 			Statics.field489 = new QuickChatPhraseTypeList(Statics.field1680, Statics.field4404, Statics.field1935, new class374());
-			Statics.field7410 = new class36(Statics.field8485, Statics.field8736, Statics.field2767.method9784());
+			Statics.field7410 = new PlayerVariableManager(Statics.field8485, Statics.field8736, Statics.field2767.method9784());
 			client.method9516();
-			class721.method6114(Statics.field8797);
+			AnimationWrapper.method6114(Statics.field8797);
 			class633.method706(Statics.field7282, Statics.field2013);
 			class502.method13864(Statics.field9213, Statics.field7366, Statics.field7669);
 			Huffman var19 = new Huffman(Statics.field8741.method6906("huffman", ""));
@@ -382,7 +382,7 @@ public class Loading {
 		if (Statics.field3419 == LoadingStage.field2915) {
 			Statics.field7228 = new class861(Statics.field8911);
 			method9212();
-			Statics.field1895 = class28.method18618();
+			Statics.field1895 = TotpPreferences.method18618();
 			Statics.field11752.method6900(false, true);
 			Statics.field10317.method6900(true, true);
 			Statics.field7672.method6900(true, true);

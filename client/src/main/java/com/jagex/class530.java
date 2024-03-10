@@ -3,12 +3,12 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("tr")
-public class class530 implements class553 {
+public class class530 implements PrimaryLayerEntityPredicate {
 
 	@ObfuscatedName("tr.e")
-	public final class1236 field6757;
+	public final HintTrailPoint field6757;
 
-	public class530(class1236 arg0) {
+	public class530(HintTrailPoint arg0) {
 		this.field6757 = arg0;
 	}
 

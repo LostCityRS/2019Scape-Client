@@ -593,7 +593,7 @@ public class class454 {
 							var19 -= this.field4528[var22];
 						}
 						if (var20 >= 0 && var18 > 0 && var19 > 0) {
-							var4[var7][var20] = class662.method17849(var15 * 256 / var18, var16 / var19, var17 / var19);
+							var4[var7][var20] = ColourUtils.method17849(var15 * 256 / var18, var16 / var19, var17 / var19);
 						}
 					}
 				}

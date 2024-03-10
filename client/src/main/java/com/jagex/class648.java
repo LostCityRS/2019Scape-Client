@@ -104,7 +104,7 @@ public class class648 {
 			ClientMessage var0 = Statics.method1604(ClientProt.EVENT_KEYBOARD, client.field10849.field794);
 			var0.field11432.p2(client.field10822 * 4);
 			for (int var1 = 0; var1 < client.field10822; var1++) {
-				class565 var2 = client.field11024[var1];
+				KeyboardEvent var2 = client.field11024[var1];
 				long var3 = var2.method9133() - field7947;
 				if (var3 > 16777215L) {
 					var3 = 16777215L;

@@ -701,7 +701,7 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.al(IIILtd;I)Lash;")
-	public PrimaryLayerEntity method8712(int arg0, int arg1, int arg2, class553 arg3) {
+	public PrimaryLayerEntity method8712(int arg0, int arg1, int arg2, PrimaryLayerEntityPredicate arg3) {
 		class551 var5 = this.field6928[arg0][arg1][arg2];
 		if (var5 == null) {
 			return null;
@@ -820,7 +820,7 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.am(IIILtd;B)Lash;")
-	public PrimaryLayerEntity method8856(int arg0, int arg1, int arg2, class553 arg3) {
+	public PrimaryLayerEntity method8856(int arg0, int arg1, int arg2, PrimaryLayerEntityPredicate arg3) {
 		class551 var5 = this.field6928[arg0][arg1][arg2];
 		if (var5 == null) {
 			return null;

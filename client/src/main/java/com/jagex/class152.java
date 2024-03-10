@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("eh")
-public interface class152 extends class147 {
+public interface class152 extends VarIntDomain {
 
 	@ObfuscatedName("eh.e(Lec;II)V")
 	void method2798(VarType arg0, int arg1);

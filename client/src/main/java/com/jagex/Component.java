@@ -565,7 +565,7 @@ public class Component {
 	public int field2262 = -1;
 
 	@ObfuscatedName("hf.gt")
-	public class721 field2170;
+	public AnimationWrapper field2170;
 
 	@ObfuscatedName("hf.gh")
 	public Component[] field2351;
@@ -1017,21 +1017,21 @@ public class Component {
 	}
 
 	@ObfuscatedName("hf.r(Loi;Loq;S)Leu;")
-	public class140 method3942(class402 arg0, class401 arg1) {
+	public class140 method3942(class402 arg0, FontFactory arg1) {
 		class140 var3 = (class140) arg0.method6188(arg1, this.field2287, false, this.field2275);
 		field2338 = var3 == null;
 		return var3;
 	}
 
 	@ObfuscatedName("hf.v(Loi;Loq;I)Laac;")
-	public FontMetrics method3943(class402 arg0, class401 arg1) {
+	public FontMetrics method3943(class402 arg0, FontFactory arg1) {
 		FontMetrics var3 = arg0.method6163(arg1, this.field2287);
 		field2338 = var3 == null;
 		return var3;
 	}
 
 	@ObfuscatedName("hf.o(Ldh;ILaof;Laov;Laod;Laon;Laos;Lem;Lep;Laaq;Lxg;I)Ldo;")
-	public Model method3944(Renderer arg0, int arg1, BASTypeList arg2, IDKTypeList arg3, NPCTypeList arg4, ObjTypeList arg5, SeqTypeList arg6, class151 arg7, class147 arg8, class721 arg9, PlayerModel arg10) {
+	public Model method3944(Renderer arg0, int arg1, BASTypeList arg2, IDKTypeList arg3, NPCTypeList arg4, ObjTypeList arg5, SeqTypeList arg6, VariableTypeProvider arg7, VarIntDomain arg8, AnimationWrapper arg9, PlayerModel arg10) {
 		field2338 = false;
 		if (this.field2224 == 0) {
 			return null;

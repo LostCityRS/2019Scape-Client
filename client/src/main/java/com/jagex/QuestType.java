@@ -219,10 +219,10 @@ public class QuestType implements ConfigType {
 	}
 
 	@ObfuscatedName("ir.d(Lep;I)Z")
-	public boolean method4429(class147 arg0) {
+	public boolean method4429(VarIntDomain arg0) {
 		if (this.field2632 != null) {
 			for (int var2 = 0; var2 < this.field2632.length; var2++) {
-				VarType var3 = ((class151) arg0).method695(VarDomainType.PLAYER, this.field2632[var2][0]);
+				VarType var3 = ((VariableTypeProvider) arg0).method695(VarDomainType.PLAYER, this.field2632[var2][0]);
 				if (arg0.method679(var3) >= this.field2632[var2][1]) {
 					return true;
 				}
@@ -230,7 +230,7 @@ public class QuestType implements ConfigType {
 		}
 		if (this.field2630 != null) {
 			for (int var4 = 0; var4 < this.field2630.length; var4++) {
-				VarBitType var5 = ((class151) arg0).method694(this.field2630[var4][0]);
+				VarBitType var5 = ((VariableTypeProvider) arg0).method694(this.field2630[var4][0]);
 				if (arg0.method678(var5) >= this.field2630[var4][1]) {
 					return true;
 				}
@@ -240,10 +240,10 @@ public class QuestType implements ConfigType {
 	}
 
 	@ObfuscatedName("ir.c(Lep;I)Z")
-	public boolean method4430(class147 arg0) {
+	public boolean method4430(VarIntDomain arg0) {
 		if (this.field2632 != null) {
 			for (int var2 = 0; var2 < this.field2632.length; var2++) {
-				VarType var3 = ((class151) arg0).method695(VarDomainType.PLAYER, this.field2632[var2][0]);
+				VarType var3 = ((VariableTypeProvider) arg0).method695(VarDomainType.PLAYER, this.field2632[var2][0]);
 				if (arg0.method679(var3) >= this.field2632[var2][2]) {
 					return true;
 				}
@@ -251,7 +251,7 @@ public class QuestType implements ConfigType {
 		}
 		if (this.field2630 != null) {
 			for (int var4 = 0; var4 < this.field2630.length; var4++) {
-				VarBitType var5 = ((class151) arg0).method694(this.field2630[var4][0]);
+				VarBitType var5 = ((VariableTypeProvider) arg0).method694(this.field2630[var4][0]);
 				if (arg0.method678(var5) >= this.field2630[var4][2]) {
 					return true;
 				}
@@ -261,13 +261,13 @@ public class QuestType implements ConfigType {
 	}
 
 	@ObfuscatedName("ir.r(Lep;I)Z")
-	public boolean method4431(class147 arg0) {
+	public boolean method4431(VarIntDomain arg0) {
 		if (Statics.method5179(arg0, this.field2649) < this.field2641) {
 			return false;
 		}
 		if (this.field2640 != null) {
 			for (int var2 = 0; var2 < this.field2640.length; var2++) {
-				if (((class644) arg0).method674(this.field2640[var2][0]) < this.field2640[var2][1]) {
+				if (((PlayerStatProvider) arg0).method674(this.field2640[var2][0]) < this.field2640[var2][1]) {
 					return false;
 				}
 			}
@@ -281,7 +281,7 @@ public class QuestType implements ConfigType {
 		}
 		if (this.field2642 != null) {
 			for (int var4 = 0; var4 < this.field2642.length; var4++) {
-				VarType var5 = ((class151) arg0).method695(VarDomainType.PLAYER, this.field2642[var4]);
+				VarType var5 = ((VariableTypeProvider) arg0).method695(VarDomainType.PLAYER, this.field2642[var4]);
 				int var6 = arg0.method679(var5);
 				if (var6 < this.field2643[var4] || var6 > this.field2629[var4]) {
 					return false;
@@ -290,7 +290,7 @@ public class QuestType implements ConfigType {
 		}
 		if (this.field2646 != null) {
 			for (int var7 = 0; var7 < this.field2646.length; var7++) {
-				VarBitType var8 = ((class151) arg0).method694(this.field2646[var7]);
+				VarBitType var8 = ((VariableTypeProvider) arg0).method694(this.field2646[var7]);
 				int var9 = arg0.method678(var8);
 				if (var9 < this.field2647[var7] || var9 > this.field2648[var7]) {
 					return false;
@@ -301,21 +301,21 @@ public class QuestType implements ConfigType {
 	}
 
 	@ObfuscatedName("ir.v(Lep;I)Z")
-	public boolean method4440(class147 arg0) {
+	public boolean method4440(VarIntDomain arg0) {
 		return Statics.method5179(arg0, this.field2649) >= this.field2641;
 	}
 
 	@ObfuscatedName("ir.o(Lep;IB)Z")
-	public boolean method4433(class147 arg0, int arg1) {
+	public boolean method4433(VarIntDomain arg0, int arg1) {
 		if (this.field2640 == null || arg1 < 0 || arg1 >= this.field2640.length) {
 			return false;
 		} else {
-			return ((class644) arg0).method674(this.field2640[arg1][0]) >= this.field2640[arg1][1];
+			return ((PlayerStatProvider) arg0).method674(this.field2640[arg1][0]) >= this.field2640[arg1][1];
 		}
 	}
 
 	@ObfuscatedName("ir.s(Lep;IB)Z")
-	public boolean method4453(class147 arg0, int arg1) {
+	public boolean method4453(VarIntDomain arg0, int arg1) {
 		if (this.field2635 == null || arg1 < 0 || arg1 >= this.field2635.length) {
 			return false;
 		} else {
@@ -324,22 +324,22 @@ public class QuestType implements ConfigType {
 	}
 
 	@ObfuscatedName("ir.y(Lep;II)Z")
-	public boolean method4435(class147 arg0, int arg1) {
+	public boolean method4435(VarIntDomain arg0, int arg1) {
 		if (this.field2642 == null || arg1 < 0 || arg1 >= this.field2642.length) {
 			return false;
 		} else {
-			VarType var3 = ((class151) arg0).method695(VarDomainType.PLAYER, this.field2642[arg1]);
+			VarType var3 = ((VariableTypeProvider) arg0).method695(VarDomainType.PLAYER, this.field2642[arg1]);
 			int var4 = arg0.method679(var3);
 			return var4 >= this.field2643[arg1] && var4 <= this.field2629[arg1];
 		}
 	}
 
 	@ObfuscatedName("ir.q(Lep;II)Z")
-	public boolean method4436(class147 arg0, int arg1) {
+	public boolean method4436(VarIntDomain arg0, int arg1) {
 		if (this.field2646 == null || arg1 < 0 || arg1 >= this.field2646.length) {
 			return false;
 		} else {
-			VarBitType var3 = ((class151) arg0).method694(this.field2646[arg1]);
+			VarBitType var3 = ((VariableTypeProvider) arg0).method694(this.field2646[arg1]);
 			int var4 = arg0.method678(var3);
 			return var4 >= this.field2647[arg1] && var4 <= this.field2648[arg1];
 		}

@@ -601,7 +601,7 @@ public abstract class GpuRenderer extends Renderer {
 			this.field10041 = arg5;
 			this.field10180 = arg6;
 			this.field10185 = arg7;
-			class662.method10156(false, true);
+			ColourUtils.method10156(false, true);
 			if (this.field1596 == null) {
 				this.field10188 = null;
 			} else {
@@ -908,7 +908,7 @@ public abstract class GpuRenderer extends Renderer {
 		for (Node var1 = this.field10051.method14191(); var1 != null; var1 = this.field10051.method14161()) {
 			((class1149) var1).method19240();
 		}
-		class662.method14805(false, true);
+		ColourUtils.method14805(false, true);
 		for (int var2 = 0; var2 < this.field10147.length; var2++) {
 			if (this.field10147[var2] != null) {
 				this.field10147[var2].method5429();

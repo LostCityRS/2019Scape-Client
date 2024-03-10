@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("et")
-public final class class157 implements class147 {
+public final class class157 implements VarIntDomain {
 
 	@ObfuscatedName("et.u(Lec;I)I")
 	public int method679(VarType arg0) {

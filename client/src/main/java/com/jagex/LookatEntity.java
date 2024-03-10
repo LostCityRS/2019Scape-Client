@@ -7,7 +7,7 @@ import deob.Statics;
 public class LookatEntity extends class714 {
 
 	@ObfuscatedName("anw.n")
-	public class273 field11867;
+	public CameraTrackable field11867;
 
 	@ObfuscatedName("anw.m")
 	public final Vector3 field11863 = new Vector3();
@@ -24,12 +24,12 @@ public class LookatEntity extends class714 {
 	@ObfuscatedName("anw.l")
 	public final Vector3 field11866 = new Vector3();
 
-	public LookatEntity(class274 arg0) {
+	public LookatEntity(Camera arg0) {
 		super(arg0);
 	}
 
 	@ObfuscatedName("anw.q(Ljn;Lox;ZI)V")
-	public void method18816(class273 arg0, Vector3 arg1, boolean arg2) {
+	public void method18816(CameraTrackable arg0, Vector3 arg1, boolean arg2) {
 		this.field11867 = arg0;
 		this.field11863.method6492(arg1);
 		this.field11864 = arg2;
@@ -102,7 +102,7 @@ public class LookatEntity extends class714 {
 
 	@ObfuscatedName("anw.w(Lalw;I)V")
 	public void method14132(Packet arg0) {
-		class272 var2 = Statics.method15213(arg0.g1());
+		CameraTrackableType var2 = Statics.method15213(arg0.g1());
 		int var3 = arg0.g2();
 		this.field11867 = this.field8479.method4697().method268(var2, var3);
 		this.field11863.method6490(arg0);

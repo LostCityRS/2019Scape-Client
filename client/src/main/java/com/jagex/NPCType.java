@@ -529,12 +529,12 @@ public class NPCType implements ConfigType {
 	}
 
 	@ObfuscatedName("if.z(Ldh;ILaof;Lem;Lep;Laaq;Laaq;[Laaq;[IILia;I)Ldo;")
-	public final Model method4542(Renderer arg0, int arg1, BASTypeList arg2, class151 arg3, class147 arg4, class721 arg5, class721 arg6, class721[] arg7, int[] arg8, int arg9, NpcTypeCustomization arg10) {
+	public final Model method4542(Renderer arg0, int arg1, BASTypeList arg2, VariableTypeProvider arg3, VarIntDomain arg4, AnimationWrapper arg5, AnimationWrapper arg6, AnimationWrapper[] arg7, int[] arg8, int arg9, NpcTypeCustomization arg10) {
 		return this.method4543(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, this.field2762, true);
 	}
 
 	@ObfuscatedName("if.p(Ldh;ILaof;Lem;Lep;Laaq;Laaq;[Laaq;[IILia;IZB)Ldo;")
-	public final Model method4543(Renderer arg0, int arg1, BASTypeList arg2, class151 arg3, class147 arg4, class721 arg5, class721 arg6, class721[] arg7, int[] arg8, int arg9, NpcTypeCustomization arg10, int arg11, boolean arg12) {
+	public final Model method4543(Renderer arg0, int arg1, BASTypeList arg2, VariableTypeProvider arg3, VarIntDomain arg4, AnimationWrapper arg5, AnimationWrapper arg6, AnimationWrapper[] arg7, int[] arg8, int arg9, NpcTypeCustomization arg10, int arg11, boolean arg12) {
 		if (this.field2735 != null) {
 			NPCType var14 = this.method4547(arg3, arg4);
 			return var14 == null ? null : var14.method4543(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12);
@@ -756,7 +756,7 @@ public class NPCType implements ConfigType {
 			}
 		}
 		if (arg5 != null && arg6 != null) {
-			class721.method2099(var50, arg5, arg6);
+			AnimationWrapper.method2099(var50, arg5, arg6);
 		} else if (arg5 != null) {
 			arg5.method14359(var50, 0);
 		} else if (arg6 != null) {
@@ -770,7 +770,7 @@ public class NPCType implements ConfigType {
 	}
 
 	@ObfuscatedName("if.d(Ldh;ILem;Lep;Laaq;Lia;S)Ldo;")
-	public final Model method4544(Renderer arg0, int arg1, class151 arg2, class147 arg3, class721 arg4, NpcTypeCustomization arg5) {
+	public final Model method4544(Renderer arg0, int arg1, VariableTypeProvider arg2, VarIntDomain arg3, AnimationWrapper arg4, NpcTypeCustomization arg5) {
 		if (this.field2735 != null) {
 			NPCType var7 = this.method4547(arg2, arg3);
 			return var7 == null ? null : var7.method4544(arg0, arg1, arg2, arg3, arg4, arg5);
@@ -922,7 +922,7 @@ public class NPCType implements ConfigType {
 	}
 
 	@ObfuscatedName("if.o(Lem;Lep;S)Lif;")
-	public final NPCType method4547(class151 arg0, class147 arg1) {
+	public final NPCType method4547(VariableTypeProvider arg0, VarIntDomain arg1) {
 		int var3 = -1;
 		if (this.field2730 != -1) {
 			VarBitType var4 = arg0.method694(this.field2730);
@@ -944,7 +944,7 @@ public class NPCType implements ConfigType {
 	}
 
 	@ObfuscatedName("if.s(Lem;Lep;I)Z")
-	public boolean method4567(class151 arg0, class147 arg1) {
+	public boolean method4567(VariableTypeProvider arg0, VarIntDomain arg1) {
 		if (this.field2735 == null) {
 			return true;
 		}

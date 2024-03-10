@@ -23,7 +23,7 @@ public abstract class class911 extends class307 {
 	@ObfuscatedName("ahn.l")
 	public int[] field10567;
 
-	public class911(class274 arg0) {
+	public class911(Camera arg0) {
 		super(arg0);
 	}
 

@@ -314,7 +314,7 @@ public class MapElementType implements ConfigType {
 	}
 
 	@ObfuscatedName("hs.z(Lem;Lep;I)Z")
-	public boolean method4030(class151 arg0, class147 arg1) {
+	public boolean method4030(VariableTypeProvider arg0, VarIntDomain arg1) {
 		boolean var3 = true;
 		int var5;
 		if (this.field2387 == -1) {
@@ -435,7 +435,7 @@ public class MapElementType implements ConfigType {
 	}
 
 	@ObfuscatedName("hs.o(Lem;Lep;S)Lhs;")
-	public final MapElementType method4024(class151 arg0, class147 arg1) {
+	public final MapElementType method4024(VariableTypeProvider arg0, VarIntDomain arg1) {
 		int var3 = -1;
 		if (this.field2371 != -1) {
 			VarBitType var4 = arg0.method694(this.field2371);

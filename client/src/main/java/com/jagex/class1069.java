@@ -14,7 +14,7 @@ public class class1069 extends class714 {
 	@ObfuscatedName("anc.k")
 	public final Vector3 field11849 = new Vector3();
 
-	public class1069(class274 arg0) {
+	public class1069(Camera arg0) {
 		super(arg0);
 	}
 

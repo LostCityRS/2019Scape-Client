@@ -58,7 +58,7 @@ public class class1234 extends PrimaryLayerEntity {
 	public double field12601;
 
 	@ObfuscatedName("aue.ao")
-	public final class721 field12602;
+	public final AnimationWrapper field12602;
 
 	@ObfuscatedName("aue.aj")
 	public int field12586 = 0;
@@ -225,7 +225,7 @@ public class class1234 extends PrimaryLayerEntity {
 			this.field12600 += (double) arg0 * this.field12601;
 		}
 		var2.field4297.method6414(1.0F, 0.0F, 0.0F, (float) Math.atan2(this.field12600, this.field12598));
-		class421 var3 = class421.method6469();
+		Quaternion var3 = Quaternion.method6469();
 		var3.method6414(0.0F, 1.0F, 0.0F, (float) Math.atan2(this.field12597, this.field12592) - 3.1415927F);
 		var2.field4297.method6424(var3);
 		var3.method6407();

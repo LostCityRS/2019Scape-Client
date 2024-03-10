@@ -226,7 +226,7 @@ public class Matrix4x3 {
 	}
 
 	@ObfuscatedName("ou.d(Lov;)V")
-	public void method6302(class421 arg0) {
+	public void method6302(Quaternion arg0) {
 		this.method6322(arg0.field4301, arg0.field4304, arg0.field4305, arg0.field4300);
 	}
 
@@ -345,7 +345,7 @@ public class Matrix4x3 {
 	}
 
 	@ObfuscatedName("ou.y(Lov;)V")
-	public void method6308(class421 arg0) {
+	public void method6308(Quaternion arg0) {
 		this.method6309(arg0.field4301, arg0.field4304, arg0.field4305, arg0.field4300);
 	}
 

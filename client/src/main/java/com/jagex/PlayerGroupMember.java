@@ -12,7 +12,7 @@ public class PlayerGroupMember {
 	public final long field1924;
 
 	@ObfuscatedName("gy.k")
-	public final class642[] field1927;
+	public final PlayerStat[] field1927;
 
 	@ObfuscatedName("gy.f")
 	public final VarContainerSparse field1926;
@@ -53,13 +53,13 @@ public class PlayerGroupMember {
 		int var5 = arg0.g1();
 		this.field1930 = (var5 & 0x1) != 0;
 		this.field1929 = (var5 & 0x2) != 0;
-		this.field1927 = new class642[arg3.method295().method9784()];
+		this.field1927 = new PlayerStat[arg3.method295().method9784()];
 		int var6 = arg0.g1();
 		if (var6 > this.field1927.length) {
 			throw new IllegalStateException("");
 		}
 		for (int var7 = 0; var7 < this.field1927.length; var7++) {
-			class642 var8 = this.field1927[var7] = new class642(arg3.method295().method9778(var7), true);
+			PlayerStat var8 = this.field1927[var7] = new PlayerStat(arg3.method295().method9778(var7), true);
 			if (var7 < var6) {
 				var8.method10160(arg0.g4s());
 			} else {
@@ -148,7 +148,7 @@ public class PlayerGroupMember {
 	}
 
 	@ObfuscatedName("gy.v(IB)Lxz;")
-	public class642 method3501(int arg0) {
+	public PlayerStat method3501(int arg0) {
 		return this.field1927[arg0];
 	}
 

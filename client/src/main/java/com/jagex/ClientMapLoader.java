@@ -202,7 +202,7 @@ public class ClientMapLoader extends class454 {
 						if (var6 != null) {
 							this.field10764.method9999(var35, var36, var6);
 						}
-						class42.method14707(var35, var36, var7);
+						Minimap.method14707(var35, var36, var7);
 					}
 				}
 			}
@@ -362,7 +362,7 @@ public class ClientMapLoader extends class454 {
 			if (var11 != null) {
 				this.field10764.method9999(arg3 >> 3, arg4 >> 3, var11);
 			}
-			class42.method14707(arg3 >> 3, arg4 >> 3, var12);
+			Minimap.method14707(arg3 >> 3, arg4 >> 3, var12);
 			if (!var10 && this.field4517 != null && this.field4517[arg2] != null) {
 				int var40 = arg3 + 7;
 				int var41 = arg4 + 7;

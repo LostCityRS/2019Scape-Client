@@ -2893,9 +2893,9 @@ public class Rasteriser {
 				this.field953 = -1;
 				this.field935 = 255 - (arg21 >> 24 & 0xFF);
 				this.field959 = 0;
-				int var31 = Statics.field8149[class662.method4937(this.field947.method15695(arg28)) & 0xFFFF];
+				int var31 = Statics.field8149[ColourUtils.method4937(this.field947.method15695(arg28)) & 0xFFFF];
 				int var32 = ((arg21 >> 16 & 0xFF) * (var31 >> 16 & 0xFF) & 0xFF00 | 0xFF0000) << 8 | (arg21 >> 8 & 0xFF) * (var31 >> 8 & 0xFF) & 0xFF00 | (arg21 & 0xFF) * (var31 & 0xFF) >> 8;
-				this.method1030(true, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, class662.method19201(var32, arg24, arg25), class662.method19201(var32, arg24, arg26), class662.method19201(var32, arg24, arg27));
+				this.method1030(true, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, ColourUtils.method19201(var32, arg24, arg25), ColourUtils.method19201(var32, arg24, arg26), ColourUtils.method19201(var32, arg24, arg27));
 				return;
 			}
 			this.field953 = var30;
@@ -3573,9 +3573,9 @@ public class Rasteriser {
 			if (this.field954 == null) {
 				this.field953 = -1;
 				this.field935 = 255 - (arg21 >> 24 & 0xFF);
-				int var58 = Statics.field8149[class662.method4937(this.field947.method15695(arg28)) & 0xFFFF];
+				int var58 = Statics.field8149[ColourUtils.method4937(this.field947.method15695(arg28)) & 0xFFFF];
 				int var59 = ((arg21 >> 16 & 0xFF) * (var58 >> 16 & 0xFF) & 0xFF00 | 0xFF0000) << 8 | (arg21 >> 8 & 0xFF) * (var58 >> 8 & 0xFF) & 0xFF00 | (arg21 & 0xFF) * (var58 & 0xFF) >> 8;
-				this.method1030(true, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, class662.method19201(var59, arg24, arg25), class662.method19201(var59, arg24, arg26), class662.method19201(var59, arg24, arg27));
+				this.method1030(true, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, ColourUtils.method19201(var59, arg24, arg25), ColourUtils.method19201(var59, arg24, arg26), ColourUtils.method19201(var59, arg24, arg27));
 				return;
 			}
 			this.field953 = var55;
@@ -3589,9 +3589,9 @@ public class Rasteriser {
 			if (this.field962 == null) {
 				this.field961 = -1;
 				this.field935 = 255 - (arg21 >> 24 & 0xFF);
-				int var60 = Statics.field8149[class662.method4937(this.field947.method15695(arg30)) & 0xFFFF];
+				int var60 = Statics.field8149[ColourUtils.method4937(this.field947.method15695(arg30)) & 0xFFFF];
 				int var61 = ((arg21 >> 16 & 0xFF) * (var60 >> 16 & 0xFF) & 0xFF00 | 0xFF0000) << 8 | (arg21 >> 8 & 0xFF) * (var60 >> 8 & 0xFF) & 0xFF00 | (arg21 & 0xFF) * (var60 & 0xFF) >> 8;
-				this.method1030(true, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, class662.method19201(var61, arg24, arg25), class662.method19201(var61, arg24, arg26), class662.method19201(var61, arg24, arg27));
+				this.method1030(true, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, ColourUtils.method19201(var61, arg24, arg25), ColourUtils.method19201(var61, arg24, arg26), ColourUtils.method19201(var61, arg24, arg27));
 				return;
 			}
 			this.field961 = var56;
@@ -3604,9 +3604,9 @@ public class Rasteriser {
 			if (this.field967 == null) {
 				this.field955 = -1;
 				this.field935 = 255 - (arg21 >> 24 & 0xFF);
-				int var62 = Statics.field8149[class662.method4937(this.field947.method15695(arg32)) & 0xFFFF];
+				int var62 = Statics.field8149[ColourUtils.method4937(this.field947.method15695(arg32)) & 0xFFFF];
 				int var63 = ((arg21 >> 16 & 0xFF) * (var62 >> 16 & 0xFF) & 0xFF00 | 0xFF0000) << 8 | (arg21 >> 8 & 0xFF) * (var62 >> 8 & 0xFF) & 0xFF00 | (arg21 & 0xFF) * (var62 & 0xFF) >> 8;
-				this.method1030(true, arg1, arg2, (float) arg3, (float) arg4, (float) arg5, (float) arg6, (float) arg7, (float) arg8, (float) arg9, (float) arg10, (float) arg11, class662.method19201(var63, arg24, arg25), class662.method19201(var63, arg24, arg26), class662.method19201(var63, arg24, arg27));
+				this.method1030(true, arg1, arg2, (float) arg3, (float) arg4, (float) arg5, (float) arg6, (float) arg7, (float) arg8, (float) arg9, (float) arg10, (float) arg11, ColourUtils.method19201(var63, arg24, arg25), ColourUtils.method19201(var63, arg24, arg26), ColourUtils.method19201(var63, arg24, arg27));
 				return;
 			}
 			this.field955 = var57;

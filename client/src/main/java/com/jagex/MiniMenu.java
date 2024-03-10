@@ -2104,9 +2104,9 @@ public class MiniMenu {
 		var3.field11432.p2(var4.field7427 + arg1);
 		var3.field11432.p1(method14766() ? 1 : 0);
 		var3.field11432.p2_alt3(var4.field7426 + arg0);
-		class42.field731 = arg0;
-		class42.field718 = arg1;
-		class42.field730 = false;
+		Minimap.field731 = arg0;
+		Minimap.field718 = arg1;
+		Minimap.field730 = false;
 		DelayedStateChange.method14036();
 		return var3;
 	}

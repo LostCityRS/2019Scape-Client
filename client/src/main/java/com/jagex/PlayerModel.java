@@ -156,7 +156,7 @@ public class PlayerModel {
 	}
 
 	@ObfuscatedName("xg.u(Ldh;ILaof;Laov;Laod;Laon;Lem;Lep;Laaq;Laaq;[Laaq;[IIZLwy;B)Ldo;")
-	public Model method10126(Renderer arg0, int arg1, BASTypeList arg2, IDKTypeList arg3, NPCTypeList arg4, ObjTypeList arg5, class151 arg6, class147 arg7, class721 arg8, class721 arg9, class721[] arg10, int[] arg11, int arg12, boolean arg13, WearposDefaults arg14) {
+	public Model method10126(Renderer arg0, int arg1, BASTypeList arg2, IDKTypeList arg3, NPCTypeList arg4, ObjTypeList arg5, VariableTypeProvider arg6, VarIntDomain arg7, AnimationWrapper arg8, AnimationWrapper arg9, AnimationWrapper[] arg10, int[] arg11, int arg12, boolean arg13, WearposDefaults arg14) {
 		if (this.field7892 != -1) {
 			return ((NPCType) arg4.get(this.field7892)).method4542(arg0, arg1, arg2, arg6, arg7, arg8, arg9, arg10, arg11, arg12, null);
 		}
@@ -417,7 +417,7 @@ public class PlayerModel {
 			}
 		}
 		if (arg8 != null && arg9 != null) {
-			class721.method2099(var69, arg8, arg9);
+			AnimationWrapper.method2099(var69, arg8, arg9);
 		} else if (arg8 != null) {
 			arg8.method14359(var69, 0);
 		} else if (arg9 != null) {
@@ -427,7 +427,7 @@ public class PlayerModel {
 	}
 
 	@ObfuscatedName("xg.z(Ldh;ILaov;Laod;Laon;Lem;Lep;Laaq;B)Ldo;")
-	public Model method10120(Renderer arg0, int arg1, IDKTypeList arg2, NPCTypeList arg3, ObjTypeList arg4, class151 arg5, class147 arg6, class721 arg7) {
+	public Model method10120(Renderer arg0, int arg1, IDKTypeList arg2, NPCTypeList arg3, ObjTypeList arg4, VariableTypeProvider arg5, VarIntDomain arg6, AnimationWrapper arg7) {
 		if (this.field7892 != -1) {
 			return ((NPCType) arg3.get(this.field7892)).method4544(arg0, arg1, arg5, arg6, arg7, null);
 		}
@@ -512,7 +512,7 @@ public class PlayerModel {
 	}
 
 	@ObfuscatedName("xg.p(Ldh;ILaov;Laos;Laaq;IIIB)Ldo;")
-	public Model method10130(Renderer arg0, int arg1, IDKTypeList arg2, SeqTypeList arg3, class721 arg4, int arg5, int arg6, int arg7) {
+	public Model method10130(Renderer arg0, int arg1, IDKTypeList arg2, SeqTypeList arg3, AnimationWrapper arg4, int arg5, int arg6, int arg7) {
 		int var9 = arg4 == null ? arg1 : arg1 | arg4.method14358();
 		long var10 = (long) arg7 << 32 | (long) (arg6 << 16) | (long) arg5;
 		WeightedCache var12 = field7902;

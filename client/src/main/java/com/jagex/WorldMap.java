@@ -113,7 +113,7 @@ public class WorldMap {
 	}
 
 	@ObfuscatedName("tf.e(Lpy;Lpy;Laoa;Laoe;Laop;Laoc;Laox;Lem;Lep;)V")
-	public static void method8506(Js5 arg0, Js5 arg1, FloorOverlayTypeList arg2, FloorUnderlayTypeList arg3, LocTypeList arg4, MapElementTypeList arg5, MSITypeList arg6, class151 arg7, class147 arg8) {
+	public static void method8506(Js5 arg0, Js5 arg1, FloorOverlayTypeList arg2, FloorUnderlayTypeList arg3, LocTypeList arg4, MapElementTypeList arg5, MSITypeList arg6, VariableTypeProvider arg7, VarIntDomain arg8) {
 		Statics.field6794 = arg0;
 		Statics.field6795 = arg1;
 		field6839 = arg2;
@@ -131,7 +131,7 @@ public class WorldMap {
 				field6796.method14501(var11, (long) var11.field12359);
 			}
 		}
-		class662.method10156(true, false);
+		ColourUtils.method10156(true, false);
 	}
 
 	@ObfuscatedName("tf.n()V")
@@ -238,9 +238,9 @@ public class WorldMap {
 				var8 = 127;
 			}
 			int var9 = (arg3 + var7 & 0xFC00) + (var7 & 0x380) + var8;
-			var10 = Statics.field8149[class662.method4937(class662.method10223(var9, 96)) & 0xFFFF] | 0xFF000000;
+			var10 = Statics.field8149[ColourUtils.method4937(ColourUtils.method10223(var9, 96)) & 0xFFFF] | 0xFF000000;
 		} else if (var6 >= 0) {
-			var10 = Statics.field8149[class662.method4937(class662.method10223(arg1.method2043(var6).field1366, 96)) & 0xFFFF] | 0xFF000000;
+			var10 = Statics.field8149[ColourUtils.method4937(ColourUtils.method10223(arg1.method2043(var6).field1366, 96)) & 0xFFFF] | 0xFF000000;
 		} else if (var5.field8154 == -1) {
 			var10 = 0;
 		} else {
@@ -252,7 +252,7 @@ public class WorldMap {
 				var12 = 127;
 			}
 			int var13 = (arg3 + var11 & 0xFC00) + (var11 & 0x380) + var12;
-			var10 = Statics.field8149[class662.method4937(class662.method10223(var13, 96)) & 0xFFFF] | 0xFF000000;
+			var10 = Statics.field8149[ColourUtils.method4937(ColourUtils.method10223(var13, 96)) & 0xFFFF] | 0xFF000000;
 		}
 		return var10;
 	}
@@ -598,7 +598,7 @@ public class WorldMap {
 							arg1[var26] = 0;
 							arg2[var26] = 0;
 						} else {
-							int var27 = var21 == 0 ? 0 : class662.method17849(var18 * 256 / var21, var19 / var22, var20 / var22);
+							int var27 = var21 == 0 ? 0 : ColourUtils.method17849(var18 * 256 / var21, var19 / var22, var20 / var22);
 							int var28 = (var27 & 0x7F) + arg4;
 							if (var28 < 0) {
 								var28 = 0;
@@ -607,7 +607,7 @@ public class WorldMap {
 							}
 							int var29 = (arg3 + var27 & 0xFC00) + (var27 & 0x380) + var28;
 							int var30 = Statics.field6812 * var23 + var10;
-							int var31 = Statics.field8149[class662.method4937(class662.method1625(var29, 96)) & 0xFFFF];
+							int var31 = Statics.field8149[ColourUtils.method4937(ColourUtils.method1625(var29, 96)) & 0xFFFF];
 							arg1[var30] = (byte) (var31 >> 16 & 0xFF);
 							arg2[var30] = (short) (var31 & 0xFFFF);
 						}

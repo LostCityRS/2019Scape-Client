@@ -163,7 +163,7 @@ public class PureJavaRenderer extends Renderer {
 			this.field9803 = new Matrix4x4();
 			this.method15670(1);
 			this.method15722(0);
-			class662.method10156(true, true);
+			ColourUtils.method10156(true, true);
 			this.field9777 = true;
 			this.field9776 = (int) MonotonicTime.method3655();
 		} catch (Throwable var7) {
@@ -193,7 +193,7 @@ public class PureJavaRenderer extends Renderer {
 	@ObfuscatedName("afg.p()V")
 	public void method2369() {
 		if (this.field9777) {
-			class662.method14805(true, false);
+			ColourUtils.method14805(true, false);
 			this.field9777 = false;
 		}
 		this.field9794 = true;

@@ -634,7 +634,7 @@ public class DeveloperConsole {
 			Statics.field3183.method7680(new RebuildRequest(RebuildType.field5070, null));
 		} else {
 			client.world.method7753();
-			class42.method5065();
+			Minimap.method5065();
 		}
 	}
 }

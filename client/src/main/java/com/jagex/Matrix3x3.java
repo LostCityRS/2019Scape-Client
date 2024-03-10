@@ -13,8 +13,8 @@ public final class Matrix3x3 {
 	}
 
 	@ObfuscatedName("oc.e()Lov;")
-	public class421 method6476() {
-		class421 var1 = new class421();
+	public Quaternion method6476() {
+		Quaternion var1 = new Quaternion();
 		double var2 = (double) (this.field4307[0] + 1.0F + this.field4307[4] + this.field4307[8]);
 		if (var2 > 1.0E-8D) {
 			float var4 = (float) (Math.sqrt(var2) * 2.0D);

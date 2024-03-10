@@ -157,7 +157,7 @@ public class HitmarkType implements ConfigType {
 	}
 
 	@ObfuscatedName("vb.z(Lem;Lep;I)Lvb;")
-	public final HitmarkType method9251(class151 arg0, class147 arg1) {
+	public final HitmarkType method9251(VariableTypeProvider arg0, VarIntDomain arg1) {
 		int var3 = -1;
 		if (this.field7298 == null) {
 			return this;

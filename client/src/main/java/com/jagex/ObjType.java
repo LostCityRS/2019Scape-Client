@@ -615,7 +615,7 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.v(Ldh;IILxg;Laaq;IIIII)Ldo;")
-	public final Model method14644(Renderer arg0, int arg1, int arg2, PlayerModel arg3, class721 arg4, int arg5, int arg6, int arg7, int arg8) {
+	public final Model method14644(Renderer arg0, int arg1, int arg2, PlayerModel arg3, AnimationWrapper arg4, int arg5, int arg6, int arg7, int arg8) {
 		if (this.field8629 != null && arg2 > 1) {
 			int var10 = -1;
 			for (int var11 = 0; var11 < 10; var11++) {

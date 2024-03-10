@@ -31,7 +31,7 @@ public class class153 {
 	public static int field1722 = -1;
 
 	@ObfuscatedName("eq.x")
-	public static final class147 field1723 = new class157();
+	public static final VarIntDomain field1723 = new class157();
 
 	public class153() throws Throwable {
 		throw new Error();

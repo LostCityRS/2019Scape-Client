@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("js")
-public final class class279 implements class151 {
+public final class class279 implements VariableTypeProvider {
 
 	@ObfuscatedName("js.w(Lqe;II)Lec;")
 	public VarType method695(VarDomainType arg0, int arg1) {

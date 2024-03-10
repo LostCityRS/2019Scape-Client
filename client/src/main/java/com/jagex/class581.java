@@ -10,7 +10,7 @@ public class class581 {
 	}
 
 	@ObfuscatedName("sk.e(FLox;Lov;Lox;Lox;Lox;Lox;FFFFB)V")
-	public static void method8144(float arg0, Vector3 arg1, class421 arg2, Vector3 arg3, Vector3 arg4, Vector3 arg5, Vector3 arg6, float arg7, float arg8, float arg9, float arg10) {
+	public static void method8144(float arg0, Vector3 arg1, Quaternion arg2, Vector3 arg3, Vector3 arg4, Vector3 arg5, Vector3 arg6, float arg7, float arg8, float arg9, float arg10) {
 		if (arg3.method6488(arg1)) {
 			return;
 		}

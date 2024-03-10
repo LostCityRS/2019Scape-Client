@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("aou")
-public class class1074 extends class721 {
+public class class1074 extends AnimationWrapper {
 
 	public class1074() {
 		super(true);

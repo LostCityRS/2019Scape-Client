@@ -802,7 +802,7 @@ public class LoginManager {
 					Statics.field7922 = var36.g2();
 					Statics.field1839 = var36.g2();
 					Statics.field7942 = var36.g4s();
-					Statics.field636 = new class25(Statics.field7942);
+					Statics.field636 = new HostNameProvider(Statics.field7942);
 					(new Thread(Statics.field636)).start();
 					Statics.field6720 = var36.g1();
 					Statics.field2830 = var36.g2();
@@ -1083,7 +1083,7 @@ public class LoginManager {
 		client.field11095 = true;
 		class648.method13845();
 		for (int var0 = 0; var0 < Statics.field7410.field635.length; var0++) {
-			class642 var1 = new class642(Statics.field2767.method9778(var0), false);
+			PlayerStat var1 = new PlayerStat(Statics.field2767.method9778(var0), false);
 			var1.method10160(0);
 			var1.method10164(0);
 			Statics.field7410.field635[var0] = var1;
@@ -1117,7 +1117,7 @@ public class LoginManager {
 		client.field10885 = (int) (Math.random() * 120.0D) - 60;
 		client.field10887 = (int) (Math.random() * 30.0D) - 20;
 		client.field10895 = (int) (Math.random() * 160.0D) - 80 & 0x3FFF;
-		class42.method9233();
+		Minimap.method9233();
 		for (int var1 = 0; var1 < 2048; var1++) {
 			client.field10944[var1] = null;
 		}
@@ -1169,7 +1169,7 @@ public class LoginManager {
 		}
 		for (int var5 = 0; var5 < 3; var5++) {
 			for (int var6 = 0; var6 < 8; var6++) {
-				client.field11057[var5][var6] = new class482();
+				client.field11057[var5][var6] = new StockmarketSlot();
 			}
 		}
 		client.world.method7816().method10019();

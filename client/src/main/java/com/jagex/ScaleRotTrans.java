@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class ScaleRotTrans {
 
 	@ObfuscatedName("oe.p")
-	public class421 field4297;
+	public Quaternion field4297;
 
 	@ObfuscatedName("oe.d")
 	public Vector3 field4298;
@@ -19,7 +19,7 @@ public class ScaleRotTrans {
 	}
 
 	public ScaleRotTrans() {
-		this.field4297 = new class421();
+		this.field4297 = new Quaternion();
 		this.field4298 = new Vector3();
 		this.field4299 = new Vector3(1.0F, 1.0F, 1.0F);
 	}
@@ -34,7 +34,7 @@ public class ScaleRotTrans {
 		if (arg1) {
 			this.method6391(arg0);
 		} else {
-			this.field4297 = new class421(arg0);
+			this.field4297 = new Quaternion(arg0);
 			this.field4298 = new Vector3(arg0);
 			this.field4299 = new Vector3(arg0);
 		}
@@ -53,7 +53,7 @@ public class ScaleRotTrans {
 			var5 = (float) arg0.g2s() / 32768.0F;
 			var6 = (float) arg0.g2s() / 32768.0F;
 		}
-		this.field4297 = new class421(var3, var4, var5, var6);
+		this.field4297 = new Quaternion(var3, var4, var5, var6);
 		float var7 = 0.0F;
 		float var8 = 0.0F;
 		float var9 = 0.0F;

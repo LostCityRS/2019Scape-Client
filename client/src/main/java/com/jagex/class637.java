@@ -131,14 +131,14 @@ public class class637 {
 
 	@ObfuscatedName("xv.m(Ldh;Lxv;Lxv;FI)V")
 	public void method10094(Renderer arg0, class637 arg1, class637 arg2, float arg3) {
-		this.field7877 = class662.method19201(arg1.field7877, arg2.field7877, arg3 * 255.0F);
+		this.field7877 = ColourUtils.method19201(arg1.field7877, arg2.field7877, arg3 * 255.0F);
 		this.field7861 = (arg2.field7861 - arg1.field7861) * arg3 + arg1.field7861;
 		this.field7864 = (arg2.field7864 - arg1.field7864) * arg3 + arg1.field7864;
 		this.field7871 = (arg2.field7871 - arg1.field7871) * arg3 + arg1.field7871;
 		this.field7874 = (arg2.field7874 - arg1.field7874) * arg3 + arg1.field7874;
 		this.field7862 = (arg2.field7862 - arg1.field7862) * arg3 + arg1.field7862;
 		this.field7870 = (arg2.field7870 - arg1.field7870) * arg3 + arg1.field7870;
-		this.field7866 = class662.method19201(arg1.field7866, arg2.field7866, arg3 * 255.0F);
+		this.field7866 = ColourUtils.method19201(arg1.field7866, arg2.field7866, arg3 * 255.0F);
 		this.field7867 = (int) ((float) (arg2.field7867 - arg1.field7867) * arg3 + (float) arg1.field7867);
 		if (arg1.field7868 != arg2.field7868) {
 			this.field7868 = arg0.method2435(arg1.field7868, arg2.field7868, arg3, this.field7868);

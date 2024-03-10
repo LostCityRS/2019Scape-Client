@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("ahm")
-public abstract class PathingEntity extends PrimaryLayerEntity implements class273 {
+public abstract class PathingEntity extends PrimaryLayerEntity implements CameraTrackable {
 
 	@ObfuscatedName("ahm.v")
 	public int field10406;
@@ -49,7 +49,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements class2
 	public int field10408;
 
 	@ObfuscatedName("ahm.ag")
-	public class517 field10409;
+	public EntityChatLine field10409;
 
 	@ObfuscatedName("ahm.ah")
 	public byte field10410;
@@ -70,7 +70,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements class2
 	public int[] field10445;
 
 	@ObfuscatedName("ahm.at")
-	public class716 field10416;
+	public LinkQueue field10416;
 
 	@ObfuscatedName("ahm.ad")
 	public int field10417;
@@ -85,7 +85,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements class2
 	public class1075 field10432;
 
 	@ObfuscatedName("ahm.ap")
-	public class721 field10454;
+	public AnimationWrapper field10454;
 
 	@ObfuscatedName("ahm.aq")
 	public EntitySpotAnim[] field10422;
@@ -233,7 +233,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements class2
 		this.field10421 = new int[Statics.field11389.field7758];
 		this.field10456 = new int[Statics.field11389.field7758];
 		this.field10445 = new int[Statics.field11389.field7758];
-		this.field10416 = new class716();
+		this.field10416 = new LinkQueue();
 		this.field10417 = -1;
 		this.field10427 = null;
 		this.field10432 = new class1075(this, false);
@@ -888,7 +888,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements class2
 	@ObfuscatedName("ahm.cu(Ljava/lang/String;IIII)V")
 	public void method16510(String arg0, int arg1, int arg2, int arg3) {
 		if (this.field10409 == null) {
-			this.field10409 = new class517();
+			this.field10409 = new EntityChatLine();
 		}
 		this.field10409.field6682 = arg0;
 		this.field10409.field6686 = arg1;
@@ -978,7 +978,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements class2
 	public abstract boolean method16512();
 
 	@ObfuscatedName("ahm.ce(I)Lsu;")
-	public abstract class517 method16513();
+	public abstract EntityChatLine method16513();
 
 	@ObfuscatedName("ahm.cx(I)I")
 	public abstract int method16578();

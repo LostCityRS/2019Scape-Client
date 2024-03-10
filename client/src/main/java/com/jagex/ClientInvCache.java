@@ -205,7 +205,7 @@ public class ClientInvCache extends Node {
 	}
 
 	@ObfuscatedName("ajo.v(Ldh;ILaaq;IZLxg;I)Ldo;")
-	public final Model method17475(Renderer arg0, int arg1, class721 arg2, int arg3, boolean arg4, PlayerModel arg5) {
+	public final Model method17475(Renderer arg0, int arg1, AnimationWrapper arg2, int arg3, boolean arg4, PlayerModel arg5) {
 		Model var7 = null;
 		int var8 = arg1;
 		BASType var9 = null;

@@ -419,7 +419,7 @@ public class Statics {
 	public static int field1891;
 
 	@ObfuscatedName("fk.wv")
-	public static class28 field1895;
+	public static TotpPreferences field1895;
 
 	@ObfuscatedName("fr.hr")
 	public static LocTypeList field1897;
@@ -776,7 +776,7 @@ public class Statics {
 	public static Js5 field4618;
 
 	@ObfuscatedName("qi.in")
-	public static class151 field4626;
+	public static VariableTypeProvider field4626;
 
 	@ObfuscatedName("qw.gc")
 	public static ScriptVarType[] varByLegacyChar;
@@ -926,7 +926,7 @@ public class Statics {
 	public static int archiveCount;
 
 	@ObfuscatedName("a.n")
-	public static class893 field604;
+	public static BasicCamera field604;
 
 	@ObfuscatedName("a.m")
 	public static int field605;
@@ -956,7 +956,7 @@ public class Statics {
 	public static Renderer field630;
 
 	@ObfuscatedName("ah.dh")
-	public static class25 field636;
+	public static HostNameProvider field636;
 
 	@ObfuscatedName("ah.us")
 	public static long field637;
@@ -1040,10 +1040,10 @@ public class Statics {
 	public static MSITypeList field6789;
 
 	@ObfuscatedName("tf.w")
-	public static class147 field6790;
+	public static VarIntDomain field6790;
 
 	@ObfuscatedName("tf.l")
-	public static class151 field6791;
+	public static VariableTypeProvider field6791;
 
 	@ObfuscatedName("tf.u")
 	public static WorldMapDefaults field6792;
@@ -1268,7 +1268,7 @@ public class Statics {
 	public static int field741;
 
 	@ObfuscatedName("vu.dj")
-	public static class36 field7410;
+	public static PlayerVariableManager field7410;
 
 	@ObfuscatedName("vi.l")
 	public static Js5 field7411;
@@ -1412,7 +1412,7 @@ public class Statics {
 	public static int field7956;
 
 	@ObfuscatedName("xb.wr")
-	public static class26 field7957;
+	public static HttpClient field7957;
 
 	@ObfuscatedName("xd.hp")
 	public static NPCTypeList field7961;
@@ -1508,7 +1508,7 @@ public class Statics {
 	public static Sprite field8480;
 
 	@ObfuscatedName("aas.ij")
-	public static class806 field8485;
+	public static VarPlayerTypeListClient field8485;
 
 	@ObfuscatedName("aar.aw")
 	public static boolean focus;
@@ -1637,7 +1637,7 @@ public class Statics {
 	public static Sprite[] field9149;
 
 	@ObfuscatedName("aco.uh")
-	public static class893 field9155;
+	public static BasicCamera field9155;
 
 	@ObfuscatedName("acl.e")
 	public static Random field9158;
@@ -1790,22 +1790,22 @@ public class Statics {
 	}
 
 	@ObfuscatedName("jp.e(IB)Lie;")
-	public static class247 method5101(int arg0) {
-		if (class247.field2618.field2617 == arg0) {
-			return class247.field2618;
-		} else if (class247.field2616.field2617 == arg0) {
-			return class247.field2616;
+	public static CameraEffectType method5101(int arg0) {
+		if (CameraEffectType.field2618.field2617 == arg0) {
+			return CameraEffectType.field2618;
+		} else if (CameraEffectType.field2616.field2617 == arg0) {
+			return CameraEffectType.field2616;
 		} else {
 			return null;
 		}
 	}
 
 	@ObfuscatedName("ads.e(II)Ljl;")
-	public static class272 method15213(int arg0) {
-		if (class272.field2838.field2840 == arg0) {
-			return class272.field2838;
-		} else if (class272.field2839.field2840 == arg0) {
-			return class272.field2839;
+	public static CameraTrackableType method15213(int arg0) {
+		if (CameraTrackableType.field2838.field2840 == arg0) {
+			return CameraTrackableType.field2838;
+		} else if (CameraTrackableType.field2839.field2840 == arg0) {
+			return CameraTrackableType.field2839;
 		} else {
 			return null;
 		}
@@ -1988,9 +1988,9 @@ public class Statics {
 		for (int var5 = 7; var5 >= 0; var5--) {
 			for (int var6 = 127; var6 >= 0; var6--) {
 				int var7 = (arg4 & 0x3F) << 10 | (var5 & 0x7) << 7 | var6 & 0x7F;
-				class662.method10156(false, true);
+				ColourUtils.method10156(false, true);
 				int var8 = field8149[var7];
-				class662.method14805(false, true);
+				ColourUtils.method14805(false, true);
 				arg0.method2354((arg3.field2196 * var6 >> 7) + arg1, (arg3.field2197 * (7 - var5) >> 3) + arg2, (arg3.field2196 >> 7) + 1, (arg3.field2197 >> 3) + 1, var8 | 0xFF000000, 0);
 			}
 		}
@@ -2405,7 +2405,7 @@ public class Statics {
 			client.field10817 = 0;
 		}
 		for (int var3 = 0; var3 < client.field10819; var3++) {
-			class565 var4 = client.field11067[var3];
+			KeyboardEvent var4 = client.field11067[var3];
 			int var5 = var4.method9141();
 			char var6 = var4.method9131();
 			int var7 = var4.method9134();
@@ -2641,7 +2641,7 @@ public class Statics {
 	}
 
 	@ObfuscatedName("ks.x(Lep;Lao;B)I")
-	public static int method5179(class147 arg0, ConfigTypeList arg1) {
+	public static int method5179(VarIntDomain arg0, ConfigTypeList arg1) {
 		int var2 = 0;
 		for (int var3 = 0; var3 < arg1.size(); var3++) {
 			QuestType var4 = (QuestType) arg1.get(var3);
@@ -3059,7 +3059,7 @@ public class Statics {
 			var32 = var8.method4025(arg0, false);
 			if (var32 != null) {
 				int var33 = var8.field2408 > 0 ? var8.field2408 : field11389.field7730;
-				class42.method4142(arg2, arg1, arg3, arg4, arg5, arg6, var32, (double) var33, var8.field2365, var8.field2405);
+				Minimap.method4142(arg2, arg1, arg3, arg4, arg5, arg6, var32, (double) var33, var8.field2365, var8.field2405);
 			}
 		}
 		if (var8.field2370 == null) {
@@ -3079,7 +3079,7 @@ public class Statics {
 			var35 = field10355;
 			var36 = field10268;
 		}
-		class42.method3654(arg2, arg1, arg3, arg4, arg5, arg6, var34, var8.field2370, var35, var36, var8.field2366);
+		Minimap.method3654(arg2, arg1, arg3, arg4, arg5, arg6, var34, var8.field2370, var35, var36, var8.field2366);
 	}
 
 	@ObfuscatedName("ku.b(IB)Ljava/lang/String;")
@@ -3359,7 +3359,7 @@ public class Statics {
 		field432.field789 = 0;
 		client.field10831 = 0;
 		MiniMenu.method5175();
-		class42.method3552();
+		Minimap.method3552();
 		for (int var0 = 0; var0 < 2048; var0++) {
 			client.field10944[var0] = null;
 		}
@@ -3512,7 +3512,7 @@ public class Statics {
 			}
 			client.world.method7816().method9984();
 			HintArrow.method2086();
-			class31.method3076();
+			SpotShadowFactory.method3076();
 			field7282.method6008();
 			field2013.method5974();
 			ScriptRunner.field8204.method2924();
@@ -3524,7 +3524,7 @@ public class Statics {
 			client.field10834.method2924();
 		}
 		class670.method8004();
-		class35.method17658();
+		ObjIconFactory.method17658();
 	}
 
 	@ObfuscatedName("hf.gf(B)V")
@@ -4276,7 +4276,7 @@ public class Statics {
 			arg0.field8218[++arg0.field8211 - 1] = "";
 			return;
 		}
-		class27 var2 = client.field11086[var1];
+		Ignore var2 = client.field11086[var1];
 		arg0.field8218[++arg0.field8211 - 1] = var2.field598;
 		if (var2.field596 == null) {
 			arg0.field8218[++arg0.field8211 - 1] = "";
@@ -4544,7 +4544,7 @@ public class Statics {
 	@ObfuscatedName("qs.ku(Lhf;I)V")
 	public static void method7332(Component arg0) {
 		if (arg0.field2184 == 5 && arg0.field2334 != -1) {
-			class35.method539(field8198, arg0);
+			ObjIconFactory.method539(field8198, arg0);
 		}
 	}
 
@@ -4635,7 +4635,7 @@ public class Statics {
 			return;
 		}
 		field8198.method2168(arg1, arg2, arg0.field2196 + arg1, arg0.field2197 + arg2);
-		if (class42.field724 >= 3) {
+		if (Minimap.field724 >= 3) {
 			field8198.method2206(-16777216, var3.field2147, arg1, arg2);
 			return;
 		}
@@ -4690,7 +4690,7 @@ public class Statics {
 
 	@ObfuscatedName("ku.amz(Lyf;I)V")
 	public static final void method5146(ClientScriptState arg0) {
-		class17.method4589();
+		RuneScapeSetup.method4589();
 	}
 
 	@ObfuscatedName("az.lh(Ljava/lang/String;ZB)V")
@@ -4708,7 +4708,7 @@ public class Statics {
 			return;
 		}
 		for (int var4 = 0; var4 < client.field11084; var4++) {
-			class27 var5 = client.field11086[var4];
+			Ignore var5 = client.field11086[var4];
 			String var6 = class795.method15191(var5.field598, field10782);
 			if (var6 != null && var6.equals(var3)) {
 				ChatHistory.method1006(4, arg0 + LocalisedText.IGNORELISTDUPE.method15021(field1680));
@@ -4775,7 +4775,7 @@ public class Statics {
 		if (field9155.method4780() != PositionMode.field2816) {
 			throw new RuntimeException();
 		}
-		class909 var2 = (class909) field9155.method4709();
+		PositionPoint var2 = (PositionPoint) field9155.method4709();
 		var2.method16671(var1);
 		client.field10902 = true;
 	}

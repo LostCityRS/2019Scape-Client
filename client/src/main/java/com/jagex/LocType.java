@@ -715,7 +715,7 @@ public class LocType implements ConfigType {
 	}
 
 	@ObfuscatedName("vd.r(Ldh;IIILcb;Lcb;IIILaaq;Lvp;B)Ldo;")
-	public final synchronized Model method9470(Renderer arg0, int arg1, int arg2, int arg3, FloorModel arg4, FloorModel arg5, int arg6, int arg7, int arg8, class721 arg9, class597 arg10) {
+	public final synchronized Model method9470(Renderer arg0, int arg1, int arg2, int arg3, FloorModel arg4, FloorModel arg5, int arg6, int arg7, int arg8, AnimationWrapper arg9, class597 arg10) {
 		if (class601.method14238(arg2)) {
 			arg2 = class601.field7548.field7562;
 		}
@@ -960,7 +960,7 @@ public class LocType implements ConfigType {
 	}
 
 	@ObfuscatedName("vd.o(Lem;Lep;I)Lvd;")
-	public final LocType method9477(class151 arg0, class147 arg1) {
+	public final LocType method9477(VariableTypeProvider arg0, VarIntDomain arg1) {
 		int var3 = -1;
 		if (this.field7506 != -1) {
 			VarBitType var4 = arg0.method694(this.field7506);

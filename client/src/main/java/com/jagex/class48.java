@@ -181,7 +181,7 @@ public class class48 {
 		arg0.method18314(0);
 		byte var2;
 		if (GameShell.maxmemory >= 96) {
-			int var1 = class33.method270();
+			int var1 = CpuProfiling.method270();
 			if (var1 <= 100) {
 				method9619();
 				var2 = 4;

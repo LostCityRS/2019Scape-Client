@@ -31,10 +31,10 @@ public class DynamicLoc {
 	public Model field6669;
 
 	@ObfuscatedName("sp.z")
-	public class721 field6664;
+	public AnimationWrapper field6664;
 
 	@ObfuscatedName("sp.p")
-	public class721 field6671;
+	public AnimationWrapper field6671;
 
 	@ObfuscatedName("sp.d")
 	public int field6662;

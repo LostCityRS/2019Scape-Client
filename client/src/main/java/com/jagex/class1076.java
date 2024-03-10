@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("aoi")
-public class class1076 extends class721 {
+public class class1076 extends AnimationWrapper {
 
 	@ObfuscatedName("aoi.q")
 	public GraphEntity field11878;

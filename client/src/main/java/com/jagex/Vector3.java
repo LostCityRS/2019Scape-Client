@@ -285,10 +285,10 @@ public class Vector3 {
 	}
 
 	@ObfuscatedName("ox.ai(Lov;)V")
-	public final void method6526(class421 arg0) {
-		class421 var2 = class421.method6411(this.field4308, this.field4311, this.field4313, 0.0F);
-		class421 var3 = class421.method6419(arg0);
-		class421 var4 = class421.method6425(var3, var2);
+	public final void method6526(Quaternion arg0) {
+		Quaternion var2 = Quaternion.method6411(this.field4308, this.field4311, this.field4313, 0.0F);
+		Quaternion var3 = Quaternion.method6419(arg0);
+		Quaternion var4 = Quaternion.method6425(var3, var2);
 		var4.method6424(arg0);
 		this.method6491(var4.field4301, var4.field4304, var4.field4305);
 		var2.method6407();

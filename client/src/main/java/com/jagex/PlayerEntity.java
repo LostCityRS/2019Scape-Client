@@ -313,7 +313,7 @@ public class PlayerEntity extends PathingEntity {
 		if (Statics.field688.characterShadows.method18453() == 1) {
 			BASType var9 = this.method16508();
 			if (var9.field7346 && (this.field12061.field7892 == -1 || ((NPCType) Statics.field7961.get(this.field12061.field7892)).field2710)) {
-				class721 var10 = this.field10454.method14346() && this.field10454.method14355() ? this.field10454 : null;
+				AnimationWrapper var10 = this.field10454.method14346() && this.field10454.method14355() ? this.field10454 : null;
 				class1075 var11 = this.field10432.method14346() && (!this.field10432.field11877 || var10 == null) ? this.field10432 : null;
 				short var12 = Statics.field11389.field7728;
 				byte var13 = Statics.field11389.field7757;
@@ -324,9 +324,9 @@ public class PlayerEntity extends PathingEntity {
 				Object var14 = null;
 				Model var15;
 				if (var12 > -1 && Statics.field688.textures.method18426() == 1) {
-					var15 = class31.method3283(arg0, var5, this.field10405, this.field12466, this.field10407, this.field10459[0], var12, var13, var11 == null ? var10 : var11);
+					var15 = SpotShadowFactory.method3283(arg0, var5, this.field10405, this.field12466, this.field10407, this.field10459[0], var12, var13, var11 == null ? var10 : var11);
 				} else {
-					var15 = class31.method5102(arg0, var5, this.field10405, this.field12466, this.field10407, 1, this.field10459[0], 0, 0, 160, 240, var11 == null ? var10 : var11);
+					var15 = SpotShadowFactory.method5102(arg0, var5, this.field10405, this.field12466, this.field10407, 1, this.field10459[0], 0, 0, 160, 240, var11 == null ? var10 : var11);
 				}
 				if (var15 != null) {
 					if (this.field11713 == null || this.field11713.length < this.field10459.length + 1) {
@@ -437,7 +437,7 @@ public class PlayerEntity extends PathingEntity {
 	public boolean method19114(Renderer arg0, int arg1) {
 		int var3 = arg1;
 		BASType var4 = this.method16508();
-		class721 var5 = this.field10454.method14346() && !this.field10454.method14355() ? this.field10454 : null;
+		AnimationWrapper var5 = this.field10454.method14346() && !this.field10454.method14355() ? this.field10454 : null;
 		class1075 var6 = !this.field10432.method14346() || this.field12053 || this.field10432.field11877 && var5 != null ? null : this.field10432;
 		int var7 = var4.field7342;
 		int var8 = var4.field7343;
@@ -630,7 +630,7 @@ public class PlayerEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqk.ce(I)Lsu;")
-	public class517 method16513() {
+	public EntityChatLine method16513() {
 		if (this.field10409 != null) {
 			if (this.field10409.field6682 == null) {
 				return null;
@@ -648,8 +648,8 @@ public class PlayerEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqk.e(I)Ljl;")
-	public class272 method4675() {
-		return class272.field2838;
+	public CameraTrackableType method4675() {
+		return CameraTrackableType.field2838;
 	}
 
 	@ObfuscatedName("aqk.n(I)I")
@@ -664,8 +664,8 @@ public class PlayerEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqk.k(I)Lov;")
-	public class421 method4668() {
-		class421 var1 = class421.method6469();
+	public Quaternion method4668() {
+		Quaternion var1 = Quaternion.method6469();
 		var1.method6415(Trig1.method6277(this.field10395.field528), 0.0F, 0.0F);
 		return var1;
 	}

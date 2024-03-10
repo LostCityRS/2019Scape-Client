@@ -144,7 +144,7 @@ public class NpcEntity extends PathingEntity {
 		this.field10458 = false;
 		PickableEntity var11 = null;
 		if (Statics.field688.characterShadows.method18453() == 1 && var9.field2710 && var8.field7346) {
-			class721 var12 = this.field10454.method14346() && this.field10454.method14355() ? this.field10454 : null;
+			AnimationWrapper var12 = this.field10454.method14346() && this.field10454.method14355() ? this.field10454 : null;
 			class1075 var13 = this.field10432.method14346() && (!this.field10432.field11877 || var12 == null) ? this.field10432 : null;
 			short var14 = Statics.field11389.field7728;
 			byte var15 = Statics.field11389.field7757;
@@ -154,9 +154,9 @@ public class NpcEntity extends PathingEntity {
 			}
 			Model var16;
 			if (var14 > -1 && Statics.field688.textures.method18426() == 1) {
-				var16 = class31.method3283(arg0, var5, this.field10405, this.field12466, this.field10407, this.field10459[0], var14, var15, var13 == null ? var12 : var13);
+				var16 = SpotShadowFactory.method3283(arg0, var5, this.field10405, this.field12466, this.field10407, this.field10459[0], var14, var15, var13 == null ? var12 : var13);
 			} else {
-				var16 = class31.method5102(arg0, var5, this.field10405, this.field12466, this.field10407, this.field12083.field2699, this.field10459[0], this.field12083.field2737 & 0xFFFF, this.field12083.field2729 & 0xFFFF, this.field12083.field2739 & 0xFF, this.field12083.field2740 & 0xFF, var13 == null ? var12 : var13);
+				var16 = SpotShadowFactory.method5102(arg0, var5, this.field10405, this.field12466, this.field10407, this.field12083.field2699, this.field10459[0], this.field12083.field2737 & 0xFFFF, this.field12083.field2729 & 0xFFFF, this.field12083.field2739 & 0xFF, this.field12083.field2740 & 0xFF, var13 == null ? var12 : var13);
 			}
 			if (var16 != null) {
 				var11 = PickableEntity.method16749(this.method19162());
@@ -217,7 +217,7 @@ public class NpcEntity extends PathingEntity {
 	public boolean method19167(Renderer arg0, int arg1) {
 		int var3 = arg1;
 		BASType var4 = this.method16508();
-		class721 var5 = this.field10454.method14346() && !this.field10454.method14355() ? this.field10454 : null;
+		AnimationWrapper var5 = this.field10454.method14346() && !this.field10454.method14355() ? this.field10454 : null;
 		class1075 var6 = this.field10432.method14346() && (!this.field10432.field11877 || var5 == null) ? this.field10432 : null;
 		int var7 = var4.field7342;
 		int var8 = var4.field7343;
@@ -532,7 +532,7 @@ public class NpcEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqc.ce(I)Lsu;")
-	public class517 method16513() {
+	public EntityChatLine method16513() {
 		return this.field10409 != null && this.field10409.field6682 == null ? null : this.field10409;
 	}
 
@@ -548,8 +548,8 @@ public class NpcEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqc.e(I)Ljl;")
-	public class272 method4675() {
-		return class272.field2839;
+	public CameraTrackableType method4675() {
+		return CameraTrackableType.field2839;
 	}
 
 	@ObfuscatedName("aqc.n(I)I")
@@ -564,8 +564,8 @@ public class NpcEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqc.k(I)Lov;")
-	public class421 method4668() {
-		class421 var1 = class421.method6469();
+	public Quaternion method4668() {
+		Quaternion var1 = Quaternion.method6469();
 		var1.method6415(Trig1.method6277(this.field10395.field528), 0.0F, 0.0F);
 		return var1;
 	}

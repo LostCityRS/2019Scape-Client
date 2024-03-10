@@ -638,7 +638,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 					throw new RuntimeException("");
 				}
 			}
-			class662.method10156(false, true);
+			ColourUtils.method10156(false, true);
 			this.field9875 = true;
 			this.field10026 = new class94(this, this.field1596);
 			this.method15728();
@@ -898,7 +898,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 			this.field9986.method1375();
 		}
 		if (this.field9875) {
-			class662.method14805(false, true);
+			ColourUtils.method14805(false, true);
 			this.field9875 = false;
 		}
 	}

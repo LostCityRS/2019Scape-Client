@@ -13,7 +13,7 @@ public class class1235 extends PrimaryLayerEntity {
 	public int field12608 = 0;
 
 	@ObfuscatedName("aur.ah")
-	public class721 field12609;
+	public AnimationWrapper field12609;
 
 	@ObfuscatedName("aur.al")
 	public int field12610 = 0;

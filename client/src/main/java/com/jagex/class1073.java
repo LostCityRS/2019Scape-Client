@@ -11,7 +11,7 @@ public class class1073 extends class714 {
 	@ObfuscatedName("ani.m")
 	public class911 field11875 = null;
 
-	public class1073(class274 arg0) {
+	public class1073(Camera arg0) {
 		super(arg0);
 	}
 
@@ -59,7 +59,7 @@ public class class1073 extends class714 {
 		var8.field4311 = (float) (var7[1] - var6[1]);
 		var8.field4313 = (float) (var7[2] - var6[2]);
 		var8.method6513();
-		class421 var9 = new class421();
+		Quaternion var9 = new Quaternion();
 		var9.method6413(var8, arg4);
 		Vector3 var10 = Vector3.method6483(0.0F, 1.0F, 0.0F);
 		Vector3 var11 = Vector3.method6587(var8, var10);

@@ -6,9 +6,9 @@ import deob.ObfuscatedName;
 public abstract class class307 {
 
 	@ObfuscatedName("kl.e")
-	public final class274 field3084;
+	public final Camera field3084;
 
-	public class307(class274 arg0) {
+	public class307(Camera arg0) {
 		this.field3084 = arg0;
 	}
 

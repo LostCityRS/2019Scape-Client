@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("atd")
-public class class1227 extends class1180 {
+public class class1227 extends CameraEffect {
 
 	@ObfuscatedName("atd.u")
 	public class248 field12553;

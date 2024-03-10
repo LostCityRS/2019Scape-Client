@@ -95,7 +95,7 @@ public class class665 {
 	}
 
 	@ObfuscatedName("yq.ai(Lov;)V")
-	public final void method10556(class421 arg0) {
+	public final void method10556(Quaternion arg0) {
 		this.field8173.field4297.method6412(arg0);
 		this.method10535();
 		if (this.field8178 != null) {

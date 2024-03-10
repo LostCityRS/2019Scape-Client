@@ -43,9 +43,9 @@ public class ClientScript extends SecondaryNode {
 	public IterableMap[] field12375;
 
 	@ObfuscatedName("asc.x")
-	public final class151 field12376;
+	public final VariableTypeProvider field12376;
 
-	public ClientScript(Packet arg0, class151 arg1) {
+	public ClientScript(Packet arg0, VariableTypeProvider arg1) {
 		this.field12376 = arg1;
 		int var3 = this.method19494(arg0);
 		int var4 = 0;

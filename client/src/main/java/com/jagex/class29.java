@@ -15,13 +15,13 @@ public class class29 {
 
 	@ObfuscatedName("y.e(Lakt;I)V")
 	public static void method542(CoordFine arg0) {
-		Statics.field604 = new class893(client.field11034);
-		Statics.field604.method4683(class268.field2828);
+		Statics.field604 = new BasicCamera(client.field11034);
+		Statics.field604.method4683(CameraControlMode.field2828);
 		try {
-			class909 var1 = (class909) Statics.field604.method4688(PositionMode.field2816, false);
-			class1070 var2 = (class1070) Statics.field604.method4684(LookatMode.field2791, false);
+			PositionPoint var1 = (PositionPoint) Statics.field604.method4688(PositionMode.field2816, false);
+			LookatOrientation var2 = (LookatOrientation) Statics.field604.method4684(LookatMode.field2791, false);
 			var1.method16671(arg0);
-			var2.method18781(new class421(0.0F, 0.0F, 0.0F));
+			var2.method18781(new Quaternion(0.0F, 0.0F, 0.0F));
 			Statics.field604.method4695(Vector3.method6483(99999.0F, 99999.0F, 99999.0F));
 			Statics.field604.method4814(Vector3.method6483(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY));
 			Statics.field604.method4832(Vector3.method6483(99999.0F, 99999.0F, 99999.0F));
@@ -46,10 +46,10 @@ public class class29 {
 
 	@ObfuscatedName("dg.k(B)V")
 	public static void method2585() {
-		class909 var0 = (class909) Statics.field604.method4709();
-		class1070 var1 = (class1070) Statics.field604.method4797();
+		PositionPoint var0 = (PositionPoint) Statics.field604.method4709();
+		LookatOrientation var1 = (LookatOrientation) Statics.field604.method4797();
 		Vector3 var2 = var0.method5219();
-		class421 var3 = var1.method18787();
+		Quaternion var3 = var1.method18787();
 		if (client.field10986 != null) {
 			int var4 = client.field10986.field2196;
 			int var5 = client.field10986.field2197;
@@ -62,12 +62,12 @@ public class class29 {
 			}
 		}
 		if (Statics.field9182.method9121()) {
-			class421 var10 = class421.method6469();
+			Quaternion var10 = Quaternion.method6469();
 			var10.method6414(1.0F, 0.0F, 0.0F, (float) (Statics.field9182.method9092() - Statics.field7284) / 200.0F);
 			var3.method6424(var10);
 			Vector3 var11 = Vector3.method6483(0.0F, 1.0F, 0.0F);
 			var11.method6526(var3);
-			class421 var12 = class421.method6469();
+			Quaternion var12 = Quaternion.method6469();
 			var12.method6413(var11, (float) (Statics.field605 - Statics.field9182.method9086()) / 200.0F);
 			var3.method6424(var12);
 			var1.method18781(var3);

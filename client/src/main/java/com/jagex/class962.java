@@ -214,7 +214,7 @@ public final class class962 extends Node {
 			client.world.method7744().method16867(Statics.field8198, var10, arg0, arg2, arg3, arg4, arg5, arg6, arg8, arg9, arg7);
 			Statics.field688.method18157(Statics.field688.groundDecoration, var11);
 		}
-		class42.method16444(Statics.field4490.field11717);
+		Minimap.method16444(Statics.field4490.field11717);
 	}
 
 	@ObfuscatedName("ud.u(IIIILvp;I)V")

@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("asi")
 public class class1201 extends class1072 {
 
-	public class1201(class274 arg0) {
+	public class1201(Camera arg0) {
 		super(arg0);
 	}
 

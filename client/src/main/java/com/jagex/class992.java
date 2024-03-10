@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("akk")
-public final class class992 extends Node implements class565 {
+public final class class992 extends Node implements KeyboardEvent {
 
 	@ObfuscatedName("akk.z")
 	public int field11466;
