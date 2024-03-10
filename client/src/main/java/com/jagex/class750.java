@@ -10,7 +10,7 @@ public class class750 {
 	public static boolean field8754 = false;
 
 	@ObfuscatedName("abz.c")
-	public static class1015[] field8748 = new class1015[0];
+	public static WorldListEntry[] field8748 = new WorldListEntry[0];
 
 	@ObfuscatedName("abz.r")
 	public static int field8756 = 1001127;
@@ -38,7 +38,7 @@ public class class750 {
 		}
 		while (true) {
 			while (field8757 < Statics.field3011) {
-				class1015 var0 = WorldList.method4944(field8757);
+				WorldListEntry var0 = WorldList.method4944(field8757);
 				if (var0 != null && var0.field11707 == -1) {
 					if (field8750 == null) {
 						field8750 = client.field10994.method10589(var0.field11703);
@@ -87,18 +87,18 @@ public class class750 {
 	}
 
 	@ObfuscatedName("ym.w(I)Lalc;")
-	public static class1015 method13782() {
+	public static WorldListEntry method13782() {
 		field8756 = 0;
 		return method6048();
 	}
 
 	@ObfuscatedName("nn.l(I)Lalc;")
-	public static class1015 method6048() {
+	public static WorldListEntry method6048() {
 		return field8756 < field8748.length ? field8748[++field8756 - 1] : null;
 	}
 
 	@ObfuscatedName("o.u(I)Lalc;")
-	public static class1015 method477() {
+	public static WorldListEntry method477() {
 		return WorldList.method4944(Statics.field8755.node);
 	}
 
@@ -116,12 +116,12 @@ public class class750 {
 		}
 		int var6 = (arg0 + arg1) / 2;
 		int var7 = arg0;
-		class1015 var8 = field8748[var6];
+		WorldListEntry var8 = field8748[var6];
 		field8748[var6] = field8748[arg1];
 		field8748[arg1] = var8;
 		for (int var9 = arg0; var9 < arg1; var9++) {
 			if (method3592(field8748[var9], var8, arg2, arg3, arg4, arg5) <= 0) {
-				class1015 var10 = field8748[var9];
+				WorldListEntry var10 = field8748[var9];
 				field8748[var9] = field8748[var7];
 				field8748[var7++] = var10;
 			}
@@ -133,7 +133,7 @@ public class class750 {
 	}
 
 	@ObfuscatedName("gh.d(Lalc;Lalc;IZIZI)I")
-	public static int method3592(class1015 arg0, class1015 arg1, int arg2, boolean arg3, int arg4, boolean arg5) {
+	public static int method3592(WorldListEntry arg0, WorldListEntry arg1, int arg2, boolean arg3, int arg4, boolean arg5) {
 		int var6 = method2856(arg0, arg1, arg2, arg3);
 		if (var6 != 0) {
 			return arg3 ? -var6 : var6;
@@ -146,7 +146,7 @@ public class class750 {
 	}
 
 	@ObfuscatedName("ef.c(Lalc;Lalc;IZB)I")
-	public static int method2856(class1015 arg0, class1015 arg1, int arg2, boolean arg3) {
+	public static int method2856(WorldListEntry arg0, WorldListEntry arg1, int arg2, boolean arg3) {
 		if (arg2 == 1) {
 			int var4 = arg0.field7641;
 			int var5 = arg1.field7641;

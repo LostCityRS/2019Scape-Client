@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("alc")
-public class class1015 extends class618 {
+public class WorldListEntry extends class618 {
 
 	@ObfuscatedName("alc.u")
 	public int field11705;
