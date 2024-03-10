@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ahh")
-public class PositionPoint extends class307 {
+public class PositionPoint extends Position {
 
 	@ObfuscatedName("ahh.n")
 	public int field10551;
@@ -75,7 +75,7 @@ public class PositionPoint extends class307 {
 	}
 
 	@ObfuscatedName("ahh.l(Lju;IIB)V")
-	public void method5223(class270 arg0, int arg1, int arg2) {
+	public void method5223(Vector3i arg0, int arg1, int arg2) {
 		arg0.field2835 = (int) this.field10548.field4308 - arg1;
 		arg0.field2836 = (int) -this.field10548.field4311;
 		arg0.field2837 = (int) this.field10548.field4313 - arg2;

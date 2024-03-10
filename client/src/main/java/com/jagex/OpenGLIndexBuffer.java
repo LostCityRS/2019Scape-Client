@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aid")
-public class OpenGLIndexBuffer extends class486 implements IndexBuffer {
+public class OpenGLIndexBuffer extends OpenGLBuffer implements IndexBuffer {
 
 	@ObfuscatedName("aid.d")
 	public DataType field10675;

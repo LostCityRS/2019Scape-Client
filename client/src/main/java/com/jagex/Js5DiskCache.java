@@ -24,12 +24,12 @@ public class Js5DiskCache implements Runnable {
 	}
 
 	@ObfuscatedName("pf.e(ILuf;S)Latf;")
-	public class1228 method6997(int arg0, DiskStore arg1) {
-		class1228 var3 = new class1228();
+	public Js5WorkerRequest method6997(int arg0, DiskStore arg1) {
+		Js5WorkerRequest var3 = new Js5WorkerRequest();
 		var3.field12559 = 1;
 		DualIterableQueue var4 = this.field4438;
 		synchronized (this.field4438) {
-			class1228 var5 = (class1228) this.field4438.method14317();
+			Js5WorkerRequest var5 = (Js5WorkerRequest) this.field4438.method14317();
 			while (true) {
 				if (var5 == null) {
 					break;
@@ -39,7 +39,7 @@ public class Js5DiskCache implements Runnable {
 					var3.field12344 = false;
 					return var3;
 				}
-				var5 = (class1228) this.field4438.method14324();
+				var5 = (Js5WorkerRequest) this.field4438.method14324();
 			}
 		}
 		var3.field12557 = arg1.method9010(arg0);
@@ -49,8 +49,8 @@ public class Js5DiskCache implements Runnable {
 	}
 
 	@ObfuscatedName("pf.n(I[BLuf;I)Latf;")
-	public class1228 method6988(int arg0, byte[] arg1, DiskStore arg2) {
-		class1228 var4 = new class1228();
+	public Js5WorkerRequest method6988(int arg0, byte[] arg1, DiskStore arg2) {
+		Js5WorkerRequest var4 = new Js5WorkerRequest();
 		var4.field12559 = 2;
 		var4.field11440 = arg0;
 		var4.field12557 = arg1;
@@ -61,8 +61,8 @@ public class Js5DiskCache implements Runnable {
 	}
 
 	@ObfuscatedName("pf.m(ILuf;B)Latf;")
-	public class1228 method6996(int arg0, DiskStore arg1) {
-		class1228 var3 = new class1228();
+	public Js5WorkerRequest method6996(int arg0, DiskStore arg1) {
+		Js5WorkerRequest var3 = new Js5WorkerRequest();
 		var3.field12559 = 3;
 		var3.field11440 = arg0;
 		var3.field12556 = arg1;
@@ -72,7 +72,7 @@ public class Js5DiskCache implements Runnable {
 	}
 
 	@ObfuscatedName("pf.k(Latf;I)V")
-	public void method6987(class1228 arg0) {
+	public void method6987(Js5WorkerRequest arg0) {
 		DualIterableQueue var2 = this.field4438;
 		synchronized (this.field4438) {
 			this.field4438.method14339(arg0);
@@ -84,9 +84,9 @@ public class Js5DiskCache implements Runnable {
 	public void run() {
 		while (!this.field4439) {
 			DualIterableQueue var1 = this.field4438;
-			class1228 var2;
+			Js5WorkerRequest var2;
 			synchronized (this.field4438) {
-				var2 = (class1228) this.field4438.method14315();
+				var2 = (Js5WorkerRequest) this.field4438.method14315();
 				if (var2 == null) {
 					try {
 						this.field4438.wait();

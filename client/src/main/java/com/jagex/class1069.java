@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("anc")
-public class class1069 extends class714 {
+public class class1069 extends Lookat {
 
 	@ObfuscatedName("anc.n")
 	public final Vector3 field11847 = new Vector3(Float.NaN, Float.NaN, Float.NaN);
@@ -40,7 +40,7 @@ public class class1069 extends class714 {
 	}
 
 	@ObfuscatedName("anc.f(Lju;Lou;IIFB)V")
-	public void method14136(class270 arg0, Matrix4x3 arg1, int arg2, int arg3, float arg4) {
+	public void method14136(Vector3i arg0, Matrix4x3 arg1, int arg2, int arg3, float arg4) {
 		Vector3 var6 = Vector3.method6484(this.field8479.method4714());
 		var6.field4308 -= arg2;
 		var6.field4313 -= arg3;

@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("aut")
-public class ObjStackEntity extends class1199 {
+public class ObjStackEntity extends ObjLayerEntity {
 
 	@ObfuscatedName("aut.x")
 	public static Matrix4x3 field12584 = new Matrix4x3();

@@ -110,7 +110,7 @@ public class MiniMenu {
 	}
 
 	@ObfuscatedName("gp.f(Lvt;Lakm;I)Z")
-	public static boolean method3483(Binding arg0, class993 arg1) {
+	public static boolean method3483(Binding arg0, MouseEvent arg1) {
 		return arg0 != null && arg0.method9396(arg1, client.field11024, client.field10822, Statics.field11931);
 	}
 
@@ -160,7 +160,7 @@ public class MiniMenu {
 			Statics.field7100 = null;
 			Statics.field1846 = null;
 		}
-		class993 var3 = (class993) client.field10816.method14191();
+		MouseEvent var3 = (MouseEvent) client.field10816.method14191();
 		int var4;
 		int var5;
 		if (var3 == null) {

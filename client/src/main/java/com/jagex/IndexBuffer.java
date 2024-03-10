@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ml")
-public interface IndexBuffer extends class342, class329 {
+public interface IndexBuffer extends GpuBuffer, class329 {
 
 	@ObfuscatedName("ml.a(I)V")
 	void method5831(int arg0);

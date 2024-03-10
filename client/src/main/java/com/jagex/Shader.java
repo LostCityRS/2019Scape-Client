@@ -29,7 +29,7 @@ public abstract class Shader {
 	@ObfuscatedName("ho.u")
 	public static final class251 field2571 = new class232();
 
-	public Shader(GpuRenderer arg0, class239 arg1) {
+	public Shader(GpuRenderer arg0, ShaderData arg1) {
 		this.field2570 = arg1.field2577;
 		this.field2567 = arg1.field2580.length;
 		this.field2574 = new class252(this.field2567, field2571);
@@ -248,13 +248,13 @@ public abstract class Shader {
 	}
 
 	@ObfuscatedName("ho.f(Lafc;Lhn;)Lhi;")
-	public abstract Program method4156(GpuRenderer arg0, class233 arg1);
+	public abstract Program method4156(GpuRenderer arg0, ProgramData arg1);
 
 	@ObfuscatedName("ho.d(Lhi;)Z")
 	public abstract boolean method4162(Program arg0);
 
 	@ObfuscatedName("ho.v(Lhv;)Laql;")
-	public abstract ProgramUniform method4165(class240 arg0);
+	public abstract ProgramUniform method4165(ProgramUniformData arg0);
 
 	@ObfuscatedName("ho.m()Z")
 	public abstract boolean method4184();

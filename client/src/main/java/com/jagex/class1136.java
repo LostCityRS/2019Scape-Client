@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aqh")
-public class class1136 extends class911 {
+public class class1136 extends PositionSpline {
 
 	@ObfuscatedName("aqh.u")
 	public float[] field12098;

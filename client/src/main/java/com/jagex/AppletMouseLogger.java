@@ -8,7 +8,7 @@ public class AppletMouseLogger extends MouseLogger {
 
 	@ObfuscatedName("alt.l(I)V")
 	public void method10270() {
-		class993 var1 = this.method18354();
+		MouseEvent var1 = this.method18354();
 		if (var1 == null) {
 			return;
 		}
@@ -41,8 +41,8 @@ public class AppletMouseLogger extends MouseLogger {
 	}
 
 	@ObfuscatedName("alt.i(I)Lakm;")
-	public class993 method18354() {
-		return (class993) client.field10816.method14191();
+	public MouseEvent method18354() {
+		return (MouseEvent) client.field10816.method14191();
 	}
 
 	@ObfuscatedName("alt.z(S)Lakl;")
@@ -51,7 +51,7 @@ public class AppletMouseLogger extends MouseLogger {
 	}
 
 	@ObfuscatedName("alt.w(Lalw;Lakm;I)V")
-	public void method10264(Packet arg0, class993 arg1) {
+	public void method10264(Packet arg0, MouseEvent arg1) {
 	}
 
 	@ObfuscatedName("alt.f(I)I")

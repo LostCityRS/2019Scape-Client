@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("asi")
-public class class1201 extends class1072 {
+public class class1201 extends LookatSpline {
 
 	public class1201(Camera arg0) {
 		super(arg0);

@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("ahd")
-public class PositionEntity extends class307 {
+public class PositionEntity extends Position {
 
 	@ObfuscatedName("ahd.n")
 	public CameraTrackable field10552;
@@ -246,7 +246,7 @@ public class PositionEntity extends class307 {
 	}
 
 	@ObfuscatedName("ahd.l(Lju;IIB)V")
-	public void method5223(class270 arg0, int arg1, int arg2) {
+	public void method5223(Vector3i arg0, int arg1, int arg2) {
 		Vector3 var4 = this.method5219();
 		arg0.field2835 = (int) var4.field4308 - arg1;
 		arg0.field2836 = (int) -var4.field4311;

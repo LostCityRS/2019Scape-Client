@@ -27,7 +27,7 @@ public class class551 {
 	public GroundDecorLayerEntity field6974;
 
 	@ObfuscatedName("tk.u")
-	public class1199 field6971;
+	public ObjLayerEntity field6971;
 
 	@ObfuscatedName("tk.z")
 	public PrimaryLayerEntityList field6964;

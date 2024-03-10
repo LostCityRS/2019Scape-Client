@@ -1843,19 +1843,19 @@ public class Statics {
 	}
 
 	@ObfuscatedName("cj.e(II)Liu;")
-	public static class248 method1599(int arg0) {
-		if (class248.field2625.field2621 == arg0) {
-			return class248.field2625;
-		} else if (class248.field2620.field2621 == arg0) {
-			return class248.field2620;
-		} else if (class248.field2619.field2621 == arg0) {
-			return class248.field2619;
-		} else if (class248.field2622.field2621 == arg0) {
-			return class248.field2622;
-		} else if (class248.field2623.field2621 == arg0) {
-			return class248.field2623;
-		} else if (class248.field2624.field2621 == arg0) {
-			return class248.field2624;
+	public static ShakeMode method1599(int arg0) {
+		if (ShakeMode.field2625.field2621 == arg0) {
+			return ShakeMode.field2625;
+		} else if (ShakeMode.field2620.field2621 == arg0) {
+			return ShakeMode.field2620;
+		} else if (ShakeMode.field2619.field2621 == arg0) {
+			return ShakeMode.field2619;
+		} else if (ShakeMode.field2622.field2621 == arg0) {
+			return ShakeMode.field2622;
+		} else if (ShakeMode.field2623.field2621 == arg0) {
+			return ShakeMode.field2623;
+		} else if (ShakeMode.field2624.field2621 == arg0) {
+			return ShakeMode.field2624;
 		} else {
 			return null;
 		}
@@ -2089,7 +2089,7 @@ public class Statics {
 	}
 
 	@ObfuscatedName("adz.k(Ltc;Ltc;B)V")
-	public static void method15212(class531 arg0, class531 arg1) {
+	public static void method15212(Link arg0, Link arg1) {
 		if (arg0.field6758 != null) {
 			arg0.method8433();
 		}
@@ -2158,7 +2158,7 @@ public class Statics {
 	@ObfuscatedName("alj.t(II)V")
 	public static void method18259(int arg0) {
 		field2364 = arg0;
-		class1188.field12413 = new class1188[arg0];
+		NativeMouseEvent.field12413 = new NativeMouseEvent[arg0];
 		field7658 = 0;
 	}
 
@@ -2340,7 +2340,7 @@ public class Statics {
 		Queue var0 = class648.field7946;
 		synchronized (class648.field7946) {
 			while (true) {
-				class1188 var1 = (class1188) class648.field7946.poll();
+				NativeMouseEvent var1 = (NativeMouseEvent) class648.field7946.poll();
 				if (var1 == null) {
 					return;
 				}
@@ -2551,7 +2551,7 @@ public class Statics {
 	@ObfuscatedName("abe.t(II)V")
 	public static void method14915(int arg0) {
 		field7883 = arg0;
-		class1187.field12388 = new class1187[arg0];
+		BasicMouseEvent.field12388 = new BasicMouseEvent[arg0];
 		field12384 = 0;
 	}
 
@@ -2563,14 +2563,14 @@ public class Statics {
 	}
 
 	@ObfuscatedName("tc.ae(IIIJII)Lasf;")
-	public static class1187 method8438(int arg0, int arg1, int arg2, long arg3, int arg4) {
-		class1187[] var6 = class1187.field12388;
-		synchronized (class1187.field12388) {
-			class1187 var7;
+	public static BasicMouseEvent method8438(int arg0, int arg1, int arg2, long arg3, int arg4) {
+		BasicMouseEvent[] var6 = BasicMouseEvent.field12388;
+		synchronized (BasicMouseEvent.field12388) {
+			BasicMouseEvent var7;
 			if (field12384 == 0) {
-				var7 = new class1187();
+				var7 = new BasicMouseEvent();
 			} else {
-				var7 = class1187.field12388[--field12384];
+				var7 = BasicMouseEvent.field12388[--field12384];
 			}
 			var7.field12385 = arg0;
 			var7.field12386 = arg1;

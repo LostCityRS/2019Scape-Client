@@ -17,7 +17,7 @@ public class class591 implements Binding {
 	}
 
 	@ObfuscatedName("va.e(Lakm;[Lut;ILub;I)Z")
-	public boolean method9396(class993 arg0, KeyboardEvent[] arg1, int arg2, Keyboard arg3) {
+	public boolean method9396(MouseEvent arg0, KeyboardEvent[] arg1, int arg2, Keyboard arg3) {
 		for (int var5 = 0; var5 < arg2 && var5 < arg1.length; var5++) {
 			KeyboardEvent var6 = arg1[var5];
 			if (var6 != null && var6.method9141() == this.field7412 && var6.method9134() == this.field7413) {

@@ -154,7 +154,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 			return null;
 		}
 		byte[] var1 = this.field10743.method19444();
-		if (this.field10743 instanceof class1228) {
+		if (this.field10743 instanceof Js5WorkerRequest) {
 			try {
 				if (var1 == null) {
 					throw new RuntimeException();
@@ -262,7 +262,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 			return null;
 		}
 		byte[] var4 = var3.method19444();
-		if (!(var3 instanceof class1228)) {
+		if (!(var3 instanceof Js5WorkerRequest)) {
 			try {
 				if (var4 == null || var4.length <= 2) {
 					if (this.field10721 != null) {

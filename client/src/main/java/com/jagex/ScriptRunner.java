@@ -170,7 +170,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("uf.z(Luh;IILyd;Laut;I)V")
-	public static void method9018(ClientTriggerType arg0, int arg1, int arg2, class679 arg3, ObjStackEntity arg4) {
+	public static void method9018(ClientTriggerType arg0, int arg1, int arg2, ObjReference arg3, ObjStackEntity arg4) {
 		ClientScriptState var5 = method1516();
 		var5.field8232 = arg4;
 		method4374(arg0, arg1, arg2, var5);
@@ -5655,7 +5655,7 @@ public final class ScriptRunner {
 				arg0.field2170 = null;
 			} else {
 				if (arg0.field2170 == null) {
-					arg0.field2170 = new class1074();
+					arg0.field2170 = new InterfaceAnimationWrapper();
 				}
 				arg0.field2170.method14362(var3);
 			}
@@ -12955,7 +12955,7 @@ public final class ScriptRunner {
 		if (!Statics.field9155.method4780().method4623()) {
 			throw new RuntimeException();
 		}
-		class911 var1 = (class911) Statics.field9155.method4709();
+		PositionSpline var1 = (PositionSpline) Statics.field9155.method4709();
 		var1.method16720(Statics.field3178, -1, 0.0F);
 		client.field10902 = true;
 	}
@@ -12965,7 +12965,7 @@ public final class ScriptRunner {
 		if (!Statics.field9155.method4743().method4602()) {
 			throw new RuntimeException();
 		}
-		class1072 var1 = (class1072) Statics.field9155.method4797();
+		LookatSpline var1 = (LookatSpline) Statics.field9155.method4797();
 		var1.method18832(Statics.field3178, -1, 0.0F);
 		client.field10902 = true;
 	}
@@ -12996,12 +12996,12 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		int var3 = arg0.field8216[arg0.field8226 + 2];
-		class248 var4 = Statics.method1599(var1);
+		ShakeMode var4 = Statics.method1599(var1);
 		float var5 = (float) var2;
-		if (class248.field2622 == var4 || class248.field2623 == var4 || class248.field2624 == var4) {
+		if (ShakeMode.field2622 == var4 || ShakeMode.field2623 == var4 || ShakeMode.field2624 == var4) {
 			var5 = Trig1.method6277(var2);
 		}
-		class1227 var6 = new class1227(Statics.field9155.method16602(), var4, var5, (float) var3 / 1000.0F);
+		Shake var6 = new Shake(Statics.field9155.method16602(), var4, var5, (float) var3 / 1000.0F);
 		Statics.field9155.method4702(var6);
 		arg0.field8216[++arg0.field8226 - 1] = var6.field12341;
 	}
@@ -13151,7 +13151,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("dl.aoe(Lyf;I)V")
 	public static final void method2093(ClientScriptState arg0) {
 		float var1 = Trig1.method6277(arg0.field8216[--arg0.field8226]);
-		class1226 var2 = new class1226(Statics.field9155.method16602(), var1);
+		ZTilt var2 = new ZTilt(Statics.field9155.method16602(), var1);
 		Statics.field9155.method4702(var2);
 		arg0.field8216[++arg0.field8226 - 1] = var2.field12341;
 	}
@@ -13164,8 +13164,8 @@ public final class ScriptRunner {
 		CameraEffect var3 = Statics.field9155.method4704(var1);
 		if (var3 == null) {
 			throw new RuntimeException("");
-		} else if (var3 instanceof class1226) {
-			((class1226) var3).method19713(var2);
+		} else if (var3 instanceof ZTilt) {
+			((ZTilt) var3).method19713(var2);
 		} else {
 			throw new RuntimeException("");
 		}

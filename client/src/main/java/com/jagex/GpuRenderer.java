@@ -574,12 +574,12 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.rd([B)Lhj;")
-	public class239 method15971(byte[] arg0) {
+	public ShaderData method15971(byte[] arg0) {
 		if (arg0 == null) {
 			return null;
 		}
 		try {
-			return new class239(arg0);
+			return new ShaderData(arg0);
 		} catch (Exception var3) {
 			return null;
 		}

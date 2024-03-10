@@ -20,7 +20,7 @@ public abstract class ProgramUniform extends class977 {
 	@ObfuscatedName("aql.p")
 	public class236 field12213;
 
-	public ProgramUniform(class240 arg0) {
+	public ProgramUniform(ProgramUniformData arg0) {
 		this.field12211 = arg0.field2592;
 		this.field12210 = arg0.field2586;
 		this.field12209 = arg0.field2590;

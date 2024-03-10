@@ -21,6 +21,6 @@ public class EntitySpotAnim {
 	public int field6658;
 
 	public EntitySpotAnim(PathingEntity arg0) {
-		this.field6659 = new class1076(arg0, false);
+		this.field6659 = new EntityAnimationWrapper(arg0, false);
 	}
 }

@@ -111,7 +111,7 @@ public class class884 extends CutsceneAction {
 			}
 		}
 		int var10 = this.field10352 << 2;
-		class1234 var11 = new class1234(client.world.method7743(), this.field10347, var3, var3, var1, var2, this.field10344 << 2, client.field10903, this.field10350 + client.field10903, this.field10351, var10, this.field10341 + 1, this.field10345 + 1, this.field10348 << 2, false, 0, 0);
+		ProjectileAnimation var11 = new ProjectileAnimation(client.world.method7743(), this.field10347, var3, var3, var1, var2, this.field10344 << 2, client.field10903, this.field10350 + client.field10903, this.field10351, var10, this.field10341 + 1, this.field10345 + 1, this.field10348 << 2, false, 0, 0);
 		var11.method19725(var6, var7, this.field10348 << 2, this.field10350 + client.field10903);
 		client.field10965.method14153(new class1173(var11));
 	}

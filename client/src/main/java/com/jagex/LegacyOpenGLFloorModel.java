@@ -795,13 +795,13 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 			return null;
 		}
 		int var4 = this.field1233 >> this.field9453.field9874;
-		class1222 var5 = (class1222) arg2;
-		class1222 var6;
+		LegacyOpenGLHardShadow var5 = (LegacyOpenGLHardShadow) arg2;
+		LegacyOpenGLHardShadow var6;
 		if (var5 != null && var5.method19687(var4, var4)) {
 			var6 = var5;
 			var5.method19693();
 		} else {
-			var6 = new class1222(this.field9453, var4, var4);
+			var6 = new LegacyOpenGLHardShadow(this.field9453, var4, var4);
 		}
 		var6.method19686(0, 0, var4, var4);
 		this.method15412(var6, arg0, arg1);
@@ -809,7 +809,7 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 	}
 
 	@ObfuscatedName("aek.ao(Latk;II)V")
-	public void method15412(class1222 arg0, int arg1, int arg2) {
+	public void method15412(LegacyOpenGLHardShadow arg0, int arg1, int arg2) {
 		int[] var4 = this.field9464[arg1][arg2];
 		int[] var5 = this.field9451[arg1][arg2];
 		int var6 = var4.length;

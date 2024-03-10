@@ -20,13 +20,13 @@ public abstract class Camera {
 	public LookatMode field2845;
 
 	@ObfuscatedName("je.f")
-	public class714 field2846;
+	public Lookat field2846;
 
 	@ObfuscatedName("je.w")
 	public PositionMode field2847;
 
 	@ObfuscatedName("je.l")
-	public class307 field2863;
+	public Position field2863;
 
 	@ObfuscatedName("je.u")
 	public final CameraTrackableProvider field2874;
@@ -181,7 +181,7 @@ public abstract class Camera {
 	}
 
 	@ObfuscatedName("je.f(Lii;ZI)Laax;")
-	public class714 method4684(LookatMode arg0, boolean arg1) throws class1109 {
+	public Lookat method4684(LookatMode arg0, boolean arg1) throws class1109 {
 		if (CameraControlMode.field2829 == this.field2857 && !arg1) {
 			throw new class1109();
 		}
@@ -205,7 +205,7 @@ public abstract class Camera {
 	}
 
 	@ObfuscatedName("je.w(Lim;ZI)Lkl;")
-	public class307 method4688(PositionMode arg0, boolean arg1) throws class1109 {
+	public Position method4688(PositionMode arg0, boolean arg1) throws class1109 {
 		if (CameraControlMode.field2829 == this.field2857 && !arg1) {
 			throw new class1109();
 		}
@@ -417,7 +417,7 @@ public abstract class Camera {
 	}
 
 	@ObfuscatedName("je.ah(Lju;Lou;Lpq;IIB)V")
-	public void method4707(class270 arg0, Matrix4x3 arg1, Matrix4x4 arg2, int arg3, int arg4) {
+	public void method4707(Vector3i arg0, Matrix4x3 arg1, Matrix4x4 arg2, int arg3, int arg4) {
 		if (!this.method4744()) {
 			return;
 		}
@@ -441,12 +441,12 @@ public abstract class Camera {
 	}
 
 	@ObfuscatedName("je.ac(B)Lkl;")
-	public class307 method4709() {
+	public Position method4709() {
 		return this.field2863;
 	}
 
 	@ObfuscatedName("je.ai(I)Laax;")
-	public class714 method4797() {
+	public Lookat method4797() {
 		return this.field2846;
 	}
 

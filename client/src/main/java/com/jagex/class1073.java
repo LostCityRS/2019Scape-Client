@@ -3,13 +3,13 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ani")
-public class class1073 extends class714 {
+public class class1073 extends Lookat {
 
 	@ObfuscatedName("ani.n")
 	public Spline field11874 = null;
 
 	@ObfuscatedName("ani.m")
-	public class911 field11875 = null;
+	public PositionSpline field11875 = null;
 
 	public class1073(Camera arg0) {
 		super(arg0);
@@ -45,7 +45,7 @@ public class class1073 extends class714 {
 	}
 
 	@ObfuscatedName("ani.f(Lju;Lou;IIFB)V")
-	public void method14136(class270 arg0, Matrix4x3 arg1, int arg2, int arg3, float arg4) {
+	public void method14136(Vector3i arg0, Matrix4x3 arg1, int arg2, int arg3, float arg4) {
 		double[] var6 = this.field8479.method4715();
 		var6[0] -= arg2;
 		var6[2] -= arg3;

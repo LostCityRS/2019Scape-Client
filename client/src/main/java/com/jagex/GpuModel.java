@@ -3196,13 +3196,13 @@ public class GpuModel extends Model {
 		}
 		int var6 = var3 - var2 + 1;
 		int var7 = var5 - var4 + 1;
-		class1223 var8 = (class1223) arg0;
-		class1223 var9;
+		GpuHardShadow var8 = (GpuHardShadow) arg0;
+		GpuHardShadow var9;
 		if (var8 != null && var8.method19709(var6, var7)) {
 			var9 = var8;
 			var8.method19700();
 		} else {
-			var9 = new class1223(this.field9730, var6, var7);
+			var9 = new GpuHardShadow(this.field9730, var6, var7);
 		}
 		var9.method19698(var2, var4, var3, var5);
 		this.method15603(var9);
@@ -3210,7 +3210,7 @@ public class GpuModel extends Model {
 	}
 
 	@ObfuscatedName("afo.hi(Lati;)V")
-	public void method15603(class1223 arg0) {
+	public void method15603(GpuHardShadow arg0) {
 		if (this.field9763.length < this.field9710) {
 			this.field9763 = new int[this.field9710];
 			this.field9764 = new int[this.field9710];

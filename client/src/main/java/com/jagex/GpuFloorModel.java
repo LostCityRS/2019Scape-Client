@@ -944,13 +944,13 @@ public class GpuFloorModel extends FloorModel {
 			return null;
 		}
 		int var4 = this.field1233 >> this.field9516.field10129;
-		class1223 var5 = (class1223) arg2;
-		class1223 var6;
+		GpuHardShadow var5 = (GpuHardShadow) arg2;
+		GpuHardShadow var6;
 		if (var5 != null && var5.method19709(var4, var4)) {
 			var6 = var5;
 			var5.method19700();
 		} else {
-			var6 = new class1223(this.field9516, var4, var4);
+			var6 = new GpuHardShadow(this.field9516, var4, var4);
 		}
 		var6.method19698(0, 0, var4, var4);
 		this.method15416(var6, arg0, arg1);
@@ -958,7 +958,7 @@ public class GpuFloorModel extends FloorModel {
 	}
 
 	@ObfuscatedName("aem.ay(Lati;II)V")
-	public void method15416(class1223 arg0, int arg1, int arg2) {
+	public void method15416(GpuHardShadow arg0, int arg1, int arg2) {
 		int[] var4 = this.field9506[arg1][arg2];
 		int[] var5 = this.field9501[arg1][arg2];
 		int var6 = var4.length;

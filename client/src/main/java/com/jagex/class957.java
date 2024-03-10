@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ajd")
-public class class957 extends class531 {
+public class class957 extends Link {
 
 	@ObfuscatedName("ajd.m")
 	public int field11211 = (int) (MonotonicTime.method3655() / 1000L);

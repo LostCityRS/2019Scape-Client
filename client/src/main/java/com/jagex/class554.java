@@ -229,6 +229,6 @@ public class class554 {
 
 	@ObfuscatedName("gj.f(I)V")
 	public static void method3615() {
-		Statics.field1970 = class1195.method16661(2048, 35, 8, 8, 4, 0.4F, true);
+		Statics.field1970 = NoiseGenerator.method16661(2048, 35, 8, 8, 4, 0.4F, true);
 	}
 }

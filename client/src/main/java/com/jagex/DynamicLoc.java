@@ -76,7 +76,7 @@ public class DynamicLoc {
 		this.field6663 = (byte) arg5;
 		this.field6668 = arg7;
 		this.field6676 = arg0.method2125() && arg2.field7453 && !this.field6668;
-		this.field6664 = new class1076(arg6, false);
+		this.field6664 = new EntityAnimationWrapper(arg6, false);
 		this.method8244(false, arg8, 1, this.field6675 ? arg9 : 0);
 	}
 
@@ -84,7 +84,7 @@ public class DynamicLoc {
 	public void method8260(int arg0, int arg1) {
 		this.field6671 = null;
 		if (arg1 > 0) {
-			this.field6671 = new class1076(this.field6672, false);
+			this.field6671 = new EntityAnimationWrapper(this.field6672, false);
 			this.field6671.method14353(arg0, arg1, 1, false);
 		} else {
 			this.field6675 = true;

@@ -35,8 +35,8 @@ public class class815 extends GlEffect {
 			if (this.field9289 == null) {
 				return;
 			}
-			int[][] var3 = class1195.method749(64, 256, 0, 4, 4, 3, 0.4F, false);
-			int[][] var4 = class1195.method749(64, 256, 8, 4, 4, 3, 0.4F, false);
+			int[][] var3 = NoiseGenerator.method749(64, 256, 0, 4, 4, 3, 0.4F, false);
+			int[][] var4 = NoiseGenerator.method749(64, 256, 8, 4, 4, 3, 0.4F, false);
 			int var5 = 0;
 			this.field9290 = new float[32768];
 			for (int var6 = 0; var6 < 256; var6++) {

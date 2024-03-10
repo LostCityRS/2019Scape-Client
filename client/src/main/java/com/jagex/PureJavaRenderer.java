@@ -449,7 +449,7 @@ public class PureJavaRenderer extends Renderer {
 			this.field9775 = this.method2145();
 			this.field9775.method15439(0, this.field9786.method1437());
 		}
-		class1115 var5 = new class1115(this, this.field9778, this.field9779, this.field9780);
+		PureJavaSprite_Sub2 var5 = new PureJavaSprite_Sub2(this, this.field9778, this.field9779, this.field9780);
 		this.method2142(this.field9775);
 		this.method2475(1, -16777216);
 		var5.method1447(this.field1611, this.field1618, this.field1619, this.field1610, 1, 0, 0, 0);
@@ -1853,7 +1853,7 @@ public class PureJavaRenderer extends Renderer {
 
 	@ObfuscatedName("afg.cw(IIZZ)Lcm;")
 	public Sprite method2197(int arg0, int arg1, boolean arg2, boolean arg3) {
-		return arg2 ? new class1115(this, arg0, arg1) : new class1114(this, arg0, arg1);
+		return arg2 ? new PureJavaSprite_Sub2(this, arg0, arg1) : new PureJavaSprite_Sub1(this, arg0, arg1);
 	}
 
 	@ObfuscatedName("afg.ct([IIIIIZ)Lcm;")
@@ -1865,18 +1865,18 @@ public class PureJavaRenderer extends Renderer {
 				int var11 = arg0[var8++] >>> 24;
 				if (var11 != 0 && var11 != 255) {
 					var7 = true;
-					return var7 ? new class1115(this, arg0, arg1, arg2, arg3, arg4, arg5) : new class1114(this, arg0, arg1, arg2, arg3, arg4, arg5);
+					return var7 ? new PureJavaSprite_Sub2(this, arg0, arg1, arg2, arg3, arg4, arg5) : new PureJavaSprite_Sub1(this, arg0, arg1, arg2, arg3, arg4, arg5);
 				}
 			}
 		}
-		return var7 ? new class1115(this, arg0, arg1, arg2, arg3, arg4, arg5) : new class1114(this, arg0, arg1, arg2, arg3, arg4, arg5);
+		return var7 ? new PureJavaSprite_Sub2(this, arg0, arg1, arg2, arg3, arg4, arg5) : new PureJavaSprite_Sub1(this, arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@ObfuscatedName("afg.co(Lde;Z)Lcm;")
 	public Sprite method2200(SpriteData arg0, boolean arg1) {
 		int var3 = arg0.method2639();
 		int var4 = arg0.method2631();
-		class829 var12;
+		PureJavaSprite var12;
 		if (arg1 && !arg0.method2644() && arg0.method2587()) {
 			PalettedSpriteData var5 = (PalettedSpriteData) arg0;
 			int[] var6 = new int[var5.field10226.length];
@@ -1890,13 +1890,13 @@ public class PureJavaRenderer extends Renderer {
 			for (int var11 = 0; var11 < var5.field10226.length; var11++) {
 				var6[var11] = var5.field10226[var11];
 			}
-			var12 = new class1116(this, var7, var6, var3, var4);
+			var12 = new PureJavaSprite_Sub3(this, var7, var6, var3, var4);
 		} else {
 			int[] var13 = arg0.method2604(false);
 			if (arg0.method2644()) {
-				var12 = new class1115(this, var13, var3, var4);
+				var12 = new PureJavaSprite_Sub2(this, var13, var3, var4);
 			} else {
-				var12 = new class1114(this, var13, var3, var4);
+				var12 = new PureJavaSprite_Sub1(this, var13, var3, var4);
 			}
 		}
 		var12.method1431(arg0.method2591(), arg0.method2593(), arg0.method2603(), arg0.method2651());
@@ -1919,9 +1919,9 @@ public class PureJavaRenderer extends Renderer {
 			var7 += var8;
 		}
 		if (arg4) {
-			return new class1115(this, var6, arg2, arg3);
+			return new PureJavaSprite_Sub2(this, var6, arg2, arg3);
 		} else {
-			return new class1114(this, var6, arg2, arg3);
+			return new PureJavaSprite_Sub1(this, var6, arg2, arg3);
 		}
 	}
 
@@ -2133,7 +2133,7 @@ public class PureJavaRenderer extends Renderer {
 			this.field9811 = var12;
 		}
 		var11++;
-		((class829) this.field9811).method15358(arg0, arg1, arg2, arg4 - arg7, arg5 - arg7, arg6, var11, var11, 0, arg3.field12158, 1, 1, false);
+		((PureJavaSprite) this.field9811).method15358(arg0, arg1, arg2, arg4 - arg7, arg5 - arg7, arg6, var11, var11, 0, arg3.field12158, 1, 1, false);
 	}
 
 	@ObfuscatedName("afg.ss(ZZZIIFIISIII)V")
@@ -2158,7 +2158,7 @@ public class PureJavaRenderer extends Renderer {
 					this.field9812 = arg8;
 					this.field9811 = var14;
 				}
-				((class829) this.field9811).method15358(arg0, arg1, arg2, arg3 - arg6, arg4 - arg7, arg5, arg6 << 1, arg7 << 1, arg10, arg9, arg11, 1, class603.field7573 != var13.field1340);
+				((PureJavaSprite) this.field9811).method15358(arg0, arg1, arg2, arg3 - arg6, arg4 - arg7, arg5, arg6 << 1, arg7 << 1, arg10, arg9, arg11, 1, class603.field7573 != var13.field1340);
 				return;
 			}
 		}

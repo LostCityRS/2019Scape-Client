@@ -147,8 +147,8 @@ public final class OpenGLRenderer extends GpuRenderer {
 		if (var2 == null) {
 			return null;
 		} else {
-			class239 var3 = this.method15971(var2);
-			return new class890(this, var3);
+			ShaderData var3 = this.method15971(var2);
+			return new OpenGLProgramManager(this, var3);
 		}
 	}
 
@@ -393,7 +393,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqv.am()Lafq;")
 	public Framebuffer method2145() {
-		return new class1216(this);
+		return new OpenGLFramebuffer(this);
 	}
 
 	@ObfuscatedName("aqv.au(IILck;Ldg;I)Ldp;")

@@ -13,7 +13,7 @@ public class NativeMouseLogger extends MouseLogger {
 	public final Queue field11710 = new LinkedList();
 
 	@ObfuscatedName("alp.i(Lasp;B)V")
-	public void method18343(class1188 arg0) {
+	public void method18343(NativeMouseEvent arg0) {
 		this.field11710.add(arg0);
 		if (this.field11710.size() > 10) {
 			this.field11710.poll();
@@ -22,7 +22,7 @@ public class NativeMouseLogger extends MouseLogger {
 
 	@ObfuscatedName("alp.l(I)V")
 	public void method10270() {
-		class1188 var1 = (class1188) this.field11710.poll();
+		NativeMouseEvent var1 = (NativeMouseEvent) this.field11710.poll();
 		if (var1 == null) {
 			return;
 		}
@@ -45,7 +45,7 @@ public class NativeMouseLogger extends MouseLogger {
 	}
 
 	@ObfuscatedName("alp.j(Lalw;Lasp;I)V")
-	public void method18345(Packet arg0, class1188 arg1) {
+	public void method18345(Packet arg0, NativeMouseEvent arg1) {
 		arg0.p1(arg1.method19537());
 	}
 
@@ -55,7 +55,7 @@ public class NativeMouseLogger extends MouseLogger {
 	}
 
 	@ObfuscatedName("alp.w(Lalw;Lakm;I)V")
-	public void method10264(Packet arg0, class993 arg1) {
-		this.method18345(arg0, (class1188) arg1);
+	public void method10264(Packet arg0, MouseEvent arg1) {
+		this.method18345(arg0, (NativeMouseEvent) arg1);
 	}
 }

@@ -1474,17 +1474,17 @@ public final class client extends GameShell {
 			}
 		}
 		field10817 = 0;
-		for (class993 var11 = Statics.field9182.method9093(); var11 != null; var11 = Statics.field9182.method9093()) {
+		for (MouseEvent var11 = Statics.field9182.method9093(); var11 != null; var11 = Statics.field9182.method9093()) {
 			int var12 = var11.method17848();
 			if (var12 == -1) {
 				class648.method670(var11);
 			} else if (var12 == 6) {
 				field10817 += var11.method17833();
 				var11.method17835();
-			} else if (class993.method15143(var12)) {
+			} else if (MouseEvent.method15143(var12)) {
 				field10816.method14153(var11);
 				if (field10816.method14157() > 10) {
-					class993 var13 = (class993) field10816.method14154();
+					MouseEvent var13 = (MouseEvent) field10816.method14154();
 					if (var13 != null) {
 						var13.method17835();
 					}
@@ -3039,7 +3039,7 @@ public final class client extends GameShell {
 		}
 		class648.method3648();
 		class576.method9189();
-		class993 var16 = (class993) field10816.method14191();
+		MouseEvent var16 = (MouseEvent) field10816.method14191();
 		if (world.method7743() != null) {
 			if (Statics.field3416 == 5) {
 				method18478();
@@ -3367,7 +3367,7 @@ public final class client extends GameShell {
 						var13.field2170 = null;
 					} else {
 						if (var13.field2170 == null) {
-							var13.field2170 = new class1074();
+							var13.field2170 = new InterfaceAnimationWrapper();
 						}
 						var13.field2170.method14362(var1.field12268);
 					}
@@ -4501,7 +4501,7 @@ public final class client extends GameShell {
 	@ObfuscatedName("qf.ha(Lahm;IIII)V")
 	public static void method7326(PathingEntity arg0, int arg1, int arg2, int arg3) {
 		BASType var4 = arg0.method16508();
-		class1075 var5 = arg0.field10432;
+		EntityWalkAnimationWrapper var5 = arg0.field10432;
 		int var6 = arg0.field10414 - arg0.field10395.field528 & 0x3FFF;
 		if (MoveSpeed.field8318.field8313 == arg1) {
 			if (var6 == 0 && arg0.field10443 <= 25) {
@@ -4590,7 +4590,7 @@ public final class client extends GameShell {
 
 	@ObfuscatedName("ach.hk(Lahm;I)V")
 	public static final void method14988(PathingEntity arg0) {
-		class1075 var1 = arg0.field10432;
+		EntityWalkAnimationWrapper var1 = arg0.field10432;
 		if (var1.method14346() && var1.method14367(1) && var1.method14375()) {
 			if (var1.field11877) {
 				var1.method14352(arg0.method16508().method9295(), false, true);
@@ -4646,7 +4646,7 @@ public final class client extends GameShell {
 			}
 		}
 		for (int var8 = 0; var8 < arg0.field10398.length; var8++) {
-			class1204 var9 = arg0.field10398[var8];
+			UnknownEntityAnimationWrapper var9 = arg0.field10398[var8];
 			if (var9 != null) {
 				if (var9.field12481 > 0) {
 					var9.field12481--;
@@ -4671,7 +4671,7 @@ public final class client extends GameShell {
 					} else {
 						SeqType var9 = (SeqType) Statics.field8797.get(var5);
 						int var10 = var9.field1768;
-						class1204 var11 = arg0.field10398[var8];
+						UnknownEntityAnimationWrapper var11 = arg0.field10398[var8];
 						if (var11 != null && var11.method14346()) {
 							if (var5 == var11.method14348()) {
 								if (var10 == 0) {
@@ -4689,7 +4689,7 @@ public final class client extends GameShell {
 							}
 						}
 						if (var11 == null || !var11.method14346()) {
-							class1204 var12 = arg0.field10398[var8] = new class1204(arg0);
+							UnknownEntityAnimationWrapper var12 = arg0.field10398[var8] = new UnknownEntityAnimationWrapper(arg0);
 							var12.method14362(var5);
 							var12.field12481 = var7;
 						}
@@ -4887,7 +4887,7 @@ public final class client extends GameShell {
 		Statics.field8198.method2168(var8, var9, var8 + var10, var9 + var11);
 		class637 var23 = world.method7816().method9982();
 		int var24 = var23.method10073();
-		class270 var25 = new class270();
+		Vector3i var25 = new Vector3i();
 		CoordGrid var26 = world.method7727();
 		if (class29.method2978()) {
 			Statics.field604.method4707(var25, field10793, field10792, var26.field7426 << 9, var26.field7427 << 9);
@@ -6021,7 +6021,7 @@ public final class client extends GameShell {
 	@ObfuscatedName("ks.ij(I)V")
 	public static final void method5180() {
 		for (class1173 var0 = (class1173) field10965.method14191(); var0 != null; var0 = (class1173) field10965.method14161()) {
-			class1234 var1 = var0.field12309;
+			ProjectileAnimation var1 = var0.field12309;
 			if (field10903 > var1.field12589) {
 				var0.method8440();
 				var1.method19728();
@@ -6073,7 +6073,7 @@ public final class client extends GameShell {
 		Iterator var0 = field10966.iterator();
 		while (var0.hasNext()) {
 			class1170 var1 = (class1170) var0.next();
-			class1235 var2 = var1.field12264;
+			SpotAnimation var2 = var1.field12264;
 			var2.method19746(1);
 			if (var2.method19747()) {
 				var1.method8440();
@@ -6087,7 +6087,7 @@ public final class client extends GameShell {
 		Iterator var0 = field10966.iterator();
 		while (var0.hasNext()) {
 			class1170 var1 = (class1170) var0.next();
-			class1235 var2 = var1.field12264;
+			SpotAnimation var2 = var1.field12264;
 			if (world.method7743() != null && var2.method19751()) {
 				world.method7743().method8768(var2, true);
 			}
@@ -6201,8 +6201,8 @@ public final class client extends GameShell {
 				int var16 = var15 - Statics.field10268.field8562;
 				boolean var17 = false;
 				if (!var12.field10452 && !var12.field10416.method14248()) {
-					for (class959 var18 = (class959) var12.field10416.method14254(); var18 != null; var18 = (class959) var12.field10416.method14241()) {
-						class960 var19 = var18.method17457(field10903);
+					for (Headbar var18 = (Headbar) var12.field10416.method14254(); var18 != null; var18 = (Headbar) var12.field10416.method14241()) {
+						HeadbarUpdate var19 = var18.method17457(field10903);
 						if (var19 != null) {
 							HeadbarType var20 = var18.field11215;
 							PlayerEntity var21 = field10944[var7[var9]];
@@ -7384,7 +7384,7 @@ public final class client extends GameShell {
 			int var91 = var2.g4s();
 			LocPositionAdjustment var92 = new LocPositionAdjustment(var2, var90, false);
 			incrementVerifyId();
-			method4489(var82, new class1192(var84, var85, new class675(var83, var92.field7541, var92.field7540, var91)), new int[] { var86, var87, var88, var89 }, false);
+			method4489(var82, new SubInterfaceActiveLoc(var84, var85, new class675(var83, var92.field7541, var92.field7540, var91)), new int[] { var86, var87, var88, var89 }, false);
 			arg0.field796 = null;
 			return true;
 		} else if (ServerProt.UPDATE_FRIENDLIST == arg0.field796) {
@@ -8564,7 +8564,7 @@ public final class client extends GameShell {
 						if (var389 < 3 && world.method7793().method7105(var390, var391)) {
 							var395 = var389 + 1;
 						}
-						class1235 var396 = new class1235(world.method7743(), var382, var383, var389, var395, var393, method3660(var393, var394, var389) - var380, var394, var390, var390, var391, var391, var385, var387, 0);
+						SpotAnimation var396 = new SpotAnimation(world.method7743(), var382, var383, var389, var395, var393, method3660(var393, var394, var389) - var380, var394, var390, var390, var391, var391, var385, var387, 0);
 						field10966.method14501(new class1170(var396), (long) (var390 << 16 | var391));
 					}
 				}
@@ -8748,7 +8748,7 @@ public final class client extends GameShell {
 			int var446 = var2.g1_alt1();
 			int var447 = var2.g4_alt2();
 			incrementVerifyId();
-			method4489(var442, new class1194(var439, var446, new class679(var441, var444)), new int[] { var445, var447, var440, var443 }, false);
+			method4489(var442, new SubInterfaceActiveObj(var439, var446, new ObjReference(var441, var444)), new int[] { var445, var447, var440, var443 }, false);
 			arg0.field796 = null;
 			return true;
 		} else if (ServerProt.LOC_DEL == arg0.field796) {
@@ -8841,7 +8841,7 @@ public final class client extends GameShell {
 			int var477 = var2.g4_alt3();
 			int var478 = var2.g2_alt3();
 			incrementVerifyId();
-			method4489(var473, new class1193(var478, var475, var476), new int[] { var471, var477, var472, var474 }, false);
+			method4489(var473, new SubInterfaceActivePlayer(var478, var475, var476), new int[] { var471, var477, var472, var474 }, false);
 			arg0.field796 = null;
 			return true;
 		} else if (ServerProt.MESSAGE_QUICKCHAT_PLAYER_GROUP == arg0.field796) {
@@ -9313,7 +9313,7 @@ public final class client extends GameShell {
 			int var632 = var2.g4s();
 			int var633 = var2.g4_alt1();
 			incrementVerifyId();
-			method4489(var633, new class1191(var626, var631, var630), new int[] { var627, var628, var632, var629 }, false);
+			method4489(var633, new SubInterfaceActiveNpc(var626, var631, var630), new int[] { var627, var628, var632, var629 }, false);
 			arg0.field796 = null;
 			return true;
 		} else if (ServerProt.CLANSETTINGS_DELTA == arg0.field796) {
@@ -9855,7 +9855,7 @@ public final class client extends GameShell {
 				int var109 = var98 << 2;
 				int var110 = var99 << 2;
 				int var111 = var103 << 2;
-				class1234 var112 = new class1234(world.method7743(), var97, Statics.field10260, Statics.field10260, var105, var106, var109, field10903 + var100, field10903 + var101, var102, var111, 0, var96, var110, var91, -1, var104);
+				ProjectileAnimation var112 = new ProjectileAnimation(world.method7743(), var97, Statics.field10260, Statics.field10260, var105, var106, var109, field10903 + var100, field10903 + var101, var102, var111, 0, var96, var110, var91, -1, var104);
 				var112.method19725(var107, var108, method3660(var107, var108, Statics.field10260) - var110, field10903 + var100);
 				field10965.method14153(new class1173(var112));
 			}
@@ -9981,7 +9981,7 @@ public final class client extends GameShell {
 					if (var168 < 3 && world.method7793().method7105(var158, var159)) {
 						var168++;
 					}
-					class1235 var169 = new class1235(world.method7743(), var160, var162, Statics.field10260, var168, var166, method3660(var166, var167, Statics.field10260) - var161, var167, var158, var158, var159, var159, var163, false, var164);
+					SpotAnimation var169 = new SpotAnimation(world.method7743(), var160, var162, Statics.field10260, var168, var166, method3660(var166, var167, Statics.field10260) - var161, var167, var158, var158, var159, var159, var163, false, var164);
 					field10966.method14501(new class1170(var169), (long) (var158 << 16 | var159));
 				}
 			}
@@ -11831,7 +11831,7 @@ public final class client extends GameShell {
 		}
 		int var0 = Statics.field9182.method9086();
 		int var1 = Statics.field9182.method9092();
-		class993 var2 = (class993) field10816.method14191();
+		MouseEvent var2 = (MouseEvent) field10816.method14191();
 		if (var2 != null) {
 			var0 = var2.method17831();
 			var1 = var2.method17832();
@@ -11952,7 +11952,7 @@ public final class client extends GameShell {
 								var28 = true;
 							}
 							boolean var29 = false;
-							class993 var30 = (class993) field10816.method14191();
+							MouseEvent var30 = (MouseEvent) field10816.method14191();
 							if (var30 != null && var30.method17848() == 0 && var30.method17831() >= var15 && var30.method17832() >= var16 && var30.method17831() < var17 && var30.method17832() < var18) {
 								if (var22) {
 									class224 var31 = var12.method3970(Statics.field8198);
@@ -12770,7 +12770,7 @@ public final class client extends GameShell {
 				}
 				if (var3.field2184 == 6 && var3.field2262 != -1) {
 					if (var3.field2170 == null) {
-						var3.field2170 = new class1074();
+						var3.field2170 = new InterfaceAnimationWrapper();
 						var3.field2170.method14362(var3.field2262);
 					}
 					if (var3.field2170.method14367(field10891) && var3.field2170.method14375()) {
@@ -12812,13 +12812,13 @@ public final class client extends GameShell {
 		arg0.field2224 = 5;
 		arg0.field2294 = field10945;
 		arg0.field2298 = class695.method14059(Statics.field4490.field12062);
-		class1075 var1 = Statics.field4490.field10432;
+		EntityWalkAnimationWrapper var1 = Statics.field4490.field10432;
 		if (var1 == null) {
 			arg0.field2170 = null;
 			return;
 		}
 		if (arg0.field2170 == null) {
-			arg0.field2170 = new class1074();
+			arg0.field2170 = new InterfaceAnimationWrapper();
 		}
 		arg0.field2262 = var1.method14348();
 		arg0.field2170.method14370(var1);
@@ -13439,7 +13439,7 @@ public final class client extends GameShell {
 				}
 			}
 		}
-		class1234 var22 = new class1234(world.method7743(), arg0, arg16, arg16, arg6, arg7, arg4, field10903 + arg10, field10903 + arg11, arg12, arg13, arg1, arg2, arg5, arg14, arg3, arg15);
+		ProjectileAnimation var22 = new ProjectileAnimation(world.method7743(), arg0, arg16, arg16, arg6, arg7, arg4, field10903 + arg10, field10903 + arg11, arg12, arg13, arg1, arg2, arg5, arg14, arg3, arg15);
 		var22.method19725(arg8, arg9, method3660(arg8, arg9, arg16) - arg5, field10903 + arg10);
 		field10965.method14153(new class1173(var22));
 	}

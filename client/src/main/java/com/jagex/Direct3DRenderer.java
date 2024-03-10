@@ -67,7 +67,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	public Matrix4x4 field11968;
 
 	@ObfuscatedName("aqd.io")
-	public class887 field11972;
+	public Direct3DProgram field11972;
 
 	@ObfuscatedName("aqd.iq")
 	public long field11973;
@@ -453,7 +453,7 @@ public class Direct3DRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqd.am()Lafq;")
 	public Framebuffer method2145() {
-		return new class1215(this);
+		return new Direct3DFramebuffer(this);
 	}
 
 	@ObfuscatedName("aqd.ad(Ljava/awt/Canvas;II)Lafy;")
@@ -1200,8 +1200,8 @@ public class Direct3DRenderer extends GpuRenderer {
 		if (var2 == null) {
 			return null;
 		} else {
-			class239 var3 = this.method15971(var2);
-			return new class889(this, var3);
+			ShaderData var3 = this.method15971(var2);
+			return new Direct3DProgramManager(this, var3);
 		}
 	}
 

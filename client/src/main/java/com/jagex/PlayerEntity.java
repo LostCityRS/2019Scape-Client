@@ -314,7 +314,7 @@ public class PlayerEntity extends PathingEntity {
 			BASType var9 = this.method16508();
 			if (var9.field7346 && (this.field12061.field7892 == -1 || ((NPCType) Statics.field7961.get(this.field12061.field7892)).field2710)) {
 				AnimationWrapper var10 = this.field10454.method14346() && this.field10454.method14355() ? this.field10454 : null;
-				class1075 var11 = this.field10432.method14346() && (!this.field10432.field11877 || var10 == null) ? this.field10432 : null;
+				EntityWalkAnimationWrapper var11 = this.field10432.method14346() && (!this.field10432.field11877 || var10 == null) ? this.field10432 : null;
 				short var12 = Statics.field11389.field7728;
 				byte var13 = Statics.field11389.field7757;
 				if (this.field12061.field7892 != -1) {
@@ -438,7 +438,7 @@ public class PlayerEntity extends PathingEntity {
 		int var3 = arg1;
 		BASType var4 = this.method16508();
 		AnimationWrapper var5 = this.field10454.method14346() && !this.field10454.method14355() ? this.field10454 : null;
-		class1075 var6 = !this.field10432.method14346() || this.field12053 || this.field10432.field11877 && var5 != null ? null : this.field10432;
+		EntityWalkAnimationWrapper var6 = !this.field10432.method14346() || this.field12053 || this.field10432.field11877 && var5 != null ? null : this.field10432;
 		int var7 = var4.field7342;
 		int var8 = var4.field7343;
 		if (var7 != 0 || var8 != 0 || var4.field7355 != 0 || var4.field7358 != 0) {

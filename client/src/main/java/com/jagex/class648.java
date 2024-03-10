@@ -53,7 +53,7 @@ public class class648 {
 	}
 
 	@ObfuscatedName("ag.k(Lakm;I)V")
-	public static void method670(class993 arg0) {
+	public static void method670(MouseEvent arg0) {
 		if (client.isStateGame(client.state)) {
 			field7949.method10261(arg0);
 		} else {
@@ -73,7 +73,7 @@ public class class648 {
 			}
 			while (true) {
 				while (true) {
-					class1188 var2 = (class1188) field7946.poll();
+					NativeMouseEvent var2 = (NativeMouseEvent) field7946.poll();
 					if (var2 == null) {
 						return;
 					}
@@ -83,7 +83,7 @@ public class class648 {
 							int var3 = var2.method17848();
 							if (var2.method17848() == -1) {
 								field7948.method10261(var2);
-							} else if (class993.method15143(var3)) {
+							} else if (MouseEvent.method15143(var3)) {
 								field7948.method18343(var2);
 							}
 						}

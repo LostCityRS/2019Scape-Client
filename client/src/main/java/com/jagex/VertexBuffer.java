@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("lr")
-public interface VertexBuffer extends class342, class329 {
+public interface VertexBuffer extends GpuBuffer, class329 {
 
 	@ObfuscatedName("lr.m()V")
 	void method1010();

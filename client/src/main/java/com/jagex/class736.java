@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("abo")
-public class class736 implements class610 {
+public class class736 implements CacheKey {
 
 	@ObfuscatedName("abo.e")
 	public int field8607;
@@ -47,7 +47,7 @@ public class class736 implements class610 {
 	}
 
 	@ObfuscatedName("abo.n(Lwk;)Z")
-	public boolean method9638(class610 arg0) {
+	public boolean method9638(CacheKey arg0) {
 		if (!(arg0 instanceof class736)) {
 			return false;
 		}

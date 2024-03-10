@@ -6,10 +6,10 @@ import deob.ObfuscatedName;
 public class LinkQueue {
 
 	@ObfuscatedName("aas.e")
-	public class531 field8483 = new class531();
+	public Link field8483 = new Link();
 
 	@ObfuscatedName("aas.n")
-	public class531 field8484;
+	public Link field8484;
 
 	public LinkQueue() {
 		this.field8483.field6759 = this.field8483;
@@ -19,7 +19,7 @@ public class LinkQueue {
 	@ObfuscatedName("aas.e(I)V")
 	public void method14242() {
 		while (true) {
-			class531 var1 = this.field8483.field6759;
+			Link var1 = this.field8483.field6759;
 			if (this.field8483 == var1) {
 				this.field8484 = null;
 				return;
@@ -29,7 +29,7 @@ public class LinkQueue {
 	}
 
 	@ObfuscatedName("aas.n(Ltc;B)V")
-	public void method14243(class531 arg0) {
+	public void method14243(Link arg0) {
 		if (arg0.field6758 != null) {
 			arg0.method8433();
 		}
@@ -40,7 +40,7 @@ public class LinkQueue {
 	}
 
 	@ObfuscatedName("aas.m(Ltc;I)V")
-	public void method14244(class531 arg0) {
+	public void method14244(Link arg0) {
 		if (arg0.field6758 != null) {
 			arg0.method8433();
 		}
@@ -51,8 +51,8 @@ public class LinkQueue {
 	}
 
 	@ObfuscatedName("aas.f(I)Ltc;")
-	public class531 method14245() {
-		class531 var1 = this.field8483.field6759;
+	public Link method14245() {
+		Link var1 = this.field8483.field6759;
 		if (this.field8483 == var1) {
 			return null;
 		} else {
@@ -62,8 +62,8 @@ public class LinkQueue {
 	}
 
 	@ObfuscatedName("aas.w(S)Ltc;")
-	public class531 method14254() {
-		class531 var1 = this.field8483.field6759;
+	public Link method14254() {
+		Link var1 = this.field8483.field6759;
 		if (this.field8483 == var1) {
 			this.field8484 = null;
 			return null;
@@ -74,8 +74,8 @@ public class LinkQueue {
 	}
 
 	@ObfuscatedName("aas.l(I)Ltc;")
-	public class531 method14241() {
-		class531 var1 = this.field8484;
+	public Link method14241() {
+		Link var1 = this.field8484;
 		if (this.field8483 == var1) {
 			this.field8484 = null;
 			return null;

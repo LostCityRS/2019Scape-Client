@@ -745,10 +745,10 @@ public class AudioApi {
 				int var11 = 0;
 				if (arg2 instanceof PathingEntity) {
 					var11 = ((PathingEntity) arg2).method16578();
-				} else if (arg2 instanceof class1235) {
-					var11 = ((class1235) arg2).method19745();
-				} else if (arg2 instanceof class1234) {
-					var11 = ((class1234) arg2).method19724();
+				} else if (arg2 instanceof SpotAnimation) {
+					var11 = ((SpotAnimation) arg2).method19745();
+				} else if (arg2 instanceof ProjectileAnimation) {
+					var11 = ((ProjectileAnimation) arg2).method19724();
 				}
 				if (var11 != 0 && var11 != Statics.field4490.method16578() && client.field10787 != var11) {
 					var10 = arg0.field1783 * var10 / 100;

@@ -147,7 +147,7 @@ public class FloorHardShadows {
 
 	@ObfuscatedName("lg.m(Lara;II)V")
 	public void method5663(HardShadow arg0, int arg1, int arg2) {
-		class1223 var4 = (class1223) arg0;
+		GpuHardShadow var4 = (GpuHardShadow) arg0;
 		int var5 = var4.field12546 + 1 + arg1;
 		int var6 = var4.field12544 + 1 + arg2;
 		int var7 = this.field3288 * var6 + var5;
@@ -190,7 +190,7 @@ public class FloorHardShadows {
 
 	@ObfuscatedName("lg.k(Lara;II)V")
 	public void method5676(HardShadow arg0, int arg1, int arg2) {
-		class1223 var4 = (class1223) arg0;
+		GpuHardShadow var4 = (GpuHardShadow) arg0;
 		int var5 = var4.field12546 + 1 + arg1;
 		int var6 = var4.field12544 + 1 + arg2;
 		int var7 = this.field3288 * var6 + var5;
@@ -233,7 +233,7 @@ public class FloorHardShadows {
 
 	@ObfuscatedName("lg.f(Lara;II)Z")
 	public boolean method5665(HardShadow arg0, int arg1, int arg2) {
-		class1223 var4 = (class1223) arg0;
+		GpuHardShadow var4 = (GpuHardShadow) arg0;
 		int var5 = var4.field12546 + 1 + arg1;
 		int var6 = var4.field12544 + 1 + arg2;
 		int var7 = this.field3288 * var6 + var5;

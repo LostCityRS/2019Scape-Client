@@ -3116,13 +3116,13 @@ public class LegacyOpenGLModel extends Model {
 		}
 		int var6 = var3 - var2 + 1;
 		int var7 = var5 - var4 + 1;
-		class1222 var8 = (class1222) arg0;
-		class1222 var9;
+		LegacyOpenGLHardShadow var8 = (LegacyOpenGLHardShadow) arg0;
+		LegacyOpenGLHardShadow var9;
 		if (var8 != null && var8.method19687(var6, var7)) {
 			var9 = var8;
 			var8.method19693();
 		} else {
-			var9 = new class1222(this.field9626, var6, var7);
+			var9 = new LegacyOpenGLHardShadow(this.field9626, var6, var7);
 		}
 		var9.method19686(var2, var4, var3, var5);
 		this.method15555(var9);
@@ -3130,7 +3130,7 @@ public class LegacyOpenGLModel extends Model {
 	}
 
 	@ObfuscatedName("afk.hh(Latk;)V")
-	public void method15555(class1222 arg0) {
+	public void method15555(LegacyOpenGLHardShadow arg0) {
 		if (this.field9626.field9993.length < this.field9658) {
 			this.field9626.field9993 = new int[this.field9658];
 			this.field9626.field9913 = new int[this.field9658];

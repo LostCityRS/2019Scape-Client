@@ -41,7 +41,7 @@ public final class WeightedCache {
 
 	@ObfuscatedName("eb.n(J)Ljava/lang/Object;")
 	public Object method2930(long arg0) {
-		class1178 var3 = (class1178) this.field1757.method14495(arg0);
+		WeightedWrapper var3 = (WeightedWrapper) this.field1757.method14495(arg0);
 		if (var3 == null) {
 			return null;
 		}
@@ -53,7 +53,7 @@ public final class WeightedCache {
 			return null;
 		}
 		if (var3.method19424()) {
-			class1225 var5 = new class1225(var4, var3.field12328);
+			HardWeightedWrapper var5 = new HardWeightedWrapper(var4, var3.field12328);
 			this.field1757.method14501(var5, var3.field6760);
 			this.field1755.method14339(var5);
 			var5.field11440 = 0L;
@@ -68,12 +68,12 @@ public final class WeightedCache {
 
 	@ObfuscatedName("eb.m(J)V")
 	public void method2957(long arg0) {
-		class1178 var3 = (class1178) this.field1757.method14495(arg0);
+		WeightedWrapper var3 = (WeightedWrapper) this.field1757.method14495(arg0);
 		this.method2918(var3);
 	}
 
 	@ObfuscatedName("eb.k(Lasa;I)V")
-	public void method2918(class1178 arg0) {
+	public void method2918(WeightedWrapper arg0) {
 		if (arg0 != null) {
 			arg0.method8440();
 			arg0.method17806();
@@ -94,7 +94,7 @@ public final class WeightedCache {
 		this.method2957(arg1);
 		this.field1756 -= arg2;
 		while (this.field1756 < 0) {
-			class1178 var5 = (class1178) this.field1755.method14315();
+			WeightedWrapper var5 = (WeightedWrapper) this.field1755.method14315();
 			if (var5 == null) {
 				throw new RuntimeException("");
 			}
@@ -105,7 +105,7 @@ public final class WeightedCache {
 				this.field1759.method2914(var5.method19423());
 			}
 		}
-		class1225 var6 = new class1225(arg0, arg2);
+		HardWeightedWrapper var6 = new HardWeightedWrapper(arg0, arg2);
 		this.field1757.method14501(var6, arg1);
 		this.field1755.method14339(var6);
 		var6.field11440 = 0L;
@@ -113,7 +113,7 @@ public final class WeightedCache {
 
 	@ObfuscatedName("eb.l(IB)V")
 	public void method2923(int arg0) {
-		for (class1178 var2 = (class1178) this.field1755.method14317(); var2 != null; var2 = (class1178) this.field1755.method14324()) {
+		for (WeightedWrapper var2 = (WeightedWrapper) this.field1755.method14317(); var2 != null; var2 = (WeightedWrapper) this.field1755.method14324()) {
 			if (var2.method19424()) {
 				if (var2.method19423() == null) {
 					var2.method8440();
@@ -121,7 +121,7 @@ public final class WeightedCache {
 					this.field1756 += var2.field12328;
 				}
 			} else if (++var2.field11440 > (long) arg0) {
-				class1224 var3 = new class1224(var2.method19423(), var2.field12328);
+				SoftWeightedWrapper var3 = new SoftWeightedWrapper(var2.method19423(), var2.field12328);
 				this.field1757.method14501(var3, var2.field6760);
 				DualIterableQueue.method10144(var3, var2);
 				var2.method8440();
@@ -150,7 +150,7 @@ public final class WeightedCache {
 	@ObfuscatedName("eb.d(B)I")
 	public int method2927() {
 		int var1 = 0;
-		for (class1178 var2 = (class1178) this.field1755.method14317(); var2 != null; var2 = (class1178) this.field1755.method14324()) {
+		for (WeightedWrapper var2 = (WeightedWrapper) this.field1755.method14317(); var2 != null; var2 = (WeightedWrapper) this.field1755.method14324()) {
 			if (!var2.method19424()) {
 				var1++;
 			}
@@ -160,7 +160,7 @@ public final class WeightedCache {
 
 	@ObfuscatedName("eb.c(I)V")
 	public void method2928() {
-		for (class1178 var1 = (class1178) this.field1755.method14317(); var1 != null; var1 = (class1178) this.field1755.method14324()) {
+		for (WeightedWrapper var1 = (WeightedWrapper) this.field1755.method14317(); var1 != null; var1 = (WeightedWrapper) this.field1755.method14324()) {
 			if (var1.method19424()) {
 				var1.method8440();
 				var1.method17806();
@@ -171,14 +171,14 @@ public final class WeightedCache {
 
 	@ObfuscatedName("eb.r(I)Ljava/lang/Object;")
 	public Object method2950() {
-		class1178 var1 = (class1178) this.field1757.method14500();
+		WeightedWrapper var1 = (WeightedWrapper) this.field1757.method14500();
 		while (var1 != null) {
 			Object var2 = var1.method19423();
 			if (var2 != null) {
 				return var2;
 			}
-			class1178 var3 = var1;
-			var1 = (class1178) this.field1757.method14502();
+			WeightedWrapper var3 = var1;
+			var1 = (WeightedWrapper) this.field1757.method14502();
 			var3.method8440();
 			var3.method17806();
 			this.field1756 += var3.field12328;
@@ -188,14 +188,14 @@ public final class WeightedCache {
 
 	@ObfuscatedName("eb.v(I)Ljava/lang/Object;")
 	public Object method2937() {
-		class1178 var1 = (class1178) this.field1757.method14502();
+		WeightedWrapper var1 = (WeightedWrapper) this.field1757.method14502();
 		while (var1 != null) {
 			Object var2 = var1.method19423();
 			if (var2 != null) {
 				return var2;
 			}
-			class1178 var3 = var1;
-			var1 = (class1178) this.field1757.method14502();
+			WeightedWrapper var3 = var1;
+			var1 = (WeightedWrapper) this.field1757.method14502();
 			var3.method8440();
 			var3.method17806();
 			this.field1756 += var3.field12328;

@@ -12,7 +12,7 @@ public class class237 {
 	public String field2565;
 
 	@ObfuscatedName("hc.e(Lhw;I)V")
-	public void method4146(class235 arg0) {
+	public void method4146(ShaderDataReader arg0) {
 		this.field2566 = arg0.method4134();
 		this.field2565 = arg0.method4134();
 	}

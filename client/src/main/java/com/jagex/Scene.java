@@ -426,7 +426,7 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.q(IIIILast;S)V")
-	public void method8718(int arg0, int arg1, int arg2, int arg3, class1199 arg4) {
+	public void method8718(int arg0, int arg1, int arg2, int arg3, ObjLayerEntity arg4) {
 		class551 var6 = this.method8706(arg0, arg1, arg2);
 		if (var6 == null) {
 			return;
@@ -688,12 +688,12 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.ah(IIIB)Last;")
-	public class1199 method8742(int arg0, int arg1, int arg2) {
+	public ObjLayerEntity method8742(int arg0, int arg1, int arg2) {
 		class551 var4 = this.field6928[arg0][arg1][arg2];
 		if (var4 == null) {
 			return null;
 		} else {
-			class1199 var5 = var4.field6971;
+			ObjLayerEntity var5 = var4.field6971;
 			var4.field6971 = null;
 			this.method8732(var5);
 			return var5;
@@ -814,7 +814,7 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.ad(IIIB)Last;")
-	public class1199 method8736(int arg0, int arg1, int arg2) {
+	public ObjLayerEntity method8736(int arg0, int arg1, int arg2) {
 		class551 var4 = this.field6928[arg0][arg1][arg2];
 		return var4 == null ? null : var4.field6971;
 	}

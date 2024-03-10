@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aqx")
-public class class1134 extends class911 {
+public class class1134 extends PositionSpline {
 
 	public class1134(Camera arg0) {
 		super(arg0);

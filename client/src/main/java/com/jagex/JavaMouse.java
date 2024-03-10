@@ -73,7 +73,7 @@ public class JavaMouse extends Mouse implements MouseListener, MouseMotionListen
 
 	@ObfuscatedName("alb.ay(IIIIB)V")
 	public void method18303(int arg0, int arg1, int arg2, int arg3) {
-		class1187 var5 = Statics.method8438(arg0, arg1, arg2, MonotonicTime.method3655(), arg3);
+		BasicMouseEvent var5 = Statics.method8438(arg0, arg1, arg2, MonotonicTime.method3655(), arg3);
 		this.field11696.method14153(var5);
 	}
 
@@ -87,8 +87,8 @@ public class JavaMouse extends Mouse implements MouseListener, MouseMotionListen
 	}
 
 	@ObfuscatedName("alb.p(I)Lakm;")
-	public class993 method9093() {
-		return (class993) this.field11695.method14154();
+	public MouseEvent method9093() {
+		return (MouseEvent) this.field11695.method14154();
 	}
 
 	@ObfuscatedName("alb.m(I)V")
@@ -132,22 +132,22 @@ public class JavaMouse extends Mouse implements MouseListener, MouseMotionListen
 		this.method18297();
 	}
 
-	public synchronized void mouseClicked(MouseEvent arg0) {
+	public synchronized void mouseClicked(java.awt.event.MouseEvent arg0) {
 		if (arg0.isPopupTrigger()) {
 			arg0.consume();
 		}
 	}
 
-	public synchronized void mouseEntered(MouseEvent arg0) {
+	public synchronized void mouseEntered(java.awt.event.MouseEvent arg0) {
 		this.method18293(arg0.getX(), arg0.getY());
 	}
 
-	public synchronized void mouseExited(MouseEvent arg0) {
+	public synchronized void mouseExited(java.awt.event.MouseEvent arg0) {
 		this.method18293(arg0.getX(), arg0.getY());
 	}
 
 	@ObfuscatedName("alb.az(Ljava/awt/event/MouseEvent;B)I")
-	public int method18294(MouseEvent arg0) {
+	public int method18294(java.awt.event.MouseEvent arg0) {
 		if (arg0.getButton() == 1) {
 			return arg0.isMetaDown() ? 4 : 1;
 		} else if (arg0.getButton() == 2) {
@@ -159,7 +159,7 @@ public class JavaMouse extends Mouse implements MouseListener, MouseMotionListen
 		}
 	}
 
-	public synchronized void mousePressed(MouseEvent arg0) {
+	public synchronized void mousePressed(java.awt.event.MouseEvent arg0) {
 		int var2 = this.method18294(arg0);
 		if (var2 == 1) {
 			this.method18303(0, arg0.getX(), arg0.getY(), arg0.getClickCount());
@@ -174,7 +174,7 @@ public class JavaMouse extends Mouse implements MouseListener, MouseMotionListen
 		}
 	}
 
-	public synchronized void mouseReleased(MouseEvent arg0) {
+	public synchronized void mouseReleased(java.awt.event.MouseEvent arg0) {
 		int var2 = this.method18294(arg0);
 		if ((this.field11698 & var2) == 0) {
 			var2 = this.field11698;
@@ -194,11 +194,11 @@ public class JavaMouse extends Mouse implements MouseListener, MouseMotionListen
 		}
 	}
 
-	public synchronized void mouseDragged(MouseEvent arg0) {
+	public synchronized void mouseDragged(java.awt.event.MouseEvent arg0) {
 		this.method18293(arg0.getX(), arg0.getY());
 	}
 
-	public synchronized void mouseMoved(MouseEvent arg0) {
+	public synchronized void mouseMoved(java.awt.event.MouseEvent arg0) {
 		this.method18293(arg0.getX(), arg0.getY());
 	}
 

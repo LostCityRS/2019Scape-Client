@@ -145,7 +145,7 @@ public class NpcEntity extends PathingEntity {
 		PickableEntity var11 = null;
 		if (Statics.field688.characterShadows.method18453() == 1 && var9.field2710 && var8.field7346) {
 			AnimationWrapper var12 = this.field10454.method14346() && this.field10454.method14355() ? this.field10454 : null;
-			class1075 var13 = this.field10432.method14346() && (!this.field10432.field11877 || var12 == null) ? this.field10432 : null;
+			EntityWalkAnimationWrapper var13 = this.field10432.method14346() && (!this.field10432.field11877 || var12 == null) ? this.field10432 : null;
 			short var14 = Statics.field11389.field7728;
 			byte var15 = Statics.field11389.field7757;
 			if (this.field12083.field2741 > -1) {
@@ -218,7 +218,7 @@ public class NpcEntity extends PathingEntity {
 		int var3 = arg1;
 		BASType var4 = this.method16508();
 		AnimationWrapper var5 = this.field10454.method14346() && !this.field10454.method14355() ? this.field10454 : null;
-		class1075 var6 = this.field10432.method14346() && (!this.field10432.field11877 || var5 == null) ? this.field10432 : null;
+		EntityWalkAnimationWrapper var6 = this.field10432.method14346() && (!this.field10432.field11877 || var5 == null) ? this.field10432 : null;
 		int var7 = var4.field7342;
 		int var8 = var4.field7343;
 		if (var7 != 0 || var8 != 0 || var4.field7355 != 0 || var4.field7358 != 0) {

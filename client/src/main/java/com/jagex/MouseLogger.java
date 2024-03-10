@@ -35,7 +35,7 @@ public abstract class MouseLogger {
 					if (!var5.hasNext()) {
 						break label102;
 					}
-					class993 var6 = (class993) var5.next();
+					MouseEvent var6 = (MouseEvent) var5.next();
 					if (var1 != null && var1.field11432.pos - var2 >= 252 - (this.method10263() + 6)) {
 						break label102;
 					}
@@ -132,12 +132,12 @@ public abstract class MouseLogger {
 	}
 
 	@ObfuscatedName("xb.m(Lakm;I)V")
-	public void method10261(class993 arg0) {
+	public void method10261(MouseEvent arg0) {
 		this.field7955.method14153(arg0);
 	}
 
 	@ObfuscatedName("xb.k(Lakm;II)I")
-	public int method10262(class993 arg0, int arg1) {
+	public int method10262(MouseEvent arg0, int arg1) {
 		long var3;
 		if (this.field7952 == -1L) {
 			var3 = arg1;
@@ -155,7 +155,7 @@ public abstract class MouseLogger {
 	public abstract int method10263();
 
 	@ObfuscatedName("xb.w(Lalw;Lakm;I)V")
-	public abstract void method10264(Packet arg0, class993 arg1);
+	public abstract void method10264(Packet arg0, MouseEvent arg1);
 
 	@ObfuscatedName("xb.z(S)Lakl;")
 	public abstract ClientMessage method10267();

@@ -31,7 +31,7 @@ public abstract class Mouse {
 	public abstract int method9092();
 
 	@ObfuscatedName("uj.p(I)Lakm;")
-	public abstract class993 method9093();
+	public abstract MouseEvent method9093();
 
 	@ObfuscatedName("uj.k(B)Z")
 	public abstract boolean method9101();
