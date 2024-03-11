@@ -45,7 +45,7 @@ public interface class365 {
 	void method3727();
 
 	@ObfuscatedName("mu.m()Lmc;")
-	class367 method3843();
+	VorbisRelated method3843();
 
 	@ObfuscatedName("mu.p(I)I")
 	int method3730(int arg0);

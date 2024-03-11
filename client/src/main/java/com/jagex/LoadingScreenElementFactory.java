@@ -32,21 +32,21 @@ public class LoadingScreenElementFactory {
 		} else if (LoadingScreenElementType.field3194 == var2) {
 			return new LoadingScreenSprite(this.field3035, (LoadingScreenSpriteConfig) arg0);
 		} else if (LoadingScreenElementType.field3192 == var2) {
-			return new class904(this.field3035, (class915) arg0);
+			return new LoginScreenRelated8(this.field3035, (LoginScreenRelated3) arg0);
 		} else if (LoadingScreenElementType.field3188 == var2) {
-			return new class905(this.field3035, this.field3036, (class914) arg0);
+			return new LoginScreenRelated7(this.field3035, this.field3036, (LoginScreenRelated2) arg0);
 		} else if (LoadingScreenElementType.field3189 == var2) {
-			return new class907(this.field3035, this.field3036, (class913) arg0);
+			return new LoadingScreenRelated5(this.field3035, this.field3036, (LoadingScreenRelated1) arg0);
 		} else if (LoadingScreenElementType.field3193 == var2) {
-			return new class906(this.field3035, this.field3036, (class912) arg0);
+			return new LoadingScreenRelated6(this.field3035, this.field3036, (LoadingScreenRelated4) arg0);
 		} else if (LoadingScreenElementType.field3187 == var2) {
-			return new class303(this.field3035, this.field3036, (class321) arg0);
+			return new LoginRelated3(this.field3035, this.field3036, (LoginRelated6) arg0);
 		} else if (LoadingScreenElementType.field3195 == var2) {
-			return new class299(this.field3035, (class320) arg0);
+			return new LoginRelated2(this.field3035, (LoginRelated5) arg0);
 		} else if (LoadingScreenElementType.field3196 == var2) {
 			return new class1133(this.field3035, this.field3036, (class1137) arg0);
 		} else if (LoadingScreenElementType.field3197 == var2) {
-			return new class298(this.field3035, this.field3036, (class315) arg0);
+			return new LoginRelated1(this.field3035, this.field3036, (LoginRelated4) arg0);
 		} else {
 			return null;
 		}

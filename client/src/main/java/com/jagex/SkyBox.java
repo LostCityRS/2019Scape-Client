@@ -13,13 +13,13 @@ public class SkyBox {
 	public int field5085;
 
 	@ObfuscatedName("sv.k")
-	public class503 field5086;
+	public SkyboxRelated field5086;
 
 	@ObfuscatedName("sv.f")
-	public class503[] field5094;
+	public SkyboxRelated[] field5094;
 
 	@ObfuscatedName("sv.w")
-	public class503[] field5088;
+	public SkyboxRelated[] field5088;
 
 	@ObfuscatedName("sv.l")
 	public int field5087;
@@ -84,10 +84,10 @@ public class SkyBox {
 
 	@ObfuscatedName("rz.n(I)V")
 	public static void method7713() {
-		class503.method7979();
+		SkyboxRelated.method7979();
 	}
 
-	public SkyBox(int arg0, class503[] arg1, int arg2, int arg3, int arg4, int arg5, SkyBoxFillMode arg6, int arg7) {
+	public SkyBox(int arg0, SkyboxRelated[] arg1, int arg2, int arg3, int arg4, int arg5, SkyBoxFillMode arg6, int arg7) {
 		this.field5089 = arg3;
 		this.field5090 = arg4;
 		this.field5091 = arg5;
@@ -98,7 +98,7 @@ public class SkyBox {
 			this.field5088 = null;
 			this.field5086 = null;
 		} else {
-			this.field5088 = new class503[arg1.length];
+			this.field5088 = new SkyboxRelated[arg1.length];
 			this.field5086 = arg2 >= 0 ? arg1[arg2] : null;
 		}
 		this.field5093 = arg7;
@@ -161,7 +161,7 @@ public class SkyBox {
 				this.field5087 = 0;
 				int[] var5 = new int[this.field5094.length];
 				for (int var6 = 0; var6 < this.field5094.length; var6++) {
-					class503 var7 = this.field5094[var6];
+					SkyboxRelated var7 = this.field5094[var6];
 					if (var7.method7998(this.field5089, this.field5090, this.field5091, this.field5083)) {
 						var5[this.field5087] = var7.field5122;
 						this.field5088[++this.field5087 - 1] = var7;

@@ -197,13 +197,13 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 				var17++;
 			}
 		}
-		class510.method3546(Statics.cacheDirectory);
+		CacheUtil.method3546(Statics.cacheDirectory);
 		openUID();
-		cacheDat = new BufferedFile(new FileOnDisk(class510.method18852("main_file_cache.dat2"), "rw", 3221225472L), 5200, 0);
-		masterIndex = new BufferedFile(new FileOnDisk(class510.method18852("main_file_cache.idx255"), "rw", 1048576L), 6000, 0);
+		cacheDat = new BufferedFile(new FileOnDisk(CacheUtil.method18852("main_file_cache.dat2"), "rw", 3221225472L), 5200, 0);
+		masterIndex = new BufferedFile(new FileOnDisk(CacheUtil.method18852("main_file_cache.idx255"), "rw", 1048576L), 6000, 0);
 		Statics.cacheIndex = new BufferedFile[Statics.archiveCount];
 		for (int var19 = 0; var19 < Statics.archiveCount; var19++) {
-			Statics.cacheIndex[var19] = new BufferedFile(new FileOnDisk(class510.method18852("main_file_cache.idx" + var19), "rw", 1048576L), 6000, 0);
+			Statics.cacheIndex[var19] = new BufferedFile(new FileOnDisk(CacheUtil.method18852("main_file_cache.idx" + var19), "rw", 1048576L), 6000, 0);
 		}
 		try {
 			Statics.fsimp14 = new FullscreenImpl();

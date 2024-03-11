@@ -48,5 +48,5 @@ public interface class614 {
 	int method9680();
 
 	@ObfuscatedName("wr.m(I)Lwl;")
-	class615 method9674();
+	AudioStreamRelated method9674();
 }

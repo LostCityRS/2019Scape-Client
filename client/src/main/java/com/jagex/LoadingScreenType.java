@@ -23,25 +23,25 @@ public class LoadingScreenType {
 		if (LoadingScreenElementType.field3190 == arg1) {
 			return LoadingScreenClearConfig.method17440(arg0);
 		} else if (LoadingScreenElementType.field3188 == arg1) {
-			return class914.method13796(arg0);
+			return LoginScreenRelated2.method13796(arg0);
 		} else if (LoadingScreenElementType.field3191 == arg1) {
 			return LoadingScreenNewsDisplayConfig.method6241(arg0);
 		} else if (LoadingScreenElementType.field3192 == arg1) {
-			return class915.method16658(arg0);
+			return LoginScreenRelated3.method16658(arg0);
 		} else if (LoadingScreenElementType.field3194 == arg1) {
 			return LoadingScreenSpriteConfig.method6073(arg0);
 		} else if (LoadingScreenElementType.field3189 == arg1) {
-			return class913.method5148(arg0);
+			return LoadingScreenRelated1.method5148(arg0);
 		} else if (LoadingScreenElementType.field3193 == arg1) {
 			return Statics.method10312(arg0);
 		} else if (LoadingScreenElementType.field3187 == arg1) {
 			return Statics.method2836(arg0);
 		} else if (LoadingScreenElementType.field3195 == arg1) {
-			return class320.method8975(arg0);
+			return LoginRelated5.method8975(arg0);
 		} else if (LoadingScreenElementType.field3196 == arg1) {
 			return class1137.method6845(arg0);
 		} else if (LoadingScreenElementType.field3197 == arg1) {
-			return class315.method15034(arg0);
+			return LoginRelated4.method15034(arg0);
 		} else {
 			return null;
 		}

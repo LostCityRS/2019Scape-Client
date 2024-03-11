@@ -1,12 +1,11 @@
 package com.jagex.playergroup;
 
 import com.jagex.Packet;
-import com.jagex.class188;
 import com.jagex.PlayerGroupMember;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("gt")
-public class SetVarBitValue implements class188 {
+public class SetVarBitValue implements PlayerGroupDeltaEntry2 {
 
 	// $FF: synthetic field
 	public final PlayerGroupDelta this$0;

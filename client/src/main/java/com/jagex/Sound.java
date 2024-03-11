@@ -204,8 +204,8 @@ public class Sound {
 	@ObfuscatedName("rw.p(B)V")
 	public void method7384() {
 		if (SoundVolume.field4948 == this.field4877) {
-			class615 var1 = this.field4889.method9674();
-			if (class615.field7626 == var1) {
+			AudioStreamRelated var1 = this.field4889.method9674();
+			if (AudioStreamRelated.field7626 == var1) {
 				this.field4877 = SoundVolume.field4949;
 			}
 		}

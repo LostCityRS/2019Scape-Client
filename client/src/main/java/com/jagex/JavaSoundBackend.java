@@ -26,10 +26,10 @@ public class JavaSoundBackend extends SoundBackend {
 	public List field10693 = new ArrayList();
 
 	@ObfuscatedName("aiz.u")
-	public Runnable field10687 = new class545(this);
+	public Runnable field10687 = new JavaSoundBackend_Task1(this);
 
 	@ObfuscatedName("aiz.z")
-	public Runnable field10695 = new class546(this);
+	public Runnable field10695 = new JavaSoundBackend_Task2(this);
 
 	@ObfuscatedName("aiz.aw(I)Ljava/util/HashMap;")
 	public java.util.HashMap method16804() {

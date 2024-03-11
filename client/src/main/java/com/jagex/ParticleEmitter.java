@@ -31,10 +31,10 @@ public class ParticleEmitter {
 	public boolean field7778 = false;
 
 	@ObfuscatedName("xm.z")
-	public class635 field7779 = new class635();
+	public ParticleEmitterRelated field7779 = new ParticleEmitterRelated();
 
 	@ObfuscatedName("xm.p")
-	public class635 field7780 = new class635();
+	public ParticleEmitterRelated field7780 = new ParticleEmitterRelated();
 
 	@ObfuscatedName("xm.d")
 	public int field7781;
@@ -118,7 +118,7 @@ public class ParticleEmitter {
 			arg3 = false;
 		} else if (ParticleSystemRenderer.field7802 < this.field7772.field3504) {
 			arg3 = false;
-		} else if (ParticleSystemRenderer.field7801 > class121.field1422[ParticleSystemRenderer.field7802]) {
+		} else if (ParticleSystemRenderer.field7801 > ParticleLimits.field1422[ParticleSystemRenderer.field7802]) {
 			arg3 = false;
 		} else if (this.field7789) {
 			arg3 = false;
@@ -266,7 +266,7 @@ public class ParticleEmitter {
 			}
 		}
 		if (!this.field7779.method9973(this.field7780)) {
-			class635 var52 = this.field7780;
+			ParticleEmitterRelated var52 = this.field7780;
 			this.field7780 = this.field7779;
 			this.field7779 = var52;
 			this.field7779.field7826 = this.field7788.field1470;

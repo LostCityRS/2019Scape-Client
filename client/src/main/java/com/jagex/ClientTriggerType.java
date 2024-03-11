@@ -63,10 +63,10 @@ public class ClientTriggerType implements TriggerType {
 	public static final ClientTriggerType field7266 = new ClientTriggerType("", 28);
 
 	@ObfuscatedName("uh.b")
-	public static final ClientTriggerType field7267 = new class1010("", 29, true, false);
+	public static final ClientTriggerType field7267 = new ClientTriggerType_Sub2("", 29, true, false);
 
 	@ObfuscatedName("uh.h")
-	public static final ClientTriggerType field7268 = new class1009("", 30, true, false);
+	public static final ClientTriggerType field7268 = new ClientTriggerType_Sub1("", 30, true, false);
 
 	@ObfuscatedName("uh.a")
 	public static final ClientTriggerType field7270 = new ClientTriggerType("", 73, true, true);
@@ -78,7 +78,7 @@ public class ClientTriggerType implements TriggerType {
 	public final int field7271;
 
 	// $FF: synthetic method
-	public ClientTriggerType(String arg0, int arg1, boolean arg2, boolean arg3, class1010 arg4) {
+	public ClientTriggerType(String arg0, int arg1, boolean arg2, boolean arg3, ClientTriggerType_Sub2 arg4) {
 		this(arg0, arg1, arg2, arg3);
 	}
 

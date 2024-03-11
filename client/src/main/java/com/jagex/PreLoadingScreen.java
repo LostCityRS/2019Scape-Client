@@ -75,7 +75,7 @@ public class PreLoadingScreen implements LoadingScreen {
 							}
 							if (var8 != null) {
 								var3.addImage(var8, var4++);
-								this.field2892.add(new class895(this, var8, StringUtils.method9595(var7[1]), StringUtils.method9595(var7[2])));
+								this.field2892.add(new PreLoadingImage(this, var8, StringUtils.method9595(var7[1]), StringUtils.method9595(var7[2])));
 							}
 						} else if (var6[0].equals("rotatingimage")) {
 							String[] var10 = StringUtils.method17361(var6[1], ',');
@@ -87,11 +87,11 @@ public class PreLoadingScreen implements LoadingScreen {
 							}
 							if (var11 != null) {
 								var3.addImage(var11, var4++);
-								this.field2892.add(new class1132(this, var11, StringUtils.method9595(var10[1]), StringUtils.method9595(var10[2]), Float.parseFloat(var10[3])));
+								this.field2892.add(new PreLoadingRotatingImage(this, var11, StringUtils.method9595(var10[1]), StringUtils.method9595(var10[2]), Float.parseFloat(var10[3])));
 							}
 						} else if (var6[0].equals("progress")) {
 							String[] var13 = StringUtils.method17361(var6[1], ',');
-							this.field2892.add(new class894(this, Boolean.parseBoolean(var13[0]), var13[1], StringUtils.method9595(var13[2]), Integer.decode(var13[3]), StringUtils.method9595(var13[4]), StringUtils.method9595(var13[5])));
+							this.field2892.add(new PreLoadingProgressImage(this, Boolean.parseBoolean(var13[0]), var13[1], StringUtils.method9595(var13[2]), Integer.decode(var13[3]), StringUtils.method9595(var13[4]), StringUtils.method9595(var13[5])));
 						}
 					}
 					var3.waitForAll();

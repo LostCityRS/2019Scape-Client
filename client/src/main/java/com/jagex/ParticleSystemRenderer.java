@@ -70,7 +70,7 @@ public class ParticleSystemRenderer {
 		field7797 = 0;
 		Statics.field8349 = new LinkedList();
 		Statics.field7794 = new MovingParticle[1024];
-		Statics.field1920 = new ParticleSystem[class121.field1419[field7802] + 1];
+		Statics.field1920 = new ParticleSystem[ParticleLimits.field1419[field7802] + 1];
 		field7793 = 0;
 		field7792 = 0;
 		Statics.field12041 = arg1;
@@ -88,7 +88,7 @@ public class ParticleSystemRenderer {
 			if (!var5) {
 				var3.remove();
 				Statics.field1920[field7792] = var4;
-				field7792 = field7792 + 1 & class121.field1419[field7802];
+				field7792 = field7792 + 1 & ParticleLimits.field1419[field7802];
 			}
 		}
 	}
@@ -121,7 +121,7 @@ public class ParticleSystemRenderer {
 			arg0 = 0;
 		}
 		field7802 = arg0;
-		Statics.field1920 = new ParticleSystem[class121.field1419[field7802] + 1];
+		Statics.field1920 = new ParticleSystem[ParticleLimits.field1419[field7802] + 1];
 		field7793 = 0;
 		field7792 = 0;
 	}

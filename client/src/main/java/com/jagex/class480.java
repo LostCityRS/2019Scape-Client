@@ -433,8 +433,8 @@ public class class480 {
 		synchronized (this) {
 			int var2 = this.method7561();
 			if (!this.field4942 || var2 <= this.field4941 || !this.field4921.method3868()) {
-				class367 var3 = this.field4921.method3843();
-				if (this.field4924 && class367.field3425 != var3) {
+				VorbisRelated var3 = this.field4921.method3843();
+				if (this.field4924 && VorbisRelated.field3425 != var3) {
 					if (this.field4901 == null) {
 						if (this.field4903 != null) {
 							if (this.field4904 >= this.field4926) {
@@ -485,7 +485,7 @@ public class class480 {
 	@ObfuscatedName("rq.h(I)V")
 	public void method7483() {
 		synchronized (this) {
-			if (this.field4921.method3843() == class367.field3427) {
+			if (this.field4921.method3843() == VorbisRelated.field3427) {
 				if (this.field4918 == null) {
 					this.method7480(class474.field4859);
 				} else {
@@ -546,7 +546,7 @@ public class class480 {
 			return;
 		}
 		boolean var1 = true;
-		class367 var2 = this.field4921.method3843();
+		VorbisRelated var2 = this.field4921.method3843();
 		if (this.field4921.method3868()) {
 			if (this.field4942 && this.method7512(this.field4941)) {
 				if (this.field4908[this.field4932] == null) {
@@ -582,7 +582,7 @@ public class class480 {
 				int var8 = this.field4921.method3729();
 				int var9 = this.field4921.method3730(this.field4907);
 				if (!this.field4930 && this.field4908[this.field4932] == null) {
-					if (class367.field3426 != var2 && var8 > 0) {
+					if (VorbisRelated.field3426 != var2 && var8 > 0) {
 						Packet var10 = this.method7515(var9);
 						this.field4908[this.field4932] = var10 == null ? null : new class475(this, var10, false);
 						int var11 = this.field4908[this.field4932] == null ? 0 : this.field4908[this.field4932].field4873.pos;
@@ -619,7 +619,7 @@ public class class480 {
 						} else {
 							this.field4908[this.field4932] = null;
 						}
-					} else if (class367.field3426 == var2 && this.field4900 && !this.field4943 && (this.field4925 < this.field4899 || this.field4899 < 0)) {
+					} else if (VorbisRelated.field3426 == var2 && this.field4900 && !this.field4943 && (this.field4925 < this.field4899 || this.field4899 < 0)) {
 						this.field4921.method3721(true);
 					}
 				}
@@ -632,11 +632,11 @@ public class class480 {
 				var1 = false;
 			}
 		}
-		if (!this.field4915 && this.method7531() >= 0.0F && (var17 >= this.field4895 || class367.field3426 == var2 || class367.field3425 == var2)) {
+		if (!this.field4915 && this.method7531() >= 0.0F && (var17 >= this.field4895 || VorbisRelated.field3426 == var2 || VorbisRelated.field3425 == var2)) {
 			this.field4915 = true;
 			this.method7480(class474.field4863);
 		}
-		if (!this.field4921.method3868() || !var1 || !this.method7514() && !this.field4930 && class367.field3426 != var2 || this.field4900 && (this.field4943 || this.field4925 < this.field4899 || this.field4899 < 0)) {
+		if (!this.field4921.method3868() || !var1 || !this.method7514() && !this.field4930 && VorbisRelated.field3426 != var2 || this.field4900 && (this.field4943 || this.field4925 < this.field4899 || this.field4899 < 0)) {
 			return;
 		}
 		this.method7480(class474.field4865);

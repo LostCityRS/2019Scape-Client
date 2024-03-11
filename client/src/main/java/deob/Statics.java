@@ -1756,7 +1756,7 @@ public class Statics {
 	public static boolean field9695;
 
 	@ObfuscatedName("afo.ce")
-	public static class331 field9772;
+	public static GpuModelUnknown field9772;
 
 	@ObfuscatedName("afm.er")
 	public static Socket field9774;
@@ -2007,7 +2007,7 @@ public class Statics {
 		int var5 = arg0.gSmart2or4null();
 		int var6 = arg0.gSmart2or4null();
 		int var7 = arg0.gSmart2or4null();
-		return new class912(var1.field3167, var1.field3159, var1.field3161, var1.field3162, var1.field3163, var1.field3160, var1.field3165, var1.field3166, var1.field3164, var2, var3, var4, var5, var6, var7);
+		return new LoadingScreenRelated4(var1.field3167, var1.field3159, var1.field3161, var1.field3162, var1.field3163, var1.field3160, var1.field3165, var1.field3166, var1.field3164, var2, var3, var4, var5, var6, var7);
 	}
 
 	@ObfuscatedName("gz.n(Ltl;B)V")
@@ -2140,7 +2140,7 @@ public class Statics {
 	}
 
 	@ObfuscatedName("eq.e(Lalw;B)Llv;")
-	public static class321 method2836(Packet arg0) {
+	public static LoginRelated6 method2836(Packet arg0) {
 		String var1 = arg0.gjstr();
 		LoadingScreenAlignmentX var2 = LoadingScreenAlignmentX.method13948()[arg0.g1()];
 		LoadingScreenAlignmentY var3 = LoadingScreenAlignmentY.method2774()[arg0.g1()];
@@ -2154,7 +2154,7 @@ public class Statics {
 		int var11 = arg0.gSmart2or4null();
 		int var12 = arg0.g4s();
 		int var13 = arg0.g4s();
-		return new class321(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12, var13);
+		return new LoginRelated6(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12, var13);
 	}
 
 	@ObfuscatedName("alj.t(II)V")

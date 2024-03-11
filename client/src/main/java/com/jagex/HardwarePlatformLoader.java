@@ -94,7 +94,7 @@ public class HardwarePlatformLoader implements NativeLibraryLoader {
 		Object var7 = null;
 		File var8;
 		try {
-			var8 = class510.method18852(var5);
+			var8 = CacheUtil.method18852(var5);
 		} catch (RuntimeException var16) {
 			throw new HardwarePlatformLoaderException(4, arg0, var16);
 		}

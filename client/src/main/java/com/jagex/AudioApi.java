@@ -113,7 +113,7 @@ public class AudioApi {
 		this.field1864 = arg0;
 		this.field1856 = new WeightedCache(arg1, 100);
 		this.field1862 = new WeightedCache(10);
-		this.field1856.method2943(new class167(this));
+		this.field1856.method2943(new AudioApiCacheRemovalListener(this));
 		SoundBackendConfig var3 = new SoundBackendConfig(SoundBackendType.field3413);
 		AudioMixer.method8200(var3);
 		this.method3197();

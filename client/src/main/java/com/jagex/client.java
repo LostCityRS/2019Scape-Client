@@ -7657,7 +7657,7 @@ public final class client extends GameShell {
 			if (!var165) {
 				field11053[field11054] = var163;
 				field11054 = (field11054 + 1) % 100;
-				String var169 = class107.method10347(Statics.method5939(var2));
+				String var169 = StringHelper.escape(Statics.method5939(var2));
 				int var170 = var156 ? 41 : 44;
 				if (var162.field3602 == -1) {
 					ChatHistory.method15054(var170, 0, var157, var157, var157, var169, var167.field11396, -1, var162);
@@ -7891,7 +7891,7 @@ public final class client extends GameShell {
 						var225 = var226.field3448;
 						var227 = var226.field3447.method19507(var2);
 					} else {
-						var227 = class107.method10347(Statics.method5939(var2));
+						var227 = StringHelper.escape(Statics.method5939(var2));
 					}
 					var220.method19124(var227.trim(), var221 >> 8, var221 & 0xFF);
 					int var228;
@@ -8467,7 +8467,7 @@ public final class client extends GameShell {
 			if (!var370) {
 				field11053[field11054] = var368;
 				field11054 = (field11054 + 1) % 100;
-				String var372 = class107.method10347(Statics.method5939(var2));
+				String var372 = StringHelper.escape(Statics.method5939(var2));
 				int var373 = var367 ? 22 : 24;
 				if (var366.field3602 == -1) {
 					ChatHistory.method15054(var373, 0, var361, var361, var361, var372, Statics.field6721.method3386(), -1, var366);
@@ -8705,7 +8705,7 @@ public final class client extends GameShell {
 			return true;
 		} else if (ServerProt.MESSAGE_PRIVATE_ECHO == arg0.field796) {
 			String var433 = var2.gjstr();
-			String var434 = class107.method10347(Statics.method5939(var2));
+			String var434 = StringHelper.escape(Statics.method5939(var2));
 			ChatHistory.method2664(6, 0, var433, var433, var433, var434, null);
 			arg0.field796 = null;
 			return true;
@@ -8963,7 +8963,7 @@ public final class client extends GameShell {
 			if (!var513) {
 				field11053[field11054] = var511;
 				field11054 = (field11054 + 1) % 100;
-				String var515 = class107.method10347(Statics.method5939(var2));
+				String var515 = StringHelper.escape(Statics.method5939(var2));
 				if (var510.field3602 == -1) {
 					ChatHistory.method15054(9, 0, var503, var504, var503, var515, var505, -1, var510);
 				} else {
@@ -9112,7 +9112,7 @@ public final class client extends GameShell {
 			if (!var559) {
 				field11053[field11054] = var557;
 				field11054 = (field11054 + 1) % 100;
-				String var561 = class107.method10347(Statics.method5939(var2));
+				String var561 = StringHelper.escape(Statics.method5939(var2));
 				int var562 = var556.field3609 ? 7 : 3;
 				if (var556.field3602 == -1) {
 					ChatHistory.method15054(var562, 0, var550, var551, var550, var561, null, -1, var556);
@@ -11134,7 +11134,7 @@ public final class client extends GameShell {
 								continue;
 							}
 							if (Component.field2169 == var11.clientcode) {
-								class21.method7274(Statics.field8198, var13, var14, var11);
+								WorldMapRenderer.method7274(Statics.field8198, var13, var14, var11);
 								continue;
 							}
 							if (Component.field2340 == var11.clientcode) {

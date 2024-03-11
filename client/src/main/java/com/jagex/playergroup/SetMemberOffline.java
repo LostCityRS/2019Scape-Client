@@ -2,11 +2,10 @@ package com.jagex.playergroup;
 
 import com.jagex.Packet;
 import com.jagex.PlayerGroupBanned;
-import com.jagex.class188;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("go")
-public class SetMemberOffline implements class188 {
+public class SetMemberOffline implements PlayerGroupDeltaEntry2 {
 
 	// $FF: synthetic field
 	public final PlayerGroupDelta this$0;

@@ -10932,7 +10932,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("sx.afd(Lyf;I)V")
 	public static final void method8018(ClientScriptState arg0) {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
-		arg0.field8218[++arg0.field8211 - 1] = class107.method10347(var1);
+		arg0.field8218[++arg0.field8211 - 1] = StringHelper.escape(var1);
 	}
 
 	@ObfuscatedName("fs.afl(Lyf;I)V")

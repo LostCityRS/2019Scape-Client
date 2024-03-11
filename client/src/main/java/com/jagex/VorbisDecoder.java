@@ -32,7 +32,7 @@ public class VorbisDecoder implements class365 {
 	public List field2050 = new ArrayList();
 
 	@ObfuscatedName("hk.u")
-	public class367 field2106 = class367.field3427;
+	public VorbisRelated field2106 = VorbisRelated.field3427;
 
 	@ObfuscatedName("hk.z")
 	public AudioFormat field2052;
@@ -231,30 +231,30 @@ public class VorbisDecoder implements class365 {
 	public void method3721(boolean arg0) {
 		if (!arg0) {
 			this.method3738();
-		} else if (this.method3843() == class367.field3426) {
+		} else if (this.method3843() == VorbisRelated.field3426) {
 			this.method3744(true);
-			this.method3840(class367.field3422);
+			this.method3840(VorbisRelated.field3422);
 		}
 	}
 
 	@ObfuscatedName("hk.n()V")
 	public void method3738() {
-		if (this.method3843() == class367.field3423) {
+		if (this.method3843() == VorbisRelated.field3423) {
 			this.method3744(false);
-			this.method3840(class367.field3421);
+			this.method3840(VorbisRelated.field3421);
 		} else {
 			this.method3744(false);
-			this.method3840(class367.field3427);
+			this.method3840(VorbisRelated.field3427);
 		}
 	}
 
 	@ObfuscatedName("hk.m()Lmc;")
-	public class367 method3843() {
+	public VorbisRelated method3843() {
 		return this.field2106;
 	}
 
 	@ObfuscatedName("hk.k(Lmc;)V")
-	public void method3840(class367 arg0) {
+	public void method3840(VorbisRelated arg0) {
 		this.field2106 = arg0;
 	}
 
@@ -265,7 +265,7 @@ public class VorbisDecoder implements class365 {
 
 	@ObfuscatedName("hk.w(Lalw;)V")
 	public void method3726(Packet arg0) {
-		if (this.method3843() == class367.field3425 || this.method3843() == class367.field3426) {
+		if (this.method3843() == VorbisRelated.field3425 || this.method3843() == VorbisRelated.field3426) {
 			if (arg0 != null) {
 				arg0.release();
 			}
@@ -274,11 +274,11 @@ public class VorbisDecoder implements class365 {
 			if (this.field2078.isEmpty()) {
 				if (!var2) {
 					this.method3756();
-					this.method3840(class367.field3426);
+					this.method3840(VorbisRelated.field3426);
 				}
 			} else if (!var2) {
 				this.method3756();
-				this.method3840(class367.field3425);
+				this.method3840(VorbisRelated.field3425);
 			}
 			if (var2) {
 				this.method3744(true);
@@ -290,8 +290,8 @@ public class VorbisDecoder implements class365 {
 
 	@ObfuscatedName("hk.l()V")
 	public void method3727() {
-		if (this.method3843() == class367.field3421 || this.method3843() == class367.field3427 || this.method3843() == class367.field3422) {
-			this.method3840(class367.field3423);
+		if (this.method3843() == VorbisRelated.field3421 || this.method3843() == VorbisRelated.field3427 || this.method3843() == VorbisRelated.field3422) {
+			this.method3840(VorbisRelated.field3423);
 			this.method3745();
 		}
 	}
@@ -562,10 +562,10 @@ public class VorbisDecoder implements class365 {
 
 	@ObfuscatedName("hk.t()V")
 	public void method3745() {
-		if (this.method3843() != class367.field3425) {
+		if (this.method3843() != VorbisRelated.field3425) {
 			this.method3761();
-			if (this.method3843() == class367.field3423) {
-				this.method3840(class367.field3422);
+			if (this.method3843() == VorbisRelated.field3423) {
+				this.method3840(VorbisRelated.field3422);
 			}
 		}
 	}
@@ -1152,14 +1152,14 @@ public class VorbisDecoder implements class365 {
 
 	@ObfuscatedName("hk.ax()V")
 	public void method3761() {
-		if (this.method3843() == class367.field3421 || (this.method3843() == class367.field3424 || this.field2087 && (float) (this.field2105 / this.method3732()) > this.field2059)) {
+		if (this.method3843() == VorbisRelated.field3421 || (this.method3843() == VorbisRelated.field3424 || this.field2087 && (float) (this.field2105 / this.method3732()) > this.field2059)) {
 			return;
 		}
 		if (!this.method3747()) {
 			Packet var1 = (Packet) (this.field2050 == null || this.field2050.isEmpty() ? null : this.field2050.get(0));
 			if (var1 == null) {
 				if (!this.field2044) {
-					this.method3840(class367.field3424);
+					this.method3840(VorbisRelated.field3424);
 					this.field2049.method5932();
 					this.field2044 = true;
 				}
@@ -1176,7 +1176,7 @@ public class VorbisDecoder implements class365 {
 	@ObfuscatedName("hk.av(Lalw;)V")
 	public synchronized void method3762(Packet arg0) {
 		this.field2050.add(arg0);
-		this.method3840(class367.field3422);
+		this.method3840(VorbisRelated.field3422);
 	}
 
 	@ObfuscatedName("hk.ao()V")
@@ -1491,8 +1491,8 @@ public class VorbisDecoder implements class365 {
 					break;
 				}
 			}
-			if (this.field2078.isEmpty() && this.method3843() == class367.field3425) {
-				this.method3840(class367.field3426);
+			if (this.field2078.isEmpty() && this.method3843() == VorbisRelated.field3425) {
+				this.method3840(VorbisRelated.field3426);
 			}
 			return var2;
 		}

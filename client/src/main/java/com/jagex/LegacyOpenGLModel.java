@@ -341,7 +341,7 @@ public class LegacyOpenGLModel extends Model {
 		this.field9637 = arg1.field1382;
 		this.field9619 = arg1.field1411;
 		this.field9640 = arg1.field1417;
-		class84[] var36 = new class84[this.field9635];
+		LegacyVertexNormal[] var36 = new LegacyVertexNormal[this.field9635];
 		this.field9687 = arg1.field1403;
 		this.field9641 = arg1.field1416;
 		if (arg1.field1412 != null) {
@@ -392,11 +392,11 @@ public class LegacyOpenGLModel extends Model {
 			int var47 = this.field9679[var46];
 			this.field9679[var46] = var45;
 			var45 += var47;
-			var36[var46] = new class84();
+			var36[var46] = new LegacyVertexNormal();
 		}
 		this.field9679[arg1.field1374] = var45;
 		class142 var48 = this.method1687(arg1, var9, this.field9670);
-		class77[] var49 = new class77[arg1.field1384];
+		TriangleNormal[] var49 = new TriangleNormal[arg1.field1384];
 		for (int var50 = 0; var50 < arg1.field1384; var50++) {
 			short var51 = arg1.field1415[var50];
 			short var52 = arg1.field1386[var50];
@@ -423,23 +423,23 @@ public class LegacyOpenGLModel extends Model {
 			int var66 = var62 * 256 / var63;
 			byte var67 = arg1.field1391 == null ? 0 : arg1.field1391[var50];
 			if (var67 == 0) {
-				class84 var68 = var36[var51];
+				LegacyVertexNormal var68 = var36[var51];
 				var68.field1115 += var64;
 				var68.field1114 += var65;
 				var68.field1116 += var66;
 				var68.field1117++;
-				class84 var69 = var36[var52];
+				LegacyVertexNormal var69 = var36[var52];
 				var69.field1115 += var64;
 				var69.field1114 += var65;
 				var69.field1116 += var66;
 				var69.field1117++;
-				class84 var70 = var36[var53];
+				LegacyVertexNormal var70 = var36[var53];
 				var70.field1115 += var64;
 				var70.field1114 += var65;
 				var70.field1116 += var66;
 				var70.field1117++;
 			} else if (var67 == 1) {
-				class77 var71 = var49[var50] = new class77();
+				TriangleNormal var71 = var49[var50] = new TriangleNormal();
 				var71.field1035 = var64;
 				var71.field1033 = var65;
 				var71.field1034 = var66;
@@ -677,14 +677,14 @@ public class LegacyOpenGLModel extends Model {
 				short var167 = arg1.field1415[var73];
 				short var168 = arg1.field1386[var73];
 				short var169 = arg1.field1400[var73];
-				class84 var170 = var36[var167];
+				LegacyVertexNormal var170 = var36[var167];
 				this.field9653[var72] = this.method15568(arg1, var167, var165 | var88 << 24, var170.field1115, var170.field1114, var170.field1116, var170.field1117, var77, var78);
-				class84 var171 = var36[var168];
+				LegacyVertexNormal var171 = var36[var168];
 				this.field9652[var72] = this.method15568(arg1, var168, var165 | var91 << 24, var171.field1115, var171.field1114, var171.field1116, var171.field1117, var79, var80);
-				class84 var172 = var36[var169];
+				LegacyVertexNormal var172 = var36[var169];
 				this.field9646[var72] = this.method15568(arg1, var169, var165 | var94 << 24, var172.field1115, var172.field1114, var172.field1116, var172.field1117, var81, var82);
 			} else if (var164 == 1) {
-				class77 var173 = var49[var73];
+				TriangleNormal var173 = var49[var73];
 				long var174 = ((long) (var173.field1034 + 256) << 24) + ((long) (var173.field1035 & Integer.MIN_VALUE) << 9) + ((long) (var173.field1033 + 256) << 32) + (long) (var74 << 8) + (long) var75;
 				this.field9653[var72] = this.method15568(arg1, arg1.field1415[var73], var174 | var88 << 41, var173.field1035, var173.field1033, var173.field1034, 0, var77, var78);
 				this.field9652[var72] = this.method15568(arg1, arg1.field1386[var73], var174 | var88 << 41, var173.field1035, var173.field1033, var173.field1034, 0, var79, var80);

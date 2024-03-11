@@ -85,7 +85,7 @@ public class DummySoundBackend extends SoundBackend {
 						var4 |= var3[var5].method7588();
 					}
 					if (var4) {
-						Arrays.sort(var3, new class145(this));
+						Arrays.sort(var3, new DummySoundComparator(this));
 					}
 				}
 				var6 = 3;

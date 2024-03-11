@@ -193,7 +193,7 @@ public class TwitchHardwarePlatform {
 			return 3;
 		}
 		Statics.field11755 = new TwitchTV();
-		int var2 = Statics.field11755.InitialiseTTV(class510.method9844());
+		int var2 = Statics.field11755.InitialiseTTV(CacheUtil.method9844());
 		if (var2 == 0) {
 			field7384 = true;
 		} else {

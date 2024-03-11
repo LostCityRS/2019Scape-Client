@@ -64,7 +64,7 @@ public class ParticleSystem {
 			return new ParticleSystem(arg0, arg1);
 		} else {
 			ParticleSystem var2 = Statics.field1920[ParticleSystemRenderer.field7793];
-			ParticleSystemRenderer.field7793 = ParticleSystemRenderer.field7793 + 1 & class121.field1419[ParticleSystemRenderer.field7802];
+			ParticleSystemRenderer.field7793 = ParticleSystemRenderer.field7793 + 1 & ParticleLimits.field1419[ParticleSystemRenderer.field7802];
 			var2.method9929(arg0, arg1);
 			return var2;
 		}

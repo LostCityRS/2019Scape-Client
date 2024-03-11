@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("asj")
-public class NoiseGenerator extends class1001 {
+public class NoiseGenerator extends NoiseGeneratorNode {
 
 	@ObfuscatedName("asj.o")
 	public short[] field12437;

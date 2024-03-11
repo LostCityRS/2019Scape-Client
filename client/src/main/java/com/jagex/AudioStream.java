@@ -9,7 +9,7 @@ public class AudioStream implements class614 {
 	public SoundBackend field7628;
 
 	@ObfuscatedName("wp.n")
-	public class615 field7629 = class615.field7627;
+	public AudioStreamRelated field7629 = AudioStreamRelated.field7627;
 
 	@ObfuscatedName("wp.m")
 	public int field7631;
@@ -25,16 +25,16 @@ public class AudioStream implements class614 {
 		this.field7631 = arg1;
 		this.field7628 = arg2;
 		this.field7632 = arg3;
-		this.field7629 = class615.field7625;
+		this.field7629 = AudioStreamRelated.field7625;
 	}
 
 	@ObfuscatedName("wp.e(B)V")
 	public void method9672() {
-		if (class615.field7625 != this.field7629) {
+		if (AudioStreamRelated.field7625 != this.field7629) {
 			return;
 		}
 		this.method9737();
-		this.field7629 = class615.field7626;
+		this.field7629 = AudioStreamRelated.field7626;
 		if (this.field7632 != null) {
 			this.field7632.method3130(this, 0, this.field7631, true);
 		}
@@ -48,7 +48,7 @@ public class AudioStream implements class614 {
 	}
 
 	@ObfuscatedName("wp.m(I)Lwl;")
-	public class615 method9674() {
+	public AudioStreamRelated method9674() {
 		return this.field7629;
 	}
 
