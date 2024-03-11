@@ -1,5 +1,9 @@
 package com.jagex;
 
+import com.jagex.game.config.vartype.VarDomain;
+import com.jagex.game.config.vartype.VarType;
+import com.jagex.game.config.vartype.bit.VarBitType;
+import com.jagex.game.config.vartype.constants.ScriptVarType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("yl")

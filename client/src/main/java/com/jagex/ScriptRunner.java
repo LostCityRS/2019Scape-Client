@@ -1,5 +1,12 @@
 package com.jagex;
 
+import com.jagex.game.config.vartype.VarDomain;
+import com.jagex.game.config.vartype.VarType;
+import com.jagex.game.config.vartype.bit.VarBitType;
+import com.jagex.game.config.vartype.constants.BaseVarType;
+import com.jagex.game.config.vartype.constants.ScriptVarType;
+import com.jagex.game.config.vartype.constants.VarDomainType;
+import com.jagex.game.config.vartype.player.VarPlayerType;
 import deob.ObfuscatedName;
 import deob.Statics;
 import com.jagex.twitchtv.TwitchEvent;

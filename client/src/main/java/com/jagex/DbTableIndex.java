@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.game.config.vartype.constants.BaseVarType;
 import deob.ObfuscatedName;
 import deob.Statics;
 

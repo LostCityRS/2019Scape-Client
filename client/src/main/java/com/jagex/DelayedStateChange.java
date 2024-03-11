@@ -1,5 +1,7 @@
 package com.jagex;
 
+import com.jagex.game.config.vartype.VarType;
+import com.jagex.game.config.vartype.bit.VarBitType;
 import deob.ObfuscatedName;
 import deob.Statics;
 

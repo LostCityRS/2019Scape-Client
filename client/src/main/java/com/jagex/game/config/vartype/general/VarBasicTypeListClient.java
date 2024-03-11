@@ -1,5 +1,8 @@
-package com.jagex;
+package com.jagex.game.config.vartype.general;
 
+import com.jagex.*;
+import com.jagex.game.config.vartype.VarTypeList;
+import com.jagex.game.config.vartype.constants.VarDomainType;
 import deob.ObfuscatedName;
 
 import java.util.Iterator;

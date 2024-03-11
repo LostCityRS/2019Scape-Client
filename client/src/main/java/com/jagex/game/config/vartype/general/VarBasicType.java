@@ -1,5 +1,8 @@
-package com.jagex;
+package com.jagex.game.config.vartype.general;
 
+import com.jagex.Packet;
+import com.jagex.game.config.vartype.VarType;
+import com.jagex.game.config.vartype.constants.VarDomainType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("afv")

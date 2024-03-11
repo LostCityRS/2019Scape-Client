@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.game.config.Js5ConfigGroup;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aon")

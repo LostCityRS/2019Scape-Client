@@ -1,5 +1,12 @@
 package com.jagex;
 
+import com.jagex.game.config.Js5Archive;
+import com.jagex.game.config.Js5ConfigGroup;
+import com.jagex.game.config.vartype.VarTypeList;
+import com.jagex.game.config.vartype.bit.VarBitTypeList;
+import com.jagex.game.config.vartype.constants.VarDomainType;
+import com.jagex.game.config.vartype.general.VarBasicTypeListClient;
+import com.jagex.game.config.vartype.player.VarPlayerTypeListClient;
 import deob.ObfuscatedName;
 import deob.Statics;
 

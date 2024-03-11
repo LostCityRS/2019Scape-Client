@@ -1,5 +1,10 @@
-package com.jagex;
+package com.jagex.game.config.vartype;
 
+import com.jagex.*;
+import com.jagex.game.config.vartype.constants.ScriptVarType;
+import com.jagex.game.config.vartype.constants.VarDomainType;
+import com.jagex.game.config.vartype.constants.VarLifetime;
+import com.jagex.game.config.vartype.constants.VarTransmitLevel;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ec")

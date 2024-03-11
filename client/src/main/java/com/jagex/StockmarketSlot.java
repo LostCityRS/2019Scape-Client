@@ -1,5 +1,7 @@
 package com.jagex;
 
+import com.jagex.game.config.vartype.VarTypeList;
+import com.jagex.game.config.vartype.constants.BaseVarType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("rk")

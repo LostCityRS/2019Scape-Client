@@ -1,5 +1,9 @@
 package com.jagex;
 
+import com.jagex.game.config.Js5ConfigGroup;
+import com.jagex.game.config.vartype.VarType;
+import com.jagex.game.config.vartype.constants.ScriptVarType;
+import com.jagex.game.config.vartype.constants.VarDomainType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aib")

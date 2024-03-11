@@ -1,5 +1,7 @@
-package com.jagex;
+package com.jagex.game.config.vartype.bit;
 
+import com.jagex.*;
+import com.jagex.game.config.Js5ConfigGroup;
 import deob.ObfuscatedName;
 
 import java.util.Map;

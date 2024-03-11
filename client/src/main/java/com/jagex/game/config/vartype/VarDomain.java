@@ -1,5 +1,8 @@
-package com.jagex;
+package com.jagex.game.config.vartype;
 
+import com.jagex.VarBitOverflowException;
+import com.jagex.game.config.vartype.bit.VarBitType;
+import com.jagex.VarIntDomain;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("eh")

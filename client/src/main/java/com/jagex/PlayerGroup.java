@@ -1,5 +1,8 @@
 package com.jagex;
 
+import com.jagex.game.config.vartype.SparseVarDomain;
+import com.jagex.game.config.vartype.VarDomain;
+import com.jagex.game.config.vartype.constants.VarDomainType;
 import deob.ObfuscatedName;
 
 import java.util.ArrayList;

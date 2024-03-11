@@ -1,8 +1,7 @@
 package com.jagex;
 
-import com.jagex.SkillDefaults;
-import com.jagex.VarBitTypeList;
-import com.jagex.VarTypeList;
+import com.jagex.game.config.vartype.VarTypeList;
+import com.jagex.game.config.vartype.bit.VarBitTypeList;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("gu")

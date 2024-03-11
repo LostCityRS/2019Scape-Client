@@ -1,5 +1,9 @@
-package com.jagex;
+package com.jagex.game.config.vartype.player;
 
+import com.jagex.Packet;
+import com.jagex.SerializableEnums;
+import com.jagex.game.config.vartype.VarType;
+import com.jagex.game.config.vartype.constants.VarDomainType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aff")

@@ -1,4 +1,4 @@
-package com.jagex;
+package com.jagex.core.constants;
 
 import deob.ObfuscatedName;
 

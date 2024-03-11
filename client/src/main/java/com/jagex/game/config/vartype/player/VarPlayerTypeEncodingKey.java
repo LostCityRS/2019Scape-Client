@@ -1,5 +1,6 @@
-package com.jagex;
+package com.jagex.game.config.vartype.player;
 
+import com.jagex.core.constants.SerializableEnum;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("gw")

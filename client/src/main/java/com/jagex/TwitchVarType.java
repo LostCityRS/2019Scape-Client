@@ -1,5 +1,7 @@
 package com.jagex;
 
+import com.jagex.core.constants.SerializableEnum;
+import com.jagex.game.config.vartype.constants.ScriptVarType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ud")

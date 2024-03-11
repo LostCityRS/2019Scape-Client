@@ -1,6 +1,12 @@
 package com.jagex;
 
 import com.jagex.cutscene.CutsceneAction;
+import com.jagex.game.config.Js5Archive;
+import com.jagex.game.config.vartype.SparseVarDomain;
+import com.jagex.game.config.vartype.VarType;
+import com.jagex.game.config.vartype.bit.VarBitType;
+import com.jagex.game.config.vartype.constants.BaseVarType;
+import com.jagex.game.config.vartype.player.VarPlayerType;
 import deob.ObfuscatedName;
 import deob.Statics;
 import jaclib.ping.Ping;
