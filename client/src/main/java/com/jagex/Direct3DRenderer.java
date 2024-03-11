@@ -656,7 +656,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.dl(Ldz;Ldz;FLdz;)Ldz;")
-	public class117 method2435(class117 arg0, class117 arg1, float arg2, class117 arg3) {
+	public EnvironmentSampler method2435(EnvironmentSampler arg0, EnvironmentSampler arg1, float arg2, EnvironmentSampler arg3) {
 		return arg2 < 0.5F ? arg0 : arg1;
 	}
 

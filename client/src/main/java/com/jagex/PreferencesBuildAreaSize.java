@@ -19,14 +19,14 @@ public class PreferencesBuildAreaSize extends PreferencesOption {
 			if (this.field8416 < class255.field2669.field2666 || this.field8416 > class255.field2670.field2666) {
 				this.field8416 = this.method14069();
 			}
-		} else if (this.field8416 < class256.field2671.field2674 || this.field8416 > class256.field2673.field2674) {
+		} else if (this.field8416 < DrawDistance.field2671.field2674 || this.field8416 > DrawDistance.field2673.field2674) {
 			this.field8416 = this.method14069();
 		}
 	}
 
 	@ObfuscatedName("anv.e(B)I")
 	public int method14069() {
-		return this.field8417.hardwareInfo().unused() ? class255.field2667.field2666 : class256.field2671.field2674;
+		return this.field8417.hardwareInfo().unused() ? class255.field2667.field2666 : DrawDistance.field2671.field2674;
 	}
 
 	@ObfuscatedName("anv.n(II)I")

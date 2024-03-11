@@ -7,7 +7,7 @@ import deob.Statics;
 public class class670 {
 
 	@ObfuscatedName("yw.e")
-	public static class163 field8187 = new class163(128);
+	public static Cache field8187 = new Cache(128);
 
 	public class670() throws Throwable {
 		throw new Error();

@@ -160,13 +160,13 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	public int field10414;
 
 	@ObfuscatedName("ahm.bb")
-	public class20 field10395;
+	public EasedAngle field10395;
 
 	@ObfuscatedName("ahm.be")
-	public class20 field10447;
+	public EasedAngle field10447;
 
 	@ObfuscatedName("ahm.by")
-	public class20 field10413;
+	public EasedAngle field10413;
 
 	@ObfuscatedName("ahm.bu")
 	public int field10400;
@@ -246,9 +246,9 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 		this.field10440 = 0;
 		this.field10443 = 0;
 		this.field10444 = 256;
-		this.field10395 = new class20();
-		this.field10447 = new class20();
-		this.field10413 = new class20();
+		this.field10395 = new EasedAngle();
+		this.field10447 = new EasedAngle();
+		this.field10413 = new EasedAngle();
 		this.field10400 = 0;
 		this.field10453 = 0;
 		this.field10396 = 0;

@@ -693,7 +693,7 @@ public class GpuFloorModel extends FloorModel {
 			var20.method17767(this.field9526, this.field9525);
 		}
 		int var21 = var18.position();
-		class285 var22 = this.field9516.field10148;
+		ModelShader var22 = this.field9516.field10148;
 		this.field9516.method16022();
 		if (this.field9516.field10169 > 0) {
 			var22.field2975.method6491((float) (this.field9516.field10191 >> 16 & 0xFF) / 255.0F, (float) (this.field9516.field10191 >> 8 & 0xFF) / 255.0F, (float) (this.field9516.field10191 >> 0 & 0xFF) / 255.0F);
@@ -900,7 +900,7 @@ public class GpuFloorModel extends FloorModel {
 			return;
 		}
 		this.field9516.method16022();
-		class285 var20 = this.field9516.field10148;
+		ModelShader var20 = this.field9516.field10148;
 		this.field9516.method16120(0, this.field9508);
 		this.field9516.method16120(1, this.field9509);
 		this.field9516.method16177(this.field9493);

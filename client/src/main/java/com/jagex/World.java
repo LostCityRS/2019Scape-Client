@@ -1035,7 +1035,7 @@ public class World {
 				}
 			}
 		}
-		int var21 = class256.method17395(Statics.field688.buildAreaSize.method18688()).field2675 * 8;
+		int var21 = DrawDistance.method17395(Statics.field688.buildAreaSize.method18688()).field2675 * 8;
 		if (Statics.field8198.method2130()) {
 			var21++;
 		}

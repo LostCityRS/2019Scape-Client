@@ -41,9 +41,9 @@ public class ChatHistory {
 
 	@ObfuscatedName("acj.w(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILnn;I)V")
 	public static void method15054(int arg0, int arg1, String arg2, String arg3, String arg4, String arg5, String arg6, int arg7, ChatCrownType arg8) {
-		class242 var9 = (class242) field2594.get(arg0);
+		TypeChatLines var9 = (TypeChatLines) field2594.get(arg0);
 		if (var9 == null) {
-			var9 = new class242();
+			var9 = new TypeChatLines();
 			field2594.put(arg0, var9);
 		}
 		ChatLine var10 = var9.method4323(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
@@ -54,7 +54,7 @@ public class ChatHistory {
 
 	@ObfuscatedName("qo.l(III)Lasg;")
 	public static ChatLine method7310(int arg0, int arg1) {
-		class242 var2 = (class242) field2594.get(arg0);
+		TypeChatLines var2 = (TypeChatLines) field2594.get(arg0);
 		return var2.method4322(arg1);
 	}
 
@@ -65,7 +65,7 @@ public class ChatHistory {
 
 	@ObfuscatedName("pg.z(II)I")
 	public static int method6970(int arg0) {
-		class242 var1 = (class242) field2594.get(arg0);
+		TypeChatLines var1 = (TypeChatLines) field2594.get(arg0);
 		return var1 == null ? 0 : var1.method4331();
 	}
 

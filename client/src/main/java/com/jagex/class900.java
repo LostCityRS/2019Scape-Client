@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ahk")
-public class class900 extends class287 {
+public class class900 extends BatchedSpriteShader {
 
 	public class900(GpuRenderer arg0) {
 		super(arg0);

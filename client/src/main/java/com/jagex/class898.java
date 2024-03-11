@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ahf")
-public final class class898 extends class286 {
+public final class class898 extends ParticleShader {
 
 	public class898(GpuRenderer arg0) {
 		super(arg0);

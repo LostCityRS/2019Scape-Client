@@ -3,16 +3,16 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("lv")
-public class class321 implements class317 {
+public class class321 implements LoadingScreenElementConfig {
 
 	@ObfuscatedName("lv.e")
 	public final String field3203;
 
 	@ObfuscatedName("lv.n")
-	public final class318 field3201;
+	public final LoadingScreenAlignmentX field3201;
 
 	@ObfuscatedName("lv.m")
-	public final class316 field3208;
+	public final LoadingScreenAlignmentY field3208;
 
 	@ObfuscatedName("lv.k")
 	public final int field3204;
@@ -44,7 +44,7 @@ public class class321 implements class317 {
 	@ObfuscatedName("lv.r")
 	public final int field3213;
 
-	public class321(String arg0, class318 arg1, class316 arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, int arg12) {
+	public class321(String arg0, LoadingScreenAlignmentX arg1, LoadingScreenAlignmentY arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, int arg12) {
 		this.field3203 = arg0;
 		this.field3201 = arg1;
 		this.field3208 = arg2;

@@ -86,9 +86,9 @@ public class class924 extends PostProcessEffect {
 			this.field10661 = this.field10654.method4157("paramsWeightings");
 			this.field10662 = this.field10654.method4157("pixelOffset");
 			this.field10657 = this.field10654.method4157("PosAndTexCoords");
-		} catch (class1212 var3) {
+		} catch (UniformNotFoundException var3) {
 			return false;
-		} catch (class1213 var4) {
+		} catch (ProgramNotFoundException var4) {
 			return false;
 		}
 		if (this.field10659[0].method4083() && this.field10659[1].method4083() && this.field10659[2].method4083()) {

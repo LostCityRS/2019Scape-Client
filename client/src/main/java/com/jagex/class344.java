@@ -45,10 +45,10 @@ public class class344 {
 	public int[] field3335 = new int[64];
 
 	@ObfuscatedName("ld.r")
-	public class1144[][] field3336 = new class1144[1600][64];
+	public Particle[][] field3336 = new Particle[1600][64];
 
 	@ObfuscatedName("ld.v")
-	public class1144[][] field3337 = new class1144[64][768];
+	public Particle[][] field3337 = new Particle[64][768];
 
 	@ObfuscatedName("ld.o")
 	public int field3334 = 0;
@@ -113,7 +113,7 @@ public class class344 {
 		int var9 = 0;
 		DualLink var10 = arg1.field1367.field8487;
 		for (DualLink var11 = var10.field11213; var11 != var10; var11 = var11.field11213) {
-			class1144 var12 = (class1144) var11;
+			Particle var12 = (Particle) var11;
 			int var13 = (int) ((float) (var12.field12161 >> 12) * var5 + (float) (var12.field12163 >> 12) * var4 + (float) (var12.field12159 >> 12) * var3 + var6);
 			if (var13 > var9) {
 				var9 = var13;
@@ -133,7 +133,7 @@ public class class344 {
 			var14 += 2;
 		}
 		arg0.method16102(this.field3327);
-		class286 var16 = arg0.field10151;
+		ParticleShader var16 = arg0.field10151;
 		var16.method5038(Matrix4x4.field4317);
 		var16.field2987.method6603();
 		var16.field2988 = -1;
@@ -155,7 +155,7 @@ public class class344 {
 	}
 
 	@ObfuscatedName("ld.k(Lafc;Lajn;IIILjo;Z)V")
-	public void method5766(GpuRenderer arg0, DualLink arg1, int arg2, int arg3, int arg4, class286 arg5, boolean arg6) {
+	public void method5766(GpuRenderer arg0, DualLink arg1, int arg2, int arg3, int arg4, ParticleShader arg5, boolean arg6) {
 		DualLink var8 = arg1.field11213;
 		int var9 = 0;
 		int var10 = -2;
@@ -170,7 +170,7 @@ public class class344 {
 				this.field3335[var14] = 0;
 			}
 			while (arg1 != var8) {
-				class1144 var15 = (class1144) var8;
+				Particle var15 = (Particle) var8;
 				if (var12) {
 					var10 = var15.field12160;
 					var11 = var15.field12165;
@@ -205,7 +205,7 @@ public class class344 {
 	}
 
 	@ObfuscatedName("ld.f(ILaqb;)V")
-	public void method5764(int arg0, class1144 arg1) {
+	public void method5764(int arg0, Particle arg1) {
 		if (arg0 >= 1600) {
 			return;
 		}
@@ -250,7 +250,7 @@ public class class344 {
 			int var25 = this.field3324[var24] > 64 ? 64 : this.field3324[var24];
 			if (var25 > 0) {
 				for (int var26 = var25 - 1; var26 >= 0; var26--) {
-					class1144 var27 = this.field3336[var24][var26];
+					Particle var27 = this.field3336[var24][var26];
 					int var28 = var27.field12158;
 					byte var29 = (byte) (var28 >> 16);
 					byte var30 = (byte) (var28 >> 8);
@@ -349,7 +349,7 @@ public class class344 {
 				if (this.field3324[var24] > 64) {
 					int var38 = this.field3324[var24] - 64 - 1;
 					for (int var39 = this.field3335[var38] - 1; var39 >= 0; var39--) {
-						class1144 var40 = this.field3337[var38][var39];
+						Particle var40 = this.field3337[var38][var39];
 						int var41 = var40.field12158;
 						byte var42 = (byte) (var41 >> 16);
 						byte var43 = (byte) (var41 >> 8);
@@ -452,7 +452,7 @@ public class class344 {
 		arg0.method16120(0, this.field3333);
 		arg0.method16120(1, this.field3329);
 		arg0.method16177(this.field3326);
-		class286 var51 = arg0.field10151;
+		ParticleShader var51 = arg0.field10151;
 		var51.method5039(var4, arg2);
 	}
 }

@@ -38,7 +38,7 @@ public class MainLoadingScreen implements LoadingScreen {
 		field2930.method2924();
 	}
 
-	public MainLoadingScreen(LoadingScreenType arg0, int arg1, int arg2, class297 arg3) {
+	public MainLoadingScreen(LoadingScreenType arg0, int arg1, int arg2, LoadingScreenElementFactory arg3) {
 		this.field2928 = arg0;
 		this.field2931 = arg1;
 		this.field2932 = arg2;

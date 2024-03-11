@@ -8,7 +8,7 @@ import java.util.*;
 public class class932 extends SoundBackend {
 
 	@ObfuscatedName("aiz.n")
-	public HashMap field10688 = new HashMap();
+	public java.util.HashMap field10688 = new java.util.HashMap();
 
 	@ObfuscatedName("aiz.m")
 	public class364 field10694 = new class364(this);
@@ -32,17 +32,17 @@ public class class932 extends SoundBackend {
 	public Runnable field10695 = new class546(this);
 
 	@ObfuscatedName("aiz.aw(I)Ljava/util/HashMap;")
-	public HashMap method16804() {
+	public java.util.HashMap method16804() {
 		return this.field10688;
 	}
 
 	public class932(class656 arg0) {
-		Iterator var2 = arg0.field8053.keySet().iterator();
+		java.util.Iterator var2 = arg0.field8053.keySet().iterator();
 		while (var2.hasNext()) {
 			class473 var3 = (class473) var2.next();
 			this.field10688.put(var3, new class480[(Integer) arg0.field8053.get(var3)]);
 		}
-		Iterator var4 = this.field10688.keySet().iterator();
+		java.util.Iterator var4 = this.field10688.keySet().iterator();
 		while (var4.hasNext()) {
 			class473 var5 = (class473) var4.next();
 			class480[] var6 = (class480[]) this.field10688.get(var5);
@@ -69,7 +69,7 @@ public class class932 extends SoundBackend {
 		if (this.field10694 != null) {
 			this.field10694.method5849();
 		}
-		Iterator var1 = this.field10688.keySet().iterator();
+		java.util.Iterator var1 = this.field10688.keySet().iterator();
 		while (true) {
 			class480[] var3;
 			byte var6;
@@ -190,7 +190,7 @@ public class class932 extends SoundBackend {
 
 	@ObfuscatedName("aiz.w(Lqk;B)Lrq;")
 	public class480 method5865(class473 arg0) {
-		HashMap var2 = this.field10688;
+		java.util.HashMap var2 = this.field10688;
 		synchronized (this.field10688) {
 			class480[] var3 = (class480[]) this.field10688.get(arg0);
 			if (var3 == null) {
@@ -220,9 +220,9 @@ public class class932 extends SoundBackend {
 
 	@ObfuscatedName("aiz.z(B)V")
 	public void method5868() {
-		HashMap var1 = this.method16804();
+		java.util.HashMap var1 = this.method16804();
 		synchronized (var1) {
-			Iterator var3 = var1.keySet().iterator();
+			java.util.Iterator var3 = var1.keySet().iterator();
 			while (var3.hasNext()) {
 				class473 var4 = (class473) var3.next();
 				class480[] var5 = (class480[]) var1.get(var4);
@@ -238,7 +238,7 @@ public class class932 extends SoundBackend {
 		while (!var8) {
 			var8 = true;
 			synchronized (var1) {
-				Iterator var10 = var1.keySet().iterator();
+				java.util.Iterator var10 = var1.keySet().iterator();
 				while (var10.hasNext()) {
 					class473 var11 = (class473) var10.next();
 					class480[] var12 = (class480[]) var1.get(var11);

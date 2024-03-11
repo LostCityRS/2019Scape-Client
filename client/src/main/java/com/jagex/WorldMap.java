@@ -141,7 +141,7 @@ public class WorldMap {
 		Statics.field6802 = new byte[Statics.field6812 * Statics.field6810];
 		Statics.field6817 = new Object[Statics.field6812 * Statics.field6810];
 		Statics.field6818 = new byte[Statics.field6812 * Statics.field6810];
-		Statics.field6830 = new HashMap[3][Statics.field6812 >> 6][Statics.field6810 >> 6];
+		Statics.field6830 = new java.util.HashMap[3][Statics.field6812 >> 6][Statics.field6810 >> 6];
 		Statics.field6854 = new int[field6839.size() + 1];
 		Statics.field6820 = new boolean[Statics.field6812 / 8][Statics.field6810 / 8];
 	}
@@ -333,9 +333,9 @@ public class WorldMap {
 				short[] var32 = new short[Statics.field6812 * Statics.field6810];
 				for (int var33 = 0; var33 < Statics.field6830[var31].length; var33++) {
 					for (int var34 = 0; var34 < Statics.field6830[var31][0].length; var34++) {
-						HashMap var35 = Statics.field6830[var31][var33][var34];
+						java.util.HashMap var35 = Statics.field6830[var31][var33][var34];
 						if (var35 != null) {
-							Iterator var36 = var35.values().iterator();
+							java.util.Iterator var36 = var35.values().iterator();
 							while (var36.hasNext()) {
 								class538 var37 = (class538) var36.next();
 								var32[(var34 * 64 + var37.field6769) * Statics.field6812 + var33 * 64 + var37.field6774] = (short) var37.field6770;
@@ -346,9 +346,9 @@ public class WorldMap {
 				method8509(var32, Statics.field6813, Statics.field6814, arg1, arg2);
 				for (int var38 = 0; var38 < Statics.field6830[var31].length; var38++) {
 					for (int var39 = 0; var39 < Statics.field6830[var31][0].length; var39++) {
-						HashMap var40 = Statics.field6830[var31][var38][var39];
+						java.util.HashMap var40 = Statics.field6830[var31][var38][var39];
 						if (var40 != null) {
-							Iterator var41 = var40.values().iterator();
+							java.util.Iterator var41 = var40.values().iterator();
 							while (var41.hasNext()) {
 								class538 var42 = (class538) var41.next();
 								int var43 = (var39 * 64 + var42.field6769) * Statics.field6812 + var38 * 64 + var42.field6774;
@@ -442,7 +442,7 @@ public class WorldMap {
 					}
 				}
 				if (Statics.field6830[var15 - 1][arg2 - (Statics.field6786 >> 6)][arg3 - (Statics.field6808 >> 6)] == null) {
-					Statics.field6830[var15 - 1][arg2 - (Statics.field6786 >> 6)][arg3 - (Statics.field6808 >> 6)] = new HashMap();
+					Statics.field6830[var15 - 1][arg2 - (Statics.field6786 >> 6)][arg3 - (Statics.field6808 >> 6)] = new java.util.HashMap();
 				}
 				int var26 = ((arg4 & 0x3F) << 8) + (arg5 & 0x3F);
 				class538 var27 = new class538(arg4 & 0x3F, arg5 & 0x3F, var16, var17, var18, var23, var24);
@@ -500,9 +500,9 @@ public class WorldMap {
 		for (int var14 = 0; var14 < 3; var14++) {
 			for (int var15 = 0; var15 < Statics.field6830[0].length; var15++) {
 				label89: for (int var16 = 0; var16 < Statics.field6830[0][0].length; var16++) {
-					HashMap var17 = Statics.field6830[var14][var15][var16];
+					java.util.HashMap var17 = Statics.field6830[var14][var15][var16];
 					if (var17 != null) {
-						Iterator var18 = var17.values().iterator();
+						java.util.Iterator var18 = var17.values().iterator();
 						while (true) {
 							class538 var19;
 							do {
@@ -858,7 +858,7 @@ public class WorldMap {
 					if (var51 < var50) {
 						var51 = var50;
 					}
-					HashMap var52 = Statics.field6830[var40][var38][var39];
+					java.util.HashMap var52 = Statics.field6830[var40][var38][var39];
 					if (var52 != null) {
 						class538 var53 = (class538) var52.get((var43 << 8) + var49);
 						if (var53 != null) {
@@ -874,7 +874,7 @@ public class WorldMap {
 					int var58 = var9 + var57;
 					if (!var10 || method8534(var55, var58)) {
 						int var59 = var58 & 0x3F;
-						HashMap var60 = Statics.field6830[var40][var38][var39];
+						java.util.HashMap var60 = Statics.field6830[var40][var38][var39];
 						if (var60 != null) {
 							class538 var61 = (class538) var60.get((var56 << 8) + var59);
 							if (var61 != null) {

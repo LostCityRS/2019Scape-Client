@@ -12,10 +12,10 @@ public abstract class Shader {
 	public Program[] field2568;
 
 	@ObfuscatedName("ho.m")
-	public class252 field2574;
+	public HashMap field2574;
 
 	@ObfuscatedName("ho.k")
-	public class252 field2569;
+	public HashMap field2569;
 
 	@ObfuscatedName("ho.f")
 	public int field2567;
@@ -27,17 +27,17 @@ public abstract class Shader {
 	public int field2573 = -1;
 
 	@ObfuscatedName("ho.u")
-	public static final class251 field2571 = new class232();
+	public static final HashMapKey field2571 = new class232();
 
 	public Shader(GpuRenderer arg0, ShaderData arg1) {
 		this.field2570 = arg1.field2577;
 		this.field2567 = arg1.field2580.length;
-		this.field2574 = new class252(this.field2567, field2571);
+		this.field2574 = new HashMap(this.field2567, field2571);
 		for (int var3 = 0; var3 < this.field2567; var3++) {
 			this.field2574.method4475(var3, arg1.field2580[var3].field2586, this.method4165(arg1.field2580[var3]));
 		}
 		this.field2572 = arg1.field2581.length;
-		this.field2569 = new class252(this.field2572, field2571);
+		this.field2569 = new HashMap(this.field2572, field2571);
 		for (int var4 = 0; var4 < this.field2572; var4++) {
 			this.field2569.method4475(var4, arg1.field2581[var4].field2586, this.method4165(arg1.field2581[var4]));
 		}
@@ -53,19 +53,19 @@ public abstract class Shader {
 	}
 
 	@ObfuscatedName("ho.w(Ljava/lang/String;I)Lhi;")
-	public Program method4227(String arg0) throws class1213 {
+	public Program method4227(String arg0) throws ProgramNotFoundException {
 		Program[] var2 = this.field2568;
 		for (int var3 = 0; var3 < var2.length; var3++) {
 			Program var4 = var2[var3];
 			String var5 = var4.method4082();
 			if (var5 != null && var5.equals(arg0)) {
 				if (!var4.method4083()) {
-					throw new class1213(arg0);
+					throw new ProgramNotFoundException(arg0);
 				}
 				return var4;
 			}
 		}
-		throw new class1213(arg0);
+		throw new ProgramNotFoundException(arg0);
 	}
 
 	@ObfuscatedName("ho.l(B)I")
@@ -210,10 +210,10 @@ public abstract class Shader {
 	}
 
 	@ObfuscatedName("ho.as(Ljava/lang/String;B)Laql;")
-	public ProgramUniform method4157(String arg0) throws class1212 {
+	public ProgramUniform method4157(String arg0) throws UniformNotFoundException {
 		ProgramUniform var2 = (ProgramUniform) this.field2574.method4464(arg0);
 		if (var2 == null) {
-			throw new class1212(arg0);
+			throw new UniformNotFoundException(arg0);
 		}
 		return var2;
 	}

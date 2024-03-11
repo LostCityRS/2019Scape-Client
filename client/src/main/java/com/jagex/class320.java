@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("li")
-public class class320 implements class317 {
+public class class320 implements LoadingScreenElementConfig {
 
 	@ObfuscatedName("li.e")
 	public final int field3200;

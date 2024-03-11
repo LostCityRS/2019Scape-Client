@@ -115,10 +115,10 @@ public class MapElementType implements ConfigType {
 	public int field2394;
 
 	@ObfuscatedName("hs.ap")
-	public class230 field2365 = class230.field2417;
+	public MapAlignmentX field2365 = MapAlignmentX.field2417;
 
 	@ObfuscatedName("hs.aq")
-	public class231 field2405 = class231.field2424;
+	public MapAlignmentY field2405 = MapAlignmentY.field2424;
 
 	@ObfuscatedName("hs.ax")
 	public int[] field2406;
@@ -271,9 +271,9 @@ public class MapElementType implements ConfigType {
 		} else if (arg1 == 28) {
 			this.field2408 = arg0.g1();
 		} else if (arg1 == 29) {
-			this.field2365 = (class230) SerializableEnums.decode(class230.method13997(), arg0.g1());
+			this.field2365 = (MapAlignmentX) SerializableEnums.decode(MapAlignmentX.method13997(), arg0.g1());
 		} else if (arg1 == 30) {
-			this.field2405 = (class231) SerializableEnums.decode(Statics.method15088(), arg0.g1());
+			this.field2405 = (MapAlignmentY) SerializableEnums.decode(Statics.method15088(), arg0.g1());
 		} else if (arg1 == 249) {
 			int var9 = arg0.g1();
 			if (this.field2411 == null) {

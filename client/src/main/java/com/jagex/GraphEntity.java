@@ -21,7 +21,7 @@ public abstract class GraphEntity extends class665 {
 	public int field11715;
 
 	@ObfuscatedName("alh.y")
-	public class141[] field11713;
+	public ScreenBoundingBox[] field11713;
 
 	@ObfuscatedName("alh.q")
 	public ScaleRotTrans field11711;
@@ -83,9 +83,9 @@ public abstract class GraphEntity extends class665 {
 
 	@ObfuscatedName("alh.gg(II)V")
 	public void method18363(int arg0) {
-		this.field11713 = new class141[arg0];
+		this.field11713 = new ScreenBoundingBox[arg0];
 		for (int var2 = 0; var2 < this.field11713.length; var2++) {
-			this.field11713[var2] = new class141();
+			this.field11713[var2] = new ScreenBoundingBox();
 		}
 	}
 

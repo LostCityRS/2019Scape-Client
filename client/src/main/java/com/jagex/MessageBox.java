@@ -11,7 +11,7 @@ public class MessageBox {
 	}
 
 	@ObfuscatedName("fm.e(Lkv;Lky;IIIIIIIIII)V")
-	public static void method3004(class318 arg0, class316 arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10) {
+	public static void method3004(LoadingScreenAlignmentX arg0, LoadingScreenAlignmentY arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10) {
 		Statics.field709 = arg0;
 		Statics.field715 = arg1;
 		Statics.field711 = arg2;

@@ -19,7 +19,7 @@ public class TelemetryGrid {
 	@ObfuscatedName("fo.n(II)I")
 	public int method3262(int arg0) {
 		for (int var2 = 0; var2 < this.field1879.size(); var2++) {
-			if (((class185) this.field1879.get(var2)).field1888 == arg0) {
+			if (((TelemetryGroup) this.field1879.get(var2)).field1888 == arg0) {
 				return var2;
 			}
 		}
@@ -27,17 +27,17 @@ public class TelemetryGrid {
 	}
 
 	@ObfuscatedName("fo.m(II)Lfy;")
-	public class185 method3263(int arg0) {
-		return (class185) this.field1879.get(arg0);
+	public TelemetryGroup method3263(int arg0) {
+		return (TelemetryGroup) this.field1879.get(arg0);
 	}
 
 	@ObfuscatedName("fo.k(Lfy;I)I")
-	public int method3270(class185 arg0) {
+	public int method3270(TelemetryGroup arg0) {
 		return this.method3265(arg0, -1);
 	}
 
 	@ObfuscatedName("fo.f(Lfy;II)I")
-	public int method3265(class185 arg0, int arg1) {
+	public int method3265(TelemetryGroup arg0, int arg1) {
 		if (this.field1879.size() == 5) {
 			throw new RuntimeException("");
 		} else if (this.method3262(arg0.field1888) == -1) {

@@ -8,7 +8,7 @@ public class class915 extends class322 {
 	@ObfuscatedName("aht.w")
 	public final int field10582;
 
-	public class915(int arg0, class318 arg1, class316 arg2, int arg3, int arg4, int arg5) {
+	public class915(int arg0, LoadingScreenAlignmentX arg1, LoadingScreenAlignmentY arg2, int arg3, int arg4, int arg5) {
 		super(arg0, arg1, arg2, arg3, arg4);
 		this.field10582 = arg5;
 	}

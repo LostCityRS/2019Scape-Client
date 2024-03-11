@@ -475,7 +475,7 @@ public class class975 extends Node {
 				int var8 = (int) ((float) (arg0.field11353 - arg0.field11351) * 0.5F + (float) arg0.field11351);
 				arg0.field11350.field4308 = var7;
 				arg0.field11350.field4313 = var8;
-				arg0.field11371 = Statics.field1798.method3236(class173.field1821, arg0, arg0.field11370, -1, 0, SubBussType.field1808.method3034(), class174.field1838, (float) arg0.field11356, (float) arg0.field11357, arg0.field11350, 0, var6, false);
+				arg0.field11371 = Statics.field1798.method3236(SoundType.field1821, arg0, arg0.field11370, -1, 0, SubBussType.field1808.method3034(), SoundShape.field1838, (float) arg0.field11356, (float) arg0.field11357, arg0.field11350, 0, var6, false);
 				if (arg0.field11371 != null) {
 					float var9 = (float) var5 / 255.0F;
 					arg0.field11371.method7403(var9, 150);
@@ -498,7 +498,7 @@ public class class975 extends Node {
 				int var15 = (int) ((float) (arg0.field11353 - arg0.field11351) * 0.5F + (float) arg0.field11351);
 				arg0.field11355.field4308 = var14;
 				arg0.field11355.field4313 = var15;
-				arg0.field11372 = Statics.field1798.method3236(class173.field1822, arg0, arg0.field11375[var13], 0, var5, SubBussType.field1799.method3034(), class174.field1838, (float) arg0.field11356, (float) (arg0.field11357 + arg0.field11356), arg0.field11355, 0, var12, false);
+				arg0.field11372 = Statics.field1798.method3236(SoundType.field1822, arg0, arg0.field11375[var13], 0, var5, SubBussType.field1799.method3034(), SoundShape.field1838, (float) arg0.field11356, (float) (arg0.field11357 + arg0.field11356), arg0.field11355, 0, var12, false);
 				if (arg0.field11372 != null) {
 					arg0.field11372.method7441();
 				}

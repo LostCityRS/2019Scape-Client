@@ -50,10 +50,10 @@ public class class89 {
 	public int[] field1148 = new int[64];
 
 	@ObfuscatedName("cu.o")
-	public class1144[][] field1146 = new class1144[1600][64];
+	public Particle[][] field1146 = new Particle[1600][64];
 
 	@ObfuscatedName("cu.s")
-	public class1144[][] field1142 = new class1144[64][768];
+	public Particle[][] field1142 = new Particle[64][768];
 
 	@ObfuscatedName("cu.y")
 	public int field1133 = 0;
@@ -82,7 +82,7 @@ public class class89 {
 			int var9 = 0;
 			DualLink var10 = arg1.field1367.field8487;
 			for (DualLink var11 = var10.field11213; var11 != var10; var11 = var11.field11213) {
-				class1144 var12 = (class1144) var11;
+				Particle var12 = (Particle) var11;
 				int var13 = (int) ((float) (var12.field12161 >> 12) * var5 + (float) (var12.field12163 >> 12) * var4 + (float) (var12.field12159 >> 12) * var3 + var6);
 				if (var13 > var9) {
 					var9 = var13;
@@ -115,7 +115,7 @@ public class class89 {
 					this.field1148[var22] = 0;
 				}
 				while (var10 != var16) {
-					class1144 var23 = (class1144) var16;
+					Particle var23 = (Particle) var16;
 					if (var20) {
 						var18 = var23.field12160;
 						var19 = var23.field12165;
@@ -187,7 +187,7 @@ public class class89 {
 				int var21 = this.field1144[var20] > 64 ? 64 : this.field1144[var20];
 				if (var21 > 0) {
 					for (int var22 = var21 - 1; var22 >= 0; var22--) {
-						class1144 var23 = this.field1146[var20][var22];
+						Particle var23 = this.field1146[var20][var22];
 						int var24 = var23.field12158;
 						byte var25 = (byte) (var24 >> 16);
 						byte var26 = (byte) (var24 >> 8);
@@ -280,7 +280,7 @@ public class class89 {
 					if (this.field1144[var20] > 64) {
 						int var33 = this.field1144[var20] - 64 - 1;
 						for (int var34 = this.field1148[var33] - 1; var34 >= 0; var34--) {
-							class1144 var35 = this.field1142[var33][var34];
+							Particle var35 = this.field1142[var33][var34];
 							int var36 = var35.field12158;
 							byte var37 = (byte) (var36 >> 16);
 							byte var38 = (byte) (var36 >> 8);
@@ -378,7 +378,7 @@ public class class89 {
 				int var46 = this.field1144[var45] > 64 ? 64 : this.field1144[var45];
 				if (var46 > 0) {
 					for (int var47 = var46 - 1; var47 >= 0; var47--) {
-						class1144 var48 = this.field1146[var45][var47];
+						Particle var48 = this.field1146[var45][var47];
 						int var49 = var48.field12158;
 						byte var50 = (byte) (var49 >> 16);
 						byte var51 = (byte) (var49 >> 8);
@@ -471,7 +471,7 @@ public class class89 {
 					if (this.field1144[var45] > 64) {
 						int var58 = this.field1144[var45] - 64 - 1;
 						for (int var59 = this.field1148[var58] - 1; var59 >= 0; var59--) {
-							class1144 var60 = this.field1142[var58][var59];
+							Particle var60 = this.field1142[var58][var59];
 							int var61 = var60.field12158;
 							byte var62 = (byte) (var61 >> 16);
 							byte var63 = (byte) (var61 >> 8);

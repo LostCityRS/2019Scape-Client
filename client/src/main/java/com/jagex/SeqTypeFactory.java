@@ -16,17 +16,17 @@ public abstract class SeqTypeFactory implements ConfigTypeFactory {
 
 	public SeqTypeFactory(ConfigTypeList arg0, Js5 arg1, Js5 arg2, Js5 arg3) {
 		this.field1795 = arg0;
-		class1177.method9393(arg1, arg3, 2);
-		class1176.method9558(arg2, arg3);
+		FrameSet.method9393(arg1, arg3, 2);
+		KeyFrameSet.method9558(arg2, arg3);
 	}
 
 	@ObfuscatedName("fu.e(IB)Larr;")
-	public class1177 method3020(int arg0) {
+	public FrameSet method3020(int arg0) {
 		WeightedCache var2 = this.field1794;
 		synchronized (this.field1794) {
-			class1177 var3 = (class1177) this.field1794.method2930((long) arg0);
+			FrameSet var3 = (FrameSet) this.field1794.method2930((long) arg0);
 			if (var3 == null) {
-				var3 = new class1177(arg0);
+				var3 = new FrameSet(arg0);
 				this.field1794.method2921(var3, (long) arg0);
 			}
 			return var3.method19410() ? var3 : null;
@@ -34,12 +34,12 @@ public abstract class SeqTypeFactory implements ConfigTypeFactory {
 	}
 
 	@ObfuscatedName("fu.n(IB)Lard;")
-	public class1176 method3010(int arg0) {
+	public KeyFrameSet method3010(int arg0) {
 		WeightedCache var2 = this.field1796;
 		synchronized (this.field1796) {
-			class1176 var3 = (class1176) this.field1796.method2930((long) arg0);
+			KeyFrameSet var3 = (KeyFrameSet) this.field1796.method2930((long) arg0);
 			if (var3 == null) {
-				var3 = new class1176(arg0);
+				var3 = new KeyFrameSet(arg0);
 				this.field1796.method2921(var3, (long) arg0);
 			}
 			return var3.method19395() ? var3 : null;

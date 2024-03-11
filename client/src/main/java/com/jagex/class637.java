@@ -28,7 +28,7 @@ public class class637 {
 	public int field7867;
 
 	@ObfuscatedName("xv.u")
-	public class117 field7868;
+	public EnvironmentSampler field7868;
 
 	@ObfuscatedName("xv.z")
 	public float field7862;

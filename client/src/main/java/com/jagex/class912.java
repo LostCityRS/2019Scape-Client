@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ahp")
-public class class912 extends class314 {
+public class class912 extends LoadingScreenProgressDisplayConfig {
 
 	@ObfuscatedName("ahp.p")
 	public final int field10569;
@@ -23,7 +23,7 @@ public class class912 extends class314 {
 	@ObfuscatedName("ahp.o")
 	public final int field10574;
 
-	public class912(class318 arg0, class316 arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, int arg12, int arg13, int arg14) {
+	public class912(LoadingScreenAlignmentX arg0, LoadingScreenAlignmentY arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, int arg12, int arg13, int arg14) {
 		super(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		this.field10569 = arg9;
 		this.field10570 = arg10;

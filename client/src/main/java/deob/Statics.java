@@ -220,7 +220,7 @@ public class Statics {
 	public static int field11893;
 
 	@ObfuscatedName("apn.o")
-	public static class1172 field11913;
+	public static MinimenuEntry field11913;
 
 	@ObfuscatedName("aph.ek")
 	public static Keyboard field11931;
@@ -283,7 +283,7 @@ public class Statics {
 	public static int field1267;
 
 	@ObfuscatedName("cj.v")
-	public static class1172 field1280;
+	public static MinimenuEntry field1280;
 
 	@ObfuscatedName("da.ag")
 	public static int field1289;
@@ -403,7 +403,7 @@ public class Statics {
 	public static int field1844;
 
 	@ObfuscatedName("fq.y")
-	public static class1172 field1846;
+	public static MinimenuEntry field1846;
 
 	@ObfuscatedName("fl.bf")
 	public static int field1847;
@@ -658,7 +658,7 @@ public class Statics {
 	public static LoadingStage field3419;
 
 	@ObfuscatedName("mt.gd")
-	public static class243 field3420;
+	public static EmojiList field3420;
 
 	@ObfuscatedName("mc.su")
 	public static Clipboard field3428;
@@ -880,7 +880,7 @@ public class Statics {
 	public static int field514;
 
 	@ObfuscatedName("u.f")
-	public static class15 field517;
+	public static CreateConnectStage field517;
 
 	@ObfuscatedName("p.n")
 	public static Process field520;
@@ -1108,7 +1108,7 @@ public class Statics {
 	public static boolean[][] field6820;
 
 	@ObfuscatedName("tf.ay")
-	public static HashMap[][][] field6830;
+	public static java.util.HashMap[][][] field6830;
 
 	@ObfuscatedName("tf.be")
 	public static int field6837;
@@ -1180,7 +1180,7 @@ public class Statics {
 	public static Js5 field7085;
 
 	@ObfuscatedName("as.e")
-	public static class318 field709;
+	public static LoadingScreenAlignmentX field709;
 
 	@ObfuscatedName("uz.l")
 	public static int field7091;
@@ -1189,7 +1189,7 @@ public class Statics {
 	public static SpriteData field710;
 
 	@ObfuscatedName("ug.s")
-	public static class1172 field7100;
+	public static MinimenuEntry field7100;
 
 	@ObfuscatedName("as.m")
 	public static int field711;
@@ -1204,7 +1204,7 @@ public class Statics {
 	public static SpriteData field714;
 
 	@ObfuscatedName("as.n")
-	public static class316 field715;
+	public static LoadingScreenAlignmentY field715;
 
 	@ObfuscatedName("as.o")
 	public static PalettedSpriteData field716;
@@ -1381,7 +1381,7 @@ public class Statics {
 	public static MovingParticle[] field7794;
 
 	@ObfuscatedName("xu.n")
-	public static class117 field7832;
+	public static EnvironmentSampler field7832;
 
 	@ObfuscatedName("xu.m")
 	public static SkyBox field7846;
@@ -1489,7 +1489,7 @@ public class Statics {
 	public static Js5 field8332;
 
 	@ObfuscatedName("zc.m")
-	public static class1172 field8348;
+	public static MinimenuEntry field8348;
 
 	@ObfuscatedName("zc.e")
 	public static List field8349;
@@ -1824,8 +1824,8 @@ public class Statics {
 	}
 
 	@ObfuscatedName("ace.e(I)[Lhy;")
-	public static class231[] method15088() {
-		return new class231[] { class231.field2422, class231.field2426, class231.field2424 };
+	public static MapAlignmentY[] method15088() {
+		return new MapAlignmentY[] { MapAlignmentY.field2422, MapAlignmentY.field2426, MapAlignmentY.field2424 };
 	}
 
 	@ObfuscatedName("anb.e(I)[Lib;")
@@ -1999,8 +1999,8 @@ public class Statics {
 	}
 
 	@ObfuscatedName("xj.k(Lalw;B)Lkp;")
-	public static class314 method10312(Packet arg0) {
-		class314 var1 = class314.method18899(arg0);
+	public static LoadingScreenProgressDisplayConfig method10312(Packet arg0) {
+		LoadingScreenProgressDisplayConfig var1 = LoadingScreenProgressDisplayConfig.method18899(arg0);
 		int var2 = arg0.gSmart2or4null();
 		int var3 = arg0.gSmart2or4null();
 		int var4 = arg0.gSmart2or4null();
@@ -2142,8 +2142,8 @@ public class Statics {
 	@ObfuscatedName("eq.e(Lalw;B)Llv;")
 	public static class321 method2836(Packet arg0) {
 		String var1 = arg0.gjstr();
-		class318 var2 = class318.method13948()[arg0.g1()];
-		class316 var3 = class316.method2774()[arg0.g1()];
+		LoadingScreenAlignmentX var2 = LoadingScreenAlignmentX.method13948()[arg0.g1()];
+		LoadingScreenAlignmentY var3 = LoadingScreenAlignmentY.method2774()[arg0.g1()];
 		int var4 = arg0.g2s();
 		int var5 = arg0.g2s();
 		int var6 = arg0.g1();
@@ -2689,7 +2689,7 @@ public class Statics {
 			lobby.method14758();
 			AccountCreationManager.field583 = 0;
 			AccountCreationManager.field580++;
-			field517 = class15.field515;
+			field517 = CreateConnectStage.field515;
 		} else {
 			field517 = null;
 			field584 = ConnectReply.field8363;
@@ -2704,21 +2704,21 @@ public class Statics {
 
 	@ObfuscatedName("eo.l(Ljava/lang/Float;Ljava/lang/Float;I)V")
 	public static void method2672(Float arg0, Float arg1) {
-		if (arg0 + class114.field1287 >= 1.3333334F) {
-			Float var9 = 1.3333334F - class114.field1287;
-			Float var10 = 0.33333334F - class114.field1287;
+		if (arg0 + CurveEvaluator.field1287 >= 1.3333334F) {
+			Float var9 = 1.3333334F - CurveEvaluator.field1287;
+			Float var10 = 0.33333334F - CurveEvaluator.field1287;
 			return;
 		}
 		float var2 = arg0 - 2.0F;
 		float var3 = arg0 - 1.0F;
 		float var4 = (float) Math.sqrt((double) (var2 * var2 - var3 * 4.0F * var3));
 		float var5 = (-var2 + var4) * 0.5F;
-		if (arg1 + class114.field1287 > var5) {
-			Float var6 = var5 - class114.field1287;
+		if (arg1 + CurveEvaluator.field1287 > var5) {
+			Float var6 = var5 - CurveEvaluator.field1287;
 		} else {
 			float var7 = (-var2 - var4) * 0.5F;
-			if (arg1 < class114.field1287 + var7) {
-				Float var8 = class114.field1287 + var7;
+			if (arg1 < CurveEvaluator.field1287 + var7) {
+				Float var8 = CurveEvaluator.field1287 + var7;
 			}
 		}
 	}
@@ -2995,7 +2995,7 @@ public class Statics {
 				var9[var10 * 2] = ((var8.field2393[var10 * 2] * 4 + arg5) * var13 + (var8.field2393[var10 * 2 + 1] * 4 + arg6) * var12 >> 14) + arg2.field2196 / 2 + arg3;
 				var9[var10 * 2 + 1] = arg2.field2197 / 2 + arg4 - ((var8.field2393[var10 * 2 + 1] * 4 + arg6) * var13 - (var8.field2393[var10 * 2] * 4 + arg5) * var12 >> 14);
 			}
-			class224 var14 = arg2.method3970(arg0);
+			Graphic var14 = arg2.method3970(arg0);
 			if (var14 != null) {
 				class127.method2054(arg0, var9, var8.field2398, var14.field2143, var14.field2145);
 			}
@@ -3173,9 +3173,9 @@ public class Statics {
 		for (class990 var15 = (class990) class1004.field6806.method14191(); var15 != null; var15 = (class990) class1004.field6806.method14161()) {
 			MapElementType var16 = (MapElementType) field6788.get(var15.field11446);
 			if (method18887(var16)) {
-				class32 var17 = (class32) class1004.field11661.get(var15.field11446);
+				WorldMapFlash var17 = (WorldMapFlash) class1004.field11661.get(var15.field11446);
 				if (var17 == null) {
-					var17 = (class32) class1004.field11662.get(var16.field2374);
+					var17 = (WorldMapFlash) class1004.field11662.get(var16.field2374);
 				}
 				if (var17 != null) {
 					int var18;
@@ -3194,7 +3194,7 @@ public class Statics {
 	}
 
 	@ObfuscatedName("acp.x(Lhf;Lhx;IIIIIJ)V")
-	public static void method15035(Component arg0, class224 arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
+	public static void method15035(Component arg0, Graphic arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
 		int var9 = arg4 * arg4 + arg5 * arg5;
 		if ((long) var9 > arg7) {
 			return;
@@ -3386,7 +3386,7 @@ public class Statics {
 	}
 
 	@ObfuscatedName("ahe.aa(IIIIIIILarn;Leu;Laac;III)V")
-	public static void method16748(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, class1174 arg7, Font arg8, FontMetrics arg9, int arg10, int arg11) {
+	public static void method16748(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, MinimenuSubmenu arg7, Font arg8, FontMetrics arg9, int arg10, int arg11) {
 		if (arg0 > arg2 && arg0 < arg2 + arg4 && arg1 > arg6 - arg9.field8562 - 1 && arg1 < arg9.field8569 + arg6) {
 			arg10 = arg11;
 		}
@@ -4054,7 +4054,7 @@ public class Statics {
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		int var4 = arg0.field8216[arg0.field8226 + 3];
 		short var5 = 256;
-		field1798.method3191(class173.field1828, var1, var2, var4, SubBussType.field1805.method3034(), class174.field1835, 0.0F, 0.0F, null, 0, var5, var3);
+		field1798.method3191(SoundType.field1828, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
 	}
 
 	@ObfuscatedName("ahp.we(Lyf;I)V")
@@ -4065,7 +4065,7 @@ public class Statics {
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		int var4 = arg0.field8216[arg0.field8226 + 3];
 		int var5 = arg0.field8216[arg0.field8226 + 4];
-		field1798.method3191(class173.field1828, var1, var2, var4, SubBussType.field1805.method3034(), class174.field1835, 0.0F, 0.0F, null, 0, var5, var3);
+		field1798.method3191(SoundType.field1828, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
 	}
 
 	@ObfuscatedName("ey.wm(Lyf;I)V")
@@ -4632,7 +4632,7 @@ public class Statics {
 
 	@ObfuscatedName("tk.kv(Lhf;III)V")
 	public static void method8887(Component arg0, int arg1, int arg2) {
-		class224 var3 = arg0.method3970(field8198);
+		Graphic var3 = arg0.method3970(field8198);
 		if (var3 == null) {
 			return;
 		}

@@ -149,11 +149,11 @@ public class PlayerGroup {
 	}
 
 	@ObfuscatedName("gq.p(B)Lgv;")
-	public class209 method3444() {
+	public PlayerGroupMemberStatus method3444() {
 		if (this.field1908.isEmpty()) {
-			return class209.field1977;
+			return PlayerGroupMemberStatus.field1977;
 		}
-		class209 var1 = ((PlayerGroupMember) this.field1908.get(0)).method3495();
+		PlayerGroupMemberStatus var1 = ((PlayerGroupMember) this.field1908.get(0)).method3495();
 		switch(var1.field1979) {
 			case 1:
 			case 2:
@@ -163,11 +163,11 @@ public class PlayerGroup {
 				PlayerGroupMember var3;
 				do {
 					if (!var2.hasNext()) {
-						return class209.field1976;
+						return PlayerGroupMemberStatus.field1976;
 					}
 					var3 = (PlayerGroupMember) var2.next();
-				} while (var3.method3495() != class209.field1977);
-				return class209.field1977;
+				} while (var3.method3495() != PlayerGroupMemberStatus.field1977);
+				return PlayerGroupMemberStatus.field1977;
 		}
 	}
 
@@ -230,7 +230,7 @@ public class PlayerGroup {
 	@ObfuscatedName("gq.h(IZS)V")
 	public void method3402(int arg0, boolean arg1) {
 		PlayerGroupMember var3 = (PlayerGroupMember) this.field1908.get(arg0);
-		var3.method3496(arg1 ? class209.field1976 : class209.field1977);
+		var3.method3496(arg1 ? PlayerGroupMemberStatus.field1976 : PlayerGroupMemberStatus.field1977);
 	}
 
 	@ObfuscatedName("gq.a(IIB)V")
@@ -243,7 +243,7 @@ public class PlayerGroup {
 		Iterator var1 = this.field1908.iterator();
 		while (var1.hasNext()) {
 			PlayerGroupMember var2 = (PlayerGroupMember) var1.next();
-			var2.method3496(class209.field1978);
+			var2.method3496(PlayerGroupMemberStatus.field1978);
 		}
 	}
 
@@ -252,7 +252,7 @@ public class PlayerGroup {
 		Iterator var1 = this.field1908.iterator();
 		while (var1.hasNext()) {
 			PlayerGroupMember var2 = (PlayerGroupMember) var1.next();
-			var2.method3496(class209.field1975);
+			var2.method3496(PlayerGroupMemberStatus.field1975);
 		}
 	}
 

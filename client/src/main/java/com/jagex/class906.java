@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("ahb")
-public class class906 extends class295 {
+public class class906 extends LoadingScreenProgressDisplay {
 
 	@ObfuscatedName("ahb.l")
 	public Sprite field10543;

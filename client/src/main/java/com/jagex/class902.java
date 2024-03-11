@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ahu")
-public final class class902 extends class288 {
+public final class class902 extends SpriteShader {
 
 	public class902(GpuRenderer arg0) {
 		super(arg0);

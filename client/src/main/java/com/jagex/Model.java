@@ -354,7 +354,7 @@ public abstract class Model {
 	}
 
 	@ObfuscatedName("do.a(Larr;ILarr;IIIIZ)V")
-	public final void method1704(class1177 arg0, int arg1, class1177 arg2, int arg3, int arg4, int arg5, int arg6, boolean arg7) {
+	public final void method1704(FrameSet arg0, int arg1, FrameSet arg2, int arg3, int arg4, int arg5, int arg6, boolean arg7) {
 		if (arg1 == -1) {
 			return;
 		}
@@ -363,9 +363,9 @@ public abstract class Model {
 			this.method1703();
 			return;
 		}
-		class134 var9 = arg0.field12327[arg1];
-		class971 var10 = var9.field1628;
-		class134 var11 = null;
+		AnimFrame var9 = arg0.field12327[arg1];
+		AnimBase var10 = var9.field1628;
+		AnimFrame var11 = null;
 		if (arg2 != null) {
 			var11 = arg2.field12327[arg3];
 			if (var11.field1628 != var10) {
@@ -378,10 +378,10 @@ public abstract class Model {
 	}
 
 	@ObfuscatedName("do.g(Lard;IIZ)V")
-	public final void method1705(class1176 arg0, int arg1, int arg2, boolean arg3) {
+	public final void method1705(KeyFrameSet arg0, int arg1, int arg2, boolean arg3) {
 		this.method1702();
 		if (this.method1716()) {
-			class971 var5 = arg0.field12317;
+			AnimBase var5 = arg0.field12317;
 			this.method1713(var5, arg0, arg1, arg2, arg3, null, false, 65535, null);
 			this.method1776();
 			this.method1703();
@@ -391,7 +391,7 @@ public abstract class Model {
 	}
 
 	@ObfuscatedName("do.i(Larr;ILarr;IIIIIZ[I)V")
-	public final void method1706(class1177 arg0, int arg1, class1177 arg2, int arg3, int arg4, int arg5, int arg6, int arg7, boolean arg8, int[] arg9) {
+	public final void method1706(FrameSet arg0, int arg1, FrameSet arg2, int arg3, int arg4, int arg5, int arg6, int arg7, boolean arg8, int[] arg9) {
 		if (arg1 == -1) {
 			return;
 		}
@@ -400,9 +400,9 @@ public abstract class Model {
 			this.method1703();
 			return;
 		}
-		class134 var11 = arg0.field12327[arg1];
-		class971 var12 = var11.field1628;
-		class134 var13 = null;
+		AnimFrame var11 = arg0.field12327[arg1];
+		AnimBase var12 = var11.field1628;
+		AnimFrame var13 = null;
 		if (arg2 != null) {
 			var13 = arg2.field12327[arg3];
 			if (var13.field1628 != var12) {
@@ -415,7 +415,7 @@ public abstract class Model {
 	}
 
 	@ObfuscatedName("do.j(Larr;ILarr;IIILarr;ILarr;III[ZZ)V")
-	public final void method1697(class1177 arg0, int arg1, class1177 arg2, int arg3, int arg4, int arg5, class1177 arg6, int arg7, class1177 arg8, int arg9, int arg10, int arg11, boolean[] arg12, boolean arg13) {
+	public final void method1697(FrameSet arg0, int arg1, FrameSet arg2, int arg3, int arg4, int arg5, FrameSet arg6, int arg7, FrameSet arg8, int arg9, int arg10, int arg11, boolean[] arg12, boolean arg13) {
 		if (arg1 == -1) {
 			return;
 		}
@@ -428,9 +428,9 @@ public abstract class Model {
 			this.method1703();
 			return;
 		}
-		class134 var15 = arg0.field12327[arg1];
-		class971 var16 = var15.field1628;
-		class134 var17 = null;
+		AnimFrame var15 = arg0.field12327[arg1];
+		AnimBase var16 = var15.field1628;
+		AnimFrame var17 = null;
 		if (arg2 != null) {
 			var17 = arg2.field12327[arg3];
 			if (var17.field1628 != var16) {
@@ -438,8 +438,8 @@ public abstract class Model {
 			}
 		}
 		this.method1712(var16, var15, var17, arg4, arg5, 0, arg12, false, arg13, 65535, null);
-		class134 var18 = arg6.field12327[arg7];
-		class134 var19 = null;
+		AnimFrame var18 = arg6.field12327[arg7];
+		AnimFrame var19 = null;
 		if (arg8 != null) {
 			var19 = arg8.field12327[arg9];
 			if (var19.field1628 != var16) {
@@ -453,7 +453,7 @@ public abstract class Model {
 	}
 
 	@ObfuscatedName("do.t(Lard;ILard;I[ZZ)V")
-	public final void method1682(class1176 arg0, int arg1, class1176 arg2, int arg3, boolean[] arg4, boolean arg5) {
+	public final void method1682(KeyFrameSet arg0, int arg1, KeyFrameSet arg2, int arg3, boolean[] arg4, boolean arg5) {
 		if (arg0 == null) {
 			return;
 		}
@@ -466,11 +466,11 @@ public abstract class Model {
 			this.method1703();
 			return;
 		}
-		class971 var7 = arg0.field12317;
+		AnimBase var7 = arg0.field12317;
 		int var8 = arg1 % (arg0.method19384() + 1);
 		this.method1713(var7, arg0, var8, 0, arg5, arg4, false, 65535, null);
 		this.method1717(0, new int[0], 0, 0, 0, 0, arg5);
-		class971 var9 = arg2.field12317;
+		AnimBase var9 = arg2.field12317;
 		int var10 = arg3 % (arg2.method19384() + 1);
 		this.method1713(var9, arg2, var10, 0, arg5, arg4, true, 65535, null);
 		this.method1776();
@@ -478,7 +478,7 @@ public abstract class Model {
 	}
 
 	@ObfuscatedName("do.ae(Lard;ILarr;ILarr;III[ZZ)V")
-	public final void method1709(class1176 arg0, int arg1, class1177 arg2, int arg3, class1177 arg4, int arg5, int arg6, int arg7, boolean[] arg8, boolean arg9) {
+	public final void method1709(KeyFrameSet arg0, int arg1, FrameSet arg2, int arg3, FrameSet arg4, int arg5, int arg6, int arg7, boolean[] arg8, boolean arg9) {
 		if (arg0 == null) {
 			return;
 		}
@@ -491,11 +491,11 @@ public abstract class Model {
 			this.method1703();
 			return;
 		}
-		class971 var11 = arg0.field12317;
+		AnimBase var11 = arg0.field12317;
 		int var12 = arg1 % (arg0.method19384() + 1);
 		this.method1713(var11, arg0, var12, 0, arg9, arg8, false, 65535, null);
-		class134 var13 = arg2.field12327[arg3];
-		class134 var14 = null;
+		AnimFrame var13 = arg2.field12327[arg3];
+		AnimFrame var14 = null;
 		if (arg4 != null) {
 			var14 = arg4.field12327[arg5];
 			if (var14.field1628 != var11) {
@@ -509,7 +509,7 @@ public abstract class Model {
 	}
 
 	@ObfuscatedName("do.ag(Larr;ILarr;IIILard;I[ZZ)V")
-	public final void method1710(class1177 arg0, int arg1, class1177 arg2, int arg3, int arg4, int arg5, class1176 arg6, int arg7, boolean[] arg8, boolean arg9) {
+	public final void method1710(FrameSet arg0, int arg1, FrameSet arg2, int arg3, int arg4, int arg5, KeyFrameSet arg6, int arg7, boolean[] arg8, boolean arg9) {
 		if (arg1 == -1) {
 			return;
 		}
@@ -522,9 +522,9 @@ public abstract class Model {
 			this.method1703();
 			return;
 		}
-		class134 var11 = arg0.field12327[arg1];
-		class971 var12 = var11.field1628;
-		class134 var13 = null;
+		AnimFrame var11 = arg0.field12327[arg1];
+		AnimBase var12 = var11.field1628;
+		AnimFrame var13 = null;
 		if (arg2 != null) {
 			var13 = arg2.field12327[arg3];
 			if (var13.field1628 != var12) {
@@ -533,7 +533,7 @@ public abstract class Model {
 		}
 		this.method1712(var12, var11, var13, arg4, arg5, 0, arg8, false, arg9, 65535, null);
 		this.method1717(0, new int[0], 0, 0, 0, 0, arg9);
-		class971 var14 = arg6.field12317;
+		AnimBase var14 = arg6.field12317;
 		int var15 = arg7 % (arg6.method19384() + 1);
 		this.method1713(var14, arg6, var15, 0, arg9, arg8, true, 65535, null);
 		this.method1776();
@@ -541,7 +541,7 @@ public abstract class Model {
 	}
 
 	@ObfuscatedName("do.ah(Larr;I)V")
-	public final void method1878(class1177 arg0, int arg1) {
+	public final void method1878(FrameSet arg0, int arg1) {
 		if (arg1 == -1) {
 			return;
 		}
@@ -550,8 +550,8 @@ public abstract class Model {
 			this.method1703();
 			return;
 		}
-		class134 var3 = arg0.field12327[arg1];
-		class971 var4 = var3.field1628;
+		AnimFrame var3 = arg0.field12327[arg1];
+		AnimBase var4 = var3.field1628;
 		for (int var5 = 0; var5 < var3.field1631; var5++) {
 			short var6 = var3.field1630[var5];
 			if (var4.field11311[var6]) {
@@ -566,7 +566,7 @@ public abstract class Model {
 	}
 
 	@ObfuscatedName("do.al(Lako;Ldx;Ldx;III[ZZZI[I)V")
-	public void method1712(class971 arg0, class134 arg1, class134 arg2, int arg3, int arg4, int arg5, boolean[] arg6, boolean arg7, boolean arg8, int arg9, int[] arg10) {
+	public void method1712(AnimBase arg0, AnimFrame arg1, AnimFrame arg2, int arg3, int arg4, int arg5, boolean[] arg6, boolean arg7, boolean arg8, int arg9, int[] arg10) {
 		if (arg2 == null || arg3 == 0) {
 			for (int var37 = 0; var37 < arg1.field1631; var37++) {
 				short var38 = arg1.field1630[var37];
@@ -699,8 +699,8 @@ public abstract class Model {
 	}
 
 	@ObfuscatedName("do.ac(Lako;Lard;IIZ[ZZI[I)V")
-	public void method1713(class971 arg0, class1176 arg1, int arg2, int arg3, boolean arg4, boolean[] arg5, boolean arg6, int arg7, int[] arg8) {
-		class105 var10 = null;
+	public void method1713(AnimBase arg0, KeyFrameSet arg1, int arg2, int arg3, boolean arg4, boolean[] arg5, boolean arg6, int arg7, int[] arg8) {
+		Joint var10 = null;
 		int var11 = 0;
 		for (int var12 = 0; var12 < arg0.field11313; var12++) {
 			if (arg5 == null || arg5[var12] == arg6 || arg0.field11314[var12] == 0) {
@@ -742,7 +742,7 @@ public abstract class Model {
 					}
 					int var21 = arg0.field11314[var12];
 					for (int var22 = 0; var22 < arg1.field12322[var12].length; var22++) {
-						class124 var23 = arg1.field12322[var12][var22];
+						Curve var23 = arg1.field12322[var12][var22];
 						if (var23 != null && (var21 != 7 || var22 < 0 || var22 >= 3)) {
 							float var24 = var23.method2017(arg2);
 							switch(var22) {
@@ -822,7 +822,7 @@ public abstract class Model {
 	}
 
 	@ObfuscatedName("do.aw(ILcs;I[IFFFIZI[I)V")
-	public void method1756(int arg0, class105 arg1, int arg2, int[] arg3, float arg4, float arg5, float arg6, int arg7, boolean arg8, int arg9, int[] arg10) {
+	public void method1756(int arg0, Joint arg1, int arg2, int[] arg3, float arg4, float arg5, float arg6, int arg7, boolean arg8, int arg9, int[] arg10) {
 		int var12 = (int) arg4;
 		int var13 = (int) arg5;
 		int var14 = (int) arg6;
@@ -1051,7 +1051,7 @@ public abstract class Model {
 	public abstract boolean method1812();
 
 	@ObfuscatedName("do.ax(Lou;Led;I)V")
-	public abstract void method1813(Matrix4x3 arg0, class141 arg1, int arg2);
+	public abstract void method1813(Matrix4x3 arg0, ScreenBoundingBox arg1, int arg2);
 
 	@ObfuscatedName("do.p()V")
 	public abstract void method1816();

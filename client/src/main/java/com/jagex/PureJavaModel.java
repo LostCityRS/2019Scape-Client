@@ -2851,12 +2851,12 @@ public class PureJavaModel extends Model {
 	}
 
 	@ObfuscatedName("afi.ax(Lou;Led;I)V")
-	public void method1813(Matrix4x3 arg0, class141 arg1, int arg2) {
+	public void method1813(Matrix4x3 arg0, ScreenBoundingBox arg1, int arg2) {
 		this.method15478(arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("afi.hv(Lou;Led;I)V")
-	public void method15478(Matrix4x3 arg0, class141 arg1, int arg2) {
+	public void method15478(Matrix4x3 arg0, ScreenBoundingBox arg1, int arg2) {
 		if (this.field9549 < 1) {
 			return;
 		}

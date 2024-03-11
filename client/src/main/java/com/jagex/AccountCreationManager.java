@@ -27,7 +27,7 @@ public class AccountCreationManager {
 
 	@ObfuscatedName("amf.n(B)V")
 	public static void method18476() {
-		Statics.field517 = class15.field515;
+		Statics.field517 = CreateConnectStage.field515;
 		Statics.field584 = ConnectReply.field8368;
 		Statics.field4406 = CreateAccountReply.field8390;
 		Statics.field872 = CheckEmailReply.field8397;
@@ -190,7 +190,7 @@ public class AccountCreationManager {
 			if (field583 > var0) {
 				Statics.method17428();
 			}
-			if (Statics.field517 == class15.field515) {
+			if (Statics.field517 == CreateConnectStage.field515) {
 				client.field10835.method936(Stream.method7130(Statics.lobby.method14764(), 40000), Statics.lobby.host);
 				client.field10835.method952();
 				ClientMessage var1 = ClientMessage.method13920();
@@ -222,9 +222,9 @@ public class AccountCreationManager {
 				var1.field11432.psize2(var1.field11432.pos - var2);
 				client.field10835.method934(var1);
 				client.field10835.method933();
-				Statics.field517 = class15.field516;
+				Statics.field517 = CreateConnectStage.field516;
 			}
-			if (Statics.field517 == class15.field516) {
+			if (Statics.field517 == CreateConnectStage.field516) {
 				if (client.field10835.method939() == null) {
 					Statics.method17428();
 					return;

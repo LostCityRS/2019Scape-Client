@@ -535,7 +535,7 @@ public class Component {
 	public String field2336 = null;
 
 	@ObfuscatedName("hf.gy")
-	public class223 field2337;
+	public GroupUserKind field2337;
 
 	@ObfuscatedName("hf.ga")
 	public boolean field2246 = false;
@@ -1298,9 +1298,9 @@ public class Component {
 	}
 
 	@ObfuscatedName("hf.t(Ldh;B)Lhx;")
-	public class224 method3970(Renderer arg0) {
+	public Graphic method3970(Renderer arg0) {
 		long var2 = (long) this.field2158 << 32 | (long) this.field2183 & 0xFFFFFFFFL;
-		class224 var4 = (class224) field2176.method2930(var2);
+		Graphic var4 = (Graphic) field2176.method2930(var2);
 		if (var4 != null) {
 			if (this.field2215 != var4.field2148) {
 				field2176.method2957(var2);
@@ -1340,7 +1340,7 @@ public class Component {
 		if (var15 == null) {
 			return null;
 		} else {
-			class224 var16 = new class224(var6, var7, var9, var8, var15, this.field2215);
+			Graphic var16 = new Graphic(var6, var7, var9, var8, var15, this.field2215);
 			field2176.method2921(var16, var2);
 			return var16;
 		}

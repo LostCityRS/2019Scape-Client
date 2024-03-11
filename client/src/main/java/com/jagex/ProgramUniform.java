@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public abstract class ProgramUniform extends class977 {
 
 	@ObfuscatedName("aql.w")
-	public class236 field12211;
+	public UniformType field12211;
 
 	@ObfuscatedName("aql.l")
 	public String field12210;
@@ -18,7 +18,7 @@ public abstract class ProgramUniform extends class977 {
 	public int field12212;
 
 	@ObfuscatedName("aql.p")
-	public class236 field12213;
+	public UniformType field12213;
 
 	public ProgramUniform(ProgramUniformData arg0) {
 		this.field12211 = arg0.field2592;
@@ -42,18 +42,18 @@ public abstract class ProgramUniform extends class977 {
 	}
 
 	@ObfuscatedName("aql.m(I)Lht;")
-	public class236 method19247() {
+	public UniformType method19247() {
 		return this.field12211;
 	}
 
 	@ObfuscatedName("aql.k(S)Lht;")
-	public class236 method19248() {
+	public UniformType method19248() {
 		return this.field12213;
 	}
 
 	@ObfuscatedName("aql.f(I)I")
 	public int method19256() {
-		if (class236.field2441 != this.field12211) {
+		if (UniformType.field2441 != this.field12211) {
 			throw new OpenGLError(this, this.field12211.toString().toLowerCase());
 		}
 		return this.field12212;

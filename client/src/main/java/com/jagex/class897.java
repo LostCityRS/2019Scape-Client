@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ahv")
-public class class897 extends class285 {
+public class class897 extends ModelShader {
 
 	@ObfuscatedName("ahv.i")
 	public Shader field10479;

@@ -26,7 +26,7 @@ public class class812 extends LegacyOpenGLTexture {
 		this.field9272 = arg4;
 		this.field9271 = arg5;
 		this.field1006.method15777(this);
-		class113 var7 = this.field1006.method2135();
+		RenderTarget var7 = this.field1006.method2135();
 		if (var7 != null) {
 			int var8 = var7.method1628() - (arg3 + arg5);
 			int var9 = LegacyOpenGLRenderer.method15799(this.field1002, this.field1010);
@@ -184,7 +184,7 @@ public class class812 extends LegacyOpenGLTexture {
 
 	@ObfuscatedName("adt.av(IIIIII)V")
 	public void method15315(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		class113 var7 = this.field1006.method2135();
+		RenderTarget var7 = this.field1006.method2135();
 		if (var7 != null) {
 			int var8 = var7.method1628() - (arg3 + arg5);
 			this.field1006.method15777(this);

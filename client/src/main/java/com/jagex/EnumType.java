@@ -31,7 +31,7 @@ public class EnumType implements ConfigType, class757 {
 	public int field8776 = 0;
 
 	@ObfuscatedName("abm.u")
-	public HashMap field8782;
+	public java.util.HashMap field8782;
 
 	@ObfuscatedName("abm.e(Lalw;B)V")
 	public void decode(Packet arg0) {
@@ -58,7 +58,7 @@ public class EnumType implements ConfigType, class757 {
 			this.field8778 = arg0.g4s();
 		} else if (arg1 == 5 || arg1 == 6) {
 			this.field8776 = arg0.g2();
-			this.field8779 = new HashMap(this.field8776);
+			this.field8779 = new java.util.HashMap(this.field8776);
 			for (int var8 = 0; var8 < this.field8776; var8++) {
 				int var9 = arg0.g4s();
 				Object var10;
@@ -142,7 +142,7 @@ public class EnumType implements ConfigType, class757 {
 
 	@ObfuscatedName("abm.q(B)V")
 	public void method14853() {
-		HashMap var1 = new HashMap();
+		java.util.HashMap var1 = new java.util.HashMap();
 		if (this.field8780 == null) {
 			if (this.field8779 == null) {
 				throw new IllegalStateException();
@@ -171,7 +171,7 @@ public class EnumType implements ConfigType, class757 {
 				}
 			}
 		}
-		this.field8782 = new HashMap();
+		this.field8782 = new java.util.HashMap();
 		Iterator var9 = var1.entrySet().iterator();
 		while (var9.hasNext()) {
 			Entry var10 = (Entry) var9.next();

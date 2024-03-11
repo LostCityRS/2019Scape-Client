@@ -92,9 +92,9 @@ public class ColourGradingBloomEffect extends PostProcessEffect {
 			this.field10622 = this.field10627.method4227("blur");
 			this.field10631 = this.field10627.method4227("composite");
 			this.field10637 = this.field10627.method4227("techDefault");
-		} catch (class1212 var3) {
+		} catch (UniformNotFoundException var3) {
 			return false;
-		} catch (class1213 var4) {
+		} catch (ProgramNotFoundException var4) {
 			return false;
 		}
 		if (!this.field10628.method4083()) {

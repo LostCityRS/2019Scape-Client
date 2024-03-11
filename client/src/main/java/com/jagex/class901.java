@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ahq")
-public class class901 extends class287 {
+public class class901 extends BatchedSpriteShader {
 
 	@ObfuscatedName("ahq.m")
 	public Shader field10515;

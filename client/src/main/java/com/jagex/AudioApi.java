@@ -176,7 +176,7 @@ public class AudioApi {
 					var10 = var9.method7385();
 				} while (var9.method7387() != this);
 				if (SoundVolume.field4947 == var10 || SoundVolume.field4953 == var10) {
-					if (var9.method7458() != class173.field1824 && var9.method7458() != class173.field1826) {
+					if (var9.method7458() != SoundType.field1824 && var9.method7458() != SoundType.field1826) {
 						Iterator var12 = this.field1851.keySet().iterator();
 						while (var12.hasNext()) {
 							int var13 = (Integer) var12.next();
@@ -217,7 +217,7 @@ public class AudioApi {
 										continue label163;
 									}
 									var18 = (Sound) var17.next();
-								} while (var18.method7458() != class173.field1824);
+								} while (var18.method7458() != SoundType.field1824);
 								var19 = var18.method7386().method9680();
 							} while ((this.field1875 != var19 || var18.method7385() != SoundVolume.field4947) && var18.method7385() != SoundVolume.field4946 && var18.method7385() != SoundVolume.field4948 && var18.method7385() != SoundVolume.field4949);
 							if (var18.method7385() == SoundVolume.field4947) {
@@ -468,7 +468,7 @@ public class AudioApi {
 	}
 
 	@ObfuscatedName("fb.j(Lft;Ljava/lang/Object;IIIILfx;FFLox;IIZI)Lrw;")
-	public Sound method3236(class173 arg0, Object arg1, int arg2, int arg3, int arg4, int arg5, class174 arg6, float arg7, float arg8, Vector3 arg9, int arg10, int arg11, boolean arg12) {
+	public Sound method3236(SoundType arg0, Object arg1, int arg2, int arg3, int arg4, int arg5, SoundShape arg6, float arg7, float arg8, Vector3 arg9, int arg10, int arg11, boolean arg12) {
 		if (!this.field1860) {
 			return null;
 		} else if (arg1 == null) {
@@ -476,7 +476,7 @@ public class AudioApi {
 		} else {
 			int var14 = Math.max(0, Math.min(arg4, 255));
 			int var15 = Math.max(0, arg11);
-			if (class174.field1835 != arg6 && !this.method3231(this.field1873, arg9, arg8)) {
+			if (SoundShape.field1835 != arg6 && !this.method3231(this.field1873, arg9, arg8)) {
 				return null;
 			}
 			if (var15 <= 0) {
@@ -491,18 +491,18 @@ public class AudioApi {
 			}
 			var19.method7448(arg1);
 			var19.method7391(arg5);
-			if (class174.field1835 != arg6) {
+			if (SoundShape.field1835 != arg6) {
 				var19.method7421(true);
 				var19.method7394(arg9);
 				var19.method7398(arg7);
 				var19.method7464(arg8);
-				if (class174.field1836 == arg6) {
+				if (SoundShape.field1836 == arg6) {
 					var19.method7383(this.field1872);
-				} else if (class174.field1837 == arg6) {
+				} else if (SoundShape.field1837 == arg6) {
 					var19.method7383(this.field1877);
-				} else if (class174.field1838 == arg6) {
+				} else if (SoundShape.field1838 == arg6) {
 					var19.method7383(this.field1874);
-				} else if (class174.field1834 == arg6) {
+				} else if (SoundShape.field1834 == arg6) {
 					var19.method7383(this.field1876);
 				} else {
 					var19.method7421(false);
@@ -517,7 +517,7 @@ public class AudioApi {
 	}
 
 	@ObfuscatedName("fb.t(Lft;IIIILfx;FFLox;IIII)V")
-	public void method3191(class173 arg0, int arg1, int arg2, int arg3, int arg4, class174 arg5, float arg6, float arg7, Vector3 arg8, int arg9, int arg10, int arg11) {
+	public void method3191(SoundType arg0, int arg1, int arg2, int arg3, int arg4, SoundShape arg5, float arg6, float arg7, Vector3 arg8, int arg9, int arg10, int arg11) {
 		if (!this.field1860) {
 			return;
 		}
@@ -543,7 +543,7 @@ public class AudioApi {
 			this.method3185(this.field1869);
 			this.field1869 = null;
 		}
-		Sound var3 = this.method3236(class173.field1824, this, arg0, 0, arg1, SubBussType.field1800.method3034(), class174.field1835, 0.0F, 0.0F, null, 0, 255, true);
+		Sound var3 = this.method3236(SoundType.field1824, this, arg0, 0, arg1, SubBussType.field1800.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, 255, true);
 		if (var3 != null) {
 			var3.method7392();
 			this.field1869 = var3;
@@ -606,7 +606,7 @@ public class AudioApi {
 			Iterator var11 = this.field1855.iterator();
 			while (var11.hasNext()) {
 				Sound var12 = (Sound) var11.next();
-				if (var12.method7458() == class173.field1824) {
+				if (var12.method7458() == SoundType.field1824) {
 					var12.method7380(2000);
 					var10 = true;
 				}
@@ -625,9 +625,9 @@ public class AudioApi {
 				float var14 = (float) arg6;
 				float var15 = (float) arg7;
 				Vector3 var16 = new Vector3((float) arg4, 0.0F, (float) arg5);
-				var13 = this.method3236(class173.field1824, this, arg0, 0, var10 ? 0 : arg1, this.field1871 == arg0 ? BussType.field1817.method3047() : SubBussType.field1800.method3034(), class174.field1834, var14, var15, var16, arg3, 255, true);
+				var13 = this.method3236(SoundType.field1824, this, arg0, 0, var10 ? 0 : arg1, this.field1871 == arg0 ? BussType.field1817.method3047() : SubBussType.field1800.method3034(), SoundShape.field1834, var14, var15, var16, arg3, 255, true);
 			} else {
-				var13 = this.method3236(class173.field1824, this, arg0, 0, var10 ? 0 : arg1, this.field1871 == arg0 ? BussType.field1817.method3047() : SubBussType.field1800.method3034(), class174.field1835, 0.0F, 0.0F, null, 0, 255, true);
+				var13 = this.method3236(SoundType.field1824, this, arg0, 0, var10 ? 0 : arg1, this.field1871 == arg0 ? BussType.field1817.method3047() : SubBussType.field1800.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, 255, true);
 			}
 		}
 		if (var13 == null) {
@@ -660,7 +660,7 @@ public class AudioApi {
 				return null;
 			}
 			var2 = (Sound) var1.next();
-		} while (var2.method7458() != class173.field1824 || var2.method7385() != SoundVolume.field4950);
+		} while (var2.method7458() != SoundType.field1824 || var2.method7385() != SoundVolume.field4950);
 		return var2;
 	}
 
@@ -669,7 +669,7 @@ public class AudioApi {
 		Iterator var1 = this.field1855.iterator();
 		while (var1.hasNext()) {
 			Sound var2 = (Sound) var1.next();
-			if (var2.method7458() == class173.field1824) {
+			if (var2.method7458() == SoundType.field1824) {
 				var2.method7380(500);
 				if (var2.method7386().method9680() == this.field1875) {
 					this.method3144(this.field1875);
@@ -690,7 +690,7 @@ public class AudioApi {
 			Iterator var3 = this.field1848.iterator();
 			while (var3.hasNext()) {
 				Sound var4 = (Sound) var3.next();
-				if (var4.method7458() == class173.field1826) {
+				if (var4.method7458() == SoundType.field1826) {
 					var4.method7377();
 					this.field1855.remove(var4);
 					this.field1857 = false;
@@ -704,7 +704,7 @@ public class AudioApi {
 		if (!this.field1857 && this.field1868 != null) {
 			this.field1868.method7381();
 		}
-		Sound var5 = this.method3236(class173.field1826, this, arg0, 0, arg1, SubBussType.field1800.method3034(), class174.field1835, 0.0F, 0.0F, null, 0, 255, true);
+		Sound var5 = this.method3236(SoundType.field1826, this, arg0, 0, arg1, SubBussType.field1800.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, 255, true);
 		if (var5 != null) {
 			var5.method7441();
 			this.method3185(var5);
@@ -764,9 +764,9 @@ public class AudioApi {
 			int var14 = (int) var12.field4313 - 256 >> 9;
 			Vector3 var15 = new Vector3((float) (var13 << 9), 0.0F, (float) (var14 << 9));
 			int var16 = arg2.field11717 << 24;
-			this.method3191(class173.field1820, var5, var6, var10, SubBussType.field1803.method3034(), Statics.field4490 == arg2 ? class174.field1835 : class174.field1838, 0.0F, (float) (var7 << 9), var15, var16, var9, 0);
+			this.method3191(SoundType.field1820, var5, var6, var10, SubBussType.field1803.method3034(), Statics.field4490 == arg2 ? SoundShape.field1835 : SoundShape.field1838, 0.0F, (float) (var7 << 9), var15, var16, var9, 0);
 		} else if (Statics.field4490 == arg2) {
-			this.method3191(class173.field1825, var5, var6, var10, SubBussType.field1802.method3034(), class174.field1835, 0.0F, 0.0F, null, arg2.field11717, var9, 0);
+			this.method3191(SoundType.field1825, var5, var6, var10, SubBussType.field1802.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, arg2.field11717, var9, 0);
 		}
 	}
 
@@ -789,6 +789,6 @@ public class AudioApi {
 			var7 = (int) ((double) arg0.field1789[arg1] + Math.random() * (double) (arg0.field1790[arg1] - arg0.field1789[arg1]));
 		}
 		int var8 = arg0.field1788 == null ? 255 : arg0.field1788[arg1];
-		this.method3191(class173.field1832, var4, var5, var8, SubBussType.field1803.method3034(), class174.field1835, 0.0F, 0.0F, null, 0, var7, 0);
+		this.method3191(SoundType.field1832, var4, var5, var8, SubBussType.field1803.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var7, 0);
 	}
 }

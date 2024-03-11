@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ahr")
-public class class899 extends class286 {
+public class class899 extends ParticleShader {
 
 	@ObfuscatedName("ahr.u")
 	public Shader field10505;

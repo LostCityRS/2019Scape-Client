@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @ObfuscatedName("add")
-public abstract class VarTypeList extends class52 implements class414 {
+public abstract class VarTypeList extends BaseConfigTypeList implements class414 {
 
 	@ObfuscatedName("add.n")
 	public final VarDomainType field9260;

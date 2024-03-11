@@ -191,7 +191,7 @@ public class Loading {
 			if (var9.length == 0) {
 				var9 = Statics.field2841.method15218(0);
 			}
-			class297 var10 = new class297(Statics.field8522, Statics.field7672);
+			LoadingScreenElementFactory var10 = new LoadingScreenElementFactory(Statics.field8522, Statics.field7672);
 			if (var9.length > 0) {
 				Statics.field2939 = new LoadingScreen[var9.length];
 				for (int var11 = 0; var11 < Statics.field2939.length; var11++) {

@@ -37,13 +37,13 @@ public class AnimationWrapper {
 	public boolean field8505 = false;
 
 	@ObfuscatedName("aaq.o")
-	public final class722 field8513;
+	public final FrameSetLoader field8513;
 
 	@ObfuscatedName("aaq.s")
-	public final class722 field8512;
+	public final FrameSetLoader field8512;
 
 	@ObfuscatedName("aaq.y")
-	public final class723 field8498;
+	public final KeyFrameSetLoader field8498;
 
 	@ObfuscatedName("nv.e(Laos;I)V")
 	public static void method6114(SeqTypeList arg0) {
@@ -52,10 +52,10 @@ public class AnimationWrapper {
 
 	public AnimationWrapper(boolean arg0) {
 		this.field8500 = arg0;
-		this.field8513 = new class722();
-		this.field8498 = new class723();
+		this.field8513 = new FrameSetLoader();
+		this.field8498 = new KeyFrameSetLoader();
 		if (this.field8500) {
-			this.field8512 = new class722();
+			this.field8512 = new FrameSetLoader();
 		} else {
 			this.field8512 = null;
 		}
@@ -386,7 +386,7 @@ public class AnimationWrapper {
 	@ObfuscatedName("aaq.t(IB)Z")
 	public boolean method14356(int arg0) {
 		boolean var2 = false;
-		class1176 var3 = this.field8498.field8523;
+		KeyFrameSet var3 = this.field8498.field8523;
 		if (var3 == null) {
 			return false;
 		}

@@ -15,14 +15,14 @@ public class PreferencesUnused4 extends PreferencesOption {
 
 	@ObfuscatedName("ama.o(I)V")
 	public void method18401() {
-		if (this.field8416 < class257.field2680.getId() || this.field8416 > class257.field2679.getId()) {
+		if (this.field8416 < AmbientOcclusionValue.field2680.getId() || this.field8416 > AmbientOcclusionValue.field2679.getId()) {
 			this.field8416 = this.method14069();
 		}
 	}
 
 	@ObfuscatedName("ama.e(B)I")
 	public int method14069() {
-		return class257.field2680.getId();
+		return AmbientOcclusionValue.field2680.getId();
 	}
 
 	@ObfuscatedName("ama.n(II)I")

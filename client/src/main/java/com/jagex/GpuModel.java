@@ -3245,7 +3245,7 @@ public class GpuModel extends Model {
 	}
 
 	@ObfuscatedName("afo.ax(Lou;Led;I)V")
-	public void method1813(Matrix4x3 arg0, class141 arg1, int arg2) {
+	public void method1813(Matrix4x3 arg0, ScreenBoundingBox arg1, int arg2) {
 		if (Statics.field9772 != null) {
 			Statics.field9772.method5554();
 		}
@@ -3357,7 +3357,7 @@ public class GpuModel extends Model {
 		}
 		this.field9730.method16022();
 		this.field9730.method16199();
-		class285 var2 = this.field9730.field10148;
+		ModelShader var2 = this.field9730.field10148;
 		this.field9730.method16120(0, this.field9731.field3359);
 		this.field9730.method16120(1, this.field9732.field3359);
 		this.field9730.method16120(2, this.field9734.field3359);
@@ -3535,7 +3535,7 @@ public class GpuModel extends Model {
 		}
 		this.field9730.method2219(!this.field9737);
 		Matrix4x3 var2 = this.field9730.field10065;
-		class286 var3 = this.field9730.field10151;
+		ParticleShader var3 = this.field9730.field10151;
 		boolean var4 = this.field9730.field10169 > 0;
 		if (var4) {
 			var3.field2990.method6491((float) (this.field9730.field10191 >> 16 & 0xFF) / 255.0F, (float) (this.field9730.field10191 >> 8 & 0xFF) / 255.0F, (float) (this.field9730.field10191 >> 0 & 0xFF) / 255.0F);

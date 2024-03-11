@@ -91,9 +91,9 @@ public final class Direct3DProgram extends Program {
 		int var11 = this.field10363.method4200(this);
 		for (int var12 = 0; var12 < var3 + var4; var12++) {
 			Direct3DProgramUniform var13 = (Direct3DProgramUniform) (var12 < var3 ? this.field10363.method4160(var12) : this.field10363.method4187(var12 - var3));
-			class236 var14 = var13.method19247();
+			UniformType var14 = var13.method19247();
 			int var15 = 1;
-			if (class236.field2441 == var14) {
+			if (UniformType.field2441 == var14) {
 				var14 = var13.method19248();
 				var15 = var13.method19256();
 			}
@@ -147,7 +147,7 @@ public final class Direct3DProgram extends Program {
 	public void method4084(ProgramUniform arg0, float arg1) {
 		int var3 = ((Direct3DProgramUniform) arg0).method19676();
 		int var4 = ((Direct3DProgramUniform) arg0).method19677();
-		if (arg0.method19247() != class236.field2525 && arg0.method19247() != class236.field2509) {
+		if (arg0.method19247() != UniformType.field2525 && arg0.method19247() != UniformType.field2509) {
 			throw new OpenGLError(arg0, "");
 		}
 		if (var3 >= 0) {
@@ -166,7 +166,7 @@ public final class Direct3DProgram extends Program {
 	public void method4085(ProgramUniform arg0, float arg1, float arg2) {
 		int var4 = ((Direct3DProgramUniform) arg0).method19676();
 		int var5 = ((Direct3DProgramUniform) arg0).method19677();
-		if (arg0.method19247() != class236.field2495) {
+		if (arg0.method19247() != UniformType.field2495) {
 			throw new OpenGLError(arg0, "");
 		}
 		if (var4 >= 0) {
@@ -187,7 +187,7 @@ public final class Direct3DProgram extends Program {
 	public void method4108(ProgramUniform arg0, float arg1, float arg2, float arg3) {
 		int var5 = ((Direct3DProgramUniform) arg0).method19676();
 		int var6 = ((Direct3DProgramUniform) arg0).method19677();
-		if (arg0.method19247() != class236.field2540) {
+		if (arg0.method19247() != UniformType.field2540) {
 			throw new OpenGLError(arg0, "");
 		}
 		if (var5 >= 0) {
@@ -211,7 +211,7 @@ public final class Direct3DProgram extends Program {
 	public void method4087(ProgramUniform arg0, float arg1, float arg2, float arg3, float arg4) {
 		int var6 = ((Direct3DProgramUniform) arg0).method19676();
 		int var7 = ((Direct3DProgramUniform) arg0).method19677();
-		if (arg0.method19247() != class236.field2466) {
+		if (arg0.method19247() != UniformType.field2466) {
 			throw new OpenGLError(arg0, "");
 		}
 		if (var6 >= 0) {
@@ -237,7 +237,7 @@ public final class Direct3DProgram extends Program {
 	public void method4089(ProgramUniform arg0, Matrix4x4 arg1) {
 		int var3 = ((Direct3DProgramUniform) arg0).method19676();
 		int var4 = ((Direct3DProgramUniform) arg0).method19677();
-		if (arg0.method19247() != class236.field2480) {
+		if (arg0.method19247() != UniformType.field2480) {
 			throw new OpenGLError(arg0, "");
 		}
 		if (var3 >= 0) {
@@ -252,7 +252,7 @@ public final class Direct3DProgram extends Program {
 	public void method4101(ProgramUniform arg0, Matrix4x4 arg1) {
 		int var3 = ((Direct3DProgramUniform) arg0).method19676();
 		int var4 = ((Direct3DProgramUniform) arg0).method19677();
-		if (arg0.method19247() != class236.field2482) {
+		if (arg0.method19247() != UniformType.field2482) {
 			throw new OpenGLError(arg0, "");
 		}
 		if (var3 >= 0) {
@@ -267,7 +267,7 @@ public final class Direct3DProgram extends Program {
 	public void method4086(ProgramUniform arg0, float[] arg1, int arg2) {
 		int var4 = ((Direct3DProgramUniform) arg0).method19676();
 		int var5 = ((Direct3DProgramUniform) arg0).method19677();
-		if (arg0.method19247() != class236.field2441) {
+		if (arg0.method19247() != UniformType.field2441) {
 			throw new OpenGLError(arg0, "");
 		}
 		if (var4 >= 0) {
@@ -339,13 +339,13 @@ public final class Direct3DProgram extends Program {
 
 	@ObfuscatedName("agt.af(I[FI)V")
 	public final void method16468(int arg0, float[] arg1, int arg2) {
-		class701.method14023(arg1, 0, this.field10366[0], arg0 * 4, arg2);
+		ArrayUtil.method14023(arg1, 0, this.field10366[0], arg0 * 4, arg2);
 		this.field10359[0] = true;
 	}
 
 	@ObfuscatedName("agt.ak(I[FI)V")
 	public final void method16469(int arg0, float[] arg1, int arg2) {
-		class701.method14023(arg1, 0, this.field10366[1], arg0 * 4, arg2);
+		ArrayUtil.method14023(arg1, 0, this.field10366[1], arg0 * 4, arg2);
 		this.field10359[1] = true;
 	}
 

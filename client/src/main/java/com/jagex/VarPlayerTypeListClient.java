@@ -66,7 +66,7 @@ public class VarPlayerTypeListClient extends VarTypeList implements ConfigTypeLi
 	}
 
 	public Iterator iterator() {
-		return new class210(this);
+		return new VarPlayerTypeListIterator(this);
 	}
 
 	@ObfuscatedName("adj.n(I)I")

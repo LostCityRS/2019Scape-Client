@@ -92,7 +92,7 @@ public class class354 {
 		this.field3389.method16102(this.field3392);
 		this.field3389.method16120(0, this.field3390);
 		this.field3389.method16177(this.field3381);
-		class287 var1 = this.field3389.field10115;
+		BatchedSpriteShader var1 = this.field3389.field10115;
 		Unsafe var2 = this.field3389.field10110;
 		ByteBuffer var3 = this.field3389.field10071;
 		var3.clear();

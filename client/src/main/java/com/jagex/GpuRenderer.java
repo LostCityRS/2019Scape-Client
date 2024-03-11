@@ -342,16 +342,16 @@ public abstract class GpuRenderer extends Renderer {
 	public final class324[] field10147 = new class324[16];
 
 	@ObfuscatedName("afc.er")
-	public class285 field10148;
+	public ModelShader field10148;
 
 	@ObfuscatedName("afc.en")
-	public class288 field10149;
+	public SpriteShader field10149;
 
 	@ObfuscatedName("afc.eb")
-	public class287 field10115;
+	public BatchedSpriteShader field10115;
 
 	@ObfuscatedName("afc.ex")
-	public class286 field10151;
+	public ParticleShader field10151;
 
 	@ObfuscatedName("afc.fg")
 	public class1139 field10152;
@@ -648,7 +648,7 @@ public abstract class GpuRenderer extends Renderer {
 		this.field10140 = this.method16033(1, 1, false, var2, 0, 0);
 		var2[0] = -16777216;
 		this.field10141 = this.method16033(1, 1, false, var2, 0, 0);
-		this.method2195(new class1149(262144));
+		this.method2195(new GpuHeap(262144));
 		this.field10203 = this.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.field3310, VertexDeclarationElementComponent.field3300 }) });
 		this.field10204 = this.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.field3310, VertexDeclarationElementComponent.field3311 }) });
 		this.field10202 = this.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(VertexDeclarationElementComponent.field3310), new VertexDeclarationElement(VertexDeclarationElementComponent.field3311), new VertexDeclarationElement(VertexDeclarationElementComponent.field3300), new VertexDeclarationElement(VertexDeclarationElementComponent.field3301) });
@@ -906,7 +906,7 @@ public abstract class GpuRenderer extends Renderer {
 		this.method15973();
 		this.field10188.method5644();
 		for (Node var1 = this.field10051.method14191(); var1 != null; var1 = this.field10051.method14161()) {
-			((class1149) var1).method19240();
+			((GpuHeap) var1).method19240();
 		}
 		ColourUtils.method14805(false, true);
 		for (int var2 = 0; var2 < this.field10147.length; var2++) {
@@ -1084,7 +1084,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.de([I)Lcj;")
-	public class110 method2237(int[] arg0) {
+	public ColourRemapper method2237(int[] arg0) {
 		return new class839(this, arg0);
 	}
 
@@ -1106,7 +1106,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.eo(Lcj;FLcj;FLcj;F)V")
-	public void method2239(class110 arg0, float arg1, class110 arg2, float arg3, class110 arg4, float arg5) {
+	public void method2239(ColourRemapper arg0, float arg1, ColourRemapper arg2, float arg3, ColourRemapper arg4, float arg5) {
 		int var7 = 0;
 		if (arg4 == null && arg5 > 0.0F) {
 			arg5 = 0.0F;
@@ -1178,15 +1178,15 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.cp(I)Lakz;")
-	public final class972 method2221(int arg0) {
-		class1149 var2 = new class1149(arg0);
+	public final Heap method2221(int arg0) {
+		GpuHeap var2 = new GpuHeap(arg0);
 		this.field10051.method14153(var2);
 		return var2;
 	}
 
 	@ObfuscatedName("afc.ca(Lakz;)V")
-	public final void method2195(class972 arg0) {
-		this.field10154 = ((class1149) arg0).field12208;
+	public final void method2195(Heap arg0) {
+		this.field10154 = ((GpuHeap) arg0).field12208;
 	}
 
 	@ObfuscatedName("afc.su(IZ)Ljaclib/memory/heap/NativeHeapBuffer;")
@@ -1282,12 +1282,12 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.du(I)Ldz;")
-	public final class117 method2229(int arg0) {
+	public final EnvironmentSampler method2229(int arg0) {
 		return new class1125(this, arg0);
 	}
 
 	@ObfuscatedName("afc.dp(Ldz;)V")
-	public final void method2516(class117 arg0) {
+	public final void method2516(EnvironmentSampler arg0) {
 		this.field10161 = (class846) arg0;
 	}
 
@@ -1786,7 +1786,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.cv(Lou;Led;Loj;)V")
-	public void method2193(Matrix4x3 arg0, class141 arg1, Cuboid arg2) {
+	public void method2193(Matrix4x3 arg0, ScreenBoundingBox arg1, Cuboid arg2) {
 		Matrix4x4 var4 = this.field10066;
 		var4.method6609(arg0);
 		var4.method6720(this.field10145);

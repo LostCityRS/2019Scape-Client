@@ -183,10 +183,10 @@ public class EnvironmentManager {
 	}
 
 	@ObfuscatedName("xu.u(II)Ldz;")
-	public class117 method9985(int arg0) {
-		class117 var2 = (class117) this.field7848.method2930((long) arg0);
+	public EnvironmentSampler method9985(int arg0) {
+		EnvironmentSampler var2 = (EnvironmentSampler) this.field7848.method2930((long) arg0);
 		if (var2 == null) {
-			class117 var3 = this.field7833.method2229(arg0);
+			EnvironmentSampler var3 = this.field7833.method2229(arg0);
 			this.field7848.method2921(var3, (long) arg0);
 			return var3;
 		} else {
@@ -206,8 +206,8 @@ public class EnvironmentManager {
 	}
 
 	@ObfuscatedName("xu.p(IB)Lcj;")
-	public class110 method9987(int arg0) {
-		class110 var2 = (class110) this.field7850.method2930((long) arg0);
+	public ColourRemapper method9987(int arg0) {
+		ColourRemapper var2 = (ColourRemapper) this.field7850.method2930((long) arg0);
 		if (var2 != null) {
 			return var2;
 		}
@@ -374,9 +374,9 @@ public class EnvironmentManager {
 		if (!this.field7833.method2238()) {
 			return;
 		}
-		class110 var1 = null;
-		class110 var2 = null;
-		class110 var3 = null;
+		ColourRemapper var1 = null;
+		ColourRemapper var2 = null;
+		ColourRemapper var3 = null;
 		if (!this.field7852) {
 			if (this.field7841.field7878[0] > -1) {
 				var1 = this.method9987(this.field7841.field7878[0]);

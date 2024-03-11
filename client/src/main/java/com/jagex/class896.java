@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ahl")
-public class class896 extends class285 {
+public class class896 extends ModelShader {
 
 	public class896(GpuRenderer arg0) {
 		super(arg0);

@@ -39,7 +39,7 @@ public class ProxySocket extends AbstractSocket {
 			ex.printStackTrace();
 		}
 		Object[] var6 = var3.toArray();
-		class1214 var7 = null;
+		ProxyAuthenticationRequiredException var7 = null;
 		Object[] var8 = var6;
 		for (int var9 = 0; var9 < var8.length; var9++) {
 			Object var10 = var8[var9];
@@ -49,7 +49,7 @@ public class ProxySocket extends AbstractSocket {
 				if (var12 != null) {
 					return var12;
 				}
-			} catch (class1214 var15) {
+			} catch (ProxyAuthenticationRequiredException var15) {
 				var7 = var15;
 			} catch (IOException var16) {
 			}
@@ -130,12 +130,12 @@ public class ProxySocket extends AbstractSocket {
 						if (var12 != -1) {
 							var11 = var11.substring(0, var12);
 						}
-						throw new class1214(var11);
+						throw new ProxyAuthenticationRequiredException(var11);
 					}
 					var10 = var6.readLine();
 					var8++;
 				}
-				throw new class1214("");
+				throw new ProxyAuthenticationRequiredException("");
 			}
 		}
 		var5.close();

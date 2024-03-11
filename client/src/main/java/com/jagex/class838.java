@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aep")
-public class class838 extends class110 {
+public class class838 extends ColourRemapper {
 
 	@ObfuscatedName("aep.e")
 	public final LegacyOpenGLRenderer field9528;

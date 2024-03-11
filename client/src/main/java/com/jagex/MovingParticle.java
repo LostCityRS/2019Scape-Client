@@ -6,7 +6,7 @@ import deob.Statics;
 import java.util.Iterator;
 
 @ObfuscatedName("atz")
-public class MovingParticle extends class1144 {
+public class MovingParticle extends Particle {
 
 	@ObfuscatedName("atz.o")
 	public class632 field12526;

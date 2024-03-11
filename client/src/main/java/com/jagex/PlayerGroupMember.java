@@ -33,7 +33,7 @@ public class PlayerGroupMember {
 	public int field1925;
 
 	@ObfuscatedName("gy.d")
-	public class209 field1932;
+	public PlayerGroupMemberStatus field1932;
 
 	@ObfuscatedName("gy.c")
 	public int field1933;
@@ -78,7 +78,7 @@ public class PlayerGroupMember {
 			this.field1922 = -1;
 		}
 		this.field1925 = arg0.g1();
-		this.field1932 = (class209) SerializableEnums.decode(class209.method3603(), arg0.g1());
+		this.field1932 = (PlayerGroupMemberStatus) SerializableEnums.decode(PlayerGroupMemberStatus.method3603(), arg0.g1());
 		this.field1933 = arg0.g1();
 	}
 
@@ -118,12 +118,12 @@ public class PlayerGroupMember {
 	}
 
 	@ObfuscatedName("gy.u(S)Lgv;")
-	public class209 method3495() {
+	public PlayerGroupMemberStatus method3495() {
 		return this.field1932;
 	}
 
 	@ObfuscatedName("gy.z(Lgv;I)V")
-	public void method3496(class209 arg0) {
+	public void method3496(PlayerGroupMemberStatus arg0) {
 		this.field1932 = arg0;
 	}
 

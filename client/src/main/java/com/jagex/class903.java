@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ahz")
-public final class class903 extends class288 {
+public final class class903 extends SpriteShader {
 
 	@ObfuscatedName("ahz.p")
 	public Shader field10532;

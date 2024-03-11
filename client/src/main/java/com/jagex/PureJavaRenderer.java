@@ -1835,7 +1835,7 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.cv(Lou;Led;Loj;)V")
-	public void method2193(Matrix4x3 arg0, class141 arg1, Cuboid arg2) {
+	public void method2193(Matrix4x3 arg0, ScreenBoundingBox arg1, Cuboid arg2) {
 		Matrix4x4 var4 = this.method2208();
 		var4.method6609(arg0);
 		var4.method6720(this.field9803);
@@ -1843,12 +1843,12 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.cp(I)Lakz;")
-	public class972 method2221(int arg0) {
+	public Heap method2221(int arg0) {
 		return null;
 	}
 
 	@ObfuscatedName("afg.ca(Lakz;)V")
-	public void method2195(class972 arg0) {
+	public void method2195(Heap arg0) {
 	}
 
 	@ObfuscatedName("afg.cw(IIZZ)Lcm;")
@@ -2084,7 +2084,7 @@ public class PureJavaRenderer extends Renderer {
 	@ObfuscatedName("afg.sv(ZZZLdm;)V")
 	public void method15671(boolean arg0, boolean arg1, boolean arg2, ParticleList arg3) {
 		PureJavaRendererContext var5 = this.method15674(Thread.currentThread());
-		for (class1144 var6 = (class1144) arg3.field1367.method14271(); var6 != null; var6 = (class1144) arg3.field1367.method14272()) {
+		for (Particle var6 = (Particle) arg3.field1367.method14271(); var6 != null; var6 = (Particle) arg3.field1367.method14272()) {
 			int var7 = var6.field12159 >> 12;
 			int var8 = var6.field12163 >> 12;
 			int var9 = var6.field12161 >> 12;
@@ -2110,7 +2110,7 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.sw(ZZZLaqb;IIFI)V")
-	public void method15672(boolean arg0, boolean arg1, boolean arg2, class1144 arg3, int arg4, int arg5, float arg6, int arg7) {
+	public void method15672(boolean arg0, boolean arg1, boolean arg2, Particle arg3, int arg4, int arg5, float arg6, int arg7) {
 		int var9 = arg3.field12160;
 		int var11 = arg7 << 1;
 		if (var9 == -1) {
@@ -2463,17 +2463,17 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.du(I)Ldz;")
-	public class117 method2229(int arg0) {
+	public EnvironmentSampler method2229(int arg0) {
 		return null;
 	}
 
 	@ObfuscatedName("afg.dl(Ldz;Ldz;FLdz;)Ldz;")
-	public class117 method2435(class117 arg0, class117 arg1, float arg2, class117 arg3) {
+	public EnvironmentSampler method2435(EnvironmentSampler arg0, EnvironmentSampler arg1, float arg2, EnvironmentSampler arg3) {
 		return null;
 	}
 
 	@ObfuscatedName("afg.dp(Ldz;)V")
-	public void method2516(class117 arg0) {
+	public void method2516(EnvironmentSampler arg0) {
 	}
 
 	@ObfuscatedName("afg.dy(IIII)V")
@@ -2499,7 +2499,7 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.de([I)Lcj;")
-	public class110 method2237(int[] arg0) {
+	public ColourRemapper method2237(int[] arg0) {
 		return null;
 	}
 
@@ -2509,7 +2509,7 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.eo(Lcj;FLcj;FLcj;F)V")
-	public void method2239(class110 arg0, float arg1, class110 arg2, float arg3, class110 arg4, float arg5) {
+	public void method2239(ColourRemapper arg0, float arg1, ColourRemapper arg2, float arg3, ColourRemapper arg4, float arg5) {
 	}
 
 	@ObfuscatedName("afg.ey()Z")
@@ -2636,12 +2636,12 @@ public class PureJavaRenderer extends Renderer {
 
 	@ObfuscatedName("afg.am()Lafq;")
 	public Framebuffer method2145() {
-		return new class1117(this);
+		return new PureJavaFramebuffer(this);
 	}
 
 	@ObfuscatedName("afg.sk(II)Ldp;")
 	public class130 method15676(int arg0, int arg1) {
-		return new class60(arg0, arg1);
+		return new PureJavaColorBuffer(arg0, arg1);
 	}
 
 	@ObfuscatedName("afg.au(IILck;Ldg;I)Ldp;")
@@ -2651,11 +2651,11 @@ public class PureJavaRenderer extends Renderer {
 
 	@ObfuscatedName("afg.ar(II)Ldw;")
 	public class126 method2121(int arg0, int arg1) {
-		return new class66(arg0, arg1);
+		return new PureJavaDepthBuffer(arg0, arg1);
 	}
 
 	@ObfuscatedName("afg.ap(III)Ldw;")
 	public class126 method2356(int arg0, int arg1, int arg2) {
-		return new class66(arg0, arg1);
+		return new PureJavaDepthBuffer(arg0, arg1);
 	}
 }

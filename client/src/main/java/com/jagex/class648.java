@@ -167,7 +167,7 @@ public class class648 {
 			var15.field11432.p1(0);
 		} else {
 			var15.field11432.p1(1);
-			class81[] var17 = class81.method1304();
+			CompressedTextureFormat[] var17 = CompressedTextureFormat.method1304();
 			HashSet var18 = new HashSet();
 			ArrayList var19 = new ArrayList();
 			int var20 = 0;

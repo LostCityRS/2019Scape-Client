@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aha")
-public class class904 extends class293 {
+public class class904 extends LoadingScreenSprite {
 
 	@ObfuscatedName("aha.k")
 	public int field10537 = 0;

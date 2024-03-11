@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 import java.util.Iterator;
 
 @ObfuscatedName("fs")
-public class class167 implements class161 {
+public class class167 implements CacheRemovalListener {
 
 	// $FF: synthetic field
 	public final AudioApi this$0;

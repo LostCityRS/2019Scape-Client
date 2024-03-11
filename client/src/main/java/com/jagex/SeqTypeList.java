@@ -10,12 +10,12 @@ public class SeqTypeList extends CachingConfigTypeList {
 	}
 
 	@ObfuscatedName("aos.al(II)Larr;")
-	public class1177 method18864(int arg0) {
+	public FrameSet method18864(int arg0) {
 		return ((SeqTypeFactory) this.field8796).method3020(arg0);
 	}
 
 	@ObfuscatedName("aos.ac(II)Lard;")
-	public class1176 method18865(int arg0) {
+	public KeyFrameSet method18865(int arg0) {
 		return ((SeqTypeFactory) this.field8796).method3010(arg0);
 	}
 

@@ -79,9 +79,9 @@ public class OpenGLProgram extends Program {
 		if (arg1.field2428 != null) {
 			this.field2434 = arg1.field2428;
 			if (arg1.field2429 != null) {
-				class237[] var4 = arg1.field2429;
+				ProgramDefineData[] var4 = arg1.field2429;
 				for (int var5 = 0; var5 < var4.length; var5++) {
-					class237 var6 = var4[var5];
+					ProgramDefineData var6 = var4[var5];
 					var3.append("#define " + var6.field2566 + " " + var6.field2565 + '\n');
 				}
 			}
@@ -92,16 +92,16 @@ public class OpenGLProgram extends Program {
 			this.field2436 = arg1.field2430;
 			var3.setLength(0);
 			if (arg1.field2431 != null) {
-				class237[] var7 = arg1.field2431;
+				ProgramDefineData[] var7 = arg1.field2431;
 				for (int var8 = 0; var8 < var7.length; var8++) {
-					class237 var9 = var7[var8];
+					ProgramDefineData var9 = var7[var8];
 					var3.append("#define " + var9.field2566 + " " + var9.field2565 + '\n');
 				}
 			}
 			var3.append(new String(arg0.method19089(this.field2436)));
 			this.field10386 = var3.toString();
 		}
-		class701.method14009(this.field10377, 0, this.field10377.length, -1);
+		ArrayUtil.method14009(this.field10377, 0, this.field10377.length, -1);
 	}
 
 	@ObfuscatedName("agl.af(ILjava/lang/String;Ljava/lang/String;)I")
@@ -194,7 +194,7 @@ public class OpenGLProgram extends Program {
 			return;
 		}
 		this.field10368.put(var3, arg1);
-		if (arg0.method19247() != class236.field2525 && arg0.method19247() != class236.field2509) {
+		if (arg0.method19247() != UniformType.field2525 && arg0.method19247() != UniformType.field2509) {
 			throw new OpenGLError(arg0, "");
 		}
 		OpenGL.glUniform1f(var3, arg1);
@@ -208,7 +208,7 @@ public class OpenGLProgram extends Program {
 		}
 		this.field10368.put(var4, arg1);
 		this.field10381.put(var4, arg2);
-		if (arg0.method19247() != class236.field2495) {
+		if (arg0.method19247() != UniformType.field2495) {
 			throw new OpenGLError(arg0, "");
 		}
 		OpenGL.glUniform2f(var4, arg1, arg2);
@@ -223,7 +223,7 @@ public class OpenGLProgram extends Program {
 		this.field10368.put(var5, arg1);
 		this.field10381.put(var5, arg2);
 		this.field10383.put(var5, arg3);
-		if (arg0.method19247() != class236.field2540) {
+		if (arg0.method19247() != UniformType.field2540) {
 			throw new OpenGLError(arg0, "");
 		}
 		OpenGL.glUniform3f(var5, arg1, arg2, arg3);
@@ -239,7 +239,7 @@ public class OpenGLProgram extends Program {
 		this.field10381.put(var6, arg2);
 		this.field10383.put(var6, arg3);
 		this.field10382.put(var6, arg4);
-		if (arg0.method19247() != class236.field2466) {
+		if (arg0.method19247() != UniformType.field2466) {
 			throw new OpenGLError(arg0, "");
 		}
 		OpenGL.glUniform4f(var6, arg1, arg2, arg3, arg4);
@@ -255,7 +255,7 @@ public class OpenGLProgram extends Program {
 
 	@ObfuscatedName("agl.p(Laql;Lpq;)V")
 	public void method4089(ProgramUniform arg0, Matrix4x4 arg1) {
-		assert arg0.method19247() == class236.field2480;
+		assert arg0.method19247() == UniformType.field2480;
 		int var3 = ((OpenGlProgramUniform) arg0).method19681();
 		if (var3 != -1) {
 			OpenGL.glUniform2fv(var3, 4, arg1.method6682(field10380), 0);
@@ -264,7 +264,7 @@ public class OpenGLProgram extends Program {
 
 	@ObfuscatedName("agl.d(Laql;Lpq;)V")
 	public void method4101(ProgramUniform arg0, Matrix4x4 arg1) {
-		assert arg0.method19247() == class236.field2482;
+		assert arg0.method19247() == UniformType.field2482;
 		int var3 = ((OpenGlProgramUniform) arg0).method19681();
 		if (var3 != -1) {
 			OpenGL.glUniform4fv(var3, 4, arg1.method6594(field10380), 0);

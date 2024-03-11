@@ -32,7 +32,7 @@ public abstract class Renderer {
 	public int field1616 = -1;
 
 	@ObfuscatedName("dh.i")
-	public class113 field1614;
+	public RenderTarget field1614;
 
 	@ObfuscatedName("dh.j")
 	public Surface field1612;
@@ -138,7 +138,7 @@ public abstract class Renderer {
 	}
 
 	@ObfuscatedName("dh.ae(B)Ldr;")
-	public final class113 method2135() {
+	public final RenderTarget method2135() {
 		return this.field1614;
 	}
 
@@ -544,13 +544,13 @@ public abstract class Renderer {
 	public abstract void method2189(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6);
 
 	@ObfuscatedName("dh.cv(Lou;Led;Loj;)V")
-	public abstract void method2193(Matrix4x3 arg0, class141 arg1, Cuboid arg2);
+	public abstract void method2193(Matrix4x3 arg0, ScreenBoundingBox arg1, Cuboid arg2);
 
 	@ObfuscatedName("dh.r()Z")
 	public abstract boolean method2194();
 
 	@ObfuscatedName("dh.ca(Lakz;)V")
-	public abstract void method2195(class972 arg0);
+	public abstract void method2195(Heap arg0);
 
 	@ObfuscatedName("dh.ao()Z")
 	public abstract boolean method2196();
@@ -601,7 +601,7 @@ public abstract class Renderer {
 	public abstract void method2220(Matrix4x4 arg0);
 
 	@ObfuscatedName("dh.cp(I)Lakz;")
-	public abstract class972 method2221(int arg0);
+	public abstract Heap method2221(int arg0);
 
 	@ObfuscatedName("dh.dc(F)V")
 	public abstract void method2222(float arg0);
@@ -613,7 +613,7 @@ public abstract class Renderer {
 	public abstract void method2224(int arg0);
 
 	@ObfuscatedName("dh.du(I)Ldz;")
-	public abstract class117 method2229(int arg0);
+	public abstract EnvironmentSampler method2229(int arg0);
 
 	@ObfuscatedName("dh.db(II)V")
 	public abstract void method2233(int arg0, int arg1);
@@ -625,13 +625,13 @@ public abstract class Renderer {
 	public abstract void method2236(float arg0, float arg1, float arg2, float arg3, float arg4);
 
 	@ObfuscatedName("dh.de([I)Lcj;")
-	public abstract class110 method2237(int[] arg0);
+	public abstract ColourRemapper method2237(int[] arg0);
 
 	@ObfuscatedName("dh.dj()Z")
 	public abstract boolean method2238();
 
 	@ObfuscatedName("dh.eo(Lcj;FLcj;FLcj;F)V")
-	public abstract void method2239(class110 arg0, float arg1, class110 arg2, float arg3, class110 arg4, float arg5);
+	public abstract void method2239(ColourRemapper arg0, float arg1, ColourRemapper arg2, float arg3, ColourRemapper arg4, float arg5);
 
 	@ObfuscatedName("dh.a()Z")
 	public abstract boolean method2240();
@@ -709,7 +709,7 @@ public abstract class Renderer {
 	public abstract void method2433(int arg0, int arg1, int arg2, int arg3, int arg4);
 
 	@ObfuscatedName("dh.dl(Ldz;Ldz;FLdz;)Ldz;")
-	public abstract class117 method2435(class117 arg0, class117 arg1, float arg2, class117 arg3);
+	public abstract EnvironmentSampler method2435(EnvironmentSampler arg0, EnvironmentSampler arg1, float arg2, EnvironmentSampler arg3);
 
 	@ObfuscatedName("dh.bm(II)V")
 	public abstract void method2475(int arg0, int arg1);
@@ -724,7 +724,7 @@ public abstract class Renderer {
 	public abstract void method2507(float arg0, float arg1, float arg2, float[] arg3);
 
 	@ObfuscatedName("dh.dp(Ldz;)V")
-	public abstract void method2516(class117 arg0);
+	public abstract void method2516(EnvironmentSampler arg0);
 
 	@ObfuscatedName("dh.c()I")
 	public abstract int method2520();

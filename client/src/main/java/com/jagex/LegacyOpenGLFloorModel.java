@@ -688,7 +688,7 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 
 	@ObfuscatedName("aek.w(IIIIIII[[Z)V")
 	public void method1526(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, boolean[][] arg7) {
-		class113 var9 = this.field9453.method2135();
+		RenderTarget var9 = this.field9453.method2135();
 		if (this.field9477 <= 0 || var9 == null) {
 			return;
 		}

@@ -136,7 +136,7 @@ public class GpuFont extends Font {
 		}
 		this.field10244.method15981();
 		this.field10244.method16054(1);
-		class288 var9 = this.field10244.field10149;
+		SpriteShader var9 = this.field10244.field10149;
 		var9.field2997 = this.field10247;
 		var9.method5050(0, arg3);
 		float var10 = (float) this.field10244.method2135().method1627();

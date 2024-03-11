@@ -6,10 +6,10 @@ import deob.ObfuscatedName;
 public class ProgramUniformData {
 
 	@ObfuscatedName("hv.e")
-	public class236 field2592;
+	public UniformType field2592;
 
 	@ObfuscatedName("hv.n")
-	public class236 field2587;
+	public UniformType field2587;
 
 	@ObfuscatedName("hv.m")
 	public int field2588 = -1;
@@ -29,10 +29,10 @@ public class ProgramUniformData {
 	@ObfuscatedName("hv.e(Lhw;I)V")
 	public void method4290(ShaderDataReader arg0) {
 		int var2 = arg0.method4133();
-		this.field2592 = class236.method6075()[var2];
-		if (class236.field2441 == this.field2592) {
+		this.field2592 = UniformType.method6075()[var2];
+		if (UniformType.field2441 == this.field2592) {
 			int var3 = arg0.method4133();
-			this.field2587 = class236.method6075()[var3];
+			this.field2587 = UniformType.method6075()[var3];
 			this.field2588 = arg0.method4133();
 		}
 		this.field2586 = arg0.method4134();

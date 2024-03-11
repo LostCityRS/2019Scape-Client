@@ -16,7 +16,7 @@ public class LegacyOpenGLProgram {
 	public final int field987;
 
 	@ObfuscatedName("bn.e(Lafa;[Lbm;)Lbn;")
-	public static LegacyOpenGLProgram method1065(LegacyOpenGLRenderer arg0, class71[] arg1) {
+	public static LegacyOpenGLProgram method1065(LegacyOpenGLRenderer arg0, LegacyOpenGLShader[] arg1) {
 		for (int var2 = 0; var2 < arg1.length; var2++) {
 			if (arg1[var2] == null || arg1[var2].field1019 <= 0) {
 				return null;
@@ -46,7 +46,7 @@ public class LegacyOpenGLProgram {
 		return new LegacyOpenGLProgram(arg0, var3, arg1);
 	}
 
-	public LegacyOpenGLProgram(LegacyOpenGLRenderer arg0, int arg1, class71[] arg2) {
+	public LegacyOpenGLProgram(LegacyOpenGLRenderer arg0, int arg1, LegacyOpenGLShader[] arg2) {
 		this.field986 = arg0;
 		this.field987 = arg1;
 	}

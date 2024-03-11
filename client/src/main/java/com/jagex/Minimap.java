@@ -451,7 +451,7 @@ public class Minimap {
 			return;
 		}
 		arg0.method2202();
-		class224 var4 = null;
+		Graphic var4 = null;
 		class103 var5 = null;
 		if (arg1.field2184 == 5) {
 			var4 = arg1.method3970(arg0);
@@ -539,7 +539,7 @@ public class Minimap {
 			if (field731 != -1) {
 				int var31 = field731 * 4 + 2 - var7 / 128 + (Statics.field4490.method16546() - 1) * 2;
 				int var32 = field718 * 4 + 2 - var8 / 128 + (Statics.field4490.method16546() - 1) * 2;
-				method4142(arg1, var5, arg2 - Statics.field11888, arg3 - Statics.field10232, var31, var32, Statics.field9149[field730 ? 1 : 0], 100.0D, class230.field2420, class231.field2426);
+				method4142(arg1, var5, arg2 - Statics.field11888, arg3 - Statics.field10232, var31, var32, Statics.field9149[field730 ? 1 : 0], 100.0D, MapAlignmentX.field2420, MapAlignmentY.field2426);
 			}
 			if (!Statics.field4490.field12071.method10195()) {
 				arg0.method2301(arg1.field2196 / 2 + arg2 - 1, arg1.field2197 / 2 + arg3 - 1, 3, 3, -1);
@@ -625,7 +625,7 @@ public class Minimap {
 	}
 
 	@ObfuscatedName("ia.y(IILhf;Lhx;IIS)V")
-	public static void method4538(int arg0, int arg1, Component arg2, class224 arg3, int arg4, int arg5) {
+	public static void method4538(int arg0, int arg1, Component arg2, Graphic arg3, int arg4, int arg5) {
 		HintArrow[] var6 = client.field10851;
 		for (int var7 = 0; var7 < var6.length; var7++) {
 			HintArrow var8 = var6[var7];
@@ -662,11 +662,11 @@ public class Minimap {
 
 	@ObfuscatedName("al.b(Lhf;Lch;IIIILcm;I)V")
 	public static void method715(Component arg0, class103 arg1, int arg2, int arg3, int arg4, int arg5, Sprite arg6) {
-		method4142(arg0, arg1, arg2, arg3, arg4, arg5, arg6, 100.0D, class230.field2417, class231.field2424);
+		method4142(arg0, arg1, arg2, arg3, arg4, arg5, arg6, 100.0D, MapAlignmentX.field2417, MapAlignmentY.field2424);
 	}
 
 	@ObfuscatedName("ht.h(Lhf;Lch;IIIILcm;DLhp;Lhy;I)V")
-	public static void method4142(Component arg0, class103 arg1, int arg2, int arg3, int arg4, int arg5, Sprite arg6, double arg7, class230 arg8, class231 arg9) {
+	public static void method4142(Component arg0, class103 arg1, int arg2, int arg3, int arg4, int arg5, Sprite arg6, double arg7, MapAlignmentX arg8, MapAlignmentY arg9) {
 		if (arg6 == null) {
 			return;
 		}

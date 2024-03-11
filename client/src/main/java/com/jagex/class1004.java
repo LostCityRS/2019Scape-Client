@@ -547,9 +547,9 @@ public class class1004 extends WorldMap {
 					var27 = var9.method1459() / 2;
 					var29 = var9.method1436() >> 1;
 			}
-			class32 var30 = (class32) field11661.get(arg1.field11446);
+			WorldMapFlash var30 = (WorldMapFlash) field11661.get(arg1.field11446);
 			if (var30 == null) {
-				var30 = (class32) field11662.get(arg2.field2374);
+				var30 = (WorldMapFlash) field11662.get(arg2.field2374);
 			}
 			if (var30 != null && arg2.field2384 == -1) {
 				int var31;
@@ -749,13 +749,13 @@ public class class1004 extends WorldMap {
 		Iterator var4 = field11661.entrySet().iterator();
 		while (true) {
 			while (true) {
-				class32 var5;
+				WorldMapFlash var5;
 				do {
 					if (!var4.hasNext()) {
 						Iterator var6 = field11662.entrySet().iterator();
 						while (true) {
 							while (true) {
-								class32 var7;
+								WorldMapFlash var7;
 								do {
 									if (!var6.hasNext()) {
 										if (field11663 && Statics.field11253 != null) {
@@ -794,7 +794,7 @@ public class class1004 extends WorldMap {
 										}
 										return;
 									}
-									var7 = (class32) ((Entry) var6.next()).getValue();
+									var7 = (WorldMapFlash) ((Entry) var6.next()).getValue();
 									var7.field619--;
 								} while (var7.field619 != 0);
 								if (var7.field620 > 1 || field11671) {
@@ -806,7 +806,7 @@ public class class1004 extends WorldMap {
 							}
 						}
 					}
-					var5 = (class32) ((Entry) var4.next()).getValue();
+					var5 = (WorldMapFlash) ((Entry) var4.next()).getValue();
 					var5.field619--;
 				} while (var5.field619 != 0);
 				if (var5.field620 > 1 || field11671) {
@@ -916,9 +916,9 @@ public class class1004 extends WorldMap {
 
 	@ObfuscatedName("fy.eh(II)V")
 	public static void method3368(int arg0) {
-		class32 var1 = (class32) field11661.get(arg0);
+		WorldMapFlash var1 = (WorldMapFlash) field11661.get(arg0);
 		if (var1 == null) {
-			var1 = new class32();
+			var1 = new WorldMapFlash();
 		}
 		var1.field620 = field11645;
 		var1.field619 = field11664;
@@ -927,9 +927,9 @@ public class class1004 extends WorldMap {
 
 	@ObfuscatedName("y.eq(II)V")
 	public static void method541(int arg0) {
-		class32 var1 = (class32) field11662.get(arg0);
+		WorldMapFlash var1 = (WorldMapFlash) field11662.get(arg0);
 		if (var1 == null) {
-			var1 = new class32();
+			var1 = new WorldMapFlash();
 		}
 		var1.field620 = field11645;
 		var1.field619 = field11664;

@@ -98,12 +98,12 @@ public class class336 {
 	}
 
 	@ObfuscatedName("ly.e(Ljj;)V")
-	public void method5657(class285 arg0) {
+	public void method5657(ModelShader arg0) {
 		this.method5656(arg0, this.field3279, 0, this.field3278);
 	}
 
 	@ObfuscatedName("ly.n(Ljj;Lml;II)V")
-	public void method5656(class285 arg0, IndexBuffer arg1, int arg2, int arg3) {
+	public void method5656(ModelShader arg0, IndexBuffer arg1, int arg2, int arg3) {
 		if (arg3 <= 0) {
 			return;
 		}

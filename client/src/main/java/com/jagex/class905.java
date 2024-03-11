@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("ahx")
-public class class905 extends class295 {
+public class class905 extends LoadingScreenProgressDisplay {
 
 	public class905(Js5 arg0, Js5 arg1, class914 arg2) {
 		super(arg0, arg1, arg2);

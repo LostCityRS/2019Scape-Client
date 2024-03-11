@@ -14,7 +14,7 @@ public class SecureRandomProvider {
 	public ExecutorService field639 = Executors.newSingleThreadExecutor();
 
 	@ObfuscatedName("al.n")
-	public Future field638 = this.field639.submit(new class12());
+	public Future field638 = this.field639.submit(new SecureRandomTask());
 
 	@ObfuscatedName("al.e(I)V")
 	public void method710() {
@@ -27,7 +27,7 @@ public class SecureRandomProvider {
 		try {
 			return (SecureRandom) this.field638.get();
 		} catch (Exception var2) {
-			return class12.method7327();
+			return SecureRandomTask.method7327();
 		}
 	}
 }

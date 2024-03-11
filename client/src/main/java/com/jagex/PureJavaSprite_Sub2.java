@@ -122,7 +122,7 @@ public class PureJavaSprite_Sub2 extends PureJavaSprite {
 
 	@ObfuscatedName("apv.l()Ldp;")
 	public class130 method1437() {
-		return new class60(this.field9356, this.field9372, this.field11905);
+		return new PureJavaColorBuffer(this.field9356, this.field9372, this.field11905);
 	}
 
 	@ObfuscatedName("apv.r(IIIII)V")

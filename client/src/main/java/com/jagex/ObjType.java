@@ -520,7 +520,7 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.z(Labq;Labv;Labv;Lacz;Lzt;I)V")
-	public void method14664(class739 arg0, ObjType arg1, ObjType arg2, LocalisedText arg3, Language arg4) {
+	public void method14664(DerivedObjType arg0, ObjType arg1, ObjType arg2, LocalisedText arg3, Language arg4) {
 		this.field8655 = arg1.field8655;
 		this.field8638 = arg1.field8638;
 		this.field8639 = arg1.field8639;
@@ -528,7 +528,7 @@ public class ObjType implements ConfigType {
 		this.field8641 = arg1.field8641;
 		this.field8695 = arg1.field8695;
 		this.field8643 = arg1.field8643;
-		ObjType var6 = class739.field8702 == arg0 ? arg1 : arg2;
+		ObjType var6 = DerivedObjType.field8702 == arg0 ? arg1 : arg2;
 		this.field8666 = var6.field8666;
 		this.field8622 = var6.field8622;
 		this.field8633 = var6.field8633;
@@ -536,7 +536,7 @@ public class ObjType implements ConfigType {
 		this.field8635 = var6.field8635;
 		this.field8630 = arg2.field8630;
 		this.field8684 = arg2.field8684;
-		if (class739.field8702 == arg0) {
+		if (DerivedObjType.field8702 == arg0) {
 			this.field8620 = arg2.field8620;
 			this.field8644 = 1;
 			if (arg2.field8688) {
@@ -544,7 +544,7 @@ public class ObjType implements ConfigType {
 			} else {
 				this.field8687 = arg2.field8687;
 			}
-		} else if (class739.field8701 == arg0) {
+		} else if (DerivedObjType.field8701 == arg0) {
 			this.field8630 = arg2.field8678;
 			this.field8620 = (int) Math.floor((double) (arg2.field8620 / arg2.field8679));
 			this.field8644 = 1;
@@ -596,22 +596,22 @@ public class ObjType implements ConfigType {
 
 	@ObfuscatedName("abv.p(Labv;Labv;Lzt;S)V")
 	public void method14640(ObjType arg0, ObjType arg1, Language arg2) {
-		this.method14664(class739.field8702, arg0, arg1, null, arg2);
+		this.method14664(DerivedObjType.field8702, arg0, arg1, null, arg2);
 	}
 
 	@ObfuscatedName("abv.d(Labv;Labv;Lzt;I)V")
 	public void method14641(ObjType arg0, ObjType arg1, Language arg2) {
-		this.method14664(class739.field8703, arg0, arg1, LocalisedText.LENT_ITEM_RETURN, arg2);
+		this.method14664(DerivedObjType.field8703, arg0, arg1, LocalisedText.LENT_ITEM_RETURN, arg2);
 	}
 
 	@ObfuscatedName("abv.c(Labv;Labv;Lzt;I)V")
 	public void method14653(ObjType arg0, ObjType arg1, Language arg2) {
-		this.method14664(class739.field8704, arg0, arg1, LocalisedText.BOUGHT_ITEM_DISCARD, arg2);
+		this.method14664(DerivedObjType.field8704, arg0, arg1, LocalisedText.BOUGHT_ITEM_DISCARD, arg2);
 	}
 
 	@ObfuscatedName("abv.r(Labv;Labv;Lzt;I)V")
 	public void method14643(ObjType arg0, ObjType arg1, Language arg2) {
-		this.method14664(class739.field8701, arg0, arg1, LocalisedText.DROP, arg2);
+		this.method14664(DerivedObjType.field8701, arg0, arg1, LocalisedText.DROP, arg2);
 	}
 
 	@ObfuscatedName("abv.v(Ldh;IILxg;Laaq;IIIII)Ldo;")

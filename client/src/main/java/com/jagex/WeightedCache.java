@@ -18,14 +18,14 @@ public final class WeightedCache {
 	public DualIterableQueue field1755;
 
 	@ObfuscatedName("eb.f")
-	public class161 field1759;
+	public CacheRemovalListener field1759;
 
 	public WeightedCache(int arg0) {
 		this(arg0, arg0);
 	}
 
 	@ObfuscatedName("eb.e(Len;B)V")
-	public void method2943(class161 arg0) {
+	public void method2943(CacheRemovalListener arg0) {
 		this.field1759 = arg0;
 	}
 

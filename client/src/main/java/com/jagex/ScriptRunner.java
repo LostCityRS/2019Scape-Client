@@ -361,7 +361,7 @@ public final class ScriptRunner {
 			if (var6 >= var5.length) {
 				return;
 			}
-			class701.method14008(var5, var6 + 1, var5, var6, var5.length - var6 - 1);
+			ArrayUtil.method14008(var5, var6 + 1, var5, var6, var5.length - var6 - 1);
 			var5[var5.length - 1] = arg1;
 			return;
 		}
@@ -372,8 +372,8 @@ public final class ScriptRunner {
 		if (var2.field2351 == var2.field2349) {
 			var2.field2349 = new Component[var2.field2351.length];
 			var2.field2349[var2.field2349.length - 1] = arg1;
-			class701.method14008(var2.field2351, 0, var2.field2349, 0, arg1.field2183);
-			class701.method14008(var2.field2351, arg1.field2183 + 1, var2.field2349, arg1.field2183, var2.field2351.length - arg1.field2183 - 1);
+			ArrayUtil.method14008(var2.field2351, 0, var2.field2349, 0, arg1.field2183);
+			ArrayUtil.method14008(var2.field2351, arg1.field2183 + 1, var2.field2349, arg1.field2183, var2.field2351.length - arg1.field2183 - 1);
 			return;
 		}
 		int var3 = 0;
@@ -384,7 +384,7 @@ public final class ScriptRunner {
 		if (var3 >= var4.length) {
 			return;
 		}
-		class701.method14008(var4, var3 + 1, var4, var3, var4.length - var3 - 1);
+		ArrayUtil.method14008(var4, var3 + 1, var4, var3, var4.length - var3 - 1);
 		var4[var2.field2349.length - 1] = arg1;
 	}
 
@@ -401,7 +401,7 @@ public final class ScriptRunner {
 			if (var6 >= var5.length) {
 				return;
 			}
-			class701.method14008(var5, 0, var5, 1, var6);
+			ArrayUtil.method14008(var5, 0, var5, 1, var6);
 			var5[0] = arg1;
 			return;
 		}
@@ -412,8 +412,8 @@ public final class ScriptRunner {
 		if (var2.field2351 == var2.field2349) {
 			var2.field2349 = new Component[var2.field2351.length];
 			var2.field2349[0] = arg1;
-			class701.method14008(var2.field2351, 0, var2.field2349, 1, arg1.field2183);
-			class701.method14008(var2.field2351, arg1.field2183 + 1, var2.field2349, arg1.field2183 + 1, var2.field2351.length - arg1.field2183 - 1);
+			ArrayUtil.method14008(var2.field2351, 0, var2.field2349, 1, arg1.field2183);
+			ArrayUtil.method14008(var2.field2351, arg1.field2183 + 1, var2.field2349, arg1.field2183 + 1, var2.field2351.length - arg1.field2183 - 1);
 			return;
 		}
 		int var3 = 0;
@@ -424,7 +424,7 @@ public final class ScriptRunner {
 		if (var3 >= var4.length) {
 			return;
 		}
-		class701.method14008(var4, 0, var4, 1, var3);
+		ArrayUtil.method14008(var4, 0, var4, 1, var3);
 		var4[0] = arg1;
 	}
 
@@ -451,7 +451,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("iy.b(Larm;Lyf;I)V")
-	public static final void method4597(class1172 arg0, ClientScriptState arg1) {
+	public static final void method4597(MinimenuEntry arg0, ClientScriptState arg1) {
 		arg1.field8216[++arg1.field8226 - 1] = MiniMenu.method18429(arg0);
 		arg1.field8218[++arg1.field8211 - 1] = MiniMenu.method4642(arg0);
 		arg1.field8218[++arg1.field8211 - 1] = MiniMenu.method6018(arg0);
@@ -6457,7 +6457,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("nz.hw(Lhf;Lhq;Lyf;Lhd;B)V")
-	public static final void method6082(Component arg0, Interface arg1, ClientScriptState arg2, class223 arg3) {
+	public static final void method6082(Component arg0, Interface arg1, ClientScriptState arg2, GroupUserKind arg3) {
 		int var4 = arg2.field8216[--arg2.field8226];
 		switch(arg3.field2141) {
 			case 0:
@@ -6492,7 +6492,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Statics.field11725[var1 >> 16];
-		method6082(var2, var3, arg0, class223.field2136);
+		method6082(var2, var3, arg0, GroupUserKind.field2136);
 	}
 
 	@ObfuscatedName("ve.hc(Lyf;B)V")
@@ -6500,7 +6500,7 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method6082(var2, var3, arg0, class223.field2136);
+		method6082(var2, var3, arg0, GroupUserKind.field2136);
 	}
 
 	@ObfuscatedName("pr.ho(Lyf;I)V")
@@ -6508,7 +6508,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Statics.field11725[var1 >> 16];
-		method6082(var2, var3, arg0, class223.field2140);
+		method6082(var2, var3, arg0, GroupUserKind.field2140);
 	}
 
 	@ObfuscatedName("aq.hj(Lyf;I)V")
@@ -6516,7 +6516,7 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method6082(var2, var3, arg0, class223.field2140);
+		method6082(var2, var3, arg0, GroupUserKind.field2140);
 	}
 
 	@ObfuscatedName("ga.hv(Lyf;I)V")
@@ -6526,7 +6526,7 @@ public final class ScriptRunner {
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		Component var3 = Component.method10202(var2);
 		Interface var4 = Statics.field11725[var2 >> 16];
-		method6082(var3, var4, arg0, var1 ? class223.field2138 : class223.field2137);
+		method6082(var3, var4, arg0, var1 ? GroupUserKind.field2138 : GroupUserKind.field2137);
 	}
 
 	@ObfuscatedName("uy.hz(Lyf;I)V")
@@ -6535,7 +6535,7 @@ public final class ScriptRunner {
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
 		boolean var4 = arg0.field8216[--arg0.field8226] == 1;
-		method6082(var2, var3, arg0, var4 ? class223.field2138 : class223.field2137);
+		method6082(var2, var3, arg0, var4 ? GroupUserKind.field2138 : GroupUserKind.field2137);
 	}
 
 	@ObfuscatedName("akr.ij(Lyf;I)V")
@@ -6543,7 +6543,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Statics.field11725[var1 >> 16];
-		method6082(var2, var3, arg0, Statics.field3022 == arg0.field8228 ? class223.field2139 : class223.field2135);
+		method6082(var2, var3, arg0, Statics.field3022 == arg0.field8228 ? GroupUserKind.field2139 : GroupUserKind.field2135);
 	}
 
 	@ObfuscatedName("tv.io(Lyf;I)V")
@@ -6551,7 +6551,7 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method6082(var2, var3, arg0, Statics.field3022 == arg0.field8228 ? class223.field2139 : class223.field2135);
+		method6082(var2, var3, arg0, Statics.field3022 == arg0.field8228 ? GroupUserKind.field2139 : GroupUserKind.field2135);
 	}
 
 	@ObfuscatedName("bf.iq(Lhf;Lhq;Lyf;I)V")
@@ -8541,7 +8541,7 @@ public final class ScriptRunner {
 		Component var2 = var1.field8242;
 		int var3 = -1;
 		int var4 = -1;
-		class224 var5 = var2.method3970(Statics.field8198);
+		Graphic var5 = var2.method3970(Statics.field8198);
 		if (var5 != null) {
 			var3 = var5.field2144;
 			var4 = var5.field2146;
@@ -9016,7 +9016,7 @@ public final class ScriptRunner {
 		Component var2 = Component.method10202(var1);
 		int var3 = -1;
 		int var4 = -1;
-		class224 var5 = var2.method3970(Statics.field8198);
+		Graphic var5 = var2.method3970(Statics.field8198);
 		if (var5 != null) {
 			var3 = var5.field2144;
 			var4 = var5.field2146;
@@ -9223,8 +9223,8 @@ public final class ScriptRunner {
 	@ObfuscatedName("nk.vj(Lyf;B)V")
 	public static final void method6057(ClientScriptState arg0) {
 		arg0.field8226 -= 11;
-		class318[] var1 = class318.method13948();
-		class316[] var2 = class316.method2774();
+		LoadingScreenAlignmentX[] var1 = LoadingScreenAlignmentX.method13948();
+		LoadingScreenAlignmentY[] var2 = LoadingScreenAlignmentY.method2774();
 		MessageBox.method3004(var1[arg0.field8216[arg0.field8226]], var2[arg0.field8216[arg0.field8226 + 1]], arg0.field8216[arg0.field8226 + 2], arg0.field8216[arg0.field8226 + 3], arg0.field8216[arg0.field8226 + 4], arg0.field8216[arg0.field8226 + 5], arg0.field8216[arg0.field8226 + 6], arg0.field8216[arg0.field8226 + 7], arg0.field8216[arg0.field8226 + 8], arg0.field8216[arg0.field8226 + 9], arg0.field8216[arg0.field8226 + 10]);
 	}
 
@@ -9253,7 +9253,7 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		short var4 = 255;
 		short var5 = 256;
-		Statics.field1798.method3191(class173.field1828, var1, var2, var4, SubBussType.field1805.method3034(), class174.field1835, 0.0F, 0.0F, null, 0, var5, var3);
+		Statics.field1798.method3191(SoundType.field1828, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
 	}
 
 	@ObfuscatedName("jf.vk(Lyf;I)V")
@@ -9275,7 +9275,7 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		int var4 = arg0.field8216[arg0.field8226 + 3];
 		short var5 = 256;
-		Statics.field1798.method3191(class173.field1828, var1, var2, var4, SubBussType.field1805.method3034(), class174.field1835, 0.0F, 0.0F, null, 0, var5, var3);
+		Statics.field1798.method3191(SoundType.field1828, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
 	}
 
 	@ObfuscatedName("ahb.wo(Lyf;I)V")
@@ -9298,7 +9298,7 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		int var4 = arg0.field8216[arg0.field8226 + 3];
 		short var5 = 256;
-		Statics.field1798.method3191(class173.field1828, var1, var2, var4, SubBussType.field1805.method3034(), class174.field1835, 0.0F, 0.0F, null, 0, var5, var3);
+		Statics.field1798.method3191(SoundType.field1828, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
 	}
 
 	@ObfuscatedName("iq.wj(Lyf;I)V")
@@ -9309,7 +9309,7 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		int var4 = arg0.field8216[arg0.field8226 + 3];
 		int var5 = arg0.field8216[arg0.field8226 + 4];
-		Statics.field1798.method3191(class173.field1828, var1, var2, var4, SubBussType.field1805.method3034(), class174.field1835, 0.0F, 0.0F, null, 0, var5, var3);
+		Statics.field1798.method3191(SoundType.field1828, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
 	}
 
 	@ObfuscatedName("pw.wr(Lyf;I)V")
@@ -9326,7 +9326,7 @@ public final class ScriptRunner {
 		int var4 = arg0.field8216[arg0.field8226 + 3];
 		int var5 = arg0.field8216[arg0.field8226 + 4];
 		int var6 = arg0.field8216[arg0.field8226 + 5];
-		Sound var7 = Statics.field1798.method3236(class173.field1832, Statics.field1798, var1, var2, var4, SubBussType.field1805.method3034(), class174.field1835, 0.0F, 0.0F, null, 0, var5, false);
+		Sound var7 = Statics.field1798.method3236(SoundType.field1832, Statics.field1798, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, false);
 		if (var7 != null) {
 			Statics.field1798.method3251(var7, var6, var3);
 		}
@@ -9671,7 +9671,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ake.yu(Lyf;I)V")
 	public static final void method17803(ClientScriptState arg0) {
-		class1172 var1 = MiniMenu.method4924();
+		MinimenuEntry var1 = MiniMenu.method4924();
 		if (MiniMenu.method18429(var1) == 4) {
 			ObjectWrapper var2 = (ObjectWrapper) client.field10838.method14495(var1.method19370());
 			if (var2 != null) {
@@ -9685,7 +9685,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ai.yt(Lyf;I)V")
 	public static final void method724(ClientScriptState arg0) {
-		class1172 var1 = MiniMenu.method4924();
+		MinimenuEntry var1 = MiniMenu.method4924();
 		if (MiniMenu.method18429(var1) == 7) {
 			int var2 = (int) var1.method19368();
 			if (var2 >= 0 && var2 <= ReceivePlayerPositions.field698) {
@@ -15395,7 +15395,7 @@ public final class ScriptRunner {
 		int var6 = 0;
 		if (arg0.field11713 != null) {
 			for (int var7 = 0; var7 < arg0.field11713.length; var7++) {
-				class141 var8 = arg0.field11713[var7];
+				ScreenBoundingBox var8 = arg0.field11713[var7];
 				if (var8.field1686) {
 					int var9;
 					int var10;
@@ -15757,7 +15757,7 @@ public final class ScriptRunner {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
 		int var2 = arg0.field8216[arg0.field8226];
 		int var3 = arg0.field8216[arg0.field8226 + 1];
-		if (!class243.method18307(var1.charAt(0))) {
+		if (!EmojiList.method18307(var1.charAt(0))) {
 			throw new RuntimeException();
 		} else if (var1.isEmpty() || var1.length() > 10) {
 			throw new RuntimeException();

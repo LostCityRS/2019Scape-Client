@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("he")
-public final class class232 implements class251 {
+public final class class232 implements HashMapKey {
 
 	@ObfuscatedName("he.e(Ljava/lang/String;I)J")
 	public long method4074(String arg0) {

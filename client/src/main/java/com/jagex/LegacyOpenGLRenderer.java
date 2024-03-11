@@ -892,7 +892,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	@ObfuscatedName("afa.p()V")
 	public void method2369() {
 		for (Node var1 = this.field9964.method14191(); var1 != null; var1 = this.field9964.method14161()) {
-			((class1148) var1).method19237();
+			((LegacyOpenGLHeap) var1).method19237();
 		}
 		if (this.field9986 != null) {
 			this.field9986.method1375();
@@ -1700,7 +1700,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.cv(Lou;Led;Loj;)V")
-	public void method2193(Matrix4x3 arg0, class141 arg1, Cuboid arg2) {
+	public void method2193(Matrix4x3 arg0, ScreenBoundingBox arg1, Cuboid arg2) {
 		Matrix4x4 var4 = this.field9919;
 		var4.method6609(arg0);
 		var4.method6720(this.field10005);
@@ -1708,15 +1708,15 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.cp(I)Lakz;")
-	public class972 method2221(int arg0) {
-		class1148 var2 = new class1148(arg0);
+	public Heap method2221(int arg0) {
+		LegacyOpenGLHeap var2 = new LegacyOpenGLHeap(arg0);
 		this.field9964.method14153(var2);
 		return var2;
 	}
 
 	@ObfuscatedName("afa.ca(Lakz;)V")
-	public void method2195(class972 arg0) {
-		this.field9876 = ((class1148) arg0).field12207;
+	public void method2195(Heap arg0) {
+		this.field9876 = ((LegacyOpenGLHeap) arg0).field12207;
 		if (this.field10013 != null) {
 			return;
 		}
@@ -2359,12 +2359,12 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.du(I)Ldz;")
-	public class117 method2229(int arg0) {
+	public EnvironmentSampler method2229(int arg0) {
 		return this.field9952 ? new class1124(this, arg0) : null;
 	}
 
 	@ObfuscatedName("afa.dl(Ldz;Ldz;FLdz;)Ldz;")
-	public class117 method2435(class117 arg0, class117 arg1, float arg2, class117 arg3) {
+	public EnvironmentSampler method2435(EnvironmentSampler arg0, EnvironmentSampler arg1, float arg2, EnvironmentSampler arg3) {
 		if (arg0 != null && arg1 != null && this.field9952 && this.field9985) {
 			class1123 var5 = null;
 			class845 var6 = (class845) arg0;
@@ -2391,7 +2391,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.dp(Ldz;)V")
-	public final void method2516(class117 arg0) {
+	public final void method2516(EnvironmentSampler arg0) {
 		this.field9887 = (class845) arg0;
 	}
 
@@ -2448,7 +2448,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.de([I)Lcj;")
-	public class110 method2237(int[] arg0) {
+	public ColourRemapper method2237(int[] arg0) {
 		return new class838(this, arg0);
 	}
 
@@ -2472,7 +2472,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.eo(Lcj;FLcj;FLcj;F)V")
-	public void method2239(class110 arg0, float arg1, class110 arg2, float arg3, class110 arg4, float arg5) {
+	public void method2239(ColourRemapper arg0, float arg1, ColourRemapper arg2, float arg3, ColourRemapper arg4, float arg5) {
 		int var7 = 0;
 		if (arg4 == null && arg5 > 0.0F) {
 			arg5 = 0.0F;

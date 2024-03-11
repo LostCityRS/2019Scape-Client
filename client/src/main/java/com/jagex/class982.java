@@ -313,7 +313,7 @@ public class class982 extends Node {
 	}
 
 	@ObfuscatedName("akx.m(Ljj;III[[ZZ)V")
-	public void method17783(class285 arg0, int arg1, int arg2, int arg3, boolean[][] arg4, boolean arg5) {
+	public void method17783(ModelShader arg0, int arg1, int arg2, int arg3, boolean[][] arg4, boolean arg5) {
 		if (this.field11423 == null || (this.field11419 > arg1 + arg3 || (this.field11418 < arg1 - arg3 || (this.field11427 > arg2 + arg3 || this.field11417 < arg2 - arg3)))) {
 			return;
 		}
@@ -365,7 +365,7 @@ public class class982 extends Node {
 	}
 
 	@ObfuscatedName("akx.k(Ljj;Lml;I)V")
-	public void method17784(class285 arg0, IndexBuffer arg1, int arg2) {
+	public void method17784(ModelShader arg0, IndexBuffer arg1, int arg2) {
 		arg0.field2981 = 0;
 		arg0.field2983 = this.field11420;
 		arg0.field2972 = 0;

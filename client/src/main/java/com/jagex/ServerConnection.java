@@ -68,7 +68,7 @@ public class ServerConnection {
 	public boolean field808 = false;
 
 	@ObfuscatedName("ax.h")
-	public class8 field807 = new class8();
+	public PingProvider field807 = new PingProvider();
 
 	public ServerConnection() {
 		Thread var1 = new Thread(this.field807);

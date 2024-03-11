@@ -59,7 +59,7 @@ public class FloorHardShadows {
 	}
 
 	@ObfuscatedName("lg.n(Ljj;III[[ZZ)V")
-	public void method5670(class285 arg0, int arg1, int arg2, int arg3, boolean[][] arg4, boolean arg5) {
+	public void method5670(ModelShader arg0, int arg1, int arg2, int arg3, boolean[][] arg4, boolean arg5) {
 		this.field3287.method2219(false);
 		float var7 = 1.0F / (float) (this.field3287.field10128 * 128);
 		if (arg5) {

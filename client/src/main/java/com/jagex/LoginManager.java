@@ -989,17 +989,17 @@ public class LoginManager {
 
 	@ObfuscatedName("zl.g(Lalw;J)V")
 	public static void method14049(Packet arg0, long arg1) {
-		class743 var3;
+		TotpType var3;
 		if (field429 != null && field429.length() == 6) {
 			if (field473) {
-				var3 = class743.field8723;
+				var3 = TotpType.field8723;
 			} else {
-				var3 = class743.field8726;
+				var3 = TotpType.field8726;
 			}
 		} else if (Statics.field1895.method589(arg1)) {
-			var3 = class743.field8722;
+			var3 = TotpType.field8722;
 		} else {
-			var3 = class743.field8724;
+			var3 = TotpType.field8724;
 		}
 		arg0.p1(var3.getId());
 		switch(var3.field8725) {

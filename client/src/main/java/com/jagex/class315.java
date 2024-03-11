@@ -3,13 +3,13 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("km")
-public class class315 implements class317 {
+public class class315 implements LoadingScreenElementConfig {
 
 	@ObfuscatedName("km.k")
-	public final class318 field3177;
+	public final LoadingScreenAlignmentX field3177;
 
 	@ObfuscatedName("km.f")
-	public final class316 field3172;
+	public final LoadingScreenAlignmentY field3172;
 
 	@ObfuscatedName("km.w")
 	public final int field3174;
@@ -26,7 +26,7 @@ public class class315 implements class317 {
 	@ObfuscatedName("km.p")
 	public final int field3168;
 
-	public class315(class318 arg0, class316 arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
+	public class315(LoadingScreenAlignmentX arg0, LoadingScreenAlignmentY arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
 		this.field3177 = arg0;
 		this.field3172 = arg1;
 		this.field3174 = arg2;
@@ -38,8 +38,8 @@ public class class315 implements class317 {
 
 	@ObfuscatedName("acp.e(Lalw;I)Lkm;")
 	public static class315 method15034(Packet arg0) {
-		class318 var1 = class318.method13948()[arg0.g1()];
-		class316 var2 = class316.method2774()[arg0.g1()];
+		LoadingScreenAlignmentX var1 = LoadingScreenAlignmentX.method13948()[arg0.g1()];
+		LoadingScreenAlignmentY var2 = LoadingScreenAlignmentY.method2774()[arg0.g1()];
 		int var3 = arg0.g2s();
 		int var4 = arg0.g2s();
 		int var5 = arg0.gSmart2or4null();

@@ -41,7 +41,7 @@ public class class548 {
 	public void method8683(PickableEntity arg0) {
 		GraphEntity var2 = arg0.field6978;
 		boolean var3 = true;
-		class141[] var4 = arg0.field6978.field11713;
+		ScreenBoundingBox[] var4 = arg0.field6978.field11713;
 		for (int var5 = 0; var5 < var4.length; var5++) {
 			if (var4[var5].field1686) {
 				var3 = false;

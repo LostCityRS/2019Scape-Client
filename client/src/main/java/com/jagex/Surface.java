@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("afy")
-public abstract class Surface extends class113 {
+public abstract class Surface extends RenderTarget {
 
 	@ObfuscatedName("afy.g(II)I")
 	public abstract int method15450(int arg0, int arg1);
