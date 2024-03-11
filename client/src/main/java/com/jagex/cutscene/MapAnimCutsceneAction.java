@@ -4,7 +4,7 @@ import com.jagex.*;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aqn")
-public class MapAnimCutsceneAction extends class874 {
+public class MapAnimCutsceneAction extends CutsceneActionUnused {
 
 	@ObfuscatedName("aqn.f")
 	public final int field12043;

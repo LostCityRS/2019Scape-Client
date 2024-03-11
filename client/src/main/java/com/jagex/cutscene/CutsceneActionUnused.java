@@ -3,12 +3,11 @@ package com.jagex.cutscene;
 import com.jagex.EffectAnimType;
 import com.jagex.Packet;
 import com.jagex.SeqType;
-import com.jagex.cutscene.CutsceneAction;
 import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("agm")
-public abstract class class874 extends CutsceneAction {
+public abstract class CutsceneActionUnused extends CutsceneAction {
 
 	@ObfuscatedName("agm.n")
 	public final int field10303;
@@ -19,7 +18,7 @@ public abstract class class874 extends CutsceneAction {
 	@ObfuscatedName("agm.k")
 	public final int field10305;
 
-	public class874(Packet arg0) {
+	public CutsceneActionUnused(Packet arg0) {
 		super(arg0);
 		this.field10303 = arg0.g2();
 		this.field10304 = arg0.g2();

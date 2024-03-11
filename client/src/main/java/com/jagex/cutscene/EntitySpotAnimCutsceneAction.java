@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("aqm")
-public class EntitySpotAnimCutsceneAction extends class874 {
+public class EntitySpotAnimCutsceneAction extends CutsceneActionUnused {
 
 	@ObfuscatedName("aqm.f")
 	public final int field12045;

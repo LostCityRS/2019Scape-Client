@@ -30,7 +30,7 @@ public class VarDomainType implements SerializableEnum {
 	public static final VarDomainType CLAN_SETTING = new VarDomainType(Js5ConfigGroup.VAR_CLAN_SETTING, 7, true, false);
 
 	@ObfuscatedName("qe.z")
-	public static final VarDomainType CONTROLLER = new VarDomaniTypeController(Js5ConfigGroup.VAR_CONTROLLER, 8, false, false);
+	public static final VarDomainType CONTROLLER = new VarDomainTypeController(Js5ConfigGroup.VAR_CONTROLLER, 8, false, false);
 
 	@ObfuscatedName("qe.p")
 	public static final VarDomainType PLAYER_GROUP = new VarDomainType(Js5ConfigGroup.VAR_PLAYER_GROUP, 9, false, true);
