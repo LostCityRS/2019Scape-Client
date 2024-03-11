@@ -1,4 +1,4 @@
-package com.jagex.clanchannel;
+package com.jagex;
 
 import com.jagex.ClanChannel;
 import com.jagex.Node;

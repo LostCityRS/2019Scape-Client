@@ -201,6 +201,7 @@ public class Sound {
 		this.field4886 = arg0;
 	}
 
+	// line 167
 	@ObfuscatedName("rw.p(B)V")
 	public void method7384() {
 		if (SoundVolume.field4948 == this.field4877) {
@@ -264,6 +265,24 @@ public class Sound {
 		}
 	}
 
+	@ObfuscatedName("qv")
+	public static class SoundRelated implements SoundRelatedInterface {
+
+		// $FF: synthetic field
+		public final Sound this$0;
+
+		// line 177
+		public SoundRelated(Sound arg0) {
+			this.this$0 = arg0;
+		}
+
+		@ObfuscatedName("qv.e(II)[B")
+		public byte[] method7354(int arg0) {
+			return this.this$0.field4889.method9673(arg0);
+		}
+	}
+
+	// line 230
 	@ObfuscatedName("rw.d(I)Lrs;")
 	public SoundVolume method7385() {
 		return this.field4877;
@@ -385,6 +404,7 @@ public class Sound {
 		this.field4880 = arg1;
 	}
 
+	// line 327
 	@ObfuscatedName("rw.ac(FI)V")
 	public void method7405(float arg0) {
 		if (!(arg0 < 0.0F)) {

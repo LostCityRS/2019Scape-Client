@@ -6,7 +6,7 @@ import com.jagex.Font;
 import com.jagex.FontMetrics;
 import com.jagex.Timer;
 import com.jagex.cutscene.CutsceneAction;
-import com.jagex.playergroup.PlayerGroup;
+import com.jagex.PlayerGroup;
 import com.jagex.twitchtv.TwitchEventLiveStreams;
 import com.jagex.twitchtv.TwitchEventResult;
 import com.jagex.twitchtv.TwitchTV;

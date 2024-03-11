@@ -1,4 +1,4 @@
-package com.jagex.playergroup;
+package com.jagex;
 
 import deob.ObfuscatedName;
 

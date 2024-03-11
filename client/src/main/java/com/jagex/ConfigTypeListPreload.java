@@ -73,12 +73,41 @@ public class ConfigTypeListPreload implements ConfigTypeList {
 		this.field8849[arg0].postDecode();
 	}
 
+	// line 59
 	@ObfuscatedName("acd.n(I)I")
 	public int size() {
 		return this.field8849.length;
 	}
 
+	// line 63
 	public Iterator iterator() {
 		return new ConfigTypeListPreloadIterator(this);
+	}
+
+	@ObfuscatedName("ack")
+	public static class ConfigTypeListPreloadIterator implements Iterator {
+
+		// $FF: synthetic field
+		public final ConfigTypeListPreload this$0;
+
+		@ObfuscatedName("ack.e")
+		public int field8850;
+
+		// line 63
+		public ConfigTypeListPreloadIterator(ConfigTypeListPreload arg0) {
+			this.this$0 = arg0;
+		}
+
+		public boolean hasNext() {
+			return this.field8850 < this.this$0.field8849.length;
+		}
+
+		public Object next() {
+			return this.this$0.field8849[++this.field8850 - 1];
+		}
+
+		public void remove() {
+			throw new UnsupportedOperationException();
+		}
 	}
 }

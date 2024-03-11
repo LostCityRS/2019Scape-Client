@@ -57,6 +57,7 @@ public class VarPlayerTypeListClient extends VarTypeList implements ConfigTypeLi
 		}
 	}
 
+	// line 54
 	@ObfuscatedName("adj.s(B)V")
 	public void method15257() {
 		WeightedCache var1 = this.field9254;
@@ -65,10 +66,41 @@ public class VarPlayerTypeListClient extends VarTypeList implements ConfigTypeLi
 		}
 	}
 
+	// line 60
 	public Iterator iterator() {
 		return new VarPlayerTypeListIterator(this);
 	}
 
+	@ObfuscatedName("gj")
+	public static class VarPlayerTypeListIterator implements Iterator {
+
+		// $FF: synthetic field
+		public final VarPlayerTypeListClient this$0;
+
+		@ObfuscatedName("gj.e")
+		public int field1982;
+
+		public VarPlayerTypeListIterator(VarPlayerTypeListClient arg0) {
+			this.this$0 = arg0;
+		}
+
+		public boolean hasNext() {
+			return this.field1982 < this.this$0.size();
+		}
+
+		// line 68
+		public Object next() {
+			int var1 = ++this.field1982 - 1;
+			VarPlayerType var2 = (VarPlayerType) this.this$0.field9254.method2930((long) var1);
+			return var2 == null ? this.this$0.method15255(var1) : var2;
+		}
+
+		public void remove() {
+			throw new UnsupportedOperationException();
+		}
+	}
+
+	// line 81
 	@ObfuscatedName("adj.n(I)I")
 	public int size() {
 		return super.size();

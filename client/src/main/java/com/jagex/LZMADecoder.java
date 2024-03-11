@@ -184,7 +184,7 @@ public class LZMADecoder {
 						}
 						break;
 					}
-					LZMADecoder2 var14 = this.field6698.method8347((int) var10, var12);
+					LZMALiteralDecoder.LZMADecoder2 var14 = this.field6698.method8347((int) var10, var12);
 					if (LZMABase.method4525(var5)) {
 						var12 = var14.method8335(this.field6689);
 					} else {
@@ -208,6 +208,7 @@ public class LZMADecoder {
 		}
 	}
 
+	// line 155
 	@ObfuscatedName("sz.f([BI)Z")
 	public boolean method8305(byte[] arg0) {
 		if (arg0.length < 5) {
@@ -223,5 +224,173 @@ public class LZMADecoder {
 			var7 += (arg0[var8 + 1] & 0xFF) << var8 * 8;
 		}
 		return this.method8316(var3, var5, var6) ? this.method8313(var7) : false;
+	}
+
+	@ObfuscatedName("sc")
+	public static class LZMALenDecoder {
+
+		// $FF: synthetic field
+		public final LZMADecoder this$0;
+
+		@ObfuscatedName("sc.e")
+		public short[] field6724;
+
+		@ObfuscatedName("sc.n")
+		public LZMABitTreeDecoder[] field6723;
+
+		@ObfuscatedName("sc.m")
+		public LZMABitTreeDecoder[] field6722;
+
+		@ObfuscatedName("sc.k")
+		public LZMABitTreeDecoder field6725;
+
+		@ObfuscatedName("sc.f")
+		public int field6726;
+
+		// line 174
+		public LZMALenDecoder(LZMADecoder arg0) {
+			this.this$0 = arg0;
+			this.field6724 = new short[2];
+			this.field6723 = new LZMABitTreeDecoder[16];
+			this.field6722 = new LZMABitTreeDecoder[16];
+			this.field6725 = new LZMABitTreeDecoder(8);
+			this.field6726 = 0;
+		}
+
+		@ObfuscatedName("sc.e(II)V")
+		public void method8360(int arg0) {
+			while (this.field6726 < arg0) {
+				this.field6723[this.field6726] = new LZMABitTreeDecoder(3);
+				this.field6722[this.field6726] = new LZMABitTreeDecoder(3);
+				this.field6726++;
+			}
+		}
+
+		@ObfuscatedName("sc.n(B)V")
+		public void method8361() {
+			LZMARangeDecoder.method3545(this.field6724);
+			for (int var1 = 0; var1 < this.field6726; var1++) {
+				this.field6723[var1].method5057();
+				this.field6722[var1].method5057();
+			}
+			this.field6725.method5057();
+		}
+
+		@ObfuscatedName("sc.m(Ljp;IB)I")
+		public int method8362(LZMARangeDecoder arg0, int arg1) throws IOException {
+			if (arg0.method5086(this.field6724, 0) == 0) {
+				return this.field6723[arg1].method5058(arg0);
+			}
+			byte var3 = 8;
+			int var4;
+			if (arg0.method5086(this.field6724, 1) == 0) {
+				var4 = var3 + this.field6722[arg1].method5058(arg0);
+			} else {
+				var4 = var3 + 8 + this.field6725.method5058(arg0);
+			}
+			return var4;
+		}
+	}
+
+	@ObfuscatedName("sj")
+	public static class LZMALiteralDecoder {
+
+		// $FF: synthetic field
+		public final LZMADecoder this$0;
+
+		@ObfuscatedName("sj.e")
+		public LZMADecoder2[] field6718;
+
+		@ObfuscatedName("sj.n")
+		public int field6716;
+
+		@ObfuscatedName("sj.m")
+		public int field6717;
+
+		@ObfuscatedName("sj.k")
+		public int field6715;
+
+		// line 207
+		public LZMALiteralDecoder(LZMADecoder arg0) {
+			this.this$0 = arg0;
+		}
+
+		// line 210
+		@ObfuscatedName("sj.e(III)V")
+		public void method8345(int arg0, int arg1) {
+			if (this.field6718 != null && this.field6716 == arg1 && this.field6717 == arg0) {
+				return;
+			}
+			this.field6717 = arg0;
+			this.field6715 = (0x1 << arg0) - 1;
+			this.field6716 = arg1;
+			int var3 = 0x1 << this.field6717 + this.field6716;
+			this.field6718 = new LZMADecoder2[var3];
+			for (int var4 = 0; var4 < var3; var4++) {
+				this.field6718[var4] = new LZMADecoder2(this);
+			}
+		}
+
+		@ObfuscatedName("sj.n(I)V")
+		public void method8352() {
+			int var1 = 0x1 << this.field6717 + this.field6716;
+			for (int var2 = 0; var2 < var1; var2++) {
+				this.field6718[var2].method8331();
+			}
+		}
+
+		// line 225
+		@ObfuscatedName("sj.m(IBI)Lsa;")
+		public LZMADecoder2 method8347(int arg0, byte arg1) {
+			return this.field6718[((arg1 & 0xFF) >>> 8 - this.field6716) + ((arg0 & this.field6715) << this.field6716)];
+		}
+
+		@ObfuscatedName("sa")
+		public static class LZMADecoder2 {
+
+			// $FF: synthetic field
+			public final LZMALiteralDecoder this$1;
+
+			@ObfuscatedName("sa.e")
+			public short[] field6709;
+
+			// line 231
+			public LZMADecoder2(LZMALiteralDecoder arg0) {
+				this.this$1 = arg0;
+				this.field6709 = new short[768];
+			}
+
+			@ObfuscatedName("sa.e(I)V")
+			public void method8331() {
+				LZMARangeDecoder.method3545(this.field6709);
+			}
+
+			@ObfuscatedName("sa.n(Ljp;I)B")
+			public byte method8335(LZMARangeDecoder arg0) throws IOException {
+				int var2 = 1;
+				do {
+					var2 = var2 << 1 | arg0.method5086(this.field6709, var2);
+				} while (var2 < 256);
+				return (byte) var2;
+			}
+
+			@ObfuscatedName("sa.m(Ljp;BI)B")
+			public byte method8333(LZMARangeDecoder arg0, byte arg1) throws IOException {
+				int var3 = 1;
+				do {
+					int var4 = arg1 >> 7 & 0x1;
+					arg1 = (byte) (arg1 << 1);
+					int var5 = arg0.method5086(this.field6709, (var4 + 1 << 8) + var3);
+					var3 = var3 << 1 | var5;
+					if (var4 != var5) {
+						while (var3 < 256) {
+							var3 = var3 << 1 | arg0.method5086(this.field6709, var3);
+						}
+						return (byte) var3;
+					}
+				} while (var3 < 256);
+				return (byte) var3;
+			}
+		}
 	}
 }

@@ -821,6 +821,7 @@ public abstract class Model {
 		}
 	}
 
+	// line 768
 	@ObfuscatedName("do.aw(ILcs;I[IFFFIZI[I)V")
 	public void method1756(int arg0, Joint arg1, int arg2, int[] arg3, float arg4, float arg5, float arg6, int arg7, boolean arg8, int arg9, int[] arg10) {
 		int var12 = (int) arg4;
@@ -1067,4 +1068,32 @@ public abstract class Model {
 
 	@ObfuscatedName("do.bk(I)V")
 	public abstract void method1893(int arg0);
+
+	@ObfuscatedName("ee")
+	public static class ModelRelated1 {
+
+		// $FF: synthetic field
+		public final Model this$0;
+
+		@ObfuscatedName("ee.e")
+		public int[] field1688;
+
+		@ObfuscatedName("ee.n")
+		public int[] field1690;
+
+		@ObfuscatedName("ee.m")
+		public int[] field1689;
+
+		@ObfuscatedName("ee.k")
+		public float[][] field1691;
+
+		// line 927
+		public ModelRelated1(Model arg0, int[] arg1, int[] arg2, int[] arg3, float[][] arg4) {
+			this.this$0 = arg0;
+			this.field1688 = arg1;
+			this.field1690 = arg2;
+			this.field1689 = arg3;
+			this.field1691 = arg4;
+		}
+	}
 }

@@ -1,4 +1,4 @@
-package com.jagex.playergroup;
+package com.jagex;
 
 import com.jagex.SkillDefaults;
 import com.jagex.VarBitTypeList;

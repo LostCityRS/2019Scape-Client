@@ -1,11 +1,6 @@
 package com.jagex;
 
-import com.jagex.clanchannel.ClanChannelDelta;
-import com.jagex.clansettings.ClanSettingsDelta;
 import com.jagex.cutscene.CutsceneAction;
-import com.jagex.playergroup.PlayerGroup;
-import com.jagex.playergroup.PlayerGroupDelta;
-import com.jagex.playergroup.PlayerGroupResourceProvider;
 import deob.ObfuscatedName;
 import deob.Statics;
 import jaclib.ping.Ping;

@@ -10,4 +10,5 @@ public abstract class ClanSettingsDeltaEntry extends Node {
 
 	@ObfuscatedName("akp.n(Lkr;I)V")
 	public abstract void method17727(ClanSettings arg0);
+
 }

@@ -3,6 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -33,6 +34,87 @@ public class DummySoundBackend extends SoundBackend {
 	@ObfuscatedName("aiw.z")
 	public Runnable field10686 = new DummySoundBackend_Task2(this);
 
+	@ObfuscatedName("ej")
+	public static class DummySoundBackend_Task1 implements Runnable {
+
+		// $FF: synthetic field
+		public final DummySoundBackend this$0;
+
+		// line 28
+		public DummySoundBackend_Task1(DummySoundBackend arg0) {
+			this.this$0 = arg0;
+		}
+
+		public void run() {
+			label36: while (true) {
+				try {
+					if (!this.this$0.field10681) {
+						HashMap var1 = this.this$0.method16802();
+						Iterator var2 = var1.keySet().iterator();
+						while (true) {
+							SoundRelatedType2 var3;
+							do {
+								if (!var2.hasNext()) {
+									PreciseSleep.sleep(50L);
+									continue label36;
+								}
+								var3 = (SoundRelatedType2) var2.next();
+							} while (var3.field4856);
+							SoundRelated2[] var4 = (SoundRelated2[]) var1.get(var3);
+							for (int var5 = 0; var5 < var4.length; var5++) {
+								var4[var5].method7507();
+							}
+						}
+					}
+				} catch (Exception var7) {
+					JagException.report(null, var7);
+				}
+				return;
+			}
+		}
+	}
+
+	@ObfuscatedName("ei")
+	public static class DummySoundBackend_Task2 implements Runnable {
+
+		// $FF: synthetic field
+		public final DummySoundBackend this$0;
+
+		// line 52
+		public DummySoundBackend_Task2(DummySoundBackend arg0) {
+			this.this$0 = arg0;
+		}
+
+		public void run() {
+			label36: while (true) {
+				try {
+					if (!this.this$0.field10681) {
+						HashMap var1 = this.this$0.method16802();
+						Iterator var2 = var1.keySet().iterator();
+						while (true) {
+							SoundRelatedType2 var3;
+							do {
+								if (!var2.hasNext()) {
+									PreciseSleep.sleep(25L);
+									continue label36;
+								}
+								var3 = (SoundRelatedType2) var2.next();
+							} while (var3.field4856);
+							SoundRelated2[] var4 = (SoundRelated2[]) var1.get(var3);
+							for (int var5 = 0; var5 < var4.length; var5++) {
+								var4[var5].method7504();
+							}
+						}
+					}
+				} catch (Exception var7) {
+					JagException.report(null, var7);
+				}
+				return;
+			}
+		}
+	}
+
+	// line 78
 	@ObfuscatedName("aiw.aw(I)Ljava/util/HashMap;")
 	public HashMap method16802() {
 		return this.field10679;
@@ -62,6 +144,7 @@ public class DummySoundBackend extends SoundBackend {
 		this.field10683.start();
 	}
 
+	// line 112
 	@ObfuscatedName("aiw.e(I)V")
 	public void method5874() {
 		if (this.field10680 != null) {
@@ -115,6 +198,40 @@ public class DummySoundBackend extends SoundBackend {
 		}
 	}
 
+	@ObfuscatedName("el")
+	public static class DummySoundComparator implements Comparator {
+
+		// $FF: synthetic field
+		public final DummySoundBackend this$0;
+
+		// line 124
+		public DummySoundComparator(DummySoundBackend arg0) {
+			this.this$0 = arg0;
+		}
+
+		@ObfuscatedName("el.e(Lrq;Lrq;I)I")
+		public int method2754(SoundRelated2 arg0, SoundRelated2 arg1) {
+			float var3 = arg0.method7531();
+			float var4 = arg1.method7531();
+			if (var4 > var3) {
+				return 1;
+			} else if (var4 < var3) {
+				return -1;
+			} else {
+				return 0;
+			}
+		}
+
+		public int compare(Object arg0, Object arg1) {
+			return this.method2754((SoundRelated2) arg0, (SoundRelated2) arg1);
+		}
+
+		public boolean equals(Object arg0) {
+			return super.equals(arg0);
+		}
+	}
+
+	// line 172
 	@ObfuscatedName("aiw.f(Ljava/lang/Object;I)I")
 	public int method5864(Object arg0) {
 		long var2 = MonotonicTime.method3655();
@@ -166,6 +283,7 @@ public class DummySoundBackend extends SoundBackend {
 		return this.field10680;
 	}
 
+	// line 210
 	@ObfuscatedName("aiw.z(B)V")
 	public void method5868() {
 		HashMap var1 = this.method16802();

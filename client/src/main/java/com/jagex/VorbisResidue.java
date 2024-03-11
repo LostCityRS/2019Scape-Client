@@ -74,7 +74,7 @@ public class VorbisResidue {
 	}
 
 	@ObfuscatedName("gi.m([Lhb;I[Z)[Lhb;")
-	public WindowFunction[] method3676(WindowFunction[] arg0, int arg1, boolean[] arg2) {
+	public VorbisDecoder.WindowFunction[] method3676(VorbisDecoder.WindowFunction[] arg0, int arg1, boolean[] arg2) {
 		int var4 = arg0.length;
 		for (int var5 = 0; var5 < var4; var5++) {
 			if (!arg2[var5]) {

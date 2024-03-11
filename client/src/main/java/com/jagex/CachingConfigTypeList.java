@@ -22,6 +22,7 @@ public class CachingConfigTypeList implements ConfigTypeList {
 	@ObfuscatedName("abe.f")
 	public final ConfigTypeFactory field8796;
 
+	// line 20
 	public CachingConfigTypeList(ModeGame arg0, Language arg1, Js5 arg2, Js5ConfigGroup arg3, int arg4, ConfigTypeFactory arg5) {
 		this.field8792 = arg2;
 		this.field8793 = arg3;
@@ -30,6 +31,7 @@ public class CachingConfigTypeList implements ConfigTypeList {
 		this.field8795 = new WeightedCache(arg4);
 	}
 
+	// line 30
 	@ObfuscatedName("abe.e(II)Lay;")
 	public ConfigType get(int arg0) {
 		WeightedCache var2 = this.field8795;
@@ -101,7 +103,44 @@ public class CachingConfigTypeList implements ConfigTypeList {
 		}
 	}
 
+	// line 82
 	public Iterator iterator() {
 		return new CachingConfigTypeListIterator(this);
+	}
+
+	@ObfuscatedName("acm")
+	public static class CachingConfigTypeListIterator implements Iterator {
+
+		// $FF: synthetic field
+		public final CachingConfigTypeList this$0;
+
+		@ObfuscatedName("acm.e")
+		public int field8852;
+
+		public CachingConfigTypeListIterator(CachingConfigTypeList arg0) {
+			this.this$0 = arg0;
+		}
+
+		public boolean hasNext() {
+			return this.field8852 < this.this$0.field8794;
+		}
+
+		// line 90
+		public Object next() {
+			int var1 = ++this.field8852 - 1;
+			WeightedCache var2 = this.this$0.field8795;
+			synchronized (this.this$0.field8795) {
+				ConfigType var3 = (ConfigType) this.this$0.field8795.method2930((long) var1);
+				if (var3 != null) {
+					return var3;
+				}
+			}
+			return this.this$0.method14909(var1);
+		}
+
+		// line 99
+		public void remove() {
+			throw new UnsupportedOperationException();
+		}
 	}
 }

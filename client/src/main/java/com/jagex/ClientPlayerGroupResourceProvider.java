@@ -1,6 +1,5 @@
 package com.jagex;
 
-import com.jagex.playergroup.PlayerGroupResourceProvider;
 import deob.ObfuscatedName;
 import deob.Statics;
 

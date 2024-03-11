@@ -17,10 +17,12 @@ public class ShaderData {
 	@ObfuscatedName("hj.w")
 	public ProgramData[] field2582;
 
+	// line 13
 	public ShaderData(byte[] arg0) throws ShaderDataException {
 		this.method4279(arg0);
 	}
 
+	// line 18
 	@ObfuscatedName("hj.e([BB)V")
 	public void method4279(byte[] arg0) throws ShaderDataException {
 		ShaderDataReader var2 = new ShaderDataReader(arg0);
@@ -43,6 +45,19 @@ public class ShaderData {
 		for (int var6 = 0; var6 < this.field2582.length; var6++) {
 			this.field2582[var6] = new ProgramData();
 			this.field2582[var6].method4077(var2);
+		}
+	}
+
+	@ObfuscatedName("apu")
+	public static class ShaderDataException extends Exception {
+
+		// $FF: synthetic field
+		public final ShaderData this$0;
+
+		// line 40
+		public ShaderDataException(ShaderData arg0, int arg1, int arg2) {
+			super("");
+			this.this$0 = arg0;
 		}
 	}
 }

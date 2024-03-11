@@ -1508,11 +1508,36 @@ public class VorbisDecoder implements VorbisInterface {
 		return this.field2105;
 	}
 
+	// line 1316
 	@ObfuscatedName("hk.an(ZIII)V")
 	public void method3771(boolean arg0, int arg1, int arg2, int arg3) {
 		this.field2104 = arg0;
 		this.field2096 = arg1;
 		this.field2110 = arg2;
 		this.field2056 = arg3;
+	}
+
+	@ObfuscatedName("hb")
+	public static class WindowFunction {
+
+		// $FF: synthetic field
+		public final VorbisDecoder this$0;
+
+		@ObfuscatedName("hb.e")
+		public float[] field2123;
+
+		@ObfuscatedName("hb.n")
+		public int field2122;
+
+		@ObfuscatedName("hb.m")
+		public boolean field2125;
+
+		@ObfuscatedName("hb.k")
+		public int field2124;
+
+		// line 1346
+		public WindowFunction(VorbisDecoder arg0) {
+			this.this$0 = arg0;
+		}
 	}
 }

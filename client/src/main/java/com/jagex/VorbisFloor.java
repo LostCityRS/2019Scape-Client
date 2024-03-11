@@ -174,7 +174,7 @@ public class VorbisFloor {
 	}
 
 	@ObfuscatedName("hm.f(IIIILhb;I)V")
-	public void method3706(int arg0, int arg1, int arg2, int arg3, WindowFunction arg4, int arg5) {
+	public void method3706(int arg0, int arg1, int arg2, int arg3, VorbisDecoder.WindowFunction arg4, int arg5) {
 		int var7 = arg3 - arg1;
 		int var8 = arg2 - arg0;
 		int var9 = var7 < 0 ? -var7 : var7;
@@ -311,7 +311,7 @@ public class VorbisFloor {
 	}
 
 	@ObfuscatedName("hm.p(Lhb;II)V")
-	public void method3689(WindowFunction arg0, int arg1, int arg2) {
+	public void method3689(VorbisDecoder.WindowFunction arg0, int arg1, int arg2) {
 		if (!this.field2035[arg2]) {
 			return;
 		}

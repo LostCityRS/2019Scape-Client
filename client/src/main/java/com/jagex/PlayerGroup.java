@@ -1,6 +1,5 @@
-package com.jagex.playergroup;
+package com.jagex;
 
-import com.jagex.*;
 import deob.ObfuscatedName;
 
 import java.util.ArrayList;

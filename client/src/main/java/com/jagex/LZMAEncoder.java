@@ -30,6 +30,7 @@ public class LZMAEncoder {
 		}
 	}
 
+	// line 48
 	public LZMAEncoder() {
 		LZMABase.method9417();
 		this.field6712 = new LZMAEncoderOptimal[4096];
@@ -44,6 +45,68 @@ public class LZMAEncoder {
 		}
 		for (int var2 = 0; var2 < 4; var2++) {
 			this.field6711[var2] = new LZMABitTreeEncoder(6);
+		}
+	}
+
+	@ObfuscatedName("so")
+	public static class LZMALiteralEncoder {
+
+		// $FF: synthetic field
+		public final LZMAEncoder this$0;
+
+		// line 54
+		public LZMALiteralEncoder(LZMAEncoder arg0) {
+			this.this$0 = arg0;
+		}
+	}
+
+	@ObfuscatedName("sy")
+	public static class LZMAEncoderLen {
+
+		// $FF: synthetic field
+		public final LZMAEncoder this$0;
+
+		@ObfuscatedName("sy.e")
+		public LZMABitTreeEncoder[] field6706;
+
+		@ObfuscatedName("sy.n")
+		public LZMABitTreeEncoder[] field6705;
+
+		// line 65
+		public LZMAEncoderLen(LZMAEncoder arg0) {
+			this.this$0 = arg0;
+			this.field6706 = new LZMABitTreeEncoder[16];
+			this.field6705 = new LZMABitTreeEncoder[16];
+			new LZMABitTreeEncoder(8);
+			for (int var2 = 0; var2 < 16; var2++) {
+				this.field6706[var2] = new LZMABitTreeEncoder(3);
+				this.field6705[var2] = new LZMABitTreeEncoder(3);
+			}
+		}
+	}
+
+	@ObfuscatedName("ajb")
+	public static class LZMALenPriceTableEncoder extends LZMAEncoderLen {
+
+		// $FF: synthetic field
+		public final LZMAEncoder this$0;
+
+		// line 74
+		public LZMALenPriceTableEncoder(LZMAEncoder arg0) {
+			super(arg0);
+			this.this$0 = arg0;
+		}
+	}
+
+	@ObfuscatedName("sf")
+	public static class LZMAEncoderOptimal {
+
+		// $FF: synthetic field
+		public final LZMAEncoder this$0;
+
+		// line 78
+		public LZMAEncoderOptimal(LZMAEncoder arg0) {
+			this.this$0 = arg0;
 		}
 	}
 }
