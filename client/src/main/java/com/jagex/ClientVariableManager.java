@@ -1,9 +1,9 @@
 package com.jagex;
 
-import com.jagex.game.config.vartype.SparseVarDomain;
-import com.jagex.game.config.vartype.VarType;
-import com.jagex.game.config.vartype.VarTypeList;
-import com.jagex.game.config.vartype.constants.VarLifetime;
+import com.jagex.game.runetek5.config.vartype.SparseVarDomain;
+import com.jagex.game.runetek5.config.vartype.VarType;
+import com.jagex.game.runetek5.config.vartype.VarTypeList;
+import com.jagex.game.runetek5.config.vartype.constants.VarLifetime;
 import deob.ObfuscatedName;
 import deob.Statics;
 

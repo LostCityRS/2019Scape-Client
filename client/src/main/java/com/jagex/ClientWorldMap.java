@@ -1,6 +1,6 @@
 package com.jagex;
 
-import com.jagex.game.config.meltype.MapElementType;
+import com.jagex.game.runetek5.config.meltype.MapElementType;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;

@@ -1,6 +1,6 @@
 package com.jagex;
 
-import com.jagex.game.config.headbartype.HeadbarType;
+import com.jagex.game.runetek5.config.headbartype.HeadbarType;
 import deob.ObfuscatedName;
 import deob.Statics;
 

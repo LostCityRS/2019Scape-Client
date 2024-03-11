@@ -1,5 +1,8 @@
 package com.jagex;
 
+import com.jagex.game.runetek5.config.BillboardTypeList;
+import com.jagex.game.runetek5.config.ParticleEffectorTypeList;
+import com.jagex.game.runetek5.config.ParticleEmitterTypeList;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 import deob.Statics;

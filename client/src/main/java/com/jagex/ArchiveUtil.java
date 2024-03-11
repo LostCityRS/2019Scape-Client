@@ -1,6 +1,6 @@
 package com.jagex;
 
-import com.jagex.game.config.Js5ConfigGroup;
+import com.jagex.game.runetek5.config.Js5ConfigGroup;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 

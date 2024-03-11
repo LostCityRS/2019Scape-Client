@@ -1,5 +1,6 @@
 package com.jagex;
 
+import rs2.shared.prot.ServerProt;
 import deob.ObfuscatedName;
 
 import java.io.IOException;

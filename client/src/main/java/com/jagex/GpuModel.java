@@ -1,5 +1,8 @@
 package com.jagex;
 
+import com.jagex.game.runetek5.config.BillboardType;
+import com.jagex.game.runetek5.config.BillboardTypeList;
+import com.jagex.game.runetek5.config.ParticleEmitterType;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Matrix4x4;
 import com.jagex.math.Vector3;

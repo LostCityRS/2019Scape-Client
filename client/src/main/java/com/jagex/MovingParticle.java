@@ -1,5 +1,11 @@
 package com.jagex;
 
+import com.jagex.game.runetek5.config.ParticleEffectorType;
+import com.jagex.game.runetek5.config.ParticleEmitterType;
+import com.jagex.graphics.runetek5.particles.ParticleEffector;
+import com.jagex.graphics.runetek5.particles.ParticleEmitter;
+import com.jagex.graphics.runetek5.particles.ParticleSystem;
+import com.jagex.graphics.runetek5.particles.ParticleSystemRenderer;
 import deob.ObfuscatedName;
 import deob.Statics;
 

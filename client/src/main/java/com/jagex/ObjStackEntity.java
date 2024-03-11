@@ -1,6 +1,6 @@
 package com.jagex;
 
-import com.jagex.game.config.objtype.ObjType;
+import com.jagex.game.runetek5.config.objtype.ObjType;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;

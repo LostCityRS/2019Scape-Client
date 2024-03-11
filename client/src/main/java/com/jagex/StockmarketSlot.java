@@ -1,7 +1,8 @@
 package com.jagex;
 
-import com.jagex.game.config.vartype.VarTypeList;
-import com.jagex.game.config.vartype.constants.BaseVarType;
+import com.jagex.game.runetek5.config.vartype.VarContainerSparse;
+import com.jagex.game.runetek5.config.vartype.VarTypeList;
+import com.jagex.game.runetek5.config.vartype.constants.BaseVarType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("rk")

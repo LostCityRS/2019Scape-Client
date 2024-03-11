@@ -1,5 +1,8 @@
 package com.jagex;
 
+import com.jagex.game.runetek5.config.BillboardTypeList;
+import com.jagex.game.runetek5.config.ParticleEffectorTypeList;
+import com.jagex.game.runetek5.config.ParticleEmitterTypeList;
 import deob.ObfuscatedName;
 
 import java.awt.*;

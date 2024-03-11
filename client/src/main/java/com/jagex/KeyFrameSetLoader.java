@@ -1,7 +1,7 @@
 package com.jagex;
 
-import com.jagex.game.config.seqtype.SeqType;
-import com.jagex.game.config.seqtype.SeqTypeList;
+import com.jagex.game.runetek5.config.seqtype.SeqType;
+import com.jagex.game.runetek5.config.seqtype.SeqTypeList;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aao")

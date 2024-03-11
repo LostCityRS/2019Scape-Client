@@ -1,9 +1,11 @@
 package com.jagex;
 
 import com.jagex.core.constants.ModeWhere;
-import com.jagex.game.config.loctype.LocType;
-import com.jagex.game.config.npctype.NPCType;
-import com.jagex.game.config.objtype.ObjType;
+import com.jagex.game.runetek5.config.loctype.LocType;
+import com.jagex.game.runetek5.config.npctype.NPCType;
+import com.jagex.game.runetek5.config.objtype.ObjType;
+import rs2.shared.prot.LoginProt;
+import rs2.shared.prot.ServerProt;
 import deob.ObfuscatedName;
 import deob.Statics;
 

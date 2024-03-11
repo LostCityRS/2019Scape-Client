@@ -3,6 +3,7 @@ package com.jagex;
 import com.jagex.core.constants.ModeGame;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.options.*;
 
 @ObfuscatedName("ali")
 public class ClientOptions extends Node {

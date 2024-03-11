@@ -1,5 +1,6 @@
 package com.jagex;
 
+import rs2.shared.prot.LoginProt;
 import deob.ObfuscatedName;
 import deob.Statics;
 

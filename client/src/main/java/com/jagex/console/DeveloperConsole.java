@@ -1,8 +1,9 @@
 package com.jagex.console;
 
 import com.jagex.*;
+import rs2.client.options.Preferences;
 import com.jagex.core.constants.ModeWhere;
-import com.jagex.game.config.vartype.constants.VarDomainType;
+import com.jagex.game.runetek5.config.vartype.constants.VarDomainType;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;

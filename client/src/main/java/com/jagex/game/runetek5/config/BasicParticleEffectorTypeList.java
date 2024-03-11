@@ -1,0 +1,44 @@
+package com.jagex.game.runetek5.config;
+
+import com.jagex.Packet;
+import com.jagex.WeightedCache;
+import com.jagex.game.runetek5.config.ParticleEffectorType;
+import com.jagex.game.runetek5.config.ParticleEffectorTypeList;
+import com.jagex.js5.Js5;
+import deob.ObfuscatedName;
+
+@ObfuscatedName("no")
+public class BasicParticleEffectorTypeList implements ParticleEffectorTypeList {
+
+	@ObfuscatedName("no.e")
+	public Js5 field3536;
+
+	@ObfuscatedName("no.n")
+	public WeightedCache field3537 = new WeightedCache(64);
+
+	public BasicParticleEffectorTypeList(Js5 arg0) {
+		this.field3536 = arg0;
+	}
+
+	@ObfuscatedName("no.e(II)Lna;")
+	public ParticleEffectorType method5973(int arg0) {
+		ParticleEffectorType var2 = (ParticleEffectorType) this.field3537.method2930((long) arg0);
+		if (var2 != null) {
+			return var2;
+		}
+		byte[] var3 = this.field3536.method6879(1, arg0);
+		ParticleEffectorType var4 = new ParticleEffectorType();
+		var4.field3548 = arg0;
+		if (var3 != null) {
+			var4.method5988(new Packet(var3));
+		}
+		var4.method5990();
+		this.field3537.method2921(var4, (long) arg0);
+		return var4;
+	}
+
+	@ObfuscatedName("no.n(I)V")
+	public void method5974() {
+		this.field3537.method2924();
+	}
+}

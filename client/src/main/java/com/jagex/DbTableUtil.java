@@ -1,6 +1,6 @@
 package com.jagex;
 
-import com.jagex.game.config.vartype.constants.ScriptVarType;
+import com.jagex.game.runetek5.config.vartype.constants.ScriptVarType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ada")

@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.game.runetek5.config.vartype.VarIntDomain;
 import deob.ObfuscatedName;
 import deob.Statics;
 

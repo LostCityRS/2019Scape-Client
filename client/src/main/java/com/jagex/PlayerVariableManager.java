@@ -1,10 +1,13 @@
 package com.jagex;
 
-import com.jagex.game.config.vartype.VarType;
-import com.jagex.game.config.vartype.bit.VarBitType;
-import com.jagex.game.config.vartype.bit.VarBitTypeList;
-import com.jagex.game.config.vartype.constants.VarDomainType;
-import com.jagex.game.config.vartype.player.VarPlayerTypeListClient;
+import com.jagex.game.runetek5.config.vartype.VarIntDomain;
+import com.jagex.game.runetek5.config.vartype.VarPlayerDomain;
+import com.jagex.game.runetek5.config.vartype.VarType;
+import com.jagex.game.runetek5.config.vartype.VariableTypeProvider;
+import com.jagex.game.runetek5.config.vartype.bit.VarBitType;
+import com.jagex.game.runetek5.config.vartype.bit.VarBitTypeList;
+import com.jagex.game.runetek5.config.vartype.constants.VarDomainType;
+import com.jagex.game.runetek5.config.vartype.player.VarPlayerTypeListClient;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ah")

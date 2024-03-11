@@ -1,6 +1,6 @@
 package com.jagex;
 
-import com.jagex.game.config.quickchatphrasetype.QuickChatPhraseType;
+import com.jagex.game.runetek5.config.quickchatphrasetype.QuickChatPhraseType;
 import deob.ObfuscatedName;
 import deob.Statics;
 

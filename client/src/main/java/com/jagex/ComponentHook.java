@@ -1,6 +1,6 @@
 package com.jagex;
 
-import com.jagex.game.config.vartype.constants.BaseVarType;
+import com.jagex.game.runetek5.config.vartype.constants.BaseVarType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("hr")

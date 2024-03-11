@@ -1,6 +1,6 @@
 package com.jagex;
 
-import com.jagex.game.config.objtype.ObjType;
+import com.jagex.game.runetek5.config.objtype.ObjType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("abw")

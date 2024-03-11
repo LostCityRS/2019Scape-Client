@@ -2,7 +2,6 @@ package rs2.client.chat;
 
 import com.jagex.ChatCrownType;
 import deob.ObfuscatedName;
-import rs2.client.chat.ChatLine;
 
 @ObfuscatedName("ij")
 public class TypeChatLines {

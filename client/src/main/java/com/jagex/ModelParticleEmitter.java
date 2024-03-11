@@ -1,5 +1,7 @@
 package com.jagex;
 
+import com.jagex.game.runetek5.config.ParticleEmitterType;
+import com.jagex.game.runetek5.config.ParticleEmitterTypeList;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("du")

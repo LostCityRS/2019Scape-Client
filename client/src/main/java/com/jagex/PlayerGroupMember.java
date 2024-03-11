@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.game.runetek5.config.vartype.VarContainerSparse;
 import deob.ObfuscatedName;
 
 import java.util.Iterator;

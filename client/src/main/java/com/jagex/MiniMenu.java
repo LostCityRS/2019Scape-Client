@@ -1,11 +1,11 @@
 package com.jagex;
 
 import com.jagex.core.constants.ModeGame;
-import com.jagex.game.config.loctype.LocType;
-import com.jagex.game.config.npctype.NPCType;
-import com.jagex.game.config.objtype.ObjType;
-import com.jagex.game.config.paramtype.ParamType;
-import com.jagex.game.config.questtype.QuestType;
+import com.jagex.game.runetek5.config.loctype.LocType;
+import com.jagex.game.runetek5.config.npctype.NPCType;
+import com.jagex.game.runetek5.config.objtype.ObjType;
+import com.jagex.game.runetek5.config.paramtype.ParamType;
+import com.jagex.game.runetek5.config.questtype.QuestType;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Matrix4x4;
 import com.jagex.math.Vector3;

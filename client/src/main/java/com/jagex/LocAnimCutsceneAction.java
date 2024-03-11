@@ -1,6 +1,6 @@
 package com.jagex;
 
-import com.jagex.game.config.seqtype.SeqType;
+import com.jagex.game.runetek5.config.seqtype.SeqType;
 import deob.ObfuscatedName;
 import deob.Statics;
 

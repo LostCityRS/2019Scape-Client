@@ -1,9 +1,10 @@
 package com.jagex;
 
 import com.jagex.console.DeveloperConsole;
-import com.jagex.game.config.loctype.LocType;
-import com.jagex.game.config.loctype.LocTypeList;
-import com.jagex.game.config.npctype.NPCType;
+import com.jagex.game.runetek5.config.loctype.LocType;
+import com.jagex.game.runetek5.config.loctype.LocTypeList;
+import com.jagex.game.runetek5.config.npctype.NPCType;
+import com.jagex.graphics.runetek5.particles.ParticleSystemRenderer;
 import com.jagex.js5.Js5MapFile;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;

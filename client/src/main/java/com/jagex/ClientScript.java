@@ -1,7 +1,8 @@
 package com.jagex;
 
-import com.jagex.game.config.vartype.constants.BaseVarType;
-import com.jagex.game.config.vartype.constants.VarDomainType;
+import com.jagex.game.runetek5.config.vartype.VariableTypeProvider;
+import com.jagex.game.runetek5.config.vartype.constants.BaseVarType;
+import com.jagex.game.runetek5.config.vartype.constants.VarDomainType;
 import deob.ObfuscatedName;
 import deob.Statics;
 
