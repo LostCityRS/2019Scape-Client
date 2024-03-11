@@ -27,7 +27,7 @@ public class class913 extends LoadingScreenProgressDisplayConfig {
 	}
 
 	@ObfuscatedName("ahe.n(S)Lkt;")
-	public class319 method5349() {
-		return class319.field3189;
+	public LoadingScreenElementType method5349() {
+		return LoadingScreenElementType.field3189;
 	}
 }

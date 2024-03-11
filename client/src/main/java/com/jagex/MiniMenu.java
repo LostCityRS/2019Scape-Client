@@ -619,7 +619,7 @@ public class MiniMenu {
 				}
 			}
 		}
-		class548 var24 = client.world.method7743().field6959;
+		PickableEntityList var24 = client.world.method7743().field6959;
 		int var25 = arg1;
 		int var26 = arg2;
 		List var27 = var24.field6885;

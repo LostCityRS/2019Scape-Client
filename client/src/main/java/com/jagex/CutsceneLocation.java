@@ -10,7 +10,7 @@ public class CutsceneLocation {
 	public final int field1735;
 
 	@ObfuscatedName("ef.n")
-	public final class601 field1736;
+	public final LocShape field1736;
 
 	@ObfuscatedName("ef.m")
 	public int field1740;
@@ -26,7 +26,7 @@ public class CutsceneLocation {
 
 	public CutsceneLocation(Packet arg0) {
 		this.field1735 = arg0.gSmart2or4null();
-		this.field1736 = (class601) SerializableEnums.decode(class601.method606(), arg0.g1());
+		this.field1736 = (LocShape) SerializableEnums.decode(LocShape.method606(), arg0.g1());
 	}
 
 	@ObfuscatedName("ef.e(IIIIB)V")

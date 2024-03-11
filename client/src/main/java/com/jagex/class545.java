@@ -21,7 +21,7 @@ public class class545 implements Runnable {
 				if (!this.this$0.field10690) {
 					Iterator var1 = this.this$0.field10693.iterator();
 					while (var1.hasNext()) {
-						class544 var2 = (class544) var1.next();
+						PcmPlayer var2 = (PcmPlayer) var1.next();
 						var2.method8646();
 					}
 					HashMap var3 = this.this$0.method16804();
@@ -32,7 +32,7 @@ public class class545 implements Runnable {
 							if (!var4.hasNext()) {
 								Iterator var8 = this.this$0.field10693.iterator();
 								while (var8.hasNext()) {
-									class544 var9 = (class544) var8.next();
+									PcmPlayer var9 = (PcmPlayer) var8.next();
 									var9.method8647();
 								}
 								PreciseSleep.sleep(6L);

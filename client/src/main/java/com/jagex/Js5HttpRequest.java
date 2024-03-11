@@ -27,7 +27,7 @@ public class Js5HttpRequest extends Js5Request {
 	public byte[] method19444() {
 		if (this.field12562.isDone()) {
 			try {
-				return ((class441) this.field12562.get()).method6872();
+				return ((Js5HTTPClientResponse) this.field12562.get()).method6872();
 			} catch (InterruptedException var3) {
 				var3.printStackTrace();
 			} catch (ExecutionException var4) {

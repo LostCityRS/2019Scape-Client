@@ -80,7 +80,7 @@ public abstract class PrimaryLayerEntity extends GraphEntity {
 							if (var12 <= 0) {
 								continue label126;
 							}
-							class554 var13 = this.field11716.field6926[var12 - 1];
+							StaticPointLight var13 = this.field11716.field6926[var12 - 1];
 							for (int var14 = 0; var14 < this.field12466; var14++) {
 								if (this.field12473[var14] == var13.field7003) {
 									var10 += 16L;
@@ -133,7 +133,7 @@ public abstract class PrimaryLayerEntity extends GraphEntity {
 				label92: for (int var22 = 0; var22 < this.field12466; var22++) {
 					long var23 = this.field11716.field6954[this.field11717][var18][var19];
 					while (var23 != 0L) {
-						class554 var25 = this.field11716.field6926[(int) ((var23 & 0xFFFFL) - 1L)];
+						StaticPointLight var25 = this.field11716.field6926[(int) ((var23 & 0xFFFFL) - 1L)];
 						var23 >>>= 0x10;
 						if (this.field12473[var22] == var25.field7003) {
 							continue label92;
@@ -141,7 +141,7 @@ public abstract class PrimaryLayerEntity extends GraphEntity {
 					}
 					long var26 = this.field11716.field6954[this.field11717][var20][var21];
 					while (var26 != 0L) {
-						class554 var28 = this.field11716.field6926[(int) ((var26 & 0xFFFFL) - 1L)];
+						StaticPointLight var28 = this.field11716.field6926[(int) ((var26 & 0xFFFFL) - 1L)];
 						var26 >>>= 0x10;
 						if (this.field12473[var22] == var28.field7003) {
 							continue label92;

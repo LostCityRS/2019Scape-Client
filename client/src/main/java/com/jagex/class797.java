@@ -25,7 +25,7 @@ public class class797 {
 			this.field9209 = -1;
 		} else {
 			int var6 = var4.g1();
-			class319[] var7 = class319.method4482();
+			LoadingScreenElementType[] var7 = LoadingScreenElementType.method4482();
 			boolean var8 = true;
 			if (var7.length == var6) {
 				for (int var9 = 0; var9 < var7.length; var9++) {

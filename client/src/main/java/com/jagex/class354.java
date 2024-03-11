@@ -131,7 +131,7 @@ public class class354 {
 				} else {
 					var1.field2992 = var24;
 					var1.method5047();
-					this.field3389.method16078(this.field3392, class357.field3403, var26 * 4, var25 * 4, var26 * 6, var25 * 2);
+					this.field3389.method16078(this.field3392, PrimitiveType.field3403, var26 * 4, var25 * 4, var26 * 6, var25 * 2);
 					var24 = this.field3382[var27];
 					var25 = 1;
 					var26 = var27 - var5;
@@ -139,7 +139,7 @@ public class class354 {
 			}
 			var1.field2992 = var24;
 			var1.method5047();
-			this.field3389.method16078(this.field3392, class357.field3403, var26 * 4, var25 * 4, var26 * 6, var25 * 2);
+			this.field3389.method16078(this.field3392, PrimitiveType.field3403, var26 * 4, var25 * 4, var26 * 6, var25 * 2);
 			var5 += this.field3384;
 		}
 		this.field3385 = 0;

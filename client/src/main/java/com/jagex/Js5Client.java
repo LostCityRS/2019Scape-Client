@@ -75,7 +75,7 @@ public class Js5Client {
 		} else {
 			for (int var2 = 0; var2 < this.field4379.length; var2++) {
 				if (this.field4379[var2] != null) {
-					class438 var3 = this.field4376.field4480[var2];
+					Js5MasterIndexArchiveData var3 = this.field4376.field4480[var2];
 					this.field4379[var2].method16821(var3.field4383, var3.field4382, var3.field4380, var3.field4381);
 					if (this.field4379[var2].method16830()) {
 						this.field4379[var2].method16832(false);
@@ -99,11 +99,11 @@ public class Js5Client {
 		} else if (arg0 < 0 || arg0 >= this.field4379.length) {
 			throw new RuntimeException();
 		} else if (this.field4379[arg0] == null) {
-			class438 var6 = this.field4376.field4480[arg0];
+			Js5MasterIndexArchiveData var6 = this.field4376.field4480[arg0];
 			Js5NetResourceProvider var7 = new Js5NetResourceProvider(arg0, arg1, arg2, this.field4371, arg4 ? this.field4372 : null, this.field4369, var6.field4383, var6.field4382, var6.field4380, arg3, var6.field4381);
 			this.field4379[arg0] = var7;
 			if (this.field4377 != null && arg4) {
-				class438 var8 = this.field4377.field4480[arg0];
+				Js5MasterIndexArchiveData var8 = this.field4377.field4480[arg0];
 				this.field4379[arg0].method16832(this.field4379[arg0].method16822(var8.field4383, var8.field4382, var8.field4380, var8.field4381));
 			}
 			return var7;
@@ -138,7 +138,7 @@ public class Js5Client {
 					this.field4377 = new Js5MasterIndex(new Packet(var3), this.field4370, this.field4373);
 					for (int var4 = 0; var4 < this.field4379.length; var4++) {
 						if (this.field4379[var4] != null && this.field4379[var4].method16830()) {
-							class438 var5 = this.field4377.field4480[var4];
+							Js5MasterIndexArchiveData var5 = this.field4377.field4480[var4];
 							this.field4379[var4].method16832(this.field4379[var4].method16822(var5.field4383, var5.field4382, var5.field4380, var5.field4381));
 						}
 					}

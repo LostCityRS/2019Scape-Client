@@ -9,7 +9,7 @@ public class LZMALiteralDecoder {
 	public final LZMADecoder this$0;
 
 	@ObfuscatedName("sj.e")
-	public class522[] field6718;
+	public LZMADecoder2[] field6718;
 
 	@ObfuscatedName("sj.n")
 	public int field6716;
@@ -33,9 +33,9 @@ public class LZMALiteralDecoder {
 		this.field6715 = (0x1 << arg0) - 1;
 		this.field6716 = arg1;
 		int var3 = 0x1 << this.field6717 + this.field6716;
-		this.field6718 = new class522[var3];
+		this.field6718 = new LZMADecoder2[var3];
 		for (int var4 = 0; var4 < var3; var4++) {
-			this.field6718[var4] = new class522(this);
+			this.field6718[var4] = new LZMADecoder2(this);
 		}
 	}
 
@@ -48,7 +48,7 @@ public class LZMALiteralDecoder {
 	}
 
 	@ObfuscatedName("sj.m(IBI)Lsa;")
-	public class522 method8347(int arg0, byte arg1) {
+	public LZMADecoder2 method8347(int arg0, byte arg1) {
 		return this.field6718[((arg1 & 0xFF) >>> 8 - this.field6716) + ((arg0 & this.field6715) << this.field6716)];
 	}
 }

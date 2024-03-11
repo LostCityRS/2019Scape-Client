@@ -690,8 +690,8 @@ public final class Matrix4x4 {
 			var13[2] = 0.0F;
 			var12[1] = 0.0F;
 		} else {
-			float var7 = class418.field4273[arg0 & 0x3FFF];
-			float var8 = class418.field4274[arg0 & 0x3FFF];
+			float var7 = Trig2.field4273[arg0 & 0x3FFF];
+			float var8 = Trig2.field4274[arg0 & 0x3FFF];
 			this.field4315[0] = (float) arg1 * var7;
 			this.field4315[5] = (float) arg2 * var7;
 			this.field4315[1] = (float) arg1 * var8;

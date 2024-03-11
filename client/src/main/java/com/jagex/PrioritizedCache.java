@@ -35,7 +35,7 @@ public final class PrioritizedCache {
 	}
 
 	public PrioritizedCache(long arg0, int arg1, PrioritizedCacheMode arg2) {
-		this.field4631 = new class461(this);
+		this.field4631 = new PrioritizedCacheComparator(this);
 		this.field4632 = arg0;
 		this.field4633 = arg1;
 		this.field4627 = arg2;

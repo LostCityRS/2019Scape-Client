@@ -665,7 +665,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			} catch (Throwable var10) {
 			}
 		}
-		if (class500.method14526()) {
+		if (NativeLibraries.method14526()) {
 			Statics.method5134().method7909();
 		}
 		if (Statics.canvas != null) {

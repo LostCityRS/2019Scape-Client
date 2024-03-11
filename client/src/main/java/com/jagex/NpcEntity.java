@@ -129,7 +129,7 @@ public class NpcEntity extends PathingEntity {
 		ScaleRotTrans var3 = this.method10536();
 		Matrix4x3 var4 = arg0.method2209();
 		int var5 = this.field10395.method316();
-		class551 var6 = this.field11716.field6928[this.field11717][(int) var3.field4298.field4308 >> 9][(int) var3.field4298.field4313 >> 9];
+		Tile var6 = this.field11716.field6928[this.field11717][(int) var3.field4298.field4308 >> 9][(int) var3.field4298.field4313 >> 9];
 		if (var6 == null || var6.field6974 == null) {
 			this.field10408 = (int) ((float) this.field10408 - (float) this.field10408 / 10.0F);
 		} else {

@@ -102,7 +102,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 
 	@ObfuscatedName("cs.bz(III)I")
 	public static int method1575(int arg0, int arg1) {
-		return class601.field7551.field7562 == arg0 || class601.field7546.field7562 == arg0 ? field11160[arg1 & 0x3] : field11164[arg1 & 0x3];
+		return LocShape.field7551.field7562 == arg0 || LocShape.field7546.field7562 == arg0 ? field11160[arg1 & 0x3] : field11164[arg1 & 0x3];
 	}
 
 	@ObfuscatedName("ajg.bv(Ldh;II)Ldo;")

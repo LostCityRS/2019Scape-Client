@@ -77,7 +77,7 @@ public class Js5HttpClient {
 				Js5HttpRequest var12 = new Js5HttpRequest(arg2);
 				var12.field12342 = arg3;
 				this.field4467++;
-				Future var13 = this.field4469.submit(new class444(this, var10, var12));
+				Future var13 = this.field4469.submit(new Js5HTTPClient_Task(this, var10, var12));
 				var12.method19716(var13);
 				return var12;
 			}

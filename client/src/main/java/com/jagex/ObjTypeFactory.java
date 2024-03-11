@@ -18,7 +18,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 	public final WeightedCache field8612 = new WeightedCache(50);
 
 	@ObfuscatedName("abr.f")
-	public final class611 field8613 = new class611(250);
+	public final Cache2 field8613 = new Cache2(250);
 
 	@ObfuscatedName("abr.w")
 	public final IconCacheKey field8609 = new IconCacheKey();
@@ -127,7 +127,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 		synchronized (this.field8612) {
 			this.field8612.method2924();
 		}
-		class611 var3 = this.field8613;
+		Cache2 var3 = this.field8613;
 		synchronized (this.field8613) {
 			this.field8613.method9652();
 		}
@@ -135,7 +135,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 
 	@ObfuscatedName("abr.w(I)V")
 	public void method14621() {
-		class611 var1 = this.field8613;
+		Cache2 var1 = this.field8613;
 		synchronized (this.field8613) {
 			this.field8613.method9652();
 		}
@@ -147,7 +147,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 		synchronized (this.field8612) {
 			this.field8612.method2923(arg0);
 		}
-		class611 var4 = this.field8613;
+		Cache2 var4 = this.field8613;
 		synchronized (this.field8613) {
 			this.field8613.method9651(arg0);
 		}
@@ -159,7 +159,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 		synchronized (this.field8612) {
 			this.field8612.method2928();
 		}
-		class611 var3 = this.field8613;
+		Cache2 var3 = this.field8613;
 		synchronized (this.field8613) {
 			this.field8613.method9653();
 		}

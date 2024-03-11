@@ -350,7 +350,7 @@ public class MovingParticle extends Particle {
 		ParticleEmitterType var9 = this.field12526.field7772;
 		FloorModel[] var10 = arg0.field6913;
 		int var11 = var8.field7815;
-		class551 var12 = arg0.field6928[var8.field7815][var5][var6];
+		Tile var12 = arg0.field6928[var8.field7815][var5][var6];
 		if (var12 != null) {
 			var11 = var12.field6970;
 		}
@@ -387,10 +387,10 @@ public class MovingParticle extends Particle {
 		} else if (arg0.field6909 - 1 == var15 && var10[var15].method1529(var5, var6) - var7 > 0x8 << arg0.field6900) {
 			this.method19669();
 		} else {
-			class551 var16 = arg0.field6928[var15][var5][var6];
+			Tile var16 = arg0.field6928[var15][var5][var6];
 			if (var16 == null) {
 				if (var15 == 0 || arg0.field6928[0][var5][var6] == null) {
-					var16 = arg0.field6928[0][var5][var6] = new class551(0);
+					var16 = arg0.field6928[0][var5][var6] = new Tile(0);
 				}
 				boolean var17 = arg0.field6928[0][var5][var6].field6965 != null;
 				if (var15 == 3 && var17) {
@@ -398,7 +398,7 @@ public class MovingParticle extends Particle {
 				}
 				for (int var18 = 1; var18 <= var15; var18++) {
 					if (arg0.field6928[var18][var5][var6] == null) {
-						var16 = arg0.field6928[var18][var5][var6] = new class551(var18);
+						var16 = arg0.field6928[var18][var5][var6] = new Tile(var18);
 						if (var17) {
 							var16.field6970++;
 						}

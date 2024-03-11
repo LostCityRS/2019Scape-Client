@@ -17,7 +17,7 @@ public class PickableEntity {
 	public boolean field6977;
 
 	@ObfuscatedName("tl.k")
-	public class548 field6980;
+	public PickableEntityList field6980;
 
 	@ObfuscatedName("ahe.e(ZI)Ltl;")
 	public static PickableEntity method16749(boolean arg0) {

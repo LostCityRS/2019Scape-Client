@@ -14,10 +14,10 @@ public class FixedFunctionBatchedSpriteShader extends BatchedSpriteShader {
 		this.field2993.method15967(Matrix4x4.field4317, Matrix4x4.field4317, Matrix4x4.field4317);
 		this.field2993.method16038(0);
 		this.field2993.method16092(this.field2992);
-		this.field2993.method16041(0, class351.field3365);
-		this.field2993.method16042(0, class351.field3365);
-		this.field2993.method16041(1, class351.field3367);
-		this.field2993.method16042(1, class351.field3367);
-		this.field2993.method16115(class355.field3395, class355.field3395);
+		this.field2993.method16041(0, TextureCombiner.field3365);
+		this.field2993.method16042(0, TextureCombiner.field3365);
+		this.field2993.method16041(1, TextureCombiner.field3367);
+		this.field2993.method16042(1, TextureCombiner.field3367);
+		this.field2993.method16115(TextureCombineMode.field3395, TextureCombineMode.field3395);
 	}
 }

@@ -14,9 +14,9 @@ public class VarContainerSparse implements VarContainer {
 	public Map field8740;
 
 	@ObfuscatedName("abn.n")
-	public final class414 field8739;
+	public final DefaultVarValueProvider field8739;
 
-	public VarContainerSparse(class414 arg0) {
+	public VarContainerSparse(DefaultVarValueProvider arg0) {
 		this.field8739 = arg0;
 	}
 

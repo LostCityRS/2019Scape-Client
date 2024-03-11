@@ -137,8 +137,8 @@ public class Matrix4x3 {
 			this.field4280 = arg5;
 			return;
 		}
-		float var7 = class418.field4273[arg0 & 0x3FFF];
-		float var8 = class418.field4274[arg0 & 0x3FFF];
+		float var7 = Trig2.field4273[arg0 & 0x3FFF];
+		float var8 = Trig2.field4274[arg0 & 0x3FFF];
 		this.field4284 = 1.0F;
 		this.field4283 = 0.0F;
 		this.field4275 = 0.0F;

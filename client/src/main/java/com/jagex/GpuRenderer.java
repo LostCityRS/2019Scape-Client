@@ -306,16 +306,16 @@ public abstract class GpuRenderer extends Renderer {
 	public class352[] field10135;
 
 	@ObfuscatedName("afc.ev")
-	public class355[] field10136;
+	public TextureCombineMode[] field10136;
 
 	@ObfuscatedName("afc.ec")
-	public class355[] field10137;
+	public TextureCombineMode[] field10137;
 
 	@ObfuscatedName("afc.ek")
 	public int field10160;
 
 	@ObfuscatedName("afc.em")
-	public final class335 field10188;
+	public final MaterialTextureProvider field10188;
 
 	@ObfuscatedName("afc.eh")
 	public GpuTexture field10140;
@@ -363,7 +363,7 @@ public abstract class GpuRenderer extends Renderer {
 	public class1138 field10175;
 
 	@ObfuscatedName("afc.fz")
-	public class334 field10155;
+	public PostProcessManager field10155;
 
 	@ObfuscatedName("afc.fi")
 	public final PostProcessEffect[] field10080 = new PostProcessEffect[4];
@@ -411,7 +411,7 @@ public abstract class GpuRenderer extends Renderer {
 	public int field10174 = -1;
 
 	@ObfuscatedName("afc.fk")
-	public class350 field10211 = class350.field3364;
+	public BlendMode field10211 = BlendMode.field3364;
 
 	@ObfuscatedName("afc.fh")
 	public boolean field10176 = true;
@@ -438,7 +438,7 @@ public abstract class GpuRenderer extends Renderer {
 	public boolean field10183 = false;
 
 	@ObfuscatedName("afc.gy")
-	public class344 field10198;
+	public GpuParticleRenderer field10198;
 
 	@ObfuscatedName("afc.ga")
 	public int field10185;
@@ -605,7 +605,7 @@ public abstract class GpuRenderer extends Renderer {
 			if (this.field1596 == null) {
 				this.field10188 = null;
 			} else {
-				this.field10188 = new class335(this, this.field1596);
+				this.field10188 = new MaterialTextureProvider(this, this.field1596);
 			}
 			if (this.field10185 == 0) {
 				this.field10043 = Statics.field8151;
@@ -635,11 +635,11 @@ public abstract class GpuRenderer extends Renderer {
 		this.field10093 = new BaseTexture[this.field10186];
 		this.field10162 = new Matrix4x4[this.field10186];
 		this.field10135 = new class352[this.field10186];
-		this.field10136 = new class355[this.field10186];
-		this.field10137 = new class355[this.field10186];
+		this.field10136 = new TextureCombineMode[this.field10186];
+		this.field10137 = new TextureCombineMode[this.field10186];
 		for (int var1 = 0; var1 < this.field10186; var1++) {
-			this.field10137[var1] = class355.field3395;
-			this.field10136[var1] = class355.field3395;
+			this.field10137[var1] = TextureCombineMode.field3395;
+			this.field10136[var1] = TextureCombineMode.field3395;
 			this.field10135[var1] = class352.field3372;
 			this.field10162[var1] = new Matrix4x4();
 		}
@@ -700,7 +700,7 @@ public abstract class GpuRenderer extends Renderer {
 				var2 = this.field1614.method1627();
 				var3 = this.field1614.method1628();
 			}
-			this.field10155 = new class334(this, var2, var3);
+			this.field10155 = new PostProcessManager(this, var2, var3);
 			this.field10080[3] = new ColourGradingBloomEffect(this);
 			this.field10080[1] = new LevelsFilter(this);
 			this.field10080[2] = new ColourRemappingFilter(this);
@@ -797,7 +797,7 @@ public abstract class GpuRenderer extends Renderer {
 				}
 			}
 		}
-		this.field10198 = new class344(this);
+		this.field10198 = new GpuParticleRenderer(this);
 		this.method15974();
 		this.method16125();
 		this.method15976();
@@ -1933,24 +1933,24 @@ public abstract class GpuRenderer extends Renderer {
 	public final void method15991(int arg0) {
 		switch(arg0) {
 			case 0:
-				this.method16115(class355.field3395, class355.field3395);
+				this.method16115(TextureCombineMode.field3395, TextureCombineMode.field3395);
 				break;
 			case 1:
-				this.method16115(class355.field3396, class355.field3396);
+				this.method16115(TextureCombineMode.field3396, TextureCombineMode.field3396);
 				break;
 			case 2:
-				this.method16115(class355.field3399, class355.field3396);
+				this.method16115(TextureCombineMode.field3399, TextureCombineMode.field3396);
 				break;
 			case 3:
-				this.method16115(class355.field3397, class355.field3395);
+				this.method16115(TextureCombineMode.field3397, TextureCombineMode.field3395);
 				break;
 			case 4:
-				this.method16115(class355.field3398, class355.field3398);
+				this.method16115(TextureCombineMode.field3398, TextureCombineMode.field3398);
 		}
 	}
 
 	@ObfuscatedName("afc.us(Lmk;Lmk;)V")
-	public final void method16115(class355 arg0, class355 arg1) {
+	public final void method16115(TextureCombineMode arg0, TextureCombineMode arg1) {
 		boolean var3 = false;
 		if (this.field10136[this.field10177] != arg0) {
 			this.field10136[this.field10177] = arg0;
@@ -1968,12 +1968,12 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.ux(ILmn;)V")
-	public final void method16041(int arg0, class351 arg1) {
+	public final void method16041(int arg0, TextureCombiner arg1) {
 		this.method16031(arg0, arg1, false, false);
 	}
 
 	@ObfuscatedName("afc.uu(ILmn;)V")
-	public final void method16042(int arg0, class351 arg1) {
+	public final void method16042(int arg0, TextureCombiner arg1) {
 		this.method16043(arg0, arg1, false);
 	}
 
@@ -2050,27 +2050,27 @@ public abstract class GpuRenderer extends Renderer {
 		if (this.field10096 == arg0) {
 			return;
 		}
-		class350 var2;
+		BlendMode var2;
 		boolean var3;
 		boolean var4;
 		if (arg0 == 1) {
-			var2 = class350.field3364;
+			var2 = BlendMode.field3364;
 			var3 = true;
 			var4 = true;
 		} else if (arg0 == 2) {
-			var2 = class350.field3363;
+			var2 = BlendMode.field3363;
 			var3 = false;
 			var4 = true;
 		} else if (arg0 == 128) {
-			var2 = class350.field3362;
+			var2 = BlendMode.field3362;
 			var3 = true;
 			var4 = true;
 		} else if (arg0 == 3) {
-			var2 = class350.field3361;
+			var2 = BlendMode.field3361;
 			var3 = true;
 			var4 = false;
 		} else {
-			var2 = class350.field3361;
+			var2 = BlendMode.field3361;
 			var3 = false;
 			var4 = false;
 		}
@@ -2327,16 +2327,16 @@ public abstract class GpuRenderer extends Renderer {
 	public final void method16074() {
 		this.method16120(0, this.field10196);
 		this.method16177(this.field10150);
-		this.method16077(class357.field3406, 0, 1);
+		this.method16077(PrimitiveType.field3406, 0, 1);
 	}
 
 	@ObfuscatedName("afc.wu()V")
 	public final void method16075() {
-		this.method16076(class357.field3404, 2);
+		this.method16076(PrimitiveType.field3404, 2);
 	}
 
 	@ObfuscatedName("afc.wk(Lms;I)V")
-	public final void method16076(class357 arg0, int arg1) {
+	public final void method16076(PrimitiveType arg0, int arg1) {
 		this.method16120(0, this.field10197);
 		this.method16177(this.field10055);
 		this.method16077(arg0, 0, arg1);
@@ -2443,7 +2443,7 @@ public abstract class GpuRenderer extends Renderer {
 	public abstract GpuTexture method16030(TextureFormat arg0, DataType arg1, int arg2, int arg3);
 
 	@ObfuscatedName("afc.ur(ILmn;ZZ)V")
-	public abstract void method16031(int arg0, class351 arg1, boolean arg2, boolean arg3);
+	public abstract void method16031(int arg0, TextureCombiner arg1, boolean arg2, boolean arg3);
 
 	@ObfuscatedName("afc.ub(Lck;IIZ[FII)Llz;")
 	public abstract GpuTexture method16032(TextureFormat arg0, int arg1, int arg2, boolean arg3, float[] arg4, int arg5, int arg6);
@@ -2455,7 +2455,7 @@ public abstract class GpuRenderer extends Renderer {
 	public abstract GpuCubeTexture method16034(int arg0, boolean arg1, int[][] arg2);
 
 	@ObfuscatedName("afc.uo(ILmn;Z)V")
-	public abstract void method16043(int arg0, class351 arg1, boolean arg2);
+	public abstract void method16043(int arg0, TextureCombiner arg1, boolean arg2);
 
 	@ObfuscatedName("afc.vr()V")
 	public abstract void method16049();
@@ -2485,13 +2485,13 @@ public abstract class GpuRenderer extends Renderer {
 	public abstract IndexBuffer method16067(boolean arg0);
 
 	@ObfuscatedName("afc.wz(Lms;II)V")
-	public abstract void method16077(class357 arg0, int arg1, int arg2);
+	public abstract void method16077(PrimitiveType arg0, int arg1, int arg2);
 
 	@ObfuscatedName("afc.wj(Lml;Lms;IIII)V")
-	public abstract void method16078(IndexBuffer arg0, class357 arg1, int arg2, int arg3, int arg4, int arg5);
+	public abstract void method16078(IndexBuffer arg0, PrimitiveType arg1, int arg2, int arg3, int arg4, int arg5);
 
 	@ObfuscatedName("afc.we(Lms;IIII)V")
-	public abstract void method16079(class357 arg0, int arg1, int arg2, int arg3, int arg4);
+	public abstract void method16079(PrimitiveType arg0, int arg1, int arg2, int arg3, int arg4);
 
 	@ObfuscatedName("afc.wp(I)V")
 	public abstract void method16081(int arg0);

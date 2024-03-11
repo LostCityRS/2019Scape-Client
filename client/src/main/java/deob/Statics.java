@@ -844,7 +844,7 @@ public class Statics {
 	public static int field507;
 
 	@ObfuscatedName("rb.e")
-	public static class499 field5077;
+	public static NativeLibraryLoader field5077;
 
 	@ObfuscatedName("l.w")
 	public static int field508;
@@ -1931,7 +1931,7 @@ public class Statics {
 	}
 
 	@ObfuscatedName("ke.n(I)Lrn;")
-	public static class499 method5134() {
+	public static NativeLibraryLoader method5134() {
 		if (field5077 == null) {
 			throw new IllegalStateException("");
 		}
@@ -2103,7 +2103,7 @@ public class Statics {
 
 	@ObfuscatedName("pd.bz(III)B")
 	public static byte method6824(int arg0, int arg1) {
-		if (class601.field7547.field7562 == arg0) {
+		if (LocShape.field7547.field7562 == arg0) {
 			return (byte) ((arg1 & 0x1) == 0 ? 1 : 2);
 		} else {
 			return 0;
@@ -2136,7 +2136,7 @@ public class Statics {
 
 	@ObfuscatedName("sg.m(II)Z")
 	public static boolean method8381(int arg0) {
-		return arg0 >= class601.field7554.field7562 && arg0 <= class601.field7546.field7562 || class601.field7547.field7562 == arg0;
+		return arg0 >= LocShape.field7554.field7562 && arg0 <= LocShape.field7546.field7562 || LocShape.field7547.field7562 == arg0;
 	}
 
 	@ObfuscatedName("eq.e(Lalw;B)Llv;")
@@ -2309,7 +2309,7 @@ public class Statics {
 
 	@ObfuscatedName("zg.bz(III)B")
 	public static byte method14062(int arg0, int arg1) {
-		if (class601.field7547.field7562 == arg0) {
+		if (LocShape.field7547.field7562 == arg0) {
 			return (byte) ((arg1 & 0x1) == 0 ? 1 : 2);
 		} else {
 			return 0;
@@ -2828,7 +2828,7 @@ public class Statics {
 	@ObfuscatedName("qi.ai([BB)[B")
 	public static final byte[] method7275(byte[] arg0) {
 		Packet var1 = new Packet(arg0);
-		class449 var2 = new class449(var1);
+		Js5GroupHeader var2 = new Js5GroupHeader(var1);
 		CompressionType var3 = var2.method7080();
 		int var4 = var2.method7081();
 		if (var4 < 0 || Js5.field4419 != 0 && var4 > Js5.field4419) {

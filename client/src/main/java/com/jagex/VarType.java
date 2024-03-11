@@ -51,7 +51,7 @@ public abstract class VarType implements VarConfigType {
 						arg0.gjstr2();
 						break;
 					case 3:
-						SerializableEnums.decode(class456.method5925(), arg0.g1());
+						SerializableEnums.decode(VarTransmitLevel.method5925(), arg0.g1());
 						break;
 					case 4:
 					default:

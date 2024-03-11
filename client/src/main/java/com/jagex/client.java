@@ -5414,7 +5414,7 @@ public final class client extends GameShell {
 	}
 
 	@ObfuscatedName("rw.hy([[[Ltk;IIIZI)Z")
-	public static final boolean method7472(class551[][][] arg0, int arg1, int arg2, int arg3, boolean arg4) {
+	public static final boolean method7472(Tile[][][] arg0, int arg1, int arg2, int arg3, boolean arg4) {
 		byte[][][] var5 = world.method7742();
 		byte var6 = arg4 ? 1 : (byte) (field10916 & 0xFF);
 		if (var5[Statics.field4826][arg2][arg3] == var6) {
@@ -5464,7 +5464,7 @@ public final class client extends GameShell {
 									}
 								}
 							}
-							class551 var21 = arg0[var17][var10][var13];
+							Tile var21 = arg0[var17][var10][var13];
 							if (var21.field6964 != null) {
 								for (PrimaryLayerEntityList var22 = var21.field6964; var22 != null; var22 = var22.field7058) {
 									PrimaryLayerEntity var23 = var22.field7057;
@@ -5483,7 +5483,7 @@ public final class client extends GameShell {
 								}
 							}
 						}
-						class551 var28 = arg0[var17][var10][var13];
+						Tile var28 = arg0[var17][var10][var13];
 						if (var28 != null && var28.field6964 != null) {
 							for (PrimaryLayerEntityList var29 = var28.field6964; var29 != null; var29 = var29.field7058) {
 								PrimaryLayerEntity var30 = var29.field7057;
@@ -5948,7 +5948,7 @@ public final class client extends GameShell {
 
 	@ObfuscatedName("agd.hv(IIII)Lahm;")
 	public static PathingEntity method16448(int arg0, int arg1, int arg2) {
-		class551 var3 = world.method7743().field6928[arg0][arg1][arg2];
+		Tile var3 = world.method7743().field6928[arg0][arg1][arg2];
 		if (var3 == null) {
 			return null;
 		}
@@ -9924,8 +9924,8 @@ public final class client extends GameShell {
 			int var145 = (var143 & 0x7) + Statics.field10546;
 			LocPositionAdjustment var146 = new LocPositionAdjustment(var1, var142, false);
 			int var147 = field10914[var146.field7541];
-			if (class601.field7564.field7562 == var146.field7541) {
-				var146.field7541 = class601.field7563.field7562;
+			if (LocShape.field7564.field7562 == var146.field7541) {
+				var146.field7541 = LocShape.field7563.field7562;
 			}
 			if ((var140 & 0x1) == 1) {
 				ChangeLocationRequest.method6816(Statics.field10260, var144, var145, var147, var141, var146.field7541, null);
@@ -9954,7 +9954,7 @@ public final class client extends GameShell {
 						var154[var156] = (short) var1.g2();
 					}
 				}
-				ChangeLocationRequest.method6816(Statics.field10260, var144, var145, var147, var141, var146.field7541, new class597(ChangeLocationRequest.field11243, var148, var151, var154));
+				ChangeLocationRequest.method6816(Statics.field10260, var144, var145, var147, var141, var146.field7541, new LocTypeCustomisation(ChangeLocationRequest.field11243, var148, var151, var154));
 				ChangeLocationRequest.field11243++;
 			}
 		} else if (ZoneProt.field3613 == arg0) {

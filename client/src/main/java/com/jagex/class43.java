@@ -25,12 +25,12 @@ public class class43 {
 	}
 
 	@ObfuscatedName("fw.n([[[Ltk;I)V")
-	public static void method3097(class551[][][] arg0) {
+	public static void method3097(Tile[][][] arg0) {
 		for (int var1 = 0; var1 < arg0.length; var1++) {
-			class551[][] var2 = arg0[var1];
+			Tile[][] var2 = arg0[var1];
 			for (int var3 = 0; var3 < var2.length; var3++) {
 				for (int var4 = 0; var4 < var2[var3].length; var4++) {
-					class551 var5 = var2[var3][var4];
+					Tile var5 = var2[var3][var4];
 					if (var5 != null) {
 						if (var5.field6974 instanceof Location) {
 							((Location) var5.field6974).method8205();

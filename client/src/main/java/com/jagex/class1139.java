@@ -175,7 +175,7 @@ public class class1139 extends class916 {
 		this.field10587.method4246(this.field12139, this.field12140);
 		this.field10587.method4171(this.field12151, this.field12124);
 		this.field10587.method4246(this.field12149, this.field12144);
-		this.field3233.method16079(class357.field3403, this.field12145, this.field12146, this.field12120, this.field12148);
+		this.field3233.method16079(PrimitiveType.field3403, this.field12145, this.field12146, this.field12120, this.field12148);
 	}
 
 	@ObfuscatedName("aqe.bk(I)V")

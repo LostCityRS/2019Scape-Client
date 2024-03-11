@@ -288,7 +288,7 @@ public class Loading {
 		}
 		if (Statics.field3419 == LoadingStage.field2910 && Statics.field10577 == null) {
 			Statics.field10577 = new HardwarePlatformLoader(Statics.field7060);
-			class500.method14694(Statics.field10577);
+			NativeLibraries.method14694(Statics.field10577);
 		}
 		if (Statics.field3419 == LoadingStage.field2902) {
 			int var18 = LoadableResourceManager.method5140();

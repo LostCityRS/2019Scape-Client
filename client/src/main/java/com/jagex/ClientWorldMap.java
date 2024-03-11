@@ -180,7 +180,7 @@ public class ClientWorldMap extends WorldMap {
 				Statics.field6804 = 8.0F;
 			}
 			Statics.field6840 = (int) Statics.field6804 >> 1;
-			Statics.field6799 = class537.method18477(Statics.field6840);
+			Statics.field6799 = WorldMapTileShapes.method18477(Statics.field6840);
 			method4643();
 			method8619();
 			Statics.field11253 = new IterableQueue();
@@ -719,7 +719,7 @@ public class ClientWorldMap extends WorldMap {
 			}
 			method4643();
 			Statics.field6840 = (int) Statics.field6804 >> 1;
-			Statics.field6799 = class537.method18477(Statics.field6840);
+			Statics.field6799 = WorldMapTileShapes.method18477(Statics.field6840);
 		} else if (Statics.field6803 > Statics.field6804) {
 			Statics.field6803 = (float) ((double) Statics.field6803 - (double) Statics.field6803 / 30.0D);
 			if (Statics.field6803 < Statics.field6804) {
@@ -727,7 +727,7 @@ public class ClientWorldMap extends WorldMap {
 			}
 			method4643();
 			Statics.field6840 = (int) Statics.field6804 >> 1;
-			Statics.field6799 = class537.method18477(Statics.field6840);
+			Statics.field6799 = WorldMapTileShapes.method18477(Statics.field6840);
 		}
 		if (field11665 != -1 && field11653 != -1) {
 			int var2 = field11665 - Statics.field11443;

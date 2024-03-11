@@ -903,7 +903,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.ur(ILmn;ZZ)V")
-	public final void method16031(int arg0, class351 arg1, boolean arg2, boolean arg3) {
+	public final void method16031(int arg0, TextureCombiner arg1, boolean arg2, boolean arg3) {
 		OpenGL.glTexEnvi(8960, arg0 + 34176, method19082(arg1));
 		if (arg2) {
 			OpenGL.glTexEnvi(8960, arg0 + 34192, arg3 ? 771 : 770);
@@ -913,7 +913,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.uo(ILmn;Z)V")
-	public final void method16043(int arg0, class351 arg1, boolean arg2) {
+	public final void method16043(int arg0, TextureCombiner arg1, boolean arg2) {
 		OpenGL.glTexEnvi(8960, arg0 + 34184, method19082(arg1));
 		OpenGL.glTexEnvi(8960, arg0 + 34200, arg2 ? 771 : 770);
 	}
@@ -928,16 +928,16 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.ahx(Lmk;)I")
-	public static final int method19066(class355 arg0) {
-		if (class355.field3396 == arg0) {
+	public static final int method19066(TextureCombineMode arg0) {
+		if (TextureCombineMode.field3396 == arg0) {
 			return 7681;
-		} else if (class355.field3395 == arg0) {
+		} else if (TextureCombineMode.field3395 == arg0) {
 			return 8448;
-		} else if (class355.field3399 == arg0) {
+		} else if (TextureCombineMode.field3399 == arg0) {
 			return 34165;
-		} else if (class355.field3397 == arg0) {
+		} else if (TextureCombineMode.field3397 == arg0) {
 			return 260;
-		} else if (class355.field3398 == arg0) {
+		} else if (TextureCombineMode.field3398 == arg0) {
 			return 34023;
 		} else {
 			throw new IllegalArgumentException();
@@ -945,14 +945,14 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.ahb(Lmn;)I")
-	public static final int method19082(class351 arg0) {
-		if (class351.field3365 == arg0) {
+	public static final int method19082(TextureCombiner arg0) {
+		if (TextureCombiner.field3365 == arg0) {
 			return 5890;
-		} else if (class351.field3367 == arg0) {
+		} else if (TextureCombiner.field3367 == arg0) {
 			return 34167;
-		} else if (class351.field3366 == arg0) {
+		} else if (TextureCombiner.field3366 == arg0) {
 			return 34168;
-		} else if (class351.field3368 == arg0) {
+		} else if (TextureCombiner.field3368 == arg0) {
 			return 34166;
 		} else {
 			throw new IllegalArgumentException();
@@ -1000,22 +1000,22 @@ public final class OpenGLRenderer extends GpuRenderer {
 				var1 = 0;
 				var2 = 1;
 			}
-			if (class350.field3364 == this.field10211) {
+			if (BlendMode.field3364 == this.field10211) {
 				OpenGL.glBlendFuncSeparate(770, 771, var1, var2);
-			} else if (class350.field3363 == this.field10211) {
+			} else if (BlendMode.field3363 == this.field10211) {
 				OpenGL.glBlendFuncSeparate(1, 1, var1, var2);
-			} else if (class350.field3362 == this.field10211) {
+			} else if (BlendMode.field3362 == this.field10211) {
 				OpenGL.glBlendFuncSeparate(774, 1, var1, var2);
-			} else if (class350.field3361 == this.field10211) {
+			} else if (BlendMode.field3361 == this.field10211) {
 				OpenGL.glBlendFuncSeparate(1, 0, var1, var2);
 			}
-		} else if (class350.field3364 == this.field10211) {
+		} else if (BlendMode.field3364 == this.field10211) {
 			OpenGL.glEnable(3042);
 			OpenGL.glBlendFunc(770, 771);
-		} else if (class350.field3363 == this.field10211) {
+		} else if (BlendMode.field3363 == this.field10211) {
 			OpenGL.glEnable(3042);
 			OpenGL.glBlendFunc(1, 1);
-		} else if (class350.field3362 == this.field10211) {
+		} else if (BlendMode.field3362 == this.field10211) {
 			OpenGL.glEnable(3042);
 			OpenGL.glBlendFunc(774, 1);
 		} else {
@@ -1200,22 +1200,22 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.wz(Lms;II)V")
-	public final void method16077(class357 arg0, int arg1, int arg2) {
+	public final void method16077(PrimitiveType arg0, int arg1, int arg2) {
 		byte var4;
 		int var5;
-		if (class357.field3406 == arg0) {
+		if (PrimitiveType.field3406 == arg0) {
 			var4 = 1;
 			var5 = arg2 * 2;
-		} else if (class357.field3400 == arg0) {
+		} else if (PrimitiveType.field3400 == arg0) {
 			var4 = 3;
 			var5 = arg2 + 1;
-		} else if (class357.field3403 == arg0) {
+		} else if (PrimitiveType.field3403 == arg0) {
 			var4 = 4;
 			var5 = arg2 * 3;
-		} else if (class357.field3404 == arg0) {
+		} else if (PrimitiveType.field3404 == arg0) {
 			var4 = 6;
 			var5 = arg2 + 2;
-		} else if (class357.field3405 == arg0) {
+		} else if (PrimitiveType.field3405 == arg0) {
 			var4 = 5;
 			var5 = arg2 + 2;
 		} else {
@@ -1226,22 +1226,22 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.wj(Lml;Lms;IIII)V")
-	public final void method16078(IndexBuffer arg0, class357 arg1, int arg2, int arg3, int arg4, int arg5) {
+	public final void method16078(IndexBuffer arg0, PrimitiveType arg1, int arg2, int arg3, int arg4, int arg5) {
 		byte var7;
 		int var8;
-		if (class357.field3406 == arg1) {
+		if (PrimitiveType.field3406 == arg1) {
 			var7 = 1;
 			var8 = arg5 * 2;
-		} else if (class357.field3400 == arg1) {
+		} else if (PrimitiveType.field3400 == arg1) {
 			var7 = 3;
 			var8 = arg5 + 1;
-		} else if (class357.field3403 == arg1) {
+		} else if (PrimitiveType.field3403 == arg1) {
 			var7 = 4;
 			var8 = arg5 * 3;
-		} else if (class357.field3404 == arg1) {
+		} else if (PrimitiveType.field3404 == arg1) {
 			var7 = 6;
 			var8 = arg5 + 2;
-		} else if (class357.field3405 == arg1) {
+		} else if (PrimitiveType.field3405 == arg1) {
 			var7 = 5;
 			var8 = arg5 + 2;
 		} else {
@@ -1255,22 +1255,22 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.we(Lms;IIII)V")
-	public final void method16079(class357 arg0, int arg1, int arg2, int arg3, int arg4) {
+	public final void method16079(PrimitiveType arg0, int arg1, int arg2, int arg3, int arg4) {
 		byte var6;
 		int var7;
-		if (class357.field3406 == arg0) {
+		if (PrimitiveType.field3406 == arg0) {
 			var6 = 1;
 			var7 = arg4 * 2;
-		} else if (class357.field3400 == arg0) {
+		} else if (PrimitiveType.field3400 == arg0) {
 			var6 = 3;
 			var7 = arg4 + 1;
-		} else if (class357.field3403 == arg0) {
+		} else if (PrimitiveType.field3403 == arg0) {
 			var6 = 4;
 			var7 = arg4 * 3;
-		} else if (class357.field3404 == arg0) {
+		} else if (PrimitiveType.field3404 == arg0) {
 			var6 = 6;
 			var7 = arg4 + 2;
-		} else if (class357.field3405 == arg0) {
+		} else if (PrimitiveType.field3405 == arg0) {
 			var6 = 5;
 			var7 = arg4 + 2;
 		} else {

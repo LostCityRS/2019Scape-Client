@@ -184,7 +184,7 @@ public class LZMADecoder {
 						}
 						break;
 					}
-					class522 var14 = this.field6698.method8347((int) var10, var12);
+					LZMADecoder2 var14 = this.field6698.method8347((int) var10, var12);
 					if (LZMABase.method4525(var5)) {
 						var12 = var14.method8335(this.field6689);
 					} else {

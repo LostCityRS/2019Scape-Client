@@ -130,6 +130,6 @@ public class class1138 extends class916 {
 		this.field10587.method4171(this.field12111, new Vector4(this.field12112[0], this.field12112[1], this.field12112[2], this.field12112[3]));
 		this.field10587.method4171(this.field12113, new Vector4(this.field12114[0], this.field12114[1], this.field12114[2], this.field12114[3]));
 		this.field10587.method4171(this.field12103, new Vector4(this.field12109, 0.0F, 0.0F, 0.0F));
-		this.field3233.method16079(class357.field3403, this.field12116, this.field12110, this.field12115, this.field12117);
+		this.field3233.method16079(PrimitiveType.field3403, this.field12116, this.field12110, this.field12115, this.field12117);
 	}
 }

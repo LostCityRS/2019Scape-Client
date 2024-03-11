@@ -50,7 +50,7 @@ public class DynamicWallDecorEntity extends WallDecorLayerEntity implements Loca
 	}
 
 	@ObfuscatedName("ajh.bz(Lvp;B)V")
-	public void method17425(class597 arg0) {
+	public void method17425(LocTypeCustomisation arg0) {
 		this.field11174.method8265(arg0);
 	}
 

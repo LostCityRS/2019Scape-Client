@@ -42,7 +42,7 @@ public class DynamicWallEntity extends WallLayerEntity implements Location {
 
 	@ObfuscatedName("xm.bz(III)I")
 	public static int method9908(int arg0, int arg1) {
-		return class601.field7551.field7562 == arg0 || class601.field7546.field7562 == arg0 ? field11182[arg1 & 0x3] : field11180[arg1 & 0x3];
+		return LocShape.field7551.field7562 == arg0 || LocShape.field7546.field7562 == arg0 ? field11182[arg1 & 0x3] : field11180[arg1 & 0x3];
 	}
 
 	@ObfuscatedName("ajj.fv(Ldh;B)Luq;")
@@ -61,7 +61,7 @@ public class DynamicWallEntity extends WallLayerEntity implements Location {
 	}
 
 	@ObfuscatedName("ajj.bv(Lvp;I)V")
-	public void method17429(class597 arg0) {
+	public void method17429(LocTypeCustomisation arg0) {
 		this.field11179.method8265(arg0);
 	}
 

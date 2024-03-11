@@ -337,7 +337,7 @@ public class WorldMap {
 						if (var35 != null) {
 							java.util.Iterator var36 = var35.values().iterator();
 							while (var36.hasNext()) {
-								class538 var37 = (class538) var36.next();
+								WorldMapUpperLevelTileData var37 = (WorldMapUpperLevelTileData) var36.next();
 								var32[(var34 * 64 + var37.field6769) * Statics.field6812 + var33 * 64 + var37.field6774] = (short) var37.field6770;
 							}
 						}
@@ -350,7 +350,7 @@ public class WorldMap {
 						if (var40 != null) {
 							java.util.Iterator var41 = var40.values().iterator();
 							while (var41.hasNext()) {
-								class538 var42 = (class538) var41.next();
+								WorldMapUpperLevelTileData var42 = (WorldMapUpperLevelTileData) var41.next();
 								int var43 = (var39 * 64 + var42.field6769) * Statics.field6812 + var38 * 64 + var42.field6774;
 								var42.field6770 = (Statics.field6813[var43] & 0xFF) << 16 | Statics.field6814[var43] & 0xFFFF;
 								if (var42.field6770 != 0) {
@@ -445,7 +445,7 @@ public class WorldMap {
 					Statics.field6830[var15 - 1][arg2 - (Statics.field6786 >> 6)][arg3 - (Statics.field6808 >> 6)] = new java.util.HashMap();
 				}
 				int var26 = ((arg4 & 0x3F) << 8) + (arg5 & 0x3F);
-				class538 var27 = new class538(arg4 & 0x3F, arg5 & 0x3F, var16, var17, var18, var23, var24);
+				WorldMapUpperLevelTileData var27 = new WorldMapUpperLevelTileData(arg4 & 0x3F, arg5 & 0x3F, var16, var17, var18, var23, var24);
 				Statics.field6830[var15 - 1][arg2 - (Statics.field6786 >> 6)][arg3 - (Statics.field6808 >> 6)].put(var26, var27);
 			}
 		}
@@ -504,12 +504,12 @@ public class WorldMap {
 					if (var17 != null) {
 						java.util.Iterator var18 = var17.values().iterator();
 						while (true) {
-							class538 var19;
+							WorldMapUpperLevelTileData var19;
 							do {
 								if (!var18.hasNext()) {
 									continue label89;
 								}
-								var19 = (class538) var18.next();
+								var19 = (WorldMapUpperLevelTileData) var18.next();
 							} while (var19.field6773 == null);
 							for (int var20 = 0; var20 < var19.field6773.length; var20++) {
 								LocType var21 = (LocType) Statics.field6785.get(var19.field6773[var20]);
@@ -860,7 +860,7 @@ public class WorldMap {
 					}
 					java.util.HashMap var52 = Statics.field6830[var40][var38][var39];
 					if (var52 != null) {
-						class538 var53 = (class538) var52.get((var43 << 8) + var49);
+						WorldMapUpperLevelTileData var53 = (WorldMapUpperLevelTileData) var52.get((var43 << 8) + var49);
 						if (var53 != null) {
 							method8612(Statics.field6838, var44, var45, var50, var51, arg2, var48, var53.field6770, var53.field6768, var53.field6772, var53.field6773, var53.field6771, false);
 						}
@@ -876,7 +876,7 @@ public class WorldMap {
 						int var59 = var58 & 0x3F;
 						java.util.HashMap var60 = Statics.field6830[var40][var38][var39];
 						if (var60 != null) {
-							class538 var61 = (class538) var60.get((var56 << 8) + var59);
+							WorldMapUpperLevelTileData var61 = (WorldMapUpperLevelTileData) var60.get((var56 << 8) + var59);
 							if (var61 != null) {
 								method8529(arg7, Statics.field6838, arg2, var54, var57, var61.field6773, var61.field6771);
 							}
@@ -931,7 +931,7 @@ public class WorldMap {
 				} else {
 					int var14 = arg12 ? 0 : 1;
 					int var15 = Statics.method16462(arg9 >> 6 & 0x3, var13);
-					int var16 = class537.method9049(var13);
+					int var16 = WorldMapTileShapes.method9049(var13);
 					method8585(arg0, arg1, arg2, arg3, arg4, arg5, arg5, arg7, Statics.field6854[arg8], Statics.field6799[var16 - 1][var15], Statics.field6840, var14);
 				}
 			}
@@ -943,7 +943,7 @@ public class WorldMap {
 		int var19 = arg4 - arg3 + 1;
 		for (int var20 = 0; var20 < arg10.length; var20++) {
 			int var21 = arg11[var20] & 0x3F;
-			if (class601.field7554.field7562 == var21 || class601.field7545.field7562 == var21 || class601.field7546.field7562 == var21 || class601.field7547.field7562 == var21) {
+			if (LocShape.field7554.field7562 == var21 || LocShape.field7545.field7562 == var21 || LocShape.field7546.field7562 == var21 || LocShape.field7547.field7562 == var21) {
 				LocType var22 = (LocType) Statics.field6785.get(arg10[var20]);
 				if (var22.field7486 == -1) {
 					int var23 = -3355444;
@@ -951,7 +951,7 @@ public class WorldMap {
 						var23 = -3407872;
 					}
 					int var24 = arg11[var20] >> 6 & 0x3;
-					if (class601.field7554.field7562 == var21) {
+					if (LocShape.field7554.field7562 == var21) {
 						if (var24 == 0) {
 							method8544(arg0, arg1, arg4, var19, arg5, var23);
 						} else if (var24 == 1) {
@@ -961,7 +961,7 @@ public class WorldMap {
 						} else {
 							method8543(arg0, arg1, arg3, var18, arg5, var23);
 						}
-					} else if (class601.field7545.field7562 == var21) {
+					} else if (LocShape.field7545.field7562 == var21) {
 						if (var24 == 0) {
 							method8544(arg0, arg1, arg4, var19, arg5, -1);
 							method8543(arg0, arg1, arg4, var18, arg5, var23);
@@ -975,7 +975,7 @@ public class WorldMap {
 							method8544(arg0, arg1, arg4, var19, arg5, -1);
 							method8543(arg0, arg1, arg3, var18, arg5, var23);
 						}
-					} else if (class601.field7546.field7562 == var21) {
+					} else if (LocShape.field7546.field7562 == var21) {
 						if (var24 == 0) {
 							method8543(arg0, arg1, arg4, 1, arg5, var23);
 						} else if (var24 == 1) {
@@ -985,7 +985,7 @@ public class WorldMap {
 						} else {
 							method8543(arg0, arg1, arg3, 1, arg5, var23);
 						}
-					} else if (class601.field7547.field7562 == var21) {
+					} else if (LocShape.field7547.field7562 == var21) {
 						if (var24 == 0 || var24 == 2) {
 							for (int var26 = 0; var26 < var19; var26++) {
 								method8543(arg0, arg1 + var26, arg3 + var26, 1, arg5, var23);

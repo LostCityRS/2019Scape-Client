@@ -257,7 +257,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 		this.field10458 = false;
 		this.field10462 = -1;
 		this.field10439 = -1;
-		this.field10415 = new class518(this);
+		this.field10415 = new PathingEntityVarDomain(this);
 		this.field10450 = new int[arg1];
 		this.field10448 = new int[arg1];
 		this.field10441 = new byte[arg1];
@@ -687,7 +687,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 		int var4 = (int) var3.field4298.field4308 >> 9;
 		int var5 = (int) var3.field4298.field4313 >> 9;
 		if (this.field11716 != null && var4 >= 1 && var5 >= 1 && var4 <= client.world.method7728() - 1 && var5 <= client.world.method7758() - 1) {
-			class551 var6 = this.field11716.field6928[this.field11717][var4][var5];
+			Tile var6 = this.field11716.field6928[this.field11717][var4][var5];
 			if (var6 != null && var6.field6974 != null) {
 				return var6.field6974.field12448 + var2;
 			}

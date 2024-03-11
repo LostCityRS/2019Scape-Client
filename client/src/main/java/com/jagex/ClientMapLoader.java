@@ -61,7 +61,7 @@ public class ClientMapLoader extends MapLoader {
 					int var9 = arg1.g1();
 					if (var9 > 0) {
 						for (int var10 = 0; var10 < var9; var10++) {
-							class554 var11 = new class554(arg0, this.field4577.field6900, arg1, 2);
+							StaticPointLight var11 = new StaticPointLight(arg0, this.field4577.field6900, arg1, 2);
 							if (var11.field7014 == 31) {
 								LightType var12 = (LightType) Statics.field7943.get(arg1.g2());
 								var11.method8899(var12.field9168, var12.field9170, var12.field9167, var12.field9169);
@@ -249,7 +249,7 @@ public class ClientMapLoader extends MapLoader {
 					int var16 = arg1.g1();
 					if (var16 > 0) {
 						for (int var17 = 0; var17 < var16; var17++) {
-							class554 var18 = new class554(arg0, this.field4577.field6900, arg1, 2);
+							StaticPointLight var18 = new StaticPointLight(arg0, this.field4577.field6900, arg1, 2);
 							if (var18.field7014 == 31) {
 								LightType var19 = (LightType) Statics.field7943.get(arg1.g2());
 								var18.method8899(var19.field9168, var19.field9170, var19.field9167, var19.field9169);
@@ -426,7 +426,7 @@ public class ClientMapLoader extends MapLoader {
 							} while (var19 >= arg5);
 						} while (var18 + var21 < 0);
 					} while (var19 + var22 < 0);
-				} while (class601.field7566.field7562 == var15.field7541 && Statics.field688.groundDecoration.method18489() == 0 && var20.field7470 == 0 && var20.field7467 != 1 && !var20.field7502);
+				} while (LocShape.field7566.field7562 == var15.field7541 && Statics.field688.groundDecoration.method18489() == 0 && var20.field7470 == 0 && var20.field7467 != 1 && !var20.field7502);
 				if (!var20.method9489(arg7)) {
 					arg6.field7958 = var10;
 					var8++;
@@ -498,7 +498,7 @@ public class ClientMapLoader extends MapLoader {
 							} while (var15 >= this.field4514);
 						} while (var19 <= 0);
 					} while (var20 <= 0);
-				} while (class601.field7563.field7562 != var13.field7541 && class601.field7564.field7562 != var13.field7541 && (var14 <= 0 || var15 <= 0 || var14 >= this.field4513 - 1 || var15 >= this.field4514 - 1));
+				} while (LocShape.field7563.field7562 != var13.field7541 && LocShape.field7564.field7562 != var13.field7541 && (var14 <= 0 || var15 <= 0 || var14 >= this.field4513 - 1 || var15 >= this.field4514 - 1));
 				this.method16867(arg0, var12, var12, var14, var15, var6, var13.field7540, var13.field7541, -1, 0, var13.field7539);
 			}
 		}
@@ -566,7 +566,7 @@ public class ClientMapLoader extends MapLoader {
 							} while (var23 >= this.field4514);
 						} while (var24 <= 0);
 					} while (var25 <= 0);
-				} while (class601.field7563.field7562 != var18.field7541 && class601.field7564.field7562 != var18.field7541 && (var22 <= 0 || var23 <= 0 || var22 >= this.field4513 - 1 || var23 >= this.field4514 - 1));
+				} while (LocShape.field7563.field7562 != var18.field7541 && LocShape.field7564.field7562 != var18.field7541 && (var22 <= 0 || var23 <= 0 || var22 >= this.field4513 - 1 || var23 >= this.field4514 - 1));
 				this.method16867(arg0, arg2, arg2, var22, var23, var11, var18.field7540 + arg8 & 0x3, var18.field7541, -1, 0, var18.field7539);
 			}
 		}
@@ -610,7 +610,7 @@ public class ClientMapLoader extends MapLoader {
 		}
 		FloorModel var19 = this.field4577.field6913[arg1];
 		int var20;
-		if (class601.field7563.field7562 == arg7 || class601.field7564.field7562 == arg7) {
+		if (LocShape.field7563.field7562 == arg7 || LocShape.field7564.field7562 == arg7) {
 			var20 = var19.method1530(var15, var17) + var19.method1530(var16, var17) + var19.method1530(var15, var18) + var19.method1530(var16, var18) >> 2;
 		} else {
 			var20 = var19.method1529(var15, var17) + var19.method1529(var16, var17) + var19.method1529(var15, var18) + var19.method1529(var16, var18) >> 2;
@@ -622,10 +622,10 @@ public class ClientMapLoader extends MapLoader {
 			PositionedSound.method9739(arg2, arg3, arg4, arg6, var12, null, null);
 		}
 		boolean var24 = arg8 == -1 && (!var12.method9504() || var12.field7479 && Statics.field688.unknown.method18665() == 0) && var12.field7505 == null && !var12.field7520 && !var12.field7524;
-		if (field10755 && (Statics.method8381(arg7) && var12.field7474 != 1 || !(!class601.method615(arg7) || var12.field7474 != 0))) {
+		if (field10755 && (Statics.method8381(arg7) && var12.field7474 != 1 || !(!LocShape.method615(arg7) || var12.field7474 != 0))) {
 			return;
 		}
-		if (class601.field7566.field7562 == arg7) {
+		if (LocShape.field7566.field7562 == arg7) {
 			if (Statics.field688.groundDecoration.method18489() != 0 || var12.field7470 != 0 || var12.field7467 == 1 || var12.field7502) {
 				GroundDecorLayerEntity var26;
 				if (var24) {
@@ -639,7 +639,7 @@ public class ClientMapLoader extends MapLoader {
 				}
 				this.field4577.method8717(arg2, arg3, arg4, var26);
 			}
-		} else if (class601.field7563.field7562 == arg7 || class601.field7564.field7562 == arg7) {
+		} else if (LocShape.field7563.field7562 == arg7 || LocShape.field7564.field7562 == arg7) {
 			StaticSceneryEntity var29 = null;
 			int var31;
 			PrimaryLayerEntity var32;
@@ -667,7 +667,7 @@ public class ClientMapLoader extends MapLoader {
 					}
 				}
 			}
-		} else if (class601.method615(arg7) || class601.method6788(arg7)) {
+		} else if (LocShape.method615(arg7) || LocShape.method6788(arg7)) {
 			PrimaryLayerEntity var28;
 			if (var24) {
 				StaticSceneryEntity var27 = new StaticSceneryEntity(this.field4577, arg0, this.field10765, var12, arg2, arg1, var21, var20, var22, this.field4549, arg3, arg3 + var13 - 1, arg4, arg4 + var14 - 1, arg7, arg6, var23, true, arg10);
@@ -679,7 +679,7 @@ public class ClientMapLoader extends MapLoader {
 				var28 = new DynamicSceneryEntity(this.field4577, arg0, this.field10765, var12, arg2, arg1, var21, var20, var22, this.field4549, arg3, arg3 + var13 - 1, arg4, arg4 + var14 - 1, arg7, arg6, arg8, arg9, true, arg10);
 			}
 			this.field4577.method8768(var28, false);
-			if (this.field4512 && !this.field4549 && class601.method615(arg7) && class601.field7552.field7562 != arg7 && arg2 > 0 && var12.field7474 != 0) {
+			if (this.field4512 && !this.field4549 && LocShape.method615(arg7) && LocShape.field7552.field7562 != arg7 && arg2 > 0 && var12.field7474 != 0) {
 				this.field4518[arg2][arg3][arg4] = (byte) (this.field4518[arg2][arg3][arg4] | 0x4);
 			}
 		} else if (!this.method16869(arg0, arg7, arg6, var24, var12, arg8, arg9, arg2, arg1, var21, var20, var22, arg3, arg4, var23, var19, var13, var14, arg10) && !this.method16870(arg0, arg7, arg6, var24, var12, arg8, arg9, arg2, arg1, var21, var20, var22, arg3, arg4, arg10)) {
@@ -689,7 +689,7 @@ public class ClientMapLoader extends MapLoader {
 
 	@ObfuscatedName("aih.cx(Ldh;IIZLvd;IIIIIIIIIZLcb;IILoe;I)Z")
 	public boolean method16869(Renderer arg0, int arg1, int arg2, boolean arg3, LocType arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, int arg12, int arg13, boolean arg14, FloorModel arg15, int arg16, int arg17, ScaleRotTrans arg18) {
-		if (class601.field7554.field7562 == arg1) {
+		if (LocShape.field7554.field7562 == arg1) {
 			int var20 = arg4.field7474;
 			if (field10754 && arg4.field7474 == -1) {
 				var20 = 1;
@@ -742,7 +742,7 @@ public class ClientMapLoader extends MapLoader {
 				this.field4577.method8765(arg7, arg12, arg13, arg4.field7480);
 			}
 			return true;
-		} else if (class601.field7551.field7562 == arg1) {
+		} else if (LocShape.field7551.field7562 == arg1) {
 			WallLayerEntity var24;
 			if (arg3) {
 				StaticWallEntity var23 = new StaticWallEntity(this.field4577, arg0, this.field10765, arg4, arg7, arg8, arg9, arg10, arg11, this.field4549, arg1, arg2, arg14, arg18);
@@ -766,7 +766,7 @@ public class ClientMapLoader extends MapLoader {
 				}
 			}
 			return true;
-		} else if (class601.field7545.field7562 == arg1) {
+		} else if (LocShape.field7545.field7562 == arg1) {
 			int var25 = arg2 + 1 & 0x3;
 			WallLayerEntity var28;
 			WallLayerEntity var29;
@@ -805,7 +805,7 @@ public class ClientMapLoader extends MapLoader {
 				this.field4577.method8765(arg7, arg12, arg13, arg4.field7480);
 			}
 			return true;
-		} else if (class601.field7546.field7562 == arg1) {
+		} else if (LocShape.field7546.field7562 == arg1) {
 			WallLayerEntity var31;
 			if (arg3) {
 				StaticWallEntity var30 = new StaticWallEntity(this.field4577, arg0, this.field10765, arg4, arg7, arg8, arg9, arg10, arg11, this.field4549, arg1, arg2, arg14, arg18);
@@ -829,7 +829,7 @@ public class ClientMapLoader extends MapLoader {
 				}
 			}
 			return true;
-		} else if (class601.field7547.field7562 == arg1) {
+		} else if (LocShape.field7547.field7562 == arg1) {
 			PrimaryLayerEntity var33;
 			if (arg3) {
 				StaticSceneryEntity var32 = new StaticSceneryEntity(this.field4577, arg0, this.field10765, arg4, arg7, arg8, arg9, arg10, arg11, this.field4549, arg12, arg12, arg13, arg13, arg1, arg2, arg14, true, arg18);
@@ -861,7 +861,7 @@ public class ClientMapLoader extends MapLoader {
 
 	@ObfuscatedName("aih.cw(Ldh;IIZLvd;IIIIIIIIILoe;B)Z")
 	public boolean method16870(Renderer arg0, int arg1, int arg2, boolean arg3, LocType arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, int arg12, int arg13, ScaleRotTrans arg14) {
-		if (class601.field7548.field7562 == arg1) {
+		if (LocShape.field7548.field7562 == arg1) {
 			WallDecorLayerEntity var17;
 			if (arg3) {
 				StaticWallDecorEntity var16 = new StaticWallDecorEntity(this.field4577, arg0, this.field10765, arg4, arg7, arg8, arg9, arg10, arg11, this.field4549, 0, 0, arg1, arg2, arg14);
@@ -874,7 +874,7 @@ public class ClientMapLoader extends MapLoader {
 			}
 			this.field4577.method8752(arg7, arg12, arg13, var17, null);
 			return true;
-		} else if (class601.field7549.field7562 == arg1) {
+		} else if (LocShape.field7549.field7562 == arg1) {
 			int var18 = 65;
 			Location var19 = (Location) this.field4577.method8711(arg7, arg12, arg13);
 			if (var19 != null) {
@@ -892,7 +892,7 @@ public class ClientMapLoader extends MapLoader {
 			}
 			this.field4577.method8752(arg7, arg12, arg13, var21, null);
 			return true;
-		} else if (class601.field7550.field7562 == arg1) {
+		} else if (LocShape.field7550.field7562 == arg1) {
 			int var22 = 33;
 			Location var23 = (Location) this.field4577.method8711(arg7, arg12, arg13);
 			if (var23 != null) {
@@ -910,7 +910,7 @@ public class ClientMapLoader extends MapLoader {
 			}
 			this.field4577.method8752(arg7, arg12, arg13, var25, null);
 			return true;
-		} else if (class601.field7557.field7562 == arg1) {
+		} else if (LocShape.field7557.field7562 == arg1) {
 			int var26 = arg2 + 2 & 0x3;
 			WallDecorLayerEntity var28;
 			if (arg3) {
@@ -924,7 +924,7 @@ public class ClientMapLoader extends MapLoader {
 			}
 			this.field4577.method8752(arg7, arg12, arg13, var28, null);
 			return true;
-		} else if (class601.field7543.field7562 == arg1) {
+		} else if (LocShape.field7543.field7562 == arg1) {
 			int var29 = arg2 + 2 & 0x3;
 			int var30 = 33;
 			Location var31 = (Location) this.field4577.method8711(arg7, arg12, arg13);
@@ -991,7 +991,7 @@ public class ClientMapLoader extends MapLoader {
 			this.field4577.method8727(arg1, arg3, arg4);
 		} else if (arg2 == 2) {
 			this.field4577.method8712(arg1, arg3, arg4, client.field11001);
-			if (class601.field7547.field7562 == var8) {
+			if (LocShape.field7547.field7562 == var8) {
 				if ((var9 & 0x1) == 0) {
 					this.field4577.field6930.method8919(8, arg1, arg3, arg4);
 				} else {

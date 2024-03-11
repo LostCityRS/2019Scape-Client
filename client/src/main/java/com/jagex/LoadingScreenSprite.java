@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class LoadingScreenSprite implements LoadingScreenElement {
 
 	@ObfuscatedName("jk.e")
-	public final class322 field3019;
+	public final LoadingScreenSpriteConfig field3019;
 
 	@ObfuscatedName("jk.n")
 	public final Js5 field3020;
@@ -14,7 +14,7 @@ public class LoadingScreenSprite implements LoadingScreenElement {
 	@ObfuscatedName("jk.m")
 	public Sprite field3021;
 
-	public LoadingScreenSprite(Js5 arg0, class322 arg1) {
+	public LoadingScreenSprite(Js5 arg0, LoadingScreenSpriteConfig arg1) {
 		this.field3020 = arg0;
 		this.field3019 = arg1;
 	}

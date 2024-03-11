@@ -69,7 +69,7 @@ public class LoadingScreenNewsDisplayConfig implements LoadingScreenElementConfi
 	}
 
 	@ObfuscatedName("kn.n(S)Lkt;")
-	public class319 method5349() {
-		return class319.field3191;
+	public LoadingScreenElementType method5349() {
+		return LoadingScreenElementType.field3191;
 	}
 }

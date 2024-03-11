@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ajb")
-public class LZMALenPriceTableEncoder extends class521 {
+public class LZMALenPriceTableEncoder extends LZMAEncoderLen {
 
 	// $FF: synthetic field
 	public final LZMAEncoder this$0;

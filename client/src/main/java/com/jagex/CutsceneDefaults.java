@@ -23,7 +23,7 @@ public class CutsceneDefaults {
 				return;
 			}
 			if (var2 == 1) {
-				this.field7675 = class590.method4055(arg0);
+				this.field7675 = Bindings.method4055(arg0);
 			}
 		}
 	}

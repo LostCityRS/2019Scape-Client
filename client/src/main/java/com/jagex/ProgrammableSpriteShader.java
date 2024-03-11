@@ -91,7 +91,7 @@ public final class ProgrammableSpriteShader extends SpriteShader {
 		this.field10532.method4178(this.field10534[6], this.field10536.field4244, this.field10536.field4243, this.field10536.field4242, this.field10536.field4245);
 		this.field3002.method16120(0, this.field3000);
 		this.field3002.method16177(this.field2994);
-		this.field3002.method16077(class357.field3404, this.field3001, 2);
+		this.field3002.method16077(PrimitiveType.field3404, this.field3001, 2);
 	}
 
 	@ObfuscatedName("ahz.n()V")

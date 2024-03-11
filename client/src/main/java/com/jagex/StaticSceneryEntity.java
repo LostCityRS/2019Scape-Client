@@ -126,7 +126,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 			}
 		}
 		Vector3 var7 = this.method10536().field4298;
-		return var4.method9475(arg0, arg1, class601.field7564.field7562 == this.field11137 ? class601.field7563.field7562 : this.field11137, class601.field7564.field7562 == this.field11137 ? this.field11142 + 4 : this.field11142, var5, var6, (int) var7.field4308, this.field11138, (int) var7.field4313, arg2, null);
+		return var4.method9475(arg0, arg1, LocShape.field7564.field7562 == this.field11137 ? LocShape.field7563.field7562 : this.field11137, LocShape.field7564.field7562 == this.field11137 ? this.field11142 + 4 : this.field11142, var5, var6, (int) var7.field4308, this.field11138, (int) var7.field4313, arg2, null);
 	}
 
 	@ObfuscatedName("ajv.fv(Ldh;B)Luq;")

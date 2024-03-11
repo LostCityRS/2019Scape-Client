@@ -48,13 +48,13 @@ public class MiniMenuDefaults {
 				return;
 			}
 			if (var2 == 1) {
-				this.field7667 = class590.method4055(arg0);
+				this.field7667 = Bindings.method4055(arg0);
 			} else if (var2 == 2) {
-				this.field7660 = class590.method4055(arg0);
+				this.field7660 = Bindings.method4055(arg0);
 			} else if (var2 == 3) {
-				this.field7666 = class590.method4055(arg0);
+				this.field7666 = Bindings.method4055(arg0);
 			} else if (var2 == 4) {
-				this.field7662 = class590.method4055(arg0);
+				this.field7662 = Bindings.method4055(arg0);
 			} else if (var2 == 5) {
 				this.field7663 = KeyHeldBinding.method6037(arg0);
 			} else if (var2 == 6) {
@@ -62,11 +62,11 @@ public class MiniMenuDefaults {
 			} else if (var2 == 7) {
 				this.field7659 = KeyHeldBinding.method6037(arg0);
 			} else if (var2 == 8) {
-				class590.method4055(arg0);
+				Bindings.method4055(arg0);
 			} else if (var2 == 9) {
-				class590.method4055(arg0);
+				Bindings.method4055(arg0);
 			} else if (var2 == 10) {
-				class590.method4055(arg0);
+				Bindings.method4055(arg0);
 			} else if (var2 == 11) {
 				this.field7668 = true;
 			} else if (var2 == 12) {

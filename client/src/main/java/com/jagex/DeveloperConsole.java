@@ -547,7 +547,7 @@ public class DeveloperConsole {
 				} else if (arg0 == 11) {
 					addline("" + GameShell.fps);
 				} else if (arg0 == 24) {
-					class555 var1 = client.world.method7743().field6930;
+					OcclusionManager var1 = client.world.method7743().field6930;
 					var1.field7031 = !var1.field7031;
 				} else if (arg0 == 25) {
 					client.field10794 = true;

@@ -19,7 +19,7 @@ public class LoadingScreenClearConfig implements LoadingScreenElementConfig {
 	}
 
 	@ObfuscatedName("kj.n(S)Lkt;")
-	public class319 method5349() {
-		return class319.field3190;
+	public LoadingScreenElementType method5349() {
+		return LoadingScreenElementType.field3190;
 	}
 }

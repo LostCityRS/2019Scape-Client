@@ -378,7 +378,7 @@ public class Minimap {
 				if (var10.field7470 > 0) {
 					var13 = arg7;
 				}
-				if (class601.field7554.field7562 == var12 || class601.field7545.field7562 == var12) {
+				if (LocShape.field7554.field7562 == var12 || LocShape.field7545.field7562 == var12) {
 					if (var11 == 0) {
 						arg0.method2177(arg4, arg5, 4, var13);
 					} else if (var11 == 1) {
@@ -389,7 +389,7 @@ public class Minimap {
 						arg0.method2176(arg4, arg5 + 3, 4, var13);
 					}
 				}
-				if (class601.field7546.field7562 == var12) {
+				if (LocShape.field7546.field7562 == var12) {
 					if (var11 == 0) {
 						arg0.method2301(arg4, arg5, 1, 1, var13);
 					} else if (var11 == 1) {
@@ -400,7 +400,7 @@ public class Minimap {
 						arg0.method2301(arg4, arg5 + 3, 1, 1, var13);
 					}
 				}
-				if (class601.field7545.field7562 == var12) {
+				if (LocShape.field7545.field7562 == var12) {
 					if (var11 == 0) {
 						arg0.method2176(arg4, arg5, 4, var13);
 					} else if (var11 == 1) {
@@ -422,7 +422,7 @@ public class Minimap {
 			int var17 = var14.method8220();
 			if (var15.field7486 != -1) {
 				Statics.method1900(arg0, var15, var16, arg4, arg5);
-			} else if (class601.field7547.field7562 == var17) {
+			} else if (LocShape.field7547.field7562 == var17) {
 				int var18 = -1118482;
 				if (var15.field7470 > 0) {
 					var18 = -1179648;

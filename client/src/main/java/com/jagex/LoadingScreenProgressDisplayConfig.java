@@ -59,7 +59,7 @@ public class LoadingScreenProgressDisplayConfig implements LoadingScreenElementC
 	}
 
 	@ObfuscatedName("kp.n(S)Lkt;")
-	public class319 method5349() {
+	public LoadingScreenElementType method5349() {
 		return null;
 	}
 }

@@ -64,7 +64,7 @@ public class DynamicLoc {
 	public ParticleSystem field6680;
 
 	@ObfuscatedName("sp.b")
-	public class597 field6678;
+	public LocTypeCustomisation field6678;
 
 	public DynamicLoc(Renderer arg0, LocTypeList arg1, LocType arg2, int arg3, int arg4, int arg5, GraphEntity arg6, boolean arg7, int arg8, int arg9) {
 		this.field6681 = arg1;
@@ -98,7 +98,7 @@ public class DynamicLoc {
 	}
 
 	@ObfuscatedName("sp.m(Lvp;I)V")
-	public void method8265(class597 arg0) {
+	public void method8265(LocTypeCustomisation arg0) {
 		this.field6678 = arg0;
 		this.field6669 = null;
 	}

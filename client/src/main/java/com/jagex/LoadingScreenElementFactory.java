@@ -24,28 +24,28 @@ public class LoadingScreenElementFactory {
 		if (arg0 == null) {
 			return null;
 		}
-		class319 var2 = arg0.method5349();
-		if (class319.field3190 == var2) {
+		LoadingScreenElementType var2 = arg0.method5349();
+		if (LoadingScreenElementType.field3190 == var2) {
 			return new LoadingScreenClear((LoadingScreenClearConfig) arg0);
-		} else if (class319.field3191 == var2) {
+		} else if (LoadingScreenElementType.field3191 == var2) {
 			return new LoadingScreenNewsDisplay(this.method5138(), (LoadingScreenNewsDisplayConfig) arg0);
-		} else if (class319.field3194 == var2) {
-			return new LoadingScreenSprite(this.field3035, (class322) arg0);
-		} else if (class319.field3192 == var2) {
+		} else if (LoadingScreenElementType.field3194 == var2) {
+			return new LoadingScreenSprite(this.field3035, (LoadingScreenSpriteConfig) arg0);
+		} else if (LoadingScreenElementType.field3192 == var2) {
 			return new class904(this.field3035, (class915) arg0);
-		} else if (class319.field3188 == var2) {
+		} else if (LoadingScreenElementType.field3188 == var2) {
 			return new class905(this.field3035, this.field3036, (class914) arg0);
-		} else if (class319.field3189 == var2) {
+		} else if (LoadingScreenElementType.field3189 == var2) {
 			return new class907(this.field3035, this.field3036, (class913) arg0);
-		} else if (class319.field3193 == var2) {
+		} else if (LoadingScreenElementType.field3193 == var2) {
 			return new class906(this.field3035, this.field3036, (class912) arg0);
-		} else if (class319.field3187 == var2) {
+		} else if (LoadingScreenElementType.field3187 == var2) {
 			return new class303(this.field3035, this.field3036, (class321) arg0);
-		} else if (class319.field3195 == var2) {
+		} else if (LoadingScreenElementType.field3195 == var2) {
 			return new class299(this.field3035, (class320) arg0);
-		} else if (class319.field3196 == var2) {
+		} else if (LoadingScreenElementType.field3196 == var2) {
 			return new class1133(this.field3035, this.field3036, (class1137) arg0);
-		} else if (class319.field3197 == var2) {
+		} else if (LoadingScreenElementType.field3197 == var2) {
 			return new class298(this.field3035, this.field3036, (class315) arg0);
 		} else {
 			return null;

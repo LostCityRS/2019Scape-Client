@@ -61,7 +61,7 @@ public class class321 implements LoadingScreenElementConfig {
 	}
 
 	@ObfuscatedName("lv.n(S)Lkt;")
-	public class319 method5349() {
-		return class319.field3187;
+	public LoadingScreenElementType method5349() {
+		return LoadingScreenElementType.field3187;
 	}
 }

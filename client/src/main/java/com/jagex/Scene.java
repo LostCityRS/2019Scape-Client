@@ -40,7 +40,7 @@ public class Scene {
 	public boolean field6955;
 
 	@ObfuscatedName("tx.p")
-	public final class555 field6930;
+	public final OcclusionManager field6930;
 
 	@ObfuscatedName("tx.d")
 	public int field6909;
@@ -52,19 +52,19 @@ public class Scene {
 	public final int field6911;
 
 	@ObfuscatedName("tx.v")
-	public class551[][][] field6928;
+	public Tile[][][] field6928;
 
 	@ObfuscatedName("tx.o")
 	public FloorModel[] field6913;
 
 	@ObfuscatedName("tx.s")
-	public class551[][][] field6904;
+	public Tile[][][] field6904;
 
 	@ObfuscatedName("tx.y")
 	public FloorModel[] field6915;
 
 	@ObfuscatedName("tx.q")
-	public class551[][][] field6914;
+	public Tile[][][] field6914;
 
 	@ObfuscatedName("tx.x")
 	public FloorModel[] field6917;
@@ -178,7 +178,7 @@ public class Scene {
 	public long[][][] field6954;
 
 	@ObfuscatedName("tx.bx")
-	public class554[] field6926;
+	public StaticPointLight[] field6926;
 
 	@ObfuscatedName("tx.bd")
 	public boolean[] field6956;
@@ -190,7 +190,7 @@ public class Scene {
 	public HashMap field6958 = new HashMap();
 
 	@ObfuscatedName("tx.bn")
-	public class548 field6959;
+	public PickableEntityList field6959;
 
 	@ObfuscatedName("tx.bt")
 	public boolean[][] field6960;
@@ -215,8 +215,8 @@ public class Scene {
 		this.field6911 = arg4;
 		this.field6942 = arg5;
 		this.field6912 = new SceneDebugging();
-		this.field6930 = new class555(this);
-		this.field6904 = new class551[arg2][this.field6910][this.field6911];
+		this.field6930 = new OcclusionManager(this);
+		this.field6904 = new Tile[arg2][this.field6910][this.field6911];
 		this.field6915 = new FloorModel[arg2];
 		if (arg6) {
 			this.field6923 = new int[this.field6910][this.field6911];
@@ -225,12 +225,12 @@ public class Scene {
 			this.field6921 = new byte[this.field6910][this.field6911];
 			this.field6963 = new byte[this.field6910][this.field6911];
 			this.field6905 = new byte[this.field6910][this.field6911];
-			this.field6914 = new class551[1][this.field6910][this.field6911];
+			this.field6914 = new Tile[1][this.field6910][this.field6911];
 			this.field6917 = new FloorModel[1];
 		}
 		if (arg7) {
 			this.field6954 = new long[arg2][arg3][arg4];
-			this.field6926 = new class554[65253];
+			this.field6926 = new StaticPointLight[65253];
 			this.field6956 = new boolean[65253];
 			this.field6953 = 0;
 		}
@@ -247,7 +247,7 @@ public class Scene {
 		this.field6962 = new boolean[this.field6942 + this.field6942 + 1][this.field6942 + this.field6942 + 1];
 		this.field6960 = new boolean[this.field6942 + this.field6942 + 2][this.field6942 + this.field6942 + 2];
 		this.field6908 = new int[this.field6942 + this.field6942 + 2];
-		this.field6959 = new class548(false);
+		this.field6959 = new PickableEntityList(false);
 	}
 
 	@ObfuscatedName("tx.e(IB)V")
@@ -275,7 +275,7 @@ public class Scene {
 		for (int var1 = 0; var1 < this.field6910; var1++) {
 			for (int var2 = 0; var2 < this.field6911; var2++) {
 				if (this.field6928[0][var1][var2] == null) {
-					this.field6928[0][var1][var2] = new class551(0);
+					this.field6928[0][var1][var2] = new Tile(0);
 				}
 			}
 		}
@@ -283,9 +283,9 @@ public class Scene {
 
 	@ObfuscatedName("tx.f(III)V")
 	public void method8705(int arg0, int arg1) {
-		class551 var3 = this.field6928[0][arg0][arg1];
+		Tile var3 = this.field6928[0][arg0][arg1];
 		for (int var4 = 0; var4 < 3; var4++) {
-			class551 var5 = this.field6928[var4][arg0][arg1] = this.field6928[var4 + 1][arg0][arg1];
+			Tile var5 = this.field6928[var4][arg0][arg1] = this.field6928[var4 + 1][arg0][arg1];
 			if (var5 != null) {
 				for (PrimaryLayerEntityList var6 = var5.field6964; var6 != null; var6 = var6.field7058) {
 					PrimaryLayerEntity var7 = var6.field7057;
@@ -311,7 +311,7 @@ public class Scene {
 			}
 		}
 		if (this.field6928[0][arg0][arg1] == null) {
-			this.field6928[0][arg0][arg1] = new class551(0);
+			this.field6928[0][arg0][arg1] = new Tile(0);
 			this.field6928[0][arg0][arg1].field6970 = 1;
 		}
 		this.field6928[0][arg0][arg1].field6965 = var3;
@@ -319,7 +319,7 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.w(IIIB)Ltk;")
-	public class551 method8706(int arg0, int arg1, int arg2) {
+	public Tile method8706(int arg0, int arg1, int arg2) {
 		if (this.field6928[arg0][arg1][arg2] == null) {
 			boolean var4 = this.field6928[0][arg1][arg2] != null && this.field6928[0][arg1][arg2].field6965 != null;
 			if (var4 && arg0 >= this.field6909 - 1) {
@@ -331,7 +331,7 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.l(IIIB)Ltk;")
-	public class551 method8707(int arg0, int arg1, int arg2) {
+	public Tile method8707(int arg0, int arg1, int arg2) {
 		return this.method8706(arg0, Math.min(this.field6910 - 1, Math.max(0, arg1)), Math.min(this.field6911 - 1, Math.max(0, arg2)));
 	}
 
@@ -340,7 +340,7 @@ public class Scene {
 		boolean var4 = this.field6928[0][arg1][arg2] != null && this.field6928[0][arg1][arg2].field6965 != null;
 		for (int var5 = arg0; var5 >= 0; var5--) {
 			if (this.field6928[var5][arg1][arg2] == null) {
-				class551 var6 = this.field6928[var5][arg1][arg2] = new class551(var5);
+				Tile var6 = this.field6928[var5][arg1][arg2] = new Tile(var5);
 				if (var4) {
 					var6.field6970++;
 				}
@@ -407,7 +407,7 @@ public class Scene {
 
 	@ObfuscatedName("tx.y(IIILasv;B)V")
 	public void method8717(int arg0, int arg1, int arg2, GroundDecorLayerEntity arg3) {
-		class551 var5 = this.method8706(arg0, arg1, arg2);
+		Tile var5 = this.method8706(arg0, arg1, arg2);
 		if (var5 == null) {
 			return;
 		}
@@ -427,7 +427,7 @@ public class Scene {
 
 	@ObfuscatedName("tx.q(IIIILast;S)V")
 	public void method8718(int arg0, int arg1, int arg2, int arg3, ObjLayerEntity arg4) {
-		class551 var6 = this.method8706(arg0, arg1, arg2);
+		Tile var6 = this.method8706(arg0, arg1, arg2);
 		if (var6 == null) {
 			return;
 		}
@@ -448,7 +448,7 @@ public class Scene {
 
 	@ObfuscatedName("tx.x(IIILasw;Lasw;I)V")
 	public void method8719(int arg0, int arg1, int arg2, WallLayerEntity arg3, WallLayerEntity arg4) {
-		class551 var6 = this.method8706(arg0, arg1, arg2);
+		Tile var6 = this.method8706(arg0, arg1, arg2);
 		if (var6 == null) {
 			return;
 		}
@@ -482,7 +482,7 @@ public class Scene {
 
 	@ObfuscatedName("tx.b(IIILasm;Lasm;B)V")
 	public void method8752(int arg0, int arg1, int arg2, WallDecorLayerEntity arg3, WallDecorLayerEntity arg4) {
-		class551 var6 = this.method8706(arg0, arg1, arg2);
+		Tile var6 = this.method8706(arg0, arg1, arg2);
 		if (var6 == null) {
 			return;
 		}
@@ -528,7 +528,7 @@ public class Scene {
 		int var11 = Math.min(this.field6911 - 1, Math.max(0, arg0.field12467));
 		for (int var12 = var8; var12 <= var9; var12++) {
 			for (int var13 = var10; var13 <= var11; var13++) {
-				class551 var14 = this.method8707(arg0.field11717, var12, var13);
+				Tile var14 = this.method8707(arg0.field11717, var12, var13);
 				if (var14 != null) {
 					PrimaryLayerEntityList var15 = PrimaryLayerEntityList.method644(arg0);
 					PrimaryLayerEntityList var16 = var14.field6964;
@@ -589,7 +589,7 @@ public class Scene {
 
 	@ObfuscatedName("tx.a(IIIII)V")
 	public void method8765(int arg0, int arg1, int arg2, int arg3) {
-		class551 var5 = this.field6928[arg0][arg1][arg2];
+		Tile var5 = this.field6928[arg0][arg1][arg2];
 		if (var5 == null) {
 			return;
 		}
@@ -617,7 +617,7 @@ public class Scene {
 
 	@ObfuscatedName("tx.i(IIIB)Lasw;")
 	public WallLayerEntity method8724(int arg0, int arg1, int arg2) {
-		class551 var4 = this.field6928[arg0][arg1][arg2];
+		Tile var4 = this.field6928[arg0][arg1][arg2];
 		if (var4 != null) {
 			this.method8732(var4.field6966);
 			if (var4.field6966 != null) {
@@ -631,7 +631,7 @@ public class Scene {
 
 	@ObfuscatedName("tx.j(IIIB)Lasw;")
 	public WallLayerEntity method8881(int arg0, int arg1, int arg2) {
-		class551 var4 = this.field6928[arg0][arg1][arg2];
+		Tile var4 = this.field6928[arg0][arg1][arg2];
 		if (var4 != null) {
 			this.method8732(var4.field6967);
 			if (var4.field6967 != null) {
@@ -645,7 +645,7 @@ public class Scene {
 
 	@ObfuscatedName("tx.t(IIII)Lasm;")
 	public WallDecorLayerEntity method8726(int arg0, int arg1, int arg2) {
-		class551 var4 = this.field6928[arg0][arg1][arg2];
+		Tile var4 = this.field6928[arg0][arg1][arg2];
 		if (var4 != null) {
 			this.method8732(var4.field6968);
 			if (var4.field6968 != null) {
@@ -659,7 +659,7 @@ public class Scene {
 
 	@ObfuscatedName("tx.ae(IIII)Lasm;")
 	public WallDecorLayerEntity method8727(int arg0, int arg1, int arg2) {
-		class551 var4 = this.field6928[arg0][arg1][arg2];
+		Tile var4 = this.field6928[arg0][arg1][arg2];
 		if (var4 != null) {
 			this.method8732(var4.field6976);
 			if (var4.field6976 != null) {
@@ -673,7 +673,7 @@ public class Scene {
 
 	@ObfuscatedName("tx.ag(IIIB)Lasv;")
 	public GroundDecorLayerEntity method8728(int arg0, int arg1, int arg2) {
-		class551 var4 = this.field6928[arg0][arg1][arg2];
+		Tile var4 = this.field6928[arg0][arg1][arg2];
 		if (var4 == null) {
 			return null;
 		}
@@ -689,7 +689,7 @@ public class Scene {
 
 	@ObfuscatedName("tx.ah(IIIB)Last;")
 	public ObjLayerEntity method8742(int arg0, int arg1, int arg2) {
-		class551 var4 = this.field6928[arg0][arg1][arg2];
+		Tile var4 = this.field6928[arg0][arg1][arg2];
 		if (var4 == null) {
 			return null;
 		} else {
@@ -702,7 +702,7 @@ public class Scene {
 
 	@ObfuscatedName("tx.al(IIILtd;I)Lash;")
 	public PrimaryLayerEntity method8712(int arg0, int arg1, int arg2, PrimaryLayerEntityPredicate arg3) {
-		class551 var5 = this.field6928[arg0][arg1][arg2];
+		Tile var5 = this.field6928[arg0][arg1][arg2];
 		if (var5 == null) {
 			return null;
 		}
@@ -724,7 +724,7 @@ public class Scene {
 		int var6 = Math.min(this.field6911 - 1, Math.max(0, arg0.field12467));
 		for (int var7 = var3; var7 <= var4; var7++) {
 			for (int var8 = var5; var8 <= var6; var8++) {
-				class551 var9 = this.field6928[arg0.field11717][var7][var8];
+				Tile var9 = this.field6928[arg0.field11717][var7][var8];
 				if (var9 != null) {
 					PrimaryLayerEntityList var10 = var9.field6964;
 					PrimaryLayerEntityList var11 = null;
@@ -797,31 +797,31 @@ public class Scene {
 
 	@ObfuscatedName("tx.aw(IIII)Lasw;")
 	public WallLayerEntity method8711(int arg0, int arg1, int arg2) {
-		class551 var4 = this.field6928[arg0][arg1][arg2];
+		Tile var4 = this.field6928[arg0][arg1][arg2];
 		return var4 == null ? null : var4.field6966;
 	}
 
 	@ObfuscatedName("tx.as(IIII)Lasw;")
 	public WallLayerEntity method8880(int arg0, int arg1, int arg2) {
-		class551 var4 = this.field6928[arg0][arg1][arg2];
+		Tile var4 = this.field6928[arg0][arg1][arg2];
 		return var4 == null ? null : var4.field6967;
 	}
 
 	@ObfuscatedName("tx.at(IIII)Lasm;")
 	public WallDecorLayerEntity method8735(int arg0, int arg1, int arg2) {
-		class551 var4 = this.field6928[arg0][arg1][arg2];
+		Tile var4 = this.field6928[arg0][arg1][arg2];
 		return var4 == null ? null : var4.field6968;
 	}
 
 	@ObfuscatedName("tx.ad(IIIB)Last;")
 	public ObjLayerEntity method8736(int arg0, int arg1, int arg2) {
-		class551 var4 = this.field6928[arg0][arg1][arg2];
+		Tile var4 = this.field6928[arg0][arg1][arg2];
 		return var4 == null ? null : var4.field6971;
 	}
 
 	@ObfuscatedName("tx.am(IIILtd;B)Lash;")
 	public PrimaryLayerEntity method8856(int arg0, int arg1, int arg2, PrimaryLayerEntityPredicate arg3) {
-		class551 var5 = this.field6928[arg0][arg1][arg2];
+		Tile var5 = this.field6928[arg0][arg1][arg2];
 		if (var5 == null) {
 			return null;
 		}
@@ -836,13 +836,13 @@ public class Scene {
 
 	@ObfuscatedName("tx.au(IIIB)Luc;")
 	public PrimaryLayerEntityList method8738(int arg0, int arg1, int arg2) {
-		class551 var4 = this.field6928[arg0][arg1][arg2];
+		Tile var4 = this.field6928[arg0][arg1][arg2];
 		return var4 == null ? null : var4.field6964;
 	}
 
 	@ObfuscatedName("tx.ar(IIII)Lasv;")
 	public GroundDecorLayerEntity method8767(int arg0, int arg1, int arg2) {
-		class551 var4 = this.field6928[arg0][arg1][arg2];
+		Tile var4 = this.field6928[arg0][arg1][arg2];
 		return var4 == null || var4.field6974 == null ? null : var4.field6974;
 	}
 
@@ -851,7 +851,7 @@ public class Scene {
 		for (int var1 = 0; var1 < this.field6909; var1++) {
 			for (int var2 = 0; var2 < this.field6910; var2++) {
 				for (int var3 = 0; var3 < this.field6911; var3++) {
-					class551 var4 = this.field6928[var1][var2][var3];
+					Tile var4 = this.field6928[var1][var2][var3];
 					if (var4 != null) {
 						WallLayerEntity var5 = var4.field6966;
 						WallLayerEntity var6 = var4.field6967;
@@ -885,21 +885,21 @@ public class Scene {
 	@ObfuscatedName("tx.aq(Lalh;IIIS)V")
 	public void method8741(GraphEntity arg0, int arg1, int arg2, int arg3) {
 		if (arg2 < this.field6910) {
-			class551 var5 = this.field6928[arg1][arg2 + 1][arg3];
+			Tile var5 = this.field6928[arg1][arg2 + 1][arg3];
 			if (var5 != null && var5.field6974 != null && var5.field6974.method17379()) {
 				int var6 = (this.field6913[arg1].method1529(arg2 + 1, arg3) + this.field6913[arg1].method1529(arg2 + 1 + 1, arg3) + this.field6913[arg1].method1529(arg2 + 1, arg3 + 1) + this.field6913[arg1].method1529(arg2 + 1 + 1, arg3 + 1)) / 4 - (this.field6913[arg1].method1529(arg2, arg3) + this.field6913[arg1].method1529(arg2 + 1, arg3) + this.field6913[arg1].method1529(arg2, arg3 + 1) + this.field6913[arg1].method1529(arg2 + 1, arg3 + 1)) / 4;
 				arg0.method17377(this.field6907, var5.field6974, this.field6901, var6, 0, true);
 			}
 		}
 		if (arg3 < this.field6910) {
-			class551 var7 = this.field6928[arg1][arg2][arg3 + 1];
+			Tile var7 = this.field6928[arg1][arg2][arg3 + 1];
 			if (var7 != null && var7.field6974 != null && var7.field6974.method17379()) {
 				int var8 = (this.field6913[arg1].method1529(arg2, arg3) + this.field6913[arg1].method1529(arg2 + 1, arg3 + 1) + this.field6913[arg1].method1529(arg2, arg3 + 1 + 1) + this.field6913[arg1].method1529(arg2 + 1, arg3 + 1 + 1)) / 4 - (this.field6913[arg1].method1529(arg2, arg3) + this.field6913[arg1].method1529(arg2 + 1, arg3) + this.field6913[arg1].method1529(arg2, arg3 + 1) + this.field6913[arg1].method1529(arg2 + 1, arg3 + 1)) / 4;
 				arg0.method17377(this.field6907, var7.field6974, 0, var8, this.field6901, true);
 			}
 		}
 		if (arg2 < this.field6910 && arg3 < this.field6911) {
-			class551 var9 = this.field6928[arg1][arg2 + 1][arg3 + 1];
+			Tile var9 = this.field6928[arg1][arg2 + 1][arg3 + 1];
 			if (var9 != null && var9.field6974 != null && var9.field6974.method17379()) {
 				int var10 = (this.field6913[arg1].method1529(arg2 + 1, arg3 + 1) + this.field6913[arg1].method1529(arg2 + 1 + 1, arg3 + 1) + this.field6913[arg1].method1529(arg2 + 1, arg3 + 1 + 1) + this.field6913[arg1].method1529(arg2 + 1 + 1, arg3 + 1 + 1)) / 4 - (this.field6913[arg1].method1529(arg2, arg3) + this.field6913[arg1].method1529(arg2 + 1, arg3) + this.field6913[arg1].method1529(arg2, arg3 + 1) + this.field6913[arg1].method1529(arg2 + 1, arg3 + 1)) / 4;
 				arg0.method17377(this.field6907, var9.field6974, this.field6901, var10, this.field6901, true);
@@ -908,7 +908,7 @@ public class Scene {
 		if (arg2 >= this.field6910 || arg3 <= 0) {
 			return;
 		}
-		class551 var11 = this.field6928[arg1][arg2 + 1][arg3 - 1];
+		Tile var11 = this.field6928[arg1][arg2 + 1][arg3 - 1];
 		if (var11 != null && var11.field6974 != null && var11.field6974.method17379()) {
 			int var12 = (this.field6913[arg1].method1529(arg2 + 1, arg3 - 1) + this.field6913[arg1].method1529(arg2 + 1 + 1, arg3 - 1) + this.field6913[arg1].method1529(arg2 + 1, arg3 + 1 - 1) + this.field6913[arg1].method1529(arg2 + 1 + 1, arg3 + 1 - 1)) / 4 - (this.field6913[arg1].method1529(arg2, arg3) + this.field6913[arg1].method1529(arg2 + 1, arg3) + this.field6913[arg1].method1529(arg2, arg3 + 1) + this.field6913[arg1].method1529(arg2 + 1, arg3 + 1)) / 4;
 			arg0.method17377(this.field6907, var11.field6974, this.field6901, var12, -this.field6901, true);
@@ -928,7 +928,7 @@ public class Scene {
 					if (var13 >= 0 && var13 < this.field6910) {
 						for (int var14 = var10; var14 <= var11; var14++) {
 							if (var14 >= 0 && var14 < this.field6911 && (!var7 || var13 >= var9 || var14 >= var11 || var14 < arg3 && arg2 != var13)) {
-								class551 var15 = this.field6928[var12][var13][var14];
+								Tile var15 = this.field6928[var12][var13][var14];
 								if (var15 != null) {
 									int var16 = (this.field6913[var12].method1529(var13, var14) + this.field6913[var12].method1529(var13 + 1, var14) + this.field6913[var12].method1529(var13, var14 + 1) + this.field6913[var12].method1529(var13 + 1, var14 + 1)) / 4 - (this.field6913[arg1].method1529(arg2, arg3) + this.field6913[arg1].method1529(arg2 + 1, arg3) + this.field6913[arg1].method1529(arg2, arg3 + 1) + this.field6913[arg1].method1529(arg2 + 1, arg3 + 1)) / 4;
 									WallLayerEntity var17 = var15.field6966;
@@ -1408,7 +1408,7 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.bl(Lul;B)V")
-	public void method8754(class554 arg0) {
+	public void method8754(StaticPointLight arg0) {
 		if (this.field6953 >= 65253) {
 			return;
 		}
@@ -1481,7 +1481,7 @@ public class Scene {
 	public void method8755() {
 		for (int var1 = 0; var1 < this.field6953; var1++) {
 			if (!this.field6956[var1]) {
-				class554 var2 = this.field6926[var1];
+				StaticPointLight var2 = this.field6926[var1];
 				Light var3 = var2.field7003;
 				int var4 = var2.field7006;
 				int var5 = var3.method17608() - this.field6924;
@@ -1577,7 +1577,7 @@ public class Scene {
 		}
 		Iterator var5 = var4.iterator();
 		while (var5.hasNext()) {
-			class554 var6 = (class554) var5.next();
+			StaticPointLight var6 = (StaticPointLight) var5.next();
 			var6.field7003.method17620(arg1, arg2);
 		}
 	}
@@ -1591,7 +1591,7 @@ public class Scene {
 		float var5 = arg1 < 0 ? -1.0F : (float) arg1 / 100.0F;
 		Iterator var6 = var4.iterator();
 		while (var6.hasNext()) {
-			class554 var7 = (class554) var6.next();
+			StaticPointLight var7 = (StaticPointLight) var6.next();
 			var7.field7003.method17621(var5, arg2);
 		}
 	}
@@ -1602,7 +1602,7 @@ public class Scene {
 		Iterator var1 = this.field6957.entrySet().iterator();
 		while (var1.hasNext()) {
 			Entry var2 = (Entry) var1.next();
-			this.field6958.put(var2.getKey(), ((class554) ((List) var2.getValue()).get(0)).field7003);
+			this.field6958.put(var2.getKey(), ((StaticPointLight) ((List) var2.getValue()).get(0)).field7003);
 		}
 		return this.field6958;
 	}

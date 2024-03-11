@@ -93,7 +93,7 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 	}
 
 	@ObfuscatedName("ajy.br(Lvp;B)V")
-	public void method17369(class597 arg0) {
+	public void method17369(LocTypeCustomisation arg0) {
 		this.field11131.method8265(arg0);
 	}
 

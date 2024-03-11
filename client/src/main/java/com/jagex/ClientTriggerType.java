@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("uh")
-public class ClientTriggerType implements class573 {
+public class ClientTriggerType implements TriggerType {
 
 	@ObfuscatedName("uh.e")
 	public static final ClientTriggerType field7258 = new ClientTriggerType("", 10, new ScriptVarType[] { ScriptVarType.MAPELEMENT}, null);

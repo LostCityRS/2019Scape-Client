@@ -925,7 +925,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.ur(ILmn;ZZ)V")
-	public final void method16031(int arg0, class351 arg1, boolean arg2, boolean arg3) {
+	public final void method16031(int arg0, TextureCombiner arg1, boolean arg2, boolean arg3) {
 		if (!this.field10099) {
 			return;
 		}
@@ -951,7 +951,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.uo(ILmn;Z)V")
-	public final void method16043(int arg0, class351 arg1, boolean arg2) {
+	public final void method16043(int arg0, TextureCombiner arg1, boolean arg2) {
 		if (!this.field10099) {
 			return;
 		}
@@ -981,7 +981,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.ahs(Lmk;)I")
-	public static final int method19027(class355 arg0) {
+	public static final int method19027(TextureCombineMode arg0) {
 		switch(arg0.field3394) {
 			case 0:
 				return 10;
@@ -999,7 +999,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.aht(Lmn;)I")
-	public static final int method18999(class351 arg0) {
+	public static final int method18999(TextureCombiner arg0) {
 		switch(arg0.field3369) {
 			case 0:
 				return 1;
@@ -1166,7 +1166,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.wz(Lms;II)V")
-	public final void method16077(class357 arg0, int arg1, int arg2) {
+	public final void method16077(PrimitiveType arg0, int arg1, int arg2) {
 		if (this.field11972 != null) {
 			this.field11972.method16476();
 		}
@@ -1174,7 +1174,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.wj(Lml;Lms;IIII)V")
-	public final void method16078(IndexBuffer arg0, class357 arg1, int arg2, int arg3, int arg4, int arg5) {
+	public final void method16078(IndexBuffer arg0, PrimitiveType arg1, int arg2, int arg3, int arg4, int arg5) {
 		if (this.field11972 != null) {
 			this.field11972.method16476();
 		}
@@ -1182,7 +1182,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.we(Lms;IIII)V")
-	public final void method16079(class357 arg0, int arg1, int arg2, int arg3, int arg4) {
+	public final void method16079(PrimitiveType arg0, int arg1, int arg2, int arg3, int arg4) {
 		if (this.field11972 != null) {
 			this.field11972.method16476();
 		}
@@ -1265,7 +1265,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.aiq(Lms;)I")
-	public static final int method19029(class357 arg0) {
+	public static final int method19029(PrimitiveType arg0) {
 		switch(arg0.field3401) {
 			case 0:
 				return 5;

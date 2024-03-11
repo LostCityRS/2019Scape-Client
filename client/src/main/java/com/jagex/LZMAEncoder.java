@@ -9,7 +9,7 @@ public class LZMAEncoder {
 	public static byte[] field6713 = new byte[2048];
 
 	@ObfuscatedName("sb.m")
-	public LZMAOptimal[] field6712;
+	public LZMAEncoderOptimal[] field6712;
 
 	@ObfuscatedName("sb.k")
 	public LZMABitTreeEncoder[] field6711;
@@ -32,7 +32,7 @@ public class LZMAEncoder {
 
 	public LZMAEncoder() {
 		LZMABase.method9417();
-		this.field6712 = new LZMAOptimal[4096];
+		this.field6712 = new LZMAEncoderOptimal[4096];
 		new LZMARangeEncoder();
 		this.field6711 = new LZMABitTreeEncoder[4];
 		new LZMABitTreeEncoder(4);
@@ -40,7 +40,7 @@ public class LZMAEncoder {
 		new LZMALenPriceTableEncoder(this);
 		new LZMALiteralEncoder(this);
 		for (int var1 = 0; var1 < 4096; var1++) {
-			this.field6712[var1] = new LZMAOptimal(this);
+			this.field6712[var1] = new LZMAEncoderOptimal(this);
 		}
 		for (int var2 = 0; var2 < 4; var2++) {
 			this.field6711[var2] = new LZMABitTreeEncoder(6);

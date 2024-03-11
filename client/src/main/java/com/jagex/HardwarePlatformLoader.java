@@ -11,7 +11,7 @@ import java.util.Hashtable;
 import java.util.Vector;
 
 @ObfuscatedName("ty")
-public class HardwarePlatformLoader implements class499 {
+public class HardwarePlatformLoader implements NativeLibraryLoader {
 
 	@ObfuscatedName("ty.e")
 	public final Js5 field6764;

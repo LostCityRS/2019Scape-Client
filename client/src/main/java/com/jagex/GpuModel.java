@@ -385,7 +385,7 @@ public class GpuModel extends Model {
 		this.field9767 = arg1.field1382;
 		this.field9712 = arg1.field1411;
 		this.field9709 = arg1.field1417;
-		class353[] var36 = new class353[this.field9704];
+		GpuModelNormal[] var36 = new GpuModelNormal[this.field9704];
 		this.field9755 = arg1.field1403;
 		this.field9738 = arg1.field1416;
 		if (arg1.field1412 != null) {
@@ -438,11 +438,11 @@ public class GpuModel extends Model {
 			int var47 = this.field9753[var46];
 			this.field9753[var46] = var45;
 			var45 += var47;
-			var36[var46] = new class353();
+			var36[var46] = new GpuModelNormal();
 		}
 		this.field9753[arg1.field1374] = var45;
 		class142 var48 = this.method1687(arg1, var9, this.field9716);
-		class347[] var49 = new class347[arg1.field1384];
+		GpuFaceNormal[] var49 = new GpuFaceNormal[arg1.field1384];
 		for (int var50 = 0; var50 < arg1.field1384; var50++) {
 			short var51 = arg1.field1415[var50];
 			short var52 = arg1.field1386[var50];
@@ -469,23 +469,23 @@ public class GpuModel extends Model {
 			int var66 = var62 * 256 / var63;
 			byte var67 = arg1.field1391 == null ? 0 : arg1.field1391[var50];
 			if (var67 == 0) {
-				class353 var68 = var36[var51];
+				GpuModelNormal var68 = var36[var51];
 				var68.field3379 += var64;
 				var68.field3377 += var65;
 				var68.field3378 += var66;
 				var68.field3380++;
-				class353 var69 = var36[var52];
+				GpuModelNormal var69 = var36[var52];
 				var69.field3379 += var64;
 				var69.field3377 += var65;
 				var69.field3378 += var66;
 				var69.field3380++;
-				class353 var70 = var36[var53];
+				GpuModelNormal var70 = var36[var53];
 				var70.field3379 += var64;
 				var70.field3377 += var65;
 				var70.field3378 += var66;
 				var70.field3380++;
 			} else if (var67 == 1) {
-				class347 var71 = var49[var50] = new class347();
+				GpuFaceNormal var71 = var49[var50] = new GpuFaceNormal();
 				var71.field3351 = var64;
 				var71.field3352 = var65;
 				var71.field3353 = var66;
@@ -723,14 +723,14 @@ public class GpuModel extends Model {
 				short var167 = arg1.field1415[var73];
 				short var168 = arg1.field1386[var73];
 				short var169 = arg1.field1400[var73];
-				class353 var170 = var36[var167];
+				GpuModelNormal var170 = var36[var167];
 				this.field9713[var72] = this.method15592(arg1, var167, var72, var165 | var88 << 24, var170.field3379, var170.field3377, var170.field3378, var170.field3380, var77, var78);
-				class353 var171 = var36[var168];
+				GpuModelNormal var171 = var36[var168];
 				this.field9762[var72] = this.method15592(arg1, var168, var72, var165 | var91 << 24, var171.field3379, var171.field3377, var171.field3378, var171.field3380, var79, var80);
-				class353 var172 = var36[var169];
+				GpuModelNormal var172 = var36[var169];
 				this.field9726[var72] = this.method15592(arg1, var169, var72, var165 | var94 << 24, var172.field3379, var172.field3377, var172.field3378, var172.field3380, var81, var82);
 			} else if (var164 == 1) {
-				class347 var173 = var49[var73];
+				GpuFaceNormal var173 = var49[var73];
 				long var174 = ((long) (var173.field3353 + 256) << 24) + ((long) (var173.field3351 & Integer.MIN_VALUE) << 9) + ((long) (var173.field3352 + 256) << 32) + (long) (var74 << 8) + (long) var75;
 				this.field9713[var72] = this.method15592(arg1, arg1.field1415[var73], var72, var174 | var88 << 41, var173.field3351, var173.field3352, var173.field3353, 0, var77, var78);
 				this.field9762[var72] = this.method15592(arg1, arg1.field1386[var73], var72, var174 | var88 << 41, var173.field3351, var173.field3352, var173.field3353, 0, var79, var80);

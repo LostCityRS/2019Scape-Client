@@ -6,5 +6,5 @@ import deob.ObfuscatedName;
 public interface LoadingScreenElementConfig {
 
 	@ObfuscatedName("kk.n(S)Lkt;")
-	class319 method5349();
+	LoadingScreenElementType method5349();
 }

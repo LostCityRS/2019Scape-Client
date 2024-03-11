@@ -1376,7 +1376,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 			int var10 = IntMath.method3082(var9);
 			OpenGL.glVertex2f((float) arg2 + var6, var7);
 			for (int var11 = 16384 - var10; var11 > 0; var11 -= var10) {
-				OpenGL.glVertex2f(Trig2.field1159[var11] * (float) arg2 + var6, Trig2.field1160[var11] * (float) arg2 + var7);
+				OpenGL.glVertex2f(Trig3.field1159[var11] * (float) arg2 + var6, Trig3.field1160[var11] * (float) arg2 + var7);
 			}
 			OpenGL.glVertex2f((float) arg2 + var6, var7);
 			OpenGL.glEnd();

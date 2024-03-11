@@ -8,7 +8,7 @@ import java.math.BigInteger;
 public class Js5MasterIndex {
 
 	@ObfuscatedName("qp.e")
-	public class438[] field4480;
+	public Js5MasterIndexArchiveData[] field4480;
 
 	public Js5MasterIndex(Packet arg0, BigInteger arg1, BigInteger arg2) {
 		arg0.pos = 5;
@@ -33,7 +33,7 @@ public class Js5MasterIndex {
 				throw new RuntimeException();
 			}
 		}
-		this.field4480 = new class438[var4];
+		this.field4480 = new Js5MasterIndexArchiveData[var4];
 		for (int var11 = 0; var11 < var4; var11++) {
 			arg0.pos = var11 * 80 + 6;
 			int var12 = arg0.g4s();
@@ -42,7 +42,7 @@ public class Js5MasterIndex {
 			int var15 = arg0.g4s();
 			byte[] var16 = new byte[64];
 			arg0.gdata(var16, 0, 64);
-			this.field4480[var11] = new class438(var12, var14, var13, var15, var16);
+			this.field4480[var11] = new Js5MasterIndexArchiveData(var12, var14, var13, var15, var16);
 		}
 	}
 }

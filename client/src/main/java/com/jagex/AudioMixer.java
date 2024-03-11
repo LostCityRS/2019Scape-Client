@@ -43,7 +43,7 @@ public class AudioMixer {
 		if (field8056 == null) {
 			return null;
 		} else {
-			return (class614) (arg3 ? new class616(arg0, arg1, field8056, arg2) : new class613(arg0, arg1, field8056, arg2, arg4));
+			return (class614) (arg3 ? new AudioStream(arg0, arg1, field8056, arg2) : new class613(arg0, arg1, field8056, arg2, arg4));
 		}
 	}
 

@@ -52,8 +52,8 @@ public class JavaSoundBackend extends SoundBackend {
 				var6[var7] = new class480(var5, 8192, 3, var8, this);
 			}
 		}
-		class544 var9 = new class544(this, 44100.0F, 32768);
-		class544 var10 = new class544(this, 22050.0F, 16384);
+		PcmPlayer var9 = new PcmPlayer(this, 44100.0F, 32768);
+		PcmPlayer var10 = new PcmPlayer(this, 22050.0F, 16384);
 		this.field10693.add(var9);
 		this.field10693.add(var10);
 		this.field10691 = new Thread(this.field10695);
@@ -119,31 +119,31 @@ public class JavaSoundBackend extends SoundBackend {
 
 	@ObfuscatedName("aiz.f(Ljava/lang/Object;I)I")
 	public int method5864(Object arg0) {
-		if (arg0 == null || !(arg0 instanceof class542)) {
+		if (arg0 == null || !(arg0 instanceof SoundSample)) {
 			return 0;
 		}
-		class542 var2 = (class542) arg0;
-		class544 var3 = var2.field6863;
+		SoundSample var2 = (SoundSample) arg0;
+		PcmPlayer var3 = var2.field6863;
 		synchronized (var2.field6863) {
 			return var2.method8628();
 		}
 	}
 
 	@ObfuscatedName("aiz.as(FI)Lts;")
-	public class544 method16806(float arg0) {
+	public PcmPlayer method16806(float arg0) {
 		float var2 = -1.0F;
 		float var3 = Float.MAX_VALUE;
-		class544 var4 = null;
+		PcmPlayer var4 = null;
 		Iterator var5 = this.field10693.iterator();
 		while (true) {
-			class544 var6;
+			PcmPlayer var6;
 			float var7;
 			float var8;
 			do {
 				if (!var5.hasNext()) {
 					return var4;
 				}
-				var6 = (class544) var5.next();
+				var6 = (PcmPlayer) var5.next();
 				var7 = var6.field6875;
 				var8 = Math.abs(var7 - arg0);
 			} while (!(var2 < 0.0F) && !(var8 < var3));
@@ -155,9 +155,9 @@ public class JavaSoundBackend extends SoundBackend {
 
 	@ObfuscatedName("aiz.n(IILnd;Lmw;IFB)Ljava/lang/Object;")
 	public Object method5861(int arg0, int arg1, AudioFormat arg2, AudioEndianness arg3, int arg4, float arg5) {
-		class544 var7 = this.method16806((float) arg1 * arg5);
-		class542 var8 = new class542(this, var7, arg4, (float) arg1 * arg5, arg2.field3445, arg0 < 2 ? 2 : arg0, AudioFormat.field3441 == arg2 || AudioFormat.field3442 == arg2, AudioEndianness.field3438 == arg3);
-		class544 var9 = var8.field6863;
+		PcmPlayer var7 = this.method16806((float) arg1 * arg5);
+		SoundSample var8 = new SoundSample(this, var7, arg4, (float) arg1 * arg5, arg2.field3445, arg0 < 2 ? 2 : arg0, AudioFormat.field3441 == arg2 || AudioFormat.field3442 == arg2, AudioEndianness.field3438 == arg3);
+		PcmPlayer var9 = var8.field6863;
 		synchronized (var8.field6863) {
 			var8.field6863.method8649(var8);
 			return var8;
@@ -166,11 +166,11 @@ public class JavaSoundBackend extends SoundBackend {
 
 	@ObfuscatedName("aiz.m(Ljava/lang/Object;I)V")
 	public void method5863(Object arg0) {
-		if (arg0 == null || !(arg0 instanceof class542)) {
+		if (arg0 == null || !(arg0 instanceof SoundSample)) {
 			return;
 		}
-		class542 var2 = (class542) arg0;
-		class544 var3 = var2.field6863;
+		SoundSample var2 = (SoundSample) arg0;
+		PcmPlayer var3 = var2.field6863;
 		synchronized (var2.field6863) {
 			var2.field6863.method8650(var2);
 		}
@@ -178,11 +178,11 @@ public class JavaSoundBackend extends SoundBackend {
 
 	@ObfuscatedName("aiz.k(Ljava/lang/Object;[BIII)V")
 	public void method5875(Object arg0, byte[] arg1, int arg2, int arg3) {
-		if (arg0 == null || !(arg0 instanceof class542)) {
+		if (arg0 == null || !(arg0 instanceof SoundSample)) {
 			return;
 		}
-		class542 var5 = (class542) arg0;
-		class544 var6 = var5.field6863;
+		SoundSample var5 = (SoundSample) arg0;
+		PcmPlayer var6 = var5.field6863;
 		synchronized (var5.field6863) {
 			var5.method8626(arg1, arg2, arg3);
 		}

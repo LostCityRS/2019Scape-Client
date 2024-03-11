@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aht")
-public class class915 extends class322 {
+public class class915 extends LoadingScreenSpriteConfig {
 
 	@ObfuscatedName("aht.w")
 	public final int field10582;
@@ -14,14 +14,14 @@ public class class915 extends class322 {
 	}
 
 	@ObfuscatedName("aha.k(Lalw;I)Lla;")
-	public static class322 method16658(Packet arg0) {
-		class322 var1 = class322.method6073(arg0);
+	public static LoadingScreenSpriteConfig method16658(Packet arg0) {
+		LoadingScreenSpriteConfig var1 = LoadingScreenSpriteConfig.method6073(arg0);
 		int var2 = arg0.g3s();
 		return new class915(var1.field3218, var1.field3215, var1.field3214, var1.field3216, var1.field3217, var2);
 	}
 
 	@ObfuscatedName("aht.n(S)Lkt;")
-	public class319 method5349() {
-		return class319.field3192;
+	public LoadingScreenElementType method5349() {
+		return LoadingScreenElementType.field3192;
 	}
 }

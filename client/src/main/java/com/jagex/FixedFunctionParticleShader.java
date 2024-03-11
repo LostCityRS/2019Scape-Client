@@ -16,17 +16,17 @@ public final class FixedFunctionParticleShader extends ParticleShader {
 
 	@ObfuscatedName("ahf.n(IZ)V")
 	public void method5039(int arg0, boolean arg1) {
-		this.field2986.method16041(1, class351.field3367);
-		this.field2986.method16042(1, class351.field3367);
+		this.field2986.method16041(1, TextureCombiner.field3367);
+		this.field2986.method16042(1, TextureCombiner.field3367);
 		this.method16626();
-		this.field2986.method16079(class357.field3403, 0, arg0 * 4, 0, arg0 * 2);
+		this.field2986.method16079(PrimitiveType.field3403, 0, arg0 * 4, 0, arg0 * 2);
 	}
 
 	@ObfuscatedName("ahf.m(Z)V")
 	public void method5040(boolean arg0) {
 		this.field2986.method16044(this.field2988);
-		this.field2986.method16041(1, class351.field3368);
-		this.field2986.method16042(1, class351.field3368);
+		this.field2986.method16041(1, TextureCombiner.field3368);
+		this.field2986.method16042(1, TextureCombiner.field3368);
 		this.method16626();
 		this.field2986.method16075();
 	}
@@ -35,9 +35,9 @@ public final class FixedFunctionParticleShader extends ParticleShader {
 	public void method16626() {
 		this.field2986.method16038(0);
 		this.field2986.method16092(this.field2991);
-		this.field2986.method16041(0, class351.field3365);
-		this.field2986.method16042(0, class351.field3365);
-		this.field2986.method16115(class355.field3395, class355.field3395);
+		this.field2986.method16041(0, TextureCombiner.field3365);
+		this.field2986.method16042(0, TextureCombiner.field3365);
+		this.field2986.method16115(TextureCombineMode.field3395, TextureCombineMode.field3395);
 		this.field2986.method16046().method6604(this.field2987);
 		this.field2986.method16174(class352.field3370);
 	}

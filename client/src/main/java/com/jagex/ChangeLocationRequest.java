@@ -43,7 +43,7 @@ public final class ChangeLocationRequest extends Node {
 	public ScaleRotTrans field11230;
 
 	@ObfuscatedName("ajt.s")
-	public class597 field11241;
+	public LocTypeCustomisation field11241;
 
 	@ObfuscatedName("ajt.y")
 	public boolean field11239 = true;
@@ -91,7 +91,7 @@ public final class ChangeLocationRequest extends Node {
 	}
 
 	@ObfuscatedName("pa.n(IIIIIILvp;B)V")
-	public static void method6816(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, class597 arg6) {
+	public static void method6816(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, LocTypeCustomisation arg6) {
 		ChangeLocationRequest var7 = null;
 		for (ChangeLocationRequest var8 = (ChangeLocationRequest) field11242.method14191(); var8 != null; var8 = (ChangeLocationRequest) field11242.method14161()) {
 			if (var8.field11238 == arg0 && var8.field11226 == arg1 && var8.field11228 == arg2 && var8.field11229 == arg3) {
@@ -218,7 +218,7 @@ public final class ChangeLocationRequest extends Node {
 	}
 
 	@ObfuscatedName("ud.u(IIIILvp;I)V")
-	public static final void method9194(int arg0, int arg1, int arg2, int arg3, class597 arg4) {
+	public static final void method9194(int arg0, int arg1, int arg2, int arg3, LocTypeCustomisation arg4) {
 		if (arg2 < 1 || arg3 < 1 || arg2 > client.world.method7728() - 2 || arg3 > client.world.method7758() - 2) {
 			return;
 		}

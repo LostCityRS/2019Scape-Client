@@ -22,7 +22,7 @@ public class class1137 extends class912 {
 	}
 
 	@ObfuscatedName("aqy.n(S)Lkt;")
-	public class319 method5349() {
-		return class319.field3196;
+	public LoadingScreenElementType method5349() {
+		return LoadingScreenElementType.field3196;
 	}
 }

@@ -49,7 +49,7 @@ public class class315 implements LoadingScreenElementConfig {
 	}
 
 	@ObfuscatedName("km.n(S)Lkt;")
-	public class319 method5349() {
-		return class319.field3197;
+	public LoadingScreenElementType method5349() {
+		return LoadingScreenElementType.field3197;
 	}
 }
