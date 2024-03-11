@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.core.constants.Language;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.ConfigTypeList;
 import com.jagex.game.config.objtype.ObjType;

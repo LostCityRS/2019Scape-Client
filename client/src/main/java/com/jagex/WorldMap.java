@@ -14,7 +14,10 @@ import com.jagex.game.config.msitype.MSITypeList;
 import deob.ObfuscatedName;
 import deob.Statics;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.Iterator;
 
 @ObfuscatedName("tf")
 public class WorldMap {

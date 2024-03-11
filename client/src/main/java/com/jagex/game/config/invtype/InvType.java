@@ -1,9 +1,9 @@
 package com.jagex.game.config.invtype;
 
 import com.jagex.ConfigRelated;
-import com.jagex.game.config.ConfigType;
 import com.jagex.Packet;
 import com.jagex.SecondaryNode;
+import com.jagex.game.config.ConfigType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ady")

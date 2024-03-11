@@ -1,8 +1,11 @@
 package com.jagex.game.config.lighttype;
 
-import com.jagex.*;
+import com.jagex.BasicTypeFactory;
+import com.jagex.CachingConfigTypeList;
+import com.jagex.Js5;
+import com.jagex.ModeGame;
+import com.jagex.core.constants.Language;
 import com.jagex.game.config.Js5ConfigGroup;
-import com.jagex.game.config.lighttype.LightType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aoq")

@@ -2,7 +2,6 @@ package com.jagex.game.config.defaults;
 
 import com.jagex.Js5;
 import com.jagex.Packet;
-import com.jagex.game.config.defaults.DefaultsGroup;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("wy")

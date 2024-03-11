@@ -1,8 +1,5 @@
 package com.jagex;
 
-import com.jagex.ClanChannel;
-import com.jagex.Node;
-import com.jagex.Packet;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aku")

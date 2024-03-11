@@ -1,8 +1,9 @@
-package com.jagex;
+package com.jagex.game.config.npctype;
 
-import com.jagex.game.config.bastype.BASType;
+import com.jagex.*;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.ConfigTypeList;
+import com.jagex.game.config.bastype.BASType;
 import com.jagex.game.config.bastype.BASTypeList;
 import com.jagex.game.config.vartype.VarType;
 import com.jagex.game.config.vartype.bit.VarBitType;

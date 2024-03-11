@@ -1,11 +1,13 @@
 package com.jagex;
 
-import com.jagex.game.config.bastype.BASType;
+import com.jagex.core.constants.Language;
 import com.jagex.game.config.Js5Archive;
+import com.jagex.game.config.bastype.BASType;
 import com.jagex.game.config.cursortype.CursorType;
 import com.jagex.game.config.headbartype.HeadbarType;
 import com.jagex.game.config.hitmarktype.HitmarkType;
 import com.jagex.game.config.loctype.LocType;
+import com.jagex.game.config.npctype.NPCType;
 import com.jagex.game.config.objtype.ObjType;
 import com.jagex.game.config.seqtype.SeqType;
 import com.jagex.game.config.vartype.SparseVarDomain;

@@ -6,8 +6,8 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.DataLine;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.SourceDataLine;
-import java.util.*;
 import java.util.HashMap;
+import java.util.*;
 
 @ObfuscatedName("aiz")
 public class JavaSoundBackend extends SoundBackend {

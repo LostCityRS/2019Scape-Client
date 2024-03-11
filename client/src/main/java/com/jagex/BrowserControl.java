@@ -1,7 +1,6 @@
 package com.jagex;
 
 import deob.ObfuscatedName;
-//import netscape.javascript.JSObject;
 
 import java.applet.Applet;
 

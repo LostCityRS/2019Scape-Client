@@ -1,6 +1,10 @@
 package com.jagex.game.config.vartype.general;
 
-import com.jagex.*;
+import com.jagex.Js5;
+import com.jagex.ModeGame;
+import com.jagex.Packet;
+import com.jagex.WeightedCache;
+import com.jagex.core.constants.Language;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.ConfigTypeList;
 import com.jagex.game.config.vartype.VarTypeList;

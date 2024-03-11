@@ -1,6 +1,9 @@
 package com.jagex.game.config.cursortype;
 
-import com.jagex.*;
+import com.jagex.CursorTypeFactory;
+import com.jagex.Packet;
+import com.jagex.SpriteData;
+import com.jagex.SpriteDataProvider;
 import com.jagex.game.config.ConfigType;
 import deob.ObfuscatedName;
 

@@ -1,9 +1,9 @@
 package com.jagex;
 
-import deob.ObfuscatedName;
-import deob.Statics;
 import com.jagex.twitchtv.TwitchWebcamDevice;
 import com.jagex.twitchtv.TwitchWebcamDeviceCapability;
+import deob.ObfuscatedName;
+import deob.Statics;
 
 @ObfuscatedName("yi")
 public final class TwitchCommands {

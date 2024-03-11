@@ -1,6 +1,6 @@
-package com.jagex;
+package com.jagex.core.constants;
 
-import com.jagex.core.constants.SerializableEnum;
+import com.jagex.ModeWhere;
 import deob.ObfuscatedName;
 
 import java.util.Locale;

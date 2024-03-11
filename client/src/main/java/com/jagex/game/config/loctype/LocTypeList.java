@@ -1,6 +1,7 @@
 package com.jagex.game.config.loctype;
 
 import com.jagex.*;
+import com.jagex.core.constants.Language;
 import com.jagex.game.config.Js5ConfigGroup;
 import deob.ObfuscatedName;
 

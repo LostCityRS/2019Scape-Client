@@ -1,9 +1,9 @@
 package com.jagex.game.config.paramtype;
 
 import com.jagex.ConfigRelated;
-import com.jagex.game.config.ConfigType;
 import com.jagex.Packet;
 import com.jagex.SerializableEnums;
+import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.vartype.constants.ScriptVarType;
 import deob.ObfuscatedName;
 import deob.Statics;

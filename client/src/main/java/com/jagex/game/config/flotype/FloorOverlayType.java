@@ -2,8 +2,8 @@ package com.jagex.game.config.flotype;
 
 import com.jagex.ColourUtils;
 import com.jagex.ConfigRelated;
-import com.jagex.game.config.ConfigType;
 import com.jagex.Packet;
+import com.jagex.game.config.ConfigType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("yn")

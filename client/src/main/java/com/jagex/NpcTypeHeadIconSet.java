@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.game.config.npctype.NPCType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("id")

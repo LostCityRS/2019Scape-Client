@@ -2,6 +2,7 @@ package com.jagex;
 
 import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
+import com.jagex.game.config.npctype.NPCType;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;

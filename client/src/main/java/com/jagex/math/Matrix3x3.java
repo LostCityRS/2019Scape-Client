@@ -1,6 +1,5 @@
 package com.jagex.math;
 
-import com.jagex.math.Quaternion;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("oc")

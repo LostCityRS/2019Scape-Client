@@ -1,8 +1,8 @@
 package com.jagex;
 
+import com.jagex.twitchtv.*;
 import deob.ObfuscatedName;
 import deob.Statics;
-import com.jagex.twitchtv.*;
 
 import java.io.BufferedReader;
 import java.io.File;

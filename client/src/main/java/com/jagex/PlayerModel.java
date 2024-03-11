@@ -1,13 +1,14 @@
 package com.jagex;
 
 import com.jagex.game.config.bastype.BASType;
-import com.jagex.game.config.objtype.ObjTypeList;
 import com.jagex.game.config.bastype.BASTypeList;
 import com.jagex.game.config.defaults.WearposDefaults;
 import com.jagex.game.config.idktype.IDKType;
 import com.jagex.game.config.idktype.IDKTypeList;
+import com.jagex.game.config.npctype.NPCType;
 import com.jagex.game.config.npctype.NPCTypeList;
 import com.jagex.game.config.objtype.ObjType;
+import com.jagex.game.config.objtype.ObjTypeList;
 import com.jagex.game.config.seqtype.SeqType;
 import com.jagex.game.config.seqtype.SeqTypeList;
 import com.jagex.math.Matrix4x3;

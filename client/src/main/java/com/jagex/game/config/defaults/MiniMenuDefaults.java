@@ -1,7 +1,6 @@
 package com.jagex.game.config.defaults;
 
 import com.jagex.*;
-import com.jagex.game.config.defaults.DefaultsGroup;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("wf")

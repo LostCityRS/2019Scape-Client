@@ -4,6 +4,7 @@ import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
 import com.jagex.game.config.meltype.MapElementType;
 import com.jagex.game.config.msitype.MSIType;
+import com.jagex.game.config.npctype.NPCType;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;

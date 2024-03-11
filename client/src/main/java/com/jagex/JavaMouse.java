@@ -3,7 +3,10 @@ package com.jagex;
 import deob.ObfuscatedName;
 import deob.Statics;
 
-import java.awt.event.*;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
 
 @ObfuscatedName("alb")
 public class JavaMouse extends Mouse implements MouseListener, MouseMotionListener, MouseWheelListener {
