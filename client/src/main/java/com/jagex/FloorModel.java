@@ -76,7 +76,7 @@ public abstract class FloorModel {
 	public abstract void method1521(int arg0, int arg1, int arg2);
 
 	@ObfuscatedName("cb.m(II[I[I[I[I[I[I[I[I[I[I[ILdy;Z)V")
-	public abstract void method1525(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, int[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, int[] arg10, int[] arg11, int[] arg12, class131 arg13, boolean arg14);
+	public abstract void method1525(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, int[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, int[] arg10, int[] arg11, int[] arg12, WaterFogData arg13, boolean arg14);
 
 	@ObfuscatedName("cb.w(IIIIIII[[Z)V")
 	public abstract void method1526(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, boolean[][] arg7);
@@ -103,5 +103,5 @@ public abstract class FloorModel {
 	public abstract void method1555();
 
 	@ObfuscatedName("cb.n(II[I[I[I[I[I[I[I[ILdy;Z)V")
-	public abstract void method1557(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, int[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, class131 arg10, boolean arg11);
+	public abstract void method1557(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, int[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, WaterFogData arg10, boolean arg11);
 }

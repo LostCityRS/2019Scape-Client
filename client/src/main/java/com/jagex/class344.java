@@ -190,7 +190,7 @@ public class class344 {
 					arg5.field2991 = arg0.field10188.method5639(var16);
 				}
 				byte var17 = 0;
-				if (MaterialAlphaMode.field7574 == var16.field1340) {
+				if (MaterialAlphaMode.TEST == var16.field1340) {
 					var17 = var16.field1358;
 				}
 				arg0.method16056(var17);

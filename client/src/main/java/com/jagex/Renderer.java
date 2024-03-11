@@ -643,10 +643,10 @@ public abstract class Renderer {
 	public abstract void method2244(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5);
 
 	@ObfuscatedName("dh.ei(ILdy;)V")
-	public abstract void method2245(int arg0, class131 arg1);
+	public abstract void method2245(int arg0, WaterFogData arg1);
 
 	@ObfuscatedName("dh.el(ILdy;)V")
-	public abstract void method2246(int arg0, class131 arg1);
+	public abstract void method2246(int arg0, WaterFogData arg1);
 
 	@ObfuscatedName("dh.ej()V")
 	public abstract void method2247();

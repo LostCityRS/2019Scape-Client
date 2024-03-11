@@ -248,7 +248,7 @@ public class PureJavaRenderer extends Renderer {
 				} else {
 					var6 = this.field1596.method1983(class605.field7586, var3.field1334, 0.7F, var5, var5, true);
 				}
-				var4 = new class967(var3.field1334, var3.field1329, var5, var6, MaterialAlphaMode.field7574 != var3.field1340);
+				var4 = new class967(var3.field1334, var3.field1329, var5, var6, MaterialAlphaMode.TEST != var3.field1340);
 				this.field9809.method2922(var4, (long) (var3.field1334 & 0xFFFF) | Long.MIN_VALUE, var5 * var5);
 			}
 		}
@@ -2531,7 +2531,7 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.ei(ILdy;)V")
-	public void method2245(int arg0, class131 arg1) {
+	public void method2245(int arg0, WaterFogData arg1) {
 		for (int var3 = 0; var3 < this.field9808.length; var3++) {
 			this.field9808[var3].field823 = this.field9808[var3].field858;
 			this.field9808[var3].field832 = arg0;
@@ -2542,7 +2542,7 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.el(ILdy;)V")
-	public void method2246(int arg0, class131 arg1) {
+	public void method2246(int arg0, WaterFogData arg1) {
 		PureJavaRendererContext var3 = this.method15674(Thread.currentThread());
 		var3.field832 = arg0;
 		var3.field858 = arg1.field1575;

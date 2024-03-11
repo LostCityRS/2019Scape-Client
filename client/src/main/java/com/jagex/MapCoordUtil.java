@@ -3,9 +3,9 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("qt")
-public class class452 {
+public class MapCoordUtil {
 
-	public class452() throws Throwable {
+	public MapCoordUtil() throws Throwable {
 		throw new Error();
 	}
 

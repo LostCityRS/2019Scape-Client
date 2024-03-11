@@ -381,7 +381,7 @@ public abstract class GpuRenderer extends Renderer {
 	public int field10164;
 
 	@ObfuscatedName("afc.fw")
-	public class131 field10165;
+	public WaterFogData field10165;
 
 	@ObfuscatedName("afc.fa")
 	public boolean field10166;
@@ -2016,19 +2016,19 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.vu()Ldy;")
-	public class131 method16053() {
+	public WaterFogData method16053() {
 		return this.field10165;
 	}
 
 	@ObfuscatedName("afc.ei(ILdy;)V")
-	public final void method2245(int arg0, class131 arg1) {
+	public final void method2245(int arg0, WaterFogData arg1) {
 		this.field10164 = arg0;
 		this.field10165 = arg1;
 		this.field10133 = true;
 	}
 
 	@ObfuscatedName("afc.el(ILdy;)V")
-	public final void method2246(int arg0, class131 arg1) {
+	public final void method2246(int arg0, WaterFogData arg1) {
 		if (!this.field10133) {
 			throw new RuntimeException("");
 		}

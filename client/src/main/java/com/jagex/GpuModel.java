@@ -3366,7 +3366,7 @@ public class GpuModel extends Model {
 		var2.method5018(this.field9730.field10066);
 		var2.field2982.method6603();
 		if (this.field9730.field10133) {
-			class131 var3 = this.field9730.method16053();
+			WaterFogData var3 = this.field9730.method16053();
 			var2.field2979.method6247(0.0F, 1.0F, 0.0F, (float) -this.field9730.field10164);
 			var2.field2979.method6252(3.0F / (float) var3.field1573);
 			var2.field2973.method6491((float) (var3.field1575 >> 16 & 0xFF) / 255.0F, (float) (var3.field1575 >> 8 & 0xFF) / 255.0F, (float) (var3.field1575 >> 0 & 0xFF) / 255.0F);
@@ -3411,7 +3411,7 @@ public class GpuModel extends Model {
 					var8 = !Material.method261(var10.field1308);
 					var2.field2982.field4315[12] = (float) (this.field9730.field10181 % 128000) / 1000.0F * var10.field1317 / 64.0F % 1.0F;
 					var2.field2982.field4315[13] = (float) (this.field9730.field10181 % 128000) / 1000.0F * var10.field1338 / 64.0F % 1.0F;
-					if (MaterialAlphaMode.field7574 == var10.field1340) {
+					if (MaterialAlphaMode.TEST == var10.field1340) {
 						var9 = var10.field1358;
 					}
 				}
@@ -3476,7 +3476,7 @@ public class GpuModel extends Model {
 					var2.method5036(var24.field1305);
 					var2.field2982.field4315[12] = (float) (this.field9730.field10181 % 128000) / 1000.0F * var24.field1317 % 1.0F;
 					var2.field2982.field4315[13] = (float) (this.field9730.field10181 % 128000) / 1000.0F * var24.field1338 % 1.0F;
-					if (MaterialAlphaMode.field7574 == var24.field1340) {
+					if (MaterialAlphaMode.TEST == var24.field1340) {
 						var25 = var24.field1358;
 					}
 				}

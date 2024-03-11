@@ -118,7 +118,7 @@ public class PureJavaFloorModel extends FloorModel {
 	}
 
 	@ObfuscatedName("aee.m(II[I[I[I[I[I[I[I[I[I[I[ILdy;Z)V")
-	public void method1525(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, int[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, int[] arg10, int[] arg11, int[] arg12, class131 arg13, boolean arg14) {
+	public void method1525(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, int[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, int[] arg10, int[] arg11, int[] arg12, WaterFogData arg13, boolean arg14) {
 		if (this.field9425 == null) {
 			this.field9425 = new UnblendedTileData1[this.field1235][this.field1234];
 			this.field9443 = new UnblendedTileData2[this.field1235][this.field1234];
@@ -267,7 +267,7 @@ public class PureJavaFloorModel extends FloorModel {
 	}
 
 	@ObfuscatedName("aee.n(II[I[I[I[I[I[I[I[ILdy;Z)V")
-	public void method1557(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, int[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, class131 arg10, boolean arg11) {
+	public void method1557(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, int[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, WaterFogData arg10, boolean arg11) {
 		boolean var13 = (this.field9427 & 0x20) == 0;
 		if (this.field9438 == null && !var13) {
 			this.field9438 = new BlendedUntexturedTileData1[this.field1235][this.field1234];

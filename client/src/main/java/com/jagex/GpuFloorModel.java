@@ -185,7 +185,7 @@ public class GpuFloorModel extends FloorModel {
 	}
 
 	@ObfuscatedName("aem.n(II[I[I[I[I[I[I[I[ILdy;Z)V")
-	public void method1557(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, int[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, class131 arg10, boolean arg11) {
+	public void method1557(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, int[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, WaterFogData arg10, boolean arg11) {
 		MaterialList var13 = this.field9516.field1597;
 		if (arg5 != null && this.field9503 == null) {
 			this.field9503 = new int[this.field1235][this.field1234][];
@@ -236,7 +236,7 @@ public class GpuFloorModel extends FloorModel {
 	}
 
 	@ObfuscatedName("aem.m(II[I[I[I[I[I[I[I[I[I[I[ILdy;Z)V")
-	public void method1525(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, int[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, int[] arg10, int[] arg11, int[] arg12, class131 arg13, boolean arg14) {
+	public void method1525(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, int[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, int[] arg10, int[] arg11, int[] arg12, WaterFogData arg13, boolean arg14) {
 		int var16 = arg9.length;
 		int[] var17 = new int[var16 * 3];
 		int[] var18 = new int[var16 * 3];

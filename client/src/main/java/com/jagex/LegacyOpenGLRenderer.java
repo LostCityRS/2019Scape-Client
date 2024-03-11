@@ -333,7 +333,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	public int field10028;
 
 	@ObfuscatedName("afa.gl")
-	public class131 field9892;
+	public WaterFogData field9892;
 
 	@ObfuscatedName("afa.go")
 	public class98 field9966;
@@ -1868,14 +1868,14 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.ei(ILdy;)V")
-	public void method2245(int arg0, class131 arg1) {
+	public void method2245(int arg0, WaterFogData arg1) {
 		this.field10028 = arg0;
 		this.field9892 = arg1;
 		this.field9840 = true;
 	}
 
 	@ObfuscatedName("afa.el(ILdy;)V")
-	public void method2246(int arg0, class131 arg1) {
+	public void method2246(int arg0, WaterFogData arg1) {
 		if (!this.field9840) {
 			throw new RuntimeException("");
 		}
@@ -2744,7 +2744,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 				} else {
 					this.method15785();
 				}
-				if (MaterialAlphaMode.field7574 == var10.field1340) {
+				if (MaterialAlphaMode.TEST == var10.field1340) {
 					var9 = var10.field1358;
 				}
 			}

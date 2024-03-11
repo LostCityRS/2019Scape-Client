@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("qg")
-public class class454 {
+public class MapLoader {
 
 	@ObfuscatedName("qg.e")
 	public FloorOverlayTypeList field4548;
@@ -225,7 +225,7 @@ public class class454 {
 	@ObfuscatedName("qg.cx")
 	public int[] field4589 = null;
 
-	public class454(Scene arg0, int arg1, int arg2, int arg3, boolean arg4, FloorOverlayTypeList arg5, FloorUnderlayTypeList arg6, LinkMap arg7) {
+	public MapLoader(Scene arg0, int arg1, int arg2, int arg3, boolean arg4, FloorOverlayTypeList arg5, FloorUnderlayTypeList arg6, LinkMap arg7) {
 		this.field4577 = arg0;
 		this.field4544 = arg1;
 		this.field4513 = arg2;
@@ -358,7 +358,7 @@ public class class454 {
 							}
 							this.method7140(arg0, arg1, var18, var19, 0, 0, var11 + var16, var12 + var17, 0, true);
 						} else {
-							var18 = arg2 + class452.method14888(var16 & 0x7, var17 & 0x7, arg7);
+							var18 = arg2 + MapCoordUtil.method14888(var16 & 0x7, var17 & 0x7, arg7);
 							var19 = arg3 + Statics.method14756(var16 & 0x7, var17 & 0x7, arg7);
 							this.method7140(arg0, arg1, var18, var19, var13, var14, var11 + var16, var12 + var17, arg7, false);
 						}
@@ -745,7 +745,7 @@ public class class454 {
 							this.field4518[arg2][var7][var8] = (byte) (this.field4518[arg2][var7][var8] | 0x4);
 						}
 					}
-					class131 var50 = new class131();
+					WaterFogData var50 = new WaterFogData();
 					if (this.field4549) {
 						var50.field1575 = this.field4577.method8729(var7, var8);
 						var50.field1573 = this.field4577.method8710(var7, var8);
@@ -841,7 +841,7 @@ public class class454 {
 						int var38 = var9[var13][var14] & 0x7FFF;
 						this.method7152(arg0, arg2, var12, var14, var13, var15, var19, var17, var36, var37, var38, var11, var27, var28, var29, var30, var31, var32, var33, var34, arg3, arg1, arg5, arg4);
 						this.method7153(arg1, var19, var23, arg2, var12, var14, var13, var15, var17, var16);
-						class131 var39 = new class131();
+						WaterFogData var39 = new WaterFogData();
 						if (this.field4549) {
 							var39.field1575 = this.field4577.method8729(var12, var14);
 							var39.field1573 = this.field4577.method8710(var12, var14);

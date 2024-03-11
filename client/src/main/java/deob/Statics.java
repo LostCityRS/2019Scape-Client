@@ -1815,7 +1815,7 @@ public class Statics {
 
 	@ObfuscatedName("tz.e(I)[Lvn;")
 	public static MaterialAlphaMode[] method8501() {
-		return new MaterialAlphaMode[] { MaterialAlphaMode.field7573, MaterialAlphaMode.field7575, MaterialAlphaMode.field7574 };
+		return new MaterialAlphaMode[] { MaterialAlphaMode.field7573, MaterialAlphaMode.field7575, MaterialAlphaMode.TEST };
 	}
 
 	@ObfuscatedName("ua.e(S)[Lvg;")

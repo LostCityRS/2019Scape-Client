@@ -20,7 +20,7 @@ public class class981 extends Node {
 	public final float field11403;
 
 	@ObfuscatedName("akh.u")
-	public class131 field11404;
+	public WaterFogData field11404;
 
 	@ObfuscatedName("akh.z")
 	public VertexBuffer field11405;
@@ -46,7 +46,7 @@ public class class981 extends Node {
 	@ObfuscatedName("akh.s")
 	public ByteBuffer field11410;
 
-	public class981(GpuFloorModel arg0, int arg1, int arg2, class131 arg3) {
+	public class981(GpuFloorModel arg0, int arg1, int arg2, WaterFogData arg3) {
 		this.field11401 = arg0;
 		this.field11409 = this.field11401.field9516;
 		this.field11402 = arg1;

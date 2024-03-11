@@ -21,7 +21,7 @@ public class class970 extends Node {
 	public final float field11294;
 
 	@ObfuscatedName("akn.u")
-	public final class131 field11295;
+	public final WaterFogData field11295;
 
 	@ObfuscatedName("akn.z")
 	public class83 field11298;
@@ -38,7 +38,7 @@ public class class970 extends Node {
 	@ObfuscatedName("akn.r")
 	public Stream field11293;
 
-	public class970(LegacyOpenGLFloorModel arg0, int arg1, int arg2, class131 arg3) {
+	public class970(LegacyOpenGLFloorModel arg0, int arg1, int arg2, WaterFogData arg3) {
 		this.field11300 = arg0;
 		this.field11291 = this.field11300.field9453;
 		this.field11296 = arg1;

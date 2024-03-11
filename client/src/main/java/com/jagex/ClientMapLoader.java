@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("aih")
-public class ClientMapLoader extends class454 {
+public class ClientMapLoader extends MapLoader {
 
 	@ObfuscatedName("aih.cw")
 	public static boolean field10755 = false;
@@ -259,8 +259,8 @@ public class ClientMapLoader extends class454 {
 								int var21 = var20.method17605() >> 9;
 								int var22 = var20.method17607() >> 9;
 								if (var18.field7006 == arg5 && var21 >= var13 && var21 < var13 + 8 && var22 >= var14 && var22 < var14 + 8) {
-									int var23 = (arg3 << 9) + class452.method7092(var20.method17605() & 0xFFF, var20.method17607() & 0xFFF, arg8);
-									int var24 = (arg4 << 9) + class452.method8977(var20.method17605() & 0xFFF, var20.method17607() & 0xFFF, arg8);
+									int var23 = (arg3 << 9) + MapCoordUtil.method7092(var20.method17605() & 0xFFF, var20.method17607() & 0xFFF, arg8);
+									int var24 = (arg4 << 9) + MapCoordUtil.method8977(var20.method17605() & 0xFFF, var20.method17607() & 0xFFF, arg8);
 									int var25 = var23 >> 9;
 									int var26 = var24 >> 9;
 									if (var25 >= 0 && var26 >= 0 && var25 < this.field4513 && var26 < this.field4514) {
@@ -338,7 +338,7 @@ public class ClientMapLoader extends class454 {
 										for (int var36 = var33; var36 < var33 + 4; var36++) {
 											for (int var37 = var34; var37 < var34 + 4; var37++) {
 												if (var36 >= var13 && var36 < var13 + 8 && var37 >= var14 && var37 < var14 + 8) {
-													int var38 = arg3 + class452.method14888(var36 & 0x7, var37 & 0x7, arg8);
+													int var38 = arg3 + MapCoordUtil.method14888(var36 & 0x7, var37 & 0x7, arg8);
 													int var39 = arg4 + Statics.method14756(var36 & 0x7, var37 & 0x7, arg8);
 													if (var38 >= 0 && var38 < this.field4513 && var39 >= 0 && var39 < this.field4514) {
 														this.field4517[arg2][var38][var39] = var35;
@@ -559,7 +559,7 @@ public class ClientMapLoader extends class454 {
 										var21 = var19.field7499;
 									}
 									var22 = arg3 + Statics.method9606(var16 & 0x7, var15 & 0x7, arg8, var19.field7499, var19.field7492, var18.field7540);
-									var23 = arg4 + class452.method2733(var16 & 0x7, var15 & 0x7, arg8, var19.field7499, var19.field7492, var18.field7540);
+									var23 = arg4 + MapCoordUtil.method2733(var16 & 0x7, var15 & 0x7, arg8, var19.field7499, var19.field7492, var18.field7540);
 									var24 = var20 + var22;
 									var25 = var21 + var23;
 								} while (var22 >= this.field4513);

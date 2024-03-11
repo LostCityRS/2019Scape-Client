@@ -9,7 +9,7 @@ public class MaterialAlphaMode implements SerializableEnum {
 	public static final MaterialAlphaMode field7575 = new MaterialAlphaMode(0);
 
 	@ObfuscatedName("vn.n")
-	public static final MaterialAlphaMode field7574 = new MaterialAlphaMode(1);
+	public static final MaterialAlphaMode TEST = new MaterialAlphaMode(1);
 
 	@ObfuscatedName("vn.m")
 	public static final MaterialAlphaMode field7573 = new MaterialAlphaMode(2);

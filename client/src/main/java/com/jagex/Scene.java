@@ -1064,7 +1064,7 @@ public class Scene {
 		}
 		if (this.field6914 != null) {
 			this.method8703(true);
-			this.field6907.method2245(-1, new class131(1583160, 40, 127, 63, 0, 0, 0));
+			this.field6907.method2245(-1, new WaterFogData(1583160, 40, 127, 63, 0, 0, 0));
 			this.method8744(true, arg4, arg10, arg11, arg16);
 			this.field6907.method2247();
 			this.method8703(false);
@@ -1313,7 +1313,7 @@ public class Scene {
 			}
 			int var9 = Math.min(this.field6910 - 1, Math.max(0, var7));
 			int var10 = Math.min(this.field6911 - 1, Math.max(0, var8));
-			class131 var11 = new class131();
+			WaterFogData var11 = new WaterFogData();
 			var11.field1575 = this.method8729(var9, var10);
 			var11.field1573 = this.method8710(var9, var10);
 			var11.field1577 = this.method8790(var9, var10);
