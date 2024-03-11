@@ -1,5 +1,7 @@
 package com.jagex;
 
+import com.jagex.math.Quaternion;
+import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;
 

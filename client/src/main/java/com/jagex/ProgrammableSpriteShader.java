@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.math.Vector4;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ahz")

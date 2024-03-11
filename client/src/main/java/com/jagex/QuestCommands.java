@@ -1,6 +1,7 @@
 package com.jagex;
 
 import com.jagex.game.config.paramtype.ParamType;
+import com.jagex.game.config.questtype.QuestType;
 import deob.ObfuscatedName;
 import deob.Statics;
 

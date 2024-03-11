@@ -1,5 +1,8 @@
-package com.jagex;
+package com.jagex.math;
 
+import com.jagex.Packet;
+import com.jagex.Trig1;
+import com.jagex.Trig2;
 import deob.ObfuscatedName;
 import deob.Statics;
 

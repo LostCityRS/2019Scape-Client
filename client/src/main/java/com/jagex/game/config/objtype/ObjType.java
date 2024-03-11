@@ -5,6 +5,8 @@ import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.ConfigTypeList;
 import com.jagex.game.config.defaults.GraphicsDefaults;
 import com.jagex.game.config.paramtype.ParamType;
+import com.jagex.math.Matrix4x3;
+import com.jagex.math.Matrix4x4;
 import deob.ObfuscatedName;
 import deob.Statics;
 

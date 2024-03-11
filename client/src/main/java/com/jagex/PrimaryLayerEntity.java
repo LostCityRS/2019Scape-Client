@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.math.ScaleRotTrans;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ash")

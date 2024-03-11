@@ -1,5 +1,6 @@
-package com.jagex;
+package com.jagex.math;
 
+import com.jagex.Trig2;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ou")

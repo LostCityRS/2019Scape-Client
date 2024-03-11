@@ -1,5 +1,6 @@
-package com.jagex;
+package com.jagex.game.config.questtype;
 
+import com.jagex.*;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.ConfigTypeList;
 import com.jagex.game.config.vartype.VarType;

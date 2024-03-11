@@ -1,5 +1,7 @@
 package com.jagex;
 
+import com.jagex.math.Vector3;
+import com.jagex.math.Vector3i;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("kl")

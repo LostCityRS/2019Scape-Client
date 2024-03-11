@@ -1,5 +1,7 @@
-package com.jagex;
+package com.jagex.game.config.seqgrouptype;
 
+import com.jagex.ConfigRelated;
+import com.jagex.Packet;
 import com.jagex.game.config.ConfigType;
 import deob.ObfuscatedName;
 

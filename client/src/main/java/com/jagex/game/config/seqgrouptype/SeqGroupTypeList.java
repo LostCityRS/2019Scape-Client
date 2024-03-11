@@ -1,6 +1,8 @@
-package com.jagex;
+package com.jagex.game.config.seqgrouptype;
 
+import com.jagex.*;
 import com.jagex.game.config.Js5ConfigGroup;
+import com.jagex.game.config.seqgrouptype.SeqGroupType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aoo")

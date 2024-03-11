@@ -1,4 +1,4 @@
-package com.jagex;
+package com.jagex.math;
 
 import deob.ObfuscatedName;
 

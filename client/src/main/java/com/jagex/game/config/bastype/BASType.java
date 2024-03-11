@@ -2,6 +2,7 @@ package com.jagex.game.config.bastype;
 
 import com.jagex.*;
 import com.jagex.game.config.ConfigType;
+import com.jagex.math.Matrix4x3;
 import deob.ObfuscatedName;
 
 import java.util.Arrays;

@@ -1,5 +1,7 @@
 package com.jagex;
 
+import com.jagex.math.Matrix4x4;
+import com.jagex.math.Vector4;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aqw")

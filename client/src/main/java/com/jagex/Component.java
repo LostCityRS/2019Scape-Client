@@ -1,11 +1,12 @@
 package com.jagex;
 
-import com.jagex.game.config.ObjTypeList;
+import com.jagex.game.config.objtype.ObjTypeList;
 import com.jagex.game.config.bastype.BASTypeList;
 import com.jagex.game.config.idktype.IDKTypeList;
 import com.jagex.game.config.npctype.NPCTypeList;
 import com.jagex.game.config.objtype.ObjType;
 import com.jagex.game.config.seqtype.SeqTypeList;
+import com.jagex.math.Matrix4x3;
 import deob.ObfuscatedName;
 import deob.Statics;
 

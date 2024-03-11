@@ -3,6 +3,7 @@ package com.jagex;
 import com.jagex.game.config.lighttype.LightType;
 import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
+import com.jagex.math.ScaleRotTrans;
 import deob.ObfuscatedName;
 import deob.Statics;
 

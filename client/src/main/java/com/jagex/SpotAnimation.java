@@ -1,5 +1,7 @@
 package com.jagex;
 
+import com.jagex.math.Matrix4x3;
+import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;
 

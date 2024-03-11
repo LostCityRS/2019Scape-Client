@@ -1,6 +1,7 @@
 package com.jagex;
 
 import com.jagex.game.config.vartype.constants.VarDomainType;
+import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;
 

@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("pe")

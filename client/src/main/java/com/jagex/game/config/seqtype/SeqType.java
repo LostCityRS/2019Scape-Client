@@ -2,6 +2,7 @@ package com.jagex.game.config.seqtype;
 
 import com.jagex.*;
 import com.jagex.game.config.ConfigType;
+import com.jagex.game.config.seqgrouptype.SeqGroupType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("fg")

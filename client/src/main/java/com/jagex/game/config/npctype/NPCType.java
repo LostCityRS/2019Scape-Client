@@ -7,6 +7,7 @@ import com.jagex.game.config.bastype.BASTypeList;
 import com.jagex.game.config.vartype.VarType;
 import com.jagex.game.config.vartype.bit.VarBitType;
 import com.jagex.game.config.vartype.constants.VarDomainType;
+import com.jagex.math.Matrix4x3;
 import deob.ObfuscatedName;
 
 import java.util.Arrays;

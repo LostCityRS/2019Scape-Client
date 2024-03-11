@@ -2,7 +2,8 @@ package com.jagex;
 
 import com.jagex.game.config.Js5Archive;
 import com.jagex.game.config.Js5ConfigGroup;
-import com.jagex.game.config.ObjTypeList;
+import com.jagex.game.config.enumtype.EnumTypeList;
+import com.jagex.game.config.objtype.ObjTypeList;
 import com.jagex.game.config.bastype.BASTypeList;
 import com.jagex.game.config.cursortype.CursorTypeList;
 import com.jagex.game.config.defaults.*;
@@ -17,6 +18,8 @@ import com.jagex.game.config.loctype.LocTypeList;
 import com.jagex.game.config.meltype.MapElementTypeList;
 import com.jagex.game.config.npctype.NPCTypeList;
 import com.jagex.game.config.paramtype.ParamTypeList;
+import com.jagex.game.config.questtype.QuestTypeList;
+import com.jagex.game.config.seqgrouptype.SeqGroupTypeList;
 import com.jagex.game.config.seqtype.SeqTypeList;
 import com.jagex.game.config.structtype.StructTypeList;
 import com.jagex.game.config.vartype.VarTypeList;

@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.math.Matrix4x4;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("cq")

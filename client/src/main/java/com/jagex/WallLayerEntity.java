@@ -1,5 +1,7 @@
 package com.jagex;
 
+import com.jagex.math.ScaleRotTrans;
+import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("asw")

@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.game.config.enumtype.EnumType;
 import com.jagex.game.config.objtype.ObjType;
 import deob.ObfuscatedName;
 import deob.Statics;

@@ -1,6 +1,7 @@
 package com.jagex;
 
 import com.jagex.game.config.bastype.BASType;
+import com.jagex.game.config.enumtype.EnumType;
 import com.jagex.game.config.idktype.IDKType;
 import com.jagex.game.config.invtype.InvType;
 import com.jagex.game.config.meltype.MapElementType;
@@ -15,6 +16,8 @@ import com.jagex.game.config.vartype.constants.BaseVarType;
 import com.jagex.game.config.vartype.constants.ScriptVarType;
 import com.jagex.game.config.vartype.constants.VarDomainType;
 import com.jagex.game.config.vartype.player.VarPlayerType;
+import com.jagex.math.Quaternion;
+import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;
 import com.jagex.twitchtv.TwitchEvent;

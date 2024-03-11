@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.math.*;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("anb")

@@ -2,6 +2,7 @@ package com.jagex.game.config.seqtype;
 
 import com.jagex.*;
 import com.jagex.game.config.Js5ConfigGroup;
+import com.jagex.game.config.seqgrouptype.SeqGroupTypeList;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aos")
