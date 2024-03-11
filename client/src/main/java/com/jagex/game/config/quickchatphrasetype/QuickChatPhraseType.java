@@ -3,7 +3,7 @@ package com.jagex.game.config.quickchatphrasetype;
 import com.jagex.core.datastruct.SecondaryNode;
 import com.jagex.core.io.Packet;
 import com.jagex.core.util.StringUtils;
-import com.jagex.game.client.QuickChatDynamicCommand;
+import com.jagex.game.shared.framework.chat.QuickChatDynamicCommand;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("asq")

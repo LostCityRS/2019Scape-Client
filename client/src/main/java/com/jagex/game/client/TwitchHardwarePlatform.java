@@ -1,8 +1,8 @@
 package com.jagex.game.client;
 
-import com.jagex.game.client.script.ScriptRunner;
+import com.jagex.game.script.ScriptRunner;
 import com.jagex.client;
-import com.jagex.console.DeveloperConsole;
+import com.jagex.game.shared.console.DeveloperConsole;
 import com.jagex.core.util.CacheUtil;
 import com.jagex.core.util.JagException;
 import com.jagex.core.util.TextUtil;

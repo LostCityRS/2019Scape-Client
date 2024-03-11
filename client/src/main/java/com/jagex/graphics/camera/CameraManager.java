@@ -2,8 +2,8 @@ package com.jagex.graphics.camera;
 
 import com.jagex.*;
 import com.jagex.game.client.BasicCamera;
-import com.jagex.game.client.CoordFine;
-import com.jagex.game.client.CoordGrid;
+import com.jagex.game.shared.movement.CoordFine;
+import com.jagex.game.shared.movement.CoordGrid;
 import com.jagex.game.world.entity.PositionMode;
 import com.jagex.game.world.entity.PositionPoint;
 import com.jagex.math.LookatMode;

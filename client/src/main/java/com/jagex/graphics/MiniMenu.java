@@ -11,13 +11,15 @@ import com.jagex.game.config.npctype.NPCType;
 import com.jagex.game.config.objtype.ObjType;
 import com.jagex.game.config.paramtype.ParamType;
 import com.jagex.game.config.questtype.QuestType;
-import com.jagex.game.world.AttackOpPriority;
+import com.jagex.game.shared.movement.CoordGrid;
+import com.jagex.game.player.AttackOpPriority;
 import com.jagex.game.world.entity.*;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Matrix4x4;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.logic.DelayedStateChange;
 import rs2.shared.prot.ClientProt;
 
 import java.util.Iterator;

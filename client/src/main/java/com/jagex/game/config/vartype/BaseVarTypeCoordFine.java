@@ -1,6 +1,6 @@
 package com.jagex.game.config.vartype;
 
-import com.jagex.game.client.CoordFine;
+import com.jagex.game.shared.movement.CoordFine;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 

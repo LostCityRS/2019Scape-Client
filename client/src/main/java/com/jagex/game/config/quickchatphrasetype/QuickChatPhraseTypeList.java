@@ -3,7 +3,7 @@ package com.jagex.game.config.quickchatphrasetype;
 import com.jagex.core.constants.Language;
 import com.jagex.core.datastruct.WeightedCache;
 import com.jagex.core.io.Packet;
-import com.jagex.game.client.QuickChatDynamicCommand;
+import com.jagex.game.shared.framework.chat.QuickChatDynamicCommand;
 import com.jagex.game.client.QuickChatDynamicProvider;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;

@@ -1,6 +1,6 @@
 package com.jagex.graphics.camera;
 
-import com.jagex.game.client.CoordFine;
+import com.jagex.game.shared.movement.CoordFine;
 import com.jagex.math.Quaternion;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;

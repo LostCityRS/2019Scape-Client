@@ -1,6 +1,6 @@
 package com.jagex.game.cutscene;
 
-import com.jagex.game.world.ChangeLocationRequest;
+import com.jagex.game.scene.ChangeLocationRequest;
 import com.jagex.game.world.entity.LocShape;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;

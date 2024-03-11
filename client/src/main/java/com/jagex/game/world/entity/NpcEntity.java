@@ -1,8 +1,8 @@
 package com.jagex.game.world.entity;
 
 import com.jagex.*;
-import com.jagex.game.client.CoordFine;
-import com.jagex.game.client.CoordGrid;
+import com.jagex.game.shared.movement.CoordFine;
+import com.jagex.game.shared.movement.CoordGrid;
 import com.jagex.game.client.GameShell;
 import com.jagex.game.client.MoveSpeed;
 import com.jagex.game.config.bastype.BASType;

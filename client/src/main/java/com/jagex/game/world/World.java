@@ -1,7 +1,7 @@
 package com.jagex.game.world;
 
 import com.jagex.*;
-import com.jagex.console.DeveloperConsole;
+import com.jagex.game.shared.console.DeveloperConsole;
 import com.jagex.core.constants.BuildAreaSize;
 import com.jagex.core.datastruct.IntegerBox;
 import com.jagex.core.datastruct.LinkMap;
@@ -15,6 +15,8 @@ import com.jagex.game.config.npctype.NPCType;
 import com.jagex.game.cutscene.CutsceneManager;
 import com.jagex.game.cutscene.CutsceneTemplate;
 import com.jagex.game.config.loctype.LocType;
+import com.jagex.game.scene.ChangeLocationRequest;
+import com.jagex.game.shared.movement.CoordGrid;
 import com.jagex.game.world.entity.*;
 import com.jagex.graphics.*;
 import com.jagex.graphics.particles.ParticleSystemRenderer;

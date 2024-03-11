@@ -11,6 +11,9 @@ import com.jagex.game.config.ParticleEffectorTypeList;
 import com.jagex.game.config.ParticleEmitterTypeList;
 import com.jagex.graphics.gl.OpenGLRenderer;
 import com.jagex.graphics.particles.ParticleList;
+import com.jagex.graphics.postprocess.effects.ColourGradingBloomEffect;
+import com.jagex.graphics.postprocess.effects.ColourRemappingFilter;
+import com.jagex.graphics.postprocess.effects.LevelsFilterEffect;
 import com.jagex.js5.Js5;
 import com.jagex.math.Cuboid;
 import com.jagex.math.Matrix4x3;
@@ -718,7 +721,7 @@ public abstract class GpuRenderer extends Renderer {
 			}
 			this.field10155 = new PostProcessManager(this, var2, var3);
 			this.field10080[3] = new ColourGradingBloomEffect(this);
-			this.field10080[1] = new LevelsFilter(this);
+			this.field10080[1] = new LevelsFilterEffect(this);
 			this.field10080[2] = new ColourRemappingFilter(this);
 			if (this.field10080[3].method5558()) {
 				this.field10155.method5599(this.field10080[3]);
@@ -1092,11 +1095,11 @@ public abstract class GpuRenderer extends Renderer {
 
 	@ObfuscatedName("afc.dg(FFFFF)V")
 	public void method2236(float arg0, float arg1, float arg2, float arg3, float arg4) {
-		LevelsFilter.field10647 = arg0;
-		LevelsFilter.field10642 = arg1;
-		LevelsFilter.field10643 = arg2;
-		LevelsFilter.field10650 = arg3;
-		LevelsFilter.field10651 = arg4;
+		LevelsFilterEffect.field10647 = arg0;
+		LevelsFilterEffect.field10642 = arg1;
+		LevelsFilterEffect.field10643 = arg2;
+		LevelsFilterEffect.field10650 = arg3;
+		LevelsFilterEffect.field10651 = arg4;
 	}
 
 	@ObfuscatedName("afc.de([I)Lcj;")

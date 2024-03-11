@@ -7,18 +7,20 @@ import com.jagex.core.datastruct.LinkMap;
 import com.jagex.core.util.MonotonicTime;
 import com.jagex.core.util.PreciseSleep;
 import com.jagex.game.client.*;
-import com.jagex.game.client.script.CommunityPartnerType;
+import com.jagex.game.script.CommunityPartnerType;
 import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
 import com.jagex.game.config.meltype.MapElementType;
 import com.jagex.game.config.msitype.MSIType;
 import com.jagex.game.config.npctype.NPCType;
+import com.jagex.game.shared.movement.CoordGrid;
 import com.jagex.game.world.WorldMapRelated;
 import com.jagex.game.world.entity.*;
 import com.jagex.math.Trig1;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.logic.friendchat.Friend;
 
 @ObfuscatedName("at")
 public class Minimap {

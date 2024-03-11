@@ -3,7 +3,7 @@ package com.jagex.game.config.vartype.constants;
 import com.jagex.core.constants.SerializableEnum;
 import com.jagex.core.io.Packet;
 import com.jagex.game.client.ComponentHook;
-import com.jagex.game.client.CoordFine;
+import com.jagex.game.shared.movement.CoordFine;
 import com.jagex.game.config.vartype.*;
 import deob.ObfuscatedName;
 import deob.Statics;

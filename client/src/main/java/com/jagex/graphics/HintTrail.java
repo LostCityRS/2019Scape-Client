@@ -3,7 +3,7 @@ package com.jagex.graphics;
 import com.jagex.*;
 import com.jagex.core.datastruct.LinkMap;
 import com.jagex.core.io.Packet;
-import com.jagex.game.client.CoordGrid;
+import com.jagex.game.shared.movement.CoordGrid;
 import com.jagex.game.world.entity.Scene;
 import deob.ObfuscatedName;
 import deob.Statics;

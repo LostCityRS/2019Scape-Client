@@ -1,6 +1,6 @@
 package com.jagex.game.client;
 
-import com.jagex.game.client.script.ClientScriptState;
+import com.jagex.game.script.ClientScriptState;
 import com.jagex.twitchtv.TwitchWebcamDevice;
 import com.jagex.twitchtv.TwitchWebcamDeviceCapability;
 import deob.ObfuscatedName;

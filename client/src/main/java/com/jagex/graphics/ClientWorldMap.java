@@ -1,6 +1,6 @@
 package com.jagex.graphics;
 
-import com.jagex.game.client.CoordGrid;
+import com.jagex.game.shared.movement.CoordGrid;
 import com.jagex.game.client.MapElementContainer;
 import com.jagex.game.client.MapLogicRelated;
 import com.jagex.client;
@@ -10,7 +10,7 @@ import com.jagex.core.datastruct.IterableQueueIterator;
 import com.jagex.core.util.MonotonicTime;
 import com.jagex.game.client.GameShell;
 import com.jagex.game.client.LocalisedText;
-import com.jagex.game.client.script.ClientTriggerType;
+import com.jagex.game.script.ClientTriggerType;
 import com.jagex.game.config.meltype.MapElementType;
 import com.jagex.game.world.*;
 import com.jagex.math.Vector3;

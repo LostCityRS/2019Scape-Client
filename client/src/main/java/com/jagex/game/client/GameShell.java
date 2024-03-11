@@ -4,7 +4,7 @@ import com.jagex.*;
 import com.jagex.core.io.BufferedFile;
 import com.jagex.core.io.Packet;
 import com.jagex.core.util.*;
-import com.jagex.graphics.Fullscreen;
+import com.jagex.game.fullscreen.Fullscreen;
 import com.jagex.graphics.FullscreenImpl;
 import deob.ObfuscatedName;
 import deob.Statics;

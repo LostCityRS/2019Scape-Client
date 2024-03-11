@@ -5,18 +5,30 @@ import com.jagex.audio.*;
 import com.jagex.core.constants.*;
 import com.jagex.core.datastruct.*;
 import com.jagex.core.util.*;
-import com.jagex.game.LoginManager;
+import rs2.client.login.LoginManager;
 import com.jagex.game.LoginRelated6;
 import com.jagex.game.chat.ChatHistory;
 import com.jagex.game.client.*;
-import com.jagex.game.client.script.*;
+import com.jagex.game.clientoptions.ClientOptions;
 import com.jagex.game.config.*;
+import com.jagex.game.config.db.DbTableIndex;
+import com.jagex.game.config.db.DbTableUtil;
 import com.jagex.game.config.db.dbrowtype.DBRowType;
 import com.jagex.game.config.db.dbtabletype.DBTableType;
 import com.jagex.game.config.defaults.*;
 import com.jagex.game.cutscene.*;
+import com.jagex.game.fullscreen.Fullscreen;
 import com.jagex.game.loading.*;
-import com.jagex.game.playergroup.PlayerGroup;
+import com.jagex.game.group.PlayerGroup;
+import com.jagex.game.scene.ChangeLocationRequest;
+import com.jagex.game.script.*;
+import com.jagex.game.script.activepointers.ActiveComponent;
+import com.jagex.game.shared.framework.gwc.GWC;
+import com.jagex.game.shared.framework.gwc.GWCLocation;
+import com.jagex.game.shared.framework.gwc.GWCWorld;
+import com.jagex.game.shared.framework.input.Keyboard;
+import com.jagex.game.shared.framework.input.Mouse;
+import com.jagex.game.shared.movement.CoordFine;
 import com.jagex.game.world.*;
 import com.jagex.game.world.entity.*;
 import com.jagex.graphics.*;
@@ -39,9 +51,9 @@ import com.jagex.graphics.safe.PureJavaRenderer;
 import com.jagex.math.CurveEvaluator;
 import com.jagex.math.Spline;
 import com.jagex.math.Trig1;
-import rs2.client.chat.EmojiList;
-import rs2.client.options.Preferences;
-import com.jagex.console.DeveloperConsole;
+import rs2.client.clientscript.emoji.EmojiList;
+import com.jagex.game.clientoptions.Preferences;
+import com.jagex.game.shared.console.DeveloperConsole;
 import com.jagex.game.compression.huffman.Huffman;
 import com.jagex.game.config.bastype.BASTypeList;
 import com.jagex.game.config.cursortype.CursorTypeList;
@@ -95,6 +107,12 @@ import com.jagex.js5.network.Js5HttpClient;
 import com.jagex.js5.network.Js5Client;
 import com.jagex.js5.network.Js5NetResourceProvider;
 import com.jagex.js5.network.Js5TcpClient;
+import rs2.client.logic.DelayedStateChange;
+import rs2.client.logic.friendchat.Friend;
+import rs2.client.logic.friendchat.FriendChatUser;
+import rs2.client.logic.friendchat.Ignore;
+import rs2.client.login.AccountCreationManager;
+import rs2.client.login.WorldSwitcher;
 import rs2.shared.prot.ClientProt;
 import rs2.shared.prot.ServerProt;
 import com.jagex.twitchtv.TwitchEventLiveStreams;
@@ -1426,10 +1444,10 @@ public class Statics {
 	public static int field7642;
 
 	@ObfuscatedName("wb.f")
-	public static WorldListEntryInfo[] field7644;
+	public static GWCWorld[] field7644;
 
 	@ObfuscatedName("wb.z")
-	public static WorldListEntryCountry[] field7647;
+	public static GWCLocation[] field7647;
 
 	@ObfuscatedName("ap.c")
 	public static long field765;
@@ -2361,11 +2379,11 @@ public class Statics {
 		if (!arg0) {
 			return;
 		}
-		WorldList.method570(field7415.data);
-		WorldSwitcher.field8748 = new WorldListEntryInfo[field533];
+		GWC.method570(field7415.data);
+		WorldSwitcher.field8748 = new GWCWorld[field533];
 		int var2 = 0;
 		for (int var3 = field7414; var3 <= field3011; var3++) {
-			WorldListEntryInfo var4 = WorldList.method4944(var3);
+			GWCWorld var4 = GWC.method4944(var3);
 			if (var4 != null) {
 				WorldSwitcher.field8748[var2++] = var4;
 			}

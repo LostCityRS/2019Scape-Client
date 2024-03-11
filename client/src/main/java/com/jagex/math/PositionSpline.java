@@ -1,6 +1,6 @@
 package com.jagex.math;
 
-import com.jagex.game.client.CoordFine;
+import com.jagex.game.shared.movement.CoordFine;
 import com.jagex.game.world.entity.Position;
 import com.jagex.core.datastruct.LinkMap;
 import com.jagex.core.io.Packet;

@@ -1,6 +1,6 @@
 package com.jagex.game.world.entity;
 
-import com.jagex.game.client.CoordGrid;
+import com.jagex.game.shared.movement.CoordGrid;
 import com.jagex.client;
 import deob.ObfuscatedName;
 

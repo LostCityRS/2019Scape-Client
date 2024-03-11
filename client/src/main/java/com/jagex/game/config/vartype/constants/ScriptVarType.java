@@ -1,9 +1,9 @@
 package com.jagex.game.config.vartype.constants;
 
-import com.jagex.game.client.CoordFine;
+import com.jagex.game.shared.movement.CoordFine;
 import com.jagex.core.util.Cp1252;
-import com.jagex.game.client.script.ScriptVarInterface;
-import com.jagex.game.client.script.ScriptVarProperty;
+import com.jagex.game.script.ScriptVarInterface;
+import com.jagex.game.script.ScriptVarProperty;
 import com.jagex.core.constants.SerializableEnum;
 import deob.ObfuscatedName;
 import deob.Statics;

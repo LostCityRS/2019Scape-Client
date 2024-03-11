@@ -1,7 +1,7 @@
 package com.jagex.game.config.db.dbrowtype;
 
 import com.jagex.game.client.ConfigRelated;
-import com.jagex.game.client.DbTableUtil;
+import com.jagex.game.config.db.DbTableUtil;
 import com.jagex.core.io.Packet;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.game.config.ConfigType;

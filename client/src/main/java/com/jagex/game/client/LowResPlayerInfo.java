@@ -1,6 +1,6 @@
 package com.jagex.game.client;
 
-import com.jagex.game.client.script.CommunityPartnerType;
+import com.jagex.game.script.CommunityPartnerType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("c")

@@ -1,6 +1,6 @@
 package com.jagex.game.cutscene;
 
-import com.jagex.game.client.script.ScriptRunner;
+import com.jagex.game.script.ScriptRunner;
 import com.jagex.client;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;

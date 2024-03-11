@@ -1,7 +1,7 @@
 package com.jagex.game.config.defaults;
 
 import com.jagex.game.client.MouseEvent;
-import com.jagex.game.client.Keyboard;
+import com.jagex.game.shared.framework.input.Keyboard;
 import com.jagex.game.client.KeyboardEvent;
 import deob.ObfuscatedName;
 

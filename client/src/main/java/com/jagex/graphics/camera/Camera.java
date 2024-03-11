@@ -2,7 +2,7 @@ package com.jagex.graphics.camera;
 
 import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.datastruct.LinkMap;
-import com.jagex.game.client.CoordFine;
+import com.jagex.game.shared.movement.CoordFine;
 import com.jagex.game.world.entity.Position;
 import com.jagex.game.world.entity.PositionEntity;
 import com.jagex.game.world.entity.PositionMode;

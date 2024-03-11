@@ -3,6 +3,7 @@ package com.jagex.game.client;
 import com.jagex.core.util.MonotonicTime;
 import com.jagex.core.datastruct.IterableQueue;
 import com.jagex.core.util.Cp1252;
+import com.jagex.game.shared.framework.input.Keyboard;
 import deob.ObfuscatedName;
 
 import java.awt.event.FocusEvent;
