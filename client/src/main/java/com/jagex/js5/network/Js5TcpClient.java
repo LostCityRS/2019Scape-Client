@@ -1,6 +1,6 @@
 package com.jagex.js5.network;
 
-import com.jagex.DualIterableQueue;
+import com.jagex.core.datastruct.DualIterableQueue;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 

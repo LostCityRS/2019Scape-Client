@@ -1,6 +1,6 @@
 package rs2.client.options;
 
-import com.jagex.ClientOptions;
+import com.jagex.game.client.ClientOptions;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("amu")

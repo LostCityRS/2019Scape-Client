@@ -1,8 +1,8 @@
 package com.jagex.core.io;
 
 import com.jagex.core.util.ByteArrayPool;
-import com.jagex.Node;
-import com.jagex.Utf8;
+import com.jagex.core.datastruct.Node;
+import com.jagex.core.util.Utf8;
 import com.jagex.client;
 import com.jagex.core.util.Cp1252;
 import deob.ObfuscatedName;

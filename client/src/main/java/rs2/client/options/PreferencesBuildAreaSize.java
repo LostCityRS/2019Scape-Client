@@ -1,8 +1,8 @@
 package rs2.client.options;
 
-import com.jagex.BuildAreaRelated;
-import com.jagex.ClientOptions;
-import com.jagex.DrawDistance;
+import com.jagex.game.world.BuildAreaRelated;
+import com.jagex.game.client.ClientOptions;
+import com.jagex.graphics.DrawDistance;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("anv")

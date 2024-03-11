@@ -1,6 +1,11 @@
 package com.jagex.js5.network;
 
-import com.jagex.*;
+import com.jagex.core.datastruct.IterableMap;
+import com.jagex.core.datastruct.IterableQueue;
+import com.jagex.core.datastruct.Node;
+import com.jagex.core.io.Whirlpool;
+import com.jagex.core.util.MonotonicTime;
+import com.jagex.game.client.DiskStore;
 import com.jagex.js5.Js5Request;
 import com.jagex.js5.caching.Js5DiskCache;
 import com.jagex.js5.index.Js5Index;

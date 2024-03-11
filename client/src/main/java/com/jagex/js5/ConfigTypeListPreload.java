@@ -4,10 +4,10 @@ import com.jagex.core.util.ArchiveUtil;
 import com.jagex.core.io.Packet;
 import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;
-import com.jagex.game.runetek5.config.ConfigType;
-import com.jagex.game.runetek5.config.ConfigTypeFactory;
-import com.jagex.game.runetek5.config.ConfigTypeList;
-import com.jagex.game.runetek5.config.Js5ConfigGroup;
+import com.jagex.game.config.ConfigType;
+import com.jagex.game.config.ConfigTypeFactory;
+import com.jagex.game.config.ConfigTypeList;
+import com.jagex.game.config.Js5ConfigGroup;
 import deob.ObfuscatedName;
 
 import java.lang.reflect.Array;

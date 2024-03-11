@@ -1,9 +1,9 @@
 package com.jagex.js5;
 
-import com.jagex.*;
 import com.jagex.core.io.GZip;
 import com.jagex.core.io.Packet;
 import com.jagex.core.util.ByteArrayCopier;
+import com.jagex.core.util.StringUtils;
 import com.jagex.js5.index.Js5Index;
 import deob.ObfuscatedName;
 import deob.Statics;

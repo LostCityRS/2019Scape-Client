@@ -1,6 +1,6 @@
 package com.jagex.js5;
 
-import com.jagex.SecondaryNode;
+import com.jagex.core.datastruct.SecondaryNode;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ask")

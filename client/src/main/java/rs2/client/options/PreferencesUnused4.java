@@ -1,7 +1,7 @@
 package rs2.client.options;
 
-import com.jagex.AmbientOcclusionValue;
-import com.jagex.ClientOptions;
+import com.jagex.graphics.AmbientOcclusionValue;
+import com.jagex.game.client.ClientOptions;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ama")

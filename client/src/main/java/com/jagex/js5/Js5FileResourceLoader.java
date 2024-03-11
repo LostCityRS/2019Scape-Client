@@ -1,8 +1,7 @@
 package com.jagex.js5;
 
-import com.jagex.LoadableResourceType;
-import com.jagex.ResourceLoader;
-import com.jagex.js5.Js5;
+import com.jagex.game.client.LoadableResourceType;
+import com.jagex.game.client.ResourceLoader;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("pb")

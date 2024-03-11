@@ -1,6 +1,5 @@
 package com.jagex.core.io;
 
-import com.jagex.IsaacRandom;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ase")

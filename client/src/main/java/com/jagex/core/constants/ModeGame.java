@@ -1,6 +1,5 @@
 package com.jagex.core.constants;
 
-import com.jagex.Namespace;
 import deob.ObfuscatedName;
 import deob.Statics;
 

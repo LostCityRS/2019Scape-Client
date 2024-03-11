@@ -1,7 +1,7 @@
 package rs2.client.options;
 
-import com.jagex.ClientOptions;
-import com.jagex.graphics.runetek5.particles.ParticleSystemRenderer;
+import com.jagex.game.client.ClientOptions;
+import com.jagex.graphics.particles.ParticleSystemRenderer;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("amf")

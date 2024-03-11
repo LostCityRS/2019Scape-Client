@@ -1,7 +1,7 @@
 package rs2.client.options;
 
-import com.jagex.BuildAreaSize;
-import com.jagex.ClientOptions;
+import com.jagex.core.constants.BuildAreaSize;
+import com.jagex.game.client.ClientOptions;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aml")
