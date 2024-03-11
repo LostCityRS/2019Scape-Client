@@ -181,9 +181,9 @@ public abstract class Camera {
 	}
 
 	@ObfuscatedName("je.f(Lii;ZI)Laax;")
-	public Lookat method4684(LookatMode arg0, boolean arg1) throws class1109 {
+	public Lookat method4684(LookatMode arg0, boolean arg1) throws CameraException {
 		if (CameraControlMode.field2829 == this.field2857 && !arg1) {
-			throw new class1109();
+			throw new CameraException();
 		}
 		this.field2845 = arg0;
 		if (LookatMode.field2788 == arg0) {
@@ -205,9 +205,9 @@ public abstract class Camera {
 	}
 
 	@ObfuscatedName("je.w(Lim;ZI)Lkl;")
-	public Position method4688(PositionMode arg0, boolean arg1) throws class1109 {
+	public Position method4688(PositionMode arg0, boolean arg1) throws CameraException {
 		if (CameraControlMode.field2829 == this.field2857 && !arg1) {
-			throw new class1109();
+			throw new CameraException();
 		}
 		this.field2847 = arg0;
 		if (PositionMode.field2815 == arg0) {
@@ -234,48 +234,48 @@ public abstract class Camera {
 	}
 
 	@ObfuscatedName("je.u(FB)V")
-	public void method4712(float arg0) throws class1109 {
+	public void method4712(float arg0) throws CameraException {
 		if (!this.method4686()) {
-			throw new class1109();
+			throw new CameraException();
 		}
 	}
 
 	@ObfuscatedName("je.z(FI)V")
-	public void method4766(float arg0) throws class1109 {
+	public void method4766(float arg0) throws CameraException {
 		if (!this.method4686()) {
-			throw new class1109();
+			throw new CameraException();
 		}
 		this.field2852 = arg0;
 	}
 
 	@ObfuscatedName("je.p(Lic;I)V")
-	public void method4689(CameraLinearMovementMode arg0) throws class1109 {
+	public void method4689(CameraLinearMovementMode arg0) throws CameraException {
 		if (!this.method4686()) {
-			throw new class1109();
+			throw new CameraException();
 		}
 		this.field2842 = arg0;
 	}
 
 	@ObfuscatedName("je.d(Lox;I)V")
-	public void method4690(Vector3 arg0) throws class1109 {
+	public void method4690(Vector3 arg0) throws CameraException {
 		if (!this.method4686() || !this.field2842.field2821) {
-			throw new class1109();
+			throw new CameraException();
 		}
 		this.field2856.method6492(arg0);
 	}
 
 	@ObfuscatedName("je.c(Lox;I)V")
-	public void method4814(Vector3 arg0) throws class1109 {
+	public void method4814(Vector3 arg0) throws CameraException {
 		if (!this.method4686() || !this.field2842.field2821) {
-			throw new class1109();
+			throw new CameraException();
 		}
 		this.field2867.method6492(arg0);
 	}
 
 	@ObfuscatedName("je.r(FFFB)V")
-	public void method4782(float arg0, float arg1, float arg2) throws class1109 {
+	public void method4782(float arg0, float arg1, float arg2) throws CameraException {
 		if (!this.method4686()) {
-			throw new class1109();
+			throw new CameraException();
 		}
 		this.field2861 = arg0;
 		this.field2869 = arg1;
@@ -283,9 +283,9 @@ public abstract class Camera {
 	}
 
 	@ObfuscatedName("je.v(I)V")
-	public void method4756() throws class1109 {
+	public void method4756() throws CameraException {
 		if (!this.method4686()) {
-			throw new class1109();
+			throw new CameraException();
 		}
 		this.field2861 = 5120.0F;
 		this.field2869 = 10.0F;
@@ -293,25 +293,25 @@ public abstract class Camera {
 	}
 
 	@ObfuscatedName("je.o(Lox;I)V")
-	public void method4832(Vector3 arg0) throws class1109 {
+	public void method4832(Vector3 arg0) throws CameraException {
 		if (!this.method4686() || !this.field2842.field2821) {
-			throw new class1109();
+			throw new CameraException();
 		}
 		this.field2853.method6492(arg0);
 	}
 
 	@ObfuscatedName("je.s(Lox;I)V")
-	public void method4695(Vector3 arg0) throws class1109 {
+	public void method4695(Vector3 arg0) throws CameraException {
 		if (!this.method4686() || !this.field2842.field2821) {
-			throw new class1109();
+			throw new CameraException();
 		}
 		this.field2854.method6492(arg0);
 	}
 
 	@ObfuscatedName("je.y(Lox;FI)V")
-	public void method4696(Vector3 arg0, float arg1) throws class1109 {
+	public void method4696(Vector3 arg0, float arg1) throws CameraException {
 		if (!this.method4686() || this.field2842.field2821) {
-			throw new class1109();
+			throw new CameraException();
 		}
 		this.field2864.method6492(arg0);
 		this.field2865.method6492(arg0);
@@ -320,27 +320,27 @@ public abstract class Camera {
 	}
 
 	@ObfuscatedName("je.q(Lox;FI)V")
-	public void method4699(Vector3 arg0, float arg1) throws class1109 {
+	public void method4699(Vector3 arg0, float arg1) throws CameraException {
 		if (!this.method4686() || this.field2842.field2821) {
-			throw new class1109();
+			throw new CameraException();
 		}
 		this.field2864.method6492(arg0);
 		this.field2866 = arg1;
 	}
 
 	@ObfuscatedName("je.x(Lox;FB)V")
-	public void method4725(Vector3 arg0, float arg1) throws class1109 {
+	public void method4725(Vector3 arg0, float arg1) throws CameraException {
 		if (!this.method4686() || this.field2842.field2821) {
-			throw new class1109();
+			throw new CameraException();
 		}
 		this.field2865.method6492(arg0);
 		this.field2843 = arg1;
 	}
 
 	@ObfuscatedName("je.b(FFB)V")
-	public void method4698(float arg0, float arg1) throws class1109 {
+	public void method4698(float arg0, float arg1) throws CameraException {
 		if (!this.method4686()) {
-			throw new class1109();
+			throw new CameraException();
 		}
 		if (arg0 < 1.0F) {
 			arg0 = 50.0F;
@@ -349,34 +349,34 @@ public abstract class Camera {
 			arg1 = 10000.0F;
 		}
 		if (arg0 >= arg1) {
-			throw new class1109();
+			throw new CameraException();
 		}
 		this.field2855 = arg0;
 		this.field2859 = arg1;
 	}
 
 	@ObfuscatedName("je.h(FFI)V")
-	public void method4828(float arg0, float arg1) throws class1109 {
+	public void method4828(float arg0, float arg1) throws CameraException {
 		if (!this.method4686()) {
-			throw new class1109();
+			throw new CameraException();
 		}
 		this.field2872 = arg0;
 		this.field2868 = arg1;
 	}
 
 	@ObfuscatedName("je.a(ZZI)V")
-	public void method4700(boolean arg0, boolean arg1) throws class1109 {
+	public void method4700(boolean arg0, boolean arg1) throws CameraException {
 		if (!this.method4686()) {
-			throw new class1109();
+			throw new CameraException();
 		}
 		this.field2862 = arg0;
 		this.field2875 = arg1;
 	}
 
 	@ObfuscatedName("je.g(IFI)V")
-	public void method4701(int arg0, float arg1) throws class1109 {
+	public void method4701(int arg0, float arg1) throws CameraException {
 		if (!this.method4686() || !this.field2842.field2821) {
-			throw new class1109();
+			throw new CameraException();
 		}
 		this.field2876 = arg0;
 		this.field2877 = arg1;

@@ -81,10 +81,10 @@ public abstract class WaterShader extends class324 {
 	}
 
 	@ObfuscatedName("ahi.h(Ljava/lang/String;)Z")
-	public boolean method16761(String arg0) throws class1108 {
+	public boolean method16761(String arg0) throws ShaderException {
 		this.field10587 = this.field3233.method15964(arg0);
 		if (this.field10587 == null) {
-			throw new class1108("");
+			throw new ShaderException("");
 		}
 		this.field10604 = this.field10587.method4188("textureMatrix");
 		this.field10607 = this.field10587.method4188("modelMatrix");
@@ -105,7 +105,7 @@ public abstract class WaterShader extends class324 {
 			if (this.field10587.method4163() == null) {
 				Program var2 = this.field10587.method4217();
 				if (var2 == null) {
-					throw new class1108(this.field10587.method4186() + "");
+					throw new ShaderException(this.field10587.method4186() + "");
 				}
 				this.field10587.method4162(var2);
 			}
@@ -305,5 +305,5 @@ public abstract class WaterShader extends class324 {
 	}
 
 	@ObfuscatedName("ahi.a()Z")
-	public abstract boolean method16762() throws class1108;
+	public abstract boolean method16762() throws ShaderException;
 }

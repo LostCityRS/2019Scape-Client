@@ -54,7 +54,7 @@ public final class Direct3DProgramManager extends Shader {
 	@ObfuscatedName("agc.e()V")
 	public void method4244() {
 		if (this.field10389 == null) {
-			throw new class1209();
+			throw new ProgramManagerException();
 		}
 		this.field10388.method19032(this.field10389.field10367);
 		this.field10388.method18998(this.field10389.field10360);

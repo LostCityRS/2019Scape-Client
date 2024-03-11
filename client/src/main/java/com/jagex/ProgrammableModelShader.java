@@ -20,13 +20,13 @@ public class ProgrammableModelShader extends ModelShader {
 	@ObfuscatedName("ahv.bl")
 	public int[] field10501;
 
-	public ProgrammableModelShader(GpuRenderer arg0) throws class1108 {
+	public ProgrammableModelShader(GpuRenderer arg0) throws ShaderException {
 		super(arg0);
 		this.method16619();
 	}
 
 	@ObfuscatedName("ahv.a(I)Z")
-	public boolean method16619() throws class1108 {
+	public boolean method16619() throws ShaderException {
 		this.field10479 = this.field2963.method15964("Model");
 		ProgramUniform var1 = this.field10479.method4157("DiffuseSampler");
 		ProgramUniform var2 = this.field10479.method4157("EnvironmentSampler");

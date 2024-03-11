@@ -31,7 +31,7 @@ public class ShaderDataReader {
 		if (var1 == -1) {
 			return null;
 		} else if (var1 > 256) {
-			throw new class1210();
+			throw new ShaderDataReaderException();
 		} else {
 			String var2 = new String(this.field2437, this.field2438, var1);
 			this.field2438 += var1;

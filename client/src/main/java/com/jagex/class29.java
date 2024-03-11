@@ -26,7 +26,7 @@ public class class29 {
 			Statics.field604.method4814(Vector3.method6483(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY));
 			Statics.field604.method4832(Vector3.method6483(99999.0F, 99999.0F, 99999.0F));
 			Statics.field604.method4690(Vector3.method6483(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY));
-		} catch (class1109 var4) {
+		} catch (CameraException var4) {
 		}
 		Statics.field605 = Statics.field9182.method9086();
 		Statics.field7284 = Statics.field9182.method9092();
@@ -58,7 +58,7 @@ public class class29 {
 			float var8 = (float) (Math.atan((double) ((float) var5 / 2.0F / var6)) * 2.0D);
 			try {
 				Statics.field604.method4828(var7, var8);
-			} catch (class1109 var21) {
+			} catch (CameraException var21) {
 			}
 		}
 		if (Statics.field9182.method9121()) {

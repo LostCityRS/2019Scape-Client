@@ -58,7 +58,7 @@ public class OpenGLProgramManager extends Shader {
 			return;
 		}
 		if (this.field10391 == null) {
-			throw new class1209();
+			throw new ProgramManagerException();
 		}
 		OpenGL.glUseProgram(this.field10392);
 		this.field10390.field12015 = this.field10391;

@@ -14,13 +14,13 @@ public class ProgrammableBatchedSpriteShader extends BatchedSpriteShader {
 	@ObfuscatedName("ahq.f")
 	public Program field10517;
 
-	public ProgrammableBatchedSpriteShader(GpuRenderer arg0) throws class1108 {
+	public ProgrammableBatchedSpriteShader(GpuRenderer arg0) throws ShaderException {
 		super(arg0);
 		this.method16642();
 	}
 
 	@ObfuscatedName("ahq.f(I)Z")
-	public boolean method16642() throws class1108 {
+	public boolean method16642() throws ShaderException {
 		this.field10515 = this.field2993.method15964("BatchedSprite");
 		this.field10516 = this.field10515.method4157("SpriteSampler");
 		this.field10517 = this.field10515.method4227("Normal");

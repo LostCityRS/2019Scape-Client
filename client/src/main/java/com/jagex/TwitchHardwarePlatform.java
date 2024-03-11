@@ -189,7 +189,7 @@ public class TwitchHardwarePlatform {
 					Statics.method5134().method7902(field7390[var0]);
 				}
 			}
-		} catch (class1111 var3) {
+		} catch (NativeLibraryException var3) {
 			return 3;
 		}
 		Statics.field11755 = new TwitchTV();

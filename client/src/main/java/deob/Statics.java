@@ -4796,7 +4796,7 @@ public class Statics {
 	}
 
 	@ObfuscatedName("qe.aoa(Lyf;I)V")
-	public static final void method7225(ClientScriptState arg0) throws class1109 {
+	public static final void method7225(ClientScriptState arg0) throws CameraException {
 		arg0.field8226 -= 2;
 		boolean var1 = arg0.field8216[arg0.field8226] == 1;
 		boolean var2 = arg0.field8216[arg0.field8226 + 1] == 1;
@@ -4804,7 +4804,7 @@ public class Statics {
 	}
 
 	@ObfuscatedName("eq.apj(Lyf;B)V")
-	public static final void method2833(ClientScriptState arg0) throws class1109 {
+	public static final void method2833(ClientScriptState arg0) throws CameraException {
 		field9155.method4756();
 	}
 

@@ -881,7 +881,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	}
 
 	@ObfuscatedName("sk.au(B)V")
-	public void method8050() throws class1111 {
+	public void method8050() throws NativeLibraryException {
 		if (this.field6601) {
 			return;
 		}
@@ -890,7 +890,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			QueryPerformanceCounter.init();
 		} catch (Throwable var2) {
 			if (Statics.osName.startsWith("win")) {
-				throw new class1111(128, "jaclib");
+				throw new NativeLibraryException(128, "jaclib");
 			}
 		}
 		this.field6601 = true;

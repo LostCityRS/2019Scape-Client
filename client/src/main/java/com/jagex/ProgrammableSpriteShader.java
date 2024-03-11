@@ -23,13 +23,13 @@ public final class ProgrammableSpriteShader extends SpriteShader {
 	@ObfuscatedName("ahz.ae")
 	public Vector4 field10536 = new Vector4(0.0F, 0.0F, 0.0F, 0.0F);
 
-	public ProgrammableSpriteShader(GpuRenderer arg0) throws class1108 {
+	public ProgrammableSpriteShader(GpuRenderer arg0) throws ShaderException {
 		super(arg0);
 		this.method16651();
 	}
 
 	@ObfuscatedName("ahz.u(B)Z")
-	public boolean method16651() throws class1108 {
+	public boolean method16651() throws ShaderException {
 		this.field10532 = this.field3002.method15964("Sprite");
 		ProgramUniform var1 = this.field10532.method4157("WVPMatrix");
 		ProgramUniform var2 = this.field10532.method4157("SpriteSampler");

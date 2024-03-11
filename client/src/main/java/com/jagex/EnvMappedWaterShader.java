@@ -101,7 +101,7 @@ public class EnvMappedWaterShader extends WaterShader {
 	@ObfuscatedName("aqe.bq")
 	public Program field12128;
 
-	public EnvMappedWaterShader(GpuRenderer arg0, class323 arg1, boolean arg2) throws class1108 {
+	public EnvMappedWaterShader(GpuRenderer arg0, class323 arg1, boolean arg2) throws ShaderException {
 		super(arg0);
 		new Matrix4x4();
 		this.field12122 = arg1;
@@ -114,7 +114,7 @@ public class EnvMappedWaterShader extends WaterShader {
 	}
 
 	@ObfuscatedName("aqe.a()Z")
-	public boolean method16762() throws class1108 {
+	public boolean method16762() throws ShaderException {
 		if (!this.field12122.method5409()) {
 			return false;
 		}

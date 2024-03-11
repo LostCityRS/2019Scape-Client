@@ -586,7 +586,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.rb()V")
-	public static void method15968() throws class1111 {
+	public static void method15968() throws NativeLibraryException {
 		Statics.method5134().method7902("jaclib");
 	}
 

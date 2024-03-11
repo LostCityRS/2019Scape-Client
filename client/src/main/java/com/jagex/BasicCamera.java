@@ -34,7 +34,7 @@ public class BasicCamera extends Camera {
 			if (this.field2845 != var5) {
 				try {
 					this.method4684(var5, true);
-				} catch (class1109 var20) {
+				} catch (CameraException var20) {
 					var20.printStackTrace();
 				}
 			}
@@ -44,7 +44,7 @@ public class BasicCamera extends Camera {
 			if (this.field2847 != var7) {
 				try {
 					this.method4688(var7, true);
-				} catch (class1109 var19) {
+				} catch (CameraException var19) {
 					var19.printStackTrace();
 				}
 			}

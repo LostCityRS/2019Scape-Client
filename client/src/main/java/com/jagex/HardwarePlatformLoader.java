@@ -137,22 +137,22 @@ public class HardwarePlatformLoader implements NativeLibraryLoader {
 	}
 
 	@ObfuscatedName("ty.e(Ljava/lang/String;B)V")
-	public void method7902(String arg0) throws class1111 {
+	public void method7902(String arg0) throws NativeLibraryException {
 		this.method8467(arg0, class535.class);
 	}
 
 	@ObfuscatedName("ty.o(Ljava/lang/String;Ljava/lang/Class;I)V")
-	public void method8467(String arg0, Class arg1) throws class1111 {
+	public void method8467(String arg0, Class arg1) throws NativeLibraryException {
 		Class var3 = (Class) this.field6766.get(arg0);
 		if (var3 != null && var3.getClassLoader() != arg1.getClassLoader()) {
-			throw new class1111(1, arg0);
+			throw new NativeLibraryException(1, arg0);
 		}
 		File var4 = null;
 		if (var4 == null) {
 			var4 = (File) this.field6765.get(arg0);
 		}
 		if (var4 == null) {
-			throw new class1111(4, arg0);
+			throw new NativeLibraryException(4, arg0);
 		}
 		try {
 			/*var4 = new File(var4.getCanonicalPath());
@@ -169,7 +169,7 @@ public class HardwarePlatformLoader implements NativeLibraryLoader {
 			this.field6766.put(arg0, class535.class);
 		} catch (Throwable ex) {
 			ex.printStackTrace();
-			throw new class1111(3, arg0, ex);
+			throw new NativeLibraryException(3, arg0, ex);
 		}
 	}
 

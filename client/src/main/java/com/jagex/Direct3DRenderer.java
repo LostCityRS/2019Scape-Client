@@ -213,7 +213,7 @@ public class Direct3DRenderer extends GpuRenderer {
 				long var19;
 				try {
 					var19 = IDirect3D.CreateDeviceContext(var11, var9, var10, arg0, var16 | 0x40, var14);
-				} catch (class7 var23) {
+				} catch (JagDXException var23) {
 					var19 = IDirect3D.CreateDeviceContext(var11, var9, var10, arg0, var16 & 0xFFEFFFFF | 0x20, var14);
 				}
 				var8 = new Direct3DRenderer(var9, var10, var11, var19, var15, var14, var13, arg1, arg2, arg3, arg4, arg5, arg6, arg7);

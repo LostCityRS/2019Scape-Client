@@ -606,7 +606,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 				}
 			}
 			if (this.field9967 != 0 && var19 && !var20) {
-				throw new class1208("");
+				throw new LegacyOpenGLException("");
 			}
 			if (this.field10027 || var19) {
 				if (!var19) {
@@ -684,8 +684,8 @@ public class LegacyOpenGLRenderer extends Renderer {
 			this.method2578();
 			if (var36 instanceof OutOfMemoryError) {
 				throw (OutOfMemoryError) var36;
-			} else if (var36 instanceof class1208) {
-				throw (class1208) var36;
+			} else if (var36 instanceof LegacyOpenGLException) {
+				throw (LegacyOpenGLException) var36;
 			} else {
 				throw new RuntimeException("");
 			}

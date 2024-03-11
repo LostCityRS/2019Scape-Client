@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("atq")
-public class ProgramNotFoundException extends class1108 {
+public class ProgramNotFoundException extends ShaderException {
 
 	public ProgramNotFoundException(String arg0) {
 		super(arg0);

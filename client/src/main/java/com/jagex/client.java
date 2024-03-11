@@ -1386,7 +1386,7 @@ public final class client extends GameShell {
 			Statics.field9155.method4814(Vector3.method6483(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY));
 			Statics.field9155.method4832(Vector3.method6483(99999.0F, 99999.0F, 99999.0F));
 			Statics.field9155.method4690(Vector3.method6483(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY));
-		} catch (class1109 var4) {
+		} catch (CameraException var4) {
 		}
 		Browser.method9163(Statics.field11885, Statics.osName);
 		if (Statics.field1811 != ModeWhere.field8273 && Statics.field1811 != ModeWhere.field8276) {
@@ -2106,7 +2106,7 @@ public final class client extends GameShell {
 								GraphicsPacketQueue.method6971(ToolkitType.field8876);
 								break;
 						}
-						if (var31 instanceof class1208) {
+						if (var31 instanceof LegacyOpenGLException) {
 							Statics.field688.unknown1.method14072(0);
 							Statics.field688.unknown2.method14072(0);
 						}

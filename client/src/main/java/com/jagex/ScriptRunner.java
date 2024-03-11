@@ -459,7 +459,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("yx.h(Lss;Lyf;I)V")
-	public static final void method10608(ClientScriptCommand arg0, ClientScriptState arg1) throws class1109, VarBitOverflowException {
+	public static final void method10608(ClientScriptCommand arg0, ClientScriptState arg1) throws CameraException, VarBitOverflowException {
 		switch(arg0.field5953) {
 			case 0:
 				Statics.method4480(arg1);
@@ -12765,21 +12765,21 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("nv.anu(Lyf;B)V")
-	public static final void method6117(ClientScriptState arg0) throws class1109 {
+	public static final void method6117(ClientScriptState arg0) throws CameraException {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Statics.field9155.method4684(LookatMode.method3259(var1), true);
 		client.field10902 = true;
 	}
 
 	@ObfuscatedName("nu.ant(Lyf;B)V")
-	public static final void method6074(ClientScriptState arg0) throws class1109 {
+	public static final void method6074(ClientScriptState arg0) throws CameraException {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Statics.field9155.method4688(PositionMode.method1058(var1), true);
 		client.field10902 = true;
 	}
 
 	@ObfuscatedName("xe.anh(Lyf;I)V")
-	public static final void method10286(ClientScriptState arg0) throws class1109 {
+	public static final void method10286(ClientScriptState arg0) throws CameraException {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
@@ -12799,7 +12799,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("wu.anp(Lyf;I)V")
-	public static final void method9634(ClientScriptState arg0) throws class1109 {
+	public static final void method9634(ClientScriptState arg0) throws CameraException {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
@@ -12819,7 +12819,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("akb.anr(Lyf;I)V")
-	public static final void method17876(ClientScriptState arg0) throws class1109 {
+	public static final void method17876(ClientScriptState arg0) throws CameraException {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		Vector3 var2 = Vector3.method6483((float) var1, (float) var1, (float) var1);
@@ -12828,7 +12828,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("uv.ank(Lyf;I)V")
-	public static final void method9180(ClientScriptState arg0) throws class1109 {
+	public static final void method9180(ClientScriptState arg0) throws CameraException {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		Vector3 var2 = Vector3.method6483((float) var1, (float) var1, (float) var1);
@@ -12837,7 +12837,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("aca.anx(Lyf;I)V")
-	public static final void method14934(ClientScriptState arg0) throws class1109 {
+	public static final void method14934(ClientScriptState arg0) throws CameraException {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
@@ -12845,7 +12845,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("eu.anz(Lyf;B)V")
-	public static final void method2740(ClientScriptState arg0) throws class1109 {
+	public static final void method2740(ClientScriptState arg0) throws CameraException {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
@@ -12940,7 +12940,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("tv.aoy(Lyf;B)V")
-	public static final void method8672(ClientScriptState arg0) throws class1109 {
+	public static final void method8672(ClientScriptState arg0) throws CameraException {
 		arg0.field8226 -= 3;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
@@ -13018,7 +13018,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("ar.aor(Lyf;I)V")
-	public static final void method853(ClientScriptState arg0) throws class1109 {
+	public static final void method853(ClientScriptState arg0) throws CameraException {
 		arg0.field8226 -= 4;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
@@ -13040,7 +13040,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("qn.aol(Lyf;S)V")
-	public static final void method7366(ClientScriptState arg0) throws class1109 {
+	public static final void method7366(ClientScriptState arg0) throws CameraException {
 		arg0.field8226 -= 4;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
@@ -13062,7 +13062,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("x.aom(Lyf;B)V")
-	public static final void method571(ClientScriptState arg0) throws class1109 {
+	public static final void method571(ClientScriptState arg0) throws CameraException {
 		arg0.field8226 -= 4;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
@@ -13073,7 +13073,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("bc.aoj(Lyf;I)V")
-	public static final void method1060(ClientScriptState arg0) throws class1109 {
+	public static final void method1060(ClientScriptState arg0) throws CameraException {
 		arg0.field8226 -= 4;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
@@ -13172,7 +13172,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("xc.aoh(Lyf;I)V")
-	public static final void method10253(ClientScriptState arg0) throws class1109 {
+	public static final void method10253(ClientScriptState arg0) throws CameraException {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		float var2 = (float) arg0.field8216[arg0.field8226 + 1] / 1000.0F;
@@ -13180,7 +13180,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("wg.aox(Lyf;S)V")
-	public static final void method9755(ClientScriptState arg0) throws class1109 {
+	public static final void method9755(ClientScriptState arg0) throws CameraException {
 		int var1 = arg0.field8216[--arg0.field8226];
 		CameraLinearMovementMode var2 = CameraLinearMovementMode.method17805(var1);
 		if (var2 == null) {
@@ -13190,7 +13190,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("ur.aoq(Lyf;S)V")
-	public static final void method9214(ClientScriptState arg0) throws class1109 {
+	public static final void method9214(ClientScriptState arg0) throws CameraException {
 		arg0.field8226 -= 4;
 		float var1 = (float) arg0.field8216[arg0.field8226];
 		float var2 = (float) arg0.field8216[arg0.field8226 + 1];
@@ -13200,17 +13200,17 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("qd.aoz(Lyf;I)V")
-	public static final void method7261(ClientScriptState arg0) throws class1109 {
+	public static final void method7261(ClientScriptState arg0) throws CameraException {
 		Statics.field9155.method4712((float) arg0.field8216[--arg0.field8226] / 1000.0F);
 	}
 
 	@ObfuscatedName("qj.api(Lyf;B)V")
-	public static final void method7240(ClientScriptState arg0) throws class1109 {
+	public static final void method7240(ClientScriptState arg0) throws CameraException {
 		Statics.field9155.method4766((float) arg0.field8216[--arg0.field8226] / 1000.0F);
 	}
 
 	@ObfuscatedName("qo.apw(Lyf;I)V")
-	public static final void method7315(ClientScriptState arg0) throws class1109 {
+	public static final void method7315(ClientScriptState arg0) throws CameraException {
 		arg0.field8226 -= 4;
 		float var1 = (float) arg0.field8216[arg0.field8226];
 		float var2 = (float) arg0.field8216[arg0.field8226 + 1];
@@ -13220,7 +13220,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("ajd.ape(Lyf;I)V")
-	public static final void method17447(ClientScriptState arg0) throws class1109 {
+	public static final void method17447(ClientScriptState arg0) throws CameraException {
 		arg0.field8226 -= 4;
 		float var1 = (float) arg0.field8216[arg0.field8226];
 		float var2 = (float) arg0.field8216[arg0.field8226 + 1];
@@ -13245,7 +13245,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("ho.apy(Lyf;I)V")
-	public static final void method4271(ClientScriptState arg0) throws class1109 {
+	public static final void method4271(ClientScriptState arg0) throws CameraException {
 		arg0.field8226 -= 3;
 		Statics.field9155.method4782((float) arg0.field8216[arg0.field8226], (float) arg0.field8216[arg0.field8226 + 1], (float) arg0.field8216[arg0.field8226 + 2]);
 	}

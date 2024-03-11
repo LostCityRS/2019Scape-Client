@@ -29,7 +29,7 @@ public class LoadableResourceManager {
 					Statics.field8301.method8050();
 					ClientWatch.method1427();
 					Ping.init();
-				} catch (class1111 var21) {
+				} catch (NativeLibraryException var21) {
 					GraphicsPacketQueue.method18474(NativeLibraryFailureType.field8908, var21.field11894, var21.field11895, var21.getCause());
 				} catch (Throwable var22) {
 				}

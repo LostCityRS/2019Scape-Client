@@ -17,16 +17,16 @@ public class ShaderData {
 	@ObfuscatedName("hj.w")
 	public ProgramData[] field2582;
 
-	public ShaderData(byte[] arg0) throws class1107 {
+	public ShaderData(byte[] arg0) throws ShaderDataException {
 		this.method4279(arg0);
 	}
 
 	@ObfuscatedName("hj.e([BB)V")
-	public void method4279(byte[] arg0) throws class1107 {
+	public void method4279(byte[] arg0) throws ShaderDataException {
 		ShaderDataReader var2 = new ShaderDataReader(arg0);
 		int var3 = var2.method4133();
 		if (var3 != 4) {
-			throw new class1107(this, var3, 4);
+			throw new ShaderDataException(this, var3, 4);
 		}
 		this.field2577 = var2.method4134();
 		this.field2580 = new ProgramUniformData[var2.method4133()];

@@ -59,7 +59,7 @@ public class WaterfallShader extends WaterShader {
 	@ObfuscatedName("aqw.aa")
 	public int field12117;
 
-	public WaterfallShader(GpuRenderer arg0, class323 arg1) throws class1108 {
+	public WaterfallShader(GpuRenderer arg0, class323 arg1) throws ShaderException {
 		super(arg0);
 		this.field12119 = arg1;
 		if (this.field12119.method5407() && arg0.method15957()) {
@@ -68,7 +68,7 @@ public class WaterfallShader extends WaterShader {
 	}
 
 	@ObfuscatedName("aqw.a()Z")
-	public boolean method16762() throws class1108 {
+	public boolean method16762() throws ShaderException {
 		this.field12118 = this.field10587.method4157("WorldMatrix");
 		this.field12107 = this.field10587.method4157("WVPMatrix");
 		this.field12111 = this.field10587.method4157("UGenerationPlane");

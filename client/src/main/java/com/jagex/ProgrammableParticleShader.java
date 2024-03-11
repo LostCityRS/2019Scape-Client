@@ -41,13 +41,13 @@ public class ProgrammableParticleShader extends ParticleShader {
 	@ObfuscatedName("ahr.x")
 	public Program field10510;
 
-	public ProgrammableParticleShader(GpuRenderer arg0) throws class1108 {
+	public ProgrammableParticleShader(GpuRenderer arg0) throws ShaderException {
 		super(arg0);
 		this.method16630();
 	}
 
 	@ObfuscatedName("ahr.p(B)Z")
-	public boolean method16630() throws class1108 {
+	public boolean method16630() throws ShaderException {
 		this.field10505 = this.field2986.method15964("Particle");
 		this.field10507 = this.field10505.method4157("WVPMatrix");
 		this.field10512 = this.field10505.method4157("DiffuseSampler");
