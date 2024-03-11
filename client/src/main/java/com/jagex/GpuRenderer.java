@@ -324,10 +324,10 @@ public abstract class GpuRenderer extends Renderer {
 	public GpuTexture field10141;
 
 	@ObfuscatedName("afc.eg")
-	public class831 field10057;
+	public GpuSprite field10057;
 
 	@ObfuscatedName("afc.ez")
-	public class831 field10143;
+	public GpuSprite field10143;
 
 	@ObfuscatedName("afc.ef")
 	public boolean field10144 = false;
@@ -369,7 +369,7 @@ public abstract class GpuRenderer extends Renderer {
 	public final PostProcessEffect[] field10080 = new PostProcessEffect[4];
 
 	@ObfuscatedName("afc.ft")
-	public class846 field10161;
+	public GpuEnvironmentSampler field10161;
 
 	@ObfuscatedName("afc.fx")
 	public boolean field10133;
@@ -522,12 +522,12 @@ public abstract class GpuRenderer extends Renderer {
 	public boolean field10182;
 
 	@ObfuscatedName("afc.rv(Lle;)V")
-	public void method15985(class329 arg0) {
+	public void method15985(DeletableResource arg0) {
 		this.field10031.method15159(arg0, field10206);
 	}
 
 	@ObfuscatedName("afc.rh(Lle;)V")
-	public void method16198(class329 arg0) {
+	public void method16198(DeletableResource arg0) {
 		this.field10031.method15160(arg0);
 	}
 
@@ -536,7 +536,7 @@ public abstract class GpuRenderer extends Renderer {
 		ArrayList var1 = this.field10031.method15161();
 		Iterator var2 = var1.iterator();
 		while (var2.hasNext()) {
-			class329 var3 = (class329) var2.next();
+			DeletableResource var3 = (DeletableResource) var2.next();
 			var3.method1010();
 		}
 	}
@@ -662,8 +662,8 @@ public abstract class GpuRenderer extends Renderer {
 		this.method16232();
 		this.method2167();
 		this.method2150();
-		this.field10057 = new class831(this, this.field10140);
-		this.field10143 = new class831(this, this.field10141);
+		this.field10057 = new GpuSprite(this, this.field10140);
+		this.field10143 = new GpuSprite(this, this.field10141);
 		this.method2475(3, 0);
 	}
 
@@ -672,19 +672,19 @@ public abstract class GpuRenderer extends Renderer {
 		this.field10049 = new class323(this);
 		this.field10099 = false;
 		try {
-			this.field10148 = new class897(this);
-			this.field10149 = new class903(this);
-			this.field10115 = new class901(this);
-			this.field10151 = new class899(this);
+			this.field10148 = new ProgrammableModelShader(this);
+			this.field10149 = new ProgrammableSpriteShader(this);
+			this.field10115 = new ProgrammableBatchedSpriteShader(this);
+			this.field10151 = new ProgrammableParticleShader(this);
 			this.field10152 = new class1139(this, this.field10049, false);
 			this.field10153 = new class1139(this, this.field10049, true);
 			this.field10175 = new class1138(this, this.field10049);
 		} catch (Exception var4) {
 			var4.printStackTrace();
-			this.field10148 = new class896(this);
-			this.field10149 = new class902(this);
-			this.field10115 = new class900(this);
-			this.field10151 = new class898(this);
+			this.field10148 = new FixedFunctionModelShader(this);
+			this.field10149 = new FixedFunctionSpriteShader(this);
+			this.field10115 = new FixedFunctionBatchedSpriteShader(this);
+			this.field10151 = new FixedFunctionParticleShader(this);
 			this.field10152 = null;
 			this.field10153 = null;
 			this.field10175 = null;
@@ -702,8 +702,8 @@ public abstract class GpuRenderer extends Renderer {
 			}
 			this.field10155 = new class334(this, var2, var3);
 			this.field10080[3] = new ColourGradingBloomEffect(this);
-			this.field10080[1] = new class923(this);
-			this.field10080[2] = new class924(this);
+			this.field10080[1] = new LevelsFilter(this);
+			this.field10080[2] = new ColourRemappingFilter(this);
 			if (this.field10080[3].method5558()) {
 				this.field10155.method5599(this.field10080[3]);
 			}
@@ -1076,16 +1076,16 @@ public abstract class GpuRenderer extends Renderer {
 
 	@ObfuscatedName("afc.dg(FFFFF)V")
 	public void method2236(float arg0, float arg1, float arg2, float arg3, float arg4) {
-		class923.field10647 = arg0;
-		class923.field10642 = arg1;
-		class923.field10643 = arg2;
-		class923.field10650 = arg3;
-		class923.field10651 = arg4;
+		LevelsFilter.field10647 = arg0;
+		LevelsFilter.field10642 = arg1;
+		LevelsFilter.field10643 = arg2;
+		LevelsFilter.field10650 = arg3;
+		LevelsFilter.field10651 = arg4;
 	}
 
 	@ObfuscatedName("afc.de([I)Lcj;")
 	public ColourRemapper method2237(int[] arg0) {
-		return new class839(this, arg0);
+		return new GpuColourRemapper(this, arg0);
 	}
 
 	@ObfuscatedName("afc.sp()Z")
@@ -1125,23 +1125,23 @@ public abstract class GpuRenderer extends Renderer {
 			arg3 = arg5;
 			arg5 = 0.0F;
 		}
-		class924.field10653[0] = (class839) arg0;
-		class924.field10663[0] = arg1;
+		ColourRemappingFilter.field10653[0] = (GpuColourRemapper) arg0;
+		ColourRemappingFilter.field10663[0] = arg1;
 		if (arg1 > 0.0F) {
 			var7++;
 		}
-		class924.field10653[1] = (class839) arg2;
-		class924.field10663[1] = arg3;
+		ColourRemappingFilter.field10653[1] = (GpuColourRemapper) arg2;
+		ColourRemappingFilter.field10663[1] = arg3;
 		if (arg3 > 0.0F) {
 			var7++;
 		}
-		class924.field10653[2] = (class839) arg4;
-		class924.field10663[2] = arg5;
+		ColourRemappingFilter.field10653[2] = (GpuColourRemapper) arg4;
+		ColourRemappingFilter.field10663[2] = arg5;
 		if (arg5 > 0.0F) {
 			var7++;
 		}
-		class924.field10655 = var7;
-		class924.field10656 = 1.0F - (arg1 + arg3 + arg5);
+		ColourRemappingFilter.field10655 = var7;
+		ColourRemappingFilter.field10656 = 1.0F - (arg1 + arg3 + arg5);
 	}
 
 	@ObfuscatedName("afc.ey()Z")
@@ -1209,7 +1209,7 @@ public abstract class GpuRenderer extends Renderer {
 
 	@ObfuscatedName("afc.cw(IIZZ)Lcm;")
 	public final Sprite method2197(int arg0, int arg1, boolean arg2, boolean arg3) {
-		return new class831(this, arg0, arg1, arg2, arg3);
+		return new GpuSprite(this, arg0, arg1, arg2, arg3);
 	}
 
 	@ObfuscatedName("afc.co(Lde;Z)Lcm;")
@@ -1227,12 +1227,12 @@ public abstract class GpuRenderer extends Renderer {
 
 	@ObfuscatedName("afc.ct([IIIIIZ)Lcm;")
 	public final Sprite method2188(int[] arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
-		return new class831(this, arg3, arg4, arg0, arg1, arg2);
+		return new GpuSprite(this, arg3, arg4, arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("afc.cr(IIIIZ)Lcm;")
 	public final Sprite method2314(int arg0, int arg1, int arg2, int arg3, boolean arg4) {
-		class831 var6 = new class831(this, arg2, arg3, arg4, false);
+		GpuSprite var6 = new GpuSprite(this, arg2, arg3, arg4, false);
 		var6.method1440(0, 0, arg2, arg3, arg0, arg1);
 		return var6;
 	}
@@ -1288,7 +1288,7 @@ public abstract class GpuRenderer extends Renderer {
 
 	@ObfuscatedName("afc.dp(Ldz;)V")
 	public final void method2516(EnvironmentSampler arg0) {
-		this.field10161 = (class846) arg0;
+		this.field10161 = (GpuEnvironmentSampler) arg0;
 	}
 
 	@ObfuscatedName("afc.sz()Lmr;")

@@ -38,7 +38,7 @@ public class DummySoundBackend extends SoundBackend {
 		return this.field10679;
 	}
 
-	public DummySoundBackend(class656 arg0) {
+	public DummySoundBackend(SoundBackendConfig arg0) {
 		Iterator var2 = arg0.field8053.keySet().iterator();
 		while (var2.hasNext()) {
 			class473 var3 = (class473) var2.next();

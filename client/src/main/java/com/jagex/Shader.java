@@ -136,7 +136,7 @@ public abstract class Shader {
 	}
 
 	@ObfuscatedName("ho.b(Laql;Log;I)V")
-	public final void method4171(ProgramUniform arg0, class415 arg1) {
+	public final void method4171(ProgramUniform arg0, Vector4 arg1) {
 		this.field2568[this.field2573].method4087(arg0, arg1.field4244, arg1.field4243, arg1.field4242, arg1.field4245);
 	}
 

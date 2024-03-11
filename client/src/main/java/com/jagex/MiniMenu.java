@@ -750,10 +750,10 @@ public class MiniMenu {
 							if (var29.field6978 instanceof ObjStackEntity) {
 								int var70 = var3.field7426 + var32;
 								int var71 = var3.field7427 + var33;
-								class966 var72 = (class966) client.field10964.method14495((long) (var29.field6978.field11717 << 28 | var71 << 14 | var70));
+								ObjList var72 = (ObjList) client.field10964.method14495((long) (var29.field6978.field11717 << 28 | var71 << 14 | var70));
 								if (var72 != null) {
 									int var73 = 0;
-									class965 var74 = (class965) var72.field11263.method14159();
+									Obj var74 = (Obj) var72.field11263.method14159();
 									while (var74 != null) {
 										ObjType var75 = (ObjType) Statics.field1842.get(var74.field11261);
 										int var76;
@@ -802,7 +802,7 @@ public class MiniMenu {
 												}
 											}
 										}
-										var74 = (class965) var72.field11263.method14170();
+										var74 = (Obj) var72.field11263.method14170();
 										var73++;
 									}
 								}

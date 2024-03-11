@@ -26,7 +26,7 @@ public class CachingConfigTypeList implements ConfigTypeList {
 		this.field8792 = arg2;
 		this.field8793 = arg3;
 		this.field8796 = arg5;
-		this.field8794 = class760.method8370(this.field8792, this.field8793);
+		this.field8794 = ArchiveUtil.method8370(this.field8792, this.field8793);
 		this.field8795 = new WeightedCache(arg4);
 	}
 
@@ -53,7 +53,7 @@ public class CachingConfigTypeList implements ConfigTypeList {
 		Js5 var2 = this.field8792;
 		byte[] var3;
 		synchronized (this.field8792) {
-			var3 = class760.method9853(this.field8792, this.field8793, arg0);
+			var3 = ArchiveUtil.method9853(this.field8792, this.field8793, arg0);
 		}
 		ConfigType var5 = this.field8796.create(arg0, this);
 		if (var3 != null) {
@@ -102,6 +102,6 @@ public class CachingConfigTypeList implements ConfigTypeList {
 	}
 
 	public Iterator iterator() {
-		return new class765(this);
+		return new CachingConfigTypeListIterator(this);
 	}
 }

@@ -124,7 +124,7 @@ public class WorldMap {
 		Statics.field6791 = arg7;
 		Statics.field6790 = arg8;
 		field6796.method14499();
-		int[] var9 = Statics.field6794.method6895(class654.field7968.getId());
+		int[] var9 = Statics.field6794.method6895(Js5WorldMapGroup.field7968.getId());
 		if (var9 != null) {
 			for (int var10 = 0; var10 < var9.length; var10++) {
 				WorldMapAreaMetadata var11 = WorldMapAreaMetadata.method3468(Statics.field6794, var9[var10]);
@@ -470,7 +470,7 @@ public class WorldMap {
 									}
 								}
 								if (var6 != -1) {
-									class990 var8 = new class990(var6);
+									WorldMapElement var8 = new WorldMapElement(var6);
 									var8.field11448 = var0;
 									var8.field11452 = var1;
 									field6806.method14153(var8);
@@ -488,7 +488,7 @@ public class WorldMap {
 							}
 						}
 						if (var11 != -1) {
-							class990 var13 = new class990(var11);
+							WorldMapElement var13 = new WorldMapElement(var11);
 							var13.field11448 = var0;
 							var13.field11452 = var1;
 							field6806.method14153(var13);
@@ -521,7 +521,7 @@ public class WorldMap {
 									}
 								}
 								if (var22 != -1) {
-									class990 var24 = new class990(var22);
+									WorldMapElement var24 = new WorldMapElement(var22);
 									var24.field11448 = ((Statics.field6786 >> 6) + var15) * 64 + var19.field6774 - Statics.field6786;
 									var24.field11452 = ((Statics.field6808 >> 6) + var16) * 64 + var19.field6769 - Statics.field6808;
 									field6806.method14153(var24);
@@ -623,7 +623,7 @@ public class WorldMap {
 		for (int var1 = 0; var1 < Statics.field6805.field6777; var1++) {
 			boolean var2 = Statics.field6811.method19471(Statics.field6805.field6776[var1] >> 28 & 0x3, Statics.field6805.field6776[var1] >> 14 & 0x3FFF, Statics.field6805.field6776[var1] & 0x3FFF, var0);
 			if (var2) {
-				class990 var3 = new class990(Statics.field6805.field6775[var1]);
+				WorldMapElement var3 = new WorldMapElement(Statics.field6805.field6775[var1]);
 				var3.field11448 = var0[1] - Statics.field6786;
 				var3.field11452 = var0[2] - Statics.field6808;
 				field6806.method14153(var3);
@@ -1089,20 +1089,20 @@ public class WorldMap {
 
 	@ObfuscatedName("tf.t(Ldh;IIII)Laat;")
 	public static IterableQueue method8531(Renderer arg0, int arg1, int arg2, int arg3, int arg4) {
-		for (class990 var5 = (class990) field6806.method14191(); var5 != null; var5 = (class990) field6806.method14161()) {
+		for (WorldMapElement var5 = (WorldMapElement) field6806.method14191(); var5 != null; var5 = (WorldMapElement) field6806.method14161()) {
 			method8525(arg0, var5, arg1, arg2, arg3, arg4);
 		}
 		return field6806;
 	}
 
 	@ObfuscatedName("tf.ae(Ldh;Laks;IIII)V")
-	public static void method8525(Renderer arg0, class990 arg1, int arg2, int arg3, int arg4, int arg5) {
+	public static void method8525(Renderer arg0, WorldMapElement arg1, int arg2, int arg3, int arg4, int arg5) {
 		arg1.field11449 = ((arg1.field11448 - Statics.field6845) * arg2 + arg4 >> 16) + Statics.field6801;
 		arg1.field11451 = Statics.field6852 - ((arg1.field11452 - Statics.field6848) * arg3 + arg5 >> 16);
 	}
 
 	@ObfuscatedName("tf.ag(Ldh;Laks;Lhs;)V")
-	public static void method8533(Renderer arg0, class990 arg1, MapElementType arg2) {
+	public static void method8533(Renderer arg0, WorldMapElement arg1, MapElementType arg2) {
 		if (arg2.field2393 == null) {
 			return;
 		}

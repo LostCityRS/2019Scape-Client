@@ -10,9 +10,9 @@ public class class484 implements class487 {
 	public final int field4972;
 
 	@ObfuscatedName("ri.n")
-	public final class927 field4971;
+	public final OpenGLTexture field4971;
 
-	public class484(class927 arg0, int arg1) {
+	public class484(OpenGLTexture arg0, int arg1) {
 		this.field4972 = arg1;
 		this.field4971 = arg0;
 	}

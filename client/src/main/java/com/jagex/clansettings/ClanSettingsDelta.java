@@ -24,7 +24,7 @@ public class ClanSettingsDelta {
 		this.field3133 = arg0.g8();
 		this.field3123 = arg0.g4s();
 		for (int var2 = arg0.g1(); var2 != 0; var2 = arg0.g1()) {
-			class978 var3;
+			ClanSettingsDeltaEntry var3;
 			if (var2 == 3) {
 				var3 = new AddBanned(this);
 			} else if (var2 == 1) {
@@ -66,7 +66,7 @@ public class ClanSettingsDelta {
 		if (this.field3133 != arg0.field3113 || this.field3123 != arg0.field3094) {
 			throw new RuntimeException("");
 		}
-		for (class978 var2 = (class978) this.field3136.method14191(); var2 != null; var2 = (class978) this.field3136.method14161()) {
+		for (ClanSettingsDeltaEntry var2 = (ClanSettingsDeltaEntry) this.field3136.method14191(); var2 != null; var2 = (ClanSettingsDeltaEntry) this.field3136.method14161()) {
 			var2.method17727(arg0);
 		}
 		arg0.field3094++;

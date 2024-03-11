@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("hi")
-public abstract class Program implements class329 {
+public abstract class Program implements DeletableResource {
 
 	@ObfuscatedName("hi.e")
 	public String field2435 = null;

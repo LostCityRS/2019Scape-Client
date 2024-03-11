@@ -15,7 +15,7 @@ public abstract class Stream {
 
 	@ObfuscatedName("fu.n(Ljava/net/Socket;III)Luz;")
 	public static Stream method3025(Socket arg0, int arg1, int arg2) throws IOException {
-		return new class1005(arg0, arg1, arg2);
+		return new SocketStream(arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("uz.f([BIIB)I")

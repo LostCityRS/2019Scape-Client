@@ -114,8 +114,8 @@ public class AudioApi {
 		this.field1856 = new WeightedCache(arg1, 100);
 		this.field1862 = new WeightedCache(10);
 		this.field1856.method2943(new class167(this));
-		class656 var3 = new class656(class363.field3413);
-		class657.method8200(var3);
+		SoundBackendConfig var3 = new SoundBackendConfig(SoundBackendType.field3413);
+		AudioMixer.method8200(var3);
 		this.method3197();
 		this.field1875 = -1;
 		this.field1860 = true;
@@ -126,7 +126,7 @@ public class AudioApi {
 		if (!this.field1860) {
 			return;
 		}
-		class657.method306();
+		AudioMixer.method306();
 		if (Statics.field4490 != null && Statics.field4490.method10536() != null) {
 			if (this.field1873 == null) {
 				this.field1873 = new Vector3();
@@ -248,7 +248,7 @@ public class AudioApi {
 
 	@ObfuscatedName("fb.u(B)V")
 	public void method3165() {
-		class657.method7606();
+		AudioMixer.method7606();
 	}
 
 	@ObfuscatedName("fb.z(Lrw;III)V")
@@ -318,36 +318,36 @@ public class AudioApi {
 		LoginMusicVolumeProvider var3 = new LoginMusicVolumeProvider(this);
 		BackgroundEffectsVolumeProvider var4 = new BackgroundEffectsVolumeProvider(this);
 		SpeechVolumeProvider var5 = new SpeechVolumeProvider(this);
-		class657.method16432(BussType.field1812.method3047(), BussType.field1815.method3047(), 0.2F, var1);
-		class657.method16432(BussType.field1814.method3047(), BussType.field1815.method3047(), 1.0F, var2);
-		class657.method16432(BussType.field1817.method3047(), BussType.field1815.method3047(), 1.0F, var3);
-		class657.method16432(BussType.field1816.method3047(), BussType.field1815.method3047(), 0.8F, var4);
-		class657.method16432(BussType.field1813.method3047(), BussType.field1815.method3047(), 1.0F, var5);
-		class657.method16432(SubBussType.field1800.method3034(), BussType.field1814.method3047(), 1.0F, null);
-		class657.method16432(SubBussType.field1801.method3034(), BussType.field1813.method3047(), 1.0F, null);
-		class657.method16432(SubBussType.field1805.method3034(), BussType.field1812.method3047(), 1.0F, null);
-		class657.method16432(SubBussType.field1802.method3034(), BussType.field1812.method3047(), 1.0F, null);
-		class657.method16432(SubBussType.field1803.method3034(), BussType.field1812.method3047(), 1.0F, null);
-		class657.method16432(SubBussType.field1804.method3034(), BussType.field1812.method3047(), 1.0F, null);
-		class657.method16432(SubBussType.field1809.method3034(), BussType.field1812.method3047(), 1.0F, null);
-		class657.method16432(SubBussType.field1806.method3034(), BussType.field1816.method3047(), 1.0F, null);
-		class657.method16432(SubBussType.field1808.method3034(), SubBussType.field1806.method3034(), 1.0F, null);
-		class657.method16432(SubBussType.field1799.method3034(), SubBussType.field1806.method3034(), 1.0F, null);
-		class657.method5401(SubBussType.field1800.method3034()).method5897(0.75F);
+		AudioMixer.method16432(BussType.field1812.method3047(), BussType.field1815.method3047(), 0.2F, var1);
+		AudioMixer.method16432(BussType.field1814.method3047(), BussType.field1815.method3047(), 1.0F, var2);
+		AudioMixer.method16432(BussType.field1817.method3047(), BussType.field1815.method3047(), 1.0F, var3);
+		AudioMixer.method16432(BussType.field1816.method3047(), BussType.field1815.method3047(), 0.8F, var4);
+		AudioMixer.method16432(BussType.field1813.method3047(), BussType.field1815.method3047(), 1.0F, var5);
+		AudioMixer.method16432(SubBussType.field1800.method3034(), BussType.field1814.method3047(), 1.0F, null);
+		AudioMixer.method16432(SubBussType.field1801.method3034(), BussType.field1813.method3047(), 1.0F, null);
+		AudioMixer.method16432(SubBussType.field1805.method3034(), BussType.field1812.method3047(), 1.0F, null);
+		AudioMixer.method16432(SubBussType.field1802.method3034(), BussType.field1812.method3047(), 1.0F, null);
+		AudioMixer.method16432(SubBussType.field1803.method3034(), BussType.field1812.method3047(), 1.0F, null);
+		AudioMixer.method16432(SubBussType.field1804.method3034(), BussType.field1812.method3047(), 1.0F, null);
+		AudioMixer.method16432(SubBussType.field1809.method3034(), BussType.field1812.method3047(), 1.0F, null);
+		AudioMixer.method16432(SubBussType.field1806.method3034(), BussType.field1816.method3047(), 1.0F, null);
+		AudioMixer.method16432(SubBussType.field1808.method3034(), SubBussType.field1806.method3034(), 1.0F, null);
+		AudioMixer.method16432(SubBussType.field1799.method3034(), SubBussType.field1806.method3034(), 1.0F, null);
+		AudioMixer.method5401(SubBussType.field1800.method3034()).method5897(0.75F);
 	}
 
 	@ObfuscatedName("fb.v(IIIB)V")
 	public void method3156(int arg0, int arg1, int arg2) {
 		int var4 = BussType.field1815.method3047();
-		if (class657.method5401(arg0) == null && (arg1 == var4 || class657.method5401(arg1) != null)) {
+		if (AudioMixer.method5401(arg0) == null && (arg1 == var4 || AudioMixer.method5401(arg1) != null)) {
 			float var5 = (float) arg2 * 1.5258789E-5F;
-			class657.method16432(arg0, arg1 == var4 ? -1 : arg1, var5, null);
+			AudioMixer.method16432(arg0, arg1 == var4 ? -1 : arg1, var5, null);
 		}
 	}
 
 	@ObfuscatedName("fb.o(III)V")
 	public void method3157(int arg0, int arg1) {
-		AudioBuss var3 = class657.method5401(arg0);
+		AudioBuss var3 = AudioMixer.method5401(arg0);
 		if (var3 != null) {
 			float var4 = (float) arg1 * 1.5258789E-5F;
 			var3.method5897(var4);
@@ -356,7 +356,7 @@ public class AudioApi {
 
 	@ObfuscatedName("fb.s(II)F")
 	public float method3189(int arg0) {
-		AudioBuss var2 = class657.method5401(arg0);
+		AudioBuss var2 = AudioMixer.method5401(arg0);
 		float var3 = 1.0F;
 		while (var2 != null) {
 			var3 *= var2.method5902();
@@ -421,7 +421,7 @@ public class AudioApi {
 		class614 var3 = this.method3162(arg0, arg1);
 		if (var3 == null) {
 			class182 var4 = new class182(this);
-			var3 = class657.method6064(arg1 ? Statics.field3085 : Statics.field2613, arg0, var4, arg1, this.field1863);
+			var3 = AudioMixer.method6064(arg1 ? Statics.field3085 : Statics.field2613, arg0, var4, arg1, this.field1863);
 			if (arg1) {
 				this.field1865.put(arg0, var3);
 			} else {

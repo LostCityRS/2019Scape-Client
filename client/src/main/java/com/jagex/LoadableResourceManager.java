@@ -27,7 +27,7 @@ public class LoadableResourceManager {
 			if (!((DllResourceLoader) LoadableResource.field8919.method15010()).method6812() && !Loading.method6040()) {
 				try {
 					Statics.field8301.method8050();
-					class648.method1427();
+					ClientWatch.method1427();
 					Ping.init();
 				} catch (class1111 var21) {
 					GraphicsPacketQueue.method18474(NativeLibraryFailureType.field8908, var21.field11894, var21.field11895, var21.getCause());

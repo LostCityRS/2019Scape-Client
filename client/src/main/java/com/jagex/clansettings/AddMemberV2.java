@@ -2,11 +2,11 @@ package com.jagex.clansettings;
 
 import com.jagex.Packet;
 import com.jagex.ClanSettings;
-import com.jagex.class978;
+import com.jagex.ClanSettingsDeltaEntry;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("arc")
-public class AddMemberV2 extends class978 {
+public class AddMemberV2 extends ClanSettingsDeltaEntry {
 
 	// $FF: synthetic field
 	public final ClanSettingsDelta this$0;

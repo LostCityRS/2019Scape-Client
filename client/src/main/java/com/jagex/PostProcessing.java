@@ -90,7 +90,7 @@ public class PostProcessing {
 		this.field1176 = null;
 		if (!this.field1170.method14164()) {
 			for (Node var1 = this.field1170.method14191(); var1 != this.field1170.field8482; var1 = var1.field6761) {
-				((class968) var1).method17570();
+				((PostProcessingFilter) var1).method17570();
 			}
 		}
 		this.field1167 = 1;
@@ -109,7 +109,7 @@ public class PostProcessing {
 
 	@ObfuscatedName("cv.k()Z")
 	public boolean method1364() {
-		for (class968 var1 = (class968) this.field1170.method14191(); var1 != null; var1 = (class968) this.field1170.method14161()) {
+		for (PostProcessingFilter var1 = (PostProcessingFilter) this.field1170.method14191(); var1 != null; var1 = (PostProcessingFilter) this.field1170.method14161()) {
 			if (!var1.method17551()) {
 				return false;
 			}
@@ -218,7 +218,7 @@ public class PostProcessing {
 			this.field1177 = arg2;
 			this.field1167 = arg3;
 			for (Node var5 = this.field1170.method14191(); var5 != this.field1170.field8482; var5 = var5.field6761) {
-				((class968) var5).method17540(this.field1177, this.field1167);
+				((PostProcessingFilter) var5).method17540(this.field1177, this.field1167);
 			}
 			this.field1171 = true;
 			this.field1172 = true;
@@ -258,21 +258,21 @@ public class PostProcessing {
 		int var6 = 0;
 		int var7 = 0;
 		Object var8 = null;
-		for (class968 var9 = (class968) this.field1170.method14191(); var9 != null; var9 = (class968) this.field1170.method14161()) {
+		for (PostProcessingFilter var9 = (PostProcessingFilter) this.field1170.method14191(); var9 != null; var9 = (PostProcessingFilter) this.field1170.method14161()) {
 			if (!var9.method17551()) {
 				var6++;
 			}
 		}
-		class968[] var10 = new class968[var6];
+		PostProcessingFilter[] var10 = new PostProcessingFilter[var6];
 		int var11 = 0;
-		for (class968 var12 = (class968) this.field1170.method14191(); var12 != null; var12 = (class968) this.field1170.method14161()) {
+		for (PostProcessingFilter var12 = (PostProcessingFilter) this.field1170.method14191(); var12 != null; var12 = (PostProcessingFilter) this.field1170.method14161()) {
 			if (!var12.method17551()) {
 				var10[var11++] = var12;
 			}
 		}
 		while (var5 < var11) {
 			for (int var13 = 0; var13 < var11; var13++) {
-				class968 var14 = var10[var13];
+				PostProcessingFilter var14 = var10[var13];
 				if (var14.method17546() == var7) {
 					int var15 = var14.method17569();
 					for (int var16 = 0; var16 < var15; var16++) {
@@ -325,7 +325,7 @@ public class PostProcessing {
 	}
 
 	@ObfuscatedName("cv.u(Lajl;)Z")
-	public boolean method1369(class968 arg0) {
+	public boolean method1369(PostProcessingFilter arg0) {
 		if (this.field1164 != null) {
 			if (arg0.method17539() || arg0.method17534()) {
 				this.field1170.method14153(arg0);
@@ -344,7 +344,7 @@ public class PostProcessing {
 	}
 
 	@ObfuscatedName("cv.z(Lajl;)V")
-	public void method1370(class968 arg0) {
+	public void method1370(PostProcessingFilter arg0) {
 		arg0.field11271 = false;
 		arg0.method17570();
 		arg0.method8440();
@@ -356,7 +356,7 @@ public class PostProcessing {
 		int var1 = 0;
 		boolean var2 = false;
 		DataType var3 = DataType.UNSIGNED_INT_8;
-		for (class968 var4 = (class968) this.field1170.method14191(); var4 != null; var4 = (class968) this.field1170.method14161()) {
+		for (PostProcessingFilter var4 = (PostProcessingFilter) this.field1170.method14191(); var4 != null; var4 = (PostProcessingFilter) this.field1170.method14161()) {
 			DataType var5 = var4.method17542();
 			if (var5.field1652 > var3.field1652) {
 				var3 = var5;

@@ -41,7 +41,7 @@ public class LoadingScreenNewsManager implements Runnable {
 
 	public void run() {
 		try {
-			int var1 = ServerPorts.method14998(Statics.field1811, class698.field8347, Statics.world.node);
+			int var1 = ServerPorts.method14998(Statics.field1811, ServerType.field8347, Statics.world.node);
 			BufferedReader var2 = new BufferedReader(new InputStreamReader(new DataInputStream((new URL("http://" + Statics.world.host + ":" + var1 + "/news.ws?game=" + client.field10768.field8339)).openStream())));
 			String var3 = var2.readLine();
 			ArrayList var4 = new ArrayList();

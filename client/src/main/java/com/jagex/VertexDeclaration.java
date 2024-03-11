@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("lo")
-public abstract class VertexDeclaration implements class329 {
+public abstract class VertexDeclaration implements DeletableResource {
 
 	@ObfuscatedName("lo.e")
 	public final VertexDeclarationElement[] field3241;

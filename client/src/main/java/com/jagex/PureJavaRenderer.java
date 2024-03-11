@@ -202,7 +202,7 @@ public class PureJavaRenderer extends Renderer {
 	@ObfuscatedName("afg.d(I)V")
 	public void method2120(int arg0) {
 		int var2 = arg0 - this.field9776;
-		for (class967 var3 = (class967) this.field9809.method2950(); var3 != null; var3 = (class967) this.field9809.method2937()) {
+		for (PureJavaTexture var3 = (PureJavaTexture) this.field9809.method2950(); var3 != null; var3 = (PureJavaTexture) this.field9809.method2937()) {
 			if (var3.field11265) {
 				var3.field11266 += var2;
 				int var4 = var3.field11266 / 50;
@@ -233,10 +233,10 @@ public class PureJavaRenderer extends Renderer {
 	@ObfuscatedName("afg.rh(I)[I")
 	public int[] method15655(int arg0) {
 		WeightedCache var2 = this.field9809;
-		class967 var4;
+		PureJavaTexture var4;
 		synchronized (this.field9809) {
 			Material var3 = this.field1597.method2043(arg0);
-			var4 = (class967) this.field9809.method2930((long) (var3.field1334 & 0xFFFF) | Long.MIN_VALUE);
+			var4 = (PureJavaTexture) this.field9809.method2930((long) (var3.field1334 & 0xFFFF) | Long.MIN_VALUE);
 			if (var4 == null) {
 				int var5 = var3.field1357;
 				if (!this.field1596.method1977(class605.field7586, var3.field1334, -1, class602.field7569, 0.7F, var5, var5, true)) {
@@ -248,7 +248,7 @@ public class PureJavaRenderer extends Renderer {
 				} else {
 					var6 = this.field1596.method1983(class605.field7586, var3.field1334, 0.7F, var5, var5, true);
 				}
-				var4 = new class967(var3.field1334, var3.field1329, var5, var6, MaterialAlphaMode.TEST != var3.field1340);
+				var4 = new PureJavaTexture(var3.field1334, var3.field1329, var5, var6, MaterialAlphaMode.TEST != var3.field1340);
 				this.field9809.method2922(var4, (long) (var3.field1334 & 0xFFFF) | Long.MIN_VALUE, var5 * var5);
 			}
 		}

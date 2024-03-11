@@ -33,13 +33,13 @@ public abstract class ModelShader {
 	public float field2971;
 
 	@ObfuscatedName("jj.d")
-	public final class415 field2979 = new class415();
+	public final Vector4 field2979 = new Vector4();
 
 	@ObfuscatedName("jj.c")
 	public final Vector3 field2973 = new Vector3();
 
 	@ObfuscatedName("jj.r")
-	public final class415 field2984 = new class415();
+	public final Vector4 field2984 = new Vector4();
 
 	@ObfuscatedName("jj.v")
 	public final Vector3 field2975 = new Vector3();

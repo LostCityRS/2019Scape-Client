@@ -15,7 +15,7 @@ import java.util.List;
 public class class544 {
 
 	// $FF: synthetic field
-	public final class932 this$0;
+	public final JavaSoundBackend this$0;
 
 	@ObfuscatedName("ts.e")
 	public boolean field6869;
@@ -50,7 +50,7 @@ public class class544 {
 	@ObfuscatedName("ts.d")
 	public List field6878;
 
-	public class544(class932 arg0, float arg1, int arg2) {
+	public class544(JavaSoundBackend arg0, float arg1, int arg2) {
 		this.this$0 = arg0;
 		this.field6873 = 16;
 		this.field6877 = 2;

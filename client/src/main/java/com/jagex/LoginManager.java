@@ -1024,7 +1024,7 @@ public class LoginManager {
 			if (field472 != -1) {
 				var1 = field472;
 			} else if (field439 == -1L) {
-				var1 = class695.method15380(username);
+				var1 = StringUtils.method15380(username);
 			} else {
 				var1 = field439;
 			}
@@ -1081,7 +1081,7 @@ public class LoginManager {
 		Statics.field6867 = null;
 		Statics.field1890 = null;
 		client.field11095 = true;
-		class648.method13845();
+		ClientWatch.method13845();
 		for (int var0 = 0; var0 < Statics.field7410.field635.length; var0++) {
 			PlayerStat var1 = new PlayerStat(Statics.field2767.method9778(var0), false);
 			var1.method10160(0);
@@ -1129,8 +1129,8 @@ public class LoginManager {
 		client.field10966.method14499();
 		client.field10864.method14242();
 		client.field10964.method14499();
-		class962.field11237 = new IterableQueue();
-		class962.field11242 = new IterableQueue();
+		ChangeLocationRequest.field11237 = new IterableQueue();
+		ChangeLocationRequest.field11242 = new IterableQueue();
 		Statics.field8550 = 0;
 		Statics.field8492 = 0;
 		Statics.field741 = 0;

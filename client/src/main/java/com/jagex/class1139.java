@@ -42,25 +42,25 @@ public class class1139 extends class916 {
 	public ProgramUniform field12142;
 
 	@ObfuscatedName("aqe.ao")
-	public final class415 field12132 = new class415();
+	public final Vector4 field12132 = new Vector4();
 
 	@ObfuscatedName("aqe.aj")
 	public ProgramUniform field12133;
 
 	@ObfuscatedName("aqe.ay")
-	public final class415 field12134 = new class415();
+	public final Vector4 field12134 = new Vector4();
 
 	@ObfuscatedName("aqe.ab")
 	public ProgramUniform field12135;
 
 	@ObfuscatedName("aqe.az")
-	public final class415 field12136 = new class415();
+	public final Vector4 field12136 = new Vector4();
 
 	@ObfuscatedName("aqe.aa")
 	public ProgramUniform field12137;
 
 	@ObfuscatedName("aqe.af")
-	public final class415 field12138 = new class415();
+	public final Vector4 field12138 = new Vector4();
 
 	@ObfuscatedName("aqe.ak")
 	public ProgramUniform field12139;
@@ -72,7 +72,7 @@ public class class1139 extends class916 {
 	public ProgramUniform field12151;
 
 	@ObfuscatedName("aqe.bl")
-	public final class415 field12124 = new class415();
+	public final Vector4 field12124 = new Vector4();
 
 	@ObfuscatedName("aqe.bk")
 	public ProgramUniform field12149;

@@ -71,7 +71,7 @@ public final class JavaKeyboard extends Keyboard implements KeyListener, FocusLi
 
 	@ObfuscatedName("alg.x(ICII)V")
 	public void method18264(int arg0, char arg1, int arg2) {
-		class992 var4 = new class992();
+		BasicKeyboardEvent var4 = new BasicKeyboardEvent();
 		var4.field11466 = arg0;
 		var4.field11464 = arg1;
 		var4.field11465 = arg2;
@@ -92,11 +92,11 @@ public final class JavaKeyboard extends Keyboard implements KeyListener, FocusLi
 	@ObfuscatedName("alg.n(I)V")
 	public synchronized void method9069() {
 		this.field11681.method14152();
-		for (class992 var1 = (class992) this.field11682.method14154(); var1 != null; var1 = (class992) this.field11682.method14154()) {
+		for (BasicKeyboardEvent var1 = (BasicKeyboardEvent) this.field11682.method14154(); var1 != null; var1 = (BasicKeyboardEvent) this.field11682.method14154()) {
 			var1.field11467 = this.method18266();
 			if (var1.field11466 == 0) {
 				if (!this.field11683[var1.field11465]) {
-					class992 var2 = new class992();
+					BasicKeyboardEvent var2 = new BasicKeyboardEvent();
 					var2.field11466 = 0;
 					var2.field11464 = (char) 65535;
 					var2.field11465 = var1.field11465;
@@ -115,7 +115,7 @@ public final class JavaKeyboard extends Keyboard implements KeyListener, FocusLi
 			} else if (var1.field11466 == -1) {
 				for (int var3 = 0; var3 < 112; var3++) {
 					if (this.field11683[var3]) {
-						class992 var4 = new class992();
+						BasicKeyboardEvent var4 = new BasicKeyboardEvent();
 						var4.field11466 = 1;
 						var4.field11464 = (char) 65535;
 						var4.field11465 = var3;

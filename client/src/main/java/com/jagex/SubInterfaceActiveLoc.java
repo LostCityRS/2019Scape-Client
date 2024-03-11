@@ -6,9 +6,9 @@ import deob.ObfuscatedName;
 public class SubInterfaceActiveLoc extends SubInterface {
 
 	@ObfuscatedName("asl.w")
-	public final class675 field12429;
+	public final LocReference field12429;
 
-	public SubInterfaceActiveLoc(int arg0, int arg1, class675 arg2) {
+	public SubInterfaceActiveLoc(int arg0, int arg1, LocReference arg2) {
 		super(arg0, arg1);
 		this.field12429 = arg2;
 	}

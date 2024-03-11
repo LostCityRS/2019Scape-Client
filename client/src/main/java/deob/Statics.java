@@ -118,7 +118,7 @@ public class Statics {
 	public static SeqGroupTypeList field10771;
 
 	@ObfuscatedName("client.bw")
-	public static class794 field10782;
+	public static Namespace field10782;
 
 	@ObfuscatedName("ajo.w")
 	public static int field11222;
@@ -1603,7 +1603,7 @@ public class Statics {
 	public static Iterator field8853;
 
 	@ObfuscatedName("acb.ny")
-	public static class727[] field8871;
+	public static FullscreenMode[] field8871;
 
 	@ObfuscatedName("acw.ln")
 	public static int field8910;
@@ -1924,7 +1924,7 @@ public class Statics {
 			throw new IllegalStateException("");
 		}
 		field11719 = new NativeMouse();
-		Thread var1 = new Thread(new class668());
+		Thread var1 = new Thread(new NativeMouseTask());
 		var1.setDaemon(true);
 		var1.start();
 		return true;
@@ -2166,13 +2166,13 @@ public class Statics {
 
 	@ObfuscatedName("xq.l(III)Z")
 	public static boolean method10338(int arg0, int arg1) {
-		if (class657.field8056 == null || class657.field8056.method5880() == null) {
+		if (AudioMixer.field8056 == null || AudioMixer.field8056.method5880() == null) {
 			return false;
 		} else if (arg0 == arg1) {
 			return true;
 		} else {
-			AudioBuss var2 = class657.field8056.method5880().method5851(arg0);
-			AudioBuss var3 = class657.field8056.method5880().method5851(arg1);
+			AudioBuss var2 = AudioMixer.field8056.method5880().method5851(arg0);
+			AudioBuss var3 = AudioMixer.field8056.method5880().method5851(arg1);
 			AudioBuss var4 = var2;
 			do {
 				if (var4 == null) {
@@ -2328,7 +2328,7 @@ public class Statics {
 
 	@ObfuscatedName("tm.l(I)I")
 	public static int method8461() {
-		return class633.field7802;
+		return ParticleSystemRenderer.field7802;
 	}
 
 	@ObfuscatedName("aqh.u(II)V")
@@ -2339,10 +2339,10 @@ public class Statics {
 
 	@ObfuscatedName("wc.w(B)V")
 	public static void method9835() {
-		Queue var0 = class648.field7946;
-		synchronized (class648.field7946) {
+		Queue var0 = ClientWatch.field7946;
+		synchronized (ClientWatch.field7946) {
 			while (true) {
-				NativeMouseEvent var1 = (NativeMouseEvent) class648.field7946.poll();
+				NativeMouseEvent var1 = (NativeMouseEvent) ClientWatch.field7946.poll();
 				if (var1 == null) {
 					return;
 				}
@@ -2433,7 +2433,7 @@ public class Statics {
 						if (var10 != null) {
 							String var11 = (String) var10.getTransferData(DataFlavor.stringFlavor);
 							if (var11 != null) {
-								String[] var12 = class695.method17361(var11, '\n');
+								String[] var12 = StringUtils.method17361(var11, '\n');
 								DeveloperConsole.method15383(var12);
 							}
 						}
@@ -2461,7 +2461,7 @@ public class Statics {
 				DeveloperConsole.commandpointer--;
 				DeveloperConsole.method3085();
 				DeveloperConsole.commandcharpointer = DeveloperConsole.currententry.length();
-			} else if (class695.method2883(var6) || "\\/.:, _-+[]~@".indexOf(var6) != -1) {
+			} else if (StringUtils.method2883(var6) || "\\/.:, _-+[]~@".indexOf(var6) != -1) {
 				DeveloperConsole.currententry = DeveloperConsole.currententry.substring(0, DeveloperConsole.commandcharpointer) + client.field11067[var3].method9131() + DeveloperConsole.currententry.substring(DeveloperConsole.commandcharpointer);
 				DeveloperConsole.commandcharpointer++;
 			}
@@ -2473,11 +2473,11 @@ public class Statics {
 
 	@ObfuscatedName("gp.f(B)V")
 	public static final void method3486() {
-		for (class962 var0 = (class962) class962.field11237.method14191(); var0 != null; var0 = (class962) class962.field11237.method14161()) {
-			class962.method2834(var0, false);
+		for (ChangeLocationRequest var0 = (ChangeLocationRequest) ChangeLocationRequest.field11237.method14191(); var0 != null; var0 = (ChangeLocationRequest) ChangeLocationRequest.field11237.method14161()) {
+			ChangeLocationRequest.method2834(var0, false);
 		}
-		for (class962 var1 = (class962) class962.field11242.method14191(); var1 != null; var1 = (class962) class962.field11242.method14161()) {
-			class962.method2834(var1, true);
+		for (ChangeLocationRequest var1 = (ChangeLocationRequest) ChangeLocationRequest.field11242.method14191(); var1 != null; var1 = (ChangeLocationRequest) ChangeLocationRequest.field11242.method14161()) {
+			ChangeLocationRequest.method2834(var1, true);
 		}
 	}
 
@@ -2670,7 +2670,7 @@ public class Statics {
 
 	@ObfuscatedName("kg.l(Laqk;I)V")
 	public static void method5142(PlayerEntity arg0) {
-		class975 var1 = (class975) class975.field11366.method14495((long) arg0.field10406);
+		PositionedSound var1 = (PositionedSound) PositionedSound.field11366.method14495((long) arg0.field10406);
 		if (var1 == null) {
 			return;
 		}
@@ -2749,17 +2749,17 @@ public class Statics {
 			return false;
 		} else if (!arg0.method4030(field6791, field6790)) {
 			return false;
-		} else if (class1004.field11667.method14495((long) arg0.field2367) != null) {
+		} else if (ClientWorldMap.field11667.method14495((long) arg0.field2367) != null) {
 			return false;
-		} else if (class1004.field11668.method14495((long) arg0.field2374) == null) {
+		} else if (ClientWorldMap.field11668.method14495((long) arg0.field2374) == null) {
 			if (arg0.field2370 != null) {
-				if (arg0.field2388 == 0 && class1004.field11670) {
+				if (arg0.field2388 == 0 && ClientWorldMap.field11670) {
 					return false;
 				}
-				if (arg0.field2388 == 1 && class1004.field11666) {
+				if (arg0.field2388 == 1 && ClientWorldMap.field11666) {
 					return false;
 				}
-				if (arg0.field2388 == 2 && class1004.field11675) {
+				if (arg0.field2388 == 2 && ClientWorldMap.field11675) {
 					return false;
 				}
 			}
@@ -3131,15 +3131,15 @@ public class Statics {
 		} else {
 			return;
 		}
-		field717 = class1004.field11659[var1][var2];
-		field10471 = class1004.field11660[var1][var2];
+		field717 = ClientWorldMap.field11659[var1][var2];
+		field10471 = ClientWorldMap.field11660[var1][var2];
 	}
 
 	@ObfuscatedName("gc.eu(Ldh;IIIIB)V")
 	public static final void method3549(Renderer arg0, int arg1, int arg2, int arg3, int arg4) {
 		arg0.method2168(arg1, arg2, arg1 + arg3, arg2 + arg4);
 		arg0.method2301(arg1, arg2, arg3, arg4, -16777216);
-		if (class1004.field11651 < 100) {
+		if (ClientWorldMap.field11651 < 100) {
 			return;
 		}
 		float var5 = (float) field6810 / (float) field6812;
@@ -3153,9 +3153,9 @@ public class Statics {
 		int var8 = (arg3 - var6) / 2 + arg1;
 		int var9 = (arg4 - var7) / 2 + arg2;
 		if (field7241 == null || field7241.method1459() != var6 || field7241.method1435() != var7) {
-			class1004.field6833 = class1004.field6832;
-			class1004.method8620(field6786, field6810 + field6808, field6812 + field6786, field6808, var8, var9, var6 + var8, var7 + var9);
-			class1004.method8523(arg0, false, false, client.field10948, true);
+			ClientWorldMap.field6833 = ClientWorldMap.field6832;
+			ClientWorldMap.method8620(field6786, field6810 + field6808, field6812 + field6786, field6808, var8, var9, var6 + var8, var7 + var9);
+			ClientWorldMap.method8523(arg0, false, false, client.field10948, true);
 			arg0.method2202();
 			field7241 = arg0.method2314(var8, var9, var6, var7, true);
 		}
@@ -3170,19 +3170,19 @@ public class Statics {
 		}
 		arg0.method2354(var12, var13, var10, var11, var14, 1);
 		arg0.method2179(var12, var13, var10, var11, var14, 0);
-		for (class990 var15 = (class990) class1004.field6806.method14191(); var15 != null; var15 = (class990) class1004.field6806.method14161()) {
+		for (WorldMapElement var15 = (WorldMapElement) ClientWorldMap.field6806.method14191(); var15 != null; var15 = (WorldMapElement) ClientWorldMap.field6806.method14161()) {
 			MapElementType var16 = (MapElementType) field6788.get(var15.field11446);
 			if (method18887(var16)) {
-				WorldMapFlash var17 = (WorldMapFlash) class1004.field11661.get(var15.field11446);
+				WorldMapFlash var17 = (WorldMapFlash) ClientWorldMap.field11661.get(var15.field11446);
 				if (var17 == null) {
-					var17 = (WorldMapFlash) class1004.field11662.get(var16.field2374);
+					var17 = (WorldMapFlash) ClientWorldMap.field11662.get(var16.field2374);
 				}
 				if (var17 != null) {
 					int var18;
-					if (var17.field619 > class1004.field11664 / 2) {
-						var18 = (class1004.field11664 * 255 - var17.field619 * 255) / class1004.field11664;
+					if (var17.field619 > ClientWorldMap.field11664 / 2) {
+						var18 = (ClientWorldMap.field11664 * 255 - var17.field619 * 255) / ClientWorldMap.field11664;
 					} else {
-						var18 = var17.field619 * 255 / class1004.field11664;
+						var18 = var17.field619 * 255 / ClientWorldMap.field11664;
 					}
 					int var19 = var15.field11448 * var6 / field6812 + var8;
 					int var20 = (field6810 - var15.field11452) * var7 / field6810 + var9;
@@ -3190,7 +3190,7 @@ public class Statics {
 				}
 			}
 		}
-		class1004.field6832.method2923(5);
+		ClientWorldMap.field6832.method2923(5);
 	}
 
 	@ObfuscatedName("acp.x(Lhf;Lhx;IIIIIJ)V")
@@ -3292,16 +3292,16 @@ public class Statics {
 
 	@ObfuscatedName("kp.et(I)V")
 	public static void method5370() {
-		class1004.field11661.clear();
-		class1004.field11662.clear();
+		ClientWorldMap.field11661.clear();
+		ClientWorldMap.field11662.clear();
 	}
 
 	@ObfuscatedName("zt.er(I)Laks;")
-	public static class990 method13882() {
-		if (class1004.field6806 == null || class1004.field11669 == null) {
+	public static WorldMapElement method13882() {
+		if (ClientWorldMap.field6806 == null || ClientWorldMap.field11669 == null) {
 			return null;
 		}
-		for (class990 var0 = (class990) class1004.field11669.next(); var0 != null; var0 = (class990) class1004.field11669.next()) {
+		for (WorldMapElement var0 = (WorldMapElement) ClientWorldMap.field11669.next(); var0 != null; var0 = (WorldMapElement) ClientWorldMap.field11669.next()) {
 			MapElementType var1 = (MapElementType) field6788.get(var0.field11446);
 			if (var1 != null && var1.field2409 && var1.method4030(field6791, field6790)) {
 				return var0;
@@ -3314,19 +3314,19 @@ public class Statics {
 	public static void method10453(int arg0, int arg1) {
 		field11443 = arg0 - field6786;
 		field11654 = arg1 - field6808;
-		class1004.field11665 = -1;
-		class1004.field11653 = -1;
-		class1004.method4643();
+		ClientWorldMap.field11665 = -1;
+		ClientWorldMap.field11653 = -1;
+		ClientWorldMap.method4643();
 	}
 
 	@ObfuscatedName("wo.ex(IZI)Z")
 	public static boolean method9621(int arg0, boolean arg1) {
-		if (class1004.field11657 == arg0) {
-			class1004.field11674 = arg1;
-		} else if (class1004.field11646 == arg0) {
-			class1004.field11655 = arg1;
-		} else if (class1004.field11673 == arg0) {
-			class1004.field11652 = arg1;
+		if (ClientWorldMap.field11657 == arg0) {
+			ClientWorldMap.field11674 = arg1;
+		} else if (ClientWorldMap.field11646 == arg0) {
+			ClientWorldMap.field11655 = arg1;
+		} else if (ClientWorldMap.field11673 == arg0) {
+			ClientWorldMap.field11652 = arg1;
 		} else {
 			return false;
 		}
@@ -3470,7 +3470,7 @@ public class Statics {
 		} else if (client.state == 0) {
 			client.setState(8);
 		} else if (client.state == 3) {
-			class975.method13908(false);
+			PositionedSound.method13908(false);
 		}
 	}
 
@@ -3525,7 +3525,7 @@ public class Statics {
 			field1840.method14895();
 			client.field10834.method2924();
 		}
-		class670.method8004();
+		ClientScriptHelpers.method8004();
 		ObjIconFactory.method17658();
 	}
 
@@ -4164,11 +4164,11 @@ public class Statics {
 	}
 
 	@ObfuscatedName("y.ii(IIILajf;I)V")
-	public static void method540(int arg0, int arg1, int arg2, class965 arg3) {
+	public static void method540(int arg0, int arg1, int arg2, Obj arg3) {
 		long var4 = (long) (arg0 << 28 | arg2 << 14 | arg1);
-		class966 var6 = (class966) client.field10964.method14495(var4);
+		ObjList var6 = (ObjList) client.field10964.method14495(var4);
 		if (var6 == null) {
-			class966 var7 = new class966();
+			ObjList var7 = new ObjList();
 			client.field10964.method14501(var7, var4);
 			var7.field11263.method14153(arg3);
 			return;
@@ -4178,7 +4178,7 @@ public class Statics {
 		if (var8.field8644 == 1) {
 			var9 = (arg3.field11260 + 1) * var9;
 		}
-		for (class965 var10 = (class965) var6.field11263.method14191(); var10 != null; var10 = (class965) var6.field11263.method14161()) {
+		for (Obj var10 = (Obj) var6.field11263.method14191(); var10 != null; var10 = (Obj) var6.field11263.method14161()) {
 			ObjType var11 = (ObjType) field1842.get(var10.field11261);
 			int var12 = var11.field8620;
 			if (var11.field8644 == 1) {
@@ -4534,7 +4534,7 @@ public class Statics {
 
 	@ObfuscatedName("xi.aku(Lyf;B)V")
 	public static final void method10154(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = class1004.field11651 == 100 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = ClientWorldMap.field11651 == 100 ? 1 : 0;
 	}
 
 	@ObfuscatedName("ua.akx(Lyf;I)V")
@@ -4574,7 +4574,7 @@ public class Statics {
 	@ObfuscatedName("aw.alk(Lyf;I)V")
 	public static final void method747(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		int var2 = class1004.method9736(var1);
+		int var2 = ClientWorldMap.method9736(var1);
 		if (var2 < 0) {
 			throw new RuntimeException();
 		}
@@ -4598,7 +4598,7 @@ public class Statics {
 	public static final void method9842(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		if (Fullscreen.allowed) {
-			class727[] var2 = client.method16741();
+			FullscreenMode[] var2 = client.method16741();
 			arg0.field8216[++arg0.field8226 - 1] = var2[var1].field8537;
 			arg0.field8216[++arg0.field8226 - 1] = var2[var1].field8538;
 		} else {
@@ -4613,9 +4613,9 @@ public class Statics {
 		int var2 = field9256;
 		int var3 = -1;
 		if (Fullscreen.allowed) {
-			class727[] var4 = client.method16741();
+			FullscreenMode[] var4 = client.method16741();
 			for (int var5 = 0; var5 < var4.length; var5++) {
-				class727 var6 = var4[var5];
+				FullscreenMode var6 = var4[var5];
 				if (var6.field8537 == var1 && var6.field8538 == var2) {
 					var3 = var5;
 					break;
@@ -5016,7 +5016,7 @@ public class Statics {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		class792 var3 = client.method146(var1);
+		DbTableIndex var3 = client.method146(var1);
 		if (var3 == null) {
 			throw new RuntimeException();
 		} else if (DbTableUtil.method746(var1) != client.field10767) {

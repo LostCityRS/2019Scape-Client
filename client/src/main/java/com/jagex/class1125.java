@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aps")
-public class class1125 extends class846 {
+public class class1125 extends GpuEnvironmentSampler {
 
 	@ObfuscatedName("aps.e")
 	public final GpuRenderer field11950;

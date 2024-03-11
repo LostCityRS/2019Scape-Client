@@ -1048,7 +1048,7 @@ public class Scene {
 			this.field6948 = this.field6911;
 			this.field6930.field7017 = false;
 		}
-		class633.method8460(this, this.field6907);
+		ParticleSystemRenderer.method8460(this, this.field6907);
 		if (!this.field6959.field6884) {
 			Iterator var34 = this.field6959.field6885.iterator();
 			while (var34.hasNext()) {

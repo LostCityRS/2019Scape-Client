@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class PlayerStat {
 
 	@ObfuscatedName("xz.n")
-	public final class621 field7911;
+	public final Skill field7911;
 
 	@ObfuscatedName("xz.m")
 	public final boolean field7915;
@@ -20,7 +20,7 @@ public class PlayerStat {
 	@ObfuscatedName("xz.w")
 	public int field7916 = 1;
 
-	public PlayerStat(class621 arg0, boolean arg1) {
+	public PlayerStat(Skill arg0, boolean arg1) {
 		this.field7911 = arg0;
 		this.field7915 = arg1;
 	}

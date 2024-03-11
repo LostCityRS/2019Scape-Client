@@ -7,7 +7,7 @@ import jagdx.IDirect3DTexture;
 import java.nio.ByteBuffer;
 
 @ObfuscatedName("aiy")
-public class Direct3DTexture extends class408 implements GpuTexture {
+public class Direct3DTexture extends Direct3DBaseTexture implements GpuTexture {
 
 	@ObfuscatedName("aiy.w")
 	public final int field10665;

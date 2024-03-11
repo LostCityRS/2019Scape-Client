@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("alh")
-public abstract class GraphEntity extends class665 {
+public abstract class GraphEntity extends GraphNode {
 
 	@ObfuscatedName("alh.c")
 	public Scene field11716;

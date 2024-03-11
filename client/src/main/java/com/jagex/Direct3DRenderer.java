@@ -831,16 +831,16 @@ public class Direct3DRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqd.ut(IZ[[I)Lmr;")
 	public GpuCubeTexture method16034(int arg0, boolean arg1, int[][] arg2) {
-		return new class929(this, arg0, arg1, arg2);
+		return new Direct3DCubeTexture(this, arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("aqd.uk(Lck;IIIZ[B)Lll;")
 	public VolumeTexture method16197(TextureFormat arg0, int arg1, int arg2, int arg3, boolean arg4, byte[] arg5) {
-		return new class917(this, arg0, arg1, arg2, arg3, arg4, arg5);
+		return new Direct3DVolumeTexture(this, arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@ObfuscatedName("aqd.ahn(Lop;)V")
-	public final void method19001(class408 arg0) {
+	public final void method19001(Direct3DBaseTexture arg0) {
 		IDirect3DDevice.SetTexture(this.device, this.field10177, arg0.method6225());
 		if (this.field10099 && !this.field11981[this.field10177]) {
 			this.field11981[this.field10177] = true;
@@ -863,7 +863,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.ahe(Lahy;)V")
-	public final void method19003(class917 arg0) {
+	public final void method19003(Direct3DVolumeTexture arg0) {
 		this.method19001(arg0);
 		if (!this.field11965[this.field10177]) {
 			IDirect3DDevice.SetSamplerState(this.device, this.field10177, 1, 1);
@@ -1145,12 +1145,12 @@ public class Direct3DRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqd.vf([Llk;)Llo;")
 	public VertexDeclaration method16065(VertexDeclarationElement[] arg0) {
-		return new class920(this, arg0);
+		return new Direct3DVertexDeclaration(this, arg0);
 	}
 
 	@ObfuscatedName("aqd.vk(Llo;)V")
 	public void method16177(VertexDeclaration arg0) {
-		class920 var2 = (class920) arg0;
+		Direct3DVertexDeclaration var2 = (Direct3DVertexDeclaration) arg0;
 		IDirect3DDevice.SetVertexDeclaration(this.device, var2.field10621);
 	}
 

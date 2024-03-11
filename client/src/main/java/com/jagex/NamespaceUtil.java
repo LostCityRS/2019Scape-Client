@@ -16,7 +16,7 @@ public class NamespaceUtil {
 	}
 
 	@ObfuscatedName("uj.e(Ladi;B)I")
-	public static final int method9127(class794 arg0) {
+	public static final int method9127(Namespace arg0) {
 		if (arg0 == null) {
 			return 12;
 		} else {
@@ -33,7 +33,7 @@ public class NamespaceUtil {
 	public static final boolean method13783(char arg0) {
 		if (Character.isISOControl(arg0)) {
 			return false;
-		} else if (class695.method2883(arg0)) {
+		} else if (StringUtils.method2883(arg0)) {
 			return true;
 		} else {
 			char[] var1 = field9203;
@@ -60,7 +60,7 @@ public class NamespaceUtil {
 	}
 
 	@ObfuscatedName("adh.k(Ljava/lang/CharSequence;Ladi;B)Ljava/lang/String;")
-	public static String method15191(CharSequence arg0, class794 arg1) {
+	public static String method15191(CharSequence arg0, Namespace arg1) {
 		if (arg0 == null) {
 			return null;
 		}

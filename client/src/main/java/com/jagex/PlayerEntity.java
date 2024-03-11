@@ -76,7 +76,7 @@ public class PlayerEntity extends PathingEntity {
 	public CommunityPartnerType field12070 = CommunityPartnerType.field1950;
 
 	@ObfuscatedName("aqk.da")
-	public class643 field12071 = class643.field7918;
+	public PlayerGender field12071 = PlayerGender.field7918;
 
 	@ObfuscatedName("aqk.dt")
 	public boolean field12048 = false;
@@ -211,9 +211,9 @@ public class PlayerEntity extends PathingEntity {
 			this.field12050 = -1;
 			this.field12051 = null;
 		}
-		this.field12071 = (class643) SerializableEnums.decode(class643.method10193(), arg0.g1b());
+		this.field12071 = (PlayerGender) SerializableEnums.decode(PlayerGender.method10193(), arg0.g1b());
 		if (Statics.field1811 == ModeWhere.field8273 && client.field10949 >= 2) {
-			this.field12071 = class643.field7918;
+			this.field12071 = PlayerGender.field7918;
 		}
 		this.method19121(arg0, var3);
 		this.field12057 = arg0.gjstr();
@@ -254,7 +254,7 @@ public class PlayerEntity extends PathingEntity {
 		this.field12066 = arg0.g2();
 		this.field12068 = arg0.g1();
 		if (this.field12067 != var9 || this.field12063 != var10 || this.field12049 != var11 || this.field12065 != var12 || this.field12066 != var13 || this.field12068 != var14) {
-			class975.method10310(this);
+			PositionedSound.method10310(this);
 		}
 	}
 

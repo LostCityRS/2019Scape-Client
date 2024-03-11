@@ -30,13 +30,13 @@ public class LegacyOpenGLRenderer extends Renderer {
 	public PostProcessing field9986;
 
 	@ObfuscatedName("afa.cn")
-	public ColourGradingBloomFilter field9864;
+	public LegacyColourGradingBloomFilter field9864;
 
 	@ObfuscatedName("afa.cv")
-	public LevelsFilter field9865;
+	public LegacyLevelsFilter field9865;
 
 	@ObfuscatedName("afa.cp")
-	public ColourRemappingFilter field9853;
+	public LegacyColourRemappingFilter field9853;
 
 	@ObfuscatedName("afa.ca")
 	public class89 field9978 = new class89();
@@ -363,7 +363,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	public class812 field9974;
 
 	@ObfuscatedName("afa.ge")
-	public class845 field9887;
+	public LegacyOpenGLEnvironmentSampler field9887;
 
 	@ObfuscatedName("afa.gg")
 	public String field9996;
@@ -579,12 +579,12 @@ public class LegacyOpenGLRenderer extends Renderer {
 			boolean var21 = false;
 			int var22 = 0;
 			if (this.field10027 || var19) {
-				String[] var23 = class695.method17361(this.field9977.replace('/', ' '), ' ');
+				String[] var23 = StringUtils.method17361(this.field9977.replace('/', ' '), ' ');
 				for (int var24 = 0; var24 < var23.length; var24++) {
 					String var25 = var23[var24];
 					try {
 						if (var25.length() > 0) {
-							if (var25.charAt(0) == 'x' && var25.length() >= 3 && class695.method9836(var25.substring(1, 3))) {
+							if (var25.charAt(0) == 'x' && var25.length() >= 3 && StringUtils.method9836(var25.substring(1, 3))) {
 								var25 = var25.substring(1);
 								var21 = true;
 							}
@@ -595,8 +595,8 @@ public class LegacyOpenGLRenderer extends Renderer {
 									var25 = var25.substring(2);
 									var20 = true;
 								}
-								if (var25.length() >= 4 && class695.method9836(var25.substring(0, 4))) {
-									var22 = class695.method9595(var25.substring(0, 4));
+								if (var25.length() >= 4 && StringUtils.method9836(var25.substring(0, 4))) {
+									var22 = StringUtils.method9595(var25.substring(0, 4));
 									break;
 								}
 							}
@@ -645,17 +645,17 @@ public class LegacyOpenGLRenderer extends Renderer {
 			this.field9871 = new class93(this);
 			this.field9986 = new PostProcessing(this);
 			if (this.field9986.method1363()) {
-				this.field9864 = new ColourGradingBloomFilter(this);
+				this.field9864 = new LegacyColourGradingBloomFilter(this);
 				if (!this.field9864.method19235()) {
 					this.field9864.method17570();
 					this.field9864 = null;
 				}
-				this.field9865 = new LevelsFilter(this);
+				this.field9865 = new LegacyLevelsFilter(this);
 				if (!this.field9865.method19231()) {
 					this.field9865.method17570();
 					this.field9865 = null;
 				}
-				this.field9853 = new ColourRemappingFilter(this);
+				this.field9853 = new LegacyColourRemappingFilter(this);
 				if (!this.field9853.method19234()) {
 					this.field9853.method17570();
 					this.field9853 = null;
@@ -715,11 +715,11 @@ public class LegacyOpenGLRenderer extends Renderer {
 			var1 |= 0x1;
 		}
 		String var2 = OpenGL.glGetString(7938);
-		String[] var3 = class695.method17361(var2.replace('.', ' '), ' ');
+		String[] var3 = StringUtils.method17361(var2.replace('.', ' '), ' ');
 		if (var3.length >= 2) {
 			try {
-				int var4 = class695.method9595(var3[0]);
-				int var5 = class695.method9595(var3[1]);
+				int var4 = StringUtils.method9595(var3[0]);
+				int var5 = StringUtils.method9595(var3[1]);
 				this.field9979 = var4 * 10 + var5;
 			} catch (NumberFormatException var8) {
 				var1 |= 0x4;
@@ -1127,7 +1127,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 		if (this.field9854 == null) {
 			this.field9854 = this.method2314(0, 0, this.field1614.method1627(), this.field1614.method1628(), true);
 		} else {
-			((class830) this.field9854).method15372(0, 0, this.field1614.method1627(), this.field1614.method1628(), 0, 0, true);
+			((LegacyOpenGLSprite) this.field9854).method15372(0, 0, this.field1614.method1627(), this.field1614.method1628(), 0, 0, true);
 		}
 		this.method2142(this.field10024);
 		this.method2475(1, -16777216);
@@ -1175,7 +1175,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 			if (this.field9854 == null) {
 				this.field9854 = this.method2314(0, 0, this.field1614.method1627(), this.field1614.method1628(), true);
 			} else {
-				((class830) this.field9854).method15372(0, 0, this.field1614.method1627(), this.field1614.method1628(), 0, 0, true);
+				((LegacyOpenGLSprite) this.field9854).method15372(0, 0, this.field1614.method1627(), this.field1614.method1628(), 0, 0, true);
 			}
 			this.method2142(this.field10024);
 			this.method2475(1, -16777216);
@@ -1772,7 +1772,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 
 	@ObfuscatedName("afa.cw(IIZZ)Lcm;")
 	public Sprite method2197(int arg0, int arg1, boolean arg2, boolean arg3) {
-		return new class830(this, arg0, arg1, arg2);
+		return new LegacyOpenGLSprite(this, arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("afa.co(Lde;Z)Lcm;")
@@ -1785,12 +1785,12 @@ public class LegacyOpenGLRenderer extends Renderer {
 
 	@ObfuscatedName("afa.ct([IIIIIZ)Lcm;")
 	public Sprite method2188(int[] arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
-		return new class830(this, arg3, arg4, arg0, arg1, arg2);
+		return new LegacyOpenGLSprite(this, arg3, arg4, arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("afa.cr(IIIIZ)Lcm;")
 	public Sprite method2314(int arg0, int arg1, int arg2, int arg3, boolean arg4) {
-		return new class830(this, arg0, arg1, arg2, arg3);
+		return new LegacyOpenGLSprite(this, arg0, arg1, arg2, arg3);
 	}
 
 	@ObfuscatedName("afa.cb(II[I[I)Lch;")
@@ -2367,8 +2367,8 @@ public class LegacyOpenGLRenderer extends Renderer {
 	public EnvironmentSampler method2435(EnvironmentSampler arg0, EnvironmentSampler arg1, float arg2, EnvironmentSampler arg3) {
 		if (arg0 != null && arg1 != null && this.field9952 && this.field9985) {
 			class1123 var5 = null;
-			class845 var6 = (class845) arg0;
-			class845 var7 = (class845) arg1;
+			LegacyOpenGLEnvironmentSampler var6 = (LegacyOpenGLEnvironmentSampler) arg0;
+			LegacyOpenGLEnvironmentSampler var7 = (LegacyOpenGLEnvironmentSampler) arg1;
 			LegacyOpenGLCubeTexture var8 = var6.method15649();
 			LegacyOpenGLCubeTexture var9 = var7.method15649();
 			if (var8 != null && var9 != null) {
@@ -2392,7 +2392,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 
 	@ObfuscatedName("afa.dp(Ldz;)V")
 	public final void method2516(EnvironmentSampler arg0) {
-		this.field9887 = (class845) arg0;
+		this.field9887 = (LegacyOpenGLEnvironmentSampler) arg0;
 	}
 
 	@ObfuscatedName("afa.su()Ladq;")
@@ -2440,16 +2440,16 @@ public class LegacyOpenGLRenderer extends Renderer {
 
 	@ObfuscatedName("afa.dg(FFFFF)V")
 	public void method2236(float arg0, float arg1, float arg2, float arg3, float arg4) {
-		LevelsFilter.field12167 = arg0;
-		LevelsFilter.field12172 = arg1;
-		LevelsFilter.field12168 = arg2;
-		LevelsFilter.field12166 = arg3;
-		LevelsFilter.field12170 = arg4;
+		LegacyLevelsFilter.field12167 = arg0;
+		LegacyLevelsFilter.field12172 = arg1;
+		LegacyLevelsFilter.field12168 = arg2;
+		LegacyLevelsFilter.field12166 = arg3;
+		LegacyLevelsFilter.field12170 = arg4;
 	}
 
 	@ObfuscatedName("afa.de([I)Lcj;")
 	public ColourRemapper method2237(int[] arg0) {
-		return new class838(this, arg0);
+		return new LegacyOpenGLColourRemapper(this, arg0);
 	}
 
 	@ObfuscatedName("afa.sz()Z")
@@ -2491,23 +2491,23 @@ public class LegacyOpenGLRenderer extends Renderer {
 			arg3 = arg5;
 			arg5 = 0.0F;
 		}
-		ColourRemappingFilter.field12179[0] = (class838) arg0;
-		ColourRemappingFilter.field12183[0] = arg1;
+		LegacyColourRemappingFilter.field12179[0] = (LegacyOpenGLColourRemapper) arg0;
+		LegacyColourRemappingFilter.field12183[0] = arg1;
 		if (arg1 > 0.0F) {
 			var7++;
 		}
-		ColourRemappingFilter.field12179[1] = (class838) arg2;
-		ColourRemappingFilter.field12183[1] = arg3;
+		LegacyColourRemappingFilter.field12179[1] = (LegacyOpenGLColourRemapper) arg2;
+		LegacyColourRemappingFilter.field12183[1] = arg3;
 		if (arg3 > 0.0F) {
 			var7++;
 		}
-		ColourRemappingFilter.field12179[2] = (class838) arg4;
-		ColourRemappingFilter.field12183[2] = arg5;
+		LegacyColourRemappingFilter.field12179[2] = (LegacyOpenGLColourRemapper) arg4;
+		LegacyColourRemappingFilter.field12183[2] = arg5;
 		if (arg5 > 0.0F) {
 			var7++;
 		}
-		ColourRemappingFilter.field12175 = var7;
-		ColourRemappingFilter.field12174 = 1.0F - (arg1 + arg3 + arg5);
+		LegacyColourRemappingFilter.field12175 = var7;
+		LegacyColourRemappingFilter.field12174 = 1.0F - (arg1 + arg3 + arg5);
 	}
 
 	@ObfuscatedName("afa.ey()Z")
@@ -2539,9 +2539,9 @@ public class LegacyOpenGLRenderer extends Renderer {
 
 	@ObfuscatedName("afa.es(FFFFFF)V")
 	public final void method2244(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5) {
-		ColourGradingBloomFilter.field12189 = arg0;
-		ColourGradingBloomFilter.field12188 = arg1;
-		ColourGradingBloomFilter.field12205 = arg2;
+		LegacyColourGradingBloomFilter.field12189 = arg0;
+		LegacyColourGradingBloomFilter.field12188 = arg1;
+		LegacyColourGradingBloomFilter.field12205 = arg2;
 	}
 
 	@ObfuscatedName("afa.am()Lafq;")

@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aql")
-public abstract class ProgramUniform extends class977 {
+public abstract class ProgramUniform extends HashMapValue {
 
 	@ObfuscatedName("aql.w")
 	public UniformType field12211;

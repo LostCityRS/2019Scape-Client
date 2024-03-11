@@ -46,14 +46,14 @@ public class ClientMapLoader extends MapLoader {
 		}
 		arg1.pos += 8;
 		boolean var5 = false;
-		class637 var6 = null;
+		Environment var6 = null;
 		boolean var7 = false;
 		while (true) {
 			while (arg1.pos < arg1.data.length) {
 				int var8 = arg1.g1();
 				if (var8 == 0) {
 					if (var6 == null) {
-						var6 = new class637(arg1, this.field10764);
+						var6 = new Environment(arg1, this.field10764);
 					} else {
 						var6.method10065(arg1, this.field10764);
 					}
@@ -81,17 +81,17 @@ public class ClientMapLoader extends MapLoader {
 					}
 				} else if (var8 == 2) {
 					if (var6 == null) {
-						var6 = new class637();
+						var6 = new Environment();
 					}
 					var6.method10067(arg1);
 				} else if (var8 == 3) {
 					if (var6 == null) {
-						var6 = new class637();
+						var6 = new Environment();
 					}
 					var6.method10068(arg1);
 				} else if (var8 == 128) {
 					if (var6 == null) {
-						var6 = new class637();
+						var6 = new Environment();
 					}
 					var6.method10070(arg1, this.field10764);
 				} else if (var8 == 129) {
@@ -232,7 +232,7 @@ public class ClientMapLoader extends MapLoader {
 		}
 		arg1.pos += 8;
 		boolean var10 = false;
-		class637 var11 = null;
+		Environment var11 = null;
 		boolean var12 = false;
 		int var13 = (arg6 & 0x7) * 8;
 		int var14 = (arg7 & 0x7) * 8;
@@ -241,7 +241,7 @@ public class ClientMapLoader extends MapLoader {
 				int var15 = arg1.g1();
 				if (var15 == 0) {
 					if (var11 == null) {
-						var11 = new class637(arg1, this.field10764);
+						var11 = new Environment(arg1, this.field10764);
 					} else {
 						var11.method10065(arg1, this.field10764);
 					}
@@ -274,17 +274,17 @@ public class ClientMapLoader extends MapLoader {
 					}
 				} else if (var15 == 2) {
 					if (var11 == null) {
-						var11 = new class637();
+						var11 = new Environment();
 					}
 					var11.method10067(arg1);
 				} else if (var15 == 3) {
 					if (var11 == null) {
-						var11 = new class637();
+						var11 = new Environment();
 					}
 					var11.method10068(arg1);
 				} else if (var15 == 128) {
 					if (var11 == null) {
-						var11 = new class637();
+						var11 = new Environment();
 					}
 					var11.method10070(arg1, this.field10764);
 				} else if (var15 == 129) {
@@ -377,7 +377,7 @@ public class ClientMapLoader extends MapLoader {
 	}
 
 	@ObfuscatedName("id.ci(Laop;[BIIIILxe;Lxe;I)I")
-	public static final int method4526(LocTypeList arg0, byte[] arg1, int arg2, int arg3, int arg4, int arg5, class650 arg6, class650 arg7) {
+	public static final int method4526(LocTypeList arg0, byte[] arg1, int arg2, int arg3, int arg4, int arg5, IntegerBox arg6, IntegerBox arg7) {
 		int var8 = 0;
 		Packet var9 = new Packet(arg1);
 		int var10 = -1;
@@ -619,7 +619,7 @@ public class ClientMapLoader extends MapLoader {
 		int var22 = (arg4 << 9) + (var14 << 8);
 		boolean var23 = this.field4512 && !this.field4549 && var12.field7473;
 		if (var12.method9480()) {
-			class975.method9739(arg2, arg3, arg4, arg6, var12, null, null);
+			PositionedSound.method9739(arg2, arg3, arg4, arg6, var12, null, null);
 		}
 		boolean var24 = arg8 == -1 && (!var12.method9504() || var12.field7479 && Statics.field688.unknown.method18665() == 0) && var12.field7505 == null && !var12.field7520 && !var12.field7524;
 		if (field10755 && (Statics.method8381(arg7) && var12.field7474 != 1 || !(!class601.method615(arg7) || var12.field7474 != 0))) {
@@ -967,7 +967,7 @@ public class ClientMapLoader extends MapLoader {
 		int var8 = var6.method8220();
 		int var9 = var6.method8204();
 		if (var7.method9480()) {
-			class975.method6206(arg1, arg3, arg4, var7);
+			PositionedSound.method6206(arg1, arg3, arg4, var7);
 		}
 		if (var6.method8206()) {
 			var6.method8209(arg0);

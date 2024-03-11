@@ -9,9 +9,9 @@ import java.util.Iterator;
 public class class546 implements Runnable {
 
 	// $FF: synthetic field
-	public final class932 this$0;
+	public final JavaSoundBackend this$0;
 
-	public class546(class932 arg0) {
+	public class546(JavaSoundBackend arg0) {
 		this.this$0 = arg0;
 	}
 

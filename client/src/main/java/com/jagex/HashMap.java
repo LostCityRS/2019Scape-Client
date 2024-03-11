@@ -9,7 +9,7 @@ public class HashMap {
 	public IterableMap field2653;
 
 	@ObfuscatedName("ix.n")
-	public class977[] field2652;
+	public HashMapValue[] field2652;
 
 	@ObfuscatedName("ix.m")
 	public final HashMapKey field2654;
@@ -19,19 +19,19 @@ public class HashMap {
 		for (var3 = 1; var3 < arg0; var3 += var3) {
 		}
 		this.field2653 = new IterableMap(var3);
-		this.field2652 = new class977[var3];
+		this.field2652 = new HashMapValue[var3];
 		this.field2654 = arg1;
 	}
 
 	@ObfuscatedName("ix.e(II)Lakw;")
-	public class977 method4470(int arg0) {
+	public HashMapValue method4470(int arg0) {
 		return arg0 >= this.field2652.length ? null : this.field2652[arg0];
 	}
 
 	@ObfuscatedName("ix.n(Ljava/lang/String;B)Lakw;")
-	public class977 method4464(String arg0) {
+	public HashMapValue method4464(String arg0) {
 		long var2 = this.field2654.method4074(arg0);
-		for (class977 var4 = (class977) this.field2653.method14495(var2); var4 != null; var4 = (class977) this.field2653.method14496()) {
+		for (HashMapValue var4 = (HashMapValue) this.field2653.method14495(var2); var4 != null; var4 = (HashMapValue) this.field2653.method14496()) {
 			if (var4.field11387.equals(arg0)) {
 				return var4;
 			}
@@ -41,7 +41,7 @@ public class HashMap {
 
 	@ObfuscatedName("ix.m(II)V")
 	public void method4468(int arg0) {
-		class977 var2 = this.method4470(arg0);
+		HashMapValue var2 = this.method4470(arg0);
 		if (var2 != null) {
 			var2.method8440();
 			this.field2652[var2.field11388] = null;
@@ -49,8 +49,8 @@ public class HashMap {
 	}
 
 	@ObfuscatedName("ix.k(ILjava/lang/String;Lakw;B)V")
-	public void method4475(int arg0, String arg1, class977 arg2) {
-		class977 var4 = this.method4464(arg1);
+	public void method4475(int arg0, String arg1, HashMapValue arg2) {
+		HashMapValue var4 = this.method4464(arg1);
 		if (var4 != null && var4.field11388 != arg0) {
 			throw new IllegalArgumentException(arg1);
 		}
@@ -61,12 +61,12 @@ public class HashMap {
 			}
 			this.field2653 = new IterableMap(var5);
 			for (int var6 = 0; var6 < this.field2652.length; var6++) {
-				class977 var7 = this.field2652[var6];
+				HashMapValue var7 = this.field2652[var6];
 				if (var7 != null) {
 					this.field2653.method14501(var7, var7.field6760);
 				}
 			}
-			class977[] var8 = new class977[var5];
+			HashMapValue[] var8 = new HashMapValue[var5];
 			for (int var9 = 0; var9 < this.field2652.length; var9++) {
 				var8[var9] = this.field2652[var9];
 			}

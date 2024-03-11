@@ -270,22 +270,22 @@ public abstract class Font {
 	public void method2731(String arg0) {
 		try {
 			if (arg0.startsWith("col=")) {
-				field1674 = field1674 & 0xFF000000 | class695.method4321(arg0.substring(4), 16) & 0xFFFFFF;
+				field1674 = field1674 & 0xFF000000 | StringUtils.method4321(arg0.substring(4), 16) & 0xFFFFFF;
 			} else if (arg0.equals("/col")) {
 				field1674 = field1674 & 0xFF000000 | field1669 & 0xFFFFFF;
 			}
 			if (arg0.startsWith("argb=")) {
-				field1674 = class695.method4321(arg0.substring(5), 16);
+				field1674 = StringUtils.method4321(arg0.substring(5), 16);
 			} else if (arg0.equals("/argb")) {
 				field1674 = field1669;
 			} else if (arg0.startsWith("str=")) {
-				field1671 = field1674 & 0xFF000000 | class695.method4321(arg0.substring(4), 16);
+				field1671 = field1674 & 0xFF000000 | StringUtils.method4321(arg0.substring(4), 16);
 			} else if (arg0.equals("str")) {
 				field1671 = field1674 & 0xFF000000 | 0x800000;
 			} else if (arg0.equals("/str")) {
 				field1671 = -1;
 			} else if (arg0.startsWith("u=")) {
-				field1673 = field1674 & 0xFF000000 | class695.method4321(arg0.substring(2), 16);
+				field1673 = field1674 & 0xFF000000 | StringUtils.method4321(arg0.substring(2), 16);
 			} else if (arg0.equals("u")) {
 				field1673 = field1674 & 0xFF000000;
 			} else if (arg0.equals("/u")) {
@@ -293,7 +293,7 @@ public abstract class Font {
 			} else if (arg0.equalsIgnoreCase("shad=-1")) {
 				field1676 = 0;
 			} else if (arg0.startsWith("shad=")) {
-				field1676 = field1674 & 0xFF000000 | class695.method4321(arg0.substring(5), 16);
+				field1676 = field1674 & 0xFF000000 | StringUtils.method4321(arg0.substring(5), 16);
 			} else if (arg0.equals("shad")) {
 				field1676 = field1674 & 0xFF000000;
 			} else if (arg0.equals("/shad")) {
@@ -356,7 +356,7 @@ public abstract class Font {
 						if (!var15.equals("reg")) {
 							if (var15.startsWith("img=")) {
 								try {
-									int var16 = class695.method9595(var15.substring(4));
+									int var16 = StringUtils.method9595(var15.substring(4));
 									Sprite var17 = arg3[var16];
 									int var18 = arg4 == null ? var17.method1436() : arg4[var16];
 									if ((field1674 & -16777216) == -16777216) {
@@ -377,10 +377,10 @@ public abstract class Font {
 									int var22 = var15.indexOf(44);
 									int var23;
 									if (var22 == -1) {
-										var23 = class695.method9595(var15.substring(7));
+										var23 = StringUtils.method9595(var15.substring(7));
 									} else {
-										var23 = class695.method9595(var15.substring(7, var22));
-										var21 = class695.method9595(var15.substring(var22 + 1));
+										var23 = StringUtils.method9595(var15.substring(7, var22));
+										var21 = StringUtils.method9595(var15.substring(var22 + 1));
 									}
 									Sprite[] var24 = this.field1667.field8575.method6185(this.field1666, var23);
 									if (var24 != null) {
@@ -482,7 +482,7 @@ public abstract class Font {
 										var17 = arg6[var11];
 									}
 									var11++;
-									int var18 = class695.method9595(var15.substring(4));
+									int var18 = StringUtils.method9595(var15.substring(4));
 									Sprite var19 = arg3[var18];
 									int var20 = arg4 == null ? var19.method1436() : arg4[var18];
 									var19.method1443(arg1 + var16, this.field1667.field8566 + var8 - var20 + var17, 1, -1, 1);
@@ -499,10 +499,10 @@ public abstract class Font {
 									int var24 = var15.indexOf(44);
 									int var25;
 									if (var24 == -1) {
-										var25 = class695.method9595(var15.substring(7));
+										var25 = StringUtils.method9595(var15.substring(7));
 									} else {
-										var25 = class695.method9595(var15.substring(7, var24));
-										var23 = class695.method9595(var15.substring(var24 + 1));
+										var25 = StringUtils.method9595(var15.substring(7, var24));
+										var23 = StringUtils.method9595(var15.substring(var24 + 1));
 									}
 									int var26;
 									if (arg5 == null) {

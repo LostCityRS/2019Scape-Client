@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
 @ObfuscatedName("apf")
-public class class1123 extends class845 {
+public class class1123 extends LegacyOpenGLEnvironmentSampler {
 
 	@ObfuscatedName("apf.e")
 	public final LegacyOpenGLRenderer field11944;

@@ -60,11 +60,11 @@ public class ParticleSystem {
 
 	@ObfuscatedName("xy.e(IZ)Lxy;")
 	public static ParticleSystem method9962(int arg0, boolean arg1) {
-		if (class633.field7793 == class633.field7792) {
+		if (ParticleSystemRenderer.field7793 == ParticleSystemRenderer.field7792) {
 			return new ParticleSystem(arg0, arg1);
 		} else {
-			ParticleSystem var2 = Statics.field1920[class633.field7793];
-			class633.field7793 = class633.field7793 + 1 & class121.field1419[class633.field7802];
+			ParticleSystem var2 = Statics.field1920[ParticleSystemRenderer.field7793];
+			ParticleSystemRenderer.field7793 = ParticleSystemRenderer.field7793 + 1 & class121.field1419[ParticleSystemRenderer.field7802];
 			var2.method9929(arg0, arg1);
 			return var2;
 		}
@@ -93,7 +93,7 @@ public class ParticleSystem {
 		this.field7804 = true;
 		Iterator var1 = this.field7803.iterator();
 		while (var1.hasNext()) {
-			class995 var2 = (class995) var1.next();
+			ParticleEffector var2 = (ParticleEffector) var1.next();
 			if (var2.field11483.field3549 == 1) {
 				var2.method8440();
 			}
@@ -136,7 +136,7 @@ public class ParticleSystem {
 		if (this.field7814) {
 			Iterator var5 = this.field7809.iterator();
 			while (var5.hasNext()) {
-				class632 var6 = (class632) var5.next();
+				ParticleEmitter var6 = (ParticleEmitter) var5.next();
 				for (int var7 = 0; var7 < var6.field7772.field3458; var7++) {
 					var6.method9897(arg0, arg1, 1, !this.field7810);
 				}
@@ -145,7 +145,7 @@ public class ParticleSystem {
 		}
 		Iterator var8 = this.field7809.iterator();
 		while (var8.hasNext()) {
-			class632 var9 = (class632) var8.next();
+			ParticleEmitter var9 = (ParticleEmitter) var8.next();
 			var9.method9897(arg0, arg1, var4, !this.field7810);
 		}
 		this.field7811 = arg1;
@@ -174,7 +174,7 @@ public class ParticleSystem {
 		Iterator var5 = this.field7809.iterator();
 		while (true) {
 			label66: while (var5.hasNext()) {
-				class632 var6 = (class632) var5.next();
+				ParticleEmitter var6 = (ParticleEmitter) var5.next();
 				if (arg1 != null) {
 					for (int var7 = 0; var7 < arg1.length && var7 != 64; var7++) {
 						if (arg1[var7] == var6.field7788 || arg1[var7].field1465 == var6.field7788) {
@@ -197,7 +197,7 @@ public class ParticleSystem {
 			if (arg1 != null) {
 				for (int var8 = 0; var8 < arg1.length && var8 != 64 && this.field7813 != 64; var8++) {
 					if (!field7817[var8]) {
-						class632 var9 = new class632(arg0, arg1[var8], this, this.field7808);
+						ParticleEmitter var9 = new ParticleEmitter(arg0, arg1[var8], this, this.field7808);
 						this.field7809.add(var9);
 						this.field7813++;
 						field7817[var8] = true;
@@ -216,7 +216,7 @@ public class ParticleSystem {
 		Iterator var4 = this.field7803.iterator();
 		while (true) {
 			label71: while (var4.hasNext()) {
-				class995 var5 = (class995) var4.next();
+				ParticleEffector var5 = (ParticleEffector) var4.next();
 				if (arg0 != null) {
 					for (int var6 = 0; var6 < arg0.length; var6++) {
 						if (arg0[var6] == var5.field11488 || arg0[var6].field1230 == var5.field11488) {
@@ -231,21 +231,21 @@ public class ParticleSystem {
 					this.field7812--;
 					if (var5.method8441()) {
 						var5.method8440();
-						class633.field7796--;
+						ParticleSystemRenderer.field7796--;
 					}
 				}
 			}
 			if (arg0 != null) {
 				for (int var7 = 0; var7 < arg0.length && var7 != 16 && this.field7812 != 16; var7++) {
 					if (!field7818[var7]) {
-						class995 var8 = null;
-						if (arg0[var7].method1509(Statics.field12041).field3549 == 1 && class633.field7796 < 32) {
-							var8 = new class995(arg0[var7], this);
-							class633.field7800.method14501(var8, (long) arg0[var7].field1228);
-							class633.field7796++;
+						ParticleEffector var8 = null;
+						if (arg0[var7].method1509(Statics.field12041).field3549 == 1 && ParticleSystemRenderer.field7796 < 32) {
+							var8 = new ParticleEffector(arg0[var7], this);
+							ParticleSystemRenderer.field7800.method14501(var8, (long) arg0[var7].field1228);
+							ParticleSystemRenderer.field7796++;
 						}
 						if (var8 == null) {
-							var8 = new class995(arg0[var7], this);
+							var8 = new ParticleEffector(arg0[var7], this);
 						}
 						this.field7803.add(var8);
 						this.field7812++;
@@ -278,7 +278,7 @@ public class ParticleSystem {
 		this.field7816.field1367.method14279();
 		Iterator var3 = this.field7809.iterator();
 		while (var3.hasNext()) {
-			class632 var4 = (class632) var3.next();
+			ParticleEmitter var4 = (ParticleEmitter) var3.next();
 			var4.method9898(arg0, arg1, this.field7811);
 		}
 	}

@@ -193,7 +193,7 @@ public class HitmarkType implements ConfigType {
 			if (var4 < 0) {
 				return var2;
 			}
-			var2 = var2.substring(0, var4) + class695.method1898(var3, false) + var2.substring(var4 + 2);
+			var2 = var2.substring(0, var4) + StringUtils.method1898(var3, false) + var2.substring(var4 + 2);
 		}
 	}
 

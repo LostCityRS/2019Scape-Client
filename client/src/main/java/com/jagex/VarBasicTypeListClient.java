@@ -66,7 +66,7 @@ public class VarBasicTypeListClient extends VarTypeList implements ConfigTypeLis
 	}
 
 	public Iterator iterator() {
-		return new class638(this);
+		return new VarBasicTypeListClientIterator(this);
 	}
 
 	@ObfuscatedName("adm.n(I)I")

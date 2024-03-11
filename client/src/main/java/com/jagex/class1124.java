@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("apk")
-public class class1124 extends class845 {
+public class class1124 extends LegacyOpenGLEnvironmentSampler {
 
 	@ObfuscatedName("apk.e")
 	public final LegacyOpenGLRenderer field11946;

@@ -7,22 +7,22 @@ import deob.Statics;
 public class ModeGame {
 
 	@ObfuscatedName("zd.e")
-	public static final ModeGame RUNESCAPE = new ModeGame("runescape", "RuneScape", 0, class794.RUNESCAPE);
+	public static final ModeGame RUNESCAPE = new ModeGame("runescape", "RuneScape", 0, Namespace.RUNESCAPE);
 
 	@ObfuscatedName("zd.n")
-	public static final ModeGame STELLARDAWN = new ModeGame("stellardawn", "Stellar Dawn", 1, class794.STELLAR_DAWN);
+	public static final ModeGame STELLARDAWN = new ModeGame("stellardawn", "Stellar Dawn", 1, Namespace.STELLAR_DAWN);
 
 	@ObfuscatedName("zd.m")
-	public static final ModeGame ALTERNATEREALITY = new ModeGame("game3", "Game 3", 2, class794.RUNESCAPE);
+	public static final ModeGame ALTERNATEREALITY = new ModeGame("game3", "Game 3", 2, Namespace.RUNESCAPE);
 
 	@ObfuscatedName("zd.k")
-	public static final ModeGame TRANSFORMERS = new ModeGame("game4", "Game 4", 3, class794.TRANSFORMERS);
+	public static final ModeGame TRANSFORMERS = new ModeGame("game4", "Game 4", 3, Namespace.TRANSFORMERS);
 
 	@ObfuscatedName("zd.f")
-	public static final ModeGame SCRATCH = new ModeGame("game5", "Game 5", 4, class794.SCRATCH);
+	public static final ModeGame SCRATCH = new ModeGame("game5", "Game 5", 4, Namespace.SCRATCH);
 
 	@ObfuscatedName("zd.w")
-	public static final ModeGame OLDSCAPE = new ModeGame("oldscape", "RuneScape 2007", 5, class794.RUNESCAPE);
+	public static final ModeGame OLDSCAPE = new ModeGame("oldscape", "RuneScape 2007", 5, Namespace.RUNESCAPE);
 
 	@ObfuscatedName("zd.l")
 	public final String field8333;
@@ -33,7 +33,7 @@ public class ModeGame {
 	@ObfuscatedName("zd.z")
 	public final int field8339;
 
-	public ModeGame(String arg0, String arg1, int arg2, class794 arg3) {
+	public ModeGame(String arg0, String arg1, int arg2, Namespace arg3) {
 		this.field8333 = arg0;
 		this.field8341 = arg1;
 		this.field8339 = arg2;

@@ -8,9 +8,9 @@ import java.util.Comparator;
 public class class543 implements Comparator {
 
 	// $FF: synthetic field
-	public final class932 this$0;
+	public final JavaSoundBackend this$0;
 
-	public class543(class932 arg0) {
+	public class543(JavaSoundBackend arg0) {
 		this.this$0 = arg0;
 	}
 

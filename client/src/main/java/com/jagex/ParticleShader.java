@@ -18,7 +18,7 @@ public abstract class ParticleShader {
 	public int field2988;
 
 	@ObfuscatedName("jo.f")
-	public final class415 field2989 = new class415();
+	public final Vector4 field2989 = new Vector4();
 
 	@ObfuscatedName("jo.w")
 	public final Vector3 field2990 = new Vector3();

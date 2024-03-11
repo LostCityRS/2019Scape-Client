@@ -522,7 +522,7 @@ public class Minimap {
 			}
 			Statics.method15085(arg0, var5, arg1, arg2, arg3, var22, var23, var24.field7485);
 		}
-		for (class966 var25 = (class966) client.field10964.method14500(); var25 != null; var25 = (class966) client.field10964.method14502()) {
+		for (ObjList var25 = (ObjList) client.field10964.method14500(); var25 != null; var25 = (ObjList) client.field10964.method14502()) {
 			int var26 = (int) (var25.field6760 >> 28 & 0x3L);
 			if (field722 == var26) {
 				int var27 = (int) (var25.field6760 & 0x3FFFL) - var6.field7426;

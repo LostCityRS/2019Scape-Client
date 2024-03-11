@@ -30,7 +30,7 @@ public class ConfigTypeListPreload implements ConfigTypeList {
 		this.field8846 = arg4;
 		this.field8845 = arg2;
 		this.field8847 = arg3;
-		this.field8848 = class760.method8370(this.field8847, this.field8845);
+		this.field8848 = ArchiveUtil.method8370(this.field8847, this.field8845);
 		this.field8849 = (ConfigType[]) Array.newInstance(this.field8846.type(), this.field8848);
 		if (arg5) {
 			for (int var7 = 0; var7 < this.field8848; var7++) {
@@ -66,7 +66,7 @@ public class ConfigTypeListPreload implements ConfigTypeList {
 			return;
 		}
 		Object var3 = null;
-		byte[] var4 = class760.method9853(this.field8847, this.field8845, arg0);
+		byte[] var4 = ArchiveUtil.method9853(this.field8847, this.field8845, arg0);
 		if (var4 != null) {
 			this.field8849[arg0].decode(new Packet(var4));
 		}

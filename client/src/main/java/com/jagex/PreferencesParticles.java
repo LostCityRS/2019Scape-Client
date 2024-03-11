@@ -7,12 +7,12 @@ public class PreferencesParticles extends PreferencesOption {
 
 	public PreferencesParticles(ClientOptions arg0) {
 		super(arg0);
-		class633.method4293(this.field8416);
+		ParticleSystemRenderer.method4293(this.field8416);
 	}
 
 	public PreferencesParticles(int arg0, ClientOptions arg1) {
 		super(arg0, arg1);
-		class633.method4293(this.field8416);
+		ParticleSystemRenderer.method4293(this.field8416);
 	}
 
 	@ObfuscatedName("amf.o(I)V")
@@ -43,7 +43,7 @@ public class PreferencesParticles extends PreferencesOption {
 	@ObfuscatedName("amf.k(II)V")
 	public void method14072(int arg0) {
 		this.field8416 = arg0;
-		class633.method4293(this.field8416);
+		ParticleSystemRenderer.method4293(this.field8416);
 	}
 
 	@ObfuscatedName("amf.y(I)I")

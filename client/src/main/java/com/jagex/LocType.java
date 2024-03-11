@@ -610,7 +610,7 @@ public class LocType implements ConfigType {
 	}
 
 	@ObfuscatedName("vd.d(Lxe;S)Z")
-	public final boolean method9489(class650 arg0) {
+	public final boolean method9489(IntegerBox arg0) {
 		if (this.field7454 == null) {
 			return true;
 		}

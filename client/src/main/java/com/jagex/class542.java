@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class class542 {
 
 	// $FF: synthetic field
-	public final class932 this$0;
+	public final JavaSoundBackend this$0;
 
 	@ObfuscatedName("th.e")
 	public class544 field6863;
@@ -38,7 +38,7 @@ public class class542 {
 	@ObfuscatedName("th.p")
 	public final int field6864;
 
-	public class542(class932 arg0, class544 arg1, int arg2, float arg3, int arg4, int arg5, boolean arg6, boolean arg7) {
+	public class542(JavaSoundBackend arg0, class544 arg1, int arg2, float arg3, int arg4, int arg5, boolean arg6, boolean arg7) {
 		this.this$0 = arg0;
 		this.field6863 = arg1;
 		this.field6857 = new byte[arg2];

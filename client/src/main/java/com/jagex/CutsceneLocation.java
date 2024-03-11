@@ -31,7 +31,7 @@ public class CutsceneLocation {
 
 	@ObfuscatedName("ef.e(IIIIB)V")
 	public void method2847(int arg0, int arg1, int arg2, int arg3) {
-		class962.method4653(arg0, arg1, arg2, this.field1736.field7567, this.field1735, this.field1736.field7562, arg3, null);
+		ChangeLocationRequest.method4653(arg0, arg1, arg2, this.field1736.field7567, this.field1735, this.field1736.field7562, arg3, null);
 		this.field1740 = arg0;
 		this.field1737 = arg1;
 		this.field1739 = arg2;
@@ -40,7 +40,7 @@ public class CutsceneLocation {
 
 	@ObfuscatedName("ef.n(B)V")
 	public void method2848() {
-		class962.method4653(this.field1740, this.field1737, this.field1739, this.field1736.field7567, -1, this.field1736.field7562, this.field1738, null);
+		ChangeLocationRequest.method4653(this.field1740, this.field1737, this.field1739, this.field1736.field7567, -1, this.field1736.field7562, this.field1738, null);
 	}
 
 	@ObfuscatedName("ef.m(I)Z")

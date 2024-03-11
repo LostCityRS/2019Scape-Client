@@ -682,7 +682,7 @@ public class World {
 			Iterator var1 = client.field10838.iterator();
 			while (var1.hasNext()) {
 				ObjectWrapper var2 = (ObjectWrapper) var1.next();
-				class975.method10111((NpcEntity) var2.field11436);
+				PositionedSound.method10111((NpcEntity) var2.field11436);
 			}
 			client.field11011 = 0;
 			client.field10906 = 0;
@@ -812,7 +812,7 @@ public class World {
 				var27.field747 = var27.field747 * 262144 - var3 * 262144;
 			}
 		}
-		for (class962 var28 = (class962) class962.field11237.method14191(); var28 != null; var28 = (class962) class962.field11237.method14161()) {
+		for (ChangeLocationRequest var28 = (ChangeLocationRequest) ChangeLocationRequest.field11237.method14191(); var28 != null; var28 = (ChangeLocationRequest) ChangeLocationRequest.field11237.method14161()) {
 			var28.field11226 -= var2;
 			var28.field11228 -= var3;
 			LocType var29 = (LocType) this.field5039.get(var28.field11234);
@@ -829,7 +829,7 @@ public class World {
 				var28.method8440();
 			}
 		}
-		for (class962 var32 = (class962) class962.field11242.method14191(); var32 != null; var32 = (class962) class962.field11242.method14161()) {
+		for (ChangeLocationRequest var32 = (ChangeLocationRequest) ChangeLocationRequest.field11242.method14191(); var32 != null; var32 = (ChangeLocationRequest) ChangeLocationRequest.field11242.method14161()) {
 			var32.field11226 -= var2;
 			var32.field11228 -= var3;
 			LocType var33 = (LocType) this.field5039.get(var32.field11234);
@@ -846,7 +846,7 @@ public class World {
 				var32.method8440();
 			}
 		}
-		for (class966 var36 = (class966) client.field10964.method14500(); var36 != null; var36 = (class966) client.field10964.method14502()) {
+		for (ObjList var36 = (ObjList) client.field10964.method14500(); var36 != null; var36 = (ObjList) client.field10964.method14502()) {
 			int var37 = (int) (var36.field6760 >> 28 & 0x3L);
 			int var38 = (int) (var36.field6760 & 0x3FFFL);
 			int var39 = var38 - this.field5018.field7426;
@@ -866,7 +866,7 @@ public class World {
 			Minimap.field731 -= var2;
 			Minimap.field718 -= var3;
 		}
-		class975.method13908(false);
+		PositionedSound.method13908(false);
 		if (arg0 == 3) {
 			client.field10892 -= var2 * 512;
 			client.field10893 -= var3 * 512;
@@ -891,7 +891,7 @@ public class World {
 		client.field10966.method14499();
 		client.field10965.method14152();
 		client.field10864.method14242();
-		class633.method3561();
+		ParticleSystemRenderer.method3561();
 	}
 
 	@ObfuscatedName("rl.ax(I)V")
@@ -958,8 +958,8 @@ public class World {
 			}
 		}
 		int var3 = this.field5046;
-		class650 var4 = new class650(-1);
-		class650 var5 = new class650(-1);
+		IntegerBox var4 = new IntegerBox(-1);
+		IntegerBox var5 = new IntegerBox(-1);
 		this.field5046 = 0;
 		for (int var6 = 0; var6 < this.field5049; var6++) {
 			byte[] var7 = this.field5053[var6];
@@ -1196,7 +1196,7 @@ public class World {
 			}
 		}
 		client.method3128();
-		class962.method5070();
+		ChangeLocationRequest.method5070();
 		if (GameShell.getEnvironment() == GameShell3$Environment.APPLICATION && client.field10849.method939() != null && client.state == 3) {
 			ClientMessage var31 = Statics.method1604(ClientProt.DETECT_MODIFIED_CLIENT, client.field10849.field794);
 			var31.field11432.p4(1057001181);

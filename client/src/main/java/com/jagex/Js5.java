@@ -476,7 +476,7 @@ public final class Js5 {
 	public int method6902(String arg0) {
 		if (this.method6946()) {
 			String var2 = arg0.toLowerCase();
-			int var3 = this.field4416.field4391.method4486(class695.method3475(var2));
+			int var3 = this.field4416.field4391.method4486(StringUtils.method3475(var2));
 			return this.method6882(var3) ? var3 : -1;
 		} else {
 			return -1;
@@ -497,7 +497,7 @@ public final class Js5 {
 	public boolean method6904(String arg0) {
 		if (this.method6946()) {
 			String var2 = arg0.toLowerCase();
-			int var3 = this.field4416.field4391.method4486(class695.method3475(var2));
+			int var3 = this.field4416.field4391.method4486(StringUtils.method3475(var2));
 			return var3 >= 0;
 		} else {
 			return false;
@@ -511,11 +511,11 @@ public final class Js5 {
 		}
 		String var3 = arg0.toLowerCase();
 		String var4 = arg1.toLowerCase();
-		int var5 = this.field4416.field4391.method4486(class695.method3475(var3));
+		int var5 = this.field4416.field4391.method4486(StringUtils.method3475(var3));
 		if (var5 < 0) {
 			return false;
 		} else {
-			int var6 = this.field4416.field4402[var5].method4486(class695.method3475(var4));
+			int var6 = this.field4416.field4402[var5].method4486(StringUtils.method3475(var4));
 			return var6 >= 0;
 		}
 	}
@@ -527,9 +527,9 @@ public final class Js5 {
 		}
 		String var3 = arg0.toLowerCase();
 		String var4 = arg1.toLowerCase();
-		int var5 = this.field4416.field4391.method4486(class695.method3475(var3));
+		int var5 = this.field4416.field4391.method4486(StringUtils.method3475(var3));
 		if (this.method6882(var5)) {
-			int var6 = this.field4416.field4402[var5].method4486(class695.method3475(var4));
+			int var6 = this.field4416.field4402[var5].method4486(StringUtils.method3475(var4));
 			return this.method6879(var5, var6);
 		} else {
 			return null;
@@ -543,9 +543,9 @@ public final class Js5 {
 		}
 		String var3 = arg0.toLowerCase();
 		String var4 = arg1.toLowerCase();
-		int var5 = this.field4416.field4391.method4486(class695.method3475(var3));
+		int var5 = this.field4416.field4391.method4486(StringUtils.method3475(var3));
 		if (this.method6882(var5)) {
-			int var6 = this.field4416.field4402[var5].method4486(class695.method3475(var4));
+			int var6 = this.field4416.field4402[var5].method4486(StringUtils.method3475(var4));
 			return this.method6888(var5, var6);
 		} else {
 			return false;
@@ -562,7 +562,7 @@ public final class Js5 {
 	public boolean method6886(String arg0) {
 		if (this.method6946()) {
 			String var2 = arg0.toLowerCase();
-			int var3 = this.field4416.field4391.method4486(class695.method3475(var2));
+			int var3 = this.field4416.field4391.method4486(StringUtils.method3475(var2));
 			return this.method6927(var3);
 		} else {
 			return false;
@@ -573,7 +573,7 @@ public final class Js5 {
 	public int method6880(String arg0) {
 		if (this.method6946()) {
 			String var2 = arg0.toLowerCase();
-			int var3 = this.field4416.field4391.method4486(class695.method3475(var2));
+			int var3 = this.field4416.field4391.method4486(StringUtils.method3475(var2));
 			return this.method6892(var3);
 		} else {
 			return 0;

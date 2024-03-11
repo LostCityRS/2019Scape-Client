@@ -16,7 +16,7 @@ public class EnvironmentManager {
 	public final Renderer field7833;
 
 	@ObfuscatedName("xu.w")
-	public final class637[][] field7836;
+	public final Environment[][] field7836;
 
 	@ObfuscatedName("xu.l")
 	public int field7837 = 0;
@@ -31,19 +31,19 @@ public class EnvironmentManager {
 	public boolean field7840 = false;
 
 	@ObfuscatedName("xu.d")
-	public final class637 field7856;
+	public final Environment field7856;
 
 	@ObfuscatedName("xu.c")
-	public final class637 field7841;
+	public final Environment field7841;
 
 	@ObfuscatedName("xu.r")
-	public final class637 field7843;
+	public final Environment field7843;
 
 	@ObfuscatedName("xu.v")
-	public final class637 field7844;
+	public final Environment field7844;
 
 	@ObfuscatedName("xu.o")
-	public class637 field7854;
+	public Environment field7854;
 
 	@ObfuscatedName("xu.s")
 	public EnvironmentOverride field7831;
@@ -93,15 +93,15 @@ public class EnvironmentManager {
 	public EnvironmentManager(Renderer arg0, Js5 arg1, int arg2, int arg3) {
 		this.field7833 = arg0;
 		this.field7845 = arg1;
-		this.field7836 = new class637[arg2][arg3];
+		this.field7836 = new Environment[arg2][arg3];
 		if (field7859 != -1) {
 			Statics.field7832 = this.method9985(field7859);
 		}
 		Statics.field7846 = null;
-		this.field7856 = new class637();
-		this.field7841 = new class637();
-		this.field7843 = new class637();
-		this.field7844 = new class637();
+		this.field7856 = new Environment();
+		this.field7841 = new Environment();
+		this.field7843 = new Environment();
+		this.field7844 = new Environment();
 		this.method10019();
 		this.method10002();
 		this.method10000();
@@ -109,7 +109,7 @@ public class EnvironmentManager {
 
 	@ObfuscatedName("xu.e(Lrl;B)V")
 	public void method10003(World arg0) {
-		class637 var2 = this.method10049(arg0);
+		Environment var2 = this.method10049(arg0);
 		if (this.field7831 == null) {
 			this.method10007(var2, field7835);
 		} else {
@@ -124,7 +124,7 @@ public class EnvironmentManager {
 
 	@ObfuscatedName("xu.n(Lrl;B)V")
 	public void method9979(World arg0) {
-		class637 var2 = this.method10049(arg0);
+		Environment var2 = this.method10049(arg0);
 		if (this.field7831 == null) {
 			this.method10007(var2, field7835);
 		} else {
@@ -141,14 +141,14 @@ public class EnvironmentManager {
 	@ObfuscatedName("xu.m(Lrl;Lyj;II)V")
 	public void method9980(World arg0, EnvironmentOverride arg1, int arg2) {
 		this.field7831 = arg1;
-		class637 var4 = this.method10049(arg0);
+		Environment var4 = this.method10049(arg0);
 		if (this.field7831 == null) {
 			this.method10007(var4, arg2);
 			this.field7854 = null;
 			return;
 		}
 		if (this.field7854 == null) {
-			this.field7854 = new class637();
+			this.field7854 = new Environment();
 		}
 		this.field7854.method10083(var4);
 		this.field7854.method10063(this, this.field7831);
@@ -161,7 +161,7 @@ public class EnvironmentManager {
 	}
 
 	@ObfuscatedName("xu.f(I)Lxv;")
-	public class637 method9982() {
+	public Environment method9982() {
 		return this.field7841;
 	}
 
@@ -223,7 +223,7 @@ public class EnvironmentManager {
 	}
 
 	@ObfuscatedName("xu.d(IILxv;I)V")
-	public void method9999(int arg0, int arg1, class637 arg2) {
+	public void method9999(int arg0, int arg1, Environment arg2) {
 		this.field7836[arg0][arg1] = arg2;
 	}
 
@@ -238,7 +238,7 @@ public class EnvironmentManager {
 
 	@ObfuscatedName("xu.r(III)V")
 	public void method9991(int arg0, int arg1) {
-		class637 var3 = this.field7836[arg0][arg1];
+		Environment var3 = this.field7836[arg0][arg1];
 		if (var3 != null) {
 			this.field7847.method6492(var3.field7865);
 		}
@@ -246,7 +246,7 @@ public class EnvironmentManager {
 	}
 
 	@ObfuscatedName("xu.v(Lrl;I)Lxv;")
-	public class637 method10049(World arg0) {
+	public Environment method10049(World arg0) {
 		Object var2 = null;
 		int var3 = -1;
 		int var4 = -1;
@@ -263,7 +263,7 @@ public class EnvironmentManager {
 				var4 = arg0.method7758() >> 4;
 			}
 		}
-		class637 var5 = this.field7836[var3][var4];
+		Environment var5 = this.field7836[var3][var4];
 		if (var5 == null) {
 			var5 = this.field7856;
 		}
@@ -271,7 +271,7 @@ public class EnvironmentManager {
 	}
 
 	@ObfuscatedName("xu.o(Lxv;II)V")
-	public void method10007(class637 arg0, int arg1) {
+	public void method10007(Environment arg0, int arg1) {
 		if (this.field7840) {
 			this.field7840 = false;
 			arg1 = 0;

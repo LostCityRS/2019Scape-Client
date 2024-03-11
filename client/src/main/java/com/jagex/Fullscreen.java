@@ -15,11 +15,11 @@ public final class Fullscreen {
 	}
 
 	@ObfuscatedName("vz.e(Laae;I)[Laal;")
-	public static class727[] method9554(FullscreenImpl arg0) {
+	public static FullscreenMode[] method9554(FullscreenImpl arg0) {
 		int[] var1 = arg0.method14465();
-		class727[] var2 = new class727[var1.length >> 2];
+		FullscreenMode[] var2 = new FullscreenMode[var1.length >> 2];
 		for (int var3 = 0; var3 < var2.length; var3++) {
-			class727 var4 = new class727();
+			FullscreenMode var4 = new FullscreenMode();
 			var2[var3] = var4;
 			var4.field8537 = var1[var3 << 2];
 			var4.field8538 = var1[(var3 << 2) + 1];
@@ -32,7 +32,7 @@ public final class Fullscreen {
 	@ObfuscatedName("if.n(Laae;IIIII)Ljava/awt/Frame;")
 	public static Frame method4572(FullscreenImpl arg0, int arg1, int arg2, int arg3, int arg4) {
 		if (arg3 == 0) {
-			class727[] var5 = method9554(arg0);
+			FullscreenMode[] var5 = method9554(arg0);
 			if (var5 == null) {
 				return null;
 			}

@@ -251,7 +251,7 @@ public class FontMetrics {
 						if (!var9.equals("reg")) {
 							if (var9.startsWith("img=") && arg1 != null) {
 								try {
-									int var10 = class695.method9595(var9.substring(4));
+									int var10 = StringUtils.method9595(var9.substring(4));
 									var5 += arg1[var10].method1434();
 									var4 = -1;
 								} catch (Exception var17) {
@@ -264,9 +264,9 @@ public class FontMetrics {
 									int var13 = var9.indexOf(44);
 									int var14;
 									if (var13 == -1) {
-										var14 = class695.method9595(var9.substring(7));
+										var14 = StringUtils.method9595(var9.substring(7));
 									} else {
-										var14 = class695.method9595(var9.substring(7, var13));
+										var14 = StringUtils.method9595(var9.substring(7, var13));
 									}
 									var5 += this.field8575.method6160(var14);
 									var4 = -1;
@@ -327,7 +327,7 @@ public class FontMetrics {
 						if (!var12.equals("reg")) {
 							if (var12.startsWith("img=") && arg2 != null) {
 								try {
-									int var13 = class695.method9595(var12.substring(4));
+									int var13 = StringUtils.method9595(var12.substring(4));
 									var7 += arg2[var13].method1434();
 									var6 = -1;
 									if (var7 > var4) {
@@ -344,9 +344,9 @@ public class FontMetrics {
 									int var16 = var12.indexOf(44);
 									int var17;
 									if (var16 == -1) {
-										var17 = class695.method9595(var12.substring(7));
+										var17 = StringUtils.method9595(var12.substring(7));
 									} else {
-										var17 = class695.method9595(var12.substring(7, var16));
+										var17 = StringUtils.method9595(var12.substring(7, var16));
 									}
 									var7 += this.field8575.method6160(var17);
 									var6 = -1;
@@ -484,7 +484,7 @@ public class FontMetrics {
 						var12 = 174;
 					} else if (var19.startsWith("img=") && arg3 != null) {
 						try {
-							int var20 = class695.method9595(var19.substring(4));
+							int var20 = StringUtils.method9595(var19.substring(4));
 							var17 += arg3[var20].method1434();
 							var12 = -1;
 						} catch (Exception var27) {
@@ -495,9 +495,9 @@ public class FontMetrics {
 							int var23 = var19.indexOf(44);
 							int var24;
 							if (var23 == -1) {
-								var24 = class695.method9595(var19.substring(7));
+								var24 = StringUtils.method9595(var19.substring(7));
 							} else {
-								var24 = class695.method9595(var19.substring(7, var23));
+								var24 = StringUtils.method9595(var19.substring(7, var23));
 							}
 							int var10000 = var17 + this.field8575.method6160(var24);
 							var12 = -1;

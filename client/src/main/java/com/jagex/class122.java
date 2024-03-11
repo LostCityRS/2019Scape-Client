@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("di")
-public interface class122 extends class329 {
+public interface class122 extends DeletableResource {
 
 	@ObfuscatedName("di.n()I")
 	int method1009();

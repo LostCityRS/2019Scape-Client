@@ -191,13 +191,13 @@ public final class OpenGLRenderer extends GpuRenderer {
 				throw new RuntimeException("");
 			}
 			String var13 = OpenGL.glGetString(7938);
-			String[] var14 = class695.method17361(var13.replace('.', ' '), ' ');
+			String[] var14 = StringUtils.method17361(var13.replace('.', ' '), ' ');
 			if (var14.length < 2) {
 				throw new RuntimeException("");
 			}
 			try {
-				int var15 = class695.method9595(var14[0]);
-				int var16 = class695.method9595(var14[1]);
+				int var15 = StringUtils.method9595(var14[0]);
+				int var16 = StringUtils.method9595(var14[1]);
 				this.field11999 = var15 * 10 + var16;
 			} catch (NumberFormatException var30) {
 				throw new RuntimeException("");
@@ -243,12 +243,12 @@ public final class OpenGLRenderer extends GpuRenderer {
 				boolean var19 = this.field12037.indexOf("intel") != -1;
 				boolean var20 = false;
 				boolean var21 = false;
-				String[] var22 = class695.method17361(this.field12001.replace('/', ' '), ' ');
+				String[] var22 = StringUtils.method17361(this.field12001.replace('/', ' '), ' ');
 				for (int var23 = 0; var23 < var22.length; var23++) {
 					String var24 = var22[var23];
 					try {
 						if (var24.length() > 0) {
-							if (var24.charAt(0) == 'x' && var24.length() >= 3 && class695.method9836(var24.substring(1, 3))) {
+							if (var24.charAt(0) == 'x' && var24.length() >= 3 && StringUtils.method9836(var24.substring(1, 3))) {
 								var24 = var24.substring(1);
 								var21 = true;
 							}
@@ -259,8 +259,8 @@ public final class OpenGLRenderer extends GpuRenderer {
 									var24 = var24.substring(2);
 									var20 = true;
 								}
-								if (var24.length() >= 4 && class695.method9836(var24.substring(0, 4))) {
-									var18 = class695.method9595(var24.substring(0, 4));
+								if (var24.length() >= 4 && StringUtils.method9836(var24.substring(0, 4))) {
+									var18 = StringUtils.method9595(var24.substring(0, 4));
 									break;
 								}
 							}
@@ -838,22 +838,22 @@ public final class OpenGLRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqv.uj(IIZ[III)Llz;")
 	public GpuTexture method16033(int arg0, int arg1, boolean arg2, int[] arg3, int arg4, int arg5) {
-		return new class927(this, arg0, arg1, arg2, arg3, arg4, arg5);
+		return new OpenGLTexture(this, arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@ObfuscatedName("aqv.ug(Lck;IIZ[BII)Llz;")
 	public GpuTexture method15975(TextureFormat arg0, int arg1, int arg2, boolean arg3, byte[] arg4, int arg5, int arg6) {
-		return new class927(this, arg0, arg1, arg2, arg3, arg4, arg5, arg6);
+		return new OpenGLTexture(this, arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@ObfuscatedName("aqv.ub(Lck;IIZ[FII)Llz;")
 	public GpuTexture method16032(TextureFormat arg0, int arg1, int arg2, boolean arg3, float[] arg4, int arg5, int arg6) {
-		return new class927(this, arg0, arg1, arg2, arg3, arg4, arg5, arg6);
+		return new OpenGLTexture(this, arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@ObfuscatedName("aqv.uy(Lck;Ldg;II)Lmo;")
 	public Texture2 method16089(TextureFormat arg0, DataType arg1, int arg2, int arg3) {
-		return new class927(this, arg0, arg1, arg2, arg3);
+		return new OpenGLTexture(this, arg0, arg1, arg2, arg3);
 	}
 
 	@ObfuscatedName("aqv.ut(IZ[[I)Lmr;")
@@ -863,7 +863,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqv.uk(Lck;IIIZ[B)Lll;")
 	public VolumeTexture method16197(TextureFormat arg0, int arg1, int arg2, int arg3, boolean arg4, byte[] arg5) {
-		return new class918(this, arg0, arg1, arg2, arg3, arg4, arg5);
+		return new OpenGLVolumeTexture(this, arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@ObfuscatedName("aqv.ud()V")

@@ -362,7 +362,7 @@ public class Loading {
 			Statics.field7410 = new PlayerVariableManager(Statics.field8485, Statics.field8736, Statics.field2767.method9784());
 			client.method9516();
 			AnimationWrapper.method6114(Statics.field8797);
-			class633.method706(Statics.field7282, Statics.field2013);
+			ParticleSystemRenderer.method706(Statics.field7282, Statics.field2013);
 			SkyBox.method13864(Statics.field9213, Statics.field7366, Statics.field7669);
 			Huffman var19 = new Huffman(Statics.field8741.method6906("huffman", ""));
 			StringEncoder.setHuffman(var19);
