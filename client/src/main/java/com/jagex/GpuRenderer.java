@@ -354,13 +354,13 @@ public abstract class GpuRenderer extends Renderer {
 	public ParticleShader field10151;
 
 	@ObfuscatedName("afc.fg")
-	public class1139 field10152;
+	public EnvMappedWaterShader field10152;
 
 	@ObfuscatedName("afc.fu")
-	public class1139 field10153;
+	public EnvMappedWaterShader field10153;
 
 	@ObfuscatedName("afc.fs")
-	public class1138 field10175;
+	public WaterfallShader field10175;
 
 	@ObfuscatedName("afc.fz")
 	public PostProcessManager field10155;
@@ -676,9 +676,9 @@ public abstract class GpuRenderer extends Renderer {
 			this.field10149 = new ProgrammableSpriteShader(this);
 			this.field10115 = new ProgrammableBatchedSpriteShader(this);
 			this.field10151 = new ProgrammableParticleShader(this);
-			this.field10152 = new class1139(this, this.field10049, false);
-			this.field10153 = new class1139(this, this.field10049, true);
-			this.field10175 = new class1138(this, this.field10049);
+			this.field10152 = new EnvMappedWaterShader(this, this.field10049, false);
+			this.field10153 = new EnvMappedWaterShader(this, this.field10049, true);
+			this.field10175 = new WaterfallShader(this, this.field10049);
 		} catch (Exception var4) {
 			var4.printStackTrace();
 			this.field10148 = new FixedFunctionModelShader(this);

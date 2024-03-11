@@ -11047,7 +11047,7 @@ public final class client extends GameShell {
 				var11.field2182 = var12;
 				var11.field2237 = field10903;
 				if (!method16930(var11)) {
-					if (var11.field2185 != 0) {
+					if (var11.clientcode != 0) {
 						method9454(var11);
 					}
 					int var13 = var11.field2194 + arg6;
@@ -11114,11 +11114,11 @@ public final class client extends GameShell {
 						var23 = var25 < arg5 ? var25 : arg5;
 					}
 					if (var20 < var22 && var21 < var23) {
-						if (var11.field2185 != 0) {
-							if (Component.field2341 == var11.field2185 || Component.field2161 == var11.field2185) {
+						if (var11.clientcode != 0) {
+							if (Component.field2341 == var11.clientcode || Component.field2161 == var11.clientcode) {
 								if (field10888) {
 									Statics.field8198.method2202();
-									method2104(var13, var14, var11.field2196, var11.field2197, Component.field2161 == var11.field2185);
+									method2104(var13, var14, var11.field2196, var11.field2197, Component.field2161 == var11.clientcode);
 									method9547(var12, var20, var21, var22, var23, var13, var14);
 									Statics.field8198.method2263();
 									Statics.field8198.method2168(arg2, arg3, arg4, arg5);
@@ -11126,22 +11126,22 @@ public final class client extends GameShell {
 								}
 								continue;
 							}
-							if (Component.field2171 == var11.field2185 && field10863 == 3) {
+							if (Component.field2171 == var11.clientcode && field10863 == 3) {
 								if (var11.field2184 != 5 || var11.method3970(Statics.field8198) != null) {
 									Minimap.method328(Statics.field8198, var11, var13, var14);
 									Statics.field8198.method2168(arg2, arg3, arg4, arg5);
 								}
 								continue;
 							}
-							if (Component.field2169 == var11.field2185) {
+							if (Component.field2169 == var11.clientcode) {
 								class21.method7274(Statics.field8198, var13, var14, var11);
 								continue;
 							}
-							if (Component.field2340 == var11.field2185) {
+							if (Component.field2340 == var11.clientcode) {
 								Statics.method480(Statics.field8198, var13, var14, var11, var11.field2210 % 64);
 								continue;
 							}
-							if (Component.field2259 == var11.field2185) {
+							if (Component.COMPASS == var11.clientcode) {
 								if (var11.method3970(Statics.field8198) != null) {
 									Statics.field8198.method2202();
 									Statics.method8887(var11, var13, var14);
@@ -11149,26 +11149,26 @@ public final class client extends GameShell {
 								}
 								continue;
 							}
-							if (Component.field2164 == var11.field2185) {
+							if (Component.WORLD_MAP == var11.clientcode) {
 								ClientWorldMap.method7008(Statics.field8198, var13, var14, var11.field2196, var11.field2197);
 								field11072[var12] = true;
 								Statics.field8198.method2168(arg2, arg3, arg4, arg5);
 								continue;
 							}
-							if (Component.field2165 == var11.field2185) {
+							if (Component.WORLD_MAP_OVERVIEW == var11.clientcode) {
 								Statics.method3549(Statics.field8198, var13, var14, var11.field2196, var11.field2197);
 								field11072[var12] = true;
 								Statics.field8198.method2168(arg2, arg3, arg4, arg5);
 								continue;
 							}
-							if (Component.field2166 == var11.field2185) {
+							if (Component.DEBUG == var11.clientcode) {
 								if (field10794 || field10848) {
 									method16429(var13, var14, var11);
 									field11072[var12] = true;
 								}
 								continue;
 							}
-							if (Component.field2163 == var11.field2185) {
+							if (Component.field2163 == var11.clientcode) {
 								Sprite var26 = TwitchHardwarePlatform.method4367();
 								if (var26 != null) {
 									int var27 = arg4 - arg2;
@@ -11190,7 +11190,7 @@ public final class client extends GameShell {
 								}
 								continue;
 							}
-							if (Component.field2172 == var11.field2185) {
+							if (Component.field2172 == var11.clientcode) {
 								if (TwitchHardwarePlatform.method5076() && TwitchHardwarePlatform.method8634()) {
 									TwitchHardwarePlatform.method5389(arg2, arg3, arg4, arg5);
 								}
@@ -11198,7 +11198,7 @@ public final class client extends GameShell {
 							}
 						}
 						if (var11.field2184 == 0) {
-							if (Component.field2168 == var11.field2185) {
+							if (Component.field2168 == var11.clientcode) {
 								Statics.field8198.method2202();
 								world.method7816().method9979(world);
 								Statics.field8198.method2172(var13, var14, Statics.canvasWid, Statics.canvasHei);
@@ -11211,7 +11211,7 @@ public final class client extends GameShell {
 							if (var35 != null) {
 								method10155(var35.field11571, var20, var21, var22, var23, var13 - var11.field2206, var14 - var11.field2207, var12);
 							}
-							if (Component.field2168 == var11.field2185) {
+							if (Component.field2168 == var11.clientcode) {
 								if (Statics.field8198.method2234()) {
 									Statics.field8198.method2233(var11.field2196, var11.field2197);
 									if (state == 18) {
@@ -11772,7 +11772,7 @@ public final class client extends GameShell {
 				}
 			}
 		}
-		if (Component.field2341 == arg0.field2185) {
+		if (Component.field2341 == arg0.clientcode) {
 			field10986 = arg0;
 		}
 		if (arg3 && arg0.field2329 != null && (arg0.field2196 != var4 || arg0.field2197 != var5)) {
@@ -11892,7 +11892,7 @@ public final class client extends GameShell {
 					var17 = var19 < arg5 ? var19 : arg5;
 					var18 = var20 < arg6 ? var20 : arg6;
 				}
-				if (var12.field2184 == 0 || var12.field2179 || method17197(var12).field11385 != 0 || field10828 == var12 || Component.field2171 == var12.field2185 || Component.field2167 == var12.field2185 || Component.field2341 == var12.field2185 || Component.field2161 == var12.field2185) {
+				if (var12.field2184 == 0 || var12.field2179 || method17197(var12).field11385 != 0 || field10828 == var12 || Component.field2171 == var12.clientcode || Component.field2167 == var12.clientcode || Component.field2341 == var12.clientcode || Component.field2161 == var12.clientcode) {
 					if (!method16930(var12)) {
 						if (field10989 == var12 && method4411(field10989)) {
 							field10999 = true;
@@ -12055,7 +12055,7 @@ public final class client extends GameShell {
 								field10799 = field10828.field2196;
 								field10998 = field10828.field2197;
 							}
-							if (var12.field2179 || var12.field2185 != 0) {
+							if (var12.field2179 || var12.clientcode != 0) {
 								if (var23 && field10817 != 0 && var12.field2317 != null) {
 									HookRequest var43 = new HookRequest();
 									var43.field11490 = true;
@@ -12067,19 +12067,19 @@ public final class client extends GameShell {
 								if (field10989 != null) {
 									var29 = false;
 									var28 = false;
-								} else if (MiniMenu.field562 || Component.field2164 != var12.field2185 && field11003 > 0) {
+								} else if (MiniMenu.field562 || Component.WORLD_MAP != var12.clientcode && field11003 > 0) {
 									var29 = false;
 									var28 = false;
 									var23 = false;
 								}
-								if (var12.field2185 != 0) {
-									if (Component.field2341 == var12.field2185 || Component.field2161 == var12.field2185) {
+								if (var12.clientcode != 0) {
+									if (Component.field2341 == var12.clientcode || Component.field2161 == var12.clientcode) {
 										field10986 = var12;
 										Environment var67 = world.method7816().method9982();
 										if (var67.method10074() != null && !Statics.field3183.method7676()) {
 											var67.method10074().method7944(Statics.field8198, var12.field2197, Statics.field688.skyboxes.method18607());
 										}
-										if (Component.field2341 == var12.field2185) {
+										if (Component.field2341 == var12.clientcode) {
 											if (MiniMenu.field562 || arg9 < var15 || arg10 < var16 || arg9 >= var17 || arg10 >= var18) {
 												MiniMenu.method6036(Statics.field8198);
 											} else {
@@ -12111,7 +12111,7 @@ public final class client extends GameShell {
 										}
 										continue;
 									}
-									if (Component.field2171 == var12.field2185) {
+									if (Component.field2171 == var12.clientcode) {
 										int var44 = 0;
 										int var45 = arg5 - arg3;
 										int var46 = arg9 - var13;
@@ -12173,7 +12173,7 @@ public final class client extends GameShell {
 										MiniMenu.method3042(Statics.field4868, "", field10963, 23, -1, 1L, var56, var57, true, false, 0L, true);
 										continue;
 									}
-									if (Component.field2164 == var12.field2185) {
+									if (Component.WORLD_MAP == var12.clientcode) {
 										Statics.field3044 = var12;
 										if (var23) {
 											ClientWorldMap.field11663 = true;
@@ -12228,13 +12228,13 @@ public final class client extends GameShell {
 										field11003 = 0;
 										continue;
 									}
-									if (Component.field2165 == var12.field2185) {
+									if (Component.WORLD_MAP_OVERVIEW == var12.clientcode) {
 										if (var28) {
 											ClientWorldMap.method9843(Statics.field9182.method9086() - var13, Statics.field9182.method9092() - var14, var12.field2196, var12.field2197);
 										}
 										continue;
 									}
-									if (Component.field2167 == var12.field2185) {
+									if (Component.field2167 == var12.clientcode) {
 										MiniMenu.method18919(var12, var13, var14);
 										continue;
 									}
@@ -12801,7 +12801,7 @@ public final class client extends GameShell {
 
 	@ObfuscatedName("ve.kp(Lhf;I)V")
 	public static final void method9454(Component arg0) {
-		if (Component.field2159 != arg0.field2185) {
+		if (Component.field2159 != arg0.clientcode) {
 			return;
 		}
 		if (Statics.field4490.field12062 == null) {
@@ -13214,7 +13214,7 @@ public final class client extends GameShell {
 				return false;
 			}
 		}
-		if (Component.field2166 == arg0.field2185) {
+		if (Component.DEBUG == arg0.clientcode) {
 			return arg0.field2201 || !field10794 && !field10848;
 		} else {
 			return arg0.field2201;

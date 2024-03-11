@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aqe")
-public class class1139 extends class916 {
+public class EnvMappedWaterShader extends WaterShader {
 
 	@ObfuscatedName("aqe.ai")
 	public final boolean field12131;
@@ -101,7 +101,7 @@ public class class1139 extends class916 {
 	@ObfuscatedName("aqe.bq")
 	public Program field12128;
 
-	public class1139(GpuRenderer arg0, class323 arg1, boolean arg2) throws class1108 {
+	public EnvMappedWaterShader(GpuRenderer arg0, class323 arg1, boolean arg2) throws class1108 {
 		super(arg0);
 		new Matrix4x4();
 		this.field12122 = arg1;

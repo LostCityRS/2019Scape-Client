@@ -793,7 +793,7 @@ public class GpuFloorModel extends FloorModel {
 								if (this.field9516.field10099 || (this.field9491 & 0x8) == 0 || !this.field9516.field10153.method19209()) {
 									var22.method5020(0);
 								} else {
-									class1139 var35 = this.field9516.field10153;
+									EnvMappedWaterShader var35 = this.field9516.field10153;
 									if (var33 == 2) {
 										var35 = this.field9516.field10152;
 									}

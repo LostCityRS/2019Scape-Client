@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ahi")
-public abstract class class916 extends class324 {
+public abstract class WaterShader extends class324 {
 
 	@ObfuscatedName("ahi.n")
 	public Shader field10587;
@@ -71,7 +71,7 @@ public abstract class class916 extends class324 {
 	@ObfuscatedName("ahi.ac")
 	public float[] field10612 = new float[3];
 
-	public class916(GpuRenderer arg0) {
+	public WaterShader(GpuRenderer arg0) {
 		super(arg0);
 		new Matrix4x3();
 		this.field10611 = new Matrix4x4[this.field3233.field10186];

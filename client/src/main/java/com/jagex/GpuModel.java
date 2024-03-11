@@ -3501,7 +3501,7 @@ public class GpuModel extends Model {
 						if (this.field9730.field10099) {
 							var2.method5020(var13);
 						} else {
-							class1138 var27 = this.field9730.field10175;
+							WaterfallShader var27 = this.field9730.field10175;
 							var27.method19204(var24.field1305, var24.field1359);
 							var27.field12106.method6609(arg0);
 							var27.field12108.method6609(arg0);

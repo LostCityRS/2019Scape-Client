@@ -31,16 +31,16 @@ public class Component {
 	public static int field2171 = 1338;
 
 	@ObfuscatedName("hf.z")
-	public static int field2259 = 1339;
+	public static int COMPASS = 1339;
 
 	@ObfuscatedName("hf.p")
-	public static int field2164 = 1400;
+	public static int WORLD_MAP = 1400;
 
 	@ObfuscatedName("hf.d")
-	public static int field2165 = 1401;
+	public static int WORLD_MAP_OVERVIEW = 1401;
 
 	@ObfuscatedName("hf.c")
-	public static int field2166 = 1405;
+	public static int DEBUG = 1405;
 
 	@ObfuscatedName("hf.r")
 	public static int field2167 = 1406;
@@ -91,7 +91,7 @@ public class Component {
 	public int field2184;
 
 	@ObfuscatedName("hf.am")
-	public int field2185 = 0;
+	public int clientcode = 0;
 
 	@ObfuscatedName("hf.au")
 	public byte field2186 = 0;
@@ -720,7 +720,7 @@ public class Component {
 			this.field2184 &= 0x7F;
 			this.field2155 = arg0.gjstr();
 		}
-		this.field2185 = arg0.g2();
+		this.clientcode = arg0.g2();
 		this.field2190 = arg0.g2s();
 		this.field2191 = arg0.g2s();
 		this.field2192 = arg0.g2();
