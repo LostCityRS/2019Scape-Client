@@ -1,8 +1,6 @@
 package com.jagex.game.runetek5.config;
 
-import com.jagex.EffectAnimTypeFactory;
-import com.jagex.game.runetek5.config.ConfigType;
-import com.jagex.game.runetek5.config.ConfigTypeList;
+import com.jagex.game.runetek5.config.spottype.EffectAnimTypeFactory;
 import com.jagex.game.runetek5.config.spottype.EffectAnimType;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;

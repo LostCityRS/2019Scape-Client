@@ -1,5 +1,8 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
+import com.jagex.game.runetek5.cutscene.CutsceneAction;
+import com.jagex.game.runetek5.cutscene.CutsceneManager;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("agx")

@@ -1,6 +1,10 @@
 package rs2.client.options;
 
 import com.jagex.*;
+import com.jagex.core.io.Packet;
+import com.jagex.game.runetek5.client.GameShell;
+import com.jagex.graphics.runetek5.GraphicsPacketQueue;
+import com.jagex.graphics.runetek5.RendererInfo;
 import deob.ObfuscatedName;
 import deob.Statics;
 

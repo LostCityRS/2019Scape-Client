@@ -1,6 +1,7 @@
 package com.jagex.js5.network;
 
 import com.jagex.*;
+import com.jagex.core.io.Packet;
 import com.jagex.js5.index.Js5MasterIndexArchiveData;
 import com.jagex.js5.caching.Js5DiskCache;
 import com.jagex.js5.index.Js5MasterIndex;

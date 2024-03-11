@@ -2,11 +2,14 @@ package com.jagex.game.runetek5.config.objtype;
 
 import com.jagex.*;
 import com.jagex.core.constants.Language;
+import com.jagex.core.io.Packet;
 import com.jagex.game.runetek5.config.ConfigType;
 import com.jagex.game.runetek5.config.ConfigTypeList;
 import com.jagex.game.runetek5.config.ObjTypeFactory;
 import com.jagex.game.runetek5.config.defaults.GraphicsDefaults;
 import com.jagex.game.runetek5.config.paramtype.ParamType;
+import com.jagex.graphics.runetek5.Font;
+import com.jagex.graphics.runetek5.Renderer;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Matrix4x4;
 import deob.ObfuscatedName;

@@ -1,5 +1,10 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
+import com.jagex.game.runetek5.loading.LoadingScreenAlignmentX;
+import com.jagex.game.runetek5.loading.LoadingScreenAlignmentY;
+import com.jagex.game.runetek5.loading.LoadingScreenElementType;
+import com.jagex.game.runetek5.loading.LoadingScreenProgressDisplayConfig;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ahs")

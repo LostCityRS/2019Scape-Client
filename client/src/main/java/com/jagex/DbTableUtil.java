@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
 import com.jagex.game.runetek5.config.vartype.constants.ScriptVarType;
 import deob.ObfuscatedName;
 

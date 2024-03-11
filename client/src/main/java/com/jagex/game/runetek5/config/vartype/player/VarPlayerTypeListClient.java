@@ -6,7 +6,7 @@ import com.jagex.game.runetek5.config.vartype.VarTypeList;
 import com.jagex.game.runetek5.config.vartype.constants.VarDomainType;
 import com.jagex.js5.Js5;
 import com.jagex.core.constants.ModeGame;
-import com.jagex.Packet;
+import com.jagex.core.io.Packet;
 import com.jagex.WeightedCache;
 import com.jagex.core.constants.Language;
 import deob.ObfuscatedName;

@@ -1,5 +1,10 @@
 package com.jagex;
 
+import com.jagex.audio.runetek5.VolumeTexture;
+import com.jagex.core.util.ByteArrayCopier;
+import com.jagex.graphics.runetek5.EffectRelated1;
+import com.jagex.graphics.runetek5.GpuRenderer;
+import com.jagex.graphics.runetek5.GpuTexture;
 import deob.ObfuscatedName;
 import deob.Statics;
 

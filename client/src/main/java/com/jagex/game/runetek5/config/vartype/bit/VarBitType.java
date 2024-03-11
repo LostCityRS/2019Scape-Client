@@ -1,6 +1,7 @@
 package com.jagex.game.runetek5.config.vartype.bit;
 
 import com.jagex.*;
+import com.jagex.core.io.Packet;
 import com.jagex.game.runetek5.config.ConfigTypeList;
 import com.jagex.game.runetek5.config.vartype.VarConfigType;
 import com.jagex.game.runetek5.config.vartype.VarType;

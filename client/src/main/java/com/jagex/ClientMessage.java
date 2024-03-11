@@ -1,6 +1,8 @@
 package com.jagex;
 
+import com.jagex.core.io.PacketBit;
 import deob.ObfuscatedName;
+import rs2.shared.prot.ClientProt;
 
 @ObfuscatedName("akl")
 public class ClientMessage extends Node {

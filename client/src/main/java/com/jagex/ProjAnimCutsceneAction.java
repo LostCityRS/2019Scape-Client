@@ -1,7 +1,9 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
 import com.jagex.game.runetek5.config.seqtype.SeqType;
 import com.jagex.game.runetek5.config.spottype.EffectAnimType;
+import com.jagex.game.runetek5.cutscene.CutsceneAction;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;

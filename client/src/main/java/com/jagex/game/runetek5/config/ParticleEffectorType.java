@@ -1,6 +1,6 @@
 package com.jagex.game.runetek5.config;
 
-import com.jagex.Packet;
+import com.jagex.core.io.Packet;
 import com.jagex.Trig1;
 import deob.ObfuscatedName;
 

@@ -1,9 +1,7 @@
 package com.jagex.game.runetek5.config;
 
-import com.jagex.Packet;
+import com.jagex.core.io.Packet;
 import com.jagex.WeightedCache;
-import com.jagex.game.runetek5.config.ParticleEmitterType;
-import com.jagex.game.runetek5.config.ParticleEmitterTypeList;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 

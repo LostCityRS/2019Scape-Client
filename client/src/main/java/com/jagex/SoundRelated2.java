@@ -1,5 +1,8 @@
 package com.jagex;
 
+import com.jagex.audio.runetek5.*;
+import com.jagex.core.io.Packet;
+import com.jagex.core.util.ByteArrayPool;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("rq")

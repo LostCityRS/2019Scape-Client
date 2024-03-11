@@ -1,5 +1,7 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
+import com.jagex.game.runetek5.client.GameShell;
 import deob.ObfuscatedName;
 
 import java.io.EOFException;

@@ -1,6 +1,9 @@
 package com.jagex;
 
 import com.jagex.console.DeveloperConsole;
+import com.jagex.core.util.CacheUtil;
+import com.jagex.graphics.runetek5.GraphicsPacketQueue;
+import com.jagex.graphics.runetek5.Renderer;
 import com.jagex.twitchtv.*;
 import deob.ObfuscatedName;
 import deob.Statics;

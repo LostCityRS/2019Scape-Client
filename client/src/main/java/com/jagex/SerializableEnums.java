@@ -1,6 +1,7 @@
 package com.jagex;
 
 import com.jagex.core.constants.SerializableEnum;
+import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 
 import java.util.HashMap;

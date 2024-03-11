@@ -1,6 +1,6 @@
 package com.jagex.game.runetek5.config.vartype.player;
 
-import com.jagex.Packet;
+import com.jagex.core.io.Packet;
 import com.jagex.SerializableEnums;
 import com.jagex.game.runetek5.config.vartype.VarType;
 import com.jagex.game.runetek5.config.vartype.constants.VarDomainType;

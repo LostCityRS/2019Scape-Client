@@ -1,7 +1,22 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
+import com.jagex.core.util.Algorithms;
+import com.jagex.core.util.ArrayUtil;
+import com.jagex.game.runetek5.clanchannel.ClanSettings;
+import com.jagex.game.runetek5.client.GameShell;
+import com.jagex.game.runetek5.client.GameShell3$Environment;
 import com.jagex.game.runetek5.config.DBRowType;
 import com.jagex.game.runetek5.config.DBTableType;
+import com.jagex.game.runetek5.loading.LoadingScreenAlignmentX;
+import com.jagex.game.runetek5.loading.LoadingScreenAlignmentY;
+import com.jagex.game.runetek5.playergroup.PlayerGroupBanned;
+import com.jagex.game.runetek5.playergroup.PlayerGroupMember;
+import com.jagex.graphics.runetek5.FontMetrics;
+import com.jagex.graphics.runetek5.camera.CameraEffect;
+import com.jagex.graphics.runetek5.camera.CameraException;
+import com.jagex.graphics.runetek5.camera.CameraHelpers;
+import com.jagex.graphics.runetek5.camera.CameraLinearMovementMode;
 import rs2.client.options.Preferences;
 import com.jagex.console.DeveloperConsole;
 import com.jagex.core.constants.Language;
@@ -33,6 +48,7 @@ import com.jagex.twitchtv.TwitchEvent;
 import deob.ObfuscatedName;
 import deob.Statics;
 import rs2.client.chat.ChatLine;
+import rs2.shared.prot.ClientProt;
 
 import java.awt.*;
 import java.awt.datatransfer.DataFlavor;
@@ -8665,7 +8681,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("pu.sg(Lhf;Lyf;I)V")
 	public static final void method7071(Component arg0, ClientScriptState arg1) {
-		FontMetrics var2 = arg0.method3943(Statics.field7538, client.field10833);
+		com.jagex.graphics.runetek5.FontMetrics var2 = arg0.method3943(Statics.field7538, client.field10833);
 		int var3 = arg1.field8216[--arg1.field8226];
 		int var4 = arg1.field8216[--arg1.field8226];
 		int var5 = var2.method14542(arg0.field2261, arg0.field2196, arg0.field2229, var4, var3, Statics.field10302);
@@ -8688,7 +8704,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("dm.tr(Lhf;Lyf;B)V")
 	public static final void method1923(Component arg0, ClientScriptState arg1) {
-		FontMetrics var2 = arg0.method3943(Statics.field7538, client.field10833);
+		com.jagex.graphics.runetek5.FontMetrics var2 = arg0.method3943(Statics.field7538, client.field10833);
 		int var3 = arg1.field8216[--arg1.field8226];
 		Point var4 = var2.method14541(arg0.field2261, arg0.field2196, arg0.field2229, var3, Statics.field10302);
 		arg1.field8216[++arg1.field8226 - 1] = var4.x;
@@ -10921,7 +10937,7 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		int var2 = arg0.field8216[arg0.field8226];
 		int var3 = arg0.field8216[arg0.field8226 + 1];
-		FontMetrics var4 = Statics.field7538.method6163(client.field10833, var3);
+		com.jagex.graphics.runetek5.FontMetrics var4 = Statics.field7538.method6163(client.field10833, var3);
 		arg0.field8216[++arg0.field8226 - 1] = var4.method14538(var1, var2, Statics.field10302);
 	}
 
@@ -10931,7 +10947,7 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		int var2 = arg0.field8216[arg0.field8226];
 		int var3 = arg0.field8216[arg0.field8226 + 1];
-		FontMetrics var4 = Statics.field7538.method6163(client.field10833, var3);
+		com.jagex.graphics.runetek5.FontMetrics var4 = Statics.field7538.method6163(client.field10833, var3);
 		arg0.field8216[++arg0.field8226 - 1] = var4.method14551(var1, var2, Statics.field10302);
 	}
 
@@ -10942,7 +10958,7 @@ public final class ScriptRunner {
 		int var2 = arg0.field8216[arg0.field8226];
 		int var3 = arg0.field8216[arg0.field8226 + 1];
 		int var4 = arg0.field8216[arg0.field8226 + 2];
-		FontMetrics var5 = Statics.field7538.method6163(client.field10833, var3);
+		com.jagex.graphics.runetek5.FontMetrics var5 = Statics.field7538.method6163(client.field10833, var3);
 		String var6 = var5.method14539(var1, var2, Statics.field10302, var4);
 		arg0.field8218[++arg0.field8211 - 1] = var6 == null ? "" : var6;
 	}
@@ -11077,7 +11093,7 @@ public final class ScriptRunner {
 	public static final void method10208(ClientScriptState arg0) {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
 		int var2 = arg0.field8216[--arg0.field8226];
-		FontMetrics var3 = Statics.field7538.method6163(client.field10833, var2);
+		com.jagex.graphics.runetek5.FontMetrics var3 = Statics.field7538.method6163(client.field10833, var2);
 		arg0.field8216[++arg0.field8226 - 1] = var3.method14533(var1, Statics.field10302);
 	}
 

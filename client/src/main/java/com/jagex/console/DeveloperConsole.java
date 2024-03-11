@@ -1,12 +1,17 @@
 package com.jagex.console;
 
 import com.jagex.*;
+import com.jagex.core.util.Cp1252;
+import com.jagex.game.runetek5.client.GameShell;
+import com.jagex.graphics.runetek5.Renderer;
+import com.jagex.graphics.runetek5.RendererInfo;
 import rs2.client.options.Preferences;
 import com.jagex.core.constants.ModeWhere;
 import com.jagex.game.runetek5.config.vartype.constants.VarDomainType;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.shared.prot.ClientProt;
 
 import java.io.File;
 import java.io.FileNotFoundException;

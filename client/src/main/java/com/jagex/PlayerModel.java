@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
 import com.jagex.game.runetek5.config.bastype.BASType;
 import com.jagex.game.runetek5.config.bastype.BASTypeList;
 import com.jagex.game.runetek5.config.defaults.WearposDefaults;
@@ -13,6 +14,7 @@ import com.jagex.game.runetek5.config.seqtype.SeqType;
 import com.jagex.game.runetek5.config.seqtype.SeqTypeList;
 import com.jagex.game.runetek5.config.vartype.VarIntDomain;
 import com.jagex.game.runetek5.config.vartype.VariableTypeProvider;
+import com.jagex.graphics.runetek5.Renderer;
 import com.jagex.math.Matrix4x3;
 import deob.ObfuscatedName;
 import deob.Statics;

@@ -1,5 +1,8 @@
 package com.jagex;
 
+import com.jagex.graphics.runetek5.EffectInterface;
+import com.jagex.graphics.runetek5.GraphicsDeletable;
+import com.jagex.graphics.runetek5.RenderTarget;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("afq")

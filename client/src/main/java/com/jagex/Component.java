@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
 import com.jagex.game.runetek5.config.bastype.BASTypeList;
 import com.jagex.game.runetek5.config.idktype.IDKTypeList;
 import com.jagex.game.runetek5.config.npctype.NPCType;
@@ -12,6 +13,7 @@ import com.jagex.game.runetek5.config.skyboxtype.SkyBoxTypeList;
 import com.jagex.game.runetek5.config.skydecortype.SkyDecorTypeList;
 import com.jagex.game.runetek5.config.vartype.VarIntDomain;
 import com.jagex.game.runetek5.config.vartype.VariableTypeProvider;
+import com.jagex.graphics.runetek5.*;
 import com.jagex.graphics.runetek5.particles.ParticleSystem;
 import com.jagex.js5.Js5;
 import com.jagex.math.Matrix4x3;

@@ -1,6 +1,6 @@
 package com.jagex.math;
 
-import com.jagex.Packet;
+import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 import deob.Statics;
 

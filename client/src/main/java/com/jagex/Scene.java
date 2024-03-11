@@ -1,5 +1,8 @@
 package com.jagex;
 
+import com.jagex.graphics.runetek5.FloorModel;
+import com.jagex.graphics.runetek5.Font;
+import com.jagex.graphics.runetek5.Renderer;
 import com.jagex.graphics.runetek5.particles.ParticleSystemRenderer;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;

@@ -1,6 +1,7 @@
 package com.jagex.game.runetek5.config.meltype;
 
 import com.jagex.*;
+import com.jagex.core.io.Packet;
 import com.jagex.game.runetek5.config.ConfigType;
 import com.jagex.game.runetek5.config.ConfigTypeList;
 import com.jagex.game.runetek5.config.MapElementTypeFactory;
@@ -9,6 +10,7 @@ import com.jagex.game.runetek5.config.vartype.VarType;
 import com.jagex.game.runetek5.config.vartype.VariableTypeProvider;
 import com.jagex.game.runetek5.config.vartype.bit.VarBitType;
 import com.jagex.game.runetek5.config.vartype.constants.VarDomainType;
+import com.jagex.graphics.runetek5.Renderer;
 import deob.ObfuscatedName;
 import deob.Statics;
 

@@ -1,5 +1,28 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
+import com.jagex.core.io.PacketBit;
+import com.jagex.core.util.Algorithms;
+import com.jagex.core.util.ByteArrayPool;
+import com.jagex.core.util.Cp1252;
+import com.jagex.game.runetek5.clanchannel.*;
+import com.jagex.game.runetek5.client.GameShell;
+import com.jagex.game.runetek5.client.GameShell3$Environment;
+import com.jagex.game.runetek5.client.GameShell3$FrameParameters;
+import com.jagex.game.runetek5.cutscene.CutsceneAction;
+import com.jagex.game.runetek5.cutscene.CutsceneEntity;
+import com.jagex.game.runetek5.cutscene.CutsceneManager;
+import com.jagex.game.runetek5.loading.Loading;
+import com.jagex.game.runetek5.playergroup.PlayerGroup;
+import com.jagex.game.runetek5.playergroup.PlayerGroupDelta;
+import com.jagex.game.runetek5.playergroup.PlayerGroupMember;
+import com.jagex.game.runetek5.playergroup.PlayerGroupResourceProvider;
+import com.jagex.graphics.runetek5.*;
+import com.jagex.graphics.runetek5.FontMetrics;
+import com.jagex.graphics.runetek5.camera.CameraControlMode;
+import com.jagex.graphics.runetek5.camera.CameraException;
+import com.jagex.graphics.runetek5.camera.CameraManager;
+import com.jagex.graphics.runetek5.legacygl.LegacyOpenGLException;
 import rs2.client.options.Preferences;
 import com.jagex.console.DeveloperConsole;
 import com.jagex.core.constants.Language;
@@ -28,6 +51,7 @@ import com.jagex.js5.caching.Js5DiskCache;
 import com.jagex.js5.network.Js5HttpClient;
 import com.jagex.js5.network.Js5NetResourceProvider;
 import com.jagex.math.*;
+import rs2.shared.prot.ClientProt;
 import rs2.shared.prot.LoginProt;
 import rs2.shared.prot.ServerProt;
 import rs2.shared.prot.ZoneProt;
@@ -2080,8 +2104,8 @@ public final class client extends GameShell {
 			Statics.field8198 = Renderer.method14575(0, Statics.canvas, Statics.field7366, Statics.field7669, Statics.field9211, Statics.field7282, Statics.field2013, Statics.field2900, Statics.field688.unknown2.method18639() * 2);
 			if (arg1 != null) {
 				Statics.field8198.method2475(1, 0);
-				FontMetrics var3 = FontMetrics.method6068(Statics.field7672, Statics.field505, 0, Statics.field7538);
-				Font var4 = Statics.field8198.method2207(var3, SpriteDataProvider.method1609(Statics.field10317, Statics.field505, 0), true);
+				com.jagex.graphics.runetek5.FontMetrics var3 = com.jagex.graphics.runetek5.FontMetrics.method6068(Statics.field7672, Statics.field505, 0, Statics.field7538);
+				com.jagex.graphics.runetek5.Font var4 = Statics.field8198.method2207(var3, SpriteDataProvider.method1609(Statics.field10317, Statics.field505, 0), true);
 				method8024();
 				MessageBox.method649(arg1, true, Statics.field8198, var4, var3);
 			}
@@ -2091,8 +2115,8 @@ public final class client extends GameShell {
 				if (arg1 != null) {
 					var5 = Renderer.method14575(0, Statics.canvas, Statics.field7366, Statics.field7669, Statics.field9211, Statics.field7282, Statics.field2013, Statics.field2900, 0);
 					var5.method2475(1, 0);
-					FontMetrics var6 = FontMetrics.method1593(Statics.field7672, Statics.field505, 0);
-					Font var7 = var5.method2207(var6, SpriteDataProvider.method1609(Statics.field10317, Statics.field505, 0), true);
+					com.jagex.graphics.runetek5.FontMetrics var6 = com.jagex.graphics.runetek5.FontMetrics.method1593(Statics.field7672, Statics.field505, 0);
+					com.jagex.graphics.runetek5.Font var7 = var5.method2207(var6, SpriteDataProvider.method1609(Statics.field10317, Statics.field505, 0), true);
 					method8024();
 					MessageBox.method649(arg1, true, var5, var7, var6);
 					try {
@@ -6499,14 +6523,14 @@ public final class client extends GameShell {
 										var99 = field11113[0];
 									}
 								}
-								Font var104 = Statics.field8321;
-								Font var105 = Statics.field8321;
-								FontMetrics var106 = Statics.field6778;
-								FontMetrics var107 = Statics.field6778;
+								com.jagex.graphics.runetek5.Font var104 = Statics.field8321;
+								com.jagex.graphics.runetek5.Font var105 = Statics.field8321;
+								com.jagex.graphics.runetek5.FontMetrics var106 = Statics.field6778;
+								com.jagex.graphics.runetek5.FontMetrics var107 = Statics.field6778;
 								int var108 = var71.field7310;
 								if (var108 >= 0) {
-									Font var109 = (Font) Statics.field7538.method6188(field10833, var108, true, var71.field7294);
-									FontMetrics var110 = Statics.field7538.method6163(field10833, var108);
+									com.jagex.graphics.runetek5.Font var109 = (com.jagex.graphics.runetek5.Font) Statics.field7538.method6188(field10833, var108, true, var71.field7294);
+									com.jagex.graphics.runetek5.FontMetrics var110 = Statics.field7538.method6163(field10833, var108);
 									if (var109 != null && var110 != null) {
 										var104 = var109;
 										var106 = var110;
@@ -6515,7 +6539,7 @@ public final class client extends GameShell {
 								if (var74 != null) {
 									int var111 = var74.field7310;
 									if (var111 >= 0) {
-										Font var112 = (Font) Statics.field7538.method6188(field10833, var111, true, var74.field7294);
+										com.jagex.graphics.runetek5.Font var112 = (com.jagex.graphics.runetek5.Font) Statics.field7538.method6188(field10833, var111, true, var74.field7294);
 										FontMetrics var113 = Statics.field7538.method6163(field10833, var111);
 										if (var112 != null && var113 != null) {
 											var105 = var112;
@@ -11278,7 +11302,7 @@ public final class client extends GameShell {
 							} else if (var11.field2184 == 4) {
 								int var41 = 255 - (var15 & 0xFF);
 								if (var41 != 0) {
-									Font var42 = var11.method3942(Statics.field7538, field10833);
+									com.jagex.graphics.runetek5.Font var42 = var11.method3942(Statics.field7538, field10833);
 									if (var42 != null) {
 										int var43 = var11.field2210;
 										String var44 = var11.field2261;

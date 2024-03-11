@@ -1,5 +1,7 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
+import com.jagex.graphics.runetek5.camera.*;
 import deob.ObfuscatedName;
 import deob.Statics;
 

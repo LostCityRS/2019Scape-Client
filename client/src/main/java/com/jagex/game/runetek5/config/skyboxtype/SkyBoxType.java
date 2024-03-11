@@ -1,6 +1,7 @@
 package com.jagex.game.runetek5.config.skyboxtype;
 
 import com.jagex.*;
+import com.jagex.core.io.Packet;
 import com.jagex.game.runetek5.config.ConfigType;
 import com.jagex.game.runetek5.config.ConfigTypeList;
 import com.jagex.game.runetek5.config.skydecortype.SkyDecorType;

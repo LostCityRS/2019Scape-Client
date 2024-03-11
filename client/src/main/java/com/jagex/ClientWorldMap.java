@@ -1,6 +1,11 @@
 package com.jagex;
 
+import com.jagex.game.runetek5.client.GameShell;
 import com.jagex.game.runetek5.config.meltype.MapElementType;
+import com.jagex.graphics.runetek5.Font;
+import com.jagex.graphics.runetek5.FontMetrics;
+import com.jagex.graphics.runetek5.GpuRenderer;
+import com.jagex.graphics.runetek5.Renderer;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;

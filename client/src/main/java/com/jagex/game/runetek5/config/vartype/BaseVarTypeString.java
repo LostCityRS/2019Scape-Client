@@ -1,7 +1,6 @@
 package com.jagex.game.runetek5.config.vartype;
 
-import com.jagex.Packet;
-import com.jagex.game.runetek5.config.vartype.BaseVarTypeCodec;
+import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("qf")

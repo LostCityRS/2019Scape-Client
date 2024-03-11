@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.graphics.runetek5.GpuTextureRelated;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("mq")

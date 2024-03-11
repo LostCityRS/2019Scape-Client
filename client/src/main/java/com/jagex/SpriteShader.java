@@ -1,5 +1,9 @@
 package com.jagex;
 
+import com.jagex.graphics.runetek5.GpuRenderer;
+import com.jagex.graphics.runetek5.GpuTexture;
+import com.jagex.graphics.runetek5.VertexBuffer;
+import com.jagex.graphics.runetek5.VertexDeclaration;
 import com.jagex.math.Matrix4x4;
 import deob.ObfuscatedName;
 

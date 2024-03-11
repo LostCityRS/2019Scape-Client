@@ -1,7 +1,9 @@
 package com.jagex.game.runetek5.config.msitype;
 
 import com.jagex.*;
+import com.jagex.core.io.Packet;
 import com.jagex.game.runetek5.config.ConfigType;
+import com.jagex.graphics.runetek5.Renderer;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aco")

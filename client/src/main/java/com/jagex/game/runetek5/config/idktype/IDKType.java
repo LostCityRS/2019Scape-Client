@@ -3,7 +3,7 @@ package com.jagex.game.runetek5.config.idktype;
 import com.jagex.game.runetek5.config.ConfigType;
 import com.jagex.js5.Js5;
 import com.jagex.ModelUnlit;
-import com.jagex.Packet;
+import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("jv")

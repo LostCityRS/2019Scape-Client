@@ -2,6 +2,7 @@ package com.jagex.game.runetek5.config.vartype.constants;
 
 import com.jagex.*;
 import com.jagex.core.constants.SerializableEnum;
+import com.jagex.core.io.Packet;
 import com.jagex.game.runetek5.config.vartype.*;
 import deob.ObfuscatedName;
 import deob.Statics;

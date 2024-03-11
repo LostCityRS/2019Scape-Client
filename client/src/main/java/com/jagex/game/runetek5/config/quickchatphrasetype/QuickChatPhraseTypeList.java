@@ -2,6 +2,7 @@ package com.jagex.game.runetek5.config.quickchatphrasetype;
 
 import com.jagex.*;
 import com.jagex.core.constants.Language;
+import com.jagex.core.io.Packet;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 

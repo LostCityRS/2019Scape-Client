@@ -1,5 +1,7 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
+import com.jagex.core.io.PacketBit;
 import rs2.shared.prot.ServerProt;
 import deob.ObfuscatedName;
 

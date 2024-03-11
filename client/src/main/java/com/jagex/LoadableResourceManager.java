@@ -1,5 +1,7 @@
 package com.jagex;
 
+import com.jagex.game.runetek5.loading.Loading;
+import com.jagex.graphics.runetek5.GraphicsPacketQueue;
 import com.jagex.js5.Js5ArchiveResourceLoader;
 import com.jagex.js5.Js5FileResourceLoader;
 import com.jagex.js5.Js5GroupResourceLoader;

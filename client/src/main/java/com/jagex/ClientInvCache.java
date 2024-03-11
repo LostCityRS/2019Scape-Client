@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
 import com.jagex.game.runetek5.config.bastype.BASType;
 import com.jagex.game.runetek5.config.invtype.InvType;
 import com.jagex.game.runetek5.config.objtype.ObjType;
@@ -7,6 +8,7 @@ import com.jagex.game.runetek5.config.paramtype.ParamType;
 import com.jagex.game.runetek5.config.vartype.VarContainerSparse;
 import com.jagex.game.runetek5.config.vartype.VarType;
 import com.jagex.game.runetek5.config.vartype.bit.VarBitType;
+import com.jagex.graphics.runetek5.Renderer;
 import deob.ObfuscatedName;
 import deob.Statics;
 

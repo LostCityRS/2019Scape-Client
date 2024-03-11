@@ -1,5 +1,7 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
+import com.jagex.core.util.Cp1252;
 import com.jagex.game.runetek5.compression.huffman.Huffman;
 import deob.ObfuscatedName;
 import deob.Statics;

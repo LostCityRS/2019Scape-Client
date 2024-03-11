@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.graphics.runetek5.ShaderException;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("atn")

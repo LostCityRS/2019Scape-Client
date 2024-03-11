@@ -3,6 +3,7 @@ package com.jagex;
 import com.jagex.game.runetek5.config.defaults.SkillDefaults;
 import com.jagex.game.runetek5.config.vartype.VarTypeList;
 import com.jagex.game.runetek5.config.vartype.bit.VarBitTypeList;
+import com.jagex.game.runetek5.playergroup.PlayerGroupResourceProvider;
 import deob.ObfuscatedName;
 import deob.Statics;
 

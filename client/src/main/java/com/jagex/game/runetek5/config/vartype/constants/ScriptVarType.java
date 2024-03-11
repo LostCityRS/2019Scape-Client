@@ -1,7 +1,7 @@
 package com.jagex.game.runetek5.config.vartype.constants;
 
 import com.jagex.CoordFine;
-import com.jagex.Cp1252;
+import com.jagex.core.util.Cp1252;
 import com.jagex.ScriptVarInterface;
 import com.jagex.ScriptVarProperty;
 import com.jagex.core.constants.SerializableEnum;

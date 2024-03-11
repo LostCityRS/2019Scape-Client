@@ -1,7 +1,7 @@
 package com.jagex.game.runetek5.config.paramtype;
 
 import com.jagex.ConfigRelated;
-import com.jagex.Packet;
+import com.jagex.core.io.Packet;
 import com.jagex.SerializableEnums;
 import com.jagex.game.runetek5.config.ConfigType;
 import com.jagex.game.runetek5.config.vartype.constants.ScriptVarType;

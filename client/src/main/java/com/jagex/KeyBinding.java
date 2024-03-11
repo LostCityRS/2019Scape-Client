@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("va")

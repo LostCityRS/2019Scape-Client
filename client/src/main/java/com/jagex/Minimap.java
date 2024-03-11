@@ -5,6 +5,7 @@ import com.jagex.game.runetek5.config.loctype.LocTypeList;
 import com.jagex.game.runetek5.config.meltype.MapElementType;
 import com.jagex.game.runetek5.config.msitype.MSIType;
 import com.jagex.game.runetek5.config.npctype.NPCType;
+import com.jagex.graphics.runetek5.*;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;

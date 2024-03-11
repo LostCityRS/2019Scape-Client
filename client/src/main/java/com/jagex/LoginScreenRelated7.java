@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.game.runetek5.loading.LoadingScreenProgressDisplay;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 import deob.Statics;

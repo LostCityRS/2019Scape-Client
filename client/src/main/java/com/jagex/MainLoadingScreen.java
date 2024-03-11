@@ -1,5 +1,12 @@
 package com.jagex;
 
+import com.jagex.core.io.GZip;
+import com.jagex.game.runetek5.client.GameShell;
+import com.jagex.game.runetek5.loading.LoadingScreen;
+import com.jagex.game.runetek5.loading.LoadingScreenElement;
+import com.jagex.game.runetek5.loading.LoadingScreenElementFactory;
+import com.jagex.game.runetek5.loading.LoadingScreenType;
+import com.jagex.graphics.runetek5.Renderer;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 import deob.Statics;

@@ -1,7 +1,10 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
+import com.jagex.graphics.runetek5.camera.CameraHelpers;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.shared.prot.ClientProt;
 
 import java.awt.*;
 import java.util.Queue;

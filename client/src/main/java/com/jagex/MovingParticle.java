@@ -2,6 +2,8 @@ package com.jagex;
 
 import com.jagex.game.runetek5.config.ParticleEffectorType;
 import com.jagex.game.runetek5.config.ParticleEmitterType;
+import com.jagex.graphics.runetek5.FloorModel;
+import com.jagex.graphics.runetek5.Renderer;
 import com.jagex.graphics.runetek5.particles.ParticleEffector;
 import com.jagex.graphics.runetek5.particles.ParticleEmitter;
 import com.jagex.graphics.runetek5.particles.ParticleSystem;

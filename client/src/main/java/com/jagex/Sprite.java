@@ -1,5 +1,8 @@
 package com.jagex;
 
+import com.jagex.graphics.runetek5.FontGlyph;
+import com.jagex.graphics.runetek5.GraphicsDeletable;
+import com.jagex.graphics.runetek5.GraphicsRelated;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("cm")

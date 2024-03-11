@@ -1,5 +1,8 @@
 package com.jagex;
 
+import com.jagex.game.runetek5.loading.LoadingScreenElement;
+import com.jagex.graphics.runetek5.Font;
+import com.jagex.graphics.runetek5.FontMetrics;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 import deob.Statics;

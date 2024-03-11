@@ -1,5 +1,7 @@
 package com.jagex;
 
+import com.jagex.graphics.runetek5.safe.PureJavaRenderer;
+import com.jagex.graphics.runetek5.safe.PureJavaSurface;
 import deob.ObfuscatedName;
 
 import java.awt.*;

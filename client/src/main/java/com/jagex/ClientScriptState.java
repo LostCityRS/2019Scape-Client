@@ -1,5 +1,7 @@
 package com.jagex;
 
+import com.jagex.game.runetek5.clanchannel.ClanChannel;
+import com.jagex.game.runetek5.clanchannel.ClanSettings;
 import deob.ObfuscatedName;
 
 import java.util.HashMap;

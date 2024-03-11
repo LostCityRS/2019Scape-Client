@@ -1,5 +1,11 @@
 package com.jagex;
 
+import com.jagex.game.runetek5.loading.LoadingScreenAlignmentX;
+import com.jagex.game.runetek5.loading.LoadingScreenAlignmentY;
+import com.jagex.graphics.runetek5.Font;
+import com.jagex.graphics.runetek5.FontMetrics;
+import com.jagex.graphics.runetek5.Renderer;
+import com.jagex.graphics.runetek5.RendererException;
 import deob.ObfuscatedName;
 import deob.Statics;
 

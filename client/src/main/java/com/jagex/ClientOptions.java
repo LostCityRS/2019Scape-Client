@@ -1,6 +1,8 @@
 package com.jagex;
 
 import com.jagex.core.constants.ModeGame;
+import com.jagex.core.io.Packet;
+import com.jagex.game.runetek5.client.GameShell;
 import deob.ObfuscatedName;
 import deob.Statics;
 import rs2.client.options.*;

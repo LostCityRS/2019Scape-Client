@@ -1,7 +1,9 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.shared.prot.ClientProt;
 
 @ObfuscatedName("alt")
 public class AppletMouseLogger extends MouseLogger {

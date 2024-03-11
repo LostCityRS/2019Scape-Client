@@ -1,7 +1,7 @@
 package com.jagex.game.runetek5.config.lighttype;
 
 import com.jagex.ConfigRelated;
-import com.jagex.Packet;
+import com.jagex.core.io.Packet;
 import com.jagex.game.runetek5.config.ConfigType;
 import deob.ObfuscatedName;
 

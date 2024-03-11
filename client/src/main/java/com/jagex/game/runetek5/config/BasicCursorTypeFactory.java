@@ -1,6 +1,6 @@
 package com.jagex.game.runetek5.config;
 
-import com.jagex.CursorTypeFactory;
+import com.jagex.game.runetek5.config.cursortype.CursorTypeFactory;
 import com.jagex.game.runetek5.config.cursortype.CursorType;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;

@@ -1,6 +1,6 @@
 package com.jagex.game.runetek5.config.vartype.general;
 
-import com.jagex.Packet;
+import com.jagex.core.io.Packet;
 import com.jagex.game.runetek5.config.vartype.VarType;
 import com.jagex.game.runetek5.config.vartype.constants.VarDomainType;
 import deob.ObfuscatedName;

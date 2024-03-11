@@ -1,7 +1,7 @@
 package com.jagex.js5.network;
 
 import com.jagex.js5.Js5Request;
-import com.jagex.Packet;
+import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("auq")

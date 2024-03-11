@@ -1,6 +1,7 @@
 package com.jagex.game.runetek5.config.quickchatphrasetype;
 
 import com.jagex.*;
+import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("asq")

@@ -2,6 +2,7 @@ package com.jagex;
 
 import com.jagex.game.runetek5.config.loctype.LocType;
 import com.jagex.game.runetek5.config.loctype.LocTypeList;
+import com.jagex.graphics.runetek5.Renderer;
 import com.jagex.graphics.runetek5.particles.ParticleList;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.ScaleRotTrans;

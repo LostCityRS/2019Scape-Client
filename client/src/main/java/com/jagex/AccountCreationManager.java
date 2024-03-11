@@ -1,5 +1,8 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
+import com.jagex.game.runetek5.client.GameShell;
+import rs2.shared.prot.ClientProt;
 import rs2.shared.prot.LoginProt;
 import deob.ObfuscatedName;
 import deob.Statics;

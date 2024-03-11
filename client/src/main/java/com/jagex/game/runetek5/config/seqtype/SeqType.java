@@ -1,6 +1,7 @@
 package com.jagex.game.runetek5.config.seqtype;
 
 import com.jagex.*;
+import com.jagex.core.io.Packet;
 import com.jagex.game.runetek5.config.ConfigType;
 import com.jagex.game.runetek5.config.SeqTypeFactory;
 import com.jagex.game.runetek5.config.seqgrouptype.SeqGroupType;

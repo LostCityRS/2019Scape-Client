@@ -1,9 +1,12 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
 import com.jagex.game.runetek5.config.flotype.FloorOverlayType;
 import com.jagex.game.runetek5.config.flotype.FloorOverlayTypeList;
 import com.jagex.game.runetek5.config.flutype.FloorUnderlayType;
 import com.jagex.game.runetek5.config.flutype.FloorUnderlayTypeList;
+import com.jagex.graphics.runetek5.FloorModel;
+import com.jagex.graphics.runetek5.Renderer;
 import deob.ObfuscatedName;
 import deob.Statics;
 

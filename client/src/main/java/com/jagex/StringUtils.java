@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.core.util.Cp1252;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("zm")

@@ -1,5 +1,10 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
+import com.jagex.game.runetek5.loading.LoadingScreenAlignmentX;
+import com.jagex.game.runetek5.loading.LoadingScreenAlignmentY;
+import com.jagex.game.runetek5.loading.LoadingScreenElementConfig;
+import com.jagex.game.runetek5.loading.LoadingScreenElementType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("km")

@@ -10,6 +10,8 @@ import com.jagex.game.runetek5.config.vartype.VarContainer;
 import com.jagex.game.runetek5.config.vartype.VarContainerSparse;
 import com.jagex.game.runetek5.config.vartype.VarDomain;
 import com.jagex.game.runetek5.config.vartype.VarTypeList;
+import com.jagex.graphics.runetek5.Renderer;
+import com.jagex.graphics.runetek5.camera.CameraTrackable;
 import com.jagex.graphics.runetek5.particles.ParticleSystem;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.ScaleRotTrans;

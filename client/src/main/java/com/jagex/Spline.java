@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 

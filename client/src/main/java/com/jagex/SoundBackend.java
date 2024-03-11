@@ -1,5 +1,9 @@
 package com.jagex;
 
+import com.jagex.audio.runetek5.AudioBuss;
+import com.jagex.audio.runetek5.AudioEndianness;
+import com.jagex.audio.runetek5.AudioFormat;
+import com.jagex.audio.runetek5.AudioRelated2;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("mt")

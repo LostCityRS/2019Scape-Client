@@ -1,8 +1,8 @@
 package com.jagex.js5.network;
 
-import com.jagex.ByteArrayPool;
+import com.jagex.core.util.ByteArrayPool;
 import com.jagex.MonotonicTime;
-import com.jagex.Packet;
+import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 
 import java.io.IOException;

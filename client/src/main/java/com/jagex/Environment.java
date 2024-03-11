@@ -1,5 +1,8 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
+import com.jagex.core.util.Algorithms;
+import com.jagex.graphics.runetek5.Renderer;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;

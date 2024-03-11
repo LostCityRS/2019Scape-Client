@@ -1,6 +1,9 @@
 package com.jagex;
 
 import com.jagex.core.constants.ModeWhere;
+import com.jagex.core.io.Packet;
+import com.jagex.core.io.PacketBit;
+import com.jagex.game.runetek5.client.GameShell;
 import com.jagex.game.runetek5.config.loctype.LocType;
 import com.jagex.game.runetek5.config.npctype.NPCType;
 import com.jagex.game.runetek5.config.objtype.ObjType;

@@ -2,6 +2,7 @@ package com.jagex;
 
 import com.jagex.game.runetek5.config.bastype.BASType;
 import com.jagex.game.runetek5.config.spottype.EffectAnimType;
+import com.jagex.graphics.runetek5.Renderer;
 import com.jagex.graphics.runetek5.particles.ParticleList;
 import com.jagex.graphics.runetek5.particles.ParticleSystem;
 import com.jagex.math.Matrix4x3;

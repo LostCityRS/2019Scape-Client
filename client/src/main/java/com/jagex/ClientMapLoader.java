@@ -1,8 +1,11 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
 import com.jagex.game.runetek5.config.lighttype.LightType;
 import com.jagex.game.runetek5.config.loctype.LocType;
 import com.jagex.game.runetek5.config.loctype.LocTypeList;
+import com.jagex.graphics.runetek5.FloorModel;
+import com.jagex.graphics.runetek5.Renderer;
 import com.jagex.math.ScaleRotTrans;
 import deob.ObfuscatedName;
 import deob.Statics;

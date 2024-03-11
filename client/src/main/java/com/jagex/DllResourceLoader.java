@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.graphics.runetek5.GraphicsPacketQueue;
 import deob.ObfuscatedName;
 import deob.Statics;
 

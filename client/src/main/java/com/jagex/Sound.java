@@ -1,5 +1,8 @@
 package com.jagex;
 
+import com.jagex.audio.runetek5.AudioApiRelated;
+import com.jagex.audio.runetek5.AudioApiRelated2;
+import com.jagex.audio.runetek5.AudioStreamRelated;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 

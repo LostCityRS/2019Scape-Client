@@ -1,5 +1,7 @@
 package com.jagex;
 
+import com.jagex.graphics.runetek5.GpuTexture;
+import com.jagex.graphics.runetek5.GraphicsDeletable;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("mo")

@@ -1,5 +1,9 @@
 package com.jagex;
 
+import com.jagex.graphics.runetek5.GpuRenderer;
+import com.jagex.graphics.runetek5.Program;
+import com.jagex.graphics.runetek5.ProgramUniform;
+import com.jagex.graphics.runetek5.ShaderException;
 import com.jagex.math.Matrix4x4;
 import com.jagex.math.Vector3;
 import com.jagex.math.Vector4;

@@ -1,14 +1,22 @@
 package com.jagex;
 
 import com.jagex.console.DeveloperConsole;
+import com.jagex.core.io.Packet;
+import com.jagex.core.io.PacketBit;
+import com.jagex.game.runetek5.client.GameShell;
+import com.jagex.game.runetek5.client.GameShell3$Environment;
 import com.jagex.game.runetek5.config.loctype.LocType;
 import com.jagex.game.runetek5.config.loctype.LocTypeList;
 import com.jagex.game.runetek5.config.npctype.NPCType;
+import com.jagex.game.runetek5.cutscene.CutsceneManager;
+import com.jagex.game.runetek5.cutscene.CutsceneTemplate;
+import com.jagex.graphics.runetek5.GraphicsPacketQueue;
 import com.jagex.graphics.runetek5.particles.ParticleSystemRenderer;
 import com.jagex.js5.Js5MapFile;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.shared.prot.ClientProt;
 
 import java.util.HashMap;
 import java.util.HashSet;

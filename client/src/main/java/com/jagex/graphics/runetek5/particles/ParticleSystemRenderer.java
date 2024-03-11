@@ -4,6 +4,7 @@ import com.jagex.*;
 import com.jagex.game.runetek5.config.ParticleEffectorType;
 import com.jagex.game.runetek5.config.ParticleEffectorTypeList;
 import com.jagex.game.runetek5.config.ParticleEmitterTypeList;
+import com.jagex.graphics.runetek5.Renderer;
 import deob.ObfuscatedName;
 import deob.Statics;
 

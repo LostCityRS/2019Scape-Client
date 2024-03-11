@@ -1,11 +1,13 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
 import com.jagex.game.runetek5.config.vartype.SparseVarDomain;
 import com.jagex.game.runetek5.config.vartype.VarType;
 import com.jagex.game.runetek5.config.vartype.VarTypeList;
 import com.jagex.game.runetek5.config.vartype.constants.VarLifetime;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.shared.prot.ClientProt;
 
 import java.io.EOFException;
 import java.util.HashSet;

@@ -2,6 +2,7 @@ package com.jagex.game.runetek5.config.npctype;
 
 import com.jagex.*;
 import com.jagex.core.constants.ModeGame;
+import com.jagex.core.io.Packet;
 import com.jagex.game.runetek5.config.ConfigType;
 import com.jagex.game.runetek5.config.ConfigTypeList;
 import com.jagex.game.runetek5.config.NPCTypeFactory;
@@ -12,6 +13,7 @@ import com.jagex.game.runetek5.config.vartype.VarType;
 import com.jagex.game.runetek5.config.vartype.VariableTypeProvider;
 import com.jagex.game.runetek5.config.vartype.bit.VarBitType;
 import com.jagex.game.runetek5.config.vartype.constants.VarDomainType;
+import com.jagex.graphics.runetek5.Renderer;
 import com.jagex.js5.Js5;
 import com.jagex.math.Matrix4x3;
 import deob.ObfuscatedName;

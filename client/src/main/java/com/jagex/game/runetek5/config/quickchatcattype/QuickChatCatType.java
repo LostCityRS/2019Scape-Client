@@ -1,6 +1,6 @@
 package com.jagex.game.runetek5.config.quickchatcattype;
 
-import com.jagex.Packet;
+import com.jagex.core.io.Packet;
 import com.jagex.SecondaryNode;
 import deob.ObfuscatedName;
 import deob.Statics;

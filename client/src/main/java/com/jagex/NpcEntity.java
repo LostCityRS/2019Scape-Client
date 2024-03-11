@@ -1,9 +1,12 @@
 package com.jagex;
 
+import com.jagex.game.runetek5.client.GameShell;
 import com.jagex.game.runetek5.config.bastype.BASType;
 import com.jagex.game.runetek5.config.npctype.NPCType;
 import com.jagex.game.runetek5.config.seqtype.SeqType;
 import com.jagex.game.runetek5.config.spottype.EffectAnimType;
+import com.jagex.graphics.runetek5.Renderer;
+import com.jagex.graphics.runetek5.camera.CameraTrackableType;
 import com.jagex.graphics.runetek5.particles.ParticleList;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Quaternion;

@@ -1,5 +1,8 @@
 package com.jagex;
 
+import com.jagex.graphics.runetek5.camera.CameraTrackable;
+import com.jagex.graphics.runetek5.camera.CameraTrackableProvider;
+import com.jagex.graphics.runetek5.camera.CameraTrackableType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("z")

@@ -1,5 +1,8 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
+import com.jagex.core.util.Base64;
+import com.jagex.game.runetek5.client.GameShell;
 import deob.ObfuscatedName;
 
 import java.io.InputStream;

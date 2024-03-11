@@ -1,7 +1,7 @@
 package rs2.client.options;
 
 import com.jagex.ClientOptions;
-import com.jagex.Renderer;
+import com.jagex.graphics.runetek5.Renderer;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("anu")

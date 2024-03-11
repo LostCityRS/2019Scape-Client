@@ -1,6 +1,6 @@
 package com.jagex.js5.index;
 
-import com.jagex.Packet;
+import com.jagex.core.io.Packet;
 import com.jagex.Whirlpool;
 import com.jagex.client;
 import deob.ObfuscatedName;

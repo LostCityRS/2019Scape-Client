@@ -1,5 +1,9 @@
 package com.jagex;
 
+import com.jagex.graphics.runetek5.Font;
+import com.jagex.graphics.runetek5.FontMetrics;
+import com.jagex.graphics.runetek5.GraphicsRelated;
+import com.jagex.graphics.runetek5.safe.PureJavaRenderer;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("afw")

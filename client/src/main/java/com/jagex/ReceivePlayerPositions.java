@@ -1,5 +1,7 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
+import com.jagex.core.io.PacketBit;
 import com.jagex.game.runetek5.config.vartype.constants.BaseVarType;
 import deob.ObfuscatedName;
 import deob.Statics;

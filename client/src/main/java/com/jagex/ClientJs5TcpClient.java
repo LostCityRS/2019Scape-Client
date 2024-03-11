@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
 import com.jagex.js5.Js5CompressionType;
 import com.jagex.js5.network.Js5TcpClient;
 import com.jagex.js5.network.Js5NetRequest;

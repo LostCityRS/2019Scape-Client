@@ -1,10 +1,8 @@
 package com.jagex.game.runetek5.config.vartype;
 
-import com.jagex.ClanSettingsNode;
+import com.jagex.game.runetek5.clanchannel.ClanSettingsNode;
 import com.jagex.IterableMap;
 import com.jagex.MonotonicTime;
-import com.jagex.game.runetek5.config.vartype.VarDomain;
-import com.jagex.game.runetek5.config.vartype.VarType;
 import com.jagex.game.runetek5.config.vartype.bit.VarBitOverflowException;
 import com.jagex.game.runetek5.config.vartype.bit.VarBitType;
 import com.jagex.game.runetek5.config.vartype.player.VarPlayerType;

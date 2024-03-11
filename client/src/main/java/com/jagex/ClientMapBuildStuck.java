@@ -2,6 +2,7 @@ package com.jagex;
 
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.shared.prot.ClientProt;
 
 @ObfuscatedName("alv")
 public class ClientMapBuildStuck extends MapBuildStuck implements SendablePacket {

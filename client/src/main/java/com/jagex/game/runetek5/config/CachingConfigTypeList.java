@@ -1,7 +1,7 @@
 package com.jagex.game.runetek5.config;
 
-import com.jagex.ArchiveUtil;
-import com.jagex.Packet;
+import com.jagex.core.util.ArchiveUtil;
+import com.jagex.core.io.Packet;
 import com.jagex.WeightedCache;
 import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;

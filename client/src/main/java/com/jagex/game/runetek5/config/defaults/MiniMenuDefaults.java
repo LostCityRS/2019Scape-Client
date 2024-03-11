@@ -1,6 +1,7 @@
 package com.jagex.game.runetek5.config.defaults;
 
 import com.jagex.*;
+import com.jagex.core.io.Packet;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 

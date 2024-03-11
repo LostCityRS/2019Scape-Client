@@ -1,7 +1,9 @@
 package com.jagex.game.runetek5.config.headbartype;
 
 import com.jagex.*;
+import com.jagex.core.io.Packet;
 import com.jagex.game.runetek5.config.ConfigType;
+import com.jagex.graphics.runetek5.Renderer;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 

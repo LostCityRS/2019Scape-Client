@@ -1,5 +1,8 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
+import com.jagex.game.runetek5.client.GameShell;
+import com.jagex.graphics.runetek5.camera.Camera;
 import com.jagex.math.Vector3;
 import com.jagex.math.Vector3i;
 import deob.ObfuscatedName;

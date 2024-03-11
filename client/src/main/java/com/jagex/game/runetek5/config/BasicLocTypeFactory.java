@@ -1,6 +1,6 @@
 package com.jagex.game.runetek5.config;
 
-import com.jagex.LocTypeFactory;
+import com.jagex.game.runetek5.config.loctype.LocTypeFactory;
 import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;
 import com.jagex.game.runetek5.config.loctype.LocType;

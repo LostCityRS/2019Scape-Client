@@ -1,6 +1,6 @@
 package com.jagex.game.runetek5.config.defaults;
 
-import com.jagex.Packet;
+import com.jagex.core.io.Packet;
 import com.jagex.Skill;
 import com.jagex.SkillExperienceTable;
 import com.jagex.js5.Js5;

@@ -1,5 +1,7 @@
 package com.jagex;
 
+import com.jagex.graphics.runetek5.safe.PureJavaRenderer;
+import com.jagex.graphics.runetek5.safe.PureJavaRendererContext;
 import deob.ObfuscatedName;
 import deob.Statics;
 

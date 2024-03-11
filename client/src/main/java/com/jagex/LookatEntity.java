@@ -1,5 +1,9 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
+import com.jagex.graphics.runetek5.camera.Camera;
+import com.jagex.graphics.runetek5.camera.CameraTrackable;
+import com.jagex.graphics.runetek5.camera.CameraTrackableType;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Vector3;
 import com.jagex.math.Vector3i;

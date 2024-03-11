@@ -1,6 +1,5 @@
 package com.jagex.game.runetek5.config.cursortype;
 
-import com.jagex.*;
 import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;
 import com.jagex.game.runetek5.config.BasicCursorTypeFactory;

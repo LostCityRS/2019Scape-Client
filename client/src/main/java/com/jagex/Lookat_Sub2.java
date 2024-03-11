@@ -1,5 +1,7 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
+import com.jagex.graphics.runetek5.camera.Camera;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Quaternion;
 import com.jagex.math.Vector3;

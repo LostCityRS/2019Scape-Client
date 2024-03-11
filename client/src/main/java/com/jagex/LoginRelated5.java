@@ -1,5 +1,8 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
+import com.jagex.game.runetek5.loading.LoadingScreenElementConfig;
+import com.jagex.game.runetek5.loading.LoadingScreenElementType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("li")

@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.audio.runetek5.*;
 import deob.ObfuscatedName;
 
 import javax.sound.sampled.AudioSystem;

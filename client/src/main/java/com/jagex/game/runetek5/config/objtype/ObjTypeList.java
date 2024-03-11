@@ -5,6 +5,8 @@ import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;
 import com.jagex.game.runetek5.config.*;
 import com.jagex.game.runetek5.config.defaults.GraphicsDefaults;
+import com.jagex.graphics.runetek5.Font;
+import com.jagex.graphics.runetek5.Renderer;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 

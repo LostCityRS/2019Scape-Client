@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.core.io.PacketBit;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("rt")

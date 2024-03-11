@@ -1,6 +1,7 @@
 package com.jagex.graphics.runetek5.particles;
 
 import com.jagex.*;
+import com.jagex.graphics.runetek5.Renderer;
 import deob.ObfuscatedName;
 import deob.Statics;
 

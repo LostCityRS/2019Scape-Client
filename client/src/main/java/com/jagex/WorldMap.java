@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.core.io.Packet;
 import com.jagex.game.runetek5.config.ConfigTypeList;
 import com.jagex.game.runetek5.config.flotype.FloorOverlayType;
 import com.jagex.game.runetek5.config.flotype.FloorOverlayTypeList;
@@ -13,6 +14,7 @@ import com.jagex.game.runetek5.config.msitype.MSIType;
 import com.jagex.game.runetek5.config.msitype.MSITypeList;
 import com.jagex.game.runetek5.config.vartype.VarIntDomain;
 import com.jagex.game.runetek5.config.vartype.VariableTypeProvider;
+import com.jagex.graphics.runetek5.Renderer;
 import com.jagex.js5.Js5;
 import com.jagex.js5.Js5WorldMapGroup;
 import deob.ObfuscatedName;

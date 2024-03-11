@@ -3,6 +3,7 @@ package com.jagex.game.runetek5.config.vartype;
 import com.jagex.*;
 import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;
+import com.jagex.core.io.Packet;
 import com.jagex.game.runetek5.config.ConfigType;
 import com.jagex.game.runetek5.config.vartype.constants.BaseVarType;
 import com.jagex.game.runetek5.config.vartype.constants.VarDomainType;

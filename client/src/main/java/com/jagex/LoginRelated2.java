@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.game.runetek5.loading.LoadingScreenElement;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 import deob.Statics;

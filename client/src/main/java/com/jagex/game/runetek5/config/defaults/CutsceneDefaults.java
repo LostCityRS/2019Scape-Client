@@ -3,7 +3,7 @@ package com.jagex.game.runetek5.config.defaults;
 import com.jagex.Binding;
 import com.jagex.Bindings;
 import com.jagex.js5.Js5;
-import com.jagex.Packet;
+import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("wx")

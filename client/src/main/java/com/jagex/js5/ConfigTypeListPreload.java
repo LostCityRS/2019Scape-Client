@@ -1,7 +1,7 @@
 package com.jagex.js5;
 
-import com.jagex.ArchiveUtil;
-import com.jagex.Packet;
+import com.jagex.core.util.ArchiveUtil;
+import com.jagex.core.io.Packet;
 import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;
 import com.jagex.game.runetek5.config.ConfigType;

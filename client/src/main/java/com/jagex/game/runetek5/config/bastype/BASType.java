@@ -1,6 +1,7 @@
 package com.jagex.game.runetek5.config.bastype;
 
 import com.jagex.*;
+import com.jagex.core.io.Packet;
 import com.jagex.game.runetek5.config.ConfigType;
 import com.jagex.math.Matrix4x3;
 import deob.ObfuscatedName;

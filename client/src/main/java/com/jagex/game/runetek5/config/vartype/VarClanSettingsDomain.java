@@ -1,9 +1,7 @@
 package com.jagex.game.runetek5.config.vartype;
 
-import com.jagex.ClanSettings;
+import com.jagex.game.runetek5.clanchannel.ClanSettings;
 import com.jagex.client;
-import com.jagex.game.runetek5.config.vartype.VarDomain;
-import com.jagex.game.runetek5.config.vartype.VarType;
 import com.jagex.game.runetek5.config.vartype.bit.VarBitType;
 import com.jagex.game.runetek5.config.vartype.constants.ScriptVarType;
 import deob.ObfuscatedName;
