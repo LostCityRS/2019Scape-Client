@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.game.config.ConfigTypeList;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("fu")

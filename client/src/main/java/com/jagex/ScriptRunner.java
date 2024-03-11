@@ -1,5 +1,13 @@
 package com.jagex;
 
+import com.jagex.game.config.bastype.BASType;
+import com.jagex.game.config.idktype.IDKType;
+import com.jagex.game.config.invtype.InvType;
+import com.jagex.game.config.meltype.MapElementType;
+import com.jagex.game.config.objtype.ObjType;
+import com.jagex.game.config.paramtype.ParamType;
+import com.jagex.game.config.seqtype.SeqType;
+import com.jagex.game.config.structtype.StructType;
 import com.jagex.game.config.vartype.VarDomain;
 import com.jagex.game.config.vartype.VarType;
 import com.jagex.game.config.vartype.bit.VarBitType;

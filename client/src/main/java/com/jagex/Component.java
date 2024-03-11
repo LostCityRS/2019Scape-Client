@@ -1,5 +1,11 @@
 package com.jagex;
 
+import com.jagex.game.config.ObjTypeList;
+import com.jagex.game.config.bastype.BASTypeList;
+import com.jagex.game.config.idktype.IDKTypeList;
+import com.jagex.game.config.npctype.NPCTypeList;
+import com.jagex.game.config.objtype.ObjType;
+import com.jagex.game.config.seqtype.SeqTypeList;
 import deob.ObfuscatedName;
 import deob.Statics;
 

@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.game.config.meltype.MapElementType;
 import deob.ObfuscatedName;
 import deob.Statics;
 

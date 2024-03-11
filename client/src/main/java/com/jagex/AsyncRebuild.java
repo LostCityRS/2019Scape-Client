@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.game.config.loctype.LocTypeList;
 import deob.ObfuscatedName;
 
 import java.util.LinkedList;

@@ -1,5 +1,8 @@
 package com.jagex;
 
+import com.jagex.game.config.ConfigTypeList;
+import com.jagex.game.config.defaults.GraphicsDefaults;
+import com.jagex.game.config.objtype.ObjType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("abr")

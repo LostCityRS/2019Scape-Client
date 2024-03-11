@@ -1,5 +1,9 @@
 package com.jagex;
 
+import com.jagex.game.config.bastype.BASType;
+import com.jagex.game.config.invtype.InvType;
+import com.jagex.game.config.objtype.ObjType;
+import com.jagex.game.config.paramtype.ParamType;
 import com.jagex.game.config.vartype.VarType;
 import com.jagex.game.config.vartype.bit.VarBitType;
 import deob.ObfuscatedName;

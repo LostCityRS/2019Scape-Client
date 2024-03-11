@@ -1,6 +1,5 @@
 package com.jagex;
 
-import com.jagex.cutscene.CutsceneAction;
 import deob.ObfuscatedName;
 import deob.Statics;
 

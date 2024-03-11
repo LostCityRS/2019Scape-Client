@@ -1,6 +1,8 @@
 package com.jagex.game.config.vartype.general;
 
 import com.jagex.*;
+import com.jagex.game.config.ConfigType;
+import com.jagex.game.config.ConfigTypeList;
 import com.jagex.game.config.vartype.VarTypeList;
 import com.jagex.game.config.vartype.constants.VarDomainType;
 import deob.ObfuscatedName;

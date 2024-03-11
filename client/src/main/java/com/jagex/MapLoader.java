@@ -1,5 +1,9 @@
 package com.jagex;
 
+import com.jagex.game.config.flotype.FloorOverlayType;
+import com.jagex.game.config.flotype.FloorOverlayTypeList;
+import com.jagex.game.config.flutype.FloorUnderlayType;
+import com.jagex.game.config.flutype.FloorUnderlayTypeList;
 import deob.ObfuscatedName;
 import deob.Statics;
 

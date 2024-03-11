@@ -1,5 +1,7 @@
 package com.jagex;
 
+import com.jagex.game.config.ConfigType;
+import com.jagex.game.config.ConfigTypeList;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aca")

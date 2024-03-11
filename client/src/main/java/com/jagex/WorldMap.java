@@ -1,5 +1,16 @@
 package com.jagex;
 
+import com.jagex.game.config.ConfigTypeList;
+import com.jagex.game.config.flotype.FloorOverlayType;
+import com.jagex.game.config.flotype.FloorOverlayTypeList;
+import com.jagex.game.config.flutype.FloorUnderlayType;
+import com.jagex.game.config.flutype.FloorUnderlayTypeList;
+import com.jagex.game.config.loctype.LocType;
+import com.jagex.game.config.loctype.LocTypeList;
+import com.jagex.game.config.meltype.MapElementType;
+import com.jagex.game.config.meltype.MapElementTypeList;
+import com.jagex.game.config.msitype.MSIType;
+import com.jagex.game.config.msitype.MSITypeList;
 import deob.ObfuscatedName;
 import deob.Statics;
 

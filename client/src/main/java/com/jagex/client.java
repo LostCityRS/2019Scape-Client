@@ -1,7 +1,13 @@
 package com.jagex;
 
-import com.jagex.cutscene.CutsceneAction;
+import com.jagex.game.config.bastype.BASType;
 import com.jagex.game.config.Js5Archive;
+import com.jagex.game.config.cursortype.CursorType;
+import com.jagex.game.config.headbartype.HeadbarType;
+import com.jagex.game.config.hitmarktype.HitmarkType;
+import com.jagex.game.config.loctype.LocType;
+import com.jagex.game.config.objtype.ObjType;
+import com.jagex.game.config.seqtype.SeqType;
 import com.jagex.game.config.vartype.SparseVarDomain;
 import com.jagex.game.config.vartype.VarType;
 import com.jagex.game.config.vartype.bit.VarBitType;

@@ -1,5 +1,8 @@
 package com.jagex;
 
+import com.jagex.game.config.lighttype.LightType;
+import com.jagex.game.config.loctype.LocType;
+import com.jagex.game.config.loctype.LocTypeList;
 import deob.ObfuscatedName;
 import deob.Statics;
 

@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.game.config.defaults.DefaultsGroup;
 import deob.ObfuscatedName;
 
 import java.util.Iterator;

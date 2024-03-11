@@ -1,5 +1,8 @@
 package com.jagex;
 
+import com.jagex.game.config.bastype.BASType;
+import com.jagex.game.config.objtype.ObjType;
+import com.jagex.game.config.seqtype.SeqType;
 import deob.ObfuscatedName;
 import deob.Statics;
 

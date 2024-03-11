@@ -1,5 +1,10 @@
 package com.jagex;
 
+import com.jagex.game.config.bastype.BASType;
+import com.jagex.game.config.bastype.BASTypeList;
+import com.jagex.game.config.headbartype.HeadbarType;
+import com.jagex.game.config.hitmarktype.HitmarkType;
+import com.jagex.game.config.seqtype.SeqType;
 import com.jagex.game.config.vartype.VarDomain;
 import com.jagex.game.config.vartype.VarTypeList;
 import deob.ObfuscatedName;

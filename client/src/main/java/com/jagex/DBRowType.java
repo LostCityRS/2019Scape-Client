@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.vartype.constants.ScriptVarType;
 import deob.ObfuscatedName;
 
