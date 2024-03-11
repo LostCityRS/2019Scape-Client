@@ -1,6 +1,7 @@
 package com.jagex;
 
 import com.jagex.game.config.seqtype.SeqType;
+import com.jagex.game.config.spottype.EffectAnimType;
 import deob.ObfuscatedName;
 import deob.Statics;
 

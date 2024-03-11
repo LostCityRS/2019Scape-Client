@@ -2,9 +2,11 @@ package com.jagex.game.config.objtype;
 
 import com.jagex.*;
 import com.jagex.core.constants.Language;
+import com.jagex.core.constants.ModeGame;
 import com.jagex.game.config.ConfigTypeList;
 import com.jagex.game.config.Js5ConfigGroup;
 import com.jagex.game.config.defaults.GraphicsDefaults;
+import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aon")

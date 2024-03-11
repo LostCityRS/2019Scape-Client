@@ -5,6 +5,7 @@ import com.jagex.game.config.bastype.BASTypeList;
 import com.jagex.game.config.headbartype.HeadbarType;
 import com.jagex.game.config.hitmarktype.HitmarkType;
 import com.jagex.game.config.seqtype.SeqType;
+import com.jagex.game.config.spottype.EffectAnimType;
 import com.jagex.game.config.vartype.VarDomain;
 import com.jagex.game.config.vartype.VarTypeList;
 import com.jagex.math.Matrix4x3;

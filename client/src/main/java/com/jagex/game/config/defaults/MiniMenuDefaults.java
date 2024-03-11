@@ -1,6 +1,7 @@
 package com.jagex.game.config.defaults;
 
 import com.jagex.*;
+import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("wf")

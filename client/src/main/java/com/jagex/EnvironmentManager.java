@@ -1,5 +1,7 @@
 package com.jagex;
 
+import com.jagex.game.config.skyboxtype.SkyBoxType;
+import com.jagex.js5.Js5;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;

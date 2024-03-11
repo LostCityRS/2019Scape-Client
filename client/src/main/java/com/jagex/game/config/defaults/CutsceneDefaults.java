@@ -2,7 +2,7 @@ package com.jagex.game.config.defaults;
 
 import com.jagex.Binding;
 import com.jagex.Bindings;
-import com.jagex.Js5;
+import com.jagex.js5.Js5;
 import com.jagex.Packet;
 import deob.ObfuscatedName;
 

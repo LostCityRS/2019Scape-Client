@@ -2,6 +2,7 @@ package com.jagex.game.config.headbartype;
 
 import com.jagex.*;
 import com.jagex.game.config.ConfigType;
+import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("uk")

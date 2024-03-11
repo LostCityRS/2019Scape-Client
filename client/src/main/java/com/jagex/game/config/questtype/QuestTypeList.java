@@ -1,8 +1,8 @@
 package com.jagex.game.config.questtype;
 
 import com.jagex.ConfigTypeListPreload;
-import com.jagex.Js5;
-import com.jagex.ModeGame;
+import com.jagex.js5.Js5;
+import com.jagex.core.constants.ModeGame;
 import com.jagex.QuestTypeFactory;
 import com.jagex.core.constants.Language;
 import com.jagex.game.config.Js5ConfigGroup;

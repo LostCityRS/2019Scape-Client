@@ -3,6 +3,7 @@ package com.jagex;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.ConfigTypeList;
 import com.jagex.game.config.hitmarktype.HitmarkType;
+import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ala")

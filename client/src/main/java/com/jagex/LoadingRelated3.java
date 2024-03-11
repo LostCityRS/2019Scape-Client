@@ -1,6 +1,8 @@
 package com.jagex;
 
 import com.jagex.core.constants.Language;
+import com.jagex.core.constants.ModeGame;
+import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 
 import java.util.Random;

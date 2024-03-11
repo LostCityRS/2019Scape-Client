@@ -1,7 +1,7 @@
 package com.jagex.game.config.vartype.player;
 
-import com.jagex.Js5;
-import com.jagex.ModeGame;
+import com.jagex.js5.Js5;
+import com.jagex.core.constants.ModeGame;
 import com.jagex.Packet;
 import com.jagex.WeightedCache;
 import com.jagex.core.constants.Language;

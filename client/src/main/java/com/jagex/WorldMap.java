@@ -11,6 +11,8 @@ import com.jagex.game.config.meltype.MapElementType;
 import com.jagex.game.config.meltype.MapElementTypeList;
 import com.jagex.game.config.msitype.MSIType;
 import com.jagex.game.config.msitype.MSITypeList;
+import com.jagex.js5.Js5;
+import com.jagex.js5.Js5WorldMapGroup;
 import deob.ObfuscatedName;
 import deob.Statics;
 

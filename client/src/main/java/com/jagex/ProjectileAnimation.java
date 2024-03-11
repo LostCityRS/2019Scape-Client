@@ -1,6 +1,7 @@
 package com.jagex;
 
 import com.jagex.game.config.bastype.BASType;
+import com.jagex.game.config.spottype.EffectAnimType;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Quaternion;
 import com.jagex.math.ScaleRotTrans;

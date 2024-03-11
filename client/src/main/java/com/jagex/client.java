@@ -1,6 +1,9 @@
 package com.jagex;
 
+import com.jagex.console.DeveloperConsole;
 import com.jagex.core.constants.Language;
+import com.jagex.core.constants.ModeGame;
+import com.jagex.core.constants.ModeWhere;
 import com.jagex.game.config.Js5Archive;
 import com.jagex.game.config.bastype.BASType;
 import com.jagex.game.config.cursortype.CursorType;
@@ -9,12 +12,18 @@ import com.jagex.game.config.hitmarktype.HitmarkType;
 import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.npctype.NPCType;
 import com.jagex.game.config.objtype.ObjType;
+import com.jagex.game.config.quickchatphrasetype.QuickChatPhraseType;
 import com.jagex.game.config.seqtype.SeqType;
+import com.jagex.game.config.spottype.EffectAnimType;
 import com.jagex.game.config.vartype.SparseVarDomain;
 import com.jagex.game.config.vartype.VarType;
 import com.jagex.game.config.vartype.bit.VarBitType;
 import com.jagex.game.config.vartype.constants.BaseVarType;
 import com.jagex.game.config.vartype.player.VarPlayerType;
+import com.jagex.js5.Js5;
+import com.jagex.js5.caching.Js5DiskCache;
+import com.jagex.js5.network.Js5HttpClient;
+import com.jagex.js5.network.Js5NetResourceProvider;
 import com.jagex.math.*;
 import deob.ObfuscatedName;
 import deob.Statics;

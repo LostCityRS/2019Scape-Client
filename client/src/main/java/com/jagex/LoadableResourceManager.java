@@ -1,5 +1,8 @@
 package com.jagex;
 
+import com.jagex.js5.Js5ArchiveResourceLoader;
+import com.jagex.js5.Js5FileResourceLoader;
+import com.jagex.js5.Js5GroupResourceLoader;
 import deob.ObfuscatedName;
 import deob.Statics;
 import jaclib.ping.Ping;

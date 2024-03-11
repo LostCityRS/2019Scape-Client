@@ -2,8 +2,8 @@ package com.jagex.game.config.vartype.bit;
 
 import com.jagex.BasicVarBitTypeFactory;
 import com.jagex.CachingConfigTypeList;
-import com.jagex.Js5;
-import com.jagex.ModeGame;
+import com.jagex.js5.Js5;
+import com.jagex.core.constants.ModeGame;
 import com.jagex.core.constants.Language;
 import com.jagex.game.config.Js5ConfigGroup;
 import deob.ObfuscatedName;

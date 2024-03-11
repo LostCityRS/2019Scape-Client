@@ -2,6 +2,8 @@ package com.jagex;
 
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.ConfigTypeList;
+import com.jagex.game.config.spottype.EffectAnimType;
+import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("alx")

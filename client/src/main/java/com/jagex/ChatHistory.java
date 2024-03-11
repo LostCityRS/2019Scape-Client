@@ -1,6 +1,8 @@
 package com.jagex;
 
 import deob.ObfuscatedName;
+import rs2.client.chat.ChatLine;
+import rs2.client.chat.TypeChatLines;
 
 import java.util.HashMap;
 import java.util.Map;

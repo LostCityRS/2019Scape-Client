@@ -1,6 +1,6 @@
 package com.jagex.game.config.idktype;
 
-import com.jagex.Js5;
+import com.jagex.js5.Js5;
 import com.jagex.ModelUnlit;
 import com.jagex.Packet;
 import com.jagex.game.config.ConfigType;

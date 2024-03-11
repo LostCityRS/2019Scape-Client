@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.core.constants.ModeGame;
 import deob.ObfuscatedName;
 import deob.Statics;
 

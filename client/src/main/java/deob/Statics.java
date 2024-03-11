@@ -5,7 +5,10 @@ import com.jagex.Font;
 import com.jagex.FontMetrics;
 import com.jagex.Timer;
 import com.jagex.*;
+import com.jagex.console.DeveloperConsole;
 import com.jagex.core.constants.Language;
+import com.jagex.core.constants.ModeGame;
+import com.jagex.core.constants.ModeWhere;
 import com.jagex.game.config.ConfigTypeList;
 import com.jagex.game.config.Js5Archive;
 import com.jagex.game.config.bastype.BASTypeList;
@@ -34,15 +37,29 @@ import com.jagex.game.config.paramtype.ParamType;
 import com.jagex.game.config.paramtype.ParamTypeList;
 import com.jagex.game.config.questtype.QuestType;
 import com.jagex.game.config.questtype.QuestTypeList;
+import com.jagex.game.config.quickchatcattype.QuickChatCatTypeList;
+import com.jagex.game.config.quickchatphrasetype.QuickChatPhraseTypeList;
 import com.jagex.game.config.seqgrouptype.SeqGroupTypeList;
 import com.jagex.game.config.seqtype.SeqTypeList;
+import com.jagex.game.config.skyboxtype.SkyBoxTypeList;
+import com.jagex.game.config.skydecortype.SkyDecorTypeList;
+import com.jagex.game.config.spottype.EffectAnimTypeList;
 import com.jagex.game.config.structtype.StructTypeList;
 import com.jagex.game.config.vartype.SparseVarDomain;
+import com.jagex.game.config.vartype.bit.VarBitTypeEncodingKey;
 import com.jagex.game.config.vartype.bit.VarBitTypeList;
 import com.jagex.game.config.vartype.constants.BaseVarType;
 import com.jagex.game.config.vartype.constants.ScriptVarType;
 import com.jagex.game.config.vartype.general.VarBasicTypeListClient;
 import com.jagex.game.config.vartype.player.VarPlayerTypeListClient;
+import com.jagex.js5.Js5CompressionType;
+import com.jagex.js5.Js5;
+import com.jagex.js5.network.Js5GroupHeader;
+import com.jagex.js5.caching.Js5DiskCache;
+import com.jagex.js5.network.Js5HttpClient;
+import com.jagex.js5.network.Js5Client;
+import com.jagex.js5.network.Js5NetResourceProvider;
+import com.jagex.js5.network.Js5TcpClient;
 import com.jagex.twitchtv.TwitchEventLiveStreams;
 import com.jagex.twitchtv.TwitchEventResult;
 import com.jagex.twitchtv.TwitchTV;
@@ -2865,11 +2882,11 @@ public class Statics {
 	public static final byte[] method7275(byte[] arg0) {
 		Packet var1 = new Packet(arg0);
 		Js5GroupHeader var2 = new Js5GroupHeader(var1);
-		CompressionType var3 = var2.method7080();
+		Js5CompressionType var3 = var2.method7080();
 		int var4 = var2.method7081();
 		if (var4 < 0 || Js5.field4419 != 0 && var4 > Js5.field4419) {
 			throw new RuntimeException();
-		} else if (CompressionType.field4434 == var3) {
+		} else if (Js5CompressionType.field4434 == var3) {
 			byte[] var5 = new byte[var4];
 			var1.gdata(var5, 0, var4);
 			return var5;
@@ -2879,16 +2896,16 @@ public class Statics {
 				throw new RuntimeException();
 			}
 			byte[] var7;
-			if (CompressionType.field4430 == var3) {
+			if (Js5CompressionType.field4430 == var3) {
 				var7 = new byte[var6];
 				BZip2.method14100(var7, var6, arg0, var4, 9);
-			} else if (CompressionType.field4432 == var3) {
+			} else if (Js5CompressionType.field4432 == var3) {
 				var7 = new byte[var6];
 				GZip var8 = Js5.field4409;
 				synchronized (Js5.field4409) {
 					Js5.field4409.method15245(var1, var7);
 				}
-			} else if (CompressionType.LZMA == var3) {
+			} else if (Js5CompressionType.LZMA == var3) {
 				try {
 					var7 = LZMA.method8503(var1, var6);
 				} catch (IOException var11) {

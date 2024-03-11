@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.console.DeveloperConsole;
 import com.jagex.twitchtv.*;
 import deob.ObfuscatedName;
 import deob.Statics;

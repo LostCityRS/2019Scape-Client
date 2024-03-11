@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.console.DeveloperConsole;
 import com.jagex.core.constants.Language;
 import com.jagex.game.config.bastype.BASType;
 import com.jagex.game.config.enumtype.EnumType;
@@ -9,6 +10,8 @@ import com.jagex.game.config.meltype.MapElementType;
 import com.jagex.game.config.npctype.NPCType;
 import com.jagex.game.config.objtype.ObjType;
 import com.jagex.game.config.paramtype.ParamType;
+import com.jagex.game.config.quickchatcattype.QuickChatCatType;
+import com.jagex.game.config.quickchatphrasetype.QuickChatPhraseType;
 import com.jagex.game.config.seqtype.SeqType;
 import com.jagex.game.config.structtype.StructType;
 import com.jagex.game.config.vartype.VarDomain;
@@ -23,6 +26,7 @@ import com.jagex.math.Vector3;
 import com.jagex.twitchtv.TwitchEvent;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.chat.ChatLine;
 
 import java.awt.*;
 import java.awt.datatransfer.DataFlavor;

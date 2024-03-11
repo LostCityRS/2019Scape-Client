@@ -1,6 +1,5 @@
 package com.jagex.core.constants;
 
-import com.jagex.ModeWhere;
 import deob.ObfuscatedName;
 
 import java.util.Locale;

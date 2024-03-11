@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.js5.Js5;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Matrix4x4;
 import com.jagex.math.Vector3;

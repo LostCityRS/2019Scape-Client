@@ -1,5 +1,6 @@
 package com.jagex;
 
+import com.jagex.core.constants.ModeGame;
 import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.npctype.NPCType;
 import com.jagex.game.config.objtype.ObjType;

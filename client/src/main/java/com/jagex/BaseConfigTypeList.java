@@ -1,6 +1,7 @@
 package com.jagex;
 
 import com.jagex.core.constants.Language;
+import com.jagex.core.constants.ModeGame;
 import com.jagex.game.config.ConfigTypeList;
 import deob.ObfuscatedName;
 

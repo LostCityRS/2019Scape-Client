@@ -1,6 +1,7 @@
 package com.jagex.game.config.npctype;
 
 import com.jagex.*;
+import com.jagex.core.constants.ModeGame;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.ConfigTypeList;
 import com.jagex.game.config.bastype.BASType;
@@ -8,6 +9,7 @@ import com.jagex.game.config.bastype.BASTypeList;
 import com.jagex.game.config.vartype.VarType;
 import com.jagex.game.config.vartype.bit.VarBitType;
 import com.jagex.game.config.vartype.constants.VarDomainType;
+import com.jagex.js5.Js5;
 import com.jagex.math.Matrix4x3;
 import deob.ObfuscatedName;
 
