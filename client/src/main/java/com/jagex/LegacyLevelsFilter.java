@@ -58,7 +58,7 @@ public class LegacyLevelsFilter extends PostProcessingFilter {
 	}
 
 	@ObfuscatedName("aqo.f(ILadt;Ladt;II)V")
-	public void method17537(int arg0, class812 arg1, class812 arg2, int arg3, int arg4) {
+	public void method17537(int arg0, LegacyOpenGLRelated arg1, LegacyOpenGLRelated arg2, int arg3, int arg4) {
 		int var6 = this.field12169.field987;
 		OpenGL.glUseProgram(var6);
 		OpenGL.glUniform1i(OpenGL.glGetUniformLocation(var6, "sceneTex"), 0);

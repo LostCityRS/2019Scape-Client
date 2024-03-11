@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
 @ObfuscatedName("cg")
-public class LegacyCubeTextureRelated implements class88 {
+public class LegacyCubeTextureRelated implements LegacyPostProcessingRelated {
 
 	@ObfuscatedName("cg.e")
 	public final int field1131;

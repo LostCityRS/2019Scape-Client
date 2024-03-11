@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("bf")
-public class PureJavaColorBuffer implements class130 {
+public class PureJavaColorBuffer implements GraphicsDeletable {
 
 	@ObfuscatedName("bf.e")
 	public final int field893;

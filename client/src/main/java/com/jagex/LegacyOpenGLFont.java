@@ -10,7 +10,7 @@ public class LegacyOpenGLFont extends Font {
 	public final LegacyOpenGLRenderer field10243;
 
 	@ObfuscatedName("afs.s")
-	public final class1113 field10241;
+	public final LegacyGraphicRelated field10241;
 
 	@ObfuscatedName("afs.y")
 	public final RenderList field10242;
@@ -49,7 +49,7 @@ public class LegacyOpenGLFont extends Font {
 					}
 				}
 			}
-			this.field10241 = class1113.method18932(arg0, TextureFormat.ALPHA, DataType.UNSIGNED_INT_8, this.field1667.field8571, this.field1667.field8572, false, var8, TextureFormat.ALPHA);
+			this.field10241 = LegacyGraphicRelated.method18932(arg0, TextureFormat.ALPHA, DataType.UNSIGNED_INT_8, this.field1667.field8571, this.field1667.field8572, false, var8, TextureFormat.ALPHA);
 			this.field10240 = true;
 		} else {
 			if (arg2.method2587()) {
@@ -83,7 +83,7 @@ public class LegacyOpenGLFont extends Font {
 					}
 				}
 			}
-			this.field10241 = class1113.method18931(arg0, this.field1667.field8571, this.field1667.field8572, false, var5, 0, 0);
+			this.field10241 = LegacyGraphicRelated.method18931(arg0, this.field1667.field8571, this.field1667.field8572, false, var5, 0, 0);
 			this.field10240 = false;
 		}
 		this.field10241.method1082(this.field1667.field8570 != 1);
@@ -134,9 +134,9 @@ public class LegacyOpenGLFont extends Font {
 	}
 
 	@ObfuscatedName("afs.y(CIIIZLch;II)V")
-	public void method2697(char arg0, int arg1, int arg2, int arg3, boolean arg4, class103 arg5, int arg6, int arg7) {
-		class833 var9 = (class833) arg5;
-		class1113 var10 = var9.field9416;
+	public void method2697(char arg0, int arg1, int arg2, int arg3, boolean arg4, GraphicsRelated arg5, int arg6, int arg7) {
+		LegacyGraphicRelated2 var9 = (LegacyGraphicRelated2) arg5;
+		LegacyGraphicRelated var10 = var9.field9416;
 		this.field10243.method15731();
 		this.field10243.method15777(this.field10241);
 		if (this.field10240 || arg4) {

@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("adb")
-public class DBTableType implements ConfigType, class757 {
+public class DBTableType implements ConfigType, ConfigRelated {
 
 	@ObfuscatedName("adb.e")
 	public ScriptVarType[][] field9185;

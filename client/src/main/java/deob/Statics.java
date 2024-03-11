@@ -409,7 +409,7 @@ public class Statics {
 	public static int field1847;
 
 	@ObfuscatedName("fo.as")
-	public static class508 mouseImp;
+	public static CursorManager mouseImp;
 
 	@ObfuscatedName("fo.lo")
 	public static int field1881;
@@ -553,7 +553,7 @@ public class Statics {
 	public static int field2830;
 
 	@ObfuscatedName("jl.k")
-	public static class797 field2841;
+	public static LoadingRelated3 field2841;
 
 	@ObfuscatedName("je.ht")
 	public static SkyBoxTypeList field2879;
@@ -2967,7 +2967,7 @@ public class Statics {
 	}
 
 	@ObfuscatedName("ace.q(Ldh;Lch;Lhf;IIIIIB)V")
-	public static void method15085(Renderer arg0, class103 arg1, Component arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
+	public static void method15085(Renderer arg0, GraphicsRelated arg1, Component arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		MapElementType var8 = (MapElementType) field5011.get(arg7);
 		if (var8 != null && var8.field2392 != null && var8.method4030(field7410, field7410)) {
 			var8 = var8.method4024(field7410, field7410);
@@ -2997,7 +2997,7 @@ public class Statics {
 			}
 			Graphic var14 = arg2.method3970(arg0);
 			if (var14 != null) {
-				class127.method2054(arg0, var9, var8.field2398, var14.field2143, var14.field2145);
+				WorldMapRelated2.method2054(arg0, var9, var8.field2398, var14.field2143, var14.field2145);
 			}
 			if (var8.field2399 > 0) {
 				for (int var15 = 0; var15 < var9.length / 2 - 1; var15++) {

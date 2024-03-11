@@ -441,7 +441,7 @@ public class GpuModel extends Model {
 			var36[var46] = new GpuModelNormal();
 		}
 		this.field9753[arg1.field1374] = var45;
-		class142 var48 = this.method1687(arg1, var9, this.field9716);
+		ModelRelated1 var48 = this.method1687(arg1, var9, this.field9716);
 		GpuFaceNormal[] var49 = new GpuFaceNormal[arg1.field1384];
 		for (int var50 = 0; var50 < arg1.field1384; var50++) {
 			short var51 = arg1.field1415[var50];

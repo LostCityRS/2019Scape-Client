@@ -15,7 +15,7 @@ public abstract class SoundBackend {
 	public abstract int method5864(Object arg0);
 
 	@ObfuscatedName("mt.w(Lqk;B)Lrq;")
-	public abstract class480 method5865(class473 arg0);
+	public abstract SoundRelated2 method5865(SoundRelatedType2 arg0);
 
 	@ObfuscatedName("mt.l(Lmj;I)Ljava/lang/Object;")
 	public abstract Object method5866(AudioBuss arg0);

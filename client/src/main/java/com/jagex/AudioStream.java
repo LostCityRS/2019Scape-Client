@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("wp")
-public class AudioStream implements class614 {
+public class AudioStream implements AudioApiRelated2 {
 
 	@ObfuscatedName("wp.e")
 	public SoundBackend field7628;
@@ -18,9 +18,9 @@ public class AudioStream implements class614 {
 	public Js5 field7630;
 
 	@ObfuscatedName("wp.f")
-	public class612 field7632;
+	public AudioMixerRelated field7632;
 
-	public AudioStream(Js5 arg0, int arg1, SoundBackend arg2, class612 arg3) {
+	public AudioStream(Js5 arg0, int arg1, SoundBackend arg2, AudioMixerRelated arg3) {
 		this.field7630 = arg0;
 		this.field7631 = arg1;
 		this.field7628 = arg2;
@@ -67,8 +67,8 @@ public class AudioStream implements class614 {
 	}
 
 	@ObfuscatedName("wp.u(I)Lqk;")
-	public class473 method9679() {
-		return class473.field4851;
+	public SoundRelatedType2 method9679() {
+		return SoundRelatedType2.field4851;
 	}
 
 	@ObfuscatedName("wp.z(B)I")

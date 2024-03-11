@@ -39,7 +39,7 @@ public abstract class PostProcessingFilter extends Node {
 	public abstract boolean method17534();
 
 	@ObfuscatedName("ajl.f(ILadt;Ladt;II)V")
-	public abstract void method17537(int arg0, class812 arg1, class812 arg2, int arg3, int arg4);
+	public abstract void method17537(int arg0, LegacyOpenGLRelated arg1, LegacyOpenGLRelated arg2, int arg3, int arg4);
 
 	@ObfuscatedName("ajl.w(I)V")
 	public abstract void method17538(int arg0);

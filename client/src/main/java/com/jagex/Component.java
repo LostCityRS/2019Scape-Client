@@ -1336,7 +1336,7 @@ public class Component {
 			var8[var10 + var5.method2593()] = var11 + var5.method2591();
 			var9[var10 + var5.method2593()] = var12 - var11;
 		}
-		class103 var15 = arg0.method2205(var6, var7, var8, var9);
+		GraphicsRelated var15 = arg0.method2205(var6, var7, var8, var9);
 		if (var15 == null) {
 			return null;
 		} else {

@@ -94,7 +94,7 @@ public class PureJavaModel extends Model {
 	public int field9602 = 0;
 
 	@ObfuscatedName("afi.av")
-	public class56[] field9570;
+	public JavaModelRelated1[] field9570;
 
 	@ObfuscatedName("afi.ao")
 	public byte[] field9571;
@@ -366,7 +366,7 @@ public class PureJavaModel extends Model {
 		}
 		this.field9561 = new float[this.field9611][];
 		this.field9562 = new float[this.field9611][];
-		class142 var40 = this.method1687(arg1, var9, this.field9611);
+		ModelRelated1 var40 = this.method1687(arg1, var9, this.field9611);
 		PureJavaRendererContext var41 = this.field9572.method15674(Thread.currentThread());
 		float[] var42 = var41.field860;
 		boolean var43 = false;
@@ -705,9 +705,9 @@ public class PureJavaModel extends Model {
 				var22.field876++;
 			} else if (var19 == 1) {
 				if (this.field9570 == null) {
-					this.field9570 = new class56[this.field9611];
+					this.field9570 = new JavaModelRelated1[this.field9611];
 				}
-				class56 var23 = this.field9570[var2] = new class56();
+				JavaModelRelated1 var23 = this.field9570[var2] = new JavaModelRelated1();
 				var23.field871 = var16;
 				var23.field869 = var17;
 				var23.field870 = var18;
@@ -813,7 +813,7 @@ public class PureJavaModel extends Model {
 						int var46 = this.method15463((var44 * var45 >> 18) + (var5 >> 2));
 						this.field9565[var8] = var46 << 24 | this.method15461(var34, var11, var46);
 					} else if (var9 == 1) {
-						class56 var47 = this.field9570[var8];
+						JavaModelRelated1 var47 = this.field9570[var8];
 						int var48 = var47.field870 * var4 + var47.field871 * var2 + var47.field869 * var3 >> 16;
 						int var49 = var48 > 256 ? var6 : var7;
 						int var50 = this.method15463((var48 * var49 >> 18) + (var5 >> 2));
@@ -860,7 +860,7 @@ public class PureJavaModel extends Model {
 					int var27 = this.field9575[var8] & 0xFFFF;
 					int var28 = (var27 & 0x7F) * this.field9546 >> 7;
 					short var29 = ColourUtils.method4937(var27 & 0xFFFFFF80 | var28);
-					class56 var30 = this.field9570[var8];
+					JavaModelRelated1 var30 = this.field9570[var8];
 					int var31 = var30.field870 * var4 + var30.field871 * var2 + var30.field869 * var3 >> 16;
 					int var32 = var31 > 256 ? var6 : var7;
 					int var33 = (var31 * var32 >> 17) + (var5 >> 1);
@@ -1247,12 +1247,12 @@ public class PureJavaModel extends Model {
 			} else {
 				if (arg1.field9570 == null || arg1.field9570.length < this.field9611) {
 					int var24 = this.field9611;
-					arg0.field9570 = arg1.field9570 = new class56[var24];
+					arg0.field9570 = arg1.field9570 = new JavaModelRelated1[var24];
 				} else {
 					arg0.field9570 = arg1.field9570;
 				}
 				for (int var25 = 0; var25 < this.field9611; var25++) {
-					arg0.field9570[var25] = this.field9570[var25] == null ? null : new class56(this.field9570[var25]);
+					arg0.field9570[var25] = this.field9570[var25] == null ? null : new JavaModelRelated1(this.field9570[var25]);
 				}
 			}
 		}

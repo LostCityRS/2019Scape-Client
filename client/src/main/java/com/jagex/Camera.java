@@ -191,13 +191,13 @@ public abstract class Camera {
 		} else if (LookatMode.field2791 == arg0) {
 			this.field2846 = new LookatOrientation(this);
 		} else if (LookatMode.field2790 == arg0) {
-			this.field2846 = new class1069(this);
+			this.field2846 = new Lookat_Sub1(this);
 		} else if (LookatMode.field2789 == arg0) {
 			this.field2846 = new LookatSpline_Sub1(this);
 		} else if (LookatMode.field2795 == arg0) {
 			this.field2846 = new LookatSpline_Sub4(this);
 		} else if (LookatMode.field2792 == arg0) {
-			this.field2846 = new class1073(this);
+			this.field2846 = new Lookat_Sub2(this);
 		} else if (LookatMode.field2787 == arg0) {
 			this.field2846 = new LookatSpline_Sub2(this);
 		}

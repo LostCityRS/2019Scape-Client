@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @ObfuscatedName("we")
-public class AudioStream2 implements class614 {
+public class AudioStream2 implements AudioApiRelated2 {
 
 	@ObfuscatedName("we.e")
 	public SoundBackend field7617;
@@ -21,7 +21,7 @@ public class AudioStream2 implements class614 {
 	public Js5 field7621;
 
 	@ObfuscatedName("we.f")
-	public class612 field7619;
+	public AudioMixerRelated field7619;
 
 	@ObfuscatedName("we.w")
 	public byte[] field7620;
@@ -38,7 +38,7 @@ public class AudioStream2 implements class614 {
 	@ObfuscatedName("we.p")
 	public boolean field7624;
 
-	public AudioStream2(Js5 arg0, int arg1, SoundBackend arg2, class612 arg3, WeightedCache arg4) {
+	public AudioStream2(Js5 arg0, int arg1, SoundBackend arg2, AudioMixerRelated arg3, WeightedCache arg4) {
 		this.field7621 = arg0;
 		this.field7615 = arg1;
 		this.field7617 = arg2;
@@ -100,8 +100,8 @@ public class AudioStream2 implements class614 {
 	}
 
 	@ObfuscatedName("we.u(I)Lqk;")
-	public class473 method9679() {
-		return class473.field4851;
+	public SoundRelatedType2 method9679() {
+		return SoundRelatedType2.field4851;
 	}
 
 	@ObfuscatedName("we.z(B)I")

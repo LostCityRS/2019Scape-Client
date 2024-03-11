@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
 @ObfuscatedName("rx")
-public class OpenGLRenderBuffer implements class130, class126, class487 {
+public class OpenGLRenderBuffer implements GraphicsDeletable, EffectInterface, OpenGLRelated5 {
 
 	@ObfuscatedName("rx.e")
 	public final DataType field5001;

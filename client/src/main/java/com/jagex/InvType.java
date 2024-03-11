@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ady")
-public class InvType extends SecondaryNode implements ConfigType, class757 {
+public class InvType extends SecondaryNode implements ConfigType, ConfigRelated {
 
 	@ObfuscatedName("ady.k")
 	public int field9264 = 0;

@@ -49,16 +49,16 @@ public class PostProcessing {
 	public boolean field1174 = true;
 
 	@ObfuscatedName("cv.o")
-	public class812[] field1175 = new class812[2];
+	public LegacyOpenGLRelated[] field1175 = new LegacyOpenGLRelated[2];
 
 	@ObfuscatedName("cv.s")
-	public class828 field1176;
+	public PostProcessingRelated field1176;
 
 	@ObfuscatedName("cv.y")
-	public class812 field1161;
+	public LegacyOpenGLRelated field1161;
 
 	@ObfuscatedName("cv.q")
-	public class828 field1178;
+	public PostProcessingRelated field1178;
 
 	@ObfuscatedName("cv.x")
 	public boolean field1179 = false;
@@ -145,12 +145,12 @@ public class PostProcessing {
 		}
 		if (this.field1172) {
 			if (this.field1163 != null) {
-				this.field1178 = new class828(this.field1169, TextureFormat.field1268, DataType.UNSIGNED_INT_24, this.field1177, this.field1167, this.field1169.field9967);
+				this.field1178 = new PostProcessingRelated(this.field1169, TextureFormat.field1268, DataType.UNSIGNED_INT_24, this.field1177, this.field1167, this.field1169.field9967);
 			}
 			if (this.field1179) {
-				this.field1161 = new class812(this.field1169, 34037, TextureFormat.field1268, DataType.UNSIGNED_INT_24, this.field1177, this.field1167);
+				this.field1161 = new LegacyOpenGLRelated(this.field1169, 34037, TextureFormat.field1268, DataType.UNSIGNED_INT_24, this.field1177, this.field1167);
 			} else if (this.field1178 == null) {
-				this.field1178 = new class828(this.field1169, TextureFormat.field1268, DataType.UNSIGNED_INT_24, this.field1177, this.field1167);
+				this.field1178 = new PostProcessingRelated(this.field1169, TextureFormat.field1268, DataType.UNSIGNED_INT_24, this.field1177, this.field1167);
 			}
 			this.field1172 = false;
 			this.field1173 = true;
@@ -158,10 +158,10 @@ public class PostProcessing {
 		}
 		if (this.field1171) {
 			if (this.field1163 != null) {
-				this.field1176 = new class828(this.field1169, TextureFormat.field1273, this.field1181, this.field1177, this.field1167, this.field1169.field9967);
+				this.field1176 = new PostProcessingRelated(this.field1169, TextureFormat.field1273, this.field1181, this.field1177, this.field1167, this.field1169.field9967);
 			}
-			this.field1175[0] = new class812(this.field1169, 34037, TextureFormat.field1273, this.field1181, this.field1177, this.field1167);
-			this.field1175[1] = this.field1168 > 1 ? new class812(this.field1169, 34037, TextureFormat.field1273, this.field1181, this.field1177, this.field1167) : null;
+			this.field1175[0] = new LegacyOpenGLRelated(this.field1169, 34037, TextureFormat.field1273, this.field1181, this.field1177, this.field1167);
+			this.field1175[1] = this.field1168 > 1 ? new LegacyOpenGLRelated(this.field1169, 34037, TextureFormat.field1273, this.field1181, this.field1177, this.field1167) : null;
 			this.field1171 = false;
 			this.field1173 = true;
 			this.field1174 = true;

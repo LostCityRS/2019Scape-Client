@@ -6,7 +6,7 @@ import jagdx.*;
 import java.awt.*;
 
 @ObfuscatedName("aic")
-public class Direct3DSurface extends GpuSurface implements class406 {
+public class Direct3DSurface extends GpuSurface implements Direct3DInterface1 {
 
 	@ObfuscatedName("aic.e")
 	public final Direct3DRenderer field10716;

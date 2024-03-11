@@ -69,16 +69,16 @@ public class AudioApi {
 	public boolean field1857;
 
 	@ObfuscatedName("fb.ae")
-	public class479 field1874 = new class171(this);
+	public AudioApiRelated field1874 = new AudioApiRelated_Sub2(this);
 
 	@ObfuscatedName("fb.ag")
-	public class479 field1872 = new class170(this);
+	public AudioApiRelated field1872 = new AudioApiRelated_Sub1(this);
 
 	@ObfuscatedName("fb.ah")
-	public class479 field1876 = new class177(this);
+	public AudioApiRelated field1876 = new AudioApiRelated_Sub4(this);
 
 	@ObfuscatedName("fb.al")
-	public class479 field1877 = new class172(this);
+	public AudioApiRelated field1877 = new AudioApiRelated_Sub3(this);
 
 	@ObfuscatedName("fb.e(I)Ljava/util/List;")
 	public List method3150() {
@@ -137,17 +137,17 @@ public class AudioApi {
 		}
 		Iterator var1 = this.field1858.values().iterator();
 		while (var1.hasNext()) {
-			class614 var2 = (class614) var1.next();
+			AudioApiRelated2 var2 = (AudioApiRelated2) var1.next();
 			var2.method9672();
 		}
 		Iterator var3 = this.field1865.values().iterator();
 		while (var3.hasNext()) {
-			class614 var4 = (class614) var3.next();
+			AudioApiRelated2 var4 = (AudioApiRelated2) var3.next();
 			var4.method9672();
 		}
 		Iterator var5 = this.field1867.iterator();
 		while (var5.hasNext()) {
-			class614 var6 = (class614) var5.next();
+			AudioApiRelated2 var6 = (AudioApiRelated2) var5.next();
 			if (var6.method9675()) {
 				this.field1865.remove(var6.method9680());
 			} else {
@@ -180,7 +180,7 @@ public class AudioApi {
 						Iterator var12 = this.field1851.keySet().iterator();
 						while (var12.hasNext()) {
 							int var13 = (Integer) var12.next();
-							class180 var14 = (class180) this.field1851.get(var13);
+							AudioApiRelated5 var14 = (AudioApiRelated5) this.field1851.get(var13);
 							if (var14.method3120().contains(var9)) {
 								var14.method3114(var9);
 								break;
@@ -256,9 +256,9 @@ public class AudioApi {
 		if (arg0 == null) {
 			return;
 		}
-		class180 var4 = (class180) this.field1851.get(arg1);
+		AudioApiRelated5 var4 = (AudioApiRelated5) this.field1851.get(arg1);
 		if (var4 == null) {
-			var4 = new class180(this);
+			var4 = new AudioApiRelated5(this);
 			this.field1851.put(arg1, var4);
 		}
 		if (!var4.method3113(arg0)) {
@@ -269,7 +269,7 @@ public class AudioApi {
 
 	@ObfuscatedName("fb.p(IB)V")
 	public void method3208(int arg0) {
-		class180 var2 = (class180) this.field1851.get(arg0);
+		AudioApiRelated5 var2 = (AudioApiRelated5) this.field1851.get(arg0);
 		if (var2 == null) {
 			return;
 		}
@@ -285,7 +285,7 @@ public class AudioApi {
 
 	@ObfuscatedName("fb.d(II)V")
 	public void method3153(int arg0) {
-		class180 var2 = (class180) this.field1851.get(arg0);
+		AudioApiRelated5 var2 = (AudioApiRelated5) this.field1851.get(arg0);
 		if (var2 == null) {
 			return;
 		}
@@ -299,7 +299,7 @@ public class AudioApi {
 
 	@ObfuscatedName("fb.c(IB)V")
 	public void method3215(int arg0) {
-		class180 var2 = (class180) this.field1851.get(arg0);
+		AudioApiRelated5 var2 = (AudioApiRelated5) this.field1851.get(arg0);
 		if (var2 == null) {
 			return;
 		}
@@ -398,29 +398,29 @@ public class AudioApi {
 	}
 
 	@ObfuscatedName("fb.b(IZI)Lwr;")
-	public class614 method3162(int arg0, boolean arg1) {
+	public AudioApiRelated2 method3162(int arg0, boolean arg1) {
 		if (!this.field1860) {
 			return null;
 		}
-		class614 var3 = (class614) (arg1 ? this.field1862.method2930((long) arg0) : this.field1856.method2930((long) arg0));
+		AudioApiRelated2 var3 = (AudioApiRelated2) (arg1 ? this.field1862.method2930((long) arg0) : this.field1856.method2930((long) arg0));
 		if (var3 == null) {
 			if (arg1) {
-				var3 = (class614) this.field1865.get(arg0);
+				var3 = (AudioApiRelated2) this.field1865.get(arg0);
 			} else {
-				var3 = (class614) this.field1858.get(arg0);
+				var3 = (AudioApiRelated2) this.field1858.get(arg0);
 			}
 		}
 		return var3;
 	}
 
 	@ObfuscatedName("fb.h(IZI)Lwr;")
-	public class614 method3163(int arg0, boolean arg1) {
+	public AudioApiRelated2 method3163(int arg0, boolean arg1) {
 		if (!this.field1860) {
 			return null;
 		}
-		class614 var3 = this.method3162(arg0, arg1);
+		AudioApiRelated2 var3 = this.method3162(arg0, arg1);
 		if (var3 == null) {
-			class182 var4 = new class182(this);
+			AudioMixerRelated_Sub1 var4 = new AudioMixerRelated_Sub1(this);
 			var3 = AudioMixer.method6064(arg1 ? Statics.field3085 : Statics.field2613, arg0, var4, arg1, this.field1863);
 			if (arg1) {
 				this.field1865.put(arg0, var3);
@@ -432,7 +432,7 @@ public class AudioApi {
 	}
 
 	@ObfuscatedName("fb.a(Lwr;I)Lrw;")
-	public Sound method3164(class614 arg0) {
+	public Sound method3164(AudioApiRelated2 arg0) {
 		if (!this.field1860) {
 			return null;
 		}
@@ -484,7 +484,7 @@ public class AudioApi {
 			}
 			float var16 = (float) var14 / 255.0F;
 			float var17 = (float) var15 / 255.0F;
-			class614 var18 = this.method3163(arg2, arg12);
+			AudioApiRelated2 var18 = this.method3163(arg2, arg12);
 			Sound var19 = this.method3164(var18);
 			if (var19 == null) {
 				return null;

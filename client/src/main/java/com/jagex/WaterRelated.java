@@ -84,7 +84,7 @@ public class WaterRelated {
 		}
 		if (this.field3224 == null) {
 			if (Statics.field3225 == null) {
-				byte[] var1 = class534.method8451(128, 128, 16, 8, new class1003(419684), 4.0F, 4.0F, 16.0F, 0.5F, 0.6F);
+				byte[] var1 = WaterRelated5.method8451(128, 128, 16, 8, new EffectRelated1(419684), 4.0F, 4.0F, 16.0F, 0.5F, 0.6F);
 				Statics.field3225 = ByteArrayCopier.method2821(var1, false);
 			}
 			byte[] var2 = ByteArrayCopier.method4540(Statics.field3225, false);

@@ -77,12 +77,12 @@ public abstract class Sprite implements FontGlyph {
 	}
 
 	@ObfuscatedName("cm.j(FFIILch;II)V")
-	public final void method1455(float arg0, float arg1, int arg2, int arg3, class103 arg4, int arg5, int arg6) {
+	public final void method1455(float arg0, float arg1, int arg2, int arg3, GraphicsRelated arg4, int arg5, int arg6) {
 		this.method1456(arg0, arg1, (float) this.method1434() / 2.0F, (float) this.method1436() / 2.0F, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@ObfuscatedName("cm.t(FFFFIILch;II)V")
-	public final void method1456(float arg0, float arg1, float arg2, float arg3, int arg4, int arg5, class103 arg6, int arg7, int arg8) {
+	public final void method1456(float arg0, float arg1, float arg2, float arg3, int arg4, int arg5, GraphicsRelated arg6, int arg7, int arg8) {
 		if (arg4 == 0) {
 			return;
 		}
@@ -104,7 +104,7 @@ public abstract class Sprite implements FontGlyph {
 	}
 
 	@ObfuscatedName("cm.ah(FFFFFFLch;II)V")
-	public final void method1499(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, class103 arg6, int arg7, int arg8) {
+	public final void method1499(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, GraphicsRelated arg6, int arg7, int arg8) {
 		this.method1454(arg0, arg1, arg2, arg3, arg4, arg5, 1, arg6, arg7, arg8);
 	}
 
@@ -127,7 +127,7 @@ public abstract class Sprite implements FontGlyph {
 	public abstract int method1436();
 
 	@ObfuscatedName("cm.l()Ldp;")
-	public abstract class130 method1437();
+	public abstract GraphicsDeletable method1437();
 
 	@ObfuscatedName("cm.p(IIIIII)V")
 	public abstract void method1440(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5);
@@ -139,7 +139,7 @@ public abstract class Sprite implements FontGlyph {
 	public abstract void method1443(int arg0, int arg1, int arg2, int arg3, int arg4);
 
 	@ObfuscatedName("cm.v(IILch;II)V")
-	public abstract void method1444(int arg0, int arg1, class103 arg2, int arg3, int arg4);
+	public abstract void method1444(int arg0, int arg1, GraphicsRelated arg2, int arg3, int arg4);
 
 	@ObfuscatedName("cm.y(IIIIIIII)V")
 	public abstract void method1447(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7);
@@ -148,7 +148,7 @@ public abstract class Sprite implements FontGlyph {
 	public abstract void method1449(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6);
 
 	@ObfuscatedName("cm.al(FFFFFFILch;II)V")
-	public abstract void method1454(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, int arg6, class103 arg7, int arg8, int arg9);
+	public abstract void method1454(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, int arg6, GraphicsRelated arg7, int arg8, int arg9);
 
 	@ObfuscatedName("cm.m()I")
 	public abstract int method1459();

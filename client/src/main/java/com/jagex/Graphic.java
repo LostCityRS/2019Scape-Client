@@ -18,12 +18,12 @@ public class Graphic {
 	public final int[] field2143;
 
 	@ObfuscatedName("hx.f")
-	public final class103 field2147;
+	public final GraphicsRelated field2147;
 
 	@ObfuscatedName("hx.w")
 	public final int field2148;
 
-	public Graphic(int arg0, int arg1, int[] arg2, int[] arg3, class103 arg4, int arg5) {
+	public Graphic(int arg0, int arg1, int[] arg2, int[] arg3, GraphicsRelated arg4, int arg5) {
 		this.field2144 = arg0;
 		this.field2146 = arg1;
 		this.field2145 = arg2;

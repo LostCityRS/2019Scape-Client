@@ -12,7 +12,7 @@ public class GpuSprite extends Sprite {
 	public final GpuTexture field9401;
 
 	@ObfuscatedName("aef.m")
-	public final class130 field9402;
+	public final GraphicsDeletable field9402;
 
 	@ObfuscatedName("aef.k")
 	public final int field9407;
@@ -190,7 +190,7 @@ public class GpuSprite extends Sprite {
 	}
 
 	@ObfuscatedName("aef.l()Ldp;")
-	public class130 method1437() {
+	public GraphicsDeletable method1437() {
 		return this.field9402;
 	}
 
@@ -233,7 +233,7 @@ public class GpuSprite extends Sprite {
 	}
 
 	@ObfuscatedName("aef.v(IILch;II)V")
-	public void method1444(int arg0, int arg1, class103 arg2, int arg3, int arg4) {
+	public void method1444(int arg0, int arg1, GraphicsRelated arg2, int arg3, int arg4) {
 		this.field9403.method15981();
 		SpriteShader var6 = this.field9403.field10149;
 		var6.field2997 = this.field9401;
@@ -250,7 +250,7 @@ public class GpuSprite extends Sprite {
 		var6.field3000 = this.field9403.field10197;
 		var6.field3001 = 0;
 		var6.field2994 = this.field9403.field10055;
-		GpuTexture var11 = ((class834) arg2).field9417;
+		GpuTexture var11 = ((GpuRelated2) arg2).field9417;
 		var6.field2996 = var11;
 		var6.field2999.method6612(var11.method5697((float) this.field9407), var11.method5698((float) this.field9404), 1.0F, 1.0F);
 		var6.field2999.field4315[12] = var11.method5697((float) (var7 - arg3));
@@ -496,7 +496,7 @@ public class GpuSprite extends Sprite {
 	}
 
 	@ObfuscatedName("aef.al(FFFFFFILch;II)V")
-	public void method1454(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, int arg6, class103 arg7, int arg8, int arg9) {
+	public void method1454(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, int arg6, GraphicsRelated arg7, int arg8, int arg9) {
 		this.field9403.method15981();
 		SpriteShader var11 = this.field9403.field10149;
 		var11.field2997 = this.field9401;
@@ -533,7 +533,7 @@ public class GpuSprite extends Sprite {
 		var11.field3000 = this.field9403.field10197;
 		var11.field3001 = 0;
 		var11.field2994 = this.field9403.field10055;
-		GpuTexture var17 = ((class834) arg7).field9417;
+		GpuTexture var17 = ((GpuRelated2) arg7).field9417;
 		var11.field2996 = var17;
 		var11.field2999.method6603();
 		var11.field2999.field4315[0] = (arg2 - arg0) * var17.method5697(1.0F);

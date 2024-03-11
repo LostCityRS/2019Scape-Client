@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import deob.Statics;
 
 @ObfuscatedName("adp")
-public class ParamType implements ConfigType, class757 {
+public class ParamType implements ConfigType, ConfigRelated {
 
 	@ObfuscatedName("adp.e")
 	public ScriptVarType field9173;

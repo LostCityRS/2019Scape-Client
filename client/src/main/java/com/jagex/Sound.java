@@ -13,7 +13,7 @@ public class Sound {
 	public SoundBackend field4876;
 
 	@ObfuscatedName("rw.n")
-	public class614 field4889;
+	public AudioApiRelated2 field4889;
 
 	@ObfuscatedName("rw.m")
 	public SoundVolume field4877 = SoundVolume.field4952;
@@ -43,7 +43,7 @@ public class Sound {
 	public float field4885;
 
 	@ObfuscatedName("rw.c")
-	public class479 field4886;
+	public AudioApiRelated field4886;
 
 	@ObfuscatedName("rw.r")
 	public float field4887;
@@ -94,7 +94,7 @@ public class Sound {
 	}
 
 	@ObfuscatedName("rw.n(Lwr;I)V")
-	public void method7376(class614 arg0) {
+	public void method7376(AudioApiRelated2 arg0) {
 		this.field4889 = arg0;
 		this.field4885 = 0.0F;
 		this.field4877 = SoundVolume.field4946;
@@ -107,7 +107,7 @@ public class Sound {
 		}
 		Iterator var1 = this.field4879.iterator();
 		while (var1.hasNext()) {
-			class480 var2 = (class480) var1.next();
+			SoundRelated2 var2 = (SoundRelated2) var1.next();
 			if (var2.method7516() == this) {
 				var2.method7484();
 			} else {
@@ -149,7 +149,7 @@ public class Sound {
 		} else if (arg0 <= 0) {
 			Iterator var2 = this.field4879.iterator();
 			while (var2.hasNext()) {
-				class480 var3 = (class480) var2.next();
+				SoundRelated2 var3 = (SoundRelated2) var2.next();
 				if (var3.method7516() == this) {
 					var3.method7489();
 				} else {
@@ -162,7 +162,7 @@ public class Sound {
 			this.field4877 = SoundVolume.field4951;
 			Iterator var4 = this.field4879.iterator();
 			while (var4.hasNext()) {
-				class480 var5 = (class480) var4.next();
+				SoundRelated2 var5 = (SoundRelated2) var4.next();
 				if (var5.method7516() == this) {
 					var5.method7485(0.0F, arg0);
 				} else {
@@ -177,7 +177,7 @@ public class Sound {
 		Iterator var1 = this.field4879.iterator();
 		this.field4877 = SoundVolume.field4947;
 		while (var1.hasNext()) {
-			class480 var2 = (class480) var1.next();
+			SoundRelated2 var2 = (SoundRelated2) var1.next();
 			if (var2.method7516() == this) {
 				var2.method7502();
 			}
@@ -189,7 +189,7 @@ public class Sound {
 		Iterator var1 = this.field4879.iterator();
 		this.field4877 = SoundVolume.field4948;
 		while (var1.hasNext()) {
-			class480 var2 = (class480) var1.next();
+			SoundRelated2 var2 = (SoundRelated2) var1.next();
 			if (var2.method7516() == this) {
 				var2.method7584();
 			}
@@ -197,7 +197,7 @@ public class Sound {
 	}
 
 	@ObfuscatedName("rw.z(Lro;I)V")
-	public void method7383(class479 arg0) {
+	public void method7383(AudioApiRelated arg0) {
 		this.field4886 = arg0;
 	}
 
@@ -210,10 +210,10 @@ public class Sound {
 			}
 		}
 		if (SoundVolume.field4949 == this.field4877 && this.field4878) {
-			class480 var2 = this.field4876.method5865(this.field4889.method9679());
+			SoundRelated2 var2 = this.field4876.method5865(this.field4889.method9679());
 			if (var2 != null) {
 				boolean var3 = this.field4889.method9675();
-				class472 var4 = new class472(this);
+				SoundRelated var4 = new SoundRelated(this);
 				boolean var5 = var2.method7487(var3 ? null : this.field4889.method9673(0), var3 ? var4 : null, this.field4890, this.field4892 > 0 ? 0.0F : this.field4885, false, this.field4882, this.field4880, this.field4888, this);
 				if (var5) {
 					this.field4877 = SoundVolume.field4950;
@@ -223,7 +223,7 @@ public class Sound {
 					this.field4879.add(var2);
 					this.field4878 = false;
 				} else {
-					if (var2.method7550() == class474.field4865) {
+					if (var2.method7550() == SoundRelatedType1.field4865) {
 						this.field4877 = SoundVolume.field4953;
 					}
 					var2.method7484();
@@ -234,7 +234,7 @@ public class Sound {
 		boolean var7 = true;
 		while (true) {
 			while (var6.hasNext()) {
-				class480 var8 = (class480) var6.next();
+				SoundRelated2 var8 = (SoundRelated2) var6.next();
 				if (var8.method7516() == this) {
 					if (SoundVolume.field4951 == this.field4877) {
 						if (var8.method7486() == 0.0F) {
@@ -304,7 +304,7 @@ public class Sound {
 	}
 
 	@ObfuscatedName("rw.x(I)Lwr;")
-	public class614 method7386() {
+	public AudioApiRelated2 method7386() {
 		return this.field4889;
 	}
 
@@ -366,7 +366,7 @@ public class Sound {
 		int var3 = 0;
 		Iterator var4 = this.field4879.iterator();
 		while (var4.hasNext()) {
-			class480 var5 = (class480) var4.next();
+			SoundRelated2 var5 = (SoundRelated2) var4.next();
 			if (var5.method7516() == this) {
 				var5.method7485(this.field4885, arg1);
 				var3++;

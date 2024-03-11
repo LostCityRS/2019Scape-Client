@@ -129,7 +129,7 @@ public abstract class Model {
 	}
 
 	@ObfuscatedName("do.f(Ldq;[II)Lee;")
-	public class142 method1687(ModelUnlit arg0, int[] arg1, int arg2) {
+	public ModelRelated1 method1687(ModelUnlit arg0, int[] arg1, int arg2) {
 		int[] var4 = null;
 		int[] var5 = null;
 		int[] var6 = null;
@@ -226,7 +226,7 @@ public abstract class Model {
 				}
 			}
 		}
-		return new class142(this, var4, var5, var6, var7);
+		return new ModelRelated1(this, var4, var5, var6, var7);
 	}
 
 	@ObfuscatedName("do.w(IIIIFFF)[F")

@@ -15,7 +15,7 @@ public class DummySoundComparator implements Comparator {
 	}
 
 	@ObfuscatedName("el.e(Lrq;Lrq;I)I")
-	public int method2754(class480 arg0, class480 arg1) {
+	public int method2754(SoundRelated2 arg0, SoundRelated2 arg1) {
 		float var3 = arg0.method7531();
 		float var4 = arg1.method7531();
 		if (var4 > var3) {
@@ -28,7 +28,7 @@ public class DummySoundComparator implements Comparator {
 	}
 
 	public int compare(Object arg0, Object arg1) {
-		return this.method2754((class480) arg0, (class480) arg1);
+		return this.method2754((SoundRelated2) arg0, (SoundRelated2) arg1);
 	}
 
 	public boolean equals(Object arg0) {

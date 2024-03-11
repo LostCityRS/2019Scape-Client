@@ -25,10 +25,10 @@ public class LegacyOpenGLFramebuffer extends Framebuffer {
 	public int field11917;
 
 	@ObfuscatedName("app.z")
-	public class88 field11920;
+	public LegacyPostProcessingRelated field11920;
 
 	@ObfuscatedName("app.p")
-	public final class88[] field11922 = new class88[4];
+	public final LegacyPostProcessingRelated[] field11922 = new LegacyPostProcessingRelated[4];
 
 	public LegacyOpenGLFramebuffer(LegacyOpenGLRenderer arg0) {
 		if (!arg0.field9985) {
@@ -51,9 +51,9 @@ public class LegacyOpenGLFramebuffer extends Framebuffer {
 	}
 
 	@ObfuscatedName("app.b(ILdp;)V")
-	public void method15439(int arg0, class130 arg1) {
+	public void method15439(int arg0, GraphicsDeletable arg1) {
 		int var3 = 0x1 << arg0;
-		class88 var4 = (class88) arg1;
+		LegacyPostProcessingRelated var4 = (LegacyPostProcessingRelated) arg1;
 		if (arg1 == null) {
 			this.field11919 &= ~var3;
 			this.field11922[arg0] = null;
@@ -82,8 +82,8 @@ public class LegacyOpenGLFramebuffer extends Framebuffer {
 	}
 
 	@ObfuscatedName("app.x(Ldw;)V")
-	public void method15441(class126 arg0) {
-		class88 var2 = (class88) arg0;
+	public void method15441(EffectInterface arg0) {
+		LegacyPostProcessingRelated var2 = (LegacyPostProcessingRelated) arg0;
 		if (arg0 == null) {
 			this.field11919 &= 0xFFFFFFEF;
 			this.field11920 = null;
@@ -113,7 +113,7 @@ public class LegacyOpenGLFramebuffer extends Framebuffer {
 
 	@ObfuscatedName("app.ac(I)V")
 	public void method18962(int arg0) {
-		class88 var2 = this.field11922[arg0];
+		LegacyPostProcessingRelated var2 = this.field11922[arg0];
 		if (var2 == null) {
 			OpenGL.glFramebufferRenderbufferEXT(36160, arg0 + 36064, 36161, 0);
 		} else {

@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 
 @ObfuscatedName("vr")
-public class BASType implements class757, ConfigType {
+public class BASType implements ConfigRelated, ConfigType {
 
 	@ObfuscatedName("vr.e")
 	public int field7345;

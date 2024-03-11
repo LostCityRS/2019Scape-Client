@@ -25,10 +25,10 @@ public class OpenGLFramebuffer extends GpuFramebuffer {
 	public int field12512;
 
 	@ObfuscatedName("ata.p")
-	public class487 field12513;
+	public OpenGLRelated5 field12513;
 
 	@ObfuscatedName("ata.d")
-	public final class487[] field12514 = new class487[4];
+	public final OpenGLRelated5[] field12514 = new OpenGLRelated5[4];
 
 	public OpenGLFramebuffer(OpenGLRenderer arg0) {
 		super(arg0);
@@ -52,9 +52,9 @@ public class OpenGLFramebuffer extends GpuFramebuffer {
 	}
 
 	@ObfuscatedName("ata.b(ILdp;)V")
-	public void method15439(int arg0, class130 arg1) {
+	public void method15439(int arg0, GraphicsDeletable arg1) {
 		int var3 = 0x1 << arg0;
-		class487 var4 = (class487) arg1;
+		OpenGLRelated5 var4 = (OpenGLRelated5) arg1;
 		if (arg1 == null) {
 			this.field12511 &= ~var3;
 			this.field12514[arg0] = null;
@@ -81,8 +81,8 @@ public class OpenGLFramebuffer extends GpuFramebuffer {
 	}
 
 	@ObfuscatedName("ata.x(Ldw;)V")
-	public void method15441(class126 arg0) {
-		class487 var2 = (class487) arg0;
+	public void method15441(EffectInterface arg0) {
+		OpenGLRelated5 var2 = (OpenGLRelated5) arg0;
 		if (arg0 == null) {
 			this.field12511 &= 0xFFFFFFEF;
 			this.field12513 = null;
@@ -110,7 +110,7 @@ public class OpenGLFramebuffer extends GpuFramebuffer {
 
 	@ObfuscatedName("ata.as(I)V")
 	public void method19653(int arg0) {
-		class487 var2 = this.field12514[arg0];
+		OpenGLRelated5 var2 = this.field12514[arg0];
 		if (var2 == null) {
 			OpenGL.glFramebufferRenderbufferEXT(36160, arg0 + 36064, 36161, 0);
 		} else {

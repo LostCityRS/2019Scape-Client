@@ -571,7 +571,7 @@ public class DeveloperConsole {
 					Runtime var6 = Runtime.getRuntime();
 					int var7 = (int) ((var6.totalMemory() - var6.freeMemory()) / 1024L);
 					addline("" + var7);
-					class43.method7319();
+					SceneManager.method7319();
 					client.method10444();
 					for (int var8 = 0; var8 < 10; var8++) {
 						System.gc();

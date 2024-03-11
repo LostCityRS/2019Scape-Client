@@ -12858,7 +12858,7 @@ public final class ScriptRunner {
 		if (Statics.field9155.method4743() != LookatMode.field2790) {
 			throw new RuntimeException();
 		}
-		class1069 var2 = (class1069) Statics.field9155.method4797();
+		Lookat_Sub1 var2 = (Lookat_Sub1) Statics.field9155.method4797();
 		var2.method18776(var1);
 		client.field10902 = true;
 	}

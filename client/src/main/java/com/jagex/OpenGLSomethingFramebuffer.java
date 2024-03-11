@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
 @ObfuscatedName("ri")
-public class OpenGLSomethingFramebuffer implements class487 {
+public class OpenGLSomethingFramebuffer implements OpenGLRelated5 {
 
 	@ObfuscatedName("ri.e")
 	public final int field4972;

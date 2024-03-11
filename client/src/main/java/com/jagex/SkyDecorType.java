@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("iy")
-public class SkyDecorType implements ConfigType, class757 {
+public class SkyDecorType implements ConfigType, ConfigRelated {
 
 	@ObfuscatedName("iy.e")
 	public int field2780;

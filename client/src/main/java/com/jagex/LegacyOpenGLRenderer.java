@@ -21,10 +21,10 @@ public class LegacyOpenGLRenderer extends Renderer {
 	public int field9967;
 
 	@ObfuscatedName("afa.ce")
-	public final class94 field10026;
+	public final LegacyOpenGLRelated2 field10026;
 
 	@ObfuscatedName("afa.cu")
-	public class76 field10023;
+	public LegacyGlEffects field10023;
 
 	@ObfuscatedName("afa.ci")
 	public PostProcessing field9986;
@@ -39,7 +39,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	public LegacyColourRemappingFilter field9853;
 
 	@ObfuscatedName("afa.ca")
-	public class89 field9978 = new class89();
+	public LegacyRendererRelated field9978 = new LegacyRendererRelated();
 
 	@ObfuscatedName("afa.cx")
 	public Matrix4x4 field9866 = new Matrix4x4();
@@ -51,7 +51,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	public Matrix4x3 field9900 = new Matrix4x3();
 
 	@ObfuscatedName("afa.cf")
-	public class93 field9871;
+	public LegacyEffectRelated5 field9871;
 
 	@ObfuscatedName("afa.co")
 	public int field9872;
@@ -336,10 +336,10 @@ public class LegacyOpenGLRenderer extends Renderer {
 	public WaterFogData field9892;
 
 	@ObfuscatedName("afa.go")
-	public class98 field9966;
+	public LegacyOpenGLBinding field9966;
 
 	@ObfuscatedName("afa.gk")
-	public class79 field9852;
+	public LegacyInterfaceRelated field9852;
 
 	@ObfuscatedName("afa.gp")
 	public int field9968;
@@ -360,7 +360,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	public LegacyOpenGLTexture[] field9973;
 
 	@ObfuscatedName("afa.gx")
-	public class812 field9974;
+	public LegacyOpenGLRelated field9974;
 
 	@ObfuscatedName("afa.ge")
 	public LegacyOpenGLEnvironmentSampler field9887;
@@ -471,13 +471,13 @@ public class LegacyOpenGLRenderer extends Renderer {
 	public LegacyOpenGLFramebuffer field9877;
 
 	@ObfuscatedName("afa.ho")
-	public class83 field9918;
+	public LegacyRelated2 field9918;
 
 	@ObfuscatedName("afa.hj")
-	public class83 field10012;
+	public LegacyRelated2 field10012;
 
 	@ObfuscatedName("afa.hv")
-	public class79 field10013;
+	public LegacyInterfaceRelated field10013;
 
 	@ObfuscatedName("afa.hz")
 	public static final float[] field10014 = new float[4];
@@ -640,9 +640,9 @@ public class LegacyOpenGLRenderer extends Renderer {
 			}
 			ColourUtils.method10156(false, true);
 			this.field9875 = true;
-			this.field10026 = new class94(this, this.field1596);
+			this.field10026 = new LegacyOpenGLRelated2(this, this.field1596);
 			this.method15728();
-			this.field9871 = new class93(this);
+			this.field9871 = new LegacyEffectRelated5(this);
 			this.field9986 = new PostProcessing(this);
 			if (this.field9986.method1363()) {
 				this.field9864 = new LegacyColourGradingBloomFilter(this);
@@ -672,7 +672,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 				arg0.setLocation(var29 + 1, var30);
 				arg0.setLocation(var29, var30);
 			}
-			this.field10023 = new class76(this);
+			this.field10023 = new LegacyGlEffects(this);
 			this.method15814();
 			this.method2150();
 			if (this.field9986 != null) {
@@ -775,9 +775,9 @@ public class LegacyOpenGLRenderer extends Renderer {
 	@ObfuscatedName("afa.ra()V")
 	public void method15728() {
 		this.field9973 = new LegacyOpenGLTexture[this.field9982];
-		this.field9974 = new class812(this, 3553, TextureFormat.field1273, DataType.UNSIGNED_INT_8, 1, 1);
-		new class812(this, 3553, TextureFormat.field1273, DataType.UNSIGNED_INT_8, 1, 1);
-		new class812(this, 3553, TextureFormat.field1273, DataType.UNSIGNED_INT_8, 1, 1);
+		this.field9974 = new LegacyOpenGLRelated(this, 3553, TextureFormat.field1273, DataType.UNSIGNED_INT_8, 1, 1);
+		new LegacyOpenGLRelated(this, 3553, TextureFormat.field1273, DataType.UNSIGNED_INT_8, 1, 1);
+		new LegacyOpenGLRelated(this, 3553, TextureFormat.field1273, DataType.UNSIGNED_INT_8, 1, 1);
 		for (int var1 = 0; var1 < 8; var1++) {
 			this.field10008[var1] = new LegacyOpenGLModel(this);
 			this.field10009[var1] = new LegacyOpenGLModel(this);
@@ -1504,9 +1504,9 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.bs(IIIIIILch;II)V")
-	public void method2183(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, class103 arg6, int arg7, int arg8) {
-		class833 var10 = (class833) arg6;
-		class1113 var11 = var10.field9416;
+	public void method2183(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, GraphicsRelated arg6, int arg7, int arg8) {
+		LegacyGraphicRelated2 var10 = (LegacyGraphicRelated2) arg6;
+		LegacyGraphicRelated var11 = var10.field9416;
 		this.method15772();
 		this.method15777(var10.field9416);
 		this.method15791(arg5);
@@ -1530,12 +1530,12 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.cg(IIIIIILch;IIIII)V")
-	public void method2537(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, class103 arg6, int arg7, int arg8, int arg9, int arg10, int arg11) {
+	public void method2537(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, GraphicsRelated arg6, int arg7, int arg8, int arg9, int arg10, int arg11) {
 		if (arg0 == arg2 && arg1 == arg3) {
 			return;
 		}
-		class833 var13 = (class833) arg6;
-		class1113 var14 = var13.field9416;
+		LegacyGraphicRelated2 var13 = (LegacyGraphicRelated2) arg6;
+		LegacyGraphicRelated var14 = var13.field9416;
 		this.method15772();
 		this.method15777(var13.field9416);
 		this.method15791(arg5);
@@ -1765,8 +1765,8 @@ public class LegacyOpenGLRenderer extends Renderer {
 			var2.method19553(0.0F);
 		}
 		this.field10013 = this.method15767(20, var2.data, var2.pos, false);
-		this.field9918 = new class83(this.field10013, 5126, 3, 0);
-		this.field10012 = new class83(this.field10013, 5126, 2, 12);
+		this.field9918 = new LegacyRelated2(this.field10013, 5126, 3, 0);
+		this.field10012 = new LegacyRelated2(this.field10013, 5126, 2, 12);
 		this.field9978.method1323(this);
 	}
 
@@ -1794,14 +1794,14 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.cb(II[I[I)Lch;")
-	public class103 method2205(int arg0, int arg1, int[] arg2, int[] arg3) {
-		return class833.method15384(this, arg0, arg1, arg2, arg3);
+	public GraphicsRelated method2205(int arg0, int arg1, int[] arg2, int[] arg3) {
+		return LegacyGraphicRelated2.method15384(this, arg0, arg1, arg2, arg3);
 	}
 
 	@ObfuscatedName("afa.cs(ILch;II)V")
-	public void method2206(int arg0, class103 arg1, int arg2, int arg3) {
-		class833 var5 = (class833) arg1;
-		class1113 var6 = var5.field9416;
+	public void method2206(int arg0, GraphicsRelated arg1, int arg2, int arg3) {
+		LegacyGraphicRelated2 var5 = (LegacyGraphicRelated2) arg1;
+		LegacyGraphicRelated var6 = var5.field9416;
 		this.method15772();
 		this.method15777(var5.field9416);
 		this.method15791(1);
@@ -2550,37 +2550,37 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.ar(II)Ldw;")
-	public class126 method2121(int arg0, int arg1) {
-		return new class828(this, TextureFormat.field1268, DataType.UNSIGNED_INT_24, arg0, arg1);
+	public EffectInterface method2121(int arg0, int arg1) {
+		return new PostProcessingRelated(this, TextureFormat.field1268, DataType.UNSIGNED_INT_24, arg0, arg1);
 	}
 
 	@ObfuscatedName("afa.ap(III)Ldw;")
-	public class126 method2356(int arg0, int arg1, int arg2) {
-		return new class828(this, TextureFormat.field1268, DataType.UNSIGNED_INT_24, arg0, arg1, arg2);
+	public EffectInterface method2356(int arg0, int arg1, int arg2) {
+		return new PostProcessingRelated(this, TextureFormat.field1268, DataType.UNSIGNED_INT_24, arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("afa.au(IILck;Ldg;I)Ldp;")
-	public class130 method2146(int arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4) {
-		return new class828(this, arg2, arg3, arg0, arg1, arg4);
+	public GraphicsDeletable method2146(int arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4) {
+		return new PostProcessingRelated(this, arg2, arg3, arg0, arg1, arg4);
 	}
 
 	@ObfuscatedName("afa.sf(I[BIZ)Lcf;")
-	public final class98 method15766(int arg0, byte[] arg1, int arg2, boolean arg3) {
-		return (class98) (this.field9990 && (!arg3 || this.field9991) ? new class826(this, arg0, arg1, arg2, arg3) : new class827(this, arg0, arg1, arg2));
+	public final LegacyOpenGLBinding method15766(int arg0, byte[] arg1, int arg2, boolean arg3) {
+		return (LegacyOpenGLBinding) (this.field9990 && (!arg3 || this.field9991) ? new LegacyGLRelated7(this, arg0, arg1, arg2, arg3) : new LegacyFloorModelRelated2_Sub1(this, arg0, arg1, arg2));
 	}
 
 	@ObfuscatedName("afa.sy(I[BIZ)Lbv;")
-	public final class79 method15767(int arg0, byte[] arg1, int arg2, boolean arg3) {
-		return (class79) (this.field9990 && (!arg3 || this.field9991) ? new class825(this, arg0, arg1, arg2, arg3) : new class824(this, arg0, arg1, arg2));
+	public final LegacyInterfaceRelated method15767(int arg0, byte[] arg1, int arg2, boolean arg3) {
+		return (LegacyInterfaceRelated) (this.field9990 && (!arg3 || this.field9991) ? new LegacyFloorRelated6(this, arg0, arg1, arg2, arg3) : new LegacyFloorRelated5(this, arg0, arg1, arg2));
 	}
 
 	@ObfuscatedName("afa.sa(ILjaclib/memory/Buffer;IZ)Lbv;")
-	public final class79 method15804(int arg0, Buffer arg1, int arg2, boolean arg3) {
-		return (class79) (this.field9990 && (!arg3 || this.field9991) ? new class825(this, arg0, arg1, arg2, arg3) : new class824(this, arg0, arg1));
+	public final LegacyInterfaceRelated method15804(int arg0, Buffer arg1, int arg2, boolean arg3) {
+		return (LegacyInterfaceRelated) (this.field9990 && (!arg3 || this.field9991) ? new LegacyFloorRelated6(this, arg0, arg1, arg2, arg3) : new LegacyFloorRelated5(this, arg0, arg1));
 	}
 
 	@ObfuscatedName("afa.sb(Lbv;)V")
-	public final void method15842(class79 arg0) {
+	public final void method15842(LegacyInterfaceRelated arg0) {
 		if (this.field9852 != arg0) {
 			if (this.field9990) {
 				OpenGL.glBindBufferARB(34962, arg0.method1294());
@@ -2590,7 +2590,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.sj(Lcf;)V")
-	public final void method15769(class98 arg0) {
+	public final void method15769(LegacyOpenGLBinding arg0) {
 		if (this.field9966 != arg0) {
 			if (this.field9990) {
 				OpenGL.glBindBufferARB(34963, arg0.method1416());
@@ -2600,7 +2600,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.so(Lbp;Lbp;Lbp;Lbp;)V")
-	public final void method15809(class83 arg0, class83 arg1, class83 arg2, class83 arg3) {
+	public final void method15809(LegacyRelated2 arg0, LegacyRelated2 arg1, LegacyRelated2 arg2, LegacyRelated2 arg3) {
 		if (arg0 == null) {
 			OpenGL.glDisableClientState(32884);
 		} else {
@@ -2637,7 +2637,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.sg(Lcf;III)V")
-	public final void method15921(class98 arg0, int arg1, int arg2, int arg3) {
+	public final void method15921(LegacyOpenGLBinding arg0, int arg1, int arg2, int arg3) {
 		this.method15769(arg0);
 		OpenGL.glDrawElements(arg1, arg3, 5123, arg0.getAddress() + (long) (arg2 * 2));
 	}
@@ -2718,7 +2718,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	@ObfuscatedName("afa.ti(IZZ)V")
 	public final void method15795(int arg0, boolean arg1, boolean arg2) {
 		if (this.field9968 != arg0 || this.field9963 != this.field9840) {
-			class812 var4 = null;
+			LegacyOpenGLRelated var4 = null;
 			byte var5 = 0;
 			byte var6 = 0;
 			int var7 = 0;

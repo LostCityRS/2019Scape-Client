@@ -39,11 +39,11 @@ public class AudioMixer {
 	}
 
 	@ObfuscatedName("nq.k(Lpy;ILwj;ZLeb;I)Lwr;")
-	public static class614 method6064(Js5 arg0, int arg1, class612 arg2, boolean arg3, WeightedCache arg4) {
+	public static AudioApiRelated2 method6064(Js5 arg0, int arg1, AudioMixerRelated arg2, boolean arg3, WeightedCache arg4) {
 		if (field8056 == null) {
 			return null;
 		} else {
-			return (class614) (arg3 ? new AudioStream(arg0, arg1, field8056, arg2) : new AudioStream2(arg0, arg1, field8056, arg2, arg4));
+			return (AudioApiRelated2) (arg3 ? new AudioStream(arg0, arg1, field8056, arg2) : new AudioStream2(arg0, arg1, field8056, arg2, arg4));
 		}
 	}
 

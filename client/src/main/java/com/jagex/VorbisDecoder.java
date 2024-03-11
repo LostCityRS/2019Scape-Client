@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
 @ObfuscatedName("hk")
-public class VorbisDecoder implements class365 {
+public class VorbisDecoder implements VorbisInterface {
 
 	@ObfuscatedName("hk.e")
 	public int field2076;
@@ -26,7 +26,7 @@ public class VorbisDecoder implements class365 {
 	public int field2048;
 
 	@ObfuscatedName("hk.w")
-	public class371 field2049;
+	public VorbisInterface2 field2049;
 
 	@ObfuscatedName("hk.l")
 	public List field2050 = new ArrayList();
@@ -259,7 +259,7 @@ public class VorbisDecoder implements class365 {
 	}
 
 	@ObfuscatedName("hk.f(Lmm;)V")
-	public void method3770(class371 arg0) {
+	public void method3770(VorbisInterface2 arg0) {
 		this.field2049 = arg0;
 	}
 
@@ -661,7 +661,7 @@ public class VorbisDecoder implements class365 {
 	public void method3757() {
 		int var1 = this.method3853(8) + 1;
 		Iterator var2 = field2057.iterator();
-		class217 var3;
+		VorbisDecoderRelated var3;
 		do {
 			if (!var2.hasNext()) {
 				this.field2060 = new VorbisCodebook[var1];
@@ -671,11 +671,11 @@ public class VorbisDecoder implements class365 {
 					}
 					this.field2060[var5].method3883(this);
 				}
-				class217 var6 = new class217(this.field2045, this.field2076, this.field2046, this.field2048, this.field2055, this.field2060);
+				VorbisDecoderRelated var6 = new VorbisDecoderRelated(this.field2045, this.field2076, this.field2046, this.field2048, this.field2055, this.field2060);
 				field2057.add(var6);
 				return;
 			}
-			var3 = (class217) var2.next();
+			var3 = (VorbisDecoderRelated) var2.next();
 		} while (var3.field2040 != 0 || var3.field2043 != 0 || var3.field2038.length != var1 || this.field2045 != var3.field2039 || this.field2076 != var3.field2041 || this.field2055 != var3.field2042);
 		this.field2060 = var3.field2038;
 		for (int var4 = 0; var4 < this.field2060.length; var4++) {

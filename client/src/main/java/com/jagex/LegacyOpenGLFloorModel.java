@@ -34,7 +34,7 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 	public short[][] field9460;
 
 	@ObfuscatedName("aek.s")
-	public class970[][][] field9461;
+	public LegacyFloorModelRelated[][][] field9461;
 
 	@ObfuscatedName("aek.y")
 	public int[][][] field9462;
@@ -58,7 +58,7 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 	public byte[][] field9468;
 
 	@ObfuscatedName("aek.i")
-	public class90 field9465;
+	public LegacyFloorModelRelated3 field9465;
 
 	@ObfuscatedName("aek.j")
 	public IterableQueue field9470 = new IterableQueue();
@@ -67,19 +67,19 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 	public Node[] field9471;
 
 	@ObfuscatedName("aek.ae")
-	public class79 field9472;
+	public LegacyInterfaceRelated field9472;
 
 	@ObfuscatedName("aek.ag")
-	public class83 field9456;
+	public LegacyRelated2 field9456;
 
 	@ObfuscatedName("aek.ah")
-	public class83 field9474;
+	public LegacyRelated2 field9474;
 
 	@ObfuscatedName("aek.al")
-	public class83 field9480;
+	public LegacyRelated2 field9480;
 
 	@ObfuscatedName("aek.ac")
-	public class83 field9476;
+	public LegacyRelated2 field9476;
 
 	@ObfuscatedName("aek.ai")
 	public int field9477;
@@ -113,7 +113,7 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 		this.field9481 = arg1;
 		this.field9457 = arg2;
 		this.field9473 = new int[arg3][arg4][];
-		this.field9461 = new class970[arg3][arg4][];
+		this.field9461 = new LegacyFloorModelRelated[arg3][arg4][];
 		this.field9464 = new int[arg3][arg4][];
 		this.field9451 = new int[arg3][arg4][];
 		this.field9462 = new int[arg3][arg4][];
@@ -136,7 +136,7 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 		}
 		this.field9483 = new IterableMap(128);
 		if ((this.field9457 & 0x10) != 0) {
-			this.field9465 = new class90(this.field9453, this);
+			this.field9465 = new LegacyFloorModelRelated3(this.field9453, this);
 		}
 	}
 
@@ -168,7 +168,7 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 		if (this.field9473 != null) {
 			this.field9473[arg0][arg1] = arg3;
 		}
-		class970[] var14 = this.field9461[arg0][arg1] = new class970[arg6.length];
+		LegacyFloorModelRelated[] var14 = this.field9461[arg0][arg1] = new LegacyFloorModelRelated[arg6.length];
 		for (int var15 = 0; var15 < arg6.length; var15++) {
 			int var16 = arg8[var15];
 			int var17 = arg9[var15];
@@ -179,16 +179,16 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 			long var18 = (long) arg10.field1577 << 48 | (long) arg10.field1573 << 42 | (long) arg10.field1575 << 28 | (long) (var17 << 14) | (long) var16;
 			Node var20;
 			for (var20 = this.field9483.method14495(var18); var20 != null; var20 = this.field9483.method14496()) {
-				class970 var21 = (class970) var20;
+				LegacyFloorModelRelated var21 = (LegacyFloorModelRelated) var20;
 				if (var21.field11296 == var16 && (float) var17 == var21.field11294 && var21.field11295.method2096(arg10)) {
 					break;
 				}
 			}
 			if (var20 == null) {
-				var14[var15] = new class970(this, var16, var17, arg10);
+				var14[var15] = new LegacyFloorModelRelated(this, var16, var17, arg10);
 				this.field9483.method14501(var14[var15], var18);
 			} else {
-				var14[var15] = (class970) var20;
+				var14[var15] = (LegacyFloorModelRelated) var20;
 			}
 		}
 		if (arg11) {
@@ -277,7 +277,7 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 			this.field9471 = new Node[this.field9483.method14498()];
 			this.field9483.method14497(this.field9471);
 			for (int var4 = 0; var4 < this.field9471.length; var4++) {
-				((class970) this.field9471[var4]).method17578(this.field9477);
+				((LegacyFloorModelRelated) this.field9471[var4]).method17578(this.field9477);
 			}
 			int var5 = 24;
 			if (this.field9467 != null) {
@@ -288,17 +288,17 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 			}
 			NativeHeapBuffer var6 = this.field9453.field9876.method92(this.field9477 * var5, false);
 			Stream var7 = new Stream(var6);
-			class970[] var8 = new class970[this.field9477];
+			LegacyFloorModelRelated[] var8 = new LegacyFloorModelRelated[this.field9477];
 			int var9 = IntMath.method3082(this.field9477 / 4);
 			if (var9 < 1) {
 				var9 = 1;
 			}
 			IterableMap var10 = new IterableMap(var9);
-			class970[] var11 = new class970[this.field9478];
+			LegacyFloorModelRelated[] var11 = new LegacyFloorModelRelated[this.field9478];
 			for (int var12 = 0; var12 < this.field1235; var12++) {
 				for (int var13 = 0; var13 < this.field1234; var13++) {
 					if (this.field9462[var12][var13] != null) {
-						class970[] var14 = this.field9461[var12][var13];
+						LegacyFloorModelRelated[] var14 = this.field9461[var12][var13];
 						int[] var15 = this.field9464[var12][var13];
 						int[] var16 = this.field9451[var12][var13];
 						int[] var17 = this.field9463[var12][var13];
@@ -326,7 +326,7 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 						int var36 = var1[var12 + 1][var13] & 0xFF;
 						int var37 = 0;
 						label346: for (int var38 = 0; var38 < var18.length; var38++) {
-							class970 var39 = var14[var38];
+							LegacyFloorModelRelated var39 = var14[var38];
 							for (int var40 = 0; var40 < var37; var40++) {
 								if (var11[var40] == var39) {
 									continue label346;
@@ -505,7 +505,7 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 				}
 			}
 			for (int var86 = 0; var86 < this.field9466; var86++) {
-				class970 var87 = var8[var86];
+				LegacyFloorModelRelated var87 = var8[var86];
 				if (var87 != null) {
 					var87.method17581(var86);
 				}
@@ -520,10 +520,10 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 							int var93 = var90[var92++] & 0xFFFF;
 							int var94 = var90[var92++] & 0xFFFF;
 							int var95 = var90[var92++] & 0xFFFF;
-							class970 var96 = var8[var93];
-							class970 var97 = var8[var94];
-							class970 var98 = var8[var95];
-							class970 var99 = null;
+							LegacyFloorModelRelated var96 = var8[var93];
+							LegacyFloorModelRelated var97 = var8[var94];
+							LegacyFloorModelRelated var98 = var8[var95];
+							LegacyFloorModelRelated var99 = null;
 							if (var96 != null) {
 								var96.method17580(var88, var89, var91);
 								var99 = var96;
@@ -559,25 +559,25 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 			}
 			var7.method60();
 			this.field9472 = this.field9453.method15804(var5, var6, var7.method55(), false);
-			if (this.field9472 instanceof class825) {
+			if (this.field9472 instanceof LegacyFloorRelated6) {
 				var6.method81();
 			}
-			this.field9456 = new class83(this.field9472, 5126, 3, 0);
-			this.field9474 = new class83(this.field9472, 5121, 4, 12);
+			this.field9456 = new LegacyRelated2(this.field9472, 5126, 3, 0);
+			this.field9474 = new LegacyRelated2(this.field9472, 5121, 4, 12);
 			byte var100;
 			if (this.field9467 == null) {
-				this.field9476 = new class83(this.field9472, 5126, 2, 16);
+				this.field9476 = new LegacyRelated2(this.field9472, 5126, 2, 16);
 				var100 = 24;
 			} else {
-				this.field9476 = new class83(this.field9472, 5126, 3, 16);
+				this.field9476 = new LegacyRelated2(this.field9472, 5126, 3, 16);
 				var100 = 28;
 			}
 			if ((this.field9457 & 0x7) != 0) {
-				this.field9480 = new class83(this.field9472, 5126, 3, var100);
+				this.field9480 = new LegacyRelated2(this.field9472, 5126, 3, var100);
 			}
 			long[] var101 = new long[this.field9471.length];
 			for (int var102 = 0; var102 < this.field9471.length; var102++) {
-				class970 var103 = (class970) this.field9471[var102];
+				LegacyFloorModelRelated var103 = (LegacyFloorModelRelated) this.field9471[var102];
 				var101[var102] = var103.field6760;
 				var103.method17597(this.field9466);
 			}
@@ -653,7 +653,7 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 		this.field9453.method15773();
 		this.field9453.method15764((this.field9457 & 0x7) != 0);
 		for (int var20 = 0; var20 < this.field9471.length; var20++) {
-			((class970) this.field9471[var20]).method17583(var16, var15);
+			((LegacyFloorModelRelated) this.field9471[var20]).method17583(var16, var15);
 		}
 		if (!this.field9470.method14164()) {
 			int var21 = this.field9453.field9955;
@@ -668,7 +668,7 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 			this.field9453.method15780(0, 34166, 770);
 			this.field9453.method15781(0, 34167, 770);
 			for (Node var23 = this.field9470.method14191(); var23 != null; var23 = this.field9470.method14161()) {
-				class969 var24 = (class969) var23;
+				LegacyFloorModelRelated5 var24 = (LegacyFloorModelRelated5) var23;
 				var24.method17572(arg0, arg1, arg2, arg3);
 			}
 			this.field9453.method15780(0, 5890, 768);
@@ -784,7 +784,7 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 			}
 		}
 		if (var10 > 0) {
-			class827 var22 = new class827(this.field9453, 5123, var11.data, var11.pos);
+			LegacyFloorModelRelated2_Sub1 var22 = new LegacyFloorModelRelated2_Sub1(this.field9453, 5123, var11.data, var11.pos);
 			this.field9453.method15921(var22, 4, 0, var10);
 		}
 	}
@@ -868,6 +868,6 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 
 	@ObfuscatedName("aek.o(Lakf;[I)V")
 	public void method1549(Light arg0, int[] arg1) {
-		this.field9470.method14153(new class969(this.field9453, this, arg0, arg1));
+		this.field9470.method14153(new LegacyFloorModelRelated5(this.field9453, this, arg0, arg1));
 	}
 }

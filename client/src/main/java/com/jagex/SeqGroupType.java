@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("fm")
-public class SeqGroupType implements ConfigType, class757 {
+public class SeqGroupType implements ConfigType, ConfigRelated {
 
 	@ObfuscatedName("fm.e")
 	public boolean[] field1793;

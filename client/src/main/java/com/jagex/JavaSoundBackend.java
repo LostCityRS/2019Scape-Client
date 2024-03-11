@@ -39,17 +39,17 @@ public class JavaSoundBackend extends SoundBackend {
 	public JavaSoundBackend(SoundBackendConfig arg0) {
 		java.util.Iterator var2 = arg0.field8053.keySet().iterator();
 		while (var2.hasNext()) {
-			class473 var3 = (class473) var2.next();
-			this.field10688.put(var3, new class480[(Integer) arg0.field8053.get(var3)]);
+			SoundRelatedType2 var3 = (SoundRelatedType2) var2.next();
+			this.field10688.put(var3, new SoundRelated2[(Integer) arg0.field8053.get(var3)]);
 		}
 		java.util.Iterator var4 = this.field10688.keySet().iterator();
 		while (var4.hasNext()) {
-			class473 var5 = (class473) var4.next();
-			class480[] var6 = (class480[]) this.field10688.get(var5);
+			SoundRelatedType2 var5 = (SoundRelatedType2) var4.next();
+			SoundRelated2[] var6 = (SoundRelated2[]) this.field10688.get(var5);
 			for (int var7 = 0; var7 < var6.length; var7++) {
 				VorbisDecoder var8 = new VorbisDecoder(2.0F);
 				var8.method3774(0, AudioFormat.field3441, AudioEndianness.field3439, 2);
-				var6[var7] = new class480(var5, 8192, 3, var8, this);
+				var6[var7] = new SoundRelated2(var5, 8192, 3, var8, this);
 			}
 		}
 		PcmPlayer var9 = new PcmPlayer(this, 44100.0F, 32768);
@@ -71,15 +71,15 @@ public class JavaSoundBackend extends SoundBackend {
 		}
 		java.util.Iterator var1 = this.field10688.keySet().iterator();
 		while (true) {
-			class480[] var3;
+			SoundRelated2[] var3;
 			byte var6;
 			int var8;
 			do {
 				if (!var1.hasNext()) {
 					return;
 				}
-				class473 var2 = (class473) var1.next();
-				var3 = (class480[]) this.field10688.get(var2);
+				SoundRelatedType2 var2 = (SoundRelatedType2) var1.next();
+				var3 = (SoundRelated2[]) this.field10688.get(var2);
 				if (!var2.field4856) {
 					boolean var4 = false;
 					for (int var5 = 0; var5 < var3.length; var5++) {
@@ -95,10 +95,10 @@ public class JavaSoundBackend extends SoundBackend {
 				var8 = var3.length - 1;
 				while (!var7) {
 					float var9 = var3[var8].method7531();
-					class474 var10 = var3[var8].method7550();
+					SoundRelatedType1 var10 = var3[var8].method7550();
 					if (var9 >= 0.0F) {
 						var7 = true;
-					} else if (class474.field4863 == var10 || class474.field4861 == var10 || class474.field4862 == var10) {
+					} else if (SoundRelatedType1.field4863 == var10 || SoundRelatedType1.field4861 == var10 || SoundRelatedType1.field4862 == var10) {
 						var3[var8].method7489();
 					}
 					var8--;
@@ -108,8 +108,8 @@ public class JavaSoundBackend extends SoundBackend {
 				}
 			} while (var8 < var3.length - var6);
 			while (var8 >= var3.length - var6) {
-				class474 var11 = var3[var8].method7550();
-				if (class474.field4863 == var11) {
+				SoundRelatedType1 var11 = var3[var8].method7550();
+				if (SoundRelatedType1.field4863 == var11) {
 					var3[var8].method7489();
 				}
 				var8--;
@@ -189,17 +189,17 @@ public class JavaSoundBackend extends SoundBackend {
 	}
 
 	@ObfuscatedName("aiz.w(Lqk;B)Lrq;")
-	public class480 method5865(class473 arg0) {
+	public SoundRelated2 method5865(SoundRelatedType2 arg0) {
 		java.util.HashMap var2 = this.field10688;
 		synchronized (this.field10688) {
-			class480[] var3 = (class480[]) this.field10688.get(arg0);
+			SoundRelated2[] var3 = (SoundRelated2[]) this.field10688.get(arg0);
 			if (var3 == null) {
 				return null;
 			}
 			for (int var4 = 0; var4 < var3.length; var4++) {
-				class480 var5 = var3[var4];
-				class474 var6 = var5.method7550();
-				if (class474.field4859 == var6) {
+				SoundRelated2 var5 = var3[var4];
+				SoundRelatedType1 var6 = var5.method7550();
+				if (SoundRelatedType1.field4859 == var6) {
 					var5.method7592();
 					return var5;
 				}
@@ -224,10 +224,10 @@ public class JavaSoundBackend extends SoundBackend {
 		synchronized (var1) {
 			java.util.Iterator var3 = var1.keySet().iterator();
 			while (var3.hasNext()) {
-				class473 var4 = (class473) var3.next();
-				class480[] var5 = (class480[]) var1.get(var4);
+				SoundRelatedType2 var4 = (SoundRelatedType2) var3.next();
+				SoundRelated2[] var5 = (SoundRelated2[]) var1.get(var4);
 				for (int var6 = 0; var6 < var5.length; var6++) {
-					if (var5[var6].method7550() != class474.field4859) {
+					if (var5[var6].method7550() != SoundRelatedType1.field4859) {
 						var5[var6].method7489();
 						var5[var6].method7484();
 					}
@@ -240,10 +240,10 @@ public class JavaSoundBackend extends SoundBackend {
 			synchronized (var1) {
 				java.util.Iterator var10 = var1.keySet().iterator();
 				while (var10.hasNext()) {
-					class473 var11 = (class473) var10.next();
-					class480[] var12 = (class480[]) var1.get(var11);
+					SoundRelatedType2 var11 = (SoundRelatedType2) var10.next();
+					SoundRelated2[] var12 = (SoundRelated2[]) var1.get(var11);
 					for (int var13 = 0; var13 < var12.length; var13++) {
-						if (var12[var13].method7550() != class474.field4859) {
+						if (var12[var13].method7550() != SoundRelatedType1.field4859) {
 							var12[var13].method7601();
 							var8 = false;
 						}

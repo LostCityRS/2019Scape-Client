@@ -69,7 +69,7 @@ public class LegacyOpenGLModel extends Model {
 	public byte[] field9690;
 
 	@ObfuscatedName("afk.ai")
-	public class95 field9684;
+	public LegacyModelRelated1 field9684;
 
 	@ObfuscatedName("afk.aw")
 	public float[] field9647;
@@ -108,25 +108,25 @@ public class LegacyOpenGLModel extends Model {
 	public short[] field9662;
 
 	@ObfuscatedName("afk.aj")
-	public class83 field9659;
+	public LegacyRelated2 field9659;
 
 	@ObfuscatedName("afk.ay")
-	public class83 field9665;
+	public LegacyRelated2 field9665;
 
 	@ObfuscatedName("afk.ab")
-	public class83 field9673;
+	public LegacyRelated2 field9673;
 
 	@ObfuscatedName("afk.az")
-	public class83 field9664;
+	public LegacyRelated2 field9664;
 
 	@ObfuscatedName("afk.aa")
-	public class82 field9663;
+	public LegacyModelBindingRelated field9663;
 
 	@ObfuscatedName("afk.af")
-	public class98 field9654;
+	public LegacyOpenGLBinding field9654;
 
 	@ObfuscatedName("afk.ak")
-	public class79 field9655;
+	public LegacyInterfaceRelated field9655;
 
 	@ObfuscatedName("afk.an")
 	public boolean field9666 = true;
@@ -183,10 +183,10 @@ public class LegacyOpenGLModel extends Model {
 	public int field9660;
 
 	@ObfuscatedName("afk.bo")
-	public class96[] field9656;
+	public LegacyModelRelated5[] field9656;
 
 	@ObfuscatedName("afk.bz")
-	public class80[] field9639;
+	public LegacyModelRelated[] field9639;
 
 	@ObfuscatedName("afk.bv")
 	public int[][] field9686;
@@ -205,11 +205,11 @@ public class LegacyOpenGLModel extends Model {
 
 	public LegacyOpenGLModel(LegacyOpenGLRenderer arg0) {
 		this.field9626 = arg0;
-		this.field9659 = new class83(null, 5126, 3, 0);
-		this.field9664 = new class83(null, 5126, 2, 0);
-		this.field9673 = new class83(null, 5126, 3, 0);
-		this.field9665 = new class83(null, 5121, 4, 0);
-		this.field9663 = new class82();
+		this.field9659 = new LegacyRelated2(null, 5126, 3, 0);
+		this.field9664 = new LegacyRelated2(null, 5126, 2, 0);
+		this.field9673 = new LegacyRelated2(null, 5126, 3, 0);
+		this.field9665 = new LegacyRelated2(null, 5121, 4, 0);
+		this.field9663 = new LegacyModelBindingRelated();
 	}
 
 	public LegacyOpenGLModel(LegacyOpenGLRenderer arg0, ModelUnlit arg1, int arg2, int arg3, int arg4, int arg5) {
@@ -217,19 +217,19 @@ public class LegacyOpenGLModel extends Model {
 		this.field9627 = arg2;
 		this.field9628 = arg5;
 		if (LegacyModelFlagsRelated.method1178(arg2, arg5)) {
-			this.field9659 = new class83(null, 5126, 3, 0);
+			this.field9659 = new LegacyRelated2(null, 5126, 3, 0);
 		}
 		if (LegacyModelFlagsRelated.method1191(arg2, arg5)) {
-			this.field9664 = new class83(null, 5126, 2, 0);
+			this.field9664 = new LegacyRelated2(null, 5126, 2, 0);
 		}
 		if (LegacyModelFlagsRelated.method1146(arg2, arg5)) {
-			this.field9673 = new class83(null, 5126, 3, 0);
+			this.field9673 = new LegacyRelated2(null, 5126, 3, 0);
 		}
 		if (LegacyModelFlagsRelated.method1123(arg2, arg5)) {
-			this.field9665 = new class83(null, 5121, 4, 0);
+			this.field9665 = new LegacyRelated2(null, 5121, 4, 0);
 		}
 		if (LegacyModelFlagsRelated.method1139(arg2, arg5)) {
-			this.field9663 = new class82();
+			this.field9663 = new LegacyModelBindingRelated();
 		}
 		MaterialList var7 = arg0.field1597;
 		BillboardTypeList var8 = arg0.field1598;
@@ -346,8 +346,8 @@ public class LegacyOpenGLModel extends Model {
 		this.field9641 = arg1.field1416;
 		if (arg1.field1412 != null) {
 			this.field9660 = arg1.field1412.length;
-			this.field9656 = new class96[this.field9660];
-			this.field9639 = new class80[this.field9660];
+			this.field9656 = new LegacyModelRelated5[this.field9660];
+			this.field9639 = new LegacyModelRelated[this.field9660];
 			for (int var37 = 0; var37 < this.field9660; var37++) {
 				ModelBillboard var38 = arg1.field1412[var37];
 				BillboardType var39 = var8.method6015(var38.field1653);
@@ -363,8 +363,8 @@ public class LegacyOpenGLModel extends Model {
 				}
 				int var42 = Statics.field8151[arg1.field1395[var38.field1654] & 0xFFFF] & 0xFFFFFF;
 				int var43 = var42 | 255 - (arg1.field1393 == null ? 0 : arg1.field1393[var38.field1654]) << 24;
-				this.field9656[var37] = new class96(var40, arg1.field1415[var38.field1654], arg1.field1386[var38.field1654], arg1.field1400[var38.field1654], var39.field3451, var39.field3452, var39.field3455, var39.field3450, var39.field3453, var39.field3456, var39.field3449, var38.field1656);
-				this.field9639[var37] = new class80(var43);
+				this.field9656[var37] = new LegacyModelRelated5(var40, arg1.field1415[var38.field1654], arg1.field1386[var38.field1654], arg1.field1400[var38.field1654], var39.field3451, var39.field3452, var39.field3455, var39.field3450, var39.field3453, var39.field3456, var39.field3449, var38.field1656);
+				this.field9639[var37] = new LegacyModelRelated(var43);
 			}
 		}
 		int var44 = this.field9670;
@@ -395,7 +395,7 @@ public class LegacyOpenGLModel extends Model {
 			var36[var46] = new LegacyVertexNormal();
 		}
 		this.field9679[arg1.field1374] = var45;
-		class142 var48 = this.method1687(arg1, var9, this.field9670);
+		ModelRelated1 var48 = this.method1687(arg1, var9, this.field9670);
 		TriangleNormal[] var49 = new TriangleNormal[arg1.field1384];
 		for (int var50 = 0; var50 < arg1.field1384; var50++) {
 			short var51 = arg1.field1415[var50];
@@ -979,9 +979,9 @@ public class LegacyOpenGLModel extends Model {
 				}
 			} else {
 				if (arg1.field9684 == null) {
-					arg1.field9684 = new class95();
+					arg1.field9684 = new LegacyModelRelated1();
 				}
-				class95 var14 = arg0.field9684 = arg1.field9684;
+				LegacyModelRelated1 var14 = arg0.field9684 = arg1.field9684;
 				if (var14.field1191 == null || var14.field1191.length < this.field9658) {
 					int var15 = this.field9658;
 					var14.field1191 = new short[var15];
@@ -1097,7 +1097,7 @@ public class LegacyOpenGLModel extends Model {
 			arg0.field9639 = this.field9639;
 		} else if (arg1.field9639 == null || arg1.field9639.length < this.field9660) {
 			int var25 = this.field9660;
-			arg0.field9639 = arg1.field9639 = new class80[var25];
+			arg0.field9639 = arg1.field9639 = new LegacyModelRelated[var25];
 			for (int var26 = 0; var26 < this.field9660; var26++) {
 				arg0.field9639[var26] = this.field9639[var26].method1299();
 			}
@@ -1699,14 +1699,14 @@ public class LegacyOpenGLModel extends Model {
 									}
 									if (var40 != -1) {
 										if (var15 == null) {
-											this.field9684 = new class95();
+											this.field9684 = new LegacyModelRelated1();
 											var15 = this.field9684.field1191 = Statics.method13987(this.field9681);
 											var16 = this.field9684.field1189 = Statics.method13987(this.field9682);
 											var17 = this.field9684.field1188 = Statics.method13987(this.field9644);
 											var18 = this.field9684.field1190 = Statics.method4405(this.field9690);
 										}
 										if (var19 == null) {
-											class95 var44 = var6.field9684 = new class95();
+											LegacyModelRelated1 var44 = var6.field9684 = new LegacyModelRelated1();
 											var19 = var44.field1191 = Statics.method13987(var11);
 											var20 = var44.field1189 = Statics.method13987(var12);
 											var21 = var44.field1188 = Statics.method13987(var13);
@@ -1810,8 +1810,8 @@ public class LegacyOpenGLModel extends Model {
 		}
 		if (this.field9656 != null) {
 			for (int var4 = 0; var4 < this.field9660; var4++) {
-				class96 var5 = this.field9656[var4];
-				class80 var6 = this.field9639[var4];
+				LegacyModelRelated5 var5 = this.field9656[var4];
+				LegacyModelRelated var6 = this.field9639[var4];
 				var6.field1054 = var6.field1054 & 0xFF000000 | Statics.field8151[this.field9651[var5.field1192] & 0xFFFF] & 0xFFFFFF;
 			}
 		}
@@ -1867,8 +1867,8 @@ public class LegacyOpenGLModel extends Model {
 		}
 		if (this.field9656 != null) {
 			for (int var11 = 0; var11 < this.field9660; var11++) {
-				class96 var12 = this.field9656[var11];
-				class80 var13 = this.field9639[var11];
+				LegacyModelRelated5 var12 = this.field9656[var11];
+				LegacyModelRelated var13 = this.field9639[var11];
 				var13.field1054 = var13.field1054 & 0xFF000000 | Statics.field8151[this.field9651[var12.field1192] & 0xFFFF] & 0xFFFFFF;
 			}
 		}
@@ -1897,8 +1897,8 @@ public class LegacyOpenGLModel extends Model {
 		}
 		if (this.field9656 != null) {
 			for (int var10 = 0; var10 < this.field9660; var10++) {
-				class96 var11 = this.field9656[var10];
-				class80 var12 = this.field9639[var10];
+				LegacyModelRelated5 var11 = this.field9656[var10];
+				LegacyModelRelated var12 = this.field9639[var10];
 				var12.field1054 = var12.field1054 & 0xFF000000 | Statics.field8151[this.field9651[var11.field1192] & 0xFFFF] & 0xFFFFFF;
 			}
 		}
@@ -2319,8 +2319,8 @@ public class LegacyOpenGLModel extends Model {
 				}
 				if (this.field9656 != null) {
 					for (int var183 = 0; var183 < this.field9660; var183++) {
-						class96 var184 = this.field9656[var183];
-						class80 var185 = this.field9639[var183];
+						LegacyModelRelated5 var184 = this.field9656[var183];
+						LegacyModelRelated var185 = this.field9639[var183];
 						var185.field1054 = var185.field1054 & 0xFFFFFF | 255 - (this.field9683[var184.field1192] & 0xFF) << 24;
 					}
 				}
@@ -2361,8 +2361,8 @@ public class LegacyOpenGLModel extends Model {
 				}
 				if (this.field9656 != null) {
 					for (int var198 = 0; var198 < this.field9660; var198++) {
-						class96 var199 = this.field9656[var198];
-						class80 var200 = this.field9639[var198];
+						LegacyModelRelated5 var199 = this.field9656[var198];
+						LegacyModelRelated var200 = this.field9639[var198];
 						var200.field1054 = var200.field1054 & 0xFF000000 | Statics.field8151[this.field9651[var199.field1192] & 0xFFFF] & 0xFFFFFF;
 					}
 				}
@@ -2374,7 +2374,7 @@ public class LegacyOpenGLModel extends Model {
 					if (var202 < this.field9686.length) {
 						int[] var203 = this.field9686[var202];
 						for (int var204 = 0; var204 < var203.length; var204++) {
-							class80 var205 = this.field9639[var203[var204]];
+							LegacyModelRelated var205 = this.field9639[var203[var204]];
 							var205.field1049 += arg2;
 							var205.field1052 += arg3;
 						}
@@ -2388,7 +2388,7 @@ public class LegacyOpenGLModel extends Model {
 					if (var207 < this.field9686.length) {
 						int[] var208 = this.field9686[var207];
 						for (int var209 = 0; var209 < var208.length; var209++) {
-							class80 var210 = this.field9639[var208[var209]];
+							LegacyModelRelated var210 = this.field9639[var208[var209]];
 							var210.field1050 = var210.field1050 * arg2 >> 7;
 							var210.field1051 = var210.field1051 * arg3 >> 7;
 						}
@@ -2401,7 +2401,7 @@ public class LegacyOpenGLModel extends Model {
 				if (var212 < this.field9686.length) {
 					int[] var213 = this.field9686[var212];
 					for (int var214 = 0; var214 < var213.length; var214++) {
-						class80 var215 = this.field9639[var213[var214]];
+						LegacyModelRelated var215 = this.field9639[var213[var214]];
 						var215.field1053 = var215.field1053 + arg2 & 0x3FFF;
 					}
 				}
@@ -2494,8 +2494,8 @@ public class LegacyOpenGLModel extends Model {
 			}
 			if (this.field9656 != null) {
 				for (int var21 = 0; var21 < this.field9660; var21++) {
-					class96 var22 = this.field9656[var21];
-					class80 var23 = this.field9639[var21];
+					LegacyModelRelated5 var22 = this.field9656[var21];
+					LegacyModelRelated var23 = this.field9639[var21];
 					var23.field1054 = var23.field1054 & 0xFFFFFF | 255 - (this.field9683[var22.field1192] & 0xFF) << 24;
 				}
 			}
@@ -2525,26 +2525,26 @@ public class LegacyOpenGLModel extends Model {
 			}
 			if (this.field9656 != null) {
 				for (int var32 = 0; var32 < this.field9660; var32++) {
-					class96 var33 = this.field9656[var32];
-					class80 var34 = this.field9639[var32];
+					LegacyModelRelated5 var33 = this.field9656[var32];
+					LegacyModelRelated var34 = this.field9639[var32];
 					var34.field1054 = var34.field1054 & 0xFF000000 | Statics.field8151[this.field9651[var33.field1192] & 0xFFFF] & 0xFFFFFF;
 				}
 			}
 		} else if (arg0 == 8) {
 			for (int var35 = 0; var35 < this.field9660; var35++) {
-				class80 var36 = this.field9639[var35];
+				LegacyModelRelated var36 = this.field9639[var35];
 				var36.field1049 += arg1;
 				var36.field1052 += arg2;
 			}
 		} else if (arg0 == 10) {
 			for (int var37 = 0; var37 < this.field9660; var37++) {
-				class80 var38 = this.field9639[var37];
+				LegacyModelRelated var38 = this.field9639[var37];
 				var38.field1050 = var38.field1050 * arg1 >> 7;
 				var38.field1051 = var38.field1051 * arg2 >> 7;
 			}
 		} else if (arg0 == 9) {
 			for (int var39 = 0; var39 < this.field9660; var39++) {
-				class80 var40 = this.field9639[var39];
+				LegacyModelRelated var40 = this.field9639[var39];
 				var40.field1053 = var40.field1053 + arg1 & 0x3FFF;
 			}
 		}
@@ -2754,8 +2754,8 @@ public class LegacyOpenGLModel extends Model {
 				}
 				if (this.field9656 != null) {
 					for (int var80 = 0; var80 < this.field9660; var80++) {
-						class96 var81 = this.field9656[var80];
-						class80 var82 = this.field9639[var80];
+						LegacyModelRelated5 var81 = this.field9656[var80];
+						LegacyModelRelated var82 = this.field9639[var80];
 						var82.field1054 = var82.field1054 & 0xFFFFFF | 255 - (this.field9683[var81.field1192] & 0xFF) << 24;
 					}
 				}
@@ -2794,8 +2794,8 @@ public class LegacyOpenGLModel extends Model {
 				}
 				if (this.field9656 != null) {
 					for (int var95 = 0; var95 < this.field9660; var95++) {
-						class96 var96 = this.field9656[var95];
-						class80 var97 = this.field9639[var95];
+						LegacyModelRelated5 var96 = this.field9656[var95];
+						LegacyModelRelated var97 = this.field9639[var95];
 						var97.field1054 = var97.field1054 & 0xFF000000 | Statics.field8151[this.field9651[var96.field1192] & 0xFFFF] & 0xFFFFFF;
 					}
 				}
@@ -2807,7 +2807,7 @@ public class LegacyOpenGLModel extends Model {
 					if (var99 < this.field9686.length) {
 						int[] var100 = this.field9686[var99];
 						for (int var101 = 0; var101 < var100.length; var101++) {
-							class80 var102 = this.field9639[var100[var101]];
+							LegacyModelRelated var102 = this.field9639[var100[var101]];
 							var102.field1049 += arg2;
 							var102.field1052 += arg3;
 						}
@@ -2821,7 +2821,7 @@ public class LegacyOpenGLModel extends Model {
 					if (var104 < this.field9686.length) {
 						int[] var105 = this.field9686[var104];
 						for (int var106 = 0; var106 < var105.length; var106++) {
-							class80 var107 = this.field9639[var105[var106]];
+							LegacyModelRelated var107 = this.field9639[var105[var106]];
 							var107.field1050 = var107.field1050 * arg2 >> 7;
 							var107.field1051 = var107.field1051 * arg3 >> 7;
 						}
@@ -2834,7 +2834,7 @@ public class LegacyOpenGLModel extends Model {
 				if (var109 < this.field9686.length) {
 					int[] var110 = this.field9686[var109];
 					for (int var111 = 0; var111 < var110.length; var111++) {
-						class80 var112 = this.field9639[var110[var111]];
+						LegacyModelRelated var112 = this.field9639[var110[var111]];
 						var112.field1053 = var112.field1053 + arg2 & 0x3FFF;
 					}
 				}
@@ -3310,8 +3310,8 @@ public class LegacyOpenGLModel extends Model {
 		this.field9626.method15764(false);
 		this.field9626.method15809(this.field9626.field9918, null, null, this.field9626.field10012);
 		for (int var3 = 0; var3 < this.field9660; var3++) {
-			class96 var4 = this.field9656[var3];
-			class80 var5 = this.field9639[var3];
+			LegacyModelRelated5 var4 = this.field9656[var3];
+			LegacyModelRelated var5 = this.field9639[var3];
 			if (!var4.field1200 || !this.field9626.method2242()) {
 				float var6 = (float) (this.field9636[var4.field1199] + this.field9636[var4.field1193] + this.field9636[var4.field1195]) * 0.3333333F;
 				float var7 = (float) (this.field9637[var4.field1199] + this.field9637[var4.field1193] + this.field9637[var4.field1195]) * 0.3333333F;
@@ -3652,7 +3652,7 @@ public class LegacyOpenGLModel extends Model {
 			}
 		}
 		var11.pos = this.field9658 * var6;
-		class79 var80;
+		LegacyInterfaceRelated var80;
 		if (arg0) {
 			if (this.field9655 == null) {
 				this.field9655 = this.field9626.method15767(var6, var11.data, var11.pos, true);

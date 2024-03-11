@@ -186,8 +186,8 @@ public class Loading {
 			Statics.field7921 = new TitleDefaults(Statics.field1587);
 			DefaultSprites.method3470(Statics.field11389);
 			int var8 = Statics.field688.unknown5.method18714();
-			Statics.field2841 = new class797(client.field10768, Statics.field1680, Statics.field8532);
-			class799[] var9 = Statics.field2841.method15218(var8);
+			Statics.field2841 = new LoadingRelated3(client.field10768, Statics.field1680, Statics.field8532);
+			LoadingRelated1[] var9 = Statics.field2841.method15218(var8);
 			if (var9.length == 0) {
 				var9 = Statics.field2841.method15218(0);
 			}

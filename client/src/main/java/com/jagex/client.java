@@ -1020,7 +1020,7 @@ public final class client extends GameShell {
 		field11086 = new Ignore[400];
 		field10767 = -1;
 		field11088 = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
-		field11001 = new class23();
+		field11001 = new PrimaryLayerLocEntityPredicate();
 		field11090 = -1L;
 		field11091 = -1L;
 		field11013 = new WeightedCache(8);
@@ -1456,10 +1456,10 @@ public final class client extends GameShell {
 			} else if (var10 == 0) {
 				if (DeveloperConsole.method1584() && var9.method9141() == 28) {
 					if (field10949 >= 2 && Statics.field11931.method9080(82)) {
-						if (class29.method2978()) {
-							class29.method3913();
+						if (CameraManager.method2978()) {
+							CameraManager.method3913();
 						} else {
-							class29.method542(Statics.field4490.method4667());
+							CameraManager.method542(Statics.field4490.method4667());
 						}
 					} else if (DeveloperConsole.method10211() && (Statics.field688.unknown8.method18701() == 0 || Statics.field11931.method9080(86))) {
 						DeveloperConsole.close();
@@ -2683,7 +2683,7 @@ public final class client extends GameShell {
 		world.method7746();
 		world.method7730();
 		ClientWorldMap.method14689();
-		class29.method3913();
+		CameraManager.method3913();
 		PositionedSound.method13908(true);
 		ClientWorldMap.method6003();
 		method9872();
@@ -2907,7 +2907,7 @@ public final class client extends GameShell {
 											if (Statics.field7228.field10252 && Statics.field7228.field10253 < MonotonicTime.method3655() - 60000L) {
 												method14147();
 											}
-											for (class957 var25 = (class957) field10910.method14254(); var25 != null; var25 = (class957) field10910.method14241()) {
+											for (Link_Sub1 var25 = (Link_Sub1) field10910.method14254(); var25 != null; var25 = (Link_Sub1) field10910.method14241()) {
 												if ((long) var25.field11211 < MonotonicTime.method3655() / 1000L - 5L) {
 													if (var25.field11209 > 0) {
 														ChatHistory.method2664(5, 0, "", "", "", var25.field11210 + LocalisedText.FRIENDLOGIN.method15021(Statics.field1680), null);
@@ -3059,8 +3059,8 @@ public final class client extends GameShell {
 		} else {
 			field10896 /= 2.0F;
 		}
-		if (class29.method2978()) {
-			class29.method2585();
+		if (CameraManager.method2978()) {
+			CameraManager.method2585();
 		} else if (Statics.field3416 == 3) {
 			CoordGrid var17 = world.method7727();
 			int var18 = var17.field7426 << 9;
@@ -3211,7 +3211,7 @@ public final class client extends GameShell {
 												method14147();
 											}
 											Statics.field7228.method16414();
-											for (class957 var42 = (class957) field10910.method14254(); var42 != null; var42 = (class957) field10910.method14241()) {
+											for (Link_Sub1 var42 = (Link_Sub1) field10910.method14254(); var42 != null; var42 = (Link_Sub1) field10910.method14241()) {
 												if ((long) var42.field11211 < MonotonicTime.method3655() / 1000L - 5L) {
 													if (var42.field11209 > 0) {
 														ChatHistory.method2664(5, 0, "", "", "", var42.field11210 + LocalisedText.FRIENDLOGIN.method15021(Statics.field1680), null);
@@ -4891,7 +4891,7 @@ public final class client extends GameShell {
 		int var24 = var23.method10073();
 		Vector3i var25 = new Vector3i();
 		CoordGrid var26 = world.method7727();
-		if (class29.method2978()) {
+		if (CameraManager.method2978()) {
 			Statics.field604.method4707(var25, field10793, field10792, var26.field7426 << 9, var26.field7427 << 9);
 		} else if (Statics.field3416 == 3) {
 			Statics.field9155.method4707(var25, field10793, field10792, var26.field7426 << 9, var26.field7427 << 9);
@@ -4930,7 +4930,7 @@ public final class client extends GameShell {
 		} else {
 			var30 = 1;
 		}
-		if (class29.method2978() || Statics.field3416 == 3) {
+		if (CameraManager.method2978() || Statics.field3416 == 3) {
 			world.method7743().method8845(field10903, var25.field2835, var25.field2836, var25.field2837, world.method7742(), field11061, field10933, field10934, field10935, field10820, Statics.field4490.field11717 + 1, var30, (int) var5.field4308 >> 9, (int) var5.field4313 >> 9, Statics.field688.flickeringEffects.method18419() == 0, true, 0, true);
 		} else {
 			world.method7743().method8845(field10903, Statics.field7956, Statics.field10518, Statics.field1881, world.method7742(), field11061, field10933, field10934, field10935, field10820, Statics.field4490.field11717 + 1, var30, (int) var5.field4308 >> 9, (int) var5.field4313 >> 9, Statics.field688.flickeringEffects.method18419() == 0, true, 0, true);
@@ -7420,7 +7420,7 @@ public final class client extends GameShell {
 					} else if (var94.equals(var106.field606)) {
 						if (var106.field608 != var96) {
 							boolean var107 = true;
-							for (class957 var108 = (class957) field10910.method14254(); var108 != null; var108 = (class957) field10910.method14241()) {
+							for (Link_Sub1 var108 = (Link_Sub1) field10910.method14254(); var108 != null; var108 = (Link_Sub1) field10910.method14241()) {
 								if (var108.field11210.equals(var94)) {
 									if (var96 != 0 && var108.field11209 == 0) {
 										var108.method8433();
@@ -7432,7 +7432,7 @@ public final class client extends GameShell {
 								}
 							}
 							if (var107) {
-								field10910.method14243(new class957(var94, var96));
+								field10910.method14243(new Link_Sub1(var94, var96));
 							}
 							var106.field608 = var96;
 						}
@@ -13125,7 +13125,7 @@ public final class client extends GameShell {
 			Friend var3 = field11065[var2];
 			String var4 = var3.field606;
 			String var5 = NamespaceUtil.method15191(var4, Statics.field10782);
-			if (class222.method18886(arg0, var1, var4, var5)) {
+			if (FriendRelated.method18886(arg0, var1, var4, var5)) {
 				field10811--;
 				for (int var6 = var2; var6 < field10811; var6++) {
 					field11065[var6] = field11065[var6 + 1];
@@ -13154,7 +13154,7 @@ public final class client extends GameShell {
 			Ignore var3 = field11086[var2];
 			String var4 = var3.field598;
 			String var5 = NamespaceUtil.method15191(var4, Statics.field10782);
-			if (class222.method18886(arg0, var1, var4, var5)) {
+			if (FriendRelated.method18886(arg0, var1, var4, var5)) {
 				field11084--;
 				for (int var6 = var2; var6 < field11084; var6++) {
 					field11086[var6] = field11086[var6 + 1];

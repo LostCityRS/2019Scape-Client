@@ -24,10 +24,10 @@ public class Direct3DFramebuffer extends GpuFramebuffer {
 	public boolean field12504;
 
 	@ObfuscatedName("ath.z")
-	public class404 field12498 = null;
+	public FrameBufferInterface field12498 = null;
 
 	@ObfuscatedName("ath.p")
-	public final class412[] field12505 = new class412[4];
+	public final Direct3DGraphicsDeletable[] field12505 = new Direct3DGraphicsDeletable[4];
 
 	public Direct3DFramebuffer(Direct3DRenderer arg0) {
 		super(arg0);
@@ -45,8 +45,8 @@ public class Direct3DFramebuffer extends GpuFramebuffer {
 	}
 
 	@ObfuscatedName("ath.x(Ldw;)V")
-	public void method15441(class126 arg0) {
-		class404 var2 = (class404) arg0;
+	public void method15441(EffectInterface arg0) {
+		FrameBufferInterface var2 = (FrameBufferInterface) arg0;
 		if (arg0 == null) {
 			this.field12502 &= 0xFFFFFFEF;
 			this.field12498 = null;
@@ -74,9 +74,9 @@ public class Direct3DFramebuffer extends GpuFramebuffer {
 	}
 
 	@ObfuscatedName("ath.b(ILdp;)V")
-	public void method15439(int arg0, class130 arg1) {
+	public void method15439(int arg0, GraphicsDeletable arg1) {
 		int var3 = 0x1 << arg0;
-		class412 var4 = (class412) arg1;
+		Direct3DGraphicsDeletable var4 = (Direct3DGraphicsDeletable) arg1;
 		if (arg1 == null) {
 			this.field12502 &= ~var3;
 			this.field12505[arg0] = null;
@@ -121,7 +121,7 @@ public class Direct3DFramebuffer extends GpuFramebuffer {
 	@ObfuscatedName("ath.k()Z")
 	public boolean method1630() {
 		for (int var1 = 0; var1 < 4; var1++) {
-			class412 var2 = this.field12505[var1];
+			Direct3DGraphicsDeletable var2 = this.field12505[var1];
 			if (var2 != null) {
 				long var3 = var2.method6216();
 				this.method19644(var1, var3);
@@ -137,7 +137,7 @@ public class Direct3DFramebuffer extends GpuFramebuffer {
 	@ObfuscatedName("ath.f()Z")
 	public boolean method1631() {
 		for (int var1 = 1; var1 < 4; var1++) {
-			class412 var2 = this.field12505[var1];
+			Direct3DGraphicsDeletable var2 = this.field12505[var1];
 			if (var2 != null) {
 				this.method19644(var1, 0L);
 			}

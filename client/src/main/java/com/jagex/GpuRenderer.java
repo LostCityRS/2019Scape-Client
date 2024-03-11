@@ -1243,8 +1243,8 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.cb(II[I[I)Lch;")
-	public final class103 method2205(int arg0, int arg1, int[] arg2, int[] arg3) {
-		return class834.method15388(this, arg0, arg1, arg2, arg3);
+	public final GraphicsRelated method2205(int arg0, int arg1, int[] arg2, int[] arg3) {
+		return GpuRelated2.method15388(this, arg0, arg1, arg2, arg3);
 	}
 
 	@ObfuscatedName("afc.ck(I)V")
@@ -2144,7 +2144,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.cs(ILch;II)V")
-	public final void method2206(int arg0, class103 arg1, int arg2, int arg3) {
+	public final void method2206(int arg0, GraphicsRelated arg1, int arg2, int arg3) {
 		this.method2219(false);
 		this.field10143.method1454(0.0F, 0.0F, (float) this.method2135().method1627(), 0.0F, 0.0F, (float) this.method2135().method1628(), 0, arg1, arg2, arg3);
 		this.method2219(true);
@@ -2292,11 +2292,11 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.cg(IIIIIILch;IIIII)V")
-	public void method2537(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, class103 arg6, int arg7, int arg8, int arg9, int arg10, int arg11) {
+	public void method2537(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, GraphicsRelated arg6, int arg7, int arg8, int arg9, int arg10, int arg11) {
 	}
 
 	@ObfuscatedName("afc.bs(IIIIIILch;II)V")
-	public final void method2183(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, class103 arg6, int arg7, int arg8) {
+	public final void method2183(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, GraphicsRelated arg6, int arg7, int arg8) {
 	}
 
 	@ObfuscatedName("afc.ce(IIIIIII)V")

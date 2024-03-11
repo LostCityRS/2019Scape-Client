@@ -21,6 +21,6 @@ public class SoundBackendConfig {
 	@ObfuscatedName("xf.e(I)V")
 	public void method10342() {
 		this.field8053 = new HashMap();
-		this.field8053.put(class473.field4851, 50);
+		this.field8053.put(SoundRelatedType2.field4851, 50);
 	}
 }

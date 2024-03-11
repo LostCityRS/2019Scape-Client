@@ -7,22 +7,22 @@ import jaggl.OpenGL;
 public class GLUnderwaterEffect extends GlEffect {
 
 	@ObfuscatedName("aet.k")
-	public final class78 field9302;
+	public final LegacyGlEffectRelated field9302;
 
 	@ObfuscatedName("aet.f")
 	public RenderList field9300;
 
 	@ObfuscatedName("aet.w")
-	public class814 field9303;
+	public LegacyUnderwaterRelated field9303;
 
 	@ObfuscatedName("aet.l")
 	public static final float[] field9305 = new float[] { 0.0F, 0.0F, 0.0F, 0.0F };
 
-	public GLUnderwaterEffect(LegacyOpenGLRenderer arg0, class78 arg1) {
+	public GLUnderwaterEffect(LegacyOpenGLRenderer arg0, LegacyGlEffectRelated arg1) {
 		super(arg0);
 		this.field9302 = arg1;
 		this.method15341();
-		this.field9303 = new class814(this.field1021, TextureFormat.ALPHA, DataType.UNSIGNED_INT_8, 2, new byte[] { 0, -1 }, TextureFormat.ALPHA);
+		this.field9303 = new LegacyUnderwaterRelated(this.field1021, TextureFormat.ALPHA, DataType.UNSIGNED_INT_8, 2, new byte[] { 0, -1 }, TextureFormat.ALPHA);
 		this.field9303.method15334(false);
 	}
 

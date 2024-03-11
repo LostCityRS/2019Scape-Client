@@ -7,7 +7,7 @@ import java.util.*;
 import java.util.Map.Entry;
 
 @ObfuscatedName("abm")
-public class EnumType implements ConfigType, class757 {
+public class EnumType implements ConfigType, ConfigRelated {
 
 	@ObfuscatedName("abm.e")
 	public ScriptVarType field8781;

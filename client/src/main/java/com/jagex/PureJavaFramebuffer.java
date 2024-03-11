@@ -35,7 +35,7 @@ public class PureJavaFramebuffer extends Framebuffer {
 	}
 
 	@ObfuscatedName("apn.b(ILdp;)V")
-	public void method15439(int arg0, class130 arg1) {
+	public void method15439(int arg0, GraphicsDeletable arg1) {
 		if (arg0 != 0) {
 			throw new RuntimeException();
 		}
@@ -57,7 +57,7 @@ public class PureJavaFramebuffer extends Framebuffer {
 	}
 
 	@ObfuscatedName("apn.x(Ldw;)V")
-	public void method15441(class126 arg0) {
+	public void method15441(EffectInterface arg0) {
 		PureJavaDepthBuffer var2 = (PureJavaDepthBuffer) arg0;
 		if (this.field11910 != null && var2 != null && (this.field11910.field893 != var2.field971 || this.field11910.field892 != var2.field972)) {
 			throw new RuntimeException();

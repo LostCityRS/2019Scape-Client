@@ -210,7 +210,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		} catch (Exception ex) {
 			Fullscreen.allowed = false;
 		}
-		Statics.mouseImp = new class508();
+		Statics.mouseImp = new CursorManager();
 		ThreadGroup var21 = Thread.currentThread().getThreadGroup();
 		for (ThreadGroup var22 = var21.getParent(); var22 != null; var22 = var22.getParent()) {
 			var21 = var22;

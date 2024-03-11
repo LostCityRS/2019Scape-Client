@@ -913,7 +913,7 @@ public class World {
 	@ObfuscatedName("rl.av(B)Z")
 	public boolean method7723() {
 		if (!this.field5036) {
-			class492.method6969(false);
+			MapLogicRelated.method6969(false);
 		}
 		if (this.field5060 == -1L) {
 			this.field5060 = MonotonicTime.method3655();
@@ -1081,12 +1081,12 @@ public class World {
 			if (this.field5019.method7887()) {
 				this.method7767(this.field5033, this.field5055);
 				if (!this.field5036) {
-					class492.method6969(true);
+					MapLogicRelated.method6969(true);
 				}
 			} else {
 				this.method7766(this.field5033, this.field5055);
 				if (!this.field5036) {
-					class492.method6969(true);
+					MapLogicRelated.method6969(true);
 				}
 			}
 			this.field5033.method7143(0, this.field5023.field4540[0]);
@@ -1099,12 +1099,12 @@ public class World {
 		this.field5023.method7144(Statics.field8198, var19 ? this.field5033.field4540 : (int[][][]) null);
 		if (this.field5019.method7887()) {
 			if (!this.field5036) {
-				class492.method6969(true);
+				MapLogicRelated.method6969(true);
 			}
 			this.method7769(this.field5023, this.field5053);
 		} else {
 			if (!this.field5036) {
-				class492.method6969(true);
+				MapLogicRelated.method6969(true);
 			}
 			this.method7768(this.field5023, this.field5053);
 			if (this.field5024 != null) {
@@ -1112,7 +1112,7 @@ public class World {
 			}
 		}
 		if (!this.field5036) {
-			class492.method6969(true);
+			MapLogicRelated.method6969(true);
 		}
 		this.field5023.method7200(Statics.field8198, var19 ? this.field5030.field6917[0] : null, null);
 		if (this.field5036) {
@@ -1123,12 +1123,12 @@ public class World {
 			this.method7765(75);
 		}
 		if (!this.field5036) {
-			class492.method6969(true);
+			MapLogicRelated.method6969(true);
 		}
 		if (var19) {
 			this.field5030.method8703(true);
 			if (!this.field5036) {
-				class492.method6969(true);
+				MapLogicRelated.method6969(true);
 			}
 			if (this.field5019.method7887()) {
 				this.method7769(this.field5033, this.field5031);
@@ -1136,12 +1136,12 @@ public class World {
 				this.method7768(this.field5033, this.field5031);
 			}
 			if (!this.field5036) {
-				class492.method6969(true);
+				MapLogicRelated.method6969(true);
 			}
 			this.field5033.method7200(Statics.field8198, null, this.field5030.field6915[0]);
 			this.field5033.method16877(Statics.field8198, true);
 			if (!this.field5036) {
-				class492.method6969(true);
+				MapLogicRelated.method6969(true);
 			}
 			this.field5030.method8703(false);
 			if (this.field5036) {

@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("abc")
-public class DBRowType implements ConfigType, class757 {
+public class DBRowType implements ConfigType, ConfigRelated {
 
 	@ObfuscatedName("abc.e")
 	public Object[][] field8734;

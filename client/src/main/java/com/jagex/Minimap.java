@@ -148,7 +148,7 @@ public class Minimap {
 			Statics.field734 = arg0.method2197(var17, var17, false, true);
 			var20 = arg0.method2145();
 			var20.method15439(0, Statics.field734.method1437());
-			class126 var23 = arg0.method2121(var17, var17);
+			EffectInterface var23 = arg0.method2121(var17, var17);
 			var20.method15441(var23);
 			arg0.method2142(var20);
 			var9 = var2;
@@ -452,7 +452,7 @@ public class Minimap {
 		}
 		arg0.method2202();
 		Graphic var4 = null;
-		class103 var5 = null;
+		GraphicsRelated var5 = null;
 		if (arg1.field2184 == 5) {
 			var4 = arg1.method3970(arg0);
 			if (var4 == null) {
@@ -549,7 +549,7 @@ public class Minimap {
 	}
 
 	@ObfuscatedName("je.o(Ldh;IILhf;Lch;IIB)V")
-	public static void method4838(Renderer arg0, int arg1, int arg2, Component arg3, class103 arg4, int arg5, int arg6) {
+	public static void method4838(Renderer arg0, int arg1, int arg2, Component arg3, GraphicsRelated arg4, int arg5, int arg6) {
 		for (int var7 = 0; var7 < client.field11011; var7++) {
 			ObjectWrapper var8 = (ObjectWrapper) client.field10838.method14495((long) client.field11036[var7]);
 			if (var8 != null) {
@@ -575,7 +575,7 @@ public class Minimap {
 	}
 
 	@ObfuscatedName("aff.s(IILhf;Lch;III)V")
-	public static void method16411(int arg0, int arg1, Component arg2, class103 arg3, int arg4, int arg5) {
+	public static void method16411(int arg0, int arg1, Component arg2, GraphicsRelated arg3, int arg4, int arg5) {
 		int var6 = ReceivePlayerPositions.field698;
 		int[] var7 = ReceivePlayerPositions.field703;
 		for (int var8 = 0; var8 < var6; var8++) {
@@ -661,12 +661,12 @@ public class Minimap {
 	}
 
 	@ObfuscatedName("al.b(Lhf;Lch;IIIILcm;I)V")
-	public static void method715(Component arg0, class103 arg1, int arg2, int arg3, int arg4, int arg5, Sprite arg6) {
+	public static void method715(Component arg0, GraphicsRelated arg1, int arg2, int arg3, int arg4, int arg5, Sprite arg6) {
 		method4142(arg0, arg1, arg2, arg3, arg4, arg5, arg6, 100.0D, MapAlignmentX.field2417, MapAlignmentY.field2424);
 	}
 
 	@ObfuscatedName("ht.h(Lhf;Lch;IIIILcm;DLhp;Lhy;I)V")
-	public static void method4142(Component arg0, class103 arg1, int arg2, int arg3, int arg4, int arg5, Sprite arg6, double arg7, MapAlignmentX arg8, MapAlignmentY arg9) {
+	public static void method4142(Component arg0, GraphicsRelated arg1, int arg2, int arg3, int arg4, int arg5, Sprite arg6, double arg7, MapAlignmentX arg8, MapAlignmentY arg9) {
 		if (arg6 == null) {
 			return;
 		}
@@ -725,7 +725,7 @@ public class Minimap {
 	}
 
 	@ObfuscatedName("gd.a(Lhf;Lch;IIIIILjava/lang/String;Leu;Laac;II)V")
-	public static void method3654(Component arg0, class103 arg1, int arg2, int arg3, int arg4, int arg5, int arg6, String arg7, Font arg8, FontMetrics arg9, int arg10) {
+	public static void method3654(Component arg0, GraphicsRelated arg1, int arg2, int arg3, int arg4, int arg5, int arg6, String arg7, Font arg8, FontMetrics arg9, int arg10) {
 		int var11;
 		if (Statics.field3416 == 3) {
 			var11 = (int) ((double) Statics.field9155.method4719() * 2607.5945876176133D) + client.field10885 & 0x3FFF;

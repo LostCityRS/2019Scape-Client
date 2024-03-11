@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("bc")
-public class PureJavaDepthBuffer implements class126 {
+public class PureJavaDepthBuffer implements EffectInterface {
 
 	@ObfuscatedName("bc.e")
 	public int field971;

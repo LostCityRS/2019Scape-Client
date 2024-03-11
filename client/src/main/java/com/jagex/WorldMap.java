@@ -1113,7 +1113,7 @@ public class WorldMap {
 			var3[var4 * 2] = (Statics.field6851 - Statics.field6801) * (var5 - Statics.field6845) / (Statics.field6847 - Statics.field6845) + Statics.field6801;
 			var3[var4 * 2 + 1] = Statics.field6852 - (Statics.field6852 - Statics.field6837) * (var6 - Statics.field6848) / (Statics.field6846 - Statics.field6848);
 		}
-		class127.method2053(arg0, var3, arg2.field2398);
+		WorldMapRelated2.method2053(arg0, var3, arg2.field2398);
 		if (arg2.field2399 <= 0) {
 			for (int var22 = 0; var22 < var3.length / 2 - 1; var22++) {
 				arg0.method2374(var3[var22 * 2], var3[var22 * 2 + 1], var3[(var22 + 1) * 2], var3[(var22 + 1) * 2 + 1], arg2.field2406[arg2.field2407[var22] & 0xFF]);

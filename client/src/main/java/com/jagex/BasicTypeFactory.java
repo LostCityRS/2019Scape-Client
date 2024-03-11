@@ -16,7 +16,7 @@ public class BasicTypeFactory implements ConfigTypeFactory {
 	public ConfigType create(int arg0, ConfigTypeList arg1) {
 		try {
 			ConfigType var3 = (ConfigType) this.field8843.getDeclaredConstructor().newInstance();
-			((class757) var3).method2998(arg0);
+			((ConfigRelated) var3).method2998(arg0);
 			return var3;
 		} catch (Exception var5) {
 			var5.printStackTrace();

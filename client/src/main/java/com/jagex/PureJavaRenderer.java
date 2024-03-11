@@ -1437,11 +1437,11 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.bs(IIIIIILch;II)V")
-	public void method2183(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, class103 arg6, int arg7, int arg8) {
+	public void method2183(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, GraphicsRelated arg6, int arg7, int arg8) {
 		if (this.field9778 == null) {
 			return;
 		}
-		class832 var10 = (class832) arg6;
+		JavaGraphicsRelated3 var10 = (JavaGraphicsRelated3) arg6;
 		int[] var11 = var10.field9414;
 		int[] var12 = var10.field9415;
 		int var13 = this.field9784 > arg8 ? this.field9784 : arg8;
@@ -1584,11 +1584,11 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.cg(IIIIIILch;IIIII)V")
-	public void method2537(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, class103 arg6, int arg7, int arg8, int arg9, int arg10, int arg11) {
+	public void method2537(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, GraphicsRelated arg6, int arg7, int arg8, int arg9, int arg10, int arg11) {
 		if (this.field9778 == null) {
 			return;
 		}
-		class832 var13 = (class832) arg6;
+		JavaGraphicsRelated3 var13 = (JavaGraphicsRelated3) arg6;
 		int[] var14 = var13.field9414;
 		int[] var15 = var13.field9415;
 		int var16 = this.field9784 > arg8 ? this.field9784 : arg8;
@@ -1926,16 +1926,16 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.cb(II[I[I)Lch;")
-	public class103 method2205(int arg0, int arg1, int[] arg2, int[] arg3) {
-		return new class832(arg0, arg1, arg2, arg3);
+	public GraphicsRelated method2205(int arg0, int arg1, int[] arg2, int[] arg3) {
+		return new JavaGraphicsRelated3(arg0, arg1, arg2, arg3);
 	}
 
 	@ObfuscatedName("afg.cs(ILch;II)V")
-	public void method2206(int arg0, class103 arg1, int arg2, int arg3) {
+	public void method2206(int arg0, GraphicsRelated arg1, int arg2, int arg3) {
 		if (this.field9778 == null) {
 			return;
 		}
-		class832 var5 = (class832) arg1;
+		JavaGraphicsRelated3 var5 = (JavaGraphicsRelated3) arg1;
 		int[] var6 = var5.field9414;
 		int[] var7 = var5.field9415;
 		int var8;
@@ -1986,11 +1986,11 @@ public class PureJavaRenderer extends Renderer {
 				return new OpaqueFont(this, arg0, (FullSpriteData) arg1);
 			}
 		} else if (!var5) {
-			return new class853(this, arg0, (FullSpriteData) arg1);
+			return new PureJavaFontRelated(this, arg0, (FullSpriteData) arg1);
 		} else if (var4) {
 			throw new IllegalArgumentException("");
 		} else {
-			return new class855(this, arg0, (PalettedSpriteData) arg1);
+			return new PureJavaSpriteRelated(this, arg0, (PalettedSpriteData) arg1);
 		}
 	}
 
@@ -2640,22 +2640,22 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.sk(II)Ldp;")
-	public class130 method15676(int arg0, int arg1) {
+	public GraphicsDeletable method15676(int arg0, int arg1) {
 		return new PureJavaColorBuffer(arg0, arg1);
 	}
 
 	@ObfuscatedName("afg.au(IILck;Ldg;I)Ldp;")
-	public class130 method2146(int arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4) {
+	public GraphicsDeletable method2146(int arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4) {
 		return this.method15676(arg0, arg1);
 	}
 
 	@ObfuscatedName("afg.ar(II)Ldw;")
-	public class126 method2121(int arg0, int arg1) {
+	public EffectInterface method2121(int arg0, int arg1) {
 		return new PureJavaDepthBuffer(arg0, arg1);
 	}
 
 	@ObfuscatedName("afg.ap(III)Ldw;")
-	public class126 method2356(int arg0, int arg1, int arg2) {
+	public EffectInterface method2356(int arg0, int arg1, int arg2) {
 		return new PureJavaDepthBuffer(arg0, arg1);
 	}
 }

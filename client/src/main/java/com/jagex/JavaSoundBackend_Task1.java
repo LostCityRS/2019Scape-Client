@@ -27,7 +27,7 @@ public class JavaSoundBackend_Task1 implements Runnable {
 					HashMap var3 = this.this$0.method16804();
 					Iterator var4 = var3.keySet().iterator();
 					while (true) {
-						class473 var5;
+						SoundRelatedType2 var5;
 						do {
 							if (!var4.hasNext()) {
 								Iterator var8 = this.this$0.field10693.iterator();
@@ -38,9 +38,9 @@ public class JavaSoundBackend_Task1 implements Runnable {
 								PreciseSleep.sleep(6L);
 								continue label54;
 							}
-							var5 = (class473) var4.next();
+							var5 = (SoundRelatedType2) var4.next();
 						} while (var5.field4856);
-						class480[] var6 = (class480[]) var3.get(var5);
+						SoundRelated2[] var6 = (SoundRelated2[]) var3.get(var5);
 						for (int var7 = 0; var7 < var6.length; var7++) {
 							var6[var7].method7507();
 						}

@@ -70,12 +70,12 @@ public abstract class Font {
 	}
 
 	@ObfuscatedName("eu.k(Ljava/lang/String;IIIIIIIII[Lcm;[ILch;IIS)I")
-	public int method2720(String arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, Sprite[] arg10, int[] arg11, class103 arg12, int arg13, int arg14) {
+	public int method2720(String arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, Sprite[] arg10, int[] arg11, GraphicsRelated arg12, int arg13, int arg14) {
 		return this.method2685(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, 0, arg10, arg11, arg12, arg13, arg14);
 	}
 
 	@ObfuscatedName("eu.f(Ljava/lang/String;IIIIIIIIII[Lcm;[ILch;III)I")
-	public int method2685(String arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, Sprite[] arg11, int[] arg12, class103 arg13, int arg14, int arg15) {
+	public int method2685(String arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, Sprite[] arg11, int[] arg12, GraphicsRelated arg13, int arg14, int arg15) {
 		if (arg0 == null) {
 			return 0;
 		}
@@ -325,7 +325,7 @@ public abstract class Font {
 	}
 
 	@ObfuscatedName("eu.v(Ljava/lang/String;II[Lcm;[ILch;III)V")
-	public void method2694(String arg0, int arg1, int arg2, Sprite[] arg3, int[] arg4, class103 arg5, int arg6, int arg7) {
+	public void method2694(String arg0, int arg1, int arg2, Sprite[] arg3, int[] arg4, GraphicsRelated arg5, int arg6, int arg7) {
 		int var9 = arg2 - this.field1667.field8566;
 		int var10 = -1;
 		int var11 = -1;
@@ -577,5 +577,5 @@ public abstract class Font {
 	public abstract void method2690(char arg0, int arg1, int arg2, int arg3, boolean arg4);
 
 	@ObfuscatedName("eu.y(CIIIZLch;II)V")
-	public abstract void method2697(char arg0, int arg1, int arg2, int arg3, boolean arg4, class103 arg5, int arg6, int arg7);
+	public abstract void method2697(char arg0, int arg1, int arg2, int arg3, boolean arg4, GraphicsRelated arg5, int arg6, int arg7);
 }

@@ -206,10 +206,10 @@ public class ClientWorldMap extends WorldMap {
 			field11651 = 20;
 		} else if (field11651 == 20) {
 			if (!field6842) {
-				class492.method6969(true);
+				MapLogicRelated.method6969(true);
 				method8542(arg0, field6797, field6798, field6842);
 				field11651 = 60;
-				class492.method6969(true);
+				MapLogicRelated.method6969(true);
 				GameShell.method135();
 			} else if (method8542(arg0, field6797, field6798, field6842)) {
 				field11651 = 60;
@@ -225,7 +225,7 @@ public class ClientWorldMap extends WorldMap {
 			}
 			method8505();
 			field11651 = 70;
-			class492.method6969(true);
+			MapLogicRelated.method6969(true);
 			GameShell.method135();
 		} else if (field11651 >= 70) {
 			int var11 = 0;

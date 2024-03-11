@@ -15,7 +15,7 @@ public class AudioApiCacheRemovalListener implements CacheRemovalListener {
 	}
 
 	@ObfuscatedName("fs.f(Lwr;I)V")
-	public void method3027(class614 arg0) {
+	public void method3027(AudioApiRelated2 arg0) {
 		Iterator var2 = this.this$0.method3150().iterator();
 		while (var2.hasNext()) {
 			Sound var3 = (Sound) var2.next();
@@ -28,6 +28,6 @@ public class AudioApiCacheRemovalListener implements CacheRemovalListener {
 
 	@ObfuscatedName("fs.e(Ljava/lang/Object;I)V")
 	public void method2914(Object arg0) {
-		this.method3027((class614) arg0);
+		this.method3027((AudioApiRelated2) arg0);
 	}
 }

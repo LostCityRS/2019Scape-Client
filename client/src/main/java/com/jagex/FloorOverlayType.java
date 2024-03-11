@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("yn")
-public class FloorOverlayType implements ConfigType, class757 {
+public class FloorOverlayType implements ConfigType, ConfigRelated {
 
 	@ObfuscatedName("yn.n")
 	public int field8152;

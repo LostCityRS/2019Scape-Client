@@ -46,7 +46,7 @@ public class LegacyOpenGLCubeTexture extends LegacyOpenGLTexture {
 	}
 
 	@ObfuscatedName("adq.ar(II)Ldp;")
-	public class130 method15332(int arg0, int arg1) {
+	public GraphicsDeletable method15332(int arg0, int arg1) {
 		return new LegacyCubeTextureRelated(this, arg0, arg1);
 	}
 }

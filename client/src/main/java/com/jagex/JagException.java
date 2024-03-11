@@ -10,7 +10,7 @@ import java.net.URL;
 public class JagException extends RuntimeException {
 
 	@ObfuscatedName("atc.w")
-	public static class497 field12495 = null;
+	public static URLWrapper field12495 = null;
 
 	@ObfuscatedName("atc.l")
 	public String field12491;

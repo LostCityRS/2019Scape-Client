@@ -40,7 +40,7 @@ public class GpuFloorModel extends FloorModel {
 	public float field9512 = -3.4028235E38F;
 
 	@ObfuscatedName("aem.q")
-	public class981[][][] field9507;
+	public GpuFloorModelRelated1[][][] field9507;
 
 	@ObfuscatedName("aem.x")
 	public int[][][] field9510;
@@ -137,7 +137,7 @@ public class GpuFloorModel extends FloorModel {
 		this.field9490 = arg1;
 		this.field9491 = arg2;
 		this.field9502 = new int[arg3][arg4][];
-		this.field9507 = new class981[arg3][arg4][];
+		this.field9507 = new GpuFloorModelRelated1[arg3][arg4][];
 		this.field9506 = new int[arg3][arg4][];
 		this.field9501 = new int[arg3][arg4][];
 		this.field9510 = new int[arg3][arg4][];
@@ -203,7 +203,7 @@ public class GpuFloorModel extends FloorModel {
 		if (this.field9502 != null) {
 			this.field9502[arg0][arg1] = arg3;
 		}
-		class981[] var14 = this.field9507[arg0][arg1] = new class981[arg6.length];
+		GpuFloorModelRelated1[] var14 = this.field9507[arg0][arg1] = new GpuFloorModelRelated1[arg6.length];
 		for (int var15 = 0; var15 < arg6.length; var15++) {
 			int var16 = arg8[var15];
 			int var17 = arg9[var15];
@@ -214,16 +214,16 @@ public class GpuFloorModel extends FloorModel {
 			long var18 = (long) arg10.field1577 << 48 | (long) arg10.field1573 << 42 | (long) arg10.field1575 << 28 | (long) (var17 << 14) | (long) var16;
 			Node var20;
 			for (var20 = this.field9513.method14495(var18); var20 != null; var20 = this.field9513.method14496()) {
-				class981 var21 = (class981) var20;
+				GpuFloorModelRelated1 var21 = (GpuFloorModelRelated1) var20;
 				if (var21.field11402 == var16 && (float) var17 == var21.field11403 && var21.field11404.method2096(arg10)) {
 					break;
 				}
 			}
 			if (var20 == null) {
-				var14[var15] = new class981(this, var16, var17, arg10);
+				var14[var15] = new GpuFloorModelRelated1(this, var16, var17, arg10);
 				this.field9513.method14501(var14[var15], var18);
 			} else {
-				var14[var15] = (class981) var20;
+				var14[var15] = (GpuFloorModelRelated1) var20;
 			}
 		}
 		if (arg11) {
@@ -310,7 +310,7 @@ public class GpuFloorModel extends FloorModel {
 		this.field9497 = new Node[this.field9513.method14498()];
 		this.field9513.method14497(this.field9497);
 		for (int var4 = 0; var4 < this.field9497.length; var4++) {
-			((class981) this.field9497[var4]).method17761(this.field9511);
+			((GpuFloorModelRelated1) this.field9497[var4]).method17761(this.field9511);
 		}
 		this.field9522 = 20;
 		if (this.field9503 != null) {
@@ -321,20 +321,20 @@ public class GpuFloorModel extends FloorModel {
 		}
 		this.field9520 = this.field9516.method16151(this.field9511 * 4);
 		this.field9521 = this.field9516.method16151(this.field9522 * this.field9511);
-		class981[] var5 = new class981[this.field9511];
+		GpuFloorModelRelated1[] var5 = new GpuFloorModelRelated1[this.field9511];
 		int var6 = IntMath.method3082(this.field9511 / 4);
 		if (var6 < 1) {
 			var6 = 1;
 		}
 		IterableMap var7 = new IterableMap(var6);
-		class981[] var8 = new class981[this.field9498];
+		GpuFloorModelRelated1[] var8 = new GpuFloorModelRelated1[this.field9498];
 		for (int var9 = 0; var9 < this.field1235; var9++) {
 			for (int var10 = 0; var10 < this.field1234; var10++) {
 				this.method15415(var9, var10, var1, var8, var7, var5);
 			}
 		}
 		for (int var11 = 0; var11 < this.field9492; var11++) {
-			class981 var12 = var5[var11];
+			GpuFloorModelRelated1 var12 = var5[var11];
 			if (var12 != null) {
 				var12.method17763(var11);
 			}
@@ -349,10 +349,10 @@ public class GpuFloorModel extends FloorModel {
 						int var18 = var15[var17++] & 0xFFFF;
 						int var19 = var15[var17++] & 0xFFFF;
 						int var20 = var15[var17++] & 0xFFFF;
-						class981 var21 = var5[var18];
-						class981 var22 = var5[var19];
-						class981 var23 = var5[var20];
-						class981 var24 = null;
+						GpuFloorModelRelated1 var21 = var5[var18];
+						GpuFloorModelRelated1 var22 = var5[var19];
+						GpuFloorModelRelated1 var23 = var5[var20];
+						GpuFloorModelRelated1 var24 = null;
 						if (var21 != null) {
 							var21.method17764(var13, var14, var16);
 							var24 = var21;
@@ -388,7 +388,7 @@ public class GpuFloorModel extends FloorModel {
 		}
 		this.field9519 = 0;
 		for (int var25 = 0; var25 < this.field9497.length; var25++) {
-			class981 var26 = (class981) this.field9497[var25];
+			GpuFloorModelRelated1 var26 = (GpuFloorModelRelated1) this.field9497[var25];
 			if (var26.field11406 > 0) {
 				this.field9497[this.field9519++] = var26;
 			}
@@ -396,7 +396,7 @@ public class GpuFloorModel extends FloorModel {
 		this.field9496 = new Node[this.field9519];
 		long[] var27 = new long[this.field9519];
 		for (int var28 = 0; var28 < this.field9519; var28++) {
-			class981 var29 = (class981) this.field9497[var28];
+			GpuFloorModelRelated1 var29 = (GpuFloorModelRelated1) this.field9497[var28];
 			var27[var28] = var29.field6760;
 			this.field9496[var28] = var29;
 		}
@@ -428,7 +428,7 @@ public class GpuFloorModel extends FloorModel {
 			this.field9493 = this.field9516.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.field3310, VertexDeclarationElementComponent.field3300, VertexDeclarationElementComponent.field3303, VertexDeclarationElementComponent.field3301 }), new VertexDeclarationElement(VertexDeclarationElementComponent.field3311) });
 		}
 		for (int var1 = 0; var1 < this.field9519; var1++) {
-			class981 var2 = (class981) this.field9497[var1];
+			GpuFloorModelRelated1 var2 = (GpuFloorModelRelated1) this.field9497[var1];
 			var2.method17766(this.field9492);
 		}
 		if (this.field9505 != null) {
@@ -457,11 +457,11 @@ public class GpuFloorModel extends FloorModel {
 	}
 
 	@ObfuscatedName("aem.aj(II[[B[Lakh;Laan;[Lakh;)V")
-	public void method15415(int arg0, int arg1, byte[][] arg2, class981[] arg3, IterableMap arg4, class981[] arg5) {
+	public void method15415(int arg0, int arg1, byte[][] arg2, GpuFloorModelRelated1[] arg3, IterableMap arg4, GpuFloorModelRelated1[] arg5) {
 		if (this.field9510[arg0][arg1] == null) {
 			return;
 		}
-		class981[] var7 = this.field9507[arg0][arg1];
+		GpuFloorModelRelated1[] var7 = this.field9507[arg0][arg1];
 		int[] var8 = this.field9506[arg0][arg1];
 		int[] var9 = this.field9501[arg0][arg1];
 		int[] var10 = this.field9499[arg0][arg1];
@@ -489,7 +489,7 @@ public class GpuFloorModel extends FloorModel {
 		int var29 = arg2[arg0 + 1][arg1] & 0xFF;
 		int var30 = 0;
 		label185: for (int var31 = 0; var31 < var11.length; var31++) {
-			class981 var32 = var7[var31];
+			GpuFloorModelRelated1 var32 = var7[var31];
 			for (int var33 = 0; var33 < var30; var33++) {
 				if (arg3[var33] == var32) {
 					continue label185;
@@ -689,7 +689,7 @@ public class GpuFloorModel extends FloorModel {
 		ByteBuffer var18 = this.field9516.field10071;
 		var18.clear();
 		for (int var19 = 0; var19 < this.field9496.length; var19++) {
-			class981 var20 = (class981) this.field9496[var19];
+			GpuFloorModelRelated1 var20 = (GpuFloorModelRelated1) this.field9496[var19];
 			var20.method17767(this.field9526, this.field9525);
 		}
 		int var21 = var18.position();
@@ -713,7 +713,7 @@ public class GpuFloorModel extends FloorModel {
 			if ((this.field9491 & 0x7) == 0) {
 				int var24 = 0;
 				for (int var25 = 0; var25 < this.field9496.length; var25++) {
-					class981 var26 = (class981) this.field9496[var25];
+					GpuFloorModelRelated1 var26 = (GpuFloorModelRelated1) this.field9496[var25];
 					if (var26.field11408 != 0) {
 						if (this.field9516.field10133) {
 							this.field9516.method2246(0, var26.field11404);
@@ -750,7 +750,7 @@ public class GpuFloorModel extends FloorModel {
 				var22.field2968.method6491(this.field9516.field10142 * this.field9516.field10122, this.field9516.field10122 * this.field9516.field10120, this.field9516.field10210 * this.field9516.field10122);
 				int var29 = 0;
 				for (int var30 = 0; var30 < this.field9496.length; var30++) {
-					class981 var31 = (class981) this.field9496[var30];
+					GpuFloorModelRelated1 var31 = (GpuFloorModelRelated1) this.field9496[var30];
 					if (var31.field11408 > 0) {
 						if (this.field9516.field10133) {
 							this.field9516.method2246(0, var31.field11404);
@@ -843,7 +843,7 @@ public class GpuFloorModel extends FloorModel {
 			var22.field2975.method6491(0.0F, 0.0F, 0.0F);
 			Iterator var38 = this.field9485.iterator();
 			while (var38.hasNext()) {
-				class982 var39 = (class982) var38.next();
+				GpuFloorModelRelated var39 = (GpuFloorModelRelated) var38.next();
 				var39.method17783(var22, arg0, arg1, arg2, arg3, arg4);
 			}
 			var22.field2975.method6492(var37);
@@ -1015,6 +1015,6 @@ public class GpuFloorModel extends FloorModel {
 
 	@ObfuscatedName("aem.o(Lakf;[I)V")
 	public void method1549(Light arg0, int[] arg1) {
-		this.field9485.method14153(new class982(this.field9516, this, arg0, arg1));
+		this.field9485.method14153(new GpuFloorModelRelated(this.field9516, this, arg0, arg1));
 	}
 }

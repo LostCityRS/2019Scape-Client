@@ -287,7 +287,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	@ObfuscatedName("aqd.sm()V")
 	public void method16105() {
 		for (ObjectWrapper var1 = (ObjectWrapper) this.field11959.method14191(); var1 != null; var1 = (ObjectWrapper) this.field11959.method14161()) {
-			class406 var2 = (class406) var1.field11436;
+			Direct3DInterface1 var2 = (Direct3DInterface1) var1.field11436;
 			var2.method6220();
 			if (this.field1614 == var2) {
 				var2.method1630();
@@ -300,7 +300,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	public void method15973() {
 		this.method2126();
 		for (ObjectWrapper var1 = (ObjectWrapper) this.field11959.method14191(); var1 != null; var1 = (ObjectWrapper) this.field11959.method14161()) {
-			class406 var2 = (class406) var1.field11436;
+			Direct3DInterface1 var2 = (Direct3DInterface1) var1.field11436;
 			var2.method1629();
 		}
 		super.method15973();
@@ -462,22 +462,22 @@ public class Direct3DRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.au(IILck;Ldg;I)Ldp;")
-	public class130 method2146(int arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4) {
-		return new class410(this, arg2, arg3, arg0, arg1, arg4);
+	public GraphicsDeletable method2146(int arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4) {
+		return new GraphicsDeleteableRelated(this, arg2, arg3, arg0, arg1, arg4);
 	}
 
 	@ObfuscatedName("aqd.ar(II)Ldw;")
-	public class126 method2121(int arg0, int arg1) {
-		return new class411(this, DataType.UNSIGNED_INT_24, arg0, arg1, 0);
+	public EffectInterface method2121(int arg0, int arg1) {
+		return new EffectInterfaceRelated(this, DataType.UNSIGNED_INT_24, arg0, arg1, 0);
 	}
 
 	@ObfuscatedName("aqd.ap(III)Ldw;")
-	public class126 method2356(int arg0, int arg1, int arg2) {
-		return new class411(this, DataType.UNSIGNED_INT_24, arg0, arg1, arg2);
+	public EffectInterface method2356(int arg0, int arg1, int arg2) {
+		return new EffectInterfaceRelated(this, DataType.UNSIGNED_INT_24, arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("aqd.aha(Loz;)Lake;")
-	public ObjectWrapper method19005(class406 arg0) {
+	public ObjectWrapper method19005(Direct3DInterface1 arg0) {
 		for (ObjectWrapper var2 = (ObjectWrapper) this.field11959.method14191(); var2 != null; var2 = (ObjectWrapper) this.field11959.method14161()) {
 			if (var2.field11436 == arg0) {
 				return var2;
@@ -487,14 +487,14 @@ public class Direct3DRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.ahx(Loz;)V")
-	public void method18995(class406 arg0) {
+	public void method18995(Direct3DInterface1 arg0) {
 		if (this.method19005(arg0) == null) {
 			this.field11959.method14153(new ObjectWrapper(arg0));
 		}
 	}
 
 	@ObfuscatedName("aqd.ahb(Loz;)V")
-	public void method19000(class406 arg0) {
+	public void method19000(Direct3DInterface1 arg0) {
 		ObjectWrapper var2 = this.method19005(arg0);
 		if (var2 != null) {
 			var2.method8440();
@@ -826,7 +826,7 @@ public class Direct3DRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqd.uy(Lck;Ldg;II)Lmo;")
 	public Texture2 method16089(TextureFormat arg0, DataType arg1, int arg2, int arg3) {
-		return new class926(this, arg0, arg1, arg2, arg3);
+		return new Direct3DTexture_Sub1(this, arg0, arg1, arg2, arg3);
 	}
 
 	@ObfuscatedName("aqd.ut(IZ[[I)Lmr;")

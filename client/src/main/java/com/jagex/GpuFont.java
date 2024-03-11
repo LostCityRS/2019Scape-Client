@@ -153,6 +153,6 @@ public class GpuFont extends Font {
 	}
 
 	@ObfuscatedName("afx.y(CIIIZLch;II)V")
-	public void method2697(char arg0, int arg1, int arg2, int arg3, boolean arg4, class103 arg5, int arg6, int arg7) {
+	public void method2697(char arg0, int arg1, int arg2, int arg3, boolean arg4, GraphicsRelated arg5, int arg6, int arg7) {
 	}
 }

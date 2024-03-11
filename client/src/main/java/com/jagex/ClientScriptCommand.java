@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ss")
-public class ClientScriptCommand implements class800 {
+public class ClientScriptCommand implements ScriptCommand {
 
 	@ObfuscatedName("ss.e")
 	public static final ClientScriptCommand field5463 = new ClientScriptCommand(204, true);

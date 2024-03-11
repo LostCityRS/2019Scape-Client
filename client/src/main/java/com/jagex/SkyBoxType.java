@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("uv")
-public class SkyBoxType implements ConfigType, class757 {
+public class SkyBoxType implements ConfigType, ConfigRelated {
 
 	@ObfuscatedName("uv.e")
 	public int field7233 = 0;

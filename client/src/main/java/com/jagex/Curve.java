@@ -54,7 +54,7 @@ public class Curve {
 	@ObfuscatedName("dn.e(Lalw;II)I")
 	public int method2036(Packet arg0, int arg1) {
 		int var3 = arg0.g2();
-		class106.method2995(arg0.g1());
+		CurveType.method2995(arg0.g1());
 		this.field1437 = Statics.method713(arg0.g1());
 		this.field1438 = Statics.method713(arg0.g1());
 		this.field1435 = arg0.g1() != 0;

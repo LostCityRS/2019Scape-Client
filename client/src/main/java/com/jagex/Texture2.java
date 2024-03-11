@@ -6,5 +6,5 @@ import deob.ObfuscatedName;
 public interface Texture2 extends GpuTexture {
 
 	@ObfuscatedName("mo.ak(I)Ldp;")
-	class130 method5828(int arg0);
+	GraphicsDeletable method5828(int arg0);
 }

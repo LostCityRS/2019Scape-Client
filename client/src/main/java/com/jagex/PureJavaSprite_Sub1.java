@@ -91,7 +91,7 @@ public class PureJavaSprite_Sub1 extends PureJavaSprite {
 	}
 
 	@ObfuscatedName("apo.l()Ldp;")
-	public class130 method1437() {
+	public GraphicsDeletable method1437() {
 		return new PureJavaColorBuffer(this.field9356, this.field9372, this.field11904);
 	}
 
@@ -426,7 +426,7 @@ public class PureJavaSprite_Sub1 extends PureJavaSprite {
 	}
 
 	@ObfuscatedName("apo.v(IILch;II)V")
-	public void method1444(int arg0, int arg1, class103 arg2, int arg3, int arg4) {
+	public void method1444(int arg0, int arg1, GraphicsRelated arg2, int arg3, int arg4) {
 		if (this.field9373.method15654()) {
 			throw new IllegalStateException();
 		}
@@ -471,7 +471,7 @@ public class PureJavaSprite_Sub1 extends PureJavaSprite {
 		if (var11 <= 0 || var12 <= 0) {
 			return;
 		}
-		class832 var19 = (class832) arg2;
+		JavaGraphicsRelated3 var19 = (JavaGraphicsRelated3) arg2;
 		int[] var20 = var19.field9414;
 		int[] var21 = var19.field9415;
 		int var22 = var8;

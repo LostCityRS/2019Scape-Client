@@ -397,17 +397,17 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.au(IILck;Ldg;I)Ldp;")
-	public class130 method2146(int arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4) {
+	public GraphicsDeletable method2146(int arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4) {
 		return new OpenGLRenderBuffer(this, arg2, arg3, arg0, arg1, arg4);
 	}
 
 	@ObfuscatedName("aqv.ar(II)Ldw;")
-	public class126 method2121(int arg0, int arg1) {
+	public EffectInterface method2121(int arg0, int arg1) {
 		return new OpenGLRenderBuffer(this, TextureFormat.field1268, DataType.UNSIGNED_INT_24, arg0, arg1);
 	}
 
 	@ObfuscatedName("aqv.ap(III)Ldw;")
-	public class126 method2356(int arg0, int arg1, int arg2) {
+	public EffectInterface method2356(int arg0, int arg1, int arg2) {
 		return new OpenGLRenderBuffer(this, TextureFormat.field1268, DataType.UNSIGNED_INT_24, arg0, arg1, arg2);
 	}
 

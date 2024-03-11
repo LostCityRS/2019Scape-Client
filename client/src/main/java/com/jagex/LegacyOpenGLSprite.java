@@ -7,13 +7,13 @@ import jaggl.OpenGL;
 public class LegacyOpenGLSprite extends Sprite {
 
 	@ObfuscatedName("aei.e")
-	public final class1113 field9396;
+	public final LegacyGraphicRelated field9396;
 
 	@ObfuscatedName("aei.n")
 	public final LegacyOpenGLRenderer field9399;
 
 	@ObfuscatedName("aei.m")
-	public class1113 field9393;
+	public LegacyGraphicRelated field9393;
 
 	@ObfuscatedName("aei.k")
 	public int field9394 = 0;
@@ -35,17 +35,17 @@ public class LegacyOpenGLSprite extends Sprite {
 
 	public LegacyOpenGLSprite(LegacyOpenGLRenderer arg0, int arg1, int arg2, boolean arg3) {
 		this.field9399 = arg0;
-		this.field9396 = class1113.method18934(arg0, arg3 ? TextureFormat.field1273 : TextureFormat.field1271, DataType.UNSIGNED_INT_8, arg1, arg2);
+		this.field9396 = LegacyGraphicRelated.method18934(arg0, arg3 ? TextureFormat.field1273 : TextureFormat.field1271, DataType.UNSIGNED_INT_8, arg1, arg2);
 	}
 
 	public LegacyOpenGLSprite(LegacyOpenGLRenderer arg0, int arg1, int arg2, int arg3, int arg4) {
 		this.field9399 = arg0;
-		this.field9396 = class1113.method18930(arg0, arg1, arg2, arg3, arg4);
+		this.field9396 = LegacyGraphicRelated.method18930(arg0, arg1, arg2, arg3, arg4);
 	}
 
 	public LegacyOpenGLSprite(LegacyOpenGLRenderer arg0, int arg1, int arg2, int[] arg3, int arg4, int arg5) {
 		this.field9399 = arg0;
-		this.field9396 = class1113.method18931(arg0, arg1, arg2, false, arg3, arg5, arg4);
+		this.field9396 = LegacyGraphicRelated.method18931(arg0, arg1, arg2, false, arg3, arg5, arg4);
 	}
 
 	@ObfuscatedName("aei.e(IIII)V")
@@ -86,7 +86,7 @@ public class LegacyOpenGLSprite extends Sprite {
 	}
 
 	@ObfuscatedName("aei.l()Ldp;")
-	public class130 method1437() {
+	public GraphicsDeletable method1437() {
 		return this.field9396.method15317(0);
 	}
 
@@ -118,7 +118,7 @@ public class LegacyOpenGLSprite extends Sprite {
 		OpenGL.glPixelTransferf(3353, 0.499F);
 		OpenGL.glPixelTransferf(3354, 0.5F);
 		OpenGL.glPixelTransferf(3355, 0.499F);
-		this.field9393 = class1113.method18930(this.field9399, arg0, arg1, this.field9396.field11900, this.field9396.field11902);
+		this.field9393 = LegacyGraphicRelated.method18930(this.field9399, arg0, arg1, this.field9396.field11900, this.field9396.field11902);
 		this.field9394 = arg2;
 		OpenGL.glPixelTransferf(3348, 1.0F);
 		OpenGL.glPixelTransferf(3349, 0.0F);
@@ -214,9 +214,9 @@ public class LegacyOpenGLSprite extends Sprite {
 	}
 
 	@ObfuscatedName("aei.v(IILch;II)V")
-	public void method1444(int arg0, int arg1, class103 arg2, int arg3, int arg4) {
-		class833 var6 = (class833) arg2;
-		class1113 var7 = var6.field9416;
+	public void method1444(int arg0, int arg1, GraphicsRelated arg2, int arg3, int arg4) {
+		LegacyGraphicRelated2 var6 = (LegacyGraphicRelated2) arg2;
+		LegacyGraphicRelated var7 = var6.field9416;
 		this.field9396.method1082(false);
 		this.field9399.method15772();
 		this.field9399.method15777(this.field9396);
@@ -474,8 +474,8 @@ public class LegacyOpenGLSprite extends Sprite {
 	}
 
 	@ObfuscatedName("aei.al(FFFFFFILch;II)V")
-	public void method1454(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, int arg6, class103 arg7, int arg8, int arg9) {
-		class1113 var11 = ((class833) arg7).field9416;
+	public void method1454(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, int arg6, GraphicsRelated arg7, int arg8, int arg9) {
+		LegacyGraphicRelated var11 = ((LegacyGraphicRelated2) arg7).field9416;
 		if (this.field9395) {
 			float var12 = (float) this.method1434();
 			float var13 = (float) this.method1436();

@@ -27,22 +27,22 @@ public class PostProcessManager {
 	public Texture2 field3249;
 
 	@ObfuscatedName("ls.l")
-	public class130 field3250;
+	public GraphicsDeletable field3250;
 
 	@ObfuscatedName("ls.u")
-	public class130 field3251;
+	public GraphicsDeletable field3251;
 
 	@ObfuscatedName("ls.z")
-	public class130 field3255;
+	public GraphicsDeletable field3255;
 
 	@ObfuscatedName("ls.p")
-	public class130 field3253;
+	public GraphicsDeletable field3253;
 
 	@ObfuscatedName("ls.d")
-	public class126 field3254;
+	public EffectInterface field3254;
 
 	@ObfuscatedName("ls.c")
-	public class126 field3262;
+	public EffectInterface field3262;
 
 	@ObfuscatedName("ls.r")
 	public int field3256;
@@ -304,7 +304,7 @@ public class PostProcessManager {
 				Texture2 var14 = this.field3244;
 				this.field3244 = this.field3248;
 				this.field3248 = var14;
-				class130 var15 = this.field3250;
+				GraphicsDeletable var15 = this.field3250;
 				this.field3250 = this.field3251;
 				this.field3251 = var15;
 			}

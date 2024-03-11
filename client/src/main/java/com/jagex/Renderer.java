@@ -433,7 +433,7 @@ public abstract class Renderer {
 	public abstract void method2120(int arg0);
 
 	@ObfuscatedName("dh.ar(II)Ldw;")
-	public abstract class126 method2121(int arg0, int arg1);
+	public abstract EffectInterface method2121(int arg0, int arg1);
 
 	@ObfuscatedName("dh.v()Z")
 	public abstract boolean method2123();
@@ -475,7 +475,7 @@ public abstract class Renderer {
 	public abstract Framebuffer method2145();
 
 	@ObfuscatedName("dh.au(IILck;Ldg;I)Ldp;")
-	public abstract class130 method2146(int arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4);
+	public abstract GraphicsDeletable method2146(int arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4);
 
 	@ObfuscatedName("dh.aq(IIII)[I")
 	public abstract int[] method2149(int arg0, int arg1, int arg2, int arg3);
@@ -529,7 +529,7 @@ public abstract class Renderer {
 	public abstract void method2182(int arg0, int arg1, int arg2, int arg3, int arg4);
 
 	@ObfuscatedName("dh.bs(IIIIIILch;II)V")
-	public abstract void method2183(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, class103 arg6, int arg7, int arg8);
+	public abstract void method2183(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, GraphicsRelated arg6, int arg7, int arg8);
 
 	@ObfuscatedName("dh.bj(IIIIII)V")
 	public abstract void method2185(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5);
@@ -565,10 +565,10 @@ public abstract class Renderer {
 	public abstract Sprite method2200(SpriteData arg0, boolean arg1);
 
 	@ObfuscatedName("dh.cb(II[I[I)Lch;")
-	public abstract class103 method2205(int arg0, int arg1, int[] arg2, int[] arg3);
+	public abstract GraphicsRelated method2205(int arg0, int arg1, int[] arg2, int[] arg3);
 
 	@ObfuscatedName("dh.cs(ILch;II)V")
-	public abstract void method2206(int arg0, class103 arg1, int arg2, int arg3);
+	public abstract void method2206(int arg0, GraphicsRelated arg1, int arg2, int arg3);
 
 	@ObfuscatedName("dh.cy(Laac;Lde;Z)Leu;")
 	public abstract Font method2207(FontMetrics arg0, SpriteData arg1, boolean arg2);
@@ -691,7 +691,7 @@ public abstract class Renderer {
 	public abstract Matrix4x4 method2355();
 
 	@ObfuscatedName("dh.ap(III)Ldw;")
-	public abstract class126 method2356(int arg0, int arg1, int arg2);
+	public abstract EffectInterface method2356(int arg0, int arg1, int arg2);
 
 	@ObfuscatedName("dh.av()Z")
 	public abstract boolean method2360();
@@ -736,7 +736,7 @@ public abstract class Renderer {
 	public abstract void method2532(int arg0);
 
 	@ObfuscatedName("dh.cg(IIIIIILch;IIIII)V")
-	public abstract void method2537(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, class103 arg6, int arg7, int arg8, int arg9, int arg10, int arg11);
+	public abstract void method2537(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, GraphicsRelated arg6, int arg7, int arg8, int arg9, int arg10, int arg11);
 
 	@ObfuscatedName("dh.br(IIFIIFIIFIIII)V")
 	public abstract void method2552(int arg0, int arg1, float arg2, int arg3, int arg4, float arg5, int arg6, int arg7, float arg8, int arg9, int arg10, int arg11, int arg12);

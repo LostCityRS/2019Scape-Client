@@ -254,11 +254,11 @@ public abstract class PureJavaSprite extends Sprite {
 	}
 
 	@ObfuscatedName("ael.al(FFFFFFILch;II)V")
-	public void method1454(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, int arg6, class103 arg7, int arg8, int arg9) {
+	public void method1454(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, int arg6, GraphicsRelated arg7, int arg8, int arg9) {
 		if (this.field9373.method15654()) {
 			throw new IllegalStateException();
 		} else if (this.method15366(arg0, arg1, arg2, arg3, arg4, arg5)) {
-			class832 var11 = (class832) arg7;
+			JavaGraphicsRelated3 var11 = (JavaGraphicsRelated3) arg7;
 			this.method15356(var11.field9414, var11.field9415, Statics.field9385 - arg8, -arg9 - (Statics.field9369 - Statics.field9368));
 		}
 	}
@@ -267,7 +267,7 @@ public abstract class PureJavaSprite extends Sprite {
 	public abstract void method15354(int arg0, int arg1);
 
 	@ObfuscatedName("ael.v(IILch;II)V")
-	public abstract void method1444(int arg0, int arg1, class103 arg2, int arg3, int arg4);
+	public abstract void method1444(int arg0, int arg1, GraphicsRelated arg2, int arg3, int arg4);
 
 	@ObfuscatedName("ael.y(IIIIIIII)V")
 	public abstract void method1447(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7);

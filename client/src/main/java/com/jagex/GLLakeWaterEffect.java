@@ -10,12 +10,12 @@ public class GLLakeWaterEffect extends GlEffect {
 	public RenderList field9297;
 
 	@ObfuscatedName("aeh.f")
-	public class78 field9295;
+	public LegacyGlEffectRelated field9295;
 
 	@ObfuscatedName("aeh.w")
 	public static final float[] field9296 = new float[4];
 
-	public GLLakeWaterEffect(LegacyOpenGLRenderer arg0, class78 arg1) {
+	public GLLakeWaterEffect(LegacyOpenGLRenderer arg0, LegacyGlEffectRelated arg1) {
 		super(arg0);
 		this.field9295 = arg1;
 		this.field9297 = new RenderList(arg0, 2);

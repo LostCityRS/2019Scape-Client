@@ -16,9 +16,9 @@ public class GLHDWaterEffect extends GlEffect {
 	public boolean field9343 = false;
 
 	@ObfuscatedName("aev.l")
-	public class78 field9344;
+	public LegacyGlEffectRelated field9344;
 
-	public GLHDWaterEffect(LegacyOpenGLRenderer arg0, class78 arg1) {
+	public GLHDWaterEffect(LegacyOpenGLRenderer arg0, LegacyGlEffectRelated arg1) {
 		super(arg0);
 		this.field9344 = arg1;
 		if (this.field9344.field1038 != null && this.field1021.field10000 && this.field1021.field10002) {

@@ -123,7 +123,7 @@ public class TranslucentFont extends Font {
 	}
 
 	@ObfuscatedName("afw.y(CIIIZLch;II)V")
-	public void method2697(char arg0, int arg1, int arg2, int arg3, boolean arg4, class103 arg5, int arg6, int arg7) {
+	public void method2697(char arg0, int arg1, int arg2, int arg3, boolean arg4, GraphicsRelated arg5, int arg6, int arg7) {
 		if (this.field10234.field9778 == null) {
 			return;
 		}
@@ -170,8 +170,8 @@ public class TranslucentFont extends Font {
 	}
 
 	@ObfuscatedName("afw.bk([B[IIIIIIIIIIILch;II)V")
-	public void method16369(byte[] arg0, int[] arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, class103 arg12, int arg13, int arg14) {
-		class832 var16 = (class832) arg12;
+	public void method16369(byte[] arg0, int[] arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, GraphicsRelated arg12, int arg13, int arg14) {
+		JavaGraphicsRelated3 var16 = (JavaGraphicsRelated3) arg12;
 		int[] var17 = var16.field9414;
 		int[] var18 = var16.field9415;
 		int var19 = arg9 - this.field10234.field9805;

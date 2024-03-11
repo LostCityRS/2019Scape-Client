@@ -6,17 +6,17 @@ import deob.ObfuscatedName;
 public class Spline {
 
 	@ObfuscatedName("pe.e")
-	public class427[] field4324 = new class427[1];
+	public SplineRelated[] field4324 = new SplineRelated[1];
 
 	@ObfuscatedName("pe.n")
 	public float[] field4325 = new float[2];
 
 	@ObfuscatedName("pe.e(Lox;Lox;F)V")
 	public void method6774(Vector3 arg0, Vector3 arg1, float arg2) {
-		class427[] var4 = new class427[this.field4324.length + 1];
+		SplineRelated[] var4 = new SplineRelated[this.field4324.length + 1];
 		System.arraycopy(this.field4324, 0, var4, 0, this.field4324.length);
-		class427 var5 = new class427();
-		class427 var6 = this.field4324[this.field4324.length - 1];
+		SplineRelated var5 = new SplineRelated();
+		SplineRelated var6 = this.field4324[this.field4324.length - 1];
 		var5.method6740(0, var6.method6748(3));
 		Vector3 var7 = Vector3.method6528(var6.method6748(3), var6.method6748(2));
 		var5.method6740(1, Vector3.method6499(var6.method6748(3), var7));
@@ -99,7 +99,7 @@ public class Spline {
 
 	public Spline(Packet arg0) {
 		int var2 = arg0.gSmart1or2();
-		this.field4324[0] = new class427();
+		this.field4324[0] = new SplineRelated();
 		this.field4324[0].method6740(0, Vector3.method6485(arg0));
 		this.field4324[0].method6740(1, Vector3.method6485(arg0));
 		this.field4325[0] = arg0.gFloat();

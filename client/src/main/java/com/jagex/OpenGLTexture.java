@@ -214,7 +214,7 @@ public class OpenGLTexture extends OpenGLBaseTexture implements Texture2 {
 	}
 
 	@ObfuscatedName("aig.ak(I)Ldp;")
-	public class130 method5828(int arg0) {
+	public GraphicsDeletable method5828(int arg0) {
 		return new OpenGLSomethingFramebuffer(this, arg0);
 	}
 

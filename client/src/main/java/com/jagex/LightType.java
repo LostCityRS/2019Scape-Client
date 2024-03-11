@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("adl")
-public class LightType implements ConfigType, class757 {
+public class LightType implements ConfigType, ConfigRelated {
 
 	@ObfuscatedName("adl.e")
 	public int field9168 = 0;

@@ -78,7 +78,7 @@ public class LegacyColourRemappingFilter extends PostProcessingFilter {
 	}
 
 	@ObfuscatedName("aqi.f(ILadt;Ladt;II)V")
-	public void method17537(int arg0, class812 arg1, class812 arg2, int arg3, int arg4) {
+	public void method17537(int arg0, LegacyOpenGLRelated arg1, LegacyOpenGLRelated arg2, int arg3, int arg4) {
 		if (field12175 < 1 || field12175 > 3) {
 			return;
 		}
