@@ -1,5 +1,8 @@
-package com.jagex.game.config;
+package com.jagex.game.config.loctype;
 
+import com.jagex.game.config.ConfigType;
+import com.jagex.game.config.ConfigTypeFactory;
+import com.jagex.game.config.ConfigTypeList;
 import com.jagex.game.config.loctype.LocTypeFactory;
 import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;

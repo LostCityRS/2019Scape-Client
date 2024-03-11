@@ -14,7 +14,7 @@ import com.jagex.game.config.enumtype.EnumType;
 import com.jagex.game.config.npctype.NPCType;
 import com.jagex.game.config.objtype.ObjType;
 import com.jagex.game.config.seqtype.SeqType;
-import com.jagex.game.config.spottype.EffectAnimType;
+import com.jagex.game.config.effectanimtype.EffectAnimType;
 import com.jagex.graphics.AnimationWrapper;
 import com.jagex.graphics.HintArrow;
 import com.jagex.graphics.Model;

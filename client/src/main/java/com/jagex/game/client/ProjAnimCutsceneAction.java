@@ -3,7 +3,7 @@ package com.jagex.game.client;
 import com.jagex.client;
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.seqtype.SeqType;
-import com.jagex.game.config.spottype.EffectAnimType;
+import com.jagex.game.config.effectanimtype.EffectAnimType;
 import com.jagex.game.cutscene.CutsceneAction;
 import com.jagex.game.world.entity.PathingEntity;
 import com.jagex.game.world.entity.ProjectileAnimation;

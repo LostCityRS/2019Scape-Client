@@ -1,5 +1,8 @@
-package com.jagex.game.config;
+package com.jagex.game.config.headbartype;
 
+import com.jagex.game.config.ConfigType;
+import com.jagex.game.config.ConfigTypeFactory;
+import com.jagex.game.config.ConfigTypeList;
 import com.jagex.game.config.headbartype.HeadbarType;
 import com.jagex.game.config.headbartype.HeadbarTypeFactory;
 import com.jagex.js5.Js5;

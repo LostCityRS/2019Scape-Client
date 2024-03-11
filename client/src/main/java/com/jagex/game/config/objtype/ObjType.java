@@ -9,7 +9,6 @@ import com.jagex.core.io.Packet;
 import com.jagex.game.client.LocalisedText;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.ConfigTypeList;
-import com.jagex.game.config.ObjTypeFactory;
 import com.jagex.game.config.defaults.GraphicsDefaults;
 import com.jagex.game.config.paramtype.ParamType;
 import com.jagex.game.world.entity.ObjTypeCustomisation;

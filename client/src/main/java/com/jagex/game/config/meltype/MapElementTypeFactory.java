@@ -1,6 +1,7 @@
-package com.jagex.game.config;
+package com.jagex.game.config.meltype;
 
 import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.game.config.ConfigTypeFactory;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 

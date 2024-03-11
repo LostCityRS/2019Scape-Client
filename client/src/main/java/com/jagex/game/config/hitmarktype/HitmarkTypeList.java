@@ -2,7 +2,6 @@ package com.jagex.game.config.hitmarktype;
 
 import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;
-import com.jagex.game.config.BasicHitmarkTypeFactory;
 import com.jagex.game.config.CachingConfigTypeList;
 import com.jagex.game.config.Js5ConfigGroup;
 import com.jagex.js5.Js5;

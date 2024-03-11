@@ -6,7 +6,6 @@ import com.jagex.core.datastruct.Node;
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.seqgrouptype.SeqGroupType;
 import com.jagex.game.config.ConfigType;
-import com.jagex.game.config.SeqTypeFactory;
 import com.jagex.game.world.entity.ObjectWrapper;
 import com.jagex.math.IntMath;
 import deob.ObfuscatedName;

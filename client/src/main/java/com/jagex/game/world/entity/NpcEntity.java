@@ -8,7 +8,7 @@ import com.jagex.game.client.MoveSpeed;
 import com.jagex.game.config.bastype.BASType;
 import com.jagex.game.config.npctype.NPCType;
 import com.jagex.game.config.seqtype.SeqType;
-import com.jagex.game.config.spottype.EffectAnimType;
+import com.jagex.game.config.effectanimtype.EffectAnimType;
 import com.jagex.graphics.*;
 import com.jagex.graphics.camera.CameraTrackableType;
 import com.jagex.graphics.particles.ParticleList;

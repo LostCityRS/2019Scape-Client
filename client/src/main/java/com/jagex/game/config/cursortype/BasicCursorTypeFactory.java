@@ -1,5 +1,8 @@
-package com.jagex.game.config;
+package com.jagex.game.config.cursortype;
 
+import com.jagex.game.config.ConfigType;
+import com.jagex.game.config.ConfigTypeFactory;
+import com.jagex.game.config.ConfigTypeList;
 import com.jagex.game.config.cursortype.CursorTypeFactory;
 import com.jagex.game.config.cursortype.CursorType;
 import com.jagex.js5.Js5;

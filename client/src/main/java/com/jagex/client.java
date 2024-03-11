@@ -49,7 +49,7 @@ import com.jagex.game.config.npctype.NPCType;
 import com.jagex.game.config.objtype.ObjType;
 import com.jagex.game.config.quickchatphrasetype.QuickChatPhraseType;
 import com.jagex.game.config.seqtype.SeqType;
-import com.jagex.game.config.spottype.EffectAnimType;
+import com.jagex.game.config.effectanimtype.EffectAnimType;
 import com.jagex.game.config.vartype.SparseVarDomain;
 import com.jagex.game.config.vartype.VarContainerSparse;
 import com.jagex.game.config.vartype.VarType;

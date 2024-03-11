@@ -3,10 +3,8 @@ package com.jagex.game.config.meltype;
 import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;
 import com.jagex.core.datastruct.WeightedCache;
-import com.jagex.game.config.BasicMapElementTypeFactory;
 import com.jagex.game.config.CachingConfigTypeList;
 import com.jagex.game.config.Js5ConfigGroup;
-import com.jagex.game.config.MapElementTypeFactory;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 

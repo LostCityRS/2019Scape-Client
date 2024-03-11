@@ -1,4 +1,4 @@
-package com.jagex.game.config;
+package com.jagex.game.config.objtype;
 
 import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;
@@ -6,6 +6,8 @@ import com.jagex.core.datastruct.Cache2;
 import com.jagex.core.datastruct.WeightedCache;
 import com.jagex.game.client.IconCacheKey;
 import com.jagex.game.client.LocalisedText;
+import com.jagex.game.config.ConfigTypeFactory;
+import com.jagex.game.config.ConfigTypeList;
 import com.jagex.game.config.defaults.GraphicsDefaults;
 import com.jagex.game.config.objtype.ObjType;
 import com.jagex.game.world.entity.PlayerModel;

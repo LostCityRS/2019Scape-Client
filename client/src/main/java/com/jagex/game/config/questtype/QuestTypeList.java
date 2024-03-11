@@ -4,7 +4,6 @@ import com.jagex.game.config.Js5ConfigGroup;
 import com.jagex.js5.ConfigTypeListPreload;
 import com.jagex.js5.Js5;
 import com.jagex.core.constants.ModeGame;
-import com.jagex.game.config.QuestTypeFactory;
 import com.jagex.core.constants.Language;
 import deob.ObfuscatedName;
 

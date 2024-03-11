@@ -6,7 +6,6 @@ import com.jagex.core.io.Packet;
 import com.jagex.game.client.MoveSpeed;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.ConfigTypeList;
-import com.jagex.game.config.NPCTypeFactory;
 import com.jagex.game.config.vartype.VarIntDomain;
 import com.jagex.game.config.vartype.VarType;
 import com.jagex.game.config.vartype.VariableTypeProvider;

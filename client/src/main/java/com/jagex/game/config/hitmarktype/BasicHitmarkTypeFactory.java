@@ -1,5 +1,8 @@
-package com.jagex.game.config;
+package com.jagex.game.config.hitmarktype;
 
+import com.jagex.game.config.ConfigType;
+import com.jagex.game.config.ConfigTypeFactory;
+import com.jagex.game.config.ConfigTypeList;
 import com.jagex.game.config.hitmarktype.HitmarkTypeFactory;
 import com.jagex.game.config.hitmarktype.HitmarkType;
 import com.jagex.js5.Js5;

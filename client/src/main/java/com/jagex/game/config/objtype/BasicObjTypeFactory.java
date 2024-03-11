@@ -1,8 +1,11 @@
-package com.jagex.game.config;
+package com.jagex.game.config.objtype;
 
 import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;
+import com.jagex.game.config.ConfigType;
+import com.jagex.game.config.ConfigTypeList;
 import com.jagex.game.config.objtype.ObjType;
+import com.jagex.game.config.objtype.ObjTypeFactory;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 

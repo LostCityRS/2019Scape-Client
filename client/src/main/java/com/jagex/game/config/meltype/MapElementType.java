@@ -8,7 +8,6 @@ import com.jagex.core.io.Packet;
 import com.jagex.game.client.MapAlignmentX;
 import com.jagex.game.client.MapAlignmentY;
 import com.jagex.game.config.ConfigTypeList;
-import com.jagex.game.config.MapElementTypeFactory;
 import com.jagex.game.config.vartype.VarType;
 import com.jagex.game.config.vartype.VariableTypeProvider;
 import com.jagex.game.config.vartype.constants.VarDomainType;

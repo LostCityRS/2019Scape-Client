@@ -1,8 +1,7 @@
-package com.jagex.game.config.spottype;
+package com.jagex.game.config.effectanimtype;
 
 import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;
-import com.jagex.game.config.BasicEffectAnimTypeFactory;
 import com.jagex.game.config.CachingConfigTypeList;
 import com.jagex.game.config.Js5ConfigGroup;
 import com.jagex.js5.Js5;

@@ -2,7 +2,7 @@ package com.jagex.game.cutscene;
 
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.seqtype.SeqType;
-import com.jagex.game.config.spottype.EffectAnimType;
+import com.jagex.game.config.effectanimtype.EffectAnimType;
 import deob.ObfuscatedName;
 import deob.Statics;
 

@@ -1,6 +1,7 @@
-package com.jagex.game.config;
+package com.jagex.game.config.seqtype;
 
-import com.jagex.game.config.seqtype.SeqType;
+import com.jagex.game.config.ConfigType;
+import com.jagex.game.config.ConfigTypeList;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 

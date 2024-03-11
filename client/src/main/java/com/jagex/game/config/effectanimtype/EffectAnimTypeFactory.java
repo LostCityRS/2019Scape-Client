@@ -1,4 +1,4 @@
-package com.jagex.game.config.spottype;
+package com.jagex.game.config.effectanimtype;
 
 import com.jagex.core.datastruct.WeightedCache;
 import com.jagex.game.config.ConfigTypeFactory;

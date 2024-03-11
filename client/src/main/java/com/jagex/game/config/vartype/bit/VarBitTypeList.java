@@ -1,6 +1,5 @@
 package com.jagex.game.config.vartype.bit;
 
-import com.jagex.game.config.BasicVarBitTypeFactory;
 import com.jagex.game.config.CachingConfigTypeList;
 import com.jagex.game.config.Js5ConfigGroup;
 import com.jagex.js5.Js5;

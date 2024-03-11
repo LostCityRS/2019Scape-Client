@@ -1,7 +1,9 @@
-package com.jagex.game.config;
+package com.jagex.game.config.effectanimtype;
 
-import com.jagex.game.config.spottype.EffectAnimTypeFactory;
-import com.jagex.game.config.spottype.EffectAnimType;
+import com.jagex.game.config.ConfigType;
+import com.jagex.game.config.ConfigTypeList;
+import com.jagex.game.config.effectanimtype.EffectAnimTypeFactory;
+import com.jagex.game.config.effectanimtype.EffectAnimType;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 

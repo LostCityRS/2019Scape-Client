@@ -1,9 +1,10 @@
-package com.jagex.game.config;
+package com.jagex.game.config.npctype;
 
 import com.jagex.game.client.LocalisedText;
 import com.jagex.core.datastruct.WeightedCache;
 import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;
+import com.jagex.game.config.ConfigTypeFactory;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 

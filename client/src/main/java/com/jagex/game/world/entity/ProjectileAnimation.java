@@ -3,7 +3,7 @@ package com.jagex.game.world.entity;
 import com.jagex.graphics.AnimationWrapper;
 import com.jagex.client;
 import com.jagex.game.config.bastype.BASType;
-import com.jagex.game.config.spottype.EffectAnimType;
+import com.jagex.game.config.effectanimtype.EffectAnimType;
 import com.jagex.graphics.Model;
 import com.jagex.graphics.ModelParticleEffector;
 import com.jagex.graphics.ModelParticleEmitter;

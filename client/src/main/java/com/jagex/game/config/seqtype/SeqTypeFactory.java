@@ -1,5 +1,7 @@
-package com.jagex.game.config;
+package com.jagex.game.config.seqtype;
 
+import com.jagex.game.config.ConfigTypeFactory;
+import com.jagex.game.config.ConfigTypeList;
 import com.jagex.graphics.KeyFrameSet;
 import com.jagex.core.datastruct.WeightedCache;
 import com.jagex.graphics.FrameSet;

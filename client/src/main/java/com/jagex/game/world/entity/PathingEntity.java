@@ -9,7 +9,7 @@ import com.jagex.game.config.bastype.BASTypeList;
 import com.jagex.game.config.headbartype.HeadbarType;
 import com.jagex.game.config.hitmarktype.HitmarkType;
 import com.jagex.game.config.seqtype.SeqType;
-import com.jagex.game.config.spottype.EffectAnimType;
+import com.jagex.game.config.effectanimtype.EffectAnimType;
 import com.jagex.game.config.vartype.VarContainer;
 import com.jagex.game.config.vartype.VarContainerSparse;
 import com.jagex.game.config.vartype.VarDomain;
