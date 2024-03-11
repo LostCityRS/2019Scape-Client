@@ -36,14 +36,14 @@ public class MaterialTextureProvider {
 			}
 			GpuTexture var7;
 			if (arg0.field1336 && this.field3269.method2242()) {
-				float[] var6 = this.field3268.method1984(class605.field7586, arg0.field1334, arg0.field1302, 0.7F, arg1, arg1, false);
+				float[] var6 = this.field3268.method1984(TextureRelated2.field7586, arg0.field1334, arg0.field1302, 0.7F, arg1, arg1, false);
 				var7 = this.field3269.method15992(TextureFormat.field1273, arg1, arg1, true, var6);
 			} else {
 				int[] var8;
 				if (MaterialAlphaMode.field7575 == arg0.field1340 && Material.method261(arg0.field1308)) {
-					var8 = this.field3268.method1986(class605.field7586, arg0.field1334, 0.7F, arg1, arg1, true);
+					var8 = this.field3268.method1986(TextureRelated2.field7586, arg0.field1334, 0.7F, arg1, arg1, true);
 				} else {
-					var8 = this.field3268.method1983(class605.field7586, arg0.field1334, 0.7F, arg1, arg1, false);
+					var8 = this.field3268.method1983(TextureRelated2.field7586, arg0.field1334, 0.7F, arg1, arg1, false);
 				}
 				if (var8 == null) {
 					return null;
@@ -64,11 +64,11 @@ public class MaterialTextureProvider {
 			arg1 = arg0.field1357;
 		}
 		if (arg0.field1336 && this.field3269.method2242()) {
-			return this.field3268.method1977(class605.field7586, arg0.field1334, arg0.field1302, class602.field7570, 0.7F, arg1, arg1, false);
+			return this.field3268.method1977(TextureRelated2.field7586, arg0.field1334, arg0.field1302, TextureRelated1.field7570, 0.7F, arg1, arg1, false);
 		} else if (MaterialAlphaMode.field7575 == arg0.field1340 && Material.method261(arg0.field1308)) {
-			return this.field3268.method1977(class605.field7586, arg0.field1334, -1, class602.field7568, 0.7F, arg1, arg1, true);
+			return this.field3268.method1977(TextureRelated2.field7586, arg0.field1334, -1, TextureRelated1.field7568, 0.7F, arg1, arg1, true);
 		} else {
-			return this.field3268.method1977(class605.field7586, arg0.field1334, -1, class602.field7569, 0.7F, arg1, arg1, false);
+			return this.field3268.method1977(TextureRelated2.field7586, arg0.field1334, -1, TextureRelated1.field7569, 0.7F, arg1, arg1, false);
 		}
 	}
 

@@ -32,7 +32,7 @@ public class OpenGLCubeTexture extends OpenGLBaseTexture implements GpuCubeTextu
 	}
 
 	@ObfuscatedName("ail.ay(Llt;)V")
-	public void method5824(class343 arg0) {
+	public void method5824(GpuTextureRelated arg0) {
 		super.method5824(arg0);
 	}
 

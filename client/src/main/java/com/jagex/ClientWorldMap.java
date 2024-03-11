@@ -219,9 +219,9 @@ public class ClientWorldMap extends WorldMap {
 				if (!Statics.field6795.method6886(Statics.field6811.field12351)) {
 					return;
 				}
-				Statics.field6805 = class539.method6046(Statics.field6795, Statics.field6811.field12351, client.field10948);
+				Statics.field6805 = WorldMapRelated.method6046(Statics.field6795, Statics.field6811.field12351, client.field10948);
 			} else {
-				Statics.field6805 = new class539(0);
+				Statics.field6805 = new WorldMapRelated(0);
 			}
 			method8505();
 			field11651 = 70;

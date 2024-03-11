@@ -2360,27 +2360,27 @@ public class LegacyOpenGLRenderer extends Renderer {
 
 	@ObfuscatedName("afa.du(I)Ldz;")
 	public EnvironmentSampler method2229(int arg0) {
-		return this.field9952 ? new class1124(this, arg0) : null;
+		return this.field9952 ? new LegacyOpenGLEnvironmentSampler_Sub2(this, arg0) : null;
 	}
 
 	@ObfuscatedName("afa.dl(Ldz;Ldz;FLdz;)Ldz;")
 	public EnvironmentSampler method2435(EnvironmentSampler arg0, EnvironmentSampler arg1, float arg2, EnvironmentSampler arg3) {
 		if (arg0 != null && arg1 != null && this.field9952 && this.field9985) {
-			class1123 var5 = null;
+			LegacyOpenGLEnvironmentSampler_Sub1 var5 = null;
 			LegacyOpenGLEnvironmentSampler var6 = (LegacyOpenGLEnvironmentSampler) arg0;
 			LegacyOpenGLEnvironmentSampler var7 = (LegacyOpenGLEnvironmentSampler) arg1;
 			LegacyOpenGLCubeTexture var8 = var6.method15649();
 			LegacyOpenGLCubeTexture var9 = var7.method15649();
 			if (var8 != null && var9 != null) {
 				int var10 = var8.field9279 > var9.field9279 ? var8.field9279 : var9.field9279;
-				if (arg0 != arg3 && arg1 != arg3 && arg3 instanceof class1123) {
-					class1123 var11 = (class1123) arg3;
+				if (arg0 != arg3 && arg1 != arg3 && arg3 instanceof LegacyOpenGLEnvironmentSampler_Sub1) {
+					LegacyOpenGLEnvironmentSampler_Sub1 var11 = (LegacyOpenGLEnvironmentSampler_Sub1) arg3;
 					if (var11.method18982() == var10) {
 						var5 = var11;
 					}
 				}
 				if (var5 == null) {
-					var5 = new class1123(this, var10);
+					var5 = new LegacyOpenGLEnvironmentSampler_Sub1(this, var10);
 				}
 				if (var5.method18984(var8, var9, arg2)) {
 					return var5;

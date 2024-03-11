@@ -39,6 +39,6 @@ public final class FixedFunctionParticleShader extends ParticleShader {
 		this.field2986.method16042(0, TextureCombiner.field3365);
 		this.field2986.method16115(TextureCombineMode.field3395, TextureCombineMode.field3395);
 		this.field2986.method16046().method6604(this.field2987);
-		this.field2986.method16174(class352.field3370);
+		this.field2986.method16174(GpuRendererRelated4.field3370);
 	}
 }

@@ -120,7 +120,7 @@ public class PreLoadingScreen implements LoadingScreen {
 			var16.fillRect(0, 0, Statics.canvasWid, Statics.canvasHei);
 			Iterator var17 = this.field2892.iterator();
 			while (var17.hasNext()) {
-				class282 var18 = (class282) var17.next();
+				PreLoadingRelated var18 = (PreLoadingRelated) var17.next();
 				var18.method4987(var16);
 			}
 			var15.drawImage(Statics.field2575, 0, 0, null);

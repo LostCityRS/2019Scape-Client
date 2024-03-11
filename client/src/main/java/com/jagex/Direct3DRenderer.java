@@ -58,7 +58,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	public boolean[] field11977;
 
 	@ObfuscatedName("aqd.hv")
-	public class343[] field11969;
+	public GpuTextureRelated[] field11969;
 
 	@ObfuscatedName("aqd.hz")
 	public int[] field11962;
@@ -268,7 +268,7 @@ public class Direct3DRenderer extends GpuRenderer {
 			this.field11965 = new boolean[this.field10186];
 			this.field11966 = new boolean[this.field10186];
 			this.field11981 = new boolean[this.field10186];
-			this.field11969 = new class343[this.field10186];
+			this.field11969 = new GpuTextureRelated[this.field10186];
 			this.field11977 = new boolean[this.field10186];
 			this.field11962 = new int[this.field10186];
 			Matrix4x3 var17 = new Matrix4x3();
@@ -346,7 +346,7 @@ public class Direct3DRenderer extends GpuRenderer {
 			IDirect3DDevice.SetSamplerState(this.device, var1, 5, 2);
 			IDirect3DDevice.SetSamplerState(this.device, var1, 1, 1);
 			IDirect3DDevice.SetSamplerState(this.device, var1, 2, 1);
-			this.field11969[var1] = class343.field3323;
+			this.field11969[var1] = GpuTextureRelated.field3323;
 			boolean[] var2 = this.field11965;
 			this.field11966[var1] = true;
 			var2[var1] = true;
@@ -887,12 +887,12 @@ public class Direct3DRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqd.vo()V")
 	public void method16050() {
-		if (this.field11973 != 0L || this.field10135[this.field10177] == class352.field3372) {
+		if (this.field11973 != 0L || this.field10135[this.field10177] == GpuRendererRelated4.field3372) {
 			IDirect3DDevice.SetTextureStageState(this.device, this.field10177, 24, 0);
 			this.field11962[this.field10177] = 0;
 			return;
 		}
-		if (this.field10135[this.field10177] == class352.field3370) {
+		if (this.field10135[this.field10177] == GpuRendererRelated4.field3370) {
 			IDirect3DDevice.SetTransform(this.device, this.field10177 + 16, this.field10162[this.field10177].method6638(this.field11985));
 		} else {
 			IDirect3DDevice.SetTransform(this.device, this.field10177 + 16, this.field10162[this.field10177].method6594(this.field11985));
@@ -1015,7 +1015,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.ahi(Lmv;)I")
-	public static final int method19006(class352 arg0) {
+	public static final int method19006(GpuRendererRelated4 arg0) {
 		switch(arg0.field3376) {
 			case 0:
 				return 2;

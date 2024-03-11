@@ -240,7 +240,7 @@ public class LocType implements ConfigType {
 	public boolean field7525 = false;
 
 	@ObfuscatedName("vd.cl")
-	public class596 field7526 = class596.field7439;
+	public LocTypeRelated field7526 = LocTypeRelated.field7439;
 
 	@ObfuscatedName("vd.cg")
 	public Cuboid field7468;
@@ -518,7 +518,7 @@ public class LocType implements ConfigType {
 				} else if (arg1 == 178) {
 					this.field7510 = arg0.g1();
 				} else if (arg1 == 186) {
-					this.field7526 = (class596) SerializableEnums.decode(Statics.method9002(), arg0.g1());
+					this.field7526 = (LocTypeRelated) SerializableEnums.decode(Statics.method9002(), arg0.g1());
 				} else if (arg1 != 188) {
 					if (arg1 == 189) {
 						this.field7525 = true;
@@ -529,9 +529,9 @@ public class LocType implements ConfigType {
 						}
 						this.field7497[arg1 - 190] = arg0.g2();
 					} else if (arg1 == 196) {
-						SerializableEnums.decode(class608.method208(), arg0.g1());
+						SerializableEnums.decode(LocTypeRelated3.method208(), arg0.g1());
 					} else if (arg1 == 197) {
-						SerializableEnums.decode(class607.method10203(), arg0.g1());
+						SerializableEnums.decode(LocTypeRelated2.method10203(), arg0.g1());
 					} else if (arg1 != 198 && arg1 != 199) {
 						if (arg1 == 200) {
 							this.field7479 = true;
@@ -587,7 +587,7 @@ public class LocType implements ConfigType {
 		if (this.method9504() || this.field7520 || this.field7505 != null) {
 			this.field7524 = true;
 		}
-		if (this.field7470 <= 0 && class596.field7438 == this.field7526) {
+		if (this.field7470 <= 0 && LocTypeRelated.field7438 == this.field7526) {
 		}
 	}
 

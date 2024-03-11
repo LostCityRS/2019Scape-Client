@@ -27,7 +27,7 @@ public abstract class Shader {
 	public int field2573 = -1;
 
 	@ObfuscatedName("ho.u")
-	public static final HashMapKey field2571 = new class232();
+	public static final HashMapKey field2571 = new ShaderRelated();
 
 	public Shader(GpuRenderer arg0, ShaderData arg1) {
 		this.field2570 = arg1.field2577;

@@ -39,7 +39,7 @@ public class LoadingScreenType {
 		} else if (LoadingScreenElementType.field3195 == arg1) {
 			return LoginRelated5.method8975(arg0);
 		} else if (LoadingScreenElementType.field3196 == arg1) {
-			return class1137.method6845(arg0);
+			return LoadingScreenRelated4_Sub1.method6845(arg0);
 		} else if (LoadingScreenElementType.field3197 == arg1) {
 			return LoginRelated4.method15034(arg0);
 		} else {

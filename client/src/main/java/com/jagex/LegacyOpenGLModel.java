@@ -216,19 +216,19 @@ public class LegacyOpenGLModel extends Model {
 		this.field9626 = arg0;
 		this.field9627 = arg2;
 		this.field9628 = arg5;
-		if (class72.method1178(arg2, arg5)) {
+		if (LegacyModelFlagsRelated.method1178(arg2, arg5)) {
 			this.field9659 = new class83(null, 5126, 3, 0);
 		}
-		if (class72.method1191(arg2, arg5)) {
+		if (LegacyModelFlagsRelated.method1191(arg2, arg5)) {
 			this.field9664 = new class83(null, 5126, 2, 0);
 		}
-		if (class72.method1146(arg2, arg5)) {
+		if (LegacyModelFlagsRelated.method1146(arg2, arg5)) {
 			this.field9673 = new class83(null, 5126, 3, 0);
 		}
-		if (class72.method1123(arg2, arg5)) {
+		if (LegacyModelFlagsRelated.method1123(arg2, arg5)) {
 			this.field9665 = new class83(null, 5121, 4, 0);
 		}
-		if (class72.method1139(arg2, arg5)) {
+		if (LegacyModelFlagsRelated.method1139(arg2, arg5)) {
 			this.field9663 = new class82();
 		}
 		MaterialList var7 = arg0.field1597;
@@ -726,13 +726,13 @@ public class LegacyOpenGLModel extends Model {
 		this.field9690 = method15565(this.field9690, this.field9658);
 		this.field9647 = method15571(this.field9647, this.field9658);
 		this.field9648 = method15571(this.field9648, this.field9658);
-		if (arg1.field1379 != null && class72.method1153(arg2, this.field9628)) {
+		if (arg1.field1379 != null && LegacyModelFlagsRelated.method1153(arg2, this.field9628)) {
 			this.field9638 = arg1.method1940(false);
 		}
-		if (arg1.field1412 != null && class72.method1154(arg2, this.field9628)) {
+		if (arg1.field1412 != null && LegacyModelFlagsRelated.method1154(arg2, this.field9628)) {
 			this.field9686 = arg1.method1963();
 		}
-		if (arg1.field1397 != null && class72.method1152(arg2, this.field9628)) {
+		if (arg1.field1397 != null && LegacyModelFlagsRelated.method1152(arg2, this.field9628)) {
 			int var184 = 0;
 			int[] var185 = new int[256];
 			for (int var186 = 0; var186 < this.field9670; var186++) {
@@ -870,9 +870,9 @@ public class LegacyOpenGLModel extends Model {
 			arg0.field9632 = true;
 		}
 		arg0.field9633 = this.field9633;
-		boolean var6 = class72.method1124(arg2, this.field9628);
-		boolean var7 = class72.method1125(arg2, this.field9628);
-		boolean var8 = class72.method1126(arg2, this.field9628);
+		boolean var6 = LegacyModelFlagsRelated.method1124(arg2, this.field9628);
+		boolean var7 = LegacyModelFlagsRelated.method1125(arg2, this.field9628);
+		boolean var8 = LegacyModelFlagsRelated.method1126(arg2, this.field9628);
 		boolean var9 = var6 | var7 | var8;
 		if (var9) {
 			if (!var6) {
@@ -912,19 +912,19 @@ public class LegacyOpenGLModel extends Model {
 			arg0.field9637 = this.field9637;
 			arg0.field9619 = this.field9619;
 		}
-		if (class72.method1140(arg2, this.field9628)) {
+		if (LegacyModelFlagsRelated.method1140(arg2, this.field9628)) {
 			if (arg3) {
 				arg0.field9629 = (byte) (arg0.field9629 | 0x1);
 			}
 			arg0.field9659 = arg1.field9659;
 			arg0.field9659.field1112 = this.field9659.field1112;
 			arg0.field9659.field1111 = this.field9659.field1111;
-		} else if (class72.method1178(arg2, this.field9628)) {
+		} else if (LegacyModelFlagsRelated.method1178(arg2, this.field9628)) {
 			arg0.field9659 = this.field9659;
 		} else {
 			arg0.field9659 = null;
 		}
-		if (class72.method1129(arg2, this.field9628)) {
+		if (LegacyModelFlagsRelated.method1129(arg2, this.field9628)) {
 			if (arg1.field9651 == null || arg1.field9651.length < this.field9670) {
 				arg0.field9651 = arg1.field9651 = new short[this.field9670];
 			} else {
@@ -936,7 +936,7 @@ public class LegacyOpenGLModel extends Model {
 		} else {
 			arg0.field9651 = this.field9651;
 		}
-		if (class72.method1200(arg2, this.field9628)) {
+		if (LegacyModelFlagsRelated.method1200(arg2, this.field9628)) {
 			if (arg1.field9683 == null || arg1.field9683.length < this.field9670) {
 				arg0.field9683 = arg1.field9683 = new byte[this.field9670];
 			} else {
@@ -948,19 +948,19 @@ public class LegacyOpenGLModel extends Model {
 		} else {
 			arg0.field9683 = this.field9683;
 		}
-		if (class72.method1142(arg2, this.field9628)) {
+		if (LegacyModelFlagsRelated.method1142(arg2, this.field9628)) {
 			if (arg3) {
 				arg0.field9629 = (byte) (arg0.field9629 | 0x2);
 			}
 			arg0.field9665 = arg1.field9665;
 			arg0.field9665.field1112 = this.field9665.field1112;
 			arg0.field9665.field1111 = this.field9665.field1111;
-		} else if (class72.method1123(arg2, this.field9628)) {
+		} else if (LegacyModelFlagsRelated.method1123(arg2, this.field9628)) {
 			arg0.field9665 = this.field9665;
 		} else {
 			arg0.field9665 = null;
 		}
-		if (class72.method1128(arg2, this.field9628)) {
+		if (LegacyModelFlagsRelated.method1128(arg2, this.field9628)) {
 			if (arg1.field9681 == null || arg1.field9681.length < this.field9658) {
 				int var13 = this.field9658;
 				arg0.field9681 = arg1.field9681 = new short[var13];
@@ -1007,19 +1007,19 @@ public class LegacyOpenGLModel extends Model {
 			arg0.field9644 = this.field9644;
 			arg0.field9690 = this.field9690;
 		}
-		if (class72.method1171(arg2, this.field9628)) {
+		if (LegacyModelFlagsRelated.method1171(arg2, this.field9628)) {
 			if (arg3) {
 				arg0.field9629 = (byte) (arg0.field9629 | 0x4);
 			}
 			arg0.field9673 = arg1.field9673;
 			arg0.field9673.field1112 = this.field9673.field1112;
 			arg0.field9673.field1111 = this.field9673.field1111;
-		} else if (class72.method1146(arg2, this.field9628)) {
+		} else if (LegacyModelFlagsRelated.method1146(arg2, this.field9628)) {
 			arg0.field9673 = this.field9673;
 		} else {
 			arg0.field9673 = null;
 		}
-		if (class72.method1131(arg2, this.field9628)) {
+		if (LegacyModelFlagsRelated.method1131(arg2, this.field9628)) {
 			if (arg1.field9647 == null || arg1.field9647.length < this.field9670) {
 				int var18 = this.field9658;
 				arg0.field9647 = arg1.field9647 = new float[var18];
@@ -1036,19 +1036,19 @@ public class LegacyOpenGLModel extends Model {
 			arg0.field9647 = this.field9647;
 			arg0.field9648 = this.field9648;
 		}
-		if (class72.method1226(arg2, this.field9628)) {
+		if (LegacyModelFlagsRelated.method1226(arg2, this.field9628)) {
 			if (arg3) {
 				arg0.field9629 = (byte) (arg0.field9629 | 0x8);
 			}
 			arg0.field9664 = arg1.field9664;
 			arg0.field9664.field1112 = this.field9664.field1112;
 			arg0.field9664.field1111 = this.field9664.field1111;
-		} else if (class72.method1191(arg2, this.field9628)) {
+		} else if (LegacyModelFlagsRelated.method1191(arg2, this.field9628)) {
 			arg0.field9664 = this.field9664;
 		} else {
 			arg0.field9664 = null;
 		}
-		if (class72.method1132(arg2, this.field9628)) {
+		if (LegacyModelFlagsRelated.method1132(arg2, this.field9628)) {
 			if (arg1.field9653 == null || arg1.field9653.length < this.field9670) {
 				int var20 = this.field9670;
 				arg0.field9653 = arg1.field9653 = new short[var20];
@@ -1069,18 +1069,18 @@ public class LegacyOpenGLModel extends Model {
 			arg0.field9652 = this.field9652;
 			arg0.field9646 = this.field9646;
 		}
-		if (class72.method1144(arg2, this.field9628)) {
+		if (LegacyModelFlagsRelated.method1144(arg2, this.field9628)) {
 			if (arg3) {
 				arg0.field9629 = (byte) (arg0.field9629 | 0x10);
 			}
 			arg0.field9663 = arg1.field9663;
 			arg0.field9663.field1109 = this.field9663.field1109;
-		} else if (class72.method1139(arg2, this.field9628)) {
+		} else if (LegacyModelFlagsRelated.method1139(arg2, this.field9628)) {
 			arg0.field9663 = this.field9663;
 		} else {
 			arg0.field9663 = null;
 		}
-		if (class72.method1137(arg2, this.field9628)) {
+		if (LegacyModelFlagsRelated.method1137(arg2, this.field9628)) {
 			if (arg1.field9685 == null || arg1.field9685.length < this.field9670) {
 				int var22 = this.field9670;
 				arg0.field9685 = arg1.field9685 = new short[var22];
@@ -1093,7 +1093,7 @@ public class LegacyOpenGLModel extends Model {
 		} else {
 			arg0.field9685 = this.field9685;
 		}
-		if (!class72.method1134(arg2, this.field9628)) {
+		if (!LegacyModelFlagsRelated.method1134(arg2, this.field9628)) {
 			arg0.field9639 = this.field9639;
 		} else if (arg1.field9639 == null || arg1.field9639.length < this.field9660) {
 			int var25 = this.field9660;
@@ -1146,11 +1146,11 @@ public class LegacyOpenGLModel extends Model {
 			return;
 		}
 		this.field9666 = false;
-		if (this.field9687 == null && this.field9641 == null && this.field9656 == null && !class72.method1127(this.field9627, this.field9628)) {
+		if (this.field9687 == null && this.field9641 == null && this.field9656 == null && !LegacyModelFlagsRelated.method1127(this.field9627, this.field9628)) {
 			boolean var1 = false;
 			boolean var2 = false;
 			boolean var3 = false;
-			if (this.field9636 != null && !class72.method1206(this.field9627, this.field9628)) {
+			if (this.field9636 != null && !LegacyModelFlagsRelated.method1206(this.field9627, this.field9628)) {
 				if (this.field9659 != null && this.field9659.field1111 == null) {
 					this.field9666 = true;
 				} else {
@@ -1160,7 +1160,7 @@ public class LegacyOpenGLModel extends Model {
 					var1 = true;
 				}
 			}
-			if (this.field9637 != null && !class72.method1141(this.field9627, this.field9628)) {
+			if (this.field9637 != null && !LegacyModelFlagsRelated.method1141(this.field9627, this.field9628)) {
 				if (this.field9659 != null && this.field9659.field1111 == null) {
 					this.field9666 = true;
 				} else {
@@ -1170,7 +1170,7 @@ public class LegacyOpenGLModel extends Model {
 					var2 = true;
 				}
 			}
-			if (this.field9619 != null && !class72.method1147(this.field9627, this.field9628)) {
+			if (this.field9619 != null && !LegacyModelFlagsRelated.method1147(this.field9627, this.field9628)) {
 				if (this.field9659 != null && this.field9659.field1111 == null) {
 					this.field9666 = true;
 				} else {
@@ -1194,7 +1194,7 @@ public class LegacyOpenGLModel extends Model {
 			this.field9680 = null;
 			this.field9679 = null;
 		}
-		if (this.field9690 != null && !class72.method1148(this.field9627, this.field9628)) {
+		if (this.field9690 != null && !LegacyModelFlagsRelated.method1148(this.field9627, this.field9628)) {
 			if (this.field9673 == null) {
 				if (this.field9665 != null && this.field9665.field1111 == null) {
 					this.field9666 = true;
@@ -1213,21 +1213,21 @@ public class LegacyOpenGLModel extends Model {
 				this.field9690 = null;
 			}
 		}
-		if (this.field9651 != null && !class72.method1149(this.field9627, this.field9628)) {
+		if (this.field9651 != null && !LegacyModelFlagsRelated.method1149(this.field9627, this.field9628)) {
 			if (this.field9665 != null && this.field9665.field1111 == null) {
 				this.field9666 = true;
 			} else {
 				this.field9651 = null;
 			}
 		}
-		if (this.field9683 != null && !class72.method1150(this.field9627, this.field9628)) {
+		if (this.field9683 != null && !LegacyModelFlagsRelated.method1150(this.field9627, this.field9628)) {
 			if (this.field9665 != null && this.field9665.field1111 == null) {
 				this.field9666 = true;
 			} else {
 				this.field9683 = null;
 			}
 		}
-		if (this.field9647 != null && !class72.method1151(this.field9627, this.field9628)) {
+		if (this.field9647 != null && !LegacyModelFlagsRelated.method1151(this.field9627, this.field9628)) {
 			if (this.field9664 != null && this.field9664.field1111 == null) {
 				this.field9666 = true;
 			} else {
@@ -1235,14 +1235,14 @@ public class LegacyOpenGLModel extends Model {
 				this.field9647 = null;
 			}
 		}
-		if (this.field9685 != null && !class72.method1156(this.field9627, this.field9628)) {
+		if (this.field9685 != null && !LegacyModelFlagsRelated.method1156(this.field9627, this.field9628)) {
 			if (this.field9665 != null && this.field9665.field1111 == null) {
 				this.field9666 = true;
 			} else {
 				this.field9685 = null;
 			}
 		}
-		if (this.field9653 != null && !class72.method1215(this.field9627, this.field9628)) {
+		if (this.field9653 != null && !LegacyModelFlagsRelated.method1215(this.field9627, this.field9628)) {
 			if ((this.field9663 == null || this.field9663.field1109 != null) && (this.field9665 == null || this.field9665.field1111 != null)) {
 				this.field9646 = null;
 				this.field9652 = null;
@@ -1251,15 +1251,15 @@ public class LegacyOpenGLModel extends Model {
 				this.field9666 = true;
 			}
 		}
-		if (this.field9649 != null && !class72.method1152(this.field9627, this.field9628)) {
+		if (this.field9649 != null && !LegacyModelFlagsRelated.method1152(this.field9627, this.field9628)) {
 			this.field9649 = null;
 			this.field9662 = null;
 		}
-		if (this.field9638 != null && !class72.method1153(this.field9627, this.field9628)) {
+		if (this.field9638 != null && !LegacyModelFlagsRelated.method1153(this.field9627, this.field9628)) {
 			this.field9638 = null;
 			this.field9640 = null;
 		}
-		if (this.field9686 != null && !class72.method1154(this.field9627, this.field9628)) {
+		if (this.field9686 != null && !LegacyModelFlagsRelated.method1154(this.field9627, this.field9628)) {
 			this.field9686 = null;
 		}
 		if (this.field9678 != null && (this.field9627 & 0x800) == 0 && (this.field9627 & 0x40000) == 0) {
@@ -1915,7 +1915,7 @@ public class LegacyOpenGLModel extends Model {
 		for (int var1 = 0; var1 < this.field9685.length; var1++) {
 			if (this.field9685[var1] != -1) {
 				Material var2 = this.field9626.field1597.method2043(this.field9685[var1] & 0xFFFF);
-				if (var2.field1330 && !this.field9626.field10026.method1397(class605.field7586, var2, -1)) {
+				if (var2.field1330 && !this.field9626.field10026.method1397(TextureRelated2.field7586, var2, -1)) {
 					return false;
 				}
 			}

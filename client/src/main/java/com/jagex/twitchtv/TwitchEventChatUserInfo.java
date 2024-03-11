@@ -1,6 +1,6 @@
 package com.jagex.twitchtv;
 
-import com.jagex.class571;
+import com.jagex.TwitchVarType;
 import deob.ObfuscatedName;
 
 public class TwitchEventChatUserInfo extends TwitchEvent {
@@ -28,7 +28,7 @@ public class TwitchEventChatUserInfo extends TwitchEvent {
 	}
 
 	@ObfuscatedName("com/jagex/twitchtv/TwitchEventChatUserInfo.n()Lud;")
-	public class571 method11() {
+	public TwitchVarType method11() {
 		return null;
 	}
 

@@ -11634,7 +11634,7 @@ public final class client extends GameShell {
 		}
 		if (!arg0.field2150) {
 			int var2 = arg1.field2158 >>> 16;
-			class730 var3 = new class730(field10979);
+			IterableMapIterator var3 = new IterableMapIterator(field10979);
 			for (SubInterface var4 = (SubInterface) var3.method14520(); var4 != null; var4 = (SubInterface) var3.next()) {
 				if (var4.field11571 == var2) {
 					return Component.method10202((int) var4.field6760);
@@ -12892,7 +12892,7 @@ public final class client extends GameShell {
 		if (!arg2 && field10978 != -1) {
 			Statics.method1023(field10978, 1);
 		}
-		class730 var6 = new class730(field10979);
+		IterableMapIterator var6 = new IterableMapIterator(field10979);
 		for (SubInterface var7 = (SubInterface) var6.method14520(); var7 != null; var7 = (SubInterface) var6.next()) {
 			if (!var7.method8441()) {
 				var7 = (SubInterface) var6.method14520();

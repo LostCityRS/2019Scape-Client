@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ahi")
-public abstract class WaterShader extends class324 {
+public abstract class WaterShader extends GpuRendererRelated2 {
 
 	@ObfuscatedName("ahi.n")
 	public Shader field10587;

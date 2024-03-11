@@ -253,8 +253,8 @@ public class SkyBox {
 				arg0.method2354(arg2, arg3, arg4, arg5, var14 << 24 | arg9, arg10 ? 0 : 1);
 			} else {
 				Material var15 = Statics.field3199.method2043(this.field5084);
-				if (this.field5095 == null && Statics.field2421.method1977(class605.field7586, var15.field1334, -1, MaterialAlphaMode.field7573 == var15.field1340 ? class602.field7569 : class602.field7568, 0.7F, this.field5085, this.field5085, false)) {
-					int[] var16 = MaterialAlphaMode.field7573 == var15.field1340 ? Statics.field2421.method1983(class605.field7586, var15.field1334, 0.7F, this.field5085, this.field5085, false) : Statics.field2421.method1986(class605.field7586, var15.field1334, 0.7F, this.field5085, this.field5085, false);
+				if (this.field5095 == null && Statics.field2421.method1977(TextureRelated2.field7586, var15.field1334, -1, MaterialAlphaMode.field7573 == var15.field1340 ? TextureRelated1.field7569 : TextureRelated1.field7568, 0.7F, this.field5085, this.field5085, false)) {
+					int[] var16 = MaterialAlphaMode.field7573 == var15.field1340 ? Statics.field2421.method1983(TextureRelated2.field7586, var15.field1334, 0.7F, this.field5085, this.field5085, false) : Statics.field2421.method1986(TextureRelated2.field7586, var15.field1334, 0.7F, this.field5085, this.field5085, false);
 					this.field5096 = var16[0];
 					this.field5097 = var16[var16.length - 1];
 					this.field5095 = arg0.method2199(var16, 0, var15.field1357, var15.field1357, var15.field1357);

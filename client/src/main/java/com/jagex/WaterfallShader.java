@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class WaterfallShader extends WaterShader {
 
 	@ObfuscatedName("aqw.ai")
-	public final class323 field12119;
+	public final WaterRelated field12119;
 
 	@ObfuscatedName("aqw.aw")
 	public ProgramUniform field12103;
@@ -59,7 +59,7 @@ public class WaterfallShader extends WaterShader {
 	@ObfuscatedName("aqw.aa")
 	public int field12117;
 
-	public WaterfallShader(GpuRenderer arg0, class323 arg1) throws ShaderException {
+	public WaterfallShader(GpuRenderer arg0, WaterRelated arg1) throws ShaderException {
 		super(arg0);
 		this.field12119 = arg1;
 		if (this.field12119.method5407() && arg0.method15957()) {

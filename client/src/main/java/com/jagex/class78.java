@@ -27,12 +27,12 @@ public class class78 {
 	@ObfuscatedName("bz.e(Lafa;)V")
 	public static void method1283(LegacyOpenGLRenderer arg0) {
 		if (Statics.field1046 == null) {
-			class1142 var1 = new class1142();
+			NoiseGenerator3D_Sub2_Sub1 var1 = new NoiseGenerator3D_Sub2_Sub1();
 			byte[] var2 = var1.method19221(128, 128, 16);
 			Statics.field1046 = ByteArrayCopier.method2821(var2, false);
 		}
 		if (Statics.field1039 == null) {
-			class1140 var3 = new class1140();
+			NoiseGenerator3D_Sub1_Sub1 var3 = new NoiseGenerator3D_Sub1_Sub1();
 			byte[] var4 = var3.method19216(128, 128, 16);
 			Statics.field1039 = ByteArrayCopier.method2821(var4, false);
 		}

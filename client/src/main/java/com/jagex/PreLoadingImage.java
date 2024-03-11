@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 import java.awt.*;
 
 @ObfuscatedName("ahw")
-public class PreLoadingImage extends class282 {
+public class PreLoadingImage extends PreLoadingRelated {
 
 	// $FF: synthetic field
 	public final PreLoadingScreen this$0;

@@ -8,7 +8,7 @@ import java.util.Iterator;
 public abstract class Camera {
 
 	@ObfuscatedName("je.e")
-	public final class265 field2848;
+	public final CameraRelated field2848;
 
 	@ObfuscatedName("je.n")
 	public CameraControlMode field2857;
@@ -109,7 +109,7 @@ public abstract class Camera {
 	@ObfuscatedName("je.am")
 	public IterableMap field2878 = new IterableMap(8);
 
-	public Camera(class265 arg0, CameraTrackableProvider arg1) {
+	public Camera(CameraRelated arg0, CameraTrackableProvider arg1) {
 		this.field2848 = arg0;
 		this.field2874 = arg1;
 		this.method4680(true);
@@ -122,7 +122,7 @@ public abstract class Camera {
 		this.field2846 = null;
 		this.field2847 = null;
 		this.field2863 = null;
-		if (class265.field2812 != this.field2848 && arg0) {
+		if (CameraRelated.field2812 != this.field2848 && arg0) {
 			this.field2857 = CameraControlMode.field2828;
 		} else {
 			this.field2857 = CameraControlMode.field2829;
@@ -193,13 +193,13 @@ public abstract class Camera {
 		} else if (LookatMode.field2790 == arg0) {
 			this.field2846 = new class1069(this);
 		} else if (LookatMode.field2789 == arg0) {
-			this.field2846 = new class1201(this);
+			this.field2846 = new LookatSpline_Sub1(this);
 		} else if (LookatMode.field2795 == arg0) {
-			this.field2846 = new class1203(this);
+			this.field2846 = new LookatSpline_Sub4(this);
 		} else if (LookatMode.field2792 == arg0) {
 			this.field2846 = new class1073(this);
 		} else if (LookatMode.field2787 == arg0) {
-			this.field2846 = new class1202(this);
+			this.field2846 = new LookatSpline_Sub2(this);
 		}
 		return this.field2846;
 	}
@@ -215,21 +215,21 @@ public abstract class Camera {
 		} else if (PositionMode.field2816 == arg0) {
 			this.field2863 = new PositionPoint(this);
 		} else if (PositionMode.field2819 == arg0) {
-			this.field2863 = new class1134(this);
+			this.field2863 = new PositionSpline_Sub1(this);
 		} else if (PositionMode.field2817 == arg0) {
-			this.field2863 = new class1136(this);
+			this.field2863 = new PositionSpline_Sub3(this);
 		} else if (PositionMode.field2818 == arg0) {
-			this.field2863 = new class1135(this);
+			this.field2863 = new PositionSpline_Sub2(this);
 		}
 		return this.field2863;
 	}
 
 	@ObfuscatedName("je.l(I)Z")
 	public boolean method4686() {
-		if (class265.field2812 == this.field2848 && CameraControlMode.field2829 == this.field2857) {
+		if (CameraRelated.field2812 == this.field2848 && CameraControlMode.field2829 == this.field2857) {
 			return true;
 		} else {
-			return class265.field2813 == this.field2848 && CameraControlMode.field2828 == this.field2857;
+			return CameraRelated.field2813 == this.field2848 && CameraControlMode.field2828 == this.field2857;
 		}
 	}
 

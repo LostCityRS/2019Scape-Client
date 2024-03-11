@@ -29,7 +29,7 @@ public class FixedFunctionModelShader extends ModelShader {
 	public void method16615() {
 		this.field2963.method16092(this.field2966);
 		this.field2963.method16046().method6604(this.field2982);
-		this.field2963.method16174(class352.field3370);
+		this.field2963.method16174(GpuRendererRelated4.field3370);
 		this.field2963.method16079(PrimitiveType.field3403, this.field2981, this.field2983, this.field2972, this.field2962);
 	}
 

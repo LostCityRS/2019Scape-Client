@@ -195,7 +195,7 @@ public class Direct3DTexture extends Direct3DBaseTexture implements GpuTexture {
 	}
 
 	@ObfuscatedName("aiy.ay(Llt;)V")
-	public void method5824(class343 arg0) {
+	public void method5824(GpuTextureRelated arg0) {
 		super.method5824(arg0);
 	}
 

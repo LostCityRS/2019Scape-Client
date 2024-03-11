@@ -9,7 +9,7 @@ public class EnvMappedWaterShader extends WaterShader {
 	public final boolean field12131;
 
 	@ObfuscatedName("aqe.aw")
-	public final class323 field12122;
+	public final WaterRelated field12122;
 
 	@ObfuscatedName("aqe.as")
 	public ProgramUniform field12121;
@@ -101,7 +101,7 @@ public class EnvMappedWaterShader extends WaterShader {
 	@ObfuscatedName("aqe.bq")
 	public Program field12128;
 
-	public EnvMappedWaterShader(GpuRenderer arg0, class323 arg1, boolean arg2) throws ShaderException {
+	public EnvMappedWaterShader(GpuRenderer arg0, WaterRelated arg1, boolean arg2) throws ShaderException {
 		super(arg0);
 		new Matrix4x4();
 		this.field12122 = arg1;

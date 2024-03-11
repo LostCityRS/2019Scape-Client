@@ -29,7 +29,7 @@ public class AudioBuss {
 	@ObfuscatedName("mj.u")
 	public long field3437;
 
-	public AudioBuss(int arg0, float arg1, Object arg2, class364 arg3, VolumeProvider arg4, AudioBuss arg5) {
+	public AudioBuss(int arg0, float arg1, Object arg2, AudioRelated2 arg3, VolumeProvider arg4, AudioBuss arg5) {
 		this.field3435 = arg5;
 		this.field3432 = arg4;
 		this.field3436 = 1.0F;

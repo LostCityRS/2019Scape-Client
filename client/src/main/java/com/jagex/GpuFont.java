@@ -85,7 +85,7 @@ public class GpuFont extends Font {
 			}
 		}
 		this.field10247 = arg0.method16204(this.field1667.field8571, this.field1667.field8572, false, var5);
-		this.field10247.method5824(this.field1667.field8570 == 1 ? class343.field3322 : class343.field3323);
+		this.field10247.method5824(this.field1667.field8570 == 1 ? GpuTextureRelated.field3322 : GpuTextureRelated.field3323);
 		this.field10246 = arg0.method16085(false);
 		this.field10246.method5553(20480, 20);
 		ByteBuffer var29 = this.field10244.field10071;
@@ -127,7 +127,7 @@ public class GpuFont extends Font {
 
 	@ObfuscatedName("afx.s(CIIIZ)V")
 	public void method2690(char arg0, int arg1, int arg2, int arg3, boolean arg4) {
-		if (this.field10244.method16337() != class326.field3236) {
+		if (this.field10244.method16337() != GpuImageRelated.field3236) {
 			int var6 = arg2 + this.field1667.method14560(arg0);
 			float var7 = (float) this.field1667.method14558(arg0);
 			float var8 = (float) this.field1667.method14529(arg0);

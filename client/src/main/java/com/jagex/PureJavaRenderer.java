@@ -239,14 +239,14 @@ public class PureJavaRenderer extends Renderer {
 			var4 = (PureJavaTexture) this.field9809.method2930((long) (var3.field1334 & 0xFFFF) | Long.MIN_VALUE);
 			if (var4 == null) {
 				int var5 = var3.field1357;
-				if (!this.field1596.method1977(class605.field7586, var3.field1334, -1, class602.field7569, 0.7F, var5, var5, true)) {
+				if (!this.field1596.method1977(TextureRelated2.field7586, var3.field1334, -1, TextureRelated1.field7569, 0.7F, var5, var5, true)) {
 					return null;
 				}
 				int[] var6;
 				if (MaterialAlphaMode.field7575 == var3.field1340) {
-					var6 = this.field1596.method1986(class605.field7586, var3.field1334, 0.7F, var5, var5, true);
+					var6 = this.field1596.method1986(TextureRelated2.field7586, var3.field1334, 0.7F, var5, var5, true);
 				} else {
-					var6 = this.field1596.method1983(class605.field7586, var3.field1334, 0.7F, var5, var5, true);
+					var6 = this.field1596.method1983(TextureRelated2.field7586, var3.field1334, 0.7F, var5, var5, true);
 				}
 				var4 = new PureJavaTexture(var3.field1334, var3.field1329, var5, var6, MaterialAlphaMode.TEST != var3.field1340);
 				this.field9809.method2922(var4, (long) (var3.field1334 & 0xFFFF) | Long.MIN_VALUE, var5 * var5);
@@ -259,7 +259,7 @@ public class PureJavaRenderer extends Renderer {
 	@ObfuscatedName("afg.ra(I)Z")
 	public boolean method15656(int arg0) {
 		Material var2 = this.field1597.method2043(arg0);
-		return this.field1596.method1977(class605.field7586, var2.field1334, -1, class602.field7569, 0.7F, var2.field1357, var2.field1357, true);
+		return this.field1596.method1977(TextureRelated2.field7586, var2.field1334, -1, TextureRelated1.field7569, 0.7F, var2.field1357, var2.field1357, true);
 	}
 
 	@ObfuscatedName("afg.rx(I)I")

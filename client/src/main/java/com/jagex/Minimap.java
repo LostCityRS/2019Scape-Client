@@ -254,7 +254,7 @@ public class Minimap {
 		field727.method14152();
 		if (!field732) {
 			method16444(arg1);
-			class539 var47 = client.world.method7871();
+			WorldMapRelated var47 = client.world.method7871();
 			if (var47 != null) {
 				Statics.field5011.method18871(1024, 64);
 				CoordGrid var48 = client.world.method7727();
@@ -501,7 +501,7 @@ public class Minimap {
 		} else {
 			Statics.field734.method1456((float) arg1.field2196 / 2.0F + (float) arg2, (float) arg1.field2197 / 2.0F + (float) arg3, (float) var12, (float) var13, var10, var9 << 2, var5, arg2, arg3);
 		}
-		class539 var14 = client.world.method7871();
+		WorldMapRelated var14 = client.world.method7871();
 		for (IntWrapper var15 = (IntWrapper) field727.method14191(); var15 != null; var15 = (IntWrapper) field727.method14161()) {
 			int var16 = var15.field11442;
 			int var17 = (var14.field6776[var16] >> 14 & 0x3FFF) - var6.field7426;

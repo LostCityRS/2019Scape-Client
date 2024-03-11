@@ -350,7 +350,7 @@ public class TwitchHardwarePlatform {
 			for (int var7 = 0; var7 < var6.length; var7++) {
 				TwitchEvent var8 = var6[var7];
 				if (var8 != null && method6878(var8, arg1)) {
-					class571 var9 = var8.method11();
+					TwitchVarType var9 = var8.method11();
 					if (var9 != null) {
 						ScriptRunner.method13907(var9.getId(), var8);
 					}
@@ -382,9 +382,9 @@ public class TwitchHardwarePlatform {
 	public static void method593(Renderer arg0, long arg1, int arg2, int arg3) {
 		if (arg0.method2360() && arg0.method2502() > -1) {
 			int var5 = arg0.method2502();
-			class587 var6 = null;
+			TwitchRelated2 var6 = null;
 			if (!field7380.isEmpty()) {
-				var6 = (class587) field7380.getFirst();
+				var6 = (TwitchRelated2) field7380.getFirst();
 			}
 			if (var6 != null && var6.field7401 == var5) {
 				field7380.removeFirst();
@@ -421,7 +421,7 @@ public class TwitchHardwarePlatform {
 		}
 		if (arg0.method2360()) {
 			arg0.method2163(client.field10903, Statics.field2585, Statics.field8526);
-			field7380.add(new class587(client.field10903, field7392, arg0.field1611, arg0.field1618, arg0.field1602));
+			field7380.add(new TwitchRelated2(client.field10903, field7392, arg0.field1611, arg0.field1618, arg0.field1602));
 			field7392 = new LinkedList();
 		} else {
 			arg0.method2203();
@@ -564,7 +564,7 @@ public class TwitchHardwarePlatform {
 
 	@ObfuscatedName("kt.av(IIIII)V")
 	public static void method5389(int arg0, int arg1, int arg2, int arg3) {
-		field7392.addLast(new class585(arg0, arg1, arg2 - arg0, arg3 - arg1));
+		field7392.addLast(new TwitchRelated(arg0, arg1, arg2 - arg0, arg3 - arg1));
 	}
 
 	@ObfuscatedName("ir.ao([ILjava/util/LinkedList;IIFI)V")
@@ -573,7 +573,7 @@ public class TwitchHardwarePlatform {
 			return;
 		}
 		for (int var5 = 0; var5 < arg1.size(); var5++) {
-			class585 var6 = (class585) arg1.get(var5);
+			TwitchRelated var6 = (TwitchRelated) arg1.get(var5);
 			int var7 = (int) ((float) var6.field7364 * arg4) + arg2;
 			int var8 = (int) ((float) var6.field7363 * arg4) + arg3;
 			int var9 = (int) ((float) var6.field7365 * arg4);

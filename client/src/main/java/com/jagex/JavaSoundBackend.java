@@ -11,7 +11,7 @@ public class JavaSoundBackend extends SoundBackend {
 	public java.util.HashMap field10688 = new java.util.HashMap();
 
 	@ObfuscatedName("aiz.m")
-	public class364 field10694 = new class364(this);
+	public AudioRelated2 field10694 = new AudioRelated2(this);
 
 	@ObfuscatedName("aiz.k")
 	public volatile boolean field10690 = false;
@@ -87,7 +87,7 @@ public class JavaSoundBackend extends SoundBackend {
 						var4 |= var3[var5].method7588();
 					}
 					if (var4) {
-						Arrays.sort(var3, new class543(this));
+						Arrays.sort(var3, new JavaSoundBackendComparator(this));
 					}
 				}
 				var6 = 6;
@@ -214,7 +214,7 @@ public class JavaSoundBackend extends SoundBackend {
 	}
 
 	@ObfuscatedName("aiz.u(I)Lmb;")
-	public class364 method5880() {
+	public AudioRelated2 method5880() {
 		return this.field10694;
 	}
 

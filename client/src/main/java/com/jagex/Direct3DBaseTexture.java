@@ -35,7 +35,7 @@ public abstract class Direct3DBaseTexture implements DeletableResource {
 	}
 
 	@ObfuscatedName("op.ay(Llt;)V")
-	public void method5824(class343 arg0) {
+	public void method5824(GpuTextureRelated arg0) {
 	}
 
 	@ObfuscatedName("op.m()V")

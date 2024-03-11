@@ -29,7 +29,7 @@ public final class FixedFunctionSpriteShader extends SpriteShader {
 		this.field3002.method16041(1, TextureCombiner.field3368);
 		this.field3002.method16042(1, TextureCombiner.field3368);
 		this.field3002.method16046().method6604(this.field2998);
-		this.field3002.method16174(class352.field3370);
+		this.field3002.method16174(GpuRendererRelated4.field3370);
 	}
 
 	@ObfuscatedName("ahu.e(II)V")
@@ -48,7 +48,7 @@ public final class FixedFunctionSpriteShader extends SpriteShader {
 		this.field3002.method16038(1);
 		this.field3002.method16092(this.field2996);
 		this.field3002.method16046().method6604(this.field2999);
-		this.field3002.method16174(class352.field3370);
+		this.field3002.method16174(GpuRendererRelated4.field3370);
 		this.field3002.method16115(TextureCombineMode.field3396, TextureCombineMode.field3395);
 		this.field3002.method16041(0, TextureCombiner.field3366);
 		this.method16645();

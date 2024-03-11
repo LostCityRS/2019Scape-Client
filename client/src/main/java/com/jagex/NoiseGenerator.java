@@ -174,7 +174,7 @@ public class NoiseGenerator extends NoiseGeneratorNode {
 
 	@ObfuscatedName("asj.m(I)V")
 	public void method19589() {
-		this.field12439 = class777.method15027(this.field12444);
+		this.field12439 = NoiseGeneratorRelated.method15027(this.field12444);
 		this.method19593();
 		for (int var1 = this.field12443 - 1; var1 >= 1; var1--) {
 			short var2 = this.field12437[var1];
@@ -213,7 +213,7 @@ public class NoiseGenerator extends NoiseGeneratorNode {
 		var8.field12443 = arg4;
 		var8.field12445 = (int) (arg5 * 4096.0F);
 		var8.method19589();
-		class777.method15026(arg0, 1);
+		NoiseGeneratorRelated.method15026(arg0, 1);
 		var8.method19594(0, var7);
 		return var7;
 	}
@@ -228,7 +228,7 @@ public class NoiseGenerator extends NoiseGeneratorNode {
 		var9.field12443 = arg5;
 		var9.field12445 = (int) (arg6 * 4096.0F);
 		var9.method19589();
-		class777.method15026(arg0, arg1);
+		NoiseGeneratorRelated.method15026(arg0, arg1);
 		for (int var10 = 0; var10 < arg1; var10++) {
 			var9.method19594(var10, var8[var10]);
 		}

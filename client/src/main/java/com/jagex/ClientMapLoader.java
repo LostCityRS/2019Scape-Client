@@ -644,12 +644,12 @@ public class ClientMapLoader extends MapLoader {
 			int var31;
 			PrimaryLayerEntity var32;
 			if (var24) {
-				StaticSceneryEntity var30 = new StaticSceneryEntity(this.field4577, arg0, this.field10765, var12, arg2, arg1, var21, var20, var22, this.field4549, arg3, arg3 + var13 - 1, arg4, arg4 + var14 - 1, arg7, arg6, var23, class596.field7440 != var12.field7526, arg10);
+				StaticSceneryEntity var30 = new StaticSceneryEntity(this.field4577, arg0, this.field10765, var12, arg2, arg1, var21, var20, var22, this.field4549, arg3, arg3 + var13 - 1, arg4, arg4 + var14 - 1, arg7, arg6, var23, LocTypeRelated.field7440 != var12.field7526, arg10);
 				var31 = var30.method17401();
 				var32 = var30;
 				var29 = var30;
 			} else {
-				var32 = new DynamicSceneryEntity(this.field4577, arg0, this.field10765, var12, arg2, arg1, var21, var20, var22, this.field4549, arg3, arg3 + var13 - 1, arg4, arg4 + var14 - 1, arg7, arg6, arg8, arg9, class596.field7440 != var12.field7526, arg10);
+				var32 = new DynamicSceneryEntity(this.field4577, arg0, this.field10765, var12, arg2, arg1, var21, var20, var22, this.field4549, arg3, arg3 + var13 - 1, arg4, arg4 + var14 - 1, arg7, arg6, arg8, arg9, LocTypeRelated.field7440 != var12.field7526, arg10);
 				var31 = 15;
 			}
 			if (this.field4577.method8768(var32, false)) {

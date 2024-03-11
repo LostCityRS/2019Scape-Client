@@ -165,8 +165,8 @@ public class SkyboxRelated {
 	public boolean method7999(Renderer arg0, SkyboxRelated arg1) {
 		if (this.field5128 == null) {
 			if (this.field5112 == 0) {
-				if (Statics.field2421.method1977(class605.field7586, this.field5135, -1, class602.field7569, 0.7F, this.field5123, this.field5123, false)) {
-					int[] var3 = Statics.field2421.method1983(class605.field7586, this.field5135, 0.7F, this.field5123, this.field5123, false);
+				if (Statics.field2421.method1977(TextureRelated2.field7586, this.field5135, -1, TextureRelated1.field7569, 0.7F, this.field5123, this.field5123, false)) {
+					int[] var3 = Statics.field2421.method1983(TextureRelated2.field7586, this.field5135, 0.7F, this.field5123, this.field5123, false);
 					this.field5128 = arg0.method2199(var3, 0, this.field5123, this.field5123, this.field5123);
 				}
 			} else if (this.field5112 == 2) {

@@ -30,5 +30,5 @@ public abstract class SoundBackend {
 	public abstract void method5875(Object arg0, byte[] arg1, int arg2, int arg3);
 
 	@ObfuscatedName("mt.u(I)Lmb;")
-	public abstract class364 method5880();
+	public abstract AudioRelated2 method5880();
 }

@@ -138,7 +138,7 @@ public class HardwarePlatformLoader implements NativeLibraryLoader {
 
 	@ObfuscatedName("ty.e(Ljava/lang/String;B)V")
 	public void method7902(String arg0) throws NativeLibraryException {
-		this.method8467(arg0, class535.class);
+		this.method8467(arg0, HardwarePlatformLoaderRelated.class);
 	}
 
 	@ObfuscatedName("ty.o(Ljava/lang/String;Ljava/lang/Class;I)V")
@@ -166,7 +166,7 @@ public class HardwarePlatformLoader implements NativeLibraryLoader {
 			this.field6766.put(arg0, arg1);
 		} catch (NoSuchMethodException var11) {*/
 			System.load(var4.getPath());
-			this.field6766.put(arg0, class535.class);
+			this.field6766.put(arg0, HardwarePlatformLoaderRelated.class);
 		} catch (Throwable ex) {
 			ex.printStackTrace();
 			throw new NativeLibraryException(3, arg0, ex);

@@ -879,7 +879,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	@ObfuscatedName("aqv.vo()V")
 	public void method16050() {
 		OpenGL.glMatrixMode(5890);
-		if (this.field10135[this.field10177] == class352.field3372) {
+		if (this.field10135[this.field10177] == GpuRendererRelated4.field3372) {
 			OpenGL.glLoadIdentity();
 		} else {
 			OpenGL.glLoadMatrixf(this.field10162[this.field10177].method6594(this.field12031), 0);

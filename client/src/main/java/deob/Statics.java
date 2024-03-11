@@ -1072,7 +1072,7 @@ public class Statics {
 	public static float field6804;
 
 	@ObfuscatedName("tf.h")
-	public static class539 field6805;
+	public static WorldMapRelated field6805;
 
 	@ObfuscatedName("tf.i")
 	public static int field6808;
@@ -1819,8 +1819,8 @@ public class Statics {
 	}
 
 	@ObfuscatedName("ua.e(S)[Lvg;")
-	public static class596[] method9002() {
-		return new class596[] { class596.field7440, class596.field7439, class596.field7438 };
+	public static LocTypeRelated[] method9002() {
+		return new LocTypeRelated[] { LocTypeRelated.field7440, LocTypeRelated.field7439, LocTypeRelated.field7438 };
 	}
 
 	@ObfuscatedName("ace.e(I)[Lhy;")
@@ -2868,7 +2868,7 @@ public class Statics {
 	@ObfuscatedName("xt.ac(IIB)V")
 	public static void method10361(int arg0, int arg1) {
 		TwitchEventResult var2 = new TwitchEventResult(arg0, arg1);
-		class571 var3 = var2.method11();
+		TwitchVarType var3 = var2.method11();
 		if (var3 != null) {
 			ScriptRunner.method13907(var3.getId(), var2);
 		}

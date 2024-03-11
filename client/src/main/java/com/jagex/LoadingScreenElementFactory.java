@@ -44,7 +44,7 @@ public class LoadingScreenElementFactory {
 		} else if (LoadingScreenElementType.field3195 == var2) {
 			return new LoginRelated2(this.field3035, (LoginRelated5) arg0);
 		} else if (LoadingScreenElementType.field3196 == var2) {
-			return new class1133(this.field3035, this.field3036, (class1137) arg0);
+			return new LoginRelated9(this.field3035, this.field3036, (LoadingScreenRelated4_Sub1) arg0);
 		} else if (LoadingScreenElementType.field3197 == var2) {
 			return new LoginRelated1(this.field3035, this.field3036, (LoginRelated4) arg0);
 		} else {

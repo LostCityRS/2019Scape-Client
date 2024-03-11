@@ -12,7 +12,7 @@ public class BasicCamera extends Camera {
 	public int field10465 = 0;
 
 	public BasicCamera(CameraTrackableProvider arg0) {
-		super(class265.field2813, arg0);
+		super(CameraRelated.field2813, arg0);
 	}
 
 	@ObfuscatedName("ahc.fs(B)I")

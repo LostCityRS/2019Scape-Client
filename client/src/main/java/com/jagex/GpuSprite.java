@@ -206,7 +206,7 @@ public class GpuSprite extends Sprite {
 
 	@ObfuscatedName("aef.r(IIIII)V")
 	public void method1443(int arg0, int arg1, int arg2, int arg3, int arg4) {
-		if (this.field9403.method16337() != class326.field3236) {
+		if (this.field9403.method16337() != GpuImageRelated.field3236) {
 			int var6 = this.field9408 + arg0;
 			int var7 = this.field9410 + arg1;
 			this.field9403.field10146.method5797((float) var6, (float) var7, (float) (this.field9407 + var6), (float) (this.field9404 + var7), 0.0F, 0.0F, this.field9401.method5734(), this.field9401.method5707(), this.field9401, arg3);
@@ -260,7 +260,7 @@ public class GpuSprite extends Sprite {
 
 	@ObfuscatedName("aef.y(IIIIIIII)V")
 	public void method1447(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
-		if (this.field9403.method16337() != class326.field3236) {
+		if (this.field9403.method16337() != GpuImageRelated.field3236) {
 			if (this.field9405) {
 				arg2 = this.field9407 * arg2 / this.method1434();
 				arg3 = this.field9404 * arg3 / this.method1436();
@@ -296,7 +296,7 @@ public class GpuSprite extends Sprite {
 
 	@ObfuscatedName("aef.x(IIIIIII)V")
 	public void method1449(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
-		if (this.field9403.method16337() != class326.field3236) {
+		if (this.field9403.method16337() != GpuImageRelated.field3236) {
 			int var8 = arg1 + arg3;
 			int var9 = arg0 + arg2;
 			int var10 = this.method1434();
@@ -447,7 +447,7 @@ public class GpuSprite extends Sprite {
 
 	@ObfuscatedName("aef.ag(FFFFFFIIII)V")
 	public void method1433(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, int arg6, int arg7, int arg8, int arg9) {
-		if (this.field9403.method16337() != class326.field3236) {
+		if (this.field9403.method16337() != GpuImageRelated.field3236) {
 			this.field9403.field10146.method5806(arg0, arg1, arg2, arg3, arg4, arg5, arg2 + arg4 - arg0, arg3 + arg5 - arg1, 0.0F, 0.0F, this.field9401.method5734(), 0.0F, 0.0F, this.field9401.method5707(), this.field9401.method5734(), this.field9401.method5707(), this.field9401, arg7);
 			return;
 		}

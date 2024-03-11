@@ -65,7 +65,7 @@ public class World {
 	public WorldMapAreaMetadata field5035;
 
 	@ObfuscatedName("rl.x")
-	public class539 field5058;
+	public WorldMapRelated field5058;
 
 	@ObfuscatedName("rl.b")
 	public LocTint field5050 = new LocTint(0, 0, 0, 0);
@@ -185,7 +185,7 @@ public class World {
 	}
 
 	@ObfuscatedName("rl.u(I)Ltw;")
-	public class539 method7871() {
+	public WorldMapRelated method7871() {
 		return this.field5058;
 	}
 
@@ -926,9 +926,9 @@ public class World {
 		}
 		if (this.field5058 == null) {
 			if (this.field5035 == null || !Statics.field8332.method6904(this.field5035.field12351)) {
-				this.field5058 = new class539(0);
+				this.field5058 = new WorldMapRelated(0);
 			} else if (Statics.field8332.method6886(this.field5035.field12351)) {
-				this.field5058 = class539.method6046(Statics.field8332, this.field5035.field12351, client.field10948);
+				this.field5058 = WorldMapRelated.method6046(Statics.field8332, this.field5035.field12351, client.field10948);
 			} else {
 				this.field5044++;
 			}

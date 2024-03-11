@@ -35,7 +35,7 @@ public abstract class SomethingTypeList implements TextureList {
 	}
 
 	@ObfuscatedName("dk.k(Lvk;ID)[I")
-	public int[] method1992(class605 arg0, int arg1, double arg2) {
+	public int[] method1992(TextureRelated2 arg0, int arg1, double arg2) {
 		int[] var5 = this.method1979(arg0, arg1, arg2);
 		if (var5 == null) {
 			return null;
@@ -51,14 +51,14 @@ public abstract class SomethingTypeList implements TextureList {
 	}
 
 	@ObfuscatedName("dk.f(Lvk;ID)[I")
-	public int[] method1979(class605 arg0, int arg1, double arg2) {
+	public int[] method1979(TextureRelated2 arg0, int arg1, double arg2) {
 		byte[] var5 = this.method2002(arg0, arg1);
 		if (var5 == null) {
 			return null;
 		}
 		try {
 			byte var6 = (byte) (var5[0] & 0xFF);
-			if (class605.field7585 == arg0) {
+			if (TextureRelated2.field7585 == arg0) {
 				if (var6 != 6) {
 					return null;
 				}
@@ -100,8 +100,8 @@ public abstract class SomethingTypeList implements TextureList {
 	}
 
 	@ObfuscatedName("dk.w(Lvk;IID)[F")
-	public float[] method1980(class605 arg0, int arg1, int arg2, double arg3) {
-		if (class605.field7586 != arg0) {
+	public float[] method1980(TextureRelated2 arg0, int arg1, int arg2, double arg3) {
+		if (TextureRelated2.field7586 != arg0) {
 			return null;
 		}
 		int[] var6 = this.method1979(arg0, arg1, arg3);
@@ -109,7 +109,7 @@ public abstract class SomethingTypeList implements TextureList {
 			return null;
 		}
 		int[] var7 = null;
-		byte[] var8 = this.method2002(class605.field7587, arg2);
+		byte[] var8 = this.method2002(TextureRelated2.field7587, arg2);
 		if (var8 != null) {
 			try {
 				byte var9 = (byte) (var8[0] & 0xFF);
@@ -150,17 +150,17 @@ public abstract class SomethingTypeList implements TextureList {
 	}
 
 	@ObfuscatedName("dk.u(Lvk;IFIIZI)[I")
-	public int[] method1986(class605 arg0, int arg1, float arg2, int arg3, int arg4, boolean arg5) {
+	public int[] method1986(TextureRelated2 arg0, int arg1, float arg2, int arg3, int arg4, boolean arg5) {
 		return this.method1992(arg0, arg1, (double) arg2);
 	}
 
 	@ObfuscatedName("dk.z(Lvk;IFIIZB)[I")
-	public int[] method1983(class605 arg0, int arg1, float arg2, int arg3, int arg4, boolean arg5) {
+	public int[] method1983(TextureRelated2 arg0, int arg1, float arg2, int arg3, int arg4, boolean arg5) {
 		return this.method1979(arg0, arg1, (double) arg2);
 	}
 
 	@ObfuscatedName("dk.p(Lvk;IIFIIZB)[F")
-	public float[] method1984(class605 arg0, int arg1, int arg2, float arg3, int arg4, int arg5, boolean arg6) {
+	public float[] method1984(TextureRelated2 arg0, int arg1, int arg2, float arg3, int arg4, int arg5, boolean arg6) {
 		return this.method1980(arg0, arg1, arg2, (double) arg3);
 	}
 
@@ -188,8 +188,8 @@ public abstract class SomethingTypeList implements TextureList {
 	}
 
 	@ObfuscatedName("dk.m(Lvk;IILvc;FIIZI)Z")
-	public abstract boolean method1977(class605 arg0, int arg1, int arg2, class602 arg3, float arg4, int arg5, int arg6, boolean arg7);
+	public abstract boolean method1977(TextureRelated2 arg0, int arg1, int arg2, TextureRelated1 arg3, float arg4, int arg5, int arg6, boolean arg7);
 
 	@ObfuscatedName("dk.n(Lvk;IB)[B")
-	public abstract byte[] method2002(class605 arg0, int arg1);
+	public abstract byte[] method2002(TextureRelated2 arg0, int arg1);
 }

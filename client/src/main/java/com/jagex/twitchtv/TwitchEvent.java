@@ -1,6 +1,6 @@
 package com.jagex.twitchtv;
 
-import com.jagex.class571;
+import com.jagex.TwitchVarType;
 import deob.ObfuscatedName;
 
 public abstract class TwitchEvent {
@@ -15,5 +15,5 @@ public abstract class TwitchEvent {
 	public abstract void method12(int[] arg0, long[] arg1, Object[] arg2);
 
 	@ObfuscatedName("com/jagex/twitchtv/TwitchEvent.n()Lud;")
-	public abstract class571 method11();
+	public abstract TwitchVarType method11();
 }

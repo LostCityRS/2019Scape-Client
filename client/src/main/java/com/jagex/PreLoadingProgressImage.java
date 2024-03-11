@@ -6,7 +6,7 @@ import deob.Statics;
 import java.awt.*;
 
 @ObfuscatedName("ahj")
-public class PreLoadingProgressImage extends class282 {
+public class PreLoadingProgressImage extends PreLoadingRelated {
 
 	// $FF: synthetic field
 	public final PreLoadingScreen this$0;

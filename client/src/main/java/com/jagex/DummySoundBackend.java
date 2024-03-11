@@ -13,7 +13,7 @@ public class DummySoundBackend extends SoundBackend {
 	public HashMap field10679 = new HashMap();
 
 	@ObfuscatedName("aiw.m")
-	public class364 field10680 = new class364(this);
+	public AudioRelated2 field10680 = new AudioRelated2(this);
 
 	@ObfuscatedName("aiw.k")
 	public volatile boolean field10681 = false;
@@ -162,7 +162,7 @@ public class DummySoundBackend extends SoundBackend {
 	}
 
 	@ObfuscatedName("aiw.u(I)Lmb;")
-	public class364 method5880() {
+	public AudioRelated2 method5880() {
 		return this.field10680;
 	}
 

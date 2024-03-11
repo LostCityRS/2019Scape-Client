@@ -25,7 +25,7 @@ public abstract class OpenGLBaseTexture implements BaseTexture {
 	public boolean field4982;
 
 	@ObfuscatedName("rj.d")
-	public class343 field4983 = class343.field3323;
+	public GpuTextureRelated field4983 = GpuTextureRelated.field3323;
 
 	@ObfuscatedName("rj.c")
 	public final int field4984;
@@ -65,7 +65,7 @@ public abstract class OpenGLBaseTexture implements BaseTexture {
 	}
 
 	@ObfuscatedName("rj.ay(Llt;)V")
-	public void method5824(class343 arg0) {
+	public void method5824(GpuTextureRelated arg0) {
 		if (this.field4983 != arg0) {
 			this.field4983 = arg0;
 			this.method7633();
@@ -78,7 +78,7 @@ public abstract class OpenGLBaseTexture implements BaseTexture {
 			throw new IllegalStateException("");
 		}
 		this.field4980.method16092(this);
-		if (class343.field3323 == this.field4983) {
+		if (GpuTextureRelated.field3323 == this.field4983) {
 			OpenGL.glTexParameteri(this.field4979, 10241, this.field4982 ? 9987 : 9729);
 			OpenGL.glTexParameteri(this.field4979, 10240, 9729);
 		} else {
