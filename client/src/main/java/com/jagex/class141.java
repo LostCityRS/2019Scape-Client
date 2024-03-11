@@ -53,7 +53,7 @@ public class class141 {
 	}
 
 	@ObfuscatedName("ed.n(Loj;Lpq;Lpq;FFFF)V")
-	public void method2746(class416 arg0, Matrix4x4 arg1, Matrix4x4 arg2, float arg3, float arg4, float arg5, float arg6) {
+	public void method2746(Cuboid arg0, Matrix4x4 arg1, Matrix4x4 arg2, float arg3, float arg4, float arg5, float arg6) {
 		boolean var8 = false;
 		this.field1686 = true;
 		int var9 = (int) (arg0.field4252 + arg0.field4249) >> 1;

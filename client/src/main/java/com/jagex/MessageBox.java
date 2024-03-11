@@ -72,14 +72,14 @@ public class MessageBox {
 	}
 
 	@ObfuscatedName("ae.m(Ljava/lang/String;ZLdh;Leu;Laac;B)V")
-	public static void method649(String arg0, boolean arg1, Renderer arg2, class140 arg3, FontMetrics arg4) {
+	public static void method649(String arg0, boolean arg1, Renderer arg2, Font arg3, FontMetrics arg4) {
 		boolean var5 = !Statics.field9262 || method16459();
 		if (!var5) {
 			return;
 		}
 		if (Statics.field9262 && var5) {
 			FontMetrics var6 = Statics.field8851;
-			class140 var7 = arg2.method2207(var6, Statics.field716, true);
+			Font var7 = arg2.method2207(var6, Statics.field716, true);
 			int var8 = var6.method14551(arg0, 250, null);
 			int var9 = var6.method14545(arg0, 250, var6.field8566, null);
 			int var10 = Statics.field710.method2639();

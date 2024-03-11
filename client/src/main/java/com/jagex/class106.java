@@ -55,7 +55,7 @@ public class class106 implements SerializableEnum {
 
 	@ObfuscatedName("fg.m(II)Lcy;")
 	public static class106 method2995(int arg0) {
-		class106 var1 = (class106) class686.method1897(method2582(), arg0);
+		class106 var1 = (class106) SerializableEnums.decode(method2582(), arg0);
 		if (var1 == null) {
 			var1 = field1253;
 		}

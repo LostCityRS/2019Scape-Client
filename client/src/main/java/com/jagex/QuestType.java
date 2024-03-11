@@ -174,7 +174,7 @@ public class QuestType implements ConfigType {
 		} else if (arg1 == 249) {
 			int var17 = arg0.g1();
 			if (this.field2650 == null) {
-				int var18 = IntMath.method16657(var17);
+				int var18 = IntMath.bitceil(var17);
 				this.field2650 = new IterableMap(var18);
 			}
 			for (int var19 = 0; var19 < var17; var19++) {
@@ -184,7 +184,7 @@ public class QuestType implements ConfigType {
 				if (var20) {
 					var22 = new ObjectWrapper(arg0.gjstr());
 				} else {
-					var22 = new class988(arg0.g4s());
+					var22 = new IntWrapper(arg0.g4s());
 				}
 				this.field2650.method14501(var22, (long) var21);
 			}
@@ -203,7 +203,7 @@ public class QuestType implements ConfigType {
 		if (this.field2650 == null) {
 			return arg1;
 		} else {
-			class988 var3 = (class988) this.field2650.method14495((long) arg0);
+			IntWrapper var3 = (IntWrapper) this.field2650.method14495((long) arg0);
 			return var3 == null ? arg1 : var3.field11442;
 		}
 	}

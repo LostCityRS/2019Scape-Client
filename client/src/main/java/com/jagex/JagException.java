@@ -40,7 +40,7 @@ public class JagException extends RuntimeException {
 				var2 = var2 + arg0;
 			}
 			method3380(var2);
-			String var3 = class805.method18779(var2);
+			String var3 = WebTools.urlencode(var2);
 			URL var4 = null;
 			if (Statics.field9164 != null) {
 				var4 = Statics.field9164.getCodeBase();
@@ -59,7 +59,7 @@ public class JagException extends RuntimeException {
 			}
 
 			try {
-				URL var8 = new URL(var4, "clienterror.ws?c=" + Statics.field12493 + "&cs=" + Statics.field12494 + "&u=" + (Statics.field12492 == null ? "" + Statics.field12496 : class805.method18779(Statics.field12492)) + "&v1=" + class805.method18779(var5) + "&v2=" + class805.method18779(var6) + "&e=" + var3);
+				URL var8 = new URL(var4, "clienterror.ws?c=" + Statics.field12493 + "&cs=" + Statics.field12494 + "&u=" + (Statics.field12492 == null ? "" + Statics.field12496 : WebTools.urlencode(Statics.field12492)) + "&v1=" + WebTools.urlencode(var5) + "&v2=" + WebTools.urlencode(var6) + "&e=" + var3);
 				DataInputStream var9 = new DataInputStream(var8.openStream());
 				var9.read();
 				var9.close();

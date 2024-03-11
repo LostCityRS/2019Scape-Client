@@ -279,7 +279,7 @@ public class FontMetrics {
 					}
 				}
 				if (var3 == -1) {
-					var5 += this.field8574[Cp1252.method16904(var8) & 0xFF] & 0xFF;
+					var5 += this.field8574[Cp1252.encode(var8) & 0xFF] & 0xFF;
 					if (this.field8563 != null && var4 != -1) {
 						var5 += this.field8563[var4][var8];
 					}
@@ -363,7 +363,7 @@ public class FontMetrics {
 					}
 				}
 				if (var5 == -1) {
-					var7 += this.field8574[Cp1252.method16904(var11) & 0xFF] & 0xFF;
+					var7 += this.field8574[Cp1252.encode(var11) & 0xFF] & 0xFF;
 					if (this.field8563 != null && var6 != -1) {
 						var7 += this.field8563[var6][var11];
 					}
@@ -402,7 +402,7 @@ public class FontMetrics {
 		int var13 = 0;
 		int var14 = arg0.length();
 		for (int var15 = 0; var15 < var14; var15++) {
-			int var16 = Cp1252.method16904(arg0.charAt(var15)) & 0xFF;
+			int var16 = Cp1252.encode(arg0.charAt(var15)) & 0xFF;
 			int var17 = 0;
 			if (var16 == 60) {
 				var11 = var15;

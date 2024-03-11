@@ -41,7 +41,7 @@ public class ParamType implements ConfigType, class757 {
 		} else if (arg1 == 5) {
 			this.field9171 = arg0.gjstr();
 		} else if (arg1 == 101) {
-			this.field9173 = (ScriptVarType) class686.method1897(ScriptVarType.method7293(), arg0.gSmart1or2());
+			this.field9173 = (ScriptVarType) SerializableEnums.decode(ScriptVarType.method7293(), arg0.gSmart1or2());
 		}
 	}
 

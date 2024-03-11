@@ -26,7 +26,7 @@ public class PlayerGroupDelta {
 		this.field1945 = arg0.g8();
 		this.field1944 = arg0.g4s();
 		for (int var3 = arg0.g1(); var3 != 0; var3 = arg0.g1()) {
-			PlayerGroupDeltaEncodingKey var4 = (PlayerGroupDeltaEncodingKey) class686.method1897(PlayerGroupDeltaEncodingKey.method3580(), var3);
+			PlayerGroupDeltaEncodingKey var4 = (PlayerGroupDeltaEncodingKey) SerializableEnums.decode(PlayerGroupDeltaEncodingKey.method3580(), var3);
 			Object var5;
 			switch(var4.field1955) {
 				case 0:

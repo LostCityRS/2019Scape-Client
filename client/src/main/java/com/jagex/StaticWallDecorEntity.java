@@ -135,7 +135,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 		var2.method6292(this.method10533());
 		var2.method6315((float) this.field12452, 0.0F, (float) this.field12451);
 		PickableEntity var3 = PickableEntity.method16749(this.field11157);
-		class416 var4 = ((LocType) this.field11159.get(this.field11715)).field7468;
+		Cuboid var4 = ((LocType) this.field11159.get(this.field11715)).field7468;
 		if (var4 == null) {
 			this.field11150.method1813(var2, this.field11713[0], 0);
 		} else {
@@ -151,7 +151,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 
 	@ObfuscatedName("ajk.fa(Ldh;IIB)Z")
 	public boolean method17375(Renderer arg0, int arg1, int arg2) {
-		class416 var4 = ((LocType) this.field11159.get(this.field11715)).field7468;
+		Cuboid var4 = ((LocType) this.field11159.get(this.field11715)).field7468;
 		if (var4 != null) {
 			return arg0.method2191(arg1, arg2, this.method10533(), var4);
 		}

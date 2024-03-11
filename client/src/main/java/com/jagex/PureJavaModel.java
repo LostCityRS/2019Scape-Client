@@ -294,7 +294,7 @@ public class PureJavaModel extends Model {
 						}
 						if (var23.field3455 != -1) {
 							Material var24 = var7.method2043(var23.field3455);
-							if (class603.field7573 == var24.field1340) {
+							if (MaterialAlphaMode.field7573 == var24.field1340) {
 								this.field9548 = true;
 							}
 						}
@@ -336,7 +336,7 @@ public class PureJavaModel extends Model {
 					}
 				}
 			}
-			boolean var30 = this.field9573 != null && this.field9573[var14] != 0 || var15 != null && class603.field7573 == var15.field1340;
+			boolean var30 = this.field9573 != null && this.field9573[var14] != 0 || var15 != null && MaterialAlphaMode.field7573 == var15.field1340;
 			if ((var12 || var30) && this.field9585 != null) {
 				var16 += this.field9585[var14] << 17;
 			}
@@ -586,7 +586,7 @@ public class PureJavaModel extends Model {
 					} else {
 						this.field9574[var123] = var124;
 						var122 = true;
-						if (class603.field7573 == var125.field1340) {
+						if (MaterialAlphaMode.field7573 == var125.field1340) {
 							this.field9548 = true;
 						}
 						if (var125.field1317 != 0.0F || var125.field1338 != 0.0F) {

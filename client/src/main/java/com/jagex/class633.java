@@ -51,13 +51,13 @@ public class class633 {
 
 	@ObfuscatedName("vh.e(II)I")
 	public static int method9543(int arg0) {
-		class988 var1 = (class988) field7799.method14495((long) arg0);
+		IntWrapper var1 = (IntWrapper) field7799.method14495((long) arg0);
 		if (var1 == null) {
 			ParticleEffectorType var2 = Statics.field12041.method5973(arg0);
 			if (var2 == null || var2.field3549 != 2) {
 				return -1;
 			}
-			var1 = new class988(field7798);
+			var1 = new IntWrapper(field7798);
 			field7799.method14501(var1, (long) arg0);
 			field7795[++field7798 - 1] = var2;
 		}

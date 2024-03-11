@@ -13,9 +13,9 @@ public class class87 implements class88 {
 	public final int field1130;
 
 	@ObfuscatedName("cg.m")
-	public final class813 field1129;
+	public final LegacyOpenGLCubeTexture field1129;
 
-	public class87(class813 arg0, int arg1, int arg2) {
+	public class87(LegacyOpenGLCubeTexture arg0, int arg1, int arg2) {
 		this.field1130 = arg2;
 		this.field1129 = arg0;
 		this.field1131 = arg1;

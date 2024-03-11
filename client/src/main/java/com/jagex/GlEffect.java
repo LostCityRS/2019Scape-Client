@@ -13,7 +13,7 @@ public abstract class GlEffect {
 	}
 
 	@ObfuscatedName("by.w(Lbq;I)V")
-	public abstract void method1251(class70 arg0, int arg1);
+	public abstract void method1251(LegacyOpenGLTexture arg0, int arg1);
 
 	@ObfuscatedName("by.e()Z")
 	public abstract boolean method1252();

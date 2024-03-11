@@ -273,7 +273,7 @@ public class LegacyOpenGLModel extends Model {
 						}
 						if (var24.field3455 != -1) {
 							Material var25 = var7.method2043(var24.field3455);
-							if (class603.field7573 == var25.field1340) {
+							if (MaterialAlphaMode.field7573 == var25.field1340) {
 								this.field9632 = true;
 							}
 						}
@@ -319,7 +319,7 @@ public class LegacyOpenGLModel extends Model {
 					}
 				}
 			}
-			boolean var31 = arg1.field1393 != null && arg1.field1393[var15] != 0 || var16 != null && class603.field7575 != var16.field1340;
+			boolean var31 = arg1.field1393 != null && arg1.field1393[var15] != 0 || var16 != null && MaterialAlphaMode.field7575 != var16.field1340;
 			if ((var13 || var31) && arg1.field1392 != null) {
 				var17 += arg1.field1392[var15] << 17;
 			}

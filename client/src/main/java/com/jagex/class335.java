@@ -40,7 +40,7 @@ public class class335 {
 				var7 = this.field3269.method15992(TextureFormat.field1273, arg1, arg1, true, var6);
 			} else {
 				int[] var8;
-				if (class603.field7575 == arg0.field1340 && Material.method261(arg0.field1308)) {
+				if (MaterialAlphaMode.field7575 == arg0.field1340 && Material.method261(arg0.field1308)) {
 					var8 = this.field3268.method1986(class605.field7586, arg0.field1334, 0.7F, arg1, arg1, true);
 				} else {
 					var8 = this.field3268.method1983(class605.field7586, arg0.field1334, 0.7F, arg1, arg1, false);
@@ -65,7 +65,7 @@ public class class335 {
 		}
 		if (arg0.field1336 && this.field3269.method2242()) {
 			return this.field3268.method1977(class605.field7586, arg0.field1334, arg0.field1302, class602.field7570, 0.7F, arg1, arg1, false);
-		} else if (class603.field7575 == arg0.field1340 && Material.method261(arg0.field1308)) {
+		} else if (MaterialAlphaMode.field7575 == arg0.field1340 && Material.method261(arg0.field1308)) {
 			return this.field3268.method1977(class605.field7586, arg0.field1334, -1, class602.field7568, 0.7F, arg1, arg1, true);
 		} else {
 			return this.field3268.method1977(class605.field7586, arg0.field1334, -1, class602.field7569, 0.7F, arg1, arg1, false);

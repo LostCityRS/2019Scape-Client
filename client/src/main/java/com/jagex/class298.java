@@ -16,7 +16,7 @@ public class class298 implements LoadingScreenElement {
 	public final Js5 field3043;
 
 	@ObfuscatedName("kg.k")
-	public class140 field3041;
+	public Font field3041;
 
 	@ObfuscatedName("kg.f")
 	public long field3040 = -1L;

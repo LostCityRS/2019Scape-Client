@@ -26,7 +26,7 @@ public class StructType extends SecondaryNode implements ConfigType, class757 {
 		}
 		int var3 = arg0.g1();
 		if (this.field9261 == null) {
-			int var4 = IntMath.method16657(var3);
+			int var4 = IntMath.bitceil(var3);
 			this.field9261 = new IterableMap(var4);
 		}
 		for (int var5 = 0; var5 < var3; var5++) {
@@ -36,7 +36,7 @@ public class StructType extends SecondaryNode implements ConfigType, class757 {
 			if (var6) {
 				var8 = new ObjectWrapper(arg0.gjstr());
 			} else {
-				var8 = new class988(arg0.g4s());
+				var8 = new IntWrapper(arg0.g4s());
 			}
 			this.field9261.method14501(var8, (long) var7);
 		}
@@ -47,7 +47,7 @@ public class StructType extends SecondaryNode implements ConfigType, class757 {
 		if (this.field9261 == null) {
 			return arg1;
 		} else {
-			class988 var3 = (class988) this.field9261.method14495((long) arg0);
+			IntWrapper var3 = (IntWrapper) this.field9261.method14495((long) arg0);
 			return var3 == null ? arg1 : var3.field11442;
 		}
 	}

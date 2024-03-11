@@ -15,7 +15,7 @@ public class class894 extends class282 {
 	public boolean field10469;
 
 	@ObfuscatedName("ahj.k")
-	public Font field10467;
+	public java.awt.Font field10467;
 
 	@ObfuscatedName("ahj.f")
 	public java.awt.FontMetrics field10468;
@@ -27,7 +27,7 @@ public class class894 extends class282 {
 		super(arg0, arg5, arg6);
 		this.this$0 = arg0;
 		this.field10469 = arg1;
-		this.field10467 = new Font(arg2, 0, arg3);
+		this.field10467 = new java.awt.Font(arg2, 0, arg3);
 		this.field10468 = Statics.canvas.getFontMetrics(this.field10467);
 		this.field10466 = new Color(arg4);
 	}

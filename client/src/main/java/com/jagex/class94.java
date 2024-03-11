@@ -39,7 +39,7 @@ public class class94 {
 				var5 = new class812(this.field1187, 3553, TextureFormat.field1273, DataType.FLOAT_16, arg1, arg1, arg0.field1332 != 0, var4, TextureFormat.field1273);
 			} else {
 				int[] var6;
-				if (class603.field7575 == arg0.field1340 && Material.method261(arg0.field1308)) {
+				if (MaterialAlphaMode.field7575 == arg0.field1340 && Material.method261(arg0.field1308)) {
 					var6 = this.field1186.method1986(class605.field7586, arg0.field1334, 0.7F, arg1, arg1, true);
 				} else {
 					var6 = this.field1186.method1983(class605.field7586, arg0.field1334, 0.7F, arg1, arg1, false);
@@ -61,7 +61,7 @@ public class class94 {
 		}
 		if (arg1.field1336 && this.field1187.method2242()) {
 			return this.field1186.method1977(arg0, arg1.field1334, arg1.field1302, class602.field7570, 0.7F, arg2, arg2, false);
-		} else if (class603.field7575 == arg1.field1340 && Material.method261(arg1.field1308)) {
+		} else if (MaterialAlphaMode.field7575 == arg1.field1340 && Material.method261(arg1.field1308)) {
 			return this.field1186.method1977(arg0, arg1.field1334, -1, class602.field7568, 0.7F, arg2, arg2, true);
 		} else {
 			return this.field1186.method1977(arg0, arg1.field1334, -1, class602.field7569, 0.7F, arg2, arg2, false);

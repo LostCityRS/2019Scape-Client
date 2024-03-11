@@ -264,11 +264,11 @@ public class Minimap {
 						int var51 = (var50 >> 14 & 0x3FFF) - var48.field7426;
 						int var52 = (var50 & 0x3FFF) - var48.field7427;
 						if (var51 >= 0 && var51 < var2 && var52 >= 0 && var52 < var3) {
-							field727.method14153(new class988(var49));
+							field727.method14153(new IntWrapper(var49));
 						} else {
 							MapElementType var53 = (MapElementType) Statics.field5011.get(var47.field6775[var49]);
 							if (var53.field2393 != null && var53.field2396 + var51 >= 0 && var53.field2373 + var51 < var2 && var53.field2397 + var52 >= 0 && var53.field2395 + var52 < var3) {
-								field727.method14153(new class988(var49));
+								field727.method14153(new IntWrapper(var49));
 							}
 						}
 					}
@@ -502,7 +502,7 @@ public class Minimap {
 			Statics.field734.method1456((float) arg1.field2196 / 2.0F + (float) arg2, (float) arg1.field2197 / 2.0F + (float) arg3, (float) var12, (float) var13, var10, var9 << 2, var5, arg2, arg3);
 		}
 		class539 var14 = client.world.method7871();
-		for (class988 var15 = (class988) field727.method14191(); var15 != null; var15 = (class988) field727.method14161()) {
+		for (IntWrapper var15 = (IntWrapper) field727.method14191(); var15 != null; var15 = (IntWrapper) field727.method14161()) {
 			int var16 = var15.field11442;
 			int var17 = (var14.field6776[var16] >> 14 & 0x3FFF) - var6.field7426;
 			int var18 = (var14.field6776[var16] & 0x3FFF) - var6.field7427;
@@ -725,7 +725,7 @@ public class Minimap {
 	}
 
 	@ObfuscatedName("gd.a(Lhf;Lch;IIIIILjava/lang/String;Leu;Laac;II)V")
-	public static void method3654(Component arg0, class103 arg1, int arg2, int arg3, int arg4, int arg5, int arg6, String arg7, class140 arg8, FontMetrics arg9, int arg10) {
+	public static void method3654(Component arg0, class103 arg1, int arg2, int arg3, int arg4, int arg5, int arg6, String arg7, Font arg8, FontMetrics arg9, int arg10) {
 		int var11;
 		if (Statics.field3416 == 3) {
 			var11 = (int) ((double) Statics.field9155.method4719() * 2607.5945876176133D) + client.field10885 & 0x3FFF;

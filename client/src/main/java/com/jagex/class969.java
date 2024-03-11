@@ -120,7 +120,7 @@ public class class969 extends Node {
 		if (this.field11280 > 0) {
 			this.field11288 = new Packet(this.field11280 * 2);
 			this.field11289 = new GpuPacket(this.field11280 * 16);
-			this.field11290 = new IterableMap(IntMath.method16657(this.field11280));
+			this.field11290 = new IterableMap(IntMath.bitceil(this.field11280));
 			int var21 = 0;
 			int var22 = 0;
 			for (int var23 = this.field11277; var23 <= this.field11278; var23++) {

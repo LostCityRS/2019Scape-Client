@@ -497,7 +497,7 @@ public class ReceivePlayerPositions {
 				var22++;
 				var23++;
 			}
-			class686.method1897(MoveSpeed.method13901(), field697[arg1]);
+			SerializableEnums.decode(MoveSpeed.method13901(), field697[arg1]);
 			field704[arg1].field524 = (var21 << 28) + (var22 << 14) + var23;
 			return false;
 		} else {
@@ -512,7 +512,7 @@ public class ReceivePlayerPositions {
 			int var30 = (var29 >> 28) + var26 & 0x3;
 			int var31 = (var29 >> 14) + var27 & 0xFF;
 			int var32 = var28 + var29 & 0xFF;
-			class686.method1897(MoveSpeed.method13901(), var25 - 1);
+			SerializableEnums.decode(MoveSpeed.method13901(), var25 - 1);
 			field704[arg1].field524 = (var30 << 28) + (var31 << 14) + var32;
 			return false;
 		}
@@ -550,7 +550,7 @@ public class ReceivePlayerPositions {
 			int var7 = arg0.data[(++arg0.pos) - 1] & 0xFF;
 			for (int var8 = 0; var8 < var7; var8++) {
 				int var9 = arg0.g1_alt3();
-				BaseVarType var10 = (BaseVarType) class686.method1897(Statics.method7338(), var9);
+				BaseVarType var10 = (BaseVarType) SerializableEnums.decode(Statics.method7338(), var9);
 				VarValue var11 = Statics.field8485.method15285(arg0, var10);
 				arg2.field10460.method14735(var11.field4240, var11.field4239);
 			}
@@ -700,7 +700,7 @@ public class ReceivePlayerPositions {
 			int var62 = arg0.data[(++arg0.pos) - 1] & 0xFF;
 			for (int var63 = 0; var63 < var62; var63++) {
 				int var64 = arg0.g1_alt3();
-				BaseVarType var65 = (BaseVarType) class686.method1897(Statics.method7338(), var64);
+				BaseVarType var65 = (BaseVarType) SerializableEnums.decode(Statics.method7338(), var64);
 				VarValue var66 = Statics.field8485.method15285(arg0, var65);
 				arg2.field10460.method14735(var66.field4240, var66.field4239);
 			}
@@ -747,7 +747,7 @@ public class ReceivePlayerPositions {
 			arg2.field10464 = client.field10903 + arg0.g2();
 		}
 		if ((arg3 & 0x400) != 0) {
-			arg2.field12070 = (CommunityPartnerType) class686.method1897(CommunityPartnerType.method3559(), arg0.g1_alt2());
+			arg2.field12070 = (CommunityPartnerType) SerializableEnums.decode(CommunityPartnerType.method3559(), arg0.g1_alt2());
 			if (arg2.field12070 == null) {
 				arg2.field12070 = CommunityPartnerType.field1950;
 			}

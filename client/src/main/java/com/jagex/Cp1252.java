@@ -13,7 +13,7 @@ public class Cp1252 {
 	}
 
 	@ObfuscatedName("aip.e(CI)B")
-	public static byte method16904(char arg0) {
+	public static byte encode(char arg0) {
 		byte var1;
 		if (arg0 > 0 && arg0 < 128 || !(arg0 < 160 || arg0 > 255)) {
 			var1 = (byte) arg0;

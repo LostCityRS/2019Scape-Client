@@ -115,7 +115,7 @@ public class class982 extends Node {
 			}
 		}
 		if (this.field11421 > 0) {
-			this.field11428 = new IterableMap(IntMath.method16657(this.field11421));
+			this.field11428 = new IterableMap(IntMath.bitceil(this.field11421));
 			this.field11429 = this.field11416.field10071;
 			this.field11429.clear();
 			this.field11429.position(this.field11416.field10048 >> 1);

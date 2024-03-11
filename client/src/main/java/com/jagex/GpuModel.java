@@ -320,7 +320,7 @@ public class GpuModel extends Model {
 						}
 						if (var24.field3455 != -1) {
 							Material var25 = var7.method2043(var24.field3455);
-							if (class603.field7573 == var25.field1340) {
+							if (MaterialAlphaMode.field7573 == var25.field1340) {
 								this.field9737 = true;
 							}
 						}
@@ -363,7 +363,7 @@ public class GpuModel extends Model {
 					}
 				}
 			}
-			boolean var31 = arg1.field1393 != null && arg1.field1393[var15] != 0 || var16 != null && class603.field7575 != var16.field1340;
+			boolean var31 = arg1.field1393 != null && arg1.field1393[var15] != 0 || var16 != null && MaterialAlphaMode.field7575 != var16.field1340;
 			if ((var13 || var31) && arg1.field1392 != null) {
 				var17 += arg1.field1392[var15] << 17;
 			}
@@ -3411,7 +3411,7 @@ public class GpuModel extends Model {
 					var8 = !Material.method261(var10.field1308);
 					var2.field2982.field4315[12] = (float) (this.field9730.field10181 % 128000) / 1000.0F * var10.field1317 / 64.0F % 1.0F;
 					var2.field2982.field4315[13] = (float) (this.field9730.field10181 % 128000) / 1000.0F * var10.field1338 / 64.0F % 1.0F;
-					if (class603.field7574 == var10.field1340) {
+					if (MaterialAlphaMode.field7574 == var10.field1340) {
 						var9 = var10.field1358;
 					}
 				}
@@ -3476,7 +3476,7 @@ public class GpuModel extends Model {
 					var2.method5036(var24.field1305);
 					var2.field2982.field4315[12] = (float) (this.field9730.field10181 % 128000) / 1000.0F * var24.field1317 % 1.0F;
 					var2.field2982.field4315[13] = (float) (this.field9730.field10181 % 128000) / 1000.0F * var24.field1338 % 1.0F;
-					if (class603.field7574 == var24.field1340) {
+					if (MaterialAlphaMode.field7574 == var24.field1340) {
 						var25 = var24.field1358;
 					}
 				}

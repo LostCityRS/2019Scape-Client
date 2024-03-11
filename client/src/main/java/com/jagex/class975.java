@@ -141,7 +141,7 @@ public class class975 extends Node {
 	public void method17660() {
 		int var1 = this.field11370;
 		if (this.field11348 != null) {
-			LocType var2 = this.field11348.method9477(Statics.field7410, client.field10863 == 0 ? class153.field1723 : Statics.field7410);
+			LocType var2 = this.field11348.method9477(Statics.field7410, client.field10863 == 0 ? CutsceneManager.field1723 : Statics.field7410);
 			if (var2 == null) {
 				this.field11370 = -1;
 				this.field11357 = 0;

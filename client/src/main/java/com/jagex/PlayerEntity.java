@@ -211,7 +211,7 @@ public class PlayerEntity extends PathingEntity {
 			this.field12050 = -1;
 			this.field12051 = null;
 		}
-		this.field12071 = (class643) class686.method1897(class643.method10193(), arg0.g1b());
+		this.field12071 = (class643) SerializableEnums.decode(class643.method10193(), arg0.g1b());
 		if (Statics.field1811 == ModeWhere.field8273 && client.field10949 >= 2) {
 			this.field12071 = class643.field7918;
 		}

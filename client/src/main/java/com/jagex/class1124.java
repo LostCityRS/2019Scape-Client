@@ -9,7 +9,7 @@ public class class1124 extends class845 {
 	public final LegacyOpenGLRenderer field11946;
 
 	@ObfuscatedName("apk.n")
-	public class813 field11947;
+	public LegacyOpenGLCubeTexture field11947;
 
 	@ObfuscatedName("apk.m")
 	public final int field11945;
@@ -23,7 +23,7 @@ public class class1124 extends class845 {
 	}
 
 	@ObfuscatedName("apk.e()Ladq;")
-	public class813 method15649() {
+	public LegacyOpenGLCubeTexture method15649() {
 		if (this.field11947 == null) {
 			TextureList var1 = this.field11946.field1596;
 			Material var2 = this.field11946.field1597.method2043(this.field11945);
@@ -45,7 +45,7 @@ public class class1124 extends class845 {
 				field11948[var5] = new int[var4];
 				System.arraycopy(var3, var4 * var5, field11948[var5], 0, var4);
 			}
-			this.field11947 = new class813(this.field11946, TextureFormat.field1271, DataType.UNSIGNED_INT_8, var2.field1357, var2.field1332 != 0, field11948);
+			this.field11947 = new LegacyOpenGLCubeTexture(this.field11946, TextureFormat.field1271, DataType.UNSIGNED_INT_8, var2.field1357, var2.field1332 != 0, field11948);
 		}
 		return this.field11947;
 	}

@@ -16,7 +16,7 @@ public class class303 implements LoadingScreenElement {
 	public final Js5 field3052;
 
 	@ObfuscatedName("ki.k")
-	public class140 field3055;
+	public Font field3055;
 
 	public class303(Js5 arg0, Js5 arg1, class321 arg2) {
 		this.field3054 = arg2;

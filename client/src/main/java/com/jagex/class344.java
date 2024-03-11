@@ -111,8 +111,8 @@ public class class344 {
 		int var7 = 0;
 		int var8 = Integer.MAX_VALUE;
 		int var9 = 0;
-		class958 var10 = arg1.field1367.field8487;
-		for (class958 var11 = var10.field11213; var11 != var10; var11 = var11.field11213) {
+		DualLink var10 = arg1.field1367.field8487;
+		for (DualLink var11 = var10.field11213; var11 != var10; var11 = var11.field11213) {
 			class1144 var12 = (class1144) var11;
 			int var13 = (int) ((float) (var12.field12161 >> 12) * var5 + (float) (var12.field12163 >> 12) * var4 + (float) (var12.field12159 >> 12) * var3 + var6);
 			if (var13 > var9) {
@@ -155,8 +155,8 @@ public class class344 {
 	}
 
 	@ObfuscatedName("ld.k(Lafc;Lajn;IIILjo;Z)V")
-	public void method5766(GpuRenderer arg0, class958 arg1, int arg2, int arg3, int arg4, class286 arg5, boolean arg6) {
-		class958 var8 = arg1.field11213;
+	public void method5766(GpuRenderer arg0, DualLink arg1, int arg2, int arg3, int arg4, class286 arg5, boolean arg6) {
+		DualLink var8 = arg1.field11213;
 		int var9 = 0;
 		int var10 = -2;
 		boolean var11 = true;
@@ -190,7 +190,7 @@ public class class344 {
 					arg5.field2991 = arg0.field10188.method5639(var16);
 				}
 				byte var17 = 0;
-				if (class603.field7574 == var16.field1340) {
+				if (MaterialAlphaMode.field7574 == var16.field1340) {
 					var17 = var16.field1358;
 				}
 				arg0.method16056(var17);

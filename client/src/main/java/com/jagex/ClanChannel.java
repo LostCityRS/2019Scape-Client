@@ -14,7 +14,7 @@ public class ClanChannel extends Node {
 	public boolean field11390 = true;
 
 	@ObfuscatedName("akr.w")
-	public class308[] field11392;
+	public ClanChannelUser[] field11392;
 
 	@ObfuscatedName("akr.l")
 	public int field11393 = 0;
@@ -41,9 +41,9 @@ public class ClanChannel extends Node {
 	@ObfuscatedName("akr.e(IB)V")
 	public void method17738(int arg0) {
 		if (this.field11392 == null) {
-			this.field11392 = new class308[arg0];
+			this.field11392 = new ClanChannelUser[arg0];
 		} else {
-			System.arraycopy(this.field11392, 0, this.field11392 = new class308[arg0], 0, this.field11393);
+			System.arraycopy(this.field11392, 0, this.field11392 = new ClanChannelUser[arg0], 0, this.field11393);
 		}
 	}
 
@@ -67,7 +67,7 @@ public class ClanChannel extends Node {
 	}
 
 	@ObfuscatedName("akr.m(Lkb;I)V")
-	public void method17734(class308 arg0) {
+	public void method17734(ClanChannelUser arg0) {
 		if (this.field11392 == null || this.field11393 >= this.field11392.length) {
 			this.method17738(this.field11393 + 5);
 		}
@@ -119,9 +119,9 @@ public class ClanChannel extends Node {
 		if (this.field11393 <= 0) {
 			return;
 		}
-		this.field11392 = new class308[this.field11393];
+		this.field11392 = new ClanChannelUser[this.field11393];
 		for (int var4 = 0; var4 < this.field11393; var4++) {
-			class308 var5 = new class308();
+			ClanChannelUser var5 = new ClanChannelUser();
 			if (this.field11397) {
 				arg0.g8();
 			}

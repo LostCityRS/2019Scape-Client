@@ -173,7 +173,7 @@ public class class648 {
 			int var20 = 0;
 			label94: while (true) {
 				if (var20 >= var14.length) {
-					class686.method618(var18, var15.field11432);
+					SerializableEnums.method618(var18, var15.field11432);
 					var15.field11432.pSmart1or2(var19.size());
 					if (var19.size() <= 0) {
 						break;

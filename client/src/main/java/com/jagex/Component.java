@@ -907,7 +907,7 @@ public class Component {
 			for (int var23 = 0; var23 < var22; var23++) {
 				int var24 = arg0.g3();
 				int var25 = arg0.g4s();
-				this.field2333.method14501(new class988(var25), (long) var24);
+				this.field2333.method14501(new IntWrapper(var25), (long) var24);
 			}
 			int var26 = arg0.g1();
 			for (int var27 = 0; var27 < var26; var27++) {
@@ -1017,8 +1017,8 @@ public class Component {
 	}
 
 	@ObfuscatedName("hf.r(Loi;Loq;S)Leu;")
-	public class140 method3942(FontProvider arg0, FontFactory arg1) {
-		class140 var3 = (class140) arg0.method6188(arg1, this.field2287, false, this.field2275);
+	public Font method3942(FontProvider arg0, FontFactory arg1) {
+		Font var3 = (Font) arg0.method6188(arg1, this.field2287, false, this.field2275);
 		field2338 = var3 == null;
 		return var3;
 	}
@@ -1351,7 +1351,7 @@ public class Component {
 		if (this.field2333 == null) {
 			return arg1;
 		} else {
-			class988 var3 = (class988) this.field2333.method14495((long) arg0);
+			IntWrapper var3 = (IntWrapper) this.field2333.method14495((long) arg0);
 			return var3 == null ? arg1 : var3.field11442;
 		}
 	}
@@ -1370,12 +1370,12 @@ public class Component {
 	public void method3952(int arg0, int arg1) {
 		if (this.field2333 == null) {
 			this.field2333 = new IterableMap(16);
-			this.field2333.method14501(new class988(arg1), (long) arg0);
+			this.field2333.method14501(new IntWrapper(arg1), (long) arg0);
 			return;
 		}
-		class988 var3 = (class988) this.field2333.method14495((long) arg0);
+		IntWrapper var3 = (IntWrapper) this.field2333.method14495((long) arg0);
 		if (var3 == null) {
-			this.field2333.method14501(new class988(arg1), (long) arg0);
+			this.field2333.method14501(new IntWrapper(arg1), (long) arg0);
 		} else {
 			var3.field11442 = arg1;
 		}

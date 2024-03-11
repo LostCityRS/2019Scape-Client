@@ -207,7 +207,7 @@ public class SeqType implements ConfigType {
 			} else if (arg1 == 249) {
 				int var11 = arg0.g1();
 				if (this.field1785 == null) {
-					int var12 = IntMath.method16657(var11);
+					int var12 = IntMath.bitceil(var11);
 					this.field1785 = new IterableMap(var12);
 				}
 				for (int var13 = 0; var13 < var11; var13++) {
@@ -217,7 +217,7 @@ public class SeqType implements ConfigType {
 					if (var14) {
 						var16 = new ObjectWrapper(arg0.gjstr());
 					} else {
-						var16 = new class988(arg0.g4s());
+						var16 = new IntWrapper(arg0.g4s());
 					}
 					this.field1785.method14501(var16, (long) var15);
 				}
@@ -274,7 +274,7 @@ public class SeqType implements ConfigType {
 		if (this.field1785 == null) {
 			return arg1;
 		} else {
-			class988 var3 = (class988) this.field1785.method14495((long) arg0);
+			IntWrapper var3 = (IntWrapper) this.field1785.method14495((long) arg0);
 			return var3 == null ? arg1 : var3.field11442;
 		}
 	}

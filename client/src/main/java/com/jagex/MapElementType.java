@@ -271,13 +271,13 @@ public class MapElementType implements ConfigType {
 		} else if (arg1 == 28) {
 			this.field2408 = arg0.g1();
 		} else if (arg1 == 29) {
-			this.field2365 = (class230) class686.method1897(class230.method13997(), arg0.g1());
+			this.field2365 = (class230) SerializableEnums.decode(class230.method13997(), arg0.g1());
 		} else if (arg1 == 30) {
-			this.field2405 = (class231) class686.method1897(Statics.method15088(), arg0.g1());
+			this.field2405 = (class231) SerializableEnums.decode(Statics.method15088(), arg0.g1());
 		} else if (arg1 == 249) {
 			int var9 = arg0.g1();
 			if (this.field2411 == null) {
-				int var10 = IntMath.method16657(var9);
+				int var10 = IntMath.bitceil(var9);
 				this.field2411 = new IterableMap(var10);
 			}
 			for (int var11 = 0; var11 < var9; var11++) {
@@ -287,7 +287,7 @@ public class MapElementType implements ConfigType {
 				if (var12) {
 					var14 = new ObjectWrapper(arg0.gjstr());
 				} else {
-					var14 = new class988(arg0.g4s());
+					var14 = new IntWrapper(arg0.g4s());
 				}
 				this.field2411.method14501(var14, (long) var13);
 			}
@@ -419,7 +419,7 @@ public class MapElementType implements ConfigType {
 		if (this.field2411 == null) {
 			return arg1;
 		} else {
-			class988 var3 = (class988) this.field2411.method14495((long) arg0);
+			IntWrapper var3 = (IntWrapper) this.field2411.method14495((long) arg0);
 			return var3 == null ? arg1 : var3.field11442;
 		}
 	}

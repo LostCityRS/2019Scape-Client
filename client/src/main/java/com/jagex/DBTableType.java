@@ -36,7 +36,7 @@ public class DBTableType implements ConfigType, class757 {
 			boolean var6 = (var4 & 0x80) != 0;
 			ScriptVarType[] var7 = new ScriptVarType[arg0.g1()];
 			for (int var8 = 0; var8 < var7.length; var8++) {
-				var7[var8] = (ScriptVarType) class686.method1897(ScriptVarType.method7293(), arg0.gSmart1or2());
+				var7[var8] = (ScriptVarType) SerializableEnums.decode(ScriptVarType.method7293(), arg0.gSmart1or2());
 			}
 			this.field9185[var5] = var7;
 			if (var6) {

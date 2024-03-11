@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("afh")
-public class class853 extends class140 {
+public class class853 extends Font {
 
 	@ObfuscatedName("afh.o")
 	public PureJavaRenderer field10229;

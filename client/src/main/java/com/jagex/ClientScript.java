@@ -84,12 +84,12 @@ public class ClientScript extends SecondaryNode {
 			this.field12375 = new IterableMap[var5];
 			for (int var6 = 0; var6 < var5; var6++) {
 				int var7 = arg0.g2();
-				IterableMap var8 = new IterableMap(var7 > 0 ? IntMath.method16657(var7) : 1);
+				IterableMap var8 = new IterableMap(var7 > 0 ? IntMath.bitceil(var7) : 1);
 				this.field12375[var6] = var8;
 				while (var7-- > 0) {
 					int var9 = arg0.g4s();
 					int var10 = arg0.g4s();
-					var8.method14501(new class988(var10), (long) var9);
+					var8.method14501(new IntWrapper(var10), (long) var9);
 				}
 			}
 		}
@@ -103,7 +103,7 @@ public class ClientScript extends SecondaryNode {
 	public void method19495(Packet arg0, int arg1, ClientScriptCommand arg2) {
 		int var4 = this.field12369.length;
 		if (ClientScriptCommand.field5937 == arg2 || ClientScriptCommand.field5651 == arg2) {
-			VarDomainType var7 = (VarDomainType) class686.method1897(VarDomainType.method7216(), arg0.g1());
+			VarDomainType var7 = (VarDomainType) SerializableEnums.decode(VarDomainType.method7216(), arg0.g1());
 			int var8 = arg0.g2();
 			if (this.field12366 == null) {
 				this.field12366 = new Object[var4];
@@ -114,7 +114,7 @@ public class ClientScript extends SecondaryNode {
 			}
 			this.field12367[arg1] = arg0.g1();
 		} else if (ClientScriptCommand.field5144 == arg2) {
-			BaseVarType var5 = (BaseVarType) class686.method1897(Statics.method7338(), arg0.g1());
+			BaseVarType var5 = (BaseVarType) SerializableEnums.decode(Statics.method7338(), arg0.g1());
 			switch(var5.id) {
 				case 1:
 					if (this.field12366 == null) {

@@ -30,7 +30,7 @@ public class class1113 extends class812 {
 		} else if (arg0.field9965) {
 			return new class1113(arg0, 34037, arg1, arg2, arg3, arg4);
 		} else {
-			return new class1113(arg0, arg1, arg2, arg3, arg4, IntMath.method16657(arg3), IntMath.method16657(arg4));
+			return new class1113(arg0, arg1, arg2, arg3, arg4, IntMath.bitceil(arg3), IntMath.bitceil(arg4));
 		}
 	}
 
@@ -41,7 +41,7 @@ public class class1113 extends class812 {
 		} else if (arg0.field9965) {
 			return new class1113(arg0, 34037, arg1, arg2, arg3, arg4, arg5, arg6);
 		} else {
-			return new class1113(arg0, arg1, arg2, IntMath.method16657(arg1), IntMath.method16657(arg2), arg4);
+			return new class1113(arg0, arg1, arg2, IntMath.bitceil(arg1), IntMath.bitceil(arg2), arg4);
 		}
 	}
 
@@ -52,7 +52,7 @@ public class class1113 extends class812 {
 		} else if (arg0.field9965) {
 			return new class1113(arg0, 34037, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 		} else {
-			return new class1113(arg0, arg1, arg2, arg3, arg4, IntMath.method16657(arg3), IntMath.method16657(arg4), arg6, arg7);
+			return new class1113(arg0, arg1, arg2, arg3, arg4, IntMath.bitceil(arg3), IntMath.bitceil(arg4), arg6, arg7);
 		}
 	}
 
@@ -63,7 +63,7 @@ public class class1113 extends class812 {
 		} else if (arg0.field9965) {
 			return new class1113(arg0, 34037, arg1, arg2, arg3, arg4, true);
 		} else {
-			return new class1113(arg0, arg1, arg2, arg3, arg4, IntMath.method16657(arg3), IntMath.method16657(arg4), true);
+			return new class1113(arg0, arg1, arg2, arg3, arg4, IntMath.bitceil(arg3), IntMath.bitceil(arg4), true);
 		}
 	}
 

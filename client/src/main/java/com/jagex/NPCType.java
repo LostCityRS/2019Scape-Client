@@ -200,7 +200,7 @@ public class NPCType implements ConfigType {
 	public int field2759 = -1;
 
 	@ObfuscatedName("if.bz")
-	public class416 field2724;
+	public Cuboid field2724;
 
 	@ObfuscatedName("if.bv")
 	public int field2761 = 256;
@@ -395,11 +395,11 @@ public class NPCType implements ConfigType {
 		} else if (arg1 == 123) {
 			this.field2754 = arg0.g2();
 		} else if (arg1 == 125) {
-			this.field2727 = (CompassPoint) class686.method1897(CompassPoint.method9573(), arg0.g1b());
+			this.field2727 = (CompassPoint) SerializableEnums.decode(CompassPoint.method9573(), arg0.g1b());
 		} else if (arg1 == 127) {
 			this.field2762 = arg0.g2();
 		} else if (arg1 == 128) {
-			class686.method1897(MoveSpeed.method13901(), arg0.g1());
+			SerializableEnums.decode(MoveSpeed.method13901(), arg0.g1());
 		} else if (arg1 == 134) {
 			this.field2746 = arg0.g2();
 			if (this.field2746 == 65535) {
@@ -477,7 +477,7 @@ public class NPCType implements ConfigType {
 				this.field2716[arg1 - 170] = var33;
 			} else if (arg1 != 178) {
 				if (arg1 == 179) {
-					this.field2724 = new class416();
+					this.field2724 = new Cuboid();
 					this.field2724.field4252 = arg0.gSmart1or2s();
 					this.field2724.field4253 = arg0.gSmart1or2s();
 					this.field2724.field4248 = arg0.gSmart1or2s();
@@ -494,7 +494,7 @@ public class NPCType implements ConfigType {
 				} else if (arg1 == 249) {
 					int var34 = arg0.g1();
 					if (this.field2753 == null) {
-						int var35 = IntMath.method16657(var34);
+						int var35 = IntMath.bitceil(var34);
 						this.field2753 = new IterableMap(var35);
 					}
 					for (int var36 = 0; var36 < var34; var36++) {
@@ -504,7 +504,7 @@ public class NPCType implements ConfigType {
 						if (var37) {
 							var39 = new ObjectWrapper(arg0.gjstr());
 						} else {
-							var39 = new class988(arg0.g4s());
+							var39 = new IntWrapper(arg0.g4s());
 						}
 						this.field2753.method14501(var39, (long) var38);
 					}
@@ -906,7 +906,7 @@ public class NPCType implements ConfigType {
 		if (this.field2753 == null) {
 			return arg1;
 		} else {
-			class988 var3 = (class988) this.field2753.method14495((long) arg0);
+			IntWrapper var3 = (IntWrapper) this.field2753.method14495((long) arg0);
 			return var3 == null ? arg1 : var3.field11442;
 		}
 	}

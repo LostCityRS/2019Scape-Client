@@ -88,7 +88,7 @@ public class TransformComponentType implements SerializableEnum {
 
 	@ObfuscatedName("tt.f(II)Lcr;")
 	public static TransformComponentType method8644(int arg0) {
-		TransformComponentType var1 = (TransformComponentType) class686.method1897(method142(), arg0);
+		TransformComponentType var1 = (TransformComponentType) SerializableEnums.decode(method142(), arg0);
 		if (var1 == null) {
 			var1 = field1215;
 		}

@@ -39,8 +39,8 @@ public class Direct3DTexture extends class408 implements GpuTexture {
 			this.field10667 = 1.0F;
 			this.field10668 = 1.0F;
 		} else {
-			this.field10665 = IntMath.method16657(arg3);
-			this.field10666 = IntMath.method16657(arg4);
+			this.field10665 = IntMath.bitceil(arg3);
+			this.field10666 = IntMath.bitceil(arg4);
 			this.field10667 = (float) arg3 / (float) this.field10665;
 			this.field10668 = (float) arg4 / (float) this.field10666;
 		}
@@ -55,8 +55,8 @@ public class Direct3DTexture extends class408 implements GpuTexture {
 			this.field10667 = 1.0F;
 			this.field10668 = 1.0F;
 		} else {
-			this.field10665 = IntMath.method16657(arg1);
-			this.field10666 = IntMath.method16657(arg2);
+			this.field10665 = IntMath.bitceil(arg1);
+			this.field10666 = IntMath.bitceil(arg2);
 			this.field10667 = (float) arg1 / (float) this.field10665;
 			this.field10668 = (float) arg2 / (float) this.field10666;
 			if (this.field10665 != arg1 || this.field10666 != arg2) {
@@ -88,8 +88,8 @@ public class Direct3DTexture extends class408 implements GpuTexture {
 			this.field10667 = 1.0F;
 			this.field10668 = 1.0F;
 		} else {
-			this.field10665 = IntMath.method16657(arg2);
-			this.field10666 = IntMath.method16657(arg3);
+			this.field10665 = IntMath.bitceil(arg2);
+			this.field10666 = IntMath.bitceil(arg3);
 			this.field10667 = (float) arg2 / (float) this.field10665;
 			this.field10668 = (float) arg3 / (float) this.field10666;
 			if (this.field10665 != arg2 || this.field10666 != arg3) {
@@ -129,8 +129,8 @@ public class Direct3DTexture extends class408 implements GpuTexture {
 			this.field10667 = 1.0F;
 			this.field10668 = 1.0F;
 		} else {
-			this.field10665 = IntMath.method16657(arg2);
-			this.field10666 = IntMath.method16657(arg3);
+			this.field10665 = IntMath.bitceil(arg2);
+			this.field10666 = IntMath.bitceil(arg3);
 			this.field10667 = (float) arg2 / (float) this.field10665;
 			this.field10668 = (float) arg3 / (float) this.field10666;
 			if (this.field10665 != arg2 || this.field10666 != arg3) {

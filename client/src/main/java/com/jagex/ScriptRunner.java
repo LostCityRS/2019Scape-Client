@@ -5020,7 +5020,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("agj.ab(Lyf;I)V")
 	public static final void method16441(ClientScriptState arg0) {
 		IterableMap var1 = arg0.field8239.field12375[arg0.field8236[arg0.field8220]];
-		class988 var2 = (class988) var1.method14495((long) arg0.field8216[--arg0.field8226]);
+		IntWrapper var2 = (IntWrapper) var1.method14495((long) arg0.field8216[--arg0.field8226]);
 		if (var2 != null) {
 			arg0.field8220 += var2.field11442;
 		}
@@ -12374,7 +12374,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("va.ala(Lyf;I)V")
 	public static final void method9415(ClientScriptState arg0) {
 		CharSequence var1 = (CharSequence) arg0.field8218[--arg0.field8211];
-		arg0.field8218[++arg0.field8211 - 1] = class805.method18779(var1);
+		arg0.field8218[++arg0.field8211 - 1] = WebTools.urlencode(var1);
 	}
 
 	@ObfuscatedName("ab.alf(Lyf;I)V")
@@ -15655,7 +15655,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("dj.bdu(Lyf;I)V")
 	public static final void method2663(ClientScriptState arg0) {
 		arg0.field8226 -= 2;
-		MoveSpeed var1 = (MoveSpeed) class686.method1897(MoveSpeed.method13901(), arg0.field8216[arg0.field8226]);
+		MoveSpeed var1 = (MoveSpeed) SerializableEnums.decode(MoveSpeed.method13901(), arg0.field8216[arg0.field8226]);
 		CoordGrid var2 = new CoordGrid(arg0.field8216[arg0.field8226 + 1]);
 		if (var2.field7428 == -1) {
 			throw new RuntimeException("");

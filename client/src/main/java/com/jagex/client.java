@@ -1,6 +1,8 @@
 package com.jagex;
 
+import com.jagex.clanchannel.ClanChannelDelta;
 import com.jagex.clansettings.ClanSettingsDelta;
+import com.jagex.cutscene.CutsceneAction;
 import com.jagex.playergroup.PlayerGroup;
 import com.jagex.playergroup.PlayerGroupDelta;
 import com.jagex.playergroup.PlayerGroupResourceProvider;
@@ -1159,7 +1161,7 @@ public final class client extends GameShell {
 						Statics.field1680 = Statics.method13875(Integer.parseInt(var5));
 						break;
 					case 27:
-						Statics.field1811 = (ModeWhere) class686.method1897(ModeWhere.method13843(), Integer.parseInt(var5));
+						Statics.field1811 = (ModeWhere) SerializableEnums.decode(ModeWhere.method13843(), Integer.parseInt(var5));
 						if (Statics.field1811 == ModeWhere.field8277) {
 							Statics.field1811 = ModeWhere.field8268;
 						} else if (!Statics.field1811.method13838(class684.field8283) && Statics.field1811 != ModeWhere.field8273) {
@@ -2054,7 +2056,7 @@ public final class client extends GameShell {
 			if (arg1 != null) {
 				Statics.field8198.method2475(1, 0);
 				FontMetrics var3 = FontMetrics.method6068(Statics.field7672, Statics.field505, 0, Statics.field7538);
-				class140 var4 = Statics.field8198.method2207(var3, SpriteDataProvider.method1609(Statics.field10317, Statics.field505, 0), true);
+				Font var4 = Statics.field8198.method2207(var3, SpriteDataProvider.method1609(Statics.field10317, Statics.field505, 0), true);
 				method8024();
 				MessageBox.method649(arg1, true, Statics.field8198, var4, var3);
 			}
@@ -2065,7 +2067,7 @@ public final class client extends GameShell {
 					var5 = Renderer.method14575(0, Statics.canvas, Statics.field7366, Statics.field7669, Statics.field9211, Statics.field7282, Statics.field2013, Statics.field2900, 0);
 					var5.method2475(1, 0);
 					FontMetrics var6 = FontMetrics.method1593(Statics.field7672, Statics.field505, 0);
-					class140 var7 = var5.method2207(var6, SpriteDataProvider.method1609(Statics.field10317, Statics.field505, 0), true);
+					Font var7 = var5.method2207(var6, SpriteDataProvider.method1609(Statics.field10317, Statics.field505, 0), true);
 					method8024();
 					MessageBox.method649(arg1, true, var5, var7, var6);
 					try {
@@ -2627,7 +2629,7 @@ public final class client extends GameShell {
 		field10862 = -1;
 		field10863 = 3;
 		Statics.field8729 = null;
-		class153.method3551();
+		CutsceneManager.method3551();
 	}
 
 	@ObfuscatedName("wd.fa(I)V")
@@ -3093,19 +3095,19 @@ public final class client extends GameShell {
 			method9274();
 			method16431();
 		} else if (Statics.field2775.field7675.method9396(var16, field11024, field10822, Statics.field11931)) {
-			class153.method7372(false);
+			CutsceneManager.method7372(false);
 		} else {
-			if (field10863 == 2 && class153.method10308(field10862)) {
+			if (field10863 == 2 && CutsceneManager.method10308(field10862)) {
 				world.method7749(new RebuildRequest(RebuildType.field5064, null));
 				field10863 = 1;
 			}
 			if (field10863 == 1 && state != 3) {
-				class153.field1718.method14499();
+				CutsceneManager.field1718.method14499();
 				field10863 = 0;
 				field11041 = field10903;
 				field10797 = 0;
 				field10877 = false;
-				class153.method1576();
+				CutsceneManager.method1576();
 			}
 			if (field10863 == 0) {
 				int var24 = field10903 - field11041;
@@ -3120,7 +3122,7 @@ public final class client extends GameShell {
 				}
 				if (field10863 == 0) {
 					for (int var26 = 0; var26 < Statics.field1721.length; var26++) {
-						class158 var27 = Statics.field1721[var26];
+						CutsceneEntity var27 = Statics.field1721[var26];
 						if (var27.field1744) {
 							PathingEntity var28 = var27.method2870();
 							method1679(var28, true);
@@ -3500,7 +3502,7 @@ public final class client extends GameShell {
 			return;
 		}
 		for (int var7 = 0; var7 < Statics.field1721.length; var7++) {
-			class158 var8 = Statics.field1721[var7];
+			CutsceneEntity var8 = Statics.field1721[var7];
 			if (var8.field1744) {
 				var8.method2870().method16520();
 			}
@@ -4490,7 +4492,7 @@ public final class client extends GameShell {
 		if (arg0.field10427 == null) {
 			return;
 		}
-		MoveSpeed var2 = (MoveSpeed) class686.method1897(MoveSpeed.method13901(), arg1);
+		MoveSpeed var2 = (MoveSpeed) SerializableEnums.decode(MoveSpeed.method13901(), arg1);
 		int var3 = arg0.field10427[var2.method13906()];
 		if (var3 != arg0.field10454.method14348()) {
 			arg0.field10454.method14350(var3, arg0.field10454.method14398());
@@ -5759,7 +5761,7 @@ public final class client extends GameShell {
 		for (int var6 = 0; var6 < var5; var6++) {
 			PathingEntity var8;
 			if (field10863 == 0) {
-				class158 var7 = Statics.field1721[var6];
+				CutsceneEntity var7 = Statics.field1721[var6];
 				if (!var7.field1744) {
 					continue;
 				}
@@ -5828,7 +5830,7 @@ public final class client extends GameShell {
 		for (int var6 = 0; var6 < var5; var6++) {
 			PathingEntity var8;
 			if (field10863 == 0) {
-				class158 var7 = Statics.field1721[var6];
+				CutsceneEntity var7 = Statics.field1721[var6];
 				if (!var7.field1744) {
 					continue;
 				}
@@ -5987,7 +5989,7 @@ public final class client extends GameShell {
 		for (int var3 = 0; var3 < var2; var3++) {
 			PathingEntity var5;
 			if (field10863 == 0) {
-				class158 var4 = Statics.field1721[var3];
+				CutsceneEntity var4 = Statics.field1721[var3];
 				if (!var4.field1744) {
 					continue;
 				}
@@ -6147,7 +6149,7 @@ public final class client extends GameShell {
 			NPCType var10 = null;
 			PathingEntity var12;
 			if (field10863 == 0) {
-				class158 var11 = Statics.field1721[var9];
+				CutsceneEntity var11 = Statics.field1721[var9];
 				if (!var11.field1744) {
 					continue;
 				}
@@ -6472,13 +6474,13 @@ public final class client extends GameShell {
 										var99 = field11113[0];
 									}
 								}
-								class140 var104 = Statics.field8321;
-								class140 var105 = Statics.field8321;
+								Font var104 = Statics.field8321;
+								Font var105 = Statics.field8321;
 								FontMetrics var106 = Statics.field6778;
 								FontMetrics var107 = Statics.field6778;
 								int var108 = var71.field7310;
 								if (var108 >= 0) {
-									class140 var109 = (class140) Statics.field7538.method6188(field10833, var108, true, var71.field7294);
+									Font var109 = (Font) Statics.field7538.method6188(field10833, var108, true, var71.field7294);
 									FontMetrics var110 = Statics.field7538.method6163(field10833, var108);
 									if (var109 != null && var110 != null) {
 										var104 = var109;
@@ -6488,7 +6490,7 @@ public final class client extends GameShell {
 								if (var74 != null) {
 									int var111 = var74.field7310;
 									if (var111 >= 0) {
-										class140 var112 = (class140) Statics.field7538.method6188(field10833, var111, true, var74.field7294);
+										Font var112 = (Font) Statics.field7538.method6188(field10833, var111, true, var74.field7294);
 										FontMetrics var113 = Statics.field7538.method6163(field10833, var111);
 										if (var112 != null && var113 != null) {
 											var105 = var112;
@@ -7233,7 +7235,7 @@ public final class client extends GameShell {
 			arg0.field796 = null;
 			return true;
 		} else if (ServerProt.LOGOUT_FULL == arg0.field796) {
-			field10853 = (LogoutReason) class686.method1897(LogoutReason.method10365(), var2.g1());
+			field10853 = (LogoutReason) SerializableEnums.decode(LogoutReason.method10365(), var2.g1());
 			logout(LoginManager.field485);
 			arg0.field796 = null;
 			return false;
@@ -7570,7 +7572,7 @@ public final class client extends GameShell {
 			return true;
 		} else if (ServerProt.CREATE_SUGGEST_NAME_ERROR == arg0.field796) {
 			int var145 = var2.g1();
-			SuggestNameReply var146 = (SuggestNameReply) class686.method1897(SuggestNameReply.method9840(), var145);
+			SuggestNameReply var146 = (SuggestNameReply) SerializableEnums.decode(SuggestNameReply.method9840(), var145);
 			if (var146 == null) {
 				var146 = SuggestNameReply.field8393;
 			}
@@ -7625,7 +7627,7 @@ public final class client extends GameShell {
 			String var157 = var2.gjstr();
 			long var158 = (long) var2.g2();
 			long var160 = (long) var2.g3();
-			ChatCrownType var162 = (ChatCrownType) class686.method1897(ChatCrownType.method6043(), var2.g1());
+			ChatCrownType var162 = (ChatCrownType) SerializableEnums.decode(ChatCrownType.method6043(), var2.g1());
 			long var163 = (var158 << 32) + var160;
 			boolean var165 = false;
 			Object var166 = null;
@@ -7698,7 +7700,7 @@ public final class client extends GameShell {
 			}
 			long var181 = (long) var2.g2();
 			long var183 = (long) var2.g3();
-			ChatCrownType var185 = (ChatCrownType) class686.method1897(ChatCrownType.method6043(), var2.g1());
+			ChatCrownType var185 = (ChatCrownType) SerializableEnums.decode(ChatCrownType.method6043(), var2.g1());
 			int var186 = var2.g2();
 			long var187 = (var181 << 32) + var183;
 			boolean var189 = false;
@@ -7869,7 +7871,7 @@ public final class client extends GameShell {
 				return true;
 			}
 			int var221 = var2.g2();
-			ChatCrownType var222 = (ChatCrownType) class686.method1897(ChatCrownType.method6043(), var2.g1());
+			ChatCrownType var222 = (ChatCrownType) SerializableEnums.decode(ChatCrownType.method6043(), var2.g1());
 			boolean var223 = (var221 & 0x8000) != 0;
 			if (var220.field12062 != null && var220.field12061 != null) {
 				boolean var224 = false;
@@ -7984,7 +7986,7 @@ public final class client extends GameShell {
 			return true;
 		} else if (ServerProt.CREATE_ACCOUNT_REPLY == arg0.field796) {
 			int var244 = var2.g1();
-			CreateAccountReply var245 = (CreateAccountReply) class686.method1897(CreateAccountReply.method4614(), var244);
+			CreateAccountReply var245 = (CreateAccountReply) SerializableEnums.decode(CreateAccountReply.method4614(), var244);
 			if (var245 == null) {
 				var245 = CreateAccountReply.field8378;
 			}
@@ -7992,7 +7994,7 @@ public final class client extends GameShell {
 			arg0.field796 = null;
 			return true;
 		} else if (ServerProt.REDUCE_NPC_ATTACK_PRIORITY == arg0.field796) {
-			field10955 = (AttackOpPriority) class686.method1897(AttackOpPriority.method10149(), var2.g1_alt3());
+			field10955 = (AttackOpPriority) SerializableEnums.decode(AttackOpPriority.method10149(), var2.g1_alt3());
 			if (field10955 == null) {
 				field10955 = AttackOpPriority.field7908;
 			}
@@ -8208,7 +8210,7 @@ public final class client extends GameShell {
 			String var293 = var2.gjstr();
 			long var294 = (long) var2.g2();
 			long var296 = (long) var2.g3();
-			ChatCrownType var298 = (ChatCrownType) class686.method1897(ChatCrownType.method6043(), var2.g1());
+			ChatCrownType var298 = (ChatCrownType) SerializableEnums.decode(ChatCrownType.method6043(), var2.g1());
 			int var299 = var2.g2();
 			long var300 = (var294 << 32) + var296;
 			boolean var302 = false;
@@ -8436,7 +8438,7 @@ public final class client extends GameShell {
 			String var361 = var2.gjstr();
 			long var362 = (long) var2.g2();
 			long var364 = (long) var2.g3();
-			ChatCrownType var366 = (ChatCrownType) class686.method1897(ChatCrownType.method6043(), var2.g1());
+			ChatCrownType var366 = (ChatCrownType) SerializableEnums.decode(ChatCrownType.method6043(), var2.g1());
 			boolean var367 = var2.g1() == 1;
 			long var368 = (var362 << 32) + var364;
 			boolean var370 = false;
@@ -8708,7 +8710,7 @@ public final class client extends GameShell {
 			arg0.field796 = null;
 			return true;
 		} else if (ServerProt.LOGOUT == arg0.field796) {
-			field10853 = (LogoutReason) class686.method1897(LogoutReason.method10365(), var2.g1());
+			field10853 = (LogoutReason) SerializableEnums.decode(LogoutReason.method10365(), var2.g1());
 			logout(false);
 			arg0.field796 = null;
 			return false;
@@ -8801,7 +8803,7 @@ public final class client extends GameShell {
 			String var459 = var2.gjstr();
 			long var460 = (long) var2.g2();
 			long var462 = (long) var2.g3();
-			ChatCrownType var464 = (ChatCrownType) class686.method1897(ChatCrownType.method6043(), var2.g1());
+			ChatCrownType var464 = (ChatCrownType) SerializableEnums.decode(ChatCrownType.method6043(), var2.g1());
 			int var465 = var2.g2();
 			long var466 = (var460 << 32) + var462;
 			boolean var468 = false;
@@ -8848,7 +8850,7 @@ public final class client extends GameShell {
 			String var479 = var2.gjstr();
 			long var480 = (long) var2.g2();
 			long var482 = (long) var2.g3();
-			ChatCrownType var484 = (ChatCrownType) class686.method1897(ChatCrownType.method6043(), var2.g1());
+			ChatCrownType var484 = (ChatCrownType) SerializableEnums.decode(ChatCrownType.method6043(), var2.g1());
 			boolean var485 = var2.g1() == 1;
 			int var486 = var2.g2();
 			long var487 = (var480 << 32) + var482;
@@ -8937,7 +8939,7 @@ public final class client extends GameShell {
 			String var505 = var2.gjstr();
 			long var506 = (long) var2.g2();
 			long var508 = (long) var2.g3();
-			ChatCrownType var510 = (ChatCrownType) class686.method1897(ChatCrownType.method6043(), var2.g1());
+			ChatCrownType var510 = (ChatCrownType) SerializableEnums.decode(ChatCrownType.method6043(), var2.g1());
 			long var511 = (var506 << 32) + var508;
 			boolean var513 = false;
 			int var514 = 0;
@@ -9086,7 +9088,7 @@ public final class client extends GameShell {
 			}
 			long var552 = (long) var2.g2();
 			long var554 = (long) var2.g3();
-			ChatCrownType var556 = (ChatCrownType) class686.method1897(ChatCrownType.method6043(), var2.g1());
+			ChatCrownType var556 = (ChatCrownType) SerializableEnums.decode(ChatCrownType.method6043(), var2.g1());
 			long var557 = (var552 << 32) + var554;
 			boolean var559 = false;
 			int var560 = 0;
@@ -9136,7 +9138,7 @@ public final class client extends GameShell {
 			return false;
 		} else if (ServerProt.CREATE_CHECK_EMAIL_REPLY == arg0.field796) {
 			int var566 = var2.g1();
-			CheckEmailReply var567 = (CheckEmailReply) class686.method1897(Statics.method4289(), var566);
+			CheckEmailReply var567 = (CheckEmailReply) SerializableEnums.decode(Statics.method4289(), var566);
 			if (var567 == null) {
 				var567 = CheckEmailReply.field8402;
 			}
@@ -9230,7 +9232,7 @@ public final class client extends GameShell {
 				} else {
 					var587[var588].field757 = var587[var588].field756;
 				}
-				var587[var588].field755 = class795.method15191(var587[var588].field757, Statics.field10782);
+				var587[var588].field755 = NamespaceUtil.method15191(var587[var588].field757, Statics.field10782);
 				var587[var588].field758 = var2.g2();
 				var587[var588].field760 = var2.g1b();
 				var587[var588].field759 = var2.gjstr();
@@ -9353,7 +9355,7 @@ public final class client extends GameShell {
 			arg0.field796 = null;
 			return true;
 		} else if (ServerProt.REDUCE_PLAYER_ATTACK_PRIORITY == arg0.field796) {
-			field10954 = (AttackOpPriority) class686.method1897(AttackOpPriority.method10149(), var2.g1());
+			field10954 = (AttackOpPriority) SerializableEnums.decode(AttackOpPriority.method10149(), var2.g1());
 			if (field10954 == null) {
 				field10954 = AttackOpPriority.field7908;
 			}
@@ -9401,7 +9403,7 @@ public final class client extends GameShell {
 				FriendChatUser var654 = new FriendChatUser();
 				var654.field756 = var645;
 				var654.field757 = var647;
-				var654.field755 = class795.method15191(var654.field757, Statics.field10782);
+				var654.field755 = NamespaceUtil.method15191(var654.field757, Statics.field10782);
 				var654.field758 = var648;
 				var654.field760 = var649;
 				var654.field759 = var653;
@@ -9638,7 +9640,7 @@ public final class client extends GameShell {
 			return true;
 		} else if (ServerProt.CREATE_CHECK_NAME_REPLY == arg0.field796) {
 			int var711 = var2.g1();
-			CheckNameReply var712 = (CheckNameReply) class686.method1897(CheckNameReply.method6019(), var711);
+			CheckNameReply var712 = (CheckNameReply) SerializableEnums.decode(CheckNameReply.method6019(), var711);
 			if (var712 == null) {
 				var712 = CheckNameReply.field8404;
 			}
@@ -10212,7 +10214,7 @@ public final class client extends GameShell {
 				} else if (var7 == 1) {
 					field11036[++field11011 - 1] = var4;
 					var5.field10440 = field10815;
-					CompassPoint var8 = (CompassPoint) class686.method1897(CompassPoint.method9573(), var0.gBit(3));
+					CompassPoint var8 = (CompassPoint) SerializableEnums.decode(CompassPoint.method9573(), var0.gBit(3));
 					var5.method19168(var8, MoveSpeed.field8315.field8313);
 					int var9 = var0.gBit(1);
 					if (var9 == 1) {
@@ -10222,12 +10224,12 @@ public final class client extends GameShell {
 					field11036[++field11011 - 1] = var4;
 					var5.field10440 = field10815;
 					if (var0.gBit(1) == 1) {
-						CompassPoint var10 = (CompassPoint) class686.method1897(CompassPoint.method9573(), var0.gBit(3));
+						CompassPoint var10 = (CompassPoint) SerializableEnums.decode(CompassPoint.method9573(), var0.gBit(3));
 						var5.method19168(var10, MoveSpeed.field8316.field8313);
-						CompassPoint var11 = (CompassPoint) class686.method1897(CompassPoint.method9573(), var0.gBit(3));
+						CompassPoint var11 = (CompassPoint) SerializableEnums.decode(CompassPoint.method9573(), var0.gBit(3));
 						var5.method19168(var11, MoveSpeed.field8316.field8313);
 					} else {
-						CompassPoint var12 = (CompassPoint) class686.method1897(CompassPoint.method9573(), var0.gBit(3));
+						CompassPoint var12 = (CompassPoint) SerializableEnums.decode(CompassPoint.method9573(), var0.gBit(3));
 						var5.method19168(var12, MoveSpeed.field8314.field8313);
 					}
 					int var13 = var0.gBit(1);
@@ -10546,7 +10548,7 @@ public final class client extends GameShell {
 				int var70 = var0.data[(++var0.pos) - 1] & 0xFF;
 				for (int var71 = 0; var71 < var70; var71++) {
 					int var72 = var0.g1_alt2();
-					BaseVarType var73 = (BaseVarType) class686.method1897(Statics.method7338(), var72);
+					BaseVarType var73 = (BaseVarType) SerializableEnums.decode(Statics.method7338(), var72);
 					VarValue var74 = Statics.field8135.method15285(var0, var73);
 					var3.field10460.method14735(var74.field4240, var74.field4239);
 				}
@@ -10676,7 +10678,7 @@ public final class client extends GameShell {
 				int var108 = var0.data[(++var0.pos) - 1] & 0xFF;
 				for (int var109 = 0; var109 < var108; var109++) {
 					int var110 = var0.g1_alt3();
-					BaseVarType var111 = (BaseVarType) class686.method1897(Statics.method7338(), var110);
+					BaseVarType var111 = (BaseVarType) SerializableEnums.decode(Statics.method7338(), var110);
 					VarValue var112 = Statics.field8135.method15285(var0, var111);
 					var3.field10460.method14735(var112.field4240, var112.field4239);
 				}
@@ -11251,7 +11253,7 @@ public final class client extends GameShell {
 							} else if (var11.field2184 == 4) {
 								int var41 = 255 - (var15 & 0xFF);
 								if (var41 != 0) {
-									class140 var42 = var11.method3942(Statics.field7538, field10833);
+									Font var42 = var11.method3942(Statics.field7538, field10833);
 									if (var42 != null) {
 										int var43 = var11.field2210;
 										String var44 = var11.field2261;
@@ -13028,7 +13030,7 @@ public final class client extends GameShell {
 		if (Statics.field3022 == null || (arg0 < 0 || arg0 >= Statics.field3022.field11393)) {
 			return;
 		}
-		class308 var1 = Statics.field3022.field11392[arg0];
+		ClanChannelUser var1 = Statics.field3022.field11392[arg0];
 		if (var1.field3089 != -1) {
 			return;
 		}
@@ -13045,7 +13047,7 @@ public final class client extends GameShell {
 		if (Statics.field3022 == null || (arg0 < 0 || arg0 >= Statics.field3022.field11393)) {
 			return;
 		}
-		class308 var2 = Statics.field3022.field11392[arg0];
+		ClanChannelUser var2 = Statics.field3022.field11392[arg0];
 		ServerConnection var3 = method640();
 		ClientMessage var4 = Statics.method1604(ClientProt.AFFINEDCLANSETTINGS_SETMUTED_FROMCHANNEL, var3.field794);
 		var4.field11432.p1(Packet.pjstrlen(var2.field3087) + 3);
@@ -13065,19 +13067,19 @@ public final class client extends GameShell {
 			ChatHistory.method1006(4, field11006 ? LocalisedText.FRIENDLIST_FULL_MEMBERS.method15021(Statics.field1680) : LocalisedText.FRIENDLIST_FULL.method15021(Statics.field1680));
 			return;
 		}
-		String var2 = class795.method15191(arg0, Statics.field10782);
+		String var2 = NamespaceUtil.method15191(arg0, Statics.field10782);
 		if (var2 == null) {
 			return;
 		}
 		for (int var3 = 0; var3 < field10811; var3++) {
 			Friend var4 = field11065[var3];
-			String var5 = class795.method15191(var4.field606, Statics.field10782);
+			String var5 = NamespaceUtil.method15191(var4.field606, Statics.field10782);
 			if (var5 != null && var5.equals(var2)) {
 				ChatHistory.method1006(4, arg0 + LocalisedText.FRIENDLISTDUPE.method15021(Statics.field1680));
 				return;
 			}
 			if (var4.field607 != null) {
-				String var6 = class795.method15191(var4.field607, Statics.field10782);
+				String var6 = NamespaceUtil.method15191(var4.field607, Statics.field10782);
 				if (var6 != null && var6.equals(var2)) {
 					ChatHistory.method1006(4, arg0 + LocalisedText.FRIENDLISTDUPE.method15021(Statics.field1680));
 					return;
@@ -13086,20 +13088,20 @@ public final class client extends GameShell {
 		}
 		for (int var7 = 0; var7 < field11084; var7++) {
 			Ignore var8 = field11086[var7];
-			String var9 = class795.method15191(var8.field598, Statics.field10782);
+			String var9 = NamespaceUtil.method15191(var8.field598, Statics.field10782);
 			if (var9 != null && var9.equals(var2)) {
 				ChatHistory.method1006(4, LocalisedText.REMOVEIGNORE1.method15021(Statics.field1680) + arg0 + LocalisedText.REMOVEIGNORE2.method15021(Statics.field1680));
 				return;
 			}
 			if (var8.field596 != null) {
-				String var10 = class795.method15191(var8.field596, Statics.field10782);
+				String var10 = NamespaceUtil.method15191(var8.field596, Statics.field10782);
 				if (var10 != null && var10.equals(var2)) {
 					ChatHistory.method1006(4, LocalisedText.REMOVEIGNORE1.method15021(Statics.field1680) + arg0 + LocalisedText.REMOVEIGNORE2.method15021(Statics.field1680));
 					return;
 				}
 			}
 		}
-		if (class795.method15191(Statics.field4490.field12062, Statics.field10782).equals(var2)) {
+		if (NamespaceUtil.method15191(Statics.field4490.field12062, Statics.field10782).equals(var2)) {
 			ChatHistory.method1006(4, LocalisedText.FRIENDCANTADDSELF.method15021(Statics.field1680));
 			return;
 		}
@@ -13115,14 +13117,14 @@ public final class client extends GameShell {
 		if (arg0 == null) {
 			return;
 		}
-		String var1 = class795.method15191(arg0, Statics.field10782);
+		String var1 = NamespaceUtil.method15191(arg0, Statics.field10782);
 		if (var1 == null) {
 			return;
 		}
 		for (int var2 = 0; var2 < field10811; var2++) {
 			Friend var3 = field11065[var2];
 			String var4 = var3.field606;
-			String var5 = class795.method15191(var4, Statics.field10782);
+			String var5 = NamespaceUtil.method15191(var4, Statics.field10782);
 			if (class222.method18886(arg0, var1, var4, var5)) {
 				field10811--;
 				for (int var6 = var2; var6 < field10811; var6++) {
@@ -13144,14 +13146,14 @@ public final class client extends GameShell {
 		if (arg0 == null) {
 			return;
 		}
-		String var1 = class795.method15191(arg0, Statics.field10782);
+		String var1 = NamespaceUtil.method15191(arg0, Statics.field10782);
 		if (var1 == null) {
 			return;
 		}
 		for (int var2 = 0; var2 < field11084; var2++) {
 			Ignore var3 = field11086[var2];
 			String var4 = var3.field598;
-			String var5 = class795.method15191(var4, Statics.field10782);
+			String var5 = NamespaceUtil.method15191(var4, Statics.field10782);
 			if (class222.method18886(arg0, var1, var4, var5)) {
 				field11084--;
 				for (int var6 = var2; var6 < field11084; var6++) {

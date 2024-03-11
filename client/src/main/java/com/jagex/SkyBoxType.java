@@ -43,7 +43,7 @@ public class SkyBoxType implements ConfigType, class757 {
 		} else if (arg1 == 3) {
 			this.field7234 = arg0.g1();
 		} else if (arg1 == 4) {
-			this.field7235 = (SkyBoxFillMode) class686.method1897(SkyBoxFillMode.method8341(), arg0.g1());
+			this.field7235 = (SkyBoxFillMode) SerializableEnums.decode(SkyBoxFillMode.method8341(), arg0.g1());
 		} else if (arg1 == 5) {
 			this.field7236 = arg0.gSmart2or4null();
 		} else if (arg1 == 6) {

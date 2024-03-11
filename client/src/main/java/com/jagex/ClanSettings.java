@@ -166,7 +166,7 @@ public class ClanSettings {
 			return null;
 		} else {
 			Node var2 = this.field3115.method14495((long) arg0);
-			return var2 != null && var2 instanceof class988 ? Integer.valueOf(((class988) var2).field11442) : null;
+			return var2 != null && var2 instanceof IntWrapper ? Integer.valueOf(((IntWrapper) var2).field11442) : null;
 		}
 	}
 
@@ -388,8 +388,8 @@ public class ClanSettings {
 		} else {
 			Node var3 = this.field3115.method14495((long) arg0);
 			if (var3 != null) {
-				if (var3 instanceof class988) {
-					class988 var4 = (class988) var3;
+				if (var3 instanceof IntWrapper) {
+					IntWrapper var4 = (IntWrapper) var3;
 					if (var4.field11442 == arg1) {
 						return false;
 					}
@@ -399,7 +399,7 @@ public class ClanSettings {
 				var3.method8440();
 			}
 		}
-		this.field3115.method14501(new class988(arg1), (long) arg0);
+		this.field3115.method14501(new IntWrapper(arg1), (long) arg0);
 		return true;
 	}
 
@@ -415,8 +415,8 @@ public class ClanSettings {
 		} else {
 			Node var10 = this.field3115.method14495((long) arg0);
 			if (var10 != null) {
-				if (var10 instanceof class988) {
-					class988 var11 = (class988) var10;
+				if (var10 instanceof IntWrapper) {
+					IntWrapper var11 = (IntWrapper) var10;
 					if ((var11.field11442 & var7) == var9) {
 						return false;
 					}
@@ -427,7 +427,7 @@ public class ClanSettings {
 				var10.method8440();
 			}
 		}
-		this.field3115.method14501(new class988(var9), (long) arg0);
+		this.field3115.method14501(new IntWrapper(var9), (long) arg0);
 		return true;
 	}
 
@@ -586,14 +586,14 @@ public class ClanSettings {
 		if (var6 <= 0) {
 			return;
 		}
-		this.field3115 = new IterableMap(var6 < 16 ? IntMath.method16657(var6) : 16);
+		this.field3115 = new IterableMap(var6 < 16 ? IntMath.bitceil(var6) : 16);
 		while (var6-- > 0) {
 			int var7 = arg0.g4s();
 			int var8 = var7 & 0x3FFFFFFF;
 			int var9 = var7 >>> 30;
 			if (var9 == 0) {
 				int var10 = arg0.g4s();
-				this.field3115.method14501(new class988(var10), (long) var8);
+				this.field3115.method14501(new IntWrapper(var10), (long) var8);
 			} else if (var9 == 1) {
 				long var11 = arg0.g8();
 				this.field3115.method14501(new ClanSettingsNode(var11), (long) var8);

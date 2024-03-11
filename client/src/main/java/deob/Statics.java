@@ -2,8 +2,10 @@ package deob;
 
 import com.jagex.*;
 import com.jagex.Component;
+import com.jagex.Font;
 import com.jagex.FontMetrics;
 import com.jagex.Timer;
+import com.jagex.cutscene.CutsceneAction;
 import com.jagex.playergroup.PlayerGroup;
 import com.jagex.twitchtv.TwitchEventLiveStreams;
 import com.jagex.twitchtv.TwitchEventResult;
@@ -68,7 +70,7 @@ public class Statics {
 	public static PrivateChatFilter field10354;
 
 	@ObfuscatedName("agr.x")
-	public static class140 field10355;
+	public static Font field10355;
 
 	@ObfuscatedName("bz.c")
 	public static Object field1039;
@@ -338,7 +340,7 @@ public class Statics {
 	public static CutsceneAction[] field1713;
 
 	@ObfuscatedName("eq.n")
-	public static class155[] field1714;
+	public static CutsceneSpline[] field1714;
 
 	@ObfuscatedName("eq.v")
 	public static short field1719;
@@ -347,7 +349,7 @@ public class Statics {
 	public static short field1720;
 
 	@ObfuscatedName("eq.m")
-	public static class158[] field1721;
+	public static CutsceneEntity[] field1721;
 
 	@ObfuscatedName("ez.qo")
 	public static Component field1734;
@@ -389,7 +391,7 @@ public class Statics {
 	public static CachingConfigTypeList field1840;
 
 	@ObfuscatedName("fv.bb")
-	public static class140 field1841;
+	public static Font field1841;
 
 	@ObfuscatedName("fw.hy")
 	public static ObjTypeList field1842;
@@ -950,7 +952,7 @@ public class Statics {
 	public static String javaVersion;
 
 	@ObfuscatedName("ag.n")
-	public static class140 field629;
+	public static Font field629;
 
 	@ObfuscatedName("ag.e")
 	public static Renderer field630;
@@ -1160,7 +1162,7 @@ public class Statics {
 	public static Js5NetResourceProvider[] field6888;
 
 	@ObfuscatedName("ai.q")
-	public static class154 field694;
+	public static CutsceneLoadingStage field694;
 
 	@ObfuscatedName("ul.xg")
 	public static Iterator field7015;
@@ -1208,7 +1210,7 @@ public class Statics {
 	public static PalettedSpriteData field716;
 
 	@ObfuscatedName("as.cq")
-	public static class140 field717;
+	public static Font field717;
 
 	@ObfuscatedName("uj.ag")
 	public static Sprite field7207;
@@ -1247,7 +1249,7 @@ public class Statics {
 	public static int field7286;
 
 	@ObfuscatedName("vl.k")
-	public static class156[] field7317;
+	public static CutsceneLocation[] field7317;
 
 	@ObfuscatedName("at.y")
 	public static Sprite field734;
@@ -1472,7 +1474,7 @@ public class Statics {
 	public static Js5 field8302;
 
 	@ObfuscatedName("zj.y")
-	public static class140 field8321;
+	public static Font field8321;
 
 	@ObfuscatedName("zj.og")
 	public static long field8322;
@@ -1493,7 +1495,7 @@ public class Statics {
 	public static List field8349;
 
 	@ObfuscatedName("zs.f")
-	public static class160[] field8358;
+	public static CutsceneRoute[] field8358;
 
 	@ObfuscatedName("zl.j")
 	public static Js5 field8370;
@@ -1631,7 +1633,7 @@ public class Statics {
 	public static int field9130;
 
 	@ObfuscatedName("acr.x")
-	public static Font field9147;
+	public static java.awt.Font field9147;
 
 	@ObfuscatedName("acj.a")
 	public static Sprite[] field9149;
@@ -1655,7 +1657,7 @@ public class Statics {
 	public static int field9183;
 
 	@ObfuscatedName("adh.q")
-	public static class140 field9184;
+	public static Font field9184;
 
 	@ObfuscatedName("adz.w")
 	public static ServerAddress field9200;
@@ -1812,8 +1814,8 @@ public class Statics {
 	}
 
 	@ObfuscatedName("tz.e(I)[Lvn;")
-	public static class603[] method8501() {
-		return new class603[] { class603.field7573, class603.field7575, class603.field7574 };
+	public static MaterialAlphaMode[] method8501() {
+		return new MaterialAlphaMode[] { MaterialAlphaMode.field7573, MaterialAlphaMode.field7575, MaterialAlphaMode.field7574 };
 	}
 
 	@ObfuscatedName("ua.e(S)[Lvg;")
@@ -2503,7 +2505,7 @@ public class Statics {
 
 	@ObfuscatedName("al.m(IB)Ldb;")
 	public static TransformInfinityType method713(int arg0) {
-		TransformInfinityType var1 = (TransformInfinityType) class686.method1897(TransformInfinityType.method9164(), arg0);
+		TransformInfinityType var1 = (TransformInfinityType) SerializableEnums.decode(TransformInfinityType.method9164(), arg0);
 		if (var1 == null) {
 			var1 = TransformInfinityType.field1581;
 		}
@@ -2637,7 +2639,7 @@ public class Statics {
 
 	@ObfuscatedName("qw.w(CB)Lqw;")
 	public static ScriptVarType method7300(char arg0) {
-		return arg0 == 'O' ? ScriptVarType.OBJ : varByLegacyChar[Cp1252.method16904(arg0) & 0xFF];
+		return arg0 == 'O' ? ScriptVarType.OBJ : varByLegacyChar[Cp1252.encode(arg0) & 0xFF];
 	}
 
 	@ObfuscatedName("ks.x(Lep;Lao;B)I")
@@ -3069,7 +3071,7 @@ public class Statics {
 		if (var32 != null) {
 			var34 = var32.method1435();
 		}
-		class140 var35 = field8321;
+		Font var35 = field8321;
 		FontMetrics var36 = field6778;
 		if (var8.field2388 == 1) {
 			var35 = field9184;
@@ -3384,7 +3386,7 @@ public class Statics {
 	}
 
 	@ObfuscatedName("ahe.aa(IIIIIIILarn;Leu;Laac;III)V")
-	public static void method16748(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, class1174 arg7, class140 arg8, FontMetrics arg9, int arg10, int arg11) {
+	public static void method16748(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, class1174 arg7, Font arg8, FontMetrics arg9, int arg10, int arg11) {
 		if (arg0 > arg2 && arg0 < arg2 + arg4 && arg1 > arg6 - arg9.field8562 - 1 && arg1 < arg9.field8569 + arg6) {
 			arg10 = arg11;
 		}
@@ -4668,7 +4670,7 @@ public class Statics {
 		if (var2 == null || arg1 < 0 || arg1 >= var2.field11393) {
 			return;
 		}
-		class308 var3 = var2.field11392[arg1];
+		ClanChannelUser var3 = var2.field11392[arg1];
 		if (var3.field3089 != -1) {
 			return;
 		}
@@ -4703,19 +4705,19 @@ public class Statics {
 			ChatHistory.method1006(4, client.field11006 ? LocalisedText.IGNORELISTFULL_MEMBERS.method15021(field1680) : LocalisedText.IGNORELISTFULL.method15021(field1680));
 			return;
 		}
-		String var3 = class795.method15191(arg0, field10782);
+		String var3 = NamespaceUtil.method15191(arg0, field10782);
 		if (var3 == null) {
 			return;
 		}
 		for (int var4 = 0; var4 < client.field11084; var4++) {
 			Ignore var5 = client.field11086[var4];
-			String var6 = class795.method15191(var5.field598, field10782);
+			String var6 = NamespaceUtil.method15191(var5.field598, field10782);
 			if (var6 != null && var6.equals(var3)) {
 				ChatHistory.method1006(4, arg0 + LocalisedText.IGNORELISTDUPE.method15021(field1680));
 				return;
 			}
 			if (var5.field596 != null) {
-				String var7 = class795.method15191(var5.field596, field10782);
+				String var7 = NamespaceUtil.method15191(var5.field596, field10782);
 				if (var7 != null && var7.equals(var3)) {
 					ChatHistory.method1006(4, arg0 + LocalisedText.IGNORELISTDUPE.method15021(field1680));
 					return;
@@ -4724,20 +4726,20 @@ public class Statics {
 		}
 		for (int var8 = 0; var8 < client.field10811; var8++) {
 			Friend var9 = client.field11065[var8];
-			String var10 = class795.method15191(var9.field606, field10782);
+			String var10 = NamespaceUtil.method15191(var9.field606, field10782);
 			if (var10 != null && var10.equals(var3)) {
 				ChatHistory.method1006(4, LocalisedText.REMOVEFRIEND1.method15021(field1680) + arg0 + LocalisedText.REMOVEFRIEND2.method15021(field1680));
 				return;
 			}
 			if (var9.field607 != null) {
-				String var11 = class795.method15191(var9.field607, field10782);
+				String var11 = NamespaceUtil.method15191(var9.field607, field10782);
 				if (var11 != null && var11.equals(var3)) {
 					ChatHistory.method1006(4, LocalisedText.REMOVEFRIEND1.method15021(field1680) + arg0 + LocalisedText.REMOVEFRIEND2.method15021(field1680));
 					return;
 				}
 			}
 		}
-		if (class795.method15191(field4490.field12062, field10782).equals(var3)) {
+		if (NamespaceUtil.method15191(field4490.field12062, field10782).equals(var3)) {
 			ChatHistory.method1006(4, LocalisedText.IGNORECANTADDSELF.method15021(field1680));
 			return;
 		}

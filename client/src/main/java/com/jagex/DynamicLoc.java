@@ -117,7 +117,7 @@ public class DynamicLoc {
 	public final Model method8238(Renderer arg0, int arg1, boolean arg2, boolean arg3) {
 		LocType var5 = (LocType) this.field6681.get(this.field6665);
 		if (var5.field7505 != null) {
-			var5 = var5.method9477(Statics.field7410, client.field10863 == 0 ? class153.field1723 : Statics.field7410);
+			var5 = var5.method9477(Statics.field7410, client.field10863 == 0 ? CutsceneManager.field1723 : Statics.field7410);
 		}
 		if (var5 == null) {
 			this.method8242(arg0);
@@ -208,7 +208,7 @@ public class DynamicLoc {
 		if ((this.field6680 == null || this.field6680.field7804) && (var9 != null || var10 != null)) {
 			LocType var11 = (LocType) this.field6681.get(this.field6665);
 			if (var11.field7505 != null) {
-				var11 = var11.method9477(Statics.field7410, client.field10863 == 0 ? class153.field1723 : Statics.field7410);
+				var11 = var11.method9477(Statics.field7410, client.field10863 == 0 ? CutsceneManager.field1723 : Statics.field7410);
 			}
 			if (var11 != null) {
 				this.field6680 = ParticleSystem.method9962(client.field10903, true);
@@ -283,7 +283,7 @@ public class DynamicLoc {
 			LocType var7 = (LocType) this.field6681.get(this.field6665);
 			LocType var8 = var7;
 			if (var7.field7505 != null) {
-				var7 = var7.method9477(Statics.field7410, client.field10863 == 0 ? class153.field1723 : Statics.field7410);
+				var7 = var7.method9477(Statics.field7410, client.field10863 == 0 ? CutsceneManager.field1723 : Statics.field7410);
 			}
 			if (var7 == null) {
 				return;

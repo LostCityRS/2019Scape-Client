@@ -1239,7 +1239,7 @@ public class MiniMenu {
 		if (field576 == null) {
 			return;
 		}
-		class140 var4 = field576.method3942(Statics.field7538, client.field10833);
+		Font var4 = field576.method3942(Statics.field7538, client.field10833);
 		if (var4 == null) {
 			var4 = Statics.field10355;
 		}
@@ -1286,7 +1286,7 @@ public class MiniMenu {
 	}
 
 	@ObfuscatedName("vl.az(IIIIIIILarm;Leu;Laac;IIS)V")
-	public static void method9284(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, class1172 arg7, class140 arg8, FontMetrics arg9, int arg10, int arg11) {
+	public static void method9284(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, class1172 arg7, Font arg8, FontMetrics arg9, int arg10, int arg11) {
 		if (arg0 > arg2 && arg0 < arg2 + arg4 && arg1 > arg6 - arg9.field8562 - 1 && arg1 < arg9.field8569 + arg6 && arg7.field12308) {
 			arg10 = arg11;
 		}
@@ -1341,7 +1341,7 @@ public class MiniMenu {
 	}
 
 	@ObfuscatedName("gl.ak(Ldh;IIIIILeu;Laac;Ljava/lang/String;I)V")
-	public static void method3469(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, class140 arg6, FontMetrics arg7, String arg8) {
+	public static void method3469(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, Font arg6, FontMetrics arg7, String arg8) {
 		int var9 = 255 - Statics.field4488 - field567;
 		if (var9 < 0) {
 			var9 = 0;
@@ -1406,7 +1406,7 @@ public class MiniMenu {
 		int var4 = Statics.field2576 - 3;
 		byte var5 = 20;
 		if (Statics.field1841 == null || Statics.field8786 == null) {
-			Statics.field1841 = (class140) Statics.field7538.method6188(client.field10833, Statics.field8463, true, true);
+			Statics.field1841 = (Font) Statics.field7538.method6188(client.field10833, Statics.field8463, true, true);
 			Statics.field8786 = Statics.field7538.method6163(client.field10833, Statics.field8463);
 			if (Statics.field1841 != null && Statics.field8786 != null) {
 				method6031();
@@ -1421,7 +1421,7 @@ public class MiniMenu {
 				return;
 			}
 		}
-		class140 var7;
+		Font var7;
 		if (Statics.field1841 == null || Statics.field8786 == null) {
 			var7 = Statics.field10355;
 		} else {

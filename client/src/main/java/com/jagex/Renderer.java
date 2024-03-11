@@ -283,7 +283,7 @@ public abstract class Renderer {
 	}
 
 	@ObfuscatedName("dh.ci(IILou;Loj;I)Z")
-	public boolean method2191(int arg0, int arg1, Matrix4x3 arg2, class416 arg3) {
+	public boolean method2191(int arg0, int arg1, Matrix4x3 arg2, Cuboid arg3) {
 		return this.method2128(arg0, arg1, 0, 0, arg2, arg3);
 	}
 
@@ -451,7 +451,7 @@ public abstract class Renderer {
 	public abstract boolean method2127();
 
 	@ObfuscatedName("dh.cn(IIIILou;Loj;)Z")
-	public abstract boolean method2128(int arg0, int arg1, int arg2, int arg3, Matrix4x3 arg4, class416 arg5);
+	public abstract boolean method2128(int arg0, int arg1, int arg2, int arg3, Matrix4x3 arg4, Cuboid arg5);
 
 	@ObfuscatedName("dh.b()Z")
 	public abstract boolean method2129();
@@ -544,7 +544,7 @@ public abstract class Renderer {
 	public abstract void method2189(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6);
 
 	@ObfuscatedName("dh.cv(Lou;Led;Loj;)V")
-	public abstract void method2193(Matrix4x3 arg0, class141 arg1, class416 arg2);
+	public abstract void method2193(Matrix4x3 arg0, class141 arg1, Cuboid arg2);
 
 	@ObfuscatedName("dh.r()Z")
 	public abstract boolean method2194();
@@ -571,7 +571,7 @@ public abstract class Renderer {
 	public abstract void method2206(int arg0, class103 arg1, int arg2, int arg3);
 
 	@ObfuscatedName("dh.cy(Laac;Lde;Z)Leu;")
-	public abstract class140 method2207(FontMetrics arg0, SpriteData arg1, boolean arg2);
+	public abstract Font method2207(FontMetrics arg0, SpriteData arg1, boolean arg2);
 
 	@ObfuscatedName("dh.cc()Lpq;")
 	public abstract Matrix4x4 method2208();

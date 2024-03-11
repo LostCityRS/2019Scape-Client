@@ -26,8 +26,8 @@ public class class927 extends OpenGLBaseTexture implements Texture2 {
 			this.field10673 = 1.0F;
 			this.field10674 = 1.0F;
 		} else {
-			this.field10671 = IntMath.method16657(arg3);
-			this.field10672 = IntMath.method16657(arg4);
+			this.field10671 = IntMath.bitceil(arg3);
+			this.field10672 = IntMath.bitceil(arg4);
 			this.field10673 = (float) arg3 / (float) this.field10671;
 			this.field10674 = (float) arg4 / (float) this.field10672;
 		}
@@ -43,8 +43,8 @@ public class class927 extends OpenGLBaseTexture implements Texture2 {
 			this.field10673 = 1.0F;
 			this.field10674 = 1.0F;
 		} else {
-			this.field10671 = IntMath.method16657(arg1);
-			this.field10672 = IntMath.method16657(arg2);
+			this.field10671 = IntMath.bitceil(arg1);
+			this.field10672 = IntMath.bitceil(arg2);
 			this.field10673 = (float) arg1 / (float) this.field10671;
 			this.field10674 = (float) arg2 / (float) this.field10672;
 			if (this.field10671 != arg1 || this.field10672 != arg2) {
@@ -71,8 +71,8 @@ public class class927 extends OpenGLBaseTexture implements Texture2 {
 			this.field10673 = 1.0F;
 			this.field10674 = 1.0F;
 		} else {
-			this.field10671 = IntMath.method16657(arg2);
-			this.field10672 = IntMath.method16657(arg3);
+			this.field10671 = IntMath.bitceil(arg2);
+			this.field10672 = IntMath.bitceil(arg3);
 			this.field10673 = (float) arg2 / (float) this.field10671;
 			this.field10674 = (float) arg3 / (float) this.field10672;
 			if (this.field10671 != arg2 || this.field10672 != arg3) {
@@ -107,8 +107,8 @@ public class class927 extends OpenGLBaseTexture implements Texture2 {
 			this.field10673 = 1.0F;
 			this.field10674 = 1.0F;
 		} else {
-			this.field10671 = IntMath.method16657(arg2);
-			this.field10672 = IntMath.method16657(arg3);
+			this.field10671 = IntMath.bitceil(arg2);
+			this.field10672 = IntMath.bitceil(arg3);
 			this.field10673 = (float) arg2 / (float) this.field10671;
 			this.field10674 = (float) arg3 / (float) this.field10672;
 			if (this.field10671 != arg2 || this.field10672 != arg3) {

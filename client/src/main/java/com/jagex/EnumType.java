@@ -82,9 +82,9 @@ public class EnumType implements ConfigType, class757 {
 				}
 			}
 		} else if (arg1 == 101) {
-			this.field8781 = (ScriptVarType) class686.method1897(ScriptVarType.method7293(), arg0.gSmart1or2());
+			this.field8781 = (ScriptVarType) SerializableEnums.decode(ScriptVarType.method7293(), arg0.gSmart1or2());
 		} else if (arg1 == 102) {
-			this.field8775 = (ScriptVarType) class686.method1897(ScriptVarType.method7293(), arg0.gSmart1or2());
+			this.field8775 = (ScriptVarType) SerializableEnums.decode(ScriptVarType.method7293(), arg0.gSmart1or2());
 		}
 	}
 

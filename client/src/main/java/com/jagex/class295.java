@@ -16,7 +16,7 @@ public abstract class class295 implements LoadingScreenElement {
 	public final class314 field3027;
 
 	@ObfuscatedName("kz.k")
-	public class140 field3029;
+	public Font field3029;
 
 	@ObfuscatedName("kz.f")
 	public int field3030;

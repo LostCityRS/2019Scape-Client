@@ -40,7 +40,7 @@ public class Material {
 	public boolean field1336 = false;
 
 	@ObfuscatedName("dv.ar")
-	public class603 field1340 = class603.field7575;
+	public MaterialAlphaMode field1340 = MaterialAlphaMode.field7575;
 
 	@ObfuscatedName("dv.ap")
 	public byte field1358 = -1;
@@ -146,9 +146,9 @@ public class Material {
 			arg0.gFloat();
 		}
 		this.field1336 = arg0.g1() == 1;
-		class686.method1897(class604.method4590(), arg0.g1());
-		this.field1340 = (class603) class686.method1897(Statics.method8501(), arg0.g1());
-		if (class603.field7574 == this.field1340) {
+		SerializableEnums.decode(FacetMode.method4590(), arg0.g1());
+		this.field1340 = (MaterialAlphaMode) SerializableEnums.decode(Statics.method8501(), arg0.g1());
+		if (MaterialAlphaMode.field7574 == this.field1340) {
 			this.field1358 = (byte) arg0.g1();
 		}
 		if (var6) {
@@ -231,15 +231,15 @@ public class Material {
 		byte var4 = (byte) arg0.g1();
 		this.field1307 = (byte) (var4 & 0x7);
 		this.field1343 = (byte) (var4 >> 3 & 0x7);
-		class686.method1897(class604.method4590(), arg0.g1());
-		class606 var5 = (class606) class686.method1897(class606.method745(), arg0.g1());
+		SerializableEnums.decode(FacetMode.method4590(), arg0.g1());
+		class606 var5 = (class606) SerializableEnums.decode(class606.method745(), arg0.g1());
 		if (class606.field7589 == var5) {
 			this.field1342 = true;
 		} else if (class606.field7588 == var5) {
 			this.field1361 = true;
 		}
-		this.field1340 = (class603) class686.method1897(Statics.method8501(), arg0.g1());
-		if (class603.field7574 == this.field1340) {
+		this.field1340 = (MaterialAlphaMode) SerializableEnums.decode(Statics.method8501(), arg0.g1());
+		if (MaterialAlphaMode.field7574 == this.field1340) {
 			this.field1358 = (byte) arg0.g1();
 		}
 		this.field1366 = (short) arg0.g2();

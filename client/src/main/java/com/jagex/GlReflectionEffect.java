@@ -52,7 +52,7 @@ public class GlReflectionEffect extends GlEffect {
 
 	@ObfuscatedName("aez.n(Z)V")
 	public void method1263(boolean arg0) {
-		class813 var2 = this.field1021.method15760();
+		LegacyOpenGLCubeTexture var2 = this.field1021.method15760();
 		if (this.field9291 == null || var2 == null || !arg0) {
 			this.field1021.method15781(0, 34168, 770);
 			return;
@@ -92,7 +92,7 @@ public class GlReflectionEffect extends GlEffect {
 	}
 
 	@ObfuscatedName("aez.w(Lbq;I)V")
-	public void method1251(class70 arg0, int arg1) {
+	public void method1251(LegacyOpenGLTexture arg0, int arg1) {
 		this.field1021.method15777(arg0);
 		this.field1021.method15778(arg1);
 	}

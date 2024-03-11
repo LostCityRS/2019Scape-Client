@@ -10,7 +10,7 @@ public class class1123 extends class845 {
 	public final LegacyOpenGLRenderer field11944;
 
 	@ObfuscatedName("apf.n")
-	public class813 field11941;
+	public LegacyOpenGLCubeTexture field11941;
 
 	@ObfuscatedName("apf.m")
 	public static final int[] field11943 = new int[4];
@@ -20,7 +20,7 @@ public class class1123 extends class845 {
 
 	public class1123(LegacyOpenGLRenderer arg0, int arg1) {
 		this.field11944 = arg0;
-		this.field11941 = new class813(arg0, TextureFormat.field1273, DataType.UNSIGNED_INT_8, arg1);
+		this.field11941 = new LegacyOpenGLCubeTexture(arg0, TextureFormat.field1273, DataType.UNSIGNED_INT_8, arg1);
 	}
 
 	@ObfuscatedName("apf.m()I")
@@ -29,12 +29,12 @@ public class class1123 extends class845 {
 	}
 
 	@ObfuscatedName("apf.e()Ladq;")
-	public class813 method15649() {
+	public LegacyOpenGLCubeTexture method15649() {
 		return this.field11941;
 	}
 
 	@ObfuscatedName("apf.k(Ladq;Ladq;F)Z")
-	public boolean method18984(class813 arg0, class813 arg1, float arg2) {
+	public boolean method18984(LegacyOpenGLCubeTexture arg0, LegacyOpenGLCubeTexture arg1, float arg2) {
 		boolean var4 = true;
 		LegacyOpenGLFramebuffer var5 = this.field11944.field9877;
 		this.field11944.method2171(field11943);

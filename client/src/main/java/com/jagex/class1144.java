@@ -3,7 +3,7 @@ package com.jagex;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aqb")
-public class class1144 extends class958 {
+public class class1144 extends DualLink {
 
 	@ObfuscatedName("aqb.l")
 	public int field12158;

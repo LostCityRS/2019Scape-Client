@@ -104,7 +104,7 @@ public class AccountAppealManager {
 			var15.setDoOutput(true);
 			var15.setConnectTimeout(5000);
 			OutputStreamWriter var16 = new OutputStreamWriter(var15.getOutputStream());
-			var16.write("data2=" + class805.method18779(var13) + "&dest=" + class805.method18779("passwordchoice.ws"));
+			var16.write("data2=" + WebTools.urlencode(var13) + "&dest=" + WebTools.urlencode("passwordchoice.ws"));
 			var16.flush();
 			InputStream var17 = var15.getInputStream();
 			Packet var18 = new Packet(new byte[1000]);

@@ -12,7 +12,7 @@ public class TextureFormat {
 	public static final TextureFormat field1273 = new TextureFormat(4, 4);
 
 	@ObfuscatedName("ck.m")
-	public static final TextureFormat field1270 = new TextureFormat(6, 1);
+	public static final TextureFormat ALPHA = new TextureFormat(6, 1);
 
 	@ObfuscatedName("ck.k")
 	public static final TextureFormat field1275 = new TextureFormat(7, 1);

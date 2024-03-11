@@ -85,7 +85,7 @@ public class Rasteriser {
 	public float field957 = 0.0F;
 
 	@ObfuscatedName("bd.ae")
-	public class603 field960;
+	public MaterialAlphaMode field960;
 
 	@ObfuscatedName("bd.ag")
 	public int field959 = 0;
@@ -129,7 +129,7 @@ public class Rasteriser {
 		this.field949 = this.field947.field9779;
 		this.field950 = this.field947.field9778;
 		this.field951 = this.field947.field9781;
-		this.field960 = class603.field7575;
+		this.field960 = MaterialAlphaMode.field7575;
 	}
 
 	@ObfuscatedName("bd.e()I")
@@ -3434,9 +3434,9 @@ public class Rasteriser {
 				int var43 = this.field954[this.field948 * var42 + var41];
 				boolean var44 = true;
 				int var45;
-				if (class603.field7573 == this.field960) {
+				if (MaterialAlphaMode.field7573 == this.field960) {
 					var45 = (int) ((float) (var43 >> 24 & 0xFF) * arg17 / 255.0F);
-				} else if (class603.field7574 != this.field960) {
+				} else if (MaterialAlphaMode.field7574 != this.field960) {
 					var45 = (int) arg17;
 				} else if ((var43 >> 24 & 0xFF) > this.field959) {
 					var45 = 255;

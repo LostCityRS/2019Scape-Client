@@ -1238,8 +1238,8 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.cy(Laac;Lde;Z)Leu;")
-	public final class140 method2207(FontMetrics arg0, SpriteData arg1, boolean arg2) {
-		return new class858(this, arg0, arg1, arg2);
+	public final Font method2207(FontMetrics arg0, SpriteData arg1, boolean arg2) {
+		return new GpuFont(this, arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("afc.cb(II[I[I)Lch;")
@@ -1778,7 +1778,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.cn(IIIILou;Loj;)Z")
-	public boolean method2128(int arg0, int arg1, int arg2, int arg3, Matrix4x3 arg4, class416 arg5) {
+	public boolean method2128(int arg0, int arg1, int arg2, int arg3, Matrix4x3 arg4, Cuboid arg5) {
 		Matrix4x4 var7 = this.field10066;
 		var7.method6609(arg4);
 		var7.method6720(this.field10145);
@@ -1786,7 +1786,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.cv(Lou;Led;Loj;)V")
-	public void method2193(Matrix4x3 arg0, class141 arg1, class416 arg2) {
+	public void method2193(Matrix4x3 arg0, class141 arg1, Cuboid arg2) {
 		Matrix4x4 var4 = this.field10066;
 		var4.method6609(arg0);
 		var4.method6720(this.field10145);

@@ -6,5 +6,5 @@ import deob.ObfuscatedName;
 public class ParticleList {
 
 	@ObfuscatedName("dm.n")
-	public class717 field1367 = new class717();
+	public DualLinkQueue field1367 = new DualLinkQueue();
 }

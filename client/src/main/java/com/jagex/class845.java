@@ -6,5 +6,5 @@ import deob.ObfuscatedName;
 public abstract class class845 extends class117 {
 
 	@ObfuscatedName("afz.e()Ladq;")
-	public abstract class813 method15649();
+	public abstract LegacyOpenGLCubeTexture method15649();
 }

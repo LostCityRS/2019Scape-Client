@@ -15,7 +15,7 @@ public class class449 {
 	public final int field4476;
 
 	public class449(Packet arg0) {
-		this.field4478 = (CompressionType) class686.method1897(CompressionType.method6978(), arg0.g1());
+		this.field4478 = (CompressionType) SerializableEnums.decode(CompressionType.method6978(), arg0.g1());
 		this.field4477 = arg0.g4s();
 		if (CompressionType.field4434 == this.field4478) {
 			this.field4476 = this.field4477;

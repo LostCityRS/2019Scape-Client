@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
 @ObfuscatedName("adt")
-public class class812 extends class70 {
+public class class812 extends LegacyOpenGLTexture {
 
 	@ObfuscatedName("adt.s")
 	public final int field9272;

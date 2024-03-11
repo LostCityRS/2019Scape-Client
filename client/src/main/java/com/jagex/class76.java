@@ -30,15 +30,15 @@ public class class76 {
 		this.field1029 = arg0;
 		this.field1031 = new class78(arg0);
 		this.field1030 = new GlEffect[16];
-		this.field1030[1] = new class822(arg0);
-		this.field1030[2] = new class815(arg0, this.field1031);
-		this.field1030[4] = new class819(arg0, this.field1031);
-		this.field1030[5] = new class817(arg0, this.field1031);
-		this.field1030[6] = new class818(arg0);
+		this.field1030[1] = new GLEnvironmentMapEffect(arg0);
+		this.field1030[2] = new GLWaterEffect(arg0, this.field1031);
+		this.field1030[4] = new GLUnderwaterEffect(arg0, this.field1031);
+		this.field1030[5] = new GLLakeWaterEffect(arg0, this.field1031);
+		this.field1030[6] = new GLLightAbsorbEffect(arg0);
 		this.field1030[7] = new GlReflectionEffect(arg0);
 		this.field1030[3] = this.field1032 = new class821(arg0);
-		this.field1030[8] = new class823(arg0, this.field1031);
-		this.field1030[9] = new class820(arg0, this.field1031);
+		this.field1030[8] = new GLHDWaterEffect(arg0, this.field1031);
+		this.field1030[9] = new GLHDWaterWaveEffect(arg0, this.field1031);
 		if (!this.field1030[8].method1252()) {
 			this.field1030[8] = this.field1030[4];
 		}
@@ -87,7 +87,7 @@ public class class76 {
 	}
 
 	@ObfuscatedName("bw.m(Lbq;I)Z")
-	public boolean method1276(class70 arg0, int arg1) {
+	public boolean method1276(LegacyOpenGLTexture arg0, int arg1) {
 		if (this.field1026 == 0) {
 			return false;
 		} else {

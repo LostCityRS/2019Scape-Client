@@ -32,7 +32,7 @@ public abstract class VarType implements VarConfigType {
 			if (var2 == 0) {
 				return;
 			}
-			VarTypeEncodingKey var3 = (VarTypeEncodingKey) class686.method1897(VarTypeEncodingKey.method15457(), var2);
+			VarTypeEncodingKey var3 = (VarTypeEncodingKey) SerializableEnums.decode(VarTypeEncodingKey.method15457(), var2);
 			if (var3 == null) {
 				this.decode(arg0, var2);
 			} else {
@@ -42,7 +42,7 @@ public abstract class VarType implements VarConfigType {
 						break;
 					case 1:
 						int var4 = arg0.g1();
-						this.dataType = (ScriptVarType) class686.method1897(ScriptVarType.method7293(), var4);
+						this.dataType = (ScriptVarType) SerializableEnums.decode(ScriptVarType.method7293(), var4);
 						if (this.dataType != null) {
 							break;
 						}
@@ -51,7 +51,7 @@ public abstract class VarType implements VarConfigType {
 						arg0.gjstr2();
 						break;
 					case 3:
-						class686.method1897(class456.method5925(), arg0.g1());
+						SerializableEnums.decode(class456.method5925(), arg0.g1());
 						break;
 					case 4:
 					default:
@@ -59,7 +59,7 @@ public abstract class VarType implements VarConfigType {
 					case 5:
 						break;
 					case 6:
-						this.lifeTime = (VarLifetime) class686.method1897(VarLifetime.method748(), arg0.g1());
+						this.lifeTime = (VarLifetime) SerializableEnums.decode(VarLifetime.method748(), arg0.g1());
 				}
 			}
 		}

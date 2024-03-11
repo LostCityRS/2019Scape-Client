@@ -40,11 +40,11 @@ public class DefaultSprites {
 
 	@ObfuscatedName("qx.k(Ldh;I)V")
 	public static void method7114(Renderer arg0) {
-		Statics.field8321 = (class140) Statics.field7538.method6188(client.field10833, Statics.field506, true, true);
+		Statics.field8321 = (Font) Statics.field7538.method6188(client.field10833, Statics.field506, true, true);
 		Statics.field6778 = Statics.field7538.method6163(client.field10833, Statics.field506);
-		Statics.field9184 = (class140) Statics.field7538.method6188(client.field10833, Statics.field505, true, true);
+		Statics.field9184 = (Font) Statics.field7538.method6188(client.field10833, Statics.field505, true, true);
 		Statics.field2657 = Statics.field7538.method6163(client.field10833, Statics.field505);
-		Statics.field10355 = (class140) Statics.field7538.method6188(client.field10833, Statics.field509, true, true);
+		Statics.field10355 = (Font) Statics.field7538.method6188(client.field10833, Statics.field509, true, true);
 		Statics.field10268 = Statics.field7538.method6163(client.field10833, Statics.field509);
 	}
 

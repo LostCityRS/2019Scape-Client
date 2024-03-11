@@ -78,7 +78,7 @@ public class PlayerGroupMember {
 			this.field1922 = -1;
 		}
 		this.field1925 = arg0.g1();
-		this.field1932 = (class209) class686.method1897(class209.method3603(), arg0.g1());
+		this.field1932 = (class209) SerializableEnums.decode(class209.method3603(), arg0.g1());
 		this.field1933 = arg0.g1();
 	}
 

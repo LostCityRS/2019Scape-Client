@@ -243,7 +243,7 @@ public class LocType implements ConfigType {
 	public class596 field7526 = class596.field7439;
 
 	@ObfuscatedName("vd.cg")
-	public class416 field7468;
+	public Cuboid field7468;
 
 	public LocType(int arg0, LocTypeFactory arg1, ConfigTypeList arg2) {
 		this.field7450 = arg0;
@@ -518,7 +518,7 @@ public class LocType implements ConfigType {
 				} else if (arg1 == 178) {
 					this.field7510 = arg0.g1();
 				} else if (arg1 == 186) {
-					this.field7526 = (class596) class686.method1897(Statics.method9002(), arg0.g1());
+					this.field7526 = (class596) SerializableEnums.decode(Statics.method9002(), arg0.g1());
 				} else if (arg1 != 188) {
 					if (arg1 == 189) {
 						this.field7525 = true;
@@ -529,14 +529,14 @@ public class LocType implements ConfigType {
 						}
 						this.field7497[arg1 - 190] = arg0.g2();
 					} else if (arg1 == 196) {
-						class686.method1897(class608.method208(), arg0.g1());
+						SerializableEnums.decode(class608.method208(), arg0.g1());
 					} else if (arg1 == 197) {
-						class686.method1897(class607.method10203(), arg0.g1());
+						SerializableEnums.decode(class607.method10203(), arg0.g1());
 					} else if (arg1 != 198 && arg1 != 199) {
 						if (arg1 == 200) {
 							this.field7479 = true;
 						} else if (arg1 == 201) {
-							this.field7468 = new class416();
+							this.field7468 = new Cuboid();
 							this.field7468.field4252 = arg0.gSmart1or2s();
 							this.field7468.field4253 = arg0.gSmart1or2s();
 							this.field7468.field4248 = arg0.gSmart1or2s();
@@ -546,7 +546,7 @@ public class LocType implements ConfigType {
 						} else if (arg1 == 249) {
 							int var32 = arg0.g1();
 							if (this.field7519 == null) {
-								int var33 = IntMath.method16657(var32);
+								int var33 = IntMath.bitceil(var32);
 								this.field7519 = new IterableMap(var33);
 							}
 							for (int var34 = 0; var34 < var32; var34++) {
@@ -556,7 +556,7 @@ public class LocType implements ConfigType {
 								if (var35) {
 									var37 = new ObjectWrapper(arg0.gjstr().intern());
 								} else {
-									var37 = new class988(arg0.g4s());
+									var37 = new IntWrapper(arg0.g4s());
 								}
 								this.field7519.method14501(var37, (long) var36);
 							}
@@ -986,7 +986,7 @@ public class LocType implements ConfigType {
 		if (this.field7519 == null) {
 			return arg1;
 		} else {
-			class988 var3 = (class988) this.field7519.method14495((long) arg0);
+			IntWrapper var3 = (IntWrapper) this.field7519.method14495((long) arg0);
 			return var3 == null ? arg1 : var3.field11442;
 		}
 	}

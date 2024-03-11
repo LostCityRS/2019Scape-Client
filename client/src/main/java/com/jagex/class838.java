@@ -9,7 +9,7 @@ public class class838 extends class110 {
 	public final LegacyOpenGLRenderer field9528;
 
 	@ObfuscatedName("aep.n")
-	public class70 field9527;
+	public LegacyOpenGLTexture field9527;
 
 	public class838(LegacyOpenGLRenderer arg0, int[] arg1) {
 		this.field9528 = arg0;
@@ -22,7 +22,7 @@ public class class838 extends class110 {
 	}
 
 	@ObfuscatedName("aep.e()Lbq;")
-	public class70 method15425() {
+	public LegacyOpenGLTexture method15425() {
 		return this.field9527;
 	}
 

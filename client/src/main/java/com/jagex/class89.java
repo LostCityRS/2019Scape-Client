@@ -80,8 +80,8 @@ public class class89 {
 			int var7 = 0;
 			int var8 = Integer.MAX_VALUE;
 			int var9 = 0;
-			class958 var10 = arg1.field1367.field8487;
-			for (class958 var11 = var10.field11213; var11 != var10; var11 = var11.field11213) {
+			DualLink var10 = arg1.field1367.field8487;
+			for (DualLink var11 = var10.field11213; var11 != var10; var11 = var11.field11213) {
 				class1144 var12 = (class1144) var11;
 				int var13 = (int) ((float) (var12.field12161 >> 12) * var5 + (float) (var12.field12163 >> 12) * var4 + (float) (var12.field12159 >> 12) * var3 + var6);
 				if (var13 > var9) {
@@ -101,7 +101,7 @@ public class class89 {
 				var15 = 0;
 				var14 += 2;
 			}
-			class958 var16 = var10.field11213;
+			DualLink var16 = var10.field11213;
 			int var17 = 0;
 			int var18 = -2;
 			boolean var19 = true;

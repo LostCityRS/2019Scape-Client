@@ -255,7 +255,7 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.n(Leu;B)V")
-	public void method8737(class140 arg0) {
+	public void method8737(Font arg0) {
 	}
 
 	@ObfuscatedName("tx.m(ZI)V")

@@ -243,12 +243,12 @@ public class PureJavaRenderer extends Renderer {
 					return null;
 				}
 				int[] var6;
-				if (class603.field7575 == var3.field1340) {
+				if (MaterialAlphaMode.field7575 == var3.field1340) {
 					var6 = this.field1596.method1986(class605.field7586, var3.field1334, 0.7F, var5, var5, true);
 				} else {
 					var6 = this.field1596.method1983(class605.field7586, var3.field1334, 0.7F, var5, var5, true);
 				}
-				var4 = new class967(var3.field1334, var3.field1329, var5, var6, class603.field7574 != var3.field1340);
+				var4 = new class967(var3.field1334, var3.field1329, var5, var6, MaterialAlphaMode.field7574 != var3.field1340);
 				this.field9809.method2922(var4, (long) (var3.field1334 & 0xFFFF) | Long.MIN_VALUE, var5 * var5);
 			}
 		}
@@ -268,7 +268,7 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.ry(I)Lvn;")
-	public class603 method15658(int arg0) {
+	public MaterialAlphaMode method15658(int arg0) {
 		return this.field1597.method2043(arg0).field1340;
 	}
 
@@ -1827,7 +1827,7 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.cn(IIIILou;Loj;)Z")
-	public boolean method2128(int arg0, int arg1, int arg2, int arg3, Matrix4x3 arg4, class416 arg5) {
+	public boolean method2128(int arg0, int arg1, int arg2, int arg3, Matrix4x3 arg4, Cuboid arg5) {
 		Matrix4x4 var7 = this.method2208();
 		var7.method6609(arg4);
 		var7.method6720(this.field9803);
@@ -1835,7 +1835,7 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.cv(Lou;Led;Loj;)V")
-	public void method2193(Matrix4x3 arg0, class141 arg1, class416 arg2) {
+	public void method2193(Matrix4x3 arg0, class141 arg1, Cuboid arg2) {
 		Matrix4x4 var4 = this.method2208();
 		var4.method6609(arg0);
 		var4.method6720(this.field9803);
@@ -1974,16 +1974,16 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.cy(Laac;Lde;Z)Leu;")
-	public class140 method2207(FontMetrics arg0, SpriteData arg1, boolean arg2) {
+	public Font method2207(FontMetrics arg0, SpriteData arg1, boolean arg2) {
 		boolean var4 = arg1.method2644();
 		boolean var5 = arg1.method2587();
 		if (arg2) {
 			if (var5) {
-				return var4 ? new class854(this, arg0, (PalettedSpriteData) arg1) : new class856(this, arg0, (PalettedSpriteData) arg1);
+				return var4 ? new TranslucentFont(this, arg0, (PalettedSpriteData) arg1) : new OpaqueFont(this, arg0, (PalettedSpriteData) arg1);
 			} else if (var4) {
-				return new class854(this, arg0, (FullSpriteData) arg1);
+				return new TranslucentFont(this, arg0, (FullSpriteData) arg1);
 			} else {
-				return new class856(this, arg0, (FullSpriteData) arg1);
+				return new OpaqueFont(this, arg0, (FullSpriteData) arg1);
 			}
 		} else if (!var5) {
 			return new class853(this, arg0, (FullSpriteData) arg1);
@@ -2158,7 +2158,7 @@ public class PureJavaRenderer extends Renderer {
 					this.field9812 = arg8;
 					this.field9811 = var14;
 				}
-				((PureJavaSprite) this.field9811).method15358(arg0, arg1, arg2, arg3 - arg6, arg4 - arg7, arg5, arg6 << 1, arg7 << 1, arg10, arg9, arg11, 1, class603.field7573 != var13.field1340);
+				((PureJavaSprite) this.field9811).method15358(arg0, arg1, arg2, arg3 - arg6, arg4 - arg7, arg5, arg6 << 1, arg7 << 1, arg10, arg9, arg11, 1, MaterialAlphaMode.field7573 != var13.field1340);
 				return;
 			}
 		}

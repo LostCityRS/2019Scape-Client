@@ -357,7 +357,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	public int field10018;
 
 	@ObfuscatedName("afa.gf")
-	public class70[] field9973;
+	public LegacyOpenGLTexture[] field9973;
 
 	@ObfuscatedName("afa.gx")
 	public class812 field9974;
@@ -774,7 +774,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 
 	@ObfuscatedName("afa.ra()V")
 	public void method15728() {
-		this.field9973 = new class70[this.field9982];
+		this.field9973 = new LegacyOpenGLTexture[this.field9982];
 		this.field9974 = new class812(this, 3553, TextureFormat.field1273, DataType.UNSIGNED_INT_8, 1, 1);
 		new class812(this, 3553, TextureFormat.field1273, DataType.UNSIGNED_INT_8, 1, 1);
 		new class812(this, 3553, TextureFormat.field1273, DataType.UNSIGNED_INT_8, 1, 1);
@@ -1692,7 +1692,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.cn(IIIILou;Loj;)Z")
-	public boolean method2128(int arg0, int arg1, int arg2, int arg3, Matrix4x3 arg4, class416 arg5) {
+	public boolean method2128(int arg0, int arg1, int arg2, int arg3, Matrix4x3 arg4, Cuboid arg5) {
 		Matrix4x4 var7 = this.field9919;
 		var7.method6609(arg4);
 		var7.method6720(this.field10005);
@@ -1700,7 +1700,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.cv(Lou;Led;Loj;)V")
-	public void method2193(Matrix4x3 arg0, class141 arg1, class416 arg2) {
+	public void method2193(Matrix4x3 arg0, class141 arg1, Cuboid arg2) {
 		Matrix4x4 var4 = this.field9919;
 		var4.method6609(arg0);
 		var4.method6720(this.field10005);
@@ -1824,8 +1824,8 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.cy(Laac;Lde;Z)Leu;")
-	public class140 method2207(FontMetrics arg0, SpriteData arg1, boolean arg2) {
-		return new class857(this, arg0, arg1, arg2);
+	public Font method2207(FontMetrics arg0, SpriteData arg1, boolean arg2) {
+		return new LegacyOpenGLFont(this, arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("afa.ck(I)V")
@@ -2369,8 +2369,8 @@ public class LegacyOpenGLRenderer extends Renderer {
 			class1123 var5 = null;
 			class845 var6 = (class845) arg0;
 			class845 var7 = (class845) arg1;
-			class813 var8 = var6.method15649();
-			class813 var9 = var7.method15649();
+			LegacyOpenGLCubeTexture var8 = var6.method15649();
+			LegacyOpenGLCubeTexture var9 = var7.method15649();
 			if (var8 != null && var9 != null) {
 				int var10 = var8.field9279 > var9.field9279 ? var8.field9279 : var9.field9279;
 				if (arg0 != arg3 && arg1 != arg3 && arg3 instanceof class1123) {
@@ -2396,7 +2396,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.su()Ladq;")
-	public final class813 method15760() {
+	public final LegacyOpenGLCubeTexture method15760() {
 		return this.field9887 == null ? null : this.field9887.method15649();
 	}
 
@@ -2744,7 +2744,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 				} else {
 					this.method15785();
 				}
-				if (class603.field7574 == var10.field1340) {
+				if (MaterialAlphaMode.field7574 == var10.field1340) {
 					var9 = var10.field1358;
 				}
 			}
@@ -2769,8 +2769,8 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.ty(Lbq;)V")
-	public final void method15777(class70 arg0) {
-		class70 var2 = this.field9973[this.field10018];
+	public final void method15777(LegacyOpenGLTexture arg0) {
+		LegacyOpenGLTexture var2 = this.field9973[this.field10018];
 		if (arg0 != var2) {
 			if (arg0 == null) {
 				OpenGL.glDisable(var2.field1009);
@@ -3118,7 +3118,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 		int var2 = 0;
 		int var3 = arg0 & Integer.MAX_VALUE;
 		while (!this.field9883.method14164()) {
-			class988 var4 = (class988) this.field9883.method14154();
+			IntWrapper var4 = (IntWrapper) this.field9883.method14154();
 			field9890[var2++] = (int) var4.field6760;
 			this.field9880 -= var4.field11442;
 			if (var2 == 1000) {
@@ -3131,7 +3131,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 			var2 = 0;
 		}
 		while (!this.field9884.method14164()) {
-			class988 var5 = (class988) this.field9884.method14154();
+			IntWrapper var5 = (IntWrapper) this.field9884.method14154();
 			field9890[var2++] = (int) var5.field6760;
 			this.field9879 -= var5.field11442;
 			if (var2 == 1000) {
@@ -3144,7 +3144,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 			var2 = 0;
 		}
 		while (!this.field9885.method14164()) {
-			class988 var6 = (class988) this.field9885.method14154();
+			IntWrapper var6 = (IntWrapper) this.field9885.method14154();
 			field9890[var2++] = var6.field11442;
 			if (var2 == 1000) {
 				OpenGL.glDeleteFramebuffersEXT(var2, field9890, 0);
@@ -3156,7 +3156,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 			var2 = 0;
 		}
 		while (!this.field9886.method14164()) {
-			class988 var7 = (class988) this.field9886.method14154();
+			IntWrapper var7 = (IntWrapper) this.field9886.method14154();
 			field9890[var2++] = (int) var7.field6760;
 			this.field9881 -= var7.field11442;
 			if (var2 == 1000) {
@@ -3169,7 +3169,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 			boolean var8 = false;
 		}
 		while (!this.field9938.method14164()) {
-			class988 var9 = (class988) this.field9938.method14154();
+			IntWrapper var9 = (IntWrapper) this.field9938.method14154();
 			OpenGL.glDeleteLists((int) var9.field6760, var9.field11442);
 		}
 		while (!this.field9838.method14164()) {
@@ -3181,7 +3181,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 			OpenGL.glDeleteShader((int) var11.field6760);
 		}
 		while (!this.field9938.method14164()) {
-			class988 var12 = (class988) this.field9938.method14154();
+			IntWrapper var12 = (IntWrapper) this.field9938.method14154();
 			OpenGL.glDeleteLists((int) var12.field6760, var12.field11442);
 		}
 		this.field10026.method1402();
@@ -3194,27 +3194,27 @@ public class LegacyOpenGLRenderer extends Renderer {
 
 	@ObfuscatedName("afa.uf(II)V")
 	public final synchronized void method15870(int arg0, int arg1) {
-		class988 var3 = new class988(arg1);
+		IntWrapper var3 = new IntWrapper(arg1);
 		var3.field6760 = arg0;
 		this.field9883.method14153(var3);
 	}
 
 	@ObfuscatedName("afa.uz(II)V")
 	public final synchronized void method15822(int arg0, int arg1) {
-		class988 var3 = new class988(arg1);
+		IntWrapper var3 = new IntWrapper(arg1);
 		var3.field6760 = arg0;
 		this.field9884.method14153(var3);
 	}
 
 	@ObfuscatedName("afa.ug(I)V")
 	public final synchronized void method15802(int arg0) {
-		class988 var2 = new class988(arg0);
+		IntWrapper var2 = new IntWrapper(arg0);
 		this.field9885.method14153(var2);
 	}
 
 	@ObfuscatedName("afa.ub(II)V")
 	public final synchronized void method15796(int arg0, int arg1) {
-		class988 var3 = new class988(arg1);
+		IntWrapper var3 = new IntWrapper(arg1);
 		var3.field6760 = arg0;
 		this.field9886.method14153(var3);
 	}

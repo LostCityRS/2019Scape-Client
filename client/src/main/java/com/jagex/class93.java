@@ -10,7 +10,7 @@ public class class93 {
 	public final LegacyOpenGLRenderer field1183;
 
 	@ObfuscatedName("cp.m")
-	public class68 field1182;
+	public LegacyOpenGLProgram field1182;
 
 	public class93(LegacyOpenGLRenderer arg0) {
 		this.field1183 = arg0;
@@ -21,7 +21,7 @@ public class class93 {
 		if (this.field1183.field9985 && this.field1183.field10002 && this.field1182 == null) {
 			class71 var1 = class71.method1120(this.field1183, 35632, "uniform float rcpRelief;\nuniform vec2 sampleSize;\nuniform sampler3D heightMap;\nvoid main() {\nfloat dx = texture3D(heightMap, vec3(-sampleSize.x, 0.0, 0.0)+gl_TexCoord[0].xyz).r - texture3D(heightMap, vec3(sampleSize.x, 0.0, 0.0)+gl_TexCoord[0].xyz).r;\nfloat dy = texture3D(heightMap, vec3(0.0, -sampleSize.y, 0.0)+gl_TexCoord[0].xyz).r - texture3D(heightMap, vec3(0.0, sampleSize.y, 0.0)+gl_TexCoord[0].xyz).r;\ngl_FragColor = vec4(0.5+normalize(vec3(dx, dy, rcpRelief))*0.5, texture3D(heightMap, gl_TexCoord[0].xyz).r);\n}\n");
 			if (var1 != null) {
-				this.field1182 = class68.method1065(this.field1183, new class71[] { var1 });
+				this.field1182 = LegacyOpenGLProgram.method1065(this.field1183, new class71[] { var1 });
 			}
 		}
 		return this.field1182 != null;

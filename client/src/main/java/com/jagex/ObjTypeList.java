@@ -15,7 +15,7 @@ public class ObjTypeList extends CachingConfigTypeList {
 	}
 
 	@ObfuscatedName("aon.ac(Ldh;Ldh;IIIIZZILeu;Lxg;Lws;S)Lcm;")
-	public Sprite method18905(Renderer arg0, Renderer arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6, boolean arg7, int arg8, class140 arg9, PlayerModel arg10, GraphicsDefaults arg11) {
+	public Sprite method18905(Renderer arg0, Renderer arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6, boolean arg7, int arg8, Font arg9, PlayerModel arg10, GraphicsDefaults arg11) {
 		return ((ObjTypeFactory) this.field8796).method14617(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, this);
 	}
 

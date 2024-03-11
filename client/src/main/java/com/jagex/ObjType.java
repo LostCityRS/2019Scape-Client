@@ -501,7 +501,7 @@ public class ObjType implements ConfigType {
 			} else if (arg1 == 249) {
 				int var21 = arg0.g1();
 				if (this.field8690 == null) {
-					int var22 = IntMath.method16657(var21);
+					int var22 = IntMath.bitceil(var21);
 					this.field8690 = new IterableMap(var22);
 				}
 				for (int var23 = 0; var23 < var21; var23++) {
@@ -511,7 +511,7 @@ public class ObjType implements ConfigType {
 					if (var24) {
 						var26 = new ObjectWrapper(arg0.gjstr());
 					} else {
-						var26 = new class988(arg0.g4s());
+						var26 = new IntWrapper(arg0.g4s());
 					}
 					this.field8690.method14501(var26, (long) var25);
 				}
@@ -742,7 +742,7 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.s(Ldh;Ldh;IIIZILeu;Lxg;Lws;B)[I")
-	public int[] method14646(Renderer arg0, Renderer arg1, int arg2, int arg3, int arg4, boolean arg5, int arg6, class140 arg7, PlayerModel arg8, GraphicsDefaults arg9) {
+	public int[] method14646(Renderer arg0, Renderer arg1, int arg2, int arg3, int arg4, boolean arg5, int arg6, Font arg7, PlayerModel arg8, GraphicsDefaults arg9) {
 		ModelUnlit var11 = ModelUnlit.method1931(this.field8621.field8614, this.field8655, 0);
 		if (var11 == null) {
 			return null;
@@ -1144,7 +1144,7 @@ public class ObjType implements ConfigType {
 		if (this.field8690 == null) {
 			return arg1;
 		} else {
-			class988 var3 = (class988) this.field8690.method14495((long) arg0);
+			IntWrapper var3 = (IntWrapper) this.field8690.method14495((long) arg0);
 			return var3 == null ? arg1 : var3.field11442;
 		}
 	}

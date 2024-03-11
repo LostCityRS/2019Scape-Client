@@ -50,7 +50,7 @@ public class class1004 extends WorldMap {
 	public static boolean field11672 = false;
 
 	@ObfuscatedName("alj.cr")
-	public static class140[][] field11659 = new class140[3][5];
+	public static Font[][] field11659 = new Font[3][5];
 
 	@ObfuscatedName("alj.cm")
 	public static FontMetrics[][] field11660 = new FontMetrics[3][5];
@@ -237,7 +237,7 @@ public class class1004 extends WorldMap {
 				}
 				for (int var12 = 0; var12 < 5; var12++) {
 					if (field11659[var11][var12] == null || field11660[var11][var12] == null) {
-						field11659[var11][var12] = (class140) Statics.field7538.method6188(client.field10833, Statics.field6792.field7697[var11][var12], true, true);
+						field11659[var11][var12] = (Font) Statics.field7538.method6188(client.field10833, Statics.field6792.field7697[var11][var12], true, true);
 						field11660[var11][var12] = Statics.field7538.method6163(client.field10833, Statics.field6792.field7697[var11][var12]);
 						if (field11659[var11][var12] == null || field11660[var11][var12] == null) {
 							return;

@@ -607,7 +607,7 @@ public class ScriptVarType implements SerializableEnum, class466 {
 		if (Statics.varByLegacyChar == null) {
 			Statics.varByLegacyChar = new ScriptVarType[256];
 		}
-		Statics.varByLegacyChar[Cp1252.method16904(arg0.legacyChar) & 0xFF] = arg0;
+		Statics.varByLegacyChar[Cp1252.encode(arg0.legacyChar) & 0xFF] = arg0;
 	}
 
 	@ObfuscatedName("qw.f(B)Lqa;")
