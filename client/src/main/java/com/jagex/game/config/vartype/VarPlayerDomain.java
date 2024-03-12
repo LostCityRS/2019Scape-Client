@@ -85,13 +85,13 @@ public final class VarPlayerDomain implements VarDomain {
 	}
 
 	@ObfuscatedName("wu.w(Lkh;II)V")
-	public void method2804(VarBitType arg0, int arg1) throws VarBitOverflowException {
+	public void setVarbitValue(VarBitType arg0, int arg1) throws VarBitOverflowException {
 		int var3 = arg0.setVarbitValue(this.field7609[arg0.baseVar.id], arg1);
 		this.setVarValueInt(arg0.baseVar, var3);
 	}
 
 	@ObfuscatedName("wu.ae(Lkh;II)V")
-	public void setVarBitValue(VarBitType arg0, int arg1) {
+	public void setVarBitValueFromServer(VarBitType arg0, int arg1) {
 		try {
 			int var3 = arg0.setVarbitValue(this.field7604[arg0.baseVar.id], arg1);
 			this.setVarValueIntFromServer(arg0.baseVar, var3);

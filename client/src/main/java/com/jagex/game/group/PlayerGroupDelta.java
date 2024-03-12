@@ -436,7 +436,7 @@ public class PlayerGroupDelta {
 		public void method3371(PlayerGroup arg0) {
 			if (this.field1916 != -1) {
 				try {
-					arg0.method3394().method2804((VarBitType) this.this$0.field1943.method294().list(this.field1916), this.field1915);
+					arg0.method3394().setVarbitValue((VarBitType) this.this$0.field1943.method294().list(this.field1916), this.field1915);
 				} catch (VarBitOverflowException var3) {
 				}
 			}

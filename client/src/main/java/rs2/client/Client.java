@@ -8375,7 +8375,7 @@ public final class Client extends GameShell {
 		} else if (ServerProt.VARBIT_SMALL == arg0.field796) {
 			int var317 = var2.g1_alt3();
 			int var318 = var2.g2_alt2();
-			Statics.field7410.field632.setVarBitValue((VarBitType) Statics.field8736.list(var318), var317);
+			Statics.field7410.field632.setVarBitValueFromServer((VarBitType) Statics.field8736.list(var318), var317);
 			arg0.field796 = null;
 			return true;
 		} else if (ServerProt.FRIENDLIST_LOADED == arg0.field796) {
@@ -9278,7 +9278,7 @@ public final class Client extends GameShell {
 		} else if (ServerProt.VARBIT_LARGE == arg0.field796) {
 			int var583 = var2.g2_alt2();
 			int var584 = var2.g4_alt1();
-			Statics.field7410.field632.setVarBitValue((VarBitType) Statics.field8736.list(var583), var584);
+			Statics.field7410.field632.setVarBitValueFromServer((VarBitType) Statics.field8736.list(var583), var584);
 			arg0.field796 = null;
 			return true;
 		} else if (ServerProt.CHAT_FILTER_SETTINGS == arg0.field796) {

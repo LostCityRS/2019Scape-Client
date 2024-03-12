@@ -4942,7 +4942,7 @@ public final class ScriptRunner {
 		VarBitType var1 = (VarBitType) arg0.field8239.field12366[arg0.field8220];
 		VarDomain var2 = (VarDomain) (arg0.field8236[arg0.field8220] == 0 ? arg0.field8234.get(var1.baseVar.domain) : arg0.field8233.get(var1.baseVar.domain));
 		try {
-			var2.method2804(var1, arg0.field8216[--arg0.field8226]);
+			var2.setVarbitValue(var1, arg0.field8216[--arg0.field8226]);
 		} catch (VarBitOverflowException var4) {
 			if (!(var2 instanceof VarPlayerDomain)) {
 				throw var4;

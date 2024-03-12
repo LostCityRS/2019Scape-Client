@@ -23,7 +23,7 @@ public interface VarDomain extends VarIntDomain {
 	void setVarValue(VarType arg0, Object arg1);
 
 	@ObfuscatedName("eh.w(Lkh;II)V")
-	void method2804(VarBitType arg0, int arg1) throws VarBitOverflowException;
+	void setVarbitValue(VarBitType arg0, int arg1) throws VarBitOverflowException;
 
 	@ObfuscatedName("eh.u(Lec;I)I")
 	int getVarValueInt(VarType arg0);

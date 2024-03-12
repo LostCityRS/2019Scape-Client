@@ -53,7 +53,7 @@ public class PathingEntityVarDomain implements VarDomain {
 	}
 
 	@ObfuscatedName("sd.w(Lkh;II)V")
-	public void method2804(VarBitType arg0, int arg1) throws VarBitOverflowException {
+	public void setVarbitValue(VarBitType arg0, int arg1) throws VarBitOverflowException {
 		this.setVarValueInt(arg0.baseVar, arg0.setVarbitValue(this.getVarValueInt(arg0.baseVar), arg1));
 	}
 }

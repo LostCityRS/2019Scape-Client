@@ -57,7 +57,7 @@ public class VarClanSettingsDomain implements VarDomain {
 	}
 
 	@ObfuscatedName("yl.w(Lkh;II)V")
-	public void method2804(VarBitType arg0, int arg1) {
+	public void setVarbitValue(VarBitType arg0, int arg1) {
 		throw new UnsupportedOperationException();
 	}
 }
