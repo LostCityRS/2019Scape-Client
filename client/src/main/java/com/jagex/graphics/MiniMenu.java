@@ -25,7 +25,7 @@ import rs2.client.logic.DelayedStateChange;
 import rs2.client.scene.ObjStackList;
 import rs2.client.scene.entities.PathingEntity;
 import rs2.client.scene.entities.NpcEntity;
-import rs2.shared.prot.ClientProt;
+import com.jagex.game.network.protocol.ClientProt;
 
 import java.util.Iterator;
 import java.util.List;

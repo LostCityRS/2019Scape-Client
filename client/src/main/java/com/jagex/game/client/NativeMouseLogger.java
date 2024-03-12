@@ -5,7 +5,7 @@ import com.jagex.core.io.Packet;
 import com.jagex.core.utils.MonotonicTime;
 import deob.ObfuscatedName;
 import deob.Statics;
-import rs2.shared.prot.ClientProt;
+import com.jagex.game.network.protocol.ClientProt;
 
 import java.util.LinkedList;
 import java.util.Queue;

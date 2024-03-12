@@ -8,8 +8,8 @@ import com.jagex.core.io.Stream;
 import com.jagex.game.client.*;
 import rs2.client.Client;
 import rs2.client.logic.DelayedStateChange;
-import rs2.shared.prot.ClientProt;
-import rs2.shared.prot.LoginProt;
+import com.jagex.game.network.protocol.ClientProt;
+import com.jagex.game.network.protocol.LoginProt;
 import deob.ObfuscatedName;
 import deob.Statics;
 

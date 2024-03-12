@@ -9,7 +9,7 @@ import com.jagex.game.world.entity.PositionMode;
 import com.jagex.graphics.camera.CameraHelpers;
 import deob.ObfuscatedName;
 import deob.Statics;
-import rs2.shared.prot.ClientProt;
+import com.jagex.game.network.protocol.ClientProt;
 
 import java.awt.*;
 import java.util.Queue;

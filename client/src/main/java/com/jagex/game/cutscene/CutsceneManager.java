@@ -9,7 +9,7 @@ import com.jagex.game.config.vartype.VarIntDomain;
 import deob.ObfuscatedName;
 import deob.Statics;
 import rs2.client.Client;
-import rs2.shared.prot.ClientProt;
+import com.jagex.game.network.protocol.ClientProt;
 
 @ObfuscatedName("eq")
 public class CutsceneManager {

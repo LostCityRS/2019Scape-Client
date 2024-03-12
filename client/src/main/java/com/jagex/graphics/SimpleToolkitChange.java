@@ -5,7 +5,7 @@ import com.jagex.core.io.SendablePacket;
 import rs2.client.Client;
 import deob.ObfuscatedName;
 import deob.Statics;
-import rs2.shared.prot.ClientProt;
+import com.jagex.game.network.protocol.ClientProt;
 
 @ObfuscatedName("uo")
 public class SimpleToolkitChange implements SendablePacket {

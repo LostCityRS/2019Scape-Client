@@ -1,6 +1,6 @@
 package com.jagex.game.client;
 
-import com.jagex.game.loading.Loading;
+import com.jagex.game.load.Loading;
 import com.jagex.graphics.ClientWatch;
 import com.jagex.graphics.GraphicsPacketQueue;
 import com.jagex.js5.Js5ArchiveResourceLoader;

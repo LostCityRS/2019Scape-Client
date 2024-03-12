@@ -16,6 +16,7 @@ import com.jagex.game.compression.huffman.WordPack;
 import com.jagex.game.config.iftype.Interface;
 import com.jagex.game.config.iftype.componentproperties.ServerKeyProperties;
 import com.jagex.game.config.npctype.NPCHeadIconCustomisation;
+import com.jagex.game.load.MessageBox;
 import com.jagex.game.network.ServerConnection;
 import com.jagex.game.script.*;
 import com.jagex.graphics.scenegraph.GraphEntity;
@@ -30,8 +31,8 @@ import com.jagex.game.config.db.DBUtils;
 import com.jagex.game.config.db.dbrowtype.DBRowType;
 import com.jagex.game.config.db.dbtabletype.DBTableType;
 import com.jagex.game.fullscreen.Fullscreen;
-import com.jagex.game.loading.LoadingScreenAlignmentX;
-import com.jagex.game.loading.LoadingScreenAlignmentY;
+import com.jagex.game.load.LoadingScreenAlignmentX;
+import com.jagex.game.load.LoadingScreenAlignmentY;
 import com.jagex.game.group.PlayerGroupBanned;
 import com.jagex.game.group.PlayerGroupMember;
 import com.jagex.game.script.activepointers.ActiveComponent;
@@ -80,7 +81,7 @@ import rs2.client.logic.chat.EntityChatLine;
 import rs2.client.logic.friendchat.Friend;
 import rs2.client.scene.entities.PathingEntity;
 import rs2.client.scene.entities.NpcEntity;
-import rs2.shared.prot.ClientProt;
+import com.jagex.game.network.protocol.ClientProt;
 
 import java.awt.*;
 import java.awt.datatransfer.DataFlavor;
@@ -13696,11 +13697,11 @@ public final class ScriptRunner {
 	@ObfuscatedName("kr.arv(Lyf;I)V")
 	public static final void method5330(ClientScriptState arg0) {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
-		long var2 = AccountAppealManager.method14886();
+		long var2 = AccountAppealLogin.method14886();
 		if (var2 == 0L) {
 			arg0.field8216[++arg0.field8226 - 1] = 5;
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = AccountAppealManager.method14753(var2, var1);
+			arg0.field8216[++arg0.field8226 - 1] = AccountAppealLogin.method14753(var2, var1);
 		}
 	}
 

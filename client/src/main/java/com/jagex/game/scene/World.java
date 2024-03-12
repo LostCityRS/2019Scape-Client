@@ -1,5 +1,6 @@
 package com.jagex.game.scene;
 
+import com.jagex.game.load.MessageBox;
 import com.jagex.game.shared.console.DeveloperConsole;
 import com.jagex.core.constants.BuildAreaSize;
 import com.jagex.core.datastruct.IntegerBox;
@@ -29,7 +30,7 @@ import deob.Statics;
 import rs2.client.Client;
 import rs2.client.scene.ObjStackList;
 import rs2.client.scene.entities.NpcEntity;
-import rs2.shared.prot.ClientProt;
+import com.jagex.game.network.protocol.ClientProt;
 
 import java.util.HashMap;
 import java.util.HashSet;

@@ -20,7 +20,7 @@ import com.jagex.game.config.vartype.constants.VarDomainType;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;
-import rs2.shared.prot.ClientProt;
+import com.jagex.game.network.protocol.ClientProt;
 
 import java.io.File;
 import java.io.FileNotFoundException;

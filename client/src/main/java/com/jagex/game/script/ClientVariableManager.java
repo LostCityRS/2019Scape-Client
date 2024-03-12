@@ -13,7 +13,7 @@ import com.jagex.game.config.vartype.VarTypeList;
 import com.jagex.game.config.vartype.constants.VarLifetime;
 import deob.ObfuscatedName;
 import deob.Statics;
-import rs2.shared.prot.ClientProt;
+import com.jagex.game.network.protocol.ClientProt;
 
 import java.io.EOFException;
 import java.util.HashSet;

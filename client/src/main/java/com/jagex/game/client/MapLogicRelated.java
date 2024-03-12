@@ -4,7 +4,7 @@ import rs2.client.Client;
 import com.jagex.game.network.ServerConnection;
 import deob.ObfuscatedName;
 import deob.Statics;
-import rs2.shared.prot.ClientProt;
+import com.jagex.game.network.protocol.ClientProt;
 
 import java.io.IOException;
 

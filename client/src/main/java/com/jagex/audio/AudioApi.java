@@ -12,7 +12,7 @@ import rs2.client.scene.entities.SpotAnimation;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;
-import rs2.shared.prot.ClientProt;
+import com.jagex.game.network.protocol.ClientProt;
 
 import java.util.ArrayList;
 import java.util.HashMap;

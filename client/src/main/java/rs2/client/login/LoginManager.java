@@ -22,8 +22,8 @@ import com.jagex.graphics.MiniMenu;
 import com.jagex.graphics.Minimap;
 import rs2.client.Client;
 import rs2.client.logic.DelayedStateChange;
-import rs2.shared.prot.LoginProt;
-import rs2.shared.prot.ServerProt;
+import com.jagex.game.network.protocol.LoginProt;
+import com.jagex.game.network.protocol.ServerProt;
 import deob.ObfuscatedName;
 import deob.Statics;
 

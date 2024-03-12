@@ -2,7 +2,7 @@ package com.jagex.game.client;
 
 import rs2.client.Client;
 import com.jagex.core.utils.StringUtils;
-import com.jagex.game.loading.LoadingScreen;
+import com.jagex.game.load.LoadingScreen;
 import deob.ObfuscatedName;
 import deob.Statics;
 
