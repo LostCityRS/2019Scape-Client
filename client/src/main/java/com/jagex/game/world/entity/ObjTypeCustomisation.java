@@ -26,19 +26,19 @@ public class ObjTypeCustomisation {
 	public short[] field8715;
 
 	public ObjTypeCustomisation(ObjType arg0) {
-		this.field8710[0] = arg0.field8654;
-		this.field8710[1] = arg0.field8636;
-		this.field8710[2] = arg0.field8658;
-		this.field8708[0] = arg0.field8656;
-		this.field8708[1] = arg0.field8657;
-		this.field8708[2] = arg0.field8659;
-		this.field8709[0] = arg0.field8667;
-		this.field8709[1] = arg0.field8631;
-		this.field8713[0] = arg0.field8668;
-		this.field8713[1] = arg0.field8669;
-		if (arg0.field8622 != null) {
-			this.field8714 = new short[arg0.field8622.length];
-			System.arraycopy(arg0.field8622, 0, this.field8714, 0, this.field8714.length);
+		this.field8710[0] = arg0.manwear;
+		this.field8710[1] = arg0.manwear2;
+		this.field8710[2] = arg0.manwear3;
+		this.field8708[0] = arg0.womanwear;
+		this.field8708[1] = arg0.womanwear2;
+		this.field8708[2] = arg0.womanwear3;
+		this.field8709[0] = arg0.manhead;
+		this.field8709[1] = arg0.manhead2;
+		this.field8713[0] = arg0.womanhead;
+		this.field8713[1] = arg0.womanhead2;
+		if (arg0.recol_d != null) {
+			this.field8714 = new short[arg0.recol_d.length];
+			System.arraycopy(arg0.recol_d, 0, this.field8714, 0, this.field8714.length);
 		}
 		if (arg0.field8635 != null) {
 			this.field8715 = new short[arg0.field8635.length];
@@ -67,7 +67,7 @@ public class ObjTypeCustomisation {
 				var3.field8710[0] = arg1.gSmart2or4null();
 				var3.field8708[0] = arg1.gSmart2or4null();
 			}
-			if (arg0.field8636 != -1 || arg0.field8657 != -1) {
+			if (arg0.manwear2 != -1 || arg0.womanwear2 != -1) {
 				if (arg2 <= 1) {
 					var3.field8710[1] = arg1.g2();
 					var3.field8708[1] = arg1.g2();
@@ -76,7 +76,7 @@ public class ObjTypeCustomisation {
 					var3.field8708[1] = arg1.gSmart2or4null();
 				}
 			}
-			if (arg0.field8658 != -1 || arg0.field8659 != -1) {
+			if (arg0.manwear3 != -1 || arg0.womanwear3 != -1) {
 				if (arg2 <= 1) {
 					var3.field8710[2] = arg1.g2();
 					var3.field8708[2] = arg1.g2();
@@ -94,7 +94,7 @@ public class ObjTypeCustomisation {
 				var3.field8709[0] = arg1.gSmart2or4null();
 				var3.field8713[0] = arg1.gSmart2or4null();
 			}
-			if (arg0.field8631 != -1 || arg0.field8669 != -1) {
+			if (arg0.manhead2 != -1 || arg0.womanhead2 != -1) {
 				if (arg2 <= 1) {
 					var3.field8709[1] = arg1.g2();
 					var3.field8713[1] = arg1.g2();

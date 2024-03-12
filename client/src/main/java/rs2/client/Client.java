@@ -9116,8 +9116,8 @@ public final class Client extends GameShell {
 			incrementVerifyId();
 			DelayedStateChange.method5369(var528, var527, var529);
 			ObjType var530 = (ObjType) Statics.field1842.list(var527);
-			DelayedStateChange.method16746(var528, var530.field8639, var530.field8626, var530.field8638);
-			Statics.method9085(var528, var530.field8695, var530.field8643, var530.field8641);
+			DelayedStateChange.method16746(var528, var530.xan2d, var530.yan2d, var530.zoom2d);
+			Statics.method9085(var528, var530.xof2d, var530.yof2d, var530.field8641);
 			arg0.field796 = null;
 			return true;
 		} else if (ServerProt.TELEMETRY_GRID_SET_ROW_PINNED == arg0.field796) {
@@ -11350,11 +11350,11 @@ public final class Client extends GameShell {
 										String var44 = var11.field2261;
 										if (var11.field2334 != -1) {
 											ObjType var45 = (ObjType) Statics.field1842.list(var11.field2334);
-											var44 = var45.field8630;
+											var44 = var45.name;
 											if (var44 == null) {
 												var44 = "null";
 											}
-											if ((var45.field8644 == 1 || var11.field2335 != 1) && var11.field2335 != -1) {
+											if ((var45.stackable == 1 || var11.field2335 != 1) && var11.field2335 != -1) {
 												var44 = Statics.method596(16748608) + var44 + TextUtil.ENDCOL + " x" + method7895(var11.field2335);
 											}
 										}
@@ -13347,12 +13347,12 @@ public final class Client extends GameShell {
 		LinkedList var4 = new LinkedList();
 		for (int var5 = 0; var5 < Statics.field1842.field8794; var5++) {
 			ObjType var6 = (ObjType) Statics.field1842.list(var5);
-			if ((!arg1 || var6.field8645) && var6.field8663 == -1 && var6.field8675 == -1 && var6.field8694 == -1 && var6.field8689 == 0 && var6.field8630.toLowerCase().indexOf(var2) != -1) {
+			if ((!arg1 || var6.field8645) && var6.certtemplate == -1 && var6.field8675 == -1 && var6.field8694 == -1 && var6.field8689 == 0 && var6.name.toLowerCase().indexOf(var2) != -1) {
 				if (var3.size() >= 250) {
 					return -1;
 				}
 				var3.add(var5);
-				var4.add(var6.field8630);
+				var4.add(var6.name);
 			}
 		}
 		Statics.field8054 = new int[var3.size()];

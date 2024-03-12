@@ -26,13 +26,13 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 	public boolean allowMembers;
 
 	@ObfuscatedName("abr.m")
-	public final Js5 field8614;
+	public final Js5 js5;
 
 	@ObfuscatedName("abr.k")
-	public final WeightedCache field8612 = new WeightedCache(50);
+	public final WeightedCache modelCache = new WeightedCache(50);
 
 	@ObfuscatedName("abr.f")
-	public final Cache2 field8613 = new Cache2(250);
+	public final Cache2 iconCache = new Cache2(250);
 
 	@ObfuscatedName("abr.w")
 	public final IconCacheKey field8609 = new IconCacheKey();
@@ -52,7 +52,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 	public ObjTypeFactory(ModeGame arg0, Language arg1, boolean arg2, Js5 arg3, ConfigTypeList arg4) {
 		this.languageId = arg1;
 		this.allowMembers = arg2;
-		this.field8614 = arg3;
+		this.js5 = arg3;
 		this.paramTL = arg4;
 		if (ModeGame.RUNESCAPE == arg0) {
 			this.field8617 = new String[] { null, null, LocalisedText.TAKE.method15021(this.languageId), null, null, LocalisedText.EXAMINE.method15021(this.languageId) };
@@ -71,7 +71,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 		this.field8609.field8606 = arg4;
 		this.field8609.field8603 = arg5;
 		this.field8609.field8608 = arg6 != null;
-		return (Sprite) this.field8613.method9646(this.field8609);
+		return (Sprite) this.iconCache.method9646(this.field8609);
 	}
 
 	@ObfuscatedName("abr.n(Ldh;Ldh;IIIIZZILeu;Lxg;Lws;Lao;I)Lcm;")
@@ -83,11 +83,11 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 			}
 		}
 		ObjType var15 = (ObjType) arg12.list(arg2);
-		if (arg3 > 1 && var15.field8629 != null) {
+		if (arg3 > 1 && var15.countobj != null) {
 			int var16 = -1;
 			for (int var17 = 0; var17 < 10; var17++) {
-				if (arg3 >= var15.field8671[var17] && var15.field8671[var17] != 0) {
-					var16 = var15.field8629[var17];
+				if (arg3 >= var15.countco[var17] && var15.countco[var17] != 0) {
+					var16 = var15.countobj[var17];
 				}
 			}
 			if (var16 != -1) {
@@ -113,7 +113,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 			var20.field8606 = arg5;
 			var20.field8603 = arg8;
 			var20.field8608 = arg10 != null;
-			this.field8613.method9654(var19, var20);
+			this.iconCache.method9654(var19, var20);
 		}
 		return var19;
 	}
@@ -129,53 +129,53 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 	@ObfuscatedName("abr.k(II)V")
 	public void method14619(int arg0) {
 		this.field8611 = arg0;
-		WeightedCache var2 = this.field8612;
-		synchronized (this.field8612) {
-			this.field8612.method2924();
+		WeightedCache var2 = this.modelCache;
+		synchronized (this.modelCache) {
+			this.modelCache.method2924();
 		}
 	}
 
 	@ObfuscatedName("abr.f(I)V")
 	public void method14623() {
-		WeightedCache var1 = this.field8612;
-		synchronized (this.field8612) {
-			this.field8612.method2924();
+		WeightedCache var1 = this.modelCache;
+		synchronized (this.modelCache) {
+			this.modelCache.method2924();
 		}
-		Cache2 var3 = this.field8613;
-		synchronized (this.field8613) {
-			this.field8613.method9652();
+		Cache2 var3 = this.iconCache;
+		synchronized (this.iconCache) {
+			this.iconCache.method9652();
 		}
 	}
 
 	@ObfuscatedName("abr.w(I)V")
 	public void method14621() {
-		Cache2 var1 = this.field8613;
-		synchronized (this.field8613) {
-			this.field8613.method9652();
+		Cache2 var1 = this.iconCache;
+		synchronized (this.iconCache) {
+			this.iconCache.method9652();
 		}
 	}
 
 	@ObfuscatedName("abr.l(IB)V")
 	public void method14624(int arg0) {
-		WeightedCache var2 = this.field8612;
-		synchronized (this.field8612) {
-			this.field8612.method2923(arg0);
+		WeightedCache var2 = this.modelCache;
+		synchronized (this.modelCache) {
+			this.modelCache.method2923(arg0);
 		}
-		Cache2 var4 = this.field8613;
-		synchronized (this.field8613) {
-			this.field8613.method9651(arg0);
+		Cache2 var4 = this.iconCache;
+		synchronized (this.iconCache) {
+			this.iconCache.method9651(arg0);
 		}
 	}
 
 	@ObfuscatedName("abr.u(I)V")
 	public void method14622() {
-		WeightedCache var1 = this.field8612;
-		synchronized (this.field8612) {
-			this.field8612.method2928();
+		WeightedCache var1 = this.modelCache;
+		synchronized (this.modelCache) {
+			this.modelCache.method2928();
 		}
-		Cache2 var3 = this.field8613;
-		synchronized (this.field8613) {
-			this.field8613.method9653();
+		Cache2 var3 = this.iconCache;
+		synchronized (this.iconCache) {
+			this.iconCache.method9653();
 		}
 	}
 }

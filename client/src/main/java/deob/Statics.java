@@ -4289,14 +4289,14 @@ public class Statics {
 			return;
 		}
 		ObjType var8 = (ObjType) field1842.list(arg3.field11261);
-		int var9 = var8.field8620;
-		if (var8.field8644 == 1) {
+		int var9 = var8.cost;
+		if (var8.stackable == 1) {
 			var9 = (arg3.field11260 + 1) * var9;
 		}
 		for (Obj var10 = (Obj) var6.field11263.method14191(); var10 != null; var10 = (Obj) var6.field11263.method14161()) {
 			ObjType var11 = (ObjType) field1842.list(var10.field11261);
-			int var12 = var11.field8620;
-			if (var11.field8644 == 1) {
+			int var12 = var11.cost;
+			if (var11.stackable == 1) {
 				var12 = (var10.field11260 + 1) * var12;
 			}
 			if (var9 > var12) {
@@ -4582,17 +4582,17 @@ public class Statics {
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		ObjType var3 = (ObjType) field1842.list(var1);
-		if (var2 < 1 || var2 > 5 || var3.field8648[var2 - 1] == null) {
+		if (var2 < 1 || var2 > 5 || var3.iops[var2 - 1] == null) {
 			arg0.field8218[++arg0.field8211 - 1] = "";
 		} else {
-			arg0.field8218[++arg0.field8211 - 1] = var3.field8648[var2 - 1];
+			arg0.field8218[++arg0.field8211 - 1] = var3.iops[var2 - 1];
 		}
 	}
 
 	@ObfuscatedName("ajf.agb(Lyf;B)V")
 	public static final void method17524(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) field1842.list(var1)).field8620;
+		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) field1842.list(var1)).cost;
 	}
 
 	@ObfuscatedName("vg.ahq(Lyf;B)V")

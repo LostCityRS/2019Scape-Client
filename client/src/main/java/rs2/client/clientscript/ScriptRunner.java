@@ -6390,12 +6390,12 @@ public final class ScriptRunner {
 		arg0.field2335 = var6;
 		arg0.field2246 = arg2;
 		ObjType var7 = (ObjType) Statics.field1842.list(var5);
-		arg0.field2230 = var7.field8639;
-		arg0.field2231 = var7.field8626;
+		arg0.field2230 = var7.xan2d;
+		arg0.field2231 = var7.yan2d;
 		arg0.field2331 = var7.field8641;
-		arg0.field2228 = var7.field8695;
-		arg0.field2316 = var7.field8643;
-		arg0.field2272 = var7.field8638;
+		arg0.field2228 = var7.xof2d;
+		arg0.field2316 = var7.yof2d;
+		arg0.field2272 = var7.zoom2d;
 		arg0.field2241 = arg3;
 		if (arg0.field2227 > 0) {
 			arg0.field2272 = arg0.field2272 * 32 / arg0.field2227;
@@ -11152,7 +11152,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("oo.agm(Lyf;I)V")
 	public static final void method6129(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8218[++arg0.field8211 - 1] = ((ObjType) Statics.field1842.list(var1)).field8630;
+		arg0.field8218[++arg0.field8211 - 1] = ((ObjType) Statics.field1842.list(var1)).name;
 	}
 
 	@ObfuscatedName("hx.agf(Lyf;S)V")
@@ -11161,25 +11161,25 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		ObjType var3 = (ObjType) Statics.field1842.list(var1);
-		if (var2 < 1 || var2 > 5 || var3.field8647[var2 - 1] == null) {
+		if (var2 < 1 || var2 > 5 || var3.ops[var2 - 1] == null) {
 			arg0.field8218[++arg0.field8211 - 1] = "";
 		} else {
-			arg0.field8218[++arg0.field8211 - 1] = var3.field8647[var2 - 1];
+			arg0.field8218[++arg0.field8211 - 1] = var3.ops[var2 - 1];
 		}
 	}
 
 	@ObfuscatedName("hf.agw(Lyf;I)V")
 	public static final void method4016(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Statics.field1842.list(var1)).field8644 == 1 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Statics.field1842.list(var1)).stackable == 1 ? 1 : 0;
 	}
 
 	@ObfuscatedName("aac.agn(Lyf;I)V")
 	public static final void method14576(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		ObjType var2 = (ObjType) Statics.field1842.list(var1);
-		if (var2.field8663 == -1 && var2.field8673 >= 0) {
-			arg0.field8216[++arg0.field8226 - 1] = var2.field8673;
+		if (var2.certtemplate == -1 && var2.certlink >= 0) {
+			arg0.field8216[++arg0.field8226 - 1] = var2.certlink;
 		} else {
 			arg0.field8216[++arg0.field8226 - 1] = var1;
 		}
@@ -11189,8 +11189,8 @@ public final class ScriptRunner {
 	public static final void method6111(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		ObjType var2 = (ObjType) Statics.field1842.list(var1);
-		if (var2.field8663 >= 0 && var2.field8673 >= 0) {
-			arg0.field8216[++arg0.field8226 - 1] = var2.field8673;
+		if (var2.certtemplate >= 0 && var2.certlink >= 0) {
+			arg0.field8216[++arg0.field8226 - 1] = var2.certlink;
 		} else {
 			arg0.field8216[++arg0.field8226 - 1] = var1;
 		}
@@ -11246,7 +11246,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("wm.agt(Lyf;I)V")
 	public static final void method9824(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Statics.field1842.list(var1)).field8684 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Statics.field1842.list(var1)).members ? 1 : 0;
 	}
 
 	@ObfuscatedName("ul.agl(Lyf;I)V")
@@ -11306,7 +11306,7 @@ public final class ScriptRunner {
 		int var3;
 		if (var2.field8680) {
 			var3 = var2.field8696;
-		} else if (var2.field8684) {
+		} else if (var2.members) {
 			var3 = Statics.field1971.field7665;
 		} else {
 			var3 = Statics.field1971.field7661;
@@ -11325,7 +11325,7 @@ public final class ScriptRunner {
 	public static final void method3537(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		ObjType var2 = (ObjType) Statics.field1842.list(var1);
-		arg0.field8216[++arg0.field8226 - 1] = var2.field8644 == 2 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = var2.stackable == 2 ? 1 : 0;
 	}
 
 	@ObfuscatedName("tv.ahv(Lyf;B)V")

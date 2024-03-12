@@ -783,7 +783,7 @@ public class MiniMenu {
 										int var76;
 										if (var75.field8680) {
 											var76 = var75.field8696;
-										} else if (var75.field8684) {
+										} else if (var75.members) {
 											var76 = Statics.field1971.field7665;
 										} else {
 											var76 = Statics.field1971.field7661;
@@ -791,11 +791,11 @@ public class MiniMenu {
 										if (Client.field10973 && Statics.field4490.field11717 == var29.field6978.field11717) {
 											ParamType var77 = (ParamType) (Statics.field7677 == -1 ? null : Statics.field3086.list(Statics.field7677));
 											if ((Statics.field1765 & 0x1) != 0 && (var77 == null || var75.method14677(Statics.field7677, var77.field9172) != var77.field9172)) {
-												method3042(Client.field11039, Client.field10977 + " " + TextUtil.ARROW + " " + Statics.method596(var76) + var75.field8630, Statics.field1844, 17, -1, (long) var74.field11261, var32, var33, true, false, (long) var73, false);
+												method3042(Client.field11039, Client.field10977 + " " + TextUtil.ARROW + " " + Statics.method596(var76) + var75.name, Statics.field1844, 17, -1, (long) var74.field11261, var32, var33, true, false, (long) var73, false);
 											}
 										}
 										if (Statics.field4490.field11717 == var29.field6978.field11717) {
-											String[] var78 = var75.field8647;
+											String[] var78 = var75.ops;
 											for (int var79 = var78.length - 1; var79 >= 0; var79--) {
 												if (var78[var79] != null) {
 													short var80 = 0;
@@ -822,7 +822,7 @@ public class MiniMenu {
 													if (var82 != -1) {
 														var81 = var82;
 													}
-													method3042(var78[var79], Statics.method596(var76) + var75.field8630, var81, var80, -1, (long) var74.field11261, var32, var33, true, false, (long) var73, false);
+													method3042(var78[var79], Statics.method596(var76) + var75.name, var81, var80, -1, (long) var74.field11261, var32, var33, true, false, (long) var73, false);
 												}
 											}
 										}
