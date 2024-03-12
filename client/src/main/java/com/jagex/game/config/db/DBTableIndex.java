@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 @ObfuscatedName("adh")
-public class DbTableIndex {
+public class DBTableIndex {
 
 	@ObfuscatedName("adh.m")
 	public BaseVarType field9181;
@@ -21,12 +21,12 @@ public class DbTableIndex {
 	@ObfuscatedName("adh.k")
 	public Map field9180;
 
-	public DbTableIndex(Js5 arg0, int arg1, int arg2) {
+	public DBTableIndex(Js5 arg0, int arg1, int arg2) {
 		byte[] var4 = arg0.getfile(arg1, arg2 + 1);
 		this.method15188(new Packet(var4));
 	}
 
-	public DbTableIndex(Js5 arg0, int arg1) {
+	public DBTableIndex(Js5 arg0, int arg1) {
 		byte[] var3 = arg0.getfile(arg1, 0);
 		this.method15188(new Packet(var3));
 	}

@@ -26,7 +26,7 @@ import rs2.client.logic.chat.ChatHistory;
 import com.jagex.game.config.quickchatphrasetype.QuickChatPhrase;
 import rs2.client.logic.clans.ClanSettings;
 import com.jagex.game.client.*;
-import com.jagex.game.config.db.DbTableIndex;
+import com.jagex.game.config.db.DBTableIndex;
 import com.jagex.game.config.db.DBUtils;
 import com.jagex.game.config.db.dbrowtype.DBRowType;
 import com.jagex.game.config.db.dbtabletype.DBTableType;
@@ -15876,7 +15876,7 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		int var2 = arg0.field8216[arg0.field8226];
 		int var3 = arg0.field8216[arg0.field8226 + 1];
-		DbTableIndex var4 = Client.method146(var2);
+		DBTableIndex var4 = Client.method146(var2);
 		if (var4 == null) {
 			throw new RuntimeException();
 		}
@@ -15900,7 +15900,7 @@ public final class ScriptRunner {
 	public static final void method4018(ClientScriptState arg0) {
 		arg0.field8226--;
 		int var1 = arg0.field8216[arg0.field8226];
-		DbTableIndex var2 = Client.method4574(var1);
+		DBTableIndex var2 = Client.method4574(var1);
 		if (var2 == null) {
 			throw new RuntimeException();
 		}

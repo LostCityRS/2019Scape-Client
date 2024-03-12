@@ -19,7 +19,7 @@ import rs2.client.logic.chat.ChatHistory;
 import com.jagex.game.client.*;
 import com.jagex.game.clientoptions.ClientOptions;
 import com.jagex.game.config.*;
-import com.jagex.game.config.db.DbTableIndex;
+import com.jagex.game.config.db.DBTableIndex;
 import com.jagex.game.config.db.DBUtils;
 import com.jagex.game.config.db.dbrowtype.DBRowType;
 import com.jagex.game.config.db.dbtabletype.DBTableType;
@@ -5131,7 +5131,7 @@ public class Statics {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		DbTableIndex var3 = Client.method146(var1);
+		DBTableIndex var3 = Client.method146(var1);
 		if (var3 == null) {
 			throw new RuntimeException();
 		} else if (DBUtils.method746(var1) != Client.field10767) {

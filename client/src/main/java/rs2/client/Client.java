@@ -29,7 +29,7 @@ import rs2.client.logic.chat.ChatHistory;
 import com.jagex.game.config.quickchatphrasetype.QuickChatPhrase;
 import com.jagex.game.client.*;
 import com.jagex.game.config.iftype.Component;
-import com.jagex.game.config.db.DbTableIndex;
+import com.jagex.game.config.db.DBTableIndex;
 import com.jagex.game.config.db.DBUtils;
 import com.jagex.game.cutscene.CutsceneAction;
 import com.jagex.game.cutscene.CutsceneEntity;
@@ -13399,20 +13399,20 @@ public final class Client extends GameShell {
 	}
 
 	@ObfuscatedName("n.mf(II)Ladh;")
-	public static DbTableIndex method146(int arg0) {
-		DbTableIndex var1 = (DbTableIndex) field10834.method2930((long) arg0);
+	public static DBTableIndex method146(int arg0) {
+		DBTableIndex var1 = (DBTableIndex) field10834.method2930((long) arg0);
 		if (var1 == null) {
-			var1 = new DbTableIndex(Statics.field7283, DBUtils.method746(arg0), DBUtils.method15018(arg0));
+			var1 = new DBTableIndex(Statics.field7283, DBUtils.method746(arg0), DBUtils.method15018(arg0));
 			field10834.method2921(var1, (long) arg0);
 		}
 		return var1;
 	}
 
 	@ObfuscatedName("if.mh(IS)Ladh;")
-	public static DbTableIndex method4574(int arg0) {
-		DbTableIndex var1 = (DbTableIndex) field10857.method2930((long) arg0);
+	public static DBTableIndex method4574(int arg0) {
+		DBTableIndex var1 = (DBTableIndex) field10857.method2930((long) arg0);
 		if (var1 == null) {
-			var1 = new DbTableIndex(Statics.field7283, arg0);
+			var1 = new DBTableIndex(Statics.field7283, arg0);
 		}
 		return var1;
 	}
