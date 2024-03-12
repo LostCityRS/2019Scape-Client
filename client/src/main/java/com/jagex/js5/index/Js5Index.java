@@ -2,7 +2,7 @@ package com.jagex.js5.index;
 
 import com.jagex.core.datastruct.IntTreeMap;
 import com.jagex.core.io.Packet;
-import com.jagex.core.io.Whirlpool;
+import com.jagex.encryption.Whirlpool;
 import deob.ObfuscatedName;
 import deob.Statics;
 

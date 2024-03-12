@@ -1,9 +1,10 @@
 package com.jagex.game.client;
 
 import com.jagex.core.io.Packet;
+import com.jagex.game.camera.CameraEffect;
 import com.jagex.game.world.entity.PositionMode;
 import com.jagex.graphics.camera.*;
-import com.jagex.math.LookatMode;
+import com.jagex.game.camera.LookatMode;
 import deob.ObfuscatedName;
 import deob.Statics;
 

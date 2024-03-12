@@ -1,7 +1,7 @@
 package com.jagex.game.cutscene;
 
 import com.jagex.game.client.MoveSpeed;
-import com.jagex.game.world.entity.PathingEntity;
+import rs2.client.scene.entities.PathingEntity;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 

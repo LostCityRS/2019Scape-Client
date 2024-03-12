@@ -1,7 +1,7 @@
 package com.jagex.game.world.entity;
 
 import com.jagex.audio.*;
-import com.jagex.client;
+import rs2.client.Client;
 import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.datastruct.IterableQueue;
 import com.jagex.core.datastruct.Node;
@@ -12,6 +12,7 @@ import com.jagex.game.cutscene.CutsceneManager;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.scene.entities.NpcEntity;
 
 @ObfuscatedName("akc")
 public class PositionedSound extends Node {
@@ -151,7 +152,7 @@ public class PositionedSound extends Node {
 	public void method17660() {
 		int var1 = this.field11370;
 		if (this.field11348 != null) {
-			LocType var2 = this.field11348.method9477(Statics.field7410, client.field10863 == 0 ? CutsceneManager.field1723 : Statics.field7410);
+			LocType var2 = this.field11348.method9477(Statics.field7410, Client.field10863 == 0 ? CutsceneManager.field1723 : Statics.field7410);
 			if (var2 == null) {
 				this.field11370 = -1;
 				this.field11357 = 0;

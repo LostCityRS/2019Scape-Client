@@ -1,6 +1,6 @@
 package com.jagex.game.client;
 
-import com.jagex.client;
+import rs2.client.Client;
 import com.jagex.core.datastruct.IntegerBox;
 import com.jagex.core.datastruct.LinkMap;
 import com.jagex.core.io.Packet;
@@ -1000,7 +1000,7 @@ public class ClientMapLoader extends MapLoader {
 			this.field4577.method8726(arg1, arg3, arg4);
 			this.field4577.method8727(arg1, arg3, arg4);
 		} else if (arg2 == 2) {
-			this.field4577.method8712(arg1, arg3, arg4, client.field11001);
+			this.field4577.method8712(arg1, arg3, arg4, Client.field11001);
 			if (LocShape.field7547.field7562 == var8) {
 				if ((var9 & 0x1) == 0) {
 					this.field4577.field6930.method8919(8, arg1, arg3, arg4);
@@ -1023,7 +1023,7 @@ public class ClientMapLoader extends MapLoader {
 			var5 = (Location) this.field4577.method8735(arg0, arg2, arg3);
 		}
 		if (arg1 == 2) {
-			var5 = (Location) this.field4577.method8856(arg0, arg2, arg3, client.field11001);
+			var5 = (Location) this.field4577.method8856(arg0, arg2, arg3, Client.field11001);
 		}
 		if (arg1 == 3) {
 			var5 = (Location) this.field4577.method8767(arg0, arg2, arg3);

@@ -1,7 +1,6 @@
 package com.jagex.game.world.entity;
 
-import com.jagex.game.world.entity.GraphEntity;
-import com.jagex.game.world.entity.Scene;
+import com.jagex.graphics.scenegraph.GraphEntity;
 import com.jagex.graphics.Light;
 import com.jagex.graphics.Renderer;
 import com.jagex.math.ScaleRotTrans;

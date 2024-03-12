@@ -1,7 +1,7 @@
 package com.jagex.graphics;
 
 import com.jagex.core.io.Packet;
-import com.jagex.core.util.Algorithms;
+import com.jagex.core.utils.Algorithms;
 import com.jagex.js5.Js5;
 import com.jagex.math.Trig1;
 import deob.ObfuscatedName;

@@ -1,6 +1,6 @@
 package com.jagex.js5;
 
-import com.jagex.core.util.ArchiveUtil;
+import com.jagex.core.utils.ArchiveUtil;
 import com.jagex.core.io.Packet;
 import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;

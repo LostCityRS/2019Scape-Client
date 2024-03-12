@@ -1,7 +1,7 @@
 package com.jagex.graphics;
 
 import com.jagex.game.world.entity.EntityAnimationWrapper;
-import com.jagex.game.world.entity.GraphEntity;
+import com.jagex.graphics.scenegraph.GraphEntity;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ato")

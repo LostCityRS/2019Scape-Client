@@ -1,8 +1,8 @@
 package com.jagex.graphics;
 
 import com.jagex.core.io.Packet;
-import com.jagex.core.util.Algorithms;
-import com.jagex.core.util.ColourUtils;
+import com.jagex.core.utils.Algorithms;
+import com.jagex.core.utils.ColourUtils;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;

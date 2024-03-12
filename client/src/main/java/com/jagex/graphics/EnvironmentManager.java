@@ -1,14 +1,14 @@
 package com.jagex.graphics;
 
-import com.jagex.*;
 import com.jagex.core.datastruct.WeightedCache;
-import com.jagex.core.util.MonotonicTime;
+import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.config.skyboxtype.SkyBoxType;
-import com.jagex.game.world.World;
+import com.jagex.game.scene.World;
 import com.jagex.js5.Js5;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
 
 @ObfuscatedName("xu")
 public class EnvironmentManager {
@@ -257,7 +257,7 @@ public class EnvironmentManager {
 		Object var2 = null;
 		int var3 = -1;
 		int var4 = -1;
-		if (Statics.method611(client.state) || Statics.method15084(client.state)) {
+		if (Statics.method611(Client.state) || Statics.method15084(Client.state)) {
 			var3 = Statics.field7956 >> 12;
 			var4 = Statics.field1881 >> 12;
 		} else {
@@ -330,14 +330,14 @@ public class EnvironmentManager {
 
 	@ObfuscatedName("xu.q(I)V")
 	public void method10008() {
-		this.field7833.method2222(((float) Statics.field688.brightness.method18408() * 0.1F + 0.7F + client.world.method7732()) * this.field7841.field7871);
+		this.field7833.method2222(((float) Statics.field688.brightness.method18408() * 0.1F + 0.7F + Client.world.method7732()) * this.field7841.field7871);
 		this.field7833.method2223(this.field7841.field7877, this.field7841.field7861, this.field7841.field7864, (float) ((int) this.field7847.field4308 << 2), (float) ((int) this.field7847.field4311 << 2), (float) ((int) this.field7847.field4313 << 2));
 		this.field7833.method2516(this.field7841.field7868);
 	}
 
 	@ObfuscatedName("xu.x(FFFIIIIII)V")
 	public void method9996(float arg0, float arg1, float arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
-		this.field7833.method2222(((float) Statics.field688.brightness.method18408() * 0.1F + 0.7F + client.world.method7732()) * arg0);
+		this.field7833.method2222(((float) Statics.field688.brightness.method18408() * 0.1F + 0.7F + Client.world.method7732()) * arg0);
 		this.field7833.method2223(arg3, arg1, arg2, (float) (arg4 << 2), (float) (arg5 << 2), (float) (arg6 << 2));
 		this.field7833.method2516(this.method9985(arg7));
 	}
@@ -426,7 +426,7 @@ public class EnvironmentManager {
 
 	@ObfuscatedName("xu.t(I)V")
 	public void method9983() {
-		this.field7833.method2222(((float) Statics.field688.brightness.method18408() * 0.1F + 0.7F + client.world.method7732()) * 1.1523438F);
+		this.field7833.method2222(((float) Statics.field688.brightness.method18408() * 0.1F + 0.7F + Client.world.method7732()) * 1.1523438F);
 		this.field7833.method2223(16777215, 0.69921875F, 1.2F, -200.0F, -240.0F, -200.0F);
 		this.field7833.method2572(13156520, -1, 0);
 		this.field7833.method2516(Statics.field7832);

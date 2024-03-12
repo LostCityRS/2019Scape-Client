@@ -1,9 +1,9 @@
 package com.jagex.game;
 
-import com.jagex.core.util.MonotonicTime;
+import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.loading.LoadingScreenElement;
 import com.jagex.graphics.SpriteDataProvider;
-import com.jagex.client;
+import rs2.client.Client;
 import com.jagex.graphics.Font;
 import com.jagex.graphics.FontMetrics;
 import com.jagex.js5.Js5;
@@ -39,8 +39,8 @@ public class LoginRelated1 implements LoadingScreenElement {
 
 	@ObfuscatedName("kg.n(ZI)V")
 	public void method5105(boolean arg0) {
-		int var2 = this.field3039.field3177.method5382(0, client.field10941) + this.field3039.field3174;
-		int var3 = this.field3039.field3172.method5375(0, client.field10942) + this.field3039.field3171;
+		int var2 = this.field3039.field3177.method5382(0, Client.field10941) + this.field3039.field3174;
+		int var3 = this.field3039.field3172.method5375(0, Client.field10942) + this.field3039.field3171;
 		String var4;
 		switch(this.field3039.field3168) {
 			case 0:

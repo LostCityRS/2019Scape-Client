@@ -1,7 +1,8 @@
 package com.jagex.game.scene;
 
 import com.jagex.game.client.ClientMapLoader;
-import com.jagex.client;
+import com.jagex.graphics.scenegraph.GraphEntity;
+import rs2.client.Client;
 import com.jagex.core.datastruct.IterableQueue;
 import com.jagex.core.datastruct.Node;
 import com.jagex.game.world.entity.*;
@@ -82,7 +83,7 @@ public final class ChangeLocationRequest extends Node {
 			var8.field11229 = arg3;
 			var8.field11226 = arg1;
 			var8.field11228 = arg2;
-			if (arg1 >= 0 && arg2 >= 0 && arg1 < client.world.method7728() && arg2 < client.world.method7758()) {
+			if (arg1 >= 0 && arg2 >= 0 && arg1 < Client.world.method7728() && arg2 < Client.world.method7758()) {
 				method9023(var8);
 			}
 			field11237.method14153(var8);
@@ -128,7 +129,7 @@ public final class ChangeLocationRequest extends Node {
 				var0.method8440();
 			} else {
 				var0.field11239 = true;
-				if (var0.field11226 >= 0 && var0.field11228 >= 0 && var0.field11226 < client.world.method7728() && var0.field11228 < client.world.method7758()) {
+				if (var0.field11226 >= 0 && var0.field11228 >= 0 && var0.field11226 < Client.world.method7728() && var0.field11228 < Client.world.method7758()) {
 					method9023(var0);
 				}
 			}
@@ -144,7 +145,7 @@ public final class ChangeLocationRequest extends Node {
 
 	@ObfuscatedName("uf.k(Lajt;B)V")
 	public static final void method9023(ChangeLocationRequest arg0) {
-		Scene var1 = client.world.method7743();
+		Scene var1 = Client.world.method7743();
 		if (var1 == null) {
 			return;
 		}
@@ -156,7 +157,7 @@ public final class ChangeLocationRequest extends Node {
 			var2 = (Location) var1.method8735(arg0.field11238, arg0.field11226, arg0.field11228);
 		}
 		if (arg0.field11229 == 2) {
-			var2 = (Location) var1.method8856(arg0.field11238, arg0.field11226, arg0.field11228, client.field11001);
+			var2 = (Location) var1.method8856(arg0.field11238, arg0.field11226, arg0.field11228, Client.field11001);
 		}
 		if (arg0.field11229 == 3) {
 			var2 = (Location) var1.method8767(arg0.field11238, arg0.field11226, arg0.field11228);
@@ -179,7 +180,7 @@ public final class ChangeLocationRequest extends Node {
 	@ObfuscatedName("eq.w(Lajt;ZI)V")
 	public static final void method2834(ChangeLocationRequest arg0, boolean arg1) {
 		if (arg0.field11240) {
-			if (arg0.field11227 < 0 || ClientMapLoader.method14705(client.world.method7750(), arg0.field11227, arg0.field11232)) {
+			if (arg0.field11227 < 0 || ClientMapLoader.method14705(Client.world.method7750(), arg0.field11227, arg0.field11232)) {
 				if (arg1) {
 					method9194(arg0.field11238, arg0.field11229, arg0.field11226, arg0.field11228, null);
 				} else {
@@ -187,7 +188,7 @@ public final class ChangeLocationRequest extends Node {
 				}
 				arg0.method8440();
 			}
-		} else if (arg0.field11239 && arg0.field11226 >= 1 && arg0.field11228 >= 1 && arg0.field11226 <= client.world.method7728() - 2 && arg0.field11228 <= client.world.method7758() - 2 && (arg0.field11234 < 0 || ClientMapLoader.method14705(client.world.method7750(), arg0.field11234, arg0.field11236))) {
+		} else if (arg0.field11239 && arg0.field11226 >= 1 && arg0.field11228 >= 1 && arg0.field11226 <= Client.world.method7728() - 2 && arg0.field11228 <= Client.world.method7758() - 2 && (arg0.field11234 < 0 || ClientMapLoader.method14705(Client.world.method7750(), arg0.field11234, arg0.field11236))) {
 			if (arg1) {
 				method9194(arg0.field11238, arg0.field11229, arg0.field11226, arg0.field11228, arg0.field11241);
 			} else {
@@ -204,21 +205,21 @@ public final class ChangeLocationRequest extends Node {
 
 	@ObfuscatedName("acv.l(IIIIIIILoe;IIB)V")
 	public static final void method15005(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ScaleRotTrans arg7, int arg8, int arg9) {
-		if (arg2 < 1 || arg3 < 1 || arg2 > client.world.method7728() - 2 || arg3 > client.world.method7758() - 2) {
+		if (arg2 < 1 || arg3 < 1 || arg2 > Client.world.method7728() - 2 || arg3 > Client.world.method7758() - 2) {
 			return;
 		}
 		int var10 = arg0;
-		if (arg0 < 3 && client.world.method7793().method7105(arg2, arg3)) {
+		if (arg0 < 3 && Client.world.method7793().method7105(arg2, arg3)) {
 			var10 = arg0 + 1;
 		}
-		if (client.world.method7743() == null) {
+		if (Client.world.method7743() == null) {
 			return;
 		}
-		client.world.method7744().method16871(Statics.field8198, arg0, arg1, arg2, arg3);
+		Client.world.method7744().method16871(Statics.field8198, arg0, arg1, arg2, arg3);
 		if (arg4 >= 0) {
 			int var11 = Statics.field688.groundDecoration.method18489();
 			Statics.field688.method18157(Statics.field688.groundDecoration, 1);
-			client.world.method7744().method16867(Statics.field8198, var10, arg0, arg2, arg3, arg4, arg5, arg6, arg8, arg9, arg7);
+			Client.world.method7744().method16867(Statics.field8198, var10, arg0, arg2, arg3, arg4, arg5, arg6, arg8, arg9, arg7);
 			Statics.field688.method18157(Statics.field688.groundDecoration, var11);
 		}
 		Minimap.method16444(Statics.field4490.field11717);
@@ -226,13 +227,13 @@ public final class ChangeLocationRequest extends Node {
 
 	@ObfuscatedName("ud.u(IIIILvp;I)V")
 	public static final void method9194(int arg0, int arg1, int arg2, int arg3, LocTypeCustomisation arg4) {
-		if (arg2 < 1 || arg3 < 1 || arg2 > client.world.method7728() - 2 || arg3 > client.world.method7758() - 2) {
+		if (arg2 < 1 || arg3 < 1 || arg2 > Client.world.method7728() - 2 || arg3 > Client.world.method7758() - 2) {
 			return;
 		}
-		if (client.world.method7743() == null) {
+		if (Client.world.method7743() == null) {
 			return;
 		}
-		Location var5 = client.world.method7744().method16899(arg0, arg1, arg2, arg3);
+		Location var5 = Client.world.method7744().method16899(arg0, arg1, arg2, arg3);
 		if (var5 == null) {
 			return;
 		}

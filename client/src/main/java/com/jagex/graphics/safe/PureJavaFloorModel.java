@@ -1,6 +1,6 @@
 package com.jagex.graphics.safe;
 
-import com.jagex.core.util.ColourUtils;
+import com.jagex.core.utils.ColourUtils;
 import com.jagex.game.client.HardShadow;
 import com.jagex.game.client.Rasteriser;
 import com.jagex.graphics.*;

@@ -1,8 +1,8 @@
 package com.jagex.game.loading;
 
-import com.jagex.core.util.MonotonicTime;
+import com.jagex.core.utils.MonotonicTime;
 import com.jagex.graphics.SpriteDataProvider;
-import com.jagex.client;
+import rs2.client.Client;
 import com.jagex.graphics.Font;
 import com.jagex.graphics.FontMetrics;
 import com.jagex.js5.Js5;
@@ -38,8 +38,8 @@ public abstract class LoadingScreenProgressDisplay implements LoadingScreenEleme
 
 	@ObfuscatedName("kz.n(ZI)V")
 	public void method5105(boolean arg0) {
-		int var2 = this.field3027.field3167.method5382(this.field3027.field3163, client.field10941) + this.field3027.field3161;
-		int var3 = this.field3027.field3159.method5375(this.field3027.field3160, client.field10942) + this.field3027.field3162;
+		int var2 = this.field3027.field3167.method5382(this.field3027.field3163, Client.field10941) + this.field3027.field3161;
+		int var3 = this.field3027.field3159.method5375(this.field3027.field3160, Client.field10942) + this.field3027.field3162;
 		this.method5121(arg0, var2, var3);
 		this.method5122(arg0, var2, var3);
 		String var4 = Statics.field593.method4852();

@@ -1,9 +1,9 @@
 package com.jagex.game.client;
 
-import com.jagex.client;
+import rs2.client.Client;
 import com.jagex.core.io.Packet;
 import com.jagex.core.io.Stream;
-import com.jagex.core.util.MonotonicTime;
+import com.jagex.core.utils.MonotonicTime;
 import com.jagex.js5.Js5CompressionType;
 import com.jagex.js5.network.Js5TcpClient;
 import com.jagex.js5.network.Js5NetRequest;
@@ -83,7 +83,7 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 						var9 = var8;
 					}
 					this.field10751.method9029(this.field4459.data, this.field4459.pos, var9);
-					if (this.field4447 != 0 && client.ENABLE_JS5_XOR) {
+					if (this.field4447 != 0 && Client.ENABLE_JS5_XOR) {
 						for (int var10 = 0; var10 < var9; var10++) {
 							this.field4459.data[this.field4459.pos + var10] ^= this.field4447;
 						}
@@ -130,7 +130,7 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 							var22 = var8;
 						}
 						this.field10751.method9029(this.field4460.data, this.field4460.pos, var22);
-						if (this.field4447 != 0 && client.ENABLE_JS5_XOR) {
+						if (this.field4447 != 0 && Client.ENABLE_JS5_XOR) {
 							for (int var23 = 0; var23 < var22; var23++) {
 								this.field4460.data[this.field4460.pos + var23] ^= this.field4447;
 							}
@@ -159,7 +159,7 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 							var29 = var8;
 						}
 						this.field10751.method9029(var21.data, var21.pos, var29);
-						if (this.field4447 != 0 && client.ENABLE_JS5_XOR) {
+						if (this.field4447 != 0 && Client.ENABLE_JS5_XOR) {
 							for (int var30 = 0; var30 < var29; var30++) {
 								var21.data[var21.pos + var30] ^= this.field4447;
 							}
@@ -211,7 +211,7 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 				while (true) {
 					Js5NetRequest var5 = (Js5NetRequest) this.field4443.method14315();
 					if (var5 == null) {
-						if (this.field4447 != 0 && client.ENABLE_JS5_XOR) {
+						if (this.field4447 != 0 && Client.ENABLE_JS5_XOR) {
 							try {
 								this.field4450.pos = 0;
 								this.field4450.p1(4);

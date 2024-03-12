@@ -2,7 +2,7 @@ package com.jagex.game.client;
 
 import com.jagex.core.datastruct.LinkMap;
 import com.jagex.core.io.Packet;
-import com.jagex.core.util.ColourUtils;
+import com.jagex.core.utils.ColourUtils;
 import com.jagex.game.config.flotype.FloorOverlayType;
 import com.jagex.game.config.flotype.FloorOverlayTypeList;
 import com.jagex.game.config.flutype.FloorUnderlayType;

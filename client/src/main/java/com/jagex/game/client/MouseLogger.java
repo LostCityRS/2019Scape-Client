@@ -1,6 +1,6 @@
 package com.jagex.game.client;
 
-import com.jagex.client;
+import rs2.client.Client;
 import com.jagex.core.datastruct.IterableQueue;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
@@ -119,7 +119,7 @@ public abstract class MouseLogger {
 				var1.field11432.p1(var3 / var4);
 				var1.field11432.p1(var3 % var4);
 				var1.field11432.pos = var12;
-				client.field10849.method934(var1);
+				Client.field10849.method934(var1);
 			}
 		}
 		this.method10270();

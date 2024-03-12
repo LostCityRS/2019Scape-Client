@@ -1,6 +1,6 @@
 package com.jagex.game.client;
 
-import com.jagex.core.util.ColourUtils;
+import com.jagex.core.utils.ColourUtils;
 import com.jagex.graphics.MaterialAlphaMode;
 import com.jagex.graphics.safe.PureJavaRenderer;
 import com.jagex.graphics.safe.PureJavaRendererContext;

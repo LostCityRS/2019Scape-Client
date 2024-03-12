@@ -4,6 +4,7 @@ import com.jagex.graphics.AnimationWrapper;
 import com.jagex.game.config.seqtype.SeqType;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.scene.entities.PathingEntity;
 
 @ObfuscatedName("aoy")
 public class EntityWalkAnimationWrapper extends AnimationWrapper {

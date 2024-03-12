@@ -1,7 +1,7 @@
 package com.jagex.game.world.entity;
 
 import com.jagex.game.shared.movement.CoordGrid;
-import com.jagex.client;
+import rs2.client.Client;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("yv")
@@ -24,7 +24,7 @@ public class LocReference {
 
 	@ObfuscatedName("yv.e(I)I")
 	public int method10759() {
-		return client.field10914[this.field8195];
+		return Client.field10914[this.field8195];
 	}
 
 	@ObfuscatedName("yv.n(I)Lst;")
@@ -42,21 +42,21 @@ public class LocReference {
 	@ObfuscatedName("yv.m(I)Lst;")
 	public Location method10761() {
 		int var1 = this.field8196.field7428;
-		CoordGrid var2 = client.world.method7727();
+		CoordGrid var2 = Client.world.method7727();
 		int var3 = this.field8196.field7426 - var2.field7426;
 		int var4 = this.field8196.field7427 - var2.field7427;
-		if (var3 < 0 || var4 < 0 || var3 >= client.world.method7728() || var4 >= client.world.method7758() || client.world.method7743() == null) {
+		if (var3 < 0 || var4 < 0 || var3 >= Client.world.method7728() || var4 >= Client.world.method7758() || Client.world.method7743() == null) {
 			return null;
 		}
 		switch(this.method10759()) {
 			case 0:
-				return (Location) client.world.method7743().method8711(var1, var3, var4);
+				return (Location) Client.world.method7743().method8711(var1, var3, var4);
 			case 1:
-				return (Location) client.world.method7743().method8735(var1, var3, var4);
+				return (Location) Client.world.method7743().method8735(var1, var3, var4);
 			case 2:
-				return (Location) client.world.method7743().method8856(var1, var3, var4, client.field11001);
+				return (Location) Client.world.method7743().method8856(var1, var3, var4, Client.field11001);
 			case 3:
-				return (Location) client.world.method7743().method8767(var1, var3, var4);
+				return (Location) Client.world.method7743().method8767(var1, var3, var4);
 			default:
 				return null;
 		}

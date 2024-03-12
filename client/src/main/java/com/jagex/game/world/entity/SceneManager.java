@@ -1,6 +1,6 @@
 package com.jagex.game.world.entity;
 
-import com.jagex.client;
+import rs2.client.Client;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ad")
@@ -18,9 +18,9 @@ public class SceneManager {
 		if (field735) {
 			return;
 		}
-		method3097(client.world.method7743().field6904);
-		if (client.world.method7743().field6914 != null) {
-			method3097(client.world.method7743().field6914);
+		method3097(Client.world.method7743().field6904);
+		if (Client.world.method7743().field6914 != null) {
+			method3097(Client.world.method7743().field6914);
 		}
 		field735 = true;
 	}

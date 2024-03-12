@@ -1,8 +1,8 @@
 package com.jagex.game.client;
 
-import com.jagex.client;
+import rs2.client.Client;
 import com.jagex.core.io.Packet;
-import com.jagex.core.util.MonotonicTime;
+import com.jagex.core.utils.MonotonicTime;
 import deob.ObfuscatedName;
 import deob.Statics;
 import rs2.shared.prot.ClientProt;
@@ -30,11 +30,11 @@ public class NativeMouseLogger extends MouseLogger {
 		if (var1 == null) {
 			return;
 		}
-		ClientMessage var2 = Statics.method1604(ClientProt.EVENT_NATIVE_MOUSE_CLICK, client.field10849.field794);
+		ClientMessage var2 = Statics.method1604(ClientProt.EVENT_NATIVE_MOUSE_CLICK, Client.field10849.field794);
 		var2.field11432.p4(var1.method17831() | var1.method17832() << 16);
 		var2.field11432.p2_alt1(this.method10262(var1, 65535));
 		var2.field11432.p1_alt1(var1.method19539() << 1 | var1.method19537() & 0x1);
-		client.field10849.method934(var2);
+		Client.field10849.method934(var2);
 		var1.method17835();
 	}
 
@@ -45,7 +45,7 @@ public class NativeMouseLogger extends MouseLogger {
 
 	@ObfuscatedName("alp.z(S)Lakl;")
 	public ClientMessage method10267() {
-		return Statics.method1604(ClientProt.EVENT_NATIVE_MOUSE_MOVE, client.field10849.field794);
+		return Statics.method1604(ClientProt.EVENT_NATIVE_MOUSE_MOVE, Client.field10849.field794);
 	}
 
 	@ObfuscatedName("alp.j(Lalw;Lasp;I)V")

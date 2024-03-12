@@ -1,10 +1,10 @@
 package com.jagex.core.io;
 
-import com.jagex.core.util.ByteArrayPool;
+import com.jagex.core.utils.ByteArrayPool;
 import com.jagex.core.datastruct.Node;
-import com.jagex.core.util.Utf8;
-import com.jagex.client;
-import com.jagex.core.util.Cp1252;
+import com.jagex.core.utils.Utf8;
+import rs2.client.Client;
+import com.jagex.core.utils.Cp1252;
 import deob.ObfuscatedName;
 
 import java.math.BigInteger;
@@ -616,7 +616,7 @@ public class Packet extends Node {
 
 	@ObfuscatedName("alw.bt(Ljava/math/BigInteger;Ljava/math/BigInteger;B)V")
 	public void rsaenc(BigInteger exponent, BigInteger modulus) {
-		if (!client.ENABLE_RSA) {
+		if (!Client.ENABLE_RSA) {
 			return;
 		}
 

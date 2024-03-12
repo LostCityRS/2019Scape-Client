@@ -1,9 +1,9 @@
 package rs2.client.login;
 
-import com.jagex.client;
+import rs2.client.Client;
 import com.jagex.core.io.Packet;
-import com.jagex.core.util.Base64;
-import com.jagex.core.util.WebTools;
+import com.jagex.core.utils.Base64;
+import com.jagex.core.utils.WebTools;
 import com.jagex.game.client.Browser;
 import com.jagex.game.client.GameShell;
 import deob.ObfuscatedName;
@@ -32,7 +32,7 @@ public class AccountAppealManager {
 	@ObfuscatedName("abx.e(I)J")
 	public static long method14886() {
 		try {
-			URL var0 = new URL(client.method4591("services", false) + "m=accountappeal/login.ws");
+			URL var0 = new URL(Client.method4591("services", false) + "m=accountappeal/login.ws");
 			URLConnection var1 = var0.openConnection();
 			var1.setRequestProperty("connection", "close");
 			var1.setDoInput(true);
@@ -91,7 +91,7 @@ public class AccountAppealManager {
 		Packet var11 = new Packet(var10);
 		var11.pjstr(arg1);
 		var11.pos = var10;
-		if (client.ENABLE_TINYENC) {
+		if (Client.ENABLE_TINYENC) {
 			var11.tinyenc(var6);
 		}
 		Packet var12 = new Packet(var11.pos + var5.pos + var4.pos + 5);
@@ -104,7 +104,7 @@ public class AccountAppealManager {
 		var12.pdata(var11.data, 0, var11.pos);
 		String var13 = Base64.method10220(var12.data);
 		try {
-			URL var14 = new URL(client.method4591("services", false) + "m=accountappeal/login.ws");
+			URL var14 = new URL(Client.method4591("services", false) + "m=accountappeal/login.ws");
 			URLConnection var15 = var14.openConnection();
 			var15.setDoInput(true);
 			var15.setDoOutput(true);
@@ -135,7 +135,7 @@ public class AccountAppealManager {
 						}
 						String var21 = new String(var18.data, 0, var18.pos);
 						if (method15242(var21)) {
-							Browser.method4607(var21, true, client.field10784);
+							Browser.method4607(var21, true, Client.field10784);
 							return 2;
 						} else {
 							return 5;

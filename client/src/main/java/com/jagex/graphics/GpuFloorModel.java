@@ -3,7 +3,7 @@ package com.jagex.graphics;
 import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.datastruct.IterableQueue;
 import com.jagex.core.datastruct.Node;
-import com.jagex.core.util.Algorithms;
+import com.jagex.core.utils.Algorithms;
 import com.jagex.game.client.HardShadow;
 import com.jagex.math.IntMath;
 import com.jagex.math.Matrix4x3;

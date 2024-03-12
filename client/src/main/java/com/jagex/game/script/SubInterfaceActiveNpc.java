@@ -1,9 +1,10 @@
 package com.jagex.game.script;
 
-import com.jagex.client;
+import rs2.client.Client;
 import com.jagex.game.world.entity.ObjectWrapper;
-import com.jagex.game.world.entity.PathingEntity;
+import rs2.client.scene.entities.PathingEntity;
 import deob.ObfuscatedName;
+import rs2.client.clientscript.ScriptRunner;
 
 @ObfuscatedName("asz")
 public class SubInterfaceActiveNpc extends SubInterface {
@@ -18,7 +19,7 @@ public class SubInterfaceActiveNpc extends SubInterface {
 
 	@ObfuscatedName("asz.e(B)Z")
 	public boolean method18183() {
-		ObjectWrapper var1 = (ObjectWrapper) client.field10838.method14495((long) this.field12428);
+		ObjectWrapper var1 = (ObjectWrapper) Client.field10838.method14495((long) this.field12428);
 		if (var1 == null) {
 			return false;
 		} else {

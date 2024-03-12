@@ -1,11 +1,11 @@
 package com.jagex.game.client;
 
-import com.jagex.game.script.ScriptRunner;
-import com.jagex.client;
+import rs2.client.clientscript.ScriptRunner;
+import rs2.client.Client;
 import com.jagex.game.shared.console.DeveloperConsole;
-import com.jagex.core.util.CacheUtil;
-import com.jagex.core.util.JagException;
-import com.jagex.core.util.TextUtil;
+import com.jagex.core.utils.CacheUtil;
+import com.jagex.core.utils.JagException;
+import com.jagex.core.utils.TextUtil;
 import com.jagex.graphics.GraphicsPacketQueue;
 import com.jagex.graphics.Renderer;
 import com.jagex.graphics.Sprite;
@@ -214,7 +214,7 @@ public class TwitchHardwarePlatform {
 	@ObfuscatedName("ff.d(Ljava/lang/String;Ljava/lang/String;B)I")
 	public static int method3124(String arg0, String arg1) {
 		if (field7384) {
-			return client.method640() == client.field10849 ? Statics.field11755.Login(arg0, arg1) : 42;
+			return Client.method640() == Client.field10849 ? Statics.field11755.Login(arg0, arg1) : 42;
 		} else {
 			return 12;
 		}
@@ -286,7 +286,7 @@ public class TwitchHardwarePlatform {
 
 	@ObfuscatedName("nk.q(Ljava/lang/String;I)I")
 	public static int method6056(String arg0) {
-		return Statics.field11755.SetStreamTitle(arg0, client.field10768.field8341);
+		return Statics.field11755.SetStreamTitle(arg0, Client.field10768.field8341);
 	}
 
 	@ObfuscatedName("xk.x(I)I")
@@ -429,8 +429,8 @@ public class TwitchHardwarePlatform {
 			Statics.field894 = new int[field7399 ? arg2 * arg3 : Statics.field8526 * Statics.field2585];
 		}
 		if (arg0.method2360()) {
-			arg0.method2163(client.field10903, Statics.field2585, Statics.field8526);
-			field7380.add(new TwitchRelated2(client.field10903, field7392, arg0.field1611, arg0.field1618, arg0.field1602));
+			arg0.method2163(Client.field10903, Statics.field2585, Statics.field8526);
+			field7380.add(new TwitchRelated2(Client.field10903, field7392, arg0.field1611, arg0.field1618, arg0.field1602));
 			field7392 = new LinkedList();
 		} else {
 			arg0.method2203();
@@ -563,7 +563,7 @@ public class TwitchHardwarePlatform {
 	@ObfuscatedName("fn.aq(I)I")
 	public static int method3065() {
 		Statics.field4501 = null;
-		return Statics.field11755.RequestLiveStreams(client.field10768.field8341);
+		return Statics.field11755.RequestLiveStreams(Client.field10768.field8341);
 	}
 
 	@ObfuscatedName("ny.ax(B)I")

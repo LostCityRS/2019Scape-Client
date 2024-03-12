@@ -1,6 +1,6 @@
 package com.jagex.graphics.dx;
 
-import com.jagex.core.util.ArrayUtil;
+import com.jagex.core.utils.ArrayUtil;
 import com.jagex.graphics.*;
 import com.jagex.graphics.gl.OpenGLError;
 import com.jagex.math.Matrix4x4;

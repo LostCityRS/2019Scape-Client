@@ -1,7 +1,7 @@
 package com.jagex.audio;
 
-import com.jagex.core.util.PreciseSleep;
-import com.jagex.core.util.JagException;
+import com.jagex.core.utils.PreciseSleep;
+import com.jagex.core.utils.JagException;
 import deob.ObfuscatedName;
 
 import javax.sound.sampled.AudioSystem;

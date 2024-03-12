@@ -1,7 +1,8 @@
 package com.jagex.game.world.entity;
 
 import com.jagex.game.client.HardShadow;
-import com.jagex.client;
+import com.jagex.graphics.scenegraph.GraphEntity;
+import rs2.client.Client;
 import com.jagex.core.datastruct.Pair;
 import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
@@ -84,7 +85,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 			if (this.field11139 || arg3.field7525) {
 				this.field11136 = this.field11136.method1773((byte) 0, var20, false);
 				if (arg3.field7525) {
-					LocTint var22 = client.world.method7722();
+					LocTint var22 = Client.world.method7722();
 					this.field11136.method1745(var22.field5015, var22.field5013, var22.field5014, var22.field5012);
 				}
 			}

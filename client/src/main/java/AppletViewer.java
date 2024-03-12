@@ -1,4 +1,4 @@
-import com.jagex.client;
+import rs2.client.Client;
 
 import javax.swing.*;
 import java.applet.Applet;
@@ -98,7 +98,7 @@ public class AppletViewer extends Applet implements AppletStub {
 			frame.setLocation(dim.width / 2 - frame.getSize().width / 2, dim.height / 2 - frame.getSize().height / 2);
 			frame.toFront();
 
-			client cl = new client();
+			Client cl = new Client();
 			cl.supplyApplet(this);
 			cl.init();
 			cl.start();

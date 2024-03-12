@@ -1,10 +1,10 @@
 package com.jagex.graphics;
 
-import com.jagex.*;
 import com.jagex.core.io.SendablePacket;
 import com.jagex.game.client.*;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
 
 import java.util.LinkedList;
 
@@ -35,7 +35,7 @@ public class GraphicsPacketQueue {
 
 	@ObfuscatedName("ku.k(IIII)V")
 	public static void method5144(int arg0, int arg1, int arg2) {
-		method4922(new ClientMapBuildStuck(arg0, arg1, arg2, client.field10827, Statics.field4489.field4455, Statics.field4489.field4454, Statics.field4489.method7012(), Statics.field4489.method7028(), Statics.field4479.method6991()));
+		method4922(new ClientMapBuildStuck(arg0, arg1, arg2, Client.field10827, Statics.field4489.field4455, Statics.field4489.field4454, Statics.field4489.method7012(), Statics.field4489.method7028(), Statics.field4479.method6991()));
 	}
 
 	@ObfuscatedName("amf.f(Lacw;Ljava/lang/String;ILjava/lang/Throwable;I)V")
@@ -53,7 +53,7 @@ public class GraphicsPacketQueue {
 
 	@ObfuscatedName("ud.l(I)V")
 	public static void method9189() {
-		if (client.state != 18 && client.state != 3 || client.field10849 == null) {
+		if (Client.state != 18 && Client.state != 3 || Client.field10849 == null) {
 			return;
 		}
 		while (true) {

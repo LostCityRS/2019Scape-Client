@@ -1,8 +1,8 @@
 package com.jagex.js5.index;
 
 import com.jagex.core.io.Packet;
-import com.jagex.core.io.Whirlpool;
-import com.jagex.client;
+import com.jagex.encryption.Whirlpool;
+import rs2.client.Client;
 import deob.ObfuscatedName;
 
 import java.math.BigInteger;
@@ -20,7 +20,7 @@ public class Js5MasterIndex {
 		byte[] var5 = new byte[arg0.data.length - arg0.pos];
 		arg0.gdata(var5, 0, var5.length);
 		byte[] var8;
-		if (arg1 == null || arg2 == null || !client.ENABLE_JS5_RSA) {
+		if (arg1 == null || arg2 == null || !Client.ENABLE_JS5_RSA) {
 			var8 = var5;
 		} else {
 			BigInteger var6 = new BigInteger(var5);

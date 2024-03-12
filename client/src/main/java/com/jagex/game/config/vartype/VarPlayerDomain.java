@@ -2,9 +2,9 @@ package com.jagex.game.config.vartype;
 
 import com.jagex.game.config.vartype.bit.VarBitOverflowException;
 import com.jagex.game.config.vartype.bit.VarBitType;
-import com.jagex.game.clanchannel.ClanSettingsNode;
+import rs2.client.logic.clans.ClanSettingsNode;
 import com.jagex.core.datastruct.IterableMap;
-import com.jagex.core.util.MonotonicTime;
+import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.config.vartype.player.VarPlayerType;
 import deob.ObfuscatedName;
 import deob.Statics;

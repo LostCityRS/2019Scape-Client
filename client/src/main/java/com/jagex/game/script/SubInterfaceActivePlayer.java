@@ -1,8 +1,9 @@
 package com.jagex.game.script;
 
-import com.jagex.client;
+import rs2.client.Client;
 import com.jagex.game.world.entity.PlayerEntity;
 import deob.ObfuscatedName;
+import rs2.client.clientscript.ScriptRunner;
 
 @ObfuscatedName("asu")
 public class SubInterfaceActivePlayer extends SubInterface {
@@ -17,7 +18,7 @@ public class SubInterfaceActivePlayer extends SubInterface {
 
 	@ObfuscatedName("asu.e(B)Z")
 	public boolean method18183() {
-		PlayerEntity var1 = client.field10944[this.field12430];
+		PlayerEntity var1 = Client.field10944[this.field12430];
 		if (var1 == null) {
 			return false;
 		} else {

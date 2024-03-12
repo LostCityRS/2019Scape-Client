@@ -1,6 +1,6 @@
 package com.jagex.graphics;
 
-import com.jagex.core.util.Algorithms;
+import com.jagex.core.utils.Algorithms;
 import com.jagex.game.client.HardShadow;
 import com.jagex.game.client.ScreenBoundingBox;
 import com.jagex.game.config.BillboardType;

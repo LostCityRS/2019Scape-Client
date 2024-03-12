@@ -1,7 +1,7 @@
 package com.jagex.graphics;
 
-import com.jagex.core.util.StringUtils;
-import com.jagex.core.util.Cp1252;
+import com.jagex.core.utils.StringUtils;
+import com.jagex.core.utils.Cp1252;
 import deob.ObfuscatedName;
 
 import java.util.Random;

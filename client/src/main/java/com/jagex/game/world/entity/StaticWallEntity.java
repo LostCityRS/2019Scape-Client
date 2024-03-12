@@ -1,7 +1,8 @@
 package com.jagex.game.world.entity;
 
 import com.jagex.game.client.HardShadow;
-import com.jagex.client;
+import com.jagex.graphics.scenegraph.GraphEntity;
+import rs2.client.Client;
 import com.jagex.core.datastruct.Pair;
 import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
@@ -85,7 +86,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 			if (this.field11171 || arg3.field7525) {
 				this.field11173 = this.field11173.method1773((byte) 0, var15, false);
 				if (arg3.field7525) {
-					LocTint var17 = client.world.method7722();
+					LocTint var17 = Client.world.method7722();
 					this.field11173.method1745(var17.field5015, var17.field5013, var17.field5014, var17.field5012);
 				}
 			}

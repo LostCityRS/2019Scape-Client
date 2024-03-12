@@ -1,8 +1,8 @@
 package com.jagex.graphics;
 
-import com.jagex.core.util.MonotonicTime;
+import com.jagex.core.utils.MonotonicTime;
 import com.jagex.core.datastruct.Node;
-import com.jagex.core.util.ColourUtils;
+import com.jagex.core.utils.ColourUtils;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 

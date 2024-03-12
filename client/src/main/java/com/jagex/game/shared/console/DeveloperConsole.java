@@ -1,10 +1,12 @@
 package com.jagex.game.shared.console;
 
-import com.jagex.*;
-import com.jagex.core.util.Cp1252;
-import com.jagex.core.util.FileUtil;
-import com.jagex.core.util.MonotonicTime;
-import com.jagex.core.util.StringUtils;
+import com.jagex.core.utils.Cp1252;
+import com.jagex.core.utils.FileUtil;
+import com.jagex.core.utils.MonotonicTime;
+import com.jagex.core.utils.StringUtils;
+import com.jagex.game.config.iftype.Component;
+import com.jagex.game.network.ServerConnection;
+import rs2.client.Client;
 import rs2.client.login.LoginManager;
 import com.jagex.game.client.*;
 import com.jagex.game.fullscreen.Fullscreen;
@@ -63,7 +65,7 @@ public class DeveloperConsole {
 
 	@ObfuscatedName("cc.e(B)Z")
 	public static boolean method1584() {
-		return !Statics.method2092(client.state);
+		return !Statics.method2092(Client.state);
 	}
 
 	@ObfuscatedName("i.n(I)V")
@@ -92,7 +94,7 @@ public class DeveloperConsole {
 	@ObfuscatedName("amd.k(B)V")
 	public static void close() {
 		field770 = false;
-		client.method9734();
+		Client.method9734();
 	}
 
 	@ObfuscatedName("sx.f(I)V")
@@ -183,10 +185,10 @@ public class DeveloperConsole {
 		if (Statics.field4845 == null) {
 			method8025();
 		}
-		client.field11088.setTime(new Date(MonotonicTime.method3655()));
-		int var1 = client.field11088.get(11);
-		int var2 = client.field11088.get(12);
-		int var3 = client.field11088.get(13);
+		Client.field11088.setTime(new Date(MonotonicTime.method3655()));
+		int var1 = Client.field11088.get(11);
+		int var2 = Client.field11088.get(12);
+		int var3 = Client.field11088.get(13);
 		String var4 = Integer.toString(var1 / 10) + var1 % 10 + ":" + var2 / 10 + var2 % 10 + ":" + var3 / 10 + var3 % 10;
 		String[] var5 = StringUtils.method17361(arg0, '\n');
 		for (int var6 = 0; var6 < var5.length; var6++) {
@@ -241,7 +243,7 @@ public class DeveloperConsole {
 		Statics.field10355.method2681("--> " + method14312(currententry), 10, 350 - Statics.field10268.field8569 - 1, -1, -16777216);
 		if (Statics.focus) {
 			int var10 = -1;
-			if (client.field10903 % 30 > 15) {
+			if (Client.field10903 % 30 > 15) {
 				var10 = 16777215;
 			}
 			arg0.method2177(Statics.field10268.method14532("--> " + method14312(currententry).substring(0, commandcharpointer)) + 10, 350 - Statics.field10268.field8569 - 11, 12, var10);
@@ -294,8 +296,8 @@ public class DeveloperConsole {
 				return;
 			}
 			if (arg0.equalsIgnoreCase("displayfps")) {
-				client.field10794 = !client.field10794;
-				if (client.field10794) {
+				Client.field10794 = !Client.field10794;
+				if (Client.field10794) {
 					addline("FPS on");
 				} else {
 					addline("FPS off");
@@ -321,15 +323,15 @@ public class DeveloperConsole {
 				return;
 			}
 			if (arg0.equalsIgnoreCase("getcamerapos")) {
-				CoordGrid var5 = client.world.method7727();
+				CoordGrid var5 = Client.world.method7727();
 				if (Statics.field3416 == 3) {
 					Vector3 var6 = Statics.field9155.method4714();
 					Vector3 var7 = Statics.field9155.method4711();
-					addline("Pos: " + (new CoordGrid(Statics.field4490.field11717, (int) var6.field4308 >> 9, (int) var6.field4313 >> 9)).toString() + " Height: " + (client.method3660((int) var6.field4308 - (var5.field7426 << 9), (int) var6.field4313 - (var5.field7427 << 9), Statics.field4490.field11717) + (int) var6.field4311));
-					addline("Look: " + (new CoordGrid(Statics.field4490.field11717, (int) var7.field4308 >> 9, (int) var7.field4313 >> 9)).toString() + " Height: " + (client.method3660((int) var7.field4308 - (var5.field7426 << 9), (int) var6.field4313 - (var5.field7427 << 9), Statics.field4490.field11717) + (int) var6.field4311));
+					addline("Pos: " + (new CoordGrid(Statics.field4490.field11717, (int) var6.field4308 >> 9, (int) var6.field4313 >> 9)).toString() + " Height: " + (Client.method3660((int) var6.field4308 - (var5.field7426 << 9), (int) var6.field4313 - (var5.field7427 << 9), Statics.field4490.field11717) + (int) var6.field4311));
+					addline("Look: " + (new CoordGrid(Statics.field4490.field11717, (int) var7.field4308 >> 9, (int) var7.field4313 >> 9)).toString() + " Height: " + (Client.method3660((int) var7.field4308 - (var5.field7426 << 9), (int) var6.field4313 - (var5.field7427 << 9), Statics.field4490.field11717) + (int) var6.field4311));
 				} else {
-					addline("Pos: " + Statics.field4490.field11717 + "," + ((Statics.field7956 >> 9) + var5.field7426 >> 6) + "," + ((Statics.field1881 >> 9) + var5.field7427 >> 6) + "," + ((Statics.field7956 >> 9) + var5.field7426 & 0x3F) + "," + ((Statics.field1881 >> 9) + var5.field7427 & 0x3F) + " Height: " + (client.method3660(Statics.field7956, Statics.field1881, Statics.field4490.field11717) - Statics.field10518));
-					addline("Look: " + Statics.field4490.field11717 + "," + (Statics.field6714 + var5.field7426 >> 6) + "," + (Statics.field2626 + var5.field7427 >> 6) + "," + (Statics.field6714 + var5.field7426 & 0x3F) + "," + (Statics.field2626 + var5.field7427 & 0x3F) + " Height: " + (client.method3660(Statics.field6714, Statics.field2626, Statics.field4490.field11717) - Statics.field1983));
+					addline("Pos: " + Statics.field4490.field11717 + "," + ((Statics.field7956 >> 9) + var5.field7426 >> 6) + "," + ((Statics.field1881 >> 9) + var5.field7427 >> 6) + "," + ((Statics.field7956 >> 9) + var5.field7426 & 0x3F) + "," + ((Statics.field1881 >> 9) + var5.field7427 & 0x3F) + " Height: " + (Client.method3660(Statics.field7956, Statics.field1881, Statics.field4490.field11717) - Statics.field10518));
+					addline("Look: " + Statics.field4490.field11717 + "," + (Statics.field6714 + var5.field7426 >> 6) + "," + (Statics.field2626 + var5.field7427 >> 6) + "," + (Statics.field6714 + var5.field7426 & 0x3F) + "," + (Statics.field2626 + var5.field7427 & 0x3F) + " Height: " + (Client.method3660(Statics.field6714, Statics.field2626, Statics.field4490.field11717) - Statics.field1983));
 				}
 				return;
 			}
@@ -337,11 +339,11 @@ public class DeveloperConsole {
 			addline(LocalisedText.DEBUG_CONSOLE_ERROR.method15021(Statics.field1680));
 			return;
 		}
-		if (Statics.field1811 != ModeWhere.field8273 || client.field10949 >= 2 || client.ALLOW_COMMANDS_ANYWHERE) {
+		if (Statics.field1811 != ModeWhere.field8273 || Client.field10949 >= 2 || Client.ALLOW_COMMANDS_ANYWHERE) {
 			try {
 				if (arg0.equalsIgnoreCase("wm1")) {
-					client.setWindowMode(1, -1, -1, false);
-					if (client.getWindowMode() == 1) {
+					Client.setWindowMode(1, -1, -1, false);
+					if (Client.getWindowMode() == 1) {
 						addline("Success");
 					} else {
 						addline("Failure");
@@ -349,8 +351,8 @@ public class DeveloperConsole {
 					return;
 				}
 				if (arg0.equalsIgnoreCase("wm2")) {
-					client.setWindowMode(2, -1, -1, false);
-					if (client.getWindowMode() == 2) {
+					Client.setWindowMode(2, -1, -1, false);
+					if (Client.getWindowMode() == 2) {
 						addline("Success");
 					} else {
 						addline("Failure");
@@ -358,8 +360,8 @@ public class DeveloperConsole {
 					return;
 				}
 				if (Fullscreen.allowed && arg0.equalsIgnoreCase("wm3")) {
-					client.setWindowMode(3, 1024, 768, false);
-					if (client.getWindowMode() == 3) {
+					Client.setWindowMode(3, 1024, 768, false);
+					if (Client.getWindowMode() == 3) {
 						addline("Success");
 					} else {
 						addline("Failure");
@@ -367,7 +369,7 @@ public class DeveloperConsole {
 					return;
 				}
 				if (arg0.startsWith("setlobby ")) {
-					if (client.state != 4) {
+					if (Client.state != 4) {
 						addline("Failure");
 						return;
 					}
@@ -393,63 +395,63 @@ public class DeveloperConsole {
 					return;
 				}
 				if (arg0.equalsIgnoreCase("tk0")) {
-					client.method486(0, false);
+					Client.method486(0, false);
 					if (Statics.field688.displayMode2.method18545() == 0) {
 						addline("Success");
 						Statics.field688.method18157(Statics.field688.displayMode, 0);
 						Preferences.method16391();
-						client.field10800 = false;
+						Client.field10800 = false;
 					} else {
 						addline("Failure");
 					}
 					return;
 				}
 				if (arg0.equalsIgnoreCase("tk1")) {
-					client.method486(1, false);
+					Client.method486(1, false);
 					if (Statics.field688.displayMode2.method18545() == 1) {
 						addline("Success");
 						Statics.field688.method18157(Statics.field688.displayMode, 1);
 						Preferences.method16391();
-						client.field10800 = false;
+						Client.field10800 = false;
 					} else {
 						addline("Failure");
 					}
 					return;
 				}
 				if (arg0.equalsIgnoreCase("tk3")) {
-					client.method486(3, false);
+					Client.method486(3, false);
 					if (Statics.field688.displayMode2.method18545() == 3) {
 						addline("Success");
 						Statics.field688.method18157(Statics.field688.displayMode, 3);
 						Preferences.method16391();
-						client.field10800 = false;
+						Client.field10800 = false;
 					} else {
 						addline("Failure");
 					}
 					return;
 				}
 				if (arg0.equalsIgnoreCase("tk5")) {
-					client.method486(5, false);
+					Client.method486(5, false);
 					if (Statics.field688.displayMode2.method18545() == 5) {
 						addline("Success");
 						Statics.field688.method18157(Statics.field688.displayMode, 5);
 						Preferences.method16391();
-						client.field10800 = false;
+						Client.field10800 = false;
 					} else {
 						addline("Failure");
 					}
 					return;
 				}
 				if (arg0.equalsIgnoreCase("clientdrop")) {
-					if (client.state == 18) {
-						client.method8321();
-					} else if (client.state == 3) {
-						client.field10849.field808 = true;
+					if (Client.state == 18) {
+						Client.method8321();
+					} else if (Client.state == 3) {
+						Client.field10849.field808 = true;
 					}
 					return;
 				}
 				if (arg0.equalsIgnoreCase("breakcon")) {
-					ServerConnection[] var15 = client.field10850;
+					ServerConnection[] var15 = Client.field10850;
 					for (int var16 = 0; var16 < var15.length; var16++) {
 						ServerConnection var17 = var15[var16];
 						if (var17.method939() != null) {
@@ -531,8 +533,8 @@ public class DeveloperConsole {
 					String[] var29 = StringUtils.method17361(Statics.method17687(Cp1252.method667(var28), '\r', ""), '\n');
 					method15383(var29);
 				}
-				if (client.state == 18 || client.state == 13) {
-					ServerConnection var30 = client.method640();
+				if (Client.state == 18 || Client.state == 13) {
+					ServerConnection var30 = Client.method640();
 					ClientMessage var31 = Statics.method1604(ClientProt.CLIENT_CHEAT, var30.field794);
 					var31.field11432.p1(arg0.length() + 3);
 					var31.field11432.p1(arg1 ? 1 : 0);
@@ -546,7 +548,7 @@ public class DeveloperConsole {
 				return;
 			}
 		}
-		if (client.state != 18 && client.state != 13 && !client.ALLOW_COMMANDS_ANYWHERE) {
+		if (Client.state != 18 && Client.state != 13 && !Client.ALLOW_COMMANDS_ANYWHERE) {
 			addline(LocalisedText.DEBUG_CONSOLE_UNKNOWNCOMMAND.method15021(Statics.field1680) + arg0);
 		}
 	}
@@ -564,16 +566,16 @@ public class DeveloperConsole {
 				} else if (arg0 == 11) {
 					addline("" + GameShell.fps);
 				} else if (arg0 == 24) {
-					OcclusionManager var1 = client.world.method7743().field6930;
+					OcclusionManager var1 = Client.world.method7743().field6930;
 					var1.field7031 = !var1.field7031;
 				} else if (arg0 == 25) {
-					client.field10794 = true;
+					Client.field10794 = true;
 				} else if (arg0 == 21) {
-					client.field10794 = false;
+					Client.field10794 = false;
 				} else if (arg0 == 10) {
-					client.field10864.method14242();
+					Client.field10864.method14242();
 				} else if (arg0 == 5) {
-					client.method10444();
+					Client.method10444();
 					for (int var2 = 0; var2 < 10; var2++) {
 						System.gc();
 					}
@@ -581,7 +583,7 @@ public class DeveloperConsole {
 					int var4 = (int) ((var3.totalMemory() - var3.freeMemory()) / 1024L);
 					addline("" + var4);
 				} else if (arg0 == 20) {
-					client.method10444();
+					Client.method10444();
 					for (int var5 = 0; var5 < 10; var5++) {
 						System.gc();
 					}
@@ -589,7 +591,7 @@ public class DeveloperConsole {
 					int var7 = (int) ((var6.totalMemory() - var6.freeMemory()) / 1024L);
 					addline("" + var7);
 					SceneManager.method7319();
-					client.method10444();
+					Client.method10444();
 					for (int var8 = 0; var8 < 10; var8++) {
 						System.gc();
 					}
@@ -610,34 +612,34 @@ public class DeveloperConsole {
 				} else if (arg0 == 4) {
 					method10153();
 				} else if (arg0 == 17) {
-					client.world.field5056 = MonotonicTime.method3655();
-					client.world.field5037 = true;
+					Client.world.field5056 = MonotonicTime.method3655();
+					Client.world.field5037 = true;
 					method10153();
 				} else if (arg0 == 19) {
 					Vector3 var10 = Statics.field4490.method10536().field4298;
 					addline(((int) var10.field4308 >> 9) + " " + ((int) var10.field4313 >> 9));
 				} else if (arg0 == 16) {
 					Vector3 var11 = Statics.field4490.method10536().field4298;
-					addline("" + client.world.method7743().field6913[Statics.field4490.field11717].method1529((int) var11.field4308 >> 9, (int) var11.field4313 >> 9));
+					addline("" + Client.world.method7743().field6913[Statics.field4490.field11717].method1529((int) var11.field4308 >> 9, (int) var11.field4313 >> 9));
 				} else if (arg0 == 27) {
 					addline(Component.field2175.method2926() + " " + Component.field2175.method2925());
 					addline(Component.field2297.method2926() + " " + Component.field2297.method2925());
 				} else if (arg0 == 8) {
 					Statics.method14055(false);
 				} else if (arg0 == 13) {
-					client.field10848 = !client.field10848;
-					Statics.field8198.method2253(client.field10848);
+					Client.field10848 = !Client.field10848;
+					Statics.field8198.method2253(Client.field10848);
 					method16752();
 					return;
 				} else if (arg0 == 1) {
-					client.field11005 = 0;
-					client.world.method7753();
+					Client.field11005 = 0;
+					Client.world.method7753();
 				} else if (arg0 == 3) {
-					client.field11005 = 1;
-					client.world.method7753();
+					Client.field11005 = 1;
+					Client.world.method7753();
 				} else if (arg0 == 15) {
-					client.field11005 = 2;
-					client.world.method7753();
+					Client.field11005 = 2;
+					Client.world.method7753();
 				}
 			} catch (Exception var13) {
 				addline(LocalisedText.DEBUG_CONSOLE_ERROR.method15021(Statics.field1680));
@@ -650,7 +652,7 @@ public class DeveloperConsole {
 		if (Statics.field688.unknown7.method18750() == 1) {
 			Statics.field3183.method7680(new RebuildRequest(RebuildType.field5070, null));
 		} else {
-			client.world.method7753();
+			Client.world.method7753();
 			Minimap.method5065();
 		}
 	}

@@ -5,7 +5,7 @@ import com.jagex.game.world.entity.PrimaryLayerEntity;
 import com.jagex.game.world.entity.Scene;
 import com.jagex.game.world.entity.Tile;
 import com.jagex.game.world.entity.EntityBounds;
-import com.jagex.game.world.entity.GraphEntity;
+import com.jagex.graphics.scenegraph.GraphEntity;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.ScaleRotTrans;
 import deob.ObfuscatedName;

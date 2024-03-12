@@ -1,8 +1,8 @@
 package com.jagex.graphics;
 
-import com.jagex.core.util.StringUtils;
+import com.jagex.core.utils.StringUtils;
 import com.jagex.core.io.Packet;
-import com.jagex.core.util.Cp1252;
+import com.jagex.core.utils.Cp1252;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 

@@ -1,7 +1,7 @@
 package com.jagex.game.client;
 
-import com.jagex.core.util.CacheUtil;
-import com.jagex.core.util.FileUtil;
+import com.jagex.core.utils.CacheUtil;
+import com.jagex.core.utils.FileUtil;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 

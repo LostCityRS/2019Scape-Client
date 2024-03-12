@@ -1,6 +1,6 @@
 package com.jagex.game.cutscene;
 
-import com.jagex.client;
+import rs2.client.Client;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 
@@ -61,6 +61,6 @@ public class CutsceneSpline {
 			var2[var3 * 2 + 1][2] = this.field1733[var3];
 			var2[var3 * 2 + 1][3] = this.field1730[var3];
 		}
-		client.field10981[arg0] = var2;
+		Client.field10981[arg0] = var2;
 	}
 }

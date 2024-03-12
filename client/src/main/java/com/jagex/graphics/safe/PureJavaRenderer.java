@@ -2,8 +2,8 @@ package com.jagex.graphics.safe;
 
 import com.jagex.core.datastruct.Heap;
 import com.jagex.core.datastruct.WeightedCache;
-import com.jagex.core.util.ColourUtils;
-import com.jagex.core.util.MonotonicTime;
+import com.jagex.core.utils.ColourUtils;
+import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.client.DataType;
 import com.jagex.game.client.JavaGraphicsRelated3;
 import com.jagex.game.client.Rasteriser;

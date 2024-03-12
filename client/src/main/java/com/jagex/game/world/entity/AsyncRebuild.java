@@ -2,9 +2,9 @@ package com.jagex.game.world.entity;
 
 import com.jagex.game.client.RebuildRequest;
 import com.jagex.game.client.RebuildType;
-import com.jagex.client;
+import rs2.client.Client;
 import com.jagex.game.config.loctype.LocTypeList;
-import com.jagex.game.world.World;
+import com.jagex.game.scene.World;
 import deob.ObfuscatedName;
 
 import java.util.LinkedList;
@@ -89,6 +89,6 @@ public class AsyncRebuild implements Runnable {
 		for (boolean var2 = this.field5004.method7723(); !var2; var2 = this.field5004.method7723()) {
 		}
 		this.field5004.method7729();
-		client.world.method7729();
+		Client.world.method7729();
 	}
 }

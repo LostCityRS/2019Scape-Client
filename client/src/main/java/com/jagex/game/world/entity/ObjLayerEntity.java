@@ -2,6 +2,7 @@ package com.jagex.game.world.entity;
 
 import com.jagex.graphics.Light;
 import com.jagex.graphics.Renderer;
+import com.jagex.graphics.scenegraph.GraphEntity;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 

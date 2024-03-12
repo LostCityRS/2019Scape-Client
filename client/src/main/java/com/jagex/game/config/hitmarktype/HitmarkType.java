@@ -1,7 +1,7 @@
 package com.jagex.game.config.hitmarktype;
 
 import com.jagex.core.io.Packet;
-import com.jagex.core.util.StringUtils;
+import com.jagex.core.utils.StringUtils;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.ConfigTypeList;
 import com.jagex.game.config.vartype.VarIntDomain;

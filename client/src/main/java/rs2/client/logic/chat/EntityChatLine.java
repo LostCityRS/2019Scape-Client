@@ -1,8 +1,7 @@
 package rs2.client.logic.chat;
 
-import com.jagex.game.chat.ChatCrownType;
-import com.jagex.game.chat.ChatHistory;
-import com.jagex.core.util.MonotonicTime;
+import com.jagex.game.shared.framework.chat.ChatCrownType;
+import com.jagex.core.utils.MonotonicTime;
 import com.jagex.core.datastruct.SecondaryNode;
 import deob.ObfuscatedName;
 

@@ -1,7 +1,7 @@
 package com.jagex.game.cutscene;
 
-import com.jagex.game.script.ScriptRunner;
-import com.jagex.client;
+import rs2.client.clientscript.ScriptRunner;
+import rs2.client.Client;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 
@@ -22,8 +22,8 @@ public class SubtitleCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("aga.n(I)V")
 	public void method2890() {
-		if (client.field10862 != -1) {
-			ScriptRunner.method4654(client.field10862, this.field10276, this.field10277);
+		if (Client.field10862 != -1) {
+			ScriptRunner.method4654(Client.field10862, this.field10276, this.field10277);
 		}
 	}
 }

@@ -1,7 +1,8 @@
 package com.jagex.game.world.entity;
 
 import com.jagex.game.client.HardShadow;
-import com.jagex.client;
+import com.jagex.graphics.scenegraph.GraphEntity;
+import rs2.client.Client;
 import com.jagex.core.datastruct.Pair;
 import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
@@ -75,7 +76,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 			if (this.field11184 || arg3.field7525) {
 				this.field11192 = this.field11192.method1773((byte) 0, var14, false);
 				if (arg3.field7525) {
-					LocTint var16 = client.world.method7722();
+					LocTint var16 = Client.world.method7722();
 					this.field11192.method1745(var16.field5015, var16.field5013, var16.field5014, var16.field5012);
 				}
 			}

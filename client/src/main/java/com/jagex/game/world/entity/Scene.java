@@ -3,6 +3,7 @@ package com.jagex.game.world.entity;
 import com.jagex.game.client.HardShadow;
 import com.jagex.graphics.*;
 import com.jagex.graphics.particles.ParticleSystemRenderer;
+import com.jagex.graphics.scenegraph.GraphEntity;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;

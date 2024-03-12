@@ -1,6 +1,7 @@
 package com.jagex.game.world.entity;
 
 import com.jagex.game.client.ScreenBoundingBox;
+import com.jagex.graphics.scenegraph.GraphEntity;
 import deob.ObfuscatedName;
 import deob.Statics;
 

@@ -1,14 +1,14 @@
 package com.jagex.audio;
 
-import com.jagex.*;
 import com.jagex.core.datastruct.CacheRemovalListener;
 import com.jagex.core.datastruct.WeightedCache;
 import com.jagex.game.client.ClientMessage;
 import com.jagex.game.config.seqtype.SeqType;
-import com.jagex.game.world.entity.GraphEntity;
-import com.jagex.game.world.entity.PathingEntity;
-import com.jagex.game.world.entity.ProjectileAnimation;
-import com.jagex.game.world.entity.SpotAnimation;
+import com.jagex.graphics.scenegraph.GraphEntity;
+import rs2.client.scene.entities.PathingEntity;
+import rs2.client.Client;
+import rs2.client.scene.entities.ProjectileAnimation;
+import rs2.client.scene.entities.SpotAnimation;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;
@@ -443,10 +443,10 @@ public class AudioApi {
 			}
 		}
 		this.field1867.clear();
-		if (this.field1869 != null && this.field1869.method7385() == SoundVolume.field4949 && !this.field1870 && client.field10849.field794 != null && client.isStateGame(client.state)) {
-			ClientMessage var7 = Statics.method1604(ClientProt.SOUND_SONGPRELOADED, client.field10849.field794);
+		if (this.field1869 != null && this.field1869.method7385() == SoundVolume.field4949 && !this.field1870 && Client.field10849.field794 != null && Client.isStateGame(Client.state)) {
+			ClientMessage var7 = Statics.method1604(ClientProt.SOUND_SONGPRELOADED, Client.field10849.field794);
 			var7.field11432.p4(this.field1869.method7386().method9680());
-			client.field10849.method934(var7);
+			Client.field10849.method934(var7);
 			this.field1870 = true;
 		}
 		Iterator var8 = this.field1848.iterator();
@@ -976,10 +976,10 @@ public class AudioApi {
 
 	@ObfuscatedName("fb.ac(II)V")
 	public void method3144(int arg0) {
-		if (client.field10849.field794 != null && client.isStateGame(client.state)) {
-			ClientMessage var2 = Statics.method1604(ClientProt.SOUND_SONGEND, client.field10849.field794);
+		if (Client.field10849.field794 != null && Client.isStateGame(Client.state)) {
+			ClientMessage var2 = Statics.method1604(ClientProt.SOUND_SONGEND, Client.field10849.field794);
 			var2.field11432.p4(arg0);
-			client.field10849.method934(var2);
+			Client.field10849.method934(var2);
 		}
 	}
 
@@ -1052,10 +1052,10 @@ public class AudioApi {
 		if (this.field1857) {
 			this.field1868.method7381();
 		}
-		if (client.field10849.field794 != null && client.isStateGame(client.state)) {
-			ClientMessage var18 = Statics.method1604(ClientProt.SOUND_SONGPRELOADED, client.field10849.field794);
+		if (Client.field10849.field794 != null && Client.isStateGame(Client.state)) {
+			ClientMessage var18 = Statics.method1604(ClientProt.SOUND_SONGPRELOADED, Client.field10849.field794);
 			var18.field11432.p4(this.field1875);
-			client.field10849.method934(var18);
+			Client.field10849.method934(var18);
 		}
 	}
 
@@ -1158,7 +1158,7 @@ public class AudioApi {
 				} else if (arg2 instanceof ProjectileAnimation) {
 					var11 = ((ProjectileAnimation) arg2).method19724();
 				}
-				if (var11 != 0 && var11 != Statics.field4490.method16578() && client.field10787 != var11) {
+				if (var11 != 0 && var11 != Statics.field4490.method16578() && Client.field10787 != var11) {
 					var10 = arg0.field1783 * var10 / 100;
 					if (var10 < 0) {
 						var10 = 0;

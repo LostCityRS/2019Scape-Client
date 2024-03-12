@@ -2,7 +2,7 @@ package com.jagex.game.client;
 
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
-import com.jagex.core.util.VarValue;
+import com.jagex.core.utils.VarValue;
 import com.jagex.game.config.vartype.VarContainerSparse;
 import com.jagex.game.config.vartype.VarTypeList;
 import com.jagex.game.config.vartype.constants.BaseVarType;

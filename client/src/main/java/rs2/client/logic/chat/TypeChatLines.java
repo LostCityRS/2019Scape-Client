@@ -1,6 +1,6 @@
 package rs2.client.logic.chat;
 
-import com.jagex.game.chat.ChatCrownType;
+import com.jagex.game.shared.framework.chat.ChatCrownType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ij")

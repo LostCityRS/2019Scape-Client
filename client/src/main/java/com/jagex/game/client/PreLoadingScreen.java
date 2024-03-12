@@ -1,7 +1,7 @@
 package com.jagex.game.client;
 
-import com.jagex.client;
-import com.jagex.core.util.StringUtils;
+import rs2.client.Client;
+import com.jagex.core.utils.StringUtils;
 import com.jagex.game.loading.LoadingScreen;
 import deob.ObfuscatedName;
 import deob.Statics;
@@ -56,7 +56,7 @@ public class PreLoadingScreen implements LoadingScreen {
 		if (!this.field2895 && !this.field2891) {
 			this.field2891 = true;
 			try {
-				String[] var2 = StringUtils.method17361(client.field11073, '|');
+				String[] var2 = StringUtils.method17361(Client.field11073, '|');
 				if (var2.length < 3) {
 					this.field2895 = true;
 				} else {
@@ -158,7 +158,7 @@ public class PreLoadingScreen implements LoadingScreen {
 
 	@ObfuscatedName("jm.f(I)V")
 	public void method4890() {
-		GameShell.method8913(Statics.field593.method4851(), Statics.field593.method4852(), client.field10824[client.field10773], client.field10825[client.field10773], client.field10826[client.field10773]);
+		GameShell.method8913(Statics.field593.method4851(), Statics.field593.method4852(), Client.field10824[Client.field10773], Client.field10825[Client.field10773], Client.field10826[Client.field10773]);
 	}
 
 	@ObfuscatedName("jm.w(B)V")

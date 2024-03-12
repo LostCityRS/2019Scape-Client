@@ -1,6 +1,6 @@
 package com.jagex.game.config.flotype;
 
-import com.jagex.core.util.ColourUtils;
+import com.jagex.core.utils.ColourUtils;
 import com.jagex.game.client.ConfigRelated;
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.ConfigType;

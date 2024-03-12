@@ -1,6 +1,6 @@
 package com.jagex.graphics.legacygl;
 
-import com.jagex.core.util.ByteArrayCopier;
+import com.jagex.core.utils.ByteArrayCopier;
 import com.jagex.game.client.DataType;
 import com.jagex.game.client.NoiseGenerator3D_Sub1_Sub1;
 import com.jagex.game.client.NoiseGenerator3D_Sub2_Sub1;

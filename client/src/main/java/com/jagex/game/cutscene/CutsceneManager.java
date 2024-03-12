@@ -1,6 +1,5 @@
 package com.jagex.game.cutscene;
 
-import com.jagex.*;
 import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.datastruct.IterableQueue;
 import com.jagex.core.io.Packet;
@@ -9,6 +8,7 @@ import com.jagex.game.script.ClientTriggerType;
 import com.jagex.game.config.vartype.VarIntDomain;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
 import rs2.shared.prot.ClientProt;
 
 @ObfuscatedName("eq")
@@ -154,31 +154,31 @@ public class CutsceneManager {
 		if (!field1711) {
 			return;
 		}
-		client.field10900 = Statics.field10538;
-		client.field10943 = Statics.field1719;
-		client.field11070 = Statics.field11700;
-		client.field11071 = Statics.field1720;
+		Client.field10900 = Statics.field10538;
+		Client.field10943 = Statics.field1719;
+		Client.field11070 = Statics.field11700;
+		Client.field11071 = Statics.field1720;
 		field1711 = false;
 	}
 
 	@ObfuscatedName("cs.k(I)V")
 	public static void method1576() {
-		Statics.field10538 = client.field10900;
-		Statics.field1719 = client.field10943;
-		Statics.field11700 = client.field11070;
-		Statics.field1720 = client.field11071;
+		Statics.field10538 = Client.field10900;
+		Statics.field1719 = Client.field10943;
+		Statics.field11700 = Client.field11070;
+		Statics.field1720 = Client.field11071;
 		field1711 = true;
 		field1717 = Statics.field1798.method3170();
 		if (field1710 != 0 && field1716 != 0) {
-			client.field11070 = 334;
-			client.field11071 = 334;
-			client.field10943 = client.field10900 = (short) (field1710 * 512 / field1716);
+			Client.field11070 = 334;
+			Client.field11071 = 334;
+			Client.field10943 = Client.field10900 = (short) (field1710 * 512 / field1716);
 		}
 	}
 
 	@ObfuscatedName("qb.f(ZI)V")
 	public static void method7372(boolean arg0) {
-		if (client.field10863 == 4 || client.field10863 == 3) {
+		if (Client.field10863 == 4 || Client.field10863 == 3) {
 			return;
 		}
 		if (!arg0) {
@@ -193,15 +193,15 @@ public class CutsceneManager {
 				Statics.field1798.method3235(field1717, 255);
 			}
 		}
-		client.field10863 = 4;
+		Client.field10863 = 4;
 		Statics.field8729 = null;
-		client.field10877 = false;
+		Client.field10877 = false;
 		if (field1722 > 0) {
 			Statics.method830(ClientTriggerType.field7266, field1722, -1);
 		}
 		method3551();
-		ClientMessage var4 = Statics.method1604(ClientProt.CUTSCENE_FINISHED, client.field10849.field794);
+		ClientMessage var4 = Statics.method1604(ClientProt.CUTSCENE_FINISHED, Client.field10849.field794);
 		var4.field11432.p1(arg0 ? 1 : 0);
-		client.field10849.method934(var4);
+		Client.field10849.method934(var4);
 	}
 }

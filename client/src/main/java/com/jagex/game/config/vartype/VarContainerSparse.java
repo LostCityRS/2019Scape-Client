@@ -1,7 +1,7 @@
 package com.jagex.game.config.vartype;
 
 import com.jagex.game.client.DefaultVarValueProvider;
-import com.jagex.core.util.VarValue;
+import com.jagex.core.utils.VarValue;
 import deob.ObfuscatedName;
 
 import java.util.Collections;

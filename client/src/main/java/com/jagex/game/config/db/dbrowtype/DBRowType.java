@@ -1,7 +1,7 @@
 package com.jagex.game.config.db.dbrowtype;
 
 import com.jagex.game.client.ConfigRelated;
-import com.jagex.game.config.db.DbTableUtil;
+import com.jagex.game.config.db.DBUtils;
 import com.jagex.core.io.Packet;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.game.config.ConfigType;
@@ -50,7 +50,7 @@ public class DBRowType implements ConfigType, ConfigRelated {
 				for (int var7 = 0; var7 < var5; var7++) {
 					var6[var7] = (ScriptVarType) SerializableEnums.decode(ScriptVarType.method7293(), arg0.gSmart1or2());
 				}
-				this.field8734[var4] = DbTableUtil.method18719(arg0, var6);
+				this.field8734[var4] = DBUtils.method18719(arg0, var6);
 				this.field8733[var4] = var6;
 			}
 		} else if (arg1 == 4) {

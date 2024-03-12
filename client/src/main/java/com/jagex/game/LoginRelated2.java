@@ -3,7 +3,7 @@ package com.jagex.game;
 import com.jagex.game.client.MainLoadingScreen;
 import com.jagex.game.loading.LoadingScreenElement;
 import com.jagex.graphics.Sprite;
-import com.jagex.client;
+import rs2.client.Client;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 import deob.Statics;
@@ -35,8 +35,8 @@ public class LoginRelated2 implements LoadingScreenElement {
 		if (!arg0) {
 			return;
 		}
-		int var2 = Statics.canvasWid > client.field10941 ? Statics.canvasWid : client.field10941;
-		int var3 = Statics.canvasHei > client.field10942 ? Statics.canvasHei : client.field10942;
+		int var2 = Statics.canvasWid > Client.field10941 ? Statics.canvasWid : Client.field10941;
+		int var3 = Statics.canvasHei > Client.field10942 ? Statics.canvasHei : Client.field10942;
 		int var4 = this.field3046.method1434();
 		int var5 = this.field3046.method1436();
 		int var6 = 0;

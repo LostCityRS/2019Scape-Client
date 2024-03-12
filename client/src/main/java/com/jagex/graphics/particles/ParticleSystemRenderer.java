@@ -2,7 +2,7 @@ package com.jagex.graphics.particles;
 
 import com.jagex.core.datastruct.IntWrapper;
 import com.jagex.core.datastruct.IterableMap;
-import com.jagex.core.util.MonotonicTime;
+import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.client.MovingParticle;
 import com.jagex.game.config.ParticleEffectorType;
 import com.jagex.game.config.ParticleEffectorTypeList;

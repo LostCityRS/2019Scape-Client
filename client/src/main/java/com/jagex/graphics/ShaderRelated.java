@@ -1,7 +1,7 @@
 package com.jagex.graphics;
 
 import com.jagex.core.datastruct.HashMapKey;
-import com.jagex.core.util.StringUtils;
+import com.jagex.core.utils.StringUtils;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("he")

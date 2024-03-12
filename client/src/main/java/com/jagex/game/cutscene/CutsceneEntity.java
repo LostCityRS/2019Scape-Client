@@ -1,9 +1,9 @@
 package com.jagex.game.cutscene;
 
-import com.jagex.game.world.entity.NpcEntity;
-import com.jagex.game.world.entity.PathingEntity;
+import rs2.client.scene.entities.NpcEntity;
+import rs2.client.scene.entities.PathingEntity;
 import com.jagex.game.world.entity.PlayerEntity;
-import com.jagex.client;
+import rs2.client.Client;
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.bastype.BASType;
 import com.jagex.game.config.npctype.NPCType;
@@ -53,18 +53,18 @@ public final class CutsceneEntity {
 		if (!this.field1744) {
 			this.field1744 = true;
 			if (this.field1743 >= 0) {
-				this.field1745 = new NpcEntity(client.world.method7743(), 25);
+				this.field1745 = new NpcEntity(Client.world.method7743(), 25);
 				this.field1745.field10406 = this.field1741;
-				this.field1745.field10440 = client.field10903;
+				this.field1745.field10440 = Client.field10903;
 				this.field1745.method19156((NPCType) Statics.field7961.get(this.field1743));
 				this.field1745.method16502(this.field1745.field12083.field2699);
 				this.field1745.field10444 = this.field1745.field12083.field2731 << 3;
 				this.field1745.field10404 = ++CutsceneManager.field1715 - 1;
 			} else {
-				this.field1742 = new PlayerEntity(client.world.method7743(), 25);
+				this.field1742 = new PlayerEntity(Client.world.method7743(), 25);
 				this.field1742.method19129(Statics.field8729);
 				this.field1742.field10406 = this.field1741;
-				this.field1742.field10440 = client.field10903;
+				this.field1742.field10440 = Client.field10903;
 				this.field1742.field10404 = ++CutsceneManager.field1715 - 1;
 			}
 		}

@@ -1,8 +1,7 @@
 package rs2.client.login;
 
-import com.jagex.*;
-import com.jagex.core.util.PingRequest;
-import com.jagex.core.util.StringComparator;
+import com.jagex.core.utils.PingRequest;
+import com.jagex.core.utils.StringComparator;
 import com.jagex.game.client.ServerAddress;
 import com.jagex.game.client.ServerPorts;
 import com.jagex.game.client.ServerType;
@@ -10,6 +9,7 @@ import com.jagex.game.shared.framework.gwc.GWC;
 import com.jagex.game.shared.framework.gwc.GWCWorld;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
 
 @ObfuscatedName("abz")
 public class WorldSwitcher {
@@ -49,7 +49,7 @@ public class WorldSwitcher {
 				GWCWorld var0 = GWC.method4944(field8757);
 				if (var0 != null && var0.field11707 == -1) {
 					if (field8750 == null) {
-						field8750 = client.field10994.method10589(var0.field11703);
+						field8750 = Client.field10994.method10589(var0.field11703);
 					}
 					int var1 = field8750.field8180;
 					if (var1 == -1) {

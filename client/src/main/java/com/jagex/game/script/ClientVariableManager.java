@@ -1,11 +1,11 @@
 package com.jagex.game.script;
 
 import com.jagex.game.client.FileOnDisk;
-import com.jagex.game.client.ServerConnection;
-import com.jagex.client;
+import com.jagex.game.network.ServerConnection;
+import rs2.client.Client;
 import com.jagex.core.io.Packet;
-import com.jagex.core.util.MonotonicTime;
-import com.jagex.core.util.VarValue;
+import com.jagex.core.utils.MonotonicTime;
+import com.jagex.core.utils.VarValue;
 import com.jagex.game.client.ClientMessage;
 import com.jagex.game.config.vartype.SparseVarDomain;
 import com.jagex.game.config.vartype.VarType;
@@ -219,7 +219,7 @@ public final class ClientVariableManager extends SparseVarDomain {
 		if (this.field10257 == null || this.field10258 >= this.field10257.length) {
 			return;
 		}
-		ServerConnection var4 = client.method640();
+		ServerConnection var4 = Client.method640();
 		if (var4.field791 > 1200) {
 			return;
 		}

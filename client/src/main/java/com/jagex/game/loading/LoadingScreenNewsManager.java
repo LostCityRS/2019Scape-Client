@@ -2,7 +2,7 @@ package com.jagex.game.loading;
 
 import com.jagex.game.client.ServerPorts;
 import com.jagex.game.client.ServerType;
-import com.jagex.client;
+import rs2.client.Client;
 import deob.ObfuscatedName;
 import deob.Statics;
 
@@ -45,7 +45,7 @@ public class LoadingScreenNewsManager implements Runnable {
 	public void run() {
 		try {
 			int var1 = ServerPorts.method14998(Statics.field1811, ServerType.field8347, Statics.world.node);
-			BufferedReader var2 = new BufferedReader(new InputStreamReader(new DataInputStream((new URL("http://" + Statics.world.host + ":" + var1 + "/news.ws?game=" + client.field10768.field8339)).openStream())));
+			BufferedReader var2 = new BufferedReader(new InputStreamReader(new DataInputStream((new URL("http://" + Statics.world.host + ":" + var1 + "/news.ws?game=" + Client.field10768.field8339)).openStream())));
 			String var3 = var2.readLine();
 			ArrayList var4 = new ArrayList();
 			while (var3 != null) {

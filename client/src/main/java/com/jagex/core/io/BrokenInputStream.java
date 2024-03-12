@@ -1,6 +1,6 @@
 package com.jagex.core.io;
 
-import com.jagex.core.util.PreciseSleep;
+import com.jagex.core.utils.PreciseSleep;
 import deob.ObfuscatedName;
 
 import java.io.InputStream;

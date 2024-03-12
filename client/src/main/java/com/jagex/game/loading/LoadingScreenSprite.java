@@ -2,7 +2,7 @@ package com.jagex.game.loading;
 
 import com.jagex.game.client.MainLoadingScreen;
 import com.jagex.graphics.Sprite;
-import com.jagex.client;
+import rs2.client.Client;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 
@@ -31,8 +31,8 @@ public class LoadingScreenSprite implements LoadingScreenElement {
 	@ObfuscatedName("jk.n(ZI)V")
 	public void method5105(boolean arg0) {
 		if (arg0) {
-			int var2 = this.field3019.field3215.method5382(this.field3021.method1434(), client.field10941) + this.field3019.field3216;
-			int var3 = this.field3019.field3214.method5375(this.field3021.method1436(), client.field10942) + this.field3019.field3217;
+			int var2 = this.field3019.field3215.method5382(this.field3021.method1434(), Client.field10941) + this.field3019.field3216;
+			int var3 = this.field3019.field3214.method5375(this.field3021.method1436(), Client.field10942) + this.field3019.field3217;
 			this.field3021.method1439(var2, var3);
 		}
 	}

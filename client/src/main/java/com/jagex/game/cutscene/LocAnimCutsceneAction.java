@@ -1,6 +1,6 @@
 package com.jagex.game.cutscene;
 
-import com.jagex.client;
+import rs2.client.Client;
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.seqtype.SeqType;
 import deob.ObfuscatedName;
@@ -24,7 +24,7 @@ public class LocAnimCutsceneAction extends CutsceneAction {
 	@ObfuscatedName("agv.n(I)V")
 	public void method2890() {
 		CutsceneLocation var1 = Statics.field7317[this.field10275];
-		client.method8895(var1.field1740, var1.field1737, var1.field1739, var1.field1736.field7567, var1.field1736.field7562, var1.field1738, null, this.field10274, 0);
+		Client.method8895(var1.field1740, var1.field1737, var1.field1739, var1.field1736.field7567, var1.field1736.field7562, var1.field1738, null, this.field10274, 0);
 	}
 
 	@ObfuscatedName("agv.k(I)Z")

@@ -1,7 +1,7 @@
 package com.jagex.game.world;
 
-import com.jagex.game.client.Component;
-import com.jagex.core.util.ColourUtils;
+import com.jagex.game.config.iftype.Component;
+import com.jagex.core.utils.ColourUtils;
 import com.jagex.graphics.Renderer;
 import deob.ObfuscatedName;
 import deob.Statics;

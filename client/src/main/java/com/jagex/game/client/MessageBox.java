@@ -1,6 +1,6 @@
 package com.jagex.game.client;
 
-import com.jagex.client;
+import rs2.client.Client;
 import com.jagex.game.loading.LoadingScreenAlignmentX;
 import com.jagex.game.loading.LoadingScreenAlignmentY;
 import com.jagex.graphics.*;
@@ -60,7 +60,7 @@ public class MessageBox {
 		}
 		if (Statics.field8851 == null) {
 			if (Statics.field7672.method6889(Statics.field713)) {
-				Statics.field8851 = Statics.field7538.method6163(client.field10833, Statics.field713);
+				Statics.field8851 = Statics.field7538.method6163(Client.field10833, Statics.field713);
 			} else {
 				var0 = false;
 			}
@@ -96,8 +96,8 @@ public class MessageBox {
 			if (var13 < Statics.field592) {
 				var13 = Statics.field592;
 			}
-			int var14 = Statics.field709.method5382(var12, client.field10941) + Statics.field711;
-			int var15 = Statics.field715.method5375(var13, client.field10942) + Statics.field621;
+			int var14 = Statics.field709.method5382(var12, Client.field10941) + Statics.field711;
+			int var15 = Statics.field715.method5375(var13, Client.field10942) + Statics.field621;
 			arg2.method2200(Statics.field4963, false).method1449(var14 + Statics.field714.method2639(), var15 + Statics.field714.method2631(), var12 - Statics.field714.method2639() * 2, var13 - Statics.field714.method2631() * 2, 1, -1, 0);
 			arg2.method2200(Statics.field714, true).method1439(var14, var15);
 			Statics.field714.method2601();
@@ -116,7 +116,7 @@ public class MessageBox {
 			arg2.method2200(Statics.field710, true).method1448(var14 + Statics.field714.method2639(), var13 + var15 - var10, var12 - Statics.field714.method2639() * 2, var10);
 			Statics.field710.method2588();
 			var7.method2720(arg0, var11 + var14, var11 + var15, var12 - var11 * 2, var13 - var11 * 2, Statics.field627 | 0xFF000000, -1, 1, 1, 0, null, null, null, 0, 0);
-			client.method3066(var14, var15, var12, var13);
+			Client.method3066(var14, var15, var12, var13);
 		} else {
 			int var16 = arg4.method14551(arg0, 250, null);
 			int var17 = arg4.method14538(arg0, 250, null) * 13;
@@ -126,7 +126,7 @@ public class MessageBox {
 			arg2.method2354(var19 - var18, var20 - var18, var16 + var18 + var18, var17 + var18 + var18, -16777216, 0);
 			arg2.method2179(var19 - var18, var20 - var18, var16 + var18 + var18, var17 + var18 + var18, -1, 0);
 			arg3.method2720(arg0, var19, var20, var16, var17, -1, -1, 1, 1, 0, null, null, null, 0, 0);
-			client.method3066(var19 - var18, var20 - var18, var16 + var18 + var18, var17 + var18 + var18);
+			Client.method3066(var19 - var18, var20 - var18, var16 + var18 + var18, var17 + var18 + var18);
 		}
 		if (!arg1) {
 			return;

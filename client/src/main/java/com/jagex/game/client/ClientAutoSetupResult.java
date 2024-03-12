@@ -1,6 +1,6 @@
 package com.jagex.game.client;
 
-import com.jagex.client;
+import rs2.client.Client;
 import com.jagex.core.io.SendablePacket;
 import deob.ObfuscatedName;
 import deob.Statics;
@@ -11,7 +11,7 @@ public class ClientAutoSetupResult extends AutoSetupResult implements SendablePa
 
 	@ObfuscatedName("alq.e(I)V")
 	public void method9201() {
-		ClientMessage var1 = Statics.method1604(ClientProt.AUTO_SETUP_RESULT, client.field10849.field794);
+		ClientMessage var1 = Statics.method1604(ClientProt.AUTO_SETUP_RESULT, Client.field10849.field794);
 		var1.field11432.p2(this.field8904);
 		var1.field11432.p1_alt1(this.field8905);
 		var1.field11432.p3_alt3(this.field8900);
@@ -20,7 +20,7 @@ public class ClientAutoSetupResult extends AutoSetupResult implements SendablePa
 		var1.field11432.p1_alt3(this.field8896);
 		var1.field11432.p3(this.field8902);
 		var1.field11432.p3_alt1(this.field8898);
-		client.field10849.method934(var1);
+		Client.field10849.method934(var1);
 	}
 
 	@ObfuscatedName("alq.z(II)V")

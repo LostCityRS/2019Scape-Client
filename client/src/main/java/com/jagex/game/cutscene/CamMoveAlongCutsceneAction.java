@@ -1,6 +1,6 @@
 package com.jagex.game.cutscene;
 
-import com.jagex.client;
+import rs2.client.Client;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 import deob.Statics;
@@ -40,15 +40,15 @@ public class CamMoveAlongCutsceneAction extends CutsceneAction {
 	public void method2890() {
 		Statics.field1714[this.field10292].method2840(0);
 		Statics.field1714[this.field10295].method2840(1);
-		client.field10904 = 0;
-		client.field10909 = this.field10293 * 2;
-		client.field10976 = 0;
-		client.field10843 = this.field10291;
-		client.field10913 = this.field10296;
-		client.field10908 = 1;
-		client.field10932 = this.field10294 * 4;
+		Client.field10904 = 0;
+		Client.field10909 = this.field10293 * 2;
+		Client.field10976 = 0;
+		Client.field10843 = this.field10291;
+		Client.field10913 = this.field10296;
+		Client.field10908 = 1;
+		Client.field10932 = this.field10294 * 4;
 		Statics.field3416 = 6;
-		client.method9611();
-		client.field10877 = true;
+		Client.method9611();
+		Client.field10877 = true;
 	}
 }

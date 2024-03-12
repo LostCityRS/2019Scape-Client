@@ -3,11 +3,11 @@ package com.jagex.graphics;
 import com.jagex.game.shared.movement.CoordGrid;
 import com.jagex.game.client.MapElementContainer;
 import com.jagex.game.client.MapLogicRelated;
-import com.jagex.client;
+import rs2.client.Client;
 import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.datastruct.IterableQueue;
 import com.jagex.core.datastruct.IterableQueueIterator;
-import com.jagex.core.util.MonotonicTime;
+import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.client.GameShell;
 import com.jagex.game.client.LocalisedText;
 import com.jagex.game.script.ClientTriggerType;
@@ -147,7 +147,7 @@ public class ClientWorldMap extends WorldMap {
 			int var5 = -1;
 			int var6 = -1;
 			Vector3 var7 = Statics.field4490.method10536().field4298;
-			CoordGrid var8 = client.world.method7727();
+			CoordGrid var8 = Client.world.method7727();
 			if (Statics.field6811.method19471(Statics.field4490.field11717, ((int) var7.field4308 >> 9) + var8.field7426, ((int) var7.field4313 >> 9) + var8.field7427, var4)) {
 				var5 = var4[1] - Statics.field6786;
 				var6 = var4[2] - Statics.field6808;
@@ -233,7 +233,7 @@ public class ClientWorldMap extends WorldMap {
 				if (!Statics.field6795.method6886(Statics.field6811.field12351)) {
 					return;
 				}
-				Statics.field6805 = WorldMapRelated.method6046(Statics.field6795, Statics.field6811.field12351, client.field10948);
+				Statics.field6805 = WorldMapRelated.method6046(Statics.field6795, Statics.field6811.field12351, Client.field10948);
 			} else {
 				Statics.field6805 = new WorldMapRelated(0);
 			}
@@ -251,8 +251,8 @@ public class ClientWorldMap extends WorldMap {
 				}
 				for (int var12 = 0; var12 < 5; var12++) {
 					if (field11659[var11][var12] == null || field11660[var11][var12] == null) {
-						field11659[var11][var12] = (Font) Statics.field7538.method6188(client.field10833, Statics.field6792.field7697[var11][var12], true, true);
-						field11660[var11][var12] = Statics.field7538.method6163(client.field10833, Statics.field6792.field7697[var11][var12]);
+						field11659[var11][var12] = (Font) Statics.field7538.method6188(Client.field10833, Statics.field6792.field7697[var11][var12], true, true);
+						field11660[var11][var12] = Statics.field7538.method6163(Client.field10833, Statics.field6792.field7697[var11][var12]);
 						if (field11659[var11][var12] == null || field11660[var11][var12] == null) {
 							return;
 						}
@@ -357,9 +357,9 @@ public class ClientWorldMap extends WorldMap {
 			int var6 = arg3 / 2 + arg1;
 			int var7 = arg4 / 2 + arg2 - 18 - var5;
 			arg0.method2354(arg1, arg2, arg3, arg4, -16777216, 0);
-			arg0.method2179(var6 - 152, var7, 304, 34, client.field10825[client.field10773].getRGB(), 0);
-			arg0.method2354(var6 - 150, var7 + 2, field11651 * 3, 30, client.field10824[client.field10773].getRGB(), 0);
-			Statics.field10355.method2683(LocalisedText.LOADINGDOTDOTDOT.method15021(Statics.field1680), var6, var5 + var7, client.field10826[client.field10773].getRGB(), -1);
+			arg0.method2179(var6 - 152, var7, 304, 34, Client.field10825[Client.field10773].getRGB(), 0);
+			arg0.method2354(var6 - 150, var7 + 2, field11651 * 3, 30, Client.field10824[Client.field10773].getRGB(), 0);
+			Statics.field10355.method2683(LocalisedText.LOADINGDOTDOTDOT.method15021(Statics.field1680), var6, var5 + var7, Client.field10826[Client.field10773].getRGB(), -1);
 			return;
 		}
 		int var8 = Statics.field11443 - (int) ((float) arg3 / Statics.field6803);
@@ -372,10 +372,10 @@ public class ClientWorldMap extends WorldMap {
 		Statics.field4603 = (int) ((float) (arg4 * 2) / Statics.field6803);
 		field6833 = field6831;
 		method8620(Statics.field6786 + var8, Statics.field6808 + var9, Statics.field6786 + var10, Statics.field6808 + var11, arg1, arg2, arg1 + arg3, arg2 + arg4 + 1);
-		method8523(arg0, !field11655, !field11652, client.field10948, false);
+		method8523(arg0, !field11655, !field11652, Client.field10948, false);
 		IterableQueue var12 = method8602(arg0);
 		method928(arg0, var12, 0, 0);
-		if (client.field10794) {
+		if (Client.field10794) {
 			int var13 = arg1 + arg3 - 5;
 			int var14 = arg2 + arg4 - 8;
 			Statics.field9184.method2682("Fps: " + GameShell.fps + " (" + GameShell.fpsAverage + " ms)", var13, var14, 16776960, -1);
@@ -411,7 +411,7 @@ public class ClientWorldMap extends WorldMap {
 
 	@ObfuscatedName("gt.de(Ldh;Laks;Lhs;IIB)Z")
 	public static boolean method3589(Renderer arg0, WorldMapElement arg1, MapElementType arg2, int arg3, int arg4) {
-		if (field6819 && !client.field10948 && !method8534(arg1.field11448, arg1.field11452)) {
+		if (field6819 && !Client.field10948 && !method8534(arg1.field11448, arg1.field11452)) {
 			return false;
 		}
 		if (arg2.field2392 != null) {

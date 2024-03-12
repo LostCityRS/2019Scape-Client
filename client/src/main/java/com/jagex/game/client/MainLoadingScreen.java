@@ -2,8 +2,7 @@ package com.jagex.game.client;
 
 import com.jagex.core.datastruct.WeightedCache;
 import com.jagex.core.io.GZip;
-import com.jagex.core.util.MonotonicTime;
-import com.jagex.game.client.GameShell;
+import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.loading.LoadingScreen;
 import com.jagex.game.loading.LoadingScreenElement;
 import com.jagex.game.loading.LoadingScreenElementFactory;

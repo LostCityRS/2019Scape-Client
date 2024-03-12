@@ -1,6 +1,7 @@
 package com.jagex.game.client;
 
-import com.jagex.client;
+import rs2.client.Client;
+import com.jagex.game.network.ServerConnection;
 import deob.ObfuscatedName;
 import deob.Statics;
 import rs2.shared.prot.ClientProt;
@@ -17,10 +18,10 @@ public class MapLogicRelated {
 	@ObfuscatedName("pg.e(ZB)V")
 	public static void method6969(boolean arg0) {
 		Statics.field1798.method3149();
-		if (!client.isStateGame(client.state)) {
+		if (!Client.isStateGame(Client.state)) {
 			return;
 		}
-		ServerConnection[] var1 = client.field10850;
+		ServerConnection[] var1 = Client.field10850;
 		for (int var2 = 0; var2 < var1.length; var2++) {
 			ServerConnection var3 = var1[var2];
 			var3.field793++;

@@ -1,7 +1,8 @@
 package com.jagex.game.world.entity;
 
 import com.jagex.game.client.HardShadow;
-import com.jagex.client;
+import com.jagex.graphics.scenegraph.GraphEntity;
+import rs2.client.Client;
 import com.jagex.core.datastruct.Pair;
 import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
@@ -72,7 +73,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 			if (arg3.field7525) {
 				this.field11150 = this.field11150.method1773((byte) 0, var16, false);
 				if (arg3.field7525) {
-					LocTint var18 = client.world.method7722();
+					LocTint var18 = Client.world.method7722();
 					this.field11150.method1745(var18.field5015, var18.field5013, var18.field5014, var18.field5012);
 				}
 			}

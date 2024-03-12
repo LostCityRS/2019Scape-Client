@@ -1,6 +1,6 @@
 package com.jagex.game.client;
 
-import com.jagex.core.util.MonotonicTime;
+import com.jagex.core.utils.MonotonicTime;
 import deob.ObfuscatedName;
 import deob.Statics;
 

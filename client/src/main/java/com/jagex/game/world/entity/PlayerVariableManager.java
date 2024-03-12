@@ -1,6 +1,6 @@
 package com.jagex.game.world.entity;
 
-import com.jagex.client;
+import rs2.client.Client;
 import com.jagex.core.constants.ModeAccountType;
 import com.jagex.game.config.vartype.VarIntDomain;
 import com.jagex.game.config.vartype.VarPlayerDomain;
@@ -36,7 +36,7 @@ public class PlayerVariableManager implements VarIntDomain, VariableTypeProvider
 
 	@ObfuscatedName("ah.e(IB)I")
 	public int method671(int arg0) {
-		return this.field635[arg0].method10163(client.field10948 ? ModeAccountType.field8343 : ModeAccountType.field8344);
+		return this.field635[arg0].method10163(Client.field10948 ? ModeAccountType.field8343 : ModeAccountType.field8344);
 	}
 
 	@ObfuscatedName("ah.n(II)I")
@@ -46,7 +46,7 @@ public class PlayerVariableManager implements VarIntDomain, VariableTypeProvider
 
 	@ObfuscatedName("ah.m(II)I")
 	public int method674(int arg0) {
-		return this.field635[arg0].method10158(client.field10948 ? ModeAccountType.field8343 : ModeAccountType.field8344);
+		return this.field635[arg0].method10158(Client.field10948 ? ModeAccountType.field8343 : ModeAccountType.field8344);
 	}
 
 	@ObfuscatedName("ah.k(II)I")

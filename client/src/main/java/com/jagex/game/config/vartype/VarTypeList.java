@@ -4,7 +4,7 @@ import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;
 import com.jagex.core.datastruct.Serializable;
 import com.jagex.core.io.Packet;
-import com.jagex.core.util.VarValue;
+import com.jagex.core.utils.VarValue;
 import com.jagex.game.client.DefaultVarValueProvider;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.vartype.constants.BaseVarType;

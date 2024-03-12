@@ -1,7 +1,7 @@
 package com.jagex.game.world.entity;
 
-import com.jagex.game.client.Component;
-import com.jagex.client;
+import com.jagex.game.config.iftype.Component;
+import rs2.client.Client;
 import com.jagex.core.datastruct.IterableQueue;
 import com.jagex.graphics.FontMetrics;
 import com.jagex.graphics.Renderer;
@@ -26,7 +26,7 @@ public class ObjIconFactory {
 		boolean var2 = Statics.field1842.method18900(arg0, arg1.field2334, arg1.field2335, arg1.field2218, arg1.field2219 | 0xFF000000, arg1.field2241, arg1.field2246 ? Statics.field4490.field12061 : null) == null;
 		if (var2) {
 			field631.method14153(new ObjIconRequest(arg1.field2334, arg1.field2335, arg1.field2218, arg1.field2219 | 0xFF000000, arg1.field2241, arg1.field2246));
-			client.method4616(arg1);
+			Client.method4616(arg1);
 		}
 	}
 
@@ -40,7 +40,7 @@ public class ObjIconFactory {
 				Statics.field1842.method18905(arg0, arg0, var1.field11256, var1.field11255, var1.field11258, var1.field11257, false, false, var1.field11254, Statics.field8321, var1.field11259 ? Statics.field4490.field12061 : null, Statics.field11389);
 				var1.method8440();
 			}
-			client.method9734();
+			Client.method9734();
 			return;
 		}
 		if (Statics.field630 == null) {

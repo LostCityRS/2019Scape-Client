@@ -2,7 +2,7 @@ package com.jagex.graphics;
 
 import com.jagex.game.client.DataType;
 import com.jagex.audio.VolumeTexture;
-import com.jagex.core.util.ByteArrayCopier;
+import com.jagex.core.utils.ByteArrayCopier;
 import deob.ObfuscatedName;
 import deob.Statics;
 

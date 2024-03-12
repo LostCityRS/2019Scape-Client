@@ -2,6 +2,7 @@ package com.jagex.game.world.entity;
 
 import com.jagex.graphics.AnimationWrapper;
 import deob.ObfuscatedName;
+import rs2.client.scene.entities.PathingEntity;
 
 @ObfuscatedName("sl")
 public class EntitySpotAnim {

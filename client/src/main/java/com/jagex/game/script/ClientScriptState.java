@@ -1,12 +1,12 @@
 package com.jagex.game.script;
 
-import com.jagex.game.chat.ChatPhrase;
-import com.jagex.game.clanchannel.ClanChannel;
-import com.jagex.game.clanchannel.ClanSettings;
+import com.jagex.game.config.quickchatphrasetype.QuickChatPhrase;
+import rs2.client.logic.clans.ClanChannel;
+import rs2.client.logic.clans.ClanSettings;
 import com.jagex.game.script.activepointers.ActiveComponent;
 import com.jagex.game.world.entity.Location;
 import com.jagex.game.world.entity.ObjStackEntity;
-import com.jagex.game.world.entity.PathingEntity;
+import rs2.client.scene.entities.PathingEntity;
 import deob.ObfuscatedName;
 
 import java.util.HashMap;
@@ -64,7 +64,7 @@ public class ClientScriptState {
 	public boolean field8235;
 
 	@ObfuscatedName("yf.y")
-	public ChatPhrase field8240;
+	public QuickChatPhrase field8240;
 
 	@ObfuscatedName("yf.q")
 	public ClanSettings field8227;

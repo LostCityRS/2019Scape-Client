@@ -1,12 +1,12 @@
 package com.jagex.graphics;
 
-import com.jagex.*;
 import com.jagex.core.datastruct.LinkMap;
 import com.jagex.core.io.Packet;
 import com.jagex.game.shared.movement.CoordGrid;
 import com.jagex.game.world.entity.Scene;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -94,8 +94,8 @@ public class HintTrail {
 	@ObfuscatedName("ta.k(Ltx;B)V")
 	public void method8405(Scene arg0) {
 		this.field6752 = new LinkedList();
-		LinkMap var2 = client.world.method7793();
-		CoordGrid var3 = client.world.method7727();
+		LinkMap var2 = Client.world.method7793();
+		CoordGrid var3 = Client.world.method7727();
 		CoordGrid var4 = new CoordGrid(Statics.field4826, this.field6750[0], this.field6753[0]);
 		for (int var5 = 1; var5 < this.field6751; var5++) {
 			CoordGrid var6 = new CoordGrid(Statics.field4826, this.field6750[var5], this.field6753[var5]);
@@ -119,7 +119,7 @@ public class HintTrail {
 					if (var2.method7105(var8, var9)) {
 						var7++;
 					}
-					this.field6752.add(new HintTrailPoint(arg0, this, Statics.field4826, var7, var10, client.method3660(var10, var11, Statics.field4826), var11));
+					this.field6752.add(new HintTrailPoint(arg0, this, Statics.field4826, var7, var10, Client.method3660(var10, var11, Statics.field4826), var11));
 				}
 			}
 			var4 = var6;

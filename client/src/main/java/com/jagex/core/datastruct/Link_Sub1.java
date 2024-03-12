@@ -1,6 +1,6 @@
 package com.jagex.core.datastruct;
 
-import com.jagex.core.util.MonotonicTime;
+import com.jagex.core.utils.MonotonicTime;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ajd")

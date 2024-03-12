@@ -1,6 +1,6 @@
 package com.jagex.game.config;
 
-import com.jagex.core.util.ArchiveUtil;
+import com.jagex.core.utils.ArchiveUtil;
 import com.jagex.core.io.Packet;
 import com.jagex.core.datastruct.WeightedCache;
 import com.jagex.core.constants.Language;

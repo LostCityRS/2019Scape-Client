@@ -1,12 +1,13 @@
 package com.jagex.core.io;
 
+import com.jagex.encryption.Isaac;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ase")
 public class PacketBit extends Packet {
 
 	@ObfuscatedName("ase.c")
-	public IsaacRandom isaac;
+	public Isaac isaac;
 
 	@ObfuscatedName("ase.r")
 	public static final int[] BITMASK = new int[] { 0, 1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047, 4095, 8191, 16383, 32767, 65535, 131071, 262143, 524287, 1048575, 2097151, 4194303, 8388607, 16777215, 33554431, 67108863, 134217727, 268435455, 536870911, 1073741823, Integer.MAX_VALUE, -1 };
@@ -19,7 +20,7 @@ public class PacketBit extends Packet {
 	}
 
 	@ObfuscatedName("ase.jg(Laav;B)V")
-	public void setIsaac(IsaacRandom arg0) {
+	public void setIsaac(Isaac arg0) {
 		this.isaac = arg0;
 	}
 

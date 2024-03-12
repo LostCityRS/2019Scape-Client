@@ -1,7 +1,7 @@
 package com.jagex.graphics.safe;
 
-import com.jagex.core.util.Algorithms;
-import com.jagex.core.util.ColourUtils;
+import com.jagex.core.utils.Algorithms;
+import com.jagex.core.utils.ColourUtils;
 import com.jagex.game.client.HardShadow;
 import com.jagex.game.client.JavaModelRelated1;
 import com.jagex.game.client.Rasteriser;

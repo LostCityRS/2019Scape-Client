@@ -2,7 +2,7 @@ package com.jagex.game.client;
 
 import com.jagex.core.datastruct.Link;
 import com.jagex.core.datastruct.LinkQueue;
-import com.jagex.game.world.entity.PathingEntity;
+import rs2.client.scene.entities.PathingEntity;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ajq")

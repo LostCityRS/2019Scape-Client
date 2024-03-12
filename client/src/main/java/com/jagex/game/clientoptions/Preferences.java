@@ -1,14 +1,13 @@
 package com.jagex.game.clientoptions;
 
-import com.jagex.*;
 import com.jagex.core.constants.BuildAreaSize;
 import com.jagex.core.io.Packet;
 import com.jagex.game.client.*;
-import com.jagex.game.clientoptions.ClientOptions;
 import com.jagex.graphics.GraphicsPacketQueue;
 import com.jagex.graphics.RendererInfo;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
 
 import java.io.IOException;
 
@@ -31,9 +30,9 @@ public class Preferences {
 	@ObfuscatedName("pd.e(I)Lali;")
 	public static ClientOptions method6822() {
 		FileOnDisk var0 = null;
-		ClientOptions var1 = new ClientOptions(client.field10768, 0);
+		ClientOptions var1 = new ClientOptions(Client.field10768, 0);
 		try {
-			var0 = GameShell.openPrefs("", client.field10768.field8333, false);
+			var0 = GameShell.openPrefs("", Client.field10768.field8333, false);
 			byte[] var2 = new byte[(int) var0.method14821()];
 			int var4;
 			for (int var3 = 0; var3 < var2.length; var3 += var4) {
@@ -42,7 +41,7 @@ public class Preferences {
 					throw new IOException();
 				}
 			}
-			var1 = new ClientOptions(new Packet(var2), client.field10768, 0);
+			var1 = new ClientOptions(new Packet(var2), Client.field10768, 0);
 		} catch (Exception var8) {
 		}
 		try {
@@ -58,7 +57,7 @@ public class Preferences {
 	public static void method16391() {
 		FileOnDisk var0 = null;
 		try {
-			var0 = GameShell.openPrefs("", client.field10768.field8333, true);
+			var0 = GameShell.openPrefs("", Client.field10768.field8333, true);
 			Packet var1 = Statics.field688.method18156();
 			var0.method14808(var1.data, 0, var1.pos);
 		} catch (Exception var5) {
@@ -117,7 +116,7 @@ public class Preferences {
 			try {
 				Statics.field688.method18157(Statics.field688.unknown6, 3);
 				method16391();
-				var7 = client.method15172(3, 1000);
+				var7 = Client.method15172(3, 1000);
 				if (Statics.field688.displayMode2.method18545() == 3) {
 					var0.method18313(4);
 					RendererInfo var9 = Statics.field8198.method2272();
@@ -146,7 +145,7 @@ public class Preferences {
 			try {
 				Statics.field688.method18157(Statics.field688.unknown6, 5);
 				method16391();
-				var8 = client.method15172(5, 1000);
+				var8 = Client.method15172(5, 1000);
 				if (Statics.field688.displayMode2.method18545() == 5) {
 					var0.method18313(8192);
 				}
@@ -158,7 +157,7 @@ public class Preferences {
 			try {
 				Statics.field688.method18157(Statics.field688.unknown6, 4);
 				method16391();
-				var6 = client.method15172(1, 1000);
+				var6 = Client.method15172(1, 1000);
 				if (Statics.field688.displayMode2.method18545() == 1) {
 					var0.method18313(2);
 				}
@@ -212,7 +211,7 @@ public class Preferences {
 			Statics.field688.method18177(Statics.field688.displayMode2, true);
 		} else {
 			Statics.field688.method18157(Statics.field688.displayMode, 0);
-			client.method486(0, false);
+			Client.method486(0, false);
 		}
 		method16391();
 		arg0.method18312(var2);
@@ -239,7 +238,7 @@ public class Preferences {
 			Statics.field688.method18177(Statics.field688.displayMode2, true);
 		} else {
 			Statics.field688.method18157(Statics.field688.displayMode, arg1);
-			client.method486(arg1, false);
+			Client.method486(arg1, false);
 		}
 		method16391();
 		arg0.method18312(var3);
@@ -272,9 +271,9 @@ public class Preferences {
 		Statics.method5326();
 		Statics.field688.method18157(Statics.field688.screenSize, 0);
 		Statics.field688.method18157(Statics.field688.preset, 4);
-		client.method9516();
-		client.world.method7816().method10019();
-		client.field10836 = true;
+		Client.method9516();
+		Client.world.method7816().method10019();
+		Client.field10836 = true;
 	}
 
 	@ObfuscatedName("ty.u(B)V")
@@ -304,9 +303,9 @@ public class Preferences {
 		Statics.method5326();
 		Statics.field688.method18157(Statics.field688.screenSize, 1);
 		Statics.field688.method18157(Statics.field688.preset, 3);
-		client.method9516();
-		client.world.method7816().method10019();
-		client.field10836 = true;
+		Client.method9516();
+		Client.world.method7816().method10019();
+		Client.field10836 = true;
 	}
 
 	@ObfuscatedName("fd.z(I)V")
@@ -336,9 +335,9 @@ public class Preferences {
 		Statics.method5326();
 		Statics.field688.method18157(Statics.field688.screenSize, 2);
 		Statics.field688.method18157(Statics.field688.preset, 2);
-		client.method9516();
-		client.world.method7816().method10019();
-		client.field10836 = true;
+		Client.method9516();
+		Client.world.method7816().method10019();
+		Client.field10836 = true;
 	}
 
 	@ObfuscatedName("e.p(ZI)V")
@@ -368,8 +367,8 @@ public class Preferences {
 		Statics.method5326();
 		Statics.field688.method18157(Statics.field688.screenSize, 2);
 		Statics.field688.method18157(Statics.field688.preset, 1);
-		client.method9516();
-		client.world.method7816().method10019();
-		client.field10836 = true;
+		Client.method9516();
+		Client.world.method7816().method10019();
+		Client.field10836 = true;
 	}
 }

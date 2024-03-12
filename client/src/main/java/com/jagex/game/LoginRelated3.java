@@ -2,7 +2,7 @@ package com.jagex.game;
 
 import com.jagex.game.loading.LoadingScreenElement;
 import com.jagex.graphics.SpriteDataProvider;
-import com.jagex.client;
+import rs2.client.Client;
 import com.jagex.graphics.Font;
 import com.jagex.graphics.FontMetrics;
 import com.jagex.js5.Js5;
@@ -39,8 +39,8 @@ public class LoginRelated3 implements LoadingScreenElement {
 	@ObfuscatedName("ki.n(ZI)V")
 	public void method5105(boolean arg0) {
 		if (arg0) {
-			int var2 = this.field3054.field3201.method5382(this.field3054.field3209, client.field10941) + this.field3054.field3204;
-			int var3 = this.field3054.field3208.method5375(this.field3054.field3206, client.field10942) + this.field3054.field3205;
+			int var2 = this.field3054.field3201.method5382(this.field3054.field3209, Client.field10941) + this.field3054.field3204;
+			int var3 = this.field3054.field3208.method5375(this.field3054.field3206, Client.field10942) + this.field3054.field3205;
 			this.field3055.method2720(this.field3054.field3203, var2, var3, this.field3054.field3209, this.field3054.field3206, this.field3054.field3212, this.field3054.field3213, this.field3054.field3210, this.field3054.field3207, this.field3054.field3202, null, null, null, 0, 0);
 		}
 	}

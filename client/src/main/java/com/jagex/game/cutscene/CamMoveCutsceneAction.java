@@ -1,6 +1,6 @@
 package com.jagex.game.cutscene;
 
-import com.jagex.client;
+import rs2.client.Client;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 
@@ -33,8 +33,8 @@ public class CamMoveCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("aft.n(I)V")
 	public void method2890() {
-		client.method15723(this.field10264, this.field10263, this.field10262, 100, 100, false);
-		client.method4843(this.field10261, this.field10265, 0);
-		client.field10877 = true;
+		Client.method15723(this.field10264, this.field10263, this.field10262, 100, 100, false);
+		Client.method4843(this.field10261, this.field10265, 0);
+		Client.field10877 = true;
 	}
 }

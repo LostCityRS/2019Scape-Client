@@ -1,13 +1,14 @@
 package com.jagex.game.loading;
 
-import com.jagex.*;
 import com.jagex.audio.AudioApi;
 import com.jagex.core.constants.PublicKeys;
 import com.jagex.core.io.Packet;
-import com.jagex.core.util.MonotonicTime;
-import com.jagex.core.util.StringEncoder;
-import com.jagex.core.util.Timer;
-import com.jagex.core.util.TotpPreferences;
+import com.jagex.core.utils.MonotonicTime;
+import com.jagex.game.compression.huffman.WordPack;
+import com.jagex.core.utils.Timer;
+import com.jagex.core.utils.TotpPreferences;
+import com.jagex.game.config.iftype.Component;
+import rs2.client.Client;
 import rs2.client.login.LoginManager;
 import com.jagex.game.client.*;
 import com.jagex.game.script.ClientVariableManager;
@@ -77,11 +78,11 @@ public class Loading {
 		field2944 = true;
 		Statics.field8535 = LoginManager.username;
 		Statics.field4407 = LoginManager.password;
-		client.logout(false);
+		Client.logout(false);
 		LoadableResourceManager.method3670();
 		Statics.field2938 = null;
 		Statics.field1833 = null;
-		client.setState(5);
+		Client.setState(5);
 	}
 
 	@ObfuscatedName("nt.n(B)Z")
@@ -112,7 +113,7 @@ public class Loading {
 			}
 		} else if (Statics.field3419 == LoadingStage.field2919) {
 			Statics.field593 = null;
-			client.setState(4);
+			Client.setState(4);
 			if (field2944) {
 				field2944 = false;
 				LoginManager.method665(Statics.field8535, Statics.field4407, "", false);
@@ -136,7 +137,7 @@ public class Loading {
 			return;
 		}
 		for (int var2 = field2946 + 1; var2 < Statics.field2939.length; var2++) {
-			if (Statics.field2939[var2].method4912() >= 100 && field2946 == var2 - 1 && client.state != 5 && Statics.field593.method4857()) {
+			if (Statics.field2939[var2].method4912() >= 100 && field2946 == var2 - 1 && Client.state != 5 && Statics.field593.method4857()) {
 				try {
 					Statics.field2939[var2].method4916();
 				} catch (Exception var4) {
@@ -201,10 +202,10 @@ public class Loading {
 	@ObfuscatedName("rm.z(I)I")
 	public static int method7622() {
 		if (Statics.field688.unknown6.method18740() == 0) {
-			for (int var0 = 0; var0 < client.field10819; var0++) {
-				if (client.field11067[var0].method9131() == 's' || client.field11067[var0].method9131() == 'S') {
+			for (int var0 = 0; var0 < Client.field10819; var0++) {
+				if (Client.field11067[var0].method9131() == 's' || Client.field11067[var0].method9131() == 'S') {
 					Statics.field688.method18157(Statics.field688.unknown6, 1);
-					client.field10812 = true;
+					Client.field10812 = true;
 					GraphicsPacketQueue.method6971(ToolkitType.field8880);
 					break;
 				}
@@ -217,12 +218,12 @@ public class Loading {
 			if (!Statics.field1833.method6834()) {
 				return 0;
 			}
-			client.method3596(0, null, true);
+			Client.method3596(0, null, true);
 			Statics.field2941 = !MainLoadingScreen.method4062();
-			Statics.field8522 = client.method5156(Statics.field2941 ? Js5Archive.LOADING_SPRITES_RAW : Js5Archive.LOADING_SPRITES, false, 1, true, true);
-			Statics.field8532 = client.method5156(Js5Archive.LOADING_SCREENS, false, 1, true, true);
-			Statics.field7672 = client.method5156(Js5Archive.FONTMETRICS, false, 1, true, true);
-			Statics.field1587 = client.method5156(Js5Archive.DEFAULTS, true, 1, true, true);
+			Statics.field8522 = Client.method5156(Statics.field2941 ? Js5Archive.LOADING_SPRITES_RAW : Js5Archive.LOADING_SPRITES, false, 1, true, true);
+			Statics.field8532 = Client.method5156(Js5Archive.LOADING_SCREENS, false, 1, true, true);
+			Statics.field7672 = Client.method5156(Js5Archive.FONTMETRICS, false, 1, true, true);
+			Statics.field1587 = Client.method5156(Js5Archive.DEFAULTS, true, 1, true, true);
 		}
 		if (Statics.field3419 == LoadingStage.field2911) {
 			boolean var1 = Statics.field8532.method6896();
@@ -239,7 +240,7 @@ public class Loading {
 			Statics.field7921 = new TitleDefaults(Statics.field1587);
 			DefaultSprites.method3470(Statics.field11389);
 			int var8 = Statics.field688.unknown5.method18714();
-			Statics.field2841 = new LoadingRelated3(client.field10768, Statics.field1680, Statics.field8532);
+			Statics.field2841 = new LoadingRelated3(Client.field10768, Statics.field1680, Statics.field8532);
 			LoadingRelated1[] var9 = Statics.field2841.method15218(var8);
 			if (var9.length == 0) {
 				var9 = Statics.field2841.method15218(0);
@@ -271,42 +272,42 @@ public class Loading {
 					return 0;
 				}
 			}
-			Statics.field7538.method6157(client.field10833);
+			Statics.field7538.method6157(Client.field10833);
 			DefaultSprites.method7114(Statics.field8198);
-			client.setState(11);
+			Client.setState(11);
 		}
 		if (Statics.field3419 == LoadingStage.field2907) {
-			Statics.field10317 = client.method5156(Js5Archive.SPRITES, false, 1, false, true);
-			Statics.field7420 = client.method5156(Js5Archive.ANIMS, false, 1, false, true);
-			Statics.field10287 = client.method5156(Js5Archive.ANIMS_KEYFRAMES, false, 1, false, true);
-			Statics.field11262 = client.method5156(Js5Archive.BASES, false, 1, false, true);
-			Statics.field11838 = client.method5156(Js5Archive.CONFIG, false, 1, true, true);
-			Statics.field7283 = client.method5156(Js5Archive.DBTABLEINDEX, false, 1, true, true);
-			Statics.field527 = client.method5156(Js5Archive.INTERFACES, false, 1, true, true);
-			Statics.field11752 = client.method5156(Js5Archive.MAPS, true, 1, false, true);
-			Statics.field9213 = client.method5156(Js5Archive.MODELS, false, 1, false, true);
-			Statics.field1450 = client.method5156(Js5Archive.TEXTURES_PNG, true, 1, false, true);
-			Statics.field8741 = client.method5156(Js5Archive.BINARY, false, 1, false, true);
-			Statics.field5010 = client.method5156(Js5Archive.CLIENTSCRIPTS, false, 1, true, true);
-			Statics.field2613 = client.method5156(Js5Archive.VORBIS, true, 1, false, false);
-			Statics.field3085 = client.method5156(Js5Archive.AUDIOSTREAMS, true, 1, false, false);
-			Statics.field4475 = client.method5156(Js5Archive.CONFIG_LOC, false, 1, true, true);
-			Statics.field8700 = client.method5156(Js5Archive.CONFIG_ENUM, false, 1, true, true);
-			Statics.field4618 = client.method5156(Js5Archive.CONFIG_NPC, false, 1, true, true);
-			Statics.field7537 = client.method5156(Js5Archive.CONFIG_OBJ, false, 1, true, true);
-			Statics.field8285 = client.method5156(Js5Archive.CONFIG_SEQ, false, 1, true, true);
-			Statics.field2149 = client.method5156(Js5Archive.CONFIG_SPOT, false, 1, true, true);
-			Statics.field3611 = client.method5156(Js5Archive.CONFIG_STRUCT, false, 1, true, true);
-			Statics.field10752 = client.method5156(Js5Archive.WORLDMAP, true, 1, false, false);
-			Statics.field8332 = client.method5156(Js5Archive.WORLDMAPAREADATA, true, 1, false, true);
-			Statics.field4404 = client.method5156(Js5Archive.QUICKCHAT, false, 1, true, true);
-			Statics.field1935 = client.method5156(Js5Archive.QUICKCHAT_GLOBAL, false, 1, true, true);
-			Statics.field10249 = client.method5156(Js5Archive.MATERIALS, true, 1, true, true);
-			Statics.field6879 = client.method5156(Js5Archive.CONFIG_PARTICLE, false, 1, true, true);
-			Statics.field736 = client.method5156(Js5Archive.CONFIG_BILLBOARD, false, 1, true, true);
-			Statics.field3808 = client.method5156(Js5Archive.CUTSCENES, true, 1, false, true);
-			Statics.field7060 = client.method5156(Js5Archive.DLLS, true, 1, false, true);
-			Statics.field2900 = client.method5156(Js5Archive.SHADERS, true, 1, true, true);
+			Statics.field10317 = Client.method5156(Js5Archive.SPRITES, false, 1, false, true);
+			Statics.field7420 = Client.method5156(Js5Archive.ANIMS, false, 1, false, true);
+			Statics.field10287 = Client.method5156(Js5Archive.ANIMS_KEYFRAMES, false, 1, false, true);
+			Statics.field11262 = Client.method5156(Js5Archive.BASES, false, 1, false, true);
+			Statics.field11838 = Client.method5156(Js5Archive.CONFIG, false, 1, true, true);
+			Statics.field7283 = Client.method5156(Js5Archive.DBTABLEINDEX, false, 1, true, true);
+			Statics.field527 = Client.method5156(Js5Archive.INTERFACES, false, 1, true, true);
+			Statics.field11752 = Client.method5156(Js5Archive.MAPS, true, 1, false, true);
+			Statics.field9213 = Client.method5156(Js5Archive.MODELS, false, 1, false, true);
+			Statics.field1450 = Client.method5156(Js5Archive.TEXTURES_PNG, true, 1, false, true);
+			Statics.field8741 = Client.method5156(Js5Archive.BINARY, false, 1, false, true);
+			Statics.field5010 = Client.method5156(Js5Archive.CLIENTSCRIPTS, false, 1, true, true);
+			Statics.field2613 = Client.method5156(Js5Archive.VORBIS, true, 1, false, false);
+			Statics.field3085 = Client.method5156(Js5Archive.AUDIOSTREAMS, true, 1, false, false);
+			Statics.field4475 = Client.method5156(Js5Archive.CONFIG_LOC, false, 1, true, true);
+			Statics.field8700 = Client.method5156(Js5Archive.CONFIG_ENUM, false, 1, true, true);
+			Statics.field4618 = Client.method5156(Js5Archive.CONFIG_NPC, false, 1, true, true);
+			Statics.field7537 = Client.method5156(Js5Archive.CONFIG_OBJ, false, 1, true, true);
+			Statics.field8285 = Client.method5156(Js5Archive.CONFIG_SEQ, false, 1, true, true);
+			Statics.field2149 = Client.method5156(Js5Archive.CONFIG_SPOT, false, 1, true, true);
+			Statics.field3611 = Client.method5156(Js5Archive.CONFIG_STRUCT, false, 1, true, true);
+			Statics.field10752 = Client.method5156(Js5Archive.WORLDMAP, true, 1, false, false);
+			Statics.field8332 = Client.method5156(Js5Archive.WORLDMAPAREADATA, true, 1, false, true);
+			Statics.field4404 = Client.method5156(Js5Archive.QUICKCHAT, false, 1, true, true);
+			Statics.field1935 = Client.method5156(Js5Archive.QUICKCHAT_GLOBAL, false, 1, true, true);
+			Statics.field10249 = Client.method5156(Js5Archive.MATERIALS, true, 1, true, true);
+			Statics.field6879 = Client.method5156(Js5Archive.CONFIG_PARTICLE, false, 1, true, true);
+			Statics.field736 = Client.method5156(Js5Archive.CONFIG_BILLBOARD, false, 1, true, true);
+			Statics.field3808 = Client.method5156(Js5Archive.CUTSCENES, true, 1, false, true);
+			Statics.field7060 = Client.method5156(Js5Archive.DLLS, true, 1, false, true);
+			Statics.field2900 = Client.method5156(Js5Archive.SHADERS, true, 1, true, true);
 		}
 		if (Statics.field3419 == LoadingStage.field2921) {
 			int var14 = 0;
@@ -337,7 +338,7 @@ public class Loading {
 			Statics.field1798 = new AudioApi();
 			Statics.field1798.method3148(50, 7340032);
 			method714(var17);
-			client.setState(1);
+			Client.setState(1);
 		}
 		if (Statics.field3419 == LoadingStage.field2910 && Statics.field10577 == null) {
 			Statics.field10577 = new HardwarePlatformLoader(Statics.field7060);
@@ -354,8 +355,8 @@ public class Loading {
 			Statics.field10766 = Statics.field11389.field7714;
 			Statics.field9259 = Statics.field11389.field7734;
 			if (Statics.field11389.field7739 != -1 && Statics.field11389.field7740 != -1) {
-				client.field10941 = Statics.field11389.field7739;
-				client.field10942 = Statics.field11389.field7740;
+				Client.field10941 = Statics.field11389.field7739;
+				Client.field10942 = Statics.field11389.field7740;
 			}
 			Statics.field1709 = new WearposDefaults(Statics.field1587);
 			Statics.field2767 = new SkillDefaults(Statics.field1587);
@@ -369,42 +370,42 @@ public class Loading {
 			}
 			Statics.field7366 = new MaterialList(Statics.field10249);
 			Statics.field7669 = new BasicTextureList(Statics.field1450);
-			Statics.field3086 = new ParamTypeList(client.field10768, Statics.field1680, Statics.field11838);
-			Statics.field11742 = new BASTypeList(client.field10768, Statics.field1680, Statics.field11838);
-			Statics.field2427 = new CursorTypeList(client.field10768, Statics.field1680, Statics.field11838, Statics.field10317);
-			Statics.field9123 = new CachingConfigTypeList(client.field10768, Statics.field1680, Statics.field11838, Js5ConfigGroup.DBROWTYPE, 64, new BasicTypeFactory(DBRowType.class));
-			Statics.field1840 = new CachingConfigTypeList(client.field10768, Statics.field1680, Statics.field11838, Js5ConfigGroup.DBTABLETYPE, 16, new BasicTypeFactory(DBTableType.class));
-			Statics.field8514 = new EnumTypeList(client.field10768, Statics.field1680, Statics.field8700);
-			Statics.field8168 = new FloorOverlayTypeList(client.field10768, Statics.field1680, Statics.field11838);
-			Statics.field8145 = new FloorUnderlayTypeList(client.field10768, Statics.field1680, Statics.field11838);
-			Statics.field2936 = new HitmarkTypeList(client.field10768, Statics.field1680, Statics.field11838, Statics.field10317);
-			Statics.field4894 = new HeadbarTypeList(client.field10768, Statics.field1680, Statics.field11838, Statics.field10317);
-			Statics.field2628 = new IDKTypeList(client.field10768, Statics.field1680, Statics.field11838, Statics.field9213);
-			Statics.field7762 = new InvTypeList(client.field10768, Statics.field1680, Statics.field11838);
-			Statics.field7943 = new LightTypeList(client.field10768, Statics.field1680, Statics.field11838);
-			Statics.field1897 = new LocTypeList(client.field10768, Statics.field1680, true, Statics.field4475, Statics.field9213);
-			client.world.method7733(Statics.field1897);
-			Statics.field3183.method7674(new LocTypeList(client.field10768, Statics.field1680, true, Statics.field4475, Statics.field9213));
-			Statics.field5011 = new MapElementTypeList(client.field10768, Statics.field1680, Statics.field11838, Statics.field10317);
-			Statics.field4241 = new MSITypeList(client.field10768, Statics.field1680, Statics.field11838, Statics.field10317);
-			Statics.field7961 = new NPCTypeList(client.field10768, Statics.field1680, true, Statics.field4618, Statics.field9213);
-			Statics.field1842 = new ObjTypeList(client.field10768, Statics.field1680, true, Statics.field3086, Statics.field7537, Statics.field9213);
-			Statics.field1972 = new QuestTypeList(client.field10768, Statics.field1680, Statics.field11838, true);
-			Statics.field10771 = new SeqGroupTypeList(client.field10768, Statics.field1680, Statics.field11838);
-			Statics.field8797 = new SeqTypeList(client.field10768, Statics.field1680, Statics.field8285, Statics.field7420, Statics.field10287, Statics.field11262, Statics.field10771);
-			Statics.field2879 = new SkyBoxTypeList(client.field10768, Statics.field1680, Statics.field11838);
-			Statics.field687 = new SkyDecorTypeList(client.field10768, Statics.field1680, Statics.field11838);
-			Statics.field4874 = new EffectAnimTypeList(client.field10768, Statics.field1680, Statics.field2149, Statics.field9213);
-			Statics.field7713 = new StructTypeList(client.field10768, Statics.field1680, Statics.field3611, true);
-			Statics.field8911 = new VarBasicTypeListClient(client.field10768, VarDomainType.CLIENT, Statics.field1680, Statics.field11838);
-			Statics.field8485 = new VarPlayerTypeListClient(client.field10768, VarDomainType.PLAYER, Statics.field1680, Statics.field11838);
-			Statics.field8135 = new VarBasicTypeListClient(client.field10768, VarDomainType.NPC, Statics.field1680, Statics.field11838);
-			Statics.field8783 = new VarBasicTypeListClient(client.field10768, VarDomainType.CLAN, Statics.field1680, Statics.field11838);
-			Statics.field12225 = new VarBasicTypeListClient(client.field10768, VarDomainType.CLAN_SETTING, Statics.field1680, Statics.field11838);
-			Statics.field3415 = new VarBasicTypeListClient(client.field10768, VarDomainType.PLAYER_GROUP, Statics.field1680, Statics.field11838);
-			Statics.field1819 = new VarBasicTypeListClient(client.field10768, VarDomainType.OBJECT, Statics.field1680, Statics.field11838);
+			Statics.field3086 = new ParamTypeList(Client.field10768, Statics.field1680, Statics.field11838);
+			Statics.field11742 = new BASTypeList(Client.field10768, Statics.field1680, Statics.field11838);
+			Statics.field2427 = new CursorTypeList(Client.field10768, Statics.field1680, Statics.field11838, Statics.field10317);
+			Statics.field9123 = new CachingConfigTypeList(Client.field10768, Statics.field1680, Statics.field11838, Js5ConfigGroup.DBROWTYPE, 64, new BasicTypeFactory(DBRowType.class));
+			Statics.field1840 = new CachingConfigTypeList(Client.field10768, Statics.field1680, Statics.field11838, Js5ConfigGroup.DBTABLETYPE, 16, new BasicTypeFactory(DBTableType.class));
+			Statics.field8514 = new EnumTypeList(Client.field10768, Statics.field1680, Statics.field8700);
+			Statics.field8168 = new FloorOverlayTypeList(Client.field10768, Statics.field1680, Statics.field11838);
+			Statics.field8145 = new FloorUnderlayTypeList(Client.field10768, Statics.field1680, Statics.field11838);
+			Statics.field2936 = new HitmarkTypeList(Client.field10768, Statics.field1680, Statics.field11838, Statics.field10317);
+			Statics.field4894 = new HeadbarTypeList(Client.field10768, Statics.field1680, Statics.field11838, Statics.field10317);
+			Statics.field2628 = new IDKTypeList(Client.field10768, Statics.field1680, Statics.field11838, Statics.field9213);
+			Statics.field7762 = new InvTypeList(Client.field10768, Statics.field1680, Statics.field11838);
+			Statics.field7943 = new LightTypeList(Client.field10768, Statics.field1680, Statics.field11838);
+			Statics.field1897 = new LocTypeList(Client.field10768, Statics.field1680, true, Statics.field4475, Statics.field9213);
+			Client.world.method7733(Statics.field1897);
+			Statics.field3183.method7674(new LocTypeList(Client.field10768, Statics.field1680, true, Statics.field4475, Statics.field9213));
+			Statics.field5011 = new MapElementTypeList(Client.field10768, Statics.field1680, Statics.field11838, Statics.field10317);
+			Statics.field4241 = new MSITypeList(Client.field10768, Statics.field1680, Statics.field11838, Statics.field10317);
+			Statics.field7961 = new NPCTypeList(Client.field10768, Statics.field1680, true, Statics.field4618, Statics.field9213);
+			Statics.field1842 = new ObjTypeList(Client.field10768, Statics.field1680, true, Statics.field3086, Statics.field7537, Statics.field9213);
+			Statics.field1972 = new QuestTypeList(Client.field10768, Statics.field1680, Statics.field11838, true);
+			Statics.field10771 = new SeqGroupTypeList(Client.field10768, Statics.field1680, Statics.field11838);
+			Statics.field8797 = new SeqTypeList(Client.field10768, Statics.field1680, Statics.field8285, Statics.field7420, Statics.field10287, Statics.field11262, Statics.field10771);
+			Statics.field2879 = new SkyBoxTypeList(Client.field10768, Statics.field1680, Statics.field11838);
+			Statics.field687 = new SkyDecorTypeList(Client.field10768, Statics.field1680, Statics.field11838);
+			Statics.field4874 = new EffectAnimTypeList(Client.field10768, Statics.field1680, Statics.field2149, Statics.field9213);
+			Statics.field7713 = new StructTypeList(Client.field10768, Statics.field1680, Statics.field3611, true);
+			Statics.field8911 = new VarBasicTypeListClient(Client.field10768, VarDomainType.CLIENT, Statics.field1680, Statics.field11838);
+			Statics.field8485 = new VarPlayerTypeListClient(Client.field10768, VarDomainType.PLAYER, Statics.field1680, Statics.field11838);
+			Statics.field8135 = new VarBasicTypeListClient(Client.field10768, VarDomainType.NPC, Statics.field1680, Statics.field11838);
+			Statics.field8783 = new VarBasicTypeListClient(Client.field10768, VarDomainType.CLAN, Statics.field1680, Statics.field11838);
+			Statics.field12225 = new VarBasicTypeListClient(Client.field10768, VarDomainType.CLAN_SETTING, Statics.field1680, Statics.field11838);
+			Statics.field3415 = new VarBasicTypeListClient(Client.field10768, VarDomainType.PLAYER_GROUP, Statics.field1680, Statics.field11838);
+			Statics.field1819 = new VarBasicTypeListClient(Client.field10768, VarDomainType.OBJECT, Statics.field1680, Statics.field11838);
 			Statics.field1232 = VarTypeList.method15149(new VarTypeList[] { Statics.field8911, Statics.field8485, Statics.field8135, Statics.field8783, Statics.field12225, Statics.field3415, Statics.field1819 });
-			Statics.field8736 = new VarBitTypeList(client.field10768, Statics.field1680, Statics.field11838, Statics.field1232);
+			Statics.field8736 = new VarBitTypeList(Client.field10768, Statics.field1680, Statics.field11838, Statics.field1232);
 			Statics.field4626 = new VariableTypeProviderClient();
 			Component.method3669(Statics.field527, Statics.field9213, Statics.field10317, Statics.field7672);
 			Statics.field9211 = new BasicBillboardTypeList(Statics.field736);
@@ -413,12 +414,12 @@ public class Loading {
 			Statics.field3823 = new QuickChatCatTypeList(Statics.field1680, Statics.field4404, Statics.field1935);
 			Statics.field489 = new QuickChatPhraseTypeList(Statics.field1680, Statics.field4404, Statics.field1935, new ClientDynamicProvider());
 			Statics.field7410 = new PlayerVariableManager(Statics.field8485, Statics.field8736, Statics.field2767.method9784());
-			client.method9516();
+			Client.method9516();
 			AnimationWrapper.method6114(Statics.field8797);
 			ParticleSystemRenderer.method706(Statics.field7282, Statics.field2013);
 			SkyBox.method13864(Statics.field9213, Statics.field7366, Statics.field7669);
 			Huffman var19 = new Huffman(Statics.field8741.method6906("huffman", ""));
-			StringEncoder.setHuffman(var19);
+			WordPack.setHuffman(var19);
 			Statics.field6594 = Timer.method6109();
 			Statics.field10581 = new HardwarePlatform(true);
 		}
@@ -430,7 +431,7 @@ public class Loading {
 			}
 		}
 		if (Statics.field3419 == LoadingStage.field2914) {
-			WorldMap.method8506(Statics.field10752, Statics.field8332, Statics.field8168, Statics.field8145, client.world.method7750(), Statics.field5011, Statics.field4241, Statics.field7410, Statics.field7410);
+			WorldMap.method8506(Statics.field10752, Statics.field8332, Statics.field8168, Statics.field8145, Client.world.method7750(), Statics.field5011, Statics.field4241, Statics.field7410, Statics.field7410);
 		}
 		if (Statics.field3419 == LoadingStage.field2915) {
 			Statics.field7228 = new ClientVariableManager(Statics.field8911);
@@ -440,7 +441,7 @@ public class Loading {
 			Statics.field10317.method6900(true, true);
 			Statics.field7672.method6900(true, true);
 			Statics.field8741.method6900(true, true);
-			client.field10807 = true;
+			Client.field10807 = true;
 		}
 		if (Statics.field3419 == LoadingStage.field2916 && Statics.field11389.field7724 != -1) {
 			if (!Component.method5364(Statics.field11389.field7724, null)) {
@@ -458,7 +459,7 @@ public class Loading {
 			}
 		}
 		if (Statics.field3419 == LoadingStage.field2917) {
-			client.method7227(true);
+			Client.method7227(true);
 		}
 		if (Statics.field3419 == LoadingStage.field2903) {
 			Statics.field593.method4856();
@@ -477,27 +478,27 @@ public class Loading {
 			Statics.field8540.remove(Js5Archive.LOADING_SPRITES);
 			Statics.field8540.remove(Js5Archive.LOADING_SPRITES_RAW);
 			MainLoadingScreen.method271();
-			client.field10779 = Statics.field688.unknown6.method18740() == 1;
+			Client.field10779 = Statics.field688.unknown6.method18740() == 1;
 			Statics.field688.method18157(Statics.field688.unknown6, 1);
-			if (client.field10779) {
+			if (Client.field10779) {
 				Statics.field688.method18157(Statics.field688.displayMode, 0);
 			} else if (Statics.field688.displayMode.field11771 && Statics.field10581.cpuInfoRam < 512 && Statics.field10581.cpuInfoRam != 0) {
 				Statics.field688.method18157(Statics.field688.displayMode, 0);
 			}
 			Preferences.method16391();
-			if (client.field10779) {
-				client.method486(0, false);
-				if (!client.field10812) {
+			if (Client.field10779) {
+				Client.method486(0, false);
+				if (!Client.field10812) {
 					GraphicsPacketQueue.method6971(ToolkitType.field8881);
 				}
 			} else {
-				client.method486(Statics.field688.displayMode.method18545(), false);
+				Client.method486(Statics.field688.displayMode.method18545(), false);
 				if (Statics.field688.displayMode.method18545() == 0) {
 					GraphicsPacketQueue.method6971(ToolkitType.field8882);
 				}
 			}
-			client.setWindowMode(Statics.field688.maxScreenSize.method18539(), -1, -1, false);
-			Statics.field7538.method6157(client.field10833);
+			Client.setWindowMode(Statics.field688.maxScreenSize.method18539(), -1, -1, false);
+			Statics.field7538.method6157(Client.field10833);
 			DefaultSprites.method7114(Statics.field8198);
 			DefaultSprites.method5202(Statics.field8198, Statics.field10317);
 		}
@@ -521,7 +522,7 @@ public class Loading {
 
 	@ObfuscatedName("ux.c(I)V")
 	public static void method9212() {
-		FileOnDisk var0 = GameShell.openPrefs("2", client.field10768.field8333, false);
+		FileOnDisk var0 = GameShell.openPrefs("2", Client.field10768.field8333, false);
 		Statics.field7228.method16420(var0);
 	}
 

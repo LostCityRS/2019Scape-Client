@@ -1,7 +1,7 @@
 package com.jagex.game.cutscene;
 
-import com.jagex.game.world.entity.PathingEntity;
-import com.jagex.client;
+import rs2.client.scene.entities.PathingEntity;
+import rs2.client.Client;
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.seqtype.SeqType;
 import deob.ObfuscatedName;
@@ -37,9 +37,9 @@ public class EntityAnimCutsceneAction extends CutsceneAction {
 	public void method2890() {
 		PathingEntity var1 = Statics.field1721[this.field10301].method2870();
 		if (this.field10300 == 0) {
-			client.method9423(var1, this.field10298, 0, false);
+			Client.method9423(var1, this.field10298, 0, false);
 		} else {
-			client.method16758(var1, new int[] { this.field10299 }, new int[] { 0 }, new int[] { this.field10300 });
+			Client.method16758(var1, new int[] { this.field10299 }, new int[] { 0 }, new int[] { this.field10300 });
 		}
 	}
 

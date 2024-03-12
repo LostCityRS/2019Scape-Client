@@ -1,14 +1,14 @@
 package com.jagex.game.client;
 
-import com.jagex.*;
 import com.jagex.core.io.BufferedFile;
 import com.jagex.core.io.Packet;
-import com.jagex.core.util.*;
+import com.jagex.core.utils.*;
 import com.jagex.game.fullscreen.Fullscreen;
 import com.jagex.graphics.FullscreenImpl;
 import deob.ObfuscatedName;
 import deob.Statics;
 import jaclib.nanotime.QueryPerformanceCounter;
+import rs2.client.Client;
 
 import java.applet.Applet;
 import java.awt.*;
@@ -521,7 +521,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 
 	@ObfuscatedName("sk.b(I)Z")
 	public final boolean checkhost() {
-		if (!client.ENABLE_HOST_CHECK) {
+		if (!Client.ENABLE_HOST_CHECK) {
 			return true;
 		}
 

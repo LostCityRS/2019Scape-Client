@@ -1,8 +1,8 @@
 package com.jagex.audio;
 
-import com.jagex.core.util.JagException;
-import com.jagex.core.util.MonotonicTime;
-import com.jagex.core.util.PreciseSleep;
+import com.jagex.core.utils.JagException;
+import com.jagex.core.utils.MonotonicTime;
+import com.jagex.core.utils.PreciseSleep;
 import deob.ObfuscatedName;
 
 import java.util.Arrays;

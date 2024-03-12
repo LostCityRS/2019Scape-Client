@@ -1,17 +1,17 @@
 package com.jagex.graphics.camera;
 
-import com.jagex.*;
 import com.jagex.game.client.BasicCamera;
 import com.jagex.game.shared.movement.CoordFine;
 import com.jagex.game.shared.movement.CoordGrid;
 import com.jagex.game.world.entity.PositionMode;
 import com.jagex.game.world.entity.PositionPoint;
-import com.jagex.math.LookatMode;
-import com.jagex.math.LookatOrientation;
+import com.jagex.game.camera.LookatMode;
+import com.jagex.game.camera.LookatOrientation;
 import com.jagex.math.Quaternion;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
 
 @ObfuscatedName("a")
 public class CameraManager {
@@ -25,7 +25,7 @@ public class CameraManager {
 
 	@ObfuscatedName("y.e(Lakt;I)V")
 	public static void method542(CoordFine arg0) {
-		Statics.field604 = new BasicCamera(client.field11034);
+		Statics.field604 = new BasicCamera(Client.field11034);
 		Statics.field604.method4683(CameraControlMode.field2828);
 		try {
 			PositionPoint var1 = (PositionPoint) Statics.field604.method4688(PositionMode.field2816, false);
@@ -60,9 +60,9 @@ public class CameraManager {
 		LookatOrientation var1 = (LookatOrientation) Statics.field604.method4797();
 		Vector3 var2 = var0.method5219();
 		Quaternion var3 = var1.method18787();
-		if (client.field10986 != null) {
-			int var4 = client.field10986.field2196;
-			int var5 = client.field10986.field2197;
+		if (Client.field10986 != null) {
+			int var4 = Client.field10986.field2196;
+			int var5 = Client.field10986.field2197;
 			float var6 = 1000.0F;
 			float var7 = (float) (Math.atan((double) ((float) var4 / 2.0F / var6)) * 2.0D);
 			float var8 = (float) (Math.atan((double) ((float) var5 / 2.0F / var6)) * 2.0D);
@@ -111,9 +111,9 @@ public class CameraManager {
 		}
 		CoordFine var17 = new CoordFine(0, (int) var2.field4308, (int) var2.field4311, (int) var2.field4313);
 		var0.method16671(var17);
-		CoordGrid var18 = client.world.method7727();
+		CoordGrid var18 = Client.world.method7727();
 		int var19 = var18.field7426 << 9;
 		int var20 = var18.field7427 << 9;
-		Statics.field604.method4681(0.02F, client.world.method7744().field4540, client.world.method7793(), var19, var20);
+		Statics.field604.method4681(0.02F, Client.world.method7744().field4540, Client.world.method7793(), var19, var20);
 	}
 }

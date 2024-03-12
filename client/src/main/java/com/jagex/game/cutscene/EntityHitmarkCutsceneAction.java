@@ -1,7 +1,7 @@
 package com.jagex.game.cutscene;
 
-import com.jagex.game.world.entity.PathingEntity;
-import com.jagex.client;
+import rs2.client.scene.entities.PathingEntity;
+import rs2.client.Client;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 import deob.Statics;
@@ -55,6 +55,6 @@ public class EntityHitmarkCutsceneAction extends CutsceneAction {
 	@ObfuscatedName("agi.n(I)V")
 	public void method2890() {
 		PathingEntity var1 = Statics.field1721[this.field10281].method2870();
-		var1.method16498(this.field10279, this.field10280, this.field10282, this.field10278, client.field10903, 0);
+		var1.method16498(this.field10279, this.field10280, this.field10282, this.field10278, Client.field10903, 0);
 	}
 }

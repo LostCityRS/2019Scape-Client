@@ -1,15 +1,15 @@
 package com.jagex.game.loading;
 
-import com.jagex.*;
-import com.jagex.core.util.JagException;
-import com.jagex.core.util.MonotonicTime;
-import com.jagex.core.util.PreciseSleep;
+import com.jagex.core.utils.JagException;
+import com.jagex.core.utils.MonotonicTime;
+import com.jagex.core.utils.PreciseSleep;
 import com.jagex.game.client.PreLoadingScreen;
 import com.jagex.graphics.Framebuffer;
 import com.jagex.graphics.RendererException;
 import com.jagex.graphics.Sprite;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
 
 @ObfuscatedName("jb")
 public class LoadingScreenRenderer implements Runnable {
@@ -140,7 +140,7 @@ public class LoadingScreenRenderer implements Runnable {
 								this.field2880 = null;
 							}
 							if (this.field2887) {
-								client.method8024();
+								Client.method8024();
 								if (Statics.field8198 != null) {
 									Statics.field8198.method2475(1, 0);
 								}
@@ -151,7 +151,7 @@ public class LoadingScreenRenderer implements Runnable {
 							int var7 = 255 - var6;
 							int var8 = var6 << 24 | 0xFFFFFF;
 							int var9 = var7 << 24 | 0xFFFFFF;
-							client.method8024();
+							Client.method8024();
 							Statics.field8198.method2475(1, 0);
 							Sprite var10 = Statics.field8198.method2365(Statics.canvasWid, Statics.canvasHei, true);
 							Framebuffer var11 = Statics.field8198.method2145();
@@ -172,12 +172,12 @@ public class LoadingScreenRenderer implements Runnable {
 							}
 						} catch (RendererException var18) {
 							JagException.report(var18.getMessage() + Statics.field8301.method8038(), var18);
-							client.method486(0, true);
+							Client.method486(0, true);
 						}
 					}
 					this.field2887 = false;
 					if (Statics.field8198 != null && !(this.field2883 instanceof PreLoadingScreen) && this.field2889.field2920 < LoadingStage.field2917.field2920) {
-						client.method3033();
+						Client.method3033();
 					}
 				} catch (Exception var19) {
 					continue;

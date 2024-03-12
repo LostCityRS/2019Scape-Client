@@ -1,8 +1,7 @@
 package com.jagex.game.cutscene;
 
-import com.jagex.client;
+import rs2.client.Client;
 import com.jagex.core.io.Packet;
-import com.jagex.game.cutscene.CutsceneAction;
 import deob.ObfuscatedName;
 import deob.Statics;
 
@@ -35,6 +34,6 @@ public class TextCoordCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("agd.n(I)V")
 	public void method2890() {
-		client.method8476(Statics.field4826, this.field10315, this.field10313, client.method3660(this.field10315, this.field10313, Statics.field4826), this.field10316, this.field10314, this.field10312);
+		Client.method8476(Statics.field4826, this.field10315, this.field10313, Client.method3660(this.field10315, this.field10313, Statics.field4826), this.field10316, this.field10314, this.field10312);
 	}
 }

@@ -1,6 +1,6 @@
 package com.jagex.graphics.gl;
 
-import com.jagex.core.util.ArrayUtil;
+import com.jagex.core.utils.ArrayUtil;
 import com.jagex.graphics.*;
 import com.jagex.math.Matrix4x4;
 import deob.ObfuscatedName;

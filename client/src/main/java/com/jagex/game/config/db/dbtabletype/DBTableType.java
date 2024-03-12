@@ -1,7 +1,7 @@
 package com.jagex.game.config.db.dbtabletype;
 
 import com.jagex.game.client.ConfigRelated;
-import com.jagex.game.config.db.DbTableUtil;
+import com.jagex.game.config.db.DBUtils;
 import com.jagex.core.io.Packet;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.game.config.ConfigType;
@@ -49,7 +49,7 @@ public class DBTableType implements ConfigType, ConfigRelated {
 				if (this.field9186 == null) {
 					this.field9186 = new Object[this.field9185.length][];
 				}
-				this.field9186[var5] = DbTableUtil.method18719(arg0, var7);
+				this.field9186[var5] = DBUtils.method18719(arg0, var7);
 			}
 		}
 	}

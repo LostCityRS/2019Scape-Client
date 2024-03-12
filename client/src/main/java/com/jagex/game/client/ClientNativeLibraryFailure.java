@@ -1,6 +1,6 @@
 package com.jagex.game.client;
 
-import com.jagex.client;
+import rs2.client.Client;
 import com.jagex.core.io.SendablePacket;
 import deob.ObfuscatedName;
 import deob.Statics;
@@ -30,7 +30,7 @@ public class ClientNativeLibraryFailure implements SendablePacket {
 
 	@ObfuscatedName("ur.e(I)V")
 	public void method9201() {
-		ClientMessage var1 = Statics.method1604(ClientProt.NATIVE_LIBRARY_FAILURE, client.field10849.field794);
+		ClientMessage var1 = Statics.method1604(ClientProt.NATIVE_LIBRARY_FAILURE, Client.field10849.field794);
 		int var2 = var1.field11432.pos++;
 		var1.field11432.p1(this.field7278.getId());
 		var1.field11432.pjstr(this.field7276);
@@ -47,6 +47,6 @@ public class ClientNativeLibraryFailure implements SendablePacket {
 			var1.field11432.pjstr(var3);
 		}
 		var1.field11432.psize1(var1.field11432.pos - var2);
-		client.field10849.method934(var1);
+		Client.field10849.method934(var1);
 	}
 }

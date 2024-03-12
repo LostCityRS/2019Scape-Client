@@ -3,6 +3,7 @@ package com.jagex.game.script;
 import com.jagex.game.world.entity.LocReference;
 import com.jagex.game.world.entity.Location;
 import deob.ObfuscatedName;
+import rs2.client.clientscript.ScriptRunner;
 
 @ObfuscatedName("asl")
 public class SubInterfaceActiveLoc extends SubInterface {

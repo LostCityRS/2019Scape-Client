@@ -1,16 +1,16 @@
 package rs2.client.login;
 
-import com.jagex.*;
 import com.jagex.core.constants.ModeWhere;
 import com.jagex.core.constants.PublicKeys;
 import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.datastruct.IterableQueue;
-import com.jagex.core.io.IsaacRandom;
+import com.jagex.encryption.Isaac;
 import com.jagex.core.io.Packet;
 import com.jagex.core.io.PacketBit;
 import com.jagex.core.io.Stream;
-import com.jagex.core.util.*;
+import com.jagex.core.utils.*;
 import com.jagex.game.client.*;
+import com.jagex.game.config.iftype.Component;
 import com.jagex.game.script.SubInterface;
 import com.jagex.game.config.npctype.NPCType;
 import com.jagex.game.config.loctype.LocType;
@@ -20,6 +20,7 @@ import com.jagex.game.world.entity.PlayerStat;
 import com.jagex.graphics.ClientWatch;
 import com.jagex.graphics.MiniMenu;
 import com.jagex.graphics.Minimap;
+import rs2.client.Client;
 import rs2.client.logic.DelayedStateChange;
 import rs2.shared.prot.LoginProt;
 import rs2.shared.prot.ServerProt;
@@ -156,7 +157,7 @@ public class LoginManager {
 		password = arg1;
 		field429 = arg2;
 		field473 = arg3;
-		client.setState(7);
+		Client.setState(7);
 	}
 
 	@ObfuscatedName("df.z(ILjava/lang/String;ZI)V")
@@ -170,7 +171,7 @@ public class LoginManager {
 		field472 = arg0;
 		field429 = arg1;
 		field473 = arg2;
-		client.setState(7);
+		Client.setState(7);
 	}
 
 	@ObfuscatedName("amr.p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZI)V")
@@ -178,13 +179,13 @@ public class LoginManager {
 		if (arg0.length() > 320 || !method16808()) {
 			return;
 		}
-		client.field10835.method938();
+		Client.field10835.method938();
 		method4641();
 		username = arg0;
 		password = arg1;
 		field429 = arg2;
 		field473 = arg3;
-		client.setState(17);
+		Client.setState(17);
 	}
 
 	@ObfuscatedName("aji.d(ILjava/lang/String;ZS)V")
@@ -198,16 +199,16 @@ public class LoginManager {
 		field472 = arg0;
 		field429 = arg1;
 		field473 = arg2;
-		client.field10835.method938();
-		client.setState(17);
+		Client.field10835.method938();
+		Client.setState(17);
 	}
 
 	@ObfuscatedName("dt.c(Ljava/lang/String;ZI)V")
 	public static void method1681(String arg0, boolean arg1) {
-		if (client.state == 13 && (!method2865() && !AccountCreationManager.method9610())) {
+		if (Client.state == 13 && (!method2865() && !AccountCreationManager.method9610())) {
 			field429 = arg0;
 			field473 = arg1;
-			client.setState(15);
+			Client.setState(15);
 		}
 	}
 
@@ -222,28 +223,28 @@ public class LoginManager {
 	@ObfuscatedName("ajf.v(Ljava/lang/String;Ljava/lang/String;B)Z")
 	public static boolean method17521(String arg0, String arg1) {
 		Statics.field431 = 132;
-		Statics.field432 = client.field10835;
+		Statics.field432 = Client.field10835;
 		return method7238(false, false, arg0, arg1, -1L);
 	}
 
 	@ObfuscatedName("xo.o(Ljava/lang/String;Ljava/lang/String;I)Z")
 	public static boolean method10320(String arg0, String arg1) {
 		Statics.field431 = 211;
-		Statics.field432 = client.field10849;
+		Statics.field432 = Client.field10849;
 		return method7238(false, false, arg0, arg1, -1L);
 	}
 
 	@ObfuscatedName("rg.s(I)Z")
 	public static boolean method7703() {
 		Statics.field431 = 211;
-		Statics.field432 = client.field10849;
+		Statics.field432 = Client.field10849;
 		return method7238(field439 == -1L, true, "", "", field439);
 	}
 
 	@ObfuscatedName("cz.y(I)Z")
 	public static boolean method1592() {
 		Statics.field431 = 132;
-		Statics.field432 = client.field10835;
+		Statics.field432 = Client.field10835;
 		return method7238(field439 == -1L, true, "", "", field439);
 	}
 
@@ -317,9 +318,9 @@ public class LoginManager {
 					Statics.field432.method936(Stream.method7130(Statics.lobby.method14764(), 40000), Statics.lobby.host);
 				}
 				if (Statics.field10311 == null) {
-					Statics.field10311 = client.field10967.method709();
-					client.field10967.method710();
-					client.field10967 = null;
+					Statics.field10311 = Client.field10967.method709();
+					Client.field10967.method710();
+					Client.field10967 = null;
 				}
 				Statics.field432.method952();
 				ClientMessage var1 = ClientMessage.method13920();
@@ -359,19 +360,19 @@ public class LoginManager {
 				var3.field11432.p4(910);
 				var3.field11432.p4(1);
 				if (Statics.field431 == 211) {
-					var3.field11432.p1(client.state == 14 ? 1 : 0);
+					var3.field11432.p1(Client.state == 14 ? 1 : 0);
 				}
 				Packet var5 = method4378();
 				method14049(var5, (long) field472);
 				Statics.field3429 = field472;
 				var5.p1(field472);
 				var5.p1(Statics.field1680.getId());
-				var5.p4(client.field10772);
+				var5.p4(Client.field10772);
 				for (int var6 = 0; var6 < 5; var6++) {
 					var5.p4(Statics.field10311.nextInt());
 				}
-				var5.p8(client.field10810);
-				var5.p1(client.field10768.field8339);
+				var5.p8(Client.field10810);
+				var5.p1(Client.field10768.field8339);
 				var5.p1(Statics.field10311.nextInt());
 				var5.rsaenc(PublicKeys.field624, PublicKeys.field626);
 				var3.field11432.pdata(var5.data, 0, var5.pos);
@@ -399,7 +400,7 @@ public class LoginManager {
 				String var7 = Statics.field432.field795.gjstr2();
 				Statics.field432.field795.pos = 0;
 				String var8 = JavascriptFunction.field4032.method6087();
-				Browser.method6081(var7, true, var8, client.field10784);
+				Browser.method6081(var7, true, var8, Client.field10784);
 				field445 = 64;
 			}
 			if (field445 == 64) {
@@ -442,7 +443,7 @@ public class LoginManager {
 					if (!field438) {
 						var10.p4(910);
 						var10.p4(1);
-						var10.p1(client.state == 14 ? 1 : 0);
+						var10.p1(Client.state == 14 ? 1 : 0);
 						int var14 = var10.pos;
 						Packet var15 = method896();
 						var10.pdata(var15.data, 0, var15.pos);
@@ -454,39 +455,39 @@ public class LoginManager {
 							var10.p8(field439);
 						}
 					}
-					var10.p1(client.getWindowMode());
+					var10.p1(Client.getWindowMode());
 					var10.p2(Statics.canvasWid);
 					var10.p2(Statics.canvasHei);
 					var10.p1(Statics.field688.unknown2.method18639());
 					GameShell.pushUID192(var10);
-					var10.pjstr(client.field10990);
-					var10.p4(client.field10772);
+					var10.pjstr(Client.field10990);
+					var10.p4(Client.field10772);
 					Packet var16 = Statics.field688.method18156();
 					var10.p1(var16.pos);
 					var10.pdata(var16.data, 0, var16.pos);
-					client.field10800 = true;
+					Client.field10800 = true;
 					Packet var17 = new Packet(Statics.field10581.method18189());
 					Statics.field10581.method18188(var17);
 					var10.pdata(var17.data, 0, var17.data.length);
-					var10.p4(client.field10842);
-					var10.p4(client.field10776);
-					var10.p4(client.field10775);
-					var10.p4(client.field10778);
-					var10.p4(client.field10777);
+					var10.p4(Client.field10842);
+					var10.p4(Client.field10776);
+					var10.p4(Client.field10775);
+					var10.p4(Client.field10778);
+					var10.p4(Client.field10777);
 					var10.pjstr(Statics.field579);
-					var10.p1(client.field10781 == null ? 0 : 1);
-					if (client.field10781 != null) {
-						var10.pjstr(client.field10781);
+					var10.p1(Client.field10781 == null ? 0 : 1);
+					if (Client.field10781 != null) {
+						var10.pjstr(Client.field10781);
 					}
-					var10.p1(client.field11079 ? 1 : 0);
-					var10.p1(client.field10785 ? 1 : 0);
+					var10.p1(Client.field11079 ? 1 : 0);
+					var10.p1(Client.field10785 ? 1 : 0);
 					var10.p1(Statics.field2627 & 0x1);
-					var10.p4(client.field10788);
-					var10.pjstr(client.field10789);
+					var10.p4(Client.field10788);
+					var10.pjstr(Client.field10789);
 					var10.p1(Statics.field9200 != null && Statics.field9200.node == Statics.field8755.node ? 0 : 1);
 					var10.p2(Statics.lobby.node);
 					Statics.method14463(var10);
-					if (client.ENABLE_TINYENC) {
+					if (Client.ENABLE_TINYENC) {
 						var10.tinyenc(Statics.field435, var13, var10.pos);
 					}
 					var10.psize2(var10.pos - var12);
@@ -514,42 +515,42 @@ public class LoginManager {
 							var10.p8(field439);
 						}
 					}
-					var10.p1(client.field10768.field8339);
+					var10.p1(Client.field10768.field8339);
 					var10.p1(Statics.field1680.getId());
-					var10.p1(client.getWindowMode());
+					var10.p1(Client.getWindowMode());
 					var10.p2(Statics.canvasWid);
 					var10.p2(Statics.canvasHei);
 					var10.p1(Statics.field688.unknown2.method18639());
 					GameShell.pushUID192(var10);
-					var10.pjstr(client.field10990);
+					var10.pjstr(Client.field10990);
 					Packet var22 = Statics.field688.method18156();
 					var10.p1(var22.pos);
 					var10.pdata(var22.data, 0, var22.pos);
 					Packet var23 = new Packet(Statics.field10581.method18189());
 					Statics.field10581.method18188(var23);
 					var10.pdata(var23.data, 0, var23.data.length);
-					var10.p4(client.field10842);
+					var10.p4(Client.field10842);
 					var10.pjstr(Statics.field579);
-					var10.p4(client.field10772);
-					var10.p4(client.field10788);
-					var10.pjstr(client.field10789);
+					var10.p4(Client.field10772);
+					var10.p4(Client.field10788);
+					var10.pjstr(Client.field10789);
 					var10.p1(Statics.field2627 & 0x1);
 					var10.pbool(false);
 					Statics.method14463(var10);
-					if (client.ENABLE_TINYENC) {
+					if (Client.ENABLE_TINYENC) {
 						var10.tinyenc(Statics.field435, var20, var10.pos);
 					}
 					var10.psize2(var10.pos - var19);
 				}
 				Statics.field432.method934(var9);
 				Statics.field432.method933();
-				Statics.field432.field794 = new IsaacRandom(Statics.field435);
+				Statics.field432.field794 = new Isaac(Statics.field435);
 				int[] var24 = new int[4];
 				for (int var25 = 0; var25 < 4; var25++) {
 					var24[var25] = Statics.field435[var25] + 50;
 				}
-				Statics.field432.field809 = new IsaacRandom(var24);
-				new IsaacRandom(var24);
+				Statics.field432.field809 = new Isaac(var24);
+				new Isaac(var24);
 				Statics.field432.field795.setIsaac(Statics.field432.field809);
 				Statics.field435 = null;
 				field445 = 98;
@@ -595,7 +596,7 @@ public class LoginManager {
 					field445 = 215;
 					method669(var26);
 					return;
-				} else if (Statics.field431 == 132 && var26 == 49 && client.state != 9) {
+				} else if (Statics.field431 == 132 && var26 == 49 && Client.state != 9) {
 					if (field476 != 52) {
 						method669(var26);
 					}
@@ -673,8 +674,8 @@ public class LoginManager {
 				method669(Statics.field11819);
 				Statics.field432.method938();
 				method10367();
-				if (Statics.method15084(client.state)) {
-					client.logout(true);
+				if (Statics.method15084(Client.state)) {
+					Client.logout(true);
 					field477 = Statics.field11819;
 				}
 				return;
@@ -701,9 +702,9 @@ public class LoginManager {
 				Statics.field432.field795.pos = 0;
 				Packet var29 = new Packet(var28);
 				String var30 = var29.gjstr();
-				Browser.method4607(var30, true, client.field10784);
+				Browser.method4607(var30, true, Client.field10784);
 				method669(Statics.field11819);
-				if (Statics.field431 == 132 && client.state != 9) {
+				if (Statics.field431 == 132 && Client.state != 9) {
 					field445 = 98;
 				} else {
 					field445 = 7;
@@ -758,8 +759,8 @@ public class LoginManager {
 						method669(var35);
 						Statics.field432.method938();
 						method10367();
-						if (Statics.method15084(client.state)) {
-							client.logout(true);
+						if (Statics.method15084(Client.state)) {
+							Client.logout(true);
 							field477 = var35;
 						}
 						return;
@@ -787,37 +788,37 @@ public class LoginManager {
 					Statics.field432.method939().method9029(var36.data, 0, Statics.field622);
 					var36.pos = 0;
 					method5247(var36);
-					client.field10949 = var36.g1();
-					client.field10950 = var36.g1();
-					client.field10951 = var36.g1() == 1;
-					client.field11081 = var36.g1() == 1;
-					client.field10953 = var36.g1() == 1;
-					client.field11101 = var36.g1() == 1;
-					client.field10945 = var36.g2();
-					client.field11006 = var36.g1() == 1;
+					Client.field10949 = var36.g1();
+					Client.field10950 = var36.g1();
+					Client.field10951 = var36.g1() == 1;
+					Client.field11081 = var36.g1() == 1;
+					Client.field10953 = var36.g1() == 1;
+					Client.field11101 = var36.g1() == 1;
+					Client.field10945 = var36.g2();
+					Client.field11006 = var36.g1() == 1;
 					Statics.field7406 = var36.g3s();
-					client.field10948 = var36.g1() == 1;
+					Client.field10948 = var36.g1() == 1;
 					Statics.field10250 = var36.gjstr();
 					Statics.field1238 = var36.g6() - MonotonicTime.method3655();
-					client.world.method7750().method18890(client.field10948);
-					Statics.field3183.method7677().method7750().method18890(client.field10948);
-					Statics.field1842.setAllowMembers(client.field10948);
-					Statics.field7961.setAllowMembers(client.field10948);
+					Client.world.method7750().method18890(Client.field10948);
+					Statics.field3183.method7677().method7750().method18890(Client.field10948);
+					Statics.field1842.setAllowMembers(Client.field10948);
+					Statics.field7961.setAllowMembers(Client.field10948);
 				} else if (Statics.field432.method939().method9038(Statics.field622)) {
 					Statics.field432.method939().method9029(var36.data, 0, Statics.field622);
 					var36.pos = 0;
 					method5247(var36);
-					client.field10949 = var36.g1();
-					client.field10950 = var36.g1();
-					client.field10951 = var36.g1() == 1;
+					Client.field10949 = var36.g1();
+					Client.field10950 = var36.g1();
+					Client.field10951 = var36.g1() == 1;
 					Statics.field7406 = var36.g3s();
 					Statics.field4490.field12052 = (byte) var36.g1();
-					client.field11081 = var36.g1() == 1;
-					client.field10953 = var36.g1() == 1;
+					Client.field11081 = var36.g1() == 1;
+					Client.field10953 = var36.g1() == 1;
 					Statics.field8322 = var36.g8();
 					Statics.field1238 = Statics.field8322 - MonotonicTime.method3655() - var36.g5();
 					int var37 = var36.g1();
-					client.field11006 = (var37 & 0x1) != 0;
+					Client.field11006 = (var37 & 0x1) != 0;
 					Statics.field11709 = (var37 & 0x2) != 0;
 					Statics.field2676 = var36.g4s();
 					Statics.field3056 = var36.g4s();
@@ -842,17 +843,17 @@ public class LoginManager {
 					Statics.field9200.host = var36.gjstr2();
 					Statics.field9200.port = var36.g2();
 					Statics.field9200.port2 = var36.g2();
-					if (Statics.field1811 != ModeWhere.field8277 && (Statics.field1811 != ModeWhere.field8269 || client.field10949 < 2) && Statics.field8755.method14757(Statics.world)) {
+					if (Statics.field1811 != ModeWhere.field8277 && (Statics.field1811 != ModeWhere.field8269 || Client.field10949 < 2) && Statics.field8755.method14757(Statics.world)) {
 						WorldSwitcher.method10337();
 					}
 				} else {
 					return;
 				}
-				if (client.field10953) {
+				if (Client.field10953) {
 					try {
 						BrowserControl.call(Statics.field11885, "zap");
 					} catch (Throwable var49) {
-						if (client.field10770) {
+						if (Client.field10770) {
 							try {
 								Statics.field11885.getAppletContext().showDocument(new URL(Statics.field11885.getCodeBase(), "blank.ws"), "tbi");
 							} catch (Exception var48) {
@@ -872,7 +873,7 @@ public class LoginManager {
 					field445 = 7;
 					method669(2);
 					method10282();
-					client.setState(13);
+					Client.setState(13);
 					Statics.field432.field796 = null;
 					return;
 				}
@@ -914,9 +915,9 @@ public class LoginManager {
 				System.arraycopy(Statics.field432.field795.data, Statics.field432.field795.pos, var44.data, 0, var43);
 				Statics.field432.field795.pos += var43;
 				if (ServerProt.REBUILD_REGION == Statics.field432.field796) {
-					client.world.method7749(new RebuildRequest(RebuildType.field5066, var44));
+					Client.world.method7749(new RebuildRequest(RebuildType.field5066, var44));
 				} else {
-					client.world.method7749(new RebuildRequest(RebuildType.field5071, var44));
+					Client.world.method7749(new RebuildRequest(RebuildType.field5071, var44));
 				}
 				if (Statics.field432.field795.pos != var42) {
 					throw new RuntimeException(Statics.field432.field795.pos + " " + var42);
@@ -1000,7 +1001,7 @@ public class LoginManager {
 		var0.p4(Statics.field435[2]);
 		var0.p4(Statics.field435[3]);
 		var0.p8(Statics.field434);
-		if (client.state == 14) {
+		if (Client.state == 14) {
 			var0.p4(Statics.field436[0]);
 			var0.p4(Statics.field436[1]);
 			var0.p4(Statics.field436[2]);
@@ -1042,7 +1043,7 @@ public class LoginManager {
 	@ObfuscatedName("ap.i(B)Lalw;")
 	public static Packet method896() {
 		Packet var0 = method4378();
-		if (client.state != 14) {
+		if (Client.state != 14) {
 			long var1;
 			if (field472 != -1) {
 				var1 = field472;
@@ -1056,7 +1057,7 @@ public class LoginManager {
 			var0.pbool(false);
 			var0.pjstr(password);
 			var0.p8(field437);
-			var0.p8(client.field10810);
+			var0.p8(Client.field10810);
 		}
 		var0.rsaenc(PublicKeys.field624, PublicKeys.field626);
 		return var0;
@@ -1073,16 +1074,16 @@ public class LoginManager {
 
 	@ObfuscatedName("ye.t(I)V")
 	public static void method10367() {
-		if (client.method14437(client.state)) {
-			if (client.field10835.method939() == null) {
-				client.setState(17);
+		if (Client.method14437(Client.state)) {
+			if (Client.field10835.method939() == null) {
+				Client.setState(17);
 			} else {
-				client.setState(13);
+				Client.setState(13);
 			}
-		} else if (client.state == 17 || client.state == 7) {
-			client.setState(4);
-		} else if (client.state == 9) {
-			client.setState(4);
+		} else if (Client.state == 17 || Client.state == 7) {
+			Client.setState(4);
+		} else if (Client.state == 9) {
+			Client.setState(4);
 		}
 	}
 
@@ -1094,16 +1095,16 @@ public class LoginManager {
 		Statics.field432.field806 = null;
 		Statics.field432.field805 = null;
 		Statics.field432.field789 = 0;
-		client.field10831 = 0;
-		client.field11080 = 0;
-		client.field10811 = 0;
-		client.field11084 = 0;
-		client.field11055 = null;
+		Client.field10831 = 0;
+		Client.field11080 = 0;
+		Client.field10811 = 0;
+		Client.field11084 = 0;
+		Client.field11055 = null;
 		Statics.field7421 = 0;
 		Statics.field9267 = null;
 		Statics.field6867 = null;
 		Statics.field1890 = null;
-		client.field11095 = true;
+		Client.field11095 = true;
 		ClientWatch.method13845();
 		for (int var0 = 0; var0 < Statics.field7410.field635.length; var0++) {
 			PlayerStat var1 = new PlayerStat(Statics.field2767.method9778(var0), false);
@@ -1113,7 +1114,7 @@ public class LoginManager {
 		}
 		Statics.field7410.field632.method9624();
 		DelayedStateChange.method716();
-		client.method4336(Statics.field432);
+		Client.method4336(Statics.field432);
 	}
 
 	@ObfuscatedName("xb.ah(I)V")
@@ -1123,35 +1124,35 @@ public class LoginManager {
 
 	@ObfuscatedName("hz.al(I)V")
 	public static void method4320() {
-		if (client.state == 19) {
-			client.method9872();
+		if (Client.state == 19) {
+			Client.method9872();
 		}
-		client.field10835.method938();
+		Client.field10835.method938();
 		method14959();
 		Statics.focus = true;
 		ClassCheck.method4052();
-		for (int var0 = 0; var0 < client.field10851.length; var0++) {
-			client.field10851[var0] = null;
+		for (int var0 = 0; var0 < Client.field10851.length; var0++) {
+			Client.field10851[var0] = null;
 		}
-		client.field10973 = false;
-		client.field10870 = (int) (Math.random() * 100.0D) - 50;
-		client.field10880 = (int) (Math.random() * 110.0D) - 55;
-		client.field10861 = (int) (Math.random() * 80.0D) - 40;
-		client.field10885 = (int) (Math.random() * 120.0D) - 60;
-		client.field10887 = (int) (Math.random() * 30.0D) - 20;
-		client.field10895 = (int) (Math.random() * 160.0D) - 80 & 0x3FFF;
+		Client.field10973 = false;
+		Client.field10870 = (int) (Math.random() * 100.0D) - 50;
+		Client.field10880 = (int) (Math.random() * 110.0D) - 55;
+		Client.field10861 = (int) (Math.random() * 80.0D) - 40;
+		Client.field10885 = (int) (Math.random() * 120.0D) - 60;
+		Client.field10887 = (int) (Math.random() * 30.0D) - 20;
+		Client.field10895 = (int) (Math.random() * 160.0D) - 80 & 0x3FFF;
 		Minimap.method9233();
 		for (int var1 = 0; var1 < 2048; var1++) {
-			client.field10944[var1] = null;
+			Client.field10944[var1] = null;
 		}
 		Statics.field4490 = null;
-		client.field11011 = 0;
-		client.field10906 = 0;
-		client.field10838.method14499();
-		client.field10965.method14152();
-		client.field10966.method14499();
-		client.field10864.method14242();
-		client.field10964.method14499();
+		Client.field11011 = 0;
+		Client.field10906 = 0;
+		Client.field10838.method14499();
+		Client.field10965.method14152();
+		Client.field10966.method14499();
+		Client.field10864.method14242();
+		Client.field10964.method14499();
 		ChangeLocationRequest.field11237 = new IterableQueue();
 		ChangeLocationRequest.field11242 = new IterableQueue();
 		Statics.field8550 = 0;
@@ -1164,43 +1165,43 @@ public class LoginManager {
 		Statics.field1983 = 0;
 		Statics.field8576 = 0;
 		Statics.field708 = 0;
-		if (client.field10978 != -1) {
-			Component.method7602(client.field10978);
+		if (Client.field10978 != -1) {
+			Component.method7602(Client.field10978);
 		}
-		for (SubInterface var2 = (SubInterface) client.field10979.method14500(); var2 != null; var2 = (SubInterface) client.field10979.method14502()) {
+		for (SubInterface var2 = (SubInterface) Client.field10979.method14500(); var2 != null; var2 = (SubInterface) Client.field10979.method14502()) {
 			if (!var2.method8441()) {
-				var2 = (SubInterface) client.field10979.method14500();
+				var2 = (SubInterface) Client.field10979.method14500();
 				if (var2 == null) {
 					break;
 				}
 			}
-			client.method214(var2, true, false);
+			Client.method214(var2, true, false);
 		}
-		client.field10978 = -1;
-		client.field10979 = new IterableMap(8);
+		Client.field10978 = -1;
+		Client.field10979 = new IterableMap(8);
 		Component.method5075();
-		client.field11056 = null;
+		Client.field11056 = null;
 		for (int var3 = 0; var3 < 8; var3++) {
-			client.field10961[var3] = null;
-			client.field10962[var3] = false;
-			client.field10832[var3] = -1;
+			Client.field10961[var3] = null;
+			Client.field10962[var3] = false;
+			Client.field10832[var3] = -1;
 		}
 		ClientInvCache.method2752();
-		client.field11023 = true;
+		Client.field11023 = true;
 		for (int var4 = 0; var4 < 114; var4++) {
-			client.field11072[var4] = true;
+			Client.field11072[var4] = true;
 		}
 		for (int var5 = 0; var5 < 3; var5++) {
 			for (int var6 = 0; var6 < 8; var6++) {
-				client.field11057[var5][var6] = new StockmarketSlot();
+				Client.field11057[var5][var6] = new StockmarketSlot();
 			}
 		}
-		client.world.method7816().method10019();
-		client.field10902 = true;
+		Client.world.method7816().method10019();
+		Client.field10902 = true;
 		LocType.field7501 = NPCType.field2694 = ObjType.field8650 = new short[256];
 		Statics.field4868 = LocalisedText.WALKHERE.method15021(Statics.field1680);
 		Statics.field688.method18157(Statics.field688.removeRoofs2, Statics.field688.removeRoofs.method18496());
-		client.field10842 = 0;
+		Client.field10842 = 0;
 		MiniMenu.method5175();
 		Statics.field594 = null;
 		Statics.field3457 = 0L;
@@ -1208,7 +1209,7 @@ public class LoginManager {
 
 	@ObfuscatedName("aiz.ai(I)Z")
 	public static boolean method16808() {
-		if (client.state == 4) {
+		if (Client.state == 4) {
 			return !method2865() && !AccountCreationManager.method9610();
 		} else {
 			return false;
