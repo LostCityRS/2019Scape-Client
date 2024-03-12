@@ -57,19 +57,19 @@ public class PlayerGroupMember {
 		int var5 = arg0.g1();
 		this.field1930 = (var5 & 0x1) != 0;
 		this.field1929 = (var5 & 0x2) != 0;
-		this.field1927 = new PlayerStat[arg3.method295().method9784()];
+		this.field1927 = new PlayerStat[arg3.method295().getSkillCount()];
 		int var6 = arg0.g1();
 		if (var6 > this.field1927.length) {
 			throw new IllegalStateException("");
 		}
 		for (int var7 = 0; var7 < this.field1927.length; var7++) {
-			PlayerStat var8 = this.field1927[var7] = new PlayerStat(arg3.method295().method9778(var7), true);
+			PlayerStat var8 = this.field1927[var7] = new PlayerStat(arg3.method295().getSkill(var7), true);
 			if (var7 < var6) {
-				var8.method10160(arg0.g4s());
+				var8.setXP(arg0.g4s());
 			} else {
-				var8.method10160(0);
+				var8.setXP(0);
 			}
-			var8.method10164(var8.method10161());
+			var8.setLevel(var8.getBaseLevel());
 		}
 		int var9 = arg0.g2();
 		this.field1926 = new VarContainerSparse(arg3.method293());
@@ -159,8 +159,8 @@ public class PlayerGroupMember {
 	@ObfuscatedName("gy.o(Lgy;I)V")
 	public void method3502(PlayerGroupMember arg0) {
 		for (int var2 = 0; var2 < this.field1927.length; var2++) {
-			this.field1927[var2].method10160(arg0.field1927[var2].method10175());
-			this.field1927[var2].method10164(this.field1927[var2].method10161());
+			this.field1927[var2].setXP(arg0.field1927[var2].getXP());
+			this.field1927[var2].setLevel(this.field1927[var2].getBaseLevel());
 		}
 		this.field1926.method14749();
 		Iterator var3 = arg0.field1926.iterator();

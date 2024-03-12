@@ -1459,7 +1459,7 @@ public final class Client extends GameShell {
 		}
 		LocType.field7501 = NPCType.field2694 = ObjType.field8650 = new short[256];
 		try {
-			Statics.field3428 = GameShell.method7321().getToolkit().getSystemClipboard();
+			Statics.field3428 = GameShell.getTopContainer().getToolkit().getSystemClipboard();
 		} catch (Exception var5) {
 		}
 		Statics.field11931 = Keyboard.method15006(Statics.canvas);
@@ -1552,7 +1552,7 @@ public final class Client extends GameShell {
 						} else {
 							CameraManager.method542(Statics.field4490.method4667());
 						}
-					} else if (DeveloperConsole.method10211() && (Statics.field688.unknown8.method18701() == 0 || Statics.field11931.method9080(86))) {
+					} else if (DeveloperConsole.isopen() && (Statics.field688.unknown8.method18701() == 0 || Statics.field11931.method9080(86))) {
 						DeveloperConsole.close();
 					} else if (Statics.field688.unknown8.method18701() == 0 || Statics.field11931.method9080(86)) {
 						DeveloperConsole.method638();
@@ -1584,7 +1584,7 @@ public final class Client extends GameShell {
 				}
 			}
 		}
-		if (DeveloperConsole.method10211()) {
+		if (DeveloperConsole.isopen()) {
 			Statics.method10298();
 		}
 		if (Statics.method2092(state)) {
@@ -1713,7 +1713,7 @@ public final class Client extends GameShell {
 				}
 			}
 		}
-		if (DeveloperConsole.method10211()) {
+		if (DeveloperConsole.isopen()) {
 			DeveloperConsole.method5378(Statics.field8198);
 		}
 		if (!Statics.method2092(state) && !method9273(state) && field10978 != -1) {
@@ -2399,15 +2399,15 @@ public final class Client extends GameShell {
 
 	@ObfuscatedName("ym.fs(IIIIZB)V")
 	public static void method13784(int arg0, int arg1, int arg2, int arg3, boolean arg4) {
-		if (Fullscreen.allowed && Statics.fsframe != null && (arg1 != 3 || Statics.field8186 != arg2 || Statics.field9256 != arg3)) {
+		if (Fullscreen.allowed && Statics.fsframe != null && (arg1 != 3 || Statics.lastFullscreenWidth != arg2 || Statics.lastFullscreenHeight != arg3)) {
 			Fullscreen.method4277(Statics.fsimp14, Statics.fsframe);
 			Statics.fsframe = null;
 		}
 		if (Fullscreen.allowed && arg1 == 3 && Statics.fsframe == null) {
 			Statics.fsframe = Fullscreen.method4572(Statics.fsimp14, arg2, arg3, 0, 0);
 			if (Statics.fsframe != null) {
-				Statics.field8186 = arg2;
-				Statics.field9256 = arg3;
+				Statics.lastFullscreenWidth = arg2;
+				Statics.lastFullscreenHeight = arg3;
 				Preferences.method16391();
 			}
 		}
@@ -2415,7 +2415,7 @@ public final class Client extends GameShell {
 			method13784(arg0, Statics.field688.maxScreenSize.method18539(), -1, -1, true);
 			return;
 		}
-		Container var5 = GameShell.method7321();
+		Container var5 = GameShell.getTopContainer();
 		if (Statics.fsframe != null) {
 			Statics.frameWid = arg2;
 			Statics.frameHei = arg3;
@@ -2487,7 +2487,7 @@ public final class Client extends GameShell {
 
 	@ObfuscatedName("fs.fj(B)V")
 	public static void method3033() {
-		Container var0 = GameShell.method7321();
+		Container var0 = GameShell.getTopContainer();
 		int var1 = var0.getSize().width;
 		int var2 = var0.getSize().height;
 		if (Statics.frame == var0) {
@@ -2513,7 +2513,7 @@ public final class Client extends GameShell {
 		Client var0 = Statics.field8301;
 		synchronized (Statics.field8301) {
 			if (Statics.fsframe == null) {
-				Container var1 = GameShell.method7321();
+				Container var1 = GameShell.getTopContainer();
 				if (var1 != null) {
 					Statics.frameWid = var1.getSize().width;
 					Statics.frameHei = var1.getSize().height;
@@ -2618,7 +2618,7 @@ public final class Client extends GameShell {
 			return;
 		}
 		try {
-			Container var4 = GameShell.method7321();
+			Container var4 = GameShell.getTopContainer();
 			int var5 = 0;
 			int var6 = 0;
 			if (Statics.frame == var4) {
@@ -3423,11 +3423,11 @@ public final class Client extends GameShell {
 			long var3 = var1.method19271();
 			if (var2 == 1) {
 				VarType var5 = (VarType) Statics.field8911.list((int) var3);
-				Statics.field7228.method2798(var5, var1.field12268);
+				Statics.field7228.setVarValueInt(var5, var1.field12268);
 				field11019[++field11016 - 1 & 0x3F] = (int) var3;
 			} else if (var2 == 2) {
 				VarType var6 = (VarType) Statics.field8911.list((int) var3);
-				Statics.field7228.method2802(var6, var1.field12269);
+				Statics.field7228.setVarValue(var6, var1.field12269);
 				field11017[++field11018 - 1 & 0x3F] = (int) var3;
 			} else if (var2 == 3) {
 				Component var7 = Component.method10202((int) var3);
@@ -7840,7 +7840,7 @@ public final class Client extends GameShell {
 		} else if (ServerProt.VARP_LARGE == arg0.field796) {
 			int var192 = var2.g2_alt1();
 			int var193 = var2.g4s();
-			Statics.field7410.field632.method9625((VarType) Statics.field8485.list(var192), var193);
+			Statics.field7410.field632.setVarValueIntFromServer((VarType) Statics.field8485.list(var192), var193);
 			arg0.field796 = null;
 			return true;
 		} else if (ServerProt.LOYALTY_UPDATE == arg0.field796) {
@@ -7891,9 +7891,9 @@ public final class Client extends GameShell {
 			int var204 = var2.g1_alt2();
 			int var205 = var2.g4_alt1();
 			int var206 = var2.g1_alt3();
-			Statics.field2767.method9778(var206);
-			Statics.field7410.field635[var206].method10160(var205);
-			Statics.field7410.field635[var206].method10164(var204);
+			Statics.skillDefaults.getSkill(var206);
+			Statics.field7410.field635[var206].setXP(var205);
+			Statics.field7410.field635[var206].setLevel(var204);
 			field11015[++field11014 - 1 & 0x3F] = var206;
 			arg0.field796 = null;
 			return true;
@@ -8375,7 +8375,7 @@ public final class Client extends GameShell {
 		} else if (ServerProt.VARBIT_SMALL == arg0.field796) {
 			int var317 = var2.g1_alt3();
 			int var318 = var2.g2_alt2();
-			Statics.field7410.field632.method9629((VarBitType) Statics.field8736.list(var318), var317);
+			Statics.field7410.field632.setVarBitValue((VarBitType) Statics.field8736.list(var318), var317);
 			arg0.field796 = null;
 			return true;
 		} else if (ServerProt.FRIENDLIST_LOADED == arg0.field796) {
@@ -9089,7 +9089,7 @@ public final class Client extends GameShell {
 		} else if (ServerProt.VARP_SMALL == arg0.field796) {
 			byte var520 = var2.g1b();
 			int var521 = var2.g2_alt2();
-			Statics.field7410.field632.method9625((VarType) Statics.field8485.list(var521), var520);
+			Statics.field7410.field632.setVarValueIntFromServer((VarType) Statics.field8485.list(var521), var520);
 			arg0.field796 = null;
 			return true;
 		} else if (ServerProt.CLEAR_PLAYER_SNAPSHOT == arg0.field796) {
@@ -9278,7 +9278,7 @@ public final class Client extends GameShell {
 		} else if (ServerProt.VARBIT_LARGE == arg0.field796) {
 			int var583 = var2.g2_alt2();
 			int var584 = var2.g4_alt1();
-			Statics.field7410.field632.method9629((VarBitType) Statics.field8736.list(var583), var584);
+			Statics.field7410.field632.setVarBitValue((VarBitType) Statics.field8736.list(var583), var584);
 			arg0.field796 = null;
 			return true;
 		} else if (ServerProt.CHAT_FILTER_SETTINGS == arg0.field796) {
@@ -12065,7 +12065,7 @@ public final class Client extends GameShell {
 									var29 = true;
 								}
 							}
-							if (var12.field2324 && !DeveloperConsole.method10211()) {
+							if (var12.field2324 && !DeveloperConsole.isopen()) {
 								for (int var35 = 0; var35 < var12.field2270.length; var35++) {
 									boolean var36 = false;
 									boolean var37 = false;
@@ -12881,7 +12881,7 @@ public final class Client extends GameShell {
 		if (var1 == 0) {
 			return;
 		}
-		int var2 = Statics.field7410.method679((VarType) Statics.field8485.list(arg0));
+		int var2 = Statics.field7410.getVarValueInt((VarType) Statics.field8485.list(arg0));
 		if (var1 == 5) {
 			field10968 = var2;
 		}

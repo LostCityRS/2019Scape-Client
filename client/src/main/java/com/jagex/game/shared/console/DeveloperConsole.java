@@ -109,7 +109,7 @@ public class DeveloperConsole {
 	}
 
 	@ObfuscatedName("xh.w(I)Z")
-	public static boolean method10211() {
+	public static boolean isopen() {
 		return field770;
 	}
 
@@ -463,12 +463,12 @@ public class DeveloperConsole {
 				}
 				if (arg0.startsWith("getclientvarpbit")) {
 					int var18 = Integer.parseInt(arg0.substring(17));
-					addline("varpbit=" + Statics.field7410.method678(Statics.field7410.method694(var18)));
+					addline("varpbit=" + Statics.field7410.getVarBitValue(Statics.field7410.method694(var18)));
 					return;
 				}
 				if (arg0.startsWith("getclientvarp")) {
 					int var19 = Integer.parseInt(arg0.substring(14));
-					addline("varp=" + Statics.field7410.method679(Statics.field7410.method695(VarDomainType.PLAYER, var19)));
+					addline("varp=" + Statics.field7410.getVarValueInt(Statics.field7410.method695(VarDomainType.PLAYER, var19)));
 					return;
 				}
 				if (arg0.startsWith("directlogin")) {

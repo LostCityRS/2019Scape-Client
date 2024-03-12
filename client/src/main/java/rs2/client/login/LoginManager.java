@@ -1107,9 +1107,9 @@ public class LoginManager {
 		Client.field11095 = true;
 		ClientWatch.method13845();
 		for (int var0 = 0; var0 < Statics.field7410.field635.length; var0++) {
-			PlayerStat var1 = new PlayerStat(Statics.field2767.method9778(var0), false);
-			var1.method10160(0);
-			var1.method10164(0);
+			PlayerStat var1 = new PlayerStat(Statics.skillDefaults.getSkill(var0), false);
+			var1.setXP(0);
+			var1.setLevel(0);
 			Statics.field7410.field635[var0] = var1;
 		}
 		Statics.field7410.field632.method9624();

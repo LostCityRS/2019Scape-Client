@@ -22,10 +22,10 @@ public class LoadingStage {
 	public static final LoadingStage field2906 = new LoadingStage(4, LocalisedText.CHECKING_FOR_UPDATES, 4);
 
 	@ObfuscatedName("jw.w")
-	public static final LoadingStage field2907 = new LoadingStage(5, LocalisedText.CHECKING_FOR_UPDATES, LocalisedText.CHECKING_FOR_UPDATES, 4, 5);
+	public static final LoadingStage OPEN_JS5_ARCHIVES = new LoadingStage(5, LocalisedText.CHECKING_FOR_UPDATES, LocalisedText.CHECKING_FOR_UPDATES, 4, 5);
 
 	@ObfuscatedName("jw.l")
-	public static final LoadingStage field2921 = new LoadingStage(6, LocalisedText.CHECKING_FOR_UPDATES, LocalisedText.CHECKING_FOR_UPDATES, 5, 98, true, true);
+	public static final LoadingStage GET_JS5_INDEXES = new LoadingStage(6, LocalisedText.CHECKING_FOR_UPDATES, LocalisedText.CHECKING_FOR_UPDATES, 5, 98, true, true);
 
 	@ObfuscatedName("jw.u")
 	public static final LoadingStage field2909 = new LoadingStage(7, LocalisedText.CHECKING_FOR_UPDATES, 99);
@@ -34,19 +34,19 @@ public class LoadingStage {
 	public static final LoadingStage field2910 = new LoadingStage(8, LocalisedText.CHECKING_FOR_UPDATES, 100);
 
 	@ObfuscatedName("jw.p")
-	public static final LoadingStage field2902 = new LoadingStage(9, LocalisedText.DOWNLOADING_UPDATES, LocalisedText.DOWNLOADING_UPDATES, 0, 92, true, true);
+	public static final LoadingStage DOWNLOAD_STUFF = new LoadingStage(9, LocalisedText.DOWNLOADING_UPDATES, LocalisedText.DOWNLOADING_UPDATES, 0, 92, true, true);
 
 	@ObfuscatedName("jw.d")
-	public static final LoadingStage field2912 = new LoadingStage(10, LocalisedText.DOWNLOADING_UPDATES, LocalisedText.DOWNLOADING_UPDATES, 92, 93);
+	public static final LoadingStage SETUP_CONFIG_DECODERS = new LoadingStage(10, LocalisedText.DOWNLOADING_UPDATES, LocalisedText.DOWNLOADING_UPDATES, 92, 93);
 
 	@ObfuscatedName("jw.c")
-	public static final LoadingStage field2918 = new LoadingStage(11, LocalisedText.DOWNLOADING_UPDATES, LocalisedText.DOWNLOADING_UPDATES, 94, 95);
+	public static final LoadingStage SETUP_STATIC_SPRITES = new LoadingStage(11, LocalisedText.DOWNLOADING_UPDATES, LocalisedText.DOWNLOADING_UPDATES, 94, 95);
 
 	@ObfuscatedName("jw.r")
 	public static final LoadingStage field2914 = new LoadingStage(12, LocalisedText.DOWNLOADING_UPDATES, LocalisedText.DOWNLOADING_UPDATES, 96, 97);
 
 	@ObfuscatedName("jw.v")
-	public static final LoadingStage field2915 = new LoadingStage(13, LocalisedText.DOWNLOADING_UPDATES, 97);
+	public static final LoadingStage SETUP_VARC_SYSTEM = new LoadingStage(13, LocalisedText.DOWNLOADING_UPDATES, 97);
 
 	@ObfuscatedName("jw.o")
 	public static final LoadingStage field2916 = new LoadingStage(14, LocalisedText.DOWNLOADING_UPDATES, 97);
@@ -83,7 +83,7 @@ public class LoadingStage {
 
 	@ObfuscatedName("jw.e(I)[Ljw;")
 	public static LoadingStage[] method4920() {
-		return new LoadingStage[] { field2913, field2911, field2904, field2905, field2906, field2907, field2921, field2909, field2910, field2902, field2912, field2918, field2914, field2915, field2916, field2917, field2903, field2919 };
+		return new LoadingStage[] { field2913, field2911, field2904, field2905, field2906, OPEN_JS5_ARCHIVES, GET_JS5_INDEXES, field2909, field2910, DOWNLOAD_STUFF, SETUP_CONFIG_DECODERS, SETUP_STATIC_SPRITES, field2914, SETUP_VARC_SYSTEM, field2916, field2917, field2903, field2919 };
 	}
 
 	public LoadingStage(int arg0, LocalisedText arg1, int arg2) {

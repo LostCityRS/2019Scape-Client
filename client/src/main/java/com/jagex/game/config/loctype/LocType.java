@@ -979,12 +979,12 @@ public class LocType implements ConfigType {
 		if (this.field7506 != -1) {
 			VarBitType var4 = arg0.method694(this.field7506);
 			if (var4 != null) {
-				var3 = arg1.method678(var4);
+				var3 = arg1.getVarBitValue(var4);
 			}
 		} else if (this.field7507 != -1) {
 			VarType var5 = arg0.method695(VarDomainType.PLAYER, this.field7507);
 			if (var5 != null) {
-				var3 = arg1.method679(var5);
+				var3 = arg1.getVarValueInt(var5);
 			}
 		}
 		if (var3 >= 0 && var3 < this.field7505.length - 1) {

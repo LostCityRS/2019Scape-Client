@@ -342,10 +342,10 @@ public class MapElementType implements ConfigType {
 				return true;
 			}
 			VarBitType var6 = arg0.method694(this.field2371);
-			var5 = arg1.method678(var6);
+			var5 = arg1.getVarBitValue(var6);
 		} else {
 			VarType var4 = arg0.method695(VarDomainType.PLAYER, this.field2387);
-			var5 = arg1.method679(var4);
+			var5 = arg1.getVarValueInt(var4);
 		}
 		if (this.field2392 != null) {
 			if (var5 < 0 || var5 >= this.field2392.length - 1) {
@@ -370,10 +370,10 @@ public class MapElementType implements ConfigType {
 				return true;
 			}
 			VarBitType var11 = arg0.method694(this.field2390);
-			var10 = arg1.method678(var11);
+			var10 = arg1.getVarBitValue(var11);
 		} else {
 			VarType var9 = arg0.method695(VarDomainType.PLAYER, this.field2391);
-			var10 = arg1.method679(var9);
+			var10 = arg1.getVarValueInt(var9);
 		}
 		if (var10 >= this.field2380 && var10 <= this.field2389) {
 			return true;
@@ -460,12 +460,12 @@ public class MapElementType implements ConfigType {
 		if (this.field2371 != -1) {
 			VarBitType var4 = arg0.method694(this.field2371);
 			if (var4 != null) {
-				var3 = arg1.method678(var4);
+				var3 = arg1.getVarBitValue(var4);
 			}
 		} else if (this.field2387 != -1) {
 			VarType var5 = arg0.method695(VarDomainType.PLAYER, this.field2387);
 			if (var5 != null) {
-				var3 = arg1.method679(var5);
+				var3 = arg1.getVarValueInt(var5);
 			}
 		}
 		if (var3 >= 0 && var3 < this.field2392.length - 1) {

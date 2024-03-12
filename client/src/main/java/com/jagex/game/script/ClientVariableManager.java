@@ -57,29 +57,29 @@ public final class ClientVariableManager extends SparseVarDomain {
 	}
 
 	@ObfuscatedName("afu.e(Lec;II)V")
-	public void method2798(VarType arg0, int arg1) {
+	public void setVarValueInt(VarType arg0, int arg1) {
 		if (this.field10251[arg0.id] == VarLifetime.PERMANENT) {
 			this.field10252 = true;
-		} else if (this.field10251[arg0.id] == VarLifetime.SERVER_PERMANENT && this.method679(arg0) != arg1) {
+		} else if (this.field10251[arg0.id] == VarLifetime.SERVER_PERMANENT && this.getVarValueInt(arg0) != arg1) {
 			this.field10254 = true;
 			this.field10255.add(arg0.id);
 		}
-		super.method2798(arg0, arg1);
+		super.setVarValueInt(arg0, arg1);
 	}
 
 	@ObfuscatedName("afu.m(Lec;J)V")
-	public void method2800(VarType arg0, long arg1) {
+	public void setVarValueLong(VarType arg0, long arg1) {
 		if (this.field10251[arg0.id] == VarLifetime.PERMANENT) {
 			this.field10252 = true;
-		} else if (this.field10251[arg0.id] == VarLifetime.SERVER_PERMANENT && this.method2799(arg0) != arg1) {
+		} else if (this.field10251[arg0.id] == VarLifetime.SERVER_PERMANENT && this.getVarValueLong(arg0) != arg1) {
 			this.field10254 = true;
 			this.field10255.add(arg0.id);
 		}
-		super.method2800(arg0, arg1);
+		super.setVarValueLong(arg0, arg1);
 	}
 
 	@ObfuscatedName("afu.f(Lec;Ljava/lang/Object;I)V")
-	public void method2802(VarType arg0, Object arg1) {
+	public void setVarValue(VarType arg0, Object arg1) {
 		if (this.field10251[arg0.id] == VarLifetime.PERMANENT) {
 			this.field10252 = true;
 		} else if (this.field10251[arg0.id] == VarLifetime.SERVER_PERMANENT) {
@@ -89,7 +89,7 @@ public final class ClientVariableManager extends SparseVarDomain {
 					arg1 = var3.substring(0, 80);
 				}
 			}
-			Object var4 = this.method2801(arg0);
+			Object var4 = this.getVarValue(arg0);
 			if (arg1 != null && var4 != null && !arg1.equals(var4)) {
 				this.field10254 = true;
 				this.field10255.add(arg0.id);
@@ -98,7 +98,7 @@ public final class ClientVariableManager extends SparseVarDomain {
 				this.field10255.add(arg0.id);
 			}
 		}
-		super.method2802(arg0, arg1);
+		super.setVarValue(arg0, arg1);
 	}
 
 	@ObfuscatedName("afu.i(I)V")

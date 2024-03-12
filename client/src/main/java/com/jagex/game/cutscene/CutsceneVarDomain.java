@@ -11,14 +11,14 @@ import deob.Statics;
 public final class CutsceneVarDomain implements VarIntDomain {
 
 	@ObfuscatedName("et.u(Lec;I)I")
-	public int method679(VarType arg0) {
+	public int getVarValueInt(VarType arg0) {
 		IntWrapper var2 = (IntWrapper) CutsceneManager.field1718.method14495((long) arg0.id);
-		return var2 == null ? Statics.field7410.method679(arg0) : var2.field11442;
+		return var2 == null ? Statics.field7410.getVarValueInt(arg0) : var2.field11442;
 	}
 
 	@ObfuscatedName("et.z(Lkh;I)I")
-	public int method678(VarBitType arg0) {
+	public int getVarBitValue(VarBitType arg0) {
 		IntWrapper var2 = (IntWrapper) CutsceneManager.field1718.method14495((long) arg0.id | 0x100000000L);
-		return var2 == null ? Statics.field7410.method678(arg0) : var2.field11442;
+		return var2 == null ? Statics.field7410.getVarBitValue(arg0) : var2.field11442;
 	}
 }

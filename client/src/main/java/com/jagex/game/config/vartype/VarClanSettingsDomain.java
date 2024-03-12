@@ -17,19 +17,19 @@ public class VarClanSettingsDomain implements VarDomain {
 	}
 
 	@ObfuscatedName("yl.u(Lec;I)I")
-	public int method679(VarType arg0) {
+	public int getVarValueInt(VarType arg0) {
 		Integer var2 = this.field8193.method5318(Client.field10768.field8339 << 16 | arg0.id);
 		return var2 == null ? (Integer) arg0.getDefaultValue() : var2;
 	}
 
 	@ObfuscatedName("yl.n(Lec;I)J")
-	public long method2799(VarType arg0) {
+	public long getVarValueLong(VarType arg0) {
 		Long var2 = this.field8193.method5259(Client.field10768.field8339 << 16 | arg0.id);
 		return var2 == null ? (Long) arg0.getDefaultValue() : var2;
 	}
 
 	@ObfuscatedName("yl.k(Lec;B)Ljava/lang/Object;")
-	public Object method2801(VarType arg0) {
+	public Object getVarValue(VarType arg0) {
 		if (ScriptVarType.STRING != arg0.dataType) {
 			throw new IllegalArgumentException("");
 		}
@@ -37,22 +37,22 @@ public class VarClanSettingsDomain implements VarDomain {
 	}
 
 	@ObfuscatedName("yl.z(Lkh;I)I")
-	public int method678(VarBitType arg0) {
-		return arg0.getVarbitValue(this.method679(arg0.baseVar));
+	public int getVarBitValue(VarBitType arg0) {
+		return arg0.getVarbitValue(this.getVarValueInt(arg0.baseVar));
 	}
 
 	@ObfuscatedName("yl.e(Lec;II)V")
-	public void method2798(VarType arg0, int arg1) {
+	public void setVarValueInt(VarType arg0, int arg1) {
 		throw new UnsupportedOperationException();
 	}
 
 	@ObfuscatedName("yl.m(Lec;J)V")
-	public void method2800(VarType arg0, long arg1) {
+	public void setVarValueLong(VarType arg0, long arg1) {
 		throw new UnsupportedOperationException();
 	}
 
 	@ObfuscatedName("yl.f(Lec;Ljava/lang/Object;I)V")
-	public void method2802(VarType arg0, Object arg1) {
+	public void setVarValue(VarType arg0, Object arg1) {
 		throw new UnsupportedOperationException();
 	}
 

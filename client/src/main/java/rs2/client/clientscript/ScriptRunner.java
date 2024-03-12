@@ -4840,12 +4840,12 @@ public final class ScriptRunner {
 		VarDomain var2 = (VarDomain) (arg0.field8236[arg0.field8220] == 0 ? arg0.field8234.get(var1.domain) : arg0.field8233.get(var1.domain));
 		BaseVarType var3 = var1.dataType.getVarBaseType();
 		if (BaseVarType.INTEGER == var3) {
-			arg0.field8216[++arg0.field8226 - 1] = var2.method679(var1);
+			arg0.field8216[++arg0.field8226 - 1] = var2.getVarValueInt(var1);
 		} else if (BaseVarType.field4837 == var3) {
-			arg0.field8224[++arg0.field8238 - 1] = var2.method2799(var1);
+			arg0.field8224[++arg0.field8238 - 1] = var2.getVarValueLong(var1);
 		} else if (BaseVarType.field4836 == var3) {
 			try {
-				String var4 = (String) var2.method2801(var1);
+				String var4 = (String) var2.getVarValue(var1);
 				if (var4 == null) {
 					var4 = "null";
 				}
@@ -4868,14 +4868,14 @@ public final class ScriptRunner {
 			if (VarDomainType.CLIENT == var1.domain) {
 				DelayedStateChange.method3607(var1);
 			}
-			var2.method2798(var1, arg0.field8216[--arg0.field8226]);
+			var2.setVarValueInt(var1, arg0.field8216[--arg0.field8226]);
 		} else if (BaseVarType.field4837 == var3) {
-			var2.method2800(var1, arg0.field8224[--arg0.field8238]);
+			var2.setVarValueLong(var1, arg0.field8224[--arg0.field8238]);
 		} else if (BaseVarType.field4836 == var3) {
 			if (VarDomainType.CLIENT == var1.domain) {
 				DelayedStateChange.method14066(var1);
 			}
-			var2.method2802(var1, arg0.field8218[--arg0.field8211]);
+			var2.setVarValue(var1, arg0.field8218[--arg0.field8211]);
 		} else {
 			throw new RuntimeException();
 		}
@@ -4934,7 +4934,7 @@ public final class ScriptRunner {
 	public static final void method10362(ClientScriptState arg0) {
 		VarBitType var1 = (VarBitType) arg0.field8239.field12366[arg0.field8220];
 		VarDomain var2 = (VarDomain) (arg0.field8236[arg0.field8220] == 0 ? arg0.field8234.get(var1.baseVar.domain) : arg0.field8233.get(var1.baseVar.domain));
-		arg0.field8216[++arg0.field8226 - 1] = var2.method678(var1);
+		arg0.field8216[++arg0.field8226 - 1] = var2.getVarBitValue(var1);
 	}
 
 	@ObfuscatedName("ace.aw(Lyf;I)V")
@@ -10338,7 +10338,7 @@ public final class ScriptRunner {
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		boolean var3 = arg0.field8216[arg0.field8226 + 2] == 1;
 		PlayerStat var4 = Statics.field6721.method3392(var1).method3501(var2);
-		arg0.field8216[++arg0.field8226 - 1] = var3 ? var4.method10161() : var4.method10175();
+		arg0.field8216[++arg0.field8226 - 1] = var3 ? var4.getBaseLevel() : var4.getXP();
 	}
 
 	@ObfuscatedName("ahb.abx(Lyf;I)V")

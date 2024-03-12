@@ -473,13 +473,13 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	@ObfuscatedName("sk.s(I)V")
 	public synchronized void addcanvas() {
 		this.removeCanvas();
-		Container var1 = method7321();
+		Container var1 = getTopContainer();
 		Statics.canvas = new GameCanvas(var1);
 		this.addCanvas(var1);
 	}
 
 	@ObfuscatedName("qf.y(I)Ljava/awt/Container;")
-	public static Container method7321() {
+	public static Container getTopContainer() {
 		if (Statics.fsframe == null) {
 			return Statics.frame == null ? Statics.field11885 : Statics.frame;
 		} else {
@@ -582,7 +582,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 				}
 			}
 		}
-		method7321().setFocusCycleRoot(true);
+		getTopContainer().setFocusCycleRoot(true);
 		maxmemory = (int) (Runtime.getRuntime().maxMemory() / 1048576L) + 1;
 		cpucount = Runtime.getRuntime().availableProcessors();
 		this.addcanvas();

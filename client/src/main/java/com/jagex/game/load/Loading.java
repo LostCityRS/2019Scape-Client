@@ -36,7 +36,7 @@ import com.jagex.game.config.vartype.bit.VarBitTypeList;
 import com.jagex.game.config.vartype.constants.VarDomainType;
 import com.jagex.game.config.vartype.player.VarPlayerTypeListClient;
 import com.jagex.game.world.WorldMap;
-import com.jagex.game.world.entity.PlayerVariableManager;
+import com.jagex.game.world.entity.PlayerGameState;
 import com.jagex.graphics.*;
 import com.jagex.game.clientoptions.Preferences;
 import com.jagex.game.config.bastype.BASTypeList;
@@ -276,7 +276,7 @@ public class Loading {
 			DefaultSprites.method7114(Statics.field8198);
 			Client.setState(11);
 		}
-		if (Statics.field3419 == LoadingStage.field2907) {
+		if (Statics.field3419 == LoadingStage.OPEN_JS5_ARCHIVES) {
 			Statics.field10317 = Client.method5156(Js5Archive.SPRITES, false, 1, false, true);
 			Statics.field7420 = Client.method5156(Js5Archive.ANIMS, false, 1, false, true);
 			Statics.field10287 = Client.method5156(Js5Archive.ANIMS_KEYFRAMES, false, 1, false, true);
@@ -309,7 +309,7 @@ public class Loading {
 			Statics.field7060 = Client.method5156(Js5Archive.DLLS, true, 1, false, true);
 			Statics.field2900 = Client.method5156(Js5Archive.SHADERS, true, 1, true, true);
 		}
-		if (Statics.field3419 == LoadingStage.field2921) {
+		if (Statics.field3419 == LoadingStage.GET_JS5_INDEXES) {
 			int var14 = 0;
 			int var15 = 0;
 			for (int var16 = 0; var16 < Statics.field6888.length; var16++) {
@@ -344,7 +344,7 @@ public class Loading {
 			Statics.field10577 = new HardwarePlatformLoader(Statics.field7060);
 			NativeLibraries.method14694(Statics.field10577);
 		}
-		if (Statics.field3419 == LoadingStage.field2902) {
+		if (Statics.field3419 == LoadingStage.DOWNLOAD_STUFF) {
 			int var18 = LoadableResourceManager.method5140();
 			if (var18 < 100) {
 				return var18;
@@ -359,12 +359,12 @@ public class Loading {
 				Client.field10942 = Statics.field11389.field7740;
 			}
 			Statics.field1709 = new WearposDefaults(Statics.field1587);
-			Statics.field2767 = new SkillDefaults(Statics.field1587);
+			Statics.skillDefaults = new SkillDefaults(Statics.field1587);
 			Statics.field1971 = new MiniMenuDefaults(Statics.field1587);
 			Statics.field2775 = new CutsceneDefaults(Statics.field1587);
 			Statics.field6792 = new WorldMapDefaults(Statics.field1587);
 		}
-		if (Statics.field3419 == LoadingStage.field2912) {
+		if (Statics.field3419 == LoadingStage.SETUP_CONFIG_DECODERS) {
 			if (Statics.field11389.field7738 != -1 && !Statics.field9213.requestdownload(Statics.field11389.field7738, 0)) {
 				return 99;
 			}
@@ -413,7 +413,7 @@ public class Loading {
 			Statics.field7282 = new BasicParticleEmitterTypeList(Statics.field6879);
 			Statics.field3823 = new QuickChatCatTypeList(Statics.field1680, Statics.field4404, Statics.field1935);
 			Statics.field489 = new QuickChatPhraseTypeList(Statics.field1680, Statics.field4404, Statics.field1935, new ClientDynamicProvider());
-			Statics.field7410 = new PlayerVariableManager(Statics.field8485, Statics.field8736, Statics.field2767.method9784());
+			Statics.field7410 = new PlayerGameState(Statics.field8485, Statics.field8736, Statics.skillDefaults.getSkillCount());
 			Client.method9516();
 			AnimationWrapper.method6114(Statics.field8797);
 			ParticleSystemRenderer.method706(Statics.field7282, Statics.field2013);
@@ -423,7 +423,7 @@ public class Loading {
 			Statics.field6594 = Timer.method6109();
 			Statics.field10581 = new HardwarePlatform(true);
 		}
-		if (Statics.field3419 == LoadingStage.field2918) {
+		if (Statics.field3419 == LoadingStage.SETUP_STATIC_SPRITES) {
 			int var20 = DefaultSprites.method15381(Statics.field10317) + Statics.field7538.method6191(true);
 			int var21 = Statics.method14611() + Statics.field7538.method6161();
 			if (var20 < var21) {
@@ -433,7 +433,7 @@ public class Loading {
 		if (Statics.field3419 == LoadingStage.field2914) {
 			WorldMap.method8506(Statics.field10752, Statics.field8332, Statics.field8168, Statics.field8145, Client.world.method7750(), Statics.field5011, Statics.field4241, Statics.field7410, Statics.field7410);
 		}
-		if (Statics.field3419 == LoadingStage.field2915) {
+		if (Statics.field3419 == LoadingStage.SETUP_VARC_SYSTEM) {
 			Statics.field7228 = new ClientVariableManager(Statics.field8911);
 			method9212();
 			Statics.field1895 = TotpPreferences.method18618();

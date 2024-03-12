@@ -947,12 +947,12 @@ public class NPCType implements ConfigType {
 		if (this.field2730 != -1) {
 			VarBitType var4 = arg0.method694(this.field2730);
 			if (var4 != null) {
-				var3 = arg1.method678(var4);
+				var3 = arg1.getVarBitValue(var4);
 			}
 		} else if (this.field2755 != -1) {
 			VarType var5 = arg0.method695(VarDomainType.PLAYER, this.field2755);
 			if (var5 != null) {
-				var3 = arg1.method679(var5);
+				var3 = arg1.getVarValueInt(var5);
 			}
 		}
 		if (var3 >= 0 && var3 < this.field2735.length - 1) {
@@ -972,12 +972,12 @@ public class NPCType implements ConfigType {
 		if (this.field2730 != -1) {
 			VarBitType var4 = arg0.method694(this.field2730);
 			if (var4 != null) {
-				var3 = arg1.method678(var4);
+				var3 = arg1.getVarBitValue(var4);
 			}
 		} else if (this.field2755 != -1) {
 			VarType var5 = arg0.method695(VarDomainType.PLAYER, this.field2755);
 			if (var5 != null) {
-				var3 = arg1.method679(var5);
+				var3 = arg1.getVarValueInt(var5);
 			}
 		}
 		if (var3 >= 0 && var3 < this.field2735.length - 1) {

@@ -2,7 +2,7 @@ package com.jagex.game.config.vartype;
 
 import com.jagex.game.config.vartype.bit.VarBitOverflowException;
 import com.jagex.game.config.vartype.bit.VarBitType;
-import rs2.client.logic.clans.ClanSettingsNode;
+import rs2.client.logic.clans.LongNode;
 import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.config.vartype.player.VarPlayerType;
@@ -24,7 +24,7 @@ public final class VarPlayerDomain implements VarDomain {
 	@ObfuscatedName("wu.i(ZI)I")
 	public int method9623(boolean arg0) {
 		long var2 = MonotonicTime.method3655();
-		for (ClanSettingsNode var4 = (ClanSettingsNode) (arg0 ? this.field7610.method14500() : this.field7610.method14502()); var4 != null; var4 = (ClanSettingsNode) this.field7610.method14502()) {
+		for (LongNode var4 = (LongNode) (arg0 ? this.field7610.method14500() : this.field7610.method14502()); var4 != null; var4 = (LongNode) this.field7610.method14502()) {
 			if ((var4.field11441 & 0x3FFFFFFFFFFFFFFFL) < var2) {
 				if ((var4.field11441 & 0x4000000000000000L) != 0L) {
 					int var5 = (int) var4.field6760;
@@ -51,16 +51,16 @@ public final class VarPlayerDomain implements VarDomain {
 	}
 
 	@ObfuscatedName("wu.u(Lec;I)I")
-	public int method679(VarType arg0) {
+	public int getVarValueInt(VarType arg0) {
 		return this.field7609[arg0.id];
 	}
 
 	@ObfuscatedName("wu.e(Lec;II)V")
-	public void method2798(VarType arg0, int arg1) {
+	public void setVarValueInt(VarType arg0, int arg1) {
 		this.field7609[arg0.id] = arg1;
-		ClanSettingsNode var3 = (ClanSettingsNode) this.field7610.method14495((long) arg0.id);
+		LongNode var3 = (LongNode) this.field7610.method14495((long) arg0.id);
 		if (var3 == null) {
-			ClanSettingsNode var4 = new ClanSettingsNode(MonotonicTime.method3655() + 500L);
+			LongNode var4 = new LongNode(MonotonicTime.method3655() + 500L);
 			this.field7610.method14501(var4, (long) arg0.id);
 		} else {
 			var3.field11441 = MonotonicTime.method3655() + 500L;
@@ -68,11 +68,11 @@ public final class VarPlayerDomain implements VarDomain {
 	}
 
 	@ObfuscatedName("wu.t(Lec;IB)V")
-	public void method9625(VarType arg0, int arg1) {
+	public void setVarValueIntFromServer(VarType arg0, int arg1) {
 		this.field7604[arg0.id] = arg1;
-		ClanSettingsNode var3 = (ClanSettingsNode) this.field7610.method14495((long) arg0.id);
+		LongNode var3 = (LongNode) this.field7610.method14495((long) arg0.id);
 		if (var3 == null) {
-			ClanSettingsNode var4 = new ClanSettingsNode(4611686018427387905L);
+			LongNode var4 = new LongNode(4611686018427387905L);
 			this.field7610.method14501(var4, (long) arg0.id);
 		} else if (var3.field11441 != 4611686018427387905L) {
 			var3.field11441 = MonotonicTime.method3655() + 500L | 0x4000000000000000L;
@@ -80,42 +80,42 @@ public final class VarPlayerDomain implements VarDomain {
 	}
 
 	@ObfuscatedName("wu.z(Lkh;I)I")
-	public int method678(VarBitType arg0) {
+	public int getVarBitValue(VarBitType arg0) {
 		return arg0.getVarbitValue(this.field7609[arg0.baseVar.id]);
 	}
 
 	@ObfuscatedName("wu.w(Lkh;II)V")
 	public void method2804(VarBitType arg0, int arg1) throws VarBitOverflowException {
 		int var3 = arg0.setVarbitValue(this.field7609[arg0.baseVar.id], arg1);
-		this.method2798(arg0.baseVar, var3);
+		this.setVarValueInt(arg0.baseVar, var3);
 	}
 
 	@ObfuscatedName("wu.ae(Lkh;II)V")
-	public void method9629(VarBitType arg0, int arg1) {
+	public void setVarBitValue(VarBitType arg0, int arg1) {
 		try {
 			int var3 = arg0.setVarbitValue(this.field7604[arg0.baseVar.id], arg1);
-			this.method9625(arg0.baseVar, var3);
+			this.setVarValueIntFromServer(arg0.baseVar, var3);
 		} catch (VarBitOverflowException var5) {
 		}
 	}
 
 	@ObfuscatedName("wu.n(Lec;I)J")
-	public long method2799(VarType arg0) {
+	public long getVarValueLong(VarType arg0) {
 		throw new UnsupportedOperationException();
 	}
 
 	@ObfuscatedName("wu.m(Lec;J)V")
-	public void method2800(VarType arg0, long arg1) {
+	public void setVarValueLong(VarType arg0, long arg1) {
 		throw new UnsupportedOperationException();
 	}
 
 	@ObfuscatedName("wu.k(Lec;B)Ljava/lang/Object;")
-	public Object method2801(VarType arg0) {
+	public Object getVarValue(VarType arg0) {
 		throw new UnsupportedOperationException();
 	}
 
 	@ObfuscatedName("wu.f(Lec;Ljava/lang/Object;I)V")
-	public void method2802(VarType arg0, Object arg1) {
+	public void setVarValue(VarType arg0, Object arg1) {
 		throw new UnsupportedOperationException();
 	}
 }

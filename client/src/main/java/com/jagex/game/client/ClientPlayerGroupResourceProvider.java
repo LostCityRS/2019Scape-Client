@@ -27,6 +27,6 @@ public final class ClientPlayerGroupResourceProvider implements PlayerGroupResou
 
 	@ObfuscatedName("d.k(B)Lwq;")
 	public SkillDefaults method295() {
-		return Statics.field2767;
+		return Statics.skillDefaults;
 	}
 }

@@ -207,7 +207,7 @@ public class DelayedStateChange extends SecondaryNode {
 		DelayedStateChange var3 = method5072(1, (long) var2.baseVar.id);
 		try {
 			if (field12295) {
-				var3.field12268 = Statics.field7228.method679(var2.baseVar);
+				var3.field12268 = Statics.field7228.getVarValueInt(var2.baseVar);
 			}
 			var3.field12268 = var2.setVarbitValue(var3.field12268, arg1);
 			var3.method19269();

@@ -656,7 +656,7 @@ public class Statics {
 	public static int field2676;
 
 	@ObfuscatedName("if.is")
-	public static SkillDefaults field2767;
+	public static SkillDefaults skillDefaults;
 
 	@ObfuscatedName("ih.il")
 	public static CutsceneDefaults field2775;
@@ -1385,7 +1385,7 @@ public class Statics {
 	public static int field741;
 
 	@ObfuscatedName("vu.dj")
-	public static PlayerVariableManager field7410;
+	public static PlayerGameState field7410;
 
 	@ObfuscatedName("vi.l")
 	public static Js5 field7411;
@@ -1571,7 +1571,7 @@ public class Statics {
 	public static boolean[][] field8182;
 
 	@ObfuscatedName("yz.o")
-	public static int field8186;
+	public static int lastFullscreenWidth;
 
 	@ObfuscatedName("yv.cd")
 	public static Renderer field8198;
@@ -1793,7 +1793,7 @@ public class Statics {
 	public static Sprite field9253;
 
 	@ObfuscatedName("adj.s")
-	public static int field9256;
+	public static int lastFullscreenHeight;
 
 	@ObfuscatedName("adm.b")
 	public static short[][][] field9259;
@@ -4724,8 +4724,8 @@ public class Statics {
 
 	@ObfuscatedName("kb.alb(Lyf;I)V")
 	public static final void method5248(ClientScriptState arg0) {
-		int var1 = field8186;
-		int var2 = field9256;
+		int var1 = lastFullscreenWidth;
+		int var2 = lastFullscreenHeight;
 		int var3 = -1;
 		if (Fullscreen.allowed) {
 			FullscreenMode[] var4 = Client.method16741();

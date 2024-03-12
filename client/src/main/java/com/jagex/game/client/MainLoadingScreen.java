@@ -144,7 +144,7 @@ public class MainLoadingScreen implements LoadingScreen {
 		while (true) {
 			try {
 				Image var1 = Toolkit.getDefaultToolkit().createImage(arg0);
-				Container var2 = GameShell.method7321();
+				Container var2 = GameShell.getTopContainer();
 				MediaTracker var3 = new MediaTracker(var2);
 				var3.addImage(var1, 0);
 				var3.waitForAll();

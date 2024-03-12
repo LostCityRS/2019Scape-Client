@@ -7,8 +7,8 @@ import deob.ObfuscatedName;
 public interface VarIntDomain {
 
 	@ObfuscatedName("ep.z(Lkh;I)I")
-	int method678(VarBitType arg0);
+	int getVarBitValue(VarBitType arg0);
 
 	@ObfuscatedName("ep.u(Lec;I)I")
-	int method679(VarType arg0);
+	int getVarValueInt(VarType arg0);
 }

@@ -237,7 +237,7 @@ public class QuestType implements ConfigType {
 		if (this.field2632 != null) {
 			for (int var2 = 0; var2 < this.field2632.length; var2++) {
 				VarType var3 = ((VariableTypeProvider) arg0).method695(VarDomainType.PLAYER, this.field2632[var2][0]);
-				if (arg0.method679(var3) >= this.field2632[var2][1]) {
+				if (arg0.getVarValueInt(var3) >= this.field2632[var2][1]) {
 					return true;
 				}
 			}
@@ -245,7 +245,7 @@ public class QuestType implements ConfigType {
 		if (this.field2630 != null) {
 			for (int var4 = 0; var4 < this.field2630.length; var4++) {
 				VarBitType var5 = ((VariableTypeProvider) arg0).method694(this.field2630[var4][0]);
-				if (arg0.method678(var5) >= this.field2630[var4][1]) {
+				if (arg0.getVarBitValue(var5) >= this.field2630[var4][1]) {
 					return true;
 				}
 			}
@@ -258,7 +258,7 @@ public class QuestType implements ConfigType {
 		if (this.field2632 != null) {
 			for (int var2 = 0; var2 < this.field2632.length; var2++) {
 				VarType var3 = ((VariableTypeProvider) arg0).method695(VarDomainType.PLAYER, this.field2632[var2][0]);
-				if (arg0.method679(var3) >= this.field2632[var2][2]) {
+				if (arg0.getVarValueInt(var3) >= this.field2632[var2][2]) {
 					return true;
 				}
 			}
@@ -266,7 +266,7 @@ public class QuestType implements ConfigType {
 		if (this.field2630 != null) {
 			for (int var4 = 0; var4 < this.field2630.length; var4++) {
 				VarBitType var5 = ((VariableTypeProvider) arg0).method694(this.field2630[var4][0]);
-				if (arg0.method678(var5) >= this.field2630[var4][2]) {
+				if (arg0.getVarBitValue(var5) >= this.field2630[var4][2]) {
 					return true;
 				}
 			}
@@ -296,7 +296,7 @@ public class QuestType implements ConfigType {
 		if (this.field2642 != null) {
 			for (int var4 = 0; var4 < this.field2642.length; var4++) {
 				VarType var5 = ((VariableTypeProvider) arg0).method695(VarDomainType.PLAYER, this.field2642[var4]);
-				int var6 = arg0.method679(var5);
+				int var6 = arg0.getVarValueInt(var5);
 				if (var6 < this.field2643[var4] || var6 > this.field2629[var4]) {
 					return false;
 				}
@@ -305,7 +305,7 @@ public class QuestType implements ConfigType {
 		if (this.field2646 != null) {
 			for (int var7 = 0; var7 < this.field2646.length; var7++) {
 				VarBitType var8 = ((VariableTypeProvider) arg0).method694(this.field2646[var7]);
-				int var9 = arg0.method678(var8);
+				int var9 = arg0.getVarBitValue(var8);
 				if (var9 < this.field2647[var7] || var9 > this.field2648[var7]) {
 					return false;
 				}
@@ -343,7 +343,7 @@ public class QuestType implements ConfigType {
 			return false;
 		} else {
 			VarType var3 = ((VariableTypeProvider) arg0).method695(VarDomainType.PLAYER, this.field2642[arg1]);
-			int var4 = arg0.method679(var3);
+			int var4 = arg0.getVarValueInt(var3);
 			return var4 >= this.field2643[arg1] && var4 <= this.field2629[arg1];
 		}
 	}
@@ -354,7 +354,7 @@ public class QuestType implements ConfigType {
 			return false;
 		} else {
 			VarBitType var3 = ((VariableTypeProvider) arg0).method694(this.field2646[arg1]);
-			int var4 = arg0.method678(var3);
+			int var4 = arg0.getVarBitValue(var3);
 			return var4 >= this.field2647[arg1] && var4 <= this.field2648[arg1];
 		}
 	}

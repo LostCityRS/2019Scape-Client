@@ -1,6 +1,6 @@
 package com.jagex.game.config.defaults;
 
-import com.jagex.game.client.Skill;
+import com.jagex.game.client.PlayerSkill;
 import deob.ObfuscatedName;
 
 import java.util.Iterator;
@@ -9,12 +9,12 @@ import java.util.Iterator;
 public class SkillDefaultsIterator implements Iterator {
 
 	@ObfuscatedName("wi.e")
-	public Skill[] field7760;
+	public PlayerSkill[] field7760;
 
 	@ObfuscatedName("wi.n")
 	public int field7761;
 
-	public SkillDefaultsIterator(Skill[] arg0) {
+	public SkillDefaultsIterator(PlayerSkill[] arg0) {
 		this.field7760 = arg0;
 	}
 

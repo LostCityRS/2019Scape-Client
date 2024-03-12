@@ -181,12 +181,12 @@ public class HitmarkType implements ConfigType {
 			if (this.field7311 != -1) {
 				VarBitType var4 = arg0.method694(this.field7311);
 				if (var4 != null) {
-					var3 = arg1.method678(var4);
+					var3 = arg1.getVarBitValue(var4);
 				}
 			} else if (this.field7312 != -1) {
 				VarType var5 = arg0.method695(VarDomainType.PLAYER, this.field7312);
 				if (var5 != null) {
-					var3 = arg1.method679(var5);
+					var3 = arg1.getVarValueInt(var5);
 				}
 			}
 			if (var3 >= 0 && var3 < this.field7298.length - 1) {
