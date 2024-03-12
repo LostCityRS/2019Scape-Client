@@ -2,9 +2,9 @@ package com.jagex.game.camera;
 
 import com.jagex.core.datastruct.SecondaryNode;
 import com.jagex.core.io.Packet;
-import com.jagex.graphics.camera.CameraEffectType;
 import com.jagex.game.camera.effects.Shake;
 import com.jagex.game.camera.effects.ZTilt;
+import com.jagex.graphics.camera.CameraEffectType;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Matrix4x4;
 import com.jagex.math.Vector3i;

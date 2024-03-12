@@ -1,5 +1,6 @@
 package com.jagex.game.world.entity;
 
+import com.jagex.graphics.scenegraph.PrimaryLayerEntity;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("s")

@@ -1,7 +1,6 @@
 package com.jagex.game.client;
 
 import com.jagex.core.datastruct.Node;
-import com.jagex.game.client.KeyboardEvent;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("akk")

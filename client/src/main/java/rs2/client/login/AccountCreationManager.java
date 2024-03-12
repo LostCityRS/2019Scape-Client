@@ -2,16 +2,17 @@ package rs2.client.login;
 
 import com.jagex.core.constants.PublicKeys;
 import com.jagex.core.datastruct.SerializableEnums;
-import com.jagex.encryption.Isaac;
 import com.jagex.core.io.Packet;
 import com.jagex.core.io.Stream;
-import com.jagex.game.client.*;
-import rs2.client.Client;
-import rs2.client.logic.DelayedStateChange;
+import com.jagex.encryption.Isaac;
+import com.jagex.game.client.ClientMessage;
+import com.jagex.game.client.GameShell;
 import com.jagex.game.network.protocol.ClientProt;
 import com.jagex.game.network.protocol.LoginProt;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
+import rs2.client.logic.DelayedStateChange;
 
 import java.io.IOException;
 

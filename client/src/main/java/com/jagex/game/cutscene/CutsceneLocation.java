@@ -1,11 +1,11 @@
 package com.jagex.game.cutscene;
 
-import com.jagex.game.scene.ChangeLocationRequest;
-import com.jagex.game.world.entity.LocShape;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
-import com.jagex.game.config.seqtype.SeqType;
 import com.jagex.game.config.loctype.LocType;
+import com.jagex.game.config.seqtype.SeqType;
+import com.jagex.game.scene.ChangeLocationRequest;
+import com.jagex.game.world.entity.LocShape;
 import deob.ObfuscatedName;
 import deob.Statics;
 

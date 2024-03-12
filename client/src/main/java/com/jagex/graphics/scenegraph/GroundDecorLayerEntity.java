@@ -1,5 +1,6 @@
-package com.jagex.game.world.entity;
+package com.jagex.graphics.scenegraph;
 
+import com.jagex.game.world.entity.Scene;
 import com.jagex.graphics.Light;
 import com.jagex.graphics.Renderer;
 import com.jagex.graphics.scenegraph.GraphEntity;

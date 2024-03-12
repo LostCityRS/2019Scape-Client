@@ -1,7 +1,5 @@
 package com.jagex.game.scene;
 
-import com.jagex.game.load.MessageBox;
-import com.jagex.game.shared.console.DeveloperConsole;
 import com.jagex.core.constants.BuildAreaSize;
 import com.jagex.core.datastruct.IntegerBox;
 import com.jagex.core.datastruct.LinkMap;
@@ -10,11 +8,14 @@ import com.jagex.core.io.PacketBit;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.core.utils.TextUtil;
 import com.jagex.game.client.*;
+import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
 import com.jagex.game.config.npctype.NPCType;
 import com.jagex.game.cutscene.CutsceneManager;
 import com.jagex.game.cutscene.CutsceneTemplate;
-import com.jagex.game.config.loctype.LocType;
+import com.jagex.game.load.MessageBox;
+import com.jagex.game.network.protocol.ClientProt;
+import com.jagex.game.shared.console.DeveloperConsole;
 import com.jagex.game.shared.movement.CoordGrid;
 import com.jagex.game.world.WorldMap;
 import com.jagex.game.world.WorldMapAreaMetadata;
@@ -30,7 +31,6 @@ import deob.Statics;
 import rs2.client.Client;
 import rs2.client.scene.ObjStackList;
 import rs2.client.scene.entities.NpcEntity;
-import com.jagex.game.network.protocol.ClientProt;
 
 import java.util.HashMap;
 import java.util.HashSet;

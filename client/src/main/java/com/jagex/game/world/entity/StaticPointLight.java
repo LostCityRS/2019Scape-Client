@@ -1,8 +1,8 @@
 package com.jagex.game.world.entity;
 
-import com.jagex.game.client.NoiseGenerator;
 import com.jagex.core.io.Packet;
 import com.jagex.core.utils.ColourUtils;
+import com.jagex.game.client.NoiseGenerator;
 import com.jagex.graphics.Light;
 import com.jagex.graphics.Renderer;
 import com.jagex.math.Trig1;

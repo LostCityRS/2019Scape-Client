@@ -1,12 +1,12 @@
 package com.jagex.graphics.dx;
 
-import com.jagex.graphics.GpuRenderer;
-import com.jagex.graphics.Renderer;
-import com.jagex.graphics.TextureList;
-import com.jagex.graphics.MaterialList;
 import com.jagex.game.config.BillboardTypeList;
 import com.jagex.game.config.ParticleEffectorTypeList;
 import com.jagex.game.config.ParticleEmitterTypeList;
+import com.jagex.graphics.GpuRenderer;
+import com.jagex.graphics.MaterialList;
+import com.jagex.graphics.Renderer;
+import com.jagex.graphics.TextureList;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 import deob.Statics;

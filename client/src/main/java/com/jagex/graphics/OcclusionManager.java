@@ -3,7 +3,7 @@ package com.jagex.graphics;
 import com.jagex.game.world.entity.EntityBounds;
 import com.jagex.game.world.entity.Scene;
 import com.jagex.game.world.entity.Tile;
-import com.jagex.game.world.entity.WallLayerEntity;
+import com.jagex.graphics.scenegraph.WallLayerEntity;
 import deob.ObfuscatedName;
 import deob.Statics;
 

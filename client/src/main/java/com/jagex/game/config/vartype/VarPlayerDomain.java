@@ -1,13 +1,13 @@
 package com.jagex.game.config.vartype;
 
-import com.jagex.game.config.vartype.bit.VarBitOverflowException;
-import com.jagex.game.config.vartype.bit.VarBitType;
-import rs2.client.logic.clans.LongNode;
 import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.utils.MonotonicTime;
+import com.jagex.game.config.vartype.bit.VarBitOverflowException;
+import com.jagex.game.config.vartype.bit.VarBitType;
 import com.jagex.game.config.vartype.player.VarPlayerType;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.logic.clans.LongNode;
 
 @ObfuscatedName("wu")
 public final class VarPlayerDomain implements VarDomain {

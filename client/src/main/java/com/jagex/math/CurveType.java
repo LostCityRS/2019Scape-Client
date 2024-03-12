@@ -1,7 +1,7 @@
 package com.jagex.math;
 
-import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.constants.SerializableEnum;
+import com.jagex.core.datastruct.SerializableEnums;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("cy")

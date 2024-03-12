@@ -1,6 +1,6 @@
 package com.jagex.graphics;
 
-import com.jagex.game.world.entity.PrimaryLayerEntity;
+import com.jagex.graphics.scenegraph.PrimaryLayerEntity;
 import com.jagex.game.world.entity.PrimaryLayerEntityPredicate;
 import deob.ObfuscatedName;
 

@@ -1,11 +1,11 @@
 package com.jagex.core.io;
 
-import com.jagex.core.utils.ByteArrayPool;
 import com.jagex.core.datastruct.Node;
-import com.jagex.core.utils.Utf8;
-import rs2.client.Client;
+import com.jagex.core.utils.ByteArrayPool;
 import com.jagex.core.utils.Cp1252;
+import com.jagex.core.utils.Utf8;
 import deob.ObfuscatedName;
+import rs2.client.Client;
 
 import java.math.BigInteger;
 

@@ -1,17 +1,17 @@
 package com.jagex.game.client;
 
-import rs2.client.clientscript.ScriptRunner;
-import rs2.client.Client;
-import com.jagex.game.shared.console.DeveloperConsole;
 import com.jagex.core.utils.CacheUtil;
 import com.jagex.core.utils.JagException;
 import com.jagex.core.utils.TextUtil;
+import com.jagex.game.shared.console.DeveloperConsole;
 import com.jagex.graphics.GraphicsPacketQueue;
 import com.jagex.graphics.Renderer;
 import com.jagex.graphics.Sprite;
 import com.jagex.twitchtv.*;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
+import rs2.client.clientscript.ScriptRunner;
 
 import java.io.BufferedReader;
 import java.io.File;

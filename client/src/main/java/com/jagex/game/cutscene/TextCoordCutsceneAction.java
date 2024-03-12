@@ -1,9 +1,9 @@
 package com.jagex.game.cutscene;
 
-import rs2.client.Client;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
 
 @ObfuscatedName("agd")
 public class TextCoordCutsceneAction extends CutsceneAction {

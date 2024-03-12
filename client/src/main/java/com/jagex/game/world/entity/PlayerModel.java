@@ -1,6 +1,5 @@
 package com.jagex.game.world.entity;
 
-import com.jagex.graphics.AnimationWrapper;
 import com.jagex.core.datastruct.WeightedCache;
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.bastype.BASType;
@@ -16,6 +15,7 @@ import com.jagex.game.config.seqtype.SeqType;
 import com.jagex.game.config.seqtype.SeqTypeList;
 import com.jagex.game.config.vartype.VarIntDomain;
 import com.jagex.game.config.vartype.VariableTypeProvider;
+import com.jagex.graphics.AnimationWrapper;
 import com.jagex.graphics.Model;
 import com.jagex.graphics.ModelUnlit;
 import com.jagex.graphics.Renderer;

@@ -1,6 +1,5 @@
 package com.jagex.game.config.npctype;
 
-import com.jagex.game.config.npctype.NPCType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ia")

@@ -1,7 +1,7 @@
 package com.jagex.game.config.skydecortype;
 
-import com.jagex.game.client.ConfigRelated;
 import com.jagex.core.io.Packet;
+import com.jagex.game.client.ConfigRelated;
 import com.jagex.game.config.ConfigType;
 import deob.ObfuscatedName;
 

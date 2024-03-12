@@ -1,8 +1,8 @@
 package com.jagex.graphics.gl;
 
 import com.jagex.graphics.EffectInterface;
-import com.jagex.graphics.GraphicsDeletable;
 import com.jagex.graphics.GpuFramebuffer;
+import com.jagex.graphics.GraphicsDeletable;
 import deob.ObfuscatedName;
 import jaggl.OpenGL;
 

@@ -1,11 +1,11 @@
 package com.jagex.game.group;
 
-import com.jagex.core.utils.VarValue;
 import com.jagex.core.io.Packet;
+import com.jagex.core.utils.VarValue;
+import com.jagex.game.config.vartype.SparseVarDomain;
 import com.jagex.game.config.vartype.VarContainerSparse;
 import com.jagex.game.config.vartype.VarDomain;
 import com.jagex.game.config.vartype.constants.VarDomainType;
-import com.jagex.game.config.vartype.SparseVarDomain;
 import deob.ObfuscatedName;
 
 import java.util.ArrayList;

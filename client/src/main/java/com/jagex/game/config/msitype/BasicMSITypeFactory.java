@@ -2,8 +2,6 @@ package com.jagex.game.config.msitype;
 
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.ConfigTypeList;
-import com.jagex.game.config.msitype.MSITypeFactory;
-import com.jagex.game.config.msitype.MSIType;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 

@@ -1,9 +1,9 @@
 package com.jagex.game.client;
 
-import rs2.client.Client;
 import com.jagex.core.datastruct.IterableQueue;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
+import rs2.client.Client;
 
 import java.util.Iterator;
 

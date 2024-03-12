@@ -1,10 +1,10 @@
 package com.jagex.graphics.gl;
 
-import com.jagex.graphics.BaseTexture;
-import com.jagex.graphics.TextureFormat;
 import com.jagex.game.client.DataType;
-import com.jagex.math.IntMath;
+import com.jagex.graphics.BaseTexture;
 import com.jagex.graphics.GpuTextureRelated;
+import com.jagex.graphics.TextureFormat;
+import com.jagex.math.IntMath;
 import deob.ObfuscatedName;
 import jaggl.OpenGL;
 

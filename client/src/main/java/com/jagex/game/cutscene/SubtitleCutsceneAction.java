@@ -1,9 +1,9 @@
 package com.jagex.game.cutscene;
 
-import rs2.client.clientscript.ScriptRunner;
-import rs2.client.Client;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
+import rs2.client.Client;
+import rs2.client.clientscript.ScriptRunner;
 
 @ObfuscatedName("aga")
 public class SubtitleCutsceneAction extends CutsceneAction {

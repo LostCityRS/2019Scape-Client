@@ -1,9 +1,9 @@
 package com.jagex.game.load;
 
-import rs2.client.Client;
 import com.jagex.graphics.Font;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
 
 @ObfuscatedName("kw")
 public class LoadingScreenNewsDisplay implements LoadingScreenElement {

@@ -1,9 +1,9 @@
 package com.jagex.game.config.quickchatcattype;
 
-import com.jagex.js5.Js5;
-import com.jagex.core.io.Packet;
-import com.jagex.core.datastruct.WeightedCache;
 import com.jagex.core.constants.Language;
+import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.io.Packet;
+import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("qr")

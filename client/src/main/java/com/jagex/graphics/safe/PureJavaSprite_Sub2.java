@@ -1,8 +1,8 @@
 package com.jagex.graphics.safe;
 
-import com.jagex.graphics.GraphicsRelated;
-import com.jagex.graphics.GraphicsDeletable;
 import com.jagex.game.client.JavaGraphicsRelated3;
+import com.jagex.graphics.GraphicsDeletable;
+import com.jagex.graphics.GraphicsRelated;
 import deob.ObfuscatedName;
 import deob.Statics;
 

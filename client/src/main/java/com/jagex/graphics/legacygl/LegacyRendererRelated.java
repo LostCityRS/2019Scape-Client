@@ -1,10 +1,10 @@
 package com.jagex.graphics.legacygl;
 
 import com.jagex.core.datastruct.DualLink;
-import com.jagex.math.IntMath;
-import com.jagex.graphics.Particle;
 import com.jagex.graphics.GpuPacket;
+import com.jagex.graphics.Particle;
 import com.jagex.graphics.particles.ParticleList;
+import com.jagex.math.IntMath;
 import deob.ObfuscatedName;
 import deob.Statics;
 import jaggl.OpenGL;

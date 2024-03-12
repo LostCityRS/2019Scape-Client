@@ -1,8 +1,5 @@
 package com.jagex.graphics;
 
-import com.jagex.graphics.GpuCubeTexture;
-import com.jagex.graphics.GpuRenderer;
-import com.jagex.graphics.GpuTexture;
 import com.jagex.math.Matrix4x4;
 import com.jagex.math.Vector3;
 import com.jagex.math.Vector4;

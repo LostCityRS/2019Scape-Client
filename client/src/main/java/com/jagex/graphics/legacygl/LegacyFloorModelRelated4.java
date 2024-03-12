@@ -1,7 +1,7 @@
 package com.jagex.graphics.legacygl;
 
-import com.jagex.game.client.DataType;
 import com.jagex.core.io.Packet;
+import com.jagex.game.client.DataType;
 import com.jagex.graphics.TextureFormat;
 import deob.ObfuscatedName;
 

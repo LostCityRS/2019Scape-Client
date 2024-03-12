@@ -3,13 +3,13 @@ package com.jagex.js5.network;
 import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.datastruct.IterableQueue;
 import com.jagex.core.datastruct.Node;
-import com.jagex.encryption.Whirlpool;
 import com.jagex.core.utils.MonotonicTime;
+import com.jagex.encryption.Whirlpool;
 import com.jagex.game.client.DiskStore;
 import com.jagex.js5.Js5Request;
+import com.jagex.js5.Js5ResourceProvider;
 import com.jagex.js5.caching.Js5DiskCache;
 import com.jagex.js5.index.Js5Index;
-import com.jagex.js5.Js5ResourceProvider;
 import com.jagex.js5.worker.Js5WorkerRequest;
 import deob.ObfuscatedName;
 

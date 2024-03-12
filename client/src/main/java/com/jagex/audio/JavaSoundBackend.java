@@ -1,14 +1,13 @@
 package com.jagex.audio;
 
-import com.jagex.core.utils.PreciseSleep;
 import com.jagex.core.utils.JagException;
+import com.jagex.core.utils.PreciseSleep;
 import deob.ObfuscatedName;
 
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.DataLine;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.SourceDataLine;
-import java.util.HashMap;
 import java.util.*;
 
 @ObfuscatedName("aiz")

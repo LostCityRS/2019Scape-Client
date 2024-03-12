@@ -1,11 +1,11 @@
 package com.jagex.graphics.scenegraph;
 
+import com.jagex.game.client.ScreenBoundingBox;
 import com.jagex.game.world.entity.EntityBounds;
 import com.jagex.game.world.entity.PickableEntity;
 import com.jagex.game.world.entity.Scene;
-import com.jagex.graphics.Model;
-import com.jagex.game.client.ScreenBoundingBox;
 import com.jagex.graphics.Light;
+import com.jagex.graphics.Model;
 import com.jagex.graphics.Renderer;
 import com.jagex.math.ScaleRotTrans;
 import deob.ObfuscatedName;

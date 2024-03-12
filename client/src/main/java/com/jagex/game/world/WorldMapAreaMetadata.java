@@ -1,8 +1,8 @@
 package com.jagex.game.world;
 
 import com.jagex.core.constants.BuildAreaSize;
-import com.jagex.core.datastruct.SecondaryNode;
 import com.jagex.core.datastruct.IterableQueue;
+import com.jagex.core.datastruct.SecondaryNode;
 import com.jagex.core.io.Packet;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;

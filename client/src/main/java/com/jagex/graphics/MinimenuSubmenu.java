@@ -1,7 +1,7 @@
 package com.jagex.graphics;
 
-import com.jagex.core.datastruct.SecondaryNode;
 import com.jagex.core.datastruct.DualIterableQueue;
+import com.jagex.core.datastruct.SecondaryNode;
 import deob.ObfuscatedName;
 import deob.Statics;
 

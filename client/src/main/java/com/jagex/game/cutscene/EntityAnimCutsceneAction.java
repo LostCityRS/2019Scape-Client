@@ -1,11 +1,11 @@
 package com.jagex.game.cutscene;
 
-import rs2.client.scene.entities.PathingEntity;
-import rs2.client.Client;
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.seqtype.SeqType;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
+import rs2.client.scene.entities.PathingEntity;
 
 import java.util.Arrays;
 

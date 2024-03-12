@@ -1,10 +1,10 @@
 package com.jagex.game.config.seqtype;
 
+import com.jagex.core.datastruct.WeightedCache;
 import com.jagex.game.config.ConfigTypeFactory;
 import com.jagex.game.config.ConfigTypeList;
-import com.jagex.graphics.KeyFrameSet;
-import com.jagex.core.datastruct.WeightedCache;
 import com.jagex.graphics.FrameSet;
+import com.jagex.graphics.KeyFrameSet;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 

@@ -1,20 +1,21 @@
 package com.jagex.game.world.entity;
 
-import com.jagex.game.client.HardShadow;
-import com.jagex.graphics.scenegraph.GraphEntity;
-import rs2.client.Client;
 import com.jagex.core.datastruct.Pair;
+import com.jagex.game.client.HardShadow;
 import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
 import com.jagex.graphics.FloorModel;
 import com.jagex.graphics.Model;
 import com.jagex.graphics.Renderer;
+import com.jagex.graphics.scenegraph.GraphEntity;
+import com.jagex.graphics.scenegraph.WallDecorLayerEntity;
 import com.jagex.math.Cuboid;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.ScaleRotTrans;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
 
 @ObfuscatedName("ajk")
 public class StaticWallDecorEntity extends WallDecorLayerEntity implements Location {

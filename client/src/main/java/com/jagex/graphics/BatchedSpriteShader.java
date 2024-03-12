@@ -1,7 +1,5 @@
 package com.jagex.graphics;
 
-import com.jagex.graphics.GpuRenderer;
-import com.jagex.graphics.GpuTexture;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("jz")

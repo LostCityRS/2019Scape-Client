@@ -4,6 +4,8 @@ import com.jagex.game.config.objtype.ObjType;
 import com.jagex.graphics.FloorModel;
 import com.jagex.graphics.Model;
 import com.jagex.graphics.Renderer;
+import com.jagex.graphics.scenegraph.GroundDecorLayerEntity;
+import com.jagex.graphics.scenegraph.ObjLayerEntity;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Trig1;
 import com.jagex.math.Vector3;

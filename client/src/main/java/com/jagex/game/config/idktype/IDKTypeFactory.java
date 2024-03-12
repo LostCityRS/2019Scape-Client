@@ -3,7 +3,6 @@ package com.jagex.game.config.idktype;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.ConfigTypeFactory;
 import com.jagex.game.config.ConfigTypeList;
-import com.jagex.game.config.idktype.IDKType;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 

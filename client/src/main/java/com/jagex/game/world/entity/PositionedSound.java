@@ -1,7 +1,6 @@
 package com.jagex.game.world.entity;
 
 import com.jagex.audio.*;
-import rs2.client.Client;
 import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.datastruct.IterableQueue;
 import com.jagex.core.datastruct.Node;
@@ -12,6 +11,7 @@ import com.jagex.game.cutscene.CutsceneManager;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
 import rs2.client.scene.entities.NpcEntity;
 
 @ObfuscatedName("akc")

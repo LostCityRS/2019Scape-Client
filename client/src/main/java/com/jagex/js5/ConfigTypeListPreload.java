@@ -1,9 +1,9 @@
 package com.jagex.js5;
 
-import com.jagex.core.utils.ArchiveUtil;
-import com.jagex.core.io.Packet;
 import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;
+import com.jagex.core.io.Packet;
+import com.jagex.core.utils.ArchiveUtil;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.ConfigTypeFactory;
 import com.jagex.game.config.ConfigTypeList;

@@ -1,13 +1,13 @@
 package com.jagex.game.world.entity;
 
-import com.jagex.game.config.iftype.Component;
-import rs2.client.Client;
 import com.jagex.core.datastruct.IterableQueue;
+import com.jagex.game.config.iftype.Component;
 import com.jagex.graphics.FontMetrics;
 import com.jagex.graphics.Renderer;
 import com.jagex.graphics.SpriteDataProvider;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
 
 import java.awt.*;
 

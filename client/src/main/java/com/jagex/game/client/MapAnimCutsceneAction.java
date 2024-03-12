@@ -1,11 +1,11 @@
 package com.jagex.game.client;
 
-import rs2.client.Client;
 import com.jagex.core.io.Packet;
 import com.jagex.game.cutscene.CutsceneActionUnused;
 import com.jagex.game.world.entity.SpotAnimEntityWrapper;
-import rs2.client.scene.entities.SpotAnimation;
 import deob.ObfuscatedName;
+import rs2.client.Client;
+import rs2.client.scene.entities.SpotAnimation;
 
 @ObfuscatedName("aqn")
 public class MapAnimCutsceneAction extends CutsceneActionUnused {

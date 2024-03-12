@@ -1,10 +1,10 @@
 package com.jagex.graphics;
 
-import rs2.client.Client;
 import com.jagex.game.config.defaults.GraphicsDefaults;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
 
 @ObfuscatedName("l")
 public class DefaultSprites {

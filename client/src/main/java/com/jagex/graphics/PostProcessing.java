@@ -1,8 +1,8 @@
 package com.jagex.graphics;
 
-import com.jagex.game.client.DataType;
 import com.jagex.core.datastruct.IterableQueue;
 import com.jagex.core.datastruct.Node;
+import com.jagex.game.client.DataType;
 import com.jagex.graphics.legacygl.LegacyOpenGLFramebuffer;
 import com.jagex.graphics.legacygl.LegacyOpenGLRelated;
 import com.jagex.graphics.legacygl.LegacyOpenGLRenderer;

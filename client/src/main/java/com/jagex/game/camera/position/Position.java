@@ -1,8 +1,8 @@
 package com.jagex.game.camera.position;
 
-import com.jagex.game.shared.movement.CoordFine;
 import com.jagex.core.datastruct.LinkMap;
 import com.jagex.core.io.Packet;
+import com.jagex.game.shared.movement.CoordFine;
 import com.jagex.graphics.camera.Camera;
 import com.jagex.math.Vector3;
 import com.jagex.math.Vector3i;

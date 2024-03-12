@@ -1,6 +1,5 @@
 package com.jagex.math;
 
-import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ph")

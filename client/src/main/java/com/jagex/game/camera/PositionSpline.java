@@ -1,10 +1,10 @@
 package com.jagex.game.camera;
 
-import com.jagex.game.shared.movement.CoordFine;
-import com.jagex.game.camera.position.Position;
 import com.jagex.core.datastruct.LinkMap;
 import com.jagex.core.io.Packet;
+import com.jagex.game.camera.position.Position;
 import com.jagex.game.client.GameShell;
+import com.jagex.game.shared.movement.CoordFine;
 import com.jagex.graphics.camera.Camera;
 import com.jagex.math.Spline;
 import com.jagex.math.Vector3;

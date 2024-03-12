@@ -1,11 +1,11 @@
 package com.jagex.graphics.gl.effects;
 
 import com.jagex.game.client.DataType;
+import com.jagex.graphics.RenderList;
 import com.jagex.graphics.TextureFormat;
 import com.jagex.graphics.legacygl.LegacyOpenGLCubeTexture;
 import com.jagex.graphics.legacygl.LegacyOpenGLRenderer;
 import com.jagex.graphics.legacygl.LegacyOpenGLTexture;
-import com.jagex.graphics.RenderList;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import jaggl.OpenGL;

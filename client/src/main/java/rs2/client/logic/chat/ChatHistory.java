@@ -1,10 +1,10 @@
 package rs2.client.logic.chat;
 
-import rs2.client.Client;
 import com.jagex.core.datastruct.DualIterableQueue;
 import com.jagex.core.datastruct.IterableMap;
 import com.jagex.game.shared.framework.chat.ChatCrownType;
 import deob.ObfuscatedName;
+import rs2.client.Client;
 
 import java.util.HashMap;
 import java.util.Map;

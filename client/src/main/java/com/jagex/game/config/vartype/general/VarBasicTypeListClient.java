@@ -1,14 +1,14 @@
 package com.jagex.game.config.vartype.general;
 
+import com.jagex.core.constants.Language;
+import com.jagex.core.constants.ModeGame;
+import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.io.Packet;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.ConfigTypeList;
 import com.jagex.game.config.vartype.VarTypeList;
 import com.jagex.game.config.vartype.constants.VarDomainType;
 import com.jagex.js5.Js5;
-import com.jagex.core.constants.ModeGame;
-import com.jagex.core.io.Packet;
-import com.jagex.core.datastruct.WeightedCache;
-import com.jagex.core.constants.Language;
 import deob.ObfuscatedName;
 
 import java.util.Iterator;

@@ -1,12 +1,12 @@
 package com.jagex.graphics.camera;
 
+import com.jagex.game.camera.LookatMode;
+import com.jagex.game.camera.LookatOrientation;
 import com.jagex.game.client.BasicCamera;
 import com.jagex.game.shared.movement.CoordFine;
 import com.jagex.game.shared.movement.CoordGrid;
 import com.jagex.game.world.entity.PositionMode;
 import com.jagex.game.world.entity.PositionPoint;
-import com.jagex.game.camera.LookatMode;
-import com.jagex.game.camera.LookatOrientation;
 import com.jagex.math.Quaternion;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;

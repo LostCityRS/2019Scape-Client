@@ -2,8 +2,6 @@ package com.jagex.game.config.vartype.bit;
 
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.ConfigTypeList;
-import com.jagex.game.config.vartype.bit.VarBitType;
-import com.jagex.game.config.vartype.bit.VarBitTypeFactory;
 import deob.ObfuscatedName;
 
 import java.util.Map;

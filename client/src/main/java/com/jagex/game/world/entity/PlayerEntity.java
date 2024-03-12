@@ -4,16 +4,16 @@ import com.jagex.core.constants.ModeWhere;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
 import com.jagex.core.utils.TextUtil;
-import com.jagex.game.shared.movement.CoordFine;
-import com.jagex.game.shared.movement.CoordGrid;
 import com.jagex.game.client.GameShell;
-import com.jagex.game.script.CommunityPartnerType;
 import com.jagex.game.config.bastype.BASType;
+import com.jagex.game.config.effectanimtype.EffectAnimType;
 import com.jagex.game.config.enumtype.EnumType;
 import com.jagex.game.config.npctype.NPCType;
 import com.jagex.game.config.objtype.ObjType;
 import com.jagex.game.config.seqtype.SeqType;
-import com.jagex.game.config.effectanimtype.EffectAnimType;
+import com.jagex.game.script.CommunityPartnerType;
+import com.jagex.game.shared.movement.CoordFine;
+import com.jagex.game.shared.movement.CoordGrid;
 import com.jagex.graphics.AnimationWrapper;
 import com.jagex.graphics.HintArrow;
 import com.jagex.graphics.Model;
@@ -25,8 +25,8 @@ import com.jagex.math.*;
 import deob.ObfuscatedName;
 import deob.Statics;
 import rs2.client.Client;
-import rs2.client.scene.entities.PathingEntity;
 import rs2.client.scene.entities.NpcEntity;
+import rs2.client.scene.entities.PathingEntity;
 
 @ObfuscatedName("aqk")
 public class PlayerEntity extends PathingEntity {

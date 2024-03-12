@@ -1,7 +1,7 @@
 package com.jagex.game.camera;
 
-import com.jagex.game.shared.movement.CoordFine;
 import com.jagex.core.io.Packet;
+import com.jagex.game.shared.movement.CoordFine;
 import com.jagex.graphics.camera.Camera;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Vector3;

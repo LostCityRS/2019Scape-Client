@@ -1,11 +1,11 @@
 package com.jagex.game.client;
 
-import rs2.client.Client;
 import com.jagex.game.world.entity.ObjectWrapper;
 import com.jagex.graphics.camera.CameraTrackable;
 import com.jagex.graphics.camera.CameraTrackableProvider;
 import com.jagex.graphics.camera.CameraTrackableType;
 import deob.ObfuscatedName;
+import rs2.client.Client;
 
 @ObfuscatedName("z")
 public class ClientCameraTrackableProvider implements CameraTrackableProvider {

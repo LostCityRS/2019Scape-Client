@@ -1,6 +1,5 @@
 package com.jagex.math;
 
-import com.jagex.math.Matrix4x4;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("oj")

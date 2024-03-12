@@ -1,10 +1,10 @@
 package com.jagex.graphics.dx;
 
 import com.jagex.game.client.DataType;
-import com.jagex.graphics.TextureFormat;
 import com.jagex.graphics.GpuTextureRelated;
 import com.jagex.graphics.GraphicsDeletable;
 import com.jagex.graphics.Texture2;
+import com.jagex.graphics.TextureFormat;
 import deob.ObfuscatedName;
 import jagdx.*;
 

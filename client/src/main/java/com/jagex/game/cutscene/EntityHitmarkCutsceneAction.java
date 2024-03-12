@@ -1,10 +1,10 @@
 package com.jagex.game.cutscene;
 
-import rs2.client.scene.entities.PathingEntity;
-import rs2.client.Client;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
+import rs2.client.scene.entities.PathingEntity;
 
 @ObfuscatedName("agi")
 public class EntityHitmarkCutsceneAction extends CutsceneAction {

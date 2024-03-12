@@ -1,15 +1,15 @@
 package com.jagex.game.network;
 
-import rs2.client.Client;
 import com.jagex.core.datastruct.IterableQueue;
-import com.jagex.encryption.Isaac;
 import com.jagex.core.io.Packet;
 import com.jagex.core.io.PacketBit;
 import com.jagex.core.io.Stream;
 import com.jagex.core.utils.PingProvider;
+import com.jagex.encryption.Isaac;
 import com.jagex.game.client.ClientMessage;
 import com.jagex.game.network.protocol.ServerProt;
 import deob.ObfuscatedName;
+import rs2.client.Client;
 
 import java.io.IOException;
 

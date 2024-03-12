@@ -1,8 +1,8 @@
 package com.jagex.js5.caching;
 
-import com.jagex.game.client.DiskStore;
 import com.jagex.core.datastruct.DualIterableQueue;
 import com.jagex.core.utils.JagException;
+import com.jagex.game.client.DiskStore;
 import com.jagex.js5.worker.Js5WorkerRequest;
 import deob.ObfuscatedName;
 

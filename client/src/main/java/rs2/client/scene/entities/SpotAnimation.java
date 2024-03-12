@@ -1,17 +1,17 @@
 package rs2.client.scene.entities;
 
-import com.jagex.game.world.entity.*;
-import com.jagex.graphics.AnimationWrapper;
-import com.jagex.graphics.scenegraph.GraphEntity;
-import rs2.client.Client;
 import com.jagex.game.config.effectanimtype.EffectAnimType;
+import com.jagex.game.world.entity.*;
 import com.jagex.graphics.*;
 import com.jagex.graphics.particles.ParticleList;
 import com.jagex.graphics.particles.ParticleSystem;
+import com.jagex.graphics.scenegraph.GraphEntity;
+import com.jagex.graphics.scenegraph.PrimaryLayerEntity;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
 
 @ObfuscatedName("aur")
 public class SpotAnimation extends PrimaryLayerEntity {

@@ -1,8 +1,8 @@
 package com.jagex.audio;
 
-import com.jagex.math.IntMath;
 import com.jagex.core.datastruct.WeightedCache;
 import com.jagex.core.io.Packet;
+import com.jagex.math.IntMath;
 import deob.ObfuscatedName;
 
 import java.util.ArrayList;

@@ -2,7 +2,9 @@ package com.jagex.game.config.objtype;
 
 import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;
-import com.jagex.game.config.*;
+import com.jagex.game.config.CachingConfigTypeList;
+import com.jagex.game.config.ConfigTypeList;
+import com.jagex.game.config.Js5ConfigGroup;
 import com.jagex.game.config.defaults.GraphicsDefaults;
 import com.jagex.game.world.entity.PlayerModel;
 import com.jagex.graphics.Font;

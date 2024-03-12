@@ -1,6 +1,5 @@
 package com.jagex.core.io;
 
-import com.jagex.core.io.BrokenInputStream;
 import deob.ObfuscatedName;
 
 import java.io.EOFException;

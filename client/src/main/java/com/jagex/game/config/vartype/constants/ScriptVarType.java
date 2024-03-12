@@ -1,10 +1,10 @@
 package com.jagex.game.config.vartype.constants;
 
-import com.jagex.game.shared.movement.CoordFine;
+import com.jagex.core.constants.SerializableEnum;
 import com.jagex.core.utils.Cp1252;
 import com.jagex.game.script.ScriptVarInterface;
 import com.jagex.game.script.ScriptVarProperty;
-import com.jagex.core.constants.SerializableEnum;
+import com.jagex.game.shared.movement.CoordFine;
 import deob.ObfuscatedName;
 import deob.Statics;
 

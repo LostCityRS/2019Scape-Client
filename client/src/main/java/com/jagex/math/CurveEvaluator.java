@@ -1,7 +1,7 @@
 package com.jagex.math;
 
-import com.jagex.graphics.TransformInfinityType;
 import com.jagex.graphics.KeyFrame;
+import com.jagex.graphics.TransformInfinityType;
 import deob.ObfuscatedName;
 import deob.Statics;
 

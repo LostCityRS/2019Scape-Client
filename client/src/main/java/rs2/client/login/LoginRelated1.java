@@ -2,13 +2,13 @@ package rs2.client.login;
 
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.load.LoadingScreenElement;
-import com.jagex.graphics.SpriteDataProvider;
-import rs2.client.Client;
 import com.jagex.graphics.Font;
 import com.jagex.graphics.FontMetrics;
+import com.jagex.graphics.SpriteDataProvider;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
 
 @ObfuscatedName("kg")
 public class LoginRelated1 implements LoadingScreenElement {

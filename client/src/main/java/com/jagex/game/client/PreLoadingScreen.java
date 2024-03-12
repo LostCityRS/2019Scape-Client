@@ -1,10 +1,10 @@
 package com.jagex.game.client;
 
-import rs2.client.Client;
 import com.jagex.core.utils.StringTools;
 import com.jagex.game.load.LoadingScreen;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
 
 import java.awt.*;
 import java.awt.geom.AffineTransform;

@@ -1,6 +1,5 @@
 package com.jagex.core.io;
 
-import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 
 import java.util.zip.Inflater;

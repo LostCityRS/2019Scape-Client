@@ -2,9 +2,9 @@ package com.jagex.game.load;
 
 import com.jagex.game.client.ServerPorts;
 import com.jagex.game.client.ServerType;
-import rs2.client.Client;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
 
 import java.io.BufferedReader;
 import java.io.DataInputStream;

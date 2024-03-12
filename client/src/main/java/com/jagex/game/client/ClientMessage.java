@@ -2,8 +2,8 @@ package com.jagex.game.client;
 
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.io.PacketBit;
-import deob.ObfuscatedName;
 import com.jagex.game.network.protocol.ClientProt;
+import deob.ObfuscatedName;
 
 @ObfuscatedName("akl")
 public class ClientMessage extends Node {

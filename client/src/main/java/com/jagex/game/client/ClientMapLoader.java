@@ -1,6 +1,5 @@
 package com.jagex.game.client;
 
-import rs2.client.Client;
 import com.jagex.core.datastruct.IntegerBox;
 import com.jagex.core.datastruct.LinkMap;
 import com.jagex.core.io.Packet;
@@ -9,9 +8,14 @@ import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
 import com.jagex.game.world.entity.*;
 import com.jagex.graphics.*;
+import com.jagex.graphics.scenegraph.GroundDecorLayerEntity;
+import com.jagex.graphics.scenegraph.PrimaryLayerEntity;
+import com.jagex.graphics.scenegraph.WallDecorLayerEntity;
+import com.jagex.graphics.scenegraph.WallLayerEntity;
 import com.jagex.math.ScaleRotTrans;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
 
 @ObfuscatedName("aih")
 public class ClientMapLoader extends MapLoader {

@@ -1,9 +1,9 @@
 package rs2.client.login;
 
-import rs2.client.Client;
 import com.jagex.game.load.LoadingScreenSprite;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
+import rs2.client.Client;
 
 @ObfuscatedName("aha")
 public class LoginScreenRelated8 extends LoadingScreenSprite {

@@ -1,11 +1,11 @@
 package com.jagex.game.config.loctype;
 
-import com.jagex.game.client.LocalisedText;
-import com.jagex.graphics.ModelUnlit;
-import com.jagex.core.datastruct.Pair;
-import com.jagex.core.datastruct.WeightedCache;
 import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;
+import com.jagex.core.datastruct.Pair;
+import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.game.client.LocalisedText;
+import com.jagex.graphics.ModelUnlit;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("vh")

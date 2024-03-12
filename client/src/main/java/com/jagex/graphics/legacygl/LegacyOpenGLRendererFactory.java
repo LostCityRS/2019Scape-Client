@@ -1,11 +1,11 @@
 package com.jagex.graphics.legacygl;
 
-import com.jagex.graphics.MaterialList;
-import com.jagex.graphics.Renderer;
-import com.jagex.graphics.TextureList;
 import com.jagex.game.config.BillboardTypeList;
 import com.jagex.game.config.ParticleEffectorTypeList;
 import com.jagex.game.config.ParticleEmitterTypeList;
+import com.jagex.graphics.MaterialList;
+import com.jagex.graphics.Renderer;
+import com.jagex.graphics.TextureList;
 import deob.ObfuscatedName;
 
 import java.awt.*;

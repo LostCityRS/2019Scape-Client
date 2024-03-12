@@ -4,8 +4,6 @@ import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.ConfigTypeList;
-import com.jagex.game.config.npctype.NPCType;
-import com.jagex.game.config.npctype.NPCTypeFactory;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 

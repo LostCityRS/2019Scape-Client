@@ -1,21 +1,21 @@
 package com.jagex.game.client;
 
-import rs2.client.Client;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
 import com.jagex.core.io.PacketBit;
 import com.jagex.core.utils.VarValue;
-import rs2.client.logic.chat.ChatHistory;
-import com.jagex.game.script.CommunityPartnerType;
-import com.jagex.game.config.vartype.constants.BaseVarType;
-import com.jagex.game.shared.movement.CoordGrid;
-import com.jagex.game.world.entity.PlayerEntity;
-import com.jagex.game.camera.position.PositionEntity;
-import com.jagex.game.world.entity.PositionMode;
 import com.jagex.game.camera.LookatEntity;
 import com.jagex.game.camera.LookatMode;
+import com.jagex.game.camera.position.PositionEntity;
+import com.jagex.game.config.vartype.constants.BaseVarType;
+import com.jagex.game.script.CommunityPartnerType;
+import com.jagex.game.shared.movement.CoordGrid;
+import com.jagex.game.world.entity.PlayerEntity;
+import com.jagex.game.world.entity.PositionMode;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
+import rs2.client.logic.chat.ChatHistory;
 
 @ObfuscatedName("aw")
 public class ReceivePlayerPositions {

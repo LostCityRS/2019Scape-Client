@@ -1,19 +1,19 @@
 package com.jagex.game.script;
 
-import com.jagex.game.client.FileOnDisk;
-import com.jagex.game.network.ServerConnection;
-import rs2.client.Client;
 import com.jagex.core.io.Packet;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.core.utils.VarValue;
 import com.jagex.game.client.ClientMessage;
+import com.jagex.game.client.FileOnDisk;
 import com.jagex.game.config.vartype.SparseVarDomain;
 import com.jagex.game.config.vartype.VarType;
 import com.jagex.game.config.vartype.VarTypeList;
 import com.jagex.game.config.vartype.constants.VarLifetime;
+import com.jagex.game.network.ServerConnection;
+import com.jagex.game.network.protocol.ClientProt;
 import deob.ObfuscatedName;
 import deob.Statics;
-import com.jagex.game.network.protocol.ClientProt;
+import rs2.client.Client;
 
 import java.io.EOFException;
 import java.util.HashSet;

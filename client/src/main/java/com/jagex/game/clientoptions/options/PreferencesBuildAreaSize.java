@@ -1,7 +1,7 @@
 package com.jagex.game.clientoptions.options;
 
-import com.jagex.game.world.BuildAreaRelated;
 import com.jagex.game.clientoptions.ClientOptions;
+import com.jagex.game.world.BuildAreaRelated;
 import com.jagex.graphics.DrawDistance;
 import deob.ObfuscatedName;
 

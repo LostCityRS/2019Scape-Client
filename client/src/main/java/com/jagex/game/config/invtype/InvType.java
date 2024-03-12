@@ -1,8 +1,8 @@
 package com.jagex.game.config.invtype;
 
-import com.jagex.game.client.ConfigRelated;
-import com.jagex.core.io.Packet;
 import com.jagex.core.datastruct.SecondaryNode;
+import com.jagex.core.io.Packet;
+import com.jagex.game.client.ConfigRelated;
 import com.jagex.game.config.ConfigType;
 import deob.ObfuscatedName;
 

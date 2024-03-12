@@ -1,10 +1,10 @@
 package com.jagex.game.load;
 
-import com.jagex.math.IntMath;
 import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;
 import com.jagex.core.io.Packet;
 import com.jagex.js5.Js5;
+import com.jagex.math.IntMath;
 import deob.ObfuscatedName;
 
 import java.util.Random;

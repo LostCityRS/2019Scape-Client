@@ -1,7 +1,7 @@
 package com.jagex.graphics.dx;
 
-import com.jagex.graphics.VertexDeclarationElement;
 import com.jagex.graphics.VertexDeclaration;
+import com.jagex.graphics.VertexDeclarationElement;
 import com.jagex.graphics.VertexDeclarationElementComponent;
 import deob.ObfuscatedName;
 import jagdx.IDirect3DDevice;

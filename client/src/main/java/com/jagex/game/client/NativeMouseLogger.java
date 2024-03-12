@@ -1,11 +1,11 @@
 package com.jagex.game.client;
 
-import rs2.client.Client;
 import com.jagex.core.io.Packet;
 import com.jagex.core.utils.MonotonicTime;
+import com.jagex.game.network.protocol.ClientProt;
 import deob.ObfuscatedName;
 import deob.Statics;
-import com.jagex.game.network.protocol.ClientProt;
+import rs2.client.Client;
 
 import java.util.LinkedList;
 import java.util.Queue;

@@ -1,6 +1,5 @@
 package com.jagex.game.config.iftype;
 
-import com.jagex.game.config.iftype.Component;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("hq")

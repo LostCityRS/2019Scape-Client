@@ -1,7 +1,7 @@
 package com.jagex.encryption;
 
-import rs2.client.Client;
 import deob.ObfuscatedName;
+import rs2.client.Client;
 
 @ObfuscatedName("aav")
 public final class Isaac {

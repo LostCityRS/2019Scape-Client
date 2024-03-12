@@ -1,7 +1,7 @@
 package com.jagex.game.world.entity;
 
-import com.jagex.graphics.AnimationWrapper;
 import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.graphics.AnimationWrapper;
 import com.jagex.graphics.Model;
 import com.jagex.graphics.ModelUnlit;
 import com.jagex.graphics.Renderer;

@@ -1,7 +1,7 @@
 package com.jagex.game.world.entity;
 
-import com.jagex.graphics.AnimationWrapper;
 import com.jagex.game.config.seqtype.SeqType;
+import com.jagex.graphics.AnimationWrapper;
 import com.jagex.graphics.scenegraph.GraphEntity;
 import deob.ObfuscatedName;
 import deob.Statics;

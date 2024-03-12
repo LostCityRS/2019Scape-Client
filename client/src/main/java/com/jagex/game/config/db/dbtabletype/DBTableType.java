@@ -1,10 +1,10 @@
 package com.jagex.game.config.db.dbtabletype;
 
-import com.jagex.game.client.ConfigRelated;
-import com.jagex.game.config.db.DBUtils;
-import com.jagex.core.io.Packet;
 import com.jagex.core.datastruct.SerializableEnums;
+import com.jagex.core.io.Packet;
+import com.jagex.game.client.ConfigRelated;
 import com.jagex.game.config.ConfigType;
+import com.jagex.game.config.db.DBUtils;
 import com.jagex.game.config.vartype.constants.ScriptVarType;
 import deob.ObfuscatedName;
 

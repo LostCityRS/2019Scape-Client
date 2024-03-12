@@ -1,6 +1,5 @@
 package com.jagex.game.world.entity;
 
-import rs2.client.Client;
 import com.jagex.core.constants.ModeAccountType;
 import com.jagex.game.config.vartype.VarIntDomain;
 import com.jagex.game.config.vartype.VarPlayerDomain;
@@ -11,6 +10,7 @@ import com.jagex.game.config.vartype.bit.VarBitTypeList;
 import com.jagex.game.config.vartype.constants.VarDomainType;
 import com.jagex.game.config.vartype.player.VarPlayerTypeListClient;
 import deob.ObfuscatedName;
+import rs2.client.Client;
 
 @ObfuscatedName("ah")
 public class PlayerGameState implements VarIntDomain, VariableTypeProvider, PlayerStatProvider {

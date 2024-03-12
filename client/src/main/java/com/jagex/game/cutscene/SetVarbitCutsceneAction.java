@@ -2,8 +2,6 @@ package com.jagex.game.cutscene;
 
 import com.jagex.core.datastruct.IntWrapper;
 import com.jagex.core.io.Packet;
-import com.jagex.game.cutscene.CutsceneAction;
-import com.jagex.game.cutscene.CutsceneManager;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("agx")

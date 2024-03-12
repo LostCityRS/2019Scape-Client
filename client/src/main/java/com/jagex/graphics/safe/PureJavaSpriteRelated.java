@@ -2,8 +2,8 @@ package com.jagex.graphics.safe;
 
 import com.jagex.game.client.JavaGraphicsRelated3;
 import com.jagex.graphics.Font;
-import com.jagex.graphics.GraphicsRelated;
 import com.jagex.graphics.FontMetrics;
+import com.jagex.graphics.GraphicsRelated;
 import com.jagex.graphics.PalettedSpriteData;
 import deob.ObfuscatedName;
 

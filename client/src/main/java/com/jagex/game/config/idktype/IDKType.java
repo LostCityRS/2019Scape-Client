@@ -1,9 +1,9 @@
 package com.jagex.game.config.idktype;
 
-import com.jagex.game.config.ConfigType;
-import com.jagex.js5.Js5;
-import com.jagex.graphics.ModelUnlit;
 import com.jagex.core.io.Packet;
+import com.jagex.game.config.ConfigType;
+import com.jagex.graphics.ModelUnlit;
+import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("jv")

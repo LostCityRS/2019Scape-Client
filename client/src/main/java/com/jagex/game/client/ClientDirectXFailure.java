@@ -1,10 +1,10 @@
 package com.jagex.game.client;
 
-import rs2.client.Client;
 import com.jagex.core.io.SendablePacket;
+import com.jagex.game.network.protocol.ClientProt;
 import deob.ObfuscatedName;
 import deob.Statics;
-import com.jagex.game.network.protocol.ClientProt;
+import rs2.client.Client;
 
 @ObfuscatedName("ux")
 public class ClientDirectXFailure implements SendablePacket {

@@ -1,7 +1,7 @@
 package com.jagex.game.config.vartype;
 
-import com.jagex.game.shared.movement.CoordFine;
 import com.jagex.core.io.Packet;
+import com.jagex.game.shared.movement.CoordFine;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("qm")

@@ -1,8 +1,8 @@
 package com.jagex.js5.network;
 
-import com.jagex.js5.Js5CompressionType;
-import com.jagex.core.io.Packet;
 import com.jagex.core.datastruct.SerializableEnums;
+import com.jagex.core.io.Packet;
+import com.jagex.js5.Js5CompressionType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("pc")

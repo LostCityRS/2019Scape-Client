@@ -1,10 +1,10 @@
 package com.jagex.game.config.idktype;
 
+import com.jagex.core.constants.Language;
+import com.jagex.core.constants.ModeGame;
 import com.jagex.game.config.CachingConfigTypeList;
 import com.jagex.game.config.Js5ConfigGroup;
 import com.jagex.js5.Js5;
-import com.jagex.core.constants.ModeGame;
-import com.jagex.core.constants.Language;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aov")

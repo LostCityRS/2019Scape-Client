@@ -1,14 +1,14 @@
 package rs2.client.scene.entities;
 
-import com.jagex.game.config.npctype.NPCHeadIconCustomisation;
-import com.jagex.game.shared.movement.CoordFine;
-import com.jagex.game.shared.movement.CoordGrid;
 import com.jagex.game.client.GameShell;
 import com.jagex.game.client.MoveSpeed;
 import com.jagex.game.config.bastype.BASType;
+import com.jagex.game.config.effectanimtype.EffectAnimType;
+import com.jagex.game.config.npctype.NPCHeadIconCustomisation;
 import com.jagex.game.config.npctype.NPCType;
 import com.jagex.game.config.seqtype.SeqType;
-import com.jagex.game.config.effectanimtype.EffectAnimType;
+import com.jagex.game.shared.movement.CoordFine;
+import com.jagex.game.shared.movement.CoordGrid;
 import com.jagex.game.world.entity.*;
 import com.jagex.graphics.*;
 import com.jagex.graphics.camera.CameraTrackableType;

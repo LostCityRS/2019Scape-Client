@@ -1,9 +1,9 @@
 package com.jagex.game.config.defaults;
 
-import com.jagex.game.client.MouseBinding;
 import com.jagex.core.io.Packet;
 import com.jagex.game.client.KeyBinding;
 import com.jagex.game.client.KeyHeldBinding;
+import com.jagex.game.client.MouseBinding;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("vi")

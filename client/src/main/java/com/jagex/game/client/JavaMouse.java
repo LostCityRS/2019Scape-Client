@@ -1,7 +1,7 @@
 package com.jagex.game.client;
 
-import com.jagex.core.utils.MonotonicTime;
 import com.jagex.core.datastruct.IterableQueue;
+import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.shared.framework.input.Mouse;
 import deob.ObfuscatedName;
 import deob.Statics;

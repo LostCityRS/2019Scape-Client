@@ -1,20 +1,17 @@
 package rs2.client.scene.entities;
 
-import com.jagex.game.world.entity.*;
-import com.jagex.graphics.AnimationWrapper;
-import com.jagex.graphics.scenegraph.GraphEntity;
-import rs2.client.Client;
 import com.jagex.game.config.bastype.BASType;
 import com.jagex.game.config.effectanimtype.EffectAnimType;
-import com.jagex.graphics.Model;
-import com.jagex.graphics.ModelParticleEffector;
-import com.jagex.graphics.ModelParticleEmitter;
-import com.jagex.graphics.Renderer;
+import com.jagex.game.world.entity.*;
+import com.jagex.graphics.*;
 import com.jagex.graphics.particles.ParticleList;
 import com.jagex.graphics.particles.ParticleSystem;
+import com.jagex.graphics.scenegraph.GraphEntity;
+import com.jagex.graphics.scenegraph.PrimaryLayerEntity;
 import com.jagex.math.*;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
 
 @ObfuscatedName("aue")
 public class ProjectileAnimation extends PrimaryLayerEntity {

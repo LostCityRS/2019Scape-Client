@@ -1,8 +1,8 @@
 package com.jagex.graphics;
 
 import com.jagex.game.client.DataType;
-import com.jagex.graphics.dx.Direct3DRenderer;
 import com.jagex.graphics.dx.Direct3DGraphicsDeletable;
+import com.jagex.graphics.dx.Direct3DRenderer;
 import deob.ObfuscatedName;
 import jagdx.IDirect3DDevice;
 import jagdx.IUnknown;

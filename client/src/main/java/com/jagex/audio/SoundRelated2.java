@@ -1,8 +1,8 @@
 package com.jagex.audio;
 
-import com.jagex.core.utils.MonotonicTime;
 import com.jagex.core.io.Packet;
 import com.jagex.core.utils.ByteArrayPool;
+import com.jagex.core.utils.MonotonicTime;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("rq")

@@ -1,7 +1,7 @@
 package com.jagex.game.config.vartype;
 
-import com.jagex.core.io.Packet;
 import com.jagex.core.datastruct.SerializableEnums;
+import com.jagex.core.io.Packet;
 import com.jagex.game.config.vartype.constants.ScriptVarType;
 import com.jagex.game.config.vartype.constants.VarDomainType;
 import com.jagex.game.config.vartype.constants.VarLifetime;

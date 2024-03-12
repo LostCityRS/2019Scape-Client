@@ -1,6 +1,5 @@
 package com.jagex.graphics;
 
-import com.jagex.graphics.RenderTarget;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("afy")

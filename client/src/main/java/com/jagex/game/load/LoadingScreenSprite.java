@@ -2,9 +2,9 @@ package com.jagex.game.load;
 
 import com.jagex.game.client.MainLoadingScreen;
 import com.jagex.graphics.Sprite;
-import rs2.client.Client;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
+import rs2.client.Client;
 
 @ObfuscatedName("jk")
 public class LoadingScreenSprite implements LoadingScreenElement {

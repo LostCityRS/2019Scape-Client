@@ -1,7 +1,8 @@
 package com.jagex.game.world.entity;
 
-import rs2.client.Client;
+import com.jagex.graphics.scenegraph.PrimaryLayerEntity;
 import deob.ObfuscatedName;
+import rs2.client.Client;
 
 @ObfuscatedName("ad")
 public class SceneManager {

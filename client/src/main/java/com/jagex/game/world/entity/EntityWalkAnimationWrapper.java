@@ -1,7 +1,7 @@
 package com.jagex.game.world.entity;
 
-import com.jagex.graphics.AnimationWrapper;
 import com.jagex.game.config.seqtype.SeqType;
+import com.jagex.graphics.AnimationWrapper;
 import deob.ObfuscatedName;
 import deob.Statics;
 import rs2.client.scene.entities.PathingEntity;

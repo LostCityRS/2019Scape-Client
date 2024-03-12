@@ -3,9 +3,9 @@ package com.jagex.graphics.legacygl;
 import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.io.Packet;
-import com.jagex.graphics.Light;
 import com.jagex.graphics.FloorModelNode;
 import com.jagex.graphics.GpuPacket;
+import com.jagex.graphics.Light;
 import com.jagex.math.IntMath;
 import deob.ObfuscatedName;
 

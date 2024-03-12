@@ -1,16 +1,16 @@
 package com.jagex.game.client;
 
-import rs2.client.Client;
 import com.jagex.core.io.Packet;
-import com.jagex.game.config.seqtype.SeqType;
 import com.jagex.game.config.effectanimtype.EffectAnimType;
+import com.jagex.game.config.seqtype.SeqType;
 import com.jagex.game.cutscene.CutsceneAction;
-import rs2.client.scene.entities.PathingEntity;
-import rs2.client.scene.entities.ProjectileAnimation;
 import com.jagex.game.world.entity.ProjectileEntityWrapper;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
+import rs2.client.scene.entities.PathingEntity;
+import rs2.client.scene.entities.ProjectileAnimation;
 
 @ObfuscatedName("agh")
 public class ProjAnimCutsceneAction extends CutsceneAction {

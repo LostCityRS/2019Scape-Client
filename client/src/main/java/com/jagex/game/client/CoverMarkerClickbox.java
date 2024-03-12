@@ -2,8 +2,8 @@ package com.jagex.game.client;
 
 import com.jagex.core.datastruct.Link;
 import com.jagex.core.datastruct.LinkQueue;
-import rs2.client.scene.entities.PathingEntity;
 import deob.ObfuscatedName;
+import rs2.client.scene.entities.PathingEntity;
 
 @ObfuscatedName("ajq")
 public class CoverMarkerClickbox extends Link {

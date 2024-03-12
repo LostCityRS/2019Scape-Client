@@ -2,7 +2,10 @@ package com.jagex.game.clientoptions;
 
 import com.jagex.core.constants.BuildAreaSize;
 import com.jagex.core.io.Packet;
-import com.jagex.game.client.*;
+import com.jagex.game.client.ClientAutoSetupResult;
+import com.jagex.game.client.CpuProfiling;
+import com.jagex.game.client.FileOnDisk;
+import com.jagex.game.client.GameShell;
 import com.jagex.graphics.GraphicsPacketQueue;
 import com.jagex.graphics.RendererInfo;
 import deob.ObfuscatedName;

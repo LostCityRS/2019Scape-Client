@@ -1,7 +1,7 @@
 package com.jagex.game.client;
 
-import com.jagex.game.config.defaults.Binding;
 import com.jagex.core.io.Packet;
+import com.jagex.game.config.defaults.Binding;
 import com.jagex.game.shared.framework.input.Keyboard;
 import deob.ObfuscatedName;
 

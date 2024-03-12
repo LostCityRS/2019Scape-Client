@@ -1,10 +1,10 @@
 package com.jagex.game.script;
 
-import rs2.client.Client;
 import com.jagex.game.world.entity.ObjectWrapper;
-import rs2.client.scene.entities.PathingEntity;
 import deob.ObfuscatedName;
+import rs2.client.Client;
 import rs2.client.clientscript.ScriptRunner;
+import rs2.client.scene.entities.PathingEntity;
 
 @ObfuscatedName("asz")
 public class SubInterfaceActiveNpc extends SubInterface {

@@ -1,10 +1,10 @@
 package com.jagex.game.config.loctype;
 
+import com.jagex.core.constants.Language;
+import com.jagex.core.constants.ModeGame;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.ConfigTypeFactory;
 import com.jagex.game.config.ConfigTypeList;
-import com.jagex.core.constants.Language;
-import com.jagex.core.constants.ModeGame;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 

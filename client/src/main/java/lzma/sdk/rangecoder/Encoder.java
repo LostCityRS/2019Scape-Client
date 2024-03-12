@@ -1,9 +1,9 @@
-package com.jagex.core.io;
+package lzma.sdk.rangecoder;
 
 import deob.ObfuscatedName;
 
 @ObfuscatedName("jx")
-public class LZMARangeEncoder {
+public class Encoder {
 
 	@ObfuscatedName("jx.f")
 	public static int[] field3010 = new int[512];

@@ -1,9 +1,9 @@
 package com.jagex.graphics.legacygl;
 
-import com.jagex.graphics.Material;
 import com.jagex.core.datastruct.Node;
-import com.jagex.graphics.WaterFogData;
 import com.jagex.graphics.GpuPacket;
+import com.jagex.graphics.Material;
+import com.jagex.graphics.WaterFogData;
 import deob.ObfuscatedName;
 import jaclib.memory.Stream;
 import jaclib.memory.heap.NativeHeapBuffer;

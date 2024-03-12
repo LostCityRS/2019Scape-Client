@@ -1,8 +1,8 @@
 package com.jagex.game.config.vartype.constants;
 
 import com.jagex.core.constants.SerializableEnum;
-import com.jagex.game.config.vartype.*;
 import com.jagex.game.config.Js5ConfigGroup;
+import com.jagex.game.config.vartype.*;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("qe")

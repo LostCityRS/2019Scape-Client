@@ -1,8 +1,8 @@
 package com.jagex.game.group;
 
 import com.jagex.core.datastruct.SerializableEnums;
-import com.jagex.core.utils.VarValue;
 import com.jagex.core.io.Packet;
+import com.jagex.core.utils.VarValue;
 import com.jagex.game.config.vartype.VarType;
 import com.jagex.game.config.vartype.bit.VarBitOverflowException;
 import com.jagex.game.config.vartype.bit.VarBitType;

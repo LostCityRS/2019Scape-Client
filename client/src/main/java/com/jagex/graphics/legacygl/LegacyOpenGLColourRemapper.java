@@ -1,8 +1,8 @@
 package com.jagex.graphics.legacygl;
 
+import com.jagex.game.client.DataType;
 import com.jagex.graphics.ColourRemapper;
 import com.jagex.graphics.TextureFormat;
-import com.jagex.game.client.DataType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aep")

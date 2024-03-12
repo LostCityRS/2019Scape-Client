@@ -1,9 +1,9 @@
 package com.jagex.graphics.gl.effects;
 
+import com.jagex.graphics.RenderList;
 import com.jagex.graphics.legacygl.LegacyOpenGLCubeTexture;
 import com.jagex.graphics.legacygl.LegacyOpenGLRenderer;
 import com.jagex.graphics.legacygl.LegacyOpenGLTexture;
-import com.jagex.graphics.RenderList;
 import deob.ObfuscatedName;
 import jaggl.OpenGL;
 

@@ -1,5 +1,9 @@
 package com.jagex.game.world.entity;
 
+import com.jagex.graphics.scenegraph.GroundDecorLayerEntity;
+import com.jagex.graphics.scenegraph.ObjLayerEntity;
+import com.jagex.graphics.scenegraph.WallDecorLayerEntity;
+import com.jagex.graphics.scenegraph.WallLayerEntity;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("tk")

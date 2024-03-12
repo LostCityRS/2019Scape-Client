@@ -1,7 +1,7 @@
 package com.jagex.graphics.safe;
 
-import com.jagex.graphics.GraphicsRelated;
 import com.jagex.game.client.JavaGraphicsRelated3;
+import com.jagex.graphics.GraphicsRelated;
 import com.jagex.graphics.Sprite;
 import deob.ObfuscatedName;
 import deob.Statics;

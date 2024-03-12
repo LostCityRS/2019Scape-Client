@@ -1,15 +1,15 @@
 package com.jagex.graphics;
 
-import rs2.client.Client;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
-import com.jagex.game.client.*;
 import com.jagex.game.camera.position.PositionEntity;
+import com.jagex.game.client.*;
+import com.jagex.game.network.protocol.ClientProt;
 import com.jagex.game.world.entity.PositionMode;
 import com.jagex.graphics.camera.CameraHelpers;
 import deob.ObfuscatedName;
 import deob.Statics;
-import com.jagex.game.network.protocol.ClientProt;
+import rs2.client.Client;
 
 import java.awt.*;
 import java.util.Queue;

@@ -1,15 +1,15 @@
 package com.jagex.game.scene;
 
-import com.jagex.game.client.ClientMapLoader;
-import com.jagex.graphics.scenegraph.GraphEntity;
-import rs2.client.Client;
 import com.jagex.core.datastruct.IterableQueue;
 import com.jagex.core.datastruct.Node;
+import com.jagex.game.client.ClientMapLoader;
 import com.jagex.game.world.entity.*;
 import com.jagex.graphics.Minimap;
+import com.jagex.graphics.scenegraph.GraphEntity;
 import com.jagex.math.ScaleRotTrans;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
 
 @ObfuscatedName("ajt")
 public final class ChangeLocationRequest extends Node {

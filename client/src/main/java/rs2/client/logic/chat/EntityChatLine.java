@@ -1,8 +1,8 @@
 package rs2.client.logic.chat;
 
-import com.jagex.game.shared.framework.chat.ChatCrownType;
-import com.jagex.core.utils.MonotonicTime;
 import com.jagex.core.datastruct.SecondaryNode;
+import com.jagex.core.utils.MonotonicTime;
+import com.jagex.game.shared.framework.chat.ChatCrownType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("asg")

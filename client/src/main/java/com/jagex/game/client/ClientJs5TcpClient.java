@@ -1,13 +1,13 @@
 package com.jagex.game.client;
 
-import rs2.client.Client;
 import com.jagex.core.io.Packet;
 import com.jagex.core.io.Stream;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.js5.Js5CompressionType;
-import com.jagex.js5.network.Js5TcpClient;
 import com.jagex.js5.network.Js5NetRequest;
+import com.jagex.js5.network.Js5TcpClient;
 import deob.ObfuscatedName;
+import rs2.client.Client;
 
 import java.io.IOException;
 import java.util.Iterator;

@@ -4,12 +4,12 @@ import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.datastruct.IterableQueue;
 import com.jagex.core.io.Packet;
 import com.jagex.game.client.ClientMessage;
-import com.jagex.game.script.ClientTriggerType;
 import com.jagex.game.config.vartype.VarIntDomain;
+import com.jagex.game.network.protocol.ClientProt;
+import com.jagex.game.script.ClientTriggerType;
 import deob.ObfuscatedName;
 import deob.Statics;
 import rs2.client.Client;
-import com.jagex.game.network.protocol.ClientProt;
 
 @ObfuscatedName("eq")
 public class CutsceneManager {

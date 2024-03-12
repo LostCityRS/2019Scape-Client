@@ -1,11 +1,11 @@
 package com.jagex.graphics;
 
-import com.jagex.game.client.ClientMessage;
 import com.jagex.core.io.SendablePacket;
-import rs2.client.Client;
+import com.jagex.game.client.ClientMessage;
+import com.jagex.game.network.protocol.ClientProt;
 import deob.ObfuscatedName;
 import deob.Statics;
-import com.jagex.game.network.protocol.ClientProt;
+import rs2.client.Client;
 
 @ObfuscatedName("uo")
 public class SimpleToolkitChange implements SendablePacket {

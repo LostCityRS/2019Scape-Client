@@ -1,33 +1,35 @@
 package rs2.client.scene.entities;
 
 import com.jagex.core.datastruct.LinkQueue;
-import com.jagex.game.client.*;
-import com.jagex.game.config.iftype.Component;
-import com.jagex.game.config.iftype.Interface;
-import com.jagex.game.world.entity.*;
-import rs2.client.Client;
-import rs2.client.clientscript.ScriptRunner;
+import com.jagex.game.client.EasedAngle;
+import com.jagex.game.client.Headbar;
 import com.jagex.game.config.bastype.BASType;
 import com.jagex.game.config.bastype.BASTypeList;
+import com.jagex.game.config.effectanimtype.EffectAnimType;
 import com.jagex.game.config.headbartype.HeadbarType;
 import com.jagex.game.config.hitmarktype.HitmarkType;
+import com.jagex.game.config.iftype.Component;
+import com.jagex.game.config.iftype.Interface;
 import com.jagex.game.config.seqtype.SeqType;
-import com.jagex.game.config.effectanimtype.EffectAnimType;
 import com.jagex.game.config.vartype.VarContainer;
 import com.jagex.game.config.vartype.VarContainerSparse;
 import com.jagex.game.config.vartype.VarDomain;
 import com.jagex.game.config.vartype.VarTypeList;
 import com.jagex.game.shared.movement.CoordFine;
 import com.jagex.game.shared.movement.CoordGrid;
+import com.jagex.game.world.entity.*;
 import com.jagex.graphics.*;
 import com.jagex.graphics.camera.CameraTrackable;
 import com.jagex.graphics.particles.ParticleSystem;
+import com.jagex.graphics.scenegraph.PrimaryLayerEntity;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.ScaleRotTrans;
 import com.jagex.math.Trig1;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
+import rs2.client.clientscript.ScriptRunner;
 
 @ObfuscatedName("ahm")
 public abstract class PathingEntity extends PrimaryLayerEntity implements CameraTrackable {

@@ -1,7 +1,7 @@
 package com.jagex.graphics;
 
-import com.jagex.game.client.DataType;
 import com.jagex.core.datastruct.SecondaryNode;
+import com.jagex.game.client.DataType;
 import com.jagex.graphics.legacygl.LegacyOpenGLRenderer;
 import com.jagex.graphics.legacygl.LegacyPostProcessingRelated;
 import deob.ObfuscatedName;
