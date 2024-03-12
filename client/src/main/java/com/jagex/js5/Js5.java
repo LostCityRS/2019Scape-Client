@@ -3,7 +3,7 @@ package com.jagex.js5;
 import com.jagex.core.io.GZip;
 import com.jagex.core.io.Packet;
 import com.jagex.core.utils.ByteArrayCopier;
-import com.jagex.core.utils.StringUtils;
+import com.jagex.core.utils.StringTools;
 import com.jagex.js5.index.Js5Index;
 import deob.ObfuscatedName;
 import deob.Statics;
@@ -50,7 +50,7 @@ public final class Js5 {
 	@ObfuscatedName("py.e(B)Z")
 	public synchronized boolean method6946() {
 		if (this.field4416 == null) {
-			this.field4416 = this.field4417.method6853();
+			this.field4416 = this.field4417.getIndex();
 			if (this.field4416 == null) {
 				return false;
 			}
@@ -65,7 +65,7 @@ public final class Js5 {
 		if (!this.method6946()) {
 			throw new IllegalStateException("");
 		}
-		return this.field4416.field4385;
+		return this.field4416.crc;
 	}
 
 	@ObfuscatedName("py.m(IB)Z")
@@ -97,9 +97,9 @@ public final class Js5 {
 	@ObfuscatedName("py.f(II)V")
 	public synchronized void method6957(int arg0) {
 		if (this.field4412) {
-			this.field4418[arg0] = this.field4417.method6854(arg0);
+			this.field4418[arg0] = this.field4417.fetchgroup(arg0);
 		} else {
-			this.field4418[arg0] = ByteArrayCopier.method2821(this.field4417.method6854(arg0), false);
+			this.field4418[arg0] = ByteArrayCopier.method2821(this.field4417.fetchgroup(arg0), false);
 		}
 	}
 
@@ -109,7 +109,7 @@ public final class Js5 {
 	}
 
 	@ObfuscatedName("py.l(IIB)[B")
-	public byte[] method6879(int arg0, int arg1) {
+	public byte[] getfile(int arg0, int arg1) {
 		return this.method6914(arg0, arg1, null);
 	}
 
@@ -152,7 +152,7 @@ public final class Js5 {
 	}
 
 	@ObfuscatedName("py.z(III)Z")
-	public synchronized boolean method6888(int arg0, int arg1) {
+	public synchronized boolean requestdownload(int arg0, int arg1) {
 		if (!this.method6883(arg0, arg1)) {
 			return false;
 		} else if (this.field4410[arg0] != null && this.field4410[arg0][arg1] != null) {
@@ -170,11 +170,11 @@ public final class Js5 {
 		if (!this.method6946()) {
 			return false;
 		} else if (this.field4416.field4403.length == 1) {
-			return this.method6888(0, arg0);
+			return this.requestdownload(0, arg0);
 		} else if (!this.method6882(arg0)) {
 			return false;
 		} else if (this.field4416.field4403[arg0] == 1) {
-			return this.method6888(arg0, 0);
+			return this.requestdownload(arg0, 0);
 		} else {
 			throw new RuntimeException();
 		}
@@ -244,11 +244,11 @@ public final class Js5 {
 		if (!this.method6946()) {
 			return null;
 		} else if (this.field4416.field4403.length == 1) {
-			return this.method6879(0, arg0);
+			return this.getfile(0, arg0);
 		} else if (!this.method6882(arg0)) {
 			return null;
 		} else if (this.field4416.field4403[arg0] == 1) {
-			return this.method6879(arg0, 0);
+			return this.getfile(arg0, 0);
 		} else {
 			throw new RuntimeException();
 		}
@@ -361,7 +361,7 @@ public final class Js5 {
 			try {
 				var15 = Statics.method7275(var10);
 			} catch (RuntimeException var51) {
-				throw Statics.method19636(var51, (arg2 != null) + " " + arg0 + " " + var10.length + " " + Packet.getcrc(var10, var10.length) + " " + Packet.getcrc(var10, var10.length - 2) + " " + this.field4416.field4393[arg0] + " " + this.field4416.field4385);
+				throw Statics.method19636(var51, (arg2 != null) + " " + arg0 + " " + var10.length + " " + Packet.getcrc(var10, var10.length) + " " + Packet.getcrc(var10, var10.length - 2) + " " + this.field4416.field4393[arg0] + " " + this.field4416.crc);
 			}
 			if (this.field4412) {
 				this.field4418[arg0] = null;
@@ -478,10 +478,10 @@ public final class Js5 {
 	}
 
 	@ObfuscatedName("py.g(Ljava/lang/String;I)I")
-	public int method6902(String arg0) {
+	public int getgroupid(String arg0) {
 		if (this.method6946()) {
 			String var2 = arg0.toLowerCase();
-			int var3 = this.field4416.field4391.method4486(StringUtils.method3475(var2));
+			int var3 = this.field4416.field4391.method4486(StringTools.method3475(var2));
 			return this.method6882(var3) ? var3 : -1;
 		} else {
 			return -1;
@@ -502,7 +502,7 @@ public final class Js5 {
 	public boolean method6904(String arg0) {
 		if (this.method6946()) {
 			String var2 = arg0.toLowerCase();
-			int var3 = this.field4416.field4391.method4486(StringUtils.method3475(var2));
+			int var3 = this.field4416.field4391.method4486(StringTools.method3475(var2));
 			return var3 >= 0;
 		} else {
 			return false;
@@ -516,11 +516,11 @@ public final class Js5 {
 		}
 		String var3 = arg0.toLowerCase();
 		String var4 = arg1.toLowerCase();
-		int var5 = this.field4416.field4391.method4486(StringUtils.method3475(var3));
+		int var5 = this.field4416.field4391.method4486(StringTools.method3475(var3));
 		if (var5 < 0) {
 			return false;
 		} else {
-			int var6 = this.field4416.field4402[var5].method4486(StringUtils.method3475(var4));
+			int var6 = this.field4416.field4402[var5].method4486(StringTools.method3475(var4));
 			return var6 >= 0;
 		}
 	}
@@ -532,10 +532,10 @@ public final class Js5 {
 		}
 		String var3 = arg0.toLowerCase();
 		String var4 = arg1.toLowerCase();
-		int var5 = this.field4416.field4391.method4486(StringUtils.method3475(var3));
+		int var5 = this.field4416.field4391.method4486(StringTools.method3475(var3));
 		if (this.method6882(var5)) {
-			int var6 = this.field4416.field4402[var5].method4486(StringUtils.method3475(var4));
-			return this.method6879(var5, var6);
+			int var6 = this.field4416.field4402[var5].method4486(StringTools.method3475(var4));
+			return this.getfile(var5, var6);
 		} else {
 			return null;
 		}
@@ -548,10 +548,10 @@ public final class Js5 {
 		}
 		String var3 = arg0.toLowerCase();
 		String var4 = arg1.toLowerCase();
-		int var5 = this.field4416.field4391.method4486(StringUtils.method3475(var3));
+		int var5 = this.field4416.field4391.method4486(StringTools.method3475(var3));
 		if (this.method6882(var5)) {
-			int var6 = this.field4416.field4402[var5].method4486(StringUtils.method3475(var4));
-			return this.method6888(var5, var6);
+			int var6 = this.field4416.field4402[var5].method4486(StringTools.method3475(var4));
+			return this.requestdownload(var5, var6);
 		} else {
 			return false;
 		}
@@ -559,7 +559,7 @@ public final class Js5 {
 
 	@ObfuscatedName("py.ah(Ljava/lang/String;I)Z")
 	public boolean method6908(String arg0) {
-		int var2 = this.method6902("");
+		int var2 = this.getgroupid("");
 		return var2 == -1 ? this.method6938(arg0, "") : this.method6938("", arg0);
 	}
 
@@ -567,7 +567,7 @@ public final class Js5 {
 	public boolean method6886(String arg0) {
 		if (this.method6946()) {
 			String var2 = arg0.toLowerCase();
-			int var3 = this.field4416.field4391.method4486(StringUtils.method3475(var2));
+			int var3 = this.field4416.field4391.method4486(StringTools.method3475(var2));
 			return this.method6927(var3);
 		} else {
 			return false;
@@ -578,7 +578,7 @@ public final class Js5 {
 	public int method6880(String arg0) {
 		if (this.method6946()) {
 			String var2 = arg0.toLowerCase();
-			int var3 = this.field4416.field4391.method4486(StringUtils.method3475(var2));
+			int var3 = this.field4416.field4391.method4486(StringTools.method3475(var2));
 			return this.method6892(var3);
 		} else {
 			return 0;

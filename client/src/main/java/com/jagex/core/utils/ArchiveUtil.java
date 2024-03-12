@@ -25,6 +25,6 @@ public class ArchiveUtil {
 
 	@ObfuscatedName("wx.n(Lpy;Lxq;II)[B")
 	public static byte[] method9853(Js5 arg0, Js5ConfigGroup arg1, int arg2) {
-		return arg1.getGroupSize() > 1 ? arg0.method6879(arg1.getClientGroupId(arg2), arg1.getClientFileId(arg2)) : arg0.method6879(arg1.id, arg2);
+		return arg1.getGroupSize() > 1 ? arg0.getfile(arg1.getClientGroupId(arg2), arg1.getClientFileId(arg2)) : arg0.getfile(arg1.id, arg2);
 	}
 }

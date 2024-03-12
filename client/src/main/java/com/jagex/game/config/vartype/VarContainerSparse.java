@@ -30,7 +30,7 @@ public class VarContainerSparse implements VarContainer {
 				return (Integer) var2.field4239;
 			}
 		}
-		return (Integer) this.field8739.method6245(arg0);
+		return (Integer) this.field8739.getDefaultValue(arg0);
 	}
 
 	@ObfuscatedName("abn.n(IIB)V")
@@ -56,7 +56,7 @@ public class VarContainerSparse implements VarContainer {
 				return (Long) var2.field4239;
 			}
 		}
-		return (Long) this.field8739.method6245(arg0);
+		return (Long) this.field8739.getDefaultValue(arg0);
 	}
 
 	@ObfuscatedName("abn.k(IJ)V")
@@ -82,7 +82,7 @@ public class VarContainerSparse implements VarContainer {
 				return var2.field4239;
 			}
 		}
-		return this.field8739.method6245(arg0);
+		return this.field8739.getDefaultValue(arg0);
 	}
 
 	@ObfuscatedName("abn.w(ILjava/lang/Object;B)V")

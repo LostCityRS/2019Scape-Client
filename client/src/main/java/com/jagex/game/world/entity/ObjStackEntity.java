@@ -174,7 +174,7 @@ public class ObjStackEntity extends ObjLayerEntity {
 		this.field12576 = false;
 		this.field12579 = 0;
 		if (this.field12573 != -1) {
-			Model var35 = ((ObjType) Statics.field1842.get(this.field12573)).method14644(arg0, 526336, this.field12583, null, null, this.field12581, this.field12582, this.field12574, this.field12575);
+			Model var35 = ((ObjType) Statics.field1842.list(this.field12573)).method14644(arg0, 526336, this.field12583, null, null, this.field12581, this.field12582, this.field12574, this.field12575);
 			if (var35 != null) {
 				if (this.field12577 == null) {
 					field12584.method6376();
@@ -188,7 +188,7 @@ public class ObjStackEntity extends ObjLayerEntity {
 			}
 		}
 		if (this.field12569 != -1) {
-			Model var36 = ((ObjType) Statics.field1842.get(this.field12569)).method14644(arg0, 526336, this.field12572, null, null, this.field12581, this.field12582, this.field12574, this.field12575);
+			Model var36 = ((ObjType) Statics.field1842.list(this.field12569)).method14644(arg0, 526336, this.field12572, null, null, this.field12581, this.field12582, this.field12574, this.field12575);
 			if (var36 != null) {
 				if (this.field12568 == null) {
 					field12584.method6376();
@@ -203,7 +203,7 @@ public class ObjStackEntity extends ObjLayerEntity {
 				}
 			}
 		}
-		Model var37 = ((ObjType) Statics.field1842.get(this.field12580)).method14644(arg0, 526336, this.field12570, null, null, this.field12581, this.field12582, this.field12574, this.field12575);
+		Model var37 = ((ObjType) Statics.field1842.list(this.field12580)).method14644(arg0, 526336, this.field12570, null, null, this.field12581, this.field12582, this.field12574, this.field12575);
 		if (var37 != null) {
 			if (this.field12571 == null) {
 				field12584.method6376();
@@ -236,16 +236,16 @@ public class ObjStackEntity extends ObjLayerEntity {
 
 	@ObfuscatedName("aut.gp(I)I")
 	public int method18371() {
-		ObjType var1 = (ObjType) Statics.field1842.get(this.field12580);
+		ObjType var1 = (ObjType) Statics.field1842.list(this.field12580);
 		int var2 = var1.field8692;
 		if (this.field12569 != -1) {
-			ObjType var3 = (ObjType) Statics.field1842.get(this.field12569);
+			ObjType var3 = (ObjType) Statics.field1842.list(this.field12569);
 			if (var3.field8692 > var2) {
 				var2 = var3.field8692;
 			}
 		}
 		if (this.field12573 != -1) {
-			ObjType var4 = (ObjType) Statics.field1842.get(this.field12573);
+			ObjType var4 = (ObjType) Statics.field1842.list(this.field12573);
 			if (var4.field8692 > var2) {
 				var2 = var4.field8692;
 			}
@@ -258,7 +258,7 @@ public class ObjStackEntity extends ObjLayerEntity {
 		Matrix4x3 var4 = arg0.method2209();
 		var4.method6293(this.method10536());
 		var4.method6315(0.0F, -10.0F, 0.0F);
-		Model var5 = ((ObjType) Statics.field1842.get(this.field12580)).method14644(arg0, 131072, this.field12570, null, null, 0, 0, 0, 0);
+		Model var5 = ((ObjType) Statics.field1842.list(this.field12580)).method14644(arg0, 131072, this.field12570, null, null, 0, 0, 0, 0);
 		if (var5 != null) {
 			if (this.field12571 == null) {
 				field12584.method6376();
@@ -271,7 +271,7 @@ public class ObjStackEntity extends ObjLayerEntity {
 			}
 		}
 		if (this.field12569 != -1) {
-			Model var6 = ((ObjType) Statics.field1842.get(this.field12569)).method14644(arg0, 131072, this.field12572, null, null, 0, 0, 0, 0);
+			Model var6 = ((ObjType) Statics.field1842.list(this.field12569)).method14644(arg0, 131072, this.field12572, null, null, 0, 0, 0, 0);
 			if (var6 != null) {
 				if (this.field12568 == null) {
 					field12584.method6376();
@@ -285,7 +285,7 @@ public class ObjStackEntity extends ObjLayerEntity {
 			}
 		}
 		if (this.field12573 != -1) {
-			Model var7 = ((ObjType) Statics.field1842.get(this.field12573)).method14644(arg0, 131072, this.field12583, null, null, 0, 0, 0, 0);
+			Model var7 = ((ObjType) Statics.field1842.list(this.field12573)).method14644(arg0, 131072, this.field12583, null, null, 0, 0, 0, 0);
 			if (var7 != null) {
 				if (this.field12577 == null) {
 					field12584.method6376();

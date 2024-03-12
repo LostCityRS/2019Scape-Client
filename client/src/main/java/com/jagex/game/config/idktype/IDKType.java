@@ -133,7 +133,7 @@ public class IDKType implements ConfigType {
 		Js5 var2 = this.field2955;
 		synchronized (this.field2955) {
 			for (int var3 = 0; var3 < this.field2950.length; var3++) {
-				if (!this.field2955.method6888(this.field2950[var3], 0)) {
+				if (!this.field2955.requestdownload(this.field2950[var3], 0)) {
 					var1 = false;
 				}
 			}
@@ -191,7 +191,7 @@ public class IDKType implements ConfigType {
 		Js5 var2 = this.field2955;
 		synchronized (this.field2955) {
 			for (int var3 = 0; var3 < 5; var3++) {
-				if (this.field2957[var3] != -1 && !this.field2955.method6888(this.field2957[var3], 0)) {
+				if (this.field2957[var3] != -1 && !this.field2955.requestdownload(this.field2957[var3], 0)) {
 					var1 = false;
 				}
 			}

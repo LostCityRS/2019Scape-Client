@@ -22,12 +22,12 @@ public class DbTableIndex {
 	public Map field9180;
 
 	public DbTableIndex(Js5 arg0, int arg1, int arg2) {
-		byte[] var4 = arg0.method6879(arg1, arg2 + 1);
+		byte[] var4 = arg0.getfile(arg1, arg2 + 1);
 		this.method15188(new Packet(var4));
 	}
 
 	public DbTableIndex(Js5 arg0, int arg1) {
-		byte[] var3 = arg0.method6879(arg1, 0);
+		byte[] var3 = arg0.getfile(arg1, 0);
 		this.method15188(new Packet(var3));
 	}
 

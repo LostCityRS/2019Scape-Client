@@ -27,7 +27,7 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 		this.field10751 = null;
 		this.field4455++;
 		this.field4454 = -1;
-		this.field4447 = (byte) (Math.random() * 255.0D + 1.0D);
+		this.xorcode = (byte) (Math.random() * 255.0D + 1.0D);
 		this.field4457 = arg0;
 		this.field4456 = arg1;
 	}
@@ -54,14 +54,14 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 			return this.method7021() == 0 && this.method7013() == 0;
 		}
 		try {
-			for (Js5NetRequest var5 = (Js5NetRequest) this.field4448.method14317(); var5 != null; var5 = (Js5NetRequest) this.field4448.method14324()) {
+			for (Js5NetRequest var5 = (Js5NetRequest) this.urgent.method14317(); var5 != null; var5 = (Js5NetRequest) this.urgent.method14324()) {
 				this.field4450.pos = 0;
 				this.field4450.p1(1);
 				this.field4450.p5(var5.field11440);
 				this.field10751.method9030(this.field4450.data, 0, this.field4450.data.length);
 				this.field4451.method14339(var5);
 			}
-			for (Js5NetRequest var6 = (Js5NetRequest) this.field4449.method14317(); var6 != null; var6 = (Js5NetRequest) this.field4449.method14324()) {
+			for (Js5NetRequest var6 = (Js5NetRequest) this.prefetch.method14317(); var6 != null; var6 = (Js5NetRequest) this.prefetch.method14324()) {
 				this.field4450.pos = 0;
 				this.field4450.p1(0);
 				this.field4450.p5(var6.field11440);
@@ -83,9 +83,9 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 						var9 = var8;
 					}
 					this.field10751.method9029(this.field4459.data, this.field4459.pos, var9);
-					if (this.field4447 != 0 && Client.ENABLE_JS5_XOR) {
+					if (this.xorcode != 0 && Client.ENABLE_JS5_XOR) {
 						for (int var10 = 0; var10 < var9; var10++) {
-							this.field4459.data[this.field4459.pos + var10] ^= this.field4447;
+							this.field4459.data[this.field4459.pos + var10] ^= this.xorcode;
 						}
 					}
 					this.field4459.pos += var9;
@@ -130,9 +130,9 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 							var22 = var8;
 						}
 						this.field10751.method9029(this.field4460.data, this.field4460.pos, var22);
-						if (this.field4447 != 0 && Client.ENABLE_JS5_XOR) {
+						if (this.xorcode != 0 && Client.ENABLE_JS5_XOR) {
 							for (int var23 = 0; var23 < var22; var23++) {
-								this.field4460.data[this.field4460.pos + var23] ^= this.field4447;
+								this.field4460.data[this.field4460.pos + var23] ^= this.xorcode;
 							}
 						}
 						this.field4460.pos += var22;
@@ -159,9 +159,9 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 							var29 = var8;
 						}
 						this.field10751.method9029(var21.data, var21.pos, var29);
-						if (this.field4447 != 0 && Client.ENABLE_JS5_XOR) {
+						if (this.xorcode != 0 && Client.ENABLE_JS5_XOR) {
 							for (int var30 = 0; var30 < var29; var30++) {
-								var21.data[var21.pos + var30] ^= this.field4447;
+								var21.data[var21.pos + var30] ^= this.xorcode;
 							}
 						}
 						var21.pos += var29;
@@ -211,11 +211,11 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 				while (true) {
 					Js5NetRequest var5 = (Js5NetRequest) this.field4443.method14315();
 					if (var5 == null) {
-						if (this.field4447 != 0 && Client.ENABLE_JS5_XOR) {
+						if (this.xorcode != 0 && Client.ENABLE_JS5_XOR) {
 							try {
 								this.field4450.pos = 0;
 								this.field4450.p1(4);
-								this.field4450.p1(this.field4447);
+								this.field4450.p1(this.xorcode);
 								this.field4450.p4(0);
 								this.field10751.method9030(this.field4450.data, 0, this.field4450.data.length);
 							} catch (IOException var9) {
@@ -233,11 +233,11 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 						return;
 					}
 					var5.field12564 = null;
-					this.field4449.method14339(var5);
+					this.prefetch.method14339(var5);
 				}
 			}
 			var4.field12564 = null;
-			this.field4448.method14339(var4);
+			this.urgent.method14339(var4);
 		}
 	}
 

@@ -46,10 +46,10 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 	public byte[] field10727;
 
 	@ObfuscatedName("aij.p")
-	public int field10728;
+	public int indexversion;
 
 	@ObfuscatedName("aij.d")
-	public Js5Index field10729;
+	public Js5Index index;
 
 	@ObfuscatedName("aij.o")
 	public byte[] field10745;
@@ -102,7 +102,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 		this.field10744 = arg5;
 		this.field10722 = arg6;
 		this.field10727 = arg7;
-		this.field10728 = arg8;
+		this.indexversion = arg8;
 		this.field10748 = arg9;
 		if (this.field10724 != null) {
 			this.field10743 = this.field10744.method6997(this.field10733, this.field10724);
@@ -116,8 +116,8 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 		}
 		this.field10722 = arg0;
 		this.field10727 = arg1;
-		this.field10728 = arg2;
-		this.field10729 = null;
+		this.indexversion = arg2;
+		this.index = null;
 		this.field10743 = null;
 		if (!this.field10720.method7012()) {
 			this.field10743 = this.field10720.method7011(255, this.field10733, (byte) 0, true);
@@ -126,7 +126,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 
 	@ObfuscatedName("aij.s(I[BIII)Z")
 	public boolean method16822(int arg0, byte[] arg1, int arg2, int arg3) {
-		if (this.field10722 == arg0 && this.field10728 == arg2) {
+		if (this.field10722 == arg0 && this.indexversion == arg2) {
 			boolean var5 = true;
 			for (int var6 = 0; var6 < this.field10727.length; var6++) {
 				if (this.field10727[var6] != arg1[var6]) {
@@ -143,7 +143,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 
 	@ObfuscatedName("aij.y(I)I")
 	public int method16823() {
-		if (this.method6853() == null) {
+		if (this.getIndex() == null) {
 			return this.field10743 == null ? 0 : this.field10743.method19446();
 		} else {
 			return 100;
@@ -151,9 +151,9 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 	}
 
 	@ObfuscatedName("aij.e(B)Lpl;")
-	public Js5Index method6853() {
-		if (this.field10729 != null) {
-			return this.field10729;
+	public Js5Index getIndex() {
+		if (this.index != null) {
+			return this.index;
 		}
 		if (this.field10743 == null) {
 			if (this.field10720.method7012()) {
@@ -170,12 +170,12 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 				if (var1 == null) {
 					throw new RuntimeException();
 				}
-				this.field10729 = new Js5Index(var1, this.field10722, this.field10727);
-				if (this.field10729.field4396 != this.field10728) {
+				this.index = new Js5Index(var1, this.field10722, this.field10727);
+				if (this.index.indexversion != this.indexversion) {
 					throw new RuntimeException();
 				}
 			} catch (RuntimeException var4) {
-				this.field10729 = null;
+				this.index = null;
 				if (this.field10720.method7012()) {
 					this.field10743 = null;
 				} else {
@@ -188,10 +188,10 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 				if (var1 == null) {
 					throw new RuntimeException();
 				}
-				this.field10729 = new Js5Index(var1, this.field10722, this.field10727);
+				this.index = new Js5Index(var1, this.field10722, this.field10727);
 			} catch (RuntimeException var5) {
 				this.field10720.method7015(255, this.field10733);
-				this.field10729 = null;
+				this.index = null;
 				if (this.field10720.method7012()) {
 					this.field10743 = null;
 				} else {
@@ -205,15 +205,15 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 		}
 		this.field10743 = null;
 		if (this.field10723 != null) {
-			this.field10745 = new byte[this.field10729.field4392];
+			this.field10745 = new byte[this.index.field4392];
 			this.field10740 = 0;
 		}
-		return this.field10729;
+		return this.index;
 	}
 
 	@ObfuscatedName("aij.n(II)[B")
-	public byte[] method6854(int arg0) {
-		Js5Request var2 = this.method16848(arg0, 0);
+	public byte[] fetchgroup(int arg0) {
+		Js5Request var2 = this.fetchgroup_inner(arg0, 0);
 		if (var2 == null) {
 			return null;
 		} else {
@@ -224,7 +224,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 	}
 
 	@ObfuscatedName("aij.q(IIB)Lask;")
-	public Js5Request method16848(int arg0, int arg1) {
+	public Js5Request fetchgroup_inner(int arg0, int arg1) {
 		Js5Request var3 = (Js5Request) this.field10731.method14495((long) arg0);
 		if (var3 != null && arg1 == 0 && !var3.field12342 && var3.field12344) {
 			var3.method8440();
@@ -240,7 +240,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 					}
 					var3 = this.field10720.method7011(this.field10733, arg0, (byte) 2, true);
 				} else {
-					var3 = this.field10721.method7068(this.field10733, arg0, (byte) 2, true, this.field10729.field4393[arg0], this.field10729.field4398[arg0]);
+					var3 = this.field10721.method7068(this.field10733, arg0, (byte) 2, true, this.index.field4393[arg0], this.index.groupVersions[arg0]);
 					if (var3 == null) {
 						return null;
 					}
@@ -285,11 +285,11 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 				field10746.reset();
 				field10746.update(var4, 0, var4.length - 2);
 				int var13 = (int) field10746.getValue();
-				if (this.field10729.field4393[arg0] != var13) {
+				if (this.index.field4393[arg0] != var13) {
 					throw new RuntimeException();
 				}
-				if (this.field10729.field4395 != null && this.field10729.field4395[arg0] != null) {
-					byte[] var14 = this.field10729.field4395[arg0];
+				if (this.index.field4395 != null && this.index.field4395[arg0] != null) {
+					byte[] var14 = this.index.field4395[arg0];
 					byte[] var15 = Whirlpool.method18308(var4, 0, var4.length - 2);
 					for (int var16 = 0; var16 < 64; var16++) {
 						if (var14[var16] != var15[var16]) {
@@ -311,7 +311,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 							this.field10731.method14501(var19, (long) arg0);
 						}
 					} else if (!this.field10721.method7048()) {
-						Js5HttpRequest var18 = this.field10721.method7068(this.field10733, arg0, (byte) 2, true, this.field10729.field4393[arg0], this.field10729.field4398[arg0]);
+						Js5HttpRequest var18 = this.field10721.method7068(this.field10733, arg0, (byte) 2, true, this.index.field4393[arg0], this.index.groupVersions[arg0]);
 						if (var18 != null) {
 							this.field10731.method14501(var18, (long) arg0);
 						}
@@ -319,8 +319,8 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 				}
 				return null;
 			}
-			var4[var4.length - 2] = (byte) (this.field10729.field4398[arg0] >>> 8);
-			var4[var4.length - 1] = (byte) this.field10729.field4398[arg0];
+			var4[var4.length - 2] = (byte) (this.index.groupVersions[arg0] >>> 8);
+			var4[var4.length - 1] = (byte) this.index.groupVersions[arg0];
 			if (this.field10723 != null) {
 				this.field10744.method6988(arg0, var4, this.field10723);
 				if (this.field10745[arg0] != 1) {
@@ -340,11 +340,11 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 			field10746.reset();
 			field10746.update(var4, 0, var4.length - 2);
 			int var5 = (int) field10746.getValue();
-			if (this.field10729.field4393[arg0] != var5) {
+			if (this.index.field4393[arg0] != var5) {
 				throw new RuntimeException();
 			}
-			if (this.field10729.field4395 != null && this.field10729.field4395[arg0] != null) {
-				byte[] var6 = this.field10729.field4395[arg0];
+			if (this.index.field4395 != null && this.index.field4395[arg0] != null) {
+				byte[] var6 = this.index.field4395[arg0];
 				byte[] var7 = Whirlpool.method18308(var4, 0, var4.length - 2);
 				for (int var8 = 0; var8 < 64; var8++) {
 					if (var6[var8] != var7[var8]) {
@@ -353,7 +353,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 				}
 			}
 			int var9 = ((var4[var4.length - 2] & 0xFF) << 8) + (var4[var4.length - 1] & 0xFF);
-			if ((this.field10729.field4398[arg0] & 0xFFFF) != var9) {
+			if ((this.index.groupVersions[arg0] & 0xFFFF) != var9) {
 				throw new RuntimeException();
 			}
 			if (this.field10745[arg0] != 1) {
@@ -376,7 +376,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 						this.field10731.method14501(var12, (long) arg0);
 					}
 				} else if (!this.field10721.method7048()) {
-					Js5HttpRequest var11 = this.field10721.method7068(this.field10733, arg0, (byte) 2, true, this.field10729.field4393[arg0], this.field10729.field4398[arg0]);
+					Js5HttpRequest var11 = this.field10721.method7068(this.field10733, arg0, (byte) 2, true, this.index.field4393[arg0], this.index.groupVersions[arg0]);
 					if (var11 != null) {
 						this.field10731.method14501(var11, (long) arg0);
 					}
@@ -388,19 +388,19 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 
 	@ObfuscatedName("aij.x(I)V")
 	public void method16833() {
-		if (this.field10735 == null || this.method6853() == null) {
+		if (this.field10735 == null || this.getIndex() == null) {
 			return;
 		}
 		for (Node var1 = this.field10741.method14191(); var1 != null; var1 = this.field10741.method14161()) {
 			int var2 = (int) var1.field6760;
-			if (var2 < 0 || var2 >= this.field10729.field4392 || this.field10729.field4399[var2] == 0) {
+			if (var2 < 0 || var2 >= this.index.field4392 || this.index.field4399[var2] == 0) {
 				var1.method8440();
 			} else {
 				if (this.field10745[var2] == 0) {
-					this.method16848(var2, 1);
+					this.fetchgroup_inner(var2, 1);
 				}
 				if (this.field10745[var2] == -1) {
-					this.method16848(var2, 2);
+					this.fetchgroup_inner(var2, 2);
 				}
 				if (this.field10745[var2] == 1) {
 					var1.method8440();
@@ -412,7 +412,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 	@ObfuscatedName("aij.b(B)V")
 	public void method16825() {
 		if (this.field10735 != null) {
-			if (this.method6853() == null) {
+			if (this.getIndex() == null) {
 				return;
 			}
 			if (this.field10738) {
@@ -420,7 +420,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 				for (Node var2 = this.field10735.method14191(); var2 != null; var2 = this.field10735.method14161()) {
 					int var3 = (int) var2.field6760;
 					if (this.field10745[var3] == 0) {
-						this.method16848(var3, 1);
+						this.fetchgroup_inner(var3, 1);
 					}
 					if (this.field10745[var3] == 0) {
 						var1 = false;
@@ -428,8 +428,8 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 						var2.method8440();
 					}
 				}
-				while (this.field10739 < this.field10729.field4399.length) {
-					if (this.field10729.field4399[this.field10739] == 0) {
+				while (this.field10739 < this.index.field4399.length) {
+					if (this.index.field4399[this.field10739] == 0) {
 						this.field10739++;
 					} else {
 						if (this.field10744.field4437 >= 250) {
@@ -437,7 +437,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 							break;
 						}
 						if (this.field10745[this.field10739] == 0) {
-							this.method16848(this.field10739, 1);
+							this.fetchgroup_inner(this.field10739, 1);
 						}
 						if (this.field10745[this.field10739] == 0) {
 							Node var4 = new Node();
@@ -457,7 +457,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 				for (Node var6 = this.field10735.method14191(); var6 != null; var6 = this.field10735.method14161()) {
 					int var7 = (int) var6.field6760;
 					if (this.field10745[var7] != 1) {
-						this.method16848(var7, 2);
+						this.fetchgroup_inner(var7, 2);
 					}
 					if (this.field10745[var7] == 1) {
 						var6.method8440();
@@ -465,8 +465,8 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 						var5 = false;
 					}
 				}
-				while (this.field10739 < this.field10729.field4399.length) {
-					if (this.field10729.field4399[this.field10739] == 0) {
+				while (this.field10739 < this.index.field4399.length) {
+					if (this.index.field4399[this.field10739] == 0) {
 						this.field10739++;
 					} else {
 						if (this.field10720.method7028()) {
@@ -474,7 +474,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 							break;
 						}
 						if (this.field10745[this.field10739] != 1) {
-							this.method16848(this.field10739, 2);
+							this.fetchgroup_inner(this.field10739, 2);
 						}
 						if (this.field10745[this.field10739] != 1) {
 							Node var8 = new Node();
@@ -493,27 +493,28 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 				this.field10735 = null;
 			}
 		}
-		if (!this.field10748 || MonotonicTime.method3655() < this.field10734) {
-			return;
-		}
-		for (Js5Request var9 = (Js5Request) this.field10731.method14500(); var9 != null; var9 = (Js5Request) this.field10731.method14502()) {
-			if (!var9.field12344) {
-				if (var9.field12343) {
-					if (!var9.field12342) {
-						throw new RuntimeException();
-					}
-					var9.method8440();
-				} else {
-					var9.field12343 = true;
-				}
-			}
-		}
-		this.field10734 = MonotonicTime.method3655() + 1000L;
-	}
+        if (this.field10748 && MonotonicTime.method3655() >= this.field10734) {
+            for (Js5Request var9 = (Js5Request) this.field10731.method14500(); var9 != null; var9 = (Js5Request) this.field10731.method14502()) {
+                if (!var9.field12344) {
+                    if (var9.field12343) {
+                        if (!var9.field12342) {
+                            throw new RuntimeException();
+                        }
+                        var9.method8440();
+                    } else {
+                        var9.field12343 = true;
+                    }
+                }
+            }
+            this.field10734 = MonotonicTime.method3655() + 1000L;
+        } else {
+            return;
+        }
+    }
 
 	@ObfuscatedName("aij.h(B)I")
 	public int method16826() {
-		return this.field10729 == null ? 0 : this.field10729.field4387;
+		return this.index == null ? 0 : this.index.field4387;
 	}
 
 	@ObfuscatedName("aij.a(B)I")
@@ -523,13 +524,13 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 
 	@ObfuscatedName("aij.g(I)I")
 	public int method16828() {
-		if (this.field10729 == null) {
+		if (this.index == null) {
 			return 0;
 		} else if (this.field10738) {
 			Node var1 = this.field10735.method14191();
 			return var1 == null ? 0 : (int) var1.field6760;
 		} else {
-			return this.field10729.field4387;
+			return this.index.field4387;
 		}
 	}
 

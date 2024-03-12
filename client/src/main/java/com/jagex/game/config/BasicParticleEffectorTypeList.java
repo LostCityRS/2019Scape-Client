@@ -24,7 +24,7 @@ public class BasicParticleEffectorTypeList implements ParticleEffectorTypeList {
 		if (var2 != null) {
 			return var2;
 		}
-		byte[] var3 = this.field3536.method6879(1, arg0);
+		byte[] var3 = this.field3536.getfile(1, arg0);
 		ParticleEffectorType var4 = new ParticleEffectorType();
 		var4.field3548 = arg0;
 		if (var3 != null) {

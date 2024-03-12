@@ -59,7 +59,7 @@ public class StockmarketSlot {
 					break;
 				}
 				arg0.pos -= 1;
-				VarValue var6 = arg1.method15285(arg0, var4);
+				VarValue var6 = arg1.decodeVarValue(arg0, var4);
 				if (var6 != null) {
 					var2.method14735(var6.field4240, var6.field4239);
 				}

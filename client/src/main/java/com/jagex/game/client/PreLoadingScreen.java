@@ -1,7 +1,7 @@
 package com.jagex.game.client;
 
 import rs2.client.Client;
-import com.jagex.core.utils.StringUtils;
+import com.jagex.core.utils.StringTools;
 import com.jagex.game.load.LoadingScreen;
 import deob.ObfuscatedName;
 import deob.Statics;
@@ -56,20 +56,20 @@ public class PreLoadingScreen implements LoadingScreen {
 		if (!this.field2895 && !this.field2891) {
 			this.field2891 = true;
 			try {
-				String[] var2 = StringUtils.method17361(Client.field11073, '|');
+				String[] var2 = StringTools.method17361(Client.field11073, '|');
 				if (var2.length < 3) {
 					this.field2895 = true;
 				} else {
 					MediaTracker var3 = new MediaTracker(Statics.canvas);
 					int var4 = 0;
 					for (int var5 = 0; var5 < var2.length; var5++) {
-						String[] var6 = StringUtils.method17361(var2[var5].trim(), '=');
+						String[] var6 = StringTools.method17361(var2[var5].trim(), '=');
 						if (var6[0].equals("halign")) {
 							this.field2894 = Boolean.parseBoolean(var6[1]);
 						} else if (var6[0].equals("valign")) {
 							this.field2893 = Boolean.parseBoolean(var6[1]);
 						} else if (var6[0].equals("image")) {
-							String[] var7 = StringUtils.method17361(var6[1], ',');
+							String[] var7 = StringTools.method17361(var6[1], ',');
 							Image var8;
 							try {
 								var8 = this.method4903(var7[0]);
@@ -78,10 +78,10 @@ public class PreLoadingScreen implements LoadingScreen {
 							}
 							if (var8 != null) {
 								var3.addImage(var8, var4++);
-								this.field2892.add(new PreLoadingImage(this, var8, StringUtils.method9595(var7[1]), StringUtils.method9595(var7[2])));
+								this.field2892.add(new PreLoadingImage(this, var8, StringTools.method9595(var7[1]), StringTools.method9595(var7[2])));
 							}
 						} else if (var6[0].equals("rotatingimage")) {
-							String[] var10 = StringUtils.method17361(var6[1], ',');
+							String[] var10 = StringTools.method17361(var6[1], ',');
 							Image var11;
 							try {
 								var11 = this.method4903(var10[0]);
@@ -90,11 +90,11 @@ public class PreLoadingScreen implements LoadingScreen {
 							}
 							if (var11 != null) {
 								var3.addImage(var11, var4++);
-								this.field2892.add(new PreLoadingRotatingImage(this, var11, StringUtils.method9595(var10[1]), StringUtils.method9595(var10[2]), Float.parseFloat(var10[3])));
+								this.field2892.add(new PreLoadingRotatingImage(this, var11, StringTools.method9595(var10[1]), StringTools.method9595(var10[2]), Float.parseFloat(var10[3])));
 							}
 						} else if (var6[0].equals("progress")) {
-							String[] var13 = StringUtils.method17361(var6[1], ',');
-							this.field2892.add(new PreLoadingProgressImage(this, Boolean.parseBoolean(var13[0]), var13[1], StringUtils.method9595(var13[2]), Integer.decode(var13[3]), StringUtils.method9595(var13[4]), StringUtils.method9595(var13[5])));
+							String[] var13 = StringTools.method17361(var6[1], ',');
+							this.field2892.add(new PreLoadingProgressImage(this, Boolean.parseBoolean(var13[0]), var13[1], StringTools.method9595(var13[2]), Integer.decode(var13[3]), StringTools.method9595(var13[4]), StringTools.method9595(var13[5])));
 						}
 					}
 					var3.waitForAll();

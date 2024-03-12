@@ -6,7 +6,7 @@ import com.jagex.core.datastruct.IterableQueue;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.core.utils.PreciseSleep;
-import com.jagex.core.utils.StringUtils;
+import com.jagex.core.utils.StringTools;
 import com.jagex.game.client.DataType;
 import com.jagex.game.client.NativeLibraryConfig;
 import com.jagex.game.client.PrimitiveType;
@@ -207,13 +207,13 @@ public final class OpenGLRenderer extends GpuRenderer {
 				throw new RuntimeException("");
 			}
 			String var13 = OpenGL.glGetString(7938);
-			String[] var14 = StringUtils.method17361(var13.replace('.', ' '), ' ');
+			String[] var14 = StringTools.method17361(var13.replace('.', ' '), ' ');
 			if (var14.length < 2) {
 				throw new RuntimeException("");
 			}
 			try {
-				int var15 = StringUtils.method9595(var14[0]);
-				int var16 = StringUtils.method9595(var14[1]);
+				int var15 = StringTools.method9595(var14[0]);
+				int var16 = StringTools.method9595(var14[1]);
 				this.field11999 = var15 * 10 + var16;
 			} catch (NumberFormatException var30) {
 				throw new RuntimeException("");
@@ -259,12 +259,12 @@ public final class OpenGLRenderer extends GpuRenderer {
 				boolean var19 = this.field12037.indexOf("intel") != -1;
 				boolean var20 = false;
 				boolean var21 = false;
-				String[] var22 = StringUtils.method17361(this.field12001.replace('/', ' '), ' ');
+				String[] var22 = StringTools.method17361(this.field12001.replace('/', ' '), ' ');
 				for (int var23 = 0; var23 < var22.length; var23++) {
 					String var24 = var22[var23];
 					try {
 						if (var24.length() > 0) {
-							if (var24.charAt(0) == 'x' && var24.length() >= 3 && StringUtils.method9836(var24.substring(1, 3))) {
+							if (var24.charAt(0) == 'x' && var24.length() >= 3 && StringTools.method9836(var24.substring(1, 3))) {
 								var24 = var24.substring(1);
 								var21 = true;
 							}
@@ -275,8 +275,8 @@ public final class OpenGLRenderer extends GpuRenderer {
 									var24 = var24.substring(2);
 									var20 = true;
 								}
-								if (var24.length() >= 4 && StringUtils.method9836(var24.substring(0, 4))) {
-									var18 = StringUtils.method9595(var24.substring(0, 4));
+								if (var24.length() >= 4 && StringTools.method9836(var24.substring(0, 4))) {
+									var18 = StringTools.method9595(var24.substring(0, 4));
 									break;
 								}
 							}

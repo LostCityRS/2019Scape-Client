@@ -9,7 +9,6 @@ import com.jagex.game.client.LocalisedText;
 import com.jagex.game.config.ConfigTypeFactory;
 import com.jagex.game.config.ConfigTypeList;
 import com.jagex.game.config.defaults.GraphicsDefaults;
-import com.jagex.game.config.objtype.ObjType;
 import com.jagex.game.world.entity.PlayerModel;
 import com.jagex.graphics.Font;
 import com.jagex.graphics.Renderer;
@@ -83,7 +82,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 				return var14;
 			}
 		}
-		ObjType var15 = (ObjType) arg12.get(arg2);
+		ObjType var15 = (ObjType) arg12.list(arg2);
 		if (arg3 > 1 && var15.field8629 != null) {
 			int var16 = -1;
 			for (int var17 = 0; var17 < 10; var17++) {
@@ -92,7 +91,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 				}
 			}
 			if (var16 != -1) {
-				var15 = (ObjType) arg12.get(var16);
+				var15 = (ObjType) arg12.list(var16);
 			}
 		}
 		int[] var18 = var15.method14646(arg0, arg1, arg3, arg4, arg5, arg6, arg8, arg9, arg10, arg11);

@@ -270,7 +270,7 @@ public class EffectAnimType implements ConfigType {
 
 	@ObfuscatedName("yy.r(B)Z")
 	public final boolean method13803() {
-		return this.field8248 == -1 ? true : this.field8249.field8265.method6888(this.field8248, 0);
+		return this.field8248 == -1 ? true : this.field8249.field8265.requestdownload(this.field8248, 0);
 	}
 
 	@ObfuscatedName("yy.n(I)V")

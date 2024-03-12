@@ -81,7 +81,7 @@ public class PlayerGroup {
 		this.field1899 = new VarContainerSparse(arg3.method291());
 		int var12 = arg1.g2();
 		for (int var13 = 0; var13 < var12; var13++) {
-			VarValue var14 = arg3.method291().method15284(arg1);
+			VarValue var14 = arg3.method291().decodeVarValue(arg1);
 			this.field1899.method14735(var14.field4240, var14.field4239);
 		}
 		if (!arg2) {

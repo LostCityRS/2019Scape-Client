@@ -743,7 +743,7 @@ public class LoginManager {
 						}
 						break;
 					}
-					VarValue var32 = Statics.field8911.method15284(Statics.field432.field795);
+					VarValue var32 = Statics.field8911.decodeVarValue(Statics.field432.field795);
 					Statics.field7228.field1708.method14735(var32.field4240, var32.field4239);
 				}
 			}
@@ -1048,7 +1048,7 @@ public class LoginManager {
 			if (field472 != -1) {
 				var1 = field472;
 			} else if (field439 == -1L) {
-				var1 = StringUtils.method15380(username);
+				var1 = StringTools.method15380(username);
 			} else {
 				var1 = field439;
 			}

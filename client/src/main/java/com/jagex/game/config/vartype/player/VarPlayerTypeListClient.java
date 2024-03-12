@@ -28,7 +28,7 @@ public class VarPlayerTypeListClient extends VarTypeList implements ConfigTypeLi
 	}
 
 	@ObfuscatedName("adj.e(II)Lay;")
-	public ConfigType get(int arg0) {
+	public ConfigType list(int arg0) {
 		WeightedCache var2 = this.field9254;
 		synchronized (this.field9254) {
 			VarPlayerType var3 = (VarPlayerType) this.field9254.method2930((long) arg0);
@@ -42,8 +42,8 @@ public class VarPlayerTypeListClient extends VarTypeList implements ConfigTypeLi
 
 	@ObfuscatedName("adj.r(II)Laff;")
 	public VarPlayerType method15255(int arg0) {
-		byte[] var2 = this.field9255.method6879(this.field9260.getJs5GroupID().id, arg0);
-		VarPlayerType var3 = new VarPlayerType(this.field9260, arg0);
+		byte[] var2 = this.field9255.getfile(this.variableDomain.getJs5GroupID().id, arg0);
+		VarPlayerType var3 = new VarPlayerType(this.variableDomain, arg0);
 		if (var2 != null) {
 			var3.decode(new Packet(var2));
 		}
@@ -94,7 +94,7 @@ public class VarPlayerTypeListClient extends VarTypeList implements ConfigTypeLi
 		}
 
 		public boolean hasNext() {
-			return this.field1982 < this.this$0.size();
+			return this.field1982 < this.this$0.length();
 		}
 
 		// line 68
@@ -111,7 +111,7 @@ public class VarPlayerTypeListClient extends VarTypeList implements ConfigTypeLi
 
 	// line 81
 	@ObfuscatedName("adj.n(I)I")
-	public int size() {
-		return super.size();
+	public int length() {
+		return super.length();
 	}
 }

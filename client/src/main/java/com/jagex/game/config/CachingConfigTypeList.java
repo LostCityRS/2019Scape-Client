@@ -39,7 +39,7 @@ public class CachingConfigTypeList implements ConfigTypeList {
 
 	// line 30
 	@ObfuscatedName("abe.e(II)Lay;")
-	public ConfigType get(int arg0) {
+	public ConfigType list(int arg0) {
 		WeightedCache var2 = this.field8795;
 		ConfigType var3;
 		synchronized (this.field8795) {
@@ -72,7 +72,7 @@ public class CachingConfigTypeList implements ConfigTypeList {
 	}
 
 	@ObfuscatedName("abe.n(I)I")
-	public int size() {
+	public int length() {
 		return this.field8794;
 	}
 

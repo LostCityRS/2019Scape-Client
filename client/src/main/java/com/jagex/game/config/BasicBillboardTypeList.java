@@ -24,7 +24,7 @@ public class BasicBillboardTypeList implements BillboardTypeList {
 		if (var2 != null) {
 			return var2;
 		}
-		byte[] var3 = this.field3564.method6879(0, arg0);
+		byte[] var3 = this.field3564.getfile(0, arg0);
 		BillboardType var4 = new BillboardType();
 		if (var3 != null) {
 			var4.method5954(new Packet(var3), arg0);

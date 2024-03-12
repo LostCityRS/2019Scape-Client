@@ -4991,7 +4991,7 @@ public final class ScriptRunner {
 	public static final void method2881(ClientScriptState arg0) {
 		int var1 = arg0.field8236[arg0.field8220];
 		arg0.field8211 -= var1;
-		String var2 = StringUtils.method9007(arg0.field8218, arg0.field8211, var1);
+		String var2 = StringTools.method9007(arg0.field8218, arg0.field8211, var1);
 		arg0.field8218[++arg0.field8211 - 1] = var2;
 	}
 
@@ -6147,7 +6147,7 @@ public final class ScriptRunner {
 		arg2.field8226 -= 2;
 		int var3 = arg2.field8216[arg2.field8226];
 		int var4 = arg2.field8216[arg2.field8226 + 1];
-		ParamType var5 = (ParamType) Statics.field3086.get(var3);
+		ParamType var5 = (ParamType) Statics.field3086.list(var3);
 		if (var5.field9172 == var4) {
 			arg0.method3954(var3);
 		} else {
@@ -6175,7 +6175,7 @@ public final class ScriptRunner {
 	public static final void method14700(Component arg0, Interface arg1, ClientScriptState arg2) {
 		int var3 = arg2.field8216[--arg2.field8226];
 		String var4 = (String) arg2.field8218[--arg2.field8211];
-		ParamType var5 = (ParamType) Statics.field3086.get(var3);
+		ParamType var5 = (ParamType) Statics.field3086.list(var3);
 		if (var5.field9171.equals(var4)) {
 			arg0.method3954(var3);
 		} else {
@@ -6263,7 +6263,7 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		int var3 = arg0.field8216[arg0.field8226];
 		int var4 = arg0.field8216[arg0.field8226 + 1];
-		ParamType var5 = (ParamType) Statics.field3086.get(var3);
+		ParamType var5 = (ParamType) Statics.field3086.list(var3);
 		if (var5.field9172 == var4) {
 			var2.method3954(var3);
 		} else {
@@ -6389,7 +6389,7 @@ public final class ScriptRunner {
 		arg0.field2334 = var5;
 		arg0.field2335 = var6;
 		arg0.field2246 = arg2;
-		ObjType var7 = (ObjType) Statics.field1842.get(var5);
+		ObjType var7 = (ObjType) Statics.field1842.list(var5);
 		arg0.field2230 = var7.field8639;
 		arg0.field2231 = var7.field8626;
 		arg0.field2331 = var7.field8641;
@@ -8585,7 +8585,7 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		int var3 = arg0.field8216[--arg0.field8226];
-		ParamType var4 = (ParamType) Statics.field3086.get(var3);
+		ParamType var4 = (ParamType) Statics.field3086.list(var3);
 		if (var4.method15152()) {
 			arg0.field8218[++arg0.field8211 - 1] = var2.method3975(var3, var4.field9171);
 		} else {
@@ -8766,7 +8766,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("du.tm(Lhf;IIB)V")
 	public static void method2088(Component arg0, int arg1, int arg2) {
 		if (arg0.field2363 == null) {
-			NPCType var3 = (NPCType) Statics.field7961.get(arg0.field2294);
+			NPCType var3 = (NPCType) Statics.field7961.list(arg0.field2294);
 			arg0.field2363 = new NPCHeadIconCustomisation(var3, false);
 		}
 		arg0.field2363.field2688 = method5390();
@@ -8875,7 +8875,7 @@ public final class ScriptRunner {
 		if (arg0.field2224 != 6 && arg0.field2224 != 2) {
 			throw new RuntimeException("");
 		}
-		NPCType var5 = (NPCType) Statics.field7961.get(arg0.field2294);
+		NPCType var5 = (NPCType) Statics.field7961.list(arg0.field2294);
 		if (arg0.field2363 == null) {
 			arg0.field2363 = new NPCHeadIconCustomisation(var5, arg0.field2224 == 6);
 		}
@@ -8915,7 +8915,7 @@ public final class ScriptRunner {
 		if (arg0.field2224 != 6 && arg0.field2224 != 2) {
 			throw new RuntimeException("");
 		}
-		NPCType var5 = (NPCType) Statics.field7961.get(arg0.field2294);
+		NPCType var5 = (NPCType) Statics.field7961.list(arg0.field2294);
 		if (arg0.field2363 == null) {
 			arg0.field2363 = new NPCHeadIconCustomisation(var5, arg0.field2224 == 6);
 		}
@@ -9201,8 +9201,8 @@ public final class ScriptRunner {
 	public static final void method5847(ClientScriptState arg0) {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
 		int var2 = 0;
-		if (StringUtils.method9836(var1)) {
-			var2 = StringUtils.method9595(var1);
+		if (StringTools.method9836(var1)) {
+			var2 = StringTools.method9595(var1);
 		}
 		ClientMessage var3 = Statics.method1604(ClientProt.RESUME_P_COUNTDIALOG, Client.field10849.field794);
 		var3.field11432.p4(var2);
@@ -9474,13 +9474,13 @@ public final class ScriptRunner {
 	@ObfuscatedName("yc.wh(Lyf;I)V")
 	public static final void method13837(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = ((InvType) Statics.field7762.get(var1)).field9263;
+		arg0.field8216[++arg0.field8226 - 1] = ((InvType) Statics.field7762.list(var1)).field9263;
 	}
 
 	@ObfuscatedName("su.wd(Lyf;I)V")
 	public static final void method8294(ClientScriptState arg0) {
 		arg0.field8226 -= 2;
-		InvType var1 = (InvType) Statics.field7762.get(arg0.field8216[arg0.field8226]);
+		InvType var1 = (InvType) Statics.field7762.list(arg0.field8216[arg0.field8226]);
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		int var3 = -1;
 		for (int var4 = 0; var4 < var1.field9264; var4++) {
@@ -9818,7 +9818,7 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		EnumType var3 = (EnumType) Statics.field8514.get(var1);
+		EnumType var3 = (EnumType) Statics.field8514.list(var1);
 		if (ScriptVarType.STRING != var3.field8775) {
 		}
 		arg0.field8218[++arg0.field8211 - 1] = var3.method14849(var2);
@@ -9831,7 +9831,7 @@ public final class ScriptRunner {
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		int var4 = arg0.field8216[arg0.field8226 + 3];
-		EnumType var5 = (EnumType) Statics.field8514.get(var3);
+		EnumType var5 = (EnumType) Statics.field8514.list(var3);
 		if (var5.field8781.getId() != var1 || var5.field8775.getId() != var2) {
 			throw new RuntimeException(var3 + " " + var4);
 		} else if (var2 == ScriptVarType.STRING.getId()) {
@@ -9850,7 +9850,7 @@ public final class ScriptRunner {
 		if (var2 == -1) {
 			throw new RuntimeException();
 		}
-		EnumType var4 = (EnumType) Statics.field8514.get(var2);
+		EnumType var4 = (EnumType) Statics.field8514.list(var2);
 		if (var4.field8775.getId() != var1) {
 			throw new RuntimeException();
 		}
@@ -9864,7 +9864,7 @@ public final class ScriptRunner {
 		if (var1 == -1) {
 			throw new RuntimeException();
 		}
-		EnumType var3 = (EnumType) Statics.field8514.get(var1);
+		EnumType var3 = (EnumType) Statics.field8514.list(var1);
 		if (ScriptVarType.STRING != var3.field8775) {
 			throw new RuntimeException();
 		}
@@ -9874,7 +9874,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("xh.zk(Lyf;I)V")
 	public static final void method10206(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		EnumType var2 = (EnumType) Statics.field8514.get(var1);
+		EnumType var2 = (EnumType) Statics.field8514.list(var1);
 		arg0.field8216[++arg0.field8226 - 1] = var2.method14847();
 	}
 
@@ -9887,7 +9887,7 @@ public final class ScriptRunner {
 		if (var2 == -1) {
 			throw new RuntimeException();
 		}
-		EnumType var4 = (EnumType) Statics.field8514.get(var2);
+		EnumType var4 = (EnumType) Statics.field8514.list(var2);
 		if (var4.field8775.getId() != var1) {
 			throw new RuntimeException();
 		}
@@ -9906,7 +9906,7 @@ public final class ScriptRunner {
 		if (var1 == -1) {
 			throw new RuntimeException();
 		}
-		EnumType var3 = (EnumType) Statics.field8514.get(var1);
+		EnumType var3 = (EnumType) Statics.field8514.list(var1);
 		if (ScriptVarType.STRING != var3.field8775) {
 			throw new RuntimeException();
 		}
@@ -9929,7 +9929,7 @@ public final class ScriptRunner {
 		if (var3 == -1) {
 			throw new RuntimeException();
 		}
-		EnumType var6 = (EnumType) Statics.field8514.get(var3);
+		EnumType var6 = (EnumType) Statics.field8514.list(var3);
 		if (var6.field8781.getId() != var2) {
 			throw new RuntimeException();
 		} else if (var6.field8775.getId() == var1) {
@@ -10278,11 +10278,11 @@ public final class ScriptRunner {
 			var4.method3503(Client.field10837);
 		}
 		if (!var2) {
-			VarBitType var6 = (VarBitType) Statics.field8736.get(var3);
+			VarBitType var6 = (VarBitType) Statics.field8736.list(var3);
 			arg0.field8216[++arg0.field8226 - 1] = var6.getVarbitValue(var4.method3504().method14728(var6.baseVar.id));
 			return;
 		}
-		VarPlayerType var5 = (VarPlayerType) Statics.field8485.get(var3);
+		VarPlayerType var5 = (VarPlayerType) Statics.field8485.list(var3);
 		switch(var5.dataType.baseType.id) {
 			case 2:
 				arg0.field8216[++arg0.field8226 - 1] = var4.method3504().method14728(var5.id);
@@ -10926,7 +10926,7 @@ public final class ScriptRunner {
 	public static final void method7115(ClientScriptState arg0) {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
 		int var2 = arg0.field8216[--arg0.field8226];
-		arg0.field8218[++arg0.field8211 - 1] = var1 + StringUtils.method1898(var2, true);
+		arg0.field8218[++arg0.field8211 - 1] = var1 + StringTools.method1898(var2, true);
 	}
 
 	@ObfuscatedName("jx.afe(Lyf;I)V")
@@ -11033,19 +11033,19 @@ public final class ScriptRunner {
 	@ObfuscatedName("ahx.aff(Lyf;B)V")
 	public static final void method16660(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = StringUtils.method2883((char) var1) ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = StringTools.method2883((char) var1) ? 1 : 0;
 	}
 
 	@ObfuscatedName("dz.afv(Lyf;I)V")
 	public static final void method1895(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = StringUtils.method14704((char) var1) ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = StringTools.method14704((char) var1) ? 1 : 0;
 	}
 
 	@ObfuscatedName("sr.afu(Lyf;I)V")
 	public static final void method8177(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = StringUtils.method6819((char) var1) ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = StringTools.method6819((char) var1) ? 1 : 0;
 	}
 
 	@ObfuscatedName("vc.aft(Lyf;S)V")
@@ -11135,7 +11135,7 @@ public final class ScriptRunner {
 		arg0.field8211 -= 2;
 		String var1 = (String) arg0.field8218[arg0.field8211];
 		String var2 = (String) arg0.field8218[arg0.field8211 + 1];
-		arg0.field8216[++arg0.field8226 - 1] = StringUtils.method13835(var1, var2);
+		arg0.field8216[++arg0.field8226 - 1] = StringTools.method13835(var1, var2);
 	}
 
 	@ObfuscatedName("gq.age(Lyf;B)V")
@@ -11152,7 +11152,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("oo.agm(Lyf;I)V")
 	public static final void method6129(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8218[++arg0.field8211 - 1] = ((ObjType) Statics.field1842.get(var1)).field8630;
+		arg0.field8218[++arg0.field8211 - 1] = ((ObjType) Statics.field1842.list(var1)).field8630;
 	}
 
 	@ObfuscatedName("hx.agf(Lyf;S)V")
@@ -11160,7 +11160,7 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		ObjType var3 = (ObjType) Statics.field1842.get(var1);
+		ObjType var3 = (ObjType) Statics.field1842.list(var1);
 		if (var2 < 1 || var2 > 5 || var3.field8647[var2 - 1] == null) {
 			arg0.field8218[++arg0.field8211 - 1] = "";
 		} else {
@@ -11171,13 +11171,13 @@ public final class ScriptRunner {
 	@ObfuscatedName("hf.agw(Lyf;I)V")
 	public static final void method4016(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Statics.field1842.get(var1)).field8644 == 1 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Statics.field1842.list(var1)).field8644 == 1 ? 1 : 0;
 	}
 
 	@ObfuscatedName("aac.agn(Lyf;I)V")
 	public static final void method14576(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		ObjType var2 = (ObjType) Statics.field1842.get(var1);
+		ObjType var2 = (ObjType) Statics.field1842.list(var1);
 		if (var2.field8663 == -1 && var2.field8673 >= 0) {
 			arg0.field8216[++arg0.field8226 - 1] = var2.field8673;
 		} else {
@@ -11188,7 +11188,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("nv.agu(Lyf;I)V")
 	public static final void method6111(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		ObjType var2 = (ObjType) Statics.field1842.get(var1);
+		ObjType var2 = (ObjType) Statics.field1842.list(var1);
 		if (var2.field8663 >= 0 && var2.field8673 >= 0) {
 			arg0.field8216[++arg0.field8226 - 1] = var2.field8673;
 		} else {
@@ -11199,7 +11199,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("no.ags(Lyf;B)V")
 	public static final void method5986(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		ObjType var2 = (ObjType) Statics.field1842.get(var1);
+		ObjType var2 = (ObjType) Statics.field1842.list(var1);
 		if (var2.field8677 == -1 && var2.field8676 >= 0) {
 			arg0.field8216[++arg0.field8226 - 1] = var2.field8676;
 		} else {
@@ -11210,7 +11210,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("aj.agp(Lyf;B)V")
 	public static final void method971(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		ObjType var2 = (ObjType) Statics.field1842.get(var1);
+		ObjType var2 = (ObjType) Statics.field1842.list(var1);
 		if (var2.field8677 >= 0 && var2.field8676 >= 0) {
 			arg0.field8216[++arg0.field8226 - 1] = var2.field8676;
 		} else {
@@ -11221,32 +11221,32 @@ public final class ScriptRunner {
 	@ObfuscatedName("nh.agz(Lyf;I)V")
 	public static final void method6119(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		ObjType var2 = (ObjType) Statics.field1842.get(var1);
+		ObjType var2 = (ObjType) Statics.field1842.list(var1);
 		arg0.field8216[++arg0.field8226 - 1] = var2.field8679;
 	}
 
 	@ObfuscatedName("fw.agh(Lyf;I)V")
 	public static final void method3092(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Statics.field1842.get(var1)).field8651;
+		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Statics.field1842.list(var1)).field8651;
 	}
 
 	@ObfuscatedName("ki.agq(Lyf;I)V")
 	public static final void method5173(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Statics.field1842.get(var1)).field8652;
+		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Statics.field1842.list(var1)).field8652;
 	}
 
 	@ObfuscatedName("kr.agr(Lyf;I)V")
 	public static final void method5328(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Statics.field1842.get(var1)).field8653;
+		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Statics.field1842.list(var1)).field8653;
 	}
 
 	@ObfuscatedName("wm.agt(Lyf;I)V")
 	public static final void method9824(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Statics.field1842.get(var1)).field8684 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Statics.field1842.list(var1)).field8684 ? 1 : 0;
 	}
 
 	@ObfuscatedName("ul.agl(Lyf;I)V")
@@ -11254,11 +11254,11 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		ParamType var3 = (ParamType) Statics.field3086.get(var2);
+		ParamType var3 = (ParamType) Statics.field3086.list(var2);
 		if (var3.method15152()) {
-			arg0.field8218[++arg0.field8211 - 1] = ((ObjType) Statics.field1842.get(var1)).method14654(var2, var3.field9171);
+			arg0.field8218[++arg0.field8211 - 1] = ((ObjType) Statics.field1842.list(var1)).method14654(var2, var3.field9171);
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Statics.field1842.get(var1)).method14677(var2, var3.field9172);
+			arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Statics.field1842.list(var1)).method14677(var2, var3.field9172);
 		}
 	}
 
@@ -11267,7 +11267,7 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1] - 1;
-		ObjType var3 = (ObjType) Statics.field1842.get(var1);
+		ObjType var3 = (ObjType) Statics.field1842.list(var1);
 		arg0.field8216[++arg0.field8226 - 1] = var3.method14684(var2);
 	}
 
@@ -11295,14 +11295,14 @@ public final class ScriptRunner {
 	@ObfuscatedName("abq.ahc(Lyf;I)V")
 	public static final void method14695(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		ObjType var2 = (ObjType) Statics.field1842.get(var1);
+		ObjType var2 = (ObjType) Statics.field1842.list(var1);
 		arg0.field8216[++arg0.field8226 - 1] = var2.field8680 ? 1 : 0;
 	}
 
 	@ObfuscatedName("xd.ahj(Lyf;I)V")
 	public static final void method10297(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		ObjType var2 = (ObjType) Statics.field1842.get(var1);
+		ObjType var2 = (ObjType) Statics.field1842.list(var1);
 		int var3;
 		if (var2.field8680) {
 			var3 = var2.field8696;
@@ -11317,35 +11317,35 @@ public final class ScriptRunner {
 	@ObfuscatedName("tz.ahw(Lyf;S)V")
 	public static final void method8502(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		ObjType var2 = (ObjType) Statics.field1842.get(var1);
+		ObjType var2 = (ObjType) Statics.field1842.list(var1);
 		arg0.field8216[++arg0.field8226 - 1] = var2.field8628;
 	}
 
 	@ObfuscatedName("gy.ahl(Lyf;S)V")
 	public static final void method3537(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		ObjType var2 = (ObjType) Statics.field1842.get(var1);
+		ObjType var2 = (ObjType) Statics.field1842.list(var1);
 		arg0.field8216[++arg0.field8226 - 1] = var2.field8644 == 2 ? 1 : 0;
 	}
 
 	@ObfuscatedName("tv.ahv(Lyf;B)V")
 	public static final void method8674(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		ObjType var2 = (ObjType) Statics.field1842.get(var1);
+		ObjType var2 = (ObjType) Statics.field1842.list(var1);
 		arg0.field8216[++arg0.field8226 - 1] = var2.field8687 ? 1 : 0;
 	}
 
 	@ObfuscatedName("nz.ahf(Lyf;I)V")
 	public static final void method6083(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		ObjType var2 = (ObjType) Statics.field1842.get(var1);
+		ObjType var2 = (ObjType) Statics.field1842.list(var1);
 		arg0.field8216[++arg0.field8226 - 1] = var2.field8698 ? 1 : 0;
 	}
 
 	@ObfuscatedName("aal.ahr(Lyf;I)V")
 	public static final void method14485(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Statics.field1842.get(var1)).field8627;
+		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Statics.field1842.list(var1)).field8627;
 	}
 
 	@ObfuscatedName("a.ahk(Lyf;I)V")
@@ -11353,11 +11353,11 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		ParamType var3 = (ParamType) Statics.field3086.get(var2);
+		ParamType var3 = (ParamType) Statics.field3086.list(var2);
 		if (var3.method15152()) {
-			arg0.field8218[++arg0.field8211 - 1] = ((NPCType) Statics.field7961.get(var1)).method4548(var2, var3.field9171);
+			arg0.field8218[++arg0.field8211 - 1] = ((NPCType) Statics.field7961.list(var1)).method4548(var2, var3.field9171);
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = ((NPCType) Statics.field7961.get(var1)).method4551(var2, var3.field9172);
+			arg0.field8216[++arg0.field8226 - 1] = ((NPCType) Statics.field7961.list(var1)).method4551(var2, var3.field9172);
 		}
 	}
 
@@ -11366,11 +11366,11 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		ParamType var3 = (ParamType) Statics.field3086.get(var2);
+		ParamType var3 = (ParamType) Statics.field3086.list(var2);
 		if (var3.method15152()) {
-			arg0.field8218[++arg0.field8211 - 1] = ((StructType) Statics.field7713.get(var1)).method15297(var2, var3.field9171);
+			arg0.field8218[++arg0.field8211 - 1] = ((StructType) Statics.field7713.list(var1)).method15297(var2, var3.field9171);
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = ((StructType) Statics.field7713.get(var1)).method15296(var2, var3.field9172);
+			arg0.field8216[++arg0.field8226 - 1] = ((StructType) Statics.field7713.list(var1)).method15296(var2, var3.field9172);
 		}
 	}
 
@@ -11379,24 +11379,24 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		ParamType var3 = (ParamType) Statics.field3086.get(var2);
+		ParamType var3 = (ParamType) Statics.field3086.list(var2);
 		if (var3.method15152()) {
-			arg0.field8218[++arg0.field8211 - 1] = ((SeqType) Statics.field8797.get(var1)).method2989(var2, var3.field9171);
+			arg0.field8218[++arg0.field8211 - 1] = ((SeqType) Statics.field8797.list(var1)).method2989(var2, var3.field9171);
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = ((SeqType) Statics.field8797.get(var1)).method2981(var2, var3.field9172);
+			arg0.field8216[++arg0.field8226 - 1] = ((SeqType) Statics.field8797.list(var1)).method2981(var2, var3.field9172);
 		}
 	}
 
 	@ObfuscatedName("fw.aha(Lyf;B)V")
 	public static final void method3090(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = ((SeqType) Statics.field8797.get(var1)).field1776;
+		arg0.field8216[++arg0.field8226 - 1] = ((SeqType) Statics.field8797.list(var1)).field1776;
 	}
 
 	@ObfuscatedName("ij.ahx(Lyf;I)V")
 	public static final void method4334(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		BASType var2 = (BASType) Statics.field11742.get(var1);
+		BASType var2 = (BASType) Statics.field11742.list(var1);
 		if (var2.field7335 == null || var2.field7335.length <= 0) {
 			arg0.field8216[++arg0.field8226 - 1] = var2.field7345;
 			return;
@@ -14796,14 +14796,14 @@ public final class ScriptRunner {
 	@ObfuscatedName("aoh.axg(Lyf;I)V")
 	public static final void method18914(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		MapElementType var2 = (MapElementType) Statics.field5011.get(var1);
+		MapElementType var2 = (MapElementType) Statics.field5011.list(var1);
 		arg0.field8216[++arg0.field8226 - 1] = var2.field2388;
 	}
 
 	@ObfuscatedName("fc.axf(Lyf;I)V")
 	public static final void method3088(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		MapElementType var2 = (MapElementType) Statics.field5011.get(var1);
+		MapElementType var2 = (MapElementType) Statics.field5011.list(var1);
 		arg0.field8216[++arg0.field8226 - 1] = var2.field2374;
 	}
 
@@ -14812,11 +14812,11 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		ParamType var3 = (ParamType) Statics.field3086.get(var2);
+		ParamType var3 = (ParamType) Statics.field3086.list(var2);
 		if (var3.method15152()) {
-			arg0.field8218[++arg0.field8211 - 1] = ((MapElementType) Statics.field5011.get(var1)).method4029(var2, var3.field9171);
+			arg0.field8218[++arg0.field8211 - 1] = ((MapElementType) Statics.field5011.list(var1)).method4029(var2, var3.field9171);
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = ((MapElementType) Statics.field5011.get(var1)).method4028(var2, var3.field9172);
+			arg0.field8216[++arg0.field8226 - 1] = ((MapElementType) Statics.field5011.list(var1)).method4028(var2, var3.field9172);
 		}
 	}
 
@@ -15929,8 +15929,8 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		int var4 = DBUtils.method746(var2);
 		int var5 = DBUtils.method15018(var2);
-		DBRowType var6 = (DBRowType) Statics.field9123.get(var1);
-		DBTableType var7 = (DBTableType) Statics.field1840.get(var4);
+		DBRowType var6 = (DBRowType) Statics.field9123.list(var1);
+		DBTableType var7 = (DBTableType) Statics.field1840.list(var4);
 		ScriptVarType[] var8 = var7.field9185[var5];
 		Object[] var9 = var6.method14711(var5);
 		if (var9 == null && var7.field9186 != null) {
@@ -15976,7 +15976,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("ei.beb(Lyf;B)V")
 	public static final void method2751(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		DBRowType var2 = (DBRowType) Statics.field9123.get(var1);
+		DBRowType var2 = (DBRowType) Statics.field9123.list(var1);
 		arg0.field8216[++arg0.field8226 - 1] = var2.field8735;
 	}
 

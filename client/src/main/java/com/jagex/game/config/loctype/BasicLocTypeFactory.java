@@ -3,10 +3,8 @@ package com.jagex.game.config.loctype;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.ConfigTypeFactory;
 import com.jagex.game.config.ConfigTypeList;
-import com.jagex.game.config.loctype.LocTypeFactory;
 import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;
-import com.jagex.game.config.loctype.LocType;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 
@@ -35,7 +33,7 @@ public class BasicLocTypeFactory extends LocTypeFactory implements ConfigTypeFac
 	public byte[] method9530(int arg0) {
 		Js5 var2 = this.field11701;
 		synchronized (this.field11701) {
-			return this.field11701.method6879(arg0, 0);
+			return this.field11701.getfile(arg0, 0);
 		}
 	}
 
@@ -43,7 +41,7 @@ public class BasicLocTypeFactory extends LocTypeFactory implements ConfigTypeFac
 	public boolean method9525(int arg0) {
 		Js5 var2 = this.field11701;
 		synchronized (this.field11701) {
-			return this.field11701.method6888(arg0, 0);
+			return this.field11701.requestdownload(arg0, 0);
 		}
 	}
 }

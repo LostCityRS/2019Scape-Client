@@ -469,10 +469,10 @@ public class MapElementType implements ConfigType {
 			}
 		}
 		if (var3 >= 0 && var3 < this.field2392.length - 1) {
-			return this.field2392[var3] == -1 ? null : (MapElementType) this.field2412.get(this.field2392[var3]);
+			return this.field2392[var3] == -1 ? null : (MapElementType) this.field2412.list(this.field2392[var3]);
 		} else {
 			int var6 = this.field2392[this.field2392.length - 1];
-			return var6 == -1 ? null : (MapElementType) this.field2412.get(var6);
+			return var6 == -1 ? null : (MapElementType) this.field2412.list(var6);
 		}
 	}
 }

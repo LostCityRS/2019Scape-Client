@@ -92,7 +92,7 @@ public class VarBitType implements VarConfigType {
 				if (this.field3077 != null) {
 					ConfigTypeList var6 = (ConfigTypeList) this.field3077.listContainer.get(this.field3080);
 					if (var6 != null) {
-						this.baseVar = (VarType) var6.get(this.field3075);
+						this.baseVar = (VarType) var6.list(this.field3075);
 					} else if (!arg2) {
 						throw new IllegalStateException("");
 					}

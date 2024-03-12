@@ -8,13 +8,13 @@ import deob.ObfuscatedName;
 public abstract class Js5TcpClient {
 
 	@ObfuscatedName("pp.l")
-	public DualIterableQueue field4448 = new DualIterableQueue();
+	public DualIterableQueue urgent = new DualIterableQueue();
 
 	@ObfuscatedName("pp.u")
 	public DualIterableQueue field4451 = new DualIterableQueue();
 
 	@ObfuscatedName("pp.z")
-	public DualIterableQueue field4449 = new DualIterableQueue();
+	public DualIterableQueue prefetch = new DualIterableQueue();
 
 	@ObfuscatedName("pp.p")
 	public DualIterableQueue field4443 = new DualIterableQueue();
@@ -29,7 +29,7 @@ public abstract class Js5TcpClient {
 	public Packet field4450 = new Packet(6);
 
 	@ObfuscatedName("pp.v")
-	public byte field4447 = 0;
+	public byte xorcode = 0;
 
 	@ObfuscatedName("pp.o")
 	public volatile int field4455 = 0;
@@ -66,9 +66,9 @@ public abstract class Js5TcpClient {
 			if (this.method7021() >= 500) {
 				throw new RuntimeException();
 			}
-			this.field4448.method14339(var7);
+			this.urgent.method14339(var7);
 		} else if (this.method7013() < 500) {
-			this.field4449.method14339(var7);
+			this.prefetch.method14339(var7);
 		} else {
 			throw new RuntimeException();
 		}
@@ -87,12 +87,12 @@ public abstract class Js5TcpClient {
 
 	@ObfuscatedName("pp.k(I)I")
 	public int method7013() {
-		return this.field4449.method14320() + this.field4443.method14320();
+		return this.prefetch.method14320() + this.field4443.method14320();
 	}
 
 	@ObfuscatedName("pp.f(I)I")
 	public int method7021() {
-		return this.field4448.method14320() + this.field4451.method14320();
+		return this.urgent.method14320() + this.field4451.method14320();
 	}
 
 	@ObfuscatedName("pp.z(ZI)V")

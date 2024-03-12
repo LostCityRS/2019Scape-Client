@@ -203,7 +203,7 @@ public class DelayedStateChange extends SecondaryNode {
 
 	@ObfuscatedName("alv.al(III)V")
 	public static void method18309(int arg0, int arg1) {
-		VarBitType var2 = (VarBitType) Statics.field8736.get(arg0);
+		VarBitType var2 = (VarBitType) Statics.field8736.list(arg0);
 		DelayedStateChange var3 = method5072(1, (long) var2.baseVar.id);
 		try {
 			if (field12295) {

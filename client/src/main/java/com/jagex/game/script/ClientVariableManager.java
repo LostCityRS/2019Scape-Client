@@ -49,11 +49,11 @@ public final class ClientVariableManager extends SparseVarDomain {
 
 	public ClientVariableManager(VarTypeList arg0) {
 		super(arg0);
-		this.field10251 = new VarLifetime[arg0.size()];
-		for (int var2 = 0; var2 < arg0.size(); var2++) {
-			this.field10251[var2] = ((VarType) arg0.get(var2)).lifeTime;
+		this.field10251 = new VarLifetime[arg0.length()];
+		for (int var2 = 0; var2 < arg0.length(); var2++) {
+			this.field10251[var2] = ((VarType) arg0.list(var2)).lifeTime;
 		}
-		this.field10255 = new HashSet(arg0.size());
+		this.field10255 = new HashSet(arg0.length());
 	}
 
 	@ObfuscatedName("afu.e(Lec;II)V")
@@ -142,8 +142,8 @@ public final class ClientVariableManager extends SparseVarDomain {
 						return;
 					}
 					for (int var12 = 0; var12 < var10; var12++) {
-						VarValue var13 = Statics.field8911.method15284(var5);
-						if (this.field10251[var13.field4240] == VarLifetime.PERMANENT && ((VarType) Statics.field8911.get(var13.field4240)).dataType.getVarBaseType().javaClass.isAssignableFrom(var13.field4239.getClass())) {
+						VarValue var13 = Statics.field8911.decodeVarValue(var5);
+						if (this.field10251[var13.field4240] == VarLifetime.PERMANENT && ((VarType) Statics.field8911.list(var13.field4240)).dataType.getVarBaseType().javaClass.isAssignableFrom(var13.field4239.getClass())) {
 							this.field1708.method14735(var13.field4240, var13.field4239);
 						}
 					}
@@ -170,7 +170,7 @@ public final class ClientVariableManager extends SparseVarDomain {
 			while (var4.hasNext()) {
 				VarValue var5 = (VarValue) var4.next();
 				if (this.field10251[var5.field4240] == VarLifetime.PERMANENT) {
-					var2 += Statics.field8911.method15282(var5);
+					var2 += Statics.field8911.getValueEncodingLength(var5);
 					var3++;
 				}
 			}
@@ -181,7 +181,7 @@ public final class ClientVariableManager extends SparseVarDomain {
 			while (var7.hasNext()) {
 				VarValue var8 = (VarValue) var7.next();
 				if (this.field10251[var8.field4240] == VarLifetime.PERMANENT) {
-					Statics.field8911.method15283(var6, var8);
+					Statics.field8911.encodeVarValue(var6, var8);
 				}
 			}
 			arg0.method14808(var6.data, 0, var6.pos);
@@ -229,10 +229,10 @@ public final class ClientVariableManager extends SparseVarDomain {
 		var5.field11432.pos++;
 		while (this.field10258 < this.field10257.length) {
 			VarValue var7 = this.field10257[this.field10258];
-			if (var5.field11432.pos + var4.field791 + Statics.field8911.method15282(var7) > 1500) {
+			if (var5.field11432.pos + var4.field791 + Statics.field8911.getValueEncodingLength(var7) > 1500) {
 				break;
 			}
-			Statics.field8911.method15283(var5.field11432, var7);
+			Statics.field8911.encodeVarValue(var5.field11432, var7);
 			this.field10258++;
 		}
 		var5.field11432.psize2(var5.field11432.pos - var6);

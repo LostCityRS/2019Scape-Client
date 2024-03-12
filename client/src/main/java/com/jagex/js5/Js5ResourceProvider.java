@@ -7,10 +7,10 @@ import deob.ObfuscatedName;
 public abstract class Js5ResourceProvider {
 
 	@ObfuscatedName("po.e(B)Lpl;")
-	public abstract Js5Index method6853();
+	public abstract Js5Index getIndex();
 
 	@ObfuscatedName("po.n(II)[B")
-	public abstract byte[] method6854(int arg0);
+	public abstract byte[] fetchgroup(int arg0);
 
 	@ObfuscatedName("po.k(II)I")
 	public abstract int method6855(int arg0);

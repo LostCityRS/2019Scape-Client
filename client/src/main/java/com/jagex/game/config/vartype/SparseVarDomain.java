@@ -16,7 +16,7 @@ public class SparseVarDomain implements VarDomain {
 	}
 
 	public SparseVarDomain(VarTypeList arg0, VarContainerSparse arg1) {
-		this(arg0.field9260, arg1);
+		this(arg0.variableDomain, arg1);
 	}
 
 	public SparseVarDomain(VarDomainType arg0, VarContainerSparse arg1) {

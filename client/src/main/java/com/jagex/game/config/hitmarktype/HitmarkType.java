@@ -1,7 +1,7 @@
 package com.jagex.game.config.hitmarktype;
 
 import com.jagex.core.io.Packet;
-import com.jagex.core.utils.StringUtils;
+import com.jagex.core.utils.StringTools;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.ConfigTypeList;
 import com.jagex.game.config.vartype.VarIntDomain;
@@ -190,10 +190,10 @@ public class HitmarkType implements ConfigType {
 				}
 			}
 			if (var3 >= 0 && var3 < this.field7298.length - 1) {
-				return this.field7298[var3] == -1 ? null : (HitmarkType) this.field7303.get(this.field7298[var3]);
+				return this.field7298[var3] == -1 ? null : (HitmarkType) this.field7303.list(this.field7298[var3]);
 			} else {
 				int var6 = this.field7298[this.field7298.length - 1];
-				return var6 == -1 ? null : (HitmarkType) this.field7303.get(var6);
+				return var6 == -1 ? null : (HitmarkType) this.field7303.list(var6);
 			}
 		}
 	}
@@ -207,7 +207,7 @@ public class HitmarkType implements ConfigType {
 			if (var4 < 0) {
 				return var2;
 			}
-			var2 = var2.substring(0, var4) + StringUtils.method1898(var3, false) + var2.substring(var4 + 2);
+			var2 = var2.substring(0, var4) + StringTools.method1898(var3, false) + var2.substring(var4 + 2);
 		}
 	}
 

@@ -18,20 +18,20 @@ import java.util.Map;
 public abstract class VarTypeList extends BaseConfigTypeList implements DefaultVarValueProvider {
 
 	@ObfuscatedName("add.n")
-	public final VarDomainType field9260;
+	public final VarDomainType variableDomain;
 
 	public VarTypeList(ModeGame arg0, VarDomainType arg1, Language arg2, int arg3) {
 		super(arg0, arg2, arg3);
-		this.field9260 = arg1;
+		this.variableDomain = arg1;
 	}
 
 	@ObfuscatedName("add.n(I)I")
-	public int size() {
+	public int length() {
 		return this.field811;
 	}
 
 	@ObfuscatedName("adl.j([Ladd;S)Ljava/util/Map;")
-	public static Map method15149(VarTypeList[] arg0) {
+	public static Map createDomainToListEnumMap(VarTypeList[] arg0) {
 		if (arg0 == null || arg0.length == 0) {
 			return null;
 		}
@@ -39,19 +39,19 @@ public abstract class VarTypeList extends BaseConfigTypeList implements DefaultV
 		VarTypeList[] var2 = arg0;
 		for (int var3 = 0; var3 < var2.length; var3++) {
 			VarTypeList var4 = var2[var3];
-			var1.put(var4.field9260, var4);
+			var1.put(var4.variableDomain, var4);
 		}
 		return var1;
 	}
 
 	@ObfuscatedName("add.u(IB)Ljava/lang/Object;")
-	public Object method6245(int arg0) {
-		VarType var2 = (VarType) this.get(arg0);
+	public Object getDefaultValue(int arg0) {
+		VarType var2 = (VarType) this.list(arg0);
 		return var2 != null && var2.isValidDefinition() ? var2.getDefaultValue() : null;
 	}
 
 	@ObfuscatedName("add.t(Lon;B)I")
-	public int method15282(VarValue arg0) {
+	public int getValueEncodingLength(VarValue arg0) {
 		byte var2 = 2;
 		int var3;
 		if (arg0.field4239 instanceof Integer) {
@@ -69,7 +69,7 @@ public abstract class VarTypeList extends BaseConfigTypeList implements DefaultV
 	}
 
 	@ObfuscatedName("add.ae(Lalw;Lon;I)V")
-	public void method15283(Packet arg0, VarValue arg1) {
+	public void encodeVarValue(Packet arg0, VarValue arg1) {
 		arg0.p2(arg1.field4240);
 		if (arg1.field4239 instanceof Integer) {
 			arg0.p4((Integer) arg1.field4239);
@@ -85,9 +85,9 @@ public abstract class VarTypeList extends BaseConfigTypeList implements DefaultV
 	}
 
 	@ObfuscatedName("add.ag(Lalw;B)Lon;")
-	public VarValue method15284(Packet arg0) {
+	public VarValue decodeVarValue(Packet arg0) {
 		int var2 = arg0.g2();
-		VarType var3 = (VarType) this.get(var2);
+		VarType var3 = (VarType) this.list(var2);
 		if (!var3.isValidDefinition()) {
 			throw new IllegalStateException("");
 		}
@@ -116,7 +116,7 @@ public abstract class VarTypeList extends BaseConfigTypeList implements DefaultV
 	}
 
 	@ObfuscatedName("add.ah(Lalw;Lqa;B)Lon;")
-	public VarValue method15285(Packet arg0, BaseVarType arg1) {
+	public VarValue decodeVarValue(Packet arg0, BaseVarType arg1) {
 		int var3 = arg0.g2();
 		VarValue var4 = new VarValue(var3);
 		Class var5 = arg1.javaClass;
@@ -139,10 +139,10 @@ public abstract class VarTypeList extends BaseConfigTypeList implements DefaultV
 		} else {
 			throw new IllegalStateException();
 		}
-		VarType var9 = (VarType) this.get(var3);
+		VarType var9 = (VarType) this.list(var3);
 		return var9.isValidDefinition() && var9.dataType.getVarBaseType() == arg1 ? var4 : null;
 	}
 
 	@ObfuscatedName("add.e(II)Lay;")
-	public abstract ConfigType get(int arg0);
+	public abstract ConfigType list(int arg0);
 }

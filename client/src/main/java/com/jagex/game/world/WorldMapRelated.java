@@ -24,11 +24,11 @@ public class WorldMapRelated {
 
 	@ObfuscatedName("nn.e(Lpy;Ljava/lang/String;ZB)Ltw;")
 	public static WorldMapRelated method6046(Js5 arg0, String arg1, boolean arg2) {
-		int var3 = arg0.method6902(arg1);
+		int var3 = arg0.getgroupid(arg1);
 		if (var3 == -1) {
 			return new WorldMapRelated(0);
 		}
-		byte[] var4 = arg0.method6879(var3, 1);
+		byte[] var4 = arg0.getfile(var3, 1);
 		if (var4 == null) {
 			return new WorldMapRelated(0);
 		}

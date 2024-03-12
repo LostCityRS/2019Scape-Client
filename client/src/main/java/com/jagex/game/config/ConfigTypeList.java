@@ -6,8 +6,8 @@ import deob.ObfuscatedName;
 public interface ConfigTypeList extends Iterable {
 
 	@ObfuscatedName("ao.e(II)Lay;")
-	ConfigType get(int arg0);
+	ConfigType list(int arg0);
 
 	@ObfuscatedName("ao.n(I)I")
-	int size();
+	int length();
 }

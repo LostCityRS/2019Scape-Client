@@ -49,9 +49,9 @@ public class QuickChatPhraseTypeList {
 		}
 		byte[] var3;
 		if (arg0 >= 32768) {
-			var3 = this.field8858.method6879(1, arg0 & 0x7FFF);
+			var3 = this.field8858.getfile(1, arg0 & 0x7FFF);
 		} else {
-			var3 = this.field8860.method6879(1, arg0);
+			var3 = this.field8860.getfile(1, arg0);
 		}
 		QuickChatPhraseType var4 = new QuickChatPhraseType();
 		var4.field12380 = this;

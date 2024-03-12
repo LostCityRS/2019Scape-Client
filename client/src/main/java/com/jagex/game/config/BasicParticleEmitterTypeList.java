@@ -24,7 +24,7 @@ public class BasicParticleEmitterTypeList implements ParticleEmitterTypeList {
 		if (var2 != null) {
 			return var2;
 		}
-		byte[] var3 = this.field3563.method6879(0, arg0);
+		byte[] var3 = this.field3563.getfile(0, arg0);
 		ParticleEmitterType var4 = new ParticleEmitterType();
 		if (var3 != null) {
 			var4.method5960(new Packet(var3));

@@ -13,7 +13,7 @@ public class SpriteDataProvider {
 
 	@ObfuscatedName("cd.e(Lpy;II)Lde;")
 	public static SpriteData method1609(Js5 arg0, int arg1, int arg2) {
-		byte[] var3 = arg0.method6879(arg1, arg2);
+		byte[] var3 = arg0.getfile(arg1, arg2);
 		return var3 == null ? null : method1615(var3)[0];
 	}
 
@@ -25,7 +25,7 @@ public class SpriteDataProvider {
 
 	@ObfuscatedName("cd.m(Lpy;II)[Lde;")
 	public static SpriteData[] method1608(Js5 arg0, int arg1, int arg2) {
-		byte[] var3 = arg0.method6879(arg1, arg2);
+		byte[] var3 = arg0.getfile(arg1, arg2);
 		return var3 == null ? null : method1615(var3);
 	}
 

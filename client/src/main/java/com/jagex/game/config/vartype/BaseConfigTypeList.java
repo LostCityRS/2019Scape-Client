@@ -16,7 +16,7 @@ public abstract class BaseConfigTypeList implements ConfigTypeList {
 	}
 
 	@ObfuscatedName("aj.n(I)I")
-	public int size() {
+	public int length() {
 		return this.field811;
 	}
 }

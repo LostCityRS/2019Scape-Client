@@ -13,10 +13,10 @@ import deob.Statics;
 public final class VarPlayerDomain implements VarDomain {
 
 	@ObfuscatedName("wu.f")
-	public int[] field7604 = new int[Statics.field8485.size()];
+	public int[] field7604 = new int[Statics.field8485.length()];
 
 	@ObfuscatedName("wu.w")
-	public int[] field7609 = new int[Statics.field8485.size()];
+	public int[] field7609 = new int[Statics.field8485.length()];
 
 	@ObfuscatedName("wu.l")
 	public IterableMap field7610 = new IterableMap(128);
@@ -40,8 +40,8 @@ public final class VarPlayerDomain implements VarDomain {
 
 	@ObfuscatedName("wu.j(B)V")
 	public void method9624() {
-		for (int var1 = 0; var1 < Statics.field8485.size(); var1++) {
-			VarPlayerType var2 = (VarPlayerType) Statics.field8485.get(var1);
+		for (int var1 = 0; var1 < Statics.field8485.length(); var1++) {
+			VarPlayerType var2 = (VarPlayerType) Statics.field8485.list(var1);
 			if (var2 != null) {
 				this.field7604[var1] = 0;
 				this.field7609[var1] = 0;

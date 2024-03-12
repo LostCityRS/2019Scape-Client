@@ -43,7 +43,7 @@ public class FrameSet extends SecondaryNode {
 				int[] var2 = Statics.field12325.method6895(this.field12324);
 				this.field12323 = new byte[var2.length][];
 				for (int var3 = 0; var3 < var2.length; var3++) {
-					this.field12323[var3] = Statics.field12325.method6879(this.field12324, var2[var3]);
+					this.field12323[var3] = Statics.field12325.getfile(this.field12324, var2[var3]);
 				}
 			}
 		}

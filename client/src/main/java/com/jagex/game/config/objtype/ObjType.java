@@ -266,13 +266,13 @@ public class ObjType implements ConfigType {
 	@ObfuscatedName("abv.n(I)V")
 	public void postDecode() {
 		if (this.field8663 != -1) {
-			this.method14640((ObjType) this.myList.get(this.field8663), (ObjType) this.myList.get(this.field8673), this.field8621.languageId);
+			this.method14640((ObjType) this.myList.list(this.field8663), (ObjType) this.myList.list(this.field8673), this.field8621.languageId);
 		} else if (this.field8675 != -1) {
-			this.method14641((ObjType) this.myList.get(this.field8675), (ObjType) this.myList.get(this.field8674), this.field8621.languageId);
+			this.method14641((ObjType) this.myList.list(this.field8675), (ObjType) this.myList.list(this.field8674), this.field8621.languageId);
 		} else if (this.field8694 != -1) {
-			this.method14653((ObjType) this.myList.get(this.field8694), (ObjType) this.myList.get(this.field8693), this.field8621.languageId);
+			this.method14653((ObjType) this.myList.list(this.field8694), (ObjType) this.myList.list(this.field8693), this.field8621.languageId);
 		} else if (this.field8677 != -1) {
-			this.method14643((ObjType) this.myList.get(this.field8677), (ObjType) this.myList.get(this.field8676), this.field8621.languageId);
+			this.method14643((ObjType) this.myList.list(this.field8677), (ObjType) this.myList.list(this.field8676), this.field8621.languageId);
 		}
 		if (this.field8689 != 0) {
 			this.field8687 = false;
@@ -291,7 +291,7 @@ public class ObjType implements ConfigType {
 		}
 		boolean var1 = false;
 		for (Node var2 = this.field8690.method14500(); var2 != null; var2 = this.field8690.method14502()) {
-			ParamType var3 = (ParamType) this.field8621.paramTL.get((int) var2.field6760);
+			ParamType var3 = (ParamType) this.field8621.paramTL.list((int) var2.field6760);
 			if (var3.field9174) {
 				var2.method8440();
 			} else {
@@ -643,7 +643,7 @@ public class ObjType implements ConfigType {
 				}
 			}
 			if (var10 != -1) {
-				return ((ObjType) this.myList.get(var10)).method14644(arg0, arg1, 1, arg3, arg4, arg5, arg6, arg7, arg8);
+				return ((ObjType) this.myList.list(var10)).method14644(arg0, arg1, 1, arg3, arg4, arg5, arg6, arg7, arg8);
 			}
 		}
 		int var12 = arg1;
@@ -754,7 +754,7 @@ public class ObjType implements ConfigType {
 				}
 			}
 			if (var2 != -1) {
-				return (ObjType) this.myList.get(var2);
+				return (ObjType) this.myList.list(var2);
 			}
 		}
 		return this;
@@ -973,13 +973,13 @@ public class ObjType implements ConfigType {
 			return true;
 		}
 		boolean var6 = true;
-		if (!this.field8621.field8614.method6888(var3, 0)) {
+		if (!this.field8621.field8614.requestdownload(var3, 0)) {
 			var6 = false;
 		}
-		if (var4 != -1 && !this.field8621.field8614.method6888(var4, 0)) {
+		if (var4 != -1 && !this.field8621.field8614.requestdownload(var4, 0)) {
 			var6 = false;
 		}
-		if (var5 != -1 && !this.field8621.field8614.method6888(var5, 0)) {
+		if (var5 != -1 && !this.field8621.field8614.requestdownload(var5, 0)) {
 			var6 = false;
 		}
 		return var6;
@@ -1090,10 +1090,10 @@ public class ObjType implements ConfigType {
 			return true;
 		}
 		boolean var5 = true;
-		if (!this.field8621.field8614.method6888(var3, 0)) {
+		if (!this.field8621.field8614.requestdownload(var3, 0)) {
 			var5 = false;
 		}
-		if (var4 != -1 && !this.field8621.field8614.method6888(var4, 0)) {
+		if (var4 != -1 && !this.field8621.field8614.requestdownload(var4, 0)) {
 			var5 = false;
 		}
 		return var5;

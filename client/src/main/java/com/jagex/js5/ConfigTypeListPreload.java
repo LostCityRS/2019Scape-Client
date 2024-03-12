@@ -48,7 +48,7 @@ public class ConfigTypeListPreload implements ConfigTypeList {
 	}
 
 	@ObfuscatedName("acd.e(II)Lay;")
-	public ConfigType get(int arg0) {
+	public ConfigType list(int arg0) {
 		if (arg0 < 0) {
 			if (this.field8844 == null) {
 				this.field8844 = this.field8846.create(-1, this);
@@ -83,7 +83,7 @@ public class ConfigTypeListPreload implements ConfigTypeList {
 
 	// line 59
 	@ObfuscatedName("acd.n(I)I")
-	public int size() {
+	public int length() {
 		return this.field8849.length;
 	}
 

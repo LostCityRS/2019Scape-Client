@@ -125,7 +125,7 @@ public class AnimationWrapper {
 			this.field8501 = null;
 		} else {
 			if (this.field8501 == null || this.field8501.field1769 != arg0) {
-				this.field8501 = (SeqType) Statics.field12490.get(arg0);
+				this.field8501 = (SeqType) Statics.field12490.list(arg0);
 				if (this.field8501 == null || this.field8501.field1770 == null && !this.field8501.method2985()) {
 					this.field8501 = null;
 					return;

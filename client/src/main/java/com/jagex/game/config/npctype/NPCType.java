@@ -593,9 +593,9 @@ public class NPCType implements ConfigType {
 		}
 		BASType var24 = null;
 		if (!arg12 && arg11 != -1) {
-			var24 = (BASType) arg2.get(arg11);
+			var24 = (BASType) arg2.list(arg11);
 		} else if (this.field2762 != -1) {
-			var24 = (BASType) arg2.get(this.field2762);
+			var24 = (BASType) arg2.list(this.field2762);
 		}
 		if (var22 == null || (var22.method1691() & var15) != var15) {
 			if (var22 != null) {
@@ -616,7 +616,7 @@ public class NPCType implements ConfigType {
 			Js5 var28 = this.field2695.field2770;
 			synchronized (this.field2695.field2770) {
 				for (int var29 = 0; var29 < var26.length; var29++) {
-					if (var26[var29] != -1 && !this.field2695.field2770.method6888(var26[var29], 0)) {
+					if (var26[var29] != -1 && !this.field2695.field2770.requestdownload(var26[var29], 0)) {
 						var27 = true;
 					}
 				}
@@ -833,7 +833,7 @@ public class NPCType implements ConfigType {
 						if (var18 >= var15.length) {
 							break;
 						}
-						if (!this.field2695.field2770.method6888(var15[var18], 0)) {
+						if (!this.field2695.field2770.requestdownload(var15[var18], 0)) {
 							var16 = true;
 						}
 						var18++;
@@ -914,7 +914,7 @@ public class NPCType implements ConfigType {
 		int[] var2 = this.field2752;
 		for (int var3 = 0; var3 < var2.length; var3++) {
 			int var4 = var2[var3];
-			if (!this.field2695.field2770.method6888(var4, 0)) {
+			if (!this.field2695.field2770.requestdownload(var4, 0)) {
 				var1 = false;
 			}
 		}
@@ -956,10 +956,10 @@ public class NPCType implements ConfigType {
 			}
 		}
 		if (var3 >= 0 && var3 < this.field2735.length - 1) {
-			return this.field2735[var3] == -1 ? null : (NPCType) this.field2696.get(this.field2735[var3]);
+			return this.field2735[var3] == -1 ? null : (NPCType) this.field2696.list(this.field2735[var3]);
 		} else {
 			int var6 = this.field2735[this.field2735.length - 1];
-			return var6 == -1 ? null : (NPCType) this.field2696.get(var6);
+			return var6 == -1 ? null : (NPCType) this.field2696.list(var6);
 		}
 	}
 
@@ -995,7 +995,7 @@ public class NPCType implements ConfigType {
 		}
 		for (int var1 = 0; var1 < this.field2735.length; var1++) {
 			if (this.field2735[var1] != -1) {
-				NPCType var2 = (NPCType) this.field2696.get(this.field2735[var1]);
+				NPCType var2 = (NPCType) this.field2696.list(this.field2735[var1]);
 				if (var2.field2746 != -1 || var2.field2748 != -1 || var2.field2749 != -1) {
 					return true;
 				}

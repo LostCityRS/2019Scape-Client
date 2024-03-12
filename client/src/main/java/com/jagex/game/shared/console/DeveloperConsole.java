@@ -3,7 +3,7 @@ package com.jagex.game.shared.console;
 import com.jagex.core.utils.Cp1252;
 import com.jagex.core.utils.FileUtil;
 import com.jagex.core.utils.MonotonicTime;
-import com.jagex.core.utils.StringUtils;
+import com.jagex.core.utils.StringTools;
 import com.jagex.game.config.iftype.Component;
 import com.jagex.game.network.ServerConnection;
 import rs2.client.Client;
@@ -190,7 +190,7 @@ public class DeveloperConsole {
 		int var2 = Client.field11088.get(12);
 		int var3 = Client.field11088.get(13);
 		String var4 = Integer.toString(var1 / 10) + var1 % 10 + ":" + var2 / 10 + var2 % 10 + ":" + var3 / 10 + var3 % 10;
-		String[] var5 = StringUtils.method17361(arg0, '\n');
+		String[] var5 = StringTools.method17361(arg0, '\n');
 		for (int var6 = 0; var6 < var5.length; var6++) {
 			for (int var7 = field764; var7 > 0; var7--) {
 				Statics.field4845[var7] = Statics.field4845[var7 - 1];
@@ -228,7 +228,7 @@ public class DeveloperConsole {
 			}
 			arg0.method2354(Statics.canvasWid - 16, var4, 12, var3, field776 * 36 << 24 | 0x332277, 2);
 			for (int var5 = field771; var5 < field771 + var1 && var5 < field764; var5++) {
-				String[] var6 = StringUtils.method17361(Statics.field4845[var5], '\b');
+				String[] var6 = StringTools.method17361(Statics.field4845[var5], '\b');
 				int var7 = (Statics.canvasWid - 8 - 16) / var6.length;
 				for (int var8 = 0; var8 < var6.length; var8++) {
 					int var9 = var7 * var8 + 8;
@@ -472,7 +472,7 @@ public class DeveloperConsole {
 					return;
 				}
 				if (arg0.startsWith("directlogin")) {
-					String[] var20 = StringUtils.method17361(arg0.substring(12), ' ');
+					String[] var20 = StringTools.method17361(arg0.substring(12), ' ');
 					if (var20.length == 2 || var20.length == 3) {
 						if (LoginManager.method2865()) {
 							LoginManager.method14129();
@@ -482,7 +482,7 @@ public class DeveloperConsole {
 					return;
 				}
 				if (arg0.startsWith("snlogin ")) {
-					String[] var21 = StringUtils.method17361(arg0.substring(8), ' ');
+					String[] var21 = StringTools.method17361(arg0.substring(8), ' ');
 					int var22 = Integer.parseInt(var21[0]);
 					String var23 = var21.length > 1 ? var21[1] : "";
 					LoginManager.method2050(var22, var23, true);
@@ -530,7 +530,7 @@ public class DeveloperConsole {
 						addline("Failed to read file");
 						return;
 					}
-					String[] var29 = StringUtils.method17361(Statics.method17687(Cp1252.method667(var28), '\r', ""), '\n');
+					String[] var29 = StringTools.method17361(Statics.method17687(Cp1252.method667(var28), '\r', ""), '\n');
 					method15383(var29);
 				}
 				if (Client.state == 18 || Client.state == 13) {

@@ -6,5 +6,5 @@ import deob.ObfuscatedName;
 public interface DefaultVarValueProvider {
 
 	@ObfuscatedName("os.u(IB)Ljava/lang/Object;")
-	Object method6245(int arg0);
+	Object getDefaultValue(int arg0);
 }

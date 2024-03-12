@@ -74,7 +74,7 @@ public class PlayerGroupMember {
 		int var9 = arg0.g2();
 		this.field1926 = new VarContainerSparse(arg3.method293());
 		for (int var10 = 0; var10 < var9; var10++) {
-			VarValue var11 = arg3.method293().method15284(arg0);
+			VarValue var11 = arg3.method293().decodeVarValue(arg0);
 			this.field1926.method14735(var11.field4240, var11.field4239);
 		}
 		this.field1922 = arg0.g2();

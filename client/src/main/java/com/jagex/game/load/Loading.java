@@ -365,7 +365,7 @@ public class Loading {
 			Statics.field6792 = new WorldMapDefaults(Statics.field1587);
 		}
 		if (Statics.field3419 == LoadingStage.field2912) {
-			if (Statics.field11389.field7738 != -1 && !Statics.field9213.method6888(Statics.field11389.field7738, 0)) {
+			if (Statics.field11389.field7738 != -1 && !Statics.field9213.requestdownload(Statics.field11389.field7738, 0)) {
 				return 99;
 			}
 			Statics.field7366 = new MaterialList(Statics.field10249);
@@ -404,7 +404,7 @@ public class Loading {
 			Statics.field12225 = new VarBasicTypeListClient(Client.field10768, VarDomainType.CLAN_SETTING, Statics.field1680, Statics.field11838);
 			Statics.field3415 = new VarBasicTypeListClient(Client.field10768, VarDomainType.PLAYER_GROUP, Statics.field1680, Statics.field11838);
 			Statics.field1819 = new VarBasicTypeListClient(Client.field10768, VarDomainType.OBJECT, Statics.field1680, Statics.field11838);
-			Statics.field1232 = VarTypeList.method15149(new VarTypeList[] { Statics.field8911, Statics.field8485, Statics.field8135, Statics.field8783, Statics.field12225, Statics.field3415, Statics.field1819 });
+			Statics.field1232 = VarTypeList.createDomainToListEnumMap(new VarTypeList[] { Statics.field8911, Statics.field8485, Statics.field8135, Statics.field8783, Statics.field12225, Statics.field3415, Statics.field1819 });
 			Statics.field8736 = new VarBitTypeList(Client.field10768, Statics.field1680, Statics.field11838, Statics.field1232);
 			Statics.field4626 = new VariableTypeProviderClient();
 			Component.method3669(Statics.field527, Statics.field9213, Statics.field10317, Statics.field7672);
@@ -450,7 +450,7 @@ public class Loading {
 			boolean var22 = true;
 			for (int var23 = 0; var23 < Statics.field11725[Statics.field11389.field7724].field2151.length; var23++) {
 				Component var24 = Statics.field11725[Statics.field11389.field7724].field2151[var23];
-				if (var24.field2184 == 5 && var24.field2215 != -1 && !Statics.field10317.method6888(var24.field2215, 0)) {
+				if (var24.field2184 == 5 && var24.field2215 != -1 && !Statics.field10317.requestdownload(var24.field2215, 0)) {
 					var22 = false;
 				}
 			}

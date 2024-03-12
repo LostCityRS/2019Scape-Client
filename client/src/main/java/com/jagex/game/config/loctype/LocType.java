@@ -988,10 +988,10 @@ public class LocType implements ConfigType {
 			}
 		}
 		if (var3 >= 0 && var3 < this.field7505.length - 1) {
-			return this.field7505[var3] == -1 ? null : (LocType) this.field7452.get(this.field7505[var3]);
+			return this.field7505[var3] == -1 ? null : (LocType) this.field7452.list(this.field7505[var3]);
 		} else {
 			int var6 = this.field7505[this.field7505.length - 1];
-			return var6 == -1 ? null : (LocType) this.field7452.get(var6);
+			return var6 == -1 ? null : (LocType) this.field7452.list(var6);
 		}
 	}
 
@@ -1022,7 +1022,7 @@ public class LocType implements ConfigType {
 		}
 		for (int var1 = 0; var1 < this.field7505.length; var1++) {
 			if (this.field7505[var1] != -1) {
-				LocType var2 = (LocType) this.field7452.get(this.field7505[var1]);
+				LocType var2 = (LocType) this.field7452.list(this.field7505[var1]);
 				if (var2.field7508 != -1 || var2.field7514 != null) {
 					return true;
 				}

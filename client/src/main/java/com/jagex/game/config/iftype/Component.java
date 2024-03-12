@@ -1123,7 +1123,7 @@ public class Component {
 			var32.method1690(var12);
 			return var32;
 		} else if (this.field2224 == 2) {
-			Model var36 = ((NPCType) arg4.get(this.field2294)).method4544(arg0, arg1, arg7, arg8, arg9, this.field2363);
+			Model var36 = ((NPCType) arg4.list(this.field2294)).method4544(arg0, arg1, arg7, arg8, arg9, this.field2363);
 			if (var36 == null) {
 				field2338 = true;
 				return null;
@@ -1142,7 +1142,7 @@ public class Component {
 				return var37;
 			}
 		} else if (this.field2224 == 4) {
-			ObjType var38 = (ObjType) arg5.get(this.field2294);
+			ObjType var38 = (ObjType) arg5.list(this.field2294);
 			Model var39 = var38.method14644(arg0, arg1, 10, arg10, arg9, 0, 0, 0, 0);
 			if (var39 == null) {
 				field2338 = true;
@@ -1151,7 +1151,7 @@ public class Component {
 				return var39;
 			}
 		} else if (this.field2224 == 6) {
-			Model var40 = ((NPCType) arg4.get(this.field2294)).method4542(arg0, arg1, arg2, arg7, arg8, arg9, null, null, null, 0, this.field2363);
+			Model var40 = ((NPCType) arg4.list(this.field2294)).method4542(arg0, arg1, arg2, arg7, arg8, arg9, null, null, null, 0, this.field2363);
 			if (var40 == null) {
 				field2338 = true;
 				return null;

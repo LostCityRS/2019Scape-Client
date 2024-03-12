@@ -15,7 +15,7 @@ public class QuestTypeList extends ConfigTypeListPreload {
 	}
 
 	@ObfuscatedName("apw.n(I)I")
-	public int size() {
+	public int length() {
 		return this.field8848;
 	}
 }

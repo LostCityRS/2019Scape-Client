@@ -39,7 +39,7 @@ public class MaterialList {
 		field1454 = false;
 		this.field1453 = new Material[this.field1451];
 		for (int var1 = 0; var1 < this.field1451; var1++) {
-			Packet var2 = new Packet(this.field1452.method6879(0, var1));
+			Packet var2 = new Packet(this.field1452.getfile(0, var1));
 			if (var2.data == null) {
 				this.field1453[var1] = null;
 			} else {

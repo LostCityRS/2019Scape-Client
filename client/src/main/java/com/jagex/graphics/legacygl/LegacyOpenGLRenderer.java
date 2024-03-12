@@ -7,7 +7,7 @@ import com.jagex.core.datastruct.Node;
 import com.jagex.core.utils.ColourUtils;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.core.utils.PreciseSleep;
-import com.jagex.core.utils.StringUtils;
+import com.jagex.core.utils.StringTools;
 import com.jagex.game.client.DataType;
 import com.jagex.game.client.NativeLibraryConfig;
 import com.jagex.game.client.ScreenBoundingBox;
@@ -597,12 +597,12 @@ public class LegacyOpenGLRenderer extends Renderer {
 			boolean var21 = false;
 			int var22 = 0;
 			if (this.field10027 || var19) {
-				String[] var23 = StringUtils.method17361(this.field9977.replace('/', ' '), ' ');
+				String[] var23 = StringTools.method17361(this.field9977.replace('/', ' '), ' ');
 				for (int var24 = 0; var24 < var23.length; var24++) {
 					String var25 = var23[var24];
 					try {
 						if (var25.length() > 0) {
-							if (var25.charAt(0) == 'x' && var25.length() >= 3 && StringUtils.method9836(var25.substring(1, 3))) {
+							if (var25.charAt(0) == 'x' && var25.length() >= 3 && StringTools.method9836(var25.substring(1, 3))) {
 								var25 = var25.substring(1);
 								var21 = true;
 							}
@@ -613,8 +613,8 @@ public class LegacyOpenGLRenderer extends Renderer {
 									var25 = var25.substring(2);
 									var20 = true;
 								}
-								if (var25.length() >= 4 && StringUtils.method9836(var25.substring(0, 4))) {
-									var22 = StringUtils.method9595(var25.substring(0, 4));
+								if (var25.length() >= 4 && StringTools.method9836(var25.substring(0, 4))) {
+									var22 = StringTools.method9595(var25.substring(0, 4));
 									break;
 								}
 							}
@@ -733,11 +733,11 @@ public class LegacyOpenGLRenderer extends Renderer {
 			var1 |= 0x1;
 		}
 		String var2 = OpenGL.glGetString(7938);
-		String[] var3 = StringUtils.method17361(var2.replace('.', ' '), ' ');
+		String[] var3 = StringTools.method17361(var2.replace('.', ' '), ' ');
 		if (var3.length >= 2) {
 			try {
-				int var4 = StringUtils.method9595(var3[0]);
-				int var5 = StringUtils.method9595(var3[1]);
+				int var4 = StringTools.method9595(var3[0]);
+				int var5 = StringTools.method9595(var3[1]);
 				this.field9979 = var4 * 10 + var5;
 			} catch (NumberFormatException var8) {
 				var1 |= 0x4;

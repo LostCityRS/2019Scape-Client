@@ -128,7 +128,7 @@ public class WorldMapAreaMetadata extends SecondaryNode {
 
 	@ObfuscatedName("gq.w(Lpy;II)Lasy;")
 	public static WorldMapAreaMetadata method3468(Js5 arg0, int arg1) {
-		Packet var2 = new Packet(arg0.method6879(0, arg1));
+		Packet var2 = new Packet(arg0.getfile(0, arg1));
 		return method18854(var2, arg1);
 	}
 

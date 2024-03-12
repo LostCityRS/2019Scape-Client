@@ -10,13 +10,13 @@ import deob.Statics;
 public class Js5Index {
 
 	@ObfuscatedName("pl.n")
-	public int field4385;
+	public int crc;
 
 	@ObfuscatedName("pl.m")
-	public byte[] field4384;
+	public byte[] whirlpool;
 
 	@ObfuscatedName("pl.k")
-	public int field4396;
+	public int indexversion;
 
 	@ObfuscatedName("pl.f")
 	public int field4387;
@@ -43,7 +43,7 @@ public class Js5Index {
 	public byte[][] field4395;
 
 	@ObfuscatedName("pl.r")
-	public int[] field4398;
+	public int[] groupVersions;
 
 	@ObfuscatedName("pl.v")
 	public int[] field4397;
@@ -67,17 +67,17 @@ public class Js5Index {
 	public int[] field4403;
 
 	public Js5Index(byte[] arg0, int arg1, byte[] arg2) {
-		this.field4385 = Packet.getcrc(arg0, arg0.length);
-		if (this.field4385 != arg1) {
+		this.crc = Packet.getcrc(arg0, arg0.length);
+		if (this.crc != arg1) {
 			throw new RuntimeException();
 		}
 		if (arg2 != null) {
 			if (arg2.length != 64) {
 				throw new RuntimeException();
 			}
-			this.field4384 = Whirlpool.method18308(arg0, 0, arg0.length);
+			this.whirlpool = Whirlpool.method18308(arg0, 0, arg0.length);
 			for (int var4 = 0; var4 < 64; var4++) {
-				if (this.field4384[var4] != arg2[var4]) {
+				if (this.whirlpool[var4] != arg2[var4]) {
 					throw new RuntimeException();
 				}
 			}
@@ -93,9 +93,9 @@ public class Js5Index {
 			throw new RuntimeException();
 		}
 		if (var3 >= 6) {
-			this.field4396 = var2.g4s();
+			this.indexversion = var2.g4s();
 		} else {
-			this.field4396 = 0;
+			this.indexversion = 0;
 		}
 		int var4 = var2.g1();
 		boolean var5 = (var4 & 0x1) != 0;
@@ -133,7 +133,7 @@ public class Js5Index {
 		if (var6) {
 			this.field4395 = new byte[this.field4392][];
 		}
-		this.field4398 = new int[this.field4392];
+		this.groupVersions = new int[this.field4392];
 		this.field4399 = new int[this.field4392];
 		this.field4386 = new int[this.field4392][];
 		this.field4403 = new int[this.field4392];
@@ -171,7 +171,7 @@ public class Js5Index {
 			}
 		}
 		for (int var20 = 0; var20 < this.field4387; var20++) {
-			this.field4398[this.field4394[var20]] = var2.g4s();
+			this.groupVersions[this.field4394[var20]] = var2.g4s();
 		}
 		if (var3 >= 7) {
 			for (int var21 = 0; var21 < this.field4387; var21++) {

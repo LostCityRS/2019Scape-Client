@@ -2,7 +2,7 @@ package com.jagex.game.config.quickchatphrasetype;
 
 import com.jagex.core.datastruct.SecondaryNode;
 import com.jagex.core.io.Packet;
-import com.jagex.core.utils.StringUtils;
+import com.jagex.core.utils.StringTools;
 import com.jagex.game.shared.framework.chat.QuickChatDynamicCommand;
 import deob.ObfuscatedName;
 
@@ -41,7 +41,7 @@ public class QuickChatPhraseType extends SecondaryNode {
 	@ObfuscatedName("asq.n(Lalw;IB)V")
 	public void method19521(Packet arg0, int arg1) {
 		if (arg1 == 1) {
-			this.field12379 = StringUtils.method17361(arg0.gjstr(), '<');
+			this.field12379 = StringTools.method17361(arg0.gjstr(), '<');
 		} else if (arg1 == 2) {
 			int var3 = arg0.g1();
 			this.field12381 = new int[var3];
