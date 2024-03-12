@@ -44,10 +44,10 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 	public int field8611;
 
 	@ObfuscatedName("abr.z")
-	public final String[] field8617;
+	public final String[] defaultops;
 
 	@ObfuscatedName("abr.p")
-	public final String[] field8616;
+	public final String[] defaultiops;
 
 	public ObjTypeFactory(ModeGame arg0, Language arg1, boolean arg2, Js5 arg3, ConfigTypeList arg4) {
 		this.languageId = arg1;
@@ -55,11 +55,11 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 		this.js5 = arg3;
 		this.paramTL = arg4;
 		if (ModeGame.RUNESCAPE == arg0) {
-			this.field8617 = new String[] { null, null, LocalisedText.TAKE.method15021(this.languageId), null, null, LocalisedText.EXAMINE.method15021(this.languageId) };
+			this.defaultops = new String[] { null, null, LocalisedText.TAKE.method15021(this.languageId), null, null, LocalisedText.EXAMINE.method15021(this.languageId) };
 		} else {
-			this.field8617 = new String[] { null, null, LocalisedText.TAKE.method15021(this.languageId), null, null, null };
+			this.defaultops = new String[] { null, null, LocalisedText.TAKE.method15021(this.languageId), null, null, null };
 		}
-		this.field8616 = new String[] { null, null, null, null, LocalisedText.DROP.method15021(this.languageId) };
+		this.defaultiops = new String[] { null, null, null, null, LocalisedText.DROP.method15021(this.languageId) };
 	}
 
 	@ObfuscatedName("abr.e(Ldh;IIIIILxg;I)Lcm;")

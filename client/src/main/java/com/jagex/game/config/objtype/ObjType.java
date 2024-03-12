@@ -259,8 +259,8 @@ public class ObjType implements ConfigType {
 		this.field8627 = arg0;
 		this.myList = arg1;
 		this.field8621 = arg2;
-		this.ops = (String[]) this.field8621.field8617.clone();
-		this.iops = (String[]) this.field8621.field8616.clone();
+		this.ops = (String[]) this.field8621.defaultops.clone();
+		this.iops = (String[]) this.field8621.defaultiops.clone();
 	}
 
 	@ObfuscatedName("abv.n(I)V")
@@ -281,8 +281,8 @@ public class ObjType implements ConfigType {
 			return;
 		}
 		this.field8685 = 0;
-		this.ops = this.field8621.field8617;
-		this.iops = this.field8621.field8616;
+		this.ops = this.field8621.defaultops;
+		this.iops = this.field8621.defaultiops;
 		this.field8645 = false;
 		this.field8691 = null;
 		this.field8687 = false;
