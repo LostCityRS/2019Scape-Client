@@ -526,6 +526,10 @@ public class Packet extends Class93 {
 
 	@OriginalMember(owner = "client!alw", name = "bd", descriptor = "([II)V", line = 446)
 	public void tinyenc(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1) {
+		if (!client.ENABLE_TINYENC) {
+			return;
+		}
+
 		@Pc(6) int local6 = this.pos * 212851357 / 8;
 		this.pos = 0;
 		for (@Pc(11) int local11 = 0; local11 < local6; local11++) {
@@ -568,6 +572,10 @@ public class Packet extends Class93 {
 
 	@OriginalMember(owner = "client!alw", name = "bi", descriptor = "([IIIB)V", line = 486)
 	public void tinyenc(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) byte arg3) {
+		if (!client.ENABLE_TINYENC) {
+			return;
+		}
+
 		@Pc(4) int local4 = this.pos * 212851357;
 		this.pos = arg1 * -1445626955;
 		@Pc(15) int local15 = (arg2 - arg1) / 8;
