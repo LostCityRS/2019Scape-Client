@@ -50,7 +50,10 @@ public class Class49_Sub1 extends Class49 {
 		} catch (@Pc(65) URISyntaxException local65) {
 			return this.method16599(2055205362);
 		}
-		local41.addAll(local63);
+		try {
+			local41.addAll(local63);
+		} catch (Exception ex) {
+		}
 		@Pc(76) Object[] local76 = local41.toArray();
 		@Pc(78) IOException_Sub1 local78 = null;
 		@Pc(80) Object[] local80 = local76;
