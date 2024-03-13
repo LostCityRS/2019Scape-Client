@@ -38,21 +38,21 @@ public class NPCHeadIconCustomisation {
 
 	public NPCHeadIconCustomisation(NPCType arg0, boolean arg1) {
 		if (arg1) {
-			this.field2689 = new int[arg0.field2752.length];
-			this.field2683 = new float[arg0.field2752.length];
-			this.field2686 = new int[arg0.field2752.length][3];
-			this.field2687 = new int[arg0.field2752.length][3];
-			System.arraycopy(arg0.field2752, 0, this.field2689, 0, this.field2689.length);
+			this.field2689 = new int[arg0.models.length];
+			this.field2683 = new float[arg0.models.length];
+			this.field2686 = new int[arg0.models.length][3];
+			this.field2687 = new int[arg0.models.length][3];
+			System.arraycopy(arg0.models, 0, this.field2689, 0, this.field2689.length);
 		} else {
-			this.field2689 = new int[arg0.field2701.length];
-			this.field2683 = new float[arg0.field2701.length];
-			this.field2686 = new int[arg0.field2701.length][3];
-			this.field2687 = new int[arg0.field2701.length][3];
-			System.arraycopy(arg0.field2701, 0, this.field2689, 0, this.field2689.length);
+			this.field2689 = new int[arg0.heads.length];
+			this.field2683 = new float[arg0.heads.length];
+			this.field2686 = new int[arg0.heads.length][3];
+			this.field2687 = new int[arg0.heads.length][3];
+			System.arraycopy(arg0.heads, 0, this.field2689, 0, this.field2689.length);
 		}
-		if (arg0.field2705 != null) {
-			this.field2684 = new short[arg0.field2705.length];
-			System.arraycopy(arg0.field2705, 0, this.field2684, 0, this.field2684.length);
+		if (arg0.recol_d != null) {
+			this.field2684 = new short[arg0.recol_d.length];
+			System.arraycopy(arg0.recol_d, 0, this.field2684, 0, this.field2684.length);
 		}
 		if (arg0.field2708 != null) {
 			this.field2685 = new short[arg0.field2708.length];

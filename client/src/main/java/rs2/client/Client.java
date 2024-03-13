@@ -10375,7 +10375,7 @@ public final class Client extends GameShell {
 			if (var12 > (0x1 << arg0 - 1) - 1) {
 				var12 -= 0x1 << arg0;
 			}
-			var6.method16502(var6.field12083.field2699);
+			var6.method16502(var6.field12083.size);
 			var6.field10444 = var6.field12083.field2731 << 3;
 			if (var3) {
 				var6.method16491(var11, true);
@@ -10476,8 +10476,8 @@ public final class Client extends GameShell {
 			}
 			if ((var4 & 0x80000) != 0) {
 				int var29 = 0;
-				if (var3.field12083.field2705 != null) {
-					var29 = var3.field12083.field2705.length;
+				if (var3.field12083.recol_d != null) {
+					var29 = var3.field12083.recol_d.length;
 				}
 				byte var30 = 0;
 				if (var3.field12083.field2708 != null) {
@@ -10538,7 +10538,7 @@ public final class Client extends GameShell {
 			if ((var4 & 0x800000) != 0) {
 				var3.field12081 = var0.g2_alt3();
 				if (var3.field12081 == 65535) {
-					var3.field12081 = var3.field12083.field2719;
+					var3.field12081 = var3.field12083.vislevel;
 				}
 			}
 			if ((var4 & 0x10) != 0) {
@@ -10546,7 +10546,7 @@ public final class Client extends GameShell {
 					PositionedSound.method10111(var3);
 				}
 				var3.method19157((NPCType) Statics.field7961.list(var0.gSmart2or4null()), (var4 & 0x10000) == 0, (var4 & 0x800000) == 0, true);
-				var3.method16502(var3.field12083.field2699);
+				var3.method16502(var3.field12083.size);
 				var3.field10444 = var3.field12083.field2731 << 3;
 				if (var3.field12083.method4556()) {
 					PositionedSound.method9739(var3.field11717, var3.field10450[0], var3.field10448[0], 0, null, var3, null);
@@ -10686,8 +10686,8 @@ public final class Client extends GameShell {
 			}
 			if ((var4 & 0x400) != 0) {
 				int var85 = 0;
-				if (var3.field12083.field2705 != null) {
-					var85 = var3.field12083.field2705.length;
+				if (var3.field12083.recol_d != null) {
+					var85 = var3.field12083.recol_d.length;
 				}
 				int var86 = 0;
 				if (var3.field12083.field2708 != null) {
@@ -10743,8 +10743,8 @@ public final class Client extends GameShell {
 			}
 			if ((var4 & 0x10000) != 0) {
 				var3.field12082 = var0.gjstr();
-				if ("".equals(var3.field12082) || var3.field12082.equals(var3.field12083.field2703)) {
-					var3.field12082 = var3.field12083.field2703;
+				if ("".equals(var3.field12082) || var3.field12082.equals(var3.field12083.name)) {
+					var3.field12082 = var3.field12083.name;
 				}
 			}
 			if ((var4 & 0x20000000) != 0) {

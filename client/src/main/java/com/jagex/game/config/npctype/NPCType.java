@@ -40,16 +40,16 @@ public class NPCType implements ConfigType {
 	public int field2732;
 
 	@ObfuscatedName("if.z")
-	public String field2703 = "null";
+	public String name = "null";
 
 	@ObfuscatedName("if.p")
-	public int field2699 = 1;
+	public int size = 1;
 
 	@ObfuscatedName("if.d")
-	public int[] field2752;
+	public int[] models;
 
 	@ObfuscatedName("if.c")
-	public int[] field2701;
+	public int[] heads;
 
 	@ObfuscatedName("if.r")
 	public int[][] field2709;
@@ -58,10 +58,10 @@ public class NPCType implements ConfigType {
 	public int field2762 = -1;
 
 	@ObfuscatedName("if.o")
-	public short[] field2704;
+	public short[] recol_s;
 
 	@ObfuscatedName("if.s")
-	public short[] field2705;
+	public short[] recol_d;
 
 	@ObfuscatedName("if.y")
 	public byte[] field2733;
@@ -91,7 +91,7 @@ public class NPCType implements ConfigType {
 	public byte field2714 = 0;
 
 	@ObfuscatedName("if.t")
-	public String[] field2692;
+	public String[] ops;
 
 	@ObfuscatedName("if.ae")
 	public int[] field2716;
@@ -100,16 +100,16 @@ public class NPCType implements ConfigType {
 	public int field2717 = -1;
 
 	@ObfuscatedName("if.ah")
-	public boolean field2718 = true;
+	public boolean minimap = true;
 
 	@ObfuscatedName("if.al")
-	public int field2719 = -1;
+	public int vislevel = -1;
 
 	@ObfuscatedName("if.ac")
-	public int field2720 = 128;
+	public int resizeh = 128;
 
 	@ObfuscatedName("if.ai")
-	public int field2721 = 128;
+	public int resizev = 128;
 
 	@ObfuscatedName("if.aw")
 	public boolean field2722 = false;
@@ -199,7 +199,7 @@ public class NPCType implements ConfigType {
 	public int field2742 = 255;
 
 	@ObfuscatedName("if.bm")
-	public IterableMap field2753;
+	public IterableMap params;
 
 	@ObfuscatedName("if.bb")
 	public int field2754 = -1;
@@ -244,58 +244,58 @@ public class NPCType implements ConfigType {
 		this.field2732 = arg0;
 		this.field2695 = arg1;
 		this.field2696 = arg2;
-		this.field2692 = (String[]) this.field2695.field2774.clone();
+		this.ops = (String[]) this.field2695.defaultops.clone();
 	}
 
 	@ObfuscatedName("if.e(Lalw;B)V")
-	public void decode(Packet arg0) {
+	public void decode(Packet buf) {
 		while (true) {
-			int var2 = arg0.g1();
-			if (var2 == 0) {
+			int code = buf.g1();
+			if (code == 0) {
 				return;
 			}
-			this.method4541(arg0, var2);
+			this.method4541(buf, code);
 		}
 	}
 
 	@ObfuscatedName("if.u(Lalw;II)V")
-	public void method4541(Packet arg0, int arg1) {
-		if (arg1 == 1) {
-			int var3 = arg0.g1();
-			this.field2752 = new int[var3];
+	public void method4541(Packet buf, int code) {
+		if (code == 1) {
+			int var3 = buf.g1();
+			this.models = new int[var3];
 			for (int var4 = 0; var4 < var3; var4++) {
-				this.field2752[var4] = arg0.gSmart2or4null();
+				this.models[var4] = buf.gSmart2or4null();
 			}
-		} else if (arg1 == 2) {
-			this.field2703 = arg0.gjstr();
-		} else if (arg1 == 12) {
-			this.field2699 = arg0.g1();
-		} else if (arg1 >= 30 && arg1 < 35) {
-			this.field2692[arg1 - 30] = arg0.gjstr();
-		} else if (arg1 == 40) {
-			int var5 = arg0.g1();
-			this.field2704 = new short[var5];
-			this.field2705 = new short[var5];
+		} else if (code == 2) {
+			this.name = buf.gjstr();
+		} else if (code == 12) {
+			this.size = buf.g1();
+		} else if (code >= 30 && code < 35) {
+			this.ops[code - 30] = buf.gjstr();
+		} else if (code == 40) {
+			int var5 = buf.g1();
+			this.recol_s = new short[var5];
+			this.recol_d = new short[var5];
 			for (int var6 = 0; var6 < var5; var6++) {
-				this.field2704[var6] = (short) arg0.g2();
-				this.field2705[var6] = (short) arg0.g2();
+				this.recol_s[var6] = (short) buf.g2();
+				this.recol_d[var6] = (short) buf.g2();
 			}
-		} else if (arg1 == 41) {
-			int var7 = arg0.g1();
+		} else if (code == 41) {
+			int var7 = buf.g1();
 			this.field2707 = new short[var7];
 			this.field2708 = new short[var7];
 			for (int var8 = 0; var8 < var7; var8++) {
-				this.field2707[var8] = (short) arg0.g2();
-				this.field2708[var8] = (short) arg0.g2();
+				this.field2707[var8] = (short) buf.g2();
+				this.field2708[var8] = (short) buf.g2();
 			}
-		} else if (arg1 == 42) {
-			int var9 = arg0.g1();
+		} else if (code == 42) {
+			int var9 = buf.g1();
 			this.field2733 = new byte[var9];
 			for (int var10 = 0; var10 < var9; var10++) {
-				this.field2733[var10] = arg0.g1b();
+				this.field2733[var10] = buf.g1b();
 			}
-		} else if (arg1 == 44) {
-			int var11 = arg0.g2();
+		} else if (code == 44) {
+			int var11 = buf.g2();
 			int var12 = 0;
 			for (int var13 = var11; var13 > 0; var13 >>= 0x1) {
 				var12++;
@@ -309,8 +309,8 @@ public class NPCType implements ConfigType {
 					this.field2760[var15] = -1;
 				}
 			}
-		} else if (arg1 == 45) {
-			int var16 = arg0.g2();
+		} else if (code == 45) {
+			int var16 = buf.g2();
 			int var17 = 0;
 			for (int var18 = var16; var18 > 0; var18 >>= 0x1) {
 				var17++;
@@ -324,28 +324,28 @@ public class NPCType implements ConfigType {
 					this.field2715[var20] = -1;
 				}
 			}
-		} else if (arg1 == 60) {
-			int var21 = arg0.g1();
-			this.field2701 = new int[var21];
+		} else if (code == 60) {
+			int var21 = buf.g1();
+			this.heads = new int[var21];
 			for (int var22 = 0; var22 < var21; var22++) {
-				this.field2701[var22] = arg0.gSmart2or4null();
+				this.heads[var22] = buf.gSmart2or4null();
 			}
-		} else if (arg1 == 93) {
-			this.field2718 = false;
-		} else if (arg1 == 95) {
-			this.field2719 = arg0.g2();
-		} else if (arg1 == 97) {
-			this.field2720 = arg0.g2();
-		} else if (arg1 == 98) {
-			this.field2721 = arg0.g2();
-		} else if (arg1 == 99) {
+		} else if (code == 93) {
+			this.minimap = false;
+		} else if (code == 95) {
+			this.vislevel = buf.g2();
+		} else if (code == 97) {
+			this.resizeh = buf.g2();
+		} else if (code == 98) {
+			this.resizev = buf.g2();
+		} else if (code == 99) {
 			this.field2722 = true;
-		} else if (arg1 == 100) {
-			this.field2725 = arg0.g1b();
-		} else if (arg1 == 101) {
-			this.field2726 = arg0.g1b() * 5;
-		} else if (arg1 == 102) {
-			int var23 = arg0.g1();
+		} else if (code == 100) {
+			this.field2725 = buf.g1b();
+		} else if (code == 101) {
+			this.field2726 = buf.g1b() * 5;
+		} else if (code == 102) {
+			int var23 = buf.g1();
 			int var24 = 0;
 			for (int var25 = var23; var25 != 0; var25 >>= 0x1) {
 				var24++;
@@ -357,176 +357,176 @@ public class NPCType implements ConfigType {
 					this.field2738[var26] = -1;
 					this.field2728[var26] = -1;
 				} else {
-					this.field2738[var26] = arg0.gSmart2or4null();
-					this.field2728[var26] = (short) arg0.gSmart1or2null();
+					this.field2738[var26] = buf.gSmart2or4null();
+					this.field2728[var26] = (short) buf.gSmart1or2null();
 				}
 			}
-		} else if (arg1 == 103) {
-			this.field2731 = arg0.g2();
-		} else if (arg1 == 106 || arg1 == 118) {
-			this.field2730 = arg0.g2();
+		} else if (code == 103) {
+			this.field2731 = buf.g2();
+		} else if (code == 106 || code == 118) {
+			this.field2730 = buf.g2();
 			if (this.field2730 == 65535) {
 				this.field2730 = -1;
 			}
-			this.field2755 = arg0.g2();
+			this.field2755 = buf.g2();
 			if (this.field2755 == 65535) {
 				this.field2755 = -1;
 			}
 			int var40 = -1;
-			if (arg1 == 118) {
-				var40 = arg0.g2();
+			if (code == 118) {
+				var40 = buf.g2();
 				if (var40 == 65535) {
 					var40 = -1;
 				}
 			}
-			int var41 = arg0.gSmart1or2();
+			int var41 = buf.gSmart1or2();
 			this.field2735 = new int[var41 + 2];
 			for (int var42 = 0; var42 <= var41; var42++) {
-				this.field2735[var42] = arg0.g2();
+				this.field2735[var42] = buf.g2();
 				if (this.field2735[var42] == 65535) {
 					this.field2735[var42] = -1;
 				}
 			}
 			this.field2735[var41 + 1] = var40;
-		} else if (arg1 == 107) {
+		} else if (code == 107) {
 			this.field2734 = false;
-		} else if (arg1 == 109) {
+		} else if (code == 109) {
 			this.field2736 = false;
-		} else if (arg1 == 111) {
+		} else if (code == 111) {
 			this.field2710 = false;
-		} else if (arg1 == 113) {
-			this.field2737 = (short) arg0.g2();
-			this.field2729 = (short) arg0.g2();
-		} else if (arg1 == 114) {
-			this.field2739 = arg0.g1b();
-			this.field2740 = arg0.g1b();
-		} else if (arg1 == 119) {
-			this.field2743 = arg0.g1b();
-		} else if (arg1 == 121) {
-			this.field2709 = new int[this.field2752.length][];
-			int var27 = arg0.g1();
+		} else if (code == 113) {
+			this.field2737 = (short) buf.g2();
+			this.field2729 = (short) buf.g2();
+		} else if (code == 114) {
+			this.field2739 = buf.g1b();
+			this.field2740 = buf.g1b();
+		} else if (code == 119) {
+			this.field2743 = buf.g1b();
+		} else if (code == 121) {
+			this.field2709 = new int[this.models.length][];
+			int var27 = buf.g1();
 			for (int var28 = 0; var28 < var27; var28++) {
-				int var29 = arg0.g1();
+				int var29 = buf.g1();
 				int[] var30 = this.field2709[var29] = new int[3];
-				var30[0] = arg0.g1b();
-				var30[1] = arg0.g1b();
-				var30[2] = arg0.g1b();
+				var30[0] = buf.g1b();
+				var30[1] = buf.g1b();
+				var30[2] = buf.g1b();
 			}
-		} else if (arg1 == 123) {
-			this.field2754 = arg0.g2();
-		} else if (arg1 == 125) {
-			this.field2727 = (CompassPoint) SerializableEnums.decode(CompassPoint.method9573(), arg0.g1b());
-		} else if (arg1 == 127) {
-			this.field2762 = arg0.g2();
-		} else if (arg1 == 128) {
-			SerializableEnums.decode(MoveSpeed.method13901(), arg0.g1());
-		} else if (arg1 == 134) {
-			this.field2746 = arg0.g2();
+		} else if (code == 123) {
+			this.field2754 = buf.g2();
+		} else if (code == 125) {
+			this.field2727 = (CompassPoint) SerializableEnums.decode(CompassPoint.method9573(), buf.g1b());
+		} else if (code == 127) {
+			this.field2762 = buf.g2();
+		} else if (code == 128) {
+			SerializableEnums.decode(MoveSpeed.method13901(), buf.g1());
+		} else if (code == 134) {
+			this.field2746 = buf.g2();
 			if (this.field2746 == 65535) {
 				this.field2746 = -1;
 			}
-			this.field2747 = arg0.g2();
+			this.field2747 = buf.g2();
 			if (this.field2747 == 65535) {
 				this.field2747 = -1;
 			}
-			this.field2748 = arg0.g2();
+			this.field2748 = buf.g2();
 			if (this.field2748 == 65535) {
 				this.field2748 = -1;
 			}
-			this.field2749 = arg0.g2();
+			this.field2749 = buf.g2();
 			if (this.field2749 == 65535) {
 				this.field2749 = -1;
 			}
-			this.field2750 = arg0.g1();
-		} else if (arg1 == 135 || arg1 == 136) {
-			arg0.g1();
-			arg0.g2();
-		} else if (arg1 == 137) {
-			this.field2717 = arg0.g2();
-		} else if (arg1 == 138) {
-			this.field2706 = arg0.gSmart2or4null();
-		} else if (arg1 == 140) {
-			this.field2742 = arg0.g1();
-		} else if (arg1 == 141) {
+			this.field2750 = buf.g1();
+		} else if (code == 135 || code == 136) {
+			buf.g1();
+			buf.g2();
+		} else if (code == 137) {
+			this.field2717 = buf.g2();
+		} else if (code == 138) {
+			this.field2706 = buf.gSmart2or4null();
+		} else if (code == 140) {
+			this.field2742 = buf.g1();
+		} else if (code == 141) {
 			this.field2756 = true;
-		} else if (arg1 == 142) {
-			this.field2763 = arg0.g2();
-		} else if (arg1 == 143) {
+		} else if (code == 142) {
+			this.field2763 = buf.g2();
+		} else if (code == 143) {
 			this.field2723 = true;
-		} else if (arg1 >= 150 && arg1 < 155) {
-			this.field2692[arg1 - 150] = arg0.gjstr();
-			if (!this.field2695.field2769) {
-				this.field2692[arg1 - 150] = null;
+		} else if (code >= 150 && code < 155) {
+			this.ops[code - 150] = buf.gjstr();
+			if (!this.field2695.allowMembers) {
+				this.ops[code - 150] = null;
 			}
-		} else if (arg1 == 155) {
-			this.field2711 = arg0.g1b();
-			this.field2712 = arg0.g1b();
-			this.field2698 = arg0.g1b();
-			this.field2714 = arg0.g1b();
-		} else if (arg1 == 158) {
+		} else if (code == 155) {
+			this.field2711 = buf.g1b();
+			this.field2712 = buf.g1b();
+			this.field2698 = buf.g1b();
+			this.field2714 = buf.g1b();
+		} else if (code == 158) {
 			this.field2758 = 1;
-		} else if (arg1 == 159) {
+		} else if (code == 159) {
 			this.field2758 = 0;
-		} else if (arg1 == 160) {
-			int var31 = arg0.g1();
+		} else if (code == 160) {
+			int var31 = buf.g1();
 			this.field2757 = new int[var31];
 			for (int var32 = 0; var32 < var31; var32++) {
-				this.field2757[var32] = arg0.g2();
+				this.field2757[var32] = buf.g2();
 			}
-		} else if (arg1 != 162) {
-			if (arg1 == 163) {
-				this.field2759 = arg0.g1();
-			} else if (arg1 == 164) {
-				this.field2761 = arg0.g2();
-				this.field2700 = arg0.g2();
-			} else if (arg1 == 165) {
-				this.field2713 = arg0.g1();
-			} else if (arg1 == 168) {
-				this.field2751 = arg0.g1();
-			} else if (arg1 == 169) {
+		} else if (code != 162) {
+			if (code == 163) {
+				this.field2759 = buf.g1();
+			} else if (code == 164) {
+				this.field2761 = buf.g2();
+				this.field2700 = buf.g2();
+			} else if (code == 165) {
+				this.field2713 = buf.g1();
+			} else if (code == 168) {
+				this.field2751 = buf.g1();
+			} else if (code == 169) {
 				this.field2766 = false;
-			} else if (arg1 >= 170 && arg1 < 176) {
+			} else if (code >= 170 && code < 176) {
 				if (this.field2716 == null) {
 					this.field2716 = new int[6];
 					Arrays.fill(this.field2716, -1);
 				}
-				int var33 = arg0.g2();
+				int var33 = buf.g2();
 				if (var33 == 65535) {
 					var33 = -1;
 				}
-				this.field2716[arg1 - 170] = var33;
-			} else if (arg1 != 178) {
-				if (arg1 == 179) {
+				this.field2716[code - 170] = var33;
+			} else if (code != 178) {
+				if (code == 179) {
 					this.field2724 = new Cuboid();
-					this.field2724.field4252 = arg0.gSmart1or2s();
-					this.field2724.field4253 = arg0.gSmart1or2s();
-					this.field2724.field4248 = arg0.gSmart1or2s();
-					this.field2724.field4249 = arg0.gSmart1or2s();
-					this.field2724.field4250 = arg0.gSmart1or2s();
-					this.field2724.field4251 = arg0.gSmart1or2s();
-				} else if (arg1 == 180) {
-					this.field2765 = arg0.g1() & 0xFF;
-				} else if (arg1 == 181) {
-					this.field2741 = (short) arg0.g2();
-					this.field2702 = (byte) arg0.g1();
-				} else if (arg1 == 182) {
+					this.field2724.field4252 = buf.gSmart1or2s();
+					this.field2724.field4253 = buf.gSmart1or2s();
+					this.field2724.field4248 = buf.gSmart1or2s();
+					this.field2724.field4249 = buf.gSmart1or2s();
+					this.field2724.field4250 = buf.gSmart1or2s();
+					this.field2724.field4251 = buf.gSmart1or2s();
+				} else if (code == 180) {
+					this.field2765 = buf.g1() & 0xFF;
+				} else if (code == 181) {
+					this.field2741 = (short) buf.g2();
+					this.field2702 = (byte) buf.g1();
+				} else if (code == 182) {
 					this.field2690 = true;
-				} else if (arg1 == 249) {
-					int var34 = arg0.g1();
-					if (this.field2753 == null) {
+				} else if (code == 249) {
+					int var34 = buf.g1();
+					if (this.params == null) {
 						int var35 = IntMath.bitceil(var34);
-						this.field2753 = new IterableMap(var35);
+						this.params = new IterableMap(var35);
 					}
 					for (int var36 = 0; var36 < var34; var36++) {
-						boolean var37 = arg0.g1() == 1;
-						int var38 = arg0.g3();
+						boolean var37 = buf.g1() == 1;
+						int var38 = buf.g3();
 						Node var39;
 						if (var37) {
-							var39 = new ObjectWrapper(arg0.gjstr());
+							var39 = new ObjectWrapper(buf.gjstr());
 						} else {
-							var39 = new IntWrapper(arg0.g4s());
+							var39 = new IntWrapper(buf.g4s());
 						}
-						this.field2753.method14501(var39, (long) var38);
+						this.params.method14501(var39, (long) var38);
 					}
 				}
 			}
@@ -535,8 +535,8 @@ public class NPCType implements ConfigType {
 
 	@ObfuscatedName("if.n(I)V")
 	public void postDecode() {
-		if (this.field2752 == null) {
-			this.field2752 = new int[0];
+		if (this.models == null) {
+			this.models = new int[0];
 		}
 		if (this.field2758 != -1) {
 			return;
@@ -560,10 +560,10 @@ public class NPCType implements ConfigType {
 			return var14 == null ? null : var14.method4543(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12);
 		}
 		int var15 = arg1;
-		if (this.field2721 != 128) {
+		if (this.resizev != 128) {
 			var15 = arg1 | 0x2;
 		}
-		if (this.field2720 != 128) {
+		if (this.resizeh != 128) {
 			var15 |= 0x5;
 		}
 		boolean var16 = false;
@@ -586,10 +586,10 @@ public class NPCType implements ConfigType {
 		if (arg10 != null) {
 			var19 |= arg10.field2688 << 24;
 		}
-		WeightedCache var21 = this.field2695.field2771;
+		WeightedCache var21 = this.field2695.modelCache;
 		Model var22;
-		synchronized (this.field2695.field2771) {
-			var22 = (Model) this.field2695.field2771.method2930(var19);
+		synchronized (this.field2695.modelCache) {
+			var22 = (Model) this.field2695.modelCache.method2930(var19);
 		}
 		BASType var24 = null;
 		if (!arg12 && arg11 != -1) {
@@ -602,7 +602,7 @@ public class NPCType implements ConfigType {
 				var15 |= var22.method1691();
 			}
 			int var25 = var15;
-			if (this.field2704 != null) {
+			if (this.recol_s != null) {
 				var25 = var15 | 0x4000;
 			}
 			if (this.field2707 != null) {
@@ -611,12 +611,12 @@ public class NPCType implements ConfigType {
 			if (this.field2714 != 0) {
 				var25 |= 0x80000;
 			}
-			int[] var26 = arg10 == null || arg10.field2689 == null ? this.field2752 : arg10.field2689;
+			int[] var26 = arg10 == null || arg10.field2689 == null ? this.models : arg10.field2689;
 			boolean var27 = false;
-			Js5 var28 = this.field2695.field2770;
-			synchronized (this.field2695.field2770) {
+			Js5 var28 = this.field2695.js5;
+			synchronized (this.field2695.js5) {
 				for (int var29 = 0; var29 < var26.length; var29++) {
-					if (var26[var29] != -1 && !this.field2695.field2770.requestdownload(var26[var29], 0)) {
+					if (var26[var29] != -1 && !this.field2695.js5.requestdownload(var26[var29], 0)) {
 						var27 = true;
 					}
 				}
@@ -627,9 +627,9 @@ public class NPCType implements ConfigType {
 			ModelUnlit[] var31 = new ModelUnlit[var26.length];
 			for (int var32 = 0; var32 < var26.length; var32++) {
 				if (var26[var32] != -1) {
-					Js5 var33 = this.field2695.field2770;
-					synchronized (this.field2695.field2770) {
-						var31[var32] = ModelUnlit.method1931(this.field2695.field2770, var26[var32], 0);
+					Js5 var33 = this.field2695.js5;
+					synchronized (this.field2695.js5) {
+						var31[var32] = ModelUnlit.method1931(this.field2695.js5, var26[var32], 0);
 					}
 					if (var31[var32] != null) {
 						if (var31[var32].field1372 < 13) {
@@ -689,18 +689,18 @@ public class NPCType implements ConfigType {
 				var43 = new ModelUnlit(var31, var31.length);
 			}
 			var22 = arg0.method2211(var43, var25, this.field2695.field2773, this.field2725 + 64, this.field2726 + 850);
-			if (this.field2704 != null) {
+			if (this.recol_s != null) {
 				short[] var44;
 				if (arg10 == null || arg10.field2684 == null) {
-					var44 = this.field2705;
+					var44 = this.recol_d;
 				} else {
 					var44 = arg10.field2684;
 				}
-				for (int var45 = 0; var45 < this.field2704.length; var45++) {
+				for (int var45 = 0; var45 < this.recol_s.length; var45++) {
 					if (this.field2733 == null || var45 >= this.field2733.length) {
-						var22.method1859(this.field2704[var45], var44[var45]);
+						var22.method1859(this.recol_s[var45], var44[var45]);
 					} else {
-						var22.method1859(this.field2704[var45], field2694[this.field2733[var45] & 0xFF]);
+						var22.method1859(this.recol_s[var45], field2694[this.field2733[var45] & 0xFF]);
 					}
 				}
 			}
@@ -720,9 +720,9 @@ public class NPCType implements ConfigType {
 			}
 			var22.method1736();
 			var22.method1690(var15);
-			WeightedCache var48 = this.field2695.field2771;
-			synchronized (this.field2695.field2771) {
-				this.field2695.field2771.method2921(var22, var19);
+			WeightedCache var48 = this.field2695.modelCache;
+			synchronized (this.field2695.modelCache) {
+				this.field2695.modelCache.method2921(var22, var19);
 			}
 		}
 		Model var50 = var22.method1773((byte) 4, var15, true);
@@ -782,8 +782,8 @@ public class NPCType implements ConfigType {
 		} else if (arg6 != null) {
 			arg6.method14359(var50, 0);
 		}
-		if (this.field2720 != 128 || this.field2721 != 128) {
-			var50.method1699(this.field2720, this.field2721, this.field2720);
+		if (this.resizeh != 128 || this.resizev != 128) {
+			var50.method1699(this.resizeh, this.resizev, this.resizeh);
 		}
 		var50.method1690(arg1);
 		return var50;
@@ -794,7 +794,7 @@ public class NPCType implements ConfigType {
 		if (this.field2735 != null) {
 			NPCType var7 = this.method4547(arg2, arg3);
 			return var7 == null ? null : var7.method4544(arg0, arg1, arg2, arg3, arg4, arg5);
-		} else if (this.field2701 == null && (arg5 == null || arg5.field2689 == null)) {
+		} else if (this.heads == null && (arg5 == null || arg5.field2689 == null)) {
 			return null;
 		} else {
 			int var8 = arg1;
@@ -815,7 +815,7 @@ public class NPCType implements ConfigType {
 					var8 |= var12.method1691();
 				}
 				int var14 = var8;
-				if (this.field2704 != null) {
+				if (this.recol_s != null) {
 					var14 = var8 | 0x4000;
 				}
 				if (this.field2707 != null) {
@@ -824,16 +824,16 @@ public class NPCType implements ConfigType {
 				if (this.field2714 != 0) {
 					var14 |= 0x80000;
 				}
-				int[] var15 = arg5 == null || arg5.field2689 == null ? this.field2701 : arg5.field2689;
+				int[] var15 = arg5 == null || arg5.field2689 == null ? this.heads : arg5.field2689;
 				boolean var16 = false;
-				Js5 var17 = this.field2695.field2770;
-				synchronized (this.field2695.field2770) {
+				Js5 var17 = this.field2695.js5;
+				synchronized (this.field2695.js5) {
 					int var18 = 0;
 					while (true) {
 						if (var18 >= var15.length) {
 							break;
 						}
-						if (!this.field2695.field2770.requestdownload(var15[var18], 0)) {
+						if (!this.field2695.js5.requestdownload(var15[var18], 0)) {
 							var16 = true;
 						}
 						var18++;
@@ -843,10 +843,10 @@ public class NPCType implements ConfigType {
 					return null;
 				}
 				ModelUnlit[] var20 = new ModelUnlit[var15.length];
-				Js5 var21 = this.field2695.field2770;
-				synchronized (this.field2695.field2770) {
+				Js5 var21 = this.field2695.js5;
+				synchronized (this.field2695.js5) {
 					for (int var22 = 0; var22 < var15.length; var22++) {
-						var20[var22] = ModelUnlit.method1931(this.field2695.field2770, var15[var22], 0);
+						var20[var22] = ModelUnlit.method1931(this.field2695.js5, var15[var22], 0);
 					}
 				}
 				for (int var24 = 0; var24 < var15.length; var24++) {
@@ -861,18 +861,18 @@ public class NPCType implements ConfigType {
 					var25 = new ModelUnlit(var20, var20.length);
 				}
 				var12 = arg0.method2211(var25, var14, this.field2695.field2773, 64, 768);
-				if (this.field2704 != null) {
+				if (this.recol_s != null) {
 					short[] var26;
 					if (arg5 == null || arg5.field2684 == null) {
-						var26 = this.field2705;
+						var26 = this.recol_d;
 					} else {
 						var26 = arg5.field2684;
 					}
-					for (int var27 = 0; var27 < this.field2704.length; var27++) {
+					for (int var27 = 0; var27 < this.recol_s.length; var27++) {
 						if (this.field2733 == null || var27 >= this.field2733.length) {
-							var12.method1859(this.field2704[var27], var26[var27]);
+							var12.method1859(this.recol_s[var27], var26[var27]);
 						} else {
-							var12.method1859(this.field2704[var27], field2694[this.field2733[var27] & 0xFF]);
+							var12.method1859(this.recol_s[var27], field2694[this.field2733[var27] & 0xFF]);
 						}
 					}
 				}
@@ -907,14 +907,14 @@ public class NPCType implements ConfigType {
 
 	@ObfuscatedName("if.c(I)Z")
 	public final boolean method4545() {
-		if (this.field2752 == null) {
+		if (this.models == null) {
 			return true;
 		}
 		boolean var1 = true;
-		int[] var2 = this.field2752;
+		int[] var2 = this.models;
 		for (int var3 = 0; var3 < var2.length; var3++) {
 			int var4 = var2[var3];
-			if (!this.field2695.field2770.requestdownload(var4, 0)) {
+			if (!this.field2695.js5.requestdownload(var4, 0)) {
 				var1 = false;
 			}
 		}
@@ -923,20 +923,20 @@ public class NPCType implements ConfigType {
 
 	@ObfuscatedName("if.r(IIB)I")
 	public int method4551(int arg0, int arg1) {
-		if (this.field2753 == null) {
+		if (this.params == null) {
 			return arg1;
 		} else {
-			IntWrapper var3 = (IntWrapper) this.field2753.method14495((long) arg0);
+			IntWrapper var3 = (IntWrapper) this.params.method14495((long) arg0);
 			return var3 == null ? arg1 : var3.field11442;
 		}
 	}
 
 	@ObfuscatedName("if.v(ILjava/lang/String;I)Ljava/lang/String;")
 	public String method4548(int arg0, String arg1) {
-		if (this.field2753 == null) {
+		if (this.params == null) {
 			return arg1;
 		} else {
-			ObjectWrapper var3 = (ObjectWrapper) this.field2753.method14495((long) arg0);
+			ObjectWrapper var3 = (ObjectWrapper) this.params.method14495((long) arg0);
 			return var3 == null ? arg1 : (String) var3.field11436;
 		}
 	}

@@ -117,10 +117,10 @@ public class NpcEntity extends PathingEntity {
 		this.field12083 = arg0;
 		if (this.field12083 != null) {
 			if (arg1) {
-				this.field12082 = this.field12083.field2703;
+				this.field12082 = this.field12083.name;
 			}
 			if (arg2) {
-				this.field12081 = this.field12083.field2719;
+				this.field12081 = this.field12083.vislevel;
 			}
 			if (arg3) {
 				this.field12080 = null;
@@ -172,7 +172,7 @@ public class NpcEntity extends PathingEntity {
 			if (var14 > -1 && Statics.field688.textures.method18426() == 1) {
 				var16 = SpotShadowFactory.method3283(arg0, var5, this.field10405, this.field12466, this.field10407, this.field10459[0], var14, var15, var13 == null ? var12 : var13);
 			} else {
-				var16 = SpotShadowFactory.method5102(arg0, var5, this.field10405, this.field12466, this.field10407, this.field12083.field2699, this.field10459[0], this.field12083.field2737 & 0xFFFF, this.field12083.field2729 & 0xFFFF, this.field12083.field2739 & 0xFF, this.field12083.field2740 & 0xFF, var13 == null ? var12 : var13);
+				var16 = SpotShadowFactory.method5102(arg0, var5, this.field10405, this.field12466, this.field10407, this.field12083.size, this.field10459[0], this.field12083.field2737 & 0xFFFF, this.field12083.field2729 & 0xFFFF, this.field12083.field2739 & 0xFF, this.field12083.field2740 & 0xFF, var13 == null ? var12 : var13);
 			}
 			if (var16 != null) {
 				var11 = PickableEntity.method16749(this.method19162());
@@ -482,7 +482,7 @@ public class NpcEntity extends PathingEntity {
 						label51: {
 							if (this.field12083.field2713 <= 0) {
 								if (this.field12083.field2759 == -1) {
-									if (this.field12083.field2699 != 1) {
+									if (this.field12083.size != 1) {
 										break label51;
 									}
 								} else if (this.field12083.field2759 != 1) {

@@ -5056,7 +5056,7 @@ public class Statics {
 			if (var4 == null) {
 				var2 = "";
 			} else {
-				var2 = var4.field2703;
+				var2 = var4.name;
 			}
 		}
 		if (var2 == null) {

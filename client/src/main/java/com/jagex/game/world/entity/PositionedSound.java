@@ -253,8 +253,8 @@ public class PositionedSound extends Node {
 				var10 = var10.method4547(Statics.field7410, Statics.field7410);
 			}
 			if (var10 != null) {
-				var7.field11352 = var10.field2699 + arg1 << 9;
-				var7.field11353 = var10.field2699 + arg2 << 9;
+				var7.field11352 = var10.size + arg1 << 9;
+				var7.field11353 = var10.size + arg2 << 9;
 				var7.field11370 = method647(arg5);
 				var7.field11357 = var10.field2750 << 9;
 				var7.field11359 = var10.field2742;

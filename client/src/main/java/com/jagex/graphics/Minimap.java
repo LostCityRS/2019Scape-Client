@@ -584,7 +584,7 @@ public class Minimap {
 					if (var10 != null && var10.field2735 != null) {
 						var10 = var10.method4547(Statics.field7410, Statics.field7410);
 					}
-					if (var10 != null && var10.field2718 && var10.field2734) {
+					if (var10 != null && var10.minimap && var10.field2734) {
 						Vector3 var11 = var9.method10536().field4298;
 						int var12 = (int) var11.field4308 / 128 - arg1 / 128;
 						int var13 = (int) var11.field4313 / 128 - arg2 / 128;

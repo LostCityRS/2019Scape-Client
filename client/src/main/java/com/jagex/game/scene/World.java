@@ -1435,7 +1435,7 @@ public class World {
 					int var13 = (this.field5054[var2] & 0xFF) * 64 - this.field5018.field7427 + var11;
 					NPCType var14 = (NPCType) Statics.field7961.list(var5.g2());
 					ObjectWrapper var15 = (ObjectWrapper) Client.field10838.method14495((long) var7);
-					if (var15 == null && (var14.field2743 & 0x1) > 0 && var12 >= 0 && var14.field2699 + var12 < this.field5028 && var13 >= 0 && var14.field2699 + var13 < this.field5043) {
+					if (var15 == null && (var14.field2743 & 0x1) > 0 && var12 >= 0 && var14.size + var12 < this.field5028 && var13 >= 0 && var14.size + var13 < this.field5043) {
 						NpcEntity var16 = new NpcEntity(this.field5030);
 						var16.field10406 = var7;
 						ObjectWrapper var17 = new ObjectWrapper(var16);
@@ -1444,7 +1444,7 @@ public class World {
 						Client.field11036[++Client.field11011 - 1] = var7;
 						var16.field10440 = Client.field10903;
 						var16.method19156(var14);
-						var16.method16502(var16.field12083.field2699);
+						var16.method16502(var16.field12083.size);
 						var16.field10444 = var16.field12083.field2731 << 3;
 						var16.method16491(var16.field12083.field2727.method13895().getId() << 11 & 0x3FFF, true);
 						var16.method19159(var9, var12, var13, true, var16.method16546());

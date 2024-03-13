@@ -8891,7 +8891,7 @@ public final class ScriptRunner {
 			}
 			var4 = var5.field2760[var3];
 		}
-		if (var5.field2705 == null || var4 < 0 || var4 >= var5.field2705.length) {
+		if (var5.recol_d == null || var4 < 0 || var4 >= var5.recol_d.length) {
 			throw new RuntimeException("");
 		}
 		arg0.field2363.field2684[var4] = (short) var2;

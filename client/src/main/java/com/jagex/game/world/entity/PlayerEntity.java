@@ -602,7 +602,7 @@ public class PlayerEntity extends PathingEntity {
 
 	@ObfuscatedName("aqk.bz(I)I")
 	public int method16546() {
-		return this.field12061 == null || this.field12061.field7892 == -1 ? super.method16546() : ((NPCType) Statics.field7961.list(this.field12061.field7892)).field2699;
+		return this.field12061 == null || this.field12061.field7892 == -1 ? super.method16546() : ((NPCType) Statics.field7961.list(this.field12061.field7892)).size;
 	}
 
 	@ObfuscatedName("aqk.bj(S)I")

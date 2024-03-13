@@ -57,7 +57,7 @@ public final class CutsceneEntity {
 				this.field1745.field10406 = this.field1741;
 				this.field1745.field10440 = Client.field10903;
 				this.field1745.method19156((NPCType) Statics.field7961.list(this.field1743));
-				this.field1745.method16502(this.field1745.field12083.field2699);
+				this.field1745.method16502(this.field1745.field12083.size);
 				this.field1745.field10444 = this.field1745.field12083.field2731 << 3;
 				this.field1745.field10404 = ++CutsceneManager.field1715 - 1;
 			} else {

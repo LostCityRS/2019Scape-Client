@@ -698,9 +698,9 @@ public class MiniMenu {
 												NpcEntity var42 = (NpcEntity) var41.field11436;
 												if (var42.field10403 != Client.field10903 && var42.field10452) {
 													Vector3 var43 = var42.method10536().field4298;
-													int var44 = (int) var43.field4308 - (var42.field12083.field2699 - 1 << 8);
-													int var45 = (int) var43.field4313 - (var42.field12083.field2699 - 1 << 8);
-													if (var44 >= var38 && var42.field12083.field2699 <= var35.method16546() - (var44 - var38 >> 9) && var45 >= var39 && var42.field12083.field2699 <= var35.method16546() - (var45 - var39 >> 9)) {
+													int var44 = (int) var43.field4308 - (var42.field12083.size - 1 << 8);
+													int var45 = (int) var43.field4313 - (var42.field12083.size - 1 << 8);
+													if (var44 >= var38 && var42.field12083.size <= var35.method16546() - (var44 - var38 >> 9) && var45 >= var39 && var42.field12083.size <= var35.method16546() - (var45 - var39 >> 9)) {
 														method10152(var42, Statics.field4490.field11717 != var29.field6978.field11717);
 														var42.field10403 = Client.field10903;
 													}
@@ -736,18 +736,18 @@ public class MiniMenu {
 									break;
 								}
 								Vector3 var54 = var53.method10536().field4298;
-								if ((var53.field12083.field2699 & 0x1) == 0 && ((int) var54.field4308 & 0x1FF) == 0 && ((int) var54.field4313 & 0x1FF) == 0 || (var53.field12083.field2699 & 0x1) == 1 && ((int) var54.field4308 & 0x1FF) == 256 && ((int) var54.field4313 & 0x1FF) == 256) {
-									int var55 = (int) var54.field4308 - (var53.field12083.field2699 - 1 << 8);
-									int var56 = (int) var54.field4313 - (var53.field12083.field2699 - 1 << 8);
+								if ((var53.field12083.size & 0x1) == 0 && ((int) var54.field4308 & 0x1FF) == 0 && ((int) var54.field4313 & 0x1FF) == 0 || (var53.field12083.size & 0x1) == 1 && ((int) var54.field4308 & 0x1FF) == 256 && ((int) var54.field4313 & 0x1FF) == 256) {
+									int var55 = (int) var54.field4308 - (var53.field12083.size - 1 << 8);
+									int var56 = (int) var54.field4313 - (var53.field12083.size - 1 << 8);
 									for (int var57 = 0; var57 < Client.field11011; var57++) {
 										ObjectWrapper var58 = (ObjectWrapper) Client.field10838.method14495((long) Client.field11036[var57]);
 										if (var58 != null) {
 											NpcEntity var59 = (NpcEntity) var58.field11436;
 											if (var59.field10403 != Client.field10903 && var53 != var59 && var59.field10452) {
 												Vector3 var60 = var59.method10536().field4298;
-												int var61 = (int) var60.field4308 - (var59.field12083.field2699 - 1 << 8);
-												int var62 = (int) var60.field4313 - (var59.field12083.field2699 - 1 << 8);
-												if (var61 >= var55 && var59.field12083.field2699 <= var53.field12083.field2699 - (var61 - var55 >> 9) && var62 >= var56 && var59.field12083.field2699 <= var53.field12083.field2699 - (var62 - var56 >> 9)) {
+												int var61 = (int) var60.field4308 - (var59.field12083.size - 1 << 8);
+												int var62 = (int) var60.field4313 - (var59.field12083.size - 1 << 8);
+												if (var61 >= var55 && var59.field12083.size <= var53.field12083.size - (var61 - var55 >> 9) && var62 >= var56 && var59.field12083.size <= var53.field12083.size - (var62 - var56 >> 9)) {
 													method10152(var59, Statics.field4490.field11717 != var29.field6978.field11717);
 													var59.field10403 = Client.field10903;
 												}
@@ -762,7 +762,7 @@ public class MiniMenu {
 											Vector3 var67 = var66.method10536().field4298;
 											int var68 = (int) var67.field4308 - (var66.method16546() - 1 << 8);
 											int var69 = (int) var67.field4313 - (var66.method16546() - 1 << 8);
-											if (var68 >= var55 && var66.method16546() <= var53.field12083.field2699 - (var68 - var55 >> 9) && var69 >= var56 && var66.method16546() <= var53.field12083.field2699 - (var69 - var56 >> 9)) {
+											if (var68 >= var55 && var66.method16546() <= var53.field12083.size - (var68 - var55 >> 9) && var69 >= var56 && var66.method16546() <= var53.field12083.size - (var69 - var56 >> 9)) {
 												method3542(var66, Statics.field4490.field11717 != var29.field6978.field11717);
 												var66.field10403 = Client.field10903;
 											}
@@ -1617,7 +1617,7 @@ public class MiniMenu {
 			if (var2 == null) {
 				return;
 			}
-			var3 = var2.field2703;
+			var3 = var2.name;
 		}
 		if (!var2.field2734) {
 			return;
@@ -1635,7 +1635,7 @@ public class MiniMenu {
 		if (arg1) {
 			return;
 		}
-		String[] var6 = var2.field2692;
+		String[] var6 = var2.ops;
 		boolean var7 = false;
 		if (Client.field10985) {
 			var6 = Client.method18725(var6);
@@ -1742,10 +1742,10 @@ public class MiniMenu {
 				NPCType var8 = (NPCType) Statics.field7961.list(arg0.field12061.field7892);
 				if (var8.field2690) {
 					var7 = true;
-					var6 = ((NPCType) Statics.field7961.list(arg0.field12061.field7892)).field2703;
-					if (var8.field2719 != 0) {
+					var6 = ((NPCType) Statics.field7961.list(arg0.field12061.field7892)).name;
+					if (var8.vislevel != 0) {
 						String var9 = Client.field10768 == ModeGame.STELLARDAWN ? LocalisedText.RATING.method15021(Statics.field1680) : LocalisedText.LEVEL.method15021(Statics.field1680);
-						var6 = var6 + Statics.method17760(var8.field2719, Statics.field4490.field12064) + TextUtil.OPEN_PARENTHESIS + var9 + var8.field2719 + TextUtil.CLOSE_PARENTHESIS;
+						var6 = var6 + Statics.method17760(var8.vislevel, Statics.field4490.field12064) + TextUtil.OPEN_PARENTHESIS + var9 + var8.vislevel + TextUtil.CLOSE_PARENTHESIS;
 					}
 				}
 			}
