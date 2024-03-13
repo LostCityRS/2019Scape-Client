@@ -94,6 +94,7 @@ import com.jagex.game.shared.movement.CoordFine;
 import com.jagex.game.shared.movement.CoordGrid;
 import com.jagex.game.telemetry.grid.TelemetryGrid;
 import com.jagex.game.telemetry.grid.TelemetryGroup;
+import com.jagex.game.world.WorldMap;
 import com.jagex.game.world.WorldMapAreaMetadata;
 import com.jagex.game.world.WorldMapRenderer;
 import com.jagex.game.world.entity.*;
@@ -1289,6 +1290,9 @@ public final class Client extends GameShell {
 	@ObfuscatedName("client.qw")
 	public static Component field10993 = null;
 
+	@ObfuscatedName("ez.qo")
+	public static Component field1734;
+
 	@ObfuscatedName("client.qm")
 	public static boolean field10878 = false;
 
@@ -2100,7 +2104,7 @@ public final class Client extends GameShell {
 		Frame var1 = new Frame(" ");
 		var1.pack();
 		var1.dispose();
-		Statics.field1734 = new Component();
+		field1734 = new Component();
 		method6793();
 		ByteArrayPool.method4398(new int[] { 20, 260, 2048, 5120, 10240, 75000, 100000, 153600 }, new int[] { 1000, 100, 1000, 250, 500, 100, 100, 10 });
 		Vector3.method6481(100);
@@ -11783,7 +11787,7 @@ public final class Client extends GameShell {
 		field7603 = null;
 		method10155(field10978, 0, 0, GameShell.canvasWid, GameShell.canvasHei, 0, 0, -1);
 		if (field7603 != null) {
-			method6797(field7603, -1412584499, 0, 0, GameShell.canvasWid, GameShell.canvasHei, field4869, field11893, Statics.field1734 == field10828 ? -1 : field10828.field2182, true);
+			method6797(field7603, -1412584499, 0, 0, GameShell.canvasWid, GameShell.canvasHei, field4869, field11893, field1734 == field10828 ? -1 : field10828.field2182, true);
 			field7603 = null;
 		}
 	}
@@ -12608,7 +12612,7 @@ public final class Client extends GameShell {
 			var0 = var2.method17831();
 			var1 = var2.method17832();
 		}
-		if (field10989 != null && Statics.field1734 == field10828) {
+		if (field10989 != null && field1734 == field10828) {
 			field10878 = true;
 			field10995 = 0;
 			field10889 = 0;
@@ -12949,10 +12953,10 @@ public final class Client extends GameShell {
 											ClientWorldMap.field11663 = true;
 										}
 										if (var29) {
-											int var61 = (int) ((double) (var30.method17831() - var13 - var12.field2196 / 2) * 2.0D / (double) Statics.field6803);
-											int var62 = (int) -((double) (var30.method17832() - var14 - var12.field2197 / 2) * 2.0D / (double) Statics.field6803);
-											int var63 = Statics.field11443 + var61 + Statics.field6786;
-											int var64 = Statics.field11654 + var62 + Statics.field6808;
+											int var61 = (int) ((double) (var30.method17831() - var13 - var12.field2196 / 2) * 2.0D / (double) WorldMap.field6803);
+											int var62 = (int) -((double) (var30.method17832() - var14 - var12.field2197 / 2) * 2.0D / (double) WorldMap.field6803);
+											int var63 = Statics.field11443 + var61 + WorldMap.field6786;
+											int var64 = ClientWorldMap.field11654 + var62 + WorldMap.field6808;
 											WorldMapAreaMetadata var65 = ClientWorldMap.method17877();
 											if (var65 == null) {
 												continue;
@@ -12978,13 +12982,13 @@ public final class Client extends GameShell {
 										if (var28 && field11003 > 0) {
 											if (field11003 == 1 && (field10991 != field9182.method9086() || field10992 != field9182.method9092())) {
 												field2413 = Statics.field11443;
-												field8287 = Statics.field11654;
+												field8287 = ClientWorldMap.field11654;
 												field11003 = 2;
 											}
 											if (field11003 == 2) {
 												field10860 = true;
-												ClientWorldMap.method8432(field2413 + (int) ((double) (field10991 - field9182.method9086()) * 2.0D / (double) Statics.field6804));
-												ClientWorldMap.method9548(field8287 - (int) ((double) (field10992 - field9182.method9092()) * 2.0D / (double) Statics.field6804));
+												ClientWorldMap.method8432(field2413 + (int) ((double) (field10991 - field9182.method9086()) * 2.0D / (double) WorldMap.field6804));
+												ClientWorldMap.method9548(field8287 - (int) ((double) (field10992 - field9182.method9092()) * 2.0D / (double) WorldMap.field6804));
 											}
 											continue;
 										}
@@ -13400,7 +13404,7 @@ public final class Client extends GameShell {
 			}
 			int var4;
 			int var5;
-			if (Statics.field1734 == field10828) {
+			if (field1734 == field10828) {
 				var4 = var2;
 				var5 = var3;
 			} else {
@@ -13441,10 +13445,10 @@ public final class Client extends GameShell {
 							}
 							var8 = Statics.field11725[var8.field2158 >> 16].field2151[var8.field2200 & 0xFFFF];
 						}
-						if (var8 == null || var7 == null || Statics.field1734 == var7 || var9) {
+						if (var8 == null || var7 == null || field1734 == var7 || var9) {
 							var6.field11495 = field10993;
 						} else {
-							var6.field11495 = Statics.field1734;
+							var6.field11495 = field1734;
 						}
 						var6.field11493 = field10989.field2178;
 						ScriptRunner.method1428(var6);
@@ -13959,7 +13963,7 @@ public final class Client extends GameShell {
 	public static Component method17238(Component arg0) {
 		ServerKeyProperties var1 = method17197(arg0);
 		if (var1.method17701()) {
-			return Statics.field1734;
+			return field1734;
 		}
 		int var2 = var1.method17710();
 		if (var2 == 0) {
@@ -13968,7 +13972,7 @@ public final class Client extends GameShell {
 		for (int var3 = 0; var3 < var2; var3++) {
 			arg0 = method6000(Statics.method5367(arg0.field2158), arg0);
 			if (arg0 == null) {
-				return Statics.field1734;
+				return field1734;
 			}
 		}
 		return arg0;

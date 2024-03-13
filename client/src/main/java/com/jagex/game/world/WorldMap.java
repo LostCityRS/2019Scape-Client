@@ -8,6 +8,7 @@ import com.jagex.core.io.Packet;
 import com.jagex.core.utils.ColourUtils;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.config.ConfigTypeList;
+import com.jagex.game.config.defaults.WorldMapDefaults;
 import com.jagex.game.config.flotype.FloorOverlayType;
 import com.jagex.game.config.flotype.FloorOverlayTypeList;
 import com.jagex.game.config.flutype.FloorUnderlayType;
@@ -44,6 +45,33 @@ public class WorldMap {
 	@ObfuscatedName("tf.n")
 	public static ConfigTypeList field6849 = null;
 
+	@ObfuscatedName("tf.m")
+	public static LocTypeList field6785;
+
+	@ObfuscatedName("tf.k")
+	public static MapElementTypeList field6788;
+
+	@ObfuscatedName("tf.f")
+	public static MSITypeList field6789;
+
+	@ObfuscatedName("tf.w")
+	public static VarIntDomain field6790;
+
+	@ObfuscatedName("tf.l")
+	public static VariableTypeProvider field6791;
+
+	@ObfuscatedName("tf.u")
+	public static WorldMapDefaults field6792;
+
+	@ObfuscatedName("tf.z")
+	public static WorldMapAreaMetadata field6811;
+
+	@ObfuscatedName("tf.p")
+	public static Js5 field6794;
+
+	@ObfuscatedName("tf.d")
+	public static Js5 field6795;
+
 	@ObfuscatedName("tf.c")
 	public static IterableMap field6796 = new IterableMap(16);
 
@@ -53,17 +81,71 @@ public class WorldMap {
 	@ObfuscatedName("tf.v")
 	public static int field6798 = (int) (Math.random() * 17.0D) - 8;
 
+	@ObfuscatedName("tf.o")
+	public static byte[][][] field6799;
+
+	@ObfuscatedName("tf.s")
+	public static int field6840;
+
 	@ObfuscatedName("tf.y")
 	public static int[] field6816 = new int[1];
 
 	@ObfuscatedName("tf.q")
 	public static byte[] field6850 = new byte[1];
 
+	@ObfuscatedName("tf.x")
+	public static float field6803;
+
+	@ObfuscatedName("tf.b")
+	public static float field6804;
+
+	@ObfuscatedName("tf.h")
+	public static WorldMapRelated field6805;
+
 	@ObfuscatedName("tf.a")
 	public static IterableQueue field6806 = new IterableQueue();
 
+	@ObfuscatedName("tf.g")
+	public static int field6786;
+
+	@ObfuscatedName("tf.i")
+	public static int field6808;
+
+	@ObfuscatedName("tf.j")
+	public static int field6812;
+
+	@ObfuscatedName("tf.t")
+	public static int field6810;
+
+	@ObfuscatedName("tf.ae")
+	public static int[] field6854;
+
+	@ObfuscatedName("tf.ag")
+	public static short[] field6809;
+
+	@ObfuscatedName("tf.ah")
+	public static byte[] field6813;
+
+	@ObfuscatedName("tf.al")
+	public static short[] field6814;
+
+	@ObfuscatedName("tf.ac")
+	public static short[] field6815;
+
+	@ObfuscatedName("tf.ai")
+	public static byte[] field6802;
+
+	@ObfuscatedName("tf.aw")
+	public static Object[] field6817;
+
+	@ObfuscatedName("tf.as")
+	public static byte[] field6818;
+
 	@ObfuscatedName("tf.at")
 	public static boolean field6819 = true;
+
+	@ObfuscatedName("tf.ad")
+	public static boolean[][] field6820;
 
 	@ObfuscatedName("tf.am")
 	public static int[][] field6800 = new int[][] { { 2, 2, 0, 0, 0, 0 }, { 2, 2, 2, 0, 0, 0 }, { 1, 2, 2, 2, 0, 0 }, { 1, 1, 1, 2, 2, 0 }, { 1, 1, 1, 2, 2, 2 }, { 1, 1, 1, 1, 2, 2 } };
@@ -92,6 +174,9 @@ public class WorldMap {
 	@ObfuscatedName("tf.aj")
 	public static final int field6829 = CompassPoint.field8310.getId();
 
+	@ObfuscatedName("tf.ay")
+	public static java.util.HashMap[][][] field6830;
+
 	@ObfuscatedName("tf.ab")
 	public static WeightedCache field6831 = new WeightedCache(4096, 256);
 
@@ -107,6 +192,9 @@ public class WorldMap {
 	@ObfuscatedName("tf.an")
 	public static int field6836 = 262144;
 
+	@ObfuscatedName("tf.bf")
+	public static int[] field6838;
+
 	@ObfuscatedName("tf.bl")
 	public static int field6793 = 0;
 
@@ -121,6 +209,37 @@ public class WorldMap {
 
 	@ObfuscatedName("tf.bd")
 	public static boolean field6842 = true;
+
+	@ObfuscatedName("tf.bc")
+	public static int[] field6787;
+
+	@ObfuscatedName("tf.bi")
+	public static int[] field6844;
+
+	@ObfuscatedName("tf.bn")
+	public static int field6845;
+
+	@ObfuscatedName("tf.bt")
+	public static int field6846;
+
+
+	@ObfuscatedName("tf.bq")
+	public static int field6847;
+
+	@ObfuscatedName("tf.bm")
+	public static int field6848;
+
+	@ObfuscatedName("tf.bb")
+	public static int field6801;
+
+	@ObfuscatedName("tf.be")
+	public static int field6837;
+
+	@ObfuscatedName("tf.by")
+	public static int field6851;
+
+	@ObfuscatedName("tf.bu")
+	public static int field6852;
 
 	@ObfuscatedName("tf.bw")
 	public static int field6853;
@@ -144,20 +263,20 @@ public class WorldMap {
 
 	@ObfuscatedName("tf.e(Lpy;Lpy;Laoa;Laoe;Laop;Laoc;Laox;Lem;Lep;)V")
 	public static void method8506(Js5 arg0, Js5 arg1, FloorOverlayTypeList arg2, FloorUnderlayTypeList arg3, LocTypeList arg4, MapElementTypeList arg5, MSITypeList arg6, VariableTypeProvider arg7, VarIntDomain arg8) {
-		Statics.field6794 = arg0;
-		Statics.field6795 = arg1;
+		field6794 = arg0;
+		field6795 = arg1;
 		field6839 = arg2;
 		field6849 = arg3;
-		Statics.field6785 = arg4;
-		Statics.field6788 = arg5;
-		Statics.field6789 = arg6;
-		Statics.field6791 = arg7;
-		Statics.field6790 = arg8;
+		field6785 = arg4;
+		field6788 = arg5;
+		field6789 = arg6;
+		field6791 = arg7;
+		field6790 = arg8;
 		field6796.method14499();
-		int[] var9 = Statics.field6794.method6895(Js5WorldMapGroup.field7968.getId());
+		int[] var9 = field6794.method6895(Js5WorldMapGroup.field7968.getId());
 		if (var9 != null) {
 			for (int var10 = 0; var10 < var9.length; var10++) {
-				WorldMapAreaMetadata var11 = WorldMapAreaMetadata.method3468(Statics.field6794, var9[var10]);
+				WorldMapAreaMetadata var11 = WorldMapAreaMetadata.method3468(field6794, var9[var10]);
 				field6796.method14501(var11, (long) var11.field12359);
 			}
 		}
@@ -166,46 +285,46 @@ public class WorldMap {
 
 	@ObfuscatedName("tf.n()V")
 	public static void method8619() {
-		Statics.field6809 = new short[Statics.field6812 * Statics.field6810];
-		Statics.field6815 = new short[Statics.field6812 * Statics.field6810];
-		Statics.field6802 = new byte[Statics.field6812 * Statics.field6810];
-		Statics.field6817 = new Object[Statics.field6812 * Statics.field6810];
-		Statics.field6818 = new byte[Statics.field6812 * Statics.field6810];
-		Statics.field6830 = new java.util.HashMap[3][Statics.field6812 >> 6][Statics.field6810 >> 6];
-		Statics.field6854 = new int[field6839.length() + 1];
-		Statics.field6820 = new boolean[Statics.field6812 / 8][Statics.field6810 / 8];
+		field6809 = new short[field6812 * field6810];
+		field6815 = new short[field6812 * field6810];
+		field6802 = new byte[field6812 * field6810];
+		field6817 = new Object[field6812 * field6810];
+		field6818 = new byte[field6812 * field6810];
+		field6830 = new java.util.HashMap[3][field6812 >> 6][field6810 >> 6];
+		field6854 = new int[field6839.length() + 1];
+		field6820 = new boolean[field6812 / 8][field6810 / 8];
 	}
 
 	@ObfuscatedName("tf.m()V")
 	public static void method8508() {
-		Statics.field6809 = null;
-		Statics.field6813 = null;
-		Statics.field6814 = null;
-		Statics.field6815 = null;
-		Statics.field6802 = null;
-		Statics.field6817 = null;
-		Statics.field6818 = null;
-		Statics.field6830 = null;
-		Statics.field6854 = null;
-		Statics.field6820 = null;
+		field6809 = null;
+		field6813 = null;
+		field6814 = null;
+		field6815 = null;
+		field6802 = null;
+		field6817 = null;
+		field6818 = null;
+		field6830 = null;
+		field6854 = null;
+		field6820 = null;
 	}
 
 	@ObfuscatedName("tf.k(I)V")
 	public static void method8521(int arg0) {
 		WorldMapAreaMetadata var1 = (WorldMapAreaMetadata) field6796.method14495((long) arg0);
-		if (var1 != null && Statics.field6811 != var1) {
-			Statics.field6811 = var1;
-			field6819 = Statics.field6792.field7690 == Statics.field6811.field12359;
+		if (var1 != null && field6811 != var1) {
+			field6811 = var1;
+			field6819 = field6792.field7690 == field6811.field12359;
 		}
 	}
 
 	@ObfuscatedName("tf.f(Lasy;)Z")
 	public static boolean method8510(WorldMapAreaMetadata arg0) {
-		if (arg0 == null || Statics.field6811 == arg0) {
+		if (arg0 == null || field6811 == arg0) {
 			return false;
 		} else {
-			Statics.field6811 = arg0;
-			field6819 = Statics.field6792.field7690 == Statics.field6811.field12359;
+			field6811 = arg0;
+			field6819 = field6792.field7690 == field6811.field12359;
 			return true;
 		}
 	}
@@ -239,7 +358,7 @@ public class WorldMap {
 	@ObfuscatedName("tf.z(Ldf;II)V")
 	public static void method8514(MaterialList arg0, int arg1, int arg2) {
 		for (int var3 = 0; var3 < field6839.length(); var3++) {
-			Statics.field6854[var3 + 1] = method8515(arg0, var3, arg1, arg2);
+			field6854[var3 + 1] = method8515(arg0, var3, arg1, arg2);
 		}
 	}
 
@@ -291,26 +410,26 @@ public class WorldMap {
 	public static boolean method8542(Renderer arg0, int arg1, int arg2, boolean arg3) {
 		long var4 = MonotonicTime.method3655();
 		if (field6793 == 0) {
-			if (Statics.field6792.field7695 == Statics.field6811.field12359) {
-				int var6 = Statics.field6795.getgroupid(Statics.field6811.field12351);
+			if (field6792.field7695 == field6811.field12359) {
+				int var6 = field6795.getgroupid(field6811.field12351);
 				if (field6841 == null) {
-					field6841 = new Packet(Statics.field6795.getfile(var6, 0));
+					field6841 = new Packet(field6795.getfile(var6, 0));
 				}
 				field6821 = field6841;
 				field6821.pos = 0;
 			} else {
-				int var7 = Statics.field6795.getgroupid(Statics.field6811.field12351);
-				field6821 = new Packet(Statics.field6795.getfile(var7, 0));
+				int var7 = field6795.getgroupid(field6811.field12351);
+				field6821 = new Packet(field6795.getfile(var7, 0));
 			}
 			int var8 = field6821.g1();
-			Statics.field6787 = new int[var8];
+			field6787 = new int[var8];
 			for (int var9 = 0; var9 < var8; var9++) {
-				Statics.field6787[var9] = field6821.gSmart1or2();
+				field6787[var9] = field6821.gSmart1or2();
 			}
 			int var10 = field6821.g1();
-			Statics.field6844 = new int[var10];
+			field6844 = new int[var10];
 			for (int var11 = 0; var11 < var10; var11++) {
-				Statics.field6844[var11] = field6821.gSmart1or2();
+				field6844[var11] = field6821.gSmart1or2();
 			}
 		}
 		while (field6821 != null && field6821.pos < field6821.data.length && (!arg3 || MonotonicTime.method3655() < (long) field6828 + var4)) {
@@ -319,17 +438,17 @@ public class WorldMap {
 				int var13 = field6821.g1();
 				for (int var14 = 0; var14 < 8; var14++) {
 					int var15 = field6821.g1();
-					int var16 = var12 * 8 + var14 - Statics.field6786 / 8;
+					int var16 = var12 * 8 + var14 - field6786 / 8;
 					for (int var17 = 0; var17 < 8; var17++) {
-						int var18 = var13 * 8 + var17 - Statics.field6808 / 8;
-						Statics.field6820[var16][var18] = (var15 & 0x1 << var17) != 0;
+						int var18 = var13 * 8 + var17 - field6808 / 8;
+						field6820[var16][var18] = (var15 & 0x1 << var17) != 0;
 					}
 				}
 				for (int var19 = 0; var19 < 64; var19++) {
 					for (int var20 = 0; var20 < 64; var20++) {
-						int var21 = var12 * 64 + var19 - Statics.field6786;
-						int var22 = var13 * 64 + var20 - Statics.field6808;
-						method8518(arg0, field6821, var12, var13, var21, var22, Statics.field6787, Statics.field6844);
+						int var21 = var12 * 64 + var19 - field6786;
+						int var22 = var13 * 64 + var20 - field6808;
+						method8518(arg0, field6821, var12, var13, var21, var22, field6787, field6844);
 					}
 				}
 			} else {
@@ -337,12 +456,12 @@ public class WorldMap {
 				int var24 = field6821.g1();
 				int var25 = field6821.g1();
 				int var26 = field6821.g1();
-				Statics.field6820[var23 * 8 + var25 - Statics.field6786 / 8][var24 * 8 + var26 - Statics.field6808 / 8] = field6821.g1() != 0;
+				field6820[var23 * 8 + var25 - field6786 / 8][var24 * 8 + var26 - field6808 / 8] = field6821.g1() != 0;
 				for (int var27 = 0; var27 < 8; var27++) {
 					for (int var28 = 0; var28 < 8; var28++) {
-						int var29 = var23 * 64 + var25 * 8 + var27 - Statics.field6786;
-						int var30 = var24 * 64 + var26 * 8 + var28 - Statics.field6808;
-						method8518(arg0, field6821, var23, var24, var29, var30, Statics.field6787, Statics.field6844);
+						int var29 = var23 * 64 + var25 * 8 + var27 - field6786;
+						int var30 = var24 * 64 + var26 * 8 + var28 - field6808;
+						method8518(arg0, field6821, var23, var24, var29, var30, field6787, field6844);
 					}
 				}
 			}
@@ -354,35 +473,35 @@ public class WorldMap {
 			}
 		}
 		field6821 = null;
-		Statics.field6844 = null;
-		Statics.field6787 = null;
-		if (Statics.field6809 != null) {
-			Statics.field6813 = new byte[Statics.field6812 * Statics.field6810];
-			Statics.field6814 = new short[Statics.field6812 * Statics.field6810];
+		field6844 = null;
+		field6787 = null;
+		if (field6809 != null) {
+			field6813 = new byte[field6812 * field6810];
+			field6814 = new short[field6812 * field6810];
 			for (int var31 = 0; var31 < 3; var31++) {
-				short[] var32 = new short[Statics.field6812 * Statics.field6810];
-				for (int var33 = 0; var33 < Statics.field6830[var31].length; var33++) {
-					for (int var34 = 0; var34 < Statics.field6830[var31][0].length; var34++) {
-						java.util.HashMap var35 = Statics.field6830[var31][var33][var34];
+				short[] var32 = new short[field6812 * field6810];
+				for (int var33 = 0; var33 < field6830[var31].length; var33++) {
+					for (int var34 = 0; var34 < field6830[var31][0].length; var34++) {
+						java.util.HashMap var35 = field6830[var31][var33][var34];
 						if (var35 != null) {
 							java.util.Iterator var36 = var35.values().iterator();
 							while (var36.hasNext()) {
 								WorldMapUpperLevelTileData var37 = (WorldMapUpperLevelTileData) var36.next();
-								var32[(var34 * 64 + var37.field6769) * Statics.field6812 + var33 * 64 + var37.field6774] = (short) var37.field6770;
+								var32[(var34 * 64 + var37.field6769) * field6812 + var33 * 64 + var37.field6774] = (short) var37.field6770;
 							}
 						}
 					}
 				}
-				method8509(var32, Statics.field6813, Statics.field6814, arg1, arg2);
-				for (int var38 = 0; var38 < Statics.field6830[var31].length; var38++) {
-					for (int var39 = 0; var39 < Statics.field6830[var31][0].length; var39++) {
-						java.util.HashMap var40 = Statics.field6830[var31][var38][var39];
+				method8509(var32, field6813, field6814, arg1, arg2);
+				for (int var38 = 0; var38 < field6830[var31].length; var38++) {
+					for (int var39 = 0; var39 < field6830[var31][0].length; var39++) {
+						java.util.HashMap var40 = field6830[var31][var38][var39];
 						if (var40 != null) {
 							java.util.Iterator var41 = var40.values().iterator();
 							while (var41.hasNext()) {
 								WorldMapUpperLevelTileData var42 = (WorldMapUpperLevelTileData) var41.next();
-								int var43 = (var39 * 64 + var42.field6769) * Statics.field6812 + var38 * 64 + var42.field6774;
-								var42.field6770 = (Statics.field6813[var43] & 0xFF) << 16 | Statics.field6814[var43] & 0xFFFF;
+								int var43 = (var39 * 64 + var42.field6769) * field6812 + var38 * 64 + var42.field6774;
+								var42.field6770 = (field6813[var43] & 0xFF) << 16 | field6814[var43] & 0xFFFF;
 								if (var42.field6770 != 0) {
 									var42.field6770 |= 0xFF000000;
 								}
@@ -391,8 +510,8 @@ public class WorldMap {
 					}
 				}
 			}
-			method8509(Statics.field6809, Statics.field6813, Statics.field6814, arg1, arg2);
-			Statics.field6809 = null;
+			method8509(field6809, field6813, field6814, arg1, arg2);
+			field6809 = null;
 		}
 		if (arg3 && MonotonicTime.method3655() >= (long) field6828 + var4) {
 			return false;
@@ -420,12 +539,12 @@ public class WorldMap {
 				var11 = arg7[var10];
 			}
 			if (var9) {
-				Statics.field6809[Statics.field6812 * arg5 + arg4] = (short) var11;
-				Statics.field6815[Statics.field6812 * arg5 + arg4] = 0;
+				field6809[field6812 * arg5 + arg4] = (short) var11;
+				field6815[field6812 * arg5 + arg4] = 0;
 			} else {
-				Statics.field6815[Statics.field6812 * arg5 + arg4] = (short) var11;
-				Statics.field6802[Statics.field6812 * arg5 + arg4] = 0;
-				Statics.field6809[Statics.field6812 * arg5 + arg4] = (short) arg1.gSmart1or2();
+				field6815[field6812 * arg5 + arg4] = (short) var11;
+				field6802[field6812 * arg5 + arg4] = 0;
+				field6809[field6812 * arg5 + arg4] = (short) arg1.gSmart1or2();
 			}
 			return;
 		}
@@ -445,12 +564,12 @@ public class WorldMap {
 				var19 = arg1.g1();
 			}
 			if (var15 == 0) {
-				Statics.field6809[Statics.field6812 * arg5 + arg4] = (short) var16;
-				Statics.field6815[Statics.field6812 * arg5 + arg4] = (short) var17;
-				Statics.field6802[Statics.field6812 * arg5 + arg4] = (byte) var18;
+				field6809[field6812 * arg5 + arg4] = (short) var16;
+				field6815[field6812 * arg5 + arg4] = (short) var17;
+				field6802[field6812 * arg5 + arg4] = (byte) var18;
 				if (var19 == 1) {
-					Statics.field6817[Statics.field6812 * arg5 + arg4] = Integer.valueOf(arg1.gSmart2or4null());
-					Statics.field6818[Statics.field6812 * arg5 + arg4] = arg1.g1b();
+					field6817[field6812 * arg5 + arg4] = Integer.valueOf(arg1.gSmart2or4null());
+					field6818[field6812 * arg5 + arg4] = arg1.g1b();
 				} else if (var19 > 1) {
 					int[] var20 = new int[var19];
 					byte[] var21 = new byte[var19];
@@ -458,7 +577,7 @@ public class WorldMap {
 						var20[var22] = arg1.gSmart2or4null();
 						var21[var22] = arg1.g1b();
 					}
-					Statics.field6817[Statics.field6812 * arg5 + arg4] = new WorldMapNode(var20, var21);
+					field6817[field6812 * arg5 + arg4] = new WorldMapNode(var20, var21);
 				}
 			} else {
 				int[] var23 = null;
@@ -471,30 +590,30 @@ public class WorldMap {
 						var24[var25] = arg1.g1b();
 					}
 				}
-				if (Statics.field6830[var15 - 1][arg2 - (Statics.field6786 >> 6)][arg3 - (Statics.field6808 >> 6)] == null) {
-					Statics.field6830[var15 - 1][arg2 - (Statics.field6786 >> 6)][arg3 - (Statics.field6808 >> 6)] = new java.util.HashMap();
+				if (field6830[var15 - 1][arg2 - (field6786 >> 6)][arg3 - (field6808 >> 6)] == null) {
+					field6830[var15 - 1][arg2 - (field6786 >> 6)][arg3 - (field6808 >> 6)] = new java.util.HashMap();
 				}
 				int var26 = ((arg4 & 0x3F) << 8) + (arg5 & 0x3F);
 				WorldMapUpperLevelTileData var27 = new WorldMapUpperLevelTileData(arg4 & 0x3F, arg5 & 0x3F, var16, var17, var18, var23, var24);
-				Statics.field6830[var15 - 1][arg2 - (Statics.field6786 >> 6)][arg3 - (Statics.field6808 >> 6)].put(var26, var27);
+				field6830[var15 - 1][arg2 - (field6786 >> 6)][arg3 - (field6808 >> 6)].put(var26, var27);
 			}
 		}
 	}
 
 	@ObfuscatedName("tf.v()V")
 	public static void method8519() {
-		for (int var0 = 0; var0 < Statics.field6812; var0++) {
-			for (int var1 = 0; var1 < Statics.field6810; var1++) {
-				Object var2 = Statics.field6817[Statics.field6812 * var1 + var0];
+		for (int var0 = 0; var0 < field6812; var0++) {
+			for (int var1 = 0; var1 < field6810; var1++) {
+				Object var2 = field6817[field6812 * var1 + var0];
 				if (var2 != null) {
 					if (var2 instanceof WorldMapNode) {
 						WorldMapNode var3 = (WorldMapNode) var2;
 						if (var3 != null) {
 							for (int var4 = 0; var4 < var3.field11444.length; var4++) {
-								LocType var5 = (LocType) Statics.field6785.list(var3.field11444[var4]);
+								LocType var5 = (LocType) field6785.list(var3.field11444[var4]);
 								int var6 = var5.field7485;
 								if (var5.field7505 != null) {
-									LocType var7 = var5.method9477(Statics.field6791, Statics.field6790);
+									LocType var7 = var5.method9477(field6791, field6790);
 									if (var7 != null) {
 										var6 = var7.field7485;
 									}
@@ -509,10 +628,10 @@ public class WorldMap {
 						}
 					} else {
 						Integer var9 = (Integer) var2;
-						LocType var10 = (LocType) Statics.field6785.list(var9);
+						LocType var10 = (LocType) field6785.list(var9);
 						int var11 = var10.field7485;
 						if (var10.field7505 != null) {
-							LocType var12 = var10.method9477(Statics.field6791, Statics.field6790);
+							LocType var12 = var10.method9477(field6791, field6790);
 							if (var12 != null) {
 								var11 = var12.field7485;
 							}
@@ -528,9 +647,9 @@ public class WorldMap {
 			}
 		}
 		for (int var14 = 0; var14 < 3; var14++) {
-			for (int var15 = 0; var15 < Statics.field6830[0].length; var15++) {
-				label89: for (int var16 = 0; var16 < Statics.field6830[0][0].length; var16++) {
-					java.util.HashMap var17 = Statics.field6830[var14][var15][var16];
+			for (int var15 = 0; var15 < field6830[0].length; var15++) {
+				label89: for (int var16 = 0; var16 < field6830[0][0].length; var16++) {
+					java.util.HashMap var17 = field6830[var14][var15][var16];
 					if (var17 != null) {
 						java.util.Iterator var18 = var17.values().iterator();
 						while (true) {
@@ -542,18 +661,18 @@ public class WorldMap {
 								var19 = (WorldMapUpperLevelTileData) var18.next();
 							} while (var19.field6773 == null);
 							for (int var20 = 0; var20 < var19.field6773.length; var20++) {
-								LocType var21 = (LocType) Statics.field6785.list(var19.field6773[var20]);
+								LocType var21 = (LocType) field6785.list(var19.field6773[var20]);
 								int var22 = var21.field7485;
 								if (var21.field7505 != null) {
-									LocType var23 = var21.method9477(Statics.field6791, Statics.field6790);
+									LocType var23 = var21.method9477(field6791, field6790);
 									if (var23 != null) {
 										var22 = var23.field7485;
 									}
 								}
 								if (var22 != -1) {
 									WorldMapElement var24 = new WorldMapElement(var22);
-									var24.field11448 = ((Statics.field6786 >> 6) + var15) * 64 + var19.field6774 - Statics.field6786;
-									var24.field11452 = ((Statics.field6808 >> 6) + var16) * 64 + var19.field6769 - Statics.field6808;
+									var24.field11448 = ((field6786 >> 6) + var15) * 64 + var19.field6774 - field6786;
+									var24.field11452 = ((field6808 >> 6) + var16) * 64 + var19.field6769 - field6808;
 									field6806.method14153(var24);
 								}
 							}
@@ -566,18 +685,18 @@ public class WorldMap {
 
 	@ObfuscatedName("tf.o([S[B[SII)V")
 	public static void method8509(short[] arg0, byte[] arg1, short[] arg2, int arg3, int arg4) {
-		int[] var5 = new int[Statics.field6810];
-		int[] var6 = new int[Statics.field6810];
-		int[] var7 = new int[Statics.field6810];
-		int[] var8 = new int[Statics.field6810];
-		int[] var9 = new int[Statics.field6810];
-		for (int var10 = -5; var10 < Statics.field6812; var10++) {
+		int[] var5 = new int[field6810];
+		int[] var6 = new int[field6810];
+		int[] var7 = new int[field6810];
+		int[] var8 = new int[field6810];
+		int[] var9 = new int[field6810];
+		for (int var10 = -5; var10 < field6812; var10++) {
 			int var11 = var10 + 5;
 			int var12 = var10 - 5;
-			for (int var13 = 0; var13 < Statics.field6810; var13++) {
+			for (int var13 = 0; var13 < field6810; var13++) {
 				int var10002;
-				if (var11 < Statics.field6812) {
-					short var14 = arg0[Statics.field6812 * var13 + var11];
+				if (var11 < field6812) {
+					short var14 = arg0[field6812 * var13 + var11];
 					if (var14 > 0) {
 						FloorUnderlayType var15 = (FloorUnderlayType) field6849.list(var14 - 1);
 						var5[var13] += var15.field8546;
@@ -588,7 +707,7 @@ public class WorldMap {
 					}
 				}
 				if (var12 >= 0) {
-					short var16 = arg0[Statics.field6812 * var13 + var12];
+					short var16 = arg0[field6812 * var13 + var12];
 					if (var16 > 0) {
 						FloorUnderlayType var17 = (FloorUnderlayType) field6849.list(var16 - 1);
 						var5[var13] -= var17.field8546;
@@ -605,9 +724,9 @@ public class WorldMap {
 				int var20 = 0;
 				int var21 = 0;
 				int var22 = 0;
-				for (int var23 = -5; var23 < Statics.field6810; var23++) {
+				for (int var23 = -5; var23 < field6810; var23++) {
 					int var24 = var23 + 5;
-					if (var24 < Statics.field6810) {
+					if (var24 < field6810) {
 						var18 += var5[var24];
 						var19 += var6[var24];
 						var20 += var7[var24];
@@ -623,8 +742,8 @@ public class WorldMap {
 						var22 -= var9[var25];
 					}
 					if (var23 >= 0 && var22 > 0) {
-						if (arg0[Statics.field6812 * var23 + var10] == 0) {
-							int var26 = Statics.field6812 * var23 + var10;
+						if (arg0[field6812 * var23 + var10] == 0) {
+							int var26 = field6812 * var23 + var10;
 							arg1[var26] = 0;
 							arg2[var26] = 0;
 						} else {
@@ -636,7 +755,7 @@ public class WorldMap {
 								var28 = 127;
 							}
 							int var29 = (arg3 + var27 & 0xFC00) + (var27 & 0x380) + var28;
-							int var30 = Statics.field6812 * var23 + var10;
+							int var30 = field6812 * var23 + var10;
 							int var31 = Statics.field8149[ColourUtils.method4937(ColourUtils.method1625(var29, 96)) & 0xFFFF];
 							arg1[var30] = (byte) (var31 >> 16 & 0xFF);
 							arg2[var30] = (short) (var31 & 0xFFFF);
@@ -650,12 +769,12 @@ public class WorldMap {
 	@ObfuscatedName("tf.s()V")
 	public static void method8505() {
 		int[] var0 = new int[3];
-		for (int var1 = 0; var1 < Statics.field6805.field6777; var1++) {
-			boolean var2 = Statics.field6811.method19471(Statics.field6805.field6776[var1] >> 28 & 0x3, Statics.field6805.field6776[var1] >> 14 & 0x3FFF, Statics.field6805.field6776[var1] & 0x3FFF, var0);
+		for (int var1 = 0; var1 < field6805.field6777; var1++) {
+			boolean var2 = field6811.method19471(field6805.field6776[var1] >> 28 & 0x3, field6805.field6776[var1] >> 14 & 0x3FFF, field6805.field6776[var1] & 0x3FFF, var0);
 			if (var2) {
-				WorldMapElement var3 = new WorldMapElement(Statics.field6805.field6775[var1]);
-				var3.field11448 = var0[1] - Statics.field6786;
-				var3.field11452 = var0[2] - Statics.field6808;
+				WorldMapElement var3 = new WorldMapElement(field6805.field6775[var1]);
+				var3.field11448 = var0[1] - field6786;
+				var3.field11452 = var0[2] - field6808;
 				field6806.method14153(var3);
 			}
 		}
@@ -663,47 +782,47 @@ public class WorldMap {
 
 	@ObfuscatedName("tf.y(IIIIIIII)V")
 	public static void method8620(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
-		Statics.field6845 = arg0 - Statics.field6786;
-		Statics.field6846 = arg1 - Statics.field6808;
-		Statics.field6847 = arg2 - Statics.field6786;
-		Statics.field6848 = arg3 - Statics.field6808;
-		Statics.field6801 = arg4;
-		Statics.field6837 = arg5;
-		Statics.field6851 = arg6;
-		Statics.field6852 = arg7;
+		field6845 = arg0 - field6786;
+		field6846 = arg1 - field6808;
+		field6847 = arg2 - field6786;
+		field6848 = arg3 - field6808;
+		field6801 = arg4;
+		field6837 = arg5;
+		field6851 = arg6;
+		field6852 = arg7;
 	}
 
 	@ObfuscatedName("tf.q(Ldh;ZZZZ)V")
 	public static void method8523(Renderer arg0, boolean arg1, boolean arg2, boolean arg3, boolean arg4) {
-		int var5 = Statics.field6847 - Statics.field6845;
-		int var6 = Statics.field6846 - Statics.field6848;
-		int var7 = (Statics.field6851 - Statics.field6801 << 16) / var5;
-		int var8 = (Statics.field6852 - Statics.field6837 << 16) / var6;
+		int var5 = field6847 - field6845;
+		int var6 = field6846 - field6848;
+		int var7 = (field6851 - field6801 << 16) / var5;
+		int var8 = (field6852 - field6837 << 16) / var6;
 		method8524(arg0, arg1, arg2, var7, var8, 0, 0, arg3, arg4);
 	}
 
 	@ObfuscatedName("tf.x(Ldh;ZZIIIIZZ)V")
 	public static void method8524(Renderer arg0, boolean arg1, boolean arg2, int arg3, int arg4, int arg5, int arg6, boolean arg7, boolean arg8) {
-		int var9 = Statics.field6847 - Statics.field6845;
-		int var10 = Statics.field6846 - Statics.field6848;
-		if (Statics.field6847 < Statics.field6812) {
+		int var9 = field6847 - field6845;
+		int var10 = field6846 - field6848;
+		if (field6847 < field6812) {
 			var9++;
 		}
-		if (Statics.field6846 < Statics.field6810) {
+		if (field6846 < field6810) {
 			var10++;
 		}
-		int var11 = Statics.field6845 / 64;
-		int var12 = Statics.field6848 / 64;
-		int var13 = (Statics.field6845 + var9) / 64;
-		int var14 = (Statics.field6848 + var10) / 64;
+		int var11 = field6845 / 64;
+		int var12 = field6848 / 64;
+		int var13 = (field6845 + var9) / 64;
+		int var14 = (field6848 + var10) / 64;
 		int var15;
 		int var16;
 		if (arg8) {
-			var15 = (Statics.field6851 - Statics.field6801) / ((Statics.field6847 - Statics.field6845) / 64);
+			var15 = (field6851 - field6801) / ((field6847 - field6845) / 64);
 			var16 = var15;
 		} else {
 			var15 = method8535();
-			var16 = (int) Math.ceil((double) (Statics.field6803 * 64.0F / 2.0F));
+			var16 = (int) Math.ceil((double) (field6803 * 64.0F / 2.0F));
 		}
 		field6835.clear();
 		int var17 = 0;
@@ -713,7 +832,7 @@ public class WorldMap {
 				int var21 = (var19 << 16) + var20;
 				int var22 = method8588((long) var21);
 				if (var15 != var22) {
-					if (var19 < 0 || var19 * 64 >= Statics.field6812 || var20 < 0 || var20 * 64 >= Statics.field6810) {
+					if (var19 < 0 || var19 * 64 >= field6812 || var20 < 0 || var20 * 64 >= field6810) {
 						method8536(arg0, var19, var20, var15, var21);
 					} else if (var22 == -1) {
 						method8526(var19, var20, var15, var21, arg1, arg2, arg7, arg0);
@@ -736,20 +855,20 @@ public class WorldMap {
 		}
 		for (int var27 = var11; var27 <= var13; var27++) {
 			int var28 = var27 * 64;
-			int var29 = var28 - Statics.field6845;
+			int var29 = var28 - field6845;
 			int var30 = var16;
-			int var31 = (arg3 * var29 + arg5 >> 16) + Statics.field6801;
-			int var32 = ((var29 + 64) * arg3 + arg5 >> 16) + Statics.field6801;
+			int var31 = (arg3 * var29 + arg5 >> 16) + field6801;
+			int var32 = ((var29 + 64) * arg3 + arg5 >> 16) + field6801;
 			if (var16 + var31 != var32) {
 				var30 = var32 - var31;
 			}
 			for (int var33 = var12; var33 <= var14; var33++) {
 				int var34 = var33 * 64;
-				int var35 = var34 - Statics.field6848;
+				int var35 = var34 - field6848;
 				int var36 = (var27 << 16) + var33;
 				int var37 = var16;
-				int var38 = Statics.field6852 - (arg4 * var35 + arg6 >> 16);
-				int var39 = Statics.field6852 - ((var35 + 64) * arg4 + arg6 >> 16);
+				int var38 = field6852 - (arg4 * var35 + arg6 >> 16);
+				int var39 = field6852 - ((var35 + 64) * arg4 + arg6 >> 16);
 				if (var38 - var16 != var39) {
 					var37 = var38 - var39;
 				}
@@ -772,16 +891,16 @@ public class WorldMap {
 		Sprite var5 = (Sprite) field6833.method2930(-1L);
 		if (var5 == null || var5.method1459() != arg3) {
 			int var6;
-			if (Statics.field6811.field12355 == -1) {
+			if (field6811.field12355 == -1) {
 				var6 = -16777216;
 			} else {
-				var6 = Statics.field6811.field12355 | 0xFF000000;
+				var6 = field6811.field12355 | 0xFF000000;
 			}
-			if (Statics.field6838 == null || arg3 * arg3 != Statics.field6838.length) {
-				Statics.field6838 = new int[arg3 * arg3];
+			if (field6838 == null || arg3 * arg3 != field6838.length) {
+				field6838 = new int[arg3 * arg3];
 			}
-			Arrays.fill(Statics.field6838, var6);
-			var5 = arg0.method2188(Statics.field6838, 0, arg3, arg3, arg3, true);
+			Arrays.fill(field6838, var6);
+			var5 = arg0.method2188(field6838, 0, arg3, arg3, arg3, true);
 			field6833.method2921(var5, -1L);
 		}
 		field6833.method2921(var5, (long) arg4);
@@ -791,11 +910,11 @@ public class WorldMap {
 	public static void method8526(int arg0, int arg1, int arg2, int arg3, boolean arg4, boolean arg5, boolean arg6, Renderer arg7) {
 		int var8 = arg0 * 64;
 		int var9 = arg1 * 64;
-		if (Statics.field6838 == null || arg2 * arg2 != Statics.field6838.length) {
-			Statics.field6838 = new int[arg2 * arg2];
+		if (field6838 == null || arg2 * arg2 != field6838.length) {
+			field6838 = new int[arg2 * arg2];
 		}
 		boolean var10 = field6819 && !arg6;
-		int var11 = Statics.field6811.field12355 | 0xFF000000;
+		int var11 = field6811.field12355 | 0xFF000000;
 		for (int var12 = 0; var12 < 64; var12++) {
 			int var13 = var8 + var12;
 			int var14 = arg2 * var12 / 64;
@@ -809,36 +928,36 @@ public class WorldMap {
 				if (var10 && !method8534(var13, var17)) {
 					var18 = false;
 				}
-				int var19 = Statics.field6812 * var17 + var13;
+				int var19 = field6812 * var17 + var13;
 				boolean var20 = false;
 				boolean var21 = false;
 				Object var22 = null;
-				int var23 = (Statics.field6813[var19] & 0xFF) << 16 | Statics.field6814[var19] & 0xFFFF;
+				int var23 = (field6813[var19] & 0xFF) << 16 | field6814[var19] & 0xFFFF;
 				int var24;
 				if (var23 == 0) {
 					var24 = var11;
 				} else {
 					var24 = var23 | 0xFF000000;
 				}
-				short var25 = Statics.field6815[var19];
-				Object var26 = Statics.field6817[var19];
+				short var25 = field6815[var19];
+				Object var26 = field6817[var19];
 				int var27 = arg2 * var16 / 64;
 				int var28 = (var16 + 1) * arg2 / 64 - 1;
 				if (var28 < var27) {
 					var28 = var27;
 				}
 				if (var26 == null) {
-					method8612(Statics.field6838, var14, var15, var27, var28, arg2, var18, var24, var25, Statics.field6802[var19], null, null, true);
+					method8612(field6838, var14, var15, var27, var28, arg2, var18, var24, var25, field6802[var19], null, null, true);
 				} else if (var26 instanceof WorldMapNode) {
 					WorldMapNode var29 = (WorldMapNode) var26;
 					if (var29 != null) {
-						method8612(Statics.field6838, var14, var15, var27, var28, arg2, var18, var24, var25, Statics.field6802[var19], var29.field11444, var29.field11445, true);
+						method8612(field6838, var14, var15, var27, var28, arg2, var18, var24, var25, field6802[var19], var29.field11444, var29.field11445, true);
 					}
 				} else {
 					Integer var30 = (Integer) var26;
 					field6816[0] = var30;
-					field6850[0] = Statics.field6818[var19];
-					method8612(Statics.field6838, var14, var15, var27, var28, arg2, var18, var24, var25, Statics.field6802[var19], field6816, field6850, true);
+					field6850[0] = field6818[var19];
+					method8612(field6838, var14, var15, var27, var28, arg2, var18, var24, var25, field6802[var19], field6816, field6850, true);
 				}
 			}
 		}
@@ -850,17 +969,17 @@ public class WorldMap {
 					int var35 = var9 + var34;
 					if (!var10 || method8534(var32, var35)) {
 						boolean var36 = var34 == 0 && var35 != 0;
-						int var37 = Statics.field6812 * var35 + var32;
+						int var37 = field6812 * var35 + var32;
 						if (var33 && var36) {
-							method8528(arg7, Statics.field6838, arg2, -1, -1, var32 - 1, var35 - 1, var37 - 1 - Statics.field6812);
+							method8528(arg7, field6838, arg2, -1, -1, var32 - 1, var35 - 1, var37 - 1 - field6812);
 						}
 						if (var33) {
-							method8528(arg7, Statics.field6838, arg2, -1, var34, var32 - 1, var35, var37 - 1);
+							method8528(arg7, field6838, arg2, -1, var34, var32 - 1, var35, var37 - 1);
 						}
 						if (var36) {
-							method8528(arg7, Statics.field6838, arg2, var31, -1, var32, var35 - 1, var37 - Statics.field6812);
+							method8528(arg7, field6838, arg2, var31, -1, var32, var35 - 1, var37 - field6812);
 						}
-						method8528(arg7, Statics.field6838, arg2, var31, var34, var32, var35, var37);
+						method8528(arg7, field6838, arg2, var31, var34, var32, var35, var37);
 					}
 				}
 			}
@@ -888,11 +1007,11 @@ public class WorldMap {
 					if (var51 < var50) {
 						var51 = var50;
 					}
-					java.util.HashMap var52 = Statics.field6830[var40][var38][var39];
+					java.util.HashMap var52 = field6830[var40][var38][var39];
 					if (var52 != null) {
 						WorldMapUpperLevelTileData var53 = (WorldMapUpperLevelTileData) var52.get((var43 << 8) + var49);
 						if (var53 != null) {
-							method8612(Statics.field6838, var44, var45, var50, var51, arg2, var48, var53.field6770, var53.field6768, var53.field6772, var53.field6773, var53.field6771, false);
+							method8612(field6838, var44, var45, var50, var51, arg2, var48, var53.field6770, var53.field6768, var53.field6772, var53.field6773, var53.field6771, false);
 						}
 					}
 				}
@@ -904,11 +1023,11 @@ public class WorldMap {
 					int var58 = var9 + var57;
 					if (!var10 || method8534(var55, var58)) {
 						int var59 = var58 & 0x3F;
-						java.util.HashMap var60 = Statics.field6830[var40][var38][var39];
+						java.util.HashMap var60 = field6830[var40][var38][var39];
 						if (var60 != null) {
 							WorldMapUpperLevelTileData var61 = (WorldMapUpperLevelTileData) var60.get((var56 << 8) + var59);
 							if (var61 != null) {
-								method8529(arg7, Statics.field6838, arg2, var54, var57, var61.field6773, var61.field6771);
+								method8529(arg7, field6838, arg2, var54, var57, var61.field6773, var61.field6771);
 							}
 						}
 					}
@@ -927,7 +1046,7 @@ public class WorldMap {
 						int var69 = arg2 * var67 / var62;
 						int var70 = (var67 + 1) * arg2 / var62 - 1;
 						if (arg2 < 64) {
-							method8522(Statics.field6838, var65, var66, var69, var70, arg2);
+							method8522(field6838, var65, var66, var69, var70, arg2);
 						} else {
 							field6855[field6822] = method8534(var64, var68 + 8);
 							field6855[field6823] = method8534(var64 + 8, var68 + 8);
@@ -937,13 +1056,13 @@ public class WorldMap {
 							field6855[field6827] = method8534(var64 - 8, var68 - 8);
 							field6855[field6843] = method8534(var64 - 8, var68);
 							field6855[field6829] = method8534(var64 - 8, var68 + 8);
-							method8538(Statics.field6838, var65, var66, var69, var70, arg2);
+							method8538(field6838, var65, var66, var69, var70, arg2);
 						}
 					}
 				}
 			}
 		}
-		field6833.method2921(arg7.method2188(Statics.field6838, 0, arg2, arg2, arg2, true), (long) arg3);
+		field6833.method2921(arg7.method2188(field6838, 0, arg2, arg2, arg2, true), (long) arg3);
 	}
 
 	@ObfuscatedName("tf.a([IIIIIIZIII[I[BZ)V")
@@ -953,8 +1072,8 @@ public class WorldMap {
 				method8537(arg0, arg1, arg2, arg3, arg4, arg5, arg5, arg7 | 0xFF000000);
 			} else {
 				int var13 = arg9 & 0x3F;
-				if (var13 == 0 || Statics.field6840 == 0) {
-					int var17 = Statics.field6854[arg8];
+				if (var13 == 0 || field6840 == 0) {
+					int var17 = field6854[arg8];
 					if (arg12 || var17 != 0) {
 						method8537(arg0, arg1, arg2, arg3, arg4, arg5, arg5, var17 | 0xFF000000);
 					}
@@ -962,7 +1081,7 @@ public class WorldMap {
 					int var14 = arg12 ? 0 : 1;
 					int var15 = Statics.method16462(arg9 >> 6 & 0x3, var13);
 					int var16 = WorldMapTileShapes.method9049(var13);
-					method8585(arg0, arg1, arg2, arg3, arg4, arg5, arg5, arg7, Statics.field6854[arg8], Statics.field6799[var16 - 1][var15], Statics.field6840, var14);
+					method8585(arg0, arg1, arg2, arg3, arg4, arg5, arg5, arg7, field6854[arg8], field6799[var16 - 1][var15], field6840, var14);
 				}
 			}
 		}
@@ -974,7 +1093,7 @@ public class WorldMap {
 		for (int var20 = 0; var20 < arg10.length; var20++) {
 			int var21 = arg11[var20] & 0x3F;
 			if (LocShape.field7554.field7562 == var21 || LocShape.field7545.field7562 == var21 || LocShape.field7546.field7562 == var21 || LocShape.field7547.field7562 == var21) {
-				LocType var22 = (LocType) Statics.field6785.list(arg10[var20]);
+				LocType var22 = (LocType) field6785.list(arg10[var20]);
 				if (var22.field7486 == -1) {
 					int var23 = -3355444;
 					if (var22.field7470 == 1) {
@@ -1033,7 +1152,7 @@ public class WorldMap {
 
 	@ObfuscatedName("tf.g(Ldh;[IIIIIII)V")
 	public static void method8528(Renderer arg0, int[] arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
-		Object var8 = Statics.field6817[arg7];
+		Object var8 = field6817[arg7];
 		if (var8 == null) {
 			return;
 		}
@@ -1045,7 +1164,7 @@ public class WorldMap {
 		} else {
 			Integer var10 = (Integer) var8;
 			field6816[0] = var10;
-			field6850[0] = Statics.field6818[Statics.field6812 * arg6 + arg5];
+			field6850[0] = field6818[field6812 * arg6 + arg5];
 			method8529(arg0, arg1, arg2, arg3, arg4, field6816, field6850);
 		}
 	}
@@ -1056,10 +1175,10 @@ public class WorldMap {
 			return;
 		}
 		for (int var7 = 0; var7 < arg5.length; var7++) {
-			LocType var8 = (LocType) Statics.field6785.list(arg5[var7]);
+			LocType var8 = (LocType) field6785.list(arg5[var7]);
 			int var9 = var8.field7486;
 			if (var9 != -1) {
-				MSIType var10 = (MSIType) Statics.field6789.list(var9);
+				MSIType var10 = (MSIType) field6789.list(var9);
 				Sprite var11 = var10.method15057(arg0, var8.field7487 ? arg6[var7] >> 6 & 0x3 : 0, var8.field7504 ? var8.mirror : false);
 				int[] var12 = var10.method15058(arg0, var8.field7487 ? arg6[var7] >> 6 & 0x3 : 0, var8.field7504 ? var8.mirror : false);
 				if (var11 != null) {
@@ -1110,10 +1229,10 @@ public class WorldMap {
 
 	@ObfuscatedName("tf.j(Ldh;)Laat;")
 	public static IterableQueue method8602(Renderer arg0) {
-		int var1 = Statics.field6847 - Statics.field6845;
-		int var2 = Statics.field6846 - Statics.field6848;
-		int var3 = (Statics.field6851 - Statics.field6801 << 16) / var1;
-		int var4 = (Statics.field6852 - Statics.field6837 << 16) / var2;
+		int var1 = field6847 - field6845;
+		int var2 = field6846 - field6848;
+		int var3 = (field6851 - field6801 << 16) / var1;
+		int var4 = (field6852 - field6837 << 16) / var2;
 		return method8531(arg0, var3, var4, 0, 0);
 	}
 
@@ -1127,8 +1246,8 @@ public class WorldMap {
 
 	@ObfuscatedName("tf.ae(Ldh;Laks;IIII)V")
 	public static void method8525(Renderer arg0, WorldMapElement arg1, int arg2, int arg3, int arg4, int arg5) {
-		arg1.field11449 = ((arg1.field11448 - Statics.field6845) * arg2 + arg4 >> 16) + Statics.field6801;
-		arg1.field11451 = Statics.field6852 - ((arg1.field11452 - Statics.field6848) * arg3 + arg5 >> 16);
+		arg1.field11449 = ((arg1.field11448 - field6845) * arg2 + arg4 >> 16) + field6801;
+		arg1.field11451 = field6852 - ((arg1.field11452 - field6848) * arg3 + arg5 >> 16);
 	}
 
 	@ObfuscatedName("tf.ag(Ldh;Laks;Lhs;)V")
@@ -1140,8 +1259,8 @@ public class WorldMap {
 		for (int var4 = 0; var4 < var3.length / 2; var4++) {
 			int var5 = arg1.field11448 + arg2.field2393[var4 * 2];
 			int var6 = arg1.field11452 + arg2.field2393[var4 * 2 + 1];
-			var3[var4 * 2] = (Statics.field6851 - Statics.field6801) * (var5 - Statics.field6845) / (Statics.field6847 - Statics.field6845) + Statics.field6801;
-			var3[var4 * 2 + 1] = Statics.field6852 - (Statics.field6852 - Statics.field6837) * (var6 - Statics.field6848) / (Statics.field6846 - Statics.field6848);
+			var3[var4 * 2] = (field6851 - field6801) * (var5 - field6845) / (field6847 - field6845) + field6801;
+			var3[var4 * 2 + 1] = field6852 - (field6852 - field6837) * (var6 - field6848) / (field6846 - field6848);
 		}
 		WorldMapRelated2.method2053(arg0, var3, arg2.field2398);
 		if (arg2.field2399 <= 0) {
@@ -1193,12 +1312,12 @@ public class WorldMap {
 	public static boolean method8534(int arg0, int arg1) {
 		int var2 = arg0 >> 3;
 		int var3 = arg1 >> 3;
-		return var2 >= 0 && var3 >= 0 && var2 < Statics.field6820.length && var3 < Statics.field6820[var2].length ? Statics.field6820[var2][var3] : false;
+		return var2 >= 0 && var3 >= 0 && var2 < field6820.length && var3 < field6820[var2].length ? field6820[var2][var3] : false;
 	}
 
 	@ObfuscatedName("tf.al()I")
 	public static int method8535() {
-		return (int) (Statics.field6804 * 64.0F / 2.0F);
+		return (int) (field6804 * 64.0F / 2.0F);
 	}
 
 	@ObfuscatedName("tf.ac(J)I")
@@ -1218,91 +1337,91 @@ public class WorldMap {
 
 	@ObfuscatedName("tf.aw([IIIIII)V")
 	public static void method8538(int[] arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		int var6 = Statics.field6792.field7691 >> 24 & 0xFF;
+		int var6 = field6792.field7691 >> 24 & 0xFF;
 		int var7 = 255 - var6;
 		if ((!field6855[field6822] || !field6855[field6824] && !field6855[field6843]) && (!field6855[field6826] || !field6855[field6824] && !field6855[field6843])) {
 			method8539(arg0, arg1, arg2, arg3, arg4, arg5, var6, var7, true, true, true, true);
 			if (field6855[field6823]) {
-				arg0[(arg5 - arg4 - 1) * arg5 + arg2] = Statics.field6792.field7692;
-				arg0[(arg5 - arg4) * arg5 + arg2] = Statics.field6792.field7692;
-				arg0[(arg5 - arg4 - 1) * arg5 + arg2 - 1] = Statics.field6792.field7692;
+				arg0[(arg5 - arg4 - 1) * arg5 + arg2] = field6792.field7692;
+				arg0[(arg5 - arg4) * arg5 + arg2] = field6792.field7692;
+				arg0[(arg5 - arg4 - 1) * arg5 + arg2 - 1] = field6792.field7692;
 			}
 			if (field6855[field6825]) {
-				arg0[(arg5 - arg3 - 1) * arg5 + arg2] = Statics.field6792.field7692;
-				arg0[(arg5 - arg3 - 2) * arg5 + arg2] = Statics.field6792.field7692;
-				arg0[(arg5 - arg3 - 1) * arg5 + arg2 - 1] = Statics.field6792.field7692;
+				arg0[(arg5 - arg3 - 1) * arg5 + arg2] = field6792.field7692;
+				arg0[(arg5 - arg3 - 2) * arg5 + arg2] = field6792.field7692;
+				arg0[(arg5 - arg3 - 1) * arg5 + arg2 - 1] = field6792.field7692;
 			}
 			if (field6855[field6827]) {
-				arg0[(arg5 - arg3 - 1) * arg5 + arg1] = Statics.field6792.field7692;
-				arg0[(arg5 - arg3 - 2) * arg5 + arg1] = Statics.field6792.field7692;
-				arg0[(arg5 - arg3 - 1) * arg5 + arg1 + 1] = Statics.field6792.field7692;
+				arg0[(arg5 - arg3 - 1) * arg5 + arg1] = field6792.field7692;
+				arg0[(arg5 - arg3 - 2) * arg5 + arg1] = field6792.field7692;
+				arg0[(arg5 - arg3 - 1) * arg5 + arg1 + 1] = field6792.field7692;
 			}
 			if (field6855[field6829]) {
-				arg0[(arg5 - arg4 - 1) * arg5 + arg1] = Statics.field6792.field7692;
-				arg0[(arg5 - arg4) * arg5 + arg1] = Statics.field6792.field7692;
-				arg0[(arg5 - arg4 - 1) * arg5 + arg1 + 1] = Statics.field6792.field7692;
+				arg0[(arg5 - arg4 - 1) * arg5 + arg1] = field6792.field7692;
+				arg0[(arg5 - arg4) * arg5 + arg1] = field6792.field7692;
+				arg0[(arg5 - arg4 - 1) * arg5 + arg1 + 1] = field6792.field7692;
 			}
 			return;
 		}
 		if (field6855[field6822] && field6855[field6824]) {
-			method8541(arg0, arg2 - Statics.field6792.field7694 + 1, arg4 - Statics.field6792.field7694 + 1, arg5, var6, var7, field6823);
+			method8541(arg0, arg2 - field6792.field7694 + 1, arg4 - field6792.field7694 + 1, arg5, var6, var7, field6823);
 		} else {
-			method8539(arg0, arg2 - Statics.field6792.field7694 + 1, arg2, arg4 - Statics.field6792.field7694 + 1, arg4, arg5, var6, var7, true, true, false, false);
+			method8539(arg0, arg2 - field6792.field7694 + 1, arg2, arg4 - field6792.field7694 + 1, arg4, arg5, var6, var7, true, true, false, false);
 			if (field6855[field6823]) {
-				arg0[(arg5 - arg4 - 1) * arg5 + arg2] = Statics.field6792.field7692;
-				arg0[(arg5 - arg4) * arg5 + arg2] = Statics.field6792.field7692;
-				arg0[(arg5 - arg4 - 1) * arg5 + arg2 - 1] = Statics.field6792.field7692;
+				arg0[(arg5 - arg4 - 1) * arg5 + arg2] = field6792.field7692;
+				arg0[(arg5 - arg4) * arg5 + arg2] = field6792.field7692;
+				arg0[(arg5 - arg4 - 1) * arg5 + arg2 - 1] = field6792.field7692;
 			}
 		}
 		if (field6855[field6826] && field6855[field6824]) {
-			method8541(arg0, arg2 - Statics.field6792.field7694 + 1, arg3, arg5, var6, var7, field6825);
+			method8541(arg0, arg2 - field6792.field7694 + 1, arg3, arg5, var6, var7, field6825);
 		} else {
-			method8539(arg0, arg2 - Statics.field6792.field7694 + 1, arg2, arg3, Statics.field6792.field7694 + arg3 - 1, arg5, var6, var7, false, true, true, false);
+			method8539(arg0, arg2 - field6792.field7694 + 1, arg2, arg3, field6792.field7694 + arg3 - 1, arg5, var6, var7, false, true, true, false);
 			if (field6855[field6825]) {
-				arg0[(arg5 - arg3 - 1) * arg5 + arg2] = Statics.field6792.field7692;
-				arg0[(arg5 - arg3 - 2) * arg5 + arg2] = Statics.field6792.field7692;
-				arg0[(arg5 - arg3 - 1) * arg5 + arg2 - 1] = Statics.field6792.field7692;
+				arg0[(arg5 - arg3 - 1) * arg5 + arg2] = field6792.field7692;
+				arg0[(arg5 - arg3 - 2) * arg5 + arg2] = field6792.field7692;
+				arg0[(arg5 - arg3 - 1) * arg5 + arg2 - 1] = field6792.field7692;
 			}
 		}
 		if (field6855[field6826] && field6855[field6843]) {
 			method8541(arg0, arg1, arg3, arg5, var6, var7, field6827);
 		} else {
-			method8539(arg0, arg1, Statics.field6792.field7694 + arg1 - 1, arg3, Statics.field6792.field7694 + arg3 - 1, arg5, var6, var7, false, false, true, true);
+			method8539(arg0, arg1, field6792.field7694 + arg1 - 1, arg3, field6792.field7694 + arg3 - 1, arg5, var6, var7, false, false, true, true);
 			if (field6855[field6827]) {
-				arg0[(arg5 - arg3 - 1) * arg5 + arg1] = Statics.field6792.field7692;
-				arg0[(arg5 - arg3 - 2) * arg5 + arg1] = Statics.field6792.field7692;
-				arg0[(arg5 - arg3 - 1) * arg5 + arg1 + 1] = Statics.field6792.field7692;
+				arg0[(arg5 - arg3 - 1) * arg5 + arg1] = field6792.field7692;
+				arg0[(arg5 - arg3 - 2) * arg5 + arg1] = field6792.field7692;
+				arg0[(arg5 - arg3 - 1) * arg5 + arg1 + 1] = field6792.field7692;
 			}
 		}
 		if (field6855[field6822] && field6855[field6843]) {
-			method8541(arg0, arg1, arg4 - Statics.field6792.field7694 + 1, arg5, var6, var7, field6829);
+			method8541(arg0, arg1, arg4 - field6792.field7694 + 1, arg5, var6, var7, field6829);
 		} else {
-			method8539(arg0, arg1, Statics.field6792.field7694 + arg1 - 1, arg4 - Statics.field6792.field7694 + 1, arg4, arg5, var6, var7, true, false, false, true);
+			method8539(arg0, arg1, field6792.field7694 + arg1 - 1, arg4 - field6792.field7694 + 1, arg4, arg5, var6, var7, true, false, false, true);
 			if (field6855[field6829]) {
-				arg0[(arg5 - arg4 - 1) * arg5 + arg1] = Statics.field6792.field7692;
-				arg0[(arg5 - arg4) * arg5 + arg1] = Statics.field6792.field7692;
-				arg0[(arg5 - arg4 - 1) * arg5 + arg1 + 1] = Statics.field6792.field7692;
+				arg0[(arg5 - arg4 - 1) * arg5 + arg1] = field6792.field7692;
+				arg0[(arg5 - arg4) * arg5 + arg1] = field6792.field7692;
+				arg0[(arg5 - arg4 - 1) * arg5 + arg1 + 1] = field6792.field7692;
 			}
 		}
-		if (Statics.field6792.field7694 + arg1 < arg2 - Statics.field6792.field7694) {
-			method8539(arg0, Statics.field6792.field7694 + arg1, arg2 - Statics.field6792.field7694, arg3, arg4, arg5, var6, var7, true, false, true, false);
+		if (field6792.field7694 + arg1 < arg2 - field6792.field7694) {
+			method8539(arg0, field6792.field7694 + arg1, arg2 - field6792.field7694, arg3, arg4, arg5, var6, var7, true, false, true, false);
 		}
-		if (Statics.field6792.field7694 + arg3 + 1 < arg4 - Statics.field6792.field7694 - 1) {
-			method8539(arg0, arg1, Statics.field6792.field7694 + arg1 - 1, Statics.field6792.field7694 + arg3, arg4 - Statics.field6792.field7694, arg5, var6, var7, false, false, false, true);
-			method8539(arg0, arg2 - Statics.field6792.field7694 + 1, arg2, Statics.field6792.field7694 + arg3, arg4 - Statics.field6792.field7694, arg5, var6, var7, false, true, false, false);
+		if (field6792.field7694 + arg3 + 1 < arg4 - field6792.field7694 - 1) {
+			method8539(arg0, arg1, field6792.field7694 + arg1 - 1, field6792.field7694 + arg3, arg4 - field6792.field7694, arg5, var6, var7, false, false, false, true);
+			method8539(arg0, arg2 - field6792.field7694 + 1, arg2, field6792.field7694 + arg3, arg4 - field6792.field7694, arg5, var6, var7, false, true, false, false);
 		}
 	}
 
 	@ObfuscatedName("tf.as([IIIIII)V")
 	public static void method8522(int[] arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		int var6 = Statics.field6792.field7691 >> 24 & 0xFF;
+		int var6 = field6792.field7691 >> 24 & 0xFF;
 		int var7 = 255 - var6;
 		for (int var8 = arg1; var8 <= arg2; var8++) {
 			for (int var9 = arg3; var9 <= arg4; var9++) {
 				int var10 = arg0[(arg5 - var9 - 1) * arg5 + var8];
 				if (field6853 != var10) {
 					field6853 = var10;
-					field6807 = ((Statics.field6792.field7691 & 0xFF00FF) * var6 + (var10 & 0xFF00FF) * var7 & -16711936) + ((Statics.field6792.field7691 & 0xFF00) * var6 + (var10 & 0xFF00) * var7 & 0xFF0000) >> 8 | 0xFF000000;
+					field6807 = ((field6792.field7691 & 0xFF00FF) * var6 + (var10 & 0xFF00FF) * var7 & -16711936) + ((field6792.field7691 & 0xFF00) * var6 + (var10 & 0xFF00) * var7 & 0xFF0000) >> 8 | 0xFF000000;
 				}
 				arg0[(arg5 - var9 - 1) * arg5 + var8] = field6807;
 			}
@@ -1312,21 +1431,21 @@ public class WorldMap {
 	@ObfuscatedName("tf.at([IIIIIIIIZZZZ)V")
 	public static void method8539(int[] arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, boolean arg8, boolean arg9, boolean arg10, boolean arg11) {
 		for (int var12 = arg1; var12 <= arg2; var12++) {
-			boolean var13 = arg9 ? field6855[field6824] && arg2 - var12 < Statics.field6792.field7693 : false;
-			boolean var14 = arg11 ? field6855[field6843] && var12 - arg1 < Statics.field6792.field7693 : false;
+			boolean var13 = arg9 ? field6855[field6824] && arg2 - var12 < field6792.field7693 : false;
+			boolean var14 = arg11 ? field6855[field6843] && var12 - arg1 < field6792.field7693 : false;
 			for (int var15 = arg3; var15 <= arg4; var15++) {
 				if (var13 || var14) {
-					arg0[(arg5 - var15 - 1) * arg5 + var12] = Statics.field6792.field7692;
+					arg0[(arg5 - var15 - 1) * arg5 + var12] = field6792.field7692;
 				} else {
-					boolean var16 = arg8 ? field6855[field6822] && arg4 - var15 < Statics.field6792.field7693 : false;
-					boolean var17 = arg10 ? field6855[field6826] && var15 - arg3 < Statics.field6792.field7693 : false;
+					boolean var16 = arg8 ? field6855[field6822] && arg4 - var15 < field6792.field7693 : false;
+					boolean var17 = arg10 ? field6855[field6826] && var15 - arg3 < field6792.field7693 : false;
 					if (var16 || var17) {
-						arg0[(arg5 - var15 - 1) * arg5 + var12] = Statics.field6792.field7692;
+						arg0[(arg5 - var15 - 1) * arg5 + var12] = field6792.field7692;
 					} else {
 						int var18 = arg0[(arg5 - var15 - 1) * arg5 + var12];
 						if (field6853 != var18) {
 							field6853 = var18;
-							field6807 = ((Statics.field6792.field7691 & 0xFF00FF) * arg6 + (var18 & 0xFF00FF) * arg7 & -16711936) + ((Statics.field6792.field7691 & 0xFF00) * arg6 + (var18 & 0xFF00) * arg7 & 0xFF0000) >> 8 | 0xFF000000;
+							field6807 = ((field6792.field7691 & 0xFF00FF) * arg6 + (var18 & 0xFF00FF) * arg7 & -16711936) + ((field6792.field7691 & 0xFF00) * arg6 + (var18 & 0xFF00) * arg7 & 0xFF0000) >> 8 | 0xFF000000;
 						}
 						arg0[(arg5 - var15 - 1) * arg5 + var12] = field6807;
 					}
@@ -1337,15 +1456,15 @@ public class WorldMap {
 
 	@ObfuscatedName("tf.ad([IIIIIII)V")
 	public static void method8541(int[] arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
-		for (int var7 = 0; var7 < Statics.field6792.field7694; var7++) {
+		for (int var7 = 0; var7 < field6792.field7694; var7++) {
 			int var8 = var7;
 			if (field6823 == arg6 || field6825 == arg6) {
-				var8 = Statics.field6792.field7694 - var7 - 1;
+				var8 = field6792.field7694 - var7 - 1;
 			}
-			for (int var9 = 0; var9 < Statics.field6792.field7694; var9++) {
+			for (int var9 = 0; var9 < field6792.field7694; var9++) {
 				int var10 = var9;
 				if (field6825 == arg6 || field6827 == arg6) {
-					var10 = Statics.field6792.field7694 - var9 - 1;
+					var10 = field6792.field7694 - var9 - 1;
 				}
 				int var11 = field6800[var8][var10];
 				if (var11 != 0) {
@@ -1353,11 +1472,11 @@ public class WorldMap {
 						int var12 = arg0[(arg3 - arg2 - var9 - 1) * arg3 + arg1 + var7];
 						if (field6853 != var12) {
 							field6853 = var12;
-							field6807 = ((Statics.field6792.field7691 & 0xFF00FF) * arg4 + (var12 & 0xFF00FF) * arg5 & -16711936) + ((Statics.field6792.field7691 & 0xFF00) * arg4 + (var12 & 0xFF00) * arg5 & 0xFF0000) >> 8 | 0xFF000000;
+							field6807 = ((field6792.field7691 & 0xFF00FF) * arg4 + (var12 & 0xFF00FF) * arg5 & -16711936) + ((field6792.field7691 & 0xFF00) * arg4 + (var12 & 0xFF00) * arg5 & 0xFF0000) >> 8 | 0xFF000000;
 						}
 						arg0[(arg3 - arg2 - var9 - 1) * arg3 + arg1 + var7] = field6807;
 					} else if (var11 == 2) {
-						arg0[(arg3 - arg2 - var9 - 1) * arg3 + arg1 + var7] = Statics.field6792.field7692;
+						arg0[(arg3 - arg2 - var9 - 1) * arg3 + arg1 + var7] = field6792.field7692;
 					}
 				}
 			}

@@ -9,21 +9,16 @@ import com.jagex.encryption.Isaac;
 import com.jagex.game.client.*;
 import com.jagex.game.compression.huffman.WordPack;
 import com.jagex.game.config.*;
-import com.jagex.game.config.defaults.*;
 import com.jagex.game.config.iftype.Component;
 import com.jagex.game.config.iftype.Interface;
 import com.jagex.game.config.loctype.LocType;
-import com.jagex.game.config.loctype.LocTypeList;
 import com.jagex.game.config.meltype.MapElementType;
-import com.jagex.game.config.meltype.MapElementTypeList;
 import com.jagex.game.config.msitype.MSIType;
-import com.jagex.game.config.msitype.MSITypeList;
 import com.jagex.game.config.objtype.ObjType;
 import com.jagex.game.config.paramtype.ParamType;
 import com.jagex.game.config.questtype.QuestType;
 import com.jagex.game.config.seqtype.SeqTypeList;
 import com.jagex.game.config.vartype.VarIntDomain;
-import com.jagex.game.config.vartype.VariableTypeProvider;
 import com.jagex.game.config.vartype.bit.VarBitTypeEncodingKey;
 import com.jagex.game.config.vartype.constants.BaseVarType;
 import com.jagex.game.config.vartype.constants.ScriptVarType;
@@ -139,9 +134,6 @@ public class Statics {
 
 	@ObfuscatedName("alk.an")
 	public static int field11642;
-
-	@ObfuscatedName("alj.cp")
-	public static int field11654;
 
 	@ObfuscatedName("alv.bn")
 	public static Sprite field11699;
@@ -272,9 +264,6 @@ public class Statics {
 	@ObfuscatedName("eq.m")
 	public static CutsceneEntity[] field1721;
 
-	@ObfuscatedName("ez.qo")
-	public static Component field1734;
-
 	@ObfuscatedName("ea.ak")
 	public static int field1748;
 
@@ -301,9 +290,6 @@ public class Statics {
 
 	@ObfuscatedName("gh.as")
 	public static int[] field1970;
-
-	@ObfuscatedName("gh.bo")
-	public static MiniMenuDefaults field1971;
 
 	@ObfuscatedName("gv.al")
 	public static int field1981;
@@ -574,123 +560,6 @@ public class Statics {
 
 	@ObfuscatedName("tw.v")
 	public static FontMetrics field6778;
-
-	@ObfuscatedName("tf.m")
-	public static LocTypeList field6785;
-
-	@ObfuscatedName("tf.g")
-	public static int field6786;
-
-	@ObfuscatedName("tf.bc")
-	public static int[] field6787;
-
-	@ObfuscatedName("tf.k")
-	public static MapElementTypeList field6788;
-
-	@ObfuscatedName("tf.f")
-	public static MSITypeList field6789;
-
-	@ObfuscatedName("tf.w")
-	public static VarIntDomain field6790;
-
-	@ObfuscatedName("tf.l")
-	public static VariableTypeProvider field6791;
-
-	@ObfuscatedName("tf.u")
-	public static WorldMapDefaults field6792;
-
-	@ObfuscatedName("tf.p")
-	public static Js5 field6794;
-
-	@ObfuscatedName("tf.d")
-	public static Js5 field6795;
-
-	@ObfuscatedName("tf.o")
-	public static byte[][][] field6799;
-
-	@ObfuscatedName("tf.bb")
-	public static int field6801;
-
-	@ObfuscatedName("tf.ai")
-	public static byte[] field6802;
-
-	@ObfuscatedName("tf.x")
-	public static float field6803;
-
-	@ObfuscatedName("tf.b")
-	public static float field6804;
-
-	@ObfuscatedName("tf.h")
-	public static WorldMapRelated field6805;
-
-	@ObfuscatedName("tf.i")
-	public static int field6808;
-
-	@ObfuscatedName("tf.ag")
-	public static short[] field6809;
-
-	@ObfuscatedName("tf.t")
-	public static int field6810;
-
-	@ObfuscatedName("tf.z")
-	public static WorldMapAreaMetadata field6811;
-
-	@ObfuscatedName("tf.j")
-	public static int field6812;
-
-	@ObfuscatedName("tf.ah")
-	public static byte[] field6813;
-
-	@ObfuscatedName("tf.al")
-	public static short[] field6814;
-
-	@ObfuscatedName("tf.ac")
-	public static short[] field6815;
-
-	@ObfuscatedName("tf.aw")
-	public static Object[] field6817;
-
-	@ObfuscatedName("tf.as")
-	public static byte[] field6818;
-
-	@ObfuscatedName("tf.ad")
-	public static boolean[][] field6820;
-
-	@ObfuscatedName("tf.ay")
-	public static java.util.HashMap[][][] field6830;
-
-	@ObfuscatedName("tf.be")
-	public static int field6837;
-
-	@ObfuscatedName("tf.bf")
-	public static int[] field6838;
-
-	@ObfuscatedName("tf.s")
-	public static int field6840;
-
-	@ObfuscatedName("tf.bi")
-	public static int[] field6844;
-
-	@ObfuscatedName("tf.bn")
-	public static int field6845;
-
-	@ObfuscatedName("tf.bt")
-	public static int field6846;
-
-	@ObfuscatedName("tf.bq")
-	public static int field6847;
-
-	@ObfuscatedName("tf.bm")
-	public static int field6848;
-
-	@ObfuscatedName("tf.by")
-	public static int field6851;
-
-	@ObfuscatedName("tf.bu")
-	public static int field6852;
-
-	@ObfuscatedName("tf.ae")
-	public static int[] field6854;
 
 	@ObfuscatedName("ai.q")
 	public static CutsceneLoadingStage field694;
@@ -1969,14 +1838,14 @@ public class Statics {
 			return false;
 		}
 		if (arg0.field2392 != null) {
-			arg0 = arg0.method4024(field6791, field6790);
+			arg0 = arg0.method4024(WorldMap.field6791, WorldMap.field6790);
 			if (arg0 == null) {
 				return false;
 			}
 		}
 		if (!arg0.field2379) {
 			return false;
-		} else if (!arg0.method4030(field6791, field6790)) {
+		} else if (!arg0.method4030(WorldMap.field6791, WorldMap.field6790)) {
 			return false;
 		} else if (ClientWorldMap.field11667.method14495((long) arg0.field2367) != null) {
 			return false;
@@ -2300,15 +2169,15 @@ public class Statics {
 			return;
 		}
 		byte var2;
-		if ((double) field6804 == 2.0D) {
+		if ((double) WorldMap.field6804 == 2.0D) {
 			var2 = 0;
-		} else if ((double) field6804 == 3.0D) {
+		} else if ((double) WorldMap.field6804 == 3.0D) {
 			var2 = 1;
-		} else if ((double) field6804 == 4.0D) {
+		} else if ((double) WorldMap.field6804 == 4.0D) {
 			var2 = 2;
-		} else if ((double) field6804 == 6.0D) {
+		} else if ((double) WorldMap.field6804 == 6.0D) {
 			var2 = 3;
-		} else if ((double) field6804 >= 8.0D) {
+		} else if ((double) WorldMap.field6804 >= 8.0D) {
 			var2 = 4;
 		} else {
 			return;
@@ -2324,7 +2193,7 @@ public class Statics {
 		if (ClientWorldMap.field11651 < 100) {
 			return;
 		}
-		float var5 = (float) field6810 / (float) field6812;
+		float var5 = (float) WorldMap.field6810 / (float) WorldMap.field6812;
 		int var6 = arg3;
 		int var7 = arg4;
 		if (var5 < 1.0F) {
@@ -2336,16 +2205,16 @@ public class Statics {
 		int var9 = (arg4 - var7) / 2 + arg2;
 		if (field7241 == null || field7241.method1459() != var6 || field7241.method1435() != var7) {
 			ClientWorldMap.field6833 = ClientWorldMap.field6832;
-			ClientWorldMap.method8620(field6786, field6810 + field6808, field6812 + field6786, field6808, var8, var9, var6 + var8, var7 + var9);
+			ClientWorldMap.method8620(WorldMap.field6786, WorldMap.field6810 + WorldMap.field6808, WorldMap.field6812 + WorldMap.field6786, WorldMap.field6808, var8, var9, var6 + var8, var7 + var9);
 			ClientWorldMap.method8523(arg0, false, false, Client.field10948, true);
 			arg0.method2202();
 			field7241 = arg0.method2314(var8, var9, var6, var7, true);
 		}
 		field7241.method1439(var8, var9);
-		int var10 = field3121 * var6 / field6812;
-		int var11 = field4603 * var7 / field6810;
-		int var12 = field2606 * var6 / field6812 + var8;
-		int var13 = var7 + var9 - field8055 * var7 / field6810 - var11;
+		int var10 = field3121 * var6 / WorldMap.field6812;
+		int var11 = field4603 * var7 / WorldMap.field6810;
+		int var12 = field2606 * var6 / WorldMap.field6812 + var8;
+		int var13 = var7 + var9 - field8055 * var7 / WorldMap.field6810 - var11;
 		int var14 = -1996554240;
 		if (Client.modegame == ModeGame.STELLARDAWN) {
 			var14 = -1996488705;
@@ -2353,7 +2222,7 @@ public class Statics {
 		arg0.method2354(var12, var13, var10, var11, var14, 1);
 		arg0.method2179(var12, var13, var10, var11, var14, 0);
 		for (WorldMapElement var15 = (WorldMapElement) ClientWorldMap.field6806.method14191(); var15 != null; var15 = (WorldMapElement) ClientWorldMap.field6806.method14161()) {
-			MapElementType var16 = (MapElementType) field6788.list(var15.field11446);
+			MapElementType var16 = (MapElementType) WorldMap.field6788.list(var15.field11446);
 			if (method18887(var16)) {
 				WorldMapFlash var17 = (WorldMapFlash) ClientWorldMap.field11661.get(var15.field11446);
 				if (var17 == null) {
@@ -2366,8 +2235,8 @@ public class Statics {
 					} else {
 						var18 = var17.field619 * 255 / ClientWorldMap.field11664;
 					}
-					int var19 = var15.field11448 * var6 / field6812 + var8;
-					int var20 = (field6810 - var15.field11452) * var7 / field6810 + var9;
+					int var19 = var15.field11448 * var6 / WorldMap.field6812 + var8;
+					int var20 = (WorldMap.field6810 - var15.field11452) * var7 / WorldMap.field6810 + var9;
 					arg0.method2301(var19 - 2, var20 - 2, 4, 4, var18 << 24 | 0xFFFF00);
 				}
 			}
@@ -2452,15 +2321,15 @@ public class Statics {
 
 	@ObfuscatedName("aji.em(S)I")
 	public static int method17462() {
-		if ((double) field6804 == 2.0D) {
+		if ((double) WorldMap.field6804 == 2.0D) {
 			return 25;
-		} else if ((double) field6804 == 3.0D) {
+		} else if ((double) WorldMap.field6804 == 3.0D) {
 			return 37;
-		} else if ((double) field6804 == 4.0D) {
+		} else if ((double) WorldMap.field6804 == 4.0D) {
 			return 50;
-		} else if ((double) field6804 == 6.0D) {
+		} else if ((double) WorldMap.field6804 == 6.0D) {
 			return 75;
-		} else if ((double) field6804 == 8.0D) {
+		} else if ((double) WorldMap.field6804 == 8.0D) {
 			return 100;
 		} else {
 			return 200;
@@ -2484,8 +2353,8 @@ public class Statics {
 			return null;
 		}
 		for (WorldMapElement var0 = (WorldMapElement) ClientWorldMap.field11669.next(); var0 != null; var0 = (WorldMapElement) ClientWorldMap.field11669.next()) {
-			MapElementType var1 = (MapElementType) field6788.list(var0.field11446);
-			if (var1 != null && var1.field2409 && var1.method4030(field6791, field6790)) {
+			MapElementType var1 = (MapElementType) WorldMap.field6788.list(var0.field11446);
+			if (var1 != null && var1.field2409 && var1.method4030(WorldMap.field6791, WorldMap.field6790)) {
 				return var0;
 			}
 		}
@@ -2494,8 +2363,8 @@ public class Statics {
 
 	@ObfuscatedName("ys.eb(IIB)V")
 	public static void method10453(int arg0, int arg1) {
-		field11443 = arg0 - field6786;
-		field11654 = arg1 - field6808;
+		field11443 = arg0 - WorldMap.field6786;
+		ClientWorldMap.field11654 = arg1 - WorldMap.field6808;
 		ClientWorldMap.field11665 = -1;
 		ClientWorldMap.field11653 = -1;
 		ClientWorldMap.method4643();

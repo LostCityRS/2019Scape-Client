@@ -374,9 +374,9 @@ public class Loading {
 			}
 			Client.field1709 = new WearposDefaults(Client.field1587);
 			Client.skillDefaults = new SkillDefaults(Client.field1587);
-			Statics.field1971 = new MiniMenuDefaults(Client.field1587);
+			MiniMenu.field1971 = new MiniMenuDefaults(Client.field1587);
 			Client.field2775 = new CutsceneDefaults(Client.field1587);
-			Statics.field6792 = new WorldMapDefaults(Client.field1587);
+			WorldMap.field6792 = new WorldMapDefaults(Client.field1587);
 		}
 		if (Statics.field3419 == LoadingStage.SETUP_CONFIG_DECODERS) {
 			if (Client.field11389.field7738 != -1 && !Client.field9213.requestdownload(Client.field11389.field7738, 0)) {

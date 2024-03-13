@@ -12108,9 +12108,9 @@ public final class ScriptRunner {
 		if (var2.field8680) {
 			var3 = var2.field8696;
 		} else if (var2.members) {
-			var3 = Statics.field1971.field7665;
+			var3 = MiniMenu.field1971.field7665;
 		} else {
-			var3 = Statics.field1971.field7661;
+			var3 = MiniMenu.field1971.field7661;
 		}
 		arg0.field8216[++arg0.field8226 - 1] = var3;
 	}
@@ -12916,8 +12916,8 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("vz.akn(Lyf;B)V")
 	public static final void method9552(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Statics.field11443 + Statics.field6786;
-		arg0.field8216[++arg0.field8226 - 1] = Statics.field11654 + Statics.field6808;
+		arg0.field8216[++arg0.field8226 - 1] = Statics.field11443 + WorldMap.field6786;
+		arg0.field8216[++arg0.field8226 - 1] = ClientWorldMap.field11654 + WorldMap.field6808;
 	}
 
 	@ObfuscatedName("wo.ako(Lyf;B)V")
@@ -12969,7 +12969,7 @@ public final class ScriptRunner {
 			arg0.field8216[++arg0.field8226 - 1] = -1;
 		} else {
 			arg0.field8216[++arg0.field8226 - 1] = var1.field11446;
-			int var2 = var1.field11447 << 28 | var1.field11448 + Statics.field6786 << 14 | var1.field11452 + Statics.field6808;
+			int var2 = var1.field11447 << 28 | var1.field11448 + WorldMap.field6786 << 14 | var1.field11452 + WorldMap.field6808;
 			arg0.field8216[++arg0.field8226 - 1] = var2;
 		}
 	}
@@ -12982,7 +12982,7 @@ public final class ScriptRunner {
 			arg0.field8216[++arg0.field8226 - 1] = -1;
 		} else {
 			arg0.field8216[++arg0.field8226 - 1] = var1.field11446;
-			int var2 = var1.field11447 << 28 | var1.field11448 + Statics.field6786 << 14 | var1.field11452 + Statics.field6808;
+			int var2 = var1.field11447 << 28 | var1.field11448 + WorldMap.field6786 << 14 | var1.field11452 + WorldMap.field6808;
 			arg0.field8216[++arg0.field8226 - 1] = var2;
 		}
 	}
@@ -13067,7 +13067,7 @@ public final class ScriptRunner {
 			arg0.field8216[++arg0.field8226 - 1] = -1;
 			return;
 		}
-		boolean var2 = var1.method19482(Statics.field11443 + Statics.field6786, Statics.field11654 + Statics.field6808, field8203);
+		boolean var2 = var1.method19482(Statics.field11443 + WorldMap.field6786, ClientWorldMap.field11654 + WorldMap.field6808, field8203);
 		if (var2) {
 			arg0.field8216[++arg0.field8226 - 1] = field8203[1];
 			arg0.field8216[++arg0.field8226 - 1] = field8203[2];
@@ -13210,7 +13210,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("fd.als(Lyf;I)V")
 	public static final void method3063(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Statics.field6811 == null ? -1 : Statics.field6811.field12359;
+		arg0.field8216[++arg0.field8226 - 1] = WorldMap.field6811 == null ? -1 : WorldMap.field6811.field12359;
 	}
 
 	@ObfuscatedName("sl.alw(Lyf;B)V")

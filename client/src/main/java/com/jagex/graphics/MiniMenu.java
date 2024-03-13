@@ -5,6 +5,7 @@ import com.jagex.core.datastruct.*;
 import com.jagex.core.utils.TextUtil;
 import com.jagex.game.client.*;
 import com.jagex.game.config.defaults.Binding;
+import com.jagex.game.config.defaults.MiniMenuDefaults;
 import com.jagex.game.config.iftype.Component;
 import com.jagex.game.config.iftype.componentproperties.ServerKeyProperties;
 import com.jagex.game.config.loctype.LocType;
@@ -112,6 +113,9 @@ public class MiniMenu {
 	@ObfuscatedName("o.bw")
 	public static int field568 = -1;
 
+	@ObfuscatedName("gh.bo")
+	public static MiniMenuDefaults field1971;
+
 	@ObfuscatedName("o.bz")
 	public static float[] field569 = new float[4];
 
@@ -121,17 +125,17 @@ public class MiniMenu {
 
 	@ObfuscatedName("aba.e(I)Z")
 	public static boolean method14766() {
-		return Statics.method15214(Statics.field1971.field7664);
+		return Statics.method15214(field1971.field7664);
 	}
 
 	@ObfuscatedName("rd.n(B)Z")
 	public static boolean method7893() {
-		return Statics.method15214(Statics.field1971.field7663);
+		return Statics.method15214(field1971.field7663);
 	}
 
 	@ObfuscatedName("ng.m(B)Z")
 	public static boolean method6035() {
-		return Statics.method15214(Statics.field1971.field7659);
+		return Statics.method15214(field1971.field7659);
 	}
 
 	@ObfuscatedName("gp.f(Lvt;Lakm;I)Z")
@@ -196,9 +200,9 @@ public class MiniMenu {
 			var5 = var3.method17832();
 		}
 		if (!field562) {
-			boolean var36 = method3483(Statics.field1971.field7667, var3);
-			boolean var37 = method3483(Statics.field1971.field7660, var3);
-			boolean var38 = method3483(Statics.field1971.field7666, var3);
+			boolean var36 = method3483(field1971.field7667, var3);
+			boolean var37 = method3483(field1971.field7660, var3);
+			boolean var38 = method3483(field1971.field7666, var3);
 			if ((var36 || var37) && (Client.field10968 == 1 && field546 > 2 || method6848())) {
 				var38 = true;
 			}
@@ -229,7 +233,7 @@ public class MiniMenu {
 				field545 = 0;
 				Statics.field1280 = null;
 			}
-		} else if (!method3483(Statics.field1971.field7662, var3)) {
+		} else if (!method3483(field1971.field7662, var3)) {
 			boolean var27 = false;
 			if (field541 != null) {
 				if (var4 >= Statics.field1981 - 10 && var4 <= Statics.field554 + Statics.field1981 + 10 && var5 >= Statics.field2433 - 10 && var5 <= Statics.field3005 + Statics.field2433 + 10) {
@@ -785,9 +789,9 @@ public class MiniMenu {
 										if (var75.field8680) {
 											var76 = var75.field8696;
 										} else if (var75.members) {
-											var76 = Statics.field1971.field7665;
+											var76 = field1971.field7665;
 										} else {
-											var76 = Statics.field1971.field7661;
+											var76 = field1971.field7661;
 										}
 										if (Client.field10973 && Client.field4490.field11717 == var29.field6978.field11717) {
 											ParamType var77 = (ParamType) (Client.field7677 == -1 ? null : Client.field3086.list(Client.field7677));
@@ -1107,7 +1111,7 @@ public class MiniMenu {
 						}
 					}
 				}
-			} else if (Statics.field1971.field7668) {
+			} else if (field1971.field7668) {
 				if (Statics.field1846 != null) {
 					return Statics.field1846.field12298;
 				}
