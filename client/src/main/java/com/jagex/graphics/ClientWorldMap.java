@@ -129,12 +129,12 @@ public class ClientWorldMap extends WorldMap {
 		if (field11651 < 10) {
 			for (int var2 = 0; var2 < field11659.length; var2++) {
 				for (int var3 = 0; var3 < field11659[var2].length; var3++) {
-					Statics.field10317.method6889(Statics.field6792.field7697[var2][var3]);
-					Statics.field7672.method6889(Statics.field6792.field7697[var2][var3]);
+					Client.field10317.method6889(Statics.field6792.field7697[var2][var3]);
+					Client.field7672.method6889(Statics.field6792.field7697[var2][var3]);
 				}
 			}
 			if (!Statics.field6795.method6886(Statics.field6811.field12351)) {
-				field11651 = Statics.field8332.method6880(Statics.field6811.field12351) / 10;
+				field11651 = Client.field8332.method6880(Statics.field6811.field12351) / 10;
 				return;
 			}
 			field11651 = 10;
@@ -147,9 +147,9 @@ public class ClientWorldMap extends WorldMap {
 			int[] var4 = new int[3];
 			int var5 = -1;
 			int var6 = -1;
-			Vector3 var7 = Statics.field4490.method10536().field4298;
+			Vector3 var7 = Client.field4490.method10536().field4298;
 			CoordGrid var8 = Client.world.method7727();
-			if (Statics.field6811.method19471(Statics.field4490.field11717, ((int) var7.field4308 >> 9) + var8.field7426, ((int) var7.field4313 >> 9) + var8.field7427, var4)) {
+			if (Statics.field6811.method19471(Client.field4490.field11717, ((int) var7.field4308 >> 9) + var8.field7426, ((int) var7.field4313 >> 9) + var8.field7427, var4)) {
 				var5 = var4[1] - Statics.field6786;
 				var6 = var4[2] - Statics.field6808;
 			}
@@ -217,7 +217,7 @@ public class ClientWorldMap extends WorldMap {
 			Statics.field6788.method18871(1024, 256);
 			Statics.field6789.method18915(256, 256);
 			Statics.field6785.method14910(4096);
-			Statics.field8736.method14910(256);
+			Client.field8736.method14910(256);
 			field11651 = 20;
 		} else if (field11651 == 20) {
 			if (!field6842) {
@@ -252,8 +252,8 @@ public class ClientWorldMap extends WorldMap {
 				}
 				for (int var12 = 0; var12 < 5; var12++) {
 					if (field11659[var11][var12] == null || field11660[var11][var12] == null) {
-						field11659[var11][var12] = (Font) Statics.field7538.method6188(Client.field10833, Statics.field6792.field7697[var11][var12], true, true);
-						field11660[var11][var12] = Statics.field7538.method6163(Client.field10833, Statics.field6792.field7697[var11][var12]);
+						field11659[var11][var12] = (Font) Client.field7538.method6188(Client.field10833, Statics.field6792.field7697[var11][var12], true, true);
+						field11660[var11][var12] = Client.field7538.method6163(Client.field10833, Statics.field6792.field7697[var11][var12]);
 						if (field11659[var11][var12] == null || field11660[var11][var12] == null) {
 							return;
 						}
@@ -313,7 +313,7 @@ public class ClientWorldMap extends WorldMap {
 		if (Statics.field6785 != null) {
 			Statics.field6785.method14910(256);
 		}
-		Statics.field8736.method14910(64);
+		Client.field8736.method14910(64);
 	}
 
 	@ObfuscatedName("amr.dy(I)V")
@@ -360,7 +360,7 @@ public class ClientWorldMap extends WorldMap {
 			arg0.method2354(arg1, arg2, arg3, arg4, -16777216, 0);
 			arg0.method2179(var6 - 152, var7, 304, 34, Client.field10825[Client.field10773].getRGB(), 0);
 			arg0.method2354(var6 - 150, var7 + 2, field11651 * 3, 30, Client.field10824[Client.field10773].getRGB(), 0);
-			Statics.field10355.method2683(LocalisedText.LOADINGDOTDOTDOT.method15021(Statics.field1680), var6, var5 + var7, Client.field10826[Client.field10773].getRGB(), -1);
+			Statics.field10355.method2683(LocalisedText.LOADINGDOTDOTDOT.method15021(Client.language), var6, var5 + var7, Client.field10826[Client.field10773].getRGB(), -1);
 			return;
 		}
 		int var8 = Statics.field11443 - (int) ((float) arg3 / Statics.field6803);
@@ -859,7 +859,7 @@ public class ClientWorldMap extends WorldMap {
 
 	@ObfuscatedName("ft.ej(ZB)V")
 	public static void method3079(boolean arg0) {
-		CoordGrid var1 = Statics.field4490.method16521();
+		CoordGrid var1 = Client.field4490.method16521();
 		WorldMapAreaMetadata var2 = method8511(var1.field7426, var1.field7427);
 		if (var2 == null) {
 			var2 = method8512(Statics.field6792.field7695);

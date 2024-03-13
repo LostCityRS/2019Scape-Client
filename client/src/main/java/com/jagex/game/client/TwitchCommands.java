@@ -5,6 +5,7 @@ import com.jagex.twitchtv.TwitchWebcamDevice;
 import com.jagex.twitchtv.TwitchWebcamDeviceCapability;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
 
 @ObfuscatedName("yi")
 public final class TwitchCommands {
@@ -61,7 +62,7 @@ public final class TwitchCommands {
 
 	@ObfuscatedName("p.u(Lyf;B)V")
 	public static void method287(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = TwitchHardwarePlatform.method8885(Statics.field8198);
+		arg0.field8216[++arg0.field8226 - 1] = TwitchHardwarePlatform.method8885(Client.field8198);
 	}
 
 	@ObfuscatedName("yo.z(Lyf;S)V")

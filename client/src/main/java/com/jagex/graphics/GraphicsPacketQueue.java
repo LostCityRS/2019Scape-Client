@@ -3,7 +3,6 @@ package com.jagex.graphics;
 import com.jagex.core.io.SendablePacket;
 import com.jagex.game.client.*;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 import java.util.LinkedList;
@@ -35,7 +34,7 @@ public class GraphicsPacketQueue {
 
 	@ObfuscatedName("ku.k(IIII)V")
 	public static void method5144(int arg0, int arg1, int arg2) {
-		method4922(new ClientMapBuildStuck(arg0, arg1, arg2, Client.field10827, Statics.field4489.field4455, Statics.field4489.field4454, Statics.field4489.method7012(), Statics.field4489.method7028(), Statics.field4479.method6991()));
+		method4922(new ClientMapBuildStuck(arg0, arg1, arg2, Client.field10827, Client.field4489.field4455, Client.field4489.field4454, Client.field4489.method7012(), Client.field4489.method7028(), Client.field4479.method6991()));
 	}
 
 	@ObfuscatedName("amf.f(Lacw;Ljava/lang/String;ILjava/lang/Throwable;I)V")

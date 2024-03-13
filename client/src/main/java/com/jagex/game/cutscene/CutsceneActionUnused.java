@@ -4,7 +4,7 @@ import com.jagex.core.io.Packet;
 import com.jagex.game.config.effectanimtype.EffectAnimType;
 import com.jagex.game.config.seqtype.SeqType;
 import deob.ObfuscatedName;
-import deob.Statics;
+import rs2.client.Client;
 
 @ObfuscatedName("agm")
 public abstract class CutsceneActionUnused extends CutsceneAction {
@@ -27,9 +27,9 @@ public abstract class CutsceneActionUnused extends CutsceneAction {
 
 	@ObfuscatedName("agm.k(I)Z")
 	public boolean method2891() {
-		EffectAnimType var1 = (EffectAnimType) Statics.field4874.list(this.field10303);
+		EffectAnimType var1 = (EffectAnimType) Client.field4874.list(this.field10303);
 		boolean var2 = var1.method13803();
-		SeqType var3 = (SeqType) Statics.field8797.list(var1.anim);
+		SeqType var3 = (SeqType) Client.field8797.list(var1.anim);
 		return var2 & var3.method2991();
 	}
 }

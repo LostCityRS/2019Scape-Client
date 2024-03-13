@@ -36,36 +36,36 @@ public class MessageBox {
 	public static boolean method16459() {
 		boolean var0 = true;
 		if (Statics.field714 == null) {
-			if (Statics.field10317.method6889(Statics.field7091)) {
-				Statics.field714 = SpriteDataProvider.method1607(Statics.field10317, Statics.field7091);
+			if (Client.field10317.method6889(Statics.field7091)) {
+				Statics.field714 = SpriteDataProvider.method1607(Client.field10317, Statics.field7091);
 			} else {
 				var0 = false;
 			}
 		}
 		if (Statics.field710 == null) {
-			if (Statics.field10317.method6889(Statics.field1921)) {
-				Statics.field710 = SpriteDataProvider.method1607(Statics.field10317, Statics.field1921);
+			if (Client.field10317.method6889(Statics.field1921)) {
+				Statics.field710 = SpriteDataProvider.method1607(Client.field10317, Statics.field1921);
 			} else {
 				var0 = false;
 			}
 		}
 		if (Statics.field4963 == null) {
-			if (Statics.field10317.method6889(Statics.field7424)) {
-				Statics.field4963 = SpriteDataProvider.method1607(Statics.field10317, Statics.field7424);
+			if (Client.field10317.method6889(Statics.field7424)) {
+				Statics.field4963 = SpriteDataProvider.method1607(Client.field10317, Statics.field7424);
 			} else {
 				var0 = false;
 			}
 		}
 		if (Statics.field8851 == null) {
-			if (Statics.field7672.method6889(Statics.field713)) {
-				Statics.field8851 = Statics.field7538.method6163(Client.field10833, Statics.field713);
+			if (Client.field7672.method6889(Statics.field713)) {
+				Statics.field8851 = Client.field7538.method6163(Client.field10833, Statics.field713);
 			} else {
 				var0 = false;
 			}
 		}
 		if (Statics.field716 == null) {
-			if (Statics.field10317.method6889(Statics.field713)) {
-				Statics.field716 = (PalettedSpriteData) SpriteDataProvider.method1607(Statics.field10317, Statics.field713);
+			if (Client.field10317.method6889(Statics.field713)) {
+				Statics.field716 = (PalettedSpriteData) SpriteDataProvider.method1607(Client.field10317, Statics.field713);
 			} else {
 				var0 = false;
 			}

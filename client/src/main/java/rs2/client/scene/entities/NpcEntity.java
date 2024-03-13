@@ -16,7 +16,6 @@ import com.jagex.graphics.particles.ParticleList;
 import com.jagex.graphics.scenegraph.GraphEntity;
 import com.jagex.math.*;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 @ObfuscatedName("aqc")
@@ -77,12 +76,12 @@ public class NpcEntity extends PathingEntity {
 	public boolean field12085;
 
 	public NpcEntity(Scene arg0) {
-		super(arg0, Statics.field8135);
+		super(arg0, Client.field8135);
 		this.method19184();
 	}
 
 	public NpcEntity(Scene arg0, int arg1) {
-		super(arg0, arg1, Statics.field8135);
+		super(arg0, arg1, Client.field8135);
 		this.method19184();
 	}
 
@@ -97,7 +96,7 @@ public class NpcEntity extends PathingEntity {
 		this.field12073 = (int) (Math.random() * 4.0D) + 32;
 		this.field12086 = (int) (Math.random() * 2.0D) + 3;
 		this.field12088 = (int) (Math.random() * 3.0D) + 16;
-		if (Statics.field688.textures.method18426() == 1) {
+		if (Client.field688.textures.method18426() == 1) {
 			this.field12089 = (int) (Math.random() * 6.0D);
 		} else {
 			this.field12089 = (int) (Math.random() * 12.0D);
@@ -155,21 +154,21 @@ public class NpcEntity extends PathingEntity {
 		var4.method6292(var2);
 		var4.method6315(0.0F, (float) (-20 - this.field10408), 0.0F);
 		BASType var8 = this.method16508();
-		NPCType var9 = this.field12083.field2735 == null ? this.field12083 : this.field12083.method4547(Statics.field7410, Statics.field7410);
+		NPCType var9 = this.field12083.field2735 == null ? this.field12083 : this.field12083.method4547(Client.field7410, Client.field7410);
 		boolean var10 = var9.field2724 != null;
 		this.field10458 = false;
 		PickableEntity var11 = null;
-		if (Statics.field688.characterShadows.method18453() == 1 && var9.field2710 && var8.field7346) {
+		if (Client.field688.characterShadows.method18453() == 1 && var9.field2710 && var8.field7346) {
 			AnimationWrapper var12 = this.field10454.method14346() && this.field10454.method14355() ? this.field10454 : null;
 			EntityWalkAnimationWrapper var13 = this.field10432.method14346() && (!this.field10432.field11877 || var12 == null) ? this.field10432 : null;
-			short var14 = Statics.field11389.field7728;
-			byte var15 = Statics.field11389.field7757;
+			short var14 = Client.field11389.field7728;
+			byte var15 = Client.field11389.field7757;
 			if (this.field12083.field2741 > -1) {
 				var14 = this.field12083.field2741;
 				var15 = this.field12083.field2702;
 			}
 			Model var16;
-			if (var14 > -1 && Statics.field688.textures.method18426() == 1) {
+			if (var14 > -1 && Client.field688.textures.method18426() == 1) {
 				var16 = SpotShadowFactory.method3283(arg0, var5, this.field10405, this.field12466, this.field10407, this.field10459[0], var14, var15, var13 == null ? var12 : var13);
 			} else {
 				var16 = SpotShadowFactory.method5102(arg0, var5, this.field10405, this.field12466, this.field10407, this.field12083.size, this.field10459[0], this.field12083.field2737 & 0xFFFF, this.field12083.field2729 & 0xFFFF, this.field12083.field2739 & 0xFF, this.field12083.field2740 & 0xFF, var13 == null ? var12 : var13);
@@ -246,7 +245,7 @@ public class NpcEntity extends PathingEntity {
 		}
 		boolean var10 = false;
 		if (this.field10433 != 0) {
-			NPCType var11 = this.field12083.field2735 == null ? this.field12083 : this.field12083.method4547(Statics.field7410, Statics.field7410);
+			NPCType var11 = this.field12083.field2735 == null ? this.field12083 : this.field12083.method4547(Client.field7410, Client.field7410);
 			if (var11 == null || Client.field10903 >= this.field10438 + var11.field2765) {
 				this.field10433 = 0;
 			} else {
@@ -258,7 +257,7 @@ public class NpcEntity extends PathingEntity {
 			arg1 |= 0x100;
 		}
 		int var12 = this.field10395.method316();
-		Model var13 = this.field10459[0] = this.field12083.getSequencedModel(arg0, arg1, Statics.field11742, Statics.field7410, Statics.field7410, var5, var6, this.field10398, this.field10442, var12, this.field12076, this.method16509(), false);
+		Model var13 = this.field10459[0] = this.field12083.getSequencedModel(arg0, arg1, Client.field11742, Client.field7410, Client.field7410, var5, var6, this.field10398, this.field10442, var12, this.field12076, this.method16509(), false);
 		if (var13 == null) {
 			return false;
 		}
@@ -343,8 +342,8 @@ public class NpcEntity extends PathingEntity {
 		}
 		for (int var5 = 0; var5 < this.field10422.length; var5++) {
 			if (this.field10422[var5].field6657 != -1) {
-				EffectAnimType var6 = (EffectAnimType) Statics.field4874.list(this.field10422[var5].field6657);
-				if (var6.field8261 && var6.anim != -1 && ((SeqType) Statics.field8797.list(var6.anim)).field1782 == 1) {
+				EffectAnimType var6 = (EffectAnimType) Client.field4874.list(this.field10422[var5].field6657);
+				if (var6.field8261 && var6.anim != -1 && ((SeqType) Client.field8797.list(var6.anim)).field1782 == 1) {
 					this.field10422[var5].field6659.method14362(-1);
 					this.field10422[var5].field6657 = -1;
 				}
@@ -375,8 +374,8 @@ public class NpcEntity extends PathingEntity {
 		}
 		for (int var6 = 0; var6 < this.field10422.length; var6++) {
 			if (this.field10422[var6].field6657 != -1) {
-				EffectAnimType var7 = (EffectAnimType) Statics.field4874.list(this.field10422[var6].field6657);
-				if (var7.field8261 && var7.anim != -1 && ((SeqType) Statics.field8797.list(var7.anim)).field1782 == 1) {
+				EffectAnimType var7 = (EffectAnimType) Client.field4874.list(this.field10422[var6].field6657);
+				if (var7.field8261 && var7.anim != -1 && ((SeqType) Client.field8797.list(var7.anim)).field1782 == 1) {
 					this.field10422[var6].field6659.method14362(-1);
 					this.field10422[var6].field6657 = -1;
 				}
@@ -426,7 +425,7 @@ public class NpcEntity extends PathingEntity {
 			return this.field12079;
 		}
 		if (this.field12083.field2735 != null) {
-			NPCType var1 = this.field12083.method4547(Statics.field7410, Statics.field7410);
+			NPCType var1 = this.field12083.method4547(Client.field7410, Client.field7410);
 			if (var1 != null && var1.field2762 != -1) {
 				return var1.field2762;
 			}
@@ -437,7 +436,7 @@ public class NpcEntity extends PathingEntity {
 	@ObfuscatedName("aqc.bs(B)I")
 	public int method16486() {
 		if (this.field12083.field2735 != null) {
-			NPCType var1 = this.field12083.method4547(Statics.field7410, Statics.field7410);
+			NPCType var1 = this.field12083.method4547(Client.field7410, Client.field7410);
 			if (var1 != null && var1.field2706 != -1) {
 				return var1.field2706;
 			}
@@ -448,7 +447,7 @@ public class NpcEntity extends PathingEntity {
 	@ObfuscatedName("aqc.bo(I)I")
 	public int method16501() {
 		if (this.field12083.field2735 != null) {
-			NPCType var1 = this.field12083.method4547(Statics.field7410, Statics.field7410);
+			NPCType var1 = this.field12083.method4547(Client.field7410, Client.field7410);
 			if (var1 != null && var1.field2754 != -1) {
 				return var1.field2754;
 			}
@@ -544,7 +543,7 @@ public class NpcEntity extends PathingEntity {
 
 	@ObfuscatedName("aqc.cg(I)Z")
 	public boolean method16512() {
-		return Statics.field11389.field7735;
+		return Client.field11389.field7735;
 	}
 
 	@ObfuscatedName("aqc.ce(I)Lsu;")
@@ -554,7 +553,7 @@ public class NpcEntity extends PathingEntity {
 
 	@ObfuscatedName("aqc.hc(Ljava/lang/String;III)V")
 	public void method19166(String arg0, int arg1, int arg2) {
-		int var4 = GameShell.method6016() * Statics.field11389.field7754;
+		int var4 = GameShell.method6016() * Client.field11389.field7754;
 		this.method16510(arg0, arg1, arg2, var4);
 	}
 
@@ -593,6 +592,6 @@ public class NpcEntity extends PathingEntity {
 
 	@ObfuscatedName("aqc.gc(I)Z")
 	public boolean method18359() {
-		return this.field12083.field2735 == null || this.field12083.method4547(Statics.field7410, Statics.field7410) != null;
+		return this.field12083.field2735 == null || this.field12083.method4547(Client.field7410, Client.field7410) != null;
 	}
 }

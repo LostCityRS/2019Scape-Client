@@ -48,7 +48,7 @@ public class ClientMapLoader extends MapLoader {
 	public LocTypeList field10765;
 
 	public ClientMapLoader(Scene arg0, LocTypeList arg1, int arg2, int arg3, int arg4, boolean arg5, LinkMap arg6, EnvironmentManager arg7) {
-		super(arg0, arg2, arg3, arg4, arg5, Statics.field8168, Statics.field8145, arg6);
+		super(arg0, arg2, arg3, arg4, arg5, Client.field8168, Client.field8145, arg6);
 		this.field10765 = arg1;
 		this.field10764 = arg7;
 	}
@@ -77,7 +77,7 @@ public class ClientMapLoader extends MapLoader {
 						for (int var10 = 0; var10 < var9; var10++) {
 							StaticPointLight var11 = new StaticPointLight(arg0, this.field4577.field6900, arg1, 2);
 							if (var11.field7014 == 31) {
-								LightType var12 = (LightType) Statics.field7943.list(arg1.g2());
+								LightType var12 = (LightType) Client.field7943.list(arg1.g2());
 								var11.method8899(var12.field9168, var12.field9170, var12.field9167, var12.field9169);
 							}
 							if (arg0.method2114() > 0) {
@@ -265,7 +265,7 @@ public class ClientMapLoader extends MapLoader {
 						for (int var17 = 0; var17 < var16; var17++) {
 							StaticPointLight var18 = new StaticPointLight(arg0, this.field4577.field6900, arg1, 2);
 							if (var18.field7014 == 31) {
-								LightType var19 = (LightType) Statics.field7943.list(arg1.g2());
+								LightType var19 = (LightType) Client.field7943.list(arg1.g2());
 								var18.method8899(var19.field9168, var19.field9170, var19.field9167, var19.field9169);
 							}
 							if (arg0.method2114() > 0) {
@@ -440,7 +440,7 @@ public class ClientMapLoader extends MapLoader {
 							} while (var19 >= arg5);
 						} while (var18 + var21 < 0);
 					} while (var19 + var22 < 0);
-				} while (LocShape.field7566.field7562 == var15.field7541 && Statics.field688.groundDecoration.method18489() == 0 && var20.field7470 == 0 && var20.blockwalk != 1 && !var20.forcedecor);
+				} while (LocShape.field7566.field7562 == var15.field7541 && Client.field688.groundDecoration.method18489() == 0 && var20.field7470 == 0 && var20.blockwalk != 1 && !var20.forcedecor);
 				if (!var20.method9489(arg7)) {
 					arg6.field7958 = var10;
 					var8++;
@@ -592,7 +592,7 @@ public class ClientMapLoader extends MapLoader {
 			this.field10756 = arg2;
 		}
 		LocType var12 = (LocType) this.field10765.list(arg5);
-		if (Statics.field688.textures.method18426() == 0 && var12.field7516) {
+		if (Client.field688.textures.method18426() == 0 && var12.field7516) {
 			return;
 		}
 		int var13;
@@ -635,12 +635,12 @@ public class ClientMapLoader extends MapLoader {
 		if (var12.method9480()) {
 			PositionedSound.method9739(arg2, arg3, arg4, arg6, var12, null, null);
 		}
-		boolean var24 = arg8 == -1 && (!var12.method9504() || var12.field7479 && Statics.field688.unknown.method18665() == 0) && var12.field7505 == null && !var12.field7520 && !var12.field7524;
+		boolean var24 = arg8 == -1 && (!var12.method9504() || var12.field7479 && Client.field688.unknown.method18665() == 0) && var12.field7505 == null && !var12.field7520 && !var12.field7524;
 		if (field10755 && (Statics.method8381(arg7) && var12.occlude != 1 || !(!LocShape.method615(arg7) || var12.occlude != 0))) {
 			return;
 		}
 		if (LocShape.field7566.field7562 == arg7) {
-			if (Statics.field688.groundDecoration.method18489() != 0 || var12.field7470 != 0 || var12.blockwalk == 1 || var12.forcedecor) {
+			if (Client.field688.groundDecoration.method18489() != 0 || var12.field7470 != 0 || var12.blockwalk == 1 || var12.forcedecor) {
 				GroundDecorLayerEntity var26;
 				if (var24) {
 					StaticGroundDecorEntity var25 = new StaticGroundDecorEntity(this.field4577, arg0, this.field10765, var12, arg2, arg1, var21, var20, var22, this.field4549, arg6, var23, arg10);

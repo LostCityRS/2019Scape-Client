@@ -10,7 +10,6 @@ import com.jagex.graphics.scenegraph.PrimaryLayerEntity;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 @ObfuscatedName("aur")
@@ -42,7 +41,7 @@ public class SpotAnimation extends PrimaryLayerEntity {
 		this.field12613 = arg1;
 		this.field12608 = arg12;
 		this.field12607 = arg14;
-		EffectAnimType var16 = (EffectAnimType) Statics.field4874.list(this.field12613);
+		EffectAnimType var16 = (EffectAnimType) Client.field4874.list(this.field12613);
 		int var17 = var16.anim;
 		if (var17 != -1) {
 			this.field12609 = new EntityAnimationWrapper(this, false);
@@ -99,7 +98,7 @@ public class SpotAnimation extends PrimaryLayerEntity {
 
 	@ObfuscatedName("aur.f(Ldh;IIB)Ldo;")
 	public Model method19748(Renderer arg0, int arg1, int arg2) {
-		EffectAnimType var4 = (EffectAnimType) Statics.field4874.list(arg2);
+		EffectAnimType var4 = (EffectAnimType) Client.field4874.list(arg2);
 		FloorModel var5 = this.field11716.field6915[this.field11717];
 		FloorModel var6 = this.field11714 < 3 ? this.field11716.field6915[this.field11714 + 1] : null;
 		Vector3 var7 = this.method10536().field4298;

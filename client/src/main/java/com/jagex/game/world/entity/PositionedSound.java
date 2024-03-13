@@ -10,7 +10,6 @@ import com.jagex.game.config.npctype.NPCType;
 import com.jagex.game.cutscene.CutsceneManager;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 import rs2.client.scene.entities.NpcEntity;
 
@@ -103,12 +102,12 @@ public class PositionedSound extends Node {
 		for (PositionedSound var1 = (PositionedSound) field11346.method14191(); var1 != null; var1 = (PositionedSound) field11346.method14161()) {
 			if (var1.field11371 != null) {
 				var1.field11371.method7380(150);
-				Statics.field1798.method3185(var1.field11371);
+				Client.field1798.method3185(var1.field11371);
 				var1.field11371 = null;
 			}
 			if (var1.field11372 != null) {
 				var1.field11372.method7380(150);
-				Statics.field1798.method3185(var1.field11372);
+				Client.field1798.method3185(var1.field11372);
 				var1.field11372 = null;
 			}
 			var1.method8440();
@@ -119,7 +118,7 @@ public class PositionedSound extends Node {
 		for (PositionedSound var2 = (PositionedSound) field11347.method14191(); var2 != null; var2 = (PositionedSound) field11347.method14161()) {
 			if (var2.field11371 != null) {
 				var2.field11371.method7380(150);
-				Statics.field1798.method3185(var2.field11371);
+				Client.field1798.method3185(var2.field11371);
 				var2.field11371 = null;
 			}
 			var2.method8440();
@@ -127,7 +126,7 @@ public class PositionedSound extends Node {
 		for (PositionedSound var3 = (PositionedSound) field11366.method14500(); var3 != null; var3 = (PositionedSound) field11366.method14502()) {
 			if (var3.field11371 != null) {
 				var3.field11371.method7380(150);
-				Statics.field1798.method3185(var3.field11371);
+				Client.field1798.method3185(var3.field11371);
 				var3.field11371 = null;
 			}
 			var3.method8440();
@@ -152,7 +151,7 @@ public class PositionedSound extends Node {
 	public void method17660() {
 		int var1 = this.field11370;
 		if (this.field11348 != null) {
-			LocType var2 = this.field11348.method9477(Statics.field7410, Client.field10863 == 0 ? CutsceneManager.field1723 : Statics.field7410);
+			LocType var2 = this.field11348.method9477(Client.field7410, Client.field10863 == 0 ? CutsceneManager.field1723 : Client.field7410);
 			if (var2 == null) {
 				this.field11370 = -1;
 				this.field11357 = 0;
@@ -179,7 +178,7 @@ public class PositionedSound extends Node {
 				this.field11370 = var3;
 				NPCType var4 = this.field11345.field12083;
 				if (var4.field2735 != null) {
-					var4 = var4.method4547(Statics.field7410, Statics.field7410);
+					var4 = var4.method4547(Client.field7410, Client.field7410);
 				}
 				if (var4 == null) {
 					this.field11356 = 0;
@@ -205,7 +204,7 @@ public class PositionedSound extends Node {
 		}
 		if (this.field11370 != var1 && this.field11371 != null && this.field11371 != null) {
 			this.field11371.method7380(100);
-			Statics.field1798.method3185(this.field11371);
+			Client.field1798.method3185(this.field11371);
 			this.field11371 = null;
 		}
 	}
@@ -243,14 +242,14 @@ public class PositionedSound extends Node {
 				var7.field11354 = var7.field11373 + (int) (Math.random() * (double) (var7.field11374 - var7.field11373));
 			}
 			field11346.method14153(var7);
-			Statics.field1798.method3200(var7.field11370);
-			Statics.field1798.method3160(var7.field11375);
+			Client.field1798.method3200(var7.field11370);
+			Client.field1798.method3160(var7.field11375);
 		} else if (arg5 != null) {
 			var7.field11345 = arg5;
 			NPCType var10 = arg5.field12083;
 			if (var10.field2735 != null) {
 				var7.field11367 = true;
-				var10 = var10.method4547(Statics.field7410, Statics.field7410);
+				var10 = var10.method4547(Client.field7410, Client.field7410);
 			}
 			if (var10 != null) {
 				var7.field11352 = var10.size + arg1 << 9;
@@ -261,10 +260,10 @@ public class PositionedSound extends Node {
 				var7.field11369 = var10.field2700;
 				var7.field11368 = var10.field2761;
 				var7.field11356 = var10.field2751 << 9;
-				Statics.field1798.method3200(var10.field2746);
-				Statics.field1798.method3200(var10.field2747);
-				Statics.field1798.method3200(var10.field2748);
-				Statics.field1798.method3200(var10.field2749);
+				Client.field1798.method3200(var10.field2746);
+				Client.field1798.method3200(var10.field2747);
+				Client.field1798.method3200(var10.field2748);
+				Client.field1798.method3200(var10.field2749);
 			}
 			field11347.method14153(var7);
 		} else if (arg6 != null) {
@@ -278,10 +277,10 @@ public class PositionedSound extends Node {
 			var7.field11368 = 256;
 			var7.field11356 = 0;
 			field11366.method14501(var7, (long) arg6.field10406);
-			Statics.field1798.method3200(arg6.field12063);
-			Statics.field1798.method3200(arg6.field12049);
-			Statics.field1798.method3200(arg6.field12065);
-			Statics.field1798.method3200(arg6.field12066);
+			Client.field1798.method3200(arg6.field12063);
+			Client.field1798.method3200(arg6.field12049);
+			Client.field1798.method3200(arg6.field12065);
+			Client.field1798.method3200(arg6.field12066);
 		}
 	}
 
@@ -291,7 +290,7 @@ public class PositionedSound extends Node {
 			if (var4.field11349 == arg0 && arg1 << 9 == var4.field11358 && arg2 << 9 == var4.field11351 && var4.field11348.id == arg3.id) {
 				if (var4.field11371 != null) {
 					var4.field11371.method7380(100);
-					Statics.field1798.method3185(var4.field11371);
+					Client.field1798.method3185(var4.field11371);
 					var4.field11371 = null;
 				}
 				var4.method8440();
@@ -306,7 +305,7 @@ public class PositionedSound extends Node {
 			if (var1.field11345 == arg0) {
 				if (var1.field11371 != null) {
 					var1.field11371.method7380(100);
-					Statics.field1798.method3185(var1.field11371);
+					Client.field1798.method3185(var1.field11371);
 					var1.field11371 = null;
 				}
 				var1.method8440();
@@ -329,7 +328,7 @@ public class PositionedSound extends Node {
 	public static int method647(NpcEntity arg0) {
 		NPCType var1 = arg0.field12083;
 		if (var1.field2735 != null) {
-			var1 = var1.method4547(Statics.field7410, Statics.field7410);
+			var1 = var1.method4547(Client.field7410, Client.field7410);
 			if (var1 == null) {
 				return -1;
 			}
@@ -382,7 +381,7 @@ public class PositionedSound extends Node {
 				int var9 = method647(var5.field11345);
 				NPCType var10 = var5.field11345.field12083;
 				if (var10.field2735 != null) {
-					var10 = var10.method4547(Statics.field7410, Statics.field7410);
+					var10 = var10.method4547(Client.field7410, Client.field7410);
 				}
 				if (var10 == null || var9 == -1) {
 					var5.field11370 = -1;
@@ -398,7 +397,7 @@ public class PositionedSound extends Node {
 						var5.field11359 = var5.field11359 * 262144 - 512;
 						if (var5.field11359 * 262144 <= 0) {
 							var5.field11371.method7380(100);
-							Statics.field1798.method3185(var5.field11371);
+							Client.field1798.method3185(var5.field11371);
 							var5.field11371 = null;
 							var11 = true;
 						}
@@ -442,7 +441,7 @@ public class PositionedSound extends Node {
 						var13.field11359 = var13.field11359 * 262144 - 512;
 						if (var13.field11359 * 262144 <= 0) {
 							var13.field11371.method7380(100);
-							Statics.field1798.method3185(var13.field11371);
+							Client.field1798.method3185(var13.field11371);
 							var13.field11371 = null;
 							var18 = true;
 						}
@@ -470,9 +469,9 @@ public class PositionedSound extends Node {
 			return;
 		}
 		int var5 = arg0.field11359 * 262144;
-		if (arg0.field11357 != 0 && Statics.field688.themeMusicVolume1.method18763() != 0 && arg0.field11349 == arg1) {
+		if (arg0.field11357 != 0 && Client.field688.themeMusicVolume1.method18763() != 0 && arg0.field11349 == arg1) {
 			if (arg0.field11371 != null && (arg0.field11371.method7385() == SoundVolume.field4953 || arg0.field11371.method7385() == SoundVolume.field4947)) {
-				Statics.field1798.method3185(arg0.field11371);
+				Client.field1798.method3185(arg0.field11371);
 				arg0.field11371 = null;
 			}
 			if (arg0.field11371 != null) {
@@ -486,7 +485,7 @@ public class PositionedSound extends Node {
 				int var8 = (int) ((float) (arg0.field11353 - arg0.field11351) * 0.5F + (float) arg0.field11351);
 				arg0.field11350.field4308 = var7;
 				arg0.field11350.field4313 = var8;
-				arg0.field11371 = Statics.field1798.method3236(SoundType.field1821, arg0, arg0.field11370, -1, 0, SubBussType.field1808.method3034(), SoundShape.field1838, (float) arg0.field11356, (float) arg0.field11357, arg0.field11350, 0, var6, false);
+				arg0.field11371 = Client.field1798.method3236(SoundType.field1821, arg0, arg0.field11370, -1, 0, SubBussType.field1808.method3034(), SoundShape.field1838, (float) arg0.field11356, (float) arg0.field11357, arg0.field11350, 0, var6, false);
 				if (arg0.field11371 != null) {
 					float var9 = (float) var5 / 255.0F;
 					arg0.field11371.method7403(var9, 150);
@@ -499,7 +498,7 @@ public class PositionedSound extends Node {
 				arg0.field11355.field4308 = var16;
 				arg0.field11355.field4313 = var17;
 				if (arg0.field11372.method7385() == SoundVolume.field4953 || arg0.field11372.method7385() == SoundVolume.field4947) {
-					Statics.field1798.method3185(arg0.field11372);
+					Client.field1798.method3185(arg0.field11372);
 					arg0.field11372 = null;
 				}
 			} else if (arg0.field11375 != null && (arg0.field11354 -= arg4) <= 0) {
@@ -509,7 +508,7 @@ public class PositionedSound extends Node {
 				int var15 = (int) ((float) (arg0.field11353 - arg0.field11351) * 0.5F + (float) arg0.field11351);
 				arg0.field11355.field4308 = var14;
 				arg0.field11355.field4313 = var15;
-				arg0.field11372 = Statics.field1798.method3236(SoundType.field1822, arg0, arg0.field11375[var13], 0, var5, SubBussType.field1799.method3034(), SoundShape.field1838, (float) arg0.field11356, (float) (arg0.field11357 + arg0.field11356), arg0.field11355, 0, var12, false);
+				arg0.field11372 = Client.field1798.method3236(SoundType.field1822, arg0, arg0.field11375[var13], 0, var5, SubBussType.field1799.method3034(), SoundShape.field1838, (float) arg0.field11356, (float) (arg0.field11357 + arg0.field11356), arg0.field11355, 0, var12, false);
 				if (arg0.field11372 != null) {
 					arg0.field11372.method7441();
 				}
@@ -517,7 +516,7 @@ public class PositionedSound extends Node {
 			}
 		} else if (arg0.field11371 != null) {
 			arg0.field11371.method7380(100);
-			Statics.field1798.method3185(arg0.field11371);
+			Client.field1798.method3185(arg0.field11371);
 			arg0.field11371 = null;
 		}
 	}

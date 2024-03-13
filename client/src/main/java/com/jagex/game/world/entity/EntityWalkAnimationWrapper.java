@@ -3,7 +3,7 @@ package com.jagex.game.world.entity;
 import com.jagex.game.config.seqtype.SeqType;
 import com.jagex.graphics.AnimationWrapper;
 import deob.ObfuscatedName;
-import deob.Statics;
+import rs2.client.Client;
 import rs2.client.scene.entities.PathingEntity;
 
 @ObfuscatedName("aoy")
@@ -23,7 +23,7 @@ public class EntityWalkAnimationWrapper extends AnimationWrapper {
 	@ObfuscatedName("aoy.ag(Lfg;II)V")
 	public void method14407(SeqType arg0, int arg1) {
 		if (!this.field11877 || !this.field11876.field10454.method14346() || this.field11876.field10454.method14355()) {
-			Statics.field1798.method3180(arg0, arg1, this.field11876);
+			Client.field1798.method3180(arg0, arg1, this.field11876);
 		}
 	}
 }

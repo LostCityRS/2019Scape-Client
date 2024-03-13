@@ -17,7 +17,7 @@ public class MapLogicRelated {
 
 	@ObfuscatedName("pg.e(ZB)V")
 	public static void method6969(boolean arg0) {
-		Statics.field1798.method3149();
+		Client.field1798.method3149();
 		if (!Client.isStateGame(Client.state)) {
 			return;
 		}
@@ -39,6 +39,6 @@ public class MapLogicRelated {
 				}
 			}
 		}
-		Statics.field1798.method3149();
+		Client.field1798.method3149();
 	}
 }

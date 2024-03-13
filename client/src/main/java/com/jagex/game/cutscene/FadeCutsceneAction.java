@@ -2,7 +2,6 @@ package com.jagex.game.cutscene;
 
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 @ObfuscatedName("ags")
@@ -24,10 +23,10 @@ public class FadeCutsceneAction extends CutsceneAction {
 	public void method2890() {
 		Client.field10868 = Client.field10903;
 		Client.field10869 = this.field10329 + Client.field10903;
-		Statics.field7950 = Client.field11002;
-		Statics.field10297 = Client.field10871;
-		Statics.field8521 = Client.field10872;
-		Statics.field1843 = Client.field10805;
+		Client.field7950 = Client.field11002;
+		Client.field10297 = Client.field10871;
+		Client.field8521 = Client.field10872;
+		Client.field1843 = Client.field10805;
 		Client.field11002 = this.field10328 >>> 24;
 		Client.field10871 = this.field10328 >>> 16 & 0xFF;
 		Client.field10872 = this.field10328 >>> 8 & 0xFF;

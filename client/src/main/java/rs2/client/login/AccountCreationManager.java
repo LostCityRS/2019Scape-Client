@@ -202,7 +202,7 @@ public class AccountCreationManager {
 				Statics.method17428();
 			}
 			if (Statics.field517 == CreateConnectStage.field515) {
-				Client.field10835.method936(Stream.method7130(Statics.lobby.method14764(), 40000), Statics.lobby.host);
+				Client.field10835.method936(Stream.method7130(WorldSwitcher.lobby.method14764(), 40000), WorldSwitcher.lobby.host);
 				Client.field10835.method952();
 				ClientMessage var1 = ClientMessage.method13920();
 				var1.field11432.p1(LoginProt.CREATE_ACCOUNT_CONNECT.id);
@@ -216,8 +216,8 @@ public class AccountCreationManager {
 				var1.field11432.p2(Client.field10772);
 				var1.field11432.p4(Client.field10776);
 				var1.field11432.p4(Client.field10775);
-				var1.field11432.pjstr(Statics.field579);
-				var1.field11432.p1(Statics.field1680.getId());
+				var1.field11432.pjstr(Client.field579);
+				var1.field11432.p1(Client.language.getId());
 				var1.field11432.p1(Client.modegame.field8339);
 				GameShell.pushUID192(var1.field11432);
 				String var4 = Client.field10781;
@@ -225,7 +225,7 @@ public class AccountCreationManager {
 				if (var4 != null) {
 					var1.field11432.pjstr(var4);
 				}
-				Statics.field10581.method18188(var1.field11432);
+				Client.field10581.method18188(var1.field11432);
 				var1.field11432.pos += 7;
 				if (Client.ENABLE_TINYENC) {
 					var1.field11432.tinyenc(Statics.field581, var3, var1.field11432.pos);
@@ -261,7 +261,7 @@ public class AccountCreationManager {
 					Client.field10835.field806 = null;
 					Client.field10835.field805 = null;
 					Client.field10835.field789 = 0;
-					Statics.field7410.field632.method9624();
+					Client.field7410.field632.method9624();
 					DelayedStateChange.method716();
 				} else {
 					Client.field10835.method938();

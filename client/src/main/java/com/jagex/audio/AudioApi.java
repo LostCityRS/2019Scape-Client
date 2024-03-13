@@ -127,8 +127,8 @@ public class AudioApi {
 			int var14 = 8192;
 			float var15 = 0.0F;
 			float var19;
-			if (Statics.field3416 == 3) {
-				float var16 = Statics.field9155.method4719();
+			if (Client.field3416 == 3) {
+				float var16 = Client.field9155.method4719();
 				if (var8.field4308 != 0.0F || var8.field4313 != 0.0F) {
 					int var17 = (int) ((double) (var16 * -1.0F) * 2607.5945876176133D) - (int) (Math.atan2((double) var8.field4308, (double) var8.field4313) * 2607.5945876176133D) - 4096 & 0x3FFF;
 					if (var17 > 8192) {
@@ -147,7 +147,7 @@ public class AudioApi {
 				var19 = (float) var14 * 6.1035156E-5F;
 			} else {
 				if (var8.field4308 != 0.0F || var8.field4313 != 0.0F) {
-					int var20 = -Statics.field8586 - (int) (Math.atan2((double) var8.field4308, (double) var8.field4313) * 2607.5945876176133D) - 4096 & 0x3FFF;
+					int var20 = -Client.field8586 - (int) (Math.atan2((double) var8.field4308, (double) var8.field4313) * 2607.5945876176133D) - 4096 & 0x3FFF;
 					if (var20 > 8192) {
 						var20 = 16384 - var20;
 					}
@@ -211,8 +211,8 @@ public class AudioApi {
 					var10 = Math.min(var25, var26);
 				}
 				if (var9.field4308 != 0.0F || var9.field4313 != 0.0F) {
-					if (Statics.field3416 == 3) {
-						float var27 = Statics.field9155.method4719();
+					if (Client.field3416 == 3) {
+						float var27 = Client.field9155.method4719();
 						if (var9.field4308 != 0.0F || var9.field4313 != 0.0F) {
 							int var28 = (int) ((double) (var27 * -1.0F) * 2607.5945876176133D) - (int) (Math.atan2((double) var9.field4308, (double) var9.field4313) * 2607.5945876176133D) - 4096 & 0x3FFF;
 							if (var28 > 8192) {
@@ -230,7 +230,7 @@ public class AudioApi {
 						}
 						var13 = (float) var11 * 6.1035156E-5F;
 					} else {
-						int var30 = -Statics.field8586 - (int) (Math.atan2((double) var9.field4308, (double) var9.field4313) * 2607.5945876176133D) - 4096 & 0x3FFF;
+						int var30 = -Client.field8586 - (int) (Math.atan2((double) var9.field4308, (double) var9.field4313) * 2607.5945876176133D) - 4096 & 0x3FFF;
 						if (var30 > 8192) {
 							var30 = 16384 - var30;
 						}
@@ -415,13 +415,13 @@ public class AudioApi {
 			return;
 		}
 		AudioMixer.method306();
-		if (Statics.field4490 != null && Statics.field4490.method10536() != null) {
+		if (Client.field4490 != null && Client.field4490.method10536() != null) {
 			if (this.field1873 == null) {
 				this.field1873 = new Vector3();
 			}
-			this.field1873.field4308 = Statics.field4490.method10536().field4298.field4308;
+			this.field1873.field4308 = Client.field4490.method10536().field4298.field4308;
 			this.field1873.field4311 = 0.0F;
-			this.field1873.field4313 = Statics.field4490.method10536().field4298.field4313;
+			this.field1873.field4313 = Client.field4490.method10536().field4298.field4313;
 		}
 		Iterator var1 = this.field1858.values().iterator();
 		while (var1.hasNext()) {
@@ -640,7 +640,7 @@ public class AudioApi {
 		// line 472
 		@ObfuscatedName("fv.e(I)F")
 		public float method3084() {
-			return (float) Statics.field688.themeMusicVolume.method18763() / 255.0F;
+			return (float) Client.field688.themeMusicVolume.method18763() / 255.0F;
 		}
 	}
 
@@ -657,7 +657,7 @@ public class AudioApi {
 
 		@ObfuscatedName("fc.e(I)F")
 		public float method3084() {
-			return (float) Statics.field688.themeMusicVolume3.method18763() / 255.0F;
+			return (float) Client.field688.themeMusicVolume3.method18763() / 255.0F;
 		}
 	}
 
@@ -674,7 +674,7 @@ public class AudioApi {
 
 		@ObfuscatedName("fp.e(I)F")
 		public float method3084() {
-			return (float) Statics.field688.themeMusicVolume4.method18763() / 255.0F;
+			return (float) Client.field688.themeMusicVolume4.method18763() / 255.0F;
 		}
 	}
 
@@ -691,7 +691,7 @@ public class AudioApi {
 
 		@ObfuscatedName("ff.e(I)F")
 		public float method3084() {
-			return (float) Statics.field688.themeMusicVolume1.method18763() / 255.0F;
+			return (float) Client.field688.themeMusicVolume1.method18763() / 255.0F;
 		}
 	}
 
@@ -708,7 +708,7 @@ public class AudioApi {
 		// line 492
 		@ObfuscatedName("fa.e(I)F")
 		public float method3084() {
-			return (float) Statics.field688.themeMusicVolume2.method18763() / 255.0F;
+			return (float) Client.field688.themeMusicVolume2.method18763() / 255.0F;
 		}
 	}
 
@@ -800,7 +800,7 @@ public class AudioApi {
 		AudioApiRelated2 var3 = this.method3162(arg0, arg1);
 		if (var3 == null) {
 			AudioMixerRelated_Sub1 var4 = new AudioMixerRelated_Sub1(this);
-			var3 = AudioMixer.method6064(arg1 ? Statics.field3085 : Statics.field2613, arg0, var4, arg1, this.field1863);
+			var3 = AudioMixer.method6064(arg1 ? Client.field3085 : Client.field2613, arg0, var4, arg1, this.field1863);
 			if (arg1) {
 				this.field1865.put(arg0, var3);
 			} else {
@@ -1123,7 +1123,7 @@ public class AudioApi {
 
 	@ObfuscatedName("fb.au(Lfg;ILalh;B)V")
 	public void method3180(SeqType arg0, int arg1, GraphEntity arg2) {
-		if (arg0 == null || arg0.field1777 == null || arg1 >= arg0.field1777.length || arg0.field1777[arg1] == null || (Statics.field4490.field11717 != arg2.field11717 || !arg2.method18359())) {
+		if (arg0 == null || arg0.field1777 == null || arg1 >= arg0.field1777.length || arg0.field1777[arg1] == null || (Client.field4490.field11717 != arg2.field11717 || !arg2.method18359())) {
 			return;
 		}
 		int var4 = arg0.field1777[arg1][0];
@@ -1142,11 +1142,11 @@ public class AudioApi {
 		}
 		int var10 = arg0.field1788 == null ? 255 : arg0.field1788[arg1];
 		if (var7 != 0) {
-			if (Statics.field4490 == arg2) {
-				if (Statics.field688.themeMusicVolume.method18763() == 0) {
+			if (Client.field4490 == arg2) {
+				if (Client.field688.themeMusicVolume.method18763() == 0) {
 					return;
 				}
-			} else if (Statics.field688.themeMusicVolume1.method18763() == 0) {
+			} else if (Client.field688.themeMusicVolume1.method18763() == 0) {
 				return;
 			}
 			if (arg0.field1783 != -1) {
@@ -1158,7 +1158,7 @@ public class AudioApi {
 				} else if (arg2 instanceof ProjectileAnimation) {
 					var11 = ((ProjectileAnimation) arg2).method19724();
 				}
-				if (var11 != 0 && var11 != Statics.field4490.method16578() && Client.field10787 != var11) {
+				if (var11 != 0 && var11 != Client.field4490.method16578() && Client.field10787 != var11) {
 					var10 = arg0.field1783 * var10 / 100;
 					if (var10 < 0) {
 						var10 = 0;
@@ -1172,8 +1172,8 @@ public class AudioApi {
 			int var14 = (int) var12.field4313 - 256 >> 9;
 			Vector3 var15 = new Vector3((float) (var13 << 9), 0.0F, (float) (var14 << 9));
 			int var16 = arg2.field11717 << 24;
-			this.method3191(SoundType.field1820, var5, var6, var10, SubBussType.field1803.method3034(), Statics.field4490 == arg2 ? SoundShape.field1835 : SoundShape.field1838, 0.0F, (float) (var7 << 9), var15, var16, var9, 0);
-		} else if (Statics.field4490 == arg2) {
+			this.method3191(SoundType.field1820, var5, var6, var10, SubBussType.field1803.method3034(), Client.field4490 == arg2 ? SoundShape.field1835 : SoundShape.field1838, 0.0F, (float) (var7 << 9), var15, var16, var9, 0);
+		} else if (Client.field4490 == arg2) {
 			this.method3191(SoundType.field1825, var5, var6, var10, SubBussType.field1802.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, arg2.field11717, var9, 0);
 		}
 	}

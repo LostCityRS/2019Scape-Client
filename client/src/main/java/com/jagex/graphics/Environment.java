@@ -6,6 +6,7 @@ import com.jagex.core.utils.ColourUtils;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
 
 @ObfuscatedName("xv")
 public class Environment {
@@ -249,7 +250,7 @@ public class Environment {
 	@ObfuscatedName("xv.k(Lalw;Lxu;B)V")
 	public void method10065(Packet arg0, EnvironmentManager arg1) {
 		int var3 = arg0.g1();
-		if (Statics.field688.lightingDetail.method18389() == 1 && Statics.field8198.method2114() > 0) {
+		if (Client.field688.lightingDetail.method18389() == 1 && Client.field8198.method2114() > 0) {
 			if ((var3 & EnvironmentProperty.field8143.field8144) == 0) {
 				this.field7877 = 16777215;
 			} else {
@@ -336,7 +337,7 @@ public class Environment {
 		int var5 = arg0.g2s();
 		int var6 = arg0.g2s();
 		int var7 = arg0.g2();
-		Statics.field3023 = var7;
+		Client.field3023 = var7;
 		this.field7863 = arg1.method9986(var3, var4, var5, var6);
 	}
 
@@ -347,7 +348,7 @@ public class Environment {
 
 	@ObfuscatedName("xv.p(Lxu;Lyj;I)V")
 	public void method10063(EnvironmentManager arg0, EnvironmentOverride arg1) {
-		if (Statics.field688.lightingDetail.method18389() == 1 && Statics.field8198.method2114() > 0) {
+		if (Client.field688.lightingDetail.method18389() == 1 && Client.field8198.method2114() > 0) {
 			if (arg1.method10429() != -1) {
 				this.field7877 = arg1.method10429();
 			}
@@ -388,7 +389,7 @@ public class Environment {
 			int var5 = arg1.method10430();
 			int var6 = arg1.method10393();
 			int var7 = arg1.method10394();
-			Statics.field3023 = var7;
+			Client.field3023 = var7;
 			this.field7863 = arg0.method9986(var3, var4, var5, var6);
 		}
 		if (arg1.method10420(0) != -1) {

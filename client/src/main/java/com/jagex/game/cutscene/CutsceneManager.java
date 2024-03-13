@@ -54,7 +54,7 @@ public class CutsceneManager {
 			field1722 = arg0;
 		}
 		if (Statics.field694 == CutsceneLoadingStage.field1724) {
-			byte[] var1 = Statics.field3808.method6894(arg0);
+			byte[] var1 = Client.field3808.method6894(arg0);
 			if (var1 == null) {
 				return false;
 			}
@@ -169,7 +169,7 @@ public class CutsceneManager {
 		Statics.field11700 = Client.field11070;
 		Statics.field1720 = Client.field11071;
 		field1711 = true;
-		field1717 = Statics.field1798.method3170();
+		field1717 = Client.field1798.method3170();
 		if (field1710 != 0 && field1716 != 0) {
 			Client.field11070 = 334;
 			Client.field11071 = 334;
@@ -191,11 +191,11 @@ public class CutsceneManager {
 				}
 			}
 			if (field1717 != -1) {
-				Statics.field1798.method3235(field1717, 255);
+				Client.field1798.method3235(field1717, 255);
 			}
 		}
 		Client.field10863 = 4;
-		Statics.field8729 = null;
+		Client.field8729 = null;
 		Client.field10877 = false;
 		if (field1722 > 0) {
 			ScriptRunner.method830(ClientTriggerType.field7266, field1722, -1);

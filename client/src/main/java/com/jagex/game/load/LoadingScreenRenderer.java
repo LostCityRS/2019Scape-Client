@@ -9,7 +9,6 @@ import com.jagex.graphics.Framebuffer;
 import com.jagex.graphics.RendererException;
 import com.jagex.graphics.Sprite;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 @ObfuscatedName("jb")
@@ -87,7 +86,7 @@ public class LoadingScreenRenderer implements Runnable {
 		int var1 = this.field2889.field2920;
 		if (this.field2889.field2926 && this.field2881 < this.field2889.field2924) {
 			return this.field2881 + 1;
-		} else if (var1 >= 0 && var1 < Statics.field2938.length - 1) {
+		} else if (var1 >= 0 && var1 < Loading.field2938.length - 1) {
 			return this.field2889.field2923 == this.field2881 ? this.field2889.field2924 : this.field2889.field2923;
 		} else {
 			return 100;
@@ -134,7 +133,7 @@ public class LoadingScreenRenderer implements Runnable {
 						this.field2883.method4888(this.field2887);
 					} else {
 						long var4 = MonotonicTime.method3655();
-						if (Statics.field8198 == null || this.field2880 == null || this.field2880.method4895() == 0 || this.field2884 < var4 - (long) this.field2880.method4895()) {
+						if (Client.field8198 == null || this.field2880 == null || this.field2880.method4895() == 0 || this.field2884 < var4 - (long) this.field2880.method4895()) {
 							if (this.field2880 != null) {
 								this.field2887 = true;
 								this.field2880.method4891();
@@ -142,42 +141,42 @@ public class LoadingScreenRenderer implements Runnable {
 							}
 							if (this.field2887) {
 								Client.method8024();
-								if (Statics.field8198 != null) {
-									Statics.field8198.method2475(1, 0);
+								if (Client.field8198 != null) {
+									Client.field8198.method2475(1, 0);
 								}
 							}
-							this.field2883.method4888(this.field2887 || Statics.field8198 != null && Statics.field8198.method2123());
+							this.field2883.method4888(this.field2887 || Client.field8198 != null && Client.field8198.method2123());
 						} else {
 							int var6 = (int) ((var4 - this.field2884) * 255L / (long) this.field2880.method4895());
 							int var7 = 255 - var6;
 							int var8 = var6 << 24 | 0xFFFFFF;
 							int var9 = var7 << 24 | 0xFFFFFF;
 							Client.method8024();
-							Statics.field8198.method2475(1, 0);
-							Sprite var10 = Statics.field8198.method2365(GameShell.canvasWid, GameShell.canvasHei, true);
-							Framebuffer var11 = Statics.field8198.method2145();
+							Client.field8198.method2475(1, 0);
+							Sprite var10 = Client.field8198.method2365(GameShell.canvasWid, GameShell.canvasHei, true);
+							Framebuffer var11 = Client.field8198.method2145();
 							var11.method15439(0, var10.method1437());
-							Statics.field8198.method2142(var11);
+							Client.field8198.method2142(var11);
 							this.field2880.method4888(true);
-							Statics.field8198.method2143(var11);
+							Client.field8198.method2143(var11);
 							var10.method1443(0, 0, 0, var9, 1);
-							Statics.field8198.method2142(var11);
-							Statics.field8198.method2475(1, 0);
+							Client.field8198.method2142(var11);
+							Client.field8198.method2475(1, 0);
 							this.field2883.method4888(true);
-							Statics.field8198.method2143(var11);
+							Client.field8198.method2143(var11);
 							var10.method1443(0, 0, 0, var8, 1);
 						}
 						try {
-							if (Statics.field8198 != null && !(this.field2883 instanceof PreLoadingScreen)) {
-								Statics.field8198.method2115();
+							if (Client.field8198 != null && !(this.field2883 instanceof PreLoadingScreen)) {
+								Client.field8198.method2115();
 							}
 						} catch (RendererException var18) {
-							JagException.report(var18.getMessage() + Statics.field8301.method8038(), var18);
+							JagException.report(var18.getMessage() + Client.field8301.method8038(), var18);
 							Client.method486(0, true);
 						}
 					}
 					this.field2887 = false;
-					if (Statics.field8198 != null && !(this.field2883 instanceof PreLoadingScreen) && this.field2889.field2920 < LoadingStage.field2917.field2920) {
+					if (Client.field8198 != null && !(this.field2883 instanceof PreLoadingScreen) && this.field2889.field2920 < LoadingStage.field2917.field2920) {
 						Client.method3033();
 					}
 				} catch (Exception var19) {

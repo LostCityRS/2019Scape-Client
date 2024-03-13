@@ -127,9 +127,9 @@ public class ProjAnimCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("agh.k(I)Z")
 	public boolean method2891() {
-		EffectAnimType var1 = (EffectAnimType) Statics.field4874.list(this.field10347);
+		EffectAnimType var1 = (EffectAnimType) Client.field4874.list(this.field10347);
 		boolean var2 = var1.method13803();
-		SeqType var3 = (SeqType) Statics.field8797.list(var1.anim);
+		SeqType var3 = (SeqType) Client.field8797.list(var1.anim);
 		return var2 & var3.method2991();
 	}
 }

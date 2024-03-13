@@ -18,6 +18,7 @@ import com.jagex.graphics.ModelUnlit;
 import com.jagex.graphics.Renderer;
 import deob.ObfuscatedName;
 import deob.Statics;
+import rs2.client.Client;
 
 @ObfuscatedName("ajo")
 public class ClientInvCache extends Node {
@@ -63,7 +64,7 @@ public class ClientInvCache extends Node {
 
 	@ObfuscatedName("adr.m(IIIZB)I")
 	public static int method15241(int arg0, int arg1, int arg2, boolean arg3) {
-		VarBitType var4 = (VarBitType) Statics.field8736.list(arg2);
+		VarBitType var4 = (VarBitType) Client.field8736.list(arg2);
 		VarType var5 = var4.baseVar;
 		ClientInvCache var6 = Statics.method8358(arg0, arg3);
 		int var7;
@@ -101,9 +102,9 @@ public class ClientInvCache extends Node {
 		}
 		int var5 = 0;
 		for (int var6 = 0; var6 < var4.field11223.length; var6++) {
-			if (var4.field11223[var6] >= 0 && var4.field11223[var6] < Statics.field1842.length) {
-				ObjType var7 = (ObjType) Statics.field1842.list(var4.field11223[var6]);
-				int var8 = var7.method14677(arg1, ((ParamType) Statics.field3086.list(arg1)).defaultInt);
+			if (var4.field11223[var6] >= 0 && var4.field11223[var6] < Client.field1842.length) {
+				ObjType var7 = (ObjType) Client.field1842.list(var4.field11223[var6]);
+				int var8 = var7.method14677(arg1, ((ParamType) Client.field3086.list(arg1)).defaultInt);
 				if (arg2) {
 					var5 += var4.field11224[var6] * var8;
 				} else if (var4.field11224[var6] > 0) {
@@ -121,7 +122,7 @@ public class ClientInvCache extends Node {
 		}
 		ClientInvCache var2 = Statics.method8358(arg0, arg1);
 		if (var2 == null) {
-			return ((InvType) Statics.field7762.list(arg0)).size;
+			return ((InvType) Client.field7762.list(arg0)).size;
 		}
 		int var3 = 0;
 		for (int var4 = 0; var4 < var2.field11223.length; var4++) {
@@ -129,7 +130,7 @@ public class ClientInvCache extends Node {
 				var3++;
 			}
 		}
-		return var3 + (((InvType) Statics.field7762.list(arg0)).size - var2.field11223.length);
+		return var3 + (((InvType) Client.field7762.list(arg0)).size - var2.field11223.length);
 	}
 
 	@ObfuscatedName("hg.z(IIIILabn;ZI)V")
@@ -226,7 +227,7 @@ public class ClientInvCache extends Node {
 		int var8 = arg1;
 		BASType var9 = null;
 		if (arg3 != -1) {
-			var9 = (BASType) Statics.field11742.list(arg3);
+			var9 = (BASType) Client.field11742.list(arg3);
 		}
 		int[] var10 = this.field11223;
 		if (var9 != null && var9.field7318 != null) {
@@ -254,7 +255,7 @@ public class ClientInvCache extends Node {
 			int var15 = var8;
 			boolean var16 = false;
 			for (int var17 = 0; var17 < var10.length; var17++) {
-				if (var10[var17] != -1 && !((ObjType) Statics.field1842.list(var10[var17])).method14649(arg4, null)) {
+				if (var10[var17] != -1 && !((ObjType) Client.field1842.list(var10[var17])).method14649(arg4, null)) {
 					var16 = true;
 				}
 			}
@@ -264,7 +265,7 @@ public class ClientInvCache extends Node {
 			ModelUnlit[] var18 = new ModelUnlit[var10.length];
 			for (int var19 = 0; var19 < var10.length; var19++) {
 				if (var10[var19] != -1) {
-					var18[var19] = ((ObjType) Statics.field1842.list(var10[var19])).method14650(arg4, null);
+					var18[var19] = ((ObjType) Client.field1842.list(var10[var19])).method14650(arg4, null);
 				}
 			}
 			if (var9 != null && var9.field7357 != null) {

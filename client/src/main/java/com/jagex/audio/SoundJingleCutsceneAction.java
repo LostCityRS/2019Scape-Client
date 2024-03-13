@@ -3,7 +3,7 @@ package com.jagex.audio;
 import com.jagex.core.io.Packet;
 import com.jagex.game.cutscene.CutsceneAction;
 import deob.ObfuscatedName;
-import deob.Statics;
+import rs2.client.Client;
 
 @ObfuscatedName("agn")
 public class SoundJingleCutsceneAction extends CutsceneAction {
@@ -22,6 +22,6 @@ public class SoundJingleCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("agn.n(I)V")
 	public void method2890() {
-		Statics.field1798.method3179(this.field10321, this.field10322);
+		Client.field1798.method3179(this.field10321, this.field10322);
 	}
 }

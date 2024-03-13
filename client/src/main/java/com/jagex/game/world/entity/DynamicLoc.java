@@ -11,7 +11,6 @@ import com.jagex.graphics.scenegraph.GraphEntity;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 @ObfuscatedName("sp")
@@ -128,7 +127,7 @@ public class DynamicLoc {
 	public final Model method8238(Renderer arg0, int arg1, boolean arg2, boolean arg3) {
 		LocType var5 = (LocType) this.field6681.list(this.field6665);
 		if (var5.field7505 != null) {
-			var5 = var5.method9477(Statics.field7410, Client.field10863 == 0 ? CutsceneManager.field1723 : Statics.field7410);
+			var5 = var5.method9477(Client.field7410, Client.field10863 == 0 ? CutsceneManager.field1723 : Client.field7410);
 		}
 		if (var5 == null) {
 			this.method8242(arg0);
@@ -142,7 +141,7 @@ public class DynamicLoc {
 		}
 		this.method8243(this.field6672);
 		if (arg3) {
-			arg3 &= this.field6676 & !this.field6670 & Statics.field688.sceneryShadows.method18515() != 0;
+			arg3 &= this.field6676 & !this.field6670 & Client.field688.sceneryShadows.method18515() != 0;
 		}
 		if (arg2 && !arg3) {
 			this.field6673 = var5.id;
@@ -219,7 +218,7 @@ public class DynamicLoc {
 		if ((this.field6680 == null || this.field6680.field7804) && (var9 != null || var10 != null)) {
 			LocType var11 = (LocType) this.field6681.list(this.field6665);
 			if (var11.field7505 != null) {
-				var11 = var11.method9477(Statics.field7410, Client.field10863 == 0 ? CutsceneManager.field1723 : Statics.field7410);
+				var11 = var11.method9477(Client.field7410, Client.field10863 == 0 ? CutsceneManager.field1723 : Client.field7410);
 			}
 			if (var11 != null) {
 				this.field6680 = ParticleSystem.method9962(Client.field10903, true);
@@ -274,7 +273,7 @@ public class DynamicLoc {
 		if (!this.field6664.method14346()) {
 			this.method8244(false, -1, 0, 0);
 		} else if (this.field6664.method14367(Client.field10903 - this.field6662)) {
-			if (Statics.field688.sceneryShadows.method18515() == 2) {
+			if (Client.field688.sceneryShadows.method18515() == 2) {
 				this.field6670 = false;
 			}
 			if (this.field6664.method14375()) {
@@ -294,7 +293,7 @@ public class DynamicLoc {
 			LocType var7 = (LocType) this.field6681.list(this.field6665);
 			LocType var8 = var7;
 			if (var7.field7505 != null) {
-				var7 = var7.method9477(Statics.field7410, Client.field10863 == 0 ? CutsceneManager.field1723 : Statics.field7410);
+				var7 = var7.method9477(Client.field7410, Client.field10863 == 0 ? CutsceneManager.field1723 : Client.field7410);
 			}
 			if (var7 == null) {
 				return;
@@ -303,7 +302,7 @@ public class DynamicLoc {
 				var8 = null;
 			}
 			if (var7.method9504()) {
-				if (!var7.field7479 || Statics.field688.unknown.method18665() == 1) {
+				if (!var7.field7479 || Client.field688.unknown.method18665() == 1) {
 					if (arg0 && this.field6664.method14346() && var7.method9493(this.field6664.method14348())) {
 						return;
 					}
@@ -317,7 +316,7 @@ public class DynamicLoc {
 						arg2 = 1;
 					}
 				}
-			} else if (var8 != null && var8.method9504() && (!var8.field7479 || Statics.field688.unknown.method18665() == 1)) {
+			} else if (var8 != null && var8.method9504() && (!var8.field7479 || Client.field688.unknown.method18665() == 1)) {
 				if (arg0 && this.field6664.method14346() && var8.method9493(this.field6664.method14348())) {
 					return;
 				}

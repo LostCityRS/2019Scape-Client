@@ -9,7 +9,7 @@ import com.jagex.game.config.vartype.VarType;
 import com.jagex.game.config.vartype.bit.VarBitOverflowException;
 import com.jagex.game.config.vartype.bit.VarBitType;
 import deob.ObfuscatedName;
-import deob.Statics;
+import rs2.client.Client;
 
 @ObfuscatedName("ars")
 public class DelayedStateChange extends SecondaryNode {
@@ -203,11 +203,11 @@ public class DelayedStateChange extends SecondaryNode {
 
 	@ObfuscatedName("alv.al(III)V")
 	public static void method18309(int arg0, int arg1) {
-		VarBitType var2 = (VarBitType) Statics.field8736.list(arg0);
+		VarBitType var2 = (VarBitType) Client.field8736.list(arg0);
 		DelayedStateChange var3 = method5072(1, (long) var2.baseVar.id);
 		try {
 			if (field12295) {
-				var3.field12268 = Statics.field7228.getVarValueInt(var2.baseVar);
+				var3.field12268 = Client.field7228.getVarValueInt(var2.baseVar);
 			}
 			var3.field12268 = var2.setVarbitValue(var3.field12268, arg1);
 			var3.method19269();

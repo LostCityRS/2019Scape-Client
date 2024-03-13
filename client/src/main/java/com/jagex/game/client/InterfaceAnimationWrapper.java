@@ -3,7 +3,7 @@ package com.jagex.game.client;
 import com.jagex.game.config.seqtype.SeqType;
 import com.jagex.graphics.AnimationWrapper;
 import deob.ObfuscatedName;
-import deob.Statics;
+import rs2.client.Client;
 
 @ObfuscatedName("aou")
 public class InterfaceAnimationWrapper extends AnimationWrapper {
@@ -14,6 +14,6 @@ public class InterfaceAnimationWrapper extends AnimationWrapper {
 
 	@ObfuscatedName("aou.ag(Lfg;II)V")
 	public void method14407(SeqType arg0, int arg1) {
-		Statics.field1798.method3181(arg0, arg1);
+		Client.field1798.method3181(arg0, arg1);
 	}
 }

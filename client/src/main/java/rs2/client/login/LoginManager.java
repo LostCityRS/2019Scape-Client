@@ -303,9 +303,9 @@ public class LoginManager {
 					return;
 				}
 				if (Statics.field431 == 211) {
-					Statics.field8755.method14758();
+					WorldSwitcher.field8755.method14758();
 				} else {
-					Statics.lobby.method14758();
+					WorldSwitcher.lobby.method14758();
 				}
 				field478 = 0;
 				field475++;
@@ -313,12 +313,12 @@ public class LoginManager {
 			}
 			if (field445 == 14) {
 				if (Statics.field431 == 211) {
-					Statics.field432.method936(Stream.method7130(Statics.field8755.method14764(), 40000), Statics.field8755.host);
+					Statics.field432.method936(Stream.method7130(WorldSwitcher.field8755.method14764(), 40000), WorldSwitcher.field8755.host);
 				} else {
-					Statics.field432.method936(Stream.method7130(Statics.lobby.method14764(), 40000), Statics.lobby.host);
+					Statics.field432.method936(Stream.method7130(WorldSwitcher.lobby.method14764(), 40000), WorldSwitcher.lobby.host);
 				}
-				if (Statics.field10311 == null) {
-					Statics.field10311 = Client.field10967.method709();
+				if (Client.field10311 == null) {
+					Client.field10311 = Client.field10967.method709();
 					Client.field10967.method710();
 					Client.field10967 = null;
 				}
@@ -366,14 +366,14 @@ public class LoginManager {
 				method14049(var5, (long) field472);
 				Statics.field3429 = field472;
 				var5.p1(field472);
-				var5.p1(Statics.field1680.getId());
+				var5.p1(Client.language.getId());
 				var5.p4(Client.field10772);
 				for (int var6 = 0; var6 < 5; var6++) {
-					var5.p4(Statics.field10311.nextInt());
+					var5.p4(Client.field10311.nextInt());
 				}
 				var5.p8(Client.field10810);
 				var5.p1(Client.modegame.field8339);
-				var5.p1(Statics.field10311.nextInt());
+				var5.p1(Client.field10311.nextInt());
 				var5.rsaenc(PublicKeys.field624, PublicKeys.field626);
 				var3.field11432.pdata(var5.data, 0, var5.pos);
 				var3.field11432.psize2(var3.field11432.pos - var4);
@@ -458,34 +458,34 @@ public class LoginManager {
 					var10.p1(Client.getWindowMode());
 					var10.p2(GameShell.canvasWid);
 					var10.p2(GameShell.canvasHei);
-					var10.p1(Statics.field688.unknown2.method18639());
+					var10.p1(Client.field688.unknown2.method18639());
 					GameShell.pushUID192(var10);
 					var10.pjstr(Client.field10990);
 					var10.p4(Client.field10772);
-					Packet var16 = Statics.field688.method18156();
+					Packet var16 = Client.field688.method18156();
 					var10.p1(var16.pos);
 					var10.pdata(var16.data, 0, var16.pos);
 					Client.field10800 = true;
-					Packet var17 = new Packet(Statics.field10581.method18189());
-					Statics.field10581.method18188(var17);
+					Packet var17 = new Packet(Client.field10581.method18189());
+					Client.field10581.method18188(var17);
 					var10.pdata(var17.data, 0, var17.data.length);
 					var10.p4(Client.field10842);
 					var10.p4(Client.field10776);
 					var10.p4(Client.field10775);
 					var10.p4(Client.field10778);
 					var10.p4(Client.field10777);
-					var10.pjstr(Statics.field579);
+					var10.pjstr(Client.field579);
 					var10.p1(Client.field10781 == null ? 0 : 1);
 					if (Client.field10781 != null) {
 						var10.pjstr(Client.field10781);
 					}
 					var10.p1(Client.field11079 ? 1 : 0);
 					var10.p1(Client.field10785 ? 1 : 0);
-					var10.p1(Statics.field2627 & 0x1);
+					var10.p1(Client.field2627 & 0x1);
 					var10.p4(Client.field10788);
 					var10.pjstr(Client.field10789);
-					var10.p1(Statics.field9200 != null && Statics.field9200.node == Statics.field8755.node ? 0 : 1);
-					var10.p2(Statics.lobby.node);
+					var10.p1(Statics.field9200 != null && Statics.field9200.node == WorldSwitcher.field8755.node ? 0 : 1);
+					var10.p2(WorldSwitcher.lobby.node);
 					Statics.method14463(var10);
 					if (Client.ENABLE_TINYENC) {
 						var10.tinyenc(Statics.field435, var13, var10.pos);
@@ -516,25 +516,25 @@ public class LoginManager {
 						}
 					}
 					var10.p1(Client.modegame.field8339);
-					var10.p1(Statics.field1680.getId());
+					var10.p1(Client.language.getId());
 					var10.p1(Client.getWindowMode());
 					var10.p2(GameShell.canvasWid);
 					var10.p2(GameShell.canvasHei);
-					var10.p1(Statics.field688.unknown2.method18639());
+					var10.p1(Client.field688.unknown2.method18639());
 					GameShell.pushUID192(var10);
 					var10.pjstr(Client.field10990);
-					Packet var22 = Statics.field688.method18156();
+					Packet var22 = Client.field688.method18156();
 					var10.p1(var22.pos);
 					var10.pdata(var22.data, 0, var22.pos);
-					Packet var23 = new Packet(Statics.field10581.method18189());
-					Statics.field10581.method18188(var23);
+					Packet var23 = new Packet(Client.field10581.method18189());
+					Client.field10581.method18188(var23);
 					var10.pdata(var23.data, 0, var23.data.length);
 					var10.p4(Client.field10842);
-					var10.pjstr(Statics.field579);
+					var10.pjstr(Client.field579);
 					var10.p4(Client.field10772);
 					var10.p4(Client.field10788);
 					var10.pjstr(Client.field10789);
-					var10.p1(Statics.field2627 & 0x1);
+					var10.p1(Client.field2627 & 0x1);
 					var10.pbool(false);
 					Statics.method14463(var10);
 					if (Client.ENABLE_TINYENC) {
@@ -578,7 +578,7 @@ public class LoginManager {
 						return;
 					}
 					if (Statics.field431 == 211) {
-						Statics.field7228.method16415();
+						Client.field7228.method16415();
 						field445 = 256;
 					} else {
 						field445 = 141;
@@ -743,8 +743,8 @@ public class LoginManager {
 						}
 						break;
 					}
-					VarValue var32 = Statics.field8911.decodeVarValue(Statics.field432.field795);
-					Statics.field7228.field1708.method14735(var32.field4240, var32.field4239);
+					VarValue var32 = Client.field8911.decodeVarValue(Statics.field432.field795);
+					Client.field7228.field1708.method14735(var32.field4240, var32.field4239);
 				}
 			}
 			if (field445 == 138) {
@@ -796,14 +796,14 @@ public class LoginManager {
 					Client.field11101 = var36.g1() == 1;
 					Client.field10945 = var36.g2();
 					Client.field11006 = var36.g1() == 1;
-					Statics.field7406 = var36.g3s();
+					Client.field7406 = var36.g3s();
 					Client.field10948 = var36.g1() == 1;
-					Statics.field10250 = var36.gjstr();
-					Statics.field1238 = var36.g6() - MonotonicTime.method3655();
+					Client.field10250 = var36.gjstr();
+					Client.field1238 = var36.g6() - MonotonicTime.method3655();
 					Client.world.method7750().method18890(Client.field10948);
-					Statics.field3183.method7677().method7750().method18890(Client.field10948);
-					Statics.field1842.setAllowMembers(Client.field10948);
-					Statics.field7961.setAllowMembers(Client.field10948);
+					Client.field3183.method7677().method7750().method18890(Client.field10948);
+					Client.field1842.setAllowMembers(Client.field10948);
+					Client.field7961.setAllowMembers(Client.field10948);
 				} else if (Statics.field432.method939().method9038(Statics.field622)) {
 					Statics.field432.method939().method9029(var36.data, 0, Statics.field622);
 					var36.pos = 0;
@@ -811,30 +811,30 @@ public class LoginManager {
 					Client.field10949 = var36.g1();
 					Client.field10950 = var36.g1();
 					Client.field10951 = var36.g1() == 1;
-					Statics.field7406 = var36.g3s();
-					Statics.field4490.field12052 = (byte) var36.g1();
+					Client.field7406 = var36.g3s();
+					Client.field4490.field12052 = (byte) var36.g1();
 					Client.field11081 = var36.g1() == 1;
 					Client.field10953 = var36.g1() == 1;
-					Statics.field8322 = var36.g8();
-					Statics.field1238 = Statics.field8322 - MonotonicTime.method3655() - var36.g5();
+					Client.field8322 = var36.g8();
+					Client.field1238 = Client.field8322 - MonotonicTime.method3655() - var36.g5();
 					int var37 = var36.g1();
 					Client.field11006 = (var37 & 0x1) != 0;
-					Statics.field11709 = (var37 & 0x2) != 0;
-					Statics.field2676 = var36.g4s();
-					Statics.field3056 = var36.g4s();
-					Statics.field9183 = var36.g2();
-					Statics.field7922 = var36.g2();
-					Statics.field1839 = var36.g2();
-					Statics.field7942 = var36.g4s();
-					Statics.field636 = new HostNameProvider(Statics.field7942);
-					(new Thread(Statics.field636)).start();
-					Statics.field6720 = var36.g1();
-					Statics.field2830 = var36.g2();
-					Statics.field4427 = var36.g2();
-					Statics.field11883 = var36.g1() == 1;
-					Statics.field4490.field12062 = Statics.field4490.field12057 = Statics.field12492 = var36.gjstr2();
-					Statics.field5009 = var36.g1();
-					Statics.field6729 = var36.g4s();
+					Client.field11709 = (var37 & 0x2) != 0;
+					Client.field2676 = var36.g4s();
+					Client.field3056 = var36.g4s();
+					Client.field9183 = var36.g2();
+					Client.field7922 = var36.g2();
+					Client.field1839 = var36.g2();
+					Client.field7942 = var36.g4s();
+					Client.field636 = new HostNameProvider(Client.field7942);
+					(new Thread(Client.field636)).start();
+					Client.field6720 = var36.g1();
+					Client.field2830 = var36.g2();
+					Client.field4427 = var36.g2();
+					Client.field11883 = var36.g1() == 1;
+					Client.field4490.field12062 = Client.field4490.field12057 = Statics.field12492 = var36.gjstr2();
+					Client.field5009 = var36.g1();
+					Client.field6729 = var36.g4s();
 					Statics.field9200 = new ServerAddress();
 					Statics.field9200.node = var36.g2();
 					if (Statics.field9200.node == 65535) {
@@ -843,7 +843,7 @@ public class LoginManager {
 					Statics.field9200.host = var36.gjstr2();
 					Statics.field9200.port = var36.g2();
 					Statics.field9200.port2 = var36.g2();
-					if (Client.modewhere != ModeWhere.LOCAL && (Client.modewhere != ModeWhere.WTQA || Client.field10949 < 2) && Statics.field8755.method14757(Statics.world)) {
+					if (Client.modewhere != ModeWhere.LOCAL && (Client.modewhere != ModeWhere.WTQA || Client.field10949 < 2) && WorldSwitcher.field8755.method14757(WorldSwitcher.world)) {
 						WorldSwitcher.method10337();
 					}
 				} else {
@@ -954,9 +954,9 @@ public class LoginManager {
 			Statics.field432.method938();
 			if (field475 < 3) {
 				if (Statics.field431 == 211) {
-					Statics.field8755.method14758();
+					WorldSwitcher.field8755.method14758();
 				} else {
-					Statics.lobby.method14758();
+					WorldSwitcher.lobby.method14758();
 				}
 				field478 = 0;
 				field475++;
@@ -980,7 +980,7 @@ public class LoginManager {
 		int var4 = var3 | arg0.method19558() << 16;
 		int var5 = var4 | arg0.method19558() << 8;
 		int var6 = var5 | arg0.method19558();
-		Statics.field1895.method590(Statics.field3429, var6);
+		Client.field1895.method590(Statics.field3429, var6);
 	}
 
 	@ObfuscatedName("s.h(IB)V")
@@ -991,10 +991,10 @@ public class LoginManager {
 	public static Packet method4378() {
 		Packet var0 = new Packet(518);
 		Statics.field435 = new int[4];
-		Statics.field435[0] = Statics.field10311.nextInt();
-		Statics.field435[1] = Statics.field10311.nextInt();
-		Statics.field435[2] = Statics.field10311.nextInt();
-		Statics.field435[3] = Statics.field10311.nextInt();
+		Statics.field435[0] = Client.field10311.nextInt();
+		Statics.field435[1] = Client.field10311.nextInt();
+		Statics.field435[2] = Client.field10311.nextInt();
+		Statics.field435[3] = Client.field10311.nextInt();
 		var0.p1(10);
 		var0.p4(Statics.field435[0]);
 		var0.p4(Statics.field435[1]);
@@ -1020,7 +1020,7 @@ public class LoginManager {
 			} else {
 				var3 = TotpType.field8726;
 			}
-		} else if (Statics.field1895.method589(arg1)) {
+		} else if (Client.field1895.method589(arg1)) {
 			var3 = TotpType.field8722;
 		} else {
 			var3 = TotpType.field8724;
@@ -1028,7 +1028,7 @@ public class LoginManager {
 		arg0.p1(var3.getId());
 		switch(var3.field8725) {
 			case 0:
-				arg0.p4(Statics.field1895.method577(arg1));
+				arg0.p4(Client.field1895.method577(arg1));
 				break;
 			case 1:
 			case 3:
@@ -1100,19 +1100,19 @@ public class LoginManager {
 		Client.field10811 = 0;
 		Client.field11084 = 0;
 		Client.field11055 = null;
-		Statics.field7421 = 0;
-		Statics.field9267 = null;
-		Statics.field6867 = null;
-		Statics.field1890 = null;
+		Client.field7421 = 0;
+		Client.field9267 = null;
+		Client.field6867 = null;
+		Client.field1890 = null;
 		Client.field11095 = true;
 		ClientWatch.method13845();
-		for (int var0 = 0; var0 < Statics.field7410.field635.length; var0++) {
-			PlayerStat var1 = new PlayerStat(Statics.skillDefaults.getSkill(var0), false);
+		for (int var0 = 0; var0 < Client.field7410.field635.length; var0++) {
+			PlayerStat var1 = new PlayerStat(Client.skillDefaults.getSkill(var0), false);
 			var1.setXP(0);
 			var1.setLevel(0);
-			Statics.field7410.field635[var0] = var1;
+			Client.field7410.field635[var0] = var1;
 		}
-		Statics.field7410.field632.method9624();
+		Client.field7410.field632.method9624();
 		DelayedStateChange.method716();
 		Client.method4336(Statics.field432);
 	}
@@ -1145,7 +1145,7 @@ public class LoginManager {
 		for (int var1 = 0; var1 < 2048; var1++) {
 			Client.field10944[var1] = null;
 		}
-		Statics.field4490 = null;
+		Client.field4490 = null;
 		Client.field11011 = 0;
 		Client.field10906 = 0;
 		Client.field10838.method14499();
@@ -1155,16 +1155,16 @@ public class LoginManager {
 		Client.field10964.method14499();
 		ChangeLocationRequest.field11237 = new IterableQueue();
 		ChangeLocationRequest.field11242 = new IterableQueue();
-		Statics.field8550 = 0;
-		Statics.field8492 = 0;
-		Statics.field741 = 0;
-		Statics.field2937 = 0;
-		Statics.field490 = 0;
-		Statics.field6714 = 0;
-		Statics.field2626 = 0;
-		Statics.field1983 = 0;
-		Statics.field8576 = 0;
-		Statics.field708 = 0;
+		Client.field8550 = 0;
+		Client.field8492 = 0;
+		Client.field741 = 0;
+		Client.field2937 = 0;
+		Client.field490 = 0;
+		Client.field6714 = 0;
+		Client.field2626 = 0;
+		Client.field1983 = 0;
+		Client.field8576 = 0;
+		Client.field708 = 0;
 		if (Client.field10978 != -1) {
 			Component.method7602(Client.field10978);
 		}
@@ -1199,12 +1199,12 @@ public class LoginManager {
 		Client.world.method7816().method10019();
 		Client.field10902 = true;
 		LocType.field7501 = NPCType.field2694 = ObjType.field8650 = new short[256];
-		Statics.field4868 = LocalisedText.WALKHERE.method15021(Statics.field1680);
-		Statics.field688.method18157(Statics.field688.removeRoofs2, Statics.field688.removeRoofs.method18496());
+		Client.field4868 = LocalisedText.WALKHERE.method15021(Client.language);
+		Client.field688.method18157(Client.field688.removeRoofs2, Client.field688.removeRoofs.method18496());
 		Client.field10842 = 0;
 		MiniMenu.method5175();
-		Statics.field594 = null;
-		Statics.field3457 = 0L;
+		Client.field594 = null;
+		Client.field3457 = 0L;
 	}
 
 	@ObfuscatedName("aiz.ai(I)Z")

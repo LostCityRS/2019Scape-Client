@@ -1,7 +1,6 @@
 package com.jagex.game.client;
 
 import deob.ObfuscatedName;
-import deob.Statics;
 import jaclib.ping.IcmpService;
 
 import java.util.ArrayList;
@@ -11,27 +10,30 @@ import java.util.List;
 @ObfuscatedName("alr")
 public class NativeMouse extends IcmpService {
 
+	@ObfuscatedName("alr.e")
+	public static volatile NativeMouse field11719;
+
 	@ObfuscatedName("alr.n")
 	public final List field11718 = new ArrayList();
 
 	@ObfuscatedName("ajh.f(Lyh;S)V")
 	public static void method17426(NativeMouseListener arg0) {
-		if (Statics.field11719 == null) {
+		if (field11719 == null) {
 			throw new IllegalStateException("");
 		}
-		Statics.field11719.field11718.add(arg0);
+		field11719.field11718.add(arg0);
 	}
 
 	@ObfuscatedName("yu.l(I)V")
 	public static void method13850() {
-		if (Statics.field11719 == null) {
+		if (field11719 == null) {
 			return;
 		}
 		try {
-			Statics.field11719.quit();
+			field11719.quit();
 		} catch (Throwable var1) {
 		}
-		Statics.field11719 = null;
+		field11719 = null;
 	}
 
 	public void notify(int arg0) {

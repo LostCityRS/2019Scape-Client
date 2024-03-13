@@ -14,7 +14,6 @@ import com.jagex.math.Matrix4x3;
 import com.jagex.math.ScaleRotTrans;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 @ObfuscatedName("ajz")
@@ -61,7 +60,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 		this.field11189 = (byte) arg10;
 		this.field11191 = arg3.field7470 != 0 && !arg9;
 		this.field11184 = arg11;
-		this.field11193 = arg1.method2125() && arg3.field7453 && !this.field11190 && Statics.field688.sceneryShadows.method18515() != 0;
+		this.field11193 = arg1.method2125() && arg3.field7453 && !this.field11190 && Client.field688.sceneryShadows.method18515() != 0;
 		this.field11194 = arg7;
 		int var14 = 2048;
 		if (this.field11184) {

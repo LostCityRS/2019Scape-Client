@@ -2,7 +2,7 @@ package com.jagex.game.config.quickchatphrasetype;
 
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
-import deob.Statics;
+import rs2.client.Client;
 
 @ObfuscatedName("ne")
 public class QuickChatPhrase {
@@ -20,7 +20,7 @@ public class QuickChatPhrase {
 	public static QuickChatPhrase method14572(Packet arg0) {
 		QuickChatPhrase var1 = new QuickChatPhrase();
 		var1.field3448 = arg0.g2();
-		var1.field3447 = Statics.field489.method14982(var1.field3448);
+		var1.field3447 = Client.field489.method14982(var1.field3448);
 		return var1;
 	}
 }

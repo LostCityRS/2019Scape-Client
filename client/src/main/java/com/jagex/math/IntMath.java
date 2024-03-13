@@ -8,6 +8,9 @@ import java.util.Random;
 @ObfuscatedName("acl")
 public class IntMath {
 
+	@ObfuscatedName("acl.e")
+	public static Random field9158;
+
 	@ObfuscatedName("acl.n")
 	public static final Object field9159 = new Object();
 
@@ -123,14 +126,14 @@ public class IntMath {
 	@ObfuscatedName("ach.d(Ljava/util/Random;II)I")
 	public static int method14985(Random arg0, int arg1) {
 		if (arg0 == null) {
-			arg0 = Statics.field9158;
+			arg0 = field9158;
 			if (arg0 == null) {
 				Object var2 = field9159;
 				synchronized (field9159) {
-					if (Statics.field9158 == null) {
-						Statics.field9158 = new Random();
+					if (field9158 == null) {
+						field9158 = new Random();
 					}
-					arg0 = Statics.field9158;
+					arg0 = field9158;
 				}
 			}
 		}

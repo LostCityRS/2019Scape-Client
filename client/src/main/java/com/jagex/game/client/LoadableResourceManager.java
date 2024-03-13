@@ -7,11 +7,14 @@ import com.jagex.js5.Js5ArchiveResourceLoader;
 import com.jagex.js5.Js5FileResourceLoader;
 import com.jagex.js5.Js5GroupResourceLoader;
 import deob.ObfuscatedName;
-import deob.Statics;
 import jaclib.ping.Ping;
+import rs2.client.Client;
 
 @ObfuscatedName("pm")
 public class LoadableResourceManager {
+
+	@ObfuscatedName("pm.e")
+	public static LoadableResource[] field4334;
 
 	@ObfuscatedName("pm.n")
 	public static int field4332 = 0;
@@ -32,7 +35,7 @@ public class LoadableResourceManager {
 			}
 			if (!((DllResourceLoader) LoadableResource.field8919.method15010()).method6812() && !Loading.method6040()) {
 				try {
-					Statics.field8301.method8050();
+					Client.field8301.method8050();
 					ClientWatch.method1427();
 					Ping.init();
 				} catch (NativeLibraryException var21) {
@@ -43,8 +46,8 @@ public class LoadableResourceManager {
 			field4332 = 1;
 		}
 		if (field4332 == 1) {
-			Statics.field4334 = LoadableResource.method15007();
-			LoadableResource.field8944.method15011(new Js5ArchiveResourceLoader(Statics.field1587));
+			field4334 = LoadableResource.method15007();
+			LoadableResource.field8944.method15011(new Js5ArchiveResourceLoader(Client.field1587));
 			LoadableResource.field8934.method15011(new DllResourceLoader("jaggl"));
 			DllResourceLoader var2 = new DllResourceLoader("jagdx");
 			if (!GameShell.osName.startsWith("win")) {
@@ -54,33 +57,33 @@ public class LoadableResourceManager {
 			LoadableResource.field8920.method15011(new DllResourceLoader("sw3d"));
 			LoadableResource.field8922.method15011(new DllResourceLoader("hw3d"));
 			LoadableResource.field8921.method15011(new DllResourceLoader("RuneScape-Setup.exe", true));
-			LoadableResource.field8945.method15011(new Js5ArchiveResourceLoader(Statics.field2900));
-			LoadableResource.field8924.method15011(new Js5ArchiveResourceLoader(Statics.field10249));
-			LoadableResource.field8925.method15011(new Js5ArchiveResourceLoader(Statics.field11838));
-			LoadableResource.field8926.method15011(new Js5ArchiveResourceLoader(Statics.field4475));
-			LoadableResource.field8927.method15011(new Js5ArchiveResourceLoader(Statics.field8700));
-			LoadableResource.field8928.method15011(new Js5ArchiveResourceLoader(Statics.field4618));
-			LoadableResource.field8942.method15011(new Js5ArchiveResourceLoader(Statics.field7537));
-			LoadableResource.field8930.method15011(new Js5ArchiveResourceLoader(Statics.field8285));
-			LoadableResource.field8941.method15011(new Js5ArchiveResourceLoader(Statics.field2149));
-			LoadableResource.field8932.method15011(new Js5ArchiveResourceLoader(Statics.field3611));
-			LoadableResource.field8933.method15011(new Js5ArchiveResourceLoader(Statics.field7283));
-			LoadableResource.field8918.method15011(new Js5ArchiveResourceLoader(Statics.field4404));
-			LoadableResource.field8935.method15011(new Js5ArchiveResourceLoader(Statics.field1935));
-			LoadableResource.field8936.method15011(new Js5ArchiveResourceLoader(Statics.field6879));
-			LoadableResource.field8937.method15011(new Js5ArchiveResourceLoader(Statics.field736));
-			LoadableResource.field8943.method15011(new Js5FileResourceLoader(Statics.field8741, "huffman"));
-			LoadableResource.field8939.method15011(new Js5ArchiveResourceLoader(Statics.field527));
-			LoadableResource.field8940.method15011(new Js5ArchiveResourceLoader(Statics.field5010));
-			LoadableResource.field8916.method15011(new Js5ArchiveResourceLoader(Statics.field7672));
-			LoadableResource.field8931.method15011(new Js5GroupResourceLoader(Statics.field10752, 0));
-			for (int var3 = 0; var3 < Statics.field4334.length; var3++) {
-				if (Statics.field4334[var3].method15010() == null) {
+			LoadableResource.field8945.method15011(new Js5ArchiveResourceLoader(Client.field2900));
+			LoadableResource.field8924.method15011(new Js5ArchiveResourceLoader(Client.field10249));
+			LoadableResource.field8925.method15011(new Js5ArchiveResourceLoader(Client.field11838));
+			LoadableResource.field8926.method15011(new Js5ArchiveResourceLoader(Client.field4475));
+			LoadableResource.field8927.method15011(new Js5ArchiveResourceLoader(Client.field8700));
+			LoadableResource.field8928.method15011(new Js5ArchiveResourceLoader(Client.field4618));
+			LoadableResource.field8942.method15011(new Js5ArchiveResourceLoader(Client.field7537));
+			LoadableResource.field8930.method15011(new Js5ArchiveResourceLoader(Client.field8285));
+			LoadableResource.field8941.method15011(new Js5ArchiveResourceLoader(Client.field2149));
+			LoadableResource.field8932.method15011(new Js5ArchiveResourceLoader(Client.field3611));
+			LoadableResource.field8933.method15011(new Js5ArchiveResourceLoader(Client.field7283));
+			LoadableResource.field8918.method15011(new Js5ArchiveResourceLoader(Client.field4404));
+			LoadableResource.field8935.method15011(new Js5ArchiveResourceLoader(Client.field1935));
+			LoadableResource.field8936.method15011(new Js5ArchiveResourceLoader(Client.field6879));
+			LoadableResource.field8937.method15011(new Js5ArchiveResourceLoader(Client.field736));
+			LoadableResource.field8943.method15011(new Js5FileResourceLoader(Client.field8741, "huffman"));
+			LoadableResource.field8939.method15011(new Js5ArchiveResourceLoader(Client.field527));
+			LoadableResource.field8940.method15011(new Js5ArchiveResourceLoader(Client.field5010));
+			LoadableResource.field8916.method15011(new Js5ArchiveResourceLoader(Client.field7672));
+			LoadableResource.field8931.method15011(new Js5GroupResourceLoader(Client.field10752, 0));
+			for (int var3 = 0; var3 < field4334.length; var3++) {
+				if (field4334[var3].method15010() == null) {
 					throw new RuntimeException();
 				}
 			}
 			int var4 = 0;
-			LoadableResource[] var5 = Statics.field4334;
+			LoadableResource[] var5 = field4334;
 			for (int var6 = 0; var6 < var5.length; var6++) {
 				LoadableResource var7 = var5[var6];
 				int var8 = var7.method15008();
@@ -90,13 +93,13 @@ public class LoadableResourceManager {
 			field4333 = var4;
 			field4332 = 2;
 		}
-		if (Statics.field4334 == null) {
+		if (field4334 == null) {
 			return 100;
 		}
 		int var10 = 0;
 		int var11 = 0;
 		boolean var12 = true;
-		LoadableResource[] var13 = Statics.field4334;
+		LoadableResource[] var13 = field4334;
 		for (int var14 = 0; var14 < var13.length; var14++) {
 			LoadableResource var15 = var13[var14];
 			int var16 = var15.method15008();
@@ -108,7 +111,7 @@ public class LoadableResourceManager {
 			var11 += var16 * var17 / 100;
 		}
 		if (var12) {
-			Statics.field4334 = null;
+			field4334 = null;
 		}
 		int var18 = var11 - field4333;
 		int var19 = var10 - field4333;

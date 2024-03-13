@@ -1,10 +1,12 @@
 package com.jagex.game.client;
 
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("rb")
 public class NativeLibraries {
+
+	@ObfuscatedName("rb.e")
+	public static NativeLibraryLoader field5077;
 
 	public NativeLibraries() throws Throwable {
 		throw new Error();
@@ -12,14 +14,14 @@ public class NativeLibraries {
 
 	@ObfuscatedName("abq.e(Lrn;I)V")
 	public static void method14694(NativeLibraryLoader arg0) {
-		if (Statics.field5077 != null) {
+		if (field5077 != null) {
 			throw new IllegalStateException("");
 		}
-		Statics.field5077 = arg0;
+		field5077 = arg0;
 	}
 
 	@ObfuscatedName("aah.m(I)Z")
 	public static boolean method14526() {
-		return Statics.field5077 != null;
+		return field5077 != null;
 	}
 }

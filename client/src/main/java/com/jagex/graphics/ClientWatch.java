@@ -131,11 +131,11 @@ public class ClientWatch {
 			Client.field10902 = false;
 			int var6;
 			int var8;
-			if (Statics.field3416 != 3) {
+			if (Client.field3416 != 3) {
 				var6 = (int) Client.field11004 >> 3;
 				var8 = (int) Client.field10895 >> 3;
-			} else if (Statics.field9155.method4780() == PositionMode.field2815) {
-				PositionEntity var5 = (PositionEntity) Statics.field9155.method4709();
+			} else if (Client.field9155.method4780() == PositionMode.field2815) {
+				PositionEntity var5 = (PositionEntity) Client.field9155.method4709();
 				var6 = CameraHelpers.method9198(var5.field10554) >> 3;
 				short var7 = 1024;
 				var8 = (var7 * 3 - (CameraHelpers.method2041(var5.field10554) >> 3)) % (var7 * 2);
@@ -158,16 +158,16 @@ public class ClientWatch {
 			ClientMessage var11 = Statics.method1604(ClientProt.CLIENT_DETAILOPTIONS_STATUS, Client.field10849.field794);
 			var11.field11432.p1(0);
 			int var12 = var11.field11432.pos;
-			Packet var13 = Statics.field688.method18156();
+			Packet var13 = Client.field688.method18156();
 			var11.field11432.pdata(var13.data, 0, var13.pos);
 			var11.field11432.psize1(var11.field11432.pos - var12);
 			Client.field10849.method934(var11);
 			Client.field10800 = true;
 		}
-		if (Client.field10801 || Statics.field688.displayMode.method18545() != 1) {
+		if (Client.field10801 || Client.field688.displayMode.method18545() != 1) {
 			return;
 		}
-		int[] var14 = Statics.field8198.method2413();
+		int[] var14 = Client.field8198.method2413();
 		ClientMessage var15 = Statics.method1604(ClientProt.CLIENT_COMPRESSEDTEXTUREFORMAT_SUPPORT, Client.field10849.field794);
 		var15.field11432.p2(0);
 		int var16 = var15.field11432.pos;

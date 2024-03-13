@@ -14,7 +14,6 @@ import com.jagex.math.Matrix4x3;
 import com.jagex.math.ScaleRotTrans;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 @ObfuscatedName("ajg")
@@ -71,7 +70,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 		this.field11161 = (byte) arg11;
 		this.field11170 = arg3.field7470 != 0 && !arg9;
 		this.field11171 = arg12;
-		this.field11172 = arg1.method2125() && arg3.field7453 && !this.field11169 && Statics.field688.sceneryShadows.method18515() != 0;
+		this.field11172 = arg1.method2125() && arg3.field7453 && !this.field11169 && Client.field688.sceneryShadows.method18515() != 0;
 		this.field12460 = arg7;
 		int var15 = 2048;
 		if (this.field11171) {

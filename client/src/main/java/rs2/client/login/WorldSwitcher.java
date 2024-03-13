@@ -14,6 +14,24 @@ import rs2.client.Client;
 @ObfuscatedName("abz")
 public class WorldSwitcher {
 
+	@ObfuscatedName("abz.e")
+	public static ServerAddress lobby;
+
+	@ObfuscatedName("abz.n")
+	public static ServerAddress content;
+
+	@ObfuscatedName("abz.m")
+	public static ServerAddress httpContent;
+
+	@ObfuscatedName("abz.k")
+	public static ServerAddress field8755;
+
+	@ObfuscatedName("abz.f")
+	public static ServerAddress world;
+
+	@ObfuscatedName("abz.l")
+	public static ServerAddress field8753;
+
 	@ObfuscatedName("abz.z")
 	public static boolean field8754 = false;
 
@@ -68,23 +86,23 @@ public class WorldSwitcher {
 
 	@ObfuscatedName("vu.n(ILjava/lang/String;III)Z")
 	public static boolean method9401(int arg0, String arg1, int arg2, int arg3) {
-		Statics.field8755 = new ServerAddress();
-		Statics.field8755.node = arg0;
-		Statics.field8755.host = arg1;
-		Statics.field8755.port = arg2;
-		Statics.field8755.port2 = arg3;
+		field8755 = new ServerAddress();
+		field8755.node = arg0;
+		field8755.host = arg1;
+		field8755.port = arg2;
+		field8755.port2 = arg3;
 		return true;
 	}
 
 	@ObfuscatedName("dy.m(Ljava/lang/String;II)V")
 	public static void method2105(String arg0, int arg1) {
-		if (Statics.lobby == null) {
-			Statics.lobby = new ServerAddress();
+		if (lobby == null) {
+			lobby = new ServerAddress();
 		}
-		Statics.lobby.host = arg0;
-		Statics.lobby.node = arg1 + 1099;
-		Statics.lobby.port = ServerPorts.method2912(Client.modewhere, ServerType.field8346, Statics.lobby.node);
-		Statics.lobby.port2 = ServerPorts.method10147(Client.modewhere, ServerType.field8346, Statics.lobby.node);
+		lobby.host = arg0;
+		lobby.node = arg1 + 1099;
+		lobby.port = ServerPorts.method2912(Client.modewhere, ServerType.field8346, lobby.node);
+		lobby.port2 = ServerPorts.method10147(Client.modewhere, ServerType.field8346, lobby.node);
 	}
 
 	@ObfuscatedName("xq.k(I)V")
@@ -107,7 +125,7 @@ public class WorldSwitcher {
 
 	@ObfuscatedName("o.u(I)Lalc;")
 	public static GWCWorld method477() {
-		return GWC.method4944(Statics.field8755.node);
+		return GWC.method4944(field8755.node);
 	}
 
 	@ObfuscatedName("kt.z(IZIZB)V")
@@ -168,7 +186,7 @@ public class WorldSwitcher {
 			}
 			return var4 - var5;
 		} else if (arg2 == 2) {
-			return StringComparator.method6827(arg0.method18336(), arg1.method18336(), Statics.field1680);
+			return StringComparator.method6827(arg0.method18336(), arg1.method18336(), Client.language);
 		} else if (arg2 == 3) {
 			if (arg0.field11704.equals("-")) {
 				if (arg1.field11704.equals("-")) {
@@ -181,7 +199,7 @@ public class WorldSwitcher {
 			} else if (arg1.field11704.equals("-")) {
 				return arg3 ? 1 : -1;
 			} else {
-				return StringComparator.method6827(arg0.field11704, arg1.field11704, Statics.field1680);
+				return StringComparator.method6827(arg0.field11704, arg1.field11704, Client.language);
 			}
 		} else if (arg2 == 4) {
 			return arg0.method9747() ? (arg1.method9747() ? 0 : 1) : (arg1.method9747() ? -1 : 0);

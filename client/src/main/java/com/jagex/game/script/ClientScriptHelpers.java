@@ -3,7 +3,7 @@ package com.jagex.game.script;
 import com.jagex.core.datastruct.Cache;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
-import deob.Statics;
+import rs2.client.Client;
 
 @ObfuscatedName("yw")
 public class ClientScriptHelpers {
@@ -26,7 +26,7 @@ public class ClientScriptHelpers {
 		if (var1 != null) {
 			return var1;
 		}
-		byte[] var2 = Statics.field5010.getfile(arg0, 0);
+		byte[] var2 = Client.field5010.getfile(arg0, 0);
 		if (var2 == null || var2.length <= 1) {
 			return null;
 		}
@@ -47,21 +47,21 @@ public class ClientScriptHelpers {
 		if (var4 != null) {
 			return var4;
 		}
-		byte[] var5 = Statics.field5010.method6894(Statics.field5010.method6903(var3));
+		byte[] var5 = Client.field5010.method6894(Client.field5010.method6903(var3));
 		if (var5 == null) {
 			int var8 = arg0.field7271 | arg2 + 65536 << 10;
 			ClientScript var9 = (ClientScript) field8187.method2966((long) var8 << 16);
 			if (var9 != null) {
 				return var9;
 			}
-			byte[] var10 = Statics.field5010.method6894(Statics.field5010.method6903(var8));
+			byte[] var10 = Client.field5010.method6894(Client.field5010.method6903(var8));
 			if (var10 == null) {
 				int var13 = arg0.field7271 | 0x3FFFC00;
 				ClientScript var14 = (ClientScript) field8187.method2966((long) var13 << 16);
 				if (var14 != null) {
 					return var14;
 				}
-				byte[] var15 = Statics.field5010.method6894(Statics.field5010.method6903(var13));
+				byte[] var15 = Client.field5010.method6894(Client.field5010.method6903(var13));
 				if (var15 == null) {
 					return null;
 				} else if (var15.length <= 1) {
@@ -107,6 +107,6 @@ public class ClientScriptHelpers {
 
 	@ObfuscatedName("ek.k([BS)Lasc;")
 	public static ClientScript method2817(byte[] arg0) {
-		return new ClientScript(new Packet(arg0), Statics.field4626);
+		return new ClientScript(new Packet(arg0), Client.field4626);
 	}
 }

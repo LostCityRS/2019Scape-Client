@@ -326,7 +326,7 @@ public class World {
 		if (this.field5062 != null && arg0) {
 			var2 = this.field5062.method9981();
 		}
-		this.field5062 = new EnvironmentManager(Statics.field8198, Statics.field10317, this.field5028 >> 3, this.field5043 >> 3);
+		this.field5062 = new EnvironmentManager(Client.field8198, Client.field10317, this.field5028 >> 3, this.field5043 >> 3);
 		if (var2 != null) {
 			this.field5062.method9980(this, var2, 0);
 		}
@@ -346,7 +346,7 @@ public class World {
 			this.field5034 = (int) ((double) (this.field5028) * 34.46D);
 		}
 		this.field5034 <<= 0x2;
-		if (Statics.field8198.method2130()) {
+		if (Client.field8198.method2130()) {
 			this.field5034 += 512;
 		}
 	}
@@ -425,14 +425,14 @@ public class World {
 
 	@ObfuscatedName("rl.aw(B)V")
 	public void method7773() {
-		this.method7791(BuildAreaSize.method3061(Statics.field688.buildArea.method18570()));
+		this.method7791(BuildAreaSize.method3061(Client.field688.buildArea.method18570()));
 		int var1 = this.field5018.field7426;
 		int var2 = this.field5018.field7427;
-		int var3 = (Statics.field7956 >> 12) + (var1 >> 3);
-		int var4 = (Statics.field1881 >> 12) + (var2 >> 3);
-		Statics.field4490.field11717 = 0;
-		Statics.field4826 = 0;
-		Statics.field4490.method19118(8, 8);
+		int var3 = (Client.field7956 >> 12) + (var1 >> 3);
+		int var4 = (Client.field1881 >> 12) + (var2 >> 3);
+		Client.field4490.field11717 = 0;
+		Client.field4826 = 0;
+		Client.field4490.method19118(8, 8);
 		byte var5 = 18;
 		this.field5054 = new int[var5];
 		this.field5051 = new int[var5];
@@ -445,7 +445,7 @@ public class World {
 		for (int var7 = (var3 - (this.field5028 >> 4)) / 8; var7 <= ((this.field5028 >> 4) + var3) / 8; var7++) {
 			for (int var8 = (var4 - (this.field5043 >> 4)) / 8; var8 <= ((this.field5043 >> 4) + var4) / 8; var8++) {
 				int var9 = (var7 << 8) + var8;
-				if (Statics.field11752.method6883(this.method7795(var7, var8), Js5MapFile.field4491.field4494)) {
+				if (Client.field11752.method6883(this.method7795(var7, var8), Js5MapFile.field4491.field4494)) {
 					this.field5054[var6] = var9;
 					this.field5051[var6] = this.method7795(var7, var8);
 					var6++;
@@ -490,7 +490,7 @@ public class World {
 		int var7 = 0;
 		for (int var8 = (var2 - (this.field5028 >> 4)) / 8; var8 <= ((this.field5028 >> 4) + var2) / 8; var8++) {
 			for (int var9 = (var5 - (this.field5043 >> 4)) / 8; var9 <= ((this.field5043 >> 4) + var5) / 8; var9++) {
-				if (Statics.field11752.method6883(this.method7795(var8, var9), Js5MapFile.field4491.field4494)) {
+				if (Client.field11752.method6883(this.method7795(var8, var9), Js5MapFile.field4491.field4494)) {
 					this.field5054[var7] = (var8 << 8) + var9;
 					this.field5051[var7] = this.method7795(var8, var9);
 					var7++;
@@ -569,7 +569,7 @@ public class World {
 						if (var25 != -1) {
 							int var27 = var25 >> 8 & 0xFF;
 							int var28 = var25 & 0xFF;
-							if (Statics.field11752.method6883(this.method7795(var27, var28), Js5MapFile.field4491.field4494)) {
+							if (Client.field11752.method6883(this.method7795(var27, var28), Js5MapFile.field4491.field4494)) {
 								this.field5054[var18] = var25;
 								this.field5051[var18] = this.method7795(var27, var28);
 								var18++;
@@ -669,7 +669,7 @@ public class World {
 							continue label84;
 						}
 					}
-					if (Statics.field11752.method6883(this.method7795(var31, var32), Js5MapFile.field4491.field4494)) {
+					if (Client.field11752.method6883(this.method7795(var31, var32), Js5MapFile.field4491.field4494)) {
 						this.field5054[var23] = var33;
 						this.field5051[var23] = this.method7795(var31, var32);
 						var23++;
@@ -736,7 +736,7 @@ public class World {
 		this.field5059 = arg1;
 		if (!this.field5036) {
 			Client.setState(arg2);
-			MessageBox.method649(LocalisedText.LOADING.method15021(Statics.field1680), true, Statics.field8198, Statics.field9184, Statics.field2657);
+			MessageBox.method649(LocalisedText.LOADING.method15021(Client.language), true, Client.field8198, Statics.field9184, Statics.field2657);
 		}
 		if (this.field5018 == null) {
 			this.field5025 = new CoordGrid(0, 0, 0);
@@ -899,18 +899,18 @@ public class World {
 		if (arg0 == 3) {
 			Client.field10892 -= var2 * 512;
 			Client.field10893 -= var3 * 512;
-			Statics.field8910 -= var2 * 512;
-			Statics.field3569 -= var3 * 512;
-			if (Statics.field3416 != 4 && Statics.field3416 != 3) {
+			Client.field8910 -= var2 * 512;
+			Client.field3569 -= var3 * 512;
+			if (Client.field3416 != 4 && Client.field3416 != 3) {
 				Client.method4046(Client.method14298());
 			}
 		} else {
-			Statics.field8550 = Statics.field8550 * 262144 - var2 * 262144;
-			Statics.field8492 = Statics.field8492 * 262144 - var3 * 262144;
-			Statics.field6714 -= var2;
-			Statics.field2626 -= var3;
-			Statics.field7956 -= var2 * 512;
-			Statics.field1881 -= var3 * 512;
+			Client.field8550 = Client.field8550 * 262144 - var2 * 262144;
+			Client.field8492 = Client.field8492 * 262144 - var3 * 262144;
+			Client.field6714 -= var2;
+			Client.field2626 -= var3;
+			Client.field7956 -= var2 * 512;
+			Client.field1881 -= var3 * 512;
 			if (Math.abs(var2) > this.field5028 || Math.abs(var3) > this.field5043) {
 				this.field5062.method10019();
 			}
@@ -949,15 +949,15 @@ public class World {
 		}
 		this.field5044 = 0;
 		for (int var1 = 0; var1 < this.field5049; var1++) {
-			if (!Statics.field11752.method6927(this.field5051[var1])) {
+			if (!Client.field11752.method6927(this.field5051[var1])) {
 				this.field5044++;
 			}
 		}
 		if (this.field5058 == null) {
-			if (this.field5035 == null || !Statics.field8332.method6904(this.field5035.field12351)) {
+			if (this.field5035 == null || !Client.field8332.method6904(this.field5035.field12351)) {
 				this.field5058 = new WorldMapRelated(0);
-			} else if (Statics.field8332.method6886(this.field5035.field12351)) {
-				this.field5058 = WorldMapRelated.method6046(Statics.field8332, this.field5035.field12351, Client.field10948);
+			} else if (Client.field8332.method6886(this.field5035.field12351)) {
+				this.field5058 = WorldMapRelated.method6046(Client.field8332, this.field5035.field12351, Client.field10948);
 			} else {
 				this.field5044++;
 			}
@@ -971,19 +971,19 @@ public class World {
 		}
 		for (int var2 = 0; var2 < this.field5049; var2++) {
 			if (this.field5052[var2] == null) {
-				this.field5052[var2] = Statics.field11752.getfile(this.field5051[var2], Js5MapFile.field4491.field4494);
+				this.field5052[var2] = Client.field11752.getfile(this.field5051[var2], Js5MapFile.field4491.field4494);
 			}
 			if (this.field5053[var2] == null) {
-				this.field5053[var2] = Statics.field11752.getfile(this.field5051[var2], Js5MapFile.field4498.field4494);
+				this.field5053[var2] = Client.field11752.getfile(this.field5051[var2], Js5MapFile.field4498.field4494);
 			}
 			if (this.field5055[var2] == null) {
-				this.field5055[var2] = Statics.field11752.getfile(this.field5051[var2], Js5MapFile.field4496.field4494);
+				this.field5055[var2] = Client.field11752.getfile(this.field5051[var2], Js5MapFile.field4496.field4494);
 			}
 			if (this.field5031[var2] == null) {
-				this.field5031[var2] = Statics.field11752.getfile(this.field5051[var2], Js5MapFile.field4492.field4494);
+				this.field5031[var2] = Client.field11752.getfile(this.field5051[var2], Js5MapFile.field4492.field4494);
 			}
 			if (this.field5024 != null && this.field5024[var2] == null) {
-				this.field5024[var2] = Statics.field11752.getfile(this.field5051[var2], Js5MapFile.field4493.field4494);
+				this.field5024[var2] = Client.field11752.getfile(this.field5051[var2], Js5MapFile.field4493.field4494);
 			}
 		}
 		int var3 = this.field5046;
@@ -1032,11 +1032,11 @@ public class World {
 			return false;
 		}
 		if (!this.field5036 && RebuildStage.field5007 != this.field5026) {
-			MessageBox.method649(LocalisedText.LOADING.method15021(Statics.field1680) + TextUtil.BR + "(100%)", true, Statics.field8198, Statics.field9184, Statics.field2657);
+			MessageBox.method649(LocalisedText.LOADING.method15021(Client.language) + TextUtil.BR + "(100%)", true, Client.field8198, Statics.field9184, Statics.field2657);
 		}
 		this.field5026 = RebuildStage.field5008;
-		if (!this.field5036 && Statics.field1798 != null) {
-			Statics.field1798.method3149();
+		if (!this.field5036 && Client.field1798 != null) {
+			Client.field1798.method3149();
 		}
 		if (!this.field5036) {
 			for (int var15 = 0; var15 < 2048; var15++) {
@@ -1056,7 +1056,7 @@ public class World {
 			Statics.method14055(true);
 		}
 		boolean var19 = false;
-		if (Statics.field688.waterDetail.method18522() == 2) {
+		if (Client.field688.waterDetail.method18522() == 2) {
 			for (int var20 = 0; var20 < this.field5049; var20++) {
 				if (this.field5031[var20] != null || this.field5055[var20] != null) {
 					var19 = true;
@@ -1064,13 +1064,13 @@ public class World {
 				}
 			}
 		}
-		int var21 = DrawDistance.method17395(Statics.field688.buildAreaSize.method18688()).field2675 * 8;
-		if (Statics.field8198.method2130()) {
+		int var21 = DrawDistance.method17395(Client.field688.buildAreaSize.method18688()).field2675 * 8;
+		if (Client.field8198.method2130()) {
 			var21++;
 		}
 		this.method7820();
 		this.method7763();
-		this.field5030 = new Scene(Statics.field8198, 9, 4, this.field5028, this.field5043, var21, var19, Statics.field8198.method2114() > 0);
+		this.field5030 = new Scene(Client.field8198, 9, 4, this.field5028, this.field5043, var21, var19, Client.field8198.method2114() > 0);
 		this.field5030.method8703(false);
 		this.field5030.method8701(Client.field11005);
 		this.field5030.method8759(this.field5061);
@@ -1083,11 +1083,11 @@ public class World {
 		this.field5038 = -0.05F + (float) (Math.random() / 10.0D);
 		this.field5023 = new ClientMapLoader(this.field5030, this.field5039, 4, this.field5028, this.field5043, false, this.field5032, this.field5062);
 		this.field5023.method7136();
-		this.field5023.field4515 = Statics.field688.sceneryShadows.method18515();
-		this.field5023.field4571 = Statics.field688.waterDetail.method18522() == 2;
-		this.field5023.field4542 = Statics.field688.lightingDetail.method18389() == 1;
-		this.field5023.field4539 = Statics.field688.groundBlending.method18651() == 1;
-		this.field5023.field4511 = Statics.field688.textures.method18426() == 1;
+		this.field5023.field4515 = Client.field688.sceneryShadows.method18515();
+		this.field5023.field4571 = Client.field688.waterDetail.method18522() == 2;
+		this.field5023.field4542 = Client.field688.lightingDetail.method18389() == 1;
+		this.field5023.field4539 = Client.field688.groundBlending.method18651() == 1;
+		this.field5023.field4511 = Client.field688.textures.method18426() == 1;
 		if (this.field5019.method7887()) {
 			this.method7767(this.field5023, this.field5052);
 		} else {
@@ -1102,11 +1102,11 @@ public class World {
 			this.field5030.method8703(true);
 			this.field5033 = new ClientMapLoader(this.field5030, this.field5039, 1, this.field5028, this.field5043, true, this.field5032, this.field5062);
 			this.field5033.method7136();
-			this.field5033.field4515 = Statics.field688.sceneryShadows.method18515();
-			this.field5033.field4571 = Statics.field688.waterDetail.method18522() == 2;
-			this.field5033.field4542 = Statics.field688.lightingDetail.method18389() == 1;
-			this.field5033.field4539 = Statics.field688.groundBlending.method18651() == 1;
-			this.field5033.field4511 = Statics.field688.textures.method18426() == 1;
+			this.field5033.field4515 = Client.field688.sceneryShadows.method18515();
+			this.field5033.field4571 = Client.field688.waterDetail.method18522() == 2;
+			this.field5033.field4542 = Client.field688.lightingDetail.method18389() == 1;
+			this.field5033.field4539 = Client.field688.groundBlending.method18651() == 1;
+			this.field5033.field4511 = Client.field688.textures.method18426() == 1;
 			if (this.field5019.method7887()) {
 				this.method7767(this.field5033, this.field5055);
 				if (!this.field5036) {
@@ -1119,13 +1119,13 @@ public class World {
 				}
 			}
 			this.field5033.method7143(0, this.field5023.field4540[0]);
-			this.field5033.method7144(Statics.field8198, null);
+			this.field5033.method7144(Client.field8198, null);
 			this.field5030.method8703(false);
 			if (this.field5036) {
 				this.method7765(50);
 			}
 		}
-		this.field5023.method7144(Statics.field8198, var19 ? this.field5033.field4540 : (int[][][]) null);
+		this.field5023.method7144(Client.field8198, var19 ? this.field5033.field4540 : (int[][][]) null);
 		if (this.field5019.method7887()) {
 			if (!this.field5036) {
 				MapLogicRelated.method6969(true);
@@ -1143,11 +1143,11 @@ public class World {
 		if (!this.field5036) {
 			MapLogicRelated.method6969(true);
 		}
-		this.field5023.method7200(Statics.field8198, var19 ? this.field5030.field6917[0] : null, null);
+		this.field5023.method7200(Client.field8198, var19 ? this.field5030.field6917[0] : null, null);
 		if (this.field5036) {
 			this.method7765(75);
 		}
-		this.field5023.method16877(Statics.field8198, false);
+		this.field5023.method16877(Client.field8198, false);
 		if (this.field5036) {
 			this.method7765(75);
 		}
@@ -1167,8 +1167,8 @@ public class World {
 			if (!this.field5036) {
 				MapLogicRelated.method6969(true);
 			}
-			this.field5033.method7200(Statics.field8198, null, this.field5030.field6915[0]);
-			this.field5033.method16877(Statics.field8198, true);
+			this.field5033.method7200(Client.field8198, null, this.field5030.field6915[0]);
+			this.field5033.method16877(Client.field8198, true);
 			if (!this.field5036) {
 				MapLogicRelated.method6969(true);
 			}
@@ -1184,7 +1184,7 @@ public class World {
 		this.field5030.method8875();
 		if (this.field5036) {
 			MonotonicTime.method3655();
-			while (!Statics.field8198.method2215()) {
+			while (!Client.field8198.method2215()) {
 				this.method7765(1);
 			}
 		}
@@ -1192,7 +1192,7 @@ public class World {
 		if (this.field5036) {
 			World var23 = Client.world;
 			this.method7752(var23);
-			Statics.field3183.method7678(var23);
+			Client.field3183.method7678(var23);
 			var22 = true;
 			MonotonicTime.method3655();
 			Object var24 = Client.field10858;
@@ -1208,7 +1208,7 @@ public class World {
 			this.method7762(3);
 			this.method7854();
 		} else {
-			Statics.field1798.method3149();
+			Client.field1798.method3149();
 			this.field5062.method9997();
 			GameShell.method135();
 		}
@@ -1239,7 +1239,7 @@ public class World {
 			for (int var36 = var32 - 1; var36 <= var33 + 1; var36++) {
 				for (int var37 = var34 - 1; var37 <= var35 + 1; var37++) {
 					if (var36 < var32 || var36 > var33 || var37 < var34 || var37 > var35) {
-						Statics.field11752.method6885(this.method7795(var36, var37));
+						Client.field11752.method6885(this.method7795(var36, var37));
 					}
 				}
 			}
@@ -1293,11 +1293,11 @@ public class World {
 				int var8 = this.field5054[var4] & 0xFF;
 				int var9 = var7 * 64 - this.field5018.field7426;
 				int var10 = var8 * 64 - this.field5018.field7427;
-				if (!this.field5036 && Statics.field1798 != null) {
-					Statics.field1798.method3149();
+				if (!this.field5036 && Client.field1798 != null) {
+					Client.field1798.method3149();
 				}
 				arg0.method7170(var6, var9, var10, this.field5018.field7426, this.field5018.field7427);
-				arg0.method16872(Statics.field8198, var6, var9, var10);
+				arg0.method16872(Client.field8198, var6, var9, var10);
 			}
 		}
 		for (int var11 = 0; var11 < var3; var11++) {
@@ -1305,8 +1305,8 @@ public class World {
 			int var13 = (this.field5054[var11] & 0xFF) * 64 - this.field5018.field7427;
 			byte[] var14 = arg1[var11];
 			if (var14 == null && this.field5059 < 800) {
-				if (!this.field5036 && Statics.field1798 != null) {
-					Statics.field1798.method3149();
+				if (!this.field5036 && Client.field1798 != null) {
+					Client.field1798.method3149();
 				}
 				arg0.method7167(var12, var13, 64, 64);
 			}
@@ -1317,7 +1317,7 @@ public class World {
 	public void method7767(ClientMapLoader arg0, byte[][] arg1) {
 		for (int var3 = 0; var3 < arg0.field4544; var3++) {
 			if (!this.field5036) {
-				Statics.field1798.method3149();
+				Client.field1798.method3149();
 			}
 			for (int var4 = 0; var4 < this.field5028 >> 3; var4++) {
 				for (int var5 = 0; var5 < this.field5043 >> 3; var5++) {
@@ -1333,7 +1333,7 @@ public class World {
 								if (this.field5054[var12] == var11 && arg1[var12] != null) {
 									Packet var13 = new Packet(arg1[var12]);
 									arg0.method7161(var13, var3, var4 * 8, var5 * 8, var7, var9, var10, var8);
-									arg0.method16875(Statics.field8198, var13, var3, var4 * 8, var5 * 8, var7, var9, var10, var8);
+									arg0.method16875(Client.field8198, var13, var3, var4 * 8, var5 * 8, var7, var9, var10, var8);
 									break;
 								}
 							}
@@ -1344,7 +1344,7 @@ public class World {
 		}
 		for (int var14 = 0; var14 < arg0.field4544; var14++) {
 			if (!this.field5036) {
-				Statics.field1798.method3149();
+				Client.field1798.method3149();
 			}
 			for (int var15 = 0; var15 < this.field5028 >> 3; var15++) {
 				for (int var16 = 0; var16 < this.field5043 >> 3; var16++) {
@@ -1365,9 +1365,9 @@ public class World {
 				int var5 = (this.field5054[var3] >> 8) * 64 - this.field5018.field7426;
 				int var6 = (this.field5054[var3] & 0xFF) * 64 - this.field5018.field7427;
 				if (!this.field5036) {
-					Statics.field1798.method3149();
+					Client.field1798.method3149();
 				}
-				arg0.method16888(Statics.field8198, var4, var5, var6);
+				arg0.method16888(Client.field8198, var4, var5, var6);
 				if (this.field5036) {
 					this.method7765(10);
 				}
@@ -1379,7 +1379,7 @@ public class World {
 	public void method7769(ClientMapLoader arg0, byte[][] arg1) {
 		for (int var3 = 0; var3 < arg0.field4544; var3++) {
 			if (!this.field5036) {
-				Statics.field1798.method3149();
+				Client.field1798.method3149();
 			}
 			for (int var4 = 0; var4 < this.field5028 >> 3; var4++) {
 				for (int var5 = 0; var5 < this.field5043 >> 3; var5++) {
@@ -1393,7 +1393,7 @@ public class World {
 							int var11 = (var9 / 8 << 8) + var10 / 8;
 							for (int var12 = 0; var12 < this.field5054.length; var12++) {
 								if (this.field5054[var12] == var11 && arg1[var12] != null) {
-									arg0.method16868(Statics.field8198, arg1[var12], var3, var4 * 8, var5 * 8, var7, (var9 & 0x7) * 8, (var10 & 0x7) * 8, var8);
+									arg0.method16868(Client.field8198, arg1[var12], var3, var4 * 8, var5 * 8, var7, (var9 & 0x7) * 8, (var10 & 0x7) * 8, var8);
 									break;
 								}
 							}
@@ -1433,7 +1433,7 @@ public class World {
 					int var11 = var8 & 0x3F;
 					int var12 = (this.field5054[var2] >> 8) * 64 - this.field5018.field7426 + var10;
 					int var13 = (this.field5054[var2] & 0xFF) * 64 - this.field5018.field7427 + var11;
-					NPCType var14 = (NPCType) Statics.field7961.list(var5.g2());
+					NPCType var14 = (NPCType) Client.field7961.list(var5.g2());
 					ObjectWrapper var15 = (ObjectWrapper) Client.field10838.method14495((long) var7);
 					if (var15 == null && (var14.field2743 & 0x1) > 0 && var12 >= 0 && var14.size + var12 < this.field5028 && var13 >= 0 && var14.size + var13 < this.field5043) {
 						NpcEntity var16 = new NpcEntity(this.field5030);

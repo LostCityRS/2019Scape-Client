@@ -2,7 +2,7 @@ package com.jagex.game.client;
 
 import com.jagex.graphics.GraphicsPacketQueue;
 import deob.ObfuscatedName;
-import deob.Statics;
+import rs2.client.Client;
 
 @ObfuscatedName("pa")
 public class DllResourceLoader implements ResourceLoader {
@@ -31,7 +31,7 @@ public class DllResourceLoader implements ResourceLoader {
 			return 100;
 		}
 		try {
-			return Statics.field10577.method8464(this.field4336, this.field4335);
+			return Client.field10577.method8464(this.field4336, this.field4335);
 		} catch (HardwarePlatformLoaderException var2) {
 			GraphicsPacketQueue.method18474(NativeLibraryFailureType.field8907, var2.field11896, var2.field11897, var2.getCause());
 			this.field4337 = true;

@@ -7,6 +7,12 @@ import deob.Statics;
 @ObfuscatedName("ds")
 public class WorldMapRelated2 {
 
+	@ObfuscatedName("ds.e")
+	public static int field1459;
+
+	@ObfuscatedName("ds.k")
+	public static int[] field1460;
+
 	public WorldMapRelated2() throws Throwable {
 		throw new Error();
 	}
@@ -39,7 +45,7 @@ public class WorldMapRelated2 {
 				if (!method2059(var7[3])) {
 					return;
 				}
-				var8 = Statics.field1459;
+				var8 = field1459;
 				var9 = Statics.field1456;
 				var10 = Statics.field1457;
 				if (arg5 == null) {
@@ -65,12 +71,12 @@ public class WorldMapRelated2 {
 	@ObfuscatedName("ds.f([III)V")
 	public static void method2057(int[] arg0, int arg1, int arg2) {
 		int var3 = (arg2 << 1) + Statics.field1458;
-		if (Statics.field1460 == null || Statics.field1460.length < var3) {
+		if (field1460 == null || field1460.length < var3) {
 			int[] var4 = new int[var3];
 			for (int var5 = 0; var5 < Statics.field1458; var5++) {
-				var4[var5] = Statics.field1460[var5];
+				var4[var5] = field1460[var5];
 			}
-			Statics.field1460 = var4;
+			field1460 = var4;
 		}
 		int var6 = arg1 + arg2;
 		int var7 = var6 - 2;
@@ -78,15 +84,15 @@ public class WorldMapRelated2 {
 			int var9 = arg0[var7 + 1];
 			int var10 = arg0[var8 + 1];
 			if (var9 < var10) {
-				Statics.field1460[Statics.field1458++] = arg0[var7];
-				Statics.field1460[Statics.field1458++] = var9;
-				Statics.field1460[Statics.field1458++] = arg0[var8];
-				Statics.field1460[Statics.field1458++] = var10;
+				field1460[Statics.field1458++] = arg0[var7];
+				field1460[Statics.field1458++] = var9;
+				field1460[Statics.field1458++] = arg0[var8];
+				field1460[Statics.field1458++] = var10;
 			} else if (var10 < var9) {
-				Statics.field1460[Statics.field1458++] = arg0[var8];
-				Statics.field1460[Statics.field1458++] = var10;
-				Statics.field1460[Statics.field1458++] = arg0[var7];
-				Statics.field1460[Statics.field1458++] = var9;
+				field1460[Statics.field1458++] = arg0[var8];
+				field1460[Statics.field1458++] = var10;
+				field1460[Statics.field1458++] = arg0[var7];
+				field1460[Statics.field1458++] = var9;
 			}
 			var7 = var8;
 		}
@@ -102,24 +108,24 @@ public class WorldMapRelated2 {
 			return;
 		}
 		method2060(0, Statics.field1458);
-		int var1 = Statics.field1460[1];
+		int var1 = field1460[1];
 		if (var1 < arg0) {
 			var1 = arg0;
 		}
 		byte var2 = 0;
 		int var3;
 		for (var3 = 0; var3 < Statics.field1458; var3 += 4) {
-			int var4 = Statics.field1460[var3 + 1];
+			int var4 = field1460[var3 + 1];
 			if (var1 < var4) {
 				break;
 			}
-			int var5 = Statics.field1460[var3];
-			int var6 = Statics.field1460[var3 + 2];
-			int var7 = Statics.field1460[var3 + 3];
+			int var5 = field1460[var3];
+			int var6 = field1460[var3 + 2];
+			int var7 = field1460[var3 + 3];
 			int var8 = (var6 - var5 << 16) / (var7 - var4);
 			int var9 = (var5 << 16) + 32768;
-			Statics.field1460[var3] = (var1 - var4) * var8 + var9;
-			Statics.field1460[var3 + 2] = var8;
+			field1460[var3] = (var1 - var4) * var8 + var9;
+			field1460[var3 + 2] = var8;
 		}
 		Statics.field1455 = var2;
 		Statics.field1461 = var3;
@@ -140,26 +146,26 @@ public class WorldMapRelated2 {
 			}
 			int var4 = Statics.field1455;
 			while (var1 < Statics.field1458) {
-				int var5 = Statics.field1460[var1 + 1];
+				int var5 = field1460[var1 + 1];
 				if (var3 < var5) {
 					break;
 				}
-				int var6 = Statics.field1460[var1];
-				int var7 = Statics.field1460[var1 + 2];
-				int var8 = Statics.field1460[var1 + 3];
+				int var6 = field1460[var1];
+				int var7 = field1460[var1 + 2];
+				int var8 = field1460[var1 + 3];
 				int var9 = (var7 - var6 << 16) / (var8 - var5);
 				int var10 = (var6 << 16) + 32768;
-				Statics.field1460[var1] = var10;
-				Statics.field1460[var1 + 2] = var9;
+				field1460[var1] = var10;
+				field1460[var1 + 2] = var9;
 				var1 += 4;
 			}
 			for (int var11 = var4; var11 < var1; var11 += 4) {
-				int var12 = Statics.field1460[var11 + 3];
+				int var12 = field1460[var11 + 3];
 				if (var3 >= var12) {
-					Statics.field1460[var11] = Statics.field1460[var4];
-					Statics.field1460[var11 + 1] = Statics.field1460[var4 + 1];
-					Statics.field1460[var11 + 2] = Statics.field1460[var4 + 2];
-					Statics.field1460[var11 + 3] = Statics.field1460[var4 + 3];
+					field1460[var11] = field1460[var4];
+					field1460[var11 + 1] = field1460[var4 + 1];
+					field1460[var11 + 2] = field1460[var4 + 2];
+					field1460[var11 + 3] = field1460[var4 + 3];
 					var4 += 4;
 				}
 			}
@@ -172,10 +178,10 @@ public class WorldMapRelated2 {
 			Statics.field1461 = var1;
 			var2 = var4;
 		}
-		Statics.field1459 = Statics.field1460[var2] >> 16;
-		Statics.field1456 = Statics.field1460[var2 + 4] >> 16;
-		Statics.field1460[var2] += Statics.field1460[var2 + 2];
-		Statics.field1460[var2 + 4] += Statics.field1460[var2 + 6];
+		field1459 = field1460[var2] >> 16;
+		Statics.field1456 = field1460[var2 + 4] >> 16;
+		field1460[var2] += field1460[var2 + 2];
+		field1460[var2 + 4] += field1460[var2 + 6];
 		var2 += 8;
 		Statics.field1462 = var2;
 		return true;
@@ -187,28 +193,28 @@ public class WorldMapRelated2 {
 			return;
 		}
 		int var2 = arg0;
-		int var3 = Statics.field1460[arg0];
-		int var4 = Statics.field1460[arg0 + 1];
-		int var5 = Statics.field1460[arg0 + 2];
-		int var6 = Statics.field1460[arg0 + 3];
+		int var3 = field1460[arg0];
+		int var4 = field1460[arg0 + 1];
+		int var5 = field1460[arg0 + 2];
+		int var6 = field1460[arg0 + 3];
 		for (int var7 = arg0 + 4; var7 < arg1; var7 += 4) {
-			int var8 = Statics.field1460[var7 + 1];
+			int var8 = field1460[var7 + 1];
 			if (var8 < var4) {
-				Statics.field1460[var2] = Statics.field1460[var7];
-				Statics.field1460[var2 + 1] = var8;
-				Statics.field1460[var2 + 2] = Statics.field1460[var7 + 2];
-				Statics.field1460[var2 + 3] = Statics.field1460[var7 + 3];
+				field1460[var2] = field1460[var7];
+				field1460[var2 + 1] = var8;
+				field1460[var2 + 2] = field1460[var7 + 2];
+				field1460[var2 + 3] = field1460[var7 + 3];
 				var2 += 4;
-				Statics.field1460[var7] = Statics.field1460[var2];
-				Statics.field1460[var7 + 1] = Statics.field1460[var2 + 1];
-				Statics.field1460[var7 + 2] = Statics.field1460[var2 + 2];
-				Statics.field1460[var7 + 3] = Statics.field1460[var2 + 3];
+				field1460[var7] = field1460[var2];
+				field1460[var7 + 1] = field1460[var2 + 1];
+				field1460[var7 + 2] = field1460[var2 + 2];
+				field1460[var7 + 3] = field1460[var2 + 3];
 			}
 		}
-		Statics.field1460[var2] = var3;
-		Statics.field1460[var2 + 1] = var4;
-		Statics.field1460[var2 + 2] = var5;
-		Statics.field1460[var2 + 3] = var6;
+		field1460[var2] = var3;
+		field1460[var2 + 1] = var4;
+		field1460[var2 + 2] = var5;
+		field1460[var2 + 3] = var6;
 		method2060(arg0, var2);
 		method2060(var2 + 4, arg1);
 	}
@@ -219,18 +225,18 @@ public class WorldMapRelated2 {
 			if (arg1 >= arg0 + 8) {
 				boolean var2 = true;
 				for (int var3 = arg0 + 4; var3 < arg1; var3 += 4) {
-					int var4 = Statics.field1460[var3 - 4];
-					int var5 = Statics.field1460[var3];
+					int var4 = field1460[var3 - 4];
+					int var5 = field1460[var3];
 					if (var4 > var5) {
 						var2 = false;
-						Statics.field1460[var3 - 4] = var5;
-						Statics.field1460[var3] = var4;
-						int var6 = Statics.field1460[var3 - 2];
-						Statics.field1460[var3 - 2] = Statics.field1460[var3 + 2];
-						Statics.field1460[var3 + 2] = var6;
-						int var7 = Statics.field1460[var3 - 1];
-						Statics.field1460[var3 - 1] = Statics.field1460[var3 + 3];
-						Statics.field1460[var3 + 3] = var7;
+						field1460[var3 - 4] = var5;
+						field1460[var3] = var4;
+						int var6 = field1460[var3 - 2];
+						field1460[var3 - 2] = field1460[var3 + 2];
+						field1460[var3 + 2] = var6;
+						int var7 = field1460[var3 - 1];
+						field1460[var3 - 1] = field1460[var3 + 3];
+						field1460[var3 + 3] = var7;
 					}
 				}
 				if (!var2) {

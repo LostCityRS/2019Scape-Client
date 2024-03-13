@@ -5,7 +5,6 @@ import com.jagex.core.io.Packet;
 import com.jagex.game.shared.movement.CoordGrid;
 import com.jagex.game.world.entity.Scene;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 import java.util.Iterator;
@@ -54,7 +53,7 @@ public class HintTrail {
 
 	@ObfuscatedName("ta.e(Ldh;S)Ldo;")
 	public Model method8402(Renderer arg0) {
-		ModelUnlit var2 = ModelUnlit.method1931(Statics.field9213, this.field6749, 0);
+		ModelUnlit var2 = ModelUnlit.method1931(Client.field9213, this.field6749, 0);
 		if (var2 == null) {
 			return null;
 		} else {
@@ -96,9 +95,9 @@ public class HintTrail {
 		this.field6752 = new LinkedList();
 		LinkMap var2 = Client.world.method7793();
 		CoordGrid var3 = Client.world.method7727();
-		CoordGrid var4 = new CoordGrid(Statics.field4826, this.field6750[0], this.field6753[0]);
+		CoordGrid var4 = new CoordGrid(Client.field4826, this.field6750[0], this.field6753[0]);
 		for (int var5 = 1; var5 < this.field6751; var5++) {
-			CoordGrid var6 = new CoordGrid(Statics.field4826, this.field6750[var5], this.field6753[var5]);
+			CoordGrid var6 = new CoordGrid(Client.field4826, this.field6750[var5], this.field6753[var5]);
 			while (var4.field7426 != var6.field7426 || var4.field7427 != var6.field7427) {
 				if (var4.field7426 < var6.field7426) {
 					var4.field7426++;
@@ -110,7 +109,7 @@ public class HintTrail {
 				} else if (var4.field7427 > var6.field7427) {
 					var4.field7427--;
 				}
-				int var7 = Statics.field4826;
+				int var7 = Client.field4826;
 				int var8 = var4.field7426 - var3.field7426;
 				int var9 = var4.field7427 - var3.field7427;
 				if (var8 >= 0 && var8 < arg0.field6910 && var9 >= 0 && var9 < arg0.field6911) {
@@ -119,7 +118,7 @@ public class HintTrail {
 					if (var2.method7105(var8, var9)) {
 						var7++;
 					}
-					this.field6752.add(new HintTrailPoint(arg0, this, Statics.field4826, var7, var10, Client.method3660(var10, var11, Statics.field4826), var11));
+					this.field6752.add(new HintTrailPoint(arg0, this, Client.field4826, var7, var10, Client.method3660(var10, var11, Client.field4826), var11));
 				}
 			}
 			var4 = var6;

@@ -43,12 +43,12 @@ public class DefaultSprites {
 
 	@ObfuscatedName("qx.k(Ldh;I)V")
 	public static void method7114(Renderer arg0) {
-		Statics.field8321 = (Font) Statics.field7538.method6188(Client.field10833, Statics.field506, true, true);
-		Statics.field6778 = Statics.field7538.method6163(Client.field10833, Statics.field506);
-		Statics.field9184 = (Font) Statics.field7538.method6188(Client.field10833, Statics.field505, true, true);
-		Statics.field2657 = Statics.field7538.method6163(Client.field10833, Statics.field505);
-		Statics.field10355 = (Font) Statics.field7538.method6188(Client.field10833, Statics.field509, true, true);
-		Statics.field10268 = Statics.field7538.method6163(Client.field10833, Statics.field509);
+		Statics.field8321 = (Font) Client.field7538.method6188(Client.field10833, Statics.field506, true, true);
+		Statics.field6778 = Client.field7538.method6163(Client.field10833, Statics.field506);
+		Statics.field9184 = (Font) Client.field7538.method6188(Client.field10833, Statics.field505, true, true);
+		Statics.field2657 = Client.field7538.method6163(Client.field10833, Statics.field505);
+		Statics.field10355 = (Font) Client.field7538.method6188(Client.field10833, Statics.field509, true, true);
+		Statics.field10268 = Client.field7538.method6163(Client.field10833, Statics.field509);
 	}
 
 	@ObfuscatedName("aej.f(Lpy;I)I")

@@ -6,7 +6,6 @@ import com.jagex.graphics.FontMetrics;
 import com.jagex.graphics.SpriteDataProvider;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 @ObfuscatedName("ki")
@@ -32,8 +31,8 @@ public class LoginRelated3 implements LoadingScreenElement {
 
 	@ObfuscatedName("ki.e(I)V")
 	public void method5104() {
-		FontMetrics var1 = FontMetrics.method10677(this.field3052, this.field3054.field3211, Statics.field7538);
-		this.field3055 = Statics.field8198.method2207(var1, SpriteDataProvider.method1607(this.field3053, this.field3054.field3211), true);
+		FontMetrics var1 = FontMetrics.method10677(this.field3052, this.field3054.field3211, Client.field7538);
+		this.field3055 = Client.field8198.method2207(var1, SpriteDataProvider.method1607(this.field3053, this.field3054.field3211), true);
 	}
 
 	@ObfuscatedName("ki.n(ZI)V")

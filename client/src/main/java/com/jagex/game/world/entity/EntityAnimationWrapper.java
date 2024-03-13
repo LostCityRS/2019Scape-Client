@@ -4,7 +4,7 @@ import com.jagex.game.config.seqtype.SeqType;
 import com.jagex.graphics.AnimationWrapper;
 import com.jagex.graphics.scenegraph.GraphEntity;
 import deob.ObfuscatedName;
-import deob.Statics;
+import rs2.client.Client;
 
 @ObfuscatedName("aoi")
 public class EntityAnimationWrapper extends AnimationWrapper {
@@ -19,6 +19,6 @@ public class EntityAnimationWrapper extends AnimationWrapper {
 
 	@ObfuscatedName("aoi.ag(Lfg;II)V")
 	public void method14407(SeqType arg0, int arg1) {
-		Statics.field1798.method3180(arg0, arg1, this.field11878);
+		Client.field1798.method3180(arg0, arg1, this.field11878);
 	}
 }

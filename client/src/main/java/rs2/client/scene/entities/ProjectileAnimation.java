@@ -97,7 +97,7 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 		this.field12596 = false;
 		this.field12594 = arg15;
 		this.field12606 = arg16;
-		int var18 = ((EffectAnimType) Statics.field4874.list(this.field12603)).anim;
+		int var18 = ((EffectAnimType) Client.field4874.list(this.field12603)).anim;
 		this.field12602 = new EntityAnimationWrapper(this, false);
 		this.field12602.method14362(var18);
 		this.method18363(1);
@@ -170,7 +170,7 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 		} else if (this.field12605 < 0) {
 			int var2 = -this.field12605 - 1;
 			if (Client.field10945 == var2) {
-				var1 = Statics.field4490;
+				var1 = Client.field4490;
 			} else {
 				var1 = Client.field10944[var2];
 			}
@@ -247,7 +247,7 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 
 	@ObfuscatedName("aue.f(Ldh;II)Ldo;")
 	public Model method19727(Renderer arg0, int arg1) {
-		EffectAnimType var3 = (EffectAnimType) Statics.field4874.list(this.field12603);
+		EffectAnimType var3 = (EffectAnimType) Client.field4874.list(this.field12603);
 		return var3.method13817(arg0, arg1, this.field12602, (byte) 2);
 	}
 

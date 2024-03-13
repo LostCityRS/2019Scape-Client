@@ -61,7 +61,7 @@ public class ReceivePlayerPositions {
 	public static final void method16435(PacketBit arg0) {
 		arg0.accessBits();
 		int var1 = Client.field10945;
-		PlayerEntity var2 = Statics.field4490 = Client.field10944[var1] = new PlayerEntity(Client.world.method7743());
+		PlayerEntity var2 = Client.field4490 = Client.field10944[var1] = new PlayerEntity(Client.world.method7743());
 		var2.field10406 = var1;
 		int var3 = arg0.gBit(30);
 		byte var4 = (byte) (var3 >> 28);
@@ -71,7 +71,7 @@ public class ReceivePlayerPositions {
 		var2.field10450[0] = var5 - var7.field7426;
 		var2.field10448[0] = var6 - var7.field7427;
 		var2.method10538((float) ((var2.field10450[0] << 9) + (var2.method16546() << 8)), var2.method10525().field4298.field4311, (float) ((var2.field10448[0] << 9) + (var2.method16546() << 8)));
-		Statics.field4826 = var2.field11717 = var2.field11714 = var4;
+		Client.field4826 = var2.field11717 = var2.field11714 = var4;
 		if (Client.world.method7793().method7105(var2.field10450[0], var2.field10448[0])) {
 			var2.field11714++;
 		}
@@ -102,14 +102,14 @@ public class ReceivePlayerPositions {
 			}
 		}
 		arg0.accessBytes();
-		PositionMode var14 = Statics.field9155.method4780();
+		PositionMode var14 = Client.field9155.method4780();
 		if (PositionMode.field2815 == var14) {
-			PositionEntity var15 = (PositionEntity) Statics.field9155.method4709();
+			PositionEntity var15 = (PositionEntity) Client.field9155.method4709();
 			var15.method16684();
 		}
-		LookatMode var16 = Statics.field9155.method4743();
+		LookatMode var16 = Client.field9155.method4743();
 		if (LookatMode.field2788 == var16) {
-			LookatEntity var17 = (LookatEntity) Statics.field9155.method4797();
+			LookatEntity var17 = (LookatEntity) Client.field9155.method4797();
 			var17.method18815();
 		}
 	}
@@ -397,8 +397,8 @@ public class ReceivePlayerPositions {
 				if (Client.world.method7793().method7105(var21, var22)) {
 					var5.field11714++;
 				}
-				if (Client.field10945 == arg1 && Statics.field4826 != var5.field11717) {
-					Statics.field4826 = var5.field11717;
+				if (Client.field10945 == arg1 && Client.field4826 != var5.field11717) {
+					Client.field4826 = var5.field11717;
 				}
 			} else {
 				int var23 = arg0.gBit(3);
@@ -419,7 +419,7 @@ public class ReceivePlayerPositions {
 					var5.field11714++;
 				}
 				if (Client.field10945 == arg1) {
-					Statics.field4826 = var5.field11717;
+					Client.field4826 = var5.field11717;
 				}
 			}
 		}
@@ -565,7 +565,7 @@ public class ReceivePlayerPositions {
 			for (int var8 = 0; var8 < var7; var8++) {
 				int var9 = arg0.g1_alt3();
 				BaseVarType var10 = (BaseVarType) SerializableEnums.decode(Statics.method7338(), var9);
-				VarValue var11 = Statics.field8485.decodeVarValue(arg0, var10);
+				VarValue var11 = Client.field8485.decodeVarValue(arg0, var10);
 				arg2.field10460.method14735(var11.field4240, var11.field4239);
 			}
 		}
@@ -715,13 +715,13 @@ public class ReceivePlayerPositions {
 			for (int var63 = 0; var63 < var62; var63++) {
 				int var64 = arg0.g1_alt3();
 				BaseVarType var65 = (BaseVarType) SerializableEnums.decode(Statics.method7338(), var64);
-				VarValue var66 = Statics.field8485.decodeVarValue(arg0, var65);
+				VarValue var66 = Client.field8485.decodeVarValue(arg0, var65);
 				arg2.field10460.method14735(var66.field4240, var66.field4239);
 			}
 		}
 		if ((arg3 & 0x200) != 0) {
 			String var67 = arg0.gjstr();
-			if (Statics.field4490 == arg2) {
+			if (Client.field4490 == arg2) {
 				ChatHistory.method2664(2, 0, arg2.method19115(true), arg2.method19116(false), arg2.field12057, var67, null);
 			}
 			arg2.method19124(var67, 0, 0);

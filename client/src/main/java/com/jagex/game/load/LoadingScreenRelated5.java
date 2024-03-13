@@ -4,7 +4,7 @@ import com.jagex.game.client.MainLoadingScreen;
 import com.jagex.graphics.Sprite;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
-import deob.Statics;
+import rs2.client.Client;
 
 @ObfuscatedName("aho")
 public class LoadingScreenRelated5 extends LoadingScreenProgressDisplay {
@@ -26,16 +26,16 @@ public class LoadingScreenRelated5 extends LoadingScreenProgressDisplay {
 	public void method5122(boolean arg0, int arg1, int arg2) {
 		int var4 = this.method5123() * this.field3027.field3163 / 10000;
 		int[] var5 = new int[4];
-		Statics.field8198.method2171(var5);
-		Statics.field8198.method2168(arg1, arg2 + 2, arg1 + var4, this.field3027.field3160 + arg2);
+		Client.field8198.method2171(var5);
+		Client.field8198.method2168(arg1, arg2 + 2, arg1 + var4, this.field3027.field3160 + arg2);
 		this.field10545.method1448(arg1, arg2 + 2, this.field3027.field3163, this.field3027.field3160);
-		Statics.field8198.method2168(var5[0], var5[1], var5[2], var5[3]);
+		Client.field8198.method2168(var5[0], var5[1], var5[2], var5[3]);
 	}
 
 	@ObfuscatedName("aho.z(ZIIS)V")
 	public void method5121(boolean arg0, int arg1, int arg2) {
-		Statics.field8198.method2179(arg1 - 2, arg2, this.field3027.field3163 + 4, this.field3027.field3160 + 2, ((LoadingScreenRelated1) this.field3027).field10575, 0);
-		Statics.field8198.method2179(arg1 - 1, arg2 + 1, this.field3027.field3163 + 2, this.field3027.field3160, 0, 0);
+		Client.field8198.method2179(arg1 - 2, arg2, this.field3027.field3163 + 4, this.field3027.field3160 + 2, ((LoadingScreenRelated1) this.field3027).field10575, 0);
+		Client.field8198.method2179(arg1 - 1, arg2 + 1, this.field3027.field3163 + 2, this.field3027.field3160, 0, 0);
 	}
 
 	@ObfuscatedName("aho.m(I)Z")
