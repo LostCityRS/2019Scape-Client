@@ -16,6 +16,7 @@ import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;
 import rs2.client.Client;
+import rs2.client.clientscript.ScriptRunner;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -795,14 +796,14 @@ public class ClientWorldMap extends WorldMap {
 													}
 													if (!var8.field11252.field11450) {
 														var8.field11252.field11450 = true;
-														Statics.method830(ClientTriggerType.field7263, var8.field11252.field11446, var9.field2374);
+														ScriptRunner.method830(ClientTriggerType.field7263, var8.field11252.field11446, var9.field2374);
 													}
 													if (var8.field11252.field11450) {
-														Statics.method830(ClientTriggerType.field7255, var8.field11252.field11446, var9.field2374);
+														ScriptRunner.method830(ClientTriggerType.field7255, var8.field11252.field11446, var9.field2374);
 													}
 												} else if (var8.field11252.field11450) {
 													var8.field11252.field11450 = false;
-													Statics.method830(ClientTriggerType.field7254, var8.field11252.field11446, var9.field2374);
+													ScriptRunner.method830(ClientTriggerType.field7254, var8.field11252.field11446, var9.field2374);
 												}
 											}
 										}

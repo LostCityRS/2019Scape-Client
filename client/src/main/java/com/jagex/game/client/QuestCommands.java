@@ -141,6 +141,11 @@ public final class QuestCommands {
 		arg0.field8216[arg0.field8226 - 1] = ((QuestType) Statics.field1972.getById(arg0.field8216[arg0.field8226 - 1])).method4429(Statics.field7410) ? 1 : 0;
 	}
 
+	@ObfuscatedName("tx.i(Lyf;B)V")
+	public static void method8883(ClientScriptState arg0) {
+		arg0.field8216[arg0.field8226 - 1] = ((QuestType) Statics.field1972.getById(arg0.field8216[arg0.field8226 - 1])).method4430(Statics.field7410) ? 1 : 0;
+	}
+
 	@ObfuscatedName("au.j(Lyf;I)V")
 	public static void method848(ClientScriptState arg0) {
 		arg0.field8226 -= 2;

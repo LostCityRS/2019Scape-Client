@@ -8,19 +8,13 @@ import com.jagex.core.utils.*;
 import com.jagex.encryption.Isaac;
 import com.jagex.game.client.*;
 import com.jagex.game.clientoptions.ClientOptions;
-import com.jagex.game.clientoptions.Preferences;
 import com.jagex.game.compression.huffman.Huffman;
 import com.jagex.game.compression.huffman.WordPack;
 import com.jagex.game.config.*;
 import com.jagex.game.config.bastype.BASTypeList;
 import com.jagex.game.config.cursortype.CursorTypeList;
-import com.jagex.game.config.db.DBTableIndex;
-import com.jagex.game.config.db.DBUtils;
-import com.jagex.game.config.db.dbrowtype.DBRowType;
-import com.jagex.game.config.db.dbtabletype.DBTableType;
 import com.jagex.game.config.defaults.*;
 import com.jagex.game.config.effectanimtype.EffectAnimTypeList;
-import com.jagex.game.config.enumtype.EnumType;
 import com.jagex.game.config.enumtype.EnumTypeList;
 import com.jagex.game.config.flotype.FloorOverlayTypeList;
 import com.jagex.game.config.flutype.FloorUnderlayTypeList;
@@ -37,8 +31,6 @@ import com.jagex.game.config.meltype.MapElementType;
 import com.jagex.game.config.meltype.MapElementTypeList;
 import com.jagex.game.config.msitype.MSIType;
 import com.jagex.game.config.msitype.MSITypeList;
-import com.jagex.game.config.npctype.NPCHeadIconCustomisation;
-import com.jagex.game.config.npctype.NPCType;
 import com.jagex.game.config.npctype.NPCTypeList;
 import com.jagex.game.config.objtype.ObjType;
 import com.jagex.game.config.objtype.ObjTypeList;
@@ -63,7 +55,6 @@ import com.jagex.game.config.vartype.constants.ScriptVarType;
 import com.jagex.game.config.vartype.general.VarBasicTypeListClient;
 import com.jagex.game.config.vartype.player.VarPlayerTypeListClient;
 import com.jagex.game.cutscene.*;
-import com.jagex.game.fullscreen.Fullscreen;
 import com.jagex.game.group.PlayerGroup;
 import com.jagex.game.load.*;
 import com.jagex.game.network.ServerConnection;
@@ -71,21 +62,18 @@ import com.jagex.game.network.protocol.ClientProt;
 import com.jagex.game.network.protocol.ServerProt;
 import com.jagex.game.scene.ChangeLocationRequest;
 import com.jagex.game.script.*;
-import com.jagex.game.script.activepointers.ActiveComponent;
 import com.jagex.game.shared.console.DeveloperConsole;
 import com.jagex.game.shared.framework.gwc.GWC;
 import com.jagex.game.shared.framework.gwc.GWCLocation;
 import com.jagex.game.shared.framework.gwc.GWCWorld;
 import com.jagex.game.shared.framework.input.Keyboard;
 import com.jagex.game.shared.framework.input.Mouse;
-import com.jagex.game.shared.movement.CoordFine;
 import com.jagex.game.world.*;
 import com.jagex.game.world.entity.*;
 import com.jagex.graphics.Font;
 import com.jagex.graphics.FontMetrics;
 import com.jagex.graphics.*;
 import com.jagex.graphics.camera.CameraEffectType;
-import com.jagex.graphics.camera.CameraException;
 import com.jagex.graphics.camera.CameraTrackableType;
 import com.jagex.graphics.camera.ShakeMode;
 import com.jagex.graphics.dx.Direct3DRendererFactory;
@@ -102,9 +90,7 @@ import com.jagex.math.CurveEvaluator;
 import com.jagex.math.Spline;
 import com.jagex.math.Trig1;
 import com.jagex.twitchtv.TwitchEventLiveStreams;
-import com.jagex.twitchtv.TwitchEventResult;
 import com.jagex.twitchtv.TwitchTV;
-import com.jagex.twitchtv.TwitchWebcamFrameData;
 import lzma.sdk.lzma.LZMA;
 import lzma.sdk.rangecoder.Decoder;
 import rs2.client.Client;
@@ -120,7 +106,6 @@ import rs2.client.logic.friendchat.FriendChatUser;
 import rs2.client.logic.friendchat.Ignore;
 import rs2.client.login.*;
 import rs2.client.scene.ObjStackList;
-import rs2.client.scene.entities.NpcEntity;
 import rs2.client.scene.entities.PathingEntity;
 
 import java.applet.Applet;
@@ -2299,12 +2284,6 @@ public class Statics {
 		field7415 = null;
 	}
 
-	@ObfuscatedName("qa.v(Lyf;I)V")
-	public static void method7344(ClientScriptState arg0) {
-		String var1 = (String) arg0.field8218[--arg0.field8211];
-		arg0.field8216[++arg0.field8226 - 1] = TwitchHardwarePlatform.method6966(var1);
-	}
-
 	@ObfuscatedName("vj.k(BS)C")
 	public static char byteToCp1252Char(byte arg0) {
 		int var1 = arg0 & 0xFF;
@@ -2375,11 +2354,6 @@ public class Statics {
 	public static int method8658(int arg0, int arg1) {
 		int var2 = arg0 >> 31 & arg1 - 1;
 		return ((arg0 >>> 31) + arg0) % arg1 + var2;
-	}
-
-	@ObfuscatedName("tx.i(Lyf;B)V")
-	public static void method8883(ClientScriptState arg0) {
-		arg0.field8216[arg0.field8226 - 1] = ((QuestType) field1972.getById(arg0.field8216[arg0.field8226 - 1])).method4430(field7410) ? 1 : 0;
 	}
 
 	@ObfuscatedName("gs.x(S)I")
@@ -2571,13 +2545,6 @@ public class Statics {
 		field12384 = 0;
 	}
 
-	@ObfuscatedName("sj.g(Lyf;B)V")
-	public static void method8356(ClientScriptState arg0) {
-		arg0.field8226 -= 2;
-		arg0.field8216[arg0.field8226] = method4596(arg0.field8216[arg0.field8226], arg0.field8216[arg0.field8226 + 1]);
-		arg0.field8226++;
-	}
-
 	@ObfuscatedName("tc.ae(IIIJII)Lasf;")
 	public static BasicMouseEvent method8438(int arg0, int arg1, int arg2, long arg3, int arg4) {
 		BasicMouseEvent[] var6 = BasicMouseEvent.field12388;
@@ -2732,12 +2699,6 @@ public class Statics {
 		}
 	}
 
-	@ObfuscatedName("am.p(Luh;III)V")
-	public static void method830(ClientTriggerType arg0, int arg1, int arg2) {
-		ClientScriptState var3 = ScriptRunner.method1516();
-		ScriptRunner.method4374(arg0, arg1, arg2, var3);
-	}
-
 	@ObfuscatedName("fi.w(S)Ljava/io/File;")
 	public static File method3068() {
 		return GameShell.cacheDirectory;
@@ -2874,37 +2835,12 @@ public class Statics {
 		}
 	}
 
-	@ObfuscatedName("xt.ac(IIB)V")
-	public static void method10361(int arg0, int arg1) {
-		TwitchEventResult var2 = new TwitchEventResult(arg0, arg1);
-		TwitchVarType var3 = var2.method11();
-		if (var3 != null) {
-			ScriptRunner.method13907(var3.getId(), var2);
-		}
-	}
-
-	@ObfuscatedName("iy.as(III)I")
-	public static int method4596(int arg0, int arg1) {
-		TwitchHardwarePlatform.field7391 = new TwitchWebcamFrameData();
-		return arg0 >= 0 && arg0 < TwitchHardwarePlatform.field7395.length ? field11755.StartWebcamDevice(TwitchHardwarePlatform.field7395[arg0].field239, arg1) : -1;
-	}
-
 	@ObfuscatedName("alb.d(I)I")
 	public static int method18304() {
 		WeightedCache var0 = PlayerModel.field7901;
 		synchronized (PlayerModel.field7901) {
 			return PlayerModel.field7901.method2927();
 		}
-	}
-
-	@ObfuscatedName("ks.ad(S)V")
-	public static void method5177() {
-		TwitchHardwarePlatform.field7395 = field11755.GetWebcamDevices();
-	}
-
-	@ObfuscatedName("fq.am(I)I")
-	public static int method3123() {
-		return TwitchHardwarePlatform.field7395 == null ? 0 : TwitchHardwarePlatform.field7395.length;
 	}
 
 	@ObfuscatedName("xw.v(IB)V")
@@ -2917,12 +2853,6 @@ public class Statics {
 		synchronized (PlayerModel.field7902) {
 			PlayerModel.field7902.method2923(arg0);
 		}
-	}
-
-	@ObfuscatedName("dk.ap(ZZI)V")
-	public static void method2011(boolean arg0, boolean arg1) {
-		TwitchHardwarePlatform.field7376 = arg0;
-		TwitchHardwarePlatform.field7383 = arg1;
 	}
 
 	@ObfuscatedName("rm.q(Lhf;III)V")
@@ -3249,15 +3179,15 @@ public class Statics {
 	@ObfuscatedName("acl.ee(IIIB)V")
 	public static void method15110(int arg0, int arg1, int arg2) {
 		if (arg0 == 1008) {
-			method830(ClientTriggerType.field7258, arg1, arg2);
+			ScriptRunner.method830(ClientTriggerType.field7258, arg1, arg2);
 		} else if (arg0 == 1009) {
-			method830(ClientTriggerType.field7249, arg1, arg2);
+			ScriptRunner.method830(ClientTriggerType.field7249, arg1, arg2);
 		} else if (arg0 == 1010) {
-			method830(ClientTriggerType.field7257, arg1, arg2);
+			ScriptRunner.method830(ClientTriggerType.field7257, arg1, arg2);
 		} else if (arg0 == 1011) {
-			method830(ClientTriggerType.field7253, arg1, arg2);
+			ScriptRunner.method830(ClientTriggerType.field7253, arg1, arg2);
 		} else if (arg0 == 1012) {
-			method830(ClientTriggerType.field7252, arg1, arg2);
+			ScriptRunner.method830(ClientTriggerType.field7252, arg1, arg2);
 		}
 	}
 
@@ -3531,39 +3461,6 @@ public class Statics {
 		}
 	}
 
-	@ObfuscatedName("vo.ah(Lyf;I)V")
-	public static final void method9305(ClientScriptState arg0) {
-		arg0.field8226 -= 2;
-		if (arg0.field8216[arg0.field8226] < arg0.field8216[arg0.field8226 + 1]) {
-			arg0.field8220 += arg0.field8236[arg0.field8220];
-		}
-	}
-
-	@ObfuscatedName("o.az(Lyf;B)V")
-	public static final void method474(ClientScriptState arg0) {
-		arg0.field8224[++arg0.field8238 - 1] = (Long) arg0.field8239.field12366[arg0.field8220];
-	}
-
-	@ObfuscatedName("fg.aa(Lyf;I)V")
-	public static final void method2996(ClientScriptState arg0) {
-		arg0.field8238--;
-	}
-
-	@ObfuscatedName("el.af(Lyf;B)V")
-	public static final void method2760(ClientScriptState arg0) {
-		arg0.field8224[++arg0.field8238 - 1] = arg0.field8219[arg0.field8236[arg0.field8220]];
-	}
-
-	@ObfuscatedName("qx.bi(Lyf;I)V")
-	public static final void method7117(ClientScriptState arg0) {
-		arg0.field8226 -= 3;
-		int var1 = arg0.field8216[arg0.field8226];
-		int var2 = arg0.field8216[arg0.field8226 + 1];
-		int var3 = arg0.field8216[arg0.field8226 + 2];
-		Component.method10202(var1);
-		ScriptRunner.method5172(field11725[var1 >>> 16], var1 & 0xFFFF, var2, var3, arg0.field8235, arg0);
-	}
-
 	@ObfuscatedName("dk.he(II)I")
 	public static final int method2014(int arg0) {
 		int var1 = arg0 & 0x3F;
@@ -3596,154 +3493,6 @@ public class Statics {
 			}
 		}
 		return 0;
-	}
-
-	@ObfuscatedName("nl.bu(Lyf;I)V")
-	public static final void method6022(ClientScriptState arg0) {
-		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
-		Component var2 = var1.field8242;
-		ScriptRunner.method8666(var2, arg0);
-	}
-
-	@ObfuscatedName("iv.cj(Lyf;I)V")
-	public static final void method4399(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		Component var2 = Component.method10202(var1);
-		Interface var3 = field11725[var1 >> 16];
-		ScriptRunner.method7972(var2, var3, arg0);
-	}
-
-	@ObfuscatedName("jx.dd(Lhf;Lhq;Lyf;I)V")
-	public static final void method5066(Component arg0, Interface arg1, ClientScriptState arg2) {
-		int var3 = arg2.field8216[--arg2.field8226];
-		arg0.field2334 = -1;
-		if (arg0.field2215 != var3) {
-			arg0.field2215 = var3;
-			Client.method4616(arg0);
-		}
-		if (arg0.field2183 == -1 && !arg1.field2150) {
-			DelayedStateChange.method7714(arg0.field2158);
-		}
-	}
-
-	@ObfuscatedName("xc.dx(Lyf;B)V")
-	public static final void method10252(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		Component var2 = Component.method10202(var1);
-		Interface var3 = field11725[var1 >> 16];
-		ScriptRunner.method2098(var2, var3, arg0);
-	}
-
-	@ObfuscatedName("adg.de(Lhf;Lhq;Lyf;I)V")
-	public static final void method15227(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg2.field8226 -= 10;
-		arg0.field2250 = true;
-		arg0.field2248 = Math.max(Math.min(arg2.field8216[arg2.field8226], 2816), 0);
-		arg0.field2251 = Math.max(Math.min(arg2.field8216[arg2.field8226 + 1], 2816), 0);
-		arg0.field2255 = Math.max(Math.min(arg2.field8216[arg2.field8226 + 2], 2816), 0);
-		int var3 = Math.max(Math.min(arg2.field8216[arg2.field8226 + 3], 255), 0);
-		int var4 = Math.max(Math.min(arg2.field8216[arg2.field8226 + 4], 255), 0);
-		int var5 = Math.max(Math.min(arg2.field8216[arg2.field8226 + 5], 255), 0);
-		arg0.field2257 = var3 << 16 | var4 << 8 | var5;
-		arg0.field2345 = arg2.field8216[arg2.field8226 + 6];
-		arg0.field2252 = arg2.field8216[arg2.field8226 + 7];
-		arg0.field2302 = arg2.field8216[arg2.field8226 + 8];
-		arg0.field2258 = arg2.field8216[arg2.field8226 + 9];
-		Client.method4616(arg0);
-	}
-
-	@ObfuscatedName("ef.ei(Lyf;B)V")
-	public static final void method2857(ClientScriptState arg0) {
-		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
-		Component var2 = var1.field8242;
-		Interface var3 = var1.field8241;
-		ScriptRunner.method3258(var2, var3, arg0);
-	}
-
-	@ObfuscatedName("gt.ej(Lyf;I)V")
-	public static final void method3585(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		Component var2 = Component.method10202(var1);
-		Interface var3 = field11725[var1 >> 16];
-		ScriptRunner.method3077(var2, var3, arg0);
-	}
-
-	@ObfuscatedName("dm.ek(Lyf;I)V")
-	public static final void method1929(ClientScriptState arg0) {
-		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
-		Component var2 = var1.field8242;
-		Interface var3 = var1.field8241;
-		ScriptRunner.method4079(var2, var3, arg0);
-	}
-
-	@ObfuscatedName("sj.en(Lyf;I)V")
-	public static final void method8353(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		Component var2 = Component.method10202(var1);
-		Interface var3 = field11725[var1 >> 16];
-		ScriptRunner.method9791(var2, var3, arg0);
-	}
-
-	@ObfuscatedName("uf.ex(Lhf;Lhq;Lyf;I)V")
-	public static final void method9019(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2220 = arg2.field8216[--arg2.field8226] == 1;
-		Client.method4616(arg0);
-	}
-
-	@ObfuscatedName("ff.fx(Lyf;I)V")
-	public static final void method3125(ClientScriptState arg0) {
-		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
-		Component var2 = var1.field8242;
-		Interface var3 = var1.field8241;
-		ScriptRunner.method7620(var2, var3, arg0);
-	}
-
-	@ObfuscatedName("aq.fe(Lyf;I)V")
-	public static final void method930(ClientScriptState arg0) {
-		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
-		Component var2 = var1.field8242;
-		Interface var3 = var1.field8241;
-		ScriptRunner.method310(var2, var3, arg0);
-	}
-
-	@ObfuscatedName("abc.go(Lhf;Lhq;Lyf;I)V")
-	public static final void method14717(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg2.field8226 -= 3;
-		int var3 = arg2.field8216[arg2.field8226];
-		short var4 = (short) arg2.field8216[arg2.field8226 + 1];
-		short var5 = (short) arg2.field8216[arg2.field8226 + 2];
-		if (var3 < 0 || var3 >= 5) {
-			return;
-		}
-		arg0.method3964(var3, var4, var5);
-		Client.method4616(arg0);
-		if (arg0.field2183 == -1 && !arg1.field2150) {
-			DelayedStateChange.method14614(arg0.field2158, var3);
-		}
-	}
-
-	@ObfuscatedName("aag.gp(Lyf;B)V")
-	public static final void method14097(ClientScriptState arg0) {
-		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
-		Component var2 = var1.field8242;
-		Interface var3 = var1.field8241;
-		method14717(var2, var3, arg0);
-	}
-
-	@ObfuscatedName("qw.gf(Lyf;I)V")
-	public static final void method7302(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		Component var2 = Component.method10202(var1);
-		Interface var3 = field11725[var1 >> 16];
-		ScriptRunner.method331(var2, var3, arg0);
-	}
-
-	@ObfuscatedName("je.hq(Lyf;I)V")
-	public static final void method4839(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		Component var2 = Component.method10202(var1);
-		Interface var3 = field11725[var1 >> 16];
-		ScriptRunner.method14455(var2, var3, false, 1, arg0);
 	}
 
 	@ObfuscatedName("adi.ip(IIIIII)I")
@@ -3783,379 +3532,6 @@ public class Statics {
 		return Client.world.method7743().field6913[arg4].method1527(arg0, arg1);
 	}
 
-	@ObfuscatedName("nj.hp(Lyf;B)V")
-	public static final void method5972(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		Component var2 = Component.method10202(var1);
-		Interface var3 = field11725[var1 >> 16];
-		ScriptRunner.method8884(var2, var3, arg0);
-	}
-
-	@ObfuscatedName("gm.iw(Lhf;Lhq;Lyf;I)V")
-	public static final void method3600(Component arg0, Interface arg1, ClientScriptState arg2) {
-		int var3 = arg2.field8216[--arg2.field8226];
-		if (Component.field2234 == var3 || Component.field2301 == var3 || Component.field2157 == var3 || Component.field2266 == var3) {
-			arg0.field2271 = var3;
-		}
-	}
-
-	@ObfuscatedName("sc.ip(Lyf;I)V")
-	public static final void method8372(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		Component var2 = Component.method10202(var1);
-		Interface var3 = field11725[var1 >> 16];
-		method3600(var2, var3, arg0);
-	}
-
-	@ObfuscatedName("ud.if(Lyf;B)V")
-	public static final void method9191(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		Component var2 = Component.method10202(var1);
-		Interface var3 = field11725[var1 >> 16];
-		ScriptRunner.method9456(var2, var3, arg0);
-	}
-
-	@ObfuscatedName("aj.kf(Lhf;Lhq;Lyf;B)V")
-	public static final void method969(Component arg0, Interface arg1, ClientScriptState arg2) {
-		int var3 = arg2.field8216[--arg2.field8226];
-		int var4 = arg2.field8216[--arg2.field8226];
-		if (var4 >= 1 && var4 <= 10) {
-			arg0.method3948(var4 - 1, var3);
-		}
-	}
-
-	@ObfuscatedName("el.kx(Lyf;S)V")
-	public static final void method2761(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		Component var2 = Component.method10202(var1);
-		Interface var3 = field11725[var1 >> 16];
-		method969(var2, var3, arg0);
-	}
-
-	@ObfuscatedName("yx.la(Lyf;I)V")
-	public static final void method10609(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		Component var2 = Component.method10202(var1);
-		Interface var3 = field11725[var1 >> 16];
-		ScriptRunner.method1515(var2, var3, arg0);
-	}
-
-	@ObfuscatedName("d.mw(Lhf;Lhq;Lyf;I)V")
-	public static final void method307(Component arg0, Interface arg1, ClientScriptState arg2) {
-		String var3 = (String) arg2.field8218[--arg2.field8211];
-		if (ScriptRunner.method7881(var3, arg2) != null) {
-			var3 = var3.substring(0, var3.length() - 1);
-		}
-		arg0.field2314 = ScriptRunner.method552(var3, arg2);
-		arg0.field2179 = true;
-	}
-
-	@ObfuscatedName("nd.nx(Lyf;I)V")
-	public static final void method5935(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		Component var2 = Component.method10202(var1);
-		Interface var3 = field11725[var1 >> 16];
-		ScriptRunner.method5206(var2, var3, arg0);
-	}
-
-	@ObfuscatedName("xu.nl(Lyf;I)V")
-	public static final void method10059(ClientScriptState arg0) {
-		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
-		Component var2 = var1.field8242;
-		Interface var3 = var1.field8241;
-		ScriptRunner.method5206(var2, var3, arg0);
-	}
-
-	@ObfuscatedName("z.nf(Lyf;B)V")
-	public static final void method272(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		Component var2 = Component.method10202(var1);
-		Interface var3 = field11725[var1 >> 16];
-		ScriptRunner.method852(var2, var3, arg0);
-	}
-
-	@ObfuscatedName("zq.oq(Lhf;Lhq;Lyf;B)V")
-	public static final void method13925(Component arg0, Interface arg1, ClientScriptState arg2) {
-		String var3 = (String) arg2.field8218[--arg2.field8211];
-		if (ScriptRunner.method7881(var3, arg2) != null) {
-			var3 = var3.substring(0, var3.length() - 1);
-		}
-		arg0.field2296 = ScriptRunner.method552(var3, arg2);
-		arg0.field2179 = true;
-	}
-
-	@ObfuscatedName("cz.om(Lyf;B)V")
-	public static final void method1590(ClientScriptState arg0) {
-		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
-		Component var2 = var1.field8242;
-		Interface var3 = var1.field8241;
-		ScriptRunner.method7719(var2, var3, arg0);
-	}
-
-	@ObfuscatedName("wo.of(Lhf;Lhq;Lyf;I)V")
-	public static final void method9616(Component arg0, Interface arg1, ClientScriptState arg2) {
-		String var3 = (String) arg2.field8218[--arg2.field8211];
-		if (ScriptRunner.method7881(var3, arg2) != null) {
-			var3 = var3.substring(0, var3.length() - 1);
-		}
-		arg0.field2249 = ScriptRunner.method552(var3, arg2);
-		arg0.field2179 = true;
-	}
-
-	@ObfuscatedName("pp.oe(Lhf;Lhq;Lyf;I)V")
-	public static final void method7046(Component arg0, Interface arg1, ClientScriptState arg2) {
-		String var3 = (String) arg2.field8218[--arg2.field8211];
-		if (ScriptRunner.method7881(var3, arg2) != null) {
-			var3 = var3.substring(0, var3.length() - 1);
-		}
-		arg0.field2295 = ScriptRunner.method552(var3, arg2);
-		arg0.field2179 = true;
-	}
-
-	@ObfuscatedName("vn.pl(Lyf;I)V")
-	public static final void method9582(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		Component var2 = Component.method10202(var1);
-		Interface var3 = field11725[var1 >> 16];
-		ScriptRunner.method4497(var2, var3, arg0);
-	}
-
-	@ObfuscatedName("ny.qg(Lyf;I)V")
-	public static final void method5947(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		Component var2 = Component.method10202(var1);
-		Interface var3 = field11725[var1 >> 16];
-		ScriptRunner.method10108(var2, var3, arg0);
-	}
-
-	@ObfuscatedName("wy.qe(Lyf;I)V")
-	public static final void method9893(ClientScriptState arg0) {
-		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
-		Component var2 = var1.field8242;
-		Interface var3 = var1.field8241;
-		ScriptRunner.method10108(var2, var3, arg0);
-	}
-
-	@ObfuscatedName("v.rv(Lyf;B)V")
-	public static final void method330(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		Component var2 = Component.method10202(var1);
-		Interface var3 = field11725[var1 >> 16];
-		ScriptRunner.method10372(var2, var3, arg0);
-	}
-
-	@ObfuscatedName("sq.rd(Lyf;I)V")
-	public static final void method8191(ClientScriptState arg0) {
-		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
-		Component var2 = var1.field8242;
-		arg0.field8216[++arg0.field8226 - 1] = var2.field2210;
-	}
-
-	@ObfuscatedName("iy.rn(Lyf;I)V")
-	public static final void method4600(ClientScriptState arg0) {
-		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
-		Component var2 = var1.field8242;
-		arg0.field8216[++arg0.field8226 - 1] = var2.field2206;
-	}
-
-	@ObfuscatedName("ajd.sm(Lyf;B)V")
-	public static final void method17448(ClientScriptState arg0) {
-		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
-		Component var2 = var1.field8242;
-		arg0.field8216[++arg0.field8226 - 1] = var2.field2331;
-	}
-
-	@ObfuscatedName("rm.sd(Lyf;S)V")
-	public static final void method7625(ClientScriptState arg0) {
-		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
-		Component var2 = var1.field8242;
-		arg0.field8216[++arg0.field8226 - 1] = var2.field2334;
-	}
-
-	@ObfuscatedName("mj.ti(Lhf;IIFIIIIIIB)V")
-	public static void method5921(Component arg0, int arg1, int arg2, float arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9) {
-		if (arg0.field2363 == null) {
-			NPCType var10 = (NPCType) field7961.getById(arg0.field2294);
-			arg0.field2363 = new NPCHeadIconCustomisation(var10, true);
-		}
-		arg0.field2363.field2688 = ScriptRunner.method5390();
-		arg0.field2363.method4528(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-	}
-
-	@ObfuscatedName("q.ua(Lyf;B)V")
-	public static final void method555(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		Component var2 = Component.method10202(var1);
-		arg0.field8216[++arg0.field8226 - 1] = var2.field2206;
-	}
-
-	@ObfuscatedName("dz.uz(Lyf;I)V")
-	public static final void method1899(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		Component var2 = Component.method10202(var1);
-		arg0.field8218[++arg0.field8211 - 1] = var2.field2261;
-	}
-
-	@ObfuscatedName("jv.ug(Lyf;I)V")
-	public static final void method5012(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		Component var2 = Component.method10202(var1);
-		arg0.field8216[++arg0.field8226 - 1] = var2.field2208;
-	}
-
-	@ObfuscatedName("zt.uv(Lyf;I)V")
-	public static final void method13881(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		Component var2 = Component.method10202(var1);
-		arg0.field8216[++arg0.field8226 - 1] = var2.field2212;
-	}
-
-	@ObfuscatedName("h.un(Lyf;I)V")
-	public static final void method594(ClientScriptState arg0) {
-		Component var1 = Component.method10202(arg0.field8216[--arg0.field8226]);
-		if (var1.field2334 == -1) {
-			arg0.field8216[++arg0.field8226 - 1] = 0;
-		} else {
-			arg0.field8216[++arg0.field8226 - 1] = var1.field2335;
-		}
-	}
-
-	@ObfuscatedName("hy.vx(Lyf;I)V")
-	public static final void method4067(ClientScriptState arg0) {
-		arg0.field8226 -= 2;
-		int var1 = arg0.field8216[arg0.field8226];
-		int var2 = arg0.field8216[arg0.field8226 + 1];
-		SubInterface var3 = (SubInterface) Client.field10979.method14495((long) var1);
-		if (var3 != null && var3.field11571 == var2) {
-			arg0.field8216[++arg0.field8226 - 1] = 1;
-		} else {
-			arg0.field8216[++arg0.field8226 - 1] = 0;
-		}
-	}
-
-	@ObfuscatedName("sq.vs(Lyf;I)V")
-	public static final void method8192(ClientScriptState arg0) {
-		ClientMessage var1 = method1604(ClientProt.ABORT_P_DIALOG, Client.field10849.field794);
-		Client.field10849.method934(var1);
-	}
-
-	@ObfuscatedName("tg.wz(Lyf;B)V")
-	public static final void method8688(ClientScriptState arg0) {
-		arg0.field8226 -= 4;
-		int var1 = arg0.field8216[arg0.field8226];
-		int var2 = arg0.field8216[arg0.field8226 + 1];
-		int var3 = arg0.field8216[arg0.field8226 + 2];
-		int var4 = arg0.field8216[arg0.field8226 + 3];
-		short var5 = 256;
-		field1798.method3191(SoundType.field1828, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
-	}
-
-	@ObfuscatedName("ahp.we(Lyf;I)V")
-	public static final void method16745(ClientScriptState arg0) {
-		arg0.field8226 -= 5;
-		int var1 = arg0.field8216[arg0.field8226];
-		int var2 = arg0.field8216[arg0.field8226 + 1];
-		int var3 = arg0.field8216[arg0.field8226 + 2];
-		int var4 = arg0.field8216[arg0.field8226 + 3];
-		int var5 = arg0.field8216[arg0.field8226 + 4];
-		field1798.method3191(SoundType.field1828, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
-	}
-
-	@ObfuscatedName("ey.wm(Lyf;I)V")
-	public static final void method2676(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field10903;
-	}
-
-	@ObfuscatedName("tg.wx(Lyf;S)V")
-	public static final void method8692(ClientScriptState arg0) {
-		arg0.field8226 -= 2;
-		int var1 = arg0.field8216[arg0.field8226];
-		int var2 = arg0.field8216[arg0.field8226 + 1];
-		arg0.field8216[++arg0.field8226 - 1] = method14914(var1, var2, false);
-	}
-
-	@ObfuscatedName("eb.wi(Lyf;I)V")
-	public static final void method2965(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = field7410.method674(var1);
-	}
-
-	@ObfuscatedName("xa.wy(Lyf;B)V")
-	public static final void method10148(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = field7410.method671(var1);
-	}
-
-	@ObfuscatedName("xl.xm(Lyf;I)V")
-	public static final void method9924(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = field7410.method687(var1);
-	}
-
-	@ObfuscatedName("afv.xy(Lyf;I)V")
-	public static final void method16412(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = field4490.field10395.method316();
-	}
-
-	@ObfuscatedName("xk.xp(Lyf;I)V")
-	public static final void method10326(ClientScriptState arg0) {
-		CoordFine var1 = CoordFine.method7078((CoordFine) arg0.field8218[--arg0.field8211]);
-		arg0.field8226 -= 4;
-		var1.field11477 += arg0.field8216[arg0.field8226];
-		var1.field11478 += arg0.field8216[arg0.field8226 + 1];
-		var1.field11479 += arg0.field8216[arg0.field8226 + 2];
-		var1.field11480 += arg0.field8216[arg0.field8226 + 3];
-		arg0.field8218[++arg0.field8211 - 1] = var1;
-	}
-
-	@ObfuscatedName("ul.xk(Lyf;I)V")
-	public static final void method8911(ClientScriptState arg0) {
-		arg0.field8226 -= 2;
-		int var1 = arg0.field8216[arg0.field8226];
-		int var2 = arg0.field8216[arg0.field8226 + 1];
-		arg0.field8216[++arg0.field8226 - 1] = ClientInvCache.method6002(var1, var2, true);
-	}
-
-	@ObfuscatedName("zu.yo(Lyf;I)V")
-	public static final void method13988(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field11049;
-	}
-
-	@ObfuscatedName("qh.ys(Lyf;B)V")
-	public static final void method7351(ClientScriptState arg0) {
-		if (Client.field10950 >= 5 && Client.field10950 <= 9) {
-			arg0.field8216[++arg0.field8226 - 1] = 1;
-		} else {
-			arg0.field8216[++arg0.field8226 - 1] = 0;
-		}
-	}
-
-	@ObfuscatedName("ux.yq(Lyf;I)V")
-	public static final void method9210(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = field4490.field12061 != null && field4490.field12061.field7897 ? 1 : 0;
-	}
-
-	@ObfuscatedName("uh.yh(Lyf;I)V")
-	public static final void method9196(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field11101 ? 1 : 0;
-	}
-
-	@ObfuscatedName("hn.yb(Lyf;B)V")
-	public static final void method4080(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = ClientInvCache.method7007(var1, false);
-	}
-
-	@ObfuscatedName("adp.yv(Lyf;I)V")
-	public static final void method15157(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = GameShell.focus ? 1 : 0;
-	}
-
-	@ObfuscatedName("oh.yy(Lyf;B)V")
-	public static final void method6125(ClientScriptState arg0) {
-		ScriptRunner.method4597(MiniMenu.method3558(), arg0);
-	}
-
 	@ObfuscatedName("y.ii(IIILajf;I)V")
 	public static void method540(int arg0, int arg1, int arg2, Obj arg3) {
 		long var4 = (long) (arg0 << 28 | arg2 << 14 | arg1);
@@ -4185,163 +3561,6 @@ public class Statics {
 		var6.field11263.method14153(arg3);
 	}
 
-	@ObfuscatedName("qw.zy(Lyf;S)V")
-	public static final void method7305(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field10945;
-	}
-
-	@ObfuscatedName("rg.ze(Lyf;I)V")
-	public static final void method7707(ClientScriptState arg0) {
-		arg0.field8226 -= 3;
-		int var1 = arg0.field8216[arg0.field8226];
-		int var2 = arg0.field8216[arg0.field8226 + 1];
-		int var3 = arg0.field8216[arg0.field8226 + 2];
-		String var4 = (String) arg0.field8218[--arg0.field8211];
-		if (var2 == -1) {
-			throw new RuntimeException();
-		}
-		EnumType var5 = (EnumType) field8514.getById(var2);
-		if (var5.inputtype.getId() != var1) {
-			throw new RuntimeException();
-		} else if (var5.outputtype.getId() == ScriptVarType.STRING.getId()) {
-			int[] var6 = var5.method14867(var4);
-			if (var3 < 0 || var6 == null || var6.length <= var3) {
-				throw new RuntimeException();
-			}
-			arg0.field8216[++arg0.field8226 - 1] = var6[var3];
-		} else {
-			throw new RuntimeException();
-		}
-	}
-
-	@ObfuscatedName("vv.zl(Lyf;I)V")
-	public static final void method9388(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		if (Client.field11080 == 2 && var1 < Client.field10811) {
-			arg0.field8216[++arg0.field8226 - 1] = Client.field11065[var1].field608;
-		} else {
-			arg0.field8216[++arg0.field8226 - 1] = 0;
-		}
-	}
-
-	@ObfuscatedName("qm.zx(Lyf;B)V")
-	public static final void method7318(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		if (Client.field11080 == 2 && var1 < Client.field10811) {
-			arg0.field8216[++arg0.field8226 - 1] = Client.field11065[var1].field615;
-		} else {
-			arg0.field8216[++arg0.field8226 - 1] = 0;
-		}
-	}
-
-	@ObfuscatedName("wm.aaf(Lyf;I)V")
-	public static final void method9823(ClientScriptState arg0) {
-		if (Client.field11055 == null) {
-			arg0.field8218[++arg0.field8211 - 1] = "";
-		} else {
-			arg0.field8218[++arg0.field8211 - 1] = Base37.method15309(Client.field11055);
-		}
-	}
-
-	@ObfuscatedName("afq.aap(Lyf;I)V")
-	public static final void method15449(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		if (Client.field11055 == null || var1 >= field7421) {
-			arg0.field8216[++arg0.field8226 - 1] = 0;
-		} else {
-			arg0.field8216[++arg0.field8226 - 1] = field9267[var1].field758;
-		}
-	}
-
-	@ObfuscatedName("fo.aaq(Lyf;B)V")
-	public static final void method3281(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		if (Client.field11055 == null || var1 >= field7421) {
-			arg0.field8216[++arg0.field8226 - 1] = 0;
-		} else {
-			arg0.field8216[++arg0.field8226 - 1] = field9267[var1].field760;
-		}
-	}
-
-	@ObfuscatedName("fl.aaz(Lyf;I)V")
-	public static final void method3138(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		if (Client.field11080 == 0 || var1 >= Client.field11084) {
-			arg0.field8218[++arg0.field8211 - 1] = "";
-			arg0.field8218[++arg0.field8211 - 1] = "";
-			return;
-		}
-		Ignore var2 = Client.field11086[var1];
-		arg0.field8218[++arg0.field8211 - 1] = var2.field598;
-		if (var2.field596 == null) {
-			arg0.field8218[++arg0.field8211 - 1] = "";
-		} else {
-			arg0.field8218[++arg0.field8211 - 1] = var2.field596;
-		}
-	}
-
-	@ObfuscatedName("ft.aay(Lyf;I)V")
-	public static final void method3078(ClientScriptState arg0) {
-		if (Client.field11030 == null) {
-			arg0.field8218[++arg0.field8211 - 1] = "";
-		} else {
-			arg0.field8218[++arg0.field8211 - 1] = Client.field11030;
-		}
-	}
-
-	@ObfuscatedName("ey.abo(Lyf;I)V")
-	public static final void method2677(ClientScriptState arg0) {
-		String var1 = (String) arg0.field8218[--arg0.field8211];
-		if (var1.startsWith(TextUtil.imgTag(0)) || var1.startsWith(TextUtil.imgTag(1))) {
-			var1 = var1.substring(7);
-		}
-		arg0.field8216[++arg0.field8226 - 1] = Client.method3598(var1);
-	}
-
-	@ObfuscatedName("tc.abh(Lyf;I)V")
-	public static final void method8434(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		if (Client.field11080 == 0 || var1 >= Client.field11084) {
-			arg0.field8218[++arg0.field8211 - 1] = "";
-		} else {
-			arg0.field8218[++arg0.field8211 - 1] = Client.field11086[var1].field598;
-		}
-	}
-
-	@ObfuscatedName("ahj.abb(Lyf;B)V")
-	public static final void method16611(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = field6721 == null ? 0 : 1;
-	}
-
-	@ObfuscatedName("dm.abu(Lyf;S)V")
-	public static final void method1925(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = field6721.method3392(var1).method3529() ? 1 : 0;
-	}
-
-	@ObfuscatedName("ew.acm(Lyf;B)V")
-	public static final void method2899(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = field6721.method3390();
-	}
-
-	@ObfuscatedName("b.adp(Lyf;I)V")
-	public static final void method576(ClientScriptState arg0) {
-		if (field3022 == null) {
-			arg0.field8216[++arg0.field8226 - 1] = 0;
-		} else {
-			arg0.field8216[++arg0.field8226 - 1] = 1;
-			arg0.field8228 = field3022;
-		}
-	}
-
-	@ObfuscatedName("xu.adf(Lyf;I)V")
-	public static final void method10060(ClientScriptState arg0) {
-		arg0.field8226 -= 2;
-		int var1 = arg0.field8216[arg0.field8226];
-		int var2 = arg0.field8216[arg0.field8226 + 1];
-		arg0.field8216[++arg0.field8226 - 1] = Client.field11057[var2][var1].field4961;
-	}
-
 	@ObfuscatedName("mj.jr(Lhf;B)V")
 	public static void method5926(Component arg0) {
 		if (!Client.field10973) {
@@ -4365,15 +3584,6 @@ public class Statics {
 		var3.field11432.p2_alt2(Client.field10974);
 		var3.field11432.p4_alt1(field6707);
 		Client.field10849.method934(var3);
-	}
-
-	@ObfuscatedName("ru.adx(Lyf;I)V")
-	public static final void method7936(ClientScriptState arg0) {
-		arg0.field8226 -= 2;
-		int var1 = arg0.field8216[arg0.field8226];
-		int var2 = arg0.field8216[arg0.field8226 + 1];
-		int var3 = Client.field11057[var2][var1].method7608();
-		arg0.field8216[++arg0.field8226 - 1] = var3 == 2 ? 1 : 0;
 	}
 
 	@ObfuscatedName("id.js(IIILjava/lang/String;S)V")
@@ -4411,131 +3621,6 @@ public class Statics {
 		var6.method934(var7);
 	}
 
-	@ObfuscatedName("at.aeh(Lyf;I)V")
-	public static final void method808(ClientScriptState arg0) {
-		arg0.field8226 -= 5;
-		int var1 = arg0.field8216[arg0.field8226];
-		int var2 = arg0.field8216[arg0.field8226 + 1];
-		int var3 = arg0.field8216[arg0.field8226 + 2];
-		int var4 = arg0.field8216[arg0.field8226 + 3];
-		int var5 = arg0.field8216[arg0.field8226 + 4];
-		arg0.field8216[++arg0.field8226 - 1] = (var2 - var1) * (var5 - var3) / (var4 - var3) + var1;
-	}
-
-	@ObfuscatedName("akp.aep(Lyf;B)V")
-	public static final void method17731(ClientScriptState arg0) {
-		arg0.field8226 -= 2;
-		int var1 = arg0.field8216[arg0.field8226];
-		int var2 = arg0.field8216[arg0.field8226 + 1];
-		arg0.field8216[++arg0.field8226 - 1] = Trig1.method6280(var1, var2);
-	}
-
-	@ObfuscatedName("kz.afq(Lyf;I)V")
-	public static final void method5128(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = field8149[var1 & 0xFFFF];
-	}
-
-	@ObfuscatedName("qi.afy(Lyf;I)V")
-	public static final void method7272(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = ~var1;
-	}
-
-	@ObfuscatedName("tl.afz(Lyf;B)V")
-	public static final void method8893(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8218[++arg0.field8211 - 1] = method596(var1);
-	}
-
-	@ObfuscatedName("pn.afx(Lyf;I)V")
-	public static final void method6828(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = Cp1252.method10348((char) var1) ? 1 : 0;
-	}
-
-	@ObfuscatedName("ji.agd(Lyf;I)V")
-	public static final void method4979(ClientScriptState arg0) {
-		arg0.field8226 -= 2;
-		int var1 = arg0.field8216[arg0.field8226];
-		int var2 = arg0.field8216[arg0.field8226 + 1];
-		ObjType var3 = (ObjType) field1842.getById(var1);
-		if (var2 < 1 || var2 > 5 || var3.iops[var2 - 1] == null) {
-			arg0.field8218[++arg0.field8211 - 1] = "";
-		} else {
-			arg0.field8218[++arg0.field8211 - 1] = var3.iops[var2 - 1];
-		}
-	}
-
-	@ObfuscatedName("ajf.agb(Lyf;B)V")
-	public static final void method17524(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) field1842.getById(var1)).cost;
-	}
-
-	@ObfuscatedName("vg.ahq(Lyf;B)V")
-	public static final void method9462(ClientScriptState arg0) {
-		arg0.field8226 -= 2;
-		int var1 = arg0.field8216[arg0.field8226];
-		int var2 = arg0.field8216[arg0.field8226 + 1];
-		ParamType var3 = (ParamType) field3086.getById(var2);
-		if (var3.isStringType()) {
-			arg0.field8218[++arg0.field8211 - 1] = ((LocType) Client.world.method7750().getById(var1)).method9479(var2, var3.defaultString);
-		} else {
-			arg0.field8216[++arg0.field8226 - 1] = ((LocType) Client.world.method7750().getById(var1)).method9481(var2, var3.defaultInt);
-		}
-	}
-
-	@ObfuscatedName("xr.aic(Lyf;I)V")
-	public static final void method10232(ClientScriptState arg0) {
-		arg0.field8226 -= 2;
-		int var1 = arg0.field8216[arg0.field8226];
-		int var2 = arg0.field8216[arg0.field8226 + 1];
-		arg0.field8216[++arg0.field8226 - 1] = field3823.list(var1).field12347[var2];
-	}
-
-	@ObfuscatedName("rc.aip(Lyf;I)V")
-	public static final void method7891(ClientScriptState arg0) {
-		arg0.field8226 -= 2;
-		int var1 = arg0.field8216[arg0.field8226];
-		int var2 = arg0.field8216[arg0.field8226 + 1];
-		int var3 = field489.method14982(var1).method19509(var2).field7938;
-		arg0.field8216[++arg0.field8226 - 1] = var3;
-	}
-
-	@ObfuscatedName("wo.ako(Lyf;B)V")
-	public static final void method9617(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		WorldMapAreaMetadata var2 = WorldMap.method8512(var1);
-		if (var2 == null) {
-			arg0.field8216[++arg0.field8226 - 1] = 0;
-		} else {
-			arg0.field8216[++arg0.field8226 - 1] = var2.field12354;
-		}
-	}
-
-	@ObfuscatedName("dk.akr(Lyf;I)V")
-	public static final void method2013(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		WorldMapAreaMetadata var2 = WorldMap.method8512(var1);
-		if (var2 == null) {
-			arg0.field8216[++arg0.field8226 - 1] = -1;
-		} else {
-			arg0.field8216[++arg0.field8226 - 1] = var2.field12356;
-		}
-	}
-
-	@ObfuscatedName("xi.aku(Lyf;B)V")
-	public static final void method10154(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = ClientWorldMap.field11651 == 100 ? 1 : 0;
-	}
-
-	@ObfuscatedName("ua.akx(Lyf;I)V")
-	public static final void method9004(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		method10453(var1 >> 14 & 0x3FFF, var1 & 0x3FFF);
-	}
-
 	@ObfuscatedName("qs.ku(Lhf;I)V")
 	public static void method7332(Component arg0) {
 		if (arg0.field2184 == 5 && arg0.field2334 != -1) {
@@ -4550,11 +3635,6 @@ public class Statics {
 		}
 	}
 
-	@ObfuscatedName("fd.als(Lyf;I)V")
-	public static final void method3063(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = field6811 == null ? -1 : field6811.field12359;
-	}
-
 	@ObfuscatedName("abn.kl(Lhf;I)Lhf;")
 	public static Component method14755(Component arg0) {
 		Component var1 = Client.method17238(arg0);
@@ -4562,65 +3642,6 @@ public class Statics {
 			var1 = arg0.field2284;
 		}
 		return var1;
-	}
-
-	@ObfuscatedName("aw.alk(Lyf;I)V")
-	public static final void method747(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		int var2 = ClientWorldMap.method9736(var1);
-		if (var2 < 0) {
-			throw new RuntimeException();
-		}
-		arg0.field8216[++arg0.field8226 - 1] = var2;
-	}
-
-	@ObfuscatedName("z.aln(Lyf;B)V")
-	public static final void method274(ClientScriptState arg0) {
-		arg0.field8226 -= 2;
-		int var1 = arg0.field8216[arg0.field8226];
-		int var2 = arg0.field8216[arg0.field8226 + 1];
-		if (Fullscreen.allowed) {
-			Client.setWindowMode(3, var1, var2, false);
-			arg0.field8216[++arg0.field8226 - 1] = GameShell.fsframe == null ? 0 : 1;
-		} else {
-			arg0.field8216[++arg0.field8226 - 1] = 0;
-		}
-	}
-
-	@ObfuscatedName("wt.alg(Lyf;B)V")
-	public static final void method9842(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		if (Fullscreen.allowed) {
-			FullscreenMode[] var2 = Client.method16741();
-			arg0.field8216[++arg0.field8226 - 1] = var2[var1].field8537;
-			arg0.field8216[++arg0.field8226 - 1] = var2[var1].field8538;
-		} else {
-			arg0.field8216[++arg0.field8226 - 1] = 0;
-			arg0.field8216[++arg0.field8226 - 1] = 0;
-		}
-	}
-
-	@ObfuscatedName("kb.alb(Lyf;I)V")
-	public static final void method5248(ClientScriptState arg0) {
-		int var1 = lastFullscreenWidth;
-		int var2 = lastFullscreenHeight;
-		int var3 = -1;
-		if (Fullscreen.allowed) {
-			FullscreenMode[] var4 = Client.method16741();
-			for (int var5 = 0; var5 < var4.length; var5++) {
-				FullscreenMode var6 = var4[var5];
-				if (var6.field8537 == var1 && var6.field8538 == var2) {
-					var3 = var5;
-					break;
-				}
-			}
-		}
-		arg0.field8216[++arg0.field8226 - 1] = var3;
-	}
-
-	@ObfuscatedName("qi.ale(Lyf;S)V")
-	public static final void method7273(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.getWindowMode();
 	}
 
 	@ObfuscatedName("tk.kv(Lhf;III)V")
@@ -4675,17 +3696,6 @@ public class Statics {
 		var6.field11432.p2(arg1);
 		var6.field11432.pjstr(var4);
 		var5.method934(var6);
-	}
-
-	@ObfuscatedName("ys.amk(Lyf;B)V")
-	public static final void method10452(ClientScriptState arg0) {
-		arg0.field8211 -= 3;
-		ScriptRunner.method7005((String) arg0.field8218[arg0.field8211], (String) arg0.field8218[arg0.field8211 + 1], (String) arg0.field8218[arg0.field8211 + 2], arg0.field8216[--arg0.field8226] == 1, true);
-	}
-
-	@ObfuscatedName("ku.amz(Lyf;I)V")
-	public static final void method5146(ClientScriptState arg0) {
-		RuneScapeSetup.method4589();
 	}
 
 	@ObfuscatedName("az.lh(Ljava/lang/String;ZB)V")
@@ -4744,15 +3754,6 @@ public class Statics {
 		var12.method934(var13);
 	}
 
-	@ObfuscatedName("vg.and(Lyf;I)V")
-	public static final void method9466(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		if (var1 < 0) {
-			var1 = 0;
-		}
-		Client.field10901 = Client.field11089 * 35 + var1;
-	}
-
 	@ObfuscatedName("akv.lw(Lhf;IS)I")
 	public static int method17826(Component arg0, int arg1) {
 		if (!Client.method17197(arg0).method17690(arg1) && arg0.field2315 == null) {
@@ -4764,22 +3765,6 @@ public class Statics {
 		}
 	}
 
-	@ObfuscatedName("agz.anl(Lyf;I)V")
-	public static final void method16461(ClientScriptState arg0) {
-		CoordFine var1 = (CoordFine) arg0.field8218[--arg0.field8211];
-		if (field9155.method4780() != PositionMode.field2816) {
-			throw new RuntimeException();
-		}
-		PositionPoint var2 = (PositionPoint) field9155.method4709();
-		var2.method16671(var1);
-		Client.field10902 = true;
-	}
-
-	@ObfuscatedName("vw.aoo(Lyf;I)V")
-	public static final void method9392(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = field9155.method4743() == null ? -1 : field9155.method4743().field2794;
-	}
-
 	@ObfuscatedName("rm.mp(II)V")
 	public static void method7623(int arg0) {
 		int var1 = Client.field11114.indexOf(arg0);
@@ -4788,244 +3773,4 @@ public class Statics {
 		}
 	}
 
-	@ObfuscatedName("qe.aoa(Lyf;I)V")
-	public static final void method7225(ClientScriptState arg0) throws CameraException {
-		arg0.field8226 -= 2;
-		boolean var1 = arg0.field8216[arg0.field8226] == 1;
-		boolean var2 = arg0.field8216[arg0.field8226 + 1] == 1;
-		field9155.method4700(var1, var2);
-	}
-
-	@ObfuscatedName("eq.apj(Lyf;B)V")
-	public static final void method2833(ClientScriptState arg0) throws CameraException {
-		field9155.method4756();
-	}
-
-	@ObfuscatedName("aaj.apn(Lyf;I)V")
-	public static final void method14453(ClientScriptState arg0) {
-		AccountCreationManager.method648();
-	}
-
-	@ObfuscatedName("xn.apt(Lyf;I)V")
-	public static final void method10109(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = LoginManager.field477;
-	}
-
-	@ObfuscatedName("et.aqc(Lyf;I)V")
-	public static final void method2864(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = LoginManager.field477;
-	}
-
-	@ObfuscatedName("er.aro(Lyf;B)V")
-	public static final void method2909(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field10778;
-		arg0.field8216[++arg0.field8226 - 1] = Client.field10777;
-	}
-
-	@ObfuscatedName("pu.arq(Lyf;I)V")
-	public static final void method7075(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		field688.method18157(field688.brightness, var1);
-		Client.world.method7753();
-		Preferences.method16391();
-		Client.field10800 = false;
-	}
-
-	@ObfuscatedName("any.arn(Lyf;I)V")
-	public static final void method18661(ClientScriptState arg0) {
-		field688.method18157(field688.flickeringEffects, arg0.field8216[--arg0.field8226] == 1 ? 1 : 0);
-		Preferences.method16391();
-		Client.field10800 = false;
-	}
-
-	@ObfuscatedName("pd.asr(Lyf;B)V")
-	public static final void method6825(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		int var2 = field688.themeMusicVolume3.method18763();
-		if (var1 != var2) {
-			field688.method18157(field688.themeMusicVolume3, var1);
-			Preferences.method16391();
-			Client.field10800 = false;
-		}
-	}
-
-	@ObfuscatedName("py.asz(Lyf;I)V")
-	public static final void method6965(ClientScriptState arg0) {
-		field688.method18157(field688.customCursors, arg0.field8216[--arg0.field8226] == 0 ? 0 : 1);
-		Preferences.method16391();
-	}
-
-	@ObfuscatedName("ul.atz(Lyf;I)V")
-	public static final void method8916(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = field688.brightness.method18408();
-	}
-
-	@ObfuscatedName("ji.ate(Lyf;B)V")
-	public static final void method4980(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = field688.sceneryShadows.method18515();
-	}
-
-	@ObfuscatedName("ty.avp(Lyf;I)V")
-	public static final void method8477(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = field688.unknown.method18665();
-	}
-
-	@ObfuscatedName("rp.awi(Lyf;I)V")
-	public static final void method7477(ClientScriptState arg0) {
-		int var1 = Client.field10979.method14498();
-		if (Client.field10978 != -1) {
-			var1++;
-		}
-		arg0.field8216[++arg0.field8226 - 1] = var1;
-	}
-
-	@ObfuscatedName("sp.axe(Lyf;I)V")
-	public static final void method8277(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		MapElementType var2 = (MapElementType) field5011.getById(var1);
-		if (var2.field2370 == null) {
-			arg0.field8218[++arg0.field8211 - 1] = "";
-		} else {
-			arg0.field8218[++arg0.field8211 - 1] = var2.field2370;
-		}
-	}
-
-	@ObfuscatedName("fi.axr(Lyf;B)V")
-	public static final void method3075(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		MapElementType var2 = (MapElementType) field5011.getById(var1);
-		arg0.field8216[++arg0.field8226 - 1] = var2.field2400;
-	}
-
-	@ObfuscatedName("ny.ayu(Lyf;B)V")
-	public static final void method5948(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = field2830;
-	}
-
-	@ObfuscatedName("oh.ayr(Lyf;I)V")
-	public static final void method6127(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = field5009;
-	}
-
-	@ObfuscatedName("ik.azw(Lyf;I)V")
-	public static final void method4620(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = field688.bloom.method18624() && field8198.method2266() ? 1 : 0;
-	}
-
-	@ObfuscatedName("rd.bay(Lyf;B)V")
-	public static final void method7894(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		if (field8198.method2141()) {
-			arg0.field8216[++arg0.field8226 - 1] = field688.unknown1.method14070(var1);
-		} else {
-			arg0.field8216[++arg0.field8226 - 1] = 3;
-		}
-	}
-
-	@ObfuscatedName("abx.bbf(Lyf;B)V")
-	public static final void method14885(ClientScriptState arg0) {
-		arg0.field8218[++arg0.field8211 - 1] = ((PlayerEntity) arg0.field8221).method19115(true);
-	}
-
-	@ObfuscatedName("d.bbn(Lyf;B)V")
-	public static final void method311(ClientScriptState arg0) {
-		NpcEntity var1 = (NpcEntity) arg0.field8221;
-		String var2 = var1.field12082;
-		NPCType var3 = var1.field12083;
-		if (var3.field2735 != null) {
-			NPCType var4 = var3.method4547(field7410, field7410);
-			if (var4 == null) {
-				var2 = "";
-			} else {
-				var2 = var4.name;
-			}
-		}
-		if (var2 == null) {
-			var2 = "";
-		}
-		arg0.field8218[++arg0.field8211 - 1] = var2;
-	}
-
-	@ObfuscatedName("ty.bci(Lyf;B)V")
-	public static final void method8475(ClientScriptState arg0) {
-		Client.method14574(arg0.field8232, arg0.field8216[--arg0.field8226], true);
-		arg0.field8216[++arg0.field8226 - 1] = (int) Client.field10922[0];
-		arg0.field8216[++arg0.field8226 - 1] = (int) Client.field10922[1];
-		arg0.field8216[++arg0.field8226 - 1] = (int) Client.field10922[2];
-	}
-
-	@ObfuscatedName("qo.bch(Lyf;B)V")
-	public static final void method7312(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = arg0.field8232.method16501();
-	}
-
-	@ObfuscatedName("qs.bcc(Lyf;I)V")
-	public static final void method7333(ClientScriptState arg0) {
-		int var1 = 0;
-		int var2 = 0;
-		for (int var3 = 0; var3 < field6888.length; var3++) {
-			if (field6888[var3] != null && field6888[var3].method16837()) {
-				var1 += field6888[var3].method16826();
-				var2 += field6888[var3].method16828();
-			}
-		}
-		arg0.field8216[++arg0.field8226 - 1] = var1 == 0 ? 0 : var2 * 100 / var1;
-	}
-
-	@ObfuscatedName("ix.bdz(Lyf;I)V")
-	public static final void method4480(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field11094.method3261();
-	}
-
-	@ObfuscatedName("wf.bdr(Lyf;I)V")
-	public static final void method9830(ClientScriptState arg0) {
-		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = Client.field11094.method3263(var1).method3286();
-	}
-
-	@ObfuscatedName("fu.beo(Lyf;I)V")
-	public static final void method3024(ClientScriptState arg0) {
-		arg0.field8226 -= 2;
-		int var1 = arg0.field8216[arg0.field8226];
-		int var2 = arg0.field8216[arg0.field8226 + 1];
-		int var3 = 0;
-		int var4 = var2 >>> 8;
-		int var5 = var2 & 0xFF;
-		DBRowType var6 = (DBRowType) field9123.getById(var1);
-		DBTableType var7 = (DBTableType) field1840.getById(var4);
-		ScriptVarType[] var8 = var7.types[var5];
-		Object[] var9 = var6.method14711(var5);
-		if (var9 == null && var7.defaultValues != null) {
-			var9 = var7.defaultValues[var5];
-		}
-		if (var9 != null) {
-			var3 = var9.length / var8.length;
-		}
-		arg0.field8216[++arg0.field8226 - 1] = var3;
-	}
-
-	@ObfuscatedName("vy.bep(Lyf;I)V")
-	public static final void method9429(ClientScriptState arg0) {
-		arg0.field8226 -= 2;
-		int var1 = arg0.field8216[arg0.field8226];
-		int var2 = arg0.field8216[arg0.field8226 + 1];
-		DBTableIndex var3 = Client.method146(var1);
-		if (var3 == null) {
-			throw new RuntimeException();
-		} else if (DBUtils.method746(var1) != Client.field10767) {
-			throw new RuntimeException();
-		} else if (field754 == null && field754.isEmpty()) {
-			throw new RuntimeException();
-		} else {
-			List var4 = var3.method15187(var2);
-			field754 = new LinkedList(field754);
-			if (var4 == null) {
-				field754.clear();
-			} else {
-				field754.retainAll(var4);
-			}
-			field8853 = field754.iterator();
-			arg0.field8216[++arg0.field8226 - 1] = field754.size();
-		}
-	}
 }

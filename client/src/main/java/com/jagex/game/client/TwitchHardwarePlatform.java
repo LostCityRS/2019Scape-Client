@@ -481,14 +481,14 @@ public class TwitchHardwarePlatform {
 			if (arg0.eventType == 30) {
 				int var5 = ((TwitchEventResult) arg0).result;
 				if (var5 == 0 || var5 == 1) {
-					Statics.method5177();
+					method5177();
 				} else if (var5 == 2) {
 					field7367 = arg1;
 				}
 			}
 			if (arg0.eventType == 34) {
 				Statics.field4501 = (TwitchEventLiveStreams) arg0;
-				Statics.method10361(34, 0);
+				method10361(34, 0);
 			}
 			return true;
 		} else if (field7391 == null) {
@@ -505,11 +505,20 @@ public class TwitchHardwarePlatform {
 				}
 				method6846();
 				field7367 = arg1;
-				Statics.method10361(33, 0);
+				method10361(33, 0);
 			} else {
 				field7397 = null;
 			}
 			return false;
+		}
+	}
+
+	@ObfuscatedName("xt.ac(IIB)V")
+	public static void method10361(int arg0, int arg1) {
+		TwitchEventResult var2 = new TwitchEventResult(arg0, arg1);
+		TwitchVarType var3 = var2.method11();
+		if (var3 != null) {
+			ScriptRunner.method13907(var3.getId(), var2);
 		}
 	}
 
@@ -527,11 +536,27 @@ public class TwitchHardwarePlatform {
 		field7397 = null;
 	}
 
+	@ObfuscatedName("iy.as(III)I")
+	public static int method4596(int arg0, int arg1) {
+		field7391 = new TwitchWebcamFrameData();
+		return arg0 >= 0 && arg0 < field7395.length ? Statics.field11755.StartWebcamDevice(field7395[arg0].field239, arg1) : -1;
+	}
+
 	@ObfuscatedName("q.at(II)I")
 	public static int method557(int arg0) {
 		field7391 = null;
 		field7397 = null;
 		return arg0 >= 0 && arg0 < field7395.length ? Statics.field11755.StopWebcamDevice(field7395[arg0].field239) : -1;
+	}
+
+	@ObfuscatedName("ks.ad(S)V")
+	public static void method5177() {
+		field7395 = Statics.field11755.GetWebcamDevices();
+	}
+
+	@ObfuscatedName("fq.am(I)I")
+	public static int method3123() {
+		return field7395 == null ? 0 : field7395.length;
 	}
 
 	@ObfuscatedName("aff.au(IB)Lcom/jagex/twitchtv/TwitchWebcamDevice;")
@@ -558,6 +583,12 @@ public class TwitchHardwarePlatform {
 			}
 		}
 		return null;
+	}
+
+	@ObfuscatedName("dk.ap(ZZI)V")
+	public static void method2011(boolean arg0, boolean arg1) {
+		field7376 = arg0;
+		field7383 = arg1;
 	}
 
 	@ObfuscatedName("fn.aq(I)I")

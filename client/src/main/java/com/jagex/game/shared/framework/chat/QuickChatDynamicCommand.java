@@ -1,6 +1,5 @@
 package com.jagex.game.shared.framework.chat;
 
-import com.jagex.game.script.ClientScriptState;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("xs")
@@ -86,10 +85,4 @@ public class QuickChatDynamicCommand {
 		return null;
 	}
 
-	public static final void add(ClientScriptState arg0, short arg1) {
-		arg0.field8226 -= 2;
-		int var2 = arg0.field8216[arg0.field8226];
-		int var3 = arg0.field8216[arg0.field8226 + 1];
-		arg0.field8216[++arg0.field8226 - 1] = var2 - var3;
-	}
 }

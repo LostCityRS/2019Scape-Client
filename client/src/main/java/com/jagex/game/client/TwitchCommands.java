@@ -91,6 +91,12 @@ public final class TwitchCommands {
 		arg0.field8216[++arg0.field8226 - 1] = TwitchHardwarePlatform.method9008();
 	}
 
+	@ObfuscatedName("qa.v(Lyf;I)V")
+	public static void method7344(ClientScriptState arg0) {
+		String var1 = (String) arg0.field8218[--arg0.field8211];
+		arg0.field8216[++arg0.field8226 - 1] = TwitchHardwarePlatform.method6966(var1);
+	}
+
 	@ObfuscatedName("is.o(Lyf;I)V")
 	public static void method4487(ClientScriptState arg0) {
 		arg0.field8216[++arg0.field8226 - 1] = TwitchHardwarePlatform.method536();
@@ -103,7 +109,7 @@ public final class TwitchCommands {
 
 	@ObfuscatedName("xu.y(Lyf;I)V")
 	public static void method10061(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Statics.method3123();
+		arg0.field8216[++arg0.field8226 - 1] = TwitchHardwarePlatform.method3123();
 	}
 
 	@ObfuscatedName("rl.q(Lyf;I)V")
@@ -197,6 +203,13 @@ public final class TwitchCommands {
 		arg0.field8216[++arg0.field8226 - 1] = -1;
 	}
 
+	@ObfuscatedName("sj.g(Lyf;B)V")
+	public static void method8356(ClientScriptState arg0) {
+		arg0.field8226 -= 2;
+		arg0.field8216[arg0.field8226] = TwitchHardwarePlatform.method4596(arg0.field8216[arg0.field8226], arg0.field8216[arg0.field8226 + 1]);
+		arg0.field8226++;
+	}
+
 	@ObfuscatedName("ni.i(Lyf;I)V")
 	public static void method6011(ClientScriptState arg0) {
 		int var1 = TwitchHardwarePlatform.method557(arg0.field8216[--arg0.field8226]);
@@ -208,7 +221,7 @@ public final class TwitchCommands {
 		arg0.field8226 -= 2;
 		boolean var1 = arg0.field8216[arg0.field8226] != 0;
 		boolean var2 = arg0.field8216[arg0.field8226 + 1] != 0;
-		Statics.method2011(var1, var2);
+		TwitchHardwarePlatform.method2011(var1, var2);
 	}
 
 	@ObfuscatedName("hh.t(Lyf;B)V")

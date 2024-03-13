@@ -7854,7 +7854,7 @@ public final class Client extends GameShell {
 			int var194 = var2.g4_alt3();
 			if (Statics.field3056 != var194) {
 				Statics.field3056 = var194;
-				Statics.method830(ClientTriggerType.field7259, -1, -1);
+				ScriptRunner.method830(ClientTriggerType.field7259, -1, -1);
 			}
 			arg0.field796 = null;
 			return true;
@@ -8417,7 +8417,7 @@ public final class Client extends GameShell {
 			int var326 = var2.g4_alt2();
 			if (Statics.field2676 != var326) {
 				Statics.field2676 = var326;
-				Statics.method830(ClientTriggerType.field7261, -1, -1);
+				ScriptRunner.method830(ClientTriggerType.field7261, -1, -1);
 			}
 			arg0.field796 = null;
 			return true;

@@ -10,6 +10,7 @@ import com.jagex.game.script.ClientTriggerType;
 import deob.ObfuscatedName;
 import deob.Statics;
 import rs2.client.Client;
+import rs2.client.clientscript.ScriptRunner;
 
 @ObfuscatedName("eq")
 public class CutsceneManager {
@@ -197,7 +198,7 @@ public class CutsceneManager {
 		Statics.field8729 = null;
 		Client.field10877 = false;
 		if (field1722 > 0) {
-			Statics.method830(ClientTriggerType.field7266, field1722, -1);
+			ScriptRunner.method830(ClientTriggerType.field7266, field1722, -1);
 		}
 		method3551();
 		ClientMessage var4 = Statics.method1604(ClientProt.CUTSCENE_FINISHED, Client.field10849.field794);
