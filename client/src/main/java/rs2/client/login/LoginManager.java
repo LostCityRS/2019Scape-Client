@@ -324,7 +324,7 @@ public class LoginManager {
 				}
 				Statics.field432.method952();
 				ClientMessage var1 = ClientMessage.method13920();
-				var1.field11432.p1(LoginProt.field3821.field3812);
+				var1.field11432.p1(LoginProt.INIT_GAME_CONNECTION.id);
 				Statics.field432.method934(var1);
 				Statics.field432.method933();
 				field445 = 35;
@@ -354,7 +354,7 @@ public class LoginManager {
 			}
 			if (field445 == 276) {
 				ClientMessage var3 = ClientMessage.method13920();
-				var3.field11432.p1(LoginProt.field3817.field3812);
+				var3.field11432.p1(LoginProt.INIT_SOCIAL_NETWORK_CONNECTION.id);
 				var3.field11432.p2(0);
 				int var4 = var3.field11432.pos;
 				var3.field11432.p4(910);
@@ -432,11 +432,11 @@ public class LoginManager {
 				if (Statics.field431 == 211) {
 					LoginProt var11;
 					if (field438) {
-						var11 = LoginProt.field3819;
+						var11 = LoginProt.SOCIAL_NETWORK_LOGIN;
 					} else {
-						var11 = LoginProt.field3811;
+						var11 = LoginProt.GAMELOGIN;
 					}
-					var10.p1(var11.field3812);
+					var10.p1(var11.id);
 					var10.p2(0);
 					int var12 = var10.pos;
 					int var13 = var10.pos;
@@ -494,11 +494,11 @@ public class LoginManager {
 				} else {
 					LoginProt var18;
 					if (field438) {
-						var18 = LoginProt.field3819;
+						var18 = LoginProt.SOCIAL_NETWORK_LOGIN;
 					} else {
-						var18 = LoginProt.field3810;
+						var18 = LoginProt.LOBBYLOGIN;
 					}
-					var10.p1(var18.field3812);
+					var10.p1(var18.id);
 					var10.p2(0);
 					int var19 = var10.pos;
 					int var20 = var10.pos;
@@ -734,7 +734,7 @@ public class LoginManager {
 						if (var31) {
 							ClientMessage var33 = ClientMessage.method13920();
 							PacketBit var34 = var33.field11432;
-							var34.p1(LoginProt.field3816.field3812);
+							var34.p1(LoginProt.GAMELOGIN_CONTINUE.id);
 							Statics.field432.method934(var33);
 							Statics.field432.method933();
 							field445 = 138;

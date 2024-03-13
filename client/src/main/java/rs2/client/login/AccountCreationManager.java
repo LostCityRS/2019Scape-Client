@@ -205,7 +205,7 @@ public class AccountCreationManager {
 				Client.field10835.method936(Stream.method7130(Statics.lobby.method14764(), 40000), Statics.lobby.host);
 				Client.field10835.method952();
 				ClientMessage var1 = ClientMessage.method13920();
-				var1.field11432.p1(LoginProt.field3815.field3812);
+				var1.field11432.p1(LoginProt.CREATE_ACCOUNT_CONNECT.id);
 				var1.field11432.p2(0);
 				int var2 = var1.field11432.pos;
 				var1.field11432.p2(910);

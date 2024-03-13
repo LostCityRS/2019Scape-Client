@@ -1988,7 +1988,7 @@ public final class Client extends GameShell {
 				Statics.field7571 = Stream.method7130(Statics.field9774, 131072);
 				int var1 = field10789.length() + 10;
 				Packet var2 = new Packet(var1 + 2);
-				var2.p1(LoginProt.field3820.field3812);
+				var2.p1(LoginProt.INIT_JS5REMOTE_CONNECTION.id);
 				var2.p1(var1);
 				var2.p4(910);
 				var2.p4(1);
