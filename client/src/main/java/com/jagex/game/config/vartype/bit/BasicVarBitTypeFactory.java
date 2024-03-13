@@ -14,8 +14,8 @@ public class BasicVarBitTypeFactory extends VarBitTypeFactory {
 	}
 
 	@ObfuscatedName("ahg.v(ILao;I)Lay;")
-	public ConfigType create(int arg0, ConfigTypeList arg1) {
-		return new VarBitType(arg0, this);
+	public ConfigType create(int id, ConfigTypeList configTypeList) {
+		return new VarBitType(id, this);
 	}
 
 	@ObfuscatedName("ahg.o(B)Ljava/lang/Class;")

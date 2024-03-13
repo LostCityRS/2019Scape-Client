@@ -56,7 +56,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 	public StaticGroundDecorEntity(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, boolean arg11, ScaleRotTrans arg12) {
 		super(arg0, arg6, arg7, arg8, arg4, arg5, arg3.field7448, arg12);
 		this.field11185 = arg2;
-		this.field11715 = arg3.field7450;
+		this.field11715 = arg3.id;
 		this.field11190 = arg9;
 		this.field11189 = (byte) arg10;
 		this.field11191 = arg3.field7470 != 0 && !arg9;
@@ -116,7 +116,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 
 	@ObfuscatedName("ajz.bv(Ldh;IZI)Labg;")
 	public Pair method17436(Renderer arg0, int arg1, boolean arg2) {
-		LocType var4 = (LocType) this.field11185.list(this.field11715);
+		LocType var4 = (LocType) this.field11185.getById(this.field11715);
 		FloorModel var5;
 		FloorModel var6;
 		if (this.field11190) {
@@ -150,7 +150,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 		}
 		Matrix4x3 var2 = this.method10533();
 		PickableEntity var3 = PickableEntity.method16749(this.field11191);
-		Cuboid var4 = ((LocType) this.field11185.list(this.field11715)).field7468;
+		Cuboid var4 = ((LocType) this.field11185.getById(this.field11715)).field7468;
 		if (var4 == null) {
 			this.field11192.method1813(var2, this.field11713[0], 0);
 		} else {
@@ -166,7 +166,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 
 	@ObfuscatedName("ajz.fa(Ldh;IIB)Z")
 	public boolean method17375(Renderer arg0, int arg1, int arg2) {
-		Cuboid var4 = ((LocType) this.field11185.list(this.field11715)).field7468;
+		Cuboid var4 = ((LocType) this.field11185.getById(this.field11715)).field7468;
 		if (var4 != null) {
 			return arg0.method2191(arg1, arg2, this.method10533(), var4);
 		}

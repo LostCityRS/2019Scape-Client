@@ -14,8 +14,8 @@ public class BasicCursorTypeFactory extends CursorTypeFactory implements ConfigT
 	}
 
 	@ObfuscatedName("alo.v(ILao;I)Lay;")
-	public ConfigType create(int arg0, ConfigTypeList arg1) {
-		return new CursorType(arg0, this);
+	public ConfigType create(int id, ConfigTypeList configTypeList) {
+		return new CursorType(id, this);
 	}
 
 	@ObfuscatedName("alo.o(B)Ljava/lang/Class;")

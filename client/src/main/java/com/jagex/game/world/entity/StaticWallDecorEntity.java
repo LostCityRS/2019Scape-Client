@@ -56,7 +56,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 	public StaticWallDecorEntity(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, ScaleRotTrans arg14) {
 		super(arg0, arg6, arg7, arg8, arg4, arg5, arg10, arg11, arg14);
 		this.field11159 = arg2;
-		this.field11715 = arg3.field7450;
+		this.field11715 = arg3.id;
 		this.field11156 = arg9;
 		this.field11155 = (byte) arg13;
 		this.field11152 = (byte) arg12;
@@ -113,7 +113,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 
 	@ObfuscatedName("ajk.bv(Ldh;IZI)Labg;")
 	public Pair method17414(Renderer arg0, int arg1, boolean arg2) {
-		LocType var4 = (LocType) this.field11159.list(this.field11715);
+		LocType var4 = (LocType) this.field11159.getById(this.field11715);
 		FloorModel var5;
 		FloorModel var6;
 		if (this.field11156) {
@@ -149,7 +149,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 		var2.method6292(this.method10533());
 		var2.method6315((float) this.field12452, 0.0F, (float) this.field12451);
 		PickableEntity var3 = PickableEntity.method16749(this.field11157);
-		Cuboid var4 = ((LocType) this.field11159.list(this.field11715)).field7468;
+		Cuboid var4 = ((LocType) this.field11159.getById(this.field11715)).field7468;
 		if (var4 == null) {
 			this.field11150.method1813(var2, this.field11713[0], 0);
 		} else {
@@ -165,7 +165,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 
 	@ObfuscatedName("ajk.fa(Ldh;IIB)Z")
 	public boolean method17375(Renderer arg0, int arg1, int arg2) {
-		Cuboid var4 = ((LocType) this.field11159.list(this.field11715)).field7468;
+		Cuboid var4 = ((LocType) this.field11159.getById(this.field11715)).field7468;
 		if (var4 != null) {
 			return arg0.method2191(arg1, arg2, this.method10533(), var4);
 		}

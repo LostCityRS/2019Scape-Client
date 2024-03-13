@@ -18,13 +18,13 @@ public class StructType extends SecondaryNode implements ConfigType, ConfigRelat
 	public IterableMap field9261;
 
 	@ObfuscatedName("adx.e(Lalw;B)V")
-	public void decode(Packet arg0) {
+	public void decode(Packet buf) {
 		while (true) {
-			int var2 = arg0.g1();
+			int var2 = buf.g1();
 			if (var2 == 0) {
 				return;
 			}
-			this.method15295(arg0, var2);
+			this.method15295(buf, var2);
 		}
 	}
 

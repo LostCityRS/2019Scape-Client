@@ -94,13 +94,13 @@ public class HitmarkType implements ConfigType {
 	}
 
 	@ObfuscatedName("vb.e(Lalw;B)V")
-	public void decode(Packet arg0) {
+	public void decode(Packet buf) {
 		while (true) {
-			int var2 = arg0.g1();
+			int var2 = buf.g1();
 			if (var2 == 0) {
 				return;
 			}
-			this.method9257(arg0, var2);
+			this.method9257(buf, var2);
 		}
 	}
 
@@ -190,10 +190,10 @@ public class HitmarkType implements ConfigType {
 				}
 			}
 			if (var3 >= 0 && var3 < this.field7298.length - 1) {
-				return this.field7298[var3] == -1 ? null : (HitmarkType) this.field7303.list(this.field7298[var3]);
+				return this.field7298[var3] == -1 ? null : (HitmarkType) this.field7303.getById(this.field7298[var3]);
 			} else {
 				int var6 = this.field7298[this.field7298.length - 1];
-				return var6 == -1 ? null : (HitmarkType) this.field7303.list(var6);
+				return var6 == -1 ? null : (HitmarkType) this.field7303.getById(var6);
 			}
 		}
 	}

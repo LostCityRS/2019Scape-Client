@@ -13,8 +13,8 @@ public class BasicMapElementTypeFactory extends MapElementTypeFactory {
 	}
 
 	@ObfuscatedName("agr.v(ILao;I)Lay;")
-	public ConfigType create(int arg0, ConfigTypeList arg1) {
-		return new MapElementType(arg0, arg1, this);
+	public ConfigType create(int id, ConfigTypeList configTypeList) {
+		return new MapElementType(id, configTypeList, this);
 	}
 
 	@ObfuscatedName("agr.o(B)Ljava/lang/Class;")

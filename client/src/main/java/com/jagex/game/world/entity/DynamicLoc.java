@@ -79,7 +79,7 @@ public class DynamicLoc {
 
 	public DynamicLoc(Renderer arg0, LocTypeList arg1, LocType arg2, int arg3, int arg4, int arg5, GraphEntity arg6, boolean arg7, int arg8, int arg9) {
 		this.field6681 = arg1;
-		this.field6665 = arg2.field7450;
+		this.field6665 = arg2.id;
 		this.field6666 = arg3;
 		this.field6667 = arg4;
 		this.field6672 = arg6;
@@ -121,12 +121,12 @@ public class DynamicLoc {
 
 	@ObfuscatedName("sp.f(S)Lvd;")
 	public LocType method8237() {
-		return (LocType) this.field6681.list(this.field6665);
+		return (LocType) this.field6681.getById(this.field6665);
 	}
 
 	@ObfuscatedName("sp.w(Ldh;IZZI)Ldo;")
 	public final Model method8238(Renderer arg0, int arg1, boolean arg2, boolean arg3) {
-		LocType var5 = (LocType) this.field6681.list(this.field6665);
+		LocType var5 = (LocType) this.field6681.getById(this.field6665);
 		if (var5.field7505 != null) {
 			var5 = var5.method9477(Statics.field7410, Client.field10863 == 0 ? CutsceneManager.field1723 : Statics.field7410);
 		}
@@ -135,7 +135,7 @@ public class DynamicLoc {
 			this.field6673 = -1;
 			return null;
 		}
-		if (!this.field6675 && this.field6673 != var5.field7450) {
+		if (!this.field6675 && this.field6673 != var5.id) {
 			this.method8244(true, -1, 0, 0);
 			this.field6670 = false;
 			this.field6669 = null;
@@ -145,7 +145,7 @@ public class DynamicLoc {
 			arg3 &= this.field6676 & !this.field6670 & Statics.field688.sceneryShadows.method18515() != 0;
 		}
 		if (arg2 && !arg3) {
-			this.field6673 = var5.field7450;
+			this.field6673 = var5.id;
 			return null;
 		}
 		Vector3 var6 = this.field6672.method10536().field4298;
@@ -184,7 +184,7 @@ public class DynamicLoc {
 				var10.method1728();
 			}
 			this.field6669 = null;
-		} else if (this.field6669 != null && (this.field6669.method1691() & arg1) == arg1 && this.field6673 == var5.field7450) {
+		} else if (this.field6669 != null && (this.field6669.method1691() & arg1) == arg1 && this.field6673 == var5.id) {
 			var10 = this.field6669;
 		} else {
 			if (this.field6669 != null) {
@@ -208,7 +208,7 @@ public class DynamicLoc {
 				var10.method1728();
 			}
 		}
-		this.field6673 = var5.field7450;
+		this.field6673 = var5.id;
 		return var10;
 	}
 
@@ -217,7 +217,7 @@ public class DynamicLoc {
 		ModelParticleEmitter[] var9 = arg1.method1750();
 		ModelParticleEffector[] var10 = arg1.method1765();
 		if ((this.field6680 == null || this.field6680.field7804) && (var9 != null || var10 != null)) {
-			LocType var11 = (LocType) this.field6681.list(this.field6665);
+			LocType var11 = (LocType) this.field6681.getById(this.field6665);
 			if (var11.field7505 != null) {
 				var11 = var11.method9477(Statics.field7410, Client.field10863 == 0 ? CutsceneManager.field1723 : Statics.field7410);
 			}
@@ -291,7 +291,7 @@ public class DynamicLoc {
 		int var5 = arg1;
 		boolean var6 = false;
 		if (arg1 == -1) {
-			LocType var7 = (LocType) this.field6681.list(this.field6665);
+			LocType var7 = (LocType) this.field6681.getById(this.field6665);
 			LocType var8 = var7;
 			if (var7.field7505 != null) {
 				var7 = var7.method9477(Statics.field7410, Client.field10863 == 0 ? CutsceneManager.field1723 : Statics.field7410);
@@ -307,7 +307,7 @@ public class DynamicLoc {
 					if (arg0 && this.field6664.method14346() && var7.method9493(this.field6664.method14348())) {
 						return;
 					}
-					if (this.field6673 != var7.field7450) {
+					if (this.field6673 != var7.id) {
 						var6 = var7.field7515;
 					}
 					var5 = var7.method9483();
@@ -321,7 +321,7 @@ public class DynamicLoc {
 				if (arg0 && this.field6664.method14346() && var8.method9493(this.field6664.method14348())) {
 					return;
 				}
-				if (this.field6673 != var7.field7450) {
+				if (this.field6673 != var7.id) {
 					var6 = var8.field7515;
 				}
 				var5 = var8.method9483();

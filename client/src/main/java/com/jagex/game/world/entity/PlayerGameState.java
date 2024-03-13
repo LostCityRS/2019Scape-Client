@@ -61,12 +61,12 @@ public class PlayerGameState implements VarIntDomain, VariableTypeProvider, Play
 
 	@ObfuscatedName("ah.w(Lqe;II)Lec;")
 	public VarType method695(VarDomainType arg0, int arg1) {
-		return VarDomainType.PLAYER == arg0 ? (VarType) this.field633.list(arg1) : null;
+		return VarDomainType.PLAYER == arg0 ? (VarType) this.field633.getById(arg1) : null;
 	}
 
 	@ObfuscatedName("ah.l(IB)Lkh;")
 	public VarBitType method694(int arg0) {
-		VarBitType var2 = (VarBitType) this.field634.list(arg0);
+		VarBitType var2 = (VarBitType) this.field634.getById(arg0);
 		return VarDomainType.PLAYER == var2.baseVar.domain ? var2 : null;
 	}
 

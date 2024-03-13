@@ -38,7 +38,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 	public final IconCacheKey field8609 = new IconCacheKey();
 
 	@ObfuscatedName("abr.l")
-	public final ConfigTypeList paramTL;
+	public final ConfigTypeList configTypeList;
 
 	@ObfuscatedName("abr.u")
 	public int field8611;
@@ -49,12 +49,12 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 	@ObfuscatedName("abr.p")
 	public final String[] defaultiops;
 
-	public ObjTypeFactory(ModeGame arg0, Language arg1, boolean arg2, Js5 arg3, ConfigTypeList arg4) {
-		this.languageId = arg1;
-		this.allowMembers = arg2;
-		this.js5 = arg3;
-		this.paramTL = arg4;
-		if (ModeGame.RUNESCAPE == arg0) {
+	public ObjTypeFactory(ModeGame modeGame, Language language, boolean allowMembers, Js5 js5, ConfigTypeList list) {
+		this.languageId = language;
+		this.allowMembers = allowMembers;
+		this.js5 = js5;
+		this.configTypeList = list;
+		if (ModeGame.RUNESCAPE == modeGame) {
 			this.defaultops = new String[] { null, null, LocalisedText.TAKE.method15021(this.languageId), null, null, LocalisedText.EXAMINE.method15021(this.languageId) };
 		} else {
 			this.defaultops = new String[] { null, null, LocalisedText.TAKE.method15021(this.languageId), null, null, null };
@@ -82,7 +82,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 				return var14;
 			}
 		}
-		ObjType var15 = (ObjType) arg12.list(arg2);
+		ObjType var15 = (ObjType) arg12.getById(arg2);
 		if (arg3 > 1 && var15.countobj != null) {
 			int var16 = -1;
 			for (int var17 = 0; var17 < 10; var17++) {
@@ -91,7 +91,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 				}
 			}
 			if (var16 != -1) {
-				var15 = (ObjType) arg12.list(var16);
+				var15 = (ObjType) arg12.getById(var16);
 			}
 		}
 		int[] var18 = var15.method14646(arg0, arg1, arg3, arg4, arg5, arg6, arg8, arg9, arg10, arg11);

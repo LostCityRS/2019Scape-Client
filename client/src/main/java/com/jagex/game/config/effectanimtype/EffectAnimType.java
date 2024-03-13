@@ -10,16 +10,16 @@ import deob.ObfuscatedName;
 public class EffectAnimType implements ConfigType {
 
 	@ObfuscatedName("yy.n")
-	public final EffectAnimTypeFactory field8249;
+	public final EffectAnimTypeFactory factory;
 
 	@ObfuscatedName("yy.m")
-	public final int field8247;
+	public final int id;
 
 	@ObfuscatedName("yy.k")
-	public int field8248;
+	public int model;
 
 	@ObfuscatedName("yy.f")
-	public int field8260 = -1;
+	public int anim = -1;
 
 	@ObfuscatedName("yy.w")
 	public short[] field8246;
@@ -40,19 +40,19 @@ public class EffectAnimType implements ConfigType {
 	public byte[] field8255;
 
 	@ObfuscatedName("yy.c")
-	public int field8256 = 128;
+	public int resizeh = 128;
 
 	@ObfuscatedName("yy.r")
-	public int field8257 = 128;
+	public int resizev = 128;
 
 	@ObfuscatedName("yy.v")
-	public int field8258 = 0;
+	public int orientation = 0;
 
 	@ObfuscatedName("yy.o")
-	public int field8259 = 0;
+	public int ambient = 0;
 
 	@ObfuscatedName("yy.s")
-	public int field8252 = 0;
+	public int contrast = 0;
 
 	@ObfuscatedName("yy.y")
 	public boolean field8261 = false;
@@ -63,67 +63,67 @@ public class EffectAnimType implements ConfigType {
 	@ObfuscatedName("yy.x")
 	public int field8263 = -1;
 
-	public EffectAnimType(int arg0, EffectAnimTypeFactory arg1) {
-		this.field8247 = arg0;
-		this.field8249 = arg1;
+	public EffectAnimType(int id, EffectAnimTypeFactory factory) {
+		this.id = id;
+		this.factory = factory;
 	}
 
 	@ObfuscatedName("yy.e(Lalw;B)V")
-	public void decode(Packet arg0) {
+	public void decode(Packet buf) {
 		while (true) {
-			int var2 = arg0.g1();
-			if (var2 == 0) {
+			int code = buf.g1();
+			if (code == 0) {
 				return;
 			}
-			this.method13807(arg0, var2);
+			this.decode(buf, code);
 		}
 	}
 
 	@ObfuscatedName("yy.u(Lalw;II)V")
-	public void method13807(Packet arg0, int arg1) {
-		if (arg1 == 1) {
-			this.field8248 = arg0.gSmart2or4null();
-		} else if (arg1 == 2) {
-			this.field8260 = arg0.gSmart2or4null();
-		} else if (arg1 == 4) {
-			this.field8256 = arg0.g2();
-		} else if (arg1 == 5) {
-			this.field8257 = arg0.g2();
-		} else if (arg1 == 6) {
-			this.field8258 = arg0.g2();
-		} else if (arg1 == 7) {
-			this.field8259 = arg0.g1();
-		} else if (arg1 == 8) {
-			this.field8252 = arg0.g1();
-		} else if (arg1 == 10) {
+	public void decode(Packet buf, int code) {
+		if (code == 1) {
+			this.model = buf.gSmart2or4null();
+		} else if (code == 2) {
+			this.anim = buf.gSmart2or4null();
+		} else if (code == 4) {
+			this.resizeh = buf.g2();
+		} else if (code == 5) {
+			this.resizev = buf.g2();
+		} else if (code == 6) {
+			this.orientation = buf.g2();
+		} else if (code == 7) {
+			this.ambient = buf.g1();
+		} else if (code == 8) {
+			this.contrast = buf.g1();
+		} else if (code == 10) {
 			this.field8261 = true;
-		} else if (arg1 == 9) {
+		} else if (code == 9) {
 			this.field8262 = 3;
 			this.field8263 = 8224;
-		} else if (arg1 == 15) {
+		} else if (code == 15) {
 			this.field8262 = 3;
-			this.field8263 = arg0.g2();
-		} else if (arg1 == 16) {
+			this.field8263 = buf.g2();
+		} else if (code == 16) {
 			this.field8262 = 3;
-			this.field8263 = arg0.g4s();
-		} else if (arg1 == 40) {
-			int var3 = arg0.g1();
+			this.field8263 = buf.g4s();
+		} else if (code == 40) {
+			int var3 = buf.g1();
 			this.field8246 = new short[var3];
 			this.field8251 = new short[var3];
 			for (int var4 = 0; var4 < var3; var4++) {
-				this.field8246[var4] = (short) arg0.g2();
-				this.field8251[var4] = (short) arg0.g2();
+				this.field8246[var4] = (short) buf.g2();
+				this.field8251[var4] = (short) buf.g2();
 			}
-		} else if (arg1 == 41) {
-			int var5 = arg0.g1();
+		} else if (code == 41) {
+			int var5 = buf.g1();
 			this.field8253 = new short[var5];
 			this.field8245 = new short[var5];
 			for (int var6 = 0; var6 < var5; var6++) {
-				this.field8253[var6] = (short) arg0.g2();
-				this.field8245[var6] = (short) arg0.g2();
+				this.field8253[var6] = (short) buf.g2();
+				this.field8245[var6] = (short) buf.g2();
 			}
-		} else if (arg1 == 44) {
-			int var7 = arg0.g2();
+		} else if (code == 44) {
+			int var7 = buf.g2();
 			int var8 = 0;
 			for (int var9 = var7; var9 > 0; var9 >>= 0x1) {
 				var8++;
@@ -137,8 +137,8 @@ public class EffectAnimType implements ConfigType {
 					this.field8254[var11] = -1;
 				}
 			}
-		} else if (arg1 == 45) {
-			int var12 = arg0.g2();
+		} else if (code == 45) {
+			int var12 = buf.g2();
 			int var13 = 0;
 			for (int var14 = var12; var14 > 0; var14 >>= 0x1) {
 				var13++;
@@ -152,45 +152,45 @@ public class EffectAnimType implements ConfigType {
 					this.field8255[var16] = -1;
 				}
 			}
-		} else if (arg1 == 46) {
+		} else if (code == 46) {
 		}
 	}
 
 	@ObfuscatedName("yy.z(Ldh;ILaaq;BI)Ldo;")
 	public final Model method13817(Renderer arg0, int arg1, AnimationWrapper arg2, byte arg3) {
-		return this.method13798(arg0, arg1, false, null, null, 0, 0, 0, 0, 0, 0, 0, arg2, arg3);
+		return this.getModel(arg0, arg1, false, null, null, 0, 0, 0, 0, 0, 0, 0, arg2, arg3);
 	}
 
 	@ObfuscatedName("yy.p(Ldh;IIIIILaaq;BI)Ldo;")
 	public final Model method13800(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, AnimationWrapper arg6, byte arg7) {
-		return this.field8262 == 3 ? this.method13798(arg0, arg1, true, null, null, 0, 0, 0, arg2, arg3, arg4, arg5, arg6, arg7) : this.method13798(arg0, arg1, false, null, null, 0, 0, 0, arg2, 0, 0, 0, arg6, arg7);
+		return this.field8262 == 3 ? this.getModel(arg0, arg1, true, null, null, 0, 0, 0, arg2, arg3, arg4, arg5, arg6, arg7) : this.getModel(arg0, arg1, false, null, null, 0, 0, 0, arg2, 0, 0, 0, arg6, arg7);
 	}
 
 	@ObfuscatedName("yy.d(Ldh;IILcb;Lcb;IIILaaq;BB)Ldo;")
 	public final Model method13802(Renderer arg0, int arg1, int arg2, FloorModel arg3, FloorModel arg4, int arg5, int arg6, int arg7, AnimationWrapper arg8, byte arg9) {
-		return this.method13798(arg0, arg1, true, arg3, arg4, arg5, arg6, arg7, arg2, 0, 0, 0, arg8, arg9);
+		return this.getModel(arg0, arg1, true, arg3, arg4, arg5, arg6, arg7, arg2, 0, 0, 0, arg8, arg9);
 	}
 
 	@ObfuscatedName("yy.c(Ldh;IZLcb;Lcb;IIIIIIILaaq;BI)Ldo;")
-	public final Model method13798(Renderer arg0, int arg1, boolean arg2, FloorModel arg3, FloorModel arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, AnimationWrapper arg12, byte arg13) {
+	public final Model getModel(Renderer arg0, int arg1, boolean arg2, FloorModel arg3, FloorModel arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, AnimationWrapper arg12, byte arg13) {
 		int var15 = arg1;
 		boolean var16 = arg2 & this.field8262 != 0;
 		if (arg12 != null) {
 			var15 = arg1 | arg12.method14358();
 		}
-		if (this.field8257 != 128) {
+		if (this.resizev != 128) {
 			var15 |= 0x2;
 		}
-		if (this.field8256 != 128 || this.field8258 != 0 || arg8 != 0) {
+		if (this.resizeh != 128 || this.orientation != 0 || arg8 != 0) {
 			var15 |= 0x5;
 		}
 		if (var16) {
 			var15 |= 0x7;
 		}
-		WeightedCache var17 = this.field8249.field8266;
+		WeightedCache var17 = this.factory.modelCache;
 		Model var18;
-		synchronized (this.field8249.field8266) {
-			var18 = (Model) this.field8249.field8266.method2930((long) (this.field8247 | arg0.field1595 << 29));
+		synchronized (this.factory.modelCache) {
+			var18 = (Model) this.factory.modelCache.method2930((long) (this.id | arg0.field1595 << 29));
 		}
 		if (var18 == null || arg0.method2394(var18.method1691(), var15) != 0) {
 			if (var18 != null) {
@@ -203,14 +203,14 @@ public class EffectAnimType implements ConfigType {
 			if (this.field8253 != null) {
 				var20 |= 0x8000;
 			}
-			ModelUnlit var21 = ModelUnlit.method1931(this.field8249.field8265, this.field8248, 0);
+			ModelUnlit var21 = ModelUnlit.method1931(this.factory.js5, this.model, 0);
 			if (var21 == null) {
 				return null;
 			}
 			if (var21.field1372 < 13) {
 				var21.method1947(2);
 			}
-			var18 = arg0.method2211(var21, var20, this.field8249.field8264, this.field8259 + 64, this.field8252 + 850);
+			var18 = arg0.method2211(var21, var20, this.factory.field8264, this.ambient + 64, this.contrast + 850);
 			if (this.field8246 != null) {
 				for (int var22 = 0; var22 < this.field8246.length; var22++) {
 					var18.method1859(this.field8246[var22], this.field8251[var22]);
@@ -222,26 +222,26 @@ public class EffectAnimType implements ConfigType {
 				}
 			}
 			var18.method1690(var15);
-			WeightedCache var24 = this.field8249.field8266;
-			synchronized (this.field8249.field8266) {
-				this.field8249.field8266.method2921(var18, (long) (this.field8247 | arg0.field1595 << 29));
+			WeightedCache var24 = this.factory.modelCache;
+			synchronized (this.factory.modelCache) {
+				this.factory.modelCache.method2921(var18, (long) (this.id | arg0.field1595 << 29));
 			}
 		}
 		Model var26 = var18.method1773(arg13, var15, true);
 		if (arg12 != null) {
 			arg12.method14359(var26, 0);
 		}
-		if (this.field8256 != 128 || this.field8257 != 128) {
-			var26.method1699(this.field8256, this.field8257, this.field8256);
+		if (this.resizeh != 128 || this.resizev != 128) {
+			var26.method1699(this.resizeh, this.resizev, this.resizeh);
 		}
-		if (this.field8258 != 0) {
-			if (this.field8258 == 90) {
+		if (this.orientation != 0) {
+			if (this.orientation == 90) {
 				arg8 += 4096;
 			}
-			if (this.field8258 == 180) {
+			if (this.orientation == 180) {
 				arg8 += 8192;
 			}
-			if (this.field8258 == 270) {
+			if (this.orientation == 270) {
 				arg8 += 12288;
 			}
 		}
@@ -270,7 +270,7 @@ public class EffectAnimType implements ConfigType {
 
 	@ObfuscatedName("yy.r(B)Z")
 	public final boolean method13803() {
-		return this.field8248 == -1 ? true : this.field8249.field8265.requestdownload(this.field8248, 0);
+		return this.model == -1 ? true : this.factory.js5.requestdownload(this.model, 0);
 	}
 
 	@ObfuscatedName("yy.n(I)V")

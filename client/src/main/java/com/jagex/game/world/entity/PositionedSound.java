@@ -218,11 +218,11 @@ public class PositionedSound extends Node {
 		var7.field11351 = arg2 << 9;
 		if (arg4 != null) {
 			var7.field11348 = arg4;
-			int var8 = arg4.field7499;
-			int var9 = arg4.field7492;
+			int var8 = arg4.width;
+			int var9 = arg4.length;
 			if (arg3 == 1 || arg3 == 3) {
-				var8 = arg4.field7492;
-				var9 = arg4.field7499;
+				var8 = arg4.length;
+				var9 = arg4.width;
 			}
 			var7.field11352 = arg1 + var8 << 9;
 			var7.field11353 = arg2 + var9 << 9;
@@ -288,7 +288,7 @@ public class PositionedSound extends Node {
 	@ObfuscatedName("oi.f(IIILvd;B)V")
 	public static void method6206(int arg0, int arg1, int arg2, LocType arg3) {
 		for (PositionedSound var4 = (PositionedSound) field11346.method14191(); var4 != null; var4 = (PositionedSound) field11346.method14161()) {
-			if (var4.field11349 == arg0 && arg1 << 9 == var4.field11358 && arg2 << 9 == var4.field11351 && var4.field11348.field7450 == arg3.field7450) {
+			if (var4.field11349 == arg0 && arg1 << 9 == var4.field11358 && arg2 << 9 == var4.field11351 && var4.field11348.id == arg3.id) {
 				if (var4.field11371 != null) {
 					var4.field11371.method7380(100);
 					Statics.field1798.method3185(var4.field11371);

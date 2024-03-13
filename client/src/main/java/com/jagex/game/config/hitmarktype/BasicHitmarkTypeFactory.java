@@ -14,8 +14,8 @@ public class BasicHitmarkTypeFactory extends HitmarkTypeFactory implements Confi
 	}
 
 	@ObfuscatedName("ala.v(ILao;I)Lay;")
-	public ConfigType create(int arg0, ConfigTypeList arg1) {
-		return new HitmarkType(arg0, this, arg1);
+	public ConfigType create(int id, ConfigTypeList configTypeList) {
+		return new HitmarkType(id, this, configTypeList);
 	}
 
 	@ObfuscatedName("ala.o(B)Ljava/lang/Class;")

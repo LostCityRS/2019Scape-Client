@@ -38,7 +38,7 @@ public class ConfigTypeListPreload implements ConfigTypeList {
 		this.field8846 = arg4;
 		this.field8845 = arg2;
 		this.field8847 = arg3;
-		this.field8848 = ArchiveUtil.method8370(this.field8847, this.field8845);
+		this.field8848 = ArchiveUtil.getArchiveSize(this.field8847, this.field8845);
 		this.field8849 = (ConfigType[]) Array.newInstance(this.field8846.type(), this.field8848);
 		if (arg5) {
 			for (int var7 = 0; var7 < this.field8848; var7++) {
@@ -48,17 +48,17 @@ public class ConfigTypeListPreload implements ConfigTypeList {
 	}
 
 	@ObfuscatedName("acd.e(II)Lay;")
-	public ConfigType list(int arg0) {
-		if (arg0 < 0) {
+	public ConfigType getById(int id) {
+		if (id < 0) {
 			if (this.field8844 == null) {
 				this.field8844 = this.field8846.create(-1, this);
 			}
 			return this.field8844;
 		} else {
-			if (this.field8849[arg0] == null) {
-				this.method14936(arg0);
+			if (this.field8849[id] == null) {
+				this.method14936(id);
 			}
-			return this.field8849[arg0];
+			return this.field8849[id];
 		}
 	}
 
@@ -74,7 +74,7 @@ public class ConfigTypeListPreload implements ConfigTypeList {
 			return;
 		}
 		Object var3 = null;
-		byte[] var4 = ArchiveUtil.method9853(this.field8847, this.field8845, arg0);
+		byte[] var4 = ArchiveUtil.getFile(this.field8847, this.field8845, arg0);
 		if (var4 != null) {
 			this.field8849[arg0].decode(new Packet(var4));
 		}

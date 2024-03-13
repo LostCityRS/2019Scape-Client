@@ -6,14 +6,14 @@ import deob.ObfuscatedName;
 public class DerivedObjType {
 
 	@ObfuscatedName("abq.e")
-	public static final DerivedObjType field8702 = new DerivedObjType();
+	public static final DerivedObjType CERT = new DerivedObjType();
 
 	@ObfuscatedName("abq.n")
-	public static final DerivedObjType field8703 = new DerivedObjType();
+	public static final DerivedObjType LEND = new DerivedObjType();
 
 	@ObfuscatedName("abq.m")
-	public static final DerivedObjType field8704 = new DerivedObjType();
+	public static final DerivedObjType BOUGHT = new DerivedObjType();
 
 	@ObfuscatedName("abq.k")
-	public static final DerivedObjType field8701 = new DerivedObjType();
+	public static final DerivedObjType SHARD = new DerivedObjType();
 }

@@ -14,8 +14,8 @@ public class BasicHeadbarTypeFactory extends HeadbarTypeFactory implements Confi
 	}
 
 	@ObfuscatedName("ale.v(ILao;I)Lay;")
-	public ConfigType create(int arg0, ConfigTypeList arg1) {
-		return new HeadbarType(arg0, this);
+	public ConfigType create(int id, ConfigTypeList configTypeList) {
+		return new HeadbarType(id, this);
 	}
 
 	@ObfuscatedName("ale.o(B)Ljava/lang/Class;")

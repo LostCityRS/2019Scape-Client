@@ -46,7 +46,7 @@ public abstract class VarTypeList extends BaseConfigTypeList implements DefaultV
 
 	@ObfuscatedName("add.u(IB)Ljava/lang/Object;")
 	public Object getDefaultValue(int arg0) {
-		VarType var2 = (VarType) this.list(arg0);
+		VarType var2 = (VarType) this.getById(arg0);
 		return var2 != null && var2.isValidDefinition() ? var2.getDefaultValue() : null;
 	}
 
@@ -87,7 +87,7 @@ public abstract class VarTypeList extends BaseConfigTypeList implements DefaultV
 	@ObfuscatedName("add.ag(Lalw;B)Lon;")
 	public VarValue decodeVarValue(Packet arg0) {
 		int var2 = arg0.g2();
-		VarType var3 = (VarType) this.list(var2);
+		VarType var3 = (VarType) this.getById(var2);
 		if (!var3.isValidDefinition()) {
 			throw new IllegalStateException("");
 		}
@@ -139,10 +139,10 @@ public abstract class VarTypeList extends BaseConfigTypeList implements DefaultV
 		} else {
 			throw new IllegalStateException();
 		}
-		VarType var9 = (VarType) this.list(var3);
+		VarType var9 = (VarType) this.getById(var3);
 		return var9.isValidDefinition() && var9.dataType.getVarBaseType() == arg1 ? var4 : null;
 	}
 
 	@ObfuscatedName("add.e(II)Lay;")
-	public abstract ConfigType list(int arg0);
+	public abstract ConfigType getById(int id);
 }

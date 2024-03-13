@@ -32,32 +32,32 @@ public abstract class VarType implements VarConfigType {
 	}
 
 	@ObfuscatedName("ec.e(Lalw;B)V")
-	public void decode(Packet arg0) {
+	public void decode(Packet buf) {
 		while (true) {
-			int var2 = arg0.g1();
+			int var2 = buf.g1();
 			if (var2 == 0) {
 				return;
 			}
 			VarTypeEncodingKey var3 = (VarTypeEncodingKey) SerializableEnums.decode(VarTypeEncodingKey.method15457(), var2);
 			if (var3 == null) {
-				this.decode(arg0, var2);
+				this.decode(buf, var2);
 			} else {
 				switch(var3.field1694) {
 					case 0:
 						this.field1703 = false;
 						break;
 					case 1:
-						int var4 = arg0.g1();
+						int var4 = buf.g1();
 						this.dataType = (ScriptVarType) SerializableEnums.decode(ScriptVarType.method7293(), var4);
 						if (this.dataType != null) {
 							break;
 						}
 						throw new IllegalStateException("");
 					case 2:
-						arg0.gjstr2();
+						buf.gjstr2();
 						break;
 					case 3:
-						SerializableEnums.decode(VarTransmitLevel.method5925(), arg0.g1());
+						SerializableEnums.decode(VarTransmitLevel.method5925(), buf.g1());
 						break;
 					case 4:
 					default:
@@ -65,7 +65,7 @@ public abstract class VarType implements VarConfigType {
 					case 5:
 						break;
 					case 6:
-						this.lifeTime = (VarLifetime) SerializableEnums.decode(VarLifetime.method748(), arg0.g1());
+						this.lifeTime = (VarLifetime) SerializableEnums.decode(VarLifetime.method748(), buf.g1());
 				}
 			}
 		}

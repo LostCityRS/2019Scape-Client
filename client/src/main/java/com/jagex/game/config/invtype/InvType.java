@@ -10,39 +10,39 @@ import deob.ObfuscatedName;
 public class InvType extends SecondaryNode implements ConfigType, ConfigRelated {
 
 	@ObfuscatedName("ady.k")
-	public int field9264 = 0;
+	public int stockLength = 0;
 
 	@ObfuscatedName("ady.f")
-	public int[] field9266;
+	public int[] stockobj;
 
 	@ObfuscatedName("ady.w")
-	public int[] field9265;
+	public int[] stockcount;
 
 	@ObfuscatedName("ady.l")
-	public int field9263 = 0;
+	public int size = 0;
 
 	@ObfuscatedName("ady.e(Lalw;B)V")
-	public void decode(Packet arg0) {
+	public void decode(Packet buf) {
 		while (true) {
-			int var2 = arg0.g1();
-			if (var2 == 0) {
+			int count = buf.g1();
+			if (count == 0) {
 				return;
 			}
-			this.method15306(arg0, var2);
+			this.method15306(buf, count);
 		}
 	}
 
 	@ObfuscatedName("ady.u(Lalw;II)V")
-	public void method15306(Packet arg0, int arg1) {
-		if (arg1 == 2) {
-			this.field9263 = arg0.g2();
-		} else if (arg1 == 4) {
-			this.field9264 = arg0.g1();
-			this.field9266 = new int[this.field9264];
-			this.field9265 = new int[this.field9264];
-			for (int var3 = 0; var3 < this.field9264; var3++) {
-				this.field9266[var3] = arg0.g2();
-				this.field9265[var3] = arg0.g2();
+	public void method15306(Packet buf, int code) {
+		if (code == 2) {
+			this.size = buf.g2();
+		} else if (code == 4) {
+			this.stockLength = buf.g1();
+			this.stockobj = new int[this.stockLength];
+			this.stockcount = new int[this.stockLength];
+			for (int var3 = 0; var3 < this.stockLength; var3++) {
+				this.stockobj[var3] = buf.g2();
+				this.stockcount[var3] = buf.g2();
 			}
 		}
 	}

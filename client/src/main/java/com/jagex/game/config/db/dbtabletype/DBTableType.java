@@ -12,44 +12,44 @@ import deob.ObfuscatedName;
 public class DBTableType implements ConfigType, ConfigRelated {
 
 	@ObfuscatedName("adb.e")
-	public ScriptVarType[][] field9185;
+	public ScriptVarType[][] types;
 
 	@ObfuscatedName("adb.n")
-	public Object[][] field9186;
+	public Object[][] defaultValues;
 
 	@ObfuscatedName("adb.e(Lalw;B)V")
-	public void decode(Packet arg0) {
+	public void decode(Packet buf) {
 		while (true) {
-			int var2 = arg0.g1();
-			if (var2 == 0) {
+			int code = buf.g1();
+			if (code == 0) {
 				return;
 			}
-			this.method15192(arg0, var2);
+			this.decode(buf, code);
 		}
 	}
 
 	@ObfuscatedName("adb.u(Lalw;IS)V")
-	public void method15192(Packet arg0, int arg1) {
-		if (arg1 != 1) {
+	public void decode(Packet buf, int code) {
+		if (code != 1) {
 			return;
 		}
-		int var3 = arg0.g1();
-		if (this.field9185 == null) {
-			this.field9185 = new ScriptVarType[var3][];
+		int typesLength = buf.g1();
+		if (this.types == null) {
+			this.types = new ScriptVarType[typesLength][];
 		}
-		for (int var4 = arg0.g1(); var4 != 255; var4 = arg0.g1()) {
-			int var5 = var4 & 0x7F;
-			boolean var6 = (var4 & 0x80) != 0;
-			ScriptVarType[] var7 = new ScriptVarType[arg0.g1()];
-			for (int var8 = 0; var8 < var7.length; var8++) {
-				var7[var8] = (ScriptVarType) SerializableEnums.decode(ScriptVarType.method7293(), arg0.gSmart1or2());
+		for (int setting = buf.g1(); setting != 255; setting = buf.g1()) {
+			int column = setting & 0x7F;
+			boolean var6 = (setting & 0x80) != 0;
+			ScriptVarType[] scriptVarTypes = new ScriptVarType[buf.g1()];
+			for (int var8 = 0; var8 < scriptVarTypes.length; var8++) {
+				scriptVarTypes[var8] = (ScriptVarType) SerializableEnums.decode(ScriptVarType.method7293(), buf.gSmart1or2());
 			}
-			this.field9185[var5] = var7;
+			this.types[column] = scriptVarTypes;
 			if (var6) {
-				if (this.field9186 == null) {
-					this.field9186 = new Object[this.field9185.length][];
+				if (this.defaultValues == null) {
+					this.defaultValues = new Object[this.types.length][];
 				}
-				this.field9186[var5] = DBUtils.method18719(arg0, var7);
+				this.defaultValues[column] = DBUtils.decodeValues(buf, scriptVarTypes);
 			}
 		}
 	}

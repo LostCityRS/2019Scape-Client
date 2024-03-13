@@ -65,7 +65,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 	public StaticWallEntity(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, boolean arg12, ScaleRotTrans arg13) {
 		super(arg0, arg6, arg7, arg8, arg4, arg5, method1575(arg10, arg11), arg13);
 		this.field11162 = arg2;
-		this.field11166 = arg3.field7450;
+		this.field11166 = arg3.id;
 		this.field11169 = arg9;
 		this.field11167 = (byte) arg10;
 		this.field11161 = (byte) arg11;
@@ -131,7 +131,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 
 	@ObfuscatedName("ajg.br(Ldh;IZI)Labg;")
 	public Pair method17420(Renderer arg0, int arg1, boolean arg2) {
-		LocType var4 = (LocType) this.field11162.list(this.field11166);
+		LocType var4 = (LocType) this.field11162.getById(this.field11166);
 		FloorModel var5;
 		FloorModel var6;
 		if (this.field11169) {
@@ -165,7 +165,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 		}
 		Matrix4x3 var2 = this.method10533();
 		PickableEntity var3 = PickableEntity.method16749(this.field11170);
-		Cuboid var4 = ((LocType) this.field11162.list(this.field11166)).field7468;
+		Cuboid var4 = ((LocType) this.field11162.getById(this.field11166)).field7468;
 		if (var4 == null) {
 			this.field11173.method1813(var2, this.field11713[0], 0);
 		} else {
@@ -181,7 +181,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 
 	@ObfuscatedName("ajg.fa(Ldh;IIB)Z")
 	public boolean method17375(Renderer arg0, int arg1, int arg2) {
-		Cuboid var4 = ((LocType) this.field11162.list(this.field11166)).field7468;
+		Cuboid var4 = ((LocType) this.field11162.getById(this.field11166)).field7468;
 		if (var4 != null) {
 			return arg0.method2191(arg1, arg2, this.method10533(), var4);
 		}

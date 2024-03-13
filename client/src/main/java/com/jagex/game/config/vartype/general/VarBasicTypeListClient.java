@@ -28,13 +28,13 @@ public class VarBasicTypeListClient extends VarTypeList implements ConfigTypeLis
 	}
 
 	@ObfuscatedName("adm.e(II)Lay;")
-	public ConfigType list(int arg0) {
+	public ConfigType getById(int id) {
 		WeightedCache var2 = this.recentUse;
 		synchronized (this.recentUse) {
-			VarBasicType var3 = (VarBasicType) this.recentUse.method2930((long) arg0);
+			VarBasicType var3 = (VarBasicType) this.recentUse.method2930((long) id);
 			if (var3 == null) {
-				var3 = this.method15266(arg0);
-				this.recentUse.method2921(var3, (long) arg0);
+				var3 = this.method15266(id);
+				this.recentUse.method2921(var3, (long) id);
 			}
 			return var3;
 		}

@@ -258,7 +258,7 @@ public class NpcEntity extends PathingEntity {
 			arg1 |= 0x100;
 		}
 		int var12 = this.field10395.method316();
-		Model var13 = this.field10459[0] = this.field12083.method4543(arg0, arg1, Statics.field11742, Statics.field7410, Statics.field7410, var5, var6, this.field10398, this.field10442, var12, this.field12076, this.method16509(), false);
+		Model var13 = this.field10459[0] = this.field12083.getSequencedModel(arg0, arg1, Statics.field11742, Statics.field7410, Statics.field7410, var5, var6, this.field10398, this.field10442, var12, this.field12076, this.method16509(), false);
 		if (var13 == null) {
 			return false;
 		}
@@ -343,8 +343,8 @@ public class NpcEntity extends PathingEntity {
 		}
 		for (int var5 = 0; var5 < this.field10422.length; var5++) {
 			if (this.field10422[var5].field6657 != -1) {
-				EffectAnimType var6 = (EffectAnimType) Statics.field4874.list(this.field10422[var5].field6657);
-				if (var6.field8261 && var6.field8260 != -1 && ((SeqType) Statics.field8797.list(var6.field8260)).field1782 == 1) {
+				EffectAnimType var6 = (EffectAnimType) Statics.field4874.getById(this.field10422[var5].field6657);
+				if (var6.field8261 && var6.anim != -1 && ((SeqType) Statics.field8797.getById(var6.anim)).field1782 == 1) {
 					this.field10422[var5].field6659.method14362(-1);
 					this.field10422[var5].field6657 = -1;
 				}
@@ -375,8 +375,8 @@ public class NpcEntity extends PathingEntity {
 		}
 		for (int var6 = 0; var6 < this.field10422.length; var6++) {
 			if (this.field10422[var6].field6657 != -1) {
-				EffectAnimType var7 = (EffectAnimType) Statics.field4874.list(this.field10422[var6].field6657);
-				if (var7.field8261 && var7.field8260 != -1 && ((SeqType) Statics.field8797.list(var7.field8260)).field1782 == 1) {
+				EffectAnimType var7 = (EffectAnimType) Statics.field4874.getById(this.field10422[var6].field6657);
+				if (var7.field8261 && var7.anim != -1 && ((SeqType) Statics.field8797.getById(var7.anim)).field1782 == 1) {
 					this.field10422[var6].field6659.method14362(-1);
 					this.field10422[var6].field6657 = -1;
 				}

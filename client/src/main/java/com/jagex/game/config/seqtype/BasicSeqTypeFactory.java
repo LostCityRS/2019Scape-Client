@@ -13,8 +13,8 @@ public class BasicSeqTypeFactory extends SeqTypeFactory {
 	}
 
 	@ObfuscatedName("agq.v(ILao;I)Lay;")
-	public ConfigType create(int arg0, ConfigTypeList arg1) {
-		return new SeqType(arg0, this);
+	public ConfigType create(int id, ConfigTypeList configTypeList) {
+		return new SeqType(id, this);
 	}
 
 	@ObfuscatedName("agq.o(B)Ljava/lang/Class;")

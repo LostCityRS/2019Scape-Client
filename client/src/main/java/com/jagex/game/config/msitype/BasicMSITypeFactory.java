@@ -13,8 +13,8 @@ public class BasicMSITypeFactory extends MSITypeFactory {
 	}
 
 	@ObfuscatedName("apq.v(ILao;I)Lay;")
-	public ConfigType create(int arg0, ConfigTypeList arg1) {
-		return new MSIType(arg0, this);
+	public ConfigType create(int id, ConfigTypeList configTypeList) {
+		return new MSIType(id, this);
 	}
 
 	@ObfuscatedName("apq.o(B)Ljava/lang/Class;")

@@ -31,13 +31,13 @@ public class ObjType implements ConfigType {
 	public static short[] field8650 = new short[256];
 
 	@ObfuscatedName("abv.l")
-	public ConfigTypeList myList;
+	public ConfigTypeList list;
 
 	@ObfuscatedName("abv.u")
-	public ObjTypeFactory field8621;
+	public ObjTypeFactory factory;
 
 	@ObfuscatedName("abv.z")
-	public int field8627;
+	public int id;
 
 	@ObfuscatedName("abv.p")
 	public int field8628 = -1;
@@ -255,34 +255,34 @@ public class ObjType implements ConfigType {
 	@ObfuscatedName("abv.ce")
 	public static String field8699 = "</col>";
 
-	public ObjType(int arg0, ConfigTypeList arg1, ObjTypeFactory arg2) {
-		this.field8627 = arg0;
-		this.myList = arg1;
-		this.field8621 = arg2;
-		this.ops = (String[]) this.field8621.defaultops.clone();
-		this.iops = (String[]) this.field8621.defaultiops.clone();
+	public ObjType(int id, ConfigTypeList list, ObjTypeFactory factory) {
+		this.id = id;
+		this.list = list;
+		this.factory = factory;
+		this.ops = (String[]) this.factory.defaultops.clone();
+		this.iops = (String[]) this.factory.defaultiops.clone();
 	}
 
 	@ObfuscatedName("abv.n(I)V")
 	public void postDecode() {
 		if (this.certtemplate != -1) {
-			this.method14640((ObjType) this.myList.list(this.certtemplate), (ObjType) this.myList.list(this.certlink), this.field8621.languageId);
+			this.toCertTemplate((ObjType) this.list.getById(this.certtemplate), (ObjType) this.list.getById(this.certlink), this.factory.languageId);
 		} else if (this.field8675 != -1) {
-			this.method14641((ObjType) this.myList.list(this.field8675), (ObjType) this.myList.list(this.field8674), this.field8621.languageId);
+			this.toLendTemplate((ObjType) this.list.getById(this.field8675), (ObjType) this.list.getById(this.field8674), this.factory.languageId);
 		} else if (this.field8694 != -1) {
-			this.method14653((ObjType) this.myList.list(this.field8694), (ObjType) this.myList.list(this.field8693), this.field8621.languageId);
+			this.toBoughtTemplate((ObjType) this.list.getById(this.field8694), (ObjType) this.list.getById(this.field8693), this.factory.languageId);
 		} else if (this.field8677 != -1) {
-			this.method14643((ObjType) this.myList.list(this.field8677), (ObjType) this.myList.list(this.field8676), this.field8621.languageId);
+			this.toShardTemplate((ObjType) this.list.getById(this.field8677), (ObjType) this.list.getById(this.field8676), this.factory.languageId);
 		}
 		if (this.field8689 != 0) {
 			this.field8687 = false;
 		}
-		if (this.field8621.allowMembers || !this.members) {
+		if (this.factory.allowMembers || !this.members) {
 			return;
 		}
 		this.field8685 = 0;
-		this.ops = this.field8621.defaultops;
-		this.iops = this.field8621.defaultiops;
+		this.ops = this.factory.defaultops;
+		this.iops = this.factory.defaultiops;
 		this.field8645 = false;
 		this.field8691 = null;
 		this.field8687 = false;
@@ -291,8 +291,8 @@ public class ObjType implements ConfigType {
 		}
 		boolean var1 = false;
 		for (Node var2 = this.params.method14500(); var2 != null; var2 = this.params.method14502()) {
-			ParamType var3 = (ParamType) this.field8621.paramTL.list((int) var2.field6760);
-			if (var3.field9174) {
+			ParamType var3 = (ParamType) this.factory.configTypeList.getById((int) var2.field6760);
+			if (var3.autodisable) {
 				var2.method8440();
 			} else {
 				var1 = true;
@@ -311,12 +311,12 @@ public class ObjType implements ConfigType {
 			if (code == 0) {
 				return;
 			}
-			this.method14638(buf, code);
+			this.decode(buf, code);
 		}
 	}
 
 	@ObfuscatedName("abv.u(Lalw;II)V")
-	public void method14638(Packet buf, int code) {
+	public void decode(Packet buf, int code) {
 		if (code == 1) {
 			this.model = buf.gSmart2or4null();
 		} else if (code == 2) {
@@ -539,7 +539,7 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.z(Labq;Labv;Labv;Lacz;Lzt;I)V")
-	public void method14664(DerivedObjType arg0, ObjType arg1, ObjType arg2, LocalisedText arg3, Language arg4) {
+	public void toTemplate(DerivedObjType arg0, ObjType arg1, ObjType arg2, LocalisedText arg3, Language arg4) {
 		this.model = arg1.model;
 		this.zoom2d = arg1.zoom2d;
 		this.xan2d = arg1.xan2d;
@@ -547,7 +547,7 @@ public class ObjType implements ConfigType {
 		this.field8641 = arg1.field8641;
 		this.xof2d = arg1.xof2d;
 		this.yof2d = arg1.yof2d;
-		ObjType var6 = DerivedObjType.field8702 == arg0 ? arg1 : arg2;
+		ObjType var6 = DerivedObjType.CERT == arg0 ? arg1 : arg2;
 		this.recol_s = var6.recol_s;
 		this.recol_d = var6.recol_d;
 		this.field8633 = var6.field8633;
@@ -555,7 +555,7 @@ public class ObjType implements ConfigType {
 		this.field8635 = var6.field8635;
 		this.name = arg2.name;
 		this.members = arg2.members;
-		if (DerivedObjType.field8702 == arg0) {
+		if (DerivedObjType.CERT == arg0) {
 			this.cost = arg2.cost;
 			this.stackable = 1;
 			if (arg2.field8688) {
@@ -563,7 +563,7 @@ public class ObjType implements ConfigType {
 			} else {
 				this.field8687 = arg2.field8687;
 			}
-		} else if (DerivedObjType.field8701 == arg0) {
+		} else if (DerivedObjType.SHARD == arg0) {
 			this.name = arg2.field8678;
 			this.cost = (int) Math.floor((double) (arg2.cost / arg2.field8679));
 			this.stackable = 1;
@@ -614,23 +614,23 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.p(Labv;Labv;Lzt;S)V")
-	public void method14640(ObjType arg0, ObjType arg1, Language arg2) {
-		this.method14664(DerivedObjType.field8702, arg0, arg1, null, arg2);
+	public void toCertTemplate(ObjType from, ObjType to, Language language) {
+		this.toTemplate(DerivedObjType.CERT, from, to, null, language);
 	}
 
 	@ObfuscatedName("abv.d(Labv;Labv;Lzt;I)V")
-	public void method14641(ObjType arg0, ObjType arg1, Language arg2) {
-		this.method14664(DerivedObjType.field8703, arg0, arg1, LocalisedText.LENT_ITEM_RETURN, arg2);
+	public void toLendTemplate(ObjType from, ObjType to, Language language) {
+		this.toTemplate(DerivedObjType.LEND, from, to, LocalisedText.LENT_ITEM_RETURN, language);
 	}
 
 	@ObfuscatedName("abv.c(Labv;Labv;Lzt;I)V")
-	public void method14653(ObjType arg0, ObjType arg1, Language arg2) {
-		this.method14664(DerivedObjType.field8704, arg0, arg1, LocalisedText.BOUGHT_ITEM_DISCARD, arg2);
+	public void toBoughtTemplate(ObjType from, ObjType to, Language language) {
+		this.toTemplate(DerivedObjType.BOUGHT, from, to, LocalisedText.BOUGHT_ITEM_DISCARD, language);
 	}
 
 	@ObfuscatedName("abv.r(Labv;Labv;Lzt;I)V")
-	public void method14643(ObjType arg0, ObjType arg1, Language arg2) {
-		this.method14664(DerivedObjType.field8701, arg0, arg1, LocalisedText.DROP, arg2);
+	public void toShardTemplate(ObjType from, ObjType to, Language language) {
+		this.toTemplate(DerivedObjType.SHARD, from, to, LocalisedText.DROP, language);
 	}
 
 	@ObfuscatedName("abv.v(Ldh;IILxg;Laaq;IIIII)Ldo;")
@@ -643,17 +643,17 @@ public class ObjType implements ConfigType {
 				}
 			}
 			if (var10 != -1) {
-				return ((ObjType) this.myList.list(var10)).method14644(arg0, arg1, 1, arg3, arg4, arg5, arg6, arg7, arg8);
+				return ((ObjType) this.list.getById(var10)).method14644(arg0, arg1, 1, arg3, arg4, arg5, arg6, arg7, arg8);
 			}
 		}
 		int var12 = arg1;
 		if (arg4 != null) {
 			var12 = arg1 | arg4.method14358();
 		}
-		WeightedCache var13 = this.field8621.modelCache;
+		WeightedCache var13 = this.factory.modelCache;
 		Model var14;
-		synchronized (this.field8621.modelCache) {
-			var14 = (Model) this.field8621.modelCache.method2930((long) (this.field8627 | arg0.field1595 << 29));
+		synchronized (this.factory.modelCache) {
+			var14 = (Model) this.factory.modelCache.method2930((long) (this.id | arg0.field1595 << 29));
 		}
 		if (var14 == null || arg0.method2394(var14.method1691(), var12) != 0) {
 			if (var14 != null) {
@@ -675,14 +675,14 @@ public class ObjType implements ConfigType {
 			if (this.field8682 != 128) {
 				var16 |= 0x4;
 			}
-			ModelUnlit var17 = ModelUnlit.method1931(this.field8621.js5, this.model, 0);
+			ModelUnlit var17 = ModelUnlit.method1931(this.factory.js5, this.model, 0);
 			if (var17 == null) {
 				return null;
 			}
 			if (var17.field1372 < 13) {
 				var17.method1947(2);
 			}
-			var14 = arg0.method2211(var17, var16, this.field8621.field8611, this.field8683 + 64, this.field8624 + 850);
+			var14 = arg0.method2211(var17, var16, this.factory.field8611, this.field8683 + 64, this.field8624 + 850);
 			if (this.field8686 != 128 || this.field8681 != 128 || this.field8682 != 128) {
 				var14.method1699(this.field8686, this.field8681, this.field8682);
 			}
@@ -726,9 +726,9 @@ public class ObjType implements ConfigType {
 				}
 			}
 			var14.method1690(var12);
-			WeightedCache var24 = this.field8621.modelCache;
-			synchronized (this.field8621.modelCache) {
-				this.field8621.modelCache.method2921(var14, (long) (this.field8627 | arg0.field1595 << 29));
+			WeightedCache var24 = this.factory.modelCache;
+			synchronized (this.factory.modelCache) {
+				this.factory.modelCache.method2921(var14, (long) (this.id | arg0.field1595 << 29));
 			}
 		}
 		if (arg4 != null || arg8 != 0) {
@@ -754,7 +754,7 @@ public class ObjType implements ConfigType {
 				}
 			}
 			if (var2 != -1) {
-				return (ObjType) this.myList.list(var2);
+				return (ObjType) this.list.getById(var2);
 			}
 		}
 		return this;
@@ -762,7 +762,7 @@ public class ObjType implements ConfigType {
 
 	@ObfuscatedName("abv.s(Ldh;Ldh;IIIZILeu;Lxg;Lws;B)[I")
 	public int[] method14646(Renderer arg0, Renderer arg1, int arg2, int arg3, int arg4, boolean arg5, int arg6, Font arg7, PlayerModel arg8, GraphicsDefaults arg9) {
-		ModelUnlit var11 = ModelUnlit.method1931(this.field8621.js5, this.model, 0);
+		ModelUnlit var11 = ModelUnlit.method1931(this.factory.js5, this.model, 0);
 		if (var11 == null) {
 			return null;
 		}
@@ -814,22 +814,22 @@ public class ObjType implements ConfigType {
 		}
 		Sprite var21 = null;
 		if (this.certtemplate != -1) {
-			var21 = this.field8621.method14617(arg0, arg1, this.certlink, 10, 1, 0, true, true, 0, arg7, arg8, arg9, this.myList);
+			var21 = this.factory.method14617(arg0, arg1, this.certlink, 10, 1, 0, true, true, 0, arg7, arg8, arg9, this.list);
 			if (var21 == null) {
 				return null;
 			}
 		} else if (this.field8675 != -1) {
-			var21 = this.field8621.method14617(arg0, arg1, this.field8674, arg2, arg3, arg4, false, true, 0, arg7, arg8, arg9, this.myList);
+			var21 = this.factory.method14617(arg0, arg1, this.field8674, arg2, arg3, arg4, false, true, 0, arg7, arg8, arg9, this.list);
 			if (var21 == null) {
 				return null;
 			}
 		} else if (this.field8694 != -1) {
-			var21 = this.field8621.method14617(arg0, arg1, this.field8693, arg2, arg3, arg4, false, true, 0, arg7, arg8, arg9, this.myList);
+			var21 = this.factory.method14617(arg0, arg1, this.field8693, arg2, arg3, arg4, false, true, 0, arg7, arg8, arg9, this.list);
 			if (var21 == null) {
 				return null;
 			}
 		} else if (this.field8677 != -1) {
-			var21 = this.field8621.method14617(arg0, arg1, this.field8676, 10, 1, 0, true, true, 0, arg7, arg8, arg9, this.myList);
+			var21 = this.factory.method14617(arg0, arg1, this.field8676, 10, 1, 0, true, true, 0, arg7, arg8, arg9, this.list);
 			if (var21 == null) {
 				return null;
 			}
@@ -885,7 +885,7 @@ public class ObjType implements ConfigType {
 			var21.method1439(0, 0);
 		}
 		if (arg6 == 1 || arg6 == 2 && (this.stackable == 1 || arg2 != 1) && arg2 != -1) {
-			arg7.method2681(method4655(arg2, this.field8621.languageId, arg9), 0, 9, -256, -16777215);
+			arg7.method2681(method4655(arg2, this.factory.languageId, arg9), 0, 9, -256, -16777215);
 		}
 		int[] var28 = arg0.method2149(0, 0, 36, 32);
 		for (int var29 = 0; var29 < var28.length; var29++) {
@@ -973,13 +973,13 @@ public class ObjType implements ConfigType {
 			return true;
 		}
 		boolean var6 = true;
-		if (!this.field8621.js5.requestdownload(var3, 0)) {
+		if (!this.factory.js5.requestdownload(var3, 0)) {
 			var6 = false;
 		}
-		if (var4 != -1 && !this.field8621.js5.requestdownload(var4, 0)) {
+		if (var4 != -1 && !this.factory.js5.requestdownload(var4, 0)) {
 			var6 = false;
 		}
-		if (var5 != -1 && !this.field8621.js5.requestdownload(var5, 0)) {
+		if (var5 != -1 && !this.factory.js5.requestdownload(var5, 0)) {
 			var6 = false;
 		}
 		return var6;
@@ -1012,7 +1012,7 @@ public class ObjType implements ConfigType {
 		if (var3 == -1) {
 			return null;
 		}
-		ModelUnlit var6 = ModelUnlit.method1931(this.field8621.js5, var3, 0);
+		ModelUnlit var6 = ModelUnlit.method1931(this.factory.js5, var3, 0);
 		if (var6 == null) {
 			return null;
 		}
@@ -1020,7 +1020,7 @@ public class ObjType implements ConfigType {
 			var6.method1947(2);
 		}
 		if (var4 != -1) {
-			ModelUnlit var7 = ModelUnlit.method1931(this.field8621.js5, var4, 0);
+			ModelUnlit var7 = ModelUnlit.method1931(this.factory.js5, var4, 0);
 			if (var7.field1372 < 13) {
 				var7.method1947(2);
 			}
@@ -1028,7 +1028,7 @@ public class ObjType implements ConfigType {
 				ModelUnlit[] var10 = new ModelUnlit[] { var6, var7 };
 				var6 = new ModelUnlit(var10, 2);
 			} else {
-				ModelUnlit var8 = ModelUnlit.method1931(this.field8621.js5, var5, 0);
+				ModelUnlit var8 = ModelUnlit.method1931(this.factory.js5, var5, 0);
 				if (var8.field1372 < 13) {
 					var8.method1947(2);
 				}
@@ -1090,10 +1090,10 @@ public class ObjType implements ConfigType {
 			return true;
 		}
 		boolean var5 = true;
-		if (!this.field8621.js5.requestdownload(var3, 0)) {
+		if (!this.factory.js5.requestdownload(var3, 0)) {
 			var5 = false;
 		}
-		if (var4 != -1 && !this.field8621.js5.requestdownload(var4, 0)) {
+		if (var4 != -1 && !this.factory.js5.requestdownload(var4, 0)) {
 			var5 = false;
 		}
 		return var5;
@@ -1121,12 +1121,12 @@ public class ObjType implements ConfigType {
 		if (var3 == -1) {
 			return null;
 		}
-		ModelUnlit var5 = ModelUnlit.method1931(this.field8621.js5, var3, 0);
+		ModelUnlit var5 = ModelUnlit.method1931(this.factory.js5, var3, 0);
 		if (var5.field1372 < 13) {
 			var5.method1947(2);
 		}
 		if (var4 != -1) {
-			ModelUnlit var6 = ModelUnlit.method1931(this.field8621.js5, var4, 0);
+			ModelUnlit var6 = ModelUnlit.method1931(this.factory.js5, var4, 0);
 			if (var6.field1372 < 13) {
 				var6.method1947(2);
 			}

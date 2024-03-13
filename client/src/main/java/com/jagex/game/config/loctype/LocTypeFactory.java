@@ -12,13 +12,13 @@ import deob.ObfuscatedName;
 public abstract class LocTypeFactory {
 
 	@ObfuscatedName("vh.e")
-	public boolean field7531;
+	public boolean allowMembers;
 
 	@ObfuscatedName("vh.n")
-	public final WeightedCache field7530 = new WeightedCache(500);
+	public final WeightedCache modelCacheStatic = new WeightedCache(500);
 
 	@ObfuscatedName("vh.m")
-	public final WeightedCache field7533 = new WeightedCache(30);
+	public final WeightedCache modelCacheDynamic = new WeightedCache(30);
 
 	@ObfuscatedName("vh.k")
 	public final WeightedCache field7532 = new WeightedCache(50);
@@ -27,7 +27,7 @@ public abstract class LocTypeFactory {
 	public int field7536;
 
 	@ObfuscatedName("vh.w")
-	public final String[] field7534;
+	public final String[] defaultops;
 
 	@ObfuscatedName("vh.l")
 	public ModelUnlit[] field7535 = new ModelUnlit[4];
@@ -35,19 +35,19 @@ public abstract class LocTypeFactory {
 	@ObfuscatedName("vh.u")
 	public Pair field7529 = new Pair(null, null);
 
-	public LocTypeFactory(boolean arg0, Language arg1, ModeGame arg2) {
-		this.field7531 = arg0;
-		if (ModeGame.RUNESCAPE == arg2) {
-			this.field7534 = new String[] { null, null, null, null, null, LocalisedText.EXAMINE.method15021(arg1) };
+	public LocTypeFactory(boolean allowMembers, Language language, ModeGame modeGame) {
+		this.allowMembers = allowMembers;
+		if (ModeGame.RUNESCAPE == modeGame) {
+			this.defaultops = new String[] { null, null, null, null, null, LocalisedText.EXAMINE.method15021(language) };
 		} else {
-			this.field7534 = new String[] { null, null, null, null, null, null };
+			this.defaultops = new String[] { null, null, null, null, null, null };
 		}
 	}
 
 	@ObfuscatedName("vh.e(ZI)V")
 	public void method9519(boolean arg0) {
-		if (this.field7531 != arg0) {
-			this.field7531 = arg0;
+		if (this.allowMembers != arg0) {
+			this.allowMembers = arg0;
 			this.method9521();
 		}
 	}
@@ -55,13 +55,13 @@ public abstract class LocTypeFactory {
 	@ObfuscatedName("vh.n(IB)V")
 	public void method9541(int arg0) {
 		this.field7536 = arg0;
-		WeightedCache var2 = this.field7530;
-		synchronized (this.field7530) {
-			this.field7530.method2924();
+		WeightedCache var2 = this.modelCacheStatic;
+		synchronized (this.modelCacheStatic) {
+			this.modelCacheStatic.method2924();
 		}
-		WeightedCache var4 = this.field7533;
-		synchronized (this.field7533) {
-			this.field7533.method2924();
+		WeightedCache var4 = this.modelCacheDynamic;
+		synchronized (this.modelCacheDynamic) {
+			this.modelCacheDynamic.method2924();
 		}
 		WeightedCache var6 = this.field7532;
 		synchronized (this.field7532) {
@@ -71,13 +71,13 @@ public abstract class LocTypeFactory {
 
 	@ObfuscatedName("vh.m(I)V")
 	public void method9521() {
-		WeightedCache var1 = this.field7530;
-		synchronized (this.field7530) {
-			this.field7530.method2924();
+		WeightedCache var1 = this.modelCacheStatic;
+		synchronized (this.modelCacheStatic) {
+			this.modelCacheStatic.method2924();
 		}
-		WeightedCache var3 = this.field7533;
-		synchronized (this.field7533) {
-			this.field7533.method2924();
+		WeightedCache var3 = this.modelCacheDynamic;
+		synchronized (this.modelCacheDynamic) {
+			this.modelCacheDynamic.method2924();
 		}
 		WeightedCache var5 = this.field7532;
 		synchronized (this.field7532) {
@@ -89,13 +89,13 @@ public abstract class LocTypeFactory {
 
 	@ObfuscatedName("vh.k(IB)V")
 	public void method9522(int arg0) {
-		WeightedCache var2 = this.field7530;
-		synchronized (this.field7530) {
-			this.field7530.method2923(arg0);
+		WeightedCache var2 = this.modelCacheStatic;
+		synchronized (this.modelCacheStatic) {
+			this.modelCacheStatic.method2923(arg0);
 		}
-		WeightedCache var4 = this.field7533;
-		synchronized (this.field7533) {
-			this.field7533.method2923(arg0);
+		WeightedCache var4 = this.modelCacheDynamic;
+		synchronized (this.modelCacheDynamic) {
+			this.modelCacheDynamic.method2923(arg0);
 		}
 		WeightedCache var6 = this.field7532;
 		synchronized (this.field7532) {
@@ -105,13 +105,13 @@ public abstract class LocTypeFactory {
 
 	@ObfuscatedName("vh.f(I)V")
 	public void method9520() {
-		WeightedCache var1 = this.field7530;
-		synchronized (this.field7530) {
-			this.field7530.method2928();
+		WeightedCache var1 = this.modelCacheStatic;
+		synchronized (this.modelCacheStatic) {
+			this.modelCacheStatic.method2928();
 		}
-		WeightedCache var3 = this.field7533;
-		synchronized (this.field7533) {
-			this.field7533.method2928();
+		WeightedCache var3 = this.modelCacheDynamic;
+		synchronized (this.modelCacheDynamic) {
+			this.modelCacheDynamic.method2928();
 		}
 		WeightedCache var5 = this.field7532;
 		synchronized (this.field7532) {

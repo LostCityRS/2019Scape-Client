@@ -27,9 +27,9 @@ public abstract class CutsceneActionUnused extends CutsceneAction {
 
 	@ObfuscatedName("agm.k(I)Z")
 	public boolean method2891() {
-		EffectAnimType var1 = (EffectAnimType) Statics.field4874.list(this.field10303);
+		EffectAnimType var1 = (EffectAnimType) Statics.field4874.getById(this.field10303);
 		boolean var2 = var1.method13803();
-		SeqType var3 = (SeqType) Statics.field8797.list(var1.field8260);
+		SeqType var3 = (SeqType) Statics.field8797.getById(var1.anim);
 		return var2 & var3.method2991();
 	}
 }

@@ -168,13 +168,13 @@ public class MapElementType implements ConfigType {
 	}
 
 	@ObfuscatedName("hs.e(Lalw;B)V")
-	public void decode(Packet arg0) {
+	public void decode(Packet buf) {
 		while (true) {
-			int var2 = arg0.g1();
+			int var2 = buf.g1();
 			if (var2 == 0) {
 				return;
 			}
-			this.method4038(arg0, var2);
+			this.method4038(buf, var2);
 		}
 	}
 
@@ -469,10 +469,10 @@ public class MapElementType implements ConfigType {
 			}
 		}
 		if (var3 >= 0 && var3 < this.field2392.length - 1) {
-			return this.field2392[var3] == -1 ? null : (MapElementType) this.field2412.list(this.field2392[var3]);
+			return this.field2392[var3] == -1 ? null : (MapElementType) this.field2412.getById(this.field2392[var3]);
 		} else {
 			int var6 = this.field2392[this.field2392.length - 1];
-			return var6 == -1 ? null : (MapElementType) this.field2412.list(var6);
+			return var6 == -1 ? null : (MapElementType) this.field2412.getById(var6);
 		}
 	}
 }

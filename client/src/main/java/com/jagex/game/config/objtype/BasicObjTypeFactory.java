@@ -10,13 +10,13 @@ import deob.ObfuscatedName;
 @ObfuscatedName("aow")
 public class BasicObjTypeFactory extends ObjTypeFactory {
 
-	public BasicObjTypeFactory(ModeGame arg0, Language arg1, boolean arg2, Js5 arg3, ConfigTypeList arg4) {
-		super(arg0, arg1, arg2, arg3, arg4);
+	public BasicObjTypeFactory(ModeGame modeGame, Language language, boolean allowMembers, Js5 js5, ConfigTypeList configTypeList) {
+		super(modeGame, language, allowMembers, js5, configTypeList);
 	}
 
 	@ObfuscatedName("aow.v(ILao;I)Lay;")
-	public ConfigType create(int arg0, ConfigTypeList arg1) {
-		return new ObjType(arg0, arg1, this);
+	public ConfigType create(int id, ConfigTypeList configTypeList) {
+		return new ObjType(id, configTypeList, this);
 	}
 
 	@ObfuscatedName("aow.o(B)Ljava/lang/Class;")

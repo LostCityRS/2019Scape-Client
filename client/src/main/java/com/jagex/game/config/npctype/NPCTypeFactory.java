@@ -32,12 +32,12 @@ public abstract class NPCTypeFactory implements ConfigTypeFactory {
 	@ObfuscatedName("ih.l")
 	public final String[] defaultops;
 
-	public NPCTypeFactory(boolean arg0, Js5 arg1, Language arg2, ModeGame arg3) {
-		this.allowMembers = arg0;
-		this.js5 = arg1;
-		this.field2772 = arg3;
+	public NPCTypeFactory(boolean allowMembers, Js5 js5, Language language, ModeGame modeGame) {
+		this.allowMembers = allowMembers;
+		this.js5 = js5;
+		this.field2772 = modeGame;
 		if (ModeGame.RUNESCAPE == this.field2772) {
-			this.defaultops = new String[] { null, null, null, null, null, LocalisedText.EXAMINE.method15021(arg2) };
+			this.defaultops = new String[] { null, null, null, null, null, LocalisedText.EXAMINE.method15021(language) };
 		} else {
 			this.defaultops = new String[] { null, null, null, null, null, null };
 		}

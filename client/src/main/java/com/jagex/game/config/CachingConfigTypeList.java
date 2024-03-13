@@ -14,98 +14,98 @@ import java.util.Iterator;
 public class CachingConfigTypeList implements ConfigTypeList {
 
 	@ObfuscatedName("abe.e")
-	public final Js5 field8792;
+	public final Js5 js5;
 
 	@ObfuscatedName("abe.n")
-	public final Js5ConfigGroup field8793;
+	public final Js5ConfigGroup group;
 
 	@ObfuscatedName("abe.m")
-	public int field8794;
+	public int length;
 
 	@ObfuscatedName("abe.k")
-	public WeightedCache field8795;
+	public WeightedCache cache;
 
 	@ObfuscatedName("abe.f")
-	public final ConfigTypeFactory field8796;
+	public final ConfigTypeFactory factory;
 
 	// line 20
-	public CachingConfigTypeList(ModeGame arg0, Language arg1, Js5 arg2, Js5ConfigGroup arg3, int arg4, ConfigTypeFactory arg5) {
-		this.field8792 = arg2;
-		this.field8793 = arg3;
-		this.field8796 = arg5;
-		this.field8794 = ArchiveUtil.method8370(this.field8792, this.field8793);
-		this.field8795 = new WeightedCache(arg4);
+	public CachingConfigTypeList(ModeGame arg0, Language arg1, Js5 js5, Js5ConfigGroup group, int cacheSize, ConfigTypeFactory factory) {
+		this.js5 = js5;
+		this.group = group;
+		this.factory = factory;
+		this.length = ArchiveUtil.getArchiveSize(this.js5, this.group);
+		this.cache = new WeightedCache(cacheSize);
 	}
 
 	// line 30
 	@ObfuscatedName("abe.e(II)Lay;")
-	public ConfigType list(int arg0) {
-		WeightedCache var2 = this.field8795;
-		ConfigType var3;
-		synchronized (this.field8795) {
-			var3 = (ConfigType) this.field8795.method2930((long) arg0);
+	public ConfigType getById(int id) {
+		WeightedCache var2 = this.cache;
+		ConfigType cachedConfigType;
+		synchronized (this.cache) {
+			cachedConfigType = (ConfigType) this.cache.method2930((long) id);
 		}
-		if (var3 != null) {
-			return var3;
+		if (cachedConfigType != null) {
+			return cachedConfigType;
 		}
-		ConfigType var5 = this.method14909(arg0);
-		WeightedCache var6 = this.field8795;
-		synchronized (this.field8795) {
-			this.field8795.method2921(var5, (long) arg0);
-			return var5;
+		ConfigType configType = this.getConfigType(id);
+		WeightedCache var6 = this.cache;
+		synchronized (this.cache) {
+			this.cache.method2921(configType, (long) id);
+			return configType;
 		}
 	}
 
 	@ObfuscatedName("abe.u(II)Lay;")
-	public ConfigType method14909(int arg0) {
-		Js5 var2 = this.field8792;
-		byte[] var3;
-		synchronized (this.field8792) {
-			var3 = ArchiveUtil.method9853(this.field8792, this.field8793, arg0);
+	public ConfigType getConfigType(int id) {
+		Js5 var2 = this.js5;
+		byte[] file;
+		synchronized (this.js5) {
+			file = ArchiveUtil.getFile(this.js5, this.group, id);
 		}
-		ConfigType var5 = this.field8796.create(arg0, this);
-		if (var3 != null) {
-			var5.decode(new Packet(var3));
+		ConfigType type = this.factory.create(id, this);
+		if (file != null) {
+			type.decode(new Packet(file));
 		}
-		var5.postDecode();
-		return var5;
+		type.postDecode();
+		return type;
 	}
 
 	@ObfuscatedName("abe.n(I)I")
 	public int length() {
-		return this.field8794;
+		return this.length;
 	}
 
 	@ObfuscatedName("abe.z(II)V")
 	public void method14910(int arg0) {
-		WeightedCache var2 = this.field8795;
-		synchronized (this.field8795) {
-			this.field8795.method2924();
-			this.field8795 = new WeightedCache(arg0);
+		WeightedCache var2 = this.cache;
+		synchronized (this.cache) {
+			this.cache.method2924();
+			this.cache = new WeightedCache(arg0);
 		}
 	}
 
 	@ObfuscatedName("abe.r(I)V")
 	public void method14895() {
-		WeightedCache var1 = this.field8795;
-		synchronized (this.field8795) {
-			this.field8795.method2924();
+		WeightedCache var1 = this.cache;
+		synchronized (this.cache) {
+			this.cache.method2924();
 		}
 	}
 
 	@ObfuscatedName("abe.v(II)V")
 	public void method14896(int arg0) {
-		WeightedCache var2 = this.field8795;
-		synchronized (this.field8795) {
-			this.field8795.method2923(arg0);
+		WeightedCache var2 = this.cache;
+		synchronized (this.cache) {
+			this.cache.method2923(arg0);
 		}
 	}
 
 	@ObfuscatedName("abe.o(I)V")
 	public void method14899() {
-		WeightedCache var1 = this.field8795;
-		synchronized (this.field8795) {
-			this.field8795.method2928();
+		WeightedCache var1 = this.cache;
+		synchronized (this.cache) {
+			this.cache.method2928();
 		}
 	}
 
@@ -128,20 +128,20 @@ public class CachingConfigTypeList implements ConfigTypeList {
 		}
 
 		public boolean hasNext() {
-			return this.field8852 < this.this$0.field8794;
+			return this.field8852 < this.this$0.length;
 		}
 
 		// line 90
 		public Object next() {
 			int var1 = ++this.field8852 - 1;
-			WeightedCache var2 = this.this$0.field8795;
-			synchronized (this.this$0.field8795) {
-				ConfigType var3 = (ConfigType) this.this$0.field8795.method2930((long) var1);
+			WeightedCache var2 = this.this$0.cache;
+			synchronized (this.this$0.cache) {
+				ConfigType var3 = (ConfigType) this.this$0.cache.method2930((long) var1);
 				if (var3 != null) {
 					return var3;
 				}
 			}
-			return this.this$0.method14909(var1);
+			return this.this$0.getConfigType(var1);
 		}
 
 		// line 99

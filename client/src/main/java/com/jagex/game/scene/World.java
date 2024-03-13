@@ -844,15 +844,15 @@ public class World {
 		for (ChangeLocationRequest var28 = (ChangeLocationRequest) ChangeLocationRequest.field11237.method14191(); var28 != null; var28 = (ChangeLocationRequest) ChangeLocationRequest.field11237.method14161()) {
 			var28.field11226 -= var2;
 			var28.field11228 -= var3;
-			LocType var29 = (LocType) this.field5039.list(var28.field11234);
+			LocType var29 = (LocType) this.field5039.getById(var28.field11234);
 			int var30;
 			int var31;
 			if ((var28.field11235 & 0x1) == 0) {
-				var30 = var29.field7499;
-				var31 = var29.field7492;
+				var30 = var29.width;
+				var31 = var29.length;
 			} else {
-				var30 = var29.field7492;
-				var31 = var29.field7499;
+				var30 = var29.length;
+				var31 = var29.width;
 			}
 			if (RebuildType.field5069 != this.field5019 && (var28.field11226 + var30 <= 0 || var28.field11228 + var31 <= 0 || var28.field11226 >= this.field5028 || var28.field11228 >= this.field5043)) {
 				var28.method8440();
@@ -861,15 +861,15 @@ public class World {
 		for (ChangeLocationRequest var32 = (ChangeLocationRequest) ChangeLocationRequest.field11242.method14191(); var32 != null; var32 = (ChangeLocationRequest) ChangeLocationRequest.field11242.method14161()) {
 			var32.field11226 -= var2;
 			var32.field11228 -= var3;
-			LocType var33 = (LocType) this.field5039.list(var32.field11234);
+			LocType var33 = (LocType) this.field5039.getById(var32.field11234);
 			int var34;
 			int var35;
 			if ((var32.field11235 & 0x1) == 0) {
-				var34 = var33.field7499;
-				var35 = var33.field7492;
+				var34 = var33.width;
+				var35 = var33.length;
 			} else {
-				var34 = var33.field7492;
-				var35 = var33.field7499;
+				var34 = var33.length;
+				var35 = var33.width;
 			}
 			if (RebuildType.field5069 != this.field5019 && (var32.field11226 + var34 <= 0 || var32.field11228 + var35 <= 0 || var32.field11226 >= this.field5028 || var32.field11228 >= this.field5043)) {
 				var32.method8440();
@@ -1433,7 +1433,7 @@ public class World {
 					int var11 = var8 & 0x3F;
 					int var12 = (this.field5054[var2] >> 8) * 64 - this.field5018.field7426 + var10;
 					int var13 = (this.field5054[var2] & 0xFF) * 64 - this.field5018.field7427 + var11;
-					NPCType var14 = (NPCType) Statics.field7961.list(var5.g2());
+					NPCType var14 = (NPCType) Statics.field7961.getById(var5.g2());
 					ObjectWrapper var15 = (ObjectWrapper) Client.field10838.method14495((long) var7);
 					if (var15 == null && (var14.field2743 & 0x1) > 0 && var12 >= 0 && var14.size + var12 < this.field5028 && var13 >= 0 && var14.size + var13 < this.field5043) {
 						NpcEntity var16 = new NpcEntity(this.field5030);

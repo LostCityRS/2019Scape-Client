@@ -28,13 +28,13 @@ public class VarPlayerTypeListClient extends VarTypeList implements ConfigTypeLi
 	}
 
 	@ObfuscatedName("adj.e(II)Lay;")
-	public ConfigType list(int arg0) {
+	public ConfigType getById(int id) {
 		WeightedCache var2 = this.field9254;
 		synchronized (this.field9254) {
-			VarPlayerType var3 = (VarPlayerType) this.field9254.method2930((long) arg0);
+			VarPlayerType var3 = (VarPlayerType) this.field9254.method2930((long) id);
 			if (var3 == null) {
-				var3 = this.method15255(arg0);
-				this.field9254.method2921(var3, (long) arg0);
+				var3 = this.method15255(id);
+				this.field9254.method2921(var3, (long) id);
 			}
 			return var3;
 		}

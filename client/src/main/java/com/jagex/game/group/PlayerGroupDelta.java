@@ -402,7 +402,7 @@ public class PlayerGroupDelta {
 		@ObfuscatedName("gc.e(Lgq;B)V")
 		public void method3371(PlayerGroup arg0) {
 			if (this.field1939 != null) {
-				arg0.method3394().setVarValue((VarType) this.this$0.field1943.method291().list(this.field1939.field4240), this.field1939.field4239);
+				arg0.method3394().setVarValue((VarType) this.this$0.field1943.method291().getById(this.field1939.field4240), this.field1939.field4239);
 			}
 		}
 	}
@@ -436,7 +436,7 @@ public class PlayerGroupDelta {
 		public void method3371(PlayerGroup arg0) {
 			if (this.field1916 != -1) {
 				try {
-					arg0.method3394().setVarbitValue((VarBitType) this.this$0.field1943.method294().list(this.field1916), this.field1915);
+					arg0.method3394().setVarbitValue((VarBitType) this.this$0.field1943.method294().getById(this.field1916), this.field1915);
 				} catch (VarBitOverflowException var3) {
 				}
 			}

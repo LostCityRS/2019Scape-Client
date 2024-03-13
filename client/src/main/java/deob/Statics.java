@@ -2257,7 +2257,7 @@ public class Statics {
 			return 0;
 		}
 		for (int var5 = 0; var5 < var4.field11223.length; var5++) {
-			if (var4.field11223[var5] >= 0 && ((ObjType) field1842.list(var4.field11223[var5])).field8628 == arg1) {
+			if (var4.field11223[var5] >= 0 && ((ObjType) field1842.getById(var4.field11223[var5])).field8628 == arg1) {
 				var3 += ClientInvCache.method14483(arg0, var5, arg2);
 			}
 		}
@@ -2306,7 +2306,7 @@ public class Statics {
 	}
 
 	@ObfuscatedName("vj.k(BS)C")
-	public static char method9576(byte arg0) {
+	public static char byteToCp1252Char(byte arg0) {
 		int var1 = arg0 & 0xFF;
 		if (var1 == 0) {
 			throw new IllegalArgumentException("" + Integer.toString(var1, 16));
@@ -2379,7 +2379,7 @@ public class Statics {
 
 	@ObfuscatedName("tx.i(Lyf;B)V")
 	public static void method8883(ClientScriptState arg0) {
-		arg0.field8216[arg0.field8226 - 1] = ((QuestType) field1972.list(arg0.field8216[arg0.field8226 - 1])).method4430(field7410) ? 1 : 0;
+		arg0.field8216[arg0.field8226 - 1] = ((QuestType) field1972.getById(arg0.field8216[arg0.field8226 - 1])).method4430(field7410) ? 1 : 0;
 	}
 
 	@ObfuscatedName("gs.x(S)I")
@@ -2655,7 +2655,7 @@ public class Statics {
 	public static int method5179(VarIntDomain arg0, ConfigTypeList arg1) {
 		int var2 = 0;
 		for (int var3 = 0; var3 < arg1.length(); var3++) {
-			QuestType var4 = (QuestType) arg1.list(var3);
+			QuestType var4 = (QuestType) arg1.getById(var3);
 			if (var4.method4430(arg0)) {
 				var2 += var4.field2637;
 			}
@@ -2800,7 +2800,7 @@ public class Statics {
 
 	@ObfuscatedName("dz.r(Ldh;Lvd;IIII)V")
 	public static void method1900(Renderer arg0, LocType arg1, int arg2, int arg3, int arg4) {
-		MSIType var5 = (MSIType) field4241.list(arg1.field7486);
+		MSIType var5 = (MSIType) field4241.getById(arg1.field7486);
 		if (var5.field9151 == -1) {
 			return;
 		}
@@ -2815,11 +2815,11 @@ public class Statics {
 		if (var8 == null) {
 			return;
 		}
-		int var9 = arg1.field7499;
-		int var10 = arg1.field7492;
+		int var9 = arg1.width;
+		int var10 = arg1.length;
 		if ((var7 & 0x1) == 1) {
-			var9 = arg1.field7492;
-			var10 = arg1.field7499;
+			var9 = arg1.length;
+			var10 = arg1.width;
 		}
 		int var11 = var8.method1434();
 		int var12 = var8.method1436();
@@ -2928,8 +2928,8 @@ public class Statics {
 	@ObfuscatedName("rm.q(Lhf;III)V")
 	public static void method7624(Component arg0, int arg1, int arg2) {
 		if (Client.field10973) {
-			ParamType var3 = (ParamType) (field7677 == -1 ? null : field3086.list(field7677));
-			if (Client.method17197(arg0).method17708() && (field1765 & 0x20) != 0 && (var3 == null || arg0.method3950(field7677, var3.field9172) != var3.field9172)) {
+			ParamType var3 = (ParamType) (field7677 == -1 ? null : field3086.getById(field7677));
+			if (Client.method17197(arg0).method17708() && (field1765 & 0x20) != 0 && (var3 == null || arg0.method3950(field7677, var3.defaultInt) != var3.defaultInt)) {
 				MiniMenu.method3042(Client.field11039, Client.field10977 + " " + TextUtil.ARROW + " " + arg0.field2279, field1844, 58, arg0.field2334, 0L, arg0.field2183, arg0.field2158, true, false, (long) (arg0.field2183 << 32 | arg0.field2158), false);
 			}
 		}
@@ -2961,7 +2961,7 @@ public class Statics {
 
 	@ObfuscatedName("ace.q(Ldh;Lch;Lhf;IIIIIB)V")
 	public static void method15085(Renderer arg0, GraphicsRelated arg1, Component arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
-		MapElementType var8 = (MapElementType) field5011.list(arg7);
+		MapElementType var8 = (MapElementType) field5011.getById(arg7);
 		if (var8 != null && var8.field2392 != null && var8.method4030(field7410, field7410)) {
 			var8 = var8.method4024(field7410, field7410);
 		}
@@ -3164,7 +3164,7 @@ public class Statics {
 		arg0.method2354(var12, var13, var10, var11, var14, 1);
 		arg0.method2179(var12, var13, var10, var11, var14, 0);
 		for (WorldMapElement var15 = (WorldMapElement) ClientWorldMap.field6806.method14191(); var15 != null; var15 = (WorldMapElement) ClientWorldMap.field6806.method14161()) {
-			MapElementType var16 = (MapElementType) field6788.list(var15.field11446);
+			MapElementType var16 = (MapElementType) field6788.getById(var15.field11446);
 			if (method18887(var16)) {
 				WorldMapFlash var17 = (WorldMapFlash) ClientWorldMap.field11661.get(var15.field11446);
 				if (var17 == null) {
@@ -3295,7 +3295,7 @@ public class Statics {
 			return null;
 		}
 		for (WorldMapElement var0 = (WorldMapElement) ClientWorldMap.field11669.next(); var0 != null; var0 = (WorldMapElement) ClientWorldMap.field11669.next()) {
-			MapElementType var1 = (MapElementType) field6788.list(var0.field11446);
+			MapElementType var1 = (MapElementType) field6788.getById(var0.field11446);
 			if (var1 != null && var1.field2409 && var1.method4030(field6791, field6790)) {
 				return var0;
 			}
@@ -3975,7 +3975,7 @@ public class Statics {
 	@ObfuscatedName("mj.ti(Lhf;IIFIIIIIIB)V")
 	public static void method5921(Component arg0, int arg1, int arg2, float arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9) {
 		if (arg0.field2363 == null) {
-			NPCType var10 = (NPCType) field7961.list(arg0.field2294);
+			NPCType var10 = (NPCType) field7961.getById(arg0.field2294);
 			arg0.field2363 = new NPCHeadIconCustomisation(var10, true);
 		}
 		arg0.field2363.field2688 = ScriptRunner.method5390();
@@ -4166,13 +4166,13 @@ public class Statics {
 			var7.field11263.method14153(arg3);
 			return;
 		}
-		ObjType var8 = (ObjType) field1842.list(arg3.field11261);
+		ObjType var8 = (ObjType) field1842.getById(arg3.field11261);
 		int var9 = var8.cost;
 		if (var8.stackable == 1) {
 			var9 = (arg3.field11260 + 1) * var9;
 		}
 		for (Obj var10 = (Obj) var6.field11263.method14191(); var10 != null; var10 = (Obj) var6.field11263.method14161()) {
-			ObjType var11 = (ObjType) field1842.list(var10.field11261);
+			ObjType var11 = (ObjType) field1842.getById(var10.field11261);
 			int var12 = var11.cost;
 			if (var11.stackable == 1) {
 				var12 = (var10.field11260 + 1) * var12;
@@ -4200,10 +4200,10 @@ public class Statics {
 		if (var2 == -1) {
 			throw new RuntimeException();
 		}
-		EnumType var5 = (EnumType) field8514.list(var2);
-		if (var5.field8781.getId() != var1) {
+		EnumType var5 = (EnumType) field8514.getById(var2);
+		if (var5.inputtype.getId() != var1) {
 			throw new RuntimeException();
-		} else if (var5.field8775.getId() == ScriptVarType.STRING.getId()) {
+		} else if (var5.outputtype.getId() == ScriptVarType.STRING.getId()) {
 			int[] var6 = var5.method14867(var4);
 			if (var3 < 0 || var6 == null || var6.length <= var3) {
 				throw new RuntimeException();
@@ -4459,7 +4459,7 @@ public class Statics {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		ObjType var3 = (ObjType) field1842.list(var1);
+		ObjType var3 = (ObjType) field1842.getById(var1);
 		if (var2 < 1 || var2 > 5 || var3.iops[var2 - 1] == null) {
 			arg0.field8218[++arg0.field8211 - 1] = "";
 		} else {
@@ -4470,7 +4470,7 @@ public class Statics {
 	@ObfuscatedName("ajf.agb(Lyf;B)V")
 	public static final void method17524(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) field1842.list(var1)).cost;
+		arg0.field8216[++arg0.field8226 - 1] = ((ObjType) field1842.getById(var1)).cost;
 	}
 
 	@ObfuscatedName("vg.ahq(Lyf;B)V")
@@ -4478,11 +4478,11 @@ public class Statics {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		ParamType var3 = (ParamType) field3086.list(var2);
-		if (var3.method15152()) {
-			arg0.field8218[++arg0.field8211 - 1] = ((LocType) Client.world.method7750().list(var1)).method9479(var2, var3.field9171);
+		ParamType var3 = (ParamType) field3086.getById(var2);
+		if (var3.isStringType()) {
+			arg0.field8218[++arg0.field8211 - 1] = ((LocType) Client.world.method7750().getById(var1)).method9479(var2, var3.defaultString);
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = ((LocType) Client.world.method7750().list(var1)).method9481(var2, var3.field9172);
+			arg0.field8216[++arg0.field8226 - 1] = ((LocType) Client.world.method7750().getById(var1)).method9481(var2, var3.defaultInt);
 		}
 	}
 
@@ -4882,7 +4882,7 @@ public class Statics {
 	@ObfuscatedName("sp.axe(Lyf;I)V")
 	public static final void method8277(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		MapElementType var2 = (MapElementType) field5011.list(var1);
+		MapElementType var2 = (MapElementType) field5011.getById(var1);
 		if (var2.field2370 == null) {
 			arg0.field8218[++arg0.field8211 - 1] = "";
 		} else {
@@ -4893,7 +4893,7 @@ public class Statics {
 	@ObfuscatedName("fi.axr(Lyf;B)V")
 	public static final void method3075(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		MapElementType var2 = (MapElementType) field5011.list(var1);
+		MapElementType var2 = (MapElementType) field5011.getById(var1);
 		arg0.field8216[++arg0.field8226 - 1] = var2.field2400;
 	}
 
@@ -4991,12 +4991,12 @@ public class Statics {
 		int var3 = 0;
 		int var4 = var2 >>> 8;
 		int var5 = var2 & 0xFF;
-		DBRowType var6 = (DBRowType) field9123.list(var1);
-		DBTableType var7 = (DBTableType) field1840.list(var4);
-		ScriptVarType[] var8 = var7.field9185[var5];
+		DBRowType var6 = (DBRowType) field9123.getById(var1);
+		DBTableType var7 = (DBTableType) field1840.getById(var4);
+		ScriptVarType[] var8 = var7.types[var5];
 		Object[] var9 = var6.method14711(var5);
-		if (var9 == null && var7.field9186 != null) {
-			var9 = var7.field9186[var5];
+		if (var9 == null && var7.defaultValues != null) {
+			var9 = var7.defaultValues[var5];
 		}
 		if (var9 != null) {
 			var3 = var9.length / var8.length;

@@ -29,7 +29,7 @@ public class LocAnimCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("agv.k(I)Z")
 	public boolean method2891() {
-		SeqType var1 = (SeqType) Statics.field8797.list(this.field10274);
+		SeqType var1 = (SeqType) Statics.field8797.getById(this.field10274);
 		return var1.method2991();
 	}
 }

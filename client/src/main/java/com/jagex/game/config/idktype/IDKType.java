@@ -10,10 +10,10 @@ import deob.ObfuscatedName;
 public class IDKType implements ConfigType {
 
 	@ObfuscatedName("jv.e")
-	public final Js5 field2955;
+	public final Js5 js5;
 
 	@ObfuscatedName("jv.n")
-	public int[] field2950;
+	public int[] models;
 
 	@ObfuscatedName("jv.m")
 	public short[] field2949;
@@ -34,7 +34,7 @@ public class IDKType implements ConfigType {
 	public byte[] field2956;
 
 	@ObfuscatedName("jv.z")
-	public int[] field2957 = new int[] { -1, -1, -1, -1, -1 };
+	public int[] heads = new int[] { -1, -1, -1, -1, -1 };
 
 	@ObfuscatedName("jv.p")
 	public static final int[] field2951 = new int[] { 0, 1, 2, 3, 4, 5, 6, 14 };
@@ -42,50 +42,50 @@ public class IDKType implements ConfigType {
 	@ObfuscatedName("jv.d")
 	public static final int[] field2959 = new int[] { 7, 8, 9, 10, 11, 12, 13, 15 };
 
-	public IDKType(int arg0, Js5 arg1) {
-		this.field2955 = arg1;
+	public IDKType(int id, Js5 js5) {
+		this.js5 = js5;
 	}
 
 	@ObfuscatedName("jv.e(Lalw;B)V")
-	public void decode(Packet arg0) {
+	public void decode(Packet buf) {
 		while (true) {
-			int var2 = arg0.g1();
-			if (var2 == 0) {
+			int code = buf.g1();
+			if (code == 0) {
 				return;
 			}
-			this.method4997(arg0, var2);
+			this.decode(buf, code);
 		}
 	}
 
 	@ObfuscatedName("jv.u(Lalw;II)V")
-	public void method4997(Packet arg0, int arg1) {
-		if (arg1 == 1) {
-			arg0.g1();
-		} else if (arg1 == 2) {
-			int var3 = arg0.g1();
-			this.field2950 = new int[var3];
+	public void decode(Packet buf, int code) {
+		if (code == 1) {
+			buf.g1();
+		} else if (code == 2) {
+			int var3 = buf.g1();
+			this.models = new int[var3];
 			for (int var4 = 0; var4 < var3; var4++) {
-				this.field2950[var4] = arg0.gSmart2or4null();
+				this.models[var4] = buf.gSmart2or4null();
 			}
-		} else if (arg1 != 3) {
-			if (arg1 == 40) {
-				int var5 = arg0.g1();
+		} else if (code != 3) {
+			if (code == 40) {
+				int var5 = buf.g1();
 				this.field2949 = new short[var5];
 				this.field2954 = new short[var5];
 				for (int var6 = 0; var6 < var5; var6++) {
-					this.field2949[var6] = (short) arg0.g2();
-					this.field2954[var6] = (short) arg0.g2();
+					this.field2949[var6] = (short) buf.g2();
+					this.field2954[var6] = (short) buf.g2();
 				}
-			} else if (arg1 == 41) {
-				int var7 = arg0.g1();
+			} else if (code == 41) {
+				int var7 = buf.g1();
 				this.field2958 = new short[var7];
 				this.field2953 = new short[var7];
 				for (int var8 = 0; var8 < var7; var8++) {
-					this.field2958[var8] = (short) arg0.g2();
-					this.field2953[var8] = (short) arg0.g2();
+					this.field2958[var8] = (short) buf.g2();
+					this.field2953[var8] = (short) buf.g2();
 				}
-			} else if (arg1 == 44) {
-				int var9 = arg0.g2();
+			} else if (code == 44) {
+				int var9 = buf.g2();
 				int var10 = 0;
 				for (int var11 = var9; var11 > 0; var11 >>= 0x1) {
 					var10++;
@@ -99,8 +99,8 @@ public class IDKType implements ConfigType {
 						this.field2952[var13] = -1;
 					}
 				}
-			} else if (arg1 == 45) {
-				int var14 = arg0.g2();
+			} else if (code == 45) {
+				int var14 = buf.g2();
 				int var15 = 0;
 				for (int var16 = var14; var16 > 0; var16 >>= 0x1) {
 					var15++;
@@ -114,8 +114,8 @@ public class IDKType implements ConfigType {
 						this.field2956[var18] = -1;
 					}
 				}
-			} else if (arg1 >= 60 && arg1 < 70) {
-				this.field2957[arg1 - 60] = arg0.gSmart2or4null();
+			} else if (code >= 60 && code < 70) {
+				this.heads[code - 60] = buf.gSmart2or4null();
 			}
 		}
 	}
@@ -126,14 +126,14 @@ public class IDKType implements ConfigType {
 
 	@ObfuscatedName("jv.z(B)Z")
 	public boolean method4999() {
-		if (this.field2950 == null) {
+		if (this.models == null) {
 			return true;
 		}
 		boolean var1 = true;
-		Js5 var2 = this.field2955;
-		synchronized (this.field2955) {
-			for (int var3 = 0; var3 < this.field2950.length; var3++) {
-				if (!this.field2955.requestdownload(this.field2950[var3], 0)) {
+		Js5 var2 = this.js5;
+		synchronized (this.js5) {
+			for (int var3 = 0; var3 < this.models.length; var3++) {
+				if (!this.js5.requestdownload(this.models[var3], 0)) {
 					var1 = false;
 				}
 			}
@@ -142,23 +142,23 @@ public class IDKType implements ConfigType {
 	}
 
 	@ObfuscatedName("jv.p(I)Ldq;")
-	public ModelUnlit method5000() {
-		if (this.field2950 == null) {
+	public ModelUnlit getModel() {
+		if (this.models == null) {
 			return null;
 		}
-		ModelUnlit[] var1 = new ModelUnlit[this.field2950.length];
-		Js5 var2 = this.field2955;
-		synchronized (this.field2955) {
+		ModelUnlit[] var1 = new ModelUnlit[this.models.length];
+		Js5 var2 = this.js5;
+		synchronized (this.js5) {
 			int var3 = 0;
 			while (true) {
-				if (var3 >= this.field2950.length) {
+				if (var3 >= this.models.length) {
 					break;
 				}
-				var1[var3] = ModelUnlit.method1931(this.field2955, this.field2950[var3], 0);
+				var1[var3] = ModelUnlit.method1931(this.js5, this.models[var3], 0);
 				var3++;
 			}
 		}
-		for (int var5 = 0; var5 < this.field2950.length; var5++) {
+		for (int var5 = 0; var5 < this.models.length; var5++) {
 			if (var1[var5].field1372 < 13) {
 				var1[var5].method1947(2);
 			}
@@ -188,10 +188,10 @@ public class IDKType implements ConfigType {
 	@ObfuscatedName("jv.d(I)Z")
 	public boolean method5001() {
 		boolean var1 = true;
-		Js5 var2 = this.field2955;
-		synchronized (this.field2955) {
+		Js5 var2 = this.js5;
+		synchronized (this.js5) {
 			for (int var3 = 0; var3 < 5; var3++) {
-				if (this.field2957[var3] != -1 && !this.field2955.requestdownload(this.field2957[var3], 0)) {
+				if (this.heads[var3] != -1 && !this.js5.requestdownload(this.heads[var3], 0)) {
 					var1 = false;
 				}
 			}
@@ -200,18 +200,18 @@ public class IDKType implements ConfigType {
 	}
 
 	@ObfuscatedName("jv.c(I)Ldq;")
-	public ModelUnlit method5002() {
+	public ModelUnlit getHeadModel() {
 		ModelUnlit[] var1 = new ModelUnlit[5];
 		int var2 = 0;
-		Js5 var3 = this.field2955;
-		synchronized (this.field2955) {
+		Js5 var3 = this.js5;
+		synchronized (this.js5) {
 			int var4 = 0;
 			while (true) {
 				if (var4 >= 5) {
 					break;
 				}
-				if (this.field2957[var4] != -1) {
-					var1[var2++] = ModelUnlit.method1931(this.field2955, this.field2957[var4], 0);
+				if (this.heads[var4] != -1) {
+					var1[var2++] = ModelUnlit.method1931(this.js5, this.heads[var4], 0);
 				}
 				var4++;
 			}

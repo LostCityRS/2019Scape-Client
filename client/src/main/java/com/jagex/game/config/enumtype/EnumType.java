@@ -15,100 +15,100 @@ import java.util.Map.Entry;
 public class EnumType implements ConfigType, ConfigRelated {
 
 	@ObfuscatedName("abm.e")
-	public ScriptVarType field8781;
+	public ScriptVarType inputtype;
 
 	@ObfuscatedName("abm.n")
-	public ScriptVarType field8775;
+	public ScriptVarType outputtype;
 
 	@ObfuscatedName("abm.m")
-	public String field8777 = "null";
+	public String defaultString = "null";
 
 	@ObfuscatedName("abm.k")
-	public int field8778;
+	public int defaultInt;
 
 	@ObfuscatedName("abm.f")
-	public Map field8779;
+	public Map values;
 
 	@ObfuscatedName("abm.w")
 	public Object[] field8780;
 
 	@ObfuscatedName("abm.l")
-	public int field8776 = 0;
+	public int valuesCount = 0;
 
 	@ObfuscatedName("abm.u")
 	public java.util.HashMap field8782;
 
 	@ObfuscatedName("abm.e(Lalw;B)V")
-	public void decode(Packet arg0) {
+	public void decode(Packet buf) {
 		while (true) {
-			int var2 = arg0.g1();
-			if (var2 == 0) {
+			int code = buf.g1();
+			if (code == 0) {
 				return;
 			}
-			this.method14852(arg0, var2);
+			this.decode(buf, code);
 		}
 	}
 
 	@ObfuscatedName("abm.u(Lalw;II)V")
-	public void method14852(Packet arg0, int arg1) {
-		if (arg1 == 1) {
-			char var3 = Statics.method9576(arg0.g1b());
-			this.field8781 = ScriptVarType.method7300(var3);
-		} else if (arg1 == 2) {
-			char var4 = Statics.method9576(arg0.g1b());
-			this.field8775 = ScriptVarType.method7300(var4);
-		} else if (arg1 == 3) {
-			this.field8777 = arg0.gjstr();
-		} else if (arg1 == 4) {
-			this.field8778 = arg0.g4s();
-		} else if (arg1 == 5 || arg1 == 6) {
-			this.field8776 = arg0.g2();
-			this.field8779 = new java.util.HashMap(this.field8776);
-			for (int var8 = 0; var8 < this.field8776; var8++) {
-				int var9 = arg0.g4s();
+	public void decode(Packet buf, int code) {
+		if (code == 1) {
+			char var3 = Statics.byteToCp1252Char(buf.g1b());
+			this.inputtype = ScriptVarType.getDefault(var3);
+		} else if (code == 2) {
+			char var4 = Statics.byteToCp1252Char(buf.g1b());
+			this.outputtype = ScriptVarType.getDefault(var4);
+		} else if (code == 3) {
+			this.defaultString = buf.gjstr();
+		} else if (code == 4) {
+			this.defaultInt = buf.g4s();
+		} else if (code == 5 || code == 6) {
+			this.valuesCount = buf.g2();
+			this.values = new java.util.HashMap(this.valuesCount);
+			for (int var8 = 0; var8 < this.valuesCount; var8++) {
+				int var9 = buf.g4s();
 				Object var10;
-				if (arg1 == 5) {
-					var10 = arg0.gjstr();
+				if (code == 5) {
+					var10 = buf.gjstr();
 				} else {
-					var10 = Integer.valueOf(arg0.g4s());
+					var10 = Integer.valueOf(buf.g4s());
 				}
-				this.field8779.put(Integer.valueOf(var9), var10);
+				this.values.put(Integer.valueOf(var9), var10);
 			}
-		} else if (arg1 == 7 || arg1 == 8) {
-			int var5 = arg0.g2();
-			this.field8776 = arg0.g2();
+		} else if (code == 7 || code == 8) {
+			int var5 = buf.g2();
+			this.valuesCount = buf.g2();
 			this.field8780 = new Object[var5];
-			for (int var6 = 0; var6 < this.field8776; var6++) {
-				int var7 = arg0.g2();
-				if (arg1 == 7) {
-					this.field8780[var7] = arg0.gjstr();
+			for (int var6 = 0; var6 < this.valuesCount; var6++) {
+				int var7 = buf.g2();
+				if (code == 7) {
+					this.field8780[var7] = buf.gjstr();
 				} else {
-					this.field8780[var7] = Integer.valueOf(arg0.g4s());
+					this.field8780[var7] = Integer.valueOf(buf.g4s());
 				}
 			}
-		} else if (arg1 == 101) {
-			this.field8781 = (ScriptVarType) SerializableEnums.decode(ScriptVarType.method7293(), arg0.gSmart1or2());
-		} else if (arg1 == 102) {
-			this.field8775 = (ScriptVarType) SerializableEnums.decode(ScriptVarType.method7293(), arg0.gSmart1or2());
+		} else if (code == 101) {
+			this.inputtype = (ScriptVarType) SerializableEnums.decode(ScriptVarType.method7293(), buf.gSmart1or2());
+		} else if (code == 102) {
+			this.outputtype = (ScriptVarType) SerializableEnums.decode(ScriptVarType.method7293(), buf.gSmart1or2());
 		}
 	}
 
 	@ObfuscatedName("abm.p(II)I")
 	public int method14848(int arg0) {
 		Object var2 = this.method14850(arg0);
-		return var2 == null ? this.field8778 : (Integer) var2;
+		return var2 == null ? this.defaultInt : (Integer) var2;
 	}
 
 	@ObfuscatedName("abm.d(II)Ljava/lang/String;")
 	public String method14849(int arg0) {
 		Object var2 = this.method14850(arg0);
-		return var2 == null ? this.field8777 : (String) var2;
+		return var2 == null ? this.defaultString : (String) var2;
 	}
 
 	@ObfuscatedName("abm.c(II)Ljava/lang/Object;")
 	public Object method14850(int arg0) {
 		if (this.field8780 == null) {
-			return this.field8779 == null ? null : this.field8779.get(Integer.valueOf(arg0));
+			return this.values == null ? null : this.values.get(Integer.valueOf(arg0));
 		} else if (arg0 >= 0 && arg0 < this.field8780.length) {
 			return this.field8780[arg0];
 		} else {
@@ -118,7 +118,7 @@ public class EnumType implements ConfigType, ConfigRelated {
 
 	@ObfuscatedName("abm.o(Ljava/lang/Object;B)Z")
 	public boolean method14851(Object arg0) {
-		if (this.field8776 == 0) {
+		if (this.valuesCount == 0) {
 			return false;
 		} else {
 			if (this.field8782 == null) {
@@ -130,7 +130,7 @@ public class EnumType implements ConfigType, ConfigRelated {
 
 	@ObfuscatedName("abm.s(Ljava/lang/Object;I)[I")
 	public int[] method14867(Object arg0) {
-		if (this.field8776 == 0) {
+		if (this.valuesCount == 0) {
 			return null;
 		} else {
 			if (this.field8782 == null) {
@@ -142,17 +142,17 @@ public class EnumType implements ConfigType, ConfigRelated {
 
 	@ObfuscatedName("abm.y(I)I")
 	public int method14847() {
-		return this.field8776;
+		return this.valuesCount;
 	}
 
 	@ObfuscatedName("abm.q(B)V")
 	public void method14853() {
 		java.util.HashMap var1 = new java.util.HashMap();
 		if (this.field8780 == null) {
-			if (this.field8779 == null) {
+			if (this.values == null) {
 				throw new IllegalStateException();
 			}
-			Iterator var5 = this.field8779.entrySet().iterator();
+			Iterator var5 = this.values.entrySet().iterator();
 			while (var5.hasNext()) {
 				Entry var6 = (Entry) var5.next();
 				Object var7 = var6.getValue();

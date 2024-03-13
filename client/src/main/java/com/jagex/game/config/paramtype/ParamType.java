@@ -12,47 +12,47 @@ import deob.Statics;
 public class ParamType implements ConfigType, ConfigRelated {
 
 	@ObfuscatedName("adp.e")
-	public ScriptVarType field9173;
+	public ScriptVarType type;
 
 	@ObfuscatedName("adp.n")
-	public int field9172;
+	public int defaultInt;
 
 	@ObfuscatedName("adp.m")
-	public String field9171;
+	public String defaultString;
 
 	@ObfuscatedName("adp.k")
-	public boolean field9174 = true;
+	public boolean autodisable = true;
 
 	@ObfuscatedName("adp.e(Lalw;B)V")
-	public void decode(Packet arg0) {
+	public void decode(Packet buf) {
 		while (true) {
-			int var2 = arg0.g1();
+			int var2 = buf.g1();
 			if (var2 == 0) {
 				return;
 			}
-			this.method15151(arg0, var2);
+			this.decode(buf, var2);
 		}
 	}
 
 	@ObfuscatedName("adp.u(Lalw;II)V")
-	public void method15151(Packet arg0, int arg1) {
-		if (arg1 == 1) {
-			char var3 = Statics.method9576(arg0.g1b());
-			this.field9173 = ScriptVarType.method7300(var3);
-		} else if (arg1 == 2) {
-			this.field9172 = arg0.g4s();
-		} else if (arg1 == 4) {
-			this.field9174 = false;
-		} else if (arg1 == 5) {
-			this.field9171 = arg0.gjstr();
-		} else if (arg1 == 101) {
-			this.field9173 = (ScriptVarType) SerializableEnums.decode(ScriptVarType.method7293(), arg0.gSmart1or2());
+	public void decode(Packet buf, int code) {
+		if (code == 1) {
+			char c = Statics.byteToCp1252Char(buf.g1b());
+			this.type = ScriptVarType.getDefault(c);
+		} else if (code == 2) {
+			this.defaultInt = buf.g4s();
+		} else if (code == 4) {
+			this.autodisable = false;
+		} else if (code == 5) {
+			this.defaultString = buf.gjstr();
+		} else if (code == 101) {
+			this.type = (ScriptVarType) SerializableEnums.decode(ScriptVarType.method7293(), buf.gSmart1or2());
 		}
 	}
 
 	@ObfuscatedName("adp.p(I)Z")
-	public boolean method15152() {
-		return ScriptVarType.STRING == this.field9173;
+	public boolean isStringType() {
+		return ScriptVarType.STRING == this.type;
 	}
 
 	@ObfuscatedName("adp.n(I)V")

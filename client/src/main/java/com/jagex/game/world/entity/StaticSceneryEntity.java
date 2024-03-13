@@ -62,7 +62,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 	public StaticSceneryEntity(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, int arg14, int arg15, boolean arg16, boolean arg17, ScaleRotTrans arg18) {
 		super(arg0, arg4, arg5, arg6, arg7, arg8, arg10, arg11, arg12, arg13, arg3.field7503 == 1, Statics.method14062(arg14, arg15), arg18);
 		this.field11145 = arg2;
-		this.field11715 = arg3.field7450;
+		this.field11715 = arg3.id;
 		this.field11714 = (byte) arg5;
 		this.field11143 = arg9;
 		this.field11137 = (byte) arg14;
@@ -125,7 +125,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 
 	@ObfuscatedName("ajv.bg(Ldh;IZI)Labg;")
 	public Pair method17400(Renderer arg0, int arg1, boolean arg2) {
-		LocType var4 = (LocType) this.field11145.list(this.field11715);
+		LocType var4 = (LocType) this.field11145.getById(this.field11715);
 		FloorModel var5;
 		FloorModel var6;
 		if (this.field11143) {
@@ -159,7 +159,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 		}
 		Matrix4x3 var2 = this.method10533();
 		PickableEntity var3 = PickableEntity.method16749(this.field11144);
-		Cuboid var4 = ((LocType) this.field11145.list(this.field11715)).field7468;
+		Cuboid var4 = ((LocType) this.field11145.getById(this.field11715)).field7468;
 		if (var4 == null) {
 			this.field11136.method1813(var2, this.field11713[0], 0);
 		} else {
@@ -175,7 +175,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 
 	@ObfuscatedName("ajv.fa(Ldh;IIB)Z")
 	public boolean method17375(Renderer arg0, int arg1, int arg2) {
-		Cuboid var4 = ((LocType) this.field11145.list(this.field11715)).field7468;
+		Cuboid var4 = ((LocType) this.field11145.getById(this.field11715)).field7468;
 		if (var4 != null) {
 			return arg0.method2191(arg1, arg2, this.method10533(), var4);
 		}

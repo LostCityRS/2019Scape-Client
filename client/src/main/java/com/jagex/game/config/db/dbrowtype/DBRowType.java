@@ -12,49 +12,49 @@ import deob.ObfuscatedName;
 public class DBRowType implements ConfigType, ConfigRelated {
 
 	@ObfuscatedName("abc.e")
-	public Object[][] field8734;
+	public Object[][] columnValues;
 
 	@ObfuscatedName("abc.n")
-	public ScriptVarType[][] field8733;
+	public ScriptVarType[][] types;
 
 	@ObfuscatedName("abc.m")
-	public int field8735;
+	public int tableId;
 
 	@ObfuscatedName("abc.e(Lalw;B)V")
-	public void decode(Packet arg0) {
+	public void decode(Packet buf) {
 		while (true) {
-			int var2 = arg0.g1();
-			if (var2 == 0) {
+			int code = buf.g1();
+			if (code == 0) {
 				return;
 			}
-			this.method14710(arg0, var2);
+			this.decode(buf, code);
 		}
 	}
 
 	@ObfuscatedName("abc.u(II)[Ljava/lang/Object;")
 	public Object[] method14711(int arg0) {
-		return this.field8734 == null ? null : this.field8734[arg0];
+		return this.columnValues == null ? null : this.columnValues[arg0];
 	}
 
 	@ObfuscatedName("abc.p(Lalw;II)V")
-	public void method14710(Packet arg0, int arg1) {
-		if (arg1 == 3) {
-			int var3 = arg0.g1();
-			if (this.field8734 == null) {
-				this.field8734 = new Object[var3][];
-				this.field8733 = new ScriptVarType[var3][];
+	public void decode(Packet buf, int code) {
+		if (code == 3) {
+			int numColumns = buf.g1();
+			if (this.columnValues == null) {
+				this.columnValues = new Object[numColumns][];
+				this.types = new ScriptVarType[numColumns][];
 			}
-			for (int var4 = arg0.g1(); var4 != 255; var4 = arg0.g1()) {
-				int var5 = arg0.g1();
-				ScriptVarType[] var6 = new ScriptVarType[var5];
-				for (int var7 = 0; var7 < var5; var7++) {
-					var6[var7] = (ScriptVarType) SerializableEnums.decode(ScriptVarType.method7293(), arg0.gSmart1or2());
+			for (int var4 = buf.g1(); var4 != 255; var4 = buf.g1()) {
+				int columnsLength = buf.g1();
+				ScriptVarType[] columnTypes = new ScriptVarType[columnsLength];
+				for (int var7 = 0; var7 < columnsLength; var7++) {
+					columnTypes[var7] = (ScriptVarType) SerializableEnums.decode(ScriptVarType.method7293(), buf.gSmart1or2());
 				}
-				this.field8734[var4] = DBUtils.method18719(arg0, var6);
-				this.field8733[var4] = var6;
+				this.columnValues[var4] = DBUtils.decodeValues(buf, columnTypes);
+				this.types[var4] = columnTypes;
 			}
-		} else if (arg1 == 4) {
-			this.field8735 = arg0.gVarInt2();
+		} else if (code == 4) {
+			this.tableId = buf.gVarInt2();
 		}
 	}
 

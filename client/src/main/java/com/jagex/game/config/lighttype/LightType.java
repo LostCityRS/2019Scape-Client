@@ -21,13 +21,13 @@ public class LightType implements ConfigType, ConfigRelated {
 	public int field9170 = 2048;
 
 	@ObfuscatedName("adl.e(Lalw;B)V")
-	public void decode(Packet arg0) {
+	public void decode(Packet buf) {
 		while (true) {
-			int var2 = arg0.g1();
+			int var2 = buf.g1();
 			if (var2 == 0) {
 				return;
 			}
-			this.method15145(arg0, var2);
+			this.method15145(buf, var2);
 		}
 	}
 

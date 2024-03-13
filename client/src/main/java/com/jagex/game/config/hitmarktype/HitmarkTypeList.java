@@ -17,18 +17,18 @@ public class HitmarkTypeList extends CachingConfigTypeList {
 	@ObfuscatedName("aoj.r(I)V")
 	public void method14895() {
 		super.method14895();
-		((HitmarkTypeFactory) this.field8796).method9277();
+		((HitmarkTypeFactory) this.factory).method9277();
 	}
 
 	@ObfuscatedName("aoj.v(II)V")
 	public void method14896(int arg0) {
 		super.method14896(arg0);
-		((HitmarkTypeFactory) this.field8796).method9282(arg0);
+		((HitmarkTypeFactory) this.factory).method9282(arg0);
 	}
 
 	@ObfuscatedName("aoj.o(I)V")
 	public void method14899() {
 		super.method14899();
-		((HitmarkTypeFactory) this.field8796).method9279();
+		((HitmarkTypeFactory) this.factory).method9279();
 	}
 }

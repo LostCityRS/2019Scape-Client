@@ -26,13 +26,13 @@ public class LocType implements ConfigType {
 	public static short[] field7501 = new short[256];
 
 	@ObfuscatedName("vd.m")
-	public int field7450;
+	public int id;
 
 	@ObfuscatedName("vd.k")
-	public LocTypeFactory field7451;
+	public LocTypeFactory factory;
 
 	@ObfuscatedName("vd.f")
-	public ConfigTypeList field7452;
+	public ConfigTypeList list;
 
 	@ObfuscatedName("vd.w")
 	public byte[] field7513;
@@ -41,13 +41,13 @@ public class LocType implements ConfigType {
 	public int[][] field7454;
 
 	@ObfuscatedName("vd.u")
-	public String field7517 = "null";
+	public String name = "null";
 
 	@ObfuscatedName("vd.z")
-	public short[] field7456;
+	public short[] recol_s;
 
 	@ObfuscatedName("vd.p")
-	public short[] field7457;
+	public short[] recol_d;
 
 	@ObfuscatedName("vd.d")
 	public byte[] field7458;
@@ -77,28 +77,28 @@ public class LocType implements ConfigType {
 	public byte field7493 = 0;
 
 	@ObfuscatedName("vd.b")
-	public int field7499 = 1;
+	public int width = 1;
 
 	@ObfuscatedName("vd.h")
-	public int field7492 = 1;
+	public int length = 1;
 
 	@ObfuscatedName("vd.a")
-	public int field7467 = 2;
+	public int blockwalk = 2;
 
 	@ObfuscatedName("vd.g")
 	public int field7470 = -1;
 
 	@ObfuscatedName("vd.i")
-	public byte field7471 = 0;
+	public byte hillskew = 0;
 
 	@ObfuscatedName("vd.j")
 	public int field7472 = -1;
 
 	@ObfuscatedName("vd.t")
-	public boolean field7473 = false;
+	public boolean sharelight = false;
 
 	@ObfuscatedName("vd.ae")
-	public int field7474 = -1;
+	public int occlude = -1;
 
 	@ObfuscatedName("vd.ag")
 	public int field7475 = 960;
@@ -107,7 +107,7 @@ public class LocType implements ConfigType {
 	public int field7476 = 0;
 
 	@ObfuscatedName("vd.al")
-	public int[] field7477 = null;
+	public int[] anim = null;
 
 	@ObfuscatedName("vd.ac")
 	public int[] field7478 = null;
@@ -116,16 +116,16 @@ public class LocType implements ConfigType {
 	public boolean field7479 = false;
 
 	@ObfuscatedName("vd.aw")
-	public int field7480 = 64;
+	public int walloff = 64;
 
 	@ObfuscatedName("vd.as")
-	public int field7481 = 0;
+	public int ambient = 0;
 
 	@ObfuscatedName("vd.at")
-	public int field7494 = 0;
+	public int contrast = 0;
 
 	@ObfuscatedName("vd.ad")
-	public String[] field7483;
+	public String[] ops;
 
 	@ObfuscatedName("vd.am")
 	public int[] field7497;
@@ -146,28 +146,28 @@ public class LocType implements ConfigType {
 	public boolean field7504 = false;
 
 	@ObfuscatedName("vd.av")
-	public boolean field7490 = false;
+	public boolean mirror = false;
 
 	@ObfuscatedName("vd.ao")
-	public boolean field7491 = true;
+	public boolean shadow = true;
 
 	@ObfuscatedName("vd.aj")
-	public int field7460 = 128;
+	public int resizex = 128;
 
 	@ObfuscatedName("vd.ay")
-	public int field7527 = 128;
+	public int resizey = 128;
 
 	@ObfuscatedName("vd.ab")
-	public int field7528 = 128;
+	public int resizez = 128;
 
 	@ObfuscatedName("vd.az")
-	public int field7495 = 0;
+	public int xoff = 0;
 
 	@ObfuscatedName("vd.aa")
-	public int field7496 = 0;
+	public int yoff = 0;
 
 	@ObfuscatedName("vd.af")
-	public int field7498 = 0;
+	public int zoff = 0;
 
 	@ObfuscatedName("vd.ak")
 	public int field7522 = 0;
@@ -179,10 +179,10 @@ public class LocType implements ConfigType {
 	public int field7500 = 0;
 
 	@ObfuscatedName("vd.bl")
-	public boolean field7502 = false;
+	public boolean forcedecor = false;
 
 	@ObfuscatedName("vd.bk")
-	public boolean field7455 = false;
+	public boolean breakroutefinding = false;
 
 	@ObfuscatedName("vd.bh")
 	public int field7503 = -1;
@@ -233,7 +233,7 @@ public class LocType implements ConfigType {
 	public boolean field7518 = false;
 
 	@ObfuscatedName("vd.bv")
-	public IterableMap field7519;
+	public IterableMap params;
 
 	@ObfuscatedName("vd.br")
 	public boolean field7520 = false;
@@ -259,38 +259,38 @@ public class LocType implements ConfigType {
 	@ObfuscatedName("vd.cg")
 	public Cuboid field7468;
 
-	public LocType(int arg0, LocTypeFactory arg1, ConfigTypeList arg2) {
-		this.field7450 = arg0;
-		this.field7451 = arg1;
-		this.field7452 = arg2;
-		this.field7483 = (String[]) this.field7451.field7534.clone();
+	public LocType(int id, LocTypeFactory factory, ConfigTypeList list) {
+		this.id = id;
+		this.factory = factory;
+		this.list = list;
+		this.ops = (String[]) this.factory.defaultops.clone();
 	}
 
 	@ObfuscatedName("vd.e(Lalw;B)V")
-	public void decode(Packet arg0) {
+	public void decode(Packet buf) {
 		while (true) {
-			int var2 = arg0.g1();
-			if (var2 == 0) {
+			int code = buf.g1();
+			if (code == 0) {
 				return;
 			}
-			this.method9502(arg0, var2);
+			this.decode(buf, code);
 		}
 	}
 
 	@ObfuscatedName("vd.n(I)V")
 	public void postDecode() {
 		this.method9472();
-		if (this.field7455) {
-			this.field7467 = 0;
+		if (this.breakroutefinding) {
+			this.blockwalk = 0;
 		}
-		if (!this.field7451.field7531 && this.field7518) {
-			this.field7483 = null;
+		if (!this.factory.allowMembers && this.field7518) {
+			this.ops = null;
 			this.field7484 = null;
 		}
 	}
 
 	@ObfuscatedName("vd.u(Lalw;II)V")
-	public void method9502(Packet arg0, int arg1) {
+	public void decode(Packet arg0, int arg1) {
 		if (arg1 == 1) {
 			int var3 = arg0.g1();
 			this.field7513 = new byte[var3];
@@ -304,44 +304,44 @@ public class LocType implements ConfigType {
 				}
 			}
 		} else if (arg1 == 2) {
-			this.field7517 = arg0.gjstr().intern();
+			this.name = arg0.gjstr().intern();
 		} else if (arg1 == 14) {
-			this.field7499 = arg0.g1();
+			this.width = arg0.g1();
 		} else if (arg1 == 15) {
-			this.field7492 = arg0.g1();
+			this.length = arg0.g1();
 		} else if (arg1 == 17) {
-			this.field7467 = 0;
+			this.blockwalk = 0;
 		} else if (arg1 != 18) {
 			if (arg1 == 19) {
 				this.field7470 = arg0.g1();
 			} else if (arg1 == 21) {
-				this.field7471 = 1;
+				this.hillskew = 1;
 			} else if (arg1 == 22) {
-				this.field7473 = true;
+				this.sharelight = true;
 			} else if (arg1 == 23) {
-				this.field7474 = 1;
+				this.occlude = 1;
 			} else if (arg1 == 24) {
 				int var7 = arg0.gSmart2or4null();
 				if (var7 != -1) {
-					this.field7477 = new int[] { var7 };
+					this.anim = new int[] { var7 };
 				}
 			} else if (arg1 == 27) {
-				this.field7467 = 1;
+				this.blockwalk = 1;
 			} else if (arg1 == 28) {
-				this.field7480 = arg0.g1() << 2;
+				this.walloff = arg0.g1() << 2;
 			} else if (arg1 == 29) {
-				this.field7481 = arg0.g1b();
+				this.ambient = arg0.g1b();
 			} else if (arg1 == 39) {
-				this.field7494 = arg0.g1b();
+				this.contrast = arg0.g1b();
 			} else if (arg1 >= 30 && arg1 < 35) {
-				this.field7483[arg1 - 30] = arg0.gjstr().intern();
+				this.ops[arg1 - 30] = arg0.gjstr().intern();
 			} else if (arg1 == 40) {
 				int var8 = arg0.g1();
-				this.field7456 = new short[var8];
-				this.field7457 = new short[var8];
+				this.recol_s = new short[var8];
+				this.recol_d = new short[var8];
 				for (int var9 = 0; var9 < var8; var9++) {
-					this.field7456[var9] = (short) arg0.g2();
-					this.field7457[var9] = (short) arg0.g2();
+					this.recol_s[var9] = (short) arg0.g2();
+					this.recol_d[var9] = (short) arg0.g2();
 				}
 			} else if (arg1 == 41) {
 				int var10 = arg0.g1();
@@ -388,27 +388,27 @@ public class LocType implements ConfigType {
 					}
 				}
 			} else if (arg1 == 62) {
-				this.field7490 = true;
+				this.mirror = true;
 			} else if (arg1 == 64) {
-				this.field7491 = false;
+				this.shadow = false;
 			} else if (arg1 == 65) {
-				this.field7460 = arg0.g2();
+				this.resizex = arg0.g2();
 			} else if (arg1 == 66) {
-				this.field7527 = arg0.g2();
+				this.resizey = arg0.g2();
 			} else if (arg1 == 67) {
-				this.field7528 = arg0.g2();
+				this.resizez = arg0.g2();
 			} else if (arg1 == 69) {
 				arg0.g1();
 			} else if (arg1 == 70) {
-				this.field7495 = arg0.g2s() << 2;
+				this.xoff = arg0.g2s() << 2;
 			} else if (arg1 == 71) {
-				this.field7496 = arg0.g2s() << 2;
+				this.yoff = arg0.g2s() << 2;
 			} else if (arg1 == 72) {
-				this.field7498 = arg0.g2s() << 2;
+				this.zoff = arg0.g2s() << 2;
 			} else if (arg1 == 73) {
-				this.field7502 = true;
+				this.forcedecor = true;
 			} else if (arg1 == 74) {
-				this.field7455 = true;
+				this.breakroutefinding = true;
 			} else if (arg1 == 75) {
 				this.field7503 = arg0.g1();
 			} else if (arg1 == 77 || arg1 == 92) {
@@ -443,7 +443,7 @@ public class LocType implements ConfigType {
 					this.field7514[var25] = arg0.g2();
 				}
 			} else if (arg1 == 81) {
-				this.field7471 = 2;
+				this.hillskew = 2;
 				this.field7472 = arg0.g1() * 256;
 			} else if (arg1 == 82) {
 				this.field7516 = true;
@@ -454,12 +454,12 @@ public class LocType implements ConfigType {
 			} else if (arg1 == 91) {
 				this.field7518 = true;
 			} else if (arg1 == 93) {
-				this.field7471 = 3;
+				this.hillskew = 3;
 				this.field7472 = arg0.g2();
 			} else if (arg1 == 94) {
-				this.field7471 = 4;
+				this.hillskew = 4;
 			} else if (arg1 == 95) {
-				this.field7471 = 5;
+				this.hillskew = 5;
 				this.field7472 = arg0.g2s();
 			} else if (arg1 == 97) {
 				this.field7487 = true;
@@ -473,7 +473,7 @@ public class LocType implements ConfigType {
 			} else if (arg1 == 102) {
 				this.field7486 = arg0.g2();
 			} else if (arg1 == 103) {
-				this.field7474 = 0;
+				this.occlude = 0;
 			} else if (arg1 == 104) {
 				this.field7511 = arg0.g1();
 			} else if (arg1 == 105) {
@@ -481,10 +481,10 @@ public class LocType implements ConfigType {
 			} else if (arg1 == 106) {
 				int var26 = arg0.g1();
 				int var27 = 0;
-				this.field7477 = new int[var26];
+				this.anim = new int[var26];
 				this.field7478 = new int[var26];
 				for (int var28 = 0; var28 < var26; var28++) {
-					this.field7477[var28] = arg0.gSmart2or4null();
+					this.anim[var28] = arg0.gSmart2or4null();
 					var27 += this.field7478[var28] = arg0.g1();
 				}
 				for (int var29 = 0; var29 < var26; var29++) {
@@ -493,9 +493,9 @@ public class LocType implements ConfigType {
 			} else if (arg1 == 107) {
 				this.field7485 = arg0.g2();
 			} else if (arg1 >= 150 && arg1 < 155) {
-				this.field7483[arg1 - 150] = arg0.gjstr().intern();
-				if (!this.field7451.field7531) {
-					this.field7483[arg1 - 150] = null;
+				this.ops[arg1 - 150] = arg0.gjstr().intern();
+				if (!this.factory.allowMembers) {
+					this.ops[arg1 - 150] = null;
 				}
 			} else if (arg1 == 160) {
 				int var30 = arg0.g1();
@@ -504,7 +504,7 @@ public class LocType implements ConfigType {
 					this.field7484[var31] = arg0.g2();
 				}
 			} else if (arg1 == 162) {
-				this.field7471 = 3;
+				this.hillskew = 3;
 				this.field7472 = arg0.g4s();
 			} else if (arg1 == 163) {
 				this.field7469 = arg0.g1b();
@@ -559,9 +559,9 @@ public class LocType implements ConfigType {
 							this.field7468.field4251 = arg0.gSmart1or2s();
 						} else if (arg1 == 249) {
 							int var32 = arg0.g1();
-							if (this.field7519 == null) {
+							if (this.params == null) {
 								int var33 = IntMath.bitceil(var32);
-								this.field7519 = new IterableMap(var33);
+								this.params = new IterableMap(var33);
 							}
 							for (int var34 = 0; var34 < var32; var34++) {
 								boolean var35 = arg0.g1() == 1;
@@ -572,7 +572,7 @@ public class LocType implements ConfigType {
 								} else {
 									var37 = new IntWrapper(arg0.g4s());
 								}
-								this.field7519.method14501(var37, (long) var36);
+								this.params.method14501(var37, (long) var36);
 							}
 						}
 					}
@@ -589,14 +589,14 @@ public class LocType implements ConfigType {
 				this.field7470 = 1;
 			}
 			for (int var1 = 0; var1 < 5; var1++) {
-				if (this.field7483[var1] != null) {
+				if (this.ops[var1] != null) {
 					this.field7470 = 1;
 					break;
 				}
 			}
 		}
 		if (this.field7503 == -1) {
-			this.field7503 = this.field7467 == 0 ? 0 : 1;
+			this.field7503 = this.blockwalk == 0 ? 0 : 1;
 		}
 		if (this.method9504() || this.field7520 || this.field7505 != null) {
 			this.field7524 = true;
@@ -614,7 +614,7 @@ public class LocType implements ConfigType {
 		for (int var3 = 0; var3 < this.field7513.length; var3++) {
 			if (this.field7513[var3] == arg0) {
 				for (int var4 = 0; var4 < this.field7454[var3].length; var4++) {
-					if (!this.field7451.method9525(this.field7454[var3][var4])) {
+					if (!this.factory.method9525(this.field7454[var3][var4])) {
 						var2 = false;
 					}
 				}
@@ -631,7 +631,7 @@ public class LocType implements ConfigType {
 		boolean var2 = true;
 		for (int var3 = 0; var3 < this.field7454.length; var3++) {
 			for (int var4 = 0; var4 < this.field7454[var3].length; var4++) {
-				boolean var5 = this.field7451.method9525(this.field7454[var3][var4]);
+				boolean var5 = this.factory.method9525(this.field7454[var3][var4]);
 				var2 &= var5;
 				if (!var5) {
 					arg0.field7958 = this.field7454[var3][var4];
@@ -646,16 +646,16 @@ public class LocType implements ConfigType {
 		if (LocShape.method14238(arg2)) {
 			arg2 = LocShape.field7548.field7562;
 		}
-		long var12 = (long) ((this.field7450 << 10) + (arg2 << 3) + arg3);
+		long var12 = (long) ((this.id << 10) + (arg2 << 3) + arg3);
 		long var14 = var12 | (long) (arg0.field1595 << 29);
 		if (arg10 != null) {
 			var14 |= arg10.field7444 << 32;
 		}
 		int var16 = arg1;
-		if (this.field7471 == 3) {
+		if (this.hillskew == 3) {
 			var16 = arg1 | 0x7;
 		} else {
-			if (this.field7471 != 0 || this.field7449 != 0) {
+			if (this.hillskew != 0 || this.field7449 != 0) {
 				var16 = arg1 | 0x2;
 			}
 			if (this.field7522 != 0) {
@@ -668,12 +668,12 @@ public class LocType implements ConfigType {
 		if (arg9) {
 			var16 |= 0x40000;
 		}
-		boolean var17 = this.field7471 != 0 && (arg4 != null || arg5 != null);
+		boolean var17 = this.hillskew != 0 && (arg4 != null || arg5 != null);
 		boolean var18 = this.field7522 != 0 || this.field7449 != 0 || this.field7500 != 0;
-		WeightedCache var19 = this.field7451.field7533;
+		WeightedCache var19 = this.factory.modelCacheDynamic;
 		Pair var20;
-		synchronized (this.field7451.field7533) {
-			var20 = (Pair) this.field7451.field7533.method2930(var14);
+		synchronized (this.factory.modelCacheDynamic) {
+			var20 = (Pair) this.factory.modelCacheDynamic.method2930(var14);
 		}
 		Model var22 = (Model) (var20 == null ? null : var20.field8737);
 		HardShadow var23 = null;
@@ -702,16 +702,16 @@ public class LocType implements ConfigType {
 			}
 			var22.method1690(var16);
 			Pair var25 = new Pair(var22, var23);
-			WeightedCache var26 = this.field7451.field7533;
-			synchronized (this.field7451.field7533) {
-				this.field7451.field7533.method2921(var25, var14);
+			WeightedCache var26 = this.factory.modelCacheDynamic;
+			synchronized (this.factory.modelCacheDynamic) {
+				this.factory.modelCacheDynamic.method2921(var25, var14);
 			}
 		}
 		Model var28;
 		if (var17 || var18) {
 			var28 = var22.method1773((byte) 0, var16, true);
 			if (var17) {
-				var28.method1700(this.field7471, this.field7472, arg4, arg5, arg6, arg7, arg8);
+				var28.method1700(this.hillskew, this.field7472, arg4, arg5, arg6, arg7, arg8);
 			}
 			if (var18) {
 				var28.method1805(this.field7522, this.field7449, this.field7500);
@@ -723,9 +723,9 @@ public class LocType implements ConfigType {
 		} else {
 			var28 = var22.method1773((byte) 0, arg1, true);
 		}
-		this.field7451.field7529.field8737 = var28;
-		this.field7451.field7529.field8738 = var23;
-		return this.field7451.field7529;
+		this.factory.field7529.field8737 = var28;
+		this.factory.field7529.field8738 = var23;
+		return this.factory.field7529;
 	}
 
 	@ObfuscatedName("vd.r(Ldh;IIILcb;Lcb;IIILaaq;Lvp;B)Ldo;")
@@ -733,7 +733,7 @@ public class LocType implements ConfigType {
 		if (LocShape.method14238(arg2)) {
 			arg2 = LocShape.field7548.field7562;
 		}
-		long var12 = (long) ((this.field7450 << 10) + (arg2 << 3) + arg3);
+		long var12 = (long) ((this.id << 10) + (arg2 << 3) + arg3);
 		int var14 = arg1;
 		long var15 = var12 | (long) (arg0.field1595 << 29);
 		if (arg10 != null) {
@@ -742,10 +742,10 @@ public class LocType implements ConfigType {
 		if (arg9 != null) {
 			arg1 |= arg9.method14358();
 		}
-		if (this.field7471 == 3) {
+		if (this.hillskew == 3) {
 			arg1 |= 0x7;
 		} else {
-			if (this.field7471 != 0 || this.field7449 != 0) {
+			if (this.hillskew != 0 || this.field7449 != 0) {
 				arg1 |= 0x2;
 			}
 			if (this.field7522 != 0) {
@@ -758,10 +758,10 @@ public class LocType implements ConfigType {
 		if (LocShape.field7563.field7562 == arg2 && arg3 > 3) {
 			arg1 |= 0x5;
 		}
-		WeightedCache var17 = this.field7451.field7532;
+		WeightedCache var17 = this.factory.field7532;
 		Model var18;
-		synchronized (this.field7451.field7532) {
-			var18 = (Model) this.field7451.field7532.method2930(var15);
+		synchronized (this.factory.field7532) {
+			var18 = (Model) this.factory.field7532.method2930(var15);
 		}
 		if (var18 == null || arg0.method2394(var18.method1691(), arg1) != 0) {
 			if (var18 != null) {
@@ -771,9 +771,9 @@ public class LocType implements ConfigType {
 			if (var18 == null) {
 				return null;
 			}
-			WeightedCache var20 = this.field7451.field7532;
-			synchronized (this.field7451.field7532) {
-				this.field7451.field7532.method2921(var18, var15);
+			WeightedCache var20 = this.factory.field7532;
+			synchronized (this.factory.field7532) {
+				this.factory.field7532.method2921(var18, var15);
 			}
 		}
 		boolean var22 = false;
@@ -789,12 +789,12 @@ public class LocType implements ConfigType {
 			}
 			var18.method1693(2048);
 		}
-		if (this.field7471 != 0) {
+		if (this.hillskew != 0) {
 			if (!var22) {
 				var18 = var18.method1773((byte) 3, arg1, true);
 				var22 = true;
 			}
-			var18.method1700(this.field7471, this.field7472, arg4, arg5, arg6, arg7, arg8);
+			var18.method1700(this.hillskew, this.field7472, arg4, arg5, arg6, arg7, arg8);
 		}
 		if (this.field7522 != 0 || this.field7449 != 0 || this.field7500 != 0) {
 			if (!var22) {
@@ -811,27 +811,27 @@ public class LocType implements ConfigType {
 
 	@ObfuscatedName("vd.v(Ldh;IIILvp;I)Ldo;")
 	public Model method9476(Renderer arg0, int arg1, int arg2, int arg3, LocTypeCustomisation arg4) {
-		int var6 = this.field7481 + 64;
-		int var7 = this.field7494 * 5 + 850;
+		int var6 = this.ambient + 64;
+		int var7 = this.contrast * 5 + 850;
 		int var8 = arg1;
-		boolean var9 = this.field7490 || LocShape.field7545.field7562 == arg2 && arg3 > 3;
+		boolean var9 = this.mirror || LocShape.field7545.field7562 == arg2 && arg3 > 3;
 		if (var9) {
 			arg1 |= 0x10;
 		}
 		if (arg3 == 0) {
-			if (this.field7460 != 128 || this.field7495 != 0) {
+			if (this.resizex != 128 || this.xoff != 0) {
 				arg1 |= 0x1;
 			}
-			if (this.field7528 != 128 || this.field7498 != 0) {
+			if (this.resizez != 128 || this.zoff != 0) {
 				arg1 |= 0x4;
 			}
 		} else {
 			arg1 |= 0xD;
 		}
-		if (this.field7527 != 128 || this.field7496 != 0) {
+		if (this.resizey != 128 || this.yoff != 0) {
 			arg1 |= 0x2;
 		}
-		if (this.field7456 != null) {
+		if (this.recol_s != null) {
 			arg1 |= 0x4000;
 		}
 		if (this.field7459 != null) {
@@ -859,9 +859,9 @@ public class LocType implements ConfigType {
 				for (int var17 = 0; var17 < var14; var17++) {
 					var15 = var15 * 67783L + (long) var13[var17];
 				}
-				WeightedCache var18 = this.field7451.field7530;
-				synchronized (this.field7451.field7530) {
-					var10 = (Model) this.field7451.field7530.method2930(var15);
+				WeightedCache var18 = this.factory.modelCacheStatic;
+				synchronized (this.factory.modelCacheStatic) {
+					var10 = (Model) this.factory.modelCacheStatic.method2930(var15);
 				}
 				if (var10 != null) {
 					if (var6 != var10.method1862()) {
@@ -877,17 +877,17 @@ public class LocType implements ConfigType {
 						var20 = arg0.method2213(var20, var10.method1691());
 					}
 					ModelUnlit var21 = null;
-					ModelUnlit[] var22 = this.field7451.field7535;
-					synchronized (this.field7451.field7535) {
+					ModelUnlit[] var22 = this.factory.field7535;
+					synchronized (this.factory.field7535) {
 						int var23 = 0;
 						while (true) {
 							if (var23 >= var14) {
 								if (var14 > 1) {
-									var21 = new ModelUnlit(this.field7451.field7535, var14);
+									var21 = new ModelUnlit(this.factory.field7535, var14);
 								}
 								break;
 							}
-							byte[] var24 = this.field7451.method9530(var13[var23]);
+							byte[] var24 = this.factory.method9530(var13[var23]);
 							if (var24 == null) {
 								return null;
 							}
@@ -896,15 +896,15 @@ public class LocType implements ConfigType {
 								var21.method1947(2);
 							}
 							if (var14 > 1) {
-								this.field7451.field7535[var23] = var21;
+								this.factory.field7535[var23] = var21;
 							}
 							var23++;
 						}
 					}
-					var10 = arg0.method2211(var21, var20, this.field7451.field7536, var6, var7);
-					WeightedCache var26 = this.field7451.field7530;
-					synchronized (this.field7451.field7530) {
-						this.field7451.field7530.method2921(var10, var15);
+					var10 = arg0.method2211(var21, var20, this.factory.field7536, var6, var7);
+					WeightedCache var26 = this.factory.modelCacheStatic;
+					synchronized (this.factory.modelCacheStatic) {
+						this.factory.modelCacheStatic.method2921(var10, var15);
 					}
 				}
 			}
@@ -934,18 +934,18 @@ public class LocType implements ConfigType {
 		} else if (var29 == 3) {
 			var28.method1694(12288);
 		}
-		if (this.field7456 != null) {
+		if (this.recol_s != null) {
 			short[] var30;
 			if (arg4 == null || arg4.field7442 == null) {
-				var30 = this.field7457;
+				var30 = this.recol_d;
 			} else {
 				var30 = arg4.field7442;
 			}
-			for (int var31 = 0; var31 < this.field7456.length; var31++) {
+			for (int var31 = 0; var31 < this.recol_s.length; var31++) {
 				if (this.field7458 == null || var31 >= this.field7458.length) {
-					var28.method1859(this.field7456[var31], var30[var31]);
+					var28.method1859(this.recol_s[var31], var30[var31]);
 				} else {
-					var28.method1859(this.field7456[var31], field7501[this.field7458[var31] & 0xFF]);
+					var28.method1859(this.recol_s[var31], field7501[this.field7458[var31] & 0xFF]);
 				}
 			}
 		}
@@ -963,11 +963,11 @@ public class LocType implements ConfigType {
 		if (this.field7493 != 0) {
 			var28.method1745(this.field7469, this.field7464, this.field7465, this.field7493 & 0xFF);
 		}
-		if (this.field7460 != 128 || this.field7527 != 128 || this.field7528 != 128) {
-			var28.method1699(this.field7460, this.field7527, this.field7528);
+		if (this.resizex != 128 || this.resizey != 128 || this.resizez != 128) {
+			var28.method1699(this.resizex, this.resizey, this.resizez);
 		}
-		if (this.field7495 != 0 || this.field7496 != 0 || this.field7498 != 0) {
-			var28.method1805(this.field7495, this.field7496, this.field7498);
+		if (this.xoff != 0 || this.yoff != 0 || this.zoff != 0) {
+			var28.method1805(this.xoff, this.yoff, this.zoff);
 		}
 		var28.method1690(var8);
 		return var28;
@@ -988,29 +988,29 @@ public class LocType implements ConfigType {
 			}
 		}
 		if (var3 >= 0 && var3 < this.field7505.length - 1) {
-			return this.field7505[var3] == -1 ? null : (LocType) this.field7452.list(this.field7505[var3]);
+			return this.field7505[var3] == -1 ? null : (LocType) this.list.getById(this.field7505[var3]);
 		} else {
 			int var6 = this.field7505[this.field7505.length - 1];
-			return var6 == -1 ? null : (LocType) this.field7452.list(var6);
+			return var6 == -1 ? null : (LocType) this.list.getById(var6);
 		}
 	}
 
 	@ObfuscatedName("vd.s(III)I")
 	public int method9481(int arg0, int arg1) {
-		if (this.field7519 == null) {
+		if (this.params == null) {
 			return arg1;
 		} else {
-			IntWrapper var3 = (IntWrapper) this.field7519.method14495((long) arg0);
+			IntWrapper var3 = (IntWrapper) this.params.method14495((long) arg0);
 			return var3 == null ? arg1 : var3.field11442;
 		}
 	}
 
 	@ObfuscatedName("vd.y(ILjava/lang/String;B)Ljava/lang/String;")
 	public String method9479(int arg0, String arg1) {
-		if (this.field7519 == null) {
+		if (this.params == null) {
 			return arg1;
 		} else {
-			ObjectWrapper var3 = (ObjectWrapper) this.field7519.method14495((long) arg0);
+			ObjectWrapper var3 = (ObjectWrapper) this.params.method14495((long) arg0);
 			return var3 == null ? arg1 : (String) var3.field11436;
 		}
 	}
@@ -1022,7 +1022,7 @@ public class LocType implements ConfigType {
 		}
 		for (int var1 = 0; var1 < this.field7505.length; var1++) {
 			if (this.field7505[var1] != -1) {
-				LocType var2 = (LocType) this.field7452.list(this.field7505[var1]);
+				LocType var2 = (LocType) this.list.getById(this.field7505[var1]);
 				if (var2.field7508 != -1 || var2.field7514 != null) {
 					return true;
 				}
@@ -1033,24 +1033,24 @@ public class LocType implements ConfigType {
 
 	@ObfuscatedName("vd.x(B)Z")
 	public boolean method9504() {
-		return this.field7477 != null;
+		return this.anim != null;
 	}
 
 	@ObfuscatedName("vd.b(I)Z")
 	public boolean method9514() {
-		return this.field7477 != null && this.field7477.length > 1;
+		return this.anim != null && this.anim.length > 1;
 	}
 
 	@ObfuscatedName("vd.h(S)I")
 	public int method9483() {
-		if (this.field7477 != null) {
-			if (this.field7477.length <= 1) {
-				return this.field7477[0];
+		if (this.anim != null) {
+			if (this.anim.length <= 1) {
+				return this.anim[0];
 			}
 			int var1 = (int) (Math.random() * 65535.0D);
-			for (int var2 = 0; var2 < this.field7477.length; var2++) {
+			for (int var2 = 0; var2 < this.anim.length; var2++) {
 				if (var1 <= this.field7478[var2]) {
-					return this.field7477[var2];
+					return this.anim[var2];
 				}
 				var1 -= this.field7478[var2];
 			}
@@ -1060,14 +1060,14 @@ public class LocType implements ConfigType {
 
 	@ObfuscatedName("vd.a(I)[I")
 	public int[] method9484() {
-		return this.field7477;
+		return this.anim;
 	}
 
 	@ObfuscatedName("vd.g(IB)Z")
 	public boolean method9493(int arg0) {
-		if (this.field7477 != null && arg0 != -1) {
-			for (int var2 = 0; var2 < this.field7477.length; var2++) {
-				if (this.field7477[var2] == arg0) {
+		if (this.anim != null && arg0 != -1) {
+			for (int var2 = 0; var2 < this.anim.length; var2++) {
+				if (this.anim[var2] == arg0) {
 					return true;
 				}
 			}

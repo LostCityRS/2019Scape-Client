@@ -31,13 +31,13 @@ public class MSIType implements ConfigType {
 	}
 
 	@ObfuscatedName("aco.e(Lalw;B)V")
-	public void decode(Packet arg0) {
+	public void decode(Packet buf) {
 		while (true) {
-			int var2 = arg0.g1();
+			int var2 = buf.g1();
 			if (var2 == 0) {
 				return;
 			}
-			this.method15066(arg0, var2);
+			this.method15066(buf, var2);
 		}
 	}
 

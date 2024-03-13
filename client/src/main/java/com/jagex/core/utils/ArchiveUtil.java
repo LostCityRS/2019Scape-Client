@@ -12,7 +12,7 @@ public class ArchiveUtil {
 	}
 
 	@ObfuscatedName("sc.e(Lpy;Lxq;B)I")
-	public static int method8370(Js5 arg0, Js5ConfigGroup arg1) {
+	public static int getArchiveSize(Js5 arg0, Js5ConfigGroup arg1) {
 		if (arg0 == null) {
 			return 0;
 		} else if (arg1.getGroupSize() > 1) {
@@ -24,7 +24,7 @@ public class ArchiveUtil {
 	}
 
 	@ObfuscatedName("wx.n(Lpy;Lxq;II)[B")
-	public static byte[] method9853(Js5 arg0, Js5ConfigGroup arg1, int arg2) {
+	public static byte[] getFile(Js5 arg0, Js5ConfigGroup arg1, int arg2) {
 		return arg1.getGroupSize() > 1 ? arg0.getfile(arg1.getClientGroupId(arg2), arg1.getClientFileId(arg2)) : arg0.getfile(arg1.id, arg2);
 	}
 }

@@ -17,18 +17,18 @@ public class HeadbarTypeList extends CachingConfigTypeList {
 	@ObfuscatedName("aol.r(I)V")
 	public void method14895() {
 		super.method14895();
-		((HeadbarTypeFactory) this.field8796).method9166();
+		((HeadbarTypeFactory) this.factory).method9166();
 	}
 
 	@ObfuscatedName("aol.v(II)V")
 	public void method14896(int arg0) {
 		super.method14896(arg0);
-		((HeadbarTypeFactory) this.field8796).method9172(arg0);
+		((HeadbarTypeFactory) this.factory).method9172(arg0);
 	}
 
 	@ObfuscatedName("aol.o(I)V")
 	public void method14899() {
 		super.method14899();
-		((HeadbarTypeFactory) this.field8796).method9168();
+		((HeadbarTypeFactory) this.factory).method9168();
 	}
 }

@@ -10,5 +10,5 @@ public interface ConfigType {
 	void postDecode();
 
 	@ObfuscatedName("ay.e(Lalw;B)V")
-	void decode(Packet arg0);
+	void decode(Packet buf);
 }

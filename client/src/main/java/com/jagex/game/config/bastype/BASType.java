@@ -232,13 +232,13 @@ public class BASType implements ConfigRelated, ConfigType {
 	}
 
 	@ObfuscatedName("vr.e(Lalw;B)V")
-	public void decode(Packet arg0) {
+	public void decode(Packet buf) {
 		while (true) {
-			int var2 = arg0.g1();
+			int var2 = buf.g1();
 			if (var2 == 0) {
 				return;
 			}
-			this.method9298(arg0, var2);
+			this.method9298(buf, var2);
 		}
 	}
 
