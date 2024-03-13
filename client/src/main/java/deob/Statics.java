@@ -29,9 +29,7 @@ import com.jagex.game.network.protocol.ClientProt;
 import com.jagex.game.network.protocol.ServerProt;
 import com.jagex.game.scene.ChangeLocationRequest;
 import com.jagex.game.script.*;
-import com.jagex.game.shared.console.DeveloperConsole;
 import com.jagex.game.shared.framework.gwc.GWC;
-import com.jagex.game.shared.framework.gwc.GWCLocation;
 import com.jagex.game.shared.framework.gwc.GWCWorld;
 import com.jagex.game.world.*;
 import com.jagex.game.world.entity.*;
@@ -70,12 +68,8 @@ import rs2.client.scene.entities.PathingEntity;
 
 import java.applet.Applet;
 import java.awt.*;
-import java.awt.datatransfer.DataFlavor;
-import java.awt.datatransfer.StringSelection;
-import java.awt.datatransfer.Transferable;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.List;
@@ -83,18 +77,6 @@ import java.util.Queue;
 import java.util.*;
 
 public class Statics {
-
-	@ObfuscatedName("afh.i")
-	public static int field10232;
-
-	@ObfuscatedName("afp.s")
-	public static FontMetrics field10268;
-
-	@ObfuscatedName("agk.ae")
-	public static Sprite[] field10302;
-
-	@ObfuscatedName("agr.x")
-	public static Font field10355;
 
 	@ObfuscatedName("bz.c")
 	public static Object field1039;
@@ -150,9 +132,6 @@ public class Statics {
 	@ObfuscatedName("aml.r")
 	public static int field11775;
 
-	@ObfuscatedName("ann.j")
-	public static Sprite[] field11793;
-
 	@ObfuscatedName("anq.al")
 	public static int field11802;
 
@@ -165,12 +144,6 @@ public class Statics {
 	@ObfuscatedName("ank.bt")
 	public static Sprite field11831;
 
-	@ObfuscatedName("aoh.g")
-	public static int field11888;
-
-	@ObfuscatedName("apy.c")
-	public static int field11891;
-
 	@ObfuscatedName("apn.o")
 	public static MinimenuEntry field11913;
 
@@ -179,9 +152,6 @@ public class Statics {
 
 	@ObfuscatedName("cr.bi")
 	public static Sprite field1224;
-
-	@ObfuscatedName("arc.r")
-	public static int field12241;
 
 	@ObfuscatedName("arr.l")
 	public static Js5 field12325;
@@ -282,9 +252,6 @@ public class Statics {
 	@ObfuscatedName("gp.u")
 	public static int field1921;
 
-	@ObfuscatedName("gc.ah")
-	public static Sprite field1940;
-
 	@ObfuscatedName("gh.as")
 	public static int[] field1970;
 
@@ -324,9 +291,6 @@ public class Statics {
 	@ObfuscatedName("iv.v")
 	public static String[] field2615;
 
-	@ObfuscatedName("is.o")
-	public static FontMetrics field2657;
-
 	@ObfuscatedName("ic.p")
 	public static long field2826;
 
@@ -344,9 +308,6 @@ public class Statics {
 
 	@ObfuscatedName("jg.aw")
 	public static int field3005;
-
-	@ObfuscatedName("jh.l")
-	public static int field3011;
 
 	@ObfuscatedName("kg.ca")
 	public static Component field3044;
@@ -447,56 +408,17 @@ public class Statics {
 	@ObfuscatedName("rk.p")
 	public static String field4964;
 
-	@ObfuscatedName("l.u")
-	public static int field504;
-
-	@ObfuscatedName("l.n")
-	public static int field505;
-
-	@ObfuscatedName("l.e")
-	public static int field506;
-
-	@ObfuscatedName("l.k")
-	public static int field507;
-
-	@ObfuscatedName("l.w")
-	public static int field508;
-
-	@ObfuscatedName("l.m")
-	public static int field509;
-
-	@ObfuscatedName("l.t")
-	public static Sprite[] field510;
-
-	@ObfuscatedName("l.z")
-	public static int field511;
-
 	@ObfuscatedName("sw.ah")
 	public static Sprite field5118;
-
-	@ObfuscatedName("l.d")
-	public static int field512;
 
 	@ObfuscatedName("sw.ag")
 	public static Model field5129;
 
-	@ObfuscatedName("l.h")
-	public static Sprite[] field513;
-
 	@ObfuscatedName("sw.al")
 	public static Sprite field5137;
 
-	@ObfuscatedName("l.f")
-	public static int field514;
-
 	@ObfuscatedName("u.f")
 	public static CreateConnectStage field517;
-
-	@ObfuscatedName("p.n")
-	public static Process field520;
-
-	@ObfuscatedName("v.u")
-	public static int field533;
 
 	@ObfuscatedName("o.ai")
 	public static int field554;
@@ -549,14 +471,8 @@ public class Statics {
 	@ObfuscatedName("sy.ab")
 	public static int field6708;
 
-	@ObfuscatedName("sj.al")
-	public static Sprite[] field6719;
-
 	@ObfuscatedName("tb.j")
 	public static int[] field6767;
-
-	@ObfuscatedName("tw.v")
-	public static FontMetrics field6778;
 
 	@ObfuscatedName("ai.q")
 	public static CutsceneLoadingStage field694;
@@ -603,9 +519,6 @@ public class Statics {
 	@ObfuscatedName("as.cq")
 	public static Font field717;
 
-	@ObfuscatedName("uj.ag")
-	public static Sprite field7207;
-
 	@ObfuscatedName("uw.cw")
 	public static Sprite field7241;
 
@@ -627,9 +540,6 @@ public class Statics {
 	@ObfuscatedName("vi.l")
 	public static Js5 field7411;
 
-	@ObfuscatedName("va.w")
-	public static int field7414;
-
 	@ObfuscatedName("va.d")
 	public static Packet field7415;
 
@@ -645,26 +555,8 @@ public class Statics {
 	@ObfuscatedName("vz.af")
 	public static int field7542;
 
-	@ObfuscatedName("vc.p")
-	public static int field7572;
-
 	@ObfuscatedName("vn.y")
 	public static short[][] field7577;
-
-	@ObfuscatedName("ap.m")
-	public static int field763;
-
-	@ObfuscatedName("wb.p")
-	public static int field7642;
-
-	@ObfuscatedName("wb.f")
-	public static GWCWorld[] field7644;
-
-	@ObfuscatedName("wb.z")
-	public static GWCLocation[] field7647;
-
-	@ObfuscatedName("ap.c")
-	public static long field765;
 
 	@ObfuscatedName("wm.aj")
 	public static int field7658;
@@ -674,12 +566,6 @@ public class Statics {
 
 	@ObfuscatedName("wx.aj")
 	public static int field7676;
-
-	@ObfuscatedName("ap.n")
-	public static int field768;
-
-	@ObfuscatedName("ap.o")
-	public static FileOutputStream field773;
 
 	@ObfuscatedName("xl.n")
 	public static MovingParticle[] field7794;
@@ -716,12 +602,6 @@ public class Statics {
 
 	@ObfuscatedName("zy.u")
 	public static Js5 field8302;
-
-	@ObfuscatedName("zj.y")
-	public static Font field8321;
-
-	@ObfuscatedName("zj.b")
-	public static Sprite[] field8323;
 
 	@ObfuscatedName("zc.m")
 	public static MinimenuEntry field8348;
@@ -789,20 +669,11 @@ public class Statics {
 	@ObfuscatedName("acr.x")
 	public static java.awt.Font field9147;
 
-	@ObfuscatedName("acj.a")
-	public static Sprite[] field9149;
-
 	@ObfuscatedName("acs.f")
 	public static Applet field9164;
 
-	@ObfuscatedName("adh.q")
-	public static Font field9184;
-
 	@ObfuscatedName("adz.w")
 	public static ServerAddress field9200;
-
-	@ObfuscatedName("adg.l")
-	public static int field9210;
 
 	@ObfuscatedName("adw.bx")
 	public static Sprite field9253;
@@ -1396,9 +1267,9 @@ public class Statics {
 			return;
 		}
 		GWC.method570(field7415.data);
-		WorldSwitcher.field8748 = new GWCWorld[field533];
+		WorldSwitcher.field8748 = new GWCWorld[GWC.field533];
 		int var2 = 0;
-		for (int var3 = field7414; var3 <= field3011; var3++) {
+		for (int var3 = GWC.field7414; var3 <= GWC.field3011; var3++) {
 			GWCWorld var4 = GWC.method4944(var3);
 			if (var4 != null) {
 				WorldSwitcher.field8748[var2++] = var4;
@@ -1484,104 +1355,6 @@ public class Statics {
 	@ObfuscatedName("gs.x(S)I")
 	public static int method3582() {
 		return 13;
-	}
-
-	@ObfuscatedName("xd.u(B)V")
-	public static void method10298() {
-		if (DeveloperConsole.field776 * 36 < 102) {
-			DeveloperConsole.field776 = DeveloperConsole.field776 * 36 + 6;
-		}
-		if (DeveloperConsole.field772 != -1 && field765 < MonotonicTime.method3655()) {
-			for (int var0 = DeveloperConsole.field772; var0 < field2615.length; var0++) {
-				if (field2615[var0].startsWith("pause")) {
-					int var1 = 5;
-					try {
-						var1 = Integer.parseInt(field2615[var0].substring(6));
-					} catch (Exception var14) {
-					}
-					DeveloperConsole.addline("Pausing for " + var1 + " seconds...");
-					DeveloperConsole.field772 = var0 + 1;
-					field765 = MonotonicTime.method3655() + (long) (var1 * 1000);
-					return;
-				}
-				DeveloperConsole.currententry = field2615[var0];
-				DeveloperConsole.method14718(false);
-			}
-			DeveloperConsole.field772 = -1;
-		}
-		if (Client.field10817 != 0) {
-			DeveloperConsole.field771 -= Client.field10817 * 5;
-			if (DeveloperConsole.field771 >= DeveloperConsole.field764) {
-				DeveloperConsole.field771 = DeveloperConsole.field764 - 1;
-			}
-			if (DeveloperConsole.field771 < 0) {
-				DeveloperConsole.field771 = 0;
-			}
-			Client.field10817 = 0;
-		}
-		for (int var3 = 0; var3 < Client.field10819; var3++) {
-			KeyboardEvent var4 = Client.field11067[var3];
-			int var5 = var4.method9141();
-			char var6 = var4.method9131();
-			int var7 = var4.method9134();
-			if (var5 == 84) {
-				DeveloperConsole.method14718(false);
-			}
-			if (var5 == 80) {
-				DeveloperConsole.method14718(true);
-			} else if (var5 == 66 && (var7 & 0x4) != 0) {
-				if (Client.field3428 != null) {
-					String var8 = "";
-					for (int var9 = field4845.length - 1; var9 >= 0; var9--) {
-						if (field4845[var9] != null && field4845[var9].length() > 0) {
-							var8 = var8 + field4845[var9] + '\n';
-						}
-					}
-					Client.field3428.setContents(new StringSelection(var8), null);
-				}
-			} else if (var5 == 67 && (var7 & 0x4) != 0) {
-				if (Client.field3428 != null) {
-					try {
-						Transferable var10 = Client.field3428.getContents(null);
-						if (var10 != null) {
-							String var11 = (String) var10.getTransferData(DataFlavor.stringFlavor);
-							if (var11 != null) {
-								String[] var12 = StringTools.method17361(var11, '\n');
-								DeveloperConsole.method15383(var12);
-							}
-						}
-					} catch (Exception var15) {
-					}
-				}
-			} else if (var5 == 85 && DeveloperConsole.commandcharpointer > 0) {
-				DeveloperConsole.currententry = DeveloperConsole.currententry.substring(0, DeveloperConsole.commandcharpointer - 1) + DeveloperConsole.currententry.substring(DeveloperConsole.commandcharpointer);
-				DeveloperConsole.commandcharpointer--;
-			} else if (var5 == 101 && DeveloperConsole.commandcharpointer < DeveloperConsole.currententry.length()) {
-				DeveloperConsole.currententry = DeveloperConsole.currententry.substring(0, DeveloperConsole.commandcharpointer) + DeveloperConsole.currententry.substring(DeveloperConsole.commandcharpointer + 1);
-			} else if (var5 == 96 && DeveloperConsole.commandcharpointer > 0) {
-				DeveloperConsole.commandcharpointer--;
-			} else if (var5 == 97 && DeveloperConsole.commandcharpointer < DeveloperConsole.currententry.length()) {
-				DeveloperConsole.commandcharpointer++;
-			} else if (var5 == 102) {
-				DeveloperConsole.commandcharpointer = 0;
-			} else if (var5 == 103) {
-				DeveloperConsole.commandcharpointer = DeveloperConsole.currententry.length();
-			} else if (var5 == 104 && DeveloperConsole.commandpointer < field4845.length) {
-				DeveloperConsole.commandpointer++;
-				DeveloperConsole.method3085();
-				DeveloperConsole.commandcharpointer = DeveloperConsole.currententry.length();
-			} else if (var5 == 105 && DeveloperConsole.commandpointer > 0) {
-				DeveloperConsole.commandpointer--;
-				DeveloperConsole.method3085();
-				DeveloperConsole.commandcharpointer = DeveloperConsole.currententry.length();
-			} else if (StringTools.method2883(var6) || "\\/.:, _-+[]~@".indexOf(var6) != -1) {
-				DeveloperConsole.currententry = DeveloperConsole.currententry.substring(0, DeveloperConsole.commandcharpointer) + Client.field11067[var3].method9131() + DeveloperConsole.currententry.substring(DeveloperConsole.commandcharpointer);
-				DeveloperConsole.commandcharpointer++;
-			}
-		}
-		Client.field10819 = 0;
-		Client.field10822 = 0;
-		Client.method9734();
 	}
 
 	@ObfuscatedName("gp.f(B)V")
@@ -2119,15 +1892,15 @@ public class Statics {
 		if (var32 != null) {
 			var34 = var32.method1435();
 		}
-		Font var35 = field8321;
-		FontMetrics var36 = field6778;
+		Font var35 = DefaultSprites.field8321;
+		FontMetrics var36 = DefaultSprites.field6778;
 		if (var8.field2388 == 1) {
-			var35 = field9184;
-			var36 = field2657;
+			var35 = DefaultSprites.field9184;
+			var36 = DefaultSprites.field2657;
 		}
 		if (var8.field2388 == 2) {
-			var35 = field10355;
-			var36 = field10268;
+			var35 = DefaultSprites.field10355;
+			var36 = DefaultSprites.field10268;
 		}
 		Minimap.method3654(arg2, arg1, arg3, arg4, arg5, arg6, var34, var8.field2370, var35, var36, var8.field2366);
 	}
@@ -2263,7 +2036,7 @@ public class Statics {
 		}
 		int var13 = arg4 * var12 + arg5 * var11 >> 14;
 		int var14 = arg5 * var12 - arg4 * var11 >> 14;
-		Sprite var15 = field513[arg6];
+		Sprite var15 = DefaultSprites.field513[arg6];
 		int var16 = var15.method1459();
 		int var17 = var15.method1435();
 		int var18 = arg0.field2196 / 2 + var13 - var16 / 2;
@@ -2293,7 +2066,7 @@ public class Statics {
 				var36 = arg0.field2196 / 2;
 			}
 			int var37 = Math.abs((int) -((double) var36 * Math.sin(1.5707963267948966D) / Math.sin(var34)));
-			field6719[arg6].method1450((float) arg0.field2196 / 2.0F + (float) arg2 + 0.0F, (float) arg0.field2197 / 2.0F + (float) arg3 - 0.0F, (float) field6719[arg6].method1434() / 2.0F, (float) var37, 4096, (int) (-var25 / 6.283185307179586D * 65535.0D));
+			DefaultSprites.field6719[arg6].method1450((float) arg0.field2196 / 2.0F + (float) arg2 + 0.0F, (float) arg0.field2197 / 2.0F + (float) arg3 - 0.0F, (float) DefaultSprites.field6719[arg6].method1434() / 2.0F, (float) var37, 4096, (int) (-var25 / 6.283185307179586D * 65535.0D));
 		} else if (arg1 == null) {
 			var15.method1439(arg2 + var18, arg3 + var20);
 		} else {
@@ -2439,7 +2212,7 @@ public class Statics {
 			arg10 = arg11;
 		}
 		String var12 = MiniMenu.method15244(arg7);
-		arg8.method2689(var12, arg2 + 3, arg6, arg10, 0, Client.field10890, Client.field1681, field10302, null);
+		arg8.method2689(var12, arg2 + 3, arg6, arg10, 0, Client.field10890, Client.field1681, DefaultSprites.field10302, null);
 	}
 
 	@ObfuscatedName("zd.bc(IB)Z")
@@ -2788,7 +2561,7 @@ public class Statics {
 		}
 		int var5 = Client.field10885 * 2 + var4 & 0x3FFF;
 		int var6 = var5 << 2;
-		field7207.method1455((float) arg0.field2196 / 2.0F + (float) arg1, (float) arg0.field2197 / 2.0F + (float) arg2, 4226, var6, var3.field2147, arg1, arg2);
+		DefaultSprites.field7207.method1455((float) arg0.field2196 / 2.0F + (float) arg1, (float) arg0.field2197 / 2.0F + (float) arg2, 4226, var6, var3.field2147, arg1, arg2);
 	}
 
 	@ObfuscatedName("cj.ll(Ljava/lang/String;I)V")

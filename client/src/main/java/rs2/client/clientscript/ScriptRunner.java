@@ -9098,7 +9098,7 @@ public final class ScriptRunner {
 		FontMetrics var2 = arg0.method3943(Client.field7538, Client.field10833);
 		int var3 = arg1.field8216[--arg1.field8226];
 		int var4 = arg1.field8216[--arg1.field8226];
-		int var5 = var2.method14542(arg0.field2261, arg0.field2196, arg0.field2229, var4, var3, Statics.field10302);
+		int var5 = var2.method14542(arg0.field2261, arg0.field2196, arg0.field2229, var4, var3, DefaultSprites.field10302);
 		arg1.field8216[++arg1.field8226 - 1] = var5;
 	}
 
@@ -9120,7 +9120,7 @@ public final class ScriptRunner {
 	public static final void method1923(Component arg0, ClientScriptState arg1) {
 		FontMetrics var2 = arg0.method3943(Client.field7538, Client.field10833);
 		int var3 = arg1.field8216[--arg1.field8226];
-		Point var4 = var2.method14541(arg0.field2261, arg0.field2196, arg0.field2229, var3, Statics.field10302);
+		Point var4 = var2.method14541(arg0.field2261, arg0.field2196, arg0.field2229, var3, DefaultSprites.field10302);
 		arg1.field8216[++arg1.field8226 - 1] = var4.x;
 		arg1.field8216[++arg1.field8226 - 1] = var4.y;
 	}
@@ -11747,7 +11747,7 @@ public final class ScriptRunner {
 		int var2 = arg0.field8216[arg0.field8226];
 		int var3 = arg0.field8216[arg0.field8226 + 1];
 		FontMetrics var4 = Client.field7538.method6163(Client.field10833, var3);
-		arg0.field8216[++arg0.field8226 - 1] = var4.method14538(var1, var2, Statics.field10302);
+		arg0.field8216[++arg0.field8226 - 1] = var4.method14538(var1, var2, DefaultSprites.field10302);
 	}
 
 	@ObfuscatedName("hv.afr(Lyf;I)V")
@@ -11757,7 +11757,7 @@ public final class ScriptRunner {
 		int var2 = arg0.field8216[arg0.field8226];
 		int var3 = arg0.field8216[arg0.field8226 + 1];
 		FontMetrics var4 = Client.field7538.method6163(Client.field10833, var3);
-		arg0.field8216[++arg0.field8226 - 1] = var4.method14551(var1, var2, Statics.field10302);
+		arg0.field8216[++arg0.field8226 - 1] = var4.method14551(var1, var2, DefaultSprites.field10302);
 	}
 
 	@ObfuscatedName("vc.afh(Lyf;I)V")
@@ -11768,7 +11768,7 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226 + 1];
 		int var4 = arg0.field8216[arg0.field8226 + 2];
 		FontMetrics var5 = Client.field7538.method6163(Client.field10833, var3);
-		String var6 = var5.method14539(var1, var2, Statics.field10302, var4);
+		String var6 = var5.method14539(var1, var2, DefaultSprites.field10302, var4);
 		arg0.field8218[++arg0.field8211 - 1] = var6 == null ? "" : var6;
 	}
 
@@ -11909,7 +11909,7 @@ public final class ScriptRunner {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
 		int var2 = arg0.field8216[--arg0.field8226];
 		FontMetrics var3 = Client.field7538.method6163(Client.field10833, var2);
-		arg0.field8216[++arg0.field8226 - 1] = var3.method14533(var1, Statics.field10302);
+		arg0.field8216[++arg0.field8226 - 1] = var3.method14533(var1, DefaultSprites.field10302);
 	}
 
 	@ObfuscatedName("ap.agj(Lyf;B)V")
@@ -15491,7 +15491,7 @@ public final class ScriptRunner {
 			WorldSwitcher.field8754 = true;
 			ServerConnection var1 = Client.method640();
 			ClientMessage var2 = Statics.method1604(ClientProt.WORLDLIST_FETCH, var1.field794);
-			var2.field11432.p4(Statics.field7642);
+			var2.field11432.p4(GWC.field7642);
 			var1.method934(var2);
 			arg0.field8216[++arg0.field8226 - 1] = 0;
 		}

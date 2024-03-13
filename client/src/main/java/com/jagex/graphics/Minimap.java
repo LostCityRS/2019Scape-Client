@@ -554,7 +554,7 @@ public class Minimap {
 				int var28 = (int) (var25.field6760 >> 14 & 0x3FFFL) - var6.field7427;
 				int var29 = var27 * 4 + 2 - var7 / 128;
 				int var30 = var28 * 4 + 2 - var8 / 128;
-				method715(arg1, var5, arg2, arg3, var29, var30, Statics.field510[0]);
+				method715(arg1, var5, arg2, arg3, var29, var30, DefaultSprites.field510[0]);
 			}
 		}
 		method4838(arg0, var7, var8, arg1, var5, arg2, arg3);
@@ -564,7 +564,7 @@ public class Minimap {
 			if (field731 != -1) {
 				int var31 = field731 * 4 + 2 - var7 / 128 + (Client.field4490.method16546() - 1) * 2;
 				int var32 = field718 * 4 + 2 - var8 / 128 + (Client.field4490.method16546() - 1) * 2;
-				method4142(arg1, var5, arg2 - Statics.field11888, arg3 - Statics.field10232, var31, var32, Statics.field9149[field730 ? 1 : 0], 100.0D, MapAlignmentX.field2420, MapAlignmentY.field2426);
+				method4142(arg1, var5, arg2 - DefaultSprites.field11888, arg3 - DefaultSprites.field10232, var31, var32, DefaultSprites.field9149[field730 ? 1 : 0], 100.0D, MapAlignmentX.field2420, MapAlignmentY.field2426);
 			}
 			if (!Client.field4490.field12071.method10195()) {
 				arg0.method2301(arg1.field2196 / 2 + arg2 - 1, arg1.field2197 / 2 + arg3 - 1, 3, 3, -1);
@@ -589,7 +589,7 @@ public class Minimap {
 						int var12 = (int) var11.field4308 / 128 - arg1 / 128;
 						int var13 = (int) var11.field4313 / 128 - arg2 / 128;
 						if (var10.field2763 == -1) {
-							method715(arg3, arg4, arg5, arg6, var12, var13, Statics.field510[1]);
+							method715(arg3, arg4, arg5, arg6, var12, var13, DefaultSprites.field510[1]);
 						} else {
 							Statics.method15085(arg0, arg4, arg3, arg5, arg6, var12, var13, var10.field2763);
 						}
@@ -629,21 +629,21 @@ public class Minimap {
 					var18 = true;
 				}
 				if (var9.field12061 != null && var9.field12061.field7892 != -1 && ((NPCType) Client.field7961.list(var9.field12061.field7892)).field2690) {
-					method715(arg2, arg3, arg4, arg5, var11, var12, Statics.field510[1]);
+					method715(arg2, arg3, arg4, arg5, var11, var12, DefaultSprites.field510[1]);
 				} else if (CommunityPartnerType.field1947 == var9.field12070) {
-					method715(arg2, arg3, arg4, arg5, var11, var12, Statics.field510[8]);
+					method715(arg2, arg3, arg4, arg5, var11, var12, DefaultSprites.field510[8]);
 				} else if (CommunityPartnerType.field1948 == var9.field12070) {
-					method715(arg2, arg3, arg4, arg5, var11, var12, Statics.field510[6]);
+					method715(arg2, arg3, arg4, arg5, var11, var12, DefaultSprites.field510[6]);
 				} else if (var18) {
-					method715(arg2, arg3, arg4, arg5, var11, var12, Statics.field510[4]);
+					method715(arg2, arg3, arg4, arg5, var11, var12, DefaultSprites.field510[4]);
 				} else if (var13) {
-					method715(arg2, arg3, arg4, arg5, var11, var12, Statics.field510[3]);
+					method715(arg2, arg3, arg4, arg5, var11, var12, DefaultSprites.field510[3]);
 				} else if (var9.field12048) {
-					method715(arg2, arg3, arg4, arg5, var11, var12, Statics.field510[7]);
+					method715(arg2, arg3, arg4, arg5, var11, var12, DefaultSprites.field510[7]);
 				} else if (var16) {
-					method715(arg2, arg3, arg4, arg5, var11, var12, Statics.field510[5]);
+					method715(arg2, arg3, arg4, arg5, var11, var12, DefaultSprites.field510[5]);
 				} else {
-					method715(arg2, arg3, arg4, arg5, var11, var12, Statics.field510[2]);
+					method715(arg2, arg3, arg4, arg5, var11, var12, DefaultSprites.field510[2]);
 				}
 			}
 		}

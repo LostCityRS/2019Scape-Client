@@ -59,11 +59,11 @@ public class WorldSwitcher {
 		if (!field8759) {
 			return;
 		}
-		if (field8757 < Statics.field7414) {
-			field8757 = Statics.field7414;
+		if (field8757 < GWC.field7414) {
+			field8757 = GWC.field7414;
 		}
 		while (true) {
-			while (field8757 < Statics.field3011) {
+			while (field8757 < GWC.field3011) {
 				GWCWorld var0 = GWC.method4944(field8757);
 				if (var0 != null && var0.field11707 == -1) {
 					if (field8750 == null) {

@@ -14,10 +14,7 @@ import com.jagex.game.network.ServerConnection;
 import com.jagex.game.network.protocol.ClientProt;
 import com.jagex.game.shared.movement.CoordGrid;
 import com.jagex.game.world.entity.SceneManager;
-import com.jagex.graphics.Minimap;
-import com.jagex.graphics.OcclusionManager;
-import com.jagex.graphics.Renderer;
-import com.jagex.graphics.RendererInfo;
+import com.jagex.graphics.*;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import deob.Statics;
@@ -25,6 +22,9 @@ import rs2.client.Client;
 import rs2.client.login.LoginManager;
 import rs2.client.login.WorldSwitcher;
 
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.StringSelection;
+import java.awt.datatransfer.Transferable;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -33,6 +33,12 @@ import java.util.Date;
 
 @ObfuscatedName("ap")
 public class DeveloperConsole {
+
+	@ObfuscatedName("ap.n")
+	public static int field768;
+
+	@ObfuscatedName("ap.m")
+	public static int field763;
 
 	@ObfuscatedName("ap.f")
 	public static int field764 = 0;
@@ -55,8 +61,14 @@ public class DeveloperConsole {
 	@ObfuscatedName("ap.d")
 	public static boolean field770 = false;
 
+	@ObfuscatedName("ap.c")
+	public static long field765;
+
 	@ObfuscatedName("ap.r")
 	public static int field772 = -1;
+
+	@ObfuscatedName("ap.o")
+	public static FileOutputStream field773;
 
 	@ObfuscatedName("ahs.e(I)V")
 	public static void method16752() {
@@ -85,8 +97,8 @@ public class DeveloperConsole {
 
 	@ObfuscatedName("sm.m(S)V")
 	public static void method8025() {
-		Statics.field768 = Statics.field10268.field8569 + Statics.field10268.field8562 + 2;
-		Statics.field763 = Statics.field2657.field8569 + Statics.field2657.field8562 + 2;
+		field768 = DefaultSprites.field10268.field8569 + DefaultSprites.field10268.field8562 + 2;
+		field763 = DefaultSprites.field2657.field8569 + DefaultSprites.field2657.field8562 + 2;
 		Statics.field4845 = new String[500];
 		for (int var0 = 0; var0 < Statics.field4845.length; var0++) {
 			Statics.field4845[var0] = "";
@@ -102,13 +114,13 @@ public class DeveloperConsole {
 
 	@ObfuscatedName("sx.f(I)V")
 	public static void method8023() {
-		if (Statics.field773 != null) {
+		if (field773 != null) {
 			try {
-				Statics.field773.close();
+				field773.close();
 			} catch (IOException var1) {
 			}
 		}
-		Statics.field773 = null;
+		field773 = null;
 	}
 
 	@ObfuscatedName("xh.w(I)Z")
@@ -133,12 +145,110 @@ public class DeveloperConsole {
 				addline("Pausing for " + var2 + " seconds...");
 				Statics.field2615 = arg0;
 				field772 = var1 + 1;
-				Statics.field765 = MonotonicTime.method3655() + (long) (var2 * 1000);
+				field765 = MonotonicTime.method3655() + (long) (var2 * 1000);
 				return;
 			}
 			currententry = arg0[var1];
 			method14718(false);
 		}
+	}
+
+	@ObfuscatedName("xd.u(B)V")
+	public static void method10298() {
+		if (field776 * 36 < 102) {
+			field776 = field776 * 36 + 6;
+		}
+		if (field772 != -1 && field765 < MonotonicTime.method3655()) {
+			for (int var0 = field772; var0 < Statics.field2615.length; var0++) {
+				if (Statics.field2615[var0].startsWith("pause")) {
+					int var1 = 5;
+					try {
+						var1 = Integer.parseInt(Statics.field2615[var0].substring(6));
+					} catch (Exception var14) {
+					}
+					addline("Pausing for " + var1 + " seconds...");
+					field772 = var0 + 1;
+					field765 = MonotonicTime.method3655() + (long) (var1 * 1000);
+					return;
+				}
+				currententry = Statics.field2615[var0];
+				method14718(false);
+			}
+			field772 = -1;
+		}
+		if (Client.field10817 != 0) {
+			field771 -= Client.field10817 * 5;
+			if (field771 >= field764) {
+				field771 = field764 - 1;
+			}
+			if (field771 < 0) {
+				field771 = 0;
+			}
+			Client.field10817 = 0;
+		}
+		for (int var3 = 0; var3 < Client.field10819; var3++) {
+			KeyboardEvent var4 = Client.field11067[var3];
+			int var5 = var4.method9141();
+			char var6 = var4.method9131();
+			int var7 = var4.method9134();
+			if (var5 == 84) {
+				method14718(false);
+			}
+			if (var5 == 80) {
+				method14718(true);
+			} else if (var5 == 66 && (var7 & 0x4) != 0) {
+				if (Client.field3428 != null) {
+					String var8 = "";
+					for (int var9 = Statics.field4845.length - 1; var9 >= 0; var9--) {
+						if (Statics.field4845[var9] != null && Statics.field4845[var9].length() > 0) {
+							var8 = var8 + Statics.field4845[var9] + '\n';
+						}
+					}
+					Client.field3428.setContents(new StringSelection(var8), null);
+				}
+			} else if (var5 == 67 && (var7 & 0x4) != 0) {
+				if (Client.field3428 != null) {
+					try {
+						Transferable var10 = Client.field3428.getContents(null);
+						if (var10 != null) {
+							String var11 = (String) var10.getTransferData(DataFlavor.stringFlavor);
+							if (var11 != null) {
+								String[] var12 = StringTools.method17361(var11, '\n');
+								method15383(var12);
+							}
+						}
+					} catch (Exception var15) {
+					}
+				}
+			} else if (var5 == 85 && commandcharpointer > 0) {
+				currententry = currententry.substring(0, commandcharpointer - 1) + currententry.substring(commandcharpointer);
+				commandcharpointer--;
+			} else if (var5 == 101 && commandcharpointer < currententry.length()) {
+				currententry = currententry.substring(0, commandcharpointer) + currententry.substring(commandcharpointer + 1);
+			} else if (var5 == 96 && commandcharpointer > 0) {
+				commandcharpointer--;
+			} else if (var5 == 97 && commandcharpointer < currententry.length()) {
+				commandcharpointer++;
+			} else if (var5 == 102) {
+				commandcharpointer = 0;
+			} else if (var5 == 103) {
+				commandcharpointer = currententry.length();
+			} else if (var5 == 104 && commandpointer < Statics.field4845.length) {
+				commandpointer++;
+				method3085();
+				commandcharpointer = currententry.length();
+			} else if (var5 == 105 && commandpointer > 0) {
+				commandpointer--;
+				method3085();
+				commandcharpointer = currententry.length();
+			} else if (StringTools.method2883(var6) || "\\/.:, _-+[]~@".indexOf(var6) != -1) {
+				currententry = currententry.substring(0, commandcharpointer) + Client.field11067[var3].method9131() + currententry.substring(commandcharpointer);
+				commandcharpointer++;
+			}
+		}
+		Client.field10819 = 0;
+		Client.field10822 = 0;
+		Client.method9734();
 	}
 
 	@ObfuscatedName("fv.z(I)V")
@@ -199,9 +309,9 @@ public class DeveloperConsole {
 				Statics.field4845[var7] = Statics.field4845[var7 - 1];
 			}
 			Statics.field4845[0] = var4 + ": " + var5[var6];
-			if (Statics.field773 != null) {
+			if (field773 != null) {
 				try {
-					Statics.field773.write(Cp1252.method3064(Statics.field4845[0] + "\n"));
+					field773.write(Cp1252.method3064(Statics.field4845[0] + "\n"));
 				} catch (IOException var9) {
 				}
 			}
@@ -221,9 +331,9 @@ public class DeveloperConsole {
 		}
 		arg0.method2168(0, 0, GameShell.canvasWid, 350);
 		arg0.method2354(0, 0, GameShell.canvasWid, 350, field776 * 36 << 24 | 0x332277, 1);
-		int var1 = 350 / Statics.field763;
+		int var1 = 350 / field763;
 		if (field764 > 0) {
-			int var2 = 346 - Statics.field763 - 4;
+			int var2 = 346 - field763 - 4;
 			int var3 = var1 * var2 / (field764 + var1 - 1);
 			int var4 = 4;
 			if (field764 > 1) {
@@ -236,20 +346,20 @@ public class DeveloperConsole {
 				for (int var8 = 0; var8 < var6.length; var8++) {
 					int var9 = var7 * var8 + 8;
 					arg0.method2168(var9, 0, var7 + var9 - 8, 350);
-					Statics.field9184.method2681(method14312(var6[var8]), var9, 350 - Statics.field768 - 2 - Statics.field2657.field8569 - Statics.field763 * (var5 - field771), -1, -16777216);
+					DefaultSprites.field9184.method2681(method14312(var6[var8]), var9, 350 - field768 - 2 - DefaultSprites.field2657.field8569 - field763 * (var5 - field771), -1, -16777216);
 				}
 			}
 		}
-		Statics.field8321.method2682("910 1", GameShell.canvasWid - 25, 330, -1, -16777216);
+		DefaultSprites.field8321.method2682("910 1", GameShell.canvasWid - 25, 330, -1, -16777216);
 		arg0.method2168(0, 0, GameShell.canvasWid, 350);
-		arg0.method2176(0, 350 - Statics.field768, GameShell.canvasWid, -1);
-		Statics.field10355.method2681("--> " + method14312(currententry), 10, 350 - Statics.field10268.field8569 - 1, -1, -16777216);
+		arg0.method2176(0, 350 - field768, GameShell.canvasWid, -1);
+		DefaultSprites.field10355.method2681("--> " + method14312(currententry), 10, 350 - DefaultSprites.field10268.field8569 - 1, -1, -16777216);
 		if (GameShell.focus) {
 			int var10 = -1;
 			if (Client.field10903 % 30 > 15) {
 				var10 = 16777215;
 			}
-			arg0.method2177(Statics.field10268.method14532("--> " + method14312(currententry).substring(0, commandcharpointer)) + 10, 350 - Statics.field10268.field8569 - 11, 12, var10);
+			arg0.method2177(DefaultSprites.field10268.method14532("--> " + method14312(currententry).substring(0, commandcharpointer)) + 10, 350 - DefaultSprites.field10268.field8569 - 11, 12, var10);
 		}
 		arg0.method2167();
 		method16858();
@@ -500,12 +610,12 @@ public class DeveloperConsole {
 							return;
 						}
 					}
-					if (Statics.field773 != null) {
-						Statics.field773.close();
-						Statics.field773 = null;
+					if (field773 != null) {
+						field773.close();
+						field773 = null;
 					}
 					try {
-						Statics.field773 = new FileOutputStream(var24);
+						field773 = new FileOutputStream(var24);
 						return;
 					} catch (FileNotFoundException var34) {
 						addline("Could not create " + var24.getName());
@@ -516,10 +626,10 @@ public class DeveloperConsole {
 					}
 				}
 				if (arg0.equals("closeoutput")) {
-					if (Statics.field773 != null) {
-						Statics.field773.close();
+					if (field773 != null) {
+						field773.close();
 					}
-					Statics.field773 = null;
+					field773 = null;
 					return;
 				}
 				if (arg0.startsWith("runscript ")) {

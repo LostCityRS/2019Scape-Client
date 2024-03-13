@@ -482,9 +482,9 @@ public class MiniMenu {
 	public static FontMetrics method16902() {
 		FontMetrics var0;
 		if (!field564) {
-			var0 = Statics.field10268;
+			var0 = DefaultSprites.field10268;
 		} else if (Statics.field1841 == null || Statics.field8786 == null) {
-			var0 = Statics.field10268;
+			var0 = DefaultSprites.field10268;
 		} else {
 			var0 = Statics.field8786;
 		}
@@ -1270,9 +1270,9 @@ public class MiniMenu {
 		}
 		Font var4 = field576.method3942(Client.field7538, Client.field10833);
 		if (var4 == null) {
-			var4 = Statics.field10355;
+			var4 = DefaultSprites.field10355;
 		}
-		var4.method2700(var1, field556, field557, field576.field2196, field576.field2197, field576.field2210, field576.field2219, field576.field2223, field576.field2264, Client.field10890, Client.field1681, Client.field11042, Statics.field10302, null);
+		var4.method2700(var1, field556, field557, field576.field2196, field576.field2197, field576.field2210, field576.field2219, field576.field2223, field576.field2264, Client.field10890, Client.field1681, Client.field11042, DefaultSprites.field10302, null);
 		Client.method3066(Client.field11042[0], Client.field11042[1], Client.field11042[2], Client.field11042[3]);
 	}
 
@@ -1324,9 +1324,9 @@ public class MiniMenu {
 		if (var12 != null) {
 			var13 = var13 + method14480(var12);
 		}
-		arg8.method2689(var13, arg2 + 3, arg6, arg10, 0, Client.field10890, Client.field1681, Statics.field10302, null);
+		arg8.method2689(var13, arg2 + 3, arg6, arg10, 0, Client.field10890, Client.field1681, DefaultSprites.field10302, null);
 		if (arg7.field12299) {
-			Statics.field1940.method1439(arg2 + 5 + arg9.method14533(var13, Statics.field10302), arg6 - arg9.field8562);
+			DefaultSprites.field1940.method1439(arg2 + 5 + arg9.method14533(var13, DefaultSprites.field10302), arg6 - arg9.field8562);
 		}
 	}
 
@@ -1334,14 +1334,14 @@ public class MiniMenu {
 	public static void method213(Renderer arg0) {
 		int var1 = -10660793;
 		method4064(arg0, Statics.field11738, Statics.field2960, Statics.field1289, Statics.field2576, var1, -16777216);
-		Statics.field10355.method2681(LocalisedText.CHOOSEOPTION.method15021(Client.language), Statics.field11738 + 3, Statics.field2960 + 14, var1, -1);
+		DefaultSprites.field10355.method2681(LocalisedText.CHOOSEOPTION.method15021(Client.language), Statics.field11738 + 3, Statics.field2960 + 14, var1, -1);
 		int var2 = Client.field9182.method9086();
 		int var3 = Client.field9182.method9092();
 		if (!field540) {
 			int var4 = 0;
 			for (MinimenuEntry var5 = (MinimenuEntry) field542.method14191(); var5 != null; var5 = (MinimenuEntry) field542.method14161()) {
 				int var6 = field536 * (field546 - 1 - var4) + Statics.field2960 + 31;
-				method9284(var2, var3, Statics.field11738, Statics.field2960, Statics.field1289, Statics.field2576, var6, var5, Statics.field10355, Statics.field10268, -1, -256);
+				method9284(var2, var3, Statics.field11738, Statics.field2960, Statics.field1289, Statics.field2576, var6, var5, DefaultSprites.field10355, DefaultSprites.field10268, -1, -256);
 				var4++;
 			}
 			return;
@@ -1350,9 +1350,9 @@ public class MiniMenu {
 		for (MinimenuSubmenu var8 = (MinimenuSubmenu) field550.method14317(); var8 != null; var8 = (MinimenuSubmenu) field550.method14324()) {
 			int var9 = field536 * var7 + Statics.field2960 + 31;
 			if (var8.field12310 == 1) {
-				method9284(var2, var3, Statics.field11738, Statics.field2960, Statics.field1289, Statics.field2576, var9, (MinimenuEntry) var8.field12312.field8497.field11439, Statics.field10355, Statics.field10268, -1, -256);
+				method9284(var2, var3, Statics.field11738, Statics.field2960, Statics.field1289, Statics.field2576, var9, (MinimenuEntry) var8.field12312.field8497.field11439, DefaultSprites.field10355, DefaultSprites.field10268, -1, -256);
 			} else {
-				Statics.method16748(var2, var3, Statics.field11738, Statics.field2960, Statics.field1289, Statics.field2576, var9, var8, Statics.field10355, Statics.field10268, -1, -256);
+				Statics.method16748(var2, var3, Statics.field11738, Statics.field2960, Statics.field1289, Statics.field2576, var9, var8, DefaultSprites.field10355, DefaultSprites.field10268, -1, -256);
 			}
 			var7++;
 		}
@@ -1360,11 +1360,11 @@ public class MiniMenu {
 			return;
 		}
 		method4064(arg0, Statics.field1981, Statics.field2433, Statics.field554, Statics.field3005, var1, -16777216);
-		Statics.field10355.method2681(field541.field12311, Statics.field1981 + 3, Statics.field2433 + 14, var1, -1);
+		DefaultSprites.field10355.method2681(field541.field12311, Statics.field1981 + 3, Statics.field2433 + 14, var1, -1);
 		int var10 = 0;
 		for (MinimenuEntry var11 = (MinimenuEntry) field541.field12312.method14317(); var11 != null; var11 = (MinimenuEntry) field541.field12312.method14324()) {
 			int var12 = field536 * var10 + Statics.field2433 + 31;
-			method9284(var2, var3, Statics.field1981, Statics.field2433, Statics.field554, Statics.field3005, var12, var11, Statics.field10355, Statics.field10268, -1, -256);
+			method9284(var2, var3, Statics.field1981, Statics.field2433, Statics.field554, Statics.field3005, var12, var11, DefaultSprites.field10355, DefaultSprites.field10268, -1, -256);
 			var10++;
 		}
 	}
@@ -1452,7 +1452,7 @@ public class MiniMenu {
 		}
 		Font var7;
 		if (Statics.field1841 == null || Statics.field8786 == null) {
-			var7 = Statics.field10355;
+			var7 = DefaultSprites.field10355;
 		} else {
 			var7 = Statics.field1841;
 		}
@@ -1545,7 +1545,7 @@ public class MiniMenu {
 	@ObfuscatedName("aiv.bh(Larn;Laac;B)I")
 	public static int method16910(MinimenuSubmenu arg0, FontMetrics arg1) {
 		String var2 = method15244(arg0);
-		return arg1.method14533(var2, Statics.field10302);
+		return arg1.method14533(var2, DefaultSprites.field10302);
 	}
 
 	@ObfuscatedName("ii.bx(Larm;Laac;I)I")
@@ -1555,9 +1555,9 @@ public class MiniMenu {
 		if (var3 != null) {
 			var2 = var2 + method14480(var3);
 		}
-		int var4 = arg1.method14533(var2, Statics.field10302);
+		int var4 = arg1.method14533(var2, DefaultSprites.field10302);
 		if (arg0.field12299) {
-			var4 += Statics.field1940.method1459() + 4;
+			var4 += DefaultSprites.field1940.method1459() + 4;
 		}
 		return var4;
 	}

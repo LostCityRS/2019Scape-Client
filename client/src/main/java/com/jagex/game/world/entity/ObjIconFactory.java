@@ -2,6 +2,7 @@ package com.jagex.game.world.entity;
 
 import com.jagex.core.datastruct.IterableQueue;
 import com.jagex.game.config.iftype.Component;
+import com.jagex.graphics.DefaultSprites;
 import com.jagex.graphics.FontMetrics;
 import com.jagex.graphics.Renderer;
 import com.jagex.graphics.SpriteDataProvider;
@@ -40,7 +41,7 @@ public class ObjIconFactory {
 		}
 		if (Client.field688.displayMode2.method18545() == 0) {
 			for (ObjIconRequest var1 = (ObjIconRequest) field631.method14191(); var1 != null; var1 = (ObjIconRequest) field631.method14161()) {
-				Client.field1842.method18905(arg0, arg0, var1.field11256, var1.field11255, var1.field11258, var1.field11257, false, false, var1.field11254, Statics.field8321, var1.field11259 ? Client.field4490.field12061 : null, Client.field11389);
+				Client.field1842.method18905(arg0, arg0, var1.field11256, var1.field11255, var1.field11258, var1.field11257, false, false, var1.field11254, DefaultSprites.field8321, var1.field11259 ? Client.field4490.field12061 : null, Client.field11389);
 				var1.method8440();
 			}
 			Client.method9734();
@@ -50,7 +51,7 @@ public class ObjIconFactory {
 			Canvas var2 = new Canvas();
 			var2.setSize(36, 32);
 			field630 = Renderer.method14575(0, var2, Client.field7366, Client.field7669, Client.field9211, Client.field7282, Client.field2013, Client.field2900, 0);
-			Statics.field629 = field630.method2207(FontMetrics.method1593(Client.field7672, Statics.field506, 0), SpriteDataProvider.method1609(Client.field10317, Statics.field506, 0), true);
+			Statics.field629 = field630.method2207(FontMetrics.method1593(Client.field7672, DefaultSprites.field506, 0), SpriteDataProvider.method1609(Client.field10317, DefaultSprites.field506, 0), true);
 		}
 		for (ObjIconRequest var3 = (ObjIconRequest) field631.method14191(); var3 != null; var3 = (ObjIconRequest) field631.method14161()) {
 			Client.field1842.method18905(field630, arg0, var3.field11256, var3.field11255, var3.field11258, var3.field11257, false, false, var3.field11254, Statics.field629, var3.field11259 ? Client.field4490.field12061 : null, Client.field11389);

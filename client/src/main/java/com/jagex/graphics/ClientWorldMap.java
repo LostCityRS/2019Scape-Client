@@ -363,7 +363,7 @@ public class ClientWorldMap extends WorldMap {
 			arg0.method2354(arg1, arg2, arg3, arg4, -16777216, 0);
 			arg0.method2179(var6 - 152, var7, 304, 34, Client.field10825[Client.field10773].getRGB(), 0);
 			arg0.method2354(var6 - 150, var7 + 2, field11651 * 3, 30, Client.field10824[Client.field10773].getRGB(), 0);
-			Statics.field10355.method2683(LocalisedText.LOADINGDOTDOTDOT.method15021(Client.language), var6, var5 + var7, Client.field10826[Client.field10773].getRGB(), -1);
+			DefaultSprites.field10355.method2683(LocalisedText.LOADINGDOTDOTDOT.method15021(Client.language), var6, var5 + var7, Client.field10826[Client.field10773].getRGB(), -1);
 			return;
 		}
 		int var8 = Statics.field11443 - (int) ((float) arg3 / WorldMap.field6803);
@@ -382,7 +382,7 @@ public class ClientWorldMap extends WorldMap {
 		if (Client.field10794) {
 			int var13 = arg1 + arg3 - 5;
 			int var14 = arg2 + arg4 - 8;
-			Statics.field9184.method2682("Fps: " + GameShell.fps + " (" + GameShell.fpsAverage + " ms)", var13, var14, 16776960, -1);
+			DefaultSprites.field9184.method2682("Fps: " + GameShell.fps + " (" + GameShell.fpsAverage + " ms)", var13, var14, 16776960, -1);
 			int var18 = var14 - 15;
 			Runtime var15 = Runtime.getRuntime();
 			int var16 = (int) ((var15.totalMemory() - var15.freeMemory()) / 1024L);
@@ -390,7 +390,7 @@ public class ClientWorldMap extends WorldMap {
 			if (var16 > 65536) {
 				var17 = 16711680;
 			}
-			Statics.field9184.method2682("Mem:" + var16 + "k", var13, var18, var17, -1);
+			DefaultSprites.field9184.method2682("Mem:" + var16 + "k", var13, var18, var17, -1);
 			var14 = var18 - 15;
 		}
 		field6831.method2923(5);

@@ -12,6 +12,9 @@ public class RuneScapeSetup {
 	@ObfuscatedName("p.e")
 	public static final String field519 = Statics.method3068() + "\\RuneScape-Setup.exe";
 
+	@ObfuscatedName("p.n")
+	public static Process field520;
+
 	@ObfuscatedName("p.m")
 	public static RuneScapeSetupStatus field521 = RuneScapeSetupStatus.field689;
 
@@ -38,7 +41,7 @@ public class RuneScapeSetup {
 			throw new RuntimeException();
 		}
 		try {
-			Statics.field520 = (new ProcessBuilder(new String[] { var1 })).start();
+			field520 = (new ProcessBuilder(new String[] { var1 })).start();
 			field521 = RuneScapeSetupStatus.field690;
 		} catch (IOException var4) {
 			throw new RuntimeException();
@@ -54,18 +57,18 @@ public class RuneScapeSetup {
 	@ObfuscatedName("alv.m(I)V")
 	public static void method18310() {
 		if (method10283()) {
-			field521 = Statics.field520.exitValue() == 0 ? RuneScapeSetupStatus.field691 : RuneScapeSetupStatus.field692;
-			Statics.field520 = null;
+			field521 = field520.exitValue() == 0 ? RuneScapeSetupStatus.field691 : RuneScapeSetupStatus.field692;
+			field520 = null;
 		}
 	}
 
 	@ObfuscatedName("xe.k(I)Z")
 	public static boolean method10283() {
-		if (Statics.field520 == null) {
+		if (field520 == null) {
 			return false;
 		}
 		try {
-			Statics.field520.exitValue();
+			field520.exitValue();
 			return true;
 		} catch (IllegalThreadStateException var1) {
 			return false;

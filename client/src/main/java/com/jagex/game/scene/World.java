@@ -736,7 +736,7 @@ public class World {
 		this.field5059 = arg1;
 		if (!this.field5036) {
 			Client.setState(arg2);
-			MessageBox.method649(LocalisedText.LOADING.method15021(Client.language), true, Client.field8198, Statics.field9184, Statics.field2657);
+			MessageBox.method649(LocalisedText.LOADING.method15021(Client.language), true, Client.field8198, DefaultSprites.field9184, DefaultSprites.field2657);
 		}
 		if (this.field5018 == null) {
 			this.field5025 = new CoordGrid(0, 0, 0);
@@ -1032,7 +1032,7 @@ public class World {
 			return false;
 		}
 		if (!this.field5036 && RebuildStage.field5007 != this.field5026) {
-			MessageBox.method649(LocalisedText.LOADING.method15021(Client.language) + TextUtil.BR + "(100%)", true, Client.field8198, Statics.field9184, Statics.field2657);
+			MessageBox.method649(LocalisedText.LOADING.method15021(Client.language) + TextUtil.BR + "(100%)", true, Client.field8198, DefaultSprites.field9184, DefaultSprites.field2657);
 		}
 		this.field5026 = RebuildStage.field5008;
 		if (!this.field5036 && Client.field1798 != null) {
@@ -1077,7 +1077,7 @@ public class World {
 		if (Client.field11005 == 0) {
 			this.field5030.method8737(null);
 		} else {
-			this.field5030.method8737(Statics.field8321);
+			this.field5030.method8737(DefaultSprites.field8321);
 		}
 		this.field5050 = new LocTint();
 		this.field5038 = -0.05F + (float) (Math.random() / 10.0D);

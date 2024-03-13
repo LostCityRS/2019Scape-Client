@@ -1,7 +1,6 @@
 package com.jagex.game.shared.framework.gwc;
 
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("alc")
 public class GWCWorld extends GWCBasicWorld {
@@ -26,7 +25,7 @@ public class GWCWorld extends GWCBasicWorld {
 
 	@ObfuscatedName("alc.c(I)Lwv;")
 	public GWCLocation method18342() {
-		return Statics.field7647[this.field7640];
+		return GWC.field7647[this.field7640];
 	}
 
 	@ObfuscatedName("alc.r(I)I")
