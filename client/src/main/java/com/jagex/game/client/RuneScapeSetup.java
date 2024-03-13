@@ -1,7 +1,6 @@
 package com.jagex.game.client;
 
 import deob.ObfuscatedName;
-import deob.Statics;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,7 +9,7 @@ import java.io.IOException;
 public class RuneScapeSetup {
 
 	@ObfuscatedName("p.e")
-	public static final String field519 = Statics.method3068() + "\\RuneScape-Setup.exe";
+	public static final String field519 = GameShell.method3068() + "\\RuneScape-Setup.exe";
 
 	@ObfuscatedName("p.n")
 	public static Process field520;

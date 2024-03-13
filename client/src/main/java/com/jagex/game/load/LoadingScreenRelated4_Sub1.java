@@ -2,7 +2,6 @@ package com.jagex.game.load;
 
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("aqy")
 public class LoadingScreenRelated4_Sub1 extends LoadingScreenRelated4 {
@@ -17,7 +16,7 @@ public class LoadingScreenRelated4_Sub1 extends LoadingScreenRelated4 {
 
 	@ObfuscatedName("px.f(Lalw;I)Lkp;")
 	public static LoadingScreenProgressDisplayConfig method6845(Packet arg0) {
-		LoadingScreenRelated4 var1 = (LoadingScreenRelated4) Statics.method10312(arg0);
+		LoadingScreenRelated4 var1 = (LoadingScreenRelated4) LoadingScreenProgressDisplayConfig.method10312(arg0);
 		int var2 = arg0.g2s();
 		return new LoadingScreenRelated4_Sub1(var1.field3167, var1.field3159, var1.field3161, var1.field3162, var1.field3163, var1.field3160, var1.field3165, var1.field3166, var1.field3164, var1.field10569, var1.field10570, var1.field10572, var1.field10573, var1.field10571, var1.field10574, var2);
 	}

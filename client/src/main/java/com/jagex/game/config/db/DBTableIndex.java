@@ -5,7 +5,6 @@ import com.jagex.core.io.Packet;
 import com.jagex.game.config.vartype.constants.BaseVarType;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -33,7 +32,7 @@ public class DBTableIndex {
 
 	@ObfuscatedName("adh.e(Lalw;B)V")
 	public void method15188(Packet arg0) {
-		this.field9181 = (BaseVarType) SerializableEnums.decode(Statics.method7338(), arg0.g1());
+		this.field9181 = (BaseVarType) SerializableEnums.decode(BaseVarType.method7338(), arg0.g1());
 		int var2 = arg0.gVarInt2();
 		this.field9180 = new HashMap(var2);
 		while (var2-- > 0) {

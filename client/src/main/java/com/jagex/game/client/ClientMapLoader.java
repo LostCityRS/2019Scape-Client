@@ -14,7 +14,6 @@ import com.jagex.graphics.scenegraph.WallDecorLayerEntity;
 import com.jagex.graphics.scenegraph.WallLayerEntity;
 import com.jagex.math.ScaleRotTrans;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 @ObfuscatedName("aih")
@@ -353,7 +352,7 @@ public class ClientMapLoader extends MapLoader {
 											for (int var37 = var34; var37 < var34 + 4; var37++) {
 												if (var36 >= var13 && var36 < var13 + 8 && var37 >= var14 && var37 < var14 + 8) {
 													int var38 = arg3 + MapCoordUtil.method14888(var36 & 0x7, var37 & 0x7, arg8);
-													int var39 = arg4 + Statics.method14756(var36 & 0x7, var37 & 0x7, arg8);
+													int var39 = arg4 + MapCoordUtil.method14756(var36 & 0x7, var37 & 0x7, arg8);
 													if (var38 >= 0 && var38 < this.field4513 && var39 >= 0 && var39 < this.field4514) {
 														this.field4517[arg2][var38][var39] = var35;
 														var10 = true;
@@ -572,7 +571,7 @@ public class ClientMapLoader extends MapLoader {
 										var20 = var19.length;
 										var21 = var19.width;
 									}
-									var22 = arg3 + Statics.method9606(var16 & 0x7, var15 & 0x7, arg8, var19.width, var19.length, var18.field7540);
+									var22 = arg3 + MapCoordUtil.method9606(var16 & 0x7, var15 & 0x7, arg8, var19.width, var19.length, var18.field7540);
 									var23 = arg4 + MapCoordUtil.method2733(var16 & 0x7, var15 & 0x7, arg8, var19.width, var19.length, var18.field7540);
 									var24 = var20 + var22;
 									var25 = var21 + var23;
@@ -636,7 +635,7 @@ public class ClientMapLoader extends MapLoader {
 			PositionedSound.method9739(arg2, arg3, arg4, arg6, var12, null, null);
 		}
 		boolean var24 = arg8 == -1 && (!var12.method9504() || var12.field7479 && Client.field688.unknown.method18665() == 0) && var12.field7505 == null && !var12.field7520 && !var12.field7524;
-		if (field10755 && (Statics.method8381(arg7) && var12.occlude != 1 || !(!LocShape.method615(arg7) || var12.occlude != 0))) {
+		if (field10755 && (LocShape.method8381(arg7) && var12.occlude != 1 || !(!LocShape.method615(arg7) || var12.occlude != 0))) {
 			return;
 		}
 		if (LocShape.field7566.field7562 == arg7) {

@@ -87,6 +87,11 @@ public class Language implements SerializableEnum {
 		return this.field8299;
 	}
 
+	@ObfuscatedName("zt.w(II)Lzt;")
+	public static Language method13875(int arg0) {
+		return arg0 >= 0 && arg0 < field8300.length ? field8300[arg0] : null;
+	}
+
 	public String toString() {
 		return this.method13868().toLowerCase(Locale.ENGLISH);
 	}

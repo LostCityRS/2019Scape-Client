@@ -3,7 +3,6 @@ package com.jagex.graphics;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("dv")
 public class Material {
@@ -149,7 +148,7 @@ public class Material {
 		}
 		this.field1336 = arg0.g1() == 1;
 		SerializableEnums.decode(FacetMode.method4590(), arg0.g1());
-		this.field1340 = (MaterialAlphaMode) SerializableEnums.decode(Statics.method8501(), arg0.g1());
+		this.field1340 = (MaterialAlphaMode) SerializableEnums.decode(MaterialAlphaMode.method8501(), arg0.g1());
 		if (MaterialAlphaMode.TEST == this.field1340) {
 			this.field1358 = (byte) arg0.g1();
 		}
@@ -240,7 +239,7 @@ public class Material {
 		} else if (MaterialQualityMode.LD == var5) {
 			this.field1361 = true;
 		}
-		this.field1340 = (MaterialAlphaMode) SerializableEnums.decode(Statics.method8501(), arg0.g1());
+		this.field1340 = (MaterialAlphaMode) SerializableEnums.decode(MaterialAlphaMode.method8501(), arg0.g1());
 		if (MaterialAlphaMode.TEST == this.field1340) {
 			this.field1358 = (byte) arg0.g1();
 		}

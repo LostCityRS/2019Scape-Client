@@ -7,7 +7,6 @@ import com.jagex.math.Matrix4x3;
 import com.jagex.math.Matrix4x4;
 import com.jagex.math.Vector3i;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("atd")
 public class Shake extends CameraEffect {
@@ -33,7 +32,7 @@ public class Shake extends CameraEffect {
 
 	public Shake(int arg0, Packet arg1) {
 		super(arg0);
-		this.field12553 = Statics.method1599(arg1.g1());
+		this.field12553 = ShakeMode.method1599(arg1.g1());
 		this.field12555 = arg1.gFloat();
 		this.field12554 = arg1.gFloat();
 	}
@@ -67,7 +66,7 @@ public class Shake extends CameraEffect {
 
 	@ObfuscatedName("atd.k(Lalw;I)V")
 	public void method19434(Packet arg0) {
-		this.field12553 = Statics.method1599(arg0.g1());
+		this.field12553 = ShakeMode.method1599(arg0.g1());
 		this.field12555 = arg0.gFloat();
 		this.field12554 = arg0.gFloat();
 	}

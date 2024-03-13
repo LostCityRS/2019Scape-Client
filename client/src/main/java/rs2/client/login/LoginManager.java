@@ -10,6 +10,7 @@ import com.jagex.core.io.Stream;
 import com.jagex.core.utils.*;
 import com.jagex.encryption.Isaac;
 import com.jagex.game.client.*;
+import com.jagex.game.config.Js5Archive;
 import com.jagex.game.config.iftype.Component;
 import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.npctype.NPCType;
@@ -22,10 +23,12 @@ import com.jagex.game.world.entity.PlayerStat;
 import com.jagex.graphics.ClientWatch;
 import com.jagex.graphics.MiniMenu;
 import com.jagex.graphics.Minimap;
+import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 import deob.Statics;
 import rs2.client.Client;
 import rs2.client.logic.DelayedStateChange;
+import rs2.client.scene.entities.PathingEntity;
 
 import java.io.IOException;
 import java.net.URL;
@@ -486,7 +489,7 @@ public class LoginManager {
 					var10.pjstr(Client.field10789);
 					var10.p1(Statics.field9200 != null && Statics.field9200.node == WorldSwitcher.field8755.node ? 0 : 1);
 					var10.p2(WorldSwitcher.lobby.node);
-					Statics.method14463(var10);
+					method14463(var10);
 					if (Client.ENABLE_TINYENC) {
 						var10.tinyenc(Statics.field435, var13, var10.pos);
 					}
@@ -536,7 +539,7 @@ public class LoginManager {
 					var10.pjstr(Client.field10789);
 					var10.p1(Client.field2627 & 0x1);
 					var10.pbool(false);
-					Statics.method14463(var10);
+					method14463(var10);
 					if (Client.ENABLE_TINYENC) {
 						var10.tinyenc(Statics.field435, var20, var10.pos);
 					}
@@ -674,7 +677,7 @@ public class LoginManager {
 				method669(Statics.field11819);
 				Statics.field432.method938();
 				method10367();
-				if (Statics.method15084(Client.state)) {
+				if (Client.method15084(Client.state)) {
 					Client.logout(true);
 					field477 = Statics.field11819;
 				}
@@ -759,7 +762,7 @@ public class LoginManager {
 						method669(var35);
 						Statics.field432.method938();
 						method10367();
-						if (Statics.method15084(Client.state)) {
+						if (Client.method15084(Client.state)) {
 							Client.logout(true);
 							field477 = var35;
 						}
@@ -895,7 +898,7 @@ public class LoginManager {
 					}
 					Statics.field432.method939().method9029(var41.data, 3, 1);
 				}
-				Statics.field432.field796 = Statics.method18494()[var41.gIsaac1or2()];
+				Statics.field432.field796 = ServerProt.method18494()[var41.gIsaac1or2()];
 				Statics.field432.field797 = var41.g2();
 				field445 = 160;
 			}
@@ -942,7 +945,7 @@ public class LoginManager {
 				int var45 = Statics.field432.field797;
 				field445 = 7;
 				method669(15);
-				Statics.method6877();
+				method6877();
 				ReceivePlayerPositions.method16435(Statics.field432.field795);
 				if (Statics.field432.field795.pos != var45) {
 					throw new RuntimeException(Statics.field432.field795.pos + " " + var45);
@@ -1087,6 +1090,22 @@ public class LoginManager {
 		}
 	}
 
+	@ObfuscatedName("aab.ae(Lase;I)V")
+	public static void method14463(PacketBit arg0) {
+		Js5Archive[] var1 = Js5Archive.method3566();
+		for (int var2 = 0; var2 < var1.length; var2++) {
+			Js5Archive var3 = var1[var2];
+			if (Js5Archive.LOADING_SPRITES != var3) {
+				Js5 var4 = (Js5) Statics.field8540.get(var3);
+				if (var4 == null) {
+					arg0.p4(0);
+				} else {
+					arg0.p4(var4.method6881());
+				}
+			}
+		}
+	}
+
 	@ObfuscatedName("acm.ag(B)V")
 	public static void method14959() {
 		Statics.field432.method952();
@@ -1205,6 +1224,42 @@ public class LoginManager {
 		MiniMenu.method5175();
 		Client.field594 = null;
 		Client.field3457 = 0L;
+	}
+
+	@ObfuscatedName("pr.ac(B)V")
+	public static void method6877() {
+		Statics.field432.method952();
+		Statics.field432.field795.pos = 0;
+		Statics.field432.field796 = null;
+		Statics.field432.field790 = null;
+		Statics.field432.field806 = null;
+		Statics.field432.field805 = null;
+		Statics.field432.field797 = 0;
+		Statics.field432.field789 = 0;
+		Client.field10831 = 0;
+		MiniMenu.method5175();
+		Minimap.method3552();
+		for (int var0 = 0; var0 < 2048; var0++) {
+			Client.field10944[var0] = null;
+		}
+		Client.field4490 = null;
+		for (int var1 = 0; var1 < Client.field10906; var1++) {
+			PathingEntity var2 = (PathingEntity) Client.field10839[var1].field11436;
+			if (var2 != null) {
+				var2.field10417 = -1;
+			}
+		}
+		ClientInvCache.method2752();
+		Client.method4046(Client.method14298());
+		Client.setState(18);
+		for (int var3 = 0; var3 < 114; var3++) {
+			Client.field11072[var3] = true;
+		}
+		Client.method4336(Statics.field432);
+		Client.field594 = null;
+		Client.field3457 = 0L;
+		Client.method3652();
+		Client.field7228.method16421();
 	}
 
 	@ObfuscatedName("aiz.ai(I)Z")

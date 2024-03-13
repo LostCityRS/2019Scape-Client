@@ -6,7 +6,6 @@ import com.jagex.game.camera.LookatMode;
 import com.jagex.game.world.entity.PositionMode;
 import com.jagex.graphics.camera.*;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 import java.util.Iterator;
 
@@ -96,7 +95,7 @@ public class BasicCamera extends Camera {
 					if (var13 == 0) {
 						this.method4703(var14);
 					} else {
-						CameraEffectType var15 = Statics.method5101(arg0.g1());
+						CameraEffectType var15 = CameraEffectType.method5101(arg0.g1());
 						boolean var16 = true;
 						Iterator var17 = this.field2878.iterator();
 						while (var17.hasNext()) {

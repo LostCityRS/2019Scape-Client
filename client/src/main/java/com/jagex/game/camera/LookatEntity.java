@@ -8,7 +8,6 @@ import com.jagex.math.Matrix4x3;
 import com.jagex.math.Vector3;
 import com.jagex.math.Vector3i;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("anw")
 public class LookatEntity extends Lookat {
@@ -109,7 +108,7 @@ public class LookatEntity extends Lookat {
 
 	@ObfuscatedName("anw.w(Lalw;I)V")
 	public void method14132(Packet arg0) {
-		CameraTrackableType var2 = Statics.method15213(arg0.g1());
+		CameraTrackableType var2 = CameraTrackableType.method15213(arg0.g1());
 		int var3 = arg0.g2();
 		this.field11867 = this.field8479.method4697().method268(var2, var3);
 		this.field11863.method6490(arg0);

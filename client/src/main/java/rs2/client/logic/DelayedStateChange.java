@@ -246,6 +246,13 @@ public class DelayedStateChange extends SecondaryNode {
 		var4.field12267 = arg3;
 	}
 
+	@ObfuscatedName("fi.at(III)V")
+	public static void method3073(int arg0, int arg1) {
+		DelayedStateChange var2 = method5072(5, (long) arg0);
+		var2.method19269();
+		var2.field12268 = arg1;
+	}
+
 	@ObfuscatedName("fr.ad(III)V")
 	public static void method3379(int arg0, int arg1) {
 		DelayedStateChange var2 = method5072(6, (long) arg0);
@@ -275,6 +282,15 @@ public class DelayedStateChange extends SecondaryNode {
 		var3.method19269();
 		var3.field12268 = arg1;
 		var3.field12274 = arg2;
+	}
+
+	@ObfuscatedName("ub.ap(IIIII)V")
+	public static void method9085(int arg0, int arg1, int arg2, int arg3) {
+		DelayedStateChange var4 = method5072(10, (long) arg0);
+		var4.method19269();
+		var4.field12268 = arg1;
+		var4.field12274 = arg2;
+		var4.field12267 = arg3;
 	}
 
 	@ObfuscatedName("iv.aq(IIII)V")

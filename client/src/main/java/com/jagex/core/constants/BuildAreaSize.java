@@ -1,7 +1,6 @@
 package com.jagex.core.constants;
 
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("ib")
 public class BuildAreaSize {
@@ -35,9 +34,14 @@ public class BuildAreaSize {
 		this.field2665 = arg1;
 	}
 
+	@ObfuscatedName("anb.e(I)[Lib;")
+	public static BuildAreaSize[] method18813() {
+		return new BuildAreaSize[] {field2662, field2661, field2663, field2658, field2659, field2660};
+	}
+
 	@ObfuscatedName("fd.n(IB)Lib;")
 	public static BuildAreaSize method3061(int arg0) {
-		BuildAreaSize[] var1 = Statics.method18813();
+		BuildAreaSize[] var1 = method18813();
 		for (int var2 = 0; var2 < var1.length; var2++) {
 			BuildAreaSize var3 = var1[var2];
 			if (var3.field2664 == arg0) {

@@ -1,7 +1,6 @@
 package com.jagex.core.utils;
 
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("zq")
 public final class Base37 {
@@ -20,6 +19,30 @@ public final class Base37 {
 
 	public Base37() throws Throwable {
 		throw new Error();
+	}
+
+	@ObfuscatedName("yk.e(Ljava/lang/CharSequence;B)J")
+	public static long method10482(CharSequence arg0) {
+		long var1 = 0L;
+		int var3 = arg0.length();
+		for (int var4 = 0; var4 < var3; var4++) {
+			var1 *= 37L;
+			char var5 = arg0.charAt(var4);
+			if (var5 >= 'A' && var5 <= 'Z') {
+				var1 += var5 + 1 - 65;
+			} else if (var5 >= 'a' && var5 <= 'z') {
+				var1 += var5 + 1 - 97;
+			} else if (var5 >= '0' && var5 <= '9') {
+				var1 += var5 + 27 - 48;
+			}
+			if (var1 >= 177917621779460413L) {
+				break;
+			}
+		}
+		while (var1 % 37L == 0L && var1 != 0L) {
+			var1 /= 37L;
+		}
+		return var1;
 	}
 
 	@ObfuscatedName("va.n(J)Ljava/lang/String;")
@@ -53,7 +76,7 @@ public final class Base37 {
 
 	@ObfuscatedName("ady.m(Ljava/lang/CharSequence;B)Ljava/lang/String;")
 	public static String method15309(CharSequence arg0) {
-		String var1 = method9411(Statics.method10482(arg0));
+		String var1 = method9411(method10482(arg0));
 		if (var1 == null) {
 			var1 = "";
 		}

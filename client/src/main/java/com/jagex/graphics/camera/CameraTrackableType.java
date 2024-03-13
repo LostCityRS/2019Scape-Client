@@ -17,4 +17,15 @@ public class CameraTrackableType {
 	public CameraTrackableType(int arg0) {
 		this.field2840 = arg0;
 	}
+
+    @ObfuscatedName("ads.e(II)Ljl;")
+    public static CameraTrackableType method15213(int arg0) {
+        if (field2838.field2840 == arg0) {
+            return field2838;
+        } else if (field2839.field2840 == arg0) {
+            return field2839;
+        } else {
+            return null;
+        }
+    }
 }

@@ -22,7 +22,12 @@ public class MaterialAlphaMode implements SerializableEnum {
 		this.field7576 = arg0;
 	}
 
-	@ObfuscatedName("vn.n()I")
+    @ObfuscatedName("tz.e(I)[Lvn;")
+    public static MaterialAlphaMode[] method8501() {
+        return new MaterialAlphaMode[] {field7573, field7575, TEST};
+    }
+
+    @ObfuscatedName("vn.n()I")
 	public int getId() {
 		return this.field7576;
 	}

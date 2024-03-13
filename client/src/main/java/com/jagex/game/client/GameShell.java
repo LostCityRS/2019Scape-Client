@@ -453,6 +453,11 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		}
 	}
 
+	@ObfuscatedName("fi.w(S)Ljava/io/File;")
+	public static File method3068() {
+		return cacheDirectory;
+	}
+
 	@ObfuscatedName("amr.l(Ljava/lang/String;Ljava/lang/String;ZI)Labl;")
 	public static FileOnDisk openPrefs(String arg0, String arg1, boolean arg2) {
 		File var3 = new File(cacheDirectory, "preferences" + arg0 + ".dat");

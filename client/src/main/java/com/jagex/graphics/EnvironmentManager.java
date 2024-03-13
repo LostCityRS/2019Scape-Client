@@ -257,7 +257,7 @@ public class EnvironmentManager {
 		Object var2 = null;
 		int var3 = -1;
 		int var4 = -1;
-		if (Statics.method611(Client.state) || Statics.method15084(Client.state)) {
+		if (Client.method611(Client.state) || Client.method15084(Client.state)) {
 			var3 = Client.field7956 >> 12;
 			var4 = Client.field1881 >> 12;
 		} else {

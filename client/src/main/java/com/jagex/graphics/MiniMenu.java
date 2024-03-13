@@ -938,7 +938,7 @@ public class MiniMenu {
 	@ObfuscatedName("acz.i(IB)V")
 	public static void method15023(int arg0) {
 		for (MinimenuEntry var1 = (MinimenuEntry) field542.method14191(); var1 != null; var1 = (MinimenuEntry) field542.method14161()) {
-			if (Statics.method13985(var1.field12307) && var1.field12302 >> 16 == arg0) {
+			if (method13985(var1.field12307) && var1.field12302 >> 16 == arg0) {
 				method9773(var1);
 			}
 		}
@@ -952,6 +952,11 @@ public class MiniMenu {
 			}
 		}
 		return false;
+	}
+
+	@ObfuscatedName("adv.t(I)Z")
+	public static boolean method15249() {
+		return field546 > 0;
 	}
 
 	@ObfuscatedName("qm.ae(Ldh;I)V")
@@ -1187,7 +1192,7 @@ public class MiniMenu {
 			return 0;
 		} else {
 			int var1 = arg0.field12307;
-			if (Statics.method13985(var1)) {
+			if (method13985(var1)) {
 				return 1;
 			} else if (method9907(var1)) {
 				return 2;
@@ -1330,6 +1335,15 @@ public class MiniMenu {
 		}
 	}
 
+	@ObfuscatedName("ahe.aa(IIIIIIILarn;Leu;Laac;III)V")
+	public static void method16748(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, MinimenuSubmenu arg7, Font arg8, FontMetrics arg9, int arg10, int arg11) {
+		if (arg0 > arg2 && arg0 < arg2 + arg4 && arg1 > arg6 - arg9.field8562 - 1 && arg1 < arg9.field8569 + arg6) {
+			arg10 = arg11;
+		}
+		String var12 = method15244(arg7);
+		arg8.method2689(var12, arg2 + 3, arg6, arg10, 0, Client.field10890, Client.field1681, DefaultSprites.field10302, null);
+	}
+
 	@ObfuscatedName("k.af(Ldh;I)V")
 	public static void method213(Renderer arg0) {
 		int var1 = -10660793;
@@ -1352,7 +1366,7 @@ public class MiniMenu {
 			if (var8.field12310 == 1) {
 				method9284(var2, var3, Statics.field11738, Statics.field2960, Statics.field1289, Statics.field2576, var9, (MinimenuEntry) var8.field12312.field8497.field11439, DefaultSprites.field10355, DefaultSprites.field10268, -1, -256);
 			} else {
-				Statics.method16748(var2, var3, Statics.field11738, Statics.field2960, Statics.field1289, Statics.field2576, var9, var8, DefaultSprites.field10355, DefaultSprites.field10268, -1, -256);
+				method16748(var2, var3, Statics.field11738, Statics.field2960, Statics.field1289, Statics.field2576, var9, var8, DefaultSprites.field10355, DefaultSprites.field10268, -1, -256);
 			}
 			var7++;
 		}
@@ -1511,7 +1525,7 @@ public class MiniMenu {
 			if (var25.field12310 == 1) {
 				method9284(var10, var11, Statics.field11738, Statics.field2960, Statics.field1289, Statics.field2576, var26, (MinimenuEntry) var25.field12312.field8497.field11439, var7, var8, Statics.field1266 | 0xFF000000, Statics.field2901 | 0xFF000000);
 			} else {
-				Statics.method16748(var10, var11, Statics.field11738, Statics.field2960, Statics.field1289, Statics.field2576, var26, var25, var7, var8, Statics.field1266 | 0xFF000000, Statics.field2901 | 0xFF000000);
+				method16748(var10, var11, Statics.field11738, Statics.field2960, Statics.field1289, Statics.field2576, var26, var25, var7, var8, Statics.field1266 | 0xFF000000, Statics.field2901 | 0xFF000000);
 			}
 			var24++;
 		}
@@ -1574,6 +1588,11 @@ public class MiniMenu {
 		return var1.toString();
 	}
 
+	@ObfuscatedName("zd.bc(IB)Z")
+	public static boolean method13985(int arg0) {
+		return arg0 == 57 || arg0 == 58 || arg0 == 1007 || arg0 == 25 || arg0 == 30;
+	}
+
 	@ObfuscatedName("xm.bi(II)Z")
 	public static boolean method9907(int arg0) {
 		if (arg0 == 18 || arg0 == 19 || arg0 == 20 || arg0 == 21 || arg0 == 22 || arg0 == 1004) {
@@ -1625,7 +1644,7 @@ public class MiniMenu {
 		}
 		if (arg0.field12081 != 0) {
 			String var4 = Client.modegame == ModeGame.STELLARDAWN ? LocalisedText.RATING.method15021(Client.language) : LocalisedText.LEVEL.method15021(Client.language);
-			var3 = var3 + Statics.method17760(arg0.field12081, Client.field4490.field12064) + TextUtil.OPEN_PARENTHESIS + var4 + arg0.field12081 + TextUtil.CLOSE_PARENTHESIS;
+			var3 = var3 + method17760(arg0.field12081, Client.field4490.field12064) + TextUtil.OPEN_PARENTHESIS + var4 + arg0.field12081 + TextUtil.CLOSE_PARENTHESIS;
 		}
 		if (Client.field10973 && !arg1) {
 			ParamType var5 = (ParamType) (Client.field7677 == -1 ? null : Client.field3086.list(Client.field7677));
@@ -1729,9 +1748,9 @@ public class MiniMenu {
 				}
 				String var5 = Client.modegame == ModeGame.STELLARDAWN ? LocalisedText.RATING.method15021(Client.language) : LocalisedText.LEVEL.method15021(Client.language);
 				if (arg0.field12064 >= arg0.field12072) {
-					var6 = arg0.method19115(true) + (var2 ? Statics.method17760(arg0.field12064, Client.field4490.field12064) : Statics.method596(16777215)) + TextUtil.OPEN_PARENTHESIS + var5 + arg0.field12064 + TextUtil.CLOSE_PARENTHESIS;
+					var6 = arg0.method19115(true) + (var2 ? method17760(arg0.field12064, Client.field4490.field12064) : Statics.method596(16777215)) + TextUtil.OPEN_PARENTHESIS + var5 + arg0.field12064 + TextUtil.CLOSE_PARENTHESIS;
 				} else {
-					var6 = arg0.method19115(true) + (var2 ? Statics.method17760(arg0.field12064, Client.field4490.field12064) : Statics.method596(16777215)) + TextUtil.OPEN_PARENTHESIS + var5 + arg0.field12064 + "+" + (arg0.field12072 - arg0.field12064) + TextUtil.CLOSE_PARENTHESIS;
+					var6 = arg0.method19115(true) + (var2 ? method17760(arg0.field12064, Client.field4490.field12064) : Statics.method596(16777215)) + TextUtil.OPEN_PARENTHESIS + var5 + arg0.field12064 + "+" + (arg0.field12072 - arg0.field12064) + TextUtil.CLOSE_PARENTHESIS;
 				}
 			} else if (arg0.field12059 == -1) {
 				var6 = arg0.method19115(true);
@@ -1746,7 +1765,7 @@ public class MiniMenu {
 					var6 = ((NPCType) Client.field7961.list(arg0.field12061.field7892)).name;
 					if (var8.vislevel != 0) {
 						String var9 = Client.modegame == ModeGame.STELLARDAWN ? LocalisedText.RATING.method15021(Client.language) : LocalisedText.LEVEL.method15021(Client.language);
-						var6 = var6 + Statics.method17760(var8.vislevel, Client.field4490.field12064) + TextUtil.OPEN_PARENTHESIS + var9 + var8.vislevel + TextUtil.CLOSE_PARENTHESIS;
+						var6 = var6 + method17760(var8.vislevel, Client.field4490.field12064) + TextUtil.OPEN_PARENTHESIS + var9 + var8.vislevel + TextUtil.CLOSE_PARENTHESIS;
 					}
 				}
 			}
@@ -1811,6 +1830,30 @@ public class MiniMenu {
 		}
 	}
 
+	@ObfuscatedName("aku.by(III)Ljava/lang/String;")
+	public static String method17760(int arg0, int arg1) {
+		int var2 = arg1 - arg0;
+		if (var2 < -9) {
+			return Statics.method596(16711680);
+		} else if (var2 < -6) {
+			return Statics.method596(16723968);
+		} else if (var2 < -3) {
+			return Statics.method596(16740352);
+		} else if (var2 < 0) {
+			return Statics.method596(16756736);
+		} else if (var2 > 9) {
+			return Statics.method596(65280);
+		} else if (var2 > 6) {
+			return Statics.method596(4259584);
+		} else if (var2 > 3) {
+			return Statics.method596(8453888);
+		} else if (var2 > 0) {
+			return Statics.method596(12648192);
+		} else {
+			return Statics.method596(16776960);
+		}
+	}
+
 	@ObfuscatedName("aq.bu(Larm;IIZI)V")
 	public static void method923(MinimenuEntry arg0, int arg1, int arg2, boolean arg3) {
 		if (arg0 == null || field542.field8482 == arg0) {
@@ -1826,16 +1869,16 @@ public class MiniMenu {
 		}
 		CoordGrid var10 = Client.world.method7727();
 		if (var6 == 1008 || var6 == 1009 || var6 == 1010 || var6 == 1011 || var6 == 1012) {
-			Statics.method15110(var6, var7, var4);
+			ClientWorldMap.method15110(var6, var7, var4);
 		}
 		if (var6 == 58) {
 			Component var11 = Component.method16682(var5, var4);
 			if (var11 != null) {
-				Statics.method5926(var11);
+				Client.method5926(var11);
 			}
 		}
 		if (var6 == 57 || var6 == 1007) {
-			Statics.method4527(var7, var5, var4, arg0.field12301);
+			Client.method4527(var7, var5, var4, arg0.field12301);
 		}
 		if (var6 == 25) {
 			Component var12 = Component.method16682(var5, var4);
@@ -1880,7 +1923,7 @@ public class MiniMenu {
 				Client.field10924 = arg2;
 				Client.field10926 = 2;
 				Client.field10925 = 0;
-				ClientMessage var16 = Statics.method1604(var14, Client.field10849.field794);
+				ClientMessage var16 = ClientMessage.method1604(var14, Client.field10849.field794);
 				var16.field11432.p2(var7);
 				var16.field11432.p1_alt1(method14766() ? 1 : 0);
 				Client.field10849.method934(var16);
@@ -1906,7 +1949,7 @@ public class MiniMenu {
 			Client.field10924 = arg2;
 			Client.field10926 = 2;
 			Client.field10925 = 0;
-			ClientMessage var18 = Statics.method1604(var17, Client.field10849.field794);
+			ClientMessage var18 = ClientMessage.method1604(var17, Client.field10849.field794);
 			var18.field11432.p1_alt2(method14766() ? 1 : 0);
 			var18.field11432.p2(var10.field7427 + var5);
 			var18.field11432.p4((int) (var8 >>> 32) & Integer.MAX_VALUE);
@@ -1963,7 +2006,7 @@ public class MiniMenu {
 				Client.field10924 = arg2;
 				Client.field10926 = 2;
 				Client.field10925 = 0;
-				ClientMessage var24 = Statics.method1604(var21, Client.field10849.field794);
+				ClientMessage var24 = ClientMessage.method1604(var21, Client.field10849.field794);
 				var24.field11432.p1_alt3(method14766() ? 1 : 0);
 				var24.field11432.p2_alt2(var7);
 				Client.field10849.method934(var24);
@@ -1975,7 +2018,7 @@ public class MiniMenu {
 			Client.field10924 = arg2;
 			Client.field10926 = 2;
 			Client.field10925 = 0;
-			ClientMessage var25 = Statics.method1604(ClientProt.OPOBJT, Client.field10849.field794);
+			ClientMessage var25 = ClientMessage.method1604(ClientProt.OPOBJT, Client.field10849.field794);
 			var25.field11432.p2_alt1(var7);
 			var25.field11432.p1_alt1(method14766() ? 1 : 0);
 			var25.field11432.p2_alt1(Client.field10975);
@@ -1994,7 +2037,7 @@ public class MiniMenu {
 				Client.field10924 = arg2;
 				Client.field10926 = 2;
 				Client.field10925 = 0;
-				ClientMessage var28 = Statics.method1604(ClientProt.OPNPCT, Client.field10849.field794);
+				ClientMessage var28 = ClientMessage.method1604(ClientProt.OPNPCT, Client.field10849.field794);
 				var28.field11432.p4(Client.field6707);
 				var28.field11432.p2(var7);
 				var28.field11432.p1_alt1(method14766() ? 1 : 0);
@@ -2009,7 +2052,7 @@ public class MiniMenu {
 			Client.field10924 = arg2;
 			Client.field10926 = 2;
 			Client.field10925 = 0;
-			ClientMessage var29 = Statics.method1604(ClientProt.OPLOCT, Client.field10849.field794);
+			ClientMessage var29 = ClientMessage.method1604(ClientProt.OPLOCT, Client.field10849.field794);
 			var29.field11432.p1_alt1(method14766() ? 1 : 0);
 			var29.field11432.p2_alt1(var10.field7426 + var4);
 			var29.field11432.p2_alt1(Client.field10975);
@@ -2028,7 +2071,7 @@ public class MiniMenu {
 				Client.field10924 = arg2;
 				Client.field10926 = 1;
 				Client.field10925 = 0;
-				ClientMessage var30 = Statics.method1604(ClientProt.FACE_SQUARE, Client.field10849.field794);
+				ClientMessage var30 = ClientMessage.method1604(ClientProt.FACE_SQUARE, Client.field10849.field794);
 				var30.field11432.p2_alt2(var10.field7427 + var5);
 				var30.field11432.p2_alt3(var10.field7426 + var4);
 				Client.field10849.method934(var30);
@@ -2039,7 +2082,7 @@ public class MiniMenu {
 			Client.field10924 = arg2;
 			Client.field10926 = 2;
 			Client.field10925 = 0;
-			ClientMessage var31 = Statics.method1604(ClientProt.OPPLAYERT, Client.field10849.field794);
+			ClientMessage var31 = ClientMessage.method1604(ClientProt.OPPLAYERT, Client.field10849.field794);
 			var31.field11432.p2(Client.field10974);
 			var31.field11432.p1_alt1(method14766() ? 1 : 0);
 			var31.field11432.p2_alt1(Client.field10975);
@@ -2066,7 +2109,7 @@ public class MiniMenu {
 			Client.field10924 = arg2;
 			Client.field10926 = 2;
 			Client.field10925 = 0;
-			ClientMessage var33 = Statics.method1604(var32, Client.field10849.field794);
+			ClientMessage var33 = ClientMessage.method1604(var32, Client.field10849.field794);
 			var33.field11432.p2_alt1(var7);
 			var33.field11432.p2_alt1(var10.field7426 + var4);
 			var33.field11432.p2(var10.field7427 + var5);
@@ -2081,7 +2124,7 @@ public class MiniMenu {
 				Client.field10924 = arg2;
 				Client.field10926 = 2;
 				Client.field10925 = 0;
-				ClientMessage var35 = Statics.method1604(ClientProt.OPPLAYERT, Client.field10849.field794);
+				ClientMessage var35 = ClientMessage.method1604(ClientProt.OPPLAYERT, Client.field10849.field794);
 				var35.field11432.p2(Client.field10974);
 				var35.field11432.p1_alt1(method14766() ? 1 : 0);
 				var35.field11432.p2_alt1(Client.field10975);
@@ -2096,7 +2139,7 @@ public class MiniMenu {
 			Client.field10924 = arg2;
 			Client.field10926 = 1;
 			Client.field10925 = 0;
-			ClientMessage var36 = Statics.method1604(ClientProt.APCOORDT, Client.field10849.field794);
+			ClientMessage var36 = ClientMessage.method1604(ClientProt.APCOORDT, Client.field10849.field794);
 			var36.field11432.p2_alt2(var10.field7426 + var4);
 			var36.field11432.p4_alt1(Client.field6707);
 			var36.field11432.p2(Client.field10975);
@@ -2124,10 +2167,10 @@ public class MiniMenu {
 	public static ClientMessage method9839(int arg0, int arg1, int arg2) {
 		ClientMessage var3 = null;
 		if (arg2 == 0) {
-			var3 = Statics.method1604(ClientProt.MOVE_GAMECLICK, Client.field10849.field794);
+			var3 = ClientMessage.method1604(ClientProt.MOVE_GAMECLICK, Client.field10849.field794);
 		}
 		if (arg2 == 1) {
-			var3 = Statics.method1604(ClientProt.MOVE_MINIMAPCLICK, Client.field10849.field794);
+			var3 = ClientMessage.method1604(ClientProt.MOVE_MINIMAPCLICK, Client.field10849.field794);
 		}
 		CoordGrid var4 = Client.world.method7727();
 		var3.field11432.p2(var4.field7427 + arg1);

@@ -3,7 +3,6 @@ package com.jagex.game.client;
 import com.jagex.game.network.ServerConnection;
 import com.jagex.game.network.protocol.ClientProt;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 import java.io.IOException;
@@ -30,7 +29,7 @@ public class MapLogicRelated {
 			}
 			var3.field793 = 0;
 			if (!var3.field808 && var3.method939() != null) {
-				ClientMessage var4 = Statics.method1604(ClientProt.NO_TIMEOUT, var3.field794);
+				ClientMessage var4 = ClientMessage.method1604(ClientProt.NO_TIMEOUT, var3.field794);
 				var3.method934(var4);
 				try {
 					var3.method933();

@@ -201,7 +201,7 @@ public class CutsceneManager {
 			ScriptRunner.method830(ClientTriggerType.field7266, field1722, -1);
 		}
 		method3551();
-		ClientMessage var4 = Statics.method1604(ClientProt.CUTSCENE_FINISHED, Client.field10849.field794);
+		ClientMessage var4 = ClientMessage.method1604(ClientProt.CUTSCENE_FINISHED, Client.field10849.field794);
 		var4.field11432.p1(arg0 ? 1 : 0);
 		Client.field10849.method934(var4);
 	}

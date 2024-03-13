@@ -22,7 +22,12 @@ public class LocTypeRelated implements SerializableEnum {
 		this.field7441 = arg0;
 	}
 
-	@ObfuscatedName("vg.n()I")
+    @ObfuscatedName("ua.e(S)[Lvg;")
+    public static LocTypeRelated[] method9002() {
+        return new LocTypeRelated[] {field7440, field7439, field7438};
+    }
+
+    @ObfuscatedName("vg.n()I")
 	public int getId() {
 		return this.field7441;
 	}

@@ -11,7 +11,6 @@ import com.jagex.math.Quaternion;
 import com.jagex.math.Vector3;
 import com.jagex.math.Vector3i;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("ahd")
 public class PositionEntity extends Position {
@@ -266,7 +265,7 @@ public class PositionEntity extends Position {
 
 	@ObfuscatedName("ahd.u(Lalw;I)V")
 	public void method5224(Packet arg0) {
-		CameraTrackableType var2 = Statics.method15213(arg0.g1());
+		CameraTrackableType var2 = CameraTrackableType.method15213(arg0.g1());
 		int var3 = arg0.g2();
 		this.field10553.method6490(arg0);
 		this.field10554.method6410(arg0);

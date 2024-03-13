@@ -80,7 +80,7 @@ public class DeveloperConsole {
 
 	@ObfuscatedName("cc.e(B)Z")
 	public static boolean method1584() {
-		return !Statics.method2092(Client.state);
+		return !Client.method2092(Client.state);
 	}
 
 	@ObfuscatedName("i.n(I)V")
@@ -643,12 +643,12 @@ public class DeveloperConsole {
 						addline("Failed to read file");
 						return;
 					}
-					String[] var29 = StringTools.method17361(Statics.method17687(Cp1252.method667(var28), '\r', ""), '\n');
+					String[] var29 = StringTools.method17361(StringTools.method17687(Cp1252.method667(var28), '\r', ""), '\n');
 					method15383(var29);
 				}
 				if (Client.state == 18 || Client.state == 13) {
 					ServerConnection var30 = Client.method640();
-					ClientMessage var31 = Statics.method1604(ClientProt.CLIENT_CHEAT, var30.field794);
+					ClientMessage var31 = ClientMessage.method1604(ClientProt.CLIENT_CHEAT, var30.field794);
 					var31.field11432.p1(arg0.length() + 3);
 					var31.field11432.p1(arg1 ? 1 : 0);
 					var31.field11432.p1(arg2 ? 1 : 0);
@@ -738,7 +738,7 @@ public class DeveloperConsole {
 					addline(Component.field2175.method2926() + " " + Component.field2175.method2925());
 					addline(Component.field2297.method2926() + " " + Component.field2297.method2925());
 				} else if (arg0 == 8) {
-					Statics.method14055(false);
+					Client.method14055(false);
 				} else if (arg0 == 13) {
 					Client.field10848 = !Client.field10848;
 					Client.field8198.method2253(Client.field10848);

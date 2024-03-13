@@ -14,7 +14,6 @@ import com.jagex.graphics.Renderer;
 import com.jagex.graphics.WaterFogData;
 import com.jagex.math.Trig1;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("qg")
 public class MapLoader {
@@ -372,7 +371,7 @@ public class MapLoader {
 							this.method7140(arg0, arg1, var18, var19, 0, 0, var11 + var16, var12 + var17, 0, true);
 						} else {
 							var18 = arg2 + MapCoordUtil.method14888(var16 & 0x7, var17 & 0x7, arg7);
-							var19 = arg3 + Statics.method14756(var16 & 0x7, var17 & 0x7, arg7);
+							var19 = arg3 + MapCoordUtil.method14756(var16 & 0x7, var17 & 0x7, arg7);
 							this.method7140(arg0, arg1, var18, var19, var13, var14, var11 + var16, var12 + var17, arg7, false);
 						}
 						if (var16 == 63 || var17 == 63) {

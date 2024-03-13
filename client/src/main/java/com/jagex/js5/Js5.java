@@ -1,12 +1,17 @@
 package com.jagex.js5;
 
+import com.jagex.core.io.BZip2;
 import com.jagex.core.io.GZip;
 import com.jagex.core.io.Packet;
 import com.jagex.core.utils.ByteArrayCopier;
 import com.jagex.core.utils.StringTools;
 import com.jagex.js5.index.Js5Index;
+import com.jagex.js5.network.Js5GroupHeader;
 import deob.ObfuscatedName;
 import deob.Statics;
+import lzma.sdk.lzma.LZMA;
+
+import java.io.IOException;
 
 @ObfuscatedName("py")
 public final class Js5 {
@@ -359,7 +364,7 @@ public final class Js5 {
 			}
 			byte[] var15;
 			try {
-				var15 = Statics.method7275(var10);
+				var15 = method7275(var10);
 			} catch (RuntimeException var51) {
 				throw Statics.method19636(var51, (arg2 != null) + " " + arg0 + " " + var10.length + " " + Packet.getcrc(var10, var10.length) + " " + Packet.getcrc(var10, var10.length - 2) + " " + this.field4416.field4393[arg0] + " " + this.field4416.crc);
 			}
@@ -582,6 +587,46 @@ public final class Js5 {
 			return this.method6892(var3);
 		} else {
 			return 0;
+		}
+	}
+
+	@ObfuscatedName("qi.ai([BB)[B")
+	public static final byte[] method7275(byte[] arg0) {
+		Packet var1 = new Packet(arg0);
+		Js5GroupHeader var2 = new Js5GroupHeader(var1);
+		Js5CompressionType var3 = var2.method7080();
+		int var4 = var2.method7081();
+		if (var4 < 0 || field4419 != 0 && var4 > field4419) {
+			throw new RuntimeException();
+		} else if (Js5CompressionType.field4434 == var3) {
+			byte[] var5 = new byte[var4];
+			var1.gdata(var5, 0, var4);
+			return var5;
+		} else {
+			int var6 = var2.method7091();
+			if (var6 < 0 || field4419 != 0 && var6 > field4419) {
+				throw new RuntimeException();
+			}
+			byte[] var7;
+			if (Js5CompressionType.field4430 == var3) {
+				var7 = new byte[var6];
+				BZip2.method14100(var7, var6, arg0, var4, 9);
+			} else if (Js5CompressionType.field4432 == var3) {
+				var7 = new byte[var6];
+				GZip var8 = field4409;
+				synchronized (field4409) {
+					field4409.method15245(var1, var7);
+				}
+			} else if (Js5CompressionType.LZMA == var3) {
+				try {
+					var7 = LZMA.method8503(var1, var6);
+				} catch (IOException var11) {
+					throw new RuntimeException(var11);
+				}
+			} else {
+				throw new RuntimeException();
+			}
+			return var7;
 		}
 	}
 }

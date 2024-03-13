@@ -3,7 +3,6 @@ package com.jagex.game.client;
 import com.jagex.core.io.SendablePacket;
 import com.jagex.game.network.protocol.ClientProt;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 @ObfuscatedName("ur")
@@ -30,7 +29,7 @@ public class ClientNativeLibraryFailure implements SendablePacket {
 
 	@ObfuscatedName("ur.e(I)V")
 	public void method9201() {
-		ClientMessage var1 = Statics.method1604(ClientProt.NATIVE_LIBRARY_FAILURE, Client.field10849.field794);
+		ClientMessage var1 = ClientMessage.method1604(ClientProt.NATIVE_LIBRARY_FAILURE, Client.field10849.field794);
 		int var2 = var1.field11432.pos++;
 		var1.field11432.p1(this.field7278.getId());
 		var1.field11432.pjstr(this.field7276);

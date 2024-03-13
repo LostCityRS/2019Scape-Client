@@ -1,7 +1,10 @@
 package com.jagex.game.shared.framework.gwc;
 
 import com.jagex.core.io.Packet;
+import com.jagex.core.utils.MonotonicTime;
 import deob.ObfuscatedName;
+import deob.Statics;
+import rs2.client.login.WorldSwitcher;
 
 @ObfuscatedName("wb")
 public class GWC {
@@ -93,5 +96,28 @@ public class GWC {
 				field7644[var2].field7641 = var3;
 			}
 		}
+	}
+
+	@ObfuscatedName("pr.f(Z[BI)V")
+	public static void method6876(boolean arg0, byte[] arg1) {
+		if (Statics.field7415 == null) {
+			Statics.field7415 = new Packet(20000);
+		}
+		Statics.field7415.pdata(arg1, 0, arg1.length);
+		if (!arg0) {
+			return;
+		}
+		method570(Statics.field7415.data);
+		WorldSwitcher.field8748 = new GWCWorld[field533];
+		int var2 = 0;
+		for (int var3 = field7414; var3 <= field3011; var3++) {
+			GWCWorld var4 = method4944(var3);
+			if (var4 != null) {
+				WorldSwitcher.field8748[var2++] = var4;
+			}
+		}
+		WorldSwitcher.field8754 = false;
+		Statics.field2826 = MonotonicTime.method3655();
+		Statics.field7415 = null;
 	}
 }

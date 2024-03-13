@@ -564,7 +564,7 @@ public class ReceivePlayerPositions {
 			int var7 = arg0.data[(++arg0.pos) - 1] & 0xFF;
 			for (int var8 = 0; var8 < var7; var8++) {
 				int var9 = arg0.g1_alt3();
-				BaseVarType var10 = (BaseVarType) SerializableEnums.decode(Statics.method7338(), var9);
+				BaseVarType var10 = (BaseVarType) SerializableEnums.decode(BaseVarType.method7338(), var9);
 				VarValue var11 = Client.field8485.decodeVarValue(arg0, var10);
 				arg2.field10460.method14735(var11.field4240, var11.field4239);
 			}
@@ -714,7 +714,7 @@ public class ReceivePlayerPositions {
 			int var62 = arg0.data[(++arg0.pos) - 1] & 0xFF;
 			for (int var63 = 0; var63 < var62; var63++) {
 				int var64 = arg0.g1_alt3();
-				BaseVarType var65 = (BaseVarType) SerializableEnums.decode(Statics.method7338(), var64);
+				BaseVarType var65 = (BaseVarType) SerializableEnums.decode(BaseVarType.method7338(), var64);
 				VarValue var66 = Client.field8485.decodeVarValue(arg0, var65);
 				arg2.field10460.method14735(var66.field4240, var66.field4239);
 			}

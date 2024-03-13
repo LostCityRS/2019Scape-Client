@@ -26,7 +26,12 @@ public class MapAlignmentY implements SerializableEnum {
 		this.field2423 = arg1;
 	}
 
-	@ObfuscatedName("hy.n()I")
+    @ObfuscatedName("ace.e(I)[Lhy;")
+    public static MapAlignmentY[] method15088() {
+        return new MapAlignmentY[] {field2422, field2426, field2424};
+    }
+
+    @ObfuscatedName("hy.n()I")
 	public int getId() {
 		return this.field2423;
 	}

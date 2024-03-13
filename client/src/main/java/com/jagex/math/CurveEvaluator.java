@@ -3,7 +3,6 @@ package com.jagex.math;
 import com.jagex.graphics.KeyFrame;
 import com.jagex.graphics.TransformInfinityType;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("da")
 public class CurveEvaluator {
@@ -254,6 +253,27 @@ public class CurveEvaluator {
 		arg0.field1449[3] = arg2[0];
 	}
 
+	@ObfuscatedName("eo.l(Ljava/lang/Float;Ljava/lang/Float;I)V")
+	public static void method2672(Float arg0, Float arg1) {
+		if (arg0 + field1287 >= 1.3333334F) {
+			Float var9 = 1.3333334F - field1287;
+			Float var10 = 0.33333334F - field1287;
+			return;
+		}
+		float var2 = arg0 - 2.0F;
+		float var3 = arg0 - 1.0F;
+		float var4 = (float) Math.sqrt((double) (var2 * var2 - var3 * 4.0F * var3));
+		float var5 = (-var2 + var4) * 0.5F;
+		if (arg1 + field1287 > var5) {
+			Float var6 = var5 - field1287;
+		} else {
+			float var7 = (-var2 - var4) * 0.5F;
+			if (arg1 < field1287 + var7) {
+				Float var8 = field1287 + var7;
+			}
+		}
+	}
+
 	@ObfuscatedName("im.u(Ljava/lang/Float;Ljava/lang/Float;B)V")
 	public static void method4627(Float arg0, Float arg1) {
 		Float var2 = 1.0F - arg1;
@@ -266,7 +286,7 @@ public class CurveEvaluator {
 		if (arg0 > 1.0F || var2 > 1.0F) {
 			float var3 = (float) ((double) (arg0 * (arg0 - 2.0F + var2)) + (double) var2 * ((double) var2 - 2.0D) + 1.0D);
 			if (field1287 + var3 > 0.0F) {
-				Statics.method2672(arg0, var2);
+				method2672(arg0, var2);
 			}
 		}
 		Float var4 = 1.0F - var2;

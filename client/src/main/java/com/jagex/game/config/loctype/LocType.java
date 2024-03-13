@@ -15,7 +15,6 @@ import com.jagex.graphics.*;
 import com.jagex.math.Cuboid;
 import com.jagex.math.IntMath;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 import java.util.Arrays;
 
@@ -532,7 +531,7 @@ public class LocType implements ConfigType {
 				} else if (arg1 == 178) {
 					this.field7510 = arg0.g1();
 				} else if (arg1 == 186) {
-					this.field7526 = (LocTypeRelated) SerializableEnums.decode(Statics.method9002(), arg0.g1());
+					this.field7526 = (LocTypeRelated) SerializableEnums.decode(LocTypeRelated.method9002(), arg0.g1());
 				} else if (arg1 != 188) {
 					if (arg1 == 189) {
 						this.field7525 = true;

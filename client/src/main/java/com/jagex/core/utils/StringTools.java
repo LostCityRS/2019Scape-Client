@@ -270,6 +270,37 @@ public final class StringTools {
 		return arg0 >= '0' && arg0 <= '9' || arg0 >= 'A' && arg0 <= 'Z' || arg0 >= 'a' && arg0 <= 'z';
 	}
 
+	@ObfuscatedName("akc.y(Ljava/lang/String;CLjava/lang/String;I)Ljava/lang/String;")
+	public static String method17687(String arg0, char arg1, String arg2) {
+		int var3 = arg0.length();
+		int var4 = arg2.length();
+		int var5 = var3;
+		int var6 = var4 - 1;
+		if (var6 != 0) {
+			int var7 = 0;
+			while (true) {
+				var7 = arg0.indexOf(arg1, var7);
+				if (var7 < 0) {
+					break;
+				}
+				var7++;
+				var5 += var6;
+			}
+		}
+		StringBuilder var8 = new StringBuilder(var5);
+		int var9 = 0;
+		while (true) {
+			int var10 = arg0.indexOf(arg1, var9);
+			if (var10 < 0) {
+				var8.append(arg0.substring(var9));
+				return var8.toString();
+			}
+			var8.append(arg0.substring(var9, var10));
+			var8.append(arg2);
+			var9 = var10 + 1;
+		}
+	}
+
 	@ObfuscatedName("client.q(Ljava/lang/String;CI)[Ljava/lang/String;")
 	public static String[] method17361(String arg0, char arg1) {
 		int var2 = method4423(arg0, arg1);
@@ -285,5 +316,16 @@ public final class StringTools {
 		}
 		var3[var2] = arg0.substring(var5);
 		return var3;
+	}
+
+	@ObfuscatedName("akv.x(CI)Z")
+	public static boolean method17828(char arg0) {
+		if (arg0 >= ' ' && arg0 <= '~') {
+			return true;
+		} else if (arg0 >= 160 && arg0 <= 255) {
+			return true;
+		} else {
+			return arg0 == 8364 || arg0 == 338 || arg0 == 8212 || arg0 == 339 || arg0 == 376;
+		}
 	}
 }

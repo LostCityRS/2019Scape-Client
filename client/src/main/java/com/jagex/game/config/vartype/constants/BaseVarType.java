@@ -6,7 +6,6 @@ import com.jagex.game.client.ComponentHook;
 import com.jagex.game.config.vartype.*;
 import com.jagex.game.shared.movement.CoordFine;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("qa")
 public class BaseVarType implements SerializableEnum {
@@ -45,9 +44,19 @@ public class BaseVarType implements SerializableEnum {
 		this.field4844 = arg3;
 	}
 
+	@ObfuscatedName("qa.e(I)[Lqa;")
+	public static BaseVarType[] method7338() {
+		return new BaseVarType[] {field4839, field4838, field4836, INTEGER, field4837};
+	}
+
+	@ObfuscatedName("qa.n()I")
+	public int getId() {
+		return this.field4842;
+	}
+
 	@ObfuscatedName("qa.m(Ljava/lang/Class;I)Lqa;")
 	public static BaseVarType method7337(Class arg0) {
-		BaseVarType[] var1 = Statics.method7338();
+		BaseVarType[] var1 = method7338();
 		for (int var2 = 0; var2 < var1.length; var2++) {
 			BaseVarType var3 = var1[var2];
 			if (var3.javaClass == arg0) {
@@ -64,11 +73,6 @@ public class BaseVarType implements SerializableEnum {
 			throw new IllegalArgumentException();
 		}
 		return var1.field4844;
-	}
-
-	@ObfuscatedName("qa.n()I")
-	public int getId() {
-		return this.field4842;
 	}
 
 	@ObfuscatedName("qa.w(Lalw;B)Ljava/lang/Object;")

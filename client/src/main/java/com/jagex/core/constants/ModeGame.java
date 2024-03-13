@@ -1,7 +1,6 @@
 package com.jagex.core.constants;
 
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("zd")
 public class ModeGame {
@@ -39,9 +38,14 @@ public class ModeGame {
 		this.field8339 = arg2;
 	}
 
+	@ObfuscatedName("qx.e(B)[Lzd;")
+	public static ModeGame[] method7118() {
+		return new ModeGame[] {RUNESCAPE, ALTERNATEREALITY, OLDSCAPE, TRANSFORMERS, SCRATCH, STELLARDAWN};
+	}
+
 	@ObfuscatedName("rg.n(II)Lzd;")
 	public static ModeGame method7704(int arg0) {
-		ModeGame[] var1 = Statics.method7118();
+		ModeGame[] var1 = method7118();
 		for (int var2 = 0; var2 < var1.length; var2++) {
 			ModeGame var3 = var1[var2];
 			if (var3.field8339 == arg0) {

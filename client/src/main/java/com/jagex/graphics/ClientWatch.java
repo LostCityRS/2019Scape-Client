@@ -8,7 +8,6 @@ import com.jagex.game.network.protocol.ClientProt;
 import com.jagex.game.world.entity.PositionMode;
 import com.jagex.graphics.camera.CameraHelpers;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 import java.awt.*;
@@ -42,7 +41,7 @@ public class ClientWatch {
 
 	@ObfuscatedName("cr.e(I)V")
 	public static void method1427() {
-		if (Statics.method5216()) {
+		if (method5216()) {
 			NativeMouse.method17426(new NativeMouseLoggerNativeMouseListener());
 		}
 	}
@@ -103,13 +102,32 @@ public class ClientWatch {
 		}
 	}
 
+	@ObfuscatedName("ka.w(I)Z")
+	public static boolean method5216() {
+		try {
+			if (!NativeMouse.available()) {
+				return false;
+			}
+		} catch (Throwable var2) {
+			return false;
+		}
+		if (NativeMouse.field11719 != null) {
+			throw new IllegalStateException("");
+		}
+		NativeMouse.field11719 = new NativeMouse();
+		Thread var1 = new Thread(new NativeMouseTask());
+		var1.setDaemon(true);
+		var1.start();
+		return true;
+	}
+
 	@ObfuscatedName("gd.l(I)V")
 	public static void method3648() {
 		method5995();
 		field7949.method10280();
 		field7948.method10280();
 		if (Client.field10822 > 0) {
-			ClientMessage var0 = Statics.method1604(ClientProt.EVENT_KEYBOARD, Client.field10849.field794);
+			ClientMessage var0 = ClientMessage.method1604(ClientProt.EVENT_KEYBOARD, Client.field10849.field794);
 			var0.field11432.p2(Client.field10822 * 4);
 			for (int var1 = 0; var1 < Client.field10822; var1++) {
 				KeyboardEvent var2 = Client.field11024[var1];
@@ -143,19 +161,19 @@ public class ClientWatch {
 				var6 = 0;
 				var8 = 0;
 			}
-			ClientMessage var9 = Statics.method1604(ClientProt.EVENT_CAMERA_POSITION, Client.field10849.field794);
+			ClientMessage var9 = ClientMessage.method1604(ClientProt.EVENT_CAMERA_POSITION, Client.field10849.field794);
 			var9.field11432.p2_alt3(var8);
 			var9.field11432.p2(var6);
 			Client.field10849.method934(var9);
 		}
 		if (GameShell.focus != field7944) {
 			field7944 = GameShell.focus;
-			ClientMessage var10 = Statics.method1604(ClientProt.EVENT_APPLET_FOCUS, Client.field10849.field794);
+			ClientMessage var10 = ClientMessage.method1604(ClientProt.EVENT_APPLET_FOCUS, Client.field10849.field794);
 			var10.field11432.p1(GameShell.focus ? 1 : 0);
 			Client.field10849.method934(var10);
 		}
 		if (!Client.field10800) {
-			ClientMessage var11 = Statics.method1604(ClientProt.CLIENT_DETAILOPTIONS_STATUS, Client.field10849.field794);
+			ClientMessage var11 = ClientMessage.method1604(ClientProt.CLIENT_DETAILOPTIONS_STATUS, Client.field10849.field794);
 			var11.field11432.p1(0);
 			int var12 = var11.field11432.pos;
 			Packet var13 = Client.field688.method18156();
@@ -168,7 +186,7 @@ public class ClientWatch {
 			return;
 		}
 		int[] var14 = Client.field8198.method2413();
-		ClientMessage var15 = Statics.method1604(ClientProt.CLIENT_COMPRESSEDTEXTUREFORMAT_SUPPORT, Client.field10849.field794);
+		ClientMessage var15 = ClientMessage.method1604(ClientProt.CLIENT_COMPRESSEDTEXTUREFORMAT_SUPPORT, Client.field10849.field794);
 		var15.field11432.p2(0);
 		int var16 = var15.field11432.pos;
 		if (var14 == null || var14.length == 0) {

@@ -1053,7 +1053,7 @@ public class World {
 			}
 		}
 		if (!this.field5036) {
-			Statics.method14055(true);
+			Client.method14055(true);
 		}
 		boolean var19 = false;
 		if (Client.field688.waterDetail.method18522() == 2) {
@@ -1227,7 +1227,7 @@ public class World {
 		Client.method3128();
 		ChangeLocationRequest.method5070();
 		if (GameShell.getEnvironment() == GameShell3$Environment.APPLICATION && Client.field10849.method939() != null && Client.state == 3) {
-			ClientMessage var31 = Statics.method1604(ClientProt.DETECT_MODIFIED_CLIENT, Client.field10849.field794);
+			ClientMessage var31 = ClientMessage.method1604(ClientProt.DETECT_MODIFIED_CLIENT, Client.field10849.field794);
 			var31.field11432.p4(1057001181);
 			Client.field10849.method934(var31);
 		}
@@ -1256,7 +1256,7 @@ public class World {
 		} else {
 			Client.setState(18);
 			if (Client.field10849.method939() != null) {
-				ClientMessage var40 = Statics.method1604(ClientProt.MAP_BUILD_COMPLETE, Client.field10849.field794);
+				ClientMessage var40 = ClientMessage.method1604(ClientProt.MAP_BUILD_COMPLETE, Client.field10849.field794);
 				var40.field11432.p4((int) var38);
 				Client.field10849.method934(var40);
 			}

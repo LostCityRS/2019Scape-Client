@@ -57,7 +57,7 @@ public class AccountCreationManager {
 		if (Client.state != 0) {
 			return;
 		}
-		ClientMessage var1 = Statics.method1604(ClientProt.CREATE_CHECK_EMAIL, Client.field10835.field794);
+		ClientMessage var1 = ClientMessage.method1604(ClientProt.CREATE_CHECK_EMAIL, Client.field10835.field794);
 		var1.field11432.p2(0);
 		int var2 = var1.field11432.pos;
 		var1.field11432.pjstr(arg0);
@@ -75,7 +75,7 @@ public class AccountCreationManager {
 		if (Client.state != 0) {
 			return;
 		}
-		ClientMessage var1 = Statics.method1604(ClientProt.CREATE_CHECK_NAME, Client.field10835.field794);
+		ClientMessage var1 = ClientMessage.method1604(ClientProt.CREATE_CHECK_NAME, Client.field10835.field794);
 		var1.field11432.p1(0);
 		int var2 = var1.field11432.pos;
 		var1.field11432.pjstr(arg0);
@@ -91,7 +91,7 @@ public class AccountCreationManager {
 	@ObfuscatedName("ae.w(I)V")
 	public static void method648() {
 		if (Client.state == 0) {
-			ClientMessage var0 = Statics.method1604(ClientProt.CREATE_SUGGEST_NAMES, Client.field10835.field794);
+			ClientMessage var0 = ClientMessage.method1604(ClientProt.CREATE_SUGGEST_NAMES, Client.field10835.field794);
 			Client.field10835.method934(var0);
 			Statics.field585 = SuggestNameReply.field8392;
 			Statics.field618 = null;
@@ -103,7 +103,7 @@ public class AccountCreationManager {
 		if (Client.state != 0) {
 			return;
 		}
-		ClientMessage var5 = Statics.method1604(ClientProt.CREATE_ACCOUNT, Client.field10835.field794);
+		ClientMessage var5 = ClientMessage.method1604(ClientProt.CREATE_ACCOUNT, Client.field10835.field794);
 		var5.field11432.p2(0);
 		int var6 = var5.field11432.pos;
 		var5.field11432.pjstr(arg0);
@@ -127,7 +127,7 @@ public class AccountCreationManager {
 	@ObfuscatedName("afu.u(II)V")
 	public static void method16428(int arg0) {
 		if (Client.state == 0) {
-			ClientMessage var1 = Statics.method1604(ClientProt.CREATE_LOG_PROGRESS, Client.field10835.field794);
+			ClientMessage var1 = ClientMessage.method1604(ClientProt.CREATE_LOG_PROGRESS, Client.field10835.field794);
 			var1.field11432.p1(arg0);
 			Client.field10835.method934(var1);
 		}

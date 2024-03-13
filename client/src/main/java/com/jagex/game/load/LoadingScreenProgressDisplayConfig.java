@@ -63,4 +63,16 @@ public class LoadingScreenProgressDisplayConfig implements LoadingScreenElementC
 	public LoadingScreenElementType method5349() {
 		return null;
 	}
+
+	@ObfuscatedName("xj.k(Lalw;B)Lkp;")
+	public static LoadingScreenProgressDisplayConfig method10312(Packet arg0) {
+		LoadingScreenProgressDisplayConfig var1 = method18899(arg0);
+		int var2 = arg0.gSmart2or4null();
+		int var3 = arg0.gSmart2or4null();
+		int var4 = arg0.gSmart2or4null();
+		int var5 = arg0.gSmart2or4null();
+		int var6 = arg0.gSmart2or4null();
+		int var7 = arg0.gSmart2or4null();
+		return new LoadingScreenRelated4(var1.field3167, var1.field3159, var1.field3161, var1.field3162, var1.field3163, var1.field3160, var1.field3165, var1.field3166, var1.field3164, var2, var3, var4, var5, var6, var7);
+	}
 }

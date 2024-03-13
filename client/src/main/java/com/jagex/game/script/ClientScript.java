@@ -10,7 +10,6 @@ import com.jagex.game.config.vartype.constants.BaseVarType;
 import com.jagex.game.config.vartype.constants.VarDomainType;
 import com.jagex.math.IntMath;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("asc")
 public class ClientScript extends SecondaryNode {
@@ -123,7 +122,7 @@ public class ClientScript extends SecondaryNode {
 			}
 			this.field12367[arg1] = arg0.g1();
 		} else if (ClientScriptCommand.field5144 == arg2) {
-			BaseVarType var5 = (BaseVarType) SerializableEnums.decode(Statics.method7338(), arg0.g1());
+			BaseVarType var5 = (BaseVarType) SerializableEnums.decode(BaseVarType.method7338(), arg0.g1());
 			switch(var5.id) {
 				case 1:
 					if (this.field12366 == null) {

@@ -12,7 +12,6 @@ import com.jagex.game.config.vartype.constants.VarLifetime;
 import com.jagex.game.network.ServerConnection;
 import com.jagex.game.network.protocol.ClientProt;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 import java.io.EOFException;
@@ -223,7 +222,7 @@ public final class ClientVariableManager extends SparseVarDomain {
 		if (var4.field791 > 1200) {
 			return;
 		}
-		ClientMessage var5 = Statics.method1604(ClientProt.STORE_SERVERPERM_VARCS, var4.field794);
+		ClientMessage var5 = ClientMessage.method1604(ClientProt.STORE_SERVERPERM_VARCS, var4.field794);
 		var5.field11432.p2(0);
 		int var6 = var5.field11432.pos;
 		var5.field11432.pos++;

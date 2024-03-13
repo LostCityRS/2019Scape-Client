@@ -28,6 +28,11 @@ public class WordPack {
 		return packet.pos - var2;
 	}
 
+	@ObfuscatedName("nd.m(Lalw;I)Ljava/lang/String;")
+	public static String method5939(Packet arg0) {
+		return decode(arg0, 32767);
+	}
+
 	@ObfuscatedName("eu.k(Lalw;II)Ljava/lang/String;")
 	public static String decode(Packet arg0, int arg1) {
 		try {

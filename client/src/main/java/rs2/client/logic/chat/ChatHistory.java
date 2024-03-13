@@ -33,6 +33,16 @@ public class ChatHistory {
 		return ++field2595 - 1;
 	}
 
+	@ObfuscatedName("amx.n(I)I")
+	public static int method18587() {
+		return field2595 - 1;
+	}
+
+	@ObfuscatedName("js.m(Ljava/lang/String;B)V")
+	public static void method4943(String arg0) {
+		method2664(0, 0, "", "", "", arg0, null);
+	}
+
 	@ObfuscatedName("af.k(ILjava/lang/String;I)V")
 	public static void method1006(int arg0, String arg1) {
 		method2664(arg0, 0, "", "", "", arg1, null);

@@ -2,11 +2,7 @@ package com.jagex.game.load;
 
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
-import deob.Statics;
-import rs2.client.login.LoginRelated4;
-import rs2.client.login.LoginRelated5;
-import rs2.client.login.LoginScreenRelated2;
-import rs2.client.login.LoginScreenRelated3;
+import rs2.client.login.*;
 
 @ObfuscatedName("adn")
 public class LoadingScreenType {
@@ -38,9 +34,9 @@ public class LoadingScreenType {
 		} else if (LoadingScreenElementType.field3189 == arg1) {
 			return LoadingScreenRelated1.method5148(arg0);
 		} else if (LoadingScreenElementType.field3193 == arg1) {
-			return Statics.method10312(arg0);
+			return LoadingScreenProgressDisplayConfig.method10312(arg0);
 		} else if (LoadingScreenElementType.field3187 == arg1) {
-			return Statics.method2836(arg0);
+			return LoginRelated6.method2836(arg0);
 		} else if (LoadingScreenElementType.field3195 == arg1) {
 			return LoginRelated5.method8975(arg0);
 		} else if (LoadingScreenElementType.field3196 == arg1) {

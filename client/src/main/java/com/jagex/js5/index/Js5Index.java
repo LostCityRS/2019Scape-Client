@@ -3,8 +3,8 @@ package com.jagex.js5.index;
 import com.jagex.core.datastruct.IntTreeMap;
 import com.jagex.core.io.Packet;
 import com.jagex.encryption.Whirlpool;
+import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("pl")
 public class Js5Index {
@@ -87,7 +87,7 @@ public class Js5Index {
 
 	@ObfuscatedName("pl.e([BI)V")
 	public void method6849(byte[] arg0) {
-		Packet var2 = new Packet(Statics.method7275(arg0));
+		Packet var2 = new Packet(Js5.method7275(arg0));
 		int var3 = var2.g1();
 		if (var3 < 5 || var3 > 7) {
 			throw new RuntimeException();

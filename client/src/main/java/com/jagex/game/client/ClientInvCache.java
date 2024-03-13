@@ -94,6 +94,21 @@ public class ClientInvCache extends Node {
 		}
 	}
 
+	@ObfuscatedName("abe.f(IIZI)I")
+	public static int method14914(int arg0, int arg1, boolean arg2) {
+		int var3 = 0;
+		ClientInvCache var4 = Statics.method8358(arg0, arg2);
+		if (var4 == null) {
+			return 0;
+		}
+		for (int var5 = 0; var5 < var4.field11223.length; var5++) {
+			if (var4.field11223[var5] >= 0 && ((ObjType) Client.field1842.list(var4.field11223[var5])).field8628 == arg1) {
+				var3 += method14483(arg0, var5, arg2);
+			}
+		}
+		return var3;
+	}
+
 	@ObfuscatedName("pu.w(IIZZI)I")
 	public static int method7077(int arg0, int arg1, boolean arg2, boolean arg3) {
 		ClientInvCache var4 = Statics.method8358(arg0, arg3);

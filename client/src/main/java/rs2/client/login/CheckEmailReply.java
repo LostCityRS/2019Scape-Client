@@ -31,7 +31,12 @@ public class CheckEmailReply implements SerializableEnum {
 		this.field8403 = arg0;
 	}
 
-	@ObfuscatedName("zx.n()I")
+    @ObfuscatedName("hj.e(I)[Lzx;")
+    public static CheckEmailReply[] method4289() {
+        return new CheckEmailReply[] {field8397, field8402, field8401, field8400, field8399, field8398};
+    }
+
+    @ObfuscatedName("zx.n()I")
 	public int getId() {
 		return this.field8403;
 	}

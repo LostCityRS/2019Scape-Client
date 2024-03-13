@@ -21,7 +21,6 @@ import com.jagex.graphics.SpriteData;
 import com.jagex.graphics.SpriteDataProvider;
 import com.jagex.math.IntMath;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("hs")
 public class MapElementType implements ConfigType {
@@ -293,7 +292,7 @@ public class MapElementType implements ConfigType {
 		} else if (arg1 == 29) {
 			this.field2365 = (MapAlignmentX) SerializableEnums.decode(MapAlignmentX.method13997(), arg0.g1());
 		} else if (arg1 == 30) {
-			this.field2405 = (MapAlignmentY) SerializableEnums.decode(Statics.method15088(), arg0.g1());
+			this.field2405 = (MapAlignmentY) SerializableEnums.decode(MapAlignmentY.method15088(), arg0.g1());
 		} else if (arg1 == 249) {
 			int var9 = arg0.g1();
 			if (this.field2411 == null) {

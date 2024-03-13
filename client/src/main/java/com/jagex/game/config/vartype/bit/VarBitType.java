@@ -7,7 +7,6 @@ import com.jagex.game.config.vartype.VarConfigType;
 import com.jagex.game.config.vartype.VarType;
 import com.jagex.game.config.vartype.constants.VarDomainType;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("kh")
 public class VarBitType implements VarConfigType {
@@ -74,7 +73,7 @@ public class VarBitType implements VarConfigType {
 
 	@ObfuscatedName("kh.z(Lalw;IZI)V")
 	public void method5184(Packet arg0, int arg1, boolean arg2) {
-		VarBitTypeEncodingKey var4 = (VarBitTypeEncodingKey) SerializableEnums.decode(Statics.method1624(), arg1);
+		VarBitTypeEncodingKey var4 = (VarBitTypeEncodingKey) SerializableEnums.decode(VarBitTypeEncodingKey.method1624(), arg1);
 		switch(var4.field3072) {
 			case 7:
 				this.startBit = arg0.g1();

@@ -81,19 +81,24 @@ public class LocShape implements SerializableEnum {
 	@ObfuscatedName("vj.j")
 	public final int field7567;
 
-	@ObfuscatedName("a.e(I)[Lvj;")
-	public static LocShape[] method606() {
-		return new LocShape[] { field7554, field7551, field7558, field7555, field7545, field7565, field7547, field7546, field7566, field7553, field7564, field7550, field7544, field7563, field7549, field7552, field7557, field7548, field7561, field7543, field7560, field7556, field7559 };
-	}
-
 	public LocShape(int arg0, int arg1) {
 		this.field7562 = arg0;
 		this.field7567 = arg1;
 	}
 
-	@ObfuscatedName("vj.n()I")
+	@ObfuscatedName("a.e(I)[Lvj;")
+	public static LocShape[] method606() {
+		return new LocShape[] { field7554, field7551, field7558, field7555, field7545, field7565, field7547, field7546, field7566, field7553, field7564, field7550, field7544, field7563, field7549, field7552, field7557, field7548, field7561, field7543, field7560, field7556, field7559 };
+	}
+
+    @ObfuscatedName("vj.n()I")
 	public int getId() {
 		return this.field7562;
+	}
+
+	@ObfuscatedName("sg.m(II)Z")
+	public static boolean method8381(int arg0) {
+		return arg0 >= field7554.field7562 && arg0 <= field7546.field7562 || field7547.field7562 == arg0;
 	}
 
 	@ObfuscatedName("aat.f(II)Z")
