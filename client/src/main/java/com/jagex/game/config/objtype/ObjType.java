@@ -28,7 +28,7 @@ import java.util.Arrays;
 public class ObjType implements ConfigType {
 
 	@ObfuscatedName("abv.w")
-	public static short[] field8650 = new short[256];
+	public static short[] clientpalette = new short[256];
 
 	@ObfuscatedName("abv.l")
 	public ConfigTypeList list;
@@ -691,7 +691,7 @@ public class ObjType implements ConfigType {
 					if (this.field8633 == null || var18 >= this.field8633.length) {
 						var14.method1859(this.recol_s[var18], this.recol_d[var18]);
 					} else {
-						var14.method1859(this.recol_s[var18], field8650[this.field8633[var18] & 0xFF]);
+						var14.method1859(this.recol_s[var18], clientpalette[this.field8633[var18] & 0xFF]);
 					}
 				}
 			}
@@ -774,7 +774,7 @@ public class ObjType implements ConfigType {
 				if (this.field8633 == null || var12 >= this.field8633.length) {
 					var11.method1943(this.recol_s[var12], this.recol_d[var12]);
 				} else {
-					var11.method1943(this.recol_s[var12], field8650[this.field8633[var12] & 0xFF]);
+					var11.method1943(this.recol_s[var12], clientpalette[this.field8633[var12] & 0xFF]);
 				}
 			}
 		}

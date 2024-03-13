@@ -87,6 +87,9 @@ public class Component {
 	@ObfuscatedName("hf.q")
 	public static int field2172 = 1411;
 
+	@ObfuscatedName("ama.h")
+	public static Interface[] field11725;
+
 	@ObfuscatedName("hf.t")
 	public static WeightedCache field2175 = new WeightedCache(6000000, 200);
 
@@ -647,20 +650,20 @@ public class Component {
 		Statics.field7085 = arg0;
 		Statics.field1707 = arg1;
 		Statics.field8370 = arg2;
-		Statics.field11725 = new Interface[Statics.field7085.method6898()];
+		field11725 = new Interface[Statics.field7085.method6898()];
 		Statics.field8424 = new boolean[Statics.field7085.method6898()];
 	}
 
 	@ObfuscatedName("xh.n(II)Lhf;")
 	public static Component method10202(int arg0) {
 		int var1 = arg0 >> 16;
-		if (Statics.field11725[var1] == null || Statics.field11725[var1].method3924(arg0) == null) {
+		if (field11725[var1] == null || field11725[var1].method3924(arg0) == null) {
 			boolean var2 = method5364(var1, null);
 			if (!var2) {
 				return null;
 			}
 		}
-		return Statics.field11725[var1].method3924(arg0);
+		return field11725[var1].method3924(arg0);
 	}
 
 	@ObfuscatedName("ahh.k(IIB)Lhf;")
@@ -680,8 +683,8 @@ public class Component {
 		if (Statics.field8424[arg0]) {
 			return true;
 		}
-		Statics.field11725[arg0] = method5405(arg0, arg1, Statics.field11725[arg0], false);
-		if (Statics.field11725[arg0] == null) {
+		field11725[arg0] = method5405(arg0, arg1, field11725[arg0], false);
+		if (field11725[arg0] == null) {
 			return false;
 		} else {
 			Statics.field8424[arg0] = true;
@@ -726,7 +729,7 @@ public class Component {
 	public static void method16640(int arg0) {
 		if (arg0 != -1 && !Statics.field8424[arg0]) {
 			Statics.field7085.method6899(arg0);
-			Statics.field11725[arg0] = null;
+			field11725[arg0] = null;
 		}
 	}
 
@@ -1235,7 +1238,7 @@ public class Component {
 
 	@ObfuscatedName("jh.a(B)V")
 	public static void method5075() {
-		Statics.field11725 = new Interface[Statics.field7085.method6898()];
+		field11725 = new Interface[Statics.field7085.method6898()];
 		Statics.field8424 = new boolean[Statics.field7085.method6898()];
 	}
 

@@ -155,7 +155,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("ace.k(I[II)V")
 	public static void method15086(int arg0, int[] arg1) {
 		if (arg0 != -1 && Component.method5364(arg0, arg1)) {
-			Component[] var2 = Statics.field11725[arg0].field2151;
+			Component[] var2 = Component.field11725[arg0].field2151;
 			method16465(var2);
 		}
 	}
@@ -5213,7 +5213,7 @@ public final class ScriptRunner {
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		Component.method10202(var1);
-		method5172(Statics.field11725[var1 >>> 16], var1 & 0xFFFF, var2, var3, arg0.field8235, arg0);
+		method5172(Component.field11725[var1 >>> 16], var1 & 0xFFFF, var2, var3, arg0.field8235, arg0);
 	}
 
 	@ObfuscatedName("iy.bn(Lyf;B)V")
@@ -5268,7 +5268,7 @@ public final class ScriptRunner {
 	public static final void method7224(boolean arg0, ClientScriptState arg1) {
 		int var2 = arg1.field8216[--arg1.field8226];
 		Component var3 = Component.method10202(var2);
-		Interface var4 = Statics.field11725[var2 >> 16];
+		Interface var4 = Component.field11725[var2 >> 16];
 		if (arg0) {
 			method2962(var4, var3);
 		} else {
@@ -5404,7 +5404,7 @@ public final class ScriptRunner {
 	public static final void method4391(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method5119(var2, var3, arg0);
 	}
 
@@ -5448,7 +5448,7 @@ public final class ScriptRunner {
 	public static final void method927(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method3562(var2, var3, arg0);
 	}
 
@@ -5476,7 +5476,7 @@ public final class ScriptRunner {
 	public static final void method5374(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method4660(var2, var3, arg0);
 	}
 
@@ -5504,7 +5504,7 @@ public final class ScriptRunner {
 	public static final void method2911(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method7711(var2, var3, arg0);
 	}
 
@@ -5525,7 +5525,7 @@ public final class ScriptRunner {
 	public static final void method843(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method273(var2, var3, arg0);
 	}
 
@@ -5564,7 +5564,7 @@ public final class ScriptRunner {
 	public static final void method5116(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method18660(var2, var3, arg0);
 	}
 
@@ -5589,7 +5589,7 @@ public final class ScriptRunner {
 	public static final void method17759(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method5919(var2, var3, arg0);
 	}
 
@@ -5611,7 +5611,7 @@ public final class ScriptRunner {
 	public static final void method1514(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method1517(var2, var3, arg0);
 	}
 
@@ -5633,7 +5633,7 @@ public final class ScriptRunner {
 	public static final void method4144(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method3921(var2, var3, arg0);
 	}
 
@@ -5655,7 +5655,7 @@ public final class ScriptRunner {
 	public static final void method4399(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method7972(var2, var3, arg0);
 	}
 
@@ -5684,7 +5684,7 @@ public final class ScriptRunner {
 	public static final void method5211(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method5066(var2, var3, arg0);
 	}
 
@@ -5706,7 +5706,7 @@ public final class ScriptRunner {
 	public static final void method1975(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method1620(var2, var3, arg0);
 	}
 
@@ -5728,7 +5728,7 @@ public final class ScriptRunner {
 	public static final void method18464(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method9790(var2, var3, arg0);
 	}
 
@@ -5754,7 +5754,7 @@ public final class ScriptRunner {
 	public static final void method10099(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method255(var2, var3, arg0);
 	}
 
@@ -5786,7 +5786,7 @@ public final class ScriptRunner {
 	public static final void method10096(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method8299(var2, var3, arg0);
 	}
 
@@ -5822,7 +5822,7 @@ public final class ScriptRunner {
 	public static final void method17454(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method10678(var2, var3, arg0);
 	}
 
@@ -5844,7 +5844,7 @@ public final class ScriptRunner {
 	public static final void method16454(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method2108(var2, var3, arg0);
 	}
 
@@ -5870,7 +5870,7 @@ public final class ScriptRunner {
 	public static final void method10252(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method2098(var2, var3, arg0);
 	}
 
@@ -5904,7 +5904,7 @@ public final class ScriptRunner {
 	public static final void method8296(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method15227(var2, var3, arg0);
 	}
 
@@ -5926,7 +5926,7 @@ public final class ScriptRunner {
 	public static final void method3577(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method3658(var2, var3, arg0);
 	}
 
@@ -5954,7 +5954,7 @@ public final class ScriptRunner {
 	public static final void method14613(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method3258(var2, var3, arg0);
 	}
 
@@ -5979,7 +5979,7 @@ public final class ScriptRunner {
 	public static final void method3585(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method3077(var2, var3, arg0);
 	}
 
@@ -6004,7 +6004,7 @@ public final class ScriptRunner {
 	public static final void method9232(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method4079(var2, var3, arg0);
 	}
 
@@ -6026,7 +6026,7 @@ public final class ScriptRunner {
 	public static final void method4488(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method13846(var2, var3, arg0);
 	}
 
@@ -6051,7 +6051,7 @@ public final class ScriptRunner {
 	public static final void method9905(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method4573(var2, var3, arg0);
 	}
 
@@ -6073,7 +6073,7 @@ public final class ScriptRunner {
 	public static final void method9413(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method4992(var2, var3, arg0);
 	}
 
@@ -6095,7 +6095,7 @@ public final class ScriptRunner {
 	public static final void method8353(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method9791(var2, var3, arg0);
 	}
 
@@ -6117,7 +6117,7 @@ public final class ScriptRunner {
 	public static final void method5011(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method9019(var2, var3, arg0);
 	}
 
@@ -6139,7 +6139,7 @@ public final class ScriptRunner {
 	public static final void method4495(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method2579(var2, var3, arg0);
 	}
 
@@ -6166,7 +6166,7 @@ public final class ScriptRunner {
 	public static final void method6054(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method8675(var2, var3, arg0);
 	}
 
@@ -6188,7 +6188,7 @@ public final class ScriptRunner {
 	public static final void method5381(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method7620(var2, var3, arg0);
 	}
 
@@ -6213,7 +6213,7 @@ public final class ScriptRunner {
 	public static final void method6001(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method3100(var2, var3, arg0);
 	}
 
@@ -6236,7 +6236,7 @@ public final class ScriptRunner {
 	public static final void method5999(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method6085(var2, var3, arg0);
 	}
 
@@ -6260,7 +6260,7 @@ public final class ScriptRunner {
 	public static final void method4938(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method4506(var2, var3, arg0);
 	}
 
@@ -6282,7 +6282,7 @@ public final class ScriptRunner {
 	public static final void method288(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method310(var2, var3, arg0);
 	}
 
@@ -6311,7 +6311,7 @@ public final class ScriptRunner {
 	public static final void method3372(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method9246(var2, var3, arg0);
 	}
 
@@ -6339,7 +6339,7 @@ public final class ScriptRunner {
 	public static final void method574(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method14700(var2, var3, arg0);
 	}
 
@@ -6371,7 +6371,7 @@ public final class ScriptRunner {
 	public static final void method18960(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method14717(var2, var3, arg0);
 	}
 
@@ -6403,7 +6403,7 @@ public final class ScriptRunner {
 	public static final void method5063(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method16905(var2, var3, arg0);
 	}
 
@@ -6428,7 +6428,7 @@ public final class ScriptRunner {
 	public static final void method7302(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method331(var2, var3, arg0);
 	}
 
@@ -6468,7 +6468,7 @@ public final class ScriptRunner {
 	public static final void method9740(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method14690(var2, var3, arg0);
 	}
 
@@ -6490,7 +6490,7 @@ public final class ScriptRunner {
 	public static final void method4842(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method5097(var2, var3, arg0);
 	}
 
@@ -6516,7 +6516,7 @@ public final class ScriptRunner {
 	public static final void method7362(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method9878(var2, var3, arg0);
 	}
 
@@ -6542,7 +6542,7 @@ public final class ScriptRunner {
 	public static final void method5014(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method3573(var2, var3, arg0);
 	}
 
@@ -6592,7 +6592,7 @@ public final class ScriptRunner {
 	public static final void method10681(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method14455(var2, var3, false, 2, arg0);
 	}
 
@@ -6608,7 +6608,7 @@ public final class ScriptRunner {
 	public static final void method6870(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method14455(var2, var3, false, 0, arg0);
 	}
 
@@ -6624,7 +6624,7 @@ public final class ScriptRunner {
 	public static final void method7317(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method14455(var2, var3, true, 2, arg0);
 	}
 
@@ -6640,7 +6640,7 @@ public final class ScriptRunner {
 	public static final void method8690(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method14455(var2, var3, true, 0, arg0);
 	}
 
@@ -6656,7 +6656,7 @@ public final class ScriptRunner {
 	public static final void method4839(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method14455(var2, var3, false, 1, arg0);
 	}
 
@@ -6672,7 +6672,7 @@ public final class ScriptRunner {
 	public static final void method16446(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method14455(var2, var3, true, 1, arg0);
 	}
 
@@ -6698,7 +6698,7 @@ public final class ScriptRunner {
 	public static final void method5972(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method8884(var2, var3, arg0);
 	}
 
@@ -6723,7 +6723,7 @@ public final class ScriptRunner {
 	public static final void method15016(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method8473(var2, var3, arg0);
 	}
 
@@ -6770,7 +6770,7 @@ public final class ScriptRunner {
 	public static final void method4882(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method6082(var2, var3, arg0, GroupUserKind.field2136);
 	}
 
@@ -6786,7 +6786,7 @@ public final class ScriptRunner {
 	public static final void method6875(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method6082(var2, var3, arg0, GroupUserKind.field2140);
 	}
 
@@ -6804,7 +6804,7 @@ public final class ScriptRunner {
 		boolean var1 = arg0.field8216[arg0.field8226] == 1;
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		Component var3 = Component.method10202(var2);
-		Interface var4 = Statics.field11725[var2 >> 16];
+		Interface var4 = Component.field11725[var2 >> 16];
 		method6082(var3, var4, arg0, var1 ? GroupUserKind.field2138 : GroupUserKind.field2137);
 	}
 
@@ -6821,7 +6821,7 @@ public final class ScriptRunner {
 	public static final void method17750(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method6082(var2, var3, arg0, Client.field3022 == arg0.field8228 ? GroupUserKind.field2139 : GroupUserKind.field2135);
 	}
 
@@ -6843,7 +6843,7 @@ public final class ScriptRunner {
 	public static final void method3104(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method1020(var2, var3, arg0);
 	}
 
@@ -6869,7 +6869,7 @@ public final class ScriptRunner {
 	public static final void method3671(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method16442(var2, var3, arg0);
 	}
 
@@ -6895,7 +6895,7 @@ public final class ScriptRunner {
 	public static final void method9306(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method143(var2, var3, arg0);
 	}
 
@@ -6923,7 +6923,7 @@ public final class ScriptRunner {
 	public static final void method9386(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method617(var2, var3, arg0);
 	}
 
@@ -6947,7 +6947,7 @@ public final class ScriptRunner {
 	public static final void method8372(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method3600(var2, var3, arg0);
 	}
 
@@ -6968,7 +6968,7 @@ public final class ScriptRunner {
 	public static final void method9191(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method9456(var2, var3, arg0);
 	}
 
@@ -6989,7 +6989,7 @@ public final class ScriptRunner {
 	public static final void method4611(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method2109(var2, var3, arg0);
 	}
 
@@ -7130,7 +7130,7 @@ public final class ScriptRunner {
 	public static final void method4402(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method4318(var2, var3, arg0);
 	}
 
@@ -7151,7 +7151,7 @@ public final class ScriptRunner {
 	public static final void method14634(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method16715(var2, var3, arg0);
 	}
 
@@ -7172,7 +7172,7 @@ public final class ScriptRunner {
 	public static final void method5208(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method5920(var2, var3, arg0);
 	}
 
@@ -7194,7 +7194,7 @@ public final class ScriptRunner {
 	public static final void method137(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method3376(var2, var3, arg0);
 	}
 
@@ -7219,7 +7219,7 @@ public final class ScriptRunner {
 	public static final void method2761(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method969(var2, var3, arg0);
 	}
 
@@ -7240,7 +7240,7 @@ public final class ScriptRunner {
 	public static final void method5132(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method14767(var2, var3, arg0);
 	}
 
@@ -7261,7 +7261,7 @@ public final class ScriptRunner {
 	public static final void method16453(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method14702(var2, var3, arg0);
 	}
 
@@ -7425,7 +7425,7 @@ public final class ScriptRunner {
 	public static final void method10609(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method1515(var2, var3, arg0);
 	}
 
@@ -7558,7 +7558,7 @@ public final class ScriptRunner {
 	public static final void method9184(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method10189(var2, var3, arg0);
 	}
 
@@ -7587,7 +7587,7 @@ public final class ScriptRunner {
 	public static final void method9234(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method2762(var2, var3, arg0);
 	}
 
@@ -7641,7 +7641,7 @@ public final class ScriptRunner {
 	public static final void method2818(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method9424(var2, var3, arg0);
 	}
 
@@ -7667,7 +7667,7 @@ public final class ScriptRunner {
 	public static final void method1922(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method4015(var2, var3, arg0);
 	}
 
@@ -7693,7 +7693,7 @@ public final class ScriptRunner {
 	public static final void method9207(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method9021(var2, var3, arg0);
 	}
 
@@ -7719,7 +7719,7 @@ public final class ScriptRunner {
 	public static final void method1621(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method9050(var2, var3, arg0);
 	}
 
@@ -7745,7 +7745,7 @@ public final class ScriptRunner {
 	public static final void method3103(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method814(var2, var3, arg0);
 	}
 
@@ -7771,7 +7771,7 @@ public final class ScriptRunner {
 	public static final void method4143(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method10768(var2, var3, arg0);
 	}
 
@@ -7797,7 +7797,7 @@ public final class ScriptRunner {
 	public static final void method8152(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method5934(var2, var3, arg0);
 	}
 
@@ -7825,7 +7825,7 @@ public final class ScriptRunner {
 	public static final void method3620(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method16608(var2, var3, arg0);
 	}
 
@@ -7851,7 +7851,7 @@ public final class ScriptRunner {
 	public static final void method2884(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method307(var2, var3, arg0);
 	}
 
@@ -7877,7 +7877,7 @@ public final class ScriptRunner {
 	public static final void method8431(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method4996(var2, var3, arg0);
 	}
 
@@ -7903,7 +7903,7 @@ public final class ScriptRunner {
 	public static final void method8474(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method4926(var2, var3, arg0);
 	}
 
@@ -7928,7 +7928,7 @@ public final class ScriptRunner {
 	public static final void method721(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method16434(var2, var3, arg0);
 	}
 
@@ -7953,7 +7953,7 @@ public final class ScriptRunner {
 	public static final void method5935(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method5206(var2, var3, arg0);
 	}
 
@@ -7979,7 +7979,7 @@ public final class ScriptRunner {
 	public static final void method9271(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method9545(var2, var3, arg0);
 	}
 
@@ -8004,7 +8004,7 @@ public final class ScriptRunner {
 	public static final void method18181(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method4983(var2, var3, arg0);
 	}
 
@@ -8029,7 +8029,7 @@ public final class ScriptRunner {
 	public static final void method272(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method852(var2, var3, arg0);
 	}
 
@@ -8054,7 +8054,7 @@ public final class ScriptRunner {
 	public static final void method1921(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method10311(var2, var3, arg0);
 	}
 
@@ -8088,7 +8088,7 @@ public final class ScriptRunner {
 	public static final void method16449(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method10614(var2, var3, arg0);
 	}
 
@@ -8114,7 +8114,7 @@ public final class ScriptRunner {
 	public static final void method4045(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method13925(var2, var3, arg0);
 	}
 
@@ -8142,7 +8142,7 @@ public final class ScriptRunner {
 	public static final void method15070(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method6817(var2, var3, arg0);
 	}
 
@@ -8170,7 +8170,7 @@ public final class ScriptRunner {
 	public static final void method1518(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method7719(var2, var3, arg0);
 	}
 
@@ -8196,7 +8196,7 @@ public final class ScriptRunner {
 	public static final void method7621(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method9616(var2, var3, arg0);
 	}
 
@@ -8222,7 +8222,7 @@ public final class ScriptRunner {
 	public static final void method5385(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method18463(var2, var3, arg0);
 	}
 
@@ -8248,7 +8248,7 @@ public final class ScriptRunner {
 	public static final void method7329(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method4978(var2, var3, arg0);
 	}
 
@@ -8274,7 +8274,7 @@ public final class ScriptRunner {
 	public static final void method9550(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method7046(var2, var3, arg0);
 	}
 
@@ -8290,7 +8290,7 @@ public final class ScriptRunner {
 	public static final void method4599(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method1016(var2, var3, arg0);
 	}
 
@@ -8306,7 +8306,7 @@ public final class ScriptRunner {
 	public static final void method5327(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method1016(var2, var3, arg0);
 	}
 
@@ -8322,7 +8322,7 @@ public final class ScriptRunner {
 	public static final void method16760(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method1016(var2, var3, arg0);
 	}
 
@@ -8338,7 +8338,7 @@ public final class ScriptRunner {
 	public static final void method3105(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method1016(var2, var3, arg0);
 	}
 
@@ -8373,7 +8373,7 @@ public final class ScriptRunner {
 	public static final void method8006(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method2862(var2, var3, arg0);
 	}
 
@@ -8399,7 +8399,7 @@ public final class ScriptRunner {
 	public static final void method322(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method9213(var2, var3, arg0);
 	}
 
@@ -8425,7 +8425,7 @@ public final class ScriptRunner {
 	public static final void method9582(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method4497(var2, var3, arg0);
 	}
 
@@ -8451,7 +8451,7 @@ public final class ScriptRunner {
 	public static final void method5361(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method9630(var2, var3, arg0);
 	}
 
@@ -8477,7 +8477,7 @@ public final class ScriptRunner {
 	public static final void method4457(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method18885(var2, var3, arg0);
 	}
 
@@ -8503,7 +8503,7 @@ public final class ScriptRunner {
 	public static final void method2040(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method14768(var2, var3, arg0);
 	}
 
@@ -8529,7 +8529,7 @@ public final class ScriptRunner {
 	public static final void method608(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method4939(var2, var3, arg0);
 	}
 
@@ -8555,7 +8555,7 @@ public final class ScriptRunner {
 	public static final void method5947(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method10108(var2, var3, arg0);
 	}
 
@@ -8583,7 +8583,7 @@ public final class ScriptRunner {
 	public static final void method6830(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method13903(var2, var3, arg0);
 	}
 
@@ -8611,7 +8611,7 @@ public final class ScriptRunner {
 	public static final void method256(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method8443(var2, var3, arg0);
 	}
 
@@ -8637,7 +8637,7 @@ public final class ScriptRunner {
 	public static final void method8399(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method17418(var2, var3, arg0);
 	}
 
@@ -8663,7 +8663,7 @@ public final class ScriptRunner {
 	public static final void method14943(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method5151(var2, var3, arg0);
 	}
 
@@ -8689,7 +8689,7 @@ public final class ScriptRunner {
 	public static final void method9575(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method10359(var2, var3, arg0);
 	}
 
@@ -8715,7 +8715,7 @@ public final class ScriptRunner {
 	public static final void method2994(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method15017(var2, var3, arg0);
 	}
 
@@ -8741,7 +8741,7 @@ public final class ScriptRunner {
 	public static final void method15382(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method894(var2, var3, arg0);
 	}
 
@@ -8767,7 +8767,7 @@ public final class ScriptRunner {
 	public static final void method330(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method10372(var2, var3, arg0);
 	}
 
@@ -8793,7 +8793,7 @@ public final class ScriptRunner {
 	public static final void method5196(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >> 16];
+		Interface var3 = Component.field11725[var1 >> 16];
 		method5340(var2, var3, arg0);
 	}
 
@@ -9384,7 +9384,7 @@ public final class ScriptRunner {
 	public static final void method9828(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		Interface var3 = Statics.field11725[var1 >>> 16];
+		Interface var3 = Component.field11725[var1 >>> 16];
 		Component var4 = Client.method6000(var3, var2);
 		arg0.field8216[++arg0.field8226 - 1] = var4 == null ? -1 : var4.field2158;
 	}
@@ -15643,11 +15643,11 @@ public final class ScriptRunner {
 	@ObfuscatedName("er.awq(Lyf;B)V")
 	public static final void method2910(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		if (Statics.field11725[var1] == null) {
+		if (Component.field11725[var1] == null) {
 			arg0.field8218[++arg0.field8211 - 1] = "";
 			return;
 		}
-		String var2 = Statics.field11725[var1].field2151[0].field2155;
+		String var2 = Component.field11725[var1].field2151[0].field2155;
 		if (var2 == null) {
 			arg0.field8218[++arg0.field8211 - 1] = "";
 		} else {
@@ -15658,10 +15658,10 @@ public final class ScriptRunner {
 	@ObfuscatedName("arl.aww(Lyf;I)V")
 	public static final void method19263(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		if (Statics.field11725[var1] == null) {
+		if (Component.field11725[var1] == null) {
 			arg0.field8216[++arg0.field8226 - 1] = 0;
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = Statics.field11725[var1].field2151.length;
+			arg0.field8216[++arg0.field8226 - 1] = Component.field11725[var1].field2151.length;
 		}
 	}
 
@@ -15669,11 +15669,11 @@ public final class ScriptRunner {
 	public static final void method4410(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		int var2 = var1 >> 16;
-		if (Statics.field11725[var2] == null) {
+		if (Component.field11725[var2] == null) {
 			arg0.field8218[++arg0.field8211 - 1] = "";
 			return;
 		}
-		String var3 = Statics.field11725[var2].field2151[var1].field2155;
+		String var3 = Component.field11725[var2].field2151[var1].field2155;
 		if (var3 == null) {
 			arg0.field8218[++arg0.field8211 - 1] = "";
 		} else {
@@ -15685,10 +15685,10 @@ public final class ScriptRunner {
 	public static final void method4051(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		int var2 = var1 >> 16;
-		if (Statics.field11725[var2] == null) {
+		if (Component.field11725[var2] == null) {
 			arg0.field8216[++arg0.field8226 - 1] = 0;
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = Statics.field11725[var2].field2151[var1].field2181;
+			arg0.field8216[++arg0.field8226 - 1] = Component.field11725[var2].field2151[var1].field2181;
 		}
 	}
 

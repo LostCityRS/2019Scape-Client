@@ -23,7 +23,7 @@ import java.util.Arrays;
 public class LocType implements ConfigType {
 
 	@ObfuscatedName("vd.n")
-	public static short[] field7501 = new short[256];
+	public static short[] clientpalette = new short[256];
 
 	@ObfuscatedName("vd.m")
 	public int id;
@@ -945,7 +945,7 @@ public class LocType implements ConfigType {
 				if (this.field7458 == null || var31 >= this.field7458.length) {
 					var28.method1859(this.recol_s[var31], var30[var31]);
 				} else {
-					var28.method1859(this.recol_s[var31], field7501[this.field7458[var31] & 0xFF]);
+					var28.method1859(this.recol_s[var31], clientpalette[this.field7458[var31] & 0xFF]);
 				}
 			}
 		}

@@ -1198,7 +1198,7 @@ public class LoginManager {
 		}
 		Client.world.method7816().method10019();
 		Client.field10902 = true;
-		LocType.field7501 = NPCType.field2694 = ObjType.field8650 = new short[256];
+		LocType.clientpalette = NPCType.clientpalette = ObjType.clientpalette = new short[256];
 		Client.field4868 = LocalisedText.WALKHERE.method15021(Client.language);
 		Client.field688.method18157(Client.field688.removeRoofs2, Client.field688.removeRoofs.method18496());
 		Client.field10842 = 0;

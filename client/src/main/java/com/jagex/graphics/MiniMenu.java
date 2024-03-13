@@ -1129,14 +1129,14 @@ public class MiniMenu {
 		}
 		int var2 = arg0 >> 16;
 		int var3 = arg0 & 0xFFFF;
-		if (Statics.field11725[var2] == null || Statics.field11725[var2].field2151[var3] == null) {
+		if (Component.field11725[var2] == null || Component.field11725[var2].field2151[var3] == null) {
 			return false;
 		}
-		Component var4 = Statics.field11725[var2].field2151[var3];
+		Component var4 = Component.field11725[var2].field2151[var3];
 		if (arg1 == -1 && var4.field2184 == 0) {
 			for (MinimenuEntry var5 = (MinimenuEntry) field542.method14191(); var5 != null; var5 = (MinimenuEntry) field542.method14161()) {
 				if (var5.field12307 == 58 || var5.field12307 == 1007 || var5.field12307 == 25 || var5.field12307 == 57 || var5.field12307 == 30) {
-					for (Component var6 = Component.method10202(var5.field12302); var6 != null; var6 = Client.method6000(Statics.field11725[var6.field2158 >> 16], var6)) {
+					for (Component var6 = Component.method10202(var5.field12302); var6 != null; var6 = Client.method6000(Component.field11725[var6.field2158 >> 16], var6)) {
 						if (var4.field2158 == var6.field2158) {
 							return true;
 						}

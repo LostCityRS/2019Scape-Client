@@ -28,7 +28,7 @@ import java.util.Arrays;
 public class NPCType implements ConfigType {
 
 	@ObfuscatedName("if.f")
-	public static short[] field2694 = new short[256];
+	public static short[] clientpalette = new short[256];
 
 	@ObfuscatedName("if.w")
 	public NPCTypeFactory factory;
@@ -700,7 +700,7 @@ public class NPCType implements ConfigType {
 					if (this.field2733 == null || var45 >= this.field2733.length) {
 						var22.method1859(this.recol_s[var45], var44[var45]);
 					} else {
-						var22.method1859(this.recol_s[var45], field2694[this.field2733[var45] & 0xFF]);
+						var22.method1859(this.recol_s[var45], clientpalette[this.field2733[var45] & 0xFF]);
 					}
 				}
 			}
@@ -872,7 +872,7 @@ public class NPCType implements ConfigType {
 						if (this.field2733 == null || var27 >= this.field2733.length) {
 							var12.method1859(this.recol_s[var27], var26[var27]);
 						} else {
-							var12.method1859(this.recol_s[var27], field2694[this.field2733[var27] & 0xFF]);
+							var12.method1859(this.recol_s[var27], clientpalette[this.field2733[var27] & 0xFF]);
 						}
 					}
 				}

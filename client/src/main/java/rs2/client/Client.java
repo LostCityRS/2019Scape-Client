@@ -2140,7 +2140,7 @@ public final class Client extends GameShell {
 		if (modegame == ModeGame.RUNESCAPE) {
 			field10809 = false;
 		}
-		LocType.field7501 = NPCType.field2694 = ObjType.field8650 = new short[256];
+		LocType.clientpalette = NPCType.clientpalette = ObjType.clientpalette = new short[256];
 		try {
 			field3428 = GameShell.getTopContainer().getToolkit().getSystemClipboard();
 		} catch (Exception var5) {
@@ -8877,7 +8877,7 @@ public final class Client extends GameShell {
 			Component var269 = Component.method10202(var265);
 			if (var269 != null) {
 				method4616(var269);
-				method8329(Statics.field11725[var269.field2158 >>> 16], var269, true);
+				method8329(Component.field11725[var269.field2158 >>> 16], var269, true);
 			}
 			if (field10978 != -1) {
 				Statics.method1023(field10978, 1);
@@ -9142,11 +9142,11 @@ public final class Client extends GameShell {
 			int var346 = var2.g2();
 			int var347 = var2.g2();
 			incrementVerifyId();
-			if (Statics.field11725[var345] != null) {
+			if (Component.field11725[var345] != null) {
 				for (int var348 = var346; var348 < var347; var348++) {
 					int var349 = var2.g3();
-					if (var348 < Statics.field11725[var345].field2151.length && Statics.field11725[var345].field2151[var348] != null) {
-						Statics.field11725[var345].field2151[var348].field2181 = var349;
+					if (var348 < Component.field11725[var345].field2151.length && Component.field11725[var345].field2151[var348] != null) {
+						Component.field11725[var345].field2151[var348].field2181 = var349;
 					}
 				}
 			}
@@ -11795,7 +11795,7 @@ public final class Client extends GameShell {
 	@ObfuscatedName("xi.jv(IIIIIIIII)V")
 	public static final void method10155(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		if (Component.method5364(arg0, null)) {
-			method6797(Statics.field11725[arg0].method3923(), -1, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg7 < 0);
+			method6797(Component.field11725[arg0].method3923(), -1, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg7 < 0);
 		} else if (arg7 == -1) {
 			for (int var8 = 0; var8 < 114; var8++) {
 				field11072[var8] = true;
@@ -12479,7 +12479,7 @@ public final class Client extends GameShell {
 	@ObfuscatedName("tb.jp(IIIZB)V")
 	public static final void method8493(int arg0, int arg1, int arg2, boolean arg3) {
 		if (Component.method5364(arg0, null)) {
-			method1597(Statics.field11725[arg0].field2151, -1, arg1, arg2, arg3);
+			method1597(Component.field11725[arg0].field2151, -1, arg1, arg2, arg3);
 		}
 	}
 
@@ -12631,7 +12631,7 @@ public final class Client extends GameShell {
 			return;
 		}
 		if (arg0 == null || arg0.method18183()) {
-			Interface var10 = Statics.field11725[arg1];
+			Interface var10 = Component.field11725[arg1];
 			method17231(var10, var10.method3923(), -1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
 		} else {
 			method214(arg0, true, false);
@@ -13443,7 +13443,7 @@ public final class Client extends GameShell {
 								var9 = true;
 								break;
 							}
-							var8 = Statics.field11725[var8.field2158 >> 16].field2151[var8.field2200 & 0xFFFF];
+							var8 = Component.field11725[var8.field2158 >> 16].field2151[var8.field2200 & 0xFFFF];
 						}
 						if (var8 == null || var7 == null || field1734 == var7 || var9) {
 							var6.field11495 = field10993;
@@ -13513,7 +13513,7 @@ public final class Client extends GameShell {
 		if (!Component.method5364(arg0, arg1)) {
 			return;
 		}
-		Component[] var2 = Statics.field11725[arg0].field2151;
+		Component[] var2 = Component.field11725[arg0].field2151;
 		for (int var3 = 0; var3 < var2.length; var3++) {
 			Component var4 = var2[var3];
 			if (var4 != null && var4.field2170 != null) {
@@ -13525,7 +13525,7 @@ public final class Client extends GameShell {
 	@ObfuscatedName("aaq.kc(II)V")
 	public static final void method14428(int arg0) {
 		if (Component.method5364(arg0, null)) {
-			method6107(Statics.field11725[arg0].field2151, -1);
+			method6107(Component.field11725[arg0].field2151, -1);
 		}
 	}
 
@@ -13638,7 +13638,7 @@ public final class Client extends GameShell {
 			field11056 = null;
 		}
 		if (var5 != null) {
-			method8329(Statics.field11725[var5.field2158 >>> 16], var5, !arg3);
+			method8329(Component.field11725[var5.field2158 >>> 16], var5, !arg3);
 		}
 		if (!arg3) {
 			ScriptRunner.method15086(arg1.field11571, arg2);

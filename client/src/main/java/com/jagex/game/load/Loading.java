@@ -462,8 +462,8 @@ public class Loading {
 				return 0;
 			}
 			boolean var22 = true;
-			for (int var23 = 0; var23 < Statics.field11725[Client.field11389.field7724].field2151.length; var23++) {
-				Component var24 = Statics.field11725[Client.field11389.field7724].field2151[var23];
+			for (int var23 = 0; var23 < Component.field11725[Client.field11389.field7724].field2151.length; var23++) {
+				Component var24 = Component.field11725[Client.field11389.field7724].field2151[var23];
 				if (var24.field2184 == 5 && var24.field2215 != -1 && !Client.field10317.requestdownload(var24.field2215, 0)) {
 					var22 = false;
 				}

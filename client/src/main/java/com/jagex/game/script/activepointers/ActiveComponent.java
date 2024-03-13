@@ -3,7 +3,6 @@ package com.jagex.game.script.activepointers;
 import com.jagex.game.config.iftype.Component;
 import com.jagex.game.config.iftype.Interface;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("ya")
 public class ActiveComponent {
@@ -26,7 +25,7 @@ public class ActiveComponent {
 			this.method13788();
 			return false;
 		} else {
-			this.field8241 = Statics.field11725[arg0 >> 16];
+			this.field8241 = Component.field11725[arg0 >> 16];
 			this.field8242 = var3;
 			return true;
 		}

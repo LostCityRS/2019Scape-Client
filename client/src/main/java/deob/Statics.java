@@ -141,9 +141,6 @@ public class Statics {
 	@ObfuscatedName("ala.r")
 	public static short field11700;
 
-	@ObfuscatedName("ama.h")
-	public static Interface[] field11725;
-
 	@ObfuscatedName("amq.t")
 	public static int field11738;
 
@@ -1803,7 +1800,7 @@ public class Statics {
 
 	@ObfuscatedName("kp.m(II)Lhq;")
 	public static Interface method5367(int arg0) {
-		return field11725[arg0 >> 16];
+		return Component.field11725[arg0 >> 16];
 	}
 
 	@ObfuscatedName("eo.l(Ljava/lang/Float;Ljava/lang/Float;I)V")
@@ -2759,7 +2756,7 @@ public class Statics {
 	@ObfuscatedName("bl.ko(III)V")
 	public static final void method1023(int arg0, int arg1) {
 		if (Component.method5364(arg0, null)) {
-			Client.method8199(field11725[arg0].field2151, arg1);
+			Client.method8199(Component.field11725[arg0].field2151, arg1);
 		}
 	}
 
