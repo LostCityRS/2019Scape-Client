@@ -18,13 +18,13 @@ public class VarClanSettingsDomain implements VarDomain {
 
 	@ObfuscatedName("yl.u(Lec;I)I")
 	public int getVarValueInt(VarType arg0) {
-		Integer var2 = this.field8193.method5318(Client.field10768.field8339 << 16 | arg0.id);
+		Integer var2 = this.field8193.method5318(Client.modegame.field8339 << 16 | arg0.id);
 		return var2 == null ? (Integer) arg0.getDefaultValue() : var2;
 	}
 
 	@ObfuscatedName("yl.n(Lec;I)J")
 	public long getVarValueLong(VarType arg0) {
-		Long var2 = this.field8193.method5259(Client.field10768.field8339 << 16 | arg0.id);
+		Long var2 = this.field8193.method5259(Client.modegame.field8339 << 16 | arg0.id);
 		return var2 == null ? (Long) arg0.getDefaultValue() : var2;
 	}
 
@@ -33,7 +33,7 @@ public class VarClanSettingsDomain implements VarDomain {
 		if (ScriptVarType.STRING != arg0.dataType) {
 			throw new IllegalArgumentException("");
 		}
-		return this.field8193.method5260(Client.field10768.field8339 << 16 | arg0.id);
+		return this.field8193.method5260(Client.modegame.field8339 << 16 | arg0.id);
 	}
 
 	@ObfuscatedName("yl.z(Lkh;I)I")

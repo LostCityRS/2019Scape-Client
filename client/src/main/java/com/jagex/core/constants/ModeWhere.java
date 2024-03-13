@@ -9,43 +9,43 @@ import java.util.Set;
 public class ModeWhere implements SerializableEnum {
 
 	@ObfuscatedName("yu.e")
-	public static final ModeWhere field8273 = new ModeWhere("", 0, new ModeWhereProperty[] { ModeWhereProperty.field8284 });
+	public static final ModeWhere LIVE = new ModeWhere("", 0, new ModeWhereProperty[] { ModeWhereProperty.HAS_EXTERNAL_ACCESS});
 
 	@ObfuscatedName("yu.n")
-	public static final ModeWhere field8270 = new ModeWhere("", 1, new ModeWhereProperty[] { ModeWhereProperty.field8283, ModeWhereProperty.field8284 });
+	public static final ModeWhere WTRC = new ModeWhere("", 1, new ModeWhereProperty[] { ModeWhereProperty.OFFICE, ModeWhereProperty.HAS_EXTERNAL_ACCESS});
 
 	@ObfuscatedName("yu.m")
-	public static final ModeWhere field8269 = new ModeWhere("", 2, new ModeWhereProperty[] { ModeWhereProperty.field8283, ModeWhereProperty.field8282, ModeWhereProperty.field8284 });
+	public static final ModeWhere WTQA = new ModeWhere("", 2, new ModeWhereProperty[] { ModeWhereProperty.OFFICE, ModeWhereProperty.QA, ModeWhereProperty.HAS_EXTERNAL_ACCESS});
 
 	@ObfuscatedName("yu.k")
-	public static final ModeWhere field8268 = new ModeWhere("", 3, new ModeWhereProperty[] { ModeWhereProperty.field8283 });
+	public static final ModeWhere WTWIP = new ModeWhere("", 3, new ModeWhereProperty[] { ModeWhereProperty.OFFICE});
 
 	@ObfuscatedName("yu.f")
-	public static final ModeWhere field8277 = new ModeWhere("", 4);
+	public static final ModeWhere LOCAL = new ModeWhere("", 4);
 
 	@ObfuscatedName("yu.w")
-	public static final ModeWhere field8272 = new ModeWhere("", 5, new ModeWhereProperty[] { ModeWhereProperty.field8283, ModeWhereProperty.field8284 });
+	public static final ModeWhere WTI = new ModeWhere("", 5, new ModeWhereProperty[] { ModeWhereProperty.OFFICE, ModeWhereProperty.HAS_EXTERNAL_ACCESS});
 
 	@ObfuscatedName("yu.l")
-	public static final ModeWhere field8279 = new ModeWhere("", 6, new ModeWhereProperty[] { ModeWhereProperty.field8284 });
+	public static final ModeWhere INTBETA = new ModeWhere("", 6, new ModeWhereProperty[] { ModeWhereProperty.HAS_EXTERNAL_ACCESS});
 
 	@ObfuscatedName("yu.u")
-	public static final ModeWhere field8274 = new ModeWhere("", 8, new ModeWhereProperty[] { ModeWhereProperty.field8283, ModeWhereProperty.field8284 });
+	public static final ModeWhere WTITU = new ModeWhere("", 8, new ModeWhereProperty[] { ModeWhereProperty.OFFICE, ModeWhereProperty.HAS_EXTERNAL_ACCESS});
 
 	@ObfuscatedName("yu.z")
-	public static final ModeWhere field8275 = new ModeWhere("", 9, new ModeWhereProperty[] { ModeWhereProperty.field8283, ModeWhereProperty.field8282 });
+	public static final ModeWhere WTQA2 = new ModeWhere("", 9, new ModeWhereProperty[] { ModeWhereProperty.OFFICE, ModeWhereProperty.QA});
 
 	@ObfuscatedName("yu.p")
-	public static final ModeWhere field8276 = new ModeWhere("", 10, new ModeWhereProperty[] { ModeWhereProperty.field8283 });
+	public static final ModeWhere field8276 = new ModeWhere("", 10, new ModeWhereProperty[] { ModeWhereProperty.OFFICE});
 
 	@ObfuscatedName("yu.d")
-	public static final ModeWhere field8267 = new ModeWhere("", 11, new ModeWhereProperty[] { ModeWhereProperty.field8283 });
+	public static final ModeWhere field8267 = new ModeWhere("", 11, new ModeWhereProperty[] { ModeWhereProperty.OFFICE});
 
 	@ObfuscatedName("yu.c")
-	public static final ModeWhere field8278 = new ModeWhere("", 12, new ModeWhereProperty[] { ModeWhereProperty.field8283, ModeWhereProperty.field8284 });
+	public static final ModeWhere field8278 = new ModeWhere("", 12, new ModeWhereProperty[] { ModeWhereProperty.OFFICE, ModeWhereProperty.HAS_EXTERNAL_ACCESS});
 
 	@ObfuscatedName("yu.r")
-	public static final ModeWhere field8271 = new ModeWhere("", 13, new ModeWhereProperty[] { ModeWhereProperty.field8283 });
+	public static final ModeWhere field8271 = new ModeWhere("", 13, new ModeWhereProperty[] { ModeWhereProperty.OFFICE});
 
 	@ObfuscatedName("yu.v")
 	public final int field8280;
@@ -59,7 +59,7 @@ public class ModeWhere implements SerializableEnum {
 
 	@ObfuscatedName("yu.e(B)[Lyu;")
 	public static ModeWhere[] method13843() {
-		return new ModeWhere[] { field8270, field8271, field8275, field8277, field8279, field8269, field8276, field8273, field8267, field8272, field8278, field8268, field8274 };
+		return new ModeWhere[] {WTRC, field8271, WTQA2, LOCAL, INTBETA, WTQA, field8276, LIVE, field8267, WTI, field8278, WTWIP, WTITU};
 	}
 
 	public ModeWhere(String arg0, int arg1) {

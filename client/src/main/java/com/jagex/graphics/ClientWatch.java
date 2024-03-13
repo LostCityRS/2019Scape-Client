@@ -74,8 +74,8 @@ public class ClientWatch {
 		Queue var0 = field7946;
 		synchronized (field7946) {
 			Point var1;
-			if (Statics.canvas.isShowing()) {
-				var1 = Statics.canvas.getLocationOnScreen();
+			if (GameShell.canvas.isShowing()) {
+				var1 = GameShell.canvas.getLocationOnScreen();
 			} else {
 				var1 = null;
 			}
@@ -85,9 +85,9 @@ public class ClientWatch {
 					if (var2 == null) {
 						return;
 					}
-					if (var1 != null && Statics.canvas.isShowing() && Statics.focus) {
+					if (var1 != null && GameShell.canvas.isShowing() && GameShell.focus) {
 						var2.method19541(var1);
-						if (!var2.method19540() && var2.method17831() < Statics.canvasWid && var2.method17832() < Statics.canvasHei && var2.method17831() >= 0 && var2.method17832() >= 0) {
+						if (!var2.method19540() && var2.method17831() < GameShell.canvasWid && var2.method17832() < GameShell.canvasHei && var2.method17831() >= 0 && var2.method17832() >= 0) {
 							int var3 = var2.method17848();
 							if (var2.method17848() == -1) {
 								field7948.method10261(var2);
@@ -148,10 +148,10 @@ public class ClientWatch {
 			var9.field11432.p2(var6);
 			Client.field10849.method934(var9);
 		}
-		if (Statics.focus != field7944) {
-			field7944 = Statics.focus;
+		if (GameShell.focus != field7944) {
+			field7944 = GameShell.focus;
 			ClientMessage var10 = Statics.method1604(ClientProt.EVENT_APPLET_FOCUS, Client.field10849.field794);
-			var10.field11432.p1(Statics.focus ? 1 : 0);
+			var10.field11432.p1(GameShell.focus ? 1 : 0);
 			Client.field10849.method934(var10);
 		}
 		if (!Client.field10800) {

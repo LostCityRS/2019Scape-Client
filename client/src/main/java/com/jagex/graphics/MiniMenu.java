@@ -3,10 +3,7 @@ package com.jagex.graphics;
 import com.jagex.core.constants.ModeGame;
 import com.jagex.core.datastruct.*;
 import com.jagex.core.utils.TextUtil;
-import com.jagex.game.client.ClientMessage;
-import com.jagex.game.client.LocalisedText;
-import com.jagex.game.client.MouseEvent;
-import com.jagex.game.client.ReceivePlayerPositions;
+import com.jagex.game.client.*;
 import com.jagex.game.config.defaults.Binding;
 import com.jagex.game.config.iftype.Component;
 import com.jagex.game.config.iftype.componentproperties.ServerKeyProperties;
@@ -154,7 +151,7 @@ public class MiniMenu {
 		}
 		FontMetrics var0 = method16902();
 		if (!field562) {
-			field540 = field568 != -1 && field546 >= field568 || (field564 ? 26 : 22) + field546 * field536 > Statics.canvasHei;
+			field540 = field568 != -1 && field546 >= field568 || (field564 ? 26 : 22) + field546 * field536 > GameShell.canvasHei;
 		}
 		field538.method14152();
 		field552.method14152();
@@ -420,15 +417,15 @@ public class MiniMenu {
 		}
 		var3 += 10;
 		int var9 = arg0 - var3 / 2;
-		if (var3 + var9 > Statics.canvasWid) {
-			var9 = Statics.canvasWid - var3;
+		if (var3 + var9 > GameShell.canvasWid) {
+			var9 = GameShell.canvasWid - var3;
 		}
 		if (var9 < 0) {
 			var9 = 0;
 		}
 		int var10 = arg1;
-		if (var6 + arg1 > Statics.canvasHei) {
-			var10 = Statics.canvasHei - var6;
+		if (var6 + arg1 > GameShell.canvasHei) {
+			var10 = GameShell.canvasHei - var6;
 		}
 		if (var10 < 0) {
 			var10 = 0;
@@ -457,7 +454,7 @@ public class MiniMenu {
 		int var6 = field536 * arg0.field12310 + 21;
 		Statics.field3005 = field536 * arg0.field12310 + (field564 ? 26 : 22);
 		int var7 = Statics.field1289 + Statics.field11738;
-		if (var3 + var7 > Statics.canvasWid) {
+		if (var3 + var7 > GameShell.canvasWid) {
 			var7 = Statics.field11738 - var3;
 		}
 		if (var7 < 0) {
@@ -465,8 +462,8 @@ public class MiniMenu {
 		}
 		int var8 = field564 ? var2.field8562 + 20 + 1 : 31;
 		int var9 = var2.field8562 + (arg1 - var8) + 1;
-		if (var6 + var9 > Statics.canvasHei) {
-			var9 = Statics.canvasHei - var6;
+		if (var6 + var9 > GameShell.canvasHei) {
+			var9 = GameShell.canvasHei - var6;
 		}
 		if (var9 < 0) {
 			var9 = 0;
@@ -1439,8 +1436,8 @@ public class MiniMenu {
 			if (Statics.field1841 != null && Statics.field8786 != null) {
 				method6031();
 				int var6 = var3 / 2 + var1;
-				if (var3 + var6 > Statics.canvasWid) {
-					var6 = Statics.canvasWid - var3;
+				if (var3 + var6 > GameShell.canvasWid) {
+					var6 = GameShell.canvasWid - var3;
 				}
 				if (var6 < 0) {
 					var6 = 0;
@@ -1623,7 +1620,7 @@ public class MiniMenu {
 			return;
 		}
 		if (arg0.field12081 != 0) {
-			String var4 = Client.field10768 == ModeGame.STELLARDAWN ? LocalisedText.RATING.method15021(Statics.field1680) : LocalisedText.LEVEL.method15021(Statics.field1680);
+			String var4 = Client.modegame == ModeGame.STELLARDAWN ? LocalisedText.RATING.method15021(Statics.field1680) : LocalisedText.LEVEL.method15021(Statics.field1680);
 			var3 = var3 + Statics.method17760(arg0.field12081, Statics.field4490.field12064) + TextUtil.OPEN_PARENTHESIS + var4 + arg0.field12081 + TextUtil.CLOSE_PARENTHESIS;
 		}
 		if (Client.field10973 && !arg1) {
@@ -1726,7 +1723,7 @@ public class MiniMenu {
 						var2 = false;
 					}
 				}
-				String var5 = Client.field10768 == ModeGame.STELLARDAWN ? LocalisedText.RATING.method15021(Statics.field1680) : LocalisedText.LEVEL.method15021(Statics.field1680);
+				String var5 = Client.modegame == ModeGame.STELLARDAWN ? LocalisedText.RATING.method15021(Statics.field1680) : LocalisedText.LEVEL.method15021(Statics.field1680);
 				if (arg0.field12064 >= arg0.field12072) {
 					var6 = arg0.method19115(true) + (var2 ? Statics.method17760(arg0.field12064, Statics.field4490.field12064) : Statics.method596(16777215)) + TextUtil.OPEN_PARENTHESIS + var5 + arg0.field12064 + TextUtil.CLOSE_PARENTHESIS;
 				} else {
@@ -1744,7 +1741,7 @@ public class MiniMenu {
 					var7 = true;
 					var6 = ((NPCType) Statics.field7961.list(arg0.field12061.field7892)).name;
 					if (var8.vislevel != 0) {
-						String var9 = Client.field10768 == ModeGame.STELLARDAWN ? LocalisedText.RATING.method15021(Statics.field1680) : LocalisedText.LEVEL.method15021(Statics.field1680);
+						String var9 = Client.modegame == ModeGame.STELLARDAWN ? LocalisedText.RATING.method15021(Statics.field1680) : LocalisedText.LEVEL.method15021(Statics.field1680);
 						var6 = var6 + Statics.method17760(var8.vislevel, Statics.field4490.field12064) + TextUtil.OPEN_PARENTHESIS + var9 + var8.vislevel + TextUtil.CLOSE_PARENTHESIS;
 					}
 				}

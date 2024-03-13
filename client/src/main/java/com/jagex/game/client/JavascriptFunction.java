@@ -1,7 +1,6 @@
 package com.jagex.game.client;
 
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("ns")
 public class JavascriptFunction {
@@ -59,12 +58,12 @@ public class JavascriptFunction {
 
 	@ObfuscatedName("ns.n([Ljava/lang/Object;I)Ljava/lang/Object;")
 	public Object method6097(Object[] arg0) throws Throwable {
-		return BrowserControl.call(Statics.field11885, this.method6087(), arg0);
+		return BrowserControl.call(GameShell.field11885, this.method6087(), arg0);
 	}
 
 	@ObfuscatedName("ns.m(S)Ljava/lang/Object;")
 	public Object method6088() throws Throwable {
-		return BrowserControl.call(Statics.field11885, this.method6087());
+		return BrowserControl.call(GameShell.field11885, this.method6087());
 	}
 
 	@ObfuscatedName("ns.k([Ljava/lang/Object;I)V")

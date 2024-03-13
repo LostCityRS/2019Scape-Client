@@ -4,7 +4,6 @@ import com.jagex.audio.*;
 import com.jagex.core.constants.*;
 import com.jagex.core.datastruct.*;
 import com.jagex.core.io.*;
-import com.jagex.core.utils.Timer;
 import com.jagex.core.utils.*;
 import com.jagex.encryption.Isaac;
 import com.jagex.game.client.*;
@@ -130,7 +129,6 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
-import java.awt.event.ActionEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -211,9 +209,6 @@ public class Statics {
 	@ObfuscatedName("ahe.gv")
 	public static HardwarePlatformLoader field10577;
 
-	@ObfuscatedName("ahs.g")
-	public static Canvas canvas;
-
 	@ObfuscatedName("ahs.dv")
 	public static HardwarePlatform field10581;
 
@@ -268,9 +263,6 @@ public class Statics {
 	@ObfuscatedName("ala.r")
 	public static short field11700;
 
-	@ObfuscatedName("alc.bm")
-	public static String osNameRaw;
-
 	@ObfuscatedName("alc.ok")
 	public static boolean field11709;
 
@@ -319,9 +311,6 @@ public class Statics {
 	@ObfuscatedName("aov.ph")
 	public static boolean field11883;
 
-	@ObfuscatedName("aol.i")
-	public static Applet field11885;
-
 	@ObfuscatedName("aoh.g")
 	public static int field11888;
 
@@ -339,9 +328,6 @@ public class Statics {
 
 	@ObfuscatedName("aqn.p")
 	public static ParticleEffectorTypeList field12041;
-
-	@ObfuscatedName("aqy.a")
-	public static Frame fsframe;
 
 	@ObfuscatedName("ari.ig")
 	public static VarBasicTypeListClient field12225;
@@ -487,9 +473,6 @@ public class Statics {
 	@ObfuscatedName("fz.y")
 	public static Js5 field1810;
 
-	@ObfuscatedName("fz.bz")
-	public static ModeWhere field1811;
-
 	@ObfuscatedName("fj.ie")
 	public static VarBasicTypeListClient field1819;
 
@@ -519,9 +502,6 @@ public class Statics {
 
 	@ObfuscatedName("fl.bf")
 	public static int field1847;
-
-	@ObfuscatedName("fo.as")
-	public static CursorManager mouseImp;
 
 	@ObfuscatedName("fo.lo")
 	public static int field1881;
@@ -583,9 +563,6 @@ public class Statics {
 	@ObfuscatedName("hx.gq")
 	public static Js5 field2149;
 
-	@ObfuscatedName("hq.bb")
-	public static String osArchRaw;
-
 	@ObfuscatedName("hq.tf")
 	public static byte field2154;
 
@@ -618,9 +595,6 @@ public class Statics {
 
 	@ObfuscatedName("hv.z")
 	public static CheckNameReply field2589;
-
-	@ObfuscatedName("ij.bq")
-	public static String osName;
 
 	@ObfuscatedName("io.cl")
 	public static int field2606;
@@ -679,9 +653,6 @@ public class Statics {
 	@ObfuscatedName("jm.bm")
 	public static int field2901;
 
-	@ObfuscatedName("jr.aa")
-	public static int historicCacheId;
-
 	@ObfuscatedName("jr.hg")
 	public static HitmarkTypeList field2936;
 
@@ -736,17 +707,11 @@ public class Statics {
 	@ObfuscatedName("km.es")
 	public static Spline field3178;
 
-	@ObfuscatedName("ky.bn")
-	public static String javaVendor;
-
 	@ObfuscatedName("ky.ji")
 	public static AsyncRebuild field3183;
 
 	@ObfuscatedName("kt.q")
 	public static MaterialList field3199;
-
-	@ObfuscatedName("la.ak")
-	public static String[] historicCacheDirectories;
 
 	@ObfuscatedName("lp.r")
 	public static Object field3225;
@@ -802,9 +767,6 @@ public class Statics {
 	@ObfuscatedName("ns.i")
 	public static int field4037;
 
-	@ObfuscatedName("nv.bo")
-	public static ModeWhat field4093;
-
 	@ObfuscatedName("on.hh")
 	public static MSITypeList field4241;
 
@@ -831,9 +793,6 @@ public class Statics {
 
 	@ObfuscatedName("m.k")
 	public static ServerConnection field432;
-
-	@ObfuscatedName("pk.by")
-	public static String homeDir;
 
 	@ObfuscatedName("pm.e")
 	public static LoadableResource[] field4334;
@@ -897,9 +856,6 @@ public class Statics {
 
 	@ObfuscatedName("qo.nf")
 	public static int field4826;
-
-	@ObfuscatedName("qf.c")
-	public static int frameHei;
 
 	@ObfuscatedName("qv.k")
 	public static String[] field4845;
@@ -1024,9 +980,6 @@ public class Statics {
 	@ObfuscatedName("y.p")
 	public static SuggestNameReply field585;
 
-	@ObfuscatedName("y.af")
-	public static String[] historicCacheLocations;
-
 	@ObfuscatedName("x.w")
 	public static int field592;
 
@@ -1035,9 +988,6 @@ public class Statics {
 
 	@ObfuscatedName("x.jm")
 	public static PingRequest field594;
-
-	@ObfuscatedName("b.ap")
-	public static int archiveCount;
 
 	@ObfuscatedName("a.n")
 	public static BasicCamera field604;
@@ -1060,9 +1010,6 @@ public class Statics {
 	@ObfuscatedName("ae.s")
 	public static int field627;
 
-	@ObfuscatedName("ae.bt")
-	public static String javaVersion;
-
 	@ObfuscatedName("ag.n")
 	public static Font field629;
 
@@ -1075,38 +1022,8 @@ public class Statics {
 	@ObfuscatedName("ah.us")
 	public static long field637;
 
-	@ObfuscatedName("sx.ar")
-	public static File cacheDirectory;
-
-	@ObfuscatedName("sk.r")
-	public static int canvasWid;
-
-	@ObfuscatedName("sk.p")
-	public static int field6587;
-
-	@ObfuscatedName("sk.u")
-	public static int field6590;
-
-	@ObfuscatedName("sk.d")
-	public static int frameWid;
-
-	@ObfuscatedName("sk.f")
-	public static Timer field6594;
-
-	@ObfuscatedName("sk.v")
-	public static int canvasHei;
-
-	@ObfuscatedName("sk.au")
-	public static File cacheLocator;
-
-	@ObfuscatedName("sk.e")
-	public static int field6624;
-
 	@ObfuscatedName("sn.n")
 	public static File field6626;
-
-	@ObfuscatedName("sn.al")
-	public static FullscreenImpl fsimp14;
 
 	@ObfuscatedName("sh.qn")
 	public static int field6656;
@@ -1333,9 +1250,6 @@ public class Statics {
 	@ObfuscatedName("uy.ut")
 	public static int field7231;
 
-	@ObfuscatedName("uw.bu")
-	public static EventQueue eventQueue;
-
 	@ObfuscatedName("uw.cw")
 	public static Sprite field7241;
 
@@ -1399,14 +1313,8 @@ public class Statics {
 	@ObfuscatedName("vs.ts")
 	public static int field7421;
 
-	@ObfuscatedName("vs.az")
-	public static BufferedFile[] cacheIndex;
-
 	@ObfuscatedName("vy.z")
 	public static int field7424;
-
-	@ObfuscatedName("vy.h")
-	public static Frame frame;
 
 	@ObfuscatedName("vp.bu")
 	public static boolean field7446;
@@ -1500,9 +1408,6 @@ public class Statics {
 
 	@ObfuscatedName("xv.el")
 	public static boolean field7880;
-
-	@ObfuscatedName("xv.be")
-	public static String osVersionRaw;
 
 	@ObfuscatedName("xn.r")
 	public static int field7883;
@@ -1623,9 +1528,6 @@ public class Statics {
 
 	@ObfuscatedName("aas.ij")
 	public static VarPlayerTypeListClient field8485;
-
-	@ObfuscatedName("aar.aw")
-	public static boolean focus;
 
 	@ObfuscatedName("aar.td")
 	public static int field8492;
@@ -2749,11 +2651,6 @@ public class Statics {
 		}
 	}
 
-	@ObfuscatedName("qw.w(CB)Lqw;")
-	public static ScriptVarType method7300(char arg0) {
-		return arg0 == 'O' ? ScriptVarType.OBJ : varByLegacyChar[Cp1252.encode(arg0) & 0xFF];
-	}
-
 	@ObfuscatedName("ks.x(Lep;Lao;B)I")
 	public static int method5179(VarIntDomain arg0, ConfigTypeList arg1) {
 		int var2 = 0;
@@ -2843,7 +2740,7 @@ public class Statics {
 
 	@ObfuscatedName("fi.w(S)Ljava/io/File;")
 	public static File method3068() {
-		return cacheDirectory;
+		return GameShell.cacheDirectory;
 	}
 
 	@ObfuscatedName("aom.dg(Lhs;B)Z")
@@ -3062,22 +2959,6 @@ public class Statics {
 		}
 	}
 
-	@ObfuscatedName("f.a(Ljava/lang/Object;I)V")
-	public static void method218(Object arg0) {
-		if (eventQueue == null) {
-			return;
-		}
-		for (int var1 = 0; var1 < 50 && eventQueue.peekEvent() != null; var1++) {
-			PreciseSleep.sleep(1L);
-		}
-		try {
-			if (arg0 != null) {
-				eventQueue.postEvent(new ActionEvent(arg0, 1001, "dummy"));
-			}
-		} catch (Exception var3) {
-		}
-	}
-
 	@ObfuscatedName("ace.q(Ldh;Lch;Lhf;IIIIIB)V")
 	public static void method15085(Renderer arg0, GraphicsRelated arg1, Component arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		MapElementType var8 = (MapElementType) field5011.list(arg7);
@@ -3277,7 +3158,7 @@ public class Statics {
 		int var12 = field2606 * var6 / field6812 + var8;
 		int var13 = var7 + var9 - field8055 * var7 / field6810 - var11;
 		int var14 = -1996554240;
-		if (Client.field10768 == ModeGame.STELLARDAWN) {
+		if (Client.modegame == ModeGame.STELLARDAWN) {
 			var14 = -1996488705;
 		}
 		arg0.method2354(var12, var13, var10, var11, var14, 1);
@@ -3618,7 +3499,7 @@ public class Statics {
 			Component.method5403();
 			field7538.method6165();
 			method14941();
-			if (field1811 != ModeWhere.field8273) {
+			if (Client.modewhere != ModeWhere.LIVE) {
 				for (int var1 = 0; var1 < field9166.length; var1++) {
 					field9166[var1] = null;
 				}
@@ -4267,7 +4148,7 @@ public class Statics {
 
 	@ObfuscatedName("adp.yv(Lyf;I)V")
 	public static final void method15157(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = focus ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = GameShell.focus ? 1 : 0;
 	}
 
 	@ObfuscatedName("oh.yy(Lyf;B)V")
@@ -4700,7 +4581,7 @@ public class Statics {
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		if (Fullscreen.allowed) {
 			Client.setWindowMode(3, var1, var2, false);
-			arg0.field8216[++arg0.field8226 - 1] = fsframe == null ? 0 : 1;
+			arg0.field8216[++arg0.field8226 - 1] = GameShell.fsframe == null ? 0 : 1;
 		} else {
 			arg0.field8216[++arg0.field8226 - 1] = 0;
 		}

@@ -218,7 +218,7 @@ public class AccountCreationManager {
 				var1.field11432.p4(Client.field10775);
 				var1.field11432.pjstr(Statics.field579);
 				var1.field11432.p1(Statics.field1680.getId());
-				var1.field11432.p1(Client.field10768.field8339);
+				var1.field11432.p1(Client.modegame.field8339);
 				GameShell.pushUID192(var1.field11432);
 				String var4 = Client.field10781;
 				var1.field11432.p1(var4 == null ? 0 : 1);

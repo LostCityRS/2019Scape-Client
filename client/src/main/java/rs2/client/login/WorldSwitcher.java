@@ -83,8 +83,8 @@ public class WorldSwitcher {
 		}
 		Statics.lobby.host = arg0;
 		Statics.lobby.node = arg1 + 1099;
-		Statics.lobby.port = ServerPorts.method2912(Statics.field1811, ServerType.field8346, Statics.lobby.node);
-		Statics.lobby.port2 = ServerPorts.method10147(Statics.field1811, ServerType.field8346, Statics.lobby.node);
+		Statics.lobby.port = ServerPorts.method2912(Client.modewhere, ServerType.field8346, Statics.lobby.node);
+		Statics.lobby.port2 = ServerPorts.method10147(Client.modewhere, ServerType.field8346, Statics.lobby.node);
 	}
 
 	@ObfuscatedName("xq.k(I)V")

@@ -240,7 +240,7 @@ public class Loading {
 			Statics.field7921 = new TitleDefaults(Statics.field1587);
 			DefaultSprites.method3470(Statics.field11389);
 			int var8 = Statics.field688.unknown5.method18714();
-			Statics.field2841 = new LoadingRelated3(Client.field10768, Statics.field1680, Statics.field8532);
+			Statics.field2841 = new LoadingRelated3(Client.modegame, Statics.field1680, Statics.field8532);
 			LoadingRelated1[] var9 = Statics.field2841.method15218(var8);
 			if (var9.length == 0) {
 				var9 = Statics.field2841.method15218(0);
@@ -370,42 +370,42 @@ public class Loading {
 			}
 			Statics.field7366 = new MaterialList(Statics.field10249);
 			Statics.field7669 = new BasicTextureList(Statics.field1450);
-			Statics.field3086 = new ParamTypeList(Client.field10768, Statics.field1680, Statics.field11838);
-			Statics.field11742 = new BASTypeList(Client.field10768, Statics.field1680, Statics.field11838);
-			Statics.field2427 = new CursorTypeList(Client.field10768, Statics.field1680, Statics.field11838, Statics.field10317);
-			Statics.field9123 = new CachingConfigTypeList(Client.field10768, Statics.field1680, Statics.field11838, Js5ConfigGroup.DBROWTYPE, 64, new BasicTypeFactory(DBRowType.class));
-			Statics.field1840 = new CachingConfigTypeList(Client.field10768, Statics.field1680, Statics.field11838, Js5ConfigGroup.DBTABLETYPE, 16, new BasicTypeFactory(DBTableType.class));
-			Statics.field8514 = new EnumTypeList(Client.field10768, Statics.field1680, Statics.field8700);
-			Statics.field8168 = new FloorOverlayTypeList(Client.field10768, Statics.field1680, Statics.field11838);
-			Statics.field8145 = new FloorUnderlayTypeList(Client.field10768, Statics.field1680, Statics.field11838);
-			Statics.field2936 = new HitmarkTypeList(Client.field10768, Statics.field1680, Statics.field11838, Statics.field10317);
-			Statics.field4894 = new HeadbarTypeList(Client.field10768, Statics.field1680, Statics.field11838, Statics.field10317);
-			Statics.field2628 = new IDKTypeList(Client.field10768, Statics.field1680, Statics.field11838, Statics.field9213);
-			Statics.field7762 = new InvTypeList(Client.field10768, Statics.field1680, Statics.field11838);
-			Statics.field7943 = new LightTypeList(Client.field10768, Statics.field1680, Statics.field11838);
-			Statics.field1897 = new LocTypeList(Client.field10768, Statics.field1680, true, Statics.field4475, Statics.field9213);
+			Statics.field3086 = new ParamTypeList(Client.modegame, Statics.field1680, Statics.field11838);
+			Statics.field11742 = new BASTypeList(Client.modegame, Statics.field1680, Statics.field11838);
+			Statics.field2427 = new CursorTypeList(Client.modegame, Statics.field1680, Statics.field11838, Statics.field10317);
+			Statics.field9123 = new CachingConfigTypeList(Client.modegame, Statics.field1680, Statics.field11838, Js5ConfigGroup.DBROWTYPE, 64, new BasicTypeFactory(DBRowType.class));
+			Statics.field1840 = new CachingConfigTypeList(Client.modegame, Statics.field1680, Statics.field11838, Js5ConfigGroup.DBTABLETYPE, 16, new BasicTypeFactory(DBTableType.class));
+			Statics.field8514 = new EnumTypeList(Client.modegame, Statics.field1680, Statics.field8700);
+			Statics.field8168 = new FloorOverlayTypeList(Client.modegame, Statics.field1680, Statics.field11838);
+			Statics.field8145 = new FloorUnderlayTypeList(Client.modegame, Statics.field1680, Statics.field11838);
+			Statics.field2936 = new HitmarkTypeList(Client.modegame, Statics.field1680, Statics.field11838, Statics.field10317);
+			Statics.field4894 = new HeadbarTypeList(Client.modegame, Statics.field1680, Statics.field11838, Statics.field10317);
+			Statics.field2628 = new IDKTypeList(Client.modegame, Statics.field1680, Statics.field11838, Statics.field9213);
+			Statics.field7762 = new InvTypeList(Client.modegame, Statics.field1680, Statics.field11838);
+			Statics.field7943 = new LightTypeList(Client.modegame, Statics.field1680, Statics.field11838);
+			Statics.field1897 = new LocTypeList(Client.modegame, Statics.field1680, true, Statics.field4475, Statics.field9213);
 			Client.world.method7733(Statics.field1897);
-			Statics.field3183.method7674(new LocTypeList(Client.field10768, Statics.field1680, true, Statics.field4475, Statics.field9213));
-			Statics.field5011 = new MapElementTypeList(Client.field10768, Statics.field1680, Statics.field11838, Statics.field10317);
-			Statics.field4241 = new MSITypeList(Client.field10768, Statics.field1680, Statics.field11838, Statics.field10317);
-			Statics.field7961 = new NPCTypeList(Client.field10768, Statics.field1680, true, Statics.field4618, Statics.field9213);
-			Statics.field1842 = new ObjTypeList(Client.field10768, Statics.field1680, true, Statics.field3086, Statics.field7537, Statics.field9213);
-			Statics.field1972 = new QuestTypeList(Client.field10768, Statics.field1680, Statics.field11838, true);
-			Statics.field10771 = new SeqGroupTypeList(Client.field10768, Statics.field1680, Statics.field11838);
-			Statics.field8797 = new SeqTypeList(Client.field10768, Statics.field1680, Statics.field8285, Statics.field7420, Statics.field10287, Statics.field11262, Statics.field10771);
-			Statics.field2879 = new SkyBoxTypeList(Client.field10768, Statics.field1680, Statics.field11838);
-			Statics.field687 = new SkyDecorTypeList(Client.field10768, Statics.field1680, Statics.field11838);
-			Statics.field4874 = new EffectAnimTypeList(Client.field10768, Statics.field1680, Statics.field2149, Statics.field9213);
-			Statics.field7713 = new StructTypeList(Client.field10768, Statics.field1680, Statics.field3611, true);
-			Statics.field8911 = new VarBasicTypeListClient(Client.field10768, VarDomainType.CLIENT, Statics.field1680, Statics.field11838);
-			Statics.field8485 = new VarPlayerTypeListClient(Client.field10768, VarDomainType.PLAYER, Statics.field1680, Statics.field11838);
-			Statics.field8135 = new VarBasicTypeListClient(Client.field10768, VarDomainType.NPC, Statics.field1680, Statics.field11838);
-			Statics.field8783 = new VarBasicTypeListClient(Client.field10768, VarDomainType.CLAN, Statics.field1680, Statics.field11838);
-			Statics.field12225 = new VarBasicTypeListClient(Client.field10768, VarDomainType.CLAN_SETTING, Statics.field1680, Statics.field11838);
-			Statics.field3415 = new VarBasicTypeListClient(Client.field10768, VarDomainType.PLAYER_GROUP, Statics.field1680, Statics.field11838);
-			Statics.field1819 = new VarBasicTypeListClient(Client.field10768, VarDomainType.OBJECT, Statics.field1680, Statics.field11838);
+			Statics.field3183.method7674(new LocTypeList(Client.modegame, Statics.field1680, true, Statics.field4475, Statics.field9213));
+			Statics.field5011 = new MapElementTypeList(Client.modegame, Statics.field1680, Statics.field11838, Statics.field10317);
+			Statics.field4241 = new MSITypeList(Client.modegame, Statics.field1680, Statics.field11838, Statics.field10317);
+			Statics.field7961 = new NPCTypeList(Client.modegame, Statics.field1680, true, Statics.field4618, Statics.field9213);
+			Statics.field1842 = new ObjTypeList(Client.modegame, Statics.field1680, true, Statics.field3086, Statics.field7537, Statics.field9213);
+			Statics.field1972 = new QuestTypeList(Client.modegame, Statics.field1680, Statics.field11838, true);
+			Statics.field10771 = new SeqGroupTypeList(Client.modegame, Statics.field1680, Statics.field11838);
+			Statics.field8797 = new SeqTypeList(Client.modegame, Statics.field1680, Statics.field8285, Statics.field7420, Statics.field10287, Statics.field11262, Statics.field10771);
+			Statics.field2879 = new SkyBoxTypeList(Client.modegame, Statics.field1680, Statics.field11838);
+			Statics.field687 = new SkyDecorTypeList(Client.modegame, Statics.field1680, Statics.field11838);
+			Statics.field4874 = new EffectAnimTypeList(Client.modegame, Statics.field1680, Statics.field2149, Statics.field9213);
+			Statics.field7713 = new StructTypeList(Client.modegame, Statics.field1680, Statics.field3611, true);
+			Statics.field8911 = new VarBasicTypeListClient(Client.modegame, VarDomainType.CLIENT, Statics.field1680, Statics.field11838);
+			Statics.field8485 = new VarPlayerTypeListClient(Client.modegame, VarDomainType.PLAYER, Statics.field1680, Statics.field11838);
+			Statics.field8135 = new VarBasicTypeListClient(Client.modegame, VarDomainType.NPC, Statics.field1680, Statics.field11838);
+			Statics.field8783 = new VarBasicTypeListClient(Client.modegame, VarDomainType.CLAN, Statics.field1680, Statics.field11838);
+			Statics.field12225 = new VarBasicTypeListClient(Client.modegame, VarDomainType.CLAN_SETTING, Statics.field1680, Statics.field11838);
+			Statics.field3415 = new VarBasicTypeListClient(Client.modegame, VarDomainType.PLAYER_GROUP, Statics.field1680, Statics.field11838);
+			Statics.field1819 = new VarBasicTypeListClient(Client.modegame, VarDomainType.OBJECT, Statics.field1680, Statics.field11838);
 			Statics.field1232 = VarTypeList.createDomainToListEnumMap(new VarTypeList[] { Statics.field8911, Statics.field8485, Statics.field8135, Statics.field8783, Statics.field12225, Statics.field3415, Statics.field1819 });
-			Statics.field8736 = new VarBitTypeList(Client.field10768, Statics.field1680, Statics.field11838, Statics.field1232);
+			Statics.field8736 = new VarBitTypeList(Client.modegame, Statics.field1680, Statics.field11838, Statics.field1232);
 			Statics.field4626 = new VariableTypeProviderClient();
 			Component.method3669(Statics.field527, Statics.field9213, Statics.field10317, Statics.field7672);
 			Statics.field9211 = new BasicBillboardTypeList(Statics.field736);
@@ -420,7 +420,7 @@ public class Loading {
 			SkyBox.method13864(Statics.field9213, Statics.field7366, Statics.field7669);
 			Huffman var19 = new Huffman(Statics.field8741.method6906("huffman", ""));
 			WordPack.setHuffman(var19);
-			Statics.field6594 = Timer.method6109();
+			GameShell.field6594 = Timer.method6109();
 			Statics.field10581 = new HardwarePlatform(true);
 		}
 		if (Statics.field3419 == LoadingStage.SETUP_STATIC_SPRITES) {
@@ -522,7 +522,7 @@ public class Loading {
 
 	@ObfuscatedName("ux.c(I)V")
 	public static void method9212() {
-		FileOnDisk var0 = GameShell.openPrefs("2", Client.field10768.field8333, false);
+		FileOnDisk var0 = GameShell.openPrefs("2", Client.modegame.field8333, false);
 		Statics.field7228.method16420(var0);
 	}
 

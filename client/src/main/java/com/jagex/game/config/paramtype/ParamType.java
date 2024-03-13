@@ -38,7 +38,7 @@ public class ParamType implements ConfigType, ConfigRelated {
 	public void method15151(Packet arg0, int arg1) {
 		if (arg1 == 1) {
 			char var3 = Statics.method9576(arg0.g1b());
-			this.field9173 = Statics.method7300(var3);
+			this.field9173 = ScriptVarType.method7300(var3);
 		} else if (arg1 == 2) {
 			this.field9172 = arg0.g4s();
 		} else if (arg1 == 4) {

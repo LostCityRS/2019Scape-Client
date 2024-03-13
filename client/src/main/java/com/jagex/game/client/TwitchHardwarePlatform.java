@@ -249,7 +249,7 @@ public class TwitchHardwarePlatform {
 			arg1 = 0;
 		}
 		boolean var4 = NativeLibraryConfig.field5074.startsWith("mac");
-		int[] var5 = Statics.field11755.GetRecommendedSettings(Statics.canvasWid, Statics.canvasHei, arg0, 2000, arg2, field7375, var4);
+		int[] var5 = Statics.field11755.GetRecommendedSettings(GameShell.canvasWid, GameShell.canvasHei, arg0, 2000, arg2, field7375, var4);
 		if (var5[0] != 0) {
 			return var5[0];
 		}
@@ -264,7 +264,7 @@ public class TwitchHardwarePlatform {
 		if (arg1 != 0) {
 			var8 = arg1 * var8 / 100;
 		}
-		DeveloperConsole.addline("Stream - Input: " + Statics.canvasWid + "x" + Statics.canvasHei + " (" + var9 + "kbps)" + " => " + "Output: " + var6 + "x" + var7 + " [" + (arg0 == 0 ? "auto" : arg0 + "%") + "] (" + var8 + "kbps [" + (arg1 == 0 ? "auto" : arg1 + "%") + "])");
+		DeveloperConsole.addline("Stream - Input: " + GameShell.canvasWid + "x" + GameShell.canvasHei + " (" + var9 + "kbps)" + " => " + "Output: " + var6 + "x" + var7 + " [" + (arg0 == 0 ? "auto" : arg0 + "%") + "] (" + var8 + "kbps [" + (arg1 == 0 ? "auto" : arg1 + "%") + "])");
 		return Statics.field11755.StartStreaming(var6, var7, arg2, var8, arg1 != 0, field7375, field7398, arg3);
 	}
 
@@ -286,7 +286,7 @@ public class TwitchHardwarePlatform {
 
 	@ObfuscatedName("nk.q(Ljava/lang/String;I)I")
 	public static int method6056(String arg0) {
-		return Statics.field11755.SetStreamTitle(arg0, Client.field10768.field8341);
+		return Statics.field11755.SetStreamTitle(arg0, Client.modegame.field8341);
 	}
 
 	@ObfuscatedName("xk.x(I)I")
@@ -563,7 +563,7 @@ public class TwitchHardwarePlatform {
 	@ObfuscatedName("fn.aq(I)I")
 	public static int method3065() {
 		Statics.field4501 = null;
-		return Statics.field11755.RequestLiveStreams(Client.field10768.field8341);
+		return Statics.field11755.RequestLiveStreams(Client.modegame.field8341);
 	}
 
 	@ObfuscatedName("ny.ax(B)I")

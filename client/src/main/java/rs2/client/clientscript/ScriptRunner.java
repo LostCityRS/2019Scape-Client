@@ -7792,8 +7792,8 @@ public final class ScriptRunner {
 	public static final void method15039(ClientScriptState arg0) {
 		arg0.field8216[++arg0.field8226 - 1] = 0;
 		arg0.field8216[++arg0.field8226 - 1] = 0;
-		arg0.field8216[++arg0.field8226 - 1] = Statics.canvasWid;
-		arg0.field8216[++arg0.field8226 - 1] = Statics.canvasHei;
+		arg0.field8216[++arg0.field8226 - 1] = GameShell.canvasWid;
+		arg0.field8216[++arg0.field8226 - 1] = GameShell.canvasHei;
 	}
 
 	@ObfuscatedName("yx.oh(Lhf;Lhq;Lyf;I)V")
@@ -12411,7 +12411,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("wy.alj(Lyf;I)V")
 	public static final void method9894(ClientScriptState arg0) {
-		if (Fullscreen.allowed && Statics.fsframe != null) {
+		if (Fullscreen.allowed && GameShell.fsframe != null) {
 			Client.setWindowMode(Statics.field688.maxScreenSize.method18539(), -1, -1, false);
 		}
 	}
@@ -12495,7 +12495,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("eg.alt(Lyf;I)V")
 	public static final void method2838(ClientScriptState arg0) {
-		if (Fullscreen.allowed && Statics.fsframe != null) {
+		if (Fullscreen.allowed && GameShell.fsframe != null) {
 			Client.setWindowMode(Statics.field688.maxScreenSize.method18539(), -1, -1, false);
 		}
 		if (GameShell.getEnvironment() == GameShell3$Environment.APPLICATION) {
@@ -12520,7 +12520,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ud.alh(Lyf;I)V")
 	public static final void method9193(ClientScriptState arg0) {
-		if (Fullscreen.allowed && Statics.fsframe != null) {
+		if (Fullscreen.allowed && GameShell.fsframe != null) {
 			Client.setWindowMode(Statics.field688.maxScreenSize.method18539(), -1, -1, false);
 		}
 		String var1 = (String) arg0.field8218[--arg0.field8211];
@@ -14508,8 +14508,8 @@ public final class ScriptRunner {
 	public static final void method851(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		String var2 = (String) arg0.field8218[--arg0.field8211];
-		int var3 = ServerPorts.method2912(Statics.field1811, ServerType.field8347, var1);
-		int var4 = ServerPorts.method10147(Statics.field1811, ServerType.field8347, var1);
+		int var3 = ServerPorts.method2912(Client.modewhere, ServerType.field8347, var1);
+		int var4 = ServerPorts.method10147(Client.modewhere, ServerType.field8347, var1);
 		if (Client.state == 13 && !LoginManager.method2865()) {
 			arg0.field8216[++arg0.field8226 - 1] = WorldSwitcher.method9401(var1, var2, var3, var4) ? 1 : 0;
 		} else {
@@ -15350,8 +15350,8 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ajj.bbj(Lyf;I)V")
 	public static final void method17434(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Statics.canvasWid;
-		arg0.field8216[++arg0.field8226 - 1] = Statics.canvasHei;
+		arg0.field8216[++arg0.field8226 - 1] = GameShell.canvasWid;
+		arg0.field8216[++arg0.field8226 - 1] = GameShell.canvasHei;
 	}
 
 	@ObfuscatedName("s.bbo(Lyf;I)V")

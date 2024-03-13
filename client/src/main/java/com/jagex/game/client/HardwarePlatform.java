@@ -3,7 +3,6 @@ package com.jagex.game.client;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
-import deob.Statics;
 import jaclib.hardware_info.HardwareInfo;
 
 import java.util.HashMap;
@@ -88,70 +87,70 @@ public class HardwarePlatform extends Node {
 
 	public HardwarePlatform(boolean arg0) {
 		if (arg0) {
-			if (Statics.osName.startsWith("win")) {
+			if (GameShell.osName.startsWith("win")) {
 				this.operatingSystem = 1;
-			} else if (Statics.osName.startsWith("mac")) {
+			} else if (GameShell.osName.startsWith("mac")) {
 				this.operatingSystem = 2;
-			} else if (Statics.osName.startsWith("linux")) {
+			} else if (GameShell.osName.startsWith("linux")) {
 				this.operatingSystem = 3;
 			} else {
 				this.operatingSystem = 4;
 			}
-			if (Statics.osArchRaw.startsWith("amd64") || Statics.osArchRaw.startsWith("x86_64")) {
+			if (GameShell.osArchRaw.startsWith("amd64") || GameShell.osArchRaw.startsWith("x86_64")) {
 				this.osArch64 = true;
 			} else {
 				this.osArch64 = false;
 			}
 			if (this.operatingSystem == 1) {
-				if (Statics.osVersionRaw.indexOf("4.0") != -1) {
+				if (GameShell.osVersionRaw.indexOf("4.0") != -1) {
 					this.osVersion = 1;
-				} else if (Statics.osVersionRaw.indexOf("4.1") != -1) {
+				} else if (GameShell.osVersionRaw.indexOf("4.1") != -1) {
 					this.osVersion = 2;
-				} else if (Statics.osVersionRaw.indexOf("4.9") != -1) {
+				} else if (GameShell.osVersionRaw.indexOf("4.9") != -1) {
 					this.osVersion = 3;
-				} else if (Statics.osVersionRaw.indexOf("5.0") != -1) {
+				} else if (GameShell.osVersionRaw.indexOf("5.0") != -1) {
 					this.osVersion = 4;
-				} else if (Statics.osVersionRaw.indexOf("5.1") != -1) {
+				} else if (GameShell.osVersionRaw.indexOf("5.1") != -1) {
 					this.osVersion = 5;
-				} else if (Statics.osVersionRaw.indexOf("5.2") != -1) {
+				} else if (GameShell.osVersionRaw.indexOf("5.2") != -1) {
 					this.osVersion = 8;
-				} else if (Statics.osVersionRaw.indexOf("6.0") != -1) {
+				} else if (GameShell.osVersionRaw.indexOf("6.0") != -1) {
 					this.osVersion = 6;
-				} else if (Statics.osVersionRaw.indexOf("6.1") != -1) {
+				} else if (GameShell.osVersionRaw.indexOf("6.1") != -1) {
 					this.osVersion = 7;
-				} else if (Statics.osVersionRaw.indexOf("6.2") != -1) {
+				} else if (GameShell.osVersionRaw.indexOf("6.2") != -1) {
 					this.osVersion = 9;
-				} else if (Statics.osVersionRaw.indexOf("6.3") != -1) {
+				} else if (GameShell.osVersionRaw.indexOf("6.3") != -1) {
 					this.osVersion = 10;
-				} else if (Statics.osVersionRaw.indexOf("10.0") != -1) {
+				} else if (GameShell.osVersionRaw.indexOf("10.0") != -1) {
 					this.osVersion = 11;
 				}
 			} else if (this.operatingSystem == 2) {
-				if (Statics.osVersionRaw.indexOf("10.4") != -1) {
+				if (GameShell.osVersionRaw.indexOf("10.4") != -1) {
 					this.osVersion = 20;
-				} else if (Statics.osVersionRaw.indexOf("10.5") != -1) {
+				} else if (GameShell.osVersionRaw.indexOf("10.5") != -1) {
 					this.osVersion = 21;
-				} else if (Statics.osVersionRaw.indexOf("10.6") != -1) {
+				} else if (GameShell.osVersionRaw.indexOf("10.6") != -1) {
 					this.osVersion = 22;
-				} else if (Statics.osVersionRaw.indexOf("10.7") != -1) {
+				} else if (GameShell.osVersionRaw.indexOf("10.7") != -1) {
 					this.osVersion = 23;
-				} else if (Statics.osVersionRaw.indexOf("10.8") != -1) {
+				} else if (GameShell.osVersionRaw.indexOf("10.8") != -1) {
 					this.osVersion = 24;
-				} else if (Statics.osVersionRaw.indexOf("10.9") != -1) {
+				} else if (GameShell.osVersionRaw.indexOf("10.9") != -1) {
 					this.osVersion = 25;
-				} else if (Statics.osVersionRaw.indexOf("10.10") != -1) {
+				} else if (GameShell.osVersionRaw.indexOf("10.10") != -1) {
 					this.osVersion = 26;
-				} else if (Statics.osVersionRaw.indexOf("10.11") != -1) {
+				} else if (GameShell.osVersionRaw.indexOf("10.11") != -1) {
 					this.osVersion = 27;
 				}
 			}
-			if (Statics.javaVendor.toLowerCase().indexOf("sun") != -1) {
+			if (GameShell.javaVendor.toLowerCase().indexOf("sun") != -1) {
 				this.javaVendor = 1;
-			} else if (Statics.javaVendor.toLowerCase().indexOf("microsoft") != -1) {
+			} else if (GameShell.javaVendor.toLowerCase().indexOf("microsoft") != -1) {
 				this.javaVendor = 2;
-			} else if (Statics.javaVendor.toLowerCase().indexOf("apple") != -1) {
+			} else if (GameShell.javaVendor.toLowerCase().indexOf("apple") != -1) {
 				this.javaVendor = 3;
-			} else if (Statics.javaVendor.toLowerCase().indexOf("oracle") == -1) {
+			} else if (GameShell.javaVendor.toLowerCase().indexOf("oracle") == -1) {
 				this.javaVendor = 4;
 			} else {
 				this.javaVendor = 5;
@@ -159,8 +158,8 @@ public class HardwarePlatform extends Node {
 			int var2 = 2;
 			int var3 = 0;
 			try {
-				while (var2 < Statics.javaVersion.length()) {
-					char var4 = Statics.javaVersion.charAt(var2);
+				while (var2 < GameShell.javaVersion.length()) {
+					char var4 = GameShell.javaVersion.charAt(var2);
 					if (var4 < '0' || var4 > '9') {
 						break;
 					}
@@ -170,11 +169,11 @@ public class HardwarePlatform extends Node {
 			} catch (Exception var48) {
 			}
 			this.javaVersionMajor = var3;
-			int var6 = Statics.javaVersion.indexOf(46, 2) + 1;
+			int var6 = GameShell.javaVersion.indexOf(46, 2) + 1;
 			int var7 = 0;
 			try {
-				while (var6 < Statics.javaVersion.length()) {
-					char var8 = Statics.javaVersion.charAt(var6);
+				while (var6 < GameShell.javaVersion.length()) {
+					char var8 = GameShell.javaVersion.charAt(var6);
 					if (var8 < '0' || var8 > '9') {
 						break;
 					}
@@ -184,11 +183,11 @@ public class HardwarePlatform extends Node {
 			} catch (Exception var47) {
 			}
 			this.javaVersionMinor = var7;
-			int var10 = Statics.javaVersion.indexOf(95, 4) + 1;
+			int var10 = GameShell.javaVersion.indexOf(95, 4) + 1;
 			int var11 = 0;
 			try {
-				while (var10 < Statics.javaVersion.length()) {
-					char var12 = Statics.javaVersion.charAt(var10);
+				while (var10 < GameShell.javaVersion.length()) {
+					char var12 = GameShell.javaVersion.charAt(var10);
 					if (var12 < '0' || var12 > '9') {
 						break;
 					}
