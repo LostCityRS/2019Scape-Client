@@ -24,16 +24,16 @@ public class InvType extends SecondaryNode implements ConfigType, ConfigRelated 
 	@ObfuscatedName("ady.e(Lalw;B)V")
 	public void decode(Packet buf) {
 		while (true) {
-			int count = buf.g1();
-			if (count == 0) {
+			int code = buf.g1();
+			if (code == 0) {
 				return;
 			}
-			this.method15306(buf, count);
+			this.decode(buf, code);
 		}
 	}
 
 	@ObfuscatedName("ady.u(Lalw;II)V")
-	public void method15306(Packet buf, int code) {
+	public void decode(Packet buf, int code) {
 		if (code == 2) {
 			this.size = buf.g2();
 		} else if (code == 4) {
