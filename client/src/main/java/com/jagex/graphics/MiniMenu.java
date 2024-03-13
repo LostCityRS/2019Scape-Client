@@ -780,7 +780,7 @@ public class MiniMenu {
 									int var73 = 0;
 									Obj var74 = (Obj) var72.field11263.method14159();
 									while (var74 != null) {
-										ObjType var75 = (ObjType) Statics.field1842.getById(var74.field11261);
+										ObjType var75 = (ObjType) Statics.field1842.list(var74.field11261);
 										int var76;
 										if (var75.field8680) {
 											var76 = var75.field8696;
@@ -790,7 +790,7 @@ public class MiniMenu {
 											var76 = Statics.field1971.field7661;
 										}
 										if (Client.field10973 && Statics.field4490.field11717 == var29.field6978.field11717) {
-											ParamType var77 = (ParamType) (Statics.field7677 == -1 ? null : Statics.field3086.getById(Statics.field7677));
+											ParamType var77 = (ParamType) (Statics.field7677 == -1 ? null : Statics.field3086.list(Statics.field7677));
 											if ((Statics.field1765 & 0x1) != 0 && (var77 == null || var75.method14677(Statics.field7677, var77.defaultInt) != var77.defaultInt)) {
 												method3042(Client.field11039, Client.field10977 + " " + TextUtil.ARROW + " " + Statics.method596(var76) + var75.name, Statics.field1844, 17, -1, (long) var74.field11261, var32, var33, true, false, (long) var73, false);
 											}
@@ -834,13 +834,13 @@ public class MiniMenu {
 							}
 						} while (!(var29.field6978 instanceof Location));
 						var83 = (Location) var29.field6978;
-						var84 = (LocType) Client.world.method7750().getById(var83.method8223());
+						var84 = (LocType) Client.world.method7750().list(var83.method8223());
 						if (var84.field7505 != null) {
 							var84 = var84.method9477(Statics.field7410, Statics.field7410);
 						}
 					} while (var84 == null);
 					if (Client.field10973 && Statics.field4490.field11717 == var29.field6978.field11717) {
-						ParamType var85 = (ParamType) (Statics.field7677 == -1 ? null : Statics.field3086.getById(Statics.field7677));
+						ParamType var85 = (ParamType) (Statics.field7677 == -1 ? null : Statics.field3086.list(Statics.field7677));
 						if ((Statics.field1765 & 0x4) != 0 && (var85 == null || var84.method9481(Statics.field7677, var85.defaultInt) != var85.defaultInt)) {
 							method3042(Client.field11039, Client.field10977 + " " + TextUtil.ARROW + " " + Statics.method596(65535) + var84.name, Statics.field1844, 2, -1, method6964(var83, var32, var33), var32, var33, true, false, (long) var83.hashCode(), false);
 						}
@@ -884,7 +884,7 @@ public class MiniMenu {
 	public static long method6964(Location arg0, int arg1, int arg2) {
 		long var3 = 4194304L;
 		long var5 = Long.MIN_VALUE;
-		LocType var7 = (LocType) Client.world.method7750().getById(arg0.method8223());
+		LocType var7 = (LocType) Client.world.method7750().list(arg0.method8223());
 		long var8 = (long) (arg1 | arg2 << 7 | arg0.method8220() << 14 | arg0.method8204() << 20 | 0x40000000);
 		if (var7.field7470 == 0) {
 			var8 |= var5;
@@ -1283,9 +1283,9 @@ public class MiniMenu {
 	public static int[] method7096(MinimenuEntry arg0) {
 		int[] var1 = null;
 		if (method9907(arg0.field12307)) {
-			var1 = ((ObjType) Statics.field1842.getById((int) arg0.field12300)).field8691;
+			var1 = ((ObjType) Statics.field1842.list((int) arg0.field12300)).field8691;
 		} else if (arg0.field12303 != -1) {
-			var1 = ((ObjType) Statics.field1842.getById(arg0.field12303)).field8691;
+			var1 = ((ObjType) Statics.field1842.list(arg0.field12303)).field8691;
 		} else if (method16450(arg0.field12307)) {
 			ObjectWrapper var2 = (ObjectWrapper) Client.field10838.method14495((long) arg0.field12300);
 			if (var2 != null) {
@@ -1299,7 +1299,7 @@ public class MiniMenu {
 				}
 			}
 		} else if (method4053(arg0.field12307)) {
-			LocType var5 = (LocType) Client.world.method7750().getById((int) (arg0.field12300 >>> 32 & 0x7FFFFFFFL));
+			LocType var5 = (LocType) Client.world.method7750().list((int) (arg0.field12300 >>> 32 & 0x7FFFFFFFL));
 			if (var5.field7505 != null) {
 				var5 = var5.method9477(Statics.field7410, Statics.field7410);
 			}
@@ -1562,7 +1562,7 @@ public class MiniMenu {
 	public static String method14480(int[] arg0) {
 		StringBuilder var1 = new StringBuilder();
 		for (int var2 = 0; var2 < arg0.length; var2++) {
-			QuestType var3 = (QuestType) Statics.field1972.getById(arg0[var2]);
+			QuestType var3 = (QuestType) Statics.field1972.list(arg0[var2]);
 			if (var3.field2651 != -1) {
 				var1.append(" <sprite=").append(var3.field2651).append(">");
 			}
@@ -1624,7 +1624,7 @@ public class MiniMenu {
 			var3 = var3 + Statics.method17760(arg0.field12081, Statics.field4490.field12064) + TextUtil.OPEN_PARENTHESIS + var4 + arg0.field12081 + TextUtil.CLOSE_PARENTHESIS;
 		}
 		if (Client.field10973 && !arg1) {
-			ParamType var5 = (ParamType) (Statics.field7677 == -1 ? null : Statics.field3086.getById(Statics.field7677));
+			ParamType var5 = (ParamType) (Statics.field7677 == -1 ? null : Statics.field3086.list(Statics.field7677));
 			if ((Statics.field1765 & 0x2) != 0 && (var5 == null || var2.method4551(Statics.field7677, var5.defaultInt) != var5.defaultInt)) {
 				method3042(Client.field11039, Client.field10977 + " " + TextUtil.ARROW + " " + Statics.method596(16776960) + var3, Statics.field1844, 8, -1, (long) arg0.field10406, 0, 0, true, false, (long) arg0.field10406, false);
 			}
@@ -1736,10 +1736,10 @@ public class MiniMenu {
 			}
 			boolean var7 = false;
 			if (arg0.field12061 != null && arg0.field12061.field7892 != -1) {
-				NPCType var8 = (NPCType) Statics.field7961.getById(arg0.field12061.field7892);
+				NPCType var8 = (NPCType) Statics.field7961.list(arg0.field12061.field7892);
 				if (var8.field2690) {
 					var7 = true;
-					var6 = ((NPCType) Statics.field7961.getById(arg0.field12061.field7892)).name;
+					var6 = ((NPCType) Statics.field7961.list(arg0.field12061.field7892)).name;
 					if (var8.vislevel != 0) {
 						String var9 = Client.modegame == ModeGame.STELLARDAWN ? LocalisedText.RATING.method15021(Statics.field1680) : LocalisedText.LEVEL.method15021(Statics.field1680);
 						var6 = var6 + Statics.method17760(var8.vislevel, Statics.field4490.field12064) + TextUtil.OPEN_PARENTHESIS + var9 + var8.vislevel + TextUtil.CLOSE_PARENTHESIS;

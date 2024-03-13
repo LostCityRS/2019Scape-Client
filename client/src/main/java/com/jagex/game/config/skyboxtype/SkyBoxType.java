@@ -71,11 +71,11 @@ public class SkyBoxType implements ConfigType, ConfigRelated {
 	@ObfuscatedName("d.p(IIIILao;Lao;I)Lsv;")
 	public static SkyBox method305(int arg0, int arg1, int arg2, int arg3, ConfigTypeList arg4, ConfigTypeList arg5) {
 		SkyboxRelated[] var6 = null;
-		SkyBoxType var7 = (SkyBoxType) arg4.getById(arg0);
+		SkyBoxType var7 = (SkyBoxType) arg4.list(arg0);
 		if (var7.field7232 != null) {
 			var6 = new SkyboxRelated[var7.field7232.length];
 			for (int var8 = 0; var8 < var6.length; var8++) {
-				SkyDecorType var9 = (SkyDecorType) arg5.getById(var7.field7232[var8]);
+				SkyDecorType var9 = (SkyDecorType) arg5.list(var7.field7232[var8]);
 				var6[var8] = new SkyboxRelated(var9.field2780, var9.field2778, var9.field2783, var9.field2779, var9.field2777, var9.field2776, var9.field2782, var9.field2781, var9.field2784, var9.field2785, var9.field2786);
 			}
 		}

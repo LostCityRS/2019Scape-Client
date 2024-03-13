@@ -250,7 +250,7 @@ public class WorldMap {
 
 	@ObfuscatedName("tf.d(Lao;Ldf;III)I")
 	public static int method8587(ConfigTypeList arg0, MaterialList arg1, int arg2, int arg3, int arg4) {
-		FloorOverlayType var5 = (FloorOverlayType) arg0.getById(arg2);
+		FloorOverlayType var5 = (FloorOverlayType) arg0.list(arg2);
 		if (var5 == null) {
 			return 0;
 		}
@@ -491,7 +491,7 @@ public class WorldMap {
 						WorldMapNode var3 = (WorldMapNode) var2;
 						if (var3 != null) {
 							for (int var4 = 0; var4 < var3.field11444.length; var4++) {
-								LocType var5 = (LocType) Statics.field6785.getById(var3.field11444[var4]);
+								LocType var5 = (LocType) Statics.field6785.list(var3.field11444[var4]);
 								int var6 = var5.field7485;
 								if (var5.field7505 != null) {
 									LocType var7 = var5.method9477(Statics.field6791, Statics.field6790);
@@ -509,7 +509,7 @@ public class WorldMap {
 						}
 					} else {
 						Integer var9 = (Integer) var2;
-						LocType var10 = (LocType) Statics.field6785.getById(var9);
+						LocType var10 = (LocType) Statics.field6785.list(var9);
 						int var11 = var10.field7485;
 						if (var10.field7505 != null) {
 							LocType var12 = var10.method9477(Statics.field6791, Statics.field6790);
@@ -542,7 +542,7 @@ public class WorldMap {
 								var19 = (WorldMapUpperLevelTileData) var18.next();
 							} while (var19.field6773 == null);
 							for (int var20 = 0; var20 < var19.field6773.length; var20++) {
-								LocType var21 = (LocType) Statics.field6785.getById(var19.field6773[var20]);
+								LocType var21 = (LocType) Statics.field6785.list(var19.field6773[var20]);
 								int var22 = var21.field7485;
 								if (var21.field7505 != null) {
 									LocType var23 = var21.method9477(Statics.field6791, Statics.field6790);
@@ -579,7 +579,7 @@ public class WorldMap {
 				if (var11 < Statics.field6812) {
 					short var14 = arg0[Statics.field6812 * var13 + var11];
 					if (var14 > 0) {
-						FloorUnderlayType var15 = (FloorUnderlayType) field6849.getById(var14 - 1);
+						FloorUnderlayType var15 = (FloorUnderlayType) field6849.list(var14 - 1);
 						var5[var13] += var15.field8546;
 						var6[var13] += var15.field8541;
 						var7[var13] += var15.field8545;
@@ -590,7 +590,7 @@ public class WorldMap {
 				if (var12 >= 0) {
 					short var16 = arg0[Statics.field6812 * var13 + var12];
 					if (var16 > 0) {
-						FloorUnderlayType var17 = (FloorUnderlayType) field6849.getById(var16 - 1);
+						FloorUnderlayType var17 = (FloorUnderlayType) field6849.list(var16 - 1);
 						var5[var13] -= var17.field8546;
 						var6[var13] -= var17.field8541;
 						var7[var13] -= var17.field8545;
@@ -974,7 +974,7 @@ public class WorldMap {
 		for (int var20 = 0; var20 < arg10.length; var20++) {
 			int var21 = arg11[var20] & 0x3F;
 			if (LocShape.field7554.field7562 == var21 || LocShape.field7545.field7562 == var21 || LocShape.field7546.field7562 == var21 || LocShape.field7547.field7562 == var21) {
-				LocType var22 = (LocType) Statics.field6785.getById(arg10[var20]);
+				LocType var22 = (LocType) Statics.field6785.list(arg10[var20]);
 				if (var22.field7486 == -1) {
 					int var23 = -3355444;
 					if (var22.field7470 == 1) {
@@ -1056,10 +1056,10 @@ public class WorldMap {
 			return;
 		}
 		for (int var7 = 0; var7 < arg5.length; var7++) {
-			LocType var8 = (LocType) Statics.field6785.getById(arg5[var7]);
+			LocType var8 = (LocType) Statics.field6785.list(arg5[var7]);
 			int var9 = var8.field7486;
 			if (var9 != -1) {
-				MSIType var10 = (MSIType) Statics.field6789.getById(var9);
+				MSIType var10 = (MSIType) Statics.field6789.list(var9);
 				Sprite var11 = var10.method15057(arg0, var8.field7487 ? arg6[var7] >> 6 & 0x3 : 0, var8.field7504 ? var8.mirror : false);
 				int[] var12 = var10.method15058(arg0, var8.field7487 ? arg6[var7] >> 6 & 0x3 : 0, var8.field7504 ? var8.mirror : false);
 				if (var11 != null) {

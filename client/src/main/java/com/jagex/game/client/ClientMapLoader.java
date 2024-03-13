@@ -77,7 +77,7 @@ public class ClientMapLoader extends MapLoader {
 						for (int var10 = 0; var10 < var9; var10++) {
 							StaticPointLight var11 = new StaticPointLight(arg0, this.field4577.field6900, arg1, 2);
 							if (var11.field7014 == 31) {
-								LightType var12 = (LightType) Statics.field7943.getById(arg1.g2());
+								LightType var12 = (LightType) Statics.field7943.list(arg1.g2());
 								var11.method8899(var12.field9168, var12.field9170, var12.field9167, var12.field9169);
 							}
 							if (arg0.method2114() > 0) {
@@ -265,7 +265,7 @@ public class ClientMapLoader extends MapLoader {
 						for (int var17 = 0; var17 < var16; var17++) {
 							StaticPointLight var18 = new StaticPointLight(arg0, this.field4577.field6900, arg1, 2);
 							if (var18.field7014 == 31) {
-								LightType var19 = (LightType) Statics.field7943.getById(arg1.g2());
+								LightType var19 = (LightType) Statics.field7943.list(arg1.g2());
 								var18.method8899(var19.field9168, var19.field9170, var19.field9167, var19.field9169);
 							}
 							if (arg0.method2114() > 0) {
@@ -428,7 +428,7 @@ public class ClientMapLoader extends MapLoader {
 									int var17 = var12 >> 6 & 0x3F;
 									var18 = arg2 + var17;
 									var19 = arg3 + var16;
-									var20 = (LocType) arg0.getById(var10);
+									var20 = (LocType) arg0.list(var10);
 									if ((var15.field7540 & 0x1) == 0) {
 										var21 = var20.width;
 										var22 = var20.length;
@@ -452,7 +452,7 @@ public class ClientMapLoader extends MapLoader {
 
 	@ObfuscatedName("abb.cn(Laop;III)Z")
 	public static final boolean method14705(LocTypeList arg0, int arg1, int arg2) {
-		LocType var3 = (LocType) arg0.getById(arg1);
+		LocType var3 = (LocType) arg0.list(arg1);
 		if (arg2 == 11) {
 			arg2 = 10;
 		}
@@ -496,7 +496,7 @@ public class ClientMapLoader extends MapLoader {
 									var13 = new LocPositionAdjustment(var5);
 									var14 = arg2 + var11;
 									var15 = arg3 + var10;
-									LocType var16 = (LocType) this.field10765.getById(var6);
+									LocType var16 = (LocType) this.field10765.list(var6);
 									int var17;
 									int var18;
 									if ((var13.field7540 & 0x1) == 0) {
@@ -562,7 +562,7 @@ public class ClientMapLoader extends MapLoader {
 											} while (var16 >= arg6 + 8);
 										} while (var15 < arg7);
 									} while (var15 >= arg7 + 8);
-									LocType var19 = (LocType) this.field10765.getById(var11);
+									LocType var19 = (LocType) this.field10765.list(var11);
 									int var20;
 									int var21;
 									if ((var18.field7540 & 0x1) == 0) {
@@ -591,7 +591,7 @@ public class ClientMapLoader extends MapLoader {
 		if (arg2 < this.field10756) {
 			this.field10756 = arg2;
 		}
-		LocType var12 = (LocType) this.field10765.getById(arg5);
+		LocType var12 = (LocType) this.field10765.list(arg5);
 		if (Statics.field688.textures.method18426() == 0 && var12.field7516) {
 			return;
 		}
@@ -892,7 +892,7 @@ public class ClientMapLoader extends MapLoader {
 			int var18 = 65;
 			Location var19 = (Location) this.field4577.method8711(arg7, arg12, arg13);
 			if (var19 != null) {
-				var18 = ((LocType) this.field10765.getById(var19.method8223())).walloff + 1;
+				var18 = ((LocType) this.field10765.list(var19.method8223())).walloff + 1;
 			}
 			WallDecorLayerEntity var21;
 			if (arg3) {
@@ -910,7 +910,7 @@ public class ClientMapLoader extends MapLoader {
 			int var22 = 33;
 			Location var23 = (Location) this.field4577.method8711(arg7, arg12, arg13);
 			if (var23 != null) {
-				var22 = ((LocType) this.field10765.getById(var23.method8223())).walloff / 2 + 1;
+				var22 = ((LocType) this.field10765.list(var23.method8223())).walloff / 2 + 1;
 			}
 			WallDecorLayerEntity var25;
 			if (arg3) {
@@ -943,7 +943,7 @@ public class ClientMapLoader extends MapLoader {
 			int var30 = 33;
 			Location var31 = (Location) this.field4577.method8711(arg7, arg12, arg13);
 			if (var31 != null) {
-				var30 = ((LocType) this.field10765.getById(var31.method8223())).walloff / 2 + 1;
+				var30 = ((LocType) this.field10765.list(var31.method8223())).walloff / 2 + 1;
 			}
 			WallDecorLayerEntity var34;
 			WallDecorLayerEntity var35;
@@ -977,7 +977,7 @@ public class ClientMapLoader extends MapLoader {
 		if (var6 == null) {
 			return;
 		}
-		LocType var7 = (LocType) this.field10765.getById(var6.method8223());
+		LocType var7 = (LocType) this.field10765.list(var6.method8223());
 		int var8 = var6.method8220();
 		int var9 = var6.method8204();
 		if (var7.method9480()) {

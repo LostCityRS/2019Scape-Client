@@ -400,7 +400,7 @@ public class ClientWorldMap extends WorldMap {
 			return;
 		}
 		for (WorldMapElement var4 = (WorldMapElement) arg1.method14191(); var4 != null; var4 = (WorldMapElement) arg1.method14161()) {
-			MapElementType var5 = (MapElementType) Statics.field6788.getById(var4.field11446);
+			MapElementType var5 = (MapElementType) Statics.field6788.list(var4.field11446);
 			if (Statics.method18887(var5)) {
 				boolean var6 = method3589(arg0, var4, var5, arg2, arg3);
 				if (var6) {
@@ -775,7 +775,7 @@ public class ClientWorldMap extends WorldMap {
 									if (!var6.hasNext()) {
 										if (field11663 && Statics.field11253 != null) {
 											for (MapElementContainer var8 = (MapElementContainer) Statics.field11253.method14191(); var8 != null; var8 = (MapElementContainer) Statics.field11253.method14161()) {
-												MapElementType var9 = (MapElementType) Statics.field6788.getById(var8.field11252.field11446);
+												MapElementType var9 = (MapElementType) Statics.field6788.list(var8.field11252.field11446);
 												if (var8.method17518(arg0, arg1)) {
 													if (var9.field2381 != null) {
 														if (var9.field2381[4] != null) {
@@ -1008,7 +1008,7 @@ public class ClientWorldMap extends WorldMap {
 		if (var0 == null) {
 			return null;
 		} else {
-			MapElementType var1 = (MapElementType) Statics.field6788.getById(var0.field11446);
+			MapElementType var1 = (MapElementType) Statics.field6788.list(var0.field11446);
 			return var1 != null && var1.field2409 && var1.method4030(Statics.field6791, Statics.field6790) ? var0 : Statics.method13882();
 		}
 	}

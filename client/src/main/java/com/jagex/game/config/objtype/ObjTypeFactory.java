@@ -38,7 +38,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 	public final IconCacheKey field8609 = new IconCacheKey();
 
 	@ObfuscatedName("abr.l")
-	public final ConfigTypeList configTypeList;
+	public final ConfigTypeList paramTL;
 
 	@ObfuscatedName("abr.u")
 	public int field8611;
@@ -53,7 +53,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 		this.languageId = language;
 		this.allowMembers = allowMembers;
 		this.js5 = js5;
-		this.configTypeList = list;
+		this.paramTL = list;
 		if (ModeGame.RUNESCAPE == modeGame) {
 			this.defaultops = new String[] { null, null, LocalisedText.TAKE.method15021(this.languageId), null, null, LocalisedText.EXAMINE.method15021(this.languageId) };
 		} else {
@@ -82,7 +82,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 				return var14;
 			}
 		}
-		ObjType var15 = (ObjType) arg12.getById(arg2);
+		ObjType var15 = (ObjType) arg12.list(arg2);
 		if (arg3 > 1 && var15.countobj != null) {
 			int var16 = -1;
 			for (int var17 = 0; var17 < 10; var17++) {
@@ -91,7 +91,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 				}
 			}
 			if (var16 != -1) {
-				var15 = (ObjType) arg12.getById(var16);
+				var15 = (ObjType) arg12.list(var16);
 			}
 		}
 		int[] var18 = var15.method14646(arg0, arg1, arg3, arg4, arg5, arg6, arg8, arg9, arg10, arg11);

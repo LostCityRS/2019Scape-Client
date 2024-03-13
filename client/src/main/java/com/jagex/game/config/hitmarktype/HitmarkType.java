@@ -190,10 +190,10 @@ public class HitmarkType implements ConfigType {
 				}
 			}
 			if (var3 >= 0 && var3 < this.field7298.length - 1) {
-				return this.field7298[var3] == -1 ? null : (HitmarkType) this.field7303.getById(this.field7298[var3]);
+				return this.field7298[var3] == -1 ? null : (HitmarkType) this.field7303.list(this.field7298[var3]);
 			} else {
 				int var6 = this.field7298[this.field7298.length - 1];
-				return var6 == -1 ? null : (HitmarkType) this.field7303.getById(var6);
+				return var6 == -1 ? null : (HitmarkType) this.field7303.list(var6);
 			}
 		}
 	}

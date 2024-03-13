@@ -593,9 +593,9 @@ public class NPCType implements ConfigType {
 		}
 		BASType var24 = null;
 		if (!arg12 && arg11 != -1) {
-			var24 = (BASType) arg2.getById(arg11);
+			var24 = (BASType) arg2.list(arg11);
 		} else if (this.field2762 != -1) {
-			var24 = (BASType) arg2.getById(this.field2762);
+			var24 = (BASType) arg2.list(this.field2762);
 		}
 		if (var22 == null || (var22.method1691() & var15) != var15) {
 			if (var22 != null) {
@@ -956,10 +956,10 @@ public class NPCType implements ConfigType {
 			}
 		}
 		if (var3 >= 0 && var3 < this.field2735.length - 1) {
-			return this.field2735[var3] == -1 ? null : (NPCType) this.list.getById(this.field2735[var3]);
+			return this.field2735[var3] == -1 ? null : (NPCType) this.list.list(this.field2735[var3]);
 		} else {
 			int var6 = this.field2735[this.field2735.length - 1];
-			return var6 == -1 ? null : (NPCType) this.list.getById(var6);
+			return var6 == -1 ? null : (NPCType) this.list.list(var6);
 		}
 	}
 
@@ -995,7 +995,7 @@ public class NPCType implements ConfigType {
 		}
 		for (int var1 = 0; var1 < this.field2735.length; var1++) {
 			if (this.field2735[var1] != -1) {
-				NPCType var2 = (NPCType) this.list.getById(this.field2735[var1]);
+				NPCType var2 = (NPCType) this.list.list(this.field2735[var1]);
 				if (var2.field2746 != -1 || var2.field2748 != -1 || var2.field2749 != -1) {
 					return true;
 				}

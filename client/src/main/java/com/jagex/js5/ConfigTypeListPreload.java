@@ -48,7 +48,7 @@ public class ConfigTypeListPreload implements ConfigTypeList {
 	}
 
 	@ObfuscatedName("acd.e(II)Lay;")
-	public ConfigType getById(int id) {
+	public ConfigType list(int id) {
 		if (id < 0) {
 			if (this.field8844 == null) {
 				this.field8844 = this.field8846.create(-1, this);

@@ -266,13 +266,13 @@ public class ObjType implements ConfigType {
 	@ObfuscatedName("abv.n(I)V")
 	public void postDecode() {
 		if (this.certtemplate != -1) {
-			this.toCertTemplate((ObjType) this.list.getById(this.certtemplate), (ObjType) this.list.getById(this.certlink), this.factory.languageId);
+			this.toCertTemplate((ObjType) this.list.list(this.certtemplate), (ObjType) this.list.list(this.certlink), this.factory.languageId);
 		} else if (this.field8675 != -1) {
-			this.toLendTemplate((ObjType) this.list.getById(this.field8675), (ObjType) this.list.getById(this.field8674), this.factory.languageId);
+			this.toLendTemplate((ObjType) this.list.list(this.field8675), (ObjType) this.list.list(this.field8674), this.factory.languageId);
 		} else if (this.field8694 != -1) {
-			this.toBoughtTemplate((ObjType) this.list.getById(this.field8694), (ObjType) this.list.getById(this.field8693), this.factory.languageId);
+			this.toBoughtTemplate((ObjType) this.list.list(this.field8694), (ObjType) this.list.list(this.field8693), this.factory.languageId);
 		} else if (this.field8677 != -1) {
-			this.toShardTemplate((ObjType) this.list.getById(this.field8677), (ObjType) this.list.getById(this.field8676), this.factory.languageId);
+			this.toShardTemplate((ObjType) this.list.list(this.field8677), (ObjType) this.list.list(this.field8676), this.factory.languageId);
 		}
 		if (this.field8689 != 0) {
 			this.field8687 = false;
@@ -291,7 +291,7 @@ public class ObjType implements ConfigType {
 		}
 		boolean var1 = false;
 		for (Node var2 = this.params.method14500(); var2 != null; var2 = this.params.method14502()) {
-			ParamType var3 = (ParamType) this.factory.configTypeList.getById((int) var2.field6760);
+			ParamType var3 = (ParamType) this.factory.paramTL.list((int) var2.field6760);
 			if (var3.autodisable) {
 				var2.method8440();
 			} else {
@@ -643,7 +643,7 @@ public class ObjType implements ConfigType {
 				}
 			}
 			if (var10 != -1) {
-				return ((ObjType) this.list.getById(var10)).method14644(arg0, arg1, 1, arg3, arg4, arg5, arg6, arg7, arg8);
+				return ((ObjType) this.list.list(var10)).method14644(arg0, arg1, 1, arg3, arg4, arg5, arg6, arg7, arg8);
 			}
 		}
 		int var12 = arg1;
@@ -754,7 +754,7 @@ public class ObjType implements ConfigType {
 				}
 			}
 			if (var2 != -1) {
-				return (ObjType) this.list.getById(var2);
+				return (ObjType) this.list.list(var2);
 			}
 		}
 		return this;

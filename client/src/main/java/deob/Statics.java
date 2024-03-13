@@ -2242,7 +2242,7 @@ public class Statics {
 			return 0;
 		}
 		for (int var5 = 0; var5 < var4.field11223.length; var5++) {
-			if (var4.field11223[var5] >= 0 && ((ObjType) field1842.getById(var4.field11223[var5])).field8628 == arg1) {
+			if (var4.field11223[var5] >= 0 && ((ObjType) field1842.list(var4.field11223[var5])).field8628 == arg1) {
 				var3 += ClientInvCache.method14483(arg0, var5, arg2);
 			}
 		}
@@ -2622,7 +2622,7 @@ public class Statics {
 	public static int method5179(VarIntDomain arg0, ConfigTypeList arg1) {
 		int var2 = 0;
 		for (int var3 = 0; var3 < arg1.length(); var3++) {
-			QuestType var4 = (QuestType) arg1.getById(var3);
+			QuestType var4 = (QuestType) arg1.list(var3);
 			if (var4.method4430(arg0)) {
 				var2 += var4.field2637;
 			}
@@ -2761,7 +2761,7 @@ public class Statics {
 
 	@ObfuscatedName("dz.r(Ldh;Lvd;IIII)V")
 	public static void method1900(Renderer arg0, LocType arg1, int arg2, int arg3, int arg4) {
-		MSIType var5 = (MSIType) field4241.getById(arg1.field7486);
+		MSIType var5 = (MSIType) field4241.list(arg1.field7486);
 		if (var5.field9151 == -1) {
 			return;
 		}
@@ -2858,7 +2858,7 @@ public class Statics {
 	@ObfuscatedName("rm.q(Lhf;III)V")
 	public static void method7624(Component arg0, int arg1, int arg2) {
 		if (Client.field10973) {
-			ParamType var3 = (ParamType) (field7677 == -1 ? null : field3086.getById(field7677));
+			ParamType var3 = (ParamType) (field7677 == -1 ? null : field3086.list(field7677));
 			if (Client.method17197(arg0).method17708() && (field1765 & 0x20) != 0 && (var3 == null || arg0.method3950(field7677, var3.defaultInt) != var3.defaultInt)) {
 				MiniMenu.method3042(Client.field11039, Client.field10977 + " " + TextUtil.ARROW + " " + arg0.field2279, field1844, 58, arg0.field2334, 0L, arg0.field2183, arg0.field2158, true, false, (long) (arg0.field2183 << 32 | arg0.field2158), false);
 			}
@@ -2891,7 +2891,7 @@ public class Statics {
 
 	@ObfuscatedName("ace.q(Ldh;Lch;Lhf;IIIIIB)V")
 	public static void method15085(Renderer arg0, GraphicsRelated arg1, Component arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
-		MapElementType var8 = (MapElementType) field5011.getById(arg7);
+		MapElementType var8 = (MapElementType) field5011.list(arg7);
 		if (var8 != null && var8.field2392 != null && var8.method4030(field7410, field7410)) {
 			var8 = var8.method4024(field7410, field7410);
 		}
@@ -3094,7 +3094,7 @@ public class Statics {
 		arg0.method2354(var12, var13, var10, var11, var14, 1);
 		arg0.method2179(var12, var13, var10, var11, var14, 0);
 		for (WorldMapElement var15 = (WorldMapElement) ClientWorldMap.field6806.method14191(); var15 != null; var15 = (WorldMapElement) ClientWorldMap.field6806.method14161()) {
-			MapElementType var16 = (MapElementType) field6788.getById(var15.field11446);
+			MapElementType var16 = (MapElementType) field6788.list(var15.field11446);
 			if (method18887(var16)) {
 				WorldMapFlash var17 = (WorldMapFlash) ClientWorldMap.field11661.get(var15.field11446);
 				if (var17 == null) {
@@ -3225,7 +3225,7 @@ public class Statics {
 			return null;
 		}
 		for (WorldMapElement var0 = (WorldMapElement) ClientWorldMap.field11669.next(); var0 != null; var0 = (WorldMapElement) ClientWorldMap.field11669.next()) {
-			MapElementType var1 = (MapElementType) field6788.getById(var0.field11446);
+			MapElementType var1 = (MapElementType) field6788.list(var0.field11446);
 			if (var1 != null && var1.field2409 && var1.method4030(field6791, field6790)) {
 				return var0;
 			}
@@ -3542,13 +3542,13 @@ public class Statics {
 			var7.field11263.method14153(arg3);
 			return;
 		}
-		ObjType var8 = (ObjType) field1842.getById(arg3.field11261);
+		ObjType var8 = (ObjType) field1842.list(arg3.field11261);
 		int var9 = var8.cost;
 		if (var8.stackable == 1) {
 			var9 = (arg3.field11260 + 1) * var9;
 		}
 		for (Obj var10 = (Obj) var6.field11263.method14191(); var10 != null; var10 = (Obj) var6.field11263.method14161()) {
-			ObjType var11 = (ObjType) field1842.getById(var10.field11261);
+			ObjType var11 = (ObjType) field1842.list(var10.field11261);
 			int var12 = var11.cost;
 			if (var11.stackable == 1) {
 				var12 = (var10.field11260 + 1) * var12;

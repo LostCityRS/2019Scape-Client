@@ -208,7 +208,7 @@ public class SeqType implements ConfigType {
 			} else if (code == 24) {
 				this.field1787 = buf.g2();
 				if (this.factory != null) {
-					this.field1792 = (SeqGroupType) this.factory.configTypeList.getById(this.field1787);
+					this.field1792 = (SeqGroupType) this.factory.configTypeList.list(this.field1787);
 				}
 			} else if (code == 25) {
 				this.field1784 = buf.g2();

@@ -39,7 +39,7 @@ public class CachingConfigTypeList implements ConfigTypeList {
 
 	// line 30
 	@ObfuscatedName("abe.e(II)Lay;")
-	public ConfigType getById(int id) {
+	public ConfigType list(int id) {
 		WeightedCache var2 = this.cache;
 		ConfigType cachedConfigType;
 		synchronized (this.cache) {
@@ -48,7 +48,7 @@ public class CachingConfigTypeList implements ConfigTypeList {
 		if (cachedConfigType != null) {
 			return cachedConfigType;
 		}
-		ConfigType configType = this.getConfigType(id);
+		ConfigType configType = this.list_uncached(id);
 		WeightedCache var6 = this.cache;
 		synchronized (this.cache) {
 			this.cache.method2921(configType, (long) id);
@@ -57,7 +57,7 @@ public class CachingConfigTypeList implements ConfigTypeList {
 	}
 
 	@ObfuscatedName("abe.u(II)Lay;")
-	public ConfigType getConfigType(int id) {
+	public ConfigType list_uncached(int id) {
 		Js5 var2 = this.js5;
 		byte[] file;
 		synchronized (this.js5) {
@@ -141,7 +141,7 @@ public class CachingConfigTypeList implements ConfigTypeList {
 					return var3;
 				}
 			}
-			return this.this$0.getConfigType(var1);
+			return this.this$0.list_uncached(var1);
 		}
 
 		// line 99

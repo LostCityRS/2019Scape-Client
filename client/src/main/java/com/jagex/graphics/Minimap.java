@@ -291,7 +291,7 @@ public class Minimap {
 						if (var51 >= 0 && var51 < var2 && var52 >= 0 && var52 < var3) {
 							field727.method14153(new IntWrapper(var49));
 						} else {
-							MapElementType var53 = (MapElementType) Statics.field5011.getById(var47.field6775[var49]);
+							MapElementType var53 = (MapElementType) Statics.field5011.list(var47.field6775[var49]);
 							if (var53.field2393 != null && var53.field2396 + var51 >= 0 && var53.field2373 + var51 < var2 && var53.field2397 + var52 >= 0 && var53.field2395 + var52 < var3) {
 								field727.method14153(new IntWrapper(var49));
 							}
@@ -335,7 +335,7 @@ public class Minimap {
 		if (arg0 == null) {
 			return false;
 		}
-		LocType var4 = (LocType) arg1.getById(arg0.method8223());
+		LocType var4 = (LocType) arg1.list(arg0.method8223());
 		if (var4.field7518 && !Client.field10948) {
 			return false;
 		}
@@ -343,7 +343,7 @@ public class Minimap {
 		if (var4.field7505 != null) {
 			for (int var6 = 0; var6 < var4.field7505.length; var6++) {
 				if (var4.field7505[var6] != -1) {
-					LocType var7 = (LocType) arg1.getById(var4.field7505[var6]);
+					LocType var7 = (LocType) arg1.list(var4.field7505[var6]);
 					if (var7.field7485 >= 0) {
 						var5 = var7.field7485;
 					}
@@ -381,11 +381,11 @@ public class Minimap {
 
 	@ObfuscatedName("ajc.d(Lst;S)Z")
 	public static boolean method17469(Location arg0) {
-		LocType var1 = (LocType) Client.world.method7750().getById(arg0.method8223());
+		LocType var1 = (LocType) Client.world.method7750().list(arg0.method8223());
 		if (var1.field7486 == -1) {
 			return true;
 		} else {
-			MSIType var2 = (MSIType) Statics.field4241.getById(var1.field7486);
+			MSIType var2 = (MSIType) Statics.field4241.list(var1.field7486);
 			return var2.field9151 == -1 ? true : var2.method15060();
 		}
 	}
@@ -395,7 +395,7 @@ public class Minimap {
 		Scene var8 = Client.world.method7743();
 		Location var9 = (Location) var8.method8711(arg1, arg2, arg3);
 		if (var9 != null) {
-			LocType var10 = (LocType) Client.world.method7750().getById(var9.method8223());
+			LocType var10 = (LocType) Client.world.method7750().list(var9.method8223());
 			int var11 = var9.method8204() & 0x3;
 			int var12 = var9.method8220();
 			if (var10.field7486 == -1) {
@@ -442,7 +442,7 @@ public class Minimap {
 		}
 		Location var14 = (Location) var8.method8856(arg1, arg2, arg3, Client.field11001);
 		if (var14 != null) {
-			LocType var15 = (LocType) Client.world.method7750().getById(var14.method8223());
+			LocType var15 = (LocType) Client.world.method7750().list(var14.method8223());
 			int var16 = var14.method8204() & 0x3;
 			int var17 = var14.method8220();
 			if (var15.field7486 != -1) {
@@ -463,7 +463,7 @@ public class Minimap {
 		if (var19 == null) {
 			return;
 		}
-		LocType var20 = (LocType) Client.world.method7750().getById(var19.method8223());
+		LocType var20 = (LocType) Client.world.method7750().list(var19.method8223());
 		int var21 = var19.method8204() & 0x3;
 		if (var20.field7486 != -1) {
 			Statics.method1900(arg0, var20, var21, arg4, arg5);
@@ -538,7 +538,7 @@ public class Minimap {
 		for (int var21 = 0; var21 < field723; var21++) {
 			int var22 = field725[var21] * 4 + 2 - var7 / 128;
 			int var23 = field733[var21] * 4 + 2 - var8 / 128;
-			LocType var24 = (LocType) Client.world.method7750().getById(field726[var21]);
+			LocType var24 = (LocType) Client.world.method7750().list(field726[var21]);
 			if (var24.field7505 != null) {
 				var24 = var24.method9477(Statics.field7410, Statics.field7410);
 				if (var24 == null || var24.field7485 == -1) {
@@ -628,7 +628,7 @@ public class Minimap {
 				if (Statics.field4490.field12060 != 0 && var9.field12060 != 0 && Statics.field4490.field12060 == var9.field12060) {
 					var18 = true;
 				}
-				if (var9.field12061 != null && var9.field12061.field7892 != -1 && ((NPCType) Statics.field7961.getById(var9.field12061.field7892)).field2690) {
+				if (var9.field12061 != null && var9.field12061.field7892 != -1 && ((NPCType) Statics.field7961.list(var9.field12061.field7892)).field2690) {
 					method715(arg2, arg3, arg4, arg5, var11, var12, Statics.field510[1]);
 				} else if (CommunityPartnerType.field1947 == var9.field12070) {
 					method715(arg2, arg3, arg4, arg5, var11, var12, Statics.field510[8]);

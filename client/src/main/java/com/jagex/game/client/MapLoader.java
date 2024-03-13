@@ -561,7 +561,7 @@ public class MapLoader {
 					if (var9 < this.field4513) {
 						int var10 = this.field4505[var5][var9][var8] & 0x7FFF;
 						if (var10 > 0) {
-							FloorUnderlayType var11 = (FloorUnderlayType) this.field4503.getById(var10 - 1);
+							FloorUnderlayType var11 = (FloorUnderlayType) this.field4503.list(var10 - 1);
 							this.field4504[var8] += var11.field8546;
 							this.field4525[var8] += var11.field8541;
 							this.field4526[var8] += var11.field8545;
@@ -573,7 +573,7 @@ public class MapLoader {
 					if (var12 >= 0) {
 						int var13 = this.field4505[var5][var12][var8] & 0x7FFF;
 						if (var13 > 0) {
-							FloorUnderlayType var14 = (FloorUnderlayType) this.field4503.getById(var13 - 1);
+							FloorUnderlayType var14 = (FloorUnderlayType) this.field4503.list(var13 - 1);
 							this.field4504[var8] -= var14.field8546;
 							this.field4525[var8] -= var14.field8541;
 							this.field4526[var8] -= var14.field8545;
@@ -642,8 +642,8 @@ public class MapLoader {
 				byte var10 = this.field4520[arg2][var7][var8];
 				int var11 = this.field4516[arg2][var7][var8] & 0x7FFF;
 				int var12 = this.field4505[arg2][var7][var8] & 0x7FFF;
-				FloorOverlayType var13 = (FloorOverlayType) (var11 == 0 ? null : this.field4548.getById(var11 - 1));
-				FloorUnderlayType var14 = (FloorUnderlayType) (var12 == 0 ? null : this.field4503.getById(var12 - 1));
+				FloorOverlayType var13 = (FloorOverlayType) (var11 == 0 ? null : this.field4548.list(var11 - 1));
+				FloorUnderlayType var14 = (FloorUnderlayType) (var12 == 0 ? null : this.field4503.list(var12 - 1));
 				if (var9 == 0 && var13 == null) {
 					var9 = 12;
 				}
@@ -790,8 +790,8 @@ public class MapLoader {
 				int var16 = var10[var12][var14] & 0x7FFF;
 				int var17 = var9[var12][var14] & 0x7FFF;
 				if (var16 != 0 || var17 != 0) {
-					FloorOverlayType var18 = (FloorOverlayType) (var16 == 0 ? null : this.field4548.getById(var16 - 1));
-					FloorUnderlayType var19 = (FloorUnderlayType) (var17 == 0 ? null : this.field4503.getById(var17 - 1));
+					FloorOverlayType var18 = (FloorOverlayType) (var16 == 0 ? null : this.field4548.list(var16 - 1));
+					FloorUnderlayType var19 = (FloorUnderlayType) (var17 == 0 ? null : this.field4503.list(var17 - 1));
 					if (this.field4573 == 0 && var18 == null) {
 						this.field4573 = 12;
 					}
@@ -1146,10 +1146,10 @@ public class MapLoader {
 		if (arg10 == 0) {
 			arg10 = arg7;
 		}
-		FloorUnderlayType var25 = (FloorUnderlayType) this.field4503.getById(arg7 - 1);
-		FloorUnderlayType var26 = (FloorUnderlayType) this.field4503.getById(arg8 - 1);
-		FloorUnderlayType var27 = (FloorUnderlayType) this.field4503.getById(arg9 - 1);
-		FloorUnderlayType var28 = (FloorUnderlayType) this.field4503.getById(arg10 - 1);
+		FloorUnderlayType var25 = (FloorUnderlayType) this.field4503.list(arg7 - 1);
+		FloorUnderlayType var26 = (FloorUnderlayType) this.field4503.list(arg8 - 1);
+		FloorUnderlayType var27 = (FloorUnderlayType) this.field4503.list(arg9 - 1);
+		FloorUnderlayType var28 = (FloorUnderlayType) this.field4503.list(arg10 - 1);
 		for (int var29 = 0; var29 < this.field4584; var29++) {
 			boolean var30 = false;
 			byte var31;
@@ -1320,7 +1320,7 @@ public class MapLoader {
 			if (arg3 > 0) {
 				int var13 = arg7[arg3 - 1][arg4 - 1] & 0x7FFF;
 				if (var13 > 0) {
-					FloorOverlayType var14 = (FloorOverlayType) this.field4548.getById(var13 - 1);
+					FloorOverlayType var14 = (FloorOverlayType) this.field4548.list(var13 - 1);
 					if (var14.rgb != -1 && var14.field8161) {
 						byte var15 = arg8[arg3 - 1][arg4 - 1];
 						int var16 = arg9[arg3 - 1][arg4 - 1] * 2 + 4 & 0x7;
@@ -1339,7 +1339,7 @@ public class MapLoader {
 			if (arg3 < arg5 - 1) {
 				int var18 = arg7[arg3 + 1][arg4 - 1] & 0x7FFF;
 				if (var18 > 0) {
-					FloorOverlayType var19 = (FloorOverlayType) this.field4548.getById(var18 - 1);
+					FloorOverlayType var19 = (FloorOverlayType) this.field4548.list(var18 - 1);
 					if (var19.rgb != -1 && var19.field8161) {
 						byte var20 = arg8[arg3 + 1][arg4 - 1];
 						int var21 = arg9[arg3 + 1][arg4 - 1] * 2 + 6 & 0x7;
@@ -1360,7 +1360,7 @@ public class MapLoader {
 			if (arg3 > 0) {
 				int var23 = arg7[arg3 - 1][arg4 + 1] & 0x7FFF;
 				if (var23 > 0) {
-					FloorOverlayType var24 = (FloorOverlayType) this.field4548.getById(var23 - 1);
+					FloorOverlayType var24 = (FloorOverlayType) this.field4548.list(var23 - 1);
 					if (var24.rgb != -1 && var24.field8161) {
 						byte var25 = arg8[arg3 - 1][arg4 + 1];
 						int var26 = arg9[arg3 - 1][arg4 + 1] * 2 + 2 & 0x7;
@@ -1379,7 +1379,7 @@ public class MapLoader {
 			if (arg3 < arg5 - 1) {
 				int var28 = arg7[arg3 + 1][arg4 + 1] & 0x7FFF;
 				if (var28 > 0) {
-					FloorOverlayType var29 = (FloorOverlayType) this.field4548.getById(var28 - 1);
+					FloorOverlayType var29 = (FloorOverlayType) this.field4548.list(var28 - 1);
 					if (var29.rgb != -1 && var29.field8161) {
 						byte var30 = arg8[arg3 + 1][arg4 + 1];
 						int var31 = arg9[arg3 + 1][arg4 + 1] * 2 & 0x7;
@@ -1399,7 +1399,7 @@ public class MapLoader {
 		if (arg4 > 0) {
 			int var33 = arg7[arg3][arg4 - 1] & 0x7FFF;
 			if (var33 > 0) {
-				FloorOverlayType var34 = (FloorOverlayType) this.field4548.getById(var33 - 1);
+				FloorOverlayType var34 = (FloorOverlayType) this.field4548.list(var33 - 1);
 				if (var34.rgb != -1) {
 					byte var35 = arg8[arg3][arg4 - 1];
 					byte var36 = arg9[arg3][arg4 - 1];
@@ -1437,7 +1437,7 @@ public class MapLoader {
 		if (arg4 < arg6 - 1) {
 			int var41 = arg7[arg3][arg4 + 1] & 0x7FFF;
 			if (var41 > 0) {
-				FloorOverlayType var42 = (FloorOverlayType) this.field4548.getById(var41 - 1);
+				FloorOverlayType var42 = (FloorOverlayType) this.field4548.list(var41 - 1);
 				if (var42.rgb != -1) {
 					byte var43 = arg8[arg3][arg4 + 1];
 					byte var44 = arg9[arg3][arg4 + 1];
@@ -1475,7 +1475,7 @@ public class MapLoader {
 		if (arg3 > 0) {
 			int var49 = arg7[arg3 - 1][arg4] & 0x7FFF;
 			if (var49 > 0) {
-				FloorOverlayType var50 = (FloorOverlayType) this.field4548.getById(var49 - 1);
+				FloorOverlayType var50 = (FloorOverlayType) this.field4548.list(var49 - 1);
 				if (var50.rgb != -1) {
 					byte var51 = arg8[arg3 - 1][arg4];
 					byte var52 = arg9[arg3 - 1][arg4];
@@ -1513,7 +1513,7 @@ public class MapLoader {
 		if (arg3 < arg5 - 1) {
 			int var57 = arg7[arg3 + 1][arg4] & 0x7FFF;
 			if (var57 > 0) {
-				FloorOverlayType var58 = (FloorOverlayType) this.field4548.getById(var57 - 1);
+				FloorOverlayType var58 = (FloorOverlayType) this.field4548.list(var57 - 1);
 				if (var58.rgb != -1) {
 					byte var59 = arg8[arg3 + 1][arg4];
 					byte var60 = arg9[arg3 + 1][arg4];

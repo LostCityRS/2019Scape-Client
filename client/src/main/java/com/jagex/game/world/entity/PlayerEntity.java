@@ -140,7 +140,7 @@ public class PlayerEntity extends PathingEntity {
 					if (var10 >= 2048) {
 						int var11 = var10 - 2048;
 						var4[var7] = var11 | 0x40000000;
-						var6[var7] = (ObjType) Statics.field1842.getById(var11);
+						var6[var7] = (ObjType) Statics.field1842.list(var11);
 						int var12 = var6[var7].field8685;
 						if (var12 != 0) {
 							this.field12060 = var12;
@@ -231,7 +231,7 @@ public class PlayerEntity extends PathingEntity {
 		if (var6) {
 			this.field12050 = arg0.gSmart1or2();
 			int var8 = var3 == 0 ? Statics.field7921.field7671 : Statics.field7921.field7670;
-			this.field12051 = ((EnumType) Statics.field8514.getById(var8)).method14849(this.field12050);
+			this.field12051 = ((EnumType) Statics.field8514.list(var8)).method14849(this.field12050);
 		} else {
 			this.field12050 = -1;
 			this.field12051 = null;
@@ -337,14 +337,14 @@ public class PlayerEntity extends PathingEntity {
 		this.field10458 = false;
 		if (Statics.field688.characterShadows.method18453() == 1) {
 			BASType var9 = this.method16508();
-			if (var9.field7346 && (this.field12061.field7892 == -1 || ((NPCType) Statics.field7961.getById(this.field12061.field7892)).field2710)) {
+			if (var9.field7346 && (this.field12061.field7892 == -1 || ((NPCType) Statics.field7961.list(this.field12061.field7892)).field2710)) {
 				AnimationWrapper var10 = this.field10454.method14346() && this.field10454.method14355() ? this.field10454 : null;
 				EntityWalkAnimationWrapper var11 = this.field10432.method14346() && (!this.field10432.field11877 || var10 == null) ? this.field10432 : null;
 				short var12 = Statics.field11389.field7728;
 				byte var13 = Statics.field11389.field7757;
 				if (this.field12061.field7892 != -1) {
-					var12 = ((NPCType) Statics.field7961.getById(this.field12061.field7892)).field2741;
-					var13 = ((NPCType) Statics.field7961.getById(this.field12061.field7892)).field2702;
+					var12 = ((NPCType) Statics.field7961.list(this.field12061.field7892)).field2741;
+					var13 = ((NPCType) Statics.field7961.list(this.field12061.field7892)).field2702;
 				}
 				Object var14 = null;
 				Model var15;
@@ -542,8 +542,8 @@ public class PlayerEntity extends PathingEntity {
 		}
 		for (int var4 = 0; var4 < this.field10422.length; var4++) {
 			if (this.field10422[var4].field6657 != -1) {
-				EffectAnimType var5 = (EffectAnimType) Statics.field4874.getById(this.field10422[var4].field6657);
-				if (var5.field8261 && var5.anim != -1 && ((SeqType) Statics.field8797.getById(var5.anim)).field1782 == 1) {
+				EffectAnimType var5 = (EffectAnimType) Statics.field4874.list(this.field10422[var4].field6657);
+				if (var5.field8261 && var5.anim != -1 && ((SeqType) Statics.field8797.list(var5.anim)).field1782 == 1) {
 					this.field10422[var4].field6659.method14362(-1);
 					this.field10422[var4].field6657 = -1;
 				}
@@ -602,7 +602,7 @@ public class PlayerEntity extends PathingEntity {
 
 	@ObfuscatedName("aqk.bz(I)I")
 	public int method16546() {
-		return this.field12061 == null || this.field12061.field7892 == -1 ? super.method16546() : ((NPCType) Statics.field7961.getById(this.field12061.field7892)).size;
+		return this.field12061 == null || this.field12061.field7892 == -1 ? super.method16546() : ((NPCType) Statics.field7961.list(this.field12061.field7892)).size;
 	}
 
 	@ObfuscatedName("aqk.bj(S)I")

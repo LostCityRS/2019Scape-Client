@@ -288,7 +288,7 @@ public class QuestType implements ConfigType {
 		}
 		if (this.field2635 != null) {
 			for (int var3 = 0; var3 < this.field2635.length; var3++) {
-				if (!((QuestType) this.field2649.getById(this.field2635[var3])).method4430(arg0)) {
+				if (!((QuestType) this.field2649.list(this.field2635[var3])).method4430(arg0)) {
 					return false;
 				}
 			}
@@ -333,7 +333,7 @@ public class QuestType implements ConfigType {
 		if (this.field2635 == null || arg1 < 0 || arg1 >= this.field2635.length) {
 			return false;
 		} else {
-			return ((QuestType) this.field2649.getById(this.field2635[arg1])).method4430(arg0);
+			return ((QuestType) this.field2649.list(this.field2635[arg1])).method4430(arg0);
 		}
 	}
 

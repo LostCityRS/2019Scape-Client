@@ -121,12 +121,12 @@ public class DynamicLoc {
 
 	@ObfuscatedName("sp.f(S)Lvd;")
 	public LocType method8237() {
-		return (LocType) this.field6681.getById(this.field6665);
+		return (LocType) this.field6681.list(this.field6665);
 	}
 
 	@ObfuscatedName("sp.w(Ldh;IZZI)Ldo;")
 	public final Model method8238(Renderer arg0, int arg1, boolean arg2, boolean arg3) {
-		LocType var5 = (LocType) this.field6681.getById(this.field6665);
+		LocType var5 = (LocType) this.field6681.list(this.field6665);
 		if (var5.field7505 != null) {
 			var5 = var5.method9477(Statics.field7410, Client.field10863 == 0 ? CutsceneManager.field1723 : Statics.field7410);
 		}
@@ -217,7 +217,7 @@ public class DynamicLoc {
 		ModelParticleEmitter[] var9 = arg1.method1750();
 		ModelParticleEffector[] var10 = arg1.method1765();
 		if ((this.field6680 == null || this.field6680.field7804) && (var9 != null || var10 != null)) {
-			LocType var11 = (LocType) this.field6681.getById(this.field6665);
+			LocType var11 = (LocType) this.field6681.list(this.field6665);
 			if (var11.field7505 != null) {
 				var11 = var11.method9477(Statics.field7410, Client.field10863 == 0 ? CutsceneManager.field1723 : Statics.field7410);
 			}
@@ -291,7 +291,7 @@ public class DynamicLoc {
 		int var5 = arg1;
 		boolean var6 = false;
 		if (arg1 == -1) {
-			LocType var7 = (LocType) this.field6681.getById(this.field6665);
+			LocType var7 = (LocType) this.field6681.list(this.field6665);
 			LocType var8 = var7;
 			if (var7.field7505 != null) {
 				var7 = var7.method9477(Statics.field7410, Client.field10863 == 0 ? CutsceneManager.field1723 : Statics.field7410);

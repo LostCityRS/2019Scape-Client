@@ -80,7 +80,7 @@ public class PlayerModel {
 	@ObfuscatedName("xg.n(IILaov;I)V")
 	public void method10114(int arg0, int arg1, IDKTypeList arg2) {
 		int var4 = field7900[arg0];
-		if (arg2.getById(arg1) != null) {
+		if (arg2.list(arg1) != null) {
 			this.field7890[var4] = arg1 | Integer.MIN_VALUE;
 			this.method10118();
 		}
@@ -108,7 +108,7 @@ public class PlayerModel {
 	public void method10112(int arg0, int arg1, ObjTypeList arg2) {
 		if (arg1 == -1) {
 			this.field7890[arg0] = 0;
-		} else if (arg2.getById(arg1) == null) {
+		} else if (arg2.list(arg1) == null) {
 			return;
 		} else {
 			this.field7890[arg0] = arg1 | 0x40000000;
@@ -179,7 +179,7 @@ public class PlayerModel {
 	@ObfuscatedName("xg.u(Ldh;ILaof;Laov;Laod;Laon;Lem;Lep;Laaq;Laaq;[Laaq;[IIZLwy;B)Ldo;")
 	public Model method10126(Renderer arg0, int arg1, BASTypeList arg2, IDKTypeList arg3, NPCTypeList arg4, ObjTypeList arg5, VariableTypeProvider arg6, VarIntDomain arg7, AnimationWrapper arg8, AnimationWrapper arg9, AnimationWrapper[] arg10, int[] arg11, int arg12, boolean arg13, WearposDefaults arg14) {
 		if (this.field7892 != -1) {
-			return ((NPCType) arg4.getById(this.field7892)).method4542(arg0, arg1, arg2, arg6, arg7, arg8, arg9, arg10, arg11, arg12, null);
+			return ((NPCType) arg4.list(this.field7892)).method4542(arg0, arg1, arg2, arg6, arg7, arg8, arg9, arg10, arg11, arg12, null);
 		}
 		int var16 = arg1;
 		long var17 = this.field7888;
@@ -259,7 +259,7 @@ public class PlayerModel {
 		}
 		BASType var36 = null;
 		if (this.field7891 != -1) {
-			var36 = (BASType) arg2.getById(this.field7891);
+			var36 = (BASType) arg2.list(this.field7891);
 		}
 		if (var34 == null || arg0.method2394(var34.method1691(), var16) != 0) {
 			if (var34 != null) {
@@ -289,12 +289,12 @@ public class PlayerModel {
 								if (!var51 && this.field7887 != null && this.field7887[var48] != null) {
 									var50 = this.field7887[var48];
 								}
-								ModelUnlit var52 = ((ObjType) arg5.getById(var49 & 0x3FFFFFFF)).method14650(this.field7897, var50);
+								ModelUnlit var52 = ((ObjType) arg5.list(var49 & 0x3FFFFFFF)).method14650(this.field7897, var50);
 								if (var52 != null) {
 									var47[var48] = var52;
 								}
 							} else if ((var49 & Integer.MIN_VALUE) != 0) {
-								ModelUnlit var53 = ((IDKType) arg3.getById(var49 & 0x3FFFFFFF)).getModel();
+								ModelUnlit var53 = ((IDKType) arg3.list(var49 & 0x3FFFFFFF)).getModel();
 								if (var53 != null) {
 									var47[var48] = var53;
 								}
@@ -386,10 +386,10 @@ public class PlayerModel {
 					if (!var42 && this.field7887 != null && this.field7887[var39] != null) {
 						var41 = this.field7887[var39];
 					}
-					if (!((ObjType) arg5.getById(var40 & 0x3FFFFFFF)).method14649(this.field7897, var41)) {
+					if (!((ObjType) arg5.list(var40 & 0x3FFFFFFF)).method14649(this.field7897, var41)) {
 						var38 = true;
 					}
-				} else if ((var40 & Integer.MIN_VALUE) != 0 && !((IDKType) arg3.getById(var40 & 0x3FFFFFFF)).method4999()) {
+				} else if ((var40 & Integer.MIN_VALUE) != 0 && !((IDKType) arg3.list(var40 & 0x3FFFFFFF)).method4999()) {
 					var38 = true;
 				}
 				var39++;
@@ -450,7 +450,7 @@ public class PlayerModel {
 	@ObfuscatedName("xg.z(Ldh;ILaov;Laod;Laon;Lem;Lep;Laaq;B)Ldo;")
 	public Model method10120(Renderer arg0, int arg1, IDKTypeList arg2, NPCTypeList arg3, ObjTypeList arg4, VariableTypeProvider arg5, VarIntDomain arg6, AnimationWrapper arg7) {
 		if (this.field7892 != -1) {
-			return ((NPCType) arg3.getById(this.field7892)).getHeadModel(arg0, arg1, arg5, arg6, arg7, null);
+			return ((NPCType) arg3.list(this.field7892)).getHeadModel(arg0, arg1, arg5, arg6, arg7, null);
 		}
 		int var9 = arg7 == null ? arg1 : arg1 | arg7.method14358();
 		WeightedCache var10 = field7902;
@@ -470,10 +470,10 @@ public class PlayerModel {
 					if (this.field7887 != null && this.field7887[var15] != null) {
 						var17 = this.field7887[var15];
 					}
-					if (!((ObjType) arg4.getById(var16 & 0x3FFFFFFF)).method14651(this.field7897, var17)) {
+					if (!((ObjType) arg4.list(var16 & 0x3FFFFFFF)).method14651(this.field7897, var17)) {
 						var14 = true;
 					}
-				} else if ((var16 & Integer.MIN_VALUE) != 0 && !((IDKType) arg2.getById(var16 & 0x3FFFFFFF)).method5001()) {
+				} else if ((var16 & Integer.MIN_VALUE) != 0 && !((IDKType) arg2.list(var16 & 0x3FFFFFFF)).method5001()) {
 					var14 = true;
 				}
 			}
@@ -489,12 +489,12 @@ public class PlayerModel {
 					if (this.field7887 != null && this.field7887[var20] != null) {
 						var22 = this.field7887[var20];
 					}
-					ModelUnlit var23 = ((ObjType) arg4.getById(var21 & 0x3FFFFFFF)).method14652(this.field7897, var22);
+					ModelUnlit var23 = ((ObjType) arg4.list(var21 & 0x3FFFFFFF)).method14652(this.field7897, var22);
 					if (var23 != null) {
 						var18[var19++] = var23;
 					}
 				} else if ((var21 & Integer.MIN_VALUE) != 0) {
-					ModelUnlit var24 = ((IDKType) arg2.getById(var21 & 0x3FFFFFFF)).getHeadModel();
+					ModelUnlit var24 = ((IDKType) arg2.list(var21 & 0x3FFFFFFF)).getHeadModel();
 					if (var24 != null) {
 						var18[var19++] = var24;
 					}
@@ -547,18 +547,18 @@ public class PlayerModel {
 			}
 			ModelUnlit[] var16 = new ModelUnlit[3];
 			int var17 = 0;
-			if (!((IDKType) arg2.getById(arg5)).method5001() || !((IDKType) arg2.getById(arg6)).method5001() || !((IDKType) arg2.getById(arg7)).method5001()) {
+			if (!((IDKType) arg2.list(arg5)).method5001() || !((IDKType) arg2.list(arg6)).method5001() || !((IDKType) arg2.list(arg7)).method5001()) {
 				return null;
 			}
-			ModelUnlit var18 = ((IDKType) arg2.getById(arg5)).getHeadModel();
+			ModelUnlit var18 = ((IDKType) arg2.list(arg5)).getHeadModel();
 			if (var18 != null) {
 				var16[var17++] = var18;
 			}
-			ModelUnlit var19 = ((IDKType) arg2.getById(arg6)).getHeadModel();
+			ModelUnlit var19 = ((IDKType) arg2.list(arg6)).getHeadModel();
 			if (var19 != null) {
 				var16[var17++] = var19;
 			}
-			ModelUnlit var20 = ((IDKType) arg2.getById(arg7)).getHeadModel();
+			ModelUnlit var20 = ((IDKType) arg2.list(arg7)).getHeadModel();
 			if (var20 != null) {
 				var16[var17++] = var20;
 			}

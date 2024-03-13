@@ -51,7 +51,7 @@ public final class ClientVariableManager extends SparseVarDomain {
 		super(arg0);
 		this.field10251 = new VarLifetime[arg0.length()];
 		for (int var2 = 0; var2 < arg0.length(); var2++) {
-			this.field10251[var2] = ((VarType) arg0.getById(var2)).lifeTime;
+			this.field10251[var2] = ((VarType) arg0.list(var2)).lifeTime;
 		}
 		this.field10255 = new HashSet(arg0.length());
 	}
@@ -143,7 +143,7 @@ public final class ClientVariableManager extends SparseVarDomain {
 					}
 					for (int var12 = 0; var12 < var10; var12++) {
 						VarValue var13 = Statics.field8911.decodeVarValue(var5);
-						if (this.field10251[var13.field4240] == VarLifetime.PERMANENT && ((VarType) Statics.field8911.getById(var13.field4240)).dataType.getVarBaseType().javaClass.isAssignableFrom(var13.field4239.getClass())) {
+						if (this.field10251[var13.field4240] == VarLifetime.PERMANENT && ((VarType) Statics.field8911.list(var13.field4240)).dataType.getVarBaseType().javaClass.isAssignableFrom(var13.field4239.getClass())) {
 							this.field1708.method14735(var13.field4240, var13.field4239);
 						}
 					}

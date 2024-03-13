@@ -28,7 +28,7 @@ public class VarBasicTypeListClient extends VarTypeList implements ConfigTypeLis
 	}
 
 	@ObfuscatedName("adm.e(II)Lay;")
-	public ConfigType getById(int id) {
+	public ConfigType list(int id) {
 		WeightedCache var2 = this.recentUse;
 		synchronized (this.recentUse) {
 			VarBasicType var3 = (VarBasicType) this.recentUse.method2930((long) id);
