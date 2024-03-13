@@ -1,5 +1,6 @@
 package com.jagex.game.load;
 
+import com.jagex.game.client.GameShell;
 import deob.ObfuscatedName;
 import deob.Statics;
 
@@ -16,7 +17,7 @@ public class LoadingScreenClear implements LoadingScreenElement {
 	@ObfuscatedName("ko.n(ZI)V")
 	public void method5105(boolean arg0) {
 		if (arg0) {
-			Statics.field8198.method2354(0, 0, Statics.canvasWid, Statics.canvasHei, this.field3048.field3147, 0);
+			Statics.field8198.method2354(0, 0, GameShell.canvasWid, GameShell.canvasHei, this.field3048.field3147, 0);
 		}
 	}
 

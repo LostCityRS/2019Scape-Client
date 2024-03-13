@@ -1,11 +1,11 @@
 package rs2.client.login;
 
+import com.jagex.game.client.GameShell;
 import com.jagex.game.client.MainLoadingScreen;
 import com.jagex.game.load.LoadingScreenElement;
 import com.jagex.graphics.Sprite;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 @ObfuscatedName("ku")
@@ -35,8 +35,8 @@ public class LoginRelated2 implements LoadingScreenElement {
 		if (!arg0) {
 			return;
 		}
-		int var2 = Statics.canvasWid > Client.field10941 ? Statics.canvasWid : Client.field10941;
-		int var3 = Statics.canvasHei > Client.field10942 ? Statics.canvasHei : Client.field10942;
+		int var2 = GameShell.canvasWid > Client.field10941 ? GameShell.canvasWid : Client.field10941;
+		int var3 = GameShell.canvasHei > Client.field10942 ? GameShell.canvasHei : Client.field10942;
 		int var4 = this.field3046.method1434();
 		int var5 = this.field3046.method1436();
 		int var6 = 0;

@@ -620,6 +620,11 @@ public class ScriptVarType implements SerializableEnum, ScriptVarInterface {
 		return this.baseType;
 	}
 
+	@ObfuscatedName("qw.w(CB)Lqw;")
+	public static ScriptVarType method7300(char arg0) {
+		return arg0 == 'O' ? OBJ : Statics.varByLegacyChar[Cp1252.encode(arg0) & 0xFF];
+	}
+
 	@ObfuscatedName("qw.n()I")
 	public int getId() {
 		return this.serialID;

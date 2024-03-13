@@ -217,10 +217,10 @@ public class DeveloperConsole {
 	@ObfuscatedName("ky.r(Ldh;I)V")
 	public static void method5378(Renderer arg0) {
 		if (TwitchHardwarePlatform.method5076() && TwitchHardwarePlatform.method8634()) {
-			TwitchHardwarePlatform.method5389(0, 0, Statics.canvasWid, 350);
+			TwitchHardwarePlatform.method5389(0, 0, GameShell.canvasWid, 350);
 		}
-		arg0.method2168(0, 0, Statics.canvasWid, 350);
-		arg0.method2354(0, 0, Statics.canvasWid, 350, field776 * 36 << 24 | 0x332277, 1);
+		arg0.method2168(0, 0, GameShell.canvasWid, 350);
+		arg0.method2354(0, 0, GameShell.canvasWid, 350, field776 * 36 << 24 | 0x332277, 1);
 		int var1 = 350 / Statics.field763;
 		if (field764 > 0) {
 			int var2 = 346 - Statics.field763 - 4;
@@ -229,10 +229,10 @@ public class DeveloperConsole {
 			if (field764 > 1) {
 				var4 += (field764 - 1 - field771) * (var2 - var3) / (field764 - 1);
 			}
-			arg0.method2354(Statics.canvasWid - 16, var4, 12, var3, field776 * 36 << 24 | 0x332277, 2);
+			arg0.method2354(GameShell.canvasWid - 16, var4, 12, var3, field776 * 36 << 24 | 0x332277, 2);
 			for (int var5 = field771; var5 < field771 + var1 && var5 < field764; var5++) {
 				String[] var6 = StringTools.method17361(Statics.field4845[var5], '\b');
-				int var7 = (Statics.canvasWid - 8 - 16) / var6.length;
+				int var7 = (GameShell.canvasWid - 8 - 16) / var6.length;
 				for (int var8 = 0; var8 < var6.length; var8++) {
 					int var9 = var7 * var8 + 8;
 					arg0.method2168(var9, 0, var7 + var9 - 8, 350);
@@ -240,11 +240,11 @@ public class DeveloperConsole {
 				}
 			}
 		}
-		Statics.field8321.method2682("910 1", Statics.canvasWid - 25, 330, -1, -16777216);
-		arg0.method2168(0, 0, Statics.canvasWid, 350);
-		arg0.method2176(0, 350 - Statics.field768, Statics.canvasWid, -1);
+		Statics.field8321.method2682("910 1", GameShell.canvasWid - 25, 330, -1, -16777216);
+		arg0.method2168(0, 0, GameShell.canvasWid, 350);
+		arg0.method2176(0, 350 - Statics.field768, GameShell.canvasWid, -1);
 		Statics.field10355.method2681("--> " + method14312(currententry), 10, 350 - Statics.field10268.field8569 - 1, -1, -16777216);
-		if (Statics.focus) {
+		if (GameShell.focus) {
 			int var10 = -1;
 			if (Client.field10903 % 30 > 15) {
 				var10 = 16777215;
@@ -342,7 +342,7 @@ public class DeveloperConsole {
 			addline(LocalisedText.DEBUG_CONSOLE_ERROR.method15021(Statics.field1680));
 			return;
 		}
-		if (Statics.field1811 != ModeWhere.field8273 || Client.field10949 >= 2 || Client.ALLOW_COMMANDS_ANYWHERE) {
+		if (Client.modewhere != ModeWhere.LIVE || Client.field10949 >= 2 || Client.ALLOW_COMMANDS_ANYWHERE) {
 			try {
 				if (arg0.equalsIgnoreCase("wm1")) {
 					Client.setWindowMode(1, -1, -1, false);
@@ -609,9 +609,9 @@ public class DeveloperConsole {
 				} else if (arg0 == 6) {
 					Statics.field4489.method7014();
 				} else if (arg0 == 26) {
-					Statics.canvas.setLocation(50, 50);
+					GameShell.canvas.setLocation(50, 50);
 				} else if (arg0 == 22) {
-					Statics.canvas.setLocation(GameShell.leftMargin, GameShell.topMargin);
+					GameShell.canvas.setLocation(GameShell.leftMargin, GameShell.topMargin);
 				} else if (arg0 == 4) {
 					method10153();
 				} else if (arg0 == 17) {

@@ -3,6 +3,7 @@ package com.jagex.game.load;
 import com.jagex.core.utils.JagException;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.core.utils.PreciseSleep;
+import com.jagex.game.client.GameShell;
 import com.jagex.game.client.PreLoadingScreen;
 import com.jagex.graphics.Framebuffer;
 import com.jagex.graphics.RendererException;
@@ -153,7 +154,7 @@ public class LoadingScreenRenderer implements Runnable {
 							int var9 = var7 << 24 | 0xFFFFFF;
 							Client.method8024();
 							Statics.field8198.method2475(1, 0);
-							Sprite var10 = Statics.field8198.method2365(Statics.canvasWid, Statics.canvasHei, true);
+							Sprite var10 = Statics.field8198.method2365(GameShell.canvasWid, GameShell.canvasHei, true);
 							Framebuffer var11 = Statics.field8198.method2145();
 							var11.method15439(0, var10.method1437());
 							Statics.field8198.method2142(var11);

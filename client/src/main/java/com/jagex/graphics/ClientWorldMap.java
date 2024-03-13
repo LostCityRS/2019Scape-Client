@@ -497,8 +497,8 @@ public class ClientWorldMap extends WorldMap {
 		if (arg2.field2370 != null) {
 			Statics.method2678(arg2.field2388);
 			if (Statics.field717 != null) {
-				var22 = Statics.field10471.method14545(arg2.field2370, Statics.canvasWid, 0, null);
-				var17 = Statics.field10471.method14551(arg2.field2370, Statics.canvasWid, null);
+				var22 = Statics.field10471.method14545(arg2.field2370, GameShell.canvasWid, 0, null);
+				var17 = Statics.field10471.method14551(arg2.field2370, GameShell.canvasWid, null);
 				var15 = arg2.field2410 * (Statics.field6851 - Statics.field6801) / (Statics.field6847 - Statics.field6845) + (arg1.field11449 - var17 / 2);
 				int var23 = arg1.field11451 - arg2.field2394 * (Statics.field6852 - Statics.field6837) / (Statics.field6846 - Statics.field6848);
 				if (var9 == null) {
@@ -654,8 +654,8 @@ public class ClientWorldMap extends WorldMap {
 		int var8 = 0;
 		int var9 = 0;
 		if (arg2.field2370 != null) {
-			var9 = Statics.field10471.method14545(arg2.field2370, Statics.canvasWid, 0, null);
-			var8 = Statics.field10471.method14551(arg2.field2370, Statics.canvasWid, null);
+			var9 = Statics.field10471.method14545(arg2.field2370, GameShell.canvasWid, 0, null);
+			var8 = Statics.field10471.method14551(arg2.field2370, GameShell.canvasWid, null);
 		}
 		int var10 = var4 / 2 + arg1.field11449;
 		int var11 = arg1.field11451;

@@ -33,9 +33,9 @@ public class Preferences {
 	@ObfuscatedName("pd.e(I)Lali;")
 	public static ClientOptions method6822() {
 		FileOnDisk var0 = null;
-		ClientOptions var1 = new ClientOptions(Client.field10768, 0);
+		ClientOptions var1 = new ClientOptions(Client.modegame, 0);
 		try {
-			var0 = GameShell.openPrefs("", Client.field10768.field8333, false);
+			var0 = GameShell.openPrefs("", Client.modegame.field8333, false);
 			byte[] var2 = new byte[(int) var0.method14821()];
 			int var4;
 			for (int var3 = 0; var3 < var2.length; var3 += var4) {
@@ -44,7 +44,7 @@ public class Preferences {
 					throw new IOException();
 				}
 			}
-			var1 = new ClientOptions(new Packet(var2), Client.field10768, 0);
+			var1 = new ClientOptions(new Packet(var2), Client.modegame, 0);
 		} catch (Exception var8) {
 		}
 		try {
@@ -60,7 +60,7 @@ public class Preferences {
 	public static void method16391() {
 		FileOnDisk var0 = null;
 		try {
-			var0 = GameShell.openPrefs("", Client.field10768.field8333, true);
+			var0 = GameShell.openPrefs("", Client.modegame.field8333, true);
 			Packet var1 = Statics.field688.method18156();
 			var0.method14808(var1.data, 0, var1.pos);
 		} catch (Exception var5) {
@@ -88,7 +88,7 @@ public class Preferences {
 		boolean var3 = false;
 		boolean var4;
 		boolean var5;
-		if (Statics.osName.startsWith("win")) {
+		if (GameShell.osName.startsWith("win")) {
 			var2 = true;
 			var4 = true;
 			var5 = true;

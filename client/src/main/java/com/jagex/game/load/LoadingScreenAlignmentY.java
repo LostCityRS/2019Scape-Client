@@ -1,7 +1,7 @@
 package com.jagex.game.load;
 
+import com.jagex.game.client.GameShell;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("ky")
 public class LoadingScreenAlignmentY {
@@ -22,7 +22,7 @@ public class LoadingScreenAlignmentY {
 
 	@ObfuscatedName("ky.n(IIS)I")
 	public int method5375(int arg0, int arg1) {
-		int var3 = Statics.canvasHei > arg1 ? Statics.canvasHei : arg1;
+		int var3 = GameShell.canvasHei > arg1 ? GameShell.canvasHei : arg1;
 		if (field3181 == this) {
 			return 0;
 		} else if (field3179 == this) {

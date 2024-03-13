@@ -47,7 +47,7 @@ public class LoadableResourceManager {
 			LoadableResource.field8944.method15011(new Js5ArchiveResourceLoader(Statics.field1587));
 			LoadableResource.field8934.method15011(new DllResourceLoader("jaggl"));
 			DllResourceLoader var2 = new DllResourceLoader("jagdx");
-			if (!Statics.osName.startsWith("win")) {
+			if (!GameShell.osName.startsWith("win")) {
 				var2.method6813();
 			}
 			LoadableResource.field8938.method15011(var2);

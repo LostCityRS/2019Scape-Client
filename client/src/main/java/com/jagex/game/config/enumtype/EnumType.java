@@ -53,10 +53,10 @@ public class EnumType implements ConfigType, ConfigRelated {
 	public void method14852(Packet arg0, int arg1) {
 		if (arg1 == 1) {
 			char var3 = Statics.method9576(arg0.g1b());
-			this.field8781 = Statics.method7300(var3);
+			this.field8781 = ScriptVarType.method7300(var3);
 		} else if (arg1 == 2) {
 			char var4 = Statics.method9576(arg0.g1b());
-			this.field8775 = Statics.method7300(var4);
+			this.field8775 = ScriptVarType.method7300(var4);
 		} else if (arg1 == 3) {
 			this.field8777 = arg0.gjstr();
 		} else if (arg1 == 4) {

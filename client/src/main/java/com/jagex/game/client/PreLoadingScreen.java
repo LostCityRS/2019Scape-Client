@@ -43,12 +43,12 @@ public class PreLoadingScreen implements LoadingScreen {
 
 	@ObfuscatedName("jm.e(II)I")
 	public final int method4893(int arg0) {
-		return this.field2894 ? (Statics.canvasWid - arg0) / 2 : 0;
+		return this.field2894 ? (GameShell.canvasWid - arg0) / 2 : 0;
 	}
 
 	@ObfuscatedName("jm.n(II)I")
 	public final int method4887(int arg0) {
-		return this.field2893 ? (Statics.canvasHei - arg0) / 2 : 0;
+		return this.field2893 ? (GameShell.canvasHei - arg0) / 2 : 0;
 	}
 
 	@ObfuscatedName("jm.m(ZI)V")
@@ -60,7 +60,7 @@ public class PreLoadingScreen implements LoadingScreen {
 				if (var2.length < 3) {
 					this.field2895 = true;
 				} else {
-					MediaTracker var3 = new MediaTracker(Statics.canvas);
+					MediaTracker var3 = new MediaTracker(GameShell.canvas);
 					int var4 = 0;
 					for (int var5 = 0; var5 < var2.length; var5++) {
 						String[] var6 = StringTools.method17361(var2[var5].trim(), '=');
@@ -107,20 +107,20 @@ public class PreLoadingScreen implements LoadingScreen {
 			this.method4890();
 			return;
 		}
-		Graphics var15 = Statics.canvas.getGraphics();
+		Graphics var15 = GameShell.canvas.getGraphics();
 		if (var15 == null) {
-			Statics.canvas.repaint();
+			GameShell.canvas.repaint();
 			return;
 		}
 		try {
 			this.field2896 = "" + Statics.field593.method4851() + "%";
 			this.field2897 = Statics.field593.method4852();
 			if (Statics.field2575 == null) {
-				Statics.field2575 = Statics.canvas.createImage(Statics.canvasWid, Statics.canvasHei);
+				Statics.field2575 = GameShell.canvas.createImage(GameShell.canvasWid, GameShell.canvasHei);
 			}
 			Graphics var16 = Statics.field2575.getGraphics();
 			var16.setColor(Color.BLACK);
-			var16.fillRect(0, 0, Statics.canvasWid, Statics.canvasHei);
+			var16.fillRect(0, 0, GameShell.canvasWid, GameShell.canvasHei);
 			Iterator var17 = this.field2892.iterator();
 			while (var17.hasNext()) {
 				PreLoadingRelated var18 = (PreLoadingRelated) var17.next();
@@ -136,7 +136,7 @@ public class PreLoadingScreen implements LoadingScreen {
 	public Image method4903(String arg0) throws IOException {
 		InputStream var2 = null;
 		try {
-			var2 = Statics.field11885.getClass().getClassLoader().getResourceAsStream(arg0);
+			var2 = GameShell.field11885.getClass().getClassLoader().getResourceAsStream(arg0);
 			byte[] var3 = new byte[12000];
 			int var4 = 0;
 			int var5;
@@ -295,7 +295,7 @@ public class PreLoadingScreen implements LoadingScreen {
 			this.this$0 = arg0;
 			this.field10469 = arg1;
 			this.field10467 = new java.awt.Font(arg2, 0, arg3);
-			this.field10468 = Statics.canvas.getFontMetrics(this.field10467);
+			this.field10468 = GameShell.canvas.getFontMetrics(this.field10467);
 			this.field10466 = new Color(arg4);
 		}
 

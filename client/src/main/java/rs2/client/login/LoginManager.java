@@ -372,7 +372,7 @@ public class LoginManager {
 					var5.p4(Statics.field10311.nextInt());
 				}
 				var5.p8(Client.field10810);
-				var5.p1(Client.field10768.field8339);
+				var5.p1(Client.modegame.field8339);
 				var5.p1(Statics.field10311.nextInt());
 				var5.rsaenc(PublicKeys.field624, PublicKeys.field626);
 				var3.field11432.pdata(var5.data, 0, var5.pos);
@@ -456,8 +456,8 @@ public class LoginManager {
 						}
 					}
 					var10.p1(Client.getWindowMode());
-					var10.p2(Statics.canvasWid);
-					var10.p2(Statics.canvasHei);
+					var10.p2(GameShell.canvasWid);
+					var10.p2(GameShell.canvasHei);
 					var10.p1(Statics.field688.unknown2.method18639());
 					GameShell.pushUID192(var10);
 					var10.pjstr(Client.field10990);
@@ -515,11 +515,11 @@ public class LoginManager {
 							var10.p8(field439);
 						}
 					}
-					var10.p1(Client.field10768.field8339);
+					var10.p1(Client.modegame.field8339);
 					var10.p1(Statics.field1680.getId());
 					var10.p1(Client.getWindowMode());
-					var10.p2(Statics.canvasWid);
-					var10.p2(Statics.canvasHei);
+					var10.p2(GameShell.canvasWid);
+					var10.p2(GameShell.canvasHei);
 					var10.p1(Statics.field688.unknown2.method18639());
 					GameShell.pushUID192(var10);
 					var10.pjstr(Client.field10990);
@@ -843,7 +843,7 @@ public class LoginManager {
 					Statics.field9200.host = var36.gjstr2();
 					Statics.field9200.port = var36.g2();
 					Statics.field9200.port2 = var36.g2();
-					if (Statics.field1811 != ModeWhere.field8277 && (Statics.field1811 != ModeWhere.field8269 || Client.field10949 < 2) && Statics.field8755.method14757(Statics.world)) {
+					if (Client.modewhere != ModeWhere.LOCAL && (Client.modewhere != ModeWhere.WTQA || Client.field10949 < 2) && Statics.field8755.method14757(Statics.world)) {
 						WorldSwitcher.method10337();
 					}
 				} else {
@@ -851,22 +851,22 @@ public class LoginManager {
 				}
 				if (Client.field10953) {
 					try {
-						BrowserControl.call(Statics.field11885, "zap");
+						BrowserControl.call(GameShell.field11885, "zap");
 					} catch (Throwable var49) {
 						if (Client.field10770) {
 							try {
-								Statics.field11885.getAppletContext().showDocument(new URL(Statics.field11885.getCodeBase(), "blank.ws"), "tbi");
+								GameShell.field11885.getAppletContext().showDocument(new URL(GameShell.field11885.getCodeBase(), "blank.ws"), "tbi");
 							} catch (Exception var48) {
 							}
 						}
 					}
 				} else {
 					try {
-						BrowserControl.call(Statics.field11885, "unzap");
+						BrowserControl.call(GameShell.field11885, "unzap");
 					} catch (Throwable var47) {
 					}
 				}
-				if (Statics.field1811 == ModeWhere.field8273) {
+				if (Client.modewhere == ModeWhere.LIVE) {
 					JavascriptFunction.field4024.method6090();
 				}
 				if (Statics.field431 != 211) {
@@ -1129,7 +1129,7 @@ public class LoginManager {
 		}
 		Client.field10835.method938();
 		method14959();
-		Statics.focus = true;
+		GameShell.focus = true;
 		ClassCheck.method4052();
 		for (int var0 = 0; var0 < Client.field10851.length; var0++) {
 			Client.field10851[var0] = null;

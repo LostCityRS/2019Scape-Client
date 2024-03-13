@@ -237,7 +237,7 @@ public class PlayerEntity extends PathingEntity {
 			this.field12051 = null;
 		}
 		this.field12071 = (PlayerGender) SerializableEnums.decode(PlayerGender.method10193(), arg0.g1b());
-		if (Statics.field1811 == ModeWhere.field8273 && Client.field10949 >= 2) {
+		if (Client.modewhere == ModeWhere.LIVE && Client.field10949 >= 2) {
 			this.field12071 = PlayerGender.field7918;
 		}
 		this.method19121(arg0, var3);
@@ -479,7 +479,7 @@ public class PlayerEntity extends PathingEntity {
 		if (GameShell.maxmemory < 96 && var12 > 50) {
 			SceneManager.method7319();
 		}
-		if (Statics.field1811 != ModeWhere.field8273 && var12 < 50) {
+		if (Client.modewhere != ModeWhere.LIVE && var12 < 50) {
 			int var13 = 50 - var12;
 			while (var13 > Client.field10798) {
 				Statics.field9166[Client.field10798] = new byte[102400];
@@ -489,7 +489,7 @@ public class PlayerEntity extends PathingEntity {
 				Client.field10798--;
 				Statics.field9166[Client.field10798] = null;
 			}
-		} else if (Statics.field1811 != ModeWhere.field8273) {
+		} else if (Client.modewhere != ModeWhere.LIVE) {
 			Statics.field9166 = new byte[50][];
 			Client.field10798 = 0;
 		}
