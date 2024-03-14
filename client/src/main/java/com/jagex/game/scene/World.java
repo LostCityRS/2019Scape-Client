@@ -444,7 +444,7 @@ public class World {
 		for (int var7 = (var3 - (this.field5028 >> 4)) / 8; var7 <= ((this.field5028 >> 4) + var3) / 8; var7++) {
 			for (int var8 = (var4 - (this.field5043 >> 4)) / 8; var8 <= ((this.field5043 >> 4) + var4) / 8; var8++) {
 				int var9 = (var7 << 8) + var8;
-				if (Client.mapsJs5.isGroupValid(this.method7795(var7, var8), Js5MapFile.field4491.field4494)) {
+				if (Client.mapsJs5.isGroupValid(this.method7795(var7, var8), Js5MapFile.LAND.id)) {
 					this.field5054[var6] = var9;
 					this.field5051[var6] = this.method7795(var7, var8);
 					var6++;
@@ -489,7 +489,7 @@ public class World {
 		int var7 = 0;
 		for (int var8 = (var2 - (this.field5028 >> 4)) / 8; var8 <= ((this.field5028 >> 4) + var2) / 8; var8++) {
 			for (int var9 = (var5 - (this.field5043 >> 4)) / 8; var9 <= ((this.field5043 >> 4) + var5) / 8; var9++) {
-				if (Client.mapsJs5.isGroupValid(this.method7795(var8, var9), Js5MapFile.field4491.field4494)) {
+				if (Client.mapsJs5.isGroupValid(this.method7795(var8, var9), Js5MapFile.LAND.id)) {
 					this.field5054[var7] = (var8 << 8) + var9;
 					this.field5051[var7] = this.method7795(var8, var9);
 					var7++;
@@ -568,7 +568,7 @@ public class World {
 						if (var25 != -1) {
 							int var27 = var25 >> 8 & 0xFF;
 							int var28 = var25 & 0xFF;
-							if (Client.mapsJs5.isGroupValid(this.method7795(var27, var28), Js5MapFile.field4491.field4494)) {
+							if (Client.mapsJs5.isGroupValid(this.method7795(var27, var28), Js5MapFile.LAND.id)) {
 								this.field5054[var18] = var25;
 								this.field5051[var18] = this.method7795(var27, var28);
 								var18++;
@@ -668,7 +668,7 @@ public class World {
 							continue label84;
 						}
 					}
-					if (Client.mapsJs5.isGroupValid(this.method7795(var31, var32), Js5MapFile.field4491.field4494)) {
+					if (Client.mapsJs5.isGroupValid(this.method7795(var31, var32), Js5MapFile.LAND.id)) {
 						this.field5054[var23] = var33;
 						this.field5051[var23] = this.method7795(var31, var32);
 						var23++;
@@ -970,19 +970,19 @@ public class World {
 		}
 		for (int var2 = 0; var2 < this.field5049; var2++) {
 			if (this.field5052[var2] == null) {
-				this.field5052[var2] = Client.mapsJs5.getfile(this.field5051[var2], Js5MapFile.field4491.field4494);
+				this.field5052[var2] = Client.mapsJs5.getfile(this.field5051[var2], Js5MapFile.LAND.id);
 			}
 			if (this.field5053[var2] == null) {
-				this.field5053[var2] = Client.mapsJs5.getfile(this.field5051[var2], Js5MapFile.field4498.field4494);
+				this.field5053[var2] = Client.mapsJs5.getfile(this.field5051[var2], Js5MapFile.LOC.id);
 			}
 			if (this.field5055[var2] == null) {
-				this.field5055[var2] = Client.mapsJs5.getfile(this.field5051[var2], Js5MapFile.field4496.field4494);
+				this.field5055[var2] = Client.mapsJs5.getfile(this.field5051[var2], Js5MapFile.UNDERWATER_MAP.id);
 			}
 			if (this.field5031[var2] == null) {
-				this.field5031[var2] = Client.mapsJs5.getfile(this.field5051[var2], Js5MapFile.field4492.field4494);
+				this.field5031[var2] = Client.mapsJs5.getfile(this.field5051[var2], Js5MapFile.UNDERWATER_LOC.id);
 			}
 			if (this.field5024 != null && this.field5024[var2] == null) {
-				this.field5024[var2] = Client.mapsJs5.getfile(this.field5051[var2], Js5MapFile.field4493.field4494);
+				this.field5024[var2] = Client.mapsJs5.getfile(this.field5051[var2], Js5MapFile.NPC.id);
 			}
 		}
 		int var3 = this.field5046;
