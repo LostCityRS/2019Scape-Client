@@ -6,82 +6,83 @@ import deob.ObfuscatedName;
 public class CoordGrid {
 
 	@ObfuscatedName("ve.e")
-	public int field7428;
+	public int level;
 
 	@ObfuscatedName("ve.n")
-	public int field7426;
+	public int x;
 
 	@ObfuscatedName("ve.m")
-	public int field7427;
+	public int z;
 
 	public CoordGrid() {
-		this.field7428 = -1;
+		this.level = -1;
 	}
 
-	public CoordGrid(int arg0, int arg1, int arg2) {
-		this.field7428 = arg0;
-		this.field7426 = arg1;
-		this.field7427 = arg2;
+	public CoordGrid(int level, int x, int z) {
+		this.level = level;
+		this.x = x;
+		this.z = z;
 	}
 
-	public CoordGrid(int arg0) {
-		if (arg0 == -1) {
-			this.field7428 = -1;
+	public CoordGrid(int packed) {
+		if (packed == -1) {
+			this.level = -1;
 		} else {
-			this.field7428 = arg0 >> 28 & 0x3;
-			this.field7426 = arg0 >> 14 & 0x3FFF;
-			this.field7427 = arg0 & 0x3FFF;
+			this.level = packed >> 28 & 0x3;
+			this.x = packed >> 14 & 0x3FFF;
+			this.z = packed & 0x3FFF;
 		}
 	}
 
 	@ObfuscatedName("ve.e(Lakt;B)V")
-	public void method9434(CoordFine arg0) {
-		this.field7428 = arg0.field11477;
-		this.field7426 = arg0.field11478 >> 9;
-		this.field7427 = arg0.field11480 >> 9;
+	public void fromFine(CoordFine fine) {
+		this.level = fine.level;
+		this.x = fine.x >> 9;
+		this.z = fine.z >> 9;
 	}
 
 	@ObfuscatedName("ve.n(S)I")
-	public int method9433() {
-		return this.field7428 << 28 | this.field7426 << 14 | this.field7427;
+	public int pack() {
+		return this.level << 28 | this.x << 14 | this.z;
 	}
 
-	public boolean equals(Object arg0) {
-		if (arg0 == this) {
+	public boolean equals(Object other) {
+		if (other == this) {
 			return true;
-		} else if (arg0 instanceof CoordGrid) {
-			return this.method9436((CoordGrid) arg0);
+		} else if (other instanceof CoordGrid) {
+			return this.matches((CoordGrid) other);
 		} else {
 			return false;
 		}
 	}
 
 	@ObfuscatedName("ve.m(Lve;I)Z")
-	public boolean method9436(CoordGrid arg0) {
-		return this.method9450(arg0.field7428, arg0.field7426, arg0.field7427);
+	public boolean matches(CoordGrid other) {
+		return this.matches(other.level, other.x, other.z);
 	}
 
 	@ObfuscatedName("ve.k(IIII)Z")
-	public boolean method9450(int arg0, int arg1, int arg2) {
-		if (this.field7428 != arg0) {
+	public boolean matches(int level, int x, int z) {
+		if (this.level != level) {
 			return false;
-		} else if (this.field7426 == arg1) {
-			return this.field7427 == arg2;
+		} else if (this.x == x) {
+			return this.z == z;
 		} else {
 			return false;
 		}
 	}
 
 	public int hashCode() {
-		return this.method9433();
+		return this.pack();
 	}
 
 	public String toString() {
-		return this.method9437(",");
+		return this.debug(",");
 	}
 
 	@ObfuscatedName("ve.f(Ljava/lang/String;I)Ljava/lang/String;")
-	public String method9437(String arg0) {
-		return this.field7428 + arg0 + (this.field7426 >> 6) + arg0 + (this.field7427 >> 6) + arg0 + (this.field7426 & 0x3F) + arg0 + (this.field7427 & 0x3F);
+	public String debug(String separator) {
+		// e.g. 3222,3222,0 -> 0_50_50_22_22
+		return this.level + separator + (this.x >> 6) + separator + (this.z >> 6) + separator + (this.x & 0x3F) + separator + (this.z & 0x3F);
 	}
 }

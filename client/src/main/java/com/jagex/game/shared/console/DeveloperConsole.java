@@ -445,11 +445,11 @@ public class DeveloperConsole {
 				if (Client.field3416 == 3) {
 					Vector3 var6 = Client.field9155.method4714();
 					Vector3 var7 = Client.field9155.method4711();
-					addline("Pos: " + (new CoordGrid(Client.field4490.field11717, (int) var6.field4308 >> 9, (int) var6.field4313 >> 9)).toString() + " Height: " + (Client.method3660((int) var6.field4308 - (var5.field7426 << 9), (int) var6.field4313 - (var5.field7427 << 9), Client.field4490.field11717) + (int) var6.field4311));
-					addline("Look: " + (new CoordGrid(Client.field4490.field11717, (int) var7.field4308 >> 9, (int) var7.field4313 >> 9)).toString() + " Height: " + (Client.method3660((int) var7.field4308 - (var5.field7426 << 9), (int) var6.field4313 - (var5.field7427 << 9), Client.field4490.field11717) + (int) var6.field4311));
+					addline("Pos: " + (new CoordGrid(Client.field4490.field11717, (int) var6.field4308 >> 9, (int) var6.field4313 >> 9)).toString() + " Height: " + (Client.method3660((int) var6.field4308 - (var5.x << 9), (int) var6.field4313 - (var5.z << 9), Client.field4490.field11717) + (int) var6.field4311));
+					addline("Look: " + (new CoordGrid(Client.field4490.field11717, (int) var7.field4308 >> 9, (int) var7.field4313 >> 9)).toString() + " Height: " + (Client.method3660((int) var7.field4308 - (var5.x << 9), (int) var6.field4313 - (var5.z << 9), Client.field4490.field11717) + (int) var6.field4311));
 				} else {
-					addline("Pos: " + Client.field4490.field11717 + "," + ((Client.field7956 >> 9) + var5.field7426 >> 6) + "," + ((Client.field1881 >> 9) + var5.field7427 >> 6) + "," + ((Client.field7956 >> 9) + var5.field7426 & 0x3F) + "," + ((Client.field1881 >> 9) + var5.field7427 & 0x3F) + " Height: " + (Client.method3660(Client.field7956, Client.field1881, Client.field4490.field11717) - Client.field10518));
-					addline("Look: " + Client.field4490.field11717 + "," + (Client.field6714 + var5.field7426 >> 6) + "," + (Client.field2626 + var5.field7427 >> 6) + "," + (Client.field6714 + var5.field7426 & 0x3F) + "," + (Client.field2626 + var5.field7427 & 0x3F) + " Height: " + (Client.method3660(Client.field6714, Client.field2626, Client.field4490.field11717) - Client.field1983));
+					addline("Pos: " + Client.field4490.field11717 + "," + ((Client.field7956 >> 9) + var5.x >> 6) + "," + ((Client.field1881 >> 9) + var5.z >> 6) + "," + ((Client.field7956 >> 9) + var5.x & 0x3F) + "," + ((Client.field1881 >> 9) + var5.z & 0x3F) + " Height: " + (Client.method3660(Client.field7956, Client.field1881, Client.field4490.field11717) - Client.field10518));
+					addline("Look: " + Client.field4490.field11717 + "," + (Client.field6714 + var5.x >> 6) + "," + (Client.field2626 + var5.z >> 6) + "," + (Client.field6714 + var5.x & 0x3F) + "," + (Client.field2626 + var5.z & 0x3F) + " Height: " + (Client.method3660(Client.field6714, Client.field2626, Client.field4490.field11717) - Client.field1983));
 				}
 				return;
 			}

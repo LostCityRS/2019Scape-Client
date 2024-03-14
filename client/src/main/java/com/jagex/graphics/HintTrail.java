@@ -98,20 +98,20 @@ public class HintTrail {
 		CoordGrid var4 = new CoordGrid(Client.field4826, this.field6750[0], this.field6753[0]);
 		for (int var5 = 1; var5 < this.field6751; var5++) {
 			CoordGrid var6 = new CoordGrid(Client.field4826, this.field6750[var5], this.field6753[var5]);
-			while (var4.field7426 != var6.field7426 || var4.field7427 != var6.field7427) {
-				if (var4.field7426 < var6.field7426) {
-					var4.field7426++;
-				} else if (var4.field7426 > var6.field7426) {
-					var4.field7426--;
+			while (var4.x != var6.x || var4.z != var6.z) {
+				if (var4.x < var6.x) {
+					var4.x++;
+				} else if (var4.x > var6.x) {
+					var4.x--;
 				}
-				if (var4.field7427 < var6.field7427) {
-					var4.field7427++;
-				} else if (var4.field7427 > var6.field7427) {
-					var4.field7427--;
+				if (var4.z < var6.z) {
+					var4.z++;
+				} else if (var4.z > var6.z) {
+					var4.z--;
 				}
 				int var7 = Client.field4826;
-				int var8 = var4.field7426 - var3.field7426;
-				int var9 = var4.field7427 - var3.field7427;
+				int var8 = var4.x - var3.x;
+				int var9 = var4.z - var3.z;
 				if (var8 >= 0 && var8 < arg0.field6910 && var9 >= 0 && var9 < arg0.field6911) {
 					int var10 = (var8 << 9) + 256;
 					int var11 = (var9 << 9) + 256;

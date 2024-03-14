@@ -56,7 +56,7 @@ public class PositionEntity extends Position {
 		this.field10554.method6412(arg2);
 		this.field10556 = arg3;
 		this.field10561 = arg4;
-		this.field10557 = this.field10552.method4667().field11477;
+		this.field10557 = this.field10552.method4667().level;
 		this.method16686(arg5, arg6, arg7, arg8);
 	}
 
@@ -109,12 +109,12 @@ public class PositionEntity extends Position {
 			return;
 		}
 		CoordFine var5 = this.field10552.method4667();
-		this.field10557 = var5.field11477;
+		this.field10557 = var5.level;
 		int var6 = this.field10557;
 		boolean var7 = true;
 		if (this.field10557 == 3) {
 			var7 = false;
-		} else if (arg1 != null && arg1.method7105(var5.field11478 - arg2 >> 9, var5.field11480 - arg3 >> 9)) {
+		} else if (arg1 != null && arg1.method7105(var5.x - arg2 >> 9, var5.z - arg3 >> 9)) {
 			var6 = this.field10557 + 1;
 			var7 = false;
 		}

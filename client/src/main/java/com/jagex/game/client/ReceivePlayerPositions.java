@@ -68,8 +68,8 @@ public class ReceivePlayerPositions {
 		int var5 = var3 >> 14 & 0x3FFF;
 		int var6 = var3 & 0x3FFF;
 		CoordGrid var7 = Client.world.method7727();
-		var2.field10450[0] = var5 - var7.field7426;
-		var2.field10448[0] = var6 - var7.field7427;
+		var2.field10450[0] = var5 - var7.x;
+		var2.field10448[0] = var6 - var7.z;
 		var2.method10538((float) ((var2.field10450[0] << 9) + (var2.method16546() << 8)), var2.method10525().field4298.field4311, (float) ((var2.field10448[0] << 9) + (var2.method16546() << 8)));
 		Client.field4826 = var2.field11717 = var2.field11714 = var4;
 		if (Client.world.method7793().method7105(var2.field10450[0], var2.field10448[0])) {
@@ -260,7 +260,7 @@ public class ReceivePlayerPositions {
 				}
 				LowResPlayerInfo var6 = field704[arg1] = new LowResPlayerInfo();
 				MoveSpeed.method13901();
-				var6.field524 = (var2.field7427 + var5.field10448[0] >> 6) + (var2.field7426 + var5.field10450[0] >> 6 << 14) + (var5.field11717 << 28);
+				var6.field524 = (var2.z + var5.field10448[0] >> 6) + (var2.x + var5.field10450[0] >> 6 << 14) + (var5.field11717 << 28);
 				if (var5.field12056 == -1) {
 					var6.field523 = var5.field10395.method316();
 				} else {
@@ -406,8 +406,8 @@ public class ReceivePlayerPositions {
 				int var25 = var24 >> 28 & 0x3;
 				int var26 = var24 >> 14 & 0x3FFF;
 				int var27 = var24 & 0x3FFF;
-				int var28 = (var2.field7426 + var5.field10450[0] + var26 & 0x3FFF) - var2.field7426;
-				int var29 = (var2.field7427 + var5.field10448[0] + var27 & 0x3FFF) - var2.field7427;
+				int var28 = (var2.x + var5.field10450[0] + var26 & 0x3FFF) - var2.x;
+				int var29 = (var2.z + var5.field10448[0] + var27 & 0x3FFF) - var2.z;
 				if (MoveSpeed.field8317.field8320 == var23) {
 					var5.method19118(var28, var29);
 				} else {
@@ -457,8 +457,8 @@ public class ReceivePlayerPositions {
 			int var10 = var8 >> 14 & 0xFF;
 			int var11 = var8 & 0xFF;
 			CoordGrid var12 = Client.world.method7727();
-			int var13 = (var10 << 6) + var3 - var12.field7426;
-			int var14 = (var11 << 6) + var4 - var12.field7427;
+			int var13 = (var10 << 6) + var3 - var12.x;
+			int var14 = (var11 << 6) + var4 - var12.z;
 			var7.field12070 = var6.field525;
 			var7.field12048 = var6.field526;
 			var7.field10441[0] = field697[arg1];

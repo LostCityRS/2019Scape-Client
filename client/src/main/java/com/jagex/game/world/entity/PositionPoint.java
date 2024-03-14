@@ -33,14 +33,14 @@ public class PositionPoint extends Position {
 
 	@ObfuscatedName("ahh.t(Lakt;I)V")
 	public void method16671(CoordFine arg0) {
-		this.field10549.field4308 = arg0.field11478;
-		this.field10549.field4311 = arg0.field11479;
-		this.field10549.field4313 = arg0.field11480;
+		this.field10549.field4308 = arg0.x;
+		this.field10549.field4311 = arg0.y;
+		this.field10549.field4313 = arg0.z;
 		if (Float.isNaN(this.field10548.field4308)) {
 			this.field10548.method6492(this.field10549);
 			this.field10547.method6493();
 		}
-		this.field10551 = arg0.field11477;
+		this.field10551 = arg0.level;
 	}
 
 	@ObfuscatedName("ahh.e(F[[[ILqx;IIB)V")

@@ -16,16 +16,16 @@ public class CoordFine extends Node implements Serializable {
 	public static int field4608;
 
 	@ObfuscatedName("akt.w")
-	public int field11477;
+	public int level;
 
 	@ObfuscatedName("akt.l")
-	public int field11478;
+	public int x;
 
 	@ObfuscatedName("akt.u")
-	public int field11479;
+	public int y;
 
 	@ObfuscatedName("akt.p")
-	public int field11480;
+	public int z;
 
 	@ObfuscatedName("l.u(IIIIS)Lakt;")
 	public static CoordFine method258(int arg0, int arg1, int arg2, int arg3) {
@@ -67,21 +67,21 @@ public class CoordFine extends Node implements Serializable {
 	}
 
 	public CoordFine() {
-		this.field11477 = -1;
+		this.level = -1;
 	}
 
-	public CoordFine(int arg0, int arg1, int arg2, int arg3) {
-		this.field11477 = arg0;
-		this.field11478 = arg1;
-		this.field11479 = arg2;
-		this.field11480 = arg3;
+	public CoordFine(int level, int x, int arg2, int z) {
+		this.level = level;
+		this.x = x;
+		this.y = arg2;
+		this.z = z;
 	}
 
 	public CoordFine(CoordFine arg0) {
-		this.field11477 = arg0.field11477;
-		this.field11478 = arg0.field11478;
-		this.field11479 = arg0.field11479;
-		this.field11480 = arg0.field11480;
+		this.level = arg0.level;
+		this.x = arg0.x;
+		this.y = arg0.y;
+		this.z = arg0.z;
 	}
 
 	public CoordFine(Packet arg0) {
@@ -90,62 +90,62 @@ public class CoordFine extends Node implements Serializable {
 
 	public CoordFine(int arg0, boolean arg1) {
 		if (arg0 == -1) {
-			this.field11477 = -1;
+			this.level = -1;
 		} else {
-			this.field11477 = arg0 >> 28 & 0x3;
-			this.field11478 = (arg0 >> 14 & 0x3FFF) << 9;
-			this.field11479 = 0;
-			this.field11480 = (arg0 & 0x3FFF) << 9;
+			this.level = arg0 >> 28 & 0x3;
+			this.x = (arg0 >> 14 & 0x3FFF) << 9;
+			this.y = 0;
+			this.z = (arg0 & 0x3FFF) << 9;
 			if (arg1) {
-				this.field11478 += 256;
-				this.field11480 += 256;
+				this.x += 256;
+				this.z += 256;
 			}
 		}
 	}
 
 	@ObfuscatedName("akt.d(IIIII)V")
 	public void method17851(int arg0, int arg1, int arg2, int arg3) {
-		this.field11477 = arg0;
-		this.field11478 = arg1;
-		this.field11479 = arg2;
-		this.field11480 = arg3;
+		this.level = arg0;
+		this.x = arg1;
+		this.y = arg2;
+		this.z = arg3;
 	}
 
 	@ObfuscatedName("akt.c(Lakt;I)V")
 	public void method17868(CoordFine arg0) {
-		this.field11477 = arg0.field11477;
-		this.field11478 = arg0.field11478;
-		this.field11479 = arg0.field11479;
-		this.field11480 = arg0.field11480;
+		this.level = arg0.level;
+		this.x = arg0.x;
+		this.y = arg0.y;
+		this.z = arg0.z;
 	}
 
 	@ObfuscatedName("akt.r(IZI)V")
 	public void method17870(int arg0, boolean arg1) {
 		if (arg0 == -1) {
-			this.field11477 = -1;
+			this.level = -1;
 			return;
 		}
-		this.field11477 = arg0 >> 28 & 0x3;
-		this.field11478 = (arg0 >> 14 & 0x3FFF) << 9;
-		this.field11479 = 0;
-		this.field11480 = (arg0 & 0x3FFF) << 9;
+		this.level = arg0 >> 28 & 0x3;
+		this.x = (arg0 >> 14 & 0x3FFF) << 9;
+		this.y = 0;
+		this.z = (arg0 & 0x3FFF) << 9;
 		if (arg1) {
-			this.field11478 += 256;
-			this.field11480 += 256;
+			this.x += 256;
+			this.z += 256;
 		}
 	}
 
 	@ObfuscatedName("akt.v(I)Lox;")
 	public Vector3 method17853() {
-		return new Vector3((float) this.field11478, (float) this.field11479, (float) this.field11480);
+		return new Vector3((float) this.x, (float) this.y, (float) this.z);
 	}
 
 	@ObfuscatedName("akt.y(Lalw;I)V")
 	public void method17852(Packet arg0) {
-		arg0.p1(this.field11477);
-		arg0.p4(this.field11478);
-		arg0.p4(this.field11479);
-		arg0.p4(this.field11480);
+		arg0.p1(this.level);
+		arg0.p4(this.x);
+		arg0.p4(this.y);
+		arg0.p4(this.z);
 	}
 
 	@ObfuscatedName("gs.x(S)I")
@@ -154,7 +154,7 @@ public class CoordFine extends Node implements Serializable {
 	}
 
 	public String toString() {
-		return "Level: " + this.field11477 + " Coord: " + this.field11478 + "," + this.field11479 + "," + this.field11480 + " Coord Split: " + (this.field11478 >> 15) + "," + (this.field11480 >> 15) + "," + (this.field11478 >> 9 & 0x3F) + "," + (this.field11480 >> 9 & 0x3F) + "," + (this.field11478 & 0x1FF) + "," + (this.field11480 & 0x1FF);
+		return "Level: " + this.level + " Coord: " + this.x + "," + this.y + "," + this.z + " Coord Split: " + (this.x >> 15) + "," + (this.z >> 15) + "," + (this.x >> 9 & 0x3F) + "," + (this.z >> 9 & 0x3F) + "," + (this.x & 0x1FF) + "," + (this.z & 0x1FF);
 	}
 
 	@ObfuscatedName("akt.e(B)I")
@@ -169,9 +169,9 @@ public class CoordFine extends Node implements Serializable {
 
 	@ObfuscatedName("akt.m(Lalw;I)V")
 	public void method15115(Packet arg0) {
-		this.field11477 = arg0.g1();
-		this.field11478 = arg0.g4s();
-		this.field11479 = arg0.g4s();
-		this.field11480 = arg0.g4s();
+		this.level = arg0.g1();
+		this.x = arg0.g4s();
+		this.y = arg0.g4s();
+		this.z = arg0.g4s();
 	}
 }

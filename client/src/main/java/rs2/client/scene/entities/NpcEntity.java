@@ -575,7 +575,7 @@ public class NpcEntity extends PathingEntity {
 	@ObfuscatedName("aqc.m(B)Lakt;")
 	public CoordFine method4667() {
 		CoordGrid var1 = Client.world.method7727();
-		return CoordFine.method258(this.field11717, (int) this.method10536().field4298.field4308 + var1.field7426 * 512, -((int) this.method10536().field4298.field4311), (int) this.method10536().field4298.field4313 + var1.field7427 * 512);
+		return CoordFine.method258(this.field11717, (int) this.method10536().field4298.field4308 + var1.x * 512, -((int) this.method10536().field4298.field4311), (int) this.method10536().field4298.field4313 + var1.z * 512);
 	}
 
 	@ObfuscatedName("aqc.k(I)Lov;")

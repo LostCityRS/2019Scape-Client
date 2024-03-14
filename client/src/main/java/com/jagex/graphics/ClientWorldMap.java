@@ -183,7 +183,7 @@ public class ClientWorldMap extends WorldMap {
 			int var6 = -1;
 			Vector3 var7 = Client.field4490.method10536().field4298;
 			CoordGrid var8 = Client.world.method7727();
-			if (WorldMap.field6811.method19471(Client.field4490.field11717, ((int) var7.field4308 >> 9) + var8.field7426, ((int) var7.field4313 >> 9) + var8.field7427, var4)) {
+			if (WorldMap.field6811.method19471(Client.field4490.field11717, ((int) var7.field4308 >> 9) + var8.x, ((int) var7.field4313 >> 9) + var8.z, var4)) {
 				var5 = var4[1] - WorldMap.field6786;
 				var6 = var4[2] - WorldMap.field6808;
 			}
@@ -1032,7 +1032,7 @@ public class ClientWorldMap extends WorldMap {
 	@ObfuscatedName("ft.ej(ZB)V")
 	public static void method3079(boolean arg0) {
 		CoordGrid var1 = Client.field4490.method16521();
-		WorldMapAreaMetadata var2 = method8511(var1.field7426, var1.field7427);
+		WorldMapAreaMetadata var2 = method8511(var1.x, var1.z);
 		if (var2 == null) {
 			var2 = method8512(WorldMap.field6792.field7695);
 		}

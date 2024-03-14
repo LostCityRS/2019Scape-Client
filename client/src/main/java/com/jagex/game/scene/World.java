@@ -425,8 +425,8 @@ public class World {
 	@ObfuscatedName("rl.aw(B)V")
 	public void method7773() {
 		this.method7791(BuildAreaSize.method3061(Client.field688.buildArea.method18570()));
-		int var1 = this.field5018.field7426;
-		int var2 = this.field5018.field7427;
+		int var1 = this.field5018.x;
+		int var2 = this.field5018.z;
 		int var3 = (Client.field7956 >> 12) + (var1 >> 3);
 		int var4 = (Client.field1881 >> 12) + (var2 >> 3);
 		Client.field4490.field11717 = 0;
@@ -743,7 +743,7 @@ public class World {
 			this.field5025 = this.field5018;
 		}
 		this.field5018 = new CoordGrid(0, (this.field5022 - (this.field5028 >> 4)) * 8, (this.field5059 - (this.field5043 >> 4)) * 8);
-		this.field5035 = WorldMap.method8511(this.field5028 / 2 + this.field5018.field7426, this.field5028 / 2 + this.field5018.field7427);
+		this.field5035 = WorldMap.method8511(this.field5028 / 2 + this.field5018.x, this.field5028 / 2 + this.field5018.z);
 		this.field5058 = null;
 		this.field5060 = -1L;
 		if (!this.field5036) {
@@ -753,8 +753,8 @@ public class World {
 
 	@ObfuscatedName("rl.aq(II)V")
 	public void method7762(int arg0) {
-		int var2 = this.field5018.field7426 - this.field5025.field7426;
-		int var3 = this.field5018.field7427 - this.field5025.field7427;
+		int var2 = this.field5018.x - this.field5025.x;
+		int var3 = this.field5018.z - this.field5025.z;
 		if (arg0 == 3) {
 			for (int var4 = 0; var4 < Client.field10906; var4++) {
 				ObjectWrapper var5 = Client.field10839[var4];
@@ -877,9 +877,9 @@ public class World {
 		for (ObjStackList var36 = (ObjStackList) Client.field10964.method14500(); var36 != null; var36 = (ObjStackList) Client.field10964.method14502()) {
 			int var37 = (int) (var36.field6760 >> 28 & 0x3L);
 			int var38 = (int) (var36.field6760 & 0x3FFFL);
-			int var39 = var38 - this.field5018.field7426;
+			int var39 = var38 - this.field5018.x;
 			int var40 = (int) (var36.field6760 >> 14 & 0x3FFFL);
-			int var41 = var40 - this.field5018.field7427;
+			int var41 = var40 - this.field5018.z;
 			if (this.field5030 != null) {
 				if (var39 >= 0 && var41 >= 0 && var39 < this.field5028 && var41 < this.field5043 && var39 < this.field5030.field6910 && var41 < this.field5030.field6911) {
 					if (this.field5030.field6928 != null) {
@@ -992,8 +992,8 @@ public class World {
 		for (int var6 = 0; var6 < this.field5049; var6++) {
 			byte[] var7 = this.field5053[var6];
 			if (var7 != null) {
-				int var8 = (this.field5054[var6] >> 8) * 64 - this.field5018.field7426;
-				int var9 = (this.field5054[var6] & 0xFF) * 64 - this.field5018.field7427;
+				int var8 = (this.field5054[var6] >> 8) * 64 - this.field5018.x;
+				int var9 = (this.field5054[var6] & 0xFF) * 64 - this.field5018.z;
 				if (this.field5019.method7887()) {
 					var8 = 10;
 					var9 = 10;
@@ -1005,8 +1005,8 @@ public class World {
 			}
 			byte[] var11 = this.field5031[var6];
 			if (var11 != null) {
-				int var12 = (this.field5054[var6] >> 8) * 64 - this.field5018.field7426;
-				int var13 = (this.field5054[var6] & 0xFF) * 64 - this.field5018.field7427;
+				int var12 = (this.field5054[var6] >> 8) * 64 - this.field5018.x;
+				int var13 = (this.field5054[var6] & 0xFF) * 64 - this.field5018.z;
 				if (this.field5019.method7887()) {
 					var12 = 10;
 					var13 = 10;
@@ -1290,18 +1290,18 @@ public class World {
 				Packet var6 = new Packet(var5);
 				int var7 = this.field5054[var4] >> 8;
 				int var8 = this.field5054[var4] & 0xFF;
-				int var9 = var7 * 64 - this.field5018.field7426;
-				int var10 = var8 * 64 - this.field5018.field7427;
+				int var9 = var7 * 64 - this.field5018.x;
+				int var10 = var8 * 64 - this.field5018.z;
 				if (!this.field5036 && Client.field1798 != null) {
 					Client.field1798.method3149();
 				}
-				arg0.method7170(var6, var9, var10, this.field5018.field7426, this.field5018.field7427);
+				arg0.method7170(var6, var9, var10, this.field5018.x, this.field5018.z);
 				arg0.method16872(Client.field8198, var6, var9, var10);
 			}
 		}
 		for (int var11 = 0; var11 < var3; var11++) {
-			int var12 = (this.field5054[var11] >> 8) * 64 - this.field5018.field7426;
-			int var13 = (this.field5054[var11] & 0xFF) * 64 - this.field5018.field7427;
+			int var12 = (this.field5054[var11] >> 8) * 64 - this.field5018.x;
+			int var13 = (this.field5054[var11] & 0xFF) * 64 - this.field5018.z;
 			byte[] var14 = arg1[var11];
 			if (var14 == null && this.field5059 < 800) {
 				if (!this.field5036 && Client.field1798 != null) {
@@ -1361,8 +1361,8 @@ public class World {
 		for (int var3 = 0; var3 < this.field5049; var3++) {
 			byte[] var4 = arg1[var3];
 			if (var4 != null) {
-				int var5 = (this.field5054[var3] >> 8) * 64 - this.field5018.field7426;
-				int var6 = (this.field5054[var3] & 0xFF) * 64 - this.field5018.field7427;
+				int var5 = (this.field5054[var3] >> 8) * 64 - this.field5018.x;
+				int var6 = (this.field5054[var3] & 0xFF) * 64 - this.field5018.z;
 				if (!this.field5036) {
 					Client.field1798.method3149();
 				}
@@ -1430,8 +1430,8 @@ public class World {
 					int var9 = var8 >> 14;
 					int var10 = var8 >> 7 & 0x3F;
 					int var11 = var8 & 0x3F;
-					int var12 = (this.field5054[var2] >> 8) * 64 - this.field5018.field7426 + var10;
-					int var13 = (this.field5054[var2] & 0xFF) * 64 - this.field5018.field7427 + var11;
+					int var12 = (this.field5054[var2] >> 8) * 64 - this.field5018.x + var10;
+					int var13 = (this.field5054[var2] & 0xFF) * 64 - this.field5018.z + var11;
 					NPCType var14 = (NPCType) Client.field7961.list(var5.g2());
 					ObjectWrapper var15 = (ObjectWrapper) Client.field10838.method14495((long) var7);
 					if (var15 == null && (var14.field2743 & 0x1) > 0 && var12 >= 0 && var14.size + var12 < this.field5028 && var13 >= 0 && var14.size + var13 < this.field5043) {

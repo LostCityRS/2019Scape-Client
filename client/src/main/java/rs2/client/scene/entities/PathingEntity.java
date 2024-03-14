@@ -974,8 +974,8 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	public CoordGrid method16521() {
 		Vector3 var1 = this.method10536().field4298;
 		CoordGrid var2 = Client.world.method7727();
-		int var3 = ((int) var1.field4308 >> 9) + var2.field7426;
-		int var4 = ((int) var1.field4313 >> 9) + var2.field7427;
+		int var3 = ((int) var1.field4308 >> 9) + var2.x;
+		int var4 = ((int) var1.field4313 >> 9) + var2.z;
 		return new CoordGrid(this.field11717, var3, var4);
 	}
 
@@ -983,9 +983,9 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	public CoordFine method16537() {
 		Vector3 var1 = this.method10536().field4298;
 		CoordGrid var2 = Client.world.method7727();
-		int var3 = var2.field7426 * 512 + (int) var1.field4308;
+		int var3 = var2.x * 512 + (int) var1.field4308;
 		int var4 = (int) var1.field4311;
-		int var5 = var2.field7427 * 512 + (int) var1.field4313;
+		int var5 = var2.z * 512 + (int) var1.field4313;
 		return new CoordFine(this.field11717, var3, var4, var5);
 	}
 

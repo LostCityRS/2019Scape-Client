@@ -142,7 +142,7 @@ public class LookatOrientation extends Lookat {
 		var10.field4311 *= -1.0F;
 		var8.method6497(var10);
 		this.method18790(var8);
-		var6.method16671(new CoordFine(var7.field11477, (int) var8.field4308, (int) var8.field4311, (int) var8.field4313));
+		var6.method16671(new CoordFine(var7.level, (int) var8.field4308, (int) var8.field4311, (int) var8.field4313));
 		field11852 = 0;
 		field11855 = 0;
 	}

@@ -292,8 +292,8 @@ public class Minimap {
 				for (int var49 = 0; var49 < var47.field6777; var49++) {
 					int var50 = var47.field6776[var49];
 					if (var50 >> 28 == Client.field4490.field11717) {
-						int var51 = (var50 >> 14 & 0x3FFF) - var48.field7426;
-						int var52 = (var50 & 0x3FFF) - var48.field7427;
+						int var51 = (var50 >> 14 & 0x3FFF) - var48.x;
+						int var52 = (var50 & 0x3FFF) - var48.z;
 						if (var51 >= 0 && var51 < var2 && var52 >= 0 && var52 < var3) {
 							field727.method14153(new IntWrapper(var49));
 						} else {
@@ -571,8 +571,8 @@ public class Minimap {
 		WorldMapRelated var14 = Client.world.method7871();
 		for (IntWrapper var15 = (IntWrapper) field727.method14191(); var15 != null; var15 = (IntWrapper) field727.method14161()) {
 			int var16 = var15.field11442;
-			int var17 = (var14.field6776[var16] >> 14 & 0x3FFF) - var6.field7426;
-			int var18 = (var14.field6776[var16] & 0x3FFF) - var6.field7427;
+			int var17 = (var14.field6776[var16] >> 14 & 0x3FFF) - var6.x;
+			int var18 = (var14.field6776[var16] & 0x3FFF) - var6.z;
 			int var19 = var17 * 4 + 2 - var7 / 128;
 			int var20 = var18 * 4 + 2 - var8 / 128;
 			method15085(arg0, var5, arg1, arg2, arg3, var19, var20, var14.field6775[var16]);
@@ -592,8 +592,8 @@ public class Minimap {
 		for (ObjStackList var25 = (ObjStackList) Client.field10964.method14500(); var25 != null; var25 = (ObjStackList) Client.field10964.method14502()) {
 			int var26 = (int) (var25.field6760 >> 28 & 0x3L);
 			if (field722 == var26) {
-				int var27 = (int) (var25.field6760 & 0x3FFFL) - var6.field7426;
-				int var28 = (int) (var25.field6760 >> 14 & 0x3FFFL) - var6.field7427;
+				int var27 = (int) (var25.field6760 & 0x3FFFL) - var6.x;
+				int var28 = (int) (var25.field6760 >> 14 & 0x3FFFL) - var6.z;
 				int var29 = var27 * 4 + 2 - var7 / 128;
 				int var30 = var28 * 4 + 2 - var8 / 128;
 				method715(arg1, var5, arg2, arg3, var29, var30, DefaultSprites.field510[0]);

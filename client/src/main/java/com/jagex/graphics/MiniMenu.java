@@ -934,8 +934,8 @@ public class MiniMenu {
 								}
 							}
 							if (var29.field6978 instanceof ObjStackEntity) {
-								int var70 = var3.field7426 + var32;
-								int var71 = var3.field7427 + var33;
+								int var70 = var3.x + var32;
+								int var71 = var3.z + var33;
 								ObjStackList var72 = (ObjStackList) Client.field10964.method14495((long) (var29.field6978.field11717 << 28 | var71 << 14 | var70));
 								if (var72 != null) {
 									int var73 = 0;
@@ -2108,15 +2108,15 @@ public class MiniMenu {
 			Client.field10925 = 0;
 			ClientMessage var18 = ClientMessage.method1604(var17, Client.field10849.field794);
 			var18.field11432.p1_alt2(method14766() ? 1 : 0);
-			var18.field11432.p2(var10.field7427 + var5);
+			var18.field11432.p2(var10.z + var5);
 			var18.field11432.p4((int) (var8 >>> 32) & Integer.MAX_VALUE);
-			var18.field11432.p2_alt3(var10.field7426 + var4);
+			var18.field11432.p2_alt3(var10.x + var4);
 			Client.field10849.method934(var18);
 			Client.method6820(var4, var5);
 		}
 		if (var6 == 23) {
 			if (Client.field10949 > 0 && method6035()) {
-				Client.method10445(Client.field4490.field11717, var10.field7426 + var4, var10.field7427 + var5);
+				Client.method10445(Client.field4490.field11717, var10.x + var4, var10.z + var5);
 			} else {
 				ClientMessage var19 = method9839(var4, var5, var7);
 				if (var7 == 1) {
@@ -2179,8 +2179,8 @@ public class MiniMenu {
 			var25.field11432.p2_alt1(var7);
 			var25.field11432.p1_alt1(method14766() ? 1 : 0);
 			var25.field11432.p2_alt1(Client.field10975);
-			var25.field11432.p2_alt1(var10.field7427 + var5);
-			var25.field11432.p2_alt1(var10.field7426 + var4);
+			var25.field11432.p2_alt1(var10.z + var5);
+			var25.field11432.p2_alt1(var10.x + var4);
 			var25.field11432.p4_alt2(Client.field6707);
 			var25.field11432.p2_alt3(Client.field10974);
 			Client.field10849.method934(var25);
@@ -2211,9 +2211,9 @@ public class MiniMenu {
 			Client.field10925 = 0;
 			ClientMessage var29 = ClientMessage.method1604(ClientProt.OPLOCT, Client.field10849.field794);
 			var29.field11432.p1_alt1(method14766() ? 1 : 0);
-			var29.field11432.p2_alt1(var10.field7426 + var4);
+			var29.field11432.p2_alt1(var10.x + var4);
 			var29.field11432.p2_alt1(Client.field10975);
-			var29.field11432.p2_alt3(var10.field7427 + var5);
+			var29.field11432.p2_alt3(var10.z + var5);
 			var29.field11432.p4_alt1(Client.field6707);
 			var29.field11432.p4_alt2((int) (var8 >>> 32) & Integer.MAX_VALUE);
 			var29.field11432.p2(Client.field10974);
@@ -2222,15 +2222,15 @@ public class MiniMenu {
 		}
 		if (var6 == 60) {
 			if (Client.field10949 > 0 && method6035()) {
-				Client.method10445(Client.field4490.field11717, var10.field7426 + var4, var10.field7427 + var5);
+				Client.method10445(Client.field4490.field11717, var10.x + var4, var10.z + var5);
 			} else {
 				Client.field10866 = arg1;
 				Client.field10924 = arg2;
 				Client.field10926 = 1;
 				Client.field10925 = 0;
 				ClientMessage var30 = ClientMessage.method1604(ClientProt.FACE_SQUARE, Client.field10849.field794);
-				var30.field11432.p2_alt2(var10.field7427 + var5);
-				var30.field11432.p2_alt3(var10.field7426 + var4);
+				var30.field11432.p2_alt2(var10.z + var5);
+				var30.field11432.p2_alt3(var10.x + var4);
 				Client.field10849.method934(var30);
 			}
 		}
@@ -2268,8 +2268,8 @@ public class MiniMenu {
 			Client.field10925 = 0;
 			ClientMessage var33 = ClientMessage.method1604(var32, Client.field10849.field794);
 			var33.field11432.p2_alt1(var7);
-			var33.field11432.p2_alt1(var10.field7426 + var4);
-			var33.field11432.p2(var10.field7427 + var5);
+			var33.field11432.p2_alt1(var10.x + var4);
+			var33.field11432.p2(var10.z + var5);
 			var33.field11432.p1_alt3((arg3 ? 2 : 0) | (method14766() ? 1 : 0));
 			Client.field10849.method934(var33);
 			Client.method6820(var4, var5);
@@ -2297,10 +2297,10 @@ public class MiniMenu {
 			Client.field10926 = 1;
 			Client.field10925 = 0;
 			ClientMessage var36 = ClientMessage.method1604(ClientProt.APCOORDT, Client.field10849.field794);
-			var36.field11432.p2_alt2(var10.field7426 + var4);
+			var36.field11432.p2_alt2(var10.x + var4);
 			var36.field11432.p4_alt1(Client.field6707);
 			var36.field11432.p2(Client.field10975);
-			var36.field11432.p2_alt2(var10.field7427 + var5);
+			var36.field11432.p2_alt2(var10.z + var5);
 			var36.field11432.p2_alt2(Client.field10974);
 			Client.field10849.method934(var36);
 			Client.method6820(var4, var5);
@@ -2330,9 +2330,9 @@ public class MiniMenu {
 			var3 = ClientMessage.method1604(ClientProt.MOVE_MINIMAPCLICK, Client.field10849.field794);
 		}
 		CoordGrid var4 = Client.world.method7727();
-		var3.field11432.p2(var4.field7427 + arg1);
+		var3.field11432.p2(var4.z + arg1);
 		var3.field11432.p1(method14766() ? 1 : 0);
-		var3.field11432.p2_alt3(var4.field7426 + arg0);
+		var3.field11432.p2_alt3(var4.x + arg0);
 		Minimap.field731 = arg0;
 		Minimap.field718 = arg1;
 		Minimap.field730 = false;

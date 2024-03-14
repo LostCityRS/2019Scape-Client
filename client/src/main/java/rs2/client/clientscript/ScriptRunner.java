@@ -10021,7 +10021,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("xr.xw(Lyf;S)V")
 	public static final void coord(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field4490.method16521().method9433();
+		arg0.field8216[++arg0.field8226 - 1] = Client.field4490.method16521().pack();
 	}
 
 	@ObfuscatedName("gd.xu(Lyf;I)V")
@@ -10050,43 +10050,43 @@ public final class ScriptRunner {
 	@ObfuscatedName("yw.xa(Lyf;I)V")
 	public static final void method10604(ClientScriptState arg0) {
 		CoordFine var1 = (CoordFine) arg0.field8218[--arg0.field8211];
-		arg0.field8216[++arg0.field8226 - 1] = var1.field11478;
+		arg0.field8216[++arg0.field8226 - 1] = var1.x;
 	}
 
 	@ObfuscatedName("tk.xi(Lyf;I)V")
 	public static final void method8886(ClientScriptState arg0) {
 		CoordFine var1 = (CoordFine) arg0.field8218[--arg0.field8211];
-		arg0.field8216[++arg0.field8226 - 1] = var1.field11479;
+		arg0.field8216[++arg0.field8226 - 1] = var1.y;
 	}
 
 	@ObfuscatedName("abd.xz(Lyf;I)V")
 	public static final void coordz_fine(ClientScriptState arg0) {
 		CoordFine var1 = (CoordFine) arg0.field8218[--arg0.field8211];
-		arg0.field8216[++arg0.field8226 - 1] = var1.field11480;
+		arg0.field8216[++arg0.field8226 - 1] = var1.z;
 	}
 
 	@ObfuscatedName("po.xh(Lyf;I)V")
 	public static final void method6869(ClientScriptState arg0) {
 		CoordFine var1 = (CoordFine) arg0.field8218[--arg0.field8211];
-		arg0.field8216[++arg0.field8226 - 1] = var1.field11477;
+		arg0.field8216[++arg0.field8226 - 1] = var1.level;
 	}
 
 	@ObfuscatedName("xk.xp(Lyf;I)V")
 	public static final void movecoord_fine(ClientScriptState arg0) {
 		CoordFine var1 = CoordFine.method7078((CoordFine) arg0.field8218[--arg0.field8211]);
 		arg0.field8226 -= 4;
-		var1.field11477 += arg0.field8216[arg0.field8226];
-		var1.field11478 += arg0.field8216[arg0.field8226 + 1];
-		var1.field11479 += arg0.field8216[arg0.field8226 + 2];
-		var1.field11480 += arg0.field8216[arg0.field8226 + 3];
+		var1.level += arg0.field8216[arg0.field8226];
+		var1.x += arg0.field8216[arg0.field8226 + 1];
+		var1.y += arg0.field8216[arg0.field8226 + 2];
+		var1.z += arg0.field8216[arg0.field8226 + 3];
 		arg0.field8218[++arg0.field8211 - 1] = var1;
 	}
 
 	@ObfuscatedName("h.xx(Lyf;I)V")
 	public static final void coord_finetogrid(ClientScriptState arg0) {
 		CoordGrid var1 = new CoordGrid();
-		var1.method9434((CoordFine) arg0.field8218[--arg0.field8211]);
-		arg0.field8216[++arg0.field8226 - 1] = var1.method9433();
+		var1.fromFine((CoordFine) arg0.field8218[--arg0.field8211]);
+		arg0.field8216[++arg0.field8226 - 1] = var1.pack();
 	}
 
 	@ObfuscatedName("rl.xs(Lyf;B)V")
@@ -13607,7 +13607,7 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		int var4 = arg0.field8216[arg0.field8226 + 3];
 		CoordGrid var5 = Client.world.method7727();
-		Client.method15723((var1 >> 14 & 0x3FFF) - var5.field7426, (var1 & 0x3FFF) - var5.field7427, var2 << 2, var3, var4, false);
+		Client.method15723((var1 >> 14 & 0x3FFF) - var5.x, (var1 & 0x3FFF) - var5.z, var2 << 2, var3, var4, false);
 		Client.field10902 = true;
 	}
 
@@ -13619,7 +13619,7 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		int var4 = arg0.field8216[arg0.field8226 + 3];
 		CoordGrid var5 = Client.world.method7727();
-		Client.method14706((var1 >> 14 & 0x3FFF) - var5.field7426, (var1 & 0x3FFF) - var5.field7427, var2 << 2, var3, var4);
+		Client.method14706((var1 >> 14 & 0x3FFF) - var5.x, (var1 & 0x3FFF) - var5.z, var2 << 2, var3, var4);
 		Client.field10902 = true;
 	}
 
@@ -13719,13 +13719,13 @@ public final class ScriptRunner {
 		int var2 = var1 >> 14 & 0x3FFF;
 		int var3 = var1 & 0x3FFF;
 		CoordGrid var4 = Client.world.method7727();
-		int var5 = var2 - var4.field7426;
+		int var5 = var2 - var4.x;
 		if (var5 < 0) {
 			var5 = 0;
 		} else if (var5 >= Client.world.method7728()) {
 			var5 = Client.world.method7728();
 		}
-		int var6 = var3 - var4.field7427;
+		int var6 = var3 - var4.z;
 		if (var6 < 0) {
 			var6 = 0;
 		} else if (var6 >= Client.world.method7758()) {
@@ -13755,13 +13755,13 @@ public final class ScriptRunner {
 		int var2 = var1 >> 14 & 0x3FFF;
 		int var3 = var1 & 0x3FFF;
 		CoordGrid var4 = Client.world.method7727();
-		int var5 = var2 - var4.field7426;
+		int var5 = var2 - var4.x;
 		if (var5 < 0) {
 			var5 = 0;
 		} else if (var5 >= Client.world.method7728()) {
 			var5 = Client.world.method7728();
 		}
-		int var6 = var3 - var4.field7427;
+		int var6 = var3 - var4.z;
 		if (var6 < 0) {
 			var6 = 0;
 		} else if (var6 >= Client.world.method7758()) {
@@ -13959,8 +13959,8 @@ public final class ScriptRunner {
 		var11.method6413(var12, (float) ((double) var5 * 3.141592653589793D * 2.0D / 16384.0D));
 		var10.method6424(var11);
 		CoordGrid var13 = Client.world.method7727();
-		int var14 = var13.field7426 << 9;
-		int var15 = var13.field7427 << 9;
+		int var14 = var13.x << 9;
+		int var15 = var13.z << 9;
 		if (arg1 != null) {
 			var9.method16683(arg1, new Vector3((float) var2, (float) var3, (float) var4), var10, var7, var8, Client.world.method7744().field4540, Client.world.method7793(), var14, var15);
 		}
@@ -16876,7 +16876,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("sh.bdd(Lyf;B)V")
 	public static final void getgridcoordrelativetocamera(ClientScriptState arg0) {
 		arg0.field8226--;
-		arg0.field8216[++arg0.field8226 - 1] = Client.field4490.method16521().method9433();
+		arg0.field8216[++arg0.field8226 - 1] = Client.field4490.method16521().pack();
 	}
 
 	@ObfuscatedName("dj.bdu(Lyf;I)V")
@@ -16884,15 +16884,15 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		MoveSpeed var1 = (MoveSpeed) SerializableEnums.decode(MoveSpeed.method13901(), arg0.field8216[arg0.field8226]);
 		CoordGrid var2 = new CoordGrid(arg0.field8216[arg0.field8226 + 1]);
-		if (var2.field7428 == -1) {
+		if (var2.level == -1) {
 			throw new RuntimeException("");
 		} else if (MoveSpeed.field8314 != var1 && MoveSpeed.field8315 != var1 && MoveSpeed.field8316 != var1) {
 			throw new RuntimeException("");
 		} else if (Client.field10849 != null) {
 			ClientMessage var3 = ClientMessage.method1604(ClientProt.MOVE_SCRIPTED, Client.field10849.field794);
 			var3.field11432.p1_alt1(var1.getId());
-			var3.field11432.p2_alt2(var2.field7427);
-			var3.field11432.p2_alt1(var2.field7426);
+			var3.field11432.p2_alt2(var2.z);
+			var3.field11432.p2_alt1(var2.x);
 			Client.field10849.method934(var3);
 		}
 	}

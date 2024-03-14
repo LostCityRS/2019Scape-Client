@@ -120,8 +120,8 @@ public class CameraManager {
 		CoordFine var17 = new CoordFine(0, (int) var2.field4308, (int) var2.field4311, (int) var2.field4313);
 		var0.method16671(var17);
 		CoordGrid var18 = Client.world.method7727();
-		int var19 = var18.field7426 << 9;
-		int var20 = var18.field7427 << 9;
+		int var19 = var18.x << 9;
+		int var20 = var18.z << 9;
 		field604.method4681(0.02F, Client.world.method7744().field4540, Client.world.method7793(), var19, var20);
 	}
 }
