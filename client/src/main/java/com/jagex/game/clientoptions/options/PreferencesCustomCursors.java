@@ -4,40 +4,40 @@ import com.jagex.game.clientoptions.ClientOptions;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ans")
-public class PreferencesCustomCursors extends PreferencesOption {
+public class PreferencesCustomCursors extends Preference {
 
-	public PreferencesCustomCursors(ClientOptions arg0) {
-		super(arg0);
+	public PreferencesCustomCursors(ClientOptions options) {
+		super(options);
 	}
 
-	public PreferencesCustomCursors(int arg0, ClientOptions arg1) {
-		super(arg1);
+	public PreferencesCustomCursors(int value, ClientOptions options) {
+		super(options);
 	}
 
 	@ObfuscatedName("ans.o(I)V")
-	public void method18770() {
-		if (this.field8416 != 1 && this.field8416 != 0) {
-			this.field8416 = this.method14069();
+	public void clampValue() {
+		if (this.currentValue != 1 && this.currentValue != 0) {
+			this.currentValue = this.defaultValue();
 		}
 	}
 
 	@ObfuscatedName("ans.e(B)I")
-	public int method14069() {
+	public int defaultValue() {
 		return 1;
 	}
 
 	@ObfuscatedName("ans.n(II)I")
-	public int method14070(int arg0) {
+	public int canSetValue(int value) {
 		return 1;
 	}
 
 	@ObfuscatedName("ans.k(II)V")
-	public void method14072(int arg0) {
-		this.field8416 = arg0;
+	public void setValue(int value) {
+		this.currentValue = value;
 	}
 
 	@ObfuscatedName("ans.s(I)I")
-	public int method18771() {
-		return this.field8416;
+	public int getValue() {
+		return this.currentValue;
 	}
 }

@@ -42,7 +42,7 @@ public class ObjIconFactory {
 		if (field631.method14157() == 0) {
 			return;
 		}
-		if (Client.field688.displayMode2.method18545() == 0) {
+		if (Client.preferences.displayMode2.getValue() == 0) {
 			for (ObjIconRequest var1 = (ObjIconRequest) field631.method14191(); var1 != null; var1 = (ObjIconRequest) field631.method14161()) {
 				Client.field1842.method18905(arg0, arg0, var1.field11256, var1.field11255, var1.field11258, var1.field11257, false, false, var1.field11254, DefaultSprites.field8321, var1.field11259 ? Client.field4490.field12061 : null, Client.field11389);
 				var1.method8440();

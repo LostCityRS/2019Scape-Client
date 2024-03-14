@@ -5,56 +5,56 @@ import com.jagex.game.clientoptions.ClientOptions;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("amn")
-public class PreferencesTextures extends PreferencesOption {
+public class PreferencesTextures extends Preference {
 
-	public PreferencesTextures(ClientOptions arg0) {
-		super(arg0);
+	public PreferencesTextures(ClientOptions options) {
+		super(options);
 	}
 
-	public PreferencesTextures(int arg0, ClientOptions arg1) {
-		super(arg0, arg1);
+	public PreferencesTextures(int value, ClientOptions options) {
+		super(value, options);
 	}
 
 	@ObfuscatedName("amn.o(B)V")
-	public void method18423() {
-		if (this.field8417.modeGame() != ModeGame.RUNESCAPE) {
-			this.field8416 = 1;
+	public void clampValue() {
+		if (this.options.modeGame() != ModeGame.RUNESCAPE) {
+			this.currentValue = 1;
 		}
-		if (this.field8417.hardwareInfo().unused()) {
-			if (this.field8416 < 0 || this.field8416 > 2) {
-				this.field8416 = this.method14069();
+		if (this.options.hardwareInfo().unused()) {
+			if (this.currentValue < 0 || this.currentValue > 2) {
+				this.currentValue = this.defaultValue();
 			}
-		} else if (this.field8416 != 0 && this.field8416 != 1) {
-			this.field8416 = this.method14069();
+		} else if (this.currentValue != 0 && this.currentValue != 1) {
+			this.currentValue = this.defaultValue();
 		}
 	}
 
 	@ObfuscatedName("amn.e(B)I")
-	public int method14069() {
+	public int defaultValue() {
 		return 1;
 	}
 
 	@ObfuscatedName("amn.s(B)Z")
 	public boolean method18425() {
-		return this.field8417.modeGame() == ModeGame.RUNESCAPE;
+		return this.options.modeGame() == ModeGame.RUNESCAPE;
 	}
 
 	@ObfuscatedName("amn.n(II)I")
-	public int method14070(int arg0) {
-		if (this.field8417.modeGame() == ModeGame.RUNESCAPE) {
-			return arg0 == 0 || this.field8417.groundBlending.method18651() == 1 ? 1 : 2;
+	public int canSetValue(int value) {
+		if (this.options.modeGame() == ModeGame.RUNESCAPE) {
+			return value == 0 || this.options.groundBlending.getValue() == 1 ? 1 : 2;
 		} else {
 			return 3;
 		}
 	}
 
 	@ObfuscatedName("amn.k(II)V")
-	public void method14072(int arg0) {
-		this.field8416 = arg0;
+	public void setValue(int value) {
+		this.currentValue = value;
 	}
 
 	@ObfuscatedName("amn.y(I)I")
-	public int method18426() {
-		return this.field8416;
+	public int getValue() {
+		return this.currentValue;
 	}
 }

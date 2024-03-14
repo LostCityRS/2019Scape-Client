@@ -5,48 +5,48 @@ import com.jagex.game.clientoptions.ClientOptions;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("amc")
-public class PreferencesGroundDecoration extends PreferencesOption {
+public class PreferencesGroundDecoration extends Preference {
 
-	public PreferencesGroundDecoration(ClientOptions arg0) {
-		super(arg0);
+	public PreferencesGroundDecoration(ClientOptions options) {
+		super(options);
 	}
 
-	public PreferencesGroundDecoration(int arg0, ClientOptions arg1) {
-		super(arg0, arg1);
+	public PreferencesGroundDecoration(int value, ClientOptions options) {
+		super(value, options);
 	}
 
 	@ObfuscatedName("amc.o(S)V")
-	public void method18490() {
-		if (this.field8417.modeGame() != ModeGame.RUNESCAPE) {
-			this.field8416 = 1;
+	public void clampValue() {
+		if (this.options.modeGame() != ModeGame.RUNESCAPE) {
+			this.currentValue = 1;
 		}
-		if (this.field8416 != 0 && this.field8416 != 1) {
-			this.field8416 = this.method14069();
+		if (this.currentValue != 0 && this.currentValue != 1) {
+			this.currentValue = this.defaultValue();
 		}
 	}
 
 	@ObfuscatedName("amc.e(B)I")
-	public int method14069() {
+	public int defaultValue() {
 		return 1;
 	}
 
 	@ObfuscatedName("amc.s(B)Z")
 	public boolean method18488() {
-		return this.field8417.modeGame() == ModeGame.RUNESCAPE;
+		return this.options.modeGame() == ModeGame.RUNESCAPE;
 	}
 
 	@ObfuscatedName("amc.n(II)I")
-	public int method14070(int arg0) {
-		return this.field8417.modeGame() == ModeGame.RUNESCAPE ? 1 : 3;
+	public int canSetValue(int value) {
+		return this.options.modeGame() == ModeGame.RUNESCAPE ? 1 : 3;
 	}
 
 	@ObfuscatedName("amc.k(II)V")
-	public void method14072(int arg0) {
-		this.field8416 = arg0;
+	public void setValue(int value) {
+		this.currentValue = value;
 	}
 
 	@ObfuscatedName("amc.y(I)I")
-	public int method18489() {
-		return this.field8416;
+	public int getValue() {
+		return this.currentValue;
 	}
 }

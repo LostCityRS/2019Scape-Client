@@ -3,40 +3,45 @@ package com.jagex.game.clientoptions.options;
 import com.jagex.game.clientoptions.ClientOptions;
 import deob.ObfuscatedName;
 
-@ObfuscatedName("ams")
-public class PreferencesLightingDetail extends Preference {
+@ObfuscatedName("ang")
+public class PreferencesAnimDetail extends Preference {
 
-	public PreferencesLightingDetail(ClientOptions options) {
+	public PreferencesAnimDetail(ClientOptions options) {
 		super(options);
 	}
 
-	public PreferencesLightingDetail(int value, ClientOptions options) {
+	public PreferencesAnimDetail(int value, ClientOptions options) {
 		super(value, options);
 	}
 
-	@ObfuscatedName("ams.o(S)V")
+	@ObfuscatedName("ang.o(I)V")
 	public void clampValue() {
 		if (this.currentValue != 1 && this.currentValue != 0) {
 			this.currentValue = this.defaultValue();
 		}
 	}
 
-	@ObfuscatedName("ams.e(B)I")
+	@ObfuscatedName("ang.e(B)I")
 	public int defaultValue() {
 		return 1;
 	}
 
-	@ObfuscatedName("ams.n(II)I")
+	@ObfuscatedName("ang.s(I)Z")
+	public boolean method18666() {
+		return true;
+	}
+
+	@ObfuscatedName("ang.n(II)I")
 	public int canSetValue(int value) {
 		return 1;
 	}
 
-	@ObfuscatedName("ams.k(II)V")
+	@ObfuscatedName("ang.k(II)V")
 	public void setValue(int value) {
 		this.currentValue = value;
 	}
 
-	@ObfuscatedName("ams.s(I)I")
+	@ObfuscatedName("ang.y(S)I")
 	public int getValue() {
 		return this.currentValue;
 	}

@@ -5,40 +5,40 @@ import com.jagex.graphics.Renderer;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("anu")
-public class PreferencesUnused0 extends PreferencesOption {
+public class PreferencesUnused0 extends Preference {
 
-	public PreferencesUnused0(ClientOptions arg0) {
-		super(arg0);
+	public PreferencesUnused0(ClientOptions options) {
+		super(options);
 	}
 
-	public PreferencesUnused0(int arg0, ClientOptions arg1) {
-		super(arg0, arg1);
+	public PreferencesUnused0(int value, ClientOptions options) {
+		super(value, options);
 	}
 
 	@ObfuscatedName("anu.o(I)V")
-	public void method18694() {
-		if (this.field8416 < 0 || this.field8416 > 3) {
-			this.field8416 = this.method14069();
+	public void clampValue() {
+		if (this.currentValue < 0 || this.currentValue > 3) {
+			this.currentValue = this.defaultValue();
 		}
 	}
 
 	@ObfuscatedName("anu.e(B)I")
-	public int method14069() {
+	public int defaultValue() {
 		return 1;
 	}
 
 	@ObfuscatedName("anu.n(II)I")
-	public int method14070(int arg0) {
-		return Renderer.method723(this.field8417.displayMode2.method18545()) ? 1 : 3;
+	public int canSetValue(int value) {
+		return Renderer.method723(this.options.displayMode2.getValue()) ? 1 : 3;
 	}
 
 	@ObfuscatedName("anu.k(II)V")
-	public void method14072(int arg0) {
-		this.field8416 = arg0;
+	public void setValue(int value) {
+		this.currentValue = value;
 	}
 
 	@ObfuscatedName("anu.s(I)I")
-	public int method18695() {
-		return this.field8416;
+	public int getValue() {
+		return this.currentValue;
 	}
 }

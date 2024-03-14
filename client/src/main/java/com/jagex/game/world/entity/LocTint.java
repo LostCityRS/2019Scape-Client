@@ -22,7 +22,7 @@ public class LocTint {
 		this.field5015 = (int) (Math.random() * 4.0D) + 32;
 		this.field5013 = (int) (Math.random() * 2.0D) + 3;
 		this.field5014 = (int) (Math.random() * 3.0D) + 16;
-		if (Client.field688.textures.method18426() == 1) {
+		if (Client.preferences.textures.getValue() == 1) {
 			this.field5012 = (int) (Math.random() * 6.0D);
 		} else {
 			this.field5012 = (int) (Math.random() * 12.0D);

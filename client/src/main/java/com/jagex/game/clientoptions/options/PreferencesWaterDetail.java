@@ -4,25 +4,25 @@ import com.jagex.game.clientoptions.ClientOptions;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("amt")
-public class PreferencesWaterDetail extends PreferencesOption {
+public class PreferencesWaterDetail extends Preference {
 
-	public PreferencesWaterDetail(ClientOptions arg0) {
-		super(arg0);
+	public PreferencesWaterDetail(ClientOptions options) {
+		super(options);
 	}
 
-	public PreferencesWaterDetail(int arg0, ClientOptions arg1) {
-		super(arg0, arg1);
+	public PreferencesWaterDetail(int value, ClientOptions options) {
+		super(value, options);
 	}
 
 	@ObfuscatedName("amt.o(I)V")
-	public void method18523() {
-		if (this.field8416 < 0 || this.field8416 > 2) {
-			this.field8416 = this.method14069();
+	public void clampValue() {
+		if (this.currentValue < 0 || this.currentValue > 2) {
+			this.currentValue = this.defaultValue();
 		}
 	}
 
 	@ObfuscatedName("amt.e(B)I")
-	public int method14069() {
+	public int defaultValue() {
 		return 1;
 	}
 
@@ -32,17 +32,17 @@ public class PreferencesWaterDetail extends PreferencesOption {
 	}
 
 	@ObfuscatedName("amt.n(II)I")
-	public int method14070(int arg0) {
-		return arg0 == 0 || this.field8417.groundBlending.method18651() == 1 ? 1 : 2;
+	public int canSetValue(int value) {
+		return value == 0 || this.options.groundBlending.getValue() == 1 ? 1 : 2;
 	}
 
 	@ObfuscatedName("amt.k(II)V")
-	public void method14072(int arg0) {
-		this.field8416 = arg0;
+	public void setValue(int value) {
+		this.currentValue = value;
 	}
 
 	@ObfuscatedName("amt.y(I)I")
-	public int method18522() {
-		return this.field8416;
+	public int getValue() {
+		return this.currentValue;
 	}
 }

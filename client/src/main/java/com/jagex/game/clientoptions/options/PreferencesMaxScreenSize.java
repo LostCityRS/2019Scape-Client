@@ -4,40 +4,40 @@ import com.jagex.game.clientoptions.ClientOptions;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("amw")
-public class PreferencesMaxScreenSize extends PreferencesOption {
+public class PreferencesMaxScreenSize extends Preference {
 
-	public PreferencesMaxScreenSize(ClientOptions arg0) {
-		super(arg0);
+	public PreferencesMaxScreenSize(ClientOptions options) {
+		super(options);
 	}
 
-	public PreferencesMaxScreenSize(int arg0, ClientOptions arg1) {
-		super(arg0, arg1);
+	public PreferencesMaxScreenSize(int value, ClientOptions options) {
+		super(value, options);
 	}
 
 	@ObfuscatedName("amw.o(I)V")
-	public void method18536() {
-		if (this.field8416 < 1 || this.field8416 > 3) {
-			this.field8416 = this.method14069();
+	public void clampValue() {
+		if (this.currentValue < 1 || this.currentValue > 3) {
+			this.currentValue = this.defaultValue();
 		}
 	}
 
 	@ObfuscatedName("amw.e(B)I")
-	public int method14069() {
-		return this.field8417.hardwareInfo().osArchArm() ? 3 : 2;
+	public int defaultValue() {
+		return this.options.hardwareInfo().osArchArm() ? 3 : 2;
 	}
 
 	@ObfuscatedName("amw.n(II)I")
-	public int method14070(int arg0) {
+	public int canSetValue(int value) {
 		return 1;
 	}
 
 	@ObfuscatedName("amw.k(II)V")
-	public void method14072(int arg0) {
-		this.field8416 = arg0;
+	public void setValue(int value) {
+		this.currentValue = value;
 	}
 
 	@ObfuscatedName("amw.s(I)I")
-	public int method18539() {
-		return this.field8416;
+	public int getValue() {
+		return this.currentValue;
 	}
 }

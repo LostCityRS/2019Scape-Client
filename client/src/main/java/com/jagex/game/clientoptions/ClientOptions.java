@@ -17,13 +17,13 @@ public class ClientOptions extends Node {
 	public final PreferencesHardwareInfo hardwareInfo;
 
 	@ObfuscatedName("ali.p")
-	public PreferencesUnknown0 unknown;
+	public PreferencesAnimDetail animDetail;
 
 	@ObfuscatedName("ali.d")
-	public PreferencesUnknown1 unknown1;
+	public PreferencesAntiAliasing antiAliasing;
 
 	@ObfuscatedName("ali.c")
-	public PreferencesUnknown1 unknown2;
+	public PreferencesAntiAliasing antiAliasing2;
 
 	@ObfuscatedName("ali.r")
 	public PreferencesUnused0 unused;
@@ -41,7 +41,7 @@ public class ClientOptions extends Node {
 	public PreferencesUnknown8 unknown8;
 
 	@ObfuscatedName("ali.q")
-	public PreferencesBuildAreaSize buildAreaSize;
+	public PreferencesDrawDistance drawDistance;
 
 	@ObfuscatedName("ali.x")
 	public PreferencesFlickeringEffects flickeringEffects;
@@ -65,10 +65,10 @@ public class ClientOptions extends Node {
 	public PreferencesSceneryShadows sceneryShadows;
 
 	@ObfuscatedName("ali.t")
-	public PreferencesUnknown3 unknown3;
+	public PreferencesShadowQuality shadowQuality;
 
 	@ObfuscatedName("ali.ae")
-	public PreferencesUnknown4 unknown4;
+	public PreferencesOrthographic orthographic;
 
 	@ObfuscatedName("ali.ag")
 	public PreferencesParticles particles;
@@ -152,7 +152,7 @@ public class ClientOptions extends Node {
 	public PreferencesCpuUsage cpuUsage;
 
 	@ObfuscatedName("ali.bk")
-	public PreferencesUnknown5 unknown5;
+	public PreferencesLoadingScreen loadingScreen;
 
 	@ObfuscatedName("ali.bh")
 	public PreferencesUnknown6 unknown6;
@@ -164,547 +164,547 @@ public class ClientOptions extends Node {
 	public PreferencesUnused13 unused13;
 
 	@ObfuscatedName("ali.bc")
-	public PreferencesThemeMusicVolume themeMusicVolume;
+	public PreferencesVolume soundVolume;
 
 	@ObfuscatedName("ali.bi")
-	public PreferencesThemeMusicVolume themeMusicVolume1;
+	public PreferencesVolume backgroundSoundVolume;
 
 	@ObfuscatedName("ali.bn")
-	public PreferencesThemeMusicVolume themeMusicVolume2;
+	public PreferencesVolume speechVolume;
 
 	@ObfuscatedName("ali.bt")
-	public PreferencesThemeMusicVolume themeMusicVolume3;
+	public PreferencesVolume unknownVolume1;
 
 	@ObfuscatedName("ali.bq")
-	public PreferencesThemeMusicVolume themeMusicVolume4;
+	public PreferencesVolume unknownVolume2;
 
 	@ObfuscatedName("ali.bm")
-	public PreferencesUnknown9 unknown9;
+	public PreferencesStereo stereo;
 
-	public ClientOptions(ModeGame arg0, int arg1) {
+	public ClientOptions(ModeGame arg0, int displayModeValue) {
 		this.modeGame = arg0;
 		this.hardwareInfo = new PreferencesHardwareInfo(GameShell.maxmemory, GameShell.cpucount, GameShell.osArchRaw.toLowerCase().indexOf("arm") != -1, GameShell.osName.startsWith("win"), false);
-		this.displayMode2 = new PreferencesDisplayMode(arg1, this);
-		this.method18154(true, true);
+		this.displayMode2 = new PreferencesDisplayMode(displayModeValue, this);
+		this.setDefaultPreferences(true, true);
 	}
 
-	public ClientOptions(Packet arg0, ModeGame arg1, int arg2) {
-		this.modeGame = arg1;
+	public ClientOptions(Packet buf, ModeGame modeGame, int displayModeValue) {
+		this.modeGame = modeGame;
 		this.hardwareInfo = new PreferencesHardwareInfo(GameShell.maxmemory, GameShell.cpucount, GameShell.osArchRaw.indexOf("arm") != -1, GameShell.osName.startsWith("win"), false);
-		this.displayMode2 = new PreferencesDisplayMode(arg2, this);
-		this.method18163(arg0);
+		this.displayMode2 = new PreferencesDisplayMode(displayModeValue, this);
+		this.readPreferences(buf);
 	}
 
 	@ObfuscatedName("ali.e(Lalw;B)V")
-	public void method18163(Packet arg0) {
-		if (arg0 == null || arg0.data == null) {
-			this.method18154(true, true);
+	public void readPreferences(Packet buf) {
+		if (buf == null || buf.data == null) {
+			this.setDefaultPreferences(true, true);
 		} else {
-			int var2 = arg0.g1();
-			if (var2 < 23) {
+			int version = buf.g1();
+			if (version < 23) {
 				try {
-					this.method18155(arg0, var2);
+					this.method18155(buf, version);
 				} catch (Exception var4) {
-					this.method18154(true, true);
+					this.setDefaultPreferences(true, true);
 				}
-				this.method18154(false, true);
-			} else if (var2 > 38) {
-				this.method18154(true, true);
+				this.setDefaultPreferences(false, true);
+			} else if (version > 38) {
+				this.setDefaultPreferences(true, true);
 			} else {
-				if (var2 >= 29) {
-					this.unknown = new PreferencesUnknown0(arg0.g1(), this);
+				if (version >= 29) {
+					this.animDetail = new PreferencesAnimDetail(buf.g1(), this);
 				}
-				this.unknown1 = new PreferencesUnknown1(arg0.g1(), this);
-				if (var2 >= 31) {
-					this.unused = new PreferencesUnused0(arg0.g1(), this);
+				this.antiAliasing = new PreferencesAntiAliasing(buf.g1(), this);
+				if (version >= 31) {
+					this.unused = new PreferencesUnused0(buf.g1(), this);
 				}
-				this.unknown2 = new PreferencesUnknown1(this.unknown1.method18639(), this);
-				this.bloom = new PreferencesBloom(arg0.g1(), this);
-				this.brightness = new PreferencesBrightness(arg0.g1(), this);
-				this.buildArea = new PreferencesBuildArea(arg0.g1(), this);
-				if (var2 >= 27) {
-					this.buildAreaSize = new PreferencesBuildAreaSize(arg0.g1(), this);
+				this.antiAliasing2 = new PreferencesAntiAliasing(this.antiAliasing.getValue(), this);
+				this.bloom = new PreferencesBloom(buf.g1(), this);
+				this.brightness = new PreferencesBrightness(buf.g1(), this);
+				this.buildArea = new PreferencesBuildArea(buf.g1(), this);
+				if (version >= 27) {
+					this.drawDistance = new PreferencesDrawDistance(buf.g1(), this);
 				}
-				this.flickeringEffects = new PreferencesFlickeringEffects(arg0.g1(), this);
-				this.fog = new PreferencesFog(arg0.g1(), this);
-				this.groundBlending = new PreferencesGroundBlending(arg0.g1(), this);
-				this.groundDecoration = new PreferencesGroundDecoration(arg0.g1(), this);
-				this.idleAnimations = new PreferencesIdleAnimations(arg0.g1(), this);
-				this.lightingDetail = new PreferencesLightingDetail(arg0.g1(), this);
-				this.sceneryShadows = new PreferencesSceneryShadows(arg0.g1(), this);
-				if (var2 >= 33) {
-					this.unknown3 = new PreferencesUnknown3(arg0.g1(), this);
+				this.flickeringEffects = new PreferencesFlickeringEffects(buf.g1(), this);
+				this.fog = new PreferencesFog(buf.g1(), this);
+				this.groundBlending = new PreferencesGroundBlending(buf.g1(), this);
+				this.groundDecoration = new PreferencesGroundDecoration(buf.g1(), this);
+				this.idleAnimations = new PreferencesIdleAnimations(buf.g1(), this);
+				this.lightingDetail = new PreferencesLightingDetail(buf.g1(), this);
+				this.sceneryShadows = new PreferencesSceneryShadows(buf.g1(), this);
+				if (version >= 33) {
+					this.shadowQuality = new PreferencesShadowQuality(buf.g1(), this);
 				}
-				if (var2 >= 34) {
-					arg0.g1();
+				if (version >= 34) {
+					buf.g1();
 				}
-				if (var2 >= 24) {
-					this.unknown4 = new PreferencesUnknown4(arg0.g1(), this);
+				if (version >= 24) {
+					this.orthographic = new PreferencesOrthographic(buf.g1(), this);
 				}
-				this.particles = new PreferencesParticles(arg0.g1(), this);
-				this.removeRoofs = new PreferencesRemoveRoofs(arg0.g1(), this);
-				this.removeRoofs2 = new PreferencesRemoveRoofs(this.removeRoofs.method18496(), this);
-				this.screenSize = new PreferencesScreenSize(arg0.g1(), this);
-				if (var2 >= 25) {
-					this.skyboxes = new PreferencesSkyboxes(arg0.g1(), this);
+				this.particles = new PreferencesParticles(buf.g1(), this);
+				this.removeRoofs = new PreferencesRemoveRoofs(buf.g1(), this);
+				this.removeRoofs2 = new PreferencesRemoveRoofs(this.removeRoofs.getValue(), this);
+				this.screenSize = new PreferencesScreenSize(buf.g1(), this);
+				if (version >= 25) {
+					this.skyboxes = new PreferencesSkyboxes(buf.g1(), this);
 				}
-				this.characterShadows = new PreferencesCharacterShadows(arg0.g1(), this);
-				if (var2 <= 25) {
-					arg0.pos++;
+				this.characterShadows = new PreferencesCharacterShadows(buf.g1(), this);
+				if (version <= 25) {
+					buf.pos++;
 				}
-				this.textures = new PreferencesTextures(arg0.g1(), this);
-				this.displayMode = new PreferencesDisplayMode(arg0.g1(), this);
-				this.displayMode2 = new PreferencesDisplayMode(this.displayMode.method18545(), this);
-				arg0.g1();
-				this.waterDetail = new PreferencesWaterDetail(arg0.g1(), this);
-				this.maxScreenSize = new PreferencesMaxScreenSize(arg0.g1(), this);
-				if (var2 >= 35) {
-					this.unused1 = new PreferencesUnused1(arg0.g1(), this);
-					this.unused2 = new PreferencesUnused2(arg0.g1(), this);
-					this.unused3 = new PreferencesUnused3(arg0.g1(), this);
-					this.unused4 = new PreferencesUnused4(arg0.g1(), this);
-					this.unused5 = new PreferencesUnused5(arg0.g1(), this);
-					this.unused6 = new PreferencesUnused6(arg0.g1b(), this);
+				this.textures = new PreferencesTextures(buf.g1(), this);
+				this.displayMode = new PreferencesDisplayMode(buf.g1(), this);
+				this.displayMode2 = new PreferencesDisplayMode(this.displayMode.getValue(), this);
+				buf.g1();
+				this.waterDetail = new PreferencesWaterDetail(buf.g1(), this);
+				this.maxScreenSize = new PreferencesMaxScreenSize(buf.g1(), this);
+				if (version >= 35) {
+					this.unused1 = new PreferencesUnused1(buf.g1(), this);
+					this.unused2 = new PreferencesUnused2(buf.g1(), this);
+					this.unused3 = new PreferencesUnused3(buf.g1(), this);
+					this.unused4 = new PreferencesUnused4(buf.g1(), this);
+					this.unused5 = new PreferencesUnused5(buf.g1(), this);
+					this.unused6 = new PreferencesUnused6(buf.g1b(), this);
 				}
-				if (var2 >= 36) {
-					this.unused7 = new PreferencesUnused7(arg0.g1(), this);
-					this.unused8 = new PreferencesUnused8(arg0.g1(), this);
+				if (version >= 36) {
+					this.unused7 = new PreferencesUnused7(buf.g1(), this);
+					this.unused8 = new PreferencesUnused8(buf.g1(), this);
 				}
-				if (var2 >= 37) {
-					this.unused9 = new PreferencesUnused9(arg0.g2(), this);
-					this.unused10 = new PreferencesUnused10(arg0.g2(), this);
+				if (version >= 37) {
+					this.unused9 = new PreferencesUnused9(buf.g2(), this);
+					this.unused10 = new PreferencesUnused10(buf.g2(), this);
 				}
-				if (var2 >= 38) {
-					this.unused11 = new PreferencesUnused11(arg0.g2(), this);
-					this.unused12 = new PreferencesUnused12(arg0.g2(), this);
+				if (version >= 38) {
+					this.unused11 = new PreferencesUnused11(buf.g2(), this);
+					this.unused12 = new PreferencesUnused12(buf.g2(), this);
 				}
-				this.maxScreenSize2 = new PreferencesMaxScreenSize(this.maxScreenSize.method18539(), this);
-				this.customCursors = new PreferencesCustomCursors(arg0.g1(), this);
-				this.preset = new PreferencesPreset(arg0.g1(), this);
-				this.cpuUsage = new PreferencesCpuUsage(arg0.g1(), this);
-				this.unknown5 = new PreferencesUnknown5(arg0.g1(), this);
-				this.unknown6 = new PreferencesUnknown6(arg0.g1(), this);
-				if (var2 >= 26) {
-					this.unknown7 = new PreferencesUnknown7(arg0.g1(), this);
+				this.maxScreenSize2 = new PreferencesMaxScreenSize(this.maxScreenSize.getValue(), this);
+				this.customCursors = new PreferencesCustomCursors(buf.g1(), this);
+				this.preset = new PreferencesPreset(buf.g1(), this);
+				this.cpuUsage = new PreferencesCpuUsage(buf.g1(), this);
+				this.loadingScreen = new PreferencesLoadingScreen(buf.g1(), this);
+				this.unknown6 = new PreferencesUnknown6(buf.g1(), this);
+				if (version >= 26) {
+					this.unknown7 = new PreferencesUnknown7(buf.g1(), this);
 				}
-				if (var2 >= 28) {
-					this.unused13 = new PreferencesUnused13(arg0.g1(), this);
+				if (version >= 28) {
+					this.unused13 = new PreferencesUnused13(buf.g1(), this);
 				}
-				if (var2 >= 30) {
-					this.unknown8 = new PreferencesUnknown8(arg0.g1(), this);
+				if (version >= 30) {
+					this.unknown8 = new PreferencesUnknown8(buf.g1(), this);
 				}
-				this.themeMusicVolume = new PreferencesThemeMusicVolume(arg0.g1(), this);
-				this.themeMusicVolume1 = new PreferencesThemeMusicVolume(arg0.g1(), this);
-				this.themeMusicVolume2 = new PreferencesThemeMusicVolume(arg0.g1(), this);
-				this.themeMusicVolume3 = new PreferencesThemeMusicVolume(arg0.g1(), this);
-				this.themeMusicVolume4 = new PreferencesThemeMusicVolume(arg0.g1(), this);
-				this.unknown9 = new PreferencesUnknown9(arg0.g1(), this);
-				this.method18154(false, var2 < 32);
+				this.soundVolume = new PreferencesVolume(buf.g1(), this);
+				this.backgroundSoundVolume = new PreferencesVolume(buf.g1(), this);
+				this.speechVolume = new PreferencesVolume(buf.g1(), this);
+				this.unknownVolume1 = new PreferencesVolume(buf.g1(), this);
+				this.unknownVolume2 = new PreferencesVolume(buf.g1(), this);
+				this.stereo = new PreferencesStereo(buf.g1(), this);
+				this.setDefaultPreferences(false, version < 32);
 			}
 		}
-		this.method18179();
+		this.clampPreferencesValues();
 	}
 
 	@ObfuscatedName("ali.n(ZZB)V")
-	public void method18154(boolean arg0, boolean arg1) {
-		if (arg0 || this.unknown == null) {
-			this.unknown = new PreferencesUnknown0(this);
+	public void setDefaultPreferences(boolean preferences, boolean sounds) {
+		if (preferences || this.animDetail == null) {
+			this.animDetail = new PreferencesAnimDetail(this);
 		}
-		if (arg0 || this.unknown1 == null) {
-			this.unknown1 = new PreferencesUnknown1(this);
+		if (preferences || this.antiAliasing == null) {
+			this.antiAliasing = new PreferencesAntiAliasing(this);
 		}
-		if (arg0 || this.unused == null) {
+		if (preferences || this.unused == null) {
 			this.unused = new PreferencesUnused0(this);
 		}
-		if (arg0 || this.unknown2 == null) {
-			this.unknown2 = new PreferencesUnknown1(this.unknown1.method18639(), this);
+		if (preferences || this.antiAliasing2 == null) {
+			this.antiAliasing2 = new PreferencesAntiAliasing(this.antiAliasing.getValue(), this);
 		}
-		if (arg0 || this.bloom == null) {
+		if (preferences || this.bloom == null) {
 			this.bloom = new PreferencesBloom(this);
 		}
-		if (arg0 || this.brightness == null) {
+		if (preferences || this.brightness == null) {
 			this.brightness = new PreferencesBrightness(this);
 		}
-		if (arg0 || this.buildArea == null) {
+		if (preferences || this.buildArea == null) {
 			this.buildArea = new PreferencesBuildArea(this);
 		}
-		if (arg0 || this.buildAreaSize == null) {
-			this.buildAreaSize = new PreferencesBuildAreaSize(this);
+		if (preferences || this.drawDistance == null) {
+			this.drawDistance = new PreferencesDrawDistance(this);
 		}
-		if (arg0 || this.flickeringEffects == null) {
+		if (preferences || this.flickeringEffects == null) {
 			this.flickeringEffects = new PreferencesFlickeringEffects(this);
 		}
-		if (arg0 || this.fog == null) {
+		if (preferences || this.fog == null) {
 			this.fog = new PreferencesFog(this);
 		}
-		if (arg0 || this.groundBlending == null) {
+		if (preferences || this.groundBlending == null) {
 			this.groundBlending = new PreferencesGroundBlending(this);
 		}
-		if (arg0 || this.groundDecoration == null) {
+		if (preferences || this.groundDecoration == null) {
 			this.groundDecoration = new PreferencesGroundDecoration(this);
 		}
-		if (arg0 || this.idleAnimations == null) {
+		if (preferences || this.idleAnimations == null) {
 			this.idleAnimations = new PreferencesIdleAnimations(this);
 		}
-		if (arg0 || this.lightingDetail == null) {
+		if (preferences || this.lightingDetail == null) {
 			this.lightingDetail = new PreferencesLightingDetail(this);
 		}
-		if (arg0 || this.sceneryShadows == null) {
+		if (preferences || this.sceneryShadows == null) {
 			this.sceneryShadows = new PreferencesSceneryShadows(this);
 		}
-		if (arg0 || this.unknown3 == null) {
-			this.unknown3 = new PreferencesUnknown3(this);
+		if (preferences || this.shadowQuality == null) {
+			this.shadowQuality = new PreferencesShadowQuality(this);
 		}
-		if (arg0 || this.unknown4 == null) {
-			this.unknown4 = new PreferencesUnknown4(this);
+		if (preferences || this.orthographic == null) {
+			this.orthographic = new PreferencesOrthographic(this);
 		}
-		if (arg0 || this.particles == null) {
+		if (preferences || this.particles == null) {
 			this.particles = new PreferencesParticles(this);
 		}
-		if (arg0 || this.removeRoofs == null) {
+		if (preferences || this.removeRoofs == null) {
 			this.removeRoofs = new PreferencesRemoveRoofs(this);
 		}
-		if (arg0 || this.removeRoofs2 == null) {
-			this.removeRoofs2 = new PreferencesRemoveRoofs(this.removeRoofs.method18496(), this);
+		if (preferences || this.removeRoofs2 == null) {
+			this.removeRoofs2 = new PreferencesRemoveRoofs(this.removeRoofs.getValue(), this);
 		}
-		if (arg0 || this.screenSize == null) {
+		if (preferences || this.screenSize == null) {
 			this.screenSize = new PreferencesScreenSize(this);
 		}
-		if (arg0 || this.skyboxes == null) {
+		if (preferences || this.skyboxes == null) {
 			this.skyboxes = new PreferencesSkyboxes(this);
 		}
-		if (arg0 || this.characterShadows == null) {
+		if (preferences || this.characterShadows == null) {
 			this.characterShadows = new PreferencesCharacterShadows(this);
 		}
-		if (arg0 || this.textures == null) {
+		if (preferences || this.textures == null) {
 			this.textures = new PreferencesTextures(this);
 		}
-		if (arg0 || this.displayMode == null) {
+		if (preferences || this.displayMode == null) {
 			this.displayMode = new PreferencesDisplayMode(this);
 		}
-		if (arg0 || this.displayMode2 == null) {
-			this.displayMode2 = new PreferencesDisplayMode(this.displayMode.method18545(), this);
+		if (preferences || this.displayMode2 == null) {
+			this.displayMode2 = new PreferencesDisplayMode(this.displayMode.getValue(), this);
 		}
-		if (arg0 || this.waterDetail == null) {
+		if (preferences || this.waterDetail == null) {
 			this.waterDetail = new PreferencesWaterDetail(this);
 		}
-		if (arg0 || this.maxScreenSize == null) {
+		if (preferences || this.maxScreenSize == null) {
 			this.maxScreenSize = new PreferencesMaxScreenSize(this);
 		}
-		if (arg0 || this.maxScreenSize2 == null) {
-			this.maxScreenSize2 = new PreferencesMaxScreenSize(this.maxScreenSize.method18539(), this);
+		if (preferences || this.maxScreenSize2 == null) {
+			this.maxScreenSize2 = new PreferencesMaxScreenSize(this.maxScreenSize.getValue(), this);
 		}
-		if (arg0 || this.unused4 == null) {
+		if (preferences || this.unused4 == null) {
 			this.unused4 = new PreferencesUnused4(this);
 		}
-		if (arg0 || this.unused1 == null) {
+		if (preferences || this.unused1 == null) {
 			this.unused1 = new PreferencesUnused1(this);
 		}
-		if (arg0 || this.unused2 == null) {
+		if (preferences || this.unused2 == null) {
 			this.unused2 = new PreferencesUnused2(this);
 		}
-		if (arg0 || this.unused3 == null) {
+		if (preferences || this.unused3 == null) {
 			this.unused3 = new PreferencesUnused3(this);
 		}
-		if (arg0 || this.unused5 == null) {
+		if (preferences || this.unused5 == null) {
 			this.unused5 = new PreferencesUnused5(this);
 		}
-		if (arg0 || this.unused6 == null) {
+		if (preferences || this.unused6 == null) {
 			this.unused6 = new PreferencesUnused6(this);
 		}
-		if (arg0 || this.unused7 == null) {
+		if (preferences || this.unused7 == null) {
 			this.unused7 = new PreferencesUnused7(this);
 		}
-		if (arg0 || this.unused8 == null) {
+		if (preferences || this.unused8 == null) {
 			this.unused8 = new PreferencesUnused8(this);
 		}
-		if (arg0 || this.unused9 == null) {
+		if (preferences || this.unused9 == null) {
 			this.unused9 = new PreferencesUnused9(this);
 		}
-		if (arg0 || this.unused10 == null) {
+		if (preferences || this.unused10 == null) {
 			this.unused10 = new PreferencesUnused10(this);
 		}
-		if (arg0 || this.unused11 == null) {
+		if (preferences || this.unused11 == null) {
 			this.unused11 = new PreferencesUnused11(this);
 		}
-		if (arg0 || this.unused12 == null) {
+		if (preferences || this.unused12 == null) {
 			this.unused12 = new PreferencesUnused12(this);
 		}
-		if (arg0 || this.customCursors == null) {
+		if (preferences || this.customCursors == null) {
 			this.customCursors = new PreferencesCustomCursors(this);
 		}
-		if (arg0 || this.preset == null) {
+		if (preferences || this.preset == null) {
 			this.preset = new PreferencesPreset(this);
 		}
-		if (arg0 || this.cpuUsage == null) {
+		if (preferences || this.cpuUsage == null) {
 			this.cpuUsage = new PreferencesCpuUsage(this);
 		}
-		if (arg0 || this.unknown5 == null) {
-			this.unknown5 = new PreferencesUnknown5(this);
+		if (preferences || this.loadingScreen == null) {
+			this.loadingScreen = new PreferencesLoadingScreen(this);
 		}
-		if (arg0 || this.unknown6 == null) {
+		if (preferences || this.unknown6 == null) {
 			this.unknown6 = new PreferencesUnknown6(this);
 		}
-		if (arg0 || this.unknown7 == null) {
+		if (preferences || this.unknown7 == null) {
 			this.unknown7 = new PreferencesUnknown7(this);
 		}
-		if (arg0 || this.unused13 == null) {
+		if (preferences || this.unused13 == null) {
 			this.unused13 = new PreferencesUnused13(this);
 		}
-		if (arg0 || this.unknown8 == null) {
+		if (preferences || this.unknown8 == null) {
 			this.unknown8 = new PreferencesUnknown8(this);
 		}
-		if (arg0 || arg1 || this.themeMusicVolume == null) {
-			this.themeMusicVolume = new PreferencesThemeMusicVolume(this);
+		if (preferences || sounds || this.soundVolume == null) {
+			this.soundVolume = new PreferencesVolume(this);
 		}
-		if (arg0 || arg1 || this.themeMusicVolume1 == null) {
-			this.themeMusicVolume1 = new PreferencesThemeMusicVolume(this);
+		if (preferences || sounds || this.backgroundSoundVolume == null) {
+			this.backgroundSoundVolume = new PreferencesVolume(this);
 		}
-		if (arg0 || arg1 || this.themeMusicVolume2 == null) {
-			this.themeMusicVolume2 = new PreferencesThemeMusicVolume(this);
+		if (preferences || sounds || this.speechVolume == null) {
+			this.speechVolume = new PreferencesVolume(this);
 		}
-		if (arg0 || arg1 || this.themeMusicVolume3 == null) {
-			this.themeMusicVolume3 = new PreferencesThemeMusicVolume(this);
+		if (preferences || sounds || this.unknownVolume1 == null) {
+			this.unknownVolume1 = new PreferencesVolume(this);
 		}
-		if (arg0 || arg1 || this.themeMusicVolume4 == null) {
-			this.themeMusicVolume4 = new PreferencesThemeMusicVolume(this);
+		if (preferences || sounds || this.unknownVolume2 == null) {
+			this.unknownVolume2 = new PreferencesVolume(this);
 		}
-		if (arg0 || arg1 || this.unknown9 == null) {
-			this.unknown9 = new PreferencesUnknown9(this);
+		if (preferences || sounds || this.stereo == null) {
+			this.stereo = new PreferencesStereo(this);
 		}
 	}
 
 	@ObfuscatedName("ali.m(Lalw;IB)V")
-	public void method18155(Packet arg0, int arg1) {
-		this.brightness = new PreferencesBrightness(arg0.g1(), this);
-		arg0.pos++;
-		this.removeRoofs = new PreferencesRemoveRoofs(arg0.g1() + 1, this);
-		this.groundDecoration = new PreferencesGroundDecoration(arg0.g1(), this);
-		arg0.pos++;
-		this.idleAnimations = new PreferencesIdleAnimations(arg0.g1(), this);
-		this.flickeringEffects = new PreferencesFlickeringEffects(arg0.g1(), this);
-		arg0.g1();
-		this.characterShadows = new PreferencesCharacterShadows(arg0.g1(), this);
-		int var3 = arg0.g1();
+	public void method18155(Packet buf, int version) {
+		this.brightness = new PreferencesBrightness(buf.g1(), this);
+		buf.pos++;
+		this.removeRoofs = new PreferencesRemoveRoofs(buf.g1() + 1, this);
+		this.groundDecoration = new PreferencesGroundDecoration(buf.g1(), this);
+		buf.pos++;
+		this.idleAnimations = new PreferencesIdleAnimations(buf.g1(), this);
+		this.flickeringEffects = new PreferencesFlickeringEffects(buf.g1(), this);
+		buf.g1();
+		this.characterShadows = new PreferencesCharacterShadows(buf.g1(), this);
+		int var3 = buf.g1();
 		int var4 = 0;
-		if (arg1 >= 17) {
-			var4 = arg0.g1();
+		if (version >= 17) {
+			var4 = buf.g1();
 		}
 		this.sceneryShadows = new PreferencesSceneryShadows(var3 > var4 ? var3 : var4, this);
 		boolean var5 = true;
 		boolean var6 = true;
 		boolean var7;
-		if (arg1 >= 2) {
-			var7 = arg0.g1() == 1;
-			if (arg1 >= 17) {
-				var6 = arg0.g1() == 1;
+		if (version >= 2) {
+			var7 = buf.g1() == 1;
+			if (version >= 17) {
+				var6 = buf.g1() == 1;
 			}
 		} else {
-			var7 = arg0.g1() == 1;
-			arg0.g1();
+			var7 = buf.g1() == 1;
+			buf.g1();
 		}
 		this.lightingDetail = new PreferencesLightingDetail(var7 | var6 ? 1 : 0, this);
-		this.waterDetail = new PreferencesWaterDetail(arg0.g1(), this);
-		this.fog = new PreferencesFog(arg0.g1(), this);
-		this.unknown1 = new PreferencesUnknown1(arg0.g1(), this);
-		this.unknown9 = new PreferencesUnknown9(arg0.g1(), this);
-		this.themeMusicVolume = new PreferencesThemeMusicVolume(arg0.g1(), this);
-		if (arg1 >= 20) {
-			this.themeMusicVolume2 = new PreferencesThemeMusicVolume(arg0.g1(), this);
+		this.waterDetail = new PreferencesWaterDetail(buf.g1(), this);
+		this.fog = new PreferencesFog(buf.g1(), this);
+		this.antiAliasing = new PreferencesAntiAliasing(buf.g1(), this);
+		this.stereo = new PreferencesStereo(buf.g1(), this);
+		this.soundVolume = new PreferencesVolume(buf.g1(), this);
+		if (version >= 20) {
+			this.speechVolume = new PreferencesVolume(buf.g1(), this);
 		} else {
-			this.themeMusicVolume2 = new PreferencesThemeMusicVolume(this.themeMusicVolume.method18763(), this);
+			this.speechVolume = new PreferencesVolume(this.soundVolume.getValue(), this);
 		}
-		this.themeMusicVolume3 = new PreferencesThemeMusicVolume(arg0.g1(), this);
-		this.themeMusicVolume1 = new PreferencesThemeMusicVolume(arg0.g1(), this);
-		if (arg1 >= 21) {
-			this.themeMusicVolume4 = new PreferencesThemeMusicVolume(arg0.g1(), this);
+		this.unknownVolume1 = new PreferencesVolume(buf.g1(), this);
+		this.backgroundSoundVolume = new PreferencesVolume(buf.g1(), this);
+		if (version >= 21) {
+			this.unknownVolume2 = new PreferencesVolume(buf.g1(), this);
 		} else {
-			this.themeMusicVolume4 = new PreferencesThemeMusicVolume(this.themeMusicVolume3.method18763(), this);
+			this.unknownVolume2 = new PreferencesVolume(this.unknownVolume1.getValue(), this);
 		}
-		if (arg1 >= 1) {
-			arg0.g2();
-			arg0.g2();
+		if (version >= 1) {
+			buf.g2();
+			buf.g2();
 		}
-		if (arg1 >= 3 && arg1 < 6) {
-			arg0.g1();
+		if (version >= 3 && version < 6) {
+			buf.g1();
 		}
-		if (arg1 >= 4) {
-			this.particles = new PreferencesParticles(arg0.g1(), this);
+		if (version >= 4) {
+			this.particles = new PreferencesParticles(buf.g1(), this);
 		}
-		arg0.g4s();
-		if (arg1 >= 6) {
-			this.maxScreenSize = new PreferencesMaxScreenSize(arg0.g1(), this);
+		buf.g4s();
+		if (version >= 6) {
+			this.maxScreenSize = new PreferencesMaxScreenSize(buf.g1(), this);
 		}
-		if (arg1 >= 7) {
-			this.unknown6 = new PreferencesUnknown6(arg0.g1(), this);
+		if (version >= 7) {
+			this.unknown6 = new PreferencesUnknown6(buf.g1(), this);
 		}
-		if (arg1 >= 8) {
-			arg0.g1();
+		if (version >= 8) {
+			buf.g1();
 		}
-		if (arg1 >= 9) {
-			this.buildArea = new PreferencesBuildArea(arg0.g1(), this);
+		if (version >= 9) {
+			this.buildArea = new PreferencesBuildArea(buf.g1(), this);
 		}
-		if (arg1 >= 10) {
-			this.bloom = new PreferencesBloom(arg0.g1(), this);
+		if (version >= 10) {
+			this.bloom = new PreferencesBloom(buf.g1(), this);
 		}
-		if (arg1 >= 11) {
-			this.customCursors = new PreferencesCustomCursors(arg0.g1(), this);
+		if (version >= 11) {
+			this.customCursors = new PreferencesCustomCursors(buf.g1(), this);
 		}
-		if (arg1 >= 12) {
-			this.idleAnimations = new PreferencesIdleAnimations(arg0.g1(), this);
+		if (version >= 12) {
+			this.idleAnimations = new PreferencesIdleAnimations(buf.g1(), this);
 		}
-		if (arg1 >= 13) {
-			this.groundBlending = new PreferencesGroundBlending(arg0.g1(), this);
+		if (version >= 13) {
+			this.groundBlending = new PreferencesGroundBlending(buf.g1(), this);
 		}
-		if (arg1 >= 14) {
-			this.displayMode = new PreferencesDisplayMode(arg0.g1(), this);
+		if (version >= 14) {
+			this.displayMode = new PreferencesDisplayMode(buf.g1(), this);
 		}
-		if (arg1 >= 15) {
-			this.cpuUsage = new PreferencesCpuUsage(arg0.g1(), this);
+		if (version >= 15) {
+			this.cpuUsage = new PreferencesCpuUsage(buf.g1(), this);
 		}
-		if (arg1 >= 16) {
-			this.textures = new PreferencesTextures(arg0.g1(), this);
+		if (version >= 16) {
+			this.textures = new PreferencesTextures(buf.g1(), this);
 		}
-		if (arg1 >= 18) {
-			this.preset = new PreferencesPreset(arg0.g1(), this);
+		if (version >= 18) {
+			this.preset = new PreferencesPreset(buf.g1(), this);
 		}
-		if (arg1 >= 19) {
-			this.screenSize = new PreferencesScreenSize(arg0.g1(), this);
+		if (version >= 19) {
+			this.screenSize = new PreferencesScreenSize(buf.g1(), this);
 		}
-		if (arg1 >= 22) {
-			this.unknown5 = new PreferencesUnknown5(arg0.g1(), this);
+		if (version >= 22) {
+			this.loadingScreen = new PreferencesLoadingScreen(buf.g1(), this);
 		}
 	}
 
 	@ObfuscatedName("ali.k(I)Lalw;")
-	public Packet method18156() {
-		Packet var1 = new Packet(59);
-		var1.p1(38);
-		var1.p1(this.unknown.method18665());
-		var1.p1(this.unknown1.method18639());
-		var1.p1(this.unused.method18695());
-		var1.p1(this.bloom.method18625());
-		var1.p1(this.brightness.method18408());
-		var1.p1(this.buildArea.method18570());
-		var1.p1(this.buildAreaSize.method18688());
-		var1.p1(this.flickeringEffects.method18419());
-		var1.p1(this.fog.method18434());
-		var1.p1(this.groundBlending.method18651());
-		var1.p1(this.groundDecoration.method18489());
-		var1.p1(this.idleAnimations.method18645());
-		var1.p1(this.lightingDetail.method18389());
-		var1.p1(this.sceneryShadows.method18515());
-		var1.p1(this.unknown3.method18458());
-		var1.p1(0);
-		var1.p1(this.unknown4.method18504());
-		var1.p1(this.particles.method18468());
-		var1.p1(this.removeRoofs.method18496());
-		var1.p1(this.screenSize.method18581());
-		var1.p1(this.skyboxes.method18607());
-		var1.p1(this.characterShadows.method18453());
-		var1.p1(this.textures.method18426());
-		var1.p1(this.displayMode.method18545());
-		var1.p1(0);
-		var1.p1(this.waterDetail.method18522());
-		var1.p1(this.maxScreenSize.method18539());
-		var1.p1(this.unused1.method18601());
-		var1.p1(this.unused2.method18533());
-		var1.p1(this.unused3.method18498());
-		var1.p1(this.unused4.method18400());
-		var1.p1(this.unused5.method18594());
-		var1.p1(this.unused6.method18588());
-		var1.p1(this.unused7.method18676());
-		var1.p1(this.unused8.method18559());
-		var1.p2(this.unused9.method18633());
-		var1.p2(this.unused10.method18482());
-		var1.p2(this.unused11.method18391());
-		var1.p2(this.unused12.method18621());
-		var1.p1(this.customCursors.method18771());
-		var1.p1(this.preset.method18721());
-		var1.p1(this.cpuUsage.method18735());
-		var1.p1(this.unknown5.method18714());
-		var1.p1(this.unknown6.method18740());
-		var1.p1(this.unknown7.method18750());
-		var1.p1(this.unused13.method18707());
-		var1.p1(this.unknown8.method18701());
-		var1.p1(this.themeMusicVolume.method18763());
-		var1.p1(this.themeMusicVolume1.method18763());
-		var1.p1(this.themeMusicVolume2.method18763());
-		var1.p1(this.themeMusicVolume3.method18763());
-		var1.p1(this.themeMusicVolume4.method18763());
-		var1.p1(this.unknown9.method18758());
-		return var1;
+	public Packet createPreferencesBlock() {
+		Packet buf = new Packet(59);
+		buf.p1(38);
+		buf.p1(this.animDetail.getValue());
+		buf.p1(this.antiAliasing.getValue());
+		buf.p1(this.unused.getValue());
+		buf.p1(this.bloom.getValue());
+		buf.p1(this.brightness.getValue());
+		buf.p1(this.buildArea.getValue());
+		buf.p1(this.drawDistance.getValue());
+		buf.p1(this.flickeringEffects.getValue());
+		buf.p1(this.fog.getValue());
+		buf.p1(this.groundBlending.getValue());
+		buf.p1(this.groundDecoration.getValue());
+		buf.p1(this.idleAnimations.getValue());
+		buf.p1(this.lightingDetail.getValue());
+		buf.p1(this.sceneryShadows.getValue());
+		buf.p1(this.shadowQuality.getValue());
+		buf.p1(0);
+		buf.p1(this.orthographic.getValue());
+		buf.p1(this.particles.getValue());
+		buf.p1(this.removeRoofs.getValue());
+		buf.p1(this.screenSize.getValue());
+		buf.p1(this.skyboxes.getValue());
+		buf.p1(this.characterShadows.getValue());
+		buf.p1(this.textures.getValue());
+		buf.p1(this.displayMode.getValue());
+		buf.p1(0);
+		buf.p1(this.waterDetail.getValue());
+		buf.p1(this.maxScreenSize.getValue());
+		buf.p1(this.unused1.getValue());
+		buf.p1(this.unused2.getValue());
+		buf.p1(this.unused3.getValue());
+		buf.p1(this.unused4.getValue());
+		buf.p1(this.unused5.getValue());
+		buf.p1(this.unused6.getValue());
+		buf.p1(this.unused7.getValue());
+		buf.p1(this.unused8.getValue());
+		buf.p2(this.unused9.getValue());
+		buf.p2(this.unused10.getValue());
+		buf.p2(this.unused11.getValue());
+		buf.p2(this.unused12.getValue());
+		buf.p1(this.customCursors.getValue());
+		buf.p1(this.preset.getValue());
+		buf.p1(this.cpuUsage.getValue());
+		buf.p1(this.loadingScreen.getValue());
+		buf.p1(this.unknown6.getValue());
+		buf.p1(this.unknown7.getValue());
+		buf.p1(this.unused13.getValue());
+		buf.p1(this.unknown8.getValue());
+		buf.p1(this.soundVolume.getValue());
+		buf.p1(this.backgroundSoundVolume.getValue());
+		buf.p1(this.speechVolume.getValue());
+		buf.p1(this.unknownVolume1.getValue());
+		buf.p1(this.unknownVolume2.getValue());
+		buf.p1(this.stereo.getValue());
+		return buf;
 	}
 
 	@ObfuscatedName("ali.f(Lzf;IB)V")
-	public void method18157(PreferencesOption arg0, int arg1) {
+	public void method18157(Preference arg0, int arg1) {
 		arg0.method14071(arg1);
-		this.method18179();
+		this.clampPreferencesValues();
 	}
 
 	@ObfuscatedName("ali.w(Lamd;ZI)V")
 	public void method18177(PreferencesDisplayMode arg0, boolean arg1) {
 		arg0.method18544(arg1);
-		this.method18179();
+		this.clampPreferencesValues();
 	}
 
 	@ObfuscatedName("ali.l(I)V")
-	public void method18179() {
-		this.unknown.method18663();
-		this.unknown1.method18637();
-		this.unused.method18694();
-		this.unknown2.method18637();
-		this.bloom.method18626();
-		this.brightness.method18416();
-		this.buildArea.method18568();
-		this.buildAreaSize.method18687();
-		this.flickeringEffects.method18418();
-		this.fog.method18430();
-		this.groundBlending.method18653();
-		this.groundDecoration.method18490();
-		this.idleAnimations.method18643();
-		this.lightingDetail.method18390();
-		this.sceneryShadows.method18513();
-		this.unknown3.method18455();
-		this.unknown4.method18510();
-		this.particles.method18465();
-		this.removeRoofs.method18495();
-		this.removeRoofs2.method18495();
-		this.screenSize.method18579();
-		this.skyboxes.method18608();
-		this.characterShadows.method18446();
-		this.textures.method18423();
-		this.displayMode.method18549();
-		this.displayMode2.method18549();
-		this.waterDetail.method18523();
-		this.maxScreenSize.method18536();
-		this.maxScreenSize2.method18536();
-		this.unused4.method18401();
-		this.unused1.method18600();
-		this.unused2.method18532();
-		this.unused3.method18497();
-		this.unused5.method18595();
-		this.unused6.method18592();
-		this.unused7.method18675();
-		this.unused8.method18558();
-		this.unused9.method18631();
-		this.unused10.method18480();
-		this.unused11.method18393();
-		this.unused12.method18622();
-		this.customCursors.method18770();
-		this.preset.method18720();
-		this.cpuUsage.method18729();
-		this.unknown5.method18713();
-		this.unknown6.method18739();
-		this.unknown7.method18749();
-		this.unused13.method18706();
-		this.unknown8.method18700();
-		this.themeMusicVolume.method18762();
-		this.themeMusicVolume1.method18762();
-		this.themeMusicVolume2.method18762();
-		this.themeMusicVolume3.method18762();
-		this.themeMusicVolume4.method18762();
-		this.unknown9.method18757();
+	public void clampPreferencesValues() {
+		this.animDetail.clampValue();
+		this.antiAliasing.clampValue();
+		this.unused.clampValue();
+		this.antiAliasing2.clampValue();
+		this.bloom.clampValue();
+		this.brightness.clampValue();
+		this.buildArea.clampValue();
+		this.drawDistance.clampValue();
+		this.flickeringEffects.clampValue();
+		this.fog.clampValue();
+		this.groundBlending.clampValue();
+		this.groundDecoration.clampValue();
+		this.idleAnimations.clampValue();
+		this.lightingDetail.clampValue();
+		this.sceneryShadows.clampValue();
+		this.shadowQuality.clampValue();
+		this.orthographic.clampValue();
+		this.particles.clampValue();
+		this.removeRoofs.clampValue();
+		this.removeRoofs2.clampValue();
+		this.screenSize.clampValue();
+		this.skyboxes.clampValue();
+		this.characterShadows.clampValue();
+		this.textures.clampValue();
+		this.displayMode.clampValue();
+		this.displayMode2.clampValue();
+		this.waterDetail.clampValue();
+		this.maxScreenSize.clampValue();
+		this.maxScreenSize2.clampValue();
+		this.unused4.clampValue();
+		this.unused1.clampValue();
+		this.unused2.clampValue();
+		this.unused3.clampValue();
+		this.unused5.clampValue();
+		this.unused6.clampValue();
+		this.unused7.clampValue();
+		this.unused8.clampValue();
+		this.unused9.clampValue();
+		this.unused10.clampValue();
+		this.unused11.clampValue();
+		this.unused12.clampValue();
+		this.customCursors.clampValue();
+		this.preset.clampValue();
+		this.cpuUsage.clampValue();
+		this.loadingScreen.clampValue();
+		this.unknown6.clampValue();
+		this.unknown7.clampValue();
+		this.unused13.clampValue();
+		this.unknown8.clampValue();
+		this.soundVolume.clampValue();
+		this.backgroundSoundVolume.clampValue();
+		this.speechVolume.clampValue();
+		this.unknownVolume1.clampValue();
+		this.unknownVolume2.clampValue();
+		this.stereo.clampValue();
 	}
 
 	@ObfuscatedName("ali.u(B)Lzd;")

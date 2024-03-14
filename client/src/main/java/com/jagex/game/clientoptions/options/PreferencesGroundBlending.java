@@ -5,49 +5,49 @@ import com.jagex.game.clientoptions.ClientOptions;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("any")
-public class PreferencesGroundBlending extends PreferencesOption {
+public class PreferencesGroundBlending extends Preference {
 
-	public PreferencesGroundBlending(ClientOptions arg0) {
-		super(arg0);
+	public PreferencesGroundBlending(ClientOptions options) {
+		super(options);
 	}
 
-	public PreferencesGroundBlending(int arg0, ClientOptions arg1) {
-		super(arg0, arg1);
+	public PreferencesGroundBlending(int value, ClientOptions options) {
+		super(value, options);
 	}
 
 	@ObfuscatedName("any.o(I)V")
-	public void method18653() {
-		if (this.field8417.modeGame() != ModeGame.RUNESCAPE) {
-			this.field8416 = 1;
+	public void clampValue() {
+		if (this.options.modeGame() != ModeGame.RUNESCAPE) {
+			this.currentValue = 1;
 		}
-		if (this.field8416 != 0 && this.field8416 != 1) {
-			this.field8416 = this.method14069();
+		if (this.currentValue != 0 && this.currentValue != 1) {
+			this.currentValue = this.defaultValue();
 		}
 	}
 
 	@ObfuscatedName("any.e(B)I")
-	public int method14069() {
+	public int defaultValue() {
 		return 1;
 	}
 
 	@ObfuscatedName("any.s(I)Z")
 	public boolean method18650() {
-		return this.field8417.modeGame() == ModeGame.RUNESCAPE;
+		return this.options.modeGame() == ModeGame.RUNESCAPE;
 	}
 
 	@ObfuscatedName("any.n(II)I")
-	public int method14070(int arg0) {
-		if (this.field8417.modeGame() != ModeGame.RUNESCAPE) {
+	public int canSetValue(int value) {
+		if (this.options.modeGame() != ModeGame.RUNESCAPE) {
 			return 3;
 		}
-		if (arg0 == 0) {
-			if (this.field8417.fog.method18434() == 1) {
+		if (value == 0) {
+			if (this.options.fog.getValue() == 1) {
 				return 2;
 			}
-			if (this.field8417.textures.method18426() == 1) {
+			if (this.options.textures.getValue() == 1) {
 				return 2;
 			}
-			if (this.field8417.waterDetail.method18522() > 0) {
+			if (this.options.waterDetail.getValue() > 0) {
 				return 2;
 			}
 		}
@@ -55,12 +55,12 @@ public class PreferencesGroundBlending extends PreferencesOption {
 	}
 
 	@ObfuscatedName("any.k(II)V")
-	public void method14072(int arg0) {
-		this.field8416 = arg0;
+	public void setValue(int value) {
+		this.currentValue = value;
 	}
 
 	@ObfuscatedName("any.y(I)I")
-	public int method18651() {
-		return this.field8416;
+	public int getValue() {
+		return this.currentValue;
 	}
 }

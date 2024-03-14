@@ -4,55 +4,55 @@ import com.jagex.game.clientoptions.ClientOptions;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("anz")
-public class PreferencesUnknown7 extends PreferencesOption {
+public class PreferencesUnknown7 extends Preference {
 
-	public PreferencesUnknown7(ClientOptions arg0) {
-		super(arg0);
+	public PreferencesUnknown7(ClientOptions options) {
+		super(options);
 	}
 
-	public PreferencesUnknown7(int arg0, ClientOptions arg1) {
-		super(arg0, arg1);
+	public PreferencesUnknown7(int value, ClientOptions options) {
+		super(value, options);
 	}
 
 	@ObfuscatedName("anz.o(I)V")
-	public void method18749() {
-		int var1 = this.field8417.displayMode.method18545();
+	public void clampValue() {
+		int var1 = this.options.displayMode.getValue();
 		if (var1 != 3 && var1 != 5) {
-			this.field8416 = 0;
+			this.currentValue = 0;
 		}
-		if (this.field8417.hardwareInfo().cpucount() < 2) {
-			this.field8416 = 0;
+		if (this.options.hardwareInfo().cpucount() < 2) {
+			this.currentValue = 0;
 		}
-		if (this.field8416 != 0 && this.field8416 != 1) {
-			this.field8416 = this.method14069();
+		if (this.currentValue != 0 && this.currentValue != 1) {
+			this.currentValue = this.defaultValue();
 		}
 	}
 
 	@ObfuscatedName("anz.e(B)I")
-	public int method14069() {
-		int var1 = this.field8417.displayMode.method18545();
+	public int defaultValue() {
+		int var1 = this.options.displayMode.getValue();
 		return var1 == 3 || var1 == 5 ? 0 : 0;
 	}
 
 	@ObfuscatedName("anz.n(II)I")
-	public int method14070(int arg0) {
-		if (arg0 == 0) {
+	public int canSetValue(int value) {
+		if (value == 0) {
 			return 1;
-		} else if (this.field8417.hardwareInfo().cpucount() < 2) {
+		} else if (this.options.hardwareInfo().cpucount() < 2) {
 			return 3;
 		} else {
-			int var2 = this.field8417.displayMode.method18545();
+			int var2 = this.options.displayMode.getValue();
 			return var2 == 3 || var2 == 5 ? 1 : 3;
 		}
 	}
 
 	@ObfuscatedName("anz.k(II)V")
-	public void method14072(int arg0) {
-		this.field8416 = arg0;
+	public void setValue(int value) {
+		this.currentValue = value;
 	}
 
 	@ObfuscatedName("anz.s(S)I")
-	public int method18750() {
-		return this.field8416;
+	public int getValue() {
+		return this.currentValue;
 	}
 }

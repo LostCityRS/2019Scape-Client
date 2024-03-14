@@ -439,7 +439,7 @@ public class ClientMapLoader extends MapLoader {
 							} while (var19 >= arg5);
 						} while (var18 + var21 < 0);
 					} while (var19 + var22 < 0);
-				} while (LocShape.field7566.field7562 == var15.field7541 && Client.field688.groundDecoration.method18489() == 0 && var20.field7470 == 0 && var20.blockwalk != 1 && !var20.forcedecor);
+				} while (LocShape.field7566.field7562 == var15.field7541 && Client.preferences.groundDecoration.getValue() == 0 && var20.field7470 == 0 && var20.blockwalk != 1 && !var20.forcedecor);
 				if (!var20.method9489(arg7)) {
 					arg6.field7958 = var10;
 					var8++;
@@ -591,7 +591,7 @@ public class ClientMapLoader extends MapLoader {
 			this.field10756 = arg2;
 		}
 		LocType var12 = (LocType) this.field10765.list(arg5);
-		if (Client.field688.textures.method18426() == 0 && var12.field7516) {
+		if (Client.preferences.textures.getValue() == 0 && var12.field7516) {
 			return;
 		}
 		int var13;
@@ -634,12 +634,12 @@ public class ClientMapLoader extends MapLoader {
 		if (var12.method9480()) {
 			PositionedSound.method9739(arg2, arg3, arg4, arg6, var12, null, null);
 		}
-		boolean var24 = arg8 == -1 && (!var12.method9504() || var12.field7479 && Client.field688.unknown.method18665() == 0) && var12.field7505 == null && !var12.field7520 && !var12.field7524;
+		boolean var24 = arg8 == -1 && (!var12.method9504() || var12.field7479 && Client.preferences.animDetail.getValue() == 0) && var12.field7505 == null && !var12.field7520 && !var12.field7524;
 		if (field10755 && (LocShape.method8381(arg7) && var12.occlude != 1 || !(!LocShape.method615(arg7) || var12.occlude != 0))) {
 			return;
 		}
 		if (LocShape.field7566.field7562 == arg7) {
-			if (Client.field688.groundDecoration.method18489() != 0 || var12.field7470 != 0 || var12.blockwalk == 1 || var12.forcedecor) {
+			if (Client.preferences.groundDecoration.getValue() != 0 || var12.field7470 != 0 || var12.blockwalk == 1 || var12.forcedecor) {
 				GroundDecorLayerEntity var26;
 				if (var24) {
 					StaticGroundDecorEntity var25 = new StaticGroundDecorEntity(this.field4577, arg0, this.field10765, var12, arg2, arg1, var21, var20, var22, this.field4549, arg6, var23, arg10);

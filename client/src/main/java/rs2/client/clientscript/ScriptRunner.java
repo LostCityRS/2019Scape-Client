@@ -13299,7 +13299,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("wy.alj(Lyf;I)V")
 	public static final void method9894(ClientScriptState arg0) {
 		if (Fullscreen.allowed && GameShell.fsframe != null) {
-			Client.setWindowMode(Client.field688.maxScreenSize.method18539(), -1, -1, false);
+			Client.setWindowMode(Client.preferences.maxScreenSize.getValue(), -1, -1, false);
 		}
 	}
 
@@ -13359,15 +13359,15 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("xa.alz(Lyf;B)V")
 	public static final void method10146(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.maxScreenSize.method18539();
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.maxScreenSize.getValue();
 	}
 
 	@ObfuscatedName("uw.alv(Lyf;I)V")
 	public static final void setdefaultwindowmode(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		if (var1 >= 1 && var1 <= 2) {
-			Client.field688.method18157(Client.field688.maxScreenSize, var1);
-			Client.field688.method18157(Client.field688.maxScreenSize2, var1);
+			Client.preferences.method18157(Client.preferences.maxScreenSize, var1);
+			Client.preferences.method18157(Client.preferences.maxScreenSize2, var1);
 			Preferences.method16391();
 		}
 	}
@@ -13419,7 +13419,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("eg.alt(Lyf;I)V")
 	public static final void method2838(ClientScriptState arg0) {
 		if (Fullscreen.allowed && GameShell.fsframe != null) {
-			Client.setWindowMode(Client.field688.maxScreenSize.method18539(), -1, -1, false);
+			Client.setWindowMode(Client.preferences.maxScreenSize.getValue(), -1, -1, false);
 		}
 		if (GameShell.getEnvironment() == GameShell3$Environment.APPLICATION) {
 			Client.method14147();
@@ -13444,7 +13444,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("ud.alh(Lyf;I)V")
 	public static final void openurl_nologin(ClientScriptState arg0) {
 		if (Fullscreen.allowed && GameShell.fsframe != null) {
-			Client.setWindowMode(Client.field688.maxScreenSize.method18539(), -1, -1, false);
+			Client.setWindowMode(Client.preferences.maxScreenSize.getValue(), -1, -1, false);
 		}
 		String var1 = (String) arg0.field8218[--arg0.field8211];
 		boolean var2 = arg0.field8216[--arg0.field8226] == 1;
@@ -14706,7 +14706,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("pu.arq(Lyf;I)V")
 	public static final void method7075(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		Client.field688.method18157(Client.field688.brightness, var1);
+		Client.preferences.method18157(Client.preferences.brightness, var1);
 		Client.world.method7753();
 		Preferences.method16391();
 		Client.field10800 = false;
@@ -14715,10 +14715,10 @@ public final class ScriptRunner {
 	@ObfuscatedName("akw.ars(Lyf;I)V")
 	public static final void detail_removeroofs_option(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		Client.field688.method18157(Client.field688.removeRoofs, var1);
-		Client.field688.method18157(Client.field688.removeRoofs2, var1);
-		Client.field688.removeRoofs.method18495();
-		Client.field688.removeRoofs2.method18495();
+		Client.preferences.method18157(Client.preferences.removeRoofs, var1);
+		Client.preferences.method18157(Client.preferences.removeRoofs2, var1);
+		Client.preferences.removeRoofs.clampValue();
+		Client.preferences.removeRoofs2.clampValue();
 		Client.method3128();
 		Preferences.method16391();
 		Client.field10800 = false;
@@ -14726,7 +14726,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("fv.arm(Lyf;I)V")
 	public static final void method3086(ClientScriptState arg0) {
-		Client.field688.method18157(Client.field688.groundDecoration, arg0.field8216[--arg0.field8226] == 1 ? 1 : 0);
+		Client.preferences.method18157(Client.preferences.groundDecoration, arg0.field8216[--arg0.field8226] == 1 ? 1 : 0);
 		Client.world.method7753();
 		Preferences.method16391();
 		Client.field10800 = false;
@@ -14734,28 +14734,28 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ec.ark(Lyf;B)V")
 	public static final void detail_idleanims_many(ClientScriptState arg0) {
-		Client.field688.method18157(Client.field688.idleAnimations, arg0.field8216[--arg0.field8226]);
+		Client.preferences.method18157(Client.preferences.idleAnimations, arg0.field8216[--arg0.field8226]);
 		Preferences.method16391();
 		Client.field10800 = false;
 	}
 
 	@ObfuscatedName("any.arn(Lyf;I)V")
 	public static final void detail_flickering_on(ClientScriptState arg0) {
-		Client.field688.method18157(Client.field688.flickeringEffects, arg0.field8216[--arg0.field8226] == 1 ? 1 : 0);
+		Client.preferences.method18157(Client.preferences.flickeringEffects, arg0.field8216[--arg0.field8226] == 1 ? 1 : 0);
 		Preferences.method16391();
 		Client.field10800 = false;
 	}
 
 	@ObfuscatedName("fz.ara(Lyf;I)V")
 	public static final void method3043(ClientScriptState arg0) {
-		Client.field688.method18157(Client.field688.characterShadows, arg0.field8216[--arg0.field8226] == 1 ? 1 : 0);
+		Client.preferences.method18157(Client.preferences.characterShadows, arg0.field8216[--arg0.field8226] == 1 ? 1 : 0);
 		Preferences.method16391();
 		Client.field10800 = false;
 	}
 
 	@ObfuscatedName("aae.ard(Lyf;I)V")
 	public static final void method14481(ClientScriptState arg0) {
-		Client.field688.method18157(Client.field688.sceneryShadows, arg0.field8216[--arg0.field8226]);
+		Client.preferences.method18157(Client.preferences.sceneryShadows, arg0.field8216[--arg0.field8226]);
 		Client.world.method7753();
 		Preferences.method16391();
 		Client.field10800 = false;
@@ -14763,7 +14763,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ju.arr(Lyf;S)V")
 	public static final void method4661(ClientScriptState arg0) {
-		Client.field688.method18157(Client.field688.unknown3, arg0.field8216[--arg0.field8226]);
+		Client.preferences.method18157(Client.preferences.shadowQuality, arg0.field8216[--arg0.field8226]);
 		Client.world.method7753();
 		Preferences.method16391();
 		Client.field10800 = false;
@@ -14771,7 +14771,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("no.asa(Lyf;I)V")
 	public static final void detail_lightdetail_high(ClientScriptState arg0) {
-		Client.field688.method18157(Client.field688.lightingDetail, arg0.field8216[--arg0.field8226] == 1 ? 1 : 0);
+		Client.preferences.method18157(Client.preferences.lightingDetail, arg0.field8216[--arg0.field8226] == 1 ? 1 : 0);
 		Client.method9516();
 		Client.world.method7816().method10019();
 		Preferences.method16391();
@@ -14780,7 +14780,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("yu.asg(Lyf;B)V")
 	public static final void detail_waterdetail_high(ClientScriptState arg0) {
-		Client.field688.method18157(Client.field688.waterDetail, arg0.field8216[--arg0.field8226] == 1 ? 2 : 0);
+		Client.preferences.method18157(Client.preferences.waterDetail, arg0.field8216[--arg0.field8226] == 1 ? 2 : 0);
 		Client.world.method7753();
 		Preferences.method16391();
 		Client.field10800 = false;
@@ -14788,7 +14788,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ck.aso(Lyf;B)V")
 	public static final void method1596(ClientScriptState arg0) {
-		Client.field688.method18157(Client.field688.fog, arg0.field8216[--arg0.field8226] == 1 ? 1 : 0);
+		Client.preferences.method18157(Client.preferences.fog, arg0.field8216[--arg0.field8226] == 1 ? 1 : 0);
 		Client.world.method7753();
 		Preferences.method16391();
 		Client.field10800 = false;
@@ -14796,21 +14796,21 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("xe.ask(Lyf;B)V")
 	public static final void detail_antialiasing(ClientScriptState arg0) {
-		Client.field688.method18157(Client.field688.unknown2, arg0.field8216[--arg0.field8226]);
-		Client.method486(Client.field688.displayMode2.method18545(), false);
+		Client.preferences.method18157(Client.preferences.antiAliasing2, arg0.field8216[--arg0.field8226]);
+		Client.method486(Client.preferences.displayMode2.getValue(), false);
 		Preferences.method16391();
 	}
 
 	@ObfuscatedName("oo.asd(Lyf;I)V")
 	public static final void detail_stereo(ClientScriptState arg0) {
-		Client.field688.method18157(Client.field688.unknown9, arg0.field8216[--arg0.field8226] == 1 ? 1 : 0);
+		Client.preferences.method18157(Client.preferences.stereo, arg0.field8216[--arg0.field8226] == 1 ? 1 : 0);
 		Preferences.method16391();
 		Client.field10800 = false;
 	}
 
 	@ObfuscatedName("io.asy(Lyf;I)V")
 	public static final void detail_soundvol(ClientScriptState arg0) {
-		Client.field688.method18157(Client.field688.themeMusicVolume, arg0.field8216[--arg0.field8226]);
+		Client.preferences.method18157(Client.preferences.soundVolume, arg0.field8216[--arg0.field8226]);
 		Preferences.method16391();
 		Client.field10800 = false;
 	}
@@ -14818,9 +14818,9 @@ public final class ScriptRunner {
 	@ObfuscatedName("pd.asr(Lyf;B)V")
 	public static final void method6825(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		int var2 = Client.field688.themeMusicVolume3.method18763();
+		int var2 = Client.preferences.unknownVolume1.getValue();
 		if (var1 != var2) {
-			Client.field688.method18157(Client.field688.themeMusicVolume3, var1);
+			Client.preferences.method18157(Client.preferences.unknownVolume1, var1);
 			Preferences.method16391();
 			Client.field10800 = false;
 		}
@@ -14828,7 +14828,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("e.asc(Lyf;I)V")
 	public static final void detail_bgsoundvol(ClientScriptState arg0) {
-		Client.field688.method18157(Client.field688.themeMusicVolume1, arg0.field8216[--arg0.field8226]);
+		Client.preferences.method18157(Client.preferences.backgroundSoundVolume, arg0.field8216[--arg0.field8226]);
 		Preferences.method16391();
 		Client.field10800 = false;
 	}
@@ -14837,9 +14837,9 @@ public final class ScriptRunner {
 	public static final void detail_removeroofs_option_override(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		if (var1 == -1) {
-			Client.field688.method18157(Client.field688.removeRoofs2, Client.field688.removeRoofs.method18496());
+			Client.preferences.method18157(Client.preferences.removeRoofs2, Client.preferences.removeRoofs.getValue());
 		} else {
-			Client.field688.method18157(Client.field688.removeRoofs2, var1);
+			Client.preferences.method18157(Client.preferences.removeRoofs2, var1);
 		}
 		Client.method3128();
 	}
@@ -14847,20 +14847,20 @@ public final class ScriptRunner {
 	@ObfuscatedName("vj.asf(Lyf;B)V")
 	public static final void detail_particles(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		Client.field688.method18157(Client.field688.particles, var1);
+		Client.preferences.method18157(Client.preferences.particles, var1);
 		Preferences.method16391();
 		Client.field10800 = false;
 	}
 
 	@ObfuscatedName("akw.asp(Lyf;I)V")
 	public static final void detail_antialiasing_default(ClientScriptState arg0) {
-		Client.field688.method18157(Client.field688.unknown1, arg0.field8216[--arg0.field8226]);
+		Client.preferences.method18157(Client.preferences.antiAliasing, arg0.field8216[--arg0.field8226]);
 		Preferences.method16391();
 	}
 
 	@ObfuscatedName("sz.asb(Lyf;B)V")
 	public static final void detail_buildarea(ClientScriptState arg0) {
-		Client.field688.method18157(Client.field688.buildArea, arg0.field8216[--arg0.field8226]);
+		Client.preferences.method18157(Client.preferences.buildArea, arg0.field8216[--arg0.field8226]);
 		Preferences.method16391();
 		Client.field10800 = false;
 	}
@@ -14876,19 +14876,19 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("py.asz(Lyf;I)V")
 	public static final void method6965(ClientScriptState arg0) {
-		Client.field688.method18157(Client.field688.customCursors, arg0.field8216[--arg0.field8226] == 0 ? 0 : 1);
+		Client.preferences.method18157(Client.preferences.customCursors, arg0.field8216[--arg0.field8226] == 0 ? 0 : 1);
 		Preferences.method16391();
 	}
 
 	@ObfuscatedName("uk.asl(Lyf;I)V")
 	public static final void detail_idleanims(ClientScriptState arg0) {
-		Client.field688.method18157(Client.field688.idleAnimations, arg0.field8216[--arg0.field8226]);
+		Client.preferences.method18157(Client.preferences.idleAnimations, arg0.field8216[--arg0.field8226]);
 		Preferences.method16391();
 	}
 
 	@ObfuscatedName("ht.asu(Lyf;I)V")
 	public static final void detail_groundblending(ClientScriptState arg0) {
-		Client.field688.method18157(Client.field688.groundBlending, arg0.field8216[--arg0.field8226] == 0 ? 0 : 1);
+		Client.preferences.method18157(Client.preferences.groundBlending, arg0.field8216[--arg0.field8226] == 0 ? 0 : 1);
 		Preferences.method16391();
 		Client.world.method7753();
 	}
@@ -14907,9 +14907,9 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		boolean var2 = arg0.field8216[arg0.field8226 + 1] == 1;
-		Client.field688.method18157(Client.field688.displayMode, var1);
+		Client.preferences.method18157(Client.preferences.displayMode, var1);
 		if (!var2) {
-			Client.field688.method18157(Client.field688.preset, 0);
+			Client.preferences.method18157(Client.preferences.preset, 0);
 		}
 		Preferences.method16391();
 		Client.field10800 = false;
@@ -14917,13 +14917,13 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("aax.asv(Lyf;I)V")
 	public static final void detail_cpuusage(ClientScriptState arg0) {
-		Client.field688.method18157(Client.field688.cpuUsage, arg0.field8216[--arg0.field8226]);
+		Client.preferences.method18157(Client.preferences.cpuUsage, arg0.field8216[--arg0.field8226]);
 		Preferences.method16391();
 	}
 
 	@ObfuscatedName("ge.asm(Lyf;I)V")
 	public static final void method3565(ClientScriptState arg0) {
-		Client.field688.method18157(Client.field688.textures, arg0.field8216[--arg0.field8226] == 1 ? 1 : 0);
+		Client.preferences.method18157(Client.preferences.textures, arg0.field8216[--arg0.field8226] == 1 ? 1 : 0);
 		Preferences.method16391();
 		Client.method9516();
 		SpotShadowFactory.method3076();
@@ -14932,14 +14932,14 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("fl.asw(Lyf;I)V")
 	public static final void detail_maxscreensize(ClientScriptState arg0) {
-		Client.field688.method18157(Client.field688.screenSize, arg0.field8216[--arg0.field8226]);
+		Client.preferences.method18157(Client.preferences.screenSize, arg0.field8216[--arg0.field8226]);
 		Preferences.method16391();
 		Client.field10836 = true;
 	}
 
 	@ObfuscatedName("wu.ast(Lyf;B)V")
 	public static final void method9632(ClientScriptState arg0) {
-		Client.field688.method18157(Client.field688.themeMusicVolume2, arg0.field8216[--arg0.field8226]);
+		Client.preferences.method18157(Client.preferences.speechVolume, arg0.field8216[--arg0.field8226]);
 		Preferences.method16391();
 		Client.field10800 = false;
 	}
@@ -14947,9 +14947,9 @@ public final class ScriptRunner {
 	@ObfuscatedName("nv.ash(Lyf;I)V")
 	public static final void detail_loginvol(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		int var2 = Client.field688.themeMusicVolume4.method18763();
+		int var2 = Client.preferences.unknownVolume2.getValue();
 		if (var1 != var2) {
-			Client.field688.method18157(Client.field688.themeMusicVolume4, var1);
+			Client.preferences.method18157(Client.preferences.unknownVolume2, var1);
 			Preferences.method16391();
 			Client.field10800 = false;
 		}
@@ -14961,8 +14961,8 @@ public final class ScriptRunner {
 		if (var1 > 255 || var1 < 0) {
 			var1 = 0;
 		}
-		if (var1 != Client.field688.unknown5.method18714()) {
-			Client.field688.method18157(Client.field688.unknown5, var1);
+		if (var1 != Client.preferences.loadingScreen.getValue()) {
+			Client.preferences.method18157(Client.preferences.loadingScreen, var1);
 			Preferences.method16391();
 			Client.field10800 = false;
 		}
@@ -14971,8 +14971,8 @@ public final class ScriptRunner {
 	@ObfuscatedName("ajh.ass(Lyf;B)V")
 	public static final void method17427(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		if (var1 != Client.field688.skyboxes.method18607()) {
-			Client.field688.method18157(Client.field688.skyboxes, var1);
+		if (var1 != Client.preferences.skyboxes.getValue()) {
+			Client.preferences.method18157(Client.preferences.skyboxes, var1);
 			Preferences.method16391();
 			Client.field10800 = false;
 		}
@@ -14981,8 +14981,8 @@ public final class ScriptRunner {
 	@ObfuscatedName("wo.asx(Lyf;B)V")
 	public static final void method9618(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		if (var1 != Client.field688.unknown.method18665()) {
-			Client.field688.method18157(Client.field688.unknown, var1);
+		if (var1 != Client.preferences.animDetail.getValue()) {
+			Client.preferences.method18157(Client.preferences.animDetail, var1);
 			Preferences.method16391();
 			Client.field10800 = false;
 			Client.world.method7753();
@@ -15066,82 +15066,82 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ul.atz(Lyf;I)V")
 	public static final void detailget_brightness(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.brightness.method18408();
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.brightness.getValue();
 	}
 
 	@ObfuscatedName("ahb.atg(Lyf;I)V")
 	public static final void detailget_removeroofs_option(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.removeRoofs.method18496();
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.removeRoofs.getValue();
 	}
 
 	@ObfuscatedName("cb.atr(Lyf;I)V")
 	public static final void detailget_grounddecor_on(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.groundDecoration.method18489() == 1 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.groundDecoration.getValue() == 1 ? 1 : 0;
 	}
 
 	@ObfuscatedName("abv.atk(Lyf;I)V")
 	public static final void detailget_idleanims_many(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.idleAnimations.method18645();
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.idleAnimations.getValue();
 	}
 
 	@ObfuscatedName("gk.ati(Lyf;I)V")
 	public static final void detailget_flickering_on(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.flickeringEffects.method18419() == 1 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.flickeringEffects.getValue() == 1 ? 1 : 0;
 	}
 
 	@ObfuscatedName("yu.atm(Lyf;I)V")
 	public static final void method13848(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.characterShadows.method18453() == 1 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.characterShadows.getValue() == 1 ? 1 : 0;
 	}
 
 	@ObfuscatedName("ji.ate(Lyf;B)V")
 	public static final void method4980(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.sceneryShadows.method18515();
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.sceneryShadows.getValue();
 	}
 
 	@ObfuscatedName("ew.atj(Lyf;I)V")
 	public static final void detailget_shadowquality(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.unknown3.method18458();
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.shadowQuality.getValue();
 	}
 
 	@ObfuscatedName("ub.atd(Lyf;I)V")
 	public static final void method9084(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.lightingDetail.method18389() == 1 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.lightingDetail.getValue() == 1 ? 1 : 0;
 	}
 
 	@ObfuscatedName("yo.atf(Lyf;I)V")
 	public static final void method10374(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.waterDetail.method18522() == 2 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.waterDetail.getValue() == 2 ? 1 : 0;
 	}
 
 	@ObfuscatedName("s.atb(Lyf;I)V")
 	public static final void method483(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.fog.method18434() == 1 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.fog.getValue() == 1 ? 1 : 0;
 	}
 
 	@ObfuscatedName("xc.auq(Lyf;I)V")
 	public static final void detailget_antialiasing(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.unknown2.method18639();
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.antiAliasing2.getValue();
 	}
 
 	@ObfuscatedName("kt.auf(Lyf;I)V")
 	public static final void detailget_stereo(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.unknown9.method18758() == 1 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.stereo.getValue() == 1 ? 1 : 0;
 	}
 
 	@ObfuscatedName("el.auj(Lyf;B)V")
 	public static final void detailget_soundvol(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.themeMusicVolume.method18763();
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.soundVolume.getValue();
 	}
 
 	@ObfuscatedName("ye.aut(Lyf;I)V")
 	public static final void detailget_musicvol(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.themeMusicVolume3.method18763();
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.unknownVolume1.getValue();
 	}
 
 	@ObfuscatedName("sa.aue(Lyf;I)V")
 	public static final void detailget_bgsoundvol(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.themeMusicVolume1.method18763();
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.backgroundSoundVolume.getValue();
 	}
 
 	@ObfuscatedName("jg.aur(Lyf;B)V")
@@ -15151,72 +15151,72 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("wn.auu(Lyf;I)V")
 	public static final void detailget_antialiasing_default(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.unknown1.method18639();
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.antiAliasing.getValue();
 	}
 
 	@ObfuscatedName("ane.auv(Lyf;S)V")
 	public static final void detailget_buildarea(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.buildArea.method18570();
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.buildArea.getValue();
 	}
 
 	@ObfuscatedName("hh.aus(Lyf;B)V")
 	public static final void detailget_bloom(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.bloom.method18625() == 1 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.bloom.getValue() == 1 ? 1 : 0;
 	}
 
 	@ObfuscatedName("afg.auc(Lyf;I)V")
 	public static final void detailget_customcursors(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.customCursors.method18771() == 1 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.customCursors.getValue() == 1 ? 1 : 0;
 	}
 
 	@ObfuscatedName("db.aud(Lyf;I)V")
 	public static final void detailget_idleanims(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.idleAnimations.method18645();
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.idleAnimations.getValue();
 	}
 
 	@ObfuscatedName("bf.aup(Lyf;I)V")
 	public static final void method1019(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.groundBlending.method18651() == 1 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.groundBlending.getValue() == 1 ? 1 : 0;
 	}
 
 	@ObfuscatedName("du.aum(Lyf;I)V")
 	public static final void detailget_toolkit(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.displayMode2.method18545();
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.displayMode2.getValue();
 	}
 
 	@ObfuscatedName("gj.auk(Lyf;I)V")
 	public static final void detailget_toolkit_default(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.displayMode.method18545();
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.displayMode.getValue();
 	}
 
 	@ObfuscatedName("nt.aux(Lyf;B)V")
 	public static final void detailget_cpuusage(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.cpuUsage.method18735();
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.cpuUsage.getValue();
 	}
 
 	@ObfuscatedName("db.auw(Lyf;I)V")
 	public static final void detailget_texturing(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.textures.method18426() == 1 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.textures.getValue() == 1 ? 1 : 0;
 	}
 
 	@ObfuscatedName("kf.aul(Lyf;B)V")
 	public static final void detailget_performance_metric(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.method15172(Client.field688.displayMode2.method18545(), 200);
+		arg0.field8216[++arg0.field8226 - 1] = Client.method15172(Client.preferences.displayMode2.getValue(), 200);
 	}
 
 	@ObfuscatedName("fd.aui(Lyf;I)V")
 	public static final void detailget_maxscreensize(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.screenSize.method18581();
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.screenSize.getValue();
 	}
 
 	@ObfuscatedName("wd.auz(Lyf;I)V")
 	public static final void detailget_speechvol(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.themeMusicVolume2.method18763();
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.speechVolume.getValue();
 	}
 
 	@ObfuscatedName("ach.auh(Lyf;B)V")
 	public static final void method14986(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.themeMusicVolume4.method18763();
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.unknownVolume2.getValue();
 	}
 
 	@ObfuscatedName("j.aua(Lyf;B)V")
@@ -15226,17 +15226,17 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("dy.aub(Lyf;B)V")
 	public static final void detailget_loadingscreentype(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.unknown5.method18714();
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.loadingScreen.getValue();
 	}
 
 	@ObfuscatedName("jd.aun(Lyf;I)V")
 	public static final void detailget_orthographic(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.unknown4.method18504();
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.orthographic.getValue();
 	}
 
 	@ObfuscatedName("ec.auy(Lyf;I)V")
 	public static final void detailget_canchoosesafemode(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field10581.cpuInfoRam < 512 || Client.field10779 || Client.field10796 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.hardwarePlatform.cpuInfoRam < 512 || Client.field10779 || Client.field10796 ? 1 : 0;
 	}
 
 	@ObfuscatedName("wp.aug(Lyf;I)V")
@@ -15246,12 +15246,12 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("aks.auo(Lyf;B)V")
 	public static final void detailget_drawdistance(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.buildAreaSize.method18688();
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.drawDistance.getValue();
 	}
 
 	@ObfuscatedName("aoq.avs(Lyf;I)V")
 	public static final void detailget_skydetail(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.skyboxes.method18607();
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.skyboxes.getValue();
 	}
 
 	@ObfuscatedName("iu.avm(Lyf;I)V")
@@ -15341,7 +15341,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ty.avp(Lyf;I)V")
 	public static final void detailget_animdetail(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.unknown.method18665();
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.animDetail.getValue();
 	}
 
 	@ObfuscatedName("abx.avq(Lyf;B)V")
@@ -15980,7 +15980,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("adv.ayo(Lyf;I)V")
 	public static final void method15250(ClientScriptState arg0) {
 		int var1 = Preferences.method4288();
-		arg0.field8216[++arg0.field8226 - 1] = Preferences.field11775 = Client.field688.displayMode2.method18545();
+		arg0.field8216[++arg0.field8226 - 1] = Preferences.field11775 = Client.preferences.displayMode2.getValue();
 		arg0.field8216[++arg0.field8226 - 1] = var1;
 		SpotShadowFactory.method3076();
 		Client.world.method7753();
@@ -16040,7 +16040,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("sc.ayl(Lyf;I)V")
 	public static final void method8371(ClientScriptState arg0) {
-		Client.field688.method18157(Client.field688.preset, 0);
+		Client.preferences.method18157(Client.preferences.preset, 0);
 		Preferences.method16391();
 		Client.field10800 = false;
 	}
@@ -16056,7 +16056,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("oi.ayb(Lyf;I)V")
 	public static final void autosetup_getlevel(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.preset.method18721();
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.preset.getValue();
 	}
 
 	@ObfuscatedName("aih.ayi(Lyf;I)V")
@@ -16105,87 +16105,87 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ij.azx(Lyf;I)V")
 	public static final void method4335(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.groundDecoration.method18488() ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.groundDecoration.method18488() ? 1 : 0;
 	}
 
 	@ObfuscatedName("rk.azd(Lyf;B)V")
 	public static final void detailcanmod_spotshadows(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.characterShadows.method18445() ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.characterShadows.method18445() ? 1 : 0;
 	}
 
 	@ObfuscatedName("nd.azg(Lyf;I)V")
 	public static final void detailcanmod_hardshadows(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.sceneryShadows.method18514() ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.sceneryShadows.method18514() ? 1 : 0;
 	}
 
 	@ObfuscatedName("r.azu(Lyf;I)V")
 	public static final void detailcanmod_shadowquality(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.unknown3.method18456() ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.shadowQuality.method18456() ? 1 : 0;
 	}
 
 	@ObfuscatedName("jf.azj(Lyf;B)V")
 	public static final void method4650(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.waterDetail.method18521() ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.waterDetail.method18521() ? 1 : 0;
 	}
 
 	@ObfuscatedName("qf.azz(Lyf;B)V")
 	public static final void detailcanmod_antialiasing(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.unknown1.method18638() && Client.field8198.method2141() ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.antiAliasing.method18638() && Client.field8198.method2141() ? 1 : 0;
 	}
 
 	@ObfuscatedName("sl.azb(Lyf;I)V")
 	public static final void method8228(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.particles.method18466() ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.particles.method18466() ? 1 : 0;
 	}
 
 	@ObfuscatedName("f.azt(Lyf;B)V")
 	public static final void detailcanmod_buildarea(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.buildArea.method18569() ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.buildArea.method18569() ? 1 : 0;
 	}
 
 	@ObfuscatedName("ik.azw(Lyf;I)V")
 	public static final void detailcanmod_bloom(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.bloom.method18624() && Client.field8198.method2266() ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.bloom.method18624() && Client.field8198.method2266() ? 1 : 0;
 	}
 
 	@ObfuscatedName("ip.azs(Lyf;I)V")
 	public static final void detailcanmod_groundblending(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.groundBlending.method18650() ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.groundBlending.method18650() ? 1 : 0;
 	}
 
 	@ObfuscatedName("dh.azv(Lyf;B)V")
 	public static final void detailcanmod_texturing(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.textures.method18425() ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.textures.method18425() ? 1 : 0;
 	}
 
 	@ObfuscatedName("anw.azc(Lyf;I)V")
 	public static final void detailcanmod_maxscreensize(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.screenSize.method18578() ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.screenSize.method18578() ? 1 : 0;
 	}
 
 	@ObfuscatedName("gd.azy(Lyf;B)V")
 	public static final void detailcanmod_fog(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.fog.method18431() ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.fog.method18431() ? 1 : 0;
 	}
 
 	@ObfuscatedName("ie.azq(Lyf;I)V")
 	public static final void method4404(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.unknown4.method18503() ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.orthographic.method18503() ? 1 : 0;
 	}
 
 	@ObfuscatedName("vg.azh(Lyf;B)V")
 	public static final void detailcanmod_toolkit_default(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.displayMode.method18547() ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.displayMode.method18547() ? 1 : 0;
 	}
 
 	@ObfuscatedName("sz.azl(Lyf;I)V")
 	public static final void detailcanmod_skydetail(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.skyboxes.method18606() ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.skyboxes.method18606() ? 1 : 0;
 	}
 
 	@ObfuscatedName("dy.azi(Lyf;B)V")
 	public static final void method2102(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.unknown.method18666() ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.animDetail.method18666() ? 1 : 0;
 	}
 
 	@ObfuscatedName("bl.azm(Lyf;B)V")
@@ -16256,38 +16256,38 @@ public final class ScriptRunner {
 	@ObfuscatedName("jp.bag(Lyf;B)V")
 	public static final void method5099(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.groundDecoration.method14070(var1);
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.groundDecoration.canSetValue(var1);
 	}
 
 	@ObfuscatedName("jd.bau(Lyf;I)V")
 	public static final void detailcanset_spotshadows(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.characterShadows.method14070(var1);
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.characterShadows.canSetValue(var1);
 	}
 
 	@ObfuscatedName("pn.bam(Lyf;I)V")
 	public static final void method6826(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.sceneryShadows.method14070(var1);
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.sceneryShadows.canSetValue(var1);
 	}
 
 	@ObfuscatedName("ia.bah(Lyf;I)V")
 	public static final void method4539(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.unknown3.method14070(var1);
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.shadowQuality.canSetValue(var1);
 	}
 
 	@ObfuscatedName("vm.baw(Lyf;I)V")
 	public static final void detailcanset_waterdetail(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.waterDetail.method14070(var1);
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.waterDetail.canSetValue(var1);
 	}
 
 	@ObfuscatedName("rd.bay(Lyf;B)V")
 	public static final void detailcanset_antialiasing(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		if (Client.field8198.method2141()) {
-			arg0.field8216[++arg0.field8226 - 1] = Client.field688.unknown1.method14070(var1);
+			arg0.field8216[++arg0.field8226 - 1] = Client.preferences.antiAliasing.canSetValue(var1);
 		} else {
 			arg0.field8216[++arg0.field8226 - 1] = 3;
 		}
@@ -16296,20 +16296,20 @@ public final class ScriptRunner {
 	@ObfuscatedName("no.bas(Lyf;B)V")
 	public static final void method5980(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.particles.method14070(var1);
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.particles.canSetValue(var1);
 	}
 
 	@ObfuscatedName("nr.bac(Lyf;B)V")
 	public static final void method6066(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.buildArea.method14070(var1);
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.buildArea.canSetValue(var1);
 	}
 
 	@ObfuscatedName("xc.bar(Lyf;B)V")
 	public static final void detailcanset_bloom(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		if (Client.field8198.method2266()) {
-			arg0.field8216[++arg0.field8226 - 1] = Client.field688.bloom.method14070(var1);
+			arg0.field8216[++arg0.field8226 - 1] = Client.preferences.bloom.canSetValue(var1);
 		} else {
 			arg0.field8216[++arg0.field8226 - 1] = 3;
 		}
@@ -16318,49 +16318,49 @@ public final class ScriptRunner {
 	@ObfuscatedName("pc.bap(Lyf;B)V")
 	public static final void detailcanset_groundblending(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.groundBlending.method14070(var1);
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.groundBlending.canSetValue(var1);
 	}
 
 	@ObfuscatedName("ib.bae(Lyf;I)V")
 	public static final void detailcanset_texturing(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.textures.method14070(var1);
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.textures.canSetValue(var1);
 	}
 
 	@ObfuscatedName("d.bal(Lyf;B)V")
 	public static final void detailcanset_maxscreensize(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.screenSize.method14070(var1);
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.screenSize.canSetValue(var1);
 	}
 
 	@ObfuscatedName("kb.bak(Lyf;I)V")
 	public static final void detailcanset_fog(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.fog.method14070(var1);
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.fog.canSetValue(var1);
 	}
 
 	@ObfuscatedName("pn.baz(Lyf;I)V")
 	public static final void detailcanset_orthographic(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.unknown4.method14070(var1);
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.orthographic.canSetValue(var1);
 	}
 
 	@ObfuscatedName("ze.baq(Lyf;I)V")
 	public static final void detailcanset_toolkit_default(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.displayMode.method14070(var1);
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.displayMode.canSetValue(var1);
 	}
 
 	@ObfuscatedName("xo.bai(Lyf;B)V")
 	public static final void detailcanset_skydetail(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.skyboxes.method14070(var1);
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.skyboxes.canSetValue(var1);
 	}
 
 	@ObfuscatedName("so.baa(Lyf;I)V")
 	public static final void detailcanset_animdetail(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = Client.field688.unknown.method14070(var1);
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.animDetail.canSetValue(var1);
 	}
 
 	@ObfuscatedName("rq.bat(Lyf;I)V")
@@ -16860,7 +16860,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("adj.bdc(Lyf;I)V")
 	public static final void os_physicalmemorysize(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field10581.cpuInfoRam;
+		arg0.field8216[++arg0.field8226 - 1] = Client.hardwarePlatform.cpuInfoRam;
 	}
 
 	@ObfuscatedName("aow.bdn(Lyf;I)V")

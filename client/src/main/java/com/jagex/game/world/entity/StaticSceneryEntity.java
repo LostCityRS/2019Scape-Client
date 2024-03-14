@@ -68,7 +68,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 		this.field11142 = (byte) arg15;
 		this.field11144 = arg3.field7470 != 0 && !arg9;
 		this.field11139 = arg16;
-		this.field11141 = arg1.method2125() && arg3.field7453 && !this.field11143 && Client.field688.sceneryShadows.method18515() != 0;
+		this.field11141 = arg1.method2125() && arg3.field7453 && !this.field11143 && Client.preferences.sceneryShadows.getValue() != 0;
 		this.field12470 = arg17;
 		this.field11138 = arg7;
 		int var20 = 2048;

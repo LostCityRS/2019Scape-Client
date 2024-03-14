@@ -335,7 +335,7 @@ public class PlayerEntity extends PathingEntity {
 		var2.method6315(0.0F, (float) (-20 - this.field10408), 0.0F);
 		PickableEntity var8 = null;
 		this.field10458 = false;
-		if (Client.field688.characterShadows.method18453() == 1) {
+		if (Client.preferences.characterShadows.getValue() == 1) {
 			BASType var9 = this.method16508();
 			if (var9.field7346 && (this.field12061.field7892 == -1 || ((NPCType) Client.field7961.list(this.field12061.field7892)).field2710)) {
 				AnimationWrapper var10 = this.field10454.method14346() && this.field10454.method14355() ? this.field10454 : null;
@@ -348,7 +348,7 @@ public class PlayerEntity extends PathingEntity {
 				}
 				Object var14 = null;
 				Model var15;
-				if (var12 > -1 && Client.field688.textures.method18426() == 1) {
+				if (var12 > -1 && Client.preferences.textures.getValue() == 1) {
 					var15 = SpotShadowFactory.method3283(arg0, var5, this.field10405, this.field12466, this.field10407, this.field10459[0], var12, var13, var11 == null ? var10 : var11);
 				} else {
 					var15 = SpotShadowFactory.method5102(arg0, var5, this.field10405, this.field12466, this.field10407, 1, this.field10459[0], 0, 0, 160, 240, var11 == null ? var10 : var11);

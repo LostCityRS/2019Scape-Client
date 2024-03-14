@@ -5,58 +5,58 @@ import com.jagex.game.clientoptions.ClientOptions;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aml")
-public class PreferencesBuildArea extends PreferencesOption {
+public class PreferencesBuildArea extends Preference {
 
-	public PreferencesBuildArea(ClientOptions arg0) {
-		super(arg0);
+	public PreferencesBuildArea(ClientOptions options) {
+		super(options);
 	}
 
-	public PreferencesBuildArea(int arg0, ClientOptions arg1) {
-		super(arg0, arg1);
+	public PreferencesBuildArea(int value, ClientOptions options) {
+		super(value, options);
 	}
 
 	@ObfuscatedName("aml.o(B)V")
-	public void method18568() {
-		if (this.field8417.hardwareInfo().unused()) {
-			this.field8416 = BuildAreaSize.field2658.field2664;
+	public void clampValue() {
+		if (this.options.hardwareInfo().unused()) {
+			this.currentValue = BuildAreaSize.SIZE_256.id;
 			return;
 		}
-		int var1 = this.field8417.hardwareInfo().maxmemory();
+		int var1 = this.options.hardwareInfo().maxmemory();
 		if (var1 < 245) {
-			this.field8416 = BuildAreaSize.field2663.field2664;
+			this.currentValue = BuildAreaSize.SIZE_104.id;
 		}
-		if (BuildAreaSize.field2662.field2664 == this.field8416 && var1 < 500) {
-			this.field8416 = BuildAreaSize.field2660.field2664;
+		if (BuildAreaSize.SIZE_168.id == this.currentValue && var1 < 500) {
+			this.currentValue = BuildAreaSize.SIZE_136.id;
 		}
-		if (this.field8416 < BuildAreaSize.field2663.field2664 || this.field8416 > BuildAreaSize.field2661.field2664) {
-			this.field8416 = this.method14069();
+		if (this.currentValue < BuildAreaSize.SIZE_104.id || this.currentValue > BuildAreaSize.SIZE_72.id) {
+			this.currentValue = this.defaultValue();
 		}
 	}
 
 	@ObfuscatedName("aml.e(B)I")
-	public int method14069() {
-		return this.field8417.hardwareInfo().unused() ? BuildAreaSize.field2658.field2664 : BuildAreaSize.field2663.field2664;
+	public int defaultValue() {
+		return this.options.hardwareInfo().unused() ? BuildAreaSize.SIZE_256.id : BuildAreaSize.SIZE_104.id;
 	}
 
 	@ObfuscatedName("aml.s(I)Z")
 	public boolean method18569() {
-		if (this.field8417.hardwareInfo().unused()) {
+		if (this.options.hardwareInfo().unused()) {
 			return false;
 		} else {
-			int var1 = this.field8417.hardwareInfo().maxmemory();
+			int var1 = this.options.hardwareInfo().maxmemory();
 			return var1 >= 245;
 		}
 	}
 
 	@ObfuscatedName("aml.n(II)I")
-	public int method14070(int arg0) {
-		if (this.field8417.hardwareInfo().unused()) {
+	public int canSetValue(int value) {
+		if (this.options.hardwareInfo().unused()) {
 			return 3;
 		}
-		int var2 = this.field8417.hardwareInfo().maxmemory();
-		if (var2 < 245) {
+		int maxmemory = this.options.hardwareInfo().maxmemory();
+		if (maxmemory < 245) {
 			return 3;
-		} else if (BuildAreaSize.field2662.field2664 == arg0 && var2 < 500) {
+		} else if (BuildAreaSize.SIZE_168.id == value && maxmemory < 500) {
 			return 3;
 		} else {
 			return 1;
@@ -64,12 +64,12 @@ public class PreferencesBuildArea extends PreferencesOption {
 	}
 
 	@ObfuscatedName("aml.k(II)V")
-	public void method14072(int arg0) {
-		this.field8416 = arg0;
+	public void setValue(int value) {
+		this.currentValue = value;
 	}
 
 	@ObfuscatedName("aml.y(B)I")
-	public int method18570() {
-		return this.field8416;
+	public int getValue() {
+		return this.currentValue;
 	}
 }

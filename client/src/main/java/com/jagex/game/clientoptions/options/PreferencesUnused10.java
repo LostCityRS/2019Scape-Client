@@ -4,38 +4,38 @@ import com.jagex.game.clientoptions.ClientOptions;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("amk")
-public class PreferencesUnused10 extends PreferencesOption {
+public class PreferencesUnused10 extends Preference {
 
-	public PreferencesUnused10(ClientOptions arg0) {
-		super(arg0);
+	public PreferencesUnused10(ClientOptions options) {
+		super(options);
 	}
 
-	public PreferencesUnused10(int arg0, ClientOptions arg1) {
-		super(arg0, arg1);
+	public PreferencesUnused10(int value, ClientOptions options) {
+		super(value, options);
 	}
 
 	@ObfuscatedName("amk.o(I)V")
-	public void method18480() {
-		this.field8416 = Math.min(Math.max(this.field8416, 5), 300);
+	public void clampValue() {
+		this.currentValue = Math.min(Math.max(this.currentValue, 5), 300);
 	}
 
 	@ObfuscatedName("amk.e(B)I")
-	public int method14069() {
+	public int defaultValue() {
 		return 30;
 	}
 
 	@ObfuscatedName("amk.n(II)I")
-	public int method14070(int arg0) {
+	public int canSetValue(int value) {
 		return 3;
 	}
 
 	@ObfuscatedName("amk.k(II)V")
-	public void method14072(int arg0) {
-		this.field8416 = arg0;
+	public void setValue(int value) {
+		this.currentValue = value;
 	}
 
 	@ObfuscatedName("amk.s(I)I")
-	public int method18482() {
-		return this.field8416;
+	public int getValue() {
+		return this.currentValue;
 	}
 }

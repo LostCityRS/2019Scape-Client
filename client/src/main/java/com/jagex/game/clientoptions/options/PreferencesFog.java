@@ -4,31 +4,31 @@ import com.jagex.game.clientoptions.ClientOptions;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("amb")
-public class PreferencesFog extends PreferencesOption {
+public class PreferencesFog extends Preference {
 
-	public PreferencesFog(ClientOptions arg0) {
-		super(arg0);
+	public PreferencesFog(ClientOptions options) {
+		super(options);
 	}
 
-	public PreferencesFog(int arg0, ClientOptions arg1) {
-		super(arg0, arg1);
+	public PreferencesFog(int value, ClientOptions options) {
+		super(value, options);
 	}
 
 	@ObfuscatedName("amb.o(I)V")
-	public void method18430() {
-		if (this.field8416 != 0 && this.field8417.groundBlending.method18651() != 1) {
-			this.field8416 = 0;
+	public void clampValue() {
+		if (this.currentValue != 0 && this.options.groundBlending.getValue() != 1) {
+			this.currentValue = 0;
 		}
-		if (this.field8416 != 0 && this.field8417.unknown4.method18504() == 2) {
-			this.field8416 = 0;
+		if (this.currentValue != 0 && this.options.orthographic.getValue() == 2) {
+			this.currentValue = 0;
 		}
-		if (this.field8416 < 0 || this.field8416 > 1) {
-			this.field8416 = this.method14069();
+		if (this.currentValue < 0 || this.currentValue > 1) {
+			this.currentValue = this.defaultValue();
 		}
 	}
 
 	@ObfuscatedName("amb.e(B)I")
-	public int method14069() {
+	public int defaultValue() {
 		return 1;
 	}
 
@@ -38,10 +38,10 @@ public class PreferencesFog extends PreferencesOption {
 	}
 
 	@ObfuscatedName("amb.n(II)I")
-	public int method14070(int arg0) {
-		if (arg0 != 0 && this.field8417.unknown4.method18504() == 2) {
+	public int canSetValue(int value) {
+		if (value != 0 && this.options.orthographic.getValue() == 2) {
 			return 3;
-		} else if (arg0 == 0 || this.field8417.groundBlending.method18651() == 1) {
+		} else if (value == 0 || this.options.groundBlending.getValue() == 1) {
 			return 1;
 		} else {
 			return 2;
@@ -49,12 +49,12 @@ public class PreferencesFog extends PreferencesOption {
 	}
 
 	@ObfuscatedName("amb.k(II)V")
-	public void method14072(int arg0) {
-		this.field8416 = arg0;
+	public void setValue(int value) {
+		this.currentValue = value;
 	}
 
 	@ObfuscatedName("amb.y(I)I")
-	public int method18434() {
-		return this.field8416;
+	public int getValue() {
+		return this.currentValue;
 	}
 }

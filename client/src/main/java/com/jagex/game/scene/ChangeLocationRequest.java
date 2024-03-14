@@ -226,10 +226,10 @@ public final class ChangeLocationRequest extends Node {
 		}
 		Client.world.method7744().method16871(Client.field8198, arg0, arg1, arg2, arg3);
 		if (arg4 >= 0) {
-			int var11 = Client.field688.groundDecoration.method18489();
-			Client.field688.method18157(Client.field688.groundDecoration, 1);
+			int var11 = Client.preferences.groundDecoration.getValue();
+			Client.preferences.method18157(Client.preferences.groundDecoration, 1);
 			Client.world.method7744().method16867(Client.field8198, var10, arg0, arg2, arg3, arg4, arg5, arg6, arg8, arg9, arg7);
-			Client.field688.method18157(Client.field688.groundDecoration, var11);
+			Client.preferences.method18157(Client.preferences.groundDecoration, var11);
 		}
 		Minimap.method16444(Client.field4490.field11717);
 	}

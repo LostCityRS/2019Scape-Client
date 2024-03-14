@@ -4,40 +4,40 @@ import com.jagex.game.clientoptions.ClientOptions;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ann")
-public class PreferencesUnused12 extends PreferencesOption {
+public class PreferencesUnused12 extends Preference {
 
-	public PreferencesUnused12(ClientOptions arg0) {
-		super(arg0);
+	public PreferencesUnused12(ClientOptions options) {
+		super(options);
 	}
 
-	public PreferencesUnused12(int arg0, ClientOptions arg1) {
-		super(arg0, arg1);
+	public PreferencesUnused12(int value, ClientOptions options) {
+		super(value, options);
 	}
 
 	@ObfuscatedName("ann.o(B)V")
-	public void method18622() {
-		if (this.field8416 < 33 || this.field8416 > 400) {
-			this.field8416 = this.method14069();
+	public void clampValue() {
+		if (this.currentValue < 33 || this.currentValue > 400) {
+			this.currentValue = this.defaultValue();
 		}
 	}
 
 	@ObfuscatedName("ann.e(B)I")
-	public int method14069() {
+	public int defaultValue() {
 		return 100;
 	}
 
 	@ObfuscatedName("ann.n(II)I")
-	public int method14070(int arg0) {
+	public int canSetValue(int value) {
 		return 3;
 	}
 
 	@ObfuscatedName("ann.k(II)V")
-	public void method14072(int arg0) {
-		this.field8416 = arg0;
+	public void setValue(int value) {
+		this.currentValue = value;
 	}
 
 	@ObfuscatedName("ann.s(I)I")
-	public int method18621() {
-		return this.field8416;
+	public int getValue() {
+		return this.currentValue;
 	}
 }

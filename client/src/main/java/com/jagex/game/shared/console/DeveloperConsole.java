@@ -424,7 +424,7 @@ public class DeveloperConsole {
 			}
 			if (arg0.equals("renderer")) {
 				RendererInfo var3 = Client.field8198.method2272();
-				addline("Toolkit ID: " + Client.field688.displayMode2.method18545());
+				addline("Toolkit ID: " + Client.preferences.displayMode2.getValue());
 				addline("Vendor: " + var3.field1261);
 				addline("Name: " + var3.field1257);
 				addline("Version: " + var3.field1263);
@@ -514,9 +514,9 @@ public class DeveloperConsole {
 				}
 				if (arg0.equalsIgnoreCase("tk0")) {
 					Client.method486(0, false);
-					if (Client.field688.displayMode2.method18545() == 0) {
+					if (Client.preferences.displayMode2.getValue() == 0) {
 						addline("Success");
-						Client.field688.method18157(Client.field688.displayMode, 0);
+						Client.preferences.method18157(Client.preferences.displayMode, 0);
 						Preferences.method16391();
 						Client.field10800 = false;
 					} else {
@@ -526,9 +526,9 @@ public class DeveloperConsole {
 				}
 				if (arg0.equalsIgnoreCase("tk1")) {
 					Client.method486(1, false);
-					if (Client.field688.displayMode2.method18545() == 1) {
+					if (Client.preferences.displayMode2.getValue() == 1) {
 						addline("Success");
-						Client.field688.method18157(Client.field688.displayMode, 1);
+						Client.preferences.method18157(Client.preferences.displayMode, 1);
 						Preferences.method16391();
 						Client.field10800 = false;
 					} else {
@@ -538,9 +538,9 @@ public class DeveloperConsole {
 				}
 				if (arg0.equalsIgnoreCase("tk3")) {
 					Client.method486(3, false);
-					if (Client.field688.displayMode2.method18545() == 3) {
+					if (Client.preferences.displayMode2.getValue() == 3) {
 						addline("Success");
-						Client.field688.method18157(Client.field688.displayMode, 3);
+						Client.preferences.method18157(Client.preferences.displayMode, 3);
 						Preferences.method16391();
 						Client.field10800 = false;
 					} else {
@@ -550,9 +550,9 @@ public class DeveloperConsole {
 				}
 				if (arg0.equalsIgnoreCase("tk5")) {
 					Client.method486(5, false);
-					if (Client.field688.displayMode2.method18545() == 5) {
+					if (Client.preferences.displayMode2.getValue() == 5) {
 						addline("Success");
-						Client.field688.method18157(Client.field688.displayMode, 5);
+						Client.preferences.method18157(Client.preferences.displayMode, 5);
 						Preferences.method16391();
 						Client.field10800 = false;
 					} else {
@@ -767,7 +767,7 @@ public class DeveloperConsole {
 
 	@ObfuscatedName("xi.q(B)V")
 	public static void method10153() {
-		if (Client.field688.unknown7.method18750() == 1) {
+		if (Client.preferences.unknown7.getValue() == 1) {
 			Client.field3183.method7680(new RebuildRequest(RebuildType.field5070, null));
 		} else {
 			Client.world.method7753();

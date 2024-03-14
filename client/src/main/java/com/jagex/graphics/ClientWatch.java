@@ -171,13 +171,13 @@ public class ClientWatch {
 			ClientMessage var11 = ClientMessage.method1604(ClientProt.CLIENT_DETAILOPTIONS_STATUS, Client.field10849.field794);
 			var11.field11432.p1(0);
 			int var12 = var11.field11432.pos;
-			Packet var13 = Client.field688.method18156();
+			Packet var13 = Client.preferences.createPreferencesBlock();
 			var11.field11432.pdata(var13.data, 0, var13.pos);
 			var11.field11432.psize1(var11.field11432.pos - var12);
 			Client.field10849.method934(var11);
 			Client.field10800 = true;
 		}
-		if (Client.field10801 || Client.field688.displayMode.method18545() != 1) {
+		if (Client.field10801 || Client.preferences.displayMode.getValue() != 1) {
 			return;
 		}
 		int[] var14 = Client.field8198.method2413();

@@ -424,7 +424,7 @@ public class World {
 
 	@ObfuscatedName("rl.aw(B)V")
 	public void method7773() {
-		this.method7791(BuildAreaSize.method3061(Client.field688.buildArea.method18570()));
+		this.method7791(BuildAreaSize.method3061(Client.preferences.buildArea.getValue()));
 		int var1 = this.field5018.x;
 		int var2 = this.field5018.z;
 		int var3 = (Client.field7956 >> 12) + (var1 >> 3);
@@ -585,7 +585,7 @@ public class World {
 	@ObfuscatedName("rl.ad(I)V")
 	public void method7824() {
 		this.field5020 = this.field5019;
-		this.method7791(BuildAreaSize.field2663);
+		this.method7791(BuildAreaSize.SIZE_104);
 		for (int var1 = 0; var1 < 4; var1++) {
 			for (int var2 = 0; var2 < this.field5028 >> 3; var2++) {
 				for (int var3 = 0; var3 < this.field5043 >> 3; var3++) {
@@ -690,7 +690,7 @@ public class World {
 		if (this.field5021 == arg0) {
 			return;
 		}
-		this.field5028 = this.field5043 = arg0.field2665;
+		this.field5028 = this.field5043 = arg0.size;
 		this.field5057 = new int[4][this.field5028 >> 3][this.field5043 >> 3];
 		this.field5040 = new int[this.field5028][this.field5043];
 		this.field5041 = new int[this.field5028][this.field5043];
@@ -1055,7 +1055,7 @@ public class World {
 			Client.method14055(true);
 		}
 		boolean var19 = false;
-		if (Client.field688.waterDetail.method18522() == 2) {
+		if (Client.preferences.waterDetail.getValue() == 2) {
 			for (int var20 = 0; var20 < this.field5049; var20++) {
 				if (this.field5031[var20] != null || this.field5055[var20] != null) {
 					var19 = true;
@@ -1063,7 +1063,7 @@ public class World {
 				}
 			}
 		}
-		int var21 = DrawDistance.method17395(Client.field688.buildAreaSize.method18688()).field2675;
+		int var21 = DrawDistance.method17395(Client.preferences.drawDistance.getValue()).field2675;
 		if (Client.field8198.method2130()) {
 			var21++;
 		}
@@ -1082,11 +1082,11 @@ public class World {
 		this.field5038 = -0.05F + (float) (Math.random() / 10.0D);
 		this.field5023 = new ClientMapLoader(this.field5030, this.field5039, 4, this.field5028, this.field5043, false, this.field5032, this.field5062);
 		this.field5023.method7136();
-		this.field5023.field4515 = Client.field688.sceneryShadows.method18515();
-		this.field5023.field4571 = Client.field688.waterDetail.method18522() == 2;
-		this.field5023.field4542 = Client.field688.lightingDetail.method18389() == 1;
-		this.field5023.field4539 = Client.field688.groundBlending.method18651() == 1;
-		this.field5023.field4511 = Client.field688.textures.method18426() == 1;
+		this.field5023.field4515 = Client.preferences.sceneryShadows.getValue();
+		this.field5023.field4571 = Client.preferences.waterDetail.getValue() == 2;
+		this.field5023.field4542 = Client.preferences.lightingDetail.getValue() == 1;
+		this.field5023.field4539 = Client.preferences.groundBlending.getValue() == 1;
+		this.field5023.field4511 = Client.preferences.textures.getValue() == 1;
 		if (this.field5019.method7887()) {
 			this.method7767(this.field5023, this.field5052);
 		} else {
@@ -1101,11 +1101,11 @@ public class World {
 			this.field5030.method8703(true);
 			this.field5033 = new ClientMapLoader(this.field5030, this.field5039, 1, this.field5028, this.field5043, true, this.field5032, this.field5062);
 			this.field5033.method7136();
-			this.field5033.field4515 = Client.field688.sceneryShadows.method18515();
-			this.field5033.field4571 = Client.field688.waterDetail.method18522() == 2;
-			this.field5033.field4542 = Client.field688.lightingDetail.method18389() == 1;
-			this.field5033.field4539 = Client.field688.groundBlending.method18651() == 1;
-			this.field5033.field4511 = Client.field688.textures.method18426() == 1;
+			this.field5033.field4515 = Client.preferences.sceneryShadows.getValue();
+			this.field5033.field4571 = Client.preferences.waterDetail.getValue() == 2;
+			this.field5033.field4542 = Client.preferences.lightingDetail.getValue() == 1;
+			this.field5033.field4539 = Client.preferences.groundBlending.getValue() == 1;
+			this.field5033.field4511 = Client.preferences.textures.getValue() == 1;
 			if (this.field5019.method7887()) {
 				this.method7767(this.field5033, this.field5055);
 				if (!this.field5036) {

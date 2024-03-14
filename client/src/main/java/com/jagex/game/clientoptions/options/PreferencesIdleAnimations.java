@@ -5,43 +5,43 @@ import com.jagex.game.clientoptions.ClientOptions;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("anm")
-public class PreferencesIdleAnimations extends PreferencesOption {
+public class PreferencesIdleAnimations extends Preference {
 
-	public PreferencesIdleAnimations(ClientOptions arg0) {
-		super(arg0);
+	public PreferencesIdleAnimations(ClientOptions options) {
+		super(options);
 	}
 
-	public PreferencesIdleAnimations(int arg0, ClientOptions arg1) {
-		super(arg0, arg1);
+	public PreferencesIdleAnimations(int value, ClientOptions options) {
+		super(value, options);
 	}
 
 	@ObfuscatedName("anm.o(I)V")
-	public void method18643() {
-		if (this.field8417.modeGame() == ModeGame.STELLARDAWN) {
-			this.field8416 = 2;
+	public void clampValue() {
+		if (this.options.modeGame() == ModeGame.STELLARDAWN) {
+			this.currentValue = 2;
 		}
-		if (this.field8416 < 0 || this.field8416 > 2) {
-			this.field8416 = this.method14069();
+		if (this.currentValue < 0 || this.currentValue > 2) {
+			this.currentValue = this.defaultValue();
 		}
 	}
 
 	@ObfuscatedName("anm.e(B)I")
-	public int method14069() {
+	public int defaultValue() {
 		return 1;
 	}
 
 	@ObfuscatedName("anm.n(II)I")
-	public int method14070(int arg0) {
+	public int canSetValue(int value) {
 		return 1;
 	}
 
 	@ObfuscatedName("anm.k(II)V")
-	public void method14072(int arg0) {
-		this.field8416 = arg0;
+	public void setValue(int value) {
+		this.currentValue = value;
 	}
 
 	@ObfuscatedName("anm.s(B)I")
-	public int method18645() {
-		return this.field8416;
+	public int getValue() {
+		return this.currentValue;
 	}
 }

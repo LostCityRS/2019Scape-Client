@@ -247,7 +247,7 @@ public class AccountCreationManager {
 				if (var4 != null) {
 					var1.field11432.pjstr(var4);
 				}
-				Client.field10581.method18188(var1.field11432);
+				Client.hardwarePlatform.method18188(var1.field11432);
 				var1.field11432.pos += 7;
                 var1.field11432.tinyenc(field581, var3, var1.field11432.pos);
 				var1.field11432.psize2(var1.field11432.pos - var2);

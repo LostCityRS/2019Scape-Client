@@ -5,33 +5,33 @@ import com.jagex.game.clientoptions.ClientOptions;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("amd")
-public class PreferencesDisplayMode extends PreferencesOption {
+public class PreferencesDisplayMode extends Preference {
 
 	@ObfuscatedName("amd.w")
 	public boolean field11772 = true;
 
 	@ObfuscatedName("amd.l")
-	public boolean field11771 = false;
+	public boolean defaulted = false;
 
-	public PreferencesDisplayMode(ClientOptions arg0) {
-		super(arg0);
+	public PreferencesDisplayMode(ClientOptions options) {
+		super(options);
 	}
 
-	public PreferencesDisplayMode(int arg0, ClientOptions arg1) {
-		super(arg0, arg1);
+	public PreferencesDisplayMode(int value, ClientOptions options) {
+		super(value, options);
 	}
 
 	@ObfuscatedName("amd.o(I)V")
-	public void method18549() {
-		if (this.field8416 < 0 || this.field8416 > 5 || this.field8416 == 2) {
-			this.field8416 = this.method14069();
+	public void clampValue() {
+		if (this.currentValue < 0 || this.currentValue > 5 || this.currentValue == 2) {
+			this.currentValue = this.defaultValue();
 		}
 	}
 
 	@ObfuscatedName("amd.e(B)I")
-	public int method14069() {
-		this.field11771 = true;
-		return this.field8417.hardwareInfo().osArchWindows() ? 3 : 1;
+	public int defaultValue() {
+		this.defaulted = true;
+		return this.options.hardwareInfo().osArchWindows() ? 3 : 1;
 	}
 
 	@ObfuscatedName("amd.s(B)Z")
@@ -40,19 +40,19 @@ public class PreferencesDisplayMode extends PreferencesOption {
 	}
 
 	@ObfuscatedName("amd.n(II)I")
-	public int method14070(int arg0) {
-		return arg0 == 3 && !NativeLibraries.method5134().method7900("jagdx") ? 3 : 2;
+	public int canSetValue(int value) {
+		return value == 3 && !NativeLibraries.method5134().method7900("jagdx") ? 3 : 2;
 	}
 
 	@ObfuscatedName("amd.k(II)V")
-	public void method14072(int arg0) {
-		this.field11771 = false;
-		this.field8416 = arg0;
+	public void setValue(int value) {
+		this.defaulted = false;
+		this.currentValue = value;
 	}
 
 	@ObfuscatedName("amd.y(B)I")
-	public int method18545() {
-		return this.field8416;
+	public int getValue() {
+		return this.currentValue;
 	}
 
 	@ObfuscatedName("amd.q(I)Z")

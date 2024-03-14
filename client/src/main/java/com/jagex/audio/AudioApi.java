@@ -639,7 +639,7 @@ public class AudioApi {
 		// line 472
 		@ObfuscatedName("fv.e(I)F")
 		public float method3084() {
-			return (float) Client.field688.themeMusicVolume.method18763() / 255.0F;
+			return (float) Client.preferences.soundVolume.getValue() / 255.0F;
 		}
 	}
 
@@ -656,7 +656,7 @@ public class AudioApi {
 
 		@ObfuscatedName("fc.e(I)F")
 		public float method3084() {
-			return (float) Client.field688.themeMusicVolume3.method18763() / 255.0F;
+			return (float) Client.preferences.unknownVolume1.getValue() / 255.0F;
 		}
 	}
 
@@ -673,7 +673,7 @@ public class AudioApi {
 
 		@ObfuscatedName("fp.e(I)F")
 		public float method3084() {
-			return (float) Client.field688.themeMusicVolume4.method18763() / 255.0F;
+			return (float) Client.preferences.unknownVolume2.getValue() / 255.0F;
 		}
 	}
 
@@ -690,7 +690,7 @@ public class AudioApi {
 
 		@ObfuscatedName("ff.e(I)F")
 		public float method3084() {
-			return (float) Client.field688.themeMusicVolume1.method18763() / 255.0F;
+			return (float) Client.preferences.backgroundSoundVolume.getValue() / 255.0F;
 		}
 	}
 
@@ -707,7 +707,7 @@ public class AudioApi {
 		// line 492
 		@ObfuscatedName("fa.e(I)F")
 		public float method3084() {
-			return (float) Client.field688.themeMusicVolume2.method18763() / 255.0F;
+			return (float) Client.preferences.speechVolume.getValue() / 255.0F;
 		}
 	}
 
@@ -1142,10 +1142,10 @@ public class AudioApi {
 		int var10 = arg0.field1788 == null ? 255 : arg0.field1788[arg1];
 		if (var7 != 0) {
 			if (Client.field4490 == arg2) {
-				if (Client.field688.themeMusicVolume.method18763() == 0) {
+				if (Client.preferences.soundVolume.getValue() == 0) {
 					return;
 				}
-			} else if (Client.field688.themeMusicVolume1.method18763() == 0) {
+			} else if (Client.preferences.backgroundSoundVolume.getValue() == 0) {
 				return;
 			}
 			if (arg0.field1783 != -1) {

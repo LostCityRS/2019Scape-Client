@@ -4,45 +4,48 @@ import com.jagex.game.clientoptions.ClientOptions;
 import com.jagex.graphics.Renderer;
 import deob.ObfuscatedName;
 
-@ObfuscatedName("ane")
-public class PreferencesSkyboxes extends Preference {
+@ObfuscatedName("anq")
+public class PreferencesAntiAliasing extends Preference {
 
-	public PreferencesSkyboxes(ClientOptions options) {
+	public PreferencesAntiAliasing(ClientOptions options) {
 		super(options);
 	}
 
-	public PreferencesSkyboxes(int value, ClientOptions options) {
+	public PreferencesAntiAliasing(int value, ClientOptions options) {
 		super(value, options);
 	}
 
-	@ObfuscatedName("ane.o(I)V")
+	@ObfuscatedName("anq.o(B)V")
 	public void clampValue() {
-		if (this.currentValue < 0 || this.currentValue > 1) {
+		if (this.options.displayMode2.method18546() && !Renderer.method723(this.options.displayMode2.getValue())) {
+			this.currentValue = 0;
+		}
+		if (this.currentValue < 0 || this.currentValue > 2) {
 			this.currentValue = this.defaultValue();
 		}
 	}
 
-	@ObfuscatedName("ane.e(B)I")
+	@ObfuscatedName("anq.e(B)I")
 	public int defaultValue() {
-		return 1;
+		return 0;
 	}
 
-	@ObfuscatedName("ane.s(I)Z")
-	public boolean method18606() {
+	@ObfuscatedName("anq.s(I)Z")
+	public boolean method18638() {
 		return Renderer.method723(this.options.displayMode2.getValue());
 	}
 
-	@ObfuscatedName("ane.n(II)I")
+	@ObfuscatedName("anq.n(II)I")
 	public int canSetValue(int value) {
 		return Renderer.method723(this.options.displayMode2.getValue()) ? 1 : 3;
 	}
 
-	@ObfuscatedName("ane.k(II)V")
+	@ObfuscatedName("anq.k(II)V")
 	public void setValue(int value) {
 		this.currentValue = value;
 	}
 
-	@ObfuscatedName("ane.y(I)I")
+	@ObfuscatedName("anq.y(I)I")
 	public int getValue() {
 		return this.currentValue;
 	}

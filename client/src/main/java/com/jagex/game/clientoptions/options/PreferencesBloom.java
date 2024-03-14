@@ -5,52 +5,52 @@ import com.jagex.graphics.Renderer;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("and")
-public class PreferencesBloom extends PreferencesOption {
+public class PreferencesBloom extends Preference {
 
-	public PreferencesBloom(ClientOptions arg0) {
-		super(arg0);
+	public PreferencesBloom(ClientOptions options) {
+		super(options);
 	}
 
-	public PreferencesBloom(int arg0, ClientOptions arg1) {
-		super(arg0, arg1);
+	public PreferencesBloom(int value, ClientOptions options) {
+		super(value, options);
 	}
 
 	@ObfuscatedName("and.o(I)V")
-	public void method18626() {
-		if (this.field8417.displayMode2.method18546() && !Renderer.method723(this.field8417.displayMode2.method18545())) {
-			this.field8416 = 0;
+	public void clampValue() {
+		if (this.options.displayMode2.method18546() && !Renderer.method723(this.options.displayMode2.getValue())) {
+			this.currentValue = 0;
 		}
-		if (this.field8417.hardwareInfo().unused()) {
-			if (this.field8416 < 0 || this.field8416 > 3) {
-				this.field8416 = this.method14069();
+		if (this.options.hardwareInfo().unused()) {
+			if (this.currentValue < 0 || this.currentValue > 3) {
+				this.currentValue = this.defaultValue();
 			}
-		} else if (this.field8416 < 0 || this.field8416 > 1) {
-			this.field8416 = this.method14069();
+		} else if (this.currentValue < 0 || this.currentValue > 1) {
+			this.currentValue = this.defaultValue();
 		}
 	}
 
 	@ObfuscatedName("and.e(B)I")
-	public int method14069() {
+	public int defaultValue() {
 		return 0;
 	}
 
 	@ObfuscatedName("and.s(I)Z")
 	public boolean method18624() {
-		return Renderer.method723(this.field8417.displayMode2.method18545());
+		return Renderer.method723(this.options.displayMode2.getValue());
 	}
 
 	@ObfuscatedName("and.n(II)I")
-	public int method14070(int arg0) {
-		return Renderer.method723(this.field8417.displayMode2.method18545()) ? 1 : 3;
+	public int canSetValue(int value) {
+		return Renderer.method723(this.options.displayMode2.getValue()) ? 1 : 3;
 	}
 
 	@ObfuscatedName("and.k(II)V")
-	public void method14072(int arg0) {
-		this.field8416 = arg0;
+	public void setValue(int value) {
+		this.currentValue = value;
 	}
 
 	@ObfuscatedName("and.y(B)I")
-	public int method18625() {
-		return this.field8416;
+	public int getValue() {
+		return this.currentValue;
 	}
 }

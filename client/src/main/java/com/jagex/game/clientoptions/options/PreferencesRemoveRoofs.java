@@ -4,43 +4,43 @@ import com.jagex.game.clientoptions.ClientOptions;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("amo")
-public class PreferencesRemoveRoofs extends PreferencesOption {
+public class PreferencesRemoveRoofs extends Preference {
 
-	public PreferencesRemoveRoofs(ClientOptions arg0) {
-		super(arg0);
+	public PreferencesRemoveRoofs(ClientOptions options) {
+		super(options);
 	}
 
-	public PreferencesRemoveRoofs(int arg0, ClientOptions arg1) {
-		super(arg0, arg1);
+	public PreferencesRemoveRoofs(int value, ClientOptions options) {
+		super(value, options);
 	}
 
 	@ObfuscatedName("amo.o(I)V")
-	public void method18495() {
-		if (this.field8417.unknown4.method18504() == 2 && this.field8416 == 2) {
-			this.field8416 = 1;
+	public void clampValue() {
+		if (this.options.orthographic.getValue() == 2 && this.currentValue == 2) {
+			this.currentValue = 1;
 		}
-		if (this.field8416 < 0 || this.field8416 > 3) {
-			this.field8416 = this.method14069();
+		if (this.currentValue < 0 || this.currentValue > 3) {
+			this.currentValue = this.defaultValue();
 		}
 	}
 
 	@ObfuscatedName("amo.e(B)I")
-	public int method14069() {
+	public int defaultValue() {
 		return 2;
 	}
 
 	@ObfuscatedName("amo.n(II)I")
-	public int method14070(int arg0) {
+	public int canSetValue(int value) {
 		return 1;
 	}
 
 	@ObfuscatedName("amo.k(II)V")
-	public void method14072(int arg0) {
-		this.field8416 = arg0;
+	public void setValue(int value) {
+		this.currentValue = value;
 	}
 
 	@ObfuscatedName("amo.s(I)I")
-	public int method18496() {
-		return this.field8416;
+	public int getValue() {
+		return this.currentValue;
 	}
 }

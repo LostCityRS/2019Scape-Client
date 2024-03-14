@@ -5,26 +5,26 @@ import com.jagex.graphics.Renderer;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("amx")
-public class PreferencesScreenSize extends PreferencesOption {
+public class PreferencesScreenSize extends Preference {
 
-	public PreferencesScreenSize(ClientOptions arg0) {
-		super(arg0);
+	public PreferencesScreenSize(ClientOptions options) {
+		super(options);
 	}
 
-	public PreferencesScreenSize(int arg0, ClientOptions arg1) {
-		super(arg0, arg1);
+	public PreferencesScreenSize(int value, ClientOptions options) {
+		super(value, options);
 	}
 
 	@ObfuscatedName("amx.o(I)V")
-	public void method18579() {
-		if (this.field8416 < 0 || this.field8416 > 2) {
-			this.field8416 = this.method14069();
+	public void clampValue() {
+		if (this.currentValue < 0 || this.currentValue > 2) {
+			this.currentValue = this.defaultValue();
 		}
 	}
 
 	@ObfuscatedName("amx.e(B)I")
-	public int method14069() {
-		return this.field8417.displayMode2.method18546() && Renderer.method551(this.field8417.displayMode2.method18545()) ? 1 : 0;
+	public int defaultValue() {
+		return this.options.displayMode2.method18546() && Renderer.method551(this.options.displayMode2.getValue()) ? 1 : 0;
 	}
 
 	@ObfuscatedName("amx.s(B)Z")
@@ -33,17 +33,17 @@ public class PreferencesScreenSize extends PreferencesOption {
 	}
 
 	@ObfuscatedName("amx.n(II)I")
-	public int method14070(int arg0) {
+	public int canSetValue(int value) {
 		return 1;
 	}
 
 	@ObfuscatedName("amx.k(II)V")
-	public void method14072(int arg0) {
-		this.field8416 = arg0;
+	public void setValue(int value) {
+		this.currentValue = value;
 	}
 
 	@ObfuscatedName("amx.y(I)I")
-	public int method18581() {
-		return this.field8416;
+	public int getValue() {
+		return this.currentValue;
 	}
 }

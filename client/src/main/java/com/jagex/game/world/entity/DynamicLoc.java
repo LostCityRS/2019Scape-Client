@@ -141,7 +141,7 @@ public class DynamicLoc {
 		}
 		this.method8243(this.field6672);
 		if (arg3) {
-			arg3 &= this.field6676 & !this.field6670 & Client.field688.sceneryShadows.method18515() != 0;
+			arg3 &= this.field6676 & !this.field6670 & Client.preferences.sceneryShadows.getValue() != 0;
 		}
 		if (arg2 && !arg3) {
 			this.field6673 = var5.id;
@@ -273,7 +273,7 @@ public class DynamicLoc {
 		if (!this.field6664.method14346()) {
 			this.method8244(false, -1, 0, 0);
 		} else if (this.field6664.method14367(Client.field10903 - this.field6662)) {
-			if (Client.field688.sceneryShadows.method18515() == 2) {
+			if (Client.preferences.sceneryShadows.getValue() == 2) {
 				this.field6670 = false;
 			}
 			if (this.field6664.method14375()) {
@@ -302,7 +302,7 @@ public class DynamicLoc {
 				var8 = null;
 			}
 			if (var7.method9504()) {
-				if (!var7.field7479 || Client.field688.unknown.method18665() == 1) {
+				if (!var7.field7479 || Client.preferences.animDetail.getValue() == 1) {
 					if (arg0 && this.field6664.method14346() && var7.method9493(this.field6664.method14348())) {
 						return;
 					}
@@ -316,7 +316,7 @@ public class DynamicLoc {
 						arg2 = 1;
 					}
 				}
-			} else if (var8 != null && var8.method9504() && (!var8.field7479 || Client.field688.unknown.method18665() == 1)) {
+			} else if (var8 != null && var8.method9504() && (!var8.field7479 || Client.preferences.animDetail.getValue() == 1)) {
 				if (arg0 && this.field6664.method14346() && var8.method9493(this.field6664.method14348())) {
 					return;
 				}

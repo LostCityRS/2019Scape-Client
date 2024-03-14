@@ -243,10 +243,10 @@ public class Loading {
 
 	@ObfuscatedName("rm.z(I)I")
 	public static int method7622() {
-		if (Client.field688.unknown6.method18740() == 0) {
+		if (Client.preferences.unknown6.getValue() == 0) {
 			for (int var0 = 0; var0 < Client.field10819; var0++) {
 				if (Client.field11067[var0].method9131() == 's' || Client.field11067[var0].method9131() == 'S') {
-					Client.field688.method18157(Client.field688.unknown6, 1);
+					Client.preferences.method18157(Client.preferences.unknown6, 1);
 					Client.field10812 = true;
 					GraphicsPacketQueue.method6971(ToolkitType.field8880);
 					break;
@@ -281,7 +281,7 @@ public class Loading {
 			Client.field11389 = new GraphicsDefaults(Client.defaultsJs5);
 			Client.field7921 = new TitleDefaults(Client.defaultsJs5);
 			DefaultSprites.method3470(Client.field11389);
-			int var8 = Client.field688.unknown5.method18714();
+			int var8 = Client.preferences.loadingScreen.getValue();
 			field2841 = new LoadingRelated3(Client.modegame, Client.language, loadingScreensJs5);
 			LoadingRelated1[] var9 = field2841.method15218(var8);
 			if (var9.length == 0) {
@@ -463,7 +463,7 @@ public class Loading {
 			Huffman var19 = new Huffman(Client.binaryJs5.method6906("huffman", ""));
 			WordPack.setHuffman(var19);
 			GameShell.field6594 = Timer.method6109();
-			Client.field10581 = new HardwarePlatform(true);
+			Client.hardwarePlatform = new HardwarePlatform(true);
 		}
 		if (field3419 == LoadingStage.SETUP_STATIC_SPRITES) {
 			int var20 = DefaultSprites.method15381(Client.spritesJs5) + Client.field7538.method6191(true);
@@ -520,12 +520,12 @@ public class Loading {
 			Client.field8540.remove(Js5Archive.LOADING_SPRITES);
 			Client.field8540.remove(Js5Archive.LOADING_SPRITES_RAW);
 			MainLoadingScreen.method271();
-			Client.field10779 = Client.field688.unknown6.method18740() == 1;
-			Client.field688.method18157(Client.field688.unknown6, 1);
+			Client.field10779 = Client.preferences.unknown6.getValue() == 1;
+			Client.preferences.method18157(Client.preferences.unknown6, 1);
 			if (Client.field10779) {
-				Client.field688.method18157(Client.field688.displayMode, 0);
-			} else if (Client.field688.displayMode.field11771 && Client.field10581.cpuInfoRam < 512 && Client.field10581.cpuInfoRam != 0) {
-				Client.field688.method18157(Client.field688.displayMode, 0);
+				Client.preferences.method18157(Client.preferences.displayMode, 0);
+			} else if (Client.preferences.displayMode.defaulted && Client.hardwarePlatform.cpuInfoRam < 512 && Client.hardwarePlatform.cpuInfoRam != 0) {
+				Client.preferences.method18157(Client.preferences.displayMode, 0);
 			}
 			Preferences.method16391();
 			if (Client.field10779) {
@@ -534,12 +534,12 @@ public class Loading {
 					GraphicsPacketQueue.method6971(ToolkitType.field8881);
 				}
 			} else {
-				Client.method486(Client.field688.displayMode.method18545(), false);
-				if (Client.field688.displayMode.method18545() == 0) {
+				Client.method486(Client.preferences.displayMode.getValue(), false);
+				if (Client.preferences.displayMode.getValue() == 0) {
 					GraphicsPacketQueue.method6971(ToolkitType.field8882);
 				}
 			}
-			Client.setWindowMode(Client.field688.maxScreenSize.method18539(), -1, -1, false);
+			Client.setWindowMode(Client.preferences.maxScreenSize.getValue(), -1, -1, false);
 			Client.field7538.method6157(Client.field10833);
 			DefaultSprites.method7114(Client.field8198);
 			DefaultSprites.method5202(Client.field8198, Client.spritesJs5);
