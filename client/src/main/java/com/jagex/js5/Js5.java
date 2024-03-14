@@ -17,242 +17,261 @@ import java.io.IOException;
 public final class Js5 {
 
 	@ObfuscatedName("py.e")
-	public Js5Index field4416 = null;
+	public Js5Index index = null;
 
 	@ObfuscatedName("py.n")
-	public Object[] field4418;
+	public Object[] packed;
 
 	@ObfuscatedName("py.m")
-	public Object[][] field4410;
+	public Object[][] unpacked;
 
 	@ObfuscatedName("py.k")
 	public static GZip field4409 = new GZip();
 
 	@ObfuscatedName("py.f")
-	public boolean field4412;
+	public boolean discardPacked;
 
 	@ObfuscatedName("py.z")
-	public int field4415;
+	public int discardUnpacked;
 
 	@ObfuscatedName("py.p")
-	public Js5ResourceProvider field4417;
+	public Js5ResourceProvider provider;
 
 	@ObfuscatedName("py.d")
-	public static boolean field4411 = false;
+	public static boolean RAISE_EXCEPTIONS = false;
 
 	@ObfuscatedName("py.c")
-	public static int field4419 = 0;
+	public static int MAX_LENGTH = 0;
 
-	public Js5(Js5ResourceProvider arg0, boolean arg1, int arg2) {
+	public Js5(Js5ResourceProvider provider, boolean arg1, int arg2) {
 		if (arg2 < 0 || arg2 > 2) {
 			throw new IllegalArgumentException("");
 		}
-		this.field4417 = arg0;
-		this.field4412 = arg1;
-		this.field4415 = arg2;
+
+		this.provider = provider;
+		this.discardPacked = arg1;
+		this.discardUnpacked = arg2;
 	}
 
 	@ObfuscatedName("py.e(B)Z")
-	public synchronized boolean method6946() {
-		if (this.field4416 == null) {
-			this.field4416 = this.field4417.getIndex();
-			if (this.field4416 == null) {
+	public synchronized boolean isIndexReady() {
+		if (this.index == null) {
+			this.index = this.provider.fetchindex();
+			if (this.index == null) {
 				return false;
 			}
-			this.field4418 = new Object[this.field4416.field4392];
-			this.field4410 = new Object[this.field4416.field4392][];
+
+			this.packed = new Object[this.index.capacity];
+			this.unpacked = new Object[this.index.capacity][];
+
 		}
 		return true;
 	}
 
 	@ObfuscatedName("py.n(S)I")
-	public int method6881() {
-		if (!this.method6946()) {
+	public int getChecksum() {
+		if (!this.isIndexReady()) {
 			throw new IllegalStateException("");
 		}
-		return this.field4416.crc;
+
+		return this.index.crc;
 	}
 
 	@ObfuscatedName("py.m(IB)Z")
-	public synchronized boolean method6882(int arg0) {
-		if (!this.method6946()) {
+	public synchronized boolean isGroupValid(int group) {
+		if (!this.isIndexReady()) {
 			return false;
-		} else if (arg0 >= 0 && arg0 < this.field4416.field4403.length && this.field4416.field4403[arg0] != 0) {
+		} else if (group >= 0 && group < this.index.groupCapacities.length && this.index.groupCapacities[group] != 0) {
 			return true;
-		} else if (field4411) {
-			throw new IllegalArgumentException(Integer.toString(arg0));
+		} else if (RAISE_EXCEPTIONS) {
+			throw new IllegalArgumentException(Integer.toString(group));
 		} else {
 			return false;
 		}
 	}
 
 	@ObfuscatedName("py.k(IIB)Z")
-	public synchronized boolean method6883(int arg0, int arg1) {
-		if (!this.method6946()) {
+	public synchronized boolean isGroupValid(int group, int file) {
+		if (!this.isIndexReady()) {
 			return false;
-		} else if (arg0 >= 0 && arg1 >= 0 && arg0 < this.field4416.field4403.length && arg1 < this.field4416.field4403[arg0]) {
+		} else if (group >= 0 && file >= 0 && group < this.index.groupCapacities.length && file < this.index.groupCapacities[group]) {
 			return true;
-		} else if (field4411) {
-			throw new IllegalArgumentException(arg0 + " " + arg1);
+		} else if (RAISE_EXCEPTIONS) {
+			throw new IllegalArgumentException(group + " " + file);
 		} else {
 			return false;
 		}
 	}
 
 	@ObfuscatedName("py.f(II)V")
-	public synchronized void method6957(int arg0) {
-		if (this.field4412) {
-			this.field4418[arg0] = this.field4417.fetchgroup(arg0);
+	public synchronized void fetchgroup(int group) {
+		if (this.discardPacked) {
+			this.packed[group] = this.provider.fetchgroup(group);
 		} else {
-			this.field4418[arg0] = ByteArrayCopier.method2821(this.field4417.fetchgroup(arg0), false);
+			this.packed[group] = ByteArrayCopier.method2821(this.provider.fetchgroup(group), false);
 		}
 	}
 
 	@ObfuscatedName("py.w(II)V")
 	public void method6885(int arg0) {
-		this.field4417.method6856(arg0);
+		this.provider.method6856(arg0);
 	}
 
 	@ObfuscatedName("py.l(IIB)[B")
-	public byte[] getfile(int arg0, int arg1) {
-		return this.method6914(arg0, arg1, null);
+	public byte[] getfile(int group, int file) {
+		return this.getfile(group, file, null);
 	}
 
 	@ObfuscatedName("py.u(II[IB)[B")
-	public synchronized byte[] method6914(int arg0, int arg1, int[] arg2) {
-		if (!this.method6883(arg0, arg1)) {
+	public synchronized byte[] getfile(int group, int file, int[] key) {
+		if (!this.isGroupValid(group, file)) {
 			return null;
 		}
-		byte[] var4 = null;
-		if (this.field4410[arg0] == null || this.field4410[arg0][arg1] == null) {
-			boolean var5 = this.method6901(arg0, arg1, arg2);
-			if (!var5) {
-				this.method6957(arg0);
-				boolean var6 = this.method6901(arg0, arg1, arg2);
-				if (!var6) {
+
+		if (this.unpacked[group] == null || this.unpacked[group][file] == null) {
+			boolean success = this.unpackGroup(group, file, key);
+			if (!success) {
+				this.fetchgroup(group);
+
+				success = this.unpackGroup(group, file, key);
+				if (!success) {
 					return null;
 				}
 			}
 		}
-		if (this.field4410[arg0] == null) {
+
+		if (this.unpacked[group] == null) {
 			throw new RuntimeException("");
 		}
-		if (this.field4410[arg0][arg1] != null) {
-			var4 = ByteArrayCopier.method4540(this.field4410[arg0][arg1], false);
-			if (var4 == null) {
+
+		byte[] bytes = null;
+		if (this.unpacked[group][file] != null) {
+			bytes = ByteArrayCopier.method4540(this.unpacked[group][file], false);
+
+			if (bytes == null) {
 				throw new RuntimeException("");
 			}
 		}
-		if (var4 != null) {
-			if (this.field4415 == 1) {
-				this.field4410[arg0][arg1] = null;
-				if (this.field4416.field4403[arg0] == 1) {
-					this.field4410[arg0] = null;
+
+		if (bytes != null) {
+			if (this.discardUnpacked == 1) {
+				this.unpacked[group][file] = null;
+
+				if (this.index.groupCapacities[group] == 1) {
+					this.unpacked[group] = null;
 				}
-			} else if (this.field4415 == 2) {
-				this.field4410[arg0] = null;
+			} else if (this.discardUnpacked == 2) {
+				this.unpacked[group] = null;
 			}
 		}
-		return var4;
+
+		return bytes;
 	}
 
 	@ObfuscatedName("py.z(III)Z")
-	public synchronized boolean requestdownload(int arg0, int arg1) {
-		if (!this.method6883(arg0, arg1)) {
+	public synchronized boolean requestdownload(int group, int file) {
+		if (!this.isGroupValid(group, file)) {
 			return false;
-		} else if (this.field4410[arg0] != null && this.field4410[arg0][arg1] != null) {
+		} else if (this.unpacked[group] != null && this.unpacked[group][file] != null) {
 			return true;
-		} else if (this.field4418[arg0] == null) {
-			this.method6957(arg0);
-			return this.field4418[arg0] != null;
+		} else if (this.packed[group] == null) {
+			this.fetchgroup(group);
+			return this.packed[group] != null;
 		} else {
 			return true;
 		}
 	}
 
 	@ObfuscatedName("py.p(II)Z")
-	public synchronized boolean method6889(int arg0) {
-		if (!this.method6946()) {
+	public synchronized boolean method6889(int group) {
+		if (!this.isIndexReady()) {
 			return false;
-		} else if (this.field4416.field4403.length == 1) {
-			return this.requestdownload(0, arg0);
-		} else if (!this.method6882(arg0)) {
+		} else if (this.index.groupCapacities.length == 1) {
+			return this.requestdownload(0, group);
+		} else if (!this.isGroupValid(group)) {
 			return false;
-		} else if (this.field4416.field4403[arg0] == 1) {
-			return this.requestdownload(arg0, 0);
+		} else if (this.index.groupCapacities[group] == 1) {
+			return this.requestdownload(group, 0);
 		} else {
 			throw new RuntimeException();
 		}
 	}
 
 	@ObfuscatedName("py.d(II)Z")
-	public synchronized boolean method6927(int arg0) {
-		if (!this.method6882(arg0)) {
+	public synchronized boolean method6927(int group) {
+		if (!this.isGroupValid(group)) {
 			return false;
-		} else if (this.field4418[arg0] == null) {
-			this.method6957(arg0);
-			return this.field4418[arg0] != null;
+		} else if (this.packed[group] == null) {
+			this.fetchgroup(group);
+			return this.packed[group] != null;
 		} else {
 			return true;
 		}
 	}
 
 	@ObfuscatedName("py.c(I)Z")
-	public synchronized boolean method6896() {
-		if (!this.method6946()) {
+	public synchronized boolean fetchAll() {
+		if (!this.isIndexReady()) {
 			return false;
 		}
-		boolean var1 = true;
-		for (int var2 = 0; var2 < this.field4416.field4394.length; var2++) {
-			int var3 = this.field4416.field4394[var2];
-			if (this.field4418[var3] == null) {
-				this.method6957(var3);
-				if (this.field4418[var3] == null) {
-					var1 = false;
+
+		boolean success = true;
+		for (int i = 0; i < this.index.groupIds.length; i++) {
+			int groupId = this.index.groupIds[i];
+
+			if (this.packed[groupId] == null) {
+				this.fetchgroup(groupId);
+
+				if (this.packed[groupId] == null) {
+					success = false;
 				}
 			}
 		}
-		return var1;
+
+		return success;
 	}
 
 	@ObfuscatedName("py.r(II)I")
-	public synchronized int method6892(int arg0) {
-		if (this.method6882(arg0)) {
-			return this.field4418[arg0] == null ? this.field4417.method6855(arg0) : 100;
+	public synchronized int getPercentageComplete(int group) {
+		if (this.isGroupValid(group)) {
+			return this.packed[group] == null ? this.provider.getPercentageComplete(group) : 100;
 		} else {
 			return 0;
 		}
 	}
 
 	@ObfuscatedName("py.v(I)I")
-	public synchronized int method6893() {
-		if (!this.method6946()) {
+	public synchronized int getPercentageComplete() {
+		if (!this.isIndexReady()) {
 			return 0;
 		}
-		int var1 = 0;
-		int var2 = 0;
-		for (int var3 = 0; var3 < this.field4418.length; var3++) {
-			if (this.field4416.field4399[var3] > 0) {
-				var1 += 100;
-				var2 += this.method6892(var3);
+
+		int total = 0;
+		int complete = 0;
+
+		for (int i = 0; i < this.packed.length; i++) {
+			if (this.index.groupSizes[i] > 0) {
+				total += 100;
+				complete += this.getPercentageComplete(i);
 			}
 		}
-		if (var1 == 0) {
+
+		if (total == 0) {
 			return 100;
 		} else {
-			return var2 * 100 / var1;
+			return complete * 100 / total;
 		}
 	}
 
 	@ObfuscatedName("py.o(IB)[B")
 	public synchronized byte[] method6894(int arg0) {
-		if (!this.method6946()) {
+		if (!this.isIndexReady()) {
 			return null;
-		} else if (this.field4416.field4403.length == 1) {
+		} else if (this.index.groupCapacities.length == 1) {
 			return this.getfile(0, arg0);
-		} else if (!this.method6882(arg0)) {
+		} else if (!this.isGroupValid(arg0)) {
 			return null;
-		} else if (this.field4416.field4403[arg0] == 1) {
+		} else if (this.index.groupCapacities[arg0] == 1) {
 			return this.getfile(arg0, 0);
 		} else {
 			throw new RuntimeException();
@@ -261,12 +280,12 @@ public final class Js5 {
 
 	@ObfuscatedName("py.s(IB)[I")
 	public synchronized int[] method6895(int arg0) {
-		if (!this.method6882(arg0)) {
+		if (!this.isGroupValid(arg0)) {
 			return null;
 		}
-		int[] var2 = this.field4416.field4386[arg0];
+		int[] var2 = this.index.field4386[arg0];
 		if (var2 == null) {
-			var2 = new int[this.field4416.field4399[arg0]];
+			var2 = new int[this.index.groupSizes[arg0]];
 			int var3 = 0;
 			while (var3 < var2.length) {
 				var2[var3] = var3++;
@@ -277,100 +296,111 @@ public final class Js5 {
 
 	@ObfuscatedName("py.y(II)Z")
 	public boolean method6929(int arg0) {
-		if (!this.method6946()) {
+		if (!this.isIndexReady()) {
 			return false;
-		} else if (this.field4416.field4403.length == 1) {
-			return this.method6883(0, arg0);
-		} else if (!this.method6882(arg0)) {
+		} else if (this.index.groupCapacities.length == 1) {
+			return this.isGroupValid(0, arg0);
+		} else if (!this.isGroupValid(arg0)) {
 			return false;
-		} else if (this.field4416.field4403[arg0] == 1) {
-			return this.method6883(arg0, 0);
+		} else if (this.index.groupCapacities[arg0] == 1) {
+			return this.isGroupValid(arg0, 0);
 		} else {
 			throw new RuntimeException();
 		}
 	}
 
 	@ObfuscatedName("py.q(II)I")
-	public int method6897(int arg0) {
-		return this.method6882(arg0) ? this.field4416.field4403[arg0] : 0;
+	public int getGroupCapacity(int group) {
+		return this.isGroupValid(group) ? this.index.groupCapacities[group] : 0;
 	}
 
 	@ObfuscatedName("py.x(B)I")
-	public int method6898() {
-		return this.method6946() ? this.field4416.field4403.length : -1;
+	public int capacity() {
+		return this.isIndexReady() ? this.index.groupCapacities.length : -1;
 	}
 
 	@ObfuscatedName("py.b(II)V")
 	public synchronized void method6899(int arg0) {
-		if (this.method6882(arg0) && this.field4410 != null) {
-			this.field4410[arg0] = null;
+		if (this.isGroupValid(arg0) && this.unpacked != null) {
+			this.unpacked[arg0] = null;
 		}
 	}
 
 	@ObfuscatedName("py.h(ZZB)V")
-	public void method6900(boolean arg0, boolean arg1) {
-		if (!this.method6946()) {
+	public void discardNames(boolean arg0, boolean arg1) {
+		if (!this.isIndexReady()) {
 			return;
 		}
+
 		if (arg0) {
-			this.field4416.field4390 = null;
-			this.field4416.field4391 = null;
+			this.index.field4390 = null;
+			this.index.field4391 = null;
 		}
+
 		if (arg1) {
-			this.field4416.field4401 = null;
-			this.field4416.field4402 = null;
+			this.index.field4401 = null;
+			this.index.field4402 = null;
 		}
 	}
 
 	@ObfuscatedName("py.a(II[IB)Z")
-	public synchronized boolean method6901(int arg0, int arg1, int[] arg2) {
-		if (!this.method6882(arg0)) {
+	public synchronized boolean unpackGroup(int group, int file, int[] key) {
+		if (!this.isGroupValid(group)) {
 			return false;
-		} else if (this.field4418[arg0] == null) {
+		} else if (this.packed[group] == null) {
 			return false;
 		} else {
-			int var4 = this.field4416.field4399[arg0];
-			int[] var5 = this.field4416.field4386[arg0];
-			if (this.field4410[arg0] == null) {
-				this.field4410[arg0] = new Object[this.field4416.field4403[arg0]];
+			int var4 = this.index.groupSizes[group];
+			int[] var5 = this.index.field4386[group];
+
+			if (this.unpacked[group] == null) {
+				this.unpacked[group] = new Object[this.index.groupCapacities[group]];
 			}
-			Object[] var6 = this.field4410[arg0];
+
+			Object[] var6 = this.unpacked[group];
 			boolean var7 = true;
 			for (int var8 = 0; var8 < var4; var8++) {
 				int var9;
+
 				if (var5 == null) {
 					var9 = var8;
 				} else {
 					var9 = var5[var8];
 				}
+
 				if (var6[var9] == null) {
 					var7 = false;
 					break;
 				}
 			}
+
 			if (var7) {
 				return true;
 			}
+
 			byte[] var10;
-			if (arg2 == null || arg2[0] == 0 && arg2[1] == 0 && arg2[2] == 0 && arg2[3] == 0) {
-				var10 = ByteArrayCopier.method4540(this.field4418[arg0], false);
+			if (key == null || key[0] == 0 && key[1] == 0 && key[2] == 0 && key[3] == 0) {
+				var10 = ByteArrayCopier.method4540(this.packed[group], false);
 			} else {
-				var10 = ByteArrayCopier.method4540(this.field4418[arg0], true);
+				var10 = ByteArrayCopier.method4540(this.packed[group], true);
 				Packet var11 = new Packet(var10);
 				int var12 = var11.g1();
 				int var13 = var11.g4s();
-				int var14 = (var12 == Js5CompressionType.field4434.getId() ? 5 : 9) + var13;
-				var11.tinydec(arg2, 5, var14);
+				int var14 = (var12 == Js5CompressionType.UNCOMPRESSED.getId() ? 5 : 9) + var13;
+				var11.tinydec(key, 5, var14);
 			}
+
 			byte[] var15;
 			try {
-				var15 = method7275(var10);
+				var15 = uncompress(var10);
 			} catch (RuntimeException var51) {
-				throw JagException.method19636(var51, (arg2 != null) + " " + arg0 + " " + var10.length + " " + Packet.getcrc(var10, var10.length) + " " + Packet.getcrc(var10, var10.length - 2) + " " + this.field4416.field4393[arg0] + " " + this.field4416.crc);
+				throw JagException.method19636(var51, (key != null) + " " + group + " " + var10.length + " " + Packet.getcrc(var10, var10.length) + " " + Packet.getcrc(var10, var10.length - 2) + " " + this.index.field4393[group] + " " + this.index.crc);
 			}
-			if (this.field4412) {
-				this.field4418[arg0] = null;
+
+			if (this.discardPacked) {
+				this.packed[group] = null;
 			}
+
 			if (var4 <= 1) {
 				int var50;
 				if (var5 == null) {
@@ -378,57 +408,68 @@ public final class Js5 {
 				} else {
 					var50 = var5[0];
 				}
-				if (this.field4415 == 0) {
+
+				if (this.discardUnpacked == 0) {
 					var6[var50] = ByteArrayCopier.method2821(var15, false);
 				} else {
 					var6[var50] = var15;
 				}
-			} else if (this.field4415 == 2) {
+			} else if (this.discardUnpacked == 2) {
 				int var33 = var15.length;
 				int var53 = var33 - 1;
 				int var34 = var15[var53] & 0xFF;
 				int var35 = var53 - var4 * var34 * 4;
+
 				Packet var36 = new Packet(var15);
 				int var37 = 0;
 				int var38 = 0;
 				var36.pos = var35;
+
 				for (int var39 = 0; var39 < var34; var39++) {
 					int var40 = 0;
 					for (int var41 = 0; var41 < var4; var41++) {
 						var40 += var36.g4s();
+
 						int var42;
 						if (var5 == null) {
 							var42 = var41;
 						} else {
 							var42 = var5[var41];
 						}
-						if (arg1 == var42) {
+
+						if (file == var42) {
 							var37 += var40;
 							var38 = var42;
 						}
 					}
 				}
+
 				if (var37 == 0) {
 					return true;
 				}
+
 				byte[] var43 = new byte[var37];
 				int var44 = 0;
 				var36.pos = var35;
 				int var45 = 0;
+
 				for (int var46 = 0; var46 < var34; var46++) {
 					int var47 = 0;
 					for (int var48 = 0; var48 < var4; var48++) {
 						var47 += var36.g4s();
+
 						int var49;
 						if (var5 == null) {
 							var49 = var48;
 						} else {
 							var49 = var5[var48];
 						}
-						if (arg1 == var49) {
+
+						if (file == var49) {
 							System.arraycopy(var15, var45, var43, var44, var47);
 							var44 += var47;
 						}
+
 						var45 += var47;
 					}
 				}
@@ -438,32 +479,40 @@ public final class Js5 {
 				int var52 = var17 - 1;
 				int var18 = var15[var52] & 0xFF;
 				int var19 = var52 - var4 * var18 * 4;
+
 				Packet var20 = new Packet(var15);
 				int[] var21 = new int[var4];
 				var20.pos = var19;
+
 				for (int var22 = 0; var22 < var18; var22++) {
 					int var23 = 0;
 					for (int var24 = 0; var24 < var4; var24++) {
 						var23 += var20.g4s();
+
 						var21[var24] += var23;
 					}
 				}
+
 				byte[][] var25 = new byte[var4][];
 				for (int var26 = 0; var26 < var4; var26++) {
 					var25[var26] = new byte[var21[var26]];
 					var21[var26] = 0;
 				}
+
 				var20.pos = var19;
 				int var27 = 0;
+
 				for (int var28 = 0; var28 < var18; var28++) {
 					int var29 = 0;
 					for (int var30 = 0; var30 < var4; var30++) {
 						var29 += var20.g4s();
+
 						System.arraycopy(var15, var27, var25[var30], var21[var30], var29);
 						var21[var30] += var29;
 						var27 += var29;
 					}
 				}
+
 				for (int var31 = 0; var31 < var4; var31++) {
 					int var32;
 					if (var5 == null) {
@@ -471,23 +520,25 @@ public final class Js5 {
 					} else {
 						var32 = var5[var31];
 					}
-					if (this.field4415 == 0) {
+
+					if (this.discardUnpacked == 0) {
 						var6[var32] = ByteArrayCopier.method2821(var25[var31], false);
 					} else {
 						var6[var32] = var25[var31];
 					}
 				}
 			}
+
 			return true;
 		}
 	}
 
 	@ObfuscatedName("py.g(Ljava/lang/String;I)I")
 	public int getgroupid(String arg0) {
-		if (this.method6946()) {
+		if (this.isIndexReady()) {
 			String var2 = arg0.toLowerCase();
-			int var3 = this.field4416.field4391.method4486(StringTools.method3475(var2));
-			return this.method6882(var3) ? var3 : -1;
+			int var3 = this.index.field4391.method4486(StringTools.method3475(var2));
+			return this.isGroupValid(var3) ? var3 : -1;
 		} else {
 			return -1;
 		}
@@ -495,9 +546,9 @@ public final class Js5 {
 
 	@ObfuscatedName("py.i(IS)I")
 	public int method6903(int arg0) {
-		if (this.method6946()) {
-			int var2 = this.field4416.field4391.method4486(arg0);
-			return this.method6882(var2) ? var2 : -1;
+		if (this.isIndexReady()) {
+			int var2 = this.index.field4391.method4486(arg0);
+			return this.isGroupValid(var2) ? var2 : -1;
 		} else {
 			return -1;
 		}
@@ -505,9 +556,9 @@ public final class Js5 {
 
 	@ObfuscatedName("py.j(Ljava/lang/String;B)Z")
 	public boolean method6904(String arg0) {
-		if (this.method6946()) {
+		if (this.isIndexReady()) {
 			String var2 = arg0.toLowerCase();
-			int var3 = this.field4416.field4391.method4486(StringTools.method3475(var2));
+			int var3 = this.index.field4391.method4486(StringTools.method3475(var2));
 			return var3 >= 0;
 		} else {
 			return false;
@@ -516,30 +567,30 @@ public final class Js5 {
 
 	@ObfuscatedName("py.t(Ljava/lang/String;Ljava/lang/String;I)Z")
 	public boolean method6905(String arg0, String arg1) {
-		if (!this.method6946()) {
+		if (!this.isIndexReady()) {
 			return false;
 		}
 		String var3 = arg0.toLowerCase();
 		String var4 = arg1.toLowerCase();
-		int var5 = this.field4416.field4391.method4486(StringTools.method3475(var3));
+		int var5 = this.index.field4391.method4486(StringTools.method3475(var3));
 		if (var5 < 0) {
 			return false;
 		} else {
-			int var6 = this.field4416.field4402[var5].method4486(StringTools.method3475(var4));
+			int var6 = this.index.field4402[var5].method4486(StringTools.method3475(var4));
 			return var6 >= 0;
 		}
 	}
 
 	@ObfuscatedName("py.ae(Ljava/lang/String;Ljava/lang/String;I)[B")
 	public synchronized byte[] method6906(String arg0, String arg1) {
-		if (!this.method6946()) {
+		if (!this.isIndexReady()) {
 			return null;
 		}
 		String var3 = arg0.toLowerCase();
 		String var4 = arg1.toLowerCase();
-		int var5 = this.field4416.field4391.method4486(StringTools.method3475(var3));
-		if (this.method6882(var5)) {
-			int var6 = this.field4416.field4402[var5].method4486(StringTools.method3475(var4));
+		int var5 = this.index.field4391.method4486(StringTools.method3475(var3));
+		if (this.isGroupValid(var5)) {
+			int var6 = this.index.field4402[var5].method4486(StringTools.method3475(var4));
 			return this.getfile(var5, var6);
 		} else {
 			return null;
@@ -548,14 +599,14 @@ public final class Js5 {
 
 	@ObfuscatedName("py.ag(Ljava/lang/String;Ljava/lang/String;I)Z")
 	public boolean method6938(String arg0, String arg1) {
-		if (!this.method6946()) {
+		if (!this.isIndexReady()) {
 			return false;
 		}
 		String var3 = arg0.toLowerCase();
 		String var4 = arg1.toLowerCase();
-		int var5 = this.field4416.field4391.method4486(StringTools.method3475(var3));
-		if (this.method6882(var5)) {
-			int var6 = this.field4416.field4402[var5].method4486(StringTools.method3475(var4));
+		int var5 = this.index.field4391.method4486(StringTools.method3475(var3));
+		if (this.isGroupValid(var5)) {
+			int var6 = this.index.field4402[var5].method4486(StringTools.method3475(var4));
 			return this.requestdownload(var5, var6);
 		} else {
 			return false;
@@ -570,9 +621,9 @@ public final class Js5 {
 
 	@ObfuscatedName("py.al(Ljava/lang/String;I)Z")
 	public boolean method6886(String arg0) {
-		if (this.method6946()) {
+		if (this.isIndexReady()) {
 			String var2 = arg0.toLowerCase();
-			int var3 = this.field4416.field4391.method4486(StringTools.method3475(var2));
+			int var3 = this.index.field4391.method4486(StringTools.method3475(var2));
 			return this.method6927(var3);
 		} else {
 			return false;
@@ -581,52 +632,55 @@ public final class Js5 {
 
 	@ObfuscatedName("py.ac(Ljava/lang/String;I)I")
 	public int method6880(String arg0) {
-		if (this.method6946()) {
+		if (this.isIndexReady()) {
 			String var2 = arg0.toLowerCase();
-			int var3 = this.field4416.field4391.method4486(StringTools.method3475(var2));
-			return this.method6892(var3);
+			int var3 = this.index.field4391.method4486(StringTools.method3475(var2));
+			return this.getPercentageComplete(var3);
 		} else {
 			return 0;
 		}
 	}
 
 	@ObfuscatedName("qi.ai([BB)[B")
-	public static final byte[] method7275(byte[] arg0) {
-		Packet var1 = new Packet(arg0);
-		Js5GroupHeader var2 = new Js5GroupHeader(var1);
-		Js5CompressionType var3 = var2.method7080();
-		int var4 = var2.method7081();
-		if (var4 < 0 || field4419 != 0 && var4 > field4419) {
+	public static byte[] uncompress(byte[] src) {
+		Packet buf = new Packet(src);
+		Js5GroupHeader header = new Js5GroupHeader(buf);
+		Js5CompressionType type = header.getCompressionType();
+		int len = header.getPackedLength();
+
+		if (len < 0 || MAX_LENGTH != 0 && len > MAX_LENGTH) {
 			throw new RuntimeException();
-		} else if (Js5CompressionType.field4434 == var3) {
-			byte[] var5 = new byte[var4];
-			var1.gdata(var5, 0, var4);
-			return var5;
+		} else if (Js5CompressionType.UNCOMPRESSED == type) {
+			byte[] bytes = new byte[len];
+			buf.gdata(bytes, 0, len);
+			return bytes;
 		} else {
-			int var6 = var2.method7091();
-			if (var6 < 0 || field4419 != 0 && var6 > field4419) {
+			int unpackedLength = header.getUnpackedLength();
+			if (unpackedLength < 0 || MAX_LENGTH != 0 && unpackedLength > MAX_LENGTH) {
 				throw new RuntimeException();
 			}
-			byte[] var7;
-			if (Js5CompressionType.field4430 == var3) {
-				var7 = new byte[var6];
-				BZip2.method14100(var7, var6, arg0, var4, 9);
-			} else if (Js5CompressionType.field4432 == var3) {
-				var7 = new byte[var6];
+
+			byte[] bytes;
+			if (Js5CompressionType.BZIP2 == type) {
+				bytes = new byte[unpackedLength];
+				BZip2.method14100(bytes, unpackedLength, src, len, 9);
+			} else if (Js5CompressionType.GZIP == type) {
+				bytes = new byte[unpackedLength];
 				GZip var8 = field4409;
-				synchronized (field4409) {
-					field4409.method15245(var1, var7);
+				synchronized (var8) {
+					field4409.method15245(buf, bytes);
 				}
-			} else if (Js5CompressionType.LZMA == var3) {
+			} else if (Js5CompressionType.LZMA == type) {
 				try {
-					var7 = LZMA.method8503(var1, var6);
-				} catch (IOException var11) {
-					throw new RuntimeException(var11);
+					bytes = LZMA.method8503(buf, unpackedLength);
+				} catch (IOException ex) {
+					throw new RuntimeException(ex);
 				}
 			} else {
 				throw new RuntimeException();
 			}
-			return var7;
+
+			return bytes;
 		}
 	}
 }

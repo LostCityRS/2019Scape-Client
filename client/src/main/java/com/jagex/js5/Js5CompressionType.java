@@ -7,35 +7,35 @@ import deob.ObfuscatedName;
 public class Js5CompressionType implements SerializableEnum {
 
 	@ObfuscatedName("pj.e")
-	public static final Js5CompressionType field4434 = new Js5CompressionType("UNCOMPRESSED", 0);
+	public static final Js5CompressionType UNCOMPRESSED = new Js5CompressionType("UNCOMPRESSED", 0);
 
 	@ObfuscatedName("pj.n")
-	public static final Js5CompressionType field4430 = new Js5CompressionType("BZIP2", 1);
+	public static final Js5CompressionType BZIP2 = new Js5CompressionType("BZIP2", 1);
 
 	@ObfuscatedName("pj.m")
-	public static final Js5CompressionType field4432 = new Js5CompressionType("GZIP", 2);
+	public static final Js5CompressionType GZIP = new Js5CompressionType("GZIP", 2);
 
 	@ObfuscatedName("pj.k")
 	public static final Js5CompressionType LZMA = new Js5CompressionType("LZMA", 3);
 
 	@ObfuscatedName("pj.f")
-	public final String field4435;
+	public final String name;
 
 	@ObfuscatedName("pj.w")
-	public final int field4433;
+	public final int id;
 
 	@ObfuscatedName("pj.e(S)[Lpj;")
-	public static Js5CompressionType[] method6978() {
-		return new Js5CompressionType[] { field4432, LZMA, field4430, field4434 };
+	public static Js5CompressionType[] values() {
+		return new Js5CompressionType[] { GZIP, LZMA, BZIP2, UNCOMPRESSED };
 	}
 
-	public Js5CompressionType(String arg0, int arg1) {
-		this.field4435 = arg0;
-		this.field4433 = arg1;
+	public Js5CompressionType(String name, int id) {
+		this.name = name;
+		this.id = id;
 	}
 
 	@ObfuscatedName("pj.n()I")
 	public int getId() {
-		return this.field4433;
+		return this.id;
 	}
 }

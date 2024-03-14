@@ -143,7 +143,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 
 	@ObfuscatedName("aij.y(I)I")
 	public int method16823() {
-		if (this.getIndex() == null) {
+		if (this.fetchindex() == null) {
 			return this.field10743 == null ? 0 : this.field10743.method19446();
 		} else {
 			return 100;
@@ -151,7 +151,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 	}
 
 	@ObfuscatedName("aij.e(B)Lpl;")
-	public Js5Index getIndex() {
+	public Js5Index fetchindex() {
 		if (this.index != null) {
 			return this.index;
 		}
@@ -205,7 +205,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 		}
 		this.field10743 = null;
 		if (this.field10723 != null) {
-			this.field10745 = new byte[this.index.field4392];
+			this.field10745 = new byte[this.index.capacity];
 			this.field10740 = 0;
 		}
 		return this.index;
@@ -388,12 +388,12 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 
 	@ObfuscatedName("aij.x(I)V")
 	public void method16833() {
-		if (this.field10735 == null || this.getIndex() == null) {
+		if (this.field10735 == null || this.fetchindex() == null) {
 			return;
 		}
 		for (Node var1 = this.field10741.method14191(); var1 != null; var1 = this.field10741.method14161()) {
 			int var2 = (int) var1.field6760;
-			if (var2 < 0 || var2 >= this.index.field4392 || this.index.field4399[var2] == 0) {
+			if (var2 < 0 || var2 >= this.index.capacity || this.index.groupSizes[var2] == 0) {
 				var1.method8440();
 			} else {
 				if (this.field10745[var2] == 0) {
@@ -412,7 +412,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 	@ObfuscatedName("aij.b(B)V")
 	public void method16825() {
 		if (this.field10735 != null) {
-			if (this.getIndex() == null) {
+			if (this.fetchindex() == null) {
 				return;
 			}
 			if (this.field10738) {
@@ -428,8 +428,8 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 						var2.method8440();
 					}
 				}
-				while (this.field10739 < this.index.field4399.length) {
-					if (this.index.field4399[this.field10739] == 0) {
+				while (this.field10739 < this.index.groupSizes.length) {
+					if (this.index.groupSizes[this.field10739] == 0) {
 						this.field10739++;
 					} else {
 						if (this.field10744.field4437 >= 250) {
@@ -465,8 +465,8 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 						var5 = false;
 					}
 				}
-				while (this.field10739 < this.index.field4399.length) {
-					if (this.index.field4399[this.field10739] == 0) {
+				while (this.field10739 < this.index.groupSizes.length) {
+					if (this.index.groupSizes[this.field10739] == 0) {
 						this.field10739++;
 					} else {
 						if (this.field10720.method7028()) {
@@ -562,7 +562,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 	}
 
 	@ObfuscatedName("aij.k(II)I")
-	public int method6855(int arg0) {
+	public int getPercentageComplete(int arg0) {
 		Js5Request var2 = (Js5Request) this.field10731.method14495((long) arg0);
 		return var2 == null ? 0 : var2.method19446();
 	}

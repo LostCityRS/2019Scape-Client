@@ -664,8 +664,8 @@ public class Component {
 		field7085 = arg0;
 		field1707 = arg1;
 		field8370 = arg2;
-		field11725 = new Interface[field7085.method6898()];
-		field8424 = new boolean[field7085.method6898()];
+		field11725 = new Interface[field7085.capacity()];
+		field8424 = new boolean[field7085.capacity()];
 	}
 
 	@ObfuscatedName("xh.n(II)Lhf;")
@@ -716,7 +716,7 @@ public class Component {
 		if (!field7085.method6927(arg0)) {
 			return null;
 		}
-		int var4 = field7085.method6897(arg0);
+		int var4 = field7085.getGroupCapacity(arg0);
 		Component[] var5;
 		if (var4 == 0) {
 			var5 = new Component[0];
@@ -733,7 +733,7 @@ public class Component {
 		}
 		for (int var6 = 0; var6 < var4; var6++) {
 			if (arg2.field2151[var6] == null) {
-				byte[] var7 = field7085.method6914(arg0, var6, arg1);
+				byte[] var7 = field7085.getfile(arg0, var6, arg1);
 				if (var7 != null) {
 					Component var8 = arg2.field2151[var6] = new Component();
 					var8.field2158 = (arg0 << 16) + var6;
@@ -1257,8 +1257,8 @@ public class Component {
 
 	@ObfuscatedName("jh.a(B)V")
 	public static void method5075() {
-		field11725 = new Interface[field7085.method6898()];
-		field8424 = new boolean[field7085.method6898()];
+		field11725 = new Interface[field7085.capacity()];
+		field8424 = new boolean[field7085.capacity()];
 	}
 
 	@ObfuscatedName("hf.g(I)V")

@@ -141,7 +141,7 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 							int var24 = this.field4460.g1();
 							int var25 = this.field4460.g4s();
 							byte var26 = 5;
-							if (var24 != Js5CompressionType.field4434.getId()) {
+							if (var24 != Js5CompressionType.UNCOMPRESSED.getId()) {
 								var26 = 9;
 							}
 							Packet var27 = this.field4462.field12564 = new Packet(var25 + var26 + this.field4462.field12565);

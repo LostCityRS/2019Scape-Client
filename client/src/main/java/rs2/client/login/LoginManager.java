@@ -1130,7 +1130,7 @@ public class LoginManager {
 				if (var4 == null) {
 					arg0.p4(0);
 				} else {
-					arg0.p4(var4.method6881());
+					arg0.p4(var4.getChecksum());
 				}
 			}
 		}

@@ -22,7 +22,7 @@ public class Js5Index {
 	public int field4387;
 
 	@ObfuscatedName("pl.w")
-	public int[] field4394;
+	public int[] groupIds;
 
 	@ObfuscatedName("pl.l")
 	public int[] field4390;
@@ -31,7 +31,7 @@ public class Js5Index {
 	public IntTreeMap field4391;
 
 	@ObfuscatedName("pl.z")
-	public int field4392;
+	public int capacity;
 
 	@ObfuscatedName("pl.p")
 	public int[] field4393;
@@ -52,7 +52,7 @@ public class Js5Index {
 	public int[] field4388;
 
 	@ObfuscatedName("pl.s")
-	public int[] field4399;
+	public int[] groupSizes;
 
 	@ObfuscatedName("pl.y")
 	public int[][] field4386;
@@ -64,7 +64,7 @@ public class Js5Index {
 	public IntTreeMap[] field4402;
 
 	@ObfuscatedName("pl.b")
-	public int[] field4403;
+	public int[] groupCapacities;
 
 	public Js5Index(byte[] arg0, int arg1, byte[] arg2) {
 		this.crc = Packet.getcrc(arg0, arg0.length);
@@ -87,7 +87,7 @@ public class Js5Index {
 
 	@ObfuscatedName("pl.e([BI)V")
 	public void method6849(byte[] arg0) {
-		Packet var2 = new Packet(Js5.method7275(arg0));
+		Packet var2 = new Packet(Js5.uncompress(arg0));
 		int var3 = var2.g1();
 		if (var3 < 5 || var3 > 7) {
 			throw new RuntimeException();
@@ -109,46 +109,46 @@ public class Js5Index {
 		}
 		int var9 = 0;
 		int var10 = -1;
-		this.field4394 = new int[this.field4387];
+		this.groupIds = new int[this.field4387];
 		if (var3 >= 7) {
 			for (int var11 = 0; var11 < this.field4387; var11++) {
-				this.field4394[var11] = var9 += var2.gSmart2or4();
-				if (this.field4394[var11] > var10) {
-					var10 = this.field4394[var11];
+				this.groupIds[var11] = var9 += var2.gSmart2or4();
+				if (this.groupIds[var11] > var10) {
+					var10 = this.groupIds[var11];
 				}
 			}
 		} else {
 			for (int var12 = 0; var12 < this.field4387; var12++) {
-				this.field4394[var12] = var9 += var2.g2();
-				if (this.field4394[var12] > var10) {
-					var10 = this.field4394[var12];
+				this.groupIds[var12] = var9 += var2.g2();
+				if (this.groupIds[var12] > var10) {
+					var10 = this.groupIds[var12];
 				}
 			}
 		}
-		this.field4392 = var10 + 1;
-		this.field4393 = new int[this.field4392];
+		this.capacity = var10 + 1;
+		this.field4393 = new int[this.capacity];
 		if (var8) {
-			this.field4400 = new int[this.field4392];
+			this.field4400 = new int[this.capacity];
 		}
 		if (var6) {
-			this.field4395 = new byte[this.field4392][];
+			this.field4395 = new byte[this.capacity][];
 		}
-		this.groupVersions = new int[this.field4392];
-		this.field4399 = new int[this.field4392];
-		this.field4386 = new int[this.field4392][];
-		this.field4403 = new int[this.field4392];
+		this.groupVersions = new int[this.capacity];
+		this.groupSizes = new int[this.capacity];
+		this.field4386 = new int[this.capacity][];
+		this.groupCapacities = new int[this.capacity];
 		if (var5) {
-			this.field4390 = new int[this.field4392];
-			for (int var13 = 0; var13 < this.field4392; var13++) {
+			this.field4390 = new int[this.capacity];
+			for (int var13 = 0; var13 < this.capacity; var13++) {
 				this.field4390[var13] = -1;
 			}
 			for (int var14 = 0; var14 < this.field4387; var14++) {
-				this.field4390[this.field4394[var14]] = var2.g4s();
+				this.field4390[this.groupIds[var14]] = var2.g4s();
 			}
 			this.field4391 = new IntTreeMap(this.field4390);
 		}
 		for (int var15 = 0; var15 < this.field4387; var15++) {
-			this.field4393[this.field4394[var15]] = var2.g4s();
+			this.field4393[this.groupIds[var15]] = var2.g4s();
 		}
 		if (var8) {
 			for (int var16 = 0; var16 < this.field4387; var16++) {
@@ -159,27 +159,27 @@ public class Js5Index {
 			for (int var17 = 0; var17 < this.field4387; var17++) {
 				byte[] var18 = new byte[64];
 				var2.gdata(var18, 0, 64);
-				this.field4395[this.field4394[var17]] = var18;
+				this.field4395[this.groupIds[var17]] = var18;
 			}
 		}
 		if (var7) {
-			this.field4397 = new int[this.field4392];
-			this.field4388 = new int[this.field4392];
+			this.field4397 = new int[this.capacity];
+			this.field4388 = new int[this.capacity];
 			for (int var19 = 0; var19 < this.field4387; var19++) {
-				this.field4397[this.field4394[var19]] = var2.g4s();
-				this.field4388[this.field4394[var19]] = var2.g4s();
+				this.field4397[this.groupIds[var19]] = var2.g4s();
+				this.field4388[this.groupIds[var19]] = var2.g4s();
 			}
 		}
 		for (int var20 = 0; var20 < this.field4387; var20++) {
-			this.groupVersions[this.field4394[var20]] = var2.g4s();
+			this.groupVersions[this.groupIds[var20]] = var2.g4s();
 		}
 		if (var3 >= 7) {
 			for (int var21 = 0; var21 < this.field4387; var21++) {
-				this.field4399[this.field4394[var21]] = var2.gSmart2or4();
+				this.groupSizes[this.groupIds[var21]] = var2.gSmart2or4();
 			}
 			for (int var22 = 0; var22 < this.field4387; var22++) {
-				int var23 = this.field4394[var22];
-				int var24 = this.field4399[var23];
+				int var23 = this.groupIds[var22];
+				int var24 = this.groupSizes[var23];
 				int var25 = 0;
 				int var26 = -1;
 				this.field4386[var23] = new int[var24];
@@ -189,18 +189,18 @@ public class Js5Index {
 						var26 = var28;
 					}
 				}
-				this.field4403[var23] = var26 + 1;
+				this.groupCapacities[var23] = var26 + 1;
 				if (var26 + 1 == var24) {
 					this.field4386[var23] = null;
 				}
 			}
 		} else {
 			for (int var29 = 0; var29 < this.field4387; var29++) {
-				this.field4399[this.field4394[var29]] = var2.g2();
+				this.groupSizes[this.groupIds[var29]] = var2.g2();
 			}
 			for (int var30 = 0; var30 < this.field4387; var30++) {
-				int var31 = this.field4394[var30];
-				int var32 = this.field4399[var31];
+				int var31 = this.groupIds[var30];
+				int var32 = this.groupSizes[var31];
 				int var33 = 0;
 				int var34 = -1;
 				this.field4386[var31] = new int[var32];
@@ -210,7 +210,7 @@ public class Js5Index {
 						var34 = var36;
 					}
 				}
-				this.field4403[var31] = var34 + 1;
+				this.groupCapacities[var31] = var34 + 1;
 				if (var34 + 1 == var32) {
 					this.field4386[var31] = null;
 				}
@@ -222,10 +222,10 @@ public class Js5Index {
 		this.field4401 = new int[var10 + 1][];
 		this.field4402 = new IntTreeMap[var10 + 1];
 		for (int var37 = 0; var37 < this.field4387; var37++) {
-			int var38 = this.field4394[var37];
-			int var39 = this.field4399[var38];
-			this.field4401[var38] = new int[this.field4403[var38]];
-			for (int var40 = 0; var40 < this.field4403[var38]; var40++) {
+			int var38 = this.groupIds[var37];
+			int var39 = this.groupSizes[var38];
+			this.field4401[var38] = new int[this.groupCapacities[var38]];
+			for (int var40 = 0; var40 < this.groupCapacities[var38]; var40++) {
 				this.field4401[var38][var40] = -1;
 			}
 			for (int var41 = 0; var41 < var39; var41++) {

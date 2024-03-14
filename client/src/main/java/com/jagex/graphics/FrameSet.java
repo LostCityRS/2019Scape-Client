@@ -70,7 +70,7 @@ public class FrameSet extends SecondaryNode {
 		Js5 var13 = field12325;
 		int[] var15;
 		synchronized (field12325) {
-			int var14 = field12325.method6897(this.field12324);
+			int var14 = field12325.getGroupCapacity(this.field12324);
 			this.field12327 = new AnimFrame[var14];
 			var15 = field12325.method6895(this.field12324);
 		}

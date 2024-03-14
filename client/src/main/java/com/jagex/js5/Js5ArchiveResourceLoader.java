@@ -16,7 +16,7 @@ public class Js5ArchiveResourceLoader implements ResourceLoader {
 
 	@ObfuscatedName("pw.e(I)I")
 	public int method6782() {
-		return this.field4328.method6896() ? 100 : this.field4328.method6893();
+		return this.field4328.fetchAll() ? 100 : this.field4328.getPercentageComplete();
 	}
 
 	@ObfuscatedName("pw.n(B)Lacv;")

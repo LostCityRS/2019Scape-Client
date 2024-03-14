@@ -23,7 +23,7 @@ public class VarPlayerTypeListClient extends VarTypeList implements ConfigTypeLi
 	public final WeightedCache field9254 = new WeightedCache(64);
 
 	public VarPlayerTypeListClient(ModeGame arg0, VarDomainType arg1, Language arg2, Js5 arg3) {
-		super(arg0, arg1, arg2, arg3 == null ? 0 : arg3.method6897(arg1.getJs5GroupID().id));
+		super(arg0, arg1, arg2, arg3 == null ? 0 : arg3.getGroupCapacity(arg1.getJs5GroupID().id));
 		this.field9255 = arg3;
 	}
 

@@ -23,7 +23,7 @@ public class VarBasicTypeListClient extends VarTypeList implements ConfigTypeLis
 	public final WeightedCache recentUse = new WeightedCache(64);
 
 	public VarBasicTypeListClient(ModeGame arg0, VarDomainType arg1, Language arg2, Js5 arg3) {
-		super(arg0, arg1, arg2, arg3 == null ? 0 : arg3.method6897(arg1.getJs5GroupID().id));
+		super(arg0, arg1, arg2, arg3 == null ? 0 : arg3.getGroupCapacity(arg1.getJs5GroupID().id));
 		this.configClient = arg3;
 	}
 

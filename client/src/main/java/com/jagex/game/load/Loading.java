@@ -268,13 +268,13 @@ public class Loading {
 			Client.defaultsJs5 = Client.createJs5(Js5Archive.DEFAULTS, true, 1, true, true);
 		}
 		if (field3419 == LoadingStage.field2911) {
-			boolean var1 = loadingScreensJs5.method6896();
-			boolean var2 = Client.defaultsJs5.method6896();
+			boolean var1 = loadingScreensJs5.fetchAll();
+			boolean var2 = Client.defaultsJs5.fetchAll();
 			int var3 = Client.field6888[Js5Archive.LOADING_SCREENS.getArchiveId()].method16823();
 			int var4 = var3 + Client.field6888[field2941 ? Js5Archive.LOADING_SPRITES_RAW.getArchiveId() : Js5Archive.LOADING_SPRITES.getArchiveId()].method16823();
 			int var5 = var4 + Client.field6888[Js5Archive.FONTMETRICS.getArchiveId()].method16823();
-			int var6 = var5 + (var2 ? 100 : Client.defaultsJs5.method6893());
-			int var7 = var6 + (var1 ? 100 : loadingScreensJs5.method6893());
+			int var6 = var5 + (var2 ? 100 : Client.defaultsJs5.getPercentageComplete());
+			int var7 = var6 + (var1 ? 100 : loadingScreensJs5.getPercentageComplete());
 			if (var7 != 500) {
 				return var7 / 5;
 			}
@@ -479,10 +479,10 @@ public class Loading {
 			Client.field7228 = new ClientVariableManager(Client.field8911);
 			method9212();
 			Client.field1895 = TotpPreferences.method18618();
-			Client.mapsJs5.method6900(false, true);
-			Client.spritesJs5.method6900(true, true);
-			Client.fontmetricsJs5.method6900(true, true);
-			Client.binaryJs5.method6900(true, true);
+			Client.mapsJs5.discardNames(false, true);
+			Client.spritesJs5.discardNames(true, true);
+			Client.fontmetricsJs5.discardNames(true, true);
+			Client.binaryJs5.discardNames(true, true);
 			Client.field10807 = true;
 		}
 		if (field3419 == LoadingStage.field2916 && Client.field11389.field7724 != -1) {

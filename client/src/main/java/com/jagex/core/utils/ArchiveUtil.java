@@ -16,10 +16,10 @@ public class ArchiveUtil {
 		if (arg0 == null) {
 			return 0;
 		} else if (arg1.getGroupSize() > 1) {
-			int var2 = arg0.method6898() - 1;
-			return var2 * arg1.getGroupSize() + arg0.method6897(var2);
+			int var2 = arg0.capacity() - 1;
+			return var2 * arg1.getGroupSize() + arg0.getGroupCapacity(var2);
 		} else {
-			return arg0.method6897(arg1.id);
+			return arg0.getGroupCapacity(arg1.id);
 		}
 	}
 

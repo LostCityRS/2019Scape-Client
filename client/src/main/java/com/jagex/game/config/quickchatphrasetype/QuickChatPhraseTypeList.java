@@ -34,10 +34,10 @@ public class QuickChatPhraseTypeList {
 		this.field8858 = arg2;
 		this.field8861 = arg3;
 		if (this.field8860 != null) {
-			this.field8856 = this.field8860.method6897(1);
+			this.field8856 = this.field8860.getGroupCapacity(1);
 		}
 		if (this.field8858 != null) {
-			this.field8857 = this.field8858.method6897(1);
+			this.field8857 = this.field8858.getGroupCapacity(1);
 		}
 	}
 

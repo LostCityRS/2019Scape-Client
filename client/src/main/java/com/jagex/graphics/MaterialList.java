@@ -21,7 +21,7 @@ public class MaterialList {
 
 	public MaterialList(Js5 arg0) {
 		this.field1452 = arg0;
-		this.field1451 = arg0.method6897(0);
+		this.field1451 = arg0.getGroupCapacity(0);
 		this.method2045();
 	}
 

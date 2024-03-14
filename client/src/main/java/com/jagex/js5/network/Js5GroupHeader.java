@@ -9,36 +9,37 @@ import deob.ObfuscatedName;
 public class Js5GroupHeader {
 
 	@ObfuscatedName("pc.e")
-	public final Js5CompressionType field4478;
+	public final Js5CompressionType compressionType;
 
 	@ObfuscatedName("pc.n")
-	public final int field4477;
+	public final int packedLength;
 
 	@ObfuscatedName("pc.m")
-	public final int field4476;
+	public final int unpackedLength;
 
-	public Js5GroupHeader(Packet arg0) {
-		this.field4478 = (Js5CompressionType) SerializableEnums.decode(Js5CompressionType.method6978(), arg0.g1());
-		this.field4477 = arg0.g4s();
-		if (Js5CompressionType.field4434 == this.field4478) {
-			this.field4476 = this.field4477;
+	public Js5GroupHeader(Packet buf) {
+		this.compressionType = (Js5CompressionType) SerializableEnums.decode(Js5CompressionType.values(), buf.g1());
+		this.packedLength = buf.g4s();
+
+		if (Js5CompressionType.UNCOMPRESSED == this.compressionType) {
+			this.unpackedLength = this.packedLength;
 		} else {
-			this.field4476 = arg0.g4s();
+			this.unpackedLength = buf.g4s();
 		}
 	}
 
 	@ObfuscatedName("pc.e(B)Lpj;")
-	public Js5CompressionType method7080() {
-		return this.field4478;
+	public Js5CompressionType getCompressionType() {
+		return this.compressionType;
 	}
 
 	@ObfuscatedName("pc.n(I)I")
-	public int method7081() {
-		return this.field4477;
+	public int getPackedLength() {
+		return this.packedLength;
 	}
 
 	@ObfuscatedName("pc.m(B)I")
-	public int method7091() {
-		return this.field4476;
+	public int getUnpackedLength() {
+		return this.unpackedLength;
 	}
 }
