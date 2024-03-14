@@ -49,7 +49,7 @@ public class HintArrow {
 		Model var8 = (Model) field752.method2930(var6);
 		short var9 = 2055;
 		if (var8 == null) {
-			ModelUnlit var10 = ModelUnlit.method1931(Client.field9213, arg5, 0);
+			ModelUnlit var10 = ModelUnlit.method1931(Client.modelsJs5, arg5, 0);
 			if (var10 == null) {
 				return null;
 			}

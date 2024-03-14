@@ -1547,9 +1547,9 @@ public class MiniMenu {
 			var9 = 0;
 		}
 		if (field9253 == null || field8480 == null) {
-			if (Client.field10317.method6889(field12340) && Client.field10317.method6889(field740)) {
-				field9253 = arg0.method2200(SpriteDataProvider.method1609(Client.field10317, field12340, 0), true);
-				SpriteData var10 = SpriteDataProvider.method1609(Client.field10317, field740, 0);
+			if (Client.spritesJs5.method6889(field12340) && Client.spritesJs5.method6889(field740)) {
+				field9253 = arg0.method2200(SpriteDataProvider.method1609(Client.spritesJs5, field12340, 0), true);
+				SpriteData var10 = SpriteDataProvider.method1609(Client.spritesJs5, field740, 0);
 				field8480 = arg0.method2200(var10, true);
 				var10.method2601();
 				field3568 = arg0.method2200(var10, true);
@@ -1571,13 +1571,13 @@ public class MiniMenu {
 
 	@ObfuscatedName("tm.an(Ldh;IIIIII)V")
 	public static void method8462(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		if ((field1224 == null || field10568 == null || field11699 == null) && Client.field10317.method6889(field11642) && Client.field10317.method6889(field1748) && Client.field10317.method6889(field1847)) {
-			SpriteData var6 = SpriteDataProvider.method1609(Client.field10317, field1748, 0);
+		if ((field1224 == null || field10568 == null || field11699 == null) && Client.spritesJs5.method6889(field11642) && Client.spritesJs5.method6889(field1748) && Client.spritesJs5.method6889(field1847)) {
+			SpriteData var6 = SpriteDataProvider.method1609(Client.spritesJs5, field1748, 0);
 			field10568 = arg0.method2200(var6, true);
 			var6.method2601();
 			field566 = arg0.method2200(var6, true);
-			field1224 = arg0.method2200(SpriteDataProvider.method1609(Client.field10317, field11642, 0), true);
-			SpriteData var7 = SpriteDataProvider.method1609(Client.field10317, field1847, 0);
+			field1224 = arg0.method2200(SpriteDataProvider.method1609(Client.spritesJs5, field11642, 0), true);
+			SpriteData var7 = SpriteDataProvider.method1609(Client.spritesJs5, field1847, 0);
 			field11699 = arg0.method2200(var7, true);
 			var7.method2601();
 			field11831 = arg0.method2200(var7, true);

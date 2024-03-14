@@ -799,7 +799,7 @@ public class AudioApi {
 		AudioApiRelated2 var3 = this.method3162(arg0, arg1);
 		if (var3 == null) {
 			AudioMixerRelated_Sub1 var4 = new AudioMixerRelated_Sub1(this);
-			var3 = AudioMixer.method6064(arg1 ? Client.field3085 : Client.field2613, arg0, var4, arg1, this.field1863);
+			var3 = AudioMixer.method6064(arg1 ? Client.audiostreamsJs5 : Client.vorbisJs5, arg0, var4, arg1, this.field1863);
 			if (arg1) {
 				this.field1865.put(arg0, var3);
 			} else {

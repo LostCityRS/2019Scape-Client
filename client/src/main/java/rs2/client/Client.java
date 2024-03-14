@@ -437,103 +437,103 @@ public final class Client extends GameShell {
 	public static Js5NetResourceProvider[] field6888;
 
 	@ObfuscatedName("vs.fd")
-	public static Js5 field7420;
+	public static Js5 animsJs5;
 
 	@ObfuscatedName("agg.fn")
-	public static Js5 field10287;
+	public static Js5 animsKeyframesJs5;
 
 	@ObfuscatedName("ajf.fi")
-	public static Js5 field11262;
+	public static Js5 basesJs5;
 
 	@ObfuscatedName("anx.ft")
-	public static Js5 field11838;
+	public static Js5 configJs5;
 
 	@ObfuscatedName("c.fx")
-	public static Js5 field527;
+	public static Js5 interfacesJs5;
 
 	@ObfuscatedName("amo.fv")
-	public static Js5 field11752;
+	public static Js5 mapsJs5;
 
 	@ObfuscatedName("adn.fc")
-	public static Js5 field9213;
+	public static Js5 modelsJs5;
 
 	@ObfuscatedName("agd.fw")
-	public static Js5 field10317;
+	public static Js5 spritesJs5;
 
 	@ObfuscatedName("aff.fa")
-	public static Js5 field10249;
+	public static Js5 materialsJs5;
 
 	@ObfuscatedName("abn.fp")
-	public static Js5 field8741;
+	public static Js5 binaryJs5;
 
 	@ObfuscatedName("rz.fq")
-	public static Js5 field5010;
+	public static Js5 clientscriptsJs5;
 
 	@ObfuscatedName("wc.ff")
-	public static Js5 field7672;
+	public static Js5 fontmetricsJs5;
 
 	@ObfuscatedName("ig.fl")
-	public static Js5 field2613;
+	public static Js5 vorbisJs5;
 
 	@ObfuscatedName("kl.fb")
-	public static Js5 field3085;
+	public static Js5 audiostreamsJs5;
 
 	@ObfuscatedName("vq.fo")
-	public static Js5 field7283;
+	public static Js5 dbtableIndexJs5;
 
 	@ObfuscatedName("dn.fy")
-	public static Js5 field1450;
+	public static Js5 texturesPngJs5;
 
 	@ObfuscatedName("pu.fe")
-	public static Js5 field4475;
+	public static Js5 configLocJs5;
 
 	@ObfuscatedName("abv.fk")
-	public static Js5 field8700;
+	public static Js5 configEnumJs5;
 
 	@ObfuscatedName("qr.fh")
-	public static Js5 field4618;
+	public static Js5 configNpcJs5;
 
 	@ObfuscatedName("vh.fr")
-	public static Js5 field7537;
+	public static Js5 configObjJs5;
 
 	@ObfuscatedName("zh.gu")
-	public static Js5 field8285;
+	public static Js5 configSeqJs5;
 
 	@ObfuscatedName("hx.gq")
-	public static Js5 field2149;
+	public static Js5 configSpotJs5;
 
 	@ObfuscatedName("nn.gl")
-	public static Js5 field3611;
+	public static Js5 configStructJs5;
 
 	@ObfuscatedName("pl.go")
-	public static Js5 field4404;
+	public static Js5 quickchatJs5;
 
 	@ObfuscatedName("gy.gk")
-	public static Js5 field1935;
+	public static Js5 quickchatGlobalJs5;
 
 	@ObfuscatedName("tp.gp")
-	public static Js5 field6879;
+	public static Js5 configParticleJs5;
 
 	@ObfuscatedName("ad.gy")
-	public static Js5 field736;
+	public static Js5 configBillboardJs5;
 
 	@ObfuscatedName("db.ga")
-	public static Js5 field1587;
+	public static Js5 defaultsJs5;
 
 	@ObfuscatedName("uc.gn")
-	public static Js5 field7060;
+	public static Js5 dllsJs5;
 
 	@ObfuscatedName("jm.gc")
-	public static Js5 field2900;
+	public static Js5 shadersJs5;
 
 	@ObfuscatedName("nr.gf")
-	public static Js5 field3808;
+	public static Js5 cutscenesJs5;
 
 	@ObfuscatedName("aik.gx")
-	public static Js5 field10752;
+	public static Js5 worldmapJs5;
 
 	@ObfuscatedName("zm.ge")
-	public static Js5 field8332;
+	public static Js5 worldmapAreaDataJs5;
 
 	@ObfuscatedName("aal.gg")
 	public static Map field8540;
@@ -2821,7 +2821,7 @@ public final class Client extends GameShell {
 	}
 
 	@ObfuscatedName("ko.ez(Labd;ZIZZI)Lpy;")
-	public static Js5 method5156(Js5Archive arg0, boolean arg1, int arg2, boolean arg3, boolean arg4) {
+	public static Js5 createJs5(Js5Archive arg0, boolean arg1, int arg2, boolean arg3, boolean arg4) {
 		if (field6888 == null) {
 			field6888 = new Js5NetResourceProvider[Js5Archive.getRequiredArrayLength()];
 			field8540 = new java.util.HashMap();
@@ -2860,7 +2860,7 @@ public final class Client extends GameShell {
 		field7538.method6157(field10833);
 		field7538.method6165();
 		DefaultSprites.method7114(field8198);
-		DefaultSprites.method5202(field8198, field10317);
+		DefaultSprites.method5202(field8198, spritesJs5);
 		MiniMenu.method5147();
 		method9734();
 		method9516();
@@ -2884,11 +2884,11 @@ public final class Client extends GameShell {
 	@ObfuscatedName("gm.ew(ILjava/lang/String;ZI)V")
 	public static void method3596(int arg0, String arg1, boolean arg2) {
 		if (arg0 == 0) {
-			field8198 = Renderer.method14575(0, GameShell.canvas, field7366, field7669, field9211, field7282, field2013, field2900, field688.unknown2.method18639() * 2);
+			field8198 = Renderer.method14575(0, GameShell.canvas, field7366, field7669, field9211, field7282, field2013, shadersJs5, field688.unknown2.method18639() * 2);
 			if (arg1 != null) {
 				field8198.method2475(1, 0);
-				FontMetrics var3 = FontMetrics.method6068(field7672, DefaultSprites.field505, 0, field7538);
-				Font var4 = field8198.method2207(var3, SpriteDataProvider.method1609(field10317, DefaultSprites.field505, 0), true);
+				FontMetrics var3 = FontMetrics.method6068(fontmetricsJs5, DefaultSprites.field505, 0, field7538);
+				Font var4 = field8198.method2207(var3, SpriteDataProvider.method1609(spritesJs5, DefaultSprites.field505, 0), true);
 				method8024();
 				MessageBox.method649(arg1, true, field8198, var4, var3);
 			}
@@ -2896,10 +2896,10 @@ public final class Client extends GameShell {
 			label245: {
 				Renderer var5 = null;
 				if (arg1 != null) {
-					var5 = Renderer.method14575(0, GameShell.canvas, field7366, field7669, field9211, field7282, field2013, field2900, 0);
+					var5 = Renderer.method14575(0, GameShell.canvas, field7366, field7669, field9211, field7282, field2013, shadersJs5, 0);
 					var5.method2475(1, 0);
-					FontMetrics var6 = FontMetrics.method1593(field7672, DefaultSprites.field505, 0);
-					Font var7 = var5.method2207(var6, SpriteDataProvider.method1609(field10317, DefaultSprites.field505, 0), true);
+					FontMetrics var6 = FontMetrics.method1593(fontmetricsJs5, DefaultSprites.field505, 0);
+					Font var7 = var5.method2207(var6, SpriteDataProvider.method1609(spritesJs5, DefaultSprites.field505, 0), true);
 					method8024();
 					MessageBox.method649(arg1, true, var5, var7, var6);
 					try {
@@ -2912,8 +2912,8 @@ public final class Client extends GameShell {
 					try {
 						method7239();
 						System.gc();
-						field8198 = Renderer.method14575(arg0, GameShell.canvas, field7366, field7669, field9211, field7282, field2013, field2900, field688.unknown2.method18639() * 2);
-						field7538 = new FontProvider(field8198, field10317, field7672, DefaultSprites.method845());
+						field8198 = Renderer.method14575(arg0, GameShell.canvas, field7366, field7669, field9211, field7282, field2013, shadersJs5, field688.unknown2.method18639() * 2);
+						field7538 = new FontProvider(field8198, spritesJs5, fontmetricsJs5, DefaultSprites.method845());
 						if (field8198.method2194()) {
 							boolean var9 = true;
 							try {
@@ -3079,7 +3079,7 @@ public final class Client extends GameShell {
 		try {
 			Dimension var2 = GameShell.canvas.getSize();
 			MessageBox.method649(LocalisedText.PROFILING.method15021(language), true, field8198, DefaultSprites.field9184, DefaultSprites.field2657);
-			ModelUnlit var3 = ModelUnlit.method1931(field9213, field11389.field7738, 0);
+			ModelUnlit var3 = ModelUnlit.method1931(modelsJs5, field11389.field7738, 0);
 			long var4 = MonotonicTime.method3655();
 			field8198.method2167();
 			field10793.method6313(0.0F, 256.0F, 0.0F);
@@ -7207,7 +7207,7 @@ public final class Client extends GameShell {
 								long var41 = (long) (var40 << 8 | var39);
 								Sprite var43 = (Sprite) field10894.method2930(var41);
 								if (var43 == null) {
-									SpriteData[] var44 = SpriteDataProvider.method1608(field10317, var40, 0);
+									SpriteData[] var44 = SpriteDataProvider.method1608(spritesJs5, var40, 0);
 									if (var44 == null) {
 										continue;
 									}
@@ -7232,7 +7232,7 @@ public final class Client extends GameShell {
 									long var50 = (long) (var46[var48] << 8 | var47[var48]);
 									Sprite var52 = (Sprite) field10894.method2930(var50);
 									if (var52 == null) {
-										SpriteData[] var53 = SpriteDataProvider.method1608(field10317, var46[var48], 0);
+										SpriteData[] var53 = SpriteDataProvider.method1608(spritesJs5, var46[var48], 0);
 										if (var53 == null) {
 											continue;
 										}
@@ -7721,7 +7721,7 @@ public final class Client extends GameShell {
 		Object var10 = null;
 		Sprite var11 = (Sprite) field10830.method2930((long) var9);
 		if (var11 == null) {
-			SpriteData[] var12 = SpriteDataProvider.method1608(field10317, var9, 0);
+			SpriteData[] var12 = SpriteDataProvider.method1608(spritesJs5, var9, 0);
 			if (var12 == null) {
 				return;
 			}
@@ -9018,7 +9018,7 @@ public final class Client extends GameShell {
 			field11041 = -1;
 			field10862 = var257;
 			field10863 = 2;
-			field3808.method6889(field10862);
+			cutscenesJs5.method6889(field10862);
 			MiniMenu.method6031();
 			MiniMenu.method3074();
 			int var258 = in.g2();
@@ -14511,7 +14511,7 @@ public final class Client extends GameShell {
 	public static DBTableIndex method146(int arg0) {
 		DBTableIndex var1 = (DBTableIndex) field10834.method2930((long) arg0);
 		if (var1 == null) {
-			var1 = new DBTableIndex(field7283, DBUtils.method746(arg0), DBUtils.method15018(arg0));
+			var1 = new DBTableIndex(dbtableIndexJs5, DBUtils.method746(arg0), DBUtils.method15018(arg0));
 			field10834.method2921(var1, (long) arg0);
 		}
 		return var1;
@@ -14521,7 +14521,7 @@ public final class Client extends GameShell {
 	public static DBTableIndex method4574(int arg0) {
 		DBTableIndex var1 = (DBTableIndex) field10857.method2930((long) arg0);
 		if (var1 == null) {
-			var1 = new DBTableIndex(field7283, arg0);
+			var1 = new DBTableIndex(dbtableIndexJs5, arg0);
 		}
 		return var1;
 	}
@@ -14673,7 +14673,7 @@ public final class Client extends GameShell {
 		field7015 = field11114.iterator();
 		while (field7015.hasNext()) {
 			int var1 = (Integer) field7015.next();
-			if (field10317.method6889(var1)) {
+			if (spritesJs5.method6889(var1)) {
 				field7015.remove();
 			}
 		}

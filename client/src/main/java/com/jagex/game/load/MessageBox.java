@@ -86,36 +86,36 @@ public class MessageBox {
 	public static boolean method16459() {
 		boolean var0 = true;
 		if (field714 == null) {
-			if (Client.field10317.method6889(field7091)) {
-				field714 = SpriteDataProvider.method1607(Client.field10317, field7091);
+			if (Client.spritesJs5.method6889(field7091)) {
+				field714 = SpriteDataProvider.method1607(Client.spritesJs5, field7091);
 			} else {
 				var0 = false;
 			}
 		}
 		if (field710 == null) {
-			if (Client.field10317.method6889(field1921)) {
-				field710 = SpriteDataProvider.method1607(Client.field10317, field1921);
+			if (Client.spritesJs5.method6889(field1921)) {
+				field710 = SpriteDataProvider.method1607(Client.spritesJs5, field1921);
 			} else {
 				var0 = false;
 			}
 		}
 		if (field4963 == null) {
-			if (Client.field10317.method6889(field7424)) {
-				field4963 = SpriteDataProvider.method1607(Client.field10317, field7424);
+			if (Client.spritesJs5.method6889(field7424)) {
+				field4963 = SpriteDataProvider.method1607(Client.spritesJs5, field7424);
 			} else {
 				var0 = false;
 			}
 		}
 		if (field8851 == null) {
-			if (Client.field7672.method6889(field713)) {
+			if (Client.fontmetricsJs5.method6889(field713)) {
 				field8851 = Client.field7538.method6163(Client.field10833, field713);
 			} else {
 				var0 = false;
 			}
 		}
 		if (field716 == null) {
-			if (Client.field10317.method6889(field713)) {
-				field716 = (PalettedSpriteData) SpriteDataProvider.method1607(Client.field10317, field713);
+			if (Client.spritesJs5.method6889(field713)) {
+				field716 = (PalettedSpriteData) SpriteDataProvider.method1607(Client.spritesJs5, field713);
 			} else {
 				var0 = false;
 			}

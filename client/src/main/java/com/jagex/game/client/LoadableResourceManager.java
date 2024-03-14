@@ -47,7 +47,7 @@ public class LoadableResourceManager {
 		}
 		if (field4332 == 1) {
 			field4334 = LoadableResource.method15007();
-			LoadableResource.field8944.method15011(new Js5ArchiveResourceLoader(Client.field1587));
+			LoadableResource.field8944.method15011(new Js5ArchiveResourceLoader(Client.defaultsJs5));
 			LoadableResource.field8934.method15011(new DllResourceLoader("jaggl"));
 			DllResourceLoader var2 = new DllResourceLoader("jagdx");
 			if (!GameShell.osName.startsWith("win")) {
@@ -57,26 +57,26 @@ public class LoadableResourceManager {
 			LoadableResource.field8920.method15011(new DllResourceLoader("sw3d"));
 			LoadableResource.field8922.method15011(new DllResourceLoader("hw3d"));
 			LoadableResource.field8921.method15011(new DllResourceLoader("RuneScape-Setup.exe", true));
-			LoadableResource.field8945.method15011(new Js5ArchiveResourceLoader(Client.field2900));
-			LoadableResource.field8924.method15011(new Js5ArchiveResourceLoader(Client.field10249));
-			LoadableResource.field8925.method15011(new Js5ArchiveResourceLoader(Client.field11838));
-			LoadableResource.field8926.method15011(new Js5ArchiveResourceLoader(Client.field4475));
-			LoadableResource.field8927.method15011(new Js5ArchiveResourceLoader(Client.field8700));
-			LoadableResource.field8928.method15011(new Js5ArchiveResourceLoader(Client.field4618));
-			LoadableResource.field8942.method15011(new Js5ArchiveResourceLoader(Client.field7537));
-			LoadableResource.field8930.method15011(new Js5ArchiveResourceLoader(Client.field8285));
-			LoadableResource.field8941.method15011(new Js5ArchiveResourceLoader(Client.field2149));
-			LoadableResource.field8932.method15011(new Js5ArchiveResourceLoader(Client.field3611));
-			LoadableResource.field8933.method15011(new Js5ArchiveResourceLoader(Client.field7283));
-			LoadableResource.field8918.method15011(new Js5ArchiveResourceLoader(Client.field4404));
-			LoadableResource.field8935.method15011(new Js5ArchiveResourceLoader(Client.field1935));
-			LoadableResource.field8936.method15011(new Js5ArchiveResourceLoader(Client.field6879));
-			LoadableResource.field8937.method15011(new Js5ArchiveResourceLoader(Client.field736));
-			LoadableResource.field8943.method15011(new Js5FileResourceLoader(Client.field8741, "huffman"));
-			LoadableResource.field8939.method15011(new Js5ArchiveResourceLoader(Client.field527));
-			LoadableResource.field8940.method15011(new Js5ArchiveResourceLoader(Client.field5010));
-			LoadableResource.field8916.method15011(new Js5ArchiveResourceLoader(Client.field7672));
-			LoadableResource.field8931.method15011(new Js5GroupResourceLoader(Client.field10752, 0));
+			LoadableResource.field8945.method15011(new Js5ArchiveResourceLoader(Client.shadersJs5));
+			LoadableResource.field8924.method15011(new Js5ArchiveResourceLoader(Client.materialsJs5));
+			LoadableResource.field8925.method15011(new Js5ArchiveResourceLoader(Client.configJs5));
+			LoadableResource.field8926.method15011(new Js5ArchiveResourceLoader(Client.configLocJs5));
+			LoadableResource.field8927.method15011(new Js5ArchiveResourceLoader(Client.configEnumJs5));
+			LoadableResource.field8928.method15011(new Js5ArchiveResourceLoader(Client.configNpcJs5));
+			LoadableResource.field8942.method15011(new Js5ArchiveResourceLoader(Client.configObjJs5));
+			LoadableResource.field8930.method15011(new Js5ArchiveResourceLoader(Client.configSeqJs5));
+			LoadableResource.field8941.method15011(new Js5ArchiveResourceLoader(Client.configSpotJs5));
+			LoadableResource.field8932.method15011(new Js5ArchiveResourceLoader(Client.configStructJs5));
+			LoadableResource.field8933.method15011(new Js5ArchiveResourceLoader(Client.dbtableIndexJs5));
+			LoadableResource.field8918.method15011(new Js5ArchiveResourceLoader(Client.quickchatJs5));
+			LoadableResource.field8935.method15011(new Js5ArchiveResourceLoader(Client.quickchatGlobalJs5));
+			LoadableResource.field8936.method15011(new Js5ArchiveResourceLoader(Client.configParticleJs5));
+			LoadableResource.field8937.method15011(new Js5ArchiveResourceLoader(Client.configBillboardJs5));
+			LoadableResource.field8943.method15011(new Js5FileResourceLoader(Client.binaryJs5, "huffman"));
+			LoadableResource.field8939.method15011(new Js5ArchiveResourceLoader(Client.interfacesJs5));
+			LoadableResource.field8940.method15011(new Js5ArchiveResourceLoader(Client.clientscriptsJs5));
+			LoadableResource.field8916.method15011(new Js5ArchiveResourceLoader(Client.fontmetricsJs5));
+			LoadableResource.field8931.method15011(new Js5GroupResourceLoader(Client.worldmapJs5, 0));
 			for (int var3 = 0; var3 < field4334.length; var3++) {
 				if (field4334[var3].method15010() == null) {
 					throw new RuntimeException();

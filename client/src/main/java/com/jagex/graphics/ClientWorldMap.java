@@ -163,12 +163,12 @@ public class ClientWorldMap extends WorldMap {
 		if (field11651 < 10) {
 			for (int var2 = 0; var2 < field11659.length; var2++) {
 				for (int var3 = 0; var3 < field11659[var2].length; var3++) {
-					Client.field10317.method6889(WorldMap.field6792.field7697[var2][var3]);
-					Client.field7672.method6889(WorldMap.field6792.field7697[var2][var3]);
+					Client.spritesJs5.method6889(WorldMap.field6792.field7697[var2][var3]);
+					Client.fontmetricsJs5.method6889(WorldMap.field6792.field7697[var2][var3]);
 				}
 			}
 			if (!WorldMap.field6795.method6886(WorldMap.field6811.field12351)) {
-				field11651 = Client.field8332.method6880(WorldMap.field6811.field12351) / 10;
+				field11651 = Client.worldmapAreaDataJs5.method6880(WorldMap.field6811.field12351) / 10;
 				return;
 			}
 			field11651 = 10;
