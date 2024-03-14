@@ -1,2 +1,2 @@
 @echo off
-java -cp ref/innerpack.patched.jar AppletViewer
+java -Xmx1G -Xss2m -cp ref/innerpack.patched.jar AppletViewer
