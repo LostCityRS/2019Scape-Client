@@ -27,7 +27,7 @@ public class DrawDistance {
 
 	public DrawDistance(int arg0, int arg1) {
 		this.field2674 = arg0;
-		this.field2675 = arg1 * 64;
+		this.field2675 = arg1 * 8;
 	}
 
 	@ObfuscatedName("ajy.n(IB)Liw;")

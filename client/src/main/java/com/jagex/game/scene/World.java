@@ -1064,7 +1064,7 @@ public class World {
 				}
 			}
 		}
-		int var21 = DrawDistance.method17395(Client.field688.buildAreaSize.method18688()).field2675 * 8;
+		int var21 = DrawDistance.method17395(Client.field688.buildAreaSize.method18688()).field2675;
 		if (Client.field8198.method2130()) {
 			var21++;
 		}
