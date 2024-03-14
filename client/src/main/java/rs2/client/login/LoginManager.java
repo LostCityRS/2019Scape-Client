@@ -139,7 +139,7 @@ public class LoginManager {
 	@ObfuscatedName("aaa.f(B)V")
 	public static final void method14129() {
 		if (field445 != 7) {
-			Statics.field432.method938();
+			Statics.field432.closeGracefully();
 			method9067();
 			method10367();
 		}
@@ -182,7 +182,7 @@ public class LoginManager {
 		if (arg0.length() > 320 || !method16808()) {
 			return;
 		}
-		Client.field10835.method938();
+		Client.field10835.closeGracefully();
 		method4641();
 		username = arg0;
 		password = arg1;
@@ -202,7 +202,7 @@ public class LoginManager {
 		field472 = arg0;
 		field429 = arg1;
 		field473 = arg2;
-		Client.field10835.method938();
+		Client.field10835.closeGracefully();
 		Client.setState(17);
 	}
 
@@ -298,7 +298,7 @@ public class LoginManager {
 				field478++;
 			}
 			if (field478 > var0) {
-				Statics.field432.method938();
+				Statics.field432.closeGracefully();
 				if (field475 >= 3) {
 					field445 = 7;
 					method669(-5);
@@ -306,9 +306,9 @@ public class LoginManager {
 					return;
 				}
 				if (Statics.field431 == 211) {
-					WorldSwitcher.field8755.method14758();
+					WorldSwitcher.field8755.configureSocketType();
 				} else {
-					WorldSwitcher.lobby.method14758();
+					WorldSwitcher.lobby.configureSocketType();
 				}
 				field478 = 0;
 				field475++;
@@ -316,9 +316,9 @@ public class LoginManager {
 			}
 			if (field445 == 14) {
 				if (Statics.field431 == 211) {
-					Statics.field432.method936(Stream.method7130(WorldSwitcher.field8755.method14764(), 40000), WorldSwitcher.field8755.host);
+					Statics.field432.setStream(Stream.createStream(WorldSwitcher.field8755.getSocket(), 40000), WorldSwitcher.field8755.host);
 				} else {
-					Statics.field432.method936(Stream.method7130(WorldSwitcher.lobby.method14764(), 40000), WorldSwitcher.lobby.host);
+					Statics.field432.setStream(Stream.createStream(WorldSwitcher.lobby.getSocket(), 40000), WorldSwitcher.lobby.host);
 				}
 				if (Client.field10311 == null) {
 					Client.field10311 = Client.field10967.method709();
@@ -333,22 +333,22 @@ public class LoginManager {
 				field445 = 35;
 			}
 			if (field445 == 35) {
-				if (!Statics.field432.method939().method9038(9)) {
+				if (!Statics.field432.getStream().hasAvailable(9)) {
 					return;
 				}
-				Statics.field432.method939().method9029(Statics.field432.field795.data, 0, 9);
-				Statics.field432.field795.pos = 0;
-				int var2 = Statics.field432.field795.g1();
+				Statics.field432.getStream().read(Statics.field432.in.data, 0, 9);
+				Statics.field432.in.pos = 0;
+				int var2 = Statics.field432.in.g1();
 				if (var2 != 0) {
 					field445 = 7;
 					method481(var2);
 					method669(var2);
-					Statics.field432.method938();
+					Statics.field432.closeGracefully();
 					method10367();
 					return;
 				}
-				Statics.field434 = Statics.field432.field795.g8();
-				Statics.field432.field795.pos = 0;
+				Statics.field434 = Statics.field432.in.g8();
+				Statics.field432.in.pos = 0;
 				if (field438) {
 					field445 = 276;
 				} else {
@@ -385,50 +385,50 @@ public class LoginManager {
 				field445 = 40;
 			}
 			if (field445 == 40) {
-				if (!Statics.field432.method939().method9038(2)) {
+				if (!Statics.field432.getStream().hasAvailable(2)) {
 					return;
 				}
-				Statics.field432.method939().method9029(Statics.field432.field795.data, 0, 2);
-				Statics.field432.field795.pos = 0;
-				Statics.field432.field795.pos = Statics.field432.field795.g2();
+				Statics.field432.getStream().read(Statics.field432.in.data, 0, 2);
+				Statics.field432.in.pos = 0;
+				Statics.field432.in.pos = Statics.field432.in.g2();
 				field445 = 58;
 			}
 			if (field445 == 58) {
-				if (!Statics.field432.method939().method9038(Statics.field432.field795.pos)) {
+				if (!Statics.field432.getStream().hasAvailable(Statics.field432.in.pos)) {
 					return;
 				}
-				Statics.field432.method939().method9029(Statics.field432.field795.data, 0, Statics.field432.field795.pos);
-				Statics.field432.field795.tinydec(Statics.field435);
-				Statics.field432.field795.pos = 0;
-				String var7 = Statics.field432.field795.gjstr2();
-				Statics.field432.field795.pos = 0;
+				Statics.field432.getStream().read(Statics.field432.in.data, 0, Statics.field432.in.pos);
+				Statics.field432.in.tinydec(Statics.field435);
+				Statics.field432.in.pos = 0;
+				String var7 = Statics.field432.in.gjstr2();
+				Statics.field432.in.pos = 0;
 				String var8 = JavascriptFunction.field4032.method6087();
 				Browser.method6081(var7, true, var8, Client.field10784);
 				field445 = 64;
 			}
 			if (field445 == 64) {
-				if (!Statics.field432.method939().method9038(1)) {
+				if (!Statics.field432.getStream().hasAvailable(1)) {
 					return;
 				}
-				Statics.field432.method939().method9029(Statics.field432.field795.data, 0, 1);
-				if ((Statics.field432.field795.data[0] & 0xFF) == 1) {
+				Statics.field432.getStream().read(Statics.field432.in.data, 0, 1);
+				if ((Statics.field432.in.data[0] & 0xFF) == 1) {
 					field445 = 70;
 				}
 			}
 			if (field445 == 70) {
-				if (!Statics.field432.method939().method9038(16)) {
+				if (!Statics.field432.getStream().hasAvailable(16)) {
 					return;
 				}
-				Statics.field432.method939().method9029(Statics.field432.field795.data, 0, 16);
-				Statics.field432.field795.pos = 16;
-				Statics.field432.field795.tinydec(Statics.field435);
-				Statics.field432.field795.pos = 0;
-				field439 = Statics.field432.field795.g8();
-				field437 = Statics.field432.field795.g8();
+				Statics.field432.getStream().read(Statics.field432.in.data, 0, 16);
+				Statics.field432.in.pos = 16;
+				Statics.field432.in.tinydec(Statics.field435);
+				Statics.field432.in.pos = 0;
+				field439 = Statics.field432.in.g8();
+				field437 = Statics.field432.in.g8();
 				field445 = 84;
 			}
 			if (field445 == 84) {
-				Statics.field432.field795.pos = 0;
+				Statics.field432.in.pos = 0;
 				Statics.field432.method952();
 				ClientMessage var9 = ClientMessage.method13920();
 				PacketBit var10 = var9.field11432;
@@ -550,17 +550,17 @@ public class LoginManager {
 				}
 				Statics.field432.field809 = new Isaac(var24);
 				new Isaac(var24);
-				Statics.field432.field795.setIsaac(Statics.field432.field809);
+				Statics.field432.in.setIsaac(Statics.field432.field809);
 				Statics.field435 = null;
 				field445 = 98;
 			}
 			if (field445 == 98) {
-				if (!Statics.field432.method939().method9038(1)) {
+				if (!Statics.field432.getStream().hasAvailable(1)) {
 					return;
 				}
-				Statics.field432.method939().method9029(Statics.field432.field795.data, 0, 1);
-				int var26 = Statics.field432.field795.g1();
-				Statics.field432.field795.pos = 0;
+				Statics.field432.getStream().read(Statics.field432.in.data, 0, 1);
+				int var26 = Statics.field432.in.g1();
+				Statics.field432.in.pos = 0;
 				if (var26 == 21) {
 					field445 = 126;
 				} else if (var26 == 1) {
@@ -583,13 +583,13 @@ public class LoginManager {
 						field445 = 141;
 					}
 				} else if (var26 == 15) {
-					Statics.field432.field797 = -2;
+					Statics.field432.packetSize = -2;
 					field445 = 204;
 				} else if (var26 == 23 && field475 < 3) {
 					field478 = 0;
 					field475++;
 					field445 = 14;
-					Statics.field432.method938();
+					Statics.field432.closeGracefully();
 					return;
 				} else if (var26 == 42) {
 					field445 = 215;
@@ -604,7 +604,7 @@ public class LoginManager {
 					if (var26 != 53) {
 						field445 = 7;
 						method669(var26);
-						Statics.field432.method938();
+						Statics.field432.closeGracefully();
 						method10367();
 						return;
 					}
@@ -613,65 +613,65 @@ public class LoginManager {
 					field438 = true;
 					field478 = 0;
 					field445 = 14;
-					Statics.field432.method938();
+					Statics.field432.closeGracefully();
 					return;
 				}
 			}
 			if (field445 == 126) {
-				if (!Statics.field432.method939().method9038(1)) {
+				if (!Statics.field432.getStream().hasAvailable(1)) {
 					return;
 				}
-				Statics.field432.method939().method9029(Statics.field432.field795.data, 0, 1);
-				int var27 = Statics.field432.field795.data[0] & 0xFF;
+				Statics.field432.getStream().read(Statics.field432.in.data, 0, 1);
+				int var27 = Statics.field432.in.data[0] & 0xFF;
 				field464 = var27 * 50;
 				field445 = 7;
 				method669(21);
-				Statics.field432.method938();
+				Statics.field432.closeGracefully();
 				method10367();
 				return;
 			}
 			if (field445 == 215) {
-				if (!Statics.field432.method939().method9038(2)) {
+				if (!Statics.field432.getStream().hasAvailable(2)) {
 					return;
 				}
-				Statics.field432.method939().method9029(Statics.field432.field795.data, 0, 2);
-				field467 = ((Statics.field432.field795.data[0] & 0xFF) << 8) + (Statics.field432.field795.data[1] & 0xFF);
+				Statics.field432.getStream().read(Statics.field432.in.data, 0, 2);
+				field467 = ((Statics.field432.in.data[0] & 0xFF) << 8) + (Statics.field432.in.data[1] & 0xFF);
 				field445 = 98;
 				return;
 			}
 			if (field445 == 245) {
-				if (!Statics.field432.method939().method9038(4)) {
+				if (!Statics.field432.getStream().hasAvailable(4)) {
 					return;
 				}
-				Statics.field432.method939().method9029(Statics.field432.field795.data, 0, 4);
-				field486 = Statics.field432.field795.g4s();
-				Statics.field432.field795.pos = 0;
+				Statics.field432.getStream().read(Statics.field432.in.data, 0, 4);
+				field486 = Statics.field432.in.g4s();
+				Statics.field432.in.pos = 0;
 				field445 = 7;
 				method669(53);
-				Statics.field432.method938();
+				Statics.field432.closeGracefully();
 				method10367();
 				return;
 			}
 			if (field445 == 194) {
 				if (Statics.field11819 == 29) {
-					if (!Statics.field432.method939().method9038(1)) {
+					if (!Statics.field432.getStream().hasAvailable(1)) {
 						return;
 					}
-					Statics.field432.method939().method9029(Statics.field432.field795.data, 0, 1);
-					field483 = Statics.field432.field795.data[0] & 0xFF;
+					Statics.field432.getStream().read(Statics.field432.in.data, 0, 1);
+					field483 = Statics.field432.in.data[0] & 0xFF;
 				} else if (Statics.field11819 == 45) {
-					if (!Statics.field432.method939().method9038(3)) {
+					if (!Statics.field432.getStream().hasAvailable(3)) {
 						return;
 					}
-					Statics.field432.method939().method9029(Statics.field432.field795.data, 0, 3);
-					field483 = Statics.field432.field795.data[0] & 0xFF;
-					field482 = ((Statics.field432.field795.data[1] & 0xFF) << 8) + (Statics.field432.field795.data[2] & 0xFF);
+					Statics.field432.getStream().read(Statics.field432.in.data, 0, 3);
+					field483 = Statics.field432.in.data[0] & 0xFF;
+					field482 = ((Statics.field432.in.data[1] & 0xFF) << 8) + (Statics.field432.in.data[2] & 0xFF);
 				} else {
 					throw new IllegalStateException();
 				}
 				field445 = 7;
 				method669(Statics.field11819);
-				Statics.field432.method938();
+				Statics.field432.closeGracefully();
 				method10367();
 				if (Client.method15084(Client.state)) {
 					Client.logout(true);
@@ -680,25 +680,25 @@ public class LoginManager {
 				return;
 			}
 			if (field445 == 225) {
-				if (!Statics.field432.method939().method9038(2)) {
+				if (!Statics.field432.getStream().hasAvailable(2)) {
 					return;
 				}
-				Statics.field432.method939().method9029(Statics.field432.field795.data, 0, 2);
-				Statics.field432.field795.pos = 0;
-				Statics.field7542 = Statics.field432.field795.g2();
-				Statics.field432.field795.pos = 0;
+				Statics.field432.getStream().read(Statics.field432.in.data, 0, 2);
+				Statics.field432.in.pos = 0;
+				Statics.field7542 = Statics.field432.in.g2();
+				Statics.field432.in.pos = 0;
 				field445 = 235;
 				return;
 			}
 			if (field445 == 235) {
-				if (!Statics.field432.method939().method9038(Statics.field7542)) {
+				if (!Statics.field432.getStream().hasAvailable(Statics.field7542)) {
 					return;
 				}
-				Statics.field432.method939().method9029(Statics.field432.field795.data, 0, Statics.field7542);
-				Statics.field432.field795.pos = 0;
+				Statics.field432.getStream().read(Statics.field432.in.data, 0, Statics.field7542);
+				Statics.field432.in.pos = 0;
 				byte[] var28 = new byte[Statics.field7542 + 1];
-				Statics.field432.field795.gIsaacArrayBuffer(var28, 0, Statics.field7542);
-				Statics.field432.field795.pos = 0;
+				Statics.field432.in.gIsaacArrayBuffer(var28, 0, Statics.field7542);
+				Statics.field432.in.pos = 0;
 				Packet var29 = new Packet(var28);
 				String var30 = var29.gjstr();
 				Browser.method4607(var30, true, Client.field10784);
@@ -707,29 +707,29 @@ public class LoginManager {
 					field445 = 98;
 				} else {
 					field445 = 7;
-					Statics.field432.method938();
+					Statics.field432.closeGracefully();
 					method10367();
 				}
 				return;
 			}
 			if (field445 == 256) {
-				if (!Statics.field432.method939().method9038(2)) {
+				if (!Statics.field432.getStream().hasAvailable(2)) {
 					return;
 				}
-				Statics.field432.method939().method9029(Statics.field432.field795.data, 0, 2);
-				Statics.field432.field795.pos = 0;
-				Statics.field432.field797 = Statics.field432.field795.g2();
+				Statics.field432.getStream().read(Statics.field432.in.data, 0, 2);
+				Statics.field432.in.pos = 0;
+				Statics.field432.packetSize = Statics.field432.in.g2();
 				field445 = 268;
 			}
 			if (field445 == 268) {
-				if (!Statics.field432.method939().method9038(Statics.field432.field797)) {
+				if (!Statics.field432.getStream().hasAvailable(Statics.field432.packetSize)) {
 					return;
 				}
-				Statics.field432.method939().method9029(Statics.field432.field795.data, 0, Statics.field432.field797);
-				Statics.field432.field795.pos = 0;
-				boolean var31 = Statics.field432.field795.g1() == 1;
+				Statics.field432.getStream().read(Statics.field432.in.data, 0, Statics.field432.packetSize);
+				Statics.field432.in.pos = 0;
+				boolean var31 = Statics.field432.in.g1() == 1;
 				while (true) {
-					if (Statics.field432.field795.pos >= Statics.field432.field797) {
+					if (Statics.field432.in.pos >= Statics.field432.packetSize) {
 						if (var31) {
 							ClientMessage var33 = ClientMessage.method13920();
 							PacketBit var34 = var33.field11432;
@@ -742,21 +742,21 @@ public class LoginManager {
 						}
 						break;
 					}
-					VarValue var32 = Client.field8911.decodeVarValue(Statics.field432.field795);
+					VarValue var32 = Client.field8911.decodeVarValue(Statics.field432.in);
 					Client.field7228.field1708.method14735(var32.field4240, var32.field4239);
 				}
 			}
 			if (field445 == 138) {
-				if (!Statics.field432.method939().method9038(1)) {
+				if (!Statics.field432.getStream().hasAvailable(1)) {
 					return;
 				}
-				Statics.field432.method939().method9029(Statics.field432.field795.data, 0, 1);
-				int var35 = Statics.field432.field795.data[0] & 0xFF;
+				Statics.field432.getStream().read(Statics.field432.in.data, 0, 1);
+				int var35 = Statics.field432.in.data[0] & 0xFF;
 				if (var35 != 2) {
 					if (var35 != 29 && var35 != 45) {
 						field445 = 7;
 						method669(var35);
-						Statics.field432.method938();
+						Statics.field432.closeGracefully();
 						method10367();
 						if (Client.method15084(Client.state)) {
 							Client.logout(true);
@@ -771,20 +771,20 @@ public class LoginManager {
 				field445 = 141;
 			}
 			if (field445 == 141) {
-				if (!Statics.field432.method939().method9038(1)) {
+				if (!Statics.field432.getStream().hasAvailable(1)) {
 					return;
 				}
-				Statics.field432.method939().method9029(Statics.field432.field795.data, 0, 1);
-				Statics.field622 = Statics.field432.field795.data[0] & 0xFF;
+				Statics.field432.getStream().read(Statics.field432.in.data, 0, 1);
+				Statics.field622 = Statics.field432.in.data[0] & 0xFF;
 				field445 = 157;
 			}
 			if (field445 == 157) {
-				PacketBit var36 = Statics.field432.field795;
+				PacketBit var36 = Statics.field432.in;
 				if (Statics.field431 == 211) {
-					if (!Statics.field432.method939().method9038(Statics.field622)) {
+					if (!Statics.field432.getStream().hasAvailable(Statics.field622)) {
 						return;
 					}
-					Statics.field432.method939().method9029(var36.data, 0, Statics.field622);
+					Statics.field432.getStream().read(var36.data, 0, Statics.field622);
 					var36.pos = 0;
 					method5247(var36);
 					Client.field10949 = var36.g1();
@@ -803,8 +803,8 @@ public class LoginManager {
 					Client.field3183.method7677().method7750().method18890(Client.field10948);
 					Client.field1842.setAllowMembers(Client.field10948);
 					Client.field7961.setAllowMembers(Client.field10948);
-				} else if (Statics.field432.method939().method9038(Statics.field622)) {
-					Statics.field432.method939().method9029(var36.data, 0, Statics.field622);
+				} else if (Statics.field432.getStream().hasAvailable(Statics.field622)) {
+					Statics.field432.getStream().read(var36.data, 0, Statics.field622);
 					var36.pos = 0;
 					method5247(var36);
 					Client.field10949 = var36.g1();
@@ -842,7 +842,7 @@ public class LoginManager {
 					Statics.field9200.host = var36.gjstr2();
 					Statics.field9200.port = var36.g2();
 					Statics.field9200.port2 = var36.g2();
-					if (Client.modewhere != ModeWhere.LOCAL && (Client.modewhere != ModeWhere.WTQA || Client.field10949 < 2) && WorldSwitcher.field8755.method14757(WorldSwitcher.world)) {
+					if (Client.modewhere != ModeWhere.LOCAL && (Client.modewhere != ModeWhere.WTQA || Client.field10949 < 2) && WorldSwitcher.field8755.isAddressInUse(WorldSwitcher.world)) {
 						WorldSwitcher.method10337();
 					}
 				} else {
@@ -873,89 +873,89 @@ public class LoginManager {
 					method669(2);
 					method10282();
 					Client.setState(13);
-					Statics.field432.field796 = null;
+					Statics.field432.packetType = null;
 					return;
 				}
 				field445 = 170;
 			}
 			if (field445 == 170) {
-				if (!Statics.field432.method939().method9038(3)) {
+				if (!Statics.field432.getStream().hasAvailable(3)) {
 					return;
 				}
-				Statics.field432.method939().method9029(Statics.field432.field795.data, 0, 3);
+				Statics.field432.getStream().read(Statics.field432.in.data, 0, 3);
 				field445 = 188;
 			}
 			if (field445 == 188) {
-				PacketBit var41 = Statics.field432.field795;
+				PacketBit var41 = Statics.field432.in;
 				var41.pos = 0;
-				if (var41.method19573()) {
-					if (!Statics.field432.method939().method9038(1)) {
+				if (var41.isIsaac2()) {
+					if (!Statics.field432.getStream().hasAvailable(1)) {
 						return;
 					}
-					Statics.field432.method939().method9029(var41.data, 3, 1);
+					Statics.field432.getStream().read(var41.data, 3, 1);
 				}
-				Statics.field432.field796 = ServerProt.method18494()[var41.gIsaac1or2()];
-				Statics.field432.field797 = var41.g2();
+				Statics.field432.packetType = ServerProt.values()[var41.gIsaac1or2()];
+				Statics.field432.packetSize = var41.g2();
 				field445 = 160;
 			}
 			if (field445 == 160) {
-				if (!Statics.field432.method939().method9038(Statics.field432.field797)) {
+				if (!Statics.field432.getStream().hasAvailable(Statics.field432.packetSize)) {
 					return;
 				}
-				Statics.field432.method939().method9029(Statics.field432.field795.data, 0, Statics.field432.field797);
-				Statics.field432.field795.pos = 0;
-				int var42 = Statics.field432.field797;
+				Statics.field432.getStream().read(Statics.field432.in.data, 0, Statics.field432.packetSize);
+				Statics.field432.in.pos = 0;
+				int var42 = Statics.field432.packetSize;
 				field445 = 7;
 				method669(2);
 				method4320();
-				ReceivePlayerPositions.method16435(Statics.field432.field795);
-				int var43 = var42 - Statics.field432.field795.pos;
+				ReceivePlayerPositions.method16435(Statics.field432.in);
+				int var43 = var42 - Statics.field432.in.pos;
 				PacketBit var44 = new PacketBit(var43);
-				System.arraycopy(Statics.field432.field795.data, Statics.field432.field795.pos, var44.data, 0, var43);
-				Statics.field432.field795.pos += var43;
-				if (ServerProt.REBUILD_REGION == Statics.field432.field796) {
+				System.arraycopy(Statics.field432.in.data, Statics.field432.in.pos, var44.data, 0, var43);
+				Statics.field432.in.pos += var43;
+				if (ServerProt.REBUILD_REGION == Statics.field432.packetType) {
 					Client.world.method7749(new RebuildRequest(RebuildType.field5066, var44));
 				} else {
 					Client.world.method7749(new RebuildRequest(RebuildType.field5071, var44));
 				}
-				if (Statics.field432.field795.pos != var42) {
-					throw new RuntimeException(Statics.field432.field795.pos + " " + var42);
+				if (Statics.field432.in.pos != var42) {
+					throw new RuntimeException(Statics.field432.in.pos + " " + var42);
 				}
-				Statics.field432.field796 = null;
+				Statics.field432.packetType = null;
 				return;
 			}
 			if (field445 == 204) {
-				if (Statics.field432.field797 == -2) {
-					if (!Statics.field432.method939().method9038(2)) {
+				if (Statics.field432.packetSize == -2) {
+					if (!Statics.field432.getStream().hasAvailable(2)) {
 						return;
 					}
-					Statics.field432.method939().method9029(Statics.field432.field795.data, 0, 2);
-					Statics.field432.field795.pos = 0;
-					Statics.field432.field797 = Statics.field432.field795.g2();
+					Statics.field432.getStream().read(Statics.field432.in.data, 0, 2);
+					Statics.field432.in.pos = 0;
+					Statics.field432.packetSize = Statics.field432.in.g2();
 				}
-				if (!Statics.field432.method939().method9038(Statics.field432.field797)) {
+				if (!Statics.field432.getStream().hasAvailable(Statics.field432.packetSize)) {
 					return;
 				}
-				Statics.field432.method939().method9029(Statics.field432.field795.data, 0, Statics.field432.field797);
-				Statics.field432.field795.pos = 0;
-				int var45 = Statics.field432.field797;
+				Statics.field432.getStream().read(Statics.field432.in.data, 0, Statics.field432.packetSize);
+				Statics.field432.in.pos = 0;
+				int var45 = Statics.field432.packetSize;
 				field445 = 7;
 				method669(15);
 				method6877();
-				ReceivePlayerPositions.method16435(Statics.field432.field795);
-				if (Statics.field432.field795.pos != var45) {
-					throw new RuntimeException(Statics.field432.field795.pos + " " + var45);
+				ReceivePlayerPositions.method16435(Statics.field432.in);
+				if (Statics.field432.in.pos != var45) {
+					throw new RuntimeException(Statics.field432.in.pos + " " + var45);
 				}
-				Statics.field432.field796 = null;
+				Statics.field432.packetType = null;
 				return;
 			}
 		} catch (IOException var50) {
-			Statics.field432.method938();
+			Statics.field432.closeGracefully();
 			if (field475 < 3) {
 				if (Statics.field431 == 211) {
-					WorldSwitcher.field8755.method14758();
+					WorldSwitcher.field8755.configureSocketType();
 				} else {
-					WorldSwitcher.lobby.method14758();
+					WorldSwitcher.lobby.configureSocketType();
 				}
 				field478 = 0;
 				field475++;
@@ -975,10 +975,10 @@ public class LoginManager {
 			return;
 		}
 		boolean var2 = false;
-		int var3 = arg0.method19558() << 24;
-		int var4 = var3 | arg0.method19558() << 16;
-		int var5 = var4 | arg0.method19558() << 8;
-		int var6 = var5 | arg0.method19558();
+		int var3 = arg0.gIsaac1() << 24;
+		int var4 = var3 | arg0.gIsaac1() << 16;
+		int var5 = var4 | arg0.gIsaac1() << 8;
+		int var6 = var5 | arg0.gIsaac1();
 		Client.field1895.method590(Statics.field3429, var6);
 	}
 
@@ -1074,7 +1074,7 @@ public class LoginManager {
 	@ObfuscatedName("ye.t(I)V")
 	public static void method10367() {
 		if (Client.method14437(Client.state)) {
-			if (Client.field10835.method939() == null) {
+			if (Client.field10835.getStream() == null) {
 				Client.setState(17);
 			} else {
 				Client.setState(13);
@@ -1105,11 +1105,11 @@ public class LoginManager {
 	@ObfuscatedName("acm.ag(B)V")
 	public static void method14959() {
 		Statics.field432.method952();
-		Statics.field432.field795.pos = 0;
-		Statics.field432.field790 = null;
-		Statics.field432.field806 = null;
-		Statics.field432.field805 = null;
-		Statics.field432.field789 = 0;
+		Statics.field432.in.pos = 0;
+		Statics.field432.lastPacketType0 = null;
+		Statics.field432.lastPacketType1 = null;
+		Statics.field432.lastPacketType2 = null;
+		Statics.field432.idleNetCycles = 0;
 		Client.field10831 = 0;
 		Client.field11080 = 0;
 		Client.field10811 = 0;
@@ -1142,7 +1142,7 @@ public class LoginManager {
 		if (Client.state == 19) {
 			Client.method9872();
 		}
-		Client.field10835.method938();
+		Client.field10835.closeGracefully();
 		method14959();
 		GameShell.focus = true;
 		ClassCheck.method4052();
@@ -1225,13 +1225,13 @@ public class LoginManager {
 	@ObfuscatedName("pr.ac(B)V")
 	public static void method6877() {
 		Statics.field432.method952();
-		Statics.field432.field795.pos = 0;
-		Statics.field432.field796 = null;
-		Statics.field432.field790 = null;
-		Statics.field432.field806 = null;
-		Statics.field432.field805 = null;
-		Statics.field432.field797 = 0;
-		Statics.field432.field789 = 0;
+		Statics.field432.in.pos = 0;
+		Statics.field432.packetType = null;
+		Statics.field432.lastPacketType0 = null;
+		Statics.field432.lastPacketType1 = null;
+		Statics.field432.lastPacketType2 = null;
+		Statics.field432.packetSize = 0;
+		Statics.field432.idleNetCycles = 0;
 		Client.field10831 = 0;
 		MiniMenu.method5175();
 		Minimap.method3552();

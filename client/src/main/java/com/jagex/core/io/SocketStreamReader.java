@@ -10,97 +10,97 @@ import java.io.InputStream;
 public class SocketStreamReader implements Runnable {
 
 	@ObfuscatedName("ua.e")
-	public Thread field7081;
+	public Thread thread;
 
 	@ObfuscatedName("ua.n")
-	public InputStream field7080;
+	public InputStream inputStream;
 
 	@ObfuscatedName("ua.m")
-	public int field7079;
+	public int bufLimit;
 
 	@ObfuscatedName("ua.k")
-	public byte[] field7078;
+	public byte[] buf;
 
 	@ObfuscatedName("ua.f")
-	public int field7082 = 0;
+	public int bufPos = 0;
 
 	@ObfuscatedName("ua.w")
-	public int field7083 = 0;
+	public int bufLen = 0;
 
 	@ObfuscatedName("ua.l")
-	public IOException field7084;
+	public IOException ioerror;
 
-	public SocketStreamReader(InputStream arg0, int arg1) {
-		this.field7080 = arg0;
-		this.field7079 = arg1 + 1;
-		this.field7078 = new byte[this.field7079];
-		this.field7081 = new Thread(this);
-		this.field7081.setDaemon(true);
-		this.field7081.start();
+	public SocketStreamReader(InputStream inputStream, int limit) {
+		this.inputStream = inputStream;
+		this.bufLimit = limit + 1;
+		this.buf = new byte[this.bufLimit];
+		this.thread = new Thread(this);
+		this.thread.setDaemon(true);
+		this.thread.start();
 	}
 
 	public void run() {
 		while (true) {
-			int var2;
+			int available;
 			synchronized (this) {
 				while (true) {
-					if (this.field7084 != null) {
+					if (this.ioerror != null) {
 						return;
 					}
-					if (this.field7082 == 0) {
-						var2 = this.field7079 - this.field7083 - 1;
-					} else if (this.field7082 <= this.field7083) {
-						var2 = this.field7079 - this.field7083;
+					if (this.bufPos == 0) {
+						available = this.bufLimit - this.bufLen - 1;
+					} else if (this.bufPos <= this.bufLen) {
+						available = this.bufLimit - this.bufLen;
 					} else {
-						var2 = this.field7082 - this.field7083 - 1;
+						available = this.bufPos - this.bufLen - 1;
 					}
-					if (var2 > 0) {
+					if (available > 0) {
 						break;
 					}
 					try {
 						this.wait();
-					} catch (InterruptedException var13) {
+					} catch (InterruptedException exception) {
 					}
 				}
 			}
-			int var5;
+			int read;
 			try {
-				var5 = this.field7080.read(this.field7078, this.field7083, var2);
-				if (var5 == -1) {
+				read = this.inputStream.read(this.buf, this.bufLen, available);
+				if (read == -1) {
 					throw new EOFException();
 				}
-			} catch (IOException var14) {
-				IOException var6 = var14;
+			} catch (IOException exception) {
+				IOException var6 = exception;
 				synchronized (this) {
-					this.field7084 = var6;
+					this.ioerror = var6;
 					return;
 				}
 			}
 			synchronized (this) {
-				this.field7083 = (this.field7083 + var5) % this.field7079;
+				this.bufLen = (this.bufLen + read) % this.bufLimit;
 			}
 		}
 	}
 
 	@ObfuscatedName("ua.e(II)Z")
-	public boolean method8991(int arg0) throws IOException {
-		if (arg0 == 0) {
+	public boolean hasAvailable(int amount) throws IOException {
+		if (amount == 0) {
 			return true;
-		} else if (arg0 > 0 && arg0 < this.field7079) {
+		} else if (amount > 0 && amount < this.bufLimit) {
 			synchronized (this) {
-				int var3;
-				if (this.field7082 <= this.field7083) {
-					var3 = this.field7083 - this.field7082;
+				int available;
+				if (this.bufPos <= this.bufLen) {
+					available = this.bufLen - this.bufPos;
 				} else {
-					var3 = this.field7083 + (this.field7079 - this.field7082);
+					available = this.bufLen + (this.bufLimit - this.bufPos);
 				}
-				if (var3 >= arg0) {
+				if (available >= amount) {
 					return true;
-				} else if (this.field7084 == null) {
+				} else if (this.ioerror == null) {
 					this.notifyAll();
 					return false;
 				} else {
-					throw new IOException(this.field7084.toString());
+					throw new IOException(this.ioerror.toString());
 				}
 			}
 		} else {
@@ -109,69 +109,69 @@ public class SocketStreamReader implements Runnable {
 	}
 
 	@ObfuscatedName("ua.n(I)I")
-	public int method8983() throws IOException {
+	public int available() throws IOException {
 		synchronized (this) {
-			int var2;
-			if (this.field7082 <= this.field7083) {
-				var2 = this.field7083 - this.field7082;
+			int available;
+			if (this.bufPos <= this.bufLen) {
+				available = this.bufLen - this.bufPos;
 			} else {
-				var2 = this.field7083 + (this.field7079 - this.field7082);
+				available = this.bufLen + (this.bufLimit - this.bufPos);
 			}
-			if (var2 <= 0 && this.field7084 != null) {
-				throw new IOException(this.field7084.toString());
+			if (available <= 0 && this.ioerror != null) {
+				throw new IOException(this.ioerror.toString());
 			}
 			this.notifyAll();
-			return var2;
+			return available;
 		}
 	}
 
 	@ObfuscatedName("ua.m([BIII)I")
-	public int method8988(byte[] arg0, int arg1, int arg2) throws IOException {
-		if (arg2 < 0 || arg1 < 0 || arg1 + arg2 > arg0.length) {
+	public int read(byte[] bytes, int off, int len) throws IOException {
+		if (len < 0 || off < 0 || off + len > bytes.length) {
 			throw new IOException();
 		}
 		synchronized (this) {
-			int var5;
-			if (this.field7082 <= this.field7083) {
-				var5 = this.field7083 - this.field7082;
+			int available;
+			if (this.bufPos <= this.bufLen) {
+				available = this.bufLen - this.bufPos;
 			} else {
-				var5 = this.field7083 + (this.field7079 - this.field7082);
+				available = this.bufLen + (this.bufLimit - this.bufPos);
 			}
-			if (arg2 > var5) {
-				arg2 = var5;
+			if (len > available) {
+				len = available;
 			}
-			if (arg2 == 0 && this.field7084 != null) {
-				throw new IOException(this.field7084.toString());
+			if (len == 0 && this.ioerror != null) {
+				throw new IOException(this.ioerror.toString());
 			}
-			if (this.field7082 + arg2 <= this.field7079) {
-				System.arraycopy(this.field7078, this.field7082, arg0, arg1, arg2);
+			if (this.bufPos + len <= this.bufLimit) {
+				System.arraycopy(this.buf, this.bufPos, bytes, off, len);
 			} else {
-				int var6 = this.field7079 - this.field7082;
-				System.arraycopy(this.field7078, this.field7082, arg0, arg1, var6);
-				System.arraycopy(this.field7078, 0, arg0, arg1 + var6, arg2 - var6);
+				int remaining = this.bufLimit - this.bufPos;
+				System.arraycopy(this.buf, this.bufPos, bytes, off, remaining);
+				System.arraycopy(this.buf, 0, bytes, off + remaining, len - remaining);
 			}
-			this.field7082 = (this.field7082 + arg2) % this.field7079;
+			this.bufPos = (this.bufPos + len) % this.bufLimit;
 			this.notifyAll();
-			return arg2;
+			return len;
 		}
 	}
 
 	@ObfuscatedName("ua.k(I)V")
-	public void method8984() {
+	public void closeGracefully() {
 		synchronized (this) {
-			if (this.field7084 == null) {
-				this.field7084 = new IOException("");
+			if (this.ioerror == null) {
+				this.ioerror = new IOException("");
 			}
 			this.notifyAll();
 		}
 		try {
-			this.field7081.join();
-		} catch (InterruptedException var4) {
+			this.thread.join();
+		} catch (InterruptedException exception) {
 		}
 	}
 
 	@ObfuscatedName("ua.f(I)V")
-	public void method8999() {
-		this.field7080 = new BrokenInputStream();
+	public void closeForcefully() {
+		this.inputStream = new BrokenInputStream();
 	}
 }

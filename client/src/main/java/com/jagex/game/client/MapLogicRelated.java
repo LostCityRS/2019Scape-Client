@@ -28,7 +28,7 @@ public class MapLogicRelated {
 				return;
 			}
 			var3.field793 = 0;
-			if (!var3.field808 && var3.method939() != null) {
+			if (!var3.field808 && var3.getStream() != null) {
 				ClientMessage var4 = ClientMessage.method1604(ClientProt.NO_TIMEOUT, var3.field794);
 				var3.method934(var4);
 				try {

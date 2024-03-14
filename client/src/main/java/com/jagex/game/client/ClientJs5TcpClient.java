@@ -21,7 +21,7 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 	@ObfuscatedName("aik.w(IIB)V")
 	public void method7015(int arg0, int arg1) {
 		try {
-			this.field10751.method9031();
+			this.field10751.closeGracefully();
 		} catch (Exception var4) {
 		}
 		this.field10751 = null;
@@ -44,7 +44,7 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 			this.field4441 += var3;
 			if (this.field4441 > 30000) {
 				try {
-					this.field10751.method9031();
+					this.field10751.closeGracefully();
 				} catch (Exception var34) {
 				}
 				this.field10751 = null;
@@ -58,18 +58,18 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 				this.field4450.pos = 0;
 				this.field4450.p1(1);
 				this.field4450.p5(var5.field11440);
-				this.field10751.method9030(this.field4450.data, 0, this.field4450.data.length);
+				this.field10751.write(this.field4450.data, 0, this.field4450.data.length);
 				this.field4451.method14339(var5);
 			}
 			for (Js5NetRequest var6 = (Js5NetRequest) this.prefetch.method14317(); var6 != null; var6 = (Js5NetRequest) this.prefetch.method14324()) {
 				this.field4450.pos = 0;
 				this.field4450.p1(0);
 				this.field4450.p5(var6.field11440);
-				this.field10751.method9030(this.field4450.data, 0, this.field4450.data.length);
+				this.field10751.write(this.field4450.data, 0, this.field4450.data.length);
 				this.field4443.method14339(var6);
 			}
 			for (int var7 = 0; var7 < 100; var7++) {
-				int var8 = this.field10751.method9043();
+				int var8 = this.field10751.available();
 				if (var8 < 0) {
 					throw new IOException();
 				}
@@ -82,7 +82,7 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 					if (var9 > var8) {
 						var9 = var8;
 					}
-					this.field10751.method9029(this.field4459.data, this.field4459.pos, var9);
+					this.field10751.read(this.field4459.data, this.field4459.pos, var9);
 					if (this.xorcode != 0 && Client.ENABLE_JS5_XOR) {
 						for (int var10 = 0; var10 < var9; var10++) {
 							this.field4459.data[this.field4459.pos + var10] ^= this.xorcode;
@@ -129,7 +129,7 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 						if (var22 > var8) {
 							var22 = var8;
 						}
-						this.field10751.method9029(this.field4460.data, this.field4460.pos, var22);
+						this.field10751.read(this.field4460.data, this.field4460.pos, var22);
 						if (this.xorcode != 0 && Client.ENABLE_JS5_XOR) {
 							for (int var23 = 0; var23 < var22; var23++) {
 								this.field4460.data[this.field4460.pos + var23] ^= this.xorcode;
@@ -158,7 +158,7 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 						if (var29 > var8) {
 							var29 = var8;
 						}
-						this.field10751.method9029(var21.data, var21.pos, var29);
+						this.field10751.read(var21.data, var21.pos, var29);
 						if (this.xorcode != 0 && Client.ENABLE_JS5_XOR) {
 							for (int var30 = 0; var30 < var29; var30++) {
 								var21.data[var21.pos + var30] ^= this.xorcode;
@@ -180,7 +180,7 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 			return true;
 		} catch (IOException var35) {
 			try {
-				this.field10751.method9031();
+				this.field10751.closeGracefully();
 			} catch (Exception var33) {
 			}
 			this.field10751 = null;
@@ -194,7 +194,7 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 	public void method7017(Object arg0, boolean arg1) {
 		if (this.field10751 != null) {
 			try {
-				this.field10751.method9031();
+				this.field10751.closeGracefully();
 			} catch (Exception var10) {
 			}
 			this.field10751 = null;
@@ -217,10 +217,10 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 								this.field4450.p1(4);
 								this.field4450.p1(this.xorcode);
 								this.field4450.p4(0);
-								this.field10751.method9030(this.field4450.data, 0, this.field4450.data.length);
+								this.field10751.write(this.field4450.data, 0, this.field4450.data.length);
 							} catch (IOException var9) {
 								try {
-									this.field10751.method9031();
+									this.field10751.closeGracefully();
 								} catch (Exception var8) {
 								}
 								this.field10751 = null;
@@ -251,10 +251,10 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 			this.field4450.p1(6);
 			this.field4450.p3(4);
 			this.field4450.p2(0);
-			this.field10751.method9030(this.field4450.data, 0, this.field4450.data.length);
+			this.field10751.write(this.field4450.data, 0, this.field4450.data.length);
 		} catch (IOException var4) {
 			try {
-				this.field10751.method9031();
+				this.field10751.closeGracefully();
 			} catch (Exception var3) {
 			}
 			this.field10751 = null;
@@ -272,10 +272,10 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 			this.field4450.pos = 0;
 			this.field4450.p1(arg0 ? 2 : 3);
 			this.field4450.p5(0L);
-			this.field10751.method9030(this.field4450.data, 0, this.field4450.data.length);
+			this.field10751.write(this.field4450.data, 0, this.field4450.data.length);
 		} catch (IOException var5) {
 			try {
-				this.field10751.method9031();
+				this.field10751.closeGracefully();
 			} catch (Exception var4) {
 			}
 			this.field10751 = null;
@@ -293,10 +293,10 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 			this.field4450.pos = 0;
 			this.field4450.p1(7);
 			this.field4450.p5(0L);
-			this.field10751.method9030(this.field4450.data, 0, this.field4450.data.length);
+			this.field10751.write(this.field4450.data, 0, this.field4450.data.length);
 		} catch (IOException var4) {
 			try {
-				this.field10751.method9031();
+				this.field10751.closeGracefully();
 			} catch (Exception var3) {
 			}
 			this.field10751 = null;
@@ -308,14 +308,14 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 	@ObfuscatedName("aik.d(I)V")
 	public void method7020() {
 		if (this.field10751 != null) {
-			this.field10751.method9031();
+			this.field10751.closeGracefully();
 		}
 	}
 
 	@ObfuscatedName("aik.c(I)V")
 	public void method7035() {
 		if (this.field10751 != null) {
-			this.field10751.method9032();
+			this.field10751.closeForcefully();
 		}
 	}
 }

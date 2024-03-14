@@ -1174,9 +1174,9 @@ public class Statics {
 
 	@ObfuscatedName("ajh.a(I)V")
 	public static void method17428() {
-		Client.field10835.method938();
+		Client.field10835.closeGracefully();
 		if (AccountCreationManager.field580 < 2) {
-			WorldSwitcher.lobby.method14758();
+			WorldSwitcher.lobby.configureSocketType();
 			AccountCreationManager.field583 = 0;
 			AccountCreationManager.field580++;
 			field517 = CreateConnectStage.field515;

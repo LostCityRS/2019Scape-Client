@@ -9,61 +9,61 @@ import java.net.Socket;
 public class SocketStream extends Stream {
 
 	@ObfuscatedName("all.e")
-	public Socket field11677;
+	public Socket socket;
 
 	@ObfuscatedName("all.n")
-	public SocketStreamReader field11678;
+	public SocketStreamReader in;
 
 	@ObfuscatedName("all.m")
-	public SocketStreamWriter field11676;
+	public SocketStreamWriter out;
 
-	public SocketStream(Socket arg0, int arg1, int arg2) throws IOException {
-		this.field11677 = arg0;
-		this.field11677.setSoTimeout(30000);
-		this.field11677.setTcpNoDelay(true);
-		this.field11677.setReceiveBufferSize(65536);
-		this.field11677.setSendBufferSize(65536);
-		this.field11678 = new SocketStreamReader(this.field11677.getInputStream(), arg1);
-		this.field11676 = new SocketStreamWriter(this.field11677.getOutputStream(), arg2);
+	public SocketStream(Socket socket, int inLimit, int outLimit) throws IOException {
+		this.socket = socket;
+		this.socket.setSoTimeout(30000);
+		this.socket.setTcpNoDelay(true);
+		this.socket.setReceiveBufferSize(65536);
+		this.socket.setSendBufferSize(65536);
+		this.in = new SocketStreamReader(this.socket.getInputStream(), inLimit);
+		this.out = new SocketStreamWriter(this.socket.getOutputStream(), outLimit);
 	}
 
 	@ObfuscatedName("all.m(II)Z")
-	public boolean method9038(int arg0) throws IOException {
-		return this.field11678.method8991(arg0);
+	public boolean hasAvailable(int amount) throws IOException {
+		return this.in.hasAvailable(amount);
 	}
 
 	@ObfuscatedName("all.k(B)I")
-	public int method9043() throws IOException {
-		return this.field11678.method8983();
+	public int available() throws IOException {
+		return this.in.available();
 	}
 
 	@ObfuscatedName("all.f([BIIB)I")
-	public int method9029(byte[] arg0, int arg1, int arg2) throws IOException {
-		return this.field11678.method8988(arg0, arg1, arg2);
+	public int read(byte[] bytes, int off, int len) throws IOException {
+		return this.in.read(bytes, off, len);
 	}
 
 	@ObfuscatedName("all.w([BIII)V")
-	public void method9030(byte[] arg0, int arg1, int arg2) throws IOException {
-		this.field11676.method9054(arg0, arg1, arg2);
+	public void write(byte[] bytes, int off, int len) throws IOException {
+		this.out.write(bytes, off, len);
 	}
 
 	@ObfuscatedName("all.l(I)V")
-	public void method9031() {
-		this.field11676.method9055();
+	public void closeGracefully() {
+		this.out.closeGracefully();
 		try {
-			this.field11677.close();
-		} catch (IOException var2) {
+			this.socket.close();
+		} catch (IOException exception) {
 		}
-		this.field11678.method8984();
+		this.in.closeGracefully();
 	}
 
 	@ObfuscatedName("all.u(I)V")
-	public void method9032() {
-		this.field11678.method8999();
-		this.field11676.method9056();
+	public void closeForcefully() {
+		this.in.closeForcefully();
+		this.out.closeForcefully();
 	}
 
 	public void finalize() {
-		this.method9031();
+		this.closeGracefully();
 	}
 }

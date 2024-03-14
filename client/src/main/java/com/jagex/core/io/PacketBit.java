@@ -15,8 +15,8 @@ public class PacketBit extends Packet {
 	@ObfuscatedName("ase.v")
 	public int bitPos;
 
-	public PacketBit(int arg0) {
-		super(arg0);
+	public PacketBit(int size) {
+		super(size);
 	}
 
 	@ObfuscatedName("ase.jg(Laav;B)V")
@@ -25,17 +25,17 @@ public class PacketBit extends Packet {
 	}
 
 	@ObfuscatedName("ase.jx(II)V")
-	public void method19555(int arg0) {
+	public void pIsaac1(int arg0) {
 		this.data[(++this.pos) - 1] = (byte) (arg0 + this.isaac.nextInt());
 	}
 
 	@ObfuscatedName("ase.jh(I)I")
-	public int method19558() {
+	public int gIsaac1() {
 		return this.data[(++this.pos) - 1] - this.isaac.nextInt() & 0xFF;
 	}
 
 	@ObfuscatedName("ase.jp(I)Z")
-	public boolean method19573() {
+	public boolean isIsaac2() {
 		int var1 = this.data[this.pos] - this.isaac.getInt() & 0xFF;
 		return var1 >= 128;
 	}

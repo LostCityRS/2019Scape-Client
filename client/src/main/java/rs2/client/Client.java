@@ -2298,7 +2298,7 @@ public final class Client extends GameShell {
 					LoginManager.field469 = LoginManager.field477;
 					if (Statics.field488) {
 						WorldSwitcher.method9401(WorldSwitcher.field8753.node, WorldSwitcher.field8753.host, WorldSwitcher.field8753.port, WorldSwitcher.field8753.port2);
-						field10849.method941();
+						field10849.closeForcefully();
 						setState(14);
 					} else {
 						logout(LoginManager.field485);
@@ -2462,10 +2462,10 @@ public final class Client extends GameShell {
 			Fullscreen.method4277(GameShell.fsimp14, GameShell.fsframe);
 			GameShell.fsframe = null;
 		}
-		field10849.method938();
-		field10849.field807.method130();
-		field10835.method938();
-		field10835.field807.method130();
+		field10849.closeGracefully();
+		field10849.pingProvider.stop();
+		field10835.closeGracefully();
+		field10835.pingProvider.stop();
 		if (field1798 != null) {
 			field1798.method3165();
 		}
@@ -2582,7 +2582,7 @@ public final class Client extends GameShell {
 			LoginManager.method5143();
 		}
 		if (arg0 != 14 && field11764 != null) {
-			field11764.method9031();
+			field11764.closeGracefully();
 			field11764 = null;
 		}
 		if (arg0 == 4) {
@@ -2638,7 +2638,7 @@ public final class Client extends GameShell {
 	@ObfuscatedName("client.em(B)V")
 	public void method16918() {
 		if (field4489.field4455 > field10829) {
-			WorldSwitcher.content.method14758();
+			WorldSwitcher.content.configureSocketType();
 			field10821 = field4489.field4455 * 250 - 250;
 			if (field10821 > 3000) {
 				field10821 = 3000;
@@ -2679,11 +2679,11 @@ public final class Client extends GameShell {
 		}
 		try {
 			if (field10827 == 0) {
-				field9774 = WorldSwitcher.content.method14764();
+				field9774 = WorldSwitcher.content.getSocket();
 				field10827++;
 			}
 			if (field10827 == 1) {
-				field7571 = Stream.method7130(field9774, 131072);
+				field7571 = Stream.createStream(field9774, 131072);
 				int var1 = field10789.length() + 10;
 				Packet var2 = new Packet(var1 + 2);
 				var2.p1(LoginProt.INIT_JS5REMOTE_CONNECTION.id);
@@ -2692,14 +2692,14 @@ public final class Client extends GameShell {
 				var2.p4(1);
 				var2.pjstr(field10789);
 				var2.p1(language.field8298);
-				field7571.method9030(var2.data, 0, var1 + 2);
+				field7571.write(var2.data, 0, var1 + 2);
 				field10827++;
 				field10353 = MonotonicTime.method3655();
 			}
 			if (field10827 == 2) {
-				if (field7571.method9038(1)) {
+				if (field7571.hasAvailable(1)) {
 					byte[] var3 = new byte[1];
-					int var4 = field7571.method9029(var3, 0, 1);
+					int var4 = field7571.read(var3, 0, 1);
 					if (var3[0] != 0) {
 						this.method16986(var4);
 						return;
@@ -2713,9 +2713,9 @@ public final class Client extends GameShell {
 			if (field10827 == 3) {
 				LoadableResource[] var5 = LoadableResource.method15007();
 				int var6 = var5.length * 4;
-				if (field7571.method9038(var6)) {
+				if (field7571.hasAvailable(var6)) {
 					Packet var7 = new Packet(var6);
-					field7571.method9029(var7.data, 0, var7.data.length);
+					field7571.read(var7.data, 0, var7.data.length);
 					for (int var8 = 0; var8 < var5.length; var8++) {
 						var5[var8].method15009(var7.g4s());
 					}
@@ -3202,7 +3202,7 @@ public final class Client extends GameShell {
 		if (field10978 != -1) {
 			method9585(true);
 		}
-		if (method640().method939() != null && (isStateGame(state) || method15084(state))) {
+		if (method640().getStream() != null && (isStateGame(state) || method15084(state))) {
 			method4336(method640());
 		}
 		for (int var8 = 0; var8 < 114; var8++) {
@@ -3501,7 +3501,7 @@ public final class Client extends GameShell {
 				var3.method933();
 			} catch (IOException var7) {
 			}
-			var3.method938();
+			var3.closeGracefully();
 		}
 		LoginManager.method9067();
 		method14454();
@@ -3670,8 +3670,8 @@ public final class Client extends GameShell {
 			logout(false);
 		} else {
 			field10853 = LogoutReason.field9141;
-			field11764 = field10849.method939();
-			field10849.method941();
+			field11764 = field10849.getStream();
+			field10849.closeForcefully();
 			setState(14);
 		}
 	}
@@ -3801,7 +3801,7 @@ public final class Client extends GameShell {
 												}
 											}
 											if (state == 13 && !LoginManager.method2865() || state == 15 && LoginManager.field477 == 42 || state == 17 && (LoginManager.field476 == 49 || LoginManager.field476 == 52) || state == 0) {
-												if (state != 15 && field10835.method939() == null) {
+												if (state != 15 && field10835.getStream() == null) {
 													field10853 = LogoutReason.field9135;
 													logout(false);
 													return;
@@ -3816,7 +3816,7 @@ public final class Client extends GameShell {
 														field10835.method933();
 													} catch (IOException var28) {
 														if (state == 15) {
-															field10835.method938();
+															field10835.closeGracefully();
 														} else {
 															logout(false);
 														}
@@ -3967,9 +3967,9 @@ public final class Client extends GameShell {
 		world.method7816().method10003(world);
 		Statics.method3486();
 		if (field10915 > 10) {
-			field10849.field789++;
+			field10849.idleNetCycles++;
 		}
-		if (field10849.field789 > 2250) {
+		if (field10849.idleNetCycles > 2250) {
 			method8321();
 			return;
 		}
@@ -7927,10 +7927,10 @@ public final class Client extends GameShell {
 	@ObfuscatedName("el.if(Lax;I)Z")
 	public static final boolean method2765(ServerConnection arg0) {
 		try {
-			return method10616(arg0);
+			return read(arg0);
 		} catch (IOException var6) {
 			if (state == 15) {
-				arg0.method941();
+				arg0.closeForcefully();
 				return false;
 			} else {
 				method8321();
@@ -7938,9 +7938,9 @@ public final class Client extends GameShell {
 			}
 		} catch (Exception var7) {
 			CoordGrid var3 = world.method7727();
-			String var4 = (arg0.field796 == null ? -1 : arg0.field796.field4021) + TextUtil.COMMA + (arg0.field806 == null ? -1 : arg0.field806.field4021) + TextUtil.COMMA + (arg0.field805 == null ? -1 : arg0.field805.field4021) + " " + arg0.field797 + TextUtil.COMMA + (var3.field7426 + field4490.field10450[0]) + TextUtil.COMMA + (var3.field7427 + field4490.field10448[0]) + " ";
-			for (int var5 = 0; var5 < arg0.field797 && var5 < 50; var5++) {
-				var4 = var4 + arg0.field795.data[var5] + TextUtil.COMMA;
+			String var4 = (arg0.packetType == null ? -1 : arg0.packetType.id) + TextUtil.COMMA + (arg0.lastPacketType1 == null ? -1 : arg0.lastPacketType1.id) + TextUtil.COMMA + (arg0.lastPacketType2 == null ? -1 : arg0.lastPacketType2.id) + " " + arg0.packetSize + TextUtil.COMMA + (var3.field7426 + field4490.field10450[0]) + TextUtil.COMMA + (var3.field7427 + field4490.field10448[0]) + " ";
+			for (int var5 = 0; var5 < arg0.packetSize && var5 < 50; var5++) {
+				var4 = var4 + arg0.in.data[var5] + TextUtil.COMMA;
 			}
 			JagException.report(var4, var7);
 			logout(false);
@@ -7949,88 +7949,88 @@ public final class Client extends GameShell {
 	}
 
 	@ObfuscatedName("yx.ih(Lax;B)Z")
-	public static final boolean method10616(ServerConnection arg0) throws IOException {
-		Stream var1 = arg0.method939();
-		PacketBit var2 = arg0.field795;
-		if (var1 == null) {
+	public static final boolean read(ServerConnection connection) throws IOException {
+		Stream stream = connection.getStream();
+		PacketBit in = connection.in;
+		if (stream == null) {
 			return false;
 		}
-		if (arg0.field796 == null) {
-			if (arg0.field799) {
-				if (!var1.method9038(1)) {
+		if (connection.packetType == null) {
+			if (connection.field799) {
+				if (!stream.hasAvailable(1)) {
 					return false;
 				}
-				var1.method9029(arg0.field795.data, 0, 1);
-				arg0.field802++;
-				arg0.field789 = 0;
-				arg0.field799 = false;
+				stream.read(connection.in.data, 0, 1);
+				connection.readPos++;
+				connection.idleNetCycles = 0;
+				connection.field799 = false;
 			}
-			var2.pos = 0;
-			if (var2.method19573()) {
-				if (!var1.method9038(1)) {
+			in.pos = 0;
+			if (in.isIsaac2()) {
+				if (!stream.hasAvailable(1)) {
 					return false;
 				}
-				var1.method9029(arg0.field795.data, 1, 1);
-				arg0.field802++;
-				arg0.field789 = 0;
+				stream.read(connection.in.data, 1, 1);
+				connection.readPos++;
+				connection.idleNetCycles = 0;
 			}
-			arg0.field799 = true;
-			ServerProt[] var3 = ServerProt.method18494();
-			int var4 = var2.gIsaac1or2();
-			if (var4 < 0 || var4 >= var3.length) {
-				throw new IOException(var4 + " " + var2.pos);
+			connection.field799 = true;
+			ServerProt[] serverProts = ServerProt.values();
+			int packetId = in.gIsaac1or2();
+			if (packetId < 0 || packetId >= serverProts.length) {
+				throw new IOException(packetId + " " + in.pos);
 			}
-			arg0.field796 = var3[var4];
-			arg0.field797 = arg0.field796.field3941;
+			connection.packetType = serverProts[packetId];
+			connection.packetSize = connection.packetType.size;
 		}
-		if (arg0.field797 == -1) {
-			if (!var1.method9038(1)) {
+		if (connection.packetSize == -1) {
+			if (!stream.hasAvailable(1)) {
 				return false;
 			}
-			var1.method9029(var2.data, 0, 1);
-			arg0.field797 = var2.data[0] & 0xFF;
-			arg0.field802++;
-			arg0.field789 = 0;
+			stream.read(in.data, 0, 1);
+			connection.packetSize = in.data[0] & 0xFF;
+			connection.readPos++;
+			connection.idleNetCycles = 0;
 		}
-		if (arg0.field797 == -2) {
-			if (!var1.method9038(2)) {
+		if (connection.packetSize == -2) {
+			if (!stream.hasAvailable(2)) {
 				return false;
 			}
-			var1.method9029(var2.data, 0, 2);
-			var2.pos = 0;
-			arg0.field797 = var2.g2();
-			arg0.field802 += 2;
-			arg0.field789 = 0;
+			stream.read(in.data, 0, 2);
+			in.pos = 0;
+			connection.packetSize = in.g2();
+			connection.readPos += 2;
+			connection.idleNetCycles = 0;
 		}
-		if (arg0.field797 > 0) {
-			if (!var1.method9038(arg0.field797)) {
+		if (connection.packetSize > 0) {
+			if (!stream.hasAvailable(connection.packetSize)) {
 				return false;
 			}
-			var2.pos = 0;
-			var1.method9029(var2.data, 0, arg0.field797);
-			arg0.field802 += arg0.field797;
-			arg0.field789 = 0;
+			in.pos = 0;
+			stream.read(in.data, 0, connection.packetSize);
+			connection.readPos += connection.packetSize;
+			connection.idleNetCycles = 0;
 		}
-		arg0.field805 = arg0.field806;
-		arg0.field806 = arg0.field790;
-		arg0.field790 = arg0.field796;
-		if (ServerProt.IF_SETTEXTANTIMACRO == arg0.field796) {
-			int var5 = var2.g4_alt3();
-			boolean var6 = var2.g1() == 1;
+		connection.lastPacketType2 = connection.lastPacketType1;
+		connection.lastPacketType1 = connection.lastPacketType0;
+		connection.lastPacketType0 = connection.packetType;
+		if (ServerProt.IF_SETTEXTANTIMACRO == connection.packetType) {
+			int var5 = in.g4_alt3();
+			boolean var6 = in.g1() == 1;
 			incrementVerifyId();
 			DelayedStateChange.method9874(var5, var6);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CLANCHANNEL_FULL == arg0.field796) {
+		} else if (ServerProt.CLANCHANNEL_FULL == connection.packetType) {
 			field11025 = field11058;
-			boolean var7 = var2.g1() == 1;
-			if (arg0.field797 != 1) {
+			boolean var7 = in.g1() == 1;
+			if (connection.packetSize != 1) {
 				if (var7) {
-					field3022 = new ClanChannel(var2);
+					field3022 = new ClanChannel(in);
 				} else {
-					field1766 = new ClanChannel(var2);
+					field1766 = new ClanChannel(in);
 				}
-				arg0.field796 = null;
+				connection.packetType = null;
 				return true;
 			}
 			if (var7) {
@@ -8038,77 +8038,77 @@ public final class Client extends GameShell {
 			} else {
 				field1766 = null;
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CLIENT_SETVARC_SMALL == arg0.field796) {
-			byte var8 = var2.g1b_alt3();
-			int var9 = var2.g2();
+		} else if (ServerProt.CLIENT_SETVARC_SMALL == connection.packetType) {
+			byte var8 = in.g1b_alt3();
+			int var9 = in.g2();
 			incrementVerifyId();
 			DelayedStateChange.method19215(var9, var8);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.TELEMETRY_GRID_FULL == arg0.field796) {
+		} else if (ServerProt.TELEMETRY_GRID_FULL == connection.packetType) {
 			field11094.method3273();
-			int var10 = var2.g1();
+			int var10 = in.g1();
 			for (int var11 = 0; var11 < var10; var11++) {
-				int var12 = var2.g4s();
+				int var12 = in.g4s();
 				TelemetryGroup var13 = new TelemetryGroup(var12);
 				field11094.method3270(var13);
-				int var14 = var2.g1();
+				int var14 = in.g1();
 				for (int var15 = 0; var15 < var14; var15++) {
-					var13.method3298(var2.g4s());
+					var13.method3298(in.g4s());
 				}
-				int var16 = var2.g1();
+				int var16 = in.g1();
 				for (int var17 = 0; var17 < var16; var17++) {
-					var13.method3320(var2.g4s());
+					var13.method3320(in.g4s());
 				}
 				for (int var18 = 0; var18 < var14; var18++) {
-					byte var19 = var2.g1b();
+					byte var19 = in.g1b();
 					var13.method3319(var18, var19);
 					for (int var20 = 0; var20 < var16; var20++) {
-						if (var2.g1() == 0) {
+						if (in.g1() == 0) {
 							var13.method3307(var18, var20, null);
 						} else {
-							var13.method3307(var18, var20, var2.g4s());
+							var13.method3307(var18, var20, in.g4s());
 						}
 					}
 				}
 			}
 			field11095 = false;
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.SET_MOVEACTION == arg0.field796) {
-			field4868 = arg0.field797 > 2 ? var2.gjstr() : LocalisedText.WALKHERE.method15021(language);
-			field10963 = arg0.field797 > 0 ? var2.g2() : -1;
+		} else if (ServerProt.SET_MOVEACTION == connection.packetType) {
+			field4868 = connection.packetSize > 2 ? in.gjstr() : LocalisedText.WALKHERE.method15021(language);
+			field10963 = connection.packetSize > 0 ? in.g2() : -1;
 			if (field10963 == 65535) {
 				field10963 = -1;
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.UPDATE_SITESETTINGS == arg0.field796) {
-			method5135(var2.gjstr());
-			arg0.field796 = null;
+		} else if (ServerProt.UPDATE_SITESETTINGS == connection.packetType) {
+			method5135(in.gjstr());
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.SETDRAWORDER == arg0.field796) {
-			boolean var21 = var2.g1_alt3() == 1;
+		} else if (ServerProt.SETDRAWORDER == connection.packetType) {
+			boolean var21 = in.g1_alt3() == 1;
 			incrementVerifyId();
 			Statics.field7446 = var21;
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CHAT_FILTER_SETTINGS_PRIVATECHAT == arg0.field796) {
-			field10354 = PrivateChatFilter.method3374(var2.g1());
-			arg0.field796 = null;
+		} else if (ServerProt.CHAT_FILTER_SETTINGS_PRIVATECHAT == connection.packetType) {
+			field10354 = PrivateChatFilter.method3374(in.g1());
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.NO_TIMEOUT == arg0.field796) {
-			arg0.field796 = null;
+		} else if (ServerProt.NO_TIMEOUT == connection.packetType) {
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.URL_OPEN == arg0.field796) {
+		} else if (ServerProt.URL_OPEN == connection.packetType) {
 			if (Fullscreen.allowed && GameShell.fsframe != null) {
 				setWindowMode(field688.maxScreenSize.method18539(), -1, -1, false);
 			}
-			byte[] var22 = new byte[arg0.field797 - 1];
-			boolean var23 = var2.g1() == 1;
-			var2.gIsaacArrayBuffer(var22, 0, arg0.field797 - 1);
+			byte[] var22 = new byte[connection.packetSize - 1];
+			boolean var23 = in.g1() == 1;
+			in.gIsaacArrayBuffer(var22, 0, connection.packetSize - 1);
 			Packet var24 = new Packet(var22);
 			String var25 = var24.gjstr();
 			if (var23) {
@@ -8122,41 +8122,41 @@ public final class Client extends GameShell {
 			} else {
 				Browser.method4607(var25, true, field10784);
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CAM_FORCEANGLE == arg0.field796) {
-			int var27 = var2.g2_alt1();
-			int var28 = var2.g2();
+		} else if (ServerProt.CAM_FORCEANGLE == connection.packetType) {
+			int var27 = in.g2_alt1();
+			int var28 = in.g2();
 			incrementVerifyId();
 			method4843(var28, var27, 0);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CAM_RESET == arg0.field796) {
+		} else if (ServerProt.CAM_RESET == connection.packetType) {
 			incrementVerifyId();
 			method4046(method14298());
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.UPDATE_INV_PARTIAL == arg0.field796) {
-			int var29 = var2.g2();
-			int var30 = var2.g1();
+		} else if (ServerProt.UPDATE_INV_PARTIAL == connection.packetType) {
+			int var29 = in.g2();
+			int var30 = in.g1();
 			boolean var31 = (var30 & 0x1) != 0;
 			boolean var32 = (var30 & 0x2) != 0;
-			while (var2.pos < arg0.field797) {
-				int var33 = var2.gSmart1or2();
-				int var34 = var2.g2();
+			while (in.pos < connection.packetSize) {
+				int var33 = in.gSmart1or2();
+				int var34 = in.g2();
 				int var35 = 0;
 				VarContainerSparse var36 = null;
 				if (var34 != 0) {
-					var35 = var2.g1();
+					var35 = in.g1();
 					if (var35 == 255) {
-						var35 = var2.g4s();
+						var35 = in.g4s();
 					}
 					if (var32) {
-						int var37 = var2.g1();
+						int var37 = in.g1();
 						if (var37 > 0) {
 							var36 = new VarContainerSparse(field1819);
 							while (var37-- > 0) {
-								VarValue var38 = field1819.decodeVarValue(var2);
+								VarValue var38 = field1819.decodeVarValue(in);
 								var36.method14735(var38.field4240, var38.field4239);
 							}
 						}
@@ -8165,64 +8165,64 @@ public final class Client extends GameShell {
 				ClientInvCache.method3912(var29, var33, var34 - 1, var35, var36, var31);
 			}
 			field10783[++field11012 - 1 & 0x3F] = var29;
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.TEXT_COORD == arg0.field796) {
+		} else if (ServerProt.TEXT_COORD == connection.packetType) {
 			method9605(ZoneProt.field3612);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.TELEMETRY_CLEAR_GRID_VALUE == arg0.field796) {
+		} else if (ServerProt.TELEMETRY_CLEAR_GRID_VALUE == connection.packetType) {
 			if (!field11095) {
 				try {
-					int var39 = var2.g1();
-					int var40 = var2.g1_alt3();
-					int var41 = var2.g1_alt3();
+					int var39 = in.g1();
+					int var40 = in.g1_alt3();
+					int var41 = in.g1_alt3();
 					field11094.method3263(var39).method3307(var40, var41, null);
 				} catch (RuntimeException var719) {
 					JagException.report(null, var719);
-					method4499(arg0);
+					method4499(connection);
 				}
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.OBJ_REVEAL == arg0.field796) {
+		} else if (ServerProt.OBJ_REVEAL == connection.packetType) {
 			method9605(ZoneProt.field3620);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_SETCOLOUR == arg0.field796) {
-			int var43 = var2.g2_alt2();
-			int var44 = var2.g4s();
+		} else if (ServerProt.IF_SETCOLOUR == connection.packetType) {
+			int var43 = in.g2_alt2();
+			int var44 = in.g4s();
 			incrementVerifyId();
 			DelayedStateChange.method3379(var44, var43);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.LOGOUT_FULL == arg0.field796) {
-			field10853 = (LogoutReason) SerializableEnums.decode(LogoutReason.method10365(), var2.g1());
+		} else if (ServerProt.LOGOUT_FULL == connection.packetType) {
+			field10853 = (LogoutReason) SerializableEnums.decode(LogoutReason.method10365(), in.g1());
 			logout(LoginManager.field485);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return false;
-		} else if (ServerProt.TELEMETRY_GRID_ADD_ROW == arg0.field796) {
+		} else if (ServerProt.TELEMETRY_GRID_ADD_ROW == connection.packetType) {
 			if (!field11095) {
 				try {
-					byte var45 = var2.g1b_alt1();
-					int var46 = var2.g4s();
-					int var47 = var2.g1_alt3();
+					byte var45 = in.g1b_alt1();
+					int var46 = in.g4s();
+					int var47 = in.g1_alt3();
 					field11094.method3263(var47).method3301(var46, var45);
 				} catch (RuntimeException var720) {
 					JagException.report(null, var720);
-					method4499(arg0);
+					method4499(connection);
 				}
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.SET_PLAYER_OP == arg0.field796) {
-			int var49 = var2.g1_alt2();
-			int var50 = var2.g2_alt3();
+		} else if (ServerProt.SET_PLAYER_OP == connection.packetType) {
+			int var49 = in.g1_alt2();
+			int var50 = in.g2_alt3();
 			if (var50 == 65535) {
 				var50 = -1;
 			}
-			String var51 = var2.gjstr();
-			int var52 = var2.g1_alt3();
+			String var51 = in.gjstr();
+			int var52 = in.g1_alt3();
 			if (var49 >= 1 && var49 <= 8) {
 				if (var51.equalsIgnoreCase("null")) {
 					var51 = null;
@@ -8231,52 +8231,52 @@ public final class Client extends GameShell {
 				field10832[var49 - 1] = var50;
 				field10962[var49 - 1] = var52 == 0;
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.UPDATE_INV_STOP_TRANSMIT == arg0.field796) {
-			int var53 = var2.g1_alt1();
-			int var54 = var2.g2();
+		} else if (ServerProt.UPDATE_INV_STOP_TRANSMIT == connection.packetType) {
+			int var53 = in.g1_alt1();
+			int var54 = in.g2();
 			boolean var55 = (var53 & 0x1) == 1;
 			ClientInvCache.method10309(var54, var55);
 			field10783[++field11012 - 1 & 0x3F] = var54;
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.VARCLAN_DISABLE == arg0.field796) {
+		} else if (ServerProt.VARCLAN_DISABLE == connection.packetType) {
 			field7698 = null;
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.NPC_ANIM_SPECIFIC == arg0.field796) {
+		} else if (ServerProt.NPC_ANIM_SPECIFIC == connection.packetType) {
 			int[] var56 = new int[4];
 			for (int var57 = 0; var57 < 4; var57++) {
-				var56[var57] = var2.g4_alt1();
+				var56[var57] = in.g4_alt1();
 			}
-			int var58 = var2.g2();
-			int var59 = var2.g1_alt2();
+			int var58 = in.g2();
+			int var59 = in.g1_alt2();
 			ObjectWrapper var60 = (ObjectWrapper) field10838.method14495((long) var58);
 			if (var60 != null) {
 				method9423((PathingEntity) var60.field11436, var56, var59, true);
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_SETANGLE == arg0.field796) {
-			int var61 = var2.g4_alt2();
-			int var62 = var2.g2_alt1();
-			int var63 = var2.g2_alt1();
-			int var64 = var2.g2_alt2();
+		} else if (ServerProt.IF_SETANGLE == connection.packetType) {
+			int var61 = in.g4_alt2();
+			int var62 = in.g2_alt1();
+			int var63 = in.g2_alt1();
+			int var64 = in.g2_alt2();
 			incrementVerifyId();
 			DelayedStateChange.method16746(var61, var62, var63, var64);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CLANSETTINGS_FULL == arg0.field796) {
+		} else if (ServerProt.CLANSETTINGS_FULL == connection.packetType) {
 			field10818 = field11058;
-			boolean var65 = var2.g1() == 1;
-			if (arg0.field797 != 1) {
+			boolean var65 = in.g1() == 1;
+			if (connection.packetSize != 1) {
 				if (var65) {
-					field1890 = new ClanSettings(var2);
+					field1890 = new ClanSettings(in);
 				} else {
-					field6867 = new ClanSettings(var2);
+					field6867 = new ClanSettings(in);
 				}
-				arg0.field796 = null;
+				connection.packetType = null;
 				return true;
 			}
 			if (var65) {
@@ -8284,24 +8284,24 @@ public final class Client extends GameShell {
 			} else {
 				field6867 = null;
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.HINT_TRAIL == arg0.field796) {
-			int var66 = var2.g1();
-			int var67 = var2.gSmart2or4null();
+		} else if (ServerProt.HINT_TRAIL == connection.packetType) {
+			int var66 = in.g1();
+			int var67 = in.gSmart2or4null();
 			if (field10931[var66] != null) {
 				field10931[var66].method8404(world.method7743());
 				field10931[var66] = null;
 			}
 			if (var67 != -1) {
-				field10931[var66] = new HintTrail(field8198, var2, var67);
+				field10931[var66] = new HintTrail(field8198, in, var67);
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.MESSAGE_CLANCHANNEL_SYSTEM == arg0.field796) {
-			boolean var68 = var2.g1() == 1;
-			long var69 = (long) var2.g2();
-			long var71 = (long) var2.g3();
+		} else if (ServerProt.MESSAGE_CLANCHANNEL_SYSTEM == connection.packetType) {
+			boolean var68 = in.g1() == 1;
+			long var69 = (long) in.g2();
+			long var71 = (long) in.g3();
 			long var73 = (var69 << 32) + var71;
 			boolean var75 = false;
 			ClanChannel var76 = var68 ? field3022 : field1766;
@@ -8318,58 +8318,58 @@ public final class Client extends GameShell {
 			if (!var75) {
 				field11053[field11054] = var73;
 				field11054 = (field11054 + 1) % 100;
-				String var78 = WordPack.method5939(var2);
+				String var78 = WordPack.method5939(in);
 				int var79 = var68 ? 43 : 46;
 				ChatHistory.method15054(var79, 0, "", "", "", var78, var76.field11396, -1, null);
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.PLAYER_INFO == arg0.field796) {
-			ReceivePlayerPositions.method8355(var2, arg0.field797);
-			arg0.field796 = null;
+		} else if (ServerProt.PLAYER_INFO == connection.packetType) {
+			ReceivePlayerPositions.method8355(in, connection.packetSize);
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CLIENT_SETVARCBIT_LARGE == arg0.field796) {
-			int var80 = var2.g2_alt2();
-			int var81 = var2.g4_alt1();
+		} else if (ServerProt.CLIENT_SETVARCBIT_LARGE == connection.packetType) {
+			int var80 = in.g2_alt2();
+			int var81 = in.g4_alt1();
 			incrementVerifyId();
 			DelayedStateChange.method18309(var80, var81);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_OPENSUB_ACTIVE_LOC == arg0.field796) {
-			int var82 = var2.g4_alt1();
-			CoordGrid var83 = new CoordGrid(var2.g4_alt3());
-			int var84 = var2.g2();
-			int var85 = var2.g1_alt3();
-			int var86 = var2.g4_alt3();
-			int var87 = var2.g4s();
-			int var88 = var2.g4_alt2();
-			int var89 = var2.g4_alt3();
-			int var90 = var2.g1();
-			int var91 = var2.g4s();
-			LocPositionAdjustment var92 = new LocPositionAdjustment(var2, var90, false);
+		} else if (ServerProt.IF_OPENSUB_ACTIVE_LOC == connection.packetType) {
+			int var82 = in.g4_alt1();
+			CoordGrid var83 = new CoordGrid(in.g4_alt3());
+			int var84 = in.g2();
+			int var85 = in.g1_alt3();
+			int var86 = in.g4_alt3();
+			int var87 = in.g4s();
+			int var88 = in.g4_alt2();
+			int var89 = in.g4_alt3();
+			int var90 = in.g1();
+			int var91 = in.g4s();
+			LocPositionAdjustment var92 = new LocPositionAdjustment(in, var90, false);
 			incrementVerifyId();
 			method4489(var82, new SubInterfaceActiveLoc(var84, var85, new LocReference(var83, var92.field7541, var92.field7540, var91)), new int[] { var86, var87, var88, var89 }, false);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.UPDATE_FRIENDLIST == arg0.field796) {
-			while (var2.pos < arg0.field797) {
-				boolean var93 = var2.g1() == 1;
-				String var94 = var2.gjstr();
-				String var95 = var2.gjstr();
-				int var96 = var2.g2();
-				int var97 = var2.g1();
-				int var98 = var2.g1();
+		} else if (ServerProt.UPDATE_FRIENDLIST == connection.packetType) {
+			while (in.pos < connection.packetSize) {
+				boolean var93 = in.g1() == 1;
+				String var94 = in.gjstr();
+				String var95 = in.gjstr();
+				int var96 = in.g2();
+				int var97 = in.g1();
+				int var98 = in.g1();
 				boolean var99 = (var98 & 0x2) != 0;
 				boolean var100 = (var98 & 0x1) != 0;
 				String var101 = "";
 				int var102 = -1;
 				int var103 = 0;
 				if (var96 > 0) {
-					var101 = var2.gjstr();
-					var102 = var2.g1();
-					var103 = var2.g4s();
+					var101 = in.gjstr();
+					var102 = in.g1();
+					var103 = in.g4s();
 				}
-				String var104 = var2.gjstr();
+				String var104 = in.gjstr();
 				for (int var105 = 0; var105 < field10811; var105++) {
 					Friend var106 = field11065[var105];
 					if (var93) {
@@ -8460,19 +8460,19 @@ public final class Client extends GameShell {
 					break;
 				}
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_SETEVENTS == arg0.field796) {
-			int var118 = var2.g2_alt2();
+		} else if (ServerProt.IF_SETEVENTS == connection.packetType) {
+			int var118 = in.g2_alt2();
 			if (var118 == 65535) {
 				var118 = -1;
 			}
-			int var119 = var2.g4s();
-			int var120 = var2.g2_alt3();
+			int var119 = in.g4s();
+			int var120 = in.g2_alt3();
 			if (var120 == 65535) {
 				var120 = -1;
 			}
-			int var121 = var2.g4_alt1();
+			int var121 = in.g4_alt1();
 			incrementVerifyId();
 			for (int var122 = var118; var122 <= var120; var122++) {
 				long var123 = ((long) var121 << 32) + (long) var122;
@@ -8488,66 +8488,66 @@ public final class Client extends GameShell {
 				}
 				field10873.method14501(var126, var123);
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.OBJ_COUNT == arg0.field796) {
+		} else if (ServerProt.OBJ_COUNT == connection.packetType) {
 			method9605(ZoneProt.field3615);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.PLAYER_SNAPSHOT == arg0.field796) {
-			int var127 = var2.g1();
+		} else if (ServerProt.PLAYER_SNAPSHOT == connection.packetType) {
+			int var127 = in.g1();
 			int var128 = -var127 - 2;
-			byte var129 = var2.g1b();
+			byte var129 = in.g1b();
 			PlayerEntity var130 = (PlayerEntity) field10946.get(var128);
 			if (var130 == null) {
 				var130 = new PlayerEntity(null);
 				var130.field10406 = var128;
 				field10946.put(var128, var130);
 			}
-			var130.method19121(var2, var129);
-			arg0.field796 = null;
+			var130.method19121(in, var129);
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.MIDI_JINGLE == arg0.field796) {
-			int var131 = var2.g1_alt1();
-			int var132 = var2.g2_alt1();
+		} else if (ServerProt.MIDI_JINGLE == connection.packetType) {
+			int var131 = in.g1_alt1();
+			int var132 = in.g2_alt1();
 			if (var132 == 65535) {
 				var132 = -1;
 			}
 			field1798.method3179(var132, var131);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.LOC_ANIM_SPECIFIC == arg0.field796) {
-			int var133 = var2.g4_alt1();
+		} else if (ServerProt.LOC_ANIM_SPECIFIC == connection.packetType) {
+			int var133 = in.g4_alt1();
 			int var134 = var133 >> 28 & 0x3;
 			int var135 = var133 >> 14 & 0x3FFF;
 			int var136 = var133 & 0x3FFF;
-			int var137 = var2.g1();
-			int var138 = var2.g4s();
-			int var139 = var2.g1();
-			LocPositionAdjustment var140 = new LocPositionAdjustment(var2, var139, false);
+			int var137 = in.g1();
+			int var138 = in.g4s();
+			int var139 = in.g1();
+			LocPositionAdjustment var140 = new LocPositionAdjustment(in, var139, false);
 			int var141 = field10914[var140.field7541];
 			CoordGrid var142 = world.method7727();
 			int var143 = var135 - var142.field7426;
 			int var144 = var136 - var142.field7427;
 			method8895(var134, var143, var144, var141, var140.field7541, var140.field7540, var140.field7539, var138, var137);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CREATE_SUGGEST_NAME_ERROR == arg0.field796) {
-			int var145 = var2.g1();
+		} else if (ServerProt.CREATE_SUGGEST_NAME_ERROR == connection.packetType) {
+			int var145 = in.g1();
 			SuggestNameReply var146 = (SuggestNameReply) SerializableEnums.decode(SuggestNameReply.method9840(), var145);
 			if (var146 == null) {
 				var146 = SuggestNameReply.field8393;
 			}
 			AccountCreationManager.method4664(var146);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.VORBIS_PRELOAD_SOUND_GROUP == arg0.field796) {
-			int var147 = var2.g2();
+		} else if (ServerProt.VORBIS_PRELOAD_SOUND_GROUP == connection.packetType) {
+			int var147 = in.g2();
 			field1798.method3215(var147);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CAM_REMOVEROOF == arg0.field796) {
-			int var148 = var2.g4_alt2();
+		} else if (ServerProt.CAM_REMOVEROOF == connection.packetType) {
+			int var148 = in.g4_alt2();
 			incrementVerifyId();
 			if (var148 == -1) {
 				field810 = -1;
@@ -8571,25 +8571,25 @@ public final class Client extends GameShell {
 				field810 = (var152 << 9) + 256;
 				field3538 = (var153 << 9) + 256;
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.MAP_PROJANIM == arg0.field796) {
+		} else if (ServerProt.MAP_PROJANIM == connection.packetType) {
 			method9605(ZoneProt.field3614);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_SETHIDE == arg0.field796) {
-			int var154 = var2.g4s();
-			int var155 = var2.g1_alt2();
+		} else if (ServerProt.IF_SETHIDE == connection.packetType) {
+			int var154 = in.g4s();
+			int var155 = in.g1_alt2();
 			incrementVerifyId();
 			DelayedStateChange.method3570(var154, var155);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.MESSAGE_CLANCHANNEL == arg0.field796) {
-			boolean var156 = var2.g1() == 1;
-			String var157 = var2.gjstr();
-			long var158 = (long) var2.g2();
-			long var160 = (long) var2.g3();
-			ChatCrownType var162 = (ChatCrownType) SerializableEnums.decode(ChatCrownType.method6043(), var2.g1());
+		} else if (ServerProt.MESSAGE_CLANCHANNEL == connection.packetType) {
+			boolean var156 = in.g1() == 1;
+			String var157 = in.gjstr();
+			long var158 = (long) in.g2();
+			long var160 = (long) in.g3();
+			ChatCrownType var162 = (ChatCrownType) SerializableEnums.decode(ChatCrownType.method6043(), in.g1());
 			long var163 = (var158 << 32) + var160;
 			boolean var165 = false;
 			Object var166 = null;
@@ -8619,7 +8619,7 @@ public final class Client extends GameShell {
 			if (!var165) {
 				field11053[field11054] = var163;
 				field11054 = (field11054 + 1) % 100;
-				String var169 = StringHelper.escape(WordPack.method5939(var2));
+				String var169 = StringHelper.escape(WordPack.method5939(in));
 				int var170 = var156 ? 41 : 44;
 				if (var162.field3602 == -1) {
 					ChatHistory.method15054(var170, 0, var157, var157, var157, var169, var167.field11396, -1, var162);
@@ -8627,43 +8627,43 @@ public final class Client extends GameShell {
 					ChatHistory.method15054(var170, 0, TextUtil.imgTag(var162.field3602) + var157, TextUtil.imgTag(var162.field3602) + var157, var157, var169, var167.field11396, -1, var162);
 				}
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.VARCLAN_ENABLE == arg0.field796) {
+		} else if (ServerProt.VARCLAN_ENABLE == connection.packetType) {
 			field7698 = new SparseVarDomain(field8783);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.LAST_LOGIN_INFO == arg0.field796) {
-			int var171 = var2.g4s();
+		} else if (ServerProt.LAST_LOGIN_INFO == connection.packetType) {
+			int var171 = in.g4s();
 			field636 = new HostNameProvider(var171);
 			Thread var172 = new Thread(field636);
 			var172.setPriority(1);
 			var172.start();
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.SYNTH_SOUND == arg0.field796) {
-			int var173 = var2.g2();
+		} else if (ServerProt.SYNTH_SOUND == connection.packetType) {
+			int var173 = in.g2();
 			if (var173 == 65535) {
 				var173 = -1;
 			}
-			int var174 = var2.g1();
-			int var175 = var2.g2();
-			int var176 = var2.g1();
-			int var177 = var2.g2();
+			int var174 = in.g1();
+			int var175 = in.g2();
+			int var176 = in.g1();
+			int var177 = in.g2();
 			field1798.method3191(SoundType.field1832, var173, var174, var176, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var177, var175);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.MESSAGE_QUICKCHAT_PRIVATE == arg0.field796) {
-			boolean var178 = var2.g1() == 1;
-			String var179 = var2.gjstr();
+		} else if (ServerProt.MESSAGE_QUICKCHAT_PRIVATE == connection.packetType) {
+			boolean var178 = in.g1() == 1;
+			String var179 = in.gjstr();
 			String var180 = var179;
 			if (var178) {
-				var180 = var2.gjstr();
+				var180 = in.gjstr();
 			}
-			long var181 = (long) var2.g2();
-			long var183 = (long) var2.g3();
-			ChatCrownType var185 = (ChatCrownType) SerializableEnums.decode(ChatCrownType.method6043(), var2.g1());
-			int var186 = var2.g2();
+			long var181 = (long) in.g2();
+			long var183 = (long) in.g3();
+			ChatCrownType var185 = (ChatCrownType) SerializableEnums.decode(ChatCrownType.method6043(), in.g1());
+			int var186 = in.g2();
 			long var187 = (var181 << 32) + var183;
 			boolean var189 = false;
 			int var190 = 0;
@@ -8683,110 +8683,110 @@ public final class Client extends GameShell {
 			if (!var189) {
 				field11053[field11054] = var187;
 				field11054 = (field11054 + 1) % 100;
-				String var191 = field489.method14982(var186).method19507(var2);
+				String var191 = field489.method14982(var186).method19507(in);
 				if (var185.field3602 == -1) {
 					ChatHistory.method15054(18, 0, var179, var180, var179, var191, null, var186, var185);
 				} else {
 					ChatHistory.method15054(18, 0, TextUtil.imgTag(var185.field3602) + var179, TextUtil.imgTag(var185.field3602) + var180, var179, var191, null, var186, var185);
 				}
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.MAP_ANIM == arg0.field796) {
+		} else if (ServerProt.MAP_ANIM == connection.packetType) {
 			method9605(ZoneProt.field3613);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.LOC_PREFETCH == arg0.field796) {
+		} else if (ServerProt.LOC_PREFETCH == connection.packetType) {
 			method9605(ZoneProt.field3619);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.JS5_RELOAD == arg0.field796) {
+		} else if (ServerProt.JS5_RELOAD == connection.packetType) {
 			Loading.method4883();
-			arg0.field796 = null;
+			connection.packetType = null;
 			return false;
-		} else if (ServerProt.LOC_ANIM == arg0.field796) {
+		} else if (ServerProt.LOC_ANIM == connection.packetType) {
 			method9605(ZoneProt.field3616);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.VARP_LARGE == arg0.field796) {
-			int var192 = var2.g2_alt1();
-			int var193 = var2.g4s();
+		} else if (ServerProt.VARP_LARGE == connection.packetType) {
+			int var192 = in.g2_alt1();
+			int var193 = in.g4s();
 			field7410.field632.setVarValueIntFromServer((VarType) field8485.list(var192), var193);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.LOYALTY_UPDATE == arg0.field796) {
-			int var194 = var2.g4_alt3();
+		} else if (ServerProt.LOYALTY_UPDATE == connection.packetType) {
+			int var194 = in.g4_alt3();
 			if (field3056 != var194) {
 				field3056 = var194;
 				ScriptRunner.method830(ClientTriggerType.field7259, -1, -1);
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_SETPLAYERHEAD_IGNOREWORN == arg0.field796) {
-			int var195 = var2.g2();
-			int var196 = var2.g4_alt2();
-			int var197 = var2.g2_alt1();
-			int var198 = var2.g2_alt1();
+		} else if (ServerProt.IF_SETPLAYERHEAD_IGNOREWORN == connection.packetType) {
+			int var195 = in.g2();
+			int var196 = in.g4_alt2();
+			int var197 = in.g2_alt1();
+			int var198 = in.g2_alt1();
 			incrementVerifyId();
 			DelayedStateChange.method17439(var196, 7, var198 << 16 | var195, var197);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.TELEMETRY_GRID_REMOVE_COLUMN == arg0.field796) {
+		} else if (ServerProt.TELEMETRY_GRID_REMOVE_COLUMN == connection.packetType) {
 			if (!field11095) {
 				try {
-					int var199 = var2.g1_alt2();
-					int var200 = var2.g1_alt3();
+					int var199 = in.g1_alt2();
+					int var200 = in.g1_alt3();
 					field11094.method3263(var199).method3322(var200);
 				} catch (RuntimeException var721) {
 					JagException.report(null, var721);
-					method4499(arg0);
+					method4499(connection);
 				}
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CREATE_SUGGEST_NAME_REPLY == arg0.field796) {
-			String var202 = var2.gjstr();
+		} else if (ServerProt.CREATE_SUGGEST_NAME_REPLY == connection.packetType) {
+			String var202 = in.gjstr();
 			AccountCreationManager.method1587(var202);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CAM2_ENABLE == arg0.field796) {
-			boolean var203 = var2.g1() == 1;
+		} else if (ServerProt.CAM2_ENABLE == connection.packetType) {
+			boolean var203 = in.g1() == 1;
 			if (var203) {
 				method4046(3);
 			} else {
 				method4046(2);
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.UPDATE_STAT == arg0.field796) {
-			int var204 = var2.g1_alt2();
-			int var205 = var2.g4_alt1();
-			int var206 = var2.g1_alt3();
+		} else if (ServerProt.UPDATE_STAT == connection.packetType) {
+			int var204 = in.g1_alt2();
+			int var205 = in.g4_alt1();
+			int var206 = in.g1_alt3();
 			skillDefaults.getSkill(var206);
 			field7410.field635[var206].setXP(var205);
 			field7410.field635[var206].setLevel(var204);
 			field11015[++field11014 - 1 & 0x3F] = var206;
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.VORBIS_SPEECH_STOP == arg0.field796) {
+		} else if (ServerProt.VORBIS_SPEECH_STOP == connection.packetType) {
 			field1798.method3203(SubBussType.field1801.method3034());
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.MESSAGE_GAME == arg0.field796) {
-			int var207 = var2.gSmart1or2();
-			int var208 = var2.g4s();
-			int var209 = var2.g1();
+		} else if (ServerProt.MESSAGE_GAME == connection.packetType) {
+			int var207 = in.gSmart1or2();
+			int var208 = in.g4s();
+			int var209 = in.g1();
 			String var210 = "";
 			String var211 = var210;
 			if ((var209 & 0x1) != 0) {
-				var210 = var2.gjstr();
+				var210 = in.gjstr();
 				if ((var209 & 0x2) == 0) {
 					var211 = var210;
 				} else {
-					var211 = var2.gjstr();
+					var211 = in.gjstr();
 				}
 			}
-			String var212 = var2.gjstr();
+			String var212 = in.gjstr();
 			if (var207 == 99) {
 				DeveloperConsole.addline(var212);
 			} else if (var207 == 98) {
@@ -8794,34 +8794,34 @@ public final class Client extends GameShell {
 			} else if (var211.equals("") || !method6789(var211)) {
 				ChatHistory.method2664(var207, var208, var210, var211, var210, var212, null);
 			} else {
-				arg0.field796 = null;
+				connection.packetType = null;
 				return true;
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.WORLDLIST_FETCH_REPLY == arg0.field796) {
-			boolean var213 = var2.g1() == 1;
-			byte[] var214 = new byte[arg0.field797 - 1];
-			var2.gdata(var214, 0, arg0.field797 - 1);
+		} else if (ServerProt.WORLDLIST_FETCH_REPLY == connection.packetType) {
+			boolean var213 = in.g1() == 1;
+			byte[] var214 = new byte[connection.packetSize - 1];
+			in.gdata(var214, 0, connection.packetSize - 1);
 			GWC.method6876(var213, var214);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_SETPLAYERMODEL_SNAPSHOT == arg0.field796) {
-			int var215 = var2.g4_alt3();
-			int var216 = var2.g1_alt1();
+		} else if (ServerProt.IF_SETPLAYERMODEL_SNAPSHOT == connection.packetType) {
+			int var215 = in.g4_alt3();
+			int var216 = in.g1_alt1();
 			int var217 = -var216 - 2;
 			incrementVerifyId();
 			DelayedStateChange.method17439(var215, 5, var217, 0);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_SETPLAYERMODEL_SELF == arg0.field796) {
-			int var218 = var2.g4s();
+		} else if (ServerProt.IF_SETPLAYERMODEL_SELF == connection.packetType) {
+			int var218 = in.g4s();
 			incrementVerifyId();
 			DelayedStateChange.method17439(var218, 5, field10945, 0);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.MESSAGE_PUBLIC == arg0.field796) {
-			int var219 = var2.g2();
+		} else if (ServerProt.MESSAGE_PUBLIC == connection.packetType) {
+			int var219 = in.g2();
 			PlayerEntity var220;
 			if (field10945 == var219) {
 				var220 = field4490;
@@ -8829,11 +8829,11 @@ public final class Client extends GameShell {
 				var220 = field10944[var219];
 			}
 			if (var220 == null) {
-				arg0.field796 = null;
+				connection.packetType = null;
 				return true;
 			}
-			int var221 = var2.g2();
-			ChatCrownType var222 = (ChatCrownType) SerializableEnums.decode(ChatCrownType.method6043(), var2.g1());
+			int var221 = in.g2();
+			ChatCrownType var222 = (ChatCrownType) SerializableEnums.decode(ChatCrownType.method6043(), in.g1());
 			boolean var223 = (var221 & 0x8000) != 0;
 			if (var220.field12062 != null && var220.field12061 != null) {
 				boolean var224 = false;
@@ -8849,11 +8849,11 @@ public final class Client extends GameShell {
 					String var227;
 					if (var223) {
 						var221 &= 0x7FFF;
-						QuickChatPhrase var226 = QuickChatPhrase.method14572(var2);
+						QuickChatPhrase var226 = QuickChatPhrase.method14572(in);
 						var225 = var226.field3448;
-						var227 = var226.field3447.method19507(var2);
+						var227 = var226.field3447.method19507(in);
 					} else {
-						var227 = StringHelper.escape(WordPack.method5939(var2));
+						var227 = StringHelper.escape(WordPack.method5939(in));
 					}
 					var220.method19124(var227.trim(), var221 >> 8, var221 & 0xFF);
 					int var228;
@@ -8869,125 +8869,125 @@ public final class Client extends GameShell {
 					}
 				}
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_SETMODEL == arg0.field796) {
-			int var229 = var2.g4_alt2();
-			int var230 = var2.g4s();
+		} else if (ServerProt.IF_SETMODEL == connection.packetType) {
+			int var229 = in.g4_alt2();
+			int var230 = in.g4s();
 			incrementVerifyId();
 			DelayedStateChange.method17439(var229, 1, var230, -1);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CLIENT_SETVARCBIT_SMALL == arg0.field796) {
-			int var231 = var2.g2();
-			byte var232 = var2.g1b_alt1();
+		} else if (ServerProt.CLIENT_SETVARCBIT_SMALL == connection.packetType) {
+			int var231 = in.g2();
+			byte var232 = in.g1b_alt1();
 			incrementVerifyId();
 			DelayedStateChange.method18309(var231, var232);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CAM_SMOOTHRESET == arg0.field796) {
+		} else if (ServerProt.CAM_SMOOTHRESET == connection.packetType) {
 			incrementVerifyId();
 			method3605();
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.MAP_PROJANIM_HALFSQ == arg0.field796) {
+		} else if (ServerProt.MAP_PROJANIM_HALFSQ == connection.packetType) {
 			method9605(ZoneProt.field3624);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.SONG_PRELOAD == arg0.field796) {
-			int var233 = var2.g2_alt1();
+		} else if (ServerProt.SONG_PRELOAD == connection.packetType) {
+			int var233 = in.g2_alt1();
 			if (var233 == 65535) {
 				var233 = -1;
 			}
 			field1798.method3239(var233, 255);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.VORBIS_PRELOAD_SOUNDS == arg0.field796) {
-			field1798.method3200(var2.g2());
-			arg0.field796 = null;
+		} else if (ServerProt.VORBIS_PRELOAD_SOUNDS == connection.packetType) {
+			field1798.method3200(in.g2());
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.UPDATE_RUNENERGY == arg0.field796) {
-			field11049 = var2.g1();
+		} else if (ServerProt.UPDATE_RUNENERGY == connection.packetType) {
+			field11049 = in.g1();
 			field11027 = field11058;
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_SETGRAPHIC == arg0.field796) {
-			int var234 = var2.g4_alt2();
-			int var235 = var2.g4_alt1();
+		} else if (ServerProt.IF_SETGRAPHIC == connection.packetType) {
+			int var234 = in.g4_alt2();
+			int var235 = in.g4_alt1();
 			incrementVerifyId();
 			DelayedStateChange.method9637(var235, var234);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.MESSAGE_QUICKCHAT_PRIVATE_ECHO == arg0.field796) {
-			String var236 = var2.gjstr();
-			int var237 = var2.g2();
-			String var238 = field489.method14982(var237).method19507(var2);
+		} else if (ServerProt.MESSAGE_QUICKCHAT_PRIVATE_ECHO == connection.packetType) {
+			String var236 = in.gjstr();
+			int var237 = in.g2();
+			String var238 = field489.method14982(var237).method19507(in);
 			ChatHistory.method15054(19, 0, var236, var236, var236, var238, null, var237, null);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.UPDATE_ZONE_PARTIAL_ENCLOSED == arg0.field796) {
-			field10260 = var2.g1_alt1();
-			field10546 = var2.g1b_alt2() << 3;
-			field1701 = var2.g1b_alt2() << 3;
-			while (var2.pos < arg0.field797) {
-				ZoneProt var239 = ZoneProt.method5195()[var2.g1()];
+		} else if (ServerProt.UPDATE_ZONE_PARTIAL_ENCLOSED == connection.packetType) {
+			field10260 = in.g1_alt1();
+			field10546 = in.g1b_alt2() << 3;
+			field1701 = in.g1b_alt2() << 3;
+			while (in.pos < connection.packetSize) {
+				ZoneProt var239 = ZoneProt.method5195()[in.g1()];
 				method9605(var239);
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.VORBIS_SPEECH_SOUND == arg0.field796) {
-			int var240 = var2.g2();
+		} else if (ServerProt.VORBIS_SPEECH_SOUND == connection.packetType) {
+			int var240 = in.g2();
 			if (var240 == 65535) {
 				var240 = -1;
 			}
-			int var241 = var2.g1();
-			int var242 = var2.g2();
-			int var243 = var2.g1();
+			int var241 = in.g1();
+			int var242 = in.g2();
+			int var243 = in.g1();
 			field1798.method3191(SoundType.field1832, var240, var241, var243, SubBussType.field1801.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, 256, var242);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CREATE_ACCOUNT_REPLY == arg0.field796) {
-			int var244 = var2.g1();
+		} else if (ServerProt.CREATE_ACCOUNT_REPLY == connection.packetType) {
+			int var244 = in.g1();
 			CreateAccountReply var245 = (CreateAccountReply) SerializableEnums.decode(CreateAccountReply.method4614(), var244);
 			if (var245 == null) {
 				var245 = CreateAccountReply.field8378;
 			}
 			Statics.method6851(var245);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.REDUCE_NPC_ATTACK_PRIORITY == arg0.field796) {
-			field10955 = (AttackOpPriority) SerializableEnums.decode(AttackOpPriority.method10149(), var2.g1_alt3());
+		} else if (ServerProt.REDUCE_NPC_ATTACK_PRIORITY == connection.packetType) {
+			field10955 = (AttackOpPriority) SerializableEnums.decode(AttackOpPriority.method10149(), in.g1_alt3());
 			if (field10955 == null) {
 				field10955 = AttackOpPriority.field7908;
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.TELEMETRY_GRID_REMOVE_GROUP == arg0.field796) {
+		} else if (ServerProt.TELEMETRY_GRID_REMOVE_GROUP == connection.packetType) {
 			if (!field11095) {
 				try {
-					int var246 = var2.g1();
+					int var246 = in.g1();
 					field11094.method3266(var246);
 				} catch (RuntimeException var722) {
 					JagException.report(null, var722);
-					method4499(arg0);
+					method4499(connection);
 				}
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.UPDATE_ZONE_PARTIAL_FOLLOWS == arg0.field796) {
-			field10260 = var2.g1();
-			field10546 = var2.g1b_alt2() << 3;
-			field1701 = var2.g1b() << 3;
-			arg0.field796 = null;
+		} else if (ServerProt.UPDATE_ZONE_PARTIAL_FOLLOWS == connection.packetType) {
+			field10260 = in.g1();
+			field10546 = in.g1b_alt2() << 3;
+			field1701 = in.g1b() << 3;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_SETTARGETPARAM == arg0.field796) {
-			int var248 = var2.g4s();
-			int var249 = var2.g2();
+		} else if (ServerProt.IF_SETTARGETPARAM == connection.packetType) {
+			int var248 = in.g4s();
+			int var249 = in.g2();
 			if (var249 == 65535) {
 				var249 = -1;
 			}
-			int var250 = var2.g2_alt2();
-			int var251 = var2.g2_alt2();
+			int var250 = in.g2_alt2();
+			int var251 = in.g2_alt2();
 			if (var251 == 65535) {
 				var251 = -1;
 			}
@@ -9006,48 +9006,48 @@ public final class Client extends GameShell {
 				}
 				field10873.method14501(var256, var253);
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CUTSCENE == arg0.field796) {
-			int var257 = var2.g2();
+		} else if (ServerProt.CUTSCENE == connection.packetType) {
+			int var257 = in.g2();
 			field11041 = -1;
 			field10862 = var257;
 			field10863 = 2;
 			field3808.method6889(field10862);
 			MiniMenu.method6031();
 			MiniMenu.method3074();
-			int var258 = var2.g2();
+			int var258 = in.g2();
 			field10769 = var258;
-			int var259 = var2.g1();
+			int var259 = in.g1();
 			field8729 = new Packet(var259);
-			field8729.pdata(var2.data, var2.pos, var259);
-			var2.pos += var259;
-			arg0.field796 = null;
+			field8729.pdata(in.data, in.pos, var259);
+			in.pos += var259;
+			connection.packetType = null;
 			return false;
-		} else if (ServerProt.SOUND_AREA == arg0.field796) {
+		} else if (ServerProt.SOUND_AREA == connection.packetType) {
 			method9605(ZoneProt.field3626);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.SOCIAL_NETWORK_LOGOUT == arg0.field796) {
+		} else if (ServerProt.SOCIAL_NETWORK_LOGOUT == connection.packetType) {
 			if (Fullscreen.allowed && GameShell.fsframe != null) {
 				setWindowMode(field688.maxScreenSize.method18539(), -1, -1, false);
 			}
-			byte[] var260 = new byte[arg0.field797];
-			var2.gIsaacArrayBuffer(var260, 0, arg0.field797);
-			String var261 = Cp1252.method9199(var260, 0, arg0.field797);
+			byte[] var260 = new byte[connection.packetSize];
+			in.gIsaacArrayBuffer(var260, 0, connection.packetSize);
+			String var261 = Cp1252.method9199(var260, 0, connection.packetSize);
 			Browser.method4607(var261, true, field10784);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CLIENT_SETVARC_LARGE == arg0.field796) {
-			int var262 = var2.g4_alt1();
-			int var263 = var2.g2_alt2();
+		} else if (ServerProt.CLIENT_SETVARC_LARGE == connection.packetType) {
+			int var262 = in.g4_alt1();
+			int var263 = in.g2_alt2();
 			incrementVerifyId();
 			DelayedStateChange.method19215(var263, var262);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_MOVESUB == arg0.field796) {
-			int var264 = var2.g4_alt2();
-			int var265 = var2.g4_alt2();
+		} else if (ServerProt.IF_MOVESUB == connection.packetType) {
+			int var264 = in.g4_alt2();
+			int var265 = in.g4_alt2();
 			incrementVerifyId();
 			SubInterface var266 = (SubInterface) field10979.method14495((long) var264);
 			SubInterface var267 = (SubInterface) field10979.method14495((long) var265);
@@ -9070,28 +9070,28 @@ public final class Client extends GameShell {
 			if (field10978 != -1) {
 				method1023(field10978, 1);
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_SETPLAYERHEAD_OTHER == arg0.field796) {
-			int var270 = var2.g4_alt1();
-			int var271 = var2.g2_alt2();
-			int var272 = var2.g4_alt3();
+		} else if (ServerProt.IF_SETPLAYERHEAD_OTHER == connection.packetType) {
+			int var270 = in.g4_alt1();
+			int var271 = in.g2_alt2();
+			int var272 = in.g4_alt3();
 			incrementVerifyId();
 			DelayedStateChange.method17439(var272, 3, var271, var270);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.LOBBY_APPEARANCE == arg0.field796) {
-			byte var273 = var2.g1b();
-			field4490.method19121(var2, var273);
-			arg0.field796 = null;
+		} else if (ServerProt.LOBBY_APPEARANCE == connection.packetType) {
+			byte var273 = in.g1b();
+			field4490.method19121(in, var273);
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.UPDATE_IGNORELIST == arg0.field796) {
-			while (var2.pos < arg0.field797) {
-				int var274 = var2.g1();
+		} else if (ServerProt.UPDATE_IGNORELIST == connection.packetType) {
+			while (in.pos < connection.packetSize) {
+				int var274 = in.g1();
 				boolean var275 = (var274 & 0x1) == 1;
-				String var276 = var2.gjstr();
-				String var277 = var2.gjstr();
-				String var278 = var2.gjstr();
+				String var276 = in.gjstr();
+				String var277 = in.gjstr();
+				String var278 = in.gjstr();
 				for (int var279 = 0; var279 < field11084; var279++) {
 					Ignore var280 = field11086[var279];
 					if (var275) {
@@ -9120,60 +9120,60 @@ public final class Client extends GameShell {
 				}
 			}
 			field11022 = field11058;
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_SETTEXT == arg0.field796) {
-			int var282 = var2.g4_alt1();
-			String var283 = var2.gjstr();
+		} else if (ServerProt.IF_SETTEXT == connection.packetType) {
+			int var282 = in.g4_alt1();
+			String var283 = in.gjstr();
 			incrementVerifyId();
 			DelayedStateChange.method2887(var282, var283);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.PLAYER_GROUP_DELTA == arg0.field796) {
+		} else if (ServerProt.PLAYER_GROUP_DELTA == connection.packetType) {
 			field11028 = field11058;
-			PlayerGroupDelta var284 = new PlayerGroupDelta(var2, field10837);
+			PlayerGroupDelta var284 = new PlayerGroupDelta(in, field10837);
 			var284.method3555(field6721);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_SETRECOL == arg0.field796) {
-			int var285 = var2.g4_alt1();
-			int var286 = var2.g2_alt2();
-			int var287 = var2.g2_alt1();
-			int var288 = var2.g1_alt1();
+		} else if (ServerProt.IF_SETRECOL == connection.packetType) {
+			int var285 = in.g4_alt1();
+			int var286 = in.g2_alt2();
+			int var287 = in.g2_alt1();
+			int var288 = in.g1_alt1();
 			incrementVerifyId();
 			DelayedStateChange.method18895(var285, var288, var286, var287);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.RESET_CLIENT_VARCACHE == arg0.field796) {
+		} else if (ServerProt.RESET_CLIENT_VARCACHE == connection.packetType) {
 			field7410.field632.method9624();
 			field11010 += 64;
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.UPDATE_DOB == arg0.field796) {
-			field7406 = var2.g3s();
-			field10951 = var2.g1() == 1;
-			arg0.field796 = null;
+		} else if (ServerProt.UPDATE_DOB == connection.packetType) {
+			field7406 = in.g3s();
+			field10951 = in.g1() == 1;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.TELEMETRY_GRID_ADD_GROUP == arg0.field796) {
+		} else if (ServerProt.TELEMETRY_GRID_ADD_GROUP == connection.packetType) {
 			if (!field11095) {
 				try {
-					int var289 = var2.g4_alt1();
-					byte var290 = var2.g1b_alt1();
+					int var289 = in.g4_alt1();
+					byte var290 = in.g1b_alt1();
 					field11094.method3265(new TelemetryGroup(var289), var290);
 				} catch (RuntimeException var723) {
 					JagException.report(null, var723);
-					method4499(arg0);
+					method4499(connection);
 				}
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.MESSAGE_QUICKCHAT_CLANCHANNEL == arg0.field796) {
-			boolean var292 = var2.g1() == 1;
-			String var293 = var2.gjstr();
-			long var294 = (long) var2.g2();
-			long var296 = (long) var2.g3();
-			ChatCrownType var298 = (ChatCrownType) SerializableEnums.decode(ChatCrownType.method6043(), var2.g1());
-			int var299 = var2.g2();
+		} else if (ServerProt.MESSAGE_QUICKCHAT_CLANCHANNEL == connection.packetType) {
+			boolean var292 = in.g1() == 1;
+			String var293 = in.gjstr();
+			long var294 = (long) in.g2();
+			long var296 = (long) in.g3();
+			ChatCrownType var298 = (ChatCrownType) SerializableEnums.decode(ChatCrownType.method6043(), in.g1());
+			int var299 = in.g2();
 			long var300 = (var294 << 32) + var296;
 			boolean var302 = false;
 			Object var303 = null;
@@ -9199,7 +9199,7 @@ public final class Client extends GameShell {
 			if (!var302) {
 				field11053[field11054] = var300;
 				field11054 = (field11054 + 1) % 100;
-				String var306 = field489.method14982(var299).method19507(var2);
+				String var306 = field489.method14982(var299).method19507(in);
 				int var307 = var292 ? 42 : 45;
 				if (var298.field3602 == -1) {
 					ChatHistory.method15054(var307, 0, var293, var293, var293, var306, var304.field11396, var299, var298);
@@ -9207,16 +9207,16 @@ public final class Client extends GameShell {
 					ChatHistory.method15054(var307, 0, TextUtil.imgTag(var298.field3602) + var293, TextUtil.imgTag(var298.field3602) + var293, var293, var306, var304.field11396, var299, var298);
 				}
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.MINIMAP_TOGGLE == arg0.field796) {
-			Minimap.field724 = var2.g1();
-			arg0.field796 = null;
+		} else if (ServerProt.MINIMAP_TOGGLE == connection.packetType) {
+			Minimap.field724 = in.g1();
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.UPDATE_ZONE_FULL_FOLLOWS == arg0.field796) {
-			field10546 = var2.g1b_alt2() << 3;
-			field10260 = var2.g1_alt2();
-			field1701 = var2.g1b_alt3() << 3;
+		} else if (ServerProt.UPDATE_ZONE_FULL_FOLLOWS == connection.packetType) {
+			field10546 = in.g1b_alt2() << 3;
+			field10260 = in.g1_alt2();
+			field1701 = in.g1b_alt3() << 3;
 			CoordGrid var308 = world.method7727();
 			for (ObjStackList var309 = (ObjStackList) field10964.method14500(); var309 != null; var309 = (ObjStackList) field10964.method14502()) {
 				int var310 = (int) (var309.field6760 >> 28 & 0x3L);
@@ -9241,67 +9241,67 @@ public final class Client extends GameShell {
 					var316.field11240 = true;
 				}
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.VARBIT_SMALL == arg0.field796) {
-			int var317 = var2.g1_alt3();
-			int var318 = var2.g2_alt2();
+		} else if (ServerProt.VARBIT_SMALL == connection.packetType) {
+			int var317 = in.g1_alt3();
+			int var318 = in.g2_alt2();
 			field7410.field632.setVarBitValueFromServer((VarBitType) field8736.list(var318), var317);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.FRIENDLIST_LOADED == arg0.field796) {
+		} else if (ServerProt.FRIENDLIST_LOADED == connection.packetType) {
 			field11080 = 1;
 			field11022 = field11058;
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_SETPLAYERHEAD == arg0.field796) {
-			int var319 = var2.g4_alt1();
+		} else if (ServerProt.IF_SETPLAYERHEAD == connection.packetType) {
+			int var319 = in.g4_alt1();
 			incrementVerifyId();
 			DelayedStateChange.method17439(var319, 3, field10945, 0);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.PLAYER_GROUP_VARPS == arg0.field796) {
+		} else if (ServerProt.PLAYER_GROUP_VARPS == connection.packetType) {
 			field10957 = field11058;
-			int var320 = var2.pos;
-			int var321 = var2.g2();
-			boolean var322 = var2.g1() == 1;
+			int var320 = in.pos;
+			int var321 = in.g2();
+			boolean var322 = in.g1() == 1;
 			PlayerGroupMember var323 = field6721.method3392(var321);
 			VarContainerSparse var324 = var323.method3504();
 			if (var324 == null || var322) {
 				var323.method3503(field10837);
 				var324 = var323.method3504();
 			}
-			while (arg0.field797 - (var2.pos - var320) > 0) {
-				VarValue var325 = field8485.decodeVarValue(var2);
+			while (connection.packetSize - (in.pos - var320) > 0) {
+				VarValue var325 = field8485.decodeVarValue(in);
 				var324.method14735(var325.field4240, var325.field4239);
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.JCOINS_UPDATE == arg0.field796) {
-			int var326 = var2.g4_alt2();
+		} else if (ServerProt.JCOINS_UPDATE == connection.packetType) {
+			int var326 = in.g4_alt2();
 			if (field2676 != var326) {
 				field2676 = var326;
 				ScriptRunner.method830(ClientTriggerType.field7261, -1, -1);
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.SEND_PING == arg0.field796) {
-			int var327 = var2.g4s();
-			int var328 = var2.g4s();
-			ClientMessage var329 = ClientMessage.method1604(ClientProt.SEND_PING_REPLY, arg0.field794);
+		} else if (ServerProt.SEND_PING == connection.packetType) {
+			int var327 = in.g4s();
+			int var328 = in.g4s();
+			ClientMessage var329 = ClientMessage.method1604(ClientProt.SEND_PING_REPLY, connection.field794);
 			var329.field11432.p4_alt1(var327);
 			var329.field11432.p4_alt3(var328);
 			var329.field11432.p1_alt2(fps);
-			arg0.method934(var329);
-			arg0.field796 = null;
+			connection.method934(var329);
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_OPENTOP == arg0.field796) {
-			int var330 = var2.g4_alt2();
-			int var331 = var2.g4_alt1();
-			int var332 = var2.g4_alt2();
-			int var333 = var2.g4s();
-			var2.g1();
-			int var334 = var2.g2_alt3();
+		} else if (ServerProt.IF_OPENTOP == connection.packetType) {
+			int var330 = in.g4_alt2();
+			int var331 = in.g4_alt1();
+			int var332 = in.g4_alt2();
+			int var333 = in.g4s();
+			in.g1();
+			int var334 = in.g2_alt3();
 			incrementVerifyId();
 			int[] var335 = new int[] { var332, var333, var331, var330 };
 			field10978 = var334;
@@ -9311,97 +9311,97 @@ public final class Client extends GameShell {
 			for (int var336 = 0; var336 < 114; var336++) {
 				field11072[var336] = true;
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.MIDI_SONG_LOCATION == arg0.field796) {
-			int var337 = var2.g4_alt3();
-			int var338 = var2.g4s();
-			int var339 = var2.g1_alt1();
-			int var340 = var2.g1();
-			int var341 = var2.g1_alt2();
+		} else if (ServerProt.MIDI_SONG_LOCATION == connection.packetType) {
+			int var337 = in.g4_alt3();
+			int var338 = in.g4s();
+			int var339 = in.g1_alt1();
+			int var340 = in.g1();
+			int var341 = in.g1_alt2();
 			int var342 = var337 >> 28;
 			int var343 = var337 >> 14 & 0x3FFF;
 			int var344 = var337 & 0x3FFF;
 			field1798.method3143(var338, var340, true, var342, var343 << 9, var344 << 9, var339 << 9, var341 << 9);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.DEBUG_SERVER_TRIGGERS == arg0.field796) {
-			int var345 = var2.g2();
-			int var346 = var2.g2();
-			int var347 = var2.g2();
+		} else if (ServerProt.DEBUG_SERVER_TRIGGERS == connection.packetType) {
+			int var345 = in.g2();
+			int var346 = in.g2();
+			int var347 = in.g2();
 			incrementVerifyId();
 			if (Component.field11725[var345] != null) {
 				for (int var348 = var346; var348 < var347; var348++) {
-					int var349 = var2.g3();
+					int var349 = in.g3();
 					if (var348 < Component.field11725[var345].field2151.length && Component.field11725[var345].field2151[var348] != null) {
 						Component.field11725[var345].field2151[var348].field2181 = var349;
 					}
 				}
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.SOUND_MIXBUSS_SETLEVEL == arg0.field796) {
-			int var350 = var2.g2();
-			int var351 = var2.g2();
+		} else if (ServerProt.SOUND_MIXBUSS_SETLEVEL == connection.packetType) {
+			int var350 = in.g2();
+			int var351 = in.g2();
 			field1798.method3157(var350, var351);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.UPDATE_REBOOT_TIMER == arg0.field796) {
+		} else if (ServerProt.UPDATE_REBOOT_TIMER == connection.packetType) {
 			if (method15084(state)) {
-				field10831 = (int) ((float) var2.g2() * 2.5F);
+				field10831 = (int) ((float) in.g2() * 2.5F);
 			} else {
-				field10831 = var2.g2() * 30;
+				field10831 = in.g2() * 30;
 			}
 			field11027 = field11058;
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.VARCLAN == arg0.field796) {
+		} else if (ServerProt.VARCLAN == connection.packetType) {
 			if (field7698 == null) {
 				field7698 = new SparseVarDomain(field8783);
 			}
-			VarValue var352 = field8783.decodeVarValue(var2);
+			VarValue var352 = field8783.decodeVarValue(in);
 			field7698.field1708.method14735(var352.field4240, var352.field4239);
 			field10841[++field11020 - 1 & 0x3F] = var352.field4240;
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.VORBIS_SOUND_GROUP == arg0.field796) {
-			int var353 = var2.g2();
+		} else if (ServerProt.VORBIS_SOUND_GROUP == connection.packetType) {
+			int var353 = in.g2();
 			if (var353 == 65535) {
 				var353 = -1;
 			}
-			int var354 = var2.g1();
-			int var355 = var2.g2();
-			int var356 = var2.g1();
-			int var357 = var2.g2();
-			int var358 = var2.g2();
+			int var354 = in.g1();
+			int var355 = in.g2();
+			int var356 = in.g1();
+			int var357 = in.g2();
+			int var358 = in.g2();
 			Sound var359 = field1798.method3236(SoundType.field1832, field1798, var353, var354, var356, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var357, false);
 			if (var359 != null) {
 				field1798.method3251(var359, var358, var355);
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.UPDATE_RUNWEIGHT == arg0.field796) {
-			field11102 = var2.g2s();
+		} else if (ServerProt.UPDATE_RUNWEIGHT == connection.packetType) {
+			field11102 = in.g2s();
 			field11027 = field11058;
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.REBUILD_REGION == arg0.field796) {
-			PacketBit var360 = new PacketBit(arg0.field797);
-			System.arraycopy(arg0.field795.data, arg0.field795.pos, var360.data, 0, arg0.field797);
+		} else if (ServerProt.REBUILD_REGION == connection.packetType) {
+			PacketBit var360 = new PacketBit(connection.packetSize);
+			System.arraycopy(connection.in.data, connection.in.pos, var360.data, 0, connection.packetSize);
 			method3652();
 			if (field688.unknown7.method18750() == 1) {
 				field3183.method7680(new RebuildRequest(RebuildType.field5066, var360));
 			} else {
 				world.method7749(new RebuildRequest(RebuildType.field5066, var360));
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return false;
-		} else if (ServerProt.MESSAGE_PLAYER_GROUP == arg0.field796) {
-			String var361 = var2.gjstr();
-			long var362 = (long) var2.g2();
-			long var364 = (long) var2.g3();
-			ChatCrownType var366 = (ChatCrownType) SerializableEnums.decode(ChatCrownType.method6043(), var2.g1());
-			boolean var367 = var2.g1() == 1;
+		} else if (ServerProt.MESSAGE_PLAYER_GROUP == connection.packetType) {
+			String var361 = in.gjstr();
+			long var362 = (long) in.g2();
+			long var364 = (long) in.g3();
+			ChatCrownType var366 = (ChatCrownType) SerializableEnums.decode(ChatCrownType.method6043(), in.g1());
+			boolean var367 = in.g1() == 1;
 			long var368 = (var362 << 32) + var364;
 			boolean var370 = false;
 			if (field6721 == null) {
@@ -9429,7 +9429,7 @@ public final class Client extends GameShell {
 			if (!var370) {
 				field11053[field11054] = var368;
 				field11054 = (field11054 + 1) % 100;
-				String var372 = StringHelper.escape(WordPack.method5939(var2));
+				String var372 = StringHelper.escape(WordPack.method5939(in));
 				int var373 = var367 ? 22 : 24;
 				if (var366.field3602 == -1) {
 					ChatHistory.method15054(var373, 0, var361, var361, var361, var372, field6721.method3386(), -1, var366);
@@ -9437,28 +9437,28 @@ public final class Client extends GameShell {
 					ChatHistory.method15054(var373, 0, TextUtil.imgTag(var366.field3602) + var361, TextUtil.imgTag(var366.field3602) + var361, var361, var372, field6721.method3386(), -1, var366);
 				}
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.SERVER_TICK_END == arg0.field796) {
-			arg0.field796 = null;
+		} else if (ServerProt.SERVER_TICK_END == connection.packetType) {
+			connection.packetType = null;
 			return false;
-		} else if (ServerProt.HINT_ARROW == arg0.field796) {
-			int var374 = var2.g1();
+		} else if (ServerProt.HINT_ARROW == connection.packetType) {
+			int var374 = in.g1();
 			int var375 = var374 >> 5;
 			int var376 = var374 & 0x1F;
 			if (var376 == 0) {
 				field10851[var375] = null;
-				arg0.field796 = null;
+				connection.packetType = null;
 				return true;
 			}
 			HintArrow var377 = new HintArrow();
 			var377.field745 = var376;
-			var377.field751 = var2.g1();
+			var377.field751 = in.g1();
 			if (var377.field751 >= 0 && var377.field751 < DefaultSprites.field8323.length) {
 				if (var377.field745 == 1 || var377.field745 == 10) {
-					var377.field744 = var2.g2();
-					var377.field743 = var2.g2();
-					var2.pos += 4;
+					var377.field744 = in.g2();
+					var377.field743 = in.g2();
+					in.pos += 4;
 				} else if (var377.field745 >= 2 && var377.field745 <= 6) {
 					if (var377.field745 == 2) {
 						var377.field746 = 256;
@@ -9481,28 +9481,28 @@ public final class Client extends GameShell {
 						var377.field747 = 262144;
 					}
 					var377.field745 = 2;
-					var377.field749 = var2.g1();
+					var377.field749 = in.g1();
 					CoordGrid var378 = world.method7727();
-					var377.field746 = var377.field746 * 262144 + (var2.g2() - var378.field7426 << 9);
-					var377.field747 = var377.field747 * 262144 + (var2.g2() - var378.field7427 << 9) * 512;
-					var377.field742 = (var2.g1() << 2) * 4;
-					var377.field748 = var2.g2();
+					var377.field746 = var377.field746 * 262144 + (in.g2() - var378.field7426 << 9);
+					var377.field747 = var377.field747 * 262144 + (in.g2() - var378.field7427 << 9) * 512;
+					var377.field742 = (in.g1() << 2) * 4;
+					var377.field748 = in.g2();
 				}
-				var377.field750 = var2.g4s();
+				var377.field750 = in.g4s();
 				field10851[var375] = var377;
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.SPOTANIM_SPECIFIC == arg0.field796) {
-			int var379 = var2.g1();
-			int var380 = var2.g2_alt2();
-			int var381 = var2.g4_alt1();
-			int var382 = var2.g2();
+		} else if (ServerProt.SPOTANIM_SPECIFIC == connection.packetType) {
+			int var379 = in.g1();
+			int var380 = in.g2_alt2();
+			int var381 = in.g4_alt1();
+			int var382 = in.g2();
 			if (var382 == 65535) {
 				var382 = -1;
 			}
-			int var383 = var2.g2();
-			int var384 = var2.g1_alt2();
+			int var383 = in.g2();
+			int var384 = in.g1_alt2();
 			int var385 = var379 & 0x7;
 			int var386 = var379 >> 3 & 0xF;
 			if (var386 == 15) {
@@ -9640,133 +9640,133 @@ public final class Client extends GameShell {
 					}
 				}
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CAM_SHAKE == arg0.field796) {
-			int var426 = var2.g2_alt2();
-			int var427 = var2.g1_alt1();
-			int var428 = var2.g1_alt2();
-			int var429 = var2.g1_alt3();
-			int var430 = var2.g1();
+		} else if (ServerProt.CAM_SHAKE == connection.packetType) {
+			int var426 = in.g2_alt2();
+			int var427 = in.g1_alt1();
+			int var428 = in.g1_alt2();
+			int var429 = in.g1_alt3();
+			int var430 = in.g1();
 			incrementVerifyId();
 			field10983[var427] = true;
 			field11062[var427] = var428;
 			field11063[var427] = var429;
 			field11064[var427] = var430;
 			field10996[var427] = var426;
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.MIDI_SONG == arg0.field796) {
-			int var431 = var2.g2_alt3();
+		} else if (ServerProt.MIDI_SONG == connection.packetType) {
+			int var431 = in.g2_alt3();
 			if (var431 == 65535) {
 				var431 = -1;
 			}
-			int var432 = var2.g1_alt2();
+			int var432 = in.g1_alt2();
 			field1798.method3235(var431, var432);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.MESSAGE_PRIVATE_ECHO == arg0.field796) {
-			String var433 = var2.gjstr();
-			String var434 = StringHelper.escape(WordPack.method5939(var2));
+		} else if (ServerProt.MESSAGE_PRIVATE_ECHO == connection.packetType) {
+			String var433 = in.gjstr();
+			String var434 = StringHelper.escape(WordPack.method5939(in));
 			ChatHistory.method2664(6, 0, var433, var433, var433, var434, null);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.LOGOUT == arg0.field796) {
-			field10853 = (LogoutReason) SerializableEnums.decode(LogoutReason.method10365(), var2.g1());
+		} else if (ServerProt.LOGOUT == connection.packetType) {
+			field10853 = (LogoutReason) SerializableEnums.decode(LogoutReason.method10365(), in.g1());
 			logout(false);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return false;
-		} else if (ServerProt.UPDATE_UID192 == arg0.field796) {
-			var2.pos += 28;
-			if (var2.checkcrc()) {
-				GameShell.storeUID192(var2, var2.pos - 28);
+		} else if (ServerProt.UPDATE_UID192 == connection.packetType) {
+			in.pos += 28;
+			if (in.checkcrc()) {
+				GameShell.storeUID192(in, in.pos - 28);
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.MIDI_SONG_STOP == arg0.field796) {
+		} else if (ServerProt.MIDI_SONG_STOP == connection.packetType) {
 			field1798.method3178();
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.TELEMETRY_GRID_MOVE_ROW == arg0.field796) {
+		} else if (ServerProt.TELEMETRY_GRID_MOVE_ROW == connection.packetType) {
 			if (!field11095) {
 				try {
-					int var435 = var2.g1_alt1();
-					int var436 = var2.g1_alt3();
-					int var437 = var2.g1();
+					int var435 = in.g1_alt1();
+					int var436 = in.g1_alt3();
+					int var437 = in.g1();
 					field11094.method3263(var436).method3325(var437, var435);
 				} catch (RuntimeException var724) {
 					JagException.report(null, var724);
-					method4499(arg0);
+					method4499(connection);
 				}
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_OPENSUB_ACTIVE_OBJ == arg0.field796) {
-			int var439 = var2.g2();
-			int var440 = var2.g4_alt3();
-			CoordGrid var441 = new CoordGrid(var2.g4_alt2());
-			int var442 = var2.g4_alt1();
-			int var443 = var2.g4s();
-			int var444 = var2.g2_alt1();
-			int var445 = var2.g4_alt3();
-			int var446 = var2.g1_alt1();
-			int var447 = var2.g4_alt2();
+		} else if (ServerProt.IF_OPENSUB_ACTIVE_OBJ == connection.packetType) {
+			int var439 = in.g2();
+			int var440 = in.g4_alt3();
+			CoordGrid var441 = new CoordGrid(in.g4_alt2());
+			int var442 = in.g4_alt1();
+			int var443 = in.g4s();
+			int var444 = in.g2_alt1();
+			int var445 = in.g4_alt3();
+			int var446 = in.g1_alt1();
+			int var447 = in.g4_alt2();
 			incrementVerifyId();
 			method4489(var442, new SubInterfaceActiveObj(var439, var446, new ObjReference(var441, var444)), new int[] { var445, var447, var440, var443 }, false);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.LOC_DEL == arg0.field796) {
+		} else if (ServerProt.LOC_DEL == connection.packetType) {
 			method9605(ZoneProt.field3625);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.NPC_INFO == arg0.field796) {
+		} else if (ServerProt.NPC_INFO == connection.packetType) {
 			method7099(world.field5027);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.POINTLIGHT_COLOUR == arg0.field796) {
-			int var448 = var2.g4_alt3();
-			int var449 = var2.g2_alt1();
-			int var450 = var2.g2_alt3();
+		} else if (ServerProt.POINTLIGHT_COLOUR == connection.packetType) {
+			int var448 = in.g4_alt3();
+			int var449 = in.g2_alt1();
+			int var450 = in.g2_alt3();
 			world.method7743().method8756(var450, var448, var449);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.UPDATE_STOCKMARKET_SLOT == arg0.field796) {
-			int var451 = var2.g1();
-			int var452 = var2.g1();
-			if (var2.g1() == 0) {
+		} else if (ServerProt.UPDATE_STOCKMARKET_SLOT == connection.packetType) {
+			int var451 = in.g1();
+			int var452 = in.g1();
+			if (in.g1() == 0) {
 				field11057[var451][var452] = new StockmarketSlot();
 			} else {
-				var2.pos -= 1;
-				field11057[var451][var452] = new StockmarketSlot(var2, null);
+				in.pos -= 1;
+				field11057[var451][var452] = new StockmarketSlot(in, null);
 			}
 			field10803 = field11058;
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.TELEMETRY_GRID_REMOVE_ROW == arg0.field796) {
+		} else if (ServerProt.TELEMETRY_GRID_REMOVE_ROW == connection.packetType) {
 			if (!field11095) {
 				try {
-					int var453 = var2.g1_alt3();
-					int var454 = var2.g1();
+					int var453 = in.g1_alt3();
+					int var454 = in.g1();
 					field11094.method3263(var453).method3303(var454);
 				} catch (RuntimeException var725) {
 					JagException.report(null, var725);
-					method4499(arg0);
+					method4499(connection);
 				}
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.MESSAGE_QUICKCHAT_FRIENDCHAT == arg0.field796) {
-			boolean var456 = var2.g1() == 1;
-			String var457 = var2.gjstr();
+		} else if (ServerProt.MESSAGE_QUICKCHAT_FRIENDCHAT == connection.packetType) {
+			boolean var456 = in.g1() == 1;
+			String var457 = in.gjstr();
 			String var458 = var457;
 			if (var456) {
-				var458 = var2.gjstr();
+				var458 = in.gjstr();
 			}
-			String var459 = var2.gjstr();
-			long var460 = (long) var2.g2();
-			long var462 = (long) var2.g3();
-			ChatCrownType var464 = (ChatCrownType) SerializableEnums.decode(ChatCrownType.method6043(), var2.g1());
-			int var465 = var2.g2();
+			String var459 = in.gjstr();
+			long var460 = (long) in.g2();
+			long var462 = (long) in.g3();
+			ChatCrownType var464 = (ChatCrownType) SerializableEnums.decode(ChatCrownType.method6043(), in.g1());
+			int var465 = in.g2();
 			long var466 = (var460 << 32) + var462;
 			boolean var468 = false;
 			int var469 = 0;
@@ -9786,35 +9786,35 @@ public final class Client extends GameShell {
 			if (!var468) {
 				field11053[field11054] = var466;
 				field11054 = (field11054 + 1) % 100;
-				String var470 = field489.method14982(var465).method19507(var2);
+				String var470 = field489.method14982(var465).method19507(in);
 				if (var464.field3602 == -1) {
 					ChatHistory.method15054(20, 0, var457, var458, var457, var470, var459, var465, var464);
 				} else {
 					ChatHistory.method15054(20, 0, TextUtil.imgTag(var464.field3602) + var457, TextUtil.imgTag(var464.field3602) + var458, var457, var470, var459, var465, var464);
 				}
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_OPENSUB_ACTIVE_PLAYER == arg0.field796) {
-			int var471 = var2.g4_alt2();
-			int var472 = var2.g4_alt3();
-			int var473 = var2.g4_alt2();
-			int var474 = var2.g4s();
-			int var475 = var2.g1();
-			int var476 = var2.g2();
-			int var477 = var2.g4_alt3();
-			int var478 = var2.g2_alt3();
+		} else if (ServerProt.IF_OPENSUB_ACTIVE_PLAYER == connection.packetType) {
+			int var471 = in.g4_alt2();
+			int var472 = in.g4_alt3();
+			int var473 = in.g4_alt2();
+			int var474 = in.g4s();
+			int var475 = in.g1();
+			int var476 = in.g2();
+			int var477 = in.g4_alt3();
+			int var478 = in.g2_alt3();
 			incrementVerifyId();
 			method4489(var473, new SubInterfaceActivePlayer(var478, var475, var476), new int[] { var471, var477, var472, var474 }, false);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.MESSAGE_QUICKCHAT_PLAYER_GROUP == arg0.field796) {
-			String var479 = var2.gjstr();
-			long var480 = (long) var2.g2();
-			long var482 = (long) var2.g3();
-			ChatCrownType var484 = (ChatCrownType) SerializableEnums.decode(ChatCrownType.method6043(), var2.g1());
-			boolean var485 = var2.g1() == 1;
-			int var486 = var2.g2();
+		} else if (ServerProt.MESSAGE_QUICKCHAT_PLAYER_GROUP == connection.packetType) {
+			String var479 = in.gjstr();
+			long var480 = (long) in.g2();
+			long var482 = (long) in.g3();
+			ChatCrownType var484 = (ChatCrownType) SerializableEnums.decode(ChatCrownType.method6043(), in.g1());
+			boolean var485 = in.g1() == 1;
+			int var486 = in.g2();
 			long var487 = (var480 << 32) + var482;
 			boolean var489 = false;
 			if (field6721 == null) {
@@ -9838,7 +9838,7 @@ public final class Client extends GameShell {
 			if (!var489) {
 				field11053[field11054] = var487;
 				field11054 = (field11054 + 1) % 100;
-				String var491 = field489.method14982(var486).method19507(var2);
+				String var491 = field489.method14982(var486).method19507(in);
 				int var492 = var485 ? 23 : 25;
 				if (var484.field3602 == -1) {
 					ChatHistory.method15054(var492, 0, var479, var479, var479, var491, field6721.method3386(), var486, var484);
@@ -9846,10 +9846,10 @@ public final class Client extends GameShell {
 					ChatHistory.method15054(var492, 0, TextUtil.imgTag(var484.field3602) + var479, TextUtil.imgTag(var484.field3602) + var479, var479, var491, field6721.method3386(), var486, var484);
 				}
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_CLOSESUB == arg0.field796) {
-			int var493 = var2.g4_alt2();
+		} else if (ServerProt.IF_CLOSESUB == connection.packetType) {
+			int var493 = in.g4_alt2();
 			incrementVerifyId();
 			SubInterface var494 = (SubInterface) field10979.method14495((long) var493);
 			if (var494 != null) {
@@ -9859,29 +9859,29 @@ public final class Client extends GameShell {
 				method4616(field11056);
 				field11056 = null;
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.TELEMETRY_GRID_VALUES_DELTA == arg0.field796) {
+		} else if (ServerProt.TELEMETRY_GRID_VALUES_DELTA == connection.packetType) {
 			if (!field11095) {
 				try {
-					for (byte var495 = var2.g1b(); var495 != -1; var495 = var2.g1b()) {
-						for (byte var496 = var2.g1b(); var496 != -1; var496 = var2.g1b()) {
-							for (byte var497 = var2.g1b(); var497 != -1; var497 = var2.g1b()) {
-								field11094.method3263(var495).method3307(var496, var497, var2.g4s());
+					for (byte var495 = in.g1b(); var495 != -1; var495 = in.g1b()) {
+						for (byte var496 = in.g1b(); var496 != -1; var496 = in.g1b()) {
+							for (byte var497 = in.g1b(); var497 != -1; var497 = in.g1b()) {
+								field11094.method3263(var495).method3307(var496, var497, in.g4s());
 							}
 						}
 					}
 				} catch (RuntimeException var729) {
 					JagException.report(null, var729);
-					method4499(arg0);
+					method4499(connection);
 				}
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CLANCHANNEL_DELTA == arg0.field796) {
+		} else if (ServerProt.CLANCHANNEL_DELTA == connection.packetType) {
 			field11025 = field11058;
-			boolean var499 = var2.g1() == 1;
-			ClanChannelDelta var500 = new ClanChannelDelta(var2);
+			boolean var499 = in.g1() == 1;
+			ClanChannelDelta var500 = new ClanChannelDelta(in);
 			ClanChannel var501;
 			if (var499) {
 				var501 = field3022;
@@ -9889,19 +9889,19 @@ public final class Client extends GameShell {
 				var501 = field1766;
 			}
 			var500.method5342(var501);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.MESSAGE_FRIENDCHANNEL == arg0.field796) {
-			boolean var502 = var2.g1() == 1;
-			String var503 = var2.gjstr();
+		} else if (ServerProt.MESSAGE_FRIENDCHANNEL == connection.packetType) {
+			boolean var502 = in.g1() == 1;
+			String var503 = in.gjstr();
 			String var504 = var503;
 			if (var502) {
-				var504 = var2.gjstr();
+				var504 = in.gjstr();
 			}
-			String var505 = var2.gjstr();
-			long var506 = (long) var2.g2();
-			long var508 = (long) var2.g3();
-			ChatCrownType var510 = (ChatCrownType) SerializableEnums.decode(ChatCrownType.method6043(), var2.g1());
+			String var505 = in.gjstr();
+			long var506 = (long) in.g2();
+			long var508 = (long) in.g3();
+			ChatCrownType var510 = (ChatCrownType) SerializableEnums.decode(ChatCrownType.method6043(), in.g1());
 			long var511 = (var506 << 32) + var508;
 			boolean var513 = false;
 			int var514 = 0;
@@ -9925,16 +9925,16 @@ public final class Client extends GameShell {
 			if (!var513) {
 				field11053[field11054] = var511;
 				field11054 = (field11054 + 1) % 100;
-				String var515 = StringHelper.escape(WordPack.method5939(var2));
+				String var515 = StringHelper.escape(WordPack.method5939(in));
 				if (var510.field3602 == -1) {
 					ChatHistory.method15054(9, 0, var503, var504, var503, var515, var505, -1, var510);
 				} else {
 					ChatHistory.method15054(9, 0, TextUtil.imgTag(var510.field3602) + var503, TextUtil.imgTag(var510.field3602) + var504, var503, var515, var505, -1, var510);
 				}
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.RESET_ANIMS == arg0.field796) {
+		} else if (ServerProt.RESET_ANIMS == connection.packetType) {
 			for (int var516 = 0; var516 < field10944.length; var516++) {
 				if (field10944[var516] != null) {
 					field10944[var516].field10427 = null;
@@ -9945,93 +9945,93 @@ public final class Client extends GameShell {
 				((PathingEntity) field10839[var517].field11436).field10427 = null;
 				((PathingEntity) field10839[var517].field11436).field10454.method14362(-1);
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.SET_MAP_FLAG == arg0.field796) {
-			int var518 = var2.g1_alt1();
-			int var519 = var2.g1();
+		} else if (ServerProt.SET_MAP_FLAG == connection.packetType) {
+			int var518 = in.g1_alt1();
+			int var519 = in.g1();
 			if (var518 == 255) {
 				var518 = -1;
 				var519 = -1;
 			}
 			DelayedStateChange.method14994(var518, var519);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.VARP_SMALL == arg0.field796) {
-			byte var520 = var2.g1b();
-			int var521 = var2.g2_alt2();
+		} else if (ServerProt.VARP_SMALL == connection.packetType) {
+			byte var520 = in.g1b();
+			int var521 = in.g2_alt2();
 			field7410.field632.setVarValueIntFromServer((VarType) field8485.list(var521), var520);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CLEAR_PLAYER_SNAPSHOT == arg0.field796) {
-			int var522 = var2.g1();
+		} else if (ServerProt.CLEAR_PLAYER_SNAPSHOT == connection.packetType) {
+			int var522 = in.g1();
 			int var523 = -var522 - 2;
 			field10946.remove(var523);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_SET_HTTP_IMAGE == arg0.field796) {
-			int var524 = var2.g4s();
-			int var525 = var2.g4_alt1();
+		} else if (ServerProt.IF_SET_HTTP_IMAGE == connection.packetType) {
+			int var524 = in.g4s();
+			int var525 = in.g4_alt1();
 			incrementVerifyId();
 			Component var526 = Component.method10202(var524);
 			var526.field2188 = var525;
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_SETOBJECT == arg0.field796) {
-			int var527 = var2.g2();
+		} else if (ServerProt.IF_SETOBJECT == connection.packetType) {
+			int var527 = in.g2();
 			if (var527 == 65535) {
 				var527 = -1;
 			}
-			int var528 = var2.g4_alt3();
-			int var529 = var2.g4_alt1();
+			int var528 = in.g4_alt3();
+			int var529 = in.g4_alt1();
 			incrementVerifyId();
 			DelayedStateChange.method5369(var528, var527, var529);
 			ObjType var530 = (ObjType) field1842.list(var527);
 			DelayedStateChange.method16746(var528, var530.xan2d, var530.yan2d, var530.zoom2d);
 			DelayedStateChange.method9085(var528, var530.xof2d, var530.yof2d, var530.field8641);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.TELEMETRY_GRID_SET_ROW_PINNED == arg0.field796) {
+		} else if (ServerProt.TELEMETRY_GRID_SET_ROW_PINNED == connection.packetType) {
 			if (!field11095) {
 				try {
-					int var531 = var2.g1_alt1();
-					int var532 = var2.g1_alt1();
-					boolean var533 = var2.g1_alt3() == 1;
+					int var531 = in.g1_alt1();
+					int var532 = in.g1_alt1();
+					boolean var533 = in.g1_alt3() == 1;
 					field11094.method3263(var532).method3293(var531, var533);
 				} catch (RuntimeException var726) {
 					JagException.report(null, var726);
-					method4499(arg0);
+					method4499(connection);
 				}
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.SOUND_MIXBUSS_ADD == arg0.field796) {
-			int var535 = var2.g2();
-			int var536 = var2.g2();
-			int var537 = var2.g2();
+		} else if (ServerProt.SOUND_MIXBUSS_ADD == connection.packetType) {
+			int var535 = in.g2();
+			int var536 = in.g2();
+			int var537 = in.g2();
 			field1798.method3156(var535, var536, var537);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.UPDATE_INV_FULL == arg0.field796) {
-			int var538 = var2.g2();
-			int var539 = var2.g1();
+		} else if (ServerProt.UPDATE_INV_FULL == connection.packetType) {
+			int var538 = in.g2();
+			int var539 = in.g1();
 			boolean var540 = (var539 & 0x1) != 0;
 			boolean var541 = (var539 & 0x2) != 0;
 			ClientInvCache.method7228(var538, var540);
-			int var542 = var2.g2();
+			int var542 = in.g2();
 			for (int var543 = 0; var543 < var542; var543++) {
-				int var544 = var2.g2();
-				int var545 = var2.g1();
+				int var544 = in.g2();
+				int var545 = in.g1();
 				if (var545 == 255) {
-					var545 = var2.g4s();
+					var545 = in.g4s();
 				}
 				VarContainerSparse var546 = null;
 				if (var541) {
-					int var547 = var2.g1();
+					int var547 = in.g1();
 					if (var547 > 0) {
 						var546 = new VarContainerSparse(field1819);
 						while (var547-- > 0) {
-							VarValue var548 = field1819.decodeVarValue(var2);
+							VarValue var548 = field1819.decodeVarValue(in);
 							var546.method14735(var548.field4240, var548.field4239);
 						}
 					}
@@ -10039,18 +10039,18 @@ public final class Client extends GameShell {
 				ClientInvCache.method3912(var538, var543, var544 - 1, var545, var546, var540);
 			}
 			field10783[++field11012 - 1 & 0x3F] = var538;
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.MESSAGE_PRIVATE == arg0.field796) {
-			boolean var549 = var2.g1() == 1;
-			String var550 = var2.gjstr();
+		} else if (ServerProt.MESSAGE_PRIVATE == connection.packetType) {
+			boolean var549 = in.g1() == 1;
+			String var550 = in.gjstr();
 			String var551 = var550;
 			if (var549) {
-				var551 = var2.gjstr();
+				var551 = in.gjstr();
 			}
-			long var552 = (long) var2.g2();
-			long var554 = (long) var2.g3();
-			ChatCrownType var556 = (ChatCrownType) SerializableEnums.decode(ChatCrownType.method6043(), var2.g1());
+			long var552 = (long) in.g2();
+			long var554 = (long) in.g3();
+			ChatCrownType var556 = (ChatCrownType) SerializableEnums.decode(ChatCrownType.method6043(), in.g1());
 			long var557 = (var552 << 32) + var554;
 			boolean var559 = false;
 			int var560 = 0;
@@ -10074,7 +10074,7 @@ public final class Client extends GameShell {
 			if (!var559) {
 				field11053[field11054] = var557;
 				field11054 = (field11054 + 1) % 100;
-				String var561 = StringHelper.escape(WordPack.method5939(var2));
+				String var561 = StringHelper.escape(WordPack.method5939(in));
 				int var562 = var556.field3609 ? 7 : 3;
 				if (var556.field3602 == -1) {
 					ChatHistory.method15054(var562, 0, var550, var551, var550, var561, null, -1, var556);
@@ -10082,122 +10082,122 @@ public final class Client extends GameShell {
 					ChatHistory.method15054(var562, 0, TextUtil.imgTag(var556.field3602) + var550, TextUtil.imgTag(var556.field3602) + var551, var550, var561, null, -1, var556);
 				}
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.POINTLIGHT_INTENSITY == arg0.field796) {
-			int var563 = var2.g2_alt2();
-			int var564 = var2.g2_alt2();
-			int var565 = var2.g1();
+		} else if (ServerProt.POINTLIGHT_INTENSITY == connection.packetType) {
+			int var563 = in.g2_alt2();
+			int var564 = in.g2_alt2();
+			int var565 = in.g1();
 			if (var565 == 255) {
 				var565 = -1;
 			}
 			world.method7743().method8757(var564, var565, var563);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.STORE_SERVERPERM_VARCS_ACK == arg0.field796) {
+		} else if (ServerProt.STORE_SERVERPERM_VARCS_ACK == connection.packetType) {
 			field7228.method16413();
-			arg0.field796 = null;
+			connection.packetType = null;
 			return false;
-		} else if (ServerProt.CREATE_CHECK_EMAIL_REPLY == arg0.field796) {
-			int var566 = var2.g1();
+		} else if (ServerProt.CREATE_CHECK_EMAIL_REPLY == connection.packetType) {
+			int var566 = in.g1();
 			CheckEmailReply var567 = (CheckEmailReply) SerializableEnums.decode(CheckEmailReply.method4289(), var566);
 			if (var567 == null) {
 				var567 = CheckEmailReply.field8402;
 			}
 			AccountCreationManager.method3581(var567);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CAM_MOVETO == arg0.field796) {
-			int var568 = var2.g1_alt2();
-			int var569 = var2.g1_alt1();
-			int var570 = var2.g1();
-			int var571 = var2.g1_alt3();
-			int var572 = var2.g2() << 2;
+		} else if (ServerProt.CAM_MOVETO == connection.packetType) {
+			int var568 = in.g1_alt2();
+			int var569 = in.g1_alt1();
+			int var570 = in.g1();
+			int var571 = in.g1_alt3();
+			int var572 = in.g2() << 2;
 			incrementVerifyId();
 			method15723(var568, var570, var572, var569, var571, true);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.LOC_ADD_CHANGE == arg0.field796) {
+		} else if (ServerProt.LOC_ADD_CHANGE == connection.packetType) {
 			method9605(ZoneProt.field3622);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_SETTEXTFONT == arg0.field796) {
-			int var573 = var2.g4_alt1();
-			int var574 = var2.g4_alt3();
+		} else if (ServerProt.IF_SETTEXTFONT == connection.packetType) {
+			int var573 = in.g4_alt1();
+			int var574 = in.g4_alt3();
 			incrementVerifyId();
 			DelayedStateChange.method16659(var573, var574);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_OPENSUB == arg0.field796) {
-			int var575 = var2.g4_alt2();
-			int var576 = var2.g4_alt1();
-			int var577 = var2.g1_alt2();
-			int var578 = var2.g4s();
-			int var579 = var2.g2();
-			int var580 = var2.g4_alt2();
-			int var581 = var2.g4_alt2();
+		} else if (ServerProt.IF_OPENSUB == connection.packetType) {
+			int var575 = in.g4_alt2();
+			int var576 = in.g4_alt1();
+			int var577 = in.g1_alt2();
+			int var578 = in.g4s();
+			int var579 = in.g2();
+			int var580 = in.g4_alt2();
+			int var581 = in.g4_alt2();
 			incrementVerifyId();
 			method4489(var576, new SubInterface(var579, var577), new int[] { var581, var580, var575, var578 }, false);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.SHOW_FACE_HERE == arg0.field796) {
-			int var582 = var2.g1_alt3();
+		} else if (ServerProt.SHOW_FACE_HERE == connection.packetType) {
+			int var582 = in.g1_alt3();
 			incrementVerifyId();
 			field10921 = var582;
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.VARBIT_LARGE == arg0.field796) {
-			int var583 = var2.g2_alt2();
-			int var584 = var2.g4_alt1();
+		} else if (ServerProt.VARBIT_LARGE == connection.packetType) {
+			int var583 = in.g2_alt2();
+			int var584 = in.g4_alt1();
 			field7410.field632.setVarBitValueFromServer((VarBitType) field8736.list(var583), var584);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CHAT_FILTER_SETTINGS == arg0.field796) {
-			field11029 = var2.g1_alt2();
-			field11050 = var2.g1_alt2();
-			arg0.field796 = null;
+		} else if (ServerProt.CHAT_FILTER_SETTINGS == connection.packetType) {
+			field11029 = in.g1_alt2();
+			field11050 = in.g1_alt2();
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.REFLECTION_CHECKER == arg0.field796) {
-			ClassCheck.method10680(var2, arg0.field797);
-			arg0.field796 = null;
+		} else if (ServerProt.REFLECTION_CHECKER == connection.packetType) {
+			ClassCheck.method10680(in, connection.packetSize);
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.UPDATE_FRIENDCHAT_CHANNEL_FULL == arg0.field796) {
+		} else if (ServerProt.UPDATE_FRIENDCHAT_CHANNEL_FULL == connection.packetType) {
 			field10936 = field11058;
-			if (arg0.field797 == 0) {
+			if (connection.packetSize == 0) {
 				field11055 = null;
 				field11030 = null;
 				field7421 = 0;
 				field9267 = null;
-				arg0.field796 = null;
+				connection.packetType = null;
 				return true;
 			}
-			field11030 = var2.gjstr();
-			boolean var585 = var2.g1() == 1;
+			field11030 = in.gjstr();
+			boolean var585 = in.g1() == 1;
 			if (var585) {
-				var2.gjstr();
+				in.gjstr();
 			}
-			field11055 = var2.gjstr();
-			field2154 = var2.g1b();
-			int var586 = var2.g1();
+			field11055 = in.gjstr();
+			field2154 = in.g1b();
+			int var586 = in.g1();
 			if (var586 == 255) {
-				arg0.field796 = null;
+				connection.packetType = null;
 				return true;
 			}
 			field7421 = var586;
 			FriendChatUser[] var587 = new FriendChatUser[100];
 			for (int var588 = 0; var588 < field7421; var588++) {
 				var587[var588] = new FriendChatUser();
-				var587[var588].field756 = var2.gjstr();
-				boolean var589 = var2.g1() == 1;
+				var587[var588].field756 = in.gjstr();
+				boolean var589 = in.g1() == 1;
 				if (var589) {
-					var587[var588].field757 = var2.gjstr();
+					var587[var588].field757 = in.gjstr();
 				} else {
 					var587[var588].field757 = var587[var588].field756;
 				}
 				var587[var588].field755 = NamespaceUtil.method15191(var587[var588].field757, field10782);
-				var587[var588].field758 = var2.g2();
-				var587[var588].field760 = var2.g1b();
-				var587[var588].field759 = var2.gjstr();
+				var587[var588].field758 = in.g2();
+				var587[var588].field760 = in.g1b();
+				var587[var588].field759 = in.gjstr();
 				if (var587[var588].field757.equals(field4490.field12062)) {
 					field1914 = var587[var588].field760;
 				}
@@ -10220,27 +10220,27 @@ public final class Client extends GameShell {
 				}
 			}
 			field9267 = var587;
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.PROJANIM_SPECIFIC == arg0.field796) {
-			int var595 = var2.g2_alt1();
-			byte var596 = var2.g1b_alt2();
-			int var597 = var2.g2_alt3();
-			int var598 = var2.g2();
-			int var599 = var2.g2_alt2();
-			int var600 = var2.g1_alt2();
+		} else if (ServerProt.PROJANIM_SPECIFIC == connection.packetType) {
+			int var595 = in.g2_alt1();
+			byte var596 = in.g1b_alt2();
+			int var597 = in.g2_alt3();
+			int var598 = in.g2();
+			int var599 = in.g2_alt2();
+			int var600 = in.g1_alt2();
 			if (var600 == 255) {
 				var600 = -1;
 			}
-			int var601 = var2.g2s_alt1();
-			int var602 = var2.g1_alt3();
-			int var603 = var2.g1();
-			int var604 = var2.g2s_alt1();
-			int var605 = var2.g2();
-			byte var606 = var2.g1b_alt3();
-			int var607 = var2.g1_alt1() * 4;
-			int var608 = var2.g1();
-			int var609 = var2.g2_alt1();
+			int var601 = in.g2s_alt1();
+			int var602 = in.g1_alt3();
+			int var603 = in.g1();
+			int var604 = in.g2s_alt1();
+			int var605 = in.g2();
+			byte var606 = in.g1b_alt3();
+			int var607 = in.g1_alt1() * 4;
+			int var608 = in.g1();
+			int var609 = in.g2_alt1();
 			boolean var610 = (var602 & 0x1) != 0;
 			boolean var611 = (var602 & 0x2) != 0;
 			int var612 = var611 ? var602 >> 2 : -1;
@@ -10265,25 +10265,25 @@ public final class Client extends GameShell {
 				int var625 = var599 << 2;
 				method3621(var609, var601, var604, var612, var623, var624, var619, var620, var621, var622, var597, var598, var600, var625, var610, 0, var603);
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_OPENSUB_ACTIVE_NPC == arg0.field796) {
-			int var626 = var2.g2_alt3();
-			int var627 = var2.g4_alt1();
-			int var628 = var2.g4_alt3();
-			int var629 = var2.g4_alt3();
-			int var630 = var2.g2_alt1();
-			int var631 = var2.g1();
-			int var632 = var2.g4s();
-			int var633 = var2.g4_alt1();
+		} else if (ServerProt.IF_OPENSUB_ACTIVE_NPC == connection.packetType) {
+			int var626 = in.g2_alt3();
+			int var627 = in.g4_alt1();
+			int var628 = in.g4_alt3();
+			int var629 = in.g4_alt3();
+			int var630 = in.g2_alt1();
+			int var631 = in.g1();
+			int var632 = in.g4s();
+			int var633 = in.g4_alt1();
 			incrementVerifyId();
 			method4489(var633, new SubInterfaceActiveNpc(var626, var631, var630), new int[] { var627, var628, var632, var629 }, false);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CLANSETTINGS_DELTA == arg0.field796) {
+		} else if (ServerProt.CLANSETTINGS_DELTA == connection.packetType) {
 			field10818 = field11058;
-			boolean var634 = var2.g1() == 1;
-			ClanSettingsDelta var635 = new ClanSettingsDelta(var2);
+			boolean var634 = in.g1() == 1;
+			ClanSettingsDelta var635 = new ClanSettingsDelta(in);
 			ClanSettings var636;
 			if (var634) {
 				var636 = field1890;
@@ -10291,61 +10291,61 @@ public final class Client extends GameShell {
 				var636 = field6867;
 			}
 			var635.method5333(var636);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CHANGE_LOBBY == arg0.field796) {
-			String var637 = var2.gjstr();
-			int var638 = var2.g2();
-			int var639 = var2.g2();
-			int var640 = var2.g2();
+		} else if (ServerProt.CHANGE_LOBBY == connection.packetType) {
+			String var637 = in.gjstr();
+			int var638 = in.g2();
+			int var639 = in.g2();
+			int var640 = in.g2();
 			WorldSwitcher.lobby.host = var637;
 			WorldSwitcher.lobby.node = var638;
 			WorldSwitcher.lobby.port = var639;
 			WorldSwitcher.lobby.port2 = var640;
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.LOC_CUSTOMISE == arg0.field796) {
+		} else if (ServerProt.LOC_CUSTOMISE == connection.packetType) {
 			method9605(ZoneProt.field3623);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_SETPOSITION == arg0.field796) {
-			int var641 = var2.g2s_alt1();
-			int var642 = var2.g2s_alt2();
-			int var643 = var2.g4_alt1();
+		} else if (ServerProt.IF_SETPOSITION == connection.packetType) {
+			int var641 = in.g2s_alt1();
+			int var642 = in.g2s_alt2();
+			int var643 = in.g4_alt1();
 			incrementVerifyId();
 			DelayedStateChange.method4400(var643, var641, var642);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.REDUCE_PLAYER_ATTACK_PRIORITY == arg0.field796) {
-			field10954 = (AttackOpPriority) SerializableEnums.decode(AttackOpPriority.method10149(), var2.g1());
+		} else if (ServerProt.REDUCE_PLAYER_ATTACK_PRIORITY == connection.packetType) {
+			field10954 = (AttackOpPriority) SerializableEnums.decode(AttackOpPriority.method10149(), in.g1());
 			if (field10954 == null) {
 				field10954 = AttackOpPriority.field7908;
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.VORBIS_SOUND_GROUP_STOP == arg0.field796) {
-			int var644 = var2.g2();
+		} else if (ServerProt.VORBIS_SOUND_GROUP_STOP == connection.packetType) {
+			int var644 = in.g2();
 			field1798.method3153(var644);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.UPDATE_FRIENDCHAT_CHANNEL_SINGLEUSER == arg0.field796) {
-			String var645 = var2.gjstr();
-			boolean var646 = var2.g1() == 1;
+		} else if (ServerProt.UPDATE_FRIENDCHAT_CHANNEL_SINGLEUSER == connection.packetType) {
+			String var645 = in.gjstr();
+			boolean var646 = in.g1() == 1;
 			String var647;
 			if (var646) {
-				var647 = var2.gjstr();
+				var647 = in.gjstr();
 			} else {
 				var647 = var645;
 			}
-			int var648 = var2.g2();
-			byte var649 = var2.g1b();
+			int var648 = in.g2();
+			byte var649 = in.g1b();
 			boolean var650 = false;
 			if (var649 == -128) {
 				var650 = true;
 			}
 			if (var650) {
 				if (field7421 == 0) {
-					arg0.field796 = null;
+					connection.packetType = null;
 					return true;
 				}
 				boolean var651 = false;
@@ -10361,7 +10361,7 @@ public final class Client extends GameShell {
 					field9267[field7421] = null;
 				}
 			} else {
-				String var653 = var2.gjstr();
+				String var653 = in.gjstr();
 				FriendChatUser var654 = new FriendChatUser();
 				var654.field756 = var645;
 				var654.field757 = var647;
@@ -10380,7 +10380,7 @@ public final class Client extends GameShell {
 							field1914 = var649;
 						}
 						field10936 = field11058;
-						arg0.field796 = null;
+						connection.packetType = null;
 						return true;
 					}
 					if (var656 < 0) {
@@ -10388,7 +10388,7 @@ public final class Client extends GameShell {
 					}
 				}
 				if (field7421 >= field9267.length) {
-					arg0.field796 = null;
+					connection.packetType = null;
 					return true;
 				}
 				for (int var657 = field7421 - 1; var657 > var655; var657--) {
@@ -10404,98 +10404,98 @@ public final class Client extends GameShell {
 				}
 			}
 			field10936 = field11058;
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_SETANIM == arg0.field796) {
-			int var658 = var2.g4s();
-			int var659 = var2.g4_alt3();
+		} else if (ServerProt.IF_SETANIM == connection.packetType) {
+			int var658 = in.g4s();
+			int var659 = in.g4_alt3();
 			incrementVerifyId();
 			DelayedStateChange.method3073(var658, var659);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.TELEMETRY_GRID_MOVE_COLUMN == arg0.field796) {
+		} else if (ServerProt.TELEMETRY_GRID_MOVE_COLUMN == connection.packetType) {
 			if (!field11095) {
 				try {
-					int var660 = var2.g1_alt2();
-					int var661 = var2.g1();
-					int var662 = var2.g1();
+					int var660 = in.g1_alt2();
+					int var661 = in.g1();
+					int var662 = in.g1();
 					field11094.method3263(var661).method3356(var660, var662);
 				} catch (RuntimeException var727) {
 					JagException.report(null, var727);
-					method4499(arg0);
+					method4499(connection);
 				}
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_SETCLICKMASK == arg0.field796) {
-			int var664 = var2.g4_alt3();
-			boolean var665 = var2.g1_alt2() == 1;
+		} else if (ServerProt.IF_SETCLICKMASK == connection.packetType) {
+			int var664 = in.g4_alt3();
+			boolean var665 = in.g1_alt2() == 1;
 			incrementVerifyId();
 			DelayedStateChange.method8279(var664, var665);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.TELEMETRY_GRID_ADD_COLUMN == arg0.field796) {
+		} else if (ServerProt.TELEMETRY_GRID_ADD_COLUMN == connection.packetType) {
 			if (!field11095) {
 				try {
-					byte var666 = var2.g1b_alt1();
-					int var667 = var2.g4s();
-					int var668 = var2.g1_alt3();
+					byte var666 = in.g1b_alt1();
+					int var667 = in.g4s();
+					int var668 = in.g1_alt3();
 					field11094.method3263(var668).method3296(var667, var666);
 				} catch (RuntimeException var728) {
 					JagException.report(null, var728);
-					method4499(arg0);
+					method4499(connection);
 				}
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.OBJ_DEL == arg0.field796) {
+		} else if (ServerProt.OBJ_DEL == connection.packetType) {
 			method9605(ZoneProt.field3617);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CLIENT_SETVARCSTR_SMALL == arg0.field796) {
-			int var670 = var2.g2();
-			String var671 = var2.gjstr();
+		} else if (ServerProt.CLIENT_SETVARCSTR_SMALL == connection.packetType) {
+			int var670 = in.g2();
+			String var671 = in.gjstr();
 			incrementVerifyId();
 			DelayedStateChange.method14051(var670, var671);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.ENVIRONMENT_OVERRIDE == arg0.field796) {
+		} else if (ServerProt.ENVIRONMENT_OVERRIDE == connection.packetType) {
 			EnvironmentOverride var672 = new EnvironmentOverride();
-			boolean var673 = var672.method10382(var2);
+			boolean var673 = var672.method10382(in);
 			world.method7816().method9980(world, var673 ? var672 : null, var672.method10380());
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.RUNCLIENTSCRIPT == arg0.field796) {
-			String var674 = var2.gjstr();
+		} else if (ServerProt.RUNCLIENTSCRIPT == connection.packetType) {
+			String var674 = in.gjstr();
 			Object[] var675 = new Object[var674.length() + 1];
 			for (int var676 = var674.length() - 1; var676 >= 0; var676--) {
 				if (var674.charAt(var676) == 's') {
-					var675[var676 + 1] = var2.gjstr();
+					var675[var676 + 1] = in.gjstr();
 				} else {
-					var675[var676 + 1] = Integer.valueOf(var2.g4s());
+					var675[var676 + 1] = Integer.valueOf(in.g4s());
 				}
 			}
-			var675[0] = Integer.valueOf(var2.g4s());
+			var675[0] = Integer.valueOf(in.g4s());
 			incrementVerifyId();
 			HookRequest var677 = new HookRequest();
 			var677.field11493 = var675;
 			ScriptRunner.method1428(var677);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.DO_CHEAT == arg0.field796) {
-			String var678 = var2.gjstr();
+		} else if (ServerProt.DO_CHEAT == connection.packetType) {
+			String var678 = in.gjstr();
 			DeveloperConsole.method18913(var678, false, false);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.OBJ_ADD == arg0.field796) {
+		} else if (ServerProt.OBJ_ADD == connection.packetType) {
 			method9605(ZoneProt.field3621);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.NPC_HEADICON_SPECIFIC == arg0.field796) {
-			int var679 = var2.g4s();
-			int var680 = var2.g2s();
-			int var681 = var2.g1_alt1();
-			int var682 = var2.g2_alt3();
+		} else if (ServerProt.NPC_HEADICON_SPECIFIC == connection.packetType) {
+			int var679 = in.g4s();
+			int var680 = in.g2s();
+			int var681 = in.g1_alt1();
+			int var682 = in.g2_alt3();
 			ObjectWrapper var683 = (ObjectWrapper) field10838.method14495((long) var682);
 			if (var683 != null) {
 				NpcEntity var684 = (NpcEntity) var683.field11436;
@@ -10505,137 +10505,137 @@ public final class Client extends GameShell {
 				var684.field12080.field2682[var681] = var679;
 				var684.field12080.field2681[var681] = (short) var680;
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.TRIGGER_ONDIALOGABORT == arg0.field796) {
+		} else if (ServerProt.TRIGGER_ONDIALOGABORT == connection.packetType) {
 			if (field10978 != -1) {
 				method1023(field10978, 0);
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_SETSCROLLPOS == arg0.field796) {
-			int var685 = var2.g4s();
-			int var686 = var2.g2_alt2();
+		} else if (ServerProt.IF_SETSCROLLPOS == connection.packetType) {
+			int var685 = in.g4s();
+			int var686 = in.g2_alt2();
 			incrementVerifyId();
 			DelayedStateChange.method5081(var685, var686);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_SETNPCHEAD == arg0.field796) {
-			int var687 = var2.g4_alt3();
-			int var688 = var2.g4_alt2();
+		} else if (ServerProt.IF_SETNPCHEAD == connection.packetType) {
+			int var687 = in.g4_alt3();
+			int var688 = in.g4_alt2();
 			incrementVerifyId();
 			DelayedStateChange.method17439(var687, 2, var688, -1);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.LOGOUT_TRANSFER == arg0.field796) {
-			int var689 = var2.g2();
-			String var690 = var2.gjstr();
-			int var691 = var2.g2();
-			int var692 = var2.g2();
-			boolean var693 = var2.g1() == 1;
+		} else if (ServerProt.LOGOUT_TRANSFER == connection.packetType) {
+			int var689 = in.g2();
+			String var690 = in.gjstr();
+			int var691 = in.g2();
+			int var692 = in.g2();
+			boolean var693 = in.g1() == 1;
 			WorldSwitcher.field8753 = WorldSwitcher.field8755;
 			Statics.field488 = var693;
 			WorldSwitcher.method9401(var689, var690, var691, var692);
 			Object var694 = null;
 			setState(19);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return false;
-		} else if (ServerProt.VORBIS_SOUND_GROUP_START == arg0.field796) {
-			int var695 = var2.g2();
+		} else if (ServerProt.VORBIS_SOUND_GROUP_START == connection.packetType) {
+			int var695 = in.g2();
 			field1798.method3208(var695);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.PLAYER_GROUP_FULL == arg0.field796) {
+		} else if (ServerProt.PLAYER_GROUP_FULL == connection.packetType) {
 			field11028 = field11058;
-			if (arg0.field797 == 0) {
+			if (connection.packetSize == 0) {
 				field6721 = null;
 			} else {
-				field6721 = new PlayerGroup(0L, var2, true, field10837);
+				field6721 = new PlayerGroup(0L, in, true, field10837);
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.VORBIS_SOUND == arg0.field796) {
-			int var696 = var2.g2();
+		} else if (ServerProt.VORBIS_SOUND == connection.packetType) {
+			int var696 = in.g2();
 			if (var696 == 65535) {
 				var696 = -1;
 			}
-			int var697 = var2.g1();
-			int var698 = var2.g2();
-			int var699 = var2.g1();
-			int var700 = var2.g2();
+			int var697 = in.g1();
+			int var698 = in.g2();
+			int var699 = in.g1();
+			int var700 = in.g2();
 			field1798.method3191(SoundType.field1832, var696, var697, var699, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var700, var698);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CAM_LOOKAT == arg0.field796) {
-			int var701 = var2.g1_alt2();
-			int var702 = var2.g1();
-			int var703 = var2.g1_alt3();
-			int var704 = var2.g1_alt2();
-			int var705 = var2.g2_alt2() << 2;
+		} else if (ServerProt.CAM_LOOKAT == connection.packetType) {
+			int var701 = in.g1_alt2();
+			int var702 = in.g1();
+			int var703 = in.g1_alt3();
+			int var704 = in.g1_alt2();
+			int var705 = in.g2_alt2() << 2;
 			incrementVerifyId();
 			method14706(var701, var702, var705, var704, var703);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_SETRETEX == arg0.field796) {
-			int var706 = var2.g2_alt3();
-			int var707 = var2.g2_alt1();
-			int var708 = var2.g4s();
-			int var709 = var2.g1_alt1();
+		} else if (ServerProt.IF_SETRETEX == connection.packetType) {
+			int var706 = in.g2_alt3();
+			int var707 = in.g2_alt1();
+			int var708 = in.g4s();
+			int var709 = in.g1_alt1();
 			incrementVerifyId();
 			DelayedStateChange.method5395(var708, var709, var706, var707);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.REBUILD_NORMAL == arg0.field796) {
-			PacketBit var710 = new PacketBit(arg0.field797);
-			System.arraycopy(arg0.field795.data, arg0.field795.pos, var710.data, 0, arg0.field797);
+		} else if (ServerProt.REBUILD_NORMAL == connection.packetType) {
+			PacketBit var710 = new PacketBit(connection.packetSize);
+			System.arraycopy(connection.in.data, connection.in.pos, var710.data, 0, connection.packetSize);
 			method3652();
 			if (field688.unknown7.method18750() == 1) {
 				field3183.method7680(new RebuildRequest(RebuildType.field5071, var710));
 			} else {
 				world.method7749(new RebuildRequest(RebuildType.field5071, var710));
 			}
-			arg0.field796 = null;
+			connection.packetType = null;
 			return false;
-		} else if (ServerProt.SET_TARGET == arg0.field796) {
-			field10787 = var2.g2s_alt2();
-			arg0.field796 = null;
+		} else if (ServerProt.SET_TARGET == connection.packetType) {
+			field10787 = in.g2s_alt2();
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CREATE_CHECK_NAME_REPLY == arg0.field796) {
-			int var711 = var2.g1();
+		} else if (ServerProt.CREATE_CHECK_NAME_REPLY == connection.packetType) {
+			int var711 = in.g1();
 			CheckNameReply var712 = (CheckNameReply) SerializableEnums.decode(CheckNameReply.method6019(), var711);
 			if (var712 == null) {
 				var712 = CheckNameReply.field8404;
 			}
 			AccountCreationManager.method717(var712);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.IF_SETPLAYERMODEL_OTHER == arg0.field796) {
-			int var713 = var2.g2_alt1();
-			int var714 = var2.g4s();
-			int var715 = var2.g4s();
+		} else if (ServerProt.IF_SETPLAYERMODEL_OTHER == connection.packetType) {
+			int var713 = in.g2_alt1();
+			int var714 = in.g4s();
+			int var715 = in.g4s();
 			incrementVerifyId();
 			DelayedStateChange.method17439(var714, 5, var713, var715);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CAMERA_UPDATE == arg0.field796) {
-			field9155.method16604(var2, arg0.field797);
+		} else if (ServerProt.CAMERA_UPDATE == connection.packetType) {
+			field9155.method16604(in, connection.packetSize);
 			field10907 = field11058;
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.EXECUTE_CLIENT_CHEAT == arg0.field796) {
-			int var716 = var2.g2();
+		} else if (ServerProt.EXECUTE_CLIENT_CHEAT == connection.packetType) {
+			int var716 = in.g2();
 			DeveloperConsole.method16614(var716);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
-		} else if (ServerProt.CLIENT_SETVARCSTR_LARGE == arg0.field796) {
-			int var717 = var2.g2();
-			String var718 = var2.gjstr();
+		} else if (ServerProt.CLIENT_SETVARCSTR_LARGE == connection.packetType) {
+			int var717 = in.g2();
+			String var718 = in.gjstr();
 			incrementVerifyId();
 			DelayedStateChange.method14051(var717, var718);
-			arg0.field796 = null;
+			connection.packetType = null;
 			return true;
 		} else {
-			JagException.report((arg0.field796 == null ? -1 : arg0.field796.field4021) + TextUtil.COMMA + (arg0.field806 == null ? -1 : arg0.field806.field4021) + TextUtil.COMMA + (arg0.field805 == null ? -1 : arg0.field805.field4021) + " " + arg0.field797, new RuntimeException());
+			JagException.report((connection.packetType == null ? -1 : connection.packetType.id) + TextUtil.COMMA + (connection.lastPacketType1 == null ? -1 : connection.lastPacketType1.id) + TextUtil.COMMA + (connection.lastPacketType2 == null ? -1 : connection.lastPacketType2.id) + " " + connection.packetSize, new RuntimeException());
 			logout(false);
 			return true;
 		}
@@ -10643,7 +10643,7 @@ public final class Client extends GameShell {
 
 	@ObfuscatedName("wn.iy(Lnk;I)V")
 	public static final void method9605(ZoneProt arg0) {
-		PacketBit var1 = field10849.field795;
+		PacketBit var1 = field10849.in;
 		if (ZoneProt.field3615 == arg0) {
 			int var2 = var1.g1();
 			CoordGrid var3 = world.method7727();
@@ -11157,8 +11157,8 @@ public final class Client extends GameShell {
 				var14.method18815();
 			}
 		}
-		if (field10849.field797 != field10849.field795.pos) {
-			throw new RuntimeException(field10849.field795.pos + " " + field10849.field797);
+		if (field10849.packetSize != field10849.in.pos) {
+			throw new RuntimeException(field10849.in.pos + " " + field10849.packetSize);
 		}
 		for (int var15 = 0; var15 < field11011; var15++) {
 			if (field10838.method14495((long) field11036[var15]) == null) {
@@ -11177,7 +11177,7 @@ public final class Client extends GameShell {
 
 	@ObfuscatedName("tr.im(I)V")
 	public static final void method8430() {
-		PacketBit var0 = field10849.field795;
+		PacketBit var0 = field10849.in;
 		var0.accessBits();
 		int var1 = var0.gBit(8);
 		if (var1 < field11011) {
@@ -11236,8 +11236,8 @@ public final class Client extends GameShell {
 
 	@ObfuscatedName("fy.ic(IB)V")
 	public static final void method3366(int arg0) {
-		PacketBit var1 = field10849.field795;
-		while (var1.bitsAvailable(field10849.field797) >= 15) {
+		PacketBit var1 = field10849.in;
+		while (var1.bitsAvailable(field10849.packetSize) >= 15) {
 			int var2 = var1.gBit(15);
 			if (var2 == 32767) {
 				break;
@@ -11292,7 +11292,7 @@ public final class Client extends GameShell {
 
 	@ObfuscatedName("on.jd(I)V")
 	public static final void method6243() {
-		PacketBit var0 = field10849.field795;
+		PacketBit var0 = field10849.in;
 		for (int var1 = 0; var1 < field10876; var1++) {
 			int var2 = field10844[var1];
 			NpcEntity var3 = (NpcEntity) ((ObjectWrapper) field10838.method14495((long) var2)).field11436;
@@ -12623,7 +12623,7 @@ public final class Client extends GameShell {
 		}
 		DefaultSprites.field9184.method2682("Mem:" + var9 + "/" + var7 + "k", var3, var4, var11, -1);
 		var4 += 15;
-		long var12 = field10849.field807.method116();
+		long var12 = field10849.pingProvider.getPingedAddress();
 		String var14 = "N/A";
 		if (var12 != -1L) {
 			var14 = var12 + "ms";
@@ -12633,7 +12633,7 @@ public final class Client extends GameShell {
 		}
 		DefaultSprites.field9184.method2682("Game: In:" + field10849.field804 + "B/s " + "Out:" + field10849.field798 + "B/s " + "Ping:" + var14, var3, var4, -256, -1);
 		var4 += 15;
-		long var15 = field10835.field807.method116();
+		long var15 = field10835.pingProvider.getPingedAddress();
 		String var17 = "N/A";
 		if (var15 != -1L) {
 			var17 = var15 + "ms";

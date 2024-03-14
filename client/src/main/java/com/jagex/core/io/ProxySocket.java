@@ -20,20 +20,20 @@ public class ProxySocket extends AbstractSocket {
 	public final ProxySelector field11880 = ProxySelector.getDefault();
 
 	@ObfuscatedName("aob.n(I)Ljava/net/Socket;")
-	public Socket method14876() throws IOException {
+	public Socket getSocket() throws IOException {
 		boolean var1 = Boolean.parseBoolean(System.getProperty("java.net.useSystemProxies"));
 		if (!var1) {
 			System.setProperty("java.net.useSystemProxies", "true");
 		}
-		boolean var2 = this.field8784 == 443;
+		boolean var2 = this.port == 443;
 		List var3 = null;
 		List var4 = null;
 		try {
 			try {
-				var3 = this.field11880.select(new URI((var2 ? "https" : "http") + "://" + this.field8785));
-				var4 = this.field11880.select(new URI((var2 ? "http" : "https") + "://" + this.field8785));
+				var3 = this.field11880.select(new URI((var2 ? "https" : "http") + "://" + this.host));
+				var4 = this.field11880.select(new URI((var2 ? "http" : "https") + "://" + this.host));
 			} catch (URISyntaxException var17) {
-				return this.method14873();
+				return this.createSocket();
 			}
 			var3.addAll(var4);
 		} catch (UnsupportedOperationException ex) {
@@ -58,13 +58,13 @@ public class ProxySocket extends AbstractSocket {
 		if (var7 != null) {
 			throw var7;
 		}
-		return this.method14873();
+		return this.createSocket();
 	}
 
 	@ObfuscatedName("aob.o(Ljava/net/Proxy;B)Ljava/net/Socket;")
 	public Socket method18856(Proxy arg0) throws IOException {
 		if (arg0.type() == Type.DIRECT) {
-			return this.method14873();
+			return this.createSocket();
 		}
 		SocketAddress var2 = arg0.address();
 		if (!(var2 instanceof InetSocketAddress)) {
@@ -87,7 +87,7 @@ public class ProxySocket extends AbstractSocket {
 						Method var10 = var5.getDeclaredMethod("getHeaderValue", URL.class, String.class);
 						var10.setAccessible(true);
 						String var11 = (String) var9.invoke(var7);
-						String var12 = (String) var10.invoke(var7, new URL("https://" + this.field8785 + "/"), "https");
+						String var12 = (String) var10.invoke(var7, new URL("https://" + this.host + "/"), "https");
 						var4 = var11 + ": " + var12;
 					}
 				}
@@ -96,7 +96,7 @@ public class ProxySocket extends AbstractSocket {
 			return this.method18860(var3.getHostName(), var3.getPort(), var4);
 		} else if (arg0.type() == Type.SOCKS) {
 			Socket var14 = new Socket(arg0);
-			var14.connect(new InetSocketAddress(this.field8785, this.field8784));
+			var14.connect(new InetSocketAddress(this.host, this.port));
 			return var14;
 		} else {
 			return null;
@@ -109,9 +109,9 @@ public class ProxySocket extends AbstractSocket {
 		var4.setSoTimeout(10000);
 		OutputStream var5 = var4.getOutputStream();
 		if (arg2 == null) {
-			var5.write(("CONNECT " + this.field8785 + ":" + this.field8784 + " HTTP/1.0\n\n").getBytes(Charset.forName("ISO-8859-1")));
+			var5.write(("CONNECT " + this.host + ":" + this.port + " HTTP/1.0\n\n").getBytes(Charset.forName("ISO-8859-1")));
 		} else {
-			var5.write(("CONNECT " + this.field8785 + ":" + this.field8784 + " HTTP/1.0\n" + arg2 + "\n\n").getBytes(Charset.forName("ISO-8859-1")));
+			var5.write(("CONNECT " + this.host + ":" + this.port + " HTTP/1.0\n" + arg2 + "\n\n").getBytes(Charset.forName("ISO-8859-1")));
 		}
 		var5.flush();
 		BufferedReader var6 = new BufferedReader(new InputStreamReader(var4.getInputStream()));

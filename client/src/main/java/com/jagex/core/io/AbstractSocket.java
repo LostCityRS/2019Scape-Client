@@ -9,24 +9,24 @@ import java.net.Socket;
 public abstract class AbstractSocket {
 
 	@ObfuscatedName("abx.e")
-	public String field8785;
+	public String host;
 
 	@ObfuscatedName("abx.n")
-	public int field8784;
+	public int port;
 
 	@ObfuscatedName("mz.e(Ljava/lang/String;II)Labx;")
-	public static AbstractSocket method5846(String arg0, int arg1) {
-		ProxySocket var2 = new ProxySocket();
-		var2.field8785 = arg0;
-		var2.field8784 = arg1;
-		return var2;
+	public static AbstractSocket createProxySocket(String host, int port) {
+		ProxySocket socket = new ProxySocket();
+		socket.host = host;
+		socket.port = port;
+		return socket;
 	}
 
 	@ObfuscatedName("abx.m(I)Ljava/net/Socket;")
-	public Socket method14873() throws IOException {
-		return new Socket(this.field8785, this.field8784);
+	public Socket createSocket() throws IOException {
+		return new Socket(this.host, this.port);
 	}
 
 	@ObfuscatedName("abx.n(I)Ljava/net/Socket;")
-	public abstract Socket method14876() throws IOException;
+	public abstract Socket getSocket() throws IOException;
 }

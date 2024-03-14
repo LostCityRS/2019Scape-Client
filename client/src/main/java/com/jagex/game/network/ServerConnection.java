@@ -17,7 +17,7 @@ import java.io.IOException;
 public class ServerConnection {
 
 	@ObfuscatedName("ax.e")
-	public Stream field800;
+	public Stream stream;
 
 	@ObfuscatedName("ax.n")
 	public IterableQueue field803 = new IterableQueue();
@@ -32,22 +32,22 @@ public class ServerConnection {
 	public Isaac field794;
 
 	@ObfuscatedName("ax.w")
-	public PacketBit field795 = new PacketBit(40000);
+	public PacketBit in = new PacketBit(40000);
 
 	@ObfuscatedName("ax.l")
 	public Isaac field809;
 
 	@ObfuscatedName("ax.u")
-	public ServerProt field796 = null;
+	public ServerProt packetType = null;
 
 	@ObfuscatedName("ax.z")
-	public int field797 = 0;
+	public int packetSize = 0;
 
 	@ObfuscatedName("ax.p")
 	public boolean field799 = true;
 
 	@ObfuscatedName("ax.d")
-	public int field789 = 0;
+	public int idleNetCycles = 0;
 
 	@ObfuscatedName("ax.c")
 	public int field793 = 0;
@@ -56,7 +56,7 @@ public class ServerConnection {
 	public int field801;
 
 	@ObfuscatedName("ax.v")
-	public int field802;
+	public int readPos;
 
 	@ObfuscatedName("ax.o")
 	public int field798;
@@ -65,25 +65,25 @@ public class ServerConnection {
 	public int field804;
 
 	@ObfuscatedName("ax.y")
-	public ServerProt field790;
+	public ServerProt lastPacketType0;
 
 	@ObfuscatedName("ax.q")
-	public ServerProt field806;
+	public ServerProt lastPacketType1;
 
 	@ObfuscatedName("ax.x")
-	public ServerProt field805;
+	public ServerProt lastPacketType2;
 
 	@ObfuscatedName("ax.b")
 	public boolean field808 = false;
 
 	@ObfuscatedName("ax.h")
-	public PingProvider field807 = new PingProvider();
+	public PingProvider pingProvider = new PingProvider();
 
 	public ServerConnection() {
-		Thread var1 = new Thread(this.field807);
-		var1.setDaemon(true);
-		var1.setPriority(1);
-		var1.start();
+		Thread thread = new Thread(this.pingProvider);
+		thread.setDaemon(true);
+		thread.setPriority(1);
+		thread.start();
 	}
 
 	@ObfuscatedName("ax.e(I)V")
@@ -94,14 +94,14 @@ public class ServerConnection {
 
 	@ObfuscatedName("ax.n(B)V")
 	public final void method933() throws IOException {
-		if (this.field800 == null || this.field791 <= 0) {
+		if (this.stream == null || this.field791 <= 0) {
 			return;
 		}
 		this.field792.pos = 0;
 		while (true) {
 			ClientMessage var1 = (ClientMessage) this.field803.method14191();
 			if (var1 == null || var1.field11430 > this.field792.data.length - this.field792.pos) {
-				this.field800.method9030(this.field792.data, 0, this.field792.pos);
+				this.stream.write(this.field792.data, 0, this.field792.pos);
 				this.field801 += this.field792.pos;
 				this.field793 = 0;
 				break;
@@ -127,34 +127,34 @@ public class ServerConnection {
 		if (Client.field10903 % 50 == 0) {
 			this.field798 = this.field801;
 			this.field801 = 0;
-			this.field804 = this.field802;
-			this.field802 = 0;
+			this.field804 = this.readPos;
+			this.readPos = 0;
 		}
 	}
 
 	@ObfuscatedName("ax.f(Luz;Ljava/lang/String;I)V")
-	public void method936(Stream arg0, String arg1) {
-		this.field800 = arg0;
-		this.field807.method115(arg1);
+	public void setStream(Stream stream, String host) {
+		this.stream = stream;
+		this.pingProvider.setPingHost(host);
 	}
 
 	@ObfuscatedName("ax.w(B)V")
-	public void method938() {
-		if (this.field800 != null) {
-			this.field800.method9031();
-			this.field800 = null;
+	public void closeGracefully() {
+		if (this.stream != null) {
+			this.stream.closeGracefully();
+			this.stream = null;
 		}
-		this.field807.method115(null);
+		this.pingProvider.setPingHost(null);
 	}
 
 	@ObfuscatedName("ax.l(B)V")
-	public void method941() {
-		this.field800 = null;
-		this.field807.method115(null);
+	public void closeForcefully() {
+		this.stream = null;
+		this.pingProvider.setPingHost(null);
 	}
 
 	@ObfuscatedName("ax.u(B)Luz;")
-	public Stream method939() {
-		return this.field800;
+	public Stream getStream() {
+		return this.stream;
 	}
 }

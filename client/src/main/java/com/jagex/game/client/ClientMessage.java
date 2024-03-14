@@ -36,7 +36,7 @@ public class ClientMessage extends Node {
 	public static ClientMessage method1604(ClientProt arg0, Isaac arg1) {
 		ClientMessage var2 = method7898();
 		var2.field11435 = arg0;
-		var2.field11431 = arg0.field3807;
+		var2.field11431 = arg0.size;
 		if (var2.field11431 == -1) {
 			var2.field11432 = new PacketBit(260);
 		} else if (var2.field11431 == -2) {
@@ -49,7 +49,7 @@ public class ClientMessage extends Node {
 			var2.field11432 = new PacketBit(260);
 		}
 		var2.field11432.setIsaac(arg1);
-		var2.field11432.method19555(var2.field11435.field3806);
+		var2.field11432.pIsaac1(var2.field11435.id);
 		var2.field11430 = 0;
 		return var2;
 	}

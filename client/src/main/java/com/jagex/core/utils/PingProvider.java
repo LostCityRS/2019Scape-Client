@@ -10,52 +10,52 @@ import java.net.UnknownHostException;
 public class PingProvider implements Runnable {
 
 	@ObfuscatedName("e.e")
-	public String field418;
+	public String host;
 
 	@ObfuscatedName("e.n")
-	public InetAddress field420;
+	public InetAddress inetAddress;
 
 	@ObfuscatedName("e.m")
-	public volatile long field419 = -1L;
+	public volatile long pingedAddress = -1L;
 
 	@ObfuscatedName("e.k")
-	public volatile boolean field417 = true;
+	public volatile boolean running = true;
 
 	@ObfuscatedName("e.e(Ljava/lang/String;I)V")
-	public void method115(String arg0) {
-		this.field418 = arg0;
-		this.field420 = null;
-		this.field419 = -1L;
-		if (this.field418 != null) {
+	public void setPingHost(String host) {
+		this.host = host;
+		this.inetAddress = null;
+		this.pingedAddress = -1L;
+		if (this.host != null) {
 			try {
-				this.field420 = InetAddress.getByName(this.field418);
-			} catch (UnknownHostException var3) {
+				this.inetAddress = InetAddress.getByName(this.host);
+			} catch (UnknownHostException exception) {
 			}
 		}
 	}
 
 	@ObfuscatedName("e.n(B)J")
-	public long method116() {
-		return this.field419;
+	public long getPingedAddress() {
+		return this.pingedAddress;
 	}
 
 	@ObfuscatedName("e.m(I)V")
-	public void method130() {
-		this.field417 = false;
+	public void stop() {
+		this.running = false;
 	}
 
 	public void run() {
-		while (this.field417) {
-			this.method118();
+		while (this.running) {
+			this.ping();
 		}
 	}
 
 	@ObfuscatedName("e.k(I)V")
-	public void method118() {
-		if (this.field420 != null) {
+	public void ping() {
+		if (this.inetAddress != null) {
 			try {
-				byte[] var1 = this.field420.getAddress();
-				this.field419 = Ping.method110(var1[0], var1[1], var1[2], var1[3], 10000L);
+				byte[] var1 = this.inetAddress.getAddress();
+				this.pingedAddress = Ping.method110(var1[0], var1[1], var1[2], var1[3], 10000L);
 			} catch (Throwable var3) {
 			}
 		}

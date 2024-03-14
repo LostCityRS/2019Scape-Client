@@ -567,8 +567,8 @@ public class DeveloperConsole {
 					ServerConnection[] var15 = Client.field10850;
 					for (int var16 = 0; var16 < var15.length; var16++) {
 						ServerConnection var17 = var15[var16];
-						if (var17.method939() != null) {
-							var17.method939().method9032();
+						if (var17.getStream() != null) {
+							var17.getStream().closeForcefully();
 						}
 					}
 					Client.field4489.method7035();
@@ -713,7 +713,7 @@ public class DeveloperConsole {
 				} else if (arg0 == 9) {
 					addline(Client.field10577.method7909() ? "Success" : "Failure");
 				} else if (arg0 == 23) {
-					WorldSwitcher.field8755.method14758();
+					WorldSwitcher.field8755.configureSocketType();
 				} else if (arg0 == 14) {
 					Client.field4489.method7020();
 				} else if (arg0 == 6) {

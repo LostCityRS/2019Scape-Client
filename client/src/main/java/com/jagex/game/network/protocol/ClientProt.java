@@ -378,13 +378,13 @@ public class ClientProt {
 	public static final ClientProt WINDOW_STATUS = new ClientProt(123, 6);
 
 	@ObfuscatedName("nr.db")
-	public final int field3806;
+	public final int id;
 
 	@ObfuscatedName("nr.dh")
-	public final int field3807;
+	public final int size;
 
-	public ClientProt(int arg0, int arg1) {
-		this.field3806 = arg0;
-		this.field3807 = arg1;
+	public ClientProt(int id, int size) {
+		this.id = id;
+		this.size = size;
 	}
 }

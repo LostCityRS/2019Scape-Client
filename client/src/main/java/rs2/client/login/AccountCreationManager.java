@@ -196,7 +196,7 @@ public class AccountCreationManager {
 				Statics.method17428();
 			}
 			if (Statics.field517 == CreateConnectStage.field515) {
-				Client.field10835.method936(Stream.method7130(WorldSwitcher.lobby.method14764(), 40000), WorldSwitcher.lobby.host);
+				Client.field10835.setStream(Stream.createStream(WorldSwitcher.lobby.getSocket(), 40000), WorldSwitcher.lobby.host);
 				Client.field10835.method952();
 				ClientMessage var1 = ClientMessage.method13920();
 				var1.field11432.p1(LoginProt.CREATE_ACCOUNT_CONNECT.id);
@@ -228,15 +228,15 @@ public class AccountCreationManager {
 				Statics.field517 = CreateConnectStage.field516;
 			}
 			if (Statics.field517 == CreateConnectStage.field516) {
-				if (Client.field10835.method939() == null) {
+				if (Client.field10835.getStream() == null) {
 					Statics.method17428();
 					return;
 				}
-				if (!Client.field10835.method939().method9038(1)) {
+				if (!Client.field10835.getStream().hasAvailable(1)) {
 					return;
 				}
-				Client.field10835.method939().method9029(Client.field10835.field795.data, 0, 1);
-				Statics.field584 = (ConnectReply) SerializableEnums.decode(ConnectReply.method16743(), Client.field10835.field795.data[0] & 0xFF);
+				Client.field10835.getStream().read(Client.field10835.in.data, 0, 1);
+				Statics.field584 = (ConnectReply) SerializableEnums.decode(ConnectReply.method16743(), Client.field10835.in.data[0] & 0xFF);
 				if (Statics.field584 == ConnectReply.field8364) {
 					Client.field10835.field794 = new Isaac(Statics.field581);
 					int[] var5 = new int[4];
@@ -245,20 +245,20 @@ public class AccountCreationManager {
 					}
 					Client.field10835.field809 = new Isaac(var5);
 					new Isaac(var5);
-					Client.field10835.field795.setIsaac(Client.field10835.field809);
+					Client.field10835.in.setIsaac(Client.field10835.field809);
 					Client.setState(0);
 					Client.field10835.method952();
-					Client.field10835.field795.pos = 0;
-					Client.field10835.field790 = null;
-					Client.field10835.field806 = null;
-					Client.field10835.field805 = null;
-					Client.field10835.field789 = 0;
+					Client.field10835.in.pos = 0;
+					Client.field10835.lastPacketType0 = null;
+					Client.field10835.lastPacketType1 = null;
+					Client.field10835.lastPacketType2 = null;
+					Client.field10835.idleNetCycles = 0;
 					Client.field7410.field632.method9624();
 					DelayedStateChange.method716();
 				} else {
-					Client.field10835.method938();
+					Client.field10835.closeGracefully();
 				}
-				Client.field10835.field796 = null;
+				Client.field10835.packetType = null;
 				Statics.field517 = null;
 			}
 		} catch (IOException var8) {

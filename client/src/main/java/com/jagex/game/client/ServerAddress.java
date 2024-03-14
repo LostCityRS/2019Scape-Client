@@ -29,12 +29,12 @@ public class ServerAddress {
 	public boolean useProxy = false;
 
 	@ObfuscatedName("aba.e(B)Ljava/net/Socket;")
-	public Socket method14764() throws IOException {
-		return this.useProxy ? AbstractSocket.method5846(this.host, this.useSecondaryPort ? this.port2 : this.port).method14876() : new Socket(InetAddress.getByName(this.host), this.useSecondaryPort ? this.port2 : this.port);
+	public Socket getSocket() throws IOException {
+		return this.useProxy ? AbstractSocket.createProxySocket(this.host, this.useSecondaryPort ? this.port2 : this.port).getSocket() : new Socket(InetAddress.getByName(this.host), this.useSecondaryPort ? this.port2 : this.port);
 	}
 
 	@ObfuscatedName("aba.n(S)V")
-	public void method14758() {
+	public void configureSocketType() {
 		if (!this.useSecondaryPort) {
 			this.useSecondaryPort = true;
 			this.useProxy = true;
@@ -46,11 +46,11 @@ public class ServerAddress {
 	}
 
 	@ObfuscatedName("aba.m(Laba;I)Z")
-	public boolean method14757(ServerAddress arg0) {
-		if (arg0 == null) {
+	public boolean isAddressInUse(ServerAddress serverAddress) {
+		if (serverAddress == null) {
 			return false;
 		} else {
-			return this.node == arg0.node && this.host.equals(arg0.host) && this.port == arg0.port && this.port2 == arg0.port2;
+			return this.node == serverAddress.node && this.host.equals(serverAddress.host) && this.port == serverAddress.port && this.port2 == serverAddress.port2;
 		}
 	}
 }

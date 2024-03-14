@@ -521,7 +521,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("pf.x(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZI)V")
 	public static void method7005(String arg0, String arg1, String arg2, boolean arg3, boolean arg4) {
 		ServerConnection var5 = Client.method640();
-		if (var5.method939() == null) {
+		if (var5.getStream() == null) {
 			return;
 		}
 		ClientMessage var6 = ClientMessage.method1604(ClientProt.URL_REQUEST, var5.field794);
