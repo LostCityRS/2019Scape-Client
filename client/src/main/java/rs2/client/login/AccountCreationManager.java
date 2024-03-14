@@ -62,9 +62,7 @@ public class AccountCreationManager {
 		int var2 = var1.field11432.pos;
 		var1.field11432.pjstr(arg0);
 		var1.field11432.pos += 7;
-		if (Client.ENABLE_TINYENC) {
-			var1.field11432.tinyenc(Statics.field581, var2, var1.field11432.pos);
-		}
+        var1.field11432.tinyenc(Statics.field581, var2, var1.field11432.pos);
 		var1.field11432.psize2(var1.field11432.pos - var2);
 		Client.field10835.method934(var1);
 		Statics.field872 = CheckEmailReply.field8400;
@@ -80,9 +78,7 @@ public class AccountCreationManager {
 		int var2 = var1.field11432.pos;
 		var1.field11432.pjstr(arg0);
 		var1.field11432.pos += 7;
-		if (Client.ENABLE_TINYENC) {
-			var1.field11432.tinyenc(Statics.field581, var2, var1.field11432.pos);
-		}
+        var1.field11432.tinyenc(Statics.field581, var2, var1.field11432.pos);
 		var1.field11432.psize1(var1.field11432.pos - var2);
 		Client.field10835.method934(var1);
 		Statics.field2589 = CheckNameReply.field8405;
@@ -112,9 +108,7 @@ public class AccountCreationManager {
 		var5.field11432.p1(arg3 ? 1 : 0);
 		var5.field11432.pjstr(arg4);
 		var5.field11432.pos += 7;
-		if (Client.ENABLE_TINYENC) {
-			var5.field11432.tinyenc(Statics.field581, var6, var5.field11432.pos);
-		}
+        var5.field11432.tinyenc(Statics.field581, var6, var5.field11432.pos);
 		var5.field11432.psize2(var5.field11432.pos - var6);
 		Client.field10835.method934(var5);
 		if (arg2 < 13) {
@@ -227,9 +221,7 @@ public class AccountCreationManager {
 				}
 				Client.field10581.method18188(var1.field11432);
 				var1.field11432.pos += 7;
-				if (Client.ENABLE_TINYENC) {
-					var1.field11432.tinyenc(Statics.field581, var3, var1.field11432.pos);
-				}
+                var1.field11432.tinyenc(Statics.field581, var3, var1.field11432.pos);
 				var1.field11432.psize2(var1.field11432.pos - var2);
 				Client.field10835.method934(var1);
 				Client.field10835.method933();

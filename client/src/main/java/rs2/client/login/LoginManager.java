@@ -490,9 +490,7 @@ public class LoginManager {
 					var10.p1(Statics.field9200 != null && Statics.field9200.node == WorldSwitcher.field8755.node ? 0 : 1);
 					var10.p2(WorldSwitcher.lobby.node);
 					method14463(var10);
-					if (Client.ENABLE_TINYENC) {
-						var10.tinyenc(Statics.field435, var13, var10.pos);
-					}
+                    var10.tinyenc(Statics.field435, var13, var10.pos);
 					var10.psize2(var10.pos - var12);
 				} else {
 					LoginProt var18;
@@ -540,9 +538,7 @@ public class LoginManager {
 					var10.p1(Client.field2627 & 0x1);
 					var10.pbool(false);
 					method14463(var10);
-					if (Client.ENABLE_TINYENC) {
-						var10.tinyenc(Statics.field435, var20, var10.pos);
-					}
+                    var10.tinyenc(Statics.field435, var20, var10.pos);
 					var10.psize2(var10.pos - var19);
 				}
 				Statics.field432.method934(var9);

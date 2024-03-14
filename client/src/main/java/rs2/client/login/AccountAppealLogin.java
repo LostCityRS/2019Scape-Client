@@ -91,9 +91,7 @@ public class AccountAppealLogin {
 		Packet var11 = new Packet(var10);
 		var11.pjstr(arg1);
 		var11.pos = var10;
-		if (Client.ENABLE_TINYENC) {
-			var11.tinyenc(var6);
-		}
+        var11.tinyenc(var6);
 		Packet var12 = new Packet(var11.pos + var5.pos + var4.pos + 5);
 		var12.p1(2);
 		var12.p1(var4.pos);

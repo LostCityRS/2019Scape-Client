@@ -528,6 +528,10 @@ public class Packet extends Node {
 
 	@ObfuscatedName("alw.bd([II)V")
 	public void tinyenc(int[] key) {
+        if (!Client.ENABLE_TINYENC) {
+            return;
+        }
+
 		int var2 = this.pos / 8;
 		this.pos = 0;
 		for (int var3 = 0; var3 < var2; var3++) {
@@ -570,6 +574,10 @@ public class Packet extends Node {
 
 	@ObfuscatedName("alw.bi([IIIB)V")
 	public void tinyenc(int[] key, int off, int len) {
+        if (!Client.ENABLE_TINYENC) {
+            return;
+        }
+
 		int var4 = this.pos;
 		this.pos = off;
 		int var5 = (len - off) / 8;

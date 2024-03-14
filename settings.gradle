@@ -1,4 +1,4 @@
-rootProject.name = "RT7-Client"
+rootProject.name = "2019Scape-Client"
 
 dependencyResolutionManagement {
     repositories {
