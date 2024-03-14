@@ -39,15 +39,15 @@ public class VorbisMapping {
 	}
 
 	@ObfuscatedName("hl.n(Lhk;)V")
-	public void method3898(VorbisDecoder arg0) {
+	public void unpack(VorbisDecoder arg0) {
 		this.field2131 = arg0;
 		int var2 = this.field2131.method3849();
-		this.field2131.method3853(16);
-		this.field2130 = this.field2131.method3845() == 0 ? 1 : this.field2131.method3853(4) + 1;
+		this.field2131.read(16);
+		this.field2130 = this.field2131.method3845() == 0 ? 1 : this.field2131.read(4) + 1;
 		if (this.field2131.method3845() == 0) {
 			this.field2132 = 0;
 		} else {
-			this.field2132 = this.field2131.method3853(8) + 1;
+			this.field2132 = this.field2131.read(8) + 1;
 			if (this.field2127 != null && this.field2127.length == this.field2132) {
 				this.method3905(this.field2127);
 			} else {
@@ -59,15 +59,15 @@ public class VorbisMapping {
 				this.field2133 = new int[this.field2132];
 			}
 			for (int var3 = 0; var3 < this.field2132; var3++) {
-				this.field2127[var3] = this.field2131.method3853(this.method3899(var2 - 1));
-				this.field2133[var3] = this.field2131.method3853(this.method3899(var2 - 1));
+				this.field2127[var3] = this.field2131.read(this.method3899(var2 - 1));
+				this.field2133[var3] = this.field2131.read(this.method3899(var2 - 1));
 			}
 		}
-		this.field2131.method3853(2);
+		this.field2131.read(2);
 		if (this.field2130 > 1) {
 			this.field2126 = new int[var2];
 			for (int var4 = 0; var4 < var2; var4++) {
-				this.field2126[var4] = this.field2131.method3853(4);
+				this.field2126[var4] = this.field2131.read(4);
 			}
 		}
 		if (this.field2129 != null && this.field2129.length == this.field2130) {
@@ -81,9 +81,9 @@ public class VorbisMapping {
 			this.field2128 = new int[this.field2130];
 		}
 		for (int var5 = 0; var5 < this.field2130; var5++) {
-			this.field2131.method3853(8);
-			this.field2129[var5] = this.field2131.method3853(8);
-			this.field2128[var5] = this.field2131.method3853(8);
+			this.field2131.read(8);
+			this.field2129[var5] = this.field2131.read(8);
+			this.field2128[var5] = this.field2131.read(8);
 		}
 	}
 

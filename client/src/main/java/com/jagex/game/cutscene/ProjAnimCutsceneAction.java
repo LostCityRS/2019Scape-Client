@@ -1,4 +1,4 @@
-package com.jagex.game.client;
+package com.jagex.game.cutscene;
 
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.effectanimtype.EffectAnimType;

@@ -47,7 +47,7 @@ public class VertexDeclarationElementComponent {
 	public final int field3312;
 
 	@ObfuscatedName("lj.o")
-	public static final int field3302 = IntMath.method8327(16);
+	public static final int field3302 = IntMath.ilog(16);
 
 	@ObfuscatedName("lj.s")
 	public final int field3316;

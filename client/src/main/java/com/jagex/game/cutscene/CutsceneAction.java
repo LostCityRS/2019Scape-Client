@@ -1,11 +1,6 @@
 package com.jagex.game.cutscene;
 
-import com.jagex.audio.SoundJingleCutsceneAction;
-import com.jagex.audio.SoundSongCutsceneAction;
-import com.jagex.audio.SoundVorbisCutsceneAction;
 import com.jagex.core.io.Packet;
-import com.jagex.game.client.MapAnimCutsceneAction;
-import com.jagex.game.client.ProjAnimCutsceneAction;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ew")

@@ -3,7 +3,7 @@ package com.jagex.audio;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ha")
-public class VorbisDecoderRelated {
+public class LookResidue0 {
 
 	@ObfuscatedName("ha.e")
 	public final int field2039;
@@ -21,14 +21,14 @@ public class VorbisDecoderRelated {
 	public final int field2042;
 
 	@ObfuscatedName("ha.w")
-	public final VorbisCodebook[] field2038;
+	public final VorbisCodebook[] books;
 
-	public VorbisDecoderRelated(int arg0, int arg1, int arg2, int arg3, int arg4, VorbisCodebook[] arg5) {
+	public LookResidue0(int arg0, int arg1, int arg2, int arg3, int arg4, VorbisCodebook[] arg5) {
 		this.field2039 = arg0;
 		this.field2041 = arg1;
 		this.field2040 = arg2;
 		this.field2043 = arg3;
 		this.field2042 = arg4;
-		this.field2038 = arg5;
+		this.books = arg5;
 	}
 }

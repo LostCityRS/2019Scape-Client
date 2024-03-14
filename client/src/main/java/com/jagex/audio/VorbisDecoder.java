@@ -62,22 +62,22 @@ public class VorbisDecoder implements VorbisInterface {
 	public int field2051;
 
 	@ObfuscatedName("hk.y")
-	public VorbisCodebook[] field2060;
+	public VorbisCodebook[] book_param;
 
 	@ObfuscatedName("hk.q")
-	public VorbisFloor[] field2061;
+	public VorbisFloor[] floor_param;
 
 	@ObfuscatedName("hk.x")
-	public VorbisResidue[] field2062;
+	public VorbisResidue[] residue_param;
 
 	@ObfuscatedName("hk.b")
-	public VorbisMapping[] field2063;
+	public VorbisMapping[] map_param;
 
 	@ObfuscatedName("hk.h")
-	public boolean[] field2064;
+	public boolean[] blockflags;
 
 	@ObfuscatedName("hk.a")
-	public int[] field2065;
+	public int[] mappings;
 
 	@ObfuscatedName("hk.g")
 	public WindowFunction[] field2066;
@@ -470,8 +470,8 @@ public class VorbisDecoder implements VorbisInterface {
 		if (!arg0) {
 			this.field2058 = 0;
 			this.field2051 = 0;
-			this.field2064 = null;
-			this.field2065 = null;
+			this.blockflags = null;
+			this.mappings = null;
 			this.method3743(this.field2103);
 			this.field2103 = null;
 			this.method3743(this.field2066);
@@ -635,22 +635,22 @@ public class VorbisDecoder implements VorbisInterface {
 	}
 
 	@ObfuscatedName("hk.ad(I)I")
-	public int method3853(int arg0) {
+	public int read(int bits) {
 		int var2 = 0;
 		int var3 = 0;
-		while (arg0 >= 8 - this.field2113) {
+		while (bits >= 8 - this.field2113) {
 			int var4 = 8 - this.field2113;
 			int var5 = (0x1 << var4) - 1;
 			var2 += (this.field2108[this.field2109] >> this.field2113 & var5) << var3;
 			this.field2113 = 0;
 			this.field2109++;
 			var3 += var4;
-			arg0 -= var4;
+			bits -= var4;
 		}
-		if (arg0 > 0) {
-			int var6 = (0x1 << arg0) - 1;
+		if (bits > 0) {
+			int var6 = (0x1 << bits) - 1;
 			var2 += (this.field2108[this.field2109] >> this.field2113 & var6) << var3;
-			this.field2113 += arg0;
+			this.field2113 += bits;
 		}
 		return var2;
 	}
@@ -661,40 +661,51 @@ public class VorbisDecoder implements VorbisInterface {
 	}
 
 	@ObfuscatedName("hk.au()V")
-	public void method3757() {
-		int var1 = this.method3853(8) + 1;
+	public void unpackBooks() {
+		int books = this.read(8) + 1;
+
 		Iterator var2 = field2057.iterator();
-		VorbisDecoderRelated var3;
+		LookResidue0 var3;
+
 		do {
 			if (!var2.hasNext()) {
-				this.field2060 = new VorbisCodebook[var1];
-				for (int var5 = 0; var5 < var1; var5++) {
-					if (this.field2060[var5] == null) {
-						this.field2060[var5] = new VorbisCodebook();
+				this.book_param = new VorbisCodebook[books];
+
+				for (int i = 0; i < books; i++) {
+					if (this.book_param[i] == null) {
+						this.book_param[i] = new VorbisCodebook();
 					}
-					this.field2060[var5].method3883(this);
+
+					this.book_param[i].unpack(this);
 				}
-				VorbisDecoderRelated var6 = new VorbisDecoderRelated(this.field2045, this.field2076, this.field2046, this.field2048, this.field2055, this.field2060);
+
+				LookResidue0 var6 = new LookResidue0(this.field2045, this.field2076, this.field2046, this.field2048, this.field2055, this.book_param);
 				field2057.add(var6);
 				return;
 			}
-			var3 = (VorbisDecoderRelated) var2.next();
-		} while (var3.field2040 != 0 || var3.field2043 != 0 || var3.field2038.length != var1 || this.field2045 != var3.field2039 || this.field2076 != var3.field2041 || this.field2055 != var3.field2042);
-		this.field2060 = var3.field2038;
-		for (int var4 = 0; var4 < this.field2060.length; var4++) {
-			this.field2060[var4].method3880(this);
+
+			var3 = (LookResidue0) var2.next();
+		} while (var3.field2040 != 0 || var3.field2043 != 0 || var3.books.length != books || this.field2045 != var3.field2039 || this.field2076 != var3.field2041 || this.field2055 != var3.field2042);
+
+		this.book_param = var3.books;
+
+		for (int i = 0; i < this.book_param.length; i++) {
+			this.book_param[i].method3880(this);
 		}
 	}
 
 	@ObfuscatedName("hk.ar([BI)V")
-	public void method3758(byte[] arg0, int arg1) {
+	public void unpack(byte[] arg0, int arg1) {
 		this.field2101 = 0;
+
 		if (this.method3868()) {
 			return;
 		}
+
 		if (arg0 == null) {
 			throw new RuntimeException("");
 		}
+
 		byte var3 = 0;
 		byte var4;
 		if (this.method3749(arg0, arg1, 1)) {
@@ -706,57 +717,67 @@ public class VorbisDecoder implements VorbisInterface {
 		} else {
 			throw new RuntimeException("" + var3);
 		}
+
 		if (var4 == 1) {
 			this.method3754(arg0, arg1 + 7);
-			int var5 = this.method3853(32);
-			this.field2045 = this.method3853(8);
-			this.field2076 = this.method3853(32);
-			this.field2046 = this.method3853(32);
-			this.field2055 = this.method3853(32);
-			this.field2048 = this.method3853(32);
-			this.field2058 = 0x1 << this.method3853(4);
-			this.field2051 = 0x1 << this.method3853(4);
-			int var6 = 0x1 << this.method3853(1);
+			int var5 = this.read(32);
+			this.field2045 = this.read(8);
+			this.field2076 = this.read(32);
+			this.field2046 = this.read(32);
+			this.field2055 = this.read(32);
+			this.field2048 = this.read(32);
+			this.field2058 = 0x1 << this.read(4);
+			this.field2051 = 0x1 << this.read(4);
+
+			int var6 = 0x1 << this.read(1);
 			if (var5 != 0 || var6 == 0) {
 				throw new RuntimeException("");
 			}
+
 			this.field2086 = true;
 			this.field2083++;
 		} else if (var4 != 3 && var4 == 5) {
 			if (!this.method3749(arg0, arg1, 5)) {
 				throw new RuntimeException("");
 			}
+
 			this.method3754(arg0, arg1 + 7);
 			if (this.field2070 != null) {
 				this.method3743(this.field2070);
 				this.field2070 = null;
 			}
+
 			this.field2070 = this.method3753(this.field2045, this.field2051);
 			for (int var7 = 0; var7 < 2; var7++) {
 				int var8 = var7 == 0 ? this.field2058 : this.field2051;
 				int var9 = var8 >> 1;
 				int var10 = var8 >> 2;
 				int var11 = var8 >> 3;
+
 				WindowFunction var12 = this.method3836(var9);
 				for (int var13 = 0; var13 < var10; var13++) {
 					var12.field2123[var13 * 2] = (float) Math.cos((double) (var13 * 4) * 3.141592653589793D / (double) var8);
 					var12.field2123[var13 * 2 + 1] = -((float) Math.sin((double) (var13 * 4) * 3.141592653589793D / (double) var8));
 				}
+
 				WindowFunction var14 = this.method3836(var9);
 				for (int var15 = 0; var15 < var10; var15++) {
 					var14.field2123[var15 * 2] = (float) Math.cos((double) (var15 * 2 + 1) * 3.141592653589793D / (double) (var8 * 2));
 					var14.field2123[var15 * 2 + 1] = (float) Math.sin((double) (var15 * 2 + 1) * 3.141592653589793D / (double) (var8 * 2));
 				}
+
 				WindowFunction var16 = this.method3836(var10);
 				for (int var17 = 0; var17 < var11; var17++) {
 					var16.field2123[var17 * 2] = (float) Math.cos((double) (var17 * 4 + 2) * 3.141592653589793D / (double) var8);
 					var16.field2123[var17 * 2 + 1] = -((float) Math.sin((double) (var17 * 4 + 2) * 3.141592653589793D / (double) var8));
 				}
+
 				int[] var18 = new int[var11];
-				int var19 = IntMath.method8327(var11 - 1);
+				int var19 = IntMath.ilog(var11 - 1);
 				for (int var20 = 0; var20 < var11; var20++) {
 					var18[var20] = IntMath.method6012(var20, var19);
 				}
+
 				if (var7 == 0) {
 					this.field2071 = var12;
 					this.field2072 = var14;
@@ -769,50 +790,64 @@ public class VorbisDecoder implements VorbisInterface {
 					this.field2091 = var18;
 				}
 			}
-			this.method3757();
-			int var21 = this.method3853(6) + 1;
-			for (int var22 = 0; var22 < var21; var22++) {
-				this.method3853(16);
+
+			this.unpackBooks();
+
+			int times = this.read(6) + 1;
+			for (int i = 0; i < times; i++) {
+				this.read(16);
 			}
-			int var23 = this.method3853(6) + 1;
-			if (this.field2061 == null || this.field2061.length != var23) {
-				this.field2061 = new VorbisFloor[var23];
+
+			int floors = this.read(6) + 1;
+			if (this.floor_param == null || this.floor_param.length != floors) {
+				this.floor_param = new VorbisFloor[floors];
 			}
-			for (int var24 = 0; var24 < var23; var24++) {
-				if (this.field2061[var24] == null) {
-					this.field2061[var24] = new VorbisFloor();
+
+			for (int i = 0; i < floors; i++) {
+				if (this.floor_param[i] == null) {
+					this.floor_param[i] = new VorbisFloor();
 				}
-				this.field2061[var24].method3681(this, this.field2045);
+
+				this.floor_param[i].unpack(this, this.field2045);
 			}
-			int var25 = this.method3853(6) + 1;
-			if (this.field2062 == null || this.field2062.length != var25) {
-				this.field2062 = new VorbisResidue[var25];
+
+			int residues = this.read(6) + 1;
+			if (this.residue_param == null || this.residue_param.length != residues) {
+				this.residue_param = new VorbisResidue[residues];
 			}
-			for (int var26 = 0; var26 < var25; var26++) {
-				if (this.field2062[var26] == null) {
-					this.field2062[var26] = new VorbisResidue();
+
+			for (int i = 0; i < residues; i++) {
+				if (this.residue_param[i] == null) {
+					this.residue_param[i] = new VorbisResidue();
 				}
-				this.field2062[var26].method3674(this);
+
+				this.residue_param[i].unpack(this);
 			}
-			int var27 = this.method3853(6) + 1;
-			if (this.field2063 == null || this.field2063.length != var27) {
-				this.field2063 = new VorbisMapping[var27];
+
+			int maps = this.read(6) + 1;
+			if (this.map_param == null || this.map_param.length != maps) {
+				this.map_param = new VorbisMapping[maps];
 			}
-			for (int var28 = 0; var28 < var27; var28++) {
-				if (this.field2063[var28] == null) {
-					this.field2063[var28] = new VorbisMapping();
+
+			for (int i = 0; i < maps; i++) {
+				if (this.map_param[i] == null) {
+					this.map_param[i] = new VorbisMapping();
 				}
-				this.field2063[var28].method3898(this);
+
+				this.map_param[i].unpack(this);
 			}
-			int var29 = this.method3853(6) + 1;
-			this.field2064 = new boolean[var29];
-			this.field2065 = new int[var29];
-			for (int var30 = 0; var30 < var29; var30++) {
-				this.field2064[var30] = this.method3845() != 0;
-				this.method3853(16);
-				this.method3853(16);
-				this.field2065[var30] = this.method3853(8);
+
+			int modes = this.read(6) + 1;
+			this.blockflags = new boolean[modes];
+			this.mappings = new int[modes];
+
+			for (int i = 0; i < modes; i++) {
+				this.blockflags[i] = this.method3845() != 0;
+				this.read(16); // windowtype
+				this.read(16); // transformtype
+				this.mappings[i] = this.read(8);
 			}
+
 			this.method3740(true);
 		}
 	}
@@ -837,11 +872,11 @@ public class VorbisDecoder implements VorbisInterface {
 			this.method3754(arg0, arg1);
 			int var5 = this.method3845();
 			if (var5 != 0) {
-				this.method3758(arg0, arg1);
+				this.unpack(arg0, arg1);
 				return false;
 			} else if (this.method3868()) {
-				int var6 = this.method3853(this.method3759(this.field2065.length - 1));
-				boolean var7 = this.field2064[var6];
+				int var6 = this.read(this.method3759(this.mappings.length - 1));
+				boolean var7 = this.blockflags[var6];
 				int var8 = var7 ? this.field2051 : this.field2058;
 				boolean var9 = false;
 				boolean var10 = false;
@@ -874,7 +909,7 @@ public class VorbisDecoder implements VorbisInterface {
 					var16 = var8;
 					var17 = var8 >> 1;
 				}
-				VorbisMapping var18 = this.field2063[this.field2065[var6]];
+				VorbisMapping var18 = this.map_param[this.mappings[var6]];
 				if (this.field2111 == null || this.field2111.length != this.field2045) {
 					this.field2111 = new boolean[this.field2045];
 					this.field2047 = new boolean[this.field2045];
@@ -882,7 +917,7 @@ public class VorbisDecoder implements VorbisInterface {
 				for (int var19 = 0; var19 < this.field2045; var19++) {
 					int var20 = var18.field2126 == null ? 0 : var18.field2126[var19];
 					int var22 = var18.field2129[var20];
-					this.field2111[var19] = !this.field2061[var22].method3687(var19);
+					this.field2111[var19] = !this.floor_param[var22].method3687(var19);
 					this.field2047[var19] = this.field2111[var19];
 				}
 				for (int var23 = 0; var23 < var18.field2132; var23++) {
@@ -902,7 +937,7 @@ public class VorbisDecoder implements VorbisInterface {
 							this.field2080[var25++] = this.field2111[var26];
 						}
 					}
-					VorbisResidue var28 = this.field2062[var18.field2128[var24]];
+					VorbisResidue var28 = this.residue_param[var18.field2128[var24]];
 					Object var29 = null;
 					WindowFunction[] var35;
 					if (var28.field2019 == 2) {
@@ -986,8 +1021,8 @@ public class VorbisDecoder implements VorbisInterface {
 					if (!this.field2111[var54]) {
 						int var55 = var18.field2126 == null ? 0 : var18.field2126[var54];
 						int var57 = var18.field2129[var55];
-						this.field2061[var57].method3688(var54);
-						this.field2061[var57].method3689(this.field2070[var54], var8 >> 1, var54);
+						this.floor_param[var57].method3688(var54);
+						this.floor_param[var57].method3689(this.field2070[var54], var8 >> 1, var54);
 					}
 				}
 				for (int var58 = 0; var58 < this.field2045; var58++) {
@@ -1030,7 +1065,7 @@ public class VorbisDecoder implements VorbisInterface {
 							var63.field2123[var75 * 4 + 3] = (var76 - var78) * var80 - (var77 - var79) * var81;
 							var63.field2123[var75 * 4 + 1] = (var76 - var78) * var81 + (var77 - var79) * var80;
 						}
-						int var82 = IntMath.method8327(var8 - 1);
+						int var82 = IntMath.ilog(var8 - 1);
 						for (int var83 = 0; var83 < var82 - 3; var83++) {
 							int var84 = var8 >> var83 + 2;
 							int var85 = 0x8 << var83;

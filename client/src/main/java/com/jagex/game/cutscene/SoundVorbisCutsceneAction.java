@@ -1,5 +1,9 @@
-package com.jagex.audio;
+package com.jagex.game.cutscene;
 
+import com.jagex.audio.Sound;
+import com.jagex.audio.SoundShape;
+import com.jagex.audio.SoundType;
+import com.jagex.audio.SubBussType;
 import com.jagex.core.io.Packet;
 import com.jagex.game.cutscene.CutsceneAction;
 import deob.ObfuscatedName;

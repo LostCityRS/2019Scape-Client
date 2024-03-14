@@ -1,4 +1,4 @@
-package com.jagex.audio;
+package com.jagex.game.cutscene;
 
 import com.jagex.core.io.Packet;
 import com.jagex.game.cutscene.CutsceneAction;
