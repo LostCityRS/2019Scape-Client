@@ -19,17 +19,17 @@ public final class QuestCommands {
 	}
 
 	@ObfuscatedName("ix.n(Lyf;B)V")
-	public static void method4478(ClientScriptState arg0) {
+	public static void quest_getsortname(ClientScriptState arg0) {
 		arg0.field8218[++arg0.field8211 - 1] = ((QuestType) Client.field1972.list(arg0.field8216[--arg0.field8226])).field2631;
 	}
 
 	@ObfuscatedName("kd.m(Lyf;S)V")
-	public static void method5339(ClientScriptState arg0) {
+	public static void quest_type(ClientScriptState arg0) {
 		arg0.field8216[arg0.field8226 - 1] = ((QuestType) Client.field1972.list(arg0.field8216[arg0.field8226 - 1])).field2645;
 	}
 
 	@ObfuscatedName("af.k(Lyf;I)V")
-	public static void method1004(ClientScriptState arg0) {
+	public static void quest_getdifficulty(ClientScriptState arg0) {
 		arg0.field8216[arg0.field8226 - 1] = ((QuestType) Client.field1972.list(arg0.field8216[arg0.field8226 - 1])).field2639;
 	}
 
@@ -39,7 +39,7 @@ public final class QuestCommands {
 	}
 
 	@ObfuscatedName("akw.w(Lyf;B)V")
-	public static void method17723(ClientScriptState arg0) {
+	public static void quest_points(ClientScriptState arg0) {
 		arg0.field8216[arg0.field8226 - 1] = ((QuestType) Client.field1972.list(arg0.field8216[arg0.field8226 - 1])).field2637;
 	}
 
@@ -50,7 +50,7 @@ public final class QuestCommands {
 	}
 
 	@ObfuscatedName("du.u(Lyf;I)V")
-	public static void method2087(ClientScriptState arg0) {
+	public static void quest_questreq(ClientScriptState arg0) {
 		arg0.field8216[arg0.field8226 - 2] = ((QuestType) Client.field1972.list(arg0.field8216[arg0.field8226 - 2])).field2635[arg0.field8216[arg0.field8226 - 1]];
 		arg0.field8226--;
 	}
@@ -62,17 +62,17 @@ public final class QuestCommands {
 	}
 
 	@ObfuscatedName("mb.p(Lyf;I)V")
-	public static void method5858(ClientScriptState arg0) {
+	public static void quest_pointsreq(ClientScriptState arg0) {
 		arg0.field8216[arg0.field8226 - 1] = ((QuestType) Client.field1972.list(arg0.field8216[arg0.field8226 - 1])).field2641;
 	}
 
 	@ObfuscatedName("et.d(Lyf;I)V")
-	public static void method2860(ClientScriptState arg0) {
+	public static void quest_pointsreq_met(ClientScriptState arg0) {
 		arg0.field8216[arg0.field8226 - 1] = ((QuestType) Client.field1972.list(arg0.field8216[arg0.field8226 - 1])).method4440(Client.field7410) ? 1 : 0;
 	}
 
 	@ObfuscatedName("ny.c(Lyf;I)V")
-	public static void method5951(ClientScriptState arg0) {
+	public static void quest_statreq_count(ClientScriptState arg0) {
 		QuestType var1 = (QuestType) Client.field1972.list(arg0.field8216[--arg0.field8226]);
 		arg0.field8216[++arg0.field8226 - 1] = var1.field2640 == null ? 0 : var1.field2640.length;
 	}
@@ -84,7 +84,7 @@ public final class QuestCommands {
 	}
 
 	@ObfuscatedName("ic.v(Lyf;I)V")
-	public static void method4632(ClientScriptState arg0) {
+	public static void quest_statreq_level(ClientScriptState arg0) {
 		arg0.field8216[arg0.field8226 - 2] = ((QuestType) Client.field1972.list(arg0.field8216[arg0.field8226 - 2])).field2640[arg0.field8216[arg0.field8226 - 1]][1];
 		arg0.field8226--;
 	}
@@ -114,30 +114,30 @@ public final class QuestCommands {
 	}
 
 	@ObfuscatedName("xo.x(Lyf;B)V")
-	public static void method10322(ClientScriptState arg0) {
+	public static void quest_varbitreq_count(ClientScriptState arg0) {
 		QuestType var1 = (QuestType) Client.field1972.list(arg0.field8216[--arg0.field8226]);
 		arg0.field8216[++arg0.field8226 - 1] = var1.field2646 == null ? 0 : var1.field2646.length;
 	}
 
 	@ObfuscatedName("wc.b(Lyf;S)V")
-	public static void method9841(ClientScriptState arg0) {
+	public static void quest_varbitreq_desc(ClientScriptState arg0) {
 		arg0.field8218[++arg0.field8211 - 1] = ((QuestType) Client.field1972.list(arg0.field8216[arg0.field8226 - 2])).field2634[arg0.field8216[arg0.field8226 - 1]];
 		arg0.field8226 -= 2;
 	}
 
 	@ObfuscatedName("rp.h(Lyf;I)V")
-	public static void method7476(ClientScriptState arg0) {
+	public static void quest_varbitreq_met(ClientScriptState arg0) {
 		arg0.field8216[arg0.field8226 - 2] = ((QuestType) Client.field1972.list(arg0.field8216[arg0.field8226 - 2])).method4436(Client.field7410, arg0.field8216[arg0.field8226 - 1]) ? 1 : 0;
 		arg0.field8226--;
 	}
 
 	@ObfuscatedName("fi.a(Lyf;I)V")
-	public static void method3069(ClientScriptState arg0) {
+	public static void quest_allreqmet(ClientScriptState arg0) {
 		arg0.field8216[arg0.field8226 - 1] = ((QuestType) Client.field1972.list(arg0.field8216[arg0.field8226 - 1])).method4431(Client.field7410) ? 1 : 0;
 	}
 
 	@ObfuscatedName("ud.g(Lyf;I)V")
-	public static void method9190(ClientScriptState arg0) {
+	public static void quest_started(ClientScriptState arg0) {
 		arg0.field8216[arg0.field8226 - 1] = ((QuestType) Client.field1972.list(arg0.field8216[arg0.field8226 - 1])).method4429(Client.field7410) ? 1 : 0;
 	}
 
@@ -147,7 +147,7 @@ public final class QuestCommands {
 	}
 
 	@ObfuscatedName("au.j(Lyf;I)V")
-	public static void method848(ClientScriptState arg0) {
+	public static void quest_param(ClientScriptState arg0) {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];

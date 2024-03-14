@@ -17,17 +17,17 @@ public final class TwitchCommands {
 	}
 
 	@ObfuscatedName("u.e(Lyf;B)V")
-	public static void method266(ClientScriptState arg0) {
+	public static void ttv_library_request(ClientScriptState arg0) {
 		arg0.field8216[++arg0.field8226 - 1] = TwitchHardwarePlatform.method7716();
 	}
 
 	@ObfuscatedName("sl.n(Lyf;I)V")
-	public static void method8231(ClientScriptState arg0) {
+	public static void ttv_library_getstate(ClientScriptState arg0) {
 		arg0.field8216[++arg0.field8226 - 1] = TwitchHardwarePlatform.method7116();
 	}
 
 	@ObfuscatedName("yx.m(Lyf;B)V")
-	public static void method10607(ClientScriptState arg0) {
+	public static void ttv_login(ClientScriptState arg0) {
 		arg0.field8211 -= 2;
 		String var1 = (String) arg0.field8218[arg0.field8211];
 		String var2 = (String) arg0.field8218[arg0.field8211 + 1];
@@ -35,7 +35,7 @@ public final class TwitchCommands {
 	}
 
 	@ObfuscatedName("gp.k(Lyf;S)V")
-	public static void method3484(ClientScriptState arg0) {
+	public static void ttv_logout(ClientScriptState arg0) {
 		arg0.field8216[++arg0.field8226 - 1] = TwitchHardwarePlatform.method8632();
 	}
 
@@ -50,7 +50,7 @@ public final class TwitchCommands {
 	}
 
 	@ObfuscatedName("rq.l(Lyf;I)V")
-	public static void method7604(ClientScriptState arg0) {
+	public static void ttv_stream_start(ClientScriptState arg0) {
 		arg0.field8226 -= 4;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
@@ -60,7 +60,7 @@ public final class TwitchCommands {
 	}
 
 	@ObfuscatedName("p.u(Lyf;B)V")
-	public static void method287(ClientScriptState arg0) {
+	public static void ttv_stream_stop(ClientScriptState arg0) {
 		arg0.field8216[++arg0.field8226 - 1] = TwitchHardwarePlatform.method8885(Client.field8198);
 	}
 
@@ -92,28 +92,28 @@ public final class TwitchCommands {
 	}
 
 	@ObfuscatedName("qa.v(Lyf;I)V")
-	public static void method7344(ClientScriptState arg0) {
+	public static void ttv_chat_sendmessage(ClientScriptState arg0) {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
 		arg0.field8216[++arg0.field8226 - 1] = TwitchHardwarePlatform.method6966(var1);
 	}
 
 	@ObfuscatedName("is.o(Lyf;I)V")
-	public static void method4487(ClientScriptState arg0) {
+	public static void ttv_webcam_getstate(ClientScriptState arg0) {
 		arg0.field8216[++arg0.field8226 - 1] = TwitchHardwarePlatform.method536();
 	}
 
 	@ObfuscatedName("ns.s(Lyf;I)V")
-	public static void method6103(ClientScriptState arg0) {
+	public static void ttv_webcam_supported(ClientScriptState arg0) {
 		arg0.field8216[++arg0.field8226 - 1] = TwitchHardwarePlatform.method4595() ? 1 : 0;
 	}
 
 	@ObfuscatedName("xu.y(Lyf;I)V")
-	public static void method10061(ClientScriptState arg0) {
+	public static void ttv_webcam_getdevice_count(ClientScriptState arg0) {
 		arg0.field8216[++arg0.field8226 - 1] = TwitchHardwarePlatform.method3123();
 	}
 
 	@ObfuscatedName("rl.q(Lyf;I)V")
-	public static void method7880(ClientScriptState arg0) {
+	public static void ttv_webcam_getdevice_byindex(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		TwitchWebcamDevice var2 = TwitchHardwarePlatform.method16410(var1);
 		if (var2 == null) {
@@ -128,7 +128,7 @@ public final class TwitchCommands {
 	}
 
 	@ObfuscatedName("fx.x(Lyf;I)V")
-	public static void method3080(ClientScriptState arg0) {
+	public static void ttv_webcam_getdevice_byuniquename(ClientScriptState arg0) {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
 		TwitchWebcamDevice var2 = TwitchHardwarePlatform.method8367(var1);
 		if (var2 == null) {
@@ -143,7 +143,7 @@ public final class TwitchCommands {
 	}
 
 	@ObfuscatedName("n.b(Lyf;I)V")
-	public static void method147(ClientScriptState arg0) {
+	public static void ttv_webcam_getcap_count(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		TwitchWebcamDevice var2 = TwitchHardwarePlatform.method16410(var1);
 		if (var2 == null) {
@@ -154,7 +154,7 @@ public final class TwitchCommands {
 	}
 
 	@ObfuscatedName("fq.h(Lyf;B)V")
-	public static void method3121(ClientScriptState arg0) {
+	public static void ttv_webcam_getcap_byindex(ClientScriptState arg0) {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
@@ -211,13 +211,13 @@ public final class TwitchCommands {
 	}
 
 	@ObfuscatedName("ni.i(Lyf;I)V")
-	public static void method6011(ClientScriptState arg0) {
+	public static void ttv_webcam_stop(ClientScriptState arg0) {
 		int var1 = TwitchHardwarePlatform.method557(arg0.field8216[--arg0.field8226]);
 		arg0.field8216[++arg0.field8226 - 1] = var1;
 	}
 
 	@ObfuscatedName("p.j(Lyf;B)V")
-	public static void method289(ClientScriptState arg0) {
+	public static void ttv_webcam_flip(ClientScriptState arg0) {
 		arg0.field8226 -= 2;
 		boolean var1 = arg0.field8216[arg0.field8226] != 0;
 		boolean var2 = arg0.field8216[arg0.field8226 + 1] != 0;
@@ -225,7 +225,7 @@ public final class TwitchCommands {
 	}
 
 	@ObfuscatedName("hh.t(Lyf;B)V")
-	public static void method4047(ClientScriptState arg0) {
+	public static void ttv_livestreams_update(ClientScriptState arg0) {
 		arg0.field8216[++arg0.field8226 - 1] = TwitchHardwarePlatform.method3065();
 	}
 
@@ -254,7 +254,7 @@ public final class TwitchCommands {
 	}
 
 	@ObfuscatedName("u.ah(Lyf;I)V")
-	public static void method262(ClientScriptState arg0) {
+	public static void ttv_setdebugoutput(ClientScriptState arg0) {
 		arg0.field8226 -= 3;
 		if (field8194) {
 			TwitchHardwarePlatform.method7320(arg0.field8216[arg0.field8226] != 0);
@@ -264,7 +264,7 @@ public final class TwitchCommands {
 	}
 
 	@ObfuscatedName("gb.al(Lyf;I)V")
-	public static void method3673(ClientScriptState arg0) {
+	public static void ttv_hasprerequisites(ClientScriptState arg0) {
 		arg0.field8216[++arg0.field8226 - 1] = TwitchHardwarePlatform.method5399() ? 1 : 0;
 	}
 }
